@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 06/19/2019
+ms.date: 09/18/2019
 ms.author: dapine
-ms.openlocfilehash: 7708133fcba0d594ecd420afd8da1b2881055aa7
-ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
+ms.openlocfilehash: 4b8ea102c7acc55acec05234303ff4c215a4bc0f
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70241020"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105156"
 ---
 # <a name="install-and-run-speech-service-containers"></a>Установка и запуск контейнеров речевых служб
 
@@ -39,6 +39,8 @@ ms.locfileid: "70241020"
 |Модуль Docker| На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду Docker в ОС [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> **В ОС Windows** для Docker нужно также настроить поддержку контейнеров Linux.<br><br>|
 |Опыт работы с Docker | Требуется базовое представление о понятиях Docker, включая реестры, репозитории, контейнеры и образы контейнеров, а также знание основных команд `docker`.| 
 |Речевой ресурс |Для использования контейнеров необходимо следующее:<br><br>Ресурс _речи_ Azure для получения связанного ключа API и URI конечной точки. Оба значения доступны на страницах "Обзор **речи** " и "ключи" портал Azure. Они необходимы для запуска контейнера.<br><br>**{API_KEY}** : Один из двух доступных ключей ресурсов на странице " **ключи** "<br><br>**{ENDPOINT_URI}** : Конечная точка, указанная на странице **обзора**|
+
+[!INCLUDE [Gathering required container parameters](../containers/includes/container-gathering-required-parameters.md)]
 
 ## <a name="request-access-to-the-container-registry"></a>Запрос доступа к реестру контейнеров
 
@@ -174,16 +176,12 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-text-to-spe
 
 ## <a name="run-the-container-with-docker-run"></a>Запуск контейнера с помощью команды `docker run`
 
-Воспользуйтесь командой [docker run](https://docs.docker.com/engine/reference/commandline/run/) для запуска любого из трех контейнеров. В команде используются следующие параметры:
+Воспользуйтесь командой [docker run](https://docs.docker.com/engine/reference/commandline/run/) для запуска контейнера. Дополнительные сведения о том, как получить значения и `{API_KEY}` , `{ENDPOINT_URI}` см. в разделе [сбор обязательных параметров](#gathering-required-parameters) .
 
-В **течение предварительной версии**параметры выставления счетов должны быть допустимыми для запуска контейнера, но плата за использование не взимается.
+[Доступны примеры](speech-container-configuration.md#example-docker-run-commands) `docker run` команд.
 
-| Местозаполнитель | Значение |
-|-------------|-------|
-|{API_KEY} | Этот ключ используется для запуска контейнера и доступен на странице портал Azure голосовых ключей.  |
-|{ENDPOINT_URI} | Значение URI конечной точки выставления счетов доступно на странице обзора речи портал Azure.|
-
-В следующем примере команды `docker run` замените имена параметров собственными значениями.
+> [!NOTE]
+> В **течение предварительной версии**параметры выставления счетов должны быть допустимыми для запуска контейнера, но плата за использование не взимается.
 
 ### <a name="text-to-speech"></a>Преобразование текста в речь
 
@@ -276,7 +274,7 @@ speech_config = speechsdk.SpeechConfig(
 
 ## <a name="billing"></a>Выставление счетов
 
-Контейнеры распознавания речи отправляют сведения о выставлении счетов в Azure с помощью _речевого_ ресурса в учетной записи Azure.
+Контейнеры распознавания речи отправляют сведения о выставлении счетов в Azure с помощью речевого ресурса в учетной записи Azure.
 
 [!INCLUDE [Container's Billing Settings](../../../includes/cognitive-services-containers-how-to-billing-info.md)]
 

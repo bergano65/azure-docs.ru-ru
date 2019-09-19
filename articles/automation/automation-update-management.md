@@ -9,12 +9,12 @@ ms.author: robreed
 ms.date: 05/22/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: daa075518c569e257fd86a478809a1d1650d4345
-ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
-ms.translationtype: HT
+ms.openlocfilehash: 20d8106f06b708527fc60e025a19c6b07656acb3
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/18/2019
-ms.locfileid: "71098107"
+ms.locfileid: "71102651"
 ---
 # <a name="update-management-solution-in-azure"></a>Решение для управления обновлениями в Azure
 
@@ -108,7 +108,7 @@ ms.locfileid: "71098107"
 
 #### <a name="linux"></a>Linux
 
-У компьютеров под управлением Linux должен быть доступ к репозиторию обновлений. Репозиторий обновлений может быть общедоступным или частным. Для взаимодействия с решением "Управление обновлениями" требуется TLS 1.1 или TLS 1.2. Это решение не поддерживает агент Log Analytics для Linux, в котором настроена отправка отчетов в несколько рабочих областей Azure Log Analytics.
+У компьютеров под управлением Linux должен быть доступ к репозиторию обновлений. Репозиторий обновлений может быть общедоступным или частным. Для взаимодействия с решением "Управление обновлениями" требуется TLS 1.1 или TLS 1.2. Это решение не поддерживает агент Log Analytics для Linux, в котором настроена отправка отчетов в несколько рабочих областей Azure Log Analytics.  На компьютере также должен быть установлен Python 2. x.
 
 Сведения о том, как установить агент Log Analytics для Linux и загрузить последнюю версию, см. в статье [log Analytics Agent for Linux](https://github.com/microsoft/oms-agent-for-linux). Дополнительные сведения об установке агента Log Analytics для Windows см. в разделе [Microsoft Monitoring Agent для Windows](../log-analytics/log-analytics-windows-agent.md).
 

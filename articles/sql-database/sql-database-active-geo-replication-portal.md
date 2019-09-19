@@ -11,20 +11,20 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab
 ms.date: 02/13/2019
-ms.openlocfilehash: 058afdbc4aa134b5b3c4c8cc5e9e2f2ae6f53084
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 049122b97a26e63188142dd5494927c2ae71d852
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68569650"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71103230"
 ---
 # <a name="configure-active-geo-replication-for-azure-sql-database-in-the-azure-portal-and-initiate-failover"></a>Настройка активной георепликации для Базы данных SQL Azure с помощью портала Azure и запуск отработки отказа
 
 В этой статье объясняется, как настроить [активную георепликацию для отдельной базы данных и базы данных в пуле](sql-database-active-geo-replication.md#active-geo-replication-terminology-and-capabilities) в Базе данных SQL Azure с помощью [портала Azure](https://portal.azure.com) и запустить отработку отказа.
 
-Сведения о группах автоматической отработки отказа с отдельными базами данных и базами данных в пуле см. в [этом разделе](sql-database-auto-failover-group.md#best-practices-of-using-failover-groups-with-single-databases-and-elastic-pools). Сведения о группах автоматической отработки отказа с Управляемым экземпляром (предварительная версия) см. в разделе [Рекомендации по использованию групп отработки отказа с Управляемыми экземплярами](sql-database-auto-failover-group.md#best-practices-of-using-failover-groups-with-managed-instances).
+Сведения о группах автоматической отработки отказа с отдельными базами данных и базами данных в пуле см. в [этом разделе](sql-database-auto-failover-group.md#best-practices-of-using-failover-groups-with-single-databases-and-elastic-pools). Сведения о группах автоматической отработки отказа с управляемыми экземплярами см. в статье рекомендации по [использованию групп отработки отказа с управляемыми экземплярами](sql-database-auto-failover-group.md#best-practices-of-using-failover-groups-with-managed-instances).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для настройки активной георепликации с помощью портала Azure необходим приведенный ниже ресурс.
 

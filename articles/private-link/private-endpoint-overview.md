@@ -1,18 +1,18 @@
 ---
 title: Что такое частная конечная точка Azure?
 description: Сведения о частной конечной точке Azure
-services: virtual-network
+services: private-link
 author: KumudD
-ms.service: virtual-network
+ms.service: private-link
 ms.topic: conceptual
 ms.date: 09/16/2019
 ms.author: kumud
-ms.openlocfilehash: 031055dce66361cc128ed42a4d0c942ccb5a3b82
-ms.sourcegitcommit: 71db032bd5680c9287a7867b923bf6471ba8f6be
+ms.openlocfilehash: 7394a9e1b1fa90741bc26fc0e9b6b7e6284d75e0
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71017975"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71104680"
 ---
 # <a name="what-is-azure-private-endpoint"></a>Что такое частная конечная точка Azure?
 
@@ -55,8 +55,8 @@ ms.locfileid: "71017975"
 |**Служба частной связи** (Ваша собственная служба)   |  Microsoft. Network/Привателинксервицес       | empty |
 |**база данных SQL Azure;** | Microsoft.Sql/servers    |  SQL Server (sqlServer)        |
 |**Хранилище данных Azure SQL** | Microsoft.Sql/servers    |  SQL Server (sqlServer)        |
-|**Хранилище Azure**  | (Microsoft. Storage/storageAccounts)    |  Большой двоичный объект (BLOB-объект, blob_secondary)<BR> Таблица (таблица, table_secondary)<BR> Очередь (очередь, queue_secondary)<BR> Файл (файл, file_secondary)<BR> Web (Web, web_secondary)        |
-|**Хранилище Azure Data Lake Storage 2-го поколения**  | (Microsoft. Storage/storageAccounts)    |  Большой двоичный объект (BLOB-объект, blob_secondary)       |
+|**Хранилище Azure**  | Microsoft.Storage/storageAccounts    |  Большой двоичный объект (BLOB-объект, blob_secondary)<BR> Таблица (таблица, table_secondary)<BR> Очередь (очередь, queue_secondary)<BR> Файл (файл, file_secondary)<BR> Web (Web, web_secondary)        |
+|**Хранилище Azure Data Lake Storage 2-го поколения**  | Microsoft.Storage/storageAccounts    |  Большой двоичный объект (BLOB-объект, blob_secondary)       |
  
  
 ## <a name="network-security-of-private-endpoints"></a>Сетевая безопасность частных конечных точек 

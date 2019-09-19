@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: article
 ms.date: 11/17/2018
 ms.author: pabutler
-ms.openlocfilehash: 40170540458b7bc7ddb30f88117d472858937e8c
-ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
+ms.openlocfilehash: 0bbe0e9718a25fdff76e591bf388bf829518502e
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70962933"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105616"
 ---
 # <a name="azure-partner-customer-usage-attribution"></a>Определение потребления услуг Azure клиентами партнеров
 
@@ -166,43 +166,28 @@ provider "azurerm" {
 
 Чтобы включить атрибуты использования клиента, необходимо зарегистрировать идентификаторы GUID.
 
-Регистрация всех идентификаторов GUID для шаблонов выполняется с помощью Портала Cloud Partner Azure Marketplace.
+Все регистрации идентификаторов GUID шаблонов выполняются в центре партнеров.
 
-После того как вы добавите GUID в шаблон или агент пользователя и зарегистрируете GUID на Портале Cloud Partner, все развертывания с ним будут отслеживаться.
+После добавления идентификатора GUID в шаблон или агента пользователя и регистрации GUID в центре партнеров будут отслеживанися все развертывания.
 
-1. Зарегистрируйтесь в [Azure Marketplace](https://aka.ms/listonazuremarketplace) и получите доступ к Порталу Cloud Partner.
+1. Зарегистрируйтесь как [Издатель коммерческого магазина](https://aka.ms/JoinMarketplace).
 
-   * У каждого партнера должен быть [свой профиль на Портале Cloud Partner](https://docs.microsoft.com/azure/marketplace/become-publisher). Мы рекомендуем вам опубликовать свое предложение в Azure Marketplace или AppSource.
+   * Партнерам необходимо [иметь профиль в центре партнеров](https://docs.microsoft.com/azure/marketplace/become-publisher). Мы рекомендуем вам опубликовать свое предложение в Azure Marketplace или AppSource.
    * Любой партнер может зарегистрировать несколько идентификаторов GUID.
    * Партнеры могут регистрировать GUID даже для предложений и (или) шаблонов решений, не включенных в Marketplace.
 
-1. Войдите на [облачный портал для партнеров](https://cloudpartner.azure.com/).
+1. Войдите в [Центр партнеров](https://partner.microsoft.com/dashboard).
 
-1. В правом верхнем углу щелкните значок учетной записи и выберите **Publisher profile** (Профиль издателя).
+1. В правом верхнем углу щелкните значок шестеренки параметров, а затем выберите **Параметры разработчика**.
 
-   ![Выбор профиля издателя](media/marketplace-publishers-guide/guid-image-for-lu.png)
+1. На **странице Параметры учетной записи**выберите **добавить GUID отслеживания.**
 
-1. На **странице профиля** щелкните **Add Tracking GUID** (Добавить GUID отслеживания).
-
-   ![Выбор действия Add Tracking GUID (Добавить GUID отслеживания)](media/marketplace-publishers-guide/guid-how-to-add-tracking.png)
-
-1. В поле **Tracking GUID** (GUID отслеживания) введите созданный GUID отслеживания. Здесь идентификатор GUID вводится без префикса **pid-** . В поле **Custom Description** (Пользовательское описание) введите произвольное имя или описание предложения.
-
-   ![Страница профиля](media/marketplace-publishers-guide/guid-dev-center-login.png)
-
-   ![Ввод идентификатора GUID и описания для предложения](media/marketplace-publishers-guide/guid-dev-center-example.png)
+1. В поле **GUID** введите идентификатор GUID для отслеживания. Здесь идентификатор GUID вводится без префикса **pid-** . В поле **Описание** введите имя или описание предложения.
 
 1. Чтобы зарегистрировать дополнительный идентификатор GUID, снова щелкните **Add Tracking GUID** (Добавить GUID отслеживания). На странице появятся дополнительные поля.
 
-   ![Повторный выбор действия Add Tracking GUID (Добавить GUID отслеживания)](media/marketplace-publishers-guide/guid-dev-center-example-add.png)
-
-   ![Ввод дополнительного идентификатора GUID и описания для предложения](media/marketplace-publishers-guide/guid-dev-center-example-description.png)
-
 1. Щелкните **Сохранить**.
 
-   ![Нажатие кнопки "Сохранить"](media/marketplace-publishers-guide/guid-dev-center-save.png)
-
-После того как вы добавите GUID в шаблон или агент пользователя и зарегистрируете GUID на Портале Cloud Partner, все развертывания с ним будут отслеживаться.
 
 ## <a name="verify-the-guid-deployment"></a>Проверка развертывания GUID
 

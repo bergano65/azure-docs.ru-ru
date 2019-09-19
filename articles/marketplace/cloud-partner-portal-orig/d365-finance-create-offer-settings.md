@@ -1,45 +1,23 @@
 ---
-title: Инструкции по заполнению формы параметров предложения | Azure Marketplace
-description: Описание различных полей, которым требуются значения в виде параметров предложения, для нового приложения Dynamics 365 Business Central.
-services: Azure, Marketplace, Cloud Partner Portal,
-author: v-miclar
+title: Заполнение формы параметров предложения | Azure Marketplace
+description: Нерекомендуемая статья со ссылками на статьи для ПК; WAS "объясняет различные поля, для которых требуются значения в форме параметров предложения для нового приложения Dynamics 365 Business Central."
+services: Azure, Marketplace, Cloud Partner Portal
+author: ChJenk
 ms.service: marketplace
 ms.topic: conceptual
-ms.date: 09/17/2018
+ms.date: 09/18/2019
 ms.author: pabutler
-ms.openlocfilehash: d29b17e1a109b37a51a0e6bd2af2a7bb02b977a9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 84932d693c9c74c74095eb78e750f8d3b1452068
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64934903"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105550"
 ---
-<a name="how-to-fill-out-the-offer-settings-form"></a>Инструкции по заполнению формы параметров предложения
-=======================================
+# <a name="how-to-fill-out-the-offer-settings-form"></a>Инструкции по заполнению формы параметров предложения
 
-Форма параметров предложения является базовой для указания параметров предложения.
-Ниже описаны обязательные поля.
+[Портал Cloud Partner](https://cloudpartner.azure.com/) больше не поддерживает создание и Управление предложениями Dynamics 365 Business Central. Вместо этого эта функция была перемещена на [портал центра партнеров](https://partner.microsoft.com/)Майкрософт. Дополнительные сведения см. [в статье Создание нового предложения Dynamics 365 Business Central](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-new-business-central-offer).
 
-### <a name="offer-id"></a>Offer ID (Идентификатор предложения)
+## <a name="next-steps"></a>Следующие шаги
 
-`OfferId` — уникальный идентификатор для предложения в профиле издателя.
-Этот идентификатор будет отображаться в URL-адресах продукта. Идентификатор может содержать только строчные буквы, цифры или дефисы (-). Он не может заканчиваться дефисом, а его длина не должна превышать 50 символов. После активации предложения это поле блокируется.
-
-Если, например, партнер "Contoso" создает идентификатор предложения с именем "sample-Web App", он будет отображаться в AppSource, как приведено ниже.
-
-&emsp; `https://appsource.microsoft.com/marketplace/apps/contoso.sample-Web App?tab=Overview`
-
-
-### <a name="publisher-id"></a>Publisher ID (Идентификатор издателя)
-
-Этот раскрывающийся список позволяет выбрать профиль издателя, используемый для публикации этого предложения. После активации предложения это поле блокируется.
-
-
-### <a name="name"></a>ИМЯ
-
-Это отображаемое имя вашего приложения и предложения, которое будет отображаться в Microsoft [AppSource](https://appsource.microsoft.com/). Его длина не должна превышать 50 символов.
-
-> [!NOTE]
-> Короткое имя должно совпадать с именем издателя, которое указано в манифесте приложения.
-
-Нажмите кнопку **Сохранить**, чтобы сохранить настройки. Следующим шагом будет добавление технических сведений для вашего предложения.
+Перед созданием нового предложения Dynamics 365 Business Center необходимо ознакомиться со статьей [Создание учетной записи центра партнеров](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) , а затем открыть [панель мониторинга коммерческого рынка](https://partner.microsoft.com/dashboard/directory) с выбранной страницей **обзора** . Следуйте инструкциям в разделе [Создание нового предложения Dynamics 365 Business Central](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-new-business-central-offer) , чтобы создать предложение.

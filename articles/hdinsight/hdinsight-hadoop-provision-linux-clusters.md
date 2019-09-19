@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017,seodec18
 ms.topic: conceptual
 ms.date: 07/15/2019
-ms.openlocfilehash: 0f29df02e8242872311df3d4cb660d46bbc2cee3
-ms.sourcegitcommit: 71db032bd5680c9287a7867b923bf6471ba8f6be
+ms.openlocfilehash: cf276f3a0b14658d6c0bc10a138e814f30561cc9
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71018788"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71104502"
 ---
 # <a name="set-up-clusters-in-hdinsight-with-apache-hadoop-apache-spark-apache-kafka-and-more"></a>Установка кластеров в HDInsight с использованием Apache Hadoop, Apache Spark, Apache Kafka и других технологий
 
@@ -41,14 +41,14 @@ ms.locfileid: "71018788"
 | [Шаблоны диспетчера ресурсов Azure](hdinsight-hadoop-create-linux-clusters-arm-templates.md) |&nbsp; |✔ |&nbsp; |&nbsp; |
 
 ## <a name="quick-create-basic-cluster-setup"></a>Быстрое создание: установка базового кластера
-В этой статье приводятся пошаговые инструкции по выполнению установки на [портале Azure](https://portal.azure.com), где можно создать кластер HDInsight, выбрав *Быстрое создание* или *Пользовательский*. 
+В этой статье приводятся пошаговые инструкции по выполнению установки на [портале Azure](https://portal.azure.com), где можно создать кластер HDInsight, выбрав *Быстрое создание* или *Пользовательский*.
 
 ![hdinsight create options custom quick create](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-creation-options.png)
 
 Чтобы установить базовый кластер, следуйте инструкциям на экране. Ниже приведены сведения для следующих элементов:
 
 * [Имя группы ресурсов](#resource-group-name)
-* [Типы и конфигурация кластеров](#cluster-types) 
+* [Типы и конфигурация кластеров](#cluster-types)
 * [Имя кластера](#cluster-name)
 * [Имя входа в кластер и имя пользователя SSH](#cluster-login-and-ssh-username)
 * [Location](#location)
@@ -61,7 +61,7 @@ ms.locfileid: "71018788"
 В настоящее время Azure HDInsight предоставляет указанные ниже типы кластеров, каждый из которых имеет набор компонентов для предоставления определенных функциональных возможностей.
 
 > [!IMPORTANT]  
-> Доступны различные типы кластеров HDInsight, каждый из которых предназначен для отдельной рабочей нагрузки или технологии. Создать кластер, в котором бы объединились несколько типов, например Storm и HBase, нельзя. Если для решения нужны технологии, распределенные по нескольким типам кластеров HDInsight, [виртуальная сеть Azure](https://docs.microsoft.com/azure/virtual-network) может объединять необходимые типы кластеров. 
+> Доступны различные типы кластеров HDInsight, каждый из которых предназначен для отдельной рабочей нагрузки или технологии. Создать кластер, в котором бы объединились несколько типов, например Storm и HBase, нельзя. Если для решения нужны технологии, распределенные по нескольким типам кластеров HDInsight, [виртуальная сеть Azure](https://docs.microsoft.com/azure/virtual-network) может объединять необходимые типы кластеров.
 
 | Тип кластера | Функция |
 | --- | --- |
@@ -72,7 +72,6 @@ ms.locfileid: "71018788"
 | [Службы машинного обучения](r-server/r-server-overview.md) |Разнообразная статистика больших данных, прогнозное моделирование и возможности машинного обучения |
 | [Spark](spark/apache-spark-overview.md) |Обработка в памяти, интерактивные запросы, обработка потоков микро-пакетов |
 | [Storm](storm/apache-storm-overview.md) |Обработка событий в режиме реального времени |
-
 
 ### <a name="hdinsight-version"></a>Версия HDInsight
 Выберите версию HDInsight для этого кластера. Дополнительные сведения см. в разделе [Поддерживаемые версии HDInsight](hdinsight-component-versioning.md#supported-hdinsight-versions).
@@ -126,16 +125,15 @@ ms.locfileid: "71018788"
 > [!WARNING]  
 > Использование дополнительной учетной записи хранения, местоположение которой отличается от местоположения кластера HDInsight, не поддерживается.
 
-
 Во время настройки вы указываете контейнер BLOB-объектов в учетной записи хранения Azure или хранилище Data Lake Storage для конечной точки хранилища по умолчанию. Хранилище по умолчанию содержит журналы приложений и системный журнал. При необходимости вы можете указать дополнительные связанные учетные записи хранения Azure и учетные записи Data Lake Storage, к которым кластер может получать доступ. Кластер HDInsight должен находиться в том же расположении Azure, что и зависимые учетные записи хранения.
 
 ![Параметры системы хранения данных кластера: конечные точки хранилища, совместимого с HDFS](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-cluster-creation-storage.png)
 
 [!INCLUDE [secure-transfer-enabled-storage-account](../../includes/hdinsight-secure-transfer.md)]
 
-
 ### <a name="optional-metastores"></a>Дополнительные хранилища метаданных
-Вы можете создать дополнительные хранилища метаданных Hive или Apache Oozie. Однако не все типы кластеров поддерживают хранилища метаданных, а хранилище данных SQL Azure не совместимо с хранилищами метаданных. 
+
+Вы можете создать дополнительные хранилища метаданных Hive или Apache Oozie. Однако не все типы кластеров поддерживают хранилища метаданных, а хранилище данных SQL Azure не совместимо с хранилищами метаданных.
 
 Дополнительную информацию см. в статье [Использование внешних хранилищ метаданных в Azure HDInsight](./hdinsight-use-external-metadata-stores.md).
 
@@ -150,11 +148,10 @@ ms.locfileid: "71018788"
 
 ### <a name="oozie-metastore"></a>Хранилище метаданных Oozie
 
-Для повышения производительности Oozie используйте пользовательское хранилище метаданных. Хранилище метаданных также позволяет осуществлять доступ к данным задания Oozie после удаления кластера. 
+Для повышения производительности Oozie используйте пользовательское хранилище метаданных. Хранилище метаданных также позволяет осуществлять доступ к данным задания Oozie после удаления кластера.
 
 > [!IMPORTANT]  
 > Повторно использовать хранилище метаданных Oozie невозможно. Чтобы использовать пользовательское хранилище метаданных Oozie, при создании кластера HDInsight необходимо предоставить пустую базу данных SQL Azure.
-
 
 ## <a name="custom-cluster-setup"></a>Пользовательская установка кластера
 Пользовательская установка кластера основана на параметрах быстрого создания, к которым добавляются следующие параметры:
@@ -163,14 +160,14 @@ ms.locfileid: "71018788"
 - [Размер кластера](#configure-cluster-size)
 - [Действия скриптов](#advanced-settings-script-actions)
 - [Виртуальная сеть](#advanced-settings-extend-clusters-with-a-virtual-network)
- 
+
 ## <a name="enterprise-security-package"></a>Пакет безопасности корпоративного уровня
 
 Для кластеров типа Hadoop, Spark, HBase, Kafka и Interactive Query вы можете включить **Корпоративный пакет безопасности**. Этот пакет содержит параметр для более безопасной настройки кластера с помощью Apache Ranger и интеграции с Azure Active Directory. Дополнительные сведения см. [в статье обзор корпоративной безопасности в Azure HDInsight](./domain-joined/hdinsight-security-overview.md).
 
 ![hdinsight create options choose enterprise security package](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-creation-enterprise-security-package.png)
 
-Дополнительные сведения о создании присоединенного к домену кластера HDInsight см. в статье о [создании присоединенной к домену среды песочницы HDInsight](./domain-joined/apache-domain-joined-configure.md). 
+Дополнительные сведения о создании присоединенного к домену кластера HDInsight см. в статье о [создании присоединенной к домену среды песочницы HDInsight](./domain-joined/apache-domain-joined-configure.md).
 
 ## <a name="install-hdinsight-applications-on-clusters"></a>Установка приложений HDInsight в кластерах
 
@@ -183,38 +180,40 @@ ms.locfileid: "71018788"
 Плата за использование узлов взимается, пока существует кластер. Начисление оплаты начинается после создания кластера и прекращается только после его удаления. Перевести кластер в режим ожидания или отменить его выделение невозможно.
 
 ### <a name="number-of-nodes-for-each-cluster-type"></a>Количество узлов для каждого типа кластера
+
 Для каждого типа кластера используется своя терминология. Кроме того, типы отличаются количеством узлов и стандартными размерами виртуальных машин. В следующей таблице число узлов каждого типа указано в скобках.
 
 | Тип | Nodes | Схема |
 | --- | --- | --- |
 | Hadoop |Головной узел (2), Рабочий узел (1 +) |![Узлы кластера HDInsight Hadoop](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-hadoop-cluster-type-nodes.png) |
-| Hbase |Головной сервер (2), региональный сервер (от 1), основной узел или узел Zookeeper (3) |![Узлы кластера HDInsight HBase](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-hbase-cluster-type-setup.png) |
-| Storm |Узел Nimbus (2), сервер супервизора (от 1), узел Zookeeper (3) |![Узлы кластера HDInsight Storm](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-storm-cluster-type-setup.png) |
-| Spark |Головной узел (2), Рабочий узел (1 +), узел ZooKeeper (3) (бесплатно для размера виртуальной машины a1 ZooKeeper) |![Узлы кластера HDInsight Spark](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-spark-cluster-type-setup.png) |
+| Hbase |Головной сервер (2), региональный сервер (от 1), основной узел или узел Zookeeper (3) |![Установка типа кластера HDInsight HBase](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-hbase-cluster-type-setup.png) |
+| Storm |Узел Nimbus (2), сервер супервизора (от 1), узел Zookeeper (3) |![Установка типа кластера HDInsight](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-storm-cluster-type-setup.png) |
+| Spark |Головной узел (2), Рабочий узел (1 +), узел ZooKeeper (3) (бесплатно для размера виртуальной машины a1 ZooKeeper) |![Установка типа кластера HDInsight Spark](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-spark-cluster-type-setup.png) |
 
 Дополнительные сведения см. в разделе [Конфигурация узлов и размеры виртуальных машин по умолчанию для кластеров](hdinsight-component-versioning.md#default-node-configuration-and-virtual-machine-sizes-for-clusters) статьи "Что представляют собой компоненты и версии Hadoop, доступные в HDInsight?"
 
-Затраты на кластеры HDInsight определяются числом узлов и размерами виртуальных машин на узлах. 
+Затраты на кластеры HDInsight определяются числом узлов и размерами виртуальных машин на узлах.
 
 Кластеры разных типов отличаются типами, количеством и размерами узлов.
-* Тип кластера Hadoop по умолчанию: 
+* Тип кластера Hadoop по умолчанию:
     * два *головных узла*;  
     * Четыре *рабочих узла*
-* Тип кластера Storm по умолчанию: 
+* Тип кластера Storm по умолчанию:
     * два *узла Nimbus*;
     * три *узла ZooKeeper*;
-    * четыре *узла супервизора*. 
+    * четыре *узла супервизора*.
 
 Если вы только используете HDInsight, мы рекомендуем использовать один рабочий узел. Подробные сведения о ценах на HDInsight см. на [этой странице](https://go.microsoft.com/fwLink/?LinkID=282635&clcid=0x409).
 
 > [!NOTE]  
 > Максимальный размер кластера зависит от подписки Azure. Чтобы увеличить лимит, обратитесь в [службу поддержки по вопросам выставления счетов Azure](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request).
 
-При настройке кластера на портале Azure размер узла можно выбрать в колонке **Ценовые категории узлов**. На портале также отображаются расценки на узлы разных размеров. 
+При настройке кластера на портале Azure размер узла можно выбрать в колонке **Ценовые категории узлов**. На портале также отображаются расценки на узлы разных размеров.
 
-![Размеры узла виртуальной машины HDInsight](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-node-sizes.png)
+![HDInsight выберите размер узла](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-node-sizes.png)
 
-### <a name="virtual-machine-sizes"></a>Размер виртуальных машин 
+### <a name="virtual-machine-sizes"></a>Размеры виртуальных машин 
+
 При развертывании кластеров выберите вычислительные ресурсы в зависимости от решения, которое планируется развернуть. Для кластеров HDInsight используются следующие виртуальные машины:
 * виртуальные машины серий A и D1–4: [размеры виртуальных машин Linux общего назначения](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-general);
 * виртуальные машины серии D11–14: [размеры виртуальных машин, оптимизированных для памяти](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-memory).
@@ -224,7 +223,7 @@ ms.locfileid: "71018788"
 > [!IMPORTANT]  
 > Если в кластере требуется более 32 рабочих узлов, необходимо выбрать размер головного узла с по крайней мере 8 ядрами и 14 ГБ ОЗУ.
 
-Дополнительные сведения см. в разделе [Размеры виртуальных машин](../virtual-machines/windows/sizes.md). Сведения о расценках на разные размеры см. [здесь](https://azure.microsoft.com/pricing/details/hdinsight).   
+Дополнительные сведения см. в разделе [Размеры виртуальных машин](../virtual-machines/windows/sizes.md). Сведения о расценках на разные размеры см. [здесь](https://azure.microsoft.com/pricing/details/hdinsight).
 
 ## <a name="advanced-settings-script-actions"></a>Расширенные параметры. Действия скрипта
 
@@ -258,12 +257,12 @@ ms.locfileid: "71018788"
 Подробные сведения см. в статье [Настройка кластеров HDInsight с помощью начальной загрузки](hdinsight-hadoop-customize-cluster-bootstrap.md).
 
 ## <a name="advanced-settings-extend-clusters-with-a-virtual-network"></a>Расширенные параметры. Расширение кластеров с помощью виртуальной сети
+
 Если для решения нужны технологии, распределенные по нескольким типам кластеров HDInsight, [виртуальная сеть Azure](https://docs.microsoft.com/azure/virtual-network) может объединять необходимые типы кластеров. Благодаря такой конфигурации кластеры и любой развернутый в них код могут взаимодействовать друг с другом напрямую.
 
 Дополнительные сведения об использовании виртуальной сети Azure с HDInsight см. в статье [планирование виртуальной сети для hdinsight](hdinsight-plan-virtual-network-deployment.md).
 
 Пример использования двух типов кластера в виртуальной сети Azure см. в статье об [использовании структурированного потока Apache Spark при помощи Apache Kafka](hdinsight-apache-kafka-spark-structured-streaming.md). Дополнительные сведения об использовании HDInsight с виртуальной сетью, включая конкретные требования к конфигурации для виртуальной сети, см. в статье [планирование виртуальной сети для HDInsight](hdinsight-plan-virtual-network-deployment.md).
-
 
 ## <a name="next-steps"></a>Следующие шаги
 

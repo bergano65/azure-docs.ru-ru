@@ -6,12 +6,12 @@ ms.service: load-balancer
 ms.topic: article
 ms.date: 09/17/2019
 ms.author: allensu
-ms.openlocfilehash: 9cf15595270e0a0040e565be8319c13e3f5da306
-ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
-ms.translationtype: HT
+ms.openlocfilehash: eda0d6e8fe56b985c3b29fa80cee880444d63741
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/18/2019
-ms.locfileid: "71092226"
+ms.locfileid: "71105290"
 ---
 # <a name="move-azure-external-load-balancer-to-another-region-using-the-azure-portal"></a>Перемещение внешних Load Balancer Azure в другой регион с помощью портал Azure
 
@@ -179,7 +179,7 @@ ms.locfileid: "71092226"
 
     ```
 
-6.  Чтобы изменить значение целевого общедоступного IP-адреса, который был перемещен выше, сначала необходимо получить идентификатор ресурса, а затем скопировать и вставить его в файл **примечанием. JSON** .  Чтобы получить идентификатор:
+6.  Чтобы изменить значение целевого общедоступного IP-адреса, который был перемещен выше, сначала необходимо получить идентификатор ресурса, а затем скопировать и вставить его в файл **Parameters. JSON** . Чтобы получить идентификатор:
     
     1. Войдите в [портал Azure](http://portal.azure.com) > **группы ресурсов** на другой вкладке или в окне браузера.
     2. Выберите целевую группу ресурсов, содержащую перемещенный общедоступный IP-адрес, из описанных выше действий и щелкните его.
@@ -187,19 +187,19 @@ ms.locfileid: "71092226"
     4. В колонке справа выделите **идентификатор ресурса** и скопируйте его в буфер обмена.  Кроме того, можно щелкнуть кнопку **Копировать в буфер обмена** справа от параметра путь к **идентификатору ресурса** .
     5. Вставьте идентификатор ресурса в свойство **значение** в редакторе редактор **параметров** открыть в другом окне браузера или на вкладке:
 
-    ```json
-       ```json
-       "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
-       "contentVersion": "1.0.0.0",
-       "parameters": {
-          "loadBalancers_myLoadbalancer_ext_name": {
-          "value": "<target-external-lb-name>"
-    },
-          "publicIPAddresses_myPubIP_in_externalid": {
-          "value": "<target-publicIP-resource-ID>"
-    },
+        ```json
+           ```json
+           "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+           "contentVersion": "1.0.0.0",
+           "parameters": {
+              "loadBalancers_myLoadbalancer_ext_name": {
+              "value": "<target-external-lb-name>"
+        },
+              "publicIPAddresses_myPubIP_in_externalid": {
+              "value": "<target-publicIP-resource-ID>"
+        },
 
-    ```
+        ```
     6. Нажмите кнопку **сохранить** в интерактивном редакторе.
    
 

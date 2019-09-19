@@ -5,14 +5,14 @@ services: vpn-gateway
 author: yushwang
 ms.service: vpn-gateway
 ms.topic: article
-ms.date: 09/06/2019
+ms.date: 09/18/2019
 ms.author: yushwang
-ms.openlocfilehash: b61b1acee3b60aa33fbdef7f639cb2d2ec2c177d
-ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
+ms.openlocfilehash: c7d7fcc16fe10c1d4cd4b0dfb6d60575b98212b1
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70968343"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105599"
 ---
 # <a name="about-vpn-devices-and-ipsecike-parameters-for-site-to-site-vpn-gateway-connections"></a>VPN-устройства и параметры IPsec/IKE для подключений типа "сеть — сеть" через VPN-шлюз
 
@@ -60,10 +60,11 @@ ms.locfileid: "70968343"
 | Майкрософт |Служба маршрутизации и удаленного доступа |Windows Server 2012 |Не совместимо |Поддерживается |
 | Open Systems AG |Шлюз безопасности Mission Control |Н/Д |[Руководство по настройке](https://www.open.ch/_pdf/Azure/AzureVPNSetup_Installation_Guide.pdf) |Не совместимо |
 | Palo Alto Networks |Все устройства под управлением PAN-OS |PAN-OS<br>PolicyBased: 6.1.5 или более поздней версии<br>RouteBased: 7.1.4 |Поддерживается |[Руководство по настройке](https://knowledgebase.paloaltonetworks.com/KCSArticleDetail?id=kA10g000000Cm6WCAS) |
+| Сентриум (разработчик) | вйос | Вйос 1.2.2 | (не протестировано) | [Руководству по настройке](https://vyos.readthedocs.io/en/latest/appendix/examples/azure-vpn-bgp.html)|
 | ShareTech | UTM нового поколения (серия NU) | 9.0.1.3 | Не совместимо | [Руководство по настройке](http://www.sharetech.com.tw/images/file/Solution/NU_UTM/S2S_VPN_with_Azure_Route_Based_en.pdf) |
 | SonicWall |Серия TZ и NSA<br>Серия SuperMassive<br>Серия NSA класса E |SonicOS 5.8.x<br>SonicOS 5.9.x<br>SonicOS 6.x |Не совместимо |[Руководство по настройке](https://www.sonicwall.com/support/knowledge-base/170505320011694) |
 | Sophos | Брандмауэр следующего поколения XG | XG версии 17 | (не протестировано) | [Руководство по настройке](https://community.sophos.com/kb/127546)<br><br>[Руководство по настройке нескольких SA](https://community.sophos.com/kb/en-us/133154) |
-| синологи | MR2200ac <br>RT2600ac <br>RT1900ac | СРМ 1.1.5/Впнплуссервер-1.2.0 | (не протестировано) | [Руководству по настройке](https://www.synology.com/en-global/knowledgebase/SRM/tutorial/VPN/How_to_set_up_Site_to_Site_VPN_between_Synology_Router_and_MS_Azure) |
+| синологи | MR2200ac <br>RT2600ac <br>RT1900ac | СРМ 1.1.5/Впнплуссервер-1.2.0 | (не протестировано) | [Руководство по настройке](https://www.synology.com/en-global/knowledgebase/SRM/tutorial/VPN/How_to_set_up_Site_to_Site_VPN_between_Synology_Router_and_MS_Azure) |
 | Ubiquiti | EdgeRouter | EdgeOS v1.10 | (не протестировано) | [BGP через IKEv2 или IPsec](https://help.ubnt.com/hc/en-us/articles/115012374708)<br><br>[VTI через IKEv2 или IPsec](https://help.ubnt.com/hc/en-us/articles/115012305347)
 | WatchGuard |Все |Fireware XTM<br> PolicyBased: 11.11.x<br>RouteBased: 11.12.x |[Руководство по настройке](http://watchguardsupport.force.com/publicKB?type=KBArticle&SFDCID=kA2F00000000LI7KAM&lang=en_US) |[Руководство по настройке](http://watchguardsupport.force.com/publicKB?type=KBArticle&SFDCID=kA22A000000XZogSAG&lang=en_US)|
 | зиксел |Серия Зивалл УНИВЕРСАЛЬНУЮ<br>Серия Зивалл ATP<br>Серия VPN Зивалл | ЗЛД v 4.32 + | (не протестировано) | [VTI через IKEv2 или IPsec](https://businessforum.zyxel.com/discussion/2648/)<br>[BGP через IKEv2 или IPsec](https://businessforum.zyxel.com/discussion/2650/)|

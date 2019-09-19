@@ -6,26 +6,29 @@ manager: nitinme
 description: Параметры для всех контейнеров Cognitive Services "
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 7/24/2019
+ms.date: 09/18/2019
 ms.author: dapine
-ms.openlocfilehash: 636a41fde345a08db1549e53626522962f9cf74f
-ms.sourcegitcommit: bafb70af41ad1326adf3b7f8db50493e20a64926
+ms.openlocfilehash: 06f68d28d06dec7c9e738ad8cb50ca337fa840be
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68488769"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71102007"
 ---
 ## <a name="gathering-required-parameters"></a>Идет сбор обязательных параметров
 
-Есть три основных параметра для всех обязательных контейнеров Cognitive Services ". Лицензионное соглашение должно быть установлено созначением `accept`. Кроме того, требуются URL-адрес конечной точки и ключ API.
+Есть три основных параметра для всех обязательных контейнеров Cognitive Services ". Лицензионное соглашение должно быть установлено со значением `accept`. Кроме того, требуются URL-адрес конечной точки и ключ API.
 
-### <a name="endpoint-uri-endpointuri"></a>URI конечной точки`{Endpoint_URI}`
+> [!NOTE]
+> Единственным исключением из этих трех обязательных параметров является то, что контейнеры считаются "автономными" контейнерами. Автономные контейнеры не сообщают об использовании, не измеряются и соответствуют разным методам выставления счетов.
+
+### <a name="endpoint-uri-endpoint_uri"></a>URI конечной точки`{ENDPOINT_URI}`
 
 Значение URI **конечной точки** доступно на странице *обзора* портал Azure соответствующего ресурса службы. Перейдите на страницу *обзора* , наведите указатель мыши на конечную точку `Copy to clipboard` , и появится <span class="docon docon-edit-copy x-hidden-focus"></span> значок. Копирование и использование при необходимости.
 
 ![Сбор URI конечной точки для последующего использования](../media/overview-endpoint-uri.png)
 
-### <a name="keys-apikey"></a>Ключ`{API_Key}`
+### <a name="keys-api_key"></a>Ключ`{API_KEY}`
 
 Этот ключ используется для запуска контейнера и доступен на странице ключей портал Azure соответствующего ресурса службы. Перейдите на страницу *ключи* и щелкните `Copy to clipboard` <span class="docon docon-edit-copy x-hidden-focus"></span> значок.
 

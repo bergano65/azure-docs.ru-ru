@@ -8,16 +8,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: anomaly-detector
 ms.topic: conceptual
-ms.date: 06/19/2019
+ms.date: 09/18/2019
 ms.author: dapine
-ms.openlocfilehash: a2f743b2b7e63df8b81a1024b20e3e27a3f247a9
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 4a961080bc124e53a8c5fe4dcc5f3cd6f21e9e5c
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68932990"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71102574"
 ---
-# <a name="configure-anomaly-detector-containers"></a>Настройка контейнеров детекторов аномалий
+# <a name="configure-anomaly-detector-containers"></a>Настройка контейнеров Детектора аномалий
 
 Среда выполнения контейнера детектора аномалий настраивается с `docker run` помощью аргументов команды. Контейнер поддерживает несколько обязательных и несколько необязательных параметров. Доступны несколько [примеров](#example-docker-run-commands) этой команды. Для конкретного контейнера настраиваются входные параметры выставления счетов. 
 
@@ -61,7 +61,7 @@ ms.locfileid: "68932990"
 
 |Обязательное значение| Название | Тип данных | Описание |
 |--|------|-----------|-------------|
-|Да| `Billing` | Строковое | URI конечной точки выставления счетов<br><br>Пример<br>`Billing=https://westus2.api.cognitive.microsoft.com` |
+|Да| `Billing` | Строковое | URI конечной точки выставления счетов<br><br>Пример:<br>`Billing=https://westus2.api.cognitive.microsoft.com` |
 
 ## <a name="eula-setting"></a>Параметр Eula
 
@@ -91,7 +91,7 @@ ms.locfileid: "68932990"
 |Необязательный| Название | Тип данных | Описание |
 |-------|------|-----------|-------------|
 |Не разрешено| `Input` | Строковое | В контейнерах детекторов аномалий это не используется.|
-|Необязательный| `Output` | Строковое | Цель выходного подключения. Значение по умолчанию — `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример<br>`--mount type=bind,src=c:\output,target=/output`|
+|Необязательный| `Output` | Строковое | Цель выходного подключения. Значение по умолчанию — `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример:<br>`--mount type=bind,src=c:\output,target=/output`|
 
 ## <a name="example-docker-run-commands"></a>Примеры команд docker run 
 
@@ -104,8 +104,10 @@ ms.locfileid: "68932990"
 
 | Местозаполнитель | Значение | Формат или пример |
 |-------------|-------|---|
-|{API_KEY} | Ключ конечной точки ресурса детектор аномалий. |xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|
-|{ENDPOINT_URI} | Количество выставленных счетов за конечную точку, включая регион.|`https://westus2.api.cognitive.microsoft.com`|
+| **{API_KEY}** | Ключ `Anomaly Detector` конечной точки ресурса на странице ключей Azure `Anomaly Detector` . | `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx` |
+| **{ENDPOINT_URI}** | Значение конечной точки выставления счетов доступно на странице `Anomaly Detector` обзора Azure.| См. раздел [сбор обязательных параметров](anomaly-detector-container-howto.md#gathering-required-parameters) для явных примеров. |
+
+[!INCLUDE [subdomains-note](../../../includes/cognitive-services-custom-subdomains-note.md)]
 
 > [!IMPORTANT]
 > Для запуска контейнера необходимо указать параметры `Eula`, `Billing` и `ApiKey`. В противном случае контейнер не запустится.  Дополнительные сведения см. в [разделе о выставлении счетов](anomaly-detector-container-howto.md#billing).

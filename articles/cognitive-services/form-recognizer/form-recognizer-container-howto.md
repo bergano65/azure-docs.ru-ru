@@ -7,14 +7,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: forms-recognizer
 ms.topic: conceptual
-ms.date: 08/29/2019
+ms.date: 09/18/2019
 ms.author: dapine
-ms.openlocfilehash: 25ea4c96a0e392db2af9c25a150696ca2b25b2dd
-ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
+ms.openlocfilehash: c58f8ae0605f99952507a5f308316f784b3d8de1
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70164537"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105144"
 ---
 # <a name="install-and-run-form-recognizer-containers"></a>Установка и запуск контейнеров Распознавателя документов
 
@@ -37,8 +37,27 @@ ms.locfileid: "70164537"
 |Модуль Docker| На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду Docker в ОС [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> В ОС Windows для Docker нужно также настроить поддержку контейнеров Linux.<br><br>|
 |Опыт работы с Docker | Требуется базовое представление о понятиях Docker, таких как реестры, репозитории, контейнеры и образы контейнеров, а также знание основных команд `docker`.|
 |Интерфейс командной строки Azure| Установите в узле [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).|
-|Ресурс API Компьютерного зрения| Для обработки отсканированных документов и изображений требуется API Компьютерного зрения. Функция "Распознавание текста" доступна либо в виде ресурса Azure (REST API или пакет SDK), либо в виде [контейнера](../Computer-vision/computer-vision-how-to-install-containers.md##get-the-container-image-with-docker-pull) *cognitive-services-recognize-text*. Взымается обычная плата. <br><br>Передайте ключ API и конечные точки для ресурса Компьютерное зрение (облако Azure или контейнер Cognitive Services). Используйте этот ключ API и конечную точку как **{COMPUTER_VISION_API_KEY}** и **{COMPUTER_VISION_ENDPOINT_URI}** .<br><br> Если вы используете контейнер *cognitive-services-recognize-text*, проверьте следующее:<br><br>Ваш ключ Компьютерного зрения для контейнера Распознавателя документов — это ключ, указанный в команде `docker run` Компьютерного зрения для контейнера *cognitive-services-recognize-text*.<br>Ваша конечная точка выставления счетов — это конечная точка контейнера, например `http://localhost:5000`. При совместном использовании контейнеров Компьютерного зрения и Распознавателя документов в одному узле их нельзя одновременно запустить с помощью порта *5000*, заданного по умолчанию.  |
+|Ресурс API Компьютерного зрения| Для обработки отсканированных документов и изображений требуется API Компьютерного зрения. Функция "Распознавание текста" доступна либо в виде ресурса Azure (REST API или пакет SDK), либо в виде [контейнера](../Computer-vision/computer-vision-how-to-install-containers.md##get-the-container-image-with-docker-pull) *cognitive-services-recognize-text*. Взымается обычная плата. <br><br>Передайте ключ API и конечные точки для ресурса Компьютерное зрение (облако Azure или контейнер Cognitive Services). Используйте этот ключ API и конечную точку как **{COMPUTER_VISION_API_KEY}** и **{COMPUTER_VISION_ENDPOINT_URI}** .<br><br> Если вы используете контейнер *cognitive-services-recognize-text*, проверьте следующее:<br><br>Ваш ключ Компьютерного зрения для контейнера Распознавателя документов — это ключ, указанный в команде `docker run` Компьютерного зрения для контейнера *cognitive-services-recognize-text*.<br>Ваша конечная точка выставления счетов — это конечная точка контейнера, например `http://localhost:5000`. При совместном использовании контейнеров Компьютерного зрения и Распознавателя документов в одному узле их нельзя одновременно запустить с помощью порта *5000*, заданного по умолчанию. |
 |Ресурс Распознавателя документов |Для использования контейнеров необходимо следующее:<br><br>Ресурс **распознавателя форм** Azure для получения соответствующего ключа API и URI конечной точки. Оба значения доступны на странице Обзор **распознавателя форм** портал Azure и на страницах ключей, и оба значения необходимы для запуска контейнера.<br><br>**{FORM_RECOGNIZER_API_KEY}** : Один из двух доступных ключей ресурсов на странице "ключи"<br><br>**{FORM_RECOGNIZER_ENDPOINT_URI}** : Конечная точка, указанная на странице обзора|
+
+## <a name="gathering-required-parameters"></a>Идет сбор обязательных параметров
+
+Есть три основных параметра для всех обязательных контейнеров Cognitive Services ". Лицензионное соглашение должно быть установлено со значением `accept`. Кроме того, требуются URL-адрес конечной точки и ключ API.
+
+### <a name="endpoint-uri-computer_vision_endpoint_uri-and-form_recognizer_endpoint_uri"></a>URI `{COMPUTER_VISION_ENDPOINT_URI}` конечной точки и`{FORM_RECOGNIZER_ENDPOINT_URI}`
+
+Значение URI **конечной точки** доступно на странице *обзора* портал Azure соответствующего ресурса службы. Перейдите на страницу *обзора* , наведите указатель мыши на конечную точку `Copy to clipboard` , и появится <span class="docon docon-edit-copy x-hidden-focus"></span> значок. Копирование и использование при необходимости.
+
+![Сбор URI конечной точки для последующего использования](../containers/media/overview-endpoint-uri.png)
+
+### <a name="keys-computer_vision_api_key-and-form_recognizer_api_key"></a>Ключи `{COMPUTER_VISION_API_KEY}` и`{FORM_RECOGNIZER_API_KEY}`
+
+Этот ключ используется для запуска контейнера и доступен на странице ключей портал Azure соответствующего ресурса службы. Перейдите на страницу *ключи* и щелкните `Copy to clipboard` <span class="docon docon-edit-copy x-hidden-focus"></span> значок.
+
+![Получите один из двух ключей для последующего использования](../containers/media/keys-copy-api-key.png)
+
+> [!IMPORTANT]
+> Эти ключи подписки используются для доступа к API-интерфейсу для работы со службой. Не предоставляйте общий доступ к ключам. Храните их безопасно, например, с помощью Azure Key Vault. Мы также советуем регулярно создавать эти ключи. Для вызова API требуется только один ключ. При повторном создании первого ключа можно использовать второй ключ для постоянного доступа к службе.
 
 ## <a name="request-access-to-the-container-registry"></a>Запрос доступа к реестру контейнеров
 
@@ -108,16 +127,9 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-recognize-t
 
 ## <a name="run-the-container-by-using-the-docker-run-command"></a>Команда docker run, выполняющая запуск контейнера
 
-Воспользуйтесь командой [docker run](https://docs.docker.com/engine/reference/commandline/run/) для запуска любого из трех контейнеров. В команде используются следующие параметры:
+Воспользуйтесь командой [docker run](https://docs.docker.com/engine/reference/commandline/run/) для запуска контейнера. Дополнительные сведения о получении `{COMPUTER_VISION_ENDPOINT_URI}` `{FORM_RECOGNIZER_ENDPOINT_URI}` значений, `{COMPUTER_VISION_API_KEY}`и `{FORM_RECOGNIZER_API_KEY}` см. в разделе [сбор обязательных параметров](#gathering-required-parameters) .
 
-| Местозаполнитель | Значение |
-|-------------|-------|
-|{FORM_RECOGNIZER_API_KEY} | Этот ключ используется для запуска контейнера. Ключ можно найти на странице **ключей Распознавателя документов** на портале Azure.  |
-|{FORM_RECOGNIZER_ENDPOINT_URI} | Значение URI конечной точки выставления счетов доступно на странице **общих сведений о Распознавателе документов** на портале Azure.|
-|{COMPUTER_VISION_API_KEY}| Ключ можно найти на странице **ключей API Компьютерного зрения** на портале Azure.|
-|{COMPUTER_VISION_ENDPOINT_URI}|Конечная точка выставления счетов. При использовании облачного ресурса Компьютерного зрения значение URI доступно на странице **общих сведений об API "Компьютерное зрение"** на портале Azure. При использовании контейнера `cognitive-services-recognize-text` URL-адрес конечной точки выставления счетов можно получить в контейнере с помощью команды `docker run`.|
-
-В следующем примере команды `docker run` замените имена параметров собственными значениями.
+[Доступны примеры](form-recognizer-container-configuration.md#example-docker-run-commands) `docker run` команд.
 
 ### <a name="form-recognizer"></a>Распознаватель документов
 

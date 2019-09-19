@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 07/02/2019
+ms.date: 09/18/2019
 ms.author: dapine
-ms.openlocfilehash: d05f98ae695dd428a28ce49934e05c60de6328bc
-ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
+ms.openlocfilehash: 9d1a6ab698ceb6ac1c0a4fc635b5a8fe1e68b0c6
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70257046"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71102043"
 ---
 # <a name="install-and-run-luis-docker-containers"></a>Установка и запуск контейнеров Docker в LUIS
  
@@ -37,6 +37,8 @@ ms.locfileid: "70257046"
 |Модуль Docker| На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду Docker в ОС [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> **В ОС Windows** для Docker нужно также настроить поддержку контейнеров Linux.<br><br>|
 |Опыт работы с Docker | Требуется базовое представление о понятиях Docker, включая реестры, репозитории, контейнеры и образы контейнеров, а также знание основных команд `docker`.| 
 |Ресурс `Cognitive Services` Azure и файл [упакованного приложения](luis-how-to-start-new-app.md#export-app-for-containers) Luis |Для использования контейнера необходимо следующее:<br><br>* Ресурс Azure _Cognitive Services_ и соответствующий ключ выставления счетов URI конечной точки выставления счетов. Оба значения доступны на страницах обзора и ключей для ресурса и необходимы для запуска контейнера. Необходимо добавить `luis/v2.0` маршрутизацию к универсальному коду ресурса (URI) конечной точки, как показано в следующем примере BILLING_ENDPOINT_URI. <br>* Обученное или опубликованное приложение, упакованное в виде подключенных входных данных к контейнеру со связанным идентификатором приложения. Пакетный файл можно получить на портале LUIS или в API-интерфейсах разработки. Если вы получаете упакованное приложение LUIS из API- [интерфейсов разработки](#authoring-apis-for-package-file), вам также потребуется ваш _ключ разработки_.<br><br>Эти требования используются для передачи аргументов командной строки в следующие переменные:<br><br>**{AUTHORING_KEY}** . Этот ключ используется для получения упакованного приложения из службы LUIS в облаке и отправки журналов запросов обратно в облако. Формат — `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`.<br><br>**{APPLICATION_ID}** . Этот идентификатор используется для выбора приложения. Формат — `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`.<br><br>**{API_KEY}** : Этот ключ используется для запуска контейнера. Ключ конечной точки можно найти в двух местах: Первый — это портал Azure в списке ключей ресурса _Cognitive Services_ . а также на портале LUIS на странице параметров ключей и конечных точек. Не используйте ключ starter.<br><br>**{ENDPOINT_URI}** : Конечная точка, указанная на странице обзора.<br><br>[Ключ разработки и ключ конечной точки](luis-boundaries.md#key-limits) служат для разных целей. Не используйте их как взаимозаменяемые. |
+
+[!INCLUDE [Gathering required container parameters](../containers/includes/container-gathering-required-parameters.md)]
 
 ### <a name="authoring-apis-for-package-file"></a>Создание API-интерфейсов для файла пакета
 
@@ -75,7 +77,6 @@ docker pull mcr.microsoft.com/azure-cognitive-services/luis:latest
 Полное описание доступных тегов, таких как `latest` из предыдущей команды, см. в разделе [LUIS](https://go.microsoft.com/fwlink/?linkid=2043204) на сайте Docker Hub.
 
 [!INCLUDE [Tip for using docker list](../../../includes/cognitive-services-containers-docker-list-tip.md)]
-
 
 ## <a name="how-to-use-the-container"></a>Использование контейнера
 
@@ -121,7 +122,7 @@ docker pull mcr.microsoft.com/azure-cognitive-services/luis:latest
 
 |Требования к упаковке|Подробнее|
 |--|--|
-|Экземпляр ресурса _Cognitive Services_ Azure|Поддерживаемые регионы:<br><br>Западная часть США (```westus```)<br>Западная Европа (```westeurope```)<br>Восточная Австралия (```australiaeast```)|
+|Экземпляр ресурса _Cognitive Services_ Azure|Поддерживаемые регионы:<br><br>Западная часть США (`westus`)<br>Западная Европа (`westeurope`)<br>Восточная Австралия (`australiaeast`)|
 |Обученное или опубликованное приложение LUIS|Без [неподдерживаемых зависимостей](#unsupported-dependencies). |
 |Доступ к файловой системе [главного компьютера](#the-host-computer) |Главный компьютер должен разрешать [входные подключения](luis-container-configuration.md#mount-settings).|
   
@@ -157,7 +158,6 @@ docker pull mcr.microsoft.com/azure-cognitive-services/luis:latest
 
 ![Экспорт обученного пакета для контейнера из меню экспорта на странице версий](./media/luis-container-how-to/export-trained-package-for-container.png)
 
-
 ### <a name="export-published-apps-package-from-api"></a>Экспорт пакета опубликованного приложения из API
 
 Воспользуйтесь следующим методом REST API, чтобы упаковать приложение LUIS, которое уже [опубликовано](luis-how-to-publish-app.md). Замените заполнители в вызове API собственными соответствующими значениями, используя таблицу, приведенную под спецификацией HTTP.
@@ -171,9 +171,9 @@ Ocp-Apim-Subscription-Key: {AUTHORING_KEY}
 | Местозаполнитель | Значение |
 |-------------|-------|
 |{APPLICATION_ID} | Идентификатор опубликованного приложения LUIS. |
-|{APPLICATION_ENVIRONMENT} | Среда опубликованного приложения LUIS. Используйте одно из следующих значений:<br/>```PRODUCTION```<br/>```STAGING``` |
+|{APPLICATION_ENVIRONMENT} | Среда опубликованного приложения LUIS. Используйте одно из следующих значений:<br/>`PRODUCTION`<br/>`STAGING` |
 |{AUTHORING_KEY} | Ключ разработки учетной записи LUIS для опубликованного приложения LUIS.<br/>Ключ разработки можно получить на странице **User Settings** (Параметры пользователя) на портале LUIS. |
-|{AZURE_REGION} | Соответствующий регион Azure:<br/><br/>```westus``` — западная часть США<br/>```westeurope``` — Западная Европа<br/>```australiaeast``` — Восточная Австралия |
+|{AZURE_REGION} | Соответствующий регион Azure:<br/><br/>`westus` — западная часть США<br/>`westeurope` — Западная Европа<br/>`australiaeast` — Восточная Австралия |
 
 Чтобы скачать опубликованный пакет, обратитесь к [документации по API здесь][download-published-package]. Если загрузка успешно завершена, ответ представляет собой файл пакета LUIS. Сохраните файл в месте хранения, указанном для входного подключения контейнера. 
 
@@ -192,20 +192,15 @@ Ocp-Apim-Subscription-Key: {AUTHORING_KEY}
 |{APPLICATION_ID} | Идентификатор обученного приложения LUIS. |
 |{APPLICATION_VERSION} | Версия обученного приложения LUIS. |
 |{AUTHORING_KEY} | Ключ разработки учетной записи LUIS для опубликованного приложения LUIS.<br/>Ключ разработки можно получить на странице **User Settings** (Параметры пользователя) на портале LUIS.  |
-|{AZURE_REGION} | Соответствующий регион Azure:<br/><br/>```westus``` — западная часть США<br/>```westeurope``` — Западная Европа<br/>```australiaeast``` — Восточная Австралия |
+|{AZURE_REGION} | Соответствующий регион Azure:<br/><br/>`westus` — западная часть США<br/>`westeurope` — Западная Европа<br/>`australiaeast` — Восточная Австралия |
 
 Чтобы скачать обученный пакет, обратитесь к [документации по API здесь][download-trained-package]. Если загрузка успешно завершена, ответ представляет собой файл пакета LUIS. Сохраните файл в месте хранения, указанном для входного подключения контейнера. 
 
 ## <a name="run-the-container-with-docker-run"></a>Запуск контейнера с помощью команды `docker run`
 
-Воспользуйтесь командой [docker run](https://docs.docker.com/engine/reference/commandline/run/) для запуска контейнера. В команде используются следующие параметры:
+Воспользуйтесь командой [docker run](https://docs.docker.com/engine/reference/commandline/run/) для запуска контейнера. Дополнительные сведения о том, как получить значения и `{API_KEY}` , `{ENDPOINT_URI}` см. в разделе [сбор обязательных параметров](#gathering-required-parameters) .
 
-| Местозаполнитель | Значение |
-|-------------|-------|
-|{API_KEY} | Этот ключ используется для запуска контейнера. Не используйте ключ starter. |
-|{ENDPOINT_URI} | Значение конечной точки доступно на странице `Cognitive Services` обзора портал Azure. |
-
-В следующем примере команды `docker run` замените имена параметров собственными значениями. Выполните команду в консоли Windows.
+[Доступны примеры](luis-container-configuration.md#example-docker-run-commands) `docker run` команд.
 
 ```console
 docker run --rm -it -p 5000:5000 ^
@@ -226,10 +221,10 @@ ApiKey={API_KEY}
 Эта команда:
 
 * запускает контейнер из образа контейнера LUIS;
-* загружает приложение LUIS из входного подключения в папке c:\input, расположенной на узле контейнера;
+* Загружает приложение LUIS из входных данных Mount в *к:\инпут*, расположенном на узле контейнера.
 * выделяет 2 ядра ЦП и 4 ГБ памяти;
 * предоставляет TCP-порт 5000 и выделяет псевдотелетайп для контейнера;
-* сохраняет контейнер и журналы LUIS в выходном подключении в папке c:\output, расположенной на узле контейнера;
+* Сохраняет журналы контейнеров и LUIS для подключения к выходу в *C:\output*, расположенном на узле контейнера.
 * автоматически удаляет контейнер после завершения его работы. Образ контейнера остается доступным на главном компьютере. 
 
 Доступны дополнительные [примеры](luis-container-configuration.md#example-docker-run-commands) команды `docker run`. 
@@ -260,7 +255,7 @@ ApiKey={API_KEY}
 |Параметр запроса|Тип|Цель|
 |--|--|--|
 |`q`|строка|Фраза пользователя.|
-|`timezoneOffset`|номер|Параметр timezoneOffset позволяет [изменить часовой пояс](luis-concept-data-alteration.md#change-time-zone-of-prebuilt-datetimev2-entity), используемый предварительно созданной сущностью datetimeV2.|
+|`timezoneOffset`|number|Параметр timezoneOffset позволяет [изменить часовой пояс](luis-concept-data-alteration.md#change-time-zone-of-prebuilt-datetimev2-entity), используемый предварительно созданной сущностью datetimeV2.|
 |`verbose`|boolean|Возвращает все намерения и их оценки, если задано значение true. По умолчанию задано значение false, при котором возвращается только верхнее намерение.|
 |`staging`|boolean|Возвращает запрос из результатов промежуточной среды, если задано значение true. |
 |`log`|boolean|Записывает запросы в журнал, который затем можно использовать для [активного обучения](luis-how-to-review-endpoint-utterances.md). Значение по умолчанию — true.|
@@ -329,7 +324,7 @@ curl -X GET \
 Последний контейнер, выпущенный в 2019//Build, будет поддерживать следующее:
 
 * Проверка орфографии Bing: запросы к конечной точке прогнозирования запросов `&spellCheck=true&bing-spell-check-subscription-key={bingKey}` с параметрами строки запроса. Дополнительные сведения см. в [руководстве по проверка орфографии Bing версии 7](luis-tutorial-bing-spellcheck.md) . Если эта функция используется, контейнер отправляет utterance в ресурс Проверка орфографии Bing версии 7.
-* [Новые предварительно созданные домены](luis-reference-prebuilt-domains.md). Эти корпоративные домены включают сущности, примеры фразы продолжительностью и закономерности. Расширьте эти домены для собственного использования. 
+* [Новые](luis-reference-prebuilt-domains.md)предварительно созданные домены. Эти корпоративные домены включают сущности, примеры фразы продолжительностью и закономерности. Расширьте эти домены для собственного использования. 
 
 <a name="unsupported-dependencies"></a>
 

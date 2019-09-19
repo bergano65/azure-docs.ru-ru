@@ -1,27 +1,27 @@
 ---
 title: Краткое руководство. Пользовательский виртуальный помощник по обработке голоса (предварительная версия), C# (UWP). Службы распознавания речи
 titleSuffix: Azure Cognitive Services
-description: Из этой статьи вы узнаете, как создать приложение C# для универсальной платформы Windows с помощью пакета средства разработки программного обеспечения службы "Речь" в Cognitive Services. Вы подключите свое клиентское приложение к ранее созданному боту Bot Framework, который настроен для использования канала "Речь Direct Line". Приложение создается с использованием пакета SDK службы "Речь" для NuGet и Microsoft Visual Studio 2017.
+description: Из этой статьи вы узнаете, как создать приложение C# для универсальной платформы Windows с помощью пакета средства разработки программного обеспечения службы "Речь" в Cognitive Services. Вы подключите свое клиентское приложение к ранее созданному боту Bot Framework, который настроен для использования канала "Речь Direct Line". Приложение создается с использованием пакета SDK службы "Речь" для NuGet и Microsoft Visual Studio 2019.
 services: cognitive-services
 author: trrwilson
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 07/05/2019
+ms.date: 08/19/2019
 ms.author: travisw
-ms.openlocfilehash: 6d88bcc6d9d2c2e46ef3a3cb841c9268a544e37c
-ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
+ms.openlocfilehash: c676e98eb812a31d6fb8d7cc0f58929f803c868e
+ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68609692"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70382011"
 ---
 # <a name="quickstart-create-a-voice-first-virtual-assistant-with-the-speech-sdk-uwp"></a>Краткое руководство. Создание виртуального помощника по обработке голоса с помощью пакета SDK для распознавания речи, UWP.
 
-Кроме того, доступны краткие руководства по [преобразованию речи в текст](quickstart-csharp-uwp.md), [преобразованию текста в речь](quickstart-text-to-speech-csharp-uwp.md) и [переводу речи](quickstart-translate-speech-uwp.md).
+Краткое руководство также доступно для <bpt id="p1">[</bpt>распознавания речи<ept id="p1">](quickstart-csharp-uwp.md)</ept>, <bpt id="p2">[</bpt>синтеза речи<ept id="p2">](quickstart-text-to-speech-csharp-uwp.md)</ept> и <bpt id="p3">[</bpt>перевода речи<ept id="p3">](quickstart-translate-speech-uwp.md)</ept>.
 
-Из этой статьи вы узнаете, как разработать приложение C# для универсальной платформы Windows с помощью [пакета SDK службы "Речь"](speech-sdk.md). Программа подключится к ранее созданному и настроенному боту, чтобы включить из клиентского приложения интерфейс виртуального помощника по обработке голоса. Приложение создается с помощью [пакета SDK службы "Речь" для NuGet](https://aka.ms/csspeech/nuget) и Microsoft Visual Studio версии 2017 и выше (любого выпуска).
+Из этой статьи вы узнаете, как разработать приложение C# для универсальной платформы Windows с помощью [пакета SDK службы "Речь"](speech-sdk.md). Программа подключится к ранее созданному и настроенному боту, чтобы включить из клиентского приложения интерфейс виртуального помощника по обработке голоса. Приложение создается с использованием [пакета SDK NuGet для службы "Речь"](https://aka.ms/csspeech/nuget) и Microsoft Visual Studio 2019 (любого выпуска).
 
 > [!NOTE]
 > Универсальная платформа Windows позволяет разрабатывать приложения, работающие на любом устройстве, которое поддерживает Windows 10, включая компьютеры, Xbox, Surface Hub и другие устройств.
@@ -30,16 +30,16 @@ ms.locfileid: "68609692"
 
 Для работы с этим кратким руководством вам понадобится:
 
-* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/) или более поздней версии.
+* [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/).
 * Ключ подписки Azure для служб "Речь". [Получите бесплатно](get-started.md) или создайте его на [портале Azure](https://portal.azure.com).
 * Ранее созданный бот, настроенный с помощью[канала "Речь Direct Line"](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directlinespeech).
 
-    > [!NOTE]
-    > Служба "Речь Direct Line" (предварительная версия) сейчас доступна в ряде регионов служб распознавания речи. Ознакомьтесь со [списком поддерживаемых регионов для виртуальных помощников по обработке голоса](regions.md#voice-first-virtual-assistants) и убедитесь, что ваши ресурсы развернуты в одном из этих регионов.
+  > [!NOTE]
+  > Служба "Речь Direct Line" (предварительная версия) сейчас доступна в ряде регионов служб распознавания речи. Ознакомьтесь со [списком поддерживаемых регионов для виртуальных помощников по обработке голоса](regions.md#voice-first-virtual-assistants) и убедитесь, что ваши ресурсы развернуты в одном из этих регионов.
 
 ## <a name="optional-get-started-fast"></a>Необязательно: Быстрое начало работы
 
-В этом кратком пошаговом руководстве описано, как создать простое клиентское приложение для подключения к боту с поддержкой речи. Если вы хотите сразу приступить к работе, полноценный, готовый к компиляции исходный код, используемый в этом кратком руководстве, доступен в [Примерах пакета SDK для распознавания речи](https://aka.ms/csspeech/samples) в папке `quickstart`.
+В этом кратком пошаговом руководстве описано, как создать клиентское приложение для подключения к боту с поддержкой речи. Если вы хотите сразу приступить к работе, полноценный, готовый к компиляции исходный код, используемый в этом кратком руководстве, доступен в [Примерах пакета SDK для распознавания речи](https://aka.ms/csspeech/samples) в папке `quickstart`.
 
 ## <a name="create-a-visual-studio-project"></a>Создание проекта Visual Studio
 
@@ -47,7 +47,15 @@ ms.locfileid: "68609692"
 
 ## <a name="add-sample-code"></a>Добавление примеров кода
 
-1. Пользовательский интерфейс приложения определяется с помощью XAML. Откройте `MainPage.xaml` в обозревателе решений. В представлении XAML конструктора замените все содержимое на приведенное ниже.
+Теперь добавьте XAML-код, определяющий пользовательский интерфейс приложения, и добавьте реализацию C# кода программной части.
+
+### <a name="xaml-code"></a>Код XAML
+
+Сначала вы создадите пользовательский интерфейс приложения, добавив код XAML:
+
+1. Откройте `MainPage.xaml` в **обозревателе решений**.
+
+1. В представлении XAML конструктора замените все содержимое следующим фрагментом кода:
 
     ```xml
     <Page
@@ -61,16 +69,30 @@ ms.locfileid: "68609692"
         Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
         <Grid>
-            <StackPanel Orientation="Vertical" HorizontalAlignment="Center"  Margin="20,50,0,0" VerticalAlignment="Center" Width="800">
-                <Button x:Name="EnableMicrophoneButton" Content="Enable Microphone"  Margin="0,0,10,0" Click="EnableMicrophone_ButtonClicked" Height="35"/>
-                <Button x:Name="ListenButton" Content="Talk to your bot" Margin="0,10,10,0" Click="ListenButton_ButtonClicked" Height="35"/>
-                <StackPanel x:Name="StatusPanel" Orientation="Vertical" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True">
-                    <TextBlock x:Name="StatusLabel" Margin="0,10,10,0" TextWrapping="Wrap" Text="Status:" FontSize="20"/>
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center"  
+                        Margin="20,50,0,0" VerticalAlignment="Center" Width="800">
+                <Button x:Name="EnableMicrophoneButton" Content="Enable Microphone"  
+                        Margin="0,0,10,0" Click="EnableMicrophone_ButtonClicked" 
+                        Height="35"/>
+                <Button x:Name="ListenButton" Content="Talk to your bot" 
+                        Margin="0,10,10,0" Click="ListenButton_ButtonClicked" 
+                        Height="35"/>
+                <StackPanel x:Name="StatusPanel" Orientation="Vertical" 
+                            RelativePanel.AlignBottomWithPanel="True" 
+                            RelativePanel.AlignRightWithPanel="True" 
+                            RelativePanel.AlignLeftWithPanel="True">
+                    <TextBlock x:Name="StatusLabel" Margin="0,10,10,0" 
+                               TextWrapping="Wrap" Text="Status:" FontSize="20"/>
                     <Border x:Name="StatusBorder" Margin="0,0,0,0">
-                        <ScrollViewer VerticalScrollMode="Auto"  VerticalScrollBarVisibility="Auto" MaxHeight="200">
-                            <!-- Use LiveSetting to enable screen readers to announce the status update. -->
-                            <TextBlock x:Name="StatusBlock" FontWeight="Bold" AutomationProperties.LiveSetting="Assertive"
-                    MaxWidth="{Binding ElementName=Splitter, Path=ActualWidth}" Margin="10,10,10,20" TextWrapping="Wrap"  />
+                        <ScrollViewer VerticalScrollMode="Auto"  
+                                      VerticalScrollBarVisibility="Auto" MaxHeight="200">
+                            <!-- Use LiveSetting to enable screen readers to announce 
+                                 the status update. -->
+                            <TextBlock 
+                                x:Name="StatusBlock" FontWeight="Bold" 
+                                AutomationProperties.LiveSetting="Assertive"
+                                MaxWidth="{Binding ElementName=Splitter, Path=ActualWidth}" 
+                                Margin="10,10,10,20" TextWrapping="Wrap"  />
                         </ScrollViewer>
                     </Border>
                 </StackPanel>
@@ -80,14 +102,24 @@ ms.locfileid: "68609692"
     </Page>
     ```
 
-1. Откройте исходный файл кода программной части `MainPage.xaml.cs`. Он сгруппирован в разделе `MainPage.xaml`. Замените его содержимое кодом, приведенным ниже. В этом примере показано следующее:
+Конструктор обновляется для отображения пользовательского интерфейса приложения.
 
-    * использование операторов для пространств имен Speech и Speech.Dialog;
-    * простая реализация доступа к микрофону с привязкой к обработчику кнопки;
-    * базовые вспомогательные функции пользовательского интерфейса для представления сообщений и ошибок в приложении;
-    * целевая точка для пути кода инициализации, который будет добавлен позже;
-    * вспомогательное приложение для воспроизведения текста, преобразованного в речь (без поддержки потоковой передачи данных);
-    * пустой обработчик кнопки воспроизведения, который будет заполнен позже.
+### <a name="c-code-behind-source"></a>Источник кода C# программной части
+
+Затем добавьте источник кода программной части, чтобы приложение правильно работало. Источник кода программной части включает в себя:
+
+- `using` инструкции для `Speech` и `Speech.Dialog` пространства имен
+- простая реализация доступа к микрофону с привязкой к обработчику кнопки;
+- базовые вспомогательные функции пользовательского интерфейса для представления сообщений и ошибок в приложении;
+- целевая точка для пути кода инициализации, который будет добавлен позже;
+- вспомогательное приложение для воспроизведения текста, преобразованного в речь (без поддержки потоковой передачи данных);
+- пустой обработчик кнопки воспроизведения, который будет заполнен позже.
+
+Чтобы добавить источник кода программной части, выполните следующие действия:
+
+1. В **Обозревателе решений** откройте исходный файл кода программной части `MainPage.xaml.cs`. (Он сгруппирован в `MainPage.xaml`.)
+
+1. Замените содержимое этого файла приведенным ниже фрагментом кода:
 
     ```csharp
     using Microsoft.CognitiveServices.Speech;
@@ -120,14 +152,17 @@ ms.locfileid: "68609692"
                 this.InitializeComponent();
             }
 
-            private async void EnableMicrophone_ButtonClicked(object sender, RoutedEventArgs e)
+            private async void EnableMicrophone_ButtonClicked(
+                object sender, RoutedEventArgs e)
             {
                 bool isMicAvailable = true;
                 try
                 {
                     var mediaCapture = new Windows.Media.Capture.MediaCapture();
-                    var settings = new Windows.Media.Capture.MediaCaptureInitializationSettings();
-                    settings.StreamingCaptureMode = Windows.Media.Capture.StreamingCaptureMode.Audio;
+                    var settings = 
+                        new Windows.Media.Capture.MediaCaptureInitializationSettings();
+                    settings.StreamingCaptureMode = 
+                        Windows.Media.Capture.StreamingCaptureMode.Audio;
                     await mediaCapture.InitializeAsync(settings);
                 }
                 catch (Exception)
@@ -136,7 +171,8 @@ ms.locfileid: "68609692"
                 }
                 if (!isMicAvailable)
                 {
-                    await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-microphone"));
+                    await Windows.System.Launcher.LaunchUriAsync(
+                        new Uri("ms-settings:privacy-microphone"));
                 }
                 else
                 {
@@ -144,7 +180,8 @@ ms.locfileid: "68609692"
                 }
             }
 
-            private void NotifyUser(string strMessage, NotifyType type = NotifyType.StatusMessage)
+            private void NotifyUser(
+                string strMessage, NotifyType type = NotifyType.StatusMessage)
             {
                 // If called from the UI thread, then update immediately.
                 // Otherwise, schedule a task on the UI thread to perform the update.
@@ -154,7 +191,9 @@ ms.locfileid: "68609692"
                 }
                 else
                 {
-                    var task = Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () => UpdateStatus(strMessage, type));
+                    var task = Dispatcher.RunAsync(
+                        Windows.UI.Core.CoreDispatcherPriority.Normal, 
+                        () => UpdateStatus(strMessage, type));
                 }
             }
 
@@ -163,13 +202,16 @@ ms.locfileid: "68609692"
                 switch (type)
                 {
                     case NotifyType.StatusMessage:
-                        StatusBorder.Background = new SolidColorBrush(Windows.UI.Colors.Green);
+                        StatusBorder.Background = new SolidColorBrush(
+                            Windows.UI.Colors.Green);
                         break;
                     case NotifyType.ErrorMessage:
-                        StatusBorder.Background = new SolidColorBrush(Windows.UI.Colors.Red);
+                        StatusBorder.Background = new SolidColorBrush(
+                            Windows.UI.Colors.Red);
                         break;
                 }
-                StatusBlock.Text += string.IsNullOrEmpty(StatusBlock.Text) ? strMessage : "\n" + strMessage;
+                StatusBlock.Text += string.IsNullOrEmpty(StatusBlock.Text) 
+                    ? strMessage : "\n" + strMessage;
 
                 if (!string.IsNullOrEmpty(StatusBlock.Text))
                 {
@@ -181,18 +223,23 @@ ms.locfileid: "68609692"
                     StatusBorder.Visibility = Visibility.Collapsed;
                     StatusPanel.Visibility = Visibility.Collapsed;
                 }
-                // Raise an event if necessary to enable a screen reader to announce the status update.
+                // Raise an event if necessary to enable a screen reader 
+                // to announce the status update.
                 var peer = Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer.FromElement(StatusBlock);
                 if (peer != null)
                 {
-                    peer.RaiseAutomationEvent(Windows.UI.Xaml.Automation.Peers.AutomationEvents.LiveRegionChanged);
+                    peer.RaiseAutomationEvent(
+                        Windows.UI.Xaml.Automation.Peers.AutomationEvents.LiveRegionChanged);
                 }
             }
 
-            // Waits for accumulates all audio associated with a given PullAudioOutputStream and then plays it to the
-            // MediaElement. Long spoken audio will create extra latency and a streaming playback solution (that plays
-            // audio while it continues to be received) should be used -- see the samples for examples of this.
-            private void SynchronouslyPlayActivityAudio(PullAudioOutputStream activityAudio)
+            // Waits for and accumulates all audio associated with a given 
+            // PullAudioOutputStream and then plays it to the MediaElement. Long spoken 
+            // audio will create extra latency and a streaming playback solution 
+            // (that plays audio while it continues to be received) should be used -- 
+            // see the samples for examples of this.
+            private void SynchronouslyPlayActivityAudio(
+                PullAudioOutputStream activityAudio)
             {
                 var playbackStreamWithHeader = new MemoryStream();
                 playbackStreamWithHeader.Write(Encoding.ASCII.GetBytes("RIFF"), 0, 4); // ChunkID
@@ -219,9 +266,11 @@ ms.locfileid: "68609692"
                 }
                 while (lastRead == pullBuffer.Length);
 
-                var task = Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
+                var task = Dispatcher.RunAsync(
+                    Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
                 {
-                    mediaElement.SetSource(playbackStreamWithHeader.AsRandomAccessStream(), "audio/wav");
+                    mediaElement.SetSource(
+                        playbackStreamWithHeader.AsRandomAccessStream(), "audio/wav");
                     mediaElement.Play();
                 });
             }
@@ -231,7 +280,8 @@ ms.locfileid: "68609692"
                 // New code will go here
             }
 
-            private async void ListenButton_ButtonClicked(object sender, RoutedEventArgs e)
+            private async void ListenButton_ButtonClicked(
+                object sender, RoutedEventArgs e)
             {
                 // New code will go here
             }
@@ -239,119 +289,138 @@ ms.locfileid: "68609692"
     }
     ```
 
-1. Затем с помощью сведений о подписке вы создадите `DialogServiceConnector`. Добавьте следующее в тело метода `InitializeDialogServiceConnector`, заменив строки `YourChannelSecret`, `YourSpeechSubscriptionKey` и `YourServiceRegion` собственными значениями для бота, подпиской на распознавание речи и [регионом](regions.md).
-
-    > [!NOTE]
-    > Служба "Речь Direct Line" (предварительная версия) сейчас доступна в ряде регионов служб распознавания речи. Ознакомьтесь со [списком поддерживаемых регионов для виртуальных помощников по обработке голоса](regions.md#voice-first-virtual-assistants) и убедитесь, что ваши ресурсы развернуты в одном из этих регионов.
-
-    > [!NOTE]
-    > Для получения сведений о настройке бота и секрете канала см. документацию по Bot Framework для [канала "Речь Direct Line"](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directlinespeech).
+1. Добавьте следующий фрагмент кода в текст метода `InitializeDialogServiceConnector`. Этот код создает `DialogServiceConnector` с помощью сведений о подписке.
 
     ```csharp
-    // create a DialogServiceConfig by providing a bot secret key and Cognitive Services subscription key
-    // the RecoLanguage property is optional (default en-US); note that only en-US is supported in Preview
+    // create a DialogServiceConfig by providing a bot secret key 
+    // and Cognitive Services subscription key
+    // the RecoLanguage property is optional (default en-US); 
+    // note that only en-US is supported in Preview
     const string channelSecret = "YourChannelSecret"; // Your channel secret
     const string speechSubscriptionKey = "YourSpeechSubscriptionKey"; // Your subscription key
-    const string region = "YourServiceRegion"; // Your subscription service region. Note: only a subset of regions are currently supported
 
-    var botConfig = DialogServiceConfig.FromBotSecret(channelSecret, speechSubscriptionKey, region);
+    // Your subscription service region. 
+    // Note: only a subset of regions are currently supported
+    const string region = "YourServiceRegion"; 
+
+    var botConfig = DialogServiceConfig.FromBotSecret(
+        channelSecret, speechSubscriptionKey, region);
     botConfig.SetProperty(PropertyId.SpeechServiceConnection_RecoLanguage, "en-US");
     connector = new DialogServiceConnector(botConfig);
     ```
 
-1. `DialogServiceConnector` использует несколько событий, чтобы сообщать о работе бота, результатах распознавания речи и других данных. Добавьте обработчиков для этих событий, добавив следующее в конце тела метода `InitializeDialogServiceConnector`.
+   > [!NOTE]
+   > Служба "Речь Direct Line" (предварительная версия) сейчас доступна в ряде регионов служб распознавания речи. Ознакомьтесь со [списком поддерживаемых регионов для виртуальных помощников по обработке голоса](regions.md#voice-first-virtual-assistants) и убедитесь, что ваши ресурсы развернуты в одном из этих регионов.
+
+   > [!NOTE]
+   > Для получения сведений о настройке бота и секрете канала см. документацию по Bot Framework для [канала "Речь Direct Line"](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directlinespeech).
+
+1. Замените строки `YourChannelSecret`, `YourSpeechSubscriptionKey` и `YourServiceRegion` на собственные значения для вашего бота, речевой подписки и [региона](regions.md).
+
+1. Добавьте следующий фрагмент кода в конец текста метода `InitializeDialogServiceConnector`. Этот код настраивает обработчики событий, на которые полагается `DialogServiceConnector` для передачи информации о деятельности ботов, результатах распознавания речи и другой информации.
 
     ```csharp
-    // ActivityReceived is the main way your bot will communicate with the client and uses bot framework activities
+    // ActivityReceived is the main way your bot will communicate with the client 
+    // and uses bot framework activities
     connector.ActivityReceived += async (sender, activityReceivedEventArgs) =>
     {
-        NotifyUser($"Activity received, hasAudio={activityReceivedEventArgs.HasAudio} activity={activityReceivedEventArgs.Activity}");
+        NotifyUser(
+            $"Activity received, hasAudio={activityReceivedEventArgs.HasAudio} activity={activityReceivedEventArgs.Activity}");
 
         if (activityReceivedEventArgs.HasAudio)
         {
             SynchronouslyPlayActivityAudio(activityReceivedEventArgs.Audio);
         }
     };
+
     // Canceled will be signaled when a turn is aborted or experiences an error condition
     connector.Canceled += (sender, canceledEventArgs) =>
     {
         NotifyUser($"Canceled, reason={canceledEventArgs.Reason}");
         if (canceledEventArgs.Reason == CancellationReason.Error)
         {
-            NotifyUser($"Error: code={canceledEventArgs.ErrorCode}, details={canceledEventArgs.ErrorDetails}");
+            NotifyUser(
+                $"Error: code={canceledEventArgs.ErrorCode}, details={canceledEventArgs.ErrorDetails}");
         }
     };
-    // Recognizing (not 'Recognized') will provide the intermediate recognized text while an audio stream is being processed
+
+    // Recognizing (not 'Recognized') will provide the intermediate recognized text 
+    // while an audio stream is being processed
     connector.Recognizing += (sender, recognitionEventArgs) =>
     {
         NotifyUser($"Recognizing! in-progress text={recognitionEventArgs.Result.Text}");
     };
-    // Recognized (not 'Recognizing') will provide the final recognized text once audio capture is completed
+
+    // Recognized (not 'Recognizing') will provide the final recognized text 
+    // once audio capture is completed
     connector.Recognized += (sender, recognitionEventArgs) =>
     {
         NotifyUser($"Final speech-to-text result: '{recognitionEventArgs.Result.Text}'");
     };
+
     // SessionStarted will notify when audio begins flowing to the service for a turn
     connector.SessionStarted += (sender, sessionEventArgs) =>
     {
         NotifyUser($"Now Listening! Session started, id={sessionEventArgs.SessionId}");
     };
-    // SessionStopped will notify when a turn is complete and it's safe to begin listening again
+
+    // SessionStopped will notify when a turn is complete and 
+    // it's safe to begin listening again
     connector.SessionStopped += (sender, sessionEventArgs) =>
     {
         NotifyUser($"Listening complete. Session ended, id={sessionEventArgs.SessionId}");
     };
     ```
 
-1. Теперь, имея установленную конфигурацию и зарегистрированных обработчиков событий, `DialogServiceConnector` просто нужно ожидать передачи данных. В тело метода `ListenButton_ButtonClicked` в классе `MainPage` добавьте следующее.
+1. В текст метода `ListenButton_ButtonClicked` в классе `MainPage` добавьте следующее. Этот код настраивается `DialogServiceConnector` для прослушивания, так как вы уже установили конфигурацию и зарегистрировали обработчики событий.
 
     ```csharp
-    private async void ListenButton_ButtonClicked(object sender, RoutedEventArgs e)
+    if (connector == null)
     {
-        if (connector == null)
-        {
-            InitializeDialogServiceConnector();
-            // Optional step to speed up first interaction: if not called, connection happens automatically on first use
-            var connectTask = connector.ConnectAsync();
-        }
+        InitializeDialogServiceConnector();
+        // Optional step to speed up first interaction: if not called, 
+        // connection happens automatically on first use
+        var connectTask = connector.ConnectAsync();
+    }
 
-        try
-        {
-            // Start sending audio to your speech-enabled bot
-            var listenTask = connector.ListenOnceAsync();
+    try
+    {
+        // Start sending audio to your speech-enabled bot
+        var listenTask = connector.ListenOnceAsync();
 
-            // You can also send activities to your bot as JSON strings -- Microsoft.Bot.Schema can simplify this
-            string speakActivity = @"{""type"":""message"",""text"":""Greeting Message"", ""speak"":""Hello there!""}";
-            await connector.SendActivityAsync(speakActivity);
+        // You can also send activities to your bot as JSON strings -- 
+        // Microsoft.Bot.Schema can simplify this
+        string speakActivity = 
+            @"{""type"":""message"",""text"":""Greeting Message"", ""speak"":""Hello there!""}";
+        await connector.SendActivityAsync(speakActivity);
 
-        }
-        catch (Exception ex)
-        {
-            NotifyUser($"Exception: {ex.ToString()}", NotifyType.ErrorMessage);
-        }
+    }
+    catch (Exception ex)
+    {
+        NotifyUser($"Exception: {ex.ToString()}", NotifyType.ErrorMessage);
     }
     ```
 
-1. Сохраните все внесенные в проект изменения.
+1. В строке меню выберите <bpt id="p1">**</bpt>Файл<ept id="p1">**</ept><ph id="ph1"> &gt; </ph><bpt id="p2">**</bpt>Сохранить все<ept id="p2">**</ept>, чтобы сохранить изменения.
 
-## <a name="build-and-run-the-app"></a>Создание и запуск приложения
+## <a name="build-and-run-the-application"></a>Создание и запуск приложения
 
-1. Создайте приложение. В строке меню Visual Studio последовательно выберите **Сборка** > **Собрать решение**. Теперь код должен компилироваться без ошибок.
+Теперь все готово для сборки и тестирования приложения.
 
-    ![Снимок экрана приложения Visual Studio с выделенным параметром "Собрать решение"](media/sdk/qs-csharp-uwp-08-build.png "Успешная сборка")
+1. В строке меню выберите **Сборка** > **Построить решение**, чтобы создать приложение. Теперь код должен компилироваться без ошибок.
 
-1. Запустите приложение. В строке меню Visual Studio последовательно выберите **Отладка** > **Начать отладку** или нажмите клавишу **F5**.
+1. Выберите **Отладка** > **Начать отладку**(или нажмите клавишу **F5**), чтобы запустить приложение. Откроется окно **helloworld**.
 
-    ![Снимок экрана приложения Visual Studio с выделенным параметром "Начать отладку"](media/sdk/qs-csharp-uwp-09-start-debugging.png "Start the app into debugging")
+   ![Пример приложения виртуального помощника UWP в C# — краткое руководство](media/sdk/qs-virtual-assistant-uwp-helloworld-window.png)
 
-1. Откроется окно. В приложении выберите **Включить микрофон** и подтвердите разрешение в появившемся окне запроса.
+1. Выберите **Включить микрофон**, а когда появится запрос на разрешение доступа, выберите **Да**.
 
-    ![Снимок экрана запроса разрешения](media/sdk/qs-csharp-uwp-10-access-prompt.png "Запуск отладки приложения")
+   ![Запрос на разрешение доступа к микрофону](media/sdk/qs-csharp-uwp-10-access-prompt.png)
 
 1. Щелкните **Talk to your bot** (Разговор с ботом) и произнесите фразу или предложение на английском языке в микрофон устройства. Ваша речь передастся в канал "Речь Direct Line" и преобразуется в текст, который появится в том же окне.
-
-    ![Снимок экрана успешных действий бота](media/voice-first-virtual-assistants/quickstart-cs-uwp-bot-successful-turn.png "Успешные действия бота")
-
+<!--
+    ![Successful bot response](media/voice-first-virtual-assistants/quickstart-cs-uwp-bot-successful-turn.png)
+-->
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]

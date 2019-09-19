@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 06/10/2019
-ms.openlocfilehash: aabcf7ac6c7bf14264178831bb3e4f6670d29984
-ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
+ms.openlocfilehash: dad796c8a7a34a782a4f78260ac38bd966eddde9
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70960920"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105397"
 ---
 # <a name="scale-azure-hdinsight-clusters"></a>Масштабирование кластеров Azure HDInsight
 
@@ -37,7 +37,7 @@ HDInsight обеспечивает гибкость, предоставляя в
 |[Интерфейс командной строки Azure](hdinsight-administer-use-command-line.md)|размер \<кластера Azure hdinsight имя_кластера > \<число целевых экземпляров > |
 |[портал Azure](https://portal.azure.com)|Откройте панель кластера HDInsight, выберите **Размер кластера** в меню слева, затем на панели размер кластера введите число рабочих узлов и нажмите кнопку Сохранить.|  
 
-![Изменить масштаб кластера](./media/hdinsight-scaling-best-practices/scale-cluster-blade1.png)
+![Параметр масштабирования кластера портал Azure](./media/hdinsight-scaling-best-practices/scale-cluster-blade1.png)
 
 С помощью любого из этих методов можно увеличивать или уменьшать масштаб кластера HDInsight за считанные минуты.
 
@@ -112,7 +112,7 @@ HDInsight обеспечивает гибкость, предоставляя в
 3. В пользовательском интерфейсе Ambari выберите **YARN** в списке служб в меню слева.  
 4. На странице YARN выберите **быстрые ссылки** и наведите указатель мыши на активный головной узел, а затем выберите элемент **Пользовательский интерфейс ResourceManager**.
 
-    ![Пользовательский интерфейс ResourceManager](./media/hdinsight-scaling-best-practices/resource-manager-ui1.png)
+    ![Пользовательский интерфейс ResourceManager для быстрых ссылок Apache Ambari](./media/hdinsight-scaling-best-practices/resource-manager-ui1.png)
 
 Прямой доступ к пользовательскому интерфейсу ResourceManager можно получить, щелкнув ссылку `https://<HDInsightClusterName>.azurehdinsight.net/yarnui/hn/cluster`.
 

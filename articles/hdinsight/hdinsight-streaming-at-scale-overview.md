@@ -8,22 +8,20 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 01/19/2018
-ms.openlocfilehash: e18203162229e6c3db24a5f76b65de61d572f96a
-ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
+ms.openlocfilehash: 76d1947ae6fbdf7577cc9b8db9d902dc55350b7f
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71076793"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105335"
 ---
 # <a name="streaming-at-scale-in-hdinsight"></a>Потоковая передача в нужном масштабе в HDInsight
 
 Решения для обработки больших данных в реальном времени работают с данными, которые находятся в движении. Как правило эти данные наиболее полезны во время поступления. Если входной поток данных становится большим, чем можно обработать в данный момент, может потребоваться регулирование ресурсов. Кроме того, кластер HDInsight может масштабироваться путем добавления узлов по запросу в соответствии с требованиями решения потоковой передачи.
 
-
 В приложении потоковой передачи один или несколько источников данных создают события (иногда миллионы в секунду), которые нужно быстро принять без потери полезной информации. Входящие события обрабатываются с помощью *потоковой буферизации*, называемой также *очередью событий*, такими службами как [Apache Kafka](kafka/apache-kafka-introduction.md) или [Центры событий](https://azure.microsoft.com/services/event-hubs/). После сбора событий можно проанализировать данные в пределах уровня *обработки потока* с помощью системы аналитики в реальном времени, такой как [Apache Storm](storm/apache-storm-overview.md) или [потоковая передача Apache Spark](spark/apache-spark-streaming-overview.md). Обработанные данные могут храниться в долгосрочном хранилище данных, таком как [Azure Data Lake Storage](https://azure.microsoft.com/services/storage/data-lake-storage/), и отображаться в режиме реального времени на панели мониторинга бизнес-аналитики, такой как [Power BI](https://powerbi.microsoft.com), Tableau, или на настраиваемой веб-странице.
 
-
-![Шаблоны потоковой передачи HDInsight](./media/hdinsight-streaming-at-scale-overview/HDInsight-streaming-patterns.png)
+![Шаблоны потоковой передачи Azure HDInsight](./media/hdinsight-streaming-at-scale-overview/HDInsight-streaming-patterns.png)
 
 ## <a name="apache-kafka"></a>Apache Kafka
 

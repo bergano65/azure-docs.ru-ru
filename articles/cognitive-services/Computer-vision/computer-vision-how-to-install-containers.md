@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: conceptual
-ms.date: 06/19/2019
+ms.date: 09/18/2019
 ms.author: dapine
 ms.custom: seodec18
-ms.openlocfilehash: cbf199c391b49518bb595d7d1a0ed47147903a85
-ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
+ms.openlocfilehash: d3a36615109383074833e9af634eb611fb863339
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70034500"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71103650"
 ---
 # <a name="install-and-run-recognize-text-containers"></a>Установка и запуск контейнеров распознавания текста
 
@@ -36,6 +36,8 @@ ms.locfileid: "70034500"
 |Модуль Docker| На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду Docker в ОС [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> **В ОС Windows** для Docker нужно также настроить поддержку контейнеров Linux.<br><br>|
 |Опыт работы с Docker | Требуется базовое представление о понятиях Docker, включая реестры, репозитории, контейнеры и образы контейнеров, а также знание основных команд `docker`.| 
 |Ресурс Компьютерное зрение |Для использования контейнера необходимо следующее:<br><br>Ресурс Azure **компьютерное зрение** и соответствующий ключ API для конечной точки. Оба значения доступны на страницах обзора и ключей для ресурса и необходимы для запуска контейнера.<br><br>**{API_KEY}** : Один из двух доступных ключей ресурсов на странице " **ключи** "<br><br>**{ENDPOINT_URI}** : Конечная точка, указанная на странице **обзора**|
+
+[!INCLUDE [Gathering required container parameters](../containers/includes/container-gathering-required-parameters.md)]
 
 ## <a name="request-access-to-the-private-container-registry"></a>Запрос доступа к частному реестру контейнеров
 
@@ -77,16 +79,9 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-recognize-t
 
 ## <a name="run-the-container-with-docker-run"></a>Запуск контейнера с помощью команды `docker run`
 
-Воспользуйтесь командой [docker run](https://docs.docker.com/engine/reference/commandline/run/) для запуска контейнера. В команде используются следующие параметры:
+Воспользуйтесь командой [docker run](https://docs.docker.com/engine/reference/commandline/run/) для запуска контейнера. Дополнительные сведения о том, как получить значения и `{API_KEY}` , `{ENDPOINT_URI}` см. в разделе [сбор обязательных параметров](#gathering-required-parameters) .
 
-| Местозаполнитель | Значение |
-|-------------|-------|
-|{API_KEY} | Этот ключ используется для запуска контейнера и доступен на странице ключей Azure `Cognitive Services` .  |
-|{ENDPOINT_URI} | Значение URI конечной точки выставления счетов. Пример:`https://westus.api.cognitive.microsoft.com/vision/v2.0`|
-
-Необходимо добавить `vision/v2.0` маршрутизацию к универсальному коду ресурса (URI) конечной точки, как показано в следующем примере BILLING_ENDPOINT_URI.
-
-В следующем примере команды `docker run` замените имена параметров собственными значениями.
+[Доступны примеры](computer-vision-resource-container-config.md#example-docker-run-commands) `docker run` команд.
 
 ```bash
 docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 \

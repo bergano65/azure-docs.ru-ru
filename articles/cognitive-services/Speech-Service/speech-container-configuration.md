@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 06/11/2019
 ms.author: dapine
-ms.openlocfilehash: c4598e5e99012694a798e44c0d37e9578486751b
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: f7e2e95b553039b88267f730787fbbac82099948
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68932104"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105173"
 ---
 # <a name="configure-speech-service-containers"></a>Настройка контейнеров службы речи
 
@@ -52,7 +52,7 @@ ms.locfileid: "68932104"
 
 |Обязательное значение| Название | Тип данных | Описание |
 |--|------|-----------|-------------|
-|Да| `Billing` | Строковое | URI конечной точки выставления счетов<br><br>Пример<br>`Billing=https://westus.api.cognitive.microsoft.com/sts/v1.0` |
+|Да| `Billing` | Строковое | URI конечной точки выставления счетов<br><br>Пример:<br>`Billing=https://westus.api.cognitive.microsoft.com/sts/v1.0` |
 
 ## <a name="eula-setting"></a>Параметр Eula
 
@@ -81,7 +81,7 @@ ms.locfileid: "68932104"
 |Необязательный| Название | Тип данных | Описание |
 |-------|------|-----------|-------------|
 |Не разрешено| `Input` | Строковое | Контейнеры распознавания речи этого не используют.|
-|Необязательный| `Output` | Строковое | Цель выходного подключения. Значение по умолчанию — `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример<br>`--mount type=bind,src=c:\output,target=/output`|
+|Необязательный| `Output` | Строковое | Цель выходного подключения. Значение по умолчанию — `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример:<br>`--mount type=bind,src=c:\output,target=/output`|
 
 ## <a name="example-docker-run-commands"></a>Примеры команд docker run 
 
@@ -90,12 +90,14 @@ ms.locfileid: "68932104"
 * **Символ продолжения строки**. В командах Docker в следующих разделах используется обратная косая черта (`\`) как символ продолжения строки. Замените или удалите ее в соответствии с требованиями вашей операционной системы. 
 * **Порядок аргументов**. Не изменяйте порядок аргументов, если вы не являетесь уверенным пользователем контейнеров Docker.
 
-Замените строку { _} собственными значениями.
+Замените строку {_имя_аргумента_} собственными значениями.
 
 | Местозаполнитель | Значение | Формат или пример |
 |-------------|-------|---|
-|{API_KEY} | Ключ API для речевого ресурса. |xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|
-|{ENDPOINT_URI} | Значение конечной точки, включая регион.|`https://westus.api.cognitive.microsoft.com/sts/v1.0`|
+| **{API_KEY}** | Ключ `Speech` конечной точки ресурса на странице ключей Azure `Speech` . | `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx` |
+| **{ENDPOINT_URI}** | Значение конечной точки выставления счетов доступно на странице `Speech` обзора Azure.| См. раздел [сбор обязательных параметров](speech-container-howto.md#gathering-required-parameters) для явных примеров. |
+
+[!INCLUDE [subdomains-note](../../../includes/cognitive-services-custom-subdomains-note.md)]
 
 > [!IMPORTANT]
 > Для запуска контейнера необходимо указать параметры `Eula`, `Billing` и `ApiKey`. В противном случае контейнер не запустится.  Дополнительные сведения см. в [разделе о выставлении счетов](#billing-configuration-setting).

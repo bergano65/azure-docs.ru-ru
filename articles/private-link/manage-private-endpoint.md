@@ -1,18 +1,18 @@
 ---
 title: Управление подключением к частной конечной точке в Azure
 description: Узнайте, как управлять подключениями к частным конечным точкам в Azure
-services: virtual-network
+services: private-link
 author: KumudD
-ms.service: virtual-network
+ms.service: private-link
 ms.topic: article
 ms.date: 09/16/2019
 ms.author: kumud
-ms.openlocfilehash: 16654662665607f86aa08d1f9c5638daf2cbc251
-ms.sourcegitcommit: 71db032bd5680c9287a7867b923bf6471ba8f6be
+ms.openlocfilehash: 012b236e997ef9144eaab43862f5f4dd2b324fff
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71018914"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71104635"
 ---
 # <a name="manage-a-private-endpoint-connection"></a>Управление подключением к частной конечной точке
 Частная ссылка Azure работает на модели потока вызовов утверждения, в которой потребитель службы частной связи может запросить подключение к поставщику услуг для использования службы. Затем поставщик услуг может решить, следует ли разрешить потребителю подключаться или нет. Частная ссылка Azure позволяет поставщикам услуг управлять подключением к частной конечной точке в своих ресурсах. В этой статье приводятся инструкции по управлению подключениями к частным конечным точкам.

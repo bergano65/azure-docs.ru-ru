@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: conceptual
-ms.date: 06/19/2019
+ms.date: 09/18/2019
 ms.author: dapine
-ms.openlocfilehash: 7dba929101a928f0bbcb8553d6dd3b3043d74853
-ms.sourcegitcommit: 8e1fb03a9c3ad0fc3fd4d6c111598aa74e0b9bd4
+ms.openlocfilehash: fbfc3f48bed5a4772573dcf2ab168cd3498a4cac
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70114851"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71102009"
 ---
 # <a name="install-and-run-face-containers"></a>Установка и запуск контейнеров лиц
 
@@ -33,6 +33,8 @@ ms.locfileid: "70114851"
 |Модуль Docker| Подсистема DOCKER должна быть установлена на [главном компьютере](#the-host-computer). Docker предоставляет пакеты, которые настраивают среду Docker в ОС [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> В Windows DOCKER также должен быть настроен для поддержки контейнеров Linux.<br><br>|
 |Опыт работы с Docker | Вам потребуется базовое понимание концепций DOCKER, таких как реестры, репозитории, контейнеры и образы контейнеров. Также необходимо знание основных `docker` команд.| 
 |Ресурс лица |Для использования этого контейнера необходимо следующее:<br><br>Ресурс **лица** Azure, а также соответствующий ключ API и URI конечной точки. Оба значения доступны на страницах **обзора** и **ключей** для ресурса. Они необходимы для запуска контейнера.<br><br>**{API_KEY}** : Один из двух доступных ключей ресурсов на странице " **ключи** "<br><br>**{ENDPOINT_URI}** : Конечная точка, указанная на странице **обзора**
+
+[!INCLUDE [Gathering required container parameters](../containers/includes/container-gathering-required-parameters.md)]
 
 ## <a name="request-access-to-the-private-container-registry"></a>Запрос доступа к частному реестру контейнеров
 
@@ -80,16 +82,9 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-face:latest
 
 ## <a name="run-the-container-with-docker-run"></a>Запуск контейнера с помощью запуска DOCKER
 
-Воспользуйтесь командой [docker run](https://docs.docker.com/engine/reference/commandline/run/) для запуска любого из трех контейнеров. Команда использует следующие параметры.
+Воспользуйтесь командой [docker run](https://docs.docker.com/engine/reference/commandline/run/) для запуска контейнера. Дополнительные сведения о том, как получить значения и `{API_KEY}` , `{ENDPOINT_URI}` см. в разделе [сбор обязательных параметров](#gathering-required-parameters) .
 
-| Местозаполнитель | Значение |
-|-------------|-------|
-|{API_KEY} | Этот ключ используется для запуска контейнера и доступен на странице `Cognitive Services` **ключей** Azure. |
-|{ENDPOINT_URI} | Значение URI конечной точки выставления счетов доступно на странице `Cognitive Services` **обзора** Azure. Например, `https://westus.api.cognitive.microsoft.com/face/v1.0`.|
-
-`face/v1.0` Добавьте маршрут к универсальному коду ресурса (URI) конечной точки, как показано в предыдущем примере ENDPOINT_URI. 
-
-Замените эти параметры собственными значениями в следующем `docker run` примере команды:
+[Доступны примеры](face-resource-container-config.md#example-docker-run-commands) `docker run` команд.
 
 ```bash
 docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 \

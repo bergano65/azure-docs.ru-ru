@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: conceptual
-ms.date: 06/19/2019
+ms.date: 09/18/2019
 ms.author: dapine
 ms.custom: seodec18
-ms.openlocfilehash: 3e1dc68ec67e8a7a24c3459519df80a8faf2fc01
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 186f2f60aad15b336265114d7c85c757e0dd333f
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68565648"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71102288"
 ---
 # <a name="configure-recognize-text-docker-containers"></a>Настройка контейнера Распознавания текста в Docker
 
@@ -43,7 +43,7 @@ ms.locfileid: "68565648"
 
 ## <a name="billing-configuration-setting"></a>Параметр конфигурации выставления счетов
 
-Параметр указывает URI конечной точки ресурса Cognitive Services в Azure, который используется для отслеживания сведений о выставлении счетов для контейнера.  `Billing` Необходимо указать значение для этого параметра конфигурации, а значение должно быть допустимым URI конечной точки для ресурса _Cognitive Services_ в Azure. Отчеты об использовании контейнера примерно каждые 10—15 минут.
+Параметр указывает URI конечной точки ресурса Cognitive Services в Azure, который используется для отслеживания сведений о выставлении счетов для контейнера. `Billing` Необходимо указать значение для этого параметра конфигурации, а значение должно быть допустимым URI конечной точки для ресурса _Cognitive Services_ в Azure. Отчеты об использовании контейнера примерно каждые 10—15 минут.
 
 Этот параметр можно найти в следующем месте.
 
@@ -51,9 +51,9 @@ ms.locfileid: "68565648"
 
 Не забудьте добавить `vision/v1.0` маршрут к универсальному коду ресурса (URI) конечной точки, как показано в следующей таблице. 
 
-|Обязательное значение| Имя | Тип данных | Описание |
+|Обязательное значение| Название | Тип данных | Описание |
 |--|------|-----------|-------------|
-|Да| `Billing` | Строковое | URI конечной точки выставления счетов<br><br>Пример<br>`Billing=https://westcentralus.api.cognitive.microsoft.com/vision/v1.0` |
+|Да| `Billing` | Строковое | URI конечной точки выставления счетов<br><br>Пример:<br>`Billing=https://westcentralus.api.cognitive.microsoft.com/vision/v1.0` |
 
 ## <a name="eula-setting"></a>Параметр Eula
 
@@ -82,7 +82,7 @@ ms.locfileid: "68565648"
 |Необязательный| Название | Тип данных | Описание |
 |-------|------|-----------|-------------|
 |Не разрешено| `Input` | Строковое | Контейнеры API компьютерного зрения не используют этот элемент.|
-|Необязательный| `Output` | Строковое | Цель выходного подключения. Значение по умолчанию — `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример<br>`--mount type=bind,src=c:\output,target=/output`|
+|Необязательный| `Output` | Строковое | Цель выходного подключения. Значение по умолчанию — `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример:<br>`--mount type=bind,src=c:\output,target=/output`|
 
 ## <a name="example-docker-run-commands"></a>Примеры команд docker run 
 
@@ -97,8 +97,10 @@ ms.locfileid: "68565648"
 
 | Местозаполнитель | Значение | Формат или пример |
 |-------------|-------|---|
-|{API_KEY} | Ключ конечной точки ресурса Cognitive Services. |xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|
-|{ENDPOINT_URI} | Количество выставленных счетов за конечную точку, включая регион.|`https://westcentralus.api.cognitive.microsoft.com/vision/v1.0`|
+| **{API_KEY}** | Ключ `Computer Vision` конечной точки ресурса на странице ключей Azure `Computer Vision` . | `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx` |
+| **{ENDPOINT_URI}** | Значение конечной точки выставления счетов доступно на странице `Computer Vision` обзора Azure.| См. раздел [сбор обязательных параметров](computer-vision-how-to-install-containers.md#gathering-required-parameters) для явных примеров. |
+
+[!INCLUDE [subdomains-note](../../../includes/cognitive-services-custom-subdomains-note.md)]
 
 > [!IMPORTANT]
 > Для запуска контейнера необходимо указать параметры `Eula`, `Billing` и `ApiKey`. В противном случае контейнер не запустится.  Дополнительные сведения см. в [разделе о выставлении счетов](computer-vision-how-to-install-containers.md#billing).

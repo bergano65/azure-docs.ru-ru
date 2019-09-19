@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 7/20/2018
 ms.author: atsenthi
-ms.openlocfilehash: 123e63fb79ba966e4e17b0c55440049a79add905
-ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
+ms.openlocfilehash: d8925f1c31b7a0c8f45e65e783077e8f5e2b0add
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70931173"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71103238"
 ---
 # <a name="dns-service-in-azure-service-fabric"></a>Служба DNS в Azure Service Fabric
 Служба DNS является необязательной системной службой, которую можно включить в кластере для обнаружения других служб с помощью протокола DNS. 
@@ -73,16 +73,16 @@ ms.locfileid: "70931173"
 
    - Чтобы включить службу DNS с параметрами по умолчанию, добавьте ее в раздел `addonFeatures` в разделе `properties`, как показано в следующем примере:
 
-       ```json
-           "properties": {
-              ...
-
-              "addonFeatures": [
-                "DnsService"
+        ```json
+          "properties": {
+            ...
+            "addonFeatures": [
+              "DnsService"
               ],
-              ...
-           }
-       ```
+            ...
+          }
+        ```
+
    - Чтобы включить службу с параметрами, отличными от параметров по умолчанию, добавьте блок `DnsService` в раздел `fabricSettings` внутри раздела `properties`. В этом случае добавлять DnsService в раздел `addonFeatures` не требуется. Дополнительные сведения о свойствах, которые можно задать для службы DNS, см. в разделе [параметров службы DNS](./service-fabric-cluster-fabric-settings.md#dnsservice).
 
        ```json
@@ -111,7 +111,10 @@ ms.locfileid: "70931173"
               ]
             }
        ```
-1. После обновления шаблона кластера примените изменения и дождитесь завершения обновления. По завершении обновления в кластере запустится системная служба DNS. Имя этой службы — `fabric:/System/DnsService`, и ее можно найти в разделе служб **Система** в обозревателе Service Fabric. 
+3. После обновления шаблона кластера примените изменения и дождитесь завершения обновления. По завершении обновления в кластере запустится системная служба DNS. Имя этой службы — `fabric:/System/DnsService`, и ее можно найти в разделе служб **Система** в обозревателе Service Fabric. 
+
+> [!NOTE]
+> При обновлении DNS с отключенного на включено Service Fabric Explorer может не отражать новое состояние. Чтобы устранить эту проблему, перезапустите узлы, изменив UpgradePolicy в шаблоне Azure Resource Manager. Дополнительные сведения см. в [справочнике по шаблону Service Fabric](https://docs.microsoft.com/azure/templates/microsoft.servicefabric/2019-03-01/clusters/applications) .
 
 
 ## <a name="setting-the-dns-name-for-your-service"></a>Настройка DNS-имени для службы

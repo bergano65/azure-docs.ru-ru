@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 08/09/2019
 ms.custom: seodec18
-ms.openlocfilehash: ffbc919333c43c04f461498a513d098ce8fe628f
-ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
+ms.openlocfilehash: 81eabadba70a2d5334fab43157f17d24c41d97ec
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70996595"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71103416"
 ---
 # <a name="known-issues-and-troubleshooting-azure-machine-learning"></a>Известные проблемы и устранение неполадок Машинное обучение Azure
 
@@ -174,3 +174,43 @@ displayHTML("<a href={} target='_blank'>Azure Portal: {}</a>".format(local_run.g
 Если появляется сообщение об ошибке `Unable to upload project files to working directory in AzureFile because the storage is overloaded`, используйте следующие обходные пути.
 
 Если вы используете общую папку для других рабочих нагрузок, таких как передача данных, рекомендуется использовать большие двоичные объекты, чтобы файловый ресурс можно было использовать для отправки запусков. Вы также можете разделить рабочую нагрузку между двумя разными рабочими областями.
+
+## <a name="webservices-in-azure-kubernetes-service-failures"></a>Ошибки WebService в службе Kubernetes Azure 
+
+Многие сбои WebService в службе Kubernetes Azure можно отлаживать, подключившись к кластеру с помощью `kubectl`. Чтобы получить `kubeconfig.json` для кластера службы Azure Kubernetes, запустите
+
+```bash
+az aks get-credentials -g <rg> -n <aks cluster name>
+```
+
+## <a name="updating-azure-machine-learning-components-in-aks-cluster"></a>Обновление компонентов Машинное обучение Azure в кластере AKS
+
+Обновления компонентов Машинное обучение Azure, установленных в кластере службы Azure Kubernetes, необходимо применять вручную. Эти кластеры можно применить, отключив кластер из рабочей области Машинное обучение Azure, а затем повторно присоединив кластер к рабочей области. Если в кластере включен протокол SSL, необходимо предоставить SSL-сертификат и закрытый ключ при повторном подключении кластера. 
+
+```python
+compute_target = ComputeTarget(workspace=ws, name=clusterWorkspaceName)
+compute_target.detach()
+compute_target.wait_for_completion(show_output=True)
+
+attach_config = AksCompute.attach_configuration(resource_group=resourceGroup, cluster_name=kubernetesClusterName)
+
+## If SSL is enabled.
+attach_config.enable_ssl(
+    ssl_cert_pem_file="cert.pem",
+    ssl_key_pem_file="key.pem",
+    ssl_cname=sslCname)
+
+attach_config.validate_configuration()
+
+compute_target = ComputeTarget.attach(workspace=ws, name=args.clusterWorkspaceName, attach_configuration=attach_config)
+compute_target.wait_for_completion(show_output=True)
+```
+
+Если у вас больше нет сертификата SSL и закрытого ключа или вы используете сертификат, созданный машинное обучение Azure, вы можете получить файлы перед отсоединением кластера, подключившись к кластеру с помощью `kubectl` и извлекая секретный код. `azuremlfessl`.
+
+```bash
+kubectl get secret/azuremlfessl -o yaml
+```
+
+>[!Note]
+>Kubernetes сохраняет секреты в формате в кодировке Base-64. Необходимо сначала декодировать `cert.pem` компоненты и `key.pem` для этих секретов в Base-64, прежде чем предоставлять их `attach_config.enable_ssl`в. 

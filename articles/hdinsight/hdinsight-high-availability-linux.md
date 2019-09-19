@@ -1,20 +1,20 @@
 ---
 title: Высокий уровень доступности для Hadoop в Azure HDInsight
 description: Узнайте, как использование дополнительного головного узла позволяет повысить надежность и доступность кластеров HDInsight. Узнайте, как это влияет на службы Hadoop, такие как Ambari и Hive, и научитесь подключаться к каждому отдельному головному узлу с помощью SSH.
-ms.reviewer: jasonh
 author: hrasheed-msft
+ms.author: hrasheed
+ms.reviewer: jasonh
 keywords: Высокая доступность Hadoop
 ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 04/24/2019
-ms.author: hrasheed
-ms.openlocfilehash: 1bfc17d343f6e788d22cd158fcb849c5895b019f
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.openlocfilehash: 615b1e4c5684084b6c5f88d26293b993c1efbf1f
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70879780"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71104411"
 ---
 # <a name="availability-and-reliability-of-apache-hadoop-clusters-in-hdinsight"></a>Доступность и надежность кластеров Apache Hadoop в HDInsight
 
@@ -106,7 +106,7 @@ ms.locfileid: "70879780"
 
 Открыв страницу Ambari, слева вы увидите список установленных служб.
 
-![Установленные службы](./media/hdinsight-high-availability-linux/hdinsight-installed-services.png)
+![Установленные службы Apache Ambari](./media/hdinsight-high-availability-linux/hdinsight-installed-services.png)
 
 Существует ряд значков, которые могут отображаться рядом со службой и указывать ее состояние. Все оповещения, связанные с той или иной службой, можно просмотреть, щелкнув ссылку **Оповещения** в верхней части страницы.  Ambari предлагает несколько предопределенных предупреждений.
 
@@ -155,11 +155,11 @@ ms.locfileid: "70879780"
 
 На странице службы содержатся сведения о состоянии и конфигурации каждой службы, но не указывается, на каком головном узле она работает. Чтобы просмотреть эти сведения, щелкните ссылку **Узлы** в верхней части страницы. На странице отобразятся все узлы кластера, включая головные узлы.
 
-![список узлов](./media/hdinsight-high-availability-linux/hdinsight-hosts-list.png)
+![Список узлов Apache Ambari головного узла](./media/hdinsight-high-availability-linux/hdinsight-hosts-list.png)
 
 Выберите ссылку на один из головных узлов, чтобы отобразить работающие на нем службы и компоненты.
 
-![Состояние компонента](./media/hdinsight-high-availability-linux/hdinsight-node-services.png)
+![Состояние компонента Apache Ambari](./media/hdinsight-high-availability-linux/hdinsight-node-services.png)
 
 Подробные сведения об использовании Ambari см. в статье [Управление кластерами HDInsight с помощью веб-интерфейса Ambari](hdinsight-hadoop-manage-ambari.md).
 

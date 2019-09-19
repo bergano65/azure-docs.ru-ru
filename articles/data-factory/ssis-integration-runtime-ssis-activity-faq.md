@@ -12,12 +12,12 @@ author: wenjiefu
 ms.author: wenjiefu
 ms.reviewer: sawinark
 manager: craigg
-ms.openlocfilehash: a7ad0f3be754029c654b04d19750aab7bbcd210d
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 8e800ec8a7a2dd52e052547efa51deaad8c9bb45
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68933634"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71104920"
 ---
 # <a name="troubleshoot-package-execution-in-the-ssis-integration-runtime"></a>Устранение неполадок при выполнении пакетов в среде выполнения интеграции SSIS
 
@@ -55,11 +55,11 @@ ms.locfileid: "68933634"
 
 ### <a name="error-message-the-connection--is-not-found"></a>Сообщение об ошибке: "Подключение"... не найден "
 
-Эту ошибку может вызывать известная проблема, существующая в предыдущих версиях SQL Server Management Studio (SSMS). Если пакет содержит пользовательский компонент (например, пакет дополнительных компонентов Azure для MSSQL Integration Services или компоненты партнера), который не установлен на компьютере, на котором используется среда SSMS для развертывания, эта среда удалит компонент и выдаст сообщение об ошибке. Обновите [среду SSMS](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) до последней версии с исправленной проблемой.
+Эту ошибку может вызывать известная проблема, существующая в предыдущих версиях SQL Server Management Studio (SSMS). Если пакет содержит пользовательский компонент (например, пакет дополнительных компонентов Azure для MSSQL Integration Services или компоненты партнера), который не установлен на компьютере, на котором используется среда SSMS для развертывания, эта среда удалит компонент и выдаст сообщение об ошибке. Обновите среду [SSMS](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) до последней версии, в которой эта проблема исправлена.
 
 ### <a name="error-messagessis-executor-exit-code--1073741819"></a>Сообщение об ошибке: "код выхода исполнителя служб SSIS:-1073741819".
 
-* Возможная причина & рекомендуемое действие:
+* Возможная причина и рекомендуемое действие.
   * Эта ошибка может быть вызвана ограничением для источника и назначения Excel, когда несколько источников или назначений Excel выполняются параллельно в многопоточной работе. Чтобы устранить это ограничение, измените компоненты Excel так, чтобы они выполнялись последовательно, или разделите их на разные пакеты и активируйте с помощью "выполнение задачи пакета", задав для свойства параметр ExecuteOutOfProcess значение true.
 
 ### <a name="error-message-there-is-not-enough-space-on-the-disk"></a>Сообщение об ошибке: "Недостаточно места на диске"
@@ -70,7 +70,7 @@ ms.locfileid: "68933634"
 
 ### <a name="error-message-failed-to-retrieve-resource-from-master-microsoftsqlserverintegrationservicesscalescaleoutcontractcommonmasterresponsefailedexception-code300004-descriptionload-file--failed"></a>Сообщение об ошибке: «Не удалось получить ресурс из главного сервера. Microsoft. SqlServer. IntegrationServices. Scale. Скалеаутконтракт. Common. Мастерреспонсефаиледексцептион: Код: 300004. Описание: не удалось загрузить файл "* * *".
 
-* Возможная причина & рекомендуемое действие:
+* Возможная причина и рекомендуемое действие.
   * Если действие SSIS выполняется пакет из файловой системы (файла пакета или файла проекта), эта ошибка возникает, если проект, пакет или файл конфигурации недоступен с пакетными учетными данными, предоставленными в действии служб SSIS.
     * Если вы используете файл Azure, сделайте следующее:
       * Путь к файлу должен начинаться \\с\> \< \\имени учетной записи\\хранения. File.Core.Windows.NET\<путь к общей папке\>
@@ -81,7 +81,7 @@ ms.locfileid: "68933634"
 
 ### <a name="error-message-the-file-name--specified-in-the-connection-was-not-valid"></a>Сообщение об ошибке: "Имя файла"... " указано недопустимое в соединении
 
-* Возможная причина & рекомендуемое действие:
+* Возможная причина и рекомендуемое действие.
   * Указано недопустимое имя файла
   * Убедитесь, что вместо короткого времени в диспетчере соединений используется полное доменное имя (FQDN).
 
@@ -124,15 +124,43 @@ ms.locfileid: "68933634"
 1. Подготовьте субъект-службу, как описано в статье [Автоматизация с помощью субъектов-служб](https://docs.microsoft.com/azure/analysis-services/analysis-services-service-principal).
 2. В диспетчере соединений настройте **использовать указанные имя пользователя и пароль**: задайте **AppID** в качестве имени пользователя и **clientSecret** в качестве пароля.
 
-### <a name="error-message-adonet-source-has-failed-to-acquire-the-connection-guid-with-the-following-error-message-login-failed-for-user-nt-authorityanonymous-logon-when-using-a-managed-identity"></a>Сообщение об ошибке: "Источнику АДОНЕТ не удалось получить подключение {GUID} со следующим сообщением об ошибке: Пользователю "NT AUTHORITY\ANONYMOUS logon» LOGON" не удалось войти в систему при использовании управляемого удостоверения
+### <a name="error-message-adonet-source-has-failed-to-acquire-the-connection-guid-with-the-following-error-message-login-failed-for-user-nt-authorityanonymous-logon-when-using-a-managed-identity"></a>Сообщение об ошибке: "Источнику ADO.NET не удалось установить подключение {идентификатор GUID} со следующим сообщением об ошибке: Пользователю "NT AUTHORITY\ANONYMOUS logon» LOGON" не удалось войти в систему при использовании управляемого удостоверения
 
-Убедитесь, что метод проверки подлинности диспетчера соединений не настроен как **Active Directory проверки** подлинности с помощью пароля, если параметр *Коннектусингманажедидентити* имеет **значение true**. Вместо этого можно настроить **проверку подлинности SQL** , что не учитывается, если задан параметр *коннектусингманажедидентити* .
+Убедитесь, что метод проверки подлинности диспетчера соединений не настроен как **Active Directory проверки подлинности** с помощью пароля, если параметр *Коннектусингманажедидентити* имеет **значение true**. Вместо этого можно настроить **проверку подлинности SQL** , что не учитывается, если задан параметр *коннектусингманажедидентити* .
+
+### <a name="error-message-request-staging-task-with-operation-guid--fail-since-error-failed-to-dispatch-staging-operation-with-error-message-microsoftsqlserverintegrationservicesaisagentcoreaisagentexception-failed-to-load-data-proxy"></a>Сообщение об ошибке: "Запрос промежуточной задачи с идентификатором GUID операции... сбой с ошибкой: Не удалось подготовить промежуточную операцию, сообщение об ошибке: Microsoft. SqlServer. IntegrationServices. Аисаженткоре. Аисажентексцептион: Не удалось загрузить прокси-сервер данных ".
+
+Убедитесь, что среда выполнения интеграции Azure SSIS настроена с помощью локальной среды выполнения интеграции. Дополнительные сведения см. в [подокне Настройка автономного IR в качестве прокси-сервера для Azure-SSIS IR в ADF](self-hosted-integration-runtime-proxy-ssis.md).
+
+### <a name="error-message-staging-task-status-failed-staging-task-error-errorcode-2010-errormessage-the-self-hosted-integration-runtime--is-offline"></a>Сообщение об ошибке: Состояние промежуточной задачи: сбой. Ошибка промежуточной задачи: ErrorCode: 2010, ErrorMessage: Автономный Integration Runtime... отключено "
+
+Убедитесь, что локальная среда выполнения интеграции установлена и запущена. Дополнительные сведения можно найти на странице [Создание и Настройка локальной среды выполнения интеграции](create-self-hosted-integration-runtime.md) .
+
+### <a name="error-message-staging-task-error-errorcode-2906-errormessage-package-execution-failed-output-operationerrormessages-error-the-requested-ole-db-provider--is-not-registered-if-the-64-bit-driver-is-not-installed-run-the-package-in-32-bit-mode"></a>Сообщение об ошибке: Ошибка промежуточной задачи: ErrorCode: 2906, ErrorMessage: Сбой выполнения пакета., выходные данные: {"Оператионеррормессажес": "Ошибка: Запрошенный поставщик OLE DB... не зарегистрировано. Если 64-разрядный драйвер не установлен, запустите пакет в 32-разрядном режиме...
+
+Убедитесь, что соответствующий поставщик, используемый соединителями OLE DB в вашем пакете, правильно установлен на компьютере локальной среды выполнения интеграции. Дополнительные сведения см. в [подокне Настройка автономного IR в качестве прокси-сервера для Azure-SSIS IR в ADF](self-hosted-integration-runtime-proxy-ssis.md#prepare-self-hosted-ir) .
+
+### <a name="error-message-staging-task-error-errorcode-2906-errormessage-package-execution-failed-output-operationerrormessages-error-systemiofileloadexception-could-not-load-file-or-assembly-microsoftwindowsazurestorage-version-cultureneutral-publickeytoken31bf3856ad364e35-or-one-of-its-dependencies-the-located-assemblys-manifest-definition-does-not-match-the-assembly-reference"></a>Сообщение об ошибке: Ошибка промежуточной задачи: ErrorCode: 2906, ErrorMessage: Сбой выполнения пакета., выходные данные: {"Оператионеррормессажес": "Ошибка: System. IO. FileLoadException: Не удалось загрузить файл или сборку "Microsoft. WindowsAzure. Storage", версия =..., культура = нейтральная, PublicKeyToken = 31bf3856ad364e35 "или одну из ее зависимостей. Определение манифеста найденной сборки не соответствует ссылке на сборку. ..."
+
+Одна из возможных причин заключается в том, что локальная среда выполнения интеграции не установлена или не обновлена должным образом. Предложить скачать и переустановить последнюю локальную среду выполнения интеграции. Дополнительные сведения можно найти на странице [Создание и Настройка локальной среды выполнения интеграции](create-self-hosted-integration-runtime.md#installation-best-practices) .
+
+### <a name="error-message-a-connection-is-required-when-requesting-metadata-if-you-are-working-offline-uncheck-work-offline-on-the-ssis-menu-to-enable-the-connection"></a>Сообщение об ошибке: "При запросе метаданных требуется соединение. Если вы работаете в автономном режиме, снимите флажок "работать вне сети" в меню служб SSIS, чтобы включить подключение ".
+
+* Возможная причина и рекомендуемое действие.
+  * Если имеется также предупреждающее сообщение "компонент не поддерживает использование диспетчера соединений с параметром Коннектбипрокси value true" в журнале выполнения, это означает, что диспетчер соединений используется для компонента, который еще не поддерживал "Коннектбипрокси". Поддерживаемые компоненты можно найти на странице [Настройка автономного IR в качестве прокси-сервера для Azure-SSIS IR в ADF](self-hosted-integration-runtime-proxy-ssis.md#enable-ssis-packages-to-connect-by-proxy)
+  * Журнал выполнения можно найти в [отчете SSMS](https://docs.microsoft.com/sql/integration-services/performance/monitor-running-packages-and-other-operations?view=sql-server-2017#reports) или в папке журнала, указанной в действии выполнения пакета служб SSIS.
+  * Виртуальную сеть можно также использовать для доступа к локальным данным в качестве альтернативы. Дополнительные сведения можно найти в привязке [среды выполнения интеграции Azure SSIS к виртуальной сети](join-azure-ssis-integration-runtime-virtual-network.md) .
+
+### <a name="error-message-staging-task-status-failed-staging-task-error-errorcode-2906-errormessage-package-execution-failed-output-operationerrormessages-ssis-executor-exit-code--1n-loglocation-ssistelemetryexecutionlog-effectiveintegrationruntime--executionduration--durationinqueue--integrationruntimequeue--"></a>Сообщение об ошибке: Состояние промежуточной задачи: сбой. Ошибка промежуточной задачи: ErrorCode: 2906, ErrorMessage: Сбой выполнения пакета., выходные данные: {"Оператионеррормессажес": "Код выхода исполнителя служб SSIS:-1. \ n", "LogLocation": "... \\СсистелеметриExecutionLog.\\.. "," еффективеинтегратионрунтиме ":"... "," ексекутиондуратион ":...," дуратионинкуеуе ": {" интегратионрунтимекуеуе ":...}}"\\
+
+Убедитесь, что C++ среда Visual Runtime установлена на компьютере с локальной средой выполнения интеграции. Дополнительные сведения см. в [подокне Настройка автономного IR в качестве прокси-сервера для Azure-SSIS IR в ADF](self-hosted-integration-runtime-proxy-ssis.md#prepare-self-hosted-ir) .
 
 ### <a name="multiple-package-executions-are-triggered-unexpectedly"></a>Несколько запусков пакета вызываются неожиданно
 
-* Возможная причина & рекомендуемое действие:
-  * Действие хранимой процедуры ADF используется для запуска выполнения пакета служб SSIS. Команда t-SQL может вызвать временную ошибку и запустить повторное выполнение, что приведет к выполнению нескольких пакетов.
+* Возможная причина и рекомендуемое действие.
+  * Действие хранимой процедуры ADF или операция поиска используются для запуска выполнения пакета служб SSIS. Команда t-SQL может вызвать временную ошибку и запустить повторное выполнение, что приведет к выполнению нескольких пакетов.
   * Вместо этого используйте действие Ексекутессиспаккаже, которое гарантирует, что выполнение пакета не будет выполняться повторно, если число повторных попыток не задается пользователем. Подробные сведения можно найти по адресу[https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-ssis-activity](https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-ssis-activity)
+  * Уточните команду t-SQL, чтобы выполнить повторный запуск, проверив, активировано ли уже выполнение.
 
 ### <a name="package-execution-takes-too-long"></a>Выполнение пакета занимает слишком много времени
 

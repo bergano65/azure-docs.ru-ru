@@ -7,12 +7,12 @@ ms.date: 07/30/2019
 ms.author: rogarana
 ms.subservice: files
 ms.topic: conceptual
-ms.openlocfilehash: 0fe893ae95b31b1b676a982a60166041a0ad964d
-ms.sourcegitcommit: df7942ba1f28903ff7bef640ecef894e95f7f335
+ms.openlocfilehash: cc827f52d227ee36620bd215dfcba96b433804d3
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69015905"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71103059"
 ---
 # <a name="frequently-asked-questions-faq-about-azure-files"></a>Часто задаваемые вопросы о службе файлов Azure
 [Служба файлов Azure](storage-files-introduction.md) предоставляет полностью управляемые общие файловые ресурсы в облаке, доступ к которым можно получить с помощью стандартного отраслевого [протокола SMB](https://msdn.microsoft.com/library/windows/desktop/aa365233.aspx). Общие ресурсы службы файлов Azure можно одновременно подключить к облачным или локальным развертываниям Windows, Linux и macOS. Вы также можете кэшировать общие файловые ресурсы Azure на компьютерах под управлением Windows Server с помощью функции "Синхронизация файлов Azure", чтобы получить быстрый доступ из расположения, где используются данные.
@@ -100,7 +100,7 @@ ms.locfileid: "69015905"
    
     \<имя_файла_без_разрешения\>-\<имя_компьютера\>\[-#\].\<ext\>  
 
-    Например, файл CompanyReport.docx при первом конфликте станет CompanyReport-CentralServer.docx, где CentralServer является расположением, в котором запись изменений произошла раньше. Для второго конфликта соответственно будет использоваться имя CompanyReport-CentralServer-1.docx.
+    Например, файл CompanyReport.docx при первом конфликте станет CompanyReport-CentralServer.docx, где CentralServer является расположением, в котором запись изменений произошла раньше. Для второго конфликта соответственно будет использоваться имя CompanyReport-CentralServer-1.docx. Синхронизация файлов Azure поддерживает файлы конфликтов 100 для каждого файла. После достижения максимального количества конфликтующих файлов файл не будет синхронизироваться, пока число конфликтующих файлов не будет меньше 100.
 
 * <a id="afs-storage-redundancy"></a>
   **Поддерживает ли служба "Синхронизация файлов Azure" геоизбыточное хранилище?**  

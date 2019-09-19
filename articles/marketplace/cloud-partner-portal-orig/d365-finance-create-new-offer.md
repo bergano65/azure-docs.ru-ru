@@ -1,37 +1,23 @@
 ---
 title: Создание нового предложения Microsoft Dynamics 365 Business Central | Azure Marketplace
-description: В этой статье описано создание нового предложения Microsoft Dynamics 365 Business Central, с помощью портала Cloud Partner.
+description: Нерекомендуемый и связанный с соответствующими статьями для ПК; WAS "объясняет, как создать новое предложение Microsoft Dynamics 365 Business Central с помощью Портал Cloud Partner".
 services: Azure, Marketplace, Cloud Partner Portal,
-author: v-miclar
+author: ChJenk
 ms.service: marketplace
 ms.topic: conceptual
-ms.date: 09/17/2018
+ms.date: 09/18/2019
 ms.author: pabutler
-ms.openlocfilehash: 603dd63b31536bf906afc49223f4d6ac99819293
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 165406f2cf7ad6087febebdfdc67896527d23961
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64935044"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105588"
 ---
-<a name="how-to-create-your-new-microsoft-dynamics-365-business-central-offer"></a>Создание нового предложения Microsoft Dynamics 365 Business Central
-====================================================================
+# <a name="how-to-create-your-new-microsoft-dynamics-365-business-central-offer"></a>Создание нового предложения Microsoft Dynamics 365 Business Central
 
-После построения приложения, необходимо определить все атрибуты, которые будут определять, как приложение будет представлено в Microsoft AppSource. Например необходимо указать сведения о компании, предложения и планы, маркетинговую информацию, контактное лицо по поддержке и категории Microsoft AppSource. 
+[Портал Cloud Partner](https://cloudpartner.azure.com/) больше не поддерживает создание и Управление предложениями Dynamics 365 Business Central. Вместо этого эта функция была перемещена на [портал центра партнеров](https://partner.microsoft.com/)Майкрософт. Дополнительные сведения см. [в статье Создание нового предложения Dynamics 365 Business Central](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-new-business-central-offer).
 
-Для определения атрибутов войдите на [Портал Microsoft Cloud Partner](https://cloudpartner.azure.com/) с помощью учетной записи Майкрософт, которая использовалась для регистрации в центре разработчиков.
+## <a name="next-steps"></a>Следующие шаги
 
-1. На портале Cloud Partner, на панели навигации слева щелкните **+ новое предложение** и из списка приложений выберите **Dynamics 365 Business Central**.
-
-   ![Создание нового предложения](./media/d365-financials/image003.png)
-
-2. Открывается представление "Редактор" для нового предложения и можно приступить к разработке.
-
-   ![Последовательность публикации предложения](./media/d365-financials/image005.png)
-
-3. В представлении «Редактор» вы увидите обзор вкладок, которые необходимо выполнить. Каждая вкладка состоит из набора полей, которые необходимо заполнить. Обязательные для заполнения поля отмечены красной звездочкой (\*). К следующему шагу публикации невозможно перейти без заполнения этих полей. Для приложения Dynamics 365 Business Central доступны следующие вкладки.
-
--   **Параметры предложения**
--   **Технические сведения**
--   **Сведения об онлайн-магазине**
--   **Контакты**
+Перед созданием нового предложения Dynamics 365 Business Center необходимо ознакомиться со статьей [Создание учетной записи центра партнеров](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) , а затем открыть [панель мониторинга коммерческого рынка](https://partner.microsoft.com/dashboard/directory) с выбранной страницей **обзора** . Следуйте инструкциям в разделе [Создание нового предложения Dynamics 365 Business Central](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-new-business-central-offer) , чтобы создать предложение.

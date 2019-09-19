@@ -2,18 +2,18 @@
 title: Запрос журналов Azure Monitor для мониторинга кластеров Azure HDInsight
 description: Узнайте, как выполнять запросы к журналам Azure Monitor для мониторинга заданий, выполняемых в кластере HDInsight.
 author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/05/2018
-ms.author: hrasheed
-ms.openlocfilehash: 031879ac1d0d2dd1148c0c37ee72c60d093f8a7d
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: 51344ff7381b6392870b1fd0e331eed38a33915d
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70809380"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71103519"
 ---
 # <a name="query-azure-monitor-logs-to-monitor-hdinsight-clusters"></a>Запрос журналов Azure Monitor для мониторинга кластеров HDInsight
 
@@ -27,38 +27,38 @@ ms.locfileid: "70809380"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Вы должны настроить кластер HDInsight для использования журналов Azure Monitor и добавить в нее решения для мониторинга Azure Monitor журналов, относящиеся к кластеру HDInsight. Инструкции см. в статье [Использование журналов Azure Monitor с кластерами HDInsight](hdinsight-hadoop-oms-log-analytics-tutorial.md).
+Вы должны настроить кластер HDInsight для использования журналов Azure Monitor и добавить в нее решения для мониторинга Azure Monitor журналов, относящиеся к кластеру HDInsight. Инструкции см. в статье [Использование журналов Azure Monitor с кластерами HDInsight](hdinsight-hadoop-oms-log-analytics-tutorial.md).
 
 ## <a name="analyze-hdinsight-cluster-metrics"></a>Анализ метрик кластера HDInsight
 
 Узнайте, как выполнить поиск определенных метрик для кластера HDInsight.
 
 1. Откройте рабочую область Log Analytics, которая связана с вашим кластером HDInsight на портале Azure.
-2. Выберите плитку **Поиск по журналам**.
-3. Введите следующий запрос в поле поиска, чтобы найти все метрики всех доступных метрик для всех кластеров HDInsight, настроенных для использования журналов Azure Monitor, а затем выберите **выполнить**.
+1. Выберите плитку **Поиск по журналам**.
+1. Введите следующий запрос в поле поиска, чтобы найти все метрики всех доступных метрик для всех кластеров HDInsight, настроенных для использования журналов Azure Monitor, а затем выберите **выполнить**.
 
         search *
 
-    ![Поиск всех метрик](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-search-all-metrics.png "Поиск всех метрик")
+    ![Apache Ambari Analytics Поиск всех метрик](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-search-all-metrics.png "Поиск по всем метрикам")
 
     Выходные данные должны выглядеть так:
 
-    ![Выходные данные поиска всех метрик](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-search-all-metrics-output.png "Выходные данные поиска всех метрик")
+    ![Поиск в log Analytics всех метрик](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-search-all-metrics-output.png "Поиск всех выходных данных метрик")
 
-5. В левой области в категории **Тип** выберите метрику, которую необходимо изучить подробнее, и нажмите кнопку **Применить**. На следующем снимке экрана показано, что выбран тип `metrics_resourcemanager_queue_root_default_CL`.
+1. В левой области в категории **Тип** выберите метрику, которую необходимо изучить подробнее, и нажмите кнопку **Применить**. На следующем снимке экрана показано, что выбран тип `metrics_resourcemanager_queue_root_default_CL`.
 
     > [!NOTE]  
     > Чтобы найти необходимую метрику, может потребоваться нажать кнопку **[+] Дополнительно**. Кроме того, кнопка **Применить** находится в нижней части списка, поэтому нужно прокрутить вниз, чтобы увидеть ее.
 
     Обратите внимание, что запрос в текстовом поле изменяется на тот, который показан в выделенном поле на следующем снимке экрана:
 
-    ![Поиск конкретных метрик](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-search-specific-metrics.png "Поиск конкретных метрик")
+    ![Поиск конкретных метрик в log Analytics](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-search-specific-metrics.png "Поиск конкретных метрик")
 
-6. Можно получить более подробную информацию о конкретной метрике. Например, можно уточнить существующие выходные данные по среднему количеству ресурсов, использованных за 10-минутный интервал, классифицировав их по имени кластера с помощью следующего запроса:
+1. Можно получить более подробную информацию о конкретной метрике. Например, можно уточнить существующие выходные данные по среднему количеству ресурсов, использованных за 10-минутный интервал, классифицировав их по имени кластера с помощью следующего запроса:
 
         search in (metrics_resourcemanager_queue_root_default_CL) * | summarize AggregatedValue = avg(UsedAMResourceMB_d) by ClusterName_s, bin(TimeGenerated, 10m)
 
-7. Вместо уточнения по среднему количеству используемых ресурсов можно использовать следующий запрос, чтобы уточнить результаты на основе максимального использования ресурсов в 10-минутном интервале (а также 90-го и 95-го процентиля):
+1. Вместо уточнения по среднему количеству используемых ресурсов можно использовать следующий запрос, чтобы уточнить результаты на основе максимального использования ресурсов в 10-минутном интервале (а также 90-го и 95-го процентиля):
 
         search in (metrics_resourcemanager_queue_root_default_CL) * | summarize ["max(UsedAMResourceMB_d)"] = max(UsedAMResourceMB_d), ["pct95(UsedAMResourceMB_d)"] = percentile(UsedAMResourceMB_d, 95), ["pct90(UsedAMResourceMB_d)"] = percentile(UsedAMResourceMB_d, 90) by ClusterName_s, bin(TimeGenerated, 10m)
 
@@ -68,15 +68,16 @@ ms.locfileid: "70809380"
 
 1. Откройте рабочую область Log Analytics, которая связана с вашим кластером HDInsight на портале Azure.
 2. Выберите плитку **Поиск по журналам**.
-3. Введите следующий запрос, чтобы найти все сообщения об ошибках для всех кластеров HDInsight, настроенных для использования журналов Azure Monitor, а затем выберите **выполнить**. 
+3. Введите следующий запрос, чтобы найти все сообщения об ошибках для всех кластеров HDInsight, настроенных для использования журналов Azure Monitor, а затем выберите **выполнить**.
 
          search "Error"
 
     Должны отобразиться выходные данные, аналогичные указанным ниже.
 
-    ![Выходные данные поиска всех ошибок](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-search-all-errors-output.png "Выходные данные поиска всех ошибок")
+    ![Портал Azure ошибок поиска по журналам](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-search-all-errors-output.png "Поиск всех ошибок в выходных данных")
 
 4. В левой области в категории **Тип** найдите тип ошибки, который необходимо изучить подробнее, и нажмите кнопку **Применить**.  Обратите внимание, что результаты уточнены и показывают только ошибки выбранного типа.
+
 5. Можно получить более подробную информацию о конкретном списке ошибок, используя параметры, доступные на панели слева. Пример:
 
     - чтобы просмотреть сообщения об ошибках из определенного рабочего узла, сделайте следующее:
@@ -116,7 +117,7 @@ ms.locfileid: "70809380"
 1. Откройте рабочую область Log Analytics на портале Azure.
 2. В меню слева выберите **Оповещение**.
 3. Выберите оповещение, которое требуется изменить или удалить.
-4. Доступны следующие варианты: **Сохранить**, **Отменить**, **Отключить** и **Удалить**.
+4. Можно выбрать один из следующих параметров. **Сохранить**, **Отменить**, **Отключить** и **Удалить**.
 
     ![Предупреждение об удалении журнала Azure Monitor HDInsight](media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-edit-alert.png)
 

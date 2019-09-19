@@ -11,12 +11,12 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab
 ms.date: 09/06/2019
-ms.openlocfilehash: a80e1d0e4aa243d46efa79173af3fc5d774eb46f
-ms.sourcegitcommit: b8578b14c8629c4e4dea4c2e90164e42393e8064
+ms.openlocfilehash: 6f5d865b5a12ce8989631deee7ebda49dbe1ab12
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70806607"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71103196"
 ---
 # <a name="use-auto-failover-groups-to-enable-transparent-and-coordinated-failover-of-multiple-databases"></a>Использование групп автоматической отработки отказа для включения прозрачной и согласованной отработки отказа в нескольких базах данных
 
@@ -172,9 +172,6 @@ ms.locfileid: "70806607"
   > Эластичные пулы с 800 DTU или менее и более чем 250 базами данных, использующими георепликацию, могут испытывать проблемы, включая более длительные плановые операции отработки отказа и снижение производительности.  Эти проблемы чаще всего возникают из-за рабочих нагрузок, интенсивно записывающих данные, если конечные точки георепликации физически находятся далеко друг от друга или если используется несколько дополнительных конечных точек для каждой базы данных.  Симптомы этих проблем проявляются при увеличении задержки георепликации с течением времени.  Эту задержку можно отслеживать с помощью [sys.dm_geo_replication_link_status](/sql/relational-databases/system-dynamic-management-views/sys-dm-geo-replication-link-status-azure-sql-database).  Если эти проблемы возникли, к возможным способам их устранения относятся увеличение числа DTU пула или уменьшение количества геореплицируемых баз данных в одном пуле.
 
 ## <a name="best-practices-of-using-failover-groups-with-managed-instances"></a>Рекомендации по использованию групп отработки отказа с управляемыми экземплярами
-
-> [!IMPORTANT]
-> Группы автоматической отработки отказа для управляемого экземпляра предоставляются в общедоступной предварительной версии.
 
 Группы автоматической отработки отказа должны быть настроены на экземпляре источника и подключены к экземпляру получателя в другом регионе Azure.  Все базы данных в экземпляре будут реплицированы в экземпляр получателя. 
 
@@ -365,7 +362,7 @@ ms.locfileid: "70806607"
 | [Обновление группы отработки отказа](https://docs.microsoft.com/rest/api/sql/failovergroups/update) | Обновляет группу отработки отказа. |
 |  | |
 
-### <a name="rest-api-manage-failover-groups-with-managed-instances-preview"></a>REST API: Управление группами отработки отказа с помощью Управляемого экземпляра (предварительная версия)
+### <a name="rest-api-manage-failover-groups-with-managed-instances"></a>REST API: Управление группами отработки отказа с помощью управляемых экземпляров
 
 | API | Описание |
 | --- | --- |

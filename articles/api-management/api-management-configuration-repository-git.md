@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 03/12/2019
 ms.author: apimpm
-ms.openlocfilehash: b4ee4ca2ede2e0a2d6d1af906cc34051c76353bd
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 9bbd62bc05e03641c2abe9308d9238bef23877c2
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70073756"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71104969"
 ---
 # <a name="how-to-save-and-configure-your-api-management-service-configuration-using-git"></a>Сохранение и настройка конфигурации службы управления API с помощью Git
 
@@ -99,7 +99,7 @@ git clone https://username:password@{name}.scm.azure-api.net/
 Если ошибка возникнет и в этом случае, попробуйте использовать кодирование URL части пароля, содержащегося в команде. Чтобы быстро решить эту задачу, откройте Visual Studio и выполните следующую команду в **окне интерпретации**. Чтобы открыть **окно интерпретации**, откройте любое решение или проект в Visual Studio (или создайте пустое консольное приложение), а затем выберите **Окна** и **Интерпретация** в меню **Отладка**.
 
 ```
-?System.NetWebUtility.UrlEncode("password from the Azure portal")
+?System.Net.WebUtility.UrlEncode("password from the Azure portal")
 ```
 
 Зашифрованный пароль вместе с именем пользователя и расположением репозитория можно использовать для создания команды git.
