@@ -5,15 +5,15 @@ services: expressroute
 author: cherylmc
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 12/07/2018
+ms.date: 09/18/2018
 ms.author: cherylmc
 ms.custom: seodec18
-ms.openlocfilehash: 3ffcc5ac2193e607573ceb93717258f5349d1f15
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1e0f4d356bb6addf735bf148a80e6be3ca550c8f
+ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60883204"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71123383"
 ---
 # <a name="expressroute-workflows-for-circuit-provisioning-and-circuit-states"></a>Процедуры ExpressRoute для подготовки каналов и состояний каналов
 На этой странице описаны процедуры подготовки служб и настройки маршрутизации на высоком уровне.
@@ -29,7 +29,7 @@ ms.locfileid: "60883204"
    
    * Включите частный пиринг Azure — он требуется для подключения к виртуальным машинам и (или) облачным службам, развернутым в виртуальных сетях.
 
-   * Включите пиринг Майкрософт — он требуется для доступа к Office 365 и Dynamics 365. Кроме того, все службы Azure PaaS доступны через пиринг Майкрософт.
+   * Включить пиринг Майкрософт. Включите этот параметр для доступа к Office 365. Кроме того, все службы Azure PaaS доступны через пиринг Майкрософт.
      
      > [!IMPORTANT]
      > Для подключения к Майкрософт нельзя использовать прокси-сервер или ресурс, который используется для подключения к Интернету. Подключение к ExpressRoute и к Интернету через один и тот же ресурс приведет к асимметричной маршрутизации и вызовет проблемы подключения в вашей сети.
@@ -43,7 +43,7 @@ ms.locfileid: "60883204"
 У каждого канала ExpressRoute имеется два состояния.
 
 * Состояние подготовки поставщика услуг
-* Status
+* Сообщение о состоянии
 
 Состояние указывает на состояние подготовки Майкрософт. При создании канала Expressroute это свойство имеет значение "Включен".
 
@@ -104,7 +104,7 @@ ms.locfileid: "60883204"
 > 
 > 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Настройте подключение ExpressRoute.
   
   * [Создайте канал ExpressRoute.](expressroute-howto-circuit-arm.md)

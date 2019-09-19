@@ -1,19 +1,19 @@
 ---
 title: Отправка заданий из расширения "Инструменты R для Visual Studio" в Azure HDInsight
 description: Отправка заданий R с локального компьютера Visual Studio в кластер HDInsight.
-ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
+ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/19/2019
-ms.openlocfilehash: 2d53f1bfc6eade535bfb1b3bb07d5115ffe5fc80
-ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
+ms.openlocfilehash: 1323e46d734d047f68652d0b21902e03182e6b62
+ms.sourcegitcommit: 2ed6e731ffc614f1691f1578ed26a67de46ed9c2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70967945"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71130253"
 ---
 # <a name="submit-jobs-from-r-tools-for-visual-studio"></a>Отправка заданий из расширения "Инструменты R для Visual Studio"
 
@@ -41,7 +41,7 @@ ms.locfileid: "70967945"
 
    2. Перейдите в пункт меню **Инструменты R**, а затем выберите **Параметры обработки и анализа данных...**
 
-       ![Параметры обработки и анализа данных...](./media/r-server-submit-jobs-r-tools-vs/data-science-settings.png)
+       ![Visual Studio Параметры обработки и анализа данных](./media/r-server-submit-jobs-r-tools-vs/data-science-settings.png)
 
       > [!NOTE]  
       > С помощью подхода из шага 1 вы также можете сохранить и восстановить персонализированный макет обработки и анализа данных вместо того, чтобы повторять команду **Параметры обработки и анализа данных**.
@@ -56,11 +56,11 @@ ms.locfileid: "70967945"
 6. Начиная сверху файла, нажимайте клавиши CTRL+ENTER, чтобы по очереди отправлять каждую строку в интерактивное окно R. Для некоторых строк это может занять определенное время, так как код в них устанавливает новые пакеты.
     * Кроме того, вы можете выбрать все строки в файле R (CTRL+A) и выполнить их все (CTRL+ENTER) либо на панели инструментов выбрать значок выполнения в интерактивном режиме.
 
-        ![Выполнить интерактивный](./media/r-server-submit-jobs-r-tools-vs/execute-interactive1.png)
+        ![Интерактивное выполнение Visual Studio](./media/r-server-submit-jobs-r-tools-vs/execute-interactive1.png)
 
 7. Когда все строки в сценарии будут выполнены, у вас должен быть следующий результат:
 
-    ![Рабочая область](./media/r-server-submit-jobs-r-tools-vs/visual-studio-workspace.png)
+    ![Инструменты R рабочей области Visual Studio](./media/r-server-submit-jobs-r-tools-vs/visual-studio-workspace.png)
 
 ## <a name="submit-jobs-to-an-hdinsight-ml-services-cluster"></a>Отправка заданий в кластер HDInsight R для Служб машинного обучения
 
@@ -96,7 +96,7 @@ ms.locfileid: "70967945"
     rxSetComputeContext(mySparkCluster)
     ```
 
-   ![Настройка контекста Spark](./media/r-server-submit-jobs-r-tools-vs/apache-spark-context.png)
+   ![Установка контекста Apache Spark](./media/r-server-submit-jobs-r-tools-vs/apache-spark-context.png)
 
 1. В интерактивном окне R выполните следующие команды:
 
@@ -113,17 +113,17 @@ ms.locfileid: "70967945"
 
     1. На панели кластера HDInsight для Служб машинного обучения в Azure в меню слева выберите **Учетные записи хранения**.
 
-        ![Учетные записи хранения](./media/r-server-submit-jobs-r-tools-vs/hdinsight-storage-accounts.png)
+        ![Учетные записи хранения Azure HDInsight](./media/r-server-submit-jobs-r-tools-vs/hdinsight-storage-accounts.png)
 
     2. Выберите учетную запись хранения по умолчанию для своего кластера, записав имя контейнера и каталога.
 
     3. На панели учетных записей хранения в меню слева выберите **Контейнеры**.
 
-        ![Контейнеры](./media/r-server-submit-jobs-r-tools-vs/hdi-storage-containers.png)
+        ![Контейнеры хранилища Azure HDInsight](./media/r-server-submit-jobs-r-tools-vs/hdi-storage-containers.png)
 
     4. Выберите имя контейнера вашего кластера, перейдите в папку **пользователя** (возможно, внизу списка нужно будет нажать *Загрузить еще*), выберите *RevoShare*, а затем — **newUser**. Файл `people.json` должен появиться в папке `newUser`.
 
-        ![Скопированный файл](./media/r-server-submit-jobs-r-tools-vs/hdinsight-copied-file.png)
+        ![Расположение папки "скопированные файлы HDInsight"](./media/r-server-submit-jobs-r-tools-vs/hdinsight-copied-file.png)
 
 1. После этого остановите выполнение текущего контекста Apache Spark. Одновременное выполнение нескольких контекстов не поддерживается.
 
@@ -135,4 +135,3 @@ ms.locfileid: "70967945"
 
 * [Варианты контекста вычислений для Служб машинного обучения в HDInsight](r-server-compute-contexts.md)
 * Пример прогнозирования задержки рейсов см. в статье [Совместное использование ScaleR и SparkR в HDInsight](../hdinsight-hadoop-r-scaler-sparkr.md).
-

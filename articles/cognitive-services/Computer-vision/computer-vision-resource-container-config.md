@@ -11,16 +11,16 @@ ms.topic: conceptual
 ms.date: 09/18/2019
 ms.author: dapine
 ms.custom: seodec18
-ms.openlocfilehash: 186f2f60aad15b336265114d7c85c757e0dd333f
-ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
+ms.openlocfilehash: aba846ade9e2b5e19304df87ea3e29713aacf4ba
+ms.sourcegitcommit: 2ed6e731ffc614f1691f1578ed26a67de46ed9c2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71102288"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71129963"
 ---
-# <a name="configure-recognize-text-docker-containers"></a>Настройка контейнера Распознавания текста в Docker
+# <a name="configure-computer-vision-docker-containers"></a>Настройка Компьютерное зрение контейнеров DOCKER
 
-Среда выполнения контейнера **Распознавание текста** настраивается с помощью аргументов команды `docker run`. Контейнер поддерживает несколько обязательных и несколько необязательных параметров. Доступны несколько [примеров](#example-docker-run-commands) этой команды. Для конкретного контейнера настраиваются входные параметры выставления счетов. 
+Вы настраиваете среду выполнения контейнера компьютерное зрение с помощью `docker run` аргументов команды. Контейнер поддерживает несколько обязательных и несколько необязательных параметров. Доступны несколько [примеров](#example-docker-run-commands) этой команды. Для конкретного контейнера настраиваются входные параметры выставления счетов. 
 
 ## <a name="configuration-settings"></a>Параметры конфигурации
 
@@ -65,7 +65,7 @@ ms.locfileid: "71102288"
 
 ## <a name="http-proxy-credentials-settings"></a>Параметры учетных данных прокси-сервера HTTP
 
-[!INCLUDE [Container shared configuration fluentd settings](../../../includes/cognitive-services-containers-configuration-shared-settings-http-proxy.md)]
+[!INCLUDE [Container shared configuration HTTP proxy settings](../../../includes/cognitive-services-containers-configuration-shared-settings-http-proxy.md)]
 
 ## <a name="logging-settings"></a>Параметры ведения журнала
  
@@ -82,16 +82,14 @@ ms.locfileid: "71102288"
 |Необязательный| Название | Тип данных | Описание |
 |-------|------|-----------|-------------|
 |Не разрешено| `Input` | Строковое | Контейнеры API компьютерного зрения не используют этот элемент.|
-|Необязательный| `Output` | Строковое | Цель выходного подключения. Значение по умолчанию — `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример:<br>`--mount type=bind,src=c:\output,target=/output`|
+|Необязательный| `Output` | Строковое | Цель выходного подключения. По умолчанию используется значение `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример:<br>`--mount type=bind,src=c:\output,target=/output`|
 
-## <a name="example-docker-run-commands"></a>Примеры команд docker run 
+## <a name="example-docker-run-commands"></a>Примеры команд docker run
 
 В следующих примерах параметры конфигурации иллюстрируют процесс написания и использования команд `docker run`.  После запуска контейнер продолжает работу, пока вы его не [остановите](computer-vision-how-to-install-containers.md#stop-the-container).
 
 * **Символ продолжения строки**. В командах Docker в следующих разделах используется обратная косая черта (`\`) как символ продолжения строки. Замените или удалите ее в соответствии с требованиями вашей операционной системы. 
 * **Порядок аргументов**. Не изменяйте порядок аргументов, если вы не являетесь уверенным пользователем контейнеров Docker.
-
-Не забудьте добавить `vision/v1.0` маршрут к универсальному коду ресурса (URI) конечной точки, как показано в следующей таблице. 
 
 Замените строку {_имя_аргумента_} собственными значениями.
 
@@ -104,17 +102,19 @@ ms.locfileid: "71102288"
 
 > [!IMPORTANT]
 > Для запуска контейнера необходимо указать параметры `Eula`, `Billing` и `ApiKey`. В противном случае контейнер не запустится.  Дополнительные сведения см. в [разделе о выставлении счетов](computer-vision-how-to-install-containers.md#billing).
-> Значение apiKey является **ключом** на странице ключей ресурсов Azure `Cognitive Services` . 
+> Значение apiKey является **ключом** на странице ключей ресурсов Azure `Cognitive Services` .
 
-## <a name="recognize-text-container-docker-examples"></a>Примеры распознавания текста контейнера Docker
+## <a name="container-docker-examples"></a>Примеры DOCKER Container
 
-Следующие примеры Docker предназначены для контейнера распознавания текста. 
+#### <a name="readtabread"></a>[чтение](#tab/read)
 
-### <a name="basic-example"></a>Простой пример 
+Следующие примеры DOCKER предназначены для контейнера Read.
+
+### <a name="basic-example"></a>Простой пример
 
   ```
-  docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 \
-  containerpreview.azurecr.io/microsoft/cognitive-services-recognize-text \
+  docker run --rm -it -p 5000:5000 --memory 16g --cpus 8 \
+  containerpreview.azurecr.io/microsoft/cognitive-services-read \
   Eula=accept \
   Billing={ENDPOINT_URI} \
   ApiKey={API_KEY} 
@@ -123,7 +123,32 @@ ms.locfileid: "71102288"
 ### <a name="logging-example"></a>Пример ведения журнала 
 
   ```
-  docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 \
+  docker run --rm -it -p 5000:5000 --memory 16g --cpus 8 \
+  containerpreview.azurecr.io/microsoft/cognitive-services-read \
+  Eula=accept \
+  Billing={ENDPOINT_URI} \
+  ApiKey={API_KEY} \
+  Logging:Console:LogLevel:Default=Information
+  ```
+
+#### <a name="recognize-texttabrecognize-text"></a>[Распознавание текста](#tab/recognize-text)
+
+Следующие примеры DOCKER предназначены для контейнера Распознавание текста.
+
+### <a name="basic-example"></a>Простой пример
+
+  ```
+  docker run --rm -it -p 5000:5000 --memory 16g --cpus 8 \
+  containerpreview.azurecr.io/microsoft/cognitive-services-recognize-text \
+  Eula=accept \
+  Billing={ENDPOINT_URI} \
+  ApiKey={API_KEY} 
+  ```
+
+### <a name="logging-example"></a>Пример ведения журнала
+
+  ```
+  docker run --rm -it -p 5000:5000 --memory 16g --cpus 8 \
   containerpreview.azurecr.io/microsoft/cognitive-services-recognize-text \
   Eula=accept \
   Billing={ENDPOINT_URI} \
@@ -131,6 +156,8 @@ ms.locfileid: "71102288"
   Logging:Console:LogLevel:Default=Information
   ```
 
+***
+
 ## <a name="next-steps"></a>Следующие шаги
 
-* Изучите статью об [установке и запуске контейнеров](computer-vision-how-to-install-containers.md).
+* Узнайте [, как устанавливать и запускать контейнеры](computer-vision-how-to-install-containers.md).

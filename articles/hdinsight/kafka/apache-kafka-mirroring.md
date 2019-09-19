@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/24/2019
-ms.openlocfilehash: 8565ee03ddff67afb3700aa1cda91ae696a0fc93
-ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
+ms.openlocfilehash: 270bc5401e58f4e5c99cae3c5ab06b4f03ae9543
+ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70960236"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71123240"
 ---
 # <a name="use-mirrormaker-to-replicate-apache-kafka-topics-with-kafka-on-hdinsight"></a>Репликация разделов Apache Kafka с помощью Kafka в HDInsight и MirrorMaker
 
@@ -63,7 +63,7 @@ ms.locfileid: "70960236"
 
 1. Создайте две новые группы ресурсов:
 
-    |Группа ресурсов | Местоположение |
+    |Группа ресурсов | Location |
     |---|---|
     | Kafka-PRIMARY-RG | Центральная часть США |
     | Kafka-Secondary-RG | Центрально-северная часть США |
@@ -84,7 +84,7 @@ ms.locfileid: "70960236"
     1. Нажмите кнопку **Добавить**.
     1. На экране **Добавить пиринг** введите сведения, как показано на снимке экрана ниже.
 
-        ![Добавление пиринга виртуальной сети](./media/apache-kafka-mirroring/hdi-add-vnet-peering.png)
+        ![Добавление пиринга виртуальной сети HDInsight Kafka](./media/apache-kafka-mirroring/hdi-add-vnet-peering.png)
 
 1. Настройка объявления IP-адресов:
     1. Перейдите на панель мониторинга Ambari для основного кластера: `https://PRIMARYCLUSTERNAME.azurehdinsight.net`.
@@ -104,7 +104,7 @@ ms.locfileid: "70960236"
     1. Нажмите кнопку **ОК** в области **сохранить изменения конфигурации**.
     1. Щелкните перезапустить**все, затронутое** в уведомлении о **необходимости перезагрузки** . >  Нажмите кнопку **подтвердить перезагрузку все**.
 
-        ![перезапустить узлы Kafka](./media/apache-kafka-mirroring/ambari-restart-notification.png)
+        ![Apache Ambari перезапускает все затронутые](./media/apache-kafka-mirroring/ambari-restart-notification.png)
 
 1. Настройте Kafka для прослушивания всех сетевых интерфейсов.
     1. Оставайтесь на вкладке **конфигурации** в разделе **службы** > **Kafka**. В разделе **брокера Kafka** задайте для `PLAINTEXT://0.0.0.0:9092`свойства **Listeners** значение.
@@ -115,7 +115,7 @@ ms.locfileid: "70960236"
     1. Щелкните **узлы** на панели мониторинга Ambari.
     1. Запишите IP-адреса для брокеров и Zookeeper. Узлы брокера **WN** первыми двумя буквами имени узла, а узлы Zookeeper имеют **ZK** в качестве первых двух букв имени узла.
 
-        ![Просмотр IP-адресов](./media/apache-kafka-mirroring/view-node-ip-addresses2.png)
+        ![IP-адреса узла представления Apache Ambari](./media/apache-kafka-mirroring/view-node-ip-addresses2.png)
 
 1. Повторите предыдущие три шага для второго кластера **Kafka-вторичного кластера**: Настройте объявления IP-адресов, настройте прослушиватели и запишите IP-адреса брокера и Zookeeper.
 
@@ -251,7 +251,7 @@ ms.locfileid: "70960236"
         6. Измените значение параметра `auto.create.topics.enable` на true и выберите __Сохранить__. Добавьте заметку и выберите __Сохранить__ еще раз.
         7. Выберите службу __Kafka__ и щелкните __Перезапустить__, а затем выберите __Restart all affected__ (Перезапустить все затронутые). Когда появится запрос, выберите __Conform Restart All__ (Подтвердить перезапуск всех).
 
-        ![Настройка автоматического создания раздела](./media/apache-kafka-mirroring/kafka-enable-auto-create-topics.png)
+        ![разделы включения автоматического создания Kafka](./media/apache-kafka-mirroring/kafka-enable-auto-create-topics.png)
 
 ## <a name="start-mirrormaker"></a>Запуск MirrorMaker
 

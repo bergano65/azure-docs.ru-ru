@@ -9,12 +9,12 @@ ms.author: robreed
 ms.date: 05/22/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 20d8106f06b708527fc60e025a19c6b07656acb3
-ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
+ms.openlocfilehash: f4816ea2dc67df717e46df61c955d6d156b14d7e
+ms.sourcegitcommit: 2ed6e731ffc614f1691f1578ed26a67de46ed9c2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71102651"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71129681"
 ---
 # <a name="update-management-solution-in-azure"></a>Решение для управления обновлениями в Azure
 
@@ -83,7 +83,7 @@ ms.locfileid: "71102651"
 
 > [!NOTE]
 > Для управления масштабируемыми наборами виртуальных машин Azure можно использовать Управление обновлениями. Управление обновлениями работает с самими экземплярами, а не с базовым образом. Необходимо запланировать обновления в пошаговом процессе, чтобы не обновлять все экземпляры виртуальных машин одновременно.
-> Узлы VMSS можно добавить, выполнив действия, описанные в подразделе [онбаорд a, не являющегося машиной Azure](automation-tutorial-installed-software.md#onboard-a-non-azure-machine).
+> Узлы VMSS можно добавить, выполнив действия, описанные в разделе подключение [компьютера, не являющегося машиной Azure](automation-tutorial-installed-software.md#onboard-a-non-azure-machine).
 
 ### <a name="unsupported-client-types"></a>Неподдерживаемые типы клиентов
 

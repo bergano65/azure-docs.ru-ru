@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 05/15/2019
-ms.openlocfilehash: 65daf1468d27825d9904a14e42e43796d3985321
-ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
+ms.openlocfilehash: f560887a48ce4754b26a54ef0e18093c5577af34
+ms.sourcegitcommit: 2ed6e731ffc614f1691f1578ed26a67de46ed9c2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70996525"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71128808"
 ---
 # <a name="what-is-the-visual-interface-for-azure-machine-learning"></a>Что такое визуальный интерфейс для Машинное обучение Azure? 
 
@@ -32,7 +32,7 @@ ms.locfileid: "70996525"
 
 ![Общие сведения о визуальном интерфейсе](media/ui-concept-visual-interface/overview.png)
 
-## <a name="workflow"></a>Рабочий процесс
+## <a name="workflow"></a>Документооборот
 
 Визуальный интерфейс предоставляет интерактивный визуальный холст для быстрой сборки, тестирования и итерации модели. 
 
@@ -61,7 +61,7 @@ ms.locfileid: "70996525"
 
 Набор данных — это данные, которые были переданы в визуальный интерфейс для использования в процессе моделирования. Несколько примеров наборов данных включены для экспериментов, и вы можете отправлять больше наборов данных по мере необходимости.
 
-## <a name="module"></a>Module
+## <a name="module"></a>Модуль
 
 Модуль — это алгоритм, который можно выполнять с данными. В визуальном интерфейсе имеется ряд модулей, отменяющихся от функций передачи данных до процессов обучения, оценки и проверки.
 
@@ -95,8 +95,8 @@ ms.locfileid: "70996525"
 
 * Изучите основные сведения о прогнозной аналитике и [машинном обучении с помощью учебника: по прогнозированию цены автомобиля с помощью графического интерфейса](ui-tutorial-automobile-price-train-score.md)
 * Используйте один из примеров и измените его в соответствии с вашими потребностями:
-    * [Пример 1. регрессия: Прогнозируемая цена](ui-sample-regression-predict-automobile-price-basic.md)
-    * [Пример 2. регрессия: Прогнозирование цен и сравнение алгоритмов](ui-sample-regression-predict-automobile-price-compare-algorithms.md)
-    * [Пример 3. Классификация: Прогнозируемый кредитный риск](ui-sample-classification-predict-credit-risk-basic.md)
-    * [Пример 4. Классификация: Прогнозируемый кредитный риск (с учетом стоимости)](ui-sample-classification-predict-credit-risk-cost-sensitive.md)
-    * [Пример 5. Классификация: Прогнозирование обновлений, стремления и продаж](ui-sample-classification-predict-churn.md)
+    * [Пример 1. регрессия: Прогнозируемая цена](how-to-ui-sample-regression-predict-automobile-price-basic.md)
+    * [Пример 2. регрессия: Прогнозирование цен и сравнение алгоритмов](how-to-ui-sample-regression-predict-automobile-price-compare-algorithms.md)
+    * [Пример 3. Классификация: Прогнозируемый кредитный риск](how-to-ui-sample-classification-predict-credit-risk-basic.md)
+    * [Пример 4. Классификация: Прогнозируемый кредитный риск (с учетом стоимости)](how-to-ui-sample-classification-predict-credit-risk-cost-sensitive.md)
+    * [Пример 5. Классификация: Прогнозирование обновлений, стремления и продаж](how-to-ui-sample-classification-predict-churn.md)

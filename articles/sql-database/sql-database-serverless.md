@@ -11,12 +11,12 @@ author: moslake
 ms.author: moslake
 ms.reviewer: sstein, carlrab
 ms.date: 09/06/2019
-ms.openlocfilehash: e6c815b317e60d7a65a2f26249782451bc917097
-ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
+ms.openlocfilehash: 04e3881b553f639bb2df948b6ad1154f86f1c9da
+ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70993464"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71123085"
 ---
 # <a name="azure-sql-database-serverless-preview"></a>Сервер базы данных SQL Azure (Предварительная версия)
 
@@ -160,6 +160,12 @@ ms.locfileid: "70993464"
    |GP_S_Gen5_1|Общего назначения|5-го поколения|1|
    |GP_S_Gen5_2|Общего назначения|5-го поколения|2|
    |GP_S_Gen5_4|Общего назначения|5-го поколения|4|
+   |GP_S_Gen5_6|Общего назначения|5-е поколение|6|
+   |GP_S_Gen5_8|Общего назначения|5-е поколение|8|
+   |GP_S_Gen5_10|Общего назначения|5-е поколение|10|
+   |GP_S_Gen5_12|Общего назначения|5-е поколение|12|
+   |GP_S_Gen5_14|Общего назначения|5-е поколение|14|
+   |GP_S_Gen5_16|Общего назначения|5-е поколение|16|
 
 2. При необходимости укажите минимальное виртуальных ядер и задержку приостановки, чтобы изменить значения по умолчанию. В таблице ниже показаны доступные значения для этих параметров.
 

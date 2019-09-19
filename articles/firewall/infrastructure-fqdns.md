@@ -5,16 +5,16 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: article
-ms.date: 9/24/2018
+ms.date: 09/20/2019
 ms.author: victorh
-ms.openlocfilehash: 34201a0eb4139de64261f77f285096a2aa2dd3aa
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5b134058e1924bae030338411226a9a6aff46557
+ms.sourcegitcommit: 2ed6e731ffc614f1691f1578ed26a67de46ed9c2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61066331"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71130201"
 ---
-# <a name="infrastructure-fqdns"></a>Полные доменные имена инфраструктуры
+# <a name="infrastructure-fqdns"></a>FQDN инфраструктуры
 
 Брандмауэр Azure содержит встроенную коллекцию правил для целевых полных доменных имен инфраструктуры, которые разрешены по умолчанию. Эти доменные имена предназначены для платформы и не могут использоваться для других целей. 
 
@@ -23,12 +23,11 @@ ms.locfileid: "61066331"
 - доступ к хранилищу репозитория образов платформы (PIR);
 - доступ к хранилищу состояний управляемых дисков;
 - система диагностики Azure и ведения журнала (MDS);
-- Azure Active Directory
 
 ## <a name="overriding"></a>Переопределение 
 
 Вы можете переопределить эту встроенную коллекцию правил инфраструктуры, создав запрещающую коллекцию правил приложений, которая обрабатывается в последнюю очередь. Она всегда будет обрабатываться перед коллекцией правил инфраструктуры. Все, что не входит в коллекцию правил инфраструктуры, по умолчанию будет отклонено.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - См. дополнительные сведения о [развертывании и настройке Брандмауэра Azure](tutorial-firewall-deploy-portal.md).

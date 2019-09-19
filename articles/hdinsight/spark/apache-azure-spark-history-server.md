@@ -1,19 +1,19 @@
 ---
 title: Расширенный сервер журнала Spark для отладки приложений Spark в Azure HDInsight
 description: 'Отладка и диагностика приложений Spark с использованием расширенного сервера журнала Spark: Azure HDInsight'
-ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
+ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 09/04/2019
-ms.openlocfilehash: fad2c83138f211e83e9462182d33f6169cbdb833
-ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
+ms.openlocfilehash: 9398745cb240e7b7dff45ff5d6d9cdf064239bfd
+ms.sourcegitcommit: 2ed6e731ffc614f1691f1578ed26a67de46ed9c2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70968134"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71130357"
 ---
 # <a name="use-extended-apache-spark-history-server-to-debug-and-diagnose-apache-spark-applications"></a>Отладка и диагностика приложений Apache Spark с использованием расширенного сервера журнала Apache Spark
 
@@ -21,16 +21,17 @@ ms.locfileid: "70968134"
 
 ## <a name="get-access-to-apache-spark-history-server"></a>Доступ к серверу журнала Apache Spark
 
-Сервер журнала Apache Spark — это пользовательский веб-интерфейс для готовых и запущенных приложений Spark. 
+Сервер журнала Apache Spark — это пользовательский веб-интерфейс для готовых и запущенных приложений Spark.
 
 ### <a name="open-the-apache-spark-history-server-web-ui-from-azure-portal"></a>Открытие пользовательского веб-интерфейса сервера журнала Apache Spark на портале Azure
 
 1. Откройте кластер Spark на [портале Azure](https://portal.azure.com/). Дополнительные сведения см. в разделе [Отображение кластеров](../hdinsight-administer-use-portal-linux.md#showClusters).
-2. В разделе **Быстрые ссылки** щелкните **Панель мониторинга кластера**, а затем — **Сервер журнала Spark**. При появлении запроса введите учетные данные администратора для кластера Spark. 
+2. В разделе **Быстрые ссылки** щелкните **Панель мониторинга кластера**, а затем — **Сервер журнала Spark**. При появлении запроса введите учетные данные администратора для кластера Spark.
 
-    ![Сервер журнала Spark](./media/apache-azure-spark-history-server/launch-history-server.png "Сервер журнала Spark")
+    ![Запуск сервера журнала Spark на портале](./media/apache-azure-spark-history-server/launch-history-server.png "Сервер журнала Spark")
 
 ### <a name="open-the-spark-history-server-web-ui-by-url"></a>Открытие пользовательского веб-интерфейса сервера журнала Spark по URL-адресу
+
 Откройте сервер журнала Spark, перейдя по следующему URL-адресу, и замените `<ClusterName>` именем кластера Spark клиента.
 
    ```
@@ -41,67 +42,67 @@ ms.locfileid: "70968134"
 
 ![Сервер журнала HDInsight Spark](./media/apache-azure-spark-history-server/hdinsight-spark-history-server.png)
 
-
 ## <a name="data-tab-in-spark-history-server"></a>Вкладка "Данные" на сервере журнала Spark
+
 Выберите идентификатор задания, а затем щелкните **Данные** в меню средств, чтобы получить представление данных.
 
 + Просмотрите вкладки **Входные данные**, **Выходные данные** и **Операции с таблицей**, выбрав их по отдельности.
 
-    ![Вкладки данных](./media/apache-azure-spark-history-server/apache-spark-data-tabs.png)
+    ![Данные для вкладок приложения Spark](./media/apache-azure-spark-history-server/apache-spark-data-tabs.png)
 
 + Скопируйте все строки, нажав кнопку **Копировать**.
 
-    ![Копирование данных](./media/apache-azure-spark-history-server/apache-spark-data-copy.png)
+    ![Данные для копирования приложения Spark](./media/apache-azure-spark-history-server/apache-spark-data-copy.png)
 
 + Сохраните все данные в виде CSV-файла, нажав кнопку **csv**.
 
-    ![Сохранение данных](./media/apache-azure-spark-history-server/apache-spark-data-save.png)
+    ![Данные для сохранения приложения Spark](./media/apache-azure-spark-history-server/apache-spark-data-save.png)
 
 + Выполните поиск, введя ключевые слова в поле **Поиск**. Результат поиска сразу же отобразится.
 
-    ![Поиск данных](./media/apache-azure-spark-history-server/apache-spark-data-search.png)
+    ![Данные для поиска приложений Spark](./media/apache-azure-spark-history-server/apache-spark-data-search.png)
 
 + Щелкните заголовок столбца, чтобы отсортировать таблицу, щелкните знак "плюс", чтобы развернуть строку для отображения дополнительных сведений, или щелкните знак "минус", чтобы свернуть строку.
 
-    ![Таблица данных](./media/apache-azure-spark-history-server/apache-spark-data-table.png)
+    ![Данные для таблицы приложений Spark](./media/apache-azure-spark-history-server/apache-spark-data-table.png)
 
 + Загрузите один файл, нажав кнопку **Частичная загрузка**, которая находится справа. После этого выбранный файл загрузится локально. Если файл больше не существует, откроется новая вкладка с сообщениями об ошибке.
 
-    ![Строка загрузки данных](./media/apache-azure-spark-history-server/sparkui-data-download-row.png)
+    ![Данные для строки скачивания приложения Spark](./media/apache-azure-spark-history-server/sparkui-data-download-row.png)
 
 + Скопируйте полный или относительный путь, выбрав пункт **Копировать полный путь** или **Копировать относительный путь**, которые развертываются из меню загрузки. Для файлов Data Lake Storage Azure выберите **Open in Azure Storage Explorer** (Открыть в Обозревателе службы хранилища Azure), чтобы запустить Обозреватель службы хранилища Azure, и найдите папку после входа в систему.
 
-    ![Путь копирования данных](./media/apache-azure-spark-history-server/sparkui-data-copy-path.png)
+    ![Данные для пути копирования приложения Spark](./media/apache-azure-spark-history-server/sparkui-data-copy-path.png)
 
-+ Щелкните число, указанное под таблицей, чтобы переходить между страницами, если на одной странице отображается слишком много строк. 
++ Щелкните число, указанное под таблицей, чтобы переходить между страницами, если на одной странице отображается слишком много строк.
 
-    ![Страница данных](./media/apache-azure-spark-history-server/apache-spark-data-page.png)
+    ![Страница "данные для приложения Spark"](./media/apache-azure-spark-history-server/apache-spark-data-page.png)
 
 + Наведите указатель мыши на вопросительный знак рядом с заголовком "Данные", чтобы увидеть подсказку, или щелкните вопросительный знак, чтобы получить дополнительные сведения.
 
-    ![Дополнительные сведения о данных](./media/apache-azure-spark-history-server/sparkui-data-more-info.png)
+    ![Дополнительные сведения о данных для приложения Spark](./media/apache-azure-spark-history-server/sparkui-data-more-info.png)
 
 + Отправьте отзыв о проблемах, щелкнув **Provide us feedback** (Оставьте отзыв).
 
-    ![отзыв о графе](./media/apache-azure-spark-history-server/sparkui-graph-feedback.png)
-
+    ![Граф Spark снова предоставляет нам отзыв](./media/apache-azure-spark-history-server/sparkui-graph-feedback.png)
 
 ## <a name="graph-tab-in-apache-spark-history-server"></a>Вкладка "Граф" на сервере журнала Apache Spark
+
 Выберите идентификатор задания, а затем щелкните **Граф** в меню средств, чтобы получить представление графа задания.
 
-+ Просмотрите сведения о задании путем создания графа задания. 
++ Просмотрите сведения о задании путем создания графа задания.
 
 + По умолчанию отображаются все задания. Их можно отфильтровать по **идентификатору задания**.
 
-    ![идентификатор задания графа](./media/apache-azure-spark-history-server/apache-spark-graph-jobid.png)
+    ![Идентификатор задания приложения Spark и графа заданий](./media/apache-azure-spark-history-server/apache-spark-graph-jobid.png)
 
 + По умолчанию выбрано значение **Выполнение**. Пользователь может проверить поток данных, выбрав **Read/Written** (Прочитано и записано) в раскрывающемся списке **Отображать**.
 
-    ![отображение графа](./media/apache-azure-spark-history-server/sparkui-graph-display.png)
+    ![Отображение приложения Spark и графа заданий](./media/apache-azure-spark-history-server/sparkui-graph-display.png)
 
     Узел графа отображается цветом, который показывает тепловую карту.
 
-    ![тепловая карта графа](./media/apache-azure-spark-history-server/sparkui-graph-heatmap.png)
+    ![Приложение Spark и тепловой карты графа заданий](./media/apache-azure-spark-history-server/sparkui-graph-heatmap.png)
 
 + Воспроизведите задание, нажав кнопку **Воспроизведение**. Вы можете его остановить в любое время, нажав кнопку "Остановить". Задача отображается в определенном цвете для отображения разных состояний при воспроизведении:
 
@@ -111,30 +112,29 @@ ms.locfileid: "70968134"
   + Белым цветом — ожидание или пропуск: задача ожидает выполнения или пропущен этап.
   + Красным цветом — сбой: не удалось выполнить задачу.
 
-    ![пример цвета графа, выполняется](./media/apache-azure-spark-history-server/sparkui-graph-color-running.png)
- 
-    Пропущенный шаг отображается белым цветом.
-    ![пример цвета графа, пропуск](./media/apache-azure-spark-history-server/sparkui-graph-color-skip.png)
+    ![Образец цвета для приложения и задания Spark, выполнение](./media/apache-azure-spark-history-server/sparkui-graph-color-running.png)
 
-    ![пример цвета графа, сбой](./media/apache-azure-spark-history-server/sparkui-graph-color-failed.png)
- 
+    Пропущенный шаг отображается белым цветом.
+    ![Пример цвета для приложения Spark и графика заданий, пропуск](./media/apache-azure-spark-history-server/sparkui-graph-color-skip.png)
+
+    ![Пример цвета для приложения Spark и графа заданий, сбой](./media/apache-azure-spark-history-server/sparkui-graph-color-failed.png)
+
     > [!NOTE]  
     > Допускается воспроизведение для каждого задания. В незавершенном задании воспроизведение не поддерживается.
 
-
 + Прокручивайте колесико мыши, чтобы увеличить или уменьшить граф задания, или нажмите кнопку **Масштабировать по размеру**, чтобы масштабировать по размеру экрана.
- 
-    ![масштабировать по размеру экрана графа](./media/apache-azure-spark-history-server/sparkui-graph-zoom2fit.png)
+
+    ![Масштабирование приложения Spark и графа заданий в соответствии с](./media/apache-azure-spark-history-server/sparkui-graph-zoom2fit.png)
 
 + Наведите указатель мыши на узел графа, чтобы увидеть подсказку при наличии невыполненных задач, и щелкните этап, чтобы открыть страницу этапа.
 
-    ![подсказка графа](./media/apache-azure-spark-history-server/sparkui-graph-tooltip.png)
+    ![Подсказка для приложения Spark и графа заданий](./media/apache-azure-spark-history-server/sparkui-graph-tooltip.png)
 
 + На вкладке "Граф" задания на этапах будут отображаться подсказки и маленькие значки при наличии задач, соответствующих условиям ниже:
   + Неравномерное распределение данных: объем считанных данных больше среднего объема считанных данных всех задач на этом этапе в два раза и больше 10 МБ.
   + Неравномерное распределение времени: время выполнения больше среднего времени выполнения всех задач внутри этого этапа в два раза и больше двух минут.
 
-    ![Значок неравномерного распределения графа](./media/apache-azure-spark-history-server/sparkui-graph-skew-icon.png)
+    ![Значок рассогласования для приложения Spark и графа заданий](./media/apache-azure-spark-history-server/sparkui-graph-skew-icon.png)
 
 + На узле графа задания будут отображаться следующие сведения о каждом этапе:
   + Идентификатор.
@@ -154,49 +154,51 @@ ms.locfileid: "70968134"
 
 + Отправьте отзыв о проблемах, щелкнув **Provide us feedback** (Оставьте отзыв).
 
-    ![отзыв о графе](./media/apache-azure-spark-history-server/sparkui-graph-feedback.png)
-
+    ![Отзывы о приложении Spark и графе заданий](./media/apache-azure-spark-history-server/sparkui-graph-feedback.png)
 
 ## <a name="diagnosis-tab-in-apache-spark-history-server"></a>Вкладка "Диагностика" на сервере журнала Apache Spark
+
 Выберите идентификатор задания, а затем щелкните **Диагностика** в меню средств, чтобы получить представление диагностики задания. Вкладка "Диагностика" содержит разделы **неравномерного распределения данных**, **неравномерного распределения времени** и **анализа использования исполнителей**.
-    
+
 + Просмотрите разделы **Неравномерное распределение данных**, **Неравномерное распределение времени** и **Executor Usage Analysis** (Анализ использования исполнителей), выбрав соответствующие вкладки.
 
-    ![Вкладки диагностики](./media/apache-azure-spark-history-server/sparkui-diagnosis-tabs.png)
+    ![Повторная вкладка "неравномерное Спаркуи данных диагностики"](./media/apache-azure-spark-history-server/sparkui-diagnosis-tabs.png)
 
 ### <a name="data-skew"></a>Неравномерное распределение данных
-Щелкните вкладку **Неравномерное распределение данных**, и на основе определенных параметров отобразятся соответствующие задачи с отклонением. 
+
+Щелкните вкладку **Неравномерное распределение данных**, и на основе определенных параметров отобразятся соответствующие задачи с отклонением.
 
 + **Укажите параметры**. В первом разделе отображаются параметры, которые используются для обнаружения неравномерного распределения данных. Встроенное правило: объем считанных данных задач в три раза больше среднего объема считанных данных задач и больше 10 МБ. Если вы хотите определить собственные правила для задач с отклонением, можно использовать собственные параметры. Соответствующим образом будут обновлены разделы **Skewed Stage** (Этап с отклонением) и **Skew Chart** (Диаграмма с отклонением).
 
 + **Skewed Stage** (Этап с отклонением). Во втором разделе отображаются этапы, которые содержат задачи с отклонением, соответствующие указанным выше критериям. Если на этапе присутствует несколько задач с отклонением, в таблице этапов с отклонением отобразится только задача с наибольшим отклонением (например, наибольшие данные для неравномерного распределения данных).
 
-    ![Раздел 2 неравномерного распределения данных](./media/apache-azure-spark-history-server/sparkui-diagnosis-dataskew-section2.png)
+    ![Вкладка "неравномерность данных диагностики спаркуи"](./media/apache-azure-spark-history-server/sparkui-diagnosis-dataskew-section2.png)
 
 + **Skew Chart** (Диаграмма с отклонением). Если в таблице этапов с отклонением выбрана строка, на диаграмме отобразится больше сведений о распределении задач на основе объема считанных данных и времени выполнения. Задачи с отклонением помечены красным, а обычные — синим. В целях оптимизации производительности на диаграмме отображается не более 100 примеров задач. Сведения о задаче отображаются на правой нижней панели.
 
-    ![Раздел 3 неравномерного распределения данных](./media/apache-azure-spark-history-server/sparkui-diagnosis-dataskew-section3.png)
+    ![спаркуиная диаграмма отклонений для этапа 10](./media/apache-azure-spark-history-server/sparkui-diagnosis-dataskew-section3.png)
 
 ### <a name="time-skew"></a>Неравномерное распределение времени
-На вкладке **Неравномерное распределение времени** отображаются задачи с отклонением на основе времени выполнения задачи. 
+
+На вкладке **Неравномерное распределение времени** отображаются задачи с отклонением на основе времени выполнения задачи.
 
 + **Укажите параметры**. В первом разделе отображаются параметры, которые используются для обнаружения неравномерного распределения времени. Критерием по умолчанию для обнаружения неравномерного распределения времени является случай, когда время выполнения задачи в три раза больше среднего времени выполнения задач и время выполнения задачи превышает 30 секунд. Параметры можно изменить в соответствии со своими потребностями. На вкладках **Skewed Stage** (Этап с отклонением) и **Skew Chart** (Диаграмма с отклонением) отображается соответствующая информация об этапах и задачах, как и на вкладке **Неравномерное распределение данных** выше.
 
 + Щелкните **Неравномерное распределение времени**, и отфильтрованный результат отобразится в разделе **Skewed Stage** (Этап с отклонением) в соответствии с заданными параметрами в разделе **Укажите параметры**. Щелкните один элемент из раздела **Skewed Stage** (Этап с отклонением), после чего в разделе 3 отобразится соответствующий набросок диаграммы. Затем сведения о задаче отобразятся на правой нижней панели.
 
-    ![Раздел 2 неравномерного распределения времени](./media/apache-azure-spark-history-server/sparkui-diagnosis-timeskew-section2.png)
+    ![Секция отклонения времени диагностики спаркуи](./media/apache-azure-spark-history-server/sparkui-diagnosis-timeskew-section2.png)
 
 ### <a name="executor-usage-analysis"></a>Анализ использования исполнителей
+
 Диаграмма анализа использования исполнителей визуализирует фактическое распределение исполнителей и состояние выполнения задания Spark.  
 
 + Щелкните **Executor Usage Analysis** (Анализ использования исполнителей), после чего будут построены кривые использования исполнителей четырех типов, в том числе **Allocated Executors** (Выделенные исполнители), **Running Executors** (Выполняющиеся исполнители), **idle Executors** (Исполнители в режиме ожидания) и **Max Executor Instances** (Максимальное количество экземпляров исполнителей). Что касается выделенных исполнителей, каждое событие добавления или удаления исполнителя будет увеличивать или уменьшать количество выделенных исполнителей. Для более подробного сравнения ознакомьтесь с представлением временной шкалы на вкладке "Задания".
 
-    ![Вкладка "Исполнители"](./media/apache-azure-spark-history-server/sparkui-diagnosis-executors.png)
+    ![Вкладка "исполнители диагностики спаркуи"](./media/apache-azure-spark-history-server/sparkui-diagnosis-executors.png)
 
 + Щелкните значок цвета, чтобы выбрать или отменить выбор соответствующего содержимого на всех черновых графиках.
 
-    ![Выбор диаграммы](./media/apache-azure-spark-history-server/sparkui-diagnosis-select-chart.png)
-
+    ![Выбор диаграммы для диагностики спаркуи](./media/apache-azure-spark-history-server/sparkui-diagnosis-select-chart.png)
 
 ## <a name="faq"></a>Часто задаваемые вопросы
 
@@ -211,33 +213,32 @@ ms.locfileid: "70968134"
 5. Это свойство задает значение **false**.
 6. Чтобы сохранить конфигурацию, нажмите кнопку **Сохранить**.
 
-    ![отключение функции](./media/apache-azure-spark-history-server/apache-spark-turn-off.png)
+    ![Отключение функции Apache Ambari](./media/apache-azure-spark-history-server/apache-spark-turn-off.png)
 
 7. Щелкните **Spark2** на левой панели, на вкладке **Summary** (Сводка) щелкните **Spark2 History Server** (Сервер журнала Spark2).
 
-    ![перезапуск сервера1](./media/apache-azure-spark-history-server/apache-spark-restart1.png) 
+    ![Представление сводки Apache Ambari Spark2](./media/apache-azure-spark-history-server/apache-spark-restart1.png)
 
 8. Перезапустите сервер журнала, выбрав пункт **перезапуска** для **сервера журнала Spark2**.
 
-    ![перезапуск сервера2](./media/apache-azure-spark-history-server/apache-spark-restart2.png)  
-
+    ![Перезапуск журнала Spark2 Apache Ambari](./media/apache-azure-spark-history-server/apache-spark-restart2.png)  
 9. Обновите веб-интерфейс сервера журнала Spark. Он будет возвращен к версии для сообщества.
 
 ### <a name="2-upload-history-server-event"></a>2. Отправка события сервера журнала
 
 Если возникла ошибка сервера журнала, выполните шаги, чтобы указать событие.
+
 1. Загрузите событие, щелкнув **Загрузить** в веб-интерфейсе сервера журнала.
 
-    ![загрузка события](./media/apache-azure-spark-history-server/sparkui-download-event.png)
+    ![Скачивание сервера журнала Spark2](./media/apache-azure-spark-history-server/sparkui-download-event.png)
 
 2. Нажмите кнопку **Provide us feedback** (Оставьте отзыв) на вкладке данных или графа.
 
-    ![отзыв о графе](./media/apache-azure-spark-history-server/sparkui-graph-feedback.png)
+    ![Диаграмма Spark предоставляет нам отзыв](./media/apache-azure-spark-history-server/sparkui-graph-feedback.png)
 
 3. Укажите название и описание ошибки, перетащите ZIP-файл в поле редактирования, а затем нажмите кнопку **Submit new issue** (Отправить новую проблему).
 
-    ![сообщить о проблеме](./media/apache-azure-spark-history-server/apache-spark-file-issue.png)
-
+    ![Пример проблемы с файлом Apache Spark](./media/apache-azure-spark-history-server/apache-spark-file-issue.png)
 
 ### <a name="3-upgrade-jar-file-for-hotfix-scenario"></a>3. Обновления JAR-файла для сценария исправления
 
@@ -290,23 +291,23 @@ ms.locfileid: "70968134"
     fi
    ```
 
-**Использование**: 
+**Использование**:
 
 `upgrade_spark_enhancement.sh https://${jar_path}`
 
 **Пример**:
 
-`upgrade_spark_enhancement.sh https://${account_name}.blob.core.windows.net/packages/jars/spark-enhancement-${version}.jar` 
+`upgrade_spark_enhancement.sh https://${account_name}.blob.core.windows.net/packages/jars/spark-enhancement-${version}.jar`
 
 **Использование bash-файла на портале Azure**
 
 1. Запустите [портал Azure](https://ms.portal.azure.com)и выберите кластер.
 2. Щелкните **Действия скрипта**, затем — **Отправить новое**. Заполните форму **Отправка действия скрипта**, а затем нажмите кнопку **Создать**.
-    
+
     + **Тип скрипта**: выберите **Пользовательский**.
     + **Имя**: укажите имя скрипта.
     + **URI bash-скрипта**: отправьте bash-файл в частный кластер, а затем скопируйте URL-адрес здесь. Или используйте указанный URI.
-    
+
    ```upgrade_spark_enhancement
     https://hdinsighttoolingstorage.blob.core.windows.net/shsscriptactions/upgrade_spark_enhancement.sh
    ```
@@ -314,20 +315,18 @@ ms.locfileid: "70968134"
    + Установите флажки **Головной** и **Рабочий**.
    + **Параметры**: задайте параметры согласно использованию в bash.
 
-     ![отправка журнала или обновление исправлений](./media/apache-azure-spark-history-server/apache-spark-upload1.png)
-
+     ![Действие "отправить скрипт" портал Azure](./media/apache-azure-spark-history-server/apache-spark-upload1.png)
 
 ## <a name="known-issues"></a>Известные проблемы
 
-1.  В настоящее время он работает только для кластера Spark 2,3 и 2,4.
+1. В настоящее время он работает только для кластера Spark 2,3 и 2,4.
 
-2.  Входные и выходные данные с использованием устойчивого распределенного набора данных не будут отображаться на вкладке "Данные".
+2. Входные и выходные данные с использованием устойчивого распределенного набора данных не будут отображаться на вкладке "Данные".
 
 ## <a name="next-steps"></a>Следующие шаги
 
 * [Управление ресурсами для кластера Apache Spark в HDInsight](apache-spark-resource-manager.md)
 * [Настройка параметров Apache Spark](apache-spark-settings.md)
-
 
 ## <a name="contact-us"></a>Наши координаты
 

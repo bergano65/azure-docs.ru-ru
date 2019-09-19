@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 09/06/2019
 ms.author: dapine
-ms.openlocfilehash: 600c01fc2a273141b06996369231c2389c5d6d57
-ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
+ms.openlocfilehash: 181f4acd86dfacb15592ded6f2df3287e3dc13bf
+ms.sourcegitcommit: 2ed6e731ffc614f1691f1578ed26a67de46ed9c2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70775891"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71130149"
 ---
 ### <a name="container-repositories-and-images"></a>Репозитории и образы контейнеров
 
@@ -38,6 +38,7 @@ ms.locfileid: "70775891"
 |--|--|--|
 | [Детектор аномалий](../../anomaly-detector/anomaly-detector-container-howto.md) | Детектор аномалий | `containerpreview.azurecr.io/microsoft/cognitive-services-anomaly-detector` |
 | [Компьютерное зрение](../../Computer-vision/computer-vision-how-to-install-containers.md) | Распознавание текста | `containerpreview.azurecr.io/microsoft/cognitive-services-recognize-text` |
+| [Компьютерное зрение](../../Computer-vision/computer-vision-how-to-install-containers.md) | прочтены | `containerpreview.azurecr.io/microsoft/cognitive-services-read` |
 | [Распознавание лиц](../../face/face-how-to-install-containers.md) | Распознавание лиц | `containerpreview.azurecr.io/microsoft/cognitive-services-face` |
 | [Распознаватель форм](https://go.microsoft.com/fwlink/?linkid=2083826&clcid=0x409) | Распознаватель документов | `containerpreview.azurecr.io/microsoft/cognitive-services-form-recognizer` |
 | [API службы "Речь"](../../speech-service/speech-container-howto.md) | Преобразование речи в текст | `containerpreview.azurecr.io/microsoft/cognitive-services-speech-to-text` |

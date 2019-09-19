@@ -7,16 +7,16 @@ author: IEvangelist
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 08/21/2019
+ms.date: 09/19/2019
 ms.author: dapine
-ms.openlocfilehash: 2593f07ac30df77936c56785956b9e906ef683be
-ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
+ms.openlocfilehash: e3051a72a115e711a99ecd68756967e2cef0cc04
+ms.sourcegitcommit: 2ed6e731ffc614f1691f1578ed26a67de46ed9c2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70051923"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71130050"
 ---
-## <a name="deploy-the-language-detection-container-to-an-aks-cluster"></a>Развертывание контейнера распознавание языка в кластере AKS
+### <a name="deploy-the-language-detection-container-to-an-aks-cluster"></a>Развертывание контейнера распознавание языка в кластере AKS
 
 1. Откройте Azure CLI и войдите в Azure.
 
@@ -119,7 +119,7 @@ ms.locfileid: "70051923"
     kubectl get services
     ```
 
-    Выходные данные для состояния выполнения языковой службы в Pod:
+    Выходные данные для состояния выполнения *языковой* службы в Pod:
 
     ```console
     NAME         TYPE           CLUSTER-IP    EXTERNAL-IP      PORT(S)          AGE

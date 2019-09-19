@@ -1,19 +1,19 @@
 ---
 title: Ввод в эксплуатацию служб машинного обучения в Azure HDInsight
 description: Узнайте, как эксплуатацию модель данных для создания прогнозов с помощью служб ML в Azure HDInsight.
-ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
+ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/27/2018
-ms.openlocfilehash: 4980b4d3a4ec7165a4aba3d02561f6c666150924
-ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
+ms.openlocfilehash: a05bcdef2b7456fbab852e9728c156e57f847f57
+ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70967667"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71123563"
 ---
 # <a name="operationalize-ml-services-cluster-on-azure-hdinsight"></a>Ввод в эксплуатацию кластера служб машинного обучения в Azure HDInsight
 
@@ -50,31 +50,31 @@ ms.locfileid: "70967667"
 
 1. У вас есть несколько вариантов на выбор. Выберите первый вариант, как показано на следующем снимке экрана, чтобы **настроить ML Server для ввода в эксплуатацию**.
 
-    ![одна рамка OP1](./media/r-server-operationalize/admin-util-one-box-1.png)
+    ![Программа администрирования R Server, выбор](./media/r-server-operationalize/admin-util-one-box-1.png)
 
 1. Теперь вам предлагаются доступные методы для ввода в эксплуатацию ML Server. Выберите первый из представленных вариантов, введя символ **A**.
 
-    ![одна рамка OP2](./media/r-server-operationalize/admin-util-one-box-2.png)
+    ![Эксплуатацию служебной программы администрирования R Server](./media/r-server-operationalize/admin-util-one-box-2.png)
 
 1. В ответ на соответствующий запрос дважды введите пароль пользователя с правами локального администратора.
 
 1. Выходные данные сообщат, что операция выполнена успешно. Также вам будет предложено еще одно меню для выбора параметров. Выберите E, чтобы вернуться к главному меню.
 
-    ![одна рамка OP3](./media/r-server-operationalize/admin-util-one-box-3.png)
+    ![Программа администрирования R Server успешно выполнена](./media/r-server-operationalize/admin-util-one-box-3.png)
 
 1. По желанию вы можете запустить диагностический тест, как показано ниже.
 
     1\. В главном меню выберите **6**, чтобы выполнить диагностические тесты.
 
-    ![diagnostic1](./media/r-server-operationalize/hdinsight-diagnostic1.png)
+    ![Диагностическое средство для программы администрирования R Server](./media/r-server-operationalize/hdinsight-diagnostic1.png)
 
     2\. В меню диагностических тестов выберите вариант **A**. Когда появится запрос, введите пароль пользователя с правами локального администратора.
 
-    ![diagnostic2](./media/r-server-operationalize/hdinsight-diagnostic2.png)
+    ![Тестирование программы администрирования сервера R Server](./media/r-server-operationalize/hdinsight-diagnostic2.png)
 
     В. Убедитесь, что выходные данные подтверждают работоспособность системы.
 
-    ![diagnostic3](./media/r-server-operationalize/hdinsight-diagnostic3.png)
+    ![Проход служебной программы администрирования R Server](./media/r-server-operationalize/hdinsight-diagnostic3.png)
 
     Г. Из предложенного меню выберите вариант **E**, чтобы вернуться к главному меню, а затем введите **8** для выхода из служебной программы администрирования.
 
@@ -148,7 +148,7 @@ ms.locfileid: "70967667"
 
 1. Последовательно выберите **Actions** (Действия)  > **Selected Hosts** (Выбранные узлы)  > **Hosts** (Узлы)  > **Turn ON Maintenance Mode** (Включить режим обслуживания). Например, на следующем рисунке для вывода из эксплуатации выбраны узлы wn3 и wn4.  
 
-   ![Вывод рабочих узлов из эксплуатации](./media/r-server-operationalize/get-started-operationalization.png)  
+   ![Включение режима обслуживания Apache Ambari](./media/r-server-operationalize/get-started-operationalization.png)  
 
 * Выберите **Actions** (Действия) > **Selected Hosts** (Выбранные узлы) > **DataNodes** (Узлы данных) и щелкните **Decommission** (Вывести из эксплуатации).
 * Выберите **Actions** (Действия) > **Selected Hosts** (Выбранные узлы) > **NodeManagers** (Диспетчеры узлов) и щелкните **Decommission** (Вывести из эксплуатации).

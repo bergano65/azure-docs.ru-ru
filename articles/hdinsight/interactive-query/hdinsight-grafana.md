@@ -1,21 +1,20 @@
 ---
 title: Использование Grafana в Azure HDInsight
 description: Узнайте, как получить доступ к панели мониторинга Grafana с кластерами Apache Hadoop в Azure HDInsight.
-ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
+ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 12/11/2018
-ms.openlocfilehash: a61188ce5a0c3ba5e4170e15ed81d599af205205
-ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
+ms.openlocfilehash: cea0e9709afb65caa23d28be093c28498f2b82d0
+ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70961573"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71122984"
 ---
 # <a name="access-grafana-in-azure-hdinsight"></a>Доступ к Grafana в Azure HDInsight
-
 
 [Grafana](https://grafana.com/) — это популярное средство с открытым кодом для построения графов и панелей мониторинга. Grafana — многофункциональное средство, которое не только позволяет пользователям создавать настраиваемые панели мониторинга с общим доступом, но также предоставляет такие возможности, как шаблонны и скрипты панелей мониторинга, интеграция LDAP, использование нескольких источников данных и многое другое.
 
@@ -27,9 +26,9 @@ ms.locfileid: "70961573"
 
 В этом разделе вы создадите в HDInsight кластер Interactive Query, используя шаблон Azure Resource Manager. Знакомство с шаблонами Resource Manager не является обязательным для работы с этой статьей. 
 
-1. Нажмите кнопку **Развертывание в Azure** ниже, чтобы войти в Azure и открыть шаблон Resource Manager на портале Azure. 
+1. Нажмите кнопку **Развертывание в Azure** ниже, чтобы войти в Azure и открыть шаблон Resource Manager на портале Azure.
    
-    <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-hdinsight-interactive-hive%2Fazuredeploy.json" target="_blank"><img src="./media/hdinsight-grafana/hdi-deploy-to-azure1.png" alt="Deploy to Azure"></a>
+    <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-hdinsight-interactive-hive%2Fazuredeploy.json" target="_blank"><img src="./media/hdinsight-grafana/hdi-deploy-to-azure1.png" alt="Deploy to Azure button for new cluster"></a>
 
 2. Введите или выберите значения, как показано на следующем снимке экрана.
 
@@ -51,17 +50,17 @@ ms.locfileid: "70961573"
     |**Имя кластера**     | Введите имя кластера Apache Hadoop. Так как все кластеры в HDInsight используют одно пространство имен DNS, это имя должно быть уникальным. Имя может содержать до 59 символов, включая буквы, цифры и дефисы. Первый и последний знаки в имени не могут быть дефисами. |
     |**Cluster login name and password** (Имя для входа и пароль для кластера)     | Имя для входа по умолчанию — **admin**. Длина пароля должна составлять не менее 10 символов. Пароль должен содержать по меньшей мере одну цифру, одну прописную и одну строчную буквы, а также один специальный символ (кроме ' " ` \)). Ни в коем случае **не вводите** распространенные пароли, например Pass@word1.|
     |**SSH username and password** (Имя пользователя SSH и пароль)     | Имя пользователя по умолчанию — **sshuser**.  Вы можете изменить имя пользователя SSH.  Для пароля пользователя SSH выдвигаются те же требования, что и для пароля для входа в кластер.|
-       
+
     Некоторые свойства жестко заданы в шаблоне.  Эти значения можно настроить из шаблона. Дополнительные сведения об этих свойствах см. в инструкциях по [созданию кластеров Apache Hadoop в HDInsight](../hdinsight-hadoop-provision-linux-clusters.md).
 
 3. Установите флажки **Я принимаю указанные выше условия** и **Закрепить на панели мониторинга** и нажмите кнопку **Приобрести**. Вы увидите новый элемент **Отправляется развертывание** на панели мониторинга портала. Процесс создания кластера занимает около 20 минут.
 
-    ![Ход выполнения развертывания шаблона](./media/hdinsight-grafana/deployment-progress-tile.png "Ход выполнения развертывания шаблона Azure")
+    ![Ход выполнения шаблоны развертывания Azure](./media/hdinsight-grafana/deployment-progress-tile.png "Ход выполнения шаблоны развертывания Azure")
 
-4. После создания кластера заголовок элемента меняется на имя группы ресурсов, которое вы указали. На элементе также указан кластер HDInsight, созданный в этой группе ресурсов. 
-   
+4. После создания кластера заголовок элемента меняется на имя группы ресурсов, которое вы указали. На элементе также указан кластер HDInsight, созданный в этой группе ресурсов.
+
     ![Группа ресурсов при начале работы с HDInsight под управлением Linux](./media/hdinsight-grafana/hdinsight-linux-get-started-resource-group.png "Группа ресурсов кластера Azure HDInsight")
-    
+
 5. На элементе также указано хранилище по умолчанию, связанное с кластером. У каждого кластера есть зависимость [учетной записи хранения Azure](../hdinsight-hadoop-use-blob-storage.md) или [учетной записи Azure Data Lake](../hdinsight-hadoop-use-data-lake-store.md). Она называется учетной записью хранения по умолчанию. Кластер HDInsight должен находиться в том же регионе Azure, что и его учетная запись хранения, используемая по умолчанию. Удаление кластеров не приведет к удалению учетной записи хранения.
     
 
@@ -84,9 +83,7 @@ ms.locfileid: "70961573"
 
 6. Появится панель мониторинга Grafana, которая выглядит следующим образом:
 
-    ![Панель мониторинга Grafana в HDInsight](./media/hdinsight-grafana/hdinsight-grafana-dashboard.png "HDInsight Grafana dashboard")
-
-   
+    ![Веб-панель мониторинга HDInsight Grafana](./media/hdinsight-grafana/hdinsight-grafana-dashboard.png "Панель мониторинга Grafana HDInsight")
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 После завершения работы с этой статьей кластер можно удалить. В случае с HDInsight ваши данные хранятся в службе хранилища Azure, что позволяет безопасно удалить неиспользуемый кластер. Плата за кластеры HDInsight взимается, даже когда они не используются. Поскольку стоимость кластера во много раз превышает стоимость хранилища, экономически целесообразно удалять неиспользуемые кластеры. 
@@ -98,7 +95,7 @@ ms.locfileid: "70961573"
 
 1. Вернитесь на вкладку браузера, на которой открыт портал Azure. Откройте страницу обзора кластера. Если требуется удалить кластер и сохранить учетную запись хранения по умолчанию, щелкните **Удалить**.
 
-    ![Удаление кластера HDInsight](./media/hdinsight-grafana/hdinsight-delete-cluster.png "Удаление кластера HDInsight")
+    ![Значок удаления кластера портал Azure](./media/hdinsight-grafana/hdinsight-delete-cluster.png "Удаление кластера HDInsight")
 
 2. Если вам нужно удалить кластер и учетную запись хранения по умолчанию, выберите имя группы ресурсов (выделено на предыдущем снимке экрана), чтобы открыть страницу группы ресурсов.
 

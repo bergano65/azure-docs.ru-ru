@@ -3,22 +3,20 @@ title: Анализ использования с помощью Azure Applicati
 description: Получение сведений о пользователях и их действиях с веб-приложением.
 services: application-insights
 documentationcenter: ''
-author: NumberByColors
+author: mrbullwinkle
 manager: carmonm
 ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 10/10/2017
-ms.pm_owner: daviste;NumberByColors
-ms.reviewer: mbullwin
-ms.author: daviste
-ms.openlocfilehash: ba29688958ee11aa9906a820f7a3d2bf41223743
-ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
+ms.date: 09/19/2019
+ms.author: mbullwin
+ms.openlocfilehash: 77aa39ae68800128409beb17ce3eb636ddcf28d1
+ms.sourcegitcommit: 2ed6e731ffc614f1691f1578ed26a67de46ed9c2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67798169"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71128967"
 ---
 # <a name="usage-analysis-with-application-insights"></a>Анализ использования с помощью Application Insights
 
@@ -33,19 +31,18 @@ ms.locfileid: "67798169"
     * *Не хотите устанавливать серверный код? Просто [создайте ресурс Azure Application Insights](../../azure-monitor/app/create-new-resource.md ).*
 
 2. **Код веб-страницы.** Добавьте следующий скрипт на веб-страницу перед закрывающим тегом ``</head>``. Замените ключ инструментирования на подходящее значение для ресурса Application Insights.
-
-   ```javascript
-      <script type="text/javascript">
-        var appInsights=window.appInsights||function(a){
-            function b(a){c[a]=function(){var b=arguments;c.queue.push(function(){c[a].apply(c,b)})}}var c={config:a},d=document,e=window;setTimeout(function(){var b=d.createElement("script");b.src=a.url||"https://az416426.vo.msecnd.net/scripts/a/ai.0.js",d.getElementsByTagName("script")[0].parentNode.appendChild(b)});try{c.cookie=d.cookie}catch(a){}c.queue=[];for(var f=["Event","Exception","Metric","PageView","Trace","Dependency"];f.length;)b("track"+f.pop());if(b("setAuthenticatedUserContext"),b("clearAuthenticatedUserContext"),b("startTrackEvent"),b("stopTrackEvent"),b("startTrackPage"),b("stopTrackPage"),b("flush"),!a.disableExceptionTracking){f="onerror",b("_"+f);var g=e[f];e[f]=function(a,b,d,e,h){var i=g&&g(a,b,d,e,h);return!0!==i&&c["_"+f](a,b,d,e,h),i}}return c
-        }({
-            instrumentationKey: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx"
-        });
-        
-        window.appInsights=appInsights,appInsights.queue&&0===appInsights.queue.length&&appInsights.trackPageView();
+    
+    ```html
+    <script type="text/javascript">
+    var sdkInstance="appInsightsSDK";window[sdkInstance]="appInsights";var aiName=window[sdkInstance],aisdk=window[aiName]||function(e){function n(e){t[e]=function(){var n=arguments;t.queue.push(function(){t[e].apply(t,n)})}}var t={config:e};t.initialize=!0;var i=document,a=window;setTimeout(function(){var n=i.createElement("script");n.src=e.url||"https://az416426.vo.msecnd.net/scripts/b/ai.2.min.js",i.getElementsByTagName("script")[0].parentNode.appendChild(n)});try{t.cookie=i.cookie}catch(e){}t.queue=[],t.version=2;for(var r=["Event","PageView","Exception","Trace","DependencyData","Metric","PageViewPerformance"];r.length;)n("track"+r.pop());n("startTrackPage"),n("stopTrackPage");var s="Track"+r[0];if(n("start"+s),n("stop"+s),n("setAuthenticatedUserContext"),n("clearAuthenticatedUserContext"),n("flush"),!(!0===e.disableExceptionTracking||e.extensionConfig&&e.extensionConfig.ApplicationInsightsAnalytics&&!0===e.extensionConfig.ApplicationInsightsAnalytics.disableExceptionTracking)){n("_"+(r="onerror"));var o=a[r];a[r]=function(e,n,i,a,s){var c=o&&o(e,n,i,a,s);return!0!==c&&t["_"+r]({message:e,url:n,lineNumber:i,columnNumber:a,error:s}),c},e.autoExceptionInstrumented=!0}return t}(
+    {
+      instrumentationKey:"INSTRUMENTATION_KEY"
+    }
+    );window[aiName]=aisdk,aisdk.queue&&0===aisdk.queue.length&&aisdk.trackPageView({});
     </script>
     ```
-    Чтобы узнать о более сложных настройках для мониторинга веб-сайтов, ознакомьтесь с руководством [по работе с API пакета SDK для JavaScript](https://github.com/Microsoft/ApplicationInsights-JS/blob/master/API-reference.md).
+
+    Дополнительные сведения о дополнительных конфигурациях для мониторинга веб-сайтов см. в [справочной статье по пакету SDK для JavaScript](https://docs.microsoft.com/azure/azure-monitor/app/javascript).
 
 3. **Код мобильного приложения.** Используйте пакет SDK для Центра приложений, чтобы собирать события из приложения, а затем отправлять копии этих событий в Application Insights для анализа, следуя инструкциям в [этом руководстве](../../azure-monitor/learn/mobile-center-quickstart.md).
 
@@ -80,7 +77,7 @@ ms.locfileid: "67798169"
 - Сформируйте гипотезу на основе данных реальных пользователей. 
 - Определите, является ли период удержания проблемой для вашего продукта. 
 
-![Сохранение](./media/usage-overview/retention.png) 
+![Удержание](./media/usage-overview/retention.png) 
 
 Помимо прочего, элементы управления периодом удержания позволяют определить конкретные события и диапазон времени для вычисления периода удержания. График в середине дает визуальное представление об общем проценте удержания за указанный диапазон времени. График внизу отображает период удержания отдельных пользователей за заданный период времени. Такой уровень детализации позволяет лучше понять, что ваши пользователи делают и что может повлиять на возвращение пользователей.  
 
@@ -159,12 +156,12 @@ ms.locfileid: "67798169"
     }
 ```
 
-**Приложения ASP.NET Core**
+**ASP.NET Core приложения**
 
 > [!NOTE]
-> Добавление инициализатор `ApplicationInsights.config` или с помощью `TelemetryConfiguration.Active` не является действительным для приложений ASP.NET Core. 
+> Добавление инициализатора `ApplicationInsights.config` с помощью `TelemetryConfiguration.Active` или using недопустимо для приложений ASP.NET Core. 
 
-Для [ASP.NET Core](asp-net-core.md#adding-telemetryinitializers) приложений, добавив новый `TelemetryInitializer` можно сделать, добавив его в контейнер внедрения зависимостей, как показано ниже. Это можно сделать в `ConfigureServices` метод вашей `Startup.cs` класса.
+Для [ASP.NET Core](asp-net-core.md#adding-telemetryinitializers) приложений Добавление нового `TelemetryInitializer` выполняется путем добавления его в контейнер внедрения зависимостей, как показано ниже. Это делается в `ConfigureServices` методе `Startup.cs` класса.
 
 ```csharp
  using Microsoft.ApplicationInsights.Extensibility;

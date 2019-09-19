@@ -6,12 +6,12 @@ ms.author: arramac
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 08/05/2019
-ms.openlocfilehash: d3d09d466e05c97de215542c66987aa6b723afce
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: 9b78c18547ef61b388a56a1272b5621cada43806
+ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68827990"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71120487"
 ---
 # <a name="azure-cosmos-db-service-quotas"></a>Квоты служб Azure Cosmos DB
 
@@ -30,6 +30,7 @@ ms.locfileid: "68827990"
 | Максимальное число уникальных (логических) ключей разделов | Без ограничений |
 | Максимальный объем хранилища на контейнер | Без ограничений |
 | Максимальный объем хранилища на базу данных | Без ограничений |
+| Максимальный размер вложения на учетную запись (функция прикрепления амортизируется) | 2 ГБ | 
 
 > [!NOTE]
 > Рекомендации по управлению рабочими нагрузками с ключами секций, требующими более высоких ограничений для хранилища или пропускной способности, см. в разделе [Разработка для ключей горячей секции](synthetic-partition-keys.md) .

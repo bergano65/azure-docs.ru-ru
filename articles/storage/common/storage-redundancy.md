@@ -9,12 +9,12 @@ ms.date: 09/17/2019
 ms.author: tamram
 ms.reviewer: artek
 ms.subservice: common
-ms.openlocfilehash: 3640d2d88fc679b78395472c667fcde39979728a
-ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
+ms.openlocfilehash: 6a598ad3f68c613a745fd56f3b368e309afeb8b6
+ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71074351"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71122977"
 ---
 # <a name="azure-storage-redundancy"></a>Избыточность хранилища Azure
 
@@ -28,12 +28,7 @@ ms.locfileid: "71074351"
 
 При создании учетной записи хранения можете выбрать один из следующих вариантов избыточности:
 
-- [Локально избыточное хранилище (LRS)](storage-redundancy-lrs.md)
-- [Хранилище, избыточное между зонами (ZRS)](storage-redundancy-zrs.md)
-- [Геоизбыточное хранилище (GRS)](storage-redundancy-grs.md)
-- [Геоизбыточное хранилище с доступом для чтения (RA-GRS)](storage-redundancy-grs.md#read-access-geo-redundant-storage)
-- [Хранилище, избыточное в геопоясе (ГЗРС)](storage-redundancy-gzrs.md)
-- [Хранилище, избыточное в геопоясе, с доступом на чтение (RA-ГЗРС)](storage-redundancy-gzrs.md)
+[!INCLUDE [azure-storage-redundancy](../../../includes/azure-storage-redundancy.md)]
 
 В таблице ниже представлено краткое описание области устойчивости и доступности, которую каждая стратегия репликации предоставляет для данного типа события (или события с аналогичным уровнем влияния).
 
@@ -55,7 +50,7 @@ ms.locfileid: "71074351"
 Сведения о гарантиях службы хранилища Azure в вопросах устойчивости и доступности см. в [Соглашении об уровне обслуживания службы хранилища Azure](https://azure.microsoft.com/support/legal/sla/storage/).
 
 > [!NOTE]
-> Хранилище Azure класса Premium поддерживает только локально избыточное хранилище (LRS).
+> Сейчас хранилище Azure класса Premium поддерживает только локально избыточное хранилище (LRS).
 
 ## <a name="changing-replication-strategy"></a>Изменение стратегии репликации
 
