@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: quickstart
 ms.date: 07/01/2019
 ms.author: pafarley
-ms.openlocfilehash: f8edb27e52d843d9a765aed8da9b75417cf357d1
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: badd674030ec014f2e70050c3c45599a26b17882
+ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68552555"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71073826"
 ---
 # <a name="quickstart-extract-receipt-data-using-the-form-recognizer-rest-api-with-curl"></a>Краткое руководство. Извлечение данных квитанции с помощью REST API Распознавателя документов и cURL
 
@@ -36,7 +36,7 @@ ms.locfileid: "68552555"
 
 Для начала анализа квитанции запустите API **анализа**, используя приведенную ниже команду cURL. Перед выполнением команды внесите следующие изменения:
 
-1. Замените `<Endpoint>` конечной точкой, которую вы получили из своего ключа подписки Распознавателя документов (см. ресурс Распознавателя документов на вкладке **Обзор**).
+1. Замените `<Endpoint>` конечной точкой, полученной из ключа подписки Распознавателя документов (см. ресурс Распознавателя документов на вкладке **Обзор**).
 1. Замените `<your receipt URL>` на URL-адрес изображения квитанции.
 1. Замените `<subscription key>` ключом подписки, скопированным на предыдущем шаге.
 

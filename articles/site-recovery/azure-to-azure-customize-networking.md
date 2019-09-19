@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 08/07/2019
 ms.author: rajanaki
-ms.openlocfilehash: 907a698a675a039dfdc852210adecb94c7bfab25
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 1905d6afb023b1bed15f1359fed8477d815acb45
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68886901"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71087704"
 ---
 # <a name="customize-networking-configurations-of-the-target-azure-vm"></a>Настройка сетевых конфигураций целевой виртуальной машины Azure
 
@@ -23,13 +23,16 @@ ms.locfileid: "68886901"
 
 Узнайте, как Site Recovery обеспечивает аварийное восстановление для [этого сценария](azure-to-azure-architecture.md).
 
-## <a name="support-networking-resources"></a>Поддержка сетевых ресурсов
+## <a name="supported-networking-resources"></a>Поддерживаемые сетевые ресурсы
 
 При репликации виртуальных машин Azure можно предоставить следующие ключевые конфигурации ресурсов для отказоустойчивой виртуальной машины.
 
 - [Внутренняя подсистема балансировки нагрузки](https://docs.microsoft.com/azure/load-balancer/load-balancer-standard-overview#what-is-standard-load-balancer)
 - [Общедоступный IP-адрес](https://docs.microsoft.com/azure/virtual-network/virtual-network-ip-addresses-overview-arm#public-ip-addresses)
 - [Группа безопасности сети](https://docs.microsoft.com/azure/virtual-network/manage-network-security-group) как для подсети, так и для сетевой карты
+
+ > [!IMPORTANT]
+  > Эти параметры поддерживаются только в операции отработки отказа в данный момент, а не для тестовой отработки отказа.
 
 ## <a name="pre-requisites"></a>Предварительные требования
 

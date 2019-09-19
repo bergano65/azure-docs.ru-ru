@@ -5,19 +5,20 @@ ms.service: hdinsight
 ms.topic: troubleshooting
 author: hrasheed-msft
 ms.author: hrasheed
+ms.reviewer: jasonh
 ms.date: 08/08/2019
-ms.openlocfilehash: 6bf136d943f230eb02df62cbaa732e28d6b359a4
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: 5fc338e83c172e26d621ef89dcfb047d01d510fa
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68968466"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71091691"
 ---
 # <a name="scenario-hbase-hbck-command-returns-inconsistencies-in-azure-hdinsight"></a>Сценарий: `hbase hbck` команда возвращает несоответствия в Azure HDInsight.
 
 В этой статье описываются действия по устранению неполадок и возможные способы решения проблем при взаимодействии с кластерами Azure HDInsight.
 
-## <a name="issue-region-is-not-in-hbasemeta"></a>Проблема: Регион не находится в`hbase:meta`
+## <a name="issue-region-is-not-in-hbasemeta"></a>Проблема Регион не находится в`hbase:meta`
 
 Регион XXX в HDFS, но он отсутствует в `hbase:meta` списке или развернут на любом сервере регионов.
 
@@ -40,7 +41,7 @@ ms.locfileid: "68968466"
     ```
 ---
 
-## <a name="issue-region-is-offline"></a>Проблема: Регион находится вне сети
+## <a name="issue-region-is-offline"></a>Проблема Регион находится вне сети
 
 Регион XXX не развернут ни на одном Регионсервер. Это означает, что регион находится `hbase:meta`в, но вне сети.
 
@@ -58,7 +59,7 @@ hbase hbck -ignorePreCheckPermission –fixAssignment
 
 ---
 
-## <a name="issue-regions-have-the-same-startend-keys"></a>Проблема: Регионы имеют одинаковые ключи начала и окончания
+## <a name="issue-regions-have-the-same-startend-keys"></a>Проблема Регионы имеют одинаковые ключи начала и окончания
 
 ### <a name="cause"></a>Причина:
 
@@ -80,7 +81,7 @@ RegionC, startkey:010, endkey:080.
 
 ---
 
-## <a name="issue-cant-load-regioninfo"></a>Проблема: Не удается загрузить`.regioninfo`
+## <a name="issue-cant-load-regioninfo"></a>Проблема Не удается загрузить`.regioninfo`
 
 Не удается `.regioninfo` загрузить для `/hbase/data/default/tablex/regiony`региона.
 

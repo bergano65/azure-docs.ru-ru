@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e8095b4fa6e52b7c34cedaea35b129ab68dddc65
-ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
+ms.openlocfilehash: 06b3a3f12b2955ae97c43b0caf6a4ac13c9b770a
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69532955"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71086729"
 ---
 # <a name="baseline-policy-require-mfa-for-service-management-preview"></a>Базовая политика: Требовать MFA для управления службами (Предварительная версия)
 
@@ -50,7 +50,7 @@ az login
 
 ## <a name="deployment-considerations"></a>Рекомендации по развертыванию
 
-Так как параметр " **требовать MFA для политики управления службами** " применяется ко всем Azure Resource Manager пользователям, необходимо выполнить несколько рекомендаций для обеспечения беспрепятственного развертывания. Эти соображения включают в себя определение пользователей и принципов служб в Azure AD, которые не могут или не должны выполнять MFA, а также приложения и клиенты, используемые в Организации, которые не поддерживают современную проверку подлинности.
+Параметр " **требовать MFA для политики управления службами** " применяется ко всем Azure Resource Manager пользователям.
 
 ## <a name="enable-the-baseline-policy"></a>Включение базовой политики
 

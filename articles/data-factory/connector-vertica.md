@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 09/04/2019
 ms.author: jingwang
-ms.openlocfilehash: c79e3b1991ff8914172253e795da270db2e0cf4c
-ms.sourcegitcommit: a819209a7c293078ff5377dee266fa76fd20902c
+ms.openlocfilehash: d33540aa60bdb86294c386314055a4c21c698902
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71009677"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71089098"
 ---
 # <a name="copy-data-from-vertica-using-azure-data-factory"></a>Копирование данных из Vertica с помощью Фабрики данных Azure 
 
@@ -27,7 +27,7 @@ ms.locfileid: "71009677"
 
 Этот соединитель Vertica поддерживается для следующих действий:
 
-- [Действие копирования](copy-activity-overview.md) с [поддерживаемой исходной матрицей](copy-activity-overview.md)
+- [Действие копирования](copy-activity-overview.md) с [поддерживаемой матрицей источника и приемника](copy-activity-overview.md)
 - [Действие поиска](control-flow-lookup-activity.md)
 
 Данные из Vertica можно скопировать в любое поддерживаемое хранилище данных, используемое в качестве приемника. Список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования, приведен в таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats).

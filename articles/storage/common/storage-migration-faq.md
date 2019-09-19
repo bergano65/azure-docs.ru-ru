@@ -3,17 +3,18 @@ title: Часто задаваемые вопросы о миграции слу
 description: Ответы на наиболее частые вопросы, связанные с миграцией службы хранилища Azure
 services: storage
 author: genlin
+manager: dcscontentpm
 ms.service: storage
 ms.topic: article
 ms.date: 10/31/2018
 ms.author: genli
 ms.subservice: common
-ms.openlocfilehash: 2ba09496ed8c110e3bf0e431da20f09c82d5ea0b
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: 250cdedaa5155f1487cb842be492acd82c0f26b3
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68985591"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71090820"
 ---
 # <a name="frequently-asked-questions-about-azure-storage-migration"></a>Часто задаваемые вопросы о миграции службы хранилища Azure
 
@@ -297,6 +298,6 @@ SSL в настоящее время не поддерживается в уче
 
  Это можно сделать с помощью нашего [скрипта для переноса BLOB-объектов](../scripts/storage-common-transfer-between-storage-accounts.md).
 
-## <a name="need-help-contact-support"></a>Нужна помощь? Обратитесь в службу поддержки.
+## <a name="need-help-contact-support"></a>Требуется помощь? Обратитесь в службу поддержки.
 
 Если вам все еще нужна помощь, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), которая поможет быстро устранить проблему.

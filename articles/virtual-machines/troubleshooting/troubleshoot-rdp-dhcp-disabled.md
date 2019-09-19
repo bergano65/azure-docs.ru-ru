@@ -4,7 +4,7 @@ description: Способы устранения неполадок с подк�
 services: virtual-machines-windows
 documentationCenter: ''
 author: genlin
-manager: cshepard
+manager: dcscontentpm
 editor: ''
 ms.service: virtual-machines-windows
 ms.topic: troubleshooting
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 11/13/2018
 ms.author: genli
-ms.openlocfilehash: d16c5b6304f598440fe4d70648dd652f0dcf06ec
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: ef44931cc3b36bcab64a2de840d9264c1b8fdedb
+ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70089936"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71058025"
 ---
 #  <a name="cannot-rdp-to-azure-virtual-machines-because-the-dhcp-client-service-is-disabled"></a>Не удается подключиться по протоколу удаленного рабочего стола к виртуальным машинам Azure из-за того, что отключена служба DHCP-клиента
 
@@ -33,7 +33,7 @@ ms.locfileid: "70089936"
 **Date**: 12/16/2015 11:19:36 AM </br>
 **Event ID**: 7022 </br>
 **Task Category**: Отсутствуют </br>
-**Level**: Error </br>
+**Level**: Ошибка </br>
 **Keywords**: Классический</br>
 **User**: Н/Д </br>
 **Computer**: myvm.cosotos.com</br>
@@ -76,7 +76,7 @@ ms.locfileid: "70089936"
     Попробуйте подключиться к виртуальной машине и убедитесь, что проблема устранена.
 5. Если служба не запускается, используйте одно из следующих решений в зависимости от полученного сообщения об ошибке:
 
-    | Error  |  Решение |
+    | Ошибка  |  Решение |
     |---|---|
     | 5 — ACCESS DENIED  | Перейдите к разделу [Служба DHCP-клиента остановлена из-за ошибки отказа в доступе](#dhcp-client-service-is-stopped-because-of-an-access-denied-error).  |
     |1053 — ERROR_SERVICE_REQUEST_TIMEOUT   | Перейдите к разделу [Происходит сбой службы DHCP-клиента или она зависает](#dhcp-client-service-crashes-or-hangs).  |

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 08/01/2019
 ms.author: jingwang
-ms.openlocfilehash: 8e2cf8ae771ea252d4291b10c3af677835a13133
-ms.sourcegitcommit: a819209a7c293078ff5377dee266fa76fd20902c
+ms.openlocfilehash: 84091a91321f3d42c5c75aa11d12abf10c5545d7
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71010164"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71089308"
 ---
 # <a name="copy-data-from-square-using-azure-data-factory-preview"></a>Копирование данных из Square с помощью фабрики данных Azure (предварительная версия)
 
@@ -30,7 +30,7 @@ ms.locfileid: "71010164"
 
 Этот квадратный соединитель поддерживается для следующих действий:
 
-- [Действие копирования](copy-activity-overview.md) с [поддерживаемой исходной матрицей](copy-activity-overview.md)
+- [Действие копирования](copy-activity-overview.md) с [поддерживаемой матрицей источника и приемника](copy-activity-overview.md)
 - [Действие поиска](control-flow-lookup-activity.md)
 
 

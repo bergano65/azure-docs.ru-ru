@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: 5d618f12b2a83b0aee145470aff900e26241b705
-ms.sourcegitcommit: aaa82f3797d548c324f375b5aad5d54cb03c7288
+ms.openlocfilehash: 80a38767121f5c54afe51a7d4d788716fe9547e2
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70147282"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71091361"
 ---
 # <a name="understand-extended-offline-capabilities-for-iot-edge-devices-modules-and-child-devices"></a>Общие сведения о расширенных возможностях автономного режима для IoT Edge устройств, модулей и дочерних устройств
 
@@ -110,7 +110,7 @@ az iot hub device-identity add-children \
 
 ## <a name="specify-dns-servers"></a>Указание DNS-серверов 
 
-Для повышения надежности настоятельно рекомендуется указать адреса DNS-серверов, используемые в вашей среде. См. два варианта [настройки DNS-сервера в статье Устранение неполадок](troubleshoot.md#resolution-7).
+Для повышения надежности настоятельно рекомендуется указать адреса DNS-серверов, используемые в вашей среде. Сведения о настройке DNS-сервера для IoT Edge см. в разделе разрешение [модуля агента ребра непрерывно сообщает о пустом файле конфигурации и не запускайте модули на устройстве](troubleshoot.md#edge-agent-module-continually-reports-empty-config-file-and-no-modules-start-on-the-device) в статье Устранение неполадок.
 
 ## <a name="optional-offline-settings"></a>Дополнительные параметры автономной работы
 
@@ -207,5 +207,5 @@ sudo chmod 700 <HostStoragePath>
 Дополнительные сведения о настройке прозрачного шлюза для подключений между родительскими и дочерними устройствами: 
 
 * [Настройка устройства IoT Edge для использования в качестве прозрачного шлюза](how-to-create-transparent-gateway.md)
-* [Проверка подлинности подчиненного устройства в центре Интернета вещей Azure](how-to-authenticate-downstream-device.md)
+* [Аутентификация подчиненного устройства в Центре Интернета вещей](how-to-authenticate-downstream-device.md)
 * [Connect a downstream device to an Azure IoT Edge gateway](how-to-connect-downstream-device.md) (Подключение подчиненного устройства к шлюзу Azure IoT Edge)

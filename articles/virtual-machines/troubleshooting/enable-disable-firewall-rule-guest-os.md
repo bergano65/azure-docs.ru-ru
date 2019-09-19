@@ -4,7 +4,7 @@ description: ''
 services: virtual-machines-windows
 documentationcenter: ''
 author: Deland-Han
-manager: willchen
+manager: dcscontentpm
 editor: ''
 tags: ''
 ms.service: virtual-machines
@@ -14,14 +14,14 @@ ms.tgt_pltfrm: vm-windows
 ms.devlang: azurecli
 ms.date: 11/22/2018
 ms.author: delhan
-ms.openlocfilehash: 7a547efb7af69c58f8e04615d24dd7c230f0c8b0
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 782240c51833fc841af9f4260860db4c03897c03
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67444646"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71086451"
 ---
-# <a name="enable-or-disable-a-firewall-rule-on-an-azure-vm-guest-os"></a>Включить или отключить правило брандмауэра в гостевой ОС виртуальной Машины Azure
+# <a name="enable-or-disable-a-firewall-rule-on-an-azure-vm-guest-os"></a>Включение или отключение правила брандмауэра в гостевой ОС виртуальной машины Azure
 
 Инструкции по устранению неполадок в этой статье относятся к ситуациям, в которых возможна частичная блокировка трафика виртуальной машины брандмауэром гостевой ОС. Это может быть полезным в следующих случаях:
 
@@ -99,7 +99,7 @@ ms.locfileid: "67444646"
 
 1.  На виртуальной машине восстановления запустите редактор реестра (regedit.exe) и последовательно выберите **Файл** > **Подключить сетевой реестр**.
 
-2.  Откройте *ЦЕЛЕВОЙ МАШИНЫ*\SYSTEM ветви, а затем укажите следующие значения:
+2.  Откройте ветвь \SYSTEM *целевого компьютера*и укажите следующие значения:
 
     * Чтобы включить правило, откройте следующий параметр реестра:
     
@@ -107,7 +107,7 @@ ms.locfileid: "67444646"
     
         Измените **Active=FALSE** на **Active=TRUE** в следующей строке:
 
-        **v2.22 | Действие = Разрешить | Active = TRUE | Dir = In | Протокол = 6 | Профиль = домен | Профиль = закрытый | Профиль = Public | LPort = 3389 | App=%SystemRoot%\system32\svchost.exe| SVC = termservice | Имя =\@FirewallAPI.dll-28775 | DESC =\@FirewallAPI.dll-28756 | EmbedCtxt =\@FirewallAPI.dll-28752 |**
+        **v 22E | Действие = разрешить | Активный = TRUE | Dir = in | Протокол = 6 | Профиль = домен | Профиль = частный | Профиль = общедоступный | Лпорт = 3389 | Приложение =%SystemRoot%\system32\svchost.exe | SVC = TermService | Name =\@фиреваллапи. dll,-28775 | Desc =\@фиреваллапи. dll,-28756 | Ембедкткст =\@фиреваллапи. dll,-28752 |**
     
     * Чтобы отключить правило, откройте следующий параметр реестра:
     
@@ -115,7 +115,7 @@ ms.locfileid: "67444646"
 
         Измените **Active=TRUE** на **Active=FALSE**:
         
-        **v2.22 | Действие = Разрешить | Active = FALSE | Dir = In | Протокол = 6 | Профиль = домен | Профиль = закрытый | Профиль = Public | LPort = 3389 | App=%SystemRoot%\system32\svchost.exe| SVC = termservice | Имя =\@FirewallAPI.dll-28775 | DESC =\@FirewallAPI.dll-28756 | EmbedCtxt =\@FirewallAPI.dll-28752 |**
+        **v 22E | Действие = разрешить | Активный = FALSE | Dir = in | Протокол = 6 | Профиль = домен | Профиль = частный | Профиль = общедоступный | Лпорт = 3389 | Приложение =%SystemRoot%\system32\svchost.exe | SVC = TermService | Name =\@фиреваллапи. dll,-28775 | Desc =\@фиреваллапи. dll,-28756 | Ембедкткст =\@фиреваллапи. dll,-28752 |**
 
 3.  Чтобы применить эти изменения, перезапустите виртуальную машину.
 
@@ -131,22 +131,22 @@ ms.locfileid: "67444646"
 
 3.  Убедитесь, что в консоли "Управление дисками" подключенный диск имеет состояние **Подключен**. Запишите или запомните букву диска, которая присвоена подключенному системному диску.
 
-4.  Перед внесением любых изменений, создайте копию в папку \windows\system32\config в случае необходимости отката изменений.
+4.  Прежде чем вносить изменения, создайте копию папки \WINDOWS\System32\Config на случай, если потребуется откат изменений.
 
-5.  На виртуальной Машине запустите редактор реестра (regedit.exe).
+5.  На виртуальной машине для устранения неполадок запустите редактор реестра (regedit. exe).
 
-6.  Выделите **HKEY_LOCAL_MACHINE** ключа, а затем выберите **файл** > **загрузить куст** в меню.
+6.  Выделите раздел **HKEY_LOCAL_MACHINE** , а затем в меню выберите **файл** > **Загрузить куст** .
 
     ![Regedit](./media/enable-or-disable-firewall-rule-guest-os/load-registry-hive.png)
 
 7.  Найдите и откройте файл \windows\system32\config\SYSTEM. 
 
     > [!Note]
-    > Появляется сообщение с предложением ввести имя. Введите **BROKENSYSTEM**, а затем разверните **HKEY_LOCAL_MACHINE**. Теперь вы увидите дополнительный ключ с именем **BROKENSYSTEM**. Для этого устранения неполадок, мы монтирования кустов эти проблемы как **BROKENSYSTEM**.
+    > Появляется сообщение с предложением ввести имя. Введите **BROKENSYSTEM**, а затем разверните раздел **HKEY_LOCAL_MACHINE**. Теперь появится дополнительный ключ с именем **BROKENSYSTEM**. Для устранения неполадок мы подключив эти проблемы Hive как **BROKENSYSTEM**.
 
 8.  Примените следующие изменения к ветви раздела BROKENSYSTEM.
 
-    1.  Проверьте, с каким значением раздела реестра **ControlSet** запускается виртуальная машина. Вы увидите его номер ключа в HKLM\BROKENSYSTEM\Select\Current.
+    1.  Проверьте, с каким значением раздела реестра **ControlSet** запускается виртуальная машина. Вы увидите его ключ в Хклм\брокенсистем\селект\куррент.
 
     2.  Чтобы включить правило, откройте следующий параметр реестра:
     
@@ -154,7 +154,7 @@ ms.locfileid: "67444646"
         
         Измените здесь **Active=FALSE** на **Active=TRUE**.
         
-        **v2.22 | Действие = Разрешить | Active = TRUE | Dir = In | Протокол = 6 | Профиль = домен | Профиль = закрытый | Профиль = Public | LPort = 3389 | App=%SystemRoot%\system32\svchost.exe| SVC = termservice | Имя =\@FirewallAPI.dll-28775 | DESC =\@FirewallAPI.dll-28756 | EmbedCtxt =\@FirewallAPI.dll-28752 |**
+        **v 22E | Действие = разрешить | Активный = TRUE | Dir = in | Протокол = 6 | Профиль = домен | Профиль = частный | Профиль = общедоступный | Лпорт = 3389 | Приложение =%SystemRoot%\system32\svchost.exe | SVC = TermService | Name =\@фиреваллапи. dll,-28775 | Desc =\@фиреваллапи. dll,-28756 | Ембедкткст =\@фиреваллапи. dll,-28752 |**
 
     3.  Чтобы отключить правило, откройте следующий раздел реестра:
 
@@ -162,9 +162,9 @@ ms.locfileid: "67444646"
 
         Измените **Active=TRUE** на **Active=FALSE**.
         
-        **v2.22 | Действие = Разрешить | Active = FALSE | Dir = In | Протокол = 6 | Профиль = домен | Профиль = закрытый | Профиль = Public | LPort = 3389 | App=%SystemRoot%\system32\svchost.exe| SVC = termservice | Имя =\@FirewallAPI.dll-28775 | DESC =\@FirewallAPI.dll-28756 | EmbedCtxt =\@FirewallAPI.dll-28752 |**
+        **v 22E | Действие = разрешить | Активный = FALSE | Dir = in | Протокол = 6 | Профиль = домен | Профиль = частный | Профиль = общедоступный | Лпорт = 3389 | Приложение =%SystemRoot%\system32\svchost.exe | SVC = TermService | Name =\@фиреваллапи. dll,-28775 | Desc =\@фиреваллапи. dll,-28756 | Ембедкткст =\@фиреваллапи. dll,-28752 |**
 
-9.  Выделите **BROKENSYSTEM**, а затем выберите **файл** > **выгрузить куст** в меню.
+9.  Выделите **BROKENSYSTEM**, а затем в меню выберите **файл** > **Выгрузить куст Hive** .
 
 10. [Отсоедините системный диск и повторно создайте виртуальную машину](troubleshoot-recovery-disks-portal-windows.md).
 

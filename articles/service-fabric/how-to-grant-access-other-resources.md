@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 08/08/2019
 ms.author: atsenthi
-ms.openlocfilehash: f2621abcb2bac55ff123a11efa0ae9a082a1acbd
-ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
+ms.openlocfilehash: 467b202cf6b981969316a2646aac99f788f7a2f4
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70968262"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71091197"
 ---
 # <a name="granting-a-service-fabric-applications-managed-identity-access-to-azure-resources-preview"></a>Предоставление управляемому удостоверению приложения Service Fabric доступ к ресурсам Azure (Предварительная версия)
 
@@ -40,9 +40,14 @@ ms.locfileid: "70968262"
 
 ![Политика доступа к Key Vault](../key-vault/media/vs-secure-secret-appsettings/add-keyvault-access-policy.png)
 
-В следующем примере показано предоставление доступа к хранилищу с помощью развертывания шаблона. Добавьте фрагмент кода ниже в качестве другой записи в `resources` элементе шаблона.
+В следующем примере показано предоставление доступа к хранилищу с помощью развертывания шаблона. Добавьте приведенные ниже фрагменты кода в качестве другой записи в `resources` элементе шаблона. В образце демонстрируется предоставление доступа для типов удостоверений, назначаемых пользователем и системой, соответственно, выбор применимого.
 
 ```json
+    # under 'variables':
+  "variables": {
+        "userAssignedIdentityResourceId" : "[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities/', parameters('userAssignedIdentityName'))]",
+    }
+    # under 'resources':
     {
         "type": "Microsoft.KeyVault/vaults/accessPolicies",
         "name": "[concat(parameters('keyVaultName'), '/add')]",
@@ -64,6 +69,42 @@ ms.locfileid: "70968262"
             ]
         }
     },
+```
+И для управляемых идентификаторов, назначенных системой:
+```json
+    # under 'variables':
+  "variables": {
+        "sfAppSystemAssignedIdentityResourceId": "[concat(resourceId('Microsoft.ServiceFabric/clusters/applications/', parameters('clusterName'), parameters('applicationName')), '/providers/Microsoft.ManagedIdentity/Identities/default')]"
+    }
+    # under 'resources':
+    {
+        "type": "Microsoft.KeyVault/vaults/accessPolicies",
+        "name": "[concat(parameters('keyVaultName'), '/add')]",
+        "apiVersion": "2018-02-14",
+        "properties": {
+            "accessPolicies": [
+            {
+                    "name": "[concat(parameters('clusterName'), '/', parameters('applicationName'))]",
+                    "tenantId": "[reference(variables('sfAppSystemAssignedIdentityResourceId'), '2018-11-30').tenantId]",
+                    "objectId": "[reference(variables('sfAppSystemAssignedIdentityResourceId'), '2018-11-30').principalId]",
+                    "dependsOn": [
+                        "[variables('sfAppSystemAssignedIdentityResourceId')]"
+                    ],
+                    "permissions": {
+                        "secrets": [
+                            "get",
+                            "list"
+                        ],
+                        "certificates": 
+                        [
+                            "get", 
+                            "list"
+                        ]
+                    }
+            },
+        ]
+        }
+    }
 ```
 
 Дополнительные сведения см. в разделе [хранилища — Политика доступа для обновления](https://docs.microsoft.com/rest/api/keyvault/vaults/updateaccesspolicy).

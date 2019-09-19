@@ -5,15 +5,16 @@ ms.service: hdinsight
 ms.topic: troubleshooting
 author: hrasheed-msft
 ms.author: hrasheed
+ms.reviewer: jasonh
 ms.date: 08/12/2019
-ms.openlocfilehash: 14f4cd7588405dbf351124b1e469fd96f9b38274
-ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
+ms.openlocfilehash: d4bb9e090b238eacec77f4c19bbf9afb3e09a912
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68977408"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71091048"
 ---
-# <a name="scenario-unable-to-sign-in-to-apache-zeppelin-in-azure-hdinsight"></a>Сценарий: Не удалось войти в Apache Zeppelin в Azure HDInsight
+# <a name="scenario-unable-to-sign-in-to-apache-zeppelin-in-azure-hdinsight"></a>Сценарий. Не удалось войти в Apache Zeppelin в Azure HDInsight
 
 В этой статье описываются действия по устранению неполадок и возможные способы решения проблем при взаимодействии с кластерами Azure HDInsight.
 

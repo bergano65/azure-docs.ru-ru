@@ -9,10 +9,10 @@ ms.date: 06/22/2018
 ms.author: twooley
 ms.custom: include file
 ms.openlocfilehash: f328de00d206b58037fda800354e9634b1c374d6
-ms.sourcegitcommit: 23389df08a9f4cab1f3bb0f474c0e5ba31923f12
+ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
+ms.lasthandoff: 09/18/2019
 ms.locfileid: "67185678"
 ---
 Azure Data Lake Storage 1-го поколения — это крупномасштабный репозиторий корпоративного уровня для рабочих нагрузок анализа больших данных. Data Lake Storage 1-го поколения можно использовать для сбора данных любого размера, типа и скорости приема в одном месте для оперативной и исследовательской аналитики. Объем данных, которые можно хранить в учетной записи Data Lake Storage 1-го поколения, не ограничен.

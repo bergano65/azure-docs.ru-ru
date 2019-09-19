@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 08/01/2019
 ms.author: jingwang
-ms.openlocfilehash: 0062d2dfb681234ed0b0956d080791db59b2999a
-ms.sourcegitcommit: a819209a7c293078ff5377dee266fa76fd20902c
+ms.openlocfilehash: 212f1bcc7bc2bb91a402461209dad4dc288106ad
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71009274"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71090342"
 ---
 # <a name="copy-data-from-google-adwords-using-azure-data-factory-preview"></a>Копирование данных из Google AdWords с помощью службы "Фабрика данных Azure" (предварительная версия)
 
@@ -30,7 +30,7 @@ ms.locfileid: "71009274"
 
 Этот соединитель Google адвордс поддерживается для следующих действий:
 
-- [Действие копирования](copy-activity-overview.md) с [поддерживаемой исходной матрицей](copy-activity-overview.md)
+- [Действие копирования](copy-activity-overview.md) с [поддерживаемой матрицей источника и приемника](copy-activity-overview.md)
 - [Действие поиска](control-flow-lookup-activity.md)
 
 

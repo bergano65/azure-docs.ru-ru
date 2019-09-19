@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: quickstart
 ms.date: 07/01/2019
 ms.author: pafarley
-ms.openlocfilehash: e3c5583f38f7a7f5a3654bfdd27620593175cf58
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 44121b959d13a92ca1f4cca0e5a0c00341d1ac18
+ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68562657"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71073747"
 ---
 # <a name="quickstart-extract-receipt-data-using-the-form-recognizer-rest-api-with-python"></a>Краткое руководство. Извлечение данных квитанции с помощью REST API Распознавателя документов и Python
 
@@ -36,7 +36,7 @@ ms.locfileid: "68562657"
 
 Для начала анализа квитанции запустите API **анализа**, используя приведенный ниже сценарий Python. Перед выполнением сценария внесите следующие изменения:
 
-1. Замените `<Endpoint>` конечной точкой, которую вы получили из своего ключа подписки Распознавателя документов (см. ресурс Распознавателя документов на вкладке **Обзор**).
+1. Замените `<Endpoint>` конечной точкой, полученной из ключа подписки Распознавателя документов (см. ресурс Распознавателя документов на вкладке **Обзор**).
 1. Замените `<your receipt URL>` на URL-адрес изображения квитанции.
 1. Замените `<subscription key>` ключом подписки, скопированным на предыдущем шаге.
 

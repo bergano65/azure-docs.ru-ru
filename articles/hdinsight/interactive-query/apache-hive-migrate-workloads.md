@@ -7,12 +7,12 @@ ms.author: tacox
 ms.reviewer: jasonh
 ms.topic: conceptual
 ms.date: 04/24/2019
-ms.openlocfilehash: eb6b42a88e47e3fcb35700ec542c8ca642e17a6a
-ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
+ms.openlocfilehash: 0363f2d8da1ca1371fd55107c6487c3d96f6d00e
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68815811"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71091459"
 ---
 # <a name="migrate-azure-hdinsight-36-hive-workloads-to-hdinsight-40"></a>Перенос рабочих нагрузок Hive Azure HDInsight 3,6 в HDInsight 4,0
 
@@ -71,7 +71,7 @@ alter table myacidtable compact 'major';
 1. Выполните следующую команду из оболочки. Замените `${{STACK_VERSION}}` на строку версии из предыдущего шага:
 
 ```bash
-/usr/hdp/${{STACK_VERSION}}/hive/bin/hive --config /etc/hive/conf --service  strictmanagedmigration --hiveconf hive.strict.managed.tables=true  -m automatic  automatic  --modifyManagedTables --oldWarehouseRoot /apps/hive/warehouse
+/usr/hdp/${{STACK_VERSION}}/hive/bin/hive --config /etc/hive/conf --service  strictmanagedmigration --hiveconf hive.strict.managed.tables=true -m automatic --modifyManagedTables
 ```
 
 По завершении работы средства миграции хранилище Hive будет готово к HDInsight 4,0. 

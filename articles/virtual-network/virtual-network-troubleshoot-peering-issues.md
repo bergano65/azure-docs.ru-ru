@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/28/2019
 ms.author: kaushika
-ms.openlocfilehash: fc01a20a077a1c624ed490600db919fe3197556c
-ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.openlocfilehash: 68d4f55d4a382f59386e72779a5f60cfc2a65338
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70901767"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71091101"
 ---
 # <a name="troubleshoot-virtual-network-peering-issues"></a>Устранение неполадок с пирингом виртуальной сети
 
@@ -58,7 +58,7 @@ ms.locfileid: "70901767"
 Чтобы настроить пиринг виртуальной сети для виртуальных сетей в разных подписках или клиентах Active Directory, выполните действия, описанные в статье [Создание пиринга в разных подписках для Azure CLI](https://docs.microsoft.com/azure/virtual-network/create-peering-different-subscriptions#cli).
 
 > [!Note]
-> Чтобы настроить пиринг сети, необходимо иметь разрешения **участника сети** в обеих подписках. Дополнительные сведения см. в разделе [разрешения пиринга](https://docs.microsoft.com/azure/virtual-network/virtual-network-manage-peering%23permissions).
+> Чтобы настроить пиринг сети, необходимо иметь разрешения **участника сети** в обеих подписках. Дополнительные сведения см. в разделе [разрешения пиринга](virtual-network-manage-peering.md#permissions).
 
 ## <a name="scenario-2-configure-virtual-network-peering-with-hub-spoke-topology-that-uses-on-premises-resources"></a>Сценарий 2. Настройка пиринга виртуальных сетей с помощью топологии Hub-лучевой сети, использующей локальные ресурсы
 
@@ -104,7 +104,7 @@ ms.locfileid: "70901767"
 
 ## <a name="scenario-4-i-have-a-connectivity-issue-between-two-peered-virtual-networks"></a>Сценарий 4. У меня есть проблемы с подключением между двумя одноранговыми виртуальными сетями
 
-Войдите в [портал Azure](https://portal.azure.com/) с помощью учетной записи, обладающей необходимыми [ролями и разрешениями](https://docs.microsoft.com/azure/virtual-network/virtual-network-manage-peering#roles-permissions). Выберите виртуальную сеть, выберите **пиринг**, а затем проверьте поле **состояние** . Что такое состояние?
+Войдите в [портал Azure](https://portal.azure.com/) с помощью учетной записи, обладающей необходимыми [ролями и разрешениями](virtual-network-manage-peering.md#permissions). Выберите виртуальную сеть, выберите **пиринг**, а затем проверьте поле **состояние** . Что такое состояние?
 
 ### <a name="connection-type-1-the-peering-status-shows-connected"></a>Тип подключения 1: Состояние пиринга отображается как "подключено"
 

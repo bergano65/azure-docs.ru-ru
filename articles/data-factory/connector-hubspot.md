@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 08/01/2019
 ms.author: jingwang
-ms.openlocfilehash: 7d65432acd0bd9c184508dea5d887e36e716a277
-ms.sourcegitcommit: a819209a7c293078ff5377dee266fa76fd20902c
+ms.openlocfilehash: 066c80f7791bb9699494a09dec12f43dfb383ac6
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71009069"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71090205"
 ---
 # <a name="copy-data-from-hubspot-using-azure-data-factory-preview"></a>Копирование данных из HubSpot с помощью фабрики данных Azure (предварительная версия)
 
@@ -30,7 +30,7 @@ ms.locfileid: "71009069"
 
 Этот соединитель HubSpot поддерживается для следующих действий:
 
-- [Действие копирования](copy-activity-overview.md) с [поддерживаемой исходной матрицей](copy-activity-overview.md)
+- [Действие копирования](copy-activity-overview.md) с [поддерживаемой матрицей источника и приемника](copy-activity-overview.md)
 - [Действие поиска](control-flow-lookup-activity.md)
 
 

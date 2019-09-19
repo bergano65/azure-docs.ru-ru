@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 11/20/2017
 ms.author: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e7a4ce0419e3a5615cc5a6d57fe2f1cfecad2f09
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 26d434069870fbfa52687a3abc7913fd121687a1
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66228577"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71000073"
 ---
 # <a name="tutorial-use-a-linux-vm-system-assigned-managed-identity-to-access-azure-key-vault"></a>Руководство по Использование назначаемого системой управляемого удостоверения на виртуальной машине Linux для доступа к Azure Key Vault 
 
@@ -110,7 +110,7 @@ ms.locfileid: "66228577"
 Из этого руководства вы узнали, как получить доступ к Azure Key Vault с помощью назначаемого системой управляемого удостоверения на виртуальной машине Linux.  Дополнительные сведения об Azure Key Vault см. здесь:
 
 > [!div class="nextstepaction"]
->[Хранилище ключей Azure](/azure/key-vault/key-vault-whatis)
+>[Хранилище ключей Azure](/azure/key-vault/key-vault-overview)
 
 
 

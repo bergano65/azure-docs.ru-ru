@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: conceptual
 ms.date: 04/01/2019
 ms.author: pabutler
-ms.openlocfilehash: d98a5f04f60cb7d933ea91e0657f6067fb1c59a8
-ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
+ms.openlocfilehash: 9c55688674fe16f64bfb27788a6e038059694a77
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70962802"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71087461"
 ---
 # <a name="prerequisites-for-managing-accounts-on-the-cloud-partner-portal"></a>Необходимые условия для управления учетными записями в Портал Cloud Partner 
 
@@ -21,7 +21,7 @@ ms.locfileid: "70962802"
 
 ## <a name="account-terms-and-guidelines"></a>Условия и рекомендации для учетных записей
 
-Перед созданием учетной записи внимательно Проанализируйте свои права и обязанности в [соглашение об использовании служб Майкрософт](https://www.microsoft.com/servicesagreement) и [условиях использования Майкрософт](https://www.microsoft.com/us-en/legal/intellectualproperty/copyright/default.aspx) .  
+Перед созданием учетной записи внимательно Проанализируйте свои права и обязанности в [соглашение об использовании служб Майкрософт](https://www.microsoft.com/servicesagreement) и [условиях использования Майкрософт](https://www.microsoft.com/en-us/legal/intellectualproperty/copyright) .  
 
 Тщательно выберите имя своей учетной записи.  Она представляет вашу организацию, поэтому она не должна содержать никаких спорными слов с авторскими правами.  Например, корпорация Майкрософт запрещает использование в именах учетных записей таких терминов, как "Azure" и "Майкрософт".  Дополнительные сведения см. в статье [рекомендации для Azure Marketplace](https://docs.microsoft.com/azure/marketplace/guidelines) .
 

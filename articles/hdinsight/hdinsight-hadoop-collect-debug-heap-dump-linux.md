@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/27/2018
 ms.author: hrasheed
-ms.openlocfilehash: 68be0d7d13785c9631044766a290eec93637ea64
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.openlocfilehash: 5df6ab47c45a64077a39974a30c65fe13f3c851d
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70879969"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71091495"
 ---
 # <a name="enable-heap-dumps-for-apache-hadoop-services-on-linux-based-hdinsight"></a>Включение дампов кучи для служб Apache Hadoop в HDInsight под управлением Linux
 
@@ -94,11 +94,11 @@ ms.locfileid: "70879969"
 
 3. Используя запись **Фильтр...** , введите **параметры**. Отобразятся только те элементы, в которых есть этот текст.
 
-    ![Фильтрованный список](./media/hdinsight-hadoop-collect-debug-heap-dump-linux/hdinsight-filter-list.png)
+    ![Отфильтрованный список настройки Apache Ambari](./media/hdinsight-hadoop-collect-debug-heap-dump-linux/hdinsight-filter-list.png)
 
 4. Найдите запись **\*\_OPTS** службы, для которой нужно включить дампы кучи, и добавьте параметры, которые требуется включить. На изображении ниже вы можете увидеть, что я добавил `-XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/tmp/` в запись **HADOOP\_NAMENODE\_OPTS**:
 
-    ![HADOOP_NAMENODE_OPTS с -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/tmp/](./media/hdinsight-hadoop-collect-debug-heap-dump-linux/hadoop-namenode-opts.png)
+    ![Apache Ambari Hadoop-namenode-намерена](./media/hdinsight-hadoop-collect-debug-heap-dump-linux/hadoop-namenode-opts.png)
 
    > [!NOTE]  
    > При включении дампов кучи для дочерних процессов сопоставления и уменьшения найдите поля **mapreduce.admin.map.child.java.opts** и **mapreduce.admin.reduce.child.java.opts**.
@@ -111,11 +111,11 @@ ms.locfileid: "70879969"
 
 6. Выберите все службы, которые требуют перезагрузки, и используйте кнопку **Действия службы** для **включения режима обслуживания**. Режим обслуживания не позволит создавать предупреждения от службы при ее перезапуске.
 
-    ![Включение меню режима обслуживания](./media/hdinsight-hadoop-collect-debug-heap-dump-linux/hdi-maintenance-mode.png)
+    ![Включить меню режима обслуживания HDi](./media/hdinsight-hadoop-collect-debug-heap-dump-linux/hdi-maintenance-mode.png)
 
 7. После включения режима обслуживания используйте кнопку **Перезапуск** для службы, чтобы **перезапустить все затронутые записи**.
 
-    ![Перезапустить все затронутые записи](./media/hdinsight-hadoop-collect-debug-heap-dump-linux/hdi-restart-all-button.png)
+    ![Apache Ambari перезапускает все затронутые записи](./media/hdinsight-hadoop-collect-debug-heap-dump-linux/hdi-restart-all-button.png)
 
    > [!NOTE]  
    > Записи для кнопки **Перезапуск** могут быть другими для других служб.

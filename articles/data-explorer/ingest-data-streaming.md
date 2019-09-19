@@ -7,12 +7,12 @@ ms.reviewer: tzgitlin
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 08/30/2019
-ms.openlocfilehash: 5aa2d694c2c74b493a7fd1a2a89d39866928d1d4
-ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
+ms.openlocfilehash: 712273ddfb8b6f781627e2cc7915a1f538f57b4d
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70843871"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71090637"
 ---
 # <a name="streaming-ingestion-preview"></a>Прием потоковой передачи (Предварительная версия)
 
@@ -41,8 +41,9 @@ ms.locfileid: "70843871"
  
 1. В [пользовательском веб-интерфейсе](https://dataexplorer.azure.com/)Определите [политику приема потоковой передачи](/azure/kusto/concepts/streamingingestionpolicy) для таблиц или баз данных, которые будут получать потоковые данные. 
 
-    > [!TIP]
-    > Если политика определена на уровне базы данных, то все таблицы в базе данных будут включены для приема потоковой передачи.
+    > [!NOTE]
+    > * Если политика определена на уровне базы данных, то все таблицы в базе данных будут включены для приема потоковой передачи.
+    > * Примененная политика может ссылаться только на новые принимаемые данные, а не на другие таблицы в базе данных.
 
 ## <a name="use-streaming-ingestion-to-ingest-data-to-your-cluster"></a>Использование приема потоковой передачи для приема данных в кластере
 

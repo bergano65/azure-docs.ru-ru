@@ -5,13 +5,13 @@ author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 08/23/2019
-ms.openlocfilehash: 04b17d2e3acba7f003325ca7fdef2107108aea4d
-ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
+ms.date: 09/10/2019
+ms.openlocfilehash: 383f5acb9f106bb4697433be99c53bb78d00b396
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70013419"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71091146"
 ---
 # <a name="postgresql-extensions-in-azure-database-for-postgresql---single-server"></a>Расширения PostgreSQL в базе данных Azure для PostgreSQL — один сервер
 PostgreSQL предоставляет возможность расширить функциональность базы данных с помощью расширений. Расширения объединяют несколько связанных объектов SQL в один пакет, который можно загрузить или удалить из базы данных с помощью одной команды. После загрузки в базу данных функции расширений, такие как встроенные функции.
@@ -44,6 +44,7 @@ PostgreSQL предоставляет возможность расширить 
 > |[isn](https://www.postgresql.org/docs/11/isn.html)                          | 1.2             | типы данных для международных стандартов нумерации продуктов|
 > |[ltree](https://www.postgresql.org/docs/11/ltree.html)                        | 1.1             | тип данных для иерархических структур, схожих с деревом|
 > |[орафце](https://github.com/orafce/orafce)                       | 3,7             | Функции и операторы, имитирующие подмножество функций и пакетов из коммерческой RDBMS|
+> |[пгаудит](https://www.pgaudit.org/)                     | 1,3             | предоставляет функции аудита|
 > |[pgcrypto](https://www.postgresql.org/docs/11/pgcrypto.html)                     | 1,3             | криптографические функции|
 > |[pgrouting](https://pgrouting.org/)                    | 2.6.2           | Расширение Пграутинг|
 > |[pgrowlocks](https://www.postgresql.org/docs/11/pgrowlocks.html)                   | 1.2             | показывать сведения о блокировке на уровне строк|
@@ -88,6 +89,7 @@ PostgreSQL предоставляет возможность расширить 
 > |[isn](https://www.postgresql.org/docs/10/isn.html)                          | 1.1             | типы данных для международных стандартов нумерации продуктов|
 > |[ltree](https://www.postgresql.org/docs/10/ltree.html)                        | 1.1             | тип данных для иерархических структур, схожих с деревом|
 > |[орафце](https://github.com/orafce/orafce)                       | 3,7             | Функции и операторы, имитирующие подмножество функций и пакетов из коммерческой RDBMS|
+> |[пгаудит](https://www.pgaudit.org/)                     | 1,3             | предоставляет функции аудита|
 > |[pgcrypto](https://www.postgresql.org/docs/10/pgcrypto.html)                     | 1,3             | криптографические функции|
 > |[pgrouting](https://pgrouting.org/)                    | 2.5.2           | Расширение Пграутинг|
 > |[pgrowlocks](https://www.postgresql.org/docs/10/pgrowlocks.html)                   | 1.2             | показывать сведения о блокировке на уровне строк|
@@ -133,6 +135,7 @@ PostgreSQL предоставляет возможность расширить 
 > |[isn](https://www.postgresql.org/docs/9.6/isn.html)                          | 1.1             | типы данных для международных стандартов нумерации продуктов|
 > |[ltree](https://www.postgresql.org/docs/9.6/ltree.html)                        | 1.1             | тип данных для иерархических структур, схожих с деревом|
 > |[орафце](https://github.com/orafce/orafce)                       | 3,7             | Функции и операторы, имитирующие подмножество функций и пакетов из коммерческой RDBMS|
+> |[пгаудит](https://www.pgaudit.org/)                     | 1,3             | предоставляет функции аудита|
 > |[pgcrypto](https://www.postgresql.org/docs/9.6/pgcrypto.html)                     | 1,3             | криптографические функции|
 > |[pgrouting](https://pgrouting.org/)                    | 2.3.2           | Расширение Пграутинг|
 > |[pgrowlocks](https://www.postgresql.org/docs/9.6/pgrowlocks.html)                   | 1.2             | показывать сведения о блокировке на уровне строк|
@@ -178,6 +181,7 @@ PostgreSQL предоставляет возможность расширить 
 > |[isn](https://www.postgresql.org/docs/9.5/isn.html)                          | 1.0             | типы данных для международных стандартов нумерации продуктов|
 > |[ltree](https://www.postgresql.org/docs/9.5/ltree.html)                        | 1.0             | тип данных для иерархических структур, схожих с деревом|
 > |[орафце](https://github.com/orafce/orafce)                       | 3,7             | Функции и операторы, имитирующие подмножество функций и пакетов из коммерческой RDBMS|
+> |[пгаудит](https://www.pgaudit.org/)                     | 1,3             | предоставляет функции аудита|
 > |[pgcrypto](https://www.postgresql.org/docs/9.5/pgcrypto.html)                     | 1.2             | криптографические функции|
 > |[pgrouting](https://pgrouting.org/)                    | 2.3.0           | Расширение Пграутинг|
 > |[pgrowlocks](https://www.postgresql.org/docs/9.5/pgrowlocks.html)                   | 1.1             | показывать сведения о блокировке на уровне строк|
@@ -213,13 +217,16 @@ dblink и postgres_fdw позволяют подключаться с одног
 Если вы планируете использовать `uuid_generate_v4()` из расширения UUID-ОССП, рассмотрите возможность сравнения с `gen_random_uuid()` из расширения пгкрипто для повышения производительности.
 
 
+## <a name="pgaudit"></a>пгаудит
+Расширение Пгаудит обеспечивает ведение журнала аудита сеансов и объектов. Сведения об использовании этого расширения в базе данных Azure для PostgreSQL см. в [статье основные понятия аудита](concepts-audit.md). 
+
 ## <a name="timescaledb"></a>тимескаледб
 Тимескаледб — это база данных временных рядов, которая упакована как расширение для PostgreSQL. Тимескаледб обеспечивает ориентированные на время аналитические функции, оптимизации и масштабирование postgres для рабочих нагрузок временных рядов.
 
 [Узнайте больше о тимескаледб](https://docs.timescale.com/latest), охраняемом товарном знаке [шкалы времени, Inc.](https://www.timescale.com/)
 
 ### <a name="installing-timescaledb"></a>Установка Тимескаледб
-Чтобы установить Тимескаледб, необходимо включить его в общие библиотеки предварительной загрузки сервера. Для вступления в силу `shared_preload_libraries` изменения параметра postgres требуется перезагрузка **сервера** . Параметры можно изменить с помощью [портал Azure](howto-configure-server-parameters-using-portal.md) или [Azure CLI](howto-configure-server-parameters-using-cli.md).
+Чтобы установить Тимескаледб, необходимо включить его в общие библиотеки предварительной загрузки сервера. Для вступления в силу `shared_preload_libraries` изменения параметра postgres требуется **Перезагрузка сервера** . Параметры можно изменить с помощью [портал Azure](howto-configure-server-parameters-using-portal.md) или [Azure CLI](howto-configure-server-parameters-using-cli.md).
 
 > [!NOTE]
 > Тимескаледб можно включить в базе данных Azure для PostgreSQL версий 9,6 и 10.
@@ -236,7 +243,7 @@ dblink и postgres_fdw позволяют подключаться с одног
 
 5. Нажмите кнопку **сохранить** , чтобы сохранить изменения. После сохранения изменений появляется уведомление. 
 
-6. После уведомления перезапустите сервер, чтобы применить эти изменения. Дополнительные сведения о перезапуске сервера службы "База данных Azure для PostgreSQL" см. в [этой статье](howto-restart-server-portal.md).
+6. После уведомления **перезапустите** сервер, чтобы применить эти изменения. Дополнительные сведения о перезапуске сервера службы "База данных Azure для PostgreSQL" см. в [этой статье](howto-restart-server-portal.md).
 
 
 Теперь можно включить Тимескаледб в базе данных postgres. Подключитесь к базе данных и выполните следующую команду:

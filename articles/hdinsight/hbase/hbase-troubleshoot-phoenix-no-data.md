@@ -5,15 +5,16 @@ ms.service: hdinsight
 ms.topic: troubleshooting
 author: hrasheed-msft
 ms.author: hrasheed
+ms.reviewer: jasonh
 ms.date: 08/08/2019
-ms.openlocfilehash: e42ab97b4508a606781af76f8dd5927b1a14a8b3
-ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
+ms.openlocfilehash: 94423fa1f7596eb42ad6112003ad202b2eb21766
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2019
-ms.locfileid: "68947842"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71091637"
 ---
-# <a name="scenario-hdp-upgrade-causes-no-data-in-apache-phoenix-views-in-azure-hdinsight"></a>Сценарий: При обновлении HDP данные в представлениях Apache Phoenix в Azure HDInsight не выводятся.
+# <a name="scenario-hdp-upgrade-causes-no-data-in-apache-phoenix-views-in-azure-hdinsight"></a>Сценарий. При обновлении HDP данные в представлениях Apache Phoenix в Azure HDInsight не выводятся.
 
 В этой статье описываются действия по устранению неполадок и возможные способы решения проблем при взаимодействии с кластерами Azure HDInsight.
 

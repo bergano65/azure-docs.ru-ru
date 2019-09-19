@@ -10,18 +10,18 @@ ms.topic: conceptual
 ms.date: 07/25/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 9465c1991418c7ebef8c4eed825affc7b1d93492
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: 41caa5807ce837e1ff00ceadd3fe5aef958d01b6
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68693342"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71066057"
 ---
 # <a name="set-up-sign-in-with-a-linkedin-account-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка входа в Azure Active Directory B2C с помощью учетной записи LinkedIn с использованием пользовательских политик
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-В этой статье описывается включение входа пользователей в Azure Active Directory (Azure AD) B2C из учетных записей LinkedIn с помощью [пользовательских политик](active-directory-b2c-overview-custom.md).
+В этой статье показано, как включить вход для пользователей из учетной записи LinkedIn с помощью [пользовательских политик](active-directory-b2c-overview-custom.md) в Azure Active Directory B2C (Azure AD B2C).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -48,7 +48,7 @@ ms.locfileid: "68693342"
 
 ### <a name="configure-auth"></a>Настройка проверки подлинности
 
-1. Перейдите на вкладку **Проверка** подлинности.
+1. Перейдите на вкладку **Проверка подлинности** .
 1. Запишите **идентификатор клиента**.
 1. Показать и записать **секрет клиента**.
 1. В разделе **параметры OAuth 2,0**добавьте следующий **URL-адрес перенаправления**. Замените `your-tenant` именем вашего клиента. Используйте **все строчные буквы** для имени клиента, даже если оно определено с прописными буквами в Azure AD B2C.
@@ -60,7 +60,7 @@ ms.locfileid: "68693342"
 Вам необходимо сохранить секрет клиента, который ранее был записан в клиенте Azure AD B2C.
 
 1. Войдите на [портале Azure](https://portal.azure.com/).
-2. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C. В верхнем меню выберите **каталог и фильтр подписок** и выберите каталог, содержащий ваш клиент.
+2. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C. В верхнем меню выберите фильтр **каталог и подписка** и выберите каталог, содержащий ваш клиент.
 3. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
 4. На странице "Обзор" выберите **Identity Experience Framework**.
 5. Выберите **ключи политики** и нажмите кнопку **Добавить**.
@@ -220,7 +220,7 @@ ms.locfileid: "68693342"
 Связь с Azure AD B2C осуществляется с помощью приложения, созданного в вашем клиенте. В этом разделе перечислены необязательные действия, которые можно выполнить, чтобы создать тестовое приложение, если вы его еще не создали.
 
 1. Войдите на [портале Azure](https://portal.azure.com).
-2. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C. В верхнем меню выберите **каталог и фильтр подписок** и выберите каталог, содержащий ваш клиент.
+2. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C. В верхнем меню выберите фильтр **каталог и подписка** и выберите каталог, содержащий ваш клиент.
 3. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
 4. Щелкните **Приложения**, а затем выберите **Добавить**.
 5. Задайте имя для приложения, например *testapp1*.
@@ -251,7 +251,7 @@ ms.locfileid: "68693342"
 <Item Key="scope">r_emailaddress r_basicprofile</Item>
 ```
 
-Кому:
+на:
 
 ```XML
 <Item Key="ClaimsEndpoint">https://api.linkedin.com/v2/me</Item>
@@ -277,7 +277,7 @@ ms.locfileid: "68693342"
 <OutputClaim ClaimTypeReferenceId="surname" PartnerClaimType="lastName" />
 ```
 
-Кому:
+на:
 
 ```XML
 <OutputClaim ClaimTypeReferenceId="givenName" PartnerClaimType="firstName.localized" />

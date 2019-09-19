@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.date: 11/29/2018
 ms.author: lahugh
 ms.custom: mvc
-ms.openlocfilehash: 92d8c6fb1bfa1689475774bbc4f62cd9ab38268f
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: d06cf74b2a29af3fea2c24facac2899d09a0a84f
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68321834"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71090787"
 ---
 # <a name="tutorial-run-a-parallel-workload-with-azure-batch-using-the-python-api"></a>Руководство по Запуск параллельной рабочей нагрузки с помощью пакета Azure с использованием Python API
 
@@ -123,7 +123,7 @@ Elapsed time: 00:09:14.3418742
 
 ### <a name="authenticate-blob-and-batch-clients"></a>Проверка подлинности клиентов больших двоичных объектов и пакетной службы
 
-Для взаимодействия с учетной записью хранения приложение использует пакет [azure-storage-blob](https://pypi.python.org/pypi/azure-storage-blob) для создания объекта [BlockBlobService](/python/api/azure.storage.blob.blockblobservice.blockblobservice).
+Для взаимодействия с учетной записью хранения приложение использует пакет [azure-storage-blob](https://pypi.python.org/pypi/azure-storage-blob) для создания объекта [BlockBlobService](/python/api/azure-storage-blob/azure.storage.blob.blockblobservice.blockblobservice).
 
 ```python
 blob_client = azureblob.BlockBlobService(
@@ -144,7 +144,7 @@ batch_client = batch.BatchServiceClient(
 
 ### <a name="upload-input-files"></a>Передача входных файлов
 
-Приложение использует ссылку `blob_client`, создавая контейнер хранения для входных файлов MP4 и контейнер для выходных данных задач. Затем оно вызывает функцию `upload_file_to_container` для передачи файлов MP4 в локальный каталог `InputFiles` в контейнер. Файлы в хранилище определяются как объекты пакетной службы [ResourceFile](/python/api/azure.batch.models.resourcefile), которые она может впоследствии скачать на вычислительные узлы.
+Приложение использует ссылку `blob_client`, создавая контейнер хранения для входных файлов MP4 и контейнер для выходных данных задач. Затем оно вызывает функцию `upload_file_to_container` для передачи файлов MP4 в локальный каталог `InputFiles` в контейнер. Файлы в хранилище определяются как объекты пакетной службы [ResourceFile](/python/api/azure-batch/azure.batch.models.resourcefile), которые она может впоследствии скачать на вычислительные узлы.
 
 ```python
 blob_client.create_container(input_container_name, fail_on_exist=False)
@@ -165,13 +165,13 @@ input_files = [
 
 ### <a name="create-a-pool-of-compute-nodes"></a>Создание пула вычислительных узлов
 
-Затем в учетной записи пакетной службы создается пул вычислительных узлов с помощью вызова `create_pool`. Определенная функция использует класс пакетной службы [PoolAddParameter](/python/api/azure.batch.models.pooladdparameter) для настройки количества узлов, размера виртуальной машины и конфигурации пула. Объект [VirtualMachineConfiguration](/python/api/azure.batch.models.virtualmachineconfiguration) указывает [ImageReference](/python/api/azure.batch.models.imagereference) в образе Ubuntu Server 18.04 LTS, опубликованном в Azure Marketplace. Пакетная служба Azure поддерживает широкий спектр образов виртуальной машины в Azure Marketplace, а также пользовательских образов виртуальной машины.
+Затем в учетной записи пакетной службы создается пул вычислительных узлов с помощью вызова `create_pool`. Определенная функция использует класс пакетной службы [PoolAddParameter](/python/api/azure-batch/azure.batch.models.pooladdparameter) для настройки количества узлов, размера виртуальной машины и конфигурации пула. Объект [VirtualMachineConfiguration](/python/api/azure-batch/azure.batch.models.virtualmachineconfiguration) указывает [ImageReference](/python/api/azure-batch/azure.batch.models.imagereference) в образе Ubuntu Server 18.04 LTS, опубликованном в Azure Marketplace. Пакетная служба Azure поддерживает широкий спектр образов виртуальной машины в Azure Marketplace, а также пользовательских образов виртуальной машины.
 
 Количество узлов и размер виртуальной машины настраиваются с помощью определенных констант. Пакетная служба Azure поддерживает выделенные узлы и узлы [с низким приоритетом](batch-low-pri-vms.md). Вы можете использовать их в своих пулах. Выделенные узлы зарезервированы для пула. Низкоприоритетные узлы предлагаются по сниженной цене с учетом избыточных ресурсов виртуальной машины в Azure. Эти узлы становятся недоступны, если в Azure недостаточно ресурсов. Пример по умолчанию создает пул, содержащий только 5 низкоприоритетных узлов размером *Standard_A1_v2*. 
 
-Кроме свойств физических узлов эта конфигурация пула включает объект [StartTask](/python/api/azure.batch.models.starttask). Задача StartTask выполняется на каждом узле по мере его присоединения к пулу, а также при каждом перезапуске узла. В этом примере StartTask запускает команды оболочки Bash для установки пакета ffmpeg и зависимостей с узлами.
+Кроме свойств физических узлов эта конфигурация пула включает объект [StartTask](/python/api/azure-batch/azure.batch.models.starttask). Задача StartTask выполняется на каждом узле по мере его присоединения к пулу, а также при каждом перезапуске узла. В этом примере StartTask запускает команды оболочки Bash для установки пакета ffmpeg и зависимостей с узлами.
 
-Метод [pool.add](/python/api/azure.batch.operations.pooloperations) отправляет пул в пакетную службу.
+Метод [pool.add](/python/api/azure-batch/azure.batch.operations.pooloperations) отправляет пул в пакетную службу.
 
 ```python
 new_pool = batch.models.PoolAddParameter(
@@ -201,7 +201,7 @@ batch_service_client.pool.add(new_pool)
 
 ### <a name="create-a-job"></a>создать задание;
 
-Пакетное задание указывает пул для запуска задач и дополнительные параметры, такие как приоритет и расписание работы. Пример создает задание путем вызова `create_job`. Определенная функция использует класс [JobAddParameter](/python/api/azure.batch.models.jobaddparameter) для создания задания в пуле. Метод [job.add](/python/api/azure.batch.operations.joboperations) отправляет пул в пакетную службу. Изначально у задания нет задач.
+Пакетное задание указывает пул для запуска задач и дополнительные параметры, такие как приоритет и расписание работы. Пример создает задание путем вызова `create_job`. Определенная функция использует класс [JobAddParameter](/python/api/azure-batch/azure.batch.models.jobaddparameter) для создания задания в пуле. Метод [job.add](/python/api/azure-batch/azure.batch.operations.joboperations) отправляет пул в пакетную службу. Изначально у задания нет задач.
 
 ```python
 job = batch.models.JobAddParameter(
@@ -213,11 +213,11 @@ batch_service_client.job.add(job)
 
 ### <a name="create-tasks"></a>Создание задач
 
-Приложение создает задачи в задании путем вызова `add_tasks`. Эта определенная функция создает список объектов задачи с помощью класса [TaskAddParameter](/python/api/azure.batch.models.taskaddparameter). Каждая задача запускает ffmpeg для обработки объекта входных данных `resource_files` с помощью параметра `command_line`. ffmpeg был ранее установлен на каждом узле при создании пула. В командной строке выполняется ffmpeg для преобразования каждого входного файла MP4 (видео) в файл MP3 (аудио).
+Приложение создает задачи в задании путем вызова `add_tasks`. Эта определенная функция создает список объектов задачи с помощью класса [TaskAddParameter](/python/api/azure-batch/azure.batch.models.taskaddparameter). Каждая задача запускает ffmpeg для обработки объекта входных данных `resource_files` с помощью параметра `command_line`. ffmpeg был ранее установлен на каждом узле при создании пула. В командной строке выполняется ffmpeg для преобразования каждого входного файла MP4 (видео) в файл MP3 (аудио).
 
-В примере создается объект [OutputFile](/python/api/azure.batch.models.outputfile) для файла MP3 после запуска командной строки. Выходные файлы каждой задачи (в этом случае один) загружаются в контейнер в связанной учетной записи с использованием свойства задачи `output_files`.
+В примере создается объект [OutputFile](/python/api/azure-batch/azure.batch.models.outputfile) для файла MP3 после запуска командной строки. Выходные файлы каждой задачи (в этом случае один) загружаются в контейнер в связанной учетной записи с использованием свойства задачи `output_files`.
 
-Затем приложение добавляет задачи к заданию с помощью метода [task.add_collection](/python/api/azure.batch.operations.taskoperations), который ставит их в очередь для запуска на вычислительных узлах. 
+Затем приложение добавляет задачи к заданию с помощью метода [task.add_collection](/python/api/azure-batch/azure.batch.operations.taskoperations), который ставит их в очередь для запуска на вычислительных узлах. 
 
 ```python
 tasks = list()
@@ -247,7 +247,7 @@ batch_service_client.task.add_collection(job_id, tasks)
 
 После добавления задач к заданию пакетная служба автоматически ставит в очередь и назначает их для выполнения на вычислительных узлах в связанном пуле. Пакетная служба обрабатывает постановку задач в очередь, их планирование, повтор и другие задачи администрирования с учетом указанных параметров. 
 
-Есть несколько подходов к отслеживанию выполнения задач. В этом примере функция `wait_for_tasks_to_complete` использует объект [TaskState](/python/api/azure.batch.models.taskstate) для отслеживания определенного состояния задач, в данном случае завершения в течение указанного срока.
+Есть несколько подходов к отслеживанию выполнения задач. В этом примере функция `wait_for_tasks_to_complete` использует объект [TaskState](/python/api/azure-batch/azure.batch.models.taskstate) для отслеживания определенного состояния задач, в данном случае завершения в течение указанного срока.
 
 ```python
 while datetime.datetime.now() < timeout_expiration:
@@ -267,7 +267,7 @@ while datetime.datetime.now() < timeout_expiration:
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-После выполнения задач приложение автоматически удаляет созданный входной контейнер хранилища, а также предоставляет возможность удалить пул и задания пакетной службы. Классы [JobOperations](/python/api/azure.batch.operations.joboperations) и [PoolOperations BatchClient](/python/api/azure.batch.operations.pooloperations) предусматривают методы удаления, которые вызываются, если подтвердить удаление. Вы не оплачиваете задания и задачи, но платите за используемые вычислительные узлы. Поэтому рекомендуется выделять пулы только при необходимости. При удалении пула удаляются все выходные данные задачи на узлах. Однако входные и выходные файлы сохраняются в учетной записи хранения.
+После выполнения задач приложение автоматически удаляет созданный входной контейнер хранилища, а также предоставляет возможность удалить пул и задания пакетной службы. Классы [JobOperations](/python/api/azure-batch/azure.batch.operations.joboperations) и [PoolOperations BatchClient](/python/api/azure-batch/azure.batch.operations.pooloperations) предусматривают методы удаления, которые вызываются, если подтвердить удаление. Вы не оплачиваете задания и задачи, но платите за используемые вычислительные узлы. Поэтому рекомендуется выделять пулы только при необходимости. При удалении пула удаляются все выходные данные задачи на узлах. Однако входные и выходные файлы сохраняются в учетной записи хранения.
 
 Ставшие ненужными группу ресурсов, учетную запись пакетной службы и учетную запись хранения можно удалить. Для этого на портале Azure выберите группу ресурсов для учетной записи пакетной службы и щелкните **Удалить группу ресурсов**.
 

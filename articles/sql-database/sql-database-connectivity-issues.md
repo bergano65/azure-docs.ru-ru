@@ -9,15 +9,16 @@ ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
 author: dalechen
+manager: dcscontentpm
 ms.author: ninarn
 ms.reviewer: carlrab
 ms.date: 06/14/2019
-ms.openlocfilehash: da2107a0573fafd10394931be21fb446f83fd5f2
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: eb34395e0a9ec881c2f5e303383555fa6544369d
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68569073"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71090900"
 ---
 # <a name="working-with-sql-database-connection-issues-and-transient-errors"></a>Работа с проблемами подключения Базы данных SQL и временными ошибками
 
@@ -90,7 +91,7 @@ ms.locfileid: "68569073"
 Один из способов протестировать логику повторных попыток — это отключить клиентский компьютер от сети во время работы программы. Ошибка:
 
 - **SqlException.Number** = 11001
-- сообщение: «Такой узел неизвестен»
+- Сообщение: «Такой узел неизвестен»
 
 В рамках первой повторной попытки можно подключить клиентский компьютер к сети и попытаться подключиться.
 
@@ -108,7 +109,7 @@ ms.locfileid: "68569073"
 Программа может намеренно сделать опечатку в имени пользователя перед первой попыткой подключения. Ошибка:
 
 - **SqlException.Number** = 18456
-- сообщение: "Ошибка входа пользователя" WRONG_MyUserName "."
+- Сообщение: "Ошибка входа пользователя" WRONG_MyUserName "."
 
 В рамках первой повторной попытки программа может исправить опечатку, а затем попытаться подключиться.
 
@@ -310,7 +311,7 @@ ORDER BY
 ;
 ```
 
-#### <a name="a-few-returned-rows-from-sysfnxetelemetryblobtargetreadfile"></a>Несколько возвращенных строк из sys.fn_xe_telemetry_blob_target_read_file
+#### <a name="a-few-returned-rows-from-sysfn_xe_telemetry_blob_target_read_file"></a>Несколько возвращенных строк из sys.fn_xe_telemetry_blob_target_read_file
 
 В следующем примере показано, как может выглядеть возвращаемая строка. Отображаемые пустые значения могут не быть пустыми в других строках.
 

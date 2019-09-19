@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 08/08/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 056570db89fbe1a3db55c138b46e5b73acc282f8
-ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
+ms.openlocfilehash: 74c663d8847c2829a5d9466f8e601dd44593a6f8
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69622424"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71065200"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-github-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью GitHub через Azure Active Directory B2C
 
@@ -23,7 +23,7 @@ ms.locfileid: "69622424"
 
 ## <a name="create-a-github-oauth-application"></a>Создание приложения OAuth GitHub
 
-Чтобы использовать учетную запись GitHub в качестве [поставщика удостоверений](active-directory-b2c-reference-oauth-code.md) в Azure Active Directory (Azure AD) B2C, необходимо создать в клиенте приложение, которое будет представлять этого поставщика. Если у вас еще нет учетной записи GitHub, вы можете зарегистрироваться по [https://www.github.com/](https://www.github.com/)адресу.
+Чтобы использовать учетную запись GitHub в качестве [поставщика удостоверений](active-directory-b2c-reference-oauth-code.md) в Azure Active Directory B2C (Azure AD B2C), необходимо создать в своем клиенте приложение, которое его представляет. Если у вас еще нет учетной записи GitHub, вы можете зарегистрироваться по [https://www.github.com/](https://www.github.com/)адресу.
 
 1. Войдите на сайт [разработчика GitHub](https://github.com/settings/developers), используя учетные данные GitHub.
 1. Выберите **Приложения OAuth**, а затем — **New OAuth App** (Создать приложение OAuth).

@@ -5,6 +5,7 @@ description: Узнайте, как создать внутренний бала
 services: load-balancer
 documentationcenter: na
 author: genlin
+manager: dcscontentpm
 ms.service: load-balancer
 ms.devlang: na
 ms.topic: article
@@ -13,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/23/2017
 ms.author: genli
-ms.openlocfilehash: 361322ded68f7c8305c4f976847d4bcb82f7e595
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: e0df334cb4836138f9f7b9c70d299d87d159fefc
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60626168"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71090921"
 ---
 # <a name="get-started-creating-an-internal-load-balancer-classic-for-cloud-services"></a>Начало работы по созданию внутреннего балансировщика нагрузки (классическая версия) для облачных служб
 
@@ -39,7 +40,7 @@ ms.locfileid: "60626168"
 > [!IMPORTANT]
 > Для выполнения указанных ниже действий необходимо, чтобы виртуальная сеть была создана и готова к облачному развертыванию. Для создания внутренней балансировки нагрузки потребуется имя виртуальной сети и имя подсети.
 
-### <a name="step-1"></a>Шаг 1
+### <a name="step-1"></a>Шаг 1
 
 Откройте файл конфигурации службы (с расширением CSCFG) для облачного развертывания в Visual Studio и добавьте под последним элементом`</Role>`в конфигурации сети приведенный ниже раздел, чтобы создать внутреннюю балансировку нагрузки.
 
@@ -67,7 +68,7 @@ ms.locfileid: "60626168"
 
 Дополнительные сведения о схеме балансировщика нагрузки см. в статье [Добавление подсистемы балансировки нагрузки](https://msdn.microsoft.com/library/azure/dn722411.aspx).
 
-### <a name="step-2"></a>Шаг 2
+### <a name="step-2"></a>Шаг 2
 
 Добавьте в CSDEF-файл конечные точки для подсистемы внутренней балансировки нагрузки. При создании экземпляра роли CSDEF-файл добавляет его в подсистему внутренней балансировки нагрузки.
 
@@ -91,7 +92,7 @@ ms.locfileid: "60626168"
 
 Балансировка сетевого трафика будет осуществляться с использованием балансировщика нагрузки testLB. При этом порт 80 будет использоваться как для получения входящих запросов, так и для их отправки в экземпляры рабочих ролей.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Настройка режима распределения балансировщика нагрузки с помощью соответствия исходному IP-адресу](load-balancer-distribution-mode.md)
 
