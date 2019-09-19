@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 08/01/2019
 ms.author: jingwang
-ms.openlocfilehash: 50887b9bbaed576be7f1027db193efc2ad7b0a06
-ms.sourcegitcommit: a819209a7c293078ff5377dee266fa76fd20902c
+ms.openlocfilehash: 40a6c81008c7e4edefff94101022338590fe971b
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71008869"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71089879"
 ---
 # <a name="copy-data-from-oracle-responsys-using-azure-data-factory-preview"></a>Копирование данных из Oracle Responsys с помощью фабрики данных Azure (предварительная версия)
 
@@ -30,7 +30,7 @@ ms.locfileid: "71008869"
 
 Этот соединитель Oracle Респонсис поддерживается для следующих действий:
 
-- [Действие копирования](copy-activity-overview.md) с [поддерживаемой исходной матрицей](copy-activity-overview.md)
+- [Действие копирования](copy-activity-overview.md) с [поддерживаемой матрицей источника и приемника](copy-activity-overview.md)
 - [Действие поиска](control-flow-lookup-activity.md)
 
 Данные из Oracle Responsys можно скопировать в любое поддерживаемое хранилище данных, которое используется в качестве приемника. Список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования, приведен в таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats).

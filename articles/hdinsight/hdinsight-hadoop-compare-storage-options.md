@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 06/17/2019
-ms.openlocfilehash: 5cb3b5c2d36707875c87bd589e3d96c0a2f4f939
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
-ms.translationtype: MT
+ms.openlocfilehash: ced2c888a412a72643bb0c12fceb7e83d39936cf
+ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70885190"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71098735"
 ---
 # <a name="compare-storage-options-for-use-with-azure-hdinsight-clusters"></a>Сравнение вариантов хранения для использования с кластерами Azure HDInsight
 
@@ -129,7 +129,7 @@ abfss:///example/jars/hadoop-mapreduce-examples.jar /example/jars/hadoop-mapredu
 
 Следующая схема является абстрактным представлением архитектуры HDInsight службы хранилища Azure:
 
-![Диаграмма, показывающая, как кластеры Hadoop используют API HDFS для доступа к структурированным и неструктурированным данным и их хранения в хранилище BLOB-объектов](./media/hdinsight-hadoop-compare-storage-options/storage-architecture.png "Архитектура хранилища HDInsight")
+![Архитектура хранилища HDInsight](./media/hdinsight-hadoop-compare-storage-options/storage-architecture.png "Архитектура хранилища HDInsight")
 
 HDInsight предоставляет доступ к распределенной файловой системе, которая локально присоединена к вычислительным узлам. Доступ к этой файловой системе может осуществляться с использованием полного универсального кода ресурса (URI), например:
 

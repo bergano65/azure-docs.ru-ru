@@ -5,19 +5,20 @@ ms.service: hdinsight
 ms.topic: troubleshooting
 author: hrasheed-msft
 ms.author: hrasheed
+ms.reviewer: jasonh
 ms.date: 08/13/2019
-ms.openlocfilehash: 3e4745d1c9e28e907d87298d1ab8ef3c9b104b1d
-ms.sourcegitcommit: fe50db9c686d14eec75819f52a8e8d30d8ea725b
+ms.openlocfilehash: 7b511ab0c3093747d6e713754c04533e5f25b6ad
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69014606"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71087399"
 ---
 # <a name="unable-to-access-data-lake-storage-files-in-azure-hdinsight"></a>Не удается получить доступ к файлам Data Lakeного хранилища в Azure HDInsight
 
 В этой статье описываются действия по устранению неполадок и возможные способы решения проблем при взаимодействии с кластерами Azure HDInsight.
 
-## <a name="issue-acl-verification-failed"></a>Проблема: Сбой проверки ACL
+## <a name="issue-acl-verification-failed"></a>Проблема Сбой проверки ACL
 
 Появится сообщение об ошибке следующего вида:
 
@@ -41,7 +42,7 @@ LISTSTATUS failed with error 0x83090aa2 (Forbidden. ACL verification failed. Eit
 
 ---
 
-## <a name="issue-service-principal-certificate-expiry"></a>Проблема: Срок действия сертификата субъекта-службы
+## <a name="issue-service-principal-certificate-expiry"></a>Проблема Срок действия сертификата субъекта-службы
 
 Появится сообщение об ошибке следующего вида:
 

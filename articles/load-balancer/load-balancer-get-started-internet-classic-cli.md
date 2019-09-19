@@ -5,6 +5,7 @@ description: Узнайте, как создать балансировщика 
 services: load-balancer
 documentationcenter: na
 author: genlin
+manager: dcscontentpm
 ms.service: load-balancer
 ms.devlang: na
 ms.topic: article
@@ -13,19 +14,19 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: fa89117e85bc3d3c9664e6aa037fac923b7432ce
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 2d7f1971c6aff446f9bf8f983bd7859e831c1213
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60544895"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71090931"
 ---
 # <a name="get-started-creating-an-internet-facing-load-balancer-classic-in-the-azure-classic-cli"></a>Создание Load Balancer (с классическим режимом) для Интернета в классическом Azure CLI
 
 > [!div class="op_single_selector"]
 > * [PowerShell](../load-balancer/load-balancer-get-started-internet-classic-ps.md)
 > * [Классический Azure CLI](../load-balancer/load-balancer-get-started-internet-classic-cli.md)
-> * [Облачные службы Azure](../load-balancer/load-balancer-get-started-internet-classic-cloud.md)
+> * [Oблачныe службы Azure2}
 
 [!INCLUDE [load-balancer-get-started-internet-intro-include.md](../../includes/load-balancer-get-started-internet-intro-include.md)]
 
@@ -56,7 +57,7 @@ ms.locfileid: "60544895"
 Сценарий предполагает, что были созданы виртуальные машины "web1" и "web2".
 В этом руководстве будет создан набор балансировщика нагрузки с использованием общего порта 80 и локального порта 80. Для пробы также задается порт 80, а набору балансировщика нагрузки присваивается имя lbset.
 
-### <a name="step-1"></a>Шаг 1
+### <a name="step-1"></a>Шаг 1
 
 Создайте первую конечную точку и набор балансировщика нагрузки, используя `azure network vm endpoint create` для виртуальной машины web1.
 
@@ -64,7 +65,7 @@ ms.locfileid: "60544895"
 azure vm endpoint create web1 80 --local-port 80 --protocol tcp --probe-port 80 --load-balanced-set-name lbset
 ```
 
-### <a name="step-2"></a>Шаг 2
+### <a name="step-2"></a>Шаг 2
 
 Добавьте в набор балансировщика нагрузки вторую виртуальную машину "web2".
 
@@ -72,7 +73,7 @@ azure vm endpoint create web1 80 --local-port 80 --protocol tcp --probe-port 80 
 azure vm endpoint create web2 80 --local-port 80 --protocol tcp --probe-port 80 --load-balanced-set-name lbset
 ```
 
-### <a name="step-3"></a>Шаг 3.
+### <a name="step-3"></a>Шаг 3
 
 Проверьте конфигурацию балансировщика нагрузки с помощью `azure vm show` .
 
@@ -145,7 +146,7 @@ azure vm endpoint delete web1 tcp-80-80
 > [!NOTE]
 > Вы можете отобразить дополнительные параметры для управления конечными точками с помощью команды `azure vm endpoint --help`.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Приступая к настройке внутренней подсистемы балансировки нагрузки](load-balancer-get-started-ilb-arm-ps.md)
 

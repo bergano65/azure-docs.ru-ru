@@ -1,6 +1,6 @@
 ---
-title: Настройка конфигурации кластера Azure HDInsight с помощью начальной загрузки
-description: Узнайте, как настроить конфигурацию кластера HDInsight, программно с помощью .net, PowerShell и Resource Manager шаблоны.
+title: Настройка конфигураций кластера Azure HDInsight с помощью начальной загрузки
+description: Узнайте, как программно настроить конфигурацию кластера HDInsight с помощью .NET, PowerShell и шаблонов диспетчер ресурсов.
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
@@ -8,24 +8,24 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 04/19/2019
-ms.openlocfilehash: 50db9a588cd953bbd0e912ec942194a8deeffe4c
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 15d08b14e38f097e8e9c3e0db893efb1d6efe44d
+ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67484041"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71098670"
 ---
 # <a name="customize-hdinsight-clusters-using-bootstrap"></a>Настройка кластеров HDInsight с помощью начальной загрузки
 
-Начальной загрузки сценарии позволяют установить и настроить компоненты в Azure HDInsight программными средствами. 
+Сценарии начальной загрузки позволяют программно устанавливать и настраивать компоненты в Azure HDInsight.
 
-Существует три подхода, чтобы задать параметры файла конфигурации при создании кластера HDInsight:
+Существует три подхода к установке параметров файла конфигурации при создании кластера HDInsight:
 
 * Использование Azure PowerShell
 * Использование пакета SDK для .NET
 * Использование шаблона Azure Resource Manager
 
-Например с помощью этих программными методами, можно настроить параметры в этих файлах:
+Например, с помощью этих программных методов можно настроить параметры в следующих файлах:
 
 * clusterIdentity.xml
 * core-site.xml
@@ -44,19 +44,18 @@ ms.locfileid: "67484041"
 * yarn-site.xml
 * server.properties (конфигурация kafka-broker).
 
-Сведения об установке дополнительных компонентов в кластере HDInsight во время создания см. в разделе [HDInsight, настройка кластеров с помощью действия скрипта (Linux)](hdinsight-hadoop-customize-cluster-linux.md).
+Сведения об установке дополнительных компонентов в кластере HDInsight во время создания см. в статье [Настройка кластеров hdinsight с помощью действия сценария (Linux)](hdinsight-hadoop-customize-cluster-linux.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-* Если с помощью PowerShell, вам потребуется [Az модуля](https://docs.microsoft.com/powershell/azure/overview).
+* При использовании PowerShell потребуется [модуль AZ](https://docs.microsoft.com/powershell/azure/overview).
 
 ## <a name="use-azure-powershell"></a>Использование Azure PowerShell
 
 Следующий код PowerShell настраивает конфигурацию [Apache Hive](https://hive.apache.org/).
 
 > [!IMPORTANT]  
-> Параметр `Spark2Defaults` может потребоваться использовать с [AzHDInsightConfigValue добавить](https://docs.microsoft.com/powershell/module/az.hdinsight/add-azhdinsightconfigvalue). Пустые значения можно передать в параметр, как показано в следующем примере кода.
-
+> Параметр `Spark2Defaults` может потребоваться использовать с командлетом [Add-аздинсигхтконфигвалуе](https://docs.microsoft.com/powershell/module/az.hdinsight/add-azhdinsightconfigvalue). В параметр можно передать пустые значения, как показано в примере кода ниже.
 
 ```powershell
 # hive-site.xml configuration
@@ -130,10 +129,11 @@ $OozieConfigValues = @{ "oozie.service.coord.normal.default.timeout"="150" }  # 
 }
 ```
 
-![Настройка шаблона Azure Resource Manager для начальной загрузки кластера с помощью HDInsight Hadoop](./media/hdinsight-hadoop-customize-cluster-bootstrap/hdinsight-customize-cluster-bootstrap-arm.png)
+![Hadoop настраивает шаблон Azure Resource Manager начальной загрузки кластера](./media/hdinsight-hadoop-customize-cluster-bootstrap/hdinsight-customize-cluster-bootstrap-arm.png)
 
 ## <a name="see-also"></a>См. также
-* [Создание кластеров Apache Hadoop в HDInsight][hdinsight-provision-cluster] содержит инструкции о том, как создать кластер HDInsight с использованием других настраиваемых параметров.
+
+* [Создание кластеров Apache Hadoop в hdinsight][hdinsight-provision-cluster] содержит инструкции по созданию кластера HDInsight с помощью других настраиваемых параметров.
 * [Разработка скриптов действия сценария для HDInsight][hdinsight-write-script]
 * [Установка и использование Apache Spark в кластерах HDInsight][hdinsight-install-spark]
 * [Установка и использование Apache Giraph в кластерах HDInsight под управлением Windows](hdinsight-hadoop-giraph-install.md).
@@ -142,17 +142,14 @@ $OozieConfigValues = @{ "oozie.service.coord.normal.default.timeout"="150" }  # 
 [hdinsight-write-script]: hdinsight-hadoop-script-actions-linux.md
 [hdinsight-provision-cluster]: hdinsight-hadoop-provision-linux-clusters.md
 [powershell-install-configure]: /powershell/azureps-cmdlets-docs
-
-
 [img-hdi-cluster-states]: ./media/hdinsight-hadoop-customize-cluster/HDI-Cluster-state.png "Этапы создания кластера"
 
 ## <a name="appendix-powershell-sample"></a>Приложение Пример для PowerShell
 
-Этот скрипт PowerShell создает кластер HDInsight и настраивает параметр Hive. Обязательно введите значения для `$nameToken`, `$httpPassword`, и `$sshPassword`.
+Этот сценарий PowerShell создает кластер HDInsight и настраивает параметр Hive. Не забудьте ввести значения для `$nameToken`, `$httpPassword`и `$sshPassword`.
 
 > [!WARNING]  
 > Тип учетной записи хранения `BlobStorage` нельзя использовать для кластеров HDInsight.
-
 
 ```powershell
 ####################################

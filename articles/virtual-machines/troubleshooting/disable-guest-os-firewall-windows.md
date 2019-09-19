@@ -4,7 +4,7 @@ description: ''
 services: virtual-machines-windows
 documentationcenter: ''
 author: Deland-Han
-manager: willchen
+manager: dcscontentpm
 editor: ''
 tags: ''
 ms.service: virtual-machines
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.devlang: azurecli
 ms.date: 11/22/2018
 ms.author: delhan
-ms.openlocfilehash: a8856bd46f516aa3c64965648d4f23b9ba665b1b
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 9ae8620b803fa9a911f44840a5fff5d190a316a1
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60505467"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71086532"
 ---
 # <a name="disable-the-guest-os-firewall-in-azure-vm"></a>Отключение брандмауэра гостевой ОС на виртуальной машине Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "60505467"
 
 Если виртуальная машина подключена к сети и доступна для другой виртуальной машины в той же виртуальной сети, проблемы можно устранить с помощью второй виртуальной машины.
 
-#### <a name="mitigation-1-custom-script-extension-or-run-command-feature"></a>Решение 1. Пользовательские функции расширение скрипта или выполнить команду
+#### <a name="mitigation-1-custom-script-extension-or-run-command-feature"></a>Решение 1. Расширение пользовательских скриптов или функция запуска команды
 
 Если у вас есть работающий агент Azure, можно применить [расширение пользовательских скриптов](../extensions/custom-script-windows.md) или функцию [Выполнить команду](../windows/run-command.md) (только для виртуальных машин Resource Manager), чтобы удаленно выполнить следующие скрипты.
 
@@ -70,7 +70,7 @@ ms.locfileid: "60505467"
     ```
 
 > [!Note]
-> Если брандмауэр задается с помощью объекта групповой политики, этот метод может не работать, так как эта команда изменяет только записи в локальном реестре. Если настроена политика, она переопределит это изменение. 
+> Если брандмауэр настроен через объект групповая политика, этот метод может не работать, так как эта команда изменяет только локальные записи реестра. Если настроена политика, она переопределит это изменение. 
 
 #### <a name="mitigation-3-pstools-commands"></a>Решение 3. Команды PSTools
 

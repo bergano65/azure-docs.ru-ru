@@ -2,51 +2,53 @@
 title: Создание кластеров Apache Hadoop с помощью веб-браузера в Azure HDInsight
 description: Узнайте, как создавать кластеры Apache Hadoop, Apache HBase, Apache Storm или Apache Spark на платформе Linux в HDInsight с помощью браузера и портала предварительной версии Azure.
 author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/29/2019
-ms.author: hrasheed
-ms.openlocfilehash: d4593cd3602c5324e9cffd5eff8564c09aceaf46
-ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
+ms.openlocfilehash: b2a5168cbda209d1d975db5e5f1c810a798ddb97
+ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68406283"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71098708"
 ---
 # <a name="create-linux-based-clusters-in-hdinsight-by-using-the-azure-portal"></a>Создание кластеров под управлением Linux в HDInsight с помощью портала Azure
+
 [!INCLUDE [selector](../../includes/hdinsight-create-linux-cluster-selector.md)]
 
 Портал Azure — это веб-инструмент управления службами и ресурсами, размещенными в облаке Microsoft Azure. Из этой статьи вы узнаете, как создавать кластеры Azure HDInsight под управлением Linux с помощью портала Azure.
 
 ## <a name="prerequisites"></a>Предварительные требования
+
 [!INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
 * **Подписка Azure**. Просмотрите видео о том, [как получить бесплатную пробную версию Azure для тестирования Hadoop в HDInsight](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 * **Современный браузер**. Портал Azure использует HTML5 и JavaScript. Он может неправильно работать в старых браузерах.
 
 ## <a name="create-clusters"></a>Создание кластеров
+
 Портал Azure предоставляет большую часть свойств кластера. С помощью шаблонов Azure Resource Manager можно скрыть множество сведений. Дополнительные сведения см. в статье [Создание кластеров Apache Hadoop в HDInsight с помощью шаблонов Resource Manager](hdinsight-hadoop-create-linux-clusters-arm-templates.md).
 
 [!INCLUDE [secure-transfer-enabled-storage-account](../../includes/hdinsight-secure-transfer.md)]
-
 
 1. Войдите на [портале Azure](https://portal.azure.com).
 
 1. В меню слева выберите **+ Создать ресурс**.
 
-1.  В разделе **Azure Marketplace** щелкните **Аналитика**.
+1. В разделе **Azure Marketplace** щелкните **Аналитика**.
 
-1.  В разделе **Рекомендованные** выберите **HDInsight**.
-   
+1. В разделе **Рекомендованные** выберите **HDInsight**.
+
     ![Создание кластера на портале Azure](./media/hdinsight-hadoop-create-linux-clusters-portal/hdinsight-create-cluster.png "Creating a new cluster in the Azure portal")
 
 1. На странице **HDInsight** выберите параметр **Настраиваемое (размер, параметры, приложения)** .
 
 1. Выберите раздел **1, "Основные сведения"** . Введите следующие сведения:
 
-    ![Настройка основных параметров](./media/hdinsight-hadoop-create-linux-clusters-portal/hdinsight-create-cluster-basics.png "Создание кластера на портале Azure")
+    ![Основы создания кластера HDInsight](./media/hdinsight-hadoop-create-linux-clusters-portal/hdinsight-create-cluster-basics.png "Создание нового кластера в портал Azure")
 
     * Введите **имя кластера**. Оно должно быть глобально уникальным.
 
@@ -75,10 +77,9 @@ ms.locfileid: "68406283"
 
     Чтобы перейти к следующему шагу, нажмите кнопку **Далее**.
 
-
 5. В разделе **3, "Хранилище",** укажите нужное хранилище по умолчанию: служба хранилища Azure или Data Lake Storage. Дополнительные сведения приведены в таблице ниже.
 
-     ![Настройка параметров хранения](./media/hdinsight-hadoop-create-linux-clusters-portal/hdinsight-create-cluster-storage.png "Создание кластера на портале Azure")
+     ![Хранилище для создания кластера HDInsight](./media/hdinsight-hadoop-create-linux-clusters-portal/hdinsight-create-cluster-storage.png "Создание нового кластера в портал Azure")
 
      | Служба хранилища                                      | Описание |
      |----------------------------------------------|-------------|
@@ -91,21 +92,19 @@ ms.locfileid: "68406283"
 
      Чтобы перейти к следующему шагу, нажмите кнопку **Далее**.
 
-
 6. В разделе **4, "Приложения (необязательно)",** выберите любые необходимые приложения. Эти приложения могут разрабатывать корпорация Майкрософт, независимые поставщики программного обеспечения (ISV) или вы сами. Дополнительные сведения см. в разделе [Установка приложения во время создания кластера](hdinsight-apps-install-applications.md#install-applications-during-cluster-creation).
 
     Чтобы перейти к следующему шагу, нажмите кнопку **Далее**.
 
-
 6. В разделе **5, "Размер кластера",** отображаются сведения об узлах, которые используются для этого кластера. Задайте количество рабочих узлов, необходимых для кластера. Также показана предполагаемая стоимость использования кластера.
-   
-    ![Указание новых категорий узлов](./media/hdinsight-hadoop-create-linux-clusters-portal/hdinsight-create-cluster-nodes.png "Указание количества узлов кластера")
-   
+
+    ![Создание узлов кластера HDInsight](./media/hdinsight-hadoop-create-linux-clusters-portal/hdinsight-create-cluster-nodes.png "Укажите число узлов кластера")
+
    > [!IMPORTANT]  
-   > Если вы планируете использовать более 32 рабочих узлов, для головного узла потребуется минимум 8-ядерный процессор и 14 ГБ ОЗУ. Планируйте количество узлов либо при создании кластера, либо путем масштабирования кластера после создания. 
-   > 
+   > Если вы планируете использовать более 32 рабочих узлов, для головного узла потребуется минимум 8-ядерный процессор и 14 ГБ ОЗУ. Планируйте количество узлов либо при создании кластера, либо путем масштабирования кластера после создания.
+   >
    > Дополнительные сведения о размерах узлов и их стоимости см. на странице с [ценами на Azure HDInsight](https://azure.microsoft.com/pricing/details/hdinsight/).
-   
+
     Чтобы перейти к следующему шагу, нажмите кнопку **Далее**.
 
 8. В разделе **6, "Действия скрипта",** можно настроить кластер для установки пользовательских компонентов. Используйте этот параметр, если хотите использовать настраиваемый сценарий для настройки кластера во время его создания. Дополнительные сведения о действиях сценариев см. в статье [Настройка кластеров HDInsight под управлением Linux с помощью действий сценариев](hdinsight-hadoop-customize-cluster-linux.md).
@@ -114,29 +113,29 @@ ms.locfileid: "68406283"
 
 9. В разделе **7, "Сводка",** проверьте введенные ранее сведения. Щелкните **Создать**.
 
-     ![Подтверждение настроек](./media/hdinsight-hadoop-create-linux-clusters-portal/hdinsight-create-cluster-summary.png "Указание количества узлов кластера")
+     ![Сводка по созданию кластера HDInsight](./media/hdinsight-hadoop-create-linux-clusters-portal/hdinsight-create-cluster-summary.png "Укажите число узлов кластера")
     
     > [!NOTE]  
     > Обычно создание кластера занимает около 20 минут. Проверьте **Уведомления**, чтобы узнать, как идет процесс подготовки.
 
 10. Когда кластер будет создан, нажмите кнопку **Перейти к ресурсу** в уведомлении **Развертывание прошло успешно**. В окне кластера содержатся следующие сведения.
-    
-    ![Интерфейс кластера](./media/hdinsight-hadoop-create-linux-clusters-portal/hdinsight-create-cluster-completed.png "Свойства кластера")
-    
+
+    ![Общие сведения о кластере HDI портал Azure](./media/hdinsight-hadoop-create-linux-clusters-portal/hdinsight-create-cluster-completed.png "Свойства кластера")
+
     Значки в окне объясняются следующим образом:
-    
+
     * Вкладка **Обзор** содержит всю необходимую информацию о кластере. Например, имя, группа ресурсов, к которой она принадлежит, расположение, операционная система и URL-адрес панели мониторинга кластера.
     * Элемент **Панель мониторинга** перенаправит вас на портал Ambari, связанный с кластером.
     * **Secure Shell** — сведения, необходимые для доступа к кластеру по протоколу SSH.
     * Элемент **Изменить масштаб кластера** позволяет увеличить число рабочих узлов, связанных с кластером.
     * **Удалить** — удаление кластера HDInsight.
-    
 
 ## <a name="customize-clusters"></a>Настройка кластеров
 * [Настройка кластеров HDInsight с помощью начальной загрузки](hdinsight-hadoop-customize-cluster-bootstrap.md)
 * [Настройка кластеров HDInsight под управлением Linux с помощью действий сценариев](hdinsight-hadoop-customize-cluster-linux.md)
 
 ## <a name="delete-the-cluster"></a>Удаление кластера
+
 [!INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
 ## <a name="troubleshoot"></a>Устранение неполадок
@@ -144,23 +143,28 @@ ms.locfileid: "68406283"
 Если при создании кластеров HDInsight возникли проблемы, см. раздел [Создание кластеров](hdinsight-hadoop-create-linux-clusters-portal.md).
 
 ## <a name="next-steps"></a>Следующие шаги
+
 Вы успешно создали кластер HDInsight. Теперь узнайте, как работать с кластером.
 
 ### <a name="apache-hadoop-clusters"></a>Кластеры Apache Hadoop
+
 * [Использование Hive и HiveQL с Hadoop в HDInsight для анализа примера файла Apache log4j](hadoop/hdinsight-use-hive.md)
 * [Использование Pig с Hadoop в HDInsight](hadoop/hdinsight-use-pig.md)
 * [Использование MapReduce с HDInsight](hadoop/hdinsight-use-mapreduce.md)
 
 ### <a name="apache-hbase-clusters"></a>Кластеры Apache HBase
+
 * [Начало работы с Apache HBase в HDInsight](hbase/apache-hbase-tutorial-get-started-linux.md)
 * [Разработка приложений Java для Apache HBase в HDInsight](hbase/apache-hbase-build-java-maven-linux.md)
 
 ### <a name="apache-storm-clusters"></a>Кластеры Apache Storm
+
 * [Создание топологий для Apache Storm в HDInsight на языке Java](storm/apache-storm-develop-java-topology.md)
 * [Использование компонентов Python в Apache Storm в HDInsight](storm/apache-storm-develop-python-topology.md)
 * [Развертывание и мониторинг топологии с помощью Apache Storm в HDInsight.](storm/apache-storm-deploy-monitor-topology-linux.md)
 
 ### <a name="apache-spark-clusters"></a>Кластеры Apache Spark
+
 * [Руководство. Создание приложения Scala Maven для Apache Spark в HDInsight с помощью IntelliJ](spark/apache-spark-create-standalone-application.md)
 * [Удаленная отправка заданий Spark в кластер Azure HDInsight с помощью Apache Spark REST API](spark/apache-spark-livy-rest-interface.md)
 * [Руководство. Анализ данных Apache Spark с использованием Power BI в HDInsight](spark/apache-spark-use-bi-tools.md)

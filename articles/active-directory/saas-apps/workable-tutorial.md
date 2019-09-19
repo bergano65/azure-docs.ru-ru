@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 04/15/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1341f0def306a1167e1e4876365c70901cf89cd2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5fc1f6434bea8f75c7bcc7859c6f90d7abdd031b
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67087009"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71091037"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-workable"></a>Руководство по Интеграция Azure Active Directory с Workable
 
@@ -142,7 +142,7 @@ ms.locfileid: "67087009"
 
 3. URL-адрес выхода.
 
-После включения единого входа ваш менеджер учетных записей Workable сообщит об этом. Затем вы сможете использовать [страницу единого входа Workable](https://id.workable.com/sso/signin), чтобы войти с помощью поддомена учетной записи Workable.
+После включения единого входа ваш менеджер учетных записей Workable сообщит об этом. Затем вы сможете использовать [страницу единого входа Workable](https://help.workable.com/hc/en-us/articles/360000067753-Single-Sign-on-SSO-Overview-Pro), чтобы войти с помощью поддомена учетной записи Workable.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -210,4 +210,4 @@ ms.locfileid: "67087009"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

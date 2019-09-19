@@ -10,18 +10,18 @@ ms.topic: conceptual
 ms.date: 07/16/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 83269a5ae0d2e5fb7ae2651dbc27926c910a0e03
-ms.sourcegitcommit: af58483a9c574a10edc546f2737939a93af87b73
+ms.openlocfilehash: b7eb004dbeba499e6f67f98165b72d7ec8615f1b
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68302487"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71065846"
 ---
 # <a name="get-started-with-custom-policies-in-azure-active-directory-b2c"></a>Начало работы с настраиваемыми политиками в Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-[Настраиваемые политики](active-directory-b2c-overview-custom.md) — это файлы конфигурации, определяющие поведение вашего клиента Azure Active Directory (Azure AD) B2C. В рамках этой статьи вы создадите настраиваемую политику, которая будет поддерживать регистрацию и вход с помощью локальной учетной записи с использованием адреса электронной почты и пароля. Вы также можете подготовить среду для добавления поставщиков удостоверений.
+[Пользовательские политики](active-directory-b2c-overview-custom.md) — это файлы конфигурации, определяющие поведение клиента Azure Active Directory B2C (Azure AD B2C). В рамках этой статьи вы создадите настраиваемую политику, которая будет поддерживать регистрацию и вход с помощью локальной учетной записи с использованием адреса электронной почты и пароля. Вы также можете подготовить среду для добавления поставщиков удостоверений.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -31,7 +31,7 @@ ms.locfileid: "68302487"
 ## <a name="add-signing-and-encryption-keys"></a>Добавление ключей подписи и шифрования
 
 1. Войдите на [портал Azure](https://portal.azure.com/) с правами глобального администратора клиента Azure AD B2C.
-2. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C. Щелкните **каталог и фильтр подписки** в верхнем меню и выберите каталог, содержащий ваш клиент.
+2. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C. В верхнем меню выберите фильтр **каталог и подписка** и выберите каталог, содержащий ваш клиент.
 3. Выберите **Все службы** в левом верхнем углу окна портала Azure, найдите службу **Azure AD B2C** и выберите ее.
 4. На странице "Обзор" выберите **Identity Experience Framework**.
 

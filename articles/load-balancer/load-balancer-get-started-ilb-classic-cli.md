@@ -5,6 +5,7 @@ description: Узнайте, как создать внутренний бала
 services: load-balancer
 documentationcenter: na
 author: genlin
+manager: dcscontentpm
 ms.service: load-balancer
 ms.devlang: na
 ms.topic: article
@@ -13,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: 991e6554df62591dea5c126f8ea82704373d6ffd
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c0b061da308f2e8635cf1722cb6a735624501374
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60781245"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71090983"
 ---
 # <a name="get-started-creating-an-internal-load-balancer-using-the-azure-classic-cli"></a>Приступая к созданию внутреннего балансировщика нагрузки с помощью классического Azure CLI
 
@@ -65,7 +66,7 @@ ms.locfileid: "60781245"
 
 Это распространенный сценарий, где у вас есть виртуальные машины SQL в серверной части, использующие внутренний балансировщик нагрузки, чтобы гарантировать, что серверы базы данных не будут предоставляться напрямую, используя общедоступный IP-адрес.
 
-### <a name="step-1"></a>Шаг 1
+### <a name="step-1"></a>Шаг 1
 
 Создайте набор внутренних балансировщиков нагрузки с помощью `azure network service internal-load-balancer add`.
 
@@ -88,7 +89,7 @@ azure service internal-load-balancer add --serviceName mytestcloud --internalLBN
     info:    service internal-load-balancer list command OK
 
 
-### <a name="step-2"></a>Шаг 2
+### <a name="step-2"></a>Шаг 2
 
 Настройте набор внутренних балансировщиков нагрузки при добавлении первой конечной точки. В этом шаге нужно связать конечную точку, виртуальную машину и порт пробы с набором внутренних подсистем балансировки нагрузки.
 
@@ -96,7 +97,7 @@ azure service internal-load-balancer add --serviceName mytestcloud --internalLBN
 azure vm endpoint create db1 1433 --local-port 1433 --protocol tcp --probe-port 1433 --probe-protocol tcp --probe-interval 300 --probe-timeout 600 --internal-load-balancer-name ilbset
 ```
 
-### <a name="step-3"></a>Шаг 3.
+### <a name="step-3"></a>Шаг 3
 
 Проверьте конфигурацию балансировщика нагрузки с помощью `azure vm show` *имя виртуальной машины*
 
@@ -173,7 +174,7 @@ azure vm endpoint delete DB1 tcp-1433-1433
 
 Дополнительные сведения см. в `azure vm endpoint --help`.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Настройка режима распределения балансировщика нагрузки с помощью соответствия исходному IP-адресу](load-balancer-distribution-mode.md)
 

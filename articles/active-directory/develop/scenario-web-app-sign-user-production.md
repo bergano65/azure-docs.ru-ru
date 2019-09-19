@@ -1,6 +1,6 @@
 ---
-title: Веб-приложение, где пользователи входа в систему (перемещение в рабочую среду) - платформой Microsoft identity
-description: Узнайте, как создать веб-приложение, которое поддерживает вход пользователей (для перемещения в рабочую среду)
+title: Веб-приложение, которое входит в систему пользователей (переместить в рабочую среду) — платформа Microsoft Identity
+description: Узнайте, как создать веб-приложение, которое входит в систему пользователей (переходит в рабочую среду).
 services: active-directory
 documentationcenter: dev-center-name
 author: jmprieur
@@ -11,38 +11,42 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 05/07/2019
+ms.date: 09/17/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d41ad2518f885bbaa02dda3b01f0c02e9fc1d217
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: bd6717c132d32d54c16e7678695a09e35181a057
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65074715"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71086551"
 ---
-# <a name="web-app-that-signs-in-users---move-to-production"></a>Веб-приложение, которое выполняет вход пользователей - переносу в рабочую среду
+# <a name="web-app-that-signs-in-users---move-to-production"></a>Веб-приложение, которое входит в систему пользователей — перейти в рабочую среду
 
-Теперь, когда вы знаете, как получить токен для вызова веб-API, узнайте, как переместить его в рабочую среду.
+Теперь, когда вы узнали, как получить маркер для вызова веб-API, Узнайте, как переместить его в рабочую среду.
 
 [!INCLUDE [Move to production common steps](../../../includes/active-directory-develop-scenarios-production.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-### <a name="calling-web-apis-scenario"></a>Вызов веб-API-интерфейсы сценарий
+### <a name="calling-web-apis-scenario"></a>Вызов сценария веб-API
 
-Один раз пользователей веб-приложение выполняет вход, он может вызвать веб-API от имени вошедшего в систему пользователей. Вызов веб-API из веб-приложения является объектом следующего сценария:
+После входа в веб-приложение пользователи могут вызывать веб-API от имени вошедших в систему пользователей. Вызов веб-API из веб-приложения является объектом следующего сценария:
 
 > [!div class="nextstepaction"]
 > [Веб-приложение, которое вызывает веб-API](scenario-web-app-call-api-overview.md)
 
-### <a name="deep-dive---web-app-tutorial"></a>Глубокое погружение, учебник по web app
+### <a name="deep-dive---aspnet-core-web-app-tutorial"></a>Руководство по веб-приложениям для глубокого углубления ASP.NET Core
 
-Дополнительные сведения о других способах входа пользователей в ASP.NET Core учебник: [ms-identity-aspnetcore-webapp-tutorial](https://github.com/Azure-Samples/ms-identity-aspnetcore-webapp-tutorial). Это прогрессивного SQL с помощью рабочего кода все готово для веб-приложения, включая добавление входа.
+Узнайте о других способах входа пользователей с помощью ASP.NET Core учебнике [MS-Identity-aspnetcore-webapp-Tutorial](https://github.com/Azure-Samples/ms-identity-aspnetcore-webapp-tutorial). Этот пример представляет собой прогрессивный учебник с кодом готовности к работе для веб-приложения, включая добавление входа с учетными записями в:
 
-<!--- Removed the diagram as it's already shown in the above link to GitHub
+- Ваша организация,
+- несколько организаций,
+- рабочие или учебные учетные записи или персональные учетная запись Майкрософт
+- с [Azure AD B2C](https://aka.ms/aadb2c)
+- или в национальных облаках.
 
-![Tutorial overview](media/scenarios/aspnetcore-webapp-tutorial.svg)
+### <a name="sample-code---java-web-app"></a>Пример кода — веб-приложение Java
 
---->
+Дополнительные сведения о веб-приложении Java см. в примере на сайте GitHub: [Веб-приложение Java, которое входит в систему пользователей с платформой идентификации Майкрософт и вызывает Microsoft Graph](https://github.com/Azure-Samples/ms-identity-java-webapp)

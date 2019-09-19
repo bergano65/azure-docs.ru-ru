@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 06/30/2017
 ms.reviewer: sergkanz
 ms.author: mbullwin
-ms.openlocfilehash: 91467f99e7932ce7ffcd5b3300f8544fb848ccfa
-ms.sourcegitcommit: 71db032bd5680c9287a7867b923bf6471ba8f6be
+ms.openlocfilehash: d966ff3bc00d5190ebc163d4f4bfa35ba73d21ab
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71019079"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71087678"
 ---
 # <a name="track-custom-operations-with-application-insights-net-sdk"></a>Отслеживание пользовательских операций с помощью пакета SDK Application Insights для .NET
 
@@ -354,7 +354,7 @@ public async Task Process(MessagePayload message)
 
 ### <a name="dependency-types"></a>Типы зависимостей
 
-Application Insights использует тип зависимости для пользовательского интерфейса настроить. Для очередей он распознает следующие `DependencyTelemetry` типы, улучшающие [возможности диагностики транзакций](/azure-monitor/app/transaction-diagnostics):
+Application Insights использует тип зависимости для пользовательского интерфейса настроить. Для очередей он распознает следующие `DependencyTelemetry` типы, улучшающие [возможности диагностики транзакций](/azure/azure-monitor/app/transaction-diagnostics):
 - `Azure queue`для очередей службы хранилища Azure
 - `Azure Event Hubs`для концентраторов событий Azure
 - `Azure Service Bus`для служебной шины Azure

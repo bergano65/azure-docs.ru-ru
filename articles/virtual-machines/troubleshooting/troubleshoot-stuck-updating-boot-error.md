@@ -4,7 +4,7 @@ description: Узнайте, как устранить неполадки при
 services: virtual-machines-windows
 documentationCenter: ''
 author: genlin
-manager: cshepard
+manager: dcscontentpm
 editor: v-jesits
 ms.service: virtual-machines-windows
 ms.topic: troubleshooting
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 10/09/2018
 ms.author: genli
-ms.openlocfilehash: b9a93448e084a42a935a8281ccd069e3604b1f18
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 226151d81319dc4e6f132e76ce2d310f88a484e8
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70089619"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71087023"
 ---
 # <a name="azure-vm-startup-is-stuck-at-windows-update"></a>Зависание виртуальной машины при запуске во время обновления Windows
 

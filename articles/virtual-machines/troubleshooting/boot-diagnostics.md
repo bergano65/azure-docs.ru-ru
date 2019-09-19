@@ -3,19 +3,19 @@ title: Диагностика загрузки виртуальных машин
 description: Общие сведения о двух функциях отладки виртуальных машин в Azure.
 services: virtual-machines
 author: Deland-Han
-manager: gwallace
+manager: dcscontentpm
 editor: ''
 tags: azure-resource-manager
 ms.service: virtual-machines
 ms.topic: troubleshooting
 ms.date: 10/31/2018
 ms.author: delhan
-ms.openlocfilehash: 7796d24b88ccc531b8042bfadf9d87f0072a2994
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: d34182e09bf453dbec1e9592f131cb9b3b78a086
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67709860"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71086472"
 ---
 # <a name="how-to-use-boot-diagnostics-to-troubleshoot-virtual-machines-in-azure"></a>Как устранять неполадки виртуальных машин в Azure с помощью диагностики загрузки
 
@@ -49,7 +49,7 @@ ms.locfileid: "67709860"
 
 На вкладке **Управление** в разделе **Наблюдение** удостоверьтесь, что включена **Диагностика загрузки**. В раскрывающемся списке **Учетная запись хранения диагностики** выберите учетную запись хранения, в которой следует разместить файлы диагностики.
  
-![Создание виртуальной машины](./media/virtual-machines-common-boot-diagnostics/enable-boot-diagnostics-vm.png)
+![Создать VM](./media/virtual-machines-common-boot-diagnostics/enable-boot-diagnostics-vm.png)
 
 > [!NOTE]
 > Функция диагностики загрузки не поддерживает учетную запись хранения уровня "Премиум". В случае использования учетной записи хранения уровня "Премиум" для диагностики загрузки при запуске виртуальной машины может произойти ошибка StorageAccountTypeNotSupported.

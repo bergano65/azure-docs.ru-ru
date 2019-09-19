@@ -6,43 +6,28 @@ author: mlearned
 manager: gwallace
 ms.service: container-service
 ms.topic: article
-ms.date: 08/15/2018
+ms.date: 09/17/2018
 ms.author: mlearned
-ms.openlocfilehash: 3c11367945b74db9be20ade86c7bc26901440e4d
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.openlocfilehash: ab744efd205d826cb7ae2c3eda7bba28f4a9bee0
+ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70305160"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71097803"
 ---
-# <a name="preview---authenticate-with-azure-container-registry-from-azure-kubernetes-service"></a>Предварительная версия — проверка подлинности с помощью реестра контейнеров Azure из службы Kubernetes Azure
+# <a name="authenticate-with-azure-container-registry-from-azure-kubernetes-service"></a>Аутентификация с помощью реестра контейнеров Azure из Службы Azure Kubernetes
 
 При использовании реестра контейнеров Azure (ACR) со Службой Azure Kubernetes (AKS) необходимо установить механизм аутентификации. В этой статье описаны рекомендуемые конфигурации для аутентификации между этими двумя службами Azure.
 
 Вы можете настроить AKS для интеграции записей контроля доступа в нескольких простых командах с Azure CLI.
-
-> [!IMPORTANT]
-> Функции предварительной версии AKS — это самостоятельная служба. Предварительные версии предоставляются "как есть" и "как есть" и исключаются из соглашений об уровне обслуживания и ограниченной гарантии. Предварительные версии AKS частично покрываются службой поддержки клиентов на основе лучших усилий. Таким образом, эти функции не предназначены для использования в рабочей среде. Дополнительные сведения об отсутствии см. в следующих статьях поддержки:
->
-> * [Политики поддержки AKS](support-policies.md)
-> * [Часто задаваемые вопросы о поддержке Azure](faq.md)
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
 Необходимо следующее:
 
 * Роль **владельца** или **администратора учетной записи Azure** в **подписке Azure**
-* Кроме того, требуется Azure CLI версии 2.0.70 или более поздней, а также расширение AKS-Preview 0.4.8
+* Также требуется Azure CLI версии 2.0.73 или более поздней.
 * На клиенте должен быть [установлен DOCKER](https://docs.docker.com/install/) , и необходим доступ к [концентратору DOCKER](https://hub.docker.com/) .
-
-## <a name="install-latest-aks-cli-preview-extension"></a>Установка последнего расширения AKS CLI Preview
-
-Требуется расширение **AKS-Preview 0.4.13** или более поздняя версия.
-
-```azurecli
-az extension remove --name aks-preview 
-az extension add -y --name aks-preview
-```
 
 ## <a name="create-a-new-aks-cluster-with-acr-integration"></a>Создание нового кластера AKS с интеграцией записей контроля доступа
 
@@ -52,7 +37,7 @@ az login
 az acr create -n myContainerRegistry -g myContainerRegistryResourceGroup --sku basic [in case you do not have an existing ACR]
 az aks create -n myAKSCluster -g myResourceGroup --attach-acr <acr-name-or-resource-id>
 ```
-\* * Идентификатор ресурса записи контроля доступа имеет следующий формат: 
+**Идентификатор ресурса записи контроля доступа имеет следующий формат:** 
 
 /Subscriptions/< Subscription-d >/resourceGroups/< ресурс-Group-name >/Провидерс/Микрософт.контаинеррегистри/регистриес/{наме} 
   

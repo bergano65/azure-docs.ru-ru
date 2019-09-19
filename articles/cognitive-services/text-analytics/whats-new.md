@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 09/13/2019
 ms.author: aahi
-ms.openlocfilehash: 4c6499cd0e105e28954b6d4df667c71a51b9ccff
-ms.sourcegitcommit: 71db032bd5680c9287a7867b923bf6471ba8f6be
+ms.openlocfilehash: 432d81b4282e45bc2f33d098e618f2edd152628b
+ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71017756"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71098027"
 ---
 # <a name="whats-new-in-the-text-analytics-api"></a>Новые возможности в API "Анализ текста"
 
@@ -28,7 +28,7 @@ API анализа текста обновляется на постоянной
 * Автоматическая маркировка для различных тональности в тексте.
 * Тональности анализ и вывод на уровне документа и предложения. 
 
-Он поддерживает английский, японский и упрощенный китайский и доступен в следующих регионах `Australia East`: `North Europe` `South Central US` `Central US`, `Central Canada`,, `East US 2` `East Asia` `East US`,,,, `Southeast Asia`, , `UK South`, `West Europe`и .`West US 2`
+Он поддерживает английский, французский, итальянский, японский, упрощенный китайский и традиционный китайский язык, а также доступен в следующих регионах: `Australia East` `Central US`, `Central Canada`,, `East US 2` `East Asia` `East US`,,, `North Europe` , `Southeast Asia` ,`South Central US`, ,`West Europe`и. `West US 2` `UK South`
 
 > [!div class="nextstepaction"]
 > [Дополнительные сведения о анализ тональности v3](how-tos/text-analytics-how-to-sentiment-analysis.md#sentiment-analysis-v3-public-preview)

@@ -11,16 +11,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 05/07/2019
+ms.date: 09/17/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7b898a93b87811fa5139e148a3273d7051af851b
-ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
-ms.translationtype: HT
+ms.openlocfilehash: 1f9b6d4ce4048b31f17b50184f90aed4d2a8ba81
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71056294"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71086570"
 ---
 # <a name="scenario-web-app-that-signs-in-users"></a>Сценарий. Веб-приложение, которое поддерживает вход пользователей
 
@@ -32,15 +32,35 @@ ms.locfileid: "71056294"
 
 ## <a name="getting-started"></a>Приступая к работе
 
+# <a name="aspnet-coretabaspnetcore"></a>[ASP.NET Core](#tab/aspnetcore)
+
 Если вы хотите создать первые переносимые (ASP.NET Core) веб-приложения, которые входят в систему пользователей, следуйте указаниям в этом кратком руководстве:
 
 > [!div class="nextstepaction"]
 > [Краткое руководство ASP.NET Core веб-приложение, которое входит в систему пользователей](quickstart-v2-aspnet-core-webapp.md)
 
-Если вы предпочитаете остаться с ASP.NET, ознакомьтесь со следующим руководством:
+# <a name="aspnettabaspnet"></a>[ASP.NET](#tab/aspnet)
+
+f вы хотите понять, как добавить вход в устаревшее веб-приложение ASP.NET. Ознакомьтесь со следующим руководством:
 
 > [!div class="nextstepaction"]
 > [Краткое руководство Веб-приложение ASP.NET, которое входит в систему пользователей](quickstart-v2-aspnet-webapp.md)
+
+# <a name="javatabjava"></a>[Java](#tab/java)
+
+Если вы являетесь разработчиком Java, ознакомьтесь со следующим кратким руководством:
+
+> [!div class="nextstepaction"]
+> [Краткое руководство Добавление входа с помощью Microsoft в веб-приложение Java](quickstart-v2-java-webapp.md)
+
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+Если вы разрабатываете на Python, попробуйте:
+
+> [!div class="nextstepaction"]
+> [Краткое руководство Добавление входа с помощью Microsoft в веб-приложение Python](quickstart-v2-python-webapp.md)
+
+---
 
 ## <a name="overview"></a>Обзор
 
@@ -51,7 +71,7 @@ ms.locfileid: "71056294"
 На втором этапе можно также позволить приложению вызывать веб-API от имени пользователя, выполнившего вход. Следующий этап — другой сценарий, который можно найти в [веб-приложении вызовы веб-API](scenario-web-app-call-api-overview.md)
 
 > [!NOTE]
-> Добавление входа в веб-приложение — это защита веб-приложения и проверка маркера пользователя, который выполняется библиотеками по **промежуточного слоя** . В этом сценарии еще не требуются библиотеки проверки подлинности Майкрософт (MSAL), которые предназначены для получения маркера для вызова защищенных интерфейсов API. Библиотеки проверки подлинности будут представлены только в сценарии дальнейших действий, когда веб-приложению необходимо вызвать веб-API.
+> Добавление входа в веб-приложение — это защита веб-приложения и проверка маркера пользователя, который выполняется библиотеками по **промежуточного слоя** . В случае с .NET этот сценарий еще не требует библиотек проверки подлинности Майкрософт (MSAL), которые представляют собой получение маркера для вызова защищенных API. Библиотеки проверки подлинности будут представлены только в сценарии дальнейших действий, когда веб-приложению необходимо вызвать веб-API.
 
 ## <a name="specifics"></a>Особенности
 

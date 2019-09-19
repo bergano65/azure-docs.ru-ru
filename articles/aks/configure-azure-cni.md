@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 06/03/2019
 ms.author: mlearned
-ms.openlocfilehash: 1cc2849ffe55fff737993140a1d0f18182820eff
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 3683c9fa7810083d26527275a1235df5336d1c65
+ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68498565"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71097820"
 ---
 # <a name="configure-azure-cni-networking-in-azure-kubernetes-service-aks"></a>Настройка сети Azure CNI в Службе Azure Kubernetes (AKS)
 
@@ -63,7 +63,7 @@ IP-адреса для контейнеров pod и узлов кластера
 
 | Метод развертывания | По умолчанию Kubenet | По умолчанию Azure CNI | Настройка при развертывании |
 | -- | :--: | :--: | -- |
-| Инфраструктура CLI Azure | 110 | 30 | Да (до 250) |
+| Azure CLI | 110 | 30 | Да (до 250) |
 | Шаблон Resource Manager | 110 | 30 | Да (до 250) |
 | Портал | 110 | 30 | Нет |
 
@@ -71,7 +71,7 @@ IP-адреса для контейнеров pod и узлов кластера
 
 Вы можете настроить максимальное число элементов pod на узел *только во время развертывания кластера*. При развертывании с Azure CLI или с помощью шаблона диспетчер ресурсов можно задать максимальное значение для каждого узла в 250.
 
-| Сети | Минимальное | Максимальное значение |
+| Сети | Минимум | Максимум |
 | -- | :--: | :--: |
 | Azure CNI | 30 | 250 |
 | кубенет | 30 | 110 |
@@ -118,7 +118,7 @@ IP-адреса для контейнеров pod и узлов кластера
 $ az network vnet subnet list \
     --resource-group myVnet \
     --vnet-name myVnet \
-    --query [].id --output tsv
+    --query "[0].id" --output tsv
 
 /subscriptions/<guid>/resourceGroups/myVnet/providers/Microsoft.Network/virtualNetworks/myVnet/subnets/default
 ```

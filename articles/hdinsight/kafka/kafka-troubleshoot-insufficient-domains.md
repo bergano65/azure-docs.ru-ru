@@ -5,15 +5,16 @@ ms.service: hdinsight
 ms.topic: troubleshooting
 author: hrasheed-msft
 ms.author: hrasheed
+ms.reviewer: jasonh
 ms.date: 08/09/2019
-ms.openlocfilehash: 945bd6aff5bba96f8b72570442d3b1dcd035cb62
-ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
+ms.openlocfilehash: 1e0fae699752f5e2417a4a3cbd42f4f1d2bd891f
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2019
-ms.locfileid: "68947712"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71091243"
 ---
-# <a name="scenario-cluster-creation-failed-due-to-not-sufficient-fault-domains-in-region-in-azure-hdinsight"></a>Сценарий: Сбой создания кластера из- `not sufficient fault domains in region` за Azure HDInsight
+# <a name="scenario-cluster-creation-failed-due-to-not-sufficient-fault-domains-in-region-in-azure-hdinsight"></a>Сценарий. Сбой создания кластера из- `not sufficient fault domains in region` за Azure HDInsight
 
 В этой статье описываются действия по устранению неполадок и возможные способы решения проблем при взаимодействии с кластерами Azure HDInsight.
 
@@ -25,7 +26,7 @@ ms.locfileid: "68947712"
 
 Домен сбоя — это логическое объединение базового оборудования в центре обработки данных Azure. Все домены сбоя используют общий источник питания и сетевой коммутатор. Виртуальные машины и управляемые диски, на которых реализуются узлы в кластере HDInsight, распределяются по этим доменам сбоя. Такая архитектура ограничивает потенциальное влияние сбоев физического оборудования.
 
-В каждом регионе Azure есть определенное количество доменов сбоя. Список доменов и число доменов сбоя, которые они содержат, см. в документации по наборам [доступности](../../virtual-machines/windows/manage-availability.md).
+В каждом регионе Azure есть определенное количество доменов сбоя. Список доменов и число доменов сбоя, которые они содержат, см. в документации по [наборам доступности](../../virtual-machines/windows/manage-availability.md).
 
 В HDInsight кластеры Kafka должны быть подготовлены в регионе с по крайней мере тремя доменами сбоя.
 

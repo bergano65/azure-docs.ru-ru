@@ -1,6 +1,6 @@
 ---
-title: Как интегрировать в общей схеме оповещений с помощью Logic Apps
-description: Узнайте, как создать приложение логики, которое использует общую схему оповещения для обработки всех предупреждений.
+title: Как интегрировать общую схему предупреждений с Logic Apps
+description: Узнайте, как создать приложение логики, использующее общую схему оповещений для обработки всех ваших оповещений.
 author: ananthradhakrishnan
 services: azure-monitor
 ms.service: azure-monitor
@@ -8,32 +8,32 @@ ms.topic: conceptual
 ms.date: 05/27/2019
 ms.author: anantr
 ms.subservice: alerts
-ms.openlocfilehash: 13cb3880662e1665b03dd63f009645acbe97fc75
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f431e5e5f4537d1a5f889457eb81b881e47ee178
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66734888"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71091786"
 ---
-# <a name="how-to-integrate-the-common-alert-schema-with-logic-apps"></a>Как интегрировать в общей схеме оповещений с помощью Logic Apps
+# <a name="how-to-integrate-the-common-alert-schema-with-logic-apps"></a>Как интегрировать общую схему предупреждений с Logic Apps
 
-В этой статье показано, как создать приложение логики, которое использует общую схему оповещения для обработки всех предупреждений.
+В этой статье показано, как создать приложение логики, использующее общую схему оповещений для обработки всех ваших оповещений.
 
 ## <a name="overview"></a>Обзор
 
-[Общей схеме оповещений](https://aka.ms/commonAlertSchemaDocs) предоставляет стандартизированный и расширяемую схему JSON для всех разных типов оповещений. Общая схема оповещения наиболее полезна в тех случаях, когда управлять программными средствами — с помощью веб-перехватчиков, модулей Runbook и logic apps. В этой статье мы покажем, как единого приложения логики могут разрабатываться для обработки всех предупреждений. Те же принципы могут применяться к другим программными методами. Приложение логики, описанные в этой статье мы создадим четко определенных переменных для [«важных» полей](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-common-schema-definitions#essentials-fields), а также описывает, как обработать [тип оповещений](/azure/azure-monitor/platform/alerts-common-schema-definitions#alert-context-fields) определенной логики.
+[Общая схема предупреждений](https://aka.ms/commonAlertSchemaDocs) предоставляет стандартизованную и расширяемую схему JSON для всех различных типов оповещений. Общая схема предупреждений наиболее полезна при программном использовании — через веб-перехватчики, модули Runbook и приложения логики. В этой статье мы продемонстрируем, как можно создать одно приложение логики для обработки всех ваших оповещений. Те же принципы могут применяться и к другим программным методам. Приложение логики, описываемое в этой статье, создает четко определенные переменные для [полей "важный"](alerts-common-schema-definitions.md#essentials), а также описывает способ обработки логики определенного [типа оповещений](alerts-common-schema-definitions.md#alert-context) .
 
 
-## <a name="prerequisites"></a>Технические условия 
+## <a name="prerequisites"></a>Предварительные требования 
 
 В этой статье предполагается, что читатель знаком с 
-* Настройка правила генерации оповещений ([метрика](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-metric), [журнала](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-log), [журнал действий](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log))
-* Настройка [группы действий](https://docs.microsoft.com/azure/azure-monitor/platform/action-groups)
-* Включение [общей схеме оповещений](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-common-schema#how-do-i-enable-the-common-alert-schema) из внутри группы действий
+* Настройка правил оповещений ([Метрика](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-metric), [Журнал](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-log), [Журнал действий](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log))
+* Настройка [групп действий](https://docs.microsoft.com/azure/azure-monitor/platform/action-groups)
+* Включение [общей схемы предупреждений](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-common-schema#how-do-i-enable-the-common-alert-schema) из групп действий
 
-## <a name="create-a-logic-app-leveraging-the-common-alert-schema"></a>Создание приложения логики, используя в общей схеме оповещений
+## <a name="create-a-logic-app-leveraging-the-common-alert-schema"></a>Создание приложения логики, использующего общую схему предупреждений
 
-1. Выполните [шаги, описанные для создания приложения логики](https://docs.microsoft.com/azure/azure-monitor/platform/action-groups-logic-app). 
+1. Выполните действия, описанные [в статье Создание приложения логики](https://docs.microsoft.com/azure/azure-monitor/platform/action-groups-logic-app). 
 
 1.  Выберите триггер **При получении HTTP-запроса**.
 
@@ -117,30 +117,30 @@ ms.locfileid: "66734888"
 
     ![Добавление действия](media/action-groups-logic-app/add-action.png "Добавление действия")
 
-1. На этом этапе можно добавить широкий набор соединителей (Microsoft Teams, Slack, Salesforce и др.) на основе требований своего бизнеса. Можно использовать «важных полей» out-of--box. 
+1. На этом этапе вы можете добавить различные соединители (Microsoft Teams, временной резерв, Salesforce и т. д.) в соответствии с конкретными бизнес-требованиями. Вы можете использовать встроенные поля "все". 
 
-    ![Важных полей](media/alerts-common-schema-integrations/logic-app-essential-fields.png "важных полей")
+    ![Ключевые поля](media/alerts-common-schema-integrations/logic-app-essential-fields.png "Ключевые поля")
     
-    Кроме того вы можете создавать условную логику в зависимости от типа оповещения, с помощью параметра «Выражение».
+    Кроме того, условную логику можно создать на основе типа оповещения, используя параметр "выражение".
 
-    ![Выражение логики приложения](media/alerts-common-schema-integrations/logic-app-expressions.png "выражение приложения логики")
+    ![Выражение приложения логики](media/alerts-common-schema-integrations/logic-app-expressions.png "Выражение приложения логики")
     
-     [Поля «monitoringService»](/azure/azure-monitor/platform/alerts-common-schema-definitions#alert-context-fields) позволяет однозначно идентифицировать тип оповещения на основе, на которой можно создавать условную логику.
+     [Поле "мониторингсервице"](alerts-common-schema-definitions.md#alert-context) позволяет уникальным образом идентифицировать тип оповещения, на основе которого можно создать условную логику.
 
     
-    Например ниже фрагмент кода проверяет, если предупреждение оповещения журнала на основе Application Insights и если да, выводит результаты поиска. В противном случае он выводит «Н/д».
+    Например, приведенный ниже фрагмент кода проверяет, является ли предупреждение оповещением журнала на основе Application Insights, и, если да, выводит результаты поиска. В противном случае выводится «НД».
 
     ```text
       if(equals(triggerBody()?['data']?['essentials']?['monitoringService'],'Application Insights'),triggerBody()?['data']?['alertContext']?['SearchResults'],'NA')
     ```
     
-     Дополнительные сведения о [написания логики приложения выражения](https://docs.microsoft.com/azure/logic-apps/workflow-definition-language-functions-reference#logical-comparison-functions).
+     Дополнительные сведения о [написании выражений приложения логики](https://docs.microsoft.com/azure/logic-apps/workflow-definition-language-functions-reference#logical-comparison-functions).
 
     
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-* [Дополнительные сведения о группах действий](../../azure-monitor/platform/action-groups.md).
-* [Дополнительные сведения об общей схеме оповещений](https://aka.ms/commonAlertSchemaDocs).
+* Дополнительные [сведения о группах действий](../../azure-monitor/platform/action-groups.md).
+* Дополнительные [сведения о схеме общих предупреждений](https://aka.ms/commonAlertSchemaDocs).
 

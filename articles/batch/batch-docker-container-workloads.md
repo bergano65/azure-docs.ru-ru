@@ -10,12 +10,12 @@ ms.workload: na
 ms.date: 08/09/2019
 ms.author: lahugh
 ms.custom: seodec18
-ms.openlocfilehash: c8fc8e7d5888f9a0b080c0ca1d24e53068b543be
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: c9e24924472e0bb8dbd0e529b739263469b631fb
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70095174"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71090752"
 ---
 # <a name="run-container-applications-on-azure-batch"></a>Выполнение контейнерных приложений в пакетной службе Azure
 
@@ -89,7 +89,7 @@ ms.locfileid: "70095174"
 
 ## <a name="container-configuration-for-batch-pool"></a>Конфигурация контейнера для пула пакетной службы
 
-Чтобы включить пул пакетной службы для выполнения рабочих нагрузок контейнера, необходимо указать параметр [ContainerConfiguration](/dotnet/api/microsoft.azure.batch.containerconfiguration) в пуле объекта [VirtualMachineConfiguration](/dotnet/api/microsoft.azure.batch.virtualmachineconfiguration). (Эта статья содержит ссылки на справочники по API пакетной службы для .NET. Соответствующие параметры можно найти в статье об [API пакетной службы для Python](/python/api/azure.batch).)
+Чтобы включить пул пакетной службы для выполнения рабочих нагрузок контейнера, необходимо указать параметр [ContainerConfiguration](/dotnet/api/microsoft.azure.batch.containerconfiguration) в пуле объекта [VirtualMachineConfiguration](/dotnet/api/microsoft.azure.batch.virtualmachineconfiguration). (Эта статья содержит ссылки на справочники по API пакетной службы для .NET. Соответствующие параметры можно найти в статье об [API пакетной службы для Python](/python/api/overview/azure/batch).)
 
 Можно создать пул с включенным контейнером с предварительно загруженными образами контейнеров или без них, как показано в следующих примерах. Процесс извлечения (или предварительной загрузки) позволяет предварительно загрузить образы контейнеров из центра Docker или другого реестра контейнеров в Интернете. Чтобы обеспечить высокую производительность, используйте [реестр контейнеров Azure](../container-registry/container-registry-intro.md) в одном регионе с учетной записью пакетной службы.
 

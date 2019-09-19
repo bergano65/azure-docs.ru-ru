@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 09/09/2019
+ms.date: 09/16/2019
 ms.author: jingwang
-ms.openlocfilehash: 29f5b9b704bcf4648e9c24516d8eff5429a0ce1d
-ms.sourcegitcommit: a819209a7c293078ff5377dee266fa76fd20902c
+ms.openlocfilehash: 78b74c1db5f331e7b74a730148d52b1ff7694ec0
+ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71009956"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71058987"
 ---
 # <a name="copy-data-to-or-from-azure-sql-data-warehouse-by-using-azure-data-factory"></a>Копирование данных в хранилище данных Azure SQL и из него с помощью фабрики данных Azure 
 > [!div class="op_single_selector" title1="Выберите версию службы фабрики данных, которую вы используете:"]
@@ -444,6 +444,9 @@ Polybase хранилища данных SQL напрямую поддержив
    7. Параметр `compression` может иметь значение **no compression**, **GZip** или **Deflate**.
 
 3. Если источником является папка, `recursive` в действии копирования должно быть задано значение true.
+
+>[!NOTE]
+>Если источником является папка, то Polybase извлекает файлы из папки и всех ее вложенных папок, а также не извлекает данные из файлов, для которых имя файла начинается с подчеркивания (_) или точки (.), как указано в описании [параметра Location](https://docs.microsoft.com/sql/t-sql/statements/create-external-table-transact-sql?view=azure-sqldw-latest#arguments-2).
 
 ```json
 "activities":[
