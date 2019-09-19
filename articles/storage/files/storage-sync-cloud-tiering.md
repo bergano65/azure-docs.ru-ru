@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/21/2018
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 078582b98bca2137a7d25fa3a0833a4707565170
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: 36b09ce8ece010ff24345ddb96654f75542cc9a5
+ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68699374"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71098966"
 ---
 # <a name="cloud-tiering-overview"></a>Общие сведения о распределении по уровням в облаке
 Распределение по уровням в облаке — дополнительная функция Синхронизации файлов Azure, в которой часто используемые файлы кэшируются локально на сервере, а все другие файлы распределяются по уровням в файлах Azure на основе параметров политики. При распределении файла фильтр файловой системы службы синхронизации файлов Azure (StorageSync.sys) локально заменяет файл указателем или точкой повторного анализа. Точка повторного анализа представляет URL-адрес к файлу в службе "Файлы Azure". Распределенный по уровням файл имеет автономный атрибут и набор атрибутов FILE_ATTRIBUTE_RECALL_ON_DATA_ACCESS в NTFS, чтобы сторонние приложения могли идентифицировать такие файлы.
@@ -100,10 +100,10 @@ ms.locfileid: "68699374"
 
 Вы также можете принудительно отозвать файл с помощью PowerShell. Этот вариант можно использовать, если вы хотите отозвать одновременно большое количество файлов (например, все файлы в папке). Откройте сеанс PowerShell на узле сервера, на котором установлена служба синхронизации файлов Azure, и выполните следующие команды PowerShell:
     
-    ```powershell
-    Import-Module "C:\Program Files\Azure\StorageSyncAgent\StorageSync.Management.ServerCmdlets.dll"
-    Invoke-StorageSyncFileRecall -Path <file-or-directory-to-be-recalled>
-    ```
+```powershell
+Import-Module "C:\Program Files\Azure\StorageSyncAgent\StorageSync.Management.ServerCmdlets.dll"
+Invoke-StorageSyncFileRecall -Path <file-or-directory-to-be-recalled>
+```
 
 <a id="sizeondisk-versus-size"></a>
 ### <a name="why-doesnt-the-size-on-disk-property-for-a-file-match-the-size-property-after-using-azure-file-sync"></a>Почему свойство файла *Размер на диске* не соответствует свойству *Размер* после использования Синхронизации файлов Azure? 
@@ -113,10 +113,10 @@ ms.locfileid: "68699374"
 ### <a name="how-do-i-force-a-file-or-directory-to-be-tiered"></a>Как можно принудительно переместить файл или каталог?
 Если функция распределения по уровням облака включена, файлы распределяются по уровням автоматически на основе последнего времени доступа и изменения, чтобы достичь процента свободного пространства тома, указанного для конечной точки облака. Тем не менее иногда вам может понадобиться распределить файл по уровням вручную. Это может быть полезно, если вам нужно сохранить большие файлы, которые не планируется использовать повторно в течение долгого времени, и освободить пространство на томе для других файлов и папок. Вы можете принудительно распределить файлы по уровням с помощью следующих команд PowerShell:
 
-    ```powershell
-    Import-Module "C:\Program Files\Azure\StorageSyncAgent\StorageSync.Management.ServerCmdlets.dll"
-    Invoke-StorageSyncCloudTiering -Path <file-or-directory-to-be-tiered>
-    ```
+```powershell
+Import-Module "C:\Program Files\Azure\StorageSyncAgent\StorageSync.Management.ServerCmdlets.dll"
+Invoke-StorageSyncCloudTiering -Path <file-or-directory-to-be-tiered>
+```
 
 ## <a name="next-steps"></a>Следующие шаги
 * [Planning for an Azure File Sync Deployment](storage-sync-files-planning.md) (Планирование развертывания службы синхронизации файлов Azure)

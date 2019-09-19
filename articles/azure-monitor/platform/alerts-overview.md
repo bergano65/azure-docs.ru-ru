@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 01/28/2018
 ms.author: robb
 ms.subservice: alerts
-ms.openlocfilehash: ae3e45ece1bd53846ab7728c29c0da1b709fe42c
-ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
+ms.openlocfilehash: eab6e7e0fb834447a55b67dfc9a17c470e9e3361
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70915947"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71091776"
 ---
 # <a name="overview-of-alerts-in-microsoft-azure"></a>Обзор оповещений в Microsoft Azure 
 
@@ -202,9 +202,9 @@ ms.locfileid: "70915947"
   }
 }
 ```
-Вы можете запросить оповещения для своих [ключевых](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-common-schema-definitions#essentials-fields) полей.
+Вы можете запросить оповещения для своих [ключевых](alerts-common-schema-definitions.md#essentials) полей.
 
-Используйте [REST API Управление оповещениями](https://aka.ms/alert-management-api) , чтобы получить дополнительные сведения о конкретных предупреждениях, включая поля [контекста оповещений](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-common-schema-definitions#alert-context-fields) .
+Используйте [REST API Управление оповещениями](https://aka.ms/alert-management-api) , чтобы получить дополнительные сведения о конкретных предупреждениях, включая поля [контекста оповещений](alerts-common-schema-definitions.md#alert-context) .
 
 ## <a name="next-steps"></a>Следующие шаги
 

@@ -8,12 +8,12 @@ ms.topic: troubleshooting
 ms.date: 8/26/2019
 ms.author: abnarain
 ms.reviewer: craigg
-ms.openlocfilehash: 45aa1354f6009d5eccd48f85f993bae8949139e3
-ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
-ms.translationtype: HT
+ms.openlocfilehash: ed466b072a771c3aa288a96fa4a0037c31b875f9
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71058978"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71091996"
 ---
 # <a name="troubleshoot-azure-data-factory"></a>Устранение неполадок фабрики данных Azure
 
@@ -282,17 +282,109 @@ ms.locfileid: "71058978"
 
 - **Причина.** Определение действия функции Azure не завершено.
 
-- **Рекомендация**. Убедитесь, что определение JSON входного действия Азурефунктион имеет свойство с именем "метод".
+- **Рекомендация**. Проверьте, имеет ли определение JSON входного действия Азурефунктион свойство с именем "метод".
 
 
 ### <a name="error-code--3612"></a>Код ошибки:  3612
 
 - **Сообщение**:`Azure function activity missing LinkedService definition in JSON.`
 
-- **Причина.** Определение действия функции Azure не завершено.
+- **Причина.** Определение действия функции Azure может быть неполным.
 
 - **Рекомендация**. Убедитесь, что в определении JSON входного действия Азурефунктион содержатся связанные сведения о связанной службе.
 
+
+## <a name="azure-machine-learning"></a>Машинное обучение Azure
+
+
+### <a name="error-code--4101"></a>Код ошибки:  4101
+
+- **Сообщение**:`AzureMLExecutePipeline activity '%activityName;' has invalid value for property '%propertyName;'.`
+
+- **Причина.** Неправильный формат или отсутствует определение свойства.
+
+- **Рекомендация**.  Убедитесь, что действие определено с правильными данными.
+
+
+### <a name="error-code--4110"></a>Код ошибки:  4110
+
+- **Сообщение**. В операции Азуремлексекутепипелине отсутствует определение LinkedService в JSON.
+
+- **Причина.** Определение действия Азуремлексекутепипелине не завершено.
+
+- **Рекомендация**.  Проверьте, содержит ли определение JSON для входного действия Азуремлексекутепипелине сведения о связанной службе.
+
+
+### <a name="error-code--4111"></a>Код ошибки:  4111
+
+- **Сообщение**:`AzureMLExecutePipeline activity has wrong LinkedService type in JSON. Expected LinkedService type: '%expectedLinkedServiceType;', current LinkedService type: Expected LinkedService type: '%currentLinkedServiceType;'.`
+
+- **Причина.** Неправильное определение действия.
+
+- **Рекомендация**.  Убедитесь, что определение JSON входного Азуремлексекутепипелине действия содержит правильные сведения о связанной службе.
+
+
+### <a name="error-code--4112"></a>Код ошибки:  4112
+
+- **Сообщение**:`AzureMLService linked service has invalid value for property '%propertyName;'.`
+
+- **Причина.** Неправильный формат или отсутствует определение свойства.
+
+- **Рекомендация**.  Убедитесь, что определение связанной службы содержит правильные данные.
+
+
+### <a name="error-code--4121"></a>Код ошибки:  4121
+
+- **Сообщение**:`Request sent to AzureML Service for operation '%operation;' failed with http status code '%statusCode;'. Error message from AzureML Service: '%externalMessage;'.`
+
+- **Причина.** Истек срок действия учетных данных, используемых для доступа к службе машинного обучения Azure.
+
+- **Рекомендация**.  Убедитесь, что учетные данные действительны, и повторите попытку.
+
+
+### <a name="error-code--4122"></a>Код ошибки:  4122
+
+- **Сообщение**:`Request sent to AzureML Service for operation '%operation;' failed with http status code '%statusCode;'. Error message from AzureML Service: '%externalMessage;'.`
+
+- **Причина.** Учетные данные, указанные в связанной службе службы AzureML, недопустимы или не имеют разрешения на выполнение этой операции.
+
+- **Рекомендация**.  Убедитесь, что учетные данные в связанной службе действительны и имеют разрешение на доступ к службе AzureML.
+
+
+### <a name="error-code--4123"></a>Код ошибки:  4123
+
+- **Сообщение**:`Request sent to AzureML Service for operation '%operation;' failed with http status code '%statusCode;'. Error message from AzureML Service: '%externalMessage;'.`
+
+- **Причина**:`Properties of the activity such as pipelineParamters are invalid for the Azure ML pipeline.`
+
+- **Рекомендация**.  Проверьте значения свойств действия, чтобы они соответствовали ожидаемым полезным данным в опубликованном конвейере машинного обучения Azure, указанном в связанной службе.
+
+
+### <a name="error-code--4124"></a>Код ошибки:  4124
+
+- **Сообщение**:`Request sent to AzureML Service for operation '%operation;' failed with http status code '%statusCode;'. Error message from AzureML Service: '%externalMessage;'.`
+
+- **Причина.** Опубликованная конечная точка конвейера машинного обучения Azure не существует.
+
+- **Рекомендация**.  Убедитесь, что опубликованная конечная точка конвейера машинного обучения Azure, указанная в связанной службе, существует в службе Azure ML.
+
+
+### <a name="error-code--4125"></a>Код ошибки:  4125
+
+- **Сообщение**:`Request sent to AzureML Service for operation '%operation;' failed with http status code '%statusCode;'. Error message from AzureML Service: '%externalMessage;'.`
+
+- **Причина.** Ошибка сервера в службе машинного обучения Azure.
+
+- **Рекомендация**.  Повторите попытку позже. Обратитесь в службу поддержки машинного обучения Azure, чтобы получить помощь в случае ее возникновения.
+
+
+### <a name="error-code--4126"></a>Код ошибки:  4126
+
+- **Сообщение**:`AzureML pipeline run failed with status: '%amlPipelineRunStatus;'. Azure ML pipeline run Id: '%amlPipelineRunId;'. Please check in AzureMLService for more error loggings.`
+
+- **Причина.** Сбой выполнения конвейера AzureML.
+
+- **Рекомендация**.  Для получения дополнительных сведений об ошибках и исправления конвейера машинного обучения см. Азуремлсервице.
 
 
 ## <a name="custom"></a>Настраиваемый
@@ -316,6 +408,15 @@ ms.locfileid: "71058978"
 - **Причина.** Неверный ключ доступа пакетной службы или имя пула.
 
 - **Рекомендация**. Проверьте имя пула и ключ доступа пакетной службы в связанной службе.
+
+
+### <a name="error-code--2502"></a>Код ошибки:  2502
+
+- **Сообщение**:`Cannot access user storage account; please check storage account settings.`
+
+- **Причина.** Неправильное имя учетной записи хранения или ключ доступа.
+
+- **Рекомендация**. Проверьте имя учетной записи хранения и ключ доступа в связанной службе.
 
 
 ### <a name="error-code--2504"></a>Код ошибки:  2504
@@ -472,7 +573,7 @@ ms.locfileid: "71058978"
 
 ## <a name="web-activity"></a>Веб-действие
 
-### <a name="error-code--2310"></a>Код ошибки:  2310
+### <a name="error-code--2108"></a>Код ошибки:  2108
 
 - **Сообщение**:`Invalid HttpMethod: '...'.`
 
@@ -559,6 +660,25 @@ ms.locfileid: "71058978"
 - **Причина.** Неверный текст веб-действия.
 
 - **Рекомендация**.  Чтобы проверить конечную точку, используйте Fiddler или POST.
+
+
+### <a name="error-code--2208"></a>Код ошибки:  2208
+
+- **Сообщение**:`Invoking Web Activity failed with HttpStatusCode - {0}.`
+
+- **Причина.** Целевая служба вернула состояние сбоя.
+
+- **Рекомендация**.  Используйте Fiddler/POST для проверки запроса.
+
+
+### <a name="error-code--2308"></a>Код ошибки:  2308
+
+- **Сообщение**:`No response from the endpoint. Possible causes: network connectivity, DNS failure, server certificate validation or timeout.`
+
+- **Причина.** Эта ошибка может быть вызвана несколькими причинами, такими как сетевое подключение, сбой DNS, проверка сертификата сервера или превышение времени ожидания.
+
+- **Рекомендация**.  Используйте Fiddler/POST для проверки запроса.
+
 
 Чтобы использовать Fiddler для создания сеанса HTTP отслеживаемого веб-приложения, выполните следующие действия.
 

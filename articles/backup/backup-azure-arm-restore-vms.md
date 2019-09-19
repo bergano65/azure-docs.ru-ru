@@ -7,14 +7,14 @@ manager: carmonm
 keywords: восстановление резервной копии; восстановление; точка восстановления;
 ms.service: backup
 ms.topic: conceptual
-ms.date: 05/08/2019
+ms.date: 09/17/2019
 ms.author: dacurwin
-ms.openlocfilehash: 3d7497b7afd44a05f3691d3e3094e84c3dd73747
-ms.sourcegitcommit: 909ca340773b7b6db87d3fb60d1978136d2a96b0
+ms.openlocfilehash: c479249a3a09b625e37fb80e7b73dcc8a1268622
+ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70983916"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71098367"
 ---
 # <a name="how-to-restore-azure-vm-data-in-azure-portal"></a>Как восстановить данные виртуальной машины Azure в портал Azure
 
@@ -188,7 +188,27 @@ Azure Backup предоставляет несколько способов во
 - Если виртуальная машина, для которой выполнено резервное копирование, имеет статический IP-адрес, восстановленная виртуальная машина будет иметь динамический IP-адрес, чтобы избежать конфликтов. Для [восстановленной виртуальной машины можно добавить статический IP-адрес](../virtual-network/virtual-networks-reserved-private-ip.md#how-to-add-a-static-internal-ip-to-an-existing-vm).
 - У восстановленной виртуальной машины нет группы доступности. При использовании параметра восстановить диск можно [указать группу доступности](../virtual-machines/windows/tutorial-availability-sets.md) при создании виртуальной машины с диска с помощью указанного шаблона или PowerShell.
 - Если вы используете дистрибутив Linux на основе cloud-init (например, Ubuntu), то в целях безопасности пароль будет заблокирован после восстановления. Чтобы [сбросить пароль](../virtual-machines/linux/reset-password.md), на восстановленной виртуальной машине рекомендуется использовать расширение VMAccess. Мы советуем использовать ключи SSH в этих дистрибутивах, чтобы не сбрасывать пароль после восстановления.
+- Если вы не можете получить доступ к виртуальной машине после восстановления из-за неработающего отношения виртуальной машины с контроллером домена, выполните следующие действия, чтобы открыть виртуальную машину.
+    - Подключите диск ОС в качестве диска данных к восстановленной виртуальной машине.
+    - Установите агент ВМ вручную, если агент Azure не отвечает, по следующей [ссылке](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/install-vm-agent-offline).
+    - Включите доступ к последовательной консоли на виртуальной машине, чтобы разрешить доступ из командной строки к виртуальной машине.
+    
+  ```
+    bcdedit /store <drive letter>:\boot\bcd /enum
+    bcdedit /store <VOLUME LETTER WHERE THE BCD FOLDER IS>:\boot\bcd /set {bootmgr} displaybootmenu yes
+    bcdedit /store <VOLUME LETTER WHERE THE BCD FOLDER IS>:\boot\bcd /set {bootmgr} timeout 5
+    bcdedit /store <VOLUME LETTER WHERE THE BCD FOLDER IS>:\boot\bcd /set {bootmgr} bootems yes
+    bcdedit /store <VOLUME LETTER WHERE THE BCD FOLDER IS>:\boot\bcd /ems {<<BOOT LOADER IDENTIFIER>>} ON
+    bcdedit /store <VOLUME LETTER WHERE THE BCD FOLDER IS>:\boot\bcd /emssettings EMSPORT:1 EMSBAUDRATE:115200
+    ```
+    - При перестроении виртуальной машины используйте портал Azure для сброса учетной записи локального администратора и пароля
+    - Использование Серийная консоль Access и CMD для отсоединений виртуальной машины из домена
 
+    ```
+    cmd /c "netdom remove <<MachineName>> /domain:<<DomainName>> /userD:<<DomainAdminhere>> /passwordD:<<PasswordHere>> /reboot:10 /Force" 
+    ```
+
+- После того как виртуальная машина будет отключена и перезапущена, вы сможете успешно выполнить RDP-подключение к виртуальной машине с учетными данными локального администратора и повторно присоединить виртуальную машину к домену.
 
 ## <a name="backing-up-restored-vms"></a>Резервное копирование восстановленных виртуальных машин
 

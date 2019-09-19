@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 06/26/2019
 ms.author: brendm
 ms.custom: seodec18
-ms.openlocfilehash: f0cbb8d19d2a7d60fdfd3c10a8c9914ffa79e0a3
-ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
+ms.openlocfilehash: 8e47365f74668ba2b93bad2b65a9dc9e83080832
+ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70034905"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71098121"
 ---
 # <a name="configure-a-linux-java-app-for-azure-app-service"></a>Настройка приложения Java для Linux для службы приложений Azure
 
@@ -49,11 +49,11 @@ ms.locfileid: "70034905"
 
 [!INCLUDE [Access diagnostic logs](../../../includes/app-service-web-logs-access-no-h.md)]
 
-Дополнительные сведения см. в разделе о [потоковой передаче журналов с помощью Azure CLI](../troubleshoot-diagnostic-logs.md#streaming-with-azure-cli).
+Дополнительные сведения см. [в статье потоковая передача журналов в Cloud Shell](../troubleshoot-diagnostic-logs.md#in-cloud-shell).
 
 ### <a name="app-logging"></a>Ведение журнала приложений
 
-Включите [ведение журнала приложений](../troubleshoot-diagnostic-logs.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#enablediag) с помощью портала Azure или [Azure CLI](/cli/azure/webapp/log#az-webapp-log-config), чтобы настроить службу приложений для записи выходных данных стандартной консоли приложения и потоков ошибок стандартной консоли в локальную файловую систему или хранилище BLOB-объектов Azure. Запись журналов в локальную файловую систему экземпляра службы приложений отключается через 12 часов после настройки ведения журнала. Если необходимо более длительное хранение, настройте приложение для записи выходных данных в контейнер больших двоичных объектов. Журналы приложений Java и Tomcat можно найти в каталоге */Хоме/логфилес/аппликатион/* .
+Включите [ведение журнала приложений](../troubleshoot-diagnostic-logs.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#enable-application-logging-windows) с помощью портала Azure или [Azure CLI](/cli/azure/webapp/log#az-webapp-log-config), чтобы настроить службу приложений для записи выходных данных стандартной консоли приложения и потоков ошибок стандартной консоли в локальную файловую систему или хранилище BLOB-объектов Azure. Запись журналов в локальную файловую систему экземпляра службы приложений отключается через 12 часов после настройки ведения журнала. Если необходимо более длительное хранение, настройте приложение для записи выходных данных в контейнер больших двоичных объектов. Журналы приложений Java и Tomcat можно найти в каталоге */Хоме/логфилес/аппликатион/* .
 
 Если приложение использует [Logback](https://logback.qos.ch/) или [Log4j](https://logging.apache.org/log4j) для трассировки, то эти данные трассировки можно передать в Azure Application Insights для просмотра, выполнив инструкции по настройке платформы ведения журнала в разделе [Просмотр журналов трассировки Java в Application Insights](/azure/application-insights/app-insights-java-trace-logs).
 
@@ -98,7 +98,7 @@ az webapp config appsettings set -g <your_resource_group> -n <your_app_name> --s
 jcmd <pid> JFR.dump name=continuous_recording filename="/home/recording1.jfr"
 ```
 
-Дополнительные сведения см. в справочнике по [командам жкмд](https://docs.oracle.com/javacomponents/jmc-5-5/jfr-runtime-guide/comline.htm#JFRRT190).
+Дополнительные сведения см. в [справочнике по командам жкмд](https://docs.oracle.com/javacomponents/jmc-5-5/jfr-runtime-guide/comline.htm#JFRRT190).
 
 ### <a name="analyzing-recordings"></a>Анализ записей
 
@@ -211,7 +211,7 @@ for (Object key : map.keySet()) {
     }
 ```
 
-Чтобы подписать пользователей, используйте `/.auth/ext/logout` путь. Чтобы выполнить другие действия, см. документацию по [использованию проверки подлинности и авторизации службы приложений](https://docs.microsoft.com/azure/app-service/app-service-authentication-how-to). Существует также официальная документация по интерфейсу Tomcat [хттпсервлетрекуест](https://tomcat.apache.org/tomcat-5.5-doc/servletapi/javax/servlet/http/HttpServletRequest.html) и его методам. В зависимости от конфигурации службы приложений также сохраняются следующие методы сервлета:
+Чтобы подписать пользователей, используйте `/.auth/ext/logout` путь. Чтобы выполнить другие действия, см. документацию по [использованию проверки подлинности и авторизации службы приложений](https://docs.microsoft.com/azure/app-service/app-service-authentication-how-to). Существует также официальная документация по [интерфейсу Tomcat хттпсервлетрекуест](https://tomcat.apache.org/tomcat-5.5-doc/servletapi/javax/servlet/http/HttpServletRequest.html) и его методам. В зависимости от конфигурации службы приложений также сохраняются следующие методы сервлета:
 
 ```java
 public boolean isSecure()
@@ -696,7 +696,7 @@ public int getServerPort()
 
 3. Используйте FTP для передачи JAR-файла диспетчера сеансов в экземпляр службы приложений, поместив его в каталог */Хоме/томкат/либ* . Дополнительные сведения см. в статье [развертывание приложения в службе приложений Azure с помощью FTP/S](https://docs.microsoft.com/azure/app-service/deploy-ftp).
 
-4. Отключите [файл cookie сходства сеансов](https://azure.microsoft.com/blog/disabling-arrs-instance-affinity-in-windows-azure-web-sites/) для экземпляра службы приложений. Это можно сделать в портал Azure, перейдя к своему приложению, а затем установив для параметра **Configuration > General Settings (общие параметры) >** параметру affinity сходство значение **Off**. Кроме того, можно использовать следующую команду:
+4. Отключите [файл cookie сходства сеансов](https://azure.microsoft.com/blog/disabling-arrs-instance-affinity-in-windows-azure-web-sites/) для экземпляра службы приложений. Это можно сделать в портал Azure, перейдя к своему приложению, а затем установив для параметра **Configuration > General Settings (общие параметры) > параметру affinity сходство** значение **Off**. Кроме того, можно использовать следующую команду:
 
     ```azurecli
     az webapp update -g <resource group> -n <webapp name> --client-affinity-enabled false
@@ -708,11 +708,11 @@ public int getServerPort()
 
 6. Для каждого IP-адреса создайте правило брандмауэра в кэше Azure для экземпляра Redis. Это можно сделать на портал Azure из раздела **брандмауэр** вашего экземпляра Redis. Укажите уникальное имя для каждого правила и задайте для параметров **начальный IP-адрес** и **конечный IP** -адрес один и тот же IP-адрес.
 
-7. Перейдите к разделу " **Дополнительные параметры** " в экземпляре Redis и установите для параметра **Разрешить доступ только через SSL** . Это позволяет вашему экземпляру службы приложений взаимодействовать с кэшем Redis через инфраструктуру Azure.
+7. Перейдите к разделу " **Дополнительные параметры** **" в**экземпляре Redis и установите для параметра **Разрешить доступ только через SSL** . Это позволяет вашему экземпляру службы приложений взаимодействовать с кэшем Redis через инфраструктуру Azure.
 
 8. Обновите конфигурацию в файле *POM. XML* вашего приложения, чтобы они ссылались на сведения об учетной записи Redis. `azure-webapp-maven-plugin` В этом файле используются ранее настроенные переменные среды для сохранения данных учетной записи из исходных файлов.
 
-    При необходимости измените `1.7.0` текущую версию [подключаемого модуля Maven для службы приложений Azure](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme).
+    При необходимости измените `1.7.0` на текущую версию [подключаемого модуля Maven для Службы приложений Azure](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme).
 
     ```xml
     <plugin>

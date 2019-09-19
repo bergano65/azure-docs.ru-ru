@@ -9,10 +9,10 @@ ms.date: 06/25/2019
 ms.author: anavin
 ms.custom: include file
 ms.openlocfilehash: a37280fddf34221a9d08501ef55c6b069cd877a4
-ms.sourcegitcommit: 23389df08a9f4cab1f3bb0f474c0e5ba31923f12
+ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
+ms.lasthandoff: 09/18/2019
 ms.locfileid: "70242753"
 ---
 <a name="azure-resource-manager-virtual-networking-limits"></a>Ограничения сети. Azure Resource Manager следующие ограничения применяются только к сетевым ресурсам, управляемым с помощью **Azure Resource Manager** для каждого региона на подписку. Узнайте, как [просмотреть текущие данные об использовании ресурсов в соответствии с ограничениями подписки](../articles/networking/check-usage-against-limits.md).

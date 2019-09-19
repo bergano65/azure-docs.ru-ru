@@ -1,6 +1,6 @@
 ---
-title: Azure AD парольной защиты операции и отчеты — Azure Active Directory
-description: Операции после развертывания Azure AD парольной защиты и создания отчетов
+title: Операции защиты паролей Azure AD и создание отчетов — Azure Active Directory
+description: Операции после развертывания и создания отчетов для защиты паролей Azure AD
 services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ca85007bb016cc98d1be61ce08865945e699ad4a
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: b5ff7f0bbf1bf474a611ae033165bca6dfaac676
+ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60358198"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71097636"
 ---
 # <a name="azure-ad-password-protection-operational-procedures"></a>операционные процедуры службы защиты паролем Azure AD
 
@@ -28,7 +28,7 @@ ms.locfileid: "60358198"
 
 ## <a name="enable-password-protection"></a>Включение защиты паролем
 
-1. Войдите в [портала Azure](https://portal.azure.com) и перейдите к **Azure Active Directory**, **методы проверки подлинности**, затем **защиту паролем**.
+1. Войдите в [портал Azure](https://portal.azure.com) и перейдите к **Azure Active Directory**, **методам проверки подлинности**, а затем **защиты паролем**.
 1. Для параметра **Включить защиту паролем в Windows Server Active Directory** выберите значение **Да**.
 1. Как упоминалось в [руководстве по развертыванию](howto-password-ban-bad-on-premises-deploy.md#deployment-strategy), рекомендуется изначально выбрать **режим** **Аудит**.
    * Ознакомившись с возможностями этого компонента, вы сможете переключиться на **режим** **Применено**.
@@ -55,10 +55,13 @@ ms.locfileid: "60358198"
 
 Пользователям, получившим подобное сообщение, может потребоваться обратиться к персоналу отдела по ИТ, чтобы ознакомиться с новыми требованиями и выбрать более безопасные пароли.
 
+> [!NOTE]
+> Защита паролем Azure AD не контролирует конкретное сообщение об ошибке, отображаемое клиентским компьютером при отклонении ненадежного пароля.
+
 ## <a name="enable-mode"></a>Режим включения
 
-Как правило, этот параметр должен оставаться во включенном состоянии по умолчанию (Да). Если отключить этот параметр (то есть выбрать значение "Нет"), то все развернутые агенты контроллера домена защиты паролем Azure AD перейдут в режим бездействия, в котором все пароли принимаются "как есть" и какие-либо действия проверки не выполняются ни при каких обстоятельствах (например, даже не создаются события аудита).
+Этот параметр должен оставаться в состоянии включено (да) по умолчанию. Если отключить этот параметр (то есть выбрать значение "Нет"), то все развернутые агенты контроллера домена защиты паролем Azure AD перейдут в режим бездействия, в котором все пароли принимаются "как есть" и какие-либо действия проверки не выполняются ни при каких обстоятельствах (например, даже не создаются события аудита).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Preview: Azure AD Password Protection monitoring and logging](howto-password-ban-bad-on-premises-monitor.md) (Предварительная версия. Мониторинг и ведение журнала службы защиты паролем Azure AD)

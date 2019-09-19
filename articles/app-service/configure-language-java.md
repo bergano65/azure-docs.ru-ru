@@ -14,18 +14,18 @@ ms.date: 04/12/2019
 ms.author: jafreebe
 ms.reviewer: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 0538b3ea4ac3a7999a3028cfd8b2cfafbbf7856c
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: 91f0c059d22fb921aeb0c65f7d4eba95debd530d
+ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68967276"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71097735"
 ---
 # <a name="configure-a-windows-java-app-for-azure-app-service"></a>Настройка приложения Windows Java для службы приложений Azure
 
 Служба приложений Azure позволяет разработчикам Java быстро создавать, развертывать и масштабировать свои веб-приложения Tomcat в полностью управляемой службе на основе Windows. Возможно развертывание приложений с подключаемыми модулями Maven из командной строки или в редакторах, например Visual Studio Code, Eclipse или IntelliJ.
 
-Это краткое описание содержит основные понятия и инструкции для разработчиков Java, использующих службу приложений. Если вы никогда не использовали службу приложений Azure, сначала ознакомьтесь с кратким руководством по [Java](app-service-web-get-started-java.md) . Ответы на часто задаваемые вопросы об использовании службы приложений, не относящейся к разработке Java, приведены в статье [вопросы и ответы по Windows в службе приложений](faq-configuration-and-management.md).
+Это краткое описание содержит основные понятия и инструкции для разработчиков Java, использующих службу приложений. Если вы никогда не использовали службу приложений Azure, сначала ознакомьтесь с [кратким](app-service-web-get-started-java.md) руководством по Java. Ответы на часто задаваемые вопросы об использовании службы приложений, не относящейся к разработке Java, приведены в статье [вопросы и ответы по Windows в службе приложений](faq-configuration-and-management.md).
 
 ## <a name="deploying-your-app"></a>Развертывание приложения
 
@@ -49,11 +49,11 @@ ms.locfileid: "68967276"
 
 [!INCLUDE [Access diagnostic logs](../../includes/app-service-web-logs-access-no-h.md)]
 
-Дополнительные сведения см. в разделе о [потоковой передаче журналов с помощью Azure CLI](troubleshoot-diagnostic-logs.md#streaming-with-azure-cli).
+Дополнительные сведения см. [в статье потоковая передача журналов в Cloud Shell](troubleshoot-diagnostic-logs.md#in-cloud-shell).
 
 ### <a name="app-logging"></a>Ведение журнала приложений
 
-Включите [ведение журнала приложений](troubleshoot-diagnostic-logs.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#enablediag) с помощью портала Azure или [Azure CLI](/cli/azure/webapp/log#az-webapp-log-config), чтобы настроить службу приложений для записи выходных данных стандартной консоли приложения и потоков ошибок стандартной консоли в локальную файловую систему или хранилище BLOB-объектов Azure. Запись журналов в локальную файловую систему экземпляра службы приложений отключается через 12 часов после настройки ведения журнала. Если необходимо более длительное хранение, настройте приложение для записи выходных данных в контейнер больших двоичных объектов. Журналы приложений Java и Tomcat можно найти в каталоге */логфилес/аппликатион/* .
+Включите [ведение журнала приложений](troubleshoot-diagnostic-logs.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#enable-application-logging-windows) с помощью портала Azure или [Azure CLI](/cli/azure/webapp/log#az-webapp-log-config), чтобы настроить службу приложений для записи выходных данных стандартной консоли приложения и потоков ошибок стандартной консоли в локальную файловую систему или хранилище BLOB-объектов Azure. Запись журналов в локальную файловую систему экземпляра службы приложений отключается через 12 часов после настройки ведения журнала. Если необходимо более длительное хранение, настройте приложение для записи выходных данных в контейнер больших двоичных объектов. Журналы приложений Java и Tomcat можно найти в каталоге */логфилес/аппликатион/* .
 
 Если приложение использует [Logback](https://logback.qos.ch/) или [Log4j](https://logging.apache.org/log4j) для трассировки, то эти данные трассировки можно передать в Azure Application Insights для просмотра, выполнив инструкции по настройке платформы ведения журнала в разделе [Просмотр журналов трассировки Java в Application Insights](/azure/application-insights/app-insights-java-trace-logs).
 
@@ -159,7 +159,7 @@ for (Object key : map.keySet()) {
     }
 ```
 
-Чтобы подписать пользователей, используйте `/.auth/ext/logout` путь. Чтобы выполнить другие действия, см. документацию по [использованию проверки подлинности и авторизации службы приложений](https://docs.microsoft.com/azure/app-service/app-service-authentication-how-to). Существует также официальная документация по интерфейсу Tomcat [хттпсервлетрекуест](https://tomcat.apache.org/tomcat-5.5-doc/servletapi/javax/servlet/http/HttpServletRequest.html) и его методам. В зависимости от конфигурации службы приложений также сохраняются следующие методы сервлета:
+Чтобы подписать пользователей, используйте `/.auth/ext/logout` путь. Чтобы выполнить другие действия, см. документацию по [использованию проверки подлинности и авторизации службы приложений](https://docs.microsoft.com/azure/app-service/app-service-authentication-how-to). Существует также официальная документация по [интерфейсу Tomcat хттпсервлетрекуест](https://tomcat.apache.org/tomcat-5.5-doc/servletapi/javax/servlet/http/HttpServletRequest.html) и его методам. В зависимости от конфигурации службы приложений также сохраняются следующие методы сервлета:
 
 ```java
 public boolean isSecure()

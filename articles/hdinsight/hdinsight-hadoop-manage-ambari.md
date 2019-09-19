@@ -2,18 +2,18 @@
 title: Мониторинг и администрирование кластеров Azure HDInsight с помощью веб-интерфейса Ambari
 description: Узнайте, как использовать Ambari для наблюдения за кластерами HDInsight на платформе Linux и управления их функционированием. В этом документе рассказывается об использовании веб-интерфейса Ambari, предоставляемого с кластерами HDInsight.
 author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/23/2019
-ms.author: hrasheed
-ms.openlocfilehash: 5b97e577216f5e34cd0a5bdd66eea2cf2efa0fee
-ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
+ms.openlocfilehash: 2f46f90edcdd1c4cdf7583c7e628aee205b312e1
+ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71035877"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71098659"
 ---
 # <a name="manage-hdinsight-clusters-by-using-the-apache-ambari-web-ui"></a>Управление кластерами HDInsight с помощью веб-интерфейса Apache Ambari
 
@@ -47,7 +47,7 @@ Apache Ambari упрощает управление кластером Apache Ha
 
 При открытии страницы обратите внимание на панель вверху. Она содержит следующую информацию и элементы управления:
 
-![ambari-nav](./media/hdinsight-hadoop-manage-ambari/apache-ambari-dashboard.png)
+![Обзор панели мониторинга Apache Ambari](./media/hdinsight-hadoop-manage-ambari/apache-ambari-dashboard.png)
 
 |Элемент |Описание |
 |---|---|
@@ -76,15 +76,15 @@ Apache Ambari упрощает управление кластером Apache Ha
 
 Оповещения разбиты на несколько групп по умолчанию, которые можно просмотреть на странице **Оповещения** .
 
-![страница «Оповещения»](./media/hdinsight-hadoop-manage-ambari/hdinsight-alerts-page.png)
+![Сводка страницы оповещений Apache Ambari](./media/hdinsight-hadoop-manage-ambari/hdinsight-alerts-page.png)
 
 Группами можно управлять с помощью меню **Действия**, а также выбрав **Manage Alert Groups** (Управление группами оповещений).
 
-![диалоговое окно «Управление группами оповещений»](./media/hdinsight-hadoop-manage-ambari/ambari-manage-alerts.png)
+![Управление группами оповещений Apache Ambari](./media/hdinsight-hadoop-manage-ambari/ambari-manage-alerts.png)
 
 Вы можете управлять способами оповещения и создавать уведомления об оповещениях в меню **Действия**, выбрав __Manage Alert Notifications__ (Управление уведомлениями об оповещениях). Отображаются все текущие уведомления. Здесь можно также создавать уведомления. Уведомления можно отправлять по **электронной почте** или **протоколу SNMP** при возникновении определенного сочетания оповещения и уровня серьезности. Например, можно отправить сообщение, если для какого-либо оповещения в группе **YARN Default** (YARN по умолчанию) установлено значение **Критическое**.
 
-![диалоговое окно создания оповещения](./media/hdinsight-hadoop-manage-ambari/create-alert-notification.png)
+![Создание уведомления о предупреждении Apache Ambari](./media/hdinsight-hadoop-manage-ambari/create-alert-notification.png)
 
 Наконец, выбрав __Manage Alert Settings__ (Управление параметрами оповещения) в меню __Действия__, вы сможете настроить количество появлений оповещения перед отправкой уведомления. Этот параметр можно использовать для предотвращения уведомлений по временным ошибкам.
 
@@ -92,28 +92,28 @@ Apache Ambari упрощает управление кластером Apache Ha
 
 На вкладке **Метрики** панели мониторинга содержится ряд мини-приложений, которые позволяют легко определить состояние кластера с первого взгляда. Если щелкнуть некоторые мини-приложения, например **Загрузка ЦП**, отобразится дополнительная информация.
 
-![панель мониторинга с метриками](./media/hdinsight-hadoop-manage-ambari/hdi-metrics-dashboard.png)
+![Панель мониторинга Apache Ambari с метриками](./media/hdinsight-hadoop-manage-ambari/hdi-metrics-dashboard.png)
 
 На вкладке **Тепловые карты** метрики отображаются в виде цветных тепловых карт с переходом от зеленого к красному.
 
-![панель мониторинга с тепловыми картами](./media/hdinsight-hadoop-manage-ambari/hdi-heatmap-dashboard.png)
+![Панель мониторинга Apache Ambari с тепловые карты](./media/hdinsight-hadoop-manage-ambari/hdi-heatmap-dashboard.png)
 
 Для получения дополнительных сведений об узлах кластера выберите **Узлы**. Затем выберите конкретный узел, который вас интересует.
 
-![информация об узле](./media/hdinsight-hadoop-manage-ambari/ambari-host-details1.png)
+![Сводные данные узла Apache Ambari](./media/hdinsight-hadoop-manage-ambari/ambari-host-details1.png)
 
 ### <a name="services"></a>Службы
 
 Боковая панель **Службы** на панели мониторинга позволяет получить общее представление о состоянии служб, работающих в кластере. Различные значки обозначают состояния или действия, которые следует предпринять. Например, желтый символ перезапуска отображается, если служба должна быть перезапущена.
 
-![боковая панель «Службы»](./media/hdinsight-hadoop-manage-ambari/apache-ambari-service-bar.png)
+![Боковая панель служб Apache Ambari](./media/hdinsight-hadoop-manage-ambari/apache-ambari-service-bar.png)
 
 > [!NOTE]  
 > Для разных типов и версий кластера HDInsight отображаются разные службы. Службы, отображаемые здесь, могут отличаться от служб, отображаемых для вашего кластера.
 
 При выборе службы для нее отобразятся более подробные сведения.
 
-![сводные данные о службе](./media/hdinsight-hadoop-manage-ambari/ambari-service-details.png)
+![Сводные сведения о службе Apache Ambari](./media/hdinsight-hadoop-manage-ambari/ambari-service-details.png)
 
 #### <a name="quick-links"></a>Быстрые ссылки
 
@@ -142,7 +142,7 @@ Apache Ambari упрощает управление кластером Apache Ha
 
 На странице **Узлы** перечислены все узлы в кластере. Для управления узлами, сделайте следующее.
 
-![страница «Узлы»](./media/hdinsight-hadoop-manage-ambari/hdinsight-hosts-page.png)
+![Обзор страницы узлов Apache Ambari](./media/hdinsight-hadoop-manage-ambari/hdinsight-hosts-page.png)
 
 > [!NOTE]  
 > В кластерах HDInsight не следует использовать добавление, списание и восстановление списанного узла.
@@ -168,7 +168,7 @@ Apache Ambari упрощает управление кластером Apache Ha
 
 На странице **Панель мониторинга** или **Службы** нажмите кнопку **Действия** в нижней части списка служб, чтобы остановить и снова запустить все службы.
 
-![Действия со службой](./media/hdinsight-hadoop-manage-ambari/ambari-service-actions.png)
+![Список действий службы Apache Ambari](./media/hdinsight-hadoop-manage-ambari/ambari-service-actions.png)
 
 > [!WARNING]  
 > Хотя в этом меню и есть пункт **Добавить службу**, не следует использовать его для добавления служб в кластер HDInsight. Для добавления новых служб следует использовать действие сценария во время подготовки кластера. Дополнительные сведения об использовании действий скрипта см. в статье [Настройка кластеров HDInsight под управлением Linux с помощью действия сценария](hdinsight-hadoop-customize-cluster-linux.md).
@@ -179,7 +179,7 @@ Apache Ambari упрощает управление кластером Apache Ha
 
 2. В верхней части вкладки **Сводка** нажмите кнопку **Service Actions** (Действия со службой) и выберите действие, которое необходимо выполнить. Это приведет к перезапуску службы на всех узлах.
 
-    ![действие в службе](./media/hdinsight-hadoop-manage-ambari/individual-service-actions.png)
+    ![Действия для отдельных служб Apache Ambari](./media/hdinsight-hadoop-manage-ambari/individual-service-actions.png)
 
    > [!NOTE]  
    > Перезапуск некоторых служб во время работы кластера может привести к формированию предупреждений. Во избежание этого можно использовать кнопку **Service Actions** (Действия со службой), чтобы включить **режим обслуживания** для службы перед выполнением перезагрузки.
@@ -195,7 +195,7 @@ Apache Ambari упрощает управление кластером Apache Ha
 
 2. Выберите вкладку **Конфигурации** . Отобразится текущая конфигурация. Отобразится также список предыдущих конфигураций.
 
-    ![конфигурации](./media/hdinsight-hadoop-manage-ambari/ambari-service-configs.png)
+    ![Настройка службы Apache Ambari](./media/hdinsight-hadoop-manage-ambari/ambari-service-configs.png)
 
 3. Используйте отображаемые поля для изменения конфигурации, а затем выберите **Сохранить**. Можно также выбрать предыдущую конфигурацию, а затем выбрать **Сделать текущей** , чтобы выполнить откат к предыдущим настройкам.
 

@@ -6,14 +6,14 @@ author: dcurwin
 manager: carmonm
 ms.service: backup
 ms.topic: conceptual
-ms.date: 06/28/2019
+ms.date: 09/17/2019
 ms.author: dacurwin
-ms.openlocfilehash: 26d07ac0b09655e170b53af91f890f21d15afb1b
-ms.sourcegitcommit: d70c74e11fa95f70077620b4613bb35d9bf78484
+ms.openlocfilehash: e1cfb9bf0e8b17df67b2f7060f665d169a71c8d6
+ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70909796"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71098388"
 ---
 # <a name="frequently-asked-questions-back-up-azure-vms"></a>Часто задаваемые вопросы. Резервное копирование виртуальных машин Azure
 
@@ -126,6 +126,10 @@ ms.locfileid: "70909796"
 После изменения параметров KeyVault для зашифрованной виртуальной машины резервные копии будут продолжать работать с новым набором данных, однако после восстановления из точки восстановления до изменения потребуется восстановить секреты в KeyVault, прежде чем можно будет создать виртуальную машину из  им. Дополнительные сведения см. в этой [статье](https://docs.microsoft.com/azure/backup/backup-azure-restore-key-secret) .
 
 Операции, такие как закрытый секрет или ключ, не нуждаются в этом шаге, и один и тот же KeyVault можно использовать после восстановления.
+
+### <a name="can-i-access-the-vm-once-restored-due-to-an-vm-having-broken-relationship-with-domain-controller"></a>Можно ли получить доступ к виртуальной машине после восстановления из-за неработающего отношения виртуальной машины с контроллером домена?
+
+Да, вы получите доступ к виртуальной машине после восстановления из-за неработающей связи с контроллером домена. Дополнительные сведения см. в этой [статье](https://docs.microsoft.com/azure/backup/backup-azure-arm-restore-vms#post-restore-steps) .
 
 ## <a name="manage-vm-backups"></a>Управление резервным копированием виртуальных машин
 
