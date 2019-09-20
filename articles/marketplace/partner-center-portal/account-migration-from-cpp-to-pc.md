@@ -7,12 +7,12 @@ ms.author: v-qiwe
 ms.service: marketplace
 ms.topic: conceptual
 ms.date: 09/09/2019
-ms.openlocfilehash: e7485502dbb2f3870399dfc58582f1cae448dc42
-ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
+ms.openlocfilehash: 13cbd799a1ffb877ace2231bfb854764edac9c90
+ms.sourcegitcommit: b03516d245c90bca8ffac59eb1db522a098fb5e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71098845"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71147123"
 ---
 # <a name="account-migration-from-cloud-partner-portal-to-partner-center"></a>Миграция учетных записей с Портал Cloud Partner в центр партнеров
 
@@ -42,6 +42,39 @@ ms.locfileid: "71098845"
 2. Регистрация для Microsoft Partner Network программы
 
     Если у вашей учетной записи CPP нет идентификатора Microsoft Partner Network или она имеет недопустимое значение, необходимо зарегистрироваться в программе Microsoft Partner Network в рамках процесса активации.
+
+## <a name="sign-up-for-microsoft-partner-network-program"></a>Регистрация для Microsoft Partner Network программы
+
+Компании, желающие участвовать в партнерской программе Майкрософт, должны присоединиться к Microsoft Partner Network (MPN) и получить идентификатор MPN. Если вы уже являетесь членом Microsoft Partner Network и у вас есть идентификатор MPN, обязательно укажите его вручную, так как его потребуется ввести в процессе активации учетной записи.  
+
+Если вы еще не являетесь членом Microsoft Partner Network, вы можете [присоединиться](https://signup.microsoft.com/signup?sku=StoreForBusinessIW&origin=partnerdashboard&culture=en-us&ru=https://partner.microsoft.com/dashboard/account/v3/xpu/onboard?ru=/en-us/dashboard/account/v3/enrollment/companyprofile/basicpartnernetwork/new) к ней, чтобы получить идентификатор MPN. Обязательно запишите идентификатор MPN, так как его потребуется ввести в процессе активации учетной записи.
+
+Дополнительные сведения о Microsoft Partner Network см. в статье [Присоединение Microsoft Partner Network](https://partner.microsoft.com/en-US/membership) на веб-сайте партнера. Дополнительные сведения о соединении Microsoft Partner Networkных преимуществ ISV см. в разделе [Центр ресурсов ISV](https://partner.microsoft.com/isv-resource-hub).  
+
+## <a name="move-dynamics-365-based-solutions-to-partner-center"></a>Перемещение решений на основе Dynamics 365 в центр партнеров
+
+Если вы создали Dynamics 365 для служб "участие клиентов" или Dynamics 365 для финансовых и операционных решений на портале GTM коммерческого партнера, **эти решения теперь должны управляться в центре партнеров**.
+
+**Если вы не переместит решения до 31 августа 2019**, выполните приведенные ниже действия как можно скорее. До этого:
+
+- Независимые поставщики программного обеспечения не имеют доступа к преимуществам маркетинга
+- Для совместных продаж приоритет теряет свое состояние
+- После 15 октября 2019 г. они не соответствуют требованиям внедрения облака.
+
+> [!NOTE]
+> Если ваша учетная запись членства MPN была изначально создана в центре регистрации партнеров (PMC), войдите в [Центр партнеров](https://partner.microsoft.com/pcv/accountsettings/connectedpartnerprofile) , чтобы убедиться, что ваша учетная запись была перенесена перед выполнением описанных ниже действий. Если отображается экран профиля с ИДЕНТИФИКАТОРом MPN, вы можете продолжить. В противном случае необходимо запустить миграцию учетной записи, следуя инструкциям в [центре участия в партнерских группах](https://partners.microsoft.com/partnerprogram/Welcome.aspx). Если вам нужна помощь, обратитесь в [службу поддержки](https://partner.microsoft.com/support?issueid=100-0077).
+
+1. Перейдите на [страницу обзора коммерческого рынка в центре партнеров](https://partner.microsoft.com/dashboard/commercial-marketplace/overview). Если в области навигации слева отображается "коммерческое Marketplace", вы регистрируетесь и переходите к следующему шагу. Если нет, [Зарегистрируйтесь в коммерческой Marketplace](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/azureisv) .
+
+2. Убедитесь, что ваши предложения находятся в AppSource, выполнив [Поиск своих предложений](https://appsource.microsoft.com/). Если ваши предложения уже находятся в AppSource, перейдите к следующему шагу. Для любого предложения не в AppSource создайте новое предложение [dynamics 365 для участия клиентов](create-new-customer-engagement-offer.md) или [новое предложение Dynamics 365 for Operations](create-new-operations-offer.md).
+
+3. Проверьте регистрацию в программе Business Applications ISV Connect:
+   * На странице [соглашения](https://partner.microsoft.com/dashboard/account/agreements) в центре партнеров убедитесь, что вы приняли участие Business APPLICATIONS приложении **ISV** для регистрации в программе.
+   * На странице [Параметры учетной записи](https://partner.microsoft.com/dashboard/account/v3/accountsettings/billingprofile) укажите сведения для выставления счетов.
+
+4. Отправьте каждое новое и существующее предложение на сертификацию, даже если ваши предложения были ранее сертифицированы. Если это возможно, вы можете запросить участие на уровне "Премиум" во время этого процесса. Если ваше предложение было ранее сертифицировано, **необходимо выполнить повторное сертификацию приложений 15 октября 2019 г.** Для сертификации или сертификации потребуется, чтобы ваше приложение поддерживало последнюю версию нашей Business Applications платформы.
+
+5. Перейдите на [портал GTM коммерческого партнера](https://msgtm.azurewebsites.net/en-US/Profile/SignIn) и добавьте URL-адрес списка AppSource в разделе "ссылки Marketplace". Если вам нужна помощь с этим шагом, напишите нам по cosell@microsoft.comадресу.
 
 ## <a name="next-steps"></a>Следующие шаги
 

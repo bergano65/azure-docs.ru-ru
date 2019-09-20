@@ -4,7 +4,7 @@ description: ''
 services: virtual-machines-windows
 documentationcenter: ''
 author: Deland-Han
-manager: cshepard
+manager: dcscontentpm
 editor: ''
 tags: ''
 ms.service: virtual-machines
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.devlang: azurecli
 ms.date: 11/01/2018
 ms.author: delhan
-ms.openlocfilehash: 4c783c70217a84bbe5ccf15accc4a2bec0b7cca8
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 166648402eec7f8033c090a3f7862a902bae4be6
+ms.sourcegitcommit: 116bc6a75e501b7bba85e750b336f2af4ad29f5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61485515"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71154192"
 ---
 # <a name="troubleshoot-azure-vm-rdp-connection-issues-by-event-id"></a>Устранение неполадок с RDP-подключением к виртуальной машине по идентификатору события 
 
@@ -43,7 +43,7 @@ ms.locfileid: "61485515"
 
 Чтобы удаленно подключиться к виртуальной машине, используйте один из методов, описанных в статье [Use remote tools to troubleshoot Azure VM issues](remote-tools-troubleshoot-azure-vm-issues.md) (Использование удаленных средств для устранения проблем с виртуальными машинами Azure).
 
-## <a name="scenario-1"></a>Сценарий 1
+## <a name="scenario-1"></a>Сценарий 1
 
 ### <a name="event-logs"></a>Журналы событий
 
@@ -54,33 +54,33 @@ wevtutil qe system /c:1 /f:text /q:"Event[System[Provider[@Name='Microsoft-Windo
 wevtutil qe system /c:1 /f:text /q:"Event[System[Provider[@Name='Microsoft-Windows-TerminalServices-RemoteConnectionManager'] and EventID=1057 and TimeCreated[timediff(@SystemTime) <= 86400000]]]" | more
 ```
 
-**Имя журнала**:      системный; <br />
+**Имя журнала**:      Система <br />
 **Источник**:        Microsoft-Windows-TerminalServices-RemoteConnectionManager <br />
 **Дата:** *время* <br />
 **Идентификатор события:**      1058 <br />
-**Категория задачи**: Нет <br />
+**Категория задачи**: Отсутствуют <br />
 **Уровень**:         Ошибка <br />
 **Ключевые слова:**      Классический <br />
 **Пользователь**:          Н/Д <br />
 **Компьютер:** *имя компьютера* <br />
 **Описание.** серверу узла сеансов удаленного рабочего стола не удалось заменить самозаверяющий сертификат с истекшим сроком действия, используемый для аутентификации этого сервера в SSL-подключениях. Соответствующий код состояния: "Отказ в доступе".
 
-**Имя журнала**:      системный; <br />
+**Имя журнала**:      Система <br />
 **Источник**:        Microsoft-Windows-TerminalServices-RemoteConnectionManager <br />
 **Дата:** *время* <br />
 **Идентификатор события:**      1058 <br />
-**Категория задачи**: Нет <br />
+**Категория задачи**: Отсутствуют <br />
 **Уровень**:         Ошибка <br />
 **Ключевые слова:**      Классический <br />
 **Пользователь**:          Н/Д <br />
 **Компьютер:** *имя компьютера* <br />
 **Описание.** серверу узла сеансов удаленного рабочего стола не удалось создать самозаверяющий сертификат для использования при аутентификации этого сервера в SSL-подключениях (код состояния информирует о том, что объект уже существует).
 
-**Имя журнала**:      системный; <br />
+**Имя журнала**:      Система <br />
 **Источник**:        Microsoft-Windows-TerminalServices-RemoteConnectionManager <br />
 **Дата:** *время* <br />
 **Идентификатор события:**      1057 <br />
-**Категория задачи**: Нет <br />
+**Категория задачи**: Отсутствуют <br />
 **Уровень**:         Ошибка <br />
 **Ключевые слова:**      Классический <br />
 **Пользователь**:          Н/Д <br />
@@ -94,11 +94,11 @@ wevtutil qe system /c:1 /f:text /q:"Event[System[Provider[@Name='Schannel'] and 
 wevtutil qe system /c:1 /f:text /q:"Event[System[Provider[@Name='Schannel'] and EventID=36872 and TimeCreated[timediff(@SystemTime) <= 86400000]]]" | more
 ```
 
-**Имя журнала**:      системный; <br />
+**Имя журнала**:      Система <br />
 **Источник**:        Schannel <br />
 **Дата:** — <br />
 **Идентификатор события:**      36870 <br />
-**Категория задачи**: Нет <br />
+**Категория задачи**: Отсутствуют <br />
 **Уровень**:         Ошибка <br />
 **Ключевые слова:**       <br />
 **Пользователь**:          SYSTEM <br />
@@ -113,7 +113,7 @@ wevtutil qe system /c:1 /f:text /q:"Event[System[Provider[@Name='Schannel'] and 
 
 2. Ключ RSA отсутствует или поврежден.
 
-### <a name="resolution"></a>Способы устранения:
+### <a name="resolution"></a>Разрешение
 
 Чтобы устранить эту проблему, необходимо настроить правильные разрешения для RDP-сертификата, используя следующие шаги.
 
@@ -206,7 +206,7 @@ reg add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-T
 reg delete "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp" /v SSLCertificateSHA1Hash
 ```
 
-## <a name="scenario-2"></a>Сценарий 2
+## <a name="scenario-2"></a>Сценарий 2
 
 ### <a name="event-log"></a>Журнал событий
 
@@ -216,11 +216,11 @@ reg delete "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RD
 wevtutil qe system /c:1 /f:text /q:"Event[System[Provider[@Name='Schannel'] and EventID=36871 and TimeCreated[timediff(@SystemTime) <= 86400000]]]" | more
 ```
 
-**Имя журнала**:      системный; <br />
+**Имя журнала**:      Система <br />
 **Источник**:        Schannel <br />
 **Дата:** — <br />
 **Идентификатор события:**      36871 <br />
-**Категория задачи**: Нет <br />
+**Категория задачи**: Отсутствуют <br />
 **Уровень**:         Ошибка <br />
 **Ключевые слова:**       <br />
 **Пользователь**:          SYSTEM <br />
@@ -231,7 +231,7 @@ wevtutil qe system /c:1 /f:text /q:"Event[System[Provider[@Name='Schannel'] and 
 
 Эта проблема вызвана политиками безопасности. Когда более старые версии TLS (например, 1.0) отключены, RDP-доступ завершается ошибкой.
 
-### <a name="resolution"></a>Способы устранения:
+### <a name="resolution"></a>Разрешение
 
 RDP использует TLS 1.0 в качестве протокола по умолчанию. Однако протокол может быть изменен на TLS 1.1, который является новым стандартом.
 
@@ -284,7 +284,7 @@ NULL <br />
 
 Имя узла имеет записи во внутренней базе данных Windows, которая необходима ферме службы удаленных рабочих столов для работы, и зависимости от нее. Изменение имени узла после того, как ферма уже создана, вызывает множество ошибок и может привести к остановке работы сервера-посредника.
 
-### <a name="resolution"></a>Способы устранения: 
+### <a name="resolution"></a>Разрешение 
 
 Чтобы устранить эту проблему, необходимо переустановить роль посредника подключений к удаленному рабочему столу и внутреннюю базу данных Windows.
 

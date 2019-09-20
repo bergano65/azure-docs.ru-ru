@@ -9,12 +9,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 05/15/2019
 ms.author: sstein
-ms.openlocfilehash: 232f8b13174aed19477ee0b139c83fba439049ac
-ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
+ms.openlocfilehash: 90482fc859c4dcdd04a70e91da2fd6adb079a795
+ms.sourcegitcommit: a7a9d7f366adab2cfca13c8d9cbcf5b40d57e63a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71101550"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71162273"
 ---
 # <a name="sql-database-release-notes"></a>Заметки о выпуске базы данных SQL
 
@@ -26,7 +26,7 @@ ms.locfileid: "71101550"
 
 | Компонент | Подробнее |
 | ---| --- |
-| [Частная ссылка Azure](https://azure.microsoft.com/updates/private-link-now-available-in-preview/)| Частная связь упрощает сетевую архитектуру и защищает подключение между конечными точками в Azure, сохраняя данные в сети Azure, тем самым устраняя вероятность подключения к Интернету. Частная ссылка также позволяет создавать и визуализировать собственные службы в Azure. |
+| [Частная ссылка Azure](https://azure.microsoft.com/updates/private-link-now-available-in-preview/)| Служба "Приватный канал" упрощает сетевую архитектуру и гарантирует безопасность подключения между конечными точками в Azure благодаря тому, что данные хранятся в сети Azure и не попадают в общедоступный Интернет. Кроме того, эта служба позволяет создавать и предоставлять собственные службы в Azure. |
 | Ускоренное восстановление базы данных с отдельными базами данных и эластичными пулами | Дополнительные сведения см. в разделе [Ускорение восстановления базы данных](sql-database-accelerated-database-recovery.md).|
 |Приблизительный счетчик DISTINCT|Дополнительные сведения см. в разделе [приблизительный подсчет DISTINCT](https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing#approximate-query-processing).|
 |Пакетный режим в rowstore (на уровне совместимости 150)|Дополнительные сведения см. [в разделе пакетный режим в rowstore](https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing#batch-mode-on-rowstore).|
@@ -56,10 +56,11 @@ ms.locfileid: "71101550"
 
 ---
 
-## <a name="new-features"></a>Новые функции
+## <a name="new-features"></a>новые функции;
 
 ### <a name="managed-instance-h2-2019-updates"></a>Обновления управляемого экземпляра H2 2019
 
+- [Группы автоматической отработки отказа](https://azure.microsoft.com/updates/azure-sql-database-auto-failover-groups-feature-now-available-in-all-regions/) позволяют реплицировать все базы данных с первичного экземпляра на дополнительный экземпляр в другом регионе.
 - Настройте поведение управляемого экземпляра с помощью [глобальных флагов трассировки](https://azure.microsoft.com/updates/global-trace-flags-are-now-available-in-azure-sql-database-managed-instance/).
 
 ### <a name="managed-instance-h1-2019-updates"></a>Обновления управляемого экземпляра H1 2019

@@ -9,12 +9,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 11/29/2017
 ms.author: cshoe
-ms.openlocfilehash: dc113417be3df97b9ab9509c30a1f23e1eeaf35b
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: a0d12639ce074c3ed105513a3d90e323e30d1087
+ms.sourcegitcommit: 116bc6a75e501b7bba85e750b336f2af4ad29f5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70086283"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71155074"
 ---
 # <a name="azure-functions-sendgrid-bindings"></a>Привязки SendGrid для Функций Azure
 
@@ -31,6 +31,9 @@ ms.locfileid: "70086283"
 ## <a name="packages---functions-2x"></a>Пакеты — Функции 2.x
 
 Привязки SendGrid доступны в пакете NuGet [Microsoft.Azure.WebJobs.Extensions.SendGrid](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.SendGrid) версии 3.x. Исходный код для пакета находится в репозитории GitHub [azure-webjobs-sdk-extensions](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions.SendGrid/).
+
+> [!NOTE]
+> Версия 2. x не создает раздел или подписку, настроенную в `ServiceBusTrigger` экземпляре. Версия 2. x основана на [Microsoft. Azure. servicebus](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus) и не обрабатывает управление очередями.
 
 [!INCLUDE [functions-package-v2](../../includes/functions-package-v2.md)]
 
@@ -258,7 +261,7 @@ public static void Run(
 |**direction**|| Обязательное. Необходимо задать значение `out`.|
 |**name**|| Обязательное. Имя переменной, из которой в коде функции можно получить запрос или текст запроса. Это значение равно ```$return``` при наличии только одного возвращаемого значения. |
 |**apiKey**|**ApiKey**| Имя параметра приложения, в котором содержится ваш ключ API. Если значение не задано, имя параметра приложения по умолчанию AzureWebJobsSendGridApiKey.|
-|**to**|**Задача**| Электронный адрес получателя. |
+|**to**|**To**| Электронный адрес получателя. |
 |**From**|**From**| Электронный адрес отправителя. |
 |**subject**|**Subject**| Тема электронного сообщения. |
 |**text**|**Text**| Содержимое электронного сообщения. |
@@ -287,7 +290,7 @@ public static void Run(
 
 |Свойство  |Значение по умолчанию | Описание |
 |---------|---------|---------| 
-|from|Н/Д|Адрес электронной почты для всех функций.| 
+|from|Недоступно|Адрес электронной почты для всех функций.| 
 
 
 ## <a name="next-steps"></a>Следующие шаги

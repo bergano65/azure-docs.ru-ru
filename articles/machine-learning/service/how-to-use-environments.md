@@ -1,5 +1,5 @@
 ---
-title: Создание, использование и управление средами для обучения и развертывания моделей
+title: Создание повторно используемых сред машинного обучения
 titleSuffix: Azure Machine Learning
 description: Создание сред для обучения и развертывания модели и управление ими. Управление пакетами Python и другими параметрами для среды.
 services: machine-learning
@@ -9,16 +9,15 @@ ms.reviewer: nibaccam
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
-ms.date: 08/16/2019
-ms.custom: seodec18
-ms.openlocfilehash: 242f3cec0ac766e537bd0483725ba51685bb7ced
-ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
+ms.date: 09/16/2019
+ms.openlocfilehash: b46ca59bc93477c338001009ff7eeeddc7248684
+ms.sourcegitcommit: b03516d245c90bca8ffac59eb1db522a098fb5e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70996617"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71147334"
 ---
-# <a name="create-and-manage-environments-for-training-and-deployment"></a>Создание сред для обучения и развертывания и управление ими
+# <a name="create-and-manage-reusable-environments-for-training-and-deployment-with-azure-machine-learning"></a>Создавайте повторно используемые среды для обучения и развертывания с помощью Машинное обучение Azure и управляйте ими.
 
 В этой статье вы узнаете, как создавать [среды](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py) машинное обучение Azure и управлять ими, чтобы вы могли отслеживанию и воспроизведение зависимостей программного обеспечения проектов по мере их развития.
 

@@ -4,7 +4,7 @@ description: Поддержка добавления виртуальных ма
 services: virtual-machines-linux
 documentationcenter: ''
 author: Deland-Han
-manager: cshepard
+manager: dcscontentpm
 editor: ''
 ms.assetid: ''
 ms.service: virtual-machines
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 06/15/2018
 ms.author: delhan
-ms.openlocfilehash: 7a5e97b66fec040b4ec32caa8d58cf9b50169a33
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 3954df389516aa7199022d713dc63d62dda961ae
+ms.sourcegitcommit: 116bc6a75e501b7bba85e750b336f2af4ad29f5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60443710"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71155458"
 ---
 # <a name="supportability-of-adding-azure-vms-to-an-existing-availability-set"></a>Поддержка добавления виртуальных машин Azure в существующую группу доступности
 
@@ -27,15 +27,15 @@ ms.locfileid: "60443710"
 
 Ниже приводится матрица поддержки для объединения различных типов виртуальных машин:
 
-Серии и группа доступности|Вторая виртуальная машина|A|Av2|D|Dv2|Dv3|
+Серии и группа доступности|Вторая виртуальная машина|Объект|Av2|D|Dv2|Dv3|
 |---|---|---|---|---|---|---|
 |Первая виртуальная машина|||||||
-|A||OК|OК|OК|OК|OК|
-|Av2||OК|OК|OК|OК|OК|
-|D||OК|OК|OК|OК|OК|
-|Dv2||OК|OК|OК|OК|OК|
-|Dv3||OК|OК|OК|OК|OК|
+|Объект||OK|OK|OK|OK|OK|
+|Av2||OK|OK|OK|OK|OK|
+|D||OK|OK|OK|OK|OK|
+|Dv2||OK|OK|OK|OK|OK|
+|Dv3||OK|OK|OK|OK|OK|
 
 Все остальные серии не могут находиться в одной и той же группе доступности, так как для них требуется определенное оборудование.
 
-Размер виртуальной Машины a8 и A9 нельзя смешивать из-за потребности в выделенных серверной сети RDMA.
+Размер виртуальной машины A8/A9 не может быть смешан из-за необходимости в выделенной внутренней сети RDMA.

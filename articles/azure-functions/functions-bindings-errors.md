@@ -7,17 +7,17 @@ author: craigshoemaker
 manager: gwallace
 ms.service: azure-functions
 ms.topic: reference
-ms.date: 01/14/2019
+ms.date: 09/12/2019
 ms.author: cshoe
-ms.openlocfilehash: e289243949ee769322d55a7c2dde5bd8e6af1ca1
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 23aa30a93e5e3820d431afc00aa77071762feb14
+ms.sourcegitcommit: 116bc6a75e501b7bba85e750b336f2af4ad29f5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70097500"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71155674"
 ---
 # <a name="handle-azure-functions-binding-errors"></a>Обработчик ошибок привязки функций Azure
 
 [!INCLUDE [bindings errors intro](../../includes/functions-bindings-errors-intro.md)]
 
-Ссылки на соответствующие разделы с описанием ошибок различных служб, поддерживаемых в Функциях Azure, см. в разделе [Binding error codes](functions-bindings-error-pages.md#binding-error-codes) (Коды ошибок привязки) статьи [Azure Functions error handling](functions-bindings-error-pages.md) (Обработка ошибок службы "Функции Azure").  
+Сведения об ошибках, возвращаемых службами, поддерживаемыми функциями, см. в разделе " [коды ошибок привязки](functions-bindings-error-pages.md#binding-error-codes) " статьи общие сведения об [обработке ошибок в функциях Azure](functions-bindings-error-pages.md) .  

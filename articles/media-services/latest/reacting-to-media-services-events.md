@@ -11,12 +11,12 @@ ms.workload: ''
 ms.topic: article
 ms.date: 08/08/2019
 ms.author: juliako
-ms.openlocfilehash: 64bf8f5c8de5f56ee1140e91d0472a33b35570cf
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: d8cb8fdebb5a7e4bcbc9f979c98085e90ebd4c68
+ms.sourcegitcommit: b03516d245c90bca8ffac59eb1db522a098fb5e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68878800"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71147155"
 ---
 # <a name="handling-event-grid-events"></a>Обработка событий Сетки событий
 
@@ -38,6 +38,9 @@ ms.locfileid: "68878800"
 * Подобным образом убедитесь, что вы готовы к обработке этого типа событий (eventType), а также не следует предполагать, что все получаемые события будут иметь ожидаемый тип.
 * Игнорируйте поля, которые вам непонятны.  Такой подход поможет обеспечить устойчивость к новым функциям, которые могут быть добавлены в будущем.
 * С помощью префикса и суффикса subject события можно ограничить до конкретного.
+
+> [!NOTE]
+> События подчиняются Соглашение об уровне обслуживанияу "Сетка событий" [(SLA)](https://azure.microsoft.com/support/legal/sla/event-grid/v1_0/). Если вы хотите получать уведомления о событиях с помощью интерфейсов API, см. примеры использования событий с [пакетом](https://github.com/Azure-Samples/media-services-v3-dotnet/tree/master/ContentProtection/BasicAESClearKey) SDK для .NET или [Java](https://github.com/Azure-Samples/media-services-v3-java/tree/master/ContentProtection/BasicAESClearKey).
 
 ## <a name="next-steps"></a>Следующие шаги
 

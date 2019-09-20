@@ -13,12 +13,12 @@ ms.workload: identity
 ms.custom: it-pro
 ms.reviewer: jeffsta
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b1d0f94e9cf9b91bc365586dafc147dc73b17876
-ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
+ms.openlocfilehash: 76aafa978732b3f4bae82f8ad3c09e67caf297ae
+ms.sourcegitcommit: b03516d245c90bca8ffac59eb1db522a098fb5e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70914757"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71146287"
 ---
 # <a name="bulk-download-a-list-of-groups-preview-in-azure-active-directory"></a>Выполнить пакетную загрузку списка групп (Предварительная версия) в Azure Active Directory
 
@@ -26,10 +26,6 @@ ms.locfileid: "70914757"
 
 > [!NOTE]
 > Групповые операции Azure AD — это общедоступная Предварительная версия Azure AD. они доступны с любым платным планом лицензирования Azure AD. Дополнительные сведения об условиях использования предварительной версии см. в разделе Дополнительные [условия использования для Microsoft Azure предварительного просмотра](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
-
-## <a name="bulk-download-service-limits"></a>Ограничения службы пакетного скачивания
-
-Каждое групповое действие по скачиванию списка групп может выполняться в течение одного часа. Это позволяет скачать список по крайней мере 300 000 групп.
 
 ## <a name="to-download-a-list-of-groups"></a>Загрузка списка групп
 
@@ -44,6 +40,10 @@ ms.locfileid: "70914757"
 Состояние всех ожидающих выполнения незавершенных запросов можно просмотреть на странице **Результаты групповой операции (Предварительная версия)** .
 
    ![На странице результатов с массовыми операциями отображается состояние неполного запроса.](./media/groups-bulk-download/bulk-center.png)
+
+## <a name="bulk-download-service-limits"></a>Ограничения службы пакетного скачивания
+
+Каждое групповое действие по скачиванию списка групп может выполняться в течение одного часа. Это позволяет скачать список по крайней мере 300 000 групп.
 
 ## <a name="next-steps"></a>Следующие шаги
 

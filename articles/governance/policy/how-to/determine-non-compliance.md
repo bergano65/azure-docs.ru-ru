@@ -7,12 +7,12 @@ ms.date: 04/26/2019
 ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
-ms.openlocfilehash: 2b36e7c333521e9438e76bfbe53a26dce23c2e8a
-ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
+ms.openlocfilehash: a0faaeee369a2227f6018141e5aa5d18c9037e9d
+ms.sourcegitcommit: a7a9d7f366adab2cfca13c8d9cbcf5b40d57e63a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70194670"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71161979"
 ---
 # <a name="determine-causes-of-non-compliance"></a>Определение причин несоответствия требованиям
 
@@ -20,7 +20,7 @@ ms.locfileid: "70194670"
 
 > [!div class="checklist"]
 > - [Сведения о соответствии](#compliance-details)
-> - [Журнал изменений (Предварительная версия)](#change-history-preview)
+> - [Журнал изменений (Предварительная версия)](#change-history)
 
 ## <a name="compliance-details"></a>Сведения о соответствии
 
@@ -47,7 +47,7 @@ ms.locfileid: "70194670"
 
    ![Область сведений о соответствии и причины несоответствия](../media/determine-non-compliance/compliance-details-pane.png)
 
-   Для определения политики **помощью параметров auditifnotexists** или **deployIfNotExists** сведения включают свойство **Details. Type** и все необязательные свойства. Список см. в разделе [Свойства помощью параметров auditifnotexists](../concepts/effects.md#auditifnotexists-properties) и [Свойства deployIfNotExists](../concepts/effects.md#deployifnotexists-properties). **Последний оцененный ресурс** — это связанный ресурс из раздела Details определения.
+   Для определения политики **помощью параметров auditifnotexists** или **deployIfNotExists** сведения включают свойство **Details. Type** и все необязательные свойства. Список см. в разделе [Свойства помощью параметров auditifnotexists](../concepts/effects.md#auditifnotexists-properties) и [Свойства deployIfNotExists](../concepts/effects.md#deployifnotexists-properties). **Последний оцененный ресурс** — это связанный ресурс из раздела **Details** определения.
 
    Пример частичного определения **deployIfNotExists** :
 
@@ -79,13 +79,13 @@ ms.locfileid: "70194670"
 > [!NOTE]
 > Для защиты данных, если значение свойства является секретом , текущее значение отображает звездочки.
 
-В этих сведениях объясняется, почему ресурс в настоящее время не соответствует требованиям, но не показывает, когда было внесено изменение в ресурс, вызвавший, что он стал несоответствующим. Дополнительные сведения см. в разделе [История изменений (Предварительная версия)](#change-history-preview) ниже.
+В этих сведениях объясняется, почему ресурс в настоящее время не соответствует требованиям, но не показывает, когда было внесено изменение в ресурс, вызвавший, что он стал несоответствующим. Дополнительные сведения см. в разделе [История изменений (Предварительная версия)](#change-history) ниже.
 
 ### <a name="compliance-reasons"></a>Причины соответствия
 
 Следующая матрица сопоставляет каждую возможную _причину_ с ответственным [условием](../concepts/definition-structure.md#conditions) в определении политики:
 
-|Причина | Условие |
+|`Reason` | Условие |
 |-|-|
 |Текущее значение должно содержать целевое значение в качестве ключа. |containsKey или **не** нотконтаинскэй |
 |Текущее значение должно содержать целевое значение. |Contains или **Not** notContains |
@@ -148,7 +148,7 @@ Audit that an application is installed inside Windows VMs                 {[Inst
 Audit that an application is not installed inside Windows VMs.            {[InstalledApplication]NotInstalledApplica...
 ```
 
-Чтобы просмотреть только конечную фразу, описывающую причину несоответствия виртуальной машины, возвращайте только свойство дочернего элемента Reason.
+Чтобы просмотреть только конечную _фразу_ , описывающую причину _несоответствия_виртуальной машины, возвращайте только свойство дочернего элемента Reason.
 
 ```azurepowershell-interactive
 Get-AzVMGuestPolicyReport -ResourceGroupName <resourcegroupname> -VMName <vmname> | % ComplianceReasons | % Reasons | % Reason
@@ -194,7 +194,7 @@ Audit that an application is installed inside Windows VMs                 NonCom
 
 ## <a name="a-namechange-historychange-history-preview"></a><a name="change-history"/>Журнал изменений (Предварительная версия)
 
-В рамках новой общедоступной **предварительной версии**История изменений за последние 14 дней доступна для всех ресурсов Azure, поддерживающих [полное удаление режима](../../../azure-resource-manager/complete-mode-deletion.md). Журнал изменений содержит подробные сведения о том, когда было обнаружено изменение и _отличия между визуальными элементами_ для каждого изменения. Обнаружение изменений активируется при добавлении, удалении или изменении свойств диспетчер ресурсов.
+В рамках новой **общедоступной предварительной версии**История изменений за последние 14 дней доступна для всех ресурсов Azure, поддерживающих [полное удаление режима](../../../azure-resource-manager/complete-mode-deletion.md). Журнал изменений содержит подробные сведения о том, когда было обнаружено изменение и _отличия между визуальными элементами_ для каждого изменения. Обнаружение изменений активируется при добавлении, удалении или изменении свойств диспетчер ресурсов.
 
 1. Запустите службу "Политика Azure" на портале Azure, щелкнув **Все службы**, а затем выполнив поиск и выбрав **Политика**.
 
@@ -212,7 +212,7 @@ Audit that an application is installed inside Windows VMs                 NonCom
 
 _Отличия между визуальными элементами_ позволяют обнаружить изменения ресурса. Обнаруженные изменения могут не быть связаны с текущим состоянием соответствия ресурса.
 
-Данные журнала изменений предоставляются графом [ресурсов Azure](../../resource-graph/overview.md). Сведения о запросе этих сведений за пределами портал Azure см. в разделе [Получение изменений ресурсов](../../resource-graph/how-to/get-resource-changes.md).
+Данные журнала изменений предоставляются [графом ресурсов Azure](../../resource-graph/overview.md). Сведения о запросе этих сведений за пределами портал Azure см. в разделе [Получение изменений ресурсов](../../resource-graph/how-to/get-resource-changes.md).
 
 ## <a name="next-steps"></a>Следующие шаги
 

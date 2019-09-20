@@ -5,15 +5,15 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: article
-ms.date: 04/30/2019
+ms.date: 09/19/2019
 ms.author: tamram
 ms.reviewer: cbrooks
-ms.openlocfilehash: 6293fc84969c4e246c05da4482f76142263db230
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: e3d6312be0936f14ece5d30a2bbf3e4235031c0e
+ms.sourcegitcommit: 116bc6a75e501b7bba85e750b336f2af4ad29f5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68985549"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71154072"
 ---
 # <a name="manage-anonymous-read-access-to-containers-and-blobs"></a>Управление анонимным доступом на чтение к контейнерам и большим двоичным объектам
 
@@ -27,26 +27,19 @@ ms.locfileid: "68985549"
 
 Можно настроить контейнер со следующими разрешениями:
 
-* **Нет общего доступа для чтения:** Доступ к контейнеру и его BLOB-объектам может осуществлять только владелец учетной записи хранения. Это способ доступа по умолчанию для всех новых контейнеров.
-* **Общий доступ на чтение только для больших двоичных объектов:** Большие двоичные объекты в контейнере могут считываться анонимным запросом, но данные контейнера недоступны. Анонимные клиенты не могут перечислять большие двоичные объекты внутри контейнера.
-* **Общий доступ на чтение для контейнера и его больших двоичных объектов:** Все данные контейнера и BLOB-объекта могут быть прочитаны анонимным запросом. Клиенты могут перечислять большие двоичные объекты внутри контейнера с помощью анонимного запроса, но не могут перечислять контейнеры в учетной записи хранения.
-
-Чтобы установить разрешения для контейнера, можно использовать:
-
-* [портал Azure](https://portal.azure.com)
-* [Azure PowerShell](../common/storage-powershell-guide-full.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)
-* [Интерфейс командной строки Azure](../common/storage-azure-cli.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#create-and-manage-blobs)
-* программный метод с помощью одной из клиентских библиотек службы хранилища или REST API.
+- **Нет общего доступа для чтения:** Доступ к контейнеру и его BLOB-объектам может осуществлять только владелец учетной записи хранения. Это способ доступа по умолчанию для всех новых контейнеров.
+- **Общий доступ на чтение только для больших двоичных объектов:** Большие двоичные объекты в контейнере могут считываться анонимным запросом, но данные контейнера недоступны. Анонимные клиенты не могут перечислять большие двоичные объекты внутри контейнера.
+- **Общий доступ на чтение для контейнера и его больших двоичных объектов:** Все данные контейнера и BLOB-объекта могут быть прочитаны анонимным запросом. Клиенты могут перечислять большие двоичные объекты внутри контейнера с помощью анонимного запроса, но не могут перечислять контейнеры в учетной записи хранения.
 
 ### <a name="set-container-public-access-level-in-the-azure-portal"></a>Задание уровня общего доступа к контейнеру в портал Azure
 
 На [портал Azure](https://portal.azure.com)можно обновить общий уровень доступа для одного или нескольких контейнеров:
 
-1. Войдите в свою учетную запись хранения на портале Azure.
+1. Перейдите к обзору учетной записи хранения в портал Azure.
 1. В разделе **Служба BLOB-объектов** в колонке меню выберите **большие двоичные объекты**.
 1. Выберите контейнеры, для которых необходимо задать общий уровень доступа.
 1. Используйте кнопку **изменить уровень доступа** , чтобы отобразить параметры общего доступа.
-1. Выберите нужный уровень общего доступа в раскрывающемся списке общедоступный **уровень доступа** и нажмите кнопку ОК, чтобы применить изменения к выбранным контейнерам.
+1. Выберите нужный уровень общего доступа в раскрывающемся списке **общедоступный уровень доступа** и нажмите кнопку ОК, чтобы применить изменения к выбранным контейнерам.
 
 На следующем снимке экрана показано, как изменить общий уровень доступа для выбранных контейнеров.
 
@@ -57,16 +50,28 @@ ms.locfileid: "68985549"
 
 ### <a name="set-container-public-access-level-with-net"></a>Задание уровня общего доступа к контейнеру с помощью .NET
 
-Чтобы задать разрешения для контейнера с помощью C# и клиентской библиотеки службы хранилища для .NET, сначала нужно получить существующие разрешения контейнера, вызвав метод **GetPermissions**. Затем задайте свойство **PublicAccess** для объекта **BlobContainerPermissions**, который возвращается методом **GetPermissions**. Наконец, вызовите метод **SetPermissions** с обновленными разрешениями.
+Чтобы задать разрешения для контейнера с помощью клиентской библиотеки службы хранилища Azure для .NET, сначала извлеките существующие разрешения контейнера, вызвав один из следующих методов:
+
+- [GetPermissions](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.getpermissions)
+- [жетпермиссионсасинк](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.getpermissionsasync)
+
+Затем задайте свойство **publicAccess** объекта [блобконтаинерпермиссионс](/dotnet/api/microsoft.azure.storage.blob.blobcontainerpermissions) , возвращаемого **методом GetNext** .
+
+Наконец, вызовите один из следующих методов, чтобы обновить разрешения контейнера:
+
+- [SetPermissions](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.setpermissions)
+- [SetPermissionsAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.setpermissionsasync)
 
 В следующем примере задаются разрешения контейнера на полный общий доступ на чтение. Чтобы задать общий доступ на чтение только для BLOB-объектов, задайте для свойства **PublicAccess** значение **BlobContainerPublicAccessType.Blob**. Чтобы удалить все разрешения для анонимных пользователей, задайте для этого свойства значение **BlobContainerPublicAccessType.Off**.
 
 ```csharp
-public static void SetPublicContainerPermissions(CloudBlobContainer container)
+private static async Task SetPublicContainerPermissions(CloudBlobContainer container)
 {
-    BlobContainerPermissions permissions = container.GetPermissions();
+    BlobContainerPermissions permissions = await container.GetPermissionsAsync();
     permissions.PublicAccess = BlobContainerPublicAccessType.Container;
-    container.SetPermissions(permissions);
+    await container.SetPermissionsAsync(permissions);
+
+    Console.WriteLine("Container {0} - permissions set to {1}", container.Name, permissions.PublicAccess);
 }
 ```
 
@@ -81,13 +86,15 @@ public static void SetPublicContainerPermissions(CloudBlobContainer container)
 ```csharp
 public static void CreateAnonymousBlobClient()
 {
-    // Create the client object using the Blob storage endpoint.
-    CloudBlobClient blobClient = new CloudBlobClient(new Uri(@"https://storagesample.blob.core.windows.net"));
+    // Create the client object using the Blob storage endpoint for your account.
+    CloudBlobClient blobClient = new CloudBlobClient(
+        new Uri(@"https://storagesamples.blob.core.windows.net"));
 
     // Get a reference to a container that's available for anonymous access.
     CloudBlobContainer container = blobClient.GetContainerReference("sample-container");
 
-    // Read the container's properties. Note this is only possible when the container supports full public read access.
+    // Read the container's properties. 
+    // Note this is only possible when the container supports full public read access.
     container.FetchAttributes();
     Console.WriteLine(container.Properties.LastModified);
     Console.WriteLine(container.Properties.ETag);
@@ -102,9 +109,11 @@ public static void CreateAnonymousBlobClient()
 public static void ListBlobsAnonymously()
 {
     // Get a reference to a container that's available for anonymous access.
-    CloudBlobContainer container = new CloudBlobContainer(new Uri(@"https://storagesample.blob.core.windows.net/sample-container"));
+    CloudBlobContainer container = new CloudBlobContainer(
+        new Uri(@"https://storagesamples.blob.core.windows.net/sample-container"));
 
     // List blobs in the container.
+    // Note this is only possible when the container supports full public read access.
     foreach (IListBlobItem blobItem in container.ListBlobs())
     {
         Console.WriteLine(blobItem.Uri);
@@ -119,45 +128,14 @@ public static void ListBlobsAnonymously()
 ```csharp
 public static void DownloadBlobAnonymously()
 {
-    CloudBlockBlob blob = new CloudBlockBlob(new Uri(@"https://storagesample.blob.core.windows.net/sample-container/logfile.txt"));
-    blob.DownloadToFile(@"C:\Temp\logfile.txt", System.IO.FileMode.Create);
+    CloudBlockBlob blob = new CloudBlockBlob(
+        new Uri(@"https://storagesamples.blob.core.windows.net/sample-container/logfile.txt"));
+    blob.DownloadToFile(@"C:\Temp\logfile.txt", FileMode.Create);
 }
 ```
 
-## <a name="features-available-to-anonymous-users"></a>Функции, доступные анонимным пользователям
-
-В следующей таблице показано, какие операции могут вызываться анонимно, если контейнер настроен для общего доступа.
-
-| Операция REST | Общий доступ на чтение к контейнеру | Общий доступ на чтение только больших двоичных объектов |
-| --- | --- | --- |
-| Перечисление контейнеров | Только полномочные запросы | Только полномочные запросы |
-| Create Container (Создание контейнера) | Только полномочные запросы | Только полномочные запросы |
-| Get Container Properties (Получение свойств контейнера) | Разрешены анонимные запросы | Только полномочные запросы |
-| Get Container Metadata (Получение метаданных контейнера) | Разрешены анонимные запросы | Только полномочные запросы |
-| Set Container Metadata (Определение метаданных контейнера) | Только полномочные запросы | Только полномочные запросы |
-| Get Container ACL (Получение списка управления доступом для контейнера) | Только полномочные запросы | Только полномочные запросы |
-| Set Container ACL (Задание списка управления доступом для контейнера) | Только полномочные запросы | Только полномочные запросы |
-| Delete Container (Удаление контейнера) | Только полномочные запросы | Только полномочные запросы |
-| List Blobs (Отображение списка BLOB-объектов) | Разрешены анонимные запросы | Только полномочные запросы |
-| Put BLOB (Вставка BLOB-объекта) | Только полномочные запросы | Только полномочные запросы |
-| Get BLOB (Получение BLOB-объекта) | Разрешены анонимные запросы | Разрешены анонимные запросы |
-| Get BLOB Properties (Получение свойств BLOB-объекта) | Разрешены анонимные запросы | Разрешены анонимные запросы |
-| Set BLOB Properties (Задание свойств службы BLOB-объекта) | Только полномочные запросы | Только полномочные запросы |
-| Получить метаданные BLOB-объекта | Разрешены анонимные запросы | Разрешены анонимные запросы |
-| Set BLOB Metadata (Задание метаданных BLOB-объекта) | Только полномочные запросы | Только полномочные запросы |
-| Put Block (Вставка блокировки) | Только полномочные запросы | Только полномочные запросы |
-| Получение списка блоков (только зафиксированные блоки) | Разрешены анонимные запросы | Разрешены анонимные запросы |
-| Получение списка блоков (только незафиксированные блоки или все блоки) | Только полномочные запросы | Только полномочные запросы |
-| Put Block List (Вставка списка блокировки) | Только полномочные запросы | Только полномочные запросы |
-| Delete BLOB (Удаление BLOB-объекта) | Только полномочные запросы | Только полномочные запросы |
-| Копирование BLOB-объекта | Только полномочные запросы | Только полномочные запросы |
-| Создание моментального снимка большого двоичного объекта | Только полномочные запросы | Только полномочные запросы |
-| Lease Blob (Аренда BLOB-объекта) | Только полномочные запросы | Только полномочные запросы |
-| Put Page (Вставка страницы) | Только полномочные запросы | Только полномочные запросы |
-| Get Page Ranges (Получение диапазона страницы) | Разрешены анонимные запросы | Разрешены анонимные запросы |
-| Добавить BLOB-объект | Только полномочные запросы | Только полномочные запросы |
-
 ## <a name="next-steps"></a>Следующие шаги
 
-* [Авторизация для служб хранилища Azure](https://docs.microsoft.com/rest/api/storageservices/authorization-for-the-azure-storage-services)
-* [С помощью подписи коллективного доступа (SAS)](../common/storage-sas-overview.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)
+- [Авторизация доступа к службе хранилища Azure](../common/storage-auth.md)
+- [Предоставление ограниченного доступа к ресурсам службы хранилища Azure с помощью подписанных URL-адресов (SAS)](../common/storage-sas-overview.md)
+- [Blob Service REST API](/rest/api/storageservices/blob-service-rest-api) (API-интерфейс REST службы BLOB-объектов)

@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 06/10/2019
-ms.openlocfilehash: dad796c8a7a34a782a4f78260ac38bd966eddde9
-ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
+ms.openlocfilehash: 4a1d835ebe47ec36bb839da8dcbcd107ffcb9c4c
+ms.sourcegitcommit: a7a9d7f366adab2cfca13c8d9cbcf5b40d57e63a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71105397"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71161959"
 ---
 # <a name="scale-azure-hdinsight-clusters"></a>Масштабирование кластеров Azure HDInsight
 
@@ -42,7 +42,7 @@ HDInsight обеспечивает гибкость, предоставляя в
 С помощью любого из этих методов можно увеличивать или уменьшать масштаб кластера HDInsight за считанные минуты.
 
 > [!IMPORTANT]  
-> * Классический интерфейс командной строки Aure является устаревшим и должен использоваться только с классической моделью развертывания. Для всех остальных развертываний используйте [Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest).  
+> * Классический интерфейс командной строки Azure является устаревшим и должен использоваться только с классической моделью развертывания. Для всех остальных развертываний используйте [Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest).  
 > * Модуль PowerShell AzureRM является устаревшим.  При возможности используйте [модуль AZ](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-1.4.0) .
 
 ## <a name="impact-of-scaling-operations"></a>Влияние операций масштабирования

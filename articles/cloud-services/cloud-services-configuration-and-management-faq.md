@@ -4,7 +4,7 @@ description: В этой статье приведены часто задава
 services: cloud-services
 documentationcenter: ''
 author: genlin
-manager: cshepard
+manager: dcscontentpm
 editor: ''
 tags: top-support-issue
 ms.assetid: 84985660-2cfd-483a-8378-50eef6a0151d
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 07/23/2018
 ms.author: genli
-ms.openlocfilehash: 480ca33f02242499bdf9fff3fa35695e7d4841a0
-ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
+ms.openlocfilehash: 0c694ffe6ccd23803fbe16001f54b7c1611635cd
+ms.sourcegitcommit: 116bc6a75e501b7bba85e750b336f2af4ad29f5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2019
-ms.locfileid: "68945469"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71154722"
 ---
 # <a name="configuration-and-management-issues-for-azure-cloud-services-frequently-asked-questions-faqs"></a>Проблемы конфигурации и управления для облачных служб Azure. Часто задаваемые вопросы (FAQ)
 
@@ -207,7 +207,7 @@ Windows 10 и Windows Server 2016 в стандартной конфигурац
 Когда все будет готово, проверьте наличие HTTP/2 с помощью одного из следующих методов.
 
 - Включите версию протокола для журналов IIS и изучите журналы IIS. HTTP/2 будет отображаться в журналах. 
-- Включите средства разработчика клавишей F12 в браузере Internet Explorer или Microsoft Edge и перейдите на вкладку "Сети", чтобы проверить версию протокола. 
+- Включите средство разработчика F12 в Internet Explorer или Microsoft ребр и перейдите на вкладку Сеть, чтобы проверить протокол. 
 
 Дополнительные сведения см. в статье [HTTP/2 on IIS](https://blogs.iis.net/davidso/http2) (HTTP/2 в IIS).
 

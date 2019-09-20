@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/09/2018
-ms.openlocfilehash: 846239c0122f3f2cadc40e7965ae690d4ba3e538
-ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.openlocfilehash: 737b049aa94ede2ffb0c1035b4cadfbed32d7dc4
+ms.sourcegitcommit: b03516d245c90bca8ffac59eb1db522a098fb5e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70899845"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71145597"
 ---
 # <a name="analyze-application-insights-telemetry-logs-with-apache-spark-on-hdinsight"></a>Анализ журналов телеметрии Application Insights с помощью Apache Spark в HDInsight
 
@@ -39,7 +39,7 @@ ms.locfileid: "70899845"
 
 На следующей схеме показана архитектура служб данного примера:
 
-![Схема, показывающая поток данных из Application Insights в хранилище BLOB-объектов с последующей обработкой Spark в HDInsight](./media/apache-spark-analyze-application-insight-logs/application-insights.png)
+![Данные, передаваемые из Application Insights в хранилище BLOB-объектов, затем Spark](./media/apache-spark-analyze-application-insight-logs/application-insights.png)
 
 ### <a name="azure-storage"></a>Служба хранилища Azure
 
@@ -72,7 +72,7 @@ Application Insights предоставляет сведения об [эксп�
 
 1. На [портале Azure](https://portal.azure.com)выберите кластер Spark в HDInsight. В разделе **Быстрые ссылки** выберите **Панели мониторинга кластера**, а затем в разделе "Панель мониторинга кластера" выберите **Записная книжка Jupyter**.
 
-    ![Панели мониторинга кластера](./media/apache-spark-analyze-application-insight-logs/hdi-cluster-dashboards.png)
+    ![Pyspark панели мониторинга кластера портал Azure](./media/apache-spark-analyze-application-insight-logs/hdi-cluster-dashboards.png)
 
 2. В правом верхнем углу страницы Jupyter щелкните **Создать**, а затем выберите **PySpark**. При этом откроется новая вкладка браузера, содержащая записную книжку Jupyter на основе Python.
 
@@ -215,7 +215,8 @@ Application Insights предоставляет сведения об [эксп�
 
 1. На [портале Azure](https://portal.azure.com)выберите кластер Spark в HDInsight. В разделе **Быстрые ссылки** выберите **Панели мониторинга кластера**, а затем в разделе "Панель мониторинга кластера" выберите **Записная книжка Jupyter**.
 
-    ![Панели мониторинга кластера](./media/apache-spark-analyze-application-insight-logs/hdi-cluster-dashboards.png)
+    ![Scala панели мониторинга кластера портал Azure](./media/apache-spark-analyze-application-insight-logs/hdi-cluster-dashboards.png)
+
 2. В правом верхнем углу страницы Jupyter щелкните **Создать**, а затем выберите **Scala**. При этом откроется новая вкладка браузера, содержащая записную книжку Jupyter на основе Scala.
 3. На этой странице в первом поле (которое называется **ячейка**) введите следующий текст:
 

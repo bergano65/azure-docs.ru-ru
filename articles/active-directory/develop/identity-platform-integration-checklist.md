@@ -16,12 +16,12 @@ ms.date: 09/11/2019
 ms.author: ryanwi
 ms.reviewer: lenalepa, sureshja, jesakowi
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 4e7b89fbb4b6343db62cf3476f3c35220b12649b
-ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
+ms.openlocfilehash: 1f4afe1c31ae964aab82664de12144185069af5a
+ms.sourcegitcommit: b03516d245c90bca8ffac59eb1db522a098fb5e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71104043"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71145661"
 ---
 # <a name="microsoft-identity-platform-best-practices-and-recommendations"></a>Рекомендации и рекомендации по платформе Microsoft Identity
 
@@ -56,7 +56,7 @@ ms.locfileid: "71104043"
 |---|---|
 | ![Установка](./media/active-directory-integration-checklist/checkbox-two.svg) | Укажите ссылки на условия предоставления услуг и заявление о конфиденциальности приложения. |
 
-## <a name="security"></a>Безопасность
+## <a name="security"></a>Группа безопасности
 
 |   |   |
 |---|---|
@@ -78,6 +78,7 @@ ms.locfileid: "71104043"
 | ![Установка](./media/active-directory-integration-checklist/checkbox-two.svg) |  Для мобильных приложений настройте каждую платформу с помощью процесса регистрации приложения. Чтобы в приложении можно было воспользоваться преимуществами Microsoft Authenticator или Microsoft корпоративный портал для единого входа, приложению необходимо настроить "URI перенаправления брокера". Это позволяет корпорации Майкрософт возвращать управление приложению после проверки подлинности. При настройке каждой платформы процедура регистрации приложения поможет вам выполнить эти действия. Загрузите рабочий пример с помощью краткого руководства. В iOS при возможности используйте брокеры и System WebView.|
 | ![Установка](./media/active-directory-integration-checklist/checkbox-two.svg) |  В веб-приложениях или веб-API для каждой учетной записи следует использовать один кэш маркеров.  Для веб-приложений кэш маркера должен быть снабжен ключом идентификатора учетной записи.  Для веб-API учетная запись должна быть привязана к хэшу маркера, используемого для вызова API. MSAL.NET обеспечивает сериализацию кэша пользовательской лексемы на платформах .NET Framework и .NET Core. По соображениям безопасности и производительности нашей рекомендацией является сериализация одного кэша на пользователя. Дополнительные сведения см. в статье о [сериализации кэша маркеров](msal-net-token-cache-serialization.md#token-cache-for-a-web-app-confidential-client-application).|
 | ![Установка](./media/active-directory-integration-checklist/checkbox-two.svg) | Если данные, необходимые для приложения, доступны через [Microsoft Graph](https://developer.microsoft.com/graph), запросите разрешения для этих данных, используя конечную точку Microsoft Graph, а не отдельный API. |
+| ![Установка](./media/active-directory-integration-checklist/checkbox-two.svg) |Не Проанализируйте значение маркера доступа или попытайтесь проанализировать его как клиент.  Они могут изменять значения, форматы и даже быть зашифрованными без предупреждения. всегда используйте id_token, если клиенту необходимо узнать о пользователе или вызвать Microsoft Graph.  Только веб-API должны анализировать маркеры доступа (поскольку они определяют формат и устанавливают ключи шифрования). |
 
 ## <a name="end-user-experience"></a>Возможности для пользователей
 

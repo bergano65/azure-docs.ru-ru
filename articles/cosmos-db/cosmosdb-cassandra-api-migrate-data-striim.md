@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/22/2019
 ms.author: sngun
 ms.reviewer: sngun
-ms.openlocfilehash: 39427ac12dc6214630d6c3e5ace62692b1ea30b6
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.openlocfilehash: ad690fa78f794b26b6cf496ea4485599486752b0
+ms.sourcegitcommit: b03516d245c90bca8ffac59eb1db522a098fb5e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "71003084"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71146973"
 ---
 # <a name="migrate-data-to-azure-cosmos-db-cassandra-api-account-using-striim"></a>Перенос данных в учетную запись Azure Cosmos DB API Cassandra с помощью Стриим
 
@@ -160,6 +160,8 @@ ms.locfileid: "71003084"
 1. Введите свойства конфигурации целевого Azure Cosmos DB экземпляра и нажмите кнопку **сохранить** , чтобы продолжить. Ниже приведены ключевые параметры, которые следует отметить:
 
    * **Адаптер** — используйте **датабасевритер**. При записи в Azure Cosmos DB API Cassandra требуется Датабасевритер. Драйвер Cassandra 3.6.0 входит в состав Стриим. Если Датабасевритер превышает число получателей, подготовленное в контейнере Cosmos для Azure, произойдет сбой приложения.
+
+   * **URL-адрес подключения** — укажите URL-адрес подключения JDBC Azure Cosmos DB. URL-адрес имеет формат`jdbc:cassandra://<contactpoint>:10350/<databaseName>?SSL=true`
 
    * **Username** — укажите имя учетной записи Azure Cosmos.
    

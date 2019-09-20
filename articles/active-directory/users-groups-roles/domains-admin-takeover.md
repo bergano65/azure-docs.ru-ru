@@ -15,12 +15,12 @@ ms.author: curtand
 ms.reviewer: elkuzmen
 ms.custom: it-pro;seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c05e1dc720f49eb190ccdbe1826a1a347fba7fa1
-ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
+ms.openlocfilehash: 00753ee8d7d128222e9fb773f00a23720813a237
+ms.sourcegitcommit: b03516d245c90bca8ffac59eb1db522a098fb5e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70914774"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71146460"
 ---
 # <a name="take-over-an-unmanaged-directory-as-administrator-in-azure-active-directory"></a>Смена неуправляемого каталога от имени администратора в Azure Active Directory
 
@@ -88,14 +88,11 @@ ms.locfileid: "70914774"
 ### <a name="support-for-external-admin-takeover"></a>Поддержка внешней смены администратором
 Внешняя смена администратором поддерживается следующими веб-службами:
 
-- Power BI
 - управление правами Azure;
 - Exchange Online
 
 Поддерживаемые планы обслуживания:
 
-- Power BI (бесплатная версия);
-- Power BI Pro;
 - PowerApps (бесплатная версия);
 - PowerFlow (бесплатная версия);
 - RMS для частных лиц;
@@ -113,10 +110,6 @@ ms.locfileid: "70914774"
 Ключ и шаблоны не перемещаются лишь в том случае, если неуправляемый клиент находится в другом регионе. Например, если неуправляемый клиент находится в Европе, а ваша организация — в Северная Америка.
 
 Несмотря на то что RMS для частных лиц поддерживает проверку подлинности в Azure AD для получения доступа к защищенному содержимому, он не запрещает пользователям также защищать содержимое. Если пользователи защищают содержимое с помощью подписки RMS для частных лиц, а ключ и шаблоны не были перемещены, это содержимое недоступно после перенаправление домена.
-
-#### <a name="more-information-about-power-bi"></a>Дополнительные сведения о Power BI
-
-Когда выполняется внешнее перенаправление, содержимое Power BI, созданное до этого перенаправления, помещается в [архивную рабочую область Power BI](/power-bi/service-admin-power-bi-archived-workspace). Все содержимое, которое будет использоваться в новом клиенте, нужно перенести вручную.
 
 ### <a name="azure-ad-powershell-cmdlets-for-the-forcetakeover-option"></a>Командлеты Azure AD PowerShell для параметра ForceTakeover
 Вы можете видеть эти командлеты, используемые в [примере PowerShell](#powershell-example).

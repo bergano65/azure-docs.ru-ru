@@ -5,14 +5,14 @@ author: dcurwin
 manager: carmonm
 ms.service: backup
 ms.topic: conceptual
-ms.date: 09/10/2019
+ms.date: 09/20/2019
 ms.author: dacurwin
-ms.openlocfilehash: 719f7f1c30a79b9057f25d6137423451cc606bfa
-ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
+ms.openlocfilehash: 5f10bb2062d7c805b485d5cfbfe8989a6aee0995
+ms.sourcegitcommit: a7a9d7f366adab2cfca13c8d9cbcf5b40d57e63a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71088421"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71162205"
 ---
 # <a name="delete-an-azure-backup-recovery-services-vault"></a>Удаление хранилища служб восстановления Azure Backup
 
@@ -33,6 +33,9 @@ ms.locfileid: "71088421"
 
   ![Удалите ошибку защищенного сервера.](./media/backup-azure-delete-vault/error-message.jpg)
 
+- Если элементы архивации находятся в состоянии обратимого удаления ниже предупреждения, появится сообщение о том, что они будут окончательно удалены. Дополнительные сведения см. в [этой статье](https://aka.ms/SoftDeleteCloudWorkloads).
+
+   ![Удалите ошибку хранилища.](./media/backup-azure-delete-vault/error-message-soft-delete.png)
   
 Чтобы удалить хранилище, выберите сценарий, соответствующий вашей настройке, и выполните рекомендуемые действия.
 

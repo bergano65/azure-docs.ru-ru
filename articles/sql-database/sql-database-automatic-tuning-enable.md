@@ -11,12 +11,12 @@ author: danimir
 ms.author: danil
 ms.reviewer: jrasnik, carlrab
 ms.date: 01/25/2019
-ms.openlocfilehash: 457ee34daf368150a8703ea32a39b2350d654523
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 67a05d065cba8286c837487e21fc2f5be54e2c0b
+ms.sourcegitcommit: a7a9d7f366adab2cfca13c8d9cbcf5b40d57e63a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68569432"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71162345"
 ---
 # <a name="enable-automatic-tuning-to-monitor-queries-and-improve-workload-performance"></a>Включение автоматической настройки для отслеживания запросов и повышения производительности рабочей нагрузки
 
@@ -41,7 +41,7 @@ ms.locfileid: "68569432"
 ![Сервер](./media/sql-database-automatic-tuning-enable/server.png)
 
 > [!NOTE]
-> Обратите внимание, что параметр **DROP_INDEX** сейчас не поддерживается в приложениях, использующих переключения секций и подсказки индекса. В этих случаях его следует отключить.
+> Обратите внимание, что параметр **DROP_INDEX** сейчас не поддерживается в приложениях, использующих переключения секций и подсказки индекса. В этих случаях его следует отключить. Удаление неиспользуемых индексов не поддерживается для уровней обслуживания "Премиум" и "критически важный для бизнеса".
 >
 
 Выберите параметры автоматической настройки, которые необходимо включить, а затем выберите **Применить**.

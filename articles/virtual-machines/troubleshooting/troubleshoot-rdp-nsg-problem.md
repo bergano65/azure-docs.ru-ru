@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 11/20/2018
 ms.author: genli
-ms.openlocfilehash: 27f86660de4f37142829114780ab9c198cb1858d
-ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
+ms.openlocfilehash: 5f95b42fd17aec4e3ec6b7b8fac1965772fefa67
+ms.sourcegitcommit: a7a9d7f366adab2cfca13c8d9cbcf5b40d57e63a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71088509"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71162594"
 ---
 #  <a name="cannot-connect-remotely-to-a-vm-because-rdp-port-is-not-enabled-in-nsg"></a>Ошибка удаленного подключения к виртуальной машине из-за отключенного порта RDP в NSG
 
@@ -42,13 +42,12 @@ ms.locfileid: "71088509"
 4. В разделе **Правила входящего порта** проверьте, правильно ли настроен порт для RDP. Ниже приведен пример конфигурации. 
 
     **Приоритет**: 300 </br>
-    **Порт**: 3389 </br>
     **Имя**: Port_3389 </br>
-    **Порт**: 3389 </br>
+    **Порт (назначение)** : 3389 </br>
     **Протокол**: TCP </br>
     **Источник**: Any </br>
     **Назначения**: Any </br>
-    **Действие**: РАЗРЕШИТЬ </br>
+    **Действие**: Allow </br>
 
 Если вы указываете IP-адрес источника, этот параметр разрешает передачу трафика только с определенного IP-адреса или диапазона IP-адресов для подключения к виртуальной машине. Убедитесь, что компьютер, который используется для начала сеанса RDP, находится в диапазоне.
 

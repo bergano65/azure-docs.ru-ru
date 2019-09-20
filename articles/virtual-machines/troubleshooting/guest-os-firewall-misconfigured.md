@@ -4,7 +4,7 @@ description: ''
 services: virtual-machines-windows
 documentationcenter: ''
 author: Deland-Han
-manager: willchen
+manager: dcscontentpm
 editor: ''
 tags: ''
 ms.service: virtual-machines
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.devlang: azurecli
 ms.date: 11/22/2018
 ms.author: delhan
-ms.openlocfilehash: fcea5e4e6bb108f1a8d8036e51a5dae8a9e6431b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 8f04d943e1db49beed13c183fbd06e401546fc03
+ms.sourcegitcommit: 116bc6a75e501b7bba85e750b336f2af4ad29f5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60711022"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71153899"
 ---
 # <a name="azure-vm-guest-os-firewall-is-misconfigured"></a>Брандмауэр гостевой ОС виртуальной машины Azure настроен неправильно
 
@@ -98,7 +98,7 @@ ms.locfileid: "60711022"
 
 ### <a name="offline-mitigations"></a>Автономные способы решения
 
-1.  Включить или отключить правила брандмауэра, см. в статье [включить или отключить правило брандмауэра в гостевой ОС виртуальной Машины Azure](enable-disable-firewall-rule-guest-os.md).
+1.  Чтобы включить или отключить правила брандмауэра, см. статью [Включение или отключение правила брандмауэра в гостевой ОС виртуальной машины Azure](enable-disable-firewall-rule-guest-os.md).
 
 2.  Проверьте, не [блокирует ли брандмауэр гостевой ОС входящий трафик](guest-os-firewall-blocking-inbound-traffic.md).
 

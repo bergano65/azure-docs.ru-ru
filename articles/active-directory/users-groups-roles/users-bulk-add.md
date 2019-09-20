@@ -1,5 +1,5 @@
 ---
-title: Групповой импорт для добавления пользователей (Предварительная версия) на портале Azure Active Directory | Документация Майкрософт
+title: Групповое создание пользователей (Предварительная версия) на портале Azure Active Directory | Документация Майкрософт
 description: Полное Добавление пользователей в центре администрирования Azure AD в Azure Active Directory
 services: active-directory
 author: curtand
@@ -13,14 +13,14 @@ ms.workload: identity
 ms.custom: it-pro
 ms.reviewer: jeffsta
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a22052117448cdb71bbc16e1df7899e6d3eb764e
-ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.openlocfilehash: 87c62cbe71f2e02c6f2c09620a8470a97ae57392
+ms.sourcegitcommit: b03516d245c90bca8ffac59eb1db522a098fb5e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70901494"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71146312"
 ---
-# <a name="bulk-import-users-preview-in-azure-active-directory"></a>Пользователи с массовым импортом (Предварительная версия) в Azure Active Directory
+# <a name="bulk-create-users-preview-in-azure-active-directory"></a>Групповое создание пользователей (Предварительная версия) в Azure Active Directory
 
 Azure Active Directory (Azure AD) поддерживает групповые операции создания и удаления пользователей, неполное приглашение для гостей и поддерживает загрузку списков пользователей, групп и членов групп.
 
@@ -37,6 +37,9 @@ Azure Active Directory (Azure AD) поддерживает групповые о
 1. [Войдите в организацию Azure AD](https://aad.portal.azure.com) с помощью учетной записи, которая является администратором пользователя в Организации.
 1. В Azure AD выберите **Пользователи** > с**массовым созданием**.
 1. На странице « **Групповое создание пользователя** » выберите **скачать** , чтобы получить допустимый файл значений с разделителями-запятыми (CSV) в свойствах пользователя, а затем добавьте новых пользователей.
+
+   ![CSV-файл содержит имена и идентификаторы создаваемых пользователей](./media/users-bulk-add/add-csv-file.png)
+
 1. После завершения редактирования CSV-файла или при наличии готовых к отправке данных выберите файл в разделе **Отправка CSV-файла** для проверки.
 
    ![Выберите локальный CSV-файл, в котором перечислены пользователи, которые вы хотите добавить.](./media/users-bulk-add/upload-button.png)

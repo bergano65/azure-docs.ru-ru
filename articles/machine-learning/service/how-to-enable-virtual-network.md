@@ -10,12 +10,12 @@ ms.reviewer: jmartens
 ms.author: aashishb
 author: aashishb
 ms.date: 08/05/2019
-ms.openlocfilehash: f12c77a25bad9781d5f23b9563f6684997a2a6c4
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.openlocfilehash: 9299959eef24f6890218dc2d2aa733cc227e1a32
+ms.sourcegitcommit: a7a9d7f366adab2cfca13c8d9cbcf5b40d57e63a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "71002795"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71162584"
 ---
 # <a name="secure-azure-ml-experimentation-and-inference-jobs-within-an-azure-virtual-network"></a>Защита заданий экспериментирования и вывода машинного обучения Azure в виртуальной сети Azure
 
@@ -345,6 +345,22 @@ aks_target = ComputeTarget.create(workspace=ws,
 ```
 
 После завершения процесса создания можно выполнить вывод или оценку модели в кластере AKS за пределами виртуальной сети. Дополнительные сведения см. в статье [о развертывании в Службе Azure Kubernetes](how-to-deploy-to-aks.md).
+
+## <a name="use-azure-firewall"></a>Использование брандмауэра Azure
+
+При использовании брандмауэра Azure необходимо настроить сетевое правило, разрешающее входящий и исходящий трафик из следующих адресов:
+
+- `*.batchai.core.windows.net`
+- `ml.azure.com`
+- `*.azureml.ms`
+- `*.experiments.azureml.net`
+- `*.modelmanagement.azureml.net`
+- `mlworkspace.azure.ai`
+- `*.aether.ms`
+
+При добавлении правила задайте для __протокола__ значение Any, а для `*`портов —.
+
+Дополнительные сведения о настройке правила сети см. в статье [развертывание и настройка брандмауэра Azure](/azure/firewall/tutorial-firewall-deploy-portal#configure-a-network-rule).
 
 ## <a name="next-steps"></a>Следующие шаги
 
