@@ -31,7 +31,7 @@
             - name: Автоматическое обучение модели машинного обучения
               displayName: 'automl, automated, auto ml,'
               href: tutorial-auto-train-models.md
-        - name: Пакетная оценка с использованием конвейеров (дополнительные сведения)
+        - name: Конвейеры в Машинном обучении (дополнительно)
           items:
             - name: Пакетная оценка модели классификации
               displayName: pipelines
