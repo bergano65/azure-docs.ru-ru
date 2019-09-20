@@ -1,18 +1,18 @@
 ---
 title: Устранение неполадок с YARN в Azure HDInsight
 description: Получите ответы на распространенные вопросы о работе с Apache Hadoop YARN и Azure HDInsight.
-ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
+ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 08/15/2019
-ms.openlocfilehash: 107230a4d8c2e0427c2fcf2a8862559c707831a1
-ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
+ms.openlocfilehash: a0eb0d15d931cf1b2f71740c7a9359cf16205481
+ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71076570"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71122517"
 ---
 # <a name="troubleshoot-apache-hadoop-yarn-by-using-azure-hdinsight"></a>Устранение неполадок рабочих нагрузок Apache Hadoop YARN с помощью Azure HDInsight
 
@@ -26,7 +26,7 @@ ms.locfileid: "71076570"
 
 В этом примере емкость двух имеющихся очередей (**default** и **thriftsvr**) изменяется с 50 % на 25 %, что позволяет обеспечить для новой очереди (spark) емкость 50 %.
 
-| Очередь | Capacity | Максимальная емкость |
+| Очередь | Производительность | Максимальная емкость |
 | --- | --- | --- |
 | значение по умолчанию | 25% | 50 % |
 | thrftsvr | 25 % | 50 % |
@@ -34,24 +34,24 @@ ms.locfileid: "71076570"
 
 1. Выберите значок **просмотров Ambari**, а затем выберите шаблон сетки. После этого выберите **диспетчер очереди YARN**.
 
-    ![Выбор значка просмотров Ambari](media/hdinsight-troubleshoot-yarn/apache-yarn-create-queue-1.png)
+    ![Диспетчер очереди YARN панели мониторинга Apache Ambari](media/hdinsight-troubleshoot-yarn/apache-yarn-create-queue-1.png)
 2. Выберите очередь **по умолчанию**.
 
-    ![Выбор очереди default](media/hdinsight-troubleshoot-yarn/apache-yarn-create-queue-2.png)
+    ![Apache Ambari YARN выбор очереди по умолчанию](media/hdinsight-troubleshoot-yarn/apache-yarn-create-queue-2.png)
 3. Для очереди **default** измените **емкость** с 50 % на 25 %. Для очереди **thriftsvr** измените **емкость** на 25 %.
 
     ![Изменение емкости до 25 % для очередей default и thriftsvr](media/hdinsight-troubleshoot-yarn/apache-yarn-create-queue-3.png)
 4. Нажмите кнопку **Add Queue** (Добавить очередь), чтобы создать очередь.
 
-    ![Выбор кнопки Add Queue (Добавить очередь)](media/hdinsight-troubleshoot-yarn/apache-yarn-create-queue-4.png)
+    ![Очередь добавления панели мониторинга YARN Apache Ambari](media/hdinsight-troubleshoot-yarn/apache-yarn-create-queue-4.png)
 
 5. Присвойте имя новой очереди.
 
-    ![Имя Spark для новой очереди](media/hdinsight-troubleshoot-yarn/apache-yarn-create-queue-5.png)  
+    ![Очередь имен панели мониторинга Apache Ambari YARN](media/hdinsight-troubleshoot-yarn/apache-yarn-create-queue-5.png)  
 
 6. Оставьте значение **емкости** 50 %, а затем выберите кнопку **Действия**.
 
-    ![Выбор кнопки "Действия"](media/hdinsight-troubleshoot-yarn/apache-yarn-create-queue-6.png)  
+    ![Выбор действия Apache Ambari YARN](media/hdinsight-troubleshoot-yarn/apache-yarn-create-queue-6.png)  
 7. Выберите команду **Save and Refresh Queues** (Сохранить и обновить очереди).
 
     ![Выбор Save and Refresh Queues (Сохранить и обновить очереди)](media/hdinsight-troubleshoot-yarn/apache-yarn-create-queue-7.png)  
@@ -64,7 +64,7 @@ ms.locfileid: "71076570"
 
 ## <a name="how-do-i-download-yarn-logs-from-a-cluster"></a>Как скачать журналы YARN из кластера?
 
-### <a name="resolution-steps"></a>Способы устранения 
+### <a name="resolution-steps"></a>Способы устранения
 
 1. Подключитесь к кластеру HDInsight с помощью клиента Secure Shell (SSH). Подробные сведения см. в разделе [Дополнительные материалы](#additional-reading-2).
 

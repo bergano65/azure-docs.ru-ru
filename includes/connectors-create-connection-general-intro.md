@@ -2,17 +2,17 @@
 title: включение файла
 description: включение файла
 services: logic-apps
-author: ecfan
 ms.service: logic-apps
-ms.topic: include
-ms.date: 05/14/2018
+author: ecfan
 ms.author: estfan
+ms.topic: include
+ms.date: 09/18/2019
 ms.custom: include file
-ms.openlocfilehash: 6594031aeccae4b9f0ea843e2d72cb01a67d492d
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 1fbf8a8d83871fa4cbed3fa79d3c19d66406329d
+ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185043"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71120898"
 ---
-Чтобы приложение логики получило доступ к любой службе, следует создать *подключение* между приложением логики и службой. Если это подключение не было создано ранее, появится запрос на ввод сведений о соединении при добавлении триггера или действия для этой службы в приложение логики. Конструктор приложений логики позволяет быстро создавать подключения непосредственно из приложения логики.
+При использовании триггера или действия, обращающегося к службе в первый раз, конструктор Logic Apps предлагает создать *Подключение* к этой службе. Затем можно предоставить необходимые сведения о соединении непосредственно из приложения логики в конструкторе.

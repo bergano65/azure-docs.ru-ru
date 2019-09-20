@@ -1,19 +1,19 @@
 ---
 title: Подключение к Kafka с помощью виртуальных сетей в Azure HDInsight
 description: Узнайте, как подключиться напрямую к Kafka в HDInsight с помощью виртуальной сети Azure. Узнайте, как подключиться к Kafka из клиентов разработки с помощью шлюза VPN или из клиентов в локальной сети, используя устройство шлюза VPN.
-ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
+ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/28/2019
-ms.openlocfilehash: ab5f8c35334b6b6c56b0ebe8714d04ad5c7c8084
-ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
+ms.openlocfilehash: 66bb054ab75c5a4e387995bc64dbc026c073413f
+ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70960431"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71122609"
 ---
 # <a name="connect-to-apache-kafka-on-hdinsight-through-an-azure-virtual-network"></a>Подключение к Apache Kafka в HDInsight с помощью виртуальной сети Azure
 
@@ -252,7 +252,7 @@ HDInsight не разрешает прямое подключение к Kafka �
 
 3. Чтобы просмотреть конфигурацию Kafka, выберите пункт __Configs__ (Конфигурации) в верхней части окна.
 
-    ![Ссылка на пункт "Configs" (Конфигурации) для Kafka](./media/apache-kafka-connect-vpn-gateway/select-kafka-config1.png)
+    ![Настройка служб Apache Ambari Services](./media/apache-kafka-connect-vpn-gateway/select-kafka-config1.png)
 
 4. Чтобы найти конфигурацию __kafka-env__, введите `kafka-env` в поле __фильтра__ в правом верхнем углу.
 
@@ -274,7 +274,7 @@ HDInsight не разрешает прямое подключение к Kafka �
 
 8. Нажмите кнопку __Save__ (Сохранить), чтобы сохранить изменения в конфигурации. Введите текст, описывающий изменения. После сохранения изменений нажмите кнопку __ОК__.
 
-    ![Кнопка сохранения конфигурации](./media/apache-kafka-connect-vpn-gateway/save-configuration-button.png)
+    ![Конфигурация сохранения для Apache Ambari](./media/apache-kafka-connect-vpn-gateway/save-configuration-button.png)
 
 9. Для предотвращения ошибок при перезапуске Kafka нажмите кнопку __Service Actions__ (Действия со службой) и выберите __Turn On Maintenance Mode__ (Включить режим обслуживания). Чтобы завершить эту операцию, нажмите кнопку "ОК".
 

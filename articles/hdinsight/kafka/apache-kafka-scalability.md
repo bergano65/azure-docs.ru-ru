@@ -1,19 +1,19 @@
 ---
 title: Повышение масштабируемости Apache Kafka в Azure HDInsight
 description: Узнайте, как настроить управляемые диски для кластера Apache Kafka в Azure HDInsight, чтобы повысить масштабируемость.
-ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
+ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/30/2018
-ms.openlocfilehash: a3c4f78e9d3b46b66cb2a893c4eed39f865172dc
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ef32a5d3a1439cded6cd092f076e7b26c178cb7a
+ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64711726"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71122109"
 ---
 # <a name="configure-storage-and-scalability-for-apache-kafka-on-hdinsight"></a>Настройка объема хранилища и уровня масштабируемости для Apache Kafka в HDInsight
 
@@ -23,9 +23,9 @@ Kafka в HDInsight использует локальный диск для ви�
 
 На схеме ниже сравниваются две версии Kafka в HDInsight: до использования управляемых дисков и с ними.
 
-![Схема: Kafka в HDInsight с одним виртуальным жестким диском для каждой виртуальной машины и с несколькими управляемыми дисками для каждой виртуальной машины](./media/apache-kafka-scalability/kafka-with-managed-disks-architecture.png)
+![Архитектура управляемых дисков Kafka](./media/apache-kafka-scalability/kafka-with-managed-disks-architecture.png)
 
-## <a name="configure-managed-disks-azure-portal"></a>Настройка управляемых дисков. Портал Azure
+## <a name="configure-managed-disks-azure-portal"></a>Настройка управляемых дисков. портала Azure
 
 1. Следуйте указаниям в статье о [создании кластеров HDInsight](../hdinsight-hadoop-create-linux-clusters-portal.md), чтобы ознакомиться с основными действиями для создания кластера с помощью портала. Не завершайте создание кластера на портале.
 
@@ -34,7 +34,7 @@ Kafka в HDInsight использует локальный диск для ви�
     > [!NOTE]  
     > Управляемый диск может быть двух типов: __Стандартный__ (HDD) или __Премиум__ (SSD). Диски категории "Премиум" используются с виртуальными машинами серий DS и GS. Для всех остальных виртуальных машин используются стандартные управляемые диски.
 
-    ![Изображение раздела "Размер кластера" с выделенным полем "Число дисков на рабочий узел"](./media/apache-kafka-scalability/set-managed-disks-portal.png)
+    ![раздел "размер кластера" с выделенным узлом "диски на рабочий узел"](./media/apache-kafka-scalability/set-managed-disks-portal.png)
 
 ## <a name="configure-managed-disks-resource-manager-template"></a>Настройка управляемых дисков. Шаблон Resource Manager
 
@@ -50,7 +50,7 @@ Kafka в HDInsight использует локальный диск для ви�
 
 Полный шаблон, в котором показано, как настроить управляемые диски, можно найти на странице [https://hditutorialdata.blob.core.windows.net/armtemplates/create-linux-based-kafka-mirror-cluster-in-vnet-v2.1.json](https://hditutorialdata.blob.core.windows.net/armtemplates/create-linux-based-kafka-mirror-cluster-in-vnet-v2.1.json).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о работе с Apache Kafka HDInsight см. в следующих документах:
 

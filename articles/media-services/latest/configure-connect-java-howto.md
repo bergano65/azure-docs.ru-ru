@@ -11,14 +11,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/18/2019
+ms.date: 09/18/2019
 ms.author: juliako
-ms.openlocfilehash: f89e5cc434403e4edc3501d24ce2e94664d13ae9
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.openlocfilehash: 3f5e45bb84ca4fc46ccf1f3f3ab86d43c7c03cab
+ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70307843"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71122874"
 ---
 # <a name="connect-to-media-services-v3-api---java"></a>Подключение к API служб мультимедиа v3 — Java
 
@@ -129,3 +129,5 @@ mvn archetype:generate -DgroupId=com.azure.ams -DartifactId=testAzureApp -Darche
 ## <a name="next-steps"></a>Следующие шаги
 
 Теперь можно включать `import com.microsoft.azure.management.mediaservices.v2018_07_01.*;` и приступить к управлению сущностями.
+
+Дополнительные примеры кода см. в репозитории [примеров пакета SDK для Java](https://docs.microsoft.com/samples/azure-samples/media-services-v3-java/azure-media-services-v3-samples-using-java/) .

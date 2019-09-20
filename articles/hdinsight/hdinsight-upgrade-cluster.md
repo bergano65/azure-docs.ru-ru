@@ -1,30 +1,31 @@
 ---
 title: Обновление кластера HDInsight до более новой версии в Azure
 description: Ознакомьтесь с рекомендациями по обновлению кластера Azure HDInsight до более новой версии.
-ms.service: hdinsight
 author: omidm1
 ms.author: omidm
 ms.reviewer: jasonh
+ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 04/04/2017
-ms.openlocfilehash: a62da0d27d21589f7b75a89cc184ce9f456f1fed
-ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
+ms.openlocfilehash: 808e592a01bca2066b7d3d37a5fdfa697d739d4b
+ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70960705"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71122450"
 ---
 # <a name="upgrade-hdinsight-cluster-to-a-newer-version"></a>Обновление кластера HDInsight до более новой версии
+
 Чтобы воспользоваться преимуществами новых возможностей HDInsight, мы рекомендуем обновить кластеры HDInsight до последней версии. Выполните следующие инструкции, чтобы обновить версию кластера HDInsight.
 
 > [!NOTE]  
 > См. дополнительные сведения о [поддерживаемых версиях компонентов HDInsight](hdinsight-component-versioning.md#supported-hdinsight-versions).
 
 ## <a name="upgrade-tasks"></a>Задачи обновления
-Рабочий процесс для обновления кластера HDInsight выглядит так.
 
-![Схема рабочего процесса](./media/hdinsight-upgrade-cluster/upgrade-workflow-diagram.png)
+Рабочий процесс для обновления кластера HDInsight выглядит так.
+![Схема рабочего процесса обновления HDInsight](./media/hdinsight-upgrade-cluster/upgrade-workflow-diagram.png)
 
 1. Ознакомьтесь со всеми разделами этого документа. Там описаны изменения, которые могут потребоваться при обновлении кластера HDInsight.
 2. Создайте кластер как среду тестирования и контроля качества. См. дополнительные сведения о [создании кластеров под управлением Linux в HDInsight](hdinsight-hadoop-provision-linux-clusters.md).
@@ -40,7 +41,7 @@ ms.locfileid: "70960705"
 5.  Запустите задания и продолжите обработку с помощью нового кластера.
 
 ## <a name="next-steps"></a>Следующие шаги
+
 * [Узнайте, как создавать кластеры HDInsight под управлением Linux](hdinsight-hadoop-provision-linux-clusters.md)
 * [Подключитесь к HDInsight с помощью протокола SSH](hdinsight-hadoop-linux-use-ssh-unix.md).
 * [Управление кластерами HDInsight с помощью веб-интерфейса Ambari](hdinsight-hadoop-manage-ambari.md)
-
