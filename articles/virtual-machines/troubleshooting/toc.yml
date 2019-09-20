@@ -187,3 +187,9 @@
   href: understand-vm-reboot.md
 - name: Средства удаленного устранения неполадок
   href: remote-tools-troubleshoot-azure-vm-issues.md
+- name: Восстановление виртуальной машины
+  items:
+    - name: Восстановление виртуальной машины Windows с помощью команд восстановления виртуальной машины Azure
+      href: repair-windows-vm-using-azure-virtual-machine-repair-commands.md
+    - name: Восстановление виртуальной машины Linux с помощью команд восстановления виртуальной машины Azure
+      href: repair-linux-vm-using-azure-virtual-machine-repair-commands.md

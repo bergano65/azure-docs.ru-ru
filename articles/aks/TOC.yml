@@ -118,7 +118,7 @@
         - name: Удаление кластера AKS
           href: '/cli/azure/aks#az-aks-delete'
           maintainContext: true
-        - name: Создание ACR для кластера AKS
+        - name: Интеграция ACR с кластером AKS
           href: cluster-container-registry-integration.md
         - name: Создание виртуальных узлов
           items:

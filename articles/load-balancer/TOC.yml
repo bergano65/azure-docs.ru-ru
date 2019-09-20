@@ -129,6 +129,8 @@
           href: move-across-regions-external-load-balancer-portal.md
         - name: "Внешний балансировщик нагрузки\_— PowerShell"
           href: move-across-regions-external-load-balancer-powershell.md
+        - name: "Внутренний балансировщик нагрузки\_— портал"
+          href: move-across-regions-internal-load-balancer-portal.md
         - name: "Внутренний балансировщик нагрузки\_— PowerShell"
           href: move-across-regions-internal-load-balancer-powershell.md
     - name: Устранение неполадок

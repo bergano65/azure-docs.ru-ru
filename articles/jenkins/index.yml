@@ -1,64 +1,103 @@
-### YamlMime:YamlDocument
-documentType: LandingData
-title: Jenkins в Azure
+### YamlMime:Landing
+title: Документация по использованию Jenkins в Azure.
+summary: Узнайте, как использовать Jenkins для автоматизации непрерывной интеграции и непрерывной поставки в Azure.
 metadata:
-  title: 'Документация по Jenkins в Azure: руководства, примеры, справочные материалы и ресурсы'
-  description: Развертывание и интеграция Jenkins в Azure
+  title: Документация по использованию Jenkins в Azure
+  description: Узнайте, как использовать Jenkins для автоматизации непрерывной интеграции и непрерывной поставки в Azure.
+  services: azure
   ms.service: jenkins
-  keywords: 'jenkins, azure, devops, tutorials, samples, reference'
-  author: tomarchermsft
-  manager: jeconnoc
-  ms.author: tarcher
   ms.topic: landing-page
-  ms.date: 08/27/2018
-  ms.custom: seo-java-july2019
-abstract:
-  description: 'Используйте сервер Jenkins открытым исходным кодом для сборки приложений в облаке и их развертывания в Azure. Изучив наши руководства и примеры, вы узнаете, как установить, настроить и масштабировать Jenkins в Azure, а также как настроить непрерывную интеграцию (CI) для приложений.'
-  aside:
-    image:
-      alt: Логотип Jenkins
-      height: 133
-      width: 110
-      src: media/Jenkins.png
-    title: null
-sections:
-  - title: Пятиминутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: Создание системы Jenkins в Azure и выполнение сборки приложения.
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/azure/virtual-machines/linux/media/index/portal.svg'
-            text: Портал Azure
-            href: 'https://docs.microsoft.com/azure/jenkins/install-jenkins-solution-template'
-  - title: Пошаговые инструкции
-    items:
-      - type: paragraph
-        text: 'Настройка непрерывной интеграции для приложений, запуск агентов в облаке и использование служб Azure в заданиях.'
-      - type: list
-        style: ordered
-        items:
-          - html: 'Настройка непрерывной интеграции в <a href="/azure/jenkins/java-deploy-webapp-tutorial">Cлужбу приложений Azure</a>, <a href="/azure/container-service/kubernetes/container-service-kubernetes-jenkins">Kubernetes</a> или <a href="/azure/virtual-machines/linux/tutorial-jenkins-github-docker-cicd">виртуальную машину Linux</a>.'
-          - html: <a href="/azure/jenkins/execute-cli-jenkins-pipeline">Подготовка ресурсов в задании конвейера</a>.
-          - html: <a href="/azure/jenkins/jenkins-azure-vm-agents">Масштабирование с помощью агентов виртуальных машин Azure</a>.
-  - title: Примеры
-    items:
-      - type: paragraph
-        text: Примеры скриптов и этапы для конвейеров.
-      - type: list
-        style: unordered
-        className: spaced noBullet
-        items:
-          - html: '<a href="https://github.com/Azure/azure-devops-utils/tree/master/jenkins">Этапы Jenkinsfile и фрагменты кода</a>'
-  - title: Справочные материалы
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: Подключаемые модули
-            html: '<p><a href="https://plugins.jenkins.io/azure-vm-agents">Агенты виртуальных машин Azure</a><p><a href="https://plugins.jenkins.io/azure-app-service">Служба приложений Azure</a></p><p><a href="https://plugins.jenkins.io/windows-azure-storage">Хранилище Azure</a></p><p><a href="https://plugins.jenkins.io/azure-container-agents">Агенты контейнеров Azure</a><p><a href="https://plugins.jenkins.io/azure-function">Подключаемый модуль функций Azure</a><p><a href="https://plugins.jenkins.io/azure-acs">Подключаемый модуль Службы контейнеров Azure</a>'
-  - type: paragraph
-    text: "<h4>Jenkins®\_— это зарегистрированная торговая марка корпорации Software in the Public Interest. [Логотип Jenkins®](https://wiki.jenkins.io/display/JENKINS/Logo) используется по лицензии [CC BY SA\_3.0](https://creativecommons.org/licenses/by-sa/3.0/) для [проекта Jenkins](https://jenkins.io).</h4>"
+  author: TomArcherMsft
+  ms.author: tarcher
+  ms.date: 09/17/2019
+  ms.openlocfilehash: 3d0a74df70b2007812acf22a40e8bd210948fae2
+  ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 09/18/2019
+  ms.locfileid: "71104284"
+landingContent:
+- title: Jenkins в Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Jenkins в Azure
+      url: overview.md
+  - linkListType: reference
+    links:
+    - text: Подключаемые модули Jenkins для Azure
+      url: jenkins-plugins.md
+  - linkListType: architecture
+    links:
+    - text: Архитектура Jenkins
+      url: /azure/architecture/reference-architectures/jenkins/
+- title: Установка и настройка Jenkins
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Создание сервера Jenkins
+      url: install-jenkins-solution-template.md
+  - linkListType: download
+    links:
+    - text: Примеры заданий и скриптов
+      url: https://github.com/azure/jenkins
+- title: Масштабирование с помощью Jenkins в Azure
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Масштабирование с помощью службы "Экземпляры контейнеров Azure"
+      url: /azure/container-instances/container-instances-jenkins?toc=/azure/jenkinstoc.json&bc=/azure/bread/toc.json
+    - text: Масштабирование с помощью агентов виртуальных машин Azure
+      url: jenkins-azure-vm-agents.md
+- title: Использование CI/CD в Функциях Azure
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Развертывание в Функции Azure
+      url: jenkins-azure-functions-deploy.md
+- title: Использование CI/CD в AKS
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Развертывание из GitHub в AKS
+      url: /azure/aks/jenkins-continuous-deployment?toc=/azure/jenkinstoc.json&bc=/azure/bread/toc.json
+    - text: Развертывание в AKS с использованием шаблона Blue-Green
+      url: jenkins-aks-blue-green-deployment.md
+    - text: Развертывание с помощью подключаемого модуля Azure Dev Spaces
+      url: tutorial-jenkins-dev-spaces.md
+- title: Непрерывная интеграция и поставка в службу приложений
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Создание ресурсов Azure в задании конвейера
+      url: execute-cli-jenkins-pipeline.md
+    - text: Развертывание из GitHub в Службу приложений
+      url: tutorial-jenkins-deploy-web-app-azure-app-service.md
+  - linkListType: how-to-guide
+    links:
+    - text: Развертывание с помощью подключаемого модуля Службы приложений
+      url: deploy-jenkins-app-service-plugin.md
+- title: Использование CI/CD в Azure DevOps
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Развертывание на виртуальной машине Linux с помощью Azure DevOps Services
+      url: /azure/virtual-machines/linux/tutorial-build-deploy-jenkins?toc=/azure/jenkinstoc.json&bc=/azure/bread/toc.json
+- title: Использование CI/CD в службе хранилища Azure
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Использование службы хранилища Azure с решением непрерывной интеграции Jenkins
+      url: /azure/storage/storage-java-jenkins-continuous-integration-solution?toc=/azure/jenkinstoc.json&bc=/azure/bread/toc.json
+- title: CI/CD в виртуальные машины Linux
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Создание инфраструктуры разработки на виртуальной машине Linux
+      url: /azure/virtual-machines/linux/tutorial-jenkins-github-docker-cicd?toc=/azure/jenkinstoc.json&bc=/azure/bread/toc.json
+- title: CI/CD в Service Fabric
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Создание и развертывание приложений Service Fabric
+      url: /azure/service-fabric/service-fabric-cicd-your-linux-applications-with-jenkins?toc=/azure/jenkinstoc.json&bc=/azure/bread/toc.json

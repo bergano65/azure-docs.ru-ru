@@ -239,17 +239,17 @@
           href: cognitive-search-concept-troubleshooting.md
         - name: Ссылки на документацию
           href: cognitive-search-resources-documentation.md
-    - name: Хранилище знаний (предварительная версия)
-      items:
-        - name: Создание хранилища знаний на портале Azure
-          href: knowledge-store-create-portal.md
-        - name: Создание с помощью REST и Postman
-          href: knowledge-store-howto.md
-        - name: Просмотр данных с помощью Обозревателя службы хранилища
-          href: knowledge-store-view-storage-explorer.md
-        - name: Подключение с помощью Power BI
-          href: knowledge-store-connect-power-bi.md
-    - name: Запрашивание данных
+        - name: Хранилище знаний (предварительная версия)
+          items:
+            - name: Создание хранилища знаний на портале Azure
+              href: knowledge-store-create-portal.md
+            - name: Создание с помощью REST и Postman
+              href: knowledge-store-howto.md
+            - name: Просмотр данных с помощью Обозревателя службы хранилища
+              href: knowledge-store-view-storage-explorer.md
+            - name: Подключение с помощью Power BI
+              href: knowledge-store-connect-power-bi.md
+    - name: Запрос документов
       items:
         - name: Создание простого запроса
           href: search-query-overview.md
@@ -265,7 +265,7 @@
           href: search-query-lucene-examples.md
         - name: moreLikeThis (предварительная версия)
           href: search-more-like-this.md
-    - name: Использование фильтров
+    - name: Применение фильтров
       items:
         - name: Общие сведения о фильтрах
           href: search-filters.md
@@ -283,18 +283,14 @@
       items:
         - name: Функции страниц
           href: search-pagination-page-layout.md
-    - name: Настройка релевантности
-      items:
-        - name: Добавление профилей повышения
+        - name: Настройка релевантности (профили повышения)
           href: index-add-scoring-profiles.md
-    - name: Администрирование
+    - name: Управление и мониторинг
       items:
         - name: Администрирование портала
           href: search-manage.md
         - name: Администрирование PowerShell
           href: search-manage-powershell.md
-    - name: Мониторинг
-      items:
         - name: Отслеживание действий и ведение журнала
           href: search-monitor-usage.md
         - name: Поиск в аналитике трафика

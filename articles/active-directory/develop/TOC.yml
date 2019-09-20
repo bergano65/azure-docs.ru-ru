@@ -89,6 +89,8 @@
           href: authentication-scenarios.md
         - name: Потоки аутентификации и сценарии приложений
           href: authentication-flows-app-scenarios.md
+        - name: Рекомендации по использованию платформы удостоверений
+          href: identity-platform-integration-checklist.md
         - name: Сценарии приложений
           items:
             - name: Аудитория для входа
@@ -217,8 +219,6 @@
                   href: scenario-mobile-call-api.md
                 - name: Перенос в рабочую среду
                   href: scenario-mobile-production.md
-            - name: Контрольный список для интеграции
-              href: identity-platform-integration-checklist.md
         - name: Библиотека проверки подлинности Майкрософт (MSAL)
           items:
             - name: Обзор

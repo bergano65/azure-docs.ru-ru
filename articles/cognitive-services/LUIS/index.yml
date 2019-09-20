@@ -1,113 +1,133 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Документация по Распознаванию речи (LUIS)
+summary: Сведения об использовании службы "Распознавание речи", которая позволяет приложению распознавать желания людей на основе их собственных слов.
 metadata:
-  document_id: null
-  title: 'Распознавание речи (LUIS). Краткие руководства, справочники по API и другие материалы'
-  description: 'Сведения об использовании службы "Распознавание речи", которая позволяет приложению распознавать желания людей на основе их собственных слов.'
+  ms.topic: landing-page
+  ms.date: 09/19/2019
+  ms.author: nitinme
   author: nitinme
-  manager: nitinme
   ms.service: cognitive-services
   ms.subservice: language-understanding
-  ms.topic: landing-page
-  ms.date: 01/23/2019
-  ms.author: nitinme
-abstract:
-  description: 'Служба "Распознавание речи" (LUIS) позволяет приложению распознавать желания людей на основе их собственных слов. LUIS использует машинное обучение, позволяя разработчикам создавать приложения, которые могут получать входные данные пользователей на естественном языке, а также распознавать их значение.'
-  aside:
-    image:
-      alt: null
-      height: 110
-      src: ../media/index/luis-landing-page-video.png
-      width: 250
-    title: 'Новые возможности LUIS (18:28)'
-    href: 'https://azure.microsoft.com/resources/videos/whats-new-with-language-understanding-service-luis'
-    width: 250
-sections:
-  - items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - href: /azure/cognitive-services/luis/what-is-luis
-            html: <p>Узнайте об службе "Распознавание речи" (LUIS).</p>
-            image:
-              src: ../media/index/i_overview.svg
-            title: Что такое LUIS?
-          - href: /azure/cognitive-services/luis/luis-how-plan-your-app
-            html: '<p>Подготовьте структуру намерений и сущностей, соответствующих вашему приложению.</p>'
-            image:
-              src: ../media/index/i_guidelines.svg
-            title: Планирование приложения LUIS
-          - href: /azure/cognitive-services/luis/luis-concept-best-practices
-            html: <p>Следуйте этим рекомендациям при создании приложения LUIS.</p>
-            image:
-              src: ../media/index/i_guidelines.svg
-            title: Рекомендации по приложению LUIS
-  - title: Пятиминутные руководства по началу работы
-    items:
-      - type: table
-        style: dataMatrix
-        columns:
-          - image:
-              src: media/index/logo_csharp.svg
-          - image:
-              src: media/index/logo_java.svg
-          - image:
-              src: media/index/logo_nodejs.svg
-          - image:
-              src: media/index/logo_python.svg
-        rows:
-          - title: API конечной точки
-            values:
-              - href: luis-get-started-cs-get-intent
-              - href: luis-get-started-java-get-intent
-              - href: luis-get-started-node-get-intent
-              - href: luis-get-started-python-get-intent
-          - title: Разработка API
-            values:
-              - href: luis-get-started-cs-add-utterance
-              - href: luis-get-started-java-add-utterance
-              - href: luis-get-started-node-add-utterance
-              - href: luis-get-started-python-add-utterance
-  - title: Пошаговые инструкции
-    items:
-      - type: list
-        style: ordered
-        items:
-          - html: <a href="luis-quickstart-intents-only">Создание приложения для домена отдела кадров</a>
-          - html: <a href="luis-tutorial-prebuilt-intents-entities">Добавление предварительно созданных намерений и сущностей</a>
-          - html: <a href="luis-quickstart-intents-regex-entity">Добавление сущности регулярного выражения</a>
-          - html: <a href="luis-quickstart-intent-and-list-entity">Добавление сущности списка</a>
-          - html: <a href="tutorial-entity-roles">Использование ролей сущностей</a>
-          - html: <a href="luis-quickstart-primary-and-secondary-data">Добавление простой сущности и списка фраз</a>
-          - html: <a href="luis-quickstart-intent-and-key-phrase">Добавление сущности keyPhrase</a>
-          - html: <a href="luis-quickstart-intent-and-sentiment-analysis">Добавление анализа тональности</a>
-  - title: Примеры
-    items:
-      - type: list
-        style: unordered
-        items:
-          - html: '<a href="https://aka.ms/luis-code-samples">Примеры на GitHub</a><br/>'
-  - title: Видео
-    items:
-      - type: list
-        style: unordered
-        items:
-          - html: '<a href="https://channel9.msdn.com/Shows/Azure-Friday/At-Build-2018-Cognitive-Services-Language-LUIS/player" > Build 2018: серия "Пятница с Azure". Cognitive Services и служба "Распознавание речи" (LUIS)</a>'
-          - html: "<a href=\"https://channel9.msdn.com/events/Build/2018/BRK3208\" >Build\_2018. Интеллектуальные функции ботов, возможности службы \"Речь\" и рекомендации по использованию NLU</a>"
-  - title: Справочные материалы
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: Интерфейсы REST API версии 2
-            html: '<p><a href="https://go.microsoft.com/fwlink/?linkid=2092356"> API конечной точки</a></p><p><a href="https://go.microsoft.com/fwlink/?linkid=2092087"> Разработка API</a></p>'
-          - title: Пакеты SDK
-            html: '<p><a href="https://aka.ms/luis-endpoint-sdk"> Пакет SDK для .NET (конечная точка)</a></p><p><a href="https://aka.ms/luis-authoring-sdk"> Пакет SDK для .NET (создание)</a></p>'
-          - title: PowerShell
-            html: '<p><a href=https://docs.microsoft.com/powershell/module/az.cognitiveservices/#cognitive_services">Azure PowerShell</a></p>'
-          - title: CLI
-            html: '<p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices">Azure CLI</a></p>'
+  services: cognitive-services
+  title: Документация по Распознаванию речи (LUIS)
+  titleSuffix: Azure Cognitive Services
+  description: Служба "Распознавание речи" (LUIS) позволяет приложению распознавать желания людей на основе их собственных слов. LUIS использует машинное обучение, позволяя разработчикам создавать приложения, которые могут получать входные данные пользователей на естественном языке, а также распознавать их значение.
+  ms.openlocfilehash: 2191d2b3efebe1439f9f6180540929dc83027846
+  ms.sourcegitcommit: 2ed6e731ffc614f1691f1578ed26a67de46ed9c2
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 09/19/2019
+  ms.locfileid: "71129267"
+landingContent:
+- title: Сведения о Распознавании речи (LUIS)
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Общие сведения о Распознавании речи
+      url: what-is-luis.md
+    - text: Новые возможности
+      url: whats-new.md
+    - text: Портал LUIS
+      url: https://www.luis.ai
+  - linkListType: concept
+    links:
+    - text: Планирование приложения
+      url: luis-how-plan-your-app.md
+    - text: Цикл разработки приложения
+      url: luis-concept-app-iteration.md
+  - linkListType: video
+    links:
+    - text: 'Презентация решений для ИИ: LUIS'
+      url: https://azure.microsoft.com/resources/videos/whats-new-with-language-understanding-service-luis
+- title: Создание намерений, сущностей и признаков
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Намерения
+      url: luis-concept-intent.md
+    - text: Сущности
+      url: luis-concept-entity-types.md
+    - text: Хороший пример речевого фрагмента
+      url: luis-concept-utterance.md
+    - text: Признаки списков фраз
+      url: luis-concept-feature.md
+  - linkListType: quickstart
+    links:
+    - text: 'Портал: Создание приложения LUIS'
+      url: get-started-portal-build-app.md
+    - text: Использование пакета SDK для C#
+      url: sdk-python-quickstart-authoring-app.md
+    - text: Использование пакета SDK для Python
+      url: sdk-python-quickstart-authoring-app.md
+  - linkListType: how-to-guide
+    links:
+    - text: Создание приложения LUIS
+      url: luis-how-to-start-new-app.md
+    - text: Добавление намерений с примерами речевых фрагментов
+      url: luis-how-to-add-intents.md
+    - text: Добавление сущностей
+      url: luis-how-to-add-example-utterances.md
+    - text: Добавление признака списка фраз
+      url: luis-how-to-add-features.md
+- title: Управление версиями, обучение, тестирование и публикация
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Управление версиями
+      url: luis-concept-version.md
+    - text: Интерактивное тестирование
+      url: luis-concept-test.md
+    - text: Пакетное тестирование
+      url: luis-concept-batch-test.md
+  - linkListType: quickstart
+    links:
+    - text: 'Портал: Развертывание приложения в конечной точке прогнозирования'
+      url: get-started-portal-deploy-app.md
+    - text: Использование пакета SDK для C#
+      url: sdk-python-quickstart-authoring-app.md#train-the-app
+    - text: Использование пакета SDK для Python
+      url: sdk-python-quickstart-authoring-app.md#train-the-app
+  - linkListType: how-to-guide
+    links:
+    - text: Управление версиями приложения
+      url: luis-how-to-manage-versions.md
+    - text: Интерактивное тестирование
+      url: luis-interactive-test.md
+    - text: Пакетное тестирование
+      url: luis-how-to-batch-test.md
+    - text: Обучение приложения
+      url: luis-how-to-train.md
+    - text: Публикация для использования конечной точки прогнозирования
+      url: luis-how-to-publish-app.md
+- title: Получение прогноза из конечной точки
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Использование пакета SDK для .NET с C#
+      url: sdk-csharp-quickstart-query-prediction-endpoint.md
+  - linkListType: quickstart
+    links:
+    - text: Использование REST API с C#
+      url: luis-get-started-cs-get-intent.md
+    - text: Использование REST API с Go
+      url: luis-get-started-go-get-intent.md
+    - text: Использование REST API с Java
+      url: luis-get-started-java-get-intent.md
+    - text: Использование REST API с Node.js
+      url: luis-get-started-node-get-intent.md
+    - text: Использование REST API с Python
+      url: luis-get-started-python-get-intent.md
+- title: Справочные материалы
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Ресурсы для разработчиков
+      url: developer-reference-resource.md
+    - text: Ограничения приложений
+      url: luis-boundaries.md
+    - text: Предварительно созданные сущности
+      url: luis-reference-prebuilt-entities.md
+    - text: Настраиваемые сущности
+      url: luis-concept-entity-types.md#types-of-entities
+    - text: Предварительно созданные предметные области
+      url: luis-reference-prebuilt-domains.md

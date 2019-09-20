@@ -1,91 +1,114 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Документация по QnA Maker
+summary: Ознакомьтесь со службой QnA Maker и узнайте, как с помощью баз знаний в этой службе обрабатываются ваши вопросы и ответы.
 metadata:
-  title: Документация по QnA Maker. Microsoft Cognitive Services | Документация Майкрософт
-  description: 'Ознакомьтесь со службой QnA Maker и узнайте, как с помощью баз знаний в этой службе обрабатываются ваши вопросы и ответы.'
-  services: cognitive-services
-  author: diberry
-  manager: nitinme
+  ms.topic: landing-page
+  ms.date: 09/18/2019
+  ms.author: nitinme
+  author: nitinme
   ms.service: cognitive-services
   ms.subservice: qna-maker
-  ms.topic: landing-page
-  ms.date: 12/18/2018
-  ms.author: diberry
-abstract:
-  description: "QnA Maker\_— это облачная служба API, которая позволяет работать с данными в форме вопросов и ответов. QnA Maker представляет собой службу для отправки вопросов и получения ответов из частично структурированного содержимого, например документов с часто задаваемыми вопросами, URL-адресов и руководств по продуктам. Служба QnA Maker отвечает на сформулированные на естественном языке вопросы, сопоставляя их с наиболее точным ответом в базе знаний вопросов и ответов."
-  aside:
-    image:
-      alt: null
-      height: 110
-      src: ../media/index/qnamaker-landing-page-video.png
-      width: 250
-    title: 'Создание бота за несколько минут с помощью QnA Maker (8:54)'
-    href: 'https://channel9.msdn.com/Shows/AI-Show/Build-a-Bot-in-Minutes-with-QnA-Maker'
-    width: 250
-sections:
-  - items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - href: /azure/cognitive-services/qnamaker/overview/overview
-            html: <p>Подробнее о QnA Maker.</p>
-            image:
-              src: ../media/index/i_overview.svg
-            title: Общие сведения о QnA Maker
-          - href: /azure/cognitive-services/qnamaker/quickstarts/create-publish-knowledge-base
-            html: '<p>Сведения о создании, обучении и публикации базы знаний.</p>'
-            image:
-              src: ../media/index/i_tasks.svg
-            title: 'Создание, обучение и публикация базы знаний'
-          - href: /azure/cognitive-services/qnamaker/concepts/data-sources-supported
-            html: <p>Сведения о публикации базы знаний.</p>
-            image:
-              src: ../media/index/i_tasks.svg
-            title: Общие сведения об источниках данных
-  - title: Пятиминутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: 'Создайте базу знаний для содержимого вопросов и ответов:'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: media/index/logo_Csharp.svg
-            text: 'C#'
-            href: Quickstarts/create-new-kb-csharp
-          - image:
-              src: media/index/Go-Logo_Blue.svg
-            text: Go
-            href: Quickstarts/create-new-kb-go
-          - image:
-              src: media/index/logo_java.svg
-            text: Java
-            href: Quickstarts/create-new-kb-java
-          - image:
-              src: media/index/logo_nodejs.svg
-            text: Node.js
-            href: Quickstarts/create-new-kb-nodejs
-          - image:
-              src: media/index/logo_python.svg
-            text: Python
-            href: Quickstarts/create-new-kb-python
-  - title: Пошаговые руководства
-    items:
-      - type: paragraph
-        text: 'Узнайте, как разрабатывать приложения с использованием QnA Maker:'
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/azure/cognitive-services/qnamaker/tutorials/create-publish-query-in-portal">Создание базы знаний и предоставление ответов на вопросы</a></li>
-          - html: <a href="/azure/cognitive-services/qnamaker/tutorials/create-qna-bot">Создание бота QnA Maker</a></li>
-  - title: Справочные материалы
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: API
-            html: '<p><a href="https://go.microsoft.com/fwlink/?linkid=2092179">API службы QnA Maker</a></p>'
+  services: cognitive-services
+  title: Документация по QnA Maker
+  description: QnA Maker — это облачная служба API, которая позволяет работать с данными в форме вопросов и ответов. QnA Maker представляет собой службу для отправки вопросов и получения ответов из частично структурированного содержимого, например документов с часто задаваемыми вопросами, URL-адресов и руководств по продуктам. Служба QnA Maker отвечает на вопросы, сформулированные на естественном языке, сопоставляя их с наиболее точными ответами в разделе вопросов и ответов вашей базы знаний.
+  ms.openlocfilehash: 36b1c69ba1b94afadd105117ee5ac9dabcdd64a7
+  ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 09/19/2019
+  ms.locfileid: "71123008"
+landingContent:
+- title: Сведения о QnA Maker
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Общие сведения о QnA Maker
+      url: overview/overview.md
+  - linkListType: concept
+    links:
+    - text: Жизненный цикл разработки
+      url: concepts/development-lifecycle-knowledge-base.md
+    - text: Источники данных
+      url: concepts/data-sources-supported.md
+  - linkListType: video
+    links:
+    - text: Создание бота за несколько минут
+      url: https://channel9.msdn.com/Shows/AI-Show/Build-a-Bot-in-Minutes-with-QnA-Maker
+- title: Создание и редактирование базы знаний
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Общие сведения о базе знаний
+      url: concepts/knowledge-base.md
+  - linkListType: get-started
+    links:
+    - text: Краткое руководство. Создание базы знаний
+      url: how-to/create-knowledge-base.md
+    - text: Краткое руководство. Добавление вопросов и ответов
+      url: quickstarts/add-question-metadata-portal.md
+  - linkListType: how-to-guide
+    links:
+    - text: Использование дальнейших подсказок для создания диалога с несколькими шагами
+      url: how-to/multiturn-conversation.md
+    - text: Добавление беседы
+      url: how-to/chit-chat-knowledge-base.md
+    - text: Добавление защищенного источника данных SharePoint
+      url: how-to/add-sharepoint-datasources.md
+- title: Тестирование и публикация
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Интерактивное тестирование базы знаний
+      url: how-to/test-knowledge-base.md
+    - text: Публикация базы знаний
+      url: quickstarts/create-publish-knowledge-base.md#publish-the-knowledge-base
+- title: Получение ответов из базы знаний
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Краткое руководство. Использование Postman
+      url: quickstarts/get-answer-from-kb-using-postman.md
+    - text: Краткое руководство. Использование cURL
+      url: quickstarts/get-answer-from-kb-using-curl.md
+    - text: Краткое руководство. Использование REST и C#
+      url: quickstarts/get-answer-from-knowledge-base-csharp.md
+    - text: Краткое руководство. Использование NuGet и C#
+      url: quickstarts/create-publish-kb-csharp-sdk.md#generate-an-answer-from-the-knowledge-base
+  - linkListType: how-to-guide
+    links:
+    - text: Получение ответа с использованием метаданных
+      url: how-to/metadata-generateanswer-usage.md
+- title: Расширение базы знаний
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Использование активного обучения для расширения базы знаний
+      url: how-to/improve-knowledge-base.md
+    - text: Получение аналитических данных о базе знаний
+      url: how-to/get-analytics-knowledge-base.md
+- title: Боты QnA Maker
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: 'Портал: Создание бота QnA'
+      url: tutorials/create-qna-bot.md
+    - text: '.Net: Создание бота с помощью QnA Maker и Распознавания речи'
+      url: tutorials/integrate-qnamaker-luis.md
+    - text: Другие примеры ботов
+      url: https://github.com/Microsoft/BotBuilder-Samples/blob/master/README.md
+- title: Справочные материалы
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Ограничения базы знаний
+      url: limits.md
+    - text: Разработка API-интерфейсов
+      url: https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase
+    - text: Создание API ответа
+      url: https://docs.microsoft.com/rest/api/cognitiveservices/qnamakerruntime/runtime
+    - text: Справочная документация по пакету SDK для .NET
+      url: https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker?view=azure-dotnet
+    - text: Azure PowerShell
+      url: https://docs.microsoft.com/powershell/module/az.cognitiveservices/?view=azps-2.6.0#cognitive_services
+    - text: Интерфейс командной строки Azure (CLI)
+      url: https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest#az-cognitiveservices-list

@@ -271,6 +271,14 @@
           href: ./spark/apache-spark-ipython-notebook-machine-learning.md
         - name: Создание приложения Apache Spark в IntelliJ
           href: ./spark/apache-spark-create-standalone-application.md
+    - name: Основные понятия
+      items:
+        - name: Рекомендации по использованию Spark в HDInsight
+          href: ./spark/spark-best-practices.md
+        - name: Настройка параметров Apache Spark
+          href: ./spark/apache-spark-settings.md
+        - name: Оптимизация заданий Apache Spark
+          href: ./spark/apache-spark-perf.md
     - name: Практическое руководство
       items:
         - name: Использование средств
@@ -323,10 +331,6 @@
               href: ./spark/apache-spark-resource-manager.md
             - name: Управление приложениями Apache Spark с помощью расширенного сервера журнала
               href: ./spark/apache-azure-spark-history-server.md
-            - name: Настройка параметров Apache Spark
-              href: ./spark/apache-spark-settings.md
-            - name: Оптимизация заданий Apache Spark
-              href: ./spark/apache-spark-perf.md
             - name: Включение кэширования с помощью службы кэша операций ввода-вывода
               href: ./spark/apache-spark-improve-performance-iocache.md
             - name: Использование записных книжек с Apache Spark

@@ -103,6 +103,8 @@
           href: sizes-hpc.md
         - name: Предыдущие поколения
           href: sizes-previous-gen.md
+        - name: Размеры изолированных виртуальных машин
+          href: isolation.md
         - name: Единицы вычислений Azure (ACU)
           href: acu.md
         - name: Квоты на виртуальные ЦП

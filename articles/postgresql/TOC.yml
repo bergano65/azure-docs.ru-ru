@@ -232,7 +232,7 @@
       items:
         - name: Управление репликами чтения с помощью портала Azure
           href: howto-read-replicas-portal.md
-        - name: "Управление репликами чтения с помощью Azure\_CLI"
+        - name: Управление репликами чтения с помощью Azure CLI и REST API
           href: howto-read-replicas-cli.md
 - name: Справочные материалы
   items:

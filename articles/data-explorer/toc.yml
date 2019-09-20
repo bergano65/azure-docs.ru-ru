@@ -128,12 +128,18 @@
           href: dealing-with-duplicates.md
     - name: Мониторинг
       items:
-        - name: Мониторинг работоспособности кластера с использованием метрик
+        - name: Использование журналов диагностики для мониторинга приема
+          href: using-diagnostic-logs.md
+        - name: Использование метрик для мониторинга работоспособности кластера
           href: using-metrics.md
     - name: Интеграция с другими средствами
       items:
-        - name: Массовое копирование данных с помощью шаблона Фабрики данных Azure
-          href: data-factory-template.md
+        - name: Фабрика данных Azure
+          items:
+            - name: Массовое копирование данных с помощью шаблона Фабрики данных Azure
+              href: data-factory-template.md
+            - name: Выполнение команд управления с использованием Фабрики данных Azure
+              href: data-factory-command-activity.md
         - name: Соединитель Apache Spark
           href: spark-connector.md
         - name: Подключение из Databricks с помощью Python
