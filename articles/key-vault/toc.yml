@@ -92,6 +92,10 @@
           href: create-certificate-scenarios.md
 - name: Руководства
   items:
+    - name: Безопасность
+      items:
+        - name: Рекомендации
+          href: security-recommendations.md
     - name: Использование управляемого удостоверения Службы приложений
       href: managed-identity.md
     - name: Ведение журнала Azure Key Vault

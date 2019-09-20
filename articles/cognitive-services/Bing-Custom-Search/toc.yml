@@ -31,7 +31,9 @@
               href: sdk-csharp-quick-start.md
             - name: Использование Python
               href: sdk-python-quickstart.md
-- name: Руководства
+            - name: Использование Java
+              href: sdk-java-quickstart.md
+- name: Учебники
   items:
     - name: Создание веб-страницы пользовательского поиска
       href: ./tutorials/custom-search-web-page.md
