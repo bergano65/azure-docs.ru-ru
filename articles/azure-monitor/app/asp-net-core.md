@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 05/22/2019
 ms.author: mbullwin
-ms.openlocfilehash: a48c2fdcce5126747f00cd3b901839864d438346
-ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
+ms.openlocfilehash: 9e14a9f3f2f27112a591f14e9a93580f66aadef7
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71058281"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71169548"
 ---
 # <a name="application-insights-for-aspnet-core-applications"></a>Application Insights для ASP.NET Core приложений
 
@@ -29,14 +29,14 @@ ms.locfileid: "71058281"
 
 [Пакет SDK Application Insights для ASP.NET Core](https://nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore) может отслеживать приложения независимо от того, где или как они выполняются. Если приложение работает и имеет сетевое подключение к Azure, можно собирать данные телеметрии. Мониторинг Application Insights поддерживается везде, где поддерживается .NET Core. Поддержка:
 * **Операционная система**. Windows, Linux или Mac.
-* **Метод размещения**: В процессе или вне процесса. 
+* **Метод размещения**: В процессе или вне процесса.
 * **Метод развертывания**: Зависимая от платформы или автономная.
-* **Веб-сервер**: IIS (Internet Information Server) или Kestrel. 
+* **Веб-сервер**: IIS (Internet Information Server) или Kestrel.
 * **Платформа размещения**: Функция веб-приложений службы приложений Azure, виртуальная машина Azure, Docker, служба Azure Kubernetes Service (AKS) и т. д.
 * **ИНТЕГРИРОВАННАЯ СРЕДА РАЗРАБОТКИ**: Visual Studio, VS Code или Командная строка.
 
 > [!NOTE]
-> Если вы используете ASP.NET Core 3,0-Preview вместе с Application Insights, используйте версию [2.8.0-бета](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore/2.8.0-beta2) или более позднюю. Это единственная известная версия, хорошо работающая с ASP.NET Core 3,0. Кроме того, подключение на основе Visual Studio еще не поддерживается для приложений ASP.NET Core 3,0.
+> Если вы используете ASP.NET Core 3,0-Preview вместе с Application Insights, используйте версию [2.8.0-beta3](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore/2.8.0-beta3) или более позднюю. Это единственная известная версия, хорошо работающая с ASP.NET Core 3,0. Кроме того, подключение на основе Visual Studio еще не поддерживается для приложений ASP.NET Core 3,0.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -151,7 +151,7 @@ ms.locfileid: "71058281"
 
 Версии пакета SDK 2.8.0-beta3 и более поздних версий поддерживают коллекцию Евенткаунтерс. По умолчанию пакет SDK собирает следующие счетчики, и эти счетчики можно запрашивать либо в обозреватель метрик, либо с помощью аналитического запроса в таблице PerformanceCounter. Имена счетчиков будут иметь вид "Category | Счетчик ".
 
-|Категория | Счетчик|
+|Category | Счетчик|
 |---------------|-------|
 |System. Runtime | Использование ЦП |
 |System. Runtime | Рабочий набор |
@@ -241,7 +241,7 @@ ms.locfileid: "71058281"
 |аддаутоколлектедметрицекстрактор | Включите или отключите средство извлечения Аутоколлектедметрикс, которое представляет собой Телеметрипроцессор, который отправляет предварительно агрегированные метрики о запросах и зависимостях перед выполнением выборки. | true
 |Рекуестколлектионоптионс. Траккексцептионс | Включение и отключение отчетов о необработанном отслеживании исключений модулем сбора запросов. | false в NETSTANDARD 2.0 (поскольку исключения отправляются с помощью Аппликатионинсигхтслогжерпровидер), в противном случае — значение true.
 
-См. список [настраиваемых параметров `ApplicationInsightsServiceOptions` в](https://github.com/microsoft/ApplicationInsights-aspnetcore/blob/develop/src/Microsoft.ApplicationInsights.AspNetCore/Extensions/ApplicationInsightsServiceOptions.cs) для наиболее актуального списка.
+См. список [настраиваемых параметров `ApplicationInsightsServiceOptions` в](https://github.com/microsoft/ApplicationInsights-aspnetcore/blob/develop/src/Shared/Extensions/ApplicationInsightsServiceOptions.cs) для наиболее актуального списка.
 
 ### <a name="sampling"></a>Выборка
 

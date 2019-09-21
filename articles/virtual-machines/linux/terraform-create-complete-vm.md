@@ -3,7 +3,7 @@ title: Использование Terraform для создания готово
 description: Узнайте, как использовать Terraform для создания готовой среды виртуальных машин Linux в Azure и управления ею
 services: virtual-machines-linux
 documentationcenter: virtual-machines
-author: echuvyrov
+author: tomarchermsft
 manager: gwallace
 editor: na
 tags: azure-resource-manager
@@ -12,14 +12,14 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 09/14/2017
-ms.author: gwallace
-ms.openlocfilehash: 83fba1ae29c2912e440f8983ded844414443a1a7
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.date: 09/20/2019
+ms.author: tarcher
+ms.openlocfilehash: b9e379907f28c0d8698eb11aacb88970cf8d6dc4
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70100804"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71173851"
 ---
 # <a name="create-a-complete-linux-virtual-machine-infrastructure-in-azure-with-terraform"></a>Создание готовой инфраструктуры виртуальных машин Linux в Azure с помощью Terraform
 
@@ -35,7 +35,7 @@ Terraform позволяет определить и создать развер
 > [!TIP]
 > При создании переменных среды для значений или использовании [Azure Cloud Shell Bash](/azure/cloud-shell/overview) не нужно включать объявления переменных в этом разделе.
 
-```tf
+```hcl
 provider "azurerm" {
     subscription_id = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
     client_id       = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
@@ -46,7 +46,7 @@ provider "azurerm" {
 
 В следующем разделе создается группа ресурсов с именем `myResourceGroup` в расположении `eastus`:
 
-```tf
+```hcl
 resource "azurerm_resource_group" "myterraformgroup" {
     name     = "myResourceGroup"
     location = "eastus"
@@ -62,7 +62,7 @@ resource "azurerm_resource_group" "myterraformgroup" {
 ## <a name="create-virtual-network"></a>Создать виртуальную сеть
 В следующем разделе создается виртуальная сеть с именем *myVnet* в адресном пространстве *10.0.0.0/16*.
 
-```tf
+```hcl
 resource "azurerm_virtual_network" "myterraformnetwork" {
     name                = "myVnet"
     address_space       = ["10.0.0.0/16"]
@@ -77,7 +77,7 @@ resource "azurerm_virtual_network" "myterraformnetwork" {
 
 В следующем разделе создается подсеть с именем *mySubnet* в виртуальной сети *myVnet*.
 
-```tf
+```hcl
 resource "azurerm_subnet" "myterraformsubnet" {
     name                 = "mySubnet"
     resource_group_name  = "${azurerm_resource_group.myterraformgroup.name}"
@@ -90,7 +90,7 @@ resource "azurerm_subnet" "myterraformsubnet" {
 ## <a name="create-public-ip-address"></a>Создать общедоступный IP-адрес
 Для доступа к ресурсам через Интернет создайте общедоступный IP-адрес и назначьте его виртуальной машине. В следующем разделе создается общедоступный IP-адрес с именем *myPublicIP*:
 
-```tf
+```hcl
 resource "azurerm_public_ip" "myterraformpublicip" {
     name                         = "myPublicIP"
     location                     = "eastus"
@@ -107,7 +107,7 @@ resource "azurerm_public_ip" "myterraformpublicip" {
 ## <a name="create-network-security-group"></a>Создание группы безопасности сети
 Группы безопасности сети контролируют передачу исходящего и входящего сетевого трафика виртуальной машины. В следующем разделе создается группа безопасности сети с именем *myNetworkSecurityGroup* и определяется правило, разрешающее передачу трафика SSH через TCP-порт 22:
 
-```tf
+```hcl
 resource "azurerm_network_security_group" "myterraformnsg" {
     name                = "myNetworkSecurityGroup"
     location            = "eastus"
@@ -135,7 +135,7 @@ resource "azurerm_network_security_group" "myterraformnsg" {
 ## <a name="create-virtual-network-interface-card"></a>Создание виртуальных сетевых адаптеров
 Виртуальный сетевой адаптер позволяет виртуальной машине подключаться к определенной виртуальной сети, общедоступному IP-адресу и группе безопасности сети. В следующем разделе шаблона Terraform создается виртуальный сетевой адаптер с именем *myNIC*, подключенный к созданным ресурсам виртуальной сети:
 
-```tf
+```hcl
 resource "azurerm_network_interface" "myterraformnic" {
     name                = "myNIC"
     location            = "eastus"
@@ -159,7 +159,7 @@ resource "azurerm_network_interface" "myterraformnic" {
 ## <a name="create-storage-account-for-diagnostics"></a>Создание учетной записи хранения для диагностики
 Чтобы сохранить диагностику загрузки для виртуальной машины, необходима учетная запись хранения. Диагностика загрузки может помочь в устранении неполадок и наблюдении за состоянием виртуальной машины. Создаваемая учетная запись хранения используется только для хранения данных диагностики загрузки. Каждая учетная запись хранения должна иметь уникальное имя, поэтому в следующем разделе генерируется некоторый произвольный текст:
 
-```tf
+```hcl
 resource "random_id" "randomId" {
     keepers = {
         # Generate a new ID only when a new resource group is defined
@@ -172,7 +172,7 @@ resource "random_id" "randomId" {
 
 Теперь создайте учетную запись хранения. В следующем разделе создается учетная запись хранения с именем, основанным на произвольном тексте, созданном на предыдущем шаге:
 
-```tf
+```hcl
 resource "azurerm_storage_account" "mystorageaccount" {
     name                = "diag${random_id.randomId.hex}"
     resource_group_name = "${azurerm_resource_group.myterraformgroup.name}"
@@ -193,7 +193,7 @@ resource "azurerm_storage_account" "mystorageaccount" {
 
  Данные ключа SSH предоставлены в разделе *ssh_keys*. Укажите допустимый открытый ключ SSH в поле *key_data*.
 
-```tf
+```hcl
 resource "azurerm_virtual_machine" "myterraformvm" {
     name                  = "myVM"
     location              = "eastus"
@@ -243,7 +243,7 @@ resource "azurerm_virtual_machine" "myterraformvm" {
 
 Чтобы объединить все эти разделы и увидеть Terraform в действии, создайте файл с именем *terraform_azure.tf* и вставьте следующее содержимое:
 
-```tf
+```hcl
 # Configure the Microsoft Azure Provider
 provider "azurerm" {
     subscription_id = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
@@ -421,7 +421,7 @@ terraform plan
 
 После выполнения предыдущей команды вы должны увидеть что-то вроде этого:
 
-```bash
+```console
 Refreshing Terraform state in-memory prior to plan...
 The refreshed state will be used to calculate this plan, but will not be
 persisted to local or remote state storage.
@@ -456,7 +456,7 @@ terraform apply
 
 После завершения действий в Terraform инфраструктура виртуальной машины будет готова. Получите общедоступный IP-адрес виртуальной машины с помощью команды [az vm show](/cli/azure/vm).
 
-```azurecli
+```azurecli-interactive
 az vm show --resource-group myResourceGroup --name myVM -d --query [publicIps] --o tsv
 ```
 

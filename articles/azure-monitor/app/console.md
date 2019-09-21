@@ -13,19 +13,24 @@ ms.topic: conceptual
 ms.date: 01/30/2019
 ms.reviewer: lmolkova
 ms.author: mbullwin
-ms.openlocfilehash: 0c2a28462633d47ad1d3f247793e3fcf6f4d40c0
-ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
+ms.openlocfilehash: b6ecf1e9cece51635afc0bf0f8025b6e117438ee
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67795448"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71169452"
 ---
 # <a name="application-insights-for-net-console-applications"></a>Application Insights для консольных приложений .NET
+
 [Application Insights](../../azure-monitor/app/app-insights-overview.md) позволяет отслеживать доступность, производительность и использование вашего веб-приложения.
 
 Вам потребуется подписка [Microsoft Azure](https://azure.com). Войдите с помощью учетной записи Майкрософт, которую вы, возможно, уже используете для Windows, XBox Live или других облачных служб Майкрософт. Возможно, у вашей группы есть подписка организации Azure: попросите ее владельца добавить вас к ней с помощью вашей учетной записи Майкрософт.
 
-## <a name="getting-started"></a>Начало работы
+> [!NOTE]
+> Новый пакет SDK для бета-Application Insights называется [Microsoft. ApplicationInsights. воркерсервице](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WorkerService) , который можно использовать для включения Application Insights для любых консольных приложений. Рекомендуется использовать этот пакет и соответствующие инструкции [отсюда.](../../azure-monitor/app/worker-service.md) Этот пакет предназначен [`NetStandard2.0`](https://docs.microsoft.com/dotnet/standard/net-standard)для использования и поэтому может использоваться в .NET Core 2,0 или более поздней версии, а также .NET Framework 4.7.2 или более поздней версии.
+Этот документ будет признан устаревшим после выпуска стабильной версии этого нового пакета.
+
+## <a name="getting-started"></a>Приступая к работе
 
 * На [портале Azure](https://portal.azure.com) [создайте ресурс Application Insights](../../azure-monitor/app/create-new-resource.md). Для параметра типа приложения выберите приложение **Общий**.
 * Сделайте копию ключа инструментирования. Найдите ключ в раскрывающемся списке **Основные компоненты** нового ресурса, который вы создали. 
@@ -96,7 +101,7 @@ var telemetryClient = new TelemetryClient(configuration);
 
 ### <a name="configuring-telemetry-collection-from-code"></a>Настройка сбора данных телеметрии с помощью кода
 > [!NOTE]
-> При чтении файла конфигурации не поддерживается в .NET Core. Можно использовать [пакет SDK Application Insights для ASP.NET Core](../../azure-monitor/app/asp-net-core.md)
+> Чтение файла конфигурации не поддерживается в .NET Core. Вы можете использовать [Application Insights SDK для ASP.NET Core](../../azure-monitor/app/asp-net-core.md)
 
 * При запуске приложения создайте и настройте экземпляр `DependencyTrackingTelemetryModule`. Он должен быть одноэлементным и сохраняться в течение всего времени существования приложения.
 
@@ -125,13 +130,13 @@ module.Initialize(configuration);
 configuration.TelemetryInitializers.Add(new HttpDependenciesParsingTelemetryInitializer());
 ```
 
-Если вы создали конфигурации с помощью обычного `TelemetryConfiguration()` конструктор, необходимо включить поддержку корреляции, кроме того. **Он не нужен** при чтении из файла конфигурации, используемый `TelemetryConfiguration.CreateDefault()` или `TelemetryConfiguration.Active`.
+Если вы создали конфигурацию с обычным `TelemetryConfiguration()` конструктором, необходимо включить поддержку корреляции дополнительно. **Он не требуется** при чтении конфигурации из файла, используется `TelemetryConfiguration.CreateDefault()` или. `TelemetryConfiguration.Active`
 
 ```csharp
 configuration.TelemetryInitializers.Add(new OperationCorrelationTelemetryInitializer());
 ```
 
-* Можно также установить и инициализировать модуль сборщика для счетчика производительности, как описано [здесь](https://apmtips.com/blog/2017/02/13/enable-application-insights-live-metrics-from-code/)
+* Также может потребоваться установить и инициализировать модуль сбора данных счетчиков производительности, как описано [здесь](https://apmtips.com/blog/2017/02/13/enable-application-insights-live-metrics-from-code/) .
 
 
 #### <a name="full-example"></a>Полный пример

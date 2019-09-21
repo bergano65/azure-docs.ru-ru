@@ -9,12 +9,12 @@ ms.date: 11/28/2018
 ms.topic: conceptual
 ms.service: service-fabric-mesh
 manager: timlt
-ms.openlocfilehash: c716ae0a2bb30e7e8eb249a1d230097efc0d3795
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 46b2a9a0c4d8a1d9e0fa069d512670dffb94fc28
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62097799"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71173762"
 ---
 # <a name="set-up-service-fabric-mesh-cli"></a>Настройка CLI для Сетки Service Fabric
 Интерфейс командной строки (CLI) вложенной службы "Сетка Service Fabric" требуется для развертывания и администрирования ресурсов локально в этой службе. 
@@ -25,14 +25,14 @@ ms.locfileid: "62097799"
 |---|---|---|
 | az mesh | Служба "Сетка Azure Service Fabric" | Основной интерфейс командной строки для развертывания приложений и управления ресурсами в среде сетки Azure Service Fabric. 
 | sfctl | Локальные кластеры | Служба Service Fabric CLI позволяет развертывать и тестировать ресурсы Service Fabric для локальных кластеров.  
-| Интерфейс командной строки Maven | Локальные кластеры и Сетка Azure Service Fabric | Это оболочка вокруг `az mesh` и `sfctl` , разработчики Java могут использовать возможности знакомых командной строки для среды разработки локальных и Azure.  
+| Интерфейс командной строки Maven | Локальные кластеры и Сетка Azure Service Fabric | `az mesh` Оболочка`sfctl` , которая позволяет разработчикам Java использовать привычный интерфейс командной строки для работы в локальной среде и разработке Azure.  
 
 В режиме предварительной версии CLI для Сетки Azure Service Fabric записывается как расширение для Azure CLI. Вы можете установить его в Azure Cloud Shell или локально в Azure CLI. 
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)] 
 
 ## <a name="install-the-azure-service-fabric-mesh-cli"></a>Установка интерфейса командной строки Сетки Azure Service Fabric
-1. Необходимо установить Azure CLI версии 2.0.43 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если необходимо установить или обновить CLI, ознакомьтесь с [этим разделом][azure-cli-install].
+1. Необходимо установить Azure CLI версии 2.0.67 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Сведения об установке или обновлении до последней версии интерфейса командной строки см. в [статье установка Azure CLI][azure-cli-install].
 
 2. Установите модуль расширения CLI для Сетки Azure Service Fabric. 
 
@@ -86,7 +86,7 @@ ms.locfileid: "62097799"
 
 Дополнительные сведения см. в разделе [Руководство по интерфейсу командной строки Maven](service-fabric-mesh-reference-maven.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Вы также можете настроить [среду разработки Windows](service-fabric-mesh-howto-setup-developer-environment-sdk.md).
 

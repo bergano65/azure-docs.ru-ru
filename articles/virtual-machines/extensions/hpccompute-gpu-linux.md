@@ -12,13 +12,13 @@ ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 02/11/2019
-ms.author: roiyz
-ms.openlocfilehash: 167780971ec59efd1ca197958798564d1ef2d596
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.author: akjosh
+ms.openlocfilehash: 83646c0b11bf558f667b29271a27d31e5489c157
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70092315"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71174005"
 ---
 # <a name="nvidia-gpu-driver-extension-for-linux"></a>Расширение драйвера GPU NVIDIA для Linux
 
@@ -77,7 +77,7 @@ https://docs.microsoft.com/azure/virtual-machines/linux/n-series-driver-setup)
 | apiVersion | 2015-06-15 | date |
 | publisher | Microsoft.HpcCompute | string |
 | type | NvidiaGpuDriverLinux | строка |
-| typeHandlerVersion | 1.2 | ssNoversion |
+| typeHandlerVersion | 1.2 | int |
 
 ### <a name="settings"></a>Настройки
 
@@ -85,7 +85,7 @@ https://docs.microsoft.com/azure/virtual-machines/linux/n-series-driver-setup)
 
 | Название | Описание | Default Value | Допустимые значения | Тип данных |
 | ---- | ---- | ---- | ---- | ---- |
-| updateOS | Обновление ядра, даже если для установки драйвера это не требуется | false | true, false | boolean |
+| updateOS | Обновление ядра, даже если для установки драйвера это не требуется | Ложь | true, false | boolean |
 | driverVersion | NV: версия драйвера GRID.<br> NC/ND: версия набора инструментов CUDA Toolkit. Последние версии драйверов для выбранного набора CUDA Toolkit устанавливаются автоматически. | latest | GRID: "430,30", "418,70", "410,92", "410,71", "390,75", "390,57", "390,42"<br> CUDA: 10.0.130, 9.2.88, 9.1.85. | строка |
 | installCUDA | Установка набора инструментов CUDA Toolkit. Это относится только к виртуальным машинам серии NC/ND. | true | true, false | boolean |
 

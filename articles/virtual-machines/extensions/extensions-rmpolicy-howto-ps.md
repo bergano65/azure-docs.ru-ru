@@ -3,7 +3,7 @@ title: Ограничение установки расширений для в�
 description: Служба "Политика Azure" позволяет ограничить развертывание расширений.
 services: virtual-machines-linux
 documentationcenter: ''
-author: roiyz-msft
+author: axayjo
 manager: gwallace
 editor: ''
 ms.service: virtual-machines-linux
@@ -11,14 +11,14 @@ ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 03/23/2018
-ms.author: roiyz
+ms.author: akjosh
 ms.reviewer: cynthn
-ms.openlocfilehash: 1c8676fc2c806918117a2fb7273ecd4b999803cd
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: e096982c7bbf4f06b96ef4e3918ca1caa9d481a0
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70084543"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71169085"
 ---
 # <a name="use-azure-policy-to-restrict-extensions-installation-on-windows-vms"></a>Ограничение установки расширений на виртуальных машинах Windows с помощью службы "Политика Azure"
 

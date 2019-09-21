@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 02/19/2019
 ms.reviewer: mbullwin
 ms.author: cithomas
-ms.openlocfilehash: 925264bb69093ab70465665e1d2da615a7a3e53d
-ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
+ms.openlocfilehash: acc7a218d40ec7b752d9495bd48e5f37436d736d
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68261754"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71169462"
 ---
 # <a name="applicationinsightsloggerprovider-for-net-core-ilogger-logs"></a>Аппликатионинсигхтслогжерпровидер для журналов ILogger для .NET Core
 
@@ -220,6 +220,10 @@ public class Startup
 > Новый поставщик доступен для приложений, предназначенных для NETSTANDARD 2.0 или более поздней версии. Если приложение предназначено для более старых версий .NET Core, например .NET Core 1,1, или если оно предназначено для .NET Framework, продолжайте использовать старый поставщик.
 
 ## <a name="console-application"></a>Консольное приложение
+
+> [!NOTE]
+> Новый пакет SDK для бета-Application Insights называется [Microsoft. ApplicationInsights. воркерсервице](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WorkerService) , который можно использовать для включения Application Insights (ILogger и других данных телеметрии Application Insights) для любых консольных приложений. Рекомендуется использовать этот пакет и соответствующие инструкции [отсюда.](../../azure-monitor/app/worker-service.md)
+Следующий пример будет нерекомендуемым после выпуска стабильной версии этого нового пакета.
 
 В следующем коде показан пример консольного приложения, которое настроено для отправки трассировок ILogger в Application Insights.
 

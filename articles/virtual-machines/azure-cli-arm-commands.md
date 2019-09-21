@@ -3,7 +3,7 @@ title: Команды интерфейса командной строки Azure
 description: Команды интерфейса командной строки (CLI) Azure для управления ресурсами в модели развертывания Resource Manager.
 services: virtual-machines-linux,virtual-machines-windows,virtual-network,mobile-services,cloud-services
 documentationcenter: ''
-author: dlepow
+author: cynthn
 manager: gwallace
 editor: ''
 tags: azure-resource-manager
@@ -14,13 +14,13 @@ ms.tgt_pltfrm: command-line-interface
 ms.devlang: na
 ms.topic: article
 ms.date: 04/18/2017
-ms.author: danlep
-ms.openlocfilehash: 4a155159759a4b817842087bff7d4167ed8ed0c5
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.author: cynthn
+ms.openlocfilehash: 1ec1856508588d07e55e60e251a1369ecc3fa985
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67722833"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71174062"
 ---
 # <a name="azure-cli-commands-in-resource-manager-mode"></a>Команды Azure CLI в режиме Resource Manager
 В этой статье приводится синтаксис и параметры команд интерфейса командной строки (CLI) Azure, которые обычно используется для создания ресурсов Azure и управления ими в модели развертывания с помощью Azure Resource Manager. Для доступа к этим командам следует запустить CLI в режиме Resource Manager (ARM). Это не полный справочник, и ваша версия CLI может отображать немного иные команды или параметры. Общие сведения о ресурсах и группах ресурсов Azure см. в статье [Общие сведения о диспетчере ресурсов Azure](../azure-resource-manager/resource-group-overview.md).  
@@ -48,7 +48,7 @@ ms.locfileid: "67722833"
 > 
 > 
 
-## <a name="azure-account-manage-your-account-information"></a>Учетная запись Azure: Управление сведениями о вашей учетной записи
+## <a name="azure-account-manage-your-account-information"></a>Учетная запись Azure: Управление сведениями учетной записи
 Информация о подписке Azure используется инструментом для подключения к учетной записи.
 
 **Вывод списка импортированных подписок**
@@ -75,7 +75,7 @@ ms.locfileid: "67722833"
     account env set [options] [environment]
     account env delete [options] [environment]
 
-## <a name="azure-ad-commands-to-display-active-directory-objects"></a>Azure ad: Команды для отображения объектов Active Directory
+## <a name="azure-ad-commands-to-display-active-directory-objects"></a>Azure AD: Команды для вывода объектов Active Directory
 **Команды для отображения приложений Active Directory**
 
     ad app create [options]
@@ -205,7 +205,7 @@ ms.locfileid: "67722833"
 
     hdinsight cluster create [options] <clusterName>
 
-Пример: Создать Storm в кластере Linux.
+Пример: Создание кластера в кластере Linux
 
     azure hdinsight cluster create -g myarmgroup -l westus -y Linux --clusterType Storm --version 3.2 --defaultStorageAccountName mystorageaccount --defaultStorageAccountKey <defaultStorageAccountKey> --defaultStorageContainer mycontainer --userName admin --password <clusterPassword> --sshUserName sshuser --sshPassword <sshPassword> --workerNodeCount 1 myNewCluster01
 
@@ -307,12 +307,12 @@ ms.locfileid: "67722833"
 
     hdinsight cluster disable-rdp-access [options] <clusterName>
 
-## <a name="azure-insights-commands-related-to-monitoring-insights-events-alert-rules-autoscale-settings-metrics"></a>Azure insights: Команды, связанные с мониторингом (событий, правил генерации оповещений, параметры автоматического масштабирования, метрики)
+## <a name="azure-insights-commands-related-to-monitoring-insights-events-alert-rules-autoscale-settings-metrics"></a>Azure Insights: Команды, связанные с мониторингом аналитики (события, правила генерации оповещений, параметры автомасштабирования, метрики)
 **Получение журналов операций для подписки, идентификатор correlationId, группы ресурсов, ресурса или поставщика ресурсов**
 
     insights logs list [options]
 
-## <a name="azure-location-commands-to-get-the-available-locations-for-all-resource-types"></a>расположение Azure: Команды, чтобы получить доступные расположения для всех типов ресурсов
+## <a name="azure-location-commands-to-get-the-available-locations-for-all-resource-types"></a>Расположение Azure: Команды для получения доступных расположений для всех типов ресурсов
 **Выводит доступные расположения**
 
     location list [options]
@@ -1509,7 +1509,7 @@ ms.locfileid: "67722833"
 
     network gateway list [options] <resource-group>
 
-## <a name="azure-provider-commands-to-manage-resource-provider-registrations"></a>Поставщик Azure: Команды для управления регистрациями поставщика ресурсов
+## <a name="azure-provider-commands-to-manage-resource-provider-registrations"></a>Поставщик Azure: Команды для управления регистрацией поставщиков ресурсов
 **Список зарегистрированных поставщиков в Resource Manager**
 
     provider list [options]
@@ -1547,7 +1547,7 @@ ms.locfileid: "67722833"
 
     resource delete [options] <resource-group> <name> <resource-type> <api-version>
 
-## <a name="azure-role-commands-to-manage-your-azure-roles"></a>Роли Azure: Команды для управления ролями Azure
+## <a name="azure-role-commands-to-manage-your-azure-roles"></a>Роль Azure: Команды для управления ролями Azure
 **Получение всех доступных определений ролей**
 
     role list [options]
@@ -1562,7 +1562,7 @@ ms.locfileid: "67722833"
     role assignment list [options] [objectId] [upn] [mail] [spn] [role] [scope] [resource-group] [resource-type] [resource-name]
     role assignment delete [options] [objectId] [upn] [mail] [spn] [role] [scope] [resource-group] [resource-type] [resource-name]
 
-## <a name="azure-storage-commands-to-manage-your-storage-objects"></a>хранилище Azure: Команды для управления объектами службы хранилища
+## <a name="azure-storage-commands-to-manage-your-storage-objects"></a>Служба хранилища Azure: Команды для управления объектами службы хранилища
 **Команды для управления учетными записями хранилища**
 
     storage account list [options]
@@ -1685,7 +1685,7 @@ ms.locfileid: "67722833"
     storage table policy set [options] [table] [name]
     storage table policy delete [options] [table] [name]
 
-## <a name="azure-tag-commands-to-manage-your-resource-manager-tag"></a>тег Azure: Команды для управления тегом диспетчера ресурсов
+## <a name="azure-tag-commands-to-manage-your-resource-manager-tag"></a>Тег Azure: Команды для управления тегом Resource Manager
 **Добавление тега**
 
     tag create [options] <name> <value>

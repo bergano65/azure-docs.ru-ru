@@ -5,14 +5,14 @@ services: terraform
 author: tomarchermsft
 ms.service: azure
 ms.topic: article
-ms.date: 09/13/2018
+ms.date: 09/20/2019
 ms.author: tarcher
-ms.openlocfilehash: a88ad25e335026d5172c7997f62629d5ada46f6e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e9b447f4f4dc9d0ee090da9729e483cc17ac7c15
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66693310"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71169949"
 ---
 # <a name="store-terraform-state-in-azure-storage"></a>Хранение состояния Terraform в службе хранилища Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "66693310"
 
 Прежде чем использовать службу хранилища Azure в качестве сервера, необходимо создать учетную запись хранения. Это можно сделать на портале Azure, с помощью PowerShell, Azure CLI или самого средства Terraform. Чтобы настроить учетную запись хранения с помощью Azure CLI, воспользуйтесь приведенным ниже примером.
 
-```azurecli-interactive
+```azurecli
 #!/bin/bash
 
 RESOURCE_GROUP_NAME=tstate
@@ -67,21 +67,21 @@ echo "access_key: $ACCOUNT_KEY"
 
 Создайте переменную среды `ARM_ACCESS_KEY`, значением которой является ключ доступа к хранилищу Azure.
 
-```console
+```bash
 export ARM_ACCESS_KEY=<storage access key>
 ```
 
-Чтобы еще надежнее защитить ключ доступа к учетной записи хранения Azure, храните его в Azure Key Vault. В этом случае переменную среды можно задать с помощью команды, наподобие приведенной ниже. Дополнительные сведения об Azure Key Vault см. в [документации по Azure Key Vault][azure-key-vault].
+Чтобы еще надежнее защитить ключ доступа к учетной записи хранения Azure, храните его в Azure Key Vault. В этом случае переменную среды можно задать с помощью команды, наподобие приведенной ниже. Дополнительные сведения о Azure Key Vault см. в [документации по Azure Key Vault][azure-key-vault].
 
-```console
+```bash
 export ARM_ACCESS_KEY=$(az keyvault secret show --name terraform-backend-key --vault-name myKeyVault --query value -o tsv)
 ```
 
 Чтобы настроить Terraform для использования сервера, включите блок конфигурации *backend* типа *azurerm* в конфигурацию Terraform. Добавьте значения *storage_account_name*, *container_name* и *key* в блок конфигурации.
 
-В следующем примере настраивает Terraform серверной части и создает группу ресурсов Azure. Замените значения значениями для своей среды.
+В следующем примере настраивается Серверная часть terraform и создается группа ресурсов Azure. Замените значения значениями для своей среды.
 
-```json
+```hcl
 terraform {
   backend "azurerm" {
     storage_account_name  = "tstate09762"
@@ -100,9 +100,9 @@ resource "azurerm_resource_group" "state-demo-secure" {
 
 ## <a name="state-locking"></a>Блокировка состояния
 
-При использовании Azure Storage Blob для хранения состояния большой двоичный объект автоматически блокируется до выполнения любых операций записи состояния. Благодаря такой конфигурации предотвращается параллельное выполнение нескольких операций с состоянием, которое может привести к повреждению. Дополнительные сведения см. в разделе [State Locking][terraform-state-lock] (Блокировка состояния) в документации Terraform.
+При использовании Azure Storage Blob для хранения состояния большой двоичный объект автоматически блокируется до выполнения любых операций записи состояния. Благодаря такой конфигурации предотвращается параллельное выполнение нескольких операций с состоянием, которое может привести к повреждению. Дополнительные сведения см. в разделе [Блокировка состояния][terraform-state-lock] в документации terraform.
 
-Блокировку можно увидеть при изучении двоичный объект с помощью портала Azure или других средств управления Azure.
+Блокировка может быть видна при проверке большого двоичного объекта с помощью портал Azure или других средств управления Azure.
 
 ![BLOB-объект Azure с блокировкой](media/terraform-backend/lock.png)
 
@@ -110,11 +110,11 @@ resource "azurerm_resource_group" "state-demo-secure" {
 
 По умолчанию данные в большом двоичном объекте Azure шифруются перед сохранением в инфраструктуре хранения. Когда средству Terraform требуется состояние, оно извлекается с сервера и сохраняется в памяти системы разработки. Благодаря такой конфигурации состояние безопасно хранится в службе хранилища Azure и не записывается на локальный диск.
 
-Дополнительные сведения о шифровании в службе хранилища Azure см. в статье [Шифрование службы хранилища Azure для неактивных данных][azure-storage-encryption].
+Дополнительные сведения о шифровании службы хранилища Azure см. в статье [Шифрование службы хранилища Azure для неактивных данных][azure-storage-encryption].
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Дополнительные сведения о конфигурации сервера Terraform см. в [документации по серверу Terraform][terraform-backend].
+Дополнительные сведения о конфигурации серверной части terraform см. в [документации по серверной части terraform][terraform-backend].
 
 <!-- LINKS - internal -->
 [azure-key-vault]: ../key-vault/quick-create-cli.md

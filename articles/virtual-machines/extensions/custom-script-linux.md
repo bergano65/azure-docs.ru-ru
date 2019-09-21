@@ -3,7 +3,7 @@ title: Выполнение пользовательских сценариев 
 description: Автоматизируйте задачи настройки виртуальных машин Linux с помощью расширения настраиваемых скриптов версии 2.
 services: virtual-machines-linux
 documentationcenter: ''
-author: roiyz-msft
+author: axayjo
 manager: gwallace
 editor: ''
 tags: azure-resource-manager
@@ -13,13 +13,13 @@ ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 04/25/2018
-ms.author: roiyz
-ms.openlocfilehash: 23354ce310ad4916c8fa2eb9cb99c5e4521b4a62
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.author: akjosh
+ms.openlocfilehash: 3a999b93ce7246a91db8dd3df7536513b6e11029
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70084738"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71174039"
 ---
 # <a name="use-the-azure-custom-script-extension-version-2-with-linux-virtual-machines"></a>Использование расширения настраиваемых скриптов Azure версии 2 на виртуальных машинах Linux
 Расширение настраиваемых скриптов версии 2 скачивает и выполняет скрипты на виртуальных машинах Azure. Это расширение можно использовать для настройки после развертывания, установки программного обеспечения и других задач настройки или управления. Сценарии можно скачать из службы хранилища Azure или другого расположения, доступного из Интернета, или передать в среду выполнения расширения. 
@@ -111,11 +111,11 @@ ms.locfileid: "70084738"
 | apiVersion | 2019-03-01 | date |
 | publisher | Microsoft.Compute.Extensions | строка |
 | type | CustomScript | строка |
-| typeHandlerVersion | 2.0 | ssNoversion |
+| typeHandlerVersion | 2.0 | int |
 | fileUris (пример) | https://github.com/MyProject/Archive/MyPythonScript.py | array |
 | commandToExecute (пример) | > " \<My-Param1" Python MyPythonScript.py | строка |
 | script | IyEvYmluL3NoCmVjaG8gIlVwZGF0aW5nIHBhY2thZ2VzIC4uLiIKYXB0IHVwZGF0ZQphcHQgdXBncmFkZSAteQo= | строка |
-| skipDos2Unix (например) | false | boolean |
+| skipDos2Unix (например) | Ложь | boolean |
 | timestamp (например) | 123456789 | 32-битное целое число |
 | storageAccountName (пример) | examplestorageacct | строка |
 | storageAccountKey (пример) | TmJK/1N3AbAZ3q/+hOXoi/l73zOqsaxXDhqa9Y83/v5UpXQp2DQIBuv2Tifp60cE/OaHsJZmQZ7teQfczQj8hg== | строка |

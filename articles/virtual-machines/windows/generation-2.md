@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 09/10/2019
 ms.author: lahugh
-ms.openlocfilehash: 5e342418dc6cc9ed0a3bbbfaad42801d5ffe9e9d
-ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.openlocfilehash: e4572ac6041caffc6c77d74dcbb2cf52f9f0aed0
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70900257"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71173785"
 ---
 # <a name="support-for-generation-2-vms-preview-on-azure"></a>Поддержка виртуальных машин поколения 2 (Предварительная версия) в Azure
 
@@ -49,7 +49,7 @@ ms.locfileid: "70900257"
 * [Серия Mv2](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-memory#mv2-series)
 * Серии [NCv2](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-gpu#ncv2-series) и [NCv3](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-gpu#ncv3-series)
 * [Серия ND](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-gpu#nd-series)
-* [Серия NVv2](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-gpu#nvv3-series--1)
+* [Серия NVv3](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-gpu#nvv3-series--1)
 
 ## <a name="generation-2-vm-images-in-azure-marketplace"></a>Образы виртуальных машин поколения 2 в Azure Marketplace
 
@@ -88,12 +88,13 @@ ms.locfileid: "70900257"
 
 | Возможность | Поколение 1 | Поколение 2 |
 |------------|--------------|--------------|
-| Диск ОС > 2 ТБ                    | :x:                        | :heavy_check_mark: |
-| Пользовательский диск, образ или ОС замены         | :heavy_check_mark:         | :heavy_check_mark: |
-| Поддержка масштабируемого набора виртуальных машин | :heavy_check_mark:         | :heavy_check_mark: |
-| ASR/Backup                        | :heavy_check_mark:         | :x:                |
-| Общедоступная коллекция образов              | :heavy_check_mark:         | :x:                |
-| Шифрование дисков Azure             | :heavy_check_mark:         | :x:                |
+| Диск ОС > 2 ТБ                    | :x:                | :heavy_check_mark: |
+| Пользовательский диск, образ или ОС замены         | :heavy_check_mark: | :heavy_check_mark: |
+| Поддержка масштабируемого набора виртуальных машин | :heavy_check_mark: | :heavy_check_mark: |
+| Служба Azure Site Recovery               | :heavy_check_mark: | :x:                |
+| Резервное копирование и восстановление                    | :heavy_check_mark: | :heavy_check_mark: |
+| Общедоступная коллекция образов              | :heavy_check_mark: | :x:                |
+| Шифрование дисков Azure             | :heavy_check_mark: | :x:                |
 
 ## <a name="creating-a-generation-2-vm"></a>Создание виртуальной машины поколения 2
 
@@ -101,14 +102,37 @@ ms.locfileid: "70900257"
 
 В портал Azure или Azure CLI можно создать виртуальные машины поколения 2 из образа Marketplace, который поддерживает загрузку UEFI.
 
-`windowsserver-gen2preview` Предложение содержит только образы Windows поколения 2. Эта упаковка позволяет избежать путаницы между образами поколения 1 и поколения 2. Чтобы создать виртуальную машину поколения 2, выберите **образы** из этого предложения и следуйте стандартному процессу для создания виртуальной машины.
+#### <a name="azure-portal"></a>портала Azure
 
-В настоящее время Marketplace предлагает следующие образы Windows поколения 2:
+Образы поколения 2 для Windows и SLES включены в одно и то же предложение сервера в качестве образов Gen1. Это означает, что с точки зрения потока вы выбрали предложение и номер SKU на портале для виртуальной машины. Если SKU поддерживает образы поколения 1 и 2, можно выбрать создание виртуальной машины поколения 2 на вкладке *Дополнительно* в последовательности создания виртуальной машины.
 
-* 2019 — центр обработки данных — Gen2
-* 2016 — центр обработки данных — Gen2
-* 2012-R2-Datacenter-Gen2
-* 2012 — центр обработки данных — Gen2
+В настоящее время образы поколения 1 и поколения 2 поддерживаются следующими SKU:
+
+* Windows Server 2012
+* Windows Server 2012 R2
+* Windows Server 2016
+* Windows Server 2019
+
+При выборе SKU Windows Server в качестве предложения на вкладке **Дополнительно** можно создать виртуальную машину **поколения 1** (BIOS) или **Gen 2** (UEFI). Если вы выбрали **Gen 2**, убедитесь, что размер виртуальной машины, выбранный на вкладке " **основы** ", [поддерживается для виртуальных машин поколения 2](#generation-2-vm-sizes).
+
+![Выбор виртуальной машины Gen 1 или Gen 2](./media/generation-2/gen1-gen2-select.png)
+
+#### <a name="powershell"></a>PowerShell
+
+Вы также можете создать виртуальную машину с помощью PowerShell, обратившись непосредственно к SKU поколения 1 или поколения 2.
+
+Например, используйте следующий командлет PowerShell, чтобы получить список номеров SKU в `WindowsServer` предложении.
+
+```powershell
+Get-AzVMImageSku -Location westus2 -PublisherName MicrosoftWindowsServer -Offer WindowsServer
+```
+
+Если вы создаете виртуальную машину с Windows Server 2012 в качестве операционной системы, выберите номер SKU виртуальной машины поколения 1 (BIOS) или поколения 2 (UEFI), который выглядит следующим образом:
+
+```powershell
+2012-Datacenter
+2012-datacenter-gensecond
+```
 
 Текущий список поддерживаемых образов Marketplace см. в разделе [функции и возможности](#features-and-capabilities) .
 
@@ -131,7 +155,7 @@ ms.locfileid: "70900257"
 * **У меня есть VHD-файл из локальной виртуальной машины поколения 2. Можно ли использовать этот VHD-файл для создания виртуальной машины поколения 2 в Azure?**
   Да, вы можете перенести VHD-файл версии 2 в Azure и использовать его для создания виртуальной машины поколения 2. Для этого выполните следующие действия.
     1. Отправьте VHD-файл в учетную запись хранения в том же регионе, где вы хотите создать виртуальную машину.
-    1. Создайте управляемый диск из VHD-файла. Задайте для свойства создание HyperV значение v2. Следующие команды PowerShell задают свойство создания HyperV при создании управляемого диска.
+    1. Создайте управляемый диск из VHD-файла. Задайте для свойства создания Hyper-V значение v2. Следующие команды PowerShell задают свойство создания Hyper-V при создании управляемого диска.
 
         ```powershell
         $sourceUri = 'https://xyzstorage.blob.core.windows.net/vhd/abcd.vhd'. #<Provide location to your uploaded .vhd file>
@@ -141,7 +165,7 @@ ms.locfileid: "70900257"
         ```
 
     1. После того как диск будет доступен, создайте виртуальную машину, присоединив этот диск. Созданная виртуальная машина будет виртуальной машиной поколения 2.
-    При создании виртуальной машины поколения 2 можно при необходимости обобщить образ этой виртуальной машины. Обобщение образа, вы можете использовать его для создания нескольких виртуальных машин.
+    При создании виртуальной машины поколения 2 можно при необходимости обобщить образ этой виртуальной машины. Обобщение образа можно использовать для создания нескольких виртуальных машин.
 
 * **Разделы справки увеличить размер диска ОС?**  
   Диски ОС размером более 2 ТБ являются новыми для виртуальных машин поколения 2. По умолчанию диски ОС имеют размер менее 2 ТБ для виртуальных машин поколения 2. Размер диска можно увеличить до рекомендуемого максимума в 4 ТБ. Чтобы увеличить размер диска ОС, используйте Azure CLI или портал Azure. Сведения о том, как программно расширять диски, см. [в разделе изменение размера диска](expand-os-disk.md).
