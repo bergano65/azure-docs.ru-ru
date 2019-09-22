@@ -76,8 +76,8 @@ ms.locfileid: "70084834"
 | Название | Значение/пример |
 | ---- | ---- |
 | apiVersion | 2015-01-01 |
-| publisher | Microsoft. Azure. Monitoring. Депенденциажент |
-| type | депенденциажентлинукс |
+| publisher | Microsoft.Azure.Monitoring.DependencyAgent |
+| type | DependencyAgentLinux |
 | typeHandlerVersion | 9.5 |
 
 ## <a name="template-deployment"></a>Развертывание шаблона
