@@ -6,14 +6,14 @@ manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 07/29/2019
+ms.date: 09/17/2019
 ms.author: alinast
-ms.openlocfilehash: 0bb7309ae452b2885be279d1ab38b8467397f2f8
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: 37f2afbd9bae4ca6bccc5062515f166687d8913c
+ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68638500"
+ms.lasthandoff: 09/22/2019
+ms.locfileid: "71177068"
 ---
 # <a name="understand-digital-twins-object-models-and-spatial-intelligence-graph"></a>Основные сведения об объектных моделях и пространственном интеллектуальном графе в Digital Twins
 
@@ -23,9 +23,7 @@ Azure Digital Twins — это служба Интернета вещей Azure,
 
 После создания объектных моделей и онтологий Digital Twins можно переходить к заполнению _пространственного графа_. Пространственные графы — это виртуальные представления множества взаимосвязей между пространствами, устройствами и людьми, имеющими отношение к решению Интернета вещей. На приведенной ниже схеме показан пример пространственного графа, который использует онтологию умного здания.
 
-![Создание пространственного графа Digital Twins][1]
-
-<a id="model"></a>
+[![Построение пространственного графа Digital двойников](media/concepts/digital-twins-spatial-graph-building.png)](media/concepts/digital-twins-spatial-graph-building.png#lightbox)
 
 Пространственный граф объединяет пространства, устройства, датчики и пользователей. Связи между ними воспроизводят зависимости из реального мира. В этом примере представлен объект 43 с четырьмя этажами, на каждом из которых есть много разных областей. Пользователи связаны со своими рабочими станциями и имеют доступ к частям графа. Администратор имеет право вносить изменения в пространственный граф, а посетитель может только просматривать определенные сведения о здании.
 
@@ -55,8 +53,6 @@ Azure Digital Twins — это служба Интернета вещей Azure,
   - отправлять уведомления, когда выполняются предварительно определенные условия. Сейчас определяемые пользователем функции можно создать на языке JavaScript.
 - **Сопоставители** являются объектами, которые определяют, какие определяемые пользователем функции выполняются для заданного сообщения телеметрии.
 - **Конечные точки** — это расположения, в которые направляются сообщения телеметрии и события Digital Twins, например `Event Hub`, `Service Bus` или `Event Grid`.
-
-<a id="graph"></a>
 
 ## <a name="spatial-intelligence-graph"></a>Пространственный интеллектуальный граф
 
@@ -89,7 +85,7 @@ https://YOUR_INSTANCE_NAME.YOUR_LOCATION.azuresmartspaces.net/management/swagger
 
  На этом изображении представлен полный формат URL-адреса.
 
-![API управления на портале Digital Twins][2]
+(![API управления на портале Digital Twins](media/concepts/digital-twins-spatial-graph-management-api-url.png)] (Media/концепция/дигитал-Твинс-спатиал-граф-манажемент-АПИ-УРЛ. png # уменьшать)
 
 Дополнительные сведения об использовании пространственных интеллектуальных графов см. в кратком обзоре интерфейсов API управления Azure Digital Twins.
 
@@ -106,7 +102,3 @@ https://YOUR_INSTANCE_NAME.YOUR_LOCATION.azuresmartspaces.net/management/swagger
 - Дополнительные сведения о подключении к устройству и отправке сообщений телеметрии в Digital Twins см. в статье [Возможность подключения устройств и входящие данные телеметрии](concepts-device-ingress.md).
 
 - Дополнительные сведения об ограничениях и регулировании API управления см. в статье [Ограничения в общедоступной предварительной версии службы](concepts-service-limits.md).
-
-<!-- Images -->
-[1]: media/concepts/digital-twins-spatial-graph-building.png
-[2]: media/concepts/digital-twins-spatial-graph-management-api-url.png

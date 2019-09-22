@@ -8,12 +8,12 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.topic: conceptual
 ms.date: 08/21/2019
-ms.openlocfilehash: c24ed7efe9e046a36a05ec5924cbd61d218b1b01
-ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
+ms.openlocfilehash: bcc9736280b144a77bca57b4f4df1303f4b54796
+ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71091733"
+ms.lasthandoff: 09/22/2019
+ms.locfileid: "71179090"
 ---
 # <a name="azure-hdinsight-accelerated-writes-for-apache-hbase"></a>Ускорение операций записи Azure HDInsight для Apache HBase
 
@@ -54,6 +54,12 @@ flush 'mytable'
 ```
 disable 'mytable'
 ```
+
+Выполните аналогичные действия при уменьшении масштаба кластера: Очистка таблиц и отключение таблиц для остановки входящих данных. Нельзя масштабировать кластер до трех узлов.
+
+Выполнение этих действий обеспечит успешное увеличение масштаба и избежать возможного перехода namenode в защищенный режим из-за резервных копий или временных файлов.
+
+Если namenode перейдет в безопасный режим после уменьшения масштаба, используйте команды HDFS для повторной репликации реплицируемых блоков и получения HDFS из безопасного режима. Эта повторная репликация позволит успешно перезапустить HBase.
 
 ## <a name="next-steps"></a>Следующие шаги
 

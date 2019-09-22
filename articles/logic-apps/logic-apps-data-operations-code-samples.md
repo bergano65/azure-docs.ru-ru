@@ -1,31 +1,31 @@
 ---
-title: Примеры операций с данными в Azure Logic Apps | Документация Майкрософт
-description: Примеры кода для определения действия операций с данными в Azure Logic Apps
+title: Примеры операций с данными — Azure Logic Apps
+description: Примеры кода для действий операций с данными в Azure Logic Apps
 services: logic-apps
 ms.service: logic-apps
+ms.suite: integration
 author: ecfan
 ms.author: estfan
-manager: jeconnoc
-ms.topic: reference
-ms.date: 07/25/2018
+manager: carmonm
 ms.reviewer: klam, LADocs
-ms.suite: integration
-ms.openlocfilehash: 8de70e8df50b79f27c19c74307d9321ff8cd1eb5
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.topic: reference
+ms.date: 09/01/2019
+ms.openlocfilehash: d692d943249c9fc6b46ed6eb1ddff3f07152f5b6
+ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67203119"
+ms.lasthandoff: 09/22/2019
+ms.locfileid: "71179139"
 ---
 # <a name="data-operation-code-samples-for-azure-logic-apps"></a>Примеры кода операций с данными для Azure Logic Apps
 
 Примеры кода для определения действия операций с данными см. в статье [Выполнение операций с данными](../logic-apps/logic-apps-perform-data-operations.md). Можно использовать эти образцы при запуске примеров с определением рабочего процесса собственного приложения логики, подписки Azure и подключения API. Просто скопируйте и вставьте эти определения действия в редактор представления кода для определения рабочего процесса приложения логики, а затем измените определения для конкретного рабочего процесса. 
 
-Исходя из стандартов нотации объектов JavaScript (JSON), эти определения действия отображаются в алфавитном порядке. Однако в конструкторе приложений логики каждое определение внутри рабочего процесса отображается в правильной последовательности, так как свойство `runAfter` каждого определения действия устанавливает порядок выполнения. 
+Исходя из стандартов нотации объектов JavaScript (JSON), эти определения действия отображаются в алфавитном порядке. Однако в конструкторе приложений логики каждое определение внутри рабочего процесса отображается в правильной последовательности, так как свойство `runAfter` каждого определения действия устанавливает порядок выполнения.
 
 <a name="compose-action-example"></a>
 
-## <a name="compose"></a>Docker Compose
+## <a name="compose"></a>Создание
 
 Ниже приведены определения действия, которые можно использовать, чтобы попробовать [пример действия **Создать**](../logic-apps/logic-apps-perform-data-operations.md#compose-action).
 
@@ -185,7 +185,7 @@ ms.locfileid: "67203119"
 
 <a name="filter-array-action-example"></a>
 
-## <a name="filter-array"></a>Фильтрация массива
+## <a name="filter-array"></a>Фильтр массива
 
 Ниже приведены определения действия, которые можно использовать, чтобы попробовать [пример действия **Фильтровать массив**](../logic-apps/logic-apps-perform-data-operations.md#filter-array-action).
 
@@ -226,7 +226,7 @@ ms.locfileid: "67203119"
 
 <a name="join-action-example"></a>
 
-## <a name="join"></a>Объединение
+## <a name="join"></a>Присоединиться
 
 Ниже приведены определения действия, которые можно использовать, чтобы попробовать [пример действия **Объединить**](../logic-apps/logic-apps-perform-data-operations.md#join-action).
 
@@ -267,7 +267,7 @@ ms.locfileid: "67203119"
 
 <a name="parse-json-action-example"></a>
 
-## <a name="parse-json"></a>Parse JSON
+## <a name="parse-json"></a>Анализ JSON
 
 Ниже приведены определения действия, которые можно использовать, чтобы попробовать [пример действия **Анализ JSON**](../logic-apps/logic-apps-perform-data-operations.md#parse-json-action).
 
@@ -326,7 +326,7 @@ ms.locfileid: "67203119"
 
 <a name="select-action-example"></a>
 
-## <a name="select"></a>Выберите пункт
+## <a name="select"></a>Выбор
 
 Ниже приведены определения действия, которые можно использовать, чтобы попробовать [пример действия **Выбрать пункт**](../logic-apps/logic-apps-perform-data-operations.md#select-action).
 
@@ -367,11 +367,6 @@ ms.locfileid: "67203119"
 },
 ```
 
-## <a name="get-support"></a>Получение поддержки
-
-* Если у вас возникли вопросы, то посетите [форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
-* Отправить идею по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Logic Apps](https://aka.ms/logicapps-wish).
-
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Выполнение операций с данными](../logic-apps/logic-apps-perform-data-operations.md)

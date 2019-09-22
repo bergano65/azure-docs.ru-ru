@@ -8,12 +8,12 @@ ms.service: container-instances
 ms.topic: article
 ms.date: 04/03/2019
 ms.author: danlep
-ms.openlocfilehash: 599339b0591245462dcc0840400ad5241cd5922c
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: a38b0cfe7072975e4bcaf61b65ab7733694f714c
+ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68325811"
+ms.lasthandoff: 09/22/2019
+ms.locfileid: "71178567"
 ---
 # <a name="tutorial-deploy-a-multi-container-group-using-a-yaml-file"></a>Учебник. Развертывание группы с несколькими контейнерами с помощью файла YAML
 
@@ -24,7 +24,7 @@ ms.locfileid: "68325811"
 
 Служба "Экземпляры контейнеров Azure" поддерживает развертывание нескольких контейнеров в одном узле с использованием [группы контейнеров](container-instances-container-groups.md). Группа контейнеров полезна при создании приложения расширения для ведения журнала, мониторинга или любой другой конфигурации, где службе требуется второй присоединенный процесс.
 
-В этом руководстве описано, как выполнить простую конфигурацию расширения с двумя контейнерами, развернув YAML-файл с помощью Azure CLI. Файл YAML предоставляет краткий формат для указания параметров экземпляра. Вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано, как выполнить простую конфигурацию расширения с двумя контейнерами, развернув [YAML-файл](container-instances-reference-yaml.md) с помощью Azure CLI. Файл YAML предоставляет краткий формат для указания параметров экземпляра. Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Настройка файла YAML
@@ -126,7 +126,7 @@ Name              ResourceGroup    Status    Image                              
 myContainerGroup  danlep0318r      Running   mcr.microsoft.com/azuredocs/aci-tutorial-sidecar,mcr.microsoft.com/azuredocs/aci-helloworld:latest  20.42.26.114:80,8080  Public     1.0 core/1.5 gb  Linux     eastus
 ```
 
-## <a name="view-container-logs"></a>Просмотр журналов контейнеров
+## <a name="view-container-logs"></a>Просмотреть журналы контейнера
 
 Просмотрите выходные данные журнала контейнера с помощью команды [AZ Container Logs][az-container-logs] . Аргумент `--container-name` определяет контейнер, из которого извлекаются журналы. В этом примере `aci-tutorial-app` указан контейнер.
 

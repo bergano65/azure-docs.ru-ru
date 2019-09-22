@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/23/2019
 ms.author: mjbrown
-ms.openlocfilehash: db7746bc91935c0385e97d494a45d34819665ced
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 95e3ee31ea6a700253e372d183944c17c85e327c
+ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70093387"
+ms.lasthandoff: 09/22/2019
+ms.locfileid: "71178322"
 ---
 # <a name="manage-an-azure-cosmos-account"></a>Управление учетной записью Azure Cosmos
 
@@ -166,10 +166,7 @@ Set-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" `
 
 ### <a id="configure-multiple-write-regions-portal"></a>Портал Azure
 
-Откройте вкладку **Глобальная репликация данных** и выберите **Включить**, чтобы включить операции записи в нескольких регионах. После включения операций записи в нескольких регионах все регионы чтения, которые в текущий момент есть в вашей учетной записи, станут регионами как для чтения, так и для записи. 
-
-> [!NOTE]
-> После включения операций записи в нескольких регионах их нельзя отключить. 
+Откройте вкладку **Глобальная репликация данных** и выберите **Включить**, чтобы включить операции записи в нескольких регионах. После включения операций записи в нескольких регионах все регионы чтения, которые в текущий момент есть в вашей учетной записи, станут регионами как для чтения, так и для записи. Кроме того, при необходимости можно отключить операции записи в нескольких регионах.
 
 ![Снимок экрана: настройка нескольких источников в учетной записи Azure Cosmos](./media/how-to-manage-database-account/single-to-multi-master.png)
 
@@ -182,6 +179,8 @@ $resourceGroupName = 'myResourceGroup'
 $accountName = 'myaccountname'
 az cosmosdb update --name $accountName --resource-group $resourceGroupName --enable-multiple-write-locations true
 ```
+
+Чтобы создать учетную запись Azure Cosmos без операций записи в нескольких регионах, можно присвоить `--enable-multiple-write-locations` параметру значение false.
 
 ### <a id="configure-multiple-write-regions-ps"></a>Azure PowerShell
 

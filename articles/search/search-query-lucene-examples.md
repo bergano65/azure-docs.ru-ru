@@ -1,5 +1,5 @@
 ---
-title: Примеры запросов Lucene (служба "Поиск Azure")
+title: Использование полного синтаксиса запроса Lucene — Поиск Azure
 description: Синтаксис запросов Lucene для поиска нечетких соответствий, поиска с учетом расположения, повышения приоритета терминов, поиска по регулярным выражениям и поиска с использованием подстановочных знаков в службе "Поиск Azure".
 author: HeidiSteen
 manager: nitinme
@@ -7,17 +7,17 @@ tags: Lucene query analyzer syntax
 services: search
 ms.service: search
 ms.topic: conceptual
-ms.date: 05/13/2019
+ms.date: 09/20/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 3f6a39129db9e8c43a5e2de68d919ba1037c3f5c
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.openlocfilehash: fcfc668022d0d8fc74258657bb93642aec49bd08
+ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69648239"
+ms.lasthandoff: 09/22/2019
+ms.locfileid: "71178153"
 ---
-# <a name="query-examples-using-full-lucene-search-syntax-advanced-queries-in-azure-search"></a>Примеры запросов с использованием полного синтаксиса поиска Lucene (расширенные запросы в службе поиска Azure)
+# <a name="use-the-full-lucene-search-syntax-advanced-queries-in-azure-search"></a>Используйте полный синтаксис поиска Lucene (расширенные запросы в службе поиска Azure).
 
 При создании запросов для Поиска Azure можно заменить [стандартный синтаксический анализатор](query-simple-syntax.md) по умолчанию на более экспансивное [Средство синтаксического анализа запросов Lucene в Поиск Azure](query-lucene-syntax.md), чтобы сформулировать специализированные и расширенные определения запросов. 
 

@@ -16,12 +16,12 @@ ms.date: 04/16/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 87764ed30182dc548fc3a260582174f121e27e24
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: 29f94d6ff8045b7cae64957eeae00d2460ca3e37
+ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68965216"
+ms.lasthandoff: 09/22/2019
+ms.locfileid: "71176832"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on-quick-start"></a>Простой единый вход Azure Active Directory: Быстрый запуск
 
@@ -31,7 +31,7 @@ ms.locfileid: "68965216"
 
 Чтобы развернуть прозрачный единый вход, выполните следующие действия.
 
-## <a name="step-1-check-the-prerequisites"></a>Шаг 1.: Проверка соблюдения предварительных требований
+## <a name="step-1-check-the-prerequisites"></a>Шаг 1. Проверка соблюдения предварительных требований
 
 Выполните указанные ниже предварительные требования.
 
@@ -55,7 +55,7 @@ ms.locfileid: "68965216"
 
 * **Используйте последние версии клиентов Office 365**. Чтобы использовать автоматический вход для клиентов Office 365 (Outlook, Word, Excel и пр.), вашим пользователям требуются версии 16.0.8730.xxxx и выше.
 
-## <a name="step-2-enable-the-feature"></a>Шаг 2.: Включение компонента
+## <a name="step-2-enable-the-feature"></a>Шаг 2. Включение компонента
 
 Включите простой единый вход через [Azure AD Connect](whatis-hybrid-identity.md).
 
@@ -221,7 +221,7 @@ Mozilla Firefox не выполняет аутентификацию Kerberos а
 >[!IMPORTANT]
 >В случае утечки ключ расшифровки Kerberos в учетной записи компьютера можно использовать для создания билетов Kerberos для любого пользователя в его лесу AD. Злоумышленники могут олицетворять операции входа Azure AD для скомпрометированных пользователей. Мы настоятельно рекомендуем, чтобы вы периодически меняли ключ расшифровки Kerberos (хотя бы раз в 30 дней).
 
-Инструкции по смене ключей приведены в разделе [Часто задаваемые вопросы о простом едином входе Azure Active Directory](how-to-connect-sso-faq.md#how-can-i-roll-over-the-kerberos-decryption-key-of-the-azureadssoacc-computer-account). Мы работаем над возможностью автоматического развертывания ключей.
+Инструкции по смене ключей приведены в разделе [Часто задаваемые вопросы о простом едином входе Azure Active Directory](how-to-connect-sso-faq.md). Мы работаем над возможностью автоматического развертывания ключей.
 
 >[!IMPORTANT]
 >Этот шаг не требуется выполнять _немедленно_ после включения функции. Меняйте ключи расшифровки Kerberos по крайней мере каждые 30 дней.

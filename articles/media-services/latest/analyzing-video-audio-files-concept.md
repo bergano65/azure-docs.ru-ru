@@ -9,18 +9,18 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 04/21/2019
+ms.date: 09/21/2019
 ms.author: juliako
-ms.openlocfilehash: 477733dcb76647b2c03f79dea4f55c3102d262b8
-ms.sourcegitcommit: aebe5a10fa828733bbfb95296d400f4bc579533c
+ms.openlocfilehash: bc4be8eaafe805e5d9a985b005efe80bc4af1d21
+ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70376190"
+ms.lasthandoff: 09/22/2019
+ms.locfileid: "71177994"
 ---
 # <a name="analyzing-video-and-audio-files"></a>Анализ видео- и аудиофайлов
 
-В Службах мультимедиа Azure версии 3 можно извлекать аналитические сведения из видео- и аудиофайлов с помощью средства "Индексатор видео", используя предустановки анализатора AMS версии 3 (описано в этой статье). Если вам нужны более подробные аналитические сведения, используйте непосредственно Индексатор видео. Чтобы определить, в каких случаях вам лучше использовать Индексатор видео, а в каких — предустановки анализатора Служб мультимедиа, ознакомьтесь со статьей, в которой приводится [сравнение](../video-indexer/compare-video-indexer-with-media-services-presets.md) этих инструментов.
+Службы мультимедиа Azure V3 позволяют извлекать данные из видео-и звуковых файлов с помощью индексатора видео с помощью предустановок анализатора служб мультимедиа v3 (см. описание в этой статье). Если вам нужны более подробные аналитические сведения, используйте непосредственно Индексатор видео. Чтобы определить, в каких случаях вам лучше использовать Индексатор видео, а в каких — предустановки анализатора Служб мультимедиа, ознакомьтесь со статьей, в которой приводится [сравнение](../video-indexer/compare-video-indexer-with-media-services-presets.md) этих инструментов.
 
 Для анализа содержимого с помощью предустановок Cлужб мультимедиа версии 3 создайте **Преобразование** и отправьте **Задание**, использующее одну из этих предустановок: [VideoAnalyzerPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#videoanalyzerpreset) или **AudioAnalyzerPreset**. В следующей статье демонстрируется использование **VideoAnalyzerPreset**: [Руководство. Анализ видео с помощью Служб мультимедиа Azure](analyze-videos-tutorial-with-api.md).
 

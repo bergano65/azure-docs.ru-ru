@@ -6,14 +6,14 @@ manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 07/29/2019
+ms.date: 09/17/2019
 ms.author: alinast
-ms.openlocfilehash: a013525109fe85ad70e5aaa5895da20f5abc3237
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: 81f2cc32ee10e891ffab127d6ecd7909eb75abd6
+ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68638530"
+ms.lasthandoff: 09/22/2019
+ms.locfileid: "71177085"
 ---
 # <a name="routing-events-and-messages"></a>Маршрутизация событий и сообщений
 
@@ -29,7 +29,7 @@ Azure Digital двойников предлагает два способа по
 
 Для отправки событий или пересылки сообщений пользователи могут указать одну или несколько исходящих конечных точек. События и сообщения будут отправляться в конечные точки в соответствии с этими предопределенными настройками маршрутизации. Другими словами, пользователи могут указать определенную конечную точку для получения событий операций графа и другую для получения событий телеметрии устройства и т. д.
 
-![Маршрутизация событий Azure Digital Twins][1]
+[![Маршрутизация событий двойников в Azure Digital](media/concepts/digital-twins-events-routing.png)](media/concepts/digital-twins-events-routing.png#lightbox)
 
 При маршрутизации в Центры событий сохраняется порядок отправки сообщений телеметрии. Таким образом, они достигают конечной точки в той же последовательности, в которой они были первоначально получены. Сетка событий и служебная шина не гарантируют, что конечные точки получат события в порядке их возникновения. Однако в схеме события есть метка времени, с помощью которой можно узнать порядок поступления событий в конечную точку.
 
@@ -67,6 +67,3 @@ Digital Twins в настоящее время поддерживает след
 - Чтобы узнать об ограничениях общедоступной предварительной версии Azure Digital Twins, ознакомьтесь с [этой статьей](concepts-service-limits.md).
 
 - Ознакомиться с примером Azure Digital Twins на практике можно в статье [Краткое руководство. Поиск свободных помещений с помощью Azure Digital Twins](quickstart-view-occupancy-dotnet.md).
-
-<!-- Images -->
-[1]: media/concepts/digital-twins-events-routing.png

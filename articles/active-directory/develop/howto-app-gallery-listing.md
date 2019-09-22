@@ -18,12 +18,12 @@ ms.author: ryanwi
 ms.reviewer: elisol, bryanla
 ms.custom: aaddev, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ba4beeff5484f774e801842f06d694af456c4e96
-ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
+ms.openlocfilehash: 88d74fe794f4de95b7ba8b0dd5575ca56d2016e5
+ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71033754"
+ms.lasthandoff: 09/22/2019
+ms.locfileid: "71176847"
 ---
 # <a name="how-to-list-your-application-in-the-azure-active-directory-application-gallery"></a>Практическое руководство. Добавление приложения в коллекцию приложений Azure Active Directory
 
@@ -80,7 +80,7 @@ ms.locfileid: "71033754"
     ![Временная шкала включения в коллекцию приложения OpenID Connect](./media/howto-app-gallery-listing/openid.png)
 
     * Если вы хотите добавить в коллекцию приложение, использующее OpenID Connect, выберите **OpenID Connect & OAuth 2.0** (OpenID Connect и OAuth 2.0), как описано выше.
-    * Если у вас возникнут проблемы с доступом к порталу, свяжитесь с [командой интеграции единого входа Azure AD](<mailto:SaaSApplicationIntegrations@service.microsoft.com>). 
+    * Если у вас возникнут проблемы с доступом к порталу, свяжитесь с [командой интеграции единого входа Azure AD](<mailto:SaaSApplicationIntegrations@service.microsoft.com>).
 
 - **SAML 2.0** или **WS-Fed**. Если ваше приложение поддерживает SAML 2.0, его можно интегрировать непосредственно из клиента Azure AD, используя [инструкции по добавлению настраиваемого приложения](../active-directory-saas-custom-apps.md).
 
@@ -98,6 +98,12 @@ ms.locfileid: "71033754"
 * Если вы хотите добавить в коллекцию приложение, использующее единый вход по паролю, выберите **Password SSO** (Единый вход по паролю), как описано выше.
 * Если у вас возникнут проблемы с доступом к порталу, свяжитесь с [командой интеграции единого входа Azure AD](<mailto:SaaSApplicationIntegrations@service.microsoft.com>).
 
+## <a name="requesting-for-user-provisioning"></a>Запрос на подготовку пользователей
+
+Выполните следующую процедуру, чтобы запросить подготовку пользователей.
+
+   ![График включения в коллекцию для приложений SAML](./media/howto-app-gallery-listing/user-provisioning.png)
+
 ## <a name="updateremove-existing-listing"></a>Обновление или удаление существующего приложения
 
 Чтобы обновить или удалить существующее приложение в коллекции приложений Azure AD, сначала необходимо отправить запрос на [портал сети приложений](https://microsoft.sharepoint.com/teams/apponboarding/Apps). Если у вас есть учетная запись Office 365, используйте ее для входа на этот портал. Если ее нет, используйте для входа учетную запись Майкрософт (например, Outlook или Hotmail).
@@ -106,9 +112,9 @@ ms.locfileid: "71033754"
 
     ![График включения в коллекцию для приложений SAML](./media/howto-app-gallery-listing/updateorremove.png)
 
-    * Если вы хотите обновить существующее приложение, выберите **Update existing application listing** (Обновить существующее приложение).
-    * Если вы хотите удалить приложение из коллекции Azure AD, выберите **Remove existing application listing** (Удалить приложение из коллекции).
-    * Если у вас возникнут проблемы с доступом к порталу, свяжитесь с [командой интеграции единого входа Azure AD](<mailto:SaaSApplicationIntegrations@service.microsoft.com>). 
+    * Если вы хотите обновить существующее приложение, выберите соответствующий параметр в соответствии с вашими требованиями.
+    * Если вы хотите удалить существующее приложение из коллекции Azure AD, выберите **удалить список приложений из коллекции**.
+    * Если у вас возникнут проблемы с доступом к порталу, свяжитесь с [командой интеграции единого входа Azure AD](<mailto:SaaSApplicationIntegrations@service.microsoft.com>).
 
 ## <a name="listing-requests-by-customers"></a>Вывод запросов по клиентам
 
@@ -124,11 +130,11 @@ ms.locfileid: "71033754"
 
 Процесс включения приложения SAML 2.0 или WS-Fed в коллекцию занимает 7–10 рабочих дней.
 
-   ![Временная шкала с перечислением приложения SAML в коллекцию](./media/howto-app-gallery-listing/timeline.png)
+  ![Временная шкала с перечислением приложения SAML в коллекцию](./media/howto-app-gallery-listing/timeline.png)
 
 Процесс включения в коллекцию приложения OpenID Connect занимает 2–5 рабочих дней.
 
-   ![Временная шкала с перечислением приложения SAML в коллекцию](./media/howto-app-gallery-listing/timeline2.png)
+  ![Временная шкала с перечислением приложения SAML в коллекцию](./media/howto-app-gallery-listing/timeline2.png)
 
 ## <a name="escalations"></a>Эскалация вопросов
 

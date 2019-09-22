@@ -1,25 +1,25 @@
 ---
-title: Серия миграции Contoso | Документация Майкрософт
+title: Серия миграции contoso | Документация Майкрософт
 description: Статья содержит общие сведения о стратегии и сценариях миграции, применяемых организацией Contoso для переноса своего локального центра обработки данных в Azure.
 author: rayne-wiselman
 manager: carmonm
 ms.service: azure-migrate
 ms.topic: conceptual
-ms.date: 05/23/2019
+ms.date: 09/22/2019
 ms.author: raynew
-ms.openlocfilehash: 82585a6f1df369e299bd9df4d57f6106aad4ead7
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: d20c0be47f44cdce8ea895007494565d37f5923f
+ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67696205"
+ms.lasthandoff: 09/22/2019
+ms.locfileid: "71179136"
 ---
 # <a name="contoso-migration-series"></a>Миграция Contoso: серия
 
 
-У нас есть ряд статьи, в которых показано, как вымышленная организация переносит Contoso в локальной инфраструктуре для [Microsoft Azure](https://azure.microsoft.com/overview/what-is-azure/) облака. 
+У нас есть серия статей, демонстрирующих, как вымышленная организация Contoso переносит локальную инфраструктуру в облако [Microsoft Azure](https://azure.microsoft.com/overview/what-is-azure/) . 
 
-Этот цикл содержит сведения и сценарии, иллюстрирующие настройку инфраструктуры миграции и выполнение миграции различных типов. Сценарии увеличению сложности, что по мере продвижения. В статьях описано, как компания Contoso выполняет собственную задачу по миграции, но в материалы также включены дополнительные материалы и конкретные инструкции.
+Этот цикл содержит сведения и сценарии, иллюстрирующие настройку инфраструктуры миграции и выполнение миграции различных типов. Сценарии увеличивают сложность по мере их продвижения. В статьях описано, как компания Contoso выполняет собственную задачу по миграции, но в материалы также включены дополнительные материалы и конкретные инструкции.
 
 ## <a name="migration-articles"></a>Статьи о миграции
 
@@ -41,14 +41,11 @@ ms.locfileid: "67696205"
 [Статья 9. Миграция в компании Contoso: рефакторинг локального приложения для веб-приложения Azure и Базы данных SQL Azure](https://docs.microsoft.com/azure/architecture/cloud-adoption/migrate/azure-best-practices/contoso-migration-refactor-web-app-sql) | Специалисты компании Contoso переносят приложение SmartHotel360 в веб-приложение Azure, а базу данных приложения — в экземпляр SQL Server Azure с помощью Помощника по миграции баз данных.     
 [Статья 10. Миграция в компании Contoso: рефакторинг приложения службы поддержки Linux для использования нескольких регионов со Службой приложений Azure, диспетчером трафика и MySQL Azure в Contoso](https://docs.microsoft.com/azure/architecture/cloud-adoption/migrate/azure-best-practices/contoso-migration-refactor-linux-app-service-mysql) | Специалисты компании Contoso переносят свое приложение osTicket для Linux в веб-приложение Azure в нескольких регионах Azure с помощью диспетчера трафика Azure, интегрированного с GitHub для непрерывной поставки. Компания Contoso переносит базу данных приложения в экземпляр Базы данных Azure для MySQL. 
 [Статья 11. Миграция Contoso: рефакторинг развертывания Team Foundation Server в Azure DevOps Services](https://docs.microsoft.com/azure/architecture/cloud-adoption/migrate/azure-best-practices/contoso-migration-tfs-vsts) | Специалисты компании Contoso переносят локальное развертывание Team Foundation Server в Azure DevOps Services в Azure.
-[Статья 12. Миграция в компании Contoso: повторное проектирование локального приложения для использования контейнера Azure и базы данных SQL Azure](https://docs.microsoft.com/azure/architecture/cloud-adoption/migrate/azure-best-practices/contoso-migration-rearchitect-container-sql) | Специалисты компании Contoso переносят приложение SmartHotel в Azure. Затем уровень веб-приложений преобразуется в контейнер Windows, работающий в Azure Service Fabric, и базу данных в службе "База данных SQL Azure". 
-[Статья 13. Повторное создание приложения в Azure](https://docs.microsoft.com/azure/architecture/cloud-adoption/migrate/azure-best-practices/contoso-migration-rebuild) | Специалисты компании Contoso выполняют повторную сборку приложения SmartHotel, используя ряд возможностей и служб Azure, включая Службу приложений Azure, Службу Azure Kubernetes (AKS), Функции Azure, Cognitive Services и Azure Cosmos DB.  
-[Статья 14. Масштабирование миграции в Azure](https://docs.microsoft.com/azure/architecture/cloud-adoption/migrate/azure-best-practices/contoso-migration-scale) | Ознакомившись с вариантами сочетаний миграции, компания Contoso готовится к полномасштабной миграции в Azure. 
-
-
-    
+[Статья 12. Миграция в компании Contoso: повторное проектирование локального приложения для использования контейнера Azure и базы данных SQL Azure](https://docs.microsoft.com/azure/architecture/cloud-adoption/migrate/azure-best-practices/contoso-migration-rearchitect-container-sql) | Специалисты компании Contoso переносят приложение SmartHotel в Azure. Затем уровень веб-приложений преобразуется в контейнер Windows, работающий в Azure Service Fabric, и базу данных в службе "База данных SQL Azure".
+[Статья 13. Повторное создание приложения в Azure](https://docs.microsoft.com/azure/architecture/cloud-adoption/migrate/azure-best-practices/contoso-migration-rebuild) | Специалисты компании Contoso выполняют повторную сборку приложения SmartHotel, используя ряд возможностей и служб Azure, включая Службу приложений Azure, Службу Azure Kubernetes (AKS), Функции Azure, Cognitive Services и Azure Cosmos DB.
+[Статья 14. Масштабирование миграции в Azure](https://docs.microsoft.com/azure/architecture/cloud-adoption/migrate/azure-best-practices/contoso-migration-scale) | Ознакомившись с вариантами сочетаний миграции, компания Contoso готовится к полномасштабной миграции в Azure.
 
 ## <a name="next-steps"></a>Следующие шаги
 
-[Дополнительные сведения о](https://docs.microsoft.com/azure/architecture/cloud-adoption/migrate/) Миграция в облако. 
-
+- [Сведения о](https://docs.microsoft.com/azure/architecture/cloud-adoption/migrate/) миграции в облако.
+- Сведения о стратегиях миграции для других сценариев (пары "источник — Целевая версия") в разделе [руководств по миграции баз данных](https://datamigration.microsoft.com/).
