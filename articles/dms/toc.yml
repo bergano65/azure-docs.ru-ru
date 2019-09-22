@@ -47,6 +47,7 @@
     - name: Перенос пакетов SSIS в управляемый экземпляр Базы данных SQL Azure
       href: how-to-migrate-ssis-packages-managed-instance.md
 - name: Ресурсы
+  expanded: true
   items:
     - name: Состояние сценария миграции базы данных
       href: resource-scenario-status.md
