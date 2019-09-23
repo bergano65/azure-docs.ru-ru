@@ -1,19 +1,19 @@
 ---
-title: Отправьте запрос в службу поддержки для кэша HPC Azure
+title: Открытие запроса в службу поддержки для кэша HPC Azure (Предварительная версия)
 description: Как открыть запрос справки для кэша HPC Azure
 author: ekpgh
 ms.service: hpc-cache
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: v-erkell
-ms.openlocfilehash: d845195940fdba81562acf4c0cfe9069245bd34c
-ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
+ms.openlocfilehash: 29750ab19f74ef1ceab8c69792d12b9f9ca2a297
+ms.sourcegitcommit: a19bee057c57cd2c2cd23126ac862bd8f89f50f5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71036893"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71180885"
 ---
-# <a name="open-a-support-ticket-for-azure-hpc-cache"></a>Отправьте запрос в службу поддержки для кэша HPC Azure
+# <a name="open-a-support-ticket-for-azure-hpc-cache-preview"></a>Открытие запроса в службу поддержки для кэша HPC Azure (Предварительная версия)
 
 Чтобы открыть запрос в службу поддержки, используйте портал Azure. Перейдите к экземпляру кэша, а затем щелкните ссылку **создать запрос в службу поддержки** , которая отображается в нижней части боковой панели.
 

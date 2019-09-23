@@ -1,19 +1,19 @@
 ---
-title: Добавление хранилища в кэш HPC Azure
+title: Добавление хранилища в кэш HPC Azure (Предварительная версия)
 description: Определение целевых объектов хранилища, чтобы кэш Azure HPC мог использовать локальную систему NFS или контейнеры больших двоичных объектов Azure для долгосрочного хранения файлов.
 author: ekpgh
 ms.service: hpc-cache
 ms.topic: conceptual
 ms.date: 09/06/2019
 ms.author: v-erkell
-ms.openlocfilehash: ca8e13e322c3e192b697248f1252b65f6cbeda7f
-ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
+ms.openlocfilehash: a17952e193f3e03becaab044f55637372bac7b0d
+ms.sourcegitcommit: a19bee057c57cd2c2cd23126ac862bd8f89f50f5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71037219"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71181009"
 ---
-# <a name="add-storage"></a>Добавление хранилища
+# <a name="add-storage-targets"></a>Добавление целевых объектов хранилища
 
 *Целевые объекты хранилища* — это серверное хранилище для файлов, доступ к которым осуществляется через экземпляр кэша Azure HPC. Вы можете добавить хранилище NFS, например локальную аппаратную систему, или сохранить данные в большом двоичном объекте Azure.
 
@@ -112,8 +112,8 @@ ms.locfileid: "71037219"
 
 По завершении нажмите кнопку **ОК** , чтобы добавить целевой объект хранилища.
 
-### <a name="choose-a-usage-model"></a>Выбор модели использования 
-<!-- link in GUI to this heading -->
+### <a name="choose-a-usage-model"></a>Выбор модели использования
+<!-- referenced from GUI - update aka.ms link if you change this heading -->
 
 При создании целевого объекта хранилища, указывающего на систему хранения NFS, необходимо выбрать *модель использования* для этого целевого объекта. Эта модель определяет, как кэшируются данные.
 

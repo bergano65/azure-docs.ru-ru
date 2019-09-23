@@ -1,19 +1,19 @@
 ---
-title: Подключение кэша HPC для Azure
+title: Подключение кэша HPC для Azure (Предварительная версия)
 description: Подключение клиентов к службе кэша Azure HPC
 author: ekpgh
 ms.service: hpc-cache
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: v-erkell
-ms.openlocfilehash: 46f221fd7c340b7f321d317f0e7493448d83177c
-ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
+ms.openlocfilehash: 3b7a59afa0dea300e200b953d045d38218e99b22
+ms.sourcegitcommit: a19bee057c57cd2c2cd23126ac862bd8f89f50f5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71036959"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71180927"
 ---
-# <a name="mount-the-azure-hpc-cache"></a>Подключение кэша HPC для Azure
+# <a name="mount-the-azure-hpc-cache-preview"></a>Подключение кэша HPC для Azure (Предварительная версия)
 
 После создания кэша клиенты NFS могут получить к нему доступ с помощью простой команды подключения.
 
@@ -54,7 +54,7 @@ root@test-client:/tmp#
 
 | Рекомендуемые параметры команды подключения | |
 --- | --- 
-``hard`` | Нежесткие подключения к кластеру vFXT связаны со сбоями в работе приложений и возможной потерей данных. 
+``hard`` | Мягкое подключение к кэшу Azure HPC связано с ошибками приложений и возможной потерей данных. 
 ``proto=netid`` | Этот параметр поддерживает соответствующую обработку сетевых ошибок NFS.
 ``mountproto=netid`` | Этот параметр поддерживает соответствующую обработку сетевых ошибок для операций подключения.
 ``retry=n`` | Задайте значение ``retry=30``, чтобы избежать временных ошибок при подключении. (При подключении переднего плана рекомендуется использовать другое значение.)

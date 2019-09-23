@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 03/04/2019
-ms.openlocfilehash: 6801f2b3bca1fbfa221ec2eba07f51b76712b4ff
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: 26634e2fe23e0a23540638c4559af6e11eccbe72
+ms.sourcegitcommit: a19bee057c57cd2c2cd23126ac862bd8f89f50f5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70813978"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71180731"
 ---
 # <a name="use-apache-zeppelin-notebooks-with-apache-spark-cluster-on-azure-hdinsight"></a>Использование записных книжек Apache Zeppelin с кластером Apache Spark в Azure HDInsight
 
@@ -23,7 +23,7 @@ ms.locfileid: "70813978"
 
 * Подписка Azure. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 * Кластер Apache Spark в HDInsight. Инструкции см. в статье [Начало работы. Создание кластера Apache Spark в HDInsight на платформе Linux и выполнение интерактивных запросов с помощью SQL Spark](apache-spark-jupyter-spark-sql.md).
-* Схема URI для основного хранилища кластеров. Это можно сделать `wasb://` для хранилища BLOB-объектов `abfs://` Azure, для `adl://` Azure Data Lake Storage 2-го поколения или для Azure Data Lake Storage 1-го поколения. Если для хранения BLOB-объектов или Data Lake Storage 2-го поколения включено безопасное перемещение, URI будет иметь `wasbs://` значение `abfss://`или соответственно.  Дополнительные сведения см. также [в статье требование безопасной пересылки в службе хранилища Azure](../../storage/common/storage-require-secure-transfer.md) .
+* Схема URI для основного хранилища кластеров. Это можно сделать `wasb://` для хранилища BLOB-объектов `abfs://` Azure, для `adl://` Azure Data Lake Storage 2-го поколения или для Azure Data Lake Storage 1-го поколения. Если для хранилища BLOB-объектов включено безопасное перемещение, URI будет иметь `wasbs://`значение.  Дополнительные сведения см. также [в статье требование безопасной пересылки в службе хранилища Azure](../../storage/common/storage-require-secure-transfer.md) .
 
 ## <a name="launch-an-apache-zeppelin-notebook"></a>Запуск записной книжки Apache Zeppelin
 
@@ -101,7 +101,7 @@ ms.locfileid: "70813978"
     select buildingID, date, targettemp, (targettemp - actualtemp) as temp_diff from hvac where targettemp > "${Temp = 65,65|75|85}"
     ```
 
-    Вставьте этот фрагмент кода в новый абзац и нажмите клавиши **SHIFT + ВВОД**. Затем выберите **65** в раскрывающемся списке **TEMP** израильскому стандартному. 
+    Вставьте этот фрагмент кода в новый абзац и нажмите клавиши **SHIFT + ВВОД**. Затем выберите **65** в раскрывающемся списке **TEMP** . 
 
 8. Щелкните значок **линейчатой диаграммы** , чтобы изменить отображение.  Затем выберите **Параметры** и внесите следующие изменения:
 

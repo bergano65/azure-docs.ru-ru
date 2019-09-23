@@ -8,23 +8,23 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 03/21/2019
 ms.author: hrasheed
-ms.openlocfilehash: 24c2e8b9600b3d622d3d6b42b3bc3615a87ff853
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 43208636fb275c38573f820ef8245d7652b4aa86
+ms.sourcegitcommit: a19bee057c57cd2c2cd23126ac862bd8f89f50f5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64686626"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71181184"
 ---
 # <a name="use-a-java-udf-with-apache-hive-in-hdinsight"></a>Использование определяемых пользователем функций Java с Apache Hive в HDInsight
 
 Узнайте, как создать определяемую пользователем функцию (UDF) на основе Java, которая работает с Apache Hive. Определяемая пользователем функция Java в этом примере преобразует таблицу текстовых строк в символы нижнего регистра.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Кластер Hadoop в HDInsight. Ознакомьтесь со статьей [Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](./apache-hadoop-linux-tutorial-get-started.md).
 * [Java Developer Kit (JDK) версии 8](https://aka.ms/azure-jdks)
 * Средство [Apache Maven](https://maven.apache.org/download.cgi), [установленное](https://maven.apache.org/install.html) согласно инструкций Apache.  Maven — система сборки проектов Java.
-* [Схема URI](../hdinsight-hadoop-linux-information.md#URI-and-scheme) для основного хранилища кластеров. Это было бы wasb: / / для службы хранилища Azure, abfs: / / для Gen2 хранилища Озера данных Azure или adl: / / для Gen1 хранилища Озера данных Azure. Если безопасной передачи включена для службы хранилища Azure или Gen2 хранилища Data Lake, URI будет wasbs: / / или abfss: / /, соответственно см. также [безопасное перемещение](../../storage/common/storage-require-secure-transfer.md).
+* [Схема универсального кода ресурса (URI)](../hdinsight-hadoop-linux-information.md#URI-and-scheme) для основного хранилища кластеров. Это будет wasb://для службы хранилища Azure, abfs://для Azure Data Lake Storage 2-го поколения или adl://для Azure Data Lake Storage 1-го поколения. Если для службы хранилища Azure включено безопасное перемещение, URI будет иметь `wasbs://`значение.  См. также [безопасное перемещение](../../storage/common/storage-require-secure-transfer.md).
 
 * Текстовый редактор или Java IDE.
 
@@ -32,9 +32,9 @@ ms.locfileid: "64686626"
     > Если вы создаете файлы Python в клиенте Windows, следует использовать редактор, который использует LF в качестве символа конца строки. Если вы не уверены, используется ли в редакторе символ LF или CRLF, см. раздел [Устранение неполадок](#troubleshooting), в котором описано, как удалять символы CR.
 
 ## <a name="test-environment"></a>Тестовая среда
-Среда, используемая для этой статьи была на компьютере под управлением Windows 10.  Команды, которые выполнялись в командной строке, и различные файлы были изменены в блокноте. Измените соответствующим образом для вашей среды.
+Среда, используемая для этой статьи, была компьютер под Windows 10.  Команды были выполнены в командной строке, а различные файлы были изменены с помощью блокнота. Измените соответствующим образом для своей среды.
 
-Из командной строки введите ниже команды для создания рабочей среды:
+В командной строке введите приведенные ниже команды, чтобы создать рабочую среду.
 
 ```cmd
 IF NOT EXIST C:\HDI MKDIR C:\HDI
@@ -43,7 +43,7 @@ cd C:\HDI
 
 ## <a name="create-an-example-java-udf"></a>Создание примера определяемой пользователем функции Java
 
-1. Создайте проект Maven, введя следующую команду:
+1. Создайте новый проект Maven, введя следующую команду:
 
     ```cmd
     mvn archetype:generate -DgroupId=com.microsoft.examples -DartifactId=ExampleUDF -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
@@ -51,7 +51,7 @@ cd C:\HDI
 
     Эта команда создает каталог с именем `exampleudf`, который содержит проект Maven.
 
-2. После создания проекта удалите `exampleudf/src/test` каталогом, созданным как часть проекта, введя следующую команду:
+2. После создания проекта удалите `exampleudf/src/test` каталог, созданный как часть проекта, введя следующую команду:
 
     ```cmd
     cd ExampleUDF
@@ -64,7 +64,7 @@ cd C:\HDI
     notepad pom.xml
     ```
 
-    Затем замените существующий `<dependencies>` запись с следующий код XML:
+    Затем замените существующую `<dependencies>` запись следующим кодом XML:
 
     ```xml
     <dependencies>
@@ -149,7 +149,7 @@ cd C:\HDI
     notepad src/main/java/com/microsoft/examples/ExampleUDF.java
     ```
 
-    Затем скопируйте и вставьте приведенный ниже код java в новый файл. Закройте файл.
+    Затем скопируйте и вставьте приведенный ниже код Java в новый файл. Затем закройте файл.
 
     ```java
     package com.microsoft.examples;
@@ -180,9 +180,9 @@ cd C:\HDI
 
 ## <a name="build-and-install-the-udf"></a>Создание и установка определяемой пользователем функции
 
-В приведенных ниже команд замените `sshuser` с фактическое имя пользователя, если они отличаются. Замените `mycluster` с фактическим именем кластера.
+В приведенных ниже командах `sshuser` замените фактическим именем пользователя, если оно отличается. Замените `mycluster` фактическим именем кластера.
 
-1. Скомпилировать и упаковать определяемую пользователем Функцию, введя следующую команду:
+1. Скомпилируйте и упакуйте определяемую пользователем функцию, введя следующую команду:
 
     ```cmd
     mvn compile package
@@ -190,19 +190,19 @@ cd C:\HDI
 
     Эта команда выполняет сборку определяемой пользователем функции и упаковывает ее в файл `exampleudf/target/ExampleUDF-1.0-SNAPSHOT.jar`.
 
-2. Используйте `scp` команду, чтобы скопировать файл в кластер HDInsight, введя следующую команду:
+2. `scp` Используйте команду, чтобы скопировать файл в кластер HDInsight, введя следующую команду:
 
     ```cmd
     scp ./target/ExampleUDF-1.0-SNAPSHOT.jar sshuser@mycluster-ssh.azurehdinsight.net:
     ```
 
-3. Подключитесь к кластеру по протоколу SSH, введя следующую команду:
+3. Подключитесь к кластеру с помощью SSH, введя следующую команду:
 
     ```cmd
     ssh sshuser@mycluster-ssh.azurehdinsight.net
     ```
 
-4. Из сеанса SSH скопируйте JAR-файл в хранилище HDInsight.
+4. В открытом сеансе SSH скопируйте JAR-файл в хранилище HDInsight.
 
     ```bash
     hdfs dfs -put ExampleUDF-1.0-SNAPSHOT.jar /example/jars
@@ -231,7 +231,7 @@ cd C:\HDI
     SELECT tolower(state) AS ExampleUDF, state FROM hivesampletable LIMIT 10;
     ```
 
-    Этот запрос выбирает состояние из таблицы, строки, преобразованные в ниже случае и затем отображать их вместе с именем без изменений. Выходные данные выглядят следующим образом:
+    Этот запрос выбирает состояние из таблицы, преобразует строку в нижний регистр, а затем отображает их вместе с неизмененным именем. Выходные данные выглядят следующим образом:
 
         +---------------+---------------+--+
         |  exampleudf   |     state     |
@@ -264,7 +264,7 @@ $text = [IO.File]::ReadAllText($original_file) -replace "`r`n", "`n"
 [IO.File]::WriteAllText($original_file, $text)
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Другие способы работы с Hive в HDInsight см. в [этой статье](hdinsight-use-hive.md).
 

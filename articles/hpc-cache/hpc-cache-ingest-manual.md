@@ -1,19 +1,19 @@
 ---
-title: Получение данных из кэша Azure HPC — копирование вручную
+title: Получение данных для предварительной версии кэша Azure HPC — копирование вручную
 description: Как использовать команды CP для перемещения данных в целевое хранилище BLOB-объектов в кэше HPC Azure
 author: ekpgh
 ms.service: hpc-cache
 ms.topic: conceptual
 ms.date: 08/30/2019
 ms.author: v-erkell
-ms.openlocfilehash: 2d89a74d4b79e74c2bc6667a5f76c2348ca3c274
-ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
+ms.openlocfilehash: 217f976d53a7be8931be9f8d21b000549a9ed68a
+ms.sourcegitcommit: a19bee057c57cd2c2cd23126ac862bd8f89f50f5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70775238"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71180989"
 ---
-# <a name="azure-hpc-cache-data-ingest---manual-copy-method"></a>Прием данных из кэша Azure HPC — метод копирования вручную
+# <a name="azure-hpc-cache-preview-data-ingest---manual-copy-method"></a>Прием данных кэша Azure HPC (Предварительная версия) — метод копирования вручную
 
 В этой статье приведены подробные инструкции по копированию данных вручную в контейнер хранилища BLOB-объектов для использования с кэшем HPC Azure. Для оптимизации скорости копирования используются многопоточные параллельные операции.
 

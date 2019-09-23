@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 09/04/2019
 ms.author: hrasheed
-ms.openlocfilehash: 2fd8dd09da8080e9eff60bcec7d595476243cd02
-ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
+ms.openlocfilehash: 0acd4c2793c7c13fb687f591d01e6d8753f71bdc
+ms.sourcegitcommit: a19bee057c57cd2c2cd23126ac862bd8f89f50f5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70736118"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71181149"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight"></a>Миграция локальных Apache Hadoop кластеров в Azure HDInsight
 
@@ -110,7 +110,7 @@ ADLS 2-го поколения создано на основе  [хранил�
 
 Для доступа к данным, хранящимся в ADLS 2-го поколения, может использоваться один из следующих форматов:
 - `abfs:///`. доступ к хранилищу Data Lake Storage, используемому по умолчанию для кластера.
-- `abfs[s]://file_system@account_name.dfs.core.windows.net`. используется при взаимодействии с Data Lake Storage, отличным от используемого по умолчанию.
+- `abfs://file_system@account_name.dfs.core.windows.net`. используется при взаимодействии с Data Lake Storage, отличным от используемого по умолчанию.
 
 Дополнительные сведения см. в следующих статьях:
 

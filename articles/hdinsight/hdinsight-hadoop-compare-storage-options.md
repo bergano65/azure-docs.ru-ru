@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 06/17/2019
-ms.openlocfilehash: d036e56a4ccf826ccd19fb7424b7b76568839b23
-ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
+ms.openlocfilehash: b73810b37020bf01c1088f194bd426e93fd95d2c
+ms.sourcegitcommit: a19bee057c57cd2c2cd23126ac862bd8f89f50f5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71104538"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71180768"
 ---
 # <a name="compare-storage-options-for-use-with-azure-hdinsight-clusters"></a>Сравнение вариантов хранения для использования с кластерами Azure HDInsight
 
@@ -95,9 +95,9 @@ Azure HDInsight использует управляемые удостовере
 
 Azure Data Lake Storage 2-го поколения использует схему URI для доступа к файлам в службе хранилища Azure из HDInsight:
 
-`abfs[s]://<FILE_SYSTEM_NAME>@<ACCOUNT_NAME>.dfs.core.windows.net/<PATH>`
+`abfs://<FILE_SYSTEM_NAME>@<ACCOUNT_NAME>.dfs.core.windows.net/<PATH>`
 
-Эта схема URI предоставляет как доступ с использованием SSL-шифрования с префиксом `abfss://`, так и незашифрованный доступ с префиксом `abfs://`. Используйте `abfss` всегда, когда это возможно, даже при обращении к данным, которые хранятся в том же регионе Azure.
+Схема URI обеспечивает доступ с шифрованием по протоколу SSL.
 
 `<FILE_SYSTEM_NAME>` идентифицирует путь к файловой системе Data Lake Storage 2-го поколения.
 
@@ -108,8 +108,8 @@ Azure Data Lake Storage 2-го поколения использует схем
 Если значения для `<FILE_SYSTEM_NAME>` и `<ACCOUNT_NAME>` не указаны, используется файловая система по умолчанию. Для файлов в файловой системе по умолчанию можно использовать относительный или абсолютный путь. Например, для ссылки на файл `hadoop-mapreduce-examples.jar`, который поставляется с кластерами HDInsight, можно использовать один из приведенных ниже вариантов:
 
 ```
-abfss://myfilesystempath@myaccount.dfs.core.windows.net/example/jars/hadoop-mapreduce-examples.jar
-abfss:///example/jars/hadoop-mapreduce-examples.jar /example/jars/hadoop-mapreduce-examples.jar
+abfs://myfilesystempath@myaccount.dfs.core.windows.net/example/jars/hadoop-mapreduce-examples.jar
+abfs:///example/jars/hadoop-mapreduce-examples.jar /example/jars/hadoop-mapreduce-examples.jar
 ```
 
 > [!Note]

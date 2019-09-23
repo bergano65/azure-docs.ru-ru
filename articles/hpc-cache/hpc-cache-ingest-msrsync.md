@@ -1,19 +1,19 @@
 ---
-title: Прием данных кэша HPC Azure — мсрсинк
+title: Получение данных для предварительной версии кэша Azure HPC — мсрсинк
 description: Как использовать мсрсинк для перемещения данных в целевое хранилище BLOB-объектов в кэше HPC Azure
 author: ekpgh
 ms.service: hpc-cache
 ms.topic: conceptual
 ms.date: 08/30/2019
 ms.author: v-erkell
-ms.openlocfilehash: d49c2ba45b125f8e42ea5d10dcf3dcd68558a52c
-ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
+ms.openlocfilehash: 265ec55a6e013a37cf963b6256e900c070311f72
+ms.sourcegitcommit: a19bee057c57cd2c2cd23126ac862bd8f89f50f5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70775641"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71180933"
 ---
-# <a name="azure-hpc-cache-data-ingest---msrsync-method"></a>Метод приема данных кэша HPC Azure для мсрсинк
+# <a name="azure-hpc-cache-preview-data-ingest---msrsync-method"></a>Метод приема данных кэша Azure HPC (Предварительная версия) — мсрсинк
 
 В этой статье приводятся подробные инструкции ``msrsync`` по использованию программы для копирования данных в контейнер хранилища BLOB-объектов Azure для использования с кэшем HPC Azure.
 
