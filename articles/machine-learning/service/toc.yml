@@ -54,26 +54,6 @@
     - name: Записные книжки
       displayName: 'example, examples, server, jupyter, azure notebooks, python, notebook, github'
       href: samples-notebooks.md
-    - name: Эксперименты в графическом интерфейсе
-      items:
-        - name: Прогнозирование цены
-          displayName: 'regression, studio'
-          href: ui-sample-regression-predict-automobile-price-basic.md
-        - name: Прогнозирование цены (расширенное)
-          displayName: 'regression, studio'
-          href: ui-sample-regression-predict-automobile-price-compare-algorithms.md
-        - name: Прогнозирование кредитного риска
-          displayName: 'classification, studio'
-          href: ui-sample-classification-predict-credit-risk-basic.md
-        - name: Прогнозирование кредитного риска (расширенное)
-          displayName: 'classification, studio'
-          href: ui-sample-classification-predict-credit-risk-cost-sensitive.md
-        - name: Прогнозирование оттока
-          displayName: 'classification, studio'
-          href: ui-sample-classification-predict-churn.md
-        - name: Прогнозирование задержки рейсов
-          displayName: 'classification, studio'
-          href: ui-sample-classification-predict-flight-delay.md
     - name: Открытые наборы данных Azure
       href: /azure/open-datasets/samples?context=azure/machine-learning/service/context/ml-context
 - name: Основные понятия
@@ -174,6 +154,27 @@
               href: how-to-train-pytorch.md
             - name: Использование Chainer
               href: how-to-train-chainer.md
+        - name: Использование визуального интерфейса
+          displayName: sample visual interface experiments
+          items:
+            - name: Прогнозирование цены
+              displayName: 'regression, studio'
+              href: how-to-ui-sample-regression-predict-automobile-price-basic.md
+            - name: Прогнозирование цены (расширенное)
+              displayName: 'regression, studio'
+              href: how-to-ui-sample-regression-predict-automobile-price-compare-algorithms.md
+            - name: Прогнозирование кредитного риска
+              displayName: 'classification, studio'
+              href: how-to-ui-sample-classification-predict-credit-risk-basic.md
+            - name: Прогнозирование кредитного риска (расширенное)
+              displayName: 'classification, studio'
+              href: how-to-ui-sample-classification-predict-credit-risk-cost-sensitive.md
+            - name: Прогнозирование оттока
+              displayName: 'classification, studio'
+              href: how-to-ui-sample-classification-predict-churn.md
+            - name: Прогнозирование задержки рейсов
+              displayName: 'classification, studio'
+              href: how-to-ui-sample-classification-predict-flight-delay.md
         - name: Настройка гиперпараметров
           displayName: parameter
           href: how-to-tune-hyperparameters.md
