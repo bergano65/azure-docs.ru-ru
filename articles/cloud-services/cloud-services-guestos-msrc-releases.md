@@ -10,17 +10,56 @@ ms.service: cloud-services
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: tbd
-ms.date: 9/4/2019
+ms.date: 9/20/2019
 ms.author: raiye
-ms.openlocfilehash: 71febe6544a4f53215ec4dbee2bcef86bda23386
-ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
+ms.openlocfilehash: 6168e877022eccd9cbe818c20e81266cc3ea1f69
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70275512"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71169361"
 ---
 # <a name="azure-guest-os"></a>Гостевая ОС Azure
 В следующей таблице приведены обновления Microsoft Security Response Center (MSRC) для гостевой ОС Azure. Выполните поиск по этой статье, чтобы определить, применяется ли какое-либо конкретное обновление к используемой гостевой ОС. Обновления всегда переносятся для определенного [семейства][family-explain] , в котором они были представлены.
+
+## <a name="september-2019-guest-os"></a>2019 сентября, гостевая ОС
+
+>[!NOTE]
+>В настоящее время выполняется развертывание последней гостевой ОС на виртуальных машинах облачных служб, настроенных для автоматического обновления. После завершения выпуска эта версия будет доступна для обновления вручную через портал Azure и файлы конфигурации. В сентябрьскую гостевую ОС включены следующие исправления. Этот список подлежит изменению.
+
+| Категория продукта | Родительская статья базы знаний | Описание уязвимости | Гостевая ОС | Дата первого появления |
+| --- | --- | --- | --- | --- |
+|  Rel 19-09   |  [4516046]  |  Internet Explorer   |  2,90, 3,77, 4,70  |  10 сентября 2019 г.  |
+|  Rel 19-09   |  [4516115]  |  Мигание   |  2,90, 3,77, 4,70, 5,35, 6,11  |  10 сентября 2019 г.  |
+|  Rel 19-09   |  [4512578]  |  Последнее накопительное обновление   |  6.11  |  10 сентября 2019 г.  |
+|  Rel 19-09   |  [4514366]  |  .NET Framework 3,5 и 4.7.2   |  6.11  |  10 сентября 2019 г.  |
+|  Rel 19-09   |  [4516044]  |  Последнее накопительное обновление   |  5,35  |  10 сентября 2019 г.  |
+|  Rel 19-09   |  [4516064]  |  Безопасность Windows   |  4,7  |  10 сентября 2019 г.  |
+|  Rel 19-09   |  [4514350]  |  .NET Framework 3.5   |  4,7  |  10 сентября 2019 г.  |
+|  Rel 19-09   |  [4514341]  |  .NET Framework 4.5.2   |  4,7  |  10 сентября 2019 г.  |
+|  Rel 19-09   |  [4516062]  |  Безопасность Windows   |  3,77  |  10 сентября 2019 г.  |
+|  Rel 19-09   |  [4514349]  |  .NET Framework 3.5   |  3,77  |  10 сентября 2019 г.  |
+|  Rel 19-09   |  [4514342]  |  .NET Framework 4.5.2   |  3,77  |  10 сентября 2019 г.  |
+|  Rel 19-09   |  [4516033]  |  Безопасность Windows   |  2,9  |  12 сентября 2019 г.  |
+|  Rel 19-09   |  [4512488]  |  Без безопасности   |  4,7  |  13 августа 2019 г.  |
+|  Rel 19-09   |  [4512518]  |  Без безопасности   |  3,77  |  13 августа 2019 г.  |
+|  Rel 19-09   |  [4512506]  |  Без безопасности   |  2,9  |  13 августа 2019 г.  |
+
+[4516046]: https://support.microsoft.com/kb/4516046
+[4516115]: https://support.microsoft.com/kb/4516115
+[4512578]: https://support.microsoft.com/kb/4512578
+[4514366]: https://support.microsoft.com/kb/4514366
+[4516044]: https://support.microsoft.com/kb/4516044
+[4516064]: https://support.microsoft.com/kb/4516064
+[4514350]: https://support.microsoft.com/kb/4514350
+[4514341]: https://support.microsoft.com/kb/4514341
+[4516062]: https://support.microsoft.com/kb/4516062
+[4514349]: https://support.microsoft.com/kb/4514349
+[4514342]: https://support.microsoft.com/kb/4514342
+[4516033]: https://support.microsoft.com/kb/4516033
+[4512488]: https://support.microsoft.com/kb/4512488
+[4512518]: https://support.microsoft.com/kb/4512518
+[4512506]: https://support.microsoft.com/kb/4512506
 
 
 ## <a name="august-2019-guest-os"></a>Гостевая ОС 2019 августа
