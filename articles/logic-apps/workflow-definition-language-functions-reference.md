@@ -126,7 +126,7 @@ ms.locfileid: "70208404"
 
 | Функция логического сравнения | Задача |
 | --------------------------- | ---- |
-| [и](../logic-apps/workflow-definition-language-functions-reference.md#and) | Проверяет, истинны ли все выражения. |
+| [and](../logic-apps/workflow-definition-language-functions-reference.md#and) | Проверяет, истинны ли все выражения. |
 | [equals](../logic-apps/workflow-definition-language-functions-reference.md#equals) | Проверяет, эквивалентны ли оба значения. |
 | [greater](../logic-apps/workflow-definition-language-functions-reference.md#greater) | Проверяет, является ли первое значение большим, чем второе. |
 | [greaterOrEquals](../logic-apps/workflow-definition-language-functions-reference.md#greaterOrEquals) | Проверяет, является ли первое значение большим, чем второе, или равным ему. |
