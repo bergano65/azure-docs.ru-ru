@@ -49,14 +49,14 @@ ms.locfileid: "71091120"
 | TenantId | Идентификатор клиента |
 | SourceSystem | `Azure` |
 | TimeGenerated [UTC] | Метка времени, когда журнал был записан в формате UTC |
-| Тип | Тип журнала Всегда `AzureDiagnostics` |
+| Type | Тип журнала Всегда `AzureDiagnostics` |
 | SubscriptionId | Идентификатор GUID для подписки, принадлежащей серверу |
-| Группа ресурсов | Имя группы ресурсов, принадлежащей серверу |
+| ResourceGroup | Имя группы ресурсов, принадлежащей серверу |
 | ResourceProvider | Имя поставщика ресурсов. Всегда `MICROSOFT.DBFORPOSTGRESQL` |
 | ResourceType | `Servers` |
-| resourceId | Универсальный код ресурса (URI) |
+| ResourceId | Универсальный код ресурса (URI) |
 | Resource | Имя сервера |
-| Категория | `PostgreSQLLogs` |
+| Category | `PostgreSQLLogs` |
 | OperationName | `LogEvent` |
 | errorLevel | Пример уровня ведения журнала: LOG, ERROR, NOTICE |
 | Сообщение | Первичное сообщение журнала | 
@@ -67,7 +67,7 @@ ms.locfileid: "71091120"
 | DatatypeName | Имя типа данных (если применимо) |
 | LogicalServerName | Имя сервера | 
 | _ResourceId | Универсальный код ресурса (URI) |
-| Префикс | Префикс строки журнала |
+| Prefix | Префикс строки журнала |
 
 
 
