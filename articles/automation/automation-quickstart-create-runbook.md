@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.service: automation
 ms.subservice: process-automation
 ms.custom: mvc
-ms.openlocfilehash: 3dece2d2bffc7bd2b9e0a3c2931b2038ebc3c77e
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 2cbb37b4e93468a42335f40a19baf4c742cb6dbb
+ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68850648"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71098628"
 ---
 # <a name="create-an-azure-automation-runbook"></a>Создание runbook службы автоматизации Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "68850648"
 
 1. Щелкните **Модули Runbook** в разделе **Автоматизация процессов**. Отобразится список модулей runbook.
 
-1. Нажмите кнопку **Добавить Runbook** в верхней части списка. На странице **Добавление Runbook** выберите **Быстрое создание**.
+1. Нажмите кнопку **Создать Runbook** в верхней части списка.
 
 1. Введите "Hello World" в качестве значения для параметра **Имя**, а затем выберите вариант **PowerShell** в списке **Тип Runbook**. Нажмите кнопку **Создать**.
 

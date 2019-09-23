@@ -134,8 +134,10 @@
       href: ../../virtual-machine-scale-sets/overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json
     - name: Автоматизация инфраструктуры
       href: infrastructure-automation.md
-    - name: Безопасность и политика
-      href: security-policy.md
+    - name: Безопасность
+      items:
+        - name: Безопасность и политика
+          href: security-policy.md
     - name: Состояния и жизненный цикл
       href: states-lifecycle.md
     - name: Мониторинг
@@ -183,6 +185,8 @@
           href: windows-desktop-multitenant-hosting-deployment.md
     - name: Защита виртуальных машин
       items:
+        - name: Рекомендации
+          href: security-recommendations.md
         - name: JIT-доступ
           href: ../../security-center/security-center-just-in-time.md
         - name: Шифрование
@@ -259,6 +263,14 @@
           href: instance-metadata-service.md
         - name: Включение вложенной виртуализации
           href: nested-virtualization.md
+    - name: Мониторинг виртуальных машин
+      items:
+        - name: Azure Monitor для виртуальных машин
+          href: ../../azure-monitor/insights/vminsights-overview.md
+        - name: Создание оповещений о метриках
+          href: ../../azure-monitor/platform/alerts-metric.md
+        - name: Создание оповещений журнала
+          href: ../../azure-monitor/platform/alerts-log.md
     - name: Управление затратами
       items:
         - name: Предварительная оплата виртуальных машин — резервирования Azure

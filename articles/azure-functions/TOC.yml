@@ -192,6 +192,8 @@
           href: functions-deployment-slots.md
         - name: Создание и развертывание с помощью Azure Pipelines
           href: functions-how-to-azure-devops.md
+        - name: Сборка и развертывание с помощью действий GitHub
+          href: functions-how-to-github-actions.md
         - name: Развертывание из ZIP-файла
           href: deployment-zip-push.md
         - name: Запуск из пакета

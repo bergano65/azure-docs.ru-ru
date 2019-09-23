@@ -10,16 +10,16 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: 699dd41024bd60b2016771d728253d938fc9ab23
-ms.sourcegitcommit: e72073911f7635cdae6b75066b0a88ce00b9053b
+ms.openlocfilehash: 9a3c11c7303d467a1a993c49d983131639683239
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68347144"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71064879"
 ---
 # <a name="tutorial-enable-authentication-in-a-native-client-application-using-azure-active-directory-b2c"></a>Руководство по Включение проверки подлинности в собственном клиентском приложении с помощью Azure Active Directory B2C
 
-В этом руководстве описано использование Azure Active Directory (Azure AD) B2C для входа и регистрации пользователей в классическом приложении Windows Presentation Foundation (WPF). Azure AD B2C позволяет приложениям выполнять проверку подлинности учетных записей социальных сетей, корпоративных учетных записей и учетных записей Azure Active Directory с помощью стандартных протоколов.
+В этом руководстве показано, как использовать Azure Active Directory (Azure AD) B2C для входа и регистрации пользователей в классическом приложении Windows Presentation Foundation (WPF). Azure AD B2C позволяет приложениям выполнять проверку подлинности учетных записей социальных сетей, корпоративных учетных записей и учетных записей Azure Active Directory с помощью стандартных протоколов.
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 
@@ -38,7 +38,7 @@ ms.locfileid: "68347144"
 ## <a name="add-the-native-client-application"></a>добавление собственного клиентского приложения;
 
 1. Войдите на [портале Azure](https://portal.azure.com).
-2. Убедитесь, что используете каталог, содержащий клиент Azure AD B2C, щелкнув **Фильтр каталога и подписки** в верхнем меню и выбрав каталог, содержащий ваш клиент.
+2. Убедитесь, что используете каталог с клиентом Azure AD B2C, выбрав фильтр **Каталог и подписка** в меню вверху и каталог с вашим клиентом.
 3. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
 4. Щелкните **Приложения**, а затем выберите **Добавить**.
 5. Введите имя приложения. Например, *nativeapp1*.

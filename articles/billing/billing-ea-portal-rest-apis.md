@@ -4,16 +4,16 @@ description: В этой статье описываются интерфейс�
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 09/09/2019
+ms.date: 09/18/2019
 ms.topic: conceptual
 ms.service: billing
 manager: boalcsva
-ms.openlocfilehash: 4b56ef09525473920c5f5925485aae9c793ecc04
-ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.openlocfilehash: a8cf0d2eb87a823ee4b1d27484e7ea8d89c1abfc
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70900868"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105444"
 ---
 # <a name="azure-enterprise-rest-apis"></a>REST API Azure Enterprise
 
@@ -31,7 +31,7 @@ ms.locfileid: "70900868"
 
 **Платежи в Marketplace**. [Интерфейс API платежей в Marketplace](billing-enterprise-api-marketplace-storecharge.md) отображает сводку о расходах в Marketplace с разбивкой по дням. Данные основаны на фактическом использовании и отображаются для указанного периода выставления счетов или дат начала и окончания. Дополнительные сведения см. в статье [Reporting APIs for Enterprise customers — Marketplace Store Charge](/rest/api/billing/enterprise/billing-enterprise-api-marketplace-storecharge) (API-интерфейсы отчетов для корпоративных клиентов: платежи в Marketplace).
 
-**Прейскурант**. [API прейскурантов](/billing-enterprise-api-pricesheet.md) предоставляет соответствующий тариф для каждой метрики в регистрации и за период выставления счетов. Дополнительные сведения см. в статье [Reporting APIs for Enterprise customers — Price Sheet](/rest/api/billing/enterprise/billing-enterprise-api-pricesheet) (API-интерфейсы отчетов для корпоративных клиентов: прейскурант).
+**Прейскурант**. [API прейскурантов](/rest/api/billing/enterprise/billing-enterprise-api-pricesheet) предоставляет соответствующий тариф для каждой метрики в регистрации и за период выставления счетов. Дополнительные сведения см. в статье [Reporting APIs for Enterprise customers — Price Sheet](/rest/api/billing/enterprise/billing-enterprise-api-pricesheet) (API-интерфейсы отчетов для корпоративных клиентов: прейскурант).
 
 **Периоды выставления счетов**. [API периодов выставления счетов](billing-enterprise-api-billing-periods.md) возвращает список периодов выставления счетов, которые содержат данные о потреблении для регистрации, приведенные в обратном хронологическом порядке. Каждый период содержит свойство, указывающее на маршрут API к четырем наборам данных: BalanceSummary, UsageDetails, MarketplaceCharges и PriceSheet. Дополнительные сведения см. в статье [Reporting APIs for Enterprise customers — Billing Periods](/rest/api/billing/enterprise/billing-enterprise-api-billing-periods) (Интерфейсы API отчетов для корпоративных клиентов: периоды выставления счетов).
 
@@ -172,7 +172,7 @@ ms.locfileid: "70900868"
 | Центр затрат | CostCenters |  CostCenter |
 | Группа ресурсов | ResourceGroup |  ResourceGroup |
 
-#### <a name="price-sheet"></a>Прейскурант
+#### <a name="price-sheet"></a>прейскурант;
 
 | Имя столбца CSV | Имя столбца JSON | Комментарий |
 | --- | --- | --- |

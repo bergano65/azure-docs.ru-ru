@@ -8,13 +8,13 @@ ms.devlang: java
 ms.topic: quickstart
 ms.date: 12/26/2018
 ms.author: rimman
-ms.custom: seo-java-august2019
-ms.openlocfilehash: f30b1ef7a80e11c2cefd8689845fb7d450a1c167
-ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
+ms.custom: seo-java-august2019, seo-java-september2019
+ms.openlocfilehash: 7129819b6cec068420b0b265d878078622721812
+ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70172335"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70965389"
 ---
 # <a name="quickstart-create-a-console-app-with-java-and-the-mongodb-api-in-azure-cosmos-db"></a>Краткое руководство. Создание консольного приложения с использованием Java и API MongoDB в Azure Cosmos DB
 
@@ -27,7 +27,7 @@ ms.locfileid: "70172335"
 > * [Golang](create-mongodb-golang.md)
 >  
 
-Azure Cosmos DB — это глобально распределенная многомодельная служба базы данных Майкрософт. Вы можете быстро создавать и запрашивать документы, пары "ключ-значение" и графовые базы данных, используя преимущества глобального распределения и горизонтального масштабирования Cosmos DB. 
+В этом кратком руководстве используется API Azure Cosmos DB для Mongo DB и пакет SDK Java для создания консольного веб-приложения. Azure Cosmos DB позволяет быстро создавать и запрашивать документы, пары "ключ — значение" и базы данных графов, используя преимущества возможностей глобального распределения и горизонтального масштабирования Cosmos DB.
 
 В этом кратком руководстве показано, как создать учетную запись Cosmos с [API Azure Cosmos DB для MongoDB](mongodb-introduction.md). Затем вы создадите и развернете веб-приложение с использованием [драйвера Java MongoDB](https://docs.mongodb.com/ecosystem/drivers/java/). 
 

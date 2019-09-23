@@ -9,12 +9,12 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: tutorial
 ms.date: 06/25/2019
 ms.author: hrasheed
-ms.openlocfilehash: df216c4d634ac20365cc5a1cc6e26fbd78be7ab9
-ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
+ms.openlocfilehash: e43d2d64535085a9b22d2febc761fc7026498ba8
+ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70917408"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71077141"
 ---
 # <a name="tutorial-use-apache-hbase-in-azure-hdinsight"></a>Руководство по использованию Apache HBase в Azure HDInsight
 
@@ -41,7 +41,7 @@ ms.locfileid: "70917408"
 
 1. Выберите следующее изображение, чтобы открыть шаблон на портале Azure. Шаблон находится на странице [Шаблоны быстрого запуска Azure](https://azure.microsoft.com/resources/templates/).
 
-    <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-hdinsight-hbase-linux%2Fazuredeploy.json" target="_blank"><img src="./media/apache-hbase-tutorial-get-started-linux/hdi-deploy-to-azure1.png" alt="Deploy to Azure"></a>
+    <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-hdinsight-hbase-linux%2Fazuredeploy.json" target="_blank"><img src="./media/apache-hbase-tutorial-get-started-linux/hdi-deploy-to-azure1.png" alt="Deploy to Azure button for new cluster"></a>
 
 2. В колонке **Настраиваемое развертывание** укажите следующие значения.
 
@@ -68,11 +68,11 @@ ms.locfileid: "70917408"
 
 Для большинства пользователей данные отображаются в табличном формате:
 
-![Табличные данные HDInsight HBase](./media/apache-hbase-tutorial-get-started-linux/hdinsight-hbase-contacts-tabular.png)
+![Табличные данные HDInsight Apache HBase](./media/apache-hbase-tutorial-get-started-linux/hdinsight-hbase-contacts-tabular.png)
 
 В HBase (реализация [Cloud BigTable](https://cloud.google.com/bigtable/)) те же данные выглядят следующим образом:
 
-![Данные BigTable HDInsight HBase](./media/apache-hbase-tutorial-get-started-linux/hdinsight-hbase-contacts-bigtable.png)
+![Данные BigTable в HDInsight Apache HBase](./media/apache-hbase-tutorial-get-started-linux/hdinsight-hbase-contacts-bigtable.png)
 
 **Использование оболочки HBase**
 
@@ -115,7 +115,7 @@ ms.locfileid: "70917408"
     scan 'Contacts'
     ```
 
-    ![Оболочка HDInsight Hadoop HBase](./media/apache-hbase-tutorial-get-started-linux/hdinsight-hbase-shell.png)
+    ![Оболочка HDInsight Apache Hadoop HBase](./media/apache-hbase-tutorial-get-started-linux/hdinsight-hbase-shell.png)
 
 1. С помощью команды `get` получите содержимое строки. Введите следующую команду:
 
@@ -284,7 +284,7 @@ HBase на HDInsight поставляется с веб-интерфейсом �
 
 1. В верхней части страницы выберите **Быстрые ссылки**, выберите ссылку на активный узел Zookeeper, а затем щелкните **HBase Master UI** (Основной интерфейс HBase).  Интерфейс откроется в новой вкладке браузера.
 
-   ![Основной интерфейс HDInsight HBase](./media/apache-hbase-tutorial-get-started-linux/hdinsight-hbase-hmaster-ui.png)
+   ![Пользовательский интерфейс HDInsight Apache HBase HMaster](./media/apache-hbase-tutorial-get-started-linux/hdinsight-hbase-hmaster-ui.png)
 
    Основной интерфейс HBase состоит из таких разделов:
 

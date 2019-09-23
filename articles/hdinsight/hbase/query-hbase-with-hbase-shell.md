@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: quickstart
 ms.date: 06/12/2019
 ms.author: hrasheed
-ms.openlocfilehash: d937e090895a5b02026c755b1efb7dd1e0b35000
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 033227f085cd23c5fa26313cb4a2816070676560
+ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67054303"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71076426"
 ---
 # <a name="quickstart-query-apache-hbase-in-azure-hdinsight-with-hbase-shell"></a>Краткое руководство. Выполнение запросов Apache HBase в Azure HDInsight с помощью HBase Shell
 
@@ -32,11 +32,11 @@ ms.locfileid: "67054303"
 
 Для большинства пользователей данные отображаются в табличном формате:
 
-![Табличные данные HDInsight HBase](./media/query-hbase-with-hbase-shell/hdinsight-hbase-contacts-tabular.png)
+![Табличные данные HDInsight Apache HBase](./media/query-hbase-with-hbase-shell/hdinsight-hbase-contacts-tabular.png)
 
 В HBase (реализация [Cloud BigTable](https://cloud.google.com/bigtable/)) те же данные выглядят следующим образом:
 
-![Данные BigTable HDInsight HBase](./media/query-hbase-with-hbase-shell/hdinsight-hbase-contacts-bigtable.png)
+![Данные BigTable в HDInsight Apache HBase](./media/query-hbase-with-hbase-shell/hdinsight-hbase-contacts-bigtable.png)
 
 Для подключения к кластерам HBase можно использовать протокол SSH, а для создания таблиц HBase, вставки данных и создания запросов к данным — Apache HBase Shell.
 

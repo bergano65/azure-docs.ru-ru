@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: anomaly-detector
 ms.topic: overview
-ms.date: 03/26/2019
+ms.date: 09/05/2019
 ms.author: aahi
-ms.openlocfilehash: 70cb4a008391ad55562bc55fb45d877988e68643
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 3bd60ff1e732940bbb13c2e224084cf7e331266b
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68854775"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70934864"
 ---
 # <a name="what-is-the-anomaly-detector-api"></a>Общие сведения об API Детектора аномалий
 
@@ -76,6 +76,11 @@ API Детектор аномалий - это веб-сервис RESTful, по
 * Дополнительные сведения о новейших алгоритмах SR-CNN, разработанных корпорацией Майкрософт см. в статье [Служба Детектора аномалий временных рядов в Microsoft](https://arxiv.org/abs/1906.03821) (принятая KDD 2019).
 
 > [!VIDEO https://www.youtube.com/embed/ERTaAnwCarM]
+
+## <a name="join-the-anomaly-detector-community"></a>Участие в сообществе Детектора аномалий
+
+* Присоединяйтесь к [группе консультантов по Детектору аномалий в Microsoft Teams](https://aka.ms/AdAdvisorsJoin)
+* См. избранное [создаваемое пользователями содержимое](user-generated-content.md)
 
 ## <a name="next-steps"></a>Дополнительная информация
 

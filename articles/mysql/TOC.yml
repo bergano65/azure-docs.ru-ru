@@ -229,8 +229,8 @@
       href: /rest/api/mysql
     - name: Шаблон Resource Manager
       href: /azure/templates/microsoft.dbformysql/allversions
-    - name: Хранимые процедуры репликации входных данных
-      href: reference-data-in-stored-procedures.md
+    - name: Хранимые процедуры Azure
+      href: reference-stored-procedures.md
 - name: Ресурсы
   items:
     - name: Шаблоны развертывания

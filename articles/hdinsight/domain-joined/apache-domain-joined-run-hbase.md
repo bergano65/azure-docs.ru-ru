@@ -7,12 +7,12 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.topic: tutorial
 ms.date: 09/04/2019
-ms.openlocfilehash: 72e268628560618fb6fa47843f5125d9126a9f3e
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.openlocfilehash: 5823bed08e0fc2ed67dbbf3c58c39982f3a1897e
+ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70885157"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71037267"
 ---
 # <a name="tutorial-configure-apache-hbase-policies-in-hdinsight-with-enterprise-security-package"></a>Руководство по настройке политик Apache HBase в HDInsight с Корпоративным пакетом безопасности
 
@@ -88,7 +88,8 @@ ms.locfileid: "70885157"
     ```hbaseshell
     scan 'Contacts'
     ```
-    ![Оболочка HDInsight Hadoop HBase](./media/apache-domain-joined-run-hbase/hbase-shell-scan-table.png)
+
+    ![Выходные данные оболочки HDInsight Hadoop HBase](./media/apache-domain-joined-run-hbase/hbase-shell-scan-table.png)
 
 ## <a name="create-ranger-policies"></a>Создание политик Ranger
 
@@ -96,7 +97,7 @@ ms.locfileid: "70885157"
 
 1. Откройте **пользовательский интерфейс администратора Ranger**. Щелкните **\<Имя_кластера>_hbase** в разделе **HBase**.
 
-   ![Пользовательский интерфейс администратора Apache Ranger](./media/apache-domain-joined-run-hbase/apache-ranger-admin-login.png)
+   ![Пользовательский интерфейс администратора Apache Ranger для HDInsight](./media/apache-domain-joined-run-hbase/apache-ranger-admin-login.png)
 
 2. На экране **List of Policies** (Список политик) отобразятся все политики Ranger, созданные для этого кластера. Может быть указана одна предварительно настроенная политика. Щелкните **Add New Policy** (Добавить новую политику).
 
@@ -202,14 +203,14 @@ ms.locfileid: "70885157"
    kinit marketing_user1
    ```
 
-2. Откройте оболочку HBase и просмотрите таблицу `Customers`.
+1. Откройте оболочку HBase и просмотрите таблицу `Customers`.
 
     ```hbaseshell
     hbase shell
     scan `Customers`
     ```
 
-3. Обратите внимание, что торговый пользователь может просматривать только пять столбцов семейства столбцов `Contact`.
+1. Обратите внимание, что торговый пользователь может просматривать только пять столбцов семейства столбцов `Contact`.
 
     ```hbaseshell
     ROW                                COLUMN+CELL
@@ -226,9 +227,9 @@ ms.locfileid: "70885157"
     2 row(s) in 0.0730 seconds
     ```
 
-9. Просмотрите события доступа к ресурсам аудита из интерфейса Ranger.
+1. Просмотрите события доступа к ресурсам аудита из интерфейса Ranger.
 
-   ![Аудит политики пользовательского интерфейса Ranger](./media/apache-domain-joined-run-hbase/apache-ranger-admin-audit.png)
+   ![Аудит политики пользовательского интерфейса Ranger для HDInsight](./media/apache-domain-joined-run-hbase/apache-ranger-admin-audit.png)
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

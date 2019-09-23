@@ -7,12 +7,12 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.topic: tutorial
 ms.date: 09/04/2019
-ms.openlocfilehash: 6cac4bd05f2acf5b11a8235a4bc1e0d09e0c4dc7
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.openlocfilehash: 6d92ebc743bae97ecfa1591add27f470792dcafc
+ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70885935"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71037175"
 ---
 # <a name="tutorial-configure-apache-kafka-policies-in-hdinsight-with-enterprise-security-package-preview"></a>Руководство по Настройка политик Apache Kafka в HDInsight с Корпоративным пакетом безопасности (предварительная версия)
 
@@ -36,7 +36,7 @@ ms.locfileid: "70885935"
 
 2. Зарегистрируйтесь, используя свои учетные данные администратора Azure Active Directory (AD). Учетные данные администратора Azure AD отличаются от учетных данных кластера HDInsight или учетных данных SSH узла Linux HDInsight.
 
-   ![Пользовательский интерфейс администратора Apache Ranger](./media/apache-domain-joined-run-kafka/apache-ranger-admin-login.png)
+   ![Пользовательский интерфейс администратора Apache Ranger для HDInsight](./media/apache-domain-joined-run-kafka/apache-ranger-admin-login.png)
 
 ## <a name="create-domain-users"></a>Создание пользователей домена
 
@@ -183,7 +183,7 @@ ms.locfileid: "70885935"
 
 9. Просмотрите события доступа к ресурсам аудита из интерфейса Ranger.
 
-   ![Аудит политики пользовательского интерфейса Ranger](./media/apache-domain-joined-run-kafka/apache-ranger-admin-audit.png)
+   ![События доступа к ресурсам аудита политики в пользовательском интерфейсе Ranger ](./media/apache-domain-joined-run-kafka/apache-ranger-admin-audit.png)
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

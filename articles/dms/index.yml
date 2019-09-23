@@ -13,7 +13,7 @@ metadata:
   ms.service: dms
   ms.tgt_pltfrm: na
   ms.topic: landing-page
-  ms.date: 03/12/2019
+  ms.date: 09/22/2019
 abstract:
   description: 'Azure Database Migration Service обеспечивает бесперебойную миграцию из нескольких источников баз данных на платформы данных Azure с минимальным временем простоя. Служба использует Помощник по миграции данных для создания экспертных отчетов с рекомендациями по изменениям, которые необходимы для переноса данных. Когда вы будете готовы приступить к переносу, Azure Database Migration Service выполнит все необходимые действия.'
   aside:
@@ -26,7 +26,7 @@ abstract:
     href: 'https://www.microsoft.com/en-us/videoplayer/embed/RE2IqVu'
     width: 250
 sections:
-  - title: 5-минутные руководства по началу работы
+  - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph
         text: 'Узнайте, как перенести данные из локального экземпляра SQL Server в Базу данных SQL Azure с помощью Database Migration Service:'
@@ -37,22 +37,39 @@ sections:
               src: 'https://docs.microsoft.com/media/common/i_portal.svg'
             text: Портал Azure
             href: /azure/dms/quickstart-create-data-migration-service-portal
-  - title: Пошаговые руководства
+  - title: Пошаговые инструкции
     items:
       - type: paragraph
-        text: 'Узнайте, как переносить базы данных с помощью Database Migration Service:'
+        text: 'Узнайте, как переносить базы данных с помощью Azure Database Migration Service:'
       - type: list
-        style: ordered
+        style: unordered
         items:
-          - html: <a href="/azure/dms/tutorial-sql-server-to-azure-sql">Перенос баз данных из SQL Server в Базу данных SQL Azure в автономном режиме с помощью DMS</a>
-          - html: <a href="/azure/dms/tutorial-sql-server-azure-sql-online">Перенос баз данных SQL Server в базу данных SQL Azure с помощью DMS по сети</a>
-          - html: <a href="/azure/dms/tutorial-sql-server-to-managed-instance">Перенос баз данных SQL Server в Управляемый экземпляр Базы данных SQL Azure с помощью DMS в автономном режиме</a>
-          - html: <a href="/azure/dms/tutorial-sql-server-managed-instance-online">Перенос баз данных SQL Server в Управляемый экземпляр Базы данных SQL Azure с помощью DMS в автономном режиме</a>
-          - html: <a href="/azure/dms/tutorial-rds-sql-server-azure-sql-and-managed-instance-online">Перенос баз данных RDS SQL Server в Базу данных SQL Azure или управляемый экземпляр Базы данных SQL Azure по сети с помощью DMS</a>
-          - html: <a href="/azure/dms/tutorial-mysql-azure-mysql-online">Интерактивный перенос баз данных MySQL в Базу данных Azure для MySQL с помощью DMS</a>
-          - html: <a href="/azure/dms/tutorial-postgresql-azure-postgresql-online">Перенос баз данных PostgreSQL в Базу данных Azure для PostgreSQL через Интернет с помощью DMS</a>
-          - html: <a href="/azure/dms/tutorial-mongodb-cosmos-db">Перенос MongoDB в API Mongo Azure Cosmos DB в автономном режиме с помощью DMS</a>
-          - html: <a href="/azure/dms/tutorial-mongodb-cosmos-db-online">Перенос баз данных MongoDB в API Mongo Azure Cosmos DB по сети с помощью DMS</a>
+          - html: <a href="/azure/dms/tutorial-sql-server-to-azure-sql">Миграция из SQL Server в Базу данных SQL Azure в автономном режиме</a>
+          - html: <a href="/azure/dms/tutorial-sql-server-azure-sql-online">Миграция из SQL Server в Базу данных SQL Azure через Интернет</a>
+          - html: <a href="/azure/dms/tutorial-sql-server-to-managed-instance">Миграция из SQL Server в управляемый экземпляр Базы данных SQL Azure в автономном режиме</a>
+          - html: <a href="/azure/dms/tutorial-sql-server-managed-instance-online">Миграция из SQL Server в управляемый экземпляр Базы данных SQL Azure через Интернет</a>
+          - html: <a href="/azure/dms/tutorial-rds-sql-server-azure-sql-and-managed-instance-online">Миграция из RDS SQL Server в Базу данных SQL Azure или управляемый экземпляр Базы данных SQL Azure через Интернет</a>
+          - html: <a href="/azure/dms/tutorial-mysql-azure-mysql-online">Миграция из MySQL в Базу данных Azure для MySQL через Интернет</a>
+          - html: <a href="/azure/dms/tutorial-rds-mysql-server-azure-db-for-mysql-online">Миграция из RDS MySQL в Базу данных Azure для MySQL через Интернет</a>
+          - html: <a href="/azure/dms/tutorial-postgresql-azure-postgresql-online">Миграция из PostgreSQL в Базу данных Azure для PostgreSQL через Интернет</a>
+          - html: <a href="/azure/dms/tutorial-rds-postgresql-server-azure-db-for-postgresql-online">Миграция из RDS PostgreSQL в Базу данных Azure для PostgreSQL через Интернет</a>
+          - html: <a href="/azure/dms/tutorial-mongodb-cosmos-db">Миграция с MongoDB в Azure Cosmos DB Mongo API в автономном режиме</a>
+          - html: <a href="/azure/dms/tutorial-mongodb-cosmos-db-online">Миграция с MongoDB в API Mongo для Azure Cosmos DB через интернет</a>
+          - html: <a href="/azure/dms/tutorial-oracle-azure-postgresql-online">Миграция из Oracle в Базу данных Azure для PostgreSQL через Интернет</a>
+  - title: Видео
+    items:
+      - type: list
+        style: unordered
+        className: spaced noBullet
+        items:
+          - html: '<a href="https://azure.microsoft.com/resources/videos/how-to-use-the-azure-database-migration-guide/">Работа с руководством по переносу баз данных</a>'
+          - html: '<a href="https://azure.microsoft.com/resources/videos/overview-of-migration-and-recommended-tools-services/">Процесс миграции, рекомендуемые средства и службы</a>'
+          - html: '<a href="https://azure.microsoft.com/resources/videos/how-to-address-prerequisites-and-create-a-dms-instance/">Выполнение предварительных требований и создание экземпляра DMS</a>'
+          - html: "<a href=\"https://azure.microsoft.com/resources/videos/how-to-migrate-sql-server-2008-or-r2-to-azure-sqldbmi/\">Миграция из SQL Server\_2008 в управляемый экземпляр Базы данных SQL Azure через Интернет</a>"
+          - html: '<a href="https://azure.microsoft.com/resources/videos/how-to-migrate-postgresql-to-azure-postgresql-online-dms-and-cli/">Перенос баз данных PostgreSQL в Базу данных Azure для PostgreSQL</a>'
+          - html: '<a href="https://azure.microsoft.com/resources/videos/how-to-monitor-online-migration-and-perform-cutover/">Наблюдение за миграцией через Интернет и выполнение прямой миграции</a>'
+          - html: "<a href=\"https://azure.microsoft.com/resources/videos/how-to-migrate-oracle-to-sqldb-online/\">Миграция из Oracle в Базу данных SQL\_Azure</a>"
+          - html: '<a href="https://azure.microsoft.com/resources/videos/how-to-migrate-mongodb-to-cosmos-db/">Миграция из MongoDB в Azure Cosmos DB</a>'
   - title: Примеры
     items:
       - type: list

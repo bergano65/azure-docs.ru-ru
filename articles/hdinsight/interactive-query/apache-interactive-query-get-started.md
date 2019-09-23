@@ -7,13 +7,13 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: overview
-ms.date: 06/14/2019
-ms.openlocfilehash: 29b2a9378abaaa697d2d869145d5e912d6c06d6c
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.date: 09/17/2019
+ms.openlocfilehash: 3e0fddc03ad880d36876276827198b0ac180a00d
+ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70811597"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71076360"
 ---
 # <a name="what-is-interactive-query-in-azure-hdinsight"></a>Общие сведения об интерактивном запросе в Azure HDInsight
 
@@ -28,6 +28,9 @@ Interactive Query (также называется Apache Hive LLAP или [Low 
 ## <a name="create-an-interactive-query-cluster"></a>Создание кластера Interactive Query
 
 Дополнительные сведения о создании кластера HDInsight см. в статье [Установка кластеров в HDInsight с использованием Hadoop, Spark, Kafka и других технологий](../hdinsight-hadoop-provision-linux-clusters.md). Выберите тип кластера Interactive Query.
+
+> [!IMPORTANT]
+> Минимальный размер головного узла для кластеров Interactive Query — это Standard_D13_v2. Дополнительные сведения см. в [спецификации размеров виртуальных машин Azure](../../cloud-services/cloud-services-sizes-specs.md#dv2-series).
 
 ## <a name="execute-apache-hive-queries-from-interactive-query"></a>Выполнение запросов Apache Hive из Interactive Query
 

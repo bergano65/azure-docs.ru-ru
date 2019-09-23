@@ -9,13 +9,23 @@
 - name: Краткие руководства
   expanded: true
   items:
-    - name: Разрешение имен с помощью портала
-      href: dns-getstarted-portal.md
-    - name: Разрешение имен с помощью PowerShell
-      href: dns-getstarted-powershell.md
-    - name: Разрешение имен с помощью CLI
-      href: dns-getstarted-cli.md
-- name: Руководства
+    - name: Общедоступное имя DNS
+      items:
+        - name: "Создание общедоступной зоны\_— портал"
+          href: dns-getstarted-portal.md
+        - name: "Создание общедоступной зоны\_— PowerShell"
+          href: dns-getstarted-powershell.md
+        - name: "Создание общедоступной зоны\_— CLI"
+          href: dns-getstarted-cli.md
+    - name: Частная зона DNS
+      items:
+        - name: "Создание частной зоны\_— портал"
+          href: private-dns-getstarted-portal.md
+        - name: "Создание частной зоны\_— CLI"
+          href: private-dns-getstarted-cli.md
+        - name: "Создание частной зоны\_— PowerShell"
+          href: private-dns-getstarted-powershell.md
+- name: Учебники
   items:
     - name: Общедоступное имя DNS
       items:
@@ -29,10 +39,6 @@
           href: tutorial-alias-pip.md
         - name: Записи псевдонимов для записей зон
           href: tutorial-alias-rr.md
-    - name: Частная зона DNS
-      items:
-        - name: Создание частной зоны и записи DNS
-          href: private-dns-portal.md
 - name: Примеры
   items:
     - name: Azure CLI
@@ -47,7 +53,7 @@
           href: dns-alias.md
         - name: Делегирование с помощью Azure DNS
           href: dns-domain-delegation.md
-        - name: Вопросы и ответы
+        - name: Часто задаваемые вопросы
           href: dns-faq.md
         - name: Оповещения и метрики DNS
           href: dns-alerts-metrics.md
@@ -59,16 +65,10 @@
       items:
         - name: "Вопросы и ответы\_— Частная зона DNS"
           href: dns-faq-private.md
-        - name: Сценарии с использованием частной зоны DNS
+        - name: Сценарии с использованием Частной зоны DNS
           href: private-dns-scenarios.md
-- name: Руководства
+- name: Практическое руководство
   items:
-    - name: Частная зона DNS
-      items:
-        - name: "Создание частной зоны\_— CLI"
-          href: private-dns-getstarted-cli.md
-        - name: "Создание частной зоны\_— PowerShell"
-          href: private-dns-getstarted-powershell.md
     - name: Общедоступное имя DNS
       items:
         - name: Записи псевдонима для веб-приложений с балансировкой нагрузки
@@ -79,15 +79,15 @@
               href: dns-operations-dnszones-portal.md
             - name: Azure PowerShell
               href: dns-operations-dnszones.md
-            - name: Инфраструктура CLI Azure
+            - name: Azure CLI
               href: dns-operations-dnszones-cli.md
-        - name: Управление зонами DNS
+        - name: Управление записями DNS
           items:
             - name: Портал Azure
               href: dns-operations-recordsets-portal.md
             - name: Azure PowerShell
               href: dns-operations-recordsets.md
-            - name: Инфраструктура CLI Azure
+            - name: Azure CLI
               href: dns-operations-recordsets-cli.md
         - name: Управление обратным поиском DNS
           items:
@@ -155,7 +155,7 @@
       href: /azure/virtual-network/
     - name: Виртуальная машина
       href: /azure/virtual-machines/
-    - name: Балансировщик нагрузки
+    - name: Load Balancer
       href: /azure/load-balancer/
     - name: Диспетчер трафика
       href: /azure/traffic-manager/

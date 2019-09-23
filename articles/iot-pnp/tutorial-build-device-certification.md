@@ -9,12 +9,12 @@ ms.custom: mvc
 ms.service: iot-pnp
 services: iot-pnp
 manager: philmea
-ms.openlocfilehash: 019b2ba0fd87610195ca9e6c7cb749be9542bd72
-ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
+ms.openlocfilehash: 524bc3b2650ad7b435cba6b6b9d4084ffa5cf96c
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70858857"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70932680"
 ---
 # <a name="build-an-iot-plug-and-play-preview-device-thats-ready-for-certification"></a>Создание готового к сертификации устройства IoT Plug and Play (предварительная версия)
 
@@ -84,6 +84,18 @@ ms.locfileid: "70858857"
 1. В открывшемся общедоступном репозитории моделей перейдите на вкладку **Интерфейсы**, выберите значок фильтра и введите **Сведения об устройстве** в поле фильтра.
 
 1. Чтобы создать локальную копию интерфейса со **сведениями об устройстве**, выберите его в отфильтрованном списке, а затем щелкните **Скачать**. В VS Code отобразится файл интерфейса.
+
+Чтобы просмотреть интерфейс **Сведения об устройстве** в Azure CLI, сделайте следующее:
+
+1. [Установите расширение Azure CLI для Интернета вещей](howto-install-pnp-cli.md).
+
+1. Используйте следующую команду Azure CLI, чтобы отобразить интерфейс с идентификатором интерфейса сведений об устройстве:
+
+    ```cmd/sh
+    az iot pnp interface show --interface urn:azureiot:DeviceManagement:DeviceInformation:1
+    ```
+
+Дополнительные сведения см. в статье [об установке и настройке расширения Azure CLI для Интернета вещей](howto-install-pnp-cli.md).
 
 ## <a name="update-device-code"></a>Обновление кода устройства
 

@@ -1,7 +1,7 @@
 ---
 title: Руководство по классификации изображений. Развертывание моделей
-titleSuffix: Azure Machine Learning service
-description: В этом руководстве показано, как использовать службу "Машинное обучение Azure" для развертывания модели классификации изображений с помощью scikit-learn в Jupyter Notebook для Python. Это руководство представляет собой вторую часть серии, состоящей из двух частей.
+titleSuffix: Azure Machine Learning
+description: В этом руководстве показано, как использовать Машинное обучение Azure для развертывания модели классификации изображений с помощью Scikit-learn в Jupyter Notebook для Python. Это руководство представляет собой вторую часть серии, состоящей из двух частей.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,12 +10,12 @@ author: sdgilley
 ms.author: sgilley
 ms.date: 08/26/2019
 ms.custom: seodec18
-ms.openlocfilehash: 57d34bb170c0ff86f3d3c42a25184d8af71c0270
-ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
+ms.openlocfilehash: 6e5ab17a04c994f09bccc0f51f11749ee8590b1d
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70036216"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71003056"
 ---
 # <a name="tutorial-deploy-an-image-classification-model-in-azure-container-instances"></a>Руководство по Развертывание модели классификации изображений в Экземплярах контейнеров Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "70036216"
 
 Теперь вы готовы развернуть модель как веб-службу в [Экземплярах контейнеров Azure](https://docs.microsoft.com/azure/container-instances/). Веб-служба — это образ. В данном случае образ Docker. Он инкапсулирует логику оценки и саму модель. 
 
-В этой части вы будете использовать Службу машинного обучения Azure, чтобы научиться выполнять следующие задачи:
+В этой части показано, как с помощью Машинного обучения Azure выполнить следующие задачи:
 
 > [!div class="checklist"]
 > * настройка тестовой среды;
@@ -378,7 +378,7 @@ service.delete()
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-+ Сведения обо всех [вариантах развертывания для Службы машинного обучения Azure](how-to-deploy-and-where.md).
++ Сведения обо всех [вариантах развертывания Машинного обучения Azure](how-to-deploy-and-where.md).
 + Сведения о [создании клиентов для веб-службы](how-to-consume-web-service.md).
 +  Асинхронное [создание прогнозов на больших объемах данных](how-to-run-batch-predictions.md).
 + Мониторинг моделей машинного обучения в Azure с помощью [Application Insights](how-to-enable-app-insights.md).

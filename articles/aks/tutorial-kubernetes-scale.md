@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 12/19/2018
 ms.author: mlearned
 ms.custom: mvc
-ms.openlocfilehash: 9bccd826a37b66f7f89e70c57260a0db08342421
-ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
+ms.openlocfilehash: 4e36362fd42a147ee900005d84b0af1b4839aae1
+ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69019189"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70965130"
 ---
 # <a name="tutorial-scale-applications-in-azure-kubernetes-service-aks"></a>Руководство по Масштабирование приложений в Службе Azure Kubernetes (AKS)
 
@@ -94,7 +94,7 @@ resources:
      cpu: 500m
 ```
 
-В следующем примере используется команда [kubectl autoscale][kubectl-autoscale] для автомасштабирования числа модулей pod в развертывании *azure-vote-front*. Если загрузка ЦП превышает 50 %, то инструмент автомасштабирования увеличивает число модулей pod максимум до *10* экземпляров. Затем для развертывания определяются как минимум *3* экземпляра:
+В следующем примере используется команда [kubectl autoscale][kubectl-autoscale] для автомасштабирования числа модулей pod в развертывании *azure-vote-front*. Если среднее использование ЦП всеми pod превышает 50% их запрошенного использования, инструмент автомасштабирования увеличивает количество pod максимум до *10* экземпляров. Затем для развертывания определяются как минимум *3* экземпляра:
 
 ```console
 kubectl autoscale deployment azure-vote-front --cpu-percent=50 --min=3 --max=10

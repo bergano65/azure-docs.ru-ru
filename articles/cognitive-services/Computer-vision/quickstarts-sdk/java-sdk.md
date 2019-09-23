@@ -10,12 +10,12 @@ ms.subservice: ''
 ms.topic: quickstart
 ms.date: 07/25/2019
 ms.author: pafarley
-ms.openlocfilehash: fd8abf81589f3338f9e45c6c1d23681269ccc654
-ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
+ms.openlocfilehash: 16a487dc007526f685edb52726f5797303a30c11
+ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70164853"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70966990"
 ---
 # <a name="quickstart-computer-vision-client-library-for-java"></a>Краткое руководство. Клиентская библиотека службы "Компьютерное зрение" для Java
 
@@ -106,7 +106,7 @@ dependencies {
 |ИМЯ|ОПИСАНИЕ|
 |---|---|
 | [ComputerVisionClient](https://docs.microsoft.com/java/api/com.microsoft.azure.cognitiveservices.vision.computervision.computervisionclient?view=azure-java-stable) | Этот класс требуется для всех функций Компьютерного зрения. Вы создаете его экземпляр с информацией о подписке и используете его для создания экземпляров других классов.|
-|[ComputerVision](https://docs.microsoft.com/java/api/com.microsoft.azure.cognitiveservices.vision.computervision.computervision?view=azure-java-stable)| Этот класс поступает из клиентского объекта и напрямую обрабатывает все операции с изображениями, такие как анализ изображений, обнаружение текста и создание эскизов.
+|[ComputerVision](https://docs.microsoft.com/java/api/com.microsoft.azure.cognitiveservices.vision.computervision.computervision?view=azure-java-stable)| Этот класс поступает из клиентского объекта и напрямую обрабатывает все операции с изображениями, такие как анализ изображений, обнаружение текста и создание эскизов.|
 |[VisualFeatureTypes](https://docs.microsoft.com/java/api/com.microsoft.azure.cognitiveservices.vision.computervision.models.visualfeaturetypes?view=azure-java-stable)| Это перечисление определяет различные типы анализа изображений, которые можно выполнить в стандартной операции анализа. Набор значений VisualFeatureTypes указывается в зависимости от потребностей. |
 
 ## <a name="code-examples"></a>Примеры кода
@@ -172,17 +172,17 @@ dependencies {
 
 ### <a name="get-image-tags"></a>Получение тегов изображения
 
-Следующий код получает набор обнаруженных тегов изображения. Дополнительные сведения см. в статье [Applying content tags to images](../concept-tagging-images.md) (Применение тегов содержимого к изображениям).
+Следующий код получает набор обнаруженных тегов изображения. Дополнительные сведения см. в статье о [тегах содержимого](../concept-tagging-images.md).
 
 [!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/ComputerVisionQuickstart.java?name=snippet_analyzelocal_tags)]
 
-### <a name="get-faces"></a>Получение лиц
+### <a name="detect-faces"></a>Распознавание лиц
 
 Следующий код возвращает обнаруженные лица на изображении с их координатами прямоугольника и атрибутами выбора лиц. Дополнительные сведения см. в статье [Определение лиц с помощью компьютерного зрения](../concept-detecting-faces.md).
 
 [!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/ComputerVisionQuickstart.java?name=snippet_analyzelocal_faces)]
 
-### <a name="get-adult-or-racy-content"></a>Получение непристойного содержимого или содержимого для взрослых
+### <a name="detect-adult-or-racy-content"></a>Обнаружение содержимого для взрослых или содержимого непристойного характера
 
 Следующий код выводит сведения об обнаружении непристойного содержимого или содержимого для взрослых на изображении. Дополнительные сведения см. в статье [Обнаружение содержимого для взрослых и содержимого непристойного характера](../concept-detecting-adult-content.md).
 
@@ -205,6 +205,12 @@ dependencies {
 Следующий код анализирует данные об обнаруженных достопримечательностях на изображении.
 
 [!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/ComputerVisionQuickstart.java?name=snippet_analyzelocal_landmarks)]
+
+### <a name="get-the-image-type"></a>Получение сведений о типе изображения
+
+Следующий код выводит информацию о типе изображения&mdash;, независимо от того, является ли это картинкой или рисунком.
+
+[!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/ComputerVisionQuickstart.java?name=snippet_imagetype)]
 
 ## <a name="run-the-application"></a>Выполнение приложения
 

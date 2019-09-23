@@ -1,67 +1,131 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Документация по Поиску Azure
+summary: Находите частное разнородное содержимое с возможностью обогащения ИИ, если содержимое не структурировано или недоступно для поиска в необработанном виде.
 metadata:
-  document_id: null
-  title: 'Документация по службе "Поиск Azure". Учебные материалы, краткие руководства и справочники по API'
-  description: 'Узнайте, как создать корпоративное решение для поиска по частному разнородному контенту с помощью службы "Поиск Azure". В руководствах, справочниках по API и другой документации описано, как объединить доступное для поиска содержимое в один быстрый индекс, запрашиваемый с помощью расширяемого синтаксиса для различных сценариев.'
+  title: Документация по Поиску Azure
+  description: Находите частное разнородное содержимое с возможностью обогащения ИИ, если содержимое не структурировано или недоступно для поиска в необработанном виде.
   services: search
-  author: HeidiSteen
-  manager: nitinme
-  ms.service: search
+  ms.service: service
+  ms.subservice: cognitive-search
   ms.topic: landing-page
-  ms.date: 08/12/2019
+  ms.collection: collection
+  author: HeidiSteen
   ms.author: heidist
-abstract:
-  description: "Узнайте, как создать корпоративное решение для поиска по частному разнородному контенту с помощью службы \"Поиск Azure\". В руководствах, справочниках по API и другой документации описано, как объединить доступное для поиска содержимое в один быстрый индекс, запрашиваемый с помощью расширяемого синтаксиса для различных сценариев. <p/><a href=\"/azure/search/cognitive-search-concept-intro\"><b>Когнитивный поиск</b></a>\_— это функция Поиска Azure, которая подключает процессы ИИ для индексирования, а также обнаружения текста и характеристик в файлах изображений. Затем функция выявляет закономерности в больших блоках неструктурированного текста. Процессы ИИ поддерживаются Cognitive Services.<p/><a href=\"/azure/search/knowledge-store-concept-intro\"><b>Хранилище знаний (предварительная версия)</b></a> расширяет Когнитивный поиск, предоставляя возможность хранить расширение искусственного интеллекта в хранилище для просмотра, изменения формы и использования в клиентских приложениях или нижестоящих процессах."
-  aside:
-    image:
-      alt: null
-      height: 110
-      src: 'https://docs.microsoft.com/azure/search/media/index/search-page-callouts3.png'
-      width: 250
-    title: 'Что такое Поиск Azure (1:27)'
-    href: 'https://channel9.msdn.com/Blogs/Azure/What-is-Azure-Search/player'
-    width: 250
-sections:
-  - title: Пятиминутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: 'Начните работу со службой "Поиск" на портале, чтобы определять, загружать и отправлять запросы к индексам на C# или REST.'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: /azure/search/media/index/portal.svg
-            text: Портал Azure
-            href: 'https://docs.microsoft.com/azure/search/search-create-service-portal'
-          - image:
-              src: /azure/search/media/index/logo_Csharp.svg
-            text: .NET
-            href: 'https://docs.microsoft.com/azure/search/search-create-index-dotnet'
-          - image:
-              src: /azure/search/media/index/rest.svg
-            text: REST
-            href: 'https://docs.microsoft.com/azure/search/search-get-started-postman'
-  - title: Пошаговые инструкции
-    items:
-      - type: paragraph
-        text: Напишите код на .NET или REST или попробуйте быстро протестировать концепцию с помощью портала.
-      - type: list
-        style: ordered
-        items:
-          - html: <a href="/azure/search/search-get-started-portal">Индексирование и тестирование запросов на портале</a>
-          - html: <a href="/azure/search/search-howto-dotnet-sdk">Создание решения поиска с помощью .NET</a>
-          - html: <a href="/azure/search/cognitive-search-tutorial-blob">Расширение с помощью средств ИИ (Cognitive Services)</a>
-          - html: <a href="/azure/search/search-indexer-tutorial">Индексирование содержимого Базы данных SQL Azure с использованием .NET</a>
-          - html: <a href="/azure/search/search-semi-structured-data">Индексирование частично структурированных данных в хранилище BLOB-объектов с использованием REST</a>
-  - title: Справочные материалы
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: Языки
-            html: '<p><a href="/dotnet/api/?term=microsoft.azure.search">.NET</a></p><p><a href="/dotnet/api/?term=microsoft.azure.management.search">.NET (управление)</a></p><p><a href="https://docs.microsoft.com/python/api/?view=azure-python&term=search">Python (управление)</a></p>'
-          - title: REST
-            html: <p><a href="/rest/api/searchservice">Справочник по API службы</a></p><p><a href="/rest/api/searchmanagement">Справочник по API для управления</a></p>
+  ms.date: 09/20/2019
+  ms.openlocfilehash: 113ee13c1667e00f1052c88c9b29b881f312b00c
+  ms.sourcegitcommit: b03516d245c90bca8ffac59eb1db522a098fb5e4
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 09/19/2019
+  ms.locfileid: "71147274"
+landingContent:
+- title: Сведения о службе "Поиск Azure"
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое Поиск Azure?
+      url: search-what-is-azure-search.md
+  - linkListType: architecture
+    links:
+    - text: Как работает полнотекстовый поиск в службе поиска Azure
+      url: search-lucene-query-architecture.md
+  - linkListType: video
+    links:
+    - text: Общие сведения о Поиске Azure (01:27)
+      url: https://channel9.msdn.com/Blogs/Azure/What-is-Azure-Search/player
+- title: Начало работы
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Создание службы
+      url: search-create-service-portal.md
+    - text: Создание индекса
+      url: search-get-started-portal.md
+    - text: Создание конвейера обогащения
+      url: cognitive-search-quickstart-blob.md
+  - linkListType: learn
+    links:
+    - text: Общие сведения о Поиске Azure
+      url: https://docs.microsoft.com/learn/modules/intro-to-azure-search/
+- title: Индексирование данных
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Определение индекса
+      url: search-what-is-an-index.md
+    - text: Импорт данных
+      url: search-what-is-data-import.md
+    - text: Использование индексатора
+      url: search-indexer-overview.md
+  - linkListType: how-to-guide
+    links:
+    - text: Индексирование из хранилища BLOB-объектов
+      url: search-howto-indexing-azure-blob-storage.md
+    - text: Индексация больших двоичных объектов JSON
+      url: search-howto-index-json-blobs.md
+    - text: Индексирование из Базы данных SQL Azure
+      url: search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md
+    - text: Индексирование из Azure Cosmos DB
+      url: search-howto-index-cosmosdb.md
+  - linkListType: reference
+    links:
+    - text: Создание индексов — REST
+      url: https://docs.microsoft.com/rest/api/searchservice/create-index
+    - text: Создание индексатора — REST
+      url: https://docs.microsoft.com/rest/api/searchservice/create-indexer
+- title: Обогащение данных
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Что такое когнитивный поиск?
+      url: cognitive-search-concept-intro.md
+    - text: Наборы навыков
+      url: cognitive-search-defining-skillset.md
+    - text: Хранилища знаний
+      url: knowledge-store-concept-intro.md
+    - text: Проекции
+      url: knowledge-store-projection-overview.md
+  - linkListType: how-to-guide
+    links:
+    - text: Подключение Cognitive Services
+      url: cognitive-search-attach-cognitive-services.md
+    - text: Определение набора навыков
+      url: cognitive-search-defining-skillset.md
+    - text: Создание хранилища знаний
+      url: knowledge-store-create-portal.md
+  - linkListType: reference
+    links:
+    - text: Предопределенные навыки
+      url: cognitive-search-predefined-skills.md
+- title: Обращение к данным
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Обзор
+      url: search-query-overview.md
+    - text: Примеры (простой синтаксис)
+      url: query-simple-syntax.md
+    - text: Полный синтаксис Lucene
+      url: query-lucene-syntax.md
+  - linkListType: how-to-guide
+    links:
+    - text: Создание простого запроса
+      url: search-query-simple-examples.md
+    - text: Использование полного синтаксиса
+      url: search-query-lucene-examples.md
+  - linkListType: reference
+    links:
+    - text: Справочник по языку OData
+      url: query-odata-filter-orderby-syntax.md
+    - text: Поиск по документам — REST
+      url: https://docs.microsoft.com/rest/api/searchservice/search-documents
+- title: Справка и обратная связь
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Часто задаваемые вопросы
+      url: search-faq-frequently-asked-questions.md
+    - text: Публикация вопросов на сайте Stack Overflow
+      url: https://stackoverflow.com/questions/tagged/azure-search
+    - text: Запрашивание функции
+      url: https://feedback.azure.com/forums/263029-azure-search

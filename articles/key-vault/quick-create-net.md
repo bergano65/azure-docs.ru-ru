@@ -6,12 +6,12 @@ ms.author: mbaldwin
 ms.date: 05/20/2019
 ms.service: key-vault
 ms.topic: quickstart
-ms.openlocfilehash: b61dab28ff3fb6710e59e6209282c71a8f52f674
-ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
+ms.openlocfilehash: d24323996e222caf6456372cbc65681d2055c3db
+ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70914871"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70996646"
 ---
 # <a name="quickstart-azure-key-vault-client-library-for-net"></a>Краткое руководство. Клиентская библиотека Azure Key Vault для .NET
 
@@ -26,7 +26,6 @@ ms.locfileid: "70914871"
 - Используйте модули HSM, отвечающие стандартам FIPS 140-2 уровня 2.
 
 [Справочная документация по API](/dotnet/api/overview/azure/key-vault?view=azure-dotnet) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-net/tree/AutoRest/src/KeyVault) | [Пакет (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.KeyVault/).
-
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -118,26 +117,14 @@ az ad sp create-for-rbac -n "http://mySP" --sdk-auth
 }
 ```
 
-Запишите значения clientId, clientSecret, subscriptionId, and tenantId, так как они нам потребуются далее на шаге [Проверка подлинности в хранилище ключей](#authenticate-to-your-key-vault).
-
-Вам также потребуется значение appID для субъекта-службы. Его можно получить, выполнив команду [az ad sp list](https://docs.microsoft.com/en-us/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-list) с параметром `--show-mine`:
-
-```azurecli
-az ad sp list --show-mine
-```
-
-Она возвращает текст JSON, который содержит `appID`:
-
-```json
-    "appId": "2cf5aa18-0100-445a-9438-0b93e577a3ed",
-```
+Запишите значения clientId и clientSecret, так как они нам потребуются на шаге [Проверка подлинности в хранилище ключей](#authenticate-to-your-key-vault).
 
 #### <a name="give-the-service-principal-access-to-your-key-vault"></a>Предоставление субъекту-службе доступа к хранилищу ключей
 
-Создайте для хранилища ключей политику доступа, которая предоставляет субъекту-службе нужные разрешения. Это можно сделать с помощью команды [az keyvault set-policy](/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-set-policy). Мы предоставим субъекту-службе разрешения get, list и set для ключей и секретов.
+Создайте политику доступа для хранилища ключей, которая предоставляет разрешение субъекту-службе, передавая clientId в команду [az keyvault set-policy](/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-set-policy). Предоставьте субъекту-службе разрешения get, list и set для ключей и секретов.
 
 ```azurecli
-az keyvault set-policy -n <your-unique-keyvault-name> --spn <appid-of-your-service-principal> --secret-permissions delete get list set --key-permissions create decrypt delete encrypt get list unwrapKey wrapKey
+az keyvault set-policy -n <your-unique-keyvault-name> --spn <clientId-of-your-service-principal> --secret-permissions delete get list set --key-permissions create decrypt delete encrypt get list unwrapKey wrapKey
 ```
 
 ## <a name="object-model"></a>Объектная модель
@@ -164,10 +151,6 @@ az keyvault set-policy -n <your-unique-keyvault-name> --spn <appid-of-your-servi
 setx akvClientId <your-clientID>
 
 setx akvClientSecret <your-clientSecret>
-
-setx akvTenantId <your-tentantId>
-
-setx akvSubscriptionId <your-subscriptionId>
 ````
 
 При каждом вызове `setx` вы будете получать ответ об успешном выполнении "SUCCESS: Specified value was saved." (Указанное значение сохранено.)

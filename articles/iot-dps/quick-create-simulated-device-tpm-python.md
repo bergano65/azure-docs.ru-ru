@@ -10,12 +10,12 @@ services: iot-dps
 manager: timlt
 ms.devlang: python
 ms.custom: mvc
-ms.openlocfilehash: c302b18e34533a564904562ed39879bbe37b82ca
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: df12acad5fa9287f43cc256bfcc89fa6775c3e3b
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65908197"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71001309"
 ---
 # <a name="create-and-provision-a-simulated-tpm-device-using-python-device-sdk-for-iot-hub-device-provisioning-service"></a>Создание и подготовка имитированного устройства TPM с помощью пакета SDK устройств для Python для службы "Подготовка устройств к добавлению в Центр Интернета вещей"
 
@@ -33,6 +33,9 @@ ms.locfileid: "65908197"
 
 [!INCLUDE [IoT Device Provisioning Service basic](../../includes/iot-dps-basic.md)]
 
+> [!NOTE]
+> Это руководство предназначено исключительно для пакета SDK Python версии v1, который был объявлен нерекомендуемым. Смоделированные устройства TPM пока не поддерживаются в версии 2. Сейчас ведутся работы по реализации всего функционала в версии 2.
+
 ## <a name="prepare-the-environment"></a>Подготовка среды 
 
 1. Проверьте, установлена ли среда [Visual Studio](https://visualstudio.microsoft.com/vs/) 2015 или более поздней версии с включенной рабочей нагрузкой "Разработка классических приложений на C++".
@@ -44,7 +47,7 @@ ms.locfileid: "65908197"
 1. Откройте окно командной строки или Git Bash. Клонируйте репозиторий GitHub для примера кода виртуального устройства:
     
     ```cmd/sh
-    git clone https://github.com/Azure/azure-iot-sdk-python.git --recursive
+    git clone --single-branch --branch v1-deprecated https://github.com/Azure/azure-iot-sdk-python.git --recursive
     ```
 
 1. Создайте папку в локальной копии этого репозитория GitHub для процесса сборки CMake. 

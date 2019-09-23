@@ -140,7 +140,11 @@
             - name: Руководство по настройке производительности
               href: performance-tuning-ordered-CCI.md
         - name: Кэширование результирующего набора
-          href: /sql/t-sql/statements/set-result-set-caching-transact-sql
+          items:
+            - name: Настройка базы данных
+              href: 'https://docs.microsoft.com/en-us/sql/t-sql/statements/alter-database-transact-sql-set-options?view=azure-sqldw-latest'
+            - name: Настройка сеанса
+              href: /sql/t-sql/statements/set-result-set-caching-transact-sql
         - name: Таблицы
           items:
             - name: Обзор

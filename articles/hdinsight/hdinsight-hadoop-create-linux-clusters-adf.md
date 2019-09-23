@@ -2,17 +2,17 @@
 title: Руководство по Создание кластеров Apache Hadoop в Azure HDInsight по запросу с помощью Фабрики данных
 description: 'Учебник: узнайте, как создавать кластеры Apache Hadoop в HDInsight по запросу с помощью Фабрики данных Azure.'
 author: hrasheed-msft
-ms.reviewer: jasonh
 ms.author: hrasheed
+ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: tutorial
 ms.date: 04/18/2019
-ms.openlocfilehash: de12725952a2bac6a0b86b1d2e239428c0eaa709
-ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
+ms.openlocfilehash: 0b3062e14873ec971163c125fccd6852d8662663
+ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70736179"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71098726"
 ---
 # <a name="tutorial-create-on-demand-apache-hadoop-clusters-in-hdinsight-using-azure-data-factory"></a>Руководство по Создание кластеров Apache Hadoop в HDInsight по запросу с помощью Фабрики данных Azure
 [!INCLUDE [selector](../../includes/hdinsight-create-linux-cluster-selector.md)]
@@ -203,7 +203,7 @@ Write-host "`nScript completed" -ForegroundColor Green
 
 6. Выберите **Создание и мониторинг** для запуска портала создания и наблюдения фабрики данных Azure.
 
-    ![Обзор фабрики данных Azure](./media/hdinsight-hadoop-create-linux-clusters-adf/data-factory-portal-overview.png "Обзор фабрики данных Azure")
+    ![Обзор портала Фабрики данных Azure](./media/hdinsight-hadoop-create-linux-clusters-adf/data-factory-portal-overview.png "Обзор Фабрики данных Azure")
 
 ## <a name="create-linked-services"></a>Создание связанных служб
 
@@ -352,7 +352,7 @@ Write-host "`nScript completed" -ForegroundColor Green
 1. В элементе **Ресурсы** должны отображаться учетная запись хранения по умолчанию и фабрика данных, если только группа ресурсов не является общей для других проектов.
 1. Выберите **Удалить группу ресурсов**. При этом также будет удалена учетная запись хранения и данные, хранящиеся в ней.
 
-    ![Удаление группы ресурсов](./media/hdinsight-hadoop-create-linux-clusters-adf/delete-resource-group.png "Удаление группы ресурсов")
+    ![Удаление группы ресурсов на портале Azure](./media/hdinsight-hadoop-create-linux-clusters-adf/delete-resource-group.png "Удаление группы ресурсов")
 
 1. Введите имя группы ресурсов, чтобы подтвердить удаление, и нажмите **Удалить**.
 

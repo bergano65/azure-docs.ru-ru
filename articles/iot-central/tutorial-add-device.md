@@ -9,12 +9,12 @@ ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: peterpr
-ms.openlocfilehash: 8731d66c9d2dca0043307ac2f6a0d1828aeaa275
-ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
+ms.openlocfilehash: 192374971e92bae282c5092dd8c5e7261fce0c5f
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70050513"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71066365"
 ---
 # <a name="tutorial-add-a-real-device-to-your-azure-iot-central-application"></a>Руководство по Добавление реального устройства в приложение Azure IoT Central
 
@@ -24,8 +24,8 @@ ms.locfileid: "70050513"
 
 Это руководство состоит из двух частей:
 
-1. Во-первых, вы, как оператор, добавите реальное устройство в приложение Azure IoT Central, а затем настроите его. В конце этой части вы извлечете строку подключения для использования во второй части.
-2. Затем, как разработчик устройства, вы ознакомитесь со сведениями о коде в вашем реальном устройстве. Вы добавите строку подключения из первой части в пример кода.
+* Во-первых, вы, как оператор, добавите реальное устройство в приложение Azure IoT Central, а затем настроите его. В конце этой части вы извлечете строку подключения для использования во второй части.
+* Затем, как разработчик устройства, вы ознакомитесь со сведениями о коде в вашем реальном устройстве. Вы добавите строку подключения из первой части в пример кода.
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 
@@ -39,7 +39,6 @@ ms.locfileid: "70050513"
 ## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем вы начнете, конструктор должен выполнить инструкции по крайней мере в первом руководстве по созданию приложения Azure IoT Central: [Определение типа нового устройства в приложении в Azure IoT Central](tutorial-define-device-type.md) (обязательно).
-
 
 Установите на компьютере для разработки [Node.js](https://nodejs.org/) версии 8.0.0 или более поздней. Вы можете запустить `node --version` в командной строке, чтобы проверить версию. Node.js доступен для разных операционных систем.
 
@@ -75,10 +74,6 @@ ms.locfileid: "70050513"
 
 3. Вы можете просматривать следующие страницы параметров своего реального устройства: **Measurements** (Измерения), **Rules** (Правила) и **Dashboard** (Панель мониторинга).
 
-## <a name="generate-connection-string"></a>Создание строки подключения
-
-Разработчику устройства необходимо внедрить *строку подключения* для вашего реального устройства в код, который выполняется на устройстве. Строка подключения позволяет устройству безопасно подключаться к вашему приложению. Далее описывается, как создать строку подключения и подготовить клиентский код Node.js.
-
 ## <a name="prepare-the-client-code"></a>Подготовка клиентского кода
 
 Пример кода в этой статье написан на [Node.js](https://nodejs.org/). Этот код используется для выполнения следующих задач:
@@ -101,13 +96,9 @@ ms.locfileid: "70050513"
 
    ![Страница устройства, отображающая ссылку на сведения о подключении](media/tutorial-add-device/connectionlink.png)
 
-1. Запишите значения **Идентификатор области**, **Идентификатор устройства** и **Первичный ключ** на странице "Подключение к устройству. Эти значения будут использованы на следующем шаге.
+1. Запишите значения **Идентификатор области**, **Идентификатор устройства** и **Первичный ключ** на странице "Подключение к устройству. Они понадобятся позже.
 
    ![Сведения о подключении](media/tutorial-add-device/device-connect.png)
-
-### <a name="generate-the-connection-string"></a>Создание строки подключения
-
-[!INCLUDE [iot-central-howto-connection-string](../../includes/iot-central-howto-connection-string.md)]
 
 ### <a name="prepare-the-nodejs-project"></a>Подготовка проекта Node.js
 
@@ -124,7 +115,7 @@ ms.locfileid: "70050513"
 1. Чтобы установить требуемые пакеты, выполните следующую команду:
 
     ```cmd/sh
-    npm install azure-iot-device azure-iot-device-mqtt --save
+    npm install azure-iot-device azure-iot-device-mqtt azure-iot-provisioning-device-mqtt azure-iot-security-symmetric-key --save
     ```
 
 1. С помощью текстового редактора создайте файл **ConnectedAirConditioner.js** в папке `connectedairconditioner`.
@@ -134,21 +125,26 @@ ms.locfileid: "70050513"
     ```javascript
     'use strict';
 
-    var clientFromConnectionString = require('azure-iot-device-mqtt').clientFromConnectionString;
+    var iotHubTransport = require('azure-iot-device-mqtt').Mqtt;
+    var Client = require('azure-iot-device').Client;
     var Message = require('azure-iot-device').Message;
-    var ConnectionString = require('azure-iot-device').ConnectionString;
+    var ProvisioningTransport = require('azure-iot-provisioning-device-mqtt').Mqtt;
+    var SymmetricKeySecurityClient = require('azure-iot-security-symmetric-key').SymmetricKeySecurityClient;
+    var ProvisioningDeviceClient = require('azure-iot-provisioning-device').ProvisioningDeviceClient;
     ```
 
-1. Добавьте следующие объявления переменных в файл:
+1. Добавьте следующие объявления переменных в файл. Замените заполнители `{your Scope ID}`, `{your Device ID}` и `{your Primary Key}` записанными ранее сведениями о подключении к устройству.
 
     ```javascript
-    var connectionString = '{your device connection string}';
+    var provisioningHost = 'global.azure-devices-provisioning.net';
+    var idScope = '{your Scope ID}';
+    var registrationId = '{your Device ID}';
+    var symmetricKey = '{your Primary Key};
+    var provisioningSecurityClient = new SymmetricKeySecurityClient(registrationId, symmetricKey);
+    var provisioningClient = ProvisioningDeviceClient.create(provisioningHost, idScope, new ProvisioningTransport(), provisioningSecurityClient);
+    var hubClient;
     var targetTemperature = 0;
-    var client = clientFromConnectionString(connectionString);
     ```
-
-    > [!NOTE]
-    > Вы обновите заполнитель `{your device connection string}` позже.
 
 1. Сохраните внесенные изменения, но не закрывайте файл.
 
@@ -165,12 +161,12 @@ ms.locfileid: "70050513"
 1. Чтобы отправить данные телеметрии температуры в приложение Azure IoT Central, добавьте в файл **ConnectedAirConditioner.js** следующий код:
 
     ```javascript
-    // Send device telemetry.
+    // Send device measurements.
     function sendTelemetry() {
       var temperature = targetTemperature + (Math.random() * 15);
       var data = JSON.stringify({ temperature: temperature });
       var message = new Message(data);
-      client.sendEvent(message, (err, res) => console.log(`Sent message: ${message.getData()}` +
+      hubClient.sendEvent(message, (err, res) => console.log(`Sent message: ${message.getData()}` +
         (err ? `; error: ${err.toString()}` : '') +
         (res ? `; status: ${res.constructor.name}` : '')));
     }
@@ -187,7 +183,7 @@ ms.locfileid: "70050513"
         firmwareVersion: "9.75",
         serialNumber: "10001"
       };
-      twin.properties.reported.update(properties, (errorMessage) => 
+      twin.properties.reported.update(properties, (errorMessage) =>
       console.log(` * Sent device properties ` + (errorMessage ? `Error: ${errorMessage.toString()}` : `(success)`)));
     }
     ```
@@ -266,43 +262,53 @@ ms.locfileid: "70050513"
         console.log(`Device could not connect to Azure IoT Central: ${err.toString()}`);
       } else {
         console.log('Device successfully connected to Azure IoT Central');
+
+        // Create handler for countdown command
+        hubClient.onDeviceMethod('echo', onCommandEcho);
+
         // Send telemetry measurements to Azure IoT Central every 1 second.
         setInterval(sendTelemetry, 1000);
-        // Setup device command callbacks
-        client.onDeviceMethod('echo', onCommandEcho);
+
         // Get device twin from Azure IoT Central.
-        client.getTwin((err, twin) => {
+        hubClient.getTwin((err, twin) => {
           if (err) {
             console.log(`Error getting device twin: ${err.toString()}`);
           } else {
-            // Send device properties once on device start up
+            // Send device properties once on device start up.
             sendDeviceProperties(twin);
+
             // Apply device settings and handle changes to device settings.
             handleSettings(twin);
           }
         });
       }
     };
-
-    client.open(connectCallback);
     ```
 
-1. Сохраните внесенные изменения, но не закрывайте файл.
-
-## <a name="configure-client-code"></a>Настройка клиентского кода
-
-<!-- Add the connection string to the sample code, build, and run -->
-Чтобы настроить клиентский код для подключения к приложению Azure IoT Central, необходимо добавить строку подключения для реального устройства, которая была указана ранее в этом руководстве.
-
-1. В файле **ConnectedAirConditioner.js** найдите следующую строку кода:
+1. Зарегистрируйте и подключите устройство к приложению IoT Central.
 
     ```javascript
-    var connectionString = '{your device connection string}';
+    // Start the device (connect it to Azure IoT Central).
+    provisioningClient.register((err, result) => {
+      if (err) {
+        console.log("error registering device: " + err);
+      } else {
+        console.log('registration succeeded');
+        console.log('assigned hub=' + result.assignedHub);
+        console.log('deviceId=' + result.deviceId);
+        var connectionString = 'HostName=' + result.assignedHub + ';DeviceId=' + result.deviceId + ';SharedAccessKey=' + symmetricKey;
+        hubClient = Client.fromConnectionString(connectionString, iotHubTransport);
+
+        hubClient.open(connectCallback);
+      }
+    });
     ```
 
-1. Замените `{your device connection string}` строкой подключения реального устройства. Вы скопировали эту созданную строку подключения на предыдущем шаге.
+1. Сохраните внесенные изменения.
 
-1. Сохраните изменения в файле **ConnectedAirConditioner.js**.
+## <a name="run-the-client-code"></a>Запуск клиентского кода
+
+Теперь можно запустить клиентский код и посмотреть, как он взаимодействует с приложением IoT Central.
 
 1. Чтобы запустить пример, в среде командной строки введите следующую команду:
 
@@ -319,7 +325,7 @@ ms.locfileid: "70050513"
 
 1. Примерно через 30 секунд вы увидите данные телеметрии на странице **Measurements** (Измерения) устройства:
 
-   ![Реальные ~~данные телеметрии](media/tutorial-add-device/realtelemetry.png)
+   ![Реальные данные телеметрии](media/tutorial-add-device/realtelemetry.png)
 
 1. Вы можете увидеть на странице **Параметры**, что теперь параметр синхронизирован. При первом подключении устройство получило значение параметра и подтвердило изменение:
 

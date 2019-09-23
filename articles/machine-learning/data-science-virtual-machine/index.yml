@@ -1,31 +1,30 @@
 ### YamlMime:Landing
 title: Документация по Виртуальной машине для обработки и анализа данных Azure
-summary: Виртуальная машина для обработки и анализа данных (DSVM) — это настраиваемый образ виртуальной машины, содержащий средства для обработки и анализа данных и ML. Такая виртуальная машина позволяет создавать интеллектуальные приложения для расширенной аналитики.
+summary: Виртуальная машина для обработки и анализа данных (DSVM) — это образ виртуальной машины с предварительно загруженными средствами для выполнения соответствующих задач. Такая виртуальная машина позволяет создавать интеллектуальные приложения для расширенной аналитики.
 metadata:
   title: Документация по Виртуальной машине для обработки и анализа данных Azure
-  description: Виртуальная машина для обработки и анализа данных — это экспериментальная среда в облаке Azure для выполнения соответствующих задач. Популярные средства обработки и анализа данных и ML предварительно установлены.
-  services: machine-learning
+  description: Виртуальная машина для обработки и анализа данных (DSVM) — это образ виртуальной машины с предварительно загруженными средствами для выполнения соответствующих задач.
   ms.service: machine-learning
   ms.subservice: data-science-vm
   ms.topic: landing-page
   ms.collection: collection
-  author: j-martens
-  ms.author: jmartens
-  ms.date: 09/03/2019
-  ms.openlocfilehash: c33504124bdef2edf44842581143a8468cbb1e20
-  ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+  author: gvashishtha
+  ms.author: gopalv
+  ms.date: 09/13/2019
+  ms.openlocfilehash: 3fdd30274796072fcca6a5cfe41651334cf62aee
+  ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 09/04/2019
-  ms.locfileid: "70308794"
+  ms.lasthandoff: 09/20/2019
+  ms.locfileid: "71170706"
 landingContent:
 - title: Начало работы с DSVM
   linkLists:
   - linkListType: overview
     links:
-    - text: Что собой представляет DSVM?
+    - text: Общие сведения о Виртуальной машине для обработки и анализа данных
       url: overview.md
-    - text: Что собой представляет DSVM с геоинформационной системой и средствами ИИ?
+    - text: Сведения о Виртуальной машине для обработки и анализа данных с геоинформационной системой и средствами ИИ
       url: geo-ai-dsvm-overview.md
   - linkListType: get-started
     links:
@@ -39,6 +38,10 @@ landingContent:
       url: provision-geo-ai-dsvm.md
 - title: Управление DSVM
   linkLists:
+  - linkListType: architecture
+    links:
+    - text: Рекомендации для предприятий и корпоративная безопасность
+      url: dsvm-enterprise-overview.md
   - linkListType: how-to-guide
     links:
     - text: Создание автомасштабируемых пулов DSVM
@@ -49,7 +52,7 @@ landingContent:
       url: dsvm-secure-access-keys.md
 - title: Другие технологии Машинного обучения Azure
   linkLists:
-  - linkListType: reference
+  - linkListType: learn
     links:
     - text: Служба машинного обучения
       url: /azure/machine-learning/

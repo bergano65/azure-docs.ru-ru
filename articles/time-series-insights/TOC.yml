@@ -27,7 +27,7 @@
           href: tutorial-create-populate-tsi-environment.md
     - name: Аналитика временных рядов Azure (предварительная версия)
       items:
-        - name: Руководство по службе "Аналитика временных рядов Azure" (предварительная версия)
+        - name: Настройка среды (предварительная версия)
           href: time-series-insights-update-create-environment.md
 - name: Основные понятия
   items:

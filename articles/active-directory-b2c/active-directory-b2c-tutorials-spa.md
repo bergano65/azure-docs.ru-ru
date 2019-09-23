@@ -10,16 +10,16 @@ ms.custom: mvc, seo-javascript-september2019
 ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: 06ac81105ad8871c934715c18cd5f78fc3ea05f5
-ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
+ms.openlocfilehash: 06bb71b27edf97f9b7e3333aef93af7bd0e0529e
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70858516"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71064784"
 ---
 # <a name="tutorial-enable-authentication-in-a-single-page-application-using-azure-active-directory-b2c"></a>Руководство по Включение в одностраничном приложении аутентификации с помощью Azure Active Directory B2C
 
-В этом руководстве описано использование Azure Active Directory (Azure Active Directory) B2C для входа и регистрации пользователей в одностраничном приложении (SPA). Azure AD B2C позволяет приложениям выполнять проверку подлинности учетных записей социальных сетей, корпоративных учетных записей и учетных записей Azure Active Directory с помощью стандартных протоколов.
+В этом руководстве показано, как использовать Azure Active Directory (Azure Active Directory) B2C для входа и регистрации пользователей в одностраничном приложении (SPA). Azure AD B2C позволяет приложениям выполнять проверку подлинности учетных записей социальных сетей, корпоративных учетных записей и учетных записей Azure Active Directory с помощью стандартных протоколов.
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 
@@ -49,7 +49,7 @@ ms.locfileid: "70858516"
 При прохождении второго учебника для выполнения предварительных условий вы зарегистрировали веб-приложение в Azure AD B2C. Для обеспечения взаимодействия с примером в этом руководстве необходимо добавить URI перенаправления для приложения в Azure AD B2C.
 
 1. Войдите на [портале Azure](https://portal.azure.com).
-1. Убедитесь, что используете каталог, содержащий клиент Azure AD B2C, щелкнув **Фильтр каталога и подписки** в верхнем меню и выбрав каталог, содержащий ваш клиент.
+1. Убедитесь, что используете каталог с клиентом Azure AD B2C, выбрав фильтр **Каталог и подписка** в меню вверху и каталог с вашим клиентом.
 1. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
 1. Щелкните пункт **Приложения**, а затем выберите приложение *webapp1*.
 1. В разделе **URL-адрес ответа** добавьте `http://localhost:6420`.

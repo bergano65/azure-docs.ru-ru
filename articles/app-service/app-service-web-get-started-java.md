@@ -15,13 +15,13 @@ ms.devlang: Java
 ms.topic: quickstart
 ms.date: 05/29/2019
 ms.author: jafreebe
-ms.custom: mvc, seo-java-july2019, seo-java-august2019
-ms.openlocfilehash: 615a4c055980381771d3b63eba878846fd583cc9
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.custom: mvc, seo-java-july2019, seo-java-august2019, seo-java-september2019
+ms.openlocfilehash: 3251637d5a5bd0593a9eaf559963921a68a6ccdc
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70883615"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71102760"
 ---
 # <a name="quickstart-create-a-java-app-on-azure-app-service-on-windows"></a>Краткое руководство. Создание приложения Java в Службе приложений Azure на платформе Windows
 
@@ -34,7 +34,7 @@ ms.locfileid: "70883615"
 > [!NOTE]
 > То же самое можно выполнить с помощью популярных интегрированных сред разработки, например IntelliJ и Eclipse. См. подробнее об [Azure Toolkit for IntelliJ](/java/azure/intellij/azure-toolkit-for-intellij-create-hello-world-web-app) и [Azure Toolkit for Eclipse](/java/azure/eclipse/azure-toolkit-for-eclipse-create-hello-world-web-app).
 >
-![Пример приложения, выполняющегося в Azure](./media/app-service-web-get-started-java/java-hello-world-in-browser.png)
+![Приложение, работающее в Службе приложений Azure](./media/app-service-web-get-started-java/java-hello-world-in-browser-azure-app-service.png)
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
@@ -119,7 +119,7 @@ mvn package azure-webapp:deploy
 
 По завершению развертывания перейдите к развернутому приложению, используя следующий URL-адрес в своем веб-браузере, например `http://<webapp>.azurewebsites.net/`.
 
-![Пример приложения, выполняющегося в Azure](./media/app-service-web-get-started-java/java-hello-world-in-browser.png)
+![Приложение, работающее в Службе приложений Azure](./media/app-service-web-get-started-java/java-hello-world-in-browser-azure-app-service.png)
 
 **Поздравляем!** Вы развернули свое первое приложение Java в Службе приложений на платформе Windows.
 

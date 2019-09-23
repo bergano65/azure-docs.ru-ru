@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: b88d355ec1784b3b613369e90cd5fac99d3d69a6
-ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
+ms.openlocfilehash: 618931c3a45fcb25b2a9221ea3f6069e9ff11de5
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70916404"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70933202"
 ---
 # <a name="implement-iot-spatial-analytics-using-azure-maps"></a>Реализация пространственной аналитики Интернета вещей с помощью Azure Maps
 
@@ -167,7 +167,7 @@ ms.locfileid: "70916404"
     
     Значение geojson для параметра `dataFormat` в пути URL-адреса определяет формат отправляемых данных.
 
-3. Щелкните **Params** (Параметры) и введите следующие пары "ключ — значение" для URL-адреса запроса POST. Замените значение ключа подписки своим ключом подписки на Azure Maps.
+3. Щелкните **Params** (Параметры) и введите следующие пары "ключ — значение" для URL-адреса запроса POST. Замените значение ключа подписки первичным ключом подписки на Azure Maps.
    
     ![Пары "ключ — значение" на вкладке параметров приложения Postman](./media/tutorial-iot-hub-maps/postman-key-vals.png)
 
@@ -224,7 +224,7 @@ ms.locfileid: "70916404"
 6. Скопируйте [код C#](https://github.com/Azure-Samples/iothub-to-azure-maps-geofencing/blob/master/src/Azure%20Function/run.csx) в функцию и щелкните **Сохранить**.
  
 7. В скрипте C# замените следующие параметры.
-    * Замените значение **SUBSCRIPTION_KEY** реальным ключом подписки Azure Maps.
+    * Замените значение **SUBSCRIPTION_KEY** первичным ключом подписки для учетной записи Azure Maps.
     * Замените значение **UDID** идентификатором отправленной ранее геозоны. 
     * Функция **CreateBlobAsync** в скрипте создает большой двоичный объект для каждого события в учетной записи хранения данных. Замените значения **ACCESS_KEY**, **ACCOUNT_NAME** и **STORAGE_CONTAINER_NAME** ключом доступа к учетной записи хранения, именем учетной записи и контейнером хранилища данных.
 

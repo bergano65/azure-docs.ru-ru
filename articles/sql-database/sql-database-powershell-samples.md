@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 03/25/2019
-ms.openlocfilehash: c32803fec6107e39a0b8329adaee072e3e291575
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 998497d3e790ba501ac5cdeb4974bf7ee9ea6a54
+ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68567060"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71059258"
 ---
 # <a name="azure-powershell-samples-for-azure-sql-database"></a>Примеры Azure PowerShell для Базы данных SQL Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "68567060"
 
 Чтобы установить и использовать PowerShell локально, для работы с этим руководством вам понадобится AZ PowerShell 1.4.0 или более поздней версии. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
 
-## <a name="single-database-and-elastic-pools"></a>Отдельная база данных и эластичные пулы
+## <a name="single-database-and-elastic-poolstabsingle-database"></a>[Отдельная база данных и эластичные пулы](#tab/single-database)
 
 В следующей таблице содержатся ссылки на примеры сценариев Azure PowerShell для Базы данных SQL Azure.
 
@@ -58,7 +58,7 @@ ms.locfileid: "68567060"
 
 См. дополнительные сведения об [API управления отдельной базой данных с помощью Azure PowerShell](sql-database-single-databases-manage.md#powershell-manage-sql-database-servers-and-single-databases).
 
-## <a name="managed-instance"></a>Управляемый экземпляр
+## <a name="managed-instancetabmanaged-instance"></a>[Управляемый экземпляр](#tab/managed-instance)
 
 В следующей таблице содержатся ссылки на примеры сценариев Azure PowerShell для Управляемого экземпляра Базы данных SQL Azure.
 
@@ -73,6 +73,8 @@ ms.locfileid: "68567060"
 |||
 
 См. дополнительные сведения об [API управления Управляемыми экземплярами с помощью Azure PowerShell](sql-database-managed-instance-create-manage.md#powershell-create-and-manage-managed-instances).
+
+---
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -251,18 +251,18 @@
               href: knowledge-store-connect-power-bi.md
     - name: Запрос документов
       items:
-        - name: Создание простого запроса
+        - name: Типы запросов и составление запросов
           href: search-query-overview.md
-        - name: Обозреватель поиска (портал)
+        - name: Создание простого запроса
+          href: search-query-simple-examples.md
+        - name: Использование полного синтаксиса Lucene
+          href: search-query-lucene-examples.md
+        - name: Использование обозревателя поиска (портал)
           href: search-explorer.md
         - name: Простой синтаксис запросов
           href: query-simple-syntax.md
         - name: Полный синтаксис запросов Lucene
           href: query-lucene-syntax.md
-        - name: Примеры (простой синтаксис)
-          href: search-query-simple-examples.md
-        - name: Примеры (полный синтаксис Lucene)
-          href: search-query-lucene-examples.md
         - name: moreLikeThis (предварительная версия)
           href: search-more-like-this.md
     - name: Применение фильтров

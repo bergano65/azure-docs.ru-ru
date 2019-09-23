@@ -10,14 +10,15 @@ services: iot-dps
 manager: timlt
 ms.devlang: python
 ms.custom: mvc
-ms.openlocfilehash: 12ccff3676cb35ac27126360dbcf5a1b9b3e131f
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: 3474d30d051e88d0e9150ea649958caa460932c7
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65914155"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71001296"
 ---
 # <a name="create-and-provision-a-simulated-x509-device-using-python-device-sdk-for-iot-hub-device-provisioning-service"></a>Создание и подготовка имитированного устройства X.509 с помощью пакета SDK службы устройства Python для службы подготовки устройств Центра Интернета вещей
+
 [!INCLUDE [iot-dps-selector-quick-create-simulated-device-x509](../../includes/iot-dps-selector-quick-create-simulated-device-x509.md)]
 
 В этом руководстве показано, как имитировать устройство X.509 на компьютере разработки под управлением ОС Windows, а также как с помощью примера кода Python подключить имитированное устройство к службе подготовки устройств и Центру Интернета вещей. 
@@ -31,6 +32,9 @@ ms.locfileid: "65914155"
 В этой статье описана индивидуальная регистрация.
 
 [!INCLUDE [IoT Device Provisioning Service basic](../../includes/iot-dps-basic.md)]
+
+> [!NOTE]
+> Это руководство предназначено исключительно для пакета SDK Python версии v1, который был объявлен нерекомендуемым. Смоделированные устройства X.509 пока не поддерживаются в версии 2. Сейчас ведутся работы по реализации всего функционала в версии 2.
 
 ## <a name="prepare-the-environment"></a>Подготовка среды 
 

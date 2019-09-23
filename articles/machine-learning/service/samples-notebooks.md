@@ -1,7 +1,7 @@
 ---
 title: Примеры записных книжек Jupyter
-titleSuffix: Azure Machine Learning service
-description: Узнайте, как работать с пакетом SDK Службы машинного обучения Azure для Python, найдя и используя примеры записных книжек Jupyter.
+titleSuffix: Azure Machine Learning
+description: Узнайте, как работать с пакетом SDK Машинного обучения Azure для Python, используя примеры записных книжек Jupyter.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,14 +11,14 @@ ms.author: sgilley
 ms.reviewer: sgilley
 ms.date: 07/31/2019
 ms.custom: seodec18
-ms.openlocfilehash: 14962b936d1c09a6c50daa7bec460ce11dbefe5d
-ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
+ms.openlocfilehash: dd93e4e621a4fd474283f788e2cf67b305a1be3d
+ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70860391"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70997066"
 ---
-# <a name="explore-azure-machine-learning-service-with-jupyter-notebooks"></a>Использование записных книжек Jupyter в Службе машинного обучения Azure
+# <a name="explore-azure-machine-learning-with-jupyter-notebooks"></a>Использование записных книжек Jupyter в Машинном обучении Azure
 
 [Репозиторий с записными книжками службы "Машинное обучение Azure"](https://github.com/azure/machinelearningnotebooks) включает последние примеры пакета SDK Машинного обучения Azure для Python. Эти записные книжки Juypter помогут вам изучить пакет SDK. Вы можете использовать их как модели для собственных проектов машинного обучения.
 
@@ -55,7 +55,7 @@ ms.locfileid: "70860391"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-См. подробнее о [примерах записных книжек](https://aka.ms/aml-notebooks), чтобы узнать, какие функции поддерживает Машинное обучение Azure. Также вы можете изучить следующие руководства:
+См. [примеры записных книжек](https://aka.ms/aml-notebooks), чтобы узнать, какие функции поддерживает Машинное обучение Azure, или изучите следующие руководства:
 
 - [Руководство 1. Обучение модели классификации изображений с помощью службы машинного обучения Azure](tutorial-train-models-with-aml.md)
 

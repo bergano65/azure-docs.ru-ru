@@ -13,12 +13,12 @@ ms.devlang: csharp
 ms.topic: tutorial
 ms.date: 07/01/2019
 ms.author: abarora
-ms.openlocfilehash: 1649fefda5073761d616fc48c602cab84d293ed0
-ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
+ms.openlocfilehash: 3eee34f594cb23a8b64f6fd10837c9a641eda62d
+ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67799093"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71075971"
 ---
 # <a name="tutorial-use-dynamic-configuration-in-a-net-core-app"></a>Руководство по Использование динамической конфигурации в приложении .NET Core
 
@@ -44,9 +44,14 @@ ms.locfileid: "67799093"
 
 ## <a name="reload-data-from-app-configuration"></a>Перезагрузка данных из App Configuration
 
-Откройте и обновите файл *Program.cs*, чтобы указать конфигурацию обновления в методе `AddAzureAppConfiguration` и запустите обновление вручную с помощью метода `Refresh`.
+Откройте и обновите файл *Program.cs*, чтобы добавить ссылку на пространство имен `System.Threading.Tasks`, указать конфигурацию обновления в методе `AddAzureAppConfiguration` и запустить обновление вручную с помощью метода `Refresh`.
 
 ```csharp
+using System;
+using System.Threading.Tasks;
+
+namespace TestConsole
+{
 class Program
 {
     private static IConfiguration _configuration = null;
@@ -83,6 +88,7 @@ class Program
         await _refresher.Refresh();
         Console.WriteLine(_configuration["TestApp:Settings:Message"] ?? "Hello world!");
     }
+}
 }
 ```
 

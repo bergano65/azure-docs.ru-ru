@@ -12,15 +12,15 @@ ms.service: virtual-machines-linux
 ms.topic: tutorial
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 05/30/2018
+ms.date: 09/12/2019
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 7215a8f169a878b10663347cf9560d822c6aa7e1
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 9f053cc7646a2a4f41c57010f7e43a3fe3255b7e
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70081784"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70931793"
 ---
 # <a name="tutorial---how-to-use-cloud-init-to-customize-a-linux-virtual-machine-in-azure-on-first-boot"></a>Руководство. Настройка виртуальной машины Linux при первой загрузке с помощью cloud-init в Azure
 
@@ -33,8 +33,6 @@ ms.locfileid: "70081784"
 > * обеспечить безопасное хранение сертификатов в хранилище ключей;
 > * автоматизировать безопасные развертывания nginx с помощью файла конфигурации cloud-init.
 
-[!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
-
 Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.0.30 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
 
 ## <a name="cloud-init-overview"></a>Обзор cloud-Init
@@ -44,21 +42,23 @@ ms.locfileid: "70081784"
 
 Мы и наши партнеры работаем над тем, чтобы сценарии cloud-init были добавлены в образы, предоставляемые для Azure. В следующей таблице приведены сведения о текущей доступности cloud-init в образах платформы Azure.
 
-| Alias | ИЗДАТЕЛЬ | ПРЕДЛОЖЕНИЕ | SKU | Version (версия) |
+| ИЗДАТЕЛЬ | ПРЕДЛОЖЕНИЕ | SKU | Version (версия) | готовность к использованию cloud-init |
 |:--- |:--- |:--- |:--- |:--- |
-| UbuntuLTS |Canonical |UbuntuServer |16.04-LTS |последняя |
-| UbuntuLTS |Canonical |UbuntuServer |14.04.5-LTS |последняя |
-| CoreOS |CoreOS |CoreOS |Stable |последняя |
-| | OpenLogic | CentOS | 7-CI | последняя |
-| | RedHat | RHEL | 7-RAW-CI | последняя |
+|Canonical |UbuntuServer |18.04-LTS |последняя |Да | 
+|Canonical |UbuntuServer |16.04-LTS |последняя |Да | 
+|Canonical |UbuntuServer |14.04.5-LTS |последняя |Да |
+|CoreOS |CoreOS |Stable |последняя |Да |
+|OpenLogic 7.6 |CentOS |7-CI |последняя |предварительный просмотр |
+|RedHat 7.6 |RHEL |7-RAW-CI |7.6.2019072418 |Да |
+|RedHat 7.7 |RHEL |7-RAW-CI |7.7.2019081601 |предварительный просмотр |
 
 
 ## <a name="create-cloud-init-config-file"></a>Создание файла конфигурации cloud-init
 Чтобы посмотреть, как работает cloud-init, создайте виртуальную машину для установки сервера NGINX и запуска простого приложения Node.js Hello World. Приведенная ниже конфигурация cloud-init устанавливает требуемые пакеты, создает приложение Node.js, а затем инициализирует и запускает это приложение.
 
-В текущей оболочке создайте файл *cloud-init.txt* и вставьте в него следующую конфигурацию. Например, создайте файл в Cloud Shell, не на локальном компьютере. Вы можете использовать любой редактор. Введите `sensible-editor cloud-init.txt`, чтобы создать файл и просмотреть список доступных редакторов. Убедитесь, что весь файл cloud-init скопирован правильно, особенно первая строка:
+В командной строке Bash или в Cloud Shell создайте файл с именем *cloud-init.txt* и добавьте в него следующую конфигурацию. Например, введите `sensible-editor cloud-init.txt`, чтобы создать файл и просмотреть список доступных редакторов. Убедитесь, что весь файл cloud-init скопирован правильно, особенно первая строка:
 
-```yaml
+```azurecli-interactive
 #cloud-config
 package_upgrade: true
 packages:
@@ -114,7 +114,7 @@ az group create --name myResourceGroupAutomate --location eastus
 ```azurecli-interactive
 az vm create \
     --resource-group myResourceGroupAutomate \
-    --name myVM \
+    --name myAutomatedVM \
     --image UbuntuLTS \
     --admin-username azureuser \
     --generate-ssh-keys \
@@ -184,7 +184,7 @@ vm_secret=$(az vm secret format --secret "$secret")
 ### <a name="create-cloud-init-config-to-secure-nginx"></a>Создание конфигурации cloud-init для защиты сервера NGINX
 При создании виртуальной машины сертификаты и ключи хранятся в защищенном каталоге */var/lib/waagent/* . Чтобы автоматизировать добавление сертификата в виртуальную машину и настройку сервера NGINX, используйте обновленную конфигурацию cloud-init из предыдущего примера.
 
-Создайте файл *cloud-init-secured.txt* и вставьте в него приведенную ниже конфигурацию. Напоминаем, если вы используете Cloud Shell, создайте файл конфигурации cloud-init в этой оболочке, а не на локальном компьютере. Используйте `sensible-editor cloud-init-secured.txt`, чтобы создать файл и просмотреть список доступных редакторов. Убедитесь, что весь файл cloud-init скопирован правильно, особенно первая строка:
+Создайте файл *cloud-init-secured.txt* и вставьте в него приведенную ниже конфигурацию. Если вы используете Cloud Shell, создайте файл конфигурации cloud-init в этой оболочке, а не на локальном компьютере. Например, введите `sensible-editor cloud-init-secured.txt`, чтобы создать файл и просмотреть список доступных редакторов. Убедитесь, что весь файл cloud-init скопирован правильно, особенно первая строка:
 
 ```yaml
 #cloud-config
@@ -241,7 +241,7 @@ runcmd:
 ```azurecli-interactive
 az vm create \
     --resource-group myResourceGroupAutomate \
-    --name myVMSecured \
+    --name myVMWithCerts \
     --image UbuntuLTS \
     --admin-username azureuser \
     --generate-ssh-keys \

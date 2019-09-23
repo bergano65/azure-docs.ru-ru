@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: quickstart
 ms.date: 07/12/2019
 ms.author: pafarley
-ms.openlocfilehash: ada570196c916a8101e8e968d284a3b280199cf3
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: ce1cdadcdc69fb5539394aa9bf402aa9463311e9
+ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70142815"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71057661"
 ---
 # <a name="quickstart-form-recognizer-client-library-for-net"></a>Краткое руководство. Клиентская библиотека Распознавателя документов для .NET
 
@@ -22,9 +22,11 @@ ms.locfileid: "70142815"
 
 Клиентскую библиотеку Распознавателя документов для .NET можно использовать для следующих задач:
 
-* обучение пользовательской модели Распознавателя документов;
-* анализ документов с помощью пользовательской модели;
-* получение списка пользовательских моделей.
+* [обучение пользовательской модели Распознавателя документов](#train-a-custom-model);
+* [получение списка извлеченных ключей](#get-a-list-of-extracted-keys);
+* [анализ документов с помощью пользовательской модели](#analyze-forms-with-a-custom-model);
+* [получение списка пользовательских моделей](#get-a-list-of-custom-models).
+* [удаление пользовательской модели](#delete-a-custom-model).
 
 [Справочная документация](https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/formrecognizer?view=azure-dotnet-preview) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Vision.FormRecognizer) | [Пакет (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.FormRecognizer/).
 
@@ -68,14 +70,7 @@ Build succeeded.
 
 В каталоге проекта откройте файл _Program.cs_ в предпочитаемом редакторе или интегрированной среде разработки. Добавьте следующие операторы `using` :
 
-```csharp
-using Microsoft.Azure.CognitiveServices.FormRecognizer;
-using Microsoft.Azure.CognitiveServices.FormRecognizer.Models;
-
-using System;
-using System.IO;
-using System.Threading.Tasks;
-```
+[!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/Program.cs?name=snippet_using)]
 
 Затем добавьте следующий код в метод **Main** приложения. Вы зададите эту асинхронную задачу позже.
 
@@ -115,10 +110,12 @@ dotnet add package Microsoft.Azure.CognitiveServices.FormRecognizer --version 0.
 
 * [аутентификация клиента](#authenticate-the-client);
 * [обучение пользовательской модели Распознавателя документов](#train-a-custom-model);
+* [получение списка извлеченных ключей](#get-a-list-of-extracted-keys);
 * [анализ документов с помощью пользовательской модели](#analyze-forms-with-a-custom-model);
 * [получение списка пользовательских моделей](#get-a-list-of-custom-models).
+* [удаление пользовательской модели](#delete-a-custom-model).
 
-### <a name="define-variables"></a>Определение переменных
+## <a name="define-variables"></a>Определение переменных
 
 Перед определением методов добавьте следующие определения переменных в начало класса **Program**. Вам придется самостоятельно ввести некоторые переменные. 
 
@@ -127,13 +124,13 @@ dotnet add package Microsoft.Azure.CognitiveServices.FormRecognizer --version 0.
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/Program.cs?name=snippet_variables)]
 
-### <a name="authenticate-the-client"></a>Аутентификация клиента
+## <a name="authenticate-the-client"></a>Аутентификация клиента
 
 Ниже метода `Main` определите задачу, на которую ссылается `Main`. В этом фрагменте выполняется проверка подлинности клиентского объекта с использованием переменных подписки, указанных выше. Другие методы будут определены позже.
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/Program.cs?name=snippet_maintask)]
 
-### <a name="train-a-custom-model"></a>Обучение пользовательской модели
+## <a name="train-a-custom-model"></a>Обучение пользовательской модели
 
 Следующий метод использует клиентский объект Распознавателя форм для обучения новой модели распознавания по документам, хранящимся в контейнере больших двоичных объектов Azure. Он использует вспомогательный метод для отображения информации о новой обученной модели (представленной объектом [ModelResult](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.formrecognizer.models.modelresult?view=azure-dotnet-preview)) и возвращает идентификатор модели.
 
@@ -143,9 +140,18 @@ dotnet add package Microsoft.Azure.CognitiveServices.FormRecognizer --version 0.
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/Program.cs?name=snippet_displaymodel)]
 
-### <a name="analyze-forms-with-a-custom-model"></a>Анализ документов с помощью пользовательской модели
+## <a name="get-a-list-of-extracted-keys"></a>Получение списка извлеченных ключей
+
+После завершения обучения пользовательская модель сохранит список ключей, извлеченных из документов обучения. В будущих документах формы будут содержаться эти ключи, и поэтому в операции анализа будут извлекаться соответствующие значения. Используйте следующий метод, чтобы получить список извлеченных ключей и вывести их на консоль. Это хороший способ убедиться в эффективности процесса обучения.
+
+[!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/Program.cs?name=snippet_getkeys)]
+
+## <a name="analyze-forms-with-a-custom-model"></a>анализ документов с помощью пользовательской модели;
 
 Этот метод использует клиент Распознавателя форм и идентификатор модели для анализа PDF-документа и извлечения данных пар "ключ — значение". Он использует вспомогательный метод для вывода результатов (представленных объектом [AnalyzeResult](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.formrecognizer.models.analyzeresult?view=azure-dotnet-preview)).
+
+> [!NOTE]
+> Следующий метод анализирует форму формата PDF. Аналогичные методы, которые анализируют формы форматов JPEG и PNG, см. в полном примере кода на [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/tree/master/dotnet/FormRecognizer).
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/Program.cs?name=snippet_analyzepdf)]
 
@@ -153,11 +159,17 @@ dotnet add package Microsoft.Azure.CognitiveServices.FormRecognizer --version 0.
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/Program.cs?name=snippet_displayanalyze)]
 
-### <a name="get-a-list-of-custom-models"></a>Получение списка пользовательских моделей
+## <a name="get-a-list-of-custom-models"></a>Получение списка пользовательских моделей
 
 Можно вернуть список всех обученных моделей, принадлежащих вашей учетной записи, а также получить сведения о времени их создания. Список моделей представлен в объекте [ModelsResult](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.formrecognizer.models.modelsresult?view=azure-dotnet-preview).
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/Program.cs?name=snippet_getmodellist)]
+
+## <a name="delete-a-custom-model"></a>Удаление пользовательской модели
+
+Если вы хотите удалить пользовательскую модель из учетной записи, используйте метод, приведенный ниже.
+
+[!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/Program.cs?name=snippet_deletemodel)]
 
 ## <a name="run-the-application"></a>Выполнение приложения
 
@@ -174,9 +186,7 @@ dotnet run
 * [Портал](../../cognitive-services-apis-create-account.md#clean-up-resources)
 * [Интерфейс командной строки Azure](../../cognitive-services-apis-create-account-cli.md#clean-up-resources)
 
-Для удаления из учетной записи обученной пользовательской модели используйте следующий метод:
-
-[!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/Program.cs?name=snippet_deletemodel)]
+Кроме того, если вы обучили пользовательскую модель, которую необходимо удалить из учетной записи, запустите метод в области [Удаление пользовательской модели](#delete-a-custom-model).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

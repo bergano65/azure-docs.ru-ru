@@ -14,14 +14,14 @@ ms.tgt_pltfrm: mobile-android
 ms.devlang: java
 ms.topic: tutorial
 ms.custom: mvc
-ms.date: 07/15/2019
+ms.date: 09/11/2019
 ms.author: jowargo
-ms.openlocfilehash: a01a71190f6de4bd08ee306f0175b01fee3db3d5
-ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
+ms.openlocfilehash: f1a6980efd7614ce245c45852b6ce08eb71d1cfd
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68227881"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70935095"
 ---
 # <a name="tutorial-push-notifications-to-android-devices-by-using-azure-notification-hubs-and-google-firebase-cloud-messaging"></a>Руководство по Отправка push-уведомлений на устройства Android с помощью Центров уведомлений Azure и Google Firebase Cloud Messaging
 
@@ -190,7 +190,7 @@ ms.locfileid: "68227881"
      > [!IMPORTANT]
      > Прежде чем продолжить, введите **имя** и **DefaultListenSharedAccessSignature** вашего концентратора. 
 
-3. Добавьте еще один новый класс в проект `RegistrationIntentService`. Этот класс реализует интерфейс `IntentService`. Он также выполняет [обновление маркера FCM](https://developers.google.com/instance-id/guides/android-implementation#refresh_tokens) и [регистрацию в центре уведомлений](notification-hubs-push-notification-registration-management.md).
+2. Добавьте еще один новый класс в проект `RegistrationIntentService`. Этот класс реализует интерфейс `IntentService`. Он также выполняет [обновление маркера FCM](https://developers.google.com/instance-id/guides/android-implementation#refresh_tokens) и [регистрацию в центре уведомлений](notification-hubs-push-notification-registration-management.md).
 
     Используйте для этого класса следующий код:
 
@@ -292,7 +292,7 @@ ms.locfileid: "68227881"
     }
     ```
 
-4. В классе `MainActivity` добавьте следующие операторы `import` выше объявления класса.
+3. В классе `MainActivity` добавьте следующие операторы `import` выше объявления класса.
 
     ```java
     import com.google.android.gms.common.ConnectionResult;
@@ -303,7 +303,7 @@ ms.locfileid: "68227881"
     import android.widget.Toast;
     ```
 
-5. Добавьте следующие элементы в верхней части класса. Используйте эти поля для [проверки доступности служб Google Play в соответствии с рекомендациями Google](https://developers.google.com/android/guides/setup#ensure_devices_have_the_google_play_services_apk).
+4. Добавьте следующие элементы в верхней части класса. Используйте эти поля для [проверки доступности служб Google Play в соответствии с рекомендациями Google](https://developers.google.com/android/guides/setup#ensure_devices_have_the_google_play_services_apk).
 
     ```java
     public static MainActivity mainActivity;
@@ -312,7 +312,7 @@ ms.locfileid: "68227881"
     private static final int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
     ```
 
-6. В классе `MainActivity` добавьте следующий метод проверки доступности сервисов Google Play.
+5. В классе `MainActivity` добавьте следующий метод проверки доступности сервисов Google Play.
 
     ```java
     /**
@@ -339,7 +339,7 @@ ms.locfileid: "68227881"
     }
     ```
 
-7. В классе `MainActivity` добавьте следующий код, который проверяет сервисы Google Play, прежде чем вызывать `IntentService`. Таким образом вы получите маркер регистрации в FCM и выполните регистрацию в своем центре.
+6. В классе `MainActivity` добавьте следующий код, который проверяет сервисы Google Play, прежде чем вызывать `IntentService`. Таким образом вы получите маркер регистрации в FCM и выполните регистрацию в своем центре.
 
     ```java
     public void registerWithNotificationHubs()
@@ -352,7 +352,7 @@ ms.locfileid: "68227881"
     }
     ```
 
-8. В методе `OnCreate` класса `MainActivity` добавьте следующий код, чтобы начать регистрацию при создании действия.
+7. В методе `OnCreate` класса `MainActivity` добавьте следующий код, чтобы начать регистрацию при создании действия.
 
     ```java
     @Override
@@ -366,7 +366,7 @@ ms.locfileid: "68227881"
     }
     ```
 
-9. Добавьте эти дополнительные методы в класс `MainActivity`, чтобы проверять состояние приложения и отображать в нем полученные данные.
+8. Добавьте эти дополнительные методы в класс `MainActivity`, чтобы проверять состояние приложения и отображать в нем полученные данные.
 
     ```java
     @Override
@@ -405,15 +405,17 @@ ms.locfileid: "68227881"
     }
     ```
 
-10. Метод `ToastNotify` использует элемент управления `TextView` *Hello World*, чтобы постоянно передавать в приложение сведения о состоянии и уведомления. В файле макета **res** > **layout** > **activity_main.xml** добавьте следующий идентификатор для этого элемента управления.
+9. Метод `ToastNotify` использует элемент управления `TextView` *Hello World*, чтобы постоянно передавать в приложение сведения о состоянии и уведомления. В файле макета **res** > **layout** > **activity_main.xml** добавьте следующий идентификатор для этого элемента управления.
 
     ```java
     android:id="@+id/text_hello"
     ```
 
-11. Затем добавьте подкласс для получателя, определенного в AndroidManifest.xml. Добавьте еще один новый класс в проект `FirebaseService`.
+    ![Центры уведомлений Azure — тестовая отправка](./media/notification-hubs-android-push-notification-google-fcm-get-started/activity-main-xml.png)
 
-12. Добавьте в начало файла `FirebaseService.java` следующие операторы импорта:
+10. Затем добавьте подкласс для получателя, определенного в AndroidManifest.xml. Добавьте еще один новый класс в проект `FirebaseService`.
+
+11. Добавьте в начало файла `FirebaseService.java` следующие операторы импорта:
 
     ```java
     import com.google.firebase.messaging.FirebaseMessagingService;
@@ -428,10 +430,10 @@ ms.locfileid: "68227881"
     import android.net.Uri;
     import android.os.Build;
     import android.os.Bundle;
-    import android.support.v4.app.NotificationCompat;
+    import androidx.core.app.NotificationCompat;
     ```
 
-13. Добавьте в класс `FirebaseService` следующий код, чтобы сделать его подклассом класса `FirebaseMessagingService`.
+12. Добавьте в класс `FirebaseService` следующий код, чтобы сделать его подклассом класса `FirebaseMessagingService`.
 
     Этот код переопределяет метод `onMessageReceived` и сообщает о полученных уведомлениях. Кроме того, он отправляет push-уведомление в диспетчер уведомлений Android с помощью метода `sendNotification()`. Вызовите метод `sendNotification()`, если получено уведомление, а приложение не запущено.
 
@@ -518,12 +520,16 @@ ms.locfileid: "68227881"
     }
     ```
 
-14. В Android Studio в строке меню выберите **Build** > **Rebuild Project** (Сборка > Пересобрать проект) чтобы убедиться, что в вашем коде нет ошибок. Если появляется сообщение об ошибке о значке `ic_launcher`, удалите следующую инструкцию из файла AndroidManifest.xml. 
+13. В Android Studio в строке меню выберите **Build** > **Rebuild Project** (Сборка > Пересобрать проект) чтобы убедиться, что в вашем коде нет ошибок. Если появляется сообщение об ошибке о значке `ic_launcher`, удалите следующую инструкцию из файла AndroidManifest.xml. 
 
     ```
         android:icon="@mipmap/ic_launcher"
     ```
-15. Запустите приложение на устройстве и убедитесь, что регистрация в центре уведомлений успешно выполнена.
+14. Убедитесь, что у вас есть виртуальное устройство для запуска приложения. Если его нет, добавьте его следующим образом:
+    1. ![Запуск диспетчера устройств](./media/notification-hubs-android-push-notification-google-fcm-get-started/open-device-manager.png)
+    2. ![Создание виртуального устройства](./media/notification-hubs-android-push-notification-google-fcm-get-started/your-virtual-devices.PNG)
+
+15. Запустите приложение на выбранном устройстве и убедитесь, что оно успешно зарегистрировано в концентраторе.
 
     > [!NOTE]
     > Во время первоначального запуска регистрация может завершиться неудачно, пока не будет вызван метод `onTokenRefresh()` службы ИД экземпляра. Чтобы заново начать регистрацию в центре уведомлений, обновите страницу.

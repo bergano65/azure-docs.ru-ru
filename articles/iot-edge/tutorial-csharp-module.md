@@ -9,12 +9,12 @@ ms.date: 04/23/2019
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 7fca5709a1c7c3ecae11a5fc7de2109f1b20645e
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: 7714d065d8ac449d10d9b022005e7799f8280bda
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68839575"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71104458"
 ---
 # <a name="tutorial-develop-a-c-iot-edge-module-for-linux-devices"></a>Руководство по Разработка модулей IoT Edge на языке C# для устройств Linux
 
@@ -36,7 +36,7 @@ ms.locfileid: "68839575"
 
 Этот учебник демонстрирует разработку модуля на **C#** с помощью **Visual Studio Code** и его развертывание на **устройстве Linux**. Если вы разрабатываете модули для устройств Windows, вам нужен другой учебник [по разработке модуля IoT Edge на C# для устройств с Windows](tutorial-csharp-module-windows.md).
 
-В следующей таблице перечислены возможные варианты для разработки и развертывания модулей C для Linux. 
+В приведенной ниже таблице перечислены возможные варианты для разработки и развертывания модулей C# для Linux. 
 
 | C# | Visual Studio Code | Visual Studio | 
 | -- | ------------------ | ------------- |
@@ -209,14 +209,16 @@ ms.locfileid: "68839575"
             {
                 Console.WriteLine($"Machine temperature {messageBody.machine.temperature} " +
                     $"exceeds threshold {temperatureThreshold}");
-                var filteredMessage = new Message(messageBytes);
-                foreach (KeyValuePair<string, string> prop in message.Properties)
+                using (var filteredMessage = new Message(messageBytes))
                 {
-                    filteredMessage.Properties.Add(prop.Key, prop.Value);
-                }
+                    foreach (KeyValuePair<string, string> prop in message.Properties)
+                    {
+                        filteredMessage.Properties.Add(prop.Key, prop.Value);
+                    }
 
-                filteredMessage.Properties.Add("MessageType", "Alert");
-                await moduleClient.SendEventAsync("output1", filteredMessage);
+                    filteredMessage.Properties.Add("MessageType", "Alert");
+                    await moduleClient.SendEventAsync("output1", filteredMessage);
+                }
             }
 
             // Indicate that the message treatment is completed.

@@ -1,4 +1,4 @@
-- name: Документация Azure Logic Apps
+- name: Документация по Azure Logic Apps
   href: index.yml
 - name: Обзор
   items:
@@ -17,9 +17,9 @@
   items:
     - name: Создание рабочих процессов на основе расписания
       href: tutorial-build-schedule-recurring-logic-app-workflow.md
-    - name: Управление запросами для списка рассылки
+    - name: Создание рабочих процессов на основе утверждения
       href: tutorial-process-mailing-list-subscriptions-workflow.md
-    - name: Обработка вложений электронной почты
+    - name: Создание рабочего процесса службы хранилища Azure и Функций Azure
       href: tutorial-process-email-attachments-workflow.md
 - name: Примеры
   items:
@@ -31,7 +31,7 @@
   items:
     - name: Соединители для Logic Apps
       href: ../connectors/apis-list.md
-    - name: Планирование автоматизированных повторяющихся рабочих процессов
+    - name: Планирование повторяющихся рабочих процессов
       href: concepts-schedule-automated-recurring-tasks-workflows.md
     - name: Бессерверные вычисления с помощью Azure
       href: logic-apps-serverless-overview.md
@@ -111,6 +111,12 @@
           href: logic-apps-enterprise-integration-partners.md
         - name: Соглашения
           href: logic-apps-enterprise-integration-agreements.md
+        - name: Схемы для проверки XML
+          href: logic-apps-enterprise-integration-schemas.md
+        - name: Карты для преобразования XML
+          href: logic-apps-enterprise-integration-maps.md
+        - name: Сертификаты
+          href: logic-apps-enterprise-integration-certificates.md
         - name: Метаданные артефактов
           href: logic-apps-enterprise-integration-metadata.md
         - name: Получение сообщений B2B
@@ -141,20 +147,14 @@
           href: logic-apps-scenario-edi-send-batch-messages.md
         - name: Обработка неструктурированных файлов
           href: logic-apps-enterprise-integration-flatfile.md
+        - name: Преобразование XML
+          href: logic-apps-enterprise-integration-transform.md
         - name: Обработка XML
           href: logic-apps-enterprise-integration-xml.md
         - name: Проверка XML
           href: logic-apps-enterprise-integration-xml-validation.md
-        - name: Добавление схем для проверки XML
-          href: logic-apps-enterprise-integration-schemas.md
-        - name: Преобразование XML
-          href: logic-apps-enterprise-integration-transform.md
-        - name: Добавление карт для преобразования XML
-          href: logic-apps-enterprise-integration-maps.md
         - name: Преобразование JSON
           href: logic-apps-enterprise-integration-liquid-transform.md
-        - name: Добавление сертификатов безопасности
-          href: logic-apps-enterprise-integration-certificates.md
         - name: Устранение ошибок B2B
           href: logic-apps-enterprise-integration-b2b-list-errors-solutions.md
         - name: Планирование аварийного восстановления

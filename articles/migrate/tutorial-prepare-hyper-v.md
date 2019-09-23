@@ -5,15 +5,15 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: azure-migrate
 ms.topic: tutorial
-ms.date: 07/24/2019
+ms.date: 09/16/2019
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: 87df37cc6baa863bb0b068bdfeb9cde873e38836
-ms.sourcegitcommit: acffa72239413c62662febd4e39ebcb6c6c0dd00
+ms.openlocfilehash: 2f45f70f1c131e1690997cda18a8d612d3af9dee
+ms.sourcegitcommit: a819209a7c293078ff5377dee266fa76fd20902c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68952081"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71010308"
 ---
 # <a name="prepare-for-assessment-and-migration-of-hyper-v-vms-to-azure"></a>Подготовка виртуальных машин Hyper-V к оценке и переносу в Azure
 
@@ -99,7 +99,7 @@ ms.locfileid: "68952081"
 1. Проверьте настройки узла Hyper-V.
 2. Настройте удаленное подключение PowerShell на каждом узле, чтобы устройство, используемое для Миграции Azure, могло выполнять команды PowerShell на узле с помощью подключения WinRM.
 3. Если диски виртуальной машины находятся в удаленном хранилище SMB, требуется делегирование учетных данных. 
-    - Включите делегирование CredSSP, чтобы устройство Миграции Azure могло выступать в качестве клиента, передавая учетные данные узлу. T
+    - Включите делегирование CredSSP, чтобы устройство Миграции Azure могло выступать в качестве клиента, передавая учетные данные узлу.
     - Настройте каждый узел в качестве делегата для устройства, как описано ниже.
     - Позже при настройке устройства вы включите делегирование на нем.
 4. Просмотрите требования к устройству и доступ к URL-адресу и порту, необходимый для устройства.
@@ -129,7 +129,7 @@ ms.locfileid: "68952081"
 
 1. Убедитесь, что на узле Hyper-V установлен PowerShell версии 4.0 или более поздней.
 2. Скачайте скрипт из [Центра загрузки Майкрософт](https://aka.ms/migrate/script/hyperv). Скрипт криптографически подписывается корпорацией Майкрософт.
-3. Проверьте целостность скрипта с помощью хэш-файлов MD5 или SHA256. Выполните следующую команду, чтобы создать хэш для скрипта.
+3. Проверьте целостность скрипта с помощью хэш-файлов MD5 или SHA256. Значения хэша указаны ниже. Выполните следующую команду, чтобы создать хэш для скрипта.
     ```
     C:\>CertUtil -HashFile <file_location> [Hashing Algorithm]
     ```
@@ -138,19 +138,20 @@ ms.locfileid: "68952081"
     C:\>CertUtil -HashFile C:\Users\Administrators\Desktop\ MicrosoftAzureMigrate-Hyper-V.ps1
     SHA256
     ```
-    
-    Хэш-значениями являются:
-    Хэш | Значение
-    --- | ---
-    **MD5** | 0ef418f31915d01f896ac42a80dc414e
-    **SHA256** | 0ad60e7299925eff4d1ae9f1c7db485dc9316ef45b0964148a3c07c80761ade2
-
 
 4.  После проверки целостности скрипта запустите его на каждом узле Hyper-V с помощью следующей команды PowerShell:
     ```
     PS C:\Users\Administrators\Desktop> MicrosoftAzureMigrate-Hyper-V.ps1
     ```
 
+#### <a name="hashtag-values"></a>Значения хэша
+
+Хэш-значениями являются:
+
+| **Хэш** | **Значение** |
+| --- | --- |
+| **MD5** | 0ef418f31915d01f896ac42a80dc414e |
+| **SHA256** | 0ad60e7299925eff4d1ae9f1c7db485dc9316ef45b0964148a3c07c80761ade2 |
 
 ### <a name="verify-hyper-v-host-settings"></a>Проверьте настройки узла Hyper-V
 

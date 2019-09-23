@@ -11,18 +11,18 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein
 ms.date: 02/04/2019
-ms.openlocfilehash: 81f3e4beb29f21f1b752a876827e9b35856c713a
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: c501bed9220c08013d44836066e46df92cf69eaa
+ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68566894"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71037435"
 ---
 # <a name="azure-resource-manager-templates-for-azure-sql-database"></a>Шаблоны Azure Resource Manager для Базы данных SQL Azure
 
 Шаблоны Azure Resource Manager позволяют определить инфраструктуру как код и развертывать решения в облаке Azure.
 
-## <a name="single-database--elastic-pool"></a>Отдельная база данных или эластичный пул
+## <a name="single-database--elastic-pooltabsingle-database"></a>[Отдельная база данных или эластичный пул](#tab/single-database)
 
 В следующей таблице представлены ссылки на шаблоны Azure Resource Manager для Базы данных SQL Azure.
 
@@ -41,7 +41,7 @@ ms.locfileid: "68566894"
 | [Кластер HDInsight с Базой данных SQL](https://github.com/Azure/azure-quickstart-templates/tree/master/101-hdinsight-linux-with-sql-database) | Этот шаблон позволяет создать кластер HDInsight, сервер Базы данных SQL, Базу данных SQL и две таблицы. Этот шаблон используется в статье [Использование Apache Sqoop с Hadoop в HDInsight](https://docs.microsoft.com/azure/hdinsight/hadoop/hdinsight-use-sqoop) |
 | [Приложение логики Azure, выполняющее хранимую процедуру SQL по расписанию](https://github.com/Azure/azure-quickstart-templates/tree/master/101-logic-app-sql-proc) | Этот шаблон позволяет создать приложение логики, которое будет запускать хранимую процедуру SQL по расписанию. Все аргументы для процедуры можно поместить в раздел body шаблона.|
 
-## <a name="managed-instance"></a>Управляемый экземпляр
+## <a name="managed-instancetabmanaged-instance"></a>[Управляемый экземпляр](#tab/managed-instance)
 
 В следующей таблице представлены ссылки на шаблоны Azure Resource Manager для Управляемого экземпляра Базы данных SQL Azure.
 
@@ -51,3 +51,5 @@ ms.locfileid: "68566894"
 | [Сетевая среда для Управляемого экземпляра](https://github.com/Azure/azure-quickstart-templates/tree/master/101-sql-managed-instance-azure-environment) | Это развертывание создаст настроенную виртуальную сеть Azure с двумя подсетями: одна будет выделена для Управляемых экземпляров, а другая — для других ресурсов (например, виртуальных машин, сред Службы приложений и т. д.). Этот шаблон будет создавать правильно настроенные сетевые среды, в которых можно развернуть Управляемые экземпляры. |
 | [Управляемый экземпляр с подключением "точка — сеть"](https://github.com/Azure/azure-quickstart-templates/tree/master/201-sqlmi-new-vnet-w-point-to-site-vpn) | Это развертывание создаст виртуальную сеть Azure с двумя подсетями: `ManagedInstance` и `GatewaySubnet`. Управляемый экземпляр будет развернут в подсети ManagedInstance. В подсети `GatewaySubnet` будет создан шлюз виртуальной сети, настроенный для VPN-подключения "точка — сеть". |
 | [Управляемый экземпляр с виртуальной машиной](https://github.com/Azure/azure-quickstart-templates/tree/master/201-sqlmi-new-vnet-w-jumpbox) | Это развертывание создаст виртуальную сеть Azure с двумя подсетями: `ManagedInstance` и `Management`. Управляемый экземпляр будет развернут в подсети `ManagedInstance`. Виртуальная машина с последней версией SQL Server Management Studio (SSMS) будет развернута в подсети `Management`. |
+
+---

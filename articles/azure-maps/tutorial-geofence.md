@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: b4e9b72be5d03e0b3441983ca991a16688f5f4cd
-ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
+ms.openlocfilehash: a020ef91e52a5d801557399df827d3641bfb974e
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70916461"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70934181"
 ---
 # <a name="set-up-a-geofence-by-using-azure-maps"></a>Настройка геозоны с использованием Azure Maps
 
@@ -56,7 +56,7 @@ ms.locfileid: "70916461"
     
     Параметр GEOJSON в пути URL-адреса определяет формат отправляемых данных.
 
-3. Щелкните **Params** (Параметры) и введите следующие пары "ключ — значение" для URL-адреса запроса POST. Замените значение ключа подписки своим ключом подписки на Azure Maps.
+3. Щелкните **Params** (Параметры) и введите следующие пары "ключ — значение" для URL-адреса запроса POST. Замените значение ключа подписки первичным ключом подписки на Azure Maps.
    
     ![Пары "ключ — значение" на вкладке параметров приложения Postman](./media/tutorial-geofence/postman-key-vals.png)
 

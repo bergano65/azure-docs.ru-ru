@@ -29,6 +29,10 @@
           href: container-instances-multi-container-yaml.md
         - name: "Развертывание группы контейнеров\_— Azure Resource Manager"
           href: container-instances-multi-container-group.md
+    - name: Интеграция со службами Azure
+      items:
+        - name: Активация с использованием Функций Azure
+          href: container-instances-tutorial-azure-function-trigger.md
 - name: Примеры
   items:
     - name: Примеры кода
@@ -121,6 +125,8 @@
       href: /javascript/api/overview/azure/containerinstances
     - name: Шаблон Resource Manager
       href: /azure/templates/microsoft.containerinstance/containergroups
+    - name: YAML
+      href: container-instances-reference-yaml.md
     - name: Соединитель
       href: /connectors/aci
 - name: Ресурсы

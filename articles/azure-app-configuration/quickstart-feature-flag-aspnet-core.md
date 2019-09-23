@@ -14,12 +14,12 @@ ms.tgt_pltfrm: ASP.NET Core
 ms.workload: tbd
 ms.date: 04/19/2019
 ms.author: yegu
-ms.openlocfilehash: 41947de18ae27b41d046fd4358f0039a1b56374d
-ms.sourcegitcommit: e72073911f7635cdae6b75066b0a88ce00b9053b
+ms.openlocfilehash: 6f9094a52ff3558fa8d1f2fee1d80ed8eb09a416
+ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68347914"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71076324"
 ---
 # <a name="quickstart-add-feature-flags-to-an-aspnet-core-app"></a>Краткое руководство. Добавление флагов функций в приложение ASP.NET Core
 
@@ -36,7 +36,7 @@ ms.locfileid: "68347914"
 
 [!INCLUDE [azure-app-configuration-create](../../includes/azure-app-configuration-create.md)]
 
-6. Выберите **Feature Manager** (Диспетчер функций)  >  **+ Создать**, чтобы добавить следующие флаги функций.
+6. Выберите **Диспетчер компонентов** >  **+Добавить**, чтобы добавить следующие флаги функций.
 
     | Ключ | Состояние |
     |---|---|
@@ -81,10 +81,11 @@ ms.locfileid: "68347914"
 
 ## <a name="connect-to-an-app-configuration-store"></a>Подключение к хранилищу Конфигурации приложений
 
-1. Добавьте ссылку на пакет NuGet `Microsoft.Azure.AppConfiguration.AspNetCore`, выполнив следующую команду:
+1. Добавьте ссылку на пакеты NuGet `Microsoft.Azure.AppConfiguration.AspNetCore` и `Microsoft.FeatureManagement.AspNetCore`, выполнив следующие команды.
 
     ```
-    dotnet add package Microsoft.Azure.AppConfiguration.AspNetCore --version 2.0.0-preview-009200001-7
+    dotnet add package Microsoft.Azure.AppConfiguration.AspNetCore --version 2.0.0-preview-009470001-12
+    dotnet add package Microsoft.FeatureManagement.AspNetCore --version 1.0.0-preview-009000001-1251
     ```
 
 1. Выполните следующую команду, чтобы восстановить пакеты проекта:
@@ -266,6 +267,8 @@ ms.locfileid: "68347914"
     |---|---|
     | Beta | С |
 
+1. Перезапустите приложение, перейдя в командную строку и нажав `Ctrl-C`, чтобы отменить выполняющийся процесс `dotnet` и снова запустить `dotnet run`.
+
 1. Обновите страницу браузера, чтобы просмотреть новые параметры конфигурации.
 
     ![Краткое руководство. Запуск приложения, размещенного локально](./media/quickstarts/aspnet-core-feature-flag-local-after.png)
@@ -281,3 +284,4 @@ ms.locfileid: "68347914"
 - Узнайте больше об [управлении функциями](./concept-feature-management.md).
 - [Управляйте флагами функций](./manage-feature-flags.md).
 - [Используйте флаги функций в приложении ASP.NET Core](./use-feature-flags-dotnet-core.md).
+- [Использование динамической конфигурации в приложении ASP.NET Core](./enable-dynamic-configuration-aspnet-core.md)

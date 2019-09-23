@@ -11,15 +11,15 @@ ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: tutorial
-ms.date: 08/06/2019
+ms.date: 09/16/2019
 ms.author: cephalin
 ms.custom: mvc
-ms.openlocfilehash: 09e9a89fc79763eee5d154ba589b599fe8a180b2
-ms.sourcegitcommit: 86d49daccdab383331fc4072b2b761876b73510e
+ms.openlocfilehash: d4e0d632fe476df159710f800eca3a2a283f7908
+ms.sourcegitcommit: 71db032bd5680c9287a7867b923bf6471ba8f6be
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70743396"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71018287"
 ---
 # <a name="tutorial-secure-azure-sql-database-connection-from-app-service-using-a-managed-identity"></a>Руководство по Безопасное подключение к Базе данных SQL Azure из службы приложений с использованием управляемого удостоверения
 
@@ -83,10 +83,22 @@ az sql server ad-admin create --resource-group myResourceGroup --server-name <se
 
 ## <a name="set-up-visual-studio"></a>Настройка Visual Studio
 
-Чтобы включить разработку и отладку в Visual Studio, добавьте своего пользователя Azure AD в Visual Studio, выбрав в меню **Файл** > **Параметры учетной записи** и нажмите **Добавить учетную запись**.
+### <a name="windows"></a>Windows
+Версия Visual Studio для Windows интегрирована с проверкой подлинности Azure AD. Чтобы включить разработку и отладку в Visual Studio, добавьте своего пользователя Azure AD в Visual Studio, выбрав в меню **Файл** > **Параметры учетной записи** и нажмите **Добавить учетную запись**.
 
 Чтобы настроить пользователя Azure AD для службы аутентификации Azure, выберите в меню **Инструменты** > **Параметры**, а затем выберите **Служба аутентификация Azure** > **Выбор учетной записи**. Выберите добавленного пользователя Azure AD и нажмите **ОК**.
 
+Теперь вы готовы разрабатывать и отлаживать свое приложение с базой данных SQL в качестве серверной части, используя аутентификацию Azure AD.
+
+### <a name="macos"></a>MacOS
+
+Версия Visual Studio для Mac интегрирована с проверкой подлинности Azure AD. Но библиотека [Microsoft.Azure.Services.AppAuthentication](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication), которая будет использоваться позже, может использовать маркеры из Azure CLI. Чтобы включить разработку и отладку в Visual Studio, сначала необходимо [установить Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) на локальном компьютере.
+
+После установки Azure CLI на локальном компьютере войдите в Azure CLI с помощью следующей команды, используя учетные данные пользователя Azure AD:
+
+```bash
+az login --allow-no-subscriptions
+```
 Теперь вы готовы разрабатывать и отлаживать свое приложение с базой данных SQL в качестве серверной части, используя аутентификацию Azure AD.
 
 ## <a name="modify-your-project"></a>Изменение проекта

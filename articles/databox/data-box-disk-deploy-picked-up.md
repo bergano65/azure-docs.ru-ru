@@ -6,16 +6,16 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: tutorial
-ms.date: 09/11/2019
+ms.date: 09/19/2019
 ms.author: alkohli
 ms.localizationpriority: high
 Customer intent: As an IT admin, I need to be able to order Data Box Disk to upload on-premises data from my server onto Azure.
-ms.openlocfilehash: 03ca6163b4f788d50f7f27a2fcaf2c9b6c02d84c
-ms.sourcegitcommit: d70c74e11fa95f70077620b4613bb35d9bf78484
+ms.openlocfilehash: 9f0bdbf69336f792479c0089be351e468d3babe2
+ms.sourcegitcommit: 2ed6e731ffc614f1691f1578ed26a67de46ed9c2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70910119"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71128684"
 ---
 ::: zone target="chromeless"
 
@@ -89,11 +89,7 @@ ms.locfileid: "70910119"
 3. Прикрепите этикетку на коробку. 
 4. Закажите через Интернет возврат по ссылке https://mydhl.express.dhl/au/en/schedule-pickup.html#/schedule-pickup#label-reference. 
 
-### <a name="in-japan-koreatabin-japan-korea"></a>[Япония и Корея](#tab/in-japan-korea)
-
-Ниже приведены инструкции по получению устройства в Японии и Кореи.
-
-#### <a name="pick-up-in-japan"></a>Возврат в Японии
+### <a name="in-japantabin-japan"></a>[В Японии](#tab/in-japan)
 
 1. Укажите название и адрес своей компании в качестве сведений об отправителе в квитанции.
 2. Отправьте электронное письмо в компанию Quantium Solutions с помощью указанного ниже шаблона электронного письма.
@@ -120,7 +116,7 @@ ms.locfileid: "70910119"
 - Электронная почта: Customerservice.JP@quantiumsolutions.com 
 - Телефон: 03-5755-0150 
 
-#### <a name="pick-up-in-korea"></a>Возврат в Корее
+### <a name="in-koreatabin-korea"></a>[Корея](#tab/in-korea)
 
 1. Приложите к посылке квитанцию для возврата при доставке наложенным платежом.
 2. Чтобы организовать отправку при наличии квитанции, сделайте следующее:

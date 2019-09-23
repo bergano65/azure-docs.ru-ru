@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство по управлению устройством из Центра Интернета вещей Azure (Node.js) | Документация Майкрософт
+title: Краткое руководство. Управление устройством из Центра Интернета вещей Azure (Node.js)
 description: 'В этом кратком руководстве описано, как запустить два примера приложений Node.js: внутреннее приложение, которое может удаленно управлять подключенными к центру устройствами, и приложение, которое имитирует подключенное к центру устройство, которым можно управлять удаленно.'
 author: wesmc7777
 manager: philmea
@@ -8,14 +8,14 @@ ms.service: iot-hub
 services: iot-hub
 ms.devlang: nodejs
 ms.topic: quickstart
-ms.custom: mvc
+ms.custom: mvc, seo-javascript-september2019
 ms.date: 06/21/2019
-ms.openlocfilehash: ba49709e6cab2d3e6a752fb7b529da7edb9f642e
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: ab064798d21dd6d6ba87f2f2d093dfc0849c1cb6
+ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69877154"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70967187"
 ---
 # <a name="quickstart-control-a-device-connected-to-an-iot-hub-nodejs"></a>Краткое руководство. Управление подключенным к центру Интернета вещей устройством (Node.js)
 

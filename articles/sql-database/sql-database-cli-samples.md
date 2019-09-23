@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 02/03/2019
-ms.openlocfilehash: 5ecd5ee4a053d3ebb550b6f2387a0e915b3c2c23
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 5366fb1d32020bfbcfaba36c60c0eb5441e92070
+ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68569400"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71055237"
 ---
 # <a name="azure-cli-samples-for-azure-sql-database"></a>Примеры Azure CLI для Базы данных SQL Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "68569400"
 
 Если вы решили установить и использовать интерфейс командной строки локально, для работы с этим руководством вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI]( /cli/azure/install-azure-cli).
 
-## <a name="single-database--elastic-pools"></a>Отдельная база данных и эластичные пулы
+## <a name="single-database--elastic-poolstabsingle-database"></a>[Отдельная база данных и эластичные пулы](#tab/single-database)
 
 В следующей таблице содержатся ссылки на примеры сценариев Azure CLI для Базы данных SQL Azure.
 
@@ -46,7 +46,7 @@ ms.locfileid: "68569400"
 
 См. дополнительные сведения об [API управления отдельной базой данных с помощью Azure CLI](sql-database-single-databases-manage.md#azure-cli-manage-sql-database-servers-and-single-databases).
 
-## <a name="managed-instance"></a>Управляемый экземпляр
+## <a name="managed-instancetabmanaged-instance"></a>[Управляемый экземпляр](#tab/managed-instance)
 
 В следующей таблице содержатся ссылки на примеры скриптов Azure CLI для Управляемого экземпляра Базы данных SQL Azure.
 
@@ -58,3 +58,5 @@ ms.locfileid: "68569400"
 |||
 
 См. дополнительные сведения об [API управления Управляемым экземпляром с помощью Azure CLI](sql-database-managed-instance-create-manage.md#azure-cli-create-and-manage-managed-instances). Дополнительные примеры можно найти [здесь](https://medium.com/azure-sqldb-managed-instance/working-with-sql-managed-instance-using-azure-cli-611795fe0b44).
+
+---
