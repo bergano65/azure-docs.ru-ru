@@ -66,17 +66,17 @@ ms.locfileid: "70114482"
 | Название | Значение и пример | Тип данных
 | ---- | ---- | ---- 
 | apiVersion | `2018-10-01` | date |
-| publisher | `Microsoft.ManagedServices` | строка |
-| type | `ApplicationHealthLinux` (Linux), `ApplicationHealthWindows` (Windows) | строка |
-| typeHandlerVersion | `1.0` | ssNoversion |
+| publisher | `Microsoft.ManagedServices` | string |
+| type | `ApplicationHealthLinux` (Linux), `ApplicationHealthWindows` (Windows) | string |
+| typeHandlerVersion | `1.0` | int |
 
 ### <a name="settings"></a>Настройки
 
 | Название | Значение и пример | Тип данных
 | ---- | ---- | ----
-| protocol | `http` или `tcp` | строка |
-| port | Необязательно, если используется протокол `http`; обязательно, если используется протокол `tcp` | ssNoversion |
-| requestPath | Обязательно, если используется протокол `http`; не разрешено, если используется протокол `tcp` | строка |
+| protocol | `http` или `tcp` | string |
+| port | Необязательно, если используется протокол `http`; обязательно, если используется протокол `tcp` | int |
+| requestPath | Обязательно, если используется протокол `http`; не разрешено, если используется протокол `tcp` | string |
 
 ## <a name="deploy-the-application-health-extension"></a>Развертывание расширение "Работоспособность приложения"
 Существует несколько способов развертывания расширения "Работоспособность приложения" в масштабируемые наборы, которые описаны в приведенных ниже примерах.
