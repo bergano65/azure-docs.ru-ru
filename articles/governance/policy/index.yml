@@ -1,72 +1,117 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Документация по службе "Политика Azure"
+summary: Служба "Политика Azure" позволяет управлять ИТ-задачами и предотвращать проблемы с помощью определений политик, которые применяют правила и действия к ресурсам.
 metadata:
-  title: Документация по службе "Политика Azure". Руководства и справочник по API
-  description: 'Служба "Политика Azure" позволяет управлять ИТ-задачами и предотвращать проблемы с помощью определений политик, которые применяют правила и действия к ресурсам. Использование службы "Политика Azure" обеспечивает соответствие ресурсов корпоративным стандартам и соглашениям об уровне обслуживания.'
-  author: DCtheGeek
-  manager: carmonm
+  title: Документация по службе "Политика Azure"
+  description: Служба "Политика Azure" позволяет управлять ИТ-задачами и предотвращать проблемы с помощью определений политик, которые применяют правила и действия к ресурсам.
   ms.service: azure-policy
   ms.topic: landing-page
-  ms.date: 03/16/2019
+  ms.collection: collection
+  author: DCtheGeek
   ms.author: dacoulte
-abstract:
-  description: 'Служба "Политика Azure" позволяет управлять ИТ-задачами и предотвращать проблемы с помощью определений политик, которые применяют правила и действия к ресурсам. Использование службы "Политика Azure" обеспечивает соответствие ресурсов корпоративным стандартам и соглашениям об уровне обслуживания.'
-sections:
-  - title: 5-минутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: 'Узнайте, как создавать и назначать определения политик и управлять ими в Azure.'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              alt: Портал Azure
-              src: 'https://docs.microsoft.com/media/common/i_portal.svg'
-            text: Портал Azure
-            href: ./assign-policy-portal
-          - image:
-              alt: Azure PowerShell
-              src: ./media/powershell.svg
-            text: Azure PowerShell
-            href: ./assign-policy-powershell
-          - image:
-              alt: Инфраструктура CLI Azure
-              src: ./media/cli.svg
-            text: Инфраструктура CLI Azure
-            href: ./assign-policy-azurecli
-          - image:
-              alt: Шаблон Resource Manager
-              src: 'https://docs.microsoft.com/media/logos/logo_vs-code.svg'
-            text: Шаблон Resource Manager
-            href: ./assign-policy-template
-  - title: Пошаговые руководства
-    items:
-      - type: paragraph
-        text: 'Узнайте, как создавать и назначать определения политик и управлять ими в Azure.'
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/azure/governance/policy/tutorials/create-and-manage">Создание политики Azure и управление ею</a>
-          - html: <a href="/azure/governance/policy/tutorials/create-custom-policy-definition">Создание определения пользовательской политики</a>
-  - title: Примеры
-    items:
-      - type: paragraph
-        text: 'Просмотрите доступные примеры, которые помогут создавать определения политики в Azure.'
-      - type: list
-        style: unordered
-        className: spaced noBullet
-        items:
-          - html: <a href="/azure/governance/policy/samples/index">Индекс примеров</a>
-  - title: Справочные материалы
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: Командная строка
-            html: '<p><a href="/cli/azure/policy">Интерфейс командной строки Azure</a></p><p><a href="/powershell/module/az.resources/#policies">Azure PowerShell (служба "Политика")</a></p><p><a href="/powershell/module/az.policyinsights#policy_insights">Azure PowerShell (служба анализа политик)</a></p><p><a href="https://www.powershellgallery.com/packages/Az.GuestConfiguration">Azure PowerShell (служба гостевой конфигурации)</a></p>'
-          - title: Шаблоны диспетчера ресурсов
-            html: <p><a href="/azure/templates/microsoft.authorization/policyassignments">Назначения</a></p><p><a href="/azure/templates/microsoft.authorization/policydefinitions">Определения политик</a></p><p><a href="/azure/templates/microsoft.authorization/policysetdefinitions">Определения инициатив</a></p>
-          - title: REST
-            html: <p><a href="/rest/api/policy-insights/policyevents">События</a></p><p><a href="/rest/api/policy-insights/policystates">Состояния</a></p><p><a href="/rest/api/resources/policyassignments">Назначения</a></p><p><a href="/rest/api/resources/policydefinitions">Определения политик</a></p><p><a href="/rest/api/resources/policysetdefinitions">Определения инициатив</a></p><p><a href="/rest/api/policy-insights/policytrackedresources">Отслеживаемые политикой ресурсы</a></p><p><a href="/rest/api/policy-insights/remediations">Исправления</a></p><p><a href="/rest/api/guestconfiguration/">Гостевая конфигурация</a></p>
+  ms.date: 09/17/2019
+  ms.openlocfilehash: 43deed57090cd2f64bc9ee96f6f0c6f5286b0dca
+  ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 09/23/2019
+  ms.locfileid: "71203973"
+landingContent:
+- title: Сведения о службе "Политика Azure"
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое служба "Политика Azure"?
+      url: ./overview.md
+    - text: Действия политик
+      url: ./concepts/effects.md
+    - text: Структура определения
+      url: ./concepts/definition-structure.md
+    - text: Структура назначения
+      url: ./concepts/assignment-structure.md
+  - linkListType: video
+    links:
+    - text: Представление службы "Политика Azure" на конференции Build 2018
+      url: https://channel9.msdn.com/events/Build/2018/THR2030
+- title: Начало работы
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Назначение политики (портал)
+      url: ./assign-policy-portal.md
+    - text: Назначение политики (PowerShell)
+      url: ./assign-policy-powershell.md
+    - text: Назначение политики (Azure CLI)
+      url: ./assign-policy-azurecli.md
+    - text: Назначение политики (шаблон)
+      url: ./assign-policy-template.md
+  - linkListType: tutorial
+    links:
+    - text: Создание политик и управление ими для обеспечения соответствия требованиям
+      url: ./tutorials/create-and-manage.md
+  - linkListType: deploy
+    links:
+    - text: Индекс примеров политик
+      url: ./samples/index.md
+- title: Создание политик
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Создание настраиваемой политики
+      url: ./tutorials/create-custom-policy-definition.md
+  - linkListType: how-to-guide
+    links:
+    - text: Создание политики с помощью пакета SDK
+      url: ./how-to/programmatically-create.md
+    - text: Создание политик для массивов
+      url: ./how-to/author-policies-for-arrays.md
+  - linkListType: concept
+    links:
+    - text: Политика для AKS
+      url: ./concepts/rego-for-aks.md
+    - text: Политика для виртуальных машин
+      url: ./concepts/guest-configuration.md
+- title: Просмотр и оптимизация ресурсов
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Получение данных о соответствии
+      url: ./how-to/get-compliance-data.md
+    - text: Определение причин несоответствия требованиям
+      url: ./how-to/determine-non-compliance.md
+    - text: Исправление несоответствующих ресурсов
+      url: ./how-to/remediate-resources.md
+- title: Участие
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Канал на YouTube, посвященный системе управления Azure
+      url: https://www.youtube.com/channel/UCZZ3-oMrVI5ssheMzaWC4uQ
+    - text: Функция запроса продукта
+      url: https://feedback.azure.com/forums/915958-azure-governance
+    - text: Техническое сообщество по системе управления Azure
+      url: https://techcommunity.microsoft.com/t5/Azure-Governance/bd-p/AzureGovernance
+- title: Справочные материалы
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Инфраструктура CLI Azure
+      url: /cli/azure/policy
+    - text: Azure PowerShell (служба "Политика")
+      url: /powershell/module/az.resources/#policies
+    - text: Azure PowerShell (служба анализа политик)
+      url: /powershell/module/az.policyinsights#policy_insights
+    - text: Пакет Azure SDK для .NET (назначения)
+      url: /dotnet/api/microsoft.azure.management.resourcemanager.models.policyassignment
+    - text: Пакет Azure SDK для .NET (определения политик)
+      url: /dotnet/api/microsoft.azure.management.resourcemanager.models.policydefinition
+    - text: REST (анализ политик)
+      url: /rest/api/policy-insights/
+    - text: REST (назначения)
+      url: /rest/api/resources/policyassignments
+    - text: REST (определения)
+      url: /rest/api/resources/policydefinitions
+    - text: REST (инициативы)
+      url: /rest/api/resources/policysetdefinitions
+    - text: Шаблоны Resource Manager
+      url: /azure/templates/microsoft.authorization

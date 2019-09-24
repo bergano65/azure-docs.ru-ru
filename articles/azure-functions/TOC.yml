@@ -138,6 +138,8 @@
           href: 'functions-reference-node.md#typescript'
     - name: Диагностика
       href: ../app-service/overview-diagnostics.md?toc=%2fazure%2fazure-functions%2ftoc.json
+    - name: Стоимость плана потребления
+      href: functions-consumption-costs.md
     - name: Рекомендации по производительности
       href: functions-best-practices.md
     - name: Прокси функций

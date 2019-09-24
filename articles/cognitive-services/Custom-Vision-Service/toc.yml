@@ -42,8 +42,10 @@
           href: go-tutorial.md
         - name: Обнаружение объектов
           href: go-tutorial-object-detection.md
-- name: Руководства
+- name: Учебники
   items:
+    - name: Приложение IoT Visual Alerts
+      href: iot-visual-alerts-tutorial.md
     - name: Средство обнаружения логотипов для мобильных устройств
       href: logo-detector-mobile.md
 - name: Руководства

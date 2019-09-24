@@ -257,6 +257,12 @@
     - name: Сведения о действии Политики
       displayName: 'order, evaluation'
       href: ./concepts/effects.md
+    - name: Структура назначения в службе "Политика Azure"
+      displayName: 'parameters, enforcementmode, policyDefinitionId'
+      href: ./concepts/assignment-structure.md
+    - name: Оценка влияния новой политики
+      displayName: 'audit, enforcementmode, compliance'
+      href: ./concepts/evaluate-impact.md
     - name: Политика Azure для Kubernetes
       displayName: 'aks, rego, k8s, opa, open policy agent, gatekeeper'
       href: ./concepts/rego-for-aks.md

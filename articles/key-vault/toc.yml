@@ -42,10 +42,12 @@
               href: tutorial-python-windows-virtual-machine.md
     - name: Ключи учетной записи хранения
       items:
-        - name: Использование ключей управляемой учетной записи хранения с Azure CLI
+        - name: Управление ключами учетной записи хранения с помощью Azure CLI
           href: key-vault-ovw-storage-keys.md
-        - name: Использование ключей управляемой учетной записи хранения с PowerShell
+        - name: Управление ключами учетной записи хранения с помощью PowerShell
           href: key-vault-overview-storage-keys-powershell.md
+        - name: Получение маркеров подписанного URL-адреса в коде
+          href: storage-keys-sas-tokens-code.md
     - name: Контейнеры Azure
       href: ../container-instances/container-instances-managed-identity.md
     - name: Шаблон Azure Resource Manager

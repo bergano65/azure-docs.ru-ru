@@ -26,7 +26,7 @@
               href: tutorial-train-models-with-aml.md
             - name: 2. Развертывание модели
               href: tutorial-deploy-models-with-aml.md
-        - name: Регрессия (данные о такси Нью-Йорка)
+        - name: Регрессия с использованием автоматизированного машинного обучения (данные о такси Нью-Йорка)
           items:
             - name: Автоматическое обучение модели машинного обучения
               displayName: 'automl, automated, auto ml,'
@@ -44,7 +44,7 @@
         - name: 2. Развертывание регрессионной модели
           displayName: studio
           href: ui-tutorial-automobile-price-deploy.md
-    - name: Автоматическое машинное обучение
+    - name: Автоматизированное машинное обучение (интерфейс)
       items:
         - name: Классификация (данные банка)
           displayName: 'automl, automated, auto ml, portal, ui'
@@ -107,13 +107,13 @@
         - name: Использование шаблона Resource Manager
           displayName: arm
           href: how-to-create-workspace-template.md
-    - name: Настройка среды разработки
+    - name: Настройка среды
       items:
         - name: Настройка сред разработки
           displayName: 'local, remote, azure notebooks, notebook, Jupyter, dsvm, Databricks, ADB'
           href: how-to-configure-environment.md
-        - name: Управление программной средой
-          displayName: 'pip, Conda'
+        - name: Настройка программных сред
+          displayName: 'pip, Conda, anaconda'
           href: how-to-use-environments.md
         - name: Включение ведения журналов
           displayName: 'troubleshoot, log, files, tracing'
