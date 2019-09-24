@@ -165,8 +165,8 @@ ms.locfileid: "68947146"
    | --- | --- | --- | --- | --- | --- |
    | FXXX | pumpRate | LINE\_DATA | EU | Скорость потока | ft3/s |
    | FXXX | oilPressure | LINE\_DATA | EU | Давление масла в двигателе | psi |
-   | FYYY | pumpRate | LINE\_DATA | США | Скорость потока | ft3/s |
-   | FYYY | oilPressure | LINE\_DATA | США | Давление масла в двигателе | psi |
+   | FYYY | pumpRate | LINE\_DATA | US | Скорость потока | ft3/s |
+   | FYYY | oilPressure | LINE\_DATA | US | Давление масла в двигателе | psi |
 
 * Таблица событий "аналитика временных рядов" после спрямления:
 
@@ -176,8 +176,8 @@ ms.locfileid: "68947146"
    | FXXX | oilPressure | LINE\_DATA | EU | Давление масла в двигателе | psi | 2018-01-17T01:17:00Z | 34.7 |
    | FXXX | pumpRate | LINE\_DATA | EU | Скорость потока | ft3/s | 2018-01-17T01:17:00Z | 2.445906400680542 | 
    | FXXX | oilPressure | LINE\_DATA | EU | Давление масла в двигателе | psi | 2018-01-17T01:17:00Z | 49.2 |
-   | FYYY | pumpRate | LINE\_DATA | США | Скорость потока | ft3/s | 2018-01-17T01:18:00Z | 0.58015072345733643 |
-   | FYYY | oilPressure | LINE\_DATA | США | Давление масла в двигателе | psi | 2018-01-17T01:18:00Z | 22.2 |
+   | FYYY | pumpRate | LINE\_DATA | US | Скорость потока | ft3/s | 2018-01-17T01:18:00Z | 0.58015072345733643 |
+   | FYYY | oilPressure | LINE\_DATA | US | Давление масла в двигателе | psi | 2018-01-17T01:18:00Z | 22.2 |
 
 Примечания к этим двум таблицам:
 
