@@ -10,12 +10,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 05/02/2019
 ms.author: robreed
-ms.openlocfilehash: 58b6531a394db8f9d29dcc0fe9b4b40d1725e70a
-ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
+ms.openlocfilehash: c0c160d9fc2fcfb8da004d02baae1dd410620cbb
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2019
-ms.locfileid: "68774584"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71204206"
 ---
 # <a name="custom-script-extension-for-windows"></a>Расширение Custom Script в ОС Windows
 
@@ -23,7 +23,7 @@ ms.locfileid: "68774584"
 
 В этом документе объясняется, как использовать расширение пользовательских сценариев с помощью модуля Azure PowerShell и шаблонов Azure Resource Manager, а также подробно описываются действия по устранению неполадок в системах Windows.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 > [!NOTE]  
 > Не используйте расширение пользовательских сценариев для выполнения команды Update-AzVM на той же виртуальной машине, которая использовалась для параметра, так как команда выполнится через определенный период времени.  
@@ -69,7 +69,7 @@ ms.locfileid: "68774584"
 {
     "apiVersion": "2018-06-01",
     "type": "Microsoft.Compute/virtualMachines/extensions",
-    "name": "config-app",
+    "name": "virtualMachineName/config-app",
     "location": "[resourceGroup().location]",
     "dependsOn": [
         "[concat('Microsoft.Compute/virtualMachines/', variables('vmName'),copyindex())]",
@@ -101,14 +101,17 @@ ms.locfileid: "68774584"
 > [!NOTE]
 > Только одна версия расширения может быть установлена на виртуальную машину на момент времени, однако в одном шаблоне диспетчер ресурсов для одной и той же виртуальной машины один и тот же пользовательский скрипт дважды закончится ошибкой.
 
+> [!NOTE]
+> Эту схему можно использовать в ресурсе VirtualMachine или в качестве автономного ресурса. Имя ресурса должно быть в формате "virtualMachineName/extensionName", если это расширение используется в качестве автономного ресурса в шаблоне ARM. 
+
 ### <a name="property-values"></a>Значения свойств
 
 | Название | Значение и пример | Тип данных |
 | ---- | ---- | ---- |
 | apiVersion | 2015-06-15 | date |
-| publisher | Microsoft.Compute | строка |
+| publisher | Microsoft.Compute; | строка |
 | type | CustomScriptExtension | строка |
-| typeHandlerVersion | 1.9 | ssNoversion |
+| typeHandlerVersion | 1.9 | int |
 | fileUris (пример) | https://raw.githubusercontent.com/Microsoft/dotnet-core-sample-templates/master/dotnet-core-music-windows/scripts/configure-music-app.ps1 | array |
 | timestamp (например) | 123456789 | 32-битное целое число |
 | commandToExecute (пример) | powershell -ExecutionPolicy Unrestricted -File configure-music-app.ps1 | строка |

@@ -1,5 +1,5 @@
 ---
-title: Справочные материалы. Ubuntu DSVM
+title: Справочные материалы. Виртуальная машина Ubuntu для обработки и анализа данных
 description: Сведения о средствах, включенных в виртуальную машину Ubuntu для обработки и анализа данных
 author: gvashishtha
 ms.service: machine-learning
@@ -7,12 +7,12 @@ ms.subservice: data-science-vm
 ms.author: gopalv
 ms.date: 09/11/2019
 ms.topic: reference
-ms.openlocfilehash: 20fe027ddf47ba98cef41cdc40a1b2e0d387c2a5
-ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
+ms.openlocfilehash: 0c48b8ba28f67ac7f38d6f636728abe7c5a6bd4e
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71174712"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71204034"
 ---
 # <a name="reference-ubuntu-linux-data-science-virtual-machine"></a>Справочные материалы. Виртуальная машина Ubuntu (Linux) для обработки и анализа данных
 
@@ -342,3 +342,6 @@ rattle()
 
 Теперь вы можете выйти из Rattle и R и отредактировать созданный скрипт R. Этот скрипт можно использовать и без изменений, запуская его в любой момент для повтора действий, выполненных в пользовательском интерфейсе Rattle. Этот способ позволяет новичкам в R быстро выполнить анализ и машинное обучение в простом графическом интерфейсе с автоматическим созданием кода на R для изменения и (или) изучения.
 
+## <a name="next-steps"></a>Следующие шаги
+
+У вас есть дополнительные вопросы? Рассмотрите возможность создания запроса в [службу поддержки](https://azure.microsoft.com/support/create-ticket/).

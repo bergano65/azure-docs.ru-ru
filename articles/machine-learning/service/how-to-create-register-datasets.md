@@ -11,12 +11,12 @@ author: MayMSFT
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 08/22/2019
-ms.openlocfilehash: 6c3a8d62bd6b3650f834540bd7bb13027792b091
-ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
+ms.openlocfilehash: d2b9e53fc6c58f0477e252c751e25a99bdbfba42
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71076970"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71200100"
 ---
 # <a name="create-and-access-datasets-preview-in-azure-machine-learning"></a>Создание и доступ к наборам данных (Предварительная версия) в Машинное обучение Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "71076970"
 
 Для создания наборов данных и работы с ними требуется:
 
-* Подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию машинное обучение Azure](https://aka.ms/AMLFree) уже сегодня.
+* Подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) уже сегодня.
 
 * [Рабочая область машинное обучение Azure](how-to-manage-workspace.md)
 
@@ -47,7 +47,7 @@ ms.locfileid: "71076970"
 
 Наборы данных делятся на два типа в зависимости от того, как пользователи их используют в обучении. 
 
-* [Табулардатасет](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py) представляет данные в табличном формате путем синтаксического анализа указанного файла или списка файлов. Это дает возможность материализовать данные в кадр данных Pandas. `TabularDataset` Объект может быть создан из файлов CSV, TSV, Parquet, результатов SQL-запросов и т. д. Полный список см. в нашей [документации](https://aka.ms/tabulardataset-api-reference).
+* [Табулардатасет](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py) представляет данные в табличном формате путем синтаксического анализа указанного файла или списка файлов. Это дает возможность материализовать данные в кадр данных Pandas или Spark. `TabularDataset` Объект может быть создан из файлов CSV, TSV, Parquet, результатов SQL-запросов и т. д. Полный список см. в нашей [документации](https://aka.ms/tabulardataset-api-reference).
 
 * [Филедатасет](https://docs.microsoft.com/python/api/azureml-core/azureml.data.file_dataset.filedataset?view=azure-ml-py) ссылается на один или несколько файлов в хранилищах данных или общедоступных URL-адресах. Это дает возможность скачивать файлы или подключать их к вашему вычислению. Файлы могут иметь любой формат, что позволяет использовать более широкий спектр сценариев машинного обучения, включая глубокое обучение.
 
@@ -106,10 +106,20 @@ titanic_ds.take(3).to_pandas_dataframe()
 
 | |пассенжерид|Оставшихся|пкласс|Название|Пол|Время существования|сибсп|парч|Службу|FARE|кабин|Предпринимались
 -|-----------|--------|------|----|---|---|-----|-----|------|----|-----|--------|
-0|1|0|3|Браунд, Mr. О'мэлли Owen Харрис|Мужской|22,0|1|0|A/5 21171|7,2500||S
-1|2|1|1|Кумингс, Mrs. Джон Кирилл (Флоренция Бриггс TH...|Женский|38,0|1|0|PC 17599|71,2833|C85|В
-2|3|1|3|Хеиккинен, промах. лаина|Женский|26,0|0|0|СТОН/O2. 3101282|7,9250||S
+0|1|0|3|Браунд, Mr. О'мэлли Owen Харрис|Мужской|22,0|1|0|A/5 21171|7,2500||с.
+1|2|1|1|Кумингс, Mrs. Джон Кирилл (Флоренция Бриггс TH...|Женский|38,0|1|0|PC 17599|71,2833|C85|К
+2|3|1|3|Хеиккинен, промах. лаина|Женский|26,0|0|0|СТОН/O2. 3101282|7,9250||с.
 
+[`from_sql_query()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.dataset_factory.tabulardatasetfactory?view=azure-ml-py#from-sql-query-query--validate-true--set-column-types-none-) Используйте`TabularDatasetFactory` метод класса для чтения из базы данных SQL Azure.
+
+```Python
+
+from azureml.core import Dataset, Datastore
+
+# create tabular dataset from a SQL database in datastore
+sql_datastore = Datastore.get(workspace, 'mssql')
+sql_ds = Dataset.Tabular.from_sql_query((sql_datastore, 'SELECT * FROM my_table'))
+```
 Используйте метод для `TabularDataset` класса, чтобы обеспечить простую и эффективную фильтрацию по времени. [`with_timestamp_columns()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py#with-timestamp-columns-fine-grain-timestamp--coarse-grain-timestamp-none--validate-false-) Дополнительные примеры и подробные сведения можно найти [здесь](http://aka.ms/azureml-tsd-notebook). 
 
 ```Python
@@ -197,7 +207,7 @@ titanic_ds = titanic_ds.register(workspace = workspace,
 ```
 
 
-## <a name="access-your-data-during-training"></a>Доступ к данным во время обучения
+## <a name="access-datasets-in-your-script"></a>Доступ к наборам данных в скрипте
 
 Зарегистрированные наборы данных доступны локально и удаленно в таких кластерах, как Машинное обучение Azure вычислений. Для доступа к зарегистрированному набору данных во всех экспериментах используйте следующий код, чтобы получить рабочую область и зарегистрированный набор данных по имени. [`get_by_name()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py#get-by-name-workspace--name--version--latest--) Метод`Dataset` класса по умолчанию возвращает последнюю версию набора данных, зарегистрированную в рабочей области.
 
@@ -220,5 +230,6 @@ df = titanic_ds.to_pandas_dataframe()
 
 ## <a name="next-steps"></a>Следующие шаги
 
+* Обучение [работе с наборами данных](how-to-train-with-datasets.md)
 * Используйте автоматическое машинное обучение для [обучения с табулардатасетс](https://aka.ms/automl-dataset).
 * Дополнительные примеры обучения с наборами данных см. в [примерах записных книжек](https://aka.ms/dataset-tutorial).

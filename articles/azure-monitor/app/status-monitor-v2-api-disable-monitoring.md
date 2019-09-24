@@ -3,7 +3,7 @@ title: 'Справочник по API Azure монитор состояния v2
 description: Справочник по API монитор состояния v2. Disable-Аппликатионинсигхтсмониторинг. Отслеживайте производительность веб-сайта без повторного развертывания веб-сайта. Работает с веб-приложениями ASP.NET, размещенными локально, в виртуальных машинах или в Azure.
 services: application-insights
 documentationcenter: .net
-author: MS-TimothyMothra
+author: TimothyMothra
 manager: alexklim
 ms.assetid: 769a5ea4-a8c6-4c18-b46c-657e864e24de
 ms.service: application-insights
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: tilee
-ms.openlocfilehash: 368365251ec61464869c6120ded2ec2237acffea
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: af105a6a819ced475f490d3c99fc1e63d8eee5c8
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68326416"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71203434"
 ---
 # <a name="status-monitor-v2-api-disable-applicationinsightsmonitoring"></a>API монитор состояния v2: Disable-Аппликатионинсигхтсмониторинг
 
@@ -42,7 +42,7 @@ PS C:\> Disable-ApplicationInsightsMonitoring
 ### <a name="-verbose"></a>-Verbose
 **Общий параметр.** Используйте этот параметр для просмотра подробных журналов.
 
-## <a name="output"></a>Вывод
+## <a name="output"></a>Output
 
 
 #### <a name="example-output-from-successfully-disabling-monitoring"></a>Пример выходных данных для успешного отключения мониторинга

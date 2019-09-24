@@ -3,9 +3,8 @@ title: Получение видимости в пределах клиента 
 description: Узнайте, как получить видимость в пределах клиента в центре безопасности Azure.
 services: security-center
 documentationcenter: na
-author: rkarlin
-manager: barbkess
-editor: ''
+author: memildin
+manager: rkarlin
 ms.assetid: b85c0e93-9982-48ad-b23f-53b367f22b10
 ms.service: security-center
 ms.devlang: na
@@ -13,13 +12,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/19/2018
-ms.author: rkarlin
-ms.openlocfilehash: 7e26dc37c5c4f85e3db634bd961bf9308e418a03
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: memildin
+ms.openlocfilehash: 730ccd7c64ac9ca87fb6da5add130feb3b6ce502
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66147962"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71201951"
 ---
 # <a name="gain-tenant-wide-visibility-for-azure-security-center"></a>Получение видимости в пределах клиента в центре безопасности Azure
 В этой статье приведены сведения по началу работы, а также описаны действия, которые помогут максимально увеличить преимущества от использования центра безопасности Azure. Выполнив эти действия, вы получите сведения о всех подписках Azure, связанных с клиентом Azure Active Directory, а также сможете эффективно управлять системой безопасности организации, одновременно настроив соответствующие политики в нескольких подписках.
@@ -54,7 +53,7 @@ ms.locfileid: "66147962"
 5.  Нажмите кнопку **Сохранить**.
 
 ### <a name="view-management-groups-in-the-azure-portal"></a>Просмотр групп управления на портале Azure
-1. Войдите на [портал Azure](https://portal.azure.com).
+1. Войдите на [портале Azure](https://portal.azure.com).
 2. Чтобы просмотреть группы управления, в главном меню Azure выберите **Все службы**.
 3. В разделе **Общие** выберите **Группы управления**.
 
@@ -150,7 +149,7 @@ ms.locfileid: "66147962"
 1. В главном меню Azure выберите **Все службы**, а затем щелкните **Центр безопасности**.
 2. На странице **Обзор** приведена диаграмма покрытия подписок.
 
-    ![Снимок экрана: Диаграмма покрытия подписки](./media/security-center-management-groups/security-center-subscription-coverage.png)
+    ![Снимок экрана диаграммы покрытия подписки](./media/security-center-management-groups/security-center-subscription-coverage.png)
 
 3. Щелкните **Покрытие**, чтобы просмотреть список покрытия подписок. 
 
@@ -187,7 +186,7 @@ ms.locfileid: "66147962"
    > [!NOTE]
    > Группы управления могут содержать подписки и дочерние группы управления. Когда вы назначаете пользователю роль RBAC в родительской группе управления, подписки в дочерней группе управления наследуют доступ. То же самое касается и политик. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Работая с этой статьей, вы узнали, как получить видимость в пределах клиента в центре безопасности Azure. Дополнительные сведения о центре безопасности см. в следующих статьях:
 
 > [!div class="nextstepaction"]

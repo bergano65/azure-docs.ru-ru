@@ -3,9 +3,8 @@ title: Центр безопасности Azure и виртуальные ма�
 description: Этот документ содержит сведения о том, как с помощью центра безопасности Azure можно защитить виртуальные машины Azure.
 services: security-center
 documentationcenter: na
-author: rkarlin
-manager: barbkess
-editor: ''
+author: memildin
+manager: rkarlin
 ms.assetid: 5fe5a12c-5d25-430c-9d47-df9438b1d7c5
 ms.service: security-center
 ms.devlang: na
@@ -14,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/03/2017
 ms.author: yurid
-ms.openlocfilehash: 402406f8aa677348d30551937cfca1e2726efba1
-ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
+ms.openlocfilehash: 0c7ca6236adc5a476fbcf2bfbd54f4cc283bd607
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70033943"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71201969"
 ---
 # <a name="azure-security-center-and-azure-virtual-machines-with-linux"></a>Центр безопасности Azure и виртуальные машины Azure c ОС Linux
 [Центр безопасности Azure](https://azure.microsoft.com/services/security-center/) позволяет предотвращать, обнаруживать угрозы и реагировать на них. Она включает встроенные функции мониторинга безопасности и управления политиками для подписок Azure, помогает выявлять угрозы, которые в противном случае могли бы оказаться незамеченными, и взаимодействует с широким комплексом решений по обеспечению безопасности.

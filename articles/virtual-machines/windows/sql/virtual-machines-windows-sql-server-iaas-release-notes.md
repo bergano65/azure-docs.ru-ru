@@ -12,16 +12,26 @@ ms.topic: conceptual
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 08/01/2019
-ms.openlocfilehash: e58b01c6a01a22ef2dd45dc49d741f0287d603a0
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 759bec280b40973cf651dec3741a71d67c01fe04
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70100381"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71200163"
 ---
 # <a name="release-notes-for-sql-server-on-azure-virtual-machines"></a>Заметки о выпуске для SQL Server на виртуальных машинах Azure
 
 Azure позволяет развернуть виртуальную машину с помощью образа встроенной SQL Server. В этой статье перечислены новые функции и усовершенствования в последних выпусках [SQL Server на виртуальных машинах Azure](https://azure.microsoft.com/services/virtual-machines/sql-server/). В ней также указаны заметные обновления содержимого, которые не связаны напрямую с выпуском, но опубликованы в тот же интервал времени. Улучшения других служб Azure см. в разделе [обновления служб](https://azure.microsoft.com/updates).
+
+## <a name="august-2019"></a>Август 2019 г.
+
+### <a name="service-improvements"></a>Улучшения службы
+
+| Улучшения службы | Подробнее |
+| --- | --- |
+| **Выделенный узел Azure** | Вы можете запустить SQL Serverную виртуальную машину на [выделенном узле Azure](virtual-machines-windows-sql-dedicated-host.md). |
+| &nbsp; | &nbsp; |
+
 
 ## <a name="july-2019"></a>2019 июля
 

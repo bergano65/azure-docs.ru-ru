@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d802e48231a03fbf3fee9439894371188f31d5e1
-ms.sourcegitcommit: 5ded08785546f4a687c2f76b2b871bbe802e7dae
+ms.openlocfilehash: bc7710619b8975064ec4ec60ed44ccede970ac34
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69576658"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71200949"
 ---
 # <a name="conditional-access-block-legacy-authentication"></a>Условный доступ: Блокировка устаревших методов проверки подлинности
 
@@ -24,7 +24,7 @@ ms.locfileid: "69576658"
 
 ## <a name="create-a-conditional-access-policy"></a>Создание политики условного доступа
 
-Следующие шаги помогут создать политику условного доступа, чтобы требовать от этих назначенных административных ролей выполнять многофакторную проверку подлинности.
+Следующие шаги помогут создать политику условного доступа для блокирования устаревших запросов проверки подлинности.
 
 1. Войдите в **портал Azure** в качестве глобального администратора, администратора безопасности или администратора условного доступа.
 1. Перейдите к **Azure Active Directory** > **условному доступу**.

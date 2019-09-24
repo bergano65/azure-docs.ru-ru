@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: article
 ms.date: 09/16/2019
 ms.author: kumud
-ms.openlocfilehash: 33383f42c3731d8a5aefdcde5008d706d5a9eed8
-ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
+ms.openlocfilehash: 46c08f48efc00c1e4d88ceccb680c0cfd1671b2f
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71104782"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71203575"
 ---
 # <a name="create-a-private-endpoint-using-azure-cli"></a>Создание частной конечной точки с помощью Azure CLI
 Частная конечная точка — это фундаментальный Стандартный блок для частной ссылки в Azure. Она позволяет ресурсам Azure, таким как виртуальные машины, обмениваться данными с частными ресурсами. В этом кратком руководстве вы узнаете, как создать виртуальную машину в виртуальной сети, сервере базы данных SQL с частной конечной точкой, использующей Azure CLI. Затем вы можете получить доступ к виртуальной машине и получить безопасный доступ к ресурсу частной ссылки (в этом примере это частный сервер базы данных SQL Azure). 
@@ -107,7 +107,7 @@ az network private-dns link vnet create --resource-group myResourceGroup \
    --registration-enabled false 
 
 #Query for the network interface ID  
-az network private-endpoint show --name myPrivateEndpoint --resource-group myResourceGroup --query 'networkInterfaces[0].id'
+networkInterfaceId=$(az network private-endpoint show --name myPrivateEndpoint --resource-group myResourceGroup --query 'networkInterfaces[0].id' -o tsv)
  
  
 az resource show --ids $networkInterfaceId --api-version 2019-04-01 -o json 
@@ -123,13 +123,13 @@ az network private-dns record-set a add-record --record-set-name myserver --zone
 
 Подключитесь к виртуальной машине *myVm* из Интернета следующим образом:
 
-1. На панели поиска портала введите *myVm*.
+1. На портале в строке поиска введите *myVm*.
 
 1. Нажмите кнопку **Подключиться**. После нажатия кнопки **Подключиться** откроется окно **Connect to virtual machine** (Подключение к виртуальной машине).
 
 1. Щелкните **Скачать RDP-файл**. Azure создаст и скачает на ваш компьютер файл протокола удаленного рабочего стола (*RDP*).
 
-1. Откройте скачанный файл. RDP *.
+1. Откройте скачанный RDP-файл*.
 
     1. При появлении запроса выберите **Подключиться**.
 
@@ -148,7 +148,7 @@ az network private-dns record-set a add-record --record-set-name myserver --zone
 
 В этом разделе вы будете подключаться к серверу базы данных SQL из виртуальной машины с помощью частной конечной точки.
 
- 1. В удаленный рабочий стол *myVM*откройте PowerShell.
+ 1. На удаленном рабочем столе  *myVm* откройте PowerShell.
  2. Введите nslookup MyServer.Database.Windows.NET  , чтобы получить примерно следующее сообщение: 
 
 ```

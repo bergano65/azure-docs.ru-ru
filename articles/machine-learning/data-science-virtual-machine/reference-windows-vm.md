@@ -1,5 +1,5 @@
 ---
-title: Справочные материалы. DSVM Windows
+title: Справочные материалы. Виртуальная машина Windows для обработки и анализа данных
 description: Сведения о средствах, включенных в виртуальную машину Windows для обработки и анализа данных
 author: gvashishtha
 ms.service: machine-learning
@@ -7,12 +7,12 @@ ms.subservice: data-science-vm
 ms.author: gopalv
 ms.date: 09/11/2019
 ms.topic: reference
-ms.openlocfilehash: 8ed083ad39c3ace3a0f66a61936974b462ed418f
-ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
+ms.openlocfilehash: be4397de477891f2a698c9f7dcb131da79479529
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71174699"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71200010"
 ---
 # <a name="reference-windows-data-science-virtual-machine"></a>Справочные материалы. Виртуальная машина Windows для обработки и анализа данных
 
@@ -132,4 +132,6 @@ CREATE LOGIN [%COMPUTERNAME%\SQLRUserGroup] FROM WINDOWS
 > [!NOTE]
 > В DSVM с выпусками Windows Server 2012 и Windows Server 2016, развернутых до марта 2018 г., по умолчанию используется среда Anaconda для Python 2.7. Среда Python 3.5 устанавливается в качестве дополнительной в папку C:\Anaconda\envs\py35.
 
+## <a name="next-steps"></a>Следующие шаги
 
+У вас есть дополнительные вопросы? Рассмотрите возможность создания запроса в [службу поддержки](https://azure.microsoft.com/support/create-ticket/).

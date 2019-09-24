@@ -3,7 +3,7 @@ title: 'Справочник по API Azure монитор состояния v2
 description: Справочник по API монитор состояния v2. Set-Аппликатионинсигхтсмониторингконфиг. Отслеживайте производительность веб-сайта без повторного развертывания веб-сайта. Работает с веб-приложениями ASP.NET, размещенными локально, в виртуальных машинах или в Azure.
 services: application-insights
 documentationcenter: .net
-author: MS-TimothyMothra
+author: TimothyMothra
 manager: alexklim
 ms.assetid: 769a5ea4-a8c6-4c18-b46c-657e864e24de
 ms.service: application-insights
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: tilee
-ms.openlocfilehash: f3a55caba13b3b96884d446e0750d9fb67a343df
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: 6d93be5b01be63a75041b939f6b8deb9106c4262
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68326295"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71200449"
 ---
 # <a name="status-monitor-v2-api-set-applicationinsightsmonitoringconfig"></a>API монитор состояния v2: Set-Аппликатионинсигхтсмониторингконфиг
 
@@ -89,7 +89,7 @@ PS C:\> Enable-ApplicationInsightsMonitoring -InstrumentationKeyMap
 **Общий параметр.** Используйте этот параметр для просмотра подробных журналов.
 
 
-## <a name="output"></a>Вывод
+## <a name="output"></a>Output
 
 По умолчанию выходные данные отсутствуют.
 

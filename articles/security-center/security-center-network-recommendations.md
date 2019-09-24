@@ -3,9 +3,8 @@ title: Защита ресурсов сети в центре безопасно
 description: В этом документе рассматриваются рекомендации из центра безопасности Azure, которые помогают защитить ресурсы сети Azure и обеспечить соответствие политикам безопасности.
 services: security-center
 documentationcenter: na
-author: monhaber
-manager: barbkess
-editor: ''
+author: memildin
+manager: rkarlin
 ms.assetid: 96c55a02-afd6-478b-9c1f-039528f3dea0
 ms.service: security-center
 ms.devlang: na
@@ -13,13 +12,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/05/2019
-ms.author: v-mohabe
-ms.openlocfilehash: 536e2e3732a0b196801e37c51dfb6c746e070441
-ms.sourcegitcommit: d70c74e11fa95f70077620b4613bb35d9bf78484
+ms.author: memildin
+ms.openlocfilehash: bf33fe29b18b09bf903e1fc331f1c378eacb3e17
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70910456"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71201716"
 ---
 # <a name="protect-your-network-resources-in-azure-security-center"></a>Защита ресурсов сети в центре безопасности Azure
 Центр безопасности Azure постоянно анализирует состояние безопасности ресурсов Azure, чтобы предоставлять рекомендации по обеспечению безопасности сети. Когда центр безопасности выявляет потенциальные уязвимости в системе безопасности, он создает рекомендации по настройке необходимых элементов управления, чтобы укрепить защиту ресурсов.

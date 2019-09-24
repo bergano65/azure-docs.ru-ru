@@ -2,18 +2,18 @@
 title: 'Azure Toolkit for Eclipse. Создание приложений Scala для HDInsight Spark '
 description: Использование средств HDInsight из набора средств Azure для Eclipse для разработки приложений Spark на языке Scala и их отправки в кластер HDInsight Spark непосредственно из интегрированной среды разработки Eclipse.
 author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/30/2017
-ms.author: hrasheed
-ms.openlocfilehash: b027ef911b65931f7c96ad45fae66656b3586730
-ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
+ms.openlocfilehash: 1ebea83d87cd169f61c91a93f092fa277f5017a7
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70994562"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71203801"
 ---
 # <a name="use-azure-toolkit-for-eclipse-to-create-apache-spark-applications-for-an-hdinsight-cluster"></a>Создание приложений Apache Spark для кластера HDInsight с помощью Azure Toolkit for Eclipse
 
@@ -50,11 +50,12 @@ ms.locfileid: "70994562"
 
 1. Запустите интегрированную среду разработки Eclipse и откройте Azure Explorer. В меню **Window** (Окно) выберите пункт **Show View** (Показать представление) и щелкните **Other** (Другие). В открывшемся диалоговом окне разверните **Azure** и щелкните **Azure Explorer**, а затем нажмите кнопку **ОК**.
 
-   ![Диалоговое окно Show View (Показать представление)](./media/apache-spark-eclipse-tool-plugin/eclipse-view-explorer1.png)
+   ![Apache Spark Еклиспсе Показать представление](./media/apache-spark-eclipse-tool-plugin/eclipse-view-explorer1.png)
+
 1. Щелкните правой кнопкой мыши узел **Azure**, а затем выберите **Sign In** (Войти).
 1. В диалоговом окне **Azure Sign In** (Вход в Azure) выберите режим аутентификации, нажмите кнопку **Sign in** (Войти) и введите свои учетные данные Azure.
 
-   ![Диалоговое окно входа в Azure](./media/apache-spark-eclipse-tool-plugin/eclipse-view-explorer2.png)
+   ![Apache Spark Еклиспсе Azure Sign](./media/apache-spark-eclipse-tool-plugin/eclipse-view-explorer2.png)
 
 1. После входа в диалоговом окне **Select Subscriptions** (Выбор подписок) будут перечислены все подписки Azure, связанные с указанными учетными данными. Щелкните **Select** (Выбрать), чтобы закрыть диалоговое окно.
 
@@ -183,7 +184,7 @@ ms.locfileid: "70994562"
 
    * Наведите указатель мыши на граф задания. На нем отображаются основные сведения о выполняемом задании. Щелкните граф задания, и вы увидите его этапы и сведения, создаваемые каждым заданием.
 
-     ![Сведения об этапе задания](./media/apache-spark-eclipse-tool-plugin/Job-graph-stage-info.png)
+     ![Сведения о стадии графа задания Apache Spark](./media/apache-spark-eclipse-tool-plugin/Job-graph-stage-info.png)
 
    * Выберите вкладку **Журнал**, чтобы просмотреть часто используемые журналы, включая **Driver Stderr**, **Driver Stdout** и **Directory Info**.
 
@@ -238,7 +239,7 @@ ms.locfileid: "70994562"
    * В левой области выберите **HDInsight**.
    * В правой области выберите **Spark on HDInsight Local Run Sample (Scala)** (Пример локального запуска Spark в HDInsight (Scala)).
 
-   ![Диалоговое окно "Новый проект"](./media/apache-spark-eclipse-tool-plugin/hdi-spark-app-local-run.png)
+   ![Новый проект выбор диалогового окна мастера](./media/apache-spark-eclipse-tool-plugin/hdi-spark-app-local-run.png)
 
 1. Чтобы предоставить сведения о проекте, выполните шаги 3–6, как описано в разделе [Настройка проекта Spark Scala для кластера HDInsight Spark](#set-up-a-spark-scala-project-for-an-hdinsight-spark-cluster).
 

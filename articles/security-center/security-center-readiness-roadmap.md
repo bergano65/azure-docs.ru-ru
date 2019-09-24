@@ -3,9 +3,8 @@ title: План подготовки к работе с центром безо�
 description: Этот документ содержит план подготовки для эффективного использования центра безопасности Azure.
 services: security-center
 documentationcenter: na
-author: rkarlin
-manager: ndicola
-editor: ''
+author: memildin
+manager: rkarlin
 ms.assetid: fece670cc-df70-445d-9773-b32cbaba8d4a
 ms.service: security-center
 ms.devlang: na
@@ -14,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/03/2018
 ms.author: yurid
-ms.openlocfilehash: 989d438ad2c5ec80b89540eb7ddfc80d69a9d0e6
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: a5d11be7d4fbe7f23b5584775c5d9a57c2214155
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70100918"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71200984"
 ---
 # <a name="azure-security-center-readiness-roadmap"></a>План подготовки к работе с центром безопасности Azure
 Этот документ содержит план подготовки, который поможет вам приступить к работе с центром безопасности Azure.

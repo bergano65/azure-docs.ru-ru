@@ -12,12 +12,12 @@ author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: craigg
-ms.openlocfilehash: de9e0a936c68f181665e44ea6115f60c6dc60e98
-ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
+ms.openlocfilehash: 2ade270011ad5c1e1e5f5940ca305687e52bba86
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2019
-ms.locfileid: "71179050"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71200298"
 ---
 # <a name="configure-self-hosted-ir-as-a-proxy-for-azure-ssis-ir-in-adf"></a>Настройка самостоятельно размещенного IR в качестве прокси-сервера для Azure-SSIS IR в ADF
 В этой статье описывается, как запускать пакеты SQL Server Integration Services (SSIS) в Azure-SSIS Integration Runtime (IR) в фабрике данных Azure (ADF) с локальным IR-сервером, настроенным в качестве прокси.  Эта функция позволяет получать доступ к данным в локальной среде, не [присоединяя Azure-SSIS IR к виртуальной сети](https://docs.microsoft.com/azure/data-factory/join-azure-ssis-integration-runtime-virtual-network).  Это полезно, если в корпоративной сети имеется чрезмерно сложная политика настройки или политики, позволяющая внедрять в нее Azure-SSIS IR.
@@ -86,10 +86,11 @@ ms.locfileid: "71179050"
 За выполнение второй промежуточной задачи, выполняемой на Azure-SSIS IR, не будет выставлен счет по отдельности, но счет за использование Azure-SSIS IR будет взиматься согласно указаниям в статье о [ценах на Azure-SSIS IR](https://azure.microsoft.com/pricing/details/data-factory/ssis/) .
 
 ## <a name="current-limitations"></a>Текущие ограничения
-- В настоящее время поддерживаются только диспетчеры соединений OLEDB и неструктурированных файлов и источники OLEDB/неструктурированных файлов.
+
+- В настоящее время поддерживаются только диспетчеры соединений OLEDB и неструктурированных файлов и источники OLEDB/неструктурированных файлов. 
 - В настоящее время поддерживаются только связанные службы хранилища BLOB-объектов Azure, настроенные с помощью/проверки подлинности**субъекта-службы** **URI**/SAS.
 - В настоящее время поддерживается только локальная IR, подготовленная в том же ADF-файле, в котором подготовлена Azure-SSIS IR.
-- Переменные и параметры служб SSIS не поддерживаются.
+- Использование параметров или переменных служб SSIS в свойствах источников OLEDB/неструктурированных файлов и диспетчеров соединений не поддерживается.
 
 ## <a name="next-steps"></a>Следующие шаги
 После настройки локальной среды IR в качестве прокси-сервера для Azure-SSIS IR можно развернуть и запустить пакеты для доступа к данным в локальной среде как выполнение действий пакета служб SSIS в конвейерах ADF. см. раздел [Запуск пакетов служб SSIS как выполнение действий пакета SSIS в конвейерах ADF. ](https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-ssis-activity).

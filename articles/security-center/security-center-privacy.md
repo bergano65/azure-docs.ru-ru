@@ -3,9 +3,8 @@ title: Управление данными пользователя в цент�
 description: " Сведения об управлении данными пользователя в центре безопасности Azure. "
 services: security-center
 documentationcenter: na
-author: rkarlin
-manager: barbkess
-editor: ''
+author: memildin
+manager: rkarlin
 ms.assetid: 411d7bae-c9d4-4e83-be63-9f2f2312b075
 ms.service: security-center
 ms.devlang: na
@@ -13,13 +12,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/23/2018
-ms.author: rkarlin
-ms.openlocfilehash: fcec410df631a58b76878a4cb327ca2fb04a2105
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: memildin
+ms.openlocfilehash: 40299b2ff9a20792cf25828051d2f937f3f1e9da
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60703478"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71201274"
 ---
 # <a name="manage-user-data-in-azure-security-center"></a>Управление данными пользователя в центре безопасности Azure
 В этой статье приводятся сведения об управлении данными пользователя в центре безопасности Azure. Управление данными пользователя включает в себя возможность доступа, удаления и экспорта данных.
@@ -100,5 +99,5 @@ ms.locfileid: "60703478"
 ## <a name="auditing-and-reporting"></a>Аудит и создание отчетов
 Журналы аудита контактного лица по вопросам безопасности, данные JIT и обновления оповещений хранятся в [журналах действий Azure](../azure-monitor/platform/activity-logs-overview.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения об управлении данными пользователя см. в статье об [управлении данными пользователя, обнаруженными в исследовании центра безопасности Azure](security-center-investigation-user-data.md).

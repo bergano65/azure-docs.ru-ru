@@ -8,12 +8,12 @@ manager: jeconnoc
 ms.service: container-service
 ms.topic: article
 ms.date: 05/08/2019
-ms.openlocfilehash: 6ba252ccf7a46e93b2057b6822f2aae298f537d1
-ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
+ms.openlocfilehash: 86875643950e11f1e5030676c1ab3825039749ed
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69991645"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71203537"
 ---
 # <a name="azure-red-hat-openshift-faq"></a>Вопросы и ответы об Azure Red Hat OpenShift
 
@@ -164,3 +164,45 @@ ms.locfileid: "69991645"
 Azure Red Hat OpenShift поддерживает пиринг виртуальных сетей и позволяет клиенту предоставлять виртуальную сеть для пиринга с и CIDR виртуальной сети, в которой будет действовать сеть OpenShift.
 
 Виртуальная сеть, созданная с помощью АТО, будет защищена и не будет принимать изменения конфигурации. Виртуальная сеть, для которой установлено одноранговое подключение, управляется клиентом и находится в своей подписке.
+
+## <a name="does-the-cluster-reside-in-a-customer-subscription"></a>Находится ли кластер в клиентской подписке? 
+
+Управляемое приложение Azure находится в заблокированной группе ресурсов с подпиской клиента. Клиент может просматривать объекты в этом RG, но не изменять их.
+
+## <a name="is-the-sdn-module-configurable"></a>Можно ли настроить модуль SDN?
+
+SDN является openshift-OVS-нетворкполици и не может быть настроен.
+
+## <a name="which-unix-rights-in-iaas-are-available-for-mastersinfraapp-nodes"></a>Какие права UNIX (в IaaS) доступны для образцов, а так и для узлов с инфракрасными или приложениями?
+
+Неприменимо к этому предложению. Доступ к узлу запрещен.
+
+## <a name="which-ocp-rights-do-we-have-cluster-admin-project-admin"></a>Какие права OCP у нас есть? Кластер — администратор? Проект — администратор?
+
+Дополнительные сведения см. в статье [Обзор администрирования кластера](https://docs.openshift.com/aro/admin_guide/index.html)Azure Red Hat OpenShift.
+
+## <a name="which-kind-of-federation-with-ldap"></a>Какой тип Федерации с LDAP?
+
+Это достигается благодаря интеграции с Azure AD. 
+
+## <a name="is-there-any-element-in-aro-shared-with-other-customers-or-is-everything-independent"></a>Есть ли какой-либо элемент в АТО, совместно используемый с другими клиентами? Или является ли все независимым?
+
+Каждый кластер Azure Red Hat OpenShift предназначен для конкретного клиента и находится в подписке клиента. 
+
+## <a name="can-we-choose-any-persistent-storage-solution-ocs"></a>Можно выбрать любое решение постоянного хранения. OCS? 
+
+Для выбора доступны два класса хранения: Диск Azure и файл Azure.
+
+## <a name="how-is-a-cluster-updated-including-majors-and-minors-due-to-vulnerabilities"></a>Как обновляется кластер (включая основные и вспомогательные сведения из-за уязвимостей)?
+
+Узнайте [, что такое общий процесс обновления?](https://docs.microsoft.com/azure/openshift/openshift-faq#what-is-the-general-upgrade-process)
+
+## <a name="what-azure-load-balancer-is-used-by-aro-is-it-standard-or-basic-and-is-it-configurable"></a>Какую подсистему балансировки нагрузки Azure использует АТО?  Является ли он стандартным или базовым и является ли он настраиваемым?
+
+АТО использует стандартные Azure Load Balancer и не настраивается.
+
+## <a name="can-aro-use-netapp-based-storage"></a>Можно ли АТО использовать хранилище на основе NetApp?
+
+В настоящее время поддерживаются только такие варианты хранения, как диск Azure и классы хранилища файлов Azure. 
+
+

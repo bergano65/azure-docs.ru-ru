@@ -3,23 +3,22 @@ title: Использование рекомендаций центра безо
 description: " Использование политик безопасности и рекомендаций центра безопасности Azure для уменьшения рисков нарушения безопасности "
 services: security-center
 documentationcenter: na
-author: monhaber
-manager: barbkess
-editor: ''
+author: memildin
+manager: rkarlin
 ms.assetid: ''
 ms.service: security-center
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 8/22/2019
-ms.author: v-mohabe
-ms.openlocfilehash: 13d6eb64b2089cf93f08c294cc9b6a2034b64fa0
-ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
+ms.date: 08/22/2019
+ms.author: memildin
+ms.openlocfilehash: 69fa9d24d24c26a7d945c27e86739475f9883b27
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69990545"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71200700"
 ---
 # <a name="use-azure-security-center-recommendations-to-enhance-security"></a>Использование рекомендаций центра безопасности Azure для повышения уровня безопасности
 У вас есть возможность снизить вероятность серьезных нарушений безопасности, настроив политику безопасности и применяя рекомендации, предоставляемые центром безопасности Azure. Эта статья покажет, как следует использовать политики безопасности и рекомендации центра безопасности для уменьшения рисков нарушения безопасности. 

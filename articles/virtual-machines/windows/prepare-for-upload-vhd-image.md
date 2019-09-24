@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 05/11/2019
 ms.author: genli
-ms.openlocfilehash: a14dca066ec60f4aeec79fe6b4c532445b4392f1
-ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
+ms.openlocfilehash: d2922f79c0b2ef7098e0f51e0c3bf6ab18a1b0e3
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71086907"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71200279"
 ---
 # <a name="prepare-a-windows-vhd-or-vhdx-to-upload-to-azure"></a>Подготовка диска VHD или VHDX для Windows к отправке в Azure
 
@@ -153,7 +153,7 @@ Set-Service -Name RemoteRegistry -StartupType Automatic
 Убедитесь, что для удаленного доступа правильно настроены следующие параметры:
 
 >[!NOTE] 
->При запуске `Set-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services -name &lt;object name&gt; -value &lt;value&gt;`может появиться сообщение об ошибке. Это сообщение можно спокойно проигнорировать. Это означает только то, что домен не помещает эту конфигурацию через объект групповая политика.
+>При запуске `Set-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services -name <object name> -value <value>`может появиться сообщение об ошибке. Это сообщение можно спокойно проигнорировать. Это означает только то, что домен не помещает эту конфигурацию через объект групповая политика.
 
 1. Включите протокол удаленного рабочего стола (RDP):
    
@@ -272,23 +272,19 @@ Set-Service -Name RemoteRegistry -StartupType Automatic
     > Используйте окно PowerShell с повышенными привилегиями для выполнения этих команд.
    
    ```powershell
-    cmd
-
-    bcdedit /set {bootmgr} integrityservices enable
-    bcdedit /set {default} device partition=C:
-    bcdedit /set {default} integrityservices enable
-    bcdedit /set {default} recoveryenabled Off
-    bcdedit /set {default} osdevice partition=C:
-    bcdedit /set {default} bootstatuspolicy IgnoreAllFailures
+    bcdedit /set "{bootmgr}" integrityservices enable
+    bcdedit /set "{default}" device partition=C:
+    bcdedit /set "{default}" integrityservices enable
+    bcdedit /set "{default}" recoveryenabled Off
+    bcdedit /set "{default}" osdevice partition=C:
+    bcdedit /set "{default}" bootstatuspolicy IgnoreAllFailures
 
     #Enable Serial Console Feature
-    bcdedit /set {bootmgr} displaybootmenu yes
-    bcdedit /set {bootmgr} timeout 5
-    bcdedit /set {bootmgr} bootems yes
-    bcdedit /ems {current} ON
+    bcdedit /set "{bootmgr}" displaybootmenu yes
+    bcdedit /set "{bootmgr}" timeout 5
+    bcdedit /set "{bootmgr}" bootems yes
+    bcdedit /ems "{current}" ON
     bcdedit /emssettings EMSPORT:1 EMSBAUDRATE:115200
-
-    exit
    ```
 3. Журнал дампа может быть полезен при устранении неполадок, связанных с аварийным завершением работы Windows. Включите сбор журналов дампа:
 
@@ -359,7 +355,7 @@ Set-Service -Name RemoteRegistry -StartupType Automatic
 ### <a name="install-windows-updates"></a>Установка обновлений Windows
 В идеале следует обновлять компьютер на *уровне обновления*. Если это невозможно, убедитесь, что установлены следующие обновления:
 
-| Компонент               | Бинарный         | Windows 7 SP1, Windows Server 2008 R2 SP1 | Windows 8, Windows Server 2012               | Windows 8.1, Windows Server 2012 R2 | Windows 10 v1607, Windows Server 2016 v1607 | Windows 10 v1703    | Windows 10 v1709, Windows Server 2016 v1709 | Windows 10 v1803, Windows Server 2016 v1803 |
+| Компонент               | Binary         | Windows 7 SP1, Windows Server 2008 R2 SP1 | Windows 8, Windows Server 2012               | Windows 8.1, Windows Server 2012 R2 | Windows 10 v1607, Windows Server 2016 v1607 | Windows 10 v1703    | Windows 10 v1709, Windows Server 2016 v1709 | Windows 10 v1803, Windows Server 2016 v1803 |
 |-------------------------|----------------|-------------------------------------------|---------------------------------------------|------------------------------------|---------------------------------------------------------|----------------------------|-------------------------------------------------|-------------------------------------------------|
 | Служба хранилища                 | disk.sys       | 6.1.7601.23403 — KB3125574                | 6.2.9200.17638 / 6.2.9200.21757 — KB3137061 | 6.3.9600.18203 — KB3137061         | -                                                       | -                          | -                                               | -                                               |
 |                         | storport.sys   | 6.1.7601.23403 — KB3125574                | 6.2.9200.17188 / 6.2.9200.21306 — KB3018489 | 6.3.9600.18573 — KB4022726         | 10.0.14393.1358 — KB4022715                             | 10.0.15063.332             | -                                               | -                                               |
@@ -376,7 +372,7 @@ Set-Service -Name RemoteRegistry -StartupType Automatic
 |                         | vmstorfl.sys   | 6.3.9600.18907 — KB4072650                | 6.3.9600.18080 — KB3063109                  | 6.3.9600.18907 — KB4072650         | 10.0.14393.2007 — KB4345418                             | 10.0.15063.850 — KB4345419 | 10.0.16299.371 — KB4345420                      | -                                               |
 |                         | Fveapi.dll     | 6.1.7601.23311 — KB3125574                | 6.2.9200.20930 — KB2930244                  | 6.3.9600.18294 — KB3172614         | 10.0.14393.576 — KB4022715                              | -                          | -                                               | -                                               |
 |                         | Fveapibase.dll | 6.1.7601.23403 — KB3125574                | 6.2.9200.20930 — KB2930244                  | 6.3.9600.17415 — KB3172614         | 10.0.14393.206 — KB4022715                              | -                          | -                                               | -                                               |
-| Network                 | netvsc.sys     | -                                         | -                                           | -                                  | 10.0.14393.1198 — KB4022715                             | 10.0.15063.250 — KB4020001 | -                                               | -                                               |
+| Сеть                 | netvsc.sys     | -                                         | -                                           | -                                  | 10.0.14393.1198 — KB4022715                             | 10.0.15063.250 — KB4020001 | -                                               | -                                               |
 |                         | mrxsmb10.sys   | 6.1.7601.23816 — KB4022722                | 6.2.9200.22108 — KB4022724                  | 6.3.9600.18603 — KB4022726         | 10.0.14393.479 — KB4022715                              | 10.0.15063.483             | -                                               | -                                               |
 |                         | mrxsmb20.sys   | 6.1.7601.23816 — KB4022722                | 6.2.9200.21548 — KB4022724                  | 6.3.9600.18586 — KB4022726         | 10.0.14393.953 — KB4022715                              | 10.0.15063.483             | -                                               | -                                               |
 |                         | mrxsmb.sys     | 6.1.7601.23816 — KB4022722                | 6.2.9200.22074 — KB4022724                  | 6.3.9600.18586 — KB4022726         | 10.0.14393.953 — KB4022715                              | 10.0.15063.0               | -                                               | -                                               |
@@ -390,7 +386,7 @@ Set-Service -Name RemoteRegistry -StartupType Automatic
 |                         | win32k.sys     | 6.1.7601.23807 — KB4022719                | 6.2.9200.22168 — KB4022718                  | 6.3.9600.18698 — KB4022726         | 10.0.14393.594 — KB4022715                              | -                          | -                                               | -                                               |
 |                         | rdpdd.dll      | 6.1.7601.23403 — KB3125574                | -                                           | -                                  | -                                                       | -                          | -                                               | -                                               |
 |                         | rdpwd.sys      | 6.1.7601.23403 — KB3125574                | -                                           | -                                  | -                                                       | -                          | -                                               | -                                               |
-| Безопасность                | MS17-010       | KB4012212                                 | KB4012213                                   | KB4012213                          | KB4012606                                               | KB4012606                  | -                                               | -                                               |
+| Группа безопасности                | MS17-010       | KB4012212                                 | KB4012213                                   | KB4012213                          | KB4012606                                               | KB4012606                  | -                                               | -                                               |
 |                         |                |                                           | KB4012216                                   |                                    | KB4013198                                               | KB4013198                  | -                                               | -                                               |
 |                         |                | KB4012215                                 | KB4012214                                   | KB4012216                          | KB4013429                                               | KB4013429                  | -                                               | -                                               |
 |                         |                |                                           | KB4012217                                   |                                    | KB4013429                                               | KB4013429                  | -                                               | -                                               |

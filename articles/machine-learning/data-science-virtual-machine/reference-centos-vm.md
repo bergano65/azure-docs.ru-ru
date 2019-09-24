@@ -1,5 +1,5 @@
 ---
-title: Справочные материалы. CentOS DSVM
+title: Справочные материалы. Виртуальная машина CentOS для обработки и анализа данных
 description: Сведения о средствах, включенных в виртуальную машину CentOS для обработки и анализа данных
 author: gvashishtha
 ms.service: machine-learning
@@ -7,12 +7,12 @@ ms.subservice: data-science-vm
 ms.author: gopalv
 ms.date: 09/11/2019
 ms.topic: reference
-ms.openlocfilehash: 9366eb1bde05d80b8882ee28aa9eb03a75f75964
-ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
+ms.openlocfilehash: d50bb18d15bcad72eed3a97088b61c623e6208fe
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71174725"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71199987"
 ---
 # <a name="reference-centos-linux-data-science-virtual-machine"></a>Справочные материалы. Виртуальная машина для обработки и анализа данных CentOS (Linux)
 
@@ -341,3 +341,7 @@ rattle()
 1. Нажмите кнопку **Export** (Экспортировать), чтобы сохранить файл со скриптом R с именем *weather_script.R* в домашней папке.
 
 Теперь вы можете выйти из Rattle и R и отредактировать созданный скрипт R. Этот скрипт можно использовать и без изменений, запуская его в любой момент для повтора действий, выполненных в пользовательском интерфейсе Rattle. Этот способ позволяет пользователям с небольшим опытом работы с R быстро выполнять анализ и машинное обучение в простом графическом интерфейсе с автоматическим созданием кода R для изменения или изучения.
+
+## <a name="next-steps"></a>Следующие шаги
+
+У вас есть дополнительные вопросы? Рассмотрите возможность создания запроса в [службу поддержки](https://azure.microsoft.com/support/create-ticket/).

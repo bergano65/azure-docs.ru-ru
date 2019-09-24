@@ -6,12 +6,12 @@ ms.service: azure-migrate
 ms.topic: article
 ms.date: 07/17/2019
 ms.author: hamusa
-ms.openlocfilehash: c48323bb4c8798a0f36d3fda99a4c659187e0e81
-ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
+ms.openlocfilehash: 8e793891ea646ae8c91077ead36be9b84c1b08c8
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69906376"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71200201"
 ---
 # <a name="set-up-dependency-visualization-for-assessment"></a>Настройка визуализации зависимостей для оценки
 
@@ -61,7 +61,7 @@ Dependency Agent | Ознакомьтесь с [поддержкой агент
 
     ![Добавить рабочую область](./media/how-to-create-group-machine-dependencies/workspace.png)
 
-    - После указания имени для новой рабочей области она будет создана в том же географии, что и проект службы "миграция Azure".
+    - После указания имени для новой рабочей области можно выбрать [регион](https://azure.microsoft.com/global-infrastructure/regions/) , в котором будет создана Рабочая область.
     - При подключении имеющейся рабочей области вы можете выбрать нужную из всех доступных рабочих областей в той же подписке, что и проект миграции.
     - Для подключения к рабочей области требуется читатель.
     - Невозможно изменить рабочую область, связанную с проектом, после его присоединения.

@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 06/18/2019
 ms.author: sutalasi
-ms.openlocfilehash: bc1d52a1062d1848daaaeef7977f96cd270567c8
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: 1779a33e4ac021c1807ce10dc224e0b8c8c53ebb
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67203473"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71200532"
 ---
 # <a name="set-up-disaster-recovery-to-azure-for-hyper-v-vms-using-powershell-and-azure-resource-manager"></a>Настройка аварийного восстановления виртуальных машин Hyper-V в Azure с помощью PowerShell и Azure Resource Manager
 
@@ -34,11 +34,11 @@ Azure PowerShell предоставляет командлеты для упра
 >
 >
 
-## <a name="before-you-start"></a>Перед началом работы
+## <a name="before-you-start"></a>Перед началом
 Убедитесь, что выполнены следующие предварительные требования.
 
 * Учетная запись [Microsoft Azure](https://azure.microsoft.com/) . Начните с [бесплатной пробной версии](https://azure.microsoft.com/pricing/free-trial/). Также вы можете ознакомиться с [расценками на использование менеджера Azure Site Recovery](https://azure.microsoft.com/pricing/details/site-recovery/).
-* Установите Azure PowerShell. Сведения об этом выпуске и его установке см. в разделе [установить Azure PowerShell](/powershell/azure/install-az-ps).
+* Установите Azure PowerShell. Сведения об этом выпуске и его установке см. в разделе [install Azure PowerShell](/powershell/azure/install-az-ps).
 
 К тому же конкретный пример, описанный в этой статье, требует следующих компонентов:
 
@@ -47,7 +47,7 @@ Azure PowerShell предоставляет командлеты для упра
 
 ## <a name="step-1-sign-in-to-your-azure-account"></a>Шаг 1. Вход в учетную запись Azure
 
-1. Откройте консоль PowerShell и выполните следующую команду, чтобы войти в учетную запись Azure. Этот командлет открывает веб-станицу, на которой пользователю предлагается ввести данные для входа в учетную запись — **Подключение AzAccount**.
+1. Откройте консоль PowerShell и выполните следующую команду, чтобы войти в учетную запись Azure. Этот командлет открывает веб-станицу, на которой пользователю предлагается ввести данные для входа в учетную запись — **Connect-азаккаунт**.
     - Кроме того, учетные данные можно добавить в качестве параметра в командлет **Connect-AzAccount**, используя параметр **-Credential**.
     - Если вы — партнер-поставщик облачных услуг, работающий от имени клиента, вам потребуется указать заказчика в качестве клиента. Для этого нужно ввести идентификатор или основное доменное имя клиента. Пример: **Connect-AzAccount-Tenant "fabrikam.com"**
 2. Свяжите подписку, которую собираетесь использовать, с учетной записью, так как последняя может иметь несколько подписок:
@@ -72,12 +72,12 @@ Azure PowerShell предоставляет командлеты для упра
 
     `New-AzResourceGroup -Name $ResourceGroupName -Location $Geo`
 
-2. Для получения списка групп ресурсов в вашей подписке запустите **Get AzResourceGroup** командлета.
+2. Чтобы получить список групп ресурсов в подписке, выполните командлет **Get-азресаурцеграуп** .
 2. Создайте хранилище служб восстановления Azure следующим образом:
 
         $vault = New-AzRecoveryServicesVault -Name <string> -ResourceGroupName <string> -Location <string>
 
-    Можно получить список существующих хранилищ с **Get AzRecoveryServicesVault** командлета.
+    Список существующих хранилищ можно получить с помощью командлета **Get-азрековерисервицесваулт** .
 
 
 ## <a name="step-3-set-the-recovery-services-vault-context"></a>Шаг 3. Настройка контекста для хранилища Служб восстановления
@@ -115,8 +115,8 @@ Azure PowerShell предоставляет командлеты для упра
         $server =  Get-AsrFabric -Name $siteName | Get-AsrServicesProvider -FriendlyName $server-friendlyname
 
 Если вы используете основной сервер Hyper-V, скачайте файл установки и сделайте следующее:
-1. Извлеките файлы из AzureSiteRecoveryProvider.exe в локальный каталог, выполнив следующую команду: ```AzureSiteRecoveryProvider.exe /x:. /q```
-2. Запустите ```.\setupdr.exe /i``` % Programdata%\ASRLogs\DRASetupWizard.log записываются результаты.
+1. Извлеките файлы из Азуреситерековерипровидер. exe в локальный каталог, выполнив следующую команду:```AzureSiteRecoveryProvider.exe /x:. /q```
+2. Результаты ```.\setupdr.exe /i``` выполнения регистрируются в%програмдата%\асрлогс\драсетупвизард.лог.
 
 3. Зарегистрируйте сервер с помощью следующей команды:
 
@@ -143,11 +143,15 @@ Azure PowerShell предоставляет командлеты для упра
         $protectionContainer = Get-AsrProtectionContainer
 3. Свяжите контейнер защиты с политикой репликации, выполнив следующую команду:
 
-     $Policy = Get-AsrPolicy -FriendlyName $PolicyName   $associationJob  = New-AsrProtectionContainerMapping -Name $mappingName -Policy $Policy -PrimaryProtectionContainer $protectionContainer[0]
-
+        $Policy = Get-AsrPolicy -FriendlyName $PolicyName
+        $associationJob  = New-AsrProtectionContainerMapping -Name $mappingName -Policy $Policy -PrimaryProtectionContainer $protectionContainer[0]
 4. Дождитесь завершения этого задания и убедитесь, что оно выполнено успешно.
 
-## <a name="step-7-enable-vm-protection"></a>Шаг 7. Включение защиты в виртуальных машинах
+5. Получите сопоставление контейнера защиты.
+
+        $ProtectionContainerMapping = Get-ASRProtectionContainerMapping -ProtectionContainer $protectionContainer
+
+## <a name="step-7-enable-vm-protection"></a>Шаг 7. Включение защиты в виртуальных машинах
 
 1. Получите защищаемый элемент, соответствующий виртуальной машине, которую необходимо защитить, выполнив следующую команду:
 
@@ -155,8 +159,8 @@ Azure PowerShell предоставляет командлеты для упра
         $ProtectableItem = Get-AsrProtectableItem -ProtectionContainer $protectionContainer -FriendlyName $VMFriendlyName
 2. Включите защиту виртуальной машины. Если к виртуальной машине, которую необходимо защитить, подключено несколько дисков, нужно указать диск операционной системы (ОС) с помощью параметра *OSDiskName* .
 
-        $Ostype = "Windows"                                 # "Windows" or "Linux"
-        $DRjob = New-AsrReplicationProtectedItem -ProtectableItem $VM -Name $VM.Name -ProtectionContainerMapping $ProtectionContainerMapping -RecoveryAzureStorageAccountId $StorageAccountID -OSDiskName $OSDiskNameList[$i] -OS Windows -RecoveryResourceGroupId
+        $OSType = "Windows"                                 # "Windows" or "Linux"
+        $DRjob = New-AsrReplicationProtectedItem -ProtectableItem $VM -Name $VM.Name -ProtectionContainerMapping $ProtectionContainerMapping -RecoveryAzureStorageAccountId $StorageAccountID -OSDiskName $OSDiskNameList[$i] -OS $OSType -RecoveryResourceGroupId $ResourceGroupID
 
 3. Дождитесь, пока виртуальные машины перейдут в защищенное состояние после начальной репликации. Это может занять некоторое время в зависимости от таких факторов, как объем данных для репликации и доступная пропускная способность вышестоящих служб в Azure. Когда виртуальные машины перейдут в защищенное состояние, параметры State и StateDescription задания обновятся следующим образом:
 
@@ -199,5 +203,5 @@ Azure PowerShell предоставляет командлеты для упра
 
         $TFjob = Start-AsrTestFailoverCleanupJob -ReplicationProtectedItem $rpi -Comment "TFO done"
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 [Узнайте больше](https://docs.microsoft.com/powershell/module/az.recoveryservices) об использовании командлетов PowerShell инструмента Azure Resource Manager для службы Azure Site Recovery.

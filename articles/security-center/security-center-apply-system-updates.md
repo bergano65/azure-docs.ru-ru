@@ -3,9 +3,8 @@ title: Применение обновлений системы в центре 
 description: В этом документе показано, как реализовать рекомендации центра безопасности Azure по **применению обновления системы** и **перезагрузке после обновления системы**.
 services: security-center
 documentationcenter: na
-author: rkarlin
-manager: barbkess
-editor: ''
+author: memildin
+manager: rkarlin
 ms.assetid: e5bd7f55-38fd-4ebb-84ab-32bd60e9fa7a
 ms.service: security-center
 ms.devlang: na
@@ -13,13 +12,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/28/2018
-ms.author: v-mohabe
-ms.openlocfilehash: 7f9c5b702c0da8de4476508114be911a9d74f78a
-ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
+ms.author: memildin
+ms.openlocfilehash: 1688e85c6e6ed57892ccdffdf0813c8628127cc5
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69531447"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71202466"
 ---
 # <a name="apply-system-updates-in-azure-security-center"></a>Применение обновлений системы в центре безопасности Azure
 Центр безопасности Azure ежедневно проверяет наличие обновлений операционной системы виртуальных машин и компьютеров под управлением Windows и Linux. Центр безопасности получает список доступных критических обновлений и обновлений для системы безопасности из Центра обновления Windows или служб Windows Server Update Services в зависимости от того, какая служба настроена для компьютеров под управлением Windows. Центр безопасности также проверяет наличие последних обновлений для систем Linux. Если на виртуальной машине или компьютере отсутствует обновление системы, центр безопасности порекомендует его применить.

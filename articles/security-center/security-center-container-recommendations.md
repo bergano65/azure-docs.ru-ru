@@ -3,9 +3,8 @@ title: Рекомендации по контейнерам в центре бе
 description: В этом документе содержатся сведения о рекомендациях центра безопасности Azure по защите контейнеров.
 services: security-center
 documentationcenter: na
-author: rkarlin
-manager: barbkess
-editor: ''
+author: memildin
+manager: rkarlin
 ms.assetid: 2e76c7f7-a3dd-4d9f-add9-7e0e10e9324d
 ms.service: security-center
 ms.devlang: na
@@ -13,13 +12,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/20/2018
-ms.author: rkarlin
-ms.openlocfilehash: 782c769bc7825dc9b6bd3ba3b8e36885bf150eaa
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: memildin
+ms.openlocfilehash: 96efe5271b91f87e30ba26aabe69a0de76e1a791
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60705299"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71202395"
 ---
 # <a name="understand-azure-security-center-container-recommendations"></a>Общие сведения о рекомендациях центра безопасности Azure в отношении контейнеров
 
@@ -43,12 +42,12 @@ ms.locfileid: "60705299"
 ## <a name="recommendations"></a>Рекомендации
 В таблице ниже приведены справочные сведения относительно доступных контейнеров, размещенных в машинах IaaS Linux, и оценке безопасности их конфигураций Docker.
 
-| Рекомендации | Описание | Исправление |
+| Рекомендация | Описание | Исправление |
 | --- | --- | --- |
 |Устранение уязвимостей в конфигурациях безопасности контейнеров |Устраните уязвимости в конфигурациях безопасности контейнеров с помощью рекомендаций в отношении конфигурации.| Чтобы устранить уязвимости в конфигурациях безопасности контейнеров, выполните указанные ниже действия.<br>1. Просмотрите список нарушенных правил.<br>2. Исправьте каждое правило согласно приведенным инструкциям.|
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о рекомендациях, которые относятся к другим типам ресурсов Azure, см. в следующих статьях:
 
 * [Мониторинг идентификации и доступа в центре безопасности Azure (предварительная версия)](security-center-identity-access.md)

@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 09/11/2019
 ms.author: saudas
 ms.custom: mvc
-ms.openlocfilehash: b7e079e92c2f438fa7acc87a7d7333c371fe8e54
-ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
+ms.openlocfilehash: 5c2ecd5a53bb77193469ba1135c46d9b5fa65b2c
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71099464"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71202979"
 ---
 # <a name="security-hardening-in-aks-virtual-machine-hosts"></a>Усиление безопасности на узлах виртуальных машин AKS 
 
@@ -76,8 +76,6 @@ AKS-Engine в настоящее время не применяет или не 
 |5.4.1.4 |Обеспечение неактивной блокировки пароля — 30 дней или меньше |
 |5.4.4 |Убедитесь, что пользователь по умолчанию umask является 027 или более узким |
 |5.6 |Убедитесь, что доступ к команде SU ограничен.|
-
-(*) Должен быть включен. См. [документацию по](https://github.com/Azure/aks-engine/blob/master/docs/topics/clusterdefinitions.md)определению кластера.
 
 ## <a name="additional-notes"></a>Дополнительные замечания
  

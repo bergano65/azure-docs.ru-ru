@@ -3,9 +3,8 @@ title: Управление между клиентами в центре без
 description: " Узнайте, как включать сбор данных в Центре безопасности Azure. "
 services: security-center
 documentationcenter: na
-author: monhaber
+author: memildin
 manager: rkarlin
-editor: ''
 ms.assetid: 7d51291a-4b00-4e68-b872-0808b60e6d9c
 ms.service: security-center
 ms.devlang: na
@@ -13,13 +12,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/11/2019
-ms.author: v-mohabe
-ms.openlocfilehash: d6b5b528c3021bfb62bc30ad5910524db36e7e95
-ms.sourcegitcommit: 78ebf29ee6be84b415c558f43d34cbe1bcc0b38a
+ms.author: memildin
+ms.openlocfilehash: 178911390a4cb694171adf6c807369cab0c0499a
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68950552"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71202356"
 ---
 # <a name="cross-tenant-management-in-security-center"></a>Управление между клиентами в центре безопасности
 
@@ -51,7 +50,7 @@ ms.locfileid: "68950552"
 - **Исправление рекомендаций**: Отслеживайте и исправьте [рекомендацию](security-center-recommendations.md) для многих ресурсов из разных клиентов за один раз. Затем можно сразу же разобраться в уязвимостях, представляющих наивысший риск для всех клиентов.
 - **Управление оповещениями**: Обнаружение [оповещений](security-center-alerts-overview.md) в разных клиентах. Выполните действия с ресурсами, которые не соответствуют требованиям с действиями [по исправлению](security-center-managing-and-responding-alerts.md).
 
-- **Управление расширенными функциями защиты облака и многое другое**: Управляйте различными службами обнаружения и защиты угроз, такими как [JIT-доступ к виртуальной машине](security-center-just-in-time.md), [Адаптивное усиление защиты сети](security-center-adaptive-network-hardening.md), адаптивное [Управление приложениями](security-center-adaptive-application.md)и многое другое.
+- **Управление расширенными функциями защиты облака и многое другое**: Управляйте различными службами обнаружения и защиты угроз, такими как [JIT-доступ к виртуальной машине](security-center-just-in-time.md), [Адаптивное усиление защиты сети](security-center-adaptive-network-hardening.md), [адаптивное управление приложениями](security-center-adaptive-application.md)и многое другое.
  
 ## <a name="next-steps"></a>Следующие шаги
 В этой статье объясняется, как работает управление между клиентами в центре безопасности. Дополнительные сведения о Центре безопасности см. в следующих статьях:

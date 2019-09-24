@@ -3,23 +3,22 @@ title: Платформы, поддерживаемые центром безо�
 description: В этом документе представлен список платформ, поддерживаемых центром безопасности Azure.
 services: security-center
 documentationcenter: na
-author: monhaber
+author: memildin
 manager: rkarlin
-editor: ''
 ms.assetid: 70c076ef-3ad4-4000-a0c1-0ac0c9796ff1
 ms.service: security-center
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 8/29/2019
-ms.author: v-mohabe
-ms.openlocfilehash: c094ef5f3e7c7bfa96f95264e137fd8938296bb4
-ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
+ms.date: 08/29/2019
+ms.author: memildin
+ms.openlocfilehash: 1d13db922ae84e4032304a8865ba6fcdafa65748
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70232207"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71201638"
 ---
 # <a name="supported-platforms"></a>Поддерживаемые платформы 
 
@@ -106,7 +105,7 @@ ms.locfileid: "70232207"
 * Учетная запись Service Fabric
 * Учетная запись автоматизации
 * Балансировщик нагрузки
-* Поиск
+* Найти
 * Пространство имен служебной шины
 * Stream Analytics
 * Пространство имен концентратора событий

@@ -1,20 +1,22 @@
 ---
-title: Создать пользователей в базе данных Azure для PostgreSQL — один сервер
-description: 'В этой статье описывается, как можно создать новые учетные записи пользователей для взаимодействия с базой данных Azure для PostgreSQL: один сервер.'
+title: Создание пользователей в базе данных Azure для PostgreSQL — один сервер
+description: В этой статье описывается создание новых учетных записей пользователей для взаимодействия с базой данных Azure для PostgreSQL-Single Server.
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 5/6/2019
-ms.openlocfilehash: ce6188732720bc43c5849fa492237c7ab98487c6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 09/22/2019
+ms.openlocfilehash: 91ba485347aeb19ce9b173bd4cec944a655a56dc
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65067498"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71203498"
 ---
-# <a name="create-users-in-azure-database-for-postgresql---single-server"></a>Создать пользователей в базе данных Azure для PostgreSQL — один сервер
-В этой статье описывается создание пользователей на сервере службы "База данных Azure для PostgreSQL".
+# <a name="create-users-in-azure-database-for-postgresql---single-server"></a>Создание пользователей в базе данных Azure для PostgreSQL — один сервер
+В этой статье описывается создание пользователей на сервере базы данных Azure для PostgreSQL. 
+
+Если вы хотите узнать о том, как создавать и администрировать пользователей подписки Azure и их привилегии, вы можете посетить [статью об управлении доступом на основе ролей (RBAC) Azure](../role-based-access-control/built-in-roles.md) или ознакомиться с разрешениями по [настройке ролей](../role-based-access-control/custom-roles.md).
 
 ## <a name="the-server-admin-account"></a>Учетная запись администратора сервера
 При создании первой службы "База данных Azure для PostgreSQL" вы указали имя пользователя и пароль администратора сервера. Дополнительные сведения и пошаговые инструкции см. в [этом кратком руководстве](quickstart-create-server-database-portal.md). Так как имя пользователя администратора сервера настраивает пользователь, можно найти выбранное имя на портале Azure.
@@ -75,7 +77,7 @@ ms.locfileid: "65067498"
    psql --host=mydemoserver.postgres.database.azure.com --port=5432 --username=db_user@mydemoserver --dbname=newdb
    ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Откройте брандмауэр для IP-адресов компьютеров новых пользователей, чтобы обеспечить их подключение: [Создание правил брандмауэра базы данных Azure для PostgreSQL и управление ими с помощью портала Azure](howto-manage-firewall-using-portal.md) или [интерфейса командной строки Azure](howto-manage-firewall-using-cli.md).
 
 Чтобы получить дополнительные сведения об управлении учетными записями пользователей, ознакомьтесь с [ролями базы данных и привилегиями](https://www.postgresql.org/docs/current/static/user-manag.html), [синтаксисом GRANT](https://www.postgresql.org/docs/current/static/sql-grant.html) и [привилегиями](https://www.postgresql.org/docs/current/static/ddl-priv.html) в документации по продукту PostgreSQL.
