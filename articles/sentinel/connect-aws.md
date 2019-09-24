@@ -1,5 +1,5 @@
 ---
-title: Подключение данных Symantec AWS к предварительной версии Azure Sentinel | Документация Майкрософт
+title: Подключение данных Symantec AWS к Azure Sentinel | Документация Майкрософт
 description: Узнайте, как подключить данные Symantec AWS к Azure Sentinel.
 services: sentinel
 documentationcenter: na
@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 07/10/2019
+ms.date: 09/23/2019
 ms.author: rkarlin
-ms.openlocfilehash: 246d4cd7d64554ae575767cdba2e26066ad1720d
-ms.sourcegitcommit: a8b638322d494739f7463db4f0ea465496c689c6
+ms.openlocfilehash: 46ad8f6478e632cd57c009700de182993ce01be1
+ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68295618"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71240864"
 ---
 # <a name="connect-azure-sentinel-to-aws-cloudtrail"></a>Подключение Sentinel Azure к AWS Клаудтраил
 
@@ -82,5 +82,5 @@ ms.locfileid: "68295618"
 ## <a name="next-steps"></a>Следующие шаги
 В этом документе вы узнали, как подключить AWS Клаудтраил к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [получить представление о данных и потенциальных угрозах](quickstart-get-visibility.md).
-- Приступая [к обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats.md).
+- Приступая [к обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).
 

@@ -1,9 +1,9 @@
-- name: Документация по открытым наборам данных
+- name: Документация по Открытым наборам данных
   href: index.yml
 - name: Обзор
   expanded: true
   items:
-    - name: Общие сведения об открытых наборах данных Azure
+    - name: Общие сведения об Открытых наборах данных Azure
       displayName: open datasets overview introduction
       href: overview-what-are-open-datasets.md
 - name: Учебник
@@ -17,13 +17,13 @@
   items:
     - name: Пакет SDK для Python
       displayName: api open datasets reference sdk
-      href: 'https://aka.ms/open-datasets-api'
+      href: /python/api/azureml-opendatasets/azureml.opendatasets?view=azure-ml-py
     - name: Записные книжки Jupyter
       displayName: python notebooks
       href: 'https://github.com/Azure/OpenDatasetsNotebooks'
 - name: Ресурсы
   items:
-    - name: Каталог открытых наборов данных Azure
+    - name: Каталог Открытых наборов данных Azure
       href: 'https://azure.microsoft.com/services/open-datasets/catalog/'
     - name: Открытые данные Microsoft Research
       href: 'https://msropendata.com/'
@@ -31,9 +31,9 @@
       href: 'https://azure.microsoft.com/roadmap/'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/open-datasets/'
-    - name: Доступ по регионам
+    - name: Доступность по регионам
       href: 'https://azure.microsoft.com/regions/services/'
     - name: Форум пользователей
       href: 'https://aka.ms/open-datasets-forum'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-open-datasets'

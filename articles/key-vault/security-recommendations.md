@@ -6,19 +6,19 @@ author: barclayn
 manager: rkarlin
 ms.service: key-vault
 ms.topic: article
-ms.date: 09/19/2019
+ms.date: 09/23/2019
 ms.author: barclayn
 ms.custom: security-recommendations
-ms.openlocfilehash: e1c5382e1e55c5c73a5610c1c13f6bfcef65ebc1
-ms.sourcegitcommit: b03516d245c90bca8ffac59eb1db522a098fb5e4
+ms.openlocfilehash: 90965618b1d2cb126d56453d46a5bebc85319c0f
+ms.sourcegitcommit: 3fa4384af35c64f6674f40e0d4128e1274083487
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71148280"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71219649"
 ---
 # <a name="security-recommendations-for-azure-key-vault"></a>Рекомендации по безопасности для Azure Key Vault
 
-Эта статья содержит рекомендации по безопасности для службы приложений Azure. Реализация этих рекомендаций поможет вам выполнить обязательства по обеспечению безопасности, как описано в нашей модели общей ответственности, и повысит общую безопасность решений веб-приложений. Дополнительные сведения о том, что делает корпорация Майкрософт для выполнения обязанностей поставщиков услуг, см. в статье [Общие обязанности для облачных вычислений](https://gallery.technet.microsoft.com/Shared-Responsibilities-81d0ff91/file/153019/1/Shared%20responsibilities%20for%20cloud%20computing.pdf).
+Эта статья содержит рекомендации по безопасности для Azure Key Vault. Реализация этих рекомендаций поможет вам удовлетворить обязательства по обеспечению безопасности, как описано в нашей общей модели ответственности. Дополнительные сведения о том, что делает корпорация Майкрософт для выполнения обязанностей поставщиков услуг, см. в статье [Общие обязанности для облачных вычислений](https://gallery.technet.microsoft.com/Shared-Responsibilities-81d0ff91/file/153019/1/Shared%20responsibilities%20for%20cloud%20computing.pdf).
 
 Некоторые из рекомендаций, описанных в этой статье, можно автоматически отслеживать с помощью центра безопасности Azure. Центр безопасности Azure — это первая строка защиты ресурсов в Azure. Он периодически анализирует состояние безопасности ресурсов Azure и выявляет потенциальные уязвимости системы безопасности. Затем он предоставляет рекомендации по их устранению.
 

@@ -54,7 +54,7 @@
     - name: Использование функций Azure с Logic Apps
       href: functions-twitter-email.md
     - name: Развертывание функций Python с помощью VS Code
-      href: tutorial-vs-code-serverless-python.md
+      href: /azure/python/tutorial-vs-code-serverless-python-01
     - name: Определение OpenAPI для бессерверных API
       href: functions-openapi-definition.md
     - name: Подключение к виртуальной сети

@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 08/05/2019
-ms.openlocfilehash: 7d015f485a51ae1f929e2ecaf1a05811d21594a2
-ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
+ms.openlocfilehash: a693b14bb61eb52a09ab1f1ecd5d00b339357d5d
+ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68816028"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71240372"
 ---
 # <a name="use-azure-monitor-logs-to-monitor-hdinsight-clusters"></a>Использование журналов Azure Monitor для мониторинга кластеров HDInsight
 
@@ -89,7 +89,7 @@ Disable-AzHDInsightOperationsManagementSuite -Name "<your-cluster>"
 
 ## <a name="install-hdinsight-cluster-management-solutions"></a>Установка решений по управлению кластерами HDInsight
 
-HDInsight предоставляет решения по управлению кластерами, которые можно добавить для Azure Monitor журналов. [Решения](../log-analytics/log-analytics-add-solutions.md) по управлению добавляют функции в журналы Azure Monitor, предоставляя дополнительные инструменты для работы с данными и анализа. Эти решения собирают важные метрики производительности из кластеров HDInsight и предоставляют средства для поиска метрик. Кроме того, они позволяют использовать визуализации и панели мониторинга для большинства типов кластеров, которые поддерживаются в HDInsight. На основе этих метрик можно создавать пользовательские правила мониторинга и оповещения.
+HDInsight предоставляет решения по управлению кластерами, которые можно добавить для Azure Monitor журналов. [Решения по управлению](../log-analytics/log-analytics-add-solutions.md) добавляют функции в журналы Azure Monitor, предоставляя дополнительные инструменты для работы с данными и анализа. Эти решения собирают важные метрики производительности из кластеров HDInsight и предоставляют средства для поиска метрик. Кроме того, они позволяют использовать визуализации и панели мониторинга для большинства типов кластеров, которые поддерживаются в HDInsight. На основе этих метрик можно создавать пользовательские правила мониторинга и оповещения.
 
 Вот доступные решения HDInsight:
 
@@ -109,6 +109,15 @@ HDInsight предоставляет решения по управлению к
 ## <a name="configuring-performance-counters"></a>Настройка счетчиков производительности
 
 Azure Monitor также поддерживает сбор и анализ метрик производительности для узлов в кластере. Дополнительные сведения о включении и настройке этого компонента см. [в разделе источники данных о производительности Linux в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/data-sources-performance-counters#linux-performance-counters).
+
+## <a name="cluster-auditing"></a>Аудит кластера
+
+HDInsight поддерживает аудит кластеров с помощью журналов Azure Monitor, импортируя следующие типы журналов:
+
+* `log_gateway_audit_CL`— Эта таблица предоставляет журналы аудита из узлов шлюза кластера, которые показывают успешные и неудачные попытки входа.
+* `log_auth_CL`— Эта таблица предоставляет журналы SSH с успешным и неудачным попытками входа.
+* `log_ambari_audit_CL`— Эта таблица предоставляет журналы аудита из Ambari.
+* `log_ranger_audti_CL`— Эта таблица предоставляет журналы аудита из Apache Ranger в кластерах ESP.
 
 ## <a name="next-steps"></a>Следующие шаги
 

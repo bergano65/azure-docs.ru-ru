@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 02/12/2019
 ms.author: mbaldwin
 ms.openlocfilehash: 71b7e4bd9406e7fb300ebccd86908820b7628c29
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.sourcegitcommit: 3fa4384af35c64f6674f40e0d4128e1274083487
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2019
+ms.lasthandoff: 09/24/2019
 ms.locfileid: "71000759"
 ---
 # <a name="how-to-generate-and-transfer-hsm-protected-keys-for-azure-key-vault"></a>Создание ключей, защищенных аппаратным модулем безопасности, и их передача в хранилище ключей Azure
@@ -53,7 +53,7 @@ nCipher Security — это ведущий глобальный поставщи
 
 Список предварительных требований для реализации сценария BYOK для хранилища ключей Azure к см. в приведенной ниже таблице.
 
-| Требование | Дополнительные сведения |
+| Требование | Дополнительная информация |
 | --- | --- |
 | Подписка на Azure |Для создания Azure Key Vault требуется подписка Azure: [зарегистрируйтесь для получения бесплатной пробной версии](https://azure.microsoft.com/pricing/free-trial/). |
 | Поддержка защищенных ключей аппаратных модулей безопасности в хранилище ключей Azure уровня служб "Премиум". |Дополнительные сведения об уровнях служб и возможностях хранилища ключей Azure см. на веб-сайте [Цены на хранилище ключей Azure](https://azure.microsoft.com/pricing/details/key-vault/). |

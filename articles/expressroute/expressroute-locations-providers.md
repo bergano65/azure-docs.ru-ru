@@ -2,24 +2,17 @@
 title: Расположения и поставщики услуг подключения для Azure ExpressRoute | Документация Майкрософт
 description: В этой статье приведена подробная информация о расположениях, где предлагаются услуги, и способах подключения к регионам Azure. Эта таблица отсортирована по расположению.
 services: expressroute
-documentationcenter: na
 author: cherylmc
-manager: timlt
-editor: ''
-ms.assetid: feb67da3-5abc-4acb-bad4-f78e3c541ded
 ms.service: expressroute
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 09/20/2019
+ms.date: 09/23/2019
 ms.author: cherylmc
-ms.openlocfilehash: 192bafc0b53483c21e52602b4de8c57f66fdee3c
-ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
+ms.openlocfilehash: 61ac896d2135790ca2e757ec56303fdb783d2865
+ms.sourcegitcommit: 3fa4384af35c64f6674f40e0d4128e1274083487
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71172561"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71219662"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Партнеры и одноранговые расположения ExpressRoute
 
@@ -74,9 +67,11 @@ ms.locfileid: "71172561"
 
 ## <a name="partners"></a>Поставщики услуг подключения ExpressRoute
 
-В таблице ниже приведены расположения для подключения и поставщики услуг в каждом расположении. Поставщики услуг и расположения, в которых они предоставляют услуги, перечислены в разделе [Расположения поставщиков услуг подключения](expressroute-locations.md). 
+В таблице ниже приведены расположения для подключения и поставщики услуг в каждом расположении. Поставщики услуг и расположения, в которых они предоставляют услуги, перечислены в разделе [Расположения поставщиков услуг подключения](expressroute-locations.md).
 
-**Локальные регионы Azure** — это те, к которым может получить доступ локальная служба [ExpressRoute](expressroute-faqs.md) в каждом одноранговом расположении. **н/д** указывает, что локальная сеть ExpressRoute недоступна в этом расположении.
+* **Локальные регионы Azure** — это те, к которым может получить доступ локальная служба [ExpressRoute](expressroute-faqs.md) в каждом одноранговом расположении. **н/д** указывает, что локальная сеть ExpressRoute недоступна в этом расположении.
+
+* **Зона** относится к [ценам](https://azure.microsoft.com/pricing/details/expressroute/).
 
 
 ### <a name="production-azure"></a>Рабочая среда Azure

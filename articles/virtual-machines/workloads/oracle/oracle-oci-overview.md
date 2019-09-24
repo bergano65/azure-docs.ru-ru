@@ -14,12 +14,12 @@ ms.workload: infrastructure-services
 ms.date: 06/04/2019
 ms.author: rogirdh
 ms.custom: ''
-ms.openlocfilehash: 4628955998ab8b289a429cdfb85e23f7f97b0b40
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 9947d28cbde7f4804283e03cc07093b9240ca6bf
+ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70101433"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71241002"
 ---
 # <a name="oracle-application-solutions-integrating-microsoft-azure-and-oracle-cloud-infrastructure-preview"></a>Решения для приложений Oracle интеграция Microsoft Azure и облачной инфраструктуры Oracle (Предварительная версия)
 
@@ -50,7 +50,7 @@ ms.locfileid: "70101433"
 
 ## <a name="preview-limitations"></a>Ограничения предварительной версии
 
-* Возможность подключения между облаками в предварительной версии ограничена регионом Azure восточной части США (eastus) и регионом OCI Эшберн (US-эшберн-1).
+* Возможность подключения между облаками в предварительной версии ограничена регионами Azure восточной части США (eastus) & южная часть Соединенного Королевства (uksouth) и & Эшберном OCI (южная часть Соединенного Королевства). Для южная часть Соединенного Королевства используйте домен доступности 1 (AD 1) в OCI при развертывании между подключениями для более низких задержек.
 
 ## <a name="networking"></a>Сети
 

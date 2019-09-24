@@ -9,24 +9,24 @@ ms.author: robreed
 ms.date: 02/12/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 1ab9de1e11fa4f43894a6789fb2ba6fedbd1b77e
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 39cf6126f6212b6e83f1974dae7aaab0038e69c6
+ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67477498"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71240986"
 ---
 # <a name="troubleshoot-hybrid-runbook-workers"></a>Устранение неполадок с гибридными рабочими ролями Runbook
 
 В этой статье приводятся сведения об устранении неполадок с гибридными рабочими ролями Runbook.
 
-## <a name="general"></a>Общие сведения
+## <a name="general"></a>Общее
 
 Гибридная рабочая роль Runbook зависит от агента, который используется для взаимодействия с учетной записью автоматизации для регистрации рабочей роли, получения заданий runbook и сообщения о состоянии. В Windows используется агент Microsoft Monitoring Agent. В Linux — Агент Operations Management Suite для Linux.
 
 ### <a name="runbook-execution-fails"></a>Сценарий. Происходит сбой выполнения модуля Runbook
 
-#### <a name="issue"></a>Проблема
+#### <a name="issue"></a>Проблемы
 
 Происходит сбой выполнения модуля Runbook со следующей ошибкой:
 
@@ -48,7 +48,7 @@ ms.locfileid: "67477498"
 
 * Компьютер, предназначенный для выполнения гибридной рабочей роли Runbook, не соответствует минимальным требованиям к оборудованию.
 
-#### <a name="resolution"></a>Способы устранения:
+#### <a name="resolution"></a>Разрешение
 
 Проверьте, имеет ли компьютер исходящий доступ к *.azure-automation.net на порту 443.
 
@@ -60,7 +60,7 @@ ms.locfileid: "67477498"
 
 ### <a name="no-cert-found"></a>Сценарий. Не найден сертификат в хранилище сертификатов в гибридной рабочей роли Runbook
 
-#### <a name="issue"></a>Проблема
+#### <a name="issue"></a>Проблемы
 
 Модуль Runbook, запущенный в гибридной рабочей роли Runbook, завершается сбоем со следующей ошибкой.
 
@@ -77,7 +77,7 @@ At line:3 char:1
 
 Эта ошибка возникает при попытке использовать [учетную запись запуска от имени](../manage-runas-account.md) в модуле Runbook, который выполняется в гибридной рабочей роли Runbook, в которой отсутствует сертификат учетной записи запуска от имени. У гибридных рабочих ролей Runbook по умолчанию отсутствует локальный ресурс сертификата, который требуется для правильной работы учетной записи запуска от имени.
 
-#### <a name="resolution"></a>Способы устранения:
+#### <a name="resolution"></a>Разрешение
 
 Если гибридная рабочая роль Runbook представляет собой виртуальную машину Azure, вы можете использовать [управляемые удостоверения для ресурсов Azure](../automation-hrw-run-runbooks.md#managed-identities-for-azure-resources). Этот сценарий позволяет проходить проверку подлинности для ресурсов Azure с помощью управляемого удостоверения виртуальной машины Azure вместо учетной записи запуска от имени, что упрощает проверку подлинности. Если гибридная рабочая роль Runbook установлена на локальном компьютере, необходимо установить сертификат учетной записи запуска от имени на этом компьютере. Чтобы узнать, как установить сертификат, ознакомьтесь с действиями по запуску модуля Runbook [Export-RunAsCertificateToHybridWorker](../automation-hrw-run-runbooks.md#runas-script).
 
@@ -87,7 +87,7 @@ At line:3 char:1
 
 ### <a name="oms-agent-not-running"></a>Сценарий. Агент OMS для Linux не запущен.
 
-#### <a name="issue"></a>Проблема
+#### <a name="issue"></a>Проблемы
 
 Агент OMS для Linux не запущен
 
@@ -95,7 +95,7 @@ At line:3 char:1
 
 Если Агент OMS для Linux не запущен, гибридная рабочая роль Runbook Linux не сможет взаимодействовать со службой автоматизации Azure. Агент может не работать по разным причинам.
 
-#### <a name="resolution"></a>Способы устранения:
+#### <a name="resolution"></a>Разрешение
 
  Проверьте, запущен ли агент, выполнив следующую команду: `ps -ef | grep python`. Вы увидите выходные данные, похожие на следующие; это процессы python, запущенные от имени учетной записи **nxautomation**. Если решения "Управление обновлениями" и "Служба автоматизации Azure" не включены, ни один из следующих процессов не будет запущен.
 
@@ -130,7 +130,7 @@ wget https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/inst
 
 ### <a name="mma-not-running"></a>Сценарий. Агент Microsoft Monitoring Agent не запущен
 
-#### <a name="issue"></a>Проблема
+#### <a name="issue"></a>Проблемы
 
 Служба `healthservice` не работает на компьютере с гибридной рабочей ролью Runbook.
 
@@ -138,13 +138,13 @@ wget https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/inst
 
 Если служба Windows Microsoft Monitoring Agent не запущена, то гибридная рабочая роль Runbook не может взаимодействовать со службой автоматизации Azure.
 
-#### <a name="resolution"></a>Способы устранения:
+#### <a name="resolution"></a>Разрешение
 
 Проверьте, запущен ли агент, введя в PowerShell команду `Get-Service healthservice`. Если служба остановлена, введите в PowerShell команду `Start-Service healthservice`, чтобы запустить эту службу.
 
 ### <a name="event-4502"></a> Событие 4502 в журнале Operations Manager
 
-#### <a name="issue"></a>Проблема
+#### <a name="issue"></a>Проблемы
 
 В журнале событий в папке **Application and Services Logs\Operations Manager** отображается событие 4502 и сообщение о событии с **Microsoft.EnterpriseManagement.HealthService.AzureAutomation.HybridAgent** со следующим описанием: *Сертификат, представленный службой \<wsid\>.oms.opinsights.azure.com, не был выдан центром сертификации, используемым для служб Майкрософт. Обратитесь к администратору сети, чтобы узнать, использует ли он прокси-сервер, перехватывающий связь по протоколам TLS и SSL. Дополнительные сведения об устранении неполадок, связанных с подключением, содержатся в статье базы знаний KB3126513.*
 
@@ -152,7 +152,7 @@ wget https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/inst
 
 Эта проблема может быть вызвана тем, что прокси-сервер или сетевой брандмауэр блокируют подключение к Microsoft Azure. Проверьте, имеет ли компьютер исходящий доступ к *.azure-automation.net на порту 443.
 
-#### <a name="resolution"></a>Способы устранения:
+#### <a name="resolution"></a>Разрешение
 
 Журналы сохраняются локально в каждом гибридном компоненте Worker по адресу C:\ProgramData\Microsoft\System Center\Orchestrator\7.2\SMA\Sandboxes. Можно проверить, зарегистрированы ли в журналах событий в папках **Application and Services Logs\Microsoft-SMA\Operations** и **Application and Services Logs\Operations Manager** какие-либо предупреждения или ошибки, которые указывают на проблемы подключения или другие проблемы, связанные с адаптацией роли службы автоматизации Azure, либо на проблемы во время выполнения обычных операций.
 
@@ -160,7 +160,7 @@ wget https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/inst
 
 ### <a name="corrupt-cache"></a>Гибридная рабочая роль Runbook не создает отчеты
 
-#### <a name="issue"></a>Проблема
+#### <a name="issue"></a>Проблемы
 
 Компьютер гибридной рабочей роли Runbook работает, но в рабочей области не отображаются данные о пульсе для компьютера.
 
@@ -168,7 +168,7 @@ wget https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/inst
 
 ```loganalytics
 // Last heartbeat of each computer
-Heartbeat 
+Heartbeat
 | summarize arg_max(TimeGenerated, *) by Computer
 ```
 
@@ -176,7 +176,7 @@ Heartbeat
 
 Эта проблема может быть вызвана повреждением кэша в гибридной рабочей роли Runbook.
 
-#### <a name="resolution"></a>Способы устранения:
+#### <a name="resolution"></a>Разрешение
 
 Чтобы решить данную проблему, войдите в систему гибридной рабочей роли Runbook и запустите следующий сценарий. Он останавливает Microsoft Monitoring Agent, удаляет его кэш и перезапускает службу. Это действие заставляет гибридную рабочую роль Runbook повторно скачать свою конфигурацию из службы автоматизации Azure.
 
@@ -190,7 +190,7 @@ Start-Service -Name HealthService
 
 ### <a name="already-registered"></a>Сценарий. Не удается добавить гибридную рабочую роль Runbook
 
-#### <a name="issue"></a>Проблема
+#### <a name="issue"></a>Проблемы
 
 Вы получите следующее сообщение при попытке добавить гибридную рабочую роль Runbook с помощью командлета `Add-HybridRunbookWorker`.
 
@@ -202,13 +202,13 @@ Machine is already registered
 
 Это может возникать, если компьютер уже зарегистрирован в другой учетной записи службы автоматизации или при попытке повторного добавления гибридной рабочей роли Runbook после ее удаления с компьютера.
 
-#### <a name="resolution"></a>Способы устранения:
+#### <a name="resolution"></a>Разрешение
 
 Чтобы устранить эту проблему, удалите следующий раздел реестра, перезапустите `HealthService` и повторите командлет `Add-HybridRunbookWorker`.
 
 `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\HybridRunbookWorker`
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 

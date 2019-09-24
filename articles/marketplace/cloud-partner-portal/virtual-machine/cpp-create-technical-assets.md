@@ -1,5 +1,5 @@
 ---
-title: Создание технических ресурсов для предложения виртуальной машины для Azure Marketplace
+title: Создание технических ресурсов для предложения виртуальной машины в Azure Marketplace
 description: В этой статье объясняется, как создать технические ресурсы для предложения виртуальной машине в Azure Marketplace.
 services: Azure, Marketplace, Cloud Partner Portal,
 author: pbutlerm
@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: article
 ms.date: 08/20/2018
 ms.author: pabutler
-ms.openlocfilehash: 6113c10cd152a22bd31e7212d86925b0c2107e58
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c1ef00f846dfad76629b0603ab79fba17249417c
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64938411"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "71224528"
 ---
 # <a name="create-technical-assets-for-a-virtual-machine-offer"></a>Создание технических ресурсов для предложения виртуальной машины
 
@@ -34,7 +34,7 @@ ms.locfileid: "64938411"
 
 ## <a name="fundamental-technical-knowledge"></a>Основные технические знания
 
-Проектирование, сборка и тестирование этих ресурсов занимают время и требуют технических знаний и платформы Azure, и технологий, используемых для создания предложения. Помимо знаний о предметной области решения команда разработчиков также должна располагать знаниями о технологиях Майкрософт, в частности у них должно быть: 
+Проектирование, сборка и тестирование этих ресурсов занимает время и требует технических знаний о платформе Azure и технологиях, используемых для создания предложения. Помимо домена решения, группа разработчиков должна иметь знания о следующих технологиях Майкрософт: 
 -   базовое представление о [службах Azure](https://azure.microsoft.com/services/); 
 -   умение [разработать приложения Azure](https://azure.microsoft.com/solutions/architecture/);
 -   опыт работы с [виртуальными машинами Azure](https://azure.microsoft.com/services/virtual-machines/), [службой хранилища Azure](https://azure.microsoft.com/services/?filter=storage) и [сетями Azure](https://azure.microsoft.com/services/?filter=networking);
@@ -59,7 +59,7 @@ ms.locfileid: "64938411"
 Мы также предлагаем проверить доступные средства на странице [Средства для разработчиков Azure](https://azure.microsoft.com/tools/) и, если вы используете Visual Studio, на странице [Visual Studio Marketplace](https://marketplace.visualstudio.com/).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В последующих статьях этого раздела рассматриваются шаги по созданию и регистрации таких ресурсов виртуальной машины:
 

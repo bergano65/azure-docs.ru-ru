@@ -1,39 +1,36 @@
 ---
-title: Подключение данных контрольной точки к предварительной версии Azure Sentinel | Документация Майкрософт
+title: Подключение данных контрольной точки к Sentinel Azure | Документация Майкрософт
 description: Узнайте, как подключить данные контрольной точки к Azure Sentinel.
 services: sentinel
 documentationcenter: na
 author: rkarlin
 manager: rkarlin
 editor: ''
-ms.assetid: 3229233d-400d-4971-8d76-eaa0d6591d75
 ms.service: azure-sentinel
 ms.subservice: azure-sentinel
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 07/31/2019
+ms.date: 09/23/2019
 ms.author: rkarlin
-ms.openlocfilehash: ea9cb7997f86c10bb09c01dfc345aaeeef46708a
-ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
+ms.openlocfilehash: 1bfa59e92ce2cde45b448174260396f4e93a6282
+ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68679338"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71240135"
 ---
 # <a name="connect-your-check-point-appliance"></a>Подключение устройства точки проверки
 
-> [!IMPORTANT]
-> Сейчас Azure Sentinel предоставляется в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+
 
 Вы можете подключить метку Azure к любому устройству контрольной точки, сохранив файлы журнала как syslog CEF. Интеграция с Azure Sentinel позволяет легко выполнять анализ и запросы к данным файла журнала с момента проверки. Дополнительные сведения о том, как Azure Sentinel принимает данные CEF, см. в разделе [Connect CEF Appliances](connect-common-event-format.md).
 
 > [!NOTE]
 > Данные будут храниться в географическом расположении рабочей области, на которой вы используете метку Azure.
 
-## <a name="step-1-connect-your-check-point-appliance-using-an-agent"></a>Шаг 1.: Подключение устройства точки проверки с помощью агента
+## <a name="step-1-connect-your-check-point-appliance-using-an-agent"></a>Шаг 1. Подключение устройства точки проверки с помощью агента
 
 Чтобы подключить устройство контрольной точки к Sentinel Azure, необходимо развернуть агент на выделенном компьютере (виртуальной машине или локальной системе), чтобы обеспечить поддержку взаимодействия между устройством и Azure Sentinel. 
 
@@ -72,7 +69,7 @@ ms.locfileid: "68679338"
 
 
  
-## <a name="step-2-forward-check-point-logs-to-the-syslog-agent"></a>Шаг 2.: Пересылка журналов контрольной точки в агент системного журнала
+## <a name="step-2-forward-check-point-logs-to-the-syslog-agent"></a>Шаг 2. Пересылка журналов контрольной точки в агент системного журнала
 
 Настройте устройство контрольной точки для пересылки сообщений Syslog в формате CEF в рабочую область Azure с помощью агента системного журнала.
 
@@ -81,7 +78,7 @@ ms.locfileid: "68679338"
    - Задайте для **порта системного журнала** значение **514** или порт, заданный в агенте.
      - Замените **имя** и **IP-адрес целевого сервера** в CLI на имя агента системного журнала и IP-адрес.
      - Задайте формат **CEF**.
-3. Если вы используете версию R 77.30 или R 80.10, прокрутите экран до пункта **установки и следуйте** инструкциям по установке средства экспорта журнала для вашей версии.
+3. Если вы используете версию R 77.30 или R 80.10, прокрутите **экран до пункта установки и следуйте** инструкциям по установке средства экспорта журнала для вашей версии.
  
 ## <a name="step-3-validate-connectivity"></a>Шаг 3. Проверка подключения
 
@@ -143,5 +140,5 @@ ms.locfileid: "68679338"
 ## <a name="next-steps"></a>Следующие шаги
 В этом документе вы узнали, как подключить устройства проверки точек к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [получить представление о данных и потенциальных угрозах](quickstart-get-visibility.md).
-- Приступая [к обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats.md).
+- Приступая [к обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).
 

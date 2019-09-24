@@ -50,6 +50,16 @@
           href: backup-support-matrix-mabs-dpm.md
         - name: Таблица поддержки агента Служб восстановления Microsoft Azure
           href: backup-support-matrix-mars-agent.md
+    - name: Безопасность
+      items:
+        - name: Управление доступом на основе ролей
+          href: backup-rbac-rs-vault.md
+        - name: Безопасность облачных рабочих нагрузок
+          href: backup-azure-security-feature-cloud.md
+        - name: Безопасность гибридных резервных копий
+          href: backup-azure-security-feature.md
+        - name: Встроенные средства управления безопасностью
+          href: backup-security-controls.md
     - name: Часто задаваемые вопросы
       items:
         - name: 'Вопросы и ответы: хранилища Служб восстановления'
@@ -68,20 +78,12 @@
           href: backup-azure-monitor-alert-faq.md
     - name: Архитектура службы Backup
       href: backup-architecture.md
-    - name: Управление доступом на основе ролей
-      href: backup-rbac-rs-vault.md
-    - name: Безопасность облачных рабочих нагрузок
-      href: backup-azure-security-feature-cloud.md
-    - name: Безопасность гибридных резервных копий
-      href: backup-azure-security-feature.md
     - name: Настройка автономного резервного копирования
       href: backup-azure-backup-import-export.md
     - name: Автономное резервное копирование с помощью DPM и Azure Backup Server
       href: backup-azure-backup-server-import-export-.md
     - name: Замена ленточных библиотек
       href: backup-azure-backup-cloud-as-tape.md
-    - name: Встроенные средства управления безопасностью
-      href: backup-security-controls.md
 - name: Практическое руководство
   items:
     - name: Azure Backup Server

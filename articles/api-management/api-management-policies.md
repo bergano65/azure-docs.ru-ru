@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/19/2017
 ms.author: apimpm
-ms.openlocfilehash: ed20ef023a884ac79150cd31f25fde86b715c752
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 2b6e056fbfb134f0b1218b4281b9f971a0e24202
+ms.sourcegitcommit: 3fa4384af35c64f6674f40e0d4128e1274083487
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70073397"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71219471"
 ---
 # <a name="api-management-policies"></a>Политики управления API
 В этом разделе рассматриваются приведенные ниже политики управления API. Дополнительные сведения о добавлении и настройке политик см. в статье о [политиках в управлении API](api-management-howto-policies.md).  
@@ -50,8 +50,8 @@ ms.locfileid: "70073397"
     -   [Задание переменной](api-management-advanced-policies.md#set-variable) — сохраняет значение в именованной переменной контекста для последующего использования.  
     -   [Установка метода запроса](api-management-advanced-policies.md#SetRequestMethod) — позволяет изменить метод HTTP для запроса.  
     -   [Установка кода состояния](api-management-advanced-policies.md#SetStatus) — меняет код состояния HTTP на указанное значение.  
-    -   [Трассировка](api-management-advanced-policies.md#Trace) — добавляет строку в выходные данные [инспектора API](https://azure.microsoft.com/documentation/articles/api-management-howto-api-inspector/).  
-    -   [Ожидание](api-management-advanced-policies.md#Wait) — ожидает завершения вложенных политик [запроса отправки](api-management-advanced-policies.md#SendRequest), [получения значения из кэша](api-management-caching-policies.md#GetFromCacheByKey) или [управления потоком](api-management-advanced-policies.md#choose) перед продолжением.  
+    -   [Трассировка](api-management-advanced-policies.md#Trace) . Добавляет пользовательские трассировки в выходные данные [инспектора API](https://azure.microsoft.com/documentation/articles/api-management-howto-api-inspector/) , Application Insights телеметрии и журналы диагностики.  
+    -   [Ожидание](api-management-advanced-policies.md#Wait) — ожидает завершения вложенных политик [отправки запроса](api-management-advanced-policies.md#SendRequest), [получения значения из кэша](api-management-caching-policies.md#GetFromCacheByKey) или [управления потоком](api-management-advanced-policies.md#choose) перед продолжением.  
 -   [Политики аутентификации](api-management-authentication-policies.md#AuthenticationPolicies)  
     -   [Обычная проверка подлинности](api-management-authentication-policies.md#Basic) – обычная проверка подлинности внутренней службы.  
     -   [Аутентификация с помощью сертификата клиента](api-management-authentication-policies.md#ClientCertificate) – аутентификация внутренней службы с помощью сертификатов клиентов.  

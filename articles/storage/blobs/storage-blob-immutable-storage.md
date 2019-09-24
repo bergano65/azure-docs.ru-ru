@@ -9,14 +9,14 @@ ms.date: 06/01/2019
 ms.author: tamram
 ms.reviewer: hux
 ms.subservice: blobs
-ms.openlocfilehash: aa6bee9cceffc0252dd39d85ebe9d70625e33419
-ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
+ms.openlocfilehash: 6278b16221072b9b5bca371007296806454ba197
+ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71036408"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71212426"
 ---
-# <a name="store-business-critical-data-in-azure-blob-storage"></a>Хранение критически важных для бизнеса данных в хранилище BLOB-объектов Azure
+# <a name="store-business-critical-data-in-azure-blob-storage-immutably"></a>Хранение критически важных для бизнеса данных в хранилище BLOB-объектов Azure иммутабли 
 
 Неизменяемое хранилище для хранилища BLOB-объектов Azure позволяет пользователям хранить критически важные для бизнеса объекты данных в ЧЕРВе (однократная запись, считывание из множества). Это состояние делает их нестираемыми и неизменяемыми в течение определенного пользователем интервала времени. Объекты больших двоичных объектов могут быть созданы и считаны, но не изменены или удалены в течение интервала хранения. Неизменяемое хранилище включено для учетных записей хранения общего назначения v2 и BLOB-объектов во всех регионах Azure.
 

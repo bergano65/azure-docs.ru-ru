@@ -1,5 +1,5 @@
 ---
-title: Полезные ресурсы при работе с предварительной версией Azure Sentinel | Документация Майкрософт
+title: Полезные ресурсы при работе с Azure Sentinel | Документация Майкрософт
 description: В этом документе представлен список полезных ресурсов при работе с Sentinel Azure.
 services: sentinel
 documentationcenter: na
@@ -13,27 +13,29 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 8/14/2019
+ms.date: 09/23/2019
 ms.author: rkarlin
-ms.openlocfilehash: 138efd7cba80e288c4f8831b45272f4e46c8ee3f
-ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
+ms.openlocfilehash: 6634920b1efa3cd24267aca8bcf53587754caa66
+ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69036244"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71239984"
 ---
-# <a name="useful-resources-for-working-with-azure-sentinel-preview"></a>Полезные ресурсы для работы с предварительной версией Azure Sentinel
+# <a name="useful-resources-for-working-with-azure-sentinel"></a>Полезные ресурсы для работы с Azure Sentinel
 
-> [!IMPORTANT]
-> Сейчас Azure Sentinel предоставляется в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+
 
 В этой статье перечислены ресурсы, которые могут помочь получить дополнительные сведения о работе с Sentinel.
 
 Соединители Azure Logic Apps:<https://docs.microsoft.com/connectors/>
 
-## <a name="vendor-documentation"></a>Документация поставщика
 
+## <a name="auditing-and-reporting"></a>Аудит и создание отчетов
+Журналы аудита для Azure Sentinel хранятся в [журналах действий Azure](../azure-monitor/platform/activity-logs-overview.md).
+
+
+## <a name="vendor-documentation"></a>Документация поставщика
 
 | **поставщик**  | **Использование инцидента в Azure Sentinel** | **Ссылка**|
 |----|----|----|

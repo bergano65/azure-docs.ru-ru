@@ -1,5 +1,5 @@
 ---
-title: Подключение данных F5 к предварительной версии Azure Sentinel | Документация Майкрософт
+title: Подключение данных F5 к Azure Sentinel | Документация Майкрософт
 description: Узнайте, как подключить данные F5 к Azure Sentinel.
 services: sentinel
 documentationcenter: na
@@ -13,27 +13,25 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 07/31/2019
+ms.date: 09/23/2019
 ms.author: rkarlin
-ms.openlocfilehash: 7ad95515ff58e2990102fa2b71d0ce66d4377617
-ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
+ms.openlocfilehash: 64ea16b6e5a2821db4f053928e4b95ba80d177dd
+ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68679294"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71240010"
 ---
 # <a name="connect-your-f5-appliance"></a>Подключение устройства F5
 
-> [!IMPORTANT]
-> Сейчас Azure Sentinel предоставляется в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+
 
 Вы можете подключить метку Azure к любому устройству F5, сохранив файлы журнала как syslog CEF. Интеграция с Azure Sentinel позволяет легко выполнять анализ и запросы к данным файла журнала с помощью клавиши F5. Дополнительные сведения о том, как Azure Sentinel принимает данные CEF, см. в разделе [Connect CEF Appliances](connect-common-event-format.md).
 
 > [!NOTE]
 > Данные будут храниться в географическом расположении рабочей области, на которой вы используете метку Azure.
 
-## <a name="step-1-connect-your-f5-appliance-using-an-agent"></a>Шаг 1.: Подключение устройства F5 с помощью агента
+## <a name="step-1-connect-your-f5-appliance-using-an-agent"></a>Шаг 1. Подключение устройства F5 с помощью агента
 
 Чтобы подключить устройство F5 к Azure Sentinel, необходимо развернуть агент на выделенном компьютере (виртуальную машину или локально) для поддержки взаимодействия между устройством и Sentinel-метками Azure.
 
@@ -71,7 +69,7 @@ ms.locfileid: "68679294"
  1. Убедитесь, что в журнале агента нет ошибок, выполнив следующую команду:`tail /var/opt/microsoft/omsagent/log/omsagent.log`
 
 
-## <a name="step-2-forward-f5-logs-to-the-syslog-agent"></a>Шаг 2.: Пересылка журналов F5 в агент системного журнала
+## <a name="step-2-forward-f5-logs-to-the-syslog-agent"></a>Шаг 2. Пересылка журналов F5 в агент системного журнала
 
 Настройте F5 для пересылки сообщений системного журнала в формате CEF в рабочую область Azure с помощью агента syslog:
 
@@ -130,5 +128,5 @@ ms.locfileid: "68679294"
 ## <a name="next-steps"></a>Следующие шаги
 В этом документе вы узнали, как подключить устройства F5 к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [получить представление о данных и потенциальных угрозах](quickstart-get-visibility.md).
-- Приступая [к обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats.md).
+- Приступая [к обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).
 

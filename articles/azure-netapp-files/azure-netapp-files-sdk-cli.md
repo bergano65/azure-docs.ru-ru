@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 08/28/2019
 ms.author: b-juche
-ms.openlocfilehash: a99fb3b61d8193f1671fa1d8e228439941659d57
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: 09a1e48d2eb9ab9b117cb1b1161d5137607400ad
+ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70141162"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71212097"
 ---
 # <a name="azure-netapp-files-sdks-and-cli-tools"></a>Пакеты SDK для Azure NetApp Files и средства CLI
 
@@ -33,7 +33,7 @@ ms.locfileid: "70141162"
 |------------------|--------------------------------------------------------------|
 |    .NET  |    [Azure/Azure-SDK-for-NET](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/netapp)    |
 |    Python  |  [Azure/Azure-SDK — для — Python](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/netapp)    |
-|    Вперед    |    [Azure/Azure-SDK — для Go](https://github.com/Azure/azure-sdk-for-go/tree/master/services/netapp)       |
+|    Go    |    [Azure/Azure-SDK — для Go](https://github.com/Azure/azure-sdk-for-go/tree/master/services/netapp)       |
 |    Java |     [Azure/Azure-SDK-for-Java](https://github.com/Azure/azure-sdk-for-java/tree/master/netapp/resource-manager) |
 |    JavaScript    |    [Azure/Azure-SDK-for-JS](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/netapp/arm-netapp)    |
 |    Ruby   |    [Azure/Azure-SDK-for-Ruby](https://github.com/Azure/azure-sdk-for-ruby/tree/master/management/azure_mgmt_netapp)    |

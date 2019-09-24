@@ -9,12 +9,12 @@ ms.author: robreed
 ms.date: 05/22/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: f4816ea2dc67df717e46df61c955d6d156b14d7e
-ms.sourcegitcommit: 2ed6e731ffc614f1691f1578ed26a67de46ed9c2
+ms.openlocfilehash: 253e01b6bfa6609b4ec41d69a3c4b1bbe405ba5a
+ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71129681"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71240290"
 ---
 # <a name="update-management-solution-in-azure"></a>Решение для управления обновлениями в Azure
 
@@ -71,11 +71,11 @@ ms.locfileid: "71129681"
 
 ### <a name="supported-client-types"></a>Поддерживаемые типы клиентов
 
-В следующей таблице перечислены поддерживаемые операционные системы.
+В следующей таблице приведен список поддерживаемых операционных систем для оценки обновлений. Для установки исправлений требуется Гибридная Рабочая роль Runbook. Сведения о требованиях гибридной рабочей роли Runbook см. в руководствах по установке для [Windows роли Runbook](automation-windows-hrw-install.md#installing-the-windows-hybrid-runbook-worker) и [Linux роли Runbook](automation-linux-hrw-install.md#installing-a-linux-hybrid-runbook-worker).
 
 |Операционная система  |Примечания  |
 |---------|---------|
-|Windows Server 2019 (Datacenter/Datacenter Core/Standard)<br><br>Windows Server 2016 (Datacenter/Datacenter Core/Standard)<br><br>Windows Server 2012 R2 (Datacenter/Standard)<br><br>Windows Server 2012<br><br>Windows Server 2008 R2 (RTM и SP1 Standard)|**Оценка обновлений**: Поддерживается<br><br>**Установка исправлений**: Требуется Гибридная Рабочая роль Runbook. См. раздел [требования гибридной рабочей роли Runbook](automation-windows-hrw-install.md#installing-the-windows-hybrid-runbook-worker)|
+|Windows Server 2019 (Datacenter/Datacenter Core/Standard)<br><br>Windows Server 2016 (Datacenter/Datacenter Core/Standard)<br><br>Windows Server 2012 R2 (Datacenter/Standard)<br><br>Windows Server 2012<br><br>Windows Server 2008 R2 (RTM и SP1 Standard)||
 |CentOS 6 (x86 или x64) и 7 (x64).      | У агентов Linux должен быть доступ к репозиторию обновлений. Для исправления на основе классификации требуется, чтобы программа yum вернула данные безопасности, которых нет в CentOS, без дополнительной настройки. Дополнительные сведения об исправлениях на основе классификации в CentOS см. в [статье классификации обновлений в Linux](#linux-2) .          |
 |Red Hat Enterprise 6 (x86 или x64) и 7 (x64).     | У агентов Linux должен быть доступ к репозиторию обновлений.        |
 |SUSE Linux Enterprise Server 11 (x86 или x64) и 12 (x64)     | У агентов Linux должен быть доступ к репозиторию обновлений.        |
@@ -249,6 +249,9 @@ Heartbeat
 | Перезагрузка элемента управления| Определяет, как следует выполнять перезагрузку. Доступные параметры:</br>Перезагрузка при необходимости (по умолчанию)</br>Всегда выполнять перезагрузку</br>Никогда не перезагружать</br>Только перезагрузка без установки обновлений.|
 
 Развертывания обновлений также можно создать программно. Чтобы узнать, как создать развертывание обновлений с помощью REST API, ознакомьтесь со статьей [Software Update Configurations — Create](/rest/api/automation/softwareupdateconfigurations/create) (Конфигурации обновления программного обеспечения. Создание). Кроме того, имеется пример модуля runbook, который можно использовать для создания развертывания еженедельного обновления. Дополнительные сведения об этом модуле runbook см. в статье [Create a weekly update deployment for one or more VMs in a resource group](https://gallery.technet.microsoft.com/scriptcenter/Create-a-weekly-update-2ad359a1) (Создание развертывания еженедельного обновления для одной или нескольких виртуальных машин в группе ресурсов).
+
+> [!NOTE]
+> Разделы реестра, перечисленные в разделе [разделы реестра, используемые для управления перезапуском](/windows/deployment/update/waas-restart#registry-keys-used-to-manage-restart) , могут вызвать событие перезагрузки, если для параметра **контроль** перезагрузки задано значение **никогда не перезагружаться**.
 
 ### <a name="maintenance-windows"></a>Периоды обслуживания
 

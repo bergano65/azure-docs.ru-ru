@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: article
 ms.date: 09/16/2019
 ms.author: kumud
-ms.openlocfilehash: 46c08f48efc00c1e4d88ceccb680c0cfd1671b2f
-ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
+ms.openlocfilehash: 30994133b19c4f59ae9e8be26caffe14348638f6
+ms.sourcegitcommit: 3fa4384af35c64f6674f40e0d4128e1274083487
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71203575"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71219370"
 ---
 # <a name="create-a-private-endpoint-using-azure-cli"></a>Создание частной конечной точки с помощью Azure CLI
 Частная конечная точка — это фундаментальный Стандартный блок для частной ссылки в Azure. Она позволяет ресурсам Azure, таким как виртуальные машины, обмениваться данными с частными ресурсами. В этом кратком руководстве вы узнаете, как создать виртуальную машину в виртуальной сети, сервере базы данных SQL с частной конечной точкой, использующей Azure CLI. Затем вы можете получить доступ к виртуальной машине и получить безопасный доступ к ресурсу частной ссылки (в этом примере это частный сервер базы данных SQL Azure). 
@@ -144,7 +144,7 @@ az network private-dns record-set a add-record --record-set-name myserver --zone
 
 1. Когда появится рабочий стол виртуальной машины, сверните его, чтобы вернуться на локальный рабочий стол.  
 
-## <a name="access-dql-database-server-privately-from-the-vm"></a>Доступ к серверу базы данных DQL в частном порядке с виртуальной машины
+## <a name="access-sql-database-server-privately-from-the-vm"></a>Доступ к серверу базы данных SQL в частном порядке с виртуальной машины
 
 В этом разделе вы будете подключаться к серверу базы данных SQL из виртуальной машины с помощью частной конечной точки.
 

@@ -5,14 +5,14 @@ services: batch
 ms.service: batch
 author: laurenhughes
 ms.author: lahugh
-ms.date: 09/10/2019
+ms.date: 09/19/2019
 ms.topic: conceptual
-ms.openlocfilehash: 2b0a132c156cc12d317bf51488625191bb8091fc
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.openlocfilehash: 30a365b36645dfe79f35b4bb889c0a06535a4c73
+ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70881463"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71212725"
 ---
 # <a name="pre-installed-applications-on-rendering-vm-images"></a>Предварительно установленные приложения в образах виртуальных машин для рендеринга
 
@@ -39,6 +39,37 @@ ms.locfileid: "70881463"
 
 ## <a name="applications-on-latest-windows-server-2016-rendering-images"></a>Приложения на последних изображениях отрисовки Windows Server 2016
 
+Приведенный ниже список относится к образам визуализации Windows Server 2016, версия 1.3.8.
+
+* Autodesk Maya I/O 2017 обновление 5 (версия 17.4.5459);
+* Autodesk Maya I/O 2018 с обновлением 6 (версия 18.4.0.7622)
+* Autodesk Maya ввода-вывода 2019
+* Autodesk 3ds Max I/O 2018 обновление 4 (версия 20.4.0.4254);
+* Autodesk 3ds Max I/O 2019 обновление 1 (версия 21.2.0.2219);
+* Autodesk 3ds Max I/O 2020 с обновлением 2
+* Autodesk Arnold для Maya 2017 (Arnold версии 5.3.0.2) Мтоа-3.2.0.2-2017
+* Autodesk Arnold для Maya 2018 (Arnold версии 5.3.0.2) Мтоа-3.2.0.2-2018
+* Autodesk Arnold для Maya 2019 (Arnold версии 5.3.0.2) Мтоа-3.2.0.2-2019
+* Autodesk Arnold для 3ds Max 2018 (Arnold версия 5.3.0.2) (версия 1.2.926)
+* Autodesk Arnold для 3ds Max 2019 (Arnold версия 5.3.0.2) (версия 1.2.926)
+* Autodesk Arnold для 3ds Max 2020 (Arnold версия 5.3.0.2) (версия 1.2.926)
+* Chaos Group V-Ray для Maya 2017 (версия 4.12.01)
+* Chaos Group V-Ray для Maya 2018 (версия 4.12.01)
+* Chaos Group V-Ray для Maya 2019 (версия 4.04.03)
+* Chaos Group V-Ray для 3ds Max 2018 (версия 4.20.01)
+* Chaos Group V-Ray для 3ds Max 2019 (версия 4.20.01)
+* Chaos Group V-Ray для 3ds Max 2020 (версия 4.20.01)
+* Blender (2.79).
+* Наложение (2,80)
+* AZ 10
+
+> [!IMPORTANT]
+> Чтобы запустить V-Ray с Maya за пределами [шаблонов расширений пакетной](https://github.com/Azure/batch-extension-templates)службы `vrayses.exe` Azure, запустите перед выполнением подготовки к просмотру. Чтобы запустить врайсес. exe за пределами шаблонов, можно использовать следующую команду `%MAYA_2017%\vray\bin\vrayses.exe"`.
+>
+> Пример см. в описании задачи запуска [шаблона Maya и V-Ray](https://github.com/Azure/batch-extension-templates/blob/master/templates/maya/render-vray-windows/pool.template.json) на сайте GitHub.
+
+## <a name="applications-on-previous-windows-server-2016-rendering-images"></a>Приложения на предыдущих изображениях подготовки к просмотру Windows Server 2016
+
 Приведенный ниже список относится к образам визуализации Windows Server 2016, версия 1.3.7.
 
 * Autodesk Maya I/O 2017 обновление 5 (версия 17.4.5459);
@@ -55,24 +86,8 @@ ms.locfileid: "70881463"
 * Chaos Group V-Ray для 3ds Max 2019 (версия 4.10.01)
 * Blender (2.79).
 
-
 > [!NOTE]
 > Chaos Group V-Ray для 3ds Max 2019 (версия 4.10.01) вводит критические изменения в V-Ray. Чтобы использовать предыдущую версию (Version 3.60.02), используйте узлы отрисовки Windows Server 2016, версия 1.3.2.
-
-## <a name="applications-on-previous-windows-server-2016-rendering-images"></a>Приложения на предыдущих изображениях подготовки к просмотру Windows Server 2016
-
-Приведенный ниже список относится к образам визуализации Windows Server 2016, версия 1.3.2.
-
-* Autodesk Maya I/O 2017 обновление 5 (версия 17.4.5459);
-* Autodesk Maya I/O 2018 обновление 4 (версия 18.4.0.7622);  
-* Autodesk 3ds Max I/O 2019 обновление 1 (версия 21.2.0.2219);
-* Autodesk 3ds Max I/O 2018 обновление 4 (версия 20.4.0.4254);
-* Autodesk Arnold for Maya 2017 (Arnold версии 5.2.0.1) MtoA-3.1.0.1-2017;
-* Autodesk Arnold for Maya 2018 (Arnold версии 5.2.0.1) MtoA-3.1.0.1-2018;
-* Autodesk Arnold for 3ds Max (Arnold версии 5.0.2.4) (версия 1.2.926);
-* Chaos Group V-Ray для Maya 2019 (версия 3.52.03)
-* Chaos Group V-Ray для 3ds Max 2018 (версия 3.60.02)
-* Blender (2.79).
 
 ## <a name="next-steps"></a>Следующие шаги
 

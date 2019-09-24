@@ -1,32 +1,29 @@
 ---
-title: Подключение данных Azure ATP к предварительной версии Azure Sentinel | Документация Майкрософт
+title: Подключение данных Azure ATP к Azure Sentinel | Документация Майкрософт
 description: Узнайте, как подключить данные Azure ATP к Azure Sentinel.
 services: sentinel
 documentationcenter: na
 author: rkarlin
 manager: rkarlin
 editor: ''
-ms.assetid: 5bf3cc44-ecda-4c78-8a63-31ab42f43605
 ms.service: azure-sentinel
 ms.subservice: azure-sentinel
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 07/28/2019
+ms.date: 09/23/2019
 ms.author: rkarlin
-ms.openlocfilehash: 6f41a5704c783ba8aeab7bc2e82ef731c6a257ac
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: ebb727055296ba7886a9307ada113ab5a6e0c9e0
+ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68599158"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71240192"
 ---
-# <a name="connect-data-from-azure-advanced-threat-protection-atp"></a>Подключение данных из Azure Advanced Threat protection (ATP)
+# <a name="connect-data-from-azure-advanced-threat-protection-atp---preview"></a>Подключение данных из Azure Advanced Threat protection (ATP) — Предварительная версия
 
-> [!IMPORTANT]
-> Сейчас Azure Sentinel предоставляется в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+
 
 
 Вы можете выполнить потоковую передачу журналов из [Azure Advanced Threat protection](https://docs.microsoft.com/azure-advanced-threat-protection/what-is-atp) в метку Azure одним щелчком мыши.
@@ -46,12 +43,17 @@ ms.locfileid: "68599158"
 
 1. В поле Sentinel Azure выберите **соединители данных** , а затем щелкните плитку **Azure ATP** .
 
-2. Щелкните **Подключить**.
+1. Вы можете выбрать, будут ли оповещения из Azure ATP автоматически создавать инциденты в Azure Sentinel автоматически. В разделе **Создание инцидентов** выберите **включить** , чтобы включить правило аналитики по умолчанию, которое автоматически создает инциденты на основе предупреждений, созданных в подключенной службе безопасности. Затем можно изменить это правило в разделе **аналитика** , а затем — **активные правила**.
 
-6. Чтобы использовать соответствующую схему в Log Analytics для оповещений Azure ATP, выполните поиск по запросу **секуритялерт**.
+1. Щелкните **Подключить**.
+
+1. Чтобы использовать соответствующую схему в Log Analytics для оповещений Azure ATP, выполните поиск по запросу **секуритялерт**.
+
+> [!NOTE]
+> Если размер оповещений превышает 30 КБ, то Azure Sentinel прекращает отображать поле сущности в предупреждениях.
 
 ## <a name="next-steps"></a>Следующие шаги
 В этом документе вы узнали, как подключить Azure Advanced Threat protection к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [получить представление о данных и потенциальных угрозах](quickstart-get-visibility.md).
-- Приступая [к обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats.md).
+- Приступая [к обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).
 

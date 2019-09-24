@@ -78,7 +78,7 @@ ms.locfileid: "70092755"
 | Название | Значение/пример |
 | ---- | ---- |
 | apiVersion | 2015-01-01 |
-| publisher | Microsoft.Azure.Monitoring.DependencyAgent |
+| publisher | Microsoft. Azure. Monitoring. Депенденциажент |
 | type | DependencyAgentWindows |
 | typeHandlerVersion | 9.5 |
 

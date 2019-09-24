@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 03/25/2019
 ms.custom: seodec18
-ms.openlocfilehash: 2f7ad49fc56fc82955f79155838c69ff714aba2f
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: bd51e70122a5457c8dcf1bd8f2061fe25943e87f
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68845862"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "71224509"
 ---
 # <a name="azure-disk-encryption-prerequisites"></a>Предварительные требования для шифрования дисков Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "68845862"
 
 ## <a name="supported-vm-sizes"></a>Поддерживаемые размеры виртуальных машин
 
-Шифрование дисков Azure недоступно на [виртуальных машинах серии A (Basic)](/pricing/details/virtual-machines/series/). Шифрование дисков Azure доступно на других виртуальных машинах, отвечающих следующим минимальным требованиям к памяти:
+Шифрование дисков Azure недоступно на [виртуальных машинах серии A (Basic)](https://azure.microsoft.com/pricing/details/virtual-machines/series/). Шифрование дисков Azure доступно на других виртуальных машинах, отвечающих следующим минимальным требованиям к памяти:
 
 | Виртуальная машина | Минимальные требования к памяти |
 |--|--|
@@ -59,7 +59,7 @@ ms.locfileid: "68845862"
 
 ### <a name="linux"></a>Linux 
 
-Шифрование дисков Azure поддерживается в подмножестве дистрибутивов [Linux](../virtual-machines/linux/endorsed-distros.md), рекомендованных Azure, которые являются подмножеством всех возможных дистрибутивов Linux Server.
+Шифрование дисков Azure поддерживается в подмножестве [дистрибутивов Linux](../virtual-machines/linux/endorsed-distros.md), рекомендованных Azure, которые являются подмножеством всех возможных дистрибутивов Linux Server.
 
 ![Диаграмма Венна для дистрибутивов Linux Server, поддерживающих шифрование дисков Azure](./media/azure-security-disk-encryption-faq/ade-supported-distros.png)
 

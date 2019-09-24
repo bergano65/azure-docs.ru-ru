@@ -12,12 +12,12 @@ ms.workload: infrastructure-services
 ms.date: 05/31/2019
 ms.author: kumud
 ms.reviewer: tyao
-ms.openlocfilehash: d2d52d2faf9122b7dc87f71ac7b1be53eaa99878
-ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
+ms.openlocfilehash: adca1bdd0cf525627cc284b1c0d3509beddef131
+ms.sourcegitcommit: 3fa4384af35c64f6674f40e0d4128e1274083487
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69534986"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71219387"
 ---
 # <a name="configure-an-ip-restriction-rule-with-a-web-application-firewall-for-azure-front-door-service"></a>Настройка правила ограничения IP-адресов с брандмауэром веб-приложения для службы "Передняя дверь" Azure
 В этой статье показано, как настроить правила ограничения IP-адресов в брандмауэре веб-приложения (WAF) для службы "Передняя дверь" Azure с помощью Azure CLI, Azure PowerShell или шаблона Azure Resource Manager.
@@ -25,6 +25,8 @@ ms.locfileid: "69534986"
 Правило управления доступом на основе IP-адресов — это настраиваемое правило WAF, которое позволяет управлять доступом к веб-приложениям. Для этого нужно указать список IP-адресов или диапазонов IP-адресов в формате междоменной маршрутизации (CIDR) без классов.
 
 По умолчанию веб-приложение доступно через Интернет. Если требуется ограничить доступ клиентов из списка известных IP-адресов или диапазонов IP-адресов, можно создать правило сопоставления IP-адресов, содержащее список IP-адреса в качестве совпадающих значений и задать оператору значение "не" (отрицание имеет значение true) и действие для **блокировки**. После применения правила ограничения IP-адресов запросы, поступающие за пределы этого списка разрешенных, получают ответ 403.  
+
+IP-адрес клиента может отличаться от IP-адреса, WAF, например, когда клиент обращается к WAF через прокси-сервер. Правила ограничения IP-адресов можно создать на основе IP-адреса клиента (Ремотеаддр) или IP-адресов сокетов, которые видят WAF (Соккетаддр). 
 
 ## <a name="configure-a-waf-policy-with-the-azure-cli"></a>Настройка политики WAF с помощью Azure CLI
 
@@ -56,7 +58,7 @@ az network front-door waf-policy create \
 -  Замените *ипалловполициексамплекли* своей уникальной политикой, созданной ранее.
 -  Замените *IP-Address-Range-1*, *IP-Address-Range-2* своим собственным диапазоном.
 
-Сначала создайте правило IP-разрешения для политики, созданной на предыдущем шаге. Примечание . требуется отсрочка, так как правило должно включать хотя бы одно условие соответствия. 
+Сначала создайте правило IP-разрешения для политики, созданной на предыдущем шаге. Примечание. требуется **отсрочка** , так как правило должно включать хотя бы одно условие соответствия. 
 
 ```azurecli
 az network front-door waf-policy rule create \
@@ -67,7 +69,7 @@ az network front-door waf-policy rule create \
   --resource-group <resource-group-name> \
   --policy-name IPAllowPolicyExampleCLI --defer
 ```
-Затем добавьте условие соответствия в правило:
+Затем добавьте условие соответствия IP-адресов клиента в правило:
 
 ```azurecli
 az network front-door waf-policy rule match-condition add\
@@ -79,9 +81,19 @@ az network front-door waf-policy rule match-condition add\
   --resource-group <resource-group-name> \
   --policy-name IPAllowPolicyExampleCLI 
   ```
-                                                   
-### <a name="find-the-id-of-a-waf-policy"></a>Поиск идентификатора политики WAF 
-Найдите идентификатор политики WAF с помощью команды [AZ Network Front-двери WAF-Policy показывать](/cli/azure/ext/front-door/network/front-door/waf-policy?view=azure-cli-latest#ext-front-door-az-network-front-door-waf-policy-show) . Замените *ипалловполициексамплекли* в следующем примере своей уникальной политикой, созданной ранее.
+Для условия соответствия IP-адреса сокета (Соккетаддр):
+  ```azurecli
+az network front-door waf-policy rule match-condition add\
+--match-variable SocketAddr \
+--operator IPMatch
+--values "ip-address-range-1" "ip-address-range-2"
+--negate true\
+--name IPAllowListRule\
+  --resource-group <resource-group-name> \
+  --policy-name IPAllowPolicyExampleCLI                                                  
+
+### Find the ID of a WAF policy 
+Find a WAF policy's ID by using the [az network front-door waf-policy show](/cli/azure/ext/front-door/network/front-door/waf-policy?view=azure-cli-latest#ext-front-door-az-network-front-door-waf-policy-show) command. Replace *IPAllowPolicyExampleCLI* in the following example with your unique policy that you created earlier.
 
    ```azurecli
    az network front-door  waf-policy show \
@@ -141,7 +153,17 @@ $IPMatchCondition = New-AzFrontDoorWafMatchConditionObject `
 -MatchValue "ip-address-range-1", "ip-address-range-2"
 -NegateCondition 1
 ```
-     
+
+Для условия соответствия IP-адреса сокета (Соккетаддр):   
+```powershell
+$IPMatchCondition = New-AzFrontDoorWafMatchConditionObject `
+-MatchVariable  SocketAddr `
+-OperatorProperty IPMatch `
+-MatchValue "ip-address-range-1", "ip-address-range-2"
+-NegateCondition 1
+```
+
+
 ### <a name="create-a-custom-ip-allow-rule"></a>Создание настраиваемого правила IP-адресов
 
 Используйте команду [New-азфронтдуркустомрулеобжект](/powershell/module/Az.FrontDoor/New-azfrontdoorwafcustomruleobject) , чтобы определить действие и задать приоритет. В следующем примере запросы, не являющиеся IP-адресами клиентов, которые соответствуют списку, будут заблокированы.

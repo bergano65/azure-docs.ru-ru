@@ -4,7 +4,7 @@ summary: Azure Data Lake Analytics позволяет запускать зад�
 metadata:
   title: Аналитика озера данных Azure
   description: Azure Data Lake Analytics позволяет запускать задания анализа больших данных с масштабированием до больших наборов данных.
-  services: service
+  services: data-lake-analytics
   ms.service: data-lake-analytics
   ms.subservice: subservice
   ms.topic: landing-page
@@ -12,12 +12,12 @@ metadata:
   author: hrasheed-msft
   ms.author: hrasheed
   ms.date: 09/13/2019
-  ms.openlocfilehash: a370cf424d7ebdf32fcdd2e0f8653e2e36b7162b
-  ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
+  ms.openlocfilehash: 789144730d99a0686856cee29f77227698154cbc
+  ms.sourcegitcommit: 3fa4384af35c64f6674f40e0d4128e1274083487
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 09/14/2019
-  ms.locfileid: "70997253"
+  ms.lasthandoff: 09/24/2019
+  ms.locfileid: "71220011"
 landingContent:
 - title: Сведения о Data Lake Analytics
   linkLists:

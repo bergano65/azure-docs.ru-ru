@@ -2,9 +2,9 @@
 title: Отправка push-уведомлений определенным пользователям с помощью службы "Центры уведомлений Azure" | Документация Майкрософт
 description: Узнайте, как использовать службу "Центры уведомлений Azure" для отправки push-уведомлений определенным пользователям.
 documentationcenter: ios
-author: jwargo
-manager: patniko
-editor: spelluru
+author: sethm
+manager: femila
+editor: jwargo
 services: notification-hubs
 ms.assetid: 1f7d1410-ef93-4c4b-813b-f075eed20082
 ms.service: notification-hubs
@@ -13,15 +13,17 @@ ms.tgt_pltfrm: ios
 ms.devlang: objective-c
 ms.topic: article
 ms.date: 01/04/2019
-ms.author: jowargo
-ms.openlocfilehash: 9b6c0715cb85e245aba94adfb8b33d0d07ece9a9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: sethm
+ms.reviewer: jowargo
+ms.lastreviewed: 01/04/2019
+ms.openlocfilehash: 85461f72d4385805e2aa13691a574a2161036ca5
+ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60880490"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71212234"
 ---
-# <a name="tutorial-push-notifications-to-specific-users-using-azure-notification-hubs"></a>Руководство по Отправка push-уведомлений определенным пользователям с помощью службы "Центры уведомлений Azure"
+# <a name="tutorial-push-notifications-to-specific-users-using-azure-notification-hubs"></a>Учебник. Отправка push-уведомлений определенным пользователям с помощью службы "Центры уведомлений Azure"
 
 [!INCLUDE [notification-hubs-selector-aspnet-backend-notify-users](../../includes/notification-hubs-selector-aspnet-backend-notify-users.md)]
 
@@ -38,7 +40,7 @@ ms.locfileid: "60880490"
 > * Изменение приложения iOS
 > * Тестирование приложения
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В этом учебнике подразумевается, что вы создали и настроили центр уведомлений, как описано в руководстве [Приступая к работе с центрами уведомлений (iOS)](notification-hubs-ios-apple-push-notification-apns-get-started.md). Это руководство также необходимо изучить перед переходом к руководству [Безопасные push-уведомления для концентраторов уведомлений Azure](notification-hubs-aspnet-backend-ios-push-apple-apns-secure-notification.md).
 Если вы хотите использовать мобильные приложения в качестве внутренней службы, см. статью [Добавление push-уведомлений в приложение iOS](../app-service-mobile/app-service-mobile-ios-get-started-push.md).
@@ -54,7 +56,7 @@ ms.locfileid: "60880490"
 
 2. В файл `Main.storyboard` добавьте компоненты из библиотеки объектов, показанные на снимке экрана.
 
-    ![Изменение раскадровки в построителе интерфейса Xcode][1]
+    ![Изменение раскадровки в конструкторе интерфейса Xcode][1]
 
    * **Имя пользователя**. Текстовое поле UITextField с замещающим текстом *Введите имя пользователя*, расположенное под меткой отправки результатов, справа, слева и сверху ограниченное полями.
    * **Пароль**. Текстовое поле UITextField с замещающим текстом *Ввод пароля*, расположенное под текстовым полем имени пользователя, справа, слева и сверху ограниченное полями. Отметьте параметр **Защищенный ввод текста** в инспекторе атрибутов в разделе *Символ вывода*.
@@ -483,7 +485,7 @@ ms.locfileid: "60880490"
 
     ![Тестирование приложения iOS][2]
 
-3. Должно отобразиться всплывающее окно с сообщением об успешной регистрации. Последовательно выберите **ОК**.
+3. Должно отобразиться всплывающее окно с сообщением об успешной регистрации. Нажмите кнопку **ОК**.
 
     ![Отображение уведомления о тестировании iOS][3]
 
@@ -492,7 +494,7 @@ ms.locfileid: "60880490"
 
     ![Отправка уведомлений тестирования iOS с тегами][4]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом руководстве вы узнали, как отправлять push-уведомления определенным пользователям, с регистрацией которых связаны теги. Чтобы узнать, как отправлять push-уведомления на основе расположения, перейдите к следующему руководству: 
 

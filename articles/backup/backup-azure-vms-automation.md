@@ -7,12 +7,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 09/11/2019
 ms.author: dacurwin
-ms.openlocfilehash: 372851686b43e6d2caf4695b988789990077e8fe
-ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
+ms.openlocfilehash: f1aa2c4b6fbe554304bfff239c6220d245fe7467
+ms.sourcegitcommit: 3fa4384af35c64f6674f40e0d4128e1274083487
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71090853"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71219454"
 ---
 # <a name="back-up-and-restore-azure-vms-with-powershell"></a>Резервное копирование и восстановление виртуальных машин Azure с помощью PowerShell
 
@@ -320,9 +320,9 @@ Set-AzRecoveryServicesBackupProtectionPolicy -Policy $pol  -RetentionPolicy $Ret
 > Начиная с AZ PS версии 1.6.0, можно обновить период хранения моментальных снимков мгновенного восстановления в политике с помощью PowerShell.
 
 ````powershell
-$bkpPol = Get-AzureRmRecoveryServicesBackupProtectionPolicy -WorkloadType "AzureVM" -VaultId $targetVault.ID
+$bkpPol = Get-AzRecoveryServicesBackupProtectionPolicy -WorkloadType "AzureVM" -VaultId $targetVault.ID
 $bkpPol.SnapshotRetentionInDays=7
-Set-AzureRmRecoveryServicesBackupProtectionPolicy -policy $bkpPol -VaultId $targetVault.ID
+Set-AzRecoveryServicesBackupProtectionPolicy -policy $bkpPol -VaultId $targetVault.ID
 ````
 
 Значение по умолчанию равно 2, пользователь может задать значение min, равное 1, и максимум 5. Для политик еженедельного резервного копирования точка имеет значение 5 и не может быть изменена.
@@ -507,8 +507,8 @@ $details = Get-AzRecoveryServicesBackupJobDetails -Job $restorejob -VaultId $tar
 
 Чтобы заменить диски и сведения о конфигурации, выполните следующие действия.
 
-- Шаг 1.: [Восстановление дисков](backup-azure-vms-automation.md#restore-the-disks)
-- Шаг 2.: [Отсоединение диска данных с помощью PowerShell](https://docs.microsoft.com/azure/virtual-machines/windows/detach-disk#detach-a-data-disk-using-powershell)
+- Шаг 1. [Восстановление дисков](backup-azure-vms-automation.md#restore-the-disks)
+- Шаг 2. [Отсоединение диска данных с помощью PowerShell](https://docs.microsoft.com/azure/virtual-machines/windows/detach-disk#detach-a-data-disk-using-powershell)
 - Шаг 3. [Подключение диска данных к виртуальной машине Windows с помощью PowerShell](https://docs.microsoft.com/azure/virtual-machines/windows/attach-disk-ps)
 
 

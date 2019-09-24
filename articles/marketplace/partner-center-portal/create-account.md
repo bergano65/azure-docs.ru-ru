@@ -7,12 +7,12 @@ ms.author: parthp
 ms.service: marketplace
 ms.topic: guide
 ms.date: 09/10/2019
-ms.openlocfilehash: fd1da6a43e4c1d7d6b66d5dbacb2d7a587c2856a
-ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.openlocfilehash: 9d19b31ccce8feeb2d5ce12353d9b79841b40724
+ms.sourcegitcommit: 3fa4384af35c64f6674f40e0d4128e1274083487
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70898683"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71219443"
 ---
 # <a name="create-a-commercial-marketplace-account-in-partner-center"></a>Создание коммерческой учетной записи Marketplace в центре партнеров
 
@@ -60,7 +60,7 @@ ms.locfileid: "70898683"
 
 ### <a name="agree-to-terms-and-conditions"></a>Принять условия
 
-Необходимо согласиться с условиями [соглашения Microsoft Marketplace издателя](http://go.microsoft.com/fwlink/?LinkID=699560).
+Необходимо согласиться с условиями [соглашения Microsoft Marketplace издателя](https://go.microsoft.com/fwlink/?LinkID=699560).
 
 ### <a name="provide-your-publisher-profile"></a>Укажите профиль издателя
 
@@ -103,7 +103,7 @@ ms.locfileid: "70898683"
 
 1. В центре партнеров выберите **Параметры** > настройки**партнеров** > **программы** > **Приступая к работе**.
 2. Microsoft Partner Network обнаружит подписку и отобразит страницу профиля издателя, чтобы ввести название организации и идентификатор MPN.
-3. Ознакомьтесь с условиями [соглашения Microsoft Marketplace издателя](http://go.microsoft.com/fwlink/?LinkID=699560), а затем выберите **принять и продолжить** , чтобы завершить регистрацию.
+3. Ознакомьтесь с условиями [соглашения Microsoft Marketplace издателя](https://go.microsoft.com/fwlink/?LinkID=699560), а затем выберите **принять и продолжить** , чтобы завершить регистрацию.
 
 После регистрации вы перейдете на страницу обзора коммерческого рынка. В левой панели навигации отобразится **коммерческое Marketplace** . Если выбрать **Параметры** > **партнерских параметров** > **программы**, вы увидите, что коммерческий магазин указан как зарегистрированный.
 

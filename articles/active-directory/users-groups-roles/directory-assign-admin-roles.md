@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 27c38b23849eef535b17657f48c1c50cc998f72f
-ms.sourcegitcommit: 116bc6a75e501b7bba85e750b336f2af4ad29f5a
+ms.openlocfilehash: 412bfee12e50b66a780f33b2bca8c4ecc61d83f7
+ms.sourcegitcommit: 3fa4384af35c64f6674f40e0d4128e1274083487
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71155006"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71219350"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Разрешения роли администратора в Azure Active Directory
 
@@ -67,8 +67,6 @@ ms.locfileid: "71155006"
 * Приглашающий гостей
 * Читатель Центра сообщений
 * Читатель отчетов
-
-Роль администратора проверки подлинности в настоящее время доступна в общедоступной предварительной версии. Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 > [!IMPORTANT]
 > Пользователи с этой ролью могут изменять учетные данные для пользователей, у которых может быть доступ к конфиденциальной, частной информации или критически важной конфигурации в службе Azure Active Directory и за ее пределами. Изменение учетных данных пользователя подразумевает возможность предполагать идентификатор и разрешения пользователя. Пример:

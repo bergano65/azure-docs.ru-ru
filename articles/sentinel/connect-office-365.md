@@ -1,32 +1,29 @@
 ---
-title: Подключение данных Office 365 к предварительной версии Azure Sentinel | Документация Майкрософт
+title: Подключение данных Office 365 к Azure Sentinel | Документация Майкрософт
 description: Узнайте, как подключить данные Office 365 к Azure Sentinel.
 services: sentinel
 documentationcenter: na
 author: rkarlin
 manager: rkarlin
 editor: ''
-ms.assetid: ff7c862e-2e23-4a28-bd18-f2924a30899d
 ms.service: azure-sentinel
 ms.subservice: azure-sentinel
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 07/31/2019
+ms.date: 09/23/2019
 ms.author: rkarlin
-ms.openlocfilehash: 39245cb43dacfeec2b647936d5e5790d4a185467
-ms.sourcegitcommit: 3f78a6ffee0b83788d554959db7efc5d00130376
+ms.openlocfilehash: 481acfdccb54077f18c1f4bf0375c0dc66e66007
+ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70018999"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71240667"
 ---
 # <a name="connect-data-from-office-365-logs"></a>Подключение данных из журналов Office 365
 
-> [!IMPORTANT]
-> Сейчас Azure Sentinel предоставляется в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+
 
 Вы можете выполнить потоковую передачу журналов аудита из [Office 365](https://docs.microsoft.com/office365/admin/admin-home?view=o365-worldwide) в Azure Sentinel одним щелчком мыши. Вы можете выполнять потоковую передачу журналов аудита из нескольких клиентов в одну рабочую область в Azure Sentinel. Соединитель журнала действий Office 365 предоставляет информацию о текущих действиях пользователей. Вы получите сведения о различных действиях пользователя, администратора, системы и политики, а также о событиях из Office 365. Подключив журналы Office 365 в Azure Sentinel, вы можете использовать эти данные для просмотра панелей мониторинга, создания пользовательских оповещений и улучшения процесса расследования.
 
@@ -36,8 +33,8 @@ ms.locfileid: "70018999"
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Необходимо быть глобальным администратором или администратором безопасности вашего клиента.
-- На компьютере, с которого вы вошли в Azure Sentinel для создания подключения, убедитесь, что порт 4433 открыт для веб-трафика.
-- Если у вашего клиента нет лицензии Office 365 E3 или Office 365, необходимо включить единый аудит на своем компьютере с помощью одного из следующих процессов:
+- На компьютере, с которого вы вошли в Azure Sentinel для создания подключения, убедитесь, что порт 4433 открыт для веб-трафика. После успешного подключения этот порт можно закрыть снова.
+- Если у вашего клиента нет лицензии Office 365 E3 или Office 365, необходимо включить единый аудит в клиенте с помощью одного из следующих процессов:
     - [С помощью командлета Set-админаудитлогконфиг](https://docs.microsoft.com/powershell/module/exchange/policy-and-compliance-audit/set-adminauditlogconfig?view=exchange-ps) и включите параметр "унифиедаудитлогинжестионенаблед").
     - [Или с помощью пользовательского интерфейса центр безопасности и соответствия требованиям](https://docs.microsoft.com/office365/securitycompliance/search-the-audit-log-in-security-and-compliance#before-you-begin).
 
@@ -58,5 +55,5 @@ ms.locfileid: "70018999"
 ## <a name="next-steps"></a>Следующие шаги
 В этом документе вы узнали, как подключить Office 365 к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [получить представление о данных и потенциальных угрозах](quickstart-get-visibility.md).
-- Приступая [к обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats.md).
+- Приступая [к обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).
 

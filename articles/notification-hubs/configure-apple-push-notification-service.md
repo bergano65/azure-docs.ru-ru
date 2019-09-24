@@ -1,37 +1,39 @@
 ---
-title: Настройка службы Apple Push-уведомлений в центрах уведомлений Azure | Документация Майкрософт
-description: Узнайте, как настроить концентратор уведомлений Azure с применением конфигурации Apple Push Notification Service (APNS).
+title: Настройка Cлужба push-уведомлений Apple в центрах уведомлений Azure | Документация Майкрософт
+description: Узнайте, как настроить центр уведомлений Azure с помощью параметров Cлужба push-уведомлений Apple (APNS).
 services: notification-hubs
-author: jwargo
-manager: patniko
-editor: spelluru
+author: sethmanheim
+manager: femila
+editor: jwargo
 ms.service: notification-hubs
 ms.workload: mobile
 ms.topic: article
 ms.date: 03/25/2019
-ms.author: jowargo
-ms.openlocfilehash: 9a9db9f05895569b050e56cdeec1ee2ee25af0df
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: sethm
+ms.reviewer: jowargo
+ms.lastreviewed: 03/25/2019
+ms.openlocfilehash: 74e7e3c74934e292b668b8bff594a5efbca19716
+ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60237816"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71212544"
 ---
-# <a name="configure-apple-push-notification-service-apns-settings-for-a-notification-hub-in-the-azure-portal"></a>Настройка параметров Apple Push Notification Service (APNS) для концентратора уведомлений на портале Azure
-В этой статье показано, как настроить параметры Apple Push Notification Service (APNS) для концентратора уведомлений Azure с помощью портала Azure. 
+# <a name="configure-apple-push-notification-service-apns-settings-for-a-notification-hub-in-the-azure-portal"></a>Настройка параметров Cлужба push-уведомлений Apple (APNS) для центра уведомлений в портал Azure
+В этой статье показано, как настроить параметры Cлужба push-уведомлений Apple (APNS) для центра уведомлений Azure с помощью портал Azure. 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 Если вы еще не создали центр уведомлений, сделайте это сейчас. Дополнительные сведения см. в статье [Создание центра уведомлений Azure с помощью портала Azure](create-notification-hub-portal.md). 
 
-## <a name="configure-apple-push-notification-service"></a>Настройка службы Push-уведомлений Apple
+## <a name="configure-apple-push-notification-service"></a>Настройка Cлужба push-уведомлений Apple
 
-В следующей процедуре представлены шаги по настройке параметров Apple Push Notification Service (APNS) для концентратора уведомлений:
+В следующей процедуре приведены действия по настройке параметров Cлужба push-уведомлений Apple (APNS) для центра уведомлений.
 
-1. На портале Azure на **концентратора уведомлений** выберите **Apple (APNS)** в меню слева.
+1. В портал Azure на странице **Центр уведомлений** выберите **Apple (APNs)** в меню слева.
 
 1. В разделе **Режим проверки подлинности** выберите **Сертификат** или **Токен**.
 
-   a. Если вы выбрали **Сертификат**:
+   1\. Если вы выбрали **Сертификат**:
    * Щелкните значок файла и выберите файл *.p12*, который нужно отправить.
    * Введите пароль.
    * Выберите режим **Песочница**. Если нужно отправлять push-уведомления пользователям, которые приобрели приложение в магазине, выберите режим **Рабочий**.
@@ -45,5 +47,5 @@ ms.locfileid: "60237816"
 
      ![Снимок экрана настройки токена APNS на портале Azure](./media/notification-hubs-ios-get-started/notification-hubs-apple-config-token.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
-Учебник с пошаговыми инструкциями для Push-уведомления на устройства iOS обратитесь к следующей статье: [Руководство. Отправка push-уведомлений в приложения iOS с помощью Центров уведомлений Azure](notification-hubs-ios-apple-push-notification-apns-get-started.md)
+## <a name="next-steps"></a>Следующие шаги
+Пошаговые инструкции по принудительной отправке уведомлений на устройства iOS см. в следующей статье: [Руководство. Отправка push-уведомлений в приложения iOS с помощью Центров уведомлений Azure](notification-hubs-ios-apple-push-notification-apns-get-started.md)

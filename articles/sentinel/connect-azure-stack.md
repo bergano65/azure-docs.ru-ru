@@ -10,20 +10,18 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 07/25/2019
+ms.date: 09/23/2019
 ms.author: rkarlin
-ms.openlocfilehash: caaf708b3efd8ffbe059f8ad249b7945d31fd7cc
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: fb306ec3f8abe2eedb97f83d01836745779db914
+ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68601168"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71240760"
 ---
 # <a name="connect-azure-stack-virtual-machines-to-azure-sentinel"></a>Подключение Azure Stack виртуальных машин к Azure Sentinel
 
-> [!IMPORTANT]
-> Сейчас Azure Sentinel предоставляется в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+
 
 
 С помощью Sentinel Azure можно отслеживать виртуальные машины, работающие в Azure, и Azure Stack в одном месте. Чтобы подключить Azure Stack машины к Azure Sentinel, сначала необходимо добавить расширение виртуальной машины к существующим Azure Stackным виртуальным машинам. 
@@ -71,5 +69,5 @@ ms.locfileid: "68601168"
 
 Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [получить представление о данных и потенциальных угрозах](quickstart-get-visibility.md).
-- Приступая [к обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats.md).
+- Приступая [к обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).
 - Потоковая передача данных из [стандартных форматов ошибок](connect-common-event-format.md) в Azure Sentinel.

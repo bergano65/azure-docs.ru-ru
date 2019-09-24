@@ -9,12 +9,12 @@ ms.author: robreed
 ms.date: 04/04/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 447aa4f5bb3c274900beddcef8c89db88d3f3ee9
-ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
+ms.openlocfilehash: fe4317c193e8aa6c6723556ef36d6111df6f51cd
+ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68688049"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71240849"
 ---
 # <a name="troubleshoot-the-startstop-vms-during-off-hours-solution"></a>Устранение неполадок с решением запуска и остановки виртуальных машин в нерабочее время
 
@@ -44,6 +44,14 @@ The subscription is not registered to use namespace 'Microsoft.Insights'.
 The scope '/subscriptions/000000000000-0000-0000-0000-00000000/resourcegroups/<ResourceGroupName>/providers/Microsoft.OperationalInsights/workspaces/<WorkspaceName>/views/StartStopVMView' cannot perform write operation because following scope(s) are locked: '/subscriptions/000000000000-0000-0000-0000-00000000/resourceGroups/<ResourceGroupName>/providers/Microsoft.OperationalInsights/workspaces/<WorkspaceName>/views/StartStopVMView'. Please remove the lock and try again
 ```
 
+```error
+A parameter cannot be found that matches parameter name 'TagName'
+```
+
+```error
+Start-AzureRmVm : Run Login-AzureRmAccount to login
+```
+
 ### <a name="cause"></a>Причина:
 
 Не удается выполнить развертывания по одной из следующих причин:
@@ -52,6 +60,7 @@ The scope '/subscriptions/000000000000-0000-0000-0000-00000000/resourcegroups/<R
 2. Местоположение политики запрещает развертывание решения для запуска и остановки виртуальных машин.
 3. Типы ресурсов `Microsoft.OperationsManagement`, `Microsoft.Insights` или `Microsoft.Automation` не регистрируются.
 4. Рабочая область Log Analytics имеет блокировку на них.
+5. У вас есть устаревшая версия модулей AzureRM или решение для запуска и завершения.
 
 ### <a name="resolution"></a>Разрешение
 
@@ -66,6 +75,7 @@ The scope '/subscriptions/000000000000-0000-0000-0000-00000000/resourcegroups/<R
 
    Дополнительные сведения об ошибках при регистрации поставщиков см. в статье [Устранение ошибок регистрации поставщика ресурсов](../../azure-resource-manager/resource-manager-register-provider-errors.md).
 4. Если у вас есть блокировка в рабочей области Log Analytics, перейдите в свою рабочую область на портале Azure и удалите все блокировки в ресурсе.
+5. Если описанные выше разрешения не позволяют устранить проблему, следуйте инструкциям в разделе [Обновление решения](../automation-solution-vm-management.md#update-the-solution) для повторного развертывания решения запуск/завершение.
 
 ## <a name="all-vms-fail-to-startstop"></a>Сценарий. Не удается запустить или остановить все виртуальные машины
 
@@ -210,7 +220,7 @@ The scope '/subscriptions/000000000000-0000-0000-0000-00000000/resourcegroups/<R
 Зачастую ошибки могут возникать из-за использования старых и устаревших версий решения.
 
 > [!NOTE]
-> Решение для запуска и остановки виртуальных машин в нерабочее время было протестировано с модулями Azure, которые импортируются в учетную запись службы автоматизации при развертывании решения. В настоящее время решение не работает с более новыми версиями модуля Azure. Это влияет только на учетную запись службы автоматизации, которая используется для выполнения решения "Запуск и остановка виртуальных машин в нерабочее время". Вы по-прежнему можете использовать новые версии модуля Azure в других учетных записях службы автоматизации, как описано в [статье обновление модулей Azure PowerShell в службе автоматизации Azure](../automation-update-azure-modules.md) .
+> Решение Запуск и остановка виртуальных машин в нерабочее время было протестировано с модулями Azure, импортированными в учетную запись службы автоматизации при развертывании решения. В настоящее время решение не работает с более новыми версиями модуля Azure. Это влияет только на учетную запись службы автоматизации, которая используется для запуска решения Запуск и остановка виртуальных машин в нерабочее время. Вы по-прежнему можете использовать новые версии модуля Azure в других учетных записях службы автоматизации, как описано в [статье обновление модулей Azure PowerShell в службе автоматизации Azure](../automation-update-azure-modules.md) .
 
 ### <a name="resolution"></a>Разрешение
 

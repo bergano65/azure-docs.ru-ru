@@ -6,21 +6,20 @@ documentationcenter: na
 author: rkarlin
 manager: rkarlin
 editor: ''
-ms.assetid: cbf5003b-76cf-446f-adb6-6d816beca70f
 ms.service: azure-sentinel
 ms.subservice: azure-sentinel
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 08/19/2019
+ms.date: 09/23/2019
 ms.author: rkarlin
-ms.openlocfilehash: 28def73926294a025d70844e535a0856153ae30a
-ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
+ms.openlocfilehash: 25ae54ea8dd75fae74d4578b33146483ade53e4c
+ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69611934"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71240748"
 ---
 # <a name="connect-your-external-solution-using-common-event-format"></a>Подключение внешнего решения с помощью общего формата событий
 
@@ -148,5 +147,5 @@ ms.locfileid: "69611934"
 ## <a name="next-steps"></a>Следующие шаги
 В этом документе вы узнали, как подключить устройства CEF к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [получить представление о данных и потенциальных угрозах](quickstart-get-visibility.md).
-- Приступая [к обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats.md).
+- Приступая [к обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).
 

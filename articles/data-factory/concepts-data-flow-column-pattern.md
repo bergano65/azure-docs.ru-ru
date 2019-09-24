@@ -6,12 +6,12 @@ ms.author: makromer
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 01/30/2019
-ms.openlocfilehash: 41037e0687274d123bea742cee5cf2887548aa0f
-ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
+ms.openlocfilehash: 4df831c1329ab13f19e6ecf979e404d4a90e5f72
+ms.sourcegitcommit: 3fa4384af35c64f6674f40e0d4128e1274083487
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2019
-ms.locfileid: "68775205"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71219763"
 ---
 # <a name="mapping-data-flows-column-patterns"></a>Сопоставление шаблонов столбцов для потоков данных
 
@@ -57,5 +57,5 @@ ms.locfileid: "68775205"
 * `position`порядковый номер столбца в потоке данных
 
 ## <a name="next-steps"></a>Следующие шаги
-* Дополнительные сведения о [языке выражений](http://aka.ms/dataflowexpressions) потока данных сопоставления ADF для преобразований данных
+* Дополнительные сведения о [языке выражений](https://aka.ms/dataflowexpressions) потока данных сопоставления ADF для преобразований данных
 * Использование шаблонов столбцов в [преобразовании приемника](data-flow-sink.md) и [Выбор преобразования](data-flow-select.md) с сопоставлением на основе правил

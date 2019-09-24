@@ -9,14 +9,14 @@ ms.service: machine-learning
 ms.subservice: core
 ms.reviewer: nibaccam
 ms.topic: conceptual
-ms.date: 08/07/2019
+ms.date: 09/23/2019
 ms.custom: seodec18
-ms.openlocfilehash: b1b2255b4e0f5aa34e3c7159b00156aee5224928
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.openlocfilehash: c32b587464d66148957672be16493b66dc051ada
+ms.sourcegitcommit: 3fa4384af35c64f6674f40e0d4128e1274083487
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "70999288"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71219692"
 ---
 # <a name="track-metrics-and-deploy-models-with-mlflow-and-azure-machine-learning-preview"></a>Мониторинг метрик и развертывание моделей с помощью Млфлов и Машинное обучение Azure (Предварительная версия)
 
@@ -146,6 +146,7 @@ run = exp.submit(src)
 Чтобы запустить эксперименты Млфлов с Azure Databricks, необходимо сначала создать [Azure Databricks рабочую область и кластер](https://docs.microsoft.com/azure/azure-databricks/quickstart-create-databricks-workspace-portal) .
 
 В кластере не забудьте установить библиотеку *azureml-млфлов* из PyPi, чтобы предоставить кластеру доступ к необходимым функциям и классам.
+Здесь импортируйте записную книжку эксперимента, подключите к ней кластер и запустите свой эксперимент. 
 
 ### <a name="install-libraries"></a>Установка библиотек
 
@@ -184,10 +185,17 @@ workspace_name = 'workspace_name'
 ws = Workspace.get(name=workspace_name,
                    subscription_id=subscription_id,
                    resource_group=resource_group)
-
 ```
+
+#### <a name="connect-your-azure-databricks-and-azure-machine-learning-workspaces"></a>Подключение рабочих областей Azure Databricks и Машинное обучение Azure
+
+На [портал Azure](https://ms.portal.azure.com)можно связать рабочую область Azure DATABRICKS (ADB) с новой или существующей рабочей областью машинное обучение Azure. Для этого перейдите в рабочую область ADB и нажмите кнопку **Link машинное обучение Azure Workspace (связать с рабочей областью** ) в правом нижнем углу. Связывание рабочих областей позволяет отслеживанию данных экспериментов в рабочей области Машинное обучение Azure. 
+
 ### <a name="link-mlflow-tracking-to-your-workspace"></a>Связывание отслеживания Млфлов с рабочей областью
+
 После создания экземпляра рабочей области задайте универсальный код ресурса (URI) для отслеживания Млфлов. При этом отслеживание Млфлов связывается с рабочей областью Машинное обучение Azure. После этого все эксперименты будут находиться в управляемой службе отслеживания Машинное обучение Azure.
+
+#### <a name="directly-set-mlflow-tracking-in-your-notebook"></a>Непосредственная настройка отслеживания Млфлов в записной книжке
 
 ```python
 uri = ws.get_mlflow_tracking_uri()
@@ -200,6 +208,12 @@ mlflow.set_tracking_uri(uri)
 import mlflow 
 mlflow.log_metric('epoch_loss', loss.item()) 
 ```
+
+#### <a name="automate-setting-mlflow-tracking"></a>Автоматическая настройка отслеживания Млфлов
+
+Вместо того, чтобы вручную задавать URI отслеживания в каждом последующем сеансе работы с записными книжками в кластерах, сделайте это автоматически, используя этот [машинное обучение Azure скрипт инициализации кластера отслеживания](https://github.com/Azure/MachineLearningNotebooks/blob/3ce779063b000e0670bdd1acc6bc3a4ee707ec13/how-to-use-azureml/azure-databricks/linking/README.md).
+
+При правильной настройке данные отслеживания Млфлов можно просматривать в REST APIх и всех клиентах Машинное обучение Azure, а также в Azure Databricks через пользовательский интерфейс Млфлов или с помощью клиента Млфлов.
 
 ## <a name="view-metrics-and-artifacts-in-your-workspace"></a>Просмотр метрик и артефактов в рабочей области
 

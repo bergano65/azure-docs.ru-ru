@@ -3,9 +3,9 @@ title: 'Центры уведомлений Azure: часто задаваемы
 description: Часто задаваемые вопросы по разработке и реализации решений в концентраторах уведомлений
 services: notification-hubs
 documentationcenter: mobile
-author: jwargo
-manager: patniko
-editor: spelluru
+author: sethmanheim
+manager: femila
+editor: jwargo
 keywords: отправка push-уведомлений, push-уведомления, push-уведомления iOS, push-уведомления android, push-уведомления ios, push-уведомления android
 ms.assetid: 7b385713-ef3b-4f01-8b1f-ffe3690bbd40
 ms.service: notification-hubs
@@ -14,17 +14,19 @@ ms.tgt_pltfrm: mobile-multiple
 ms.devlang: multiple
 ms.topic: article
 ms.date: 03/11/2019
-ms.author: jowargo
-ms.openlocfilehash: a434101a806a810218927cbf0bc24fa0d22c5628
-ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
+ms.author: sethm
+ms.reviewer: jowargo
+ms.lastreviewed: 03/11/2019
+ms.openlocfilehash: 5de8c9523e05411a4751766c836b8e99ebb977c1
+ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67488650"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71213148"
 ---
 # <a name="push-notifications-with-azure-notification-hubs-frequently-asked-questions"></a>Отправка push-уведомлений с помощью Центров уведомлений Azure: Часто задаваемые вопросы
 
-## <a name="general"></a>Общие сведения
+## <a name="general"></a>Общее
 
 ### <a name="what-is-the-resource-structure-of-notification-hubs"></a>Какую структуру ресурсов используют Центры уведомлений?
 
@@ -69,7 +71,7 @@ ms.locfileid: "67488650"
 
 ### <a name="which-client-platforms-do-you-support"></a>Какие клиентские платформы вы поддерживаете?
 
-Push-уведомления поддерживаются для [iOS](notification-hubs-ios-apple-push-notification-apns-get-started.md), [Android](notification-hubs-android-push-notification-google-fcm-get-started.md), [универсальной Windows](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md), [Windows Phone](notification-hubs-windows-mobile-push-notifications-mpns.md), [Android China () через Baidu)](notification-hubs-baidu-china-android-notifications-get-started.md), Xamarin ([iOS](xamarin-notification-hubs-ios-push-notification-apns-get-started.md) и Android, и [Safari](https://github.com/Azure/azure-notificationhubs-samples/tree/master/PushToSafari). Дополнительные сведения см. на странице [Отправка push-уведомлений с помощью центров уведомлений Azure в iOS].
+Push-уведомления поддерживаются для [iOS](notification-hubs-ios-apple-push-notification-apns-get-started.md), [Android](notification-hubs-android-push-notification-google-fcm-get-started.md), [Windows Universal](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md), [Windows Phone](notification-hubs-windows-mobile-push-notifications-mpns.md), [Android China (через Baidu)](notification-hubs-baidu-china-android-notifications-get-started.md), Xamarin ([iOS](xamarin-notification-hubs-ios-push-notification-apns-get-started.md) и Android и [Safari](https://github.com/Azure/azure-notificationhubs-samples/tree/master/PushToSafari)). Дополнительные сведения см. на странице [Отправка push-уведомлений с помощью центров уведомлений Azure в iOS].
 
 ### <a name="do-you-support-text-message-email-or-web-notifications"></a>Поддерживаются ли уведомления по SMS и электронной почте, а также веб-уведомления?
 
@@ -85,7 +87,7 @@ Push-уведомления поддерживаются для [iOS](notificati
 
 Сведения о поддерживаемых устройствах см. на странице с [Цены на центры уведомлений].
 
-Если вам требуется поддержка более 10 млн зарегистрированных устройств, необходимо распределить устройства в нескольких центрах.
+Если требуется поддержка более 10 000 000 зарегистрированных устройств, необходимо секционировать устройства между несколькими центрами.
 
 ### <a name="how-many-push-notifications-can-i-send-out"></a>Сколько push-уведомлений я могу отправить?
 
@@ -195,11 +197,11 @@ Push-уведомления поддерживаются для [iOS](notificati
 
 Центры уведомлений Microsoft Azure позволяют просматривать данные телеметрии на [портал Azure]. Дополнительные сведения о доступных метриках в Центрах уведомлений см. на [Метрики].
 
-Можно также программно обращаться к метрики. Дополнительные сведения см. в следующих статьях:
+Можно также программно получить доступ к метрикам. Дополнительные сведения см. в следующих статьях:
 
-- [Получение метрик Azure Monitor с помощью .NET](https://azure.microsoft.com/resources/samples/monitor-dotnet-metrics-api/). В этом примере используется имя пользователя и пароль. Чтобы использовать сертификат, перегрузить метод FromServicePrincipal предоставить сертификат, как показано в [в этом примере](https://github.com/Azure/azure-libraries-for-net/blob/master/src/ResourceManagement/ResourceManager/Authentication/AzureCredentialsFactory.cs). 
+- [Получение метрик Azure Monitor с помощью .NET](https://azure.microsoft.com/resources/samples/monitor-dotnet-metrics-api/). В этом примере используются имя пользователя и пароль. Чтобы использовать сертификат, перегрузите метод ФромсервицепринЦипал, чтобы предоставить сертификат, как показано в [этом примере](https://github.com/Azure/azure-libraries-for-net/blob/master/src/ResourceManagement/ResourceManager/Authentication/AzureCredentialsFactory.cs). 
 - [Получение метрик и журналов действий для ресурса](https://azure.microsoft.com/resources/samples/monitor-dotnet-query-metrics-activitylogs/)
-- [Пошаговое руководство по Azure REST API мониторинга](../azure-monitor/platform/rest-api-walkthrough.md)
+- [Пошаговое руководство по REST API мониторинга Azure](../azure-monitor/platform/rest-api-walkthrough.md)
 
 
 > [!NOTE]

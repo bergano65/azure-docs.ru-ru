@@ -3,25 +3,27 @@ title: Пакеты SDK Центров уведомлений Azure
 description: Список доступных пакетов SDK Центров уведомлений Azure
 services: notification-hubs
 documentationcenter: ''
-author: jwargo
-manager: patniko
-editor: spelluru
+author: sethmanheim
+manager: femila
+editor: jwargo
 ms.assetid: 91188310-307a-11e9-b210-d663bd873d93
 ms.service: notification-hubs
 ms.workload: mobile
 ms.topic: article
-ms.author: jowargo
 ms.date: 02/14/2019
-ms.openlocfilehash: 9ed69ac3526098cd5426c966952de97c948322b5
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: sethm
+ms.reviewer: jowargo
+ms.lastreviewed: 02/14/2019
+ms.openlocfilehash: 8a4b05c0ee76aca07fd740a16a76a634727504e9
+ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60559948"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71213025"
 ---
 # <a name="azure-notification-hubs-sdks"></a>Пакеты SDK Центров уведомлений Azure
 
-Корпорация Майкрософт и сторонние разработчики публикуют пакеты SDK Центров уведомлений Azure. Репозиториях Майкрософт для Android, iOS и .NET также включить примеры приложений для каждой целевой платформы.
+Корпорация Майкрософт и сторонние разработчики публикуют пакеты SDK Центров уведомлений Azure. В репозитории Майкрософт для Android, iOS и .NET также входят примеры приложений для каждой целевой платформы.
 
 | SDK            | Издатель      |
 | -------------- | -------------- |

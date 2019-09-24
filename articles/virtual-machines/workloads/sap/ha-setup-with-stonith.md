@@ -13,12 +13,12 @@ ms.workload: infrastructure
 ms.date: 11/21/2017
 ms.author: saghorpa
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 1d97130251f7ca56adaf77c5e70d6f08bd5cf514
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 0f23fe2aa17934b967e7aecf41687cc555b9552c
+ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70101515"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71212529"
 ---
 # <a name="high-availability-set-up-in-suse-using-the-stonith"></a>Настройка высокого уровня доступности в SUSE с помощью STONITH
 Этот документ содержит подробные пошаговые инструкции для настройки высокого уровня доступности в операционной системе SUSE с помощью устройства STONITH.
@@ -333,11 +333,12 @@ Service pacemaker stop
 ```
 Теперь остановите службу Pacemaker на узле **node2**. После этого произойдет отработка отказа ресурсов на узле **node1**.
 
-**Перед выполнением отработки отказа**
-![Before-failover.png](media/HowToHLI/HASetupWithStonith/Before-failover.png)
-**После выполнения отработки отказа**
-![after-failover.png](media/HowToHLI/HASetupWithStonith/after-failover.png)
-![crm-mon-after-failover.png](media/HowToHLI/HASetupWithStonith/crm-mon-after-failover.png)
+**Перед выполнением отработки отказа**  
+![Бефоре-фаиловер. png](media/HowToHLI/HASetupWithStonith/Before-failover.png)  
+
+**После выполнения отработки отказа**  
+![Афтер-фаиловер. png](media/HowToHLI/HASetupWithStonith/after-failover.png)  
+![КРМ-Мон-Афтер-фаиловер. png](media/HowToHLI/HASetupWithStonith/crm-mon-after-failover.png)  
 
 
 ## <a name="9-troubleshooting"></a>9. Устранение неполадок
