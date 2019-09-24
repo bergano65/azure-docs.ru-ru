@@ -8,12 +8,12 @@ ms.date: 05/31/2019
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: 884ded67c25aca78225baef2d7e4c5de1cc94fd0
-ms.sourcegitcommit: f7998db5e6ba35cbf2a133174027dc8ccf8ce957
+ms.openlocfilehash: 48d2463eee2caeaae36118bf736d00eed84c897a
+ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68782293"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70186223"
 ---
 # <a name="troubleshooting-issues-with-update-management"></a>Устранение неполадок c помощью управления обновлениями
 
@@ -22,6 +22,42 @@ ms.locfileid: "68782293"
 Агент устранения неполадок определяет первоначальную проблему для агента гибридной рабочей роли. Для дополнительных сведений о средстве устранения неполадок см. [Общие сведения о результатах проверки агента в службе "Управление обновлениями"](update-agent-issues.md). Подробные сведения о других неполадках см. ниже.
 
 ## <a name="general"></a>Общее
+
+### <a name="rp-register"></a>Сценарий. Не удалось зарегистрировать поставщик ресурсов службы автоматизации для подписок
+
+#### <a name="issue"></a>Проблемы
+
+При работе с решениями в учетной записи службы автоматизации может появиться следующее сообщение об ошибке.
+
+```error
+Error details: Unable to register Automation Resource Provider for subscriptions:
+```
+
+#### <a name="cause"></a>Причина:
+
+Поставщик ресурсов автоматизации не зарегистрирован в подписке.
+
+#### <a name="resolution"></a>Разрешение
+
+Поставщики ресурсов службы автоматизации можно зарегистрировать, выполнив следующие действия в портал Azure.
+
+1. Щелкните **Все службы** внизу списка служб Azure и выберите **Подписки** в группе служб _Общие_.
+2. Выберите свою подписку.
+3. В разделе _Параметры_щелкните **поставщики ресурсов** .
+4. В списке поставщиков ресурсов проверьте, зарегистрирован ли поставщик ресурсов **Microsoft. Automation** .
+5. Если поставщик отсутствует в списке, зарегистрируйте поставщик **Microsoft.Automation** , выполнив действия, описанные в разделе [](/azure/azure-resource-manager/resource-manager-register-provider-errors).
+
+### <a name="mw-exceeded"></a>Сценарий. Запланированное обновление управления обновлениями завершилось с ошибкой Маинтенанцевиндовексцеедед
+
+#### <a name="issue"></a>Проблемы
+
+Период обслуживания по умолчанию для обновлений составляет 120 минут. Период обслуживания можно увеличить до шести (6) часов или 360 минут.
+
+#### <a name="resolution"></a>Разрешение
+
+Изменение всех неудачных развертываний обновлений и увеличение периода обслуживания.
+
+Дополнительные сведения о периодах обслуживания см. в разделе [install updates](../automation-update-management.md#install-updates).
 
 ### <a name="components-enabled-not-working"></a>Сценарий. Компоненты для решения "Управление обновлениями" включены, и теперь эта виртуальная машина настраивается
 
@@ -77,6 +113,24 @@ $s = New-AzureRmAutomationSchedule -ResourceGroupName mygroup -AutomationAccount
 
 New-AzureRmAutomationSoftwareUpdateConfiguration  -ResourceGroupName $rg -AutomationAccountName $aa -Schedule $s -Windows -AzureVMResourceId $azureVMIdsW -NonAzureComputer $nonAzurecomputers -Duration (New-TimeSpan -Hours 2) -IncludedUpdateClassification Security,UpdateRollup -ExcludedKbNumber KB01,KB02 -IncludedKbNumber KB100
 ```
+
+### <a name="updates-nodeployment"></a>Сценарий. Обновления устанавливаются без развертывания
+
+### <a name="issue"></a>Проблемы
+
+При регистрации компьютера Windows в Управление обновлениями можно увидеть, что обновления будут устанавливаться без развертывания.
+
+### <a name="cause"></a>Причина:
+
+В Windows обновления устанавливаются автоматически, как только они становятся доступными. Это может вызвать путаницу, если вы не запланировали развертывание обновления на компьютере.
+
+### <a name="resolution"></a>Разрешение
+
+Раздел реестра Windows по умолчанию имеет значение 4, `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU` — **Автоматическая загрузка и установка**.
+
+Для Управление обновлениями клиентов рекомендуется задать для этого раздела значение "3" — **Автоматическая загрузка, но не автоматическая установка**.
+
+Дополнительные сведения см. в разделе [настройка Автоматическое обновление](https://docs.microsoft.com/en-us/windows/deployment/update/waas-wu-settings#configure-automatic-updates).
 
 ### <a name="nologs"></a>Сценарий. Компьютеры не отображаются на портале в разделе Управление обновлениями
 
@@ -242,6 +296,7 @@ Failed to start the runbook. Check the parameters passed. RunbookName Patch-Micr
 |`0x8024001E`| Операция обновления не была завершена из-за завершения работы службы или системы.|
 |`0x8024002E`| Служба Центр обновления Windows отключена.|
 |`0x8024402C`     | Используя сервер WSUS, убедитесь, что в разделе реестра `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate` значение реестра `WUServer` и `WUStatusServer` имеет правильный WSUS-сервер.        |
+|`0x80072EE2`|Проблемы с сетевым подключением или обращение к настроенному серверу WSUS. Проверьте параметры WSUS и убедитесь, что они доступны с клиента.|
 |`The service cannot be started, either because it is disabled or because it has no enabled devices associated with it. (Exception from HRESULT: 0x80070422)`     | Убедитесь, что служба Центр обновления Windows (wuauserv) работает и не отключена.        |
 |Другое универсальное исключение     | Выполните поиск возможных решений и работы с локальной ИТ-поддержкой в Интернете.         |
 
@@ -298,7 +353,31 @@ Failed to start the runbook. Check the parameters passed. RunbookName Patch-Micr
 /var/opt/microsoft/omsagent/run/automationworker/omsupdatemgmt.log
 ```
 
-### <a name="other"></a>Сценарий. Моя проблема не указана в этой статье
+## <a name="patches-are-not-installed"></a>Исправления не установлены
+
+### <a name="machines-do-not-install-updates"></a>Компьютеры не устанавливают обновления
+
+* Попробуйте выполнить обновление непосредственно на компьютере. Если не удается обновить программное обеспечение на компьютере, см. [список возможных ошибок в руководстве по устранению неполадок](https://docs.microsoft.com/azure/automation/troubleshoot/update-management#hresult).
+* Если обновления выполняются локально, попробуйте удалить и переустановить агент на компьютере, следуя инструкциям из раздела [Удаление виртуальной машины для Управления обновлениями](https://docs.microsoft.com/azure/automation/automation-update-management#remove-a-vm-from-update-management).
+
+### <a name="i-know-updates-are-available-but-they-dont-show-as-needed-on-my-machines"></a>Я знал, что доступны обновления, но они не отображаются по необходимости на моих компьютерах
+
+* Это часто происходит, если компьютеры настроены для получения обновлений из Windows Server Update Services (WSUS) или System Center Configuration Manager (SCCM), но WSUS или SCCM не утвердили обновления.
+* Проверить, настроены ли компьютеры на получение обновлений из WSUS или SCCM можно с помощью [перекрестной ссылки между разделом реестра UseWUServer и разделами реестра, упомянутыми в разделе "Настройка автоматического обновления путем редактирования реестра" этого документа](https://support.microsoft.com/help/328010/how-to-configure-automatic-updates-by-using-group-policy-or-registry-s)
+
+### <a name="updates-show-as-installed-but-i-cant-find-them-on-my-machine"></a>**Обновления отображаются как установленные, но найти их на компьютере не удается**
+
+* Обновления часто заменяются другими обновлениями. Дополнительные сведения см. в описании причины ["Обновление заменено" в руководстве по устранению неполадок Центра обновлений Windows](https://docs.microsoft.com/windows/deployment/update/windows-update-troubleshooting#the-update-is-not-applicable-to-your-computer).
+
+### <a name="installing-updates-by-classification-on-linux"></a>**Установка обновлений с учетом классификации на платформе Linux**
+
+* При развертывании обновлений на Linux с учетом классификации (критические обновления и обновления системы безопасности) следует учитывать некоторые важные ограничения, особенно для CentOS. Эти [ограничения описаны на странице с общими сведениями об управлении обновлениями](https://docs.microsoft.com/azure/automation/automation-update-management#linux-2).
+
+### <a name="kb2267602-is-consistently--missing"></a>**Статья базы знаний № 2267602 постоянно отсутствует**
+
+* Статья базы знаний № 2267602 касается [обновления определений Защитника Windows](https://www.microsoft.com/wdsi/definitions). Она обновляются ежедневно.
+
+## <a name="other"></a>Сценарий. Моя проблема не указана в этой статье
 
 ### <a name="issue"></a>Проблемы
 
