@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: article
 ms.date: 09/16/2019
 ms.author: kumud
-ms.openlocfilehash: 87d0f08d67dbbe6a0fa1725aba850c8d9b6c5619
-ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
+ms.openlocfilehash: c67d2cd4e90b2fa61a4d95e89a68c888a6e1fe3f
+ms.sourcegitcommit: a6718e2b0251b50f1228b1e13a42bb65e7bf7ee2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71104707"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71273638"
 ---
 # <a name="create-a-private-link-service-using-azure-cli"></a>Создание службы частной связи с помощью Azure CLI
 В этой статье показано, как создать службу частной связи в Azure с помощью Azure CLI.
@@ -29,13 +29,13 @@ ms.locfileid: "71104707"
 az group create --name myResourceGroup --location westcentralus
 ```
 ### <a name="create-a-virtual-network"></a>Создать виртуальную сеть
-Создайте виртуальную сеть с помощью команды [az network vnet create](/cli/azure/network/az-network-vnet-create). В этом примере создается виртуальная сеть по умолчанию с именем *myVirtualNetwork* с одной подсетью с именем *mySubnet*:
+Создайте виртуальную сеть с помощью команды [az network vnet create](/cli/azure/network/vnet#az-network-vnet-create). В этом примере создается виртуальная сеть по умолчанию с именем *myVirtualNetwork* с одной подсетью с именем *mySubnet*:
 
 ```azurecli-interactive
 az network vnet create --resource-group myResourceGroup --name myVirtualNetwork --address-prefix 10.0.0.0/16  
 ```
 ### <a name="create-a-subnet"></a>Создание подсети
-Создайте подсеть для виртуальной сети с помощью команды [AZ Network vnet подсети Create](/cli/azure/network/az-network-vnet-subnet-create). В этом примере создается подсеть с именем *mySubnet* в виртуальной сети *myVirtualNetwork* :
+Создайте подсеть для виртуальной сети с помощью команды [AZ Network vnet подсети Create](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-create). В этом примере создается подсеть с именем *mySubnet* в виртуальной сети *myVirtualNetwork* :
 
 ```azurecli-interactive
 az network vnet subnet create --resource-group myResourceGroup --vnet-name myVirtualNetwork --name mySubnet --address-prefixes 10.0.0.0/24    
@@ -82,7 +82,7 @@ az network lb create --resource-group myResourceGroup --name myILB --sku standar
 
 
 ### <a name="disable-private-link-service-network-policies-on-subnet"></a>Отключить сетевые политики службы частной связи в подсети 
-Для службы частной связи требуется IP-адрес из любой подсети, выбранной в виртуальной сети. Сейчас мы не поддерживаем сетевые политики для этих IP-адресов.  Поэтому необходимо отключить сетевые политики в подсети. Обновите подсеть, чтобы отключить сетевые политики службы частной связи, с помощью команды [AZ Network vnet подсети Update](/cli/azure/network/az-network-vnet-subnet-update).
+Для службы частной связи требуется IP-адрес из любой подсети, выбранной в виртуальной сети. Сейчас мы не поддерживаем сетевые политики для этих IP-адресов.  Поэтому необходимо отключить сетевые политики в подсети. Обновите подсеть, чтобы отключить сетевые политики службы частной связи, с помощью команды [AZ Network vnet подсети Update](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-update).
 
 ```azurecli-interactive
 az network vnet subnet update --resource-group myResourceGroup --vnet-name myVirtualNetwork --name mySubnet --disable-private-link-service-network-policies true 
@@ -90,7 +90,7 @@ az network vnet subnet update --resource-group myResourceGroup --vnet-name myVir
  
 ## <a name="create-a-private-link-service"></a>Создание службы "Приватный канал"  
  
-Создайте службу частной связи с помощью многосерверной IP-конфигурации Load Balancer (цен. категория "Стандартный") с помощью команды [AZ Network Private-Link-Service Create](/cli/azure/network/az-network-private-link-service-create). В этом примере создается служба частной связи с именем *миплс* , использующая Load Balancer (цен. Категория "Стандартный") с именем *myLoadBalancer* в группе ресурсов с именем *myResourceGroup*. 
+Создайте службу частной связи с помощью многосерверной IP-конфигурации Load Balancer (цен. категория "Стандартный") с помощью команды [AZ Network Private-Link-Service Create](/cli/azure/network/private-link-service#az-network-private-link-service-create). В этом примере создается служба частной связи с именем *миплс* , использующая Load Balancer (цен. Категория "Стандартный") с именем *myLoadBalancer* в группе ресурсов с именем *myResourceGroup*. 
  
 ```azurecli-interactive
 az network private-link-service create \
@@ -111,7 +111,7 @@ az network private-link-service create \
 ## <a name="private-endpoints"></a>Частные конечные точки
 
 ### <a name="create-the-virtual-network"></a>Создание виртуальной сети 
-Создайте виртуальную сеть с помощью команды [AZ Network vnet Create](/cli/azure/network/az-network-vnet-create). В этом примере создается виртуальная сеть с именем *мипевнет* в группе ресурсов с именем *myResourcegroup*: 
+Создайте виртуальную сеть с помощью команды [AZ Network vnet Create](/cli/azure/network/vnet#az-network-vnet-create). В этом примере создается виртуальная сеть с именем *мипевнет* в группе ресурсов с именем *myResourcegroup*: 
 ```azurecli-interactive
 az network vnet create \
 --resource-group myResourceGroup \
@@ -119,7 +119,7 @@ az network vnet create \
 --address-prefix 10.0.0.0/16  
 ```
 ### <a name="create-the-subnet"></a>Создание подсети 
-Создайте подсеть в виртуальной сети с помощью команды [AZ Network vnet подсети Create](/cli/azure/network/az-network-vnet-subnet-create). В этом примере создается подсеть с именем *mySubnet* в виртуальной сети с именем *мипевнет* в группе ресурсов с именем *myResourcegroup*: 
+Создайте подсеть в виртуальной сети с помощью команды [AZ Network vnet подсети Create](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-create). В этом примере создается подсеть с именем *mySubnet* в виртуальной сети с именем *мипевнет* в группе ресурсов с именем *myResourcegroup*: 
 
 ```azurecli-interactive 
 az network vnet subnet create \
@@ -129,7 +129,7 @@ az network vnet subnet create \
 --address-prefixes 10.0.0.0/24 
 ```   
 ## <a name="disable-private-endpoint-network-policies-on-subnet"></a>Отключить политики сети частной конечной точки в подсети 
-Частная конечная точка может быть создана в любой подсети по вашему выбору в виртуальной сети. В настоящее время в частных конечных точках не поддерживаются сетевые политики.  Поэтому необходимо отключить сетевые политики в подсети. Обновите подсеть, чтобы отключить политики сети частной конечной точки, с [обновлением подсети AZ Network vnet](/cli/azure/network/az-network-vnet-subnet-update). 
+Частная конечная точка может быть создана в любой подсети по вашему выбору в виртуальной сети. В настоящее время в частных конечных точках не поддерживаются сетевые политики.  Поэтому необходимо отключить сетевые политики в подсети. Обновите подсеть, чтобы отключить политики сети частной конечной точки, с [обновлением подсети AZ Network vnet](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-update). 
 
 ```azurecli-interactive
 az network vnet subnet update \
@@ -156,7 +156,7 @@ az network private-endpoint create \
  
 ## <a name="show-private-link-service-connections"></a>Показывать подключения службы частной связи 
  
-Просмотрите запросы на подключение к службе частной связи с помощью команды [AZ Network Private-Link-Service Показать](/cli/azure/network/az-network-private-link-service-show).    
+Просмотрите запросы на подключение к службе частной связи с помощью команды [AZ Network Private-Link-Service Показать](/cli/azure/network/private-link-service#az-network-private-link-service-show).    
 ```azurecli-interactive 
 az network private-link-service show --resource-group myResourceGroup --name myPLS 
 ```

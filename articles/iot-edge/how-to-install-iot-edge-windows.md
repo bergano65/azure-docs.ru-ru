@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 07/10/2019
 ms.author: kgremban
 ms.custom: seodec18
-ms.openlocfilehash: e5b99bba3c3b21ea9662845928c523c329695bf8
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: 6118c4ddf1386ff4cc816148938e1f5ddeaecc9e
+ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69877238"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71266083"
 ---
 # <a name="install-the-azure-iot-edge-runtime-on-windows"></a>Установка среды выполнения Azure IoT Edge в Windows
 
@@ -41,6 +41,14 @@ ms.locfileid: "69877238"
 ### <a name="supported-windows-versions"></a>Поддерживаемые версии Windows
 
 Для сценариев разработки и тестирования Azure IoT Edge с контейнерами Windows можно установить в любой версии Windows 10 или Windows Server 2019 (сборка 17763), поддерживающей функцию контейнеров. Сведения о том, какие операционные системы в настоящее время поддерживаются в рабочих сценариях, см. в разделе [Azure IOT Edge Поддерживаемые системы](support.md#operating-systems). 
+
+Устройства центра Интернета вещей должны включать в себя дополнительный компонент "контейнеры Интернета вещей Core — Windows" для поддержки IoT Edge среды выполнения. Используйте следующую команду в [удаленном сеансе PowerShell](https://docs.microsoft.com/windows/iot-core/connect-your-device/powershell) , чтобы проверить, поддерживаются ли на устройстве контейнеры Windows: 
+
+```powershell
+Get-Service vmcompute
+```
+
+Если служба присутствует, вы должны получить успешный ответ со статусом службы в списке **выполняется**. Если служба вмкомпуте не найдена, устройство не соответствует требованиям для IoT Edge. Обратитесь к поставщику оборудования, чтобы узнать о поддержке этой функции. 
 
 ### <a name="prepare-for-a-container-engine"></a>Подготовка для подсистемы контейнеров 
 

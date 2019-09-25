@@ -8,12 +8,12 @@ ms.service: key-vault
 ms.topic: conceptual
 ms.date: 02/11/2019
 ms.author: mbaldwin
-ms.openlocfilehash: a2749ca35e6137d42a09b79da9315c8f7b242c31
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.openlocfilehash: 1ebf4feb0687d9580bba29cd8213030e542a06da
+ms.sourcegitcommit: 263a69b70949099457620037c988dc590d7c7854
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "71000799"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71268849"
 ---
 # <a name="azure-key-vault-developers-guide"></a>Руководство разработчика хранилища ключей Azure
 
@@ -29,26 +29,6 @@ ms.locfileid: "71000799"
 ## <a name="public-previews"></a>Общедоступные предварительные версии
 
 Периодически мы выпускаем общедоступные предварительные версии нового компонента Key Vault. Предлагаем вам протестировать их и отправить отзыв по нашему адресу электронной почты для обратной связи: azurekeyvault@microsoft.com.
-
-### <a name="storage-account-keys---july-10-2017"></a>Ключи учетной записи хранения — 10 июля 2017 г.
-
->[!NOTE]
->В этом обновлении Azure Key Vault в режиме предварительной версии доступна только функция **Ключи учетной записи хранения**.
-
-Эта предварительная версия включает новую функцию "Ключи учетной записи хранения", доступную через интерфейсы [.NET/C#](/dotnet/api/microsoft.azure.keyvault/), [REST](/rest/api/keyvault/) или [PowerShell](/powershell/module/az.keyvault/?view=azps-1.2.0#key_vault). 
-
-Дополнительные сведения о новой функции "Ключи учетной записи хранения" см. в статье, посвященной [учетной записи хранилища ключей Azure Key Vault](key-vault-ovw-storage-keys.md).
-
-## <a name="videos"></a>Видео
-
-В этом видео показано, как создать собственное хранилище ключей и использовать его в примере приложения HelloKeyVault.
-
-- [Key Vault developer - quick start guide](https://channel9.msdn.com/Blogs/Azure/Azure-Key-Vault-Developer-Quick-Start/player) (Краткое руководство по началу работы для разработчиков Key Vault)
-
-Ресурсы, используемые в этом видео:
-
-- [Azure PowerShell](https://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409)
-- [Пример кода для хранилища ключей Azure](https://go.microsoft.com/fwlink/?LinkId=521527&clcid=0x409)
 
 ## <a name="creating-and-managing-key-vaults"></a>Создание хранилищ ключей и управление ими
 

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 05/20/2019
 ms.author: bwren
 ms.subservice: logs
-ms.openlocfilehash: 9b4e7ce714d0a1f65e0a35b9c493e99200c668c6
-ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
+ms.openlocfilehash: 925fed320359edc04ad6c91fe7a7d9bde5370254
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70034846"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71258468"
 ---
 # <a name="export-azure-activity-log-to-storage-or-azure-event-hubs"></a>Экспорт журнала действий Azure в хранилище или концентраторы событий Azure
 [Журнал действий Azure](activity-logs-overview.md) позволяет получить представление о событиях уровня подписки, произошедших в подписке Azure. Помимо просмотра журнала действий в портал Azure или его копирования в Log Analytics рабочую область, где его можно проанализировать с помощью других данных, собранных Azure Monitor, можно создать профиль журнала для архивации журнала действий в учетную запись хранения Azure или потоковой передачи в  Концентратор событий.
@@ -60,13 +60,9 @@ ms.locfileid: "70034846"
 Если заданы политики хранения, но хранение журналов в учетной записи хранения отключено, политики хранения не будут действовать. Политики хранения применяются по дням, поэтому в конце дня (по времени в формате UTC) журналы, срок которых теперь превышает период хранения, будут удалены. Например, если настроена политика хранения в течение одного дня, то в начале текущего дня журналы за вчерашний день будет удалены. Удаление начинается в полночь по времени UTC. Обратите внимание, что удаление журналов из учетной записи хранения может занять до 24 часов.
 
 
-
-> [!WARNING]
-> Формат данных журнала в учетной записи хранения будет изменен на JSON Lines с 1 ноября 2018 г. [См. дополнительные сведения, включая информацию об обновлении инструментария для включения поддержки нового формата.](diagnostic-logs-append-blobs.md)
-
-
 > [!IMPORTANT]
 > При создании профиля журнала может появиться сообщение об ошибке, если поставщик ресурсов Microsoft. Insights не зарегистрирован. Чтобы зарегистрировать поставщик, см. раздел [поставщики и типы ресурсов Azure](../../azure-resource-manager/resource-manager-supported-services.md) .
+
 
 ### <a name="create-log-profile-using-the-azure-portal"></a>Создание профиля журнала с помощью портал Azure
 
@@ -111,7 +107,7 @@ ms.locfileid: "70034846"
     Add-AzLogProfile -Name my_log_profile -StorageAccountId /subscriptions/s1/resourceGroups/myrg1/providers/Microsoft.Storage/storageAccounts/my_storage -serviceBusRuleId /subscriptions/s1/resourceGroups/Default-ServiceBus-EastUS/providers/Microsoft.ServiceBus/namespaces/mytestSB/authorizationrules/RootManageSharedAccessKey -Location global,westus,eastus -RetentionInDays 90 -Category Write,Delete,Action
     ```
 
-    | Свойство | Обязательно для заполнения | Описание |
+    | Свойство | Обязательное значение | Описание |
     | --- | --- | --- |
     | Name |Да |Имя профиля журнала. |
     | StorageAccountId |Нет |Идентификатор ресурса учетной записи хранения, в которой должен быть сохранен журнал действий. |
@@ -154,7 +150,7 @@ ms.locfileid: "70034846"
    az monitor log-profiles create --name "default" --location null --locations "global" "eastus" "westus" --categories "Delete" "Write" "Action"  --enabled false --days 0 --service-bus-rule-id "/subscriptions/<YOUR SUBSCRIPTION ID>/resourceGroups/<RESOURCE GROUP NAME>/providers/Microsoft.EventHub/namespaces/<EVENT HUB NAME SPACE>/authorizationrules/RootManageSharedAccessKey"
    ```
 
-    | Свойство | Обязательно для заполнения | Описание |
+    | Свойство | Обязательное значение | Описание |
     | --- | --- | --- |
     | name |Да |Имя профиля журнала. |
     | storage-account-id |Да |Идентификатор ресурса для учетной записи хранения, в которую будут сохранены журналы действий. |
@@ -167,6 +163,9 @@ ms.locfileid: "70034846"
 
 ## <a name="activity-log-schema"></a>Схема журнала действий
 Независимо от того, отправлены ли в службу хранилища Azure или концентратор событий, данные журнала действий будут записаны в JSON в следующем формате.
+
+
+> Формат данных журнала действий, записываемых в учетную запись хранения, изменился на строки JSON в 2018 ноября. 1. Дополнительные сведения об этом изменении формата см. в разделе [Подготовка к изменению формата для Azure Monitor журналов диагностики, архивных в учетной записи хранения](diagnostic-logs-append-blobs.md) .
 
 ``` JSON
 {

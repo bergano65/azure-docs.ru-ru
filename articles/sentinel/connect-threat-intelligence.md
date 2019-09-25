@@ -12,17 +12,17 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/24/2019
 ms.author: rkarlin
-ms.openlocfilehash: cbdf05c714971db5a618ca2a8bb35fe286d6804c
-ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
+ms.openlocfilehash: c1c374977460de04d2339ba8c93019cf9152dbe3
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71240677"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71262714"
 ---
-# <a name="connect-data-from-threat-intelligence-providers---preview"></a>Подключение данных из поставщиков аналитики угроз — Предварительная версия
+# <a name="connect-data-from-threat-intelligence-providers"></a>Подключение данных из поставщиков аналитики угроз
 
 > [!IMPORTANT]
-> Аналитика угроз в Azure Sentinel в настоящее время доступна в общедоступной предварительной версии.
+> Соединитель данных платформы аналитики угроз в Azure Sentinel в настоящее время находится в общедоступной предварительной версии.
 > Эта функция предоставляется без соглашения об уровне обслуживания и не рекомендуется для рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 Azure Sentinel позволяет импортировать индикаторы угроз, которые использует ваша организация, что может улучшить способность аналитики безопасности обнаруживать и определять приоритеты известных угроз. После этого становятся доступными или расширены несколько функций из Azure Sentinel:

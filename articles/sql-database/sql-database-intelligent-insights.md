@@ -11,12 +11,12 @@ author: danimir
 ms.author: danil
 ms.reviewer: jrasnik, carlrab
 ms.date: 12/19/2018
-ms.openlocfilehash: d77557f6d5d6a7bb741b9ff6caa4ea8f76db19c0
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 70498c5f4c824681ee59b7232e9409235d7f6a93
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68567882"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71262159"
 ---
 # <a name="intelligent-insights-using-ai-to-monitor-and-troubleshoot-database-performance"></a>Функция Intelligent Insights использует искусственный интеллект для мониторинга производительности базы данных и устранения связанных с ней проблем.
 
@@ -96,7 +96,7 @@ Intelligent Insights является непревзойденным решен�
 
 ### <a name="set-up-with-event-hubs"></a>Настройка для использования с Центрами событий
 
-Чтобы использовать Intelligent Insights с Центрами событий, настройте потоковую передачу данных журнала Intelligent Insights в Центры событий, как описано в разделе [Потоковая передача журналов диагностики Azure в пространство имен Центров событий](../azure-monitor/platform/diagnostic-logs-stream-event-hubs.md).
+Чтобы использовать Intelligent Insights с Центрами событий, настройте потоковую передачу данных журнала Intelligent Insights в Центры событий, как описано в разделе [Потоковая передача журналов диагностики Azure в пространство имен Центров событий](../azure-monitor/platform/resource-logs-stream-event-hubs.md).
 
 Сведения об использовании Центров событий для настраиваемого мониторинга и оповещений см. в разделе [Метрики и журналы диагностики базы данных SQL Azure](sql-database-metrics-diag-logging.md#what-to-do-with-metrics-and-diagnostics-logs-in-event-hubs).
 
@@ -179,4 +179,4 @@ Intelligent Insights является непревзойденным решен�
 - Узнайте, как [устранять проблемы с производительностью базы данных SQL с помощью Intelligent Insights](sql-database-intelligent-insights-troubleshoot-performance.md).
 - Используйте [журнал диагностики производительности Intelligent Insights для базы данных SQL](sql-database-intelligent-insights-use-diagnostics-log.md).
 - Узнайте, как [отслеживать базу данных SQL с помощью SQL Analytics](../azure-monitor/insights/azure-sql.md).
-- Узнайте, как [собирать и использовать данные журнала из ресурсов Azure](../azure-monitor/platform/diagnostic-logs-overview.md).
+- Узнайте, как [собирать и использовать данные журнала из ресурсов Azure](../azure-monitor/platform/resource-logs-overview.md).

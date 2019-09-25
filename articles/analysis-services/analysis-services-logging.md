@@ -8,16 +8,16 @@ ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 6b311135832e1ec861cf6e14e5ad7e82574294bf
-ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
+ms.openlocfilehash: b158545390dafa36e7dad285953c78243f891f28
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70959072"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71259432"
 ---
 # <a name="setup-diagnostic-logging"></a>Настройка журнала ведения диагностики
 
-Важной частью любого решения Analysis Services является мониторинг работы серверов. С помощью [журналов диагностики ресурсов Azure](../azure-monitor/platform/diagnostic-logs-overview.md) вы можете отслеживать и отправлять журналы в [службу хранилища Azure](https://azure.microsoft.com/services/storage/), выполнять их потоковую передачу в [Центры событий Azure](https://azure.microsoft.com/services/event-hubs/) и экспортировать их в [Журналы Azure Monitor](../azure-monitor/azure-monitor-log-hub.md).
+Важной частью любого решения Analysis Services является мониторинг работы серверов. С помощью [журналов диагностики ресурсов Azure](../azure-monitor/platform/resource-logs-overview.md) вы можете отслеживать и отправлять журналы в [службу хранилища Azure](https://azure.microsoft.com/services/storage/), выполнять их потоковую передачу в [Центры событий Azure](https://azure.microsoft.com/services/event-hubs/) и экспортировать их в [Журналы Azure Monitor](../azure-monitor/azure-monitor-log-hub.md).
 
 ![Процесс ведения журнала диагностики в хранилище, Центрах событий и журналах Azure Monitor](./media/analysis-services-logging/aas-logging-overview.png)
 
@@ -141,7 +141,7 @@ ms.locfileid: "70959072"
 
 ### <a name="resource-manager-template"></a>Шаблон Resource Manager
 
-Узнайте, как [включить параметры диагностики при создании ресурса из шаблона Resource Manager](../azure-monitor/platform/diagnostic-logs-stream-template.md). 
+Узнайте, как [включить параметры диагностики при создании ресурса из шаблона Resource Manager](../azure-monitor/platform/diagnostic-settings-template.md). 
 
 ## <a name="manage-your-logs"></a>Управление журналами
 
@@ -327,6 +327,6 @@ Set-AzDiagnosticSetting -ResourceId $account.ResourceId`
 
 ## <a name="next-steps"></a>Следующие шаги
 
-Узнайте больше о [журнал ведения диагностики ресурсов Azure](../azure-monitor/platform/diagnostic-logs-overview.md).
+Узнайте больше о [журнал ведения диагностики ресурсов Azure](../azure-monitor/platform/resource-logs-overview.md).
 
 См. раздел [Set-аздиагностиксеттинг](https://docs.microsoft.com/powershell/module/az.monitor/set-azdiagnosticsetting) в справке PowerShell.

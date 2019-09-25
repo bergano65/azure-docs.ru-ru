@@ -16,12 +16,12 @@ ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4426c070d2fd2e26e0d4368a94996bc32e95129d
-ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
+ms.openlocfilehash: fdfb2d7d33111f1adf998cd75446576d2010a365
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71103956"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71257781"
 ---
 # <a name="migrate-ios-applications-that-use-microsoft-authenticator-from-adalnet-to-msalnet"></a>Перенос приложений iOS, использующих Microsoft Authenticator из ADAL.NET в MSAL.NET
 
@@ -36,7 +36,7 @@ ms.locfileid: "71103956"
 
 ### <a name="what-are-brokers"></a>Что такое брокеры?
 
-Брокеры — это приложения, предоставляемые корпорацией Майкрософт в Android и iOS. (См. [Microsoft Authenticatorное](https://www.microsoft.com/account/authenticator) приложение в iOS и Android, а также корпоративный портал Intuneное приложение на Android.) 
+Брокеры — это приложения, предоставляемые корпорацией Майкрософт в Android и iOS. (См. [Microsoft Authenticatorное](https://www.microsoft.com/p/microsoft-authenticator/9nblgggzmcj6) приложение в iOS и Android, а также корпоративный портал Intuneное приложение на Android.) 
 
 Они включают:
 

@@ -5,20 +5,19 @@ manager: nitinme
 author: LuisCabrer
 services: search
 ms.service: search
-ms.subservice: cognitive-search
 ms.topic: conceptual
 ms.date: 05/20/2019
 ms.author: luisca
-ms.openlocfilehash: dcdef8df25bdf6a7a60b1221d1463e6be5486875
-ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
+ms.openlocfilehash: 113286f829b628d4740fbba34e7279741a934aef
+ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69639449"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71265931"
 ---
 # <a name="attach-a-cognitive-services-resource-with-a-skillset-in-azure-search"></a>Подключение ресурса Cognitive Services с набором навыков в службе "Поиск Azure" 
 
-В алгоритмах искусственного интеллекта используются [конвейеры](cognitive-search-concept-intro.md) автоиндексирования, используемые для обогащения документов в службе поиска Azure. Эти алгоритмы основаны на ресурсах Azure Cognitive Services, включая [компьютерное зрение](https://azure.microsoft.com/services/cognitive-services/computer-vision/) для анализа изображений и оптического распознавания символов (OCR), а также [анализ текста](https://azure.microsoft.com/services/cognitive-services/text-analytics/) для распознавания сущностей, извлечения ключевых фраз и других дополнений. . Как используется службой поиска Azure для обогащения документов, алгоритмы упаковываются внутри навыка, помещаются в набор *навыков*и на которые ссылается *индексатор* во время индексирования.
+В алгоритмах искусственного интеллекта используются [конвейеры автоиндексирования](cognitive-search-concept-intro.md) , используемые для обогащения документов в службе поиска Azure. Эти алгоритмы основаны на ресурсах Azure Cognitive Services, включая [компьютерное зрение](https://azure.microsoft.com/services/cognitive-services/computer-vision/) для анализа изображений и оптического распознавания символов (OCR), а также [анализ текста](https://azure.microsoft.com/services/cognitive-services/text-analytics/) для распознавания сущностей, извлечения ключевых фраз и других дополнений. . Как используется службой поиска Azure для обогащения документов, алгоритмы упаковываются внутри *навыка*, помещаются в набор *навыков*и на которые ссылается *индексатор* во время индексирования.
 
 Можно бесплатно освободить ограниченное число документов. Или можно присоединить оплачиваемый Cognitive Servicesный ресурс к набору *навыков* для более крупных и часто используемых рабочих нагрузок. В этой статье вы узнаете, как присоединить оплачиваемый Cognitive Services ресурс к расширению документов во время [индексирования](search-what-is-an-index.md)службы поиска Azure.
 

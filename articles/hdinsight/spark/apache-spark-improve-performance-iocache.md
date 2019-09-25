@@ -1,27 +1,27 @@
 ---
 title: Производительность Apache Spark рабочих нагрузок с помощью кэша операций ввода-вывода Azure HDInsight (Предварительная версия)
 description: Узнайте о службе IO Cache для Azure HDInsight и ее использовании для повышения производительности Apache Spark.
-ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
+ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 10/15/2018
-ms.openlocfilehash: f3f171d4dfd3642dc71724afbe084c3fcbf8beaa
-ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
+ms.openlocfilehash: ecb393ea1f64897f17ce73170da1673886ef8916
+ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71091072"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71266186"
 ---
-# <a name="improve-performance-of-apache-spark-workloads-using-azure-hdinsight-io-cache"></a>Повышение производительности Apache Spark рабочих нагрузок с помощью кэша ввода-вывода Azure HDInsight 
+# <a name="improve-performance-of-apache-spark-workloads-using-azure-hdinsight-io-cache"></a>Повышение производительности Apache Spark рабочих нагрузок с помощью кэша ввода-вывода Azure HDInsight
 
 IO Cache — это служба кэширования данных для Azure HDInsight, который повышает производительность заданий Apache Spark. IO Cache также поддерживает рабочие нагрузки [Apache Tez](https://tez.apache.org/) и [Apache Hive](https://hive.apache.org/), которые могут выполняться в кластерах [Apache Spark](https://spark.apache.org/). IO Cache использует компонент кэширования с открытым исходным кодом RubiX. Локальный дисковый кэш RubiX предназначен для использования с модулями аналитики больших данных, которые получают данные из систем облачного хранения. RubiX выделяется в ряду систем кэширования, поскольку использует для хранения данных не оперативную память, а твердотельные накопители (SSD). Служба IO Cache запускает серверы метаданных RubiX на каждом рабочем узле кластера и управляет ими. Она также настраивает прозрачное использование кэша RubiX для всех служб кластера.
 
 Большинство твердотельных накопителей обеспечивают пропускную способность более 1 ГБ в секунду. Такая пропускная способность в сочетании с файловым кэшем в памяти, который поддерживает операционная система, обеспечивает возможность загружать модули обработки для вычисления больших данных, например Apache Spark. Оперативная память остается доступной Apache Spark для обработки задач с высокой нагрузкой на память, например процессов изменения порядка элементов. Эксклюзивное использование оперативной памяти позволяет Apache Spark добиться оптимального использования ресурсов.  
 
->[!Note]  
->В настоящее время IO Cache использует RubiX в качестве компонента кэширования, но в будущих версиях службы это может измениться. Используйте интерфейсы IO Cache, не создавая никаких прямых зависимостей от реализации RubiX.
+> [!Note]  
+> В настоящее время IO Cache использует RubiX в качестве компонента кэширования, но в будущих версиях службы это может измениться. Используйте интерфейсы IO Cache, не создавая никаких прямых зависимостей от реализации RubiX.
 
 ## <a name="benefits-of-azure-hdinsight-io-cache"></a>Преимущества IO Cache для Azure HDInsight
 
@@ -70,7 +70,7 @@ IO Cache для Azure HDInsight по умолчанию отключен в пр
 
 1. Выберите **Restart** (Перезапустить)  > **Restart All Affected** (Перезапустить все затрагиваемые).
 
-    ![Перезапустить все затрагиваемые](./media/apache-spark-improve-performance-iocache/ambariui-restart-all-affected.png "Перезапустить все затрагиваемые")
+    ![Apache Ambari перезапускает все затронутые](./media/apache-spark-improve-performance-iocache/ambariui-restart-all-affected.png "Перезапустить все затронутые")
 
 1. Щелкните **Confirm Restart All** (Подтвердить перезапуск всех).
 

@@ -10,12 +10,12 @@ ms.devlang: nodejs
 ms.topic: conceptual
 ms.date: 07/17/2019
 ms.author: wesmc
-ms.openlocfilehash: e7346fa0f9cc977755c441077a50707dd207019f
-ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
+ms.openlocfilehash: 79e565668db661d02833d22d2ef619fc67708115
+ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69638278"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71266154"
 ---
 # <a name="connect-raspberry-pi-to-azure-iot-hub-nodejs"></a>Подключение Raspberry Pi к Центру Интернета вещей Azure (Node.js)
 
@@ -135,7 +135,7 @@ ms.locfileid: "69638278"
 
 ![Подключение Raspberry Pi и датчика](./media/iot-hub-raspberry-pi-kit-node-get-started/3-raspberry-pi-sensor-connection.png)
 
-Датчик BME280 может собирать данные о температуре и влажности. Светодиодный индикатор мигает, когда устройство отправляет сообщение в облако. 
+Датчик BME280 может собирать данные о температуре и влажности. Светодиодный индикатор мигает, когда устройство отправляет сообщение в облако.
 
 Чтобы подключить выводы датчика, используйте следующие кабели:
 
@@ -170,8 +170,8 @@ ms.locfileid: "69638278"
 1. Используйте один из следующих SSH-клиентов для подключения к Raspberry Pi с главного компьютера:
 
    **Пользователи Windows**
-  
-   1\. Скачайте и установите [PuTTY](https://www.putty.org/) для Windows. 
+
+   1\. Скачайте и установите [PuTTY](https://www.putty.org/) для Windows.
 
    2\. Скопируйте IP-адрес устройства Pi и вставьте его в поле для имени узла (или для IP-адреса), а затем выберите тип подключения SSH.
 
@@ -192,10 +192,10 @@ ms.locfileid: "69638278"
    node -v
    ```
 
-   Если версия ниже 11. x или если на устройстве PI отсутствует Node. js, установите последнюю версию.
+   Если версия меньше 10. x или если на устройстве PI отсутствует Node. js, установите последнюю версию.
 
    ```bash
-   curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash
+   curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash
    sudo apt-get -y install nodejs
    ```
 
@@ -209,7 +209,7 @@ ms.locfileid: "69638278"
 
    ```bash
    cd iot-hub-node-raspberrypi-client-app
-   sudo npm install
+   npm install
    ```
 
    > [!NOTE]
@@ -228,6 +228,8 @@ ms.locfileid: "69638278"
    В этом файле можно настроить два элемента. Первый — `interval`. Он определяет время (в миллисекундах) между отправкой двух сообщений в облако. Второй — `simulatedData`. Он представляет логическое значение, определяющее, будут ли использоваться смоделированные данные датчика.
 
    Если у вас **нет датчика**, задайте для параметра `simulatedData` значение `true`, чтобы пример приложения создал и использовал смоделированные данные датчика.
+
+   *Примечание. Адрес I2C, используемый в этом руководстве, по умолчанию — 0x77. В зависимости от конфигурации это также может быть 0x76: Если возникла ошибка I2C, попробуйте изменить значение на 118 и убедитесь, что это работает лучше. Чтобы узнать, какой адрес используется датчиком, выполните `sudo i2cdetect -y 1` команду в оболочке на устройстве Raspberry Pi.*
 
 2. Сохраните изменения и закройте окно, нажав клавиши CTRL+O > ВВОД > CTRL+X.
 

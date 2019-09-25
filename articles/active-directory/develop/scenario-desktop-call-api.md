@@ -1,6 +1,6 @@
 ---
-title: Приложения на рабочем столе, вызовы веб-API-интерфейсы (вызов веб-API) — платформе Microsoft identity
-description: Узнайте, как создание классического приложения, которое вызывает веб-API (вызов веб-API)
+title: Классическое приложение, вызывающее веб-API (вызов веб-API) — платформа Microsoft Identity
+description: Узнайте, как создать классическое приложение, вызывающее веб-API (вызов веб-API).
 services: active-directory
 documentationcenter: dev-center-name
 author: jmprieur
@@ -15,14 +15,14 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4abaf234d3b216e0f67501e5d2f2f5c3f874c5d7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 56d3d01e39adfeb6bf2ef5e7e7d595f49c90f5a5
+ms.sourcegitcommit: 263a69b70949099457620037c988dc590d7c7854
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67111245"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71268281"
 ---
-# <a name="desktop-app-that-calls-web-apis---call-a-web-api"></a>Классическое приложение, которое вызывает веб-API - вызов веб-API
+# <a name="desktop-app-that-calls-web-apis---call-a-web-api"></a>Классическое приложение, вызывающее веб-API — вызов веб-API
 
 Теперь, когда у вас есть маркер, можно вызвать защищенный веб-API.
 
@@ -34,9 +34,39 @@ ms.locfileid: "67111245"
 More includes will come later for Python and Java
 -->
 
-## <a name="calling-several-apis---incremental-consent-and-conditional-access"></a>Вызов несколько интерфейсов API - добавочное согласие и условного доступа
+## <a name="calling-a-web-api-in-msal-for-ios-and-macos"></a>Вызов веб-API в MSAL для iOS и macOS
 
-Если необходимо вызвать несколько интерфейсов API для одного пользователя, когда вы получили маркер для первый API, можно просто вызвать `AcquireTokenSilent`, и вы получите токен для других API-интерфейсы автоматически большую часть времени.
+Методы получения маркеров возвращают `MSALResult` объект. `MSALResult``accessToken` предоставляет свойство, которое можно использовать для вызова веб-API. Маркер доступа должен быть добавлен в заголовок авторизации HTTP перед вызовом доступа к защищенному веб-API.
+
+Objective-C.
+
+```objc
+NSMutableURLRequest *urlRequest = [NSMutableURLRequest new];
+urlRequest.URL = [NSURL URLWithString:"https://contoso.api.com"];
+urlRequest.HTTPMethod = @"GET";
+urlRequest.allHTTPHeaderFields = @{ @"Authorization" : [NSString stringWithFormat:@"Bearer %@", accessToken] };
+        
+NSURLSessionDataTask *task =
+[[NSURLSession sharedSession] dataTaskWithRequest:urlRequest
+     completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {}];
+[task resume];
+```
+
+SWIFT
+
+```swift
+let urlRequest = NSMutableURLRequest()
+urlRequest.url = URL(string: "https://contoso.api.com")!
+urlRequest.httpMethod = "GET"
+urlRequest.allHTTPHeaderFields = [ "Authorization" : "Bearer \(accessToken)" ]
+     
+let task = URLSession.shared.dataTask(with: urlRequest as URLRequest) { (data: Data?, response: URLResponse?, error: Error?) in }
+task.resume()
+```
+
+## <a name="calling-several-apis---incremental-consent-and-conditional-access"></a>Вызов нескольких интерфейсов API — добавочное согласие и условный доступ
+
+Если необходимо вызвать несколько API для одного и того же пользователя, то после получения маркера для первого API можно просто вызвать `AcquireTokenSilent`, и вы получите маркер для других интерфейсов API в большинстве случаев.
 
 ```CSharp
 var result = await app.AcquireTokenXX("scopeApi1")
@@ -46,10 +76,10 @@ result = await app.AcquireTokenSilent("scopeApi2")
                   .ExecuteAsync();
 ```
 
-Случаи, где требуется взаимодействие — когда:
+Случаи, когда требуется взаимодействие,:
 
-- Пользователь дал согласие для первый API, но теперь потребуется предоставить согласие для нескольких областей (добавочное согласие пользователя)
-- Первый API не требуются несколько двухфакторной проверки подлинности, но не следующего.
+- Пользователь, которому предоставлен доступ к первому API, теперь должен предоставить согласие на дополнительные области (последовательное согласие)
+- Первый API не требует многофакторной проверки подлинности, а следующий —.
 
 ```CSharp
 var result = await app.AcquireTokenXX("scopeApi1")
@@ -68,7 +98,7 @@ catch(MsalUiRequiredException ex)
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Переместить в рабочую среду](scenario-desktop-production.md)

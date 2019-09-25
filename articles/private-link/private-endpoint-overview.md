@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: conceptual
 ms.date: 09/16/2019
 ms.author: kumud
-ms.openlocfilehash: 7394a9e1b1fa90741bc26fc0e9b6b7e6284d75e0
-ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
+ms.openlocfilehash: 80f2e8a8fd41fbafbaf6d30bc1001b86c5dcdd50
+ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71104680"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71266370"
 ---
 # <a name="what-is-azure-private-endpoint"></a>Что такое частная конечная точка Azure?
 
@@ -43,7 +43,7 @@ ms.locfileid: "71104680"
  
 - Несколько частных конечных точек можно создать с помощью одного и того же ресурса частной связи. Для одной сети, использующей общую конфигурацию DNS-сервера, рекомендуется использовать одну частную конечную точку для данного ресурса закрытой ссылки, чтобы избежать дублирования записей или конфликтов при разрешении DNS. 
  
-- В одной и той же виртуальной сети можно создать несколько частных конечных точек для одних и тех же или разных подсетей. Количество частных конечных точек, которые можно создать в подписке, ограничено. Дополнительные сведения см. в статье [ограничения Azure](https://docs.microsoft.com/azure/azure-subscription-service-limits.md#networking-limits).
+- В одной и той же виртуальной сети можно создать несколько частных конечных точек для одних и тех же или разных подсетей. Количество частных конечных точек, которые можно создать в подписке, ограничено. Дополнительные сведения см. в статье [ограничения Azure](https://docs.microsoft.com/azure/azure-subscription-service-limits#networking-limits).
 
 
  
@@ -128,8 +128,8 @@ Azure создаст каноническое имя DNS-записи (CNAME) н
 |  Портал не поддерживает создание частных конечных точек с помощью псевдонима  |   Портал позволяет создавать частные конечные точки только с помощью URI ресурса.      | Использовать URI ресурса для запроса частных подключений к конечной точке        |
 
 ## <a name="next-steps"></a>Следующие шаги
-- [Создание частной конечной точки для сервера базы данных SQL с помощью портала](create-private-endpoint-portal.md)
-- [Создание частной конечной точки для сервера базы данных SQL с помощью PowerShell](create-private-endpoint-powershell.md)
-- [Создание частной конечной точки для сервера базы данных SQL с помощью интерфейса командной строки](create-private-endpoint-cli.md)
-- [Создание частной конечной точки для учетной записи хранения с помощью портала](create-private-endpoint-storage-portal.md)
-- [Создание собственной службы частной связи с помощью Azure PowerShell](create-private-link-service-powershell.md)
+- [Create a Private Endpoint using Azure portal ](create-private-endpoint-portal.md) (Создание частной конечной точки для сервера базы данных SQL с помощью портала)
+- [Создание частной конечной точки для сервера базы данных SQL с помощью портала PowerShell ](create-private-endpoint-powershell.md)
+- [Создание частной конечной точки для сервера базы данных SQL с помощью портала CLI ](create-private-endpoint-cli.md)
+- [Создание частной конечной точки для учетной записи хранения, используя портал ](create-private-endpoint-storage-portal.md)
+- [Create your own Private Link service using Azure PowerShel](create-private-link-service-powershell.md) (Создание собственного Приватного канала с помощью Azure PowerShell)

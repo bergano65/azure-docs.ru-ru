@@ -16,12 +16,12 @@ ms.author: jmprieur
 ms.reviwer: brandwe
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d49717355cab5441d26608fa12333bd1b8b73d44
-ms.sourcegitcommit: c556477e031f8f82022a8638ca2aec32e79f6fd9
+ms.openlocfilehash: 454d62f871290d2e7dd8d0eee4b1a2429625a5fc
+ms.sourcegitcommit: 263a69b70949099457620037c988dc590d7c7854
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68413540"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71268268"
 ---
 # <a name="mobile-app-that-calls-web-apis---get-a-token"></a>Мобильное приложение, вызывающее веб-API — получение токена
 
@@ -40,7 +40,7 @@ String[] SCOPES = {"https://graph.microsoft.com/.default"};
 
 #### <a name="ios"></a>iOS
 ```swift
-let scopes: [String] = ["https://graph.microsoft.com/.default"]
+let scopes = ["https://graph.microsoft.com/.default"]
 ```
 
 #### <a name="xamarin"></a>Xamarin
@@ -50,7 +50,7 @@ var scopes = new [] {"https://graph.microsoft.com/.default"};
 
 ## <a name="get-tokens"></a>Получить токены
 
-### <a name="via-msal"></a>Через MSAL
+### <a name="acquire-tokens-via-msal"></a>Получение маркеров через MSAL
 
 MSAL позволяет приложениям получать маркеры автоматически и интерактивно. Просто вызовите эти методы и MSAL возвращает маркер доступа для запрошенных областей. Правильный шаблон — выполнить автоматический запрос и вернуться к интерактивному запросу.
 
@@ -86,61 +86,114 @@ sampleApp.acquireToken(getActivity(), SCOPES, getAuthInteractiveCallback());
 
 #### <a name="ios"></a>iOS
 
+**Сначала попытайтесь получить маркер автоматически:**
+
+Objective-C.
+
+```objc
+
+NSArray *scopes = @[@"https://graph.microsoft.com/.default"];
+NSString *accountIdentifier = @"my.account.id";
+    
+MSALAccount *account = [application accountForIdentifier:accountIdentifier error:nil];
+    
+MSALSilentTokenParameters *silentParams = [[MSALSilentTokenParameters alloc] initWithScopes:scopes account:account];
+[application acquireTokenSilentWithParameters:silentParams completionBlock:^(MSALResult *result, NSError *error) {
+        
+    if (!error)
+    {
+        // You'll want to get the account identifier to retrieve and reuse the account
+        // for later acquireToken calls
+        NSString *accountIdentifier = result.account.identifier;
+            
+        // Access token to call the Web API
+        NSString *accessToken = result.accessToken;
+    }
+        
+    // Check the error
+    if (error && [error.domain isEqual:MSALErrorDomain] && error.code == MSALErrorInteractionRequired)
+    {
+        // Interactive auth will be required, call acquireTokenWithParameters:error:
+        return;
+    }
+}];
+```
+ 
+SWIFT
+
 ```swift
-// Initialize the app.
-guard let authorityURL = URL(string: kAuthority) else {
-    self.loggingText.text = "Unable to create authority URL"
-    return
-}
-let authority = try MSALAADAuthority(url: authorityURL)
-let msalConfiguration = MSALPublicClientApplicationConfig(clientId: kClientID, redirectUri: nil, authority: authority)
-self.applicationContext = try MSALPublicClientApplication(configuration: msalConfiguration)
 
-// Get tokens.
-let parameters = MSALSilentTokenParameters(scopes: kScopes, account: account)
-applicationContext.acquireTokenSilent(with: parameters) { (result, error) in
-    if let error = error {
-        let nsError = error as NSError
-
-        // interactionRequired means you need to ask the user to sign in. This usually happens
-        // when the user's refresh token is expired or when the user has changed the password,
-        // among other possible reasons.
-        if (nsError.domain == MSALErrorDomain) {
-            if (nsError.code == MSALError.interactionRequired.rawValue) {    
-                DispatchQueue.main.async {
-                    guard let applicationContext = self.applicationContext else { return }
-                    let parameters = MSALInteractiveTokenParameters(scopes: kScopes)
-                    applicationContext.acquireToken(with: parameters) { (result, error) in
-                        if let error = error {
-                            self.updateLogging(text: "Could not acquire token: \(error)")
-                            return
-                        }
-
-                        guard let result = result else {
-                            self.updateLogging(text: "Could not acquire token: No result returned")
-                            return
-                        }
-                        
-                        // Token is ready via interaction!
-                        self.accessToken = result.accessToken
-                    }
-                }
-                return
-            }
-        }
-
-        self.updateLogging(text: "Could not acquire token silently: \(error)")
-        return
-    }
-    guard let result = result else {
-        self.updateLogging(text: "Could not acquire token: No result returned")
-        return
-    }
-
-    // Token is ready via silent acquisition.
-    self.accessToken = result.accessToken
+let scopes = ["https://graph.microsoft.com/.default"]
+let accountIdentifier = "my.account.id"
+        
+guard let account = try? application.account(forIdentifier: accountIdentifier) else { return }
+let silentParameters = MSALSilentTokenParameters(scopes: scopes, account: account)
+application.acquireTokenSilent(with: silentParameters) { (result, error) in
+            
+    guard let authResult = result, error == nil else {
+                
+    let nsError = error! as NSError
+                
+    if (nsError.domain == MSALErrorDomain &&
+        nsError.code == MSALError.interactionRequired.rawValue) {
+                    
+            // Interactive auth will be required, call acquireToken()
+            return
+         }
+         return
+     }
+            
+    // You'll want to get the account identifier to retrieve and reuse the account
+    // for later acquireToken calls
+    let accountIdentifier = authResult.account.identifier
+            
+    // Access token to call the Web API
+    let accessToken = authResult.accessToken
 }
 ```
+
+**Затем, если MSAL `MSALErrorInteractionRequired`возвращает, попробуйте получить маркеры в интерактивном режиме:**
+
+Objective-C.
+
+```objc
+UIViewController *viewController = ...; // Pass a reference to the view controller that should be used when getting a token interactively
+MSALWebviewParameters *webParameters = [[MSALWebviewParameters alloc] initWithParentViewController:viewController];
+MSALInteractiveTokenParameters *interactiveParams = [[MSALInteractiveTokenParameters alloc] initWithScopes:scopes webviewParameters:webParameters];
+[application acquireTokenWithParameters:interactiveParams completionBlock:^(MSALResult *result, NSError *error) {
+    if (!error) 
+    {
+        // You'll want to get the account identifier to retrieve and reuse the account
+        // for later acquireToken calls
+        NSString *accountIdentifier = result.account.identifier;
+            
+        NSString *accessToken = result.accessToken;
+    }
+}];
+```
+
+SWIFT
+
+```swift
+let viewController = ... // Pass a reference to the view controller that should be used when getting a token interactively
+let webviewParameters = MSALWebviewParameters(parentViewController: viewController)
+let interactiveParameters = MSALInteractiveTokenParameters(scopes: scopes, webviewParameters: webviewParameters)
+application.acquireToken(with: interactiveParameters, completionBlock: { (result, error) in
+                
+    guard let authResult = result, error == nil else {
+        print(error!.localizedDescription)
+        return
+    }
+                
+    // Get access token from result
+    let accessToken = authResult.accessToken
+})
+```
+
+MSAL для iOS и macOS поддерживает различные модификаторы при получении маркера в интерактивном или автоматическом режиме.
+* [Общие параметры при получении токена](https://azuread.github.io/microsoft-authentication-library-for-objc/Classes/MSALTokenParameters.html#/Configuration%20parameters)
+* [Параметры для получения интерактивного маркера](https://azuread.github.io/microsoft-authentication-library-for-objc/Classes/MSALInteractiveTokenParameters.html#/Configuring%20MSALInteractiveTokenParameters)
+* [Параметры для получения автоматического токена](https://azuread.github.io/microsoft-authentication-library-for-objc/Classes/MSALSilentTokenParameters.html)
 
 #### <a name="xamarin"></a>Xamarin
 
@@ -163,15 +216,15 @@ catch(MsalUiRequiredException)
 }
 ```
 
-### <a name="mandatory-parameters"></a>Обязательные параметры
+#### <a name="mandatory-parameters-in-msalnet"></a>Обязательные параметры в MSAL.NET
 
 `AcquireTokenInteractive`имеет только один обязательный ``scopes``параметр, который содержит перечисление строк, определяющих области, для которых требуется токен. Если маркер предназначен для Microsoft Graph, необходимые области можно найти в справочнике по API для каждого API Microsoft Graph в разделе "разрешения". Например, чтобы получить [список контактов пользователя](https://developer.microsoft.com/graph/docs/api-reference/v1.0/api/user_list_contacts), необходимо будет использовать область "пользователь. чтение", "Contacts. Read". См. также [Microsoft Graph ссылки на разрешения](https://developer.microsoft.com/graph/docs/concepts/permissions_reference).
 
 Если вы не указали его при создании приложения, в Android необходимо также указать родительское действие (с помощью `.WithParentActivityOrWindow`, см. ниже), чтобы токен был возвращен к родительскому действию после взаимодействия. Если не указать его, при вызове `.ExecuteAsync()`будет создано исключение.
 
-### <a name="specific-optional-parameters"></a>Конкретные необязательные параметры
+#### <a name="specific-optional-parameters-in-msalnet"></a>Определенные необязательные параметры в MSAL.NET
 
-#### <a name="withprompt"></a>виспромпт
+##### <a name="withprompt"></a>виспромпт
 
 `WithPrompt()`используется для управления интерактивностью пользователя путем указания запроса
 
@@ -185,7 +238,7 @@ catch(MsalUiRequiredException)
 - ``Never``(только для .NET 4,5 и WinRT) не запрашивает пользователя, а вместо этого будет пытаться использовать файл cookie, хранящийся в скрытом внедренном веб-представлении (см. ниже: Веб-представления в MSAL.NET). При использовании этого параметра может произойти сбой, и в `AcquireTokenInteractive` этом случае будет создано исключение, уведомляющее о необходимости взаимодействия пользовательского интерфейса, и необходимо использовать другой `Prompt` параметр.
 - ``NoPrompt``. Не отправляет запрос поставщику удостоверений. Этот параметр полезен только для Azure AD B2C редактирования политик профилей (см. раздел [особенности B2C](https://aka.ms/msal-net-b2c-specificities)).
 
-#### <a name="withextrascopetoconsent"></a>висекстраскопетоконсент
+##### <a name="withextrascopetoconsent"></a>висекстраскопетоконсент
 
 Этот модификатор используется в расширенном сценарии, где пользователь должен заранее согласиться с несколькими ресурсами (и вы не хотите использовать добавочное согласие, которое обычно используется с MSAL.NET/платформой Microsoft Identity Platform v 2.0). Дополнительные сведения см. в разделе [как получить согласие пользователя на получение нескольких ресурсов](scenario-desktop-production.md#how-to-have--the-user-consent-upfront-for-several-resources).
 
@@ -195,11 +248,11 @@ var result = await app.AcquireTokenInteractive(scopesForCustomerApi)
                      .ExecuteAsync();
 ```
 
-#### <a name="other-optional-parameters"></a>Другие необязательные параметры
+##### <a name="other-optional-parameters"></a>Другие необязательные параметры
 
 Дополнительные сведения о других необязательных параметрах `AcquireTokenInteractive` см. в справочной документации по [аккуиретокенинтерактивепараметербуилдер](/dotnet/api/microsoft.identity.client.acquiretokeninteractiveparameterbuilder?view=azure-dotnet-preview#methods) .
 
-### <a name="via-the-protocol"></a>Через протокол
+### <a name="acquire-tokens-via-the-protocol"></a>Получение маркеров через протокол
 
 Мы не советуем использовать протокол напрямую. В этом случае приложение не будет поддерживать некоторые возможности единого входа (SSO), управления устройствами и условного доступа.
 

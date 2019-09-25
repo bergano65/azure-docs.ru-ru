@@ -9,13 +9,12 @@ ms.workload: search
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: luisca
-ms.subservice: cognitive-search
-ms.openlocfilehash: a01518158e063d68734b1230f11cae78f461faac
-ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
+ms.openlocfilehash: 89539d42e9ac9456c7ee971f6ea607b6b2c6befa
+ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70183456"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71266327"
 ---
 # <a name="custom-web-api-skill"></a>Пользовательский навык веб-API
 

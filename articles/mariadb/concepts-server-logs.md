@@ -6,20 +6,20 @@ ms.author: raagyema
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 06/12/2019
-ms.openlocfilehash: 7a517be49a249b0b73c901137381bd05946aa4cc
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 10dbd4d7fa838ee7f8a3f70b3caadb570877d685
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67065703"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71259971"
 ---
-# <a name="slow-query-logs-in-azure-database-for-mariadb"></a>Журналы медленных запросов в базе данных Azure для MariaDB
+# <a name="slow-query-logs-in-azure-database-for-mariadb"></a>Журналы запросов в базе данных Azure для MariaDB
 В базе данных Azure для MariaDB пользователям доступен журнал медленных запросов. Доступ к журналам транзакций не поддерживается. Журнал медленных запросов можно использовать для выявления проблем с производительностью при устранении неполадок.
 
 Дополнительные сведения об этих журналах см. в документации к MariaDB по [журналам медленных запросов](https://mariadb.com/kb/en/library/slow-query-log-overview/).
 
-## <a name="access-slow-query-logs"></a>Доступ к журналам медленных запросов
-Просмотреть и скачать базы данных Azure для MariaDB журналы медленных запросов, с помощью портала Azure и Azure CLI можно.
+## <a name="access-slow-query-logs"></a>Доступ к журналам запросов с задержкой
+Вы можете перечислить и скачать базу данных Azure для MariaDB журналов запросов с помощью портал Azure и Azure CLI.
 
 На портале Azure выберите нужный сервер Базы данных Azure для MariaDB. В разделе **Мониторинг** найдите страницу **Журналы сервера**.
 
@@ -30,7 +30,7 @@ ms.locfileid: "67065703"
 
 Новый файл журнала создается каждые 24 часа или при достижении размера файла 7 ГБ.
 
-## <a name="configure-slow-query-logging"></a>Настроить ведение журнала медленных запросов
+## <a name="configure-slow-query-logging"></a>Настройка ведения журнала запросов с задержкой
 Журнал медленных запросов по умолчанию отключен. Чтобы включить его, установите для параметра slow_query_log значение "ON" (Включено).
 
 Вы можете настроить еще несколько параметров.
@@ -43,10 +43,10 @@ ms.locfileid: "67065703"
 Полное описание параметров журнала медленных запросов см. в [соответствующей документации к MariaDB](https://mariadb.com/kb/en/library/slow-query-log-overview/).
 
 ## <a name="diagnostic-logs"></a>Журналы диагностики
-База данных Azure для MariaDB интегрирована с журналами диагностики Azure Monitor. После включения журналы медленных запросов на сервере MariaDB, вы можете их передаваемый журналы Azure Monitor, концентраторы событий или хранилища Azure. Дополнительные сведения о том, как включить журналы диагностики, см. в статье [Сбор и использование данных журнала из ресурсов Azure](../azure-monitor/platform/diagnostic-logs-overview.md).
+База данных Azure для MariaDB интегрирована с журналами диагностики Azure Monitor. Включив журналы запросов на сервере MariaDB, вы можете выбрать их для Azure Monitor журналов, концентраторов событий или службы хранилища Azure. Дополнительные сведения о том, как включить журналы диагностики, см. в статье [Сбор и использование данных журнала из ресурсов Azure](../azure-monitor/platform/resource-logs-overview.md).
 
 > [!IMPORTANT]
-> Эта функция диагностических журналов сервера доступна только в общего назначения и оптимизированных для памяти [ценовые категории](concepts-pricing-tiers.md).
+> Эта диагностическая функция для журналов сервера доступна только в общего назначения и оптимизированных для памяти [ценовых категориях](concepts-pricing-tiers.md).
 
 В приведенной ниже таблице описывается содержимое каждого журнала. Порядок появления выбранных полей зависит от выбранного метода вывода.
 
@@ -54,7 +54,7 @@ ms.locfileid: "67065703"
 |---|---|
 | `TenantId` | Идентификатор клиента |
 | `SourceSystem` | `Azure` |
-| `TimeGenerated` [UTC] | Метка времени, когда журнал был записан в формате UTC |
+| `TimeGenerated`ФОРМАТА | Метка времени, когда журнал был записан в формате UTC |
 | `Type` | Тип журнала Всегда `AzureDiagnostics` |
 | `SubscriptionId` | Идентификатор GUID для подписки, принадлежащей серверу |
 | `ResourceGroup` | Имя группы ресурсов, принадлежащей серверу |
@@ -65,18 +65,18 @@ ms.locfileid: "67065703"
 | `Category` | `MySqlSlowLogs` |
 | `OperationName` | `LogEvent` |
 | `Logical_server_name_s` | Имя сервера |
-| `start_time_t` [UTC] | Время начала запроса. |
+| `start_time_t`ФОРМАТА | Время начала запроса. |
 | `query_time_s` | Общее время, которое потребовалось для выполнения запроса. |
 | `lock_time_s` | Общее время блокировки запроса. |
 | `user_host_s` | Имя пользователя |
 | `rows_sent_s` | Количество отправленных строк. |
 | `rows_examined_s` | Число проверенных строк. |
 | `last_insert_id_s` | [last_insert_id](https://mariadb.com/kb/en/library/last_insert_id/) |
-| `insert_id_s` | Вставьте идентификатор |
+| `insert_id_s` | Вставить идентификатор |
 | `sql_text_s` | Полный запрос. |
 | `server_id_s` | Идентификатор сервера |
 | `thread_id_s` | Идентификатор потока |
 | `\_ResourceId` | Универсальный код ресурса (URI) |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - [Настройка и использование журналов сервера с помощью портала Azure](howto-configure-server-logs-portal.md).

@@ -4,17 +4,17 @@ description: Проверка подлинности подчиненных ус
 author: kgremban
 manager: philmea
 ms.author: kgremban
-ms.date: 06/07/2019
+ms.date: 09/23/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: 7a032056a684107de3dd00fe4861f34c013a80db
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.openlocfilehash: d73c0f4dbfcc2c67a222f91693ebe8ed9ea83d98
+ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "71003622"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71266130"
 ---
 # <a name="authenticate-a-downstream-device-to-azure-iot-hub"></a>Аутентификация подчиненного устройства в Центре Интернета вещей
 
@@ -32,7 +32,7 @@ ms.locfileid: "71003622"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Выполните действия, описанные в разделе [Настройка устройства IOT Edge для работы в качестве прозрачного шлюза](how-to-create-transparent-gateway.md).
+Выполните действия, описанные в разделе [Настройка устройства IOT Edge для работы в качестве прозрачного шлюза](how-to-create-transparent-gateway.md). Если вы используете проверку подлинности X. 509 для подчиненного устройства, необходимо использовать тот же сценарий создания сертификата, который вы настроили в статье о прозрачном шлюзе. 
 
 В этой статье *имя узла шлюза* содержится в нескольких точках. Имя узла шлюза объявляется в параметре **HostName** файла config. YAML на устройстве шлюза IOT Edge. Он используется для создания сертификатов в этой статье и упоминается в строке подключения подчиненных устройств. Имя узла шлюза необходимо разрешить в IP-адрес, используя DNS или запись файла узла.
 
@@ -246,7 +246,7 @@ catch (Exception ex)
 }
 ```
 
-#### <a name="c"></a>В
+#### <a name="c"></a>К
 
 Пример программы на языке C, выполняющей проверку подлинности в центре Интернета вещей с помощью сертификатов X. 509, см. в примере [iotedge_downstream_device_sample](https://github.com/Azure/azure-iot-sdk-c/tree/x509_edge_bugbash/iothub_client/samples/iotedge_downstream_device_sample) для пакета SDK для IOT. Некоторые ключевые строки этого примера приведены здесь, чтобы продемонстрировать процесс проверки подлинности.
 

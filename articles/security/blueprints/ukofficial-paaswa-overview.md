@@ -8,12 +8,12 @@ ms.service: security
 ms.topic: article
 ms.date: 07/13/2018
 ms.author: jomolesk
-ms.openlocfilehash: c0163b5280de942491f2174aa371fa7cc83d5984
-ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
+ms.openlocfilehash: 1f6eeea85a348bb8e88a387fa0fc6bed55e41a5e
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2019
-ms.locfileid: "68946517"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71262787"
 ---
 # <a name="azure-security-and-compliance-blueprint-paas-web-application-hosting-for-uk-official-workloads"></a>Схема безопасности и соответствия требованиям Azure. Размещение веб-приложения PaaS для рабочих нагрузок UK OFFICIAL
 
@@ -68,7 +68,7 @@ ms.locfileid: "68946517"
 
 В следующем разделе подробно описываются компоненты развертывания и реализации.
 
-### <a name="security"></a>Безопасность
+### <a name="security"></a>Группа безопасности
 
 #### <a name="identity-and-authentication"></a>Идентификация и аутентификация
 
@@ -113,7 +113,7 @@ ms.locfileid: "68946517"
 - Несколько [слотов развертывания](https://docs.microsoft.com/azure/app-service/deploy-staging-slots) службы приложений: Dev (разработка), Preview (предварительный просмотр), QA (контроль качества), UAT (приемочное тестирование) и, конечно же, слот по умолчанию Production (рабочая среда);
 - [управляемые удостоверения для ресурсов Azure](https://docs.microsoft.com/azure/app-service/overview-managed-identity) для подключения к [Azure Key Vault](https://azure.microsoft.com/services/key-vault/) (также может использоваться для предоставления доступа к [Базе данных SQL Azure](https://azure.microsoft.com/services/sql-database/)); 
 - интеграция с [Azure Application Insights](../../azure-monitor/app/azure-web-apps.md) для мониторинга производительности;
-- [Журналы диагностики](../../azure-monitor/platform/diagnostic-logs-overview.md) 
+- [Журналы диагностики](../../azure-monitor/platform/resource-logs-overview.md) 
 - [оповещения метрик](../../azure-monitor/app/alerts.md); 
 - [Приложения API Azure](https://azure.microsoft.com/services/app-service/api/) 
 
@@ -243,7 +243,7 @@ ms.locfileid: "68946517"
 
 [Azure Active Directory B2C](https://azure.microsoft.com/services/active-directory-b2c/) можно реализовать как элемент управления, чтобы пользователи могли регистрировать общедоступные веб-приложения, создавать для них удостоверения, разрешать авторизацию и управлять доступом.
 
-## <a name="disclaimer"></a>Отказ от ответственности
+## <a name="disclaimer"></a>Заявление об отказе
 
 - Этот документ является исключительно информационным. МАЙКРОСОФТ НЕ ПРЕДОСТАВЛЯЕТ НИКАКИХ ГАРАНТИЙ, ЯВНЫХ, КОСВЕННЫХ ИЛИ ПРЕДУСМОТРЕННЫХ ЗАКОНОМ, В ОТНОШЕНИИ ИНФОРМАЦИИ В ЭТОМ ДОКУМЕНТЕ. Данный документ предоставляется "как есть". Сведения и мнения, представленные в данном документе, включая URL-адреса и ссылки на другие веб-сайты, могут быть изменены без предварительного уведомления. Клиенты, читающие этот документ, берут ответственность за его использование на себя.
 - Настоящий документ не предоставляет клиентам юридических прав на интеллектуальную собственность в отношении продуктов или решений корпорации Майкрософт.

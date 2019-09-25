@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 05/31/2019
 ms.author: mlearned
-ms.openlocfilehash: d881ffff81119167f54b5ef8f0c5e2c1ad1e4791
-ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
+ms.openlocfilehash: 9404888eadf94eaf86a6e8584b49595e10b34c69
+ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71075133"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71264182"
 ---
 # <a name="upgrade-an-azure-kubernetes-service-aks-cluster"></a>Обновление кластера службы Azure Kubernetes (AKS)
 
@@ -62,7 +62,10 @@ ERROR: Table output unavailable. Use the --query option to specify an appropriat
 az aks upgrade --resource-group myResourceGroup --name myAKSCluster --kubernetes-version 1.13.10
 ```
 
-Время, требуемое для выполнения обновления кластера, зависит от количества узлов.
+Время, требуемое для выполнения обновления кластера, зависит от количества узлов. 
+
+> [!NOTE]
+> Существует общее допустимое время для завершения обновления кластера. Это время вычисляется с помощью продукта `10 minutes * total number of nodes in the cluster`. Например, в кластере из 20 узлов операции обновления должны успешно пройти через 200 минут, иначе AKS не сможет выполнить операцию, чтобы избежать неисправимого состояния кластера. Чтобы восстановиться при сбое обновления, повторите операцию обновления после того, как будет достигнуто время ожидания.
 
 Чтобы убедиться, что обновление прошло успешно, используйте команду [AZ AKS показывать][az-aks-show] :
 

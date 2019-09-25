@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 08/06/2019
-ms.openlocfilehash: 84aad0f1a797bb7eccf1872bd291e72ecefa7eee
-ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
+ms.openlocfilehash: 677a52572658f80d9cde4de28dd02d6e957407d2
+ms.sourcegitcommit: 263a69b70949099457620037c988dc590d7c7854
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71035324"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71269213"
 ---
 # <a name="what-is-an-azure-machine-learning-workspace"></a>Что такое Рабочая область Машинное обучение Azure?
 
@@ -87,7 +87,7 @@ ms.locfileid: "71035324"
 * Используйте [портал Azure](how-to-manage-workspace.md) для интерфейса «точка-и щелчок», чтобы проанализировать каждый шаг.
 * Использование [пакета SDK машинное обучение Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py#workspace) для создания рабочей области на лету из сценариев Python и записных книжек Юпитер
 * Используйте [шаблон Azure Resource Manager](how-to-create-workspace-template.md) или интерфейс [командной строки машинное обучение Azure](reference-azure-machine-learning-cli.md) , если необходимо автоматизировать или настроить создание с использованием корпоративных стандартов безопасности.
-* При работе в Visual Studio Code используйте [расширение VS Code](how-to-vscode-tools.md#get-started-with-azure-machine-learning).
+* При работе в Visual Studio Code используйте [расширение VS Code](how-to-vscode-tools.md#get-started-with-azure-machine-learning-for-visual-studio-code).
 
 ## <a name="resources"></a>Связанные ресурсы
 

@@ -7,12 +7,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/16/2019
 ms.author: aelnably
-ms.openlocfilehash: 2d97e46578775cd0d5612fb8d94680bb5be8080a
-ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
+ms.openlocfilehash: 8e9e1189c3eb9de273926645ad0d4cfde5ba1c49
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71174777"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71260045"
 ---
 # <a name="continuous-delivery-by-using-github-action"></a>Непрерывная поставка с помощью действия GitHub
 
@@ -48,7 +48,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
 
 ## <a name="configure-the-github-secret"></a>Настройка секрета GitHub
 
-1. В [GitHub](https://github/com)найдите репозиторий, выберите **Параметры** > **секреты** > **Добавить новый секрет**.
+1. В [GitHub](https://github.com)найдите репозиторий, выберите **Параметры** > **секреты** > **Добавить новый секрет**.
 
     ![Добавить секрет](media/functions-how-to-github-actions/add-secret.png)
 

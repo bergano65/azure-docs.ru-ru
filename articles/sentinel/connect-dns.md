@@ -13,18 +13,20 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/23/2019
+ms.date: 09/24/2019
 ms.author: rkarlin
-ms.openlocfilehash: dd5442ff8c8d296dfa221a9ea7ed8d5833fd89c1
-ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
+ms.openlocfilehash: c5e58f496176ec0f1b8317c8b862a8ef2ffa434d
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71240714"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71262729"
 ---
-# <a name="connect-your-domain-name-server---preview"></a>Подключение сервера доменных имен — Предварительная версия
+# <a name="connect-your-domain-name-server"></a>Подключение сервера доменных имен
 
-
+> [!IMPORTANT]
+> Соединитель данных DNS в Azure Sentinel сейчас находится в общедоступной предварительной версии.
+> Эта функция предоставляется без соглашения об уровне обслуживания и не рекомендуется для рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 Любой сервер доменных имен (DNS), работающий в Windows, можно подключить к Sentinel Azure. Это делается путем установки агента на DNS-компьютере. С помощью журналов DNS можно получить сведения о безопасности, производительности и операциях, связанных с инфраструктурой DNS вашей организации, путем сбора, анализа и сопоставления журналов аналитики и аудита и других связанных данных с DNS-серверов.
 
@@ -53,7 +55,7 @@ ms.locfileid: "71240714"
 
 ## <a name="connect-your-dns-appliance"></a>Подключение устройства DNS
 
-1. На портале Sentinel Azure выберите **соединители данных** и щелкните плитку **DNS** .
+1. На портале Sentinel Azure выберите **соединители данных** и щелкните плитку **DNS (Предварительная версия)** .
 1. Если ваши DNS-компьютеры находятся в Azure:
     1. Щелкните **установить агент на виртуальной машине Windows в Azure**.
     1. В списке **виртуальные машины** выберите DNS-компьютер для потоковой передачи в Azure Sentinel. Убедитесь, что это виртуальная машина Windows.

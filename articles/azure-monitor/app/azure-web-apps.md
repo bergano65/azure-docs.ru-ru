@@ -9,21 +9,21 @@ ms.service: application-insights
 ms.topic: conceptual
 ms.date: 04/26/2019
 ms.author: mbullwin
-ms.openlocfilehash: 4f296aae6c147b0d5209276dbd008a1207837cfd
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: f45762d5b37a006ede9aeff76e3d756c8144f5ba
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67875202"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71258574"
 ---
 # <a name="monitor-azure-app-service-performance"></a>Мониторинг производительности Службы приложений Azure
 
-Включение мониторинга в веб-приложениях на основе .NET и .NET Core, работающих в [службах приложений Azure](https://docs.microsoft.com/azure/app-service/) , теперь стало проще, чем когда бы то ни было. В то время как раньше требовалось вручную установить расширение сайта, в образ службы приложений теперь по умолчанию встроено Последнее расширение или агент. В этой статье описано, как включить мониторинг Application Insights, а также приводятся предварительные рекомендации по автоматизации процесса для крупномасштабных развертываний.
+Включение мониторинга для веб-приложений на основе ASP.NET и ASP.NET Core, работающих в [службах приложений Azure](https://docs.microsoft.com/azure/app-service/) , стало еще проще, чем когда бы то ни было. В то время как раньше требовалось вручную установить расширение сайта, в образ службы приложений теперь по умолчанию встроено Последнее расширение или агент. В этой статье описано, как включить мониторинг Application Insights, а также приводятся предварительные рекомендации по автоматизации процесса для крупномасштабных развертываний.
 
 > [!NOTE]
 > Добавление расширения Application Insights сайта вручную с помощью**расширений** **средств** > разработки является устаревшим. Этот метод установки расширения был зависеть от ручных обновлений для каждой новой версии. Последний стабильный выпуск расширения теперь [предварительно установлен](https://github.com/projectkudu/kudu/wiki/Azure-Site-Extensions) в составе образа службы приложений. Файлы находятся в и автоматически `d:\Program Files (x86)\SiteExtensions\ApplicationInsightsAgent` обновляются в каждом стабильном выпуске. Если вы выполните инструкции на основе агента, чтобы включить наблюдение ниже, оно автоматически удалит устаревшее расширение.
 
-## <a name="enable-application-insights"></a>Включение Application Insights
+## <a name="enable-application-insights"></a>Включить Application Insights
 
 Включить мониторинг приложений для приложений, размещенных в службах приложений Azure, можно двумя способами:
 
@@ -115,7 +115,7 @@ ms.locfileid: "67875202"
 
 ## <a name="enable-client-side-monitoring-for-net-core-applications"></a>Включение наблюдения на стороне клиента для приложений .NET Core
 
-Наблюдение на стороне клиента **включено** по умолчанию для приложений .NET Core с **рекомендуемой коллекцией**независимо от наличия параметра приложения "APPINSIGHTS_JAVASCRIPT_ENABLED".
+Наблюдение на стороне клиента **включено по умолчанию** для приложений .NET Core с **рекомендуемой коллекцией**независимо от наличия параметра приложения "APPINSIGHTS_JAVASCRIPT_ENABLED".
 
 Если по какой-либо причине вы хотели бы отключить наблюдение на стороне клиента:
 
@@ -304,7 +304,7 @@ $app = Set-AzWebApp -AppSettings $newAppSettings -ResourceGroupName $app.Resourc
 
 Чтобы проверить, какая версия расширения используется, посетите`http://yoursitename.scm.azurewebsites.net/ApplicationInsights`
 
-![Снимок экрана: URL-путьhttp://yoursitename.scm.azurewebsites.net/ApplicationInsights](./media/azure-web-apps/extension-version.png)
+![Снимок экрана: URL-путь http://yoursitename.scm.azurewebsites.net/ApplicationInsights](./media/azure-web-apps/extension-version.png)
 
 ### <a name="upgrade-from-versions-100---265"></a>Обновление с версий 1.0.0 – 2.6.5
 
@@ -325,6 +325,9 @@ $app = Set-AzWebApp -AppSettings $newAppSettings -ResourceGroupName $app.Resourc
 
 > [!NOTE]
 > Приложения Java и Node. js поддерживаются только в службах приложений Azure с помощью инструментирования вручную на основе пакета SDK, поэтому приведенные ниже действия не применяются к этим сценариям.
+
+> [!NOTE]
+> Приложения ASP.NET Core 3,0 не поддерживаются. Выполните [Инструментирование вручную](https://docs.microsoft.com/azure/azure-monitor/app/asp-net-core) с помощью кода для приложений ASP.NET Core 3,0.
 
 1. Убедитесь, что приложение отслеживается через `ApplicationInsightsAgent`.
     * Убедитесь, `ApplicationInsightsAgent_EXTENSION_VERSION` что для параметра приложения задано значение "~ 2".

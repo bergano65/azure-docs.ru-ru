@@ -9,12 +9,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 05/15/2019
 ms.author: sstein
-ms.openlocfilehash: 90482fc859c4dcdd04a70e91da2fd6adb079a795
-ms.sourcegitcommit: a7a9d7f366adab2cfca13c8d9cbcf5b40d57e63a
+ms.openlocfilehash: 90be253a4763aebd31b663aa0e765c187c8bff92
+ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71162273"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71266424"
 ---
 # <a name="sql-database-release-notes"></a>Заметки о выпуске базы данных SQL
 
@@ -70,7 +70,7 @@ ms.locfileid: "71162273"
   - Поддержка <a href="https://docs.microsoft.com/sharepoint/administration/deploy-azure-sql-managed-instance-with-sharepoint-servers-2016-2019">SharePoint 2016 и SharePoint 2019</a>, а также <a href="https://docs.microsoft.com/business-applications-release-notes/october18/dynamics365-business-central/support-for-azure-sql-database-managed-instance">Dynamics 365 Business Central</a>.
   - Создайте экземпляры с <a href="https://aka.ms/managed-instance-collation">параметрами сортировки на уровне сервера</a> и <a href="https://azure.microsoft.com/updates/managed-instance-time-zone-ga/">часовым поясом</a> по своему усмотрению.
   - Управляемые экземпляры теперь защищены <a href="sql-database-managed-instance-management-endpoint-verify-built-in-firewall.md">встроенным брандмауэром</a>.
-  - Настройте экземпляры на использование [общедоступных конечных точек](sql-database-managed-instance-public-endpoint-configure.md), [Переопределение прокси-сервера](/sql-database-connectivity-architecture.md#connection-policy) , чтобы повысить производительность сети, <a href="https://aka.ms/four-cores-sql-mi-update">4 виртуальных ядер на го поколения поколение оборудования</a> или <a href="https://aka.ms/managed-instance-configurable-backup-retention">настройте срок хранения резервных копий до 35 дней</a> для восстановления на момент времени. Долгосрочное хранение резервных копий (до 10 лет) по-прежнему не включено, поэтому в качестве альтернативы можно использовать <a href="https://docs.microsoft.com/sql/relational-databases/backup-restore/copy-only-backups-sql-server">резервные копии только для копирования</a> .
+  - Настройте экземпляры на использование [общедоступных конечных точек](sql-database-managed-instance-public-endpoint-configure.md), [Переопределение прокси-сервера](sql-database-connectivity-architecture.md#connection-policy) , чтобы повысить производительность сети, <a href="https://aka.ms/four-cores-sql-mi-update">4 виртуальных ядер на го поколения поколение оборудования</a> или <a href="https://aka.ms/managed-instance-configurable-backup-retention">настройте срок хранения резервных копий до 35 дней</a> для восстановления на момент времени. Долгосрочное хранение резервных копий (до 10 лет) по-прежнему не включено, поэтому в качестве альтернативы можно использовать <a href="https://docs.microsoft.com/sql/relational-databases/backup-restore/copy-only-backups-sql-server">резервные копии только для копирования</a> .
   - Новые возможности позволяют выполнять <a href="https://medium.com/@jocapc/geo-restore-your-databases-on-azure-sql-instances-1451480e90fa">геовосстановление базы данных в другом центре обработки данных с помощью PowerShell</a>, [переименования базы данных](https://azure.microsoft.com/updates/azure-sql-database-managed-instance-database-rename-is-supported/), [удаления виртуального кластера](sql-database-managed-instance-delete-virtual-cluster.md).
   - Новая встроенная [роль участника «экземпляр](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#sql-managed-instance-contributor) » обеспечивает соответствие требованиям к разделению (разделения обязанностей) с учетом принципов безопасности и соответствия стандартам предприятия.
   - Управляемый экземпляр доступен в следующих регионах Azure для государственных организаций (US Gov (Техас), US Gov (Аризона)), а также в Северный Китай 2 и Восточный Китай 2. Она также доступна в следующих общедоступных регионах: Центральная Австралия, Центральная Австралия 2, Южная Бразилия, Юго-Восточная часть Франции, Центральная ОАЭ, Северная Австралия, Северная Африка, Юго-Африканская Республика — Западная Южная Африка.

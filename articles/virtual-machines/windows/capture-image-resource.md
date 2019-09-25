@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 09/27/2018
 ms.author: cynthn
-ms.openlocfilehash: 33f3b03ba76a0c3fd33e057d0f15b2ab7a0f44e4
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: c133431bb2b84525a8ea875dea94cec8595733bb
+ms.sourcegitcommit: a6718e2b0251b50f1228b1e13a42bb65e7bf7ee2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70089498"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71273866"
 ---
 # <a name="create-a-managed-image-of-a-generalized-vm-in-azure"></a>Создание управляемого образа универсальной виртуальной машины в Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "70089498"
 
 Sysprep удаляет все сведения о вашей учетной записи и безопасности, а затем подготавливает машину к использованию в качестве образа. Дополнительные сведения о Sysprep приведены в [обзоре Sysprep](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview).
 
-Убедитесь, что Sysprep поддерживает роли сервера, запущенные на компьютере. Дополнительные сведения см. в разделе [Поддержка Sysprep для ролей сервера](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep-support-for-server-roles) и неподдерживаемые [сценарии](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview#unsupported-scenarios).
+Убедитесь, что Sysprep поддерживает роли сервера, запущенные на компьютере. Дополнительные сведения см. в разделе [Поддержка Sysprep для ролей сервера](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep-support-for-server-roles) и [неподдерживаемые сценарии](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview#unsupported-scenarios).
 
 > [!IMPORTANT]
 > После применения Sysprep на виртуальной машине она считается *универсальной*, что препятствует ее перезапуску. Процесс обобщения виртуальной машины необратим. Если необходимо сохранить исходную виртуальную машину в рабочем состоянии, нужно создать [копию виртуальной машины](create-vm-specialized.md#option-3-copy-an-existing-azure-vm) и обобщить эту копию. 
@@ -205,9 +205,9 @@ Sysprep удаляет все сведения о вашей учетной за
     ``` 
 
 
-## <a name="create-an-image-from-a-vhd-in-a-storage-account"></a>Создание образа из VHD в учетной записи хранения
+## <a name="create-an-image-from-a-vm-that-uses-a-storage-account"></a>Создание образа из виртуальной машины, использующей учетную запись хранения
 
-Создайте управляемый образ с помощью универсального виртуального жесткого диска операционной системы в учетной записи хранения. Вам потребуется URI виртуального жесткого диска в учетной записи хранения в следующем формате: https://*mystorageaccount*.blob.core.windows.net/*vhdcontainer*/*vhdfilename.vhd*. В этом примере VHD находится в *mystorageaccount* в контейнере с именем *vhdcontainer*, а имя файла VHD — *vhdfilename.vhd*.
+Чтобы создать управляемый образ из виртуальной машины, которая не использует управляемые диски, вам потребуется универсальный код ресурса (URI) VHD операционной системы в учетной записи хранения в следующем формате: https://*mystorageaccount*. BLOB.Core.Windows.NET/*вхдконтаинер* /  *вхдфиленаме. VHD*. В этом примере VHD находится в *mystorageaccount* в контейнере с именем *vhdcontainer*, а имя файла VHD — *vhdfilename.vhd*.
 
 
 1.  Создайте несколько переменных.

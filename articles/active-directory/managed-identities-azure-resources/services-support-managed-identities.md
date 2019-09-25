@@ -4,18 +4,18 @@ description: Список служб, которые поддерживают у
 services: active-directory
 author: MarkusVi
 ms.author: markvi
-ms.date: 06/19/2019
+ms.date: 09/24/2019
 ms.topic: conceptual
 ms.service: active-directory
 ms.subservice: msi
 manager: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 37eba245933bc94e9fb631abd3b4ff495f8c6d67
-ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
+ms.openlocfilehash: 4f4a5ae01376358ca78cd804cc853489ca007217
+ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71087598"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71264234"
 ---
 # <a name="services-that-support-managed-identities-for-azure-resources"></a>Службы с поддержкой управляемых удостоверений для ресурсов Azure
 
@@ -172,7 +172,7 @@ ms.locfileid: "71087598"
 - [Назначение доступа через Azure CLI](howto-assign-access-CLI.md)
 - [Назначение доступа с помощью шаблона Azure Resource Manager](../../role-based-access-control/role-assignments-template.md)
 
-| Облако | ИД ресурса | Status |
+| Облако | ИД ресурса | Сообщение о состоянии |
 |--------|------------|--------|
 | Azure (глобальный) | `https://management.azure.com/`| Доступно |
 | Azure для государственных организаций | `https://management.usgovcloudapi.net/` | Доступно |
@@ -181,7 +181,7 @@ ms.locfileid: "71087598"
 
 ### <a name="azure-key-vault"></a>Хранилище Azure Key Vault
 
-| Облако | ИД ресурса | Status |
+| Облако | ИД ресурса | Сообщение о состоянии |
 |--------|------------|--------|
 | Azure (глобальный) | `https://vault.azure.net`| Доступно |
 | Azure для государственных организаций | `https://vault.usgovcloudapi.net` | Доступно |
@@ -190,7 +190,7 @@ ms.locfileid: "71087598"
 
 ### <a name="azure-data-lake"></a>Azure Data Lake 
 
-| Облако | ИД ресурса | Status |
+| Облако | ИД ресурса | Сообщение о состоянии |
 |--------|------------|--------|
 | Azure (глобальный) | `https://datalake.azure.net/` | Доступно |
 | Azure для государственных организаций |  | Недоступен |
@@ -199,7 +199,7 @@ ms.locfileid: "71087598"
 
 ### <a name="azure-sql"></a>Azure SQL 
 
-| Облако | ИД ресурса | Status |
+| Облако | ИД ресурса | Сообщение о состоянии |
 |--------|------------|--------|
 | Azure (глобальный) | `https://database.windows.net/` | Доступно |
 | Azure для государственных организаций | `https://database.usgovcloudapi.net/` | Доступно |
@@ -208,7 +208,7 @@ ms.locfileid: "71087598"
 
 ### <a name="azure-event-hubs"></a>Центры событий Azure
 
-| Облако | ИД ресурса | Status |
+| Облако | ИД ресурса | Сообщение о состоянии |
 |--------|------------|--------|
 | Azure (глобальный) | `https://eventhubs.azure.net` | Доступно |
 | Azure для государственных организаций |  | Недоступен |
@@ -217,25 +217,42 @@ ms.locfileid: "71087598"
 
 ### <a name="azure-service-bus"></a>Служебная шина Azure
 
-| Облако | ИД ресурса | Status |
+| Облако | ИД ресурса | Сообщение о состоянии |
 |--------|------------|--------|
 | Azure (глобальный) | `https://servicebus.azure.net`  | Доступно |
 | Azure для государственных организаций |  | Доступно |
 | Azure для Германии |   | Недоступен |
 | Azure China 21Vianet |  | Недоступен |
 
+
+
+
+
+
+
+
+
 ### <a name="azure-storage-blobs-and-queues"></a>Большие двоичные объекты и очереди службы хранилища Azure
 
-| Облако | ИД ресурса | Status |
+| Облако | ИД ресурса | Сообщение о состоянии |
 |--------|------------|--------|
 | Azure (глобальный) | `https://storage.azure.com/` <br /><br />`https://<account>.blob.core.windows.net` <br /><br />`https://<account>.queue.core.windows.net` | Доступно |
-| Azure для государственных организаций | `https://storage.azure.com/`<br /><br />`https://<account>.blob.core.windows.net` <br /><br />`https://<account>.queue.core.windows.net` | Доступно |
-| Azure для Германии | `https://storage.azure.com/`<br /><br />`https://<account>.blob.core.windows.net` <br /><br />`https://<account>.queue.core.windows.net` | Доступно |
-| Azure China 21Vianet | `https://storage.azure.com/`<br /><br />`https://<account>.blob.core.windows.net` <br /><br />`https://<account>.queue.core.windows.net` | Доступно |
+| Azure для государственных организаций | `https://storage.azure.com/`<br /><br />`https://<account>.blob.core.usgovcloudapi.net` <br /><br />`https://<account>.queue.core.usgovcloudapi.net` | Доступно |
+| Azure для Германии | `https://storage.azure.com/`<br /><br />`https://<account>.blob.core.cloudapi.de` <br /><br />`https://<account>.queue.core.cloudapi.de` | Доступно |
+| Azure China 21Vianet | `https://storage.azure.com/`<br /><br />`https://<account>.blob.core.chinacloudapi.cn` <br /><br />`https://<account>.queue.core.chinacloudapi.cn` | Доступно |
+
+
+
+
+
+
+
+
+
 
 ### <a name="azure-analysis-services"></a>Azure Analysis Services
 
-| Облако | ИД ресурса | Status |
+| Облако | ИД ресурса | Сообщение о состоянии |
 |--------|------------|--------|
 | Azure (глобальный) | `https://*.asazure.windows.net` | Доступно |
 | Azure для государственных организаций | `https://*.asazure.usgovcloudapi.net` | Доступно |

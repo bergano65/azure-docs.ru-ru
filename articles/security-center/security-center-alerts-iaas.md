@@ -10,12 +10,12 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 07/02/2019
 ms.author: memildin
-ms.openlocfilehash: 0d6f05524be41693ba280b0f0162f65b517ec281
-ms.sourcegitcommit: 3fa4384af35c64f6674f40e0d4128e1274083487
+ms.openlocfilehash: 50d4023b09eb14fcfafe752ca60b8e888acc1fef
+ms.sourcegitcommit: a6718e2b0251b50f1228b1e13a42bb65e7bf7ee2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71219623"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71273889"
 ---
 # <a name="threat-detection-for-vms-and-servers-in-azure-security-center"></a>Обнаружение угроз для виртуальных машин и серверов в центре безопасности Azure
 
@@ -28,14 +28,14 @@ ms.locfileid: "71219623"
 
 Центр безопасности Azure интегрируется со службами Azure для мониторинга и защиты компьютеров под управлением Windows. Центр безопасности предоставляет оповещения и предложения по исправлению всех этих служб в удобном для использования формате.
 
-### ATP в Защитнике Windows Server<a nanme="windows-atp"></a>
+### ATP в защитнике Майкрософт<a nanme="windows-atp"></a>
 
-Центр безопасности расширяет свои платформы защиты облачных рабочих нагрузок, интегрируя его с помощью Advanced Threat Protection в Защитнике Windows Server (ATP). Это обеспечивает комплексные возможности обнаружения конечных точек и ответов (ЕДР).
+Центр безопасности расширяет свои платформы защиты облачных рабочих нагрузок за счет интеграции с Microsoft защитника Advanced Threat protection (ATP). Это обеспечивает комплексные возможности обнаружения конечных точек и ответов (ЕДР).
 
 > [!NOTE]
-> Датчик ATP в Защитнике Windows Server автоматически включен на серверах Windows, использующих центр безопасности.
+> Датчик ATP Microsoft Defender автоматически включен на серверах Windows, использующих центр безопасности.
 
-Когда пакет ATP в Защитнике Windows Server обнаруживает угрозу, он запускает оповещение. Оповещение отображается на панели мониторинга центра безопасности. На панели мониторинга можно выполнить сведение к консоли Microsoft Defender ATP и провести подробное исследование, чтобы выявить область атаки. Дополнительные сведения о ATP в Защитнике Windows Server см. в [статье подключение серверов к службе ATP в защитнике Майкрософт](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/configure-server-endpoints).
+Когда пакет ATP в защитнике Майкрософт обнаруживает угрозу, он запускает оповещение. Оповещение отображается на панели мониторинга центра безопасности. На панели мониторинга можно выполнить сведение к консоли Microsoft Defender ATP и провести подробное исследование, чтобы выявить область атаки. Дополнительные сведения о ATP в защитнике Майкрософт см. в статье подключение [серверов к службе ATP в защитнике Майкрософт](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/configure-server-endpoints).
 
 ### Анализ аварийного дампа<a nanme="windows-dump"></a>
 

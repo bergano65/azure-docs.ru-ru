@@ -3,7 +3,7 @@ title: Автоматические обновления образа ОС пр�
 description: Узнайте, как автоматически обновить образ ОС на экземплярах виртуальных машин в масштабируемом наборе
 services: virtual-machine-scale-sets
 documentationcenter: ''
-author: mayanknayar
+author: shandilvarun
 manager: drewm
 editor: ''
 tags: azure-resource-manager
@@ -14,13 +14,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 07/16/2019
-ms.author: manayar
-ms.openlocfilehash: a9829f380200e616d242f5406b72593014f0efc2
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.author: vashan
+ms.openlocfilehash: 9825ef1426a1c93f94b502c396fbaab1f86a924e
+ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69656549"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71263504"
 ---
 # <a name="azure-virtual-machine-scale-set-automatic-os-image-upgrades"></a>Автоматические обновления образа ОС масштабируемого набора виртуальных машин Azure
 

@@ -8,12 +8,12 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 04/22/2019
 ms.author: cawa
-ms.openlocfilehash: 2b923a381be9d6cdb1a83f582a541c9e17e117a4
-ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
+ms.openlocfilehash: 43e76b9331eb8dbe95265810b9191a10d4caee08
+ms.sourcegitcommit: a6718e2b0251b50f1228b1e13a42bb65e7bf7ee2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71086631"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71272026"
 ---
 # <a name="get-started-with-storage-explorer"></a>Начало работы с Обозревателем службы хранилища
 
@@ -76,10 +76,10 @@ snap connect storage-explorer:password-manager-service :password-manager-service
 * [Войдите в Azure, чтобы получить доступ к подпискам и их ресурсам](#sign-in-to-azure)
 * [Подключение определенного ресурса хранилища или CosmosDB](#attach-a-specific-resource)
 
-### <a name="sign-in-to-azure"></a>Войдите в Azure
+### <a name="sign-in-to-azure"></a>Вход в Azure
 
 > [!NOTE]
-> Для полного доступа к ресурсам после входа в систему Обозреватель службы хранилища требуются разрешения на управление (Azure Resource Manager) и на уровне данных. Это означает, что требуются разрешения Azure Active Directory (Azure AD), которые предоставляют доступ к учетной записи хранения, контейнерам в учетной записи и данным в контейнерах. Если у вас есть разрешения только на уровне данных, попробуйте [Добавить ресурс через Azure AD](#add-a-resource-via-azure-ad). Дополнительные сведения о конкретных разрешениях, Обозреватель службы хранилища требуется, см. в разделе [руководство по устранению неполадок](https://docs.microsoft.com/azure/storage/common/storage-explorer-troubleshooting?tabs=1804#role-based-access-control-permission-issues).
+> Для полного доступа к ресурсам после входа в систему Обозреватель службы хранилища требуются разрешения на управление (Azure Resource Manager) и на уровне данных. Это означает, что требуются разрешения Azure Active Directory (Azure AD), которые предоставляют доступ к учетной записи хранения, контейнерам в учетной записи и данным в контейнерах. Если у вас есть разрешения только на уровне данных, попробуйте [Добавить ресурс через Azure AD](#add-a-resource-via-azure-ad). Дополнительные сведения о конкретных разрешениях, Обозреватель службы хранилища требуется, см. в разделе [руководство по устранению неполадок](https://docs.microsoft.com/azure/storage/common/storage-explorer-troubleshooting#rbac-permissions-issues).
 
 1. В Обозреватель службы хранилища выберите **Управление учетными записями** , чтобы открыть панель управления учетной записью.
 

@@ -5,15 +5,14 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: conceptual
-ms.workload: infrastructure-services
-ms.date: 10/17/2018
+ms.date: 09/24/2019
 ms.author: cherylmc
-ms.openlocfilehash: bf7d80bbbe63204cda47719a7d7c019013ad800b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 722907328fe17c4116f4f8d948e081f9582ca712
+ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62124031"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71266577"
 ---
 # <a name="connect-virtual-networks-from-different-deployment-models-using-the-portal"></a>Подключение виртуальных сетей из разных моделей развертывания с помощью портала
 
@@ -76,10 +75,10 @@ ms.locfileid: "62124031"
 
 В таблице ниже показан пример, как определяются виртуальные сети и локальные веб-сайты.
 
-| Виртуальная сеть | Пространство адресов | Регион | Подключается к сайту локальной сети |
+| Виртуальная сеть | Пространство адресов | Район | Подключается к сайту локальной сети |
 |:--- |:--- |:--- |:--- |
-| ClassicVNet |(10.0.0.0/24) |Запад США | RMVNetLocal (192.168.0.0/16) |
-| RMVNet | (192.168.0.0/16) |Восточная часть США |ClassicVNetLocal (10.0.0.0/24) |
+| ClassicVNet |(10.0.0.0/24) |Западная часть США | RMVNetLocal (192.168.0.0/16) |
+| RMVNet | (192.168.0.0/16) |East US |ClassicVNetLocal (10.0.0.0/24) |
 
 ## <a name="classicvnet"></a>Раздел 1. Настройка классической виртуальной сети
 
@@ -144,20 +143,13 @@ ms.locfileid: "62124031"
 * Имя подсети: Subnet-1. <br>
 * Диапазон адресов: 192.168.1.0/24. <br>
 
-
 Если у вас нет виртуальной сети Resource Manager и вы выполняете действия из этой статьи в качестве упражнения, вы можете [создать виртуальную сеть](../virtual-network/quick-create-portal.md), используя примеры значений.
 
-### <a name="2-create-a-gateway-subnet"></a>2. Создание подсети шлюза
+### <a name="creategw"></a>2. Создание шлюза виртуальной сети
 
-**Пример значения:** . Шлюз подсети = 192.168.0.0/26
+На этом шаге вы создадите шлюз для своей виртуальной сети. Создание шлюза часто занимает 45 минут и более, в зависимости от выбранного SKU шлюза.
 
-Чтобы создать шлюз виртуальной сети, сначала нужно создать подсеть шлюза. Создайте подсеть шлюза с блоком CIDR /28 или больше (/27, /26 и т. д.). Если вы создаете ее в качестве упражнения, можно использовать примеры значений.
-
-[!INCLUDE [vpn-gateway-add-gwsubnet-rm-portal](../../includes/vpn-gateway-add-gwsubnet-rm-portal-include.md)]
-
-[!INCLUDE [vpn-gateway-no-nsg-include](../../includes/vpn-gateway-no-nsg-include.md)]
-
-### <a name="creategw"></a>3. Создание шлюза виртуальной сети
+[!INCLUDE [About gateway subnets](../../includes/vpn-gateway-about-gwsubnet-portal-include.md)]
 
 **Примеры значений**:
 
@@ -167,18 +159,21 @@ ms.locfileid: "62124031"
 * Номер SKU: VpnGw1. <br>
 * Расположение = восточная часть США <br>
 * Тип виртуальной сети: RMVNet. <br>
+* Шлюз подсети = 192.168.0.0/26 <br>
 * Первая IP-конфигурация: rmgwpip. <br>
 
 [!INCLUDE [vpn-gateway-add-gw-rm-portal](../../includes/vpn-gateway-add-gw-rm-portal-include.md)]
 
-### <a name="createlng"></a>4. Создание локального сетевого шлюза
+[!INCLUDE [vpn-gateway-no-nsg-include](../../includes/vpn-gateway-no-nsg-include.md)]
+
+### <a name="createlng"></a>3. Создание локального сетевого шлюза
 
 **Примеры значений**: Шлюз локальной сети = ClassicVNetLocal
 
-| Виртуальная сеть | Пространство адресов | Регион | Подключается к сайту локальной сети |Общедоступный IP-адрес|
+| Виртуальная сеть | Пространство адресов | Район | Подключается к сайту локальной сети |Общедоступный IP-адрес|
 |:--- |:--- |:--- |:--- |:--- |
-| ClassicVNet |(10.0.0.0/24) |Запад США | RMVNetLocal (192.168.0.0/16) |Общедоступный IP-адрес, назначенный шлюзу ClassicVNet|
-| RMVNet | (192.168.0.0/16) |Восточная часть США |ClassicVNetLocal (10.0.0.0/24) |Общедоступный IP-адрес, назначенный шлюзу RMVNet|
+| ClassicVNet |(10.0.0.0/24) |Западная часть США | RMVNetLocal (192.168.0.0/16) |Общедоступный IP-адрес, назначенный шлюзу ClassicVNet|
+| RMVNet | (192.168.0.0/16) |East US |ClassicVNetLocal (10.0.0.0/24) |Общедоступный IP-адрес, назначенный шлюзу RMVNet|
 
 Шлюз локальной сети задает диапазон адресов и общедоступный IP-адрес, связанный с классической виртуальной сетью и ее шлюзом. При выполнении этих действий в качестве упражнения используйте примеры значений.
 

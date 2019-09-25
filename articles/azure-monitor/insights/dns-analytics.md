@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 03/20/2018
 ms.author: magoedte
-ms.openlocfilehash: 9fac349657340486674e4a899b21821b45cc0703
-ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
+ms.openlocfilehash: 46045664e9ddeebc45c2dae7c1f0a9f6a0d6b004
+ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69982591"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71265164"
 ---
 # <a name="gather-insights-about-your-dns-infrastructure-with-the-dns-analytics-preview-solution"></a>Сбор сведений об инфраструктуре DNS с помощью решения аналитики DNS (предварительной версии)
 
@@ -179,6 +179,12 @@ ms.locfileid: "69982591"
 1. В **поле поискового запроса** введите `DnsInventory`, чтобы просмотреть все данные, относящиеся к инвентаризации DNS, для DNS-серверов под управлением решения. В списке результатов отобразятся данные журнала о DNS-серверах, зонах DNS и записях ресурсов.
 
     ![Поиск по журналу инвентаризации DNS](./media/dns-analytics/log-search-dnsinventory.png)
+    
+### <a name="troubleshooting"></a>Устранение неполадок
+
+Действия по устранению неполадок коммопн:
+
+1. Отсутствующие данные поиска DNS. чтобы устранить эту проблему, попробуйте сбросить настройки конфигурации или просто загрузить страницу конфигурации на портале. Для сброса параметров просто измените значение параметра на другое, затем снова измените его на исходное значение и сохраните файл конфигурации.
 
 ## <a name="feedback"></a>Отзывы
 

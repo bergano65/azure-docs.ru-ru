@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/10/2019
+ms.date: 09/24/2019
 ms.author: barclayn
-ms.openlocfilehash: 3e745d5f38d5623aab17ef7a3e3fbfa2c616e6d4
-ms.sourcegitcommit: 909ca340773b7b6db87d3fb60d1978136d2a96b0
+ms.openlocfilehash: b506c6f6101e8c5ce71231a8178f70fa5a0914d8
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70984856"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71262808"
 ---
 # <a name="azure-data-encryption-at-rest"></a>Шифрование неактивных данных в Azure
 
@@ -262,7 +262,7 @@ ms.locfileid: "70984856"
 |----------------------------------|--------------------|-----------------------------------------|--------------------|
 |                                  | **На стороне сервера с помощью управляемого службой ключа**     | **На стороне сервера с помощью управляемого клиентом ключа**             | **На стороне клиента с помощью управляемого клиентом ключа**      |
 | **AI и Машинное обучение**      |                    |                    |                    |
-| Поиск Azure                     | Да                | -                  | -                  |
+| Поиск Azure                     | Да                | Предварительный просмотр            | -                  |
 | Служба машинного обучения Azure   | Да                | -                  | -                  |
 | Студия машинного обучения Azure    | Да                | 2048-разрядный RSA (предварительная версия) | -               |
 | Power BI                         | Да                | 2048-разрядный RSA (предварительная версия) | -                  |
