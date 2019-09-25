@@ -1,4 +1,4 @@
-- name: Документация по Azure Sentinel (предварительная версия)
+- name: Документация по Azure Sentinel
   href: index.yml
 - name: Обзор
   href: overview.md
@@ -11,12 +11,22 @@
       href: quickstart-get-visibility.md
 - name: Учебники
   items:
-    - name: Обнаружение потенциальных угроз
-      href: tutorial-detect-threats.md
+    - name: Обнаружение угроз с помощью встроенных средств аналитики
+      href: tutorial-detect-threats-built-in.md
+    - name: Создание настраиваемых правил для обнаружения угроз
+      href: tutorial-detect-threats-custom.md
+    - name: Мониторинг данных
+      href: tutorial-monitor-your-data.md
     - name: Изучение инцидентов
       href: tutorial-investigate-cases.md
     - name: Реагирование на угрозы
       href: tutorial-respond-threats-playbook.md
+- name: Основные понятия
+  items:
+    - name: Назначение разрешений с использованием ролей
+      href: roles.md
+    - name: Расширенное обнаружение многоэтапных атак
+      href: fusion.md
 - name: Руководства
   items:
     - name: Подключение источников данных
@@ -74,6 +84,10 @@
           href: connect-threat-intelligence.md
         - name: Подключение виртуальных машин Azure Stack
           href: connect-azure-stack.md
+    - name: Использование нескольких клиентов (MSSP)
+      href: multiple-tenants-service-providers.md
+    - name: Создание инцидентов на основе оповещений
+      href: create-incidents-from-alerts.md
     - name: Поиск
       href: hunting.md
       items:
@@ -81,8 +95,8 @@
           href: notebooks.md
         - name: Поиск с помощью закладок
           href: bookmarks.md
-    - name: Включение Fusion
-      href: connect-fusion.md
+    - name: Удаление Azure Sentinel
+      href: offboard.md
 - name: Ресурсы
   items:
     - name: Полезные ресурсы

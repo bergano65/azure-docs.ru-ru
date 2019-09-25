@@ -46,10 +46,96 @@
       href: tutorial-secure-web-server.md
 - name: Примеры
   items:
-    - name: PowerShell
+    - name: Индекс PowerShell
       href: powershell-samples.md
-    - name: Azure CLI
+    - name: PowerShell
+      items:
+        - name: Создание
+          items:
+            - name: Быстрое создание
+              href: ./../scripts/virtual-machines-windows-powershell-sample-create-vm-quick.md
+            - name: Полностью настроенная виртуальная машина
+              href: ./../scripts/virtual-machines-windows-powershell-sample-create-vm.md
+            - name: Высокодоступная виртуальная машина
+              href: ./../scripts/virtual-machines-windows-powershell-sample-create-nlb-vm.md
+            - name: Пример пользовательского скрипта
+              href: ./../scripts/virtual-machines-windows-powershell-sample-create-vm-iis.md
+            - name: Использование DSC
+              href: ./../scripts/virtual-machines-windows-powershell-sample-create-iis-using-dsc.md
+            - name: Отправка виртуальной машины с VHD
+              href: ./../scripts/virtual-machines-windows-powershell-upload-generalized-script.md
+            - name: Подключение диска ОС
+              href: ./../scripts/virtual-machines-windows-powershell-sample-create-vm-from-managed-os-disks.md
+            - name: Создание виртуальной машины на основе моментального снимка
+              href: ./../scripts/virtual-machines-windows-powershell-sample-create-vm-from-snapshot.md
+        - name: Управление хранилищем
+          items:
+            - name: Создание управляемого диска на основе VHD
+              href: ../scripts/virtual-machines-windows-powershell-sample-create-managed-disk-from-vhd.md
+            - name: Создание управляемого диска на основе моментального снимка
+              href: ../scripts/virtual-machines-windows-powershell-sample-create-managed-disk-from-snapshot.md
+            - name: Копирование управляемого диска
+              href: ../scripts/virtual-machines-windows-powershell-sample-copy-managed-disks-to-same-or-different-subscription.md
+            - name: Экспорт моментального снимка в виде VHD в учетную запись хранения
+              href: ../scripts/virtual-machines-windows-powershell-sample-copy-snapshot-to-storage-account.md
+            - name: Экспорт VHD управляемого диска в учетную запись хранения
+              href: ../scripts/virtual-machines-windows-powershell-sample-copy-managed-disks-vhd.md
+            - name: Создание моментального снимка на основе VHD
+              href: ../scripts/virtual-machines-windows-powershell-sample-create-snapshot-from-vhd.md
+            - name: Копирование моментального снимка
+              href: ../scripts/virtual-machines-windows-powershell-sample-copy-snapshot-to-same-or-different-subscription.md
+        - name: Безопасность
+          items:
+            - name: Шифрование виртуальной машины и ее дисков данных
+              href: ./../scripts/virtual-machines-windows-powershell-sample-encrypt-vm.md?
+        - name: Мониторинг
+          items:
+            - name: Azure Monitor
+              href: ./../scripts/virtual-machines-windows-powershell-sample-create-vm-oms.md
+            - name: Сбор сведений обо всех виртуальных машинах в подписке
+              href: ../scripts/virtual-machines-powershell-sample-collect-vm-details.md
+    - name: "Индекс Azure\_CLI"
       href: cli-samples.md
+    - name: CLI
+      items:
+        - name: Создание
+          items:
+            - name: Быстрое создание
+              href: ./../scripts/virtual-machines-windows-cli-sample-create-vm-quick-create.md
+            - name: Полностью настроенная виртуальная машина
+              href: ./../scripts/virtual-machines-windows-cli-sample-create-vm.md
+            - name: Высокодоступная виртуальная машина
+              href: ./../scripts/virtual-machines-windows-cli-sample-nlb.md
+            - name: Пример пользовательского скрипта
+              href: ./../scripts/virtual-machines-windows-cli-sample-create-vm-iis.md
+            - name: Использование конфигурации DSC
+              href: ./../scripts/virtual-machines-windows-cli-sample-create-iis-using-dsc.md
+        - name: Управление хранилищем
+          items:
+            - name: Создание управляемого диска на основе VHD
+              href: ../scripts/virtual-machines-windows-cli-sample-create-managed-disk-from-vhd.md
+            - name: Создание управляемого диска на основе моментального снимка
+              href: ../scripts/virtual-machines-windows-cli-sample-create-managed-disk-from-snapshot.md
+            - name: Копирование управляемого диска
+              href: ../scripts/virtual-machines-windows-cli-sample-copy-managed-disks-to-same-or-different-subscription.md
+            - name: Экспорт моментального снимка в виде VHD в учетную запись хранения
+              href: ../scripts/virtual-machines-windows-cli-sample-copy-snapshot-to-storage-account.md
+            - name: Экспорт VHD управляемого диска в учетную запись хранения
+              href: ../scripts/virtual-machines-windows-cli-sample-copy-managed-disks-vhd.md
+            - name: Копирование моментального снимка
+              href: ../scripts/virtual-machines-windows-cli-sample-copy-snapshot-to-same-or-different-subscription.md
+        - name: Сеть
+          items:
+            - name: Защита трафика между виртуальными машинами
+              href: ./../scripts/virtual-machines-windows-cli-sample-create-vm-nsg.md
+        - name: Безопасность
+          items:
+            - name: Шифрование виртуальной машины и дисков данных
+              href: ./../scripts/virtual-machines-windows-cli-sample-encrypt-vm.md
+            - name: Мониторинг
+              items:
+                - name: Azure Monitor
+                  href: ./../scripts/virtual-machines-windows-cli-sample-create-vm-oms.md
 - name: Основные понятия
   items:
     - name: Azure Resource Manager
@@ -388,6 +474,8 @@
           href: expand-os-disk.md
         - name: Моментальный снимок диска
           href: snapshot-copy-managed-disk.md
+        - name: Создание добавочного моментального снимка
+          href: disks-incremental-snapshots.md
         - name: Резервное копирование неуправляемых дисков
           href: incremental-snapshots.md
         - name: Миграция и преобразование

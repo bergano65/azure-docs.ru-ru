@@ -1,81 +1,67 @@
-### YamlMime:YamlDocument
-documentType: LandingData
-title: Документация по Распознавателю рукописного текста
+### YamlMime:Landing
+title: Документация по API "Распознаватель рукописного текста"
+summary: Узнайте, как распознавать данные рукописного ввода в приложениях и службах с помощью API "Распознаватель рукописного текста". Это облачная служба, которая позволяет распознавать рукописный текст и нарисованные от руки фигуры в любом контексте с помощью машинного обучения.
 metadata:
-  title: "Документация по Распознавателю рукописного текста. Краткие руководства, учебные материалы и справочник по API. Azure Cognitive Services\_| Документация Майкрософт"
-  description: 'Узнайте, как использовать API перевода текстов для перевода текста на несколько языков.'
+  title: API "Распознаватель рукописного текста". Краткие руководства, справочник по API и другие учебные материалы
+  titleSuffix: Azure Cognitive Services
+  description: Цифровой рукописный текст относится к технологиям, которые обеспечивают цифровое представление таких входных данных, как рукописный текст и рисунки. По мере обеспечения внушительных возможностей работы с цифровым вводом искусственный интеллект и машинное обучение позволяют распознавать письменные формы и текст в любом контексте. API Распознавателя рукописного текста — это облачная служба, которая позволяет отправлять рукописные штрихи и получать подробные сведения о них.
   services: cognitive-services
-  author: erhopf
+  author: aahill
   manager: nitinme
+  layout: LandingPage
   ms.service: cognitive-services
   ms.subservice: ink-recognizer
   ms.topic: landing-page
-  ms.date: 05/02/2019
-  ms.author: erhopf
-abstract:
-  description: "Цифровой рукописный текст относится к технологиям, которые обеспечивают цифровое представление таких входных данных, как рукописный текст и рисунки. По мере обеспечения внушительных возможностей работы с цифровым вводом искусственный интеллект и машинное обучение позволяют распознавать письменные формы и текст в любом контексте. API Распознавателя рукописного текста\_— это облачная служба, которая позволяет отправлять рукописные штрихи и получать подробные сведения о них."
-sections:
-  - items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - href: /azure/cognitive-services/ink-recognizer/overview
-            html: '<p>Дополнительные сведения о Распознавателе рукописного текста и о том, как интегрировать его в продукты</p>'
-            image:
-              src: ../media/index/i_overview.svg
-            title: Что такое API Распознавателя рукописного текста?
-          - href: concepts/send-ink-data.md
-            html: <p>Дополнительные сведения о рекомендуемых шаблонах вызовов при использовании API</p>
-            image:
-              src: ../media/index/i_overview.svg
-            title: Отправка рукописного текста в API Распознавателя рукописного текста
-  - title: Пятиминутные краткие руководства
-    items:
-      - type: paragraph
-        text: Начните работу с помощью API Распознавателя рукописного текста.
-      - type: table
-        style: dataMatrix
-        columns:
-          - image:
-              src: media/index/logo-csharp.svg
-            title: 'C#'
-          - image:
-              src: media/index/logo-java.svg
-            title: Java
-          - image:
-              src: media/index/logo-js.svg
-            title: JavaScript
-        rows:
-          - title: Распознавание рукописных штрихов
-            values:
-              - href: quickstarts/csharp.md
-              - href: quickstarts/java.md
-              - href: quickstarts/javascript.md
-  - title: Примеры
-    items:
-      - type: paragraph
-        text: 'Используйте эти примеры программ, чтобы увидеть, как API Распознавателя рукописного текста может интегрироваться в ваши приложения.'
-      - type: paragraph
-        text: '<a href="https://go.microsoft.com/fwlink/?linkid=2089803">C# и универсальная платформа Windows (UWP)</a>'
-      - type: paragraph
-        text: '<a href="https://go.microsoft.com/fwlink/?linkid=2089804">C# и Windows Presentation Foundation (WPF)</a>'
-      - type: paragraph
-        text: '<a href="https://go.microsoft.com/fwlink/?linkid=2089908">Приложение браузера Javascript</a>'
-      - type: paragraph
-        text: '<a href="https://go.microsoft.com/fwlink/?linkid=2089906">Мобильное приложение для Java и Android</a>'
-      - type: paragraph
-        text: '<a href="https://go.microsoft.com/fwlink/?linkid=2089805">Мобильное приложение для Swift и iOS</a>'
-  - title: Справочные материалы
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: REST API
-            html: '<p><a href="https://go.microsoft.com/fwlink/?linkid=2089907">Справочник по REST API</a></p>'
-          - title: PowerShell
-            html: '<p><a href=https://docs.microsoft.com/powershell/module/az.cognitiveservices/#cognitive_services">Azure PowerShell</a></p>'
-          - title: CLI
-            html: '<p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices">Azure CLI</a></p>'
+  ms.date: 09/23/2019
+  ms.author: aahi
+  ms.openlocfilehash: 985cdb6492445c89462e79cc2931d28bc34abb58
+  ms.sourcegitcommit: 3fa4384af35c64f6674f40e0d4128e1274083487
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 09/24/2019
+  ms.locfileid: "71219528"
+landingContent:
+- title: Сведения об API "Распознаватель рукописного текста"
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое API Распознавателя рукописного текста?
+      url: overview.md
+- title: Распознавание рукописных штрихов
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Использование C#
+      url: quickstarts/csharp.md
+    - text: Использование Java
+      url: quickstarts/java.md
+    - text: Использование JavaScript
+      url: quickstarts/javascript.md
+  - linkListType: concept
+    links:
+    - text: Отправка данных рукописного ввода в API
+      url: concepts/send-ink-data.md
+- title: Справочные материалы
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: REST API
+      url: https://go.microsoft.com/fwlink/?linkid=2089907
+    - text: Azure PowerShell
+      url: https://docs.microsoft.com/powershell/module/az.cognitiveservices/#cognitive_services
+    - text: Инфраструктура CLI Azure
+      url: https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest#az_cognitiveservices_list
+- title: Примеры
+  linkLists:
+  - linkListType: learn
+    links:
+    - text: C# и универсальная платформа Windows (UWP)
+      url: https://go.microsoft.com/fwlink/?linkid=2089803
+    - text: C# и Windows Presentation Foundation (WPF)
+      url: https://go.microsoft.com/fwlink/?linkid=2089804
+    - text: Приложение браузера Javascript
+      url: https://go.microsoft.com/fwlink/?linkid=2089908
+    - text: Мобильное приложение для Java и Android
+      url: https://go.microsoft.com/fwlink/?linkid=2089906
+    - text: Мобильное приложение для Swift и iOS
+      url: https://go.microsoft.com/fwlink/?linkid=2089805

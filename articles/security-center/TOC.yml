@@ -57,6 +57,8 @@
           href: security-center-alerts-integration.md
         - name: Корреляция интеллектуальных оповещений в облаке (инциденты)
           href: security-center-alerts-cloud-smart.md
+        - name: Карта оповещений системы безопасности и аналитика угроз
+          href: security-center-threat-intel.md
         - name: Проверка оповещений (в тестовом файле EICAR)
           href: security-center-alert-validation.md
 - name: Руководства
@@ -65,7 +67,7 @@
       href: security-center-secure-score.md
     - name: Переход к расширенным функциям безопасности
       href: security-center-onboarding.md
-    - name: Защита сервера с помощью ATP в Защитнике Windows
+    - name: Защита сервера с помощью ATP в Microsoft Defender
       href: security-center-wdatp.md
     - name: Расширенная защита данных для SQL на виртуальных машинах Azure (общедоступная предварительная версия)
       href: security-center-iaas-advanced-data.md

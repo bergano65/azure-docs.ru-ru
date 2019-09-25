@@ -227,6 +227,10 @@
           href: spark-api-introduction.md
         - name: Лямбда-архитектура
           href: lambda-architecture.md
+    - name: Встроенная средства аналитики с использованием записных книжек Jupyter
+      items:
+        - name: Общие сведения о записных книжках Jupyter
+          href: cosmosdb-jupyter-notebooks.md
     - name: Программирование на стороне сервера
       items:
         - name: 'Хранимые процедуры, триггеры и определяемые пользователем функции'
@@ -675,6 +679,10 @@
         - name: "Потоковая передача с использованием Apache Kafka и Cosmos\_DB"
           href: /azure/hdinsight/apache-kafka-spark-structured-streaming-cosmosdb
           maintainContext: true
+    - name: Встроенные записные книжки Jupyter
+      items:
+        - name: Включение записных книжек
+          href: enable-notebooks.md
     - name: Программирование на стороне сервера
       items:
         - name: 'Запись хранимых процедур, триггеров и определяемых пользователем функций'

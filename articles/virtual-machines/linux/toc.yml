@@ -476,6 +476,8 @@
           href: expand-disks.md
         - name: Моментальный снимок диска
           href: snapshot-copy-managed-disk.md
+        - name: Создание добавочного моментального снимка
+          href: disks-incremental-snapshots.md
         - name: Резервное копирование неуправляемых дисков
           href: incremental-snapshots.md
         - name: Миграция и преобразование
