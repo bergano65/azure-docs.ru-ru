@@ -4,12 +4,13 @@ ms.service: cosmos-db
 ms.topic: include
 ms.date: 03/23/2019
 ms.author: sngun
-ms.openlocfilehash: 008177e28e99d09f384899141038c13a0e625519
-ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
+ms.custom: seo-java-september2019
+ms.openlocfilehash: d5a0e8412b928aea83670ad9f7c99a892a058c70
+ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69541535"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71210322"
 ---
 После завершения работы с веб-приложением и учетной записью Azure Cosmos DB можно удалить созданные ресурсы Azure, чтобы не нести дополнительные расходы. Удаление ресурсов:
 
@@ -17,11 +18,11 @@ ms.locfileid: "69541535"
 
 2. Выберите группу ресурсов, созданную для этого краткого руководства.  
 
-   ![Метрики на портале Azure](./media/cosmos-db-delete-resource-group/delete-resources-select.png)
+   ![Выбор удаляемой группы ресурсов](./media/cosmos-db-delete-resource-group/delete-resources-select.png)
 
 2. В новом окне выберите **Удалить группу ресурсов**.
 
-   ![Метрики на портале Azure](./media/cosmos-db-delete-resource-group/delete-resources.png)   
+   ![удаление группы ресурсов.](./media/cosmos-db-delete-resource-group/delete-resources.png)   
 
 3. В следующем окне введите имя группы ресурсов, которую требуется удалить, и щелкните **Удалить**.
 
