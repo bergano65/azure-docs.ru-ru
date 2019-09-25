@@ -5,15 +5,15 @@ author: DCtheGeek
 manager: carmonm
 ms.service: blueprints
 ms.topic: sample
-ms.date: 09/04/2019
+ms.date: 09/24/2019
 ms.author: dacoulte
 ms.custom: fasttrack-edit
-ms.openlocfilehash: ea2c56e35741a49d057f2261f7b53fb754a43f8b
-ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
+ms.openlocfilehash: d54d60728b9ad0cc72a6cbc81b380b2511d732a8
+ms.sourcegitcommit: 3fa4384af35c64f6674f40e0d4128e1274083487
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70967987"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71219806"
 ---
 # <a name="azure-blueprints-samples"></a>Примеры для Azure Blueprints
 
@@ -31,6 +31,7 @@ ms.locfileid: "70967987"
 | [ISO 27001: рабочая нагрузка Среды службы приложений или Базы данных SQL](./iso27001-ase-sql-workload/index.md) | Предоставляет дополнительную инфраструктуру для примера схемы [ISO 27001: общие службы](./iso27001-shared/index.md). |
 | [NIST SP 800-53, ред. 4](./nist-sp-800-53-rev4/index.md) | В этом документе описаны средства защиты для соответствия требованиям NIST SP 800-53, ред. 4. |
 | [PCI-DSS версии 3.2.1](./pci-dss-3.2.1/index.md) | Предоставляет набор политик для обеспечения соответствия требованиям PCI-DSS версии 3.2.1. |
+| [SWIFT CSP-CSCF v2020](./swift-2020/index.md) | Средства обеспечения соответствия SWIFT CSP-CSCF v2020. |
 | [Система управления UK OFFICIAL и UK NHS](./ukofficial/index.md) | Предоставляет набор соответствующих шаблонов инфраструктуры и средства, обеспечивающие соответствие политикам, для прохождения аттестации UK OFFICIAL и UK NHS |
 | [CAF Foundation](./caf-foundation/index.md) | Предоставляет набор элементов управления для администрирования облачной инфраструктуры в соответствии с [Microsoft Cloud Adoption Framework для Azure (CAF)](/azure/architecture/cloud-adoption/governance/journeys/index). |
 | [Зона размещения для миграции в соответствии с CAF](./caf-migrate-landing-zone/index.md) | Предоставляет набор элементов управления для подготовки к миграции рабочей нагрузки и администрирования облачной инфраструктуры в соответствии с [Microsoft Cloud Adoption Framework для Azure (CAF)](/azure/architecture/cloud-adoption/migrate/index). |

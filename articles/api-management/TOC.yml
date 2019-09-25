@@ -49,6 +49,10 @@
           href: api-management-howto-policies.md
         - name: Индекс справочника по политикам
           href: api-management-policies.md
+    - name: Безопасность
+      items:
+        - name: Встроенные средства управления безопасностью
+          href: api-management-security-controls.md
     - name: Подписки
       href: api-management-subscriptions.md
     - name: Управление с помощью службы автоматизации
@@ -57,8 +61,6 @@
       href: api-management-error-handling-policies.md
     - name: Ограничения на импорт для API
       href: api-management-api-import-restrictions.md
-    - name: Встроенные средства управления безопасностью
-      href: api-management-security-controls.md
 - name: Руководства
   items:
     - name: Определение интерфейсов API
