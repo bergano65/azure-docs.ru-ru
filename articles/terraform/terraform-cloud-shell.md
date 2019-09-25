@@ -8,13 +8,13 @@ author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
-ms.date: 10/19/2017
-ms.openlocfilehash: 19a828abfee780dd757d0575f94a0358c12088cd
-ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
+ms.date: 09/20/2019
+ms.openlocfilehash: e0a59697a3e4da97cf082c4c771fe93ad33b6035
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71087733"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71173552"
 ---
 # <a name="terraform-cloud-shell-development"></a>Разработка Cloud Shell Terraform 
 
@@ -33,7 +33,7 @@ ms.locfileid: "71087733"
 
 Модулям Azure Terraform требуются учетные данные для доступа к ресурсам в подписке Azure и внесения изменений в них. При работе в Cloud Shell добавьте следующий код в сценарий, чтобы использовать модули Azure Terraform в Cloud Shell:
 
-```tf
+```hcl
 # Configure the Microsoft Azure Provider
 provider "azurerm" {
 }

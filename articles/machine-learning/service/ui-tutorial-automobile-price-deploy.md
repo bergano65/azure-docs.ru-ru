@@ -9,12 +9,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: tutorial
 ms.date: 07/11/2019
-ms.openlocfilehash: 22d5c41e8b815fd99450962cb63d11e9560c787f
-ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
+ms.openlocfilehash: 9378c6a14c3b755a6456ef68ecd73730cb77fc79
+ms.sourcegitcommit: 2ed6e731ffc614f1691f1578ed26a67de46ed9c2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70997012"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71128982"
 ---
 # <a name="tutorial-deploy-a-machine-learning-model-with-the-visual-interface"></a>Руководство по развертыванию модели машинного обучения с помощью графического интерфейса
 
@@ -130,4 +130,4 @@ ms.locfileid: "70997012"
 В этом руководстве вы узнали об основных этапах создания, развертывания и использования модели машинного обучения в графическом интерфейсе. Чтобы получить дополнительные сведения об использовании графического интерфейса для решения других типов проблем, ознакомьтесь с примерами экспериментов.
 
 > [!div class="nextstepaction"]
-> [Пример классификации кредитных рисков](ui-sample-classification-predict-credit-risk-cost-sensitive.md)
+> [Пример классификации кредитных рисков](how-to-ui-sample-classification-predict-credit-risk-cost-sensitive.md)

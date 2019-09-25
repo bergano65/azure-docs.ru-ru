@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 3/13/2019
 ms.author: robinsh
 ms.custom: mvc
-ms.openlocfilehash: 40e54daa60efedd84b32c72f29d1e2a8858c27da
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 7349287945a56bb7674e364f515d0b763015ed59
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66162301"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71262317"
 ---
 # <a name="tutorial-set-up-and-use-metrics-and-diagnostic-logs-with-an-iot-hub"></a>Руководство по Настройка и использование метрик и журналов диагностики с Центром Интернета вещей
 
@@ -126,7 +126,7 @@ az iot hub device-identity show --device-id $iotDeviceName \
 
 ## <a name="enable-the-diagnostic-logs"></a>Включение ведения журналов диагностики 
 
-При создании нового центра Интернета вещей [журналы диагностики](../azure-monitor/platform/diagnostic-logs-overview.md) отключены по умолчанию. В этом разделе включите журналы диагностики для центра.
+При создании нового центра Интернета вещей [журналы диагностики](../azure-monitor/platform/resource-logs-overview.md) отключены по умолчанию. В этом разделе включите журналы диагностики для центра.
 
 1. Во-первых, если вы еще не перешли к центру на портале, щелкните **Группы ресурсов** и выберите группу ресурсов Contoso-Resources. Выберите центр из списка отображаемых ресурсов. 
 

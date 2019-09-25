@@ -3,9 +3,9 @@ title: Отправка уведомлений в приложения унив�
 description: Узнайте, как отправлять push-уведомления в приложение для универсальной платформы Windows с помощью Центров уведомлений Azure.
 services: notification-hubs
 documentationcenter: windows
-author: jwargo
-manager: patniko
-editor: spelluru
+author: sethmanheim
+manager: femila
+editor: jwargo
 ms.assetid: cf307cf3-8c58-4628-9c63-8751e6a0ef43
 ms.service: notification-hubs
 ms.workload: mobile
@@ -14,13 +14,15 @@ ms.devlang: dotnet
 ms.topic: tutorial
 ms.custom: mvc
 ms.date: 03/22/2019
-ms.author: jowargo
-ms.openlocfilehash: 714c2be7265a41a7791ce39bfaa1bdc12fa58cac
-ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
+ms.author: sethm
+ms.reviewer: jowargo
+ms.lastreviewed: 03/22/2019
+ms.openlocfilehash: 82f983f6fc55c01c4e445915d06da33889977d24
+ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67340749"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71213437"
 ---
 # <a name="tutorial-send-notifications-to-universal-windows-platform-apps-by-using-azure-notification-hubs"></a>Руководство по Отправка уведомлений в приложения универсальной платформы Windows с использованием Центров уведомлений Azure
 

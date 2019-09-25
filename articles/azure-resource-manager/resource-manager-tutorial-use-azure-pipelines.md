@@ -13,12 +13,12 @@ ms.devlang: na
 ms.date: 06/12/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 85dc0476da12bea64610b6910b0682fef00f4b5a
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 462d9cd6d2a911e660221621ebde5829e928cf00
+ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67064738"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71122227"
 ---
 # <a name="tutorial-continuous-integration-of-azure-resource-manager-templates-with-azure-pipelines"></a>Руководство по Непрерывная интеграция шаблонов Azure Resource Manager с Azure Pipelines
 
@@ -264,4 +264,4 @@ Azuredeploy.json был добавлен в локальный репозито�
 Работая с этим руководством, вы создадите конвейер Azure DevOps, чтобы развертывать шаблон Azure Resource Manager. Чтобы узнать, как развертывать ресурсы Azure в нескольких регионах и как использовать безопасное развертывание, ознакомьтесь со следующей статьей.
 
 > [!div class="nextstepaction"]
-> [Руководство. Использование Диспетчера развертывания Azure с шаблонами Resource Manager](./resource-manager-tutorial-deploy-vm-extensions.md)
+> [Руководство. Использование диспетчера развертывания Azure с шаблонами Resource Manager (закрытая предварительная версия)](./deployment-manager-tutorial.md)

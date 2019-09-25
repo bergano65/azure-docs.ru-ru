@@ -8,13 +8,13 @@ author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
-ms.date: 10/19/2017
-ms.openlocfilehash: c6aa780b04c85b8156463011c2b90da2da4541f6
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.date: 09/20/2019
+ms.openlocfilehash: 6279b5c9022b448aea9b33a94fc1b2b35b6d23de
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57776280"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71169848"
 ---
 # <a name="create-a-vm-cluster-with-terraform-using-the-module-registry"></a>Создание кластера виртуальных машин с помощью Terraform с использованием реестра модулей
 
@@ -35,7 +35,7 @@ ms.locfileid: "57776280"
 
  Просмотрите статью об [установке Terraform и настройке доступа к Azure](/azure/virtual-machines/linux/terraform-install-configure), чтобы создать субъект-службу Azure. Используйте этот субъект-службу для заполнения нового файла `azureProviderAndCreds.tf` в пустом каталоге с помощью следующего кода:
 
-```tf
+```hcl
 variable subscription_id {}
 variable tenant_id {}
 variable client_id {}
@@ -53,7 +53,7 @@ provider "azurerm" {
 
 Создайте шаблон Terraform с именем `main.tf` со следующим кодом:
 
-```tf
+```hcl
 module mycompute {
     source = "Azure/compute/azurerm"
     resource_group_name = "myResourceGroup"

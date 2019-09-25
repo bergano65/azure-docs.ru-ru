@@ -4,9 +4,9 @@ description: В этом руководстве вы узнаете, как от
 services: notification-hubs
 documentationcenter: windows
 keywords: push-уведомление, push-уведомление
-author: jwargo
-manager: patniko
-editor: spelluru
+author: sethmanheim
+manager: femila
+editor: jwargo
 ms.assetid: f41beea1-0d62-4418-9ffc-c9d70607a1b7
 ms.service: notification-hubs
 ms.workload: mobile
@@ -15,15 +15,17 @@ ms.devlang: dotnet
 ms.topic: tutorial
 ms.custom: mvc
 ms.date: 01/04/2019
-ms.author: jowargo
-ms.openlocfilehash: 9baeb1c21252f8b7f7b24debde48108532d9865c
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.author: sethm
+ms.reviewer: jowargo
+ms.lastreviewed: 01/04/2019
+ms.openlocfilehash: 84e52feb6e30e0b9b693019b671906fad8c908db
+ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58118312"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71213250"
 ---
-# <a name="tutorial-push-location-based-notifications-with-azure-notification-hubs-and-bing-spatial-data"></a>Руководство. Отправка уведомлений с учетом географического расположения с помощью Центров уведомлений Azure и Bing Spatial Data
+# <a name="tutorial-push-location-based-notifications-with-azure-notification-hubs-and-bing-spatial-data"></a>Руководство по Отправка уведомлений с учетом географического расположения с помощью Центров уведомлений Azure и Bing Spatial Data
 
 В этом руководстве вы узнаете, как отправлять push-уведомления с учетом географического расположения с помощью Центров уведомлений Azure и Bing Spatial Data.
 
@@ -101,7 +103,7 @@ ms.locfileid: "58118312"
 
 ## <a name="set-up-the-uwp-application"></a>Настройка приложения UWP.
 
-1. В Visual Studio создайте новый проект типа **Пустое приложение (универсальное приложение Windows)**.
+1. В Visual Studio создайте новый проект типа **Пустое приложение (универсальное приложение Windows)** .
 
     ![](./media/notification-hubs-geofence/notification-hubs-create-blank-app.png)
 

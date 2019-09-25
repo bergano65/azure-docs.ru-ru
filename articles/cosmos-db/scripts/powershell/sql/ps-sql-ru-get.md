@@ -3,15 +3,16 @@ title: Скрипт Azure PowerShell — оценка подготовленн�
 description: Скрипт Azure PowerShell — оценка подготовленной пропускной способности (ЕЗ/с) Azure Cosmos DB для API SQL (Core)
 author: markjbrown
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.topic: sample
 ms.date: 07/03/2019
 ms.author: mjbrown
-ms.openlocfilehash: 75a8ebbb04fd3cbad9f0a1a3f302b40439adbbcc
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: c7d7f295589d4e3b152016c2b55cfe07355d1cb0
+ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67602135"
+ms.lasthandoff: 09/22/2019
+ms.locfileid: "71178763"
 ---
 # <a name="get-the-provisioned-throughput-rus-for-a-database-or-container-for-azure-cosmos-db---sql-core-api"></a>Оценка подготовленной пропускной способности (ЕЗ/с) для базы данных или контейнера в Azure Cosmos DB — API SQL (Core)
 

@@ -7,13 +7,13 @@ keywords: terraform, devops, виртуальная машина, Azure, мас�
 author: tomarchermsft
 ms.author: tarcher
 ms.topic: tutorial
-ms.date: 10/26/2018
-ms.openlocfilehash: 21fea65ed7056afa57d9acbacb2457bb4d09cff5
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.date: 09/20/2019
+ms.openlocfilehash: a6bc0879d07cadc6c5b0b1a21b11b3075ec69719
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58002313"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71169876"
 ---
 # <a name="use-terraform-to-create-an-azure-virtual-machine-scale-set"></a>Создание масштабируемого набора виртуальных машин Azure с помощью Terraform
 
@@ -80,7 +80,7 @@ ms.locfileid: "58002313"
 
 1. Скопируйте приведенный ниже код и вставьте его в редактор.
 
-   ```JSON
+   ```hcl
    variable "location" {
     description = "The location where resources will be created"
    }
@@ -124,7 +124,7 @@ ms.locfileid: "58002313"
 1. Вставьте приведенный ниже код в редактор, чтобы предоставить сведения о полном доменном имени (FQDN) виртуальным машинам.
    :
 
-   ```JSON
+   ```hcl
     output "vmss_public_ip" {
         value = "${azurerm_public_ip.vmss.fqdn}"
     }
@@ -157,7 +157,7 @@ ms.locfileid: "58002313"
 
 1. Вставьте приведенный ниже код в конец файла, чтобы предоставить сведения о полном доменном имени (FQDN) виртуальным машинам.
 
-   ```JSON
+   ```hcl
    resource "azurerm_resource_group" "vmss" {
     name     = "${var.resource_group_name}"
     location = "${var.location}"
@@ -252,7 +252,7 @@ ms.locfileid: "58002313"
 
 1. Добавьте следующий код в конец файла:
 
-   ```JSON
+   ```hcl
    resource "azurerm_lb" "vmss" {
     name                = "vmss-lb"
     location            = "${var.location}"
@@ -369,7 +369,7 @@ ms.locfileid: "58002313"
 
 1. Скопируйте приведенный ниже код и вставьте его в редактор.
 
-   ```JSON
+   ```hcl
    #cloud-config
    packages:
     - nginx
@@ -393,7 +393,7 @@ ms.locfileid: "58002313"
 
 1. Настройте развертывание, вставив следующий код в конец файла:
 
-    ```JSON
+    ```hcl
     variable "application_port" {
        description = "The port that you want to expose to the external load balancer"
        default     = 80
@@ -458,7 +458,7 @@ ms.locfileid: "58002313"
 
 1. Добавьте следующий код в конец файла:
 
-   ```JSON
+   ```hcl
    resource "azurerm_public_ip" "jumpbox" {
     name                         = "jumpbox-public-ip"
     location                     = "${var.location}"
@@ -528,7 +528,7 @@ ms.locfileid: "58002313"
 
 1. Вставьте указанный ниже код в конец файла, чтобы отобразить имя узла точки перехода по завершении развертывания.
 
-   ```
+   ```hcl
    output "jumpbox_public_ip" {
       value = "${azurerm_public_ip.jumpbox.fqdn}"
    }

@@ -3,15 +3,16 @@ title: Скрипт Azure PowerShell — операции List и Get в Azure 
 description: Скрипт Azure PowerShell — операции List и Get в Azure Cosmos DB для API MongoDB
 author: markjbrown
 ms.service: cosmos-db
+ms.subservice: cosmosdb-mongo
 ms.topic: sample
 ms.date: 05/18/2019
 ms.author: mjbrown
-ms.openlocfilehash: cd00166e93477dc229a25cc7a183febe4034d7bb
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: 47d2f6a14fadfa75e5db28eb44b7ca3410e6503c
+ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67603906"
+ms.lasthandoff: 09/22/2019
+ms.locfileid: "71178887"
 ---
 # <a name="list-and-get-databases-and-graphs-for-azure-cosmos-db---mongodb-api"></a>Операции List и Get для баз данных и графов для Azure Cosmos DB — API MongoDB
 

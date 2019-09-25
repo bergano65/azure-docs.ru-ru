@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 07/11/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1ed6c28491162a729f0e110e953f89dd72fe12ea
-ms.sourcegitcommit: 6b41522dae07961f141b0a6a5d46fd1a0c43e6b2
+ms.openlocfilehash: 4fd6c18e3a3af763a2f4404e6b9c808e1bd8a4a5
+ms.sourcegitcommit: 2ed6e731ffc614f1691f1578ed26a67de46ed9c2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68002859"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71129938"
 ---
 # <a name="tutorial-integrate-ascentis-with-azure-active-directory"></a>Руководство по Интеграция Ascentis с Azure Active Directory
 
@@ -29,7 +29,6 @@ ms.locfileid: "68002859"
 
 * Контроль доступа к Ascentis с помощью Azure AD.
 * Вы можете включить автоматический вход пользователей в Ascentis с помощью учетных записей Azure AD.
-* Централизованное управление учетными записями через портал Azure.
 
 Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 

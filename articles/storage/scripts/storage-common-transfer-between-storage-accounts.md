@@ -3,8 +3,7 @@ title: Пример сценария Azure PowerShell по миграции бо
 description: Копирование содержимого большого двоичного объекта между учетными записями хранения Azure с помощью AzCopy.
 services: storage
 documentationcenter: na
-author: roygara
-manager: jeconnoc
+author: normesta
 ms.custom: mvc
 ms.service: storage
 ms.workload: storage
@@ -12,13 +11,13 @@ ms.tgt_pltfrm: na
 ms.devlang: azurecli
 ms.topic: sample
 ms.date: 02/01/2018
-ms.author: rogarana
-ms.openlocfilehash: 88eb97a206bc75bc9635da90eb9d48818ceef0f0
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.author: normesta
+ms.openlocfilehash: 0af945177289760ca0d2a97133a300d9978ce702
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58487138"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71260627"
 ---
 # <a name="migrate-blobs-across-storage-accounts-using-azcopy-on-windows"></a>Перенос больших двоичных объектов между различными учетными записями хранения с помощью AzCopy в ОС Windows
 

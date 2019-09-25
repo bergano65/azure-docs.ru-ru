@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: tutorial
 ms.date: 06/25/2019
-ms.openlocfilehash: 31882b878f76060bdbf70a308673fc80d60c8440
-ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
+ms.openlocfilehash: 0eaa3428234db8a7045728404bcfac5cc732dd9d
+ms.sourcegitcommit: a19bee057c57cd2c2cd23126ac862bd8f89f50f5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71075884"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71181163"
 ---
 # <a name="tutorial-use-apache-storm-with-apache-kafka-on-hdinsight"></a>Руководство по Использование Apache Storm с Apache Kafka в HDInsight
 
@@ -372,7 +372,7 @@ streams:
 | `kafka.broker.hosts` | Узлы брокера Kafka (рабочие узлы). |
 | `kafka.topic` | Раздел Kafka, используемый топологиями. |
 | `hdfs.write.dir` | Каталог, в который топология Kafka-reader выполняет запись. |
-| `hdfs.url` | Файловая система, используемая кластером Storm. В учетных записях службы хранилища Azure используйте значение `wasb:///`. В учетных записях Azure Data Lake Storage 2-го поколения используйте значение `abfs:///`. В учетных записях Azure Data Lake Storage 1-го поколения используйте значение `adl:///`. |
+| `hdfs.url` | Файловая система, используемая кластером Storm. В учетных записях службы хранилища Azure используйте значение `wasb://`. В учетных записях Azure Data Lake Storage 2-го поколения используйте значение `abfs://`. В учетных записях Azure Data Lake Storage 1-го поколения используйте значение `adl://`. |
 
 ## <a name="create-the-clusters"></a>Создание кластеров
 

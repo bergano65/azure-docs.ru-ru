@@ -8,13 +8,13 @@ author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
-ms.date: 11/13/2017
-ms.openlocfilehash: 284dcd99dc77d7ec0fb5cb214d49b6fcf93a6aef
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.date: 09/20/2019
+ms.openlocfilehash: bf9539512961930a97d9dcfe86722d0103c1facc
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68854485"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71173460"
 ---
 # <a name="create-a-vm-cluster-with-terraform-and-hcl"></a>Создание кластера виртуальных машин с помощью Terraform и HCL
 
@@ -46,7 +46,7 @@ ms.locfileid: "68854485"
 
 5. Скопируйте в файл объявления переменных следующий код:
 
-   ```tf
+   ```hcl
    variable subscription_id {}
    variable tenant_id {}
    variable client_id {}
@@ -64,7 +64,7 @@ ms.locfileid: "68854485"
 
 7. Скопируйте в файл переменных следующий код: Обязательно замените строки заполнителей. Вместо `subscription_id` укажите идентификатор подписки Azure, который вы указали при выполнении `az account set`. Вместо `tenant_id` укажите значение `tenant`, полученное от `az ad sp create-for-rbac`. Вместо `client_id` укажите значение `appId`, полученное от `az ad sp create-for-rbac`. Вместо `client_secret` укажите значение `password`, полученное от `az ad sp create-for-rbac`.
 
-   ```tf
+   ```hcl
    subscription_id = "<azure-subscription-id>"
    tenant_id = "<tenant-returned-from-creating-a-service-principal>"
    client_id = "<appId-returned-from-creating-a-service-principal>"
@@ -79,7 +79,7 @@ ms.locfileid: "68854485"
 
 2. Скопируйте в новый файл `main.tf` следующие примеры определений ресурсов: 
 
-   ```tf
+   ```hcl
    resource "azurerm_resource_group" "test" {
     name     = "acctestrg"
     location = "West US 2"
@@ -227,7 +227,7 @@ ms.locfileid: "68854485"
 
 Чтобы инициализировать Terraform, выполните следующую команду:
 
-  ```cmd
+  ```bash
   terraform init
   ```
 
@@ -245,13 +245,13 @@ ms.locfileid: "68854485"
 
 Если вы не хотите сохранять план выполнения, выполните следующую команду:
 
-  ```cmd
+  ```bash
   terraform plan
   ```
 
 Если план выполнения нужно сохранить, выполните следующую команду (заменив заполнитель &lt;path> на правильный путь для выходных данных):
 
-  ```cmd
+  ```bash
   terraform plan -out=<path>
   ```
 
@@ -263,13 +263,13 @@ ms.locfileid: "68854485"
 
 Если вы хотите применить последний созданный план выполнения, выполните такую команду:
 
-  ```cmd
+  ```bash
   terraform apply
   ```
 
 Если вы хотите применить план выполнения, сохраненный ранее в файл, выполните следующую команду (заменив заполнитель &lt;path> фактическим значением пути, где расположен сохраненный план выполнения):
 
-  ```cmd
+  ```bash
   terraform apply <path>
   ```
 

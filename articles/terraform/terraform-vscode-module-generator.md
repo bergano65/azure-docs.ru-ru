@@ -8,13 +8,13 @@ author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
-ms.date: 11/08/2018
-ms.openlocfilehash: 7e66f374a1f5f4fb050f366fdad0e787292101f8
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.date: 09/20/2019
+ms.openlocfilehash: 7a628eb02170346a826cab19498d6fdf40cebddd
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59526747"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71173379"
 ---
 # <a name="create-a-terraform-base-template-in-azure-using-yeoman"></a>Создание базового шаблона Terraform в Azure с использованием Yeoman
 
@@ -117,7 +117,7 @@ ms.locfileid: "59526747"
 
 1. На панели меню выберите **Файл > Открыть папку**, а затем найдите и выберите созданную папку.
 
-    ![Visual Studio Code.](media/terraform-vscode-module-generator/ymg-open-in-vscode.png)
+    ![Visual Studio Code](media/terraform-vscode-module-generator/ymg-open-in-vscode.png)
 
 Давайте рассмотрим некоторые файлы, созданные с помощью генератора модуля Yeoman.
 
@@ -229,7 +229,7 @@ ms.locfileid: "59526747"
 
 1. Запустите сеанс Azure Cloud Shell через портал [Azure](https://portal.azure.com/), [shell.azure.com](https://shell.azure.com) или [мобильное приложение Azure](https://azure.microsoft.com/features/azure-portal/mobile-app/).
 
-1. Откроется страница **приветствия Azure Cloud Shell**. Выберите **Bash (Linux)**. (Power Shell не поддерживается.)
+1. Откроется страница **приветствия Azure Cloud Shell**. Выберите **Bash (Linux)** . (Power Shell не поддерживается.)
 
     ![Страница приветствия Azure Cloud Shell](media/terraform-vscode-module-generator/ymg-welcome-to-azure-cloud-shell.png)
 

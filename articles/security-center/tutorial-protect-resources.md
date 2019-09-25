@@ -3,9 +3,8 @@ title: Руководство по центру безопасности Azure. 
 description: В этом руководстве показано, как настроить политику JIT-доступа к виртуальной машине и политику управления приложениями.
 services: security-center
 documentationcenter: na
-author: monhaber
-manager: barbkess
-editor: ''
+author: memildin
+manager: rkarlin
 ms.assetid: 61e95a87-39c5-48f5-aee6-6f90ddcd336e
 ms.service: security-center
 ms.devlang: na
@@ -13,14 +12,14 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/3/2018
-ms.author: v-mohabe
-ms.openlocfilehash: 7533a8636697db92a69cfec99d0e89138164d7b7
-ms.sourcegitcommit: aaa82f3797d548c324f375b5aad5d54cb03c7288
+ms.date: 12/03/2018
+ms.author: memildin
+ms.openlocfilehash: 28da3933cf1f1970758fcaec1358c9c16558af03
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70147887"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71200666"
 ---
 # <a name="tutorial-protect-your-resources-with-azure-security-center"></a>Руководство по Защита ресурсов с помощью Центра безопасности Azure
 Центр безопасности снижает уязвимость перед угрозами. Для этого используются элементы управления доступом и приложениями, блокирующие вредоносные действия. JIT-доступ к виртуальной машине снижает уязвимость перед атаками. Он позволяет вам запретить постоянный доступ к виртуальным машинам. Вместо этого предоставляется управляемый и подлежащий аудиту доступ к виртуальным машинам только по мере необходимости. Адаптивные элементы управления приложениями помогают усилить защиту виртуальных машин от вредоносных программ, определяя, какие приложения могут работать на виртуальных машинах. Центр безопасности анализирует процессы, выполняющиеся на виртуальной машине, с помощью машинного обучения и на основе этой технологии аналитики помогает применять правила списка разрешений.

@@ -3,15 +3,16 @@ title: Скрипт Azure PowerShell — создание контейнера 
 description: Пример скрипта Azure PowerShell — создание контейнера с отключенным индексированием в учетной записи Azure Cosmos
 author: markjbrown
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.topic: sample
 ms.date: 05/06/2019
 ms.author: mjbrown
-ms.openlocfilehash: 7cec954bc85873d300a4abb96396025600e17201
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: d216aa7eaa25ee18c7b5e962309e2a08f11df284
+ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67603868"
+ms.lasthandoff: 09/22/2019
+ms.locfileid: "71178839"
 ---
 # <a name="create-a-container-indexing-turned-off-in-an-azure-cosmos-account-using-powershell"></a>Создание контейнера с отключенным индексированием в учетной записи Azure Cosmos с помощью PowerShell
 

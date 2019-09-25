@@ -3,15 +3,16 @@ title: Скрипт Azure PowerShell — оценка пропускной сп
 description: Скрипт Azure PowerShell — оценка пропускной способности (ЕЗ/с) Azure Cosmos DB для API Cassandra
 author: markjbrown
 ms.service: cosmos-db
+ms.subservice: cosmosdb-cassandra
 ms.topic: sample
 ms.date: 07/03/2019
 ms.author: mjbrown
-ms.openlocfilehash: 4aed55a0c3ae969cf9148e5bf8d6a70a3151f695
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: b2544a3c704318839f0c2b956db4d39e83d08d3f
+ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67603989"
+ms.lasthandoff: 09/22/2019
+ms.locfileid: "71179006"
 ---
 # <a name="get-throughput-rus-for-a-keyspace-or-table-for-azure-cosmos-db---cassandra-api"></a>Оценка пропускной способности (ЕЗ/с) для пространства ключей или таблицы в Azure Cosmos DB — API Cassandra
 

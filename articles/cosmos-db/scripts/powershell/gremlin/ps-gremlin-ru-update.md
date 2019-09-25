@@ -3,15 +3,16 @@ title: Скрипт Azure PowerShell — обновление ЕЗ/с в Azure 
 description: Скрипт Azure PowerShell — обновление ЕЗ/с в Azure Cosmos DB для API Gremlin
 author: markjbrown
 ms.service: cosmos-db
+ms.subservice: cosmosdb-graph
 ms.topic: sample
 ms.date: 05/18/2019
 ms.author: mjbrown
-ms.openlocfilehash: 70fc0f0357a091e990a2c11f39985d7b7e60cd6c
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: 85344d4a8f37bfa34ab14d2dfb9152860973dd1a
+ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67603916"
+ms.lasthandoff: 09/22/2019
+ms.locfileid: "71178919"
 ---
 # <a name="update-rus-for-a-database-or-graph-for-azure-cosmos-db---gremlin-api"></a>Обновление ЕЗ/с для базы данных или графа в Azure Cosmos DB — API Gremlin
 

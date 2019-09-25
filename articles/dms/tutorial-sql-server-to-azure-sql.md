@@ -10,13 +10,13 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: article
-ms.date: 07/09/2019
-ms.openlocfilehash: c4d2e70d0f200f3a31948cfaa43def8e1b699878
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.date: 09/22/2019
+ms.openlocfilehash: 7e5b4a3cb04215504c4fd4fd1ebfcbcbe8c3f9f8
+ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67706885"
+ms.lasthandoff: 09/22/2019
+ms.locfileid: "71179107"
 ---
 # <a name="tutorial-migrate-sql-server-to-a-single-database-or-pooled-database-in-azure-sql-database-offline-using-dms"></a>Руководство по Автономная миграция из SQL Server в отдельную базу данных или базу данных в пуле в Базе данных SQL Azure с помощью DMS
 
@@ -106,6 +106,7 @@ Azure Database Migration Service можно использовать для пе
 
 > [!NOTE]
 > Прежде чем создавать проект миграции в Data Migration Assistant, убедитесь, что база данных SQL Azure уже подготовлена, как описано выше. В рамках этого руководства для базы данных SQL Azure используется имя **AdventureWorksAzure**, но вы можете назвать ее иначе.
+
 > [!IMPORTANT]
 > Если вы используете службы SSIS, обратите внимание, что сейчас DMA не поддерживает перенос базы данных-источника SSISDB, но вы можете повторно развернуть проекты и пакеты служб SSIS в целевую базу данных SSISDB, размещенную в Базе данных SQL Azure. Дополнительные сведения о миграции пакетов SSIS см. в статье [Перенос пакетов SQL Server Integration Services в Azure](https://docs.microsoft.com/azure/dms/how-to-migrate-ssis-packages).
 
@@ -197,7 +198,7 @@ Azure Database Migration Service можно использовать для пе
     ![Поиск экземпляра службы миграции базы данных Azure](media/tutorial-sql-server-to-azure-sql/dms-instance-search.png)
 
 3. Выберите **+ Новый проект миграции**.
-4. На экране **Новый проект миграции** задайте имя для проекта, в текстовом поле **Тип исходного сервера** выберите **SQL Server**, в текстовом поле **Тип целевого сервера** выберите **База данных SQL Azure**, а затем для параметра **Выберите тип действия** выберите значение **Автономная миграция данных**. 
+4. На экране **Новый проект миграции** задайте имя для проекта, в текстовом поле **Тип исходного сервера** выберите **SQL Server**, в текстовом поле **Тип целевого сервера** выберите **База данных SQL Azure**, а затем для параметра **Выберите тип действия** выберите значение **Автономная миграция данных**.
 
     ![Создание проекта Database Migration Service](media/tutorial-sql-server-to-azure-sql/dms-create-project2.png)
 
