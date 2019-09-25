@@ -11,12 +11,12 @@ author: danimir
 ms.author: danil
 ms.reviewer: jrasnik, carlrab
 ms.date: 05/21/2019
-ms.openlocfilehash: d9f1afdff53ada2df7722fcfdd7014fb6c417e39
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: 208ebaa2e22f4cd0ee2138f3e49f78c1e56860cf
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70135177"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71260322"
 ---
 # <a name="azure-sql-database-metrics-and-diagnostics-logging"></a>Метрики и журналы диагностики Базы данных SQL Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "70135177"
 Дополнительные сведения о метриках и категориях журналов, поддерживаемых различными службами Azure, см. в следующих статьях:
 
 - [Обзор метрик в Microsoft Azure](../monitoring-and-diagnostics/monitoring-overview-metrics.md)
-- [Обзор журналов диагностики Azure](../azure-monitor/platform/diagnostic-logs-overview.md)
+- [Обзор журналов диагностики Azure](../azure-monitor/platform/resource-logs-overview.md)
 
 В этой статье приведены рекомендации, которые помогут включить диагностическую телеметрию для баз данных SQL Azure, эластичных пулов и управляемых экземпляров. Из статьи вы узнаете, как настроить Аналитику SQL Azure в качестве инструмента мониторинга для просмотра диагностических данных телеметрии базы данных.
 
@@ -304,7 +304,7 @@ ms.locfileid: "70135177"
 
 ### <a name="resource-manager-template"></a>Шаблон Resource Manager
 
-Сведения о включении параметров диагностики при создании ресурса из шаблона Resource Manager см. [здесь](../azure-monitor/platform/diagnostic-logs-stream-template.md).
+Сведения о включении параметров диагностики при создании ресурса из шаблона Resource Manager см. [здесь](../azure-monitor/platform/diagnostic-settings-template.md).
 
 ## <a name="stream-into-azure-sql-analytics"></a>Потоковая передача данных в службу Аналитика SQL Azure
 
@@ -440,15 +440,15 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure|
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Тип|Всегда: AzureDiagnostics |
+|Type|Всегда: AzureDiagnostics |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL |
-|Категория|Имя категории. Всегда: ResourceUsageStats |
+|Category|Имя категории. Всегда: ResourceUsageStats |
 |Resource|Имя ресурса. |
 |ResourceType|Имя типа ресурса. Всегда: MANAGEDINSTANCES |
 |SubscriptionId|GUID подписки для базы данных |
-|Группа ресурсов|Имя группы ресурсов для базы данных |
+|ResourceGroup|Имя группы ресурсов для базы данных |
 |LogicalServerName_s|Имя управляемого экземпляра |
-|resourceId|Универсальный код ресурса (URI) |
+|ResourceId|Универсальный код ресурса (URI) |
 |SKU_s|Номер SKU продукта управляемого экземпляра |
 |virtual_core_count_s|Доступное количество виртуальных ядер |
 |avg_cpu_percent_s|Average CPU percentage (Средний процент использования ЦП) |
@@ -465,18 +465,18 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure |
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Тип|Всегда: AzureDiagnostics |
+|Type|Всегда: AzureDiagnostics |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL |
-|Категория|Имя категории. Всегда: QueryStoreRuntimeStatistics |
+|Category|Имя категории. Всегда: QueryStoreRuntimeStatistics |
 |OperationName|Имя операции. Всегда: QueryStoreRuntimeStatisticsEvent |
 |Resource|Имя ресурса. |
 |ResourceType|Имя типа ресурса. Всегда: SERVERS/DATABASES |
 |SubscriptionId|GUID подписки для базы данных |
-|Группа ресурсов|Имя группы ресурсов для базы данных |
+|ResourceGroup|Имя группы ресурсов для базы данных |
 |LogicalServerName_s|Имя сервера для базы данных |
 |ElasticPoolName_s|Имя эластичного пула для базы данных (при наличии) |
 |DatabaseName_s|Имя базы данных. |
-|resourceId|Универсальный код ресурса (URI) |
+|ResourceId|Универсальный код ресурса (URI) |
 |query_hash_s|Хэш запроса. |
 |query_plan_hash_s|Хэш плана запроса. |
 |statement_sql_handle_s|Дескриптор SQL инструкции. |
@@ -516,18 +516,18 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure |
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Тип|Всегда: AzureDiagnostics |
+|Type|Всегда: AzureDiagnostics |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL |
-|Категория|Имя категории. Всегда: QueryStoreWaitStatistics |
+|Category|Имя категории. Всегда: QueryStoreWaitStatistics |
 |OperationName|Имя операции. Всегда: QueryStoreWaitStatisticsEvent |
 |Resource|Имя ресурса. |
 |ResourceType|Имя типа ресурса. Всегда: SERVERS/DATABASES |
 |SubscriptionId|GUID подписки для базы данных |
-|Группа ресурсов|Имя группы ресурсов для базы данных |
+|ResourceGroup|Имя группы ресурсов для базы данных |
 |LogicalServerName_s|Имя сервера для базы данных |
 |ElasticPoolName_s|Имя эластичного пула для базы данных (при наличии) |
 |DatabaseName_s|Имя базы данных. |
-|resourceId|Универсальный код ресурса (URI) |
+|ResourceId|Универсальный код ресурса (URI) |
 |wait_category_s|Категория времени ожидания |
 |is_parameterizable_s|Указывает, подлежит ли запрос параметризации |
 |statement_type_s|Тип инструкции |
@@ -556,17 +556,17 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
 |Type|Всегда: AzureDiagnostics |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL |
-|Категория|Имя категории. Всегда: Ошибки |
+|Category|Имя категории. Всегда: Ошибки |
 |OperationName|Имя операции. Всегда: ErrorEvent |
 |Resource|Имя ресурса. |
 |ResourceType|Имя типа ресурса. Всегда: SERVERS/DATABASES |
 |SubscriptionId|GUID подписки для базы данных |
-|Группа ресурсов|Имя группы ресурсов для базы данных |
+|ResourceGroup|Имя группы ресурсов для базы данных |
 |LogicalServerName_s|Имя сервера для базы данных |
 |ElasticPoolName_s|Имя эластичного пула для базы данных (при наличии) |
 |DatabaseName_s|Имя базы данных. |
-|resourceId|Универсальный код ресурса (URI) |
-|Сообщение|Сообщение об ошибке в виде обычного текста. |
+|ResourceId|Универсальный код ресурса (URI) |
+|`Message`|Сообщение об ошибке в виде обычного текста. |
 |user_defined_b|Указывает, установлен ли бит ошибки пользователем. |
 |error_number_d|Код ошибки |
 |severity|Серьезность ошибки. |
@@ -583,18 +583,18 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure |
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Тип|Всегда: AzureDiagnostics |
+|Type|Всегда: AzureDiagnostics |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL |
-|Категория|Имя категории. Всегда: DatabaseWaitStatistics |
+|Category|Имя категории. Всегда: DatabaseWaitStatistics |
 |OperationName|Имя операции. Всегда: DatabaseWaitStatisticsEvent |
 |Resource|Имя ресурса. |
 |ResourceType|Имя типа ресурса. Всегда: SERVERS/DATABASES |
 |SubscriptionId|GUID подписки для базы данных |
-|Группа ресурсов|Имя группы ресурсов для базы данных |
+|ResourceGroup|Имя группы ресурсов для базы данных |
 |LogicalServerName_s|Имя сервера для базы данных |
 |ElasticPoolName_s|Имя эластичного пула для базы данных (при наличии) |
 |DatabaseName_s|Имя базы данных. |
-|resourceId|Универсальный код ресурса (URI) |
+|ResourceId|Универсальный код ресурса (URI) |
 |wait_type_s|Имя типа времени ожидания. |
 |start_utc_date_t [UTC]|Время начала измеренного периода |
 |end_utc_date_t [UTC]|Время окончания измеренного периода |
@@ -614,16 +614,16 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
 |Type|Всегда: AzureDiagnostics |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL |
-|Категория|Имя категории. Всегда: Истечение выделенного времени |
+|Category|Имя категории. Всегда: Истечение выделенного времени |
 |OperationName|Имя операции. Всегда: TimeoutEvent |
 |Resource|Имя ресурса. |
 |ResourceType|Имя типа ресурса. Всегда: SERVERS/DATABASES |
 |SubscriptionId|GUID подписки для базы данных |
-|Группа ресурсов|Имя группы ресурсов для базы данных |
+|ResourceGroup|Имя группы ресурсов для базы данных |
 |LogicalServerName_s|Имя сервера для базы данных |
 |ElasticPoolName_s|Имя эластичного пула для базы данных (при наличии) |
 |DatabaseName_s|Имя базы данных. |
-|resourceId|Универсальный код ресурса (URI) |
+|ResourceId|Универсальный код ресурса (URI) |
 |error_state_d|Код состояния ошибки. |
 |query_hash_s|Хэш запроса, если он доступен |
 |query_plan_hash_s|Хэш плана запроса, если он доступен |
@@ -635,18 +635,18 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure |
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Тип|Всегда: AzureDiagnostics |
+|Type|Всегда: AzureDiagnostics |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL |
-|Категория|Имя категории. Всегда: Блоки |
+|Category|Имя категории. Всегда: Блоки |
 |OperationName|Имя операции. Всегда: BlockEvent |
 |Resource|Имя ресурса. |
 |ResourceType|Имя типа ресурса. Всегда: SERVERS/DATABASES |
 |SubscriptionId|GUID подписки для базы данных |
-|Группа ресурсов|Имя группы ресурсов для базы данных |
+|ResourceGroup|Имя группы ресурсов для базы данных |
 |LogicalServerName_s|Имя сервера для базы данных |
 |ElasticPoolName_s|Имя эластичного пула для базы данных (при наличии) |
 |DatabaseName_s|Имя базы данных. |
-|resourceId|Универсальный код ресурса (URI) |
+|ResourceId|Универсальный код ресурса (URI) |
 |lock_mode_s|Режим блокировки, используемый для запроса. |
 |resource_owner_type_s|Владелец блокировки |
 |blocked_process_filtered_s|Отчет о заблокированных процессах в формате XML |
@@ -659,18 +659,18 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure |
 |TimeGenerated [UTC] |Метка времени, когда был записан журнал |
-|Тип|Всегда: AzureDiagnostics |
+|Type|Всегда: AzureDiagnostics |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL |
-|Категория|Имя категории. Всегда: Взаимоблокировки |
+|Category|Имя категории. Всегда: Взаимоблокировки |
 |OperationName|Имя операции. Всегда: DeadlockEvent |
 |Resource|Имя ресурса. |
 |ResourceType|Имя типа ресурса. Всегда: SERVERS/DATABASES |
 |SubscriptionId|GUID подписки для базы данных |
-|Группа ресурсов|Имя группы ресурсов для базы данных |
+|ResourceGroup|Имя группы ресурсов для базы данных |
 |LogicalServerName_s|Имя сервера для базы данных |
 |ElasticPoolName_s|Имя эластичного пула для базы данных (при наличии) |
 |DatabaseName_s|Имя базы данных. |
-|resourceId|Универсальный код ресурса (URI) |
+|ResourceId|Универсальный код ресурса (URI) |
 |deadlock_xml_s|Отчет о взаимоблокировке в формате XML |
 
 ### <a name="automatic-tuning-dataset"></a>Набор данных автоматической настройки
@@ -682,16 +682,16 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
 |Type|Всегда: AzureDiagnostics |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL |
-|Категория|Имя категории. Всегда: AutomaticTuning |
+|Category|Имя категории. Всегда: AutomaticTuning |
 |Resource|Имя ресурса. |
 |ResourceType|Имя типа ресурса. Всегда: SERVERS/DATABASES |
 |SubscriptionId|GUID подписки для базы данных |
-|Группа ресурсов|Имя группы ресурсов для базы данных |
+|ResourceGroup|Имя группы ресурсов для базы данных |
 |LogicalServerName_s|Имя сервера для базы данных |
 |LogicalDatabaseName_s|Имя базы данных. |
 |ElasticPoolName_s|Имя эластичного пула для базы данных (при наличии) |
 |DatabaseName_s|Имя базы данных. |
-|resourceId|Универсальный код ресурса (URI) |
+|ResourceId|Универсальный код ресурса (URI) |
 |RecommendationHash_s|Уникальный хэш рекомендаций по автоматической настройке |
 |OptionName_s|Операция автоматической настройки |
 |Schema_s|Схема базы данных |
@@ -712,7 +712,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 Чтобы научиться включать ведение журнала и узнать, какие метрики и категории журналов поддерживаются различными службами Azure, ознакомьтесь со следующими статьями:
 
 - [Обзор метрик в Microsoft Azure](../monitoring-and-diagnostics/monitoring-overview-metrics.md)
-- [Обзор журналов диагностики Azure](../azure-monitor/platform/diagnostic-logs-overview.md)
+- [Обзор журналов диагностики Azure](../azure-monitor/platform/resource-logs-overview.md)
 
 Дополнительные сведения о Центрах событий см. в статье:
 

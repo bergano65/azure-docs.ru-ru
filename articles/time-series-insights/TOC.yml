@@ -61,7 +61,7 @@
           href: time-series-insights-update-use-cases.md
         - name: Модель временных рядов
           href: time-series-insights-update-tsm.md
-        - name: Запрашивание данных
+        - name: Запрашивание временных рядов
           href: time-series-insights-update-tsq.md
         - name: Визуализация данных в обозревателе (предварительная версия)
           href: time-series-insights-update-explorer.md

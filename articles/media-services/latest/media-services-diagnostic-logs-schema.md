@@ -1,6 +1,6 @@
 ---
-title: Службы мультимедиа Azure диагностические журналы схемы — Azure
-description: В этой статье показано схемы журналов диагностики служб мультимедиа Azure.
+title: Схемы журналов диагностики служб мультимедиа Azure — Azure
+description: В этой статье показаны схемы журналов диагностики служб мультимедиа Azure.
 services: media-services
 documentationcenter: ''
 author: Juliako
@@ -13,42 +13,42 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/20/2019
 ms.author: juliako
-ms.openlocfilehash: 394370738bc7996a221300540e68404986d91310
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: f95258368664aabeb89426afb83854378c0e4429
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60322256"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71261083"
 ---
 # <a name="diagnostic-logs-schemas"></a>Схемы для журналов диагностики
 
-[Azure Monitor](../../azure-monitor/overview.md) включает мониторинг метрик и журналов диагностики, которые помогут вам понять, как выполняемых приложений. Можно отслеживать журналы диагностики служб мультимедиа и создавать оповещения и уведомления для сбора метрик и журналов. Вы можете отправить журналы в [хранилища Azure](https://azure.microsoft.com/services/storage/), потоковая передача журналов в [концентраторов событий](https://azure.microsoft.com/services/event-hubs/)и экспортировать их в службу [Log Analytics](https://azure.microsoft.com/services/log-analytics/), или использовать сторонние службы.
+[Azure Monitor](../../azure-monitor/overview.md) позволяет отслеживать метрики и журналы диагностики, которые помогут понять, как работают приложения. Вы можете отслеживать журналы диагностики служб мультимедиа и создавать оповещения и уведомления для собранных метрик и журналов. Вы можете отправить журналы в службу [хранилища Azure](https://azure.microsoft.com/services/storage/), выполнить их потоковую передачу в [концентраторы событий Azure](https://azure.microsoft.com/services/event-hubs/)и экспортировать их в [log Analytics](https://azure.microsoft.com/services/log-analytics/)или использовать сторонние службы.
 
-Подробные сведения см. в разделе [метрик Azure Monitor](../../azure-monitor/platform/data-platform.md) и [журналов диагностики Azure Monitor](../../azure-monitor/platform/diagnostic-logs-overview.md).
+Подробные сведения см. в разделе [метрики Azure Monitor](../../azure-monitor/platform/data-platform.md) и [Azure Monitor журналов диагностики](../../azure-monitor/platform/resource-logs-overview.md).
 
-В этой статье описывается схемы журналов диагностики службы мультимедиа.
+В этой статье описываются схемы журналов диагностики служб мультимедиа.
 
 ## <a name="top-level-diagnostic-logs-schema"></a>Схема журналов диагностики верхнего уровня
 
-Подробное описание схемы верхнего уровня журналы диагностики, см. в разделе [поддерживаемые службы, схемы и категории для журналов диагностики Azure](../../azure-monitor/platform/tutorial-dashboards.md).
+Подробное описание схемы журналов диагностики верхнего уровня см. в статье [Поддерживаемые службы, схемы и категории для журналов диагностики Azure](../../azure-monitor/platform/tutorial-dashboards.md).
 
 ## <a name="key-delivery-log-schema"></a>Схема журнала доставки ключей
 
-### <a name="properties"></a>properties
+### <a name="properties"></a>Свойства
 
 Эти свойства относятся к схеме журнала доставки ключей.
 
-|Name|Описание|
+|Название|Описание|
 |---|---|
-|Идентификатор ключа|Идентификатор запрошенного ключа.|
-|keyType|Может принимать одно из следующих значений: «Очистить» (без шифрования), «FairPlay», «PlayReady» или «Widevine».|
-|policyName|Имя политики Azure Resource Manager.|
-|TokenType|Тип маркера.|
-|Сообщение состояния|Сообщение о состоянии.|
+|keyId|ИДЕНТИФИКАТОР запрошенного ключа.|
+|keyType|Может принимать одно из следующих значений: "Clear" (без шифрования), "FairPlay", "PlayReady" или "Widevine".|
+|policyName|Azure Resource Manager имя политики.|
+|tokenType|Тип маркера.|
+|statusMessage|Сообщение о состоянии.|
 
 ### <a name="examples"></a>Примеры
 
-Свойства схемы запросы доставки ключей.
+Свойства схемы запросов на доставку ключей.
 
 ```json
 {
@@ -108,6 +108,6 @@ ms.locfileid: "60322256"
 } 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-[Отслеживание метрик службы мультимедиа и журналы диагностики](media-services-metrics-diagnostic-logs.md)
+[Мониторинг метрик и журналов диагностики служб мультимедиа](media-services-metrics-diagnostic-logs.md)

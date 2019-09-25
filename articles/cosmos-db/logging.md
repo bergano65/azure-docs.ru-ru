@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/23/2019
 ms.author: sngun
 ms.custom: seodec18
-ms.openlocfilehash: d8a9963edd689a32ae0642ac6fa4a622c248bc5b
-ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
+ms.openlocfilehash: e43bc4b8eb1db91493f279f5c46681483e4b18c4
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70232381"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71261394"
 ---
 # <a name="diagnostic-logging-in-azure-cosmos-db"></a>Журнал ведения диагностики в Azure Cosmos DB 
 
@@ -78,7 +78,7 @@ ms.locfileid: "70232381"
 
 1. На странице **параметры диагностики** заполните форму следующими сведениями: 
 
-    * **Имя.** Введите имя для создаваемых журналов.
+    * **Имя**: Введите имя для создаваемых журналов.
 
     * Журналы можно хранить в следующих службах:
 
@@ -386,7 +386,7 @@ $blobs | Get-AzStorageBlobContent `
 
 ![Сообщение об обновлении журналов Azure Monitor](./media/logging/upgrade-notification.png)
 
-Чтобы просмотреть данные диагностики в журналах Azure Monitor, откройте страницу **поиска** по журналам в меню слева или в области **управления** страницы, как показано на следующем рисунке:
+Чтобы просмотреть данные диагностики в журналах Azure Monitor, откройте страницу **поиска по журналам** в меню слева или в области **управления** страницы, как показано на следующем рисунке:
 
 ![Параметры поиска по журналам на портале Azure](./media/logging/log-analytics-open-log-search.png)
 
@@ -397,7 +397,7 @@ $blobs | Get-AzStorageBlobContent `
 <a id="#queries"></a>
 ### <a name="queries"></a>Запросы
 
-Ниже приведены некоторые дополнительные запросы, которые можно ввести в поле **поиска** по журналам, чтобы упростить мониторинг контейнеров Azure Cosmos. Эти запросы поддерживают [новый язык](../log-analytics/log-analytics-log-search-upgrade.md). 
+Ниже приведены некоторые дополнительные запросы, которые можно ввести в поле **поиска по журналам** , чтобы упростить мониторинг контейнеров Azure Cosmos. Эти запросы поддерживают [новый язык](../log-analytics/log-analytics-log-search-upgrade.md). 
 
 Дополнительные сведения о значении данных, возвращаемых каждым поиском по журналам, см. в разделе [Интерпретация журналов](#interpret).
 
@@ -465,7 +465,7 @@ $blobs | Get-AzStorageBlobContent `
 | **resourceId** | **Ресурс** | Учетная запись Azure Cosmos DB, для которой включены журналы.|
 | **category** | **Категория** | Для журналов Azure Cosmos DB единственным доступным значением является **DataPlaneRequests**. |
 | **operationName** | **OperationName** | Имя операции. В качестве значения можно использовать любую из следующих операций: Create, Update, Read, ReadFeed, Delete, Replace, Execute, SqlQuery, Query, JSQuery, Head, HeadFeed или Upsert.   |
-| **properties** | Н/Д | Содержимое этого поля описано в строках, приведенных ниже. |
+| **properties** | Недоступно | Содержимое этого поля описано в строках, приведенных ниже. |
 | **activityId** | **activityId_g** | Уникальный идентификатор GUID регистрируемой операции. |
 | **userAgent** | **userAgent_s** | Строка, которая указывает агент пользователя клиента, выполняющий запрос. Формат: {имя_агента_пользователя} / {версия}.|
 | **рекуестресаурцетипе** | **requestResourceType_s** | Тип доступного ресурса. В качестве значения можно использовать любой из следующих типов ресурсов: Database, Container, Document, Attachment, User, Permission, StoredProcedure, Trigger, UserDefinedFunction или Offer. |
@@ -481,7 +481,7 @@ $blobs | Get-AzStorageBlobContent `
 
 ## <a name="next-steps"></a>Следующие шаги
 
-- Чтобы понять, как включать ведение журнала, и узнать, какие метрики и категории журналов поддерживаются различными службами Azure, ознакомьтесь со статьями [Обзор метрик в Microsoft Azure](../monitoring-and-diagnostics/monitoring-overview-metrics.md) и [Сбор и использование данных журнала из ресурсов Azure](../azure-monitor/platform/diagnostic-logs-overview.md).
+- Чтобы понять, как включать ведение журнала, и узнать, какие метрики и категории журналов поддерживаются различными службами Azure, ознакомьтесь со статьями [Обзор метрик в Microsoft Azure](../monitoring-and-diagnostics/monitoring-overview-metrics.md) и [Сбор и использование данных журнала из ресурсов Azure](../azure-monitor/platform/resource-logs-overview.md).
 - Прочтите эти статьи, чтобы узнать о концентраторах событий:
    - [Что такое Центры событий Azure?](../event-hubs/event-hubs-what-is-event-hubs.md)
    - [Начало работы с Центрами событий](../event-hubs/event-hubs-csharp-ephcs-getstarted.md)

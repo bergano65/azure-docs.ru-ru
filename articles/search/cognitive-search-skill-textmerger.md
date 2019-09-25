@@ -9,13 +9,12 @@ ms.workload: search
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: luisca
-ms.subservice: cognitive-search
-ms.openlocfilehash: 3cf816a07b61fd5c398dba376276ef1e9f28e985
-ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
+ms.openlocfilehash: 1e88fcc13d97d92cf9b35616ecb7d71c2d24db1f
+ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70186334"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71265260"
 ---
 #    <a name="text-merge-cognitive-skill"></a>Когнитивный навык объединения текста
 
@@ -33,8 +32,8 @@ Microsoft.Skills.Text.MergeSkill
 
 | Имя параметра     | Описание |
 |--------------------|-------------|
-| insertPreTag  | Строка, которая должна быть включена перед каждой вставкой. Значение по умолчанию — `" "`. Чтобы исключить пробел, задайте значение `""`.  |
-| insertPostTag | Строка, которая должна быть включена после каждой вставки. Значение по умолчанию — `" "`. Чтобы исключить пробел, задайте значение `""`.  |
+| insertPreTag  | Строка, которая должна быть включена перед каждой вставкой. По умолчанию используется значение `" "`. Чтобы исключить пробел, задайте значение `""`.  |
+| insertPostTag | Строка, которая должна быть включена после каждой вставки. По умолчанию используется значение `" "`. Чтобы исключить пробел, задайте значение `""`.  |
 
 
 ##  <a name="sample-input"></a>Пример ввода
@@ -56,7 +55,7 @@ Microsoft.Skills.Text.MergeSkill
 }
 ```
 
-##  <a name="sample-output"></a>Пример выходных данных
+##  <a name="sample-output"></a>Пример полученных результатов
 В этом примере показаны выходные данные предыдущего ввода, при условии, что *insertPreTag* имеет значение `" "`, а *insertPostTag* — `""`. 
 
 ```json

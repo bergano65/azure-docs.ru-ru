@@ -9,12 +9,12 @@ ms.author: robreed
 ms.date: 09/10/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 5d72b474e5f5e62ded6423fcc756e1cd51b905f4
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 10ddb7272de164e6f92022a6f512df31753f7e31
+ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68850662"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71265128"
 ---
 # <a name="compiling-dsc-configurations-in-azure-automation-state-configuration"></a>Компилирование конфигураций DSC в службе "Настройка состояния службы автоматизации Azure"
 
@@ -129,7 +129,7 @@ Start-AzureRmAutomationDscCompilationJob -ResourceGroupName 'MyResourceGroup' -A
 > [!NOTE]
 > Для правильной компиляции конфигураций, содержащих **Составные ресурсы** , необходимо сначала убедиться, что все ресурсы DSC, на которые полагается составной компонент, сначала импортируются в службу автоматизации Azure.
 
-Добавление составного **ресурса** DSC не отличается от добавления любого модуля PowerShell в службу автоматизации Azure.
+Добавление **составного ресурса** DSC не отличается от добавления любого модуля PowerShell в службу автоматизации Azure.
 Пошаговые инструкции для этого процесса описаны в статье [Управление модулями в службе автоматизации Azure](/azure/automation/shared-resources/modules).
 
 ### <a name="managing-configurationdata-when-compiling-configuration-in-azure-automation"></a>Управление ConfigurationData при компиляции конфигурации в службе автоматизации Azure
@@ -259,7 +259,7 @@ Start-AzureRmAutomationDscCompilationJob -ResourceGroupName 'MyResourceGroup' -A
 > [!NOTE]
 > Размер файла конфигурации узла не должен превышать 1 МБ, чтобы его можно было импортировать в службу автоматизации Azure.
 
-Дополнительные сведения о том, как подписывать конфигурации узла, см. в разделе [Модуль DSC и проверка подписи конфигурации](/powershell/wmf/5.1/dsc-improvements#dsc-module-and-configuration-signing-validations).
+Дополнительные сведения о том, как подписывать конфигурации узла, см. в разделе [Модуль DSC и проверка подписи конфигурации](/powershell/scripting/wmf/whats-new/dsc-improvements#dsc-module-and-configuration-signing-validations).
 
 ### <a name="compiling-a-configuration-in-windows-powershell"></a>Компиляция конфигурации в Windows PowerShell
 

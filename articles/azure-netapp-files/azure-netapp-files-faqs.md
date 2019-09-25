@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 05/14/2019
+ms.date: 09/24/2019
 ms.author: b-juche
-ms.openlocfilehash: f97bb4842d9e24d879dd47757fda75b16bca48cf
-ms.sourcegitcommit: 5604661655840c428045eb837fb8704dca811da0
+ms.openlocfilehash: 66d0d65065f323f53095782e165f179125aa35ac
+ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68494822"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71264983"
 ---
 # <a name="faqs-about-azure-netapp-files"></a>Часто задаваемые вопросы о Azure NetApp Files
 
@@ -58,7 +58,9 @@ ms.locfileid: "68494822"
 
 ### <a name="how-are-encryption-keys-managed"></a>Как осуществляется управление ключами шифрования? 
 
-Управление ключами для Azure NetApp Files обрабатывается службой.  Сейчас управляемые пользователем ключи (с собственными ключами) не поддерживаются.
+Управление ключами для Azure NetApp Files обрабатывается службой. Для каждого тома создается уникальный ключ шифрования данных XTS-AES-256. Иерархия ключей шифрования используется для шифрования и защиты всех ключей томов. Эти ключи шифрования никогда не отображаются или не передаются в виде незашифрованного формата. Ключи шифрования немедленно удаляются при удалении тома.
+
+Сейчас управляемые пользователем ключи (с собственными ключами) не поддерживаются.
 
 ### <a name="can-i-configure-the-nfs-export-policy-rules-to-control-access-to-the-azure-netapp-files-service-mount-target"></a>Можно ли настроить правила политики экспорта NFS для контроля доступа к целевому объекту подключения службы Azure NetApp Files?
 

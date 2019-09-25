@@ -5,16 +5,15 @@ manager: eladz
 author: vkurpad
 services: search
 ms.service: search
-ms.subservice: cognitive-search
 ms.topic: conceptual
 ms.date: 09/05/2019
 ms.author: vikurpad
-ms.openlocfilehash: df2c469ef825863f958c8c263253c7d1c6f6c732
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.openlocfilehash: f75e6dece376076d4aa5e33497aff7e4f9f56857
+ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "71004414"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71265694"
 ---
 # <a name="working-with-skillsets"></a>Работа с навыков
 Эта статья предназначена для разработчиков, которым необходимо более глубокое понимание того, как работает конвейер обогащения и предполагается, что у вас есть концептуальное понимание процесса работы со знакомым поиском. Если вы не знакомы со следующим поиском, начните с:

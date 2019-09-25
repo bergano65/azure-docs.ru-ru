@@ -9,13 +9,12 @@ ms.workload: search
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: luisca
-ms.subservice: cognitive-search
-ms.openlocfilehash: eb196b9ff72201358982764f227ab7935489f05d
-ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
+ms.openlocfilehash: ad2fef96491c2d1a15ad9ff5f57d2911dfecaa36
+ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70183401"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71265790"
 ---
 #    <a name="entity-recognition-cognitive-skill"></a>Когнитивный навык распознавания сущностей
 
@@ -41,7 +40,7 @@ Microsoft.Skills.Text.EntityRecognitionSkill
 |--------------------|-------------|
 | categories    | Массив категорий, который следует извлекать.  Возможные типы категорий: `"Person"`, `"Location"`, `"Organization"`, `"Quantity"`, `"Datetime"`, `"URL"`, `"Email"`. Если категория не указана, возвращаются все типы.|
 |defaultLanguageCode |  Код языка вводимого текста. Поддерживается следующие языки: `de, en, es, fr, it`.|
-|minimumPrecision | Не используется. Зарезервировано для будущего использования. |
+|minimumPrecision | Не используется. Зарезервировано для использования в будущем. |
 |includeTypelessEntities | Если задано значение true, когда текст содержит известную сущность, но ее нельзя отнести к одной из поддерживаемых категорий, она будет возвращена как часть составного поля выходных данных `"entities"`. 
 Это сущности, которые хорошо известны, но не классифицируются как часть текущих поддерживаемых "категорий". Например, "Windows 10" является хорошо известной сущностью (продуктом), но "продукты" не входят в категории, поддерживаемые сегодня. Значение по умолчанию — `false`. |
 
@@ -116,7 +115,7 @@ Microsoft.Skills.Text.EntityRecognitionSkill
 }
 ```
 
-##  <a name="sample-output"></a>Пример выходных данных
+##  <a name="sample-output"></a>Пример полученных результатов
 
 ```json
 {

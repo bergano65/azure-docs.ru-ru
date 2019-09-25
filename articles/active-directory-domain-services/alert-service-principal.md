@@ -1,107 +1,102 @@
 ---
-title: Доменные службы Azure Active Directory. Устранение неполадок субъектов-служб | Документация Майкрософт
-description: Устранение неполадок конфигурации субъекта-службы для доменных служб Azure AD
+title: Разрешение оповещений субъекта-службы в доменных службах Azure AD | Документация Майкрософт
+description: Сведения об устранении неполадок с оповещениями о конфигурации субъекта-службы для Azure Active Directory доменных служб
 services: active-directory-ds
-documentationcenter: ''
 author: iainfoulds
-manager: ''
-editor: ''
+manager: daveba
 ms.assetid: f168870c-b43a-4dd6-a13f-5cfadc5edf2c
 ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: conceptual
-ms.date: 05/14/2019
+ms.topic: troubleshooting
+ms.date: 09/20/2019
 ms.author: iainfou
-ms.openlocfilehash: 9e5fa8c84f5e7ca58117666846b603a118826150
-ms.sourcegitcommit: b2db98f55785ff920140f117bfc01f1177c7f7e2
+ms.openlocfilehash: 175bfe63176b78c5aeafc7147c46dd5ab1110325
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68234143"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71257964"
 ---
-# <a name="troubleshoot-invalid-service-principal-configurations-for-azure-active-directory-domain-services"></a>Устранение недопустимых конфигураций субъекта-службы для Azure Active Directory доменных служб
+# <a name="known-issues-service-principal-alerts-in-azure-active-directory-domain-services"></a>Известные проблемы: Оповещения субъекта-службы в доменных службах Azure Active Directory
 
-Эта статья поможет вам определить и устранить ошибки конфигурации субъекта-службы, которые приводят к появлению следующего оповещения.
+[Субъекты-службы](../active-directory/develop/app-objects-and-service-principals.md) — это приложения, которые Платформа Azure использует для управления, обновления и обслуживания управляемого домена AD DS Azure. Если субъект-служба удалена, затронута функциональность в управляемом домене Azure AD DS.
 
-## <a name="alert-aadds102-service-principal-not-found"></a>Оповещение AADDS102: субъект-служба не найден
+Эта статья поможет вам устранить неполадки и устранить связанные с субъектами настройки предупреждения.
 
-**Оповещение.** *Субъект-служба, необходимая для правильной работы доменных служб Azure AD, удалена из каталога Azure AD. Эта конфигурация влияет на возможность корпорации Майкрософт наблюдать за управляемым доменом, управлять им, обновлять и синхронизировать его.*
+## <a name="alert-aadds102-service-principal-not-found"></a>Оповещение AADDS102: Субъект-служба не найдена
 
-[Субъекты-службы](../active-directory/develop/app-objects-and-service-principals.md) — приложения, которые корпорация Майкрософт использует для обновления и обслуживания управляемого домена, а также для управления им. При их удалении корпорация Майкрософт не сможет обслуживать домен.
+### <a name="alert-message"></a>Предупреждающее сообщение
 
+*Субъект-служба, необходимая для правильной работы доменных служб Azure AD, удалена из каталога Azure AD. Эта конфигурация влияет на возможность корпорации Майкрософт наблюдать за управляемым доменом, управлять им, обновлять и синхронизировать его.*
 
-## <a name="check-for-missing-service-principals"></a>Проверка отсутствующих субъектов-служб
-Выполните следующие действия, чтобы узнать, какие субъекты-службы нужно создать повторно.
+При удалении требуемого субъекта-службы Платформа Azure не сможет выполнять автоматизированные задачи управления. Управляемый домен AD DS Azure может неправильно применять обновления или создавать резервные копии.
 
-1. Перейдите к странице [Корпоративные приложения — Все приложения](https://portal.azure.com/#blade/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/AllApps) на портале Azure.
-2. В раскрывающемся списке **Показать** выберите **Все приложения** и нажмите кнопку **Применить**.
-3. Используя следующую таблицу, выполните поиск каждого идентификатора приложения (вставьте код в поле поиска и нажмите клавишу ВВОД). Если результаты поиска пусты, необходимо повторно создать субъект-службы в соответствии с шагами, описанными в столбце "Устранение проблемы".
+### <a name="check-for-missing-service-principals"></a>Проверка отсутствующих субъектов-служб
 
-| Идентификатор приложения | Способы устранения: |
-| :--- | :--- |
-| 2565bd9d-da50-47d4-8b85-4c97f669dc36 | [Повторное создание отсутствующего субъекта-службы с помощью PowerShell](#recreate-a-missing-service-principal-with-powershell) |
-| 443155a6-77f3-45e3-882b-22b3a8d431fb | [Повторная регистрация в пространстве имен Microsoft.AAD](#re-register-to-the-microsoft-aad-namespace-using-the-azure-portal) |
-| abba844e-bc0e-44b0-947a-dc74e5d09022  | [Повторная регистрация в пространстве имен Microsoft.AAD](#re-register-to-the-microsoft-aad-namespace-using-the-azure-portal) |
-| d87dcbc6-a371-462e-88e3-28ad15ec4e64 | [Повторная регистрация в пространстве имен Microsoft.AAD](#re-register-to-the-microsoft-aad-namespace-using-the-azure-portal) |
+Чтобы проверить, какой субъект-служба отсутствует и необходимо создать заново, выполните следующие действия.
 
-## <a name="recreate-a-missing-service-principal-with-powershell"></a>Повторное создание отсутствующего субъекта-службы с помощью PowerShell
-Выполните следующие действия, если субъект-служба с идентификатором ```2565bd9d-da50-47d4-8b85-4c97f669dc36``` отсутствует в каталоге Azure AD.
+1. В портал Azure выберите **Azure Active Directory** в меню навигации слева.
+1. Выберите **Корпоративные приложения**. Выберите *все приложения* в раскрывающемся меню **Тип приложения** , а затем нажмите кнопку **Применить**.
+1. Найдите идентификаторы всех приложений. Если существующее приложение не найдено, следуйте инструкциям по *разрешению* , чтобы создать субъект-службу или повторно зарегистрировать пространство имен.
 
-**Способы устранения:** Для выполнения этих инструкций требуется Azure AD PowerShell. Сведения об установке Azure AD PowerShell см. в [этой статье](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2?view=azureadps-2.0.).
+    | ИД приложения | Разрешение |
+    | :--- | :--- |
+    | 2565bd9d-da50-47d4-8b85-4c97f669dc36 | [Повторное создание отсутствующего субъекта-службы](#recreate-a-missing-service-principal) |
+    | 443155a6-77f3-45e3-882b-22b3a8d431fb | [Повторно зарегистрируйте пространство имен Microsoft. AAD](#re-register-the-microsoft-aad-namespace) |
+    | abba844e-bc0e-44b0-947a-dc74e5d09022 | [Повторно зарегистрируйте пространство имен Microsoft. AAD](#re-register-the-microsoft-aad-namespace) |
+    | d87dcbc6-a371-462e-88e3-28ad15ec4e64 | [Повторно зарегистрируйте пространство имен Microsoft. AAD](#re-register-the-microsoft-aad-namespace) |
 
-Чтобы устранить эту проблему, введите следующие команды в окне PowerShell:
-1. Установите модуль Azure AD PowerShell и импортируйте его.
+### <a name="recreate-a-missing-service-principal"></a>Повторное создание отсутствующего субъекта-службы
+
+Если в каталоге Azure AD отсутствует идентификатор приложения *2565bd9d-da50-47d4-8b85-4c97f669dc36* , используйте Azure AD PowerShell, чтобы выполнить следующие действия. Дополнительные сведения см. в [статье Установка Azure AD PowerShell](/powershell/azure/active-directory/install-adv2).
+
+1. Установите модуль Azure AD PowerShell и импортируйте его следующим образом:
 
     ```powershell
     Install-Module AzureAD
     Import-Module AzureAD
     ```
 
-2. Проверьте, отсутствует ли в вашем каталоге субъект-служба, необходимая для доменных служб Azure AD, с помощью следующей команды PowerShell:
-
-    ```powershell
-    Get-AzureAdServicePrincipal -filter "AppId eq '2565bd9d-da50-47d4-8b85-4c97f669dc36'"
-    ```
-
-3. Создайте субъект-службу, введя следующую команду PowerShell:
+1. Теперь Воссоздайте субъект-службу с помощью командлета [New AzureAdServicePrincipal][New-AzureAdServicePrincipal] :
 
     ```powershell
     New-AzureAdServicePrincipal -AppId "2565bd9d-da50-47d4-8b85-4c97f669dc36"
     ```
 
-4. После создания отсутствующего субъекта-службы подождите два часа, затем проверьте работоспособность управляемого домена.
+Работоспособность управляемого домена Azure AD DS автоматически обновляется в течение двух часов и удаляет оповещение.
 
+### <a name="re-register-the-microsoft-aad-namespace"></a>Повторная регистрация пространства имен Microsoft AAD
 
-## <a name="re-register-to-the-microsoft-aad-namespace-using-the-azure-portal"></a>Повторная регистрация в пространстве имен Microsoft.AAD с помощью портала Azure
-Выполните следующие действия, если субъект-служба с идентификатором ```443155a6-77f3-45e3-882b-22b3a8d431fb```, или ```abba844e-bc0e-44b0-947a-dc74e5d09022```, или ```d87dcbc6-a371-462e-88e3-28ad15ec4e64``` отсутствует в каталоге Azure AD.
+Если в каталоге Azure AD отсутствует идентификатор приложения *443155a6-77F3-45e3-882b-22b3a8d431fb*, *abba844e-bc0e-44b0-947a-dc74e5d09022*или *d87dcbc6-a371-462e-88e3-28ad15ec4e64* , выполните следующие действия, чтобы повторно зарегистрируйте поставщик ресурсов *Microsoft. AAD* :
 
-**Способы устранения:** Чтобы восстановить доменные службы в каталоге, сделайте следующее:
+1. В портал Azure найдите и выберите **подписки**.
+1. Выберите подписку, связанную с управляемым доменом AD DS Azure.
+1. В области навигации слева выберите **поставщики ресурсов**.
+1. Выполните поиск *Microsoft. AAD*, а затем выберите **Повторная регистрация**.
 
-1. Перейдите к странице [Подписки](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade) на портале Azure.
-2. Из таблицы, связанной с управляемым доменом, выберите подписку.
-3. На панели навигации слева выберите **Поставщики ресурсов**
-4. Найдите Microsoft.AAD в таблице и нажмите кнопку **Повторная регистрация**.
-5. Чтобы убедиться, что причина оповещения устранена, просмотрите страницу работоспособности для управляемого домена через два часа.
-
+Работоспособность управляемого домена Azure AD DS автоматически обновляется в течение двух часов и удаляет оповещение.
 
 ## <a name="alert-aadds105-password-synchronization-application-is-out-of-date"></a>Оповещение AADDS105: приложение синхронизации паролей устарело
 
-**Оповещение.** Субъект-служба с идентификатором приложения d87dcbc6-a371-462e-88e3-28ad15ec4e64 был удален и создан снова. Повторное создание позволяет избавиться от несогласованных разрешений для ресурсов доменных служб Azure AD, необходимых для обслуживания управляемого домена. Это может повлиять на синхронизацию паролей для управляемого домена.
+### <a name="alert-message"></a>Предупреждающее сообщение
 
+*Субъект-служба с идентификатором приложения d87dcbc6-a371-462e-88e3-28ad15ec4e64 был удален и создан снова. Повторное создание позволяет избавиться от несогласованных разрешений для ресурсов доменных служб Azure AD, необходимых для обслуживания управляемого домена. Это может повлиять на синхронизацию паролей для управляемого домена.*
 
-**Способы устранения:** Для выполнения этих инструкций требуется Azure AD PowerShell. Сведения об установке Azure AD PowerShell см. в [этой статье](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2?view=azureadps-2.0.).
+Azure AD DS автоматически синхронизирует учетные записи пользователей и учетные данные из Azure AD. При возникновении проблемы с приложением Azure AD, используемым для этого процесса, Синхронизация учетных данных между Azure AD DS и Azure AD завершается сбоем.
 
-Чтобы устранить эту проблему, введите следующие команды в окне PowerShell:
-1. Установите модуль Azure AD PowerShell и импортируйте его.
+### <a name="resolution"></a>Разрешение
+
+Чтобы повторно создать приложение Azure AD, используемое для синхронизации учетных данных, выполните следующие действия с помощью Azure AD PowerShell. Дополнительные сведения см. в [статье Установка Azure AD PowerShell](/powershell/azure/active-directory/install-adv2).
+
+1. Установите модуль Azure AD PowerShell и импортируйте его следующим образом:
 
     ```powershell
     Install-Module AzureAD
     Import-Module AzureAD
     ```
-2. Удалите старое приложение и объект с помощью следующих команд PowerShell:
+
+2. Теперь удалите старое приложение и объект с помощью следующих командлетов PowerShell:
 
     ```powershell
     $app = Get-AzureADApplication -Filter "IdentifierUris eq 'https://sync.aaddc.activedirectory.windowsazure.com'"
@@ -109,8 +104,15 @@ ms.locfileid: "68234143"
     $spObject = Get-AzureADServicePrincipal -Filter "DisplayName eq 'Azure AD Domain Services Sync'"
     Remove-AzureADServicePrincipal -ObjectId $app.ObjectId
     ```
-3. После удаления система автоматически восстановится и создаст все приложения, необходимые для синхронизации паролей. Чтобы убедиться, что проблема решена, через два часа проверьте работоспособность вашего домена.
 
+После удаления обоих приложений Платформа Azure автоматически воссоздаст их и попытается возобновить синхронизацию паролей. Работоспособность управляемого домена Azure AD DS автоматически обновляется в течение двух часов и удаляет оповещение.
 
-## <a name="contact-us"></a>Свяжитесь с нами
-Чтобы [оставить отзыв или обратиться за помощью](contact-us.md), свяжитесь с командой разработки продукта, отвечающей за доменные службы Azure Active Directory.
+## <a name="next-steps"></a>Следующие шаги
+
+Если у вас по-прежнему возникают проблемы, отправьте [запрос в службу поддержки Azure][azure-support] для получения дополнительных сведений об устранении неполадок.
+
+<!-- INTERNAL LINKS -->
+[azure-support]: ../active-directory/fundamentals/active-directory-troubleshooting-support-howto.md
+
+<!-- EXTERNAL LINKS -->
+[New-AzureAdServicePrincipal]: /powershell/module/AzureAD/New-AzureADServicePrincipal

@@ -10,14 +10,14 @@ ms.reviewer: v-mamcge, jasonh, kfile
 ms.devlang: csharp
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 08/08/2019
+ms.date: 09/23/2019
 ms.custom: seodec18
-ms.openlocfilehash: 602623d48457498963cb5928081d24c1d1132ad4
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 88734b0ee05f5193da89f33e1639e4e7a187f225
+ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68935239"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71264661"
 ---
 # <a name="authentication-and-authorization-for-azure-time-series-insights-api"></a>Проверка подлинности и авторизация для API Azure Time Series Insights
 
@@ -33,7 +33,7 @@ ms.locfileid: "68935239"
 
 1. [Зарегистрируйте приложение](#azure-active-directory-app-registration) в Azure Active Directory.
 1. Авторизация приложения для [доступа к данным в среде "аналитика временных рядов"](#granting-data-access).
-1. Используйте **идентификатор приложения** и **секрет клиента** , чтобы получить маркер из `https://api.timeseries.azure.com/` в клиентском [приложении](#client-app-initialization). С помощью маркера безопасности можно вызывать API Time Series Insights.
+1. Используйте **идентификатор приложения** и **секрет клиента** , чтобы получить маркер из `https://api.timeseries.azure.com/` в [клиентском приложении](#client-app-initialization). С помощью маркера безопасности можно вызывать API Time Series Insights.
 
 На **шаге 3**разделение приложения и учетные данные пользователя позволяют:
 
@@ -100,6 +100,50 @@ ms.locfileid: "68935239"
     ```
 
 1. Затем маркер безопасности можно передать в заголовок `Authorization`, когда приложение вызывает API Time Series Insights.
+
+## <a name="common-headers-and-parameters"></a>Общие заголовки и параметры
+
+В этом разделе описаны распространенные заголовки HTTP-запросов и параметры, используемые для выполнения запросов к интерфейсам API "аналитика временных рядов". Требования к конкретному API подробно описаны в [справочной документации "аналитика временных рядов" REST API](https://docs.microsoft.com/rest/api/time-series-insights/).
+
+### <a name="authentication"></a>Проверка подлинности
+
+Для выполнения запросов с проверкой подлинности к [API-интерфейсам "аналитика временных рядов](https://docs.microsoft.com/rest/api/time-series-insights/)" необходимо передать допустимый токен носителя OAuth 2,0 в [заголовок авторизации](/rest/api/apimanagement/authorizationserver/createorupdate) с помощью клиента произвольного выбора (POST, JavaScript C#). 
+
+> [!IMPORTANT]
+> Маркер должен быть полностью `https://api.timeseries.azure.com/` выдан ресурсу (также известен как "аудитория" маркера).
+> * Ваша [Публикация](https://www.getpostman.com/) **аусурл** , которая соответствует следующим требованиям:`https://login.microsoftonline.com/microsoft.onmicrosoft.com/oauth2/authorize?resource=https://api.timeseries.azure.com/`
+
+> [!TIP]
+> Дополнительные сведения о проверке подлинности с помощью API-интерфейсов службы "аналитика временных рядов [Azure](tutorial-explore-js-client-lib.md#authentication) " см. в руководстве по клиентским [пакетам SDK для JavaScript](https://github.com/microsoft/tsiclient/blob/master/docs/API.md).
+
+### <a name="http-headers"></a>HTTP-заголовки
+
+Обязательные заголовки запроса:
+
+- `Authorization`для проверки подлинности и авторизации в заголовке авторизации должен быть передан допустимый токен носителя OAuth 2,0. Маркер должен быть полностью `https://api.timeseries.azure.com/` выдан ресурсу (также известен как "аудитория" маркера).
+
+Необязательные заголовки запроса:
+
+- `Content-type`поддерживается только `application/json` .
+- `x-ms-client-request-id`— Идентификатор запроса клиента. Служба записывает это значение. Позволяет службе выполнять трассировку операций между службами.
+- `x-ms-client-session-id`— Идентификатор сеанса клиента. Служба записывает это значение. Позволяет службе выполнять трассировку группы связанных операций между службами.
+- `x-ms-client-application-name`— имя приложения, создавшего этот запрос. Служба записывает это значение.
+
+Заголовки ответа:
+
+- `Content-type`поддерживается только `application/json` .
+- `x-ms-request-id`— Идентификатор запроса, сформированный сервером. Можно использовать для обращения в корпорацию Майкрософт, чтобы исследовать запрос.
+
+### <a name="http-parameters"></a>Параметры HTTP
+
+Обязательные параметры строки запроса URL-адреса:
+
+- `api-version=2016-12-12`
+- `api-version=2018-11-01-preview`
+
+Необязательные параметры строки запроса URL-адреса:
+
+- `timeout=<timeout>`— время ожидания на стороне сервера для выполнения запроса. Применяется только к [событиям "получить среду](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api#get-environment-events-api) " и " [получить агрегаты среды](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api#get-environment-aggregates-api) ". Значение времени ожидания должно быть в формате длительности ISO 8601, `"PT20S"` например и должно находиться в диапазоне `1-30 s`. По умолчанию имеет значение `30 s`.
 
 ## <a name="next-steps"></a>Следующие шаги
 

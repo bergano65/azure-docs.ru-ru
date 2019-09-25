@@ -470,6 +470,8 @@
           href: detach-disk.md
         - name: Развертывание дисков с помощью шаблона
           href: using-managed-disks-template-deployments.md
+        - name: "Отправка VHD на диск\_— PowerShell"
+          href: disks-upload-vhd-to-managed-disk-powershell.md
         - name: Изменение размера диска
           href: expand-os-disk.md
         - name: Моментальный снимок диска

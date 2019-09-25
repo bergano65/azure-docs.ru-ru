@@ -7,15 +7,7 @@
 - name: Документация по расширениям виртуальных машин
   href: extensions/overview.md
 - name: Рабочие нагрузки
-  items:
-    - name: Oracle
-      href: workloads/oracle/oracle-considerations.md
-    - name: SAP
-      href: workloads/sap/get-started.md
-    - name: Высокопроизводительные вычисления
-      href: workloads/hpc/overview.md
-    - name: Повторное размещение мейнфреймов
-      href: workloads/mainframe-rehosting/overview.md
+  href: ./workloads/workloads.md
 - name: Классические развертывания
   items:
     - name: Виртуальные машины Linux (классическое развертывание)

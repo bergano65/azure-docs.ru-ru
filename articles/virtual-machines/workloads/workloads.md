@@ -1,6 +1,6 @@
 ---
-title: Выполнение рабочих нагрузок на виртуальных машинах в Azure | Документация Майкрософт
-description: Узнайте, как для запуска рабочих нагрузок на виртуальных машинах Azure.
+title: Запуск рабочих нагрузок на виртуальных машинах в Azure | Документация Майкрософт
+description: Узнайте, как выполнять рабочие нагрузки на виртуальных машинах Azure.
 services: virtual-machines
 documentationcenter: ''
 author: cynthn
@@ -12,26 +12,26 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
 ms.devlang: azurecli
-ms.date: 06/06/2019
+ms.date: 09/20/2019
 ms.author: cynthn
-ms.openlocfilehash: 4593859c441073115fddc3a67dc4ce99fdd6124a
-ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
+ms.openlocfilehash: 11d503e7dd15f148208da65d551f9c6ae71a7e7f
+ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67795078"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71265570"
 ---
 # <a name="workloads-on-azure-virtual-machines"></a>Рабочие нагрузки на виртуальных машинах Azure
 
-Виртуальные машины в Azure может поддерживать множество рабочих нагрузок. Каждая рабочая нагрузка может специализированные рекомендации по оптимальной модели для развертывания на виртуальных машинах в Azure. Вот некоторые из рекомендаций, которую мы можем предложить для специализированных рабочих нагрузок.
+Виртуальные машины в Azure могут поддерживать множество рабочих нагрузок. Каждая рабочая нагрузка может иметь специализированные рекомендации по оптимальному проектированию для развертываний на виртуальных машинах в Azure. Ниже приведены некоторые рекомендации, которые можно предложить для специализированных рабочих нагрузок.
 
-- [Высокопроизводительные вычисления](./hpc/overview.md) в Azure использует ЦП или GPU оптимизирован виртуальных машин для решения задач сложных, ресурсоемких вычислений.
-- [SAP](./sap/get-started.md) в Azure можно запускать критически важные рабочие нагрузки SAP и сценариев на платформе масштабируемой, совместимых и проверенные многими компаниями.
-- [Oracle](./oracle/oracle-considerations.md) поддерживает выпуски Oracle DB 12.1 Standard и Enterprise в Azure в образах виртуальных машин на базе Oracle Linux. 
+- [Высокопроизводительные вычислительные системы](./hpc/overview.md) в Azure используют виртуальные машины, оптимизированные для ЦП или GPU, для решения сложных проблем с большим объемом вычислений.
+- [SAP](./sap/get-started.md) в Azure может выполнять критически важные рабочие нагрузки и сценарии SAP на масштабируемой и совместимой платформе, проверенной на предприятии.
+- [Oracle](./oracle/oracle-considerations.md) поддерживает выполнение Oracle DB 12,1 Standard и Enterprise Edition в Azure в образах виртуальных машин на основе Oracle Linux. 
 - [Повторное размещение больших ЭВМ](./mainframe-rehosting/overview.md) 
 
 
 
 **Дальнейшие действия**
 
-Узнайте о виртуальных машинах Azure с виртуальной Машины Azure краткие руководства по [Linux](../linux/quick-create-cli-nodejs.md) и [Windows](../windows/quick-create-powershell.md).
+Узнайте о виртуальных машинах Azure с помощью кратких руководств по работе с виртуальными машинами Azure для [Linux](../linux/quick-create-cli.md) и [Windows](../windows/quick-create-powershell.md).

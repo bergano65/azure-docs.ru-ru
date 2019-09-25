@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 08/12/2019
 ms.author: v-adgera
 ms.custom: seodec18
-ms.openlocfilehash: 24dc01d47bece4191d1b142a58c4ad7b6d9fb6cf
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: c1bd33ea5cbe45d6ff862645d614d54d20110ef4
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69876572"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71260857"
 ---
 # <a name="how-to-debug-user-defined-functions-in-azure-digital-twins"></a>Сведения о том, как выполнять отладку пользовательских функций в Azure Digital Twins
 
@@ -35,7 +35,7 @@ Azure Digital Twins поддерживает надежные механизмы
 
 * Сведения о настройке ведения журнала в Azure Digital двойников см. [в статье Настройка мониторинга и ведения журнала](./how-to-configure-monitoring.md).
 * Дополнительные сведения о мощных параметрах журналов, включенных в Azure Monitor, см. в обзоре [Azure Monitor](../azure-monitor/overview.md) .
-* Просмотрите статью [сбор и использование данных журналов из ресурсов Azure](../azure-monitor/platform/diagnostic-logs-overview.md) для настройки параметров журналов диагностики в Azure Digital двойников с помощью портала azure, Azure CLI или PowerShell.
+* Просмотрите статью [сбор и использование данных журналов из ресурсов Azure](../azure-monitor/platform/resource-logs-overview.md) для настройки параметров журналов диагностики в Azure Digital двойников с помощью портала azure, Azure CLI или PowerShell.
 
 После настройки вы сможете выбрать все категории журналов, метрики и использовать мощные Azure Monitor рабочие области log Analytics для поддержки отладки.
 

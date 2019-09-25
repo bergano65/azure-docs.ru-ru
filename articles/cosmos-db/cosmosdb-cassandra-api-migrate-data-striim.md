@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/22/2019
 ms.author: sngun
 ms.reviewer: sngun
-ms.openlocfilehash: ad690fa78f794b26b6cf496ea4485599486752b0
-ms.sourcegitcommit: b03516d245c90bca8ffac59eb1db522a098fb5e4
+ms.openlocfilehash: af99f369245d6006d0d4784e572020b820e406a3
+ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71146973"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71266042"
 ---
 # <a name="migrate-data-to-azure-cosmos-db-cassandra-api-account-using-striim"></a>Перенос данных в учетную запись Azure Cosmos DB API Cassandra с помощью Стриим
 
@@ -155,7 +155,7 @@ ms.locfileid: "71146973"
 
    ![Подключение к целевому устройству](./media/cosmosdb-cassandra-api-migrate-data-striim/connect-to-target.png)
 
-1. Перед настройкой целевого объекта убедитесь, что вы добавили [корневой сертификат Baltimore в среду Java Стриим](/java/java-sdk-add-certificate-ca-store?view=azure-java-stable#to-add-a-root-certificate-to-the-cacerts-store).
+1. Перед настройкой целевого объекта убедитесь, что вы добавили [корневой сертификат Baltimore в среду Java Стриим](/azure/java/java-sdk-add-certificate-ca-store#to-add-a-root-certificate-to-the-cacerts-store).
 
 1. Введите свойства конфигурации целевого Azure Cosmos DB экземпляра и нажмите кнопку **сохранить** , чтобы продолжить. Ниже приведены ключевые параметры, которые следует отметить:
 

@@ -12,21 +12,21 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 08/01/2019
 ms.author: cynthn
-ms.openlocfilehash: 2482fb4ab74a3c1e032a32890c3dc2c3920b5e6b
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: 1dcea4f56d778b0e6320634286a25d478c78a5bc
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68725630"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71261695"
 ---
 # <a name="preview-deploy-vms-to-dedicated-hosts-using-the-azure-powershell"></a>Предварительный просмотр: Развертывание виртуальных машин на выделенных узлах с помощью Azure PowerShell
 
-В этой статье рассказывается, как создать выделенный [узел](dedicated-hosts.md) Azure для размещения виртуальных машин. 
+В этой статье рассказывается, как создать [выделенный узел](dedicated-hosts.md) Azure для размещения виртуальных машин. 
 
 Убедитесь, что установлен Azure PowerShell версии 2.4.2 или более поздней, и вы вошли в учетную запись Azure в с помощью `Connect-AzAccount`. Чтобы установить версию 2.4.2, откройте командную строку PowerShell и введите следующую команду:
 
 ```powershell
-Install-Module -Name Az.Compute -Repository PSGallery -RequiredVersion 2.4.2-preview -AllowPrelease
+Install-Module -Name Az.Compute -Repository PSGallery -RequiredVersion 2.4.2-preview -AllowPrerelease
 ```
 
 Для включения функции предварительного просмотра модуля в PowerShell потребуется по меньшей мере версия 1.6.0 модуля PowerShellGet. Последние версии PowerShell Core автоматически встроены в, но для более ранних версий PowerShell можно выполнить следующую команду для обновления до последней версии:
