@@ -11,20 +11,20 @@ author: MayMSFT
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 08/22/2019
-ms.openlocfilehash: d2b9e53fc6c58f0477e252c751e25a99bdbfba42
-ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
+ms.openlocfilehash: 7a6a2c35360f59c8c2e3d0a75e646ae76c0c9de2
+ms.sourcegitcommit: 3fa4384af35c64f6674f40e0d4128e1274083487
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71200100"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71218302"
 ---
 # <a name="create-and-access-datasets-preview-in-azure-machine-learning"></a>Создание и доступ к наборам данных (Предварительная версия) в Машинное обучение Azure
 
 В этой статье вы узнаете, как создавать Машинное обучение Azure наборы данных (Предварительная версия) и как получать доступ к данным из локальных и удаленных экспериментов.
 
-С помощью Машинное обучение Azure наборов данных можно: 
+С помощью Машинное обучение Azure наборов данных можно:
 
-* **Хранить одну копию данных в хранилище** , на которое ссылаются наборы DataSet. 
+* **Хранить одну копию данных в хранилище** , на которое ссылаются наборы DataSet.
 
 * Вы **сможете легко получить доступ к данным во время обучения модели** , не беспокоясь о строках подключения или путях к данным.
 
@@ -45,7 +45,7 @@ ms.locfileid: "71200100"
 
 ## <a name="dataset-types"></a>Типы наборов данных
 
-Наборы данных делятся на два типа в зависимости от того, как пользователи их используют в обучении. 
+Наборы данных делятся на два типа в зависимости от того, как пользователи их используют в обучении.
 
 * [Табулардатасет](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py) представляет данные в табличном формате путем синтаксического анализа указанного файла или списка файлов. Это дает возможность материализовать данные в кадр данных Pandas или Spark. `TabularDataset` Объект может быть создан из файлов CSV, TSV, Parquet, результатов SQL-запросов и т. д. Полный список см. в нашей [документации](https://aka.ms/tabulardataset-api-reference).
 
@@ -53,7 +53,7 @@ ms.locfileid: "71200100"
 
 Дополнительные сведения о предстоящих изменениях API см. [здесь](https://aka.ms/tabular-dataset).
 
-## <a name="create-datasets"></a>Создание наборов данных 
+## <a name="create-datasets"></a>Создание наборов данных
 
 Создавая набор данных, вы создаете ссылку на расположение источника данных вместе с копией его метаданных. Данные остаются в существующем расположении, поэтому дополнительные затраты на хранение не взимается.
 
@@ -81,9 +81,9 @@ datastore = Datastore.get(workspace, datastore_name)
 
 ### <a name="create-tabulardatasets"></a>Создание Табулардатасетс
 
-Табулардатасетс можно создать с помощью пакета SDK или целевой страницы рабочей области (Предварительная версия). Отметка времени может быть указана из столбца в данных, или данные шаблона пути хранятся в, чтобы включить приtimeseries, что позволяет легко и эффективно выполнять фильтрацию по времени. 
+Табулардатасетс можно создать с помощью пакета SDK или целевой страницы рабочей области (Предварительная версия). Отметка времени может быть указана из столбца в данных, или данные шаблона пути хранятся в, чтобы включить приtimeseries, что позволяет легко и эффективно выполнять фильтрацию по времени.
 
-#### <a name="using-the-sdk"></a>Использование пакета SDK 
+#### <a name="using-the-sdk"></a>Использование пакета SDK
 
 [`from_delimited_files()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.dataset_factory.tabulardatasetfactory?view=azure-ml-py#from-delimited-files-path--validate-true--include-path-false--infer-column-types-true--set-column-types-none--separator------header--promoteheadersbehavior-all-files-have-same-headers--3---partition-format-none-) Используйте`TabularDatasetFactory` метод класса для чтения файлов в формате CSV или TSV и создания незарегистрированного табулардатасет. При чтении из нескольких файлов результаты будут объединены в одно табличное представление.
 
@@ -120,7 +120,7 @@ from azureml.core import Dataset, Datastore
 sql_datastore = Datastore.get(workspace, 'mssql')
 sql_ds = Dataset.Tabular.from_sql_query((sql_datastore, 'SELECT * FROM my_table'))
 ```
-Используйте метод для `TabularDataset` класса, чтобы обеспечить простую и эффективную фильтрацию по времени. [`with_timestamp_columns()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py#with-timestamp-columns-fine-grain-timestamp--coarse-grain-timestamp-none--validate-false-) Дополнительные примеры и подробные сведения можно найти [здесь](http://aka.ms/azureml-tsd-notebook). 
+Используйте метод для `TabularDataset` класса, чтобы обеспечить простую и эффективную фильтрацию по времени. [`with_timestamp_columns()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py#with-timestamp-columns-fine-grain-timestamp--coarse-grain-timestamp-none--validate-false-) Дополнительные примеры и подробные сведения можно найти [здесь](https://aka.ms/azureml-tsd-notebook).
 
 ```Python
 # create a TabularDataset with timeseries trait
@@ -132,20 +132,20 @@ dataset = Dataset.Tabular.from_parquet_files(path=datastore_path, partition_form
 # set coarse timestamp to the virtual column created, and fine grain timestamp from a column in the data
 dataset = dataset.with_timestamp_columns(fine_grain_timestamp='datetime', coarse_grain_timestamp='coarse_time')
 
-# filter with timeseries trait specific methods 
+# filter with timeseries trait specific methods
 data_slice = dataset.time_before(datetime(2019, 1, 1))
 data_slice = dataset.time_after(datetime(2019, 1, 1))
-data_slice = dataset.time_between(datetime(2019, 1, 1), datetime(2019, 2, 1)) 
-data_slice = dataset.time_recent(timedelta(weeks=1, days=1))                  
+data_slice = dataset.time_between(datetime(2019, 1, 1), datetime(2019, 2, 1))
+data_slice = dataset.time_recent(timedelta(weeks=1, days=1))
 ```
 
-#### <a name="using-the-workspace-landing-page"></a>Использование целевой страницы рабочей области 
+#### <a name="using-the-workspace-landing-page"></a>Использование целевой страницы рабочей области
 
 Войдите на [целевую страницу рабочей области](https://ml.azure.com) , чтобы создать набор данных через веб-интерфейс. В настоящее время Целевая страница рабочей области поддерживает только создание Табулардатасетс.
 
-Следующая анимация показывает, как создать набор данных на целевой странице рабочей области. 
+Следующая анимация показывает, как создать набор данных на целевой странице рабочей области.
 
-Сначала выберите **наборы данных** в разделе **активы** в левой области. Затем выберите **+ создать набор данных** , чтобы выбрать источник набора данных. Это может быть локальный файл, хранилище данных или общедоступные URL-адреса. **Параметры, предварительный просмотр** и формы **схемы** являются интеллектуальным заполнением на основе типа файла. Нажмите кнопку **Далее** , чтобы проверить их или настроить набор данных перед созданием. Нажмите кнопку **Готово** , чтобы завершить создание набора данных. 
+Сначала выберите **наборы данных** в разделе **активы** в левой области. Затем выберите **+ создать набор данных** , чтобы выбрать источник набора данных. Это может быть локальный файл, хранилище данных или общедоступные URL-адреса. **Параметры, предварительный просмотр** и формы **схемы** являются интеллектуальным заполнением на основе типа файла. Нажмите кнопку **Далее** , чтобы проверить их или настроить набор данных перед созданием. Нажмите кнопку **Готово** , чтобы завершить создание набора данных.
 
 ![Создание набора данных с помощью пользовательского интерфейса](media/how-to-create-register-datasets/create-dataset-ui.gif)
 
@@ -166,7 +166,7 @@ animal_ds = Dataset.File.from_files(path=datastore_paths)
 web_paths = [
             'https://azureopendatastorage.blob.core.windows.net/mnist/train-images-idx3-ubyte.gz',
             'https://azureopendatastorage.blob.core.windows.net/mnist/train-labels-idx1-ubyte.gz'
-           ]          
+           ]
 mnist_ds = Dataset.File.from_files(path=web_paths)
 ```
 
@@ -183,11 +183,11 @@ titanic_ds = titanic_ds.register(workspace = workspace,
 ```
 
 >[!Note]
-> Наборы данных, созданные с помощью целевой страницы рабочей области, автоматически регистрируются в рабочей области. 
+> Наборы данных, созданные с помощью целевой страницы рабочей области, автоматически регистрируются в рабочей области.
 
 ## <a name="version-datasets"></a>Наборы данных версий
 
-Вы можете зарегистрировать новый набор данных с тем же именем, создав новую версию. Версия набора данных — это способ закладки состояния данных, чтобы можно было применить определенную версию набора данных для эксперимента или будущего воспроизведения. Типичные сценарии, которые следует учитывать при управлении версиями: 
+Вы можете зарегистрировать новый набор данных с тем же именем, создав новую версию. Версия набора данных — это способ закладки состояния данных, чтобы можно было применить определенную версию набора данных для эксперимента или будущего воспроизведения. Типичные сценарии, которые следует учитывать при управлении версиями:
 * Когда новые данные доступны для повторного обучения.
 * При применении различных подходов к подготовке данных или проектированию компонентов.
 
@@ -196,7 +196,7 @@ titanic_ds = titanic_ds.register(workspace = workspace,
 web_paths = [
             'https://dprepdata.blob.core.windows.net/demo/Titanic.csv',
             'https://dprepdata.blob.core.windows.net/demo/Titanic2.csv'
-           ]          
+           ]
 titanic_ds = Dataset.Tabular.from_delimited_files(path=web_paths)
 
 # create a new version of titanic_ds

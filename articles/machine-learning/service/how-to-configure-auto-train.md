@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 07/10/2019
 ms.custom: seodec18
-ms.openlocfilehash: 2ef501af63628b47bc52d416930c90057569b5de
-ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
+ms.openlocfilehash: 4d4a3eae9ea3931ceb720785bbf458f54689be6e
+ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71035030"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71213522"
 ---
 # <a name="configure-automated-ml-experiments-in-python"></a>Настройка автоматизированных экспериментов машинного обучения в Python
 
@@ -202,7 +202,7 @@ automl_config = AutoMLConfig(task="classification")
         n_cross_validations=5)
     ```
 
-Три разных `task` значения параметров определяют список применяемых алгоритмов.  Используйте параметры `whitelist` или `blacklist` для дополнительного изменения итераций с помощью доступных алгоритмов для включения или исключения. Список поддерживаемых моделей можно найти в [классе суппортедалгорисмс](https://docs.microsoft.com/python/api/azureml-train-automl/azureml.train.automl.constants.supportedalgorithms?view=azure-ml-py).
+Три разных `task` значения параметров определяют список применяемых моделей.  Используйте параметры `blacklist` или для дальнейшего изменения итераций с доступными моделями для включения или исключения. `whitelist` Список поддерживаемых моделей можно найти в [классе суппортедмоделс](https://docs.microsoft.com/en-us/python/api/azureml-train-automl/azureml.train.automl.constants.supportedmodels?view=azure-ml-py).
 
 ### <a name="primary-metric"></a>Основная метрика
 Основная метрика; как показано в приведенных выше примерах, определяется метрика, используемая во время обучения модели для оптимизации. Основная метрика, которую можно выбрать, определяется выбранным типом задачи. Ниже приведен список доступных метрик.
@@ -429,7 +429,7 @@ best_run, fitted_model = automl_run.get_output()
 
    Описание
 
-   |Вывод|Определение|
+   |Output|Определение|
    |----|--------|
    |равфеатуренаме|Имя входного компонента или столбца из предоставленного набора данных.|
    |типедетектед|Обнаружен тип данных функции ввода.|

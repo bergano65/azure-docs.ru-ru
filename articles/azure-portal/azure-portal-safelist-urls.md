@@ -9,12 +9,12 @@ ms.date: 09/13/2019
 ms.topic: conceptual
 ms.service: azure-portal
 manager: mtillman
-ms.openlocfilehash: 78c752423d20d183c561d5bcf0bb95246b84ab49
-ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
+ms.openlocfilehash: 9618d99495e65231de22eb719355e2ca75a17600
+ms.sourcegitcommit: 3fa4384af35c64f6674f40e0d4128e1274083487
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71076671"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71218039"
 ---
 # <a name="safelist-the-azure-portal-urls-on-your-firewall-or-proxy-server"></a>Допортал Azure URL-адреса в брандмауэре или прокси-сервере.
 
@@ -80,8 +80,8 @@ ms.locfileid: "71076671"
 Требуется адрес списка надежных отправителей IP-адресов? Скачайте список диапазонов IP-адресов центра обработки данных Microsoft Azure для вашего облака:
 
 * [По всему миру](https://www.microsoft.com/download/details.aspx?id=56519)
-* [АМЕРИКАНСКОГО Учреждений](http://www.microsoft.com/download/details.aspx?id=57063)
-* [Германия](http://www.microsoft.com/download/details.aspx?id=57064)
-* [Китай](http://www.microsoft.com/download/details.aspx?id=57062)
+* [АМЕРИКАНСКОГО Учреждений](https://www.microsoft.com/download/details.aspx?id=57063)
+* [Германия](https://www.microsoft.com/download/details.aspx?id=57064)
+* [Китай](https://www.microsoft.com/download/details.aspx?id=57062)
 
 Другие службы Майкрософт используют для подключения дополнительные URL-адреса. Сведения об оптимизации сетевого подключения для служб Microsoft 365 см. в разделе [Настройка сети для Office 365](/office365/enterprise/set-up-network-for-office-365).

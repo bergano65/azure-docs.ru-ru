@@ -6,12 +6,12 @@ author: SnehaGunda
 ms.author: sngun
 ms.topic: conceptual
 ms.date: 05/21/2019
-ms.openlocfilehash: 04c1466c47d28f638bf7461050cb06b59c7d2396
-ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
+ms.openlocfilehash: e22b426b2172c169f9343569fffac57f370afbee
+ms.sourcegitcommit: 3fa4384af35c64f6674f40e0d4128e1274083487
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69614229"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71219881"
 ---
 # <a name="common-azure-cosmos-db-use-cases"></a>Распространенные примеры использования Azure Cosmos DB
 В этой статье представлен обзор нескольких распространенных примеров использования Azure Cosmos DB.  Рекомендации в данной статье служат отправной точкой для разработки приложений с использованием Cosmos DB.   
@@ -40,7 +40,7 @@ Azure Cosmos DB — это глобально распределенная мн
 Эти особенности особенно полезны при работе с веб-приложениями, мобильными приложениями, играми и приложениями IoT, которым требуется малое время отклика и возможность обрабатывать большие объемы операций чтения и записи.
 
 ## <a name="iot-and-telematics"></a>Интернет вещей и телематика
-Варианты использования Интернета вещей (IoT) часто характеризуются одинаковым способом приема, обработки и хранения данных.  Сначала этим системам требуется принять большие объемы данных от датчиков с различными языковыми стандартами. Затем они обрабатывают и анализируют потоковые данные для получения полезных сведений в реальном времени. После чего данные архивируются в "холодное" хранилище для пакетного анализа. Microsoft Azure предлагает мощные службы, которые можно использовать для решений на основе Интернета вещей, в том числе Azure Cosmos DB, Центры событий Azure, Azure Stream Analytics, центр уведомлений Azure, Машинное обучение Azure, Azure HDInsight и PowerBI. 
+Варианты использования Интернета вещей (IoT) часто характеризуются одинаковым способом приема, обработки и хранения данных.  Сначала этим системам требуется принять большие объемы данных от датчиков с различными языковыми стандартами. Затем они обрабатывают и анализируют потоковые данные для получения полезных сведений в реальном времени. После чего данные архивируются в "холодное" хранилище для пакетного анализа. Microsoft Azure предлагает обширные службы, которые можно применять к вариантам использования Интернета вещей, включая Azure Cosmos DB, концентраторы событий Azure, Azure Stream Analytics, Центр уведомлений Azure, Машинное обучение Azure, Azure HDInsight и Power BI. 
 
 ![Эталонная архитектура Центра Интернета вещей на основе Azure Cosmos DB](./media/use-cases/iot.png)
 
@@ -98,32 +98,7 @@ JSON — это эффективный формат, поддерживаемы
 ![Эталонная архитектура веб-приложения на основе Azure Cosmos DB](./media/use-cases/personalization.png)
 
 ## <a name="next-steps"></a>Следующие шаги
-Чтобы приступить к работе с Azure Cosmos DB, ознакомьтесь с нашими [краткими руководствами](create-sql-api-dotnet.md) по созданию учетной записи и работе со службой Cosmos DB. 
 
-Если же вы хотите узнать больше о клиентах, использующих Cosmos DB, прочитайте следующие истории:
+* Чтобы приступить к работе с Azure Cosmos DB, ознакомьтесь с нашими [краткими руководствами](create-sql-api-dotnet.md) по созданию учетной записи и работе со службой Cosmos DB.
 
-* [Jet.com](https://jet.com). Конкурент в области электронной коммерции, который отслеживает лидирующие технологии, работает в Microsoft Cloud и использует Cosmos DB в глобальном масштабе.
-* [Asos.com](https://www.asos.com/). Asos.com — британский интернет-магазин модных вещей и косметики. В магазине Asos, предназначенном в первую очередь для молодежи, продаются товары более 850 брендов, а также предоставляется собственная линия одежды и аксессуаров.
-* [Toyota](https://www.toyota.com/). Тойота Мотор Корпорейшн — японский производитель автомобилей. В корпорации Тойота служба Cosmos DB использовалась для глобального приложения Интернета вещей.
-* [Citrix](https://customers.microsoft.com/story/citrix). Компания Citrix занимается разработкой решения единого входа, используя службы Azure Service Fabric и Azure Cosmos DB.
-* [TEXA](https://customers.microsoft.com/story/texaspa) — революционное решение Интернета вещей, предназначенное для владельцев автомобилей, которое позволяет сэкономить время, деньги, расходы, а также продлить срок службы деталей машины.
-* [Domino's Pizza](https://www.dominos.com). Domino's Pizza, Inc. — американская сеть пиццерий.
-* [Johnson Controls](https://www.johnsoncontrols.com). Элементы управления Джонсон — это глобальная технология распространенным производителем и многопромышленный лидер, обслуживающий широкий спектр клиентов в более чем 150 странах и регионах.
-* [Microsoft Windows, Универсальный Магазин, Центр Интернета вещей Azure, Xbox Live и другие веб-службы](https://azure.microsoft.com/blog/how-azure-documentdb-planet-scale-nosql-helps-run-microsoft-s-own-businesses/). Создание корпорацией Майкрософт служб высокой масштабируемости с помощью Azure Cosmos DB.
-* [Группа Microsoft Data and Analytics](https://customers.microsoft.com/story/microsoftdataandanalytics) С помощью Azure Cosmos DB группа специалистов по анализу и обработке данных Майкрософт получила глобально масштабируемую коллекцию больших данных.
-* [Sulekha.com](https://customers.microsoft.com/story/sulekha-uses-azure-documentdb-to-connect-customers-and-businesses-across-india). В компании Sulekha использовали Azure Cosmos DB для подключения пользователей и предприятий в Индии.
-* [NewOrbit](https://customers.microsoft.com/story/neworbit-takes-flight-with-azure-documentdb). Популярность NewOrbit получена благодаря Azure Cosmos DB.
-* [Affinio](https://customers.microsoft.com/doclink/affinio-switches-from-aws-to-azure-documentdb-to-harness-social-data-at-scale). Разработчики платформы Affinio перешли к использованию AWS с Azure Cosmos DB для обработки данных социальных сетей в больших масштабах.
-* [Next Games](https://azure.microsoft.com//blog/the-walking-dead-no-mans-land-game-soars-to-1-with-azure-documentdb/). Игра Walking Dead: No Man's Land достигла первого места при поддержке Azure Cosmos DB.
-* [Halo](https://azure.microsoft.com/blog/how-halo-5-guardians-implemented-social-gameplay-using-azure-documentdb/). Реализация игрового процесса с социальными функциями в Halo 5 с помощью Azure Cosmos DB.
-* [Коллекция Cortana Analytics](https://azure.microsoft.com/blog/cortana-analytics-gallery-a-scalable-community-site-built-on-azure-documentdb/). Коллекция Cortana Analytics — это масштабируемый сайт сообщества, созданный на базе Azure Cosmos DB.
-* [Breeze](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=18602). Ведущий системный интегратор предоставляет многонациональным компаниям глобальные сведения с помощью гибких облачных технологий.
-* [News Republic](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=18639). Добавление аналитики в новости для предоставления информации заинтересованным гражданам. 
-* [SGS International](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=18653). Крупные мировые компании обращаются к SGS за услугами. А компания SGS обращается к Azure.
-* [Telenor](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=18608). Глобальный лидер Telenor использует облако для перемещения с высочайшей скоростью. 
-* [XOMNI](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=18667). Хранилище будущего основано на быстром поиске и простом потоке данных.
-* [Nucleo](https://customers.microsoft.com/story/azure-based-software-platform-breaks-down-barriers-bet). Программная платформа на основе Azure разрушает барьеры между бизнесом и клиентами.
-* [Weka](https://customers.microsoft.com/story/weka-smart-fridge-improves-vaccine-management-so-more-people-can-be-protected-against-diseases). Решение Smart Fridge от Weka совершенствует управление хранением вакцин, и теперь от болезней могут уберечься больше людей.
-* [Orange Tribes](https://customers.microsoft.com/story/theres-more-to-that-food-app-than-meets-the-eye-or-the-mouth). Это приложение, работающее с продуктами питания, содержит больше возможностей, чем можно увидеть глазами или почувствовать на вкус.
-* [Реал Мадрид](https://customers.microsoft.com/story/real-madrid-brings-the-stadium-closer-to-450-million-f). Футбольный клуб "Реал" (Мадрид) использует Microsoft Cloud, чтобы предоставить доступ на стадион 450-ти миллионам болельщиков со всего мира.
-* [Tuku](https://customers.microsoft.com/story/tuku-makes-car-buying-fun-with-help-from-azure-services). Службы Azure помогают TUKU превратить процесс покупки автомобиля в увлекательное мероприятие.
+* Если вы хотите узнать больше о клиентах, использующих Azure Cosmos DB, см. страницу " [примеры использования клиентов](https://azure.microsoft.com/en-us/case-studies/?service=cosmos-db) ".
