@@ -10,12 +10,12 @@ author: anumjs
 ms.author: anjangsh
 ms.reviewer: jrasnick
 manager: craigg
-ms.openlocfilehash: b9058313886484e84000b2b27986280eb1ff30eb
-ms.sourcegitcommit: b03516d245c90bca8ffac59eb1db522a098fb5e4
+ms.openlocfilehash: f4ee3f78159cb5d9b677f0d43492325754065841
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71145625"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71300838"
 ---
 # <a name="azure-sql-data-warehouse-release-notes"></a>Заметки о выпуске для Хранилища данных SQL Azure
 
@@ -38,6 +38,7 @@ ms.locfileid: "71145625"
 |**Частная ссылка Azure (Предварительная версия)**|С помощью [частного канала Azure](https://azure.microsoft.com/blog/announcing-azure-private-link/)можно создать частную конечную точку в виртуальной сети и связать ее с хранилищем данных SQL Azure. Затем эти ресурсы доступны через частный IP-адрес в виртуальной сети, что позволяет осуществлять подключение из локальной среды через частный пиринг Azure ExpressRoute и (или) VPN-шлюз. В целом, это упрощает настройку сети за счет того, что не требуется открывать общедоступные IP-адреса. Это также обеспечивает защиту от рисков утечка данных. Дополнительные сведения см. в разделе [Обзор](/azure/private-link/private-link-overview) и [Документация по хранилищу данных SQL](/azure/sql-database/sql-database-private-endpoint-overview).|
 |**Классификация & обнаружения данных (общедоступная версия)**|Функция [обнаружения и классификации данных](/azure/sql-database/sql-database-data-discovery-and-classification?toc=/azure/sql-data-warehouse/toc.json) теперь общедоступна. Эта функция предоставляет расширенные возможности для **обнаружения, классификации и маркировки & защиты** конфиденциальных данных в базах данных.|
 |**Интеграция Azure Advisor одним щелчком**|Хранилище данных SQL прямо интегрируется с рекомендациями помощника по Azure в колонке "Обзор" и предоставляет возможность однократного щелчка. Теперь вы можете найти рекомендации в колонке "Обзор" вместо перехода к колонке помощника по Azure. Дополнительные сведения о рекомендациях см. [здесь](sql-data-warehouse-concept-recommendations.md).|
+|**Изоляция моментальных снимков READ COMMITTED (Предварительная версия)**|Чтобы включить или отключить изоляцию моментального снимка для пользовательской базы данных, можно использовать инструкцию ALTER базе данных.  Чтобы не влиять на текущую рабочую нагрузку, можно установить этот параметр во время периода обслуживания базы данных или подождать, пока не появится активное соединение с базой данных. Дополнительные сведения см. в разделе [Параметры ALTER DATABASE SET](/sql/t-sql/statements/alter-database-transact-sql-set-options?view=azure-sqldw-latest).|
 |**EXECUTE AS (Transact-SQL)**| [выполнить как](/sql/t-sql/statements/execute-as-transact-sql?view=azure-sqldw-latest) Поддержка T-SQL теперь доступна в хранилище данных SQL, что позволяет клиентам задавать контекст выполнения сеанса для указанного пользователя.|
 |**Дополнительная поддержка T-SQL**|Контактная зона языка T-SQL для хранилища данных SQL была расширена и включает поддержку следующих функций: </br> - [FORMAT (Transact-SQL)](/sql/t-sql/functions/format-transact-sql?view=azure-sqldw-latest)</br> - [TRY_PARSE (Transact-SQL)](/sql/t-sql/functions/try-parse-transact-sql?view=azure-sqldw-latest)</br> - [TRY_CAST (Transact-SQL)](/sql/t-sql/functions/try-cast-transact-sql?view=azure-sqldw-latest)</br> - [TRY_CONVERT (Transact-SQL)](/sql/t-sql/functions/try-convert-transact-sql?view=azure-sqldw-latest)</br> - [sys. user_token (Transact-SQL)](/sql//relational-databases/system-catalog-views/sys-user-token-transact-sql?view=azure-sqldw-latest)|
 

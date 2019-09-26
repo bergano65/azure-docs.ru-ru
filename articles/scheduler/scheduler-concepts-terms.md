@@ -10,17 +10,17 @@ ms.reviewer: klam
 ms.assetid: 3ef16fab-d18a-48ba-8e56-3f3e0a1bcb92
 ms.topic: conceptual
 ms.date: 08/18/2016
-ms.openlocfilehash: d701fba39685d781d1a4c2d8a6cf194ca7eb2908
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 7e31f891cfd758b888e4045566ad2cd2d9ab6fb8
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60530942"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71300951"
 ---
 # <a name="concepts-terminology-and-entities-in-azure-scheduler"></a>Основные понятия, терминология и сущности планировщика Azure
 
 > [!IMPORTANT]
-> Служба [Azure Logic Apps](../logic-apps/logic-apps-overview.md) заменяет планировщик Azure, который выводится из эксплуатации. Для планирования заданий [попробуйте использовать Azure Logic Apps](../scheduler/migrate-from-scheduler-to-logic-apps.md). 
+> [Azure Logic Apps](../logic-apps/logic-apps-overview.md) заменяет планировщик Azure, который выводится из [эксплуатации](../scheduler/migrate-from-scheduler-to-logic-apps.md#retire-date). Чтобы продолжить работу с заданиями, настроенными в планировщике, выполните [миграцию на Azure Logic Apps](../scheduler/migrate-from-scheduler-to-logic-apps.md) как можно скорее.
 
 ## <a name="entity-hierarchy"></a>Иерархия сущностей
 
@@ -39,7 +39,7 @@ REST API планировщика Azure предоставляет и испол
 
 ### <a name="job-management"></a>Управление заданиями
 
-Поддерживает операции для создания и изменения заданий. Все задания должны входить в уже существующую коллекцию, поэтому неявное создание коллекций не предусмотрено. Дополнительные сведения см. в разделе [REST API планировщика — задания](https://docs.microsoft.com/rest/api/scheduler/jobs). Вот URI-адрес для выполнения этих операций:
+Поддерживает операции для создания и изменения заданий. Все задания должны входить в уже существующую коллекцию, поэтому неявное создание коллекций не предусмотрено. Дополнительные сведения см. в разделе [REST API планировщика — задания](https://docs.microsoft.com/rest/api/scheduler/jobs). Вот адрес URI для этих операций:
 
 ```
 https://management.azure.com/subscriptions/{subscriptionID}/resourceGroups/{resourceGroupName}/providers/Microsoft.Scheduler/jobCollections/{jobCollectionName}/jobs/{jobName}
@@ -47,7 +47,7 @@ https://management.azure.com/subscriptions/{subscriptionID}/resourceGroups/{reso
 
 ### <a name="job-collection-management"></a>Управление коллекциями заданий
 
-Поддерживает операции создания и изменения заданий и коллекций заданий, которые сопоставляются с квотами и общими настройками. В качестве примеров квот можно привести максимальное число заданий и наименьший интервал повторения. Дополнительные сведения см. в разделе [REST API планировщика — коллекции заданий](https://docs.microsoft.com/rest/api/scheduler/jobcollections). Вот URI-адрес для выполнения этих операций:
+Поддерживает операции создания и изменения заданий и коллекций заданий, которые сопоставляются с квотами и общими настройками. В качестве примеров квот можно привести максимальное число заданий и наименьший интервал повторения. Дополнительные сведения см. в разделе [REST API планировщика — коллекции заданий](https://docs.microsoft.com/rest/api/scheduler/jobcollections). Вот адрес URI для этих операций:
 
 ```
 https://management.azure.com/subscriptions/{subscriptionID}/resourceGroups/{resourceGroupName}/providers/Microsoft.Scheduler/jobCollections/{jobCollectionName}
@@ -55,7 +55,7 @@ https://management.azure.com/subscriptions/{subscriptionID}/resourceGroups/{reso
 
 ### <a name="job-history-management"></a>Управление журналами заданий
 
-Поддержка операции GET для извлечения журнала заданий за последние 60 дней, например с указанием времени и результатов выполнения задания. Включает поддержку строкового параметра запроса для фильтрации результатов по состоянию и статусу. Дополнительные сведения см. в разделе [REST API планировщика — журнал выполнения заданий](https://docs.microsoft.com/rest/api/scheduler/jobs/listjobhistory). Вот URI-адрес для этой операции.
+Поддержка операции GET для извлечения журнала заданий за последние 60 дней, например с указанием времени и результатов выполнения задания. Включает поддержку строкового параметра запроса для фильтрации результатов по состоянию и статусу. Дополнительные сведения см. в разделе [REST API планировщика — журнал выполнения заданий](https://docs.microsoft.com/rest/api/scheduler/jobs/listjobhistory). Вот адрес URI для этой операции:
 
 ```
 https://management.azure.com/subscriptions/{subscriptionID}/resourceGroups/{resourceGroupName}/providers/Microsoft.Scheduler/jobCollections/{jobCollectionName}/jobs/{jobName}/history
@@ -70,18 +70,18 @@ https://management.azure.com/subscriptions/{subscriptionID}/resourceGroups/{reso
 * Задания очереди служебной шины для рабочих нагрузок, использующих очереди служебной шины.
 * Задания разделов служебной шины для рабочих нагрузок, использующих разделы служебной шины.
 
-## <a name="job-definition"></a>определение задания;
+## <a name="job-definition"></a>Определение задания
 
 На высоком уровне задание планировщика состоит из следующих основных частей:
 
 * Действие, выполняемое при срабатывании таймера задания.
 * Необязательно: Время выполнения задания
-* Необязательно: Когда и как часто повторного выполнения.
-* Необязательно: Ошибка действие, которое выполняется при сбое основного действия
+* Необязательно: Когда и как часто следует повторять задание
+* Необязательно: Действие ошибки, которое выполняется в случае сбоя основного действия
 
 Задание также включает в себя системные данные, такие как время следующего запланированного запуска задания. Определение кода задания — это объект в формате JavaScript Object Notation (JSON), который содержит следующие элементы:
 
-| Элемент | Обязательно для заполнения | Описание | 
+| Элемент | Обязательное значение | Описание | 
 |---------|----------|-------------| 
 | [**startTime**](#start-time) | Нет | Время начала задания со смещением часового пояса в [формате ISO 8601](https://en.wikipedia.org/wiki/ISO_8601). | 
 | [**action**](#action) | Да | Подробные сведения об основном действии, которые могут включать объект **errorAction**. | 
@@ -147,7 +147,7 @@ https://management.azure.com/subscriptions/{subscriptionID}/resourceGroups/{reso
 
 <a name="action"></a>
 
-## <a name="action"></a>action
+## <a name="action"></a>действие
 
 Задание планировщика выполняет основное действие (**action**) на основе заданного расписания. Планировщик поддерживает действия, связанные с HTTP, очередью хранилища, разделами служебной шины и очередями служебной шины. Если основное действие (**action**) завершается ошибкой, планировщик может запустить дополнительное действие [**errorAction**](#erroraction), которое обрабатывает ошибку. Объект **action** описывает следующие элементы:
 
@@ -227,7 +227,7 @@ https://management.azure.com/subscriptions/{subscriptionID}/resourceGroups/{reso
 
 <a name="recurrence"></a>
 
-## <a name="recurrence"></a>recurrence
+## <a name="recurrence"></a>повторение
 
 Задание повторяется, если определение задания в формате JSON включает объект **recurrence**, например:
 
@@ -245,7 +245,7 @@ https://management.azure.com/subscriptions/{subscriptionID}/resourceGroups/{reso
 },
 ```
 
-| Свойство | Обязательно для заполнения | Value | Описание | 
+| Свойство | Обязательное значение | Value | Описание | 
 |----------|----------|-------|-------------| 
 | **frequency** | Да, если используется **recurrence** | "Minute", "Hour", "Day", "Week", "Month", "Year". | Единица измерения времени между выполнениями. | 
 | **interval** | Нет | От 1 до 1000 включительно. | Положительное целое число, которое определяет количество единиц времени между каждым повторением на основании значения **frequency**. | 
@@ -275,18 +275,18 @@ https://management.azure.com/subscriptions/{subscriptionID}/resourceGroups/{reso
 },
 ```
 
-| Свойство | Обязательно для заполнения | Value | Описание | 
+| Свойство | Обязательное значение | Value | Описание | 
 |----------|----------|-------|-------------| 
 | **retryType** | Да | **Fixed**, **None**. | Определяет, задана ли политика повтора (**Fixed**) или нет (**None**). | 
 | **retryInterval** | Нет | PT30S | Указывает интервал и частоту между повторными попытками в [формате ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations). Минимальное значение — 15 секунд, максимальное значение — 18 месяцев. | 
-| **retryCount** | Нет | 4\. | Задает количество повторных попыток. Максимальное значение — 20. | 
+| **retryCount** | Нет | 4 | Задает количество повторных попыток. Максимальное значение — 20. | 
 ||||
 
 Дополнительные сведения см. в статье [Высокая доступность и надежность](../scheduler/scheduler-high-availability-reliability.md).
 
 <a name="status"></a>
 
-## <a name="state"></a>состояние
+## <a name="state"></a>state
 
 Задание может иметь состояние **Enabled** (включено), **Disabled** (отключено), **Completed** (выполнено) или **Faulted** (сбой), например: 
 
@@ -297,7 +297,7 @@ https://management.azure.com/subscriptions/{subscriptionID}/resourceGroups/{reso
 
 <a name="status"></a>
 
-## <a name="status"></a>status
+## <a name="status"></a>Состояние
 
 После запуска задания планировщик возвращает сведения о состоянии задания через объект **status**, которым управляет только планировщик. Тем не менее объект **status** находится внутри объекта **job**. Ниже приведена информация, которую включает в себя состояние задания:
 

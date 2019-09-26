@@ -14,12 +14,12 @@ ms.tgt_pltfrm: cache
 ms.workload: tbd
 ms.date: 05/30/2017
 ms.author: yegu
-ms.openlocfilehash: 116e54fd39af801cf8941a974da2b72c483097dc
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 05638e17c2f41806a5c8aa3e0c3020eae82bdb60
+ms.sourcegitcommit: 9fba13cdfce9d03d202ada4a764e574a51691dcd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60830301"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71315965"
 ---
 # <a name="migrate-from-managed-cache-service-to-azure-cache-for-redis"></a>Перенос из управляемой службы кэша в кэш Azure для Redis
 Перенести приложения, которые используют управляемую службу кэша Azure, в кэш Azure для Redis можно, не внося в приложения существенных изменений. Объем изменений зависит от того, какие функции управляемой службы кэша использует ваше приложение кэширования. Хотя интерфейсы API не идентичны, они похожи, поэтому большую часть вашего кода, использующего управляемую службу кэша для доступа к кэшу, можно использовать повторно с минимальными изменениями. В этой статье показано, как внести необходимые изменения в конфигурацию и приложения, чтобы перенести приложения управляемой службы кэша для использования кэша Azure для Redis. Здесь также объясняется, как с помощью некоторых функций кэша Azure для Redis реализовать функции кэша управляемой службы кэша.
@@ -62,13 +62,13 @@ ms.locfileid: "60830301"
 
 * **Basic** — один узел. Множество размеров вплоть до 53 ГБ.
 * **Стандартный** — два узла: основной и реплика. Множество размеров вплоть до 53 ГБ. СОГЛАШЕНИЕ ОБ УРОВНЕ ОБСЛУЖИВАНИЯ 99,9 %.
-* **Премиум** — два узла (основной и реплика), включающие до 10 сегментов. Несколько размеров: от 6 ГБ до 530 ГБ. Все функции уровня "Стандартный", а также дополнительные функции, включая поддержку [кластера Redis](cache-how-to-premium-clustering.md), [сохраняемости Redis](cache-how-to-premium-persistence.md) и [виртуальной сети Azure](cache-how-to-premium-vnet.md). СОГЛАШЕНИЕ ОБ УРОВНЕ ОБСЛУЖИВАНИЯ 99,9 %.
+* **Премиум** — два узла (основной и реплика), включающие до 10 сегментов. Несколько размеров от 6 ГБ до 1,2 ТБ. Все функции уровня "Стандартный", а также дополнительные функции, включая поддержку [кластера Redis](cache-how-to-premium-clustering.md), [сохраняемости Redis](cache-how-to-premium-persistence.md) и [виртуальной сети Azure](cache-how-to-premium-vnet.md). СОГЛАШЕНИЕ ОБ УРОВНЕ ОБСЛУЖИВАНИЯ 99,9 %.
 
 Каждый уровень отличается доступными возможностями и ценой. Конкретные возможности рассматриваются ниже в этом руководстве, а дополнительные сведения о ценах доступны на странице [Сведения о ценах — кэш](https://azure.microsoft.com/pricing/details/cache/).
 
 В начале переноса нужно выбрать размер, соответствующий размеру предыдущего кэша управляемой службы кэша, а затем увеличить или уменьшить масштаб в соответствии с требованиями вашего приложения. Дополнительные сведения по правильному выбору предложения кэша Azure для Redis см. в разделе [Какое предложение и размер кэша Azure для Redis мне следует использовать?](cache-faq.md#what-azure-cache-for-redis-offering-and-size-should-i-use)
 
-## <a name="create-a-cache"></a>Создание кэша.
+## <a name="create-a-cache"></a>Создание кэша
 [!INCLUDE [redis-cache-create](../../includes/redis-cache-create.md)]
 
 ## <a name="configure-the-cache-clients"></a>Настройка клиентов кэша.
@@ -188,6 +188,6 @@ cache.StringSet("key1", "value1", TimeSpan.FromMinutes(90));
 ## <a name="migrate-aspnet-session-state-and-output-caching-to-azure-cache-for-redis"></a>Перенос состояний сеансов ASP.NET и кэширование выводимых данных в кэш Azure для Redis.
 В кэше Azure для Redis есть поставщики состояния сеанса ASP.NET и кэширования вывода страниц. Чтобы перенести приложение, использующее те версии поставщиков, которые предназначены для управляемой службы кэша, сначала нужно удалить существующие разделы из файла web.config, а затем настроить версии поставщиков, которые использует кэш Azure для Redis. Инструкции по использованию поставщиков ASP.NET кэша Azure для Redis см. в статьях [ASP.NET Session State Provider for Azure Cache for Redis](cache-aspnet-session-state-provider.md) (Поставщик состояний сеансов ASP.NET для кэша Azure для Redis) и [ASP.NET Output Cache Provider for Azure Cache for Redis](cache-aspnet-output-cache-provider.md) (Поставщик кэша вывода ASP.NET для кэша Azure для Redis).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Ознакомьтесь с руководствами, образцами и видеозаписями в [документации по кэшу Azure для Redis](https://azure.microsoft.com/documentation/services/cache/).
 

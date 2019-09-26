@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/23/2019
 ms.author: rkarlin
-ms.openlocfilehash: 7f209ef8bb8c492245b59374c33187dbbe763aa5
-ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
+ms.openlocfilehash: 7f042cfe10bd8ca57d9a2dae511a13a82f053a67
+ms.sourcegitcommit: 9fba13cdfce9d03d202ada4a764e574a51691dcd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71240479"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71316813"
 ---
 # <a name="on-board-azure-sentinel"></a>Встроенный Sentinel Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "71240479"
 
 - Активная подписка Azure. Если у вас ее нет, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу.
 
-- Рабочая область Log Analytics. Узнайте, как [создать рабочую область log Analytics](../log-analytics/log-analytics-quick-create-workspace.md)
+- Рабочая область Log Analytics. Узнайте, как [создать рабочую область Log Analytics](../log-analytics/log-analytics-quick-create-workspace.md). Дополнительные сведения о Log Analytics рабочих областях см. в разделе [проектирование развертывания журналов Azure Monitor](../azure-monitor/platform/design-logs-deployment.md).
 
 -  Чтобы включить метку Azure, необходимы разрешения участника для подписки, в которой находится рабочая область Azure Sentinel. 
 - Для использования Sentinel Azure требуются разрешения участника или читателя на группу ресурсов, к которой принадлежит Рабочая область.

@@ -1,5 +1,5 @@
 ---
-title: Разработка определяемых пользователем операторов U-SQL в Azure Data Lake Analytics
+title: Разработка определяемых пользователем операторов U-SQL — Azure Data Lake Analytics
 description: Узнайте, как разрабатывать определяемые пользователем операторы (с возможностью повторного использования) в заданиях Azure Data Lake Analytics.
 services: data-lake-analytics
 ms.service: data-lake-analytics
@@ -9,12 +9,12 @@ ms.reviewer: jasonwhowell
 ms.assetid: e5189e4e-9438-46d1-8686-ed4836bf3356
 ms.topic: conceptual
 ms.date: 12/05/2016
-ms.openlocfilehash: 122a4b6af78a22f74d5057da75767077f8d9b978
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b2d1293b06b4d8791138ed666bc3cb4abe3adf40
+ms.sourcegitcommit: 9fba13cdfce9d03d202ada4a764e574a51691dcd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60813792"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71316541"
 ---
 # <a name="develop-u-sql-user-defined-operators-udos"></a>Разработка определяемых пользователем операторов U-SQLU (UDO)
 В этой статье описано, как разрабатывать определяемые пользователем операторы для обработки данных в задании U-SQL.
@@ -23,7 +23,7 @@ ms.locfileid: "60813792"
 **Создание и отправка задания U-SQL**
 
 1. В Visual Studio выберите **Файл > Создать > Проект > Проект U-SQL**.
-2. Последовательно выберите **ОК**. Visual Studio создаст решение с помощью файла Script.usql.
+2. Нажмите кнопку **ОК**. Visual Studio создаст решение с помощью файла Script.usql.
 3. В **обозревателе решений** разверните узел Script.usql и дважды щелкните файл **Script.usql.cs**.
 4. Скопируйте приведенный ниже код и вставьте его в файл.
 

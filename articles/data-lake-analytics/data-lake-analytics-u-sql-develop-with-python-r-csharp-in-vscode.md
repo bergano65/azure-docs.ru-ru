@@ -1,5 +1,5 @@
 ---
-title: Разработка U-SQL с помощью Python, R, и C# для Azure Data Lake Analytics в Visual Studio Code
+title: Выполнение заданий U-SQL в Python, R и C# -Azure Data Lake Analytics
 description: Сведения об использовании кода программной части Python, R и C# для отправки заданий в Azure Data Lake.
 services: data-lake-analytics
 ms.service: data-lake-analytics
@@ -8,12 +8,12 @@ ms.author: jejiang
 ms.reviewer: jasonwhowell
 ms.topic: conceptual
 ms.date: 11/22/2017
-ms.openlocfilehash: 6c234ad6756f4e65e172bf0ffc0ae5a1d35d109b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: cb3ddf0c4147fa982e8ab0f9d440292d12803d35
+ms.sourcegitcommit: 0486aba120c284157dfebbdaf6e23e038c8a5a15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60814062"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71309708"
 ---
 # <a name="develop-u-sql-with-python-r-and-c-for-azure-data-lake-analytics-in-visual-studio-code"></a>Разработка U-SQL с помощью Python, R, и C# для Azure Data Lake Analytics в Visual Studio Code
 Сведения об использовании Visual Studio Code (VSCode) для записи кода программной части Python, R и C# с помощью U-SQL и отправки заданий в службу Azure Data Lake. Дополнительные сведения об использовании Средств Azure Data Lake для VSCode см. в статье [Использование средств Azure Data Lake для Visual Studio Code](data-lake-analytics-data-lake-tools-for-vscode.md).
@@ -58,7 +58,7 @@ ms.locfileid: "60814062"
         USING Outputters.Csv();
     ```
     
-3. Щелкните правой кнопкой мыши файл скрипта, а затем выберите **ADL: Создать файл с выделенным кодом Python**. 
+3. Щелкните правой кнопкой мыши файл скрипта и выберите **ADL: Создать файл**кода программной части Python. 
 4. В рабочей области будет создан файл **xxx.usql.py**. Запишите свой код в файл Python. Ниже приведен пример кода.
 
     ```Python
@@ -115,7 +115,7 @@ ms.locfileid: "60814062"
     TO @OutputFilePredictions
     USING Outputters.Tsv();
     ```
-3. Щелкните правой кнопкой мыши в **USQL** файл, а затем выберите **ADL: Создать файл с выделенным кодом R**. 
+3. Щелкните правой кнопкой мыши файл **USQL** и выберите **ADL: Создать файл**кода программной части R. 
 4. В рабочей области будет создан файл **xxx.usql.r**. Запишите свой код в файл R. Ниже приведен пример кода.
 
     ```R
@@ -125,7 +125,7 @@ ms.locfileid: "60814062"
 5. Для выполнения задания щелкните файл **USQL** правой кнопкой мыши и выберите **Compile Script** (Компиляции сценария) или **Отправить задание**.
 
 ## <a name="develop-c-file"></a>Разработка файла C#
-Файл с выделенным кодом является файлом C#, который связан с одним скриптом U-SQL. В файле с выделенным кодом можно определить скрипт, который относится к UDO, UDA, UDT и UDF. Все эти объекты можно будет напрямую использовать в скрипте, не регистрируя для них сборку. Файл с выделенным кодом помещается в ту же папку, что и связанный с ним файл скрипта U-SQL. Например, для скрипта с именем xxx.usql, файл Code Behind будет иметь имя xxx.usql.cs. Если вручную удалить файл с выделенным кодом, функция выделенного кода будет отключена для связанного с ним скрипта U-SQL. Дополнительные сведения о написании пользовательского кода для скриптов U-SQL, см. в разделе [, записи и с помощью пользовательского кода в U-SQL: Определяемые пользователем функции]( https://blogs.msdn.microsoft.com/visualstudio/2015/10/28/writing-and-using-custom-code-in-u-sql-user-defined-functions/).
+Файл с выделенным кодом является файлом C#, который связан с одним скриптом U-SQL. В файле с выделенным кодом можно определить скрипт, который относится к UDO, UDA, UDT и UDF. Все эти объекты можно будет напрямую использовать в скрипте, не регистрируя для них сборку. Файл с выделенным кодом помещается в ту же папку, что и связанный с ним файл скрипта U-SQL. Например, для скрипта с именем xxx.usql, файл Code Behind будет иметь имя xxx.usql.cs. Если вручную удалить файл с выделенным кодом, функция выделенного кода будет отключена для связанного с ним скрипта U-SQL. Дополнительные сведения о написании кода клиента для скрипта u-SQL см [. в разделе Написание и использование пользовательского кода в u-SQL. Определяемые пользователем функции]( https://blogs.msdn.microsoft.com/visualstudio/2015/10/28/writing-and-using-custom-code-in-u-sql-user-defined-functions/).
 
 1. В рабочей области щелкните **Создать файл**.
 2. Запишите свой код в файл U-SQL. Ниже приведен пример кода.
@@ -157,7 +157,7 @@ ms.locfileid: "60814062"
         TO @"/output/SearchLogtest.txt" 
         USING Outputters.Tsv();
     ```
-3. Щелкните правой кнопкой мыши в **USQL** файл, а затем выберите **ADL: Создать файл с выделенным кодом CS**. 
+3. Щелкните правой кнопкой мыши файл **USQL** и выберите **ADL: Создать файл**кода программной части CS. 
 4. В рабочей области будет создан файл **xxx.usql.cs**. Запишите свой код в файл CS. Ниже приведен пример кода.
 
     ```CS
@@ -178,7 +178,7 @@ ms.locfileid: "60814062"
     ```
 5. Для выполнения задания щелкните файл **USQL** правой кнопкой мыши и выберите **Compile Script** (Компиляции сценария) или **Отправить задание**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Использование средств Azure Data Lake для Visual Studio Code](data-lake-analytics-data-lake-tools-for-vscode.md)
 * [Локальный запуск и локальная отладка U-SQL в Visual Studio Code](data-lake-tools-for-vscode-local-run-and-debug.md)
 * [Приступая к работе с аналитикой озера данных с помощью PowerShell](data-lake-analytics-get-started-powershell.md)

@@ -1,19 +1,18 @@
 ---
-title: Начало работы с Azure Data Lake Analytics с помощью интерфейса командной строки Azure
+title: Создание & запроса Azure Data Lake Analytics Azure CLI
 description: Узнайте, как использовать интерфейс командной строки Azure для создания учетной записи Data Lake Analytics и отправки задания U-SQL.
 ms.service: data-lake-analytics
-services: data-lake-analytics
 author: saveenr
 ms.author: saveenr
 ms.reviewer: jasonwhowell
 ms.topic: conceptual
 ms.date: 06/18/2017
-ms.openlocfilehash: 2af6d499bafb0e00b31d0379baac6a390bd6ca3f
-ms.sourcegitcommit: c0419208061b2b5579f6e16f78d9d45513bb7bbc
+ms.openlocfilehash: 94399490453c6a2774f71ef527fd24d543e2a7e2
+ms.sourcegitcommit: 9fba13cdfce9d03d202ada4a764e574a51691dcd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67626233"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71316569"
 ---
 # <a name="get-started-with-azure-data-lake-analytics-using-azure-cli"></a>Начало работы с Azure Data Lake Analytics с помощью интерфейса командной строки Azure
 [!INCLUDE [get-started-selector](../../includes/data-lake-analytics-selector-get-started.md)]
@@ -66,7 +65,7 @@ az group create --name "<Resource Group Name>" --location "<Azure Location>"
 
 * **Имя учетной записи Data Lake Analytics**. Каждой учетной записи Data Lake Analytics присвоено имя.
 * **Расположение.** Используйте один из центров обработки данных Azure, который поддерживает Data Lake Analytics.
-* **Учетная запись по умолчанию Data Lake Store**: Для каждой учетной записи Data Lake Analytics существует учетная запись Data Lake Store по умолчанию.
+* **Учетная запись Data Lake Store по умолчанию**: Для каждой учетной записи Data Lake Analytics существует учетная запись Data Lake Store по умолчанию.
 
 Чтобы получить список существующих учетных записей Data Lake Store, выполните эту команду:
 

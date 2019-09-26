@@ -9,12 +9,12 @@ ms.author: estfan
 ms.reviewer: arthii, LADocs
 ms.topic: article
 ms.date: 09/01/2019
-ms.openlocfilehash: a070b224b0cb1378f0ba6729af33840715dc0a29
-ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
+ms.openlocfilehash: 7384f058c82699095e1209e677dc5c6f61b57178
+ms.sourcegitcommit: 0486aba120c284157dfebbdaf6e23e038c8a5a15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71087725"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71309859"
 ---
 # <a name="install-on-premises-data-gateway-for-azure-logic-apps"></a>Установка локального шлюза данных для Azure Logic Apps
 
@@ -58,7 +58,7 @@ ms.locfileid: "71087725"
   * Хранилище твердотельных накопителей (SSD) для буферизации
 
   > [!NOTE]
-  > Шлюз не поддерживает Windows Server 2016 Core.
+  > Шлюз не поддерживает Windows Server Core.
 
 * **Связанные вопросы**
 
@@ -74,6 +74,8 @@ ms.locfileid: "71087725"
   * Регион, выбранный для установки шлюза, является тем же расположением, которое необходимо выбрать при последующем создании ресурса шлюза Azure для приложения логики. По умолчанию этот регион совпадает с расположением клиента Azure AD, который управляет учетной записью Azure. Однако расположение можно изменить во время установки шлюза.
 
   * Шлюз имеет два режима: Стандартный и личный режим, который применяется только к Power BI. На одном компьютере нельзя запустить несколько шлюзов в одном и том же режиме.
+
+  * Azure Logic Apps поддерживает операции записи, включая операции вставки и обновления через шлюз. Однако эти операции имеют [ограничения на размер полезных данных](https://docs.microsoft.com/data-integration/gateway/service-gateway-onprem#considerations).
 
 <a name="install-gateway"></a>
 

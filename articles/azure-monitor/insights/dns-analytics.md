@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 03/20/2018
 ms.author: magoedte
-ms.openlocfilehash: 46045664e9ddeebc45c2dae7c1f0a9f6a0d6b004
-ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
+ms.openlocfilehash: ad61743751ace9ca0c7eba12ffcea5f15e1157d5
+ms.sourcegitcommit: 9fba13cdfce9d03d202ada4a764e574a51691dcd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71265164"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71316184"
 ---
 # <a name="gather-insights-about-your-dns-infrastructure-with-the-dns-analytics-preview-solution"></a>Сбор сведений об инфраструктуре DNS с помощью решения аналитики DNS (предварительной версии)
 
@@ -180,9 +180,9 @@ ms.locfileid: "71265164"
 
     ![Поиск по журналу инвентаризации DNS](./media/dns-analytics/log-search-dnsinventory.png)
     
-### <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Устранение неполадок
 
-Действия по устранению неполадок коммопн:
+Общие действия по устранению неполадок:
 
 1. Отсутствующие данные поиска DNS. чтобы устранить эту проблему, попробуйте сбросить настройки конфигурации или просто загрузить страницу конфигурации на портале. Для сброса параметров просто измените значение параметра на другое, затем снова измените его на исходное значение и сохраните файл конфигурации.
 

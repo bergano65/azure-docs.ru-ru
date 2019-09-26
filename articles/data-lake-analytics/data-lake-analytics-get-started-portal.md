@@ -1,7 +1,6 @@
 ---
-title: Начало работы с Azure Data Lake Analytics с помощью портала Azure
+title: Создание & запроса Azure Data Lake Analytics портал Azure
 description: Создание учетной записи Azure Data Lake Analytics и отправка задания U-SQL с помощью портала Azure.
-services: data-lake-analytics
 ms.service: data-lake-analytics
 author: saveenr
 ms.author: saveenr
@@ -9,19 +8,19 @@ ms.reviewer: jasonwhowell
 ms.assetid: b1584d16-e0d2-4019-ad1f-f04be8c5b430
 ms.topic: conceptual
 ms.date: 03/21/2017
-ms.openlocfilehash: 25d58bdc5791de868c6302b4d2763fa34e98af17
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 46da3750e4d0ac78c5fd9df91ae37670e541302d
+ms.sourcegitcommit: 9fba13cdfce9d03d202ada4a764e574a51691dcd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60615043"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71315756"
 ---
 # <a name="get-started-with-azure-data-lake-analytics-using-the-azure-portal"></a>Начало работы с Azure Data Lake Analytics с помощью портала Azure
 [!INCLUDE [get-started-selector](../../includes/data-lake-analytics-selector-get-started.md)]
 
 Из этой статьи вы узнаете, как с помощью портала Azure создавать учетные записи Azure Data Lake Analytics, определять задания в [U-SQL](data-lake-analytics-u-sql-get-started.md) и отправлять их в службу Data Lake Analytics.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем приступать к изучению этого руководства, необходимо оформить **подписку Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 
@@ -32,11 +31,11 @@ ms.locfileid: "60615043"
 1. Выполните вход на [портал Azure](https://portal.azure.com).
 2. Последовательно выберите **Создать ресурс** >  **Данные и аналитика** > **Data Lake Analytics**.
 3. Выберите значения для следующих параметров:
-   * **Имя.** Имя учетной записи Data Lake Analytics (только строчные буквы и цифры разрешен).
+   * **Имя**: Назовите учетную запись Data Lake Analytics (разрешены только строчные буквы и цифры).
    * **Подписка**: Выберите подписку Azure, используемую для учетной записи аналитики.
    * **Группа ресурсов**: выберите существующую группу ресурсов Azure или создайте новую группу. Обычно приложения состоят из множества компонентов, например веб-приложения, базы данных, сервера базы данных, хранилища и служб сторонних поставщиков.
    * **Расположение.** выберите центр обработки данных Azure для учетной записи аналитики озера данных.
-   * **Data Lake Storage 1-го поколения**. Следуйте инструкциям, чтобы создать учетную запись Gen1 хранилища Озера данных, или выберите существующую. 
+   * **Data Lake Storage 1-го поколения**. Следуйте инструкциям, чтобы создать новую учетную запись Data Lake Storage 1-го поколения, или выберите существующую. 
 4. При необходимости выберите ценовую категорию для учетной записи Data Lake Analytics.
 5. Нажмите кнопку **Создать**. 
 

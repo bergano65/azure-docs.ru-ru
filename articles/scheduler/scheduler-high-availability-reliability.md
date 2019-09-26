@@ -9,21 +9,21 @@ ms.reviewer: klam
 ms.assetid: 5ec78e60-a9b9-405a-91a8-f010f3872d50
 ms.topic: article
 ms.date: 08/16/2016
-ms.openlocfilehash: 50ab6cfefe4a7df9d671e7fd1287aa16b803f260
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3cc15d173ad735d77505f636bd230e0876371271
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64702883"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71300933"
 ---
 # <a name="high-availability-and-reliability-for-azure-scheduler"></a>Высокая доступность и надежность для планировщика Azure
 
 > [!IMPORTANT]
-> Служба [Azure Logic Apps](../logic-apps/logic-apps-overview.md) заменяет планировщик Azure, который выводится из эксплуатации. Для планирования заданий [попробуйте использовать Azure Logic Apps](../scheduler/migrate-from-scheduler-to-logic-apps.md). 
+> [Azure Logic Apps](../logic-apps/logic-apps-overview.md) заменяет планировщик Azure, который выводится из [эксплуатации](../scheduler/migrate-from-scheduler-to-logic-apps.md#retire-date). Чтобы продолжить работу с заданиями, настроенными в планировщике, выполните [миграцию на Azure Logic Apps](../scheduler/migrate-from-scheduler-to-logic-apps.md) как можно скорее. 
 
 Планировщик Azure обеспечивает [высокий уровень доступности](https://docs.microsoft.com/azure/architecture/guide/pillars#availability) и надежности для заданий. Дополнительные сведения см. в статье [Соглашение об уровне обслуживания для планировщика](https://azure.microsoft.com/support/legal/sla/scheduler).
 
-## <a name="high-availability"></a>Высокий уровень доступности
+## <a name="high-availability"></a>Высокая надежность
 
 Планировщик Azure отличается высокой доступностью и использует географически избыточное развертывание служб и репликацию заданий по географическим регионам.
 
@@ -35,7 +35,7 @@ ms.locfileid: "64702883"
 
 Ваши задания в планировщике Azure реплицируются в регионах Azure. В случае сбоя в одном регионе планировщик Azure отрабатывает отказ и обеспечивает выполнение задания из другого центра обработки данных в связанном географическом регионе.
 
-Например, если задание создано в центрально-южной части США, планировщик Azure обеспечивает его автоматическую репликацию в центрально-северной части США. В случае сбоя в южно-центральной части США планировщик Azure запускает задание в центрально-северной части США. 
+Например, если задание создано в центрально-южной части США, планировщик Azure обеспечивает его автоматическую репликацию в центрально-северной части США. В случае сбоя в центрально-южной части США планировщик Azure запускает задание в северо-центральной части США. 
 
 ![Репликация заданий по географическим регионам](./media/scheduler-high-availability-reliability/scheduler-high-availability-reliability-image1.png)
 

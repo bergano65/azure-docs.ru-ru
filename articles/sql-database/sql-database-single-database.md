@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 04/08/2019
-ms.openlocfilehash: 1dc1d2780dcaf27e0c60cfffe84581c0278491dd
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: c5de4277915e71763f034596d372554e4f88e204
+ms.sourcegitcommit: 9fba13cdfce9d03d202ada4a764e574a51691dcd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68566535"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71316664"
 ---
 # <a name="what-is-a-single-database-in-azure-sql-database"></a>Основные сведения об отдельной базе данных в Базе данных SQL Azure
 
@@ -50,7 +50,7 @@ ms.locfileid: "68566535"
 
 Дополнительные сведения см. в статье [Отличия Transact-SQL Базы данных SQL Azure](sql-database-transact-sql-information.md).
 
-## <a name="security"></a>Безопасность
+## <a name="security"></a>Группа безопасности
 
 База данных SQL обеспечивает ряд [встроенных функций безопасности и соответствия](sql-database-security-overview.md), чтобы выполнить различные требования по защите вашего приложения.
 
@@ -59,6 +59,6 @@ ms.locfileid: "68566535"
 
 ## <a name="next-steps"></a>Следующие шаги
 
-- Чтобы приступить к работе с отдельной базы данных, ознакомьтесь с [этим кратким руководством](sql-database-single-database-quickstart-guide.md).
+- Чтобы быстро приступить к работе с одной базой данных, начните с [краткого руководства по единой базе данных](sql-database-single-database-quickstart-guide.md).
 - Чтобы узнать о переносе базы данных SQL Server в Azure, ознакомьтесь с разделом [Миграция базы данных SQL Server в базу данных SQL в облаке](sql-database-single-database-migrate.md).
 - Дополнительные сведения о поддерживаемых функциях см. [здесь](sql-database-features.md).

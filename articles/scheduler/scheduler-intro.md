@@ -1,5 +1,5 @@
 ---
-title: Что такое планировщик Azure? | Документация Майкрософт
+title: Что такое планировщик Azure? | Документы Майкрософт
 description: Сведения о создании, планировании и запуске автоматических заданий, которые вызывают службы внутри и вне Azure.
 services: scheduler
 ms.service: scheduler
@@ -10,17 +10,17 @@ ms.reviewer: klam
 ms.assetid: 52aa6ae1-4c3d-43fb-81b0-6792c84bcfae
 ms.topic: conceptual
 ms.date: 09/17/2018
-ms.openlocfilehash: 21204e85adf1c68264ea448360c9e1120567ef3f
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 2f418a78f80d65cbb784685804a4cc6790c28b99
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60530911"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71300902"
 ---
 # <a name="what-is-azure-scheduler"></a>Что такое планировщик Azure?
 
 > [!IMPORTANT]
-> Служба [Azure Logic Apps](../logic-apps/logic-apps-overview.md) заменяет планировщик Azure, который выводится из эксплуатации. Для планирования заданий [попробуйте использовать Azure Logic Apps](../scheduler/migrate-from-scheduler-to-logic-apps.md). 
+> [Azure Logic Apps](../logic-apps/logic-apps-overview.md) заменяет планировщик Azure, который выводится из [эксплуатации](../scheduler/migrate-from-scheduler-to-logic-apps.md#retire-date). Чтобы продолжить работу с заданиями, настроенными в планировщике, выполните [миграцию на Azure Logic Apps](../scheduler/migrate-from-scheduler-to-logic-apps.md) как можно скорее.
 
 [Планировщик Azure](https://azure.microsoft.com/services/scheduler/) поможет вам создать [задания](../scheduler/scheduler-concepts-terms.md), которые запускаются в облаке, путем декларативного описания действий. Затем служба автоматически планирует и выполняет эти действия. Например, вы можете вызывать службы внутри и вне Azure, например вызвать конечные точки HTTP или HTTPS, а также опубликовать сообщения в очереди службы хранилища Azure и очереди или разделе Служебной шины Azure. Вы можете запускать задания сразу или позже. Планировщик поддерживает [сложные расписания и расширенное повторение](../scheduler/scheduler-advanced-complexity.md). Он определяет, когда запускать задания, хранит историю результатов заданий, которую можно просмотреть, а также надежно планирует выполнение рабочих нагрузок и прогнозирует соответствующее поведение.
 
@@ -36,7 +36,7 @@ ms.locfileid: "60530911"
 
   Например, как администратор вы можете создавать резервную копию своей базы данных в 1:00 утра каждый день в течение следующих девяти месяцев.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Создание и планирование первого задания с помощью планировщика Azure — портал Azure](scheduler-get-started-portal.md)
 * Дополнительные сведения о [тарифных планах и выставлении счетов для планировщика Azure](scheduler-plans-billing.md)

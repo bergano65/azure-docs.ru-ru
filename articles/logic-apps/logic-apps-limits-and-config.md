@@ -1,5 +1,5 @@
 ---
-title: Ограничения и настройка в Azure Logic Apps | Документация Майкрософт
+title: Ограничения и конфигурация — Azure Logic Apps
 description: Ограничения службы и значений конфигурации для Azure Logic Apps
 services: logic-apps
 ms.service: logic-apps
@@ -9,12 +9,12 @@ ms.author: estfan
 ms.reviewer: klam, LADocs
 ms.topic: article
 ms.date: 07/19/2019
-ms.openlocfilehash: 401b33c28e4ba91a0da5e4ab38f920e173302ea1
-ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
+ms.openlocfilehash: 1479c6665b5d68e0fa16ece7e37f4e2a2457c69a
+ms.sourcegitcommit: 0486aba120c284157dfebbdaf6e23e038c8a5a15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70242370"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71309790"
 ---
 # <a name="limits-and-configuration-information-for-azure-logic-apps"></a>Ограничения и сведения о конфигурации для Azure Logic Apps
 
@@ -119,13 +119,19 @@ ms.locfileid: "70242370"
 > [!NOTE]
 > У [SKU разработчика](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md#ise-level) нет опубликованных ограничений, так как этот SKU не имеет соглашения об уровне обслуживания (SLA) или возможностей для увеличения масштаба. Используйте этот номер SKU только для экспериментов, разработки и тестирования, а не для тестирования в рабочей среде и производительности.
 
+<a name="gateway-limits"></a>
+
+## <a name="gateway-limits"></a>Ограничения шлюза
+
+Azure Logic Apps поддерживает операции записи, включая операции вставки и обновления через шлюз. Однако эти операции имеют [ограничения на размер полезных данных](https://docs.microsoft.com/data-integration/gateway/service-gateway-onprem#considerations).
+
 <a name="request-limits"></a>
 
 ## <a name="http-limits"></a>Ограничения HTTP
 
 Ниже приведены ограничения для одного HTTP-запроса или синхронного вызова соединителя:
 
-#### <a name="timeout"></a>Время ожидания
+#### <a name="timeout"></a>Тайм-аут
 
 Некоторые операции соединителя выполняют асинхронные вызовы или прослушивают запросы веб-перехватчика, поэтому время ожидания для этих операций может превышать эти ограничения. Дополнительные сведения см. в разделе с техническими сведениями для указанного соединителя, а также в разделе [Триггеры и действия рабочих процессов](../logic-apps/logic-apps-workflow-actions-triggers.md#http-action).
 

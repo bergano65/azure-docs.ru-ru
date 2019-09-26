@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 03/20/2019
-ms.openlocfilehash: 7f97348999f2cab6509afeb44bc704d5109ee0f7
-ms.sourcegitcommit: a19bee057c57cd2c2cd23126ac862bd8f89f50f5
+ms.openlocfilehash: f50702688b9a261ed98c2eb3a5892d1bdbe8d11b
+ms.sourcegitcommit: 0486aba120c284157dfebbdaf6e23e038c8a5a15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71181104"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71308085"
 ---
 # <a name="information-about-using-hdinsight-on-linux"></a>Сведения об использовании HDInsight в Linux
 
@@ -88,7 +88,7 @@ ms.locfileid: "71181104"
 
 Связанные с Hadoop файлы можно найти на узлах кластера в папке `/usr/hdp`. Этот каталог содержит следующие подкаталоги:
 
-* **2.6.5.3006-29**: именем каталога является версия платформы данных Hortonworks, используемая HDInsight. Это число для вашего кластера может отличаться от указанного здесь.
+* **2.6.5.3006-29**: Имя каталога — это версия платформы Hadoop, используемая HDInsight. Это число для вашего кластера может отличаться от указанного здесь.
 * **current**: Этот каталог содержит ссылки на подкаталоги в каталоге **2.6.5.3006-29** . Он позволяет вам не запоминать номер версии.
 
 Примеры данных и JAR-файлы можно найти в распределенной файловой системе Hadoop в папках `/example` и `/HdiSamples`.

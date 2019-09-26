@@ -1,5 +1,5 @@
 ---
-title: Руководство по программированию для службы "Центры событий Azure" | Документация Майкрософт
+title: Инструкции по программированию .NET для концентраторов событий Azure | Документация Майкрософт
 description: В этой статье приводятся сведения о том, как писать код для службы "Центры событий Azure" с помощью пакета Azure SDK для .NET.
 services: event-hubs
 documentationcenter: na
@@ -7,16 +7,16 @@ author: ShubhaVijayasarathy
 ms.service: event-hubs
 ms.custom: seodec18
 ms.topic: article
-ms.date: 12/06/2018
+ms.date: 09/25/2019
 ms.author: shvija
-ms.openlocfilehash: 28b5c2db0f347b27beb31d427c7f189d74903dff
-ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
+ms.openlocfilehash: c2e23c38abbec5fd0e6010bdfc0feca882a6180d
+ms.sourcegitcommit: 0486aba120c284157dfebbdaf6e23e038c8a5a15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70913979"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71309820"
 ---
-# <a name="programming-guide-for-azure-event-hubs"></a>Руководство по программированию для Центров событий Azure
+# <a name="net-programming-guide-for-azure-event-hubs"></a>Инструкции по программированию .NET для концентраторов событий Azure
 В данной статье обсуждаются некоторые распространенные сценарии написания кодов с помощью Центров событий Azure. Предполагается, что вы уже имеете представление о Центрах событий. Общие сведения о Центрах событий см. в статье [Общие сведения о Центрах событий Azure](event-hubs-what-is-event-hubs.md).
 
 ## <a name="event-publishers"></a>Издатели событий

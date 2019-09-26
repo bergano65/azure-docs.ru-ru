@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 09/04/2019
 ms.author: diberry
-ms.openlocfilehash: 3b1b31da68d821ff27fa30e75ec1522b9d4875c8
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.openlocfilehash: 94f019205959d63a05ed3d90ede59fece3c05901
+ms.sourcegitcommit: 9fba13cdfce9d03d202ada4a764e574a51691dcd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70307435"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71316355"
 ---
 # <a name="language-and-region-support-for-luis"></a>Поддержка языков и регионов в LUIS
 
@@ -34,18 +34,18 @@ ms.locfileid: "70307435"
 |--|--|:--:|:--:|:--:|:--:|
 | Английский (США) |`en-US` | ✔ | ✔  |✔|✔|
 | *[Китайский](#chinese-support-notes) |`zh-CN` | ✔ | ✔ |✔|-|
-| Голландский |`nl-NL` |-|  -   |-|✔|
-| Французский (Франция) |`fr-FR` |-| ✔ |✔ |✔|
-| Французский (Канада) |`fr-CA` |-|   -   |-|✔|
-| Немецкий |`de-DE` |-| ✔ |✔ |✔|
+| Голландский |`nl-NL` |✔|  -   |-|✔|
+| французский (Франция) |`fr-FR` |✔| ✔ |✔ |✔|
+| французский (Канада) |`fr-CA` |-|   -   |-|✔|
+| Немецкий |`de-DE` |✔| ✔ |✔ |✔|
 | Хинди | `hi-IN`|-|-|-|-|
-| Итальянский |`it-IT` |-| ✔ |✔|✔|
-| *[Японский](#japanese-support-notes) |`ja-JP` |-| ✔ |✔|Только ключевая фраза|
-| Корейский |`ko-KR` |-|   -   |-|Только ключевая фраза|
-| Португальский (Бразилия) |`pt-BR` |-| ✔ |✔ |не все вложенные языки и региональные параметры|
-| Испанский (Испания) |`es-ES` |-| ✔ |✔|✔|
+| Итальянский |`it-IT` |✔| ✔ |✔|✔|
+| *[Японский](#japanese-support-notes) |`ja-JP` |✔| ✔ |✔|Только ключевая фраза|
+| Корейский |`ko-KR` |✔|   -   |-|Только ключевая фраза|
+| Португальский (Бразилия) |`pt-BR` |✔| ✔ |✔ |не все вложенные языки и региональные параметры|
+| испанский (Испания) |`es-ES` |✔| ✔ |✔|✔|
 | Испанский (Мексика)|`es-MX` |-|  -   |✔|✔|
-| Турецкий | `tr-TR` |-|-|-|Только тональность|
+| Турецкий | `tr-TR` |✔|-|-|Только тональность|
 
 
 Языковая поддержка зависит от [готовых сущностей](luis-reference-prebuilt-entities.md) и [готовых предметных областей](luis-reference-prebuilt-domains.md).

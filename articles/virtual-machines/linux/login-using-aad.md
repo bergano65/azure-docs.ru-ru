@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/29/2019
 ms.author: cynthn
-ms.openlocfilehash: 0e3996c28750639b227475bf4e0196f3a0c3ab0d
-ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
+ms.openlocfilehash: e30adf8b694d744e64fb7528b75b85d4a772a723
+ms.sourcegitcommit: 9fba13cdfce9d03d202ada4a764e574a51691dcd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70163218"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71316758"
 ---
 # <a name="preview-log-in-to-a-linux-virtual-machine-in-azure-using-azure-active-directory-authentication"></a>Предварительный просмотр: Вход на виртуальную машину Linux в Azure с помощью проверки подлинности Azure Active Directory
 
@@ -86,6 +86,9 @@ az vm create \
 Создание виртуальной машины и вспомогательных ресурсов занимает несколько минут.
 
 ## <a name="install-the-azure-ad-login-vm-extension"></a>Установка расширения для входа на виртуальную машину с помощью Azure AD
+
+> [!NOTE]
+> Если развернуть этот ексентион на ранее созданной виртуальной машине, убедитесь, что на компьютере установлено по меньшей мере 1 ГБ памяти, поэтому расширение не будет установлено.
 
 Чтобы войти на виртуальную машину Linux с учетными данными Azure AD, установите Azure Active Directory расширение виртуальной машины для входа. Расширения виртуальных машин — это небольшие приложения, которые выполняют задачи настройки и автоматизации после развертывания виртуальных машин Azure. С помощью команды [az vm extension set](/cli/azure/vm/extension#az-vm-extension-set) установите расширение *AADLoginForLinux* на виртуальную машину с именем *myVM* в группе ресурсов *myResourceGroup*:
 

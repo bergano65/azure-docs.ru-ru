@@ -10,12 +10,12 @@ ms.subservice: development
 ms.date: 03/15/2019
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: d97326430eebcaea64770e99c26ab593b51d5847
-ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
+ms.openlocfilehash: 55da4e3dc9c7f1c1f86a649a654ce41ef59ad839
+ms.sourcegitcommit: 0486aba120c284157dfebbdaf6e23e038c8a5a15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68476748"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71310103"
 ---
 # <a name="designing-tables-in-azure-sql-data-warehouse"></a>Проектирование таблиц в хранилище данных SQL Azure
 
@@ -109,6 +109,9 @@ ALTER TABLE SalesFact_DailyFinalLoad SWITCH PARTITION 256 TO SalesFact PARTITION
 ## <a name="statistics"></a>Статистика
 Оптимизатор запросов использует статистику уровня столбца при создании плана выполнения запроса. Чтобы повысить производительность запросов, важно иметь статистические данные по отдельным столбцам, особенно столбцы, используемые в объединениях запросов. [Создание статистики](https://docs.microsoft.com/azure/sql-data-warehouse/sql-data-warehouse-tables-statistics#automatic-creation-of-statistic) происходит автоматически.  Однако обновление статистики не происходит автоматически. Обновите статистику после добавления или изменения значительного числа строк. Например, обновите статистику после загрузки. Дополнительные сведения см. в статье [Управление статистикой таблиц в хранилище данных SQL](sql-data-warehouse-tables-statistics.md).
 
+## <a name="primary-key-and-unique-key"></a>Первичный ключ и уникальный ключ
+ПЕРВИЧный ключ поддерживается только в том случае, если используются некластеризованные и непринудительные.  Ограничение UNIQUE поддерживается только при использовании не применяется.  Проверьте [ограничения таблицы хранилища данных SQL](sql-data-warehouse-table-constraints.md).
+
 ## <a name="commands-for-creating-tables"></a>Команды для создания таблиц
 Вы можете создать пустую таблицу. Вы также можете создать и заполнить таблицу результатами инструкции Select. Ниже приведены команды T-SQL для создания таблицы.
 
@@ -128,8 +131,7 @@ ALTER TABLE SalesFact_DailyFinalLoad SWITCH PARTITION 256 TO SalesFact PARTITION
 ## <a name="unsupported-table-features"></a>Неподдерживаемые функции таблиц
 Хранилище данных SQL поддерживает многие, но не все функции таблицы, предлагаемые другими базами данных.  В следующем списке содержатся некоторые функции таблицы, которые не поддерживаются в хранилище данных SQL.
 
-- [Ограничения таблицы](/sql/t-sql/statements/alter-table-table-constraint-transact-sql) PRIMARY KEY, FOREIGN KEYS, UNIQUE, CHECK;
-
+- Внешний ключ, проверка [ограничений таблицы](/sql/t-sql/statements/alter-table-table-constraint-transact-sql)
 - [Вычисляемые столбцы](/sql/t-sql/statements/alter-table-computed-column-definition-transact-sql)
 - [Индексированные представления](/sql/relational-databases/views/create-indexed-views)
 - [Последовательность](/sql/t-sql/statements/create-sequence-transact-sql)

@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: troubleshooting
 ms.date: 04/08/2019
 ms.author: helohr
-ms.openlocfilehash: 4f325d9fc512fd9f6776fcd799b720aaf60ce472
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: c6c7a57a2093445d3922f9349242c9a902df7370
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69876760"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71300722"
 ---
 # <a name="remote-desktop-client-connections"></a>Подключения клиента удаленного рабочего стола
 
@@ -152,6 +152,11 @@ Remove-Item C:\Users\pavithir\AppData\Roaming\RdClientRadc\* -Recurse
 **Причина.** Виртуальные машины, к которым пытается подключиться пользователь, не присоединены к домену.
 
 **Исправно** Присоедините все виртуальные машины, которые являются частью пула узлов, к контроллеру домена.
+
+### <a name="error-connectionfailedusersidinformationmismatch"></a>Ошибка: коннектионфаиледусерсидинформатионмисматч
+**Причина.** Идентификатор безопасности из маркера Azure Active Directory (AD) пользователя не соответствует идентификатору безопасности, возвращенному контроллером домена при попытке включить удаленный вход в систему. Эта ошибка обычно возникает при попытке входа в среду Azure Active Directory доменных служб (Azure AD DS) с пользовательским исходным кодом из Windows Server AD.
+
+**Исправно** В настоящее время этот сценарий не поддерживается. Только пользователи, источником которых является Azure Active Directory, могут входить в виртуальные машины виртуальных рабочих столов Windows, подключенные к Azure AD DS.
 
 ## <a name="user-connects-but-nothing-is-displayed-no-feed"></a>Пользователь подключается, но ничего не отображается (канал отсутствует)
 

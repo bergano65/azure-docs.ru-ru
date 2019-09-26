@@ -10,21 +10,23 @@ ms.author: sihhu
 author: MayMSFT
 manager: cgronlun
 ms.reviewer: nibaccam
-ms.date: 09/16/2019
-ms.openlocfilehash: ceccc515b73bd41c7933889c61617c360c678eb7
-ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
+ms.date: 09/25/2019
+ms.openlocfilehash: 9ccc5f5721d1ddc8459918913a4f3ce707766dea
+ms.sourcegitcommit: 9fba13cdfce9d03d202ada4a764e574a51691dcd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71059298"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71316695"
 ---
 # <a name="train-with-datasets-preview-in-azure-machine-learning"></a>Обучение с наборами данных (Предварительная версия) в Машинное обучение Azure
 
 В этой статье вы узнаете о двух способах использования [наборов данных машинное обучение Azure](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset%28class%29?view=azure-ml-py) в ходе удаленного обучения экспериментов, не беспокоясь о строках подключения и путях к данным.
 
-- Вариант 1. Передайте наборы данных непосредственно в скрипте обучения.
+- Вариант 1. При наличии структурированных данных создайте Табулардатасет и используйте их непосредственно в обучающем скрипте.
 
-- Вариант 2. Используйте наборы данных для подключения или загрузки файлов на удаленное вычисление для обучения.
+- Вариант 2. При наличии неструктурированных данных создайте Филедатасет и подключите или Скачайте файлы на удаленное вычисление для обучения.
+
+Машинное обучение Azure наборы данных обеспечивают простую интеграцию с Машинное обучение Azure обучающими [продуктами, такими](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.hyperdrive?view=azure-ml-py)как [скриптрун](https://docs.microsoft.com/python/api/azureml-core/azureml.core.scriptrun?view=azure-ml-py), [оценщик](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.estimator?view=azure-ml-py) и подсистему.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -39,9 +41,9 @@ ms.locfileid: "71059298"
 > [!Note]
 > Некоторые классы набора данных (Предварительная версия) имеют зависимости от пакета [azureml-](https://docs.microsoft.com/python/api/azureml-dataprep/?view=azure-ml-py) DataMarket. Для пользователей Linux эти классы поддерживаются только в следующих дистрибутивах:  Red Hat Enterprise Linux, Ubuntu, Fedora и CentOS.
 
-## <a name="option-1-pass-datasets-as-inputs-to-training-scripts"></a>Вариант 1. Передача наборов данных в качестве входных данных в скрипты обучения
+## <a name="option-1-use-datasets-directly-in-training-scripts"></a>Вариант 1. Использование наборов данных непосредственно в сценариях обучения
 
-Машинное обучение Azure наборы данных обеспечивают простую интеграцию с Машинное обучение Azure обучающими [продуктами, такими](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.hyperdrive?view=azure-ml-py)как [скриптрун](https://docs.microsoft.com/python/api/azureml-core/azureml.core.scriptrun?view=azure-ml-py), [оценщик](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.estimator?view=azure-ml-py) и подсистему. В этом примере создается [табулардатасет](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py) и используется в качестве входных данных для `estimator` объекта для обучения. 
+В этом примере вы создаете [табулардатасет](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py) и используете его в качестве непосредственного ввода для `estimator` объекта для обучения. 
 
 ### <a name="create-a-tabulardataset"></a>Создание Табулардатасет
 
@@ -52,6 +54,24 @@ from azureml.core.dataset import Dataset
 
 web_path ='https://dprepdata.blob.core.windows.net/demo/Titanic.csv'
 titanic_ds = Dataset.Tabular.from_delimited_files(path=web_path)
+```
+
+### <a name="access-the-input-dataset-in-your-training-script"></a>Доступ к входному набору данных в скрипте обучения
+
+Объекты Табулардатасет предоставляют возможность загружать данные в таблицу данных Pandas или Spark, чтобы вы могли работать с привычными библиотеками подготовки и обучения данных. Чтобы использовать эту возможность, можно передать Табулардатасет в качестве входных данных в обучающей конфигурации, а затем извлечь его в скрипте.
+
+Для этого необходимо получить доступ к входному набору [`Run`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run.run?view=azure-ml-py) данных через объект в скрипте обучения и [`to_pandas_dataframe()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py#to-pandas-dataframe--) использовать метод. 
+
+```Python
+%%writefile $script_folder/train_titanic.py
+
+from azureml.core import Dataset, Run
+
+run = Run.get_context()
+# get the input dataset by name
+dataset = run.input_datasets['titanic_ds']
+# load the TabularDataset to pandas DataFrame
+df = dataset.to_pandas_dataframe()
 ```
 
 ### <a name="configure-the-estimator"></a>Настройка средства оценки
@@ -77,25 +97,6 @@ est = Estimator(source_directory=script_folder,
 # Submit the estimator as part of your experiment run
 experiment_run = experiment.submit(est)
 experiment_run.wait_for_completion(show_output=True)
-
-```
-
-### <a name="access-the-input-dataset-in-your-training-script"></a>Доступ к входному набору данных в скрипте обучения
-
-Объекты Табулардатасет предоставляют возможность загружать данные в таблицу данных Pandas или Spark, чтобы вы могли работать с привычными библиотеками подготовки и обучения данных. Чтобы использовать эту возможность, можно передать Табулардатасет в качестве входных данных в обучающей конфигурации, а затем извлечь его в скрипте.
-
-Для этого необходимо получить доступ к входному набору [`Run`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run.run?view=azure-ml-py) данных через объект в скрипте обучения и [`to_pandas_dataframe()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py#to-pandas-dataframe--) использовать метод. 
-
-```Python
-%%writefile $script_folder/train_titanic.py
-
-from azureml.core import Dataset, Run
-
-run = Run.get_context()
-# get the input dataset by name
-dataset = run.input_datasets['titanic']
-# load the TabularDataset to pandas DataFrame
-df = dataset.to_pandas_dataframe()
 ```
 
 ## <a name="option-2--mount-files-to-a-remote-compute-target"></a>Вариант 2.  Подключение файлов к удаленному целевому объекту вычислений
@@ -125,9 +126,9 @@ mnist_ds = Dataset.File.from_files(path = web_paths)
 
 ### <a name="configure-the-estimator"></a>Настройка средства оценки
 
-Вместо передачи набора данных с помощью `inputs` параметра в средстве оценки можно также передать набор данных через `script_params` и получить путь к данным (точка подключения) в обучающем скрипте через аргументы. Таким образом можно избежать зависимости от Машинное обучение Azure пакета SDK из сценария обучения.
+Вместо передачи набора данных с помощью `inputs` параметра в средстве оценки можно также передать набор данных через `script_params` и получить путь к данным (точка подключения) в обучающем скрипте через аргументы. Таким образом вы сможете получить доступ к данным и использовать существующий обучающий сценарий.
 
-Объект средства оценки [SKLearn](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.sklearn.sklearn?view=azure-ml-py) используется для отправки экспериментов scikit-учиться.
+Объект средства оценки [SKLearn](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.sklearn.sklearn?view=azure-ml-py) используется для отправки экспериментов scikit-учиться. Узнайте больше о обучении с помощью средства [оценки SKlearn](how-to-train-scikit-learn.md).
 
 ```Python
 from azureml.train.sklearn import SKLearn
@@ -187,10 +188,11 @@ y_test = load_data(y_test, True).reshape(-1)
 
 ## <a name="notebook-examples"></a>Примеры записных книжек
 
-[Примеры записных книжек](https://aka.ms/dataset-tutorial) демонстрируют и расширяют концепции в этой статье, такие как, с помощью наборов данных с объектами Скриптрун и [хиперддриве](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training-with-deep-learning/train-hyperparameter-tune-deploy-with-keras/train-hyperparameter-tune-deploy-with-keras.ipynb) .
+В этой статье демонстрируются и развертываются [записные книжки набора данных](https://aka.ms/dataset-tutorial) . 
 
 ## <a name="next-steps"></a>Следующие шаги
 
 * [Автоматическое обучение моделей машинного обучения](how-to-auto-train-remote.md) с помощью табулардатасетс.
 
 * [Обучение моделей классификации изображений](https://aka.ms/filedataset-samplenotebook) с помощью филедатасетс.
+

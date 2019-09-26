@@ -8,14 +8,14 @@ manager: cshankar
 ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
-ms.date: 08/05/2019
+ms.date: 09/24/2019
 ms.custom: seodec18
-ms.openlocfilehash: 72d98e0ca4f75835e7dcc2e7a14b037ccf0d6d7f
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: 6141f898a33b4b37c2a1f16e115b184e21163a5a
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68840547"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71300698"
 ---
 # <a name="plan-your-azure-time-series-insights-preview-environment"></a>Запланируйте среду службы"Аналитика временных рядов Azure (предварительная версия)"
 
@@ -29,7 +29,7 @@ ms.locfileid: "68840547"
 Чтобы приступить к работе со службой "Аналитика временных рядов Azure", необходимо понимать:
 
 * Что вы получаете при [подготовке среды предварительного просмотра аналитики временных рядов](#the-preview-environment).
-* Идентификаторы [временных рядов и свойства отметок времени](#configure-time-series-ids-and-timestamp-properties).
+* [Идентификаторы временных рядов и свойства отметок времени](#configure-time-series-ids-and-timestamp-properties).
 * Новые [модели временных рядов](#understand-the-time-series-model)и способы создания собственных.
 * Как [эффективно отправить события в JSON](#shape-your-events).
 * [Параметры "бизнес-восстановление](#business-disaster-recovery)" аналитики временных рядов.
