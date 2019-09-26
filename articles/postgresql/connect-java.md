@@ -8,12 +8,12 @@ ms.custom: seo-java-august2019
 ms.devlang: java
 ms.topic: quickstart
 ms.date: 05/06/2019
-ms.openlocfilehash: b025315391ceb15fc1ae76f0365898f02882dd0b
-ms.sourcegitcommit: 39d95a11d5937364ca0b01d8ba099752c4128827
+ms.openlocfilehash: b729881d30248bb4c3a717d70009cd68da91cf94
+ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69563443"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71211841"
 ---
 # <a name="quickstart-use-java-to-connect-to-and-query-data-in-azure-database-for-postgresql---single-server"></a>Краткое руководство. Подключение к службе "База данных Azure для PostgreSQL — отдельный сервер" и выполнение запроса данных с помощью Java
 В этом кратком руководстве объясняется, как подключиться к базе данных Azure для PostgreSQL с помощью приложения Java. Здесь также показано, как использовать инструкции SQL для запроса, вставки, обновления и удаления данных в базе данных. В этой статье предполагается, что у вас уже есть опыт разработки на Java и вы только начали работу с Базой данных Azure для PostgreSQL.
@@ -34,7 +34,7 @@ ms.locfileid: "69563443"
 2. В меню слева на портале Azure выберите **Все ресурсы** и выполните поиск по имени созданного сервера (например, **mydemoserver**).
 3. Выберите имя сервера.
 4. Запишите **имя сервера** и **имя для входа администратора сервера** с панели сервера **Обзор**. Если вы забыли свой пароль, можно также сбросить пароль с помощью этой панели.
- ![Имя сервера службы "База данных Azure для PostgreSQL"](./media/connect-java/1-connection-string.png)
+ ![Имя сервера службы "База данных Azure для PostgreSQL"](./media/connect-java/azure-database-postgresql-server-name.png)
 
 ## <a name="connect-create-table-and-insert-data"></a>Подключение, создание таблицы и вставка данных
 Используйте указанный ниже код для подключения и загрузки информации в базу данных с помощью функции с инструкцией SQL **INSERT**. Методы [getConnection()](https://www.postgresql.org/docs/7.4/static/jdbc-use.html), [createStatement()](https://jdbc.postgresql.org/documentation/head/query.html) и [executeQuery()](https://jdbc.postgresql.org/documentation/head/query.html) используются для подключения к базе данных, удаления и создания таблицы. Объект [prepareStatement](https://jdbc.postgresql.org/documentation/head/query.html) используется для создания команд вставки, а методы setString() и setInt() — для привязки значений параметров. Метод [executeUpdate()](https://jdbc.postgresql.org/documentation/head/update.html) запускает команду для каждого набора параметров. 

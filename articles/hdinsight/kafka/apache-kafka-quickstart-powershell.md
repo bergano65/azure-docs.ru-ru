@@ -1,19 +1,19 @@
 ---
 title: Краткое руководство. Настройка Apache Kafka в HDInsight с помощью Azure PowerShell
 description: В этом кратком руководстве вы узнаете, как создать кластер Apache Kafka в Azure HDInsight с помощью Azure PowerShell. Вы также узнаете, что такое разделы, подписчики и потребители в Kafka.
-ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
+ms.service: hdinsight
 ms.custom: mvc
 ms.topic: quickstart
 ms.date: 06/12/2019
-ms.openlocfilehash: c47df581edafbb2a378e7c5e75516a44fafcab71
-ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
+ms.openlocfilehash: 79224879dc0f23c7ad022134c6add087b90304b7
+ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68779508"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71123154"
 ---
 # <a name="quickstart-create-apache-kafka-cluster-in-azure-hdinsight-using-powershell"></a>Краткое руководство. Создание кластера Apache Kafka в Azure HDInsight с помощью PowerShell
 

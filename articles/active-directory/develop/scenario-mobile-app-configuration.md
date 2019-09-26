@@ -15,12 +15,12 @@ ms.date: 07/23/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8ebf524d932322fa08729f229a451afe656900d5
-ms.sourcegitcommit: 388c8f24434cc96c990f3819d2f38f46ee72c4d8
+ms.openlocfilehash: e7b731c9936ab85b19428687330044a46c563c49
+ms.sourcegitcommit: 263a69b70949099457620037c988dc590d7c7854
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70061406"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71268368"
 ---
 # <a name="mobile-app-that-calls-web-apis---code-configuration"></a>Мобильное приложение, вызывающее веб-API — конфигурация кода
 
@@ -33,14 +33,14 @@ ms.locfileid: "70061406"
   Библиотека MSAL | Описание
   ------------ | ----------
   ![MSAL.NET](media/sample-v2-code/logo_NET.png) <br/> MSAL.NET  | Для разработки переносимых приложений. MSAL.NET поддерживаемые платформы для создания мобильного приложения — UWP, Xamarin. iOS и Xamarin. Android.
-  ![MSAL.iOS](media/sample-v2-code/logo_iOS.png) <br/> MSAL.iOS | Разработка собственных приложений iOS с помощью цели C или SWIFT
+  ![MSAL.iOS](media/sample-v2-code/logo_iOS.png) <br/> MSAL.iOS | Разработка собственных приложений iOS с помощью цели-C или SWIFT
   ![MSAL.Android](media/sample-v2-code/logo_android.png) <br/> MSAL.Android | Разработка собственных приложений Android в Java для Android
 
-## <a name="configuring-the-application"></a>Настройка приложения
-
-Мобильные приложения используют `PublicClientApplication` класс. Вот как создать его экземпляр:
+## <a name="instantiating-the-application"></a>Создание экземпляра приложения
 
 ### <a name="android"></a>Android
+
+Мобильные приложения используют `PublicClientApplication` класс. Вот как создать его экземпляр:
 
 ```Java
 PublicClientApplication sampleApp = new PublicClientApplication(
@@ -50,21 +50,28 @@ PublicClientApplication sampleApp = new PublicClientApplication(
 
 ### <a name="ios"></a>iOS
 
-```swift
-// Initialize the app.
-guard let authorityURL = URL(string: kAuthority) else {
-    self.loggingText.text = "Unable to create authority URL"
-    return
-}
-let authority = try MSALAADAuthority(url: authorityURL)
-let msalConfiguration = MSALPublicClientApplicationConfig(clientId: kClientID, redirectUri: nil, authority: authority)
-self.applicationContext = try MSALPublicClientApplication(configuration: msalConfiguration)
-}
+Мобильным приложениям в iOS необходимо создать экземпляр `MSALPublicClientApplication` класса.
+
+Objective-C.
+
+```objc
+NSError *msalError = nil;
+     
+MSALPublicClientApplicationConfig *config = [[MSALPublicClientApplicationConfig alloc] initWithClientId:@"<your-client-id-here>"];    
+MSALPublicClientApplication *application = [[MSALPublicClientApplication alloc] initWithConfiguration:config error:&msalError];
 ```
+
+SWIFT
+```swift
+let config = MSALPublicClientApplicationConfig(clientId: "<your-client-id-here>")
+if let application = try? MSALPublicClientApplication(configuration: config){ /* Use application */}
+```
+
+Существуют [Дополнительные свойства мсалпубликклиентаппликатионконфиг](https://azuread.github.io/microsoft-authentication-library-for-objc/Classes/MSALPublicClientApplicationConfig.html#/Configuration%20options) , которые могут переопределить центр по умолчанию, указать универсальный код ресурса (URI) перенаправления или изменить поведение кэширования маркера MSAL. 
 
 ### <a name="xamarin-or-uwp"></a>Xamarin или UWP
 
-В следующем абзаце объясняется, как настроить код приложения для приложений Xamarin. iOS, Xamarin. Android и UWP. Первым шагом является создание экземпляра приложения. Необязательный шаг — настройка брокера.
+В следующем абзаце объясняется, как создать приложение для приложений Xamarin. iOS, Xamarin. Android и UWP.
 
 #### <a name="instantiating-the-application"></a>Создание экземпляра приложения
 
@@ -102,7 +109,7 @@ var pca = PublicClientApplicationBuilder
 - Список всех модификаторов, доступных в `PublicClientApplicationBuilder`, см. в справочной документации [публикклиентаппликатионбуилдер](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.publicclientapplicationbuilder#methods)
 - Описание всех параметров, предоставляемых в `PublicClientApplicationOptions` разделе см. [публикклиентаппликатионоптионс](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.publicclientapplicationoptions), в справочной документации.
 
-#### <a name="xamarin-ios-specific-considerations"></a>Особенности, связанные с Xamarin iOS
+## <a name="xamarin-ios-specific-considerations"></a>Особенности, связанные с Xamarin iOS
 
 В Xamarin iOS существует несколько аспектов, которые необходимо учитывать при использовании MSAL.NET:
 
@@ -113,7 +120,15 @@ var pca = PublicClientApplicationBuilder
 
 Подробные сведения приведены в разделе [рекомендации по Xamarin iOS](msal-net-xamarin-ios-considerations.md) .
 
-#### <a name="other-xamarin-android-specific-considerations"></a>Другие аспекты, связанные с Xamarin Android
+## <a name="msal-for-ios-and-macos-specific-considerations"></a>Рекомендации по MSAL для iOS и macOS
+
+Аналогичные рекомендации применяются при использовании MSAL для iOS и macOS.
+
+1. [`openURL` Реализация обратного вызова](#brokered-authentication-for-msal-for-ios-and-macos)
+2. [Включить группы доступа к цепочке ключей](howto-v2-keychain-objc.md)
+3. [Настройка браузеров и представлений](customize-webviews.md)
+
+## <a name="xamarin-android-specific-considerations"></a>Особенности, связанные с Xamarin Android
 
 Ниже приведены особенности, относящиеся к Xamarin Android.
 
@@ -132,17 +147,21 @@ var pca = PublicClientApplicationBuilder
 
 ## <a name="configuring-the-application-to-use-the-broker"></a>Настройка приложения для использования брокера
 
-### <a name="why-use-brokers-on-xamarinios-and-xamarinandroid-applications"></a>Зачем использовать брокеры в приложениях Xamarin. iOS и Xamarin. Android?
+### <a name="why-use-brokers-in-ios-and-android-applications"></a>Зачем использовать брокеры в приложениях iOS и Android?
 
 В Android и iOS, брокеры включают:
 
-- Единый вход (SSO). Пользователям не потребуется входить в каждое приложение.
+- Единый вход (SSO), когда устройство зарегистрировано в AAD. Пользователям не потребуется входить в каждое приложение.
 - Идентификация устройства. Включает политики условного доступа, связанные с устройствами Azure AD, путем доступа к сертификату устройства, созданному на устройстве при присоединении к рабочей области.
 - Проверка идентификации приложения. Когда приложение вызывает брокер, ему передается URL-адрес перенаправления, и брокер проверяет его.
 
 ### <a name="enable-the-brokers-on-xamarin"></a>Включение брокеров в Xamarin
 
-Чтобы включить одну из этих функций, используйте `WithBroker()` параметр при `PublicClientApplicationBuilder.CreateApplication` вызове метода. `.WithBroker()`по умолчанию имеет значение true. Выполните следующие действия для [iOS](#brokered-authentication-for-xamarinios).
+Чтобы включить одну из этих функций, используйте `WithBroker()` параметр при `PublicClientApplicationBuilder.CreateApplication` вызове метода. `.WithBroker()`по умолчанию имеет значение true. Выполните следующие действия для [Xamarin. iOS](#brokered-authentication-for-xamarinios).
+
+### <a name="enable-the-broker-for-msal-for-ios-and-macos"></a>Включение брокера для MSAL для iOS и macOS
+
+Проверка подлинности через посредника включена по умолчанию для сценариев AAD в MSAL для iOS и macOS. Выполните следующие действия, чтобы настроить приложение для поддержки проверки подлинности через посредника для [MSAL для iOS и macOS](#brokered-authentication-for-msal-for-ios-and-macos). Обратите внимание, что некоторые шаги в [MSAL для Xamarin. iOS](#brokered-authentication-for-xamarinios) и [MSAL для iOS и macOS](#brokered-authentication-for-msal-for-ios-and-macos)различны.
 
 ### <a name="brokered-authentication-for-xamarinios"></a>Проверка подлинности через посредника для Xamarin. iOS
 
@@ -252,6 +271,80 @@ MSAL использует `–canOpenURL:` для проверки устано�
     <array>
       <string>msauthv2</string>
     </array>
+```
+
+### <a name="brokered-authentication-for-msal-for-ios-and-macos"></a>Аутентификация через посредника для MSAL для iOS и macOS
+
+Проверка подлинности по брокеру включена по умолчанию для сценариев AAD.
+
+#### <a name="step-1-update-appdelegate-to-handle-the-callback"></a>Шаг 1. Обновление AppDelegate для обработки обратного вызова
+
+Когда MSAL для iOS и macOS вызывает брокер, брокер, в свою очередь, выполняет обратный вызов к приложению через `openURL` метод. Так как MSAL будет ждать ответа от брокера, ваше приложение должно взаимодействовать для вызова MSAL назад. Для этого необходимо обновить `AppDelegate.m` файл, переопределив приведенный ниже метод.
+
+Objective-C.
+
+```objc
+- (BOOL)application:(UIApplication *)app
+            openURL:(NSURL *)url
+            options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
+{
+    return [MSALPublicClientApplication handleMSALResponse:url 
+                                         sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]];
+}
+```
+
+SWIFT
+
+```swift
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        guard let sourceApplication = options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String else {
+            return false
+        }
+        
+        return MSALPublicClientApplication.handleMSALResponse(url, sourceApplication: sourceApplication)
+    }
+```
+
+Обратите внимание, что, если вы приняли уисценеделегате в iOS 13 +, то вместо этого необходимо поместить `scene:openURLContexts:` обратный вызов MSAL в уисценеделегате (см. [документацию Apple](https://developer.apple.com/documentation/uikit/uiscenedelegate/3238059-scene?language=objc)). MSAL `handleMSALResponse:sourceApplication:` необходимо вызывать только один раз для каждого URL-адреса.
+
+#### <a name="step-2-register-a-url-scheme"></a>Шаг 2. Регистрация схемы URL-адресов
+
+MSAL для iOS и macOS использует URL-адреса для вызова брокера, а затем возвращает ответ брокера обратно в приложение. Чтобы завершить цикл обработки, необходимо зарегистрировать схему URL-адресов для приложения в `Info.plist` файле.
+
+Добавьте в префикс настраиваемой схемы `msauth`URL-адреса. Затем добавьте **идентификатор пакета** в конец.
+
+`msauth.(BundleId)`
+
+**Например:** 
+`msauth.com.yourcompany.xforms`
+
+> [!NOTE]
+> Эта схема URL-адресов станет частью RedirectUri, используемой для уникальной идентификации приложения при получении ответа от брокера. Убедитесь, что RedirectUri в формате `msauth.(BundleId)://auth` зарегистрирован для вашего приложения на [портале Azure](https://portal.azure.com).
+
+```XML
+<key>CFBundleURLTypes</key>
+<array>
+    <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
+            <string>msauth.[BUNDLE_ID]</string>
+        </array>
+    </dict>
+</array>
+```
+
+#### <a name="step-3-lsapplicationqueriesschemes"></a>Шаг 3. лсаппликатионкуериессчемес
+
+**Добавьте`LSApplicationQueriesSchemes`** , чтобы разрешить вызов Microsoft Authenticator, если он установлен.
+Обратите внимание, что при компиляции приложения с помощью Xcode 11 и более поздних версий требуется схема "msauthv3". 
+
+```XML 
+<key>LSApplicationQueriesSchemes</key>
+<array>
+  <string>msauthv2</string>
+  <string>msauthv3</string>
+</array>
 ```
 
 ### <a name="brokered-authentication-for-xamarinandroid"></a>Аутентификация через посредника для Xamarin. Android
