@@ -9,7 +9,7 @@
       href: v2-overview.md
     - name: Краткие руководства
       items:
-        - name: Настройка среды разработки
+        - name: Настройка клиента
           href: quickstart-create-new-tenant.md
         - name: Настройка приложения
           items:
@@ -49,7 +49,7 @@
           items:
             - name: Android
               href: quickstart-v2-android.md
-            - name: iOS
+            - name: iOS и macOS
               href: quickstart-v2-ios.md
             - name: Универсальная платформа Windows
               href: quickstart-v2-uwp.md
@@ -75,7 +75,7 @@
           items:
             - name: Android
               href: tutorial-v2-android.md
-            - name: iOS
+            - name: iOS и macOS
               href: tutorial-v2-ios.md
             - name: Универсальная платформа Windows
               href: tutorial-v2-windows-uwp.md
@@ -223,12 +223,14 @@
           items:
             - name: Обзор
               href: msal-overview.md
-            - name: Миграция
+            - name: Миграция из ADAL
               items:
                 - name: Миграция в MSAL.NET
                   href: msal-net-migration.md
                 - name: Миграция в MSAL.js
                   href: msal-compare-msal-js-and-adal-js.md
+                - name: Миграция в MSAL для iOS и MacOS
+                  href: migrate-objc-adal-msal.md
                 - name: Перенос приложений Xamarin из ADAL.NET в MSAL.NET с помощью брокеров
                   href: msal-net-migration-ios-broker.md
             - name: Поддерживаемые потоки аутентификации
@@ -239,8 +241,6 @@
                   href: msal-acquire-cache-tokens.md
                 - name: "Области для приложений версии\_1.0"
                   href: msal-v1-app-scopes.md
-                - name: Сериализация кэша маркеров (.NET)
-                  href: msal-net-token-cache-serialization.md
             - name: Клиентские приложения
               items:
                 - name: Клиентские приложения
@@ -257,18 +257,28 @@
               href: msal-handling-exceptions.md
             - name: Ведение журналов
               href: msal-logging.md
-            - name: Единый вход (JS)
-              href: msal-js-sso.md
-            - name: Поведение запроса (JS)
-              href: msal-js-prompt-behavior.md
-            - name: Поддержка ADFS (.NET)
-              href: msal-net-adfs-support.md
+            - name: Единый вход
+              items:
+                - name: Единый вход с использованием MSAL.js
+                  href: msal-js-sso.md
+                - name: Единый вход с использованием MSAL для iOS и macOS
+                  items:
+                    - name: Единый вход между приложениями MSAL
+                      href: single-sign-on-macos-ios.md
+                    - name: Единый вход между приложениями ADAL и MSAL
+                      href: sso-between-adal-msal-apps-macos-ios.md
+            - name: Интеграция с ADFS
+              items:
+                - name: Поддержка ADFS в MSAL.NET
+                  href: msal-net-adfs-support.md
             - name: "Интеграция с Azure\_AD\_B2C"
               items:
                 - name: JavaScript
                   href: msal-b2c-overview.md
                 - name: .NET
                   href: msal-net-aad-b2c-considerations.md
+                - name: iOS и macOS
+                  href: 'config-authority.md#b2c'
             - name: Рекомендации и известные проблемы
               items:
                 - name: MSAL.NET
@@ -283,6 +293,10 @@
                       href: msal-js-known-issues-ie-edge-browsers.md
                     - name: Известные проблемы c Safari
                       href: msal-js-known-issues-safari-browser.md
+                - name: MSAL для iOS и MacOS
+                  items:
+                    - name: Проблемы с SSL
+                      href: ssl-issues.md
         - name: Протокол аутентификации
           items:
             - name: "Типы приложений и OAuth\_2.0"
@@ -378,6 +392,8 @@
               items:
                 - name: Получение маркера из кэша
                   href: msal-net-acquire-token-silently.md
+                - name: Сериализация кэша маркеров
+                  href: msal-net-token-cache-serialization.md
                 - name: Очистка кэша маркеров
                   href: msal-net-clear-token-cache.md
                 - name: Создание экземпляра общедоступного клиента с параметрами
@@ -394,6 +410,20 @@
                   href: msal-js-avoid-page-reloads.md
                 - name: Передача пользовательского состояния в запросах на аутентификацию
                   href: msal-js-pass-custom-state-authentication-request.md
+                - name: Поведения запроса
+                  href: msal-js-prompt-behavior.md
+            - name: MSAL для iOS и MacOS
+              items:
+                - name: Отличия библиотеки проверки подлинности Майкрософт для iOS и macOS
+                  href: msal-differences-ios-macos.md
+                - name: Настройка цепочки ключей
+                  href: howto-v2-keychain-objc.md
+                - name: Настройка браузеров и веб-представлений
+                  href: customize-webviews.md
+                - name: Запрашивание пользовательских утверждений
+                  href: request-custom-claims.md
+                - name: Настройка URI перенаправления
+                  href: redirect-uris-ios.md
         - name: Работа с Visual Studio
           items:
             - name: Использование подключенной службы Active Directory
@@ -428,7 +458,7 @@
       href: v1-overview.md
     - name: Краткие руководства
       items:
-        - name: Настройка среды разработки
+        - name: Настройка клиента
           href: quickstart-create-new-tenant.md
         - name: Настройка приложения
           items:
@@ -468,7 +498,7 @@
           items:
             - name: Android
               href: quickstart-v1-android.md
-            - name: iOS
+            - name: iOS и macOS
               href: quickstart-v1-ios.md
             - name: Платформа .NET для классических приложений Windows
               href: quickstart-v1-dotnet.md

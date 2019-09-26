@@ -95,22 +95,22 @@
       items:
         - name: Распространенные ошибки
           href: troubleshoot.md
-        - name: Распространенные оповещения
-          items:
-            - name: Распространенные оповещения
-              href: troubleshoot-alerts.md
-            - name: Исправление неработающей конфигурации сети
-              href: alert-nsg.md
-            - name: Восстановление отсутствующих субъектов-служб
-              href: alert-service-principal.md
-            - name: 'Оповещения, связанные с защищенным протоколом LDAP'
-              href: alert-ldaps.md
         - name: Ошибки несоответствия клиента
           href: mismatched-tenant-error.md
         - name: Приостановленные домены
           href: suspension.md
         - name: Защищенный протокол LDAP
           href: tshoot-ldaps.md
+        - name: Известные проблемы
+          items:
+            - name: Распространенные оповещения
+              href: troubleshoot-alerts.md
+            - name: Сетевые оповещения
+              href: alert-nsg.md
+            - name: 'Оповещения, связанные с субъектом-службы'
+              href: alert-service-principal.md
+            - name: 'Оповещения, связанные с защищенным протоколом LDAP'
+              href: alert-ldaps.md
 - name: Ресурсы
   items:
     - name: Часто задаваемые вопросы

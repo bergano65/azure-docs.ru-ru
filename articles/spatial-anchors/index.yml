@@ -16,6 +16,17 @@ metadata:
 abstract:
   description: "\"Пространственные привязки\"\_— это-кросс-платформенная служба для разработки, которая позволяет создавать среды смешанной реальности, используя объекты, расположение которых на устройствах не меняется с течением времени."
 sections:
+  - title: Основные понятия
+    items:
+      - type: paragraph
+        text: 'Ознакомьтесь с основными концепциями, которые помогут начать работу со службой "Пространственные привязки Azure".'
+      - type: list
+        style: unordered
+        items:
+          - html: <a href="/azure/spatial-anchors/concepts/authentication">Аутентификация.</a>
+          - html: <a href="/azure/spatial-anchors/concepts/anchor-relationships-way-finding">Связи между привязками и поиск пути.</a>
+          - html: <a href="/azure/spatial-anchors/concepts/guidelines-effective-anchor-experiences">Рекомендации по работе.</a>
+          - html: <a href="/azure/spatial-anchors/concepts/logging-diagnostics">Ведение журнала и диагностика.</a>
   - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph
@@ -24,35 +35,35 @@ sections:
         style: icon48
         items:
           - image:
-              src: /media/logos/logo_android.svg
-              alt: null
-            text: Android
-            href: quickstarts/get-started-android.md
-          - image:
               src: /media/logos/logo_Windows.svg
               alt: null
-            text: HoloLens
-            href: quickstarts/get-started-hololens.md
-          - image:
-              src: /media/logos/logo_ios.svg
-              alt: null
-            text: iOS
-            href: quickstarts/get-started-ios.md
+            text: Unity HoloLens
+            href: quickstarts/get-started-unity-hololens.md
           - image:
               src: /media/logos/logo_android.svg
               alt: null
             text: Unity Android
             href: quickstarts/get-started-unity-android.md
           - image:
-              src: /media/logos/logo_Windows.svg
-              alt: null
-            text: Unity HoloLens
-            href: quickstarts/get-started-unity-hololens.md
-          - image:
               src: /media/logos/logo_ios.svg
               alt: null
             text: Unity iOS
             href: quickstarts/get-started-unity-ios.md
+          - image:
+              src: /media/logos/logo_Windows.svg
+              alt: null
+            text: HoloLens
+            href: quickstarts/get-started-hololens.md
+          - image:
+              src: /media/logos/logo_android.svg
+              alt: null
+            text: Android
+            href: quickstarts/get-started-android.md
+          - image:
+              src: /media/logos/logo_ios.svg
+              alt: null
+            text: iOS
+            href: quickstarts/get-started-ios.md
           - image:
               src: /media/logos/logo_xamarin.svg
               alt: null
@@ -72,3 +83,5 @@ sections:
         items:
           - html: <a href="/azure/spatial-anchors/tutorials/tutorial-share-anchors-across-devices">Совместное использование в Unity.</a>
           - html: "<a href=\"/azure/spatial-anchors/tutorials/tutorial-use-cosmos-db-to-store-anchors\">Совместное использование в Unity с помощью Azure Cosmos\_DB.</a>"
+          - html: <a href="/azure/spatial-anchors/tutorials/tutorial-new-unity-hololens-app">Запуск нового приложения Unity HoloLens.</a>
+          - html: <a href="/azure/spatial-anchors/tutorials/tutorial-new-android-app">Запуск нового приложения Android.</a>

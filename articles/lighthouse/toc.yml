@@ -19,7 +19,7 @@
       displayName: scenarios
       href: ./concepts/cross-tenant-management-experience.md
     - name: Предложения управляемых служб в Azure Marketplace
-      displayName: 'managed services offer, azure marketplace'
+      displayName: 'azure marketplace, marketplace, managed service, private, plan'
       href: ./concepts/managed-services-offers.md
     - name: Рекомендации по безопасности
       displayName: 'mfa, authentication, secure, group'
@@ -27,6 +27,9 @@
     - name: Рекомендации по программе для поставщиков облачных решений
       displayName: 'csp, aobo, partner'
       href: ./concepts/cloud-solution-provider.md
+    - name: Использование Azure Lighthouse в корпоративных сценариях
+      displayName: 'corporation, IT, consolidate'
+      href: ./concepts/enterprise.md
 - name: Руководства
   items:
     - name: Подключение клиента к системе делегированного управления ресурсами Azure

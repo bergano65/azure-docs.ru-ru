@@ -431,6 +431,8 @@
                   href: app/asp-net-trace-logs.md
                 - name: Счетчики производительности
                   href: app/performance-counters.md
+                - name: Счетчики событий
+                  href: app/eventcounters.md
                 - name: Зависимости
                   href: app/asp-net-dependencies.md
                 - name: ApplicationInsights.config
@@ -519,6 +521,8 @@
                   items:
                     - name: Обзор
                       href: platform/diagnostics-extension-overview.md
+                    - name: Сбор журналов
+                      href: platform/azure-storage-iis-table.md
                     - name: Windows
                       items:
                         - name: Журнал версий
@@ -644,22 +648,20 @@
               href: insights/service-map.md
             - name: Группы компьютеров
               href: platform/computer-groups.md
-        - name: Ресурсы Azure
+        - name: Платформа Azure
           items:
-            - name: Журналы диагностики
+            - name: Общие сведения о журналах платформы
+              href: platform/platform-logs-overview.md
+            - name: Журналы ресурсов
               items:
                 - name: Обзор
-                  href: platform/diagnostic-logs-overview.md
-                - name: Сбор данных в журналы
-                  href: platform/diagnostic-logs-stream-log-store.md
-                - name: Сбор данных из службы хранилища Azure
-                  href: platform/azure-storage-iis-table.md
+                  href: platform/resource-logs-overview.md
+                - name: Сбор журналов в Azure Monitor
+                  href: platform/resource-logs-collect-workspace.md
                 - name: Архивирование в хранилище
-                  href: platform/archive-diagnostic-logs.md
-                - name: Включение с помощью шаблонов Resource Manager
-                  href: platform/diagnostic-logs-stream-template.md
-        - name: Подписка Azure
-          items:
+                  href: platform/resource-logs-collect-storage.md
+                - name: Потоковая передача в Центры событий
+                  href: platform/resource-logs-stream-event-hubs.md
             - name: Журнал действий
               items:
                 - name: Обзор
@@ -674,6 +676,14 @@
                   href: platform/activity-log-export.md
                 - name: Схема
                   href: platform/activity-log-schema.md
+            - name: Параметры диагностики
+              items:
+                - name: Создание параметра диагностики
+                  href: platform/diagnostic-settings.md
+                - name: Создание параметра диагностики с помощью Resource Manager
+                  href: platform/diagnostic-settings-template.md
+                - name: Изменение формата хранилища BLOB-объектов
+                  href: platform/resource-logs-blob-format.md
             - name: Потоковая передача данных в Центры событий
               href: platform/stream-monitoring-data-event-hubs.md
             - name: Аналитика Key Vault
@@ -685,6 +695,7 @@
         - name: Хранилище
           items:
             - name: Использование Azure Monitor для службы хранилища
+              displayname: 'storage, monitor, insights, storage accounts, azure storage'
               href: insights/storage-insights-overview.md
         - name: Базы данных
           items:
@@ -747,7 +758,7 @@
             - name: Подключение Configuration Manager
               href: platform/collect-sccm.md
         - name: Потоковая передача данных в Центры событий
-          href: platform/diagnostic-logs-stream-event-hubs.md
+          href: platform/resource-logs-stream-event-hubs.md
     - name: Анализ данных
       items:
         - name: Метрики

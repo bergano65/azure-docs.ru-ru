@@ -84,7 +84,11 @@
     - name: Балансировка нагрузки виртуальных машин в пределах зоны (CLI)
       href: load-balancer-standard-public-zonal-cli.md
     - name: Настройка правил для исходящего трафика
-      href: configure-load-balancer-outbound-cli.md
+      items:
+        - name: "Настройка правил для исходящего трафика\_— CLI"
+          href: configure-load-balancer-outbound-cli.md
+        - name: "Настройка правил для исходящего трафика\_— PowerShell"
+          href: configure-load-balancer-outbound-powershell.md
     - name: Создание Azure Load Balancer с помощью REST API
       href: create-load-balancer-rest-api.md
     - name: Создание Load Balancer уровня "Базовый" (шаблон)

@@ -472,6 +472,8 @@
         - name: Развертывание дисков с помощью шаблона
           displayName: 'Azure Resource Manager, ARM'
           href: using-managed-disks-template-deployments.md
+        - name: "Отправка VHD-файла на диск\_— CLI"
+          href: disks-upload-vhd-to-managed-disk-cli.md
         - name: Изменение размера диска
           href: expand-disks.md
         - name: Моментальный снимок диска

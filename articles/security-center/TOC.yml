@@ -47,7 +47,7 @@
           href: security-center-incident.md
         - name: Обнаружение угроз для виртуальных машин и серверов
           href: security-center-alerts-iaas.md
-        - name: Обнаружение угроз для облачных собственных вычислений
+        - name: Обнаружение угроз для облачных приложений и контейнеров
           href: security-center-alerts-compute.md
         - name: Обнаружение угроз для служб обработки данных
           href: security-center-alerts-data-services.md
@@ -71,7 +71,7 @@
       href: security-center-wdatp.md
     - name: Расширенная защита данных для SQL на виртуальных машинах Azure (общедоступная предварительная версия)
       href: security-center-iaas-advanced-data.md
-    - name: Защита Службы приложений
+    - name: Использование Службы приложений для защиты приложений
       href: security-center-app-services.md
     - name: Использование политик безопасности
       href: tutorial-security-policy.md
@@ -89,9 +89,9 @@
       href: security-center-enable-data-collection.md
     - name: Встроенные политики безопасности
       href: security-center-policy-definitions.md
-    - name: Уведомления по почте
+    - name: Уведомления по электронной почте
       href: security-center-provide-security-contact-details.md
-    - name: Ценовая категория
+    - name: Цены
       href: security-center-pricing.md
     - name: Видимость на уровне клиента
       href: security-center-management-groups.md
@@ -145,10 +145,8 @@
           href: security-center-planning-and-operations-guide.md
 - name: Справочные материалы
   items:
-    - name: "Интерфейсы REST\_API"
+    - name: Интерфейсы REST API
       href: 'https://docs.microsoft.com/rest/api/securitycenter/'
-    - name: Обновления службы
-      href: 'https://azure.microsoft.com/updates/?product=security-center'
     - name: "Прекращение поддержки компонентов и API (июль 2019\_г.)"
       href: security-center-features-retirement-july2019.md
     - name: Оценка защиты конечной точки и рекомендации
@@ -159,25 +157,25 @@
       href: /learn/browse/?term=securityS
     - name: Управление данными пользователей
       href: security-center-privacy.md
-    - name: Управление Интернетом вещей
+    - name: Документация по Центру безопасности Azure для Интернета вещей
       href: 'https://docs.microsoft.com/en-us/azure/asc-for-iot/'
     - name: Часто задаваемые вопросы
       href: security-center-faq.md
-    - name: Безопасность в Azure
+    - name: Документация по системе безопасности Azure
       href: /azure/security/
-    - name: Стратегия развития Azure
-      href: 'https://azure.microsoft.com/roadmap/?category=security-identity'
+    - name: Обновления Azure
+      href: 'https://azure.microsoft.com/updates/?category=security-identity'
     - name: План подготовки к работе
       href: security-center-readiness-roadmap.md
     - name: 'Блог по безопасности, конфиденциальности и соответствию нормам Azure'
       href: 'https://blogs.msdn.com/b/azuresecurity/'
-    - name: Stack Overflow
-      href: 'https://stackoverflow.com/search?q=security-center'
+    - name: Центр безопасности Azure на Stack Overflow
+      href: 'https://stackoverflow.com/search?q=azure-security-center'
     - name: Видео
       href: 'https://azure.microsoft.com/documentation/videos/index/?services=security-center'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/security-center/'
     - name: Доступность по регионам
       href: 'https://azure.microsoft.com/regions/services/'
-    - name: Устранение неполадок
+    - name: Руководство по устранению неполадок
       href: security-center-troubleshooting-guide.md

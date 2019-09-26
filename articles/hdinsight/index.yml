@@ -11,12 +11,12 @@ metadata:
   author: hrasheed-msft
   ms.author: hrasheed
   ms.date: 08/30/2019
-  ms.openlocfilehash: e4504bbfc84dbafcd1efa45c9536a63569230a8a
-  ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
+  ms.openlocfilehash: 2e6a0bcc654bbf94bec5c562815aa7591cfabd60
+  ms.sourcegitcommit: a6718e2b0251b50f1228b1e13a42bb65e7bf7ee2
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 09/23/2019
-  ms.locfileid: "71204117"
+  ms.lasthandoff: 09/25/2019
+  ms.locfileid: "71272230"
 landingContent:
 - title: Сведения об HDInsight
   linkLists:
@@ -28,7 +28,7 @@ landingContent:
     links:
     - text: Компоненты и версии HDInsight
       url: ./hdinsight-component-versioning.md
-    - text: Поддерживаемые конфигурации узлов HDInsight
+    - text: Типы виртуальных машин, поддерживаемых HDInsight
       url: ./hdinsight-supported-node-configuration.md
     - text: Сравнение вариантов хранилищ
       url: ./hdinsight-hadoop-compare-storage-options.md
@@ -38,6 +38,14 @@ landingContent:
       url: ./hdinsight-hadoop-provision-linux-clusters.md
     - text: Создание кластеров, использующих Data Lake Store 2-го поколения
       url: ./hdinsight-hadoop-use-data-lake-storage-gen2.md
+  - linkListType: whats-new
+    links:
+    - text: Автоматическое масштабирование кластеров Hadoop
+      url: ./hdinsight-autoscale-clusters.md
+    - text: Мониторинг с помощью HDInsight
+      url: ./hdinsight-hadoop-oms-log-analytics-tutorial.md
+    - text: Перенос таблиц Apache Hive в HDInsight 4.0
+      url: ./interactive-query/apache-hive-migrate-workloads.md
 - title: Apache Spark
   linkLists:
   - linkListType: overview
