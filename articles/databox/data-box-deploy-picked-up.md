@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: tutorial
-ms.date: 09/10/2019
+ms.date: 09/20/2019
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: 194b90ab27d02c1fa3eb05bb3ddd78395d351599
-ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.openlocfilehash: 28666aaac4ec221acca00d937d54a753a4e6a055
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70898174"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71172682"
 ---
 ::: zone target="docs"
 
@@ -93,6 +93,26 @@ ms.locfileid: "70898174"
     Вместо планирования отправки с курьером вы также можете оставить Data Box в ближайшем отделении этой курьерской службы.
 4. После того как курьер примет и проверит Data Box, состояние заказа на портале обновится до **Принято курьером**. Также отображается идентификатор отслеживания.
 
+::: zone target="chromeless"
+
+## <a name="verify-data-upload-to-azure"></a>Проверка передачи данных в Azure
+
+[!INCLUDE [data-box-verify-upload](../../includes/data-box-verify-upload.md)]
+
+## <a name="erasure-of-data-from-data-box"></a>Стирание данных из Data Box
+ 
+Когда передача данных в Azure завершится, Data Box удалит данные с дисков согласно рекомендациям [NIST SP 800-88 в редакции 1](https://csrc.nist.gov/News/2014/Released-SP-800-88-Revision-1,-Guidelines-for-Medi).
+
+::: zone-end
+
+::: zone target="docs"
+
+[!INCLUDE [data-box-verify-upload-return](../../includes/data-box-verify-upload-return.md)]
+
+
+
+::: zone-end
+
 
 ## <a name="in-australiatabin-australia"></a>[В Австралии](#tab/in-australia)
 
@@ -126,6 +146,24 @@ ms.locfileid: "70898174"
 - Отправьте электронное письмо для создания запроса на вывоз.
 - Сообщите название заказа по телефону.
 
+::: zone target="chromeless"
+
+## <a name="verify-data-upload-to-azure"></a>Проверка передачи данных в Azure
+
+[!INCLUDE [data-box-verify-upload](../../includes/data-box-verify-upload.md)]
+
+## <a name="erasure-of-data-from-data-box"></a>Стирание данных из Data Box
+ 
+Когда передача данных в Azure завершится, Data Box удалит данные с дисков согласно рекомендациям [NIST SP 800-88 в редакции 1](https://csrc.nist.gov/News/2014/Released-SP-800-88-Revision-1,-Guidelines-for-Medi).
+
+::: zone-end
+
+::: zone target="docs"
+
+[!INCLUDE [data-box-verify-upload-return](../../includes/data-box-verify-upload-return.md)]
+
+::: zone-end
+
 ## <a name="in-japantabin-japan"></a>[В Японии](#tab/in-japan) 
 
 1. Сохраните оригинальную коробку, использованную для доставки устройства, для обратной отправки.
@@ -156,69 +194,23 @@ ms.locfileid: "70898174"
 - Электронная почта: Customerservice.JP@quantiumsolutions.com 
 - Телефон: 03-5755-0150 
 
-::: zone target="docs"
-
-## <a name="verify-data-upload-to-azure"></a>Проверка передачи данных в Azure
-
-Когда Майкрософт получит и проведет проверку устройства, состояние заказа обновится до **Получено**. Затем устройство пройдет физическую проверку на предмет повреждений или незаконного изменения.
-
-Когда проверка будет завершена, Data Box подключится к сети в центре обработки данных Azure. Копирование данных начнется автоматически. В зависимости от размера данных операция копирования может занять от нескольких часов до нескольких дней. Ход выполнения задания копирования можно отслеживать на портале.
-
-После завершения копирования статус заказа обновится до **Завершено**.
-
-Прежде чем удалять их из источника, убедитесь, что данные передаются в Azure. Данные могут находится в:
-
-- Учетная запись службы хранения Azure. При копировании через Data Box данные передаются в одно из следующих расположений в учетной записи службы хранилища Azure в зависимости от типа данных.
-
-  - Для блочных и страничных BLOB-объектов: `https://<storage_account_name>.blob.core.windows.net/<containername>/files/a.txt`.
-  - Для службы файлов Azure: `https://<storage_account_name>.file.core.windows.net/<sharename>/files/a.txt`.
-
-    Кроме того, вы можете перейти к этим данным из учетной записи хранения Azure на портале Azure.
-
-- Группа ресурсов управляемого диска. При создании управляемых дисков виртуальные жесткие диски передаются в виде страничных BLOB-объектов, а затем преобразуются в управляемые диски. Управляемые диски подключены к группам ресурсов, указанным при создании заказа. 
-
-    - Если копирование на управляемые диски в Azure прошло успешно, вы можете перейти к разделу **Сведения о заказе** на портале Azure и записать группы ресурсов, указанные для управляемых дисков.
-
-        ![Определение групп ресурсов управляемого диска](media/data-box-deploy-copy-data-from-vhds/order-details-managed-disk-resource-groups.png)
-
-        Перейдите в указанную группу ресурсов и найдите управляемые диски.
-
-        ![Управляемый диск, подключенный к группам ресурсов](media/data-box-deploy-copy-data-from-vhds/managed-disks-resource-group.png)
-
-    - Если вы скопировали VHDX или же динамический или разностный VHD, то VHDX или VHD передается в промежуточную учетную запись хранения в виде страничного BLOB-объекта, но преобразование VHD в управляемый диск не удастся выполнить. Перейдите в промежуточную **учетную запись хранения, выберите BLOB-объекты**, а затем — соответствующий контейнер: SSD (цен. категория "Стандартный"), HDD (цен. категория "Стандартный") или SSD (цен. категория "Премиум"). Виртуальные жесткие диски передаются в виде страничных BLOB-объектов в промежуточную учетную запись хранения.
-
-::: zone-end
-
 ::: zone target="chromeless"
 
 ## <a name="verify-data-upload-to-azure"></a>Проверка передачи данных в Azure
 
 [!INCLUDE [data-box-verify-upload](../../includes/data-box-verify-upload.md)]
 
-::: zone-end
-
 ## <a name="erasure-of-data-from-data-box"></a>Стирание данных из Data Box
  
 Когда передача данных в Azure завершится, Data Box удалит данные с дисков согласно рекомендациям [NIST SP 800-88 в редакции 1](https://csrc.nist.gov/News/2014/Released-SP-800-88-Revision-1,-Guidelines-for-Medi).
 
+::: zone-end
+
 ::: zone target="docs"
 
-## <a name="next-steps"></a>Дополнительная информация
-
-В этом руководстве были освещены следующие темы относительно Azure Data Box.
-
-> [!div class="checklist"]
-> * Предварительные требования
-> * Подготовка к отправке
-> * Отправка Data Box в Майкрософт
-> * Проверка передачи данных в Azure
-> * Стирание данных из Data Box
-
-Перейдите к следующей статье, чтобы узнать, как управлять Data Box с помощью локального веб-интерфейса.
-
-> [!div class="nextstepaction"]
-> [Использование локального веб-интерфейса для администрирования Azure Data Box](./data-box-local-web-ui-admin.md)
+[!INCLUDE [data-box-verify-upload-return](../../includes/data-box-verify-upload-return.md)]
 
 ::: zone-end
+
 
 

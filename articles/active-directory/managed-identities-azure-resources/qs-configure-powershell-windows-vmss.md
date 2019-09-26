@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 11/27/2017
+ms.date: 09/26/2019
 ms.author: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4917720af2396b68ccd36cc0410c9acbbba2d9b2
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 5fa3100cae9b1a2c9ca320776cc357f3720b3473
+ms.sourcegitcommit: 0486aba120c284157dfebbdaf6e23e038c8a5a15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60304593"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71310001"
 ---
 # <a name="configure-managed-identities-for-azure-resources-on-virtual-machine-scale-sets-using-powershell"></a>Настройка управляемых удостоверений для ресурсов Azure в масштабируемых наборах виртуальных машин с помощью PowerShell
 
@@ -34,7 +34,7 @@ ms.locfileid: "60304593"
 
 [!INCLUDE [az-powershell-update](../../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Если вы не работали с управляемыми удостоверениями для ресурсов Azure, изучите [общие сведения](overview.md). **Обратите внимание на [различие между управляемыми удостоверениями, назначаемыми системой и назначаемыми пользователями](overview.md#how-does-it-work)** .
 - Если у вас нет учетной записи Azure, [зарегистрируйтесь для получения бесплатной пробной учетной записи](https://azure.microsoft.com/free/), прежде чем продолжать.
@@ -56,13 +56,12 @@ ms.locfileid: "60304593"
 
 Чтобы создать масштабируемый набор виртуальных машин с включенным управляемым удостоверением, назначаемым системой, сделайте следующее.
 
-1. Ссылаться на *пример 1* в [New AzVmssConfig](/powershell/module/az.compute/new-azvmssconfig) набор справочной статье командлет, чтобы создать масштабируемый набор виртуальных машин с помощью назначенный системой управляемого удостоверения.  Добавьте параметр `-IdentityType SystemAssigned` в командлет `New-AzVmssConfig`:
+1. См. *Пример 1* в статье Справочник по командлетам [New-азвмссконфиг](/powershell/module/az.compute/new-azvmssconfig) , чтобы создать масштабируемый набор виртуальных машин с управляемым удостоверением, назначенным системой.  Добавьте параметр `-IdentityType SystemAssigned` в командлет `New-AzVmssConfig`:
 
     ```powershell
     $VMSS = New-AzVmssConfig -Location $Loc -SkuCapacity 2 -SkuName "Standard_A0" -UpgradePolicyMode "Automatic" -NetworkInterfaceConfiguration $NetCfg -IdentityType SystemAssigned`
     ```
-> [!NOTE]
-> При необходимости может подготовить управляемых удостоверений, для расширения набора масштабирования виртуальных машин Azure ресурсы, но скоро устареет. Мы рекомендуем использовать удостоверение конечной точки метаданных экземпляров Azure для проверки подлинности. Дополнительные сведения см. в разделе [прекратить использование расширения виртуальной Машины и начать использовать конечную точку Azure IMDS для проверки подлинности](howto-migrate-vm-extension.md).
+
 
 
 ## <a name="enable-system-assigned-managed-identity-on-an-existing-azure-virtual-machine-scale-set"></a>Включение управляемого удостоверения, назначаемого системой, в существующем масштабируемом наборе виртуальных машин Azure
@@ -81,8 +80,7 @@ ms.locfileid: "60304593"
    Update-AzVmss -ResourceGroupName myResourceGroup -Name -myVmss -IdentityType "SystemAssigned"
    ```
 
-> [!NOTE]
-> При необходимости может подготовить управляемых удостоверений, для расширения набора масштабирования виртуальных машин Azure ресурсы, но скоро устареет. Мы рекомендуем использовать удостоверение конечной точки метаданных экземпляров Azure для проверки подлинности. Дополнительные сведения см. в разделе [перенос из расширения виртуальной Машины для конечной точки Azure IMDS для проверки подлинности](howto-migrate-vm-extension.md).
+
 
 ### <a name="disable-the-system-assigned-managed-identity-from-an-azure-virtual-machine-scale-set"></a>Отключение управляемого удостоверения, назначаемого системой, в масштабируемом наборе виртуальных машин Azure
 
@@ -146,7 +144,7 @@ Update-AzVmss -ResourceGroupName myResourceGroup -Name myVmss -IdentityType None
 Update-AzVmss -ResourceGroupName myResourceGroup -Name myVmss -IdentityType "SystemAssigned"
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Обзор управляемых удостоверений для ресурсов Azure](overview.md).
 - Ниже приведены комплексные краткие руководства по созданию виртуальных машин Azure:

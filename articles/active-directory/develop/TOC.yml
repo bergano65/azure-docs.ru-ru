@@ -344,6 +344,8 @@
               href: v2-permissions-and-consent.md
             - name: Платформа предоставления согласия
               href: consent-framework.md
+            - name: Согласие администратора
+              href: v2-admin-consent.md
             - name: Предоставление согласия для приложений
               href: application-consent-experience.md
         - name: Национальные облака

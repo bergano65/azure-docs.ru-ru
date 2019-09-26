@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 02/01/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 69279da93197bcaaf1bf600bc9406287253d74bb
-ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
+ms.openlocfilehash: 08edf6e841dc7d389573d5e5b5ea7e043f750e76
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71063283"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71291105"
 ---
 # <a name="tutorial-customize-the-interface-of-user-experiences-in-azure-active-directory-b2c"></a>Учебник. Настройка удобного для пользователей интерфейса в Azure Active Directory B2C
 
@@ -63,7 +63,7 @@ ms.locfileid: "71063283"
 
 1. В меню выберите **CORS**.
 2. В поле **Допустимые источники** введите `https://your-tenant-name.b2clogin.com`. Замените `your-tenant-name` именем вашего клиента Azure AD B2C. Например, `https://fabrikam.b2clogin.com`. Необходимо использовать только строчные буквы в имени вашего клиента.
-3. В поле **Допустимые методы** выберите `GET` и `OPTIONS`.
+3. Для **разрешенных методов**выберите `GET`,`PUT`и `OPTIONS`.
 4. В поле **Допустимые заголовки** введите звездочку (*).
 5. В поле **Доступные заголовки** введите звездочку (*).
 6. В поле **Максимальный возраст** введите 200.

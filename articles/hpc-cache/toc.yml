@@ -23,12 +23,15 @@
             - name: Предварительная загрузка нового хранилища BLOB-объектов
               href: hpc-cache-ingest.md
             - name: Альтернативные методы приема данных
-            - name: Заполнение кэша с помощью параллельного копирования
-              href: hpc-cache-ingest-parallelcp.md
-            - name: Заполнение кэша с помощью msrsync
-              href: hpc-cache-ingest-msrsync.md
-            - name: Заполнение кэша с помощью копирования файлов вручную
-              href: hpc-cache-ingest-manual.md
+              items:
+                - name: Заполнение кэша с помощью параллельного копирования
+                  href: hpc-cache-ingest-parallelcp.md
+                - name: Заполнение кэша с помощью msrsync
+                  href: hpc-cache-ingest-msrsync.md
+                - name: Заполнение кэша с помощью копирования файлов вручную
+                  href: hpc-cache-ingest-manual.md
+    - name: Подключение к кэшу
+      href: hpc-cache-mount.md
 - name: Ресурсы
   items:
     - name: Открытие запроса в службу поддержки

@@ -11,24 +11,52 @@ ms.devlang: java
 ms.topic: conceptual
 ms.date: 09/14/2018
 ms.author: routlaw
-ms.openlocfilehash: aea1434acdbfd97bcc9096dddd497ef031a74b94
-ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
+ms.openlocfilehash: e3ab825fbf5b5dba74b67eaa894a38c74ed0b62a
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70170553"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71299396"
 ---
 # <a name="azure-functions-java-developer-guide"></a>Руководство разработчика Java по Функциям Azure
 
 Среда выполнения функций Azure поддерживает [Java SE 8 LTS (Zulu 8.31.0.2-JRE 8.0.181-win_x64)](https://repos.azul.com/azure-only/zulu/packages/zulu-8/8u181/). В этом руководства содержатся сведения об тонкостях написания функций Azure с помощью Java.
 
-Функция Java — `public` это метод, дополненный заметкой `@FunctionName`. Этот метод определяет запись для функции Java и должен быть уникальным в определенном пакете. 
+Как и в случае с другими языками, приложение-функция может иметь одну или несколько функций. Функция Java — `public` это метод, дополненный заметкой `@FunctionName`. Этот метод определяет запись для функции Java и должен быть уникальным в определенном пакете. Один приложение-функция, написанный на языке Java, может иметь несколько классов с несколькими открытыми `@FunctionName`методами, заметками которых является.
 
 В этой статье предполагается, что вы уже прочли [руководство для разработчиков по Функциям Azure](functions-reference.md). Кроме того, вы должны заполнить краткое руководство по функциям, чтобы создать свою первую функцию с помощью [Visual Studio Code](functions-create-first-function-vs-code.md) или [Maven](functions-create-first-java-maven.md).
 
 ## <a name="programming-model"></a>Модель программирования 
 
 Понятия [триггеров и привязок](functions-triggers-bindings.md) играют решающую роль в Функциях Azure. Триггеры запускают выполнение вашего кода. Привязки предоставляют возможность передавать данные, а также возвращать их из функции без необходимости написания кода доступа к ним.
+
+## <a name="project-scaffolding"></a>Формирование шаблонов проектов
+
+Самый простой способ сформировать шаблон проекта функции Azure на основе Java — использовать `Apache Maven` архетипов. Мастера создания проектов также можно найти на Visual Studio Code и наборах средств Azure для Eclipse и IntelliJ.
+
+В настоящее время существует две функции Azure, архетипов для Maven:
+
+### <a name="java-archetype"></a>Архетипа Java
+
+Этот архетипа опубликован в следующих groupId и artifactId [com. Microsoft. Azure: Azure-functions-архетипа](https://search.maven.org/artifact/com.microsoft.azure/azure-functions-archetype/).
+
+```
+mvn archetype:generate \
+    -DarchetypeGroupId=com.microsoft.azure \
+    -DarchetypeArtifactId=azure-functions-archetype 
+```
+
+### <a name="kotlin-archetype-preview"></a>Котлин архетипа (Предварительная версия)
+
+Этот архетипа опубликован в следующих groupId и artifactId [com. Microsoft. Azure: Azure-functions-Котлин-архетипа](https://search.maven.org/artifact/com.microsoft.azure/azure-functions-kotlin-archetype/).
+
+```
+mvn archetype:generate \
+    -DarchetypeGroupId=com.microsoft.azure \
+    -DarchetypeArtifactId=azure-functions-kotlin-archetype
+```
+
+Исходный код этих архетипов можно найти в [репозитории Azure Maven архетипов GitHub](https://github.com/microsoft/azure-maven-archetypes).
 
 ## <a name="folder-structure"></a>Структура папок
 
@@ -55,6 +83,8 @@ FunctionsProject
  | | | | - lib
  | - pom.xml
 ```
+
+_* Проект Котлин выглядит очень похожим, так как он все еще Maven_
 
 Для настройки приложения-функции можно использовать общий файл [Host. JSON](functions-host-json.md) . У каждой функции есть собственный файл кода (.java) и файл конфигурации привязки (function.json).
 

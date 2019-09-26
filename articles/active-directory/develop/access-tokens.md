@@ -16,12 +16,12 @@ ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev, fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d89d861b48b0c198b06a45613db668adcf551b39
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 780ec85438990959b7b0ac686e05ad5db3f9eedf
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70074310"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71291083"
 ---
 # <a name="microsoft-identity-platform-access-tokens"></a>Маркеры доступа платформы удостоверений Майкрософт
 
@@ -114,6 +114,11 @@ eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Imk2bEdrM0ZaenhSY1ViMkMzbkVRN3N5SEps
 | `uti` | Непрозрачная строка | Внутреннее утверждение, используемое Azure для повторной проверки маркеров. Ресурсы не должны использовать это утверждение. |
 | `rh` | Непрозрачная строка | Внутреннее утверждение, используемое Azure для повторной проверки маркеров. Ресурсы не должны использовать это утверждение. |
 | `ver` | Строка, `1.0` либо`2.0` | Обозначает номер версии маркера доступа. |
+
+
+> [! Групповая заявка. чтобы размер токена не превышал пределы размера заголовка HTTP, Azure AD ограничивает количество идентификаторов объектов, включаемых в утверждение групп. Если пользователь входит в число групп, превышающее предел превышения (150 для токенов SAML, 200 для маркеров JWT), Azure AD не выдает утверждение групп в токене. Вместо этого он включает в маркер избыточную заявку, которая указывает приложению выполнить запрос API Graph для получения членства пользователя в группе.
+> { ... "_claim_names": {"groups": "src1"}, {"_claim_sources": {"src1": {"Endpoint": "[URL-адрес Graph для получения членства пользователя в группе]"}}    
+    ... } Вы можете использовать `BulkCreateGroups.ps1` предоставленный в папке [скриптов создания приложений](https://github.com/Azure-Samples/active-directory-dotnet-webapp-groupclaims/blob/master/AppCreationScripts/) , чтобы помочь вам протестировать более длительные сценарии.
 
 #### <a name="v10-basic-claims"></a>Базовые утверждения в версии 1.0
 

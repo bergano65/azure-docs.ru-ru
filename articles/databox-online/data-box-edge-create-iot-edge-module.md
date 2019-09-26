@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: article
 ms.date: 08/06/2019
 ms.author: alkohli
-ms.openlocfilehash: daf7b01725a931b8fa76be14e06e2b32cffe5da6
-ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
+ms.openlocfilehash: f57a0431bbdafee2d38038d0039b47a34e5454c7
+ms.sourcegitcommit: 9fba13cdfce9d03d202ada4a764e574a51691dcd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69900633"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71315834"
 ---
 # <a name="develop-a-c-iot-edge-module-to-move-files-on-data-box-edge"></a>Разработка модуля C# IOT Edge для перемещения файлов на Data Box Edge
 
@@ -180,7 +180,7 @@ ms.locfileid: "69900633"
     }
     ```
 
-6. Удалите код для **метода сообщения канала** и на его месте вставьте код для **операцию FileCopy**.
+6. Удалите код для **метода пипемессаже** и на его месте вставьте код для **операцию FileCopy**.
 
     ```
         /// <summary>

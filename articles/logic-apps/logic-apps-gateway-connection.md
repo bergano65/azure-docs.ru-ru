@@ -9,16 +9,18 @@ ms.author: estfan
 ms.reviewer: arthii, LADocs
 ms.topic: article
 ms.date: 09/01/2019
-ms.openlocfilehash: dcb0fe4da968408a261e387c636cc548fa757a09
-ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
+ms.openlocfilehash: d397adfb6ed2d3aef93bd40d14eb0ad199cdb90c
+ms.sourcegitcommit: 0486aba120c284157dfebbdaf6e23e038c8a5a15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71036654"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71309357"
 ---
 # <a name="connect-to-on-premises-data-sources-from-azure-logic-apps"></a>Подключение к локальным источникам данных из Azure Logic Apps
 
-Чтобы получить доступ к источникам данных из ваших логических приложений, создайте ресурс локального шлюза данных на портале Azure. Затем приложения логики могут использовать [локальные соединители](../connectors/apis-list.md#on-premises-connectors). В этой статье показано, как создать ресурс шлюза Azure после [загрузки и установки шлюза на локальном компьютере](../logic-apps/logic-apps-gateway-install.md). Дополнительные сведения о шлюзе см. [в разделе Работа шлюза](../logic-apps/logic-apps-gateway-install.md#gateway-cloud-service).
+Чтобы получить доступ к источникам данных из ваших логических приложений, создайте ресурс локального шлюза данных на портале Azure. Затем приложения логики могут использовать [локальные соединители](../connectors/apis-list.md#on-premises-connectors). Azure Logic Apps поддерживает операции записи, включая операции вставки и обновления через шлюз. Однако эти операции имеют [ограничения на размер полезных данных](https://docs.microsoft.com/data-integration/gateway/service-gateway-onprem#considerations).
+
+В этой статье показано, как создать ресурс шлюза Azure после [загрузки и установки шлюза на локальном компьютере](../logic-apps/logic-apps-gateway-install.md). Дополнительные сведения о шлюзе см. [в разделе Работа шлюза](../logic-apps/logic-apps-gateway-install.md#gateway-cloud-service). 
 
 > [!TIP]
 > Чтобы подключиться к виртуальным сетям Azure, вместо этого рассмотрите возможность создания среды службы интеграции. Для этого см. статью [*Доступ к ресурсам виртуальных сетей Azure из Azure Logic Apps с использованием сред службы интеграции (ISE)* ](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md). 
@@ -88,7 +90,7 @@ ms.locfileid: "71036654"
    | **Имя установки** | Если установка шлюза еще не выбрана, выберите шлюз, установленный ранее. Ранее установленные шлюзы не будут отображаться в этом списке для выбора. |
    |||
 
-   Пример:
+   Вот пример:
 
    ![Предоставление сведений для создания локального шлюза данных](./media/logic-apps-gateway-connection/gateway-details.png)
 
@@ -113,7 +115,7 @@ ms.locfileid: "71036654"
 
    Уникальное имя подключения позволяет легко найти это подключение позже, особенно при создании нескольких подключений. При необходимости добавьте также имя домена для вашего имени пользователя.
    
-   Пример:
+   Вот пример:
 
    ![Создание подключения между логическим приложением и шлюзом данных](./media/logic-apps-gateway-connection/logic-app-gateway-connection.png)
 

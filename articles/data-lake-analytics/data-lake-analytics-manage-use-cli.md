@@ -1,5 +1,5 @@
 ---
-title: Управление Azure Data Lake Analytics с помощью интерфейса командной строки Azure
+title: Управление Azure Data Lake Analytics с помощью Azure CLI
 description: В этой статье описано, как с помощью Azure CLI управлять источниками данных, пользователями и заданиями Data Lake Analytics.
 services: data-lake-analytics
 author: jasonwhowell
@@ -8,12 +8,12 @@ ms.assetid: 4e5a3a0a-6d7f-43ed-aeb5-c3b3979a1e0a
 ms.service: data-lake-analytics
 ms.topic: conceptual
 ms.date: 01/29/2018
-ms.openlocfilehash: fa7d46d45c350435c0ffba8f3755ad8bea651c3e
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: d66926d8ba87096537800d22a9c116b7b10d23cf
+ms.sourcegitcommit: 0486aba120c284157dfebbdaf6e23e038c8a5a15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60387060"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71309742"
 ---
 # <a name="manage-azure-data-lake-analytics-using-the-azure-command-line-interface-cli"></a>Управление Azure Data Lake Analytics с помощью интерфейса командной строки (CLI) Azure
 
@@ -90,7 +90,7 @@ ms.locfileid: "60387060"
 
 Data Lake Analytics сейчас поддерживает два источника данных:
 
-* [Хранилище озера данных Azure](../data-lake-store/data-lake-store-overview.md)
+* [Azure Data Lake Storage](../data-lake-store/data-lake-store-overview.md)
 * [Хранилище Azure](../storage/common/storage-introduction.md)
 
 При создании учетной записи аналитики необходимо указать учетную запись хранения озера данных Azure в качестве учетной записи хранения по умолчанию. В учетной записи хранения Data Lake, используемой по умолчанию, хранятся метаданные задания и журналы аудита задания. После создания учетной записи аналитики можно добавить дополнительные учетные записи хранения озера данных и учетные записи хранения Azure. 

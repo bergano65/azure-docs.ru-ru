@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 12/11/2018
-ms.openlocfilehash: 9aa8cda7d65d97d831a218be393581d0e5bf3a4a
-ms.sourcegitcommit: d70c74e11fa95f70077620b4613bb35d9bf78484
+ms.openlocfilehash: c8d78473a1128dd4f96f2cfa0c14d2d3b1b2c1e9
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70910187"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71300562"
 ---
 # <a name="alert-and-monitor-data-factories-by-using-azure-monitor"></a>Предупреждения и мониторинг фабрик данных с помощью Azure Monitor
 
@@ -401,13 +401,13 @@ Log Analytics наследует схему от Monitor со следующим
 * Нет столбца "Level".
 * Динамический столбец "Properties" сохраняется как следующий динамический тип больших двоичных объектов JSON.
 
-    | Azure Monitor столбец | Log Analytics столбец | Тип |
+    | Azure Monitor столбец | Log Analytics столбец | Type |
     | --- | --- | --- |
     | $. Properties. усерпропертиес | усерпропертиес | Динамический |
-    | $. Properties. Примечания | Заметки | Динамический |
+    | $. Properties. Примечания | аннотации | Динамический |
     | $. Properties. Входной | Ввод | Динамический |
-    | $. Properties. Проверки | Вывод | Динамический |
-    | $. Properties. Ошибка. errorCode | Код ошибки | ssNoversion |
+    | $. Properties. Проверки | Output | Динамический |
+    | $. Properties. Ошибка. errorCode | Код ошибки | int |
     | $. Properties. Ошибка. сообщение | ErrorMessage | строка |
     | $. Properties. План | Ошибка | Динамический |
     | $. Properties. Предшественников | Предшественников | Динамический |
@@ -504,8 +504,6 @@ Log Analytics наследует схему от Monitor со следующим
 - Статистика ADF-3) длительность выполнения конвейера в максимальной
 
 ![Окно с выделенными книгами (Предварительная версия) и "Азуредатафакторяналитикс"](media/data-factory-monitor-oms/monitor-oms-image6.png)
-
-![Графическое представление запусков и ошибок](media/data-factory-monitor-oms/monitor-oms-image7.png)
 
 Вы можете визуализировать предыдущие метрики, просматривать запросы, основанные на этих метриках, изменять запросы, создавать предупреждения и выполнять другие действия.
 

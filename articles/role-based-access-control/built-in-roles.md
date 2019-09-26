@@ -15,12 +15,12 @@ ms.date: 08/27/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro
-ms.openlocfilehash: 5f273f2eb36b0bd1d6757eb1ffb2403641cd461f
-ms.sourcegitcommit: b7b0d9f25418b78e1ae562c525e7d7412fcc7ba0
+ms.openlocfilehash: c9a156c4cc6e334e04f5a604b91b7b05d9aed390
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/08/2019
-ms.locfileid: "70801370"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71289611"
 ---
 # <a name="built-in-roles-for-azure-resources"></a>Встроенные роли для ресурсов Azure
 
@@ -70,7 +70,7 @@ ms.locfileid: "70801370"
 | [Читатель счетов](#billing-reader) | Разрешает читать данные выставления счетов. |
 | [Участник BizTalk](#biztalk-contributor) | Позволяет управлять службами BizTalk, но не доступом к ним. |
 | [Доступ к узлу-члену блокчейн (Предварительная версия)](#blockchain-member-node-access-preview) | Разрешает доступ к узлам члена Блокчейн |
-| [Участник схемы](#blueprint-contributor) | Может управлять определениями схем, но не назначать их. |
+| [Участник схемы](#blueprint-contributor) | Позволяет управлять определениями схем, но не назначать их. |
 | [Оператор схемы](#blueprint-operator) | Может назначать существующие опубликованные проекты, но не может создавать новые. Примечание. это работает только в том случае, если назначение выполняется с управляемым удостоверением, назначенным пользователем. |
 | [Участник конечных точек CDN](#cdn-endpoint-contributor) | Может управлять конечными точками CDN, но не может предоставлять доступ другим пользователям. |
 | [Читатель конечной точки CDN](#cdn-endpoint-reader) | Может просматривать конечные точки CDN, но не может вносить изменения. |
@@ -183,8 +183,8 @@ ms.locfileid: "70801370"
 > | **Действия** |  |
 > | * | Создание ресурсов всех типов и управление ими |
 > | **NotActions** |  |
-> | Microsoft.Authorization/*/Delete | Удаление и назначение ролей. |
-> | Microsoft.Authorization/*/Write | Создание и назначение ролей. |
+> | Microsoft.Authorization/*/Delete | Удаление ролей, назначений политик, определений политик и определений наборов политик |
+> | Microsoft.Authorization/*/Write | Создание ролей, назначений ролей, назначений политик, определений политик и определений наборов политик |
 > | Microsoft.Authorization/elevateAccess/Action | Предоставляет вызывающему доступ с правами администратора для области действия клиента. |
 > | Microsoft.Blueprint/blueprintAssignments/write | Создание или изменение любых артефактов схемы |
 > | Microsoft.Blueprint/blueprintAssignments/delete | Удаление любых артефактов схемы. |
@@ -954,7 +954,7 @@ ms.locfileid: "70801370"
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Описание** | Может управлять определениями схем, но не назначать их. |
+> | **Описание** | Позволяет управлять определениями схем, но не назначать их. |
 > | **Id** | 41077137-E803-4205-871c-5a86e6a753b4 |
 > | **Действия** |  |
 > | Microsoft.Authorization/*/read | Чтение ролей и назначений ролей |
@@ -1696,7 +1696,7 @@ ms.locfileid: "70801370"
 > | **NotDataActions** |  |
 > | *Нет* |  |
 
-## <a name="log-analytics-contributor"></a>участник Log Analytics.
+## <a name="log-analytics-contributor"></a>Участник Log Analytics
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |

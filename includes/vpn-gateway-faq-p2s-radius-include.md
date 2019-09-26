@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 03/21/2018
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 857d29f407c9939143fbb8263be40dadb040efdc
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: f9b787413dd6e2aaeafd4aa3bcee0eff746abece
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185112"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71310549"
 ---
 [!INCLUDE [P2S FAQ All](vpn-gateway-faq-p2s-all-include.md)]
 
@@ -23,7 +23,7 @@ ms.locfileid: "67185112"
  
 ### <a name="is-radius-authentication-supported-for-the-classic-deployment-model"></a>Поддерживается ли аутентификация RADIUS в классической модели развертывания?
  
-№ Аутентификация RADIUS не поддерживается в классической модели развертывания.
+Нет. Аутентификация RADIUS не поддерживается в классической модели развертывания.
  
 ### <a name="are-3rd-party-radius-servers-supported"></a>Поддерживаются ли сторонние серверы RADIUS?
 
@@ -35,7 +35,7 @@ ms.locfileid: "67185112"
  
 ### <a name="can-traffic-to-an-on-premises-radius-server-from-the-azure-vpn-gateway-be-routed-over-an-expressroute-connection"></a>Может ли трафик направляться на локальный сервер RADIUS (из VPN-шлюза Azure) через подключение ExpressRoute?
 
-№ Он может направляться только через подключение "сеть — сеть".
+Нет. Он может направляться только через подключение "сеть — сеть".
  
 ### <a name="is-there-a-change-in-the-number-of-sstp-connections-supported-with-radius-authentication-what-is-the-maximum-number-of-sstp-and-ikev2-connections-supported"></a>Изменилось ли количество поддерживаемых SSTP-подключений с аутентификацией RADIUS? Каково максимальное количество поддерживаемых SSTP- и IKEv2-подключений?
 
@@ -50,3 +50,7 @@ ms.locfileid: "67185112"
 ### <a name="does-radius-authentication-work-with-both-ikev2-and-sstp-vpn"></a>Работает ли аутентификация RADIUS с IKEv2 и SSTP для VPN?
 
 Да, аутентификация RADIUS поддерживается для IKEv2 и SSTP для VPN. 
+
+### <a name="does-radius-authentication-work-with-the-openvpn-client"></a>Работает ли проверка подлинности RADIUS с клиентом Опенвпн?
+
+Проверка подлинности RADIUS не поддерживается для клиента Опенвпн.

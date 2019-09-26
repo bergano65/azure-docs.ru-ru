@@ -4,14 +4,14 @@ description: Как открыть запрос справки для кэша H
 author: ekpgh
 ms.service: hpc-cache
 ms.topic: conceptual
-ms.date: 09/12/2019
+ms.date: 09/24/2019
 ms.author: v-erkell
-ms.openlocfilehash: 29750ab19f74ef1ceab8c69792d12b9f9ca2a297
-ms.sourcegitcommit: a19bee057c57cd2c2cd23126ac862bd8f89f50f5
+ms.openlocfilehash: 630af5322483782c1e26cd792bf7d7957e555d84
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71180885"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71299950"
 ---
 # <a name="open-a-support-ticket-for-azure-hpc-cache-preview"></a>Открытие запроса в службу поддержки для кэша HPC Azure (Предварительная версия)
 
@@ -24,6 +24,8 @@ ms.locfileid: "71180885"
 Чтобы найти службу предварительной версии кэша Azure HPC, нажмите кнопку **все службы** и выполните поиск HPC.
 
 ![Снимок экрана с описанием запроса на поддержку — вкладка "Основные сведения"](media/hpc-cache-support-request.png)
+
+<!-- update screenshot after preview to update product name -->
 
 Заполните остальные поля данными и предпочтениями, а затем отправьте билет, когда будете готовы.
 

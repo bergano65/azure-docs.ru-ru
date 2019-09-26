@@ -6,19 +6,19 @@ manager: philmea
 ms.service: iot-hub
 services: iot-hub
 ms.topic: article
-ms.date: 09/19/2019
+ms.date: 09/25/2019
 ms.author: dkshir
 ms.custom: security-recommendations
-ms.openlocfilehash: 7253ec04efe914f68e9798fca49233f11c5102ef
-ms.sourcegitcommit: 2ed6e731ffc614f1691f1578ed26a67de46ed9c2
+ms.openlocfilehash: 51abfd086391d1bed53646d22d93ac1348e566a5
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71129800"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71299793"
 ---
 # <a name="security-recommendations-for-azure-internet-of-things-iot-deployment"></a>Рекомендации по безопасности для развертывания Azure "Интернет вещей" (IoT)
 
-Эта статья содержит рекомендации по безопасности для службы приложений Azure. Реализация этих рекомендаций поможет вам выполнить обязательства по обеспечению безопасности, как описано в нашей модели общей ответственности, и повысит общую безопасность решений веб-приложений. Дополнительные сведения о том, что делает корпорация Майкрософт для выполнения обязанностей поставщиков услуг, см. в статье [Общие обязанности для облачных вычислений](https://gallery.technet.microsoft.com/Shared-Responsibilities-81d0ff91/file/153019/1/Shared%20responsibilities%20for%20cloud%20computing.pdf).
+Эта статья содержит рекомендации по безопасности для Интернета вещей. Реализация этих рекомендаций поможет вам удовлетворить обязательства по обеспечению безопасности, как описано в нашей общей модели ответственности. Дополнительные сведения о том, что делает корпорация Майкрософт для выполнения обязанностей поставщиков услуг, см. в статье [Общие обязанности для облачных вычислений](https://gallery.technet.microsoft.com/Shared-Responsibilities-81d0ff91/file/153019/1/Shared%20responsibilities%20for%20cloud%20computing.pdf).
 
 Некоторые из рекомендаций, описанных в этой статье, можно автоматически отслеживать с помощью центра безопасности Azure. Центр безопасности Azure — это первая строка защиты ресурсов в Azure. Он периодически анализирует состояние безопасности ресурсов Azure и выявляет потенциальные уязвимости системы безопасности. Затем он предоставляет рекомендации по их устранению.
 

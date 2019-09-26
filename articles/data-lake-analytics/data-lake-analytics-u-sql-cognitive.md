@@ -1,5 +1,5 @@
 ---
-title: Использование когнитивных возможностей U-SQL в Azure Data Lake Analytics
+title: Возможности работы с функциями U-SQL в Azure Data Lake Analytics
 description: Использование аналитики когнитивных возможностей в U-SQL
 services: data-lake-analytics
 author: saveenr
@@ -9,12 +9,12 @@ ms.assetid: 019c1d53-4e61-4cad-9b2c-7a60307cbe19
 ms.service: data-lake-analytics
 ms.topic: conceptual
 ms.date: 06/05/2018
-ms.openlocfilehash: b8d43188c337e0c12db60b51dee053ef7259701a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: bb64f08fae3a211b3ec26177ab2604edc20a8fdd
+ms.sourcegitcommit: 9fba13cdfce9d03d202ada4a764e574a51691dcd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60812907"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71315672"
 ---
 # <a name="get-started-with-the-cognitive-capabilities-of-u-sql"></a>Начало работы с когнитивными возможностями U-SQL
 
@@ -22,16 +22,16 @@ ms.locfileid: "60812907"
 Когнитивные возможности U-SQL позволяют разработчикам использовать аналитику в программах, которые работают с большими данными. 
 
 Доступны следующие примеры, использующие когнитивные возможности:
-* Обработка изображений: [Обнаружение лиц](https://github.com/Azure-Samples/usql-cognitive-imaging-ocr-hello-world)
-* Обработка изображений: [Распознавание эмоций](https://github.com/Azure-Samples/usql-cognitive-imaging-emotion-detection-hello-world)
-* Обработка изображений: [Обнаружение объектов (Добавление тегов)](https://github.com/Azure-Samples/usql-cognitive-imaging-object-tagging-hello-world)
-* Обработка изображений: [Распознавание текста](https://github.com/Azure-Samples/usql-cognitive-imaging-ocr-hello-world)
-* Text: [Извлечение ключевых фраз и анализ тональности](https://github.com/Azure-Samples/usql-cognitive-text-hello-world)
+* Imaging [Обнаружение лиц](https://github.com/Azure-Samples/usql-cognitive-imaging-ocr-hello-world)
+* Imaging [Обнаружение распознавания эмоций](https://github.com/Azure-Samples/usql-cognitive-imaging-emotion-detection-hello-world)
+* Imaging [Обнаружение объектов (Добавление тегов)](https://github.com/Azure-Samples/usql-cognitive-imaging-object-tagging-hello-world)
+* Imaging [Распознавание текста](https://github.com/Azure-Samples/usql-cognitive-imaging-ocr-hello-world)
+* Полнотекстовым [Извлечение ключевых фраз & анализ тональности](https://github.com/Azure-Samples/usql-cognitive-text-hello-world)
 
 ## <a name="registering-cognitive-extensions-in-u-sql"></a>Регистрация когнитивных возможностей в U-SQL
-Прежде чем начать, выполните действия, описанные в этой статье, чтобы зарегистрировать когнитивные возможности U-SQL. [Регистрация когнитивные возможности U-SQL](/u-sql/objects-and-extensions/cognitive-capabilities-in#registeringExtensions).
+Прежде чем начать, выполните действия, описанные в этой статье, чтобы зарегистрировать слышимые расширения в U-SQL: [Регистрация Восприятных расширений в U-SQL](/u-sql/objects-and-extensions/cognitive-capabilities-in#registeringExtensions).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Примеры использования когнитивных возможностей в U-SQL](https://github.com/Azure-Samples?utf8=✓&q=usql%20cognitive)
 * [Разработка сценариев U-SQL с помощью средств озера данных для Visual Studio.](data-lake-analytics-data-lake-tools-get-started.md)
 * [Использование оконных функций U-SQL для заданий в службе аналитики озера данных Azure](data-lake-analytics-use-window-functions.md)

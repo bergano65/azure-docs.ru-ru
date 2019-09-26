@@ -16,12 +16,12 @@ ms.date: 04/15/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6c7199cd8e5dbde1f6ff2f5cea56a4191211c853
-ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
+ms.openlocfilehash: 0d21bf0f2ba7c93a35952d2eb2dd4df49bb3260b
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68779084"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71290760"
 ---
 # <a name="azure-active-directory-pass-through-authentication-frequently-asked-questions"></a>Сквозная проверка подлинности Azure Active Directory Часто задаваемые вопросы
 
@@ -44,8 +44,7 @@ ms.locfileid: "68779084"
 Да. Все возможности условного доступа, включая многофакторную идентификацию Azure, работают с сквозной проверкой подлинности.
 
 ## <a name="does-pass-through-authentication-support-alternate-id-as-the-username-instead-of-userprincipalname"></a>Поддерживает ли сквозная проверка подлинности в качестве имени пользователя "Alternate ID", а не "userPrincipalName"?
-
-Да, сквозная проверка подлинности поддерживает `Alternate ID` в качестве имени пользователя, если это настроено в Azure AD Connect. В качестве предварительного требования Azure AD Connect требуется синхронизировать локальный атрибут `UserPrincipalName` Active Directory с Azure AD. Дополнительные сведения см. в статье [Выборочная установка Azure AD Connect](how-to-connect-install-custom.md). Не все приложения Office 365 поддерживают `Alternate ID`. Ознакомьтесь с заявлением о поддержке в документации по конкретным приложениям.
+В ограниченном экстенте сквозная проверка подлинности поддерживает альтернативный идентификатор в качестве имени пользователя при настройке в Azure AD Connect. В качестве предварительного требования Azure AD Connect требуется синхронизировать локальный атрибут `UserPrincipalName` Active Directory с Azure AD. Это делает то `UserPrincipalName` же самое для локальной службы AD и Azure AD. Если вы хотите использовать другой атрибут для синхронизации из локальной службы AD в качестве имени участника-пользователя в Azure AD, необходимо использовать либо синхронизацию хэша паролей, либо AD FS. Дополнительные сведения см. в статье [Выборочная установка Azure AD Connect](how-to-connect-install-custom.md). Не все приложения Office 365 поддерживают `Alternate ID`. Ознакомьтесь с заявлением о поддержке в документации по конкретным приложениям.
 
 ## <a name="does-password-hash-synchronization-act-as-a-fallback-to-pass-through-authentication"></a>Действует ли синхронизация хэша паролей как переход на резервный ресурс при сквозной аутентификации?
 

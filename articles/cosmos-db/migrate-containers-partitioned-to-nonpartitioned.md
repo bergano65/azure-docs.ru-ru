@@ -4,14 +4,14 @@ description: Узнайте, как перенести все существую
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 05/23/2019
+ms.date: 09/25/2019
 ms.author: mjbrown
-ms.openlocfilehash: d51c200ebff0d92b1bcdf2c8e3e0325103e214b7
-ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
+ms.openlocfilehash: 77d70aaa9c1ae5a111a47e08f259c0ce95fd7c92
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69615026"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71300112"
 ---
 # <a name="migrate-non-partitioned-containers-to-partitioned-containers"></a>Перенос несекционированных контейнеров в секционированные контейнеры
 
@@ -19,12 +19,12 @@ Azure Cosmos DB поддерживает создание контейнеров
 
 Несекционированные контейнеры являются устаревшими, поэтому необходимо перенести существующие несекционированные контейнеры в секционированные контейнеры для масштабирования хранилища и пропускной способности. Azure Cosmos DB предоставляет системный механизм для переноса несекционированных контейнеров в секционированные контейнеры. В этом документе объясняется, как выполняется автоматическая миграция всех существующих несекционированных контейнеров в секционированные контейнеры. Функцию автоматической миграции можно использовать только в том случае, если вы используете версию пакетов SDK версии V3 на всех языках.
 
-> [!NOTE] 
-> Сейчас вы не можете перенести учетные записи Azure Cosmos DB MongoDB и Gremlin API, выполнив действия, описанные в этом документе. 
+> [!NOTE]
+> Сейчас вы не можете перенести учетные записи Azure Cosmos DB MongoDB и Gremlin API, выполнив действия, описанные в этом документе.
 
 ## <a name="migrate-container-using-the-system-defined-partition-key"></a>Миграция контейнера с помощью системного ключа секции
 
-Для поддержки миграции Azure Cosmos DB определяет определенный системой ключ раздела с именем `/_partitionkey` во всех контейнерах, у которых нет ключа секции. Определение ключа секции нельзя изменить после миграции контейнеров. Например, определение контейнера, перенесенного в секционированный контейнер, будет выглядеть следующим образом: 
+Для поддержки миграции Azure Cosmos DB предоставляет определенный системой ключ раздела с именем `/_partitionkey` во всех контейнерах, у которых нет ключа секции. Определение ключа секции нельзя изменить после миграции контейнеров. Например, определение контейнера, перенесенного в секционированный контейнер, будет выглядеть следующим образом:
 
 ```json
 {
@@ -37,10 +37,10 @@ Azure Cosmos DB поддерживает создание контейнеров
   },
 }
 ```
- 
-После переноса контейнера можно создать документы, заполнив `_partitionKey` свойство вместе с другими свойствами документа. `_partitionKey` Свойство представляет ключ раздела ваших документов. 
 
-Выбор правильного ключа секции важен для оптимального использования подготовленной пропускной способности. Дополнительные сведения см. [в статье Выбор ключа секции](partitioning-overview.md) . 
+После переноса контейнера можно создать документы, заполнив `_partitionKey` свойство вместе с другими свойствами документа. `_partitionKey` Свойство представляет ключ раздела ваших документов.
+
+Выбор правильного ключа секции важен для оптимального использования подготовленной пропускной способности. Дополнительные сведения см. [в статье Выбор ключа секции](partitioning-overview.md) .
 
 > [!NOTE]
 > Вы можете воспользоваться преимуществами системного ключа секции только в том случае, если вы используете версию пакетов SDK последней версии (v3) на всех языках.
@@ -65,37 +65,37 @@ public class DeviceInformationItem
     [JsonProperty(PropertyName = "deviceId")]
     public string DeviceId { get; set; }
 
-    [JsonProperty(PropertyName = "_partitionKey")]
+    [JsonProperty(PropertyName = "_partitionKey", NullValueHandling = NullValueHandling.Ignore)]
     public string PartitionKey {get {return this.DeviceId; set; }
 }
 
 CosmosContainer migratedContainer = database.Containers["testContainer"];
 
 DeviceInformationItem deviceItem = new DeviceInformationItem() {
-  Id = "1234", 
+  Id = "1234",
   DeviceId = "3cf4c52d-cc67-4bb8-b02f-f6185007a808"
-} 
+}
 
-CosmosItemResponse<DeviceInformationItem > response = 
-  await migratedContainer.Items.CreateItemAsync(
+ItemResponse<DeviceInformationItem > response = 
+  await migratedContainer.CreateItemAsync<DeviceInformationItem>(
     deviceItem.PartitionKey, 
     deviceItem
   );
 
 // Read back the document providing the same partition key
-CosmosItemResponse<DeviceInformationItem> readResponse = 
-  await migratedContainer.Items.ReadItemAsync<DeviceInformationItem>( 
+ItemResponse<DeviceInformationItem> readResponse = 
+  await migratedContainer.ReadItemAsync<DeviceInformationItem>( 
     partitionKey:deviceItem.PartitionKey, 
     id: device.Id
-  ); 
+  );
 
 ```
 
-Полный пример см. в репозитории [кода](https://github.com/Azure/azure-cosmos-dotnet-v3/tree/master/Microsoft.Azure.Cosmos.Samples/CodeSamples) GitHub для .NET. 
+Полный пример см. в репозитории [кода](https://github.com/Azure/azure-cosmos-dotnet-v3/tree/master/Microsoft.Azure.Cosmos.Samples/CodeSamples) GitHub для .NET.
                       
 ## <a name="migrate-the-documents"></a>Перенос документов
 
-Хотя определение контейнера дополнено свойством ключа секции, документы в контейнере не переносятся в автоматическом режиме. Это означает, что путь к свойству `/_partitionKey` ключа системного раздела не добавляется автоматически в существующие документы. Необходимо выполнить повторное `_partitionKey` секционирование существующих документов, прочитав документы, созданные без ключа секции, и перезаписать их свойством в документах. 
+Хотя определение контейнера дополнено свойством ключа секции, документы в контейнере не переносятся в автоматическом режиме. Это означает, что путь к свойству `/_partitionKey` ключа системного раздела не добавляется автоматически в существующие документы. Необходимо выполнить повторное `_partitionKey` секционирование существующих документов, прочитав документы, созданные без ключа секции, и перезаписать их свойством в документах.
 
 ## <a name="access-documents-that-dont-have-a-partition-key"></a>Доступ к документам, у которых нет ключа секции
 
@@ -104,7 +104,7 @@ CosmosItemResponse<DeviceInformationItem> readResponse =
 ```csharp
 CosmosItemResponse<DeviceInformationItem> readResponse = 
 await migratedContainer.Items.ReadItemAsync<DeviceInformationItem>( 
-  partitionKey: CosmosContainerSettings.NonePartitionKeyValue, 
+  partitionKey: PartitionKey.None, 
   id: device.Id
 ); 
 

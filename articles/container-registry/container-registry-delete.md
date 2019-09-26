@@ -8,12 +8,12 @@ ms.service: container-registry
 ms.topic: article
 ms.date: 07/31/2019
 ms.author: danlep
-ms.openlocfilehash: d652c511a3f54fd0b756a95fbe183b4678416a10
-ms.sourcegitcommit: 23389df08a9f4cab1f3bb0f474c0e5ba31923f12
+ms.openlocfilehash: d415bef80ed8c96ff6e5df81ae9281ae681a4879
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70873199"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71300183"
 ---
 # <a name="delete-container-images-in-azure-container-registry-using-the-azure-cli"></a>Удаление образов контейнеров в реестре контейнеров Azure с помощью Azure CLI
 
@@ -259,9 +259,12 @@ if ($enableDelete) {
 }
 ```
 
+
 ## <a name="automatically-purge-tags-and-manifests-preview"></a>Автоматическая очистка тегов и манифестов (предварительная версия)
 
 В качестве альтернативы Azure CLI командам скрипта запустите задачу контроля доступа по запросу или по расписанию, чтобы удалить все теги, которые старше определенной длительности или соответствуют указанному фильтру имен. Дополнительные сведения см. в разделе [Автоматическая очистка образов из реестра контейнеров Azure](container-registry-auto-purge.md).
+
+При необходимости задайте [политику хранения](container-registry-retention-policy.md) для каждого реестра, чтобы управлять манифестами без тегов. При включении политики хранения манифесты изображений в реестре, у которых нет связанных тегов, а также данные базового слоя, автоматически удаляются после заданного периода.
 
 ## <a name="next-steps"></a>Следующие шаги
 

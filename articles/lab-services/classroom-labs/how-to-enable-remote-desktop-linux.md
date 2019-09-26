@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/20/2019
 ms.author: spelluru
-ms.openlocfilehash: 562ad0e5e6088c2fbadc853779b7533c5398e079
-ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
+ms.openlocfilehash: 86ad892f514513840ff33e46921607221896db84
+ms.sourcegitcommit: 9fba13cdfce9d03d202ada4a764e574a51691dcd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2019
-ms.locfileid: "71176643"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71315733"
 ---
 # <a name="enable-remote-desktop-for-linux-virtual-machines-in-a-lab-in-azure-lab-services"></a>Включение удаленного рабочего стола для виртуальных машин Linux в лаборатории в службах лаборатории Azure
 В этой статье показано, как выполнить следующие задачи.
@@ -37,6 +37,7 @@ ms.locfileid: "71176643"
 
 > [!IMPORTANT] 
 > При включении **подключения к удаленному рабочему столу** открывается только порт **RDP** на компьютерах Linux. Если протокол удаленного рабочего стола уже установлен и настроен в образе виртуальной машины (например: Образ виртуальной машины Ubuntu для обработки и анализа данных). Вы можете подключаться к виртуальным машинам через RDP, не выполняя никаких дополнительных действий.
+> 
 > Если на образе виртуальной машины не установлен и не настроен протокол RDP, необходимо подключиться к компьютеру Linux с помощью SSH в первый раз и установить пакеты RDP и GUI, чтобы вы или студенты могли подключиться к компьютеру Linux по протоколу RDP позднее. Затем вы публикуете образ, чтобы студенты могли выполнять RDP на виртуальных машинах Linux учащихся.
 
 ## <a name="supported-operating-systems"></a>Поддерживаемые операционные системы

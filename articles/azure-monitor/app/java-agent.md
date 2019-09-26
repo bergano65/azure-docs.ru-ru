@@ -12,32 +12,39 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 01/10/2019
 ms.author: mbullwin
-ms.openlocfilehash: ce5f7ab1e6751a9ce68aa2d9c466a112c9cac182
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: af157204ad1e1b28639ae2d8f192b3122afa8147
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60900614"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71299231"
 ---
 # <a name="monitor-dependencies-caught-exceptions-and-method-execution-times-in-java-web-apps"></a>Мониторинг зависимостей, перехваченных исключений и времени выполнения методов в веб-приложениях Java
 
 
-[Инструментирование веб-приложения Java с помощью Application Insights][java] позволяет получать более подробную информацию без изменения кода, используя для этого агент для Java.
+Если вы выполнили [Инструментирование веб-приложения Java с Application Insights][java], вы можете использовать агент Java для получения более подробных сведений, не внося изменения в код:
 
 * **Зависимости** — данные о вызовах других компонентов в вашем приложении, включая:
-  * **Вызовы REST** через HttpClient, OkHttp и RestTemplate (Spring).
-  * Вызовы **Redis** через клиент Jedis.
-  * **[Вызовы JDBC](https://docs.oracle.com/javase/7/docs/technotes/guides/jdbc/)** — автоматически включаются команды MySQL, SQL Server и Oracle DB. Если для MySQL вызов выполняется дольше 10 с, агент сообщает о плане запроса.
-* **Перехваченные исключения.** Сведения об исключениях, обработанных вашим кодом.
-* **Время выполнения метода.** Сведения о времени, которое потребовалось для выполнения определенных методов.
+  * **Исходящие вызовы HTTP** , выполненные через Apache HttpClient, `java.net.HttpURLConnection` OkHttp и, фиксируются.
+  * **Вызовы Redis** , выполненные через клиент Jedis, фиксируются.
+  * **Запросы JDBC** — для MySQL и PostgreSQL, если вызов занимает больше 10 секунд, агент сообщает о плане запроса.
 
-Чтобы использовать агент для Java, его необходимо установить на сервере. Веб-приложения необходимо инструментировать [пакетом SDK для Java Application Insights][java]. 
+* **Ведение журнала приложения:** Запись и сопоставление журналов приложений с запросами HTTP и другими данными телеметрии
+  * **Log4j 1,2**
+  * **Log4j2**
+  * **Logback**
+
+* **Более эффективное именование операций:** (используется для агрегирования запросов на портале)
+  * **Пружинный** на `@RequestMapping`основе.
+  * **JAX-RS** -на основе `@Path`. 
+
+Чтобы использовать агент для Java, его необходимо установить на сервере. Веб-приложения должны быть инструментированы с помощью [пакета SDK для Application Insights Java][java]. 
 
 ## <a name="install-the-application-insights-agent-for-java"></a>Установка агента Application Insights для Java
 1. [Скачайте агент](https://github.com/Microsoft/ApplicationInsights-Java/releases/latest) на компьютер с сервером Java. Обязательно скачайте агент Java той же версии, что и веб-пакеты и пакет SDK для Java Application Insights.
-2. Измените скрипт запуска сервера приложений, добавив следующую виртуальную машину Java:
+2. Измените скрипт запуска сервера приложений и добавьте следующий аргумент ВИРТУАЛЬНОЙ машины Java:
    
-    `javaagent:`*полный путь к файлу агента JAR*
+    `-javaagent:<full path to the agent JAR file>`
    
     Например, в Tomcat на компьютере Linux:
    
@@ -50,82 +57,53 @@ ms.locfileid: "60900614"
 Настройка содержимого XML-файла. Измените приведенный ниже пример, включив необходимые функции или убрав ненужные.
 
 ```XML
+<?xml version="1.0" encoding="utf-8"?>
+<ApplicationInsightsAgent>
+   <Instrumentation>
+      <BuiltIn enabled="true">
 
-    <?xml version="1.0" encoding="utf-8"?>
-    <ApplicationInsightsAgent>
-      <Instrumentation>
+         <!-- capture logging via Log4j 1.2, Log4j2, and Logback, default is true -->
+         <Logging enabled="true" />
 
-        <!-- Collect remote dependency data -->
-        <BuiltIn enabled="true">
-           <!-- Disable Redis or alter threshold call duration above which arguments are sent.
-               Defaults: enabled, 10000 ms -->
-           <Jedis enabled="true" thresholdInMS="1000"/>
+         <!-- capture outgoing HTTP calls performed through Apache HttpClient, OkHttp,
+              and java.net.HttpURLConnection, default is true -->
+         <HTTP enabled="true" />
 
-           <!-- Set SQL query duration above which query plan is reported (MySQL, PostgreSQL). Default is 10000 ms. -->
-           <MaxStatementQueryLimitInMS>1000</MaxStatementQueryLimitInMS>
-        </BuiltIn>
+         <!-- capture JDBC queries, default is true -->
+         <JDBC enabled="true" />
 
-        <!-- Collect data about caught exceptions
-             and method execution times -->
+         <!-- capture Redis calls, default is true -->
+         <Jedis enabled="true" />
 
-        <Class name="com.myCompany.MyClass">
-           <Method name="methodOne"
-               reportCaughtExceptions="true"
-               reportExecutionTime="true"
-               />
-           <!-- Report on the particular signature
-                void methodTwo(String, int) -->
-           <Method name="methodTwo"
-              reportExecutionTime="true"
-              signature="(Ljava/lang/String;I)V" />
-        </Class>
+         <!-- capture query plans for JDBC queries that exceed this value (MySQL, PostgreSQL),
+              default is 10000 milliseconds -->
+         <MaxStatementQueryLimitInMS>1000</MaxStatementQueryLimitInMS>
 
-      </Instrumentation>
-    </ApplicationInsightsAgent>
-
+      </BuiltIn>
+   </Instrumentation>
+</ApplicationInsightsAgent>
 ```
 
-Необходимо включить прием отчетов и контроль времени выполнения отдельных методов.
-
-По умолчанию `reportExecutionTime` имеет значение true, а `reportCaughtExceptions` — значение false.
-
-## <a name="additional-config-spring-boot"></a>Дополнительные конфигурации (Spring Boot)
+## <a name="additional-config-spring-boot"></a>Дополнительная конфигурация (пружинная загрузка)
 
 `java -javaagent:/path/to/agent.jar -jar path/to/TestApp.jar`
 
-Для службы приложений выполните следующие действия.
+Для служб приложений Azure выполните следующие действия.
 
 * Выберите элементы "Параметры > Параметры приложения".
 * В разделе "Параметры приложения" добавьте новую пару "ключ — значение":
 
-Раздел: `JAVA_OPTS` Значение: `-javaagent:D:/home/site/wwwroot/applicationinsights-agent-2.3.1-SNAPSHOT.jar`
+Раздел: `JAVA_OPTS`Значений`-javaagent:D:/home/site/wwwroot/applicationinsights-agent-2.5.0.jar`
 
-Последнюю версию агента Java см. выпуски [здесь](https://github.com/Microsoft/ApplicationInsights-Java/releases
-). 
+Для получения последней версии агента Java ознакомьтесь с выпусками [здесь.](https://github.com/Microsoft/ApplicationInsights-Java/releases
+) 
 
-Агент должны быть упакованы как ресурс в своем проекте, таким образом, чтобы он оказывается в D:/home/site/wwwroot/directory. Убедитесь, что агент находится в правильный каталог службы приложений, выбрав **средства разработки** > **Дополнительные инструменты** > **консоли отладки**и изучение содержимого каталога узлов.    
+Агент должен быть упакован в проект в виде ресурса таким образом, чтобы он закончится в папке D:/Home, site/wwwroot/. Чтобы убедиться, что агент находится в нужном каталоге службы приложений, перейдите в **меню средства** > разработки**Дополнительные инструменты** > **консоль отладки** и проверьте содержимое каталога сайта.    
 
-* Сохранить изменения и перезапустите приложение. (Эти шаги применяются только в службах приложений под управлением Windows.)
+* Сохраните параметры и перезапустите приложение. (Эти действия применимы только к службам приложений, работающим в Windows.)
 
 > [!NOTE]
 > Файлы агента AI-Agent.xml и JAR-файл должны быть в одной папке. Они часто расположены вместе в папке `/resources` проекта.  
-
-### <a name="spring-rest-template"></a>Шаблон Spring Rest
-
-Для того чтобы Application Insights успешно обрабатывал HTTP-вызовы, сделанные с помощью шаблона Spring Rest, необходимо использовать клиент HTTP Apache. По умолчанию шаблон Spring Rest не настроен для использования клиента HTTP Apache. Указав [ HttpComponentsClientHttpRequestfactory ](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/http/client/HttpComponentsClientHttpRequestFactory.html) в конструкторе шаблона Spring Rest, он будет использовать Apache HTTP.
-
-Вот пример того, как это сделать с помощью Spring Beans. Это очень простой пример, использующий параметры по умолчанию для класса фабрики.
-
-```java
-@bean
-public ClientHttpRequestFactory httpRequestFactory() {
-return new HttpComponentsClientHttpRequestFactory()
-}
-@Bean(name = 'myRestTemplate')
-public RestTemplate dcrAccessRestTemplate() {
-    return new RestTemplate(httpRequestFactory())
-}
-```
 
 #### <a name="enable-w3c-distributed-tracing"></a>Активация распределенной трассировки W3C
 
@@ -133,10 +111,10 @@ public RestTemplate dcrAccessRestTemplate() {
 
 ```xml
 <Instrumentation>
-        <BuiltIn enabled="true">
-            <HTTP enabled="true" W3C="true" enableW3CBackCompat="true"/>
-        </BuiltIn>
-    </Instrumentation>
+   <BuiltIn enabled="true">
+      <HTTP enabled="true" W3C="true" enableW3CBackCompat="true"/>
+   </BuiltIn>
+</Instrumentation>
 ```
 
 > [!NOTE]
@@ -147,9 +125,9 @@ public RestTemplate dcrAccessRestTemplate() {
 Убедитесь, что **оба [входящий](correlation.md#w3c-distributed-tracing) и исходящий (агенты) конфигурации** совпадают.
 
 ## <a name="view-the-data"></a>Просмотр данных
-В ресурсе Application Insights сводные данные по удаленным зависимостям и времени выполнения методов отображаются в [элементе "Производительность"][metrics].
+В ресурсе Application Insights агрегированная Удаленная зависимость и время выполнения метода отображаются [под плиткой "производительность"][metrics].
 
-Для поиска отдельных экземпляров отчетов по зависимостям, исключениям и методам откройте [Поиск][diagnostic].
+Для поиска отдельных экземпляров отчетов зависимости, исключений и методов откройте окно [поиска][diagnostic].
 
 [Дополнительные сведения о диагностировании проблем зависимостей](../../azure-monitor/app/asp-net-dependencies.md#diagnosis).
 

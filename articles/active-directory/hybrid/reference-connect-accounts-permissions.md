@@ -13,16 +13,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: reference
-ms.date: 04/29/2019
+ms.date: 09/25/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c5460033902b71174dc3a10615811f657081f0e4
-ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
+ms.openlocfilehash: 6760677a94855c259501103a54a96d687c87910b
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70186302"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71290968"
 ---
 # <a name="azure-ad-connect-accounts-and-permissions"></a>Azure AD Connect выполняет следующие функции: Учетные записи и разрешения
 
@@ -48,10 +48,15 @@ Azure AD Connect использует 3 учетные записи, чтобы 
 
 - **Учетная запись SQL SA** (необязательная): используется для создания базы данных ADSync при использовании полной версии SQL Server.  Этот сервер SQL Server может быть локальным или удаленным для установки Azure AD Connect.  Этой учетной записью может быть учетная запись администратора предприятия.  Внешнюю подготовку базы данных может выполнять администратор SQL, а установку — администратор Azure AD Connect с правами владельца базы данных.  Дополнительные сведения см. в статье [Установка Azure AD Connect с использованием делегированных разрешений администратора SQL](how-to-connect-install-sql-delegation.md).
 
+<<<<<<< HEAD
+>[!IMPORTANT]
+> Начиная с сборки 1.4. # # #. # в качестве учетной записи соединителя AD DS больше не поддерживается использование администратора предприятия или учетной записи администратора домена.  При попытке ввести учетную запись, которая является администратором предприятия или администратора домена при указании параметра **использовать существующую учетную запись**, появится сообщение об ошибке.
+=======
 > [!NOTE]
 > Поддерживается управление административными учетными записями, используемыми в Azure AD Connect из административного леса ЕСАЕ (также известного как "Красный лес").
 > Выделенные административные леса позволяют организациям размещать административные учетные записи, рабочие станции и группы в среде с более надежными элементами управления безопасностью, чем в рабочей среде.
 > Дополнительные сведения о выделенных административных лесах см. в статье [подход к проектированию административного леса ЕСАЕ](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material#esae-administrative-forest-design-approach) .
+>>>>>>> e683a61b0ed62ae739941410f658a127534e2481
 
 ## <a name="installing-azure-ad-connect"></a>Идет установка Azure AD Connect
 Мастер установки Azure AD Connect предлагает два разных варианта.
