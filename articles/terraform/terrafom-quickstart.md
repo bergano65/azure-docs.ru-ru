@@ -5,14 +5,14 @@ services: terraform
 author: neilpeterson
 ms.service: azure
 ms.topic: quickstart
-ms.date: 02/04/2019
+ms.date: 09/20/2019
 ms.author: nepeters
-ms.openlocfilehash: 57ab3fbc584932cb7d08bda76530bbe95ce61a6f
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: c53f3a31b46f00d3207cd8f47dcfbfa131c03666
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68699083"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71173522"
 ---
 # <a name="create-a-terraform-configuration-for-azure"></a>Создание конфигурации Terraform для Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "68699083"
 
 Щелкните **Попробовать сейчас**, чтобы открыть Azure Cloud Shell. После открытия введите `code .`, чтобы открыть редактор кода cloud shell.
 
-```azurecli-interactive
+```bash
 code .
 ```
 
@@ -34,7 +34,7 @@ code .
 
 После завершения сохраните файл с именем `main.tf`. Эту операцию можно выполнить, щелкнув многоточие в верхней правой части редактора кода.
 
-```azurecli-interactive
+```hcl
 resource "azurerm_resource_group" "vote-resource-group" {
   name     = "vote-resource-group"
   location = "westus"
@@ -67,7 +67,7 @@ resource "azurerm_cosmosdb_account" "vote-cosmos-db" {
 
 Команда [terraform init](https://www.terraform.io/docs/commands/init.html) инициализирует рабочий каталог. Запустите `terraform init` в терминале cloud shell, чтобы подготовиться к развертыванию новой конфигурации.
 
-```azurecli-interactive
+```bash
 terraform init
 ```
 
@@ -75,13 +75,13 @@ terraform init
 
 Запустите `terraform plan`, чтобы проверить новую конфигурацию Terraform.
 
-```azurecli-interactive
+```bash
 terraform plan --out plan.out
 ```
 
 Примените конфигурацию с помощью команды [terraform apply](https://www.terraform.io/docs/commands/apply.html) и укажите имя файла плана. Эта команда развертывает ресурсы в подписке Azure.
 
-```azurecli-interactive
+```bash
 terraform apply plan.out
 ```
 
@@ -98,7 +98,7 @@ terraform apply plan.out
 
 Конфигурация также включает в себя блок выходных данных, который возвращает полное доменное имя экземпляра контейнера.
 
-```azurecli-interactive
+```hcl
 resource "azurerm_container_group" "vote-aci" {
   name                = "vote-aci"
   location            = "${azurerm_resource_group.vote-resource-group.location}"
@@ -134,13 +134,13 @@ output "dns" {
 
 Запустите `terraform plan`, чтобы создать обновленный план и визуализировать изменения. Вы должны увидеть, что в конфигурацию добавлен ресурс экземпляра контейнера Azure.
 
-```azurecli-interactive
+```bash
 terraform plan --out plan.out
 ```
 
 Наконец, запустите `terraform apply`, чтобы применить конфигурацию.
 
-```azurecli-interactive
+```bash
 terraform apply plan.out
 ```
 
@@ -156,7 +156,7 @@ terraform apply plan.out
 
 После этого ресурсы и группу ресурсов Azure можно удалить с помощью команды [terraform destroy](https://www.terraform.io/docs/commands/destroy.html).
 
-```azurecli-interactive
+```bash
 terraform destroy -auto-approve
 ```
 

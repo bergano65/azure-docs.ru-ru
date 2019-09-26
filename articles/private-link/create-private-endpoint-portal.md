@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: quickstart
 ms.date: 09/16/2019
 ms.author: kumud
-ms.openlocfilehash: 2b7ad95dc652f2099af75308f05ddd0684e088aa
-ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
+ms.openlocfilehash: 15b4d3208be693a5b8d858d30b663347515f5a68
+ms.sourcegitcommit: 2ed6e731ffc614f1691f1578ed26a67de46ed9c2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71104736"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71130292"
 ---
 # <a name="create-a-private-endpoint-using-azure-portal"></a>Создание частной конечной точки с помощью портала Azure
 
@@ -199,6 +199,7 @@ ms.locfileid: "71104736"
 ## <a name="access-the-sql-database-server-privately-from-the-vm"></a>Доступ к серверу базы данных SQL в частном порядке с виртуальной машины
 
 1. На удаленном рабочем столе  *myVm* откройте PowerShell.
+
 2. Введите `nslookup myserver.database.windows.net`. 
 
     Должно появиться сообщение следующего вида:

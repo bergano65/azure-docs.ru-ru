@@ -3,9 +3,8 @@ title: Краткое руководство по работе с центром
 description: В этом кратком руководстве показано, как повысить ценовую категорию центра безопасности до уровня "Стандартный" для обеспечения дополнительной безопасности.
 services: security-center
 documentationcenter: na
-author: rkarlin
-manager: barbkess
-editor: ''
+author: memildin
+manager: rkarlin
 ms.assetid: 61e95a87-39c5-48f5-aee6-6f90ddcd336e
 ms.service: security-center
 ms.devlang: na
@@ -14,13 +13,13 @@ ms.custom: mvc
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/3/2018
-ms.author: rkarlin
-ms.openlocfilehash: 4464796e655cefd28f858cb732ff3d5721a7aa47
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.author: memildin
+ms.openlocfilehash: 138d3fd74b95fe8d51593fcbb2cedda017e35d80
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67206815"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71202155"
 ---
 # <a name="quickstart-onboard-your-azure-subscription-to-security-center-standard"></a>Краткое руководство. Переход подписки Azure в ценовую категорию "Стандартный" Центра безопасности Azure
 Центр безопасности Azure обеспечивает унифицированное управление безопасностью и защиту от угроз для гибридных облачных рабочих нагрузок. Уровень "Бесплатный" предлагает ограниченные возможности безопасности только для ресурсов Azure, тогда как уровень "Стандартный" расширяет эти возможности на локальную среду и другие облака. Ценовая категория "Стандартный" центра безопасности помогает находить и исправлять уязвимости системы безопасности, применять средства управления доступом и приложениями для блокировки вредоносных действий, обнаруживать угрозы с помощью аналитики и интеллектуальных средств и быстро реагировать на атаки. Вы можете бесплатно опробовать центр безопасности ценовой категории "Стандартный". Дополнительные сведения см. на [странице с ценами](https://azure.microsoft.com/pricing/details/security-center/).

@@ -3,9 +3,8 @@ title: Начало работы с центром безопасности Azur
 description: В этом кратком руководстве показано, как подготовить агент Microsoft Monitoring Agent на компьютере Windows.
 services: security-center
 documentationcenter: na
-author: rkarlin
-manager: barbkess
-editor: ''
+author: memildin
+manager: rkarlin
 ms.assetid: 61e95a87-39c5-48f5-aee6-6f90ddcd336e
 ms.service: security-center
 ms.devlang: na
@@ -14,13 +13,13 @@ ms.custom: mvc
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/3/2018
-ms.author: rkarlin
-ms.openlocfilehash: bee4618ff08c89bbdab7413ca7f7f74a266d96dd
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.author: memildin
+ms.openlocfilehash: 46fffc40b315109c348247ac09f02f9bb8dbb3b7
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58077910"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71202802"
 ---
 # <a name="quickstart-onboard-windows-computers-to-azure-security-center"></a>Краткое руководство. Подключение компьютеров Windows к Центру безопасности Azure
 После подключения подписок Azure можно включить центр безопасности для ресурсов, работающих вне среды Azure, например в локальной среде или в других облаках, подготовив агент Microsoft Monitoring Agent.
@@ -64,7 +63,7 @@ ms.locfileid: "58077910"
 3. На странице **Условия лицензии** прочтите лицензию и выберите **Принимаю**.
 4. На странице **Конечная папка** измените или оставьте папку установки по умолчанию и нажмите кнопку **Далее**.
 5. На странице **Параметры установки агента** выберите подключение агента к Azure Log Analytics и нажмите кнопку **Далее**.
-6. На странице **Azure Log Analytics**, вставьте **идентификатор рабочей области** и **ключ рабочей области (первичный ключ)**, скопированные в Блокнот в ходе предыдущей процедуры.
+6. На странице **Azure Log Analytics**, вставьте **идентификатор рабочей области** и **ключ рабочей области (первичный ключ)** , скопированные в Блокнот в ходе предыдущей процедуры.
 7. Если компьютер должен передавать данные в рабочую область Log Analytics в облаке Azure для государственных организаций, выберите **Azure для государственных организаций США** в раскрывающемся списке **Облако Azure**.  Если компьютер должен обмениваться данными со службой Log Analytics через прокси-сервер, выберите **Дополнительно** и укажите URL-адрес и номер порта прокси-сервера.
 8. Нажмите кнопку **Далее** после ввода необходимых параметров конфигурации.
 
@@ -100,7 +99,7 @@ ms.locfileid: "58077910"
 В этом кратком руководстве мы выполнили подготовку агента Microsoft Monitoring Agent на компьютере Windows. Дополнительные сведения об использовании центра безопасности см. в руководстве по настройке политики безопасности и оценке безопасности ресурсов.
 
 > [!div class="nextstepaction"]
-> [Руководство Определение и оценка политик безопасности](tutorial-security-policy.md)
+> [Руководство. Определение и оценка политик безопасности](tutorial-security-policy.md)
 
 <!--Image references-->
 [2]: ./media/quick-onboard-windows-computer/overview.png

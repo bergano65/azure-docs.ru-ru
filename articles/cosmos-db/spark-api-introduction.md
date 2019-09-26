@@ -6,12 +6,12 @@ ms.topic: overview
 ms.date: 08/01/2019
 author: rimman
 ms.author: rimman
-ms.openlocfilehash: 3fd7990043543b92eb3daf8ec699ec58db3387ec
-ms.sourcegitcommit: a52f17307cc36640426dac20b92136a163c799d0
+ms.openlocfilehash: 0f070cb9a6e300dad0ec9e0b393b09b7f22d2942
+ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68717572"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71212580"
 ---
 # <a name="built-in-operational-analytics-in-azure-cosmos-db-with-apache-spark-preview"></a>Встроенная операционная аналитика в Azure Cosmos DB с использованием Apache Spark (предварительная версия) 
 
@@ -136,12 +136,6 @@ ms.locfileid: "68717572"
 На следующем рисунке показано, как поддержка Spark Azure Cosmos DB используется в игровой аналитике:
 
 ![Поддержка Spark Azure Cosmos DB в аналитике игры](./media/spark-api-introduction/gaming-analytics.png)
-
-## <a name="built-in-jupyter-notebooks-support"></a>Встроенная поддержка записных книжек Jupyter
-
-Azure Cosmos DB поддерживает встроенные записные книжки Jupyter для всех интерфейсов API, например Cassandra, MongoDB, SQL, Gremlin и таблицы. Записные книжки Jupyter выполняются в учетных записях Azure Cosmos, расширяя возможности разработчиков. Встроенная поддержка записных книжек для всех API-интерфейсов Azure Cosmos DB и моделей данных позволяет выполнять запросы интерактивно. Вы также можете выполнять модели машинного обучения и анализировать данные, хранимые в базах данных Azure Cosmos. С помощью записных книжек Jupyter можно анализировать сохраненные данные, создавать и обучать модели машинного обучения, а также выполнять объединение данных на портале Azure, как показано на следующем рисунке:
-
-![Поддержка записных книжек Jupyter в Azure Cosmos DB](./media/spark-api-introduction/jupyter-notebooks-portal.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -5,7 +5,6 @@ services: security-center
 documentationcenter: na
 author: pipposera
 manager: dsavage
-editor: ''
 ms.assetid: 8982348a-0624-40c7-8a1e-642a523c7f6b
 ms.service: security-center
 ms.devlang: na
@@ -15,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/02/2019
 ms.author: fiseraci
-ms.openlocfilehash: 7a630acee079301b95e7e05f5c5333dd116abb68
-ms.sourcegitcommit: b8a8d29fdf199158d96736fbbb0c3773502a092d
+ms.openlocfilehash: 1772fd34a2d79b725b2b5ccaa66adb0b251b7e1d
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59563800"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71202849"
 ---
 # <a name="quickstart--onboard-your-azure-stack-virtual-machines-to-security-center"></a>Краткое руководство.  Подключение виртуальных машин Azure Stack к Центру безопасности
 После подключения подписки Azure можете включить Центр безопасности, чтобы защитить виртуальные машины, работающие в Azure Stack, добавив расширение виртуальной машины **Azure Monitor, Update and Configuration Management** из Azure Stack Marketplace.
@@ -69,7 +68,7 @@ ms.locfileid: "59563800"
 >[!NOTE]
 > Если расширение **Azure Monitor, Update and Configuration Management** отсутствует в marketplace, обратитесь к оператору Azure Stack, чтобы получить это расширение.
 
-6. В колонке конфигурации **Установить расширение** вставьте **идентификатор рабочей области** и **ключ рабочей области (первичный ключ)**, скопированные в Блокнот в ходе предыдущей процедуры.
+6. В колонке конфигурации **Установить расширение** вставьте **идентификатор рабочей области** и **ключ рабочей области (первичный ключ)** , скопированные в Блокнот в ходе предыдущей процедуры.
 7.  Указав все необходимые параметры конфигурации, нажмите кнопку **ОК**.
 8. После завершения установки для расширения будет отображаться состояние **Подготовка успешно завершена**. Виртуальная машина отобразится на портале Центра безопасности в течение часа.
 
@@ -101,7 +100,7 @@ ms.locfileid: "59563800"
 При работе с этим кратким руководством вы подготовили расширение "Azure Monitor, Update and Configuration Management" на виртуальной машине, работающей в Azure Stack. Дополнительные сведения об использовании центра безопасности см. в руководстве по настройке политики безопасности и оценке безопасности ресурсов.
 
 > [!div class="nextstepaction"]
-> [Руководство Определение и оценка политик безопасности](tutorial-security-policy.md)
+> [Руководство. Определение и оценка политик безопасности](tutorial-security-policy.md)
 
 <!--Image references-->
 [2]: ./media/quick-onboard-windows-computer/overview.png
