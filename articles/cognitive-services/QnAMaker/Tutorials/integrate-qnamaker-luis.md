@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 06/11/2019
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: 1792cf2359caef3211b4ce1ac86928eeb85d682b
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 6605aa268a7ee7fe75254df5dbe96e9dfbc71d79
+ms.sourcegitcommit: a6718e2b0251b50f1228b1e13a42bb65e7bf7ee2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67053163"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71272416"
 ---
 # <a name="use-bot-with-qna-maker-and-luis-to-distribute-your-knowledge-base"></a>Использование бота с QnA Maker и LUIS для распределения базы знаний
 По мере роста базы знаний QnA Maker становится трудно поддерживать ее как единый монолитный набор, поэтому базу знаний необходимо разделить на маленькие логические блоки.
@@ -51,7 +51,7 @@ ms.locfileid: "67053163"
 
 ## <a name="web-app-bot"></a>Бот веб-приложения
 
-1. [Создание программы-робота, «Basic» веб-приложение](https://docs.microsoft.com/azure/bot-service/bot-service-quickstart?view=azure-bot-service-4.0) включающее приложением LUIS автоматически. Выберите пакет SDK 4.x и C# языка программирования.
+1. [Создайте "базовый" робот веб-приложения](https://docs.microsoft.com/azure/bot-service/bot-service-quickstart?view=azure-bot-service-4.0) , который автоматически включает приложение Luis. Выберите C# язык программирования.
 
 1. После создания бота веб-приложения выберите его на портале Azure.
 1. Выберите **Параметры приложения** на странице навигации службы бота веб-приложения, затем прокрутите вниз до раздела с доступными параметрами **Параметры приложения**.
@@ -237,7 +237,7 @@ ms.locfileid: "67053163"
 
 ![тест веб-чата](../media/qnamaker-tutorials-qna-luis/qnamaker-web-chat.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Create a business continuity plan for your QnA Maker service](../How-To/business-continuity-plan.md) (Создание плана по обеспечению непрерывности бизнеса для службы QnA Maker)

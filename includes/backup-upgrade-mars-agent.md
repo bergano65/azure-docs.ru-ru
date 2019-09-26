@@ -4,20 +4,20 @@ description: Здесь объясняется, почему необходим�
 services: backup
 cloud: ''
 suite: ''
-author: markgalioto
+author: dcurwin
 manager: carmonm
 ms.service: backup
 ms.tgt_pltfrm: <optional>
 ms.devlang: <optional>
 ms.topic: article
 ms.date: 8/29/2018
-ms.author: markgal
-ms.openlocfilehash: 56310b7356dd9e263238234cf3e28bd498fa70fc
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.author: dacurwin
+ms.openlocfilehash: ea1295b08aa77a3e1a03d944ddbcbf37b6d17702
+ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185643"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71251544"
 ---
 ## <a name="upgrade-the-mars-agent"></a>Обновление агента MARS
 

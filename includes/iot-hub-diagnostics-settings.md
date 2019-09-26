@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 02/20/2019
 ms.author: dobett
 ms.custom: include file
-ms.openlocfilehash: 3893b79cee96c3928897f64f3601ebe4c490ebdd
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 2498711a5b7e5bce29cd0054ba40257f8f996d43
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185395"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71266829"
 ---
 ### <a name="enable-logging-with-diagnostics-settings"></a>Включение ведения журнала с параметрами диагностики
 
@@ -25,7 +25,7 @@ ms.locfileid: "67185395"
 
 3. Выберите **Включить диагностику**.
 
-   ![Включение диагностики](./media/iot-hub-diagnostics-settings/turnondiagnostics.png)
+   ![Включить диагностику](./media/iot-hub-diagnostics-settings/turnondiagnostics.png)
 
 4. Присвойте имя параметрам диагностики.
 
@@ -50,8 +50,8 @@ ms.locfileid: "67185395"
    * Прямые методы  
    * Распределенная трассировка (предварительная версия)
    * Конфигурации
-   * Потоки устройства
-   * Метрики устройства
+   * Потоки устройств
+   * Метрики устройств
 
 6. Сохраните новые настройки. 
 
@@ -63,4 +63,4 @@ Select-AzSubscription -SubscriptionName <subscription that includes your IoT Hub
 Set-AzDiagnosticSetting -ResourceId <your resource Id> -ServiceBusRuleId <your service bus rule Id> -Enabled $true
 ```
 
-Новые параметры вступят в силу в течение 10 минут. После этого журналы появятся в настроенной цели для архивирования в колонке **Журналы диагностики**. Дополнительные сведения о настройке диагностики см. в статье [Сбор и использование данных журнала из ресурсов Azure](../articles/azure-monitor/platform/diagnostic-logs-overview.md).
+Новые параметры вступят в силу в течение 10 минут. После этого журналы появятся в настроенной цели для архивирования в колонке **Журналы диагностики**. Дополнительные сведения о настройке диагностики см. в статье [Сбор и использование данных журнала из ресурсов Azure](../articles/azure-monitor/platform/resource-logs-overview.md).

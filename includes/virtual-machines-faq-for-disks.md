@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 05/13/2019
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: c3201ec64ee7a3471b7d93b83664c62c2e7e0435
-ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
+ms.openlocfilehash: ffc77d2a175d300be306b1566324b2551e38aeab
+ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69541531"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71266880"
 ---
 # <a name="frequently-asked-questions-about-azure-iaas-vm-disks-and-managed-and-unmanaged-premium-disks"></a>Часто задаваемые вопросы о дисках виртуальных машин Azure IaaS, а также об управляемых и неуправляемых дисках уровня "Премиум"
 
@@ -166,7 +166,7 @@ SSD (цен. категория "Премиум"), Стандартный SSD и
 Нет, Ultra Disks не поддерживает различные методы кэширования, поддерживаемые на других типах дисков. Установите для кэширования диска значение None.
 
 **Можно ли подключить к существующей виртуальной машине Ultra Disk?**
-Возможно, ваша виртуальная машина должна находиться в паре регионов и зон доступности, поддерживающих Ultra Disks. Дополнительные сведения см. в статье Приступая к [работе с Ultra Disks](../articles/virtual-machines/windows/disks-enable-ultra-ssd.md) .
+Возможно, ваша виртуальная машина должна находиться в паре регионов и зон доступности, поддерживающих Ultra Disks. Дополнительные сведения см. [в статье Приступая к работе с Ultra Disks](../articles/virtual-machines/windows/disks-enable-ultra-ssd.md) .
 
 **Можно ли использовать Ultra Disk в качестве диска ОС для моей виртуальной машины?**
 Нет, Ultra Disks поддерживаются только в качестве дисков данных и поддерживаются только в виде 4 КБ собственных дисков.
@@ -183,8 +183,26 @@ SSD (цен. категория "Премиум"), Стандартный SSD и
 **Можно ли подключить Ultra Disk к виртуальной машине, работающей в группе доступности?**
 Нет, это еще не поддерживается.
 
-**Можно ли включить Azure Site Recovery (ASR) для виртуальных машин с помощью Ultra Disks?**
-Нет, ASR еще не поддерживается для дисков Ultra.
+**Можно ли включить Azure Site Recovery для виртуальных машин с помощью Ultra Disks?**
+Нет, Azure Site Recovery еще не поддерживается для Ultra Disks.
+
+## <a name="uploading-to-a-managed-disk"></a>Отправка на управляемый диск
+
+**Можно ли отправить данные на существующий управляемый диск?**
+
+Нет, отправка может использоваться только во время создания нового пустого диска с состоянием **реадитауплоад** .
+
+**Разделы справки отправить на управляемый диск?**
+
+Создайте управляемый диск со свойством [CreateOption](https://docs.microsoft.com/rest/api/compute/disks/createorupdate#diskcreateoption) [креатиондата](https://docs.microsoft.com/rest/api/compute/disks/createorupdate#creationdata) , для которого задано значение "Отправить", после чего можно передать в него данные.
+
+**Можно ли подключить диск к виртуальной машине, пока она находится в состоянии отправки?**
+
+Нет.
+
+**Можно ли создать моментальный снимок управляемого диска в состоянии отправки?**
+
+Нет.
 
 ## <a name="standard-ssd-disks"></a>Диски SSD категории "Стандартный"
 

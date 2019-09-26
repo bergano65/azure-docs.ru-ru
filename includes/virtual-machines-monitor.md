@@ -4,12 +4,12 @@ ms.service: virtual-machines
 ms.topic: include
 ms.date: 01/27/2019
 ms.author: cynthn
-ms.openlocfilehash: ac400c86af8236ff5d67b8b6fbf99f6f4b1d36c9
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 11c9b2ea3ea054415f25f864651df28288aa0025
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185260"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71266846"
 ---
 Работу виртуальных машин можно отслеживать с помощью сбора, просмотра и анализа данных диагностики и журнала. Для простого [мониторинга](../articles/azure-monitor/overview.md) виртуальной машины вы можете воспользоваться экраном обзора на портале Azure. При помощи [расширений](../articles/virtual-machines/windows/extensions-features.md) можно настроить на виртуальных машинах диагностику для сбора дополнительных данных метрик. Кроме того, вы можете использовать дополнительные возможности мониторинга, такие как [Application Insights](../articles/azure-monitor/app/app-insights-overview.md) и [Log Analytics](../articles/azure-monitor/log-query/log-query-overview.md).
 
@@ -29,7 +29,7 @@ ms.locfileid: "67185260"
 
     При помощи собранных данных диагностики вы можете настроить для виртуальных машин автоматическое масштабирование. Кроме того, можно настроить журналы для хранения данных и оповещений, которые будут информировать вас о проблемах с производительностью.
 
-## <a name="alerts"></a>Оповещения
+## <a name="alerts"></a>Предупреждения
 
 На основе метрик производительности можно создавать [оповещения](../articles/azure-monitor/platform/alerts-overview.md). Например, вы можете использовать оповещения для уведомления о том, что средняя загрузка ЦП превышает пороговое значение или показатель свободного места на диске ниже определенного значения. Оповещения можно настроить на [портале Azure](../articles/azure-monitor/platform/alerts-classic-portal.md) с использованием [Azure PowerShell](../articles/azure-monitor/platform/alerts-classic-portal.md#with-powershell) или [Azure CLI](../articles/azure-monitor/platform/alerts-classic-portal.md#with-azure-cli).
 
@@ -37,7 +37,7 @@ ms.locfileid: "67185260"
 
 [Служба работоспособности служб Azure](../articles/service-health/service-health-overview.md) предоставляет персонализированные инструкции и поддержку при возникновении проблем в работе служб Azure, а также помогает подготовиться к предстоящему плановому обслуживанию. Служба работоспособности служб Azure отправляет пользователям и рабочим группам настраиваемые целевые уведомления.
 
-## <a name="azure-resource-health"></a>Служба работоспособности ресурса Azure
+## <a name="azure-resource-health"></a>Работоспособность ресурсов Azure
 
 Служба [Работоспособность ресурсов Azure](../articles/service-health/resource-health-overview.md) поможет выполнить диагностику и получить необходимую поддержку, если неполадки Azure влияют на ресурсы. Она представляет сведения о текущем состоянии работоспособности ресурсов и о состоянии работоспособности ресурсов за прошедший период, а также помогает устранить проблемы. Служба работоспособности ресурсов обеспечивает поддержку, если вам необходима помощь в решении проблемы со службой Azure.
 
@@ -54,12 +54,12 @@ ms.locfileid: "67185260"
 
 Кроме того, вы можете ознакомиться с данными журнала действий, воспользовавшись [Azure PowerShell](https://docs.microsoft.com/powershell/module/azurerm.insights/), [Azure CLI](https://docs.microsoft.com/cli/azure/monitor) или [интерфейсами Monitor REST API](https://docs.microsoft.com/rest/api/monitor/).
 
-[Журналы диагностики Azure](../articles/azure-monitor/platform/diagnostic-logs-overview.md) генерируются виртуальной машиной и содержат подробные и актуальные данные о ее работе. Журналы диагностики отличаются от журналов действий тем, что предоставляют подробные сведения об операциях, которые выполнялись на виртуальной машине.
+[Журналы ресурсов Azure](../articles/azure-monitor/platform/resource-logs-overview.md) — это журналы, СОЗДАВАЕМЫЕ виртуальной машиной, которые предоставляют широкие и часто встречающиеся данные о работе. Журналы ресурсов отличаются от журнала действий путем предоставления сведений об операциях, выполненных на виртуальной машине.
 
 Ниже описано несколько доступных операций с журналами диагностики:
 
 - Сохранение журналов в [учетную запись хранения](../articles/azure-monitor/platform/archive-diagnostic-logs.md) для аудита или проверки вручную. В параметрах диагностики ресурсов можно задать время хранения (в днях).
-- [Потоковая передача журналов в Центры событий](../articles/azure-monitor/platform/diagnostic-logs-stream-event-hubs.md) для обработки в сторонней службе или пользовательском аналитическом решении, например в PowerBI.
+- [Потоковая передача журналов в Центры событий](../articles/azure-monitor/platform/resource-logs-stream-event-hubs.md) для обработки в сторонней службе или пользовательском аналитическом решении, например в PowerBI.
 - Анализ журналов с помощью [Log Analytics](../articles/log-analytics/log-analytics-azure-storage.md).
 
 ## <a name="advanced-monitoring"></a>Расширенный мониторинг
@@ -72,6 +72,6 @@ ms.locfileid: "67185260"
 
 - [Azure Monitor для виртуальных машин](../articles/azure-monitor/insights/vminsights-overview.md) отслеживает виртуальные машины Azure в масштабе, анализируя производительность и работоспособность виртуальных машин Windows и Linux, включая различные процессы и взаимосвязанные зависимости от других ресурсов и внешних процессов. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Выполните инструкции в статьях [Мониторинг виртуальных машин Windows с помощью Azure PowerShell](../articles/virtual-machines/windows/tutorial-monitoring.md) или [Мониторинг виртуальных машин Linux в Azure](../articles/virtual-machines/linux/tutorial-monitoring.md).
 - Ознакомьтесь с рекомендациями по [мониторингу и диагностике](https://docs.microsoft.com/azure/architecture/best-practices/monitoring).
