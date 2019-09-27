@@ -39,7 +39,7 @@ az aks create -n myAKSCluster -g myResourceGroup --attach-acr <acr-name-or-resou
 ```
 **Идентификатор ресурса записи контроля доступа имеет следующий формат:** 
 
-/Subscriptions/< Subscription-d >/resourceGroups/< ресурс-Group-name >/Провидерс/Микрософт.контаинеррегистри/регистриес/{наме} 
+/Subscriptions/<Subscription-d>/resourceGroups/<ресурс-Group-name>/Провидерс/Микрософт.контаинеррегистри/регистриес/{наме} 
   
 Выполнение этого шага может занять несколько минут.
 
