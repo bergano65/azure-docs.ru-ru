@@ -100,9 +100,9 @@ Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server
 | Название | Значение и пример | Тип данных |
 | ---- | ---- | ---- |
 | apiVersion | 2018-10-01 | date |
-| publisher | Microsoft.Powershell.DSC | строка |
-| type | DSC | строка |
-| typeHandlerVersion | 2.77 | ssNoversion |
+| publisher | Microsoft.Powershell.DSC | string |
+| type | DSC | string |
+| typeHandlerVersion | 2.77 | int |
 
 ### <a name="settings-property-values"></a>Значения свойства параметров
 
