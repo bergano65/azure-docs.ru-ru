@@ -21,7 +21,7 @@
 - name: Краткие руководства
   expanded: true
   items:
-    - name: Включение Центра безопасности Azure для Интернета вещей в Центре Интернета вещей
+    - name: Подключение Центра безопасности Azure для Интернета вещей в Центре Интернета вещей
       href: quickstart-onboard-iot-hub.md
     - name: Настройка решения
       href: quickstart-configure-your-solution.md
@@ -73,6 +73,8 @@
       href: how-to-security-data-access.md
     - name: Исследование устройства
       href: how-to-investigate-device.md
+    - name: Настройка решения
+      href: how-to-customize-solution.md
 - name: Ресурсы
   items:
     - name: Часто задаваемые вопросы

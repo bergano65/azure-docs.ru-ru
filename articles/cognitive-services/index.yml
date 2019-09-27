@@ -11,12 +11,12 @@ metadata:
   ms.author: nitinme
   manager: nitinme
   ms.date: 09/16/2019
-  ms.openlocfilehash: f762586bf04ceab8cd0c81880a86df7d43507038
-  ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
+  ms.openlocfilehash: 9071de52e97a041c9769f6c93fa36f39aff4e4fe
+  ms.sourcegitcommit: 9fba13cdfce9d03d202ada4a764e574a51691dcd
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 09/18/2019
-  ms.locfileid: "71087550"
+  ms.lasthandoff: 09/26/2019
+  ms.locfileid: "71316419"
 highlightedContent:
   items:
   - title: Что такое Cognitive Services?
@@ -139,23 +139,26 @@ conceptualContent:
       itemType: overview
       text: Поиск в Интернете
   - title: Контейнеры Cognitive Services
-    summary: Благодаря поддержке контейнеров в Azure Cognitive Services разработчики могут использовать те же интеллектуальные интерфейсы API, которые доступны в Azure, с традиционными для контейнеров Docker гибкими возможностями выбора расположений для развертывания и размещения служб.
+    summary: Благодаря поддержке контейнеров в Azure Cognitive Services разработчики могут использовать те же интеллектуальные интерфейсы API, которые доступны в Azure, с характерными для контейнеров Docker гибкими возможностями выбора расположений для развертывания и размещения служб.
     links:
     - url: ./cognitive-services-container-support.md
       itemType: overview
       text: Контейнеры Cognitive Services
     - url: ./containers/container-reuse-recipe.md
-      itemType: overview
+      itemType: learn
       text: Создание контейнеров для повторного использования
     - url: ./containers/azure-container-instance-recipe.md
       itemType: how-to-guide
       text: Развертывание образа контейнера в экземпляре контейнера
     - url: ./containers/azure-kubernetes-recipe.md
-      itemType: how-to-guide
+      itemType: deploy
       text: Развертывание в Службе Azure Kubernetes
     - url: ./containers/docker-compose-recipe.md
-      itemType: how-to-guide
+      itemType: get-started
       text: Развертывание нескольких контейнеров с помощью Docker Compose
+    - url: ./containers/container-faq.md
+      itemType: reference
+      text: Вопросы и ответы о контейнерах Cognitive Services
 additionalContent:
   sections:
   - items:
@@ -171,7 +174,7 @@ additionalContent:
         url: https://docs.microsoft.com/rest/api/cognitiveservices/
     - title: Пакеты SDK
       links:
-      - text: .Net
+      - text: .NET
         url: https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client?view=azure-dotnet
       - text: Go
         url: https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices

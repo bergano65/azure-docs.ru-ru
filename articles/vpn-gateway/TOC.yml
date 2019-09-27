@@ -138,10 +138,10 @@
               href: vpn-gateway-howto-openvpn.md
             - name: Настройка клиентов OpenVPN
               href: vpn-gateway-howto-openvpn-clients.md
-        - name: Переход на общедоступный сертификат шлюза от ЦС для P2S
-          href: vpn-gateway-point-to-site-gateway-public-ca.md
         - name: Настройка туннеля Always On VPN для устройства
           href: vpn-gateway-howto-always-on-device-tunnel.md
+        - name: Объявление пользовательских маршрутов для P2S-клиентов
+          href: vpn-gateway-p2s-advertise-custom-routes.md
     - name: Создание избыточного между зонами шлюза виртуальной сети в Зонах доступности Azure
       href: create-zone-redundant-vnet-gateway.md
     - name: Настройка политик IPsec/IKE для подключений

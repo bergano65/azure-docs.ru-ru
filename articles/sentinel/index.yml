@@ -1,63 +1,91 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Документация по Azure Sentinel
+summary: В этой статье представлены варианты использования для начала работы с Azure Sentinel. Выявляйте и устраняйте угрозы, прежде чем они смогут нанести вред, с помощью модернизированных решений SIEM. Azure Sentinel откроет вам полную картину происходящего на предприятии.
 metadata:
-  title: "Документация по Azure Sentinel. Руководства и краткие инструкции\_| Документация Майкрософт"
-  meta.description: Azure Sentinel is a cloud-native SIEM that provides intelligent security analytics for your entire enterprise at cloud scale.
+  title: Документация по Azure Sentinel
+  description: 'В этой статье представлены варианты использования и сценарии для начала работы с Azure Sentinel. Выявляйте и устраняйте угрозы, прежде чем они смогут нанести вред, с помощью модернизированных решений SIEM. Azure Sentinel откроет вам полную картину происходящего на предприятии. # Обязательно; описание статьи, отображаемое в результатах поиска. Меньше 160 символов.'
   services: sentinel
-  author: cmcclister
-  manager: carolz
-  ms.service: azure-sentinel
+  ms.service: sentinel
   ms.subservice: azure-sentinel
-  ms.tgt_pltfrm: na
-  ms.devlang: na
   ms.topic: landing-page
-  ms.date: 02/28/19
-  ms.author: cmcclister
-abstract:
-  description: "Azure Sentinel\_— это облачная служба управления информационной безопасностью и событиями безопасности, которая обеспечивает интеллектуальную аналитику безопасности всего предприятия в масштабах облака. Неограниченная облачная скорость и масштабируемость позволят вам сосредоточиться на том, что действительно важно. Легко собирайте данные из всех своих облачных и локальных ресурсов, а также из Office\_365, ресурсов Azure и других облаков. Успешно обнаруживайте угрозы благодаря встроенному машинному обучению от экспертов по аналитике безопасности корпорации Майкрософт. Автоматизируйте реагирование на угрозы с помощью встроенных сборников схем для оркестрации и автоматизации."
-sections:
-  - title: Пятиминутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: 'Узнайте, как подключиться к Azure Sentinel, чтобы отслеживать свои данные и потенциальные угрозы.'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: media/index/deploy.svg
-            text: Подключение к Azure Sentinel
-            href: /azure/sentinel/quickstart-onboard
-          - image:
-              src: media/index/get-started.svg
-            text: Начало работы с Azure Sentinel
-            href: /azure/sentinel/quickstart-get-visibility
-  - title: Пошаговые инструкции
-    items:
-      - type: paragraph
-        text: 'Узнайте, как определить политики безопасности, защитить ресурсы от вредоносных действий и реагировать на предупреждения и инциденты безопасности.'
-      - type: list
-        style: ordered
-        items:
-          - html: <a href="/azure/sentinel/tutorial-detect-threats">Обнаружение угроз с помощью Azure Sentinel</a>
-          - html: <a href="/azure/sentinel/tutorial-respond-threats-playbook">Настройка автоматического реагирования на угрозы</a>
-  - title: Развитие навыков с помощью Microsoft Learn
-    items:
-      - type: list
-        style: cards
-        className: cardsFTitle
-        items:
-          - title: Общие сведения о системе безопасности в Azure
-            href: 'https://docs.microsoft.com/learn/azure'
-            image:
-              src: media/index/tutorial.svg
-              href: 'https://docs.microsoft.com/learn/azure'
-      - type: paragraph
-        text: <a href="/learn/browse/?term=security">Другие интерактивные руководства</a>
-  - title: Справочные материалы
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - html: '<a href="https://azure.microsoft.com/updates/?product=sentinel">Обновления службы</a>'
+  ms.collection: collection
+  author: rkarlin
+  ms.author: rkarlin
+  ms.date: 25/09/2019
+  ms.openlocfilehash: 8f8815645b7dfcdcc5e1ed5212ecd1ec298f8644
+  ms.sourcegitcommit: 9fba13cdfce9d03d202ada4a764e574a51691dcd
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 09/26/2019
+  ms.locfileid: "71316486"
+landingContent:
+- title: Об Azure Sentinel
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что собой представляет Azure Sentinel?
+      url: overview.md
+- title: Начало работы
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Подключение к Azure Sentinel
+      url: quickstart-onboard.md
+    - text: Контроль с помощью оповещений
+      url: quickstart-get-visibility.md
+  - linkListType: how-to-guide
+    links:
+    - text: Подключение данных к Azure Sentinel
+      url: connect-data-sources.md
+- title: Подключение дополнительных источников данных
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Подключение Azure AD
+      url: connect-azure-active-directory.md
+    - text: Подключение Azure Information Protection
+      url: connect-azure-information-protection.md
+    - text: Подключение AWS
+      url: connect-aws.md
+    - text: Подключение Palo Alto Networks
+      url: connect-paloalto.md
+    - text: Подключение анализа угроз
+      url: connect-threat-intelligence.md
+- title: Использование нескольких клиентов
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Как включить поддержку нескольких клиентов в Azure Sentinel
+      url: multiple-tenants-service-providers.md
+- title: Будьте в курсе происходящего в среде
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Мониторинг данных
+      url: tutorial-monitor-your-data.md
+    - text: Изучение инцидентов
+      url: tutorial-investigate-cases.md
+- title: Обнаружение угроз
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Обнаружение угроз с помощью встроенных средств аналитики
+      url: tutorial-detect-threats-built-in.md
+    - text: Создание настраиваемых правил обнаружения
+      url: tutorial-detect-threats-custom.md
+- title: Автоматизация предотвращения угроз
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Автоматическое реагирование на угрозы
+      url: tutorial-respond-threats-playbook.md
+    - text: Использование записных книжек Jupyter Notebook для поиска угроз безопасности
+      url: notebooks.md
+- title: Используйте упреждающий подход в отношении обнаружения угроз
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Подключение анализа угроз
+      url: connect-threat-intelligence.md
+    - text: Поиск угроз
+      url: hunting.md

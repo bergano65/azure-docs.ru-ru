@@ -28,6 +28,10 @@
           href: connect-windows-7-and-10.md
         - name: Подключение из веб-браузера
           href: connect-web.md
+        - name: Подключение с помощью клиента macOS
+          href: connect-macos.md
+        - name: Подключение с помощью клиента iOS
+          href: connect-ios.md
     - name: Создание пула узлов с помощью шаблона Azure Resource Manager
       href: create-host-pools-arm-template.md
     - name: Создание пула узлов с помощью PowerShell

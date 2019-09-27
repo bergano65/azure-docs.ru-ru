@@ -58,6 +58,8 @@
         - name: Миграция из кодировщика мультимедиа Windows Azure
           href: migrate-windows-azure-media-encoder.md
           displayName: WAME
+        - name: "Миграция из индексаторов версии\_1 и 2"
+          href: migrate-indexer-v1-v2.md
     - name: Управление
       items:
         - name: Учетные записи

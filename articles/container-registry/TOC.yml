@@ -71,6 +71,8 @@
           items:
             - name: Удаление данных образа с помощью CLI
               href: container-registry-delete.md
+            - name: Политика хранения для манифестов без тегов (предварительная версия)
+              href: container-registry-retention-policy.md
             - name: Автоматическая очистка тегов и манифестов (предварительная версия)
               href: container-registry-auto-purge.md
         - name: Обновление классического реестра

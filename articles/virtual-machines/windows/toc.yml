@@ -474,6 +474,8 @@
           href: disks-upload-vhd-to-managed-disk-powershell.md
         - name: Изменение размера диска
           href: expand-os-disk.md
+        - name: Использование Обозревателя службы хранилища для управления дисками
+          href: disks-use-storage-explorer-managed-disks.md
         - name: Моментальный снимок диска
           href: snapshot-copy-managed-disk.md
         - name: Создание добавочного моментального снимка
