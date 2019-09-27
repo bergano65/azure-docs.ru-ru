@@ -1,21 +1,17 @@
 ---
-title: Рекомендации по управлению сборками U-SQL в конвейере CI/CD для Azure Data Lake
+title: Управление сборками U-SQL в конвейере CI/CD — Azure Data Lake
 description: Ознакомьтесь с рекомендациями по управлению сборками U-SQL C# в конвейере CI/CD с помощью Azure DevOps.
-services: data-lake-analytics
 author: yanancai
 ms.author: yanacai
-ms.reviewer: ''
-ms.assetid: ''
 ms.service: data-lake-analytics
 ms.topic: conceptual
-ms.workload: big-data
 ms.date: 10/30/2018
-ms.openlocfilehash: 27a873fac8bf2b53ee06780b8a348eaaa5c94e97
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: e6de10ed712688e4ee9dccc22176e81ad5e574ca
+ms.sourcegitcommit: 9fba13cdfce9d03d202ada4a764e574a51691dcd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60334272"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71315852"
 ---
 # <a name="best-practices-for-managing-u-sql-assemblies-in-a-cicd-pipeline"></a>Рекомендации по управлению сборками U-SQL в конвейере CI/CD
 
@@ -58,7 +54,7 @@ ms.locfileid: "60334272"
 
 7. При необходимости добавьте **Управляемые зависимости** и **Дополнительные файлы**. При добавлении дополнительных файлов средство будет использовать относительный путь, чтобы позже обеспечить возможность определения сборок на локальном компьютере и компьютере сборки.
 
-**\@_DeployTempDirectory** в редакторе нижней части окна переменная является стандартной, указывающий средство выходной папке сборки. В выходной папке сборки каждая сборка имеет вложенную папку с именем сборки. Все библиотеки DLL, а также дополнительные файлы, находятся в этой вложенной папке.
+_DeployTempDirectory в окне редактора внизу представляет собой стандартную переменную, которая указывает инструменту на выходную папку построения.  **\@** В выходной папке сборки каждая сборка имеет вложенную папку с именем сборки. Все библиотеки DLL, а также дополнительные файлы, находятся в этой вложенной папке.
 
 ## <a name="build-a-u-sql-database-project"></a>Создание проекта базы данных U-SQL
 
@@ -90,7 +86,7 @@ ms.locfileid: "60334272"
 
 В Azure DevOps вы можете использовать задачу командной строки и этот пакет SDK, чтобы настроить конвейер автоматизации для обновления базы данных U-SQL. См. дополнительные сведения об [использовании пакета SDK и настройке конвейера CI/CD для развертывания базы данных U-SQL](data-lake-analytics-cicd-overview.md#deploy-u-sql-database-through-azure-pipelines).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Настройка конвейера CI/CD для Azure Data Lake Analytics](data-lake-analytics-cicd-overview.md)
 * [Тестирование кода Azure Data Lake Analytics](data-lake-analytics-cicd-test.md)
