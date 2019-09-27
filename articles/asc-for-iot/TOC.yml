@@ -39,6 +39,8 @@
       href: concept-security-alerts.md
     - name: Рекомендации по обеспечению безопасности
       href: concept-recommendations.md
+    - name: Базовый
+      href: concept-baseline.md
     - name: Агрегация событий
       href: event-aggregation.md
     - name: Цены и связанные затраты

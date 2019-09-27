@@ -361,6 +361,8 @@
           href: application-proxy-release-version-history.md
 - name: Ресурсы
   items:
+    - name: Возможности получения поддержки и справки для разработчиков
+      href: /azure/active-directory/develop/developer-support-help-options?context=azure/active-directory/manage-apps/context/manage-apps-context
     - name: Форум отзывов и предложений по Azure
       href: 'https://feedback.azure.com/forums/169401-azure-active-directory'
     - name: Форум MSDN

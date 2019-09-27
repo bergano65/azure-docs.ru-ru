@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/28/2017
-ms.openlocfilehash: 404f96e91db8df0dd4246b7d744e463ce0e457a1
-ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
+ms.openlocfilehash: a558c0e767610f1fefdf29ca461a476c7bfcee59
+ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70994093"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71327323"
 ---
 # <a name="use-azure-toolkit-for-intellij-to-debug-apache-spark-applications-remotely-in-hdinsight-through-vpn"></a>Удаленная отладка приложений Apache Spark в HDInsight через VPN с помощью Azure Toolkit for IntelliJ
 
@@ -53,19 +53,19 @@ ms.locfileid: "70994093"
 
 1. Прежде всего необходимо получить IP-адрес головного узла. Откройте пользовательский интерфейс Ambari для кластера. В колонке кластера щелкните **Панель мониторинга**.
 
-    ![Выбор панели мониторинга в Ambari](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/launch-apache-ambari.png)
+    ![Выбор панели мониторинга в Apache Ambari](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/launch-apache-ambari.png)
 
 1. В пользовательском интерфейсе Ambari выберите **Hosts** (Узлы).
 
-    ![Выборе "Hosts" (Узлы) в Ambari](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/apache-ambari-hosts1.png)
+    ![Выбор узлов в Apache Ambari](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/apache-ambari-hosts1.png)
 
 1. Отобразится список головных узлов, рабочих узлов и узлов zookeeper. Головные узлы отличаются наличием префикса **hn**\*. Выберите первый головной узел.
 
-    ![Поиск головного узла в Ambari](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/ambari-cluster-headnodes.png)
+    ![Поиск головного узла в Apache Ambari](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/ambari-cluster-headnodes.png)
 
 1. В области **Summary** (Сводка) в нижней части открывшейся страницы скопируйте значения **IP Address** (IP-адрес) и **Hostname** (Имя узла) для головного узла.
 
-    ![Поиск IP-адреса в Ambari](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/headnode-ip-address1.png)
+    ![Поиск IP-адреса в Apache Ambari](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/headnode-ip-address1.png)
 
 1. Добавьте IP-адрес и имя головного узла в файл **hosts** на компьютер, на котором вы собираетесь выполнять и удаленно отлаживать задание Spark. Это обеспечит обмен данными с головным узлом с помощью IP-адреса и имени узла.
 
@@ -117,16 +117,15 @@ ms.locfileid: "70994093"
 
     2\. В диалоговом окне **Project Structure** (Структура проекта) щелкните **артефакты**, чтобы просмотреть созданный по умолчанию артефакт. Вы также можете создать собственный артефакт, щелкнув значок "плюс" ( **+** ).
 
-   ![Создание JAR-файла](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/create-default-artifact.png)
-
+   ![Артефакты IntelliJ идеи создают JAR-файл](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/create-default-artifact.png)
 
 1. Добавьте библиотеки в проект. Чтобы добавить библиотеку, выполните следующее.
 
-    1\. Щелкните правой кнопкой мыши имя проекта в дереве проектов и выберите **Open Module Settings** (Открыть параметры модуля). 
+    1\. Щелкните правой кнопкой мыши имя проекта в дереве проектов и выберите **Open Module Settings** (Открыть параметры модуля).
 
     2\. В диалоговом окне **Project Structure** (Структура проекта) выберите **Libraries** (Библиотеки), щелкните символ ( **+** ), а затем выберите **From Maven** (Из Maven).
 
-    ![Добавление библиотеки](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/intellij-add-library.png)
+    ![Библиотека загрузки IntelliJной идеи](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/intellij-add-library.png)
 
     В. В диалоговом окне **Download Library from Maven Repository** (Скачивание библиотеки из репозитория Maven) найдите и добавьте перечисленные ниже библиотеки.
 
@@ -182,11 +181,11 @@ ms.locfileid: "70994093"
 
 1. Добавьте класс main для своего приложения. В **обозревателе проектов** щелкните правой кнопкой мыши **src**, наведите указатель мыши на пункт **New** (Создать) и выберите **Scala Class** (Класс Scala).
 
-    ![Выбор класса main](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/hdi-spark-scala-code.png)
+    ![IntelliJная идея выберите основной класс](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/hdi-spark-scala-code.png)
 
 1. В диалоговом окне **Create New Scala Class** (Создание класса Scala) введите имя, в поле **Kind** (Вид) выберите **Object** (Объект) и нажмите кнопку **ОК**.
 
-    ![Создание класса Scala](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/hdi-spark-scala-code-object.png)
+    ![IntelliJ идея создать новый класс Scala](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/hdi-spark-scala-code-object.png)
 
 1. Скопируйте приведенный ниже код и вставьте его в файл `MyClusterAppMain.scala` . Этот код создает контекст Spark и открывает метод `executeJob` из объекта `SparkSample`.
 
@@ -258,47 +257,47 @@ ms.locfileid: "70994093"
 
 1. В классе `*RemoteClusterDebugging` щелкните правой кнопкой мыши ключевое слово `test` и выберите **Create RemoteClusterDebugging Configuration** (Создать конфигурацию RemoteClusterDebugging).
 
-    ![Создание удаленной конфигурации](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/create-remote-config.png)
+    ![IntelliJ идея создание удаленной конфигурации](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/create-remote-config.png)
 
 1. В диалоговом окне **Create RemoteClusterDebugging Configuration** (Создание конфигурации RemoteClusterDebugging) введите имя конфигурации, а затем выберите **Test kind** (Тестовая) для параметра **Test name** (Имя теста). Оставьте значения всех остальных параметров по умолчанию. Нажмите кнопку **Apply** (Применить), а затем нажмите кнопку **ОК**.
 
-    ![Добавление сведений о конфигурации](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/provide-config-value.png)
+    ![Создание конфигурации RemoteClusterDebugging](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/provide-config-value.png)
 
 1. В строке меню должен отобразиться раскрывающийся список конфигурации **Remote Run** (Удаленный запуск).
 
-    ![Раскрывающийся список удаленного запуска](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/intellij-config-remote-run.png)
+    ![IntelliJ в раскрывающемся списке удаленного запуска](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/intellij-config-remote-run.png)
 
 ## <a name="step-5-run-the-application-in-debug-mode"></a>Шаг 5. Запуск приложения в режиме отладки
 
 1. В проекте IntelliJ IDEA откройте `SparkSample.scala` и создайте точку останова рядом с `val rdd1`. В контекстном меню **Create Breakpoint for** (Создание точки останова для) выберите **line in function executeJob** (Встроенная функция executeJob).
 
-    ![Добавление точки останова](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/intellij-create-breakpoint.png)
+    ![IntelliJная идея Добавление точки останова](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/intellij-create-breakpoint.png)
 
 1. Нажмите кнопку **Debug Run** (Запуск отладки) рядом с раскрывающимся списком конфигурации **Remote Run** (Удаленный запуск), чтобы запустить приложение.
 
-    ![Нажатие кнопки "Debug Run" (Запуск отладки)](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/debug-run-mode-button.png)
+    ![IntelliJная идея нажмите кнопку запустить отладку](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/debug-run-mode-button.png)
 
 1. Когда выполнение программы достигнет точки останова, на нижней панели отобразится вкладка **Debugger** (Отладчик).
 
-    ![Просмотр вкладки "Debugger" (Отладчик)](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/intellij-debugger-tab.png)
+    ![IntelliJ идея Просмотр вкладки "отладчик"](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/intellij-debugger-tab.png)
 
 1. Чтобы добавить контрольное значение, щелкните значок ( **+** ).
 
-    ![Щелчок значка "+"](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/debug-add-watch-variable.png)
+    ![IntelliJ Отладка — Добавить-контрольное значение-переменная](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/debug-add-watch-variable.png)
 
     В этом примере выполнение приложения было прервано до создания переменной `rdd1`. С помощью этого контрольного значения можно просмотреть первые пять строк в переменной `rdd`. Нажмите клавишу **ВВОД**.
 
-    ![Запуск программы в режиме отладки](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/debug-add-watch-variable-value.png)
+    ![IntelliJ запуск программы в режиме отладки](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/debug-add-watch-variable-value.png)
 
     Как видно на предыдущем рисунке, во время выполнения можно создавать запросы на терабайты данных и отлаживать работу приложения. Например, в результатах на предыдущем рисунке можно увидеть, что первая строка выходных данных является заголовком. На основе этих выходных данных можно изменить код приложения, чтобы пропустить строку заголовка, если требуется.
 
 1. Теперь можно щелкнуть значок **Resume Program** (Возобновить выполнение программы), чтобы продолжить выполнение приложения.
 
-    ![Выбор "Resume Program" (Возобновить выполнение программы)](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/debug-continue-remote-run.png)
+    ![IntelliJ идея выбор программы возобновления](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/debug-continue-remote-run.png)
 
 1. Если работа приложения завершится успешно, отобразится результат, подобный приведенному ниже.
 
-    ![Вывод на консоль](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/debug-complete-window.png)
+    ![Выходные данные консоли отладчика IntelliJ идея](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/debug-complete-window.png)
 
 ## <a name="seealso"></a>Дальнейшие действия
 

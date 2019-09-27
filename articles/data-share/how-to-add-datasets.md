@@ -1,23 +1,23 @@
 ---
-title: Добавление наборов данных в существующий общий ресурс в предварительной версии Azure Data Share
+title: Добавление наборов данных в существующую предварительную версию общего ресурса Azure Data Share
 description: Добавление наборов данных в существующую общую папку
-author: madams0013
+author: joannapea
+ms.author: joanpo
 ms.service: data-share
 ms.topic: conceptual
 ms.date: 07/10/2019
-ms.author: jasonh
-ms.openlocfilehash: 75ac837491927881fd8b7547b0f49a069c3f2d47
-ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
+ms.openlocfilehash: bd8cd7af72c349060eb035dc32e9ddd1a7f9920e
+ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70257212"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71327523"
 ---
 # <a name="how-to-add-datasets-to-an-existing-share-in-azure-data-share-preview"></a>Добавление наборов данных в существующую общую папку в предварительной версии общего ресурса Azure
 
 В этой статье объясняется, как добавить наборы данных в уже существующий общий ресурс с помощью предварительной версии Azure Data Share. Это позволяет совместно использовать больше данных с теми же получателями без необходимости создавать новую общую папку.
 
-Сведения о том, как добавлять наборы данных при создании общего ресурса, см. в руководстве по [совместному использованию данных](share-your-data.md) .
+Сведения о том, как добавлять наборы данных при создании общего ресурса, см. в руководстве по совместному использованию [данных](share-your-data.md) .
 
 ## <a name="navigate-to-a-sent-data-share"></a>Переход к отправленной общей папке данных
 

@@ -9,12 +9,12 @@ ms.service: search
 ms.topic: conceptual
 ms.date: 05/16/2019
 ms.author: heidist
-ms.openlocfilehash: e83e84cc8627be468ce0074b35549d5ea7def4f5
-ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
+ms.openlocfilehash: d0c93d941047413c5056b3718f57b360357affbd
+ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69640534"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71327142"
 ---
 # <a name="monitor-resource-consumption-and-query-activity-in-azure-search"></a>Мониторинг использования ресурсов и обработки запросов в Поиске Azure
 
@@ -63,7 +63,7 @@ ms.locfileid: "69640534"
 | [Хранилище BLOB-объектов](https://docs.microsoft.com/azure/storage/blobs/storage-blobs-overview) | Зарегистрированные в журнале события и метрики запросов, основанные на приведенных ниже схемах. События записываются в контейнер больших двоичных объектов и хранятся в JSON-файлах. Используйте редактор JSON, чтобы просмотреть содержимое такого файла.|
 | [Концентратор событий](https://docs.microsoft.com/azure/event-hubs/) | Зарегистрированные события и метрики запросов в соответствии со схемами, описанными в этой статье. Выберите этот вариант в качестве альтернативной службы сбора данных для очень больших журналов. |
 
-Журналы Azure Monitor и хранилище BLOB-объектов доступны в виде бесплатной общей службы, поэтому вы можете испытать ее бесплатно за время существования подписки Azure. Вы можете бесплатно зарегистрироваться в Application Insights и использовать это решение до тех пор, пока размер данных приложения находится в заданных пределах (чтобы узнать больше, перейдите на [страницу цен](https://azure.microsoft.com/pricing/details/monitor/)).
+И Azure Monitor журналы, и хранилище BLOB-объектов доступны в качестве бесплатной службы, чтобы вы могли испытать их бесплатно за время существования подписки Azure. Вы можете бесплатно зарегистрироваться в Application Insights и использовать это решение до тех пор, пока размер данных приложения находится в заданных пределах (чтобы узнать больше, перейдите на [страницу цен](https://azure.microsoft.com/pricing/details/monitor/)).
 
 Следующий раздел содержит пошаговые инструкции по включению и использованию хранилища BLOB-объектов Azure для сбора данных журнала, созданных операциями Поиска Azure, и обращения к этим данным.
 
@@ -96,7 +96,7 @@ ms.locfileid: "69640534"
 * insights-logs-operationlogs: для поиска журналов трафика
 * insights-metrics-pt1m: для метрик
 
-**Это займет один час, прежде чем контейнеры будут отображаться в хранилище BLOB-объектов. В каждом контейнере имеется один большой двоичный объект (в час).**
+**It занимает один час, прежде чем контейнеры будут отображаться в хранилище BLOB-объектов. Существует один большой двоичный объект в час на контейнер.**
 
 Для просмотра этих файлов можно использовать [Visual Studio Code](#download-and-open-in-visual-studio-code) или другой редактор JSON. 
 
@@ -119,11 +119,11 @@ resourceId=/subscriptions/<subscriptionID>/resourcegroups/<resourceGroupName>/pr
 | resultType |строка |Success |Возможные значения: Success или Failure |
 | resultSignature |int |200 |Код результата HTTP |
 | durationMS |int |50 |Время выполнения операции в миллисекундах |
-| свойства |объект |См. следующую таблицу |Объект, содержащий данные об операции |
+| свойства |object |См. следующую таблицу |Объект, содержащий данные об операции |
 
 **Схема свойств**
 
-| Название | Тип | Пример | Примечания |
+| Название | Type | Пример | Примечания |
 | --- | --- | --- | --- |
 | Description |string |"GET /indexes('content')/docs" |Конечная точка операции |
 | query |string |"?search=AzureSearch&$count=true&api-version=2019-05-06" |Параметры запроса |
@@ -134,7 +134,7 @@ resourceId=/subscriptions/<subscriptionID>/resourcegroups/<resourceGroupName>/pr
 
 Метрики записываются для запросов.
 
-| Название | Тип | Пример | Примечания |
+| Название | Type | Пример | Примечания |
 | --- | --- | --- | --- |
 | resourceId |строка |"/SUBSCRIPTIONS/11111111-1111-1111-1111-111111111111/<br/>RESOURCEGROUPS/DEFAULT/PROVIDERS/<br/>MICROSOFT.SEARCH/SEARCHSERVICES/SEARCHSERVICE" |Идентификатор вашего ресурса |
 | metricName |строка |"Latency" |имя метрики |

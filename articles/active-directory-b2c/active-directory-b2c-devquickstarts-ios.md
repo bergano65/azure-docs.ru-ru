@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 11/30/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 1f7c864102a4985aa1b2c66e12b42cbe3bc19bca
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 96221ffc8249f722268ea5778bee4b4389ded26e
+ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66510088"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71326598"
 ---
 # <a name="azure-ad-b2c-sign-in-using-an-ios-application"></a>Azure AD B2C. Вход с помощью приложения iOS
 
@@ -32,11 +32,12 @@ ms.locfileid: "66510088"
 Перед использованием Azure AD B2C необходимо создать каталог или клиент. Каталог — это контейнер для всех пользователей, приложений, групп и т. д. Если каталог B2C еще не создан, [создайте его](tutorial-create-tenant.md), прежде чем продолжить.
 
 ## <a name="create-an-application"></a>Создание приложения
-Затем необходимо создать приложение в каталоге B2C. При регистрации приложения в Azure AD поступят сведения, необходимые для безопасного взаимодействия с вашим приложением. Чтобы создать мобильное приложение, следуйте [этим инструкциям](active-directory-b2c-app-registration.md). Не забудьте сделать следующее.
 
-* Включите в приложение **собственный клиент**.
-* Скопируйте **идентификатор приложения** , назначенный приложению. Этот GUID понадобится позже.
-* Задайте **URI перенаправления** с настраиваемой схемой (например, com.onmicrosoft.fabrikamb2c.exampleapp://oauth/redirect). Этот URI понадобится позже.
+Затем зарегистрируйте приложение в клиенте Azure AD B2C. Это предоставляет Azure AD сведения, необходимые для безопасного обмена данными с приложением.
+
+[!INCLUDE [active-directory-b2c-appreg-native](../../includes/active-directory-b2c-appreg-native.md)]
+
+Запишите **идентификатор приложения** для использования на более позднем этапе. Затем выберите приложение в списке и запишите **пользовательский URI перенаправления**, который также будет использоваться на более позднем шаге. Например, `com.onmicrosoft.contosob2c.exampleapp://oauth/redirect`.
 
 ## <a name="create-your-user-flows"></a>Создание потоков пользователей
 В Azure AD B2C любое взаимодействие с пользователем определяется [потоком пользователя](active-directory-b2c-reference-policies.md). Это приложение предусматривает одну процедуру идентификации, сочетающую в себе вход и регистрацию. При создании потока пользователя обязательно сделайте следующее:
@@ -58,7 +59,7 @@ ms.locfileid: "66510088"
 > AppAuth поддерживает iOS 7 и более поздние версии.  Однако для поддержки социальных имен входа в Google необходим SFSafariViewController, который поддерживает iOS 9 и более поздние версии.
 >
 
-### <a name="configuration"></a>Параметр Configuration
+### <a name="configuration"></a>Конфигурация
 
 Вы можете настроить взаимодействие с Azure AD B2C, указав URI конечной точки авторизации и конечной точки токена.  Для создания URI вам потребуются следующие сведения:
 * идентификатор клиента (например, contoso.onmicrosoft.com);
@@ -79,21 +80,22 @@ static NSString *const authorizationEndpoint = @"https://<Tenant_name>.b2clogin.
 Выполните следующий код для создания объекта AuthorizationServiceConfiguration:
 
 ```objc
-OIDServiceConfiguration *configuration = 
+OIDServiceConfiguration *configuration =
     [[OIDServiceConfiguration alloc] initWithAuthorizationEndpoint:authorizationEndpoint tokenEndpoint:tokenEndpoint];
 // now we are ready to perform the auth request...
 ```
 
 ### <a name="authorizing"></a>Авторизация
 
-После настройки или извлечения конфигурации службы авторизации можно сформировать запрос авторизации. Для создания запроса вам потребуются следующие сведения:  
-* идентификатор клиента (например, 00000000-0000-0000-0000-000000000000);
-* URI перенаправления с настраиваемой схемой (например, com.onmicrosoft.fabrikamb2c.exampleapp://oauth/redirect).
+После настройки или извлечения конфигурации службы авторизации можно сформировать запрос авторизации. Для создания запроса вам потребуются следующие сведения:
+
+* Идентификатор клиента (идентификатор приложения), записанный ранее. Например, `00000000-0000-0000-0000-000000000000`.
+* Пользовательский URI перенаправления, записанный ранее. Например, `com.onmicrosoft.contosob2c.exampleapp://oauth/redirect`.
 
 Оба элемента нужно сохранить при [регистрации приложения](#create-an-application).
 
 ```objc
-OIDAuthorizationRequest *request = 
+OIDAuthorizationRequest *request =
     [[OIDAuthorizationRequest alloc] initWithConfiguration:configuration
                                                   clientId:kClientId
                                                     scopes:@[OIDScopeOpenID, OIDScopeProfile]
@@ -102,7 +104,7 @@ OIDAuthorizationRequest *request =
                                       additionalParameters:nil];
 
 AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-appDelegate.currentAuthorizationFlow = 
+appDelegate.currentAuthorizationFlow =
     [OIDAuthState authStateByPresentingAuthorizationRequest:request
                                    presentingViewController:self
                                                    callback:^(OIDAuthState *_Nullable authState, NSError *_Nullable error) {

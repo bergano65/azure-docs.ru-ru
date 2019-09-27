@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 08/12/2019
 ms.author: alinast
 ms.custom: seodec18
-ms.openlocfilehash: 6853ebf16c1a9d6b0d363277b22c7dd2583d37e5
-ms.sourcegitcommit: fe50db9c686d14eec75819f52a8e8d30d8ea725b
+ms.openlocfilehash: 8a39a79f4b3aeacd267a0c4b9351d2400f11d1ff
+ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69013972"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71336908"
 ---
 # <a name="how-to-create-user-defined-functions-in-azure-digital-twins"></a>Создание определяемых пользователем функций в Azure Digital Twins
 
@@ -197,7 +197,7 @@ function process(telemetry, executionContext) {
 
 Создайте назначение роли для выполнения определяемой пользователем функции. Если для определяемой пользователем функции не назначена никакая роль, у нее не будет нужных разрешений для взаимодействия с API управления или доступа к выполнению действий над графическими объектами. Действия, которые может выполнять определяемая пользователем функция, задаются и определяются с помощью управления доступом на основе ролей в API управления Azure Digital Twins. Например, функции, определенные пользователем, можно ограничить по областям, указав определенные роли или пути управления доступом. Дополнительные сведения см. в статье [Управление доступом на основе ролей в службе автоматизации Azure Digital Twins](./security-role-based-access-control.md).
 
-1. [Запросите API системы](./security-create-manage-role-assignments.md#all) для всех ролей, чтобы получить идентификатор роли, которую необходимо назначить определяемой пользователем функции. Сделайте это, создавая аутентифицированный запрос HTTP GET.
+1. [Запросите API системы](./security-create-manage-role-assignments.md#retrieve-all-roles) для всех ролей, чтобы получить идентификатор роли, которую необходимо назначить определяемой пользователем функции. Сделайте это, создавая аутентифицированный запрос HTTP GET.
 
     ```plaintext
     YOUR_MANAGEMENT_API_URL/system/roles

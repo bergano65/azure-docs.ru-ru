@@ -10,12 +10,12 @@ ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
 ms.date: 08/22/2019
-ms.openlocfilehash: b86c0d0de95581f7a47de428ffbf0b161353df83
-ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
+ms.openlocfilehash: 84567b68c85a48d0fc02f6f6a4986d8092215a92
+ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71260748"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71326497"
 ---
 # <a name="deploy-a-model-using-a-custom-docker-base-image"></a>Развертывание модели с помощью пользовательского базового образа DOCKER
 
@@ -183,15 +183,16 @@ ms.locfileid: "71260748"
 | Image | Описание |
 | ----- | ----- |
 | `mcr.microsoft.com/azureml/o16n-sample-user-base/ubuntu-miniconda` | Базовый образ для Машинное обучение Azure |
-| `mcr.microsoft.com/azureml/onnxruntime:v0.4.0` | Содержит среду выполнения ONNX. |
-| `mcr.microsoft.com/azureml/onnxruntime:v0.4.0-cuda10.0-cudnn7` | Содержит компоненты среды выполнения ONNX и CUDA. |
-| `mcr.microsoft.com/azureml/onnxruntime:v0.4.0-tensorrt19.03` | Содержит среду выполнения ONNX и Тенсоррт. |
+| `mcr.microsoft.com/azureml/onnxruntime:latest` | Содержит среду выполнения ONNX для ЦП инферекнинг |
+| `mcr.microsoft.com/azureml/onnxruntime:latest-cuda` | Содержит среду выполнения ONNX и CUDA для GPU |
+| `mcr.microsoft.com/azureml/onnxruntime:latest-tensorrt` | Содержит среду выполнения ONNX и Тенсоррт для GPU |
+| `mcr.microsoft.com/azureml/onnxruntime:latest-openvino-vadm ` | Содержит среду выполнения ONNX и Опенвино для<sup> </sup> архитектуры Intel концепция Accelerator на основе мовидиус<sup>TM</sup> мириадкс впус |
+| `mcr.microsoft.com/azureml/onnxruntime:latest-openvino-myriad` | Содержит среду выполнения ONNX и Опенвино для<sup> </sup> USB-накопителей Intel мовидиус<sup>TM</sup> . |
+
+Дополнительные сведения о базовых образах среды выполнения ONNX см. в [разделе ONNX Runtime dockerfile](https://github.com/microsoft/onnxruntime/blob/master/dockerfiles/README.md) в репозитории GitHub.
 
 > [!TIP]
 > Так как эти образы являются общедоступными, при их использовании не нужно указывать адрес, имя пользователя или пароль.
-
-> [!IMPORTANT]
-> Образы Майкрософт, использующие CUDA или Тенсоррт, должны использоваться только в Microsoft Azure Services.
 
 Дополнительные сведения см. в разделе [машинное обучение Azure Containers](https://github.com/Azure/AzureML-Containers).
 

@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 06/07/2019
 ms.reviewer: sergkanz
 ms.author: lagayhar
-ms.openlocfilehash: bb28171ceca9861fb5cc0b7be1db9ab58ef72a1b
-ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+ms.openlocfilehash: fe52fe51b347b232e03bad943906413b90c853c0
+ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70124107"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71338170"
 ---
 # <a name="telemetry-correlation-in-application-insights"></a>Корреляция данных телеметрии в Application Insights
 
@@ -62,30 +62,41 @@ Application Insights определяет [модель данных](../../azur
 
 ## <a name="correlation-headers"></a>Заголовки корреляции
 
-Мы работаем над созданием предложения RFC для [протокола HTTP корреляции](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.DiagnosticSource/src/HttpCorrelationProtocol.md). Это предложение определяет два заголовка:
-
-- `Request-Id`. Содержит глобальный уникальный идентификатор вызова.
-- `Correlation-Context`. Содержит коллекцию пар "имя — значение" свойств распределенной трассировки.
-
-Стандарт также определяет две схемы создания `Request-Id` — неструктурированная и иерархическая. В неструктурированной схеме для коллекции `Correlation-Context` определяется хорошо известный ключ `Id`.
-
-Служба Application Insights определяет [расширение](https://github.com/lmolkova/correlation/blob/master/http_protocol_proposal_v2.md) для протокола HTTP корреляции. Она использует пары "имя — значение" `Request-Context` для распространения коллекции свойств, используемых непосредственным вызывающим или вызываемым. Пакет SDK для Application Insights использует этот заголовок, чтобы задать значения полей `dependency.target` и `request.source`.
-
-### <a name="w3c-distributed-tracing"></a>Распределенная трассировка W3C
-
-Мы переходим на [формат распределенной трассировки W3C](https://w3c.github.io/trace-context/). Он определяет следующее:
+Мы переходим к [контексту трассировки W3C](https://w3c.github.io/trace-context/) , который определяет:
 
 - `traceparent`. Содержит глобальный уникальный идентификатор операции и уникальный идентификатор вызова.
 - `tracestate`. Содержит специфический контекст трассировки системы.
 
-#### <a name="enable-w3c-distributed-tracing-support-for-classic-aspnet-apps"></a>Включение поддержки распределенной трассировки W3C для классических приложений ASP.NET
+Последние версии Application Insights SDK поддерживают протокол контекстной трассировки, но вам может потребоваться согласие на это (он будет поддерживать обратную совместимость со старым протоколом корреляции, поддерживаемым пакетами SDK для ApplicationInsights).
 
+[Http-протокол корреляции с ИД запроса](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.DiagnosticSource/src/HttpCorrelationProtocol.md) имеет значение по пути устаревания. Этот протокол определяет два заголовка:
+
+- `Request-Id`. Содержит глобальный уникальный идентификатор вызова.
+- `Correlation-Context`. Содержит коллекцию пар "имя — значение" свойств распределенной трассировки.
+
+Application Insights также определяет [расширение](https://github.com/lmolkova/correlation/blob/master/http_protocol_proposal_v2.md) для протокола HTTP корреляции. Она использует пары "имя — значение" `Request-Context` для распространения коллекции свойств, используемых непосредственным вызывающим или вызываемым. Пакет SDK для Application Insights использует этот заголовок, чтобы задать значения полей `dependency.target` и `request.source`.
+
+### <a name="enable-w3c-distributed-tracing-support-for-classic-aspnet-apps"></a>Включение поддержки распределенной трассировки W3C для классических приложений ASP.NET
+ 
+  > [!NOTE]
+  > Не требуется никакой конфигурации, начиная с `Microsoft.ApplicationInsights.Web` и `Microsoft.ApplicationInsights.DependencyCollector` 
+
+W3C Trace — поддержка контекста выполняется в обратном порядке, а корреляция должна работать с приложениями, оснащенными предыдущими версиями пакета SDK (без поддержки W3C). 
+
+Если по каким-либо причинам вы хотите использовать устаревший протокол `Request-Id`, вы можете *Отключить* трассировку контекста со следующей конфигурацией.
+
+```csharp
+  Activity.DefaultIdFormat = ActivityIdFormat.Hierarchical;
+  Activity.ForceDefaultIdFormat = true;
+```
+
+Если вы запустите более раннюю версию пакета SDK, рекомендуем обновить ее или применить следующую конфигурацию, чтобы включить контекст трассировки.
 Эта функция доступна в пакетах `Microsoft.ApplicationInsights.Web` и `Microsoft.ApplicationInsights.DependencyCollector`, начиная с версии 2.8.0-beta1.
 Она отключена по умолчанию. Чтобы ее включить, измените `ApplicationInsights.config`:
 
 - В разделе `RequestTrackingTelemetryModule` добавьте элемент `EnableW3CHeadersExtraction` со значением `true`.
 - В разделе `DependencyTrackingTelemetryModule` добавьте элемент `EnableW3CHeadersInjection` со значением `true`.
-- Добавьте `W3COperationCorrelationTelemetryInitializer` под тем `TelemetryInitializers` же 
+- Добавьте `W3COperationCorrelationTelemetryInitializer` в `TelemetryInitializers` аналогично 
 
 ```xml
 <TelemetryInitializers>
@@ -94,7 +105,21 @@ Application Insights определяет [модель данных](../../azur
 </TelemetryInitializers> 
 ```
 
-#### <a name="enable-w3c-distributed-tracing-support-for-aspnet-core-apps"></a>Включение поддержки распределенной трассировки W3C для приложений ASP.NET Core
+### <a name="enable-w3c-distributed-tracing-support-for-aspnet-core-apps"></a>Включение поддержки распределенной трассировки W3C для приложений ASP.NET Core
+
+ > [!NOTE]
+  > Не требуется настройка, начиная с `Microsoft.ApplicationInsights.AspNetCore` версии 2.8.0.
+ 
+W3C Trace — поддержка контекста выполняется в обратном порядке, а корреляция должна работать с приложениями, оснащенными предыдущими версиями пакета SDK (без поддержки W3C). 
+
+Если по каким-либо причинам вы хотите использовать устаревший протокол `Request-Id`, вы можете *Отключить* трассировку контекста со следующей конфигурацией.
+
+```csharp
+  Activity.DefaultIdFormat = ActivityIdFormat.Hierarchical;
+  Activity.ForceDefaultIdFormat = true;
+```
+
+Если вы запустите более раннюю версию пакета SDK, рекомендуем обновить ее или применить следующую конфигурацию, чтобы включить контекст трассировки.
 
 Эта функция доступна в `Microsoft.ApplicationInsights.AspNetCore` версии 2.5.0-beta1 и в `Microsoft.ApplicationInsights.DependencyCollector` версии 2.8.0-beta1.
 Она отключена по умолчанию. Чтобы ее включить, задайте для `ApplicationInsightsServiceOptions.RequestCollectionOptions.EnableW3CDistributedTracing` значение `true`:
@@ -108,7 +133,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-#### <a name="enable-w3c-distributed-tracing-support-for-java-apps"></a>Включение поддержки распределенной трассировки консорциума W3C для приложений Java
+### <a name="enable-w3c-distributed-tracing-support-for-java-apps"></a>Включение поддержки распределенной трассировки консорциума W3C для приложений Java
 
 - **Входящая конфигурация**
 
@@ -145,9 +170,9 @@ public void ConfigureServices(IServiceCollection services)
 > [!IMPORTANT]
 > Убедитесь, что входящая и исходящая конфигурации точно совпадают.
 
-#### <a name="enable-w3c-distributed-tracing-support-for-web-apps"></a>Включить поддержку распределенной трассировки W3C для веб-приложений
+### <a name="enable-w3c-distributed-tracing-support-for-web-apps"></a>Включить поддержку распределенной трассировки W3C для веб-приложений
 
-Эта функция находится в `Microsoft.ApplicationInsights.JavaScript`. Она отключена по умолчанию. Чтобы включить его, используйте `distributedTracingMode` конфигурацию. AI_AND_W3C предоставляется для обеспечения обратной совместимости с любыми устаревшими Application Insights инструментированными службами:
+Эта функция находится в `Microsoft.ApplicationInsights.JavaScript`. Она отключена по умолчанию. Чтобы включить его, используйте конфигурацию `distributedTracingMode`. AI_AND_W3C предоставляется для обеспечения обратной совместимости с любыми устаревшими Application Insights инструментированными службами:
 
 - **Установка NPM (пропуск при использовании программы установки фрагмента кода)**
 
@@ -209,7 +234,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ASP.NET Core 2.0 поддерживает извлечение заголовков HTTP и запуск нового действия.
 
-`System.Net.HttpClient`, начиная с версии 4.1.0, поддерживает автоматическое внедрение заголовков HTTP корреляции и отслеживание вызова HTTP как действия.
+`System.Net.Http.HttpClient`, начиная с версии 4.1.0, поддерживает автоматическое внедрение заголовков HTTP корреляции и отслеживание вызова HTTP как действия.
 
 Для классического ASP.NET доступен новый HTTP-модуль [Microsoft.AspNet.TelemetryCorrelation](https://www.nuget.org/packages/Microsoft.AspNet.TelemetryCorrelation/). Этот модуль реализует корреляцию данных телеметрии с помощью `DiagnosticSource`. Он запускает действие, исходя из заголовков входящего запроса. Он также сопоставляет данные телеметрии с разных этапов обработки запросов, даже в тех случаях, когда каждый этап обработки Internet Information Services (IIS) работает на другом управляемом потоке.
 

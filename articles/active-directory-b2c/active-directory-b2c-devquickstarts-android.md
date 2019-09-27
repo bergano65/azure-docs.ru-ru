@@ -10,19 +10,19 @@ ms.topic: conceptual
 ms.date: 11/30/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 4db4806b6be018bfc53a155627de825bf62d8395
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 29f1fc2a6fd23ef3a770f58fd78d5067672136dd
+ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66510113"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71326318"
 ---
 # <a name="sign-in-using-an-android-application-in-azure-active-directory-b2c"></a>Вход с помощью приложения Android в Azure Active Directory B2C
 
 Платформа Microsoft Identity использует открытые стандарты, такие как OAuth2 и OpenID Connect. Эти стандарты позволяют использовать любую библиотеку, которую необходимо интегрировать с Azure Active Directory B2C. Чтобы помочь вам использовать другие библиотеки, мы написали несколько подобных этому пошаговых руководств по настройке сторонних библиотек для подключения к платформе Microsoft Identity. Большинство библиотек, в которых реализована [спецификация RFC6749 OAuth2](https://tools.ietf.org/html/rfc6749), могут подключаться к платформе Microsoft Identity.
 
 > [!WARNING]
-> Корпорация Майкрософт не предоставляет исправления для библиотек сторонних производителей и не выполняла их проверку. В этом примере используется библиотека стороннего производителя с именем AppAuth, которая была протестирована в основных сценариях на совместимость со службой Azure AD B2C. Проблемы и запросы возможностей следует отправлять в проекты с открытым кодом библиотеки. Дополнительные сведения см. в [этой статье](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-libraries).  
+> Корпорация Майкрософт не предоставляет исправления для библиотек сторонних производителей и не выполняла их проверку. В этом примере используется библиотека стороннего производителя с именем AppAuth, которая была протестирована в основных сценариях на совместимость со службой Azure AD B2C. Проблемы и запросы возможностей следует отправлять в проекты с открытым кодом библиотеки. Дополнительные сведения см. в [этой статье](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-libraries).
 >
 >
 
@@ -34,11 +34,11 @@ ms.locfileid: "66510113"
 
 ## <a name="create-an-application"></a>Создание приложения
 
-Затем необходимо создать приложение в каталоге B2C. Таким образом в Azure AD поступят сведения, необходимые для безопасного взаимодействия с вашим приложением. Чтобы создать мобильное приложение, следуйте [этим инструкциям](active-directory-b2c-app-registration.md). Не забудьте сделать следующее.
+Затем зарегистрируйте приложение в клиенте Azure AD B2C. Это предоставляет Azure AD сведения, необходимые для безопасного обмена данными с приложением.
 
-* Включите в приложение **собственный клиент**.
-* Скопируйте **идентификатор приложения** , назначенный приложению. Этот идентификатор потребуется позднее.
-* Настройте **URI перенаправления** собственного клиента (например, com.onmicrosoft.fabrikamb2c.exampleapp://oauth/redirect). Этот идентификатор также потребуется позднее.
+[!INCLUDE [active-directory-b2c-appreg-native](../../includes/active-directory-b2c-appreg-native.md)]
+
+Запишите **идентификатор приложения** для использования на более позднем этапе. Затем выберите приложение в списке и запишите **пользовательский URI перенаправления**, который также будет использоваться на более позднем шаге. Например, `com.onmicrosoft.contosob2c.exampleapp://oauth/redirect`.
 
 ## <a name="create-your-user-flows"></a>Создание потоков пользователей
 
@@ -62,7 +62,7 @@ ms.locfileid: "66510113"
 > AppAuth поддерживает Android API версии 16 (Jellybean) и более поздних. Мы советуем использовать API версии 23 и более поздних.
 >
 
-### <a name="configuration"></a>Параметр Configuration
+### <a name="configuration"></a>Конфигурация
 
 Чтобы настроить взаимодействие с Azure AD B2C, укажите URI обнаружения или URI конечных точек авторизации и токенов. В любом случае вам потребуются следующие сведения:
 
@@ -117,8 +117,8 @@ AuthorizationServiceConfiguration config =
 
 После настройки или извлечения конфигурации службы авторизации можно сформировать запрос авторизации. Для создания запроса вам потребуются следующие сведения:
 
-* идентификатор клиента (например, 00000000-0000-0000-0000-000000000000);
-* URI перенаправления с настраиваемой схемой (например, com.onmicrosoft.fabrikamb2c.exampleapp://oauthredirect).
+* Идентификатор клиента (идентификатор приложения), записанный ранее. Например, `00000000-0000-0000-0000-000000000000`.
+* Пользовательский URI перенаправления, записанный ранее. Например, `com.onmicrosoft.contosob2c.exampleapp://oauth/redirect`.
 
 Оба элемента нужно сохранить при [регистрации приложения](#create-an-application).
 
@@ -132,4 +132,3 @@ AuthorizationRequest req = new AuthorizationRequest.Builder(
 ```
 
 Дополнительные сведения о завершении остальной части процесса см. в [руководстве по AppAuth](https://openid.github.io/AppAuth-Android/). Если вам нужно быстро приступить к работе с приложением, ознакомьтесь с [нашим примером](https://github.com/Azure-Samples/active-directory-android-native-appauth-b2c). Следуйте указаниям в файле [README.md](https://github.com/Azure-Samples/active-directory-android-native-appauth-b2c/blob/master/README.md), чтобы ввести собственные значения для настройки Azure AD B2C.
-

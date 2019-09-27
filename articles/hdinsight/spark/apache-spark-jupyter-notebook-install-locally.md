@@ -1,19 +1,19 @@
 ---
 title: Установка записной книжки Jupyter в локальной среде и ее подключение к Spark в Azure HDInsight
 description: Сведения о том, как установить записную книжку Jupyter на компьютере локально и как подключить ее к кластеру Apache Spark.
-ms.service: hdinsight
 author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
+ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/06/2019
-ms.author: hrasheed
-ms.openlocfilehash: 6ce3ff8e00bc92911a7405de1bb0bb7286fb5c15
-ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
+ms.openlocfilehash: 46164cfc0c2baff919808a831a67180b65a23ff7
+ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70993765"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71337654"
 ---
 # <a name="install-jupyter-notebook-on-your-computer-and-connect-to-apache-spark-on-hdinsight"></a>Установка записной книжки Jupyter на компьютере и ее подключение к Apache Spark в HDInsight
 
@@ -146,7 +146,7 @@ ms.locfileid: "70993765"
 
     1\. Создайте новую записную книжку. В правом углу выберите **создать**. Вы должны увидеть ядро по умолчанию **Python 2** или **Python 3** и установленные ядра. Фактические значения могут различаться в зависимости от выбранных вариантов установки.  Выберите **PySpark**.
 
-    ![Ядра в записной книжке Jupyter](./media/apache-spark-jupyter-notebook-install-locally/jupyter-kernels-notebook.png "Ядра в записной книжке Jupyter")
+    ![Доступные ядра в ядре записной книжки Jupyter](./media/apache-spark-jupyter-notebook-install-locally/jupyter-kernels-notebook.png "в записной книжке Jupyter")
 
     > [!IMPORTANT]  
     > После выбора **нового** проверьте оболочку на наличие ошибок.  Если отображается сообщение об ошибке `TypeError: __init__() got an unexpected keyword argument 'io_loop'` , возможно, возникла известная проблема с определенными версиями Торнадо.  Если это так, завершите работу ядра, а затем понизить установку торнадо, выполнив `pip install tornado==4.5.3`следующую команду:.

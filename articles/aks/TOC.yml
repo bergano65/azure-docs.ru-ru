@@ -151,6 +151,8 @@
           href: azure-files-volume.md
         - name: "Сервер NFS\_— статический"
           href: azure-nfs-volume.md
+        - name: Azure NetApp Files
+          href: azure-netapp-files.md
     - name: Настройка сети
       items:
         - name: Создание виртуальной сети или использование существующей

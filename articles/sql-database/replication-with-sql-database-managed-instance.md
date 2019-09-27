@@ -11,12 +11,12 @@ author: allenwux
 ms.author: xiwu
 ms.reviewer: mathoma
 ms.date: 02/07/2019
-ms.openlocfilehash: 3b76dc546b46718378d9b22ad80e17849eaf532d
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: b940be1d1b68e4e2a41e3f8353cb54fdb51bb886
+ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68884082"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71338737"
 ---
 # <a name="configure-replication-in-an-azure-sql-database-managed-instance-database"></a>Настройка репликации в базе данных Управляемого экземпляра Базы данных SQL Azure
 
@@ -41,7 +41,7 @@ ms.locfileid: "68884082"
 - Управляемый издателем экземпляр находится в той же виртуальной сети, что и распространитель и подписчик, либо между виртуальными сетями всех трех сущностей установлен [пиринг](../virtual-network/tutorial-connect-virtual-networks-powershell.md) виртуальных сетей. 
 - При подключении используется аутентификация SQL между участниками репликации.
 - Общий ресурс учетной записи хранения Azure для рабочей папки репликации.
-- Порт 445 (исходящий трафик TCP) открыт в правилах безопасности NSG для доступа управляемых экземпляров к файловому ресурсу Azure. 
+- Порт 445 (исходящий трафик TCP) открыт в правилах безопасности NSG для доступа управляемых экземпляров к файловому ресурсу Azure.  Если возникла ошибка "не удалось подключиться к службе хранилища Azure \<storage имя учетной записи > с ошибкой ОС 53", необходимо добавить правило исходящего трафика в NSG соответствующей подсети Управляемый экземпляр SQL.
 
 
  > [!NOTE]
@@ -59,7 +59,7 @@ ms.locfileid: "68884082"
 Управляемый экземпляр в Базе данных SQL Azure не поддерживает следующие функции:
 
 - [Обновляемые подписки](/sql/relational-databases/replication/transactional/updatable-subscriptions-for-transactional-replication).
-- [Активная](sql-database-active-geo-replication.md) Георепликация с репликацией транзакций. Вместо активной георепликации используйте [группы автоматической](sql-database-auto-failover-group.md)отработки отказа, но обратите внимание, что публикацию необходимо [вручную удалить](sql-database-managed-instance-transact-sql-information.md#replication) из основного управляемого экземпляра и создать повторно на дополнительном управляемом экземпляре после отработки отказа.  
+- [Активная Георепликация](sql-database-active-geo-replication.md) с репликацией транзакций. Вместо активной георепликации используйте [группы автоматической отработки отказа](sql-database-auto-failover-group.md), но обратите внимание, что публикацию необходимо [вручную удалить](sql-database-managed-instance-transact-sql-information.md#replication) из основного управляемого экземпляра и создать повторно на дополнительном управляемом экземпляре после отработки отказа.  
  
 ## <a name="1---create-a-resource-group"></a>1\. Создание группы ресурсов
 
@@ -78,15 +78,15 @@ ms.locfileid: "68884082"
 
 [Создайте учетную запись хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-create-storage-account#create-a-storage-account) для рабочего каталога, а затем создайте общую [папку](../storage/files/storage-how-to-create-file-share.md) в учетной записи хранения. 
 
-Скопируйте путь к общей папке в формате:`\\storage-account-name.file.core.windows.net\file-share-name`
+Скопируйте путь к общей папке в формате: `\\storage-account-name.file.core.windows.net\file-share-name`.
 
-Скопируйте ключи доступа к хранилищу в формате:`DefaultEndpointsProtocol=https;AccountName=<Storage-Account-Name>;AccountKey=****;EndpointSuffix=core.windows.net`
+Скопируйте ключи доступа к хранилищу в формате: `DefaultEndpointsProtocol=https;AccountName=<Storage-Account-Name>;AccountKey=****;EndpointSuffix=core.windows.net`.
 
  Дополнительные сведения см. в разделе [Просмотр и копирование ключей доступа к хранилищу](../storage/common/storage-account-manage.md#access-keys). 
 
 ## <a name="4---create-a-publisher-database"></a>4\. Создание базы данных издателя
 
-Подключитесь к `sql-mi-pub` управляемому экземпляру с помощью SQL Server Management Studio и выполните следующий код Transact-SQL (T-SQL) для создания базы данных издателя:
+Подключитесь к управляемому экземпляру `sql-mi-pub` с помощью SQL Server Management Studio и выполните следующий код Transact-SQL (T-SQL) для создания базы данных издателя:
 
 ```sql
 USE [master]
@@ -120,7 +120,7 @@ GO
 
 ## <a name="5---create-a-subscriber-database"></a>5\. Создание базы данных подписчика
 
-Подключитесь к `sql-mi-sub` управляемому экземпляру с помощью SQL Server Management Studio и выполните следующий код T-SQL, чтобы создать базу данных пустого подписчика:
+Подключитесь к управляемому экземпляру `sql-mi-sub` с помощью SQL Server Management Studio и выполните следующий код T-SQL, чтобы создать базу данных пустого подписчика:
 
 ```sql
 USE [master]
@@ -141,7 +141,7 @@ GO
 
 ## <a name="6---configure-distribution"></a>6\. Настройка распространения
 
-Подключитесь к `sql-mi-pub` управляемому экземпляру с помощью SQL Server Management Studio и выполните следующий код T-SQL для настройки базы данных распространителя. 
+Подключитесь к управляемому экземпляру `sql-mi-pub` с помощью SQL Server Management Studio и выполните следующий код T-SQL для настройки базы данных распространителя. 
 
 ```sql
 USE [master]
@@ -154,7 +154,7 @@ GO
 
 ## <a name="7---configure-publisher-to-use-distributor"></a>7\. Настройка издателя для использования распространителя 
 
-На управляемом экземпляре `sql-mi-pub`издателя измените выполнение запроса на режим [sqlcmd](/sql/ssms/scripting/edit-sqlcmd-scripts-with-query-editor) и выполните следующий код, чтобы зарегистрировать новый распространитель на издателе. 
+На управляемом экземпляре издателя `sql-mi-pub` Измените выполнение запроса на режим [sqlcmd](/sql/ssms/scripting/edit-sqlcmd-scripts-with-query-editor) и выполните следующий код, чтобы зарегистрировать новый распространитель в издателе. 
 
 ```sql
 :setvar username loginUsedToAccessSourceManagedInstance
@@ -322,7 +322,7 @@ EXEC sp_dropdistributor @no_checks = 1
 GO
 ```
 
-Вы можете очистить ресурсы Azure, [удалив ресурсы управляемого экземпляра из группы ресурсов](../azure-resource-manager/manage-resources-portal.md#delete-resources) , а затем удалив группу `SQLMI-Repl`ресурсов. 
+Вы можете очистить ресурсы Azure, [удалив ресурсы управляемого экземпляра из группы ресурсов](../azure-resource-manager/manage-resources-portal.md#delete-resources) , а затем удалив группу ресурсов `SQLMI-Repl`. 
 
    
 ## <a name="see-also"></a>См. также

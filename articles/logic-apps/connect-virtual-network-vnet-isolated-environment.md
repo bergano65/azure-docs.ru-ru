@@ -9,12 +9,12 @@ ms.author: estfan
 ms.reviewer: klam, LADocs
 ms.topic: conceptual
 ms.date: 07/26/2019
-ms.openlocfilehash: d6cc87947ab861e8de4dbdf754164e195f0f458c
-ms.sourcegitcommit: 0486aba120c284157dfebbdaf6e23e038c8a5a15
+ms.openlocfilehash: 0b04ca5c4bea00221d5a823432b6fc1934badb1a
+ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71309320"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71320519"
 ---
 # <a name="connect-to-azure-virtual-networks-from-azure-logic-apps-by-using-an-integration-service-environment-ise"></a>Подключение к виртуальным сетям Azure из Azure Logic Apps с помощью среды службы интеграции (ISE)
 
@@ -58,7 +58,10 @@ ms.locfileid: "71309320"
     **Префикс адреса**: 0.0.0.0/0<br>
     **Определение следующего прыжка**. Интернет
 
-* Если вы хотите использовать пользовательские DNS-серверы для виртуальной сети Azure, [Настройте эти серверы, выполнив следующие действия](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md) перед развертыванием интегрированной среды сценариев в виртуальной сети. Иначе при каждом изменении DNS-сервера вам придется перезагружать среду службы интеграции. Такая возможность доступна в общедоступной предварительной версии среды службы интеграции.
+* Если вы хотите использовать пользовательские DNS-серверы для виртуальной сети Azure, [Настройте эти серверы, выполнив следующие действия](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md) перед развертыванием интегрированной среды сценариев в виртуальной сети. В противном случае при каждом изменении DNS-сервера также потребуется перезапустить интегрированную среду сценариев.
+
+  > [!IMPORTANT]
+  > Если вы измените параметры DNS-сервера после создания интегрированной среды сценариев, обязательно перезапустите интегрированную среду сценариев. Дополнительные сведения об управлении параметрами DNS-сервера см. [в статье Создание, изменение или удаление виртуальной сети](../virtual-network/manage-virtual-network.md#change-dns-servers).
 
 <a name="ports"></a>
 

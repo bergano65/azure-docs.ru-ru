@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.service: cost-management
 manager: ormaoz
 ms.custom: ''
-ms.openlocfilehash: 6767644e037c6abb3e3044c8707e923a9137a01c
-ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
+ms.openlocfilehash: 772f6cdde575a9ac669c73ecca039914357ffe2f
+ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69019550"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71338898"
 ---
 # <a name="manage-aws-costs-and-usage-in-azure"></a>Управление затратами и использованием AWS в Azure
 
@@ -78,7 +78,7 @@ _Перед началом_: Если вы не знакомы с анализо
 | Измерение | Заголовок Amazon CUR | Области | Комментарии |
 | --- | --- | --- | --- |
 | Зона доступности | LineItem/параметр availabilityzone | Все |   |
-| Местоположение | продукт или регион | Все |   |
+| Location | продукт или регион | Все |   |
 | Отслеживание использования |   | Все |   |
 | Категория измерения | lineItem/ProductCode | Все |   |
 | Подкатегория измерения | LineItem/UsageType | Все |   |
@@ -183,4 +183,4 @@ _Перед началом_: Если вы не знакомы с анализо
 
 ## <a name="next-steps"></a>Следующие шаги
 
-- Если вы еще не настроили среду Azure с помощью групп управления, см. статью [Начальная настройка групп управления](../governance/management-groups/index.md#initial-setup-of-management-groups).
+- Если вы еще не настроили среду Azure с помощью групп управления, см. статью [Начальная настройка групп управления](../governance/management-groups/overview.md#initial-setup-of-management-groups).

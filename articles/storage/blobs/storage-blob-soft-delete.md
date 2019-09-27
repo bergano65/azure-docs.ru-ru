@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 04/23/2019
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: b0a03eee06ba114ab929c8c584f382861a006bbc
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: 95d133e07725f797ea3c1a903e315d5c7232e1de
+ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68360755"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71327623"
 ---
 # <a name="soft-delete-for-azure-storage-blobs"></a>Обратимое удаление больших двоичных объектов службы хранилища Azure
 Служба хранилища Azure теперь предоставляет возможность обратимого удаления больших двоичных объектов. Это упрощает восстановление данных, если они ошибочно изменены или удалены приложением или другим пользователем учетной записи хранения.

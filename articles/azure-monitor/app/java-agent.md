@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 01/10/2019
 ms.author: mbullwin
-ms.openlocfilehash: af157204ad1e1b28639ae2d8f192b3122afa8147
-ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
+ms.openlocfilehash: ff9d4bb98a79c379fda2c1a0a0ab9d5e0ec212ce
+ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71299231"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71338089"
 ---
 # <a name="monitor-dependencies-caught-exceptions-and-method-execution-times-in-java-web-apps"></a>Мониторинг зависимостей, перехваченных исключений и времени выполнения методов в веб-приложениях Java
 
@@ -122,7 +122,7 @@ ms.locfileid: "71299231"
 
 В идеале он может использоваться, когда все ваши службы обновлены к новой версии пакетов SDK, поддерживающих протокол консорциума W3C. Настоятельно рекомендуется как можно скорее перейти к новой версии пакетов SDK с поддержкой W3C.
 
-Убедитесь, что **оба [входящий](correlation.md#w3c-distributed-tracing) и исходящий (агенты) конфигурации** совпадают.
+Убедитесь, что **оба [входящий](correlation.md#enable-w3c-distributed-tracing-support-for-java-apps) и исходящий (агенты) конфигурации** совпадают.
 
 ## <a name="view-the-data"></a>Просмотр данных
 В ресурсе Application Insights агрегированная Удаленная зависимость и время выполнения метода отображаются [под плиткой "производительность"][metrics].

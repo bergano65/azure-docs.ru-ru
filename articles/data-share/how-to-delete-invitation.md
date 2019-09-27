@@ -1,17 +1,17 @@
 ---
 title: Удаление приглашения в предварительной версии общего ресурса Azure Data Share
 description: Удаление приглашения
-author: madams0013
+author: joannapea
+ms.author: joanpo
 ms.service: data-share
 ms.topic: conceptual
 ms.date: 07/10/2019
-ms.author: jasonh
-ms.openlocfilehash: 49fd3da721f3a9ef5d9810e88fa15a92709ee2e6
-ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
+ms.openlocfilehash: eacc4e5edb196d512d3b27b2a0acc72a82e8f0b9
+ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70258652"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71327197"
 ---
 # <a name="how-to-delete-an-invitation-to-a-recipient-in-azure-data-share-preview"></a>Как удалить приглашение для получателя в предварительной версии Azure Data Share
 

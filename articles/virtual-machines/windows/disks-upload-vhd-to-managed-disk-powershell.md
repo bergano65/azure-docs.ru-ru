@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: virtual-machines-linux
 ms.tgt_pltfrm: linux
 ms.subservice: disks
-ms.openlocfilehash: 98c0316a3fa513f98031b79eefcedea5a1111539
-ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
+ms.openlocfilehash: cd8c5b174d92edcf69801edaeabd0c0730985654
+ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71266631"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71326922"
 ---
 # <a name="upload-a-vhd-to-azure-using-azure-powershell"></a>Отправка виртуального жесткого диска в Azure с помощью Azure PowerShell
 
@@ -39,6 +39,8 @@ ms.locfileid: "71266631"
 - Активеуплоад. Это означает, что диск готов к получению отправки, и создан SAS.
 
 Хотя в одном из этих состояний плата за управляемый диск будет взиматься по [стандартному тарифу на HDD](https://azure.microsoft.com/pricing/details/managed-disks/), независимо от фактического типа диска. Например, P10 будет оплачиваться как S10. Это справедливо до тех пор `revoke-access` , пока на управляемом диске не будет вызван, что необходимо для подключения диска к виртуальной машине.
+
+Перед созданием пустого стандартного жесткого диска для отправки вам потребуется размер файла в байтах виртуального жесткого диска, который требуется передать. Пример кода получит это, но для самостоятельного использования можно использовать: `$vhdSizeBytes = (Get-Item "<fullFilePathHere>").length`. Это значение используется при указании параметра **-уплоадсизеинбитес** .
 
 Теперь в локальной оболочке создайте пустой жесткий диск "Стандартный" для отправки, указав параметр **отправки** в параметре **-CreateOption** , а также параметр **-уплоадсизеинбитес** в командлете [New-аздискконфиг](https://docs.microsoft.com/powershell/module/az.compute/new-azdiskconfig?view=azps-1.8.0) . Затем вызовите [New-аздиск](https://docs.microsoft.com/powershell/module/az.compute/new-azdisk?view=azps-1.8.0) , чтобы создать диск:
 

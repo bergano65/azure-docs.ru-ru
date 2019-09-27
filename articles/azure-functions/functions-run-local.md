@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 03/13/2019
 ms.author: glenga
 ms.custom: 80e4ff38-5174-43
-ms.openlocfilehash: fc77ef6786fbd16ecfeb34397ead11be8b107176
-ms.sourcegitcommit: 5f67772dac6a402bbaa8eb261f653a34b8672c3a
+ms.openlocfilehash: 45bc55141c9f338ae2f69cf4ccefae3d2492b239
+ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2019
-ms.locfileid: "70207280"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71336933"
 ---
 # <a name="work-with-azure-functions-core-tools"></a>Запуск основных инструментов службы "Функции Azure"
 
@@ -97,19 +97,37 @@ ms.locfileid: "70207280"
     sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
     ```
 
-1. Убедитесь, что на сервере используется одна из соответствующих версий Ubuntu, указанных в таблице ниже. Чтобы добавить источник apt, выполните команду:
+1. Перед обновлением APT Настройте список источников для разработки .NET.
+
+   Чтобы настроить список источников APT для Ubuntu, выполните следующую команду:
 
     ```bash
     sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-$(lsb_release -cs)-prod $(lsb_release -cs) main" > /etc/apt/sources.list.d/dotnetdev.list'
-    sudo apt-get update
     ```
+
+   Чтобы настроить список источников APT для Debian, выполните следующую команду:
+
+    ```bash
+    sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/debian/$(lsb_release -rs)/prod $(lsb_release -cs) main" > /etc/apt/sources.list.d/dotnetdev.list'
+    ```
+
+1. Проверьте файл `/etc/apt/sources.list.d/dotnetdev.list` для одной из следующих строк версии Linux, перечисленных ниже:
 
     | Дистрибутив Linux | Version |
     | --------------- | ----------- |
+    | Debian 10 | `buster` |
+    | Debian 9 | `stretch` |
+    | Debian 8; | `jessie` |
     | Ubuntu 18,10    | `cosmic`    |
     | Ubuntu 18.04    | `bionic`    |
     | Ubuntu 17.04    | `zesty`     |
     | Ubuntu 16.04/Linux Mint 18    | `xenial`  |
+
+1. Запустите обновление источника APT:
+
+    ```bash
+    sudo apt-get update
+    ```
 
 1. Установите пакет основных инструментов:
 
@@ -182,7 +200,7 @@ Initialized empty Git repository in C:/myfunctions/myMyFunctionProj/.git/
 * [Java](functions-reference-java.md#environment-variables)
 * [JavaScript](functions-reference-node.md#environment-variables)
 
-Если не задана [`AzureWebJobsStorage`] допустимая строка подключения к хранилищу и не используется эмулятор, отображается следующее сообщение об ошибке:
+Если для [`AzureWebJobsStorage`] не задана допустимая строка подключения к хранилищу, а эмулятор не используется, отображается следующее сообщение об ошибке:
 
 > Отсутствует значение AzureWebJobsStorage в local.settings.json. This is required for all triggers other than HTTP. You can run 'func azure functionapp fetch-app-settings \<functionAppName\>' or specify a connection string in local.settings.json (Оно требуется для всех триггеров, отличных от HTTP. Выполните команду func azure functionapp fetch-app-settings <имя_приложения_функции> или укажите строку подключения в файле local.settings.json).
 
@@ -297,7 +315,7 @@ npm start
 
 ### <a name="version-1x"></a>Версия 1.x
 
-Версия 1. x среды выполнения функций требует `host` команду, как показано в следующем примере:
+Версия 1. x среды выполнения функций требует команды `host`, как показано в следующем примере:
 
 ```command
 func host start
@@ -312,12 +330,12 @@ func host start
 | **`--cors-credentials`** | Разрешение запросов, прошедших проверку подлинности из разных источников (например, файлы cookie и заголовок проверки подлинности). Только версия 2.x. |
 | **`--cors`** | Список разрешенных источников CORS, разделенный запятыми без пробелов. |
 | **`--language-worker`** | Аргументы для настройки обработчика языка. Только версия 2.x. |
-| **`--nodeDebugPort -n`** | Порт отладчика узла. По умолчанию: значение из launch.json или 5858. Только версия 1.x. |
+| **`--nodeDebugPort -n`** | Порт отладчика узла. Значение по умолчанию: значение из launch.json или 5858. Только версия 1.x. |
 | **`--password`** | Пароль или файл, содержащий пароль для PFX-файла. Используется только с `--cert`. Только версия 2.x. |
 | **`--port -p`** | Локальный порт для прослушивания. Значение по умолчанию: 7071. |
 | **`--pause-on-error`** | Приостановка для получения дополнительных входных данных перед выходом из процесса. Используется только при запуске набора инструментов Core Tools из интегрированной среды разработки.|
 | **`--script-root --prefix`** | Используется для указания пути к корню приложения-функции, которое необходимо запустить или развернуть. Используется для скомпилированных проектов, которые создают файлы проекта во вложенной папке. Например, при сборке проекта библиотеки классов C# файлы host.json, local.settings.json и function.json создаются в *корневой* вложенной папке с путем, таким как `MyProject/bin/Debug/netstandard2.0`. В этом случае задайте для префикса значение `--script-root MyProject/bin/Debug/netstandard2.0`. Это корень приложения-функции, работающего в Azure. |
-| **`--timeout -t`** | Время ожидания для запуска узла службы "Функции" в секундах. По умолчанию: 20 секунд.|
+| **`--timeout -t`** | Время ожидания для запуска узла службы "Функции" в секундах. Значение по умолчанию: 20 секунд.|
 | **`--useHttps`** | Привязка к `https://localhost:{port}`, а не к `http://localhost:{port}`. По умолчанию этот параметр создает доверенный сертификат на компьютере.|
 
 При запуске узла службы "Функции" выводится URL-адрес функций, активируемых по HTTP:
@@ -417,13 +435,13 @@ Azure Functions Core Tools поддерживает два типа развер
 
 ### <a name="project-file-deployment"></a>Развертывание (файлы проекта)
 
-Чтобы опубликовать локальный код в приложении-функции в Azure, используйте `publish` команду:
+Чтобы опубликовать локальный код в приложении-функции в Azure, используйте команду `publish`:
 
 ```bash
 func azure functionapp publish <FunctionAppName>
 ```
 
-Эта команда публикует в существующее приложение-функцию в Azure. При попытке публикации в `<FunctionAppName>` , который не существует в вашей подписке, возникает ошибка. Чтобы узнать, как создать приложение-функцию из командной строки или из окна терминала, используя Azure CLI, см. статью [Создание приложения-функции для выполнения без сервера](./scripts/functions-cli-create-serverless.md). По умолчанию эта команда развертывает приложение для [запуска из пакета развертывания](run-functions-from-deployment-package.md). Чтобы отключить этот рекомендуемый режим развертывания, используйте `--nozip` параметр.
+Эта команда публикует в существующее приложение-функцию в Azure. При попытке публикации в `<FunctionAppName>`, который не существует в вашей подписке, возникает ошибка. Чтобы узнать, как создать приложение-функцию из командной строки или из окна терминала, используя Azure CLI, см. статью [Создание приложения-функции для выполнения без сервера](./scripts/functions-cli-create-serverless.md). По умолчанию эта команда развертывает приложение для [запуска из пакета развертывания](run-functions-from-deployment-package.md). Чтобы отключить этот рекомендуемый режим развертывания, используйте параметр `--nozip`.
 
 >[!IMPORTANT]
 > При создании приложения-функции на портале Azure по умолчанию используется версия 2.x среды выполнения Функций. Чтобы в приложении-функции использовалась среда выполнения версии 1.x, следуйте инструкциям, приведенным в разделе [Создание приложений 1.x](functions-versions.md#creating-1x-apps).
@@ -433,7 +451,7 @@ func azure functionapp publish <FunctionAppName>
 
 | Параметр     | Описание                            |
 | ------------ | -------------------------------------- |
-| **`--publish-local-settings -i`** |  Публикация параметров из файла local.settings.json в Azure с запросом на перезапись, если параметр уже существует. Если вы используете эмулятор хранения, сначала измените параметр приложения на [реальное подключение](#get-your-storage-connection-strings)к хранилищу. |
+| **`--publish-local-settings -i`** |  Публикация параметров из файла local.settings.json в Azure с запросом на перезапись, если параметр уже существует. Если вы используете эмулятор хранения, сначала измените параметр приложения на [реальное подключение к хранилищу](#get-your-storage-connection-strings). |
 | **`--overwrite-settings -y`** | Отключите запрос на перезапись параметров приложения при использовании `--publish-local-settings -i`.|
 
 Следующие параметры публикации поддерживаются только в версии 2.x:

@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: virtual-machines-linux
 ms.tgt_pltfrm: linux
 ms.subservice: disks
-ms.openlocfilehash: bd4d3b9b34f951896e838d5f6f50ca204d329568
-ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
+ms.openlocfilehash: bc8932a9904a3e4e671edc3e624ff15e7253e1ed
+ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71266605"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71326821"
 ---
 # <a name="upload-a-vhd-to-azure-using-azure-cli"></a>Отправка виртуального жесткого диска в Azure с помощью Azure CLI
 
@@ -40,6 +40,8 @@ ms.locfileid: "71266605"
 - Активеуплоад. Это означает, что диск готов к получению отправки, и создан SAS.
 
 Хотя в одном из этих состояний плата за управляемый диск будет взиматься по [стандартному тарифу на HDD](https://azure.microsoft.com/pricing/details/managed-disks/), независимо от фактического типа диска. Например, P10 будет оплачиваться как S10. Это справедливо до тех пор `revoke-access` , пока на управляемом диске не будет вызван, что необходимо для подключения диска к виртуальной машине.
+
+Перед созданием пустого стандартного жесткого диска для отправки необходимо указать размер файла виртуального жесткого диска, который требуется передать, в байтах. Чтобы получить это значение, можно использовать `wc -c <yourFileName>.vhd` или `ls -al <yourFileName>.vhd`. Это значение используется при указании параметра **--upload-size-bytes** .
 
 Создайте пустой жесткий диск "Стандартный" для отправки, указав оба параметра **—-for-upload** и **--upload-size-bytes** в командлете [создания диска](/cli/azure/disk#az-disk-create) .
 

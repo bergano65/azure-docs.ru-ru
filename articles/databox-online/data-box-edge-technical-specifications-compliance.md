@@ -6,18 +6,37 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: article
-ms.date: 09/11/2019
+ms.date: 09/26/2019
 ms.author: alkohli
-ms.openlocfilehash: f1199748782c40b2527a8778417588891b84f9fc
-ms.sourcegitcommit: d70c74e11fa95f70077620b4613bb35d9bf78484
+ms.openlocfilehash: 365507f482217bd804bbd5017d4dbbaf8c187ad2
+ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70910128"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71326884"
 ---
 # <a name="azure-data-box-edge-technical-specifications"></a>Технические спецификации Azure Data Box Edge
 
 Аппаратные компоненты устройства Microsoft Azure Data Box Edge соответствуют техническим спецификациям и нормативным стандартам, изложенным в этой статье. Технические спецификации описывают единицы питания (блока питания), емкость хранилища, корпуса и стандарты окружающей среды. 
+
+## <a name="compute-memory-specifications"></a>Вычисление, спецификация памяти
+
+Устройство Data Box Edge имеет следующие спецификации для вычислений и памяти.
+
+| Спецификация           | Значение                  |
+|-------------------------|----------------------------|
+| ЦП    | 2 X 10 ядер ЦП                     |
+| Память              | ОЗУ 128 ГБ.                  |
+
+
+## <a name="fpga-specifications"></a>Спецификации FPGA
+
+Поле с программируемым набором шлюзов (FPGA) включается на каждое устройство Data Box Edge, которое обеспечивает сценарии Машинное обучение (машинного обучения). 
+
+| Спецификация           | Значение                  |
+|-------------------------|----------------------------|
+| ППВМ   | Intel Арриа 10 <br> Доступные модели глубокой нейронной сети (DNN) те же, что и в [облачных экземплярах FPGA](https://docs.microsoft.com/azure/machine-learning/service/how-to-deploy-fpga-web-service#whats-supported-on-azure).| 
+
 
 ## <a name="power-supply-unit-specifications"></a>Спецификации блока питания
 

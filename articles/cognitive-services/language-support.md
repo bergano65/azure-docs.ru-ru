@@ -6,16 +6,16 @@ services: cognitive-services
 author: erhopf
 manager: nitinme
 ms.service: cognitive-services
-ms.topic: article
-ms.date: 06/16/2019
+ms.topic: conceptual
+ms.date: 09/26/2019
 ms.author: erhopf
 ms.custom: seodec18
-ms.openlocfilehash: cd31215f578062548c67f8d14e724dc49f73b21c
-ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
+ms.openlocfilehash: d6519ad5a130eee25ab17135e26d7207047dcf7a
+ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2019
-ms.locfileid: "68775009"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71327260"
 ---
 # <a name="natural-language-support-for-azure-cognitive-services"></a>Поддержка естественного языка в Azure Cognitive Services
 
@@ -38,7 +38,7 @@ Azure Cognitive Services позволяет создавать приложен�
 * Испанский
 
 > [!NOTE]
-> LUIS и индексатор видео ¹: преобразование речи в текст не поддерживается.
+> ¹ LUIS, индексатор видео, Анализ текста и преобразование речи в текст не поддерживаются.
 
 ## <a name="additional-language-availability-by-service"></a>Поддержка дополнительных языков для службы
 
@@ -71,7 +71,7 @@ Azure Cognitive Services позволяет создавать приложен�
 | [Перевод текстов](https://docs.microsoft.com/azure/cognitive-services/translator/languages) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | [Анализ текста](https://docs.microsoft.com/azure/cognitive-services/text-analytics/text-analytics-supported-languages) | :heavy_check_mark: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_check_mark: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_check_mark: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_minus_sign: |
 
-### <a name="search"></a>Поиск
+### <a name="search"></a>Найти
 
 | | Арабский | Болгарский | Каталанский | Хорватский | Чешский | Датский | Голландский | Эстонский | Финский | Греческий | Хинди | Венгерский | исландский | Индонезийский | Латышский | Литовский | Малайский | Норвежский | Польский | Румынский | Русский | Сербский | Словацкий | Словенский | Шведский | Тамильский | Тайский | Турецкий | Украинский | Вьетнамский |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|

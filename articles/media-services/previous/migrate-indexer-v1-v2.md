@@ -13,16 +13,16 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/20/2019
 ms.author: juliako
-ms.openlocfilehash: 3f6f61523b8509f23ffc98b236daaf0e646a013a
-ms.sourcegitcommit: 0486aba120c284157dfebbdaf6e23e038c8a5a15
+ms.openlocfilehash: 304091634c9e07f0a34029e83111a537b95bc061
+ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71310429"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71338532"
 ---
 # <a name="migrate-from-media-indexer-and-media-indexer-2-to-video-indexer"></a>Миграция из индексатора мультимедиа и индексатора мультимедиа 2 в индексатор видео
 
-[Azure Media Indexerный](media-services-index-content.md) обработчик мультимедиа будет снят с 1 октября по 2020. Процессоры мультимедиа [Azure Media indexer индексатор 2 (Предварительная версия)](media-services-process-content-with-indexer2.md) будут сняты с 1 января 2020.  [Индексатор видео служб мультимедиа Azure](https://docs.microsoft.com/azure/media-services/video-indexer/) заменяет эти устаревшие обработчики мультимедиа.
+Процессор мультимедиа [Azure Media indexer v1](media-services-index-content.md) будет снят с 1 октября по 2020. Процессоры мультимедиа [Azure Media indexer v2 Preview](media-services-process-content-with-indexer2.md) будут сняты с 1 января 2020.  [Индексатор видео служб мультимедиа Azure](https://docs.microsoft.com/azure/media-services/video-indexer/) заменяет эти устаревшие обработчики мультимедиа.
 
 Индексатор видео служб мультимедиа Azure создан на основе Аналитика мультимедиа Azure, поиска Azure Cognitive Services (например, API распознавания лиц, Microsoft Translator, API компьютерного зрения и службы Пользовательское распознавание речи). Индексатор видео позволяет извлекать аналитические сведения из видеоматериалов с помощью видео- и аудиомоделей. Чтобы узнать, в каких сценариях можно использовать индексатор видео, какие функции он предлагает и как приступить к работе, см. статью [видео и звуковые модели индексатора видео](../video-indexer/video-indexer-overview.md). 
 

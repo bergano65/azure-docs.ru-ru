@@ -1,20 +1,20 @@
 ---
 title: Подключение к виртуальному рабочему столу Windows из macOS в Azure
-description: Как подключиться к виртуальному рабочему столу Windows из macOS.
+description: Как подключиться к виртуальному рабочему столу Windows с помощью клиента macOS.
 services: virtual-desktop
 author: heidilohr
 ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 09/04/2019
 ms.author: helohr
-ms.openlocfilehash: bf6bfb52bd763eabd88f23701c3d1f240cdf4844
-ms.sourcegitcommit: 0486aba120c284157dfebbdaf6e23e038c8a5a15
+ms.openlocfilehash: fa61d69ae7aa650b6011696fd45d05ba20d2ac8b
+ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71310195"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71338702"
 ---
-# <a name="connect-from-macos"></a>Подключение из macOS
+# <a name="connect-with-the-macos-client"></a>Подключение с помощью клиента macOS
 
 > Применимо к: macOS 10,12 или более поздней версии
 
@@ -44,6 +44,6 @@ ms.locfileid: "71310195"
 
 После того как вы подписались на веб-канал, содержимое веб-канала автоматически обновляется на регулярной основе. Ресурсы можно добавлять, изменять или удалять в зависимости от изменений, внесенных администратором.
 
-## <a name="client-documentation"></a>Документация клиента
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о клиенте macOS см. в статье [Приступая к работе с клиентской](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/clients/remote-desktop-mac) документацией по macOS.

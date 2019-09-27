@@ -13,17 +13,17 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 09/24/2019
+ms.date: 09/26/2019
 ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9e44207429abb5aa03f4850861d49de8c5dcfdf7
-ms.sourcegitcommit: 0486aba120c284157dfebbdaf6e23e038c8a5a15
+ms.openlocfilehash: aa63b1343fcc981629dd96e2209bf26ec2cc2bd5
+ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71310377"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71326221"
 ---
 # <a name="admin-consent-on-the-microsoft-identity-platform"></a>Согласие администратора на платформе Microsoft Identity
 
@@ -95,3 +95,4 @@ http://localhost/myapp/permissions?admin_consent=True&tenant=fa00d692-e9c7-4460-
 - Дополнительные сведения см. в руководстве по [преобразованию приложения в мультитенантное](howto-convert-app-to-be-multi-tenant.md).
 - Узнайте, как [согласие поддерживается на уровне протокола OAuth 2,0 во время потока предоставления кода авторизации](v2-oauth2-auth-code-flow.md#request-an-authorization-code).
 - Узнайте, [как приложение с несколькими клиентами может использовать инфраструктуру согласия](active-directory-devhowto-multi-tenant-overview.md) для реализации согласия "пользователь" и "Администратор", поддерживающей более сложные шаблоны многоуровневых приложений.
+- Общие сведения о [согласии приложений в Azure AD](application-consent-experience.md)

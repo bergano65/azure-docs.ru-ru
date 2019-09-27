@@ -11,14 +11,14 @@ ms.service: log-analytics
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 08/28/2019
+ms.date: 09/26/2019
 ms.author: bwren
-ms.openlocfilehash: 9ecae51d996e2e065b15d1fa70bdaf796f8f197b
-ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+ms.openlocfilehash: 39691c0efbac7b7a48dd844641d63e0ca178e95f
+ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70124149"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71327465"
 ---
 # <a name="custom-logs-in-azure-monitor"></a>Настраиваемые журналы в Azure Monitor
 
@@ -58,7 +58,7 @@ ms.locfileid: "70124149"
 
 1. На портале Azure щелкните **Рабочие области Log Analytics**, выберите свою рабочую область, а затем — **Дополнительные параметры**.
 2. Щелкните **Данные** > **Настраиваемые журналы**.
-3. По умолчанию все изменения конфигурации автоматически отправляются во все агенты.  Файл конфигурации агентов Linux отправляется в сборщик данных Fluentd.  Если вы хотите изменить этот файл вручную в каждом агенте Linux, снимите флажок *Apply below configuration to my Linux machines*(Применить конфигурацию ниже к моим компьютерам Linux).
+3. По умолчанию все изменения конфигурации автоматически отправляются во все агенты. Файл конфигурации агентов Linux отправляется в сборщик данных Fluentd.
 4. Щелкните **Add+** (Добавить+), чтобы открыть мастер настраиваемого журнала.
 
 ### <a name="step-2-upload-and-parse-a-sample-log"></a>Шаг 2. Загрузка и преобразование примера журнала

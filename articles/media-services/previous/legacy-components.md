@@ -11,14 +11,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/21/2019
+ms.date: 09/26/2019
 ms.author: juliako
-ms.openlocfilehash: d4f4cfc005b2d5a63512245baee5230e9a26cb37
-ms.sourcegitcommit: 0486aba120c284157dfebbdaf6e23e038c8a5a15
+ms.openlocfilehash: e4ff157f58a68c68f8610c6c473f5d69897650ad
+ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71309210"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71338413"
 ---
 # <a name="azure-media-services-legacy-components"></a>Устаревшие компоненты служб мультимедиа Azure
 
@@ -31,9 +31,9 @@ ms.locfileid: "71309210"
 * [Миграция из кодировщика мультимедиа Windows Azure в Media Encoder Standard](migrate-windows-azure-media-encoder.md)
 * [Миграция из кодировщика мультимедиа Azure в Media Encoder Standard](migrate-azure-media-encoder.md)
 
-Мы также объявляем объявление об устаревании *Azure Media indexer* и *Azure Media indexer 2*. [Azure Media Indexerный](media-services-index-content.md) обработчик мультимедиа будет снят с 1 октября по 2020. Процессоры мультимедиа [[Azure Media indexer 2 (Предварительная версия)](media-services-process-content-with-indexer2.md) будут сняты с 1 января 2019.  [Индексатор видео служб мультимедиа Azure](https://docs.microsoft.com/azure/media-services/video-indexer/) заменяет эти устаревшие обработчики мультимедиа.
+Мы также сообщаем о прекращении использования предварительной версии *Azure Media indexer v1* и *Azure Media indexer v2*. Процессор мультимедиа [Azure Media indexer v1](media-services-index-content.md) будет снят с 1 октября по 2020. [Процессоры мультимедиа[предварительной версии Azure Media indexer v2](media-services-process-content-with-indexer2.md) будут прекращены 1 января 2019.  [Индексатор видео служб мультимедиа Azure](https://docs.microsoft.com/azure/media-services/video-indexer/) заменяет эти устаревшие обработчики мультимедиа.
 
-* [Миграция с Azure Media indexer и Azure Media indexer 2 в индексатор видео служб мультимедиа Azure](migrate-indexer-v1-v2.md).
+* [Выполните миграцию из Azure Media indexer v1 и Azure Media indexer v2 в индексатор видео служб мультимедиа Azure](migrate-indexer-v1-v2.md).
 
 ## <a name="next-steps"></a>Следующие шаги
 

@@ -3,7 +3,7 @@ title: Вход на виртуальную машину Linux с учетным
 description: Узнайте, как создать и настроить виртуальную машину Linux для входа с помощью Azure Active Directory проверки подлинности.
 services: virtual-machines-linux
 documentationcenter: ''
-author: cynthn
+author: iainfoulds
 manager: gwallace
 editor: ''
 ms.assetid: ''
@@ -13,13 +13,13 @@ ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/29/2019
-ms.author: cynthn
-ms.openlocfilehash: e30adf8b694d744e64fb7528b75b85d4a772a723
-ms.sourcegitcommit: 9fba13cdfce9d03d202ada4a764e574a51691dcd
+ms.author: iainfou
+ms.openlocfilehash: b473844f1507285e0052ca1f8de00f6ca3207e6f
+ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71316758"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71327099"
 ---
 # <a name="preview-log-in-to-a-linux-virtual-machine-in-azure-using-azure-active-directory-authentication"></a>Предварительный просмотр: Вход на виртуальную машину Linux в Azure с помощью проверки подлинности Azure Active Directory
 
@@ -88,7 +88,7 @@ az vm create \
 ## <a name="install-the-azure-ad-login-vm-extension"></a>Установка расширения для входа на виртуальную машину с помощью Azure AD
 
 > [!NOTE]
-> Если развернуть этот ексентион на ранее созданной виртуальной машине, убедитесь, что на компьютере установлено по меньшей мере 1 ГБ памяти, поэтому расширение не будет установлено.
+> При развертывании этого расширения на ранее созданную виртуальную машину убедитесь, что на компьютере установлено по меньшей мере 1 ГБ памяти, поэтому расширение не будет установлено.
 
 Чтобы войти на виртуальную машину Linux с учетными данными Azure AD, установите Azure Active Directory расширение виртуальной машины для входа. Расширения виртуальных машин — это небольшие приложения, которые выполняют задачи настройки и автоматизации после развертывания виртуальных машин Azure. С помощью команды [az vm extension set](/cli/azure/vm/extension#az-vm-extension-set) установите расширение *AADLoginForLinux* на виртуальную машину с именем *myVM* в группе ресурсов *myResourceGroup*:
 

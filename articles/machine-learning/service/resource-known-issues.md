@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 08/09/2019
 ms.custom: seodec18
-ms.openlocfilehash: 275cf20329be04e86c2e7c2a613f657733e652df
-ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
+ms.openlocfilehash: 8fbb09ecf09008c25c84a11c7b43dfb26450e30a
+ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71213445"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71338749"
 ---
 # <a name="known-issues-and-troubleshooting-azure-machine-learning"></a>Известные проблемы и устранение неполадок Машинное обучение Azure
 
@@ -214,3 +214,24 @@ kubectl get secret/azuremlfessl -o yaml
 
 >[!Note]
 >Kubernetes сохраняет секреты в формате в кодировке Base-64. Необходимо сначала декодировать `cert.pem` компоненты и `key.pem` для этих секретов в Base-64, прежде чем предоставлять их `attach_config.enable_ssl`в. 
+
+## <a name="recommendations-for-error-fix"></a>Рекомендации по исправлению ошибок
+Ниже приведены рекомендации Azure ML по устранению некоторых распространенных ошибок в МАШИНном обучении Azure.
+
+### <a name="moduleerrors-no-module-named"></a>Модулиррорс (без модуля с именем)
+Если вы используете в Модулиррорс при отправке экспериментов в МАШИНном обучении Azure, это означает, что обучающий сценарий ожидает установки пакета, но он не добавляется. После предоставления имени пакета Azure ML установит пакет в среде, используемой для обучения. 
+
+Если для отправки экспериментов используются средства [оценки](https://docs.microsoft.com/en-us/azure/machine-learning/service/concept-azure-machine-learning-architecture#estimators) , можно указать имя пакета с помощью параметра `pip_packages` или `conda_packages` в средстве оценки на основе источника, для которого необходимо установить пакет. Можно также указать файл yml со всеми зависимостями, используя `conda_dependencies_file`or список всех требований к PIP в файле TXT с помощью параметра `pip_requirements_file`.
+
+В МАШИНном обучении Azure также предусмотрены средства оценки для Tensorflow, PyTorch, Chain и SKLearn, связанные с платформой. Используя эти средства оценки, вы убедитесь, что зависимости платформы установлены от вашего имени в среде, используемой для обучения. Есть возможность указать дополнительные зависимости, как описано выше. 
+ 
+ Образы DOCKER, поддерживаемые МАШИНным обучением Azure, и их содержимое можно просмотреть в [контейнерах AzureML](https://github.com/Azure/AzureML-Containers).
+Зависимости, зависящие от платформы, перечислены в соответствующей документации по платформе — [цепочке](https://docs.microsoft.com/en-us/python/api/azureml-train-core/azureml.train.dnn.chainer?view=azure-ml-py#remarks), [PyTorch](https://docs.microsoft.com/en-us/python/api/azureml-train-core/azureml.train.dnn.pytorch?view=azure-ml-py#remarks), [TensorFlow](https://docs.microsoft.com/en-us/python/api/azureml-train-core/azureml.train.dnn.tensorflow?view=azure-ml-py#remarks), [SKLearn](https://docs.microsoft.com/en-us/python/api/azureml-train-core/azureml.train.sklearn.sklearn?view=azure-ml-py#remarks).
+
+>[Примечание.] Если вы считаете, что определенный пакет является достаточно распространенным для добавления в образы и среды машинного обучения Azure, повысьте вопрос GitHub в [контейнерах AzureML](https://github.com/Azure/AzureML-Containers). 
+ 
+ ### <a name="nameerror-name-not-defined-attributeerror-object-has-no-attribute"></a>Намиррор (имя не определено), Аттрибутиррор (у объекта нет атрибута)
+Это исключение должно поступать из сценариев обучения. Чтобы получить дополнительные сведения о конкретном имени, которое не определено или об ошибке атрибута, можно просмотреть файлы журналов из портал Azure. Из пакета SDK можно использовать `run.get_details()` для просмотра сообщения об ошибке. Также будут перечислены все файлы журналов, созданные для выполнения. Обязательно ознакомьтесь со сценарием обучения, исправьте ошибку, прежде чем повторять попытку. 
+
+### <a name="horovod-is-shutdown"></a>Хоровод завершает работу
+В большинстве случаев это исключение означает, что в одном из процессов, вызвавших завершение хоровод, возникло базовое исключение. Каждый рейтинг в задании MPI получает собственный выделенный файл журнала в МАШИНном обучении Azure. Эти журналы имеют имя `70_driver_logs`. В случае распределенного обучения имена журналов добавляются в суффиксы `_rank`, что упрощает различение журналов. Чтобы найти точную ошибку, которая привела к хоровод завершению работы, просмотрите все файлы журнала и найдите `Traceback` в конце файлов driver_log. Один из этих файлов предоставит фактическое базовое исключение. 
