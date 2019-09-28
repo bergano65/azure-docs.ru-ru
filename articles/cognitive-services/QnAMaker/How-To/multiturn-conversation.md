@@ -11,24 +11,24 @@ ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 06/26/2019
 ms.author: diberry
-ms.openlocfilehash: 585dc03503a61ff6666d3da3374586287e24283f
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: 318df27ebb822f49c1f8881d0bf68ac7167dea36
+ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68966699"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71351296"
 ---
-# <a name="use-follow-up-prompts-to-create-multiple-turns-of-a-conversation"></a>Используйте дальнейшие подсказки, чтобы создать несколько переходов на беседу.
+# <a name="use-follow-up-prompts-to-create-multiple-turns-of-a-conversation"></a>Использование дальнейших подсказок для создания диалога с несколькими шагами
 
-Используйте запросы к исполнению и контекст для управления несколькими процессами, которые называются многофакторными, для программы _-_ робота с одного вопроса на другой.
+Используйте запросы к исполнению и контекст для управления несколькими процессами, которые называются _многофакторными_, для программы-робота с одного вопроса на другой.
 
 Чтобы увидеть, как работает Multi-Turn, просмотрите следующее демонстрационное видео:
 
-[![Множественная перевращение диалога в QnA Maker](../media/conversational-context/youtube-video.png)](https://aka.ms/multiturnexample)
+[![Multi — включение диалога в QnA Maker](../media/conversational-context/youtube-video.png)](https://aka.ms/multiturnexample)
 
 ## <a name="what-is-a-multi-turn-conversation"></a>Что такое множественная беседа?
 
-Ответить на некоторые вопросы можно одним из них. При проектировании бесед с клиентским приложением (Чат Bot) пользователь может задать вопрос, для которого необходимо выполнить фильтрацию или уточнение, чтобы определить правильный ответ. Вы сделаете этот поток через все возможные вопросы, предоставляя пользователю *запросы*к исполнению.
+Ответить на некоторые вопросы можно одним из них. При проектировании бесед с клиентским приложением (Чат Bot) пользователь может задать вопрос, для которого необходимо выполнить фильтрацию или уточнение, чтобы определить правильный ответ. Вы сделаете этот поток через все возможные вопросы, предоставляя пользователю *запросы к исполнению*.
 
 Когда пользователь запросит вопрос, QnA Maker возвращает ответ _и_ все дальнейшие подсказки. Этот ответ позволяет представлять дальнейшие вопросы как варианты выбора. 
 
@@ -51,7 +51,7 @@ ms.locfileid: "68966699"
 
 ## <a name="create-a-multi-turn-conversation-from-a-documents-structure"></a>Создание многофакторной беседы из структуры документа
 
-Когда вы создаете базу знаний, в разделе Заполнение статьи **KB** отображается флажок **Включить множественное извлечение из URL-адресов, файлов PDF или DOCX** . 
+Когда вы создаете базу знаний, в разделе **Заполнение статьи KB** отображается флажок **Включить множественное извлечение из URL-адресов, файлов PDF или DOCX** . 
 
 ![Флажок для включения множественного извлечения](../media/conversational-context/enable-multi-turn.png)
 
@@ -67,7 +67,7 @@ ms.locfileid: "68966699"
 1. Создайте или используйте существующую службу QnA Maker. В предыдущем примере Microsoft Surface, поскольку PDF-файл слишком велик для меньшего уровня, используйте службу QnA Maker со **службой поиска** **B** (15 индексов) или выше.
 1. Введите имя базы знаний, например **руководство по рабочей области**.
 1. Установите флажок **Включить множественное извлечение из URL-адресов, файлов PDF или DOCX** . 
-1. Выберите URL-адрес ручной области **https://github.com/Azure-Samples/cognitive-services-sample-data-files/raw/master/qna-maker/data-source-formats/product-manual.pdf** ,.
+1. Выберите URL-адрес ручной области, **https://github.com/Azure-Samples/cognitive-services-sample-data-files/raw/master/qna-maker/data-source-formats/product-manual.pdf** .
 
 1. Нажмите кнопку **создать базу знаний** . 
 
@@ -122,7 +122,7 @@ ms.locfileid: "68966699"
 
     ![Команда редактирования для отображаемого текста](../media/conversational-context/edit-existing-display-text.png)
 
-1. Во всплывающем окне **запроса** к исполнению измените существующий отображаемый текст. 
+1. Во всплывающем окне **запроса к исполнению** измените существующий отображаемый текст. 
 1. Завершив редактирование отображаемого текста, нажмите кнопку **сохранить**. 
 1. В верхней панели навигации **Сохраните и обучить**.
 
@@ -195,7 +195,7 @@ In the knowledge base, when a question-and-answer pair is linked to follow-up pr
 
 ## <a name="a-json-request-to-return-an-initial-answer-and-follow-up-prompts"></a>Запрос JSON для возврата начального ответа и последующих запросов.
 
-Используйте пустой `context` объект, чтобы запросить ответ на вопрос пользователя и включить в него запросы к исполнению. 
+Используйте пустой объект `context`, чтобы запросить ответ на вопрос пользователя и включить в него запросы к исполнению. 
 
 ```JSON
 {
@@ -209,7 +209,7 @@ In the knowledge base, when a question-and-answer pair is linked to follow-up pr
 
 ## <a name="a-json-response-to-return-an-initial-answer-and-follow-up-prompts"></a>Ответ JSON для возврата начального ответа и последующих запросов.
 
-В предыдущем разделе был запрошен ответ и все последующие запросы к учетным **записям и входу**. Ответ содержит сведения о приглашении, которые находятся в *ответах [0]. Context*, и текст, отображаемый пользователю. 
+В предыдущем разделе был запрошен ответ и все последующие запросы к **учетным записям и входу**. Ответ содержит сведения о приглашении, которые находятся в *ответах [0]. Context*, и текст, отображаемый пользователю. 
 
 ```JSON
 {
@@ -274,7 +274,7 @@ In the knowledge base, when a question-and-answer pair is linked to follow-up pr
 }
 ```
 
-Массив предоставляет текст `displayText` в свойстве и `qnaId` значении. `prompts` Эти ответы можно отобразить как следующие отображаемые варианты в потоке диалога, а затем отправить выбранное `qnaId` обратно в QnA Maker в следующем запросе. 
+Массив `prompts` предоставляет текст в свойстве `displayText` и значении `qnaId`. Вы можете отобразить эти ответы в качестве следующих отображаемых вариантов в потоке диалога, а затем отправить выбранный `qnaId` обратно в QnA Maker в следующем запросе. 
 
 <!--
 
@@ -284,7 +284,7 @@ The `promptsToDelete` array provides the ...
 
 ## <a name="a-json-request-to-return-a-non-initial-answer-and-follow-up-prompts"></a>Запрос JSON для возврата непервоначального ответа и дальнейших запросов
 
-Заполните `context` объект, чтобы включить предыдущий контекст.
+Заполните объект `context`, чтобы включить предыдущий контекст.
 
 В следующем запросе JSON текущим вопросом является *Использование Windows Hello для входа* , а предыдущий вопрос — *учетные записи и вход*. 
 
@@ -304,7 +304,7 @@ The `promptsToDelete` array provides the ...
 
 ##  <a name="a-json-response-to-return-a-non-initial-answer-and-follow-up-prompts"></a>Ответ JSON для возврата непервоначального ответа и последующих запросов
 
-Ответ QnA Maker _женератеансвер_ JSON содержит запросы к исполнению в `context` свойстве `answers` первого элемента объекта:
+Ответ QnA Maker _женератеансвер_ JSON содержит запросы к исполнению в свойстве `context` первого элемента в объекте `answers`:
 
 ```JSON
 {
@@ -364,7 +364,7 @@ The `promptsToDelete` array provides the ...
 
 ## <a name="query-the-knowledge-base-with-the-qna-maker-id"></a>Запрос к базе знаний с помощью идентификатора QnA Maker
 
-В ответе на первый вопрос возвращаются все дальнейшие подсказки и связанные `qnaId` с ней результаты. Теперь, когда у вас есть идентификатор, вы можете передать его в текст запроса дальнейших действий. Если текст запроса содержит `qnaId`, и объект контекста (который содержит предыдущие QnA Maker свойства), то женератеансвер будет возвращать точный вопрос по идентификатору, а не использовать алгоритм ранжирования для поиска ответа по тексту вопроса. 
+В ответе на первый вопрос возвращаются все запросы к исполнению и связанные с ней `qnaId`. Теперь, когда у вас есть идентификатор, вы можете передать его в текст запроса дальнейших действий. Если текст запроса содержит `qnaId`, а объект контекста (который содержит предыдущие свойства QnA Maker), то Женератеансвер будет возвращать точный вопрос по ИДЕНТИФИКАТОРу, а не использовать алгоритм ранжирования для поиска ответа по тексту вопроса. 
 
 ## <a name="display-prompts-and-send-context-in-the-client-application"></a>Отображение запросов и отправка контекста в клиентском приложении 
 
@@ -382,17 +382,17 @@ FIX - Need to go to parent, then answer column, then edit answer.
 
 ## <a name="create-knowledge-base-with-multi-turn-prompts-with-the-create-api"></a>Создание базы знаний с помощью многофункциональных запросов с помощью API создания
 
-Можно создать вариант базы знаний с несколькими инструкциями с помощью [API QnA Maker Create](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/create). Запросы добавляются в `context` `prompts` массив свойств. 
+Вы можете создать базу знаний с несколькими инструкциями с помощью [API QnA Maker Create](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/create). Запросы добавляются в массив `prompts` свойства `context`. 
 
 
 ## <a name="add-or-delete-multi-turn-prompts-with-the-update-api"></a>Добавление и удаление многофункциональных запросов с помощью API обновления
 
-Вы можете добавлять или удалять многострочные запросы с помощью [API обновления QnA Maker](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/update).  Запросы добавляются в `context` `promptsToAdd` массив свойств и `promptsToDelete` массив. 
+Вы можете добавлять или удалять многострочные запросы с помощью [API обновления QnA Maker](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/update).  Запросы добавляются в массив `promptsToAdd` свойства `context` и массив `promptsToDelete`. 
 
 
 ## <a name="next-steps"></a>Следующие шаги
 
-Дополнительные сведения об контекстных диалогах см. в этом [образце диалогового окна](https://aka.ms/qnamakermultiturnsample) или дополнительные сведения о концептуальном [проектировании для нескольких диалогов](https://docs.microsoft.com/azure/bot-service/bot-builder-conversations?view=azure-bot-service-4.0).
+Дополнительные сведения об контекстных диалогах см. в этом [образце диалогового окна](https://aka.ms/qnamakermultiturnsample) или дополнительные сведения о [концептуальном проектировании для нескольких диалогов](https://docs.microsoft.com/azure/bot-service/bot-builder-conversations?view=azure-bot-service-4.0).
 
 > [!div class="nextstepaction"]
 > [Перенос базы знаний](../Tutorials/migrate-knowledge-base.md)

@@ -10,12 +10,12 @@ ms.service: billing
 ms.topic: article
 ms.date: 05/30/2019
 ms.author: byvinyal
-ms.openlocfilehash: 0f036462eb9b37b4ec783bcf8957d307cc55f7ac
-ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
+ms.openlocfilehash: ccddd13ddd8c10daba84f959b1cc1f8a4a80deb1
+ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71018520"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71345550"
 ---
 # <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Подписка Azure, границы, квоты и ограничения службы
 В этом документе указаны некоторые из наиболее распространенных ограничений Microsoft Azure, которые иногда называются квотами. Этот документ на текущий момент охватывает не все службы Azure. Со временем список будет развернут и обновлен, чтобы охватить больше служб.
@@ -94,6 +94,7 @@ ms.locfileid: "71018520"
   * [Частная ссылка](#private-link-limits)
   * [Диспетчер трафика](#traffic-manager-limits)
   * [Виртуальная сеть](#networking-limits)
+  * [Виртуальная глобальная сеть](#virtual-wan-limits)
 * [Центры уведомлений](#notification-hubs-limits)
 * [группа ресурсов](#resource-group-limits)
 * [Контроль доступа на основе ролей](#role-based-access-control-limits)
@@ -161,6 +162,9 @@ ms.locfileid: "71018520"
 
 #### <a name="expressroute-limits"></a>Ограничения ExpressRoute
 [!INCLUDE [expressroute-limits](../includes/expressroute-limits.md)]
+
+#### <a name="virtual-wan-limits"></a>Ограничения виртуальной глобальной сети
+[!INCLUDE [virtual-wan-limits](../includes/virtual-wan-limits.md)]
 
 #### <a name="application-gateway-limits"></a>Ограничения шлюза приложений
 

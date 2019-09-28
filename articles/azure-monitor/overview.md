@@ -12,23 +12,28 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/26/2019
 ms.author: bwren
-ms.openlocfilehash: 1bc4a7634e864f0e3feb0d33cef3b967e5b6741f
-ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
+ms.openlocfilehash: 140a5cba6926e8711f0b70896ade55c11d332e0d
+ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71262211"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71345294"
 ---
 # <a name="azure-monitor-overview"></a>Общие сведения о службе Azure Monitor
 
-Служба Azure Monitor обеспечивает максимальную доступность и производительность приложений, предоставляя полноценное решение для сбора, анализа и обработки данных телеметрии из облачных и локальных сред. Она поможет вам понять, как выполняются приложения, а также заранее определить проблемы, влияющие на них, и ресурсы, от которых они зависят.
+Azure Monitor максимально увеличивает доступность и производительность приложений и служб, предоставляя исчерпывающее решение для сбора, анализа и взаимодействия телеметрии из облачных и локальных сред. Она поможет вам понять, как выполняются приложения, а также заранее определить проблемы, влияющие на них, и ресурсы, от которых они зависят.
 
-> [!VIDEO https://www.youtube.com/embed/_hGff5bVtkM]
+Вот несколько примеров того, что можно сделать с Azure Monitor включают:
+
+- Выявлять и диагностировать проблемы между приложениями и зависимостями с [Application Insights](app/app-insights-overview.md).
+- Сопоставьте проблемы инфраструктуры с [Azure Monitor для виртуальных машин](insights/vminsights-overview.md) и [Azure Monitor для контейнеров](insights/container-insights-overview.md).
+- Выполняйте детализацию данных мониторинга с помощью [log Analytics](log-query/log-query-overview.md) для устранения неполадок и глубокой диагностики.
+- Поддерживают операции в масштабе с помощью [смарт-предупреждений](platform/alerts-smartgroups-overview.md) и [автоматических действий](platform/alerts-action-rules.md).
+- Создавайте визуализации с помощью [панелей мониторинга](learn/tutorial-logs-dashboards.md) и [книг](app/usage-workbooks.md)Azure.
 
 ## <a name="overview"></a>Обзор
 На приведенной ниже схеме показано высокоуровневое представление Azure Monitor. В центре схемы находятся хранилища данных для метрик и журналов — двух основных типов данных, используемых службой Azure Monitor. В левой части находятся [источники данных мониторинга](platform/data-sources.md), наполняющие эти [хранилища данных](platform/data-platform.md). Справа находятся различные операции, которые Azure Monitor выполняет с собранными данными (например, анализ, оповещение и потоковая передача во внешние системы).
 
-[!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
 ![Общие сведения о службе Azure Monitor](media/overview/overview.png)
 

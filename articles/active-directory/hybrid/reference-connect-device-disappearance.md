@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 09/25/2019
 ms.subservice: hybrid
 ms.author: billmath
-ms.openlocfilehash: 1ba17feea880bb55c3b4a14a06b3d803dba2350a
-ms.sourcegitcommit: 9fba13cdfce9d03d202ada4a764e574a51691dcd
+ms.openlocfilehash: b0ef3dd2f39802d07c4ae04ad1eca23e40db502a
+ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71316958"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71345503"
 ---
 # <a name="understanding-azure-ad-connect-14xxx-and-device-disappearance"></a>Основные сведения об Azure AD Connect 1.4. XX. x и о выявление устройства
 При использовании версии 1.4. XX. x Azure AD Connect некоторые клиенты могут увидеть некоторые или все их устройства с Windows, которые исчезают из Azure AD. Это не является причиной проблемы, так как эти удостоверения устройств не используются Azure AD во время авторизации условного доступа. Это изменение не приведет к удалению устройств Windows, которые были правильно зарегистрированы в Azure AD для гибридного присоединение к Azure AD.
@@ -34,6 +34,15 @@ ms.locfileid: "71316958"
 Azure AD Connect никогда не должны синхронизировать [устройства Windows нижнего уровня](../devices/hybrid-azuread-join-plan.md#windows-down-level-devices). Все устройства в Azure AD, которые ранее были синхронизированы неправильно, теперь будут удалены из Azure AD. Если Azure AD Connect пытается удалить [устройства Windows нижнего уровня](../devices/hybrid-azuread-join-plan.md#windows-down-level-devices), это значит, что устройство не создано в [Microsoft Workplace Join для MSI-компьютеров, отличных от Windows 10](https://www.microsoft.com/download/details.aspx?id=53554) , и не может использоваться какой-либо другой функцией Azure AD.
 
 Некоторым клиентам может потребоваться перейти [к следующим инструкциям: Спланируйте реализацию](../devices/hybrid-azuread-join-plan.md) гибридного Azure Active Directory JOIN, чтобы правильно зарегистрировать устройства Windows и убедиться, что такие устройства могут полностью участвовать в условном доступе на основе устройств. 
+
+## <a name="how-can-i-verify-which-devices-are-deleted-with-this-update"></a>Как проверить, какие устройства удаляются с помощью этого обновления?
+
+Чтобы проверить, какие устройства удалены, можно использовать следующий скрипт PowerShell: https://gallery.technet.microsoft.com/scriptcenter/Export-Hybrid-Azure-AD-f8e51436
+
+Этот скрипт создает отчет о сертификатах, хранящихся в Active Directory объектах компьютеров, в частности, о сертификатах, выданных гибридной функцией присоединение к Azure AD.
+Он проверяет наличие сертификатов в свойстве UserCertificate объекта компьютера в AD, а также для каждого недействительного сертификата проверяет, был ли выдан сертификат для гибридной функции присоединение к Azure AD (т. е. имя субъекта совпадает с CN = {ObjectGUID}).
+Ранее Azure AD Connect будет синхронизироваться с Azure AD на любом компьютере, который содержал по крайней мере один действительный сертификат, но начиная с Azure AD Connect версии 1,4, модуль синхронизации может выявление гибридных сертификатов присоединение к Azure AD и будет "клаудфилтер" объект компьютера из синхронизации с Azure AD, если отсутствует допустимый гибридный сертификат присоединение к Azure AD.
+Устройства Azure AD, которые уже синхронизированы с AD, но не имеют допустимого гибридного сертификата присоединение к Azure AD, будут удалены модулем синхронизации (CloudFiltered = TRUE).
 
 ## <a name="next-steps"></a>Следующие шаги
 - [Журнал версий Azure AD Connect](reference-connect-version-history.md)
