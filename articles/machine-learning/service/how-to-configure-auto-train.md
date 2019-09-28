@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 07/10/2019
 ms.custom: seodec18
-ms.openlocfilehash: e6cfc18f01bb23d0b318ac1b924cf8cbb9f7a2b6
-ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
+ms.openlocfilehash: 5a0f2922763f8fccb9f3eec8bab4d6eddee7e446
+ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71259990"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71350586"
 ---
 # <a name="configure-automated-ml-experiments-in-python"></a>Настройка автоматизированных экспериментов машинного обучения в Python
 
@@ -328,7 +328,7 @@ run = experiment.submit(automl_config, show_output=True)
 
 Любая модель, созданная с помощью автоматизированного ML, включает следующие шаги:
 + Автоматизированное проектирование компонентов (если предварительная обработка = true)
-+ Масштабирование, нормализация и алгоритм с использованием значений счетчиков
++ Масштабирование, нормализация и алгоритм с использованием значений параметров
 
 Мы сделаем его прозрачным, чтобы получить эту информацию из выходных данных fitted_model из автоматизированного ML.
 
@@ -410,7 +410,7 @@ best_run, fitted_model = automl_run.get_output()
    |енгинирингфеатурекаунт|Количество функций, созданных с помощью автоматизированных преобразований «разработка компонентов».|
    |Преобразования|Список преобразований, применяемых к функциям ввода для создания сконструированных функций.|
 
-### <a name="scalingnormalization-and-algorithm-with-hypermeter-values"></a>Масштабирование, нормализация и алгоритм со значениями счетчиков:
+### <a name="scalingnormalization-and-algorithm-with-hyperparameter-values"></a>Масштабирование, нормализация и алгоритм со значениями параметров.
 
 Чтобы получить представление о масштабировании, нормализации и значении параметра Algorithm и параметров в конвейере, используйте fitted_model. шаги. Дополнительные [сведения о масштабировании и нормализации](concept-automated-ml.md#preprocess). Пример выходных данных:
 

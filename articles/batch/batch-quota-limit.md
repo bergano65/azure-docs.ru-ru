@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 08/13/2019
 ms.author: lahugh
 ms.custom: seodec18
-ms.openlocfilehash: 1e7d64aabba19f04fb98bd208389dc0b2077bfe4
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 8b089a1b32ee70479072522372c060713108957c
+ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70094696"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71350092"
 ---
 # <a name="batch-service-quotas-and-limits"></a>Квоты и ограничения пакетной службы
 
@@ -52,7 +52,7 @@ ms.locfileid: "70094696"
 | **Вычислительные узлы в [пуле с включенной связью между узлами](batch-mpi.md)**  ||
 | Режим распределения пула "Пакетная служба" | 100 |
 | Режим распределения пула "Пользовательская подписка" | 80 |
-| **Вычислительные узлы в [пуле, созданные с помощью пользовательского образа виртуальной машины](batch-custom-images.md)** <sup>1</sup> ||
+| **Вычисление узлов в [пуле, созданном с помощью ресурса управляемого образа](batch-custom-images.md)** <sup>1</sup> ||
 | Выделенные узлы | 2000 |
 | Низкоприоритетные узлы | 1000 |
 

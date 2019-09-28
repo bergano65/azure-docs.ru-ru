@@ -90,6 +90,8 @@
       items:
         - name: Power BI
           items:
+            - name: Рекомендации
+              href: power-bi-best-practices.md
             - name: Соединитель
               href: power-bi-connector.md
             - name: Импортированный запрос

@@ -9,13 +9,13 @@ ms.reviewer: nibaccam
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
-ms.date: 09/16/2019
-ms.openlocfilehash: b46ca59bc93477c338001009ff7eeeddc7248684
-ms.sourcegitcommit: b03516d245c90bca8ffac59eb1db522a098fb5e4
+ms.date: 09/27/2019
+ms.openlocfilehash: 2056970a91a90fc14528b13650472722a235c354
+ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71147334"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71350489"
 ---
 # <a name="create-and-manage-reusable-environments-for-training-and-deployment-with-azure-machine-learning"></a>Создавайте повторно используемые среды для обучения и развертывания с помощью Машинное обучение Azure и управляйте ими.
 
@@ -42,7 +42,9 @@ ms.locfileid: "71147334"
 
 ### <a name="types-of-environments"></a>Типы сред
 
-Среды можно разделить на две категории: **управляемое пользователем** и **управляемое системой**.
+Среды можно разделить на три категории: **проверенные**, **управляемые пользователем** и **управляемые системой**.
+
+Проверенные среды предоставляются Машинное обучение Azure и доступны в рабочей области по умолчанию. Они содержат коллекции пакетов и параметров Python, которые помогут начать работу с различными платформами машинного обучения. 
 
 В среде, управляемой пользователем, вы несете ответственность за настройку среды и установку каждого пакета, который необходим вашему обучающему сценарию на целевом объекте вычислений. Conda не будет проверять вашу среду или устанавливать что-либо за вас. 
 
@@ -53,9 +55,42 @@ ms.locfileid: "71147334"
 * [Установленный](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py)пакет SDK для машинное обучение Azure для Python.
 * [Рабочая область машинное обучение Azure](how-to-manage-workspace.md).
 
+
 ## <a name="create-an-environment"></a>Создание среды
 
 Существует несколько способов создания среды для экспериментов.
+
+### <a name="use-curated-environment"></a>Использовать проверенную среду
+
+Можно выбрать одну из проверенных сред, чтобы начать с. 
+
+* Среда __AzureML__ имеет минимальный набор пакетов, позволяющих отслеживать выполнение и отправку ресурсов. Его можно использовать в качестве отправной точки для собственной среды.
+
+* Среда __azureml-Tutorial__ содержит общие пакеты обработки и анализа данных, такие как Scikit-учиться, Pandas и Matplotlib, а также обширный набор пакетов AzureML-SDK.
+
+Проверенные среды поддерживаются кэшированными образами DOCKER, что снижает затраты на подготовку к запуску.
+
+Используйте метод __Environment. Get__ для выбора одной из проверенных сред:
+
+```python
+from azureml.core import Workspace, Environment
+
+ws = Workspace.from_config()
+env = Environment.get(workspace=ws, name="AzureML-Minimal")
+```
+
+Список проверенных сред и их пакетов можно вывести с помощью следующего кода:
+```python
+envs = Environment.list(workspace=ws)
+
+for env in envs:
+    if env.startswith("AzureML"):
+        print("Name",env)
+        print("packages", envs[env].python.conda_dependencies.serialize_to_string())
+```
+
+> [!WARNING]
+>  Не начинайте использовать собственное имя среды с префиксом _AzureML_ . Он зарезервирован для проверенных сред.
 
 ### <a name="instantiate-an-environment-object"></a>Создание экземпляра объекта среды
 
@@ -85,7 +120,7 @@ myenv = Environment.from_pip_requirements(name = "myenv"
 
 При наличии существующей среды Conda на локальном компьютере служба предлагает решение для создания объекта среды из него. Таким образом можно повторно использовать локальную интерактивную среду на удаленных запусках.
 
-Следующий пример создает объект среды из существующей среды `mycondaenv` Conda с помощью метода [from_existing_conda_environment ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py#from-existing-conda-environment-name--conda-environment-name-) .
+Следующий код создает объект среды из существующей среды Conda `mycondaenv` с помощью метода [from_existing_conda_environment ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py#from-existing-conda-environment-name--conda-environment-name-) .
 
 ``` python
 myenv = Environment.from_existing_conda_environment(name = "myenv",
@@ -114,7 +149,7 @@ run = myexp.submit(config=runconfig)
 run.wait_for_completion(show_output=True)
 ```
 
-Аналогично, при использовании [`Estimator`](https://docs.microsoft.com//python/api/azureml-train-core/azureml.train.estimator.estimator?view=azure-ml-py) объекта для обучения можно отправить экземпляр средства оценки непосредственно в качестве запуска без указания среды, `Estimator` поскольку объект уже инкапсулирует среду и целевой объект вычислений.
+Аналогично, если для обучения используется объект [`Estimator`](https://docs.microsoft.com//python/api/azureml-train-core/azureml.train.estimator.estimator?view=azure-ml-py) , экземпляр средства оценки можно отправить непосредственно в виде запуска без указания среды. Объект `Estimator` уже инкапсулирует среду и целевой объект вычислений.
 
 
 ## <a name="add-packages-to-an-environment"></a>Добавление пакетов в среду
@@ -162,7 +197,7 @@ myenv.python.conda_dependencies=conda_dep
 
 Среда автоматически регистрируется в рабочей области при отправке выполнения или развертывании веб-службы. Можно также вручную зарегистрировать среду с помощью метода [Register ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment(class)?view=azure-ml-py#register-workspace-) . Эта операция делает среду в сущности, которая будет относиться и контролироваться в облаке, и может совместно использоваться пользователями рабочей области.
 
-В следующем примере среда `myenv`зарегистрируется в `ws`рабочей области.
+Следующий код регистрирует среду, `myenv`, в рабочую область `ws`.
 
 ```python
 myenv.register(workspace=ws)
@@ -176,12 +211,7 @@ myenv.register(workspace=ws)
 
 #### <a name="view-list-of-environments"></a>Просмотреть список сред
 
-Просмотрите окружения в рабочей области со [списком ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment(class)?view=azure-ml-py#list-workspace-), а затем выберите один из них для повторного использования.
-
-```python
-from azureml.core import Environment
-list("workspace_name")
-```
+Просмотрите окружения в рабочей области, используя [`Environment.list(workspace="workspace_name")`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment(class)?view=azure-ml-py#list-workspace-), а затем выберите одну из них для повторного использования.
 
 #### <a name="get-environment-by-name"></a>Получить окружение по имени
 
@@ -228,17 +258,14 @@ build.wait_for_completion(show_output=True)
 myenv.docker.enabled = True
 ```
 
-После сборки образ DOCKER появится в реестре контейнеров Azure, который связан с рабочей областью по умолчанию.  Имя репозитория имеет форму *azureml/azureml_\<\>UUID*. Часть уникального идентификатора (*уууид*) соответствует хэшу, вычисленному на основе конфигурации среды. Это позволяет службе определить, существует ли уже образ, соответствующий данной среде, для повторного использования.
+После сборки образ DOCKER появится в реестре контейнеров Azure, который связан с рабочей областью по умолчанию.  Имя репозитория имеет форму *azureml/azureml_ @ no__t-1uuid @ no__t-2*. Часть уникального идентификатора (*уууид*) соответствует хэшу, вычисленному на основе конфигурации среды. Это позволяет службе определить, существует ли уже образ, соответствующий данной среде, для повторного использования.
 
-Кроме того, служба автоматически использует один из [базовых образов](https://github.com/Azure/AzureML-Containers)на основе Ubuntu Linux и устанавливает указанные пакеты Python. Базовый образ имеет версии ЦП и GPU, и вы можете указать образ GPU, задав `gpu_support=True`.
+Кроме того, служба автоматически использует один из [базовых образов](https://github.com/Azure/AzureML-Containers)на основе Ubuntu Linux и устанавливает указанные пакеты Python. Базовый образ содержит версии ЦП и GPU. Служба Машинное обучение Azure автоматически определяет используемую версию.
 
 ```python
 # Specify custom Docker base image and registry, if you don't want to use the defaults
 myenv.docker.base_image="your_base-image"
 myenv.docker.base_image_registry="your_registry_location"
-
-# Specify GPU image
-myenv.docker.gpu_support=True
 ```
 
 > [!NOTE]
@@ -250,7 +277,7 @@ myenv.docker.gpu_support=True
 
 При отправке обучающего запуска создание новой среды может занять несколько минут в зависимости от размера необходимых зависимостей. Окружения кэшируются службой, поэтому при условии, что определение окружения остается неизменным, полная настройка времени будет произведена только один раз.
 
-Ниже приведен пример запуска локального скрипта, где в качестве объекта-оболочки следует использовать [скриптрунконфиг](https://docs.microsoft.com/python/api/azureml-core/azureml.core.script_run_config.scriptrunconfig?view=azure-ml-py) .
+В следующем примере выполнения локального скрипта показано, где можно использовать [скриптрунконфиг](https://docs.microsoft.com/python/api/azureml-core/azureml.core.script_run_config.scriptrunconfig?view=azure-ml-py) в качестве объекта-оболочки.
 
 ```python
 from azureml.core import Environment, ScriptRunConfig, Experiment
@@ -263,10 +290,10 @@ myenv = Environment(name="myenv")
 runconfig = ScriptRunConfig(source_directory=".", script="train.py")
 
 # Attach compute target to run config
-runconfig.compute_target = "local"
+runconfig.run_config.target = "local"
 
 # Attach environment to run config
-runconfig.environment = myenv
+runconfig.run_config.environment = myenv
 
 # Submit run 
 run = exp.submit(runconfig)
@@ -281,7 +308,7 @@ run = exp.submit(runconfig)
 
 При использовании средства [оценки](how-to-train-ml-models.md) для обучения можно просто отправить экземпляр средства оценки напрямую, так как он уже инкапсулирует среду и целевой объект вычислений.
 
-В следующем примере используется оценщик для обучения с одним узлом с помощью удаленного вычислений для модели scikit-Train и предполагается ранее созданный целевой объект `compute_target` вычислений и `ds`объект хранилища данных.
+В следующем коде используется оценщик для обучения с одним узлом, который выполняется на удаленном вычислении для модели scikit-Train, и предполагается, что создан ранее созданный целевой объект вычислений, `compute_target` и объект хранилища данных `ds`.
 
 ```python
 from azureml.train.estimator import Estimator

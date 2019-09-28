@@ -11,12 +11,12 @@ author: aliceku
 ms.author: aliceku
 ms.reviewer: vanto
 ms.date: 07/18/2019
-ms.openlocfilehash: 6b1b706e68b090090ed4268b70b7c9d254f8b629
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: 095ecc360e5639a5d47dff4bc4675fc237cf81da
+ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68596697"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71348919"
 ---
 # <a name="azure-sql-transparent-data-encryption-with-customer-managed-keys-in-azure-key-vault-bring-your-own-key-support"></a>Прозрачное шифрование данных Azure SQL с собственным ключом в Azure Key Vault: Поддержка создания собственных ключей
 
@@ -149,7 +149,7 @@ ms.locfileid: "68596697"
 - Создайте два хранилища Azure Key Vault в двух разных регионах, [включив для них функцию обратимого удаления с помощью PowerShell](https://docs.microsoft.com/azure/key-vault/key-vault-soft-delete-powershell) (эта возможность пока не поддерживается на портале AKV, но является обязательной для SQL).
 - Регионы, в которых создаются два хранилища Azure Key Vault, должны быть расположены в одном географическом регионе Azure, чтобы выполнялись процессы резервного копирования и восстановления ключей.  Если вы хотите, чтобы эти хранилища ключей размещались в разных географических регионах, например для соответствия требованиям к географическому аварийному восстановлению, выполните [процедуру BYOK](https://docs.microsoft.com/azure/key-vault/key-vault-hsm-protected-keys), которая позволяет импортировать ключи из локального аппаратного модуля безопасности.
 - Создайте в первом хранилище ключей новый ключ:  
-  - ключ RSA/RSA-HSA 2048;
+  - Ключ RSA/RSA-HSM 2048
   - без даты окончания срока действия;
   - ключ включен и имеет разрешения на операции получения, упаковки и распаковки ключа.
 - Создайте резервную копию первичного ключа и восстановите его во вторичном хранилище ключей.  См. раздел [баккупазурекэйваулткэй](https://docs.microsoft.com/powershell/module/az.keyvault/backup-azkeyvaultkey) and [RESTORE-азкэйваулткэй](https://docs.microsoft.com/powershell/module/az.keyvault/restore-azkeyvaultkey).

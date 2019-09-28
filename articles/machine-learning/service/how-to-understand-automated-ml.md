@@ -10,12 +10,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 07/22/2019
-ms.openlocfilehash: 56d8dff7d158cedb4ab33e811cf5134cdbc475ab
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.openlocfilehash: b0024bc12f29a76da02c9f7e62af7727b9af7249
+ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "70999448"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71350643"
 ---
 # <a name="understand-automated-machine-learning-results"></a>Общие сведения об автоматических результатах машинного обучения
 
@@ -28,9 +28,9 @@ ms.locfileid: "70999448"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию машинное обучение Azure](https://aka.ms/AMLFree) уже сегодня.
+* Подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) уже сегодня.
 
-* Создайте Автоматический эксперимент машинного обучения с помощью пакета SDK в портал Azure или на целевой странице рабочей области (Предварительная версия).
+* Создайте эксперимент для автоматического запуска машинного обучения с помощью пакета SDK в портал Azure или на целевой странице рабочей области (Предварительная версия).
 
     * Использование пакета SDK для построения [модели классификации](how-to-auto-train-remote.md) или [модели регрессии](tutorial-auto-train-models.md)
     * Используйте [портал Azure или целевую страницу рабочей области (Предварительная версия)](how-to-create-portal-experiments.md) для создания модели классификации или регрессии путем передачи соответствующих данных.

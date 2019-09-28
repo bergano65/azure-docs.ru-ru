@@ -11,12 +11,12 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab, danil
 ms.date: 09/26/2019
-ms.openlocfilehash: 11a7556954ff40183811d8e824011b818e4645df
-ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
+ms.openlocfilehash: 890a9701615a05186b34883f4e953bbc045e906f
+ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/27/2019
-ms.locfileid: "71327553"
+ms.locfileid: "71350082"
 ---
 # <a name="recover-an-azure-sql-database-using-automated-database-backups"></a>Восстановление базы данных Azure SQL с помощью создаваемых автоматически резервных копий
 
@@ -81,30 +81,60 @@ ms.locfileid: "71327553"
 - **Восстановление данных**
 
   Если планируется получение данных из восстановленной базы данных для восстановления после ошибки пользователя или приложения, необходимо написать и выполнить сценарий восстановления данных, который извлекает данные из восстановленной базы данных и применяется к исходной базе данных. Несмотря на то, что операция восстановления может занять много времени, восстанавливаемая база данных будет отображаться в списке баз данных на протяжении всего процесса. Если удалить базу данных во время восстановления, операция восстановления будет отменена, и не будет взиматься дополнительная стоимость базы данных, которая не выполнила восстановление.
+  
+### <a name="point-in-time-restore-using-azure-portal"></a>Восстановление до точки во времени с помощью портал Azure
 
-Чтобы восстановить отдельную базу данных с пулом или экземпляром на момент времени с помощью портал Azure, откройте страницу базы данных и нажмите кнопку **восстановить** на панели инструментов. Выберите источник резервного копирования и укажите точку резервного копирования на момент времени, с которой будет создана новая база данных.
+Восстановление отдельной базы данных SQL или базы данных экземпляра до точки во времени выполняется из колонки обзора базы данных, которую вы хотите восстановить в портал Azure.
 
-![point-in-time-restore](./media/sql-database-recovery-using-backups/pitr-backup-sql-database-annotated.png)
+#### <a name="single-azure-sql-database"></a>Отдельная база данных SQL Azure
 
-> [!IMPORTANT]
+Чтобы восстановить отдельную базу данных или в составе пула на момент времени с помощью портал Azure, откройте страницу обзора базы данных и нажмите кнопку **восстановить** на панели инструментов. Выберите источник резервного копирования и укажите точку резервного копирования на момент времени, с которой будет создана новая база данных. 
+
+  ![точка-время — восстановление-один экземпляр базы данных SQL](./media/sql-database-recovery-using-backups/pitr-backup-sql-database-annotated.png)
+
+#### <a name="managed-instance-database"></a>База данных управляемого экземпляра
+
+Чтобы восстановить базу данных управляемого экземпляра до точки во времени с помощью портал Azure, откройте страницу Обзор базы данных и нажмите кнопку **восстановить** на панели инструментов. Выберите точку резервного копирования на момент времени, из которой будет создана новая база данных. 
+
+  ![точка-время — восстановление — управляемый экземпляр — база данных](./media/sql-database-recovery-using-backups/pitr-backup-managed-instance-annotated.png)
+
+> [!TIP]
 > Чтобы восстановить базу данных из резервной копии программным образом, см. раздел [Программное восстановление с помощью создаваемых автоматически резервных копий](sql-database-recovery-using-backups.md#programmatically-performing-recovery-using-automated-backups).
 
 ## <a name="deleted-database-restore"></a>Восстановление удаленной базы данных
 
-Можно восстановить удаленную базу данных до времени удаления или более ранней точки во времени на том же сервере базы данных SQL, используя портал Azure, [PowerShell](https://docs.microsoft.com/powershell/module/az.sql/restore-azsqldatabase)или [остальные (CreateMode = Restore)](https://docs.microsoft.com/rest/api/sql/databases/createorupdate). Вы можете [восстановить удаленную базу данных в Управляемом экземпляре с помощью PowerShell](https://blogs.msdn.microsoft.com/sqlserverstorageengine/20../../recreate-dropped-database-on-azure-sql-managed-instance). 
+Можно восстановить удаленную базу данных до времени удаления или более ранней точки во времени на том же сервере базы данных SQL или на том же управляемом экземпляре с помощью портал Azure, [PowerShell](https://docs.microsoft.com/powershell/module/az.sql/restore-azsqldatabase)или [остальных (CreateMode = Restore)](https://docs.microsoft.com/rest/api/sql/databases/createorupdate). Восстановление удаленной базы данных выполняется путем создания новой базы данных из резервной копии.
+
+> [!IMPORTANT]
+> При удалении сервера базы данных SQL Azure или управляемого экземпляра все его базы данных также удаляются и не могут быть восстановлены. В настоящее время не поддерживается восстановление удаленного сервера или восстановление удаленного управляемого экземпляра.
+
+### <a name="deleted-database-restore-using-azure-portal"></a>Восстановление базы данных удалено с помощью портал Azure
+
+Восстановление удаленных баз данных из портал Azure выполняется из ресурса сервера и экземпляра.
+
+#### <a name="single-azure-sql-database"></a>Отдельная база данных SQL Azure
+
+Чтобы восстановить одну или удаленную базу данных с помощью портал Azure, откройте страницу Обзор сервера и щелкните **Удаленные базы данных** в меню навигации. Выберите удаленную базу данных, которую нужно восстановить, и введите имя новой базы данных, которая будет создана с помощью данных, восстановленных из резервной копии.
+
+  ![удалено — восстановление базы данных](./media/sql-database-recovery-using-backups/restore-deleted-sql-database-annotated.png)
+
+#### <a name="managed-instance-database"></a>База данных управляемого экземпляра
+
+В данный момент параметр для восстановления удаленной базы данных для управляемого экземпляра недоступен на портал Azure. PowerShell можно использовать для восстановления удаленной базы данных на управляемом экземпляре, см. статью [Восстановление удаленной базы данных на управляемый экземпляр с помощью PowerShell](https://blogs.msdn.microsoft.com/sqlserverstorageengine/20../../recreate-dropped-database-on-azure-sql-managed-instance).
+
+### <a name="deleted-database-restore-using-powershell"></a>Восстановление базы данных с помощью PowerShell
+
+Используйте примеры сценариев, приведенные ниже, чтобы восстановить удаленную базу данных для базы данных SQL Azure и управляемый экземпляр с помощью PowerShell.
+
+#### <a name="single-azure-sql-database"></a>Отдельная база данных SQL Azure
+
+Пример сценария PowerShell, показывающий, как восстановить удаленную базу данных SQL Azure, см. в статье [Восстановление базы данных SQL с помощью PowerShell](scripts/sql-database-restore-database-powershell.md).
+
+#### <a name="managed-instance-database"></a>База данных управляемого экземпляра
+
+Пример сценария PowerShell, демонстрирующий восстановление удаленной базы данных экземпляра, см. [в разделе Восстановление удаленной базы данных на управляемый экземпляр с помощью PowerShell](https://blogs.msdn.microsoft.com/sqlserverstorageengine/20../../recreate-dropped-database-on-azure-sql-managed-instance). 
 
 > [!TIP]
-> Пример сценария PowerShell, показывающий, как восстановить удаленную базу данных, приведен в разделе [Восстановление базы данных SQL с помощью PowerShell](scripts/sql-database-restore-database-powershell.md).
-> [!IMPORTANT]
-> При удалении экземпляра сервера Базы данных SQL Azure все базы данных, находившиеся на нем, также будут удалены без возможности восстановления. В настоящее время восстановление удаленного сервера не поддерживается.
-
-### <a name="deleted-database-restore-using-the-azure-portal"></a>Восстановление удаленной базы данных на портале Azure
-
-Чтобы восстановить удаленную базу данных с помощью портал Azure, откройте страницу Обзор сервера и щелкните **Удаленные базы данных** в меню навигации.
-
-![удалено — восстановление базы данных](./media/sql-database-recovery-using-backups/restore-deleted-sql-database-annotated.png)
-
-> [!IMPORTANT]
 > Чтобы восстановить удаленную базу данных программным образом, см. раздел [Программное восстановление с помощью создаваемых автоматически резервных копий](sql-database-recovery-using-backups.md#programmatically-performing-recovery-using-automated-backups).
 
 ## <a name="geo-restore"></a>Геовосстановление
@@ -128,7 +158,7 @@ ms.locfileid: "71327553"
 3. В разделе "использовать существующие данные" щелкните " **резервное копирование** "
 4. Выберите резервную копию из раскрывающегося списка доступных резервных копий географического восстановления.
 
-![географическое восстановление отдельной базы данных SQL Azure](./media/sql-database-recovery-using-backups/geo-restore-azure-sql-database-list-annotated.png)
+    ![географическое восстановление отдельной базы данных SQL Azure](./media/sql-database-recovery-using-backups/geo-restore-azure-sql-database-list-annotated.png)
 
 Завершите процесс создания новой базы данных. После создания отдельной базы данных SQL Azure она будет содержать восстановленную резервную копию геовосстановления.
 
@@ -141,7 +171,7 @@ ms.locfileid: "71327553"
 3. В разделе использовать существующие данные выберите вариант **резервное копирование**
 4. Выберите резервную копию из раскрывающегося списка доступных резервных копий географического восстановления.
 
-![географическое восстановление базы данных управляемого экземпляра](./media/sql-database-recovery-using-backups/geo-restore-sql-managed-instance-list-annotated.png)
+    ![географическое восстановление базы данных управляемого экземпляра](./media/sql-database-recovery-using-backups/geo-restore-sql-managed-instance-list-annotated.png)
 
 Завершите процесс создания новой базы данных. После создания базы данных экземпляра она будет содержать восстановленную резервную копию геовосстановления.
 
@@ -172,6 +202,8 @@ ms.locfileid: "71327553"
 > [!IMPORTANT]
 > Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Эти командлеты см. в разделе [AzureRM. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле AZ и в модулях AzureRm находятся в отличном экстенте.
 
+#### <a name="single-azure-sql-database"></a>Отдельная база данных SQL Azure
+
 - Сведения о восстановлении изолированной базы данных или в составе пула см. в разделе [RESTORE-азсклдатабасе](/powershell/module/az.sql/restore-azsqldatabase).
 
   | Командлет | Описание |
@@ -183,6 +215,8 @@ ms.locfileid: "71327553"
 
   > [!TIP]
   > Пример сценария PowerShell, показывающий, как выполнить восстановление базы данных до точки во времени, приведен в разделе [Восстановление базы данных SQL с помощью PowerShell](scripts/sql-database-restore-database-powershell.md).
+
+#### <a name="managed-instance-database"></a>База данных управляемого экземпляра
 
 - Сведения о восстановлении базы данных Управляемый экземпляр см. в разделе [RESTORE-азсклинстанцедатабасе](/powershell/module/az.sql/restore-azsqlinstancedatabase).
 
@@ -203,8 +237,13 @@ ms.locfileid: "71327553"
 
 ### <a name="azure-cli"></a>Azure CLI
 
-- Для восстановления отдельной базы данных или базы данных в пуле с помощью Azure CLI см. описание команды [az sql db restore](/cli/azure/sql/db#az-sql-db-restore).
-- Инструкции по восстановлению управляемого экземпляра с помощью Azure CLI см. в разделе [AZ SQL функция MidB Restore](/cli/azure/sql/midb#az-sql-midb-restore)
+#### <a name="single-azure-sql-database"></a>Отдельная база данных SQL Azure
+
+Для восстановления отдельной базы данных или базы данных в пуле с помощью Azure CLI см. описание команды [az sql db restore](/cli/azure/sql/db#az-sql-db-restore).
+
+#### <a name="managed-instance-database"></a>База данных управляемого экземпляра
+
+Инструкции по восстановлению базы данных управляемого экземпляра с помощью Azure CLI см. в разделе [AZ SQL функция MidB Restore](/cli/azure/sql/midb#az-sql-midb-restore)
 
 ## <a name="summary"></a>Сводка
 

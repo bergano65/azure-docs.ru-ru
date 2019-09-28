@@ -1,26 +1,26 @@
 ---
-title: Вопросы и ответы по Azure Marketplace
-description: Ответы на общие вопросы, касающиеся Microsoft Azure Marketplace
+title: Вопросы и ответы о коммерческом магазине Майкрософт
+description: Ответы на часто задаваемые вопросы о Azure Marketplace и Microsoft AppSource
 services: Azure, Marketplace, Compute, Storage, Networking, Blockchain, Security
 author: qianw211
 ms.service: marketplace
 ms.topic: article
-ms.date: 9/24/2019
+ms.date: 9/26/2019
 ms.author: ellacroi
-ms.openlocfilehash: 6b9cc80dfb397d5bf330d0be947f468e9b802139
-ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
+ms.openlocfilehash: abc3b3a6be5f8c61c07fb29a6f168c8738733099
+ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71259959"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71350384"
 ---
-# <a name="marketplace-faqs"></a>Часто задаваемые вопросы о Marketplace
+# <a name="microsoft-commercial-marketplace-faqs"></a>Вопросы и ответы о коммерческих решениях Майкрософт
 
-Ответы на общие вопросы, касающиеся Microsoft Azure Marketplace
+Ответы на часто задаваемые вопросы о Azure Marketplace и Microsoft AppSource.
 
 ## <a name="faq-for-customers"></a>Вопросы и ответы для клиентов
 
-### <a name="what-you-need-to-know-about-azure-marketplace"></a>Что нужно знать про Azure Marketplace
+### <a name="what-you-need-to-know-about-azure-marketplace-and-microsoft-appsource"></a>Что необходимо знать об Azure Marketplace и Microsoft AppSource
 
 **Что такое Azure Marketplace?**
 
@@ -253,9 +253,26 @@ MOSP — клиентская [Подписка Майкрософт](https://az
 
 К отмененным лицензиям применяется политика возврата денег, найденная в этом разделе.  Все отмененные лицензии немедленно удаляются из вашей учетной записи и больше не будут доступны для использования.
 
+**Поддерживаются ли возмещения для предложений на основе потребления?**
+
+Плата взимается на основе потребления — почасовые виртуальные машины или пользовательские счетчики — не рефундабле с помощью отмены. После того, как потребление будет выполнено, плата будет обрабатываться платформой Commerce, а любые спорные вопросы по качеству обслуживания, в которых запрашиваются деньги, будут обрабатываться вне систем Майкрософт между издателем и клиентом напрямую. Предложения, поддерживающие фиксированную ставку и выставление счетов, следуют стандартной политике возврата денег с фиксированной ставкой.
+
+**Можно ли изменить планы на середину?**
+
+Нет, переход между ежемесячными и ежегодными данными невозможен.
+
+**Может ли клиент приобрести два плана из одного предложения?**
+
+Да, клиент может владеть двумя планами из одного предложения одновременно.
+
+**Отличаются ли политики по возврату и изменения планов по магазину?**
+
+Нет, бизнес-политики согласованы в Azure Marketplace и Microsoft AppSource. Если перепродажу партнер в облачном решении предоставляет программу, партнер может применить другую политику для своих клиентов.
+
+
 ## <a name="faq-for-publishers"></a>Вопросы и ответы для издателей
 
-### <a name="what-you-need-to-know-about-azure-marketplace"></a>Что нужно знать про Azure Marketplace
+### <a name="what-you-need-to-know-about-azure-marketplace-and-microsoft-appsource"></a>Что необходимо знать об Azure Marketplace и Microsoft AppSource
 
 **Что такое Azure Marketplace?**
 

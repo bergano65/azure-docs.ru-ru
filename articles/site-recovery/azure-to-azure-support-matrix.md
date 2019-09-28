@@ -5,14 +5,14 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: article
-ms.date: 09/12/2019
+ms.date: 09/27/2019
 ms.author: raynew
-ms.openlocfilehash: 950ad6d5f55186b63f879bac3f0675c501b57276
-ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
+ms.openlocfilehash: 895ce98f290ce23580bb70023e2539ab4272f8b8
+ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70934436"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71350261"
 ---
 # <a name="support-matrix-for-replicating-azure-vms-from-one-region-to-another"></a>Матрица поддержки репликации виртуальных машин Azure из одного региона в другой
 
@@ -114,35 +114,34 @@ Oracle Linux | 6,4, 6,5, 6,6, 6,7, 6,8, 6,9, 6,10, 7,0, 7,1, 7,2, 7,3, 7,4, 7,5,
 
 **Выпуск** | **Версия службы Mobility Service** | **Версия ядра** |
 --- | --- | --- |
+14.04 LTS | 9,28 | 3.13.0-24-Generic для 3.13.0-170-generic,<br/>3.16.0-25-generic to 3.16.0-77-generic,<br/>3.19.0-18-generic to 3.19.0-80-generic,<br/>4.2.0-18-generic to 4.2.0-42-generic,<br/>4.4.0-21-Generic для 4.4.0-148-generic,<br/>4.15.0-1023 — Azure to 4.15.0-1045-Azure |
 14.04 LTS | 9,27 | 3.13.0-24-Generic для 3.13.0-170-generic,<br/>3.16.0-25-generic to 3.16.0-77-generic,<br/>3.19.0-18-generic to 3.19.0-80-generic,<br/>4.2.0-18-generic to 4.2.0-42-generic,<br/>4.4.0-21-Generic для 4.4.0-148-generic,<br/>4.15.0-1023 — Azure to 4.15.0-1045-Azure |
 14.04 LTS | 9,26 | 3.13.0-24-Generic для 3.13.0-170-generic,<br/>3.16.0-25-generic to 3.16.0-77-generic,<br/>3.19.0-18-generic to 3.19.0-80-generic,<br/>4.2.0-18-generic to 4.2.0-42-generic,<br/>4.4.0-21-Generic для 4.4.0-148-generic,<br/>4.15.0-1023 — Azure to 4.15.0-1045-Azure |
 14.04 LTS | 9,25 | 3.13.0-24-Generic для 3.13.0-169-generic,<br/>3.16.0-25-generic to 3.16.0-77-generic,<br/>3.19.0-18-generic to 3.19.0-80-generic,<br/>4.2.0-18-generic to 4.2.0-42-generic,<br/>4.4.0-21-Generic — 4.4.0-146-generic,<br/>4.15.0-1023 — Azure to 4.15.0-1042-Azure |
-14.04 LTS | 9,24 | 3.13.0-24-Generic для 3.13.0-167-generic,<br/>3.16.0-25-generic to 3.16.0-77-generic,<br/>3.19.0-18-generic to 3.19.0-80-generic,<br/>4.2.0-18-generic to 4.2.0-42-generic,<br/>4.4.0-21-Generic до 4.4.0-143-generic,<br/>4.15.0-1023 — Azure to 4.15.0-1040-Azure |
 |||
+16.04 LTS | 9,28 | 4.4.0-21-Generic для 4.4.0-159-generic,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic,<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>с 4.13.0-16-generic по 4.13.0-45-generic,<br/>4.15.0-13-Generic для 4.15.0-58-Generic<br/>с 4.11.0-1009-azure по 4.11.0-1016-azure,<br/>с 4.13.0-1005-azure по 4.13.0-1018-azure. <br/>4.15.0-1012 — Azure — 4.15.0 — 1055 — Azure|
 16.04 LTS | 9,27 | 4.4.0-21-Generic — 4.4.0-154-generic,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic.<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>с 4.13.0-16-generic по 4.13.0-45-generic,<br/>4.15.0-13-Generic — 4.15.0-55-Generic<br/>с 4.11.0-1009-azure по 4.11.0-1016-azure,<br/>с 4.13.0-1005-azure по 4.13.0-1018-azure. <br/>4.15.0-1012 — Azure — 4.15.0 — 1051 — Azure|
 16.04 LTS | 9,26 | 4.4.0-21-Generic для 4.4.0-148-generic,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic.<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>с 4.13.0-16-generic по 4.13.0-45-generic,<br/>4.15.0-13-Generic — 4.15.0-50-Generic<br/>с 4.11.0-1009-azure по 4.11.0-1016-azure,<br/>с 4.13.0-1005-azure по 4.13.0-1018-azure. <br/>4.15.0-1012 — Azure — 4.15.0 — 1045 — Azure|
 16.04 LTS | 9,25 | 4.4.0-21-Generic — 4.4.0-146-generic,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic,<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>с 4.13.0-16-generic по 4.13.0-45-generic,<br/>4.15.0-13-Generic для 4.15.0-48-Generic<br/>с 4.11.0-1009-azure по 4.11.0-1016-azure,<br/>с 4.13.0-1005-azure по 4.13.0-1018-azure. <br/>4.15.0-1012 — Azure — 4.15.0 — 1042 — Azure|
-16.04 LTS | 9,24 | 4.4.0-21-Generic до 4.4.0-143-generic,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic,<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>с 4.13.0-16-generic по 4.13.0-45-generic,<br/>4.15.0-13-Generic для 4.15.0-46-Generic<br/>с 4.11.0-1009-azure по 4.11.0-1016-azure,<br/>с 4.13.0-1005-azure по 4.13.0-1018-azure. <br/>4.15.0-1012 — Azure — 4.15.0 — 1040 — Azure|
 
 #### <a name="supported-debian-kernel-versions-for-azure-virtual-machines"></a>Поддерживаемые версии ядра Debian для виртуальных машин Azure
 
 **Выпуск** | **Версия службы Mobility Service** | **Версия ядра** |
 --- | --- | --- |
-Debian 7 | 9.24, 9.25, 9.26, 9.27 | С 3.2.0-4-amd64 по 3.2.0-6-amd64, 3.16.0-0.bpo.4-amd64 |
+Debian 7 | 9.25, 9.26, 9.27, 9.28 | С 3.2.0-4-amd64 по 3.2.0-6-amd64, 3.16.0-0.bpo.4-amd64 |
 |||
+Debian 8; | 9,28 | 3.16.0-4-AMD64 – 3.16.0-10-AMD64, 4.9.0 -0. BPO. 4-AMD64 до 4.9.0 -0. BPO. 9 — AMD64 |
 Debian 8; | 9,27 | 3.16.0-4-AMD64 – 3.16.0-9-AMD64, 4.9.0 -0. BPO. 4-AMD64 до 4.9.0 -0. BPO. 9 — AMD64 |
 Debian 8; | 9,25, 9,26 | 3.16.0-4-AMD64 – 3.16.0-8-AMD64, 4.9.0 -0. BPO. 4-AMD64 до 4.9.0 -0. BPO. 8-AMD64 |
-Debian 8; | 9,24 | С 3.16.0-4-amd64 по 3.16.0-7-amd64, с 4.9.0-0.bpo.4-amd64 по 4.9.0-0.bpo.8-amd64 |
 
 #### <a name="supported-suse-linux-enterprise-server-12-kernel-versions-for-azure-virtual-machines"></a>Поддерживаемые версии ядра SUSE Linux Enterprise Server 12 для виртуальных машин Azure
 
 **Выпуск** | **Версия службы Mobility Service** | **Версия ядра** |
 --- | --- | --- |
+SUSE Linux Enterprise Server 12 (SP1, SP2, SP3, SP4) | 9,28 | С SP1 3.12.49-11-default по 3.12.74-60.64.40-default</br></br> SP1 (ЛТСС) 3.12.74-60.64.45-по умолчанию — 3.12.74-60.64.118 — по умолчанию</br></br> С SP2 4.4.21-69-default по 4.4.120-92.70-default</br></br>SP2 (ЛТСС) 4.4.121-92.73-по умолчанию — 4.4.121-92.117 — по умолчанию</br></br>SP3 4.4.73-5-по умолчанию используется 4.4.180-94.100-Default</br></br>SP3 4.4.138-4.7-Azure в 4.4.180-4.31-Azure</br></br>SP4 4.12.14-94.41-Default для 4.12.14-95.29-Default</br>SP4 4.12.14-6.3-Azure в 4.12.14-6.23-Azure |
 SUSE Linux Enterprise Server 12 (SP1, SP2, SP3, SP4) | 9,27 | С SP1 3.12.49-11-default по 3.12.74-60.64.40-default</br></br> SP1 (ЛТСС) 3.12.74-60.64.45-по умолчанию — 3.12.74-60.64.115 — по умолчанию</br></br> С SP2 4.4.21-69-default по 4.4.120-92.70-default</br></br>SP2 (ЛТСС) 4.4.121-92.73-по умолчанию — 4.4.121-92.117 — по умолчанию</br></br>SP3 4.4.73-5-по умолчанию используется 4.4.180-94.97-Default</br></br>SP3 4.4.138-4.7-Azure в 4.4.180-4.31-Azure</br></br>SP4 4.12.14-94.41-Default для 4.12.14-95.24-Default</br>SP4 4.12.14-6.3-Azure в 4.12.14-6.18-Azure |
 SUSE Linux Enterprise Server 12 (SP1, SP2, SP3, SP4) | 9,26 | С SP1 3.12.49-11-default по 3.12.74-60.64.40-default</br></br> SP1 (ЛТСС) 3.12.74-60.64.45-по умолчанию — 3.12.74-60.64.110 — по умолчанию</br></br> С SP2 4.4.21-69-default по 4.4.120-92.70-default</br></br>SP2 (ЛТСС) 4.4.121-92.73-по умолчанию — 4.4.121-92.109 — по умолчанию</br></br>SP3 4.4.73-5-по умолчанию используется 4.4.178-94.91-Default</br></br>SP3 4.4.138-4.7-Azure в 4.4.178-4,28-Azure</br></br>SP4 4.12.14-94.41-Default для 4.12.14-95.16-Default</br>SP4 4.12.14-6.3-Azure до 4.12.14-6,9-Azure |
 SUSE Linux Enterprise Server 12 (SP1, SP2, SP3, SP4) | 9,25 | С SP1 3.12.49-11-default по 3.12.74-60.64.40-default</br></br> С SP1(LTSS) 3.12.74-60.64.45-default по 3.12.74-60.64.107-default</br></br> С SP2 4.4.21-69-default по 4.4.120-92.70-default</br></br>SP2 (ЛТСС) 4.4.121-92.73-по умолчанию — 4.4.121-92.104 — по умолчанию</br></br>SP3 4.4.73-5-по умолчанию используется 4.4.176-94.88-Default</br></br>SP3 4.4.138-4.7-Azure в 4.4.176-4.25-Azure</br></br>SP4 4.12.14-94.41-Default для 4.12.14-95.13-Default</br>SP4 4.12.14-6.3-Azure до 4.12.14-6,9-Azure |
-SUSE Linux Enterprise Server 12 (SP1, SP2, SP3, SP4) | 9,24 | С SP1 3.12.49-11-default по 3.12.74-60.64.40-default</br></br> С SP1(LTSS) 3.12.74-60.64.45-default по 3.12.74-60.64.107-default</br></br> С SP2 4.4.21-69-default по 4.4.120-92.70-default</br></br>SP2 (ЛТСС) 4.4.121-92.73-по умолчанию — 4.4.121-92.104 — по умолчанию</br></br>SP3 4.4.73-5-по умолчанию используется 4.4.176-94.88-Default</br></br>SP4 4.12.14-94.41-Default для 4.12.14-95.13-Default |
-
 
 ## <a name="replicated-machines---linux-file-systemguest-storage"></a>Реплицированные компьютеры. Файловая система или гостевое хранилище Linux.
 

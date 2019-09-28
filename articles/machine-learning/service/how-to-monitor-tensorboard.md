@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: maxluk
 ms.author: maxluk
 ms.date: 06/28/2019
-ms.openlocfilehash: b96b80a735c0caee8a3aabaf19b04fd0e153ba6b
-ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
+ms.openlocfilehash: 0908ca232ee38e2b0d461aa9f597558adc4461ef
+ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71034334"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71350517"
 ---
 # <a name="visualize-experiment-runs-and-metrics-with-tensorboard-and-azure-machine-learning"></a>Визуализируйте запуски и метрики экспериментов с помощью TensorBoard и Машинное обучение Azure
 
@@ -81,7 +81,7 @@ tf_code = requests.get("https://raw.githubusercontent.com/tensorflow/tensorflow/
 with open(os.path.join(exp_dir, "mnist_with_summaries.py"), "w") as file:
     file.write(tf_code.text)
 ```
-В файле кода MNIST, mnist_with_summaries. корректировка, обратите внимание на то, что `tf.summary.scalar()`имеются `tf.summary.histogram()`строки `tf.summary.FileWriter()` , вызывающие, и т. д. Эти методы группируют, заменяют и помечают ключевые метрики экспериментов в журнале выполнения. `tf.summary.FileWriter()` Особенно важно, так как он сериализует данные из зарегистрированных вами метрик эксперимента, что позволяет TensorBoard создавать визуализации.
+В файле кода MNIST, mnist_with_summaries. корректировка, обратите внимание на то, что имеются строки, вызывающие `tf.summary.scalar()`, `tf.summary.histogram()`, `tf.summary.FileWriter()` и т. д. Эти методы группируют, заменяют и помечают ключевые метрики экспериментов в журнале выполнения. `tf.summary.FileWriter()` Особенно важно, так как он сериализует данные из зарегистрированных вами метрик эксперимента, что позволяет TensorBoard создавать визуализации.
 
  ### <a name="configure-experiment"></a>Настройка эксперимента
 
@@ -264,7 +264,8 @@ root_run.complete()
 >[!Note]
  Вы также можете экспортировать определенный запуск в TensorBoard, указав имя запуска.`export_to_tensorboard(run_name, logdir)`
 
-После экспорта журнала выполнения для этого эксперимента запустите и приостанавливает TensorBoard. мы можем запустить TensorBoard с помощью метода [Start ()](https://docs.microsoft.com/python/api/azureml-tensorboard/azureml.tensorboard.tensorboard?view=azure-ml-py#start-start-browser-false-) . 
+### <a name="start-and-stop-tensorboard"></a>Запуск и завершение TensorBoard
+После экспорта журнала выполнения для этого эксперимента можно запустить TensorBoard с помощью метода [Start ()](https://docs.microsoft.com/python/api/azureml-tensorboard/azureml.tensorboard.tensorboard?view=azure-ml-py#start-start-browser-false-) . 
 
 ```Python
 from azureml.tensorboard import Tensorboard

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/28/2019
 ms.author: terrylan
-ms.openlocfilehash: 249380b5bd9d95e969a9c7a812102b694b9d1e3b
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: e273d913d07d8d7b77289695a4a28a478a64123a
+ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68726542"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71350302"
 ---
 # <a name="azure-storage-security-overview"></a>Общие сведения о безопасности службы хранилища Azure
 
@@ -39,7 +39,7 @@ ms.locfileid: "68726542"
 
 Вы можете защитить учетную запись хранения с помощью управления доступом на основе ролей. Ограничение доступа согласно принципам безопасности (принцип предоставления доступа [только в тех случаях и в той степени, в которой знание такой информации будет необходимо](https://en.wikipedia.org/wiki/Need_to_know), а также [принцип предоставления минимальных прав](https://en.wikipedia.org/wiki/Principle_of_least_privilege)) крайне важно для организаций, которым требуется применять политики безопасности для доступа к данным. Эти права предоставляются путем назначения соответствующей роли RBAC группам и приложениям для определенной области. Вы можете назначать пользователям права, например права участника учетных записей хранения, с помощью [встроенных ролей RBAC](/azure/role-based-access-control/built-in-roles).
 
-Дополнительные сведения:
+Дополнительные сведения
 
 * [Управление доступом на основе ролей Azure Active Directory](/azure/role-based-access-control/role-assignments-portal)
 
@@ -49,7 +49,7 @@ ms.locfileid: "68726542"
 
 SAS — это URI, который в своих параметрах запроса содержит все сведения, необходимые для доступа к ресурсу хранилища с прохождением аутентификации. Для доступа к ресурсам хранилища с помощью SAS клиенту достаточно передать SAS в соответствующий конструктор или метод.
 
-Дополнительные сведения:
+Дополнительные сведения
 
 * [Основные сведения о модели SAS.](/azure/storage/common/storage-dotnet-shared-access-signature-part-1)
 * [Подписанные URL-адреса. Часть 2: создание и использование подписанного URL-адреса в службе BLOB-объектов](/azure/storage/common/storage-dotnet-shared-access-signature-part-1)
@@ -88,7 +88,7 @@ SAS — это URI, который в своих параметрах запро
 
 Подробнее...
 
-* [Шифрование дисков Azure для виртуальных машин IaaS с ОС Windows и Linux](https://gallery.technet.microsoft.com/Azure-Disk-Encryption-for-a0018eb0)
+* [Общие сведения о шифровании дисков Azure](https://docs.microsoft.com/azure/security/azure-security-disk-encryption-overview)
 
 ## <a name="firewalls-and-virtual-networks"></a>Брандмауэры и виртуальные сети
 
@@ -104,7 +104,7 @@ SAS — это URI, который в своих параметрах запро
 
 Data Box Edge и Шлюз Data Box являются продуктами для сетевой передачи данных, которые работают подобно шлюзам сетевого хранилища для управления данными между сайтом и Azure. Data Box Edge (локальное сетевое устройство) передает данные в Azure и обратно и использует вычисления Edge с поддержкой искусственного интеллекта (ИИ) для обработки данных. Шлюз Azure Data Box — это виртуальный модуль с возможностями шлюза хранилища.
 
-Дополнительные сведения:
+Дополнительные сведения
 
 * [Azure Data Box](https://azure.microsoft.com/services/storage/databox/)
 * [Что представляет собой Azure Data Box Edge (ознакомительная версия)?](/azure/databox-online/data-box-edge-overview)
@@ -116,7 +116,7 @@ Data Box Edge и Шлюз Data Box являются продуктами для 
 
 Предупреждения Расширенной защиты от угроз можно просмотреть в [Центре безопасности Azure](https://azure.microsoft.com/services/security-center/). Центр безопасности Azure предоставляет подробную информацию о любой обнаруженной подозрительной активности и рекомендует действия по расследованию и устранению потенциальной угрозы.
 
-Дополнительные сведения:
+Дополнительные сведения
 
 * [Расширенная защита от угроз для службы хранилища Azure](/azure/storage/common/storage-advanced-threat-protection)
 

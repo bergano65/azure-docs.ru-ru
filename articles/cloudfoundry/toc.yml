@@ -1,6 +1,6 @@
 - name: Документация по Cloud Foundry
   href: index.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
     - name: Шаблон Microsoft Azure Marketplace
@@ -11,8 +11,6 @@
       href: /azure/cloudfoundry/create-cloud-foundry-on-azure
     - name: Развертывание приложений CF в Azure
       href: /azure/virtual-machines/linux/cloudfoundry-deploy-your-first-app
-    - name: Использование OSBA с приложением в PCF
-      href: /azure/cloudfoundry/use-osba-pcf-app
     - name: Cloud Foundry в Azure
       href: /azure/virtual-machines/linux/cloudfoundry-get-started
     - name: Развертывание CF OMS Nozzle
