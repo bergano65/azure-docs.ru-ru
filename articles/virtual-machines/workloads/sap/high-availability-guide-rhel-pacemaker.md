@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/17/2018
 ms.author: sedusch
-ms.openlocfilehash: 4e12ad64ef277396a101aab6d1bb8f3cc6079cf9
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 954ff23997e56249859dd8d35f124324432f2b22
+ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70099595"
+ms.lasthandoff: 09/29/2019
+ms.locfileid: "71673002"
 ---
 # <a name="setting-up-pacemaker-on-red-hat-enterprise-linux-in-azure"></a>Настройка кластера Pacemaker в Red Hat Enterprise Linux в Azure
 
@@ -62,6 +62,7 @@ ms.locfileid: "70099595"
   * [Общие сведения о надстройке для обеспечения высокой доступности](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/high_availability_add-on_overview/index)
   * [Администрирование надстройки для обеспечения высокой доступности](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/high_availability_add-on_administration/index)
   * [Справочник по надстройке для обеспечения высокой доступности](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/high_availability_add-on_reference/index)
+  * [Политики поддержки для кластеров высокой доступности RHEL — SBD и fence_sbd](https://access.redhat.com/articles/2800691)
 * Документация по RHEL, относящаяся к Azure:
   * [Политики поддержки для кластеров высокой доступности RHEL — виртуальные машины Microsoft Azure как члены кластера](https://access.redhat.com/articles/3131341)
   * [Установка и настройка кластера высокой доступности Red Hat Enterprise Linux 7.4 (и более поздних версий) в Microsoft Azure](https://access.redhat.com/articles/3252491)
@@ -70,6 +71,10 @@ ms.locfileid: "70099595"
 ## <a name="cluster-installation"></a>Установка кластера
 
 ![Общие сведения о Pacemaker в RHEL](./media/high-availability-guide-rhel-pacemaker/pacemaker-rhel.png)
+
+> [!NOTE]
+> Red Hat не поддерживает устройство наблюдения с эмуляцией программного обеспечения. Red Hat не поддерживает SBD на облачных платформах. Дополнительные сведения см. в разделе [политики поддержки для кластеров высокой доступности RHEL — SBD и fence_sbd](https://access.redhat.com/articles/2800691).
+> Единственным поддерживаемым механизмом ограждения для кластеров Pacemaker Red Hat Enterprise Linux в Azure является агент ограждения Azure.  
 
 Ниже приведены элементы с префиксами: **[A]**  — применяется ко всем узлам, **[1**] — применяется только к узлу 1, **[2]**  — применяется только к узлу 2.
 

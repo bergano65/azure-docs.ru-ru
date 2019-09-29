@@ -15,14 +15,14 @@ ms.topic: article
 ms.date: 04/10/2019
 ms.author: aschhab
 ms.custom: seo-javascript-september2019
-ms.openlocfilehash: df3f5a3773265249751352ce8d9c966c54bf197d
-ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
+ms.openlocfilehash: 5c539570e4127a6715ea63fe8ec617d3cfa83ba1
+ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71091808"
+ms.lasthandoff: 09/29/2019
+ms.locfileid: "71671992"
 ---
-# <a name="how-to-use-service-bus-queues-with-nodejs-and-the-azure-sb-package"></a>Как использовать очереди служебной шины с Node. js и пакетом Azure-SB
+# <a name="use-service-bus-queues-in-azure-with-nodejs-and-the-azure-sb-package"></a>Использование очередей служебной шины в Azure с Node. js и пакетом Azure-SB
 > [!div class="op_multi_selector" title1="Язык программирования" title2="Пакета Node. js"]
 > - [(Node. js | Azure-SB)](service-bus-nodejs-how-to-use-queues.md)
 > - [(Node. js | @azure/service-bus)](service-bus-nodejs-how-to-use-queues-new-package.md)

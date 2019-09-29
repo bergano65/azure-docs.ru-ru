@@ -2,18 +2,18 @@
 title: Мониторинг, метрики и оповещения в Azure ExpressRoute | Документация Майкрософт
 description: Эта страница содержит сведения о мониторинге в ExpressRoute
 services: expressroute
-author: cherylmc
+author: mialdrid
 ms.service: expressroute
 ms.topic: conceptual
 ms.date: 08/22/2019
 ms.author: cherylmc
 ms.custom: seodec18
-ms.openlocfilehash: dbe03ef29bd28d465fa671abc915d63d4b038cb2
-ms.sourcegitcommit: 116bc6a75e501b7bba85e750b336f2af4ad29f5a
+ms.openlocfilehash: 40e5561c9a55595340568ec660cbc6dd6e1eab51
+ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71154766"
+ms.lasthandoff: 09/29/2019
+ms.locfileid: "71672046"
 ---
 # <a name="expressroute-monitoring-metrics-and-alerts"></a>Мониторинг, метрики и оповещения в ExpressRoute
 
@@ -72,9 +72,41 @@ ms.locfileid: "71154766"
 
 ![Доступность ARP на одноранговый узел](./media/expressroute-monitoring-metrics-alerts/erArpAvailabilityMetrics.jpg) 
 
+## <a name="expressroute-direct-metrics"></a>Непосредственные метрики ExpressRoute
+
+### <a name="admin-state---split-by-link"></a>Состояние администратора — разбиение по каналу
+Вы можете просмотреть состояние администратора для каждой ссылки на пару прямых портов ExpressRoute.
+
+![состояние прямого администратора ER](./media/expressroute-monitoring-metrics-alerts/adminstate-per-link.jpg)
+
+### <a name="bits-in-per-second---split-by-link"></a>Число битов в секунду — разбиение по каналу
+Можно просмотреть биты в секунду для обеих ссылок в паре прямых портов ExpressRoute. 
+
+![число прямых бит в секунду для ER](./media/expressroute-monitoring-metrics-alerts/bits-in-per-second-per-link.jpg)
+
+### <a name="bits-out-per-second---split-by-link"></a>Биты за секунду — разбиение по каналу
+Кроме того, можно просмотреть биты в секунду для обеих ссылок в паре прямых портов ExpressRoute. 
+
+![непосредственных бит ER в секунду](./media/expressroute-monitoring-metrics-alerts/bits-out-per-second-per-link.jpg)
+
+### <a name="line-protocol---split-by-link"></a>Протокол строки — разбиение по каналу
+Протокол Line можно просмотреть по каждой ссылке на пару прямых портов ExpressRoute.
+
+![Протокол прямой строки ER](./media/expressroute-monitoring-metrics-alerts/line-protocol-per-link.jpg)
+
+### <a name="rx-light-level---split-by-link"></a>Уровень источника RX — разбиение по каналу
+Для каждого порта можно просмотреть уровень падения на RX (уровень освещения, который **получает**прямой порт ExpressRoute). Работоспособные уровни освещения обычно находятся в диапазоне от-10 до 0 dBm.
+
+![непосредственный уровень RX прямой строки ER](./media/expressroute-monitoring-metrics-alerts/rxlight-level-per-link.jpg)
+
+### <a name="tx-light-level---split-by-link"></a>Уровень источника TX — разбиение по каналу
+Для каждого порта можно просмотреть уровень источника TX (уровень падения, который **передает**прямой порт ExpressRoute). Работоспособные уровни интенсивности TX обычно находятся в диапазоне от-10 до 0 dBm.
+
+![непосредственный уровень RX прямой строки ER](./media/expressroute-monitoring-metrics-alerts/txlight-level-per-link.jpg)
+
 ## <a name="expressroute-gateway-connections-in-bitsseconds"></a>Подключения шлюза ExpressRoute в бит/с
 
-![подключения шлюза](./media/expressroute-monitoring-metrics-alerts/erconnections.jpg ) 
+![подключения шлюза](./media/expressroute-monitoring-metrics-alerts/erconnections.jpg )
 
 ## <a name="alerts-for-expressroute-gateway-connections"></a>Оповещения для подключений шлюза ExpressRoute
 

@@ -4,16 +4,16 @@ description: Настройте расширенную защиту от угр�
 services: storage
 author: tamram
 ms.service: storage
-ms.topic: article
+ms.topic: conceptual
 ms.date: 09/16/2019
 ms.author: tamram
 ms.reviewer: cbrooks
-ms.openlocfilehash: 21204a7a2fb5a6907a8af9cb91fe8b018f7a4714
-ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
+ms.openlocfilehash: c19b64441d7afbe7544a4401314078b807a8c939
+ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71076487"
+ms.lasthandoff: 09/29/2019
+ms.locfileid: "71673258"
 ---
 # <a name="advanced-threat-protection-for-azure-storage"></a>Расширенная защита от угроз для службы хранилища Azure
 

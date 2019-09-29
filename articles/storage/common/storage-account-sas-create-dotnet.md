@@ -4,23 +4,23 @@ description: Узнайте, как создать подписанный URL-а
 services: storage
 author: tamram
 ms.service: storage
-ms.topic: article
+ms.topic: conceptual
 ms.date: 08/06/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: b8d627fd905741c76dd34eb4270f49d46b93abb1
-ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
+ms.openlocfilehash: aa93ee292ab95c68034ad595d6cda608d1886c0a
+ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69036109"
+ms.lasthandoff: 09/29/2019
+ms.locfileid: "71673271"
 ---
 # <a name="create-an-account-sas-with-net"></a>Создание SAS учетной записи с помощью .NET
 
 [!INCLUDE [storage-auth-sas-intro-include](../../../includes/storage-auth-sas-intro-include.md)]
 
-В этой статье показано, как использовать ключ учетной записи хранения для создания SAS учетной записи с клиентской библиотекой службы [хранилища Azure для .NET](/dotnet/api/overview/azure/storage/client).
+В этой статье показано, как использовать ключ учетной записи хранения для создания SAS учетной записи с [клиентской библиотекой службы хранилища Azure для .NET](/dotnet/api/overview/azure/storage/client).
 
 ## <a name="create-an-account-sas"></a>Создание SAS учетной записи
 

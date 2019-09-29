@@ -7,18 +7,18 @@ author: msmbaldwin
 ms.author: mbaldwin
 manager: rkarlin
 ms.date: 09/10/2019
-ms.openlocfilehash: a20f5b16b90b9bac7e6bc3ff808cf443b252fb44
-ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
+ms.openlocfilehash: 75561c643c2b8881e4b390be885b77f2fff4971d
+ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71204553"
+ms.lasthandoff: 09/29/2019
+ms.locfileid: "71673456"
 ---
-# <a name="fetch-shared-access-signature-tokens-in-code"></a>Получение маркеров подписи общего доступа в коде
+# <a name="fetch-shared-access-signature-tokens-in-code"></a>Получение маркеров подписанного URL-адреса в коде
 
 Вы можете управлять учетной записью хранения с помощью [маркеров подписанного](../storage/common/storage-dotnet-shared-access-signature-part-1.md) URL в хранилище ключей. В этой статье приводятся примеры C# кода, который ИЗВЛЕКАЕТ маркер SAS и выполняет с ним операции.  Сведения о создании и хранении маркеров SAS см. в разделах [Управление ключами учетной записи хранения с помощью Key Vault и Azure CLI](key-vault-ovw-storage-keys.md) или [Управление ключами учетной записи хранения с помощью Key Vault и Azure PowerShell](key-vault-overview-storage-keys-powershell.md).
 
-# <a name="code-samples"></a>Примеры кода
+## <a name="code-samples"></a>Примеры кода
 
 В этом примере код извлекает маркер SAS из хранилища ключей, использует его для создания новой учетной записи хранения и создает новый клиент службы BLOB-объектов.  
 

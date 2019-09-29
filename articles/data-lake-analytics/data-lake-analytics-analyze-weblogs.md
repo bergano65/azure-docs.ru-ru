@@ -1,6 +1,6 @@
 ---
 title: Анализ журналов веб-сайта с помощью Azure Data Lake Analytics
-description: Информация об анализе журналов веб-сайта с помощью Data Lake Analytics.
+description: Узнайте, как анализировать журналы веб-сайта с помощью Azure Data Lake Analytics для выполнения функций и запросов U-SQL.
 services: data-lake-analytics
 author: saveenr
 ms.author: saveenr
@@ -9,17 +9,17 @@ ms.assetid: 3a196735-d0d9-4deb-ba68-c4b3f3be8403
 ms.service: data-lake-analytics
 ms.topic: conceptual
 ms.date: 12/05/2016
-ms.openlocfilehash: 83742a4f82fb4d67fd258ff0d242847eab634c78
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 04c6d4c74a82ccfbcbb0faecb0dca5ec495f6663
+ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60334114"
+ms.lasthandoff: 09/29/2019
+ms.locfileid: "71672877"
 ---
 # <a name="analyze-website-logs-using-azure-data-lake-analytics"></a>Анализ журналов веб-сайта с помощью Azure Data Lake Analytics
 Сведения об анализе журналов веб-сайтов с помощью службы аналитики озера, а также информация об источниках ссылок, которые столкнулись с ошибками во время попытки посетить веб-сайт.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 * **Visual Studio 2015 или Visual Studio 2013**.
 * **[Средства Data Lake для Visual Studio](https://aka.ms/adltoolsvs)** .
 
@@ -58,7 +58,7 @@ ms.locfileid: "60334114"
 2. Выберите тип «Проект U-SQL».
 
     ![Новый проект U-SQL в Visual Studio](./media/data-lake-analytics-data-lake-tools-get-started/data-lake-analytics-data-lake-tools-new-project.png)
-3. Последовательно выберите **ОК**. Visual Studio создает решение с помощью файла Script.usql.
+3. Нажмите кнопку **ОК**. Visual Studio создает решение с помощью файла Script.usql.
 4. Скопируйте следующий сценарий в файл Script.usql.
 
         // Create a database for easy reuse, so you don't need to read from a file every time.

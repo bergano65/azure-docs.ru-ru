@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 09/23/2019
 ms.author: dech
-ms.openlocfilehash: 1eda8271a3b8aa2c9e247252bd755279d23b6e10
-ms.sourcegitcommit: 0486aba120c284157dfebbdaf6e23e038c8a5a15
+ms.openlocfilehash: 4a9bd554e0858024d656dbf35d6fb00995e6f4bd
+ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71310351"
+ms.lasthandoff: 09/29/2019
+ms.locfileid: "71672490"
 ---
 # <a name="use-built-in-notebook-commands-and-features-in-azure-cosmos-db"></a>Использование встроенных команд и функций записной книжки в Azure Cosmos DB
 
@@ -25,7 +25,10 @@ ms.locfileid: "71310351"
 import sys
 !{sys.executable} -m pip install PackageToBeInstalled –user
 ```
-Этот пакет будет доступен для использования из любой записной книжки в учетной записи Azure Cosmos. 
+Этот пакет будет доступен для использования из любой записной книжки в рабочей области учетной записи Azure Cosmos. 
+
+> [!TIP]
+> Если записной книжке требуется пользовательский пакет, мы рекомендуем добавить в записную книжку ячейку для установки пакета, так как пакеты удаляются при [сбросе рабочей области](#reset-notebooks-workspace).  
 
 ## <a name="run-a-sql-query"></a>Выполнение SQL-запроса
 
@@ -150,6 +153,11 @@ primary_key = os.environ["COSMOS_KEY"]
 ```
 > [!IMPORTANT]
 > Переменные среды ``COSMOS_KEY`` и применимы только для API SQL. ``COSMOS_ENDPOINT`` Для других API-интерфейсов найдите конечную точку и ключ в колонке **строки подключения** или **ключи** в учетной записи Cosmos.  
+
+## <a name="reset-notebooks-workspace"></a>Сброс рабочей области записных книжек
+Чтобы сбросить рабочую область записных книжек до значений по умолчанию, выберите **сбросить рабочую область** на панели команд. При этом будут удалены все пользовательские установленные пакеты и перезапущен сервер Jupyter. Ваши записные книжки, файлы и ресурсы Cosmos не будут затронуты.  
+
+![Сброс рабочей области записных книжек](media/use-notebook-features-and-commands/reset-workspace.png)
 
 ## <a name="next-steps"></a>Следующие шаги
 

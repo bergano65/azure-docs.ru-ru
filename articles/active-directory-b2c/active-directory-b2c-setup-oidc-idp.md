@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 08/08/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: fe49a57e74822c0b4349b2919ea8aa89cbfb458d
-ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
+ms.openlocfilehash: 0303f8c7e18a5c229bc5a8c5e9b90d95cdaccbe7
+ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69622295"
+ms.lasthandoff: 09/29/2019
+ms.locfileid: "71672917"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-openid-connect-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с помощью OpenID Connect через Azure Active Directory B2C
 
@@ -48,7 +48,6 @@ ms.locfileid: "69622295"
 Тип ответа описывает, какие сведения будут отправляться обратно в исходный вызов `authorization_endpoint` пользовательского поставщика удостоверений. Можно использовать следующие типы ответов:
 
 * `code`. в соответствии с [потоком с использованием кода авторизации](https://openid.net/specs/openid-connect-core-1_0.html#CodeFlowAuth), код будет возвращаться обратно в Azure AD B2C. Azure AD B2C затем перейдет к вызову `token_endpoint` для обмена кода для маркера.
-* `token`. маркер доступа возвращается обратно в Azure AD B2C от пользовательского поставщика удостоверений.
 * `id_token`. маркер идентификатора возвращается обратно в Azure AD B2C от пользовательского поставщика удостоверений.
 
 ## <a name="response-mode"></a>Режим ответа

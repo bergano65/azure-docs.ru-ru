@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: conceptual
 ms.date: 09/16/2019
 ms.author: kumud
-ms.openlocfilehash: 67bddea31a4bb375657b0df5e21fab1ab3d732f5
-ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
+ms.openlocfilehash: cad8e3e4f32a8773fe914362b637d39765a23c21
+ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71265555"
+ms.lasthandoff: 09/29/2019
+ms.locfileid: "71672518"
 ---
 # <a name="what-is-azure-private-link-service"></a>Что такое служба частной связи Azure?
 
@@ -100,6 +100,7 @@ ms.locfileid: "71265555"
 Ниже перечислены известные ограничения при использовании службы Private Link.
 - Поддерживается только в Load Balancer (цен. категория "Стандартный") 
 - Поддерживает только трафик IPv4
+- Поддерживает только TCP-трафик
 - Доступен только из частных конечных точек в том же регионе
 - Создание интерфейса и управление им из портал Azure не поддерживается
 - Сведения о подключении клиентов с использованием протокола прокси недоступны для поставщика услуг

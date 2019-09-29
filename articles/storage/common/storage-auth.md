@@ -4,17 +4,17 @@ description: Узнайте о различных способах автори�
 services: storage
 author: tamram
 ms.service: storage
-ms.topic: article
+ms.topic: conceptual
 ms.date: 03/21/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 3cdbb6587871b970c0188c0b8f510cc9f1f4fe07
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: c20f699a2d2270d11935b0216b1655390ece211c
+ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68985182"
+ms.lasthandoff: 09/29/2019
+ms.locfileid: "71671062"
 ---
 # <a name="authorizing-access-to-azure-storage"></a>Авторизация доступа к службе хранилища Azure
 

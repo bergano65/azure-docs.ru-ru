@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 06/12/2019
 ms.author: apimpm
-ms.openlocfilehash: da75ca43a2576e3214d4b67f9eb61c7bad3bd5cc
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: c015b1afbc61e1501e656aaa480ee2a4e19ba094
+ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70073516"
+ms.lasthandoff: 09/29/2019
+ms.locfileid: "71672792"
 ---
 # <a name="access-and-customize-the-new-developer-portal-in-azure-api-management"></a>Доступ и настройка нового портала разработчика в службе управления API Azure
 
@@ -39,7 +39,7 @@ ms.locfileid: "70073516"
 
 Создать портал разработчика можно двумя способами:
 
-- **Управляемая версия** — изменение и Настройка портала, встроенного в экземпляр управления API и доступ к которому осуществляется через URL-адрес `<your-api-management-instance-name>.developer.azure-api.net`.
+- **Управляемая версия** — путем изменения и настройки портала, встроенного в экземпляр управления API и доступного по URL-адресу `<your-api-management-instance-name>.developer.azure-api.net`.
 - **Самостоятельная версия** — путем развертывания и самостоятельного размещения портала за пределами экземпляра управления API. Такой подход позволяет изменять базу кода портала и расширять предоставляемые Основные функции. Дополнительные сведения и инструкции см. в [репозитории GitHub с исходным кодом портала][1].
 
 ## <a name="managed-access"></a>Доступ к управляемой версии портала
@@ -79,7 +79,7 @@ ms.locfileid: "70073516"
 
 ### <a name="ive-found-bugs-andor-id-like-to-request-a-feature"></a>Я нашел ошибки и (или) хотел запросить функцию.
 
-Отлично! Вы можете предоставить нам отзыв, отправить запрос на функцию или передать отчет об ошибке в [разделе проблем репозитория GitHub](https://github.com/Azure/api-management-developer-portal/issues). Мы также ценим ваши отзывы о проблемах, отмеченных `community` меткой.
+Отлично! Вы можете предоставить нам отзыв, отправить запрос на функцию или передать отчет об ошибке в [разделе проблем репозитория GitHub](https://github.com/Azure/api-management-developer-portal/issues). Мы также ценим ваши отзывы о проблемах, отмеченных меткой `community`.
 
 ### <a name="i-want-to-move-the-content-of-the-new-portal-between-environments-how-can-i-do-that-and-do-i-need-to-go-with-the-self-hosted-version"></a>Я хочу переместить содержимое нового портала между средами. Как это можно сделать и мне нужно использовать локальную версию?
 
@@ -87,13 +87,21 @@ ms.locfileid: "70073516"
 
 Мы по-прежнему работаем над обработкой этого процесса с помощью набора API DevOps Resource Kit.
 
+### <a name="what-do-i-need-to-configure-for-the-new-portal-to-work-in-my-api-management-service-in-vnet"></a>Что нужно настроить для работы нового портала в службе управления API в виртуальной сети?
+
+Пока новый портал разработчика находится на этапе предварительной версии, необходимо разрешить подключение к службам хранилища Azure в регионе "Западная часть США", чтобы обеспечить работу управляемого портала в службе управления API в виртуальной сети. Дополнительные сведения приведены в документации по [хранилищу](../storage/common/storage-network-security.md#available-virtual-network-regions).
+
+Описанная выше настройка больше не потребуется после того, как новый портал станет общедоступным.
+
+Для размещения на собственном сервере версии портала может потребоваться дополнительная настройка подключения в зависимости от настроек.
+
 ### <a name="how-can-i-select-a-layout-when-creating-a-new-page"></a>Как выбрать *Макет* при создании новой *страницы*?
 
-*Макет* применяется к странице путем сопоставления его шаблона URL-адреса со страницей . Например, *Макет* с `/wiki/*` шаблоном URL-адреса будет применяться ко `/wiki/` всем *страницам* с сегментом: `/wiki/getting-started`, `/wiki/styles`и т. д.
+*Макет* применяется к странице путем сопоставления его шаблона URL-адреса со *страницей* . Например, *Макет* с URL-шаблоном `/wiki/*` будет применен к каждой *странице* с сегментом `/wiki/`: `/wiki/getting-started`, `/wiki/styles` и т. д.
 
 ### <a name="why-doesnt-the-interactive-developer-console-work"></a>Почему Интерактивная консоль разработчиков не работает?
 
-Скорее всего, это связано с CORS. Интерактивная консоль выполняет клиентский запрос API из браузера. Проблему CORS можно устранить, добавив [политику CORS](https://docs.microsoft.com/azure/api-management/api-management-cross-domain-policies#CORS) в API-интерфейсы. Можно указать все параметры вручную (например, источник как https://contoso.com) или использовать подстановочное `*` значение).
+Скорее всего, это связано с CORS. Интерактивная консоль выполняет клиентский запрос API из браузера. Проблему CORS можно устранить, добавив [политику CORS](https://docs.microsoft.com/azure/api-management/api-management-cross-domain-policies#CORS) в API-интерфейсы. Можно указать все параметры вручную (например, источник как https://contoso.com) или использовать подстановочный знак `*` ).
 
 ## <a name="next-steps"></a>Следующие шаги
 

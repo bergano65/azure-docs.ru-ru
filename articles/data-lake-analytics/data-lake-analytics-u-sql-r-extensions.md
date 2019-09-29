@@ -1,6 +1,6 @@
 ---
 title: Расширение возможностей сценариев U-SQL c R в Azure Data Lake Analytics
-description: Сведения о том, как выполнить код R в сценариях U-SQL в Azure Data Lake Analytics.
+description: Узнайте, как выполнять код R в скриптах U-SQL с помощью Azure Data Lake Analytics. Внедрение встроенного кода R или ссылки из файлов.
 services: data-lake-analytics
 ms.service: data-lake-analytics
 author: saveenr
@@ -9,20 +9,20 @@ ms.reviewer: jasonwhowell
 ms.assetid: c1c74e5e-3e4a-41ab-9e3f-e9085da1d315
 ms.topic: conceptual
 ms.date: 06/20/2017
-ms.openlocfilehash: 59a52b2aeb83732a608f1fcf5bc4de907d25dfd1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c5dd3f493e85afc925b639c142a293eed1e8cbd7
+ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60813741"
+ms.lasthandoff: 09/29/2019
+ms.locfileid: "71672696"
 ---
 # <a name="extend-u-sql-scripts-with-r-code-in-azure-data-lake-analytics"></a>Расширение возможностей сценариев U-SQL c кодом R в Azure Data Lake Analytics
 
 В следующих примерах представлены основные шаги по развертыванию кода R:
 * Используйте инструкцию `REFERENCE ASSEMBLY`, чтобы включить расширения R для скрипта U-SQL.
-* Используйте `REDUCE` операции для разделения входных данных для ключа.
+* Используйте операцию `REDUCE`, чтобы секционировать входные данные по ключу.
 * Расширения R для U-SQL включают встроенное средство редукции (`Extension.R.Reducer`), которое выполняет код R в каждой назначенной ему вершине. 
-* Использованием выделенных именованных данных `inputFromUSQL` и `outputToUSQL` соответственно для передачи данных между U-SQL и R. входных данных и выходной таблицы, являются фиксированными имена идентификаторов (то есть пользователи не могут изменить эти предопределенные имена входных данных и выходной таблицы идентификаторы).
+* Использование выделенных именованных кадров данных, именуемых `inputFromUSQL` и `outputToUSQL` соответственно, для передачи данных между U-SQL и R. имена идентификаторов входных и выходных кадров исправляются (т. е. пользователи не могут изменять эти предопределенные имена идентификаторов кадров данных и входных и выходных).
 
 ## <a name="embedding-r-code-in-the-u-sql-script"></a>Внедрение кода R в скрипт U-SQL
 

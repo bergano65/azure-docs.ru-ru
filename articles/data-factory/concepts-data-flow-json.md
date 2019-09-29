@@ -6,12 +6,12 @@ ms.author: makromer
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 08/30/2019
-ms.openlocfilehash: cde42dda47d54c03c50895bc625f99c9350b53e3
-ms.sourcegitcommit: d470d4e295bf29a4acf7836ece2f10dabe8e6db2
+ms.openlocfilehash: ad21ddffdb22f7abf999bfa12f4a8ed86f42cfa2
+ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2019
-ms.locfileid: "70210693"
+ms.lasthandoff: 09/29/2019
+ms.locfileid: "71673448"
 ---
 # <a name="mapping-data-flow-json-handling"></a>Обработка потока данных с сопоставлением JSON
 
@@ -22,11 +22,11 @@ ms.locfileid: "70210693"
 Добавление сложного столбца в поток данных упрощается с помощью редактора выражений производного столбца. После добавления нового столбца и открытия редактора существует два варианта: введите структуру JSON вручную или используйте пользовательский интерфейс для добавления подстолбцов в интерактивном режиме.
 
 #### <a name="interactive-ui-json-design"></a>Проектирование интерактивного пользовательского интерфейса JSON
-В боковой области Схема вывода новые подстолбцы можно добавить с помощью `+` меню: ![Добавить подстолбец](media/data-flow/addsubcolumn.png "Добавить подстолбец")
+В боковой области Схема выходных данных новые подстолбцы можно добавить с помощью меню `+`: ![Добавить]подстолбец(media/data-flow/addsubcolumn.png "Добавить") подстолбец
 
 После этого новые столбцы и подстолбцы можно добавлять таким же образом. Для каждого несложного поля выражение можно добавить в редакторе выражений справа.
 
-![Сложный столбец](media/data-flow/complexcolumn.png "Сложный столбец")
+Сложный ![столбец](media/data-flow/complexcolumn.png "Complex")
 
 #### <a name="manual-json-design"></a>Ручная разработка JSON
 Чтобы вручную добавить структуру JSON, добавьте новый столбец и введите выражение в редакторе. Выражение имеет следующий общий формат:
@@ -144,7 +144,7 @@ File3.json
 { "json": "record 3" }
 ```
 
-# <a name="higher-order-functions"></a>Функции высшего порядка
+## <a name="higher-order-functions"></a>Функции высшего порядка
 ## <a name="filter"></a>filter
 Фильтрует элементы из массива, который не соответствует указанному предикату. Фильтр принимает ссылку на один элемент в функции предиката как #item.
 
@@ -163,7 +163,7 @@ map([1, 2, 3, 4], #item + 2) => [3, 4, 5, 6]
 map(['a', 'b', 'c', 'd'], #item + '_processed') => ['a_processed', 'b_processed', 'c_processed', 'd_processed']
 ```
 
-## <a name="reduce"></a>свести
+## <a name="reduce"></a>Свести
 Накапливает элементы в массиве. Функция Reduce принимает ссылку на накапливаемое и один элемент в первой функции expression как #acc и #item и ждет, что результирующее значение #resultся для использования во второй функции выражения.
 
 ### <a name="examples"></a>Примеры

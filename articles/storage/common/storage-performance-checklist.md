@@ -4,16 +4,16 @@ description: Контрольный список проверенных мето
 services: storage
 author: tamram
 ms.service: storage
-ms.topic: article
+ms.topic: conceptual
 ms.date: 06/07/2019
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 48a5484e2b2b663d0046fc628c02e656c5bd7a25
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: e700cf04123bf02c1014aa418189221fbbb0b812
+ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68985166"
+ms.lasthandoff: 09/29/2019
+ms.locfileid: "71670931"
 ---
 # <a name="microsoft-azure-storage-performance-and-scalability-checklist"></a>Контрольный список производительности и масштабируемости служба хранилища Microsoft Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "68985166"
 * Таблицы
 * Очереди  
 
-| Готово | Область | Категория | Вопрос |
+| Готово | Область | Category | Вопрос |
 | --- | --- | --- | --- |
 | &nbsp; | Все службы |Целевые показатели масштабируемости |[Спроектировано ли приложение таким образом, чтобы избежать приближения к целевым показателям масштабируемости?](#subheading1) |
 | &nbsp; | Все службы |Целевые показатели масштабируемости |[Помогает ли ваше соглашения об именовании улучшить распределение нагрузки?](#subheading47) |
@@ -172,7 +172,7 @@ ms.locfileid: "68985166"
 
 #### <a name="useful-resources"></a>Полезные ресурсы
 
-Дополнительные сведения о SAS см. [в статье предоставление ограниченного доступа к ресурсам хранилища Azure с помощью](storage-sas-overview.md)подписанных URL-адресов (SAS).  
+Дополнительные сведения о подписанных URL-адресах см. в статье об [использование подписанных URL-адресов SAS в службе хранилища Azure](storage-sas-overview.md).  
 
 Дополнительные сведения о технологии CORS см. в статье [Cross-Origin Resource Sharing (CORS) Support for the Azure Storage Services](https://msdn.microsoft.com/library/azure/dn535601.aspx) (Поддержка общего доступа к ресурсам независимо от источника (CORS) для служб хранилища Azure).  
 
