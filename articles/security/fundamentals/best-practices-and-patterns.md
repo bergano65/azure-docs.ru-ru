@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 5/03/2019
 ms.author: terrylan
-ms.openlocfilehash: 64cac3d200a2cfc3b826dc75bfacc6457a01f294
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: e2e829fba9846c2429e362903f5ce49b9344e1bd
+ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68727555"
+ms.lasthandoff: 09/29/2019
+ms.locfileid: "71672632"
 ---
 # <a name="azure-security-best-practices-and-patterns"></a>Рекомендации и шаблоны для обеспечения безопасности в Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "68727555"
 
 Рекомендации предназначены для ИТ-специалистов. К ним могут относиться проектировщики, архитекторы, разработчики и тестировщики, занимающиеся созданием и развертыванием безопасных решений в Azure.
 
-* [Облачные службы Microsoft Cloud и сетевая безопасность](network-best-practices.md)
+* [Облачные службы Microsoft Cloud и сетевая безопасность](https://docs.microsoft.com/en-us/azure/security/fundamentals/network-best-practices#adopt-a-zero-trust-approach)
 * [Рекомендации по обеспечению безопасности базы данных Azure](database-best-practices.md)
 * [Рекомендации по защите и шифрованию данных в Azure](data-encryption-best-practices.md)
 * [Рекомендации по обеспечению безопасности за счет управления удостоверениями и контроля доступа Azure](identity-management-best-practices.md)

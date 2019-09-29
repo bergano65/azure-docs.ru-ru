@@ -15,12 +15,12 @@ ms.date: 08/27/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro
-ms.openlocfilehash: c9a156c4cc6e334e04f5a604b91b7b05d9aed390
-ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
+ms.openlocfilehash: c2066502a6a9d742c347e08d528a2490a390bb7e
+ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71289611"
+ms.lasthandoff: 09/29/2019
+ms.locfileid: "71672649"
 ---
 # <a name="built-in-roles-for-azure-resources"></a>Встроенные роли для ресурсов Azure
 
@@ -186,8 +186,8 @@ ms.locfileid: "71289611"
 > | Microsoft.Authorization/*/Delete | Удаление ролей, назначений политик, определений политик и определений наборов политик |
 > | Microsoft.Authorization/*/Write | Создание ролей, назначений ролей, назначений политик, определений политик и определений наборов политик |
 > | Microsoft.Authorization/elevateAccess/Action | Предоставляет вызывающему доступ с правами администратора для области действия клиента. |
-> | Microsoft.Blueprint/blueprintAssignments/write | Создание или изменение любых артефактов схемы |
-> | Microsoft.Blueprint/blueprintAssignments/delete | Удаление любых артефактов схемы. |
+> | Microsoft.Blueprint/blueprintAssignments/write | Создание или обновление назначений в схеме |
+> | Microsoft.Blueprint/blueprintAssignments/delete | Удаление любых назначений в схеме |
 > | **Действия с данными** |  |
 > | *Нет* |  |
 > | **NotDataActions** |  |

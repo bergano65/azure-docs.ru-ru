@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 59450fc93052a1e169d13fab5b80cbc57c169e0f
-ms.sourcegitcommit: d70c74e11fa95f70077620b4613bb35d9bf78484
+ms.openlocfilehash: dafc78e49cb0118181bae4522d4cb456509ea2cb
+ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70909784"
+ms.lasthandoff: 09/29/2019
+ms.locfileid: "71673420"
 ---
 # <a name="dynamic-membership-rules-for-groups-in-azure-active-directory"></a>Правила динамического членства в группах для Azure Active Directory
 
@@ -64,12 +64,12 @@ user.department -eq "Sales"
 
 Круглые скобки для одного выражения не обязательны. Общая длина текста для правила членства не может превышать 2048 символов.
 
-# <a name="constructing-the-body-of-a-membership-rule"></a>Создание текста для правила членства
+## <a name="constructing-the-body-of-a-membership-rule"></a>Создание текста для правила членства
 
 Правило членства, которое автоматически добавляет в группу пользователей или устройства, представляет собой выражение с двоичным результатом, то есть оно возвращает значение true или false. Простейшее правило состоит из трех частей:
 
 - Свойство
-- Оператор
+- Operator
 - Значение
 
 Чтобы избежать синтаксических ошибок, следует соблюдать определенный порядок частей в этом выражении.
@@ -104,7 +104,7 @@ user.department -eq "Sales"
 | facsimileTelephoneNumber |Любое строковое значение или *null*. |(user.facsimileTelephoneNumber -eq "value") |
 | givenName |Любое строковое значение или *null*. |(user.givenName -eq "value") |
 | jobTitle |Любое строковое значение или *null*. |(user.jobTitle -eq "value") |
-| mail |Любое строковое значение или *null* (SMTP-адрес пользователя). |(user.mail -eq "value") |
+| почта |Любое строковое значение или *null* (SMTP-адрес пользователя). |(user.mail -eq "value") |
 | mailNickName |Любое строковое значение (псевдоним электронной почты пользователя) |(user.mailNickName -eq "value") |
 | mobile |Любое строковое значение или *null*. |(user.mobile -eq "value") |
 | objectId |GUID объекта пользователя. |(user.objectId -eq "11111111-1111-1111-1111-111111111111") |
@@ -135,7 +135,7 @@ user.department -eq "Sales"
 
 В следующей таблице перечислены все поддерживаемые операторы и их синтаксис для одного выражения. Все операторы можно использовать с дефисом в качестве префикса или без него.
 
-| Оператор | Синтаксис |
+| Operator | Синтаксис |
 | --- | --- |
 | Не равно |-ne |
 | Равно |-eq |

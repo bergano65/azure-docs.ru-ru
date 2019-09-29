@@ -96,10 +96,8 @@
       items:
         - name: Примеры кода в GitHub
           href: 'https://aka.ms/TranslatorGitHub'
-        - name: Вопросы и ответы
+        - name: Часто задаваемые вопросы
           href: 'https://www.microsoft.com/translator/faq.aspx'
-        - name: База знаний
-          href: 'https://cognitive.uservoice.com/knowledgebase/topics/132647-translator'
         - name: Поддержка языков и региональных параметров
           href: language-support.md
         - name: Цены
@@ -112,8 +110,6 @@
           href: request-limits.md
         - name: Stack Overflow
           href: 'https://stackoverflow.com/questions/tagged/microsoft-translator'
-        - name: UserVoice
-          href: 'https://cognitive.uservoice.com/forums/558796-translator'
 - name: Пользовательский переводчик
   items:
     - name: Обзор
@@ -178,5 +174,3 @@
           href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
         - name: Stack Overflow
           href: 'https://stackoverflow.com/questions/tagged/microsoft-translator'
-        - name: UserVoice
-          href: 'https://cognitive.uservoice.com/knowledgebase/articles/1855897-custom-translator-preview-resource-guide'

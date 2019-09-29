@@ -4,25 +4,25 @@ description: Узнайте, как управлять параметрами у
 services: storage
 author: tamram
 ms.service: storage
-ms.topic: article
+ms.topic: conceptual
 ms.date: 06/20/2019
 ms.author: tamram
-ms.openlocfilehash: 66bdc4bd1e17347419a6eccd7c9532db17b33001
-ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
+ms.openlocfilehash: 60104496006e790887dd9c4b3e4c3196e0ef6444
+ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67303492"
+ms.lasthandoff: 09/29/2019
+ms.locfileid: "71671369"
 ---
 # <a name="manage-storage-account-settings-in-the-azure-portal"></a>Управление параметрами учетной записи хранения на портале Azure
 
 На [портале Azure](https://portal.azure.com) доступны различные параметры учетной записи хранения. В данной статье описываются некоторые из этих параметров и их применение.
 
-## <a name="access-control"></a>Управление доступом
+## <a name="access-control"></a>Контроль доступа
 
-Служба хранилища Azure поддерживает авторизацию с помощью Azure Active Directory для хранилища BLOB-объектов и хранилища очередей с помощью управления доступом на основе ролей (RBAC). Дополнительные сведения об авторизации с помощью Azure AD см. в разделе [авторизовать доступ к Azure, большие двоичные объекты и очереди, используя Azure Active Directory](storage-auth-aad.md).
+Служба хранилища Azure поддерживает авторизацию с Azure Active Directory для хранилища BLOB-объектов и хранилища очередей с помощью управления доступом на основе ролей (RBAC). Дополнительные сведения об авторизации в Azure AD см. в статье [авторизация доступа к BLOB-объектам и очередям Azure с помощью Azure Active Directory](storage-auth-aad.md).
 
-С помощью параметров **управления доступом** на портале Azure удобно назначать роли RBAC пользователям, группам, субъектам-службам и управляемым удостоверениям. Дополнительные сведения о назначении роли RBAC см. в разделе [управление права доступа к данным больших двоичных объектов и очереди с помощью RBAC](storage-auth-aad-rbac.md).
+С помощью параметров **управления доступом** на портале Azure удобно назначать роли RBAC пользователям, группам, субъектам-службам и управляемым удостоверениям. Дополнительные сведения о назначении ролей RBAC см. [в статье Управление правами доступа к данным BLOB-объектов и очередей с помощью RBAC](storage-auth-aad-rbac.md).
 
 ## <a name="tags"></a>Tags
 
@@ -40,7 +40,7 @@ ms.locfileid: "67303492"
 
 [!INCLUDE [storage-recommend-azure-ad-include](../../../includes/storage-recommend-azure-ad-include.md)]
 
-### <a name="view-account-keys-and-connection-string"></a>Просмотреть ключи учетной записи и строку подключения
+### <a name="view-account-keys-and-connection-string"></a>Просмотр ключей учетной записи и строки подключения
 
 [!INCLUDE [storage-view-keys-include](../../../includes/storage-view-keys-include.md)]
 
@@ -74,7 +74,7 @@ ms.locfileid: "67303492"
 
 Если вы попытаетесь удалить учетную запись хранения, связанную с виртуальной машиной Azure, может появиться сообщение об ошибке, уведомляющее, что учетная запись хранения используется. Для получения справки по устранению этой ошибки см. статью об [устранении ошибок при удалении учетных записей хранения](../common/storage-resource-manager-cannot-delete-storage-account-container-vhd.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Общие сведения об учетной записи хранения](storage-account-overview.md)
 - [создать учетную запись хранения;](storage-quickstart-create-account.md)
