@@ -121,14 +121,14 @@ ms.locfileid: "70092632"
 | Название | Значение и пример | Тип данных |
 | ---- | ---- | ---- |
 | apiVersion | 2015-06-15 | date |
-| publisher | Microsoft.OSTCExtensions | строка |
-| type | CustomScriptForLinux | строка |
-| typeHandlerVersion | 1.5 | ssNoversion |
+| publisher | Microsoft.OSTCExtensions | string |
+| type | CustomScriptForLinux | string |
+| typeHandlerVersion | 1.5 | int |
 | fileUris (пример) | https://github.com/MyProject/Archive/MyPythonScript.py | array |
-| commandToExecute (пример) | python MyPythonScript.py \<my-param1\> | строка |
+| commandToExecute (пример) | python MyPythonScript.py \<my-param1\> | string |
 | enableInternalDNSCheck | true | boolean |
-| storageAccountName (пример) | examplestorageacct | строка |
-| storageAccountKey (пример) | TmJK/1N3AbAZ3q/+hOXoi/l73zOqsaxXDhqa9Y83/v5UpXQp2DQIBuv2Tifp60cE/OaHsJZmQZ7teQfczQj8hg== | строка |
+| storageAccountName (пример) | examplestorageacct | string |
+| storageAccountKey (пример) | TmJK/1N3AbAZ3q/+hOXoi/l73zOqsaxXDhqa9Y83/v5UpXQp2DQIBuv2Tifp60cE/OaHsJZmQZ7teQfczQj8hg== | string |
 
 ### <a name="property-value-details"></a>Сведения о значениях свойств
 
