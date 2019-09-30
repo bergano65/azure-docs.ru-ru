@@ -199,13 +199,13 @@ ms.locfileid: "70084578"
 | Имя свойства | Type | Описание |
 | --- | --- | --- |
 | protectedSettings.configurationArguments.RegistrationKey |PSCredential |Обязательное свойство. Определяет ключ, используемый узлом для регистрации в службе автоматизации Azure в качестве пароля для объекта учетных данных PowerShell. Это значение можно автоматически обнаружить с помощью метода **listkeys** в учетной записи службы автоматизации.  См. [пример](#example-using-referenced-azure-automation-registration-values). |
-| settings.configurationArguments.RegistrationUrl |строка |Обязательное свойство. Указывает URL-адрес конечной точки службы автоматизации, в которой пытается зарегистрироваться узел. Это значение можно автоматически обнаружить с помощью метода **reference** в учетной записи службы автоматизации. |
-| settings.configurationArguments.NodeConfigurationName |строка |Обязательное свойство. Указывает конфигурацию узла в учетной записи службы автоматизации, которая будет присвоена узлу. |
-| settings.configurationArguments.ConfigurationMode |строка |Указывает режим для LCM. Допустимые значения: **ApplyOnly**, **ApplyandMonitior** и **ApplyandAutoCorrect**.  Значение по умолчанию — **ApplyAndMonitor**. |
+| settings.configurationArguments.RegistrationUrl |string |Обязательное свойство. Указывает URL-адрес конечной точки службы автоматизации, в которой пытается зарегистрироваться узел. Это значение можно автоматически обнаружить с помощью метода **reference** в учетной записи службы автоматизации. |
+| settings.configurationArguments.NodeConfigurationName |string |Обязательное свойство. Указывает конфигурацию узла в учетной записи службы автоматизации, которая будет присвоена узлу. |
+| settings.configurationArguments.ConfigurationMode |string |Указывает режим для LCM. Допустимые значения: **ApplyOnly**, **ApplyandMonitior** и **ApplyandAutoCorrect**.  Значение по умолчанию — **ApplyAndMonitor**. |
 | settings.configurationArguments.RefreshFrequencyMins | uint32 | Указывает, как часто LCM пытается проверить учетную запись службы автоматизации на наличие обновлений.  Значение по умолчанию — **30**.  Минимальное значение — **15**. |
 | settings.configurationArguments.ConfigurationModeFrequencyMins | uint32 | Указывает, как часто LCM проверяет текущую конфигурацию. Значение по умолчанию — **15**. Минимальное значение — **15**. |
 | settings.configurationArguments.RebootNodeIfNeeded | boolean | Указывает, может ли узел автоматически перезагружаться по запросу операции DSC. Значение по умолчанию — **false**. |
-| settings.configurationArguments.ActionAfterReboot | строка | Указывает, что происходит после перезагрузки при применении конфигурации. Допустимые значения: **ContinueConfiguration** и **StopConfiguration**. Значение по умолчанию: **ContinueConfiguration**. |
+| settings.configurationArguments.ActionAfterReboot | string | Указывает, что происходит после перезагрузки при применении конфигурации. Допустимые значения: **ContinueConfiguration** и **StopConfiguration**. Значение по умолчанию: **ContinueConfiguration**. |
 | settings.configurationArguments.AllowModuleOverwrite | boolean | Указывает, перезаписывает ли LCM имеющиеся модули на узле. Значение по умолчанию — **false**. |
 
 ## <a name="settings-vs-protectedsettings"></a>Сравнение разделов settings и protectedSettings
