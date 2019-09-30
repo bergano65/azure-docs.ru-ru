@@ -144,12 +144,12 @@ ms.locfileid: "70084770"
 | type | AzureDiskEncryptionForLinux | string |
 | typeHandlerVersion | 0.1, 1.1 | int |
 | (схема 0.1) AADClientID | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | guid | 
-| (схема 0.1) AADClientSecret | password | string |
-| (схема 0.1) AADClientCertificate | thumbprint | string |
+| (схема 0,1) AADClientSecret | password | string |
+| (схема 0,1) аадклиентцертификате | thumbprint | string |
 | DiskFormatQuery | {"dev_path":"","name":"","file_system":""} | Словарь JSON |
 | EncryptionOperation | EnableEncryption, EnableEncryptionFormatAll | string | 
 | KeyEncryptionAlgorithm | 'RSA-OAEP', 'RSA-OAEP-256', 'RSA1_5' | string |
-| KeyEncryptionKeyURL | url | строка |
+| KeyEncryptionKeyURL | url | string |
 | используемых KeyVaultURL | url | string |
 | Passphrase | password | string | 
 | SequenceVersion | uniqueidentifier | string |

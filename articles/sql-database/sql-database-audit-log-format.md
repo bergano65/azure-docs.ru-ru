@@ -49,16 +49,16 @@ ms.locfileid: "70958454"
 | additional_information | additional_information_s | Дополнительные сведения о событии, хранящиеся в формате XML | nvarchar (4000) | string |
 | affected_rows | affected_rows_d | Число строк, затронутых запросом | bigint | int |
 | application_name | application_name_s| Имя клиентского приложения | nvarchar(128) | string |
-| audit_schema_version | audit_schema_version_d | Всегда 1 | ssNoversion | int |
+| audit_schema_version | audit_schema_version_d | Всегда 1 | int | int |
 | class_type | class_type_s | Тип проверяемой сущности, на которой выполняется аудит | varchar (2) | string |
 | class_type_desc | class_type_description_s | Описание проверяемой сущности, на которой выполняется аудит | Н/Д | string |
 | client_ip | client_ip_s | Исходный IP-адрес клиентского приложения | nvarchar(128) | string |
 | connection_id | Н/Д | Идентификатор соединения на сервере | GUID | Н/Д |
 | data_sensitivity_information | data_sensitivity_information_s | Типы сведений и метки чувствительности, возвращаемые отслеживаемым запросом, на основе классифицированных столбцов в базе данных. Дополнительные сведения об [обнаружении и классификации данных в базе данных SQL Azure](sql-database-data-discovery-and-classification.md) | nvarchar (4000) | string |
 | database_name | database_name_s | Контекст базы данных, в котором произошло действие | имеет sysname | string |
-| database_principal_id | database_principal_id_d | Идентификатор контекста пользователя базы данных, в котором выполняется действие | ssNoversion | int |
+| database_principal_id | database_principal_id_d | Идентификатор контекста пользователя базы данных, в котором выполняется действие | int | int |
 | database_principal_name | database_principal_name_s | Имя контекста пользователя базы данных, в котором выполняется действие | имеет sysname | string |
-| duration_milliseconds | duration_milliseconds_d | Длительность выполнения запроса в миллисекундах | bigint | ssNoversion |
+| duration_milliseconds | duration_milliseconds_d | Длительность выполнения запроса в миллисекундах | bigint | int |
 | event_time | event_time_t | Дата и время срабатывания проверяемого действия | datetime2 | datetime |
 | HOST_NAME | Н/Д | Имя узла клиента | string | Н/Д |
 | is_column_permission | is_column_permission_s | Флаг, указывающий, является ли это разрешение на уровне столбца. 1 = true, 0 = false | bit | string |
@@ -68,25 +68,25 @@ ms.locfileid: "70958454"
 | permission_bitmask | permission_bitmask_s | Если применимо, отображаются разрешения, которые были предоставлены, запрещены или отозваны. | varbinary (16) | string |
 | response_rows | response_rows_d | Число строк, возвращенных в результирующем наборе | bigint | int |
 | schema_name | schema_name_s | Контекст схемы, в котором произошло действие. Значение NULL для аудитов, происходящих за пределами схемы | имеет sysname | string |
-| Н/Д | securable_class_type_s | Защищаемый объект, сопоставляемый с class_type, подлежит аудиту | Н/Д | строка |
+| Н/Д | securable_class_type_s | Защищаемый объект, сопоставляемый с class_type, подлежит аудиту | Н/Д | string |
 | sequence_group_id | sequence_group_id_g | Уникальный идентификатор | varbinary | GUID |
-| sequence_number | sequence_number_d | Отслеживает последовательность записей в одной записи аудита, которая слишком велика для размещения в буфере записи для аудита | ssNoversion | ssNoversion |
-| server_instance_name | server_instance_name_s | Имя экземпляра сервера, на котором произошел аудит | имеет sysname | строка |
-| server_principal_id | server_principal_id_d | Идентификатор контекста имени входа, в котором выполняется действие | ssNoversion | ssNoversion |
-| server_principal_name | server_principal_name_s | Текущее имя входа | имеет sysname | строка |
-| server_principal_sid | server_principal_sid_s | Текущий идентификатор безопасности входа | varbinary | строка |
-| проблем | session_id_d | Идентификатор сеанса, в котором произошло событие | smallint | ssNoversion |
-| session_server_principal_name | session_server_principal_name_s | Участник сервера для сеанса | имеет sysname | строка |
-| инструкция | statement_s | Выполненная инструкция T-SQL (при наличии) | nvarchar (4000) | строка |
-| успешно | succeeded_s | Указывает, было ли действие, вызвавшее событие, прошло. Для событий, отличных от имени для входа и пакетной службы, он сообщает только о том, успешно ли выполнена проверка разрешений, а не на выполнение операции. 1 = успешное завершение, 0 = сбой | bit | строка |
-| target_database_principal_id | target_database_principal_id_d | Участник базы данных, для которого выполняется операция GRANT/DENY/REVOKE. 0, если неприменимо | ssNoversion | ssNoversion |
-| target_database_principal_name | target_database_principal_name_s | Целевой пользователь действия. NULL, если неприменимо | строка | строка |
-| target_server_principal_id | target_server_principal_id_d | Участник сервера, для которого выполняется операция GRANT/DENY/REVOKE. Возвращает 0, если неприменимо | ssNoversion | ssNoversion |
-| target_server_principal_name | target_server_principal_name_s | Целевое имя входа действия. NULL, если неприменимо | имеет sysname | строка |
-| target_server_principal_sid | target_server_principal_sid_s | Идентификатор безопасности целевого имени входа. NULL, если неприменимо | varbinary | строка |
-| transaction_id | transaction_id_d | Только SQL Server (начиная с 2016)-0 для базы данных SQL Azure | bigint | ssNoversion |
-| user_defined_event_id | user_defined_event_id_d | Определяемый пользователем идентификатор события, передаваемый в качестве аргумента в sp_audit_write. NULL для системных событий (по умолчанию) и ненулевое значение для определяемого пользователем события. Дополнительные сведения см. в разделе [sp_audit_write (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-audit-write-transact-sql) . | smallint | ssNoversion |
-| user_defined_information | user_defined_information_s | Определяемые пользователем сведения, передаваемые в качестве аргумента в sp_audit_write. NULL для системных событий (по умолчанию) и ненулевое значение для определяемого пользователем события. Дополнительные сведения см. в разделе [sp_audit_write (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-audit-write-transact-sql) . | nvarchar (4000) | строка |
+| sequence_number | sequence_number_d | Отслеживает последовательность записей в одной записи аудита, которая слишком велика для размещения в буфере записи для аудита | int | int |
+| server_instance_name | server_instance_name_s | Имя экземпляра сервера, на котором произошел аудит | имеет sysname | string |
+| server_principal_id | server_principal_id_d | Идентификатор контекста имени входа, в котором выполняется действие | int | int |
+| server_principal_name | server_principal_name_s | Текущее имя входа | имеет sysname | string |
+| server_principal_sid | server_principal_sid_s | Текущий идентификатор безопасности входа | varbinary | string |
+| проблем | session_id_d | Идентификатор сеанса, в котором произошло событие | smallint | int |
+| session_server_principal_name | session_server_principal_name_s | Участник сервера для сеанса | имеет sysname | string |
+| инструкция | statement_s | Выполненная инструкция T-SQL (при наличии) | nvarchar (4000) | string |
+| успешно | succeeded_s | Указывает, было ли действие, вызвавшее событие, прошло. Для событий, отличных от имени для входа и пакетной службы, он сообщает только о том, успешно ли выполнена проверка разрешений, а не на выполнение операции. 1 = успешное завершение, 0 = сбой | bit | string |
+| target_database_principal_id | target_database_principal_id_d | Участник базы данных, для которого выполняется операция GRANT/DENY/REVOKE. 0, если неприменимо | int | int |
+| target_database_principal_name | target_database_principal_name_s | Целевой пользователь действия. NULL, если неприменимо | string | string |
+| target_server_principal_id | target_server_principal_id_d | Участник сервера, для которого выполняется операция GRANT/DENY/REVOKE. Возвращает 0, если неприменимо | int | int |
+| target_server_principal_name | target_server_principal_name_s | Целевое имя входа действия. NULL, если неприменимо | имеет sysname | string |
+| target_server_principal_sid | target_server_principal_sid_s | Идентификатор безопасности целевого имени входа. NULL, если неприменимо | varbinary | string |
+| transaction_id | transaction_id_d | Только SQL Server (начиная с 2016)-0 для базы данных SQL Azure | bigint | int |
+| user_defined_event_id | user_defined_event_id_d | Определяемый пользователем идентификатор события, передаваемый в качестве аргумента в sp_audit_write. NULL для системных событий (по умолчанию) и ненулевое значение для определяемого пользователем события. Дополнительные сведения см. в разделе [sp_audit_write (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-audit-write-transact-sql) . | smallint | int |
+| user_defined_information | user_defined_information_s | Определяемые пользователем сведения, передаваемые в качестве аргумента в sp_audit_write. NULL для системных событий (по умолчанию) и ненулевое значение для определяемого пользователем события. Дополнительные сведения см. в разделе [sp_audit_write (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-audit-write-transact-sql) . | nvarchar (4000) | string |
 
 ## <a name="next-steps"></a>Следующие шаги
 

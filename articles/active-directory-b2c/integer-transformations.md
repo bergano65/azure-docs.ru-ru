@@ -30,7 +30,7 @@ ms.locfileid: "71064215"
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | InputClaim | long | ClaimType для преобразования в строку. |
-| OutputClaim | outputClaim | string | ClaimType, который создается после вызова ClaimsTransformation. |
+| OutputClaim | OutputClaim | string | ClaimType, который создается после вызова ClaimsTransformation. |
 
 В этом примере утверждение `numericUserId` с типом значения "длинное целое" преобразуется в утверждение `UserId` с типом значения "строка".
 
