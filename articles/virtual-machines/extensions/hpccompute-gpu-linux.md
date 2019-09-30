@@ -76,7 +76,7 @@ https://docs.microsoft.com/azure/virtual-machines/linux/n-series-driver-setup)
 | ---- | ---- | ---- |
 | apiVersion | 2015-06-15 | date |
 | publisher | Microsoft.HpcCompute | string |
-| type | NvidiaGpuDriverLinux | строка |
+| type | NvidiaGpuDriverLinux | string |
 | typeHandlerVersion | 1.2 | int |
 
 ### <a name="settings"></a>Настройки
@@ -85,8 +85,8 @@ https://docs.microsoft.com/azure/virtual-machines/linux/n-series-driver-setup)
 
 | Название | Описание | Default Value | Допустимые значения | Тип данных |
 | ---- | ---- | ---- | ---- | ---- |
-| updateOS | Обновление ядра, даже если для установки драйвера это не требуется | Ложь | true, false | boolean |
-| driverVersion | NV: версия драйвера GRID.<br> NC/ND: версия набора инструментов CUDA Toolkit. Последние версии драйверов для выбранного набора CUDA Toolkit устанавливаются автоматически. | latest | GRID: "430,30", "418,70", "410,92", "410,71", "390,75", "390,57", "390,42"<br> CUDA: 10.0.130, 9.2.88, 9.1.85. | строка |
+| updateOS | Обновление ядра, даже если для установки драйвера это не требуется | false | true, false | boolean |
+| driverVersion | NV: версия драйвера GRID.<br> NC/ND: версия набора инструментов CUDA Toolkit. Последние версии драйверов для выбранного набора CUDA Toolkit устанавливаются автоматически. | latest | GRID: "430,30", "418,70", "410,92", "410,71", "390,75", "390,57", "390,42"<br> CUDA: 10.0.130, 9.2.88, 9.1.85. | string |
 | installCUDA | Установка набора инструментов CUDA Toolkit. Это относится только к виртуальным машинам серии NC/ND. | true | true, false | boolean |
 
 
