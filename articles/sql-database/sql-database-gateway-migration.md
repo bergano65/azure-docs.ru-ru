@@ -10,12 +10,12 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: vanto
 ms.date: 07/01/2019
-ms.openlocfilehash: 2e578c6bfdfb25eaba3d0c692ff33aa5b0572669
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.openlocfilehash: a2064e0012abea237c1b4c0c6f7e35119c1aeff5
+ms.sourcegitcommit: 6013bacd83a4ac8a464de34ab3d1c976077425c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70305989"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71686801"
 ---
 # <a name="azure-sql-database-traffic-migration-to-newer-gateways"></a>Перенос трафика базы данных SQL Azure на более новые шлюзы
 
@@ -52,7 +52,7 @@ ms.locfileid: "70305989"
 
 ## <a name="what-to-do-you-do-if-youre-affected"></a>Что делать, если вы затронули
 
-Рекомендуется разрешить исходящий трафик по IP-адресам для всех [IP-адресов шлюза базы данных SQL Azure](sql-database-connectivity-architecture.md#azure-sql-database-gateway-ip-addresses) в регионе на TCP-порте 1433, а диапазон портов 11000-11999 — на устройстве брандмауэра. Дополнительные сведения о диапазонах портов см. в разделе [Политика подключения](sql-database-connectivity-architecture.md#connection-policy).
+Мы рекомендуем разрешить исходящий трафик по IP-адресам для всех [IP-адресов шлюза базы данных SQL Azure](sql-database-connectivity-architecture.md#azure-sql-database-gateway-ip-addresses) в регионе на TCP-порте 1433 и диапазоне портов 11000-11999. Эта рекомендация применима к клиентам, подключающимся из локальной среды, а также к подключенным через конечные точки службы. Дополнительные сведения о диапазонах портов см. в разделе [Политика подключения](sql-database-connectivity-architecture.md#connection-policy).
 
 Подключения из приложений, использующих драйвер Microsoft JDBC версии ниже 4,0, могут привести к сбою при проверке сертификата. В поле субъекта сертификата более ранние версии Microsoft JDBC используют общее имя (CN). Устранение рисков заключается в том, чтобы свойство hostNameInCertificate было установлено в значение *. database.windows.net. Дополнительные сведения о том, как задать свойство hostNameInCertificate, см. в разделе [подключение с помощью SSL-шифрования](/sql/connect/jdbc/connecting-with-ssl-encryption).
 

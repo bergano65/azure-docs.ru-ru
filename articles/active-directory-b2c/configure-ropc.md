@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 11/30/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 69924674fba44595e4f5a9702607579d8c7a8bc8
-ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
+ms.openlocfilehash: 8cb5c82e551ed6299f754f518ebeebca0be4964d
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71064465"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71679304"
 ---
 # <a name="configure-the-resource-owner-password-credentials-flow-in-azure-ad-b2c"></a>Настройка последовательности проверки учетных данных пароля владельца ресурса в Azure AD B2C
 
@@ -53,11 +53,7 @@ ms.locfileid: "71064465"
 
 ## <a name="register-an-application"></a>Регистрация приложения
 
-1. В разделе параметров B2C щелкните **Приложения**, а затем — **Добавить**.
-2. Укажите имя приложения, например *ROPC_Auth_app*.
-3. Выберите значение **Нет** для параметра **Веб-приложение или веб-интерфейс API** и значение **Да** для параметра **Собственный клиент**.
-4. Не меняя остальные значения, нажмите кнопку **Создать**.
-5. Выберите новое приложение и запишите идентификатор приложения для дальнейшего использования.
+[!INCLUDE [active-directory-b2c-appreg-ropc](../../includes/active-directory-b2c-appreg-ropc.md)]
 
 ## <a name="test-the-user-flow"></a>Тестирование потока пользователя
 
@@ -73,7 +69,7 @@ ms.locfileid: "71064465"
 | username | leadiocl@outlook.com |
 | password | Passxword1 |
 | grant_type | password |
-| область | openid \<bef2222d56-552f-4a5b-b90a-1988a7d634c3> offline_access |
+| scope | openid \<bef2222d56-552f-4a5b-b90a-1988a7d634c3> offline_access |
 | client_id | \<bef2222d56-552f-4a5b-b90a-1988a7d634c3> |
 | response_type | token id_token |
 
@@ -113,7 +109,7 @@ username=leadiocl%40trashmail.ws&password=Passxword1&grant_type=password&scope=o
 | grant_type | refresh_token |
 | response_type | id_token |
 | client_id | \<bef2222d56-552f-4a5b-b90a-1988a7d634c3> |
-| ресурс | \<bef2222d56-552f-4a5b-b90a-1988a7d634c3> |
+| resource | \<bef2222d56-552f-4a5b-b90a-1988a7d634c3> |
 | refresh_token | eyJraWQiOiJacW9pQlp2TW5pYVc2MUY0TnlfR3... |
 
 *Client_id* и *resource* — это значения, записанные выше в качестве идентификатора приложения. *Refresh_token* — упомянутый ранее токен, полученный в вызове проверки подлинности.

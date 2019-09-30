@@ -1,22 +1,22 @@
 ---
-title: Создание пула узлов для предварительного просмотра виртуальных рабочих столов Windows с помощью PowerShell в Azure
-description: Создание пула узлов в предварительной версии виртуальных рабочих столов Windows с помощью командлетов PowerShell.
+title: Создание пула узлов виртуальных рабочих столов Windows с помощью PowerShell — Azure
+description: Как создать пул узлов в виртуальном рабочем столе Windows с помощью командлетов PowerShell.
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 08/29/2019
 ms.author: helohr
-ms.openlocfilehash: 1fb377d482277a4776214d08b879d99f4234ca40
-ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
+ms.openlocfilehash: a5e228417610a19c38acf9ce2db6e743ec122580
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70163679"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71679578"
 ---
 # <a name="create-a-host-pool-with-powershell"></a>Создание пула узлов с помощью PowerShell
 
-Пулы узлов — это коллекция, состоящая из одной или нескольких идентичных виртуальных машин в средах клиента предварительной версии Виртуального рабочего стола Windows. Каждый пул узлов может содержать группы приложений, с которыми пользователи могут взаимодействовать, как с физическим рабочим столом.
+Пулы узлов представляют собой коллекцию из одной или нескольких идентичных виртуальных машин в среде клиента виртуальных рабочих столов Windows. Каждый пул узлов может содержать группы приложений, с которыми пользователи могут взаимодействовать, как с физическим рабочим столом.
 
 ## <a name="use-your-powershell-client-to-create-a-host-pool"></a>Создание пула узлов с помощью клиента PowerShell
 
@@ -48,7 +48,7 @@ Add-RdsAppGroupUser -TenantName <tenantname> -HostPoolName <hostpoolname> -AppGr
 
 Командлет **Add-рдсаппграупусер** не поддерживает добавление групп безопасности и добавляет только одного пользователя за раз в группу приложений. Если вы хотите добавить нескольких пользователей в группу приложений, перезапустите командлет с соответствующими именами субъектов-пользователей.
 
-Выполните следующий командлет, чтобы экспортировать маркер регистрации в переменную, которая будет использоваться позже в Зарегистрируйте [виртуальные машины в пуле узлов виртуальных рабочих столов Windows](#register-the-virtual-machines-to-the-windows-virtual-desktop-preview-host-pool).
+Выполните следующий командлет, чтобы экспортировать маркер регистрации в переменную, которая будет использоваться позже в [зарегистрируйте виртуальные машины в пуле узлов виртуальных рабочих столов Windows](#register-the-virtual-machines-to-the-windows-virtual-desktop-host-pool).
 
 ```powershell
 $token = (Export-RdsRegistrationInfo -TenantName <tenantname> -HostPoolName <hostpoolname>).Token
@@ -64,9 +64,12 @@ $token = (Export-RdsRegistrationInfo -TenantName <tenantname> -HostPoolName <hos
 - [Создание виртуальной машины из управляемого образа](https://docs.microsoft.com/azure/virtual-machines/windows/create-vm-generalized-managed)
 - [Создание виртуальной машины из неуправляемого образа](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-from-user-image)
 
+>[!NOTE]
+>Если вы развертываете виртуальную машину с Windows 7 в качестве ОС узла, процесс создания и развертывания будет немного иным. Дополнительные сведения см. в статье [развертывание виртуальной машины Windows 7 в виртуальном рабочем столе Windows](deploy-windows-7-virtual-machine.md).
+
 После создания виртуальных машин узла сеансов [Примените лицензию Windows к виртуальной машине узла сеансов](./apply-windows-license.md#apply-a-windows-license-to-a-session-host-vm) , чтобы запустить виртуальные машины Windows или Windows Server, не обращаясь к другой лицензии. 
 
-## <a name="prepare-the-virtual-machines-for-windows-virtual-desktop-preview-agent-installations"></a>Подготовка виртуальных машин для установки агента предварительного просмотра виртуальных рабочих столов Windows
+## <a name="prepare-the-virtual-machines-for-windows-virtual-desktop-agent-installations"></a>Подготовка виртуальных машин для установки агента виртуальных рабочих столов Windows
 
 Чтобы подготовить виртуальные машины к установке агентов виртуальных рабочих столов Windows и зарегистрировать виртуальные машины в пуле узлов Windows, необходимо выполнить следующие действия.
 
@@ -84,7 +87,7 @@ $token = (Export-RdsRegistrationInfo -TenantName <tenantname> -HostPoolName <hos
     >[!NOTE]
     > Если вы присоединяете виртуальные машины к среде доменных служб Active Directory (Azure AD DS), убедитесь, что пользователь, который присоединяется к домену, также является участником [группы администраторов AAD DC](../active-directory-domain-services/tutorial-create-instance.md#configure-an-administrative-group).
 
-## <a name="register-the-virtual-machines-to-the-windows-virtual-desktop-preview-host-pool"></a>Зарегистрируйте виртуальные машины в пуле узлов предварительного просмотра виртуальных рабочих столов Windows
+## <a name="register-the-virtual-machines-to-the-windows-virtual-desktop-host-pool"></a>Регистрация виртуальных машин в пуле узлов виртуальных рабочих столов Windows
 
 Регистрация виртуальных машин в пуле узлов виртуальных рабочих столов Windows выполняется так же просто, как установка агентов виртуальных рабочих столов Windows.
 

@@ -7,12 +7,12 @@ ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 09/27/2019
 ms.author: tomfitz
-ms.openlocfilehash: 3a0761fad32b2cfb0387cca79b6c1c0dc83c8e98
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.openlocfilehash: f97f9dac76ac29cf295b5cedc08f916e85c4e317
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71345424"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71675088"
 ---
 # <a name="resource-property-or-variable-iteration-in-azure-resource-manager-templates"></a>Итерация ресурсов, свойств или переменных в шаблонах Azure Resource Manager
 
@@ -57,7 +57,7 @@ ms.locfileid: "71345424"
 
 ## <a name="resource-iteration"></a>Итерация ресурса
 
-Чтобы во время развертывания создать один или несколько экземпляров ресурса, добавьте к типу ресурса элемент `copy`. В элементе Copy укажите число итераций и имя для этого цикла.
+Если в развертывании нужно создать несколько экземпляров ресурса, добавьте элемент `copy` в тип ресурса. В элементе Copy укажите число итераций и имя для этого цикла.
 
 Для многократного создания ресурса используется следующий формат.
 

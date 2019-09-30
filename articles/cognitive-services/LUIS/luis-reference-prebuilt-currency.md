@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 05/07/2019
+ms.date: 09/27/2019
 ms.author: diberry
-ms.openlocfilehash: 867e8f830542aab712b2bfe32f05dd9469c0da49
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 61be3225f22aca821f8c26522ab37eab0c82bc26
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68932535"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71677716"
 ---
 # <a name="currency-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность currency для приложения LUIS
 Предварительно построенная сущность Currency обнаруживает валюту во многих деноминатионс и странах и регионах независимо от языка и региональных параметров приложения LUIS. Так как эта сущность уже обучена, добавлять в назначение приложения примеры фраз, содержащие валюты, не нужно. Сущность валюты поддерживается во [многих языках и региональных параметрах](luis-reference-prebuilt-entities.md). 
@@ -26,7 +26,7 @@ ms.locfileid: "68932535"
 
 ## <a name="resolution-for-currency-entity"></a>Разрешение для сущности валюты
 
-### <a name="api-version-2x"></a>API версии 2. x
+#### <a name="v2-prediction-endpoint-responsetabv2"></a>[Ответ конечной точки прогнозирования v2](#tab/V2)
 
 В следующем примере показано разрешение сущности **builtin.currency**.
 
@@ -64,9 +64,9 @@ ms.locfileid: "68932535"
 
 
 
-### <a name="preview-api-version-3x"></a>Предварительная версия API версии 3. x
+#### <a name="v3-prediction-endpoint-responsetabv3"></a>[V3 прогнозирование ответа конечной точки](#tab/V3)
 
-Следующий код JSON имеет `verbose` параметр со `false`значением:
+Следующий код JSON относится к параметру `verbose`, для которого задано значение `false`:
 
 ```json
 {
@@ -91,7 +91,7 @@ ms.locfileid: "68932535"
 }
 ```
 
-Следующий код JSON имеет `verbose` параметр со `true`значением:
+Следующий код JSON относится к параметру `verbose`, для которого задано значение `true`:
 
 ```json
 {
@@ -128,6 +128,11 @@ ms.locfileid: "68932535"
 }
 ```
 
+
+* * * 
+
 ## <a name="next-steps"></a>Следующие шаги
+
+Дополнительные сведения о [конечной точке прогнозирования v3](luis-migration-api-v3.md).
 
 Дополнительные сведения о сущностях [datetimeV2](luis-reference-prebuilt-datetimev2.md), [измерение](luis-reference-prebuilt-dimension.md) и [электронная почта](luis-reference-prebuilt-email.md). 

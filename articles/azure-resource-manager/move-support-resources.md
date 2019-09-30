@@ -4,14 +4,14 @@ description: Список типов ресурсов Azure, подлежащи�
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: reference
-ms.date: 09/06/2019
+ms.date: 09/30/2019
 ms.author: tomfitz
-ms.openlocfilehash: 9dc86fe7876a050fe67ec73a665be6141a4b98da
-ms.sourcegitcommit: b7b0d9f25418b78e1ae562c525e7d7412fcc7ba0
+ms.openlocfilehash: b34c244708c52ec7324c766286aff8ee9340db0b
+ms.sourcegitcommit: 6013bacd83a4ac8a464de34ab3d1c976077425c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/08/2019
-ms.locfileid: "70801364"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71687120"
 ---
 # <a name="move-operation-support-for-resources"></a>Поддержка операции перемещения для ресурсов
 В этой статье указано, поддерживается ли для тех или иных типов ресурсов Azure операция перемещения. В нем также содержатся сведения о специальных условиях, которые следует учитывать при перемещении ресурса.
@@ -72,7 +72,6 @@ ms.locfileid: "70801364"
 > - [Microsoft.Devices](#microsoftdevices)
 > - [Microsoft.DevSpaces](#microsoftdevspaces)
 > - [Microsoft.DevTestLab](#microsoftdevtestlab)
-> - [Microsoft. DNS](#microsoftdns)
 > - [Microsoft.DocumentDB](#microsoftdocumentdb)
 > - [Microsoft.DomainRegistration](#microsoftdomainregistration)
 > - [Microsoft.EnterpriseKnowledgeGraph](#microsoftenterpriseknowledgegraph)
@@ -609,21 +608,6 @@ ms.locfileid: "70801364"
 > | Labs и сервицеруннерс | Да | Да |
 > | Labs и virtualmachines | Да | Нет |
 > | schedules | Да | Да |
-
-## <a name="microsoftdns"></a>microsoft.dns
-
-> [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
-> | ------------- | ----------- | ---------- |
-> | dnszones | Нет | Нет |
-> | днсзонес/a | Нет | Нет |
-> | днсзонес/AAAA | Нет | Нет |
-> | днсзонес и CNAME | Нет | Нет |
-> | днсзонес/MX | Нет | Нет |
-> | днсзонес/PTR | Нет | Нет |
-> | днсзонес/SRV | Нет | Нет |
-> | днсзонес/txt | Нет | Нет |
-> | trafficmanagerprofiles | Нет | Нет |
 
 ## <a name="microsoftdocumentdb"></a>Microsoft.DocumentDB
 

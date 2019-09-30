@@ -1,25 +1,25 @@
 ---
 title: Создание, просмотр и Управление оповещениями журнала с помощью Azure Monitor | Документация Майкрософт
 description: Используйте Azure Monitor для создания и просмотра правил генерации оповещений журнала в Azure, а также для управления ими.
-author: msvijayn
+author: yanivlavi
 services: azure-monitor
 ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 07/29/2019
-ms.author: vinagara
+ms.author: yalavi
 ms.subservice: alerts
-ms.openlocfilehash: f4d3a4d9a5785ae350874c400384477da1a6c22e
-ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
+ms.openlocfilehash: d540912d280302d2ae2166b75fb2d163458d7a61
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2019
-ms.locfileid: "68774719"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71677829"
 ---
 # <a name="create-view-and-manage-log-alerts-using-azure-monitor"></a>Создание и просмотр оповещений журнала, а также управление ими с помощью Azure Monitor
 
 ## <a name="overview"></a>Обзор
 В этой статье показано, как настроить оповещения журнала с помощью интерфейса оповещений на портале Azure. Определение правила оповещений состоит из трех частей:
-- Целевой объект: определенный ресурс Azure, который следует отслеживать.
+- Цель: определенный ресурс Azure, который следует отслеживать.
 - Критерии: определенное условие или логика в сигнале, которые должны вызывать действие.
 - Действие: конкретный вызов, отправленный получателю уведомления — электронное сообщение, текстовое сообщение, веб-перехватчик и т. д.
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 01/04/2018
 ms.author: gsilva
-ms.openlocfilehash: ef6086afa17f1ab864d70678a6da6df2a78e0c16
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f8f4f55f2c2aa4a0f9cce08e10c9f12f81a54dba
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65190273"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71677998"
 ---
 # <a name="create-a-windows-virtual-machine-with-accelerated-networking"></a>Создание виртуальной машины Windows с ускоренной сетью
 
@@ -27,7 +27,7 @@ ms.locfileid: "65190273"
 
 ![Сравнение](./media/create-vm-accelerated-networking/accelerated-networking.png)
 
-Без функции ускорения сети весь входящий и исходящий сетевой трафик виртуальной машины должен проходить через узел и виртуальный коммутатор. Виртуальный коммутатор обеспечивает принудительное применение всех политик, таких как группы безопасности сети, списки управления доступом, изоляция, и использование других служб виртуализации сети для сетевого трафика. Дополнительные сведения о виртуальных коммутаторов, см. в разделе [виртуализации сети Hyper-V и виртуальном коммутаторе](https://technet.microsoft.com/library/jj945275.aspx).
+Без функции ускорения сети весь входящий и исходящий сетевой трафик виртуальной машины должен проходить через узел и виртуальный коммутатор. Виртуальный коммутатор обеспечивает принудительное применение всех политик, таких как группы безопасности сети, списки управления доступом, изоляция, и использование других служб виртуализации сети для сетевого трафика. Дополнительные сведения о виртуальных коммутаторах см. в статье [виртуализация сети Hyper-V и виртуальный коммутатор](https://technet.microsoft.com/library/jj945275.aspx).
 
 При использовании функции ускорения сети трафик поступает в сетевой интерфейс (NIC), а затем перенаправляется на виртуальную машину. Все сетевые политики, которые применяет виртуальный коммутатор, выгружены и применяются на аппаратном уровне. Благодаря применению политик на аппаратном уровне сетевая карта может перенаправлять сетевой трафик непосредственно на виртуальную машину в обход узла и виртуального коммутатора. При этом все политики, примененные на узле, сохраняются.
 
@@ -44,15 +44,16 @@ ms.locfileid: "65190273"
 Без дополнительной настройки из коллекции Azure поддерживаются следующие дистрибутивы:
 * **Windows Server 2016 Datacenter** 
 * **Центр обработки данных Windows Server 2012 R2**
+* **Windows Server 2019 Datacenter**
 
 ### <a name="supported-vm-instances"></a>Поддерживаемые экземпляры виртуальных машин
 Функция ускорения сети поддерживается для большинства размеров экземпляров, оптимизированных для вычислений, и экземпляров общего назначения с количеством виртуальных ЦП от 2.  Поддерживаются серии D/DSv2 и F/Fs
 
-На экземплярах, поддерживающих технологию Hyper-Threading, функция ускорения сети поддерживается в экземплярах виртуальных машин с количеством виртуальных ЦП от 4. Поддерживаются серии D/Dsv3, E/Esv3, Fsv2, Lsv2, Ms-Mms и Ms/Mmsv2.
+На экземплярах, поддерживающих технологию Hyper-Threading, функция ускорения сети поддерживается в экземплярах виртуальных машин с количеством виртуальных ЦП от 4. Поддерживаются серии D/Dsv3, E/Esv3, серия fsv2, Lsv2, MS/MMS и MS/Mmsv2.
 
 Дополнительные сведения см. в статье [Размеры виртуальных машин Windows в Azure](../virtual-machines/windows/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 
-### <a name="regions"></a>регионы
+### <a name="regions"></a>Регионы
 Доступна во всех общедоступных регионах Azure и облаке Azure для государственных организаций.
 
 ### <a name="enabling-accelerated-networking-on-a-running-vm"></a>Включение ускоренной сети для работающей виртуальной машины
@@ -63,17 +64,17 @@ ms.locfileid: "65190273"
 
 ## <a name="create-a-windows-vm-with-azure-accelerated-networking"></a>Создание виртуальной машины Windows с ускорением сети Azure
 ## <a name="portal-creation"></a>Создание на портале
-В этой статье описано, как создать виртуальную машину с ускоренной сетью, с помощью Azure Powershell, вы также можете [Создание виртуальной машины с ускоренной сетью, с помощью портала Azure](../virtual-machines/linux/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json). При создании виртуальной машины на портале в **Создание виртуальной машины** колонке выберите **сети** вкладки.  На этой вкладке есть параметр для **ускоренная сеть**.  Если вы выбрали [поддерживаемая операционная система](#supported-operating-systems) и [размер виртуальной Машины](#supported-vm-instances), этот параметр будет автоматически заполнять «Включен».  В противном случае он заполнит параметр «Off» для повышения производительности сети и дать пользователю причины, почему он не будет включен.   
-* *Примечание.* На портале можно включить только для поддерживаемых операционных систем.  Если вы используете пользовательский образ и образ поддерживающим ускоренную сеть, создайте виртуальную Машину с помощью интерфейса командной строки или Powershell. 
+Хотя в этой статье описаны действия по созданию виртуальной машины с ускоренной сетью с помощью Azure PowerShell, можно также [создать виртуальную машину с ускоренной сетью с помощью портал Azure](../virtual-machines/linux/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json). При создании виртуальной машины на портале в колонке **Создание виртуальной машины** перейдите на вкладку **сеть** .  На этой вкладке можно выбрать функцию **ускорения**работы в сети.  Если вы выбрали [поддерживаемую операционную систему](#supported-operating-systems) и [Размер виртуальной машины](#supported-vm-instances), этот параметр будет автоматически заполняться на "вкл.".  В противном случае он заполнит параметр "Выкл." для ускорения сети и предложит пользователю причину, по которой он не включен.   
+* *Примечание.* На портале можно включить только поддерживаемые операционные системы.  Если вы используете пользовательский образ, а образ поддерживает ускорение работы в сети, создайте виртуальную машину с помощью интерфейса командной строки или PowerShell. 
 
-После создания виртуальной машины можно было подтвердить повышение производительности сети включена, следуя инструкциям в Подтвердите, что ускоренная сеть включена.
+После создания виртуальной машины можно проверить, включена ли Ускоренная сеть, следуя инструкциям в разделе подтверждение включения ускорения сети.
 
 ## <a name="powershell-creation"></a>Создание PowerShell
 ## <a name="create-a-virtual-network"></a>Создать виртуальную сеть
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Установка [Azure PowerShell](/powershell/azure/install-az-ps) версии 1.0.0 или более поздней версии. Чтобы определить текущую версию, выполните командлет `Get-Module -ListAvailable Az`. Если необходимо выполнить установку или обновление, установите последнюю версию модуля Az [коллекции PowerShell](https://www.powershellgallery.com/packages/Az). В сеансе PowerShell войдите в учетную запись Azure с помощью [Connect AzAccount](/powershell/module/az.accounts/connect-azaccount).
+Установите [Azure PowerShell](/powershell/azure/install-az-ps) версии 1.0.0 или более поздней. Чтобы определить текущую версию, выполните командлет `Get-Module -ListAvailable Az`. Если необходимо установить или обновить, установите последнюю версию модуля az из [коллекция PowerShell](https://www.powershellgallery.com/packages/Az). В сеансе PowerShell Войдите в учетную запись Azure с помощью [Connect-азаккаунт](/powershell/module/az.accounts/connect-azaccount).
 
 В следующих примерах замените имена параметров собственными значениями. Примеры имен параметров: *myResourceGroup*, *myNic* и *myVM*.
 
@@ -83,7 +84,7 @@ ms.locfileid: "65190273"
 New-AzResourceGroup -Name "myResourceGroup" -Location "centralus"
 ```
 
-Во-первых, создайте конфигурацию подсети с [New AzVirtualNetworkSubnetConfig](/powershell/module/az.Network/New-azVirtualNetworkSubnetConfig). В следующем примере создается подсеть с именем *mySubnet*:
+Сначала создайте конфигурацию подсети с помощью [New-азвиртуалнетворксубнетконфиг](/powershell/module/az.Network/New-azVirtualNetworkSubnetConfig). В следующем примере создается подсеть с именем *mySubnet*:
 
 ```powershell
 $subnet = New-AzVirtualNetworkSubnetConfig `
@@ -91,7 +92,7 @@ $subnet = New-AzVirtualNetworkSubnetConfig `
     -AddressPrefix "192.168.1.0/24"
 ```
 
-Создание виртуальной сети с помощью [New AzVirtualNetwork](/powershell/module/az.Network/New-azVirtualNetwork), с помощью *mySubnet* подсети.
+Создайте виртуальную сеть с помощью [New-азвиртуалнетворк](/powershell/module/az.Network/New-azVirtualNetwork)и подсетью *mySubnet* .
 
 ```powershell
 $vnet = New-AzVirtualNetwork -ResourceGroupName "myResourceGroup" `
@@ -103,7 +104,7 @@ $vnet = New-AzVirtualNetwork -ResourceGroupName "myResourceGroup" `
 
 ## <a name="create-a-network-security-group"></a>Создание группы безопасности сети
 
-Во-первых, создайте правило группы безопасности сети с [New AzNetworkSecurityRuleConfig](/powershell/module/az.Network/New-azNetworkSecurityRuleConfig).
+Сначала создайте правило группы безопасности сети с помощью [New-азнетворксекуритирулеконфиг](/powershell/module/az.Network/New-azNetworkSecurityRuleConfig).
 
 ```powershell
 $rdp = New-AzNetworkSecurityRuleConfig `
@@ -119,7 +120,7 @@ $rdp = New-AzNetworkSecurityRuleConfig `
     -DestinationPortRange 3389
 ```
 
-Создайте группу безопасности сети с помощью [New AzNetworkSecurityGroup](/powershell/module/az.Network/New-azNetworkSecurityGroup) и назначить *Allow-RDP-All* ей правило безопасности. Кроме правила *Allow-RDP-All* группа безопасности сети содержит несколько стандартных правил. С помощью одного правила по умолчанию запрещается входящий трафик из Интернета, из-за чего правило *Allow-RDP-All* и назначается группе безопасности сети. Таким образом вы можете удаленно подключиться к виртуальной машине после ее создания.
+Создайте группу безопасности сети с помощью [New-азнетворксекуритиграуп](/powershell/module/az.Network/New-azNetworkSecurityGroup) и назначьте ей правило безопасности *allow-RDP-ALL* . Кроме правила *Allow-RDP-All* группа безопасности сети содержит несколько стандартных правил. С помощью одного правила по умолчанию запрещается входящий трафик из Интернета, из-за чего правило *Allow-RDP-All* и назначается группе безопасности сети. Таким образом вы можете удаленно подключиться к виртуальной машине после ее создания.
 
 ```powershell
 $nsg = New-AzNetworkSecurityGroup `
@@ -129,7 +130,7 @@ $nsg = New-AzNetworkSecurityGroup `
     -SecurityRules $rdp
 ```
 
-Свяжите группу безопасности сети с *mySubnet* подсети с [AzVirtualNetworkSubnetConfig набора](/powershell/module/az.Network/Set-azVirtualNetworkSubnetConfig). Правило в группе безопасности сети распространяется на все ресурсы, развернутые в подсети.
+Свяжите группу безопасности сети с подсетью *mySubnet* с помощью [Set-азвиртуалнетворксубнетконфиг](/powershell/module/az.Network/Set-azVirtualNetworkSubnetConfig). Правило в группе безопасности сети распространяется на все ресурсы, развернутые в подсети.
 
 ```powershell
 Set-AzVirtualNetworkSubnetConfig `
@@ -150,7 +151,7 @@ $publicIp = New-AzPublicIpAddress `
     -AllocationMethod Dynamic
 ```
 
-Создайте сетевой интерфейс с [New AzNetworkInterface](/powershell/module/az.Network/New-azNetworkInterface) с включенной функцией ускорения сети и назначить общедоступный IP-адрес сетевому интерфейсу. В следующем примере создается сетевой интерфейс с именем *myNic* в подсети *mySubnet* виртуальной сети *myVnet* и ему назначается общедоступный IP-адрес *myPublicIp*.
+Создайте сетевой интерфейс с помощью [New-азнетворкинтерфаце](/powershell/module/az.Network/New-azNetworkInterface) с включенной функцией ускорения сети и назначьте сетевому интерфейсу общедоступный IP-адрес. В следующем примере создается сетевой интерфейс с именем *myNic* в подсети *mySubnet* виртуальной сети *myVnet* и ему назначается общедоступный IP-адрес *myPublicIp*.
 
 ```powershell
 $nic = New-AzNetworkInterface `
@@ -170,7 +171,7 @@ $nic = New-AzNetworkInterface `
 $cred = Get-Credential
 ```
 
-Во-первых, определите виртуальную Машину с [New AzVMConfig](/powershell/module/az.compute/new-azvmconfig). В следующем примере определяется виртуальная машина с именем *myVM* и используется размер виртуальной машины с поддержкой функции ускорения сети (*Standard_DS4_v2*):
+Сначала определите виртуальную машину с помощью [New-азвмконфиг](/powershell/module/az.compute/new-azvmconfig). В следующем примере определяется виртуальная машина с именем *myVM* и используется размер виртуальной машины с поддержкой функции ускорения сети (*Standard_DS4_v2*):
 
 ```powershell
 $vmConfig = New-AzVMConfig -VMName "myVm" -VMSize "Standard_DS4_v2"
@@ -194,13 +195,13 @@ $vmConfig = Set-AzVMSourceImage -VM $vmConfig `
     -Version "latest"
 ```
 
-Подключить этот сетевой интерфейс, созданный ранее с помощью [AzVMNetworkInterface добавить](/powershell/module/az.compute/add-azvmnetworkinterface):
+Подключите сетевой интерфейс, созданный ранее с помощью [Add-азвмнетворкинтерфаце](/powershell/module/az.compute/add-azvmnetworkinterface):
 
 ```powershell
 $vmConfig = Add-AzVMNetworkInterface -VM $vmConfig -Id $nic.Id
 ```
 
-Наконец, создайте виртуальную Машину с [командлета New-AzVM](/powershell/module/az.compute/new-azvm):
+Наконец, создайте виртуальную машину с помощью [New-AzVM](/powershell/module/az.compute/new-azvm):
 
 ```powershell
 New-AzVM -VM $vmConfig -ResourceGroupName "myResourceGroup" -Location "centralus"
@@ -230,7 +231,7 @@ New-AzVM -VM $vmConfig -ResourceGroupName "myResourceGroup" -Location "centralus
 Сначала остановите виртуальную машину и отмените ее выделение. В случае с группой доступности сделайте это со всеми виртуальными машинами в наборе:
 
 ```azurepowershell
-Stop-AzureRmVM -ResourceGroup "myResourceGroup" `
+Stop-AzVM -ResourceGroup "myResourceGroup" `
     -Name "myVM"
 ```
 
@@ -239,22 +240,22 @@ Stop-AzureRmVM -ResourceGroup "myResourceGroup" `
 После остановки виртуальной машины включите ускоренную сеть в ее сетевом адаптере:
 
 ```azurepowershell
-$nic = Get-AzureRMNetworkInterface -ResourceGroupName "myResourceGroup" `
+$nic = Get-AzNetworkInterface -ResourceGroupName "myResourceGroup" `
     -Name "myNic"
 
 $nic.EnableAcceleratedNetworking = $true
 
-$nic | Set-AzureRMNetworkInterface
+$nic | Set-AzNetworkInterface
 ```
 
-Перезапуск виртуальной Машины или, если в группе доступности все виртуальные машины в наборе и убедитесь, что включено ускорение работы в сети:
+Перезапустите виртуальную машину или выберите в группе доступности все виртуальные машины в наборе и убедитесь, что включена функция ускорения сети.
 
 ```azurepowershell
-Start-AzureRmVM -ResourceGroup "myResourceGroup" `
+Start-AzVM -ResourceGroup "myResourceGroup" `
     -Name "myVM"
 ```
 
-### <a name="vmss"></a>Масштабируемый набор виртуальных машин
+### <a name="vmss"></a>VMSS
 Процедура для масштабируемого набора виртуальных машин немного отличается, но в целом похожа.  Сначала остановите виртуальные машины:
 
 ```azurepowershell

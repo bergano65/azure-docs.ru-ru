@@ -6,14 +6,17 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 09/22/2019
 ms.author: dech
-ms.openlocfilehash: 824a562cb5f0562a235d903fbd4e575bc9c22572
-ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
+ms.openlocfilehash: 22bad3b31b8cbe54900b96bd4b327f18916e81a3
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2019
-ms.locfileid: "71672746"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71677145"
 ---
 # <a name="enable-notebooks-for-azure-cosmos-db-accounts"></a>Включение записных книжек для учетных записей Azure Cosmos DB
+
+> [!IMPORTANT]
+> Встроенные записные книжки для Azure Cosmos DB в настоящее время доступны в следующих регионах Azure: Восточная Австралия, Восточная часть США, Восточная часть США 2, Северная Европа, Юго-Центральная часть США, Юго-Восточная Азия, южная часть Соединенного Королевства, Западная Европа и Западная часть США 2. Чтобы использовать записные книжки, [Создайте новую учетную запись с записными книжками](#enable-notebooks-in-a-new-cosmos-account) или [включите записные книжки для существующей учетной записи](#enable-notebooks-in-an-existing-cosmos-account) в одном из этих регионов.
 
 Встроенные записные книжки Jupyter в Azure Cosmos DB позволяют анализировать и визуализировать данные из портал Azure. В этой статье описывается, как включить эту функцию для учетной записи Azure Cosmos DB.
 
@@ -67,4 +70,3 @@ ms.locfileid: "71672746"
 ## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте о преимуществах [записных книжек Azure Cosmos DB Jupyter](cosmosdb-jupyter-notebooks.md)
-- Сведения об [использовании функций и команд записной книжки](use-notebook-features-and-commands.md)

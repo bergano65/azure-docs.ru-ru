@@ -1,19 +1,19 @@
 ---
 title: Общие сведения о схеме веб-перехватчика, используемой в оповещениях журнала действий
 description: Дополнительные сведения о схеме JSON, отправляемой по URL-адресу веб-перехватчика при активации оповещения журнала действий.
-author: johnkemnetz
+author: rboucher
 services: azure-monitor
 ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 03/31/2017
-ms.author: johnkem
+ms.author: robb
 ms.subservice: alerts
-ms.openlocfilehash: c91c1badaa4b1bc055859d700857cfd4d062babd
-ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
+ms.openlocfilehash: b9ba809baa8fc4adddfad1344d6f36375cb361c4
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67491512"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71675218"
 ---
 # <a name="webhooks-for-azure-activity-log-alerts"></a>Веб-перехватчики для оповещений журнала действий Azure
 В определении группы действий можно настроить конечные точки веб-перехватчика для получения уведомлений об оповещениях журнала действий. С помощью веб-перехватчика можно направлять эти уведомления в другие системы для последующей обработки или выполнения настраиваемых действий. В этой статье показано, как выглядят полезные данные HTTP POST для webhook.
@@ -23,7 +23,7 @@ ms.locfileid: "67491512"
 Сведения о группах действия см. в разделе [Создание групп действий и управление ими на портале Azure](../../azure-monitor/platform/action-groups.md).
 
 > [!NOTE]
-> Можно также использовать [общей схеме оповещений](https://aka.ms/commonAlertSchemaDocs), который предоставляет преимущества размещения одной расширяемой и единой полезных данных оповещения всех оповещений службы в Azure Monitor для интеграции веб-перехватчика. [Дополнительные сведения о стандартные определения оповещений схемы.](https://aka.ms/commonAlertSchemaDefinitions)
+> Вы также можете использовать [общую схему предупреждений](https://aka.ms/commonAlertSchemaDocs), которая предоставляет преимущества единого расширяемого и унифицированного набора полезных данных оповещений во всех службах предупреждений в Azure Monitor для интеграции веб-перехватчика. [Сведения об общих определениях схемы предупреждений.](https://aka.ms/commonAlertSchemaDefinitions)
 
 
 ## <a name="authenticate-the-webhook"></a>Аутентификация веб-перехватчика
@@ -61,7 +61,7 @@ ms.locfileid: "67491512"
 }
 ```
 
-### <a name="administrative"></a>Administrative
+### <a name="administrative"></a>Административная
 
 ```json
 {
@@ -89,7 +89,7 @@ ms.locfileid: "67491512"
 }
 ```
 
-### <a name="security"></a>Безопасность
+### <a name="security"></a>Группа безопасности
 
 ```json
 {
@@ -132,7 +132,7 @@ ms.locfileid: "67491512"
 }
 ```
 
-### <a name="recommendation"></a>Рекомендации
+### <a name="recommendation"></a>Рекомендация
 
 ```json
 {
@@ -260,7 +260,7 @@ ms.locfileid: "67491512"
 
 | Имя элемента | Описание |
 | --- | --- |
-| status |Используется для оповещений на основе метрик. Всегда имеет значение activated для оповещений журнала действий. |
+| Состояние |Используется для оповещений на основе метрик. Всегда имеет значение activated для оповещений журнала действий. |
 | context |Контекст события. |
 | resourceProviderName |Поставщик ресурсов для затронутого ресурса. |
 | conditionType |Всегда имеет значение Event. |
@@ -271,26 +271,26 @@ ms.locfileid: "67491512"
 | timestamp |Время создания события службой Azure, которая обработала запрос. |
 | resourceId |Идентификатор ресурса для затронутого ресурса. |
 | resourceGroupName |Имя группы ресурсов для затронутого ресурса. |
-| properties |Набор пар `<Key, Value>` (например, `Dictionary<String, String>`), содержащий сведения о событии. |
+| свойства |Набор пар `<Key, Value>` (например, `Dictionary<String, String>`), содержащий сведения о событии. |
 | event |Элемент, содержащий метаданные о событии. |
-| authorization |Свойства управления доступом на основе ролей для события. Обычно к ним относятся action, role и scope. |
+| авторизация |Свойства управления доступом на основе ролей для события. Обычно к ним относятся action, role и scope. |
 | category |Категория события. Поддерживаются следующие значения: Administrative, Alert, Security, ServiceHealth, Recommendation. |
-| caller |Адрес электронной почты пользователя, который выполнил операцию, утверждение имени субъекта-службы или имени участника-пользователя в зависимости от доступности. Может иметь значение NULL для определенных системных вызовов. |
+| вызывающая сторона |Адрес электронной почты пользователя, который выполнил операцию, утверждение имени субъекта-службы или имени участника-пользователя в зависимости от доступности. Может иметь значение NULL для определенных системных вызовов. |
 | correlationId |Обычно GUID в строковом формате. События с correlationId относятся к одному крупному действию и обычно совместно используют correlationId. |
 | eventDescription |Статическое описание события в текстовом виде. |
 | eventDataId |Уникальный идентификатор события. |
 | eventSource |Имя инфраструктуры или службы Azure, которая создала событие. |
 | httpRequest |Обычно запрос содержит clientRequestId, clientIpAddress и method (метод HTTP, например PUT). |
-| level |Одно из следующих значений: "Critical" (Критическое), "Error" (Ошибка), "Warning" (Предупреждение) или "Informational" (Информационное). |
+| уровень |Одно из следующих значений: "Critical" (Критическое), "Error" (Ошибка), "Warning" (Предупреждение) или "Informational" (Информационное). |
 | operationId |Обычно события, относящиеся к одной операции, совместно используют один GUID. |
 | operationName |Имя операции. |
-| properties |Свойства события. |
-| status |Строка. Состояние операции. Обычные значения: Started, In Progress, Succeeded, Failed, Active, Resolved. |
+| свойства |Свойства события. |
+| Состояние |Строка. Состояние операции. Обычные значения: Started, In Progress, Succeeded, Failed, Active, Resolved. |
 | subStatus |Обычно содержит код состояния HTTP для соответствующего вызова REST. Может также включать другие строки, описывающие подсостояние. Обычные значения подсостояния: OK (код состояния HTTP: 200), Created (Создано) (код состояния HTTP: 201), Accepted (Принято) (код состояния HTTP: 202), No Content (Нет содержимого) (код состояния HTTP: 204), Bad Request (Недопустимый запрос) (код состояния HTTP: 400), Not Found (Не найдено) (код состояния HTTP: 404), Conflict (Конфликт) (код состояния HTTP: 409), Internal Server Error (Внутренняя ошибка сервера) (код состояния HTTP: 500), Service Unavailable (Служба недоступна) (код состояния HTTP: 503) и Gateway Timeout (Истекло время ожидания шлюза) (код состояния HTTP: 504). |
 
 Сведения о схеме для остальных оповещений журнала действий см. в статье [Мониторинг действий подписки с помощью журнала действий Azure](../../azure-monitor/platform/activity-logs-overview.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Мониторинг действий подписки с помощью журнала действий Azure](../../azure-monitor/platform/activity-logs-overview.md).
 * [Using Azure Automation to take action on Azure Alerts](https://go.microsoft.com/fwlink/?LinkId=627081) (Использование службы автоматизации Azure для выполнения действий по уведомлениям Azure).
 * [Logic app that sends a text message when an alert fires](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-text-message-with-logic-app) (Приложение логики, которое отправляет текстовое сообщение при возникновении предупреждения). Это пример для оповещений на основе метрик, но его можно изменить для работы с оповещениями журнала действий.

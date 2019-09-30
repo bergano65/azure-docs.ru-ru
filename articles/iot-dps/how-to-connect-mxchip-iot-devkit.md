@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 manager: jeffya
-ms.openlocfilehash: b1aac19885e2b640063e4840f047916ad51e9656
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 2731bbcd6a6b0c8f7d82334c022c017d5eae35f0
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68855745"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71677018"
 ---
 # <a name="use-azure-iot-hub-device-provisioning-service-auto-provisioning-to-register-the-mxchip-iot-devkit-with-iot-hub"></a>Использование автоподготовки в службе подготовки устройств к добавлению в Центр Интернета вещей Azure для регистрации MXChip IoT DevKit в Центре Интернета вещей
 
@@ -30,7 +30,7 @@ ms.locfileid: "68855745"
 
 Для работы с этим руководством сначала следует выполнить следующие задачи:
 
-* Настройте Wi-Fi для DevKit и подготовьте среду разработки, следуя указаниям в разделе "Подготовка среды разработки" статьи [Подключение к центру Интернета вещей Azure AZ3166](/azure/iot-hub/iot-hub-arduino-iot-devkit-az3166-get-started#prepare-the-development-environment)в облаке.
+* Настройте Wi-Fi для DevKit и подготовьте среду разработки, следуя указаниям в разделе "Подготовка среды разработки" статьи [Подключение к центру Интернета вещей Azure AZ3166 в облаке](/azure/iot-hub/iot-hub-arduino-iot-devkit-az3166-get-started#prepare-the-development-environment).
 * Обновите новейшее встроенное ПО до версии 1.3.0 или более новой, воспользовавшись руководством по [обновлению встроенного ПО DevKit](https://microsoft.github.io/azure-iot-developer-kit/docs/firmware-upgrading/).
 * Создайте и свяжите Центр Интернета вещей с экземпляром службы подготовки устройств, следуя шагам из руководства [Настройка службы подготовки устройств для Центра Интернета вещей на портале Azure](/azure/iot-dps/quick-setup-auto-provision).
 
@@ -91,9 +91,6 @@ ms.locfileid: "68855745"
 ## <a name="generate-x509-certificate"></a>Создание сертификата X.509
 
 [Механизма аттестации](/azure/iot-dps/concepts-device#attestation-mechanism), используемый в этом примере, — сертификат X.509. Необходимо использовать программу для его создания.
-
-> [!NOTE]
-> Генератор сертификатов X.509 сейчас поддерживает только Windows.
 
 1. В VS Code щелкните `F1`, введите и выберите **Открыть новый терминал**, чтобы открыть окно терминала.
 

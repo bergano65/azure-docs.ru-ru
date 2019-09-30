@@ -9,18 +9,18 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 05/07/2019
+ms.date: 09/27/2019
 ms.author: diberry
-ms.openlocfilehash: c4e83ed15c2b15ccb3339ff775b08c8d2dab4c32
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 4f46efaeddb0bfe789ef752abdd133c14da514da
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68932519"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71677695"
 ---
 # <a name="datetimev2-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность datetimeV2 для приложения LUIS
 
-Предварительно созданная сущность **datetimeV2** извлекает значения даты и времени. Эти значения имеют стандартный формат, за счет чего их могут использовать клиентские программы. Если во фразе указана неполная дата или время, LUIS возвращает в ответе конечной точки _прошедшие и будущие значения_ . Так как эта сущность уже обучена, добавлять примеры фраз, содержащие сущность datetimeV2 в приложение, не нужно. 
+Предварительно созданная сущность **datetimeV2** извлекает значения даты и времени. Эти значения имеют стандартный формат, за счет чего их могут использовать клиентские программы. Если во фразе указана неполная дата или время, LUIS возвращает в ответе конечной точки _прошедшие и будущие значения_. Так как эта сущность уже обучена, добавлять примеры фраз, содержащие сущность datetimeV2 в приложение, не нужно. 
 
 ## <a name="types-of-datetimev2"></a>Типы сущностей datetimeV2
 Управление сущностью datetimeV2 выполняется из репозитория GitHub [Recognizers-text](https://github.com/Microsoft/Recognizers-Text/blob/master/Patterns/English/English-DateTime.yaml).
@@ -82,7 +82,7 @@ ms.locfileid: "68932519"
 |Имя свойства|Описание свойства|
 |--|--|
 |timex|Время, дата или диапазон дат, выраженные в формате TIMEX, который соответствует [стандарту ISO 8601](https://en.wikipedia.org/wiki/ISO_8601), и в атрибутах TIMEX3 заметки с помощью языка TimeML. Эта заметка описана в [рекомендациях TIMEX](http://www.timeml.org/tempeval2/tempeval2-trial/guidelines/timex3guidelines-072009.pdf).|
-|type|Подтип может иметь один из следующих элементов: `datetime`, `date`, `time`, `daterange` `datetimerange` `timerange`,,, `duration`, `set`.|
+|type|Подтип может иметь один из следующих элементов: `datetime`, `date`, `time`, `daterange`, `timerange`, `datetimerange`, `duration`, `set`.|
 |value|**Необязательный параметр.** Объект datetime в формате гггг:ММ:дд (дата), ЧЧ:мм:сс (время) гггг:ММ:дд ЧЧ:мм:сс (дата и время). Если свойство `type` имеет значение `duration`, в качестве значения указывается количество секунд (длительность). <br/> Используется, только если свойство `type` имеет значение `datetime` или `date`, `time` или `duration.|
 
 ## <a name="valid-date-values"></a>Допустимые значения даты
@@ -185,6 +185,8 @@ ms.locfileid: "68932519"
 
 В следующем примере показано, как с помощью сущности **datetimeV2** LUIS обрабатывает фразу с диапазон времени.
 
+#### <a name="v2-prediction-endpoint-responsetabv2"></a>[Ответ конечной точки прогнозирования v2](#tab/V2)
+
 ```json
   "entities": [
     {
@@ -206,15 +208,15 @@ ms.locfileid: "68932519"
   ]
 ```
 
-## <a name="preview-api-version-3x"></a>Предварительная версия API версии 3. x
+#### <a name="v3-prediction-endpoint-responsetabv3"></a>[V3 прогнозирование ответа конечной точки](#tab/V3)
 
 В API V3 изменен ответ DatetimeV2 JSON. 
 
 Изменения из API версии 2:
-* `datetimeV2.timex.type`свойство больше не возвращается, так как оно возвращается на родительском уровне, `datetimev2.type`. 
-* Свойство было переименовано в `datetimeV2.value`. `datetimeV2.timex`
+* Свойство `datetimeV2.timex.type` больше не возвращается, так как оно возвращается на родительском уровне, `datetimev2.type`. 
+* Свойство `datetimeV2.timex` было переименовано в `datetimeV2.value`.
 
-Для utterance `8am on may 2nd 2017`версия DatetimeV2 версии 3 имеет следующие преимущества:
+Для utterance, `8am on may 2nd 2017`, Версия V3 DatetimeV2:
 
 ```JSON
 {
@@ -244,7 +246,7 @@ ms.locfileid: "68932519"
 }
 ```
 
-Следующий код JSON имеет `verbose` параметр со `false`значением:
+Следующий код JSON относится к параметру `verbose`, для которого задано значение `false`:
 
 ```json
 {
@@ -289,6 +291,9 @@ ms.locfileid: "68932519"
 }
 ```
 
+
+* * * 
+
 ## <a name="deprecated-prebuilt-datetime"></a>Устаревшая предварительно созданная сущность datetime
 
 Устаревшая предварительно созданная сущность `datetime` заменяется сущностью **datetimeV2**. 
@@ -301,6 +306,8 @@ ms.locfileid: "68932519"
 4. Выберите **datetimeV2** и нажмите кнопку **Сохранить**.
 
 ## <a name="next-steps"></a>Следующие шаги
+
+Дополнительные сведения о [конечной точке прогнозирования v3](luis-migration-api-v3.md).
 
 Узнайте больше о сущностях [dimension](luis-reference-prebuilt-dimension.md), [email](luis-reference-prebuilt-email.md) и [number](luis-reference-prebuilt-number.md). 
 

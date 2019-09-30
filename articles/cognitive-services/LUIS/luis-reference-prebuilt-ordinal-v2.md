@@ -9,23 +9,23 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 06/25/2019
+ms.date: 09/27/2019
 ms.author: diberry
-ms.openlocfilehash: 1579c50f2dcf78e350ce014ffb1516cec4ac85b3
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 48dcbd51190e747859f0172473c94b0caa296071
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68933488"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71677553"
 ---
 # <a name="ordinal-v2-prebuilt-entity-for-a-luis-app"></a>Порядковый номер V2 предварительно созданной сущности для приложения LUIS
-Порядковый номер V2 расширяет [порядковый](luis-reference-prebuilt-ordinal.md) номер для предоставления относительных `last`ссылок, `previous`таких как `next`, и. Они не извлекаются с использованием порядкового номера предварительно построенной сущности.
+Порядковый номер V2 расширяет [порядковый](luis-reference-prebuilt-ordinal.md) номер для предоставления относительных ссылок, таких как `next`, `last` и `previous`. Они не извлекаются с использованием порядкового номера предварительно построенной сущности.
 
 ## <a name="resolution-for-prebuilt-ordinal-v2-entity"></a>Разрешение для предварительно построенной сущности с порядковым номером v2
 
-### <a name="api-version-2x"></a>API версии 2. x
+#### <a name="v2-prediction-endpoint-responsetabv2"></a>[Ответ конечной точки прогнозирования v2](#tab/V2)
 
-В следующем примере показано разрешение встроенной сущности **. ordinalV2** .
+В следующем примере показано разрешение **встроенной сущности. ordinalV2** .
 
 ```json
 {
@@ -55,9 +55,9 @@ ms.locfileid: "68933488"
 }
 ```
 
-### <a name="preview-api-version-3x"></a>Предварительная версия API версии 3. x
+#### <a name="v3-prediction-endpoint-responsetabv3"></a>[V3 прогнозирование ответа конечной точки](#tab/V3)
 
-Следующий код JSON имеет `verbose` параметр со `false`значением:
+Следующий код JSON относится к параметру `verbose`, для которого задано значение `false`:
 
 ```json
 {
@@ -82,7 +82,7 @@ ms.locfileid: "68933488"
 }
 ```
 
-Следующий код JSON имеет `verbose` параметр со `true`значением:
+Следующий код JSON относится к параметру `verbose`, для которого задано значение `true`:
 
 ```json
 {
@@ -122,6 +122,10 @@ ms.locfileid: "68933488"
 }
 ```
 
+* * * 
+
 ## <a name="next-steps"></a>Следующие шаги
+
+Дополнительные сведения о [конечной точке прогнозирования v3](luis-migration-api-v3.md).
 
 Сведения о [процентах](luis-reference-prebuilt-percentage.md), [номере телефона](luis-reference-prebuilt-phonenumber.md)и [температуре](luis-reference-prebuilt-temperature.md) . 

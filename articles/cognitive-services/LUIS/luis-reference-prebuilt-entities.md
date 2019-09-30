@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 06/25/2019
+ms.date: 09/27/2019
 ms.author: diberry
-ms.openlocfilehash: 0d77622e22c297cc29c93a5421da5043e396b929
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 66cdedb402392340d38ab9a72f6f19012c359664
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68933575"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71677628"
 ---
 # <a name="entities-per-culture-in-your-luis-model"></a>Сущности для языков и региональных параметров в модели LUIS
 
@@ -42,7 +42,7 @@ ms.locfileid: "68933575"
 
 |Предварительно созданная сущность|```zh-CN``` |
 ------|:------:|
-[Age](luis-reference-prebuilt-age.md):<br>год<br>месяц<br>week<br>день   |    ✔   |
+[Age](luis-reference-prebuilt-age.md):<br>year<br>месяц<br>week<br>day   |    ✔   |
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    ✔   |
 [DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>date<br>daterange<br>time<br>timerange   |    ✔   | 
 [Dimension](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    ✔   | 
@@ -64,7 +64,7 @@ ms.locfileid: "68933575"
 
 |Предварительно созданная сущность|```nl-NL``` |
 ------|:------:|
-[Age](luis-reference-prebuilt-age.md):<br>год<br>месяц<br>week<br>день   |    ✔   |
+[Age](luis-reference-prebuilt-age.md):<br>year<br>месяц<br>week<br>day   |    ✔   |
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    ✔   |
 [DateTime](luis-reference-prebuilt-deprecated.md)   |    -   | 
 [Dimension](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    ✔   | 
@@ -86,7 +86,7 @@ ms.locfileid: "68933575"
 
 |Предварительно созданная сущность|```en-US``` |
 ------|:------:|
-[Age](luis-reference-prebuilt-age.md):<br>год<br>месяц<br>week<br>день   |    ✔   |
+[Age](luis-reference-prebuilt-age.md):<br>year<br>месяц<br>week<br>day   |    ✔   |
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    ✔   |
 [DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>date<br>daterange<br>time<br>timerange   |    ✔   | 
 [Dimension](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    ✔   | 
@@ -108,7 +108,7 @@ ms.locfileid: "68933575"
 
 |Предварительно созданная сущность|```fr-FR``` |
 ------|:------:|
-[Age](luis-reference-prebuilt-age.md):<br>год<br>месяц<br>week<br>день   |    ✔   |
+[Age](luis-reference-prebuilt-age.md):<br>year<br>месяц<br>week<br>day   |    ✔   |
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    ✔   |
 [DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>date<br>daterange<br>time<br>timerange   |    ✔   | 
 [Dimension](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    ✔   | 
@@ -130,7 +130,7 @@ ms.locfileid: "68933575"
 
 |Предварительно созданная сущность|```fr-CA``` |
 ------|:------:|
-[Age](luis-reference-prebuilt-age.md):<br>год<br>месяц<br>week<br>день   |    ✔   |
+[Age](luis-reference-prebuilt-age.md):<br>year<br>месяц<br>week<br>day   |    ✔   |
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    ✔   |
 [DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>date<br>daterange<br>time<br>timerange   |    ✔   | 
 [Dimension](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    ✔   | 
@@ -152,7 +152,7 @@ ms.locfileid: "68933575"
 
 |Предварительно созданная сущность|```de-DE``` |
 ------|:------:|
-[Age](luis-reference-prebuilt-age.md):<br>год<br>месяц<br>week<br>день   |    ✔   |
+[Age](luis-reference-prebuilt-age.md):<br>year<br>месяц<br>week<br>day   |    ✔   |
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    ✔   |
 [DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>date<br>daterange<br>time<br>timerange   |    ✔   | 
 [Dimension](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    ✔   | 
@@ -174,7 +174,7 @@ ms.locfileid: "68933575"
 
 |Предварительно созданная сущность|```it-IT``` |
 ------|:------:|
-[Age](luis-reference-prebuilt-age.md):<br>год<br>месяц<br>week<br>день   |    ✔   |
+[Age](luis-reference-prebuilt-age.md):<br>year<br>месяц<br>week<br>day   |    ✔   |
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    ✔   |
 [DateTime](luis-reference-prebuilt-deprecated.md)   |    -   | 
 [Dimension](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    ✔   | 
@@ -196,7 +196,7 @@ ms.locfileid: "68933575"
 
 |Предварительно созданная сущность|```ja-JP``` |
 ------|:------:|
-[Age](luis-reference-prebuilt-age.md):<br>год<br>месяц<br>week<br>день   |    ✔   |
+[Age](luis-reference-prebuilt-age.md):<br>year<br>месяц<br>week<br>day   |    ✔   |
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    ✔   |
 [DateTime](luis-reference-prebuilt-deprecated.md)   |    -   | 
 [Dimension](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    ✔   | 
@@ -218,7 +218,7 @@ ms.locfileid: "68933575"
 
 |Предварительно созданная сущность|```ko-KR``` |
 ------|:------:|
-[Age](luis-reference-prebuilt-age.md):<br>год<br>месяц<br>week<br>день   |    -   |
+[Age](luis-reference-prebuilt-age.md):<br>year<br>месяц<br>week<br>day   |    -   |
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    -   |
 [DateTime](luis-reference-prebuilt-deprecated.md)   |    -   | 
 [Dimension](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    -   | 
@@ -240,7 +240,7 @@ ms.locfileid: "68933575"
 
 |Предварительно созданная сущность|```pt-BR``` |
 ------|:------:|
-[Age](luis-reference-prebuilt-age.md):<br>год<br>месяц<br>week<br>день   |    ✔   |
+[Age](luis-reference-prebuilt-age.md):<br>year<br>месяц<br>week<br>day   |    ✔   |
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    ✔   |
 [DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>date<br>daterange<br>time<br>timerange   |    ✔   | 
 [Dimension](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    ✔   | 
@@ -262,7 +262,7 @@ ms.locfileid: "68933575"
 
 |Предварительно созданная сущность|```es-ES``` |
 ------|:------:|
-[Age](luis-reference-prebuilt-age.md):<br>год<br>месяц<br>week<br>день   |    ✔   |
+[Age](luis-reference-prebuilt-age.md):<br>year<br>месяц<br>week<br>day   |    ✔   |
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    ✔   |
 [DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>date<br>daterange<br>time<br>timerange   |    ✔   | 
 [Dimension](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    ✔   | 
@@ -284,7 +284,7 @@ ms.locfileid: "68933575"
 
 |Предварительно созданная сущность|```es-MX``` |
 ------|:------:|
-[Age](luis-reference-prebuilt-age.md):<br>год<br>месяц<br>week<br>день   |    -   |
+[Age](luis-reference-prebuilt-age.md):<br>year<br>месяц<br>week<br>day   |    -   |
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    -   |
 [DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>date<br>daterange<br>time<br>timerange   |    -   | 
 [Dimension](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    -   | 

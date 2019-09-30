@@ -1,5 +1,5 @@
 ---
-title: Настройка метода балансировки нагрузки для предварительной версии виртуальных рабочих столов Windows — Azure
+title: Настройка метода балансировки нагрузки виртуальных рабочих столов Windows — Azure
 description: Настройка метода балансировки нагрузки для среды виртуальных рабочих столов Windows.
 services: virtual-desktop
 author: Heidilohr
@@ -7,16 +7,16 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 08/29/2019
 ms.author: helohr
-ms.openlocfilehash: e1f1ea10dc68e501cfac7ef0cf0383ce78e8f380
-ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
+ms.openlocfilehash: 3a940dbf592087878cb9dd19f856f1a3d94291c5
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70163769"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71676775"
 ---
-# <a name="configure-the-windows-virtual-desktop-preview-load-balancing-method"></a>Настройка метода балансировки нагрузки для предварительной версии виртуальных рабочих столов Windows
+# <a name="configure-the-windows-virtual-desktop-load-balancing-method"></a>Настройка метода балансировки нагрузки Виртуального рабочего стола Windows
 
-Настройка метода балансировки нагрузки для пула узлов позволяет настроить среду предварительной версии виртуальных рабочих столов Windows в соответствии с вашими потребностями.
+Настройка метода балансировки нагрузки для пула узлов позволяет настроить среду виртуальных рабочих столов Windows в соответствии с вашими потребностями.
 
 >[!NOTE]
 > Это не относится к пулу узлов постоянного рабочего стола, так как пользователи всегда имеют сопоставление 1:1 с узлом сеанса в пуле узлов.

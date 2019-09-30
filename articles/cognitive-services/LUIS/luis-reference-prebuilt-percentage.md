@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 05/07/2019
+ms.date: 09/27/2019
 ms.author: diberry
-ms.openlocfilehash: 06dada1633fcb90153358e0f1d048c5fa618db0b
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 0005d679819f7516e1ded6294030cd42813e085f
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68933430"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71677533"
 ---
 # <a name="percentage-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность percentage для приложения LUIS
 Процентное соотношение может выражаться в виде дроби (`3 1/2`) или в процентах (`2%`). Так как эта сущность уже обучена, добавлять в назначения приложения примеры фраз, содержащие сущности percentage, не нужно. Сущность percentage поддерживается во [многих языках и региональных параметрах](luis-reference-prebuilt-entities.md). 
@@ -26,7 +26,7 @@ ms.locfileid: "68933430"
 
 ## <a name="resolution-for-prebuilt-percentage-entity"></a>Разрешение для предварительно созданной сущности percentage
 
-### <a name="api-version-2x"></a>API версии 2. x
+#### <a name="v2-prediction-endpoint-responsetabv2"></a>[Ответ конечной точки прогнозирования v2](#tab/V2)
 
 В следующем примере показано разрешение сущности **builtin.percentage**.
 
@@ -57,9 +57,9 @@ ms.locfileid: "68933430"
 }
 ```
 
-### <a name="preview-api-version-3x"></a>Предварительная версия API версии 3. x
+#### <a name="v3-prediction-endpoint-responsetabv3"></a>[V3 прогнозирование ответа конечной точки](#tab/V3)
 
-Следующий код JSON имеет `verbose` параметр со `false`значением:
+Следующий код JSON относится к параметру `verbose`, для которого задано значение `false`:
 
 ```json
 {
@@ -81,7 +81,7 @@ ms.locfileid: "68933430"
 }
 ```
 
-Следующий код JSON имеет `verbose` параметр со `true`значением:
+Следующий код JSON относится к параметру `verbose`, для которого задано значение `true`:
 
 ```json
 {
@@ -115,6 +115,10 @@ ms.locfileid: "68933430"
 }
 ```
 
+* * * 
+
 ## <a name="next-steps"></a>Следующие шаги
+
+Дополнительные сведения о [конечной точке прогнозирования v3](luis-migration-api-v3.md).
 
 Дополнительные сведения о сущностях [порядковый номер](luis-reference-prebuilt-ordinal.md), [номер](luis-reference-prebuilt-number.md) и [температура](luis-reference-prebuilt-temperature.md). 

@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 06/25/2019
 ms.author: wesmc
-ms.openlocfilehash: e4379c38d90f444102a9bbddbae64a8018defcf8
-ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
+ms.openlocfilehash: e8a186fbcb04dc29fcf57a2353adcf89ce46b119
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70844567"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71677939"
 ---
 # <a name="connect-iot-devkit-az3166-to-azure-iot-hub"></a>Подключение платы IoT DevKit AZ3166 к Центру Интернета вещей Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "70844567"
 
 У вас еще нет платы DevKit? Воспользуйтесь [симулятором платы DevKit](https://azure-samples.github.io/iot-devkit-web-simulator/) или [приобретите ее](https://aka.ms/iot-devkit-purchase).
 
-Исходный код для всех руководств по DevKit можно найти в репозитории [иотдевенвексамплес](https://github.com/IoTDevEnvExamples) .
+Исходный код для всех руководств DevKit можно найти в [коллекции примеров кода](https://docs.microsoft.com/samples/browse/?term=mxchip).
 
 ## <a name="what-you-need"></a>Необходимые элементы
 
@@ -355,7 +355,7 @@ IoT DevKit содержит обширную галерею примеров, к
 
 Чтобы увидеть, как телеметрические данные устройства отправляются в центр Интернета `utility.cpp` вещей Azure, откройте файл в той же папке. Ознакомьтесь со [справочником по API](https://microsoft.github.io/azure-iot-developer-kit/docs/apis/arduino-language-reference/) , чтобы узнать, как использовать датчики и периферийные устройства в IOT DevKit.
 
-Используется оболочка iothub_client из [пакетов SDK и библиотек Microsoft Azure IOT для C](https://github.com/Azure/azure-iot-sdk-c/tree/master/iothub_client) для взаимодействия с центром Интернета вещей Azure. `DevKitMQTTClient`
+@No__t-0 — это оболочка **iothub_client** из [пакетов sdk и библиотек Microsoft Azure IOT для C](https://github.com/Azure/azure-iot-sdk-c/tree/master/iothub_client) для взаимодействия с центром Интернета вещей Azure.
 
 ## <a name="problems-and-feedback"></a>Проблемы и обратная связь
 

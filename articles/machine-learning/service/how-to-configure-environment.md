@@ -11,12 +11,12 @@ ms.reviewer: larryfr
 ms.topic: conceptual
 ms.date: 07/31/2019
 ms.custom: seodec18
-ms.openlocfilehash: 0bd4b1d969de0b54a1836048b5cb5910470f1ffa
-ms.sourcegitcommit: 263a69b70949099457620037c988dc590d7c7854
+ms.openlocfilehash: b4d7a21e8d9b660463f508513c158032be81a35c
+ms.sourcegitcommit: 6013bacd83a4ac8a464de34ab3d1c976077425c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71269224"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71686968"
 ---
 # <a name="configure-a-development-environment-for-azure-machine-learning"></a>Настройка среды разработки для Машинного обучения Azure
 
@@ -188,7 +188,7 @@ DSVM — это настраиваемый образ виртуальной м
     Эта команда устанавливает базовый пакет SDK машинное обучение Azure с записной `automl` книжкой и дополнительными данными. Это `automl` очень большая установка, и ее можно удалить из квадратных скобок, если вы не планируете выполнять автоматические эксперименты машинного обучения. `automl` Дополнительный пакет также включает в себя машинное обучение Azure пакета SDK для подготовки данных по умолчанию в качестве зависимости.
 
     ```shell
-    pip install azureml-sdk[notebooks, automl]
+    pip install azureml-sdk[notebooks,automl]
     ```
 
    > [!NOTE]

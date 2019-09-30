@@ -1,5 +1,5 @@
 ---
-title: Подключение к предварительной версии виртуальных рабочих столов Windows из веб-браузера — Azure
+title: Подключение к виртуальному рабочему столу Windows из веб-браузера — Azure
 description: Как подключиться к виртуальному рабочему столу Windows с помощью веб-клиента.
 services: virtual-desktop
 author: Heidilohr
@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.author: helohr
-ms.openlocfilehash: 961eb98bed712e3dde1b1e7ed2ec997e8992e600
-ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
+ms.openlocfilehash: e7fa1d2b21bfde6495a63676bc2aa1faa07e6bc5
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71338673"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71676754"
 ---
 # <a name="connect-with-the-web-client"></a>Подключение к веб-клиенту
 

@@ -15,12 +15,12 @@ ms.date: 07/23/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e7b731c9936ab85b19428687330044a46c563c49
-ms.sourcegitcommit: 263a69b70949099457620037c988dc590d7c7854
+ms.openlocfilehash: 168fbb275f70acd229dfd8f2e3f0d4c325db0f94
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71268368"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71678020"
 ---
 # <a name="mobile-app-that-calls-web-apis---code-configuration"></a>Мобильное приложение, вызывающее веб-API — конфигурация кода
 
@@ -155,9 +155,13 @@ var pca = PublicClientApplicationBuilder
 - Идентификация устройства. Включает политики условного доступа, связанные с устройствами Azure AD, путем доступа к сертификату устройства, созданному на устройстве при присоединении к рабочей области.
 - Проверка идентификации приложения. Когда приложение вызывает брокер, ему передается URL-адрес перенаправления, и брокер проверяет его.
 
-### <a name="enable-the-brokers-on-xamarin"></a>Включение брокеров в Xamarin
+### <a name="enable-the-broker-on-xamarin"></a>Включение брокера в Xamarin
 
 Чтобы включить одну из этих функций, используйте `WithBroker()` параметр при `PublicClientApplicationBuilder.CreateApplication` вызове метода. `.WithBroker()`по умолчанию имеет значение true. Выполните следующие действия для [Xamarin. iOS](#brokered-authentication-for-xamarinios).
+
+### <a name="enable-the-broker-for-msal-for-android"></a>Включение брокера для MSAL для Android
+
+Сведения о включении брокера в Android см. [в разделе Проверка подлинности через посредник в Android](brokered-auth.md) . 
 
 ### <a name="enable-the-broker-for-msal-for-ios-and-macos"></a>Включение брокера для MSAL для iOS и macOS
 

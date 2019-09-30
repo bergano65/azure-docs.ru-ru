@@ -1,19 +1,19 @@
 ---
 title: Действия веб-перехватчика для оповещений журнала в оповещениях Azure
 description: В этой статье описывается, как создать правило генерации оповещений журнала с помощью Log Analytics рабочей области или Application Insights, как оповещение отправляет данные в виде веб-перехватчика HTTP, а также сведения о различных возможных настройках.
-author: msvijayn
+author: yanivlavi
 services: monitoring
 ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 06/25/2019
-ms.author: vinagara
+ms.author: yalavi
 ms.subservice: alerts
-ms.openlocfilehash: 8bdd0d5230feeeb4c80775ce63aa7e4eaccb601c
-ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
+ms.openlocfilehash: 3e29bdf41b0421aa4461b11fbf9bc0535179486d
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68226789"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71677768"
 ---
 # <a name="webhook-actions-for-log-alert-rules"></a>Действия веб-перехватчика для правил оповещений журнала
 При [создании оповещения журнала в Azure](alerts-log.md)можно [настроить его с помощью групп действий](action-groups.md) для выполнения одного или нескольких действий. В этой статье описаны различные действия веб-перехватчика, а также показано, как настроить пользовательский интерфейс, основанный на JSON.

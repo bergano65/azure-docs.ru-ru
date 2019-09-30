@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 414dc4e69fda8ccd79b5a48b19bccee35bd11a45
-ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
+ms.openlocfilehash: 2f3eb2c0071eecb20bbf5616a01c80e55645207a
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71063707"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71678142"
 ---
 # <a name="configure-the-resource-owner-password-credentials-flow-in-azure-active-directory-b2c-using-a-custom-policy"></a>Настройка потока учетных данных пароля владельца ресурса в Azure Active Directory B2C с помощью пользовательской политики
 
@@ -41,14 +41,7 @@ ms.locfileid: "71063707"
 
 ## <a name="register-an-application"></a>Регистрация приложения
 
-1. Войдите на [портале Azure](https://portal.azure.com/).
-2. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C, выбрав фильтр " **каталог и подписка** " в верхнем меню и выбрав Каталог, содержащий ваш клиент.
-3. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
-4. Щелкните **Приложения**, а затем выберите **Добавить**.
-5. Укажите имя приложения, например *ROPC_Auth_app*.
-6. Выберите значение **Нет** для параметра **Веб-приложение или веб-интерфейс API** и значение **Да** для параметра **Собственный клиент**.
-7. Не меняя остальные значения, нажмите кнопку **Создать**.
-8. Выберите новое приложение и запишите идентификатор приложения для дальнейшего использования.
+[!INCLUDE [active-directory-b2c-appreg-ropc](../../includes/active-directory-b2c-appreg-ropc.md)]
 
 ##  <a name="create-a-resource-owner-policy"></a>Создание политики владельца ресурса
 
@@ -272,7 +265,7 @@ ms.locfileid: "71063707"
 | username | `user-account` |
 | password | `password1` |
 | grant_type | password |
-| область | openid `application-id` offline_access |
+| scope | openid `application-id` offline_access |
 | client_id | `application-id` |
 | response_type | token id_token |
 
@@ -317,7 +310,7 @@ username=contosouser.outlook.com.ws&password=Passxword1&grant_type=password&scop
 | grant_type | refresh_token |
 | response_type | id_token |
 | client_id | `application-id` |
-| ресурс | `application-id` |
+| resource | `application-id` |
 | refresh_token | `refresh-token` |
 
 - Замените `application-id` на идентификатор приложения из регистрации *ROPC_Auth_app*.

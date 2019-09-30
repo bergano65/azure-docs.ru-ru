@@ -11,12 +11,12 @@ author: VanMSFT
 ms.author: vanto
 ms.reviewer: carlrab
 ms.date: 03/12/2019
-ms.openlocfilehash: cebf5e80ea59a29efed984097a4157f5238fad5c
-ms.sourcegitcommit: 86d49daccdab383331fc4072b2b761876b73510e
+ms.openlocfilehash: e3e65a6deadfbcad563a6b64c0a9f48182cdd571
+ms.sourcegitcommit: 6013bacd83a4ac8a464de34ab3d1c976077425c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70744981"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71686467"
 ---
 # <a name="azure-sql-database-and-azure-sql-data-warehouse-ip-firewall-rules"></a>Правила брандмауэра IP-адресов для базы данных SQL Azure и хранилища данных SQL Azure
 
@@ -38,7 +38,7 @@ ms.locfileid: "70744981"
 
 ### <a name="server-level-ip-firewall-rules"></a>Правила брандмауэра для IP-адресов на уровне сервера
 
-  Эти правила разрешают клиентам доступ ко всему серверу Azure SQL Server, то есть ко всем базам данных на одном сервере Базы данных SQL. Правила хранятся в базе данных *master* .
+  Эти правила разрешают клиентам доступ ко всему серверу Azure SQL Server, то есть ко всем базам данных на одном сервере Базы данных SQL. Правила хранятся в базе данных *master* . Вы можете использовать не более 128 правил брандмауэра IP на уровне сервера для SQL Server Azure.
   
   Правила брандмауэра IP на уровне сервера можно настроить с помощью инструкций портал Azure, PowerShell или Transact-SQL.
   - Чтобы использовать портал или PowerShell, необходимо быть владельцем подписки или участником подписки.

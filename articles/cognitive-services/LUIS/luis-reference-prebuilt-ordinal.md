@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 06/25/2019
+ms.date: 09/27/2019
 ms.author: diberry
-ms.openlocfilehash: 51f1082034a710ed9d0f78b79bc6ae469771459e
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: d1d69b256c4fc7e7b9d1c84b7c409d01a9f8ce52
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68933464"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71677545"
 ---
 # <a name="ordinal-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность ordinal для приложения LUIS
 Порядковый номер — это числовое представление объекта внутри набора: `first`, `second`, `third`. Так как эта сущность уже обучена, добавлять в назначения приложения примеры фраз, содержащие сущности ordinal, не нужно. Сущность ordinal поддерживается во [многих языках и региональных параметрах](luis-reference-prebuilt-entities.md). 
@@ -26,7 +26,7 @@ ms.locfileid: "68933464"
 
 ## <a name="resolution-for-prebuilt-ordinal-entity"></a>Разрешение для предварительно созданной сущности ordinal
 
-### <a name="api-version-2x"></a>API версии 2. x
+#### <a name="v2-prediction-endpoint-responsetabv2"></a>[Ответ конечной точки прогнозирования v2](#tab/V2)
 
 В следующем примере показано разрешение сущности **builtin.ordinal**.
 
@@ -61,9 +61,9 @@ ms.locfileid: "68933464"
 }
 ```
 
-### <a name="preview-api-version-3x"></a>Предварительная версия API версии 3. x
+#### <a name="v3-prediction-endpoint-responsetabv3"></a>[V3 прогнозирование ответа конечной точки](#tab/V3)
 
-Следующий код JSON имеет `verbose` параметр со `false`значением:
+Следующий код JSON относится к параметру `verbose`, для которого задано значение `false`:
 
 ```json
 {
@@ -88,7 +88,7 @@ ms.locfileid: "68933464"
 }
 ```
 
-Следующий код JSON имеет `verbose` параметр со `true`значением:
+Следующий код JSON относится к параметру `verbose`, для которого задано значение `true`:
 
 ```json
 {
@@ -128,6 +128,10 @@ ms.locfileid: "68933464"
 }
 ```
 
+* * * 
+
 ## <a name="next-steps"></a>Следующие шаги
+
+Дополнительные сведения о [конечной точке прогнозирования v3](luis-migration-api-v3.md).
 
 Сведения о [OrdinalV2](luis-reference-prebuilt-ordinal-v2.md), [номере телефона](luis-reference-prebuilt-phonenumber.md)и [температуре](luis-reference-prebuilt-temperature.md) . 

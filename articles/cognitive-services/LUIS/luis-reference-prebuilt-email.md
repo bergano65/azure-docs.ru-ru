@@ -9,27 +9,27 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 05/07/2019
+ms.date: 09/27/2019
 ms.author: diberry
-ms.openlocfilehash: 542173a8756b868603c606307c5b682c68d7db25
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 4a1bc9ae7ccf48b9dc8b47b57ea43b9259786d01
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68933551"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71677684"
 ---
 # <a name="email-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность email для приложения LUIS
 При извлечении сущности email из фразы извлекается полный адрес электронной почты. Так как эта сущность уже обучена, добавлять в назначения приложения примеры фраз, содержащие адреса электронной почты, не нужно. Сущность email поддерживается только в `en-us` язычных и региональных параметрах. 
 
 ## <a name="resolution-for-prebuilt-email"></a>Разрешение для предварительно созданной сущности email
 
-### <a name="api-version-2x"></a>API версии 2. x
+#### <a name="v2-prediction-endpoint-responsetabv2"></a>[Ответ конечной точки прогнозирования v2](#tab/V2)
 
 В следующем примере показано разрешение сущности **builtin.email**.
 
 ```json
 {
-  "query": "please send the information to patti.owens@microsoft.com",
+  "query": "please send the information to patti@contoso.com",
   "topScoringIntent": {
     "intent": "None",
     "score": 0.811592042
@@ -42,27 +42,27 @@ ms.locfileid: "68933551"
   ],
   "entities": [
     {
-      "entity": "patti.owens@microsoft.com",
+      "entity": "patti@contoso.com",
       "type": "builtin.email",
       "startIndex": 31,
       "endIndex": 55,
       "resolution": {
-        "value": "patti.owens@microsoft.com"
+        "value": "patti@contoso.com"
       }
     }
   ]
 }
 ```
 
-### <a name="preview-api-version-3x"></a>Предварительная версия API версии 3. x
+#### <a name="v3-prediction-endpoint-responsetabv3"></a>[V3 прогнозирование ответа конечной точки](#tab/V3)
 
-Следующий код JSON имеет `verbose` параметр со `false`значением:
+Следующий код JSON относится к параметру `verbose`, для которого задано значение `false`:
 
 ```json
 {
-    "query": "please send the information to patti.owens@microsoft.com",
+    "query": "please send the information to patti@contoso.com",
     "prediction": {
-        "normalizedQuery": "please send the information to patti.owens@microsoft.com",
+        "normalizedQuery": "please send the information to patti@contoso.com",
         "topIntent": "None",
         "intents": {
             "None": {
@@ -71,7 +71,7 @@ ms.locfileid: "68933551"
         },
         "entities": {
             "email": [
-                "patti.owens@microsoft.com"
+                "patti@contoso.com"
             ]
         }
     }
@@ -79,13 +79,13 @@ ms.locfileid: "68933551"
 ```
 
 
-Следующий код JSON имеет `verbose` параметр со `true`значением:
+Следующий код JSON относится к параметру `verbose`, для которого задано значение `true`:
 
 ```json
 {
-    "query": "please send the information to patti.owens@microsoft.com",
+    "query": "please send the information to patti@contoso.com",
     "prediction": {
-        "normalizedQuery": "please send the information to patti.owens@microsoft.com",
+        "normalizedQuery": "please send the information to patti@contoso.com",
         "topIntent": "None",
         "intents": {
             "None": {
@@ -94,13 +94,13 @@ ms.locfileid: "68933551"
         },
         "entities": {
             "email": [
-                "patti.owens@microsoft.com"
+                "patti@contoso.com"
             ],
             "$instance": {
                 "email": [
                     {
                         "type": "builtin.email",
-                        "text": "patti.owens@microsoft.com",
+                        "text": "patti@contoso.com",
                         "startIndex": 31,
                         "length": 25,
                         "modelTypeId": 2,
@@ -113,6 +113,10 @@ ms.locfileid: "68933551"
 }
 ```
 
+* * * 
+
 ## <a name="next-steps"></a>Следующие шаги
+
+Дополнительные сведения о [конечной точке прогнозирования v3](luis-migration-api-v3.md).
 
 Дополнительные сведения о сущностях [number](luis-reference-prebuilt-number.md), [ordinal](luis-reference-prebuilt-ordinal.md) и [percentage](luis-reference-prebuilt-percentage.md). 

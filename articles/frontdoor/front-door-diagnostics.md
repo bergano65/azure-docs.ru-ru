@@ -11,18 +11,18 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/18/2018
 ms.author: sharadag
-ms.openlocfilehash: 5f76df0045fc3939392759ed0edd266380295a85
-ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
+ms.openlocfilehash: 229706ff91b776363d3e9de080e02cee5edf9c77
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71260177"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71677898"
 ---
 # <a name="monitoring-metrics-and-logs-in-azure-front-door-service"></a>Мониторинг метрик и журналов в службе "Передняя дверца" Azure
 
 С помощью службы "Передняя дверца Azure" можно отслеживать ресурсы следующими способами.
 
-- **Метрики**. В настоящее время Шлюз приложений использует семь метрик для просмотра счетчиков производительности.
+- **Метрики**. В настоящее время Передняя дверца Azure содержит семь метрик для просмотра счетчиков производительности.
 - **Журналы**. Журналы действий и диагностики позволяют сохранять и использовать данные о производительности, доступе и других данных в ресурсе для мониторинга.
 
 ### <a name="metrics"></a>metrics

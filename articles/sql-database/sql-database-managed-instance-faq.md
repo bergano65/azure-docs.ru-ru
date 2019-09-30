@@ -11,12 +11,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein, carlrab
 ms.date: 07/16/2019
-ms.openlocfilehash: 9bc6cfdcbc67761e99150c730adeb23602232632
-ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
+ms.openlocfilehash: 8b2147ead7c1a6226b68588b9d0dab53da954bf2
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70032943"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71676947"
 ---
 # <a name="sql-database-managed-instance-frequently-asked-questions-faq"></a>Часто задаваемые вопросы об управляемом экземпляре базы данных SQL
 
@@ -38,12 +38,19 @@ ms.locfileid: "70032943"
 
 Об ошибках и известных проблемах см. в статье [Известные проблемы](sql-database-managed-instance-transact-sql-information.md#Issues).
 
+## <a name="where-can-i-find-latest-features-and-the-features-in-public-preview"></a>Где можно найти новейшие функции и функции в общедоступной предварительной версии?
+
+Для новых и предварительных версий функций см. [заметки о выпуске](/azure/sql-database/sql-database-release-notes?tabs=managed-instance).
+
+## <a name="how-much-time-takes-to-create-or-update-instance-or-to-restore-a-database"></a>Сколько времени занимает создание или обновление экземпляра или восстановление базы данных?
+
+Ожидаемое время создания нового управляемого экземпляра или изменения уровня служб (виртуальных ядер, хранилище) зависит от нескольких факторов. Ознакомьтесь с [операциями управления](/azure/sql-database/sql-database-managed-instance#managed-instance-management-operations) 
+
 ## <a name="can-a-managed-instance-have-the-same-name-as-on-premises-sql-server"></a>Может ли управляемый экземпляр иметь то же имя, что и локальная SQL Server?
 
 Имя управляемого экземпляра должно заканчиваться на *Database.Windows.NET*. Чтобы использовать другую зону DNS вместо значения по умолчанию, например **MI-Name**. contoso.com: 
 - Используйте Кликонфиг для определения псевдонима. Это средство является просто оболочкой параметров реестра, поэтому ее можно выполнить с помощью групповой политики или сценария.
 - Используйте *CNAME* с параметром *TrustServerCertificate = true* .
-
 
 ## <a name="how-can-i-move-database-from-managed-instance-back-to-sql-server-or-azure-sql-database"></a>Как переместить базу данных из управляемого экземпляра обратно в SQL Server или базу данных SQL Azure?
 
@@ -55,7 +62,7 @@ ms.locfileid: "70032943"
 
 ## <a name="how-can-i-migrate-my-instance-database-to-a-single-azure-sql-database"></a>Как перенести базу данных экземпляра в отдельную базу данных SQL Azure?
 
-Один из вариантов — [экспортировать базу данных в BACPAC](sql-database-export.md) , а затем [импортировать BACPAC-файл]( sql-database-import.md). 
+Один из вариантов — [экспортировать базу данных в BACPAC](sql-database-export.md) , а затем [импортировать BACPAC-файл](sql-database-import.md). 
 
 Этот подход рекомендуется, если размер базы данных меньше 100 ГБ. Репликацию транзакций можно использовать, если все таблицы в базе данных имеют первичные ключи.
 
@@ -125,6 +132,7 @@ ms.locfileid: "70032943"
 Примеры использования управляемого экземпляра:
 
 - [коматсу](https://customers.microsoft.com/story/komatsu-australia-manufacturing-azure)
+- [КМД](https://customers.microsoft.com/en-ca/story/kmd-professional-services-azure-sql-database)
 - [повердетаилс](https://customers.microsoft.com/story/powerdetails-partner-professional-services-azure-sql-database-managed-instance)
 - [Аллскриптс](https://customers.microsoft.com/story/allscripts-partner-professional-services-azure)  
 Чтобы получить более полное представление о преимуществах, затратах и рисках, связанных с развертыванием управляемого экземпляра базы данных SQL Azure, также можно изучить Forrester: [Общее экономическое воздействие MI](https://azure.microsoft.com/resources/forrester-tei-sql-database-managed-instance).

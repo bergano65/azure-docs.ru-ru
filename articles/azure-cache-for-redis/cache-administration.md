@@ -14,30 +14,30 @@ ms.tgt_pltfrm: cache
 ms.workload: tbd
 ms.date: 07/05/2017
 ms.author: yegu
-ms.openlocfilehash: 81ef669b62c822e10d8bf5c45e58dd769c5dbeb9
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: ddb9dd49af4557e6ff8d38110de4a99a9cf6fed7
+ms.sourcegitcommit: 6013bacd83a4ac8a464de34ab3d1c976077425c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60233025"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71687005"
 ---
 # <a name="how-to-administer-azure-cache-for-redis"></a>Администрирование кэша Redis для Azure
 В этом разделе описывается выполнение задач администрирования, таких как [перезагрузка](#reboot) и [планирование обновлений](#schedule-updates) для экземпляров кэша Redis для Azure.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="reboot"></a>Reboot
+## <a name="reboot"></a>Перезагрузить
 Колонка **Перезагрузка** позволяет перезагрузить один или несколько узлов кэша. Функция перезагрузки дает возможность протестировать приложение на устойчивость в случае сбоя узла кэша.
 
-![Reboot](./media/cache-administration/redis-cache-administration-reboot.png)
+![Перезагрузить](./media/cache-administration/redis-cache-administration-reboot.png)
 
 Выберите узлы, которые нужно перезагрузить, и щелкните **Перезагрузить**.
 
-![Reboot](./media/cache-administration/redis-cache-reboot.png)
+![Перезагрузить](./media/cache-administration/redis-cache-reboot.png)
 
 Если у вас кэш уровня "Премиум" с включенной кластеризацией, то вы можете выбрать сегменты кэша для перезагрузки.
 
-![Reboot](./media/cache-administration/redis-cache-reboot-cluster.png)
+![Перезагрузить](./media/cache-administration/redis-cache-reboot-cluster.png)
 
 Чтобы перезагрузить один или несколько узлов кэша, выберите необходимые узлы и нажмите кнопку **Перезагрузить**. Если у вас кэш уровня "Премиум" с включенной кластеризацией, то выберите сегменты, требующие перезагрузки, и нажмите кнопку **Перезагрузить**. Через несколько минут выбранные узлы перезагружаются, а еще через несколько минут — возобновляют работу.
 
@@ -72,7 +72,7 @@ ms.locfileid: "60233025"
 > 
 
 ### <a name="will-i-lose-data-from-my-cache-if-i-do-a-reboot"></a>Сохранятся ли данные кэша после перезагрузки?
-Если перезагрузить и **Master** и **подчиненного** узлы, все данные в кэше (или в отдельном сегменте при использовании кэша уровня "премиум" с включенной кластеризацией) могут быть потеряны, но это не гарантируется либо. Если вы настроили [сохраняемость данных](cache-how-to-premium-persistence.md), то последняя резервная копия будет восстановлена, когда кэш снова станет доступным. Но все записи в кэше, выполненные после архивации, будут утеряны.
+Если вы перезагрузите **главный** и **подчиненный** узлы, то все данные в кэше (или в этом сегменте, если используется кэш уровня "Премиум" с включенной кластеризацией) могут быть потеряны, но это не гарантируется. Если вы настроили [сохраняемость данных](cache-how-to-premium-persistence.md), то последняя резервная копия будет восстановлена, когда кэш снова станет доступным. Но все записи в кэше, выполненные после архивации, будут утеряны.
 
 Если перезагрузить только один из узлов, то, как правило, данные не теряются, но это все же может произойти. Например, если перезагрузить главный узел в то время, когда выполняется запись в кэш, то данные кэша будут потеряны. Данные также могут быть утеряны, если вы перезагрузите один узел, а другой узел случайно выйдет из строя в то же время. Дополнительные сведения о возможных причинах потери данных см. в статье [What happened to my data in Redis?](https://gist.github.com/JonCole/b6354d92a2d51c141490f10142884ea4#file-whathappenedtomydatainredis-md) (Что произошло с моими данными в Redis?).
 
@@ -82,7 +82,7 @@ ms.locfileid: "60233025"
 ### <a name="what-pricing-tiers-can-use-the-reboot-functionality"></a>Для каких ценовых категорий доступна функция перезагрузки?
 Перезагрузка доступна для всех ценовых категорий.
 
-## <a name="schedule-updates"></a>запланировать обновления
+## <a name="schedule-updates"></a>Запланировать обновления
 В колонке **Планирование обновлений** можно указать период обслуживания для кэша категории "Премиум". Если задан период обслуживания, то любые обновления сервера Redis выполняются в этот период. 
 
 > [!NOTE] 
@@ -90,7 +90,7 @@ ms.locfileid: "60233025"
 > 
 > 
 
-![запланировать обновления](./media/cache-administration/redis-schedule-updates.png)
+![Запланировать обновления](./media/cache-administration/redis-schedule-updates.png)
 
 Чтобы задать период обслуживания, отметьте необходимые дни и укажите, когда будет начинаться период обслуживания в каждый из дней, а затем нажмите кнопку **ОК**. Обратите внимание, что время периода обслуживания указывается в формате UTC. 
 
@@ -101,7 +101,6 @@ ms.locfileid: "60233025"
 * [Когда происходят обновления, если функция планирования обновлений не используется?](#when-do-updates-occur-if-i-dont-use-the-schedule-updates-feature)
 * [Какие типы обновлений выполняются в запланированный период обслуживания?](#what-type-of-updates-are-made-during-the-scheduled-maintenance-window)
 * [Можно ли управлять запланированными обновлениями с помощью PowerShell, интерфейса командной строки или других средств управления?](#can-i-managed-scheduled-updates-using-powershell-cli-or-other-management-tools)
-* [Для каких ценовых категорий доступна функция планирования обновлений?](#what-pricing-tiers-can-use-the-schedule-updates-functionality)
 
 ### <a name="when-do-updates-occur-if-i-dont-use-the-schedule-updates-feature"></a>Когда происходят обновления, если функция планирования обновлений не используется?
 Если период обслуживания не указан, то обновления могут выполняться в любое время.
@@ -117,9 +116,6 @@ ms.locfileid: "60233025"
 * [New-AzRedisCacheScheduleEntry](/powershell/module/az.rediscache/new-azrediscachescheduleentry);
 * [Remove-AzRedisCachePatchSchedule](/powershell/module/az.rediscache/remove-azrediscachepatchschedule).
 
-### <a name="what-pricing-tiers-can-use-the-schedule-updates-functionality"></a>Для каких ценовых категорий доступна функция планирования обновлений?
-Функция **планирования обновлений** доступна только в ценовой категории "Премиум".
-
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Узнайте больше о возможностях [кэша Redis для Azure ценовой категории "Премиум"](cache-premium-tier-intro.md).
 

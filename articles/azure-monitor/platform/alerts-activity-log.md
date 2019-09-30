@@ -1,18 +1,18 @@
 ---
 title: Создание, просмотр и Управление оповещениями журнала действий в Azure Monitor
 description: Создавайте оповещения журнала действий с помощью портал Azure, шаблона Azure Resource Manager и Azure PowerShell.
-author: msvijayn
+author: rboucher
 services: azure-monitor
 ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 06/25/2019
-ms.author: vinagara
-ms.openlocfilehash: a7f80698791831b3d4404ea0f687a75c660c2222
-ms.sourcegitcommit: 470041c681719df2d4ee9b81c9be6104befffcea
+ms.author: robb
+ms.openlocfilehash: e93b6f9c74bb44cb7341f5763261ecb699432ae2
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67852746"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71675258"
 ---
 # <a name="create-view-and-manage-activity-log-alerts-by-using-azure-monitor"></a>Создание, просмотр и Управление оповещениями журнала действий с помощью Azure Monitor  
 
@@ -32,7 +32,7 @@ ms.locfileid: "67852746"
 - Если категория имеет значение "Администратор", необходимо указать по крайней мере одно из указанных выше условий в предупреждении. Вы не можете создать оповещение, которое активируется каждый раз при создании события в журналах действий.
 
 
-## <a name="azure-portal"></a>Портал Azure
+## <a name="azure-portal"></a>портала Azure
 
 Для создания и изменения правил генерации оповещений журнала действий можно использовать портал Azure. Взаимодействие интегрировано с журналом действий Azure, чтобы обеспечить простое создание оповещений для конкретных интересующих вас событий.
 
@@ -59,7 +59,7 @@ ms.locfileid: "67852746"
 
      **Пример представления целевого объекта оповещения**
 
-     ![Выбор цели](media/alerts-activity-log/select-target.png)
+     ![Выбор целевого объекта](media/alerts-activity-log/select-target.png)
 
    - В разделе **целевые критерии**выберите **Добавить условие**. Отображаются все доступные сигналы для целевого объекта, которые включают в себя различные категории **журнала действий**. Имя категории добавляется к имени **службы мониторинга** .
 
@@ -69,7 +69,7 @@ ms.locfileid: "67852746"
 
      **Снимок экрана: (Add criteria) (Добавить критерии)**
 
-     ![Добавление условий](media/alerts-activity-log/add-criteria.png)
+     ![Добавить условия](media/alerts-activity-log/add-criteria.png)
 
      - **History time** (Диапазон времени). События, доступные для выбранной операции, могут быть построены за последние 6, 12 или 24 часа или за последнюю неделю.
 
@@ -108,7 +108,7 @@ ms.locfileid: "67852746"
 
 1. В портал Azure выберите **монитор** > **оповещения**. Выберите **Управление правилами оповещений** в левом верхнем углу окна.
 
-    ![Управление правилами генерации оповещений](media/alerts-activity-log/manage-alert-rules.png)
+    ![Управление правилами оповещения](media/alerts-activity-log/manage-alert-rules.png)
 
     Откроется список доступных правил.
 
@@ -116,7 +116,7 @@ ms.locfileid: "67852746"
 
     ![Поиск правил оповещений журнала действий](media/alerts-activity-log/searth-activity-log-rule-to-edit.png)
 
-    Для поиска правила действия, которое требуется изменить, можно использовать доступные фильтры, подписку, _группу ресурсов_, _ресурс_, _Тип сигнала_или _состояние_.
+    Для поиска правила действия, которое требуетсяизменить, можно использовать доступные фильтры, подписку, _группу ресурсов_, _ресурс_, _Тип сигнала_или _состояние_.
 
    > [!NOTE]
    > 
@@ -124,7 +124,7 @@ ms.locfileid: "67852746"
 
 3. Выберите правило и дважды щелкните его, чтобы изменить параметры правила. Внесите необходимые изменения и нажмите кнопку **сохранить**.
 
-   ![Управление правилами генерации оповещений](media/alerts-activity-log/activity-log-rule-edit-page.png)
+   ![Управление правилами оповещения](media/alerts-activity-log/activity-log-rule-edit-page.png)
 
 4. Вы можете включить, отключить или удалить правило. Выберите соответствующий параметр в верхней части окна после выбора правила, как описано в шаге 2.
 
@@ -228,7 +228,7 @@ New-AzResourceGroupDeployment -ResourceGroupName "myRG" -TemplateFile sampleActi
 - [Disable-азактивитилогалерт](https://docs.microsoft.com/powershell/module/az.monitor/Disable-AzActivityLogAlert): Отключает существующее оповещение журнала действий и задает его Теги.
 - [Remove-азактивитилогалерт](https://docs.microsoft.com/powershell/module/az.monitor/Remove-AzActivityLogAlert): Удаляет оповещение журнала действий.
 
-## <a name="azure-cli"></a>Инфраструктура CLI Azure
+## <a name="azure-cli"></a>Azure CLI
 
 Команды Azure CLI, представленные в наборе [az monitor activity-log alert](https://docs.microsoft.com/cli/azure/monitor/activity-log/alert), доступны для управления правилами генерации оповещений для журнала действий.
 
