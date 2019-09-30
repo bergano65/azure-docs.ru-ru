@@ -278,11 +278,11 @@ client.Pipelines.CreateRunWithHttpMessagesAsync(resourceGroup, dataFactoryName, 
 
 | Свойство JSON | Тип | Обязательное значение | Значение по умолчанию | Допустимые значения | Пример |
 |:--- |:--- |:--- |:--- |:--- |:--- |
-| **startTime** | строка | Да | Отсутствуют | Дата и время по спецификации ISO 8601 | `"startTime" : "2013-01-09T09:30:00-08:00"` |
-| **recurrence** | объект | Да | Отсутствуют | Объект recurrence | `"recurrence" : { "frequency" : "monthly", "interval" : 1 }` |
-| **interval** | номер | Нет | 1 | От 1 до 1000 | `"interval":10` |
-| **endTime** | строка | Да | Отсутствуют | Значение даты и времени, представляющее время в будущем. | `"endTime" : "2013-02-09T09:30:00-08:00"` |
-| **schedule** | объект | Нет | Отсутствуют | Объект schedule | `"schedule" : { "minute" : [30], "hour" : [8,17] }` |
+| **startTime** | string | Да | Отсутствуют | Дата и время по спецификации ISO 8601 | `"startTime" : "2013-01-09T09:30:00-08:00"` |
+| **recurrence** | object | Да | Отсутствуют | Объект recurrence | `"recurrence" : { "frequency" : "monthly", "interval" : 1 }` |
+| **interval** | number | Нет | 1 | От 1 до 1000 | `"interval":10` |
+| **endTime** | string | Да | Отсутствуют | Значение даты и времени, представляющее время в будущем. | `"endTime" : "2013-02-09T09:30:00-08:00"` |
+| **schedule** | object | Нет | Отсутствуют | Объект schedule | `"schedule" : { "minute" : [30], "hour" : [8,17] }` |
 
 ### <a name="starttime-property"></a>Свойство startTime
 В следующей таблице показано, как свойство **startTime** управляет запуском триггера:
