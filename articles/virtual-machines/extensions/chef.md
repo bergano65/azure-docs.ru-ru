@@ -70,8 +70,8 @@ Chef работает во всех [операционных системах, 
 | Название | Значение и пример | Тип данных
 | ---- | ---- | ----
 | apiVersion | `2017-12-01` | string (date) |
-| publisher | `Chef.Bootstrap.WindowsAzure` | строка |
-| type | `LinuxChefClient` (Linux), `ChefClient` (Windows) | строка |
+| publisher | `Chef.Bootstrap.WindowsAzure` | string |
+| type | `LinuxChefClient` (Linux), `ChefClient` (Windows) | string |
 | typeHandlerVersion | `1210.12` | string (double) |
 
 ### <a name="settings"></a>Настройки
@@ -79,14 +79,14 @@ Chef работает во всех [операционных системах, 
 | Название | Значение и пример | Тип данных | Обязательный?
 | ---- | ---- | ---- | ----
 | settings/bootstrap_options/chef_server_url | `https://api.chef.io/organizations/myorg` | string (url) | Д |
-| settings/bootstrap_options/validation_client_name | `myorg-validator` | строка | Д |
-| settings/runlist | `recipe[mycookbook::default]` | строка | Д |
+| settings/bootstrap_options/validation_client_name | `myorg-validator` | string | Д |
+| settings/runlist | `recipe[mycookbook::default]` | string | Д |
 
 ### <a name="protected-settings"></a>Защищенные параметры
 
 | Название | Пример | Тип данных | Обязательный?
 | ---- | ---- | ---- | ---- |
-| protectedSettings/validation_key | `-----BEGIN RSA PRIVATE KEY-----\nKEYDATA\n-----END RSA PRIVATE KEY-----` | строка | Д |
+| protectedSettings/validation_key | `-----BEGIN RSA PRIVATE KEY-----\nKEYDATA\n-----END RSA PRIVATE KEY-----` | string | Д |
 
 <!--
 ### Linux-specific settings
