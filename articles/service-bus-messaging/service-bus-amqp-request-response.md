@@ -118,8 +118,8 @@ properties: {
   
 |Тип сущности|Адрес|Пример|  
 |-----------------|-------------|-------------|  
-|очередь|`<queue_name>`|`“myQueue”`<br /><br /> `“site1/myQueue”`|  
-|Раздел|`<topic_name>`|`“myTopic”`<br /><br /> `“site2/page1/myQueue”`|  
+|queue|`<queue_name>`|`“myQueue”`<br /><br /> `“site1/myQueue”`|  
+|topic|`<topic_name>`|`“myTopic”`<br /><br /> `“site2/page1/myQueue”`|  
 |subscription|`<topic_name>/Subscriptions/<subscription_name>`|`“myTopic/Subscriptions/MySub”`|  
   
 ## <a name="message-operations"></a>Операции с сообщениями  
@@ -134,7 +134,7 @@ properties: {
   
 |Ключ|Тип значения|Обязательное значение|Содержимое значения|  
 |---------|----------------|--------------|--------------------|  
-|operation|строка|Да|`com.microsoft:renew-lock`|  
+|operation|string|Да|`com.microsoft:renew-lock`|  
 |`com.microsoft:server-timeout`|uint|Нет|Время ожидания ответа от сервера, на котором выполняется операция, в миллисекундах.|  
   
  Текст запроса должен включать раздел amqp-value, содержащий схему со следующими элементами.  
