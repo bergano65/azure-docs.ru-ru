@@ -109,16 +109,16 @@ ms.locfileid: "71174039"
 | Название | Значение и пример | Тип данных | 
 | ---- | ---- | ---- |
 | apiVersion | 2019-03-01 | date |
-| publisher | Microsoft.Compute.Extensions | строка |
-| type | CustomScript | строка |
+| publisher | Microsoft.Compute.Extensions | string |
+| type | CustomScript | string |
 | typeHandlerVersion | 2.0 | int |
 | fileUris (пример) | https://github.com/MyProject/Archive/MyPythonScript.py | array |
-| commandToExecute (пример) | > " \<My-Param1" Python MyPythonScript.py | строка |
-| script | IyEvYmluL3NoCmVjaG8gIlVwZGF0aW5nIHBhY2thZ2VzIC4uLiIKYXB0IHVwZGF0ZQphcHQgdXBncmFkZSAteQo= | строка |
+| commandToExecute (пример) | > " \<My-Param1" Python MyPythonScript.py | string |
+| script | IyEvYmluL3NoCmVjaG8gIlVwZGF0aW5nIHBhY2thZ2VzIC4uLiIKYXB0IHVwZGF0ZQphcHQgdXBncmFkZSAteQo= | string |
 | skipDos2Unix (например) | Ложь | boolean |
 | timestamp (например) | 123456789 | 32-битное целое число |
-| storageAccountName (пример) | examplestorageacct | строка |
-| storageAccountKey (пример) | TmJK/1N3AbAZ3q/+hOXoi/l73zOqsaxXDhqa9Y83/v5UpXQp2DQIBuv2Tifp60cE/OaHsJZmQZ7teQfczQj8hg== | строка |
+| storageAccountName (пример) | examplestorageacct | string |
+| storageAccountKey (пример) | TmJK/1N3AbAZ3q/+hOXoi/l73zOqsaxXDhqa9Y83/v5UpXQp2DQIBuv2Tifp60cE/OaHsJZmQZ7teQfczQj8hg== | string |
 
 ### <a name="property-value-details"></a>Сведения о значениях свойств
 * `skipDos2Unix` — (необязательное, логическое) пропустите преобразование dos2unix URL-адресов файла на основе сценария или скрипта.
