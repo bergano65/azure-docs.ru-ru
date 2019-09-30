@@ -44,30 +44,30 @@ ms.locfileid: "70958454"
 
 | Имя (BLOB-объект) | Имя (концентраторы событий/Log Analytics) | Описание | Тип BLOB-объекта | Тип концентраторов событий и Log Analytics |
 |-------------|---------------------------------|-------------|-----------|-------------------------------|
-| action_id | action_id_s | Идентификатор действия | varchar (4) | строка |
-| action_name | action_name_s | Имя действия | Н/Д | строка |
-| additional_information | additional_information_s | Дополнительные сведения о событии, хранящиеся в формате XML | nvarchar (4000) | строка |
-| affected_rows | affected_rows_d | Число строк, затронутых запросом | bigint | ssNoversion |
-| application_name | application_name_s| Имя клиентского приложения | nvarchar(128) | строка |
-| audit_schema_version | audit_schema_version_d | Всегда 1 | ssNoversion | ssNoversion |
-| class_type | class_type_s | Тип проверяемой сущности, на которой выполняется аудит | varchar (2) | строка |
-| class_type_desc | class_type_description_s | Описание проверяемой сущности, на которой выполняется аудит | Н/Д | строка |
-| client_ip | client_ip_s | Исходный IP-адрес клиентского приложения | nvarchar(128) | строка |
+| action_id | action_id_s | Идентификатор действия | varchar (4) | string |
+| action_name | action_name_s | Имя действия | Н/Д | string |
+| additional_information | additional_information_s | Дополнительные сведения о событии, хранящиеся в формате XML | nvarchar (4000) | string |
+| affected_rows | affected_rows_d | Число строк, затронутых запросом | bigint | int |
+| application_name | application_name_s| Имя клиентского приложения | nvarchar(128) | string |
+| audit_schema_version | audit_schema_version_d | Всегда 1 | ssNoversion | int |
+| class_type | class_type_s | Тип проверяемой сущности, на которой выполняется аудит | varchar (2) | string |
+| class_type_desc | class_type_description_s | Описание проверяемой сущности, на которой выполняется аудит | Н/Д | string |
+| client_ip | client_ip_s | Исходный IP-адрес клиентского приложения | nvarchar(128) | string |
 | connection_id | Н/Д | Идентификатор соединения на сервере | GUID | Н/Д |
-| data_sensitivity_information | data_sensitivity_information_s | Типы сведений и метки чувствительности, возвращаемые отслеживаемым запросом, на основе классифицированных столбцов в базе данных. Дополнительные сведения об [обнаружении и классификации данных в базе данных SQL Azure](sql-database-data-discovery-and-classification.md) | nvarchar (4000) | строка |
-| database_name | database_name_s | Контекст базы данных, в котором произошло действие | имеет sysname | строка |
-| database_principal_id | database_principal_id_d | Идентификатор контекста пользователя базы данных, в котором выполняется действие | ssNoversion | ssNoversion |
-| database_principal_name | database_principal_name_s | Имя контекста пользователя базы данных, в котором выполняется действие | имеет sysname | строка |
+| data_sensitivity_information | data_sensitivity_information_s | Типы сведений и метки чувствительности, возвращаемые отслеживаемым запросом, на основе классифицированных столбцов в базе данных. Дополнительные сведения об [обнаружении и классификации данных в базе данных SQL Azure](sql-database-data-discovery-and-classification.md) | nvarchar (4000) | string |
+| database_name | database_name_s | Контекст базы данных, в котором произошло действие | имеет sysname | string |
+| database_principal_id | database_principal_id_d | Идентификатор контекста пользователя базы данных, в котором выполняется действие | ssNoversion | int |
+| database_principal_name | database_principal_name_s | Имя контекста пользователя базы данных, в котором выполняется действие | имеет sysname | string |
 | duration_milliseconds | duration_milliseconds_d | Длительность выполнения запроса в миллисекундах | bigint | ssNoversion |
 | event_time | event_time_t | Дата и время срабатывания проверяемого действия | datetime2 | datetime |
-| HOST_NAME | Н/Д | Имя узла клиента | строка | Н/Д |
-| is_column_permission | is_column_permission_s | Флаг, указывающий, является ли это разрешение на уровне столбца. 1 = true, 0 = false | bit | строка |
-| Н/Д | is_server_level_audit_s | Флаг, указывающий, что этот аудит находится на уровне сервера | Н/Д | строка |
-| Идентификатор object_ | object_id_d | Идентификатор сущности, в которой произошел аудит. К ним относятся: серверные объекты, базы данных, объекты базы данных и объекты схемы. 0, если сущность является самим сервером или если аудит не выполняется на уровне объектов | ssNoversion | ssNoversion |
-| object_name | object_name_s | Имя сущности, в которой произошел аудит. К ним относятся: серверные объекты, базы данных, объекты базы данных и объекты схемы. 0, если сущность является самим сервером или если аудит не выполняется на уровне объектов | имеет sysname | строка |
-| permission_bitmask | permission_bitmask_s | Если применимо, отображаются разрешения, которые были предоставлены, запрещены или отозваны. | varbinary (16) | строка |
-| response_rows | response_rows_d | Число строк, возвращенных в результирующем наборе | bigint | ssNoversion |
-| schema_name | schema_name_s | Контекст схемы, в котором произошло действие. Значение NULL для аудитов, происходящих за пределами схемы | имеет sysname | строка |
+| HOST_NAME | Н/Д | Имя узла клиента | string | Н/Д |
+| is_column_permission | is_column_permission_s | Флаг, указывающий, является ли это разрешение на уровне столбца. 1 = true, 0 = false | bit | string |
+| Н/Д | is_server_level_audit_s | Флаг, указывающий, что этот аудит находится на уровне сервера | Н/Д | string |
+| Идентификатор object_ | object_id_d | Идентификатор сущности, в которой произошел аудит. К ним относятся: серверные объекты, базы данных, объекты базы данных и объекты схемы. 0, если сущность является самим сервером или если аудит не выполняется на уровне объектов | int | int |
+| object_name | object_name_s | Имя сущности, в которой произошел аудит. К ним относятся: серверные объекты, базы данных, объекты базы данных и объекты схемы. 0, если сущность является самим сервером или если аудит не выполняется на уровне объектов | имеет sysname | string |
+| permission_bitmask | permission_bitmask_s | Если применимо, отображаются разрешения, которые были предоставлены, запрещены или отозваны. | varbinary (16) | string |
+| response_rows | response_rows_d | Число строк, возвращенных в результирующем наборе | bigint | int |
+| schema_name | schema_name_s | Контекст схемы, в котором произошло действие. Значение NULL для аудитов, происходящих за пределами схемы | имеет sysname | string |
 | Н/Д | securable_class_type_s | Защищаемый объект, сопоставляемый с class_type, подлежит аудиту | Н/Д | строка |
 | sequence_group_id | sequence_group_id_g | Уникальный идентификатор | varbinary | GUID |
 | sequence_number | sequence_number_d | Отслеживает последовательность записей в одной записи аудита, которая слишком велика для размещения в буфере записи для аудита | ssNoversion | ssNoversion |
