@@ -24,10 +24,12 @@
   items:
     - name: Подключение к ресурсам Виртуального рабочего стола Windows
       items:
-        - name: "Подключение из Windows\_10 или Windows\_7"
+        - name: Подключение к клиенту Windows Desktop
           href: connect-windows-7-and-10.md
-        - name: Подключение из веб-браузера
+        - name: Подключение к веб-клиенту
           href: connect-web.md
+        - name: Подключение к клиенту Android
+          href: connect-android.md
         - name: Подключение с помощью клиента macOS
           href: connect-macos.md
         - name: Подключение с помощью клиента iOS
@@ -72,6 +74,8 @@
       href: partners.md
     - name: "Windows\_10 Корпоративная с поддержкой нескольких сеансов: часто задаваемые вопросы"
       href: windows-10-multisession-faq.md
+    - name: Расположения данных
+      href: data-locations.md
 - name: Устранение неполадок
   items:
     - name: 'Общие сведения об устранении неисправностей, отзывы и поддержка'

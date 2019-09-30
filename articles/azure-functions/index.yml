@@ -1,121 +1,162 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Документация по Функциям Azure
+summary: Функции Azure — это бессерверная служба вычислений, которая позволяет выполнять активируемый событиями код без необходимости явно подготавливать или администрировать инфраструктуру.
 metadata:
-  document_id: 83ceabb5-fb4f-a709-3fd2-37d024409f31
-  title: Документация по Функциям Azure. Руководства | Документация Майкрософт
-  meta.description: Learn how to develop and deploy functions in the language of your choice to run tasks in the background or on a schedule without special infrastructure.
-  services: functions
-  author: georgewallace
-  manager: gwallace
+  title: Документация по Функциям Azure
+  description: Функции Azure — это бессерверная служба вычислений, которая позволяет выполнять активируемый событиями код без необходимости явно подготавливать или администрировать инфраструктуру.
   ms.service: azure-functions
   ms.topic: landing-page
-  ms.date: 08/09/2018
-  ms.author: gwallace
-abstract:
-  description: 'Функции Azure — это <a href="https://azure.microsoft.com/solutions/serverless/">бессерверная</a> служба вычислений, которая позволяет выполнять код по требованию без необходимости явно подготавливать или администрировать инфраструктуру. Используйте Функции Azure для выполнения скрипта или фрагмента кода в ответ на разные события. Узнайте, как использовать Функции Azure, ознакомившись с нашими краткими руководствами, примерами и учебниками.'
-  aside:
-    image:
-      alt: null
-      height: 110
-      src: media/index/video-thumb-get-started.png
-      width: 250
-    title: 'Начало работы с Функциями Azure. (2:39)'
-    href: 'https://azure.microsoft.com/resources/videos/get-started-with-azure-functions/'
-    width: 250
-sections:
-  - title: Пятиминутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: 'Узнайте, как создавать функции, которые выполняются в результате событий, созданных с помощью следующих средств:'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_http.svg'
-            text: HTTP
-            href: /azure/azure-functions/functions-create-first-azure-function
-          - image:
-              src: media/index/stopwatch.svg
-            text: Таймер
-            href: /azure/azure-functions/functions-create-scheduled-function
-          - image:
-              src: media/index/cosmosdb.svg
-            text: Azure Cosmos DB
-            href: /azure/azure-functions/functions-create-cosmos-db-triggered-function
-          - image:
-              src: media/index/blob.svg
-            text: BLOB-объект
-            href: /azure/azure-functions/functions-create-storage-blob-triggered-function
-          - image:
-              src: media/index/storage.svg
-            text: Очередь
-            href: /azure/azure-functions/functions-create-storage-queue-triggered-function
-      - type: paragraph
-        text: 'Дополнительные сведения о локальной разработке и отладке:'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/media/logos/logo_visual-studio.svg'
-            text: Visual Studio
-            href: /azure/azure-functions/functions-create-your-first-function-visual-studio
-          - image:
-              src: 'https://docs.microsoft.com/media/logos/logo_vs-code.svg'
-            text: Visual Studio Code
-            href: /azure/azure-functions/functions-create-first-function-vs-code
-  - title: Пошаговые инструкции
-    items:
-      - type: paragraph
-        text: 'Дополнительные сведения о сборке и администрировании Функций Azure:'
-      - type: list
-        style: ordered
-        items:
-          - html: '<a href="/azure/azure-functions/functions-twitter-email">Создание функции, интегрируемой с Azure Logic Apps</a>'
-          - html: <a href="/azure/azure-functions/functions-create-serverless-api">Создание бессерверного API с помощью Функций Azure</a>
-          - html: <a href="/azure/azure-functions/functions-openapi-definition">Создание определения OpenAPI функции</a>
-          - html: <a href="/azure/event-grid/resize-images-on-storage-blob-upload-event">Автоматическое изменение размера переданных изображений с помощью Сетки событий</a>
-          - html: '<a href="https://docs.microsoft.com/azure/functions/tutorial-static-website-serverless-api-with-database">Создание бессерверного веб-приложения для хранения изображений с метаданными</a>'
-  - title: Примеры
-    items:
-      - type: list
-        style: unordered
-        className: spaced noBullet
-        items:
-          - html: <a href="/azure/azure-functions/functions-cli-samples">Azure CLI</a>
-          - html: <a href="/sandbox/functions-recipes/">Рекомендации по работе с Функциями Azure</a>
-  - title: Развитие навыков с помощью Microsoft Learn
-    items:
-      - type: list
-        style: cards
-        className: cardsFTitle
-        items:
-          - title: Создание бессерверной логики с помощью Функций Azure
-            href: /learn/modules/create-serverless-logic-with-azure-functions/
-            image:
-              src: /learn/achievements/create-serverless-logic-with-azure-functions.svg
-              href: /learn/modules/create-serverless-logic-with-azure-functions/
-          - title: Выполнение функции Azure с использованием триггеров
-            href: /learn/modules/execute-azure-function-with-triggers/
-            image:
-              src: /learn/achievements/execute-azure-function-with-triggers.svg
-              href: /learn/modules/execute-azure-function-with-triggers/
-          - title: Объединение функций Azure с использованием входных и выходных привязок
-            href: /learn/modules/chain-azure-functions-data-using-bindings/
-            image:
-              src: /learn/achievements/chain-azure-functions-data-using-bindings.svg
-              href: /learn/modules/chain-azure-functions-data-using-bindings/
-      - type: paragraph
-        text: <a href="/learn/browse/?products=azure-functions">Другие интерактивные руководства</a>
-  - title: Справочные материалы
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: Командная строка
-            html: <p><a href="/cli/azure">Azure CLI</a></p>
-          - title: REST
-            html: <p><a href="/azure/azure-functions/functions-api-definition">OpenAPI</a></p>
-          - title: Привязки
-            html: <p><a href="/azure/azure-functions/functions-bindings-storage-blob">Хранилище BLOB-объектов</a></p><p><a href="/azure/azure-functions/functions-bindings-documentdb">Azure Cosmos DB</a></p><p><a href="/azure/azure-functions/functions-bindings-event-hubs">Концентратор событий</a></p><p><a href="/azure/azure-functions/functions-bindings-http-webhook">HTTP и вызовы webhook</a></p><p><a href="/azure/azure-functions/functions-bindings-mobile-apps">Мобильные приложения</a></p><p><a href="/azure/azure-functions/functions-bindings-notification-hubs">Центры уведомлений</a></p><p><a href="/azure/azure-functions/functions-bindings-storage-queue">Хранилище очередей</a></p><p><a href="/azure/azure-functions/functions-bindings-sendgrid">SendGrid</a></p><p><a href="/azure/azure-functions/functions-bindings-service-bus">Служебная шина</a></p><p><a href="/azure/azure-functions/functions-bindings-signalr-service">Служба SignalR</a></p><p><a href="/azure/azure-functions/functions-bindings-storage-table">Хранилище таблиц</a></p><p><a href="/azure/azure-functions/functions-bindings-timer">Таймер</a></p><p><a href="/azure/azure-functions/functions-bindings-twilio">Привязка к выходным данным Twilio</a></p>
+  author: ggailey777
+  ms.author: azfundocs
+  ms.date: 09/17/2019
+  ms.openlocfilehash: fe554b2e7a146ccb3c0b593ffc7e8bef66e55ef2
+  ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 09/27/2019
+  ms.locfileid: "71349907"
+landingContent:
+- title: Сведения о решении "Функции Azure"
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое Функции Azure?
+      url: functions-overview.md
+    - text: Сравнение вариантов бессерверных вычислений
+      url: functions-compare-logic-apps-ms-flow-webjobs.md
+  - linkListType: concept
+    links:
+    - text: Сравнение вариантов размещения
+      url: functions-scale.md
+  - linkListType: learn
+    links:
+    - text: Выбор варианта бессерверных вычислений
+      url: /learn/modules/choose-azure-service-to-integrate-and-automate-business-processes/index
+  - linkListType: video
+    links:
+    - text: Где нужно размещать код?
+      url: https://azure.microsoft.com/resources/videos/build-2019-where-should-i-host-my-code-choosing-between-kubernetes-containers-and-serverless/
+- title: Начало работы
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Создание первой функции (C#)
+      url: functions-create-your-first-function-visual-studio.md
+    - text: Создание первой функции (Java)
+      url: functions-create-first-java-maven.md
+    - text: Создание первой функции (JavaScript)
+      url: functions-create-first-function-vs-code.md
+    - text: Создание первой функции (PowerShell)
+      url: functions-create-first-function-powershell.md
+    - text: Создание первой функции (Python)
+      url: functions-create-first-function-python.md
+  - linkListType: learn
+    links:
+    - text: Создание бессерверной логики
+      url: /learn/modules/create-serverless-logic-with-azure-functions/
+  - linkListType: video
+    links:
+    - text: Просмотрите видео о том, как начать работу
+      url: https://azure.microsoft.com/resources/videos/get-started-with-azure-functions/
+- title: Разработка функций
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Руководство разработчика
+      url: functions-reference.md
+    - text: Поддерживаемые языки
+      url: supported-languages.md
+  - linkListType: how-to-guide
+    links:
+    - text: Локальная разработка
+      url: functions-develop-local.md
+    - text: Тестирование функций
+      url: functions-test-a-function.md
+    - text: Обработка ошибок
+      url: functions-bindings-error-pages.md
+  - linkListType: learn
+    links:
+    - text: Разработка, тестирование и развертывание с помощью Visual Studio
+      url: /learn/modules/develop-test-deploy-azure-functions-with-visual-studio/index
+  - linkListType: video
+    links:
+    - text: Разработка с помощью Visual Studio Code
+      url: https://azure.microsoft.com/resources/videos/build-nodejs-apis-using-serverless/
+- title: Подключение к службам
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Запуск при определенном событии
+      url: functions-triggers-bindings.md
+    - text: Сетевые параметры
+      url: functions-networking-options.md
+  - linkListType: tutorial
+    links:
+    - text: Интеграция с Logic Apps
+      url: functions-twitter-email.md
+    - text: Использование событий Сетки событий
+      url: ../event-grid/resize-images-on-storage-blob-upload-event.md?toc=%2fazure%2fazure-functions%2ftoc.json
+  - linkListType: learn
+    links:
+    - text: Сцепление функций с привязками
+      url: /learn/modules/chain-azure-functions-data-using-bindings/index
+    - text: Подключение к веб-перехватчику GitHub
+      url: /learn/modules/monitor-github-events-with-a-function-triggered-by-a-webhook/index
+- title: Развертывание функций
+  linkLists:
+  - linkListType: deploy
+    links:
+    - text: Варианты развертывания
+      url: functions-deployment-technologies.md
+    - text: Слоты развертывания
+      url: functions-deployment-slots.md
+    - text: Автоматическое развертывание ресурсов
+      url: functions-infrastructure-as-code.md
+  - linkListType: how-to-guide
+    links:
+    - text: Непрерывное развертывание с использованием GIT в службе приложений Azure
+      url: functions-continuous-deployment.md
+    - text: Создание и развертывание с помощью Azure Pipelines
+      url: functions-how-to-azure-devops.md
+    - text: Развертывание с помощью подключаемого модуля Jenkins
+      url: /azure/jenkins/jenkins-azure-functions-deploy
+- title: Производительность и мониторинг
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Мониторинг функций
+      url: functions-monitoring.md
+    - text: Оптимизация производительности
+      url: functions-best-practices.md
+    - text: Рекомендации по работе с сетями
+      url: functions-networking-options.md
+  - linkListType: how-to-guide
+    links:
+    - text: Устранение неполадок
+      url: functions-recover-storage-account.md
+- title: Длительно выполняемые функции
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: План размещения "Премиум"
+      url: functions-premium-plan.md
+    - text: Устойчивые функции
+      url: durable/durable-functions-overview.md
+  - linkListType: learn
+    links:
+    - text: Создание длительно выполняемого бессерверного рабочего процесса
+      url: /learn/modules/create-long-running-serverless-workflow-with-durable-functions/index
+- title: Примеры
+  linkLists:
+  - linkListType: download
+    links:
+    - text: Примеры использования Функций Azure
+      url: /samples/browse/?products=azure-functions
+    - text: Azure Serverless Community Library
+      url: https://www.serverlesslibrary.net/
+    - text: Шаблоны Azure Resource Manager
+      url: https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Web&term=functions
+  - linkListType: how-to-guide
+    links:
+    - text: Примеры для Azure CLI
+      url: functions-cli-samples.md

@@ -1,10 +1,10 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с JIRA SAML SSO by Microsoft | Документация Майкрософт
+title: Руководство по Интеграция единого входа Azure Active Directory с JIRA SAML SSO by Microsoft | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в JIRA SAML SSO by Microsoft.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: daveba
+manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 4b663047-7f88-443b-97bd-54224b232815
 ms.service: active-directory
@@ -13,27 +13,25 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 05/28/2019
+ms.date: 09/11/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 80f6cdea0c4e68f2ddbbe4f50989a34452a048c8
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d69d5ffcae77e7144f97cb423d5bee93cb88fb27
+ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67099619"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71121590"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-jira-saml-sso-by-microsoft"></a>Руководство по Интеграция Azure Active Directory с JIRA SAML SSO by Microsoft
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-jira-saml-sso-by-microsoft"></a>Руководство по Интеграция единого входа Azure Active Directory с JIRA SAML SSO by Microsoft
 
-В этом руководстве описано, как интегрировать JIRA SAML SSO by Microsoft с Azure Active Directory (Azure AD).
-Интеграция Azure AD с JIRA SAML SSO by Microsoft обеспечивает следующие преимущества:
+В этом руководстве описано, как интегрировать JIRA SAML SSO by Microsoft с Azure Active Directory (Azure AD). Интеграция JIRA SAML SSO by Microsoft с Azure AD обеспечивает следующие возможности:
 
-* С помощью Azure AD вы можете контролировать доступ к JIRA SAML SSO by Microsoft.
-* Для пользователей вы можете включить автоматический вход пользователей в JIRA SAML SSO by Microsoft (единый вход) с помощью учетных записей Azure AD.
-* Вы можете управлять учетными записями централизованно на портале Azure.
+* Управление доступом доступ к JIRA SAML SSO by Microsoft с помощью Azure AD.
+* Включение автоматического входа пользователей в JIRA SAML SSO by Microsoft с помощью учетных записей Azure AD.
+* Централизованное управление учетными записями через портал Azure.
 
-Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 ## <a name="description"></a>ОПИСАНИЕ
 
@@ -43,7 +41,7 @@ ms.locfileid: "67099619"
 
 Чтобы настроить интеграцию Azure AD с JIRA SAML SSO by Microsoft, вам потребуется следующее:
 
-- подписка Azure AD;
+- подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 - в 64-разрядной версии Windows должен быть установлен и настроен выпуск JIRA Core and Software 6.4 – 8.0 или JIRA Service Desk 3.0 – 3.5;
 - поддержка HTTPS на сервере JIRA;
 - поддерживаемые версии подключаемого модуля JIRA указаны в разделе ниже;
@@ -55,10 +53,10 @@ ms.locfileid: "67099619"
 > [!NOTE]
 > Мы не рекомендуем использовать рабочую среду JIRA для проверки действий в этом руководстве. Сначала протестируйте интеграцию в среде разработки или промежуточной среде приложения, а затем используйте ее в рабочей среде.
 
-При проверке действий в этом учебнике соблюдайте следующие рекомендации:
+Чтобы приступить к работе, потребуется следующее:
 
-- Не используйте рабочую среду без необходимости.
-- Если у вас нет пробной среды Azure AD, вы можете получить пробную версию на один месяц по этой ссылке: [пробная версия](https://azure.microsoft.com/pricing/free-trial/).
+* Не используйте рабочую среду без необходимости.
+* Подписка JIRA SAML SSO by Microsoft с поддержкой единого входа.
 
 ## <a name="supported-versions-of-jira"></a>Поддерживаемые версии JIRA
 
@@ -67,7 +65,7 @@ ms.locfileid: "67099619"
 * JIRA поддерживает также 5.2. Дополнительные сведения см. в статье об [использовании единого входа Microsoft Azure Active Directory для JIRA 5.2](jira52microsoft-tutorial.md).
 
 > [!NOTE]
-> Обратите внимание, что наш подключаемый модуль JIRA также работает в Ubuntu версии 16.04.
+> Обратите внимание, что наш подключаемый модуль JIRA также работает в Ubuntu версии 16.04 и Linux.
 
 ## <a name="scenario-description"></a>Описание сценария
 
@@ -79,59 +77,37 @@ ms.locfileid: "67099619"
 
 Чтобы настроить интеграцию JIRA SAML SSO by Microsoft с Azure AD, необходимо добавить JIRA SAML SSO by Microsoft из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить JIRA SAML SSO by Microsoft из коллекции, выполните следующие действия.**
+1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
+1. В области навигации слева выберите службу **Azure Active Directory**.
+1. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
+1. Чтобы добавить новое приложение, выберите **Новое приложение**.
+1. В разделе **Добавление из коллекции** в поле поиска введите **JIRA SAML SSO by Microsoft**.
+1. В области результатов выберите **JIRA SAML SSO by Microsoft** и добавьте приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
+## <a name="configure-and-test-azure-ad-single-sign-on-for-jira-saml-sso-by-microsoft"></a>Настройка и проверка единого входа в JIRA SAML SSO by Microsoft
 
-    ![Кнопка Azure Active Directory](common/select-azuread.png)
+Настройте и проверьте единый вход Azure AD в JIRA SAML SSO by Microsoft с помощью тестового пользователя **B.Simon**. Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в JIRA SAML SSO by Microsoft.
 
-2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
+Чтобы настроить и проверить единый вход Microsoft Azure AD в JIRA SAML SSO by Microsoft, вам потребуется выполнить действия в следующих стандартных блоках:
 
-    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
+1. **[Настройка единого входа Azure AD](#configure-azure-ad-sso)** необходима, чтобы пользователи могли использовать эту функцию.
+    1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
+    1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
+1. **[Настройка единого входа в JIRA SAML SSO by Microsoft](#configure-jira-saml-sso-by-microsoft-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+    1. **[Создание тестового пользователя JIRA SAML SSO by Microsoft](#create-jira-saml-sso-by-microsoft-test-user)** требуется для того, чтобы в JIRA SAML SSO by Microsoft существовал пользователь B.Simon, связанный с одноименным пользователем в Azure AD.
+1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
 
-3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
-    ![Кнопка "Создать приложение"](common/add-new-app.png)
+Выполните следующие действия, чтобы включить единый вход Azure AD на портале Azure.
 
-4. В поле поиска введите **JIRA SAML SSO by Microsoft**, выберите **JIRA SAML SSO by Microsoft** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **JIRA SAML SSO by Microsoft** найдите **Управление** и выберите **Единый вход**.
+1. На странице **Выбрать метод единого входа** выберите **SAML**.
+1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-     ![JIRA SAML SSO by Microsoft в списке результатов](common/search-new-app.png)
+   ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
-
-В этом разделе описана настройка и проверка единого входа Azure AD в JIRA SAML SSO by Microsoft с использованием тестового пользователя **Britta Simon**.
-Чтобы единый вход работал, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в JIRA SAML SSO by Microsoft.
-
-Чтобы настроить и проверить единый вход Microsoft Azure AD в JIRA SAML SSO by Microsoft, вам потребуется выполнить действия в следующих стандартных блоках.
-
-1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Настройка единого входа в JIRA SAML SSO by Microsoft](#configure-jira-saml-sso-by-microsoft-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
-3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
-5. **[Создание тестового пользователя JIRA SAML SSO by Microsoft](#create-jira-saml-sso-by-microsoft-test-user)** требуется для того, чтобы в JIRA SAML SSO by Microsoft существовал пользователь Britta Simon, связанный с представлением пользователя в Azure AD.
-6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
-
-### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
-
-В этом разделе описано включение единого входа Azure AD на портале Azure.
-
-Чтобы настроить единый вход Azure AD в JIRA SAML SSO by Microsoft, сделайте следующее.
-
-1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **JIRA SAML SSO by Microsoft** выберите **Единый вход**.
-
-    ![Ссылка "Настройка единого входа"](common/select-sso.png)
-
-2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
-
-    ![Режим выбора единого входа](common/select-saml-option.png)
-
-3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
-
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
-
-4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
-
-    ![Сведения о домене и URL-адресах единого входа для приложения JIRA SAML SSO by Microsoft](common/sp-identifier-reply.png)
+1. На странице **Базовая конфигурация SAML** введите значения следующих полей.
 
     a. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<domain:port>/plugins/servlet/saml/auth`.
 
@@ -142,11 +118,41 @@ ms.locfileid: "67099619"
     > [!NOTE]
     > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Если это именованный URL-адрес, то порт указывать необязательно. Эти значения предоставляются во время настройки подключаемого модуля JIRA, которая описывается далее в этом руководстве.
 
-5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы копировать **URL-адрес метаданных федерации приложений** и сохранить его на компьютере.
+1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы скопировать **URL-адрес метаданных федерации приложений** и сохранить его на компьютере.
 
     ![Ссылка для скачивания сертификата](common/copy-metadataurl.png)
 
-### <a name="configure-jira-saml-sso-by-microsoft-single-sign-on"></a>Настройка единого входа в JIRA SAML SSO by Microsoft
+### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
+
+В этом разделе описано, как на портале Azure создать тестового пользователя с именем B.Simon.
+
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. В верхней части экрана выберите **Новый пользователь**.
+1. В разделе **Свойства пользователя** выполните следующие действия.
+   1. В поле **Имя** введите `B.Simon`.  
+   1. В поле **Имя пользователя** введите username@companydomain.extension. Например, `B.Simon@contoso.com`.
+   1. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
+   1. Нажмите кнопку **Создать**.
+
+### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
+
+В этом разделе описано, как разрешить пользователю B.Simon использовать единый вход Azure, предоставив этому пользователю доступ к JIRA SAML SSO by Microsoft.
+
+1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. Из списка приложений выберите **JIRA SAML SSO by Microsoft**.
+1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
+
+   ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
+
+1. Выберите **Добавить пользователя**, а в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+
+    ![Ссылка "Добавить пользователя"](common/add-assign-user.png)
+
+1. В диалоговом окне **Пользователи и группы** выберите **B.Simon** в списке пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать**.
+1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
+1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+
+## <a name="configure-jira-saml-sso-by-microsoft-sso"></a>Настройка единого входа в JIRA SAML SSO by Microsoft
 
 1. В другом окне веб-браузера войдите в свой экземпляр JIRA в качестве администратора.
 
@@ -214,56 +220,6 @@ ms.locfileid: "67099619"
        > [!NOTE]
        > Дополнительные сведения об установке и устранении неполадок см. в [руководстве администратора соединителя единого входа MS JIRA](../ms-confluence-jira-plugin-adminguide.md) и в [часто задаваемых вопросах](../ms-confluence-jira-plugin-faq.md).
 
-### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
-
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
-
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
-
-    ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
-
-2. В верхней части экрана выберите **Новый пользователь**.
-
-    ![Кнопка "Новый пользователь"](common/new-user.png)
-
-3. В разделе свойств пользователя сделайте следующее:
-
-    ![Диалоговое окно "Пользователь"](common/user-properties.png)
-
-    а. В поле **Имя** введите **BrittaSimon**.
-  
-    b. В поле **Имя пользователя** введите `brittasimon\@yourcompanydomain.extension`. Например, BrittaSimon@contoso.com.
-
-    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
-
-    d. Нажмите кнопку **Создать**.
-
-### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
-
-В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к JIRA SAML SSO by Microsoft.
-
-1. На портале Azure последовательно выберите **Корпоративные приложения**, **Все приложения**, **JIRA SAML SSO by Microsoft**.
-
-    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
-
-2. Из списка приложений выберите **JIRA SAML SSO by Microsoft**.
-
-    ![Ссылка на JIRA SAML SSO by Microsoft в списке "Приложения"](common/all-applications.png)
-
-3. В меню слева выберите **Пользователи и группы**.
-
-    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
-
-4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
-
-    ![Область "Добавление назначения"](common/add-assign-user.png)
-
-5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
-
-6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
-
-7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
-
 ### <a name="create-jira-saml-sso-by-microsoft-test-user"></a>Создание тестового пользователя JIRA SAML SSO by Microsoft
 
 Чтобы пользователи Azure AD могли выполнять вход на локальный сервер JIRA, их необходимо подготовить в JIRA SAML SSO by Microsoft. Для JIRA SAML SSO by Microsoft подготовка выполняется вручную.
@@ -288,17 +244,17 @@ ms.locfileid: "67099619"
 
     ![Добавление сотрудника](./media/jiramicrosoft-tutorial/user4.png) 
 
-    a. В текстовом поле **Email address** (Адрес электронной почты) введите адрес электронной почты пользователя, например Brittasimon@contoso.com.
+    a. В текстовом поле **Email address** (Адрес электронной почты) введите адрес электронной почты пользователя, например B.simon@contoso.com.
 
-    b. В текстовом поле **Full Name** (Полное имя) введите полное имя пользователя, например Britta Simon.
+    b. В текстовом поле **Full Name** (Полное имя) введите полное имя пользователя, например B.Simon.
 
-    c. В текстовом поле **Username** (Имя пользователя) введите электронный адрес пользователя, например Brittasimon@contoso.com.
+    c. В текстовом поле **Username** (Имя пользователя) введите электронный адрес пользователя, например B.simon@contoso.com.
 
     d. В текстовом поле **Password** (Пароль) введите пароль пользователя.
 
     д. Щелкните **Create user** (Создать пользователя).
 
-### <a name="test-single-sign-on"></a>Проверка единого входа 
+## <a name="test-sso"></a>Проверка единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
@@ -306,8 +262,10 @@ ms.locfileid: "67099619"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+
+- [Попробуйте JIRA SAML SSO by Microsoft в работе с Azure AD](https://aad.portal.azure.com/)

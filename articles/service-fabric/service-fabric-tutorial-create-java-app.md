@@ -15,18 +15,18 @@ ms.workload: NA
 ms.date: 09/01/2018
 ms.author: suhuruli
 ms.custom: mvc, seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: 57c9bd8caf6e8762ed07ac5e6f4ff16171569723
-ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.openlocfilehash: b3210b97fe6fb0cd16499d5c33538c8e2babe612
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70900670"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71173609"
 ---
 # <a name="tutorial-create-an-application-with-a-java-api-front-end-service-and-a-stateful-back-end-service-on-azure-service-fabric"></a>Руководство по Создание приложения с интерфейсной службой API Java и серверной службой с отслеживанием состояния в Azure Service Fabric
 
 Это руководство представляет первую часть цикла. Выполнив инструкции из этого руководства, вы получите приложение для голосования с клиентской частью в виде веб-приложения Java, которое сохраняет результаты голосования во внутренней службе с отслеживанием состояния в Azure Service Fabric. В этой серии руководств требуется, чтобы у вас был работающий компьютер для разработчиков Mac OSX или Linux. Если вы не хотите вручную создавать приложение для голосования, вы можете [скачать исходный код](https://github.com/Azure-Samples/service-fabric-java-quickstart) для завершенного приложения и сразу перейти к [описанию примера приложения для голосования](service-fabric-tutorial-create-java-app.md#walk-through-the-voting-sample-application). Кроме того, ознакомьтесь с [кратким руководством по развертыванию приложения Java в Azure Service Fabric](service-fabric-quickstart-java-reliable-services.md).
 
-![Локальное приложение для голосования](./media/service-fabric-tutorial-create-java-app/votingjavalocal.png)
+![Пример для голосования Service Fabric](./media/service-fabric-tutorial-create-java-app/service-fabric-java-voting-app-sample.png)
 
 Из этого цикла руководств вы узнаете, как выполнять следующие задачи:
 > [!div class="checklist"]
@@ -60,15 +60,15 @@ ms.locfileid: "70900670"
 
 2. Создайте проект, последовательно выбрав **Файл** > **Создать** > **Другое** > **Service Fabric** > **Проект Service Fabric**.
 
-    ![Диалоговое окно "Новый проект" в Eclipse](./media/service-fabric-tutorial-create-java-app/create-sf-proj-wizard.png)
+    ![Новый проект Service Fabric в Eclipse](./media/service-fabric-tutorial-create-java-app/service-fabric-project-wizard.png)
 
 3. В диалоговом окне **ServiceFabric Project Wizard** (Мастер проектов Service Fabric) назовите проект **Voting** и нажмите кнопку **Далее**.
 
-    ![Выбор службы без отслеживания состояния Java в диалоговом окне создания службы](./media/service-fabric-tutorial-create-java-app/name-sf-proj-wizard.png) 
+    ![Выбор службы без отслеживания состояния Java в диалоговом окне создания службы](./media/service-fabric-tutorial-create-java-app/name-service-fabric-project-wizard.png) 
 
 4. На странице **Добавление службы** выберите **Служба без отслеживания состояния** и укажите имя службы **VotingWeb**. Нажмите кнопку **Готово**, чтобы создать проект.
 
-    ![Создание службы без отслеживания состояния]( ./media/service-fabric-tutorial-create-java-app/createvotingweb.png)
+    ![Создание службы без отслеживания состояния для проекта Service Fabric]( ./media/service-fabric-tutorial-create-java-app/add-service-fabric-votingweb-service.png)
 
     Eclipse создает приложение и проект службы и отображает их в обозревателе пакетов.
 
@@ -416,7 +416,7 @@ Service Fabric позволяет согласованно и надежно х�
 
 3. Eclipse создает проект службы и отображает его в обозревателе пакетов.
 
-    ![обозревателе решений](./media/service-fabric-tutorial-create-java-app/packageexplorercompletejava.png)
+    ![Обозреватель проектов Eclipse](./media/service-fabric-tutorial-create-java-app/service-fabric-package-explorer-java.png)
 
 ### <a name="add-the-votingdataservicejava-file"></a>Добавление файла VotingDataService.java
 
@@ -557,7 +557,7 @@ class VotingDataService extends StatefulService implements VotingRPC {
 
 1. Щелкните правой кнопкой мыши проект **Voting** в обозревателе пакетов и выберите **Новая**  > **Папка**. Назовите папку **VotingRPC/src/rpcmethods**.
 
-    ![Создание пакета VotingRPC](./media/service-fabric-tutorial-create-java-app/createvotingrpcpackage.png)
+    ![Создание пакета VotingRPC в обозревателе пакетов Eclipse](./media/service-fabric-tutorial-create-java-app/create-voting-rpc-package-java.png)
 
 3. Создайте файл в папке *Voting/VotingRPC/src/rpcmethods*, который называется *VotingRPC.java*, и вставьте следующее в файл **VotingRPC.java**. 
 
@@ -720,7 +720,7 @@ class VotingDataService extends StatefulService implements VotingRPC {
 - Служба веб-интерфейса (VotingWeb) — это служба веб-интерфейса Java, которая обслуживает веб-страницу и предоставляет доступ к API для связи с внутренней службой.
 - Внутренняя служба (VotingDataService) — это веб-служба Java, которая определяет методы, вызываемые в удаленных вызовах процедуры для сохранения голосов.
 
-![Диаграмма приложения](./media/service-fabric-tutorial-create-java-app/walkthroughjavavoting.png)
+![Образец схемы голосования](./media/service-fabric-tutorial-create-java-app/walkthrough-java-voting.png)
 
 При выполнении действия в приложении (добавление элемента, голосование, удаление элемента) возникают следующие события:
 1. JavaScript отправляет соответствующий запрос о голосовании веб-API в службе веб-интерфейса в виде HTTP-запроса.

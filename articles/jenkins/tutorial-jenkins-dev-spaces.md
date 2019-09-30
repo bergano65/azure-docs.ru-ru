@@ -7,12 +7,12 @@ ms.service: jenkins
 ms.topic: tutorial
 ms.custom: mvc
 ms.date: 07/31/2019
-ms.openlocfilehash: 10ff8f4645ee1e7023c96174236243a3b85de938
-ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
+ms.openlocfilehash: 3d5e8ba8a29481a6f37ffd10f577d354fc5fbf0a
+ms.sourcegitcommit: a7a9d7f366adab2cfca13c8d9cbcf5b40d57e63a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68679123"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71161496"
 ---
 <!-- GMinchAQ, 06/18/19 -->
 
@@ -53,7 +53,7 @@ Azure Dev Spaces позволяет тестировать и итеративн
 
 В этом разделе показано, как создать следующие ресурсы Azure:
 
-* группу ресурсов с ресурсами для работы с этим руководством;
+* группу ресурсов, вмещающую в себя все необходимые ресурсами для работы с этим руководством;
 * кластер [Службы Azure Kubernetes](https://docs.microsoft.com/azure/aks/) (AKS);
 * [реестр контейнеров Azure](https://docs.microsoft.com/azure/container-registry/) (ACR) для сборки (с помощью задач ACR) и хранения образов Docker.
 

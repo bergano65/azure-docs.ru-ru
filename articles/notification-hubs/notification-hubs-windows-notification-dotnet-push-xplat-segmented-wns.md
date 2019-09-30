@@ -3,9 +3,9 @@ title: Отправка push-уведомлений на конкретные у
 description: Использование Центров уведомлений Azure с тегами в регистрации для отправки экстренных новостей в приложение универсальной платформы Windows.
 services: notification-hubs
 documentationcenter: windows
-author: jwargo
-manager: patniko
-editor: spelluru
+author: sethmanheim
+manager: femila
+editor: jwargo
 ms.assetid: 994d2eed-f62e-433c-bf65-4afebf1c0561
 ms.service: notification-hubs
 ms.workload: mobile
@@ -14,13 +14,15 @@ ms.devlang: dotnet
 ms.topic: tutorial
 ms.custom: mvc
 ms.date: 03/22/2019
-ms.author: jowargo
-ms.openlocfilehash: 9cfe5f490ef4063e02d9407f23130c1a216961ed
-ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.author: sethm
+ms.reviewer: jowargo
+ms.lastreviewed: 03/22/2019
+ms.openlocfilehash: efe668e42e04942cc0d9fc99670057ab5bdd302a
+ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58402462"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71212125"
 ---
 # <a name="tutorial-push-notifications-to-specific-windows-devices-running-universal-windows-platform-applications"></a>Руководство по Отправка push-уведомлений на конкретные устройства Windows с запущенными приложениями универсальной платформы Windows
 
@@ -47,7 +49,7 @@ ms.locfileid: "58402462"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Завершите работу со статьей [Руководство. Отправка уведомлений в приложения универсальной платформы Windows с использованием Центров уведомлений Azure][get-started] перед началом работы с этим руководством.  
+Пройдите [руководство по отправке уведомлений в приложения универсальной платформы Windows с использованием Центров уведомлений Azure][get-started] перед началом работы с этим учебником.  
 
 ## <a name="add-category-selection-to-the-app"></a>Добавление возможности выбора категорий в приложение
 
@@ -201,7 +203,7 @@ ms.locfileid: "58402462"
     var result = await notifications.SubscribeToCategories();
     ```
 
-    Этот процесс гарантирует, что при каждом запуске приложения оно извлекает категории из локального хранилища и запрашивает для них регистрацию. Вы создали метод `InitNotificationsAsync` в ходе изучения статьи [Руководство. Отправка уведомлений в приложения универсальной платформы Windows с использованием Центров уведомлений Azure][get-started].
+    Этот процесс гарантирует, что при каждом запуске приложения оно извлекает категории из локального хранилища и запрашивает для них регистрацию. Вы создали метод `InitNotificationsAsync` в ходе изучения руководства по [началу работы с Центрами уведомлений][get-started].
 2. В файле проекта `MainPage.xaml.cs` добавьте следующий код в метод `OnNavigatedTo`:
 
     ```csharp

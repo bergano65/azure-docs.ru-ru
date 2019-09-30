@@ -10,13 +10,13 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: article
-ms.date: 07/09/2019
-ms.openlocfilehash: e5666a64e4160964e2c1b35707a0f064edb72460
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.date: 09/22/2019
+ms.openlocfilehash: 619c36257f9166492e98d88335d767f358e3feca
+ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67706907"
+ms.lasthandoff: 09/22/2019
+ms.locfileid: "71179126"
 ---
 # <a name="tutorial-migrate-sql-server-to-a-single-database-or-pooled-database-in-azure-sql-database-online-using-dms"></a>Руководство по Перенос из SQL Server в отдельную базу данных или базу данных в пуле в Базе данных SQL Azure по сети с помощью DMS
 
@@ -78,16 +78,16 @@ Azure Database Migration Service можно использовать для пе
 - Если у вас нет первичного ключа к какой-либо таблице, включите отслеживание измененных данных (CDC) в базе данных и этой таблице.
     > [!NOTE]
     > Чтобы найти таблицы без первичных ключей, используйте скрипт ниже.
-
+    
     ```sql
     USE <DBName>;
     go
     SELECT is_tracked_by_cdc, name AS TableName
     FROM sys.tables WHERE type = 'U' and is_ms_shipped = 0 AND
     OBJECTPROPERTY(OBJECT_ID, 'TableHasPrimaryKey') = 0;
-     ```
+    ```
 
-    >Если в результатах отображается одна или несколько таблиц со значением 0 в поле is_tracked_by_cdc, [включите отслеживание измененных данных в базе данных и этих таблицах (SQL Server)](https://docs.microsoft.com/sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server?view=sql-server-2017).
+    Если в результатах отображается одна или несколько таблиц со значением 0 в поле is_tracked_by_cdc, [включите отслеживание измененных данных в базе данных и этих таблицах (SQL Server)](https://docs.microsoft.com/sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server?view=sql-server-2017).
 
 - Настройте роль распространителя для исходного сервера SQL Server.
 
@@ -132,12 +132,12 @@ Azure Database Migration Service можно использовать для пе
 1. В Помощнике по миграции данных щелкните "Создать" (значок плюса), а затем выберите тип проекта **Оценка**.
 2. Укажите имя проекта в текстовом поле **Тип исходного сервера**, выберите **SQL Server**, в текстовом поле **Тип конечного сервера** выберите **База данных SQL Azure**, а затем нажмите **Создать**, чтобы создать проект.
 
-    При оценке исходной базы данных SQL Server, переносимой в отдельную базу данных или базу данных в составе пула в Базе данных SQL Azure, можно выбрать один или несколько следующих типов отчетов об оценке:
+   При оценке исходной базы данных SQL Server, переносимой в отдельную базу данных или базу данных в составе пула в Базе данных SQL Azure, можно выбрать один или несколько следующих типов отчетов об оценке:
 
    - проверка совместимости базы данных;
    - проверка четности компонентов.
 
-     По умолчанию выбраны оба типа отчетов.
+   По умолчанию выбраны оба типа отчетов.
 
 3. На экране **Параметры** Помощника по миграции данных выберите **Далее**.
 4. На экране **Выберите источники** в диалоговом окне **Соединение с сервером** предоставьте сведения о подключении к SQL Server, а затем выберите **Подключить**.

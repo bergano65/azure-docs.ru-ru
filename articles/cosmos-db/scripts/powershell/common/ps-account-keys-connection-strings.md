@@ -4,14 +4,14 @@ description: Пример скрипта Azure PowerShell — операции 
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: sample
-ms.date: 05/20/2019
+ms.date: 09/20/2019
 ms.author: mjbrown
-ms.openlocfilehash: 55f28ef6c6ff82f0b82b10ac1dd7931ac46aa2fc
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: 1eb9cc4c35584b94d3d16654b1bec253e21a91ff
+ms.sourcegitcommit: 116bc6a75e501b7bba85e750b336f2af4ad29f5a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67602510"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71154759"
 ---
 # <a name="connection-string-and-account-key-operations-for-an-azure-cosmos-account-using-powershell"></a>Операции со строкой подключения и ключом учетной записи для учетной записи Azure Cosmos с помощью PowerShell
 
@@ -21,7 +21,8 @@ ms.locfileid: "67602510"
 
 ## <a name="sample-script"></a>Пример скрипта
 
-Для выполнения этого скрипта необходима группа ресурсов и учетная запись. Сначала создайте учетную запись, используя соответствующую команду PowerShell.
+> [!NOTE]
+> В этом примере демонстрируется использование учетной записи API SQL (Core). Чтобы использовать этот пример с другими API, соответствующие свойства необходимо скопировать в скрипт для такого API.
 
 [!code-powershell[main](../../../../../powershell_scripts/cosmosdb/common/ps-account-keys-connection-strings.ps1 "Connection strings and account keys for Azure Cosmos account")]
 

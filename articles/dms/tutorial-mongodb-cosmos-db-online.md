@@ -10,13 +10,13 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: article
-ms.date: 07/04/2019
-ms.openlocfilehash: 17f1b36ba5d5b699cce621db3917ef92654047ff
-ms.sourcegitcommit: d2785f020e134c3680ca1c8500aa2c0211aa1e24
+ms.date: 09/25/2019
+ms.openlocfilehash: a73f3eefbf76b2ea24f34ed496ff45c5d2467e3e
+ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/04/2019
-ms.locfileid: "67565583"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71266357"
 ---
 # <a name="tutorial-migrate-mongodb-to-azure-cosmos-dbs-api-for-mongodb-online-using-dms"></a>Руководство по Перенос MongoDB в API Azure Cosmos DB для MongoDB по сети с помощью DMS
 
@@ -132,6 +132,9 @@ ms.locfileid: "67565583"
 ## <a name="specify-source-details"></a>Указание сведений об источнике
 
 1. На экране **Сведения об источнике** задайте сведения о подключении для исходного сервера MongoDB.
+
+   > [!IMPORTANT]
+   > Azure Database Migration Service не поддерживает Azure Cosmos DB в качестве источника.
 
     Доступно три режима для подключения к источнику:
    * **Стандартный режим**, в котором принимается полное доменное имя или IP-адрес, номер порта и учетные данные для подключения.

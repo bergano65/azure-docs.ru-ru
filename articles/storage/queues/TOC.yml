@@ -192,106 +192,116 @@
           href: ../common/storage-powershell-independent-clouds.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json
 - name: Справочные материалы
   items:
-    - name: PowerShell
-      href: /powershell/module/azure.storage
+    - name: Azure PowerShell
+      href: /powershell/module/az.storage
     - name: Azure CLI
       href: /cli/azure/storage
     - name: .NET
       items:
-        - name: 'Большие двоичные объекты, очереди, таблицы и файлы'
-          href: 'https://docs.microsoft.com/dotnet/api/overview/azure/storage/client'
-        - name: Перемещение данных
-          href: /dotnet/api/microsoft.azure.storage.datamovement
-        - name: Resource Manager
-          href: 'https://docs.microsoft.com/dotnet/api/overview/azure/storage/management'
+        - name: 'Большие двоичные объекты, очереди и файлы'
+          href: /dotnet/api/overview/azure/storage/client
+        - name: Поставщик ресурсов хранилища
+          href: /dotnet/api/overview/azure/storage/management
     - name: Java
       items:
-        - name: 'Большие двоичные объекты, очереди, таблицы и файлы'
-          href: 'https://docs.microsoft.com/java/api/overview/azure/storage/client'
-        - name: Resource Manager
-          href: 'https://docs.microsoft.com/java/api/overview/azure/storage/management'
+        - name: "Большие двоичные объекты, очереди и файлы (12.x\_— предварительная версия)"
+          href: 'https://azure.github.io/azure-sdk-for-java/track2reports/index.html'
+        - name: Поставщик ресурсов хранилища
+          href: /java/api/overview/azure/storage/management
     - name: Node.js
-      href: 'https://docs.microsoft.com/javascript/api/overview/azure/storage'
-    - name: Ruby
-      href: 'https://azure.github.io/azure-storage-ruby'
-    - name: PHP
-      href: 'https://azure.github.io/azure-storage-php/'
+      href: /javascript/api/overview/azure/storage
     - name: Python
-      href: 'https://docs.microsoft.com/python/api/overview/azure/storage'
-    - name: C++
-      href: 'https://azure.github.io/azure-storage-cpp'
-    - name: iOS
-      href: 'https://azure.github.io/azure-storage-ios/'
-    - name: Android
-      href: 'https://azure.github.io/azure-storage-android'
+      href: /python/api/overview/azure/storage
     - name: REST
       items:
         - name: 'Большие двоичные объекты, очереди, таблицы и файлы'
           href: /rest/api/storageservices
-        - name: Поставщик ресурсов
+        - name: Поставщик ресурсов хранилища
           href: /rest/api/storagerp
-        - name: Импорт и экспорт
-          href: /rest/api/storageimportexport
+    - name: C++
+      href: 'https://azure.github.io/azure-storage-cpp'
+    - name: Ruby
+      href: 'https://azure.github.io/azure-storage-ruby'
+    - name: PHP
+      href: 'https://azure.github.io/azure-storage-php/'
+    - name: iOS
+      href: 'https://azure.github.io/azure-storage-ios/'
+    - name: Android
+      href: 'https://azure.github.io/azure-storage-android'
     - name: Шаблон Resource Manager
       displayName: ARM
       href: /azure/templates/microsoft.storage/allversions
 - name: Ресурсы
   items:
-    - name: Стратегия развития Azure
-      href: 'https://azure.microsoft.com/roadmap/?product=storage'
-    - name: Клиентские инструменты службы хранилища Azure
-      href: ../common/storage-explorers.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json
-    - name: Форум
-      href: 'https://social.msdn.microsoft.com/forums/azure/home?forum=windowsazuredata'
-    - name: Цены
-      href: 'https://azure.microsoft.com/pricing/details/storage/queues/'
-    - name: Калькулятор цен
-      href: 'https://azure.microsoft.com/pricing/calculator/'
-    - name: Stack Overflow
-      href: 'https://stackoverflow.com/questions/tagged/windows-azure-storage'
-    - name: Видео
-      href: 'https://azure.microsoft.com/documentation/videos/index/?services=storage'
+    - name: Обновления Azure
+      href: 'https://azure.microsoft.com/updates/?product=storage'
     - name: Обозреватель службы хранилища Azure
       items:
-        - name: Обозреватель службы хранилища
-          href: ../../vs-azure-tools-storage-manage-with-storage-explorer.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json
+        - name: Скачивание Обозревателя службы хранилища
+          href: 'https://azure.microsoft.com/features/storage-explorer/'
+        - name: Начало работы с Обозревателем службы хранилища
+          href: ../../vs-azure-tools-storage-manage-with-storage-explorer.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: Заметки о выпуске Обозревателя службы хранилища
-          href: ../../vs-azure-tools-storage-explorer-relnotes.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json
+          href: ../../vs-azure-tools-storage-explorer-relnotes.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: Устранение неполадок с Обозревателем службы хранилища
-          href: ../common/storage-explorer-troubleshooting.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json
+          href: ../common/storage-explorer-troubleshooting.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: Специальные возможности Обозревателя службы хранилища
-          href: ../../vs-azure-tools-storage-explorer-accessibility.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json
-    - name: Пакеты NuGet
+          href: ../../vs-azure-tools-storage-explorer-accessibility.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+    - name: Форум службы хранилища Azure
+      href: 'https://social.msdn.microsoft.com/forums/azure/home?forum=windowsazuredata'
+    - name: Служба хранилища Azure на форуме Stack Overflow
+      href: 'https://stackoverflow.com/questions/tagged/windows-azure-storage'
+    - name: Цены на службу хранилища Azure
+      href: 'https://azure.microsoft.com/pricing/details/storage/'
+    - name: Калькулятор цен Azure
+      href: 'https://azure.microsoft.com/pricing/calculator/'
+    - name: Видео
+      href: 'https://azure.microsoft.com/documentation/videos/index/?services=storage'
+    - name: Пакеты NuGet (.NET)
       items:
-        - name: Общая клиентская библиотека службы хранилища Azure
+        - name: "Microsoft.Azure.Storage.Common (версия\_11.x)"
           href: 'https://www.nuget.org/packages/Microsoft.Azure.Storage.Common/'
-        - name: Общая клиентская библиотека Хранилища очередей Azure
+        - name: "Azure.Storage.Common (12.x\_— предварительная версия)"
+          href: 'https://www.nuget.org/packages/Azure.Storage.Common/'
+        - name: "Microsoft.Azure.Storage.Queue (версия\_11.x)"
           href: 'https://www.nuget.org/packages/Microsoft.Azure.Storage.Queue/'
-        - name: Общая клиентская библиотека перемещения данных службы хранилища Azure
-          href: 'https://www.nuget.org/packages/Microsoft.Azure.Storage.DataMovement/'
+        - name: "Azure.Storage.Queue (12.x\_— предварительная версия)"
+          href: 'https://www.nuget.org/packages/Azure.Storage.Queues/'
         - name: Диспетчер конфигураций Azure
           href: 'https://www.nuget.org/packages/Microsoft.Azure.ConfigurationManager/'
+        - name: Библиотека перемещения данных службы хранилища Azure
+          href: 'https://www.nuget.org/packages/Microsoft.Azure.Storage.DataMovement/'
     - name: Исходный код
       items:
         - name: .NET
           items:
-            - name: 'Большие двоичные объекты, очереди и файлы'
-              href: 'https://github.com/Azure/azure-storage-net'
-            - name: Поставщик ресурсов хранилища
-              href: 'https://github.com/Azure/azure-sdk-for-net'
-        - name: Node.js
-          href: 'https://azure.github.io/azure-storage-node/'
+            - name: Клиентская библиотека службы хранилища Azure
+              items:
+                - name: "Версия\_12.x (предварительная версия)"
+                  href: 'https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/storage'
+                - name: "Версия\_11. x и более ранние версии"
+                  href: 'https://github.com/Azure/azure-storage-net'
+            - name: Библиотека перемещения данных
+              href: /dotnet/api/microsoft.azure.storage.datamovement
+            - name: Библиотека поставщика ресурсов службы хранилища
+              href: /dotnet/api/overview/azure/storage/management
         - name: Java
-          href: 'https://github.com/Azure/azure-storage-java'
-        - name: C++
-          href: 'https://github.com/Azure/azure-storage-cpp'
-        - name: PHP
-          href: 'https://github.com/Azure/azure-storage-php'
+          items:
+            - name: "Клиентская библиотека службы хранилища Azure версии\_12.x (предварительная версия)"
+              href: 'https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/storage'
+            - name: "Клиентская библиотека службы хранилища Azure версии\_8.x и более ранних версий"
+              href: 'https://github.com/Azure/azure-storage-java'
+        - name: Node.js
+          items:
+            - name: "Клиентская библиотека службы хранилища Azure версии\_12.x (предварительная версия)"
+              href: 'https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage'
+            - name: "Клиентская библиотека службы хранилища Azure версии\_10.x"
+              href: 'https://github.com/Azure/azure-storage-node'
         - name: Python
-          href: 'https://github.com/Azure/azure-storage-python'
-        - name: Ruby
-          href: 'https://github.com/Azure/azure-storage-ruby'
-        - name: iOS
-          href: 'https://github.com/Azure/azure-storage-ios'
+          items:
+            - name: "Клиентская библиотека службы хранилища Azure версии\_12.x (предварительная версия)"
+              href: 'https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage'
+            - name: "Клиентская библиотека службы хранилища Azure версии\_2.1"
+              href: 'https://github.com/Azure/azure-storage-python'
     - name: Предложения для соответствия требованиям
       href: ../common/storage-compliance-offerings.md

@@ -12,12 +12,12 @@ ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: b5a21bd144558459ac60ae2da405f9ea57ca2fd1
-ms.sourcegitcommit: 80dff35a6ded18fa15bba633bf5b768aa2284fa8
+ms.openlocfilehash: 1fc322cf7e425e35751369ab8daf1ef1809d5f07
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70020187"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71203263"
 ---
 # <a name="build-a-python-django-web-app-with-postgresql-in-azure-app-service"></a>Создание веб-приложения Python (Django) с помощью PostgreSQL в Службе приложений Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "70020187"
 > [!NOTE]
 > Прежде чем создавать базу данных Azure для PostgreSQL, проверьте [поколения вычислительных ресурсов, доступные в вашем регионе](https://docs.microsoft.com/azure/postgresql/concepts-pricing-tiers#compute-generations-and-vcores).
 
-Следуйте инструкциям в этой статье о macOS. Инструкции для Linux и Windows в большей степени совпадают, но различия не описаны в этом руководстве.
+Вы можете выполнить эти инструкции в macOS, Linux и Windows, так как они по большей части совпадают, но существующие различия не описаны в этом руководстве.
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 

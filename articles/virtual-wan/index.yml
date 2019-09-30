@@ -10,12 +10,12 @@ metadata:
   author: cherylmc
   ms.author: cherylmc
   ms.date: 08/28/2019
-  ms.openlocfilehash: a79f04f343264669bfa4366a140c6fd11b4fc7e5
-  ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+  ms.openlocfilehash: 2c5922eb7ca13e6b22000890f6825d3d29ae3455
+  ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 08/28/2019
-  ms.locfileid: "70128161"
+  ms.lasthandoff: 09/27/2019
+  ms.locfileid: "71327079"
 landingContent:
 - title: Общие сведения о Виртуальной глобальной сети
   linkLists:
@@ -41,6 +41,8 @@ landingContent:
     links:
     - text: Маршрутизация трафика из виртуального концентратора в виртуальный сетевой модуль
       url: virtual-wan-route-table-portal.md
+    - text: Настройка автоматизации партнеров Виртуальной глобальной сети
+      url: virtual-wan-configure-automation-providers.md
   - linkListType: concept
     links:
     - text: Политики по умолчанию для подключения IPsec

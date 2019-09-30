@@ -8,19 +8,19 @@ ms.author: tarcher
 manager: jeconnoc
 ms.topic: tutorial
 ms.date: 11/15/2018
-ms.custom: seo-java-july2019, seo-java-august2019
-ms.openlocfilehash: 06f1c0123d6bdf56b5182605016d2feb80adf18b
-ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
+ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019
+ms.openlocfilehash: c4e4a984adc0ec6af99667ff36c009ca730acf48
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70172963"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71172805"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-app-service-with-jenkins-continuous-integration-and-deployment"></a>Руководство. Развертывание из GitHub в Службе приложений Azure с использованием непрерывной интеграции и непрерывного развертывания Jenkins
 
 В рамках этого руководства мы развернем пример веб-приложения Java из GitHub в [Службе приложений Azure на платформе Linux](/azure/app-service/containers/app-service-linux-intro), настроив непрерывную интеграцию (CI) и непрерывное развертывание (CD) в Jenkins. Когда вы обновляете приложение, фиксируя изменения в GitHub, Jenkins автоматически выполняет сборку и повторную публикацию приложения в Службе приложений Azure. Пример приложения, используемый в этом руководстве, разработан на платформе [Spring Boot](https://projects.spring.io/spring-boot/). 
 
-![Обзор](media/tutorial-jenkins-deploy-web-app-azure-app-service/overview.png)
+![Общие сведения о развертывании из GitHub в Службе приложений Azure](media/tutorial-jenkins-deploy-web-app-azure-app-service/azure-continuous-integration-deployment-overview.png)
 
 При работе с этим руководством вы выполните следующие задачи:
 
@@ -97,19 +97,19 @@ ms.locfileid: "70172963"
 
 1. На странице **Manage Jenkins** (Управление Jenkins) щелкните **Configure System** (Настройка системы). 
 
-   ![Configure System (Настройка системы)](media/tutorial-jenkins-deploy-web-app-azure-app-service/manage-jenkins-configure-system.png)
+   ![Настройка системы в Jenkins](media/tutorial-jenkins-deploy-web-app-azure-app-service/manage-jenkins-configure-system.png)
 
 1. В разделе **GitHub** укажите сведения о своем сервере GitHub. В списке **Add GitHub Server** (Добавить сервер GitHub) выберите **GitHub Server** (Сервер GitHub). 
 
-   ![Добавление сервера GitHub](media/tutorial-jenkins-deploy-web-app-azure-app-service/add-GitHub-server.png)
+   ![Добавление сервера GitHub в Jenkins](media/tutorial-jenkins-deploy-web-app-azure-app-service/add-GitHub-server.png)
 
 1. Выберите свойство **Manage hooks** (Управление обработчиками), если оно не выбрано. Чтобы указать другие параметры, щелкните **Advanced** (Дополнительно). 
 
-   ![Выбор элемента "Advanced" (Дополнительно) для отображения дополнительных параметров](media/tutorial-jenkins-deploy-web-app-azure-app-service/advanced-GitHub-settings.png)
+   ![Настройка дополнительных параметров Jenkins для сервера GitHub](media/tutorial-jenkins-deploy-web-app-azure-app-service/advanced-GitHub-settings.png)
 
 1. В списке **Manage additional GitHub actions** (Управление дополнительными действиями GitHub) выберите **Convert login and password to token** (Преобразовать имя пользователя и пароль в маркер).
 
-   ![Выбор элемента "Manage additional GitHub actions" (Управление дополнительными действиями GitHub)](media/tutorial-jenkins-deploy-web-app-azure-app-service/manage-additional-actions.png)
+   ![Преобразование имени входа и пароля в токен для GitHub](media/tutorial-jenkins-deploy-web-app-azure-app-service/manage-additional-actions.png)
 
 1. Выберите **From login and password** (Из имени пользователя и пароля), чтобы ввести имя пользователя и пароль для GitHub. Когда все будет готово, нажмите кнопку **Create token credentials** (Создать учетные данные в формате маркера), чтобы создать [личный маркер доступа (PAT) GitHub](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/).   
 
@@ -181,11 +181,11 @@ az ad sp create-for-rbac --name "yourAzureServicePrincipalName" --password yourS
 
 1. Вернитесь на домашнюю страницу Jenkins и выберите **New Item** (Новый элемент). 
 
-   ![Выбор пункта New Item (Создать элемент)](media/tutorial-jenkins-deploy-web-app-azure-app-service/jenkins-select-new-item.png)
+   ![Создание конвейера Jenkins](media/tutorial-jenkins-deploy-web-app-azure-app-service/jenkins-select-new-item.png)
 
 1. Укажите имя для задания конвейера, например My-Java-Web-App, и выберите **Pipeline** (Конвейер). Нажмите кнопку **OK** внизу.  
 
-   ![Выбор элемента Pipeline (Конвейер)](media/tutorial-jenkins-deploy-web-app-azure-app-service/jenkins-select-pipeline.png)
+   ![Указание имени для задания конвейера Jenkins](media/tutorial-jenkins-deploy-web-app-azure-app-service/jenkins-select-pipeline.png)
 
 1. Настройте в Jenkins использование субъекта-службы, чтобы сервер Jenkins выполнял развертывание в Azure без использования ваших учетных данных.
 
@@ -199,7 +199,7 @@ az ad sp create-for-rbac --name "yourAzureServicePrincipalName" --password yourS
       WEB_APP=yourWebAppName
       ```
 
-      ![Выбор элемента Prepare an environment for the run (Подготовка среды для запуска) и указание переменных среды](media/tutorial-jenkins-deploy-web-app-azure-app-service/prepare-environment-for-run.png)
+      ![Подготовка среды для запуска и указание переменных среды](media/tutorial-jenkins-deploy-web-app-azure-app-service/prepare-environment-for-jenkins-run.png)
 
 1. Когда все будет готово, нажмите кнопку **Сохранить**.
 
@@ -254,7 +254,7 @@ az ad sp create-for-rbac --name "yourAzureServicePrincipalName" --password yourS
 
 1. В Jenkins выберите ранее созданное задание конвейера. 
 
-   ![Выбор задания конвейера для веб-приложения](media/tutorial-jenkins-deploy-web-app-azure-app-service/select-pipeline-job.png)
+   ![Выбор задания конвейера Jenkins для веб-приложения](media/tutorial-jenkins-deploy-web-app-azure-app-service/select-pipeline-job.png)
 
 1. В меню слева выберите **Configure** (Настройка).
 
@@ -272,7 +272,7 @@ az ad sp create-for-rbac --name "yourAzureServicePrincipalName" --password yourS
 
    Когда все будет готово, определение конвейера будет выглядеть приблизительно так: 
 
-   ![Указание скрипта для конвейера](media/tutorial-jenkins-deploy-web-app-azure-app-service/set-up-jenkins-github.png)
+   ![Указание конвейера Jenkins в скрипте](media/tutorial-jenkins-deploy-web-app-azure-app-service/set-up-jenkins-github.png)
 
 1. Когда все будет готово, нажмите кнопку **Сохранить**.
 

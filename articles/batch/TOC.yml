@@ -80,6 +80,8 @@
         - name: Настройка доступа к вычислительным узлам
           href: pool-endpoint-configuration.md
         - name: Создание пула с использованием службы "Общая коллекция образов"
+          href: batch-sig-images.md
+        - name: Создание пула с использованием ресурса управляемого образа
           href: batch-custom-images.md
         - name: Создание пула в виртуальной сети
           href: batch-virtual-network.md

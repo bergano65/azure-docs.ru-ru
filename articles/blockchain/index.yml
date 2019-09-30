@@ -1,0 +1,88 @@
+### YamlMime:Hub
+title: Документация по службе "Блокчейн Azure"
+summary: Узнайте, как разрабатывать, тестировать и развертывать безопасные блокчейн-приложения с помощью службы "Блокчейн Azure".
+brand: azure
+metadata:
+  title: Документация по службе "Блокчейн Azure"
+  description: Узнайте, как разрабатывать, тестировать и развертывать безопасные блокчейн-приложения с помощью службы "Блокчейн Azure".
+  services: service
+  ms.service: azure-blockchain
+  ms.topic: hub-page
+  author: PatAltimore
+  ms.author: patricka
+  ms.date: 09/25/2019
+  ms.openlocfilehash: 93a1e54dd2f1c209792c688666782a9c9823214b
+  ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 09/27/2019
+  ms.locfileid: "71328630"
+productDirectory:
+  items:
+  - title: Служба "Блокчейн Azure"
+    imageSrc: ./media/index/blockchain-service.svg
+    links:
+    - url: ./service/overview.md
+      text: Что собой представляет служба "Блокчейн Azure"?
+    - url: ./service/index.yml
+      text: Подробнее >
+  - title: Azure Blockchain Workbench
+    imageSrc: ./media/index/blockchain-workbench.svg
+    links:
+    - url: ./workbench/overview.md
+      text: Что такое Azure Blockchain Workbench?
+    - url: ./workbench/index.yml
+      text: Подробнее >
+conceptualContent:
+  title: Начало работы
+  items:
+  - title: Создание и разработка с использованием блокчейн-сетей консорциума
+    links:
+    - url: ./service/create-member.md
+      itemType: quickstart
+      text: Развертывание участника блокчейн-сети службы "Блокчейн Azure"
+    - url: ./service/send-transaction.md
+      itemType: tutorial
+      text: Напишите смарт-контракт с помощью приведенных в руководстве инструкций
+    - url: https://channel9.msdn.com/Shows/Blocktalk/Getting-started-with-Azure-Blockchain-Service-Part-I-Deploy-and-configure-your-network
+      itemType: video
+      text: Узнайте, как развернуть и настроить сеть
+    - url: https://channel9.msdn.com/Shows/Blocktalk/Getting-started-with-Azure-Blockchain-Service-Part-II-Write-and-test-smart-contracts-with-VS-Code
+      itemType: video
+      text: Просмотрите видео о том, как написать смарт-контракт с помощью VS Code
+  - title: Прототипирование блокчейн-решения
+    links:
+    - url: ./workbench/deploy.md
+      itemType: how-to-guide
+      text: Развертывание Azure Blockchain Workbench
+    - url: ./workbench/create-app.md
+      itemType: tutorial
+      text: Создайте приложение Blockchain Workbench с помощью приведенных в руководстве инструкций
+    - url: ./workbench/integration-patterns.md
+      itemType: concept
+      text: Узнайте, как интегрировать решения с помощью Blockchain Workbench
+    - url: https://channel9.msdn.com/Shows/Blocktalk/Building-your-first-Azure-Blockchain-Workbench-application
+      itemType: video
+      text: Просмотрите видео о том, как создать первое приложение
+  - title: Создавайте решения с помощью подходящего реестра
+    links:
+    - url: ./templates/ethereum-poa-deployment.md
+      itemType: how-to-guide
+      text: Развертывание сети консорциума Ethereum с несколькими участниками и подтверждением полномочий в Azure
+    - url: ./templates/hyperledger-fabric-consortium-blockchain.md
+      itemType: how-to-guide
+      text: Развертывание сети консорциума Hyperledger Fabric в Azure
+additionalContent:
+  sections:
+  - title: Средства разработки и примеры
+    summary: Средства разработки блокчейн-приложений и примеры кода.
+    items:
+    - title: Комплект SDK Блокчейна Azure для Ethereum
+      summary: Разрабатывайте, развертывайте и отлаживайте свое решение службы "Блокчейн Azure", а также управляйте им.
+      url: https://marketplace.visualstudio.com/items?itemName=azblockchain.azure-blockchain
+    - title: Блокчейн-соединитель Ethereum
+      summary: С помощью Azure Logic Apps, Microsoft Flow и Microsoft PowerApps вы можете выполнять различные действия смарт-контракта, такие как отправка транзакций, чтение сведений о состоянии контракта и активация потоков при обновлении контракта.
+      url: https://docs.microsoft.com/connectors/blockchainethereum/
+    - title: Примеры кода
+      summary: Репозиторий GitHub с примерами кода, которые помогут вам приступить к работе.
+      url: https://github.com/Azure-Samples/blockchain

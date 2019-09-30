@@ -11,12 +11,12 @@ ms.reviewer: klam, LADocs
 ms.topic: tutorial
 ms.custom: mvc
 ms.date: 09/12/2019
-ms.openlocfilehash: 9392cfc9c789a757c3ad533a3dbd4719f5292be5
-ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
+ms.openlocfilehash: 809d76791522fa135932baaf6e237570ab0af35a
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70931459"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71172165"
 ---
 # <a name="tutorial-create-automated-schedule-based-recurring-workflows-by-using-azure-logic-apps"></a>Руководство по cозданию автоматических, выполняемых по расписанию, повторяющихся рабочих процессов с помощью Azure Logic Apps
 
@@ -235,7 +235,7 @@ ms.locfileid: "70931459"
 
 1. В предыдущем действии выберите **Новый шаг**.
 
-1. В разделе **Выбор действия** выберите **Встроенный** и выполните поиск по слову "условие" и выберите действие **Условие**.
+1. В разделе **Выберите действие** выберите **Встроенный**. В поле поиска в качестве фильтра введите слово "condition" (условие). В списке действий выберите действие **Условие**.
 
    ![Выберите действие "Условие"](./media/tutorial-build-scheduled-recurring-logic-app-workflow/select-condition-action.png)
 
@@ -243,19 +243,19 @@ ms.locfileid: "70931459"
 
 1. Создайте условие, которое проверяет, превышает ли значение свойства **travelTime** заданное ограничение, как показано ниже:
 
-   1. Внутри условия щелкните в поле **Выберите значение** в левой части условия.
+   1. Внутри условия щелкните мышью в поле **Выберите значение** слева от условия.
 
-   1. Когда появится список динамического содержимого, в разделе **Переменные** выберите свойство **travelTime**.
+   1. В появившемся списке динамического содержимого выберите свойство **travelTime** в разделе **Переменные**.
 
       ![Левая часть сборки условия](./media/tutorial-build-scheduled-recurring-logic-app-workflow/build-condition-left-side.png)
 
-   1. В диалоговом окне сравнения выберите оператор **больше чем**.
+   1. В среднем поле сравнения выберите оператор **больше**.
 
    1. В поле **Выбор значения** в правой части условия введите это ограничение: `15`
 
       После ввода значения условие должно выглядеть приблизительно так, как показано в примере ниже:
 
-      ![Добавление условия](./media/tutorial-build-scheduled-recurring-logic-app-workflow/build-condition-check-travel-time.png)
+      ![Условие завершения](./media/tutorial-build-scheduled-recurring-logic-app-workflow/build-condition-check-travel-time.png)
 
 1. Сохраните приложение логики.
 

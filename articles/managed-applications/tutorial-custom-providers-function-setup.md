@@ -1,68 +1,58 @@
 ---
 title: Настройка Функций Azure для настраиваемых поставщиков Azure
-description: В этом руководстве рассказывается, как создать функцию Azure и настроить ее для работы с настраиваемыми поставщиками Azure
+description: В руководстве показано, как создать приложение-функцию Azure и настроить его для работы с настраиваемыми поставщиками Azure
 author: jjbfour
 ms.service: managed-applications
 ms.topic: tutorial
 ms.date: 06/19/2019
 ms.author: jobreen
-ms.openlocfilehash: d7e4de43659db88bfd9aad40cc3b9f1753189bba
-ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
+ms.openlocfilehash: 6b5ab6948d382a9925c9ced91e04f360ecf51a0e
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67799123"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71173028"
 ---
-# <a name="setup-azure-functions-for-azure-custom-providers"></a>Настройка Функций Azure для настраиваемых поставщиков Azure
+# <a name="set-up-azure-functions-for-azure-custom-providers"></a>Настройка Функций Azure для настраиваемых поставщиков Azure
 
-Настраиваемые поставщики позволяют настраивать рабочие процессы в Azure. Настраиваемый поставщик представляет собой контракт между Azure и `endpoint`. В этом руководстве описан процесс настройки функции Azure для работы в качестве настраиваемого поставщика`endpoint`.
+Настраиваемым поставщиком называется контракт между Azure и конечной точкой. Настраиваемые поставщики позволяют изменять рабочие процессы в Azure. В этом руководстве демонстрируется процесс настройки приложения-функции Azure для работы в качестве конечной точки настраиваемого поставщика.
 
-Это руководство разделено на следующие разделы:
-
-- Создание функции Azure
-- Настройка привязки таблицы Azure
-- Обновление методов HTTP RESTful
-- Добавление пакетов NuGet диспетчера ресурсов Azure
-
-Это руководство основано на следующих руководствах:
-
-- [Создание первой функции Azure на портале Azure](../azure-functions/functions-create-first-azure-function.md)
-
-## <a name="creating-the-azure-function"></a>Создание функции Azure
+## <a name="create-the-azure-function-app"></a>Создание приложения-функции Azure
 
 > [!NOTE]
-> В этом руководстве мы создадим простую конечную точку службы, используя функцию Azure, но настраиваемый поставщик может использовать любую общедоступную `endpoint`. Azure Logic Apps, Azure API Management и Azure Web Apps — это отличные альтернативы.
+> Выполнив инструкции из этого руководства, вы создадите простую конечную точку службы, которая использует приложение-функцию Azure. При этом настраиваемый поставщик может использовать любую общедоступную конечную точку. Это может быть Azure Logic Apps, Azure API Management или функция Web Apps в Службе приложений Azure.
 
-Чтобы начать работу с этим руководством, необходимо следовать руководству [Создание первой функции Azure на портале Azure](../azure-functions/functions-create-first-azure-function.md). В этом руководстве будет создана функция веб-перехватчика .Net Core, которую можно изменить на портале Azure.
+Прежде чем начать работу с этим руководством, выполните инструкции из руководства [Создание первой функции Azure на портале Azure](../azure-functions/functions-create-first-azure-function.md), чтобы создать функцию веб-перехватчика .NET Core, которую можно изменить на портале Azure. Это является предварительным требованиям для начала работы.
 
-## <a name="install-azure-table-bindings"></a>Настройка привязки таблицы Azure
+## <a name="install-azure-table-storage-bindings"></a>Установка привязок к табличному хранилищу Azure
 
-В этом разделе приведены быстрые действия по настройке привязки хранилища таблиц Azure.
+Чтобы установить привязки к табличному хранилищу Azure, выполните следующее:
 
-1. Перейдите на вкладку `Integrate` для HttpTrigger.
-2. Щелкните `+ New Input`.
-3. Выберите `Azure Table Storage`.
-4. Установите `Microsoft.Azure.WebJobs.Extensions.Storage`, если они еще не установлены.
-5. Обновите `Table parameter name` на "tableStorage" и `Table name` на "myCustomResources".
-6. Сохраните обновленный входной параметр.
+1. Перейдите на вкладку **Интеграция** для HttpTrigger.
+1. Щелкните **Новое входное значение**.
+1. Щелкните **Табличное хранилище Azure**.
+1. Установите расширение Microsoft.Azure.WebJobs.Extensions.Storage, если оно еще не установлено.
+1. В поле **Имя параметра таблицы** введите **tableStorage**.
+1. В поле **Имя таблицы** введите **myCustomResources**.
+1. Щелкните **Сохранить**, чтобы сохранить обновленный входной параметр.
 
-![Обзор пользовательского поставщика](./media/create-custom-providers/azure-functions-table-bindings.png)
+![Настраиваемый поставщик с привязками таблиц](./media/create-custom-providers/azure-functions-table-bindings.png)
 
 ## <a name="update-restful-http-methods"></a>Обновление методов HTTP RESTful
 
-В этом разделе будут описаны быстрые действия по настройке функции Azure для включения методов запроса RESTful настраиваемого поставщика.
+Чтобы настроить в функции Azure методы запроса из настраиваемого поставщика RESTful, выполните следующее:
 
-1. Перейдите на вкладку `Integrate` для HttpTrigger.
-2. Обновите `Selected HTTP methods` к: GET, POST, DELETE и PUT.
+1. Перейдите на вкладку **Интеграция** для HttpTrigger.
+1. В разделе **Выбранные методы HTTP** выберите **GET**, **POST**, **DELETE** и **PUT**.
 
-![Обзор пользовательского поставщика](./media/create-custom-providers/azure-functions-http-methods.png)
+![Настраиваемый поставщик с методами HTTP](./media/create-custom-providers/azure-functions-http-methods.png)
 
-## <a name="modifying-the-csproj"></a>Изменение пcsproj
+## <a name="add-azure-resource-manager-nuget-packages"></a>Добавление пакетов NuGet диспетчера ресурсов Azure
 
 > [!NOTE]
-> Если csproj отсутствует в каталоге, его можно добавить вручную, или он появится после того, как в функции будет установлено расширение `Microsoft.Azure.WebJobs.Extensions.Storage`.
+> Если в каталоге проекта отсутствует файл проекта C#, его можно добавить вручную. Он также автоматически появится после установки расширения Microsoft.Azure.WebJobs.Extensions.Storage для приложения-функции.
 
-Затем мы обновим файл csproj, чтобы добавить в него полезные библиотеки NuGet, которые упростят анализ входящих запросов от настраиваемых поставщиков. Для этого выполните следующие действия, описанные в разделе [Установка или обновление привязки расширений функций Azure вручную с портала](../azure-functions/install-update-binding-extensions-manual.md), и обновите csproj, добавив в него следующие ссылки на пакеты:
+Затем обновите файл проекта C#, подключив библиотеки NuGet. Эти библиотеки упрощают анализ входящих запросов от настраиваемых поставщиков. Выполните действия, описанные в статье о[добавлении расширений на портале](../azure-functions/install-update-binding-extensions-manual.md), и обновите файл проекта C#, добавив в него следующие ссылки на пакеты:
 
 ```xml
 <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.Storage" Version="3.0.4" />
@@ -70,7 +60,7 @@ ms.locfileid: "67799123"
 <PackageReference Include="Microsoft.Azure.WebJobs.Script.ExtensionsMetadataGenerator" Version="1.1.*" />
 ```
 
-Пример CSPROJ-файла:
+Следующий XML-элемент служит примером файла проекта C#:
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -88,6 +78,7 @@ ms.locfileid: "67799123"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этой статье мы настроим функцию Azure для работы в качестве настраиваемого поставщика Azure`endpoint`. Чтобы узнать, как создать собственного поставщика RESTful`endpoint`, перейдите к следующей статье.
+При работе с этим руководством вы настроили приложение-функцию Azure в качестве конечной точки настраиваемого поставщика.
 
-- [Руководство. Создание конечной точки для пользовательского поставщика RESTful](./tutorial-custom-providers-function-authoring.md)
+Сведения о том, как создать конечную точку RESTful для настраиваемого поставщика,см. в [этом руководстве](./tutorial-custom-providers-function-authoring.md).
+

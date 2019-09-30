@@ -1,68 +1,205 @@
-### YamlMime:YamlDocument
-documentType: LandingData
-title: Управление Azure. Система управления
+### YamlMime:Hub
+title: Документация по системе управления Azure
+summary: Получите самый широкий набор возможностей управления среди всех крупных поставщиков облачных служб.
+brand: azure
 metadata:
-  title: Управление Azure. Система управления
-  description: 'Узнайте о компонентах и службах Azure, доступных для согласованного управления средами с помощью архитектуры и правил, а также о выполнении аудита для обеспечения соответствия.'
-  author: DCtheGeek
-  manager: carmonm
+  title: Документация по системе управления Azure
+  description: Получите самый широкий набор возможностей управления среди всех крупных поставщиков облачных служб.
   ms.service: governance
-  ms.topic: landing-page
-  ms.date: 05/07/2019
+  ms.topic: hub-page
+  ms.collection: collection
+  author: DCtheGeek
   ms.author: dacoulte
-abstract:
-  description: "Система управления Azure\_— это набор концепций и служб, предназначенных для управления ресурсами Azure в нужном масштабе. Эти службы позволяют возможность логически упорядочивать и структурировать подписки, создавать и развертывать повторно используемые или собственные пакеты ресурсов Azure для определения, аудита и оптимизации ресурсов. Эта страница содержит подробные сведения о компонентах и службах, а также о том, как включить и использовать их в вашей среде уже сегодня."
-  aside:
-    image:
-      alt: null
-      height: 225
-      src: ./media/video.png
-      width: 250
-    title: 'Get speed and control over resources with Azure Governance (Воспользуйтесь преимуществами быстрой работы и управлением ресурсами с помощью системы управления Azure) (1:47)'
-    href: 'https://www.youtube.com/watch?v=MhGbKjlmuRs'
-    width: 250
-sections:
-  - title: Компоненты и службы
-  - items:
-      - type: list
-        style: cards
-        className: cardsD
-        columns: 2
-        items:
-          - href: ./management-groups/overview
-            html: <p>Узнайте о группировании и организации подписок в логическую иерархию с поддержкой структурированного развертывания других служб управления.<br /></p>
-            image:
-              alt: Группы управления
-              src: ./media/management-groups-illustration.svg
-            title: Группы управления
-          - href: ./resource-graph/
-            html: '<p>Используйте мощное средство командной строки (поддерживает Azure CLI и Azure PowerShell) для быстрого получения комплексных сведений о ресурсах Azure. Находите и предоставляйте сведения, для получения которых раньше требовались сложные итеративные скрипты, чтобы определять эти ресурсы по мере необходимости.</p>'
-            image:
-              alt: Resource Graph
-              src: ./media/resource-graph-illustration.svg
-            title: Resource Graph
-          - href: ./policy/
-            html: '<p>Определяйте и применяйте стандарты к ресурсам в вашей среде. Предотвращайте создание нежелательных ресурсов, улучшайте новые ресурсы с помощью дополнительных элементов, а также выполняйте аудит и оптимизируйте ресурсы в своей среде.</p>'
-            image:
-              alt: Политика
-              src: ./media/policy-illustration.svg
-            title: Политика
-          - href: ./blueprints/
-            html: '<p>Создайте собственный пакет <i>артефактов</i> Azure (группы ресурсов, политики, назначения ролей, шаблоны Resource Manager и многое другое), которые можно динамически развертывать в подписках для создания согласованных и воспроизводимых сред.</p>'
-            image:
-              alt: Схемы
-              src: ./media/blueprints-illustration.svg
-            title: Схемы
-  - title: Cloud Adoption Framework
-  - items:
-      - type: list
-        style: cards
-        className: cardsZ
-        columns: 3
-        items:
-          - href: /azure/architecture/cloud-adoption/index?toc=/azure/governance/toc.json
-            html: '<p>Cloud Adoption Framework предоставляет техническое руководство по Microsoft Azure. Так как клиенты могут все еще выбирать поставщика облака, эта платформа обеспечивает общее руководство по облачным технологиям, чтобы по возможности упростить принятие решений более высокого уровня.</p>'
-            title: Обзор
-          - href: /azure/architecture/cloud-adoption/governance/index?toc=/azure/governance/toc.json
-            html: <p>В организациях управление облачными решениями нужно реализовать наряду с существующими политиками управления локальными ИТ-средами.<br /><br /></p>
-            title: Обзор системы управления
+  ms.date: 09/10/2019
+  ms.openlocfilehash: 07db40943ae0ff9978cedcef6a42ba0b83f5f2cc
+  ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 09/27/2019
+  ms.locfileid: "71337741"
+highlightedContent:
+  items:
+  - title: Обзор системы управления
+    itemType: overview
+    url: ./azure-management.md
+  - title: Канал на YouTube, посвященный системе управления
+    itemType: video
+    url: https://www.youtube.com/channel/UCZZ3-oMrVI5ssheMzaWC4uQ
+  - title: Система управления в Cloud Adoption Framework
+    itemType: architecture
+    url: /azure/architecture/cloud-adoption/governance
+  - title: Применение и отслеживание стандартов инфраструктуры с помощью службы "Политика Azure"
+    itemType: learn
+    url: /learn/modules/intro-to-governance/
+productDirectory:
+  title: Компоненты и службы
+  items:
+  - title: Группы управления Azure
+    imageSrc: ./media/management-groups.svg
+    links:
+    - url: ./management-groups/overview.md
+      text: Обзор
+    - url: ./management-groups/index.yml
+      text: Подробнее >
+  - title: Политика Azure
+    imageSrc: ./media/azure-policy.svg
+    links:
+    - url: ./policy/overview.md
+      text: Обзор
+    - url: ./policy/how-to/get-compliance-data.md
+      text: Оценка соответствия требованиям
+    - url: ./policy/concepts/rego-for-aks.md
+      text: Управление конфигурацией AKS
+    - url: ./policy/concepts/guest-configuration.md
+      text: Управление конфигурацией виртуальной машины
+    - url: ./policy/index.yml
+      text: Подробнее >
+  - title: Azure Blueprints
+    imageSrc: ./media/azure-blueprints.svg
+    links:
+    - url: ./blueprints/overview.md
+      text: Обзор
+    - url: ./blueprints/tutorials/protect-new-resources.md
+      text: Защита ресурсов
+    - url: ./blueprints/index.yml
+      text: Подробнее >
+  - title: Azure Resource Graph
+    imageSrc: ./media/azure-resource-graph.svg
+    links:
+    - url: ./resource-graph/overview.md
+      text: Обзор
+    - url: ./resource-graph/concepts/explore-resources.md
+      text: Просмотр ресурсов Azure
+    - url: ./resource-graph/how-to/get-resource-changes.md
+      text: Отслеживание изменений
+    - url: ./resource-graph/index.yml
+      text: Подробнее >
+  - title: Управление затратами
+    imageSrc: ./media/cost-management.svg
+    links:
+    - url: ../cost-management/overview-cost-mgt.md
+      text: Обзор
+    - url: ../cost-management/aws-integration-manage.md
+      text: Управление затратами и использованием AWS
+    - url: ../cost-management/index.yml
+      text: Подробнее >
+tools:
+  title: Примеры
+  summary: Определения политик, схемы соответствия требованиям, запросы ресурсов и многое другое
+  items:
+  - title: Политика Azure
+    imageSrc: ./media/azure-policy.svg
+    url: ./policy/samples/index.md
+  - title: Azure Blueprints
+    imageSrc: ./media/azure-blueprints.svg
+    url: ./blueprints/samples/index.md
+  - title: Azure Resource Graph
+    imageSrc: ./media/azure-resource-graph.svg
+    url: ./resource-graph/samples/starter.md
+  - title: Управление затратами
+    imageSrc: ./media/cost-management.svg
+    url: https://github.com/Azure-Samples/Cost-Management-Samples
+additionalContent:
+  sections:
+  - title: Ресурсы для разработчиков
+    items:
+    - title: Группы управления
+      links:
+      - text: Инфраструктура CLI Azure
+        url: /cli/azure/ext/managementgroups/?view=azure-cli-latest
+      - text: Azure PowerShell
+        url: /powershell/module/az.resources/#resources
+      - text: Azure SDK для .NET
+        url: /dotnet/api/overview/azure/managementgroups
+      - text: SDK Azure для Node
+        url: /javascript/api/azure-arm-resource/managementgroups
+    - title: Политика Azure
+      links:
+      - text: Инфраструктура CLI Azure
+        url: /cli/azure/policy
+      - text: Azure PowerShell
+        url: /powershell/module/az.resources/#policies
+        note: (политика)
+      - text: Azure PowerShell
+        url: /powershell/module/az.policyinsights#policy_insights
+        note: (анализ политик)
+      - text: Azure PowerShell
+        url: https://www.powershellgallery.com/packages/Az.GuestConfiguration
+        note: (гостевая конфигурация)
+      - text: Azure SDK для .NET
+        url: /dotnet/api/microsoft.azure.management.resourcemanager.models.policyassignment
+        note: (назначения)
+      - text: Azure SDK для .NET
+        url: /dotnet/api/microsoft.azure.management.resourcemanager.models.policydefinition
+        note: (определения политик)
+      - text: REST
+        url: /rest/api/policy-insights/
+        note: (анализ политик)
+      - text: REST
+        url: /rest/api/resources/policyassignments
+        note: (назначения)
+      - text: REST
+        url: /rest/api/resources/policydefinitions
+        note: (определения)
+      - text: REST
+        url: /rest/api/resources/policysetdefinitions
+        note: (инициативы)
+      - text: REST
+        url: /rest/api/guestconfiguration/
+        note: (гостевая конфигурация)
+      - text: Шаблоны Resource Manager
+        url: /azure/templates/microsoft.authorization
+    - title: Azure Blueprints
+      links:
+      - text: Функции схемы
+        url: ./blueprints/reference/blueprint-functions.md
+      - text: Azure PowerShell
+        url: /powershell/module/az.blueprint/#blueprint
+      - text: Azure PowerShell
+        url: https://www.powershellgallery.com/packages/Az.Blueprint
+        note: (модуль коллекции PS)
+      - text: Azure SDK для .NET
+        url: /dotnet/api/overview/azure/blueprints/management
+      - text: REST
+        url: /rest/api/blueprints/
+    - title: Azure Resource Graph
+      links:
+      - text: Инфраструктура CLI Azure
+        url: /cli/azure/ext/resource-graph/graph
+      - text: Azure PowerShell
+        url: /powershell/module/az.resourcegraph/
+      - text: Azure PowerShell
+        url: https://www.powershellgallery.com/packages/Az.ResourceGraph
+        note: (модуль коллекции PS)
+      - text: Azure SDK для .NET
+        url: /dotnet/api/Microsoft.Azure.Management.ResourceGraph
+      - text: Azure SDK для .NET
+        url: https://www.nuget.org/packages/Microsoft.Azure.Management.ResourceGraph/
+        note: (NuGet)
+      - text: Azure SDK для Go
+        url: https://godoc.org/github.com/Azure/azure-sdk-for-go/services/resourcegraph/mgmt/2019-04-01/resourcegraph
+      - text: Azure SDK для Java
+        url: /java/api/overview/azure/resourcegraph/management?view=azure-java-stable
+      - text: Azure SDK для Java
+        url: https://search.maven.org/artifact/com.microsoft.azure.resourcegraph.v2019_04_01/azure-mgmt-resourcegraph/1.0.0-beta/jar
+        note: (Maven)
+      - text: SDK Azure для Node
+        url: /javascript/api/@azure/arm-resourcegraph
+      - text: SDK Azure для Python
+        url: /python/api/azure-mgmt-resourcegraph/azure.mgmt.resourcegraph
+      - text: Пакет SDK Azure для Ruby
+        url: https://rubygems.org/gems/azure_mgmt_resourcegraph
+        note: (Gem)
+      - text: REST
+        url: /rest/api/azureresourcegraph/resources/resources
+    - title: Управление затратами
+      links:
+      - text: REST
+        url: /rest/api/cost-management
+        note: (Управление затратами)
+      - text: REST
+        url: /rest/api/consumption
+        note: (потребление)
+      - text: Шаблоны Resource Manager
+        url: /azure/templates/microsoft.consumption/budgets
+  footer: '[UserVoice](https://feedback.azure.com/forums/915958-azure-governance) | [Техническое сообщество Майкрософт — система управления Azure](https://techcommunity.microsoft.com/t5/Azure-Governance/bd-p/AzureGovernance) | [Служба поддержки Azure](https://azure.microsoft.com/support/create-ticket/)'

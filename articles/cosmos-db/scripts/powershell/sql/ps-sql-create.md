@@ -3,15 +3,16 @@ title: Скрипт Azure PowerShell — создание базы данных
 description: Скрипт Azure PowerShell — создание базы данных и контейнера для Azure Cosmos DB с помощью API SQL (Core)
 author: markjbrown
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.topic: sample
-ms.date: 05/18/2019
+ms.date: 09/20/2019
 ms.author: mjbrown
-ms.openlocfilehash: b8b8b30f178ba068bc800103f16adde43cf5dcb1
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: eee1e31808412dc5e4308dee92f3685507e771f3
+ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67602220"
+ms.lasthandoff: 09/22/2019
+ms.locfileid: "71178806"
 ---
 # <a name="create-a-database-and-container-for-azure-cosmos-db---sql-core-api"></a>Создание базы данных и контейнера в Azure Cosmos DB — API SQL (Core)
 
@@ -21,7 +22,9 @@ ms.locfileid: "67602220"
 
 ## <a name="sample-script"></a>Пример скрипта
 
-[!code-powershell[main](../../../../../powershell_scripts/cosmosdb/sql/ps-sql-create.ps1 "Create a database and container for SQL (Core) API")]
+Этот скрипт создает учетную запись Cosmos для API SQL (Core) в двух регионах с согласованностью на уровне сеанса, базой данных с общей пропускной способностью и контейнером с ключом секции, пользовательской политикой индексирования, политикой уникального ключа, сроком жизни, выделенной пропускной способностью и политикой разрешения конфликтов, реализующей подход "Сохраняются изменения, внесенные последними", с задаваемым пользователем путем разрешения конфликтов, который будет использоваться при `multipleWriteLocations=true`.
+
+[!code-powershell[main](../../../../../powershell_scripts/cosmosdb/sql/ps-sql-create.ps1 "Create an account, database, and container for SQL (Core) API")]
 
 ## <a name="clean-up-deployment"></a>Очистка развертывания
 

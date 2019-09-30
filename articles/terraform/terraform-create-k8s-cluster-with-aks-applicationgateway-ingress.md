@@ -8,13 +8,13 @@ author: tomarcher
 manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
-ms.date: 1/10/2019
-ms.openlocfilehash: 477b2ec1af4c52f51c3ab20ac2ddf7ef043dfcc7
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.date: 09/20/2019
+ms.openlocfilehash: 0373b254a900fd34232bb6863c93802fa7b51aab
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57994347"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71169954"
 ---
 # <a name="create-a-kubernetes-cluster-with-application-gateway-ingress-controller-using-azure-kubernetes-service-and-terraform"></a>Создание кластера Kubernetes с помощью Службы Azure Kubernetes и Terraform со Шлюзом приложений в качестве контроллера входящего трафика
 [Служба Azure Kubernetes (AKS)](/azure/aks/) управляет размещенной средой Kubernetes. AKS позволяет быстро и легко развернуть и администрировать контейнерные приложения даже без опыта в оркестрации контейнеров. Также вам не нужно выполнять текущие операции и обслуживание, так как эта служба подготавливает, обновляет и масштабирует ресурсы по требованию, не отключая приложения от сети.
@@ -38,7 +38,7 @@ ms.locfileid: "57994347"
 - **Субъект-служба Azure.** Следуйте указаниям, приведенным в разделе **Создание субъекта-службы** статьи [Создание субъекта-службы Azure с помощью Azure CLI](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest). Запишите значения для appId, displayName и password.
   - Запишите идентификатор объекта для субъекта-службы, выполнив следующую команду:
 
-    ```bash
+    ```azurecli
     az ad sp list --display-name <displayName>
     ```
 
@@ -82,7 +82,7 @@ ms.locfileid: "57994347"
 
 1. Скопируйте приведенный ниже код и вставьте его в редактор.
 
-    ```JSON
+    ```hcl
     provider "azurerm" {
         version = "~>1.18"
     }
@@ -99,17 +99,21 @@ ms.locfileid: "57994347"
     ```bash
     :wq
     ```
-   ## <a name="define-input-variables"></a>Определение входных переменных
-   Создайте файл конфигурации Terraform, в котором перечислены все переменные, необходимые для этого развертывания.
+
+## <a name="define-input-variables"></a>Определение входных переменных
+Создайте файл конфигурации Terraform, в котором перечислены все переменные, необходимые для этого развертывания.
+
 1. В Cloud Shell создайте файл с именем `variables.tf`.
+
     ```bash
     vi variables.tf
     ```
+
 1. Нажмите клавишу I, чтобы войти в режим вставки.
 
-2. Скопируйте приведенный ниже код и вставьте его в редактор.
+1. Скопируйте приведенный ниже код и вставьте его в редактор.
     
-    ```JSON
+    ```hcl
     variable "resource_group_name" {
       description = "Name of the resource group already created."
     }
@@ -256,7 +260,7 @@ ms.locfileid: "57994347"
 
     a. Создайте блок локальных переменных, чтобы добавить в него вычисленные переменные и использовать их повторно.
 
-    ```JSON
+    ```hcl
     # # Locals block for hardcoded names. 
     locals {
         backend_address_pool_name      = "${azurerm_virtual_network.test.name}-beap"
@@ -268,8 +272,10 @@ ms.locfileid: "57994347"
         app_gateway_subnet_name = "appgwsubnet"
     }
     ```
+
     b. Создайте источник данных для группы ресурсов с новым удостоверением пользователя.
-    ```JSON
+
+    ```hcl
     data "azurerm_resource_group" "rg" {
       name = "${var.resource_group_name}"
     }
@@ -284,8 +290,10 @@ ms.locfileid: "57994347"
       tags = "${var.tags}"
     }
     ```
+
     c. Создайте базовые сетевые ресурсы.
-   ```JSON
+
+    ```hcl
     resource "azurerm_virtual_network" "test" {
       name                = "${var.virtual_network_name}"
       location            = "${data.azurerm_resource_group.rg.location}"
@@ -328,8 +336,10 @@ ms.locfileid: "57994347"
       tags = "${var.tags}"
     }
     ```
+
     d. Создайте ресурс Шлюза приложений.
-    ```JSON
+
+    ```hcl
     resource "azurerm_application_gateway" "network" {
       name                = "${var.app_gateway_name}"
       resource_group_name = "${data.azurerm_resource_group.rg.name}"
@@ -393,8 +403,10 @@ ms.locfileid: "57994347"
       depends_on = ["azurerm_virtual_network.test", "azurerm_public_ip.test"]
     }
     ```
-    д. Создание назначений ролей
-    ```JSON
+
+    д. Создайте назначения ролей.
+
+    ```hcl
     resource "azurerm_role_assignment" "ra1" {
       scope                = "${data.azurerm_subnet.kubesubnet.id}"
       role_definition_name = "Network Contributor"
@@ -424,8 +436,10 @@ ms.locfileid: "57994347"
       depends_on           = ["azurerm_user_assigned_identity.testIdentity", "azurerm_application_gateway.network"]
     }
     ```
-    Е. Создание кластера Kubernetes
-    ```JSON
+
+    Е. Создание кластера Kubernetes.
+
+    ```hcl
     resource "azurerm_kubernetes_cluster" "k8s" {
       name       = "${var.aks_name}"
       location   = "${data.azurerm_resource_group.rg.location}"
@@ -502,7 +516,7 @@ ms.locfileid: "57994347"
 
 1. Скопируйте приведенный ниже код и вставьте его в редактор.
 
-    ```JSON
+    ```hcl
     output "client_key" {
         value = "${azurerm_kubernetes_cluster.k8s.kube_config.0.client_key}"
     }
@@ -559,7 +573,7 @@ Terraform отслеживает состояние локально через 
 
 1. В Cloud Shell создайте контейнер в учетной записи хранения Azure (замените заполнители &lt;YourAzureStorageAccountName> и &lt;YourAzureStorageAccountAccessKey> соответствующими значениями для учетной записи хранения Azure).
 
-    ```bash
+    ```azurecli
     az storage container create -n tfstate --account-name <YourAzureStorageAccountName> --account-key <YourAzureStorageAccountKey>
     ```
 
@@ -586,7 +600,7 @@ Terraform отслеживает состояние локально через 
 
 1. Вставьте в редактор переменные, созданные ранее:
 
-    ```JSON
+    ```hcl
       resource_group_name = <Name of the Resource Group already created>
 
       location = <Location of the Resource Group>

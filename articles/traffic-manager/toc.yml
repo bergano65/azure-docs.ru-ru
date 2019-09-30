@@ -89,6 +89,12 @@
       href: traffic-manager-powershell-arm.md
     - name: Указание своего интернет-домена для диспетчера трафика
       href: traffic-manager-point-internet-domain.md
+    - name: Переопределение подсети
+      items:
+        - name: "Настройка переопределения подсети\_— Azure\_CLI"
+          href: traffic-manager-subnet-override-cli.md
+        - name: "Настройка переопределения подсети\_— PowerShell"
+          href: traffic-manager-subnet-override-powershell.md
     - name: Устранение неполадок
       items:
         - name: 'Устранение неполадок, связанных с состоянием сниженной функциональности диспетчера трафика'

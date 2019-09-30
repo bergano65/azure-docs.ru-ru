@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 30b1af29d1a7e3a01659353b27d8c997e739e702
-ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
+ms.openlocfilehash: a523028fb312f030bc453692daceb0f254f844b6
+ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69031022"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71240951"
 ---
 # <a name="tutorial-develop-iot-edge-modules-for-linux-devices"></a>Руководство по Разработка модулей IoT Edge для устройств Linux
 
@@ -63,6 +63,7 @@ ms.locfileid: "69031022"
 Компьютер для разработки:
 
 * При разработке можно использовать собственный компьютер или виртуальную машину в зависимости от ваших предпочтений.
+  * Убедитесь, что компьютер для разработки поддерживает вложенную виртуализацию. Эта возможность необходима для запуска подсистемы контейнеров, установка которой описывается в следующем разделе.
 * Для разработки модулей IoT Edge для устройств Linux можно использовать большинство операционных систем, на базе которых может работать платформа контейнеров. В этом учебнике используется компьютер под управлением Windows, но при этом отмечены известные различия в MacOS или Linux. 
 * Установите [Git](https://git-scm.com/), чтобы получить пакеты шаблонов модулей далее в этом учебнике.  
 * [C# для расширения Visual Studio Code (на платформе OmniSharp)](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp).

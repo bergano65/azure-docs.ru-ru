@@ -7,12 +7,12 @@ ms.topic: sample
 ms.date: 08/05/2019
 ms.author: mjbrown
 ms.custom: seodec18
-ms.openlocfilehash: e8f943ebaa5dfc06e0bfb04dc1097d6794ec6d05
-ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
+ms.openlocfilehash: 5b041fecfaa5a84ed5a04a3a8c53de10b9efd65b
+ms.sourcegitcommit: 116bc6a75e501b7bba85e750b336f2af4ad29f5a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69616834"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71155373"
 ---
 # <a name="manage-azure-cosmos-db-sql-api-resources-using-powershell"></a>Управление ресурсами API SQL для Azure Cosmos DB с помощью PowerShell
 
@@ -43,6 +43,7 @@ ms.locfileid: "69616834"
 * [повторное создание ключей для учетной записи Azure Cosmos;](#regenerate-keys)
 * [вывод списка строк подключения для учетной записи Azure Cosmos;](#list-connection-strings)
 * [изменение приоритета при отработке отказа в учетной записи Azure Cosmos.](#modify-failover-priority)
+* [активация перехода на другой ресурс для учетной записи Azure Cosmos](#trigger-manual-failover)
 
 ### <a id="create-account"></a> Создание учетной записи Azure Cosmos
 
@@ -121,7 +122,9 @@ Get-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" `
 * включение поддержки нескольких источников.
 
 > [!NOTE]
-> Кроме того, эта команда позволяет добавлять или удалять регионы, но не изменять приоритеты при отработке отказа или изменять регионы с `failoverPriority=0`. Сведения об изменении приоритета при отработке отказа для учетной записи Azure Cosmos см. в [этом разделе](#modify-failover-priority).
+> Вы не можете одновременно добавлять или удалять регионы `locations` и изменять другие свойства для учетной записи Azure Cosmos. Изменение регионов нужно выполнять как отдельную операцию, не объединяя ее с другими изменениями в ресурсе учетной записи.
+> [!NOTE]
+> Кроме того, эта команда позволяет добавлять или удалять регионы, но не изменять приоритеты при отработке отказа или активировать отработку отказа вручную. Подробнее см. разделы [об изменении приоритетов при отработке отказа](#modify-failover-priority) и [об активации отработки отказа вручную](#trigger-manual-failover).
 
 ```azurepowershell-interactive
 # Get an Azure Cosmos Account (assume it has two regions currently West US 2 and East US 2) and add a third region
@@ -238,7 +241,38 @@ Select-Object $keys
 
 ### <a id="modify-failover-priority"></a> Изменение приоритета при отработке отказа
 
-Для учетных записей баз данных с поддержкой нескольких регионов можно изменить порядок повышения уровня вторичных реплик для чтения в учетной записи Cosmos в случае региональной отработки отказа в первичной реплике записи. Изменение `failoverPriority=0` также можно использовать для инициации отработки аварийного восстановления, чтобы протестировать планирование аварийного восстановления.
+Для учетных записей, где настроена автоматическая отработка отказа, можно изменить порядок повышения вторичных реплик Cosmos до первичной реплики, когда та становится недоступной.
+
+В примере ниже предполагается текущий приоритет `West US 2 = 0`, `East US 2 = 1`, `South Central US = 2`.
+
+> [!CAUTION]
+> Если изменить свойство `locationName` для `failoverPriority=0`, для учетной записи Azure Cosmos активируется переход на другой ресурс вручную. Любые другие изменения приоритета не приведут к активации отработки отказа.
+
+```azurepowershell-interactive
+# Change the failover priority for an Azure Cosmos Account
+# Assume existing priority is "West US 2" = 0, "East US 2" = 1, "South Central US" = 2
+
+$resourceGroupName = "myResourceGroup"
+$accountName = "mycosmosaccount"
+
+$failoverRegions = @(
+    @{ "locationName"="West US 2"; "failoverPriority"=0 },
+    @{ "locationName"="South Central US"; "failoverPriority"=1 },
+    @{ "locationName"="East US 2"; "failoverPriority"=2 }
+)
+
+$failoverPolicies = @{
+    "failoverPolicies"= $failoverRegions
+}
+
+Invoke-AzResourceAction -Action failoverPriorityChange `
+    -ResourceType "Microsoft.DocumentDb/databaseAccounts" -ApiVersion "2015-04-08" `
+    -ResourceGroupName $resourceGroupName -Name $accountName -Parameters $failoverPolicies
+```
+
+### <a id="trigger-manual-failover"></a> Активация отработки отказа вручную
+
+Для учетных записей, где настроена отработка отказа вручную, можно выполнить отработку отказа и повысить уровень вторичной реплики до первичного, изменив `failoverPriority=0`. Эту операцию можно использовать для инициации отработки аварийного восстановления, чтобы протестировать план аварийного восстановления.
 
 В примере ниже предполагается, что учетная запись имеет приоритет `West US 2 = 0` и `East US 2 = 1` при отработке отказа, а затем регионы меняются.
 
@@ -247,14 +281,15 @@ Select-Object $keys
 
 ```azurepowershell-interactive
 # Change the failover priority for an Azure Cosmos Account
-# Assume existing priority is "West US 2" = 0 and "East US 2" = 1
+# Assume existing priority is "West US 2" = 0, "East US 2" = 1, "South Central US" = 2
 
 $resourceGroupName = "myResourceGroup"
 $accountName = "mycosmosaccount"
 
 $failoverRegions = @(
-    @{ "locationName"="East US 2"; "failoverPriority"=0 },
-    @{ "locationName"="West US 2"; "failoverPriority"=1 }
+    @{ "locationName"="South Central US"; "failoverPriority"=0 },
+    @{ "locationName"="East US 2"; "failoverPriority"=1 },
+    @{ "locationName"="West US 2"; "failoverPriority"=2 }
 )
 
 $failoverPolicies = @{

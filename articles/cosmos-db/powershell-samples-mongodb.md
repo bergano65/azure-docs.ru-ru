@@ -4,14 +4,14 @@ description: Примеры Azure PowerShell для Azure Cosmos DB. API MongoDB
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: sample
-ms.date: 07/03/2019
+ms.date: 09/20/2019
 ms.author: mjbrown
-ms.openlocfilehash: 231f2f42c1c23019d86c049aa9e5bc00f94cdd91
-ms.sourcegitcommit: d2785f020e134c3680ca1c8500aa2c0211aa1e24
+ms.openlocfilehash: b28ec11c59b21762cd12e037e872a2e000d5ba0b
+ms.sourcegitcommit: 116bc6a75e501b7bba85e750b336f2af4ad29f5a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/04/2019
-ms.locfileid: "67566279"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71155313"
 ---
 # <a name="azure-powershell-samples-for-azure-cosmos-db-mongodb-api"></a>Примеры Azure PowerShell для Azure Cosmos DB с API MongoDB
 
@@ -23,7 +23,8 @@ ms.locfileid: "67566279"
 |[Получение списка либо возврат баз данных или коллекций](scripts/powershell/mongodb/ps-mongodb-list-get.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Получение списка либо возврат баз данных или коллекций. |
 |[Получение показателя ЕЗ/с](scripts/powershell/mongodb/ps-mongodb-ru-get.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Получение показателя ЕЗ/с для базы данных или коллекции. |
 |[Обновление ЕЗ/с](scripts/powershell/mongodb/ps-mongodb-ru-update.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Обновление ЕЗ/с для базы данных или коллекции. |
-|[Добавление региона](scripts/powershell/common/ps-account-update.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Получает учетную запись Azure Cosmos и добавляет регион в список расположений. |
-|[Изменение приоритетов отработки отказа](scripts/powershell/common/ps-account-failover-priority-update.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Изменяет приоритет отработки отказа учетной записи Azure Cosmos с помощью активации отработки отказа вручную. |
-|[Ключи учетной записи и задачи со строкой подключения](scripts/powershell/common/ps-account-keys-connection-strings.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Возвращает строки подключения для учетной записи Azure Cosmos. Получает первичные и вторичные ключи учетной записи Azure Cosmos. Повторное создание ключа учетной записи. |
+|[Обновление учетной записи или добавление региона](scripts/powershell/common/ps-account-update.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Добавляет регион в учетную запись Cosmos. Также может использоваться для изменения других свойств учетной записи, но они должны вноситься отдельно от изменений регионов. |
+|[Изменение приоритета отработки отказа или запуск отработки отказа](scripts/powershell/common/ps-account-failover-priority-update.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Изменяет приоритет региональной отработки отказа для учетной записи Azure Cosmos или позволяет вручную запустить отработку отказа. |
+|[Ключи или строки подключения учетной записи](scripts/powershell/common/ps-account-keys-connection-strings.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Получает первичный и вторичный ключи, строки подключения или воссоздает ключ учетной записи для учетной записи Azure Cosmos. |
+|[Создание учетной записи Cosmos с правилами брандмауэра для IP-адресов](scripts/powershell/common/ps-account-firewall-create.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Создает учетную запись Azure Cosmos с активными правилами брандмауэра для IP-адресов. |
 |||

@@ -249,6 +249,8 @@
               href: knowledge-store-view-storage-explorer.md
             - name: Подключение с помощью Power BI
               href: knowledge-store-connect-power-bi.md
+        - name: Устранение проблем с обогащением
+          href: cognitive-search-common-errors-warnings.md
     - name: Запрос документов
       items:
         - name: Типы запросов и составление запросов

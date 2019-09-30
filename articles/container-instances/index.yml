@@ -1,69 +1,80 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Документация по службе "Экземпляры контейнеров Azure"
+summary: Запуск контейнеров Docker по запросу в управляемой бессерверной среде Azure. Экземпляры контейнеров Azure — это решение, которое подойдет для любого сценария. Службу можно использовать в изолированных контейнерах без оркестрации. Запускайте приложения на основе событий, оперативно развертывайте решения из конвейеров разработки контейнеров, а также выполняйте задания обработки данных и сборки.
 metadata:
-  title: Документация по службе "Экземпляры контейнеров Azure". Руководства | Документация Майкрософт
-  description: Служба "Экземпляры контейнеров Azure" предоставляет быстрый и простой способ запуска контейнера в Azure без подготовки виртуальных машин и применения службы более высокого уровня.
-  services: container-instances
-  author: georgewallace
-  manager: gwallace
+  title: Документация по Экземплярам контейнеров Azure — запуск бессерверных контейнеров по запросу
+  description: Запуск контейнеров Docker в управляемой бессерверной среде Azure.
+  services: 
   ms.service: container-instances
   ms.topic: landing-page
-  ms.date: 07/26/2017
-  ms.author: gwallace
-abstract:
-  description: 'Служба "Экземпляры контейнеров Azure" предоставляет быстрый и простой способ запуска контейнера в Azure без подготовки виртуальных машин и применения службы более высокого уровня. Узнайте, как создавать экземпляры контейнеров и управлять ими, используя наши краткие инструкции, примеры и руководства.<p>Если вам требуется полнофункциональное решение для оркестрации контейнеров, см. <a href="/azure/aks/">документацию по службе Azure Kubernetes (AKS)</a>.</p>'
-sections:
-  - title: Пятиминутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: 'Узнайте, как развертывать образы контейнеров при помощи службы "Экземпляры контейнеров Azure".'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_cligeneric.svg'
-            text: Azure CLI
-            href: /azure/container-instances/container-instances-quickstart
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_portal.svg'
-            text: Портал Azure
-            href: /azure/container-instances/container-instances-quickstart-portal
-          - image:
-              src: 'https://docs.microsoft.com/media/logos/logo_powershell.svg'
-            text: Azure PowerShell
-            href: /azure/container-instances/container-instances-quickstart-powershell
-  - title: Пошаговые инструкции
-    items:
-      - type: paragraph
-        text: 'Узнайте, как упаковать код в образ контейнера и выполнить его в службе "Экземпляры контейнеров Azure".'
-      - type: list
-        style: ordered
-        items:
-          - html: <a href="/azure/container-instances/container-instances-tutorial-prepare-app">Упаковка приложения в образ контейнера</a>
-          - html: <a href="/azure/container-instances/container-instances-tutorial-prepare-acr">Создание реестра контейнеров Azure и отправка образа контейнера</a>
-          - html: <a href="/azure/container-instances/container-instances-tutorial-deploy-app">Развертывание образа контейнера в службе "Экземпляры контейнеров Azure"</a>
-  - title: Развитие навыков с помощью Microsoft Learn
-    items:
-      - type: list
-        style: cards
-        className: cardsFTitle
-        items:
-          - title: Запуск контейнеров Docker с помощью службы "Экземпляры контейнеров Azure"
-            href: /learn/modules/run-docker-with-azure-container-instances/
-            image:
-              src: /learn/achievements/run-docker-with-azure-container-instances.svg
-      - type: paragraph
-        text: <a href="/learn/browse/?products=azure-container-instances">Другие интерактивные руководства</a>
-  - title: Справочные материалы
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: Командная строка
-            html: <p><a href="/cli/azure/container">Azure CLI</a></p><p><a href="/powershell/module/az.containerinstance">PowerShell</a></p>
-          - title: Языки
-            html: <p><a href="/dotnet/api/overview/azure/containerinstance">.NET</a></p><p><a href="/python/api/overview/azure/containerinstance">Python</a></p><p><a href="/java/api/overview/azure/containerinstance">Java</a></p><p><a href="/javascript/api/overview/azure/containerinstances">Node.js</a></p>
-          - title: REST
-            html: <p><a href="/rest/api/container-instances">Справочник по REST API</a></p><p><a href="/azure/templates/microsoft.containerinstance/containergroups">Шаблон Resource Manager</a></p>
+  ms.collection: collection
+  author: dlepow
+  ms.author: danlep
+  ms.date: 09/25/2019
+  ms.openlocfilehash: a031f70cfaad9369f79a0e18f3527250eb82bfeb
+  ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 09/27/2019
+  ms.locfileid: "71326953"
+landingContent:
+- title: Об Экземплярах контейнеров Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Об экземплярах контейнеров Azure
+      url: container-instances-overview.md
+    - text: Группы контейнеров
+      url: container-instances-container-groups.md
+    - text: Часто задаваемые вопросы
+      url: container-instances-faq.md
+- title: Начало работы
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Развертывание экземпляра контейнера — CLI
+      url: container-instances-quickstart.md
+    - text: Развертывание экземпляра контейнера — портал
+      url: container-instances-quickstart-portal.md
+  - linkListType: learn
+    links:
+    - text: Запуск контейнеров Docker с помощью службы "Экземпляры контейнеров Azure"
+      url: /learn/modules/run-docker-with-azure-container-instances/
+- title: Создание многоконтейнерных групп
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Развертывание группы контейнеров — YAML
+      url: container-instances-multi-container-yaml.md
+    - text: Развертывание группы контейнеров — шаблон
+      url: container-instances-multi-container-group.md
+- title: Сценарии развертывания
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Подключение к виртуальной сети
+      url: container-instances-vnet.md
+    - text: Настройка политики перезапуска
+      url: container-instances-restart-policy.md
+    - text: Настройка переменных среды
+      url: container-instances-environment-variables.md
+- title: Управление контейнерными приложениями
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Остановка и запуск контейнеров
+      url: container-instances-stop-start.md
+    - text: Обновление работающих контейнеров
+      url: container-instances-update.md
+    - text: Обмен данными между контейнерами
+      url: container-instances-volume-emptydir.md
+- title: Интеграция с Azure
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Развертывание образа из Реестра контейнеров Azure
+      url: container-instances-using-azure-container-registry.md
+    - text: Использование управляемого удостоверения
+      url: container-instances-managed-identity.md
+    - text: Подключение файлового ресурса Azure
+      url: container-instances-volume-azure-files.md

@@ -3,17 +3,17 @@ title: Отправка запросов в Apache Hive с помощью PowerS
 description: Используйте PowerShell и драйвер Microsoft Hive ODBC, чтобы запрашивать кластеры Apache Hive в Azure HDInsight.
 keywords: hive,hive odbc,powershell
 author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: tutorial
 ms.date: 06/27/2019
-ms.author: hrasheed
-ms.openlocfilehash: b02c865e953861b5ac396538fdd0f0623b0e5428
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 04771ddc633c210ce8c7b3c42a9e46cb2f1ed349
+ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67486067"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71122177"
 ---
 # <a name="tutorial-query-apache-hive-with-odbc-and-powershell"></a>Руководство по отправке запросов в Apache Hive с помощью PowerShell и драйвера ODBC
 
@@ -70,7 +70,7 @@ ms.locfileid: "67486067"
    |  Строки, загружаемые для каждого блока |При получении большого объема записей включение этого параметра может обеспечить оптимальную производительность. |
    |  Длина столбца строки по умолчанию, длина столбца двоичного кода, масштаб столбца десятичных значений |Длина и точность типа данных может повлиять на способ выведения данных. Это приведет к возврату недопустимой информации из-за потери точности и усечения. |
 
-    ![Дополнительные параметры](./media/apache-hive-query-odbc-driver-powershell/odbc-data-source-advanced-options.png "Дополнительные параметры конфигурации DSN")
+    ![Дополнительные параметры конфигурации DSN](./media/apache-hive-query-odbc-driver-powershell/odbc-data-source-advanced-options.png "Дополнительные параметры конфигурации DSN")
 
 1. Щелкните **Тест** для проверки источника данных. При правильной настройке источника данных в результате теста отображается **Успешно**.  
 

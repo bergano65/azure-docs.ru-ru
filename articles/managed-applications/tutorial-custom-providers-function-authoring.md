@@ -1,58 +1,55 @@
 ---
 title: Создание конечной точки RESTful для настраиваемых поставщиков
-description: В этом учебнике рассказывается, как создать конечную точку RESTful для пользовательских поставщиков. Здесь подробно описано, как обрабатывать запросы и ответы для поддерживаемых методов HTTP RESTful.
+description: В этом руководстве демонстрируется, как создать конечную точку RESTful для настраиваемых поставщиков. Здесь подробно описано, как обрабатывать запросы и ответы для поддерживаемых методов HTTP REST.
 author: jjbfour
 ms.service: managed-applications
 ms.topic: tutorial
 ms.date: 06/19/2019
 ms.author: jobreen
-ms.openlocfilehash: 176e3b02cbda7577e306d86363cfe5b41335fb6e
-ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
+ms.openlocfilehash: ae821f07034b038f49a400de8c00e4ace6787192
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67799183"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71172862"
 ---
-# <a name="authoring-a-restful-endpoint-for-custom-providers"></a>Создание конечной точки RESTful для настраиваемых поставщиков
+# <a name="author-a-restful-endpoint-for-custom-providers"></a>Создание конечной точки RESTful для настраиваемых поставщиков
 
-Настраиваемые поставщики позволяют настраивать рабочие процессы в Azure. Настраиваемый поставщик представляет собой контракт между Azure и `endpoint`. В этом учебнике описывается процесс создания пользовательского поставщика RESTful `endpoint`. Если вы не знакомы с настраиваемыми поставщиками Azure, перейдите к этой [обзорной статье](./custom-providers-overview.md).
-
-Это руководство разделено на следующие разделы:
-
-- Работа с пользовательскими действиями и пользовательскими ресурсами.
-- Секционирование пользовательских ресурсов в хранилище.
-- Поддержка методов пользовательских поставщиков RESTful.
-- Интеграция операций RESTful.
-
-Это руководство основано на следующих руководствах:
-
-- [Настройка Функций Azure для настраиваемых поставщиков Azure](./tutorial-custom-providers-function-setup.md)
+Настраиваемым поставщиком называется контракт между Azure и конечной точкой. Настраиваемые поставщики позволяют настраивать рабочие процессы в Azure. В руководстве показано, как создать конечную точку RESTful для настраиваемого поставщика. Если вы еще не знакомы с настраиваемыми поставщиками Azure, перейдите к этой [обзорной статье](./custom-providers-overview.md).
 
 > [!NOTE]
-> Этот учебник создан на основе предыдущего учебника. Некоторые шаги в учебнике будут работать только в том случае, если Функция Azure настроена для работы с настраиваемыми поставщиками.
+> Это руководство является продолжением статьи [Настройка Функций Azure для настраиваемых поставщиков Azure](./tutorial-custom-providers-function-setup.md). Для выполнения некоторых инструкций необходимо настроить поддержку настраиваемых поставщиков в приложении-функции Azure.
 
-## <a name="working-with-custom-actions-and-custom-resources"></a>Работа с пользовательскими действиями и пользовательскими ресурсами
+## <a name="work-with-custom-actions-and-custom-resources"></a>Работа с настраиваемыми действиями и настраиваемыми ресурсами
 
-В этом учебнике описано, как обновить функцию, чтобы она работала в качестве конечной точки RESTful для нашего пользовательского поставщика. В Azure ресурсы и действия создаются после базовой спецификации RESTful: PUT — создает ресурс, GET (экземпляр) — извлекает существующий ресурс, DELETE — удаляет существующий ресурс, POST — инициирует действие, а GET (коллекция) — перечисляет все существующие ресурсы. В этом учебнике мы будем использовать Хранилище таблиц Azure, но подойдет любая база данных или служба хранилища.
+При работе с этим руководством вы обновите приложение-функцию, чтобы оно работало в качестве конечной точки RESTful для настраиваемого поставщика. Все ресурсы и действия Azure соблюдают базовую спецификацию REST:
 
-## <a name="how-to-partition-custom-resources-in-storage"></a>Секционирование пользовательских ресурсов в хранилище
+- **PUT**: Создать новый ресурс
+- **GET (экземпляр)** : Получить имеющийся ресурс
+- **DELETE**: Удалить имеющийся ресурс
+- **POST**: Активировать действие
+- **GET (коллекция)** : Получить список существующих ресурсов
 
-Так как мы создаем службу RESTful, нам нужно хранить созданные ресурсы в хранилище. Для Хранилища таблиц Azure нам необходимо создать ключи секций и строк для наших данных. Для пользовательских поставщиков данные должны быть секционированы. Когда входящий запрос отправляется пользовательскому поставщику, поставщик добавляет заголовок `x-ms-customproviders-requestpath` к исходящему запросу в `endpoint`.
+ В этом руководстве используется табличное хранилище Azure. Но подойдет и любая другая база данных или служба хранилища.
 
-Пример заголовка `x-ms-customproviders-requestpath` для пользовательского ресурса:
+## <a name="partition-custom-resources-in-storage"></a>Секционирование настраиваемых ресурсов в хранилище
+
+Так как мы создаем службу RESTful, нам нужно хранить созданные ресурсы. В табличном хранилище Azure нам нужно создать ключи секций и строк для наших данных. Для пользовательских поставщиков данные должны быть секционированы. Когда входящий запрос отправляется настраиваемому поставщику, этот поставщик добавляет заголовок `x-ms-customproviders-requestpath` к исходящему запросу к конечной точке.
+
+В следующем примере показан заголовок `x-ms-customproviders-requestpath` для настраиваемого ресурса:
 
 ```
 X-MS-CustomProviders-RequestPath: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CustomProviders/resourceProviders/{resourceProviderName}/{myResourceType}/{myResourceName}
 ```
 
-Основываясь на приведенном выше примере заголовка `x-ms-customproviders-requestpath`, мы можем создать для нашего хранилища partitionKey и rowKey следующим образом:
+Основываясь на приведенном выше примере заголовка `x-ms-customproviders-requestpath`, вы можете создать параметры *partitionKey* и *rowKey* для используемого хранилища, как показано в следующей таблице.
 
 Параметр | Шаблон | ОПИСАНИЕ
----|---
-partitionKey | {ИД подписки}:{имя группы ресурсов}:{имя поставщика ресурсов} | Параметр partitionKey — это способ секционирования данных. В большинстве случаев данные должны быть секционированы с помощью экземпляра пользовательского поставщика.
-rowKey | {тип моего ресурса}:{имя моего ресурса} | RowKey — это индивидуальный идентификатор данных. В большинстве случаев это имя ресурса.
+---|---|---
+*partitionKey* | `{subscriptionId}:{resourceGroupName}:{resourceProviderName}` | Параметр *partitionKey* определяет способ секционирования данных. Обычно данные секционируются по экземплярам настраиваемого поставщика.
+*rowKey* | `{myResourceType}:{myResourceName}` | Параметр *rowKey* содержит индивидуальный идентификатор данных. Обычно идентификатором служит имя ресурса.
 
-Кроме того, нам также необходимо создать новый класс для моделирования нашего пользовательского ресурса. В этом учебнике мы добавим в нашу функцию класс `CustomResource`, который является универсальным классом, принимающим любые введенные данные:
+Вам также нужно создать новый класс для моделирования настраиваемого ресурса. Далее вы добавите в приложение-функцию класс **CustomResource**.
 
 ```csharp
 // Custom Resource Table Entity
@@ -61,26 +58,27 @@ public class CustomResource : TableEntity
     public string Data { get; set; }
 }
 ```
-
-Будет создан базовый класс на основе `TableEntity`, который используется для хранения данных. Класс `CustomResource` наследует два свойства от `TableEntity`: partitionKey и rowKey.
+**CustomResource** — это простой и универсальный класс, который принимает любые входные данные. Он основан на классе **TableEntity**, который используется для хранения данных. Класс **CustomResource** наследует от **TableEntity** два свойства: **partitionKey** и **rowKey**.
 
 ## <a name="support-custom-provider-restful-methods"></a>Поддержка методов пользовательских поставщиков RESTful
 
 > [!NOTE]
-> Если вы не копируете код непосредственно из учебника, содержимое ответа должно быть допустимым объектом JSON с заголовком `Content-Type` типа `application/json`.
+> Если вы не копируете код непосредственно из руководства, предоставьте в ответе допустимый объект JSON, который устанавливает для заголовка `Content-Type` значение `application/json`.
 
-Теперь, когда мы выполнили настройку секционирования данных, давайте разберем основные методы CRUD и триггера для пользовательских ресурсов и пользовательских действий. Так как пользовательские поставщики действуют как прокси-серверы, запрос и ответ должны создаваться и обрабатываться с помощью RESTful `endpoint`. Выполните приведенные ниже фрагменты кода для обработки основных операций RESTful:
+Итак, вы завершили настройку секционирования данных, и теперь переходите к созданию методов CRUD для настраиваемых ресурсов и триггеров для настраиваемых действий. Так как настраиваемые поставщики выполняют функцию посредников, распознавание и обработка запроса и ответа возлагаются на конечную точку RESTful. В приведенном ниже фрагменте кода показано, как выполнять базовые операции RESTful.
 
-### <a name="trigger-custom-action"></a>Активация пользовательского действия
+### <a name="trigger-a-custom-action"></a>Активация настраиваемого действия
 
-Для пользовательских поставщиков настраиваемое действие запускается с помощью запросов `POST`. Пользовательское действие может дополнительно принимать текст запроса, который содержит набор входных параметров. Затем действие должно вернуть ответный сигнал о результате действия, а также о том, было ли оно успешным. В этом учебнике мы добавим метод `TriggerCustomAction` к нашей функции:
+В настраиваемых поставщиках настраиваемые действия активируются запросами POST. Пользовательское действие может дополнительно принимать текст запроса, который содержит набор входных параметров. Затем это действие возвращает ответ с информацией об успешности и результате действия.
+
+Добавьте в приложение-функцию следующий метод **TriggerCustomAction**:
 
 ```csharp
 /// <summary>
-/// Triggers a custom action with some side effect.
+/// Triggers a custom action with some side effects.
 /// </summary>
-/// <param name="requestMessage">The http request message.</param>
-/// <returns>The http response result of the custom action.</returns>
+/// <param name="requestMessage">The HTTP request message.</param>
+/// <returns>The HTTP response result of the custom action.</returns>
 public static async Task<HttpResponseMessage> TriggerCustomAction(HttpRequestMessage requestMessage)
 {
     var myCustomActionRequest = await requestMessage.Content.ReadAsStringAsync();
@@ -93,22 +91,24 @@ public static async Task<HttpResponseMessage> TriggerCustomAction(HttpRequestMes
 }
 ```
 
-Метод `TriggerCustomAction` принимает входящий запрос и просто возвращает ответ с кодом состояния успешного выполнения операции. 
+Метод **TriggerCustomAction** принимает входящий запрос и просто возвращает в ответе текст запроса с кодом состояния.
 
-### <a name="create-custom-resource"></a>Создание настраиваемого ресурса
+### <a name="create-a-custom-resource"></a>Создание настраиваемого ресурса
 
-Для пользовательских поставщиков настаиваемый ресурс создается с помощью запросов `PUT`. Пользовательский поставщик принимает текст запроса JSON, который содержит набор свойств для настраиваемого ресурса. В Azure ресурсы соответствуют модели RESTful. URL-адрес запроса, который использовался для создания ресурса, также должен иметь возможность извлекать и удалять ресурс. В этом учебнике мы добавим метод `CreateCustomResource` для создания ресурсов:
+В настраиваемых поставщиках настаиваемые ресурсы создаются с помощью запросов PUT. Настраиваемый поставщик принимает текст запроса в формате JSON с набором свойств для настраиваемого ресурса. Все ресурсы в Azure соответствуют модели RESTful. Для создания, извлечения или удаления ресурсов можно использовать один и тот же URL-адрес запроса.
+
+Добавьте метод **CreateCustomResource** для создания ресурсов.
 
 ```csharp
 /// <summary>
 /// Creates a custom resource and saves it to table storage.
 /// </summary>
-/// <param name="requestMessage">The http request message.</param>
-/// <param name="tableStorage">The Azure Storage Account table.</param>
-/// <param name="azureResourceId">The parsed Azure resource Id.</param>
-/// <param name="partitionKey">The partition key for storage. This is the custom provider id.</param>
+/// <param name="requestMessage">The HTTP request message.</param>
+/// <param name="tableStorage">The Azure Table storage account.</param>
+/// <param name="azureResourceId">The parsed Azure resource ID.</param>
+/// <param name="partitionKey">The partition key for storage. This is the custom provider ID.</param>
 /// <param name="rowKey">The row key for storage. This is '{resourceType}:{customResourceName}'.</param>
-/// <returns>The http response containing the created custom resource.</returns>
+/// <returns>The HTTP response containing the created custom resource.</returns>
 public static async Task<HttpResponseMessage> CreateCustomResource(HttpRequestMessage requestMessage, CloudTable tableStorage, ResourceId azureResourceId, string partitionKey, string rowKey)
 {
     // Adds the Azure top-level properties.
@@ -133,29 +133,31 @@ public static async Task<HttpResponseMessage> CreateCustomResource(HttpRequestMe
 }
 ```
 
-Метод `CreateCustomResource` добавляет во входящий запрос определенные поля Azure: `id`, `name` и `type`. Это свойства верхнего уровня, которые используются службами в Azure. Они позволят настраиваемому поставщику интегрироваться с другими службами, такими как Политика Azure, шаблоны Azure Resource Manager и журналы действий Azure.
+Метод **CreateCustomResource** изменяет входящий запрос, добавляя поля **id** (идентификатор), **name** (имя) и **type** (тип), которые понимает платформа Azure. Эти поля содержат свойства верхнего уровня, которые используются службами в Azure. Они позволят интегрировать настраиваемый поставщик с другими службами, такими как Политика Azure, шаблоны Azure Resource Manager и журналы действий Azure.
 
-Свойство | Образец | ОПИСАНИЕ
+Свойство | Пример | ОПИСАНИЕ
 ---|---|---
-name | {myCustomResourceName} | Название настраиваемого ресурса.
-Тип | Microsoft.CustomProviders/resourceProviders/{имя типа ресурса} | Пространство имен типа ресурса.
-id | /subscriptions/{ИД подписки}/resourceGroups/{имя группы ресурсов}/<br>providers/Microsoft.CustomProviders/resourceProviders/{имя поставщика ресурсов}/<br>{имя типа ресурса}/{имя настраиваемого ресурса} | Идентификатор ресурса.
+**name** | {имя_настраиваемого_ресурса} | Имя настраиваемого ресурса
+**type** | Microsoft.CustomProviders/resourceProviders/{имя_типа_ресурса} | Пространство имен для типа ресурса
+**id** | /subscriptions/{subscriptionId}/resourceGroups/{имя_группы_ресурсов}/<br>providers/Microsoft.CustomProviders/resourceProviders/{имя поставщика ресурсов}/<br>{имя_типа_ресурса}/{имя_настраиваемого_ресурса} | Идентификатор ресурса
 
-Помимо добавления свойств, мы также сохраняем документ в Хранилище таблиц Azure. 
+Вы не только добавили свойства, но и сохранили документ JSON в табличное хранилище Azure.
 
-### <a name="retrieve-custom-resource"></a>Извлечение настраиваемого ресурса
+### <a name="retrieve-a-custom-resource"></a>Извлечение настраиваемого ресурса
 
-Для пользовательских поставщиков настаиваемый ресурс извлекается с помощью запросов `GET`. Пользовательский поставщик *не будет* принимать текст запроса JSON. В случае запросов `GET` **конечная точка** должна использовать заголовок `x-ms-customproviders-requestpath` для возврата уже созданного ресурса. В этом учебнике мы добавим метод `RetrieveCustomResource`, чтобы извлечь ресурсы:
+В настраиваемых поставщиках настаиваемый ресурс извлекается с помощью запросов GET. Настраиваемый поставщик *не принимает* текст запроса в формате JSON. По запросу GET конечная точка возвращает уже созданный ресурс, указанный в заголовке `x-ms-customproviders-requestpath`.
+
+Добавьте метод **RetrieveCustomResource**, который будет извлекать существующие ресурсы:
 
 ```csharp
 /// <summary>
 /// Retrieves a custom resource.
 /// </summary>
-/// <param name="requestMessage">The http request message.</param>
-/// <param name="tableStorage">The Azure Storage Account table.</param>
-/// <param name="partitionKey">The partition key for storage. This is the custom provider id.</param>
+/// <param name="requestMessage">The HTTP request message.</param>
+/// <param name="tableStorage">The Azure Table storage account.</param>
+/// <param name="partitionKey">The partition key for storage. This is the custom provider ID.</param>
 /// <param name="rowKey">The row key for storage. This is '{resourceType}:{customResourceName}'.</param>
-/// <returns>The http response containing the existing custom resource.</returns>
+/// <returns>The HTTP response containing the existing custom resource.</returns>
 public static async Task<HttpResponseMessage> RetrieveCustomResource(HttpRequestMessage requestMessage, CloudTable tableStorage, string partitionKey, string rowKey)
 {
     // Attempt to retrieve the Existing Stored Value
@@ -172,21 +174,23 @@ public static async Task<HttpResponseMessage> RetrieveCustomResource(HttpRequest
 }
 ```
 
-В Azure ресурсы должны соответствовать модели RESTful. URL-адрес запроса, который создал ресурс, должен также возвращать ресурс, если выполняется запрос `GET`.
+В Azure ресурсы соответствуют модели RESTful. URL-адрес запроса, который создает ресурс, также возвращает этот ресурс, если выполняется запрос GET.
 
-### <a name="remove-custom-resource"></a>Удаление настраиваемого ресурса
+### <a name="remove-a-custom-resource"></a>Удаление настраиваемого ресурса
 
-Для пользовательских поставщиков настаиваемый ресурс удаляется с помощью запросов `DELETE`. Пользовательский поставщик *не будет* принимать текст запроса JSON. В случае запросов `DELETE` **конечная точка** должна использовать заголовок `x-ms-customproviders-requestpath` для удаления уже созданного ресурса. В этом учебнике мы добавим метод `RemoveCustomResource`, чтобы удалить ресурсы:
+В настраиваемых поставщиках настаиваемый ресурс удаляется с помощью запросов DELETE. Настраиваемый поставщик *не принимает* текст запроса в формате JSON. По запросу DELETE конечная точка удаляет уже созданный ресурс, указанный в заголовке `x-ms-customproviders-requestpath`.
+
+Добавьте метод **RemoveCustomResource**, который будет удалять существующие ресурсы:
 
 ```csharp
 /// <summary>
 /// Removes an existing custom resource.
 /// </summary>
-/// <param name="requestMessage">The http request message.</param>
-/// <param name="tableStorage">The Azure Storage Account table.</param>
-/// <param name="partitionKey">The partition key for storage. This is the custom provider id.</param>
+/// <param name="requestMessage">The HTTP request message.</param>
+/// <param name="tableStorage">The Azure storage account table.</param>
+/// <param name="partitionKey">The partition key for storage. This is the custom provider ID.</param>
 /// <param name="rowKey">The row key for storage. This is '{resourceType}:{customResourceName}'.</param>
-/// <returns>The http response containing the result of the delete.</returns>
+/// <returns>The HTTP response containing the result of the deletion.</returns>
 public static async Task<HttpResponseMessage> RemoveCustomResource(HttpRequestMessage requestMessage, CloudTable tableStorage, string partitionKey, string rowKey)
 {
     // Attempt to retrieve the Existing Stored Value
@@ -203,21 +207,23 @@ public static async Task<HttpResponseMessage> RemoveCustomResource(HttpRequestMe
 }
 ```
 
-В Azure ресурсы должны соответствовать модели RESTful. URL-адрес запроса, который создал ресурс, должен также удалять ресурс, если выполняется запрос `DELETE`.
+В Azure ресурсы соответствуют модели RESTful. URL-адрес запроса, который создает ресурс, также удаляет этот ресурс, если выполняется запрос DELETE.
 
 ### <a name="list-all-custom-resources"></a>Список всех настраиваемых ресурсов
 
-Список существующих настраиваемых ресурсов для пользовательских поставщиков можно перечислить с помощью запросов `GET` коллекции. Пользовательский поставщик *не будет* принимать текст запроса JSON. В случае запросов коллекции `GET` `endpoint` должна использовать заголовок `x-ms-customproviders-requestpath` для перечисления уже созданных ресурсов. В этом учебнике мы добавим метод `EnumerateAllCustomResources`, чтобы перечислить ресурсы:
+В настраиваемых поставщиках можно получить список существующих настраиваемых ресурсов с помощью коллекции запросов GET. Настраиваемый поставщик *не принимает* текст запроса в формате JSON. По коллекции запросов GET конечная точка перечисляет уже созданные ресурсы, указанные в заголовке `x-ms-customproviders-requestpath`.
+
+Добавьте следующий метод **EnumerateAllCustomResources**, который будет перечислять существующие ресурсы:
 
 ```csharp
 /// <summary>
 /// Enumerates all the stored custom resources for a given type.
 /// </summary>
-/// <param name="requestMessage">The http request message.</param>
-/// <param name="tableStorage">The Azure Storage Account table.</param>
-/// <param name="partitionKey">The partition key for storage. This is the custom provider id.</param>
+/// <param name="requestMessage">The HTTP request message.</param>
+/// <param name="tableStorage">The Azure Table storage account.</param>
+/// <param name="partitionKey">The partition key for storage. This is the custom provider ID.</param>
 /// <param name="resourceType">The resource type of the enumeration.</param>
-/// <returns>The http response containing a list of resources stored under 'value'.</returns>
+/// <returns>The HTTP response containing a list of resources stored under 'value'.</returns>
 public static async Task<HttpResponseMessage> EnumerateAllCustomResources(HttpRequestMessage requestMessage, CloudTable tableStorage, string partitionKey, string resourceType)
 {
     // Generate upper bound of the query.
@@ -244,22 +250,22 @@ public static async Task<HttpResponseMessage> EnumerateAllCustomResources(HttpRe
 ```
 
 > [!NOTE]
-> Для выполнения запроса startswith для строк ключ строки должен быть больше или меньше синтаксиса таблицы Azure. 
+> Синтаксис RowKey QueryComparisons.GreaterThan и QueryComparisons.LessThan используется в табличном хранилище Azure для выполнения запроса строк startswith.
 
-Для перечисления всех существующих ресурсов создадим запрос таблицы Azure, который проверяет, что ресурсы существуют в секции настраиваемого поставщика. Затем запрос проверяет, что ключ строки начинается с того же типа `{myResourceType}`.
+Чтобы перечислить все существующие ресурсы, создайте запрос к табличному хранилищу Azure, который проверяет существование ресурсов в секции настраиваемого поставщика. Затем этот запрос проверяет, начинается ли ключ строки с того же значения `{myResourceType}`.
 
 ## <a name="integrate-restful-operations"></a>Интеграция операций RESTful
 
-Когда все методы RESTful будут добавлены в функцию, можно обновить основной метод `Run`, чтобы вызвать функции для обработки различных запросов REST:
+Добавив все методы REST в приложение-функцию, обновите основной метод **Run**, чтобы вызвать функции для обработки разных запросов REST.
 
 ```csharp
 /// <summary>
-/// Entry point for the Azure Function webhook and acts as the service behind a custom provider.
+/// Entry point for the Azure function app webhook that acts as the service behind a custom provider.
 /// </summary>
-/// <param name="requestMessage">The http request message.</param>
+/// <param name="requestMessage">The HTTP request message.</param>
 /// <param name="log">The logger.</param>
-/// <param name="tableStorage">The Azure Storage Account table.</param>
-/// <returns>The http response for the custom Azure API.</returns>
+/// <param name="tableStorage">The Azure Table storage account.</param>
+/// <returns>The HTTP response for the custom Azure API.</returns>
 public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, ILogger log, CloudTable tableStorage)
 {
     // Get the unique Azure request path from request headers.
@@ -288,7 +294,7 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, ILogge
 
     switch (req.Method)
     {
-        // Action request for an custom action.
+        // Action request for a custom action.
         case HttpMethod m when m == HttpMethod.Post && !isResourceRequest:
             return await TriggerCustomAction(
                 requestMessage: req);
@@ -331,11 +337,13 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, ILogge
             return req.CreateResponse(HttpStatusCode.BadRequest);
     }
 }
-``` 
+```
 
-Обновленный метод `Run` теперь будет содержать входную привязку `tableStorage`, добавленную для Хранилища таблиц Azure. Первая часть метода теперь будет читать заголовок `x-ms-customproviders-requestpath` и использовать библиотеку `Microsoft.Azure.Management.ResourceManager.Fluent` для анализа значения в качестве идентификатора ресурса. Заголовок `x-ms-customproviders-requestpath` отправляется пользовательским поставщиком. Он обозначает путь входящего запроса. Используя проанализированный идентификатор ресурса, теперь можно создать partitionKey и rowKey для данных, чтобы выполнять поиск или хранить настраиваемые ресурсы.
+Обновленный метод **Run** теперь содержит входную привязку *tableStorage*, которую вы добавили для табличного хранилища Azure. Первая часть метода считывает заголовок `x-ms-customproviders-requestpath` и применяет библиотеку `Microsoft.Azure.Management.ResourceManager.Fluent` для анализа значения в качестве идентификатора ресурса. Настраиваемый поставщик отправляет заголовок `x-ms-customproviders-requestpath`, который определяет путь входящего запроса.
 
-Помимо добавления методов и классов нам необходимо обновить используемые методы для функции. Добавьте следующий код в начало файла.
+Используя полученный идентификатор ресурса, вы можете создать значения **partitionKey** и **rowKey** для данных, чтобы искать или сохранять настраиваемые ресурсы.
+
+После добавления методов и классов обновите методы **using** в приложении-функции. Добавьте следующий код в начало файла на C#:
 
 ```csharp
 #r "Newtonsoft.Json"
@@ -359,10 +367,8 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 ```
 
-В случае необходимости пример готового кода можно найти в [справочнике по конечной точке C# RESTful ​​пользовательского поставщика](./reference-custom-providers-csharp-endpoint.md). После создания функции сохраните URL-адрес, по которому можно запускать функцию, так как она будет использоваться в последующих учебниках.
+Если при работе с руководством у вас возникнут трудности, изучите полный готовый пример кода в [справочнике по конечной точке C# RESTful настраиваемого поставщика](./reference-custom-providers-csharp-endpoint.md). Завершив работу с приложением-функцией, сохраните URL-адрес приложения-функции. Он потребуется для активации приложения-функции в следующих руководствах.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Выполнив действия в этой статье, вы создали конечную точку RESTful для работы с `endpoint` настраиваемого поставщика Azure. Чтобы узнать, как создать собственный поставщик, перейдите к следующей статье.
-
-- [Руководство. Создание пользовательского поставщика](./tutorial-custom-providers-create.md)
+Выполнив инструкции из этой статьи, вы создали конечную точку RESTful для работы с конечной точкой настраиваемого поставщика Azure. Сведения о том, как создать настраиваемый поставщик, см. в [ этом руководстве](./tutorial-custom-providers-create.md).

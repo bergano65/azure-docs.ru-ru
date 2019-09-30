@@ -1,88 +1,65 @@
-### YamlMime:YamlDocument
-documentType: LandingData
-title: Документация по центру безопасности Azure
+### YamlMime:Landing
+title: Документация по Центру безопасности Azure
+summary: Центр безопасности Azure обеспечивает унифицированное управление безопасностью и расширенную защиту от угроз для гибридных облачных рабочих нагрузок.
 metadata:
-  title: Документация по центру безопасности Azure. Руководства и справочник по API | Документация Майкрософт
-  meta.description: 'Azure Security Center provides unified security management and advanced threat protection across hybrid cloud workloads. Learn how to get started with Security Center, apply security policies across your workloads, limit your exposure to threats, and detect and respond to attacks with our quickstarts and tutorials..'
+  title: Документация по Центру безопасности Azure
+  description: Начните работу с Центром безопасности. Узнайте, как защитить рабочие нагрузки, уменьшить степень риска, а также выявлять атаки и реагировать на них, из наших кратких руководств.
   services: security-center
-  author: cmcclister
-  manager: carolz
   ms.service: security-center
-  ms.tgt_pltfrm: na
-  ms.devlang: na
+  ms.subservice: subservice
   ms.topic: landing-page
-  ms.date: 07/26/18
-  ms.author: cmcclister
-abstract:
-  description: 'Центр безопасности Azure обеспечивает унифицированное управление безопасностью и расширенную защиту от угроз для гибридных облачных рабочих нагрузок. Узнайте, как начать работу с центром безопасности, применить политики безопасности для рабочих нагрузок, ограничить уязвимость перед угрозами, а также выявлять атаки и реагировать на них, из наших кратких руководств и другой документации.'
-sections:
-  - title: 5-минутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: 'Узнайте, как подготовить виртуальные машины и компьютеры к использованию центра безопасности, а также подключить решения по обеспечению безопасности.'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: /media/common/i_subscription.svg
-            text: Подключение подписок Azure
-            href: /azure/security-center/security-center-get-started
-          - image:
-              src: /media/logos/logo_Windows.svg
-            text: Подключение компьютеров Windows
-            href: /azure/security-center/quick-onboard-windows-computer
-          - image:
-              src: /media/logos/logo_linux.svg
-            text: Подключение компьютеров Linux
-            href: /azure/security-center/quick-onboard-linux-computer
-          - image:
-              src: /media/common/i_multi-connect.svg
-            text: Подключение решений по обеспечению безопасности
-            href: /azure/security-center/quick-security-solutions
-  - title: Пошаговые руководства
-    items:
-      - type: paragraph
-        text: 'Узнайте, как определить политики безопасности, защитить ресурсы от вредоносных действий и реагировать на предупреждения и инциденты безопасности.'
-      - type: list
-        style: ordered
-        items:
-          - html: <a href="/azure/security-center/tutorial-security-policy">Определение и оценка политик безопасности</a>
-          - html: <a href="/azure/security-center/tutorial-protect-resources">Защита ресурсов</a>
-          - html: <a href="/azure/security-center/tutorial-security-incident">Реагирование на инциденты безопасности</a>
-  - title: Развитие навыков с помощью Microsoft Learn
-    items:
-      - type: list
-        style: cards
-        className: cardsFTitle
-        items:
-          - title: "\_\_Общие сведения о системе безопасности в Azure"
-            href: /learn/modules/intro-to-security-in-azure/
-            image:
-              src: /learn/achievements/intro-to-security-in-azure.svg
-              href: /learn/modules/intro-to-security-in-azure/
-      - type: paragraph
-        text: <a href="/learn/browse/?term=security">Другие интерактивные руководства</a>
-  - title: Бесплатные учебные видеоматериалы
-    items:
-      - type: list
-        style: cards
-        className: cardsFTitle
-        items:
-          - title: "Простой способ защиты облачных ресурсов с помощью Центра безопасности Azure\_— Ignite 2018"
-            href: 'https://youtu.be/0txX1Y0GXDc'
-            image:
-              src: 'https://docs.microsoft.com/media/logos/logo_azure.svg'
-              href: 'https://youtu.be/0txX1Y0GXDc'
-          - title: "Защита серверных рабочих нагрузок с помощью Центра безопасности Azure\_— Ignite 2018"
-            href: 'https://youtu.be/Kb_xeIJVROo'
-            image:
-              src: 'https://docs.microsoft.com/media/logos/logo_azure.svg'
-              href: 'https://youtu.be/Kb_xeIJVROo'
-  - title: Справочные материалы
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - html: '<a href="https://docs.microsoft.com/rest/api/securitycenter/">Справочник по REST API</a>'
-          - html: '<a href="https://azure.microsoft.com/updates/?product=security-center">Обновления службы</a>'
+  ms.collection: collection
+  author: memildin
+  ms.author: memildin
+  ms.date: 09/26/2019
+  ms.openlocfilehash: 8574c69221d1f0f0528a0ab9b8d27df4ca9a0ef0
+  ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 09/27/2019
+  ms.locfileid: "71327602"
+landingContent:
+- title: Сведения о центре безопасности
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Каковы основные возможности Центра безопасности?
+      url: security-center-intro.md
+    - text: Какие поддерживаются версии Windows Server и Linux?
+      url: security-center-os-coverage.md
+- title: Начало работы
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Настройка политик безопасности
+      url: tutorial-security-policy.md
+    - text: Настройка параметров Центра безопасности
+      url: security-center-policies-overview.md
+    - text: Оценка уровня безопасности
+      url: security-center-secure-score.md
+    - text: Переход к расширенным функциям безопасности
+      url: security-center-onboarding.md
+    - text: Интеграция с другими продуктами Azure для обеспечения безопасности
+      url: security-center-alerts-integration.md
+- title: Улучшение результатов оценки безопасности
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Что такое оценка безопасности?
+      url: security-center-secure-score.md
+    - text: Корректировка рекомендаций по обеспечению безопасности
+      url: security-center-remediate-recommendations.md
+    - text: Настройка рекомендаций по обеспечению безопасности
+      url: tutorial-security-policy.md
+    - text: Использование рекомендаций для повышения уровня безопасности
+      url: security-center-using-recommendations.md
+- title: устранение рисков;
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Управление JIT-доступом
+      url: security-center-just-in-time.md
+    - text: Настройка адаптивных элементов управления приложениями
+      url: security-center-adaptive-application.md
+    - text: Реализация адаптивной защиты сети
+      url: security-center-adaptive-network-hardening.md

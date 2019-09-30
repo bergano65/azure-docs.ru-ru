@@ -1,75 +1,105 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Документация по Центру безопасности Azure для Интернета вещей
+summary: Центр безопасности Azure для Интернета вещей — это облачная служба безопасности на основе Azure, которая обеспечивает комплексную защиту от угроз для устройств Интернета вещей.
 metadata:
-  title: "Документация по Центру безопасности Azure для Интернета вещей. Руководства и краткие инструкции\_| Документация Майкрософт"
-  meta.description: Azure Security Center for IoT unifies your device security management and enables advanced threat detection and security posture management across your IoT solution.
-  services: asc-for-iot
-  author: mlottner
-  manager: rkarlin
+  title: Документация по Центру безопасности Azure для Интернета вещей
+  description: Центр безопасности Azure для Интернета вещей — это облачная служба безопасности на основе Azure, которая обеспечивает комплексную защиту от угроз для устройств Интернета вещей.
+  services: service
   ms.service: asc-for-iot
-  ms.tgt_pltfrm: na
-  ms.devlang: na
+  ms.subservice: subservice
   ms.topic: landing-page
-  ms.date: 07/23/19
-  ms.author: rkarlin
-abstract:
-  description: "Центр безопасности Azure для Интернета поможет составить четкое представление о кибербезопасности в масштабах всего решения Интернета вещей. Получите подробные и достоверные сведения о безопасности всех своих ресурсов, связанных с Azure. Параметры быстрого развертывания и полная интеграция с двойниками модулей Центра Интернета вещей предоставляют широкий спектр возможностей настройки и упрощают интеграцию с используемыми средствами управления устройствами.\_"
-sections:
-  - title: Пятиминутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: 'Узнайте, как подключить Центр Интернета вещей к Центру безопасности Azure для Интернета вещей, установить агенты безопасности и получать сведения о потенциальных угрозах.'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: media/index/deploy.svg
-            text: Подключение Центра безопасности Azure для Интернета вещей
-            href: /azure/asc-for-iot/quickstart-onboard-iot-hub
-          - image:
-              src: media/index/get-started.svg
-            text: Начало работы с Центром безопасности Azure для Интернета вещей
-            href: /azure/asc-for-iot/getting-started
-  - title: Руководства
-    items:
-      - type: paragraph
-        text: 'Узнайте, как определить политики безопасности, защитить устройства от вредоносных действий и реагировать на предупреждения и инциденты безопасности.'
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/azure/asc-for-iot/how-to-investigate-device">Обнаружение угроз с помощью Центра безопасности Azure для Интернета вещей</a>
-  - title: Развитие навыков с помощью Microsoft Learn
-    items:
-      - type: list
-        style: cards
-        className: cardsFTitle
-        items:
-          - title: Общие сведения о системе безопасности в Azure
-            href: 'https://docs.microsoft.com/learn/azure'
-            image:
-              src: media/index/tutorial.svg
-              href: 'https://docs.microsoft.com/learn/azure'
-  - title: Видео Центре безопасности Azure для Интернета вещей
-    items:
-      - type: list
-        style: cards
-        className: cardsFTitle
-        items:
-          - title: Общие сведение о Центр безопасности Azure для Интернета вещей (Майкрософт)
-            href: 'https://youtu.be/pq5uSp9u_x0'
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_video.svg'
-              href: 'https://youtu.be/pq5uSp9u_x0'
-          - title: "Центр безопасности Microsoft Azure для Интернета вещей\_— решение"
-            href: 'https://www.youtube.com/watch?time_continue=5&v=YOqkahQsKek'
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_video.svg'
-              href: 'https://www.youtube.com/watch?time_continue=5&v=YOqkahQsKek'
-  - title: Справочные материалы
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - html: '<a href="https://azure.microsoft.com/updates/?product=iotsecurity">Обновления службы</a>'
+  ms.collection: M365-security-compliance
+  author: mlottner
+  ms.author: mlottner
+  ms.date: 09/23/2019
+  ms.openlocfilehash: 5eb0d39d1dbe748b34dd8f5a72ae7796125eae44
+  ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 09/27/2019
+  ms.locfileid: "71348528"
+landingContent:
+- title: Сведения о Центре безопасности Azure для Интернета вещей
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что собой представляет Центр безопасности Azure для Интернета вещей?
+      url: overview.md
+    - text: Планирование реализации решения
+      url: service-prerequisites.md
+  - linkListType: architecture
+    links:
+    - text: Основные сведения об архитектуре Центра безопасности Azure для Интернета вещей
+      url: architecture.md
+    - text: Агенты Центра безопасности Azure для Интернета вещей
+      url: security-agent-architecture.md
+    - text: Модуль безопасности Edge
+      url: security-edge-architecture.md
+- title: Подключение Центра безопасности Azure для Интернета вещей к Центру Интернета вещей
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Начало работы с Центром безопасности Azure для Интернета вещей
+      url: getting-started.md
+    - text: Центр Интернета вещей
+      url: iot-hub-integration.md
+    - text: Агенты безопасности
+      url: security-agents.md
+- title: Настройка решения
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Включение Центра безопасности Azure для Интернета вещей в Центре Интернета вещей
+      url: quickstart-onboard-iot-hub.md
+    - text: Настройка решения
+      url: quickstart-configure-your-solution.md
+    - text: Создание двойника модуля для Центра безопасности Azure для Интернета вещей
+      url: quickstart-create-security-twin.md
+    - text: Создание пользовательских оповещений системы безопасности
+      url: quickstart-create-custom-alerts.md
+- title: Настройка решения
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Выбор агента
+      url: how-to-deploy-agent.md
+    - text: Развертывание агента безопасности Центра безопасности Azure для Интернета вещей на основе C# для Windows
+      url: how-to-deploy-windows-cs.md
+    - text: Развертывание агента безопасности Центра безопасности Azure для Интернета вещей на основе C# для Linux
+      url: how-to-deploy-linux-cs.md
+    - text: Развертывание агента безопасности Центра безопасности Azure для Интернета вещей на основе C для Linux
+      url: how-to-deploy-linux-c.md
+    - text: Развертывание модуля безопасности Edge
+      url: how-to-deploy-edge.md
+    - text: Настройка агентов безопасности
+      url: how-to-agent-configuration.md
+    - text: Отправка собственных сообщений безопасности
+      url: how-to-send-security-messages.md
+    - text: Доступ к необработанным данным безопасности
+      url: how-to-security-data-access.md
+    - text: Исследование устройства
+      url: how-to-investigate-device.md
+- title: Устранение неполадок в работе агента безопасности
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Инструкции по устранению неполадок с агентом безопасности (Linux)
+      url: troubleshoot-agent.md
+    - text: Основные сведения о файле LocalConfiguration.json — агент C
+      url: azure-iot-security-local-configuration-c.md
+    - text: Основные сведения о локальном файле конфигурации — агент C#
+      url: azure-iot-security-local-configuration-csharp.md
+- title: Ресурсы решения "Центр безопасности Azure для Интернета вещей"
+  linkLists:
+  - linkListType: video
+    links:
+    - text: Что собой представляет Центр безопасности Azure для Интернета вещей?
+      url: https://youtu.be/pq5uSp9u_x0
+    - text: Основные сведения о Центре безопасности Azure для Интернета вещей
+      url: https://www.youtube.com/watch?time_continue=5&v=YOqkahQsKek
+  - linkListType: reference
+    links:
+    - text: Часто задаваемые вопросы
+      url: resources-frequently-asked-questions.md
+    - text: Цены и связанные затраты
+      url: concept-pricing.md

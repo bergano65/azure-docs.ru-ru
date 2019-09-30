@@ -8,13 +8,13 @@ author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
-ms.date: 08/28/2019
-ms.openlocfilehash: 9a80cb7ba44c86d449e4ff4178a2982db302a717
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.date: 09/20/2019
+ms.openlocfilehash: 6feeab9b48715a8fe1f6c6fe11ae90b6be71a57a
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70138342"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71173481"
 ---
 # <a name="use-terraform-to-create-an-azure-virtual-machine-scale-set-from-a-packer-custom-image"></a>Создание масштабируемого набора виртуальных машин Azure из пользовательского образа Packer с помощью Terraform
 
@@ -42,9 +42,9 @@ ms.locfileid: "70138342"
 
 В пустом каталоге создайте три файла со следующими именами:
 
-- ```variables.tf``` — этот файл содержит значения переменных, используемых в шаблоне.
-- ```output.tf``` — этот файл описывает параметры, отображающиеся после развертывания.
-- ```vmss.tf``` — этот файл содержит код инфраструктуры, для которой выполняется развертывание.
+- `variables.tf` : этот файл содержит значения переменных, используемых в шаблоне.
+- `output.tf` : этот файл описывает параметры, отображающиеся после развертывания.
+- `vmss.tf` : этот файл содержит код инфраструктуры, для которой выполняется развертывание.
 
 ##  <a name="create-the-variables"></a>Создание переменных 
 
@@ -52,7 +52,7 @@ ms.locfileid: "70138342"
 
 Измените файл `variables.tf`, скопировав следующий код, а затем сохранив изменения.
 
-```tf 
+```hcl
 variable "location" {
   description = "The location where resources are created"
   default     = "East US"
@@ -70,7 +70,7 @@ variable "resource_group_name" {
 
 Сохраните файл.
 
-При развертывании шаблона Terraform нужно получить полное доменное имя, используемое для получения доступа к приложению. Используйте тип ресурса Terraform ```output``` и получите свойство ресурса ```fqdn```. 
+При развертывании шаблона Terraform нужно получить полное доменное имя, используемое для получения доступа к приложению. Используйте тип ресурса Terraform `output` и получите свойство ресурса `fqdn`. 
 
 Измените файл `output.tf` и скопируйте следующий код для предоставления полного доменного имени для виртуальных машин. 
 
@@ -89,9 +89,9 @@ output "vmss_public_ip" {
 
 Понадобится также группа, в которой создаются все ресурсы. 
 
-Измените и скопируйте следующий код в файл ```vmss.tf```: 
+Измените и скопируйте следующий код в файл `vmss.tf`: 
 
-```tf 
+```hcl
 
 resource "azurerm_resource_group" "vmss" {
   name     = "${var.resource_group_name}"
@@ -145,7 +145,7 @@ resource "azurerm_public_ip" "vmss" {
 terraform init 
 ```
  
-Модули поставщика скачиваются из реестра Terraform в папку ```.terraform``` в каталоге, в котором выполняется команда.
+Модули поставщика скачиваются из реестра Terraform в папку `.terraform` в каталоге, в котором выполняется команда.
 
 Выполните следующую команду, чтобы развернуть инфраструктуру в Azure.
 
@@ -185,8 +185,7 @@ terraform apply
 
 Добавьте следующий код в конец файла `vmss.tf`.
 
-```tf
-
+```hcl
 
 resource "azurerm_lb" "vmss" {
   name                = "vmss-lb"
@@ -303,7 +302,7 @@ resource "azurerm_virtual_machine_scale_set" "vmss" {
 
 Настройте развертывание, добавив следующий код в `variables.tf`:
 
-```tf 
+```hcl
 variable "application_port" {
     description = "The port that you want to expose to the external load balancer"
     default     = 80

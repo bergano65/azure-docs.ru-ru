@@ -1,19 +1,19 @@
 ---
 title: Скрипт Azure PowerShell для обновления учетной записи Azure Cosmos
-description: Пример скрипта Azure PowerShell для обновления учетной записи Azure Cosmos с добавление регионов
+description: Пример скрипта Azure PowerShell для обновления учетной записи Azure Cosmos или изменения регионов
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: sample
-ms.date: 05/06/2019
+ms.date: 09/20/2019
 ms.author: mjbrown
-ms.openlocfilehash: 8fad9b47b4f451f4b77f32038b26d6dc43809a60
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: 7d57264daf4036d1823d3da27c248bdca1d7466d
+ms.sourcegitcommit: 116bc6a75e501b7bba85e750b336f2af4ad29f5a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67603948"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71154744"
 ---
-# <a name="update-an-azure-cosmos-account-and-add-a-region-using-powershell"></a>Обновление учетной записи Azure Cosmos и добавление региона с помощью PowerShell
+# <a name="update-an-azure-cosmos-account-or-add-modify-regions-using-powershell"></a>Обновление учетной записи Azure Cosmos, добавление и изменения регионов с помощью PowerShell
 
 [!INCLUDE [updated-for-az](../../../../../includes/updated-for-az.md)]
 
@@ -21,7 +21,12 @@ ms.locfileid: "67603948"
 
 ## <a name="sample-script"></a>Пример скрипта
 
-[!code-powershell[main](../../../../../powershell_scripts/cosmosdb/sql/ps-account-update.ps1 "Update and add regions to an Azure Cosmos account")]
+> [!NOTE]
+> Нельзя изменять регионы вместе с другими свойствами учетной записи Cosmos в рамках одной операции. Такие изменения должны выполняться поочередно.
+> [!NOTE]
+> В этом примере демонстрируется использование учетной записи API SQL (Core). Чтобы использовать этот пример с другими API, соответствующие свойства необходимо скопировать в скрипт для такого API.
+
+[!code-powershell[main](../../../../../powershell_scripts/cosmosdb/common/ps-account-update.ps1 "Add a region to an Azure Cosmos account")]
 
 ## <a name="clean-up-deployment"></a>Очистка развертывания
 
@@ -38,7 +43,7 @@ Remove-AzResourceGroup -ResourceGroupName "myResourceGroup"
 | Команда | Примечания |
 |---|---|
 |**Ресурсы Azure**| |
-| [Get-AzResource](https://docs.microsoft.com/powershell/module/az.resources/get-azresource) | Получение ресурса. |
+| [New-AzResource](https://docs.microsoft.com/powershell/module/az.resources/new-azresource) | Создает ресурса. |
 | [Set-AzResource](https://docs.microsoft.com/powershell/module/az.resources/set-azresource) | Обновление ресурса. |
 |**Группы ресурсов Azure**| |
 | [New-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup) | Создает группу ресурсов, в которой хранятся все ресурсы. |

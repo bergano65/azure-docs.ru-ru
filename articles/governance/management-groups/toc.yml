@@ -1,0 +1,16 @@
+- name: Документация по группам управления Azure
+  href: ./index.yml
+- name: Обзор
+  expanded: true
+  items:
+    - name: Управление Azure
+      href: ../azure-management.md
+    - name: Группы управления
+      href: ./overview.md
+- name: Руководства
+  expanded: true
+  items:
+    - name: Создание групп управления
+      href: ./create.md
+    - name: Управление ресурсами
+      href: ./manage.md
