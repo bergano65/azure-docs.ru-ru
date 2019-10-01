@@ -41,8 +41,8 @@ ms.locfileid: "70194328"
 
 | Параметр | Обязательное значение | Тип | Описание |
 |:--- |:--- |:--- |:--- | 
-|операнд1 |Да |ssNoversion |Первое слагаемое. |
-|операнд2 |Да |ssNoversion |Второе слагаемое. |
+|операнд1 |Да |int |Первое слагаемое. |
+|операнд2 |Да |int |Второе слагаемое. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -113,7 +113,7 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 | Параметр | Обязательное значение | Тип | Описание |
 |:--- |:--- |:--- |:--- |
 | loopName | Нет | строка | Имя цикла для получения итерации. |
-| offset |Нет |ssNoversion |Число, добавляемое к отсчитываемому от нуля значению итерации. |
+| offset |Нет |int |Число, добавляемое к отсчитываемому от нуля значению итерации. |
 
 ### <a name="remarks"></a>Примечания
 
@@ -158,8 +158,8 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 | Параметр | Обязательное значение | Тип | Описание |
 |:--- |:--- |:--- |:--- |
-| операнд1 |Да |ssNoversion |Делимое. |
-| операнд2 |Да |ssNoversion |Делитель. Не может иметь значение 0. |
+| операнд1 |Да |int |Делимое. |
+| операнд2 |Да |int |Делитель. Не может иметь значение 0. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -254,7 +254,7 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 <a id="int" />
 
-## <a name="int"></a>ssNoversion
+## <a name="int"></a>int
 `int(valueToConvert)`
 
 Преобразует указанное значение в целое число.
@@ -451,8 +451,8 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 | Параметр | Обязательное значение | Type | Описание |
 |:--- |:--- |:--- |:--- |
-| операнд1 |Да |ssNoversion |Делимое. |
-| операнд2 |Да |ssNoversion |Делитель, не может быть равен 0. |
+| операнд1 |Да |int |Делимое. |
+| операнд2 |Да |int |Делитель, не может быть равен 0. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 Целое число, представляющее остаток.
@@ -521,8 +521,8 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 | Параметр | Обязательное значение | Тип | Описание |
 |:--- |:--- |:--- |:--- |
-| операнд1 |Да |ssNoversion |Первый множитель. |
-| операнд2 |Да |ssNoversion |Второй множитель. |
+| операнд1 |Да |int |Первый множитель. |
+| операнд2 |Да |int |Второй множитель. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -592,8 +592,8 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 | Параметр | Обязательное значение | Type | Описание |
 |:--- |:--- |:--- |:--- |
-| операнд1 |Да |ssNoversion |Уменьшаемое. |
-| операнд2 |Да |ssNoversion |Вычитаемое. |
+| операнд1 |Да |int |Уменьшаемое. |
+| операнд2 |Да |int |Вычитаемое. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 Целое число, представляющее разность.
