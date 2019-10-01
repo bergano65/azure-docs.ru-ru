@@ -38,6 +38,8 @@
       href: create-host-pools-arm-template.md
     - name: Создание пула узлов с помощью PowerShell
       href: create-host-pools-powershell.md
+    - name: "Развертывание виртуальной машины Windows\_7 в службе \"Виртуальный рабочий стол Windows\""
+      href: deploy-windows-7-virtual-machine.md
     - name: Применение лицензии Windows к узлам сеансов Виртуальных рабочих столов Windows
       href: apply-windows-license.md
     - name: Создание контейнера профиля для пула узлов с помощью общей папки
@@ -86,6 +88,8 @@
       href: troubleshoot-set-up-issues.md
     - name: Конфигурация виртуальной машины узла сеанса
       href: troubleshoot-vm-configuration.md
+    - name: "Устранение неполадок с виртуальной машиной Windows\_7 в службе \"Виртуальный рабочий стол Windows\""
+      href: troubleshoot-windows-7-vm.md
     - name: Подключения клиента удаленного рабочего стола
       href: troubleshoot-client-connection.md
     - name: "Виртуальный рабочий стол Windows\_— PowerShell"

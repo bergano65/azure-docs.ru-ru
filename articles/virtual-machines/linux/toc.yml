@@ -35,21 +35,23 @@
       href: tutorial-backup-vms.md
     - name: "10.\_Управление виртуальными машинами"
       href: tutorial-govern-resources.md
-    - name: "11.\_Мониторинг и обновление виртуальных машин"
-      href: tutorial-monitoring.md
-    - name: "12.\_Управление безопасностью виртуальных машин"
+    - name: "11.\_Отслеживание и обновление виртуальных машин"
+      href: tutorial-config-management.md
+    - name: "12.\_Мониторинг виртуальных машин"
+      href: tutorial-monitor.md
+    - name: "13.\_Управление безопасностью виртуальных машин"
       href: tutorial-azure-security.md
-    - name: "13.\_Развертывание Jenkins"
+    - name: "14.\_Развертывание Jenkins"
       href: tutorial-jenkins-github-docker-cicd.md
-    - name: "14.\_CI/CD с использованием Azure Pipelines"
+    - name: "15.\_CI/CD с использованием Azure Pipelines"
       href: tutorial-build-deploy-jenkins.md
-    - name: "15а.\_Создание стека LAMP"
+    - name: "16а.\_Создание стека LAMP"
       href: tutorial-lamp-stack.md
-    - name: "15б.\_Создание стека LEMP"
+    - name: "16b.\_Создание стека LEMP"
       href: tutorial-lemp-stack.md
-    - name: "15в.\_Создание стека MEAN"
+    - name: "16c.\_Создание стека MEAN"
       href: tutorial-mean-stack.md
-    - name: "16.\_Защита веб-сервера с помощью SSL"
+    - name: "17.\_Защита веб-сервера с помощью SSL"
       href: tutorial-secure-web-server.md
 - name: Примеры
   items:

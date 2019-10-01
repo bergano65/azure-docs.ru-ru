@@ -60,7 +60,7 @@ Azure Marketplace предлагает приложения SaaS, виртуал
 Предложения Azure Marketplace можно приобрести с помощью:
 
 * [Интернет-витрина](https://azuremarketplace.microsoft.com/marketplace/apps)
-* [Портал Azure] [Портал Azure]
+* [Портал Azure][Портал Azure]
 * [Интерфейс командной строки Azure (CLI)](/cli/azure/?view=azure-cli-latest)
 
 >[!Note]

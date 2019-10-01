@@ -183,6 +183,8 @@
       items:
         - name: "Большие двоичные объекты, очереди и файлы (12.x\_— предварительная версия)"
           href: 'https://azure.github.io/azure-sdk-for-java/track2reports/index.html'
+        - name: "Большие двоичные объекты, очереди и файлы (версия\_8)"
+          href: 'https://docs.microsoft.com/java/api/overview/azure/storage?view=azure-java-legacy'
         - name: Поставщик ресурсов хранилища
           href: /java/api/overview/azure/storage/management
     - name: Node.js
@@ -284,6 +286,8 @@
           href: 'https://www.nuget.org/packages/Microsoft.Azure.ConfigurationManager/'
         - name: Библиотека перемещения данных службы хранилища Azure
           href: 'https://www.nuget.org/packages/Microsoft.Azure.Storage.DataMovement/'
+        - name: Библиотека поставщика ресурсов службы хранилища
+          href: 'https://www.nuget.org/packages/Microsoft.Azure.Management.Storage/'
     - name: Исходный код
       items:
         - name: .NET
@@ -297,7 +301,7 @@
             - name: Библиотека перемещения данных
               href: 'https://github.com/Azure/azure-storage-net-data-movement'
             - name: Библиотека поставщика ресурсов службы хранилища
-              href: /dotnet/api/overview/azure/storage/management
+              href: 'https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/storage/Microsoft.Azure.Management.Storage'
         - name: Java
           items:
             - name: "Клиентская библиотека службы хранилища Azure версии\_12.x (предварительная версия)"

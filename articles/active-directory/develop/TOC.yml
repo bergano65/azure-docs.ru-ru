@@ -219,84 +219,6 @@
                   href: scenario-mobile-call-api.md
                 - name: Перенос в рабочую среду
                   href: scenario-mobile-production.md
-        - name: Библиотека проверки подлинности Майкрософт (MSAL)
-          items:
-            - name: Обзор
-              href: msal-overview.md
-            - name: Миграция из ADAL
-              items:
-                - name: Миграция в MSAL.NET
-                  href: msal-net-migration.md
-                - name: Миграция в MSAL.js
-                  href: msal-compare-msal-js-and-adal-js.md
-                - name: Миграция в MSAL для iOS и MacOS
-                  href: migrate-objc-adal-msal.md
-                - name: Перенос приложений Xamarin из ADAL.NET в MSAL.NET с помощью брокеров
-                  href: msal-net-migration-ios-broker.md
-            - name: Поддерживаемые потоки аутентификации
-              href: msal-authentication-flows.md
-            - name: Получение и кэширование маркеров
-              items:
-                - name: Получение и кэширование маркеров
-                  href: msal-acquire-cache-tokens.md
-                - name: "Области для приложений версии\_1.0"
-                  href: msal-v1-app-scopes.md
-            - name: Клиентские приложения
-              items:
-                - name: Клиентские приложения
-                  href: msal-client-applications.md
-                - name: Конфигурация приложений
-                  href: msal-client-application-configuration.md
-                - name: Инициализация приложений (.NET)
-                  href: msal-net-initializing-client-applications.md
-                - name: Утверждения клиента (.NET)
-                  href: msal-net-client-assertions.md
-                - name: Инициализация приложений (JS)
-                  href: msal-js-initializing-client-applications.md
-            - name: Обработка ошибок и исключений
-              href: msal-handling-exceptions.md
-            - name: Ведение журналов
-              href: msal-logging.md
-            - name: Единый вход
-              items:
-                - name: Единый вход с использованием MSAL.js
-                  href: msal-js-sso.md
-                - name: Единый вход с использованием MSAL для iOS и macOS
-                  items:
-                    - name: Единый вход между приложениями MSAL
-                      href: single-sign-on-macos-ios.md
-                    - name: Единый вход между приложениями ADAL и MSAL
-                      href: sso-between-adal-msal-apps-macos-ios.md
-            - name: Интеграция с ADFS
-              items:
-                - name: Поддержка ADFS в MSAL.NET
-                  href: msal-net-adfs-support.md
-            - name: "Интеграция с Azure\_AD\_B2C"
-              items:
-                - name: JavaScript
-                  href: msal-b2c-overview.md
-                - name: .NET
-                  href: msal-net-aad-b2c-considerations.md
-                - name: iOS и macOS
-                  href: 'config-authority.md#b2c'
-            - name: Рекомендации и известные проблемы
-              items:
-                - name: MSAL.NET
-                  items:
-                    - name: Веб-браузеры
-                      href: msal-net-web-browsers.md
-                - name: MSAL.js
-                  items:
-                    - name: Рекомендации по использованию Internet Explorer
-                      href: msal-js-use-ie-browser.md
-                    - name: Известные проблемы c Internet Explorer и Microsoft Edge
-                      href: msal-js-known-issues-ie-edge-browsers.md
-                    - name: Известные проблемы c Safari
-                      href: msal-js-known-issues-safari-browser.md
-                - name: MSAL для iOS и MacOS
-                  items:
-                    - name: Проблемы с SSL
-                      href: ssl-issues.md
         - name: Протокол аутентификации
           items:
             - name: "Типы приложений и OAuth\_2.0"
@@ -440,6 +362,98 @@
               href: vs-active-directory-webapi-what-happened.md
             - name: Ошибка при обнаружении аутентификации
               href: vs-active-directory-error.md
+    - name: Библиотека проверки подлинности Майкрософт (MSAL)
+      items:
+        - name: Обзор
+          href: msal-overview.md
+        - name: Учетные записи и профили клиентов (Android)
+          href: accounts-overview.md
+        - name: Агенты авторизации (Android)
+          href: authorization-agents.md
+        - name: Аутентификация с использованием брокера (Android)
+          items:
+            - name: Аутентификация с использованием брокера (Android)
+              href: brokered-auth.md
+        - name: Миграция
+          items:
+            - name: Миграция в MSAL.NET
+              href: msal-net-migration.md
+            - name: Миграция в MSAL.js
+              href: msal-compare-msal-js-and-adal-js.md
+            - name: Переход на MSAL.Android
+              href: migrate-android-adal-msal.md
+            - name: Переход на MSAL.iOS и MacOS
+              href: migrate-objc-adal-msal.md
+            - name: Перенос приложений Xamarin из ADAL.NET в MSAL.NET с помощью брокеров
+              href: msal-net-migration-ios-broker.md
+        - name: Поддерживаемые потоки аутентификации
+          href: msal-authentication-flows.md
+        - name: Общедоступные клиентские приложения для одной и нескольких учетных записей (Android)
+          href: single-multi-account.md
+        - name: Получение и кэширование маркеров
+          items:
+            - name: Получение и кэширование маркеров
+              href: msal-acquire-cache-tokens.md
+            - name: "Области для приложений версии\_1.0"
+              href: msal-v1-app-scopes.md
+        - name: Клиентские приложения
+          items:
+            - name: Клиентские приложения
+              href: msal-client-applications.md
+            - name: Конфигурация приложения (.NET)
+              href: msal-client-application-configuration.md
+            - name: Инициализация приложений (.NET)
+              href: msal-net-initializing-client-applications.md
+            - name: Утверждения клиента (.NET)
+              href: msal-net-client-assertions.md
+            - name: Инициализация приложений (JS)
+              href: msal-js-initializing-client-applications.md
+        - name: Обработка ошибок и исключений
+          href: msal-handling-exceptions.md
+        - name: Ведение журналов
+          href: msal-logging.md
+        - name: Единый вход
+          items:
+            - name: Единый вход с использованием MSAL.js
+              href: msal-js-sso.md
+            - name: Единый вход с использованием MSAL для iOS и macOS
+              items:
+                - name: Единый вход между приложениями MSAL
+                  href: single-sign-on-macos-ios.md
+                - name: Единый вход между приложениями ADAL и MSAL
+                  href: sso-between-adal-msal-apps-macos-ios.md
+        - name: Интеграция с ADFS
+          items:
+            - name: Поддержка ADFS в MSAL.NET
+              href: msal-net-adfs-support.md
+        - name: "Интеграция с Azure\_AD\_B2C"
+          items:
+            - name: Android
+              href: msal-android-b2c.md
+            - name: JavaScript
+              href: msal-b2c-overview.md
+            - name: .NET
+              href: msal-net-aad-b2c-considerations.md
+            - name: iOS и macOS
+              href: 'config-authority.md#b2c'
+        - name: Рекомендации и известные проблемы
+          items:
+            - name: MSAL.NET
+              items:
+                - name: Веб-браузеры
+                  href: msal-net-web-browsers.md
+            - name: MSAL.js
+              items:
+                - name: Рекомендации по использованию Internet Explorer
+                  href: msal-js-use-ie-browser.md
+                - name: Известные проблемы c Internet Explorer и Microsoft Edge
+                  href: msal-js-known-issues-ie-edge-browsers.md
+                - name: Известные проблемы c Safari
+                  href: msal-js-known-issues-safari-browser.md
+            - name: MSAL для iOS и MacOS
+              items:
+                - name: Проблемы с SSL
+                  href: ssl-issues.md
     - name: Справочники
       items:
         - name: Библиотеки проверки подлинности
@@ -449,6 +463,8 @@
           href: 'https://docs.microsoft.com/graph/api/resources/azure-ad-overview?view=graph-rest-beta'
         - name: Манифест приложения
           href: reference-app-manifest.md
+        - name: Файл конфигурации MSAL для Android
+          href: msal-configuration.md
         - name: Коды ошибок проверки подлинности и авторизации
           href: reference-aadsts-error-codes.md
         - name: Критические изменения

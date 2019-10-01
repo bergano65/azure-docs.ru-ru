@@ -1,113 +1,109 @@
-### YamlMime:YamlDocument
-documentType: LandingData
-title: Документация по API Перевода текстов
+### YamlMime:Landing
+title: Документация по API "Перевод текстов"
+summary: "\"Перевод текстов\" — это облачная служба машинного перевода, позволяющая переводить текст практически в реальном времени путем простого вызова REST API. В этом API используются современные технологии нейронного машинного перевода, а также статистического машинного перевода. \"Пользовательский переводчик\" — это расширение API-интерфейса \"Перевод текстов\", которое позволяет создавать системы нейронного перевода. Настраиваемые системы перевода можно использовать для перевода текста с помощью API \"Перевод текстов\" или служб \"Речь\" от Майкрософт."
 metadata:
-  title: 'Документация по API Перевода текстов. Краткие руководства, учебные материалы и справочник по API Azure Cognitive Services | Документация Майкрософт'
-  description: 'Узнайте, как использовать API Перевода текстов для перевода текста на несколько языков.'
+  title: Документация по API "Перевод текстов". Краткие руководства, учебные материалы и справочник по API
+  titleSuffix: Azure Cognitive Services
+  description: "\"Перевод текстов\" — это облачная служба машинного перевода, позволяющая переводить текст практически в реальном времени путем простого вызова REST API. В этом API используются современные технологии нейронного машинного перевода, а также статистического машинного перевода. \"Пользовательский переводчик\" — это расширение API-интерфейса \"Перевод текстов\", которое позволяет создавать системы нейронного перевода. Настраиваемые системы перевода можно использовать для перевода текста с помощью API \"Перевод текстов\" или службы \"Речь\" от Майкрософт."
   services: cognitive-services
-  author: swmachan
+  author: erhopf
   manager: nitinme
+  layout: LandingPage
   ms.service: cognitive-services
   ms.subservice: translator-text
   ms.topic: landing-page
-  ms.date: 06/04/2019
-  ms.author: swmachan
-abstract:
-  description: '"Перевод текстов" — это облачная служба машинного перевода, позволяющая переводить текст практически в реальном времени путем простого вызова REST API. В этом API используются современные технологии нейронного машинного перевода, а также статистического машинного перевода. "Пользовательский переводчик" — это расширение API перевода текстов, которое позволяет создавать системы нейронного перевода. Настраиваемые системы перевода можно использовать для перевода текста с помощью API Перевода текстов или <a href="https://docs.microsoft.com/azure/cognitive-services/speech-service/">служб "Речь" от Майкрософт</a>. Список поддерживаемых языков как для нейронного, так и для статистического машинного перевода можно найти <a href="languages.md">здесь</a>.'
-sections:
-  - items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - href: /azure/cognitive-services/translator/translator-info-overview
-            html: <p>Сведения об API Перевода текстов</p>
-            image:
-              src: ../media/index/i_overview.svg
-            title: Что собой представляет API Перевода текстов?
-          - href: /azure/cognitive-services/translator/custom-translator/overview
-            html: <p>Сведения о Пользовательском переводчике</p>
-            image:
-              src: ../media/index/i_overview.svg
-            title: Что такое Пользовательский переводчик?
-          - href: /azure/cognitive-services/translator/custom-translator/quickstart-build-deploy-custom-model
-            html: '<p>Узнайте, как приступить к работе с Пользовательским переводчиком</p>'
-            image:
-              src: ../media/index/i_get-started.svg
-            title: Краткое руководство по Пользовательскому переводчику
-  - title: Пятиминутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: 'Начало работы с API Перевода текстов:'
-      - type: table
-        style: dataMatrix
-        columns:
-          - image:
-              src: media/index/logo_csharp.svg
-            title: 'C#'
-          - image:
-              src: media/index/logo_java.svg
-            title: Java
-          - image:
-              src: media/index/logo_nodejs.svg
-            title: Node.js
-          - image:
-              src: media/index/logo_python.svg
-            title: Python
-          - image:
-              src: media/index/logo_go.svg
-            title: Go
-        rows:
-          - title: Перевод текста
-            values:
-              - href: quickstart-translate?pivots=programming-language-csharp
-              - href: quickstart-translate?pivots=programming-language-java
-              - href: quickstart-translate?pivots=programming-language-nodejs
-              - href: quickstart-translate?pivots=programming-language-python
-              - href: quickstart-translate?pivots=programming-language-go
-          - title: Преобразование текста из одного скрипта в другой
-            values:
-              - href: quickstart-transliterate?pivots=programming-language-csharp
-              - href: quickstart-transliterate?pivots=programming-language-java
-              - href: quickstart-transliterate?pivots=programming-language-nodejs
-              - href: quickstart-transliterate?pivots=programming-language-python
-              - href: quickstart-transliterate?pivots=programming-language-go
-          - title: Определение языка текста
-            values:
-              - href: quickstart-detect?pivots=programming-language-csharp
-              - href: quickstart-detect?pivots=programming-language-java
-              - href: quickstart-detect?pivots=programming-language-nodejs
-              - href: quickstart-detect?pivots=programming-language-python
-              - href: quickstart-detect?pivots=programming-language-go
-          - title: Получение вариантов перевода и их использование
-            values:
-              - href: quickstart-dictionary?pivots=programming-language-csharp
-              - href: quickstart-dictionary?pivots=programming-language-java
-              - href: quickstart-dictionary?pivots=programming-language-nodejs
-              - href: quickstart-dictionary?pivots=programming-language-python
-              - href: quickstart-dictionary?pivots=programming-language-go
-          - title: Определение длины предложения
-            values:
-              - href: quickstart-sentences?pivots=programming-language-csharp
-              - href: quickstart-sentences?pivots=programming-language-java
-              - href: quickstart-sentences?pivots=programming-language-nodejs
-              - href: quickstart-sentences?pivots=programming-language-python
-              - href: quickstart-sentences?pivots=programming-language-go
-          - title: Получение полного списка поддерживаемых языков
-            values:
-              - href: quickstart-languages?pivots=programming-language-csharp
-              - href: quickstart-languages?pivots=programming-language-java
-              - href: quickstart-languages?pivots=programming-language-nodejs
-              - href: quickstart-languages?pivots=programming-language-python
-              - href: quickstart-languages?pivots=programming-language-go
-  - title: Пошаговые инструкции
-    items:
-      - type: paragraph
-        text: 'Как разрабатывать приложения с использованием API Перевода текстов:'
-      - type: paragraph
-        text: '<li><a href="tutorial-wpf-translation-csharp.md">Создание приложения WPF для API Перевода текстов на C#</a></li><li><a href="tutorial-build-flask-app-translation-synthesis.md">Создание приложения Flask для перевода на Python</a></li>'
-  - title: Справочные материалы
-    items:
-      - type: paragraph
-        text: <p><a href="reference/v3-0-reference.md">Справочник по API</a></p>
+  ms.date: 09/05/2019
+  ms.author: erhopf
+  ms.openlocfilehash: 7bbe487ff6ed545f40cccc5abb041f54ea5f319d
+  ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 09/29/2019
+  ms.locfileid: "71672556"
+landingContent:
+- title: API перевода
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: API Перевода текстов
+      url: translator-info-overview.md
+    - text: Пользовательский переводчик
+      url: translator-info-overview.md
+    - text: Цены
+      url: https://azure.microsoft.com/pricing/details/cognitive-services/translator-text-api/
+    - text: Соответствие нормативным требованиям
+      url: https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/
+    - text: Создание подписки
+      url: translator-text-how-to-signup.md
+    - text: Часто задаваемые вопросы
+      url: https://www.microsoft.com/translator/faq.aspx
+- title: API Перевода текстов
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Перевод текста
+      url: quickstart-translate.md
+    - text: Транслитерация текста
+      url: quickstart-transliterate.md
+    - text: Определение языка
+      url: quickstart-detect.md
+    - text: Поиск по словарю
+      url: quickstart-dictionary.md
+    - text: Определение длины предложения
+      url: quickstart-sentences.md
+    - text: Получение списка поддерживаемых языков
+      url: quickstart-languages.md
+  - linkListType: tutorial
+    links:
+    - text: Создание приложения WPF для перевода, C#
+      url: tutorial-wpf-translation-csharp.md
+    - text: Создание приложения Flask для перевода, REST
+      url: tutorial-build-flask-app-translation-synthesis.md
+  - linkListType: reference
+    links:
+    - text: Справочник по API "Перевод текстов" (версия 3)
+      url: reference/v3-0-reference.md
+    - text: Ограничения запроса
+      url: request-limits.md
+    - text: Поддержка языков и региональных параметров
+      url: language-support.md
+- title: Пользовательский переводчик
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Создание и развертывание пользовательской модели
+      url: custom-translator/quickstart-build-deploy-custom-model.md
+  - linkListType: get-started
+    links:
+    - text: Создание проекта
+      url: custom-translator/how-to-create-project.md
+    - text: Управление проектами
+      url: custom-translator/how-to-search-edit-delete-projects.md
+    - text: Отправка документов
+      url: custom-translator/how-to-upload-document.md
+    - text: Обучение модели
+      url: custom-translator/how-to-train-model.md
+  - linkListType: learn
+    links:
+    - text: Рабочие области и проекты
+      url: custom-translator/workspace-and-project.md
+    - text: Параллельные документы
+      url: custom-translator/what-are-parallel-documents.md
+    - text: Словарь
+      url: custom-translator/what-is-dictionary.md
+    - text: Поддерживаемые форматы документов
+      url: custom-translator/document-formats-naming-convention.md
+  - linkListType: reference
+    links:
+    - text: Поддержка языков
+      url: language-support.md
+    - text: Глоссарий
+      url: custom-translator/glossary.md
+- title: Ресурсы
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Примеры на GitHub
+      url: https://aka.ms/TranslatorGitHub
+    - text: Stack Overflow
+      url: https://stackoverflow.com/questions/tagged/microsoft-translator

@@ -36,13 +36,15 @@
     - name: "10.\_Управление виртуальными машинами"
       href: tutorial-govern-resources.md
       displayName: scope policy RBAC lock tag
-    - name: "11.\_Мониторинг и обновление виртуальных машин"
-      href: tutorial-monitoring.md
-    - name: "12.\_Управление безопасностью виртуальных машин"
+    - name: "11.\_Отслеживание и обновление виртуальных машин"
+      href: tutorial-config-management.md
+    - name: "12.\_Мониторинг виртуальных машин"
+      href: tutorial-monitor.md
+    - name: "13.\_Управление безопасностью виртуальных машин"
       href: tutorial-azure-security.md
-    - name: "13.\_Установка стека SQL\\IIS\\.NET"
+    - name: "14.\_Установка стека SQL\\IIS\\.NET"
       href: tutorial-iis-sql.md
-    - name: "14.\_Защита веб-сервера с помощью SSL"
+    - name: 15. Защита веб-сервера с помощью SSL
       href: tutorial-secure-web-server.md
 - name: Примеры
   items:
