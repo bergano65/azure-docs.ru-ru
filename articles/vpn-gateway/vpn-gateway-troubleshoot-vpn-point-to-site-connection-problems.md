@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 05/31/2019
+ms.date: 09/30/2019
 ms.author: genli
-ms.openlocfilehash: 0a32f9a9fde0983a5b97f7342a111d40ef01c686
-ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
+ms.openlocfilehash: cfa95f2aab5ba270aea0a36b037ae293b36c7b28
+ms.sourcegitcommit: 8bae7afb0011a98e82cbd76c50bc9f08be9ebe06
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71104818"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71695526"
 ---
 # <a name="troubleshooting-azure-point-to-site-connection-problems"></a>Устранение неполадок: подключения типа "точка – сеть" в Azure
 
@@ -45,7 +45,7 @@ ms.locfileid: "71104818"
 
 2. Убедитесь, что перечисленные ниже сертификаты находятся в правильном расположении.
 
-    | Сертификат | Местоположение |
+    | Сертификат | Location |
     | ------------- | ------------- |
     | AzureClient.pfx  | Current User\Personal\Certificates |
     | Азурерут. cer    | Local Computer\Trusted Root Certification Authorities|
@@ -77,14 +77,14 @@ IKEv2 поддерживается в Windows 10 и Server 2016. Однако д
 
 1. Установите обновление.
 
-   | Версия ОС | Дата | Номер или ссылка |
+   | Версия ОС | Date | Номер или ссылка |
    |---|---|---|---|
    | Windows Server 2016<br>Windows 10 версии 1607 | 17 января 2018 г. | [KB4057142](https://support.microsoft.com/help/4057142/windows-10-update-kb4057142) |
    | Windows 10 версии 1703 | 17 января 2018 г. | [KB4057144](https://support.microsoft.com/help/4057144/windows-10-update-kb4057144) |
    | Windows 10 версии 1709 | 22 марта 2018 г. | [KB4089848](https://www.catalog.update.microsoft.com/search.aspx?q=kb4089848) |
    |  |  |  |  |
 
-2. Установите значение раздела реестра. Создайте или установите `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\RasMan\ IKEv2\DisableCertReqPayload` в реестре ключ REG_DWORD в значение 1.
+2. Установите значение раздела реестра. Создайте или задайте `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\RasMan\ IKEv2\DisableCertReqPayload` REG_DWORD Key в реестре до 1.
 
 ## <a name="vpn-client-error-the-message-received-was-unexpected-or-badly-formatted"></a>Ошибка VPN-клиента: Получено непредвиденное сообщение или оно имеет неправильный формат
 
@@ -121,7 +121,7 @@ IKEv2 поддерживается в Windows 10 и Server 2016. Однако д
 
 1. Убедитесь, что перечисленные ниже сертификаты находятся в правильном расположении.
 
-    | Сертификат | Местоположение |
+    | Сертификат | Location |
     | ------------- | ------------- |
     | AzureClient.pfx  | Current User\Personal\Certificates |
     | Azuregateway-*GUID*.cloudapp.net  | Current User\Trusted Root Certification Authorities|
@@ -250,32 +250,6 @@ IKEv2 поддерживается в Windows 10 и Server 2016. Однако д
 ## <a name="too-many-vpn-clients-connected-at-once"></a>Слишком много одновременно подключенных VPN-клиентов
 
 Достигнуто максимальное число допустимых подключений. Общее количество подключенных клиентов можно просмотреть на портале Azure.
-
-## <a name="point-to-site-vpn-incorrectly-adds-a-route-for-100008-to-the-route-table"></a>VPN-подключение типа "точка — сеть" неправильно добавляет маршрут для 10.0.0.0/8 в таблицу маршрутов
-
-### <a name="symptom"></a>Симптом
-
-При установлении VPN-подключения с клиентом типа "точка — сеть" VPN-клиент должен добавить маршрут к виртуальной сети Azure. Служба модуля поддержки IP добавит маршрут для подсети VPN-клиентов. 
-
-Диапазон адресов VPN-клиента принадлежит подсети, меньшей 10.0.0.0/8, например 10.0.12.0/24. Вместо маршрута для 10.0.12.0/24 добавляется маршрут для 10.0.0.0/8, который имеет более высокий приоритет. 
-
-Этот ошибочный маршрут разрывает связь с другими локальными сетями, которые могут входить в другую подсеть в пределах диапазона 10.0.0.0/8, например 10.50.0.0/24, для которой не определен конкретный маршрут. 
-
-### <a name="cause"></a>Причина:
-
-Это сделано намеренно для клиентов Windows. При использовании протокола PPP IPCP клиент получает IP-адрес для интерфейса туннеля от сервера (в данном случае — VPN-шлюза). Однако из-за ограничений в протоколе у клиента нет маски подсети. Так как нет другого способа получить ее, клиент пытается угадать маску подсети на основе класса IP-адрес интерфейса туннеля. 
-
-Следовательно, маршрут добавляется в зависимости от следующего статического сопоставления: 
-
-если адрес относится к классу A, применяется маска /8;
-
-если адрес относится к классу B, применяется маска /16;
-
-если адрес относится к классу C, применяется маска /24.
-
-### <a name="solution"></a>Решение
-
-Маршруты для других сетей следует добавить в таблицу маршрутизации с наиболее длинным соответствующим префиксом или наименьшей метрикой (то есть с более высоким приоритетом) по сравнению с подключением типа "точка — сеть". 
 
 ## <a name="vpn-client-cannot-access-network-file-shares"></a>VPN-клиент не может получить доступ к сетевым файловым ресурсам
 

@@ -11,12 +11,12 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: vanto
 ms.date: 08/05/2019
-ms.openlocfilehash: 2d7cc217ff8ae45491c0f9d6b54ea8afea19cd2e
-ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
+ms.openlocfilehash: b2c1f01e53cfe41b72e3e079059c66e4e2409012
+ms.sourcegitcommit: 6fe40d080bd1561286093b488609590ba355c261
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69981242"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71703271"
 ---
 # <a name="azure-sql-database-and-data-warehouse-network-access-controls"></a>Управление доступом к сети для базы данных SQL Azure и хранилища данных
 
@@ -72,7 +72,9 @@ ms.locfileid: "69981242"
 ## <a name="virtual-network-firewall-rules"></a>Правила брандмауэра виртуальной сети
 
 Кроме правил IP, брандмауэр SQL Server Azure позволяет определять *правила виртуальной сети*.  
-Чтобы узнать больше, ознакомьтесь с разделом [Использование конечных точек служб и правил виртуальной сети для базы данных SQL Azure](sql-database-vnet-service-endpoint-rule-overview.md).
+Дополнительные сведения см. в статье [конечные точки и правила службы виртуальной сети для базы данных SQL Azure](sql-database-vnet-service-endpoint-rule-overview.md) или просмотрите это видео:
+
+> [!VIDEO https://channel9.msdn.com/Shows/Data-Exposed/Data-Exposed--Demo--Vnet-Firewall-Rules-for-SQL-Database/player?WT.mc_id=dataexposed-c9-niner]
 
  ### <a name="azure-networking-terminology"></a>Терминология сети Azure  
 При просмотре правил брандмауэра виртуальной сети учитывайте следующие термины сети Azure.

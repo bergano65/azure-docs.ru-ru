@@ -9,12 +9,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/04/2018
 ms.author: glenga
-ms.openlocfilehash: c50615b9cbe5c3ca926d893858bb39eeb5720067
-ms.sourcegitcommit: 2ed6e731ffc614f1691f1578ed26a67de46ed9c2
+ms.openlocfilehash: 7c2e727ecb080d1db212e8b45a2c48bac81a3949
+ms.sourcegitcommit: d4c9821b31f5a12ab4cc60036fde00e7d8dc4421
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71129595"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71709313"
 ---
 # <a name="code-and-test-azure-functions-locally"></a>Как программировать и тестировать Функции Azure в локальной среде
 
@@ -38,7 +38,7 @@ ms.locfileid: "71129595"
 ## <a name="next-steps"></a>Следующие шаги
 
 + Дополнительные сведения о локальной разработке скомпилированных C# функций с помощью visual Studio 2019 см. в статье [разработка функций Azure с помощью Visual Studio](functions-develop-vs.md).
-+ Дополнительные сведения о локальной разработке функций с помощью VS Code на компьютерах с ОС Mac, Linux или Windows см. в статье [VS Code documentation for Azure Functions](https://code.visualstudio.com/tutorials/functions-extension/getting-started) (Документация VS Code для Функций Azure).
++ Дополнительные сведения о локальной разработке функций с помощью VS Code на компьютере Mac, Linux или Windows см. в статье [развертывание функций Azure из VS Code](/azure/javascript/tutorial-vscode-serverless-node-01).
 + Дополнительные сведения о разработке функций из командной строки или терминала см. в статье [Как программировать и тестировать Функции Azure в локальной среде](functions-run-local.md).
 
 <!-- LINKS -->

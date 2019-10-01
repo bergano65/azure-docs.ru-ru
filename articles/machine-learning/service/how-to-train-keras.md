@@ -11,12 +11,12 @@ author: maxluk
 ms.reviewer: peterlu
 ms.date: 08/01/2019
 ms.custom: seodec18
-ms.openlocfilehash: 9015fa445c64bffa74509e84d90eb77508da6d9e
-ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
+ms.openlocfilehash: e0143a6075ef7b88cc0b365a544a5e69c92362ff
+ms.sourcegitcommit: d4c9821b31f5a12ab4cc60036fde00e7d8dc4421
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71076450"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71710118"
 ---
 # <a name="train-and-register-a-keras-classification-model-with-azure-machine-learning"></a>Обучение и регистрация модели классификации keras с помощью Машинное обучение Azure
 
@@ -80,9 +80,10 @@ ws = Workspace.from_config()
 exp = Experiment(workspace=ws, name='keras-mnist')
 ```
 
+<a name="data-upload"></a>
 ### <a name="create-a-file-dataset"></a>Создание файлового набора данных
 
-`FileDataset` Объект ссылается на один или несколько файлов в хранилище данных рабочей области или в общедоступных URL-адресах. Файлы могут иметь любой формат, и класс предоставляет возможность загрузки или подключения файлов к вычислению. Создавая `FileDataset`, вы создаете ссылку на расположение источника данных. Если к набору данных применены какие либо преобразования, они также будут сохранены в наборе данных. Данные остаются в существующем расположении, поэтому дополнительные затраты на хранение не взимается. Дополнительные сведения см. в [инструкции](https://docs.microsoft.com/azure/machine-learning/service/how-to-create-register-datasets) `Dataset` по пакету.
+Объект `FileDataset` ссылается на один или несколько файлов в хранилище данных рабочей области или общедоступных URL-адресов. Это могут быть файлы любого формата, и с помощью этого класса вы сможете скачивать их или подключать к вычислительной среде. Создавая `FileDataset`, вы одновременно создаете ссылку на расположение источника данных. Любые преобразования, примененные к такому набору данных, будут сохранены и в исходном наборе данных. Данные хранятся только в исходном расположении, а значит не потребуется лишних расходов на хранение. Дополнительные сведения см. в соответствующем [практическом руководстве](https://docs.microsoft.com/azure/machine-learning/service/how-to-create-register-datasets) по пакету `Dataset`.
 
 ```python
 from azureml.core.dataset import Dataset

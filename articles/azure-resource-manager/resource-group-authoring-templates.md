@@ -6,12 +6,12 @@ ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 09/30/2019
 ms.author: tomfitz
-ms.openlocfilehash: 6b027acc5a8a8b7660d5640ff4af335e51fd2dbf
-ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
+ms.openlocfilehash: b6d479935bc9e4bd731b93d3e027644b9ca4dbe0
+ms.sourcegitcommit: 8bae7afb0011a98e82cbd76c50bc9f08be9ebe06
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71676883"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71694980"
 ---
 # <a name="understand-the-structure-and-syntax-of-azure-resource-manager-templates"></a>Описание структуры и синтаксиса шаблонов Azure Resource Manager
 
@@ -88,7 +88,7 @@ ms.locfileid: "71676883"
 
 ### <a name="data-types"></a>Типы данных
 
-Целочисленные типы могут находиться в диапазоне от-2147483648 до 2147483647. Однако типы ресурсов могут применять нижний предел для целочисленного свойства.
+Для целых чисел, переданных в качестве встроенных параметров, диапазон значений может быть ограничен пакетом SDK или программой командной строки, используемой для развертывания. Например, при использовании PowerShell для развертывания шаблона целочисленные типы могут находиться в диапазоне от-2147483648 до 2147483647. Чтобы избежать этого ограничения, укажите большие целочисленные значения в [файле параметров](resource-manager-parameter-files.md). Типы ресурсов применяют собственные ограничения для целочисленных свойств.
 
 При указании в шаблоне значений типа Boolean и целых чисел не следует заключать значение в кавычки. Начальные и конечные строковые значения заключаются в двойные кавычки.
 

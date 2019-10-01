@@ -10,12 +10,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 03/25/2019
 ms.author: cshoe
-ms.openlocfilehash: 0bd6222a6f2a2582fb715dbaf364fe23e41630d5
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: ff3d7d1272f9067f6bf9791c7964f8bf5f71945b
+ms.sourcegitcommit: d4c9821b31f5a12ab4cc60036fde00e7d8dc4421
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70085121"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71709335"
 ---
 # <a name="strategies-for-testing-your-code-in-azure-functions"></a>Методика тестирования кода с помощью Функций Azure
 
@@ -110,7 +110,7 @@ namespace Functions.Tests
 
 Класс `ListLogger` реализует следующие элементы, как предусмотрено интерфейсом `ILogger`.
 
-- **BeginScope**. Области добавляют контекст к ведению журнала. В этом случае тест просто указывает на статический экземпляр `NullScope` класса, чтобы позволить тесту работать.
+- **BeginScope**. Области добавляют контекст к ведению журнала. В этом случае тест просто указывает на статический экземпляр класса `NullScope`, чтобы позволить тесту работать.
 
 - **IsEnabled**. Предоставляется значение по умолчанию `false`.
 
@@ -311,7 +311,7 @@ module.exports = {
 ```
 Этот модуль реализует свойство `IsPastDue`, чтобы установить его как ложный экземпляр таймера.
 
-Затем используйте расширение Функций VS Code, чтобы [создать новую Функцию JavaScript HTTP](https://code.visualstudio.com/tutorials/functions-extension/getting-started), и присвойте ей имя *HttpTrigger*. Создав функцию, добавьте новый файл в той же папке с именем **index.test.js** и приведенный ниже код.
+Затем используйте расширение Функций VS Code, чтобы [создать новую Функцию JavaScript HTTP](/azure/javascript/tutorial-vscode-serverless-node-01), и присвойте ей имя *HttpTrigger*. Создав функцию, добавьте новый файл в той же папке с именем **index.test.js** и приведенный ниже код.
 
 ```javascript
 const httpFunction = require('./index');

@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 09/24/2019
+ms.date: 09/30/2019
 ms.author: dapine
-ms.openlocfilehash: 7de529c9478b78ff9dd042df90a061f0a96f5427
-ms.sourcegitcommit: 9fba13cdfce9d03d202ada4a764e574a51691dcd
+ms.openlocfilehash: a718a2335ed4928c6cd40ad4dc832eaf82bc6a2b
+ms.sourcegitcommit: 8bae7afb0011a98e82cbd76c50bc9f08be9ebe06
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71316399"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71695297"
 ---
 # <a name="install-and-run-luis-docker-containers"></a>Установка и запуск контейнеров Docker в LUIS
  
@@ -325,7 +325,6 @@ curl -X GET \
 
 Последний контейнер, выпущенный в 2019//Build, будет поддерживать следующее:
 
-* Проверка орфографии Bing: запросы к конечной точке прогнозирования запросов `&spellCheck=true&bing-spell-check-subscription-key={bingKey}` с параметрами строки запроса. Дополнительные сведения см. в [руководстве по проверка орфографии Bing версии 7](luis-tutorial-bing-spellcheck.md) . Если эта функция используется, контейнер отправляет utterance в ресурс Проверка орфографии Bing версии 7.
 * [Новые](luis-reference-prebuilt-domains.md)предварительно созданные домены. Эти корпоративные домены включают сущности, примеры фразы продолжительностью и закономерности. Расширьте эти домены для собственного использования. 
 
 <a name="unsupported-dependencies"></a>
@@ -343,6 +342,7 @@ curl -X GET \
 |Неподдерживаемые сущности для языка и региональных параметров "Английский (en-US)"|Предварительно созданные сущности [GeographyV2](https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-prebuilt-geographyv2)|
 |Подготовка речи|Внешние зависимости не поддерживаются в контейнере.|
 |Анализ тональности|Внешние зависимости не поддерживаются в контейнере.|
+|Проверка орфографии Bing|Внешние зависимости не поддерживаются в контейнере.|
 
 <!--blogs/samples/video courses -->
 [!INCLUDE [Discoverability of more container information](../../../includes/cognitive-services-containers-discoverability.md)]

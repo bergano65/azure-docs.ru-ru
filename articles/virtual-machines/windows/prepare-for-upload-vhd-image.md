@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 05/11/2019
 ms.author: genli
-ms.openlocfilehash: d2922f79c0b2ef7098e0f51e0c3bf6ab18a1b0e3
-ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
+ms.openlocfilehash: cbae4455ae4cfcc0397b8b50b7f86843f7f82a59
+ms.sourcegitcommit: 8bae7afb0011a98e82cbd76c50bc9f08be9ebe06
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71200279"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71695381"
 ---
 # <a name="prepare-a-windows-vhd-or-vhdx-to-upload-to-azure"></a>Подготовка диска VHD или VHDX для Windows к отправке в Azure
 
@@ -440,7 +440,8 @@ Set-Service -Name RemoteRegistry -StartupType Automatic
    Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management' -name "PagingFiles" -Value "D:\pagefile.sys" -Type MultiString -force
    ```
   Если диск данных подключен к виртуальной машине, то буква тома временного диска обычно равна *D*. Это может быть различным, в зависимости от параметров и количества доступных дисков.
-
+  * Рекомендуется отключить блокирование сценариев, которое может быть предоставлено антивирусным программным обеспечением. Они могут помешать и блокировать сценарии агента подготовки Windows, выполняемые при развертывании новой виртуальной машины из образа.
+  
 ## <a name="next-steps"></a>Следующие шаги
 * [Отправка образа виртуальной машины Windows в Azure для развертываний Resource Manager](upload-generalized-managed.md)
 * [Устранение неполадок при активации виртуальной машины Windows в Azure](troubleshoot-activation-problems.md)

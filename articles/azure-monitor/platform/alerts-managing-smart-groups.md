@@ -6,14 +6,14 @@ services: monitoring
 ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.author: anantr
+ms.author: robb
 ms.subservice: alerts
-ms.openlocfilehash: a9434bebe82687b14f45b3c375572717d71d0e55
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 42b4bd7427191bcec531ff883efa0d3297a9fd1f
+ms.sourcegitcommit: 6fe40d080bd1561286093b488609590ba355c261
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60713380"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71702847"
 ---
 # <a name="manage-smart-groups"></a>Управление смарт-группами
 [Смарт-группы](https://aka.ms/smart-groups) используют алгоритмы машинного обучения, чтобы объединять оповещения в группы на основе их совместного появления или подобия. Это позволяет управлять оповещениями не по отдельности, а на уровне всей смарт-группы. Из этой статьи вы узнаете, как работать со смарт-группами в Azure Monitor.
@@ -21,10 +21,10 @@ ms.locfileid: "60713380"
      1. Щелкните **Смарт-группы** на странице **Сводка по оповещениям**.    
     ![Мониторинг](./media/alerts-managing-smart-groups/sg-alerts-summary.jpg)
      2. Щелкните Alerts by Smart Groups (Оповещения по смарт-группам) на странице "Все оповещения".   
-     ![Мониторинг](./media/alerts-managing-smart-groups/sg-all-alerts.jpg)
+     ![Отслеживание](./media/alerts-managing-smart-groups/sg-all-alerts.jpg)
 2.  Отобразится список всех смарт-групп, созданных из экземпляров оповещений. Теперь вместо работы с индивидуальными оповещениями можно оперировать их смарт-группами.   
-![Мониторинг](./media/alerts-managing-smart-groups/sg-list.jpg)
+![Отслеживание](./media/alerts-managing-smart-groups/sg-list.jpg)
 3.  При щелчке смарт-группы откроется страница со сведениями о ней, такими как критерий группировки, а также списком всех оповещений в группе. Такое объединение позволяет сконцентрироваться на отдельных группах оповещений, а не работать со множеством индивидуальных оповещений.   
-![Мониторинг](./media/alerts-managing-smart-groups/sg-details.jpg)
+![Отслеживание](./media/alerts-managing-smart-groups/sg-details.jpg)
 
 

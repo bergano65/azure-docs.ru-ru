@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 09/15/2019
 ms.author: iainfou
-ms.openlocfilehash: 9c9b4cdfb77f1605a6730d0735541eeb78dcd323
-ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
+ms.openlocfilehash: b90650fa2cd343c81b7bbb2fcea24c3a95f537b6
+ms.sourcegitcommit: 6fe40d080bd1561286093b488609590ba355c261
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71075528"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71702048"
 ---
 # <a name="join-a-red-hat-enterprise-linux-virtual-machine-to-an-azure-ad-domain-services-managed-domain"></a>Присоединение Red Hat Enterprise Linux виртуальной машины к управляемому домену доменных служб Azure AD
 
@@ -78,14 +78,24 @@ sudo vi /etc/hosts
 
 Виртуальной машине требуются дополнительные пакеты, чтобы присоединить виртуальную машину к управляемому домену Azure AD DS. Чтобы установить и настроить эти пакеты, обновите и установите средства присоединение к домену с помощью `yum`:
 
+ **RHEL 7** 
+
 ```console
 sudo yum install realmd sssd krb5-workstation krb5-libs oddjob oddjob-mkhomedir samba-common-tools
+```
+
+ **RHEL 6** 
+
+```console
+sudo yum install adcli sssd authconfig krb5-workstation
 ```
 
 ## <a name="join-vm-to-the-managed-domain"></a>Присоединение виртуальной машины к управляемому домену
 
 Теперь, когда необходимые пакеты установлены на виртуальной машине, присоедините виртуальную машину к управляемому домену Azure AD DS.
-
+ 
+  **RHEL 7**
+     
 1. `realm discover` Используйте команду, чтобы найти управляемый домен Azure AD DS. В следующем примере обнаруживается *contoso.com*области. Укажите собственное имя управляемого домена AD DS Azure в верхнем регистре:
 
     ```console
@@ -93,7 +103,7 @@ sudo yum install realmd sssd krb5-workstation krb5-libs oddjob oddjob-mkhomedir 
     ```
 
    `realm discover` Если команде не удается найти управляемый домен Azure AD DS, ознакомьтесь со следующими действиями по устранению неполадок.
-
+   
     * Убедитесь, что домен доступен с виртуальной машины. Попробуйте `ping contoso.com` проверить, возвращен ли положительный ответ.
     * Убедитесь, что виртуальная машина развернута в том же или в одноранговой виртуальной сети, в которой доступен управляемый домен Azure AD DS.
     * Убедитесь, что параметры DNS-сервера для виртуальной сети были обновлены, чтобы они указывали на контроллеры домена управляемого домена AD DS Azure.
@@ -101,10 +111,10 @@ sudo yum install realmd sssd krb5-workstation krb5-libs oddjob oddjob-mkhomedir 
 1. Теперь инициализируйте Kerberos с `kinit` помощью команды. Укажите пользователя, который принадлежит к группе *администраторов контроллера домена AAD* . При необходимости [добавьте учетную запись пользователя в группу в Azure AD](../active-directory/fundamentals/active-directory-groups-members-azure-portal.md).
 
     Опять же, имя управляемого домена AD DS Azure необходимо вводить в верхнем регистре. В следующем примере для инициализации Kerberos используется учетная запись с именем `contosoadmin@contoso.com` . Введите собственную учетную запись пользователя, которая является членом группы *администраторов контроллера домена AAD* :
-
+    
     ```console
     kinit contosoadmin@CONTOSO.COM
-    ```
+    ``` 
 
 1. Наконец, Присоедините компьютер к управляемому домену Azure AD DS с `realm join` помощью команды. Используйте ту же учетную запись пользователя, которая является членом группы *администраторов контроллера домена AAD* , указанной в предыдущей `kinit` `contosoadmin@CONTOSO.COM`команде, например:
 
@@ -118,7 +128,108 @@ sudo yum install realmd sssd krb5-workstation krb5-libs oddjob oddjob-mkhomedir 
 Successfully enrolled machine in realm
 ```
 
+  **RHEL 6** 
+
+1. `adcli info` Используйте команду, чтобы найти управляемый домен Azure AD DS. В следующем примере обнаруживается *contoso.com*области. Укажите собственное имя управляемого домена AD DS Azure в верхнем регистре:
+
+    ```console
+    sudo adcli info contoso.com
+    ```
+    
+   `adcli info` Если команде не удается найти управляемый домен Azure AD DS, ознакомьтесь со следующими действиями по устранению неполадок.
+   
+    * Убедитесь, что домен доступен с виртуальной машины. Попробуйте `ping contoso.com` проверить, возвращен ли положительный ответ.
+    * Убедитесь, что виртуальная машина развернута в том же или в одноранговой виртуальной сети, в которой доступен управляемый домен Azure AD DS.
+    * Убедитесь, что параметры DNS-сервера для виртуальной сети были обновлены, чтобы они указывали на контроллеры домена управляемого домена AD DS Azure.
+
+1. Сначала присоедините домен с помощью команды `adcli join`. Эта команда также создаст keytab для проверки подлинности компьютера. Используйте учетную запись пользователя, которая является членом группы *администраторов контроллера домена AAD* . 
+
+    ```console
+    sudo adcli join contoso.com -U contosoadmin
+    ```
+
+1. Теперь настройте `/ect/krb5.conf` и создайте файлы `/etc/sssd/sssd.conf` для использования домена `contoso.com` Active Directory. 
+   Убедитесь, что `CONTOSO.COM` заменено собственным именем домена:
+
+    Откройте файл `/ect/krb5.conf` с помощью редактора:
+
+    ```console
+    sudo vi /etc/krb5.conf
+    ```
+
+    Обновите файл `krb5.conf` в соответствии со следующим образцом:
+
+    ```console
+    [logging]
+     default = FILE:/var/log/krb5libs.log
+     kdc = FILE:/var/log/krb5kdc.log
+     admin_server = FILE:/var/log/kadmind.log
+    
+    [libdefaults]
+     default_realm = CONTOSO.COM
+     dns_lookup_realm = true
+     dns_lookup_kdc = true
+     ticket_lifetime = 24h
+     renew_lifetime = 7d
+     forwardable = true
+    
+    [realms]
+     CONTOSO.COM = {
+     kdc = CONTOSO.COM
+     admin_server = CONTOSO.COM
+     }
+    
+    [domain_realm]
+     .CONTOSO.COM = CONTOSO.COM
+     CONTOSO.COM = CONTOSO.COM
+    ```
+    
+   Создайте файл `/etc/sssd/sssd.conf`:
+    
+    ```console
+    sudo vi /etc/sssd/sssd.conf
+    ```
+
+    Обновите файл `sssd.conf` в соответствии со следующим образцом:
+
+    ```console
+    [sssd]
+     services = nss, pam, ssh, autofs
+     config_file_version = 2
+     domains = CONTOSO.COM
+    
+    [domain/CONTOSO.COM]
+    
+     id_provider = ad
+    ```
+
+1. Убедитесь, что `/etc/sssd/sssd.conf` разрешений 600 и принадлежит привилегированному пользователю:
+
+    ```console
+    sudo chmod 600 /etc/sssd/sssd.conf
+    sudo chown root:root /etc/sssd/sssd.conf
+    ```
+
+1. Используйте `authconfig`, чтобы указать виртуальной машине об интеграции с Linux в AD:
+
+    ```console
+    sudo authconfig --enablesssd --enablesssdauth --update
+    ```
+    
+1. Запуск и включение службы SSSD:
+
+    ```console
+    sudo service sssd start
+    sudo chkconfig sssd on
+    ```
+
 Если виртуальная машина не может успешно завершить процесс присоединения к домену, убедитесь, что группа безопасности сети виртуальной машины разрешает исходящий трафик Kerberos для порта TCP + UDP 464 в подсети виртуальной сети для управляемого домена Azure AD DS.
+
+Теперь проверьте, можно ли запрашивать сведения об AD с помощью `getent`
+
+```console
+sudo getent passwd contosoadmin
+```
 
 ## <a name="allow-password-authentication-for-ssh"></a>Разрешить проверку пароля для SSH
 
@@ -136,12 +247,20 @@ Successfully enrolled machine in realm
     PasswordAuthentication yes
     ```
 
-    По завершении сохраните и закройте файл *sshd_conf* с помощью `:wq` команды редактора.
+    По завершении сохраните и закройте файл *sshd_conf* с помощью команды `:wq` редактора.
 
 1. Чтобы применить изменения и позволить пользователям входить с помощью пароля, перезапустите службу SSH:
 
+   **RHEL 7** 
+    
     ```console
     sudo systemctl restart sshd
+    ```
+
+   **RHEL 6** 
+    
+    ```console
+    sudo service sshd restart
     ```
 
 ## <a name="grant-the-aad-dc-administrators-group-sudo-privileges"></a>Предоставление привилегий суперпользователя группе "Администраторы контроллера домена AAD"

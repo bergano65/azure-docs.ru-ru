@@ -2,16 +2,18 @@
 author: cynthn
 ms.service: virtual-machines
 ms.topic: include
-ms.date: 01/27/2019
+ms.date: 09/30/2019
 ms.author: cynthn
-ms.openlocfilehash: 11c9b2ea3ea054415f25f864651df28288aa0025
-ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
+ms.openlocfilehash: 93a2554b5d3cc24e1b5fc1e3d0f18ed1bfe0579c
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71266846"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71692047"
 ---
-Работу виртуальных машин можно отслеживать с помощью сбора, просмотра и анализа данных диагностики и журнала. Для простого [мониторинга](../articles/azure-monitor/overview.md) виртуальной машины вы можете воспользоваться экраном обзора на портале Azure. При помощи [расширений](../articles/virtual-machines/windows/extensions-features.md) можно настроить на виртуальных машинах диагностику для сбора дополнительных данных метрик. Кроме того, вы можете использовать дополнительные возможности мониторинга, такие как [Application Insights](../articles/azure-monitor/app/app-insights-overview.md) и [Log Analytics](../articles/azure-monitor/log-query/log-query-overview.md).
+При значительном увеличении количества виртуальных машин, размещенных в Azure, важно вычислить проблемы производительности и работоспособности, которые влияют на приложения и службы инфраструктуры, которые они поддерживают. Базовый мониторинг по умолчанию доставляется в Azure по типам метрик загрузка ЦП, использование диска, использование памяти и сетевой трафик, собранный гипервизором узла. Дополнительные данные метрик и журналов можно собирать с помощью [расширений](../articles/virtual-machines/windows/extensions-features.md) для настройки диагностики на виртуальных машинах из гостевой операционной системы.
+
+Для обнаружения и диагностики проблем производительности и работоспособности при работе с гостевой операционной системой, компонентами веб-приложения на платформе .NET или Java, работающими на виртуальной машине, Azure Monitor обеспечивает централизованный мониторинг с помощью комплексных функций, таких как Azure Monitor для виртуальных машин и Application Insights.
 
 ## <a name="diagnostics-and-metrics"></a>Диагностика и метрики 
 
@@ -27,11 +29,11 @@ ms.locfileid: "71266846"
 
 - **Включить сбор данных диагностики гостевой ОС.** Когда вы создаете виртуальную машину, можно включить диагностику гостевой ОС на экране параметров. Если включить сбор данных диагностики, в виртуальную машину добавляется [расширение IaaSDiagnostics для Linux](../articles/virtual-machines/linux/diagnostic-extension.md) или [расширение IaaSDiagnostics для Windows](../articles/virtual-machines/windows/ps-extensions-diagnostics.md). Это позволяет собирать дополнительные данные диска, ЦП и памяти.
 
-    При помощи собранных данных диагностики вы можете настроить для виртуальных машин автоматическое масштабирование. Кроме того, можно настроить журналы для хранения данных и оповещений, которые будут информировать вас о проблемах с производительностью.
+    При помощи собранных данных диагностики вы можете настроить для виртуальных машин автоматическое масштабирование. Можно также настроить [журналы Azure Monitor](../articles/azure-monitor/platform/data-platform-logs.md) для хранения данных и настройки оповещений, чтобы сообщить о неправильной производительности.
 
 ## <a name="alerts"></a>Предупреждения
 
-На основе метрик производительности можно создавать [оповещения](../articles/azure-monitor/platform/alerts-overview.md). Например, вы можете использовать оповещения для уведомления о том, что средняя загрузка ЦП превышает пороговое значение или показатель свободного места на диске ниже определенного значения. Оповещения можно настроить на [портале Azure](../articles/azure-monitor/platform/alerts-classic-portal.md) с использованием [Azure PowerShell](../articles/azure-monitor/platform/alerts-classic-portal.md#with-powershell) или [Azure CLI](../articles/azure-monitor/platform/alerts-classic-portal.md#with-azure-cli).
+На основе метрик производительности можно создавать [оповещения](../articles/azure-monitor/platform/alerts-overview.md). Например, вы можете использовать оповещения для уведомления о том, что средняя загрузка ЦП превышает пороговое значение или показатель свободного места на диске ниже определенного значения. Оповещения можно настроить в [портал Azure](../articles/azure-monitor/platform/alerts-metric.md#create-with-azure-portal), с помощью [шаблонов Azure Resource Manager](../articles/azure-monitor/platform/alerts-metric-create-templates.md)или [Azure CLI](../articles/azure-monitor/platform/alerts-metric.md#with-azure-cli).
 
 ## <a name="azure-service-health"></a>Работоспособность служб Azure
 
@@ -48,8 +50,8 @@ ms.locfileid: "71266846"
 Ниже описано несколько доступных операций с журналом действий:
 
 - Создание [оповещения о событии журнала действий Azure](../articles/azure-monitor/platform/activity-logs-overview.md).
-- [Потоковая передача журнала в концентратор событий](../articles/azure-monitor/platform/activity-logs-stream-event-hubs.md) для приема сторонней службой или пользовательским аналитическим решением, например PowerBI.
-- Анализ журнала в PowerBI с помощью [пакета содержимого PowerBI](https://powerbi.microsoft.com/documentation/powerbi-content-pack-azure-audit-logs/).
+- [Потоковая передача в концентратор событий](../articles/azure-monitor/platform/activity-logs-stream-event-hubs.md) для приема от сторонней службы или решения пользовательской аналитики, например Power BI.
+- Проанализируйте его в Power BI с помощью [пакета содержимого Power BI](https://powerbi.microsoft.com/documentation/powerbi-content-pack-azure-audit-logs/).
 - [Сохранение журнала в учетную запись хранения](../articles/azure-monitor/platform/archive-activity-log.md) для архивации или проверки вручную. В профиле журнала можно задать время хранения (в днях).
 
 Кроме того, вы можете ознакомиться с данными журнала действий, воспользовавшись [Azure PowerShell](https://docs.microsoft.com/powershell/module/azurerm.insights/), [Azure CLI](https://docs.microsoft.com/cli/azure/monitor) или [интерфейсами Monitor REST API](https://docs.microsoft.com/rest/api/monitor/).
@@ -59,19 +61,17 @@ ms.locfileid: "71266846"
 Ниже описано несколько доступных операций с журналами диагностики:
 
 - Сохранение журналов в [учетную запись хранения](../articles/azure-monitor/platform/archive-diagnostic-logs.md) для аудита или проверки вручную. В параметрах диагностики ресурсов можно задать время хранения (в днях).
-- [Потоковая передача журналов в Центры событий](../articles/azure-monitor/platform/resource-logs-stream-event-hubs.md) для обработки в сторонней службе или пользовательском аналитическом решении, например в PowerBI.
+- [Потоковая передача потоков в концентраторы событий](../articles/azure-monitor/platform/resource-logs-stream-event-hubs.md) для приема сторонними службами или решениями пользовательской аналитики, например Power BI.
 - Анализ журналов с помощью [Log Analytics](../articles/log-analytics/log-analytics-azure-storage.md).
 
 ## <a name="advanced-monitoring"></a>Расширенный мониторинг
 
-- [Azure Monitor](../articles/azure-monitor/overview.md) — это служба, отслеживающая облачные и локальные среды, чтобы поддерживать уровень их доступности и производительности. Эта служба обеспечивает комплексное решение для сбора, анализа и использования телеметрии из облака и локальных сред. Она поможет вам понять, как выполняются приложения, а также заранее определить проблемы, влияющие на них, и ресурсы, от которых они зависят. На виртуальной машине [Linux](../articles/virtual-machines/linux/extensions-oms.md) или [Windows](../articles/virtual-machines/windows/extensions-oms.md) можно установить расширение, которое устанавливает агент Log Analytics для сбора данных журнала и хранения этих данных в рабочей области Log Analytics.
+Для отображения приложения или службы, поддерживаемых виртуальными МАШИНАми Azure и масштабируемыми наборами виртуальных машин, выявление проблем с гостевой ОС или рабочей нагрузкой, работающей на ВИРТУАЛЬНОЙ машине, чтобы понять, влияет ли это на доступность или производительность приложения, или является проблемы с приложением, включите как [Azure Monitor для виртуальных машин](../articles/azure-monitor/insights/vminsights-overview.md) , так и [Application Insights](../articles/azure-monitor/app/app-insights-overview.md).
 
-    Для виртуальных машин Windows и Linux рекомендуемым методом сбора данных журналов является установка агента Log Analytics. Проще всего установить агент Log Analytics на виртуальную машину при помощи [расширения виртуальной машины Log Analytics](../articles/log-analytics/log-analytics-azure-vm-extension.md). Использование расширения упрощает процесс установки и автоматически настраивает агент на отправку данных в указанную вами рабочую область Log Analytics. Кроме того, агент обновляется автоматически, обеспечивая наличие новейших компонентов и исправлений.
-
-- [Наблюдатель за сетями](../articles/network-watcher/network-watcher-monitoring-overview.md) позволяет выполнять мониторинг виртуальной машины и связанных с ней ресурсов, которые находятся в одной сети. На виртуальной машине [Linux](../articles/virtual-machines/linux/extensions-nwa.md) или [Windows](../articles/virtual-machines/windows/extensions-nwa.md) можно установить расширения для агента Наблюдателя за сетями.
-
-- [Azure Monitor для виртуальных машин](../articles/azure-monitor/insights/vminsights-overview.md) отслеживает виртуальные машины Azure в масштабе, анализируя производительность и работоспособность виртуальных машин Windows и Linux, включая различные процессы и взаимосвязанные зависимости от других ресурсов и внешних процессов. 
+Azure Monitor для виртуальных машин отслеживает виртуальные машины Azure в масштабе, анализируя производительность и работоспособность виртуальных машин Windows и Linux, включая различные процессы и взаимосвязи между другими ресурсами и внешними процессами. обнаруживает. Он включает несколько диаграмм производительности тенденций, которые помогают в исследовании проблем и оценке емкости виртуальных машин. На карте зависимостей отображаются отслеживаемые и Неотслеживаемые компьютеры, сбойные и активные сетевые подключения между процессами и этими компьютерами, а также показаны диаграммы трендов со стандартными метриками сетевого подключения. В сочетании с Application Insights вы отслеживаете приложение и собираете данные телеметрии, такие как HTTP-запросы, исключения и т. д., что позволяет сопоставлять проблемы между виртуальными машинами и приложением. Настройте [Azure Monitor оповещения](../articles/azure-monitor/platform/alerts-overview.md) для оповещения о важных условиях, обнаруженных в данных мониторинга, собираемых Azure Monitor для виртуальных машин.
 
 ## <a name="next-steps"></a>Следующие шаги
+
 - Выполните инструкции в статьях [Мониторинг виртуальных машин Windows с помощью Azure PowerShell](../articles/virtual-machines/windows/tutorial-monitoring.md) или [Мониторинг виртуальных машин Linux в Azure](../articles/virtual-machines/linux/tutorial-monitoring.md).
+
 - Ознакомьтесь с рекомендациями по [мониторингу и диагностике](https://docs.microsoft.com/azure/architecture/best-practices/monitoring).

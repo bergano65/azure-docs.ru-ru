@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 04/03/2019
 ms.author: helohr
-ms.openlocfilehash: 379664fb7170249b8f21ec9826f8b0b6fbe19892
-ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
+ms.openlocfilehash: 57070b297446badb92ae1df4c435dd54cfe26823
+ms.sourcegitcommit: d4c9821b31f5a12ab4cc60036fde00e7d8dc4421
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71679542"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71710181"
 ---
 # <a name="prepare-and-customize-a-master-vhd-image"></a>Подготовка и настройка главного образа VHD
 
@@ -204,7 +204,7 @@ reg add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\rdp-s
 
 Этот раздел применим только в том случае, если главный образ был создан локально.
 
-Приведенные ниже инструкции помогут вам отправить основной образ в учетную запись хранения Azure. Если у вас еще нет учетной записи хранения Azure, следуйте инструкциям в [этой статье](https://code.visualstudio.com/tutorials/static-website/create-storage) , чтобы создать ее.
+Приведенные ниже инструкции помогут вам отправить основной образ в учетную запись хранения Azure. Если у вас еще нет учетной записи хранения Azure, следуйте инструкциям в [этой статье](/azure/javascript/tutorial-vscode-static-website-node-03) , чтобы создать ее.
 
 1. Преобразуйте образ виртуальной машины (VHD) в исправленный, если он еще не создан. Если вы не преобразуете образ в Fixed, вы не сможете успешно создать образ.
 

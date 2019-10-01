@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
-ms.date: 06/26/2019
+ms.date: 09/25/2019
 ms.author: diberry
-ms.openlocfilehash: 318df27ebb822f49c1f8881d0bf68ac7167dea36
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.openlocfilehash: dc99626e2341e180ba0ab191003cf3a6ba9b72e9
+ms.sourcegitcommit: 8bae7afb0011a98e82cbd76c50bc9f08be9ebe06
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71351296"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71695150"
 ---
 # <a name="use-follow-up-prompts-to-create-multiple-turns-of-a-conversation"></a>Использование дальнейших подсказок для создания диалога с несколькими шагами
 
@@ -55,23 +55,37 @@ ms.locfileid: "71351296"
 
 ![Флажок для включения множественного извлечения](../media/conversational-context/enable-multi-turn.png)
 
-При выборе этого параметра для импортированного документа диалоговое обсуждение с множественной обобщением может быть неявно включено в структуру документа. Если эта структура существует, QnA Maker создает запрос на выдачу дальнейших действий, которые задают пару вопросов и ответов в рамках процесса импорта. 
+При выборе этого параметра диалог множественной переворачивания может быть неявно включен в структуру документа. Если эта структура существует, QnA Maker создает запрос на выдачу дальнейших действий, которые задают пару вопросов и ответов в рамках процесса импорта. 
 
 Структура множественной переворачивания может быть выведена только из URL-адресов, PDF-файлов или файлов DOCX. Пример структуры см. в образе [PDF-файла пользовательской документации по Microsoft Surface](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/qna-maker/data-source-formats/product-manual.pdf). В связи с размером этого PDF-файла для ресурса QnA Maker требуется **ценовая категория поиска** **B** (15 индексов) или выше. 
 
 ![! [Пример структуры в руководстве пользователя] (.. /медиа/конверсатионал-контекст/импорт-филе-ВИС-конверсатионал-структуре.ПНГ)](../media/conversational-context/import-file-with-conversational-structure.png#lightbox)
 
-При импорте документа PDF QnA Maker определяет дальнейшие подсказки от структуры до создания диалогового потока. 
+### <a name="determine-multi-turn-structure-from-format"></a>Определение структуры с множественным включением из формата
 
-1. В QnA Maker выберите **создать базу знаний**.
-1. Создайте или используйте существующую службу QnA Maker. В предыдущем примере Microsoft Surface, поскольку PDF-файл слишком велик для меньшего уровня, используйте службу QnA Maker со **службой поиска** **B** (15 индексов) или выше.
-1. Введите имя базы знаний, например **руководство по рабочей области**.
-1. Установите флажок **Включить множественное извлечение из URL-адресов, файлов PDF или DOCX** . 
-1. Выберите URL-адрес ручной области, **https://github.com/Azure-Samples/cognitive-services-sample-data-files/raw/master/qna-maker/data-source-formats/product-manual.pdf** .
+QnA Maker определяет структуру с множественным включением:
 
-1. Нажмите кнопку **создать базу знаний** . 
+* Размер шрифта заголовка. Если для включения структуры в документ используется стиль, цвет или какой-либо другой механизм, QnA Maker не извлечет многострочные запросы. 
 
-    После создания базы знаний отображается представление пар «вопрос-ответ».
+К правилам заголовков относятся:
+
+* Не завершайте заголовок вопросительным знаком, `?`. 
+
+### <a name="add-file-with-multi-turn-prompts"></a>Добавление файла с многострочными запросами
+
+При добавлении документа с несколькими инструкциями QnA Maker определяет дальнейшие подсказки от структуры до создания диалогового потока. 
+
+1. В QnA Maker выберите существующую базу знаний, которая была создана с помощью **включения множественного извлечения из URL-адресов, файлов PDF или DOCX.** доступной. 
+1. Перейдите на страницу **Параметры** , выберите файл или URL-адрес для добавления. 
+1. **Сохраните и обучите** базу знаний.
+
+> [!Caution]
+> Поддержка использования экспортированного файла базы знаний TSV или XLS с множественным включением в качестве источника данных для новой или пустой базы знаний не поддерживается. Чтобы добавить экспортированные многострочные запросы в базу знаний, необходимо **импортировать** этот тип файла на странице **Параметры** портала QnA Maker.
+
+
+## <a name="create-knowledge-base-with-multi-turn-prompts-with-the-create-api"></a>Создание базы знаний с помощью многофункциональных запросов с помощью API создания
+
+Можно создать вариант базы знаний с несколькими инструкциями с помощью [API QnA Maker Create](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/create). Запросы добавляются в массив `prompts` свойства `context`. 
 
 ## <a name="show-questions-and-answers-with-context"></a>Отображение вопросов и ответов с контекстом
 
@@ -126,29 +140,6 @@ ms.locfileid: "71351296"
 1. Завершив редактирование отображаемого текста, нажмите кнопку **сохранить**. 
 1. В верхней панели навигации **Сохраните и обучить**.
 
-
-<!--
-
-## To find the best prompt answer, add metadata to follow-up prompts 
-
-If you have several follow-up prompts for a specific question-and-answer pair but you know, as the knowledge base manager, that not all prompts should be returned, use metadata to categorize the prompts in the knowledge base. You can then send the metadata from the client application as part of the GenerateAnswer request.
-
-In the knowledge base, when a question-and-answer pair is linked to follow-up prompts, the metadata filters are applied first, and then the follow-ups are returned.
-
-1. Add metadata to each of the two follow-up question-and-answer pairs:
-
-    |Question|Add metadata|
-    |--|--|
-    |*Feedback on a QnA Maker service*|"Feature":"all"|
-    |*Feedback on an existing feature*|"Feature":"one"|
-    
-    ![The "Metadata tags" column for adding metadata to a follow-up prompt](../media/conversational-context/add-metadata-feature-to-follow-up-prompt.png) 
-
-1. Select **Save and train**. 
-
-    When you send the question **Give feedback** with the metadata filter **Feature** with a value of **all**, only the question-and-answer pair with that metadata is returned. QnA Maker doesn't return both question-and-answer pairs, because both don't match the filter. 
-
--->
 
 ## <a name="add-a-new-question-and-answer-pair-as-a-follow-up-prompt"></a>Добавление новой пары "вопрос-ответ" в качестве запроса к исполнению
 
@@ -374,21 +365,13 @@ The `promptsToDelete` array provides the ...
 
 [Отображаемый текст и порядок показа](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/update#promptdto), возвращаемые в ответе JSON, поддерживаются для редактирования [API обновления](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/update). 
 
-<!--
-
-FIX - Need to go to parent, then answer column, then edit answer. 
-
--->
-
-## <a name="create-knowledge-base-with-multi-turn-prompts-with-the-create-api"></a>Создание базы знаний с помощью многофункциональных запросов с помощью API создания
-
-Вы можете создать базу знаний с несколькими инструкциями с помощью [API QnA Maker Create](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/create). Запросы добавляются в массив `prompts` свойства `context`. 
-
-
 ## <a name="add-or-delete-multi-turn-prompts-with-the-update-api"></a>Добавление и удаление многофункциональных запросов с помощью API обновления
 
 Вы можете добавлять или удалять многострочные запросы с помощью [API обновления QnA Maker](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/update).  Запросы добавляются в массив `promptsToAdd` свойства `context` и массив `promptsToDelete`. 
 
+## <a name="export-knowledge-base-for-version-control"></a>Экспорт базы знаний для системы управления версиями
+
+QnA Maker [поддерживает управление версиями](../concepts/development-lifecycle-knowledge-base.md#version-control-of-a-knowledge-base) на портале QnA Maker, включая шаги многофакторной беседы в экспортированном файле.
 
 ## <a name="next-steps"></a>Следующие шаги
 

@@ -1,19 +1,19 @@
 ---
 title: Руководство по устранению неполадок в обозревателе хранилищ Azure | Документы Майкрософт
 description: Общие сведения о методах отладки для Обозреватель службы хранилища Azure
-services: virtual-machines
+services: storage
 author: Deland-Han
 manager: dcscontentpm
-ms.service: virtual-machines
+ms.service: storage
 ms.topic: troubleshooting
 ms.date: 06/15/2018
 ms.author: delhan
-ms.openlocfilehash: ad73520c99dd5418fd4444b3f41d7d1e22f8d52f
-ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
+ms.openlocfilehash: ca9b4b337eed54f02f42cad53d22387eace6b76c
+ms.sourcegitcommit: 8bae7afb0011a98e82cbd76c50bc9f08be9ebe06
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71090830"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71694701"
 ---
 # <a name="azure-storage-explorer-troubleshooting-guide"></a>Руководство по устранению неполадок в обозревателе хранилищ Azure
 

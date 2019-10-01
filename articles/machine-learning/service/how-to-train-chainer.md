@@ -10,12 +10,12 @@ ms.author: maxluk
 author: maxluk
 ms.reviewer: sdgilley
 ms.date: 08/02/2019
-ms.openlocfilehash: 79c0cadc1b266a6d160cd36fc21dcaf36637a2b1
-ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
+ms.openlocfilehash: 70d6bd9507670a8846b2a79509b6b6e571f17e37
+ms.sourcegitcommit: d4c9821b31f5a12ab4cc60036fde00e7d8dc4421
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71076421"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71710086"
 ---
 # <a name="train-and-register-chainer-models-at-scale-with-azure-machine-learning"></a>Обучение и регистрация моделей цепочек в масштабе с помощью Машинное обучение Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "71076421"
 
 Дополнительные сведения о [глубоком обучении и машинном обучении](concept-deep-learning-vs-machine-learning.md).
 
-Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию машинное обучение Azure](https://aka.ms/AMLFree) уже сегодня.
+Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) уже сегодня.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -34,14 +34,14 @@ ms.locfileid: "71076421"
 - Машинное обучение Azure виртуальной машины записной книжки — Загрузка или установка не требуется
 
     - Пройдите [руководство по Настройте среду и рабочую](tutorial-1st-experiment-sdk-setup.md) область, чтобы создать выделенный сервер записной книжки, предварительно загруженный с помощью пакета SDK и примера репозитория.
-    - В папке примеры глубокого обучения на сервере записной книжки найдите готовую записную книжку и файлы в папке " **инструкции-azureml/Training-with-глубокая/Learning-с параметром-"-redeploy-с-** ".  Записная книжка включает в себя развернутые разделы, охватывающие интеллектуальные настройки, развертывание моделей и мини-приложения записных книжек.
+    - В папке примеры глубокого обучения на сервере записной книжки найдите готовую записную книжку и файлы в окне "использование **> ML-Frameworks" > > развертывание > Train-i Parameter-Настройка-deploy-с помощью папки-chaining** .  Записная книжка включает в себя развернутые разделы, охватывающие интеллектуальные настройки, развертывание моделей и мини-приложения записных книжек.
 
 - Собственный сервер Jupyter Notebook
 
     - [Установите пакет SDK для машинное обучение Azure](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py).
     - [Создайте файл конфигурации рабочей области](how-to-configure-environment.md#workspace).
     - Скачайте пример файла скрипта [chainer_mnist. корректировки](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training-with-deep-learning/train-hyperparameter-tune-deploy-with-chainer/chainer_mnist.py).
-     - Вы также можете найти завершенную [Jupyter Notebook версию](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training-with-deep-learning/train-hyperparameter-tune-deploy-with-chainer/train-hyperparameter-tune-deploy-with-chainer.ipynb) этого руководства на странице примеров GitHub. Записная книжка включает в себя развернутые разделы, охватывающие интеллектуальные настройки, развертывание моделей и мини-приложения записных книжек.
+     - Вы также можете найти завершенную [Jupyter Notebook версию](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/ml-frameworks/chainer/deployment/train-hyperparameter-tune-deploy-with-chainer/train-hyperparameter-tune-deploy-with-chainer.ipynb) этого руководства на странице примеров GitHub. Записная книжка включает в себя развернутые разделы, охватывающие интеллектуальные настройки, развертывание моделей и мини-приложения записных книжек.
 
 ## <a name="set-up-the-experiment"></a>Настройка эксперимента
 
@@ -82,9 +82,9 @@ os.makedirs(project_folder, exist_ok=True)
 
 В этом руководстве обучающий сценарий **chainer_mnist. Корректировка** уже предоставлен. На практике вы можете использовать любой пользовательский сценарий обучения как есть и запускать его с помощью Azure ML без необходимости изменять код.
 
-Чтобы использовать возможности отслеживания и метрик машинного обучения Azure, добавьте небольшой объем кода машинного обучения Azure в сценарий обучения.  В обучающем скрипте **chainer_mnist. копировать** показано, как зарегистрировать некоторые метрики в машинном обучении Azure с помощью `Run` объекта в скрипте.
+Чтобы использовать возможности отслеживания и метрик машинного обучения Azure, добавьте небольшой объем кода машинного обучения Azure в сценарий обучения.  В обучающем скрипте **chainer_mnist. копировать** показано, как зарегистрировать некоторые метрики в машинном обучении Azure с помощью объекта `Run` в скрипте.
 
-Предоставленный Скрипт обучения использует примеры данных из `datasets.mnist.get_mnist` функции Chain.  Для собственных данных может потребоваться выполнить такие действия, как [Передача набора данных и скриптов](how-to-train-keras.md) , чтобы сделать данные доступными во время обучения.
+Предоставленный Скрипт обучения использует примеры данных из `datasets.mnist.get_mnist` функции Chain.  Для собственных данных может потребоваться выполнить такие действия, как [Передача набора данных и скриптов](how-to-train-keras.md#data-upload) , чтобы сделать данные доступными во время обучения.
 
 Скопируйте обучающий сценарий **chainer_mnist.** Copy в каталог проекта.
 

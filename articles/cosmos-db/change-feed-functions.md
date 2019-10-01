@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/23/2019
 ms.author: rimman
 ms.reviewer: sngun
-ms.openlocfilehash: 299799566f0d54cc3fa017b032e15b387fe8cdd5
-ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
+ms.openlocfilehash: 876fef2b597e9a7dfd896f2b9697378e745a07f3
+ms.sourcegitcommit: d4c9821b31f5a12ab4cc60036fde00e7d8dc4421
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68467926"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71709815"
 ---
 # <a name="serverless-event-based-architectures-with-azure-cosmos-db-and-azure-functions"></a>Бессерверные архитектуры на основе событий с Azure Cosmos DB и функциями Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "68467926"
 Создание функции Azure с триггером функций Azure для Cosmos DB теперь поддерживается во всех интеграциях IDE и CLI функций Azure.
 
 * [Расширение Visual Studio](../azure-functions/functions-develop-vs.md) для пользователей Visual Studio.
-* [Расширение ядра Visual Studio](https://code.visualstudio.com/tutorials/functions-extension/create-function) для пользователей Visual Studio Code.
+* [Расширение ядра Visual Studio](/azure/javascript/tutorial-vscode-serverless-node-01) для пользователей Visual Studio Code.
 * И, наконец, [основные средства интерфейса командной строки](../azure-functions/functions-run-local.md#create-func) для кросс-платформенного интерфейса IDE.
 
 ## <a name="run-your-trigger-locally"></a>Запуск триггера локально

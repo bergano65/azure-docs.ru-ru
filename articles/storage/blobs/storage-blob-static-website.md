@@ -8,12 +8,12 @@ ms.author: normesta
 ms.reviewer: dineshm
 ms.date: 05/29/2019
 ms.subservice: blobs
-ms.openlocfilehash: 9a751956f73ca4a88545e034a32d699c0766dd1d
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 85f7ea11638278a010b2a94d9c6472857f51b687
+ms.sourcegitcommit: d4c9821b31f5a12ab4cc60036fde00e7d8dc4421
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68855376"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71710174"
 ---
 # <a name="static-website-hosting-in-azure-storage"></a>Размещение статических веб-сайтов в службе хранилища Azure
 
@@ -44,7 +44,7 @@ ms.locfileid: "68855376"
 > * [AzCopy](../common/storage-use-azcopy-v10.md)
 > * [Azure Storage Explorer;](https://azure.microsoft.com/features/storage-explorer/)
 > * [Azure Pipelines](https://azure.microsoft.com/services/devops/pipelines/)
-> * [Расширение Visual Studio Code](https://code.visualstudio.com/tutorials/static-website/getting-started)
+> * [Расширение Visual Studio Code](/azure/javascript/tutorial-vscode-static-website-node-01)
 
 ## <a name="viewing-content"></a>Просмотр содержимого
 
@@ -56,11 +56,11 @@ ms.locfileid: "68855376"
 |**Интерфейс командной строки Azure** | [Поиск URL-адреса веб-сайта с помощью Azure CLI](storage-blob-static-website-how-to.md#cli-find-url) |
 |**Overview of Azure PowerShell** (Общие сведения об Azure PowerShell) | [Поиск URL-адреса веб-сайта с помощью PowerShell](storage-blob-static-website-how-to.md#powershell-find-url) |
 
-URL-адрес сайта содержит региональный код. Например, URL- `https://contosoblobaccount.z22.web.core.windows.net/` адрес содержит региональный `z22`код.
+URL-адрес сайта содержит региональный код. Например, URL-адрес `https://contosoblobaccount.z22.web.core.windows.net/` содержит региональный код `z22`.
 
 Хотя этот код должен оставаться URL-адресом, он предназначен только для внутреннего использования, и вам не придется использовать этот код другим способом.
 
-Документ индекса, указанный при включении размещения статических веб-сайтов, отображается, когда пользователи открывают сайт и не указывают конкретный файл ( `https://contosoblobaccount.z22.web.core.windows.net`например,).  
+Документ индекса, указанный при включении размещения статических веб-сайтов, отображается, когда пользователи открывают сайт и не указывают конкретный файл (например, `https://contosoblobaccount.z22.web.core.windows.net`).  
 
 Если сервер возвращает ошибку 404 и при включении веб-сайта не был указан документ об ошибке, то пользователю возвращается страница 404 по умолчанию.
 
@@ -74,9 +74,9 @@ URL-адрес сайта содержит региональный код. На
 
 Хотя основная конечная точка веб-сайта не затрагивается, изменение общедоступного уровня доступа влияет на конечную точку основной службы больших двоичных объектов.
 
-Например, если изменить уровень общего доступа контейнера **$Web** с **закрытого (без анонимного доступа)** на **BLOB-объект (анонимный доступ на чтение только для больших двоичных объектов)** , то уровень общего доступа к конечной точке `https://contosoblobaccount.z22.web.core.windows.net/index.html`основноговеб-сайта.не изменяется.
+Например, если изменить уровень общего доступа контейнера **$Web** с **закрытого (без анонимного доступа)** на **BLOB-объект (анонимный доступ на чтение только для больших двоичных объектов)** , то уровень общего доступа к основной конечной точке веб-сайта `https://contosoblobaccount.z22.web.core.windows.net/index.html`. не изменяется.
 
-Однако открытый доступ к конечной точке `https://contosoblobaccount.blob.core.windows.net/$web/index.html` основной службы BLOB-объектов меняется с Private на public. Теперь пользователи могут открыть этот файл с помощью любой из этих двух конечных точек.
+Однако открытый доступ к конечной точке основной службы BLOB-объектов @no__t – 0 меняется с закрытого на общедоступный. Теперь пользователи могут открыть этот файл с помощью любой из этих двух конечных точек.
 
 ## <a name="content-delivery-network-cdn-and-secure-socket-layer-ssl-support"></a>Сеть доставки содержимого (CDN) и поддержка протокола SSL
 

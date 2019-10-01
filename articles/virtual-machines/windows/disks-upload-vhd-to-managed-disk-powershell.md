@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: virtual-machines-linux
 ms.tgt_pltfrm: linux
 ms.subservice: disks
-ms.openlocfilehash: cd8c5b174d92edcf69801edaeabd0c0730985654
-ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
+ms.openlocfilehash: 5b7c612d349c3f596487db4af025e5e599b6589c
+ms.sourcegitcommit: 8bae7afb0011a98e82cbd76c50bc9f08be9ebe06
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71326922"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71694782"
 ---
 # <a name="upload-a-vhd-to-azure-using-azure-powershell"></a>Отправка виртуального жесткого диска в Azure с помощью Azure PowerShell
 
@@ -31,7 +31,7 @@ ms.locfileid: "71326922"
 
 ## <a name="create-an-empty-managed-disk"></a>Создание пустого управляемого диска
 
-Чтобы отправить VHD в Azure, необходимо создать пустой управляемый диск, специально настроенный для этого процесса отправки. Прежде чем создать его, необходимо ознакомиться с дополнительными сведениями об этих дисках.
+Чтобы отправить VHD в Azure, необходимо создать пустой управляемый диск, настроенный для этого процесса отправки. Прежде чем создать его, необходимо ознакомиться с дополнительными сведениями об этих дисках.
 
 Этот тип управляемого диска имеет два уникальных состояния:
 

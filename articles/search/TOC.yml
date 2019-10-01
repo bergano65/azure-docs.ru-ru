@@ -244,7 +244,7 @@
             - name: Создание хранилища знаний на портале Azure
               href: knowledge-store-create-portal.md
             - name: Создание с помощью REST и Postman
-              href: knowledge-store-howto.md
+              href: knowledge-store-create-rest.md
             - name: Просмотр данных с помощью Обозревателя службы хранилища
               href: knowledge-store-view-storage-explorer.md
             - name: Подключение с помощью Power BI

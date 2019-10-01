@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 09/19/2019
 ms.reviewer: sdash
 ms.author: lagayhar
-ms.openlocfilehash: ee64a8af35f938def94e369bdb400fed6e2798c0
-ms.sourcegitcommit: b03516d245c90bca8ffac59eb1db522a098fb5e4
+ms.openlocfilehash: fd56fffe6b11d1c32d7abfe28140127d01933def
+ms.sourcegitcommit: 8bae7afb0011a98e82cbd76c50bc9f08be9ebe06
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71146596"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71695040"
 ---
 # <a name="troubleshooting"></a>Устранение неполадок
 
@@ -44,7 +44,7 @@ ms.locfileid: "71146596"
 |    |Перенаправление определенных IP-адресов происходит через (подсистемы балансировки нагрузки, диспетчеры географических трафика, Azure Express Route). 
 |    |При использовании Azure ExpressRoute существуют сценарии, в которых пакеты могут быть удалены в случаях, когда [происходит асимметричная маршрутизация](https://docs.microsoft.com/azure/expressroute/expressroute-asymmetric-routing).|
 
-## <a name="intermittent-test-failure-with-a-protocol-violation-error"></a>Сбой периодического теста с ошибкой нарушения протокола
+## <a name="test-failure-with-a-protocol-violation-error"></a>Сбой теста с ошибкой нарушения протокола
 
 |Симптом/сообщение об ошибке| Возможные причины| Возможные способы устранения |
 |----|---------|-----|

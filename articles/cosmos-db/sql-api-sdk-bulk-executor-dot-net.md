@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 11/19/2018
 ms.author: ramkris
-ms.openlocfilehash: d24481c1364b41f38e4ca7b8f7d726ebc22a1117
-ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
+ms.openlocfilehash: 447f52a08c9e833808508852c4619f6ce1d947e1
+ms.sourcegitcommit: 6fe40d080bd1561286093b488609590ba355c261
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69624647"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71703374"
 ---
 # <a name="net-bulk-executor-library-download-information"></a>Библиотека NET выполнителя .NET: информация о скачивании 
 
@@ -42,15 +42,15 @@ ms.locfileid: "69624647"
 
 ## <a name="release-notes"></a>Заметки о выпуске
 
-### <a name="a-name230-preview2230-preview2"></a><a name="2.3.0-preview2"/>2.3.0 — preview2
+### <a name="a-name230-preview2230-preview2"></a><a name="2.3.0-preview2"/>2.3.0-preview2
 
 * Добавлена поддержка многоисполнительного графа Graph для приема TTL на вершинах и краях.
 
-### <a name="a-name220-preview2220-preview2"></a><a name="2.2.0-preview2"/>2.2.0 — preview2
+### <a name="a-name220-preview2220-preview2"></a><a name="2.2.0-preview2"/>2.2.0-preview2
 
 * Исправлена проблема, которая привела к возникновению исключений во время эластичного масштабирования Azure Cosmos DB при работе в режиме шлюза. Это исправление функционально эквивалентно 1.4.1 выпуску.
 
-### <a name="a-name210-preview2210-preview2"></a><a name="2.1.0-preview2"/>2.1.0 — preview2
+### <a name="a-name210-preview2210-preview2"></a><a name="2.1.0-preview2"/>2.1.0-preview2
 
 * Добавлена поддержка Булкделете для учетных записей API SQL, чтобы принять ключ секции, кортежи идентификаторов документов для удаления. Это изменение делает его функционально эквивалентным выпуску 1.4.0.
 
@@ -61,6 +61,12 @@ ms.locfileid: "69624647"
 ### <a name="a-name200-preview200-preview"></a><a name="2.0.0-preview"/>2.0.0-preview
 
 * Добавлена .NET Standard 2,0 в качестве одной из поддерживаемых целевых платформ, чтобы библиотека NET выполнителя работала с приложениями .NET Core.
+
+### <a name="a-name182182"></a><a name="1.8.2"/>1.8.2
+
+* Исправлена высокая загрузка ЦП в определенных сценариях.
+* Теперь трассировка использует TraceSource. Пользователи могут определять прослушиватели для источника `BulkExecutorTrace`.
+* Исправлена редкий сценарий, который может вызвать блокировку при отправке документов размером около 2 МБ.
 
 ### <a name="a-name160160"></a><a name="1.6.0"/>1.6.0
 

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 07/22/2019
 ms.author: kgremban
 ms.custom: seodec18
-ms.openlocfilehash: ad5e78638f920401a83dd431c33a68b6d80144d7
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: e08999798c72545f9fa1d1b5d362e23450ce16f5
+ms.sourcegitcommit: 8bae7afb0011a98e82cbd76c50bc9f08be9ebe06
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68988632"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71695330"
 ---
 # <a name="install-the-azure-iot-edge-runtime-on-debian-based-linux-systems"></a>Установка среды выполнения Azure IoT Edge в системах Linux на основе Debian
 
@@ -24,7 +24,7 @@ ms.locfileid: "68988632"
 В этой статье перечислены действия по установке среды выполнения Azure IoT Edge на устройстве Linux x64, ARM32 или ARM64. Пакеты установки предоставляются для Ubuntu Server 16,04, Ubuntu Server 18,04 и Raspbian Stretch. Список поддерживаемых операционных систем и архитектур Linux см. в [Azure IOT Edge поддерживаемых системах](support.md#operating-systems) .
 
 >[!NOTE]
->Поддержка устройств ARM64 доступна в общедоступной [предварительной версии](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+>Поддержка устройств ARM64 доступна в [общедоступной предварительной версии](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 > [!NOTE]
 > К пакетам в репозиториях программного обеспечения Linux применяются условия лицензии, которые можно найти в каждом пакете (/usr/share/doc/*имя-пакета*). Прежде чем использовать пакет, ознакомьтесь с условиями лицензии. Установка и использование пакета свидетельствуют о принятии этих условий. Если вы не согласны с условиями лицензии, не используйте пакет.
@@ -192,6 +192,7 @@ sudo nano /etc/iotedge/config.yaml
    #     method: "tpm"
    #     registration_id: "{registration_id}"
 ```
+Чтобы вставить содержимое буфера обмена в Nano `Shift+Right Click` или нажмите `Shift+Insert`.
 
 Сохраните и закройте файл.
 
@@ -230,6 +231,8 @@ sudo nano /etc/iotedge/config.yaml
        method: "tpm"
        registration_id: "{registration_id}"
    ```
+
+Чтобы вставить содержимое буфера обмена в Nano `Shift+Right Click` или нажмите `Shift+Insert`.
 
 Сохраните и закройте файл.
 

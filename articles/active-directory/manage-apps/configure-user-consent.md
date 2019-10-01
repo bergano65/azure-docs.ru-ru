@@ -12,19 +12,19 @@ ms.date: 10/22/2018
 ms.author: mimart
 ms.reviewer: arvindh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4951984d05e75b0271cf6592c77c54ad13678994
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 6bd746e79bc9d70be23771f97b1757f090f6375f
+ms.sourcegitcommit: d4c9821b31f5a12ab4cc60036fde00e7d8dc4421
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67476561"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71709269"
 ---
 # <a name="configure-the-way-end-users-consent-to-an-application-in-azure-active-directory"></a>Настройка методов получения согласия пользователей для приложения в Azure Active Directory
 Сведения о том, как настроить метод для получения согласия пользователя на разрешения приложения. Взаимодействие с пользователем можно упростить, предоставив согласие администратора. В этой статье приводятся различные способы, позволяющие настроить согласие пользователя. Эти методы применяются для всех пользователей в клиенте Azure Active Directory (AAD). 
 
 Дополнительные сведения о предоставлении согласия для приложений см. в статье [Платформа предоставления согласия Azure Active Directory](../develop/consent-framework.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы предоставить согласие администратора, следует войти от имени глобального администратора, администратора приложения или администратора облачных приложений.
 
@@ -38,8 +38,8 @@ ms.locfileid: "67476561"
 2. Щелкните **Все службы** в верхней части меню навигации слева. Откроется **расширение Azure Active Directory**.
 3. В поле фильтра поиска введите **Azure Active Directory** и выберите элемент **Azure Active Directory**.
 4. Щелкните **Корпоративные приложения** в меню навигации.
-5. Выберите приложение для разрешения.
-6. Выберите **разрешения** и нажмите кнопку **предоставления согласия администратора**. Вам будет предложено выполнить вход для администрирования приложения.
+5. Выберите приложение для согласия.
+6. Выберите **разрешения** и щелкните **предоставить согласие администратора**. Вам будет предложено выполнить вход для администрирования приложения.
 7. Войдите с учетной записью, которая имеет разрешения на предоставление согласия администратора для приложения. 
 8. Подтвердите согласие на разрешения приложения.
 
@@ -56,22 +56,23 @@ ms.locfileid: "67476561"
 2. Перейдите к колонке **Регистрация приложений**.
 3. Выберите приложение для предоставления согласия.
 4. Выберите **Разрешения API**.
-5. Нажмите кнопку **предоставления согласия администратора**.
+5. Щелкните **предоставить согласие администратора**.
 
 
 ## <a name="grant-admin-consent-through-a-url-request"></a>Предоставление согласия администратора через запрос на URL-адрес
 
 Чтобы предоставить согласие администратора через запрос на URL-адрес, сделайте следующее:
 
-1. Создайте запрос на адрес *login.microsoftonline.com*, указав параметры нужного приложения, и добавьте строку `&prompt=admin_consent`. 
+1. Создайте запрос на адрес *login.microsoftonline.com*, указав параметры нужного приложения, и добавьте строку `&prompt=admin_consent`. Этот URL-адрес будет выглядеть следующим образом: `https://login.microsoftonline.com/<tenant-id>/oauth2/authorize?client_id=<client id>&response_type=code&redirect_uri=<Your-Redirect-URI-Https-Encoded>&nonce=1234&resource=<your-resource-Https-encoded>&prompt=admin_consent`.
 2. После входа с учетными данными администратора приложению были предоставлены разрешения для всех пользователей.
 
 
 ## <a name="force-user-consent-through-a-url-request"></a>Требование согласия пользователя через запрос на URL-адрес
 
 Вы можете потребовать, чтобы пользователи предоставляли согласие для приложения при каждом входе, добавив строку `&prompt=consent` к URL-адресу запроса проверки подлинности.
+Этот URL-адрес будет выглядеть следующим образом: `https://login.microsoftonline.com/<tenant-id>/oauth2/authorize?client_id=<client id>&response_type=code&redirect_uri=<Your-Redirect-URI-Https-Encoded>&nonce=1234&resource=<your-resource-Https-encoded>&prompt=consent`.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Согласие и интеграция приложений с Azure Active Directory](../develop/quickstart-v1-integrate-apps-with-azure-ad.md)
 

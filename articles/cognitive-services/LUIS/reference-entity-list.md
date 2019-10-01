@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: reference
-ms.date: 09/27/2019
+ms.date: 09/29/2019
 ms.author: diberry
-ms.openlocfilehash: 2a9e3d16f745e8f51d1d375a774d7c687e987efe
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.openlocfilehash: 1757faf8ab2be0b62956b6939ee068929f9275a4
+ms.sourcegitcommit: 8bae7afb0011a98e82cbd76c50bc9f08be9ebe06
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71350806"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71695255"
 ---
 # <a name="list-entity"></a>Сущность списка 
 
@@ -45,49 +45,72 @@ ms.locfileid: "71350806"
 
 В предыдущем высказывании слово `paris` сопоставляется с элементом paris как часть сущности списка `Cities`. Сущность списка совпадает с нормализованным именем элемента, а также с синонимами элемента.
 
+#### <a name="v2-prediction-endpoint-responsetabv2"></a>[Ответ конечной точки прогнозирования v2](#tab/V2)
+
 ```JSON
-"entities": [
-  {
-    "entity": "paris",
-    "type": "Cities",
-    "startIndex": 18,
-    "endIndex": 22,
-    "resolution": {
-      "values": [
-        "Paris"
-      ]
+  "entities": [
+    {
+      "entity": "paris",
+      "type": "Cities",
+      "startIndex": 18,
+      "endIndex": 22,
+      "resolution": {
+        "values": [
+          "Paris"
+        ]
+      }
     }
-  }
-]
+  ]
 ```
+
+#### <a name="v3-prediction-endpoint-responsetabv3"></a>[V3 прогнозирование ответа конечной точки](#tab/V3)
+
+
+Это JSON, если `verbose=false` задан в строке запроса:
+
+```json
+"entities": {
+    "Cities": [
+        [
+            "Paris"
+        ]
+    ]
+}
+```
+
+Это JSON, если `verbose=true` задан в строке запроса:
+
+```json
+"entities": {
+    "Cities": [
+        [
+            "Paris"
+        ]
+    ],
+    "$instance": {
+        "Cities": [
+            {
+                "type": "Cities",
+                "text": "paris",
+                "startIndex": 18,
+                "length": 5,
+                "modelTypeId": 5,
+                "modelType": "List Entity Extractor",
+                "recognitionSources": [
+                    "model"
+                ]
+            }
+        ]
+    }
+}
+```
+
+* * * 
 
 |Объект данных|Имя сущности|Значение|
 |--|--|--|
 |Сущность списка|`Cities`|`paris`|
 
-В другом примере высказывания используется синоним для Paris:
-
-`book 2 tickets to roissy`
-
-```JSON
-"entities": [
-  {
-    "entity": "roissy",
-    "type": "Cities",
-    "startIndex": 18,
-    "endIndex": 23,
-    "resolution": {
-      "values": [
-        "Paris"
-      ]
-    }
-  }
-]
-```
-
-|Объект данных|Имя сущности|Значение|
-|--|--|--|
-|Сущность списка|`Cities`|`roissy`|
 
 ## <a name="next-steps"></a>Следующие шаги
 

@@ -10,12 +10,12 @@ ms.custom: mvc
 ms.topic: conceptual
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: 3114f082a402fd005797b270cfdcd7527784dbe1
-ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
+ms.openlocfilehash: 88ce3931d9f47b8c16251a45e54fa96b97f038e2
+ms.sourcegitcommit: 8bae7afb0011a98e82cbd76c50bc9f08be9ebe06
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71679219"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71693275"
 ---
 # <a name="add-a-web-api-application-to-your-azure-active-directory-b2c-tenant"></a>Добавление веб-API приложения в клиент Azure Active Directory B2C
 
@@ -42,10 +42,6 @@ ms.locfileid: "71679219"
 
 Чтобы вызвать защищенный веб-API из приложения, необходимо предоставить приложению разрешения на доступ к API. Например, в [руководстве по регистрации приложения в Azure Active Directory B2C](tutorial-register-applications.md) создается веб-приложение с именем *webapp1*. С помощью этого приложения вы можете вызвать веб-API.
 
-1. Щелкните **Приложения**, а затем выберите свое приложение.
-1. Щелкните **Доступ через API**, а затем выберите **Добавить**.
-1. В раскрывающемся списке **Выбрать API** выберите *webapi1*.
-1. В раскрывающемся списке **Выбор областей** выберите области, которые были определены ранее. Например, *демонстрация. Read* и *Demo. Write*.
-1. Нажмите кнопку **ОК**.
+[!INCLUDE [active-directory-b2c-permissions-api](../../includes/active-directory-b2c-permissions-api.md)]
 
 Приложение зарегистрировано для вызова защищенного веб-API. Пользователь выполняет аутентификацию в Azure AD B2C для использования приложения. Приложение получает предоставление авторизации из Azure AD B2C для доступа к защищенному веб-API.

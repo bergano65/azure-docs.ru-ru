@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 07/24/2019
+ms.date: 09/27/2019
 ms.author: diberry
-ms.openlocfilehash: 055cd25f534de5d3cc3ccbe44df88e7111e101a3
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: ff0a9838d1fcc9db3b6cc25b47c840e01056e6cd
+ms.sourcegitcommit: 6fe40d080bd1561286093b488609590ba355c261
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68560761"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71703149"
 ---
 # <a name="extract-data-from-utterance-text-with-intents-and-entities"></a>Извлечение данных из utterance текста с помощью целей и сущностей
 Служба LUIS дает возможность получать информацию из высказываний на естественном языке пользователя. Информация извлекается таким образом, который позволяет использовать ее программой, приложением или чат-ботом для выполнения определенных действий. В следующих разделах содержатся сведения о данных, возвращаемых из намерений и сущностей, с примерами JSON.
@@ -26,14 +26,26 @@ ms.locfileid: "68560761"
 ## <a name="data-location-and-key-usage"></a>Расположение данных и использование ключа
 LUIS предоставляет данные из опубликованной [конечной точки](luis-glossary.md#endpoint). **Запрос HTTPS** (POST или GET) содержит высказывание, а также некоторые дополнительные конфигурации, например промежуточные или рабочие среды.
 
+#### <a name="v2-prediction-endpoint-requesttabv2"></a>[Запрос конечной точки прогнозирования v2](#tab/V2)
+
 `https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/<appID>?subscription-key=<subscription-key>&verbose=true&timezoneOffset=0&q=book 2 tickets to paris`
+
+#### <a name="v3-prediction-endpoint-requesttabv3"></a>[V3 запрос конечной точки прогнозирования](#tab/V3)
+
+`https://westus.api.cognitive.microsoft.com/luis/v3.0-preview/apps/<appID>/slots/<slot-type>/predict?subscription-key=<subscription-key>&verbose=true&timezoneOffset=0&query=book 2 tickets to paris`
+
+Дополнительные сведения о [конечной точке прогнозирования v3](luis-migration-api-v3.md).
+
+* * * 
 
 `appID` доступен на странице **Параметры** приложения LUIS, а также в составе URL-адреса (после `/apps/`) при редактировании этого приложения LUIS. `subscription-key` — это ключ конечной точки, используемый для запросов приложения. При использовании бесплатного ключа разработки или начального ключа во время обучения LUIS необходимо изменить ключ конечной точки на ключ, который поддерживает [ожидаемое использование LUIS](luis-boundaries.md#key-limits). Единица `timezoneOffset` в минутах.
 
 **Ответ HTTPS** содержит все сведения о намерении и сущности, которые служба LUIS может определять на основе текущей опубликованной модели промежуточной или рабочей конечной точки. URL-адрес конечной точки указан на веб-сайте [LUIS](luis-reference-regions.md), раздел **Управление**, страница **Ключи и конечные точки**.
 
 ## <a name="data-from-intents"></a>Данные из намерений
-Основными данными является **имя намерения** с самой высокой оценкой. Согласно `MyStore` [краткому руководству](luis-quickstart-intents-only.md) конечная точка выдает следующий ответ:
+Основными данными является **имя намерения** с самой высокой оценкой. Ответ конечной точки:
+
+#### <a name="v2-prediction-endpoint-responsetabv2"></a>[Ответ конечной точки прогнозирования v2](#tab/V2)
 
 ```JSON
 {
@@ -46,11 +58,38 @@ LUIS предоставляет данные из опубликованной [
 }
 ```
 
+#### <a name="v3-prediction-endpoint-responsetabv3"></a>[V3 прогнозирование ответа конечной точки](#tab/V3)
+
+```JSON
+{
+  "query": "when do you open next?",
+  "prediction": {
+    "normalizedQuery": "when do you open next?",
+    "topIntent": "GetStoreInfo",
+    "intents": {
+        "GetStoreInfo": {
+            "score": 0.984749258
+        }
+    }
+  },
+  "entities": []
+}
+```
+
+Дополнительные сведения о [конечной точке прогнозирования v3](luis-migration-api-v3.md).
+
+* * * 
+
 |Объект данных|Тип данных|Расположение данных|Значение|
 |--|--|--|--|
 |Намерение|Строковое|topScoringIntent.intent|"GetStoreInfo"|
 
-Если чат-бот или вызывающее приложение LUIS принимает решение на основе нескольких оценок намерения, возвращаются все оценки намерения, задав параметр строки запроса `verbose=true`. Ответ конечной точки:
+Если приложение, вызывающее чат-бот или LUIS, принимает решение на основе более чем одной оценки намерения, возвратите все оценки.
+
+
+#### <a name="v2-prediction-endpoint-responsetabv2"></a>[Ответ конечной точки прогнозирования v2](#tab/V2)
+
+Задайте параметр QueryString, `verbose=true`. Ответ конечной точки:
 
 ```JSON
 {
@@ -73,6 +112,34 @@ LUIS предоставляет данные из опубликованной [
 }
 ```
 
+#### <a name="v3-prediction-endpoint-responsetabv3"></a>[V3 прогнозирование ответа конечной точки](#tab/V3)
+
+Задайте параметр QueryString, `show-all-intents=true`. Ответ конечной точки:
+
+```JSON
+{
+    "query": "when do you open next?",
+    "prediction": {
+        "normalizedQuery": "when do you open next?",
+        "topIntent": "GetStoreInfo",
+        "intents": {
+            "GetStoreInfo": {
+                "score": 0.984749258
+            },
+            "None": {
+                 "score": 0.2040639
+            }
+        },
+        "entities": {
+        }
+    }
+}
+```
+
+Дополнительные сведения о [конечной точке прогнозирования v3](luis-migration-api-v3.md).
+
+* * * 
+
 Намерения упорядочены от имеющего самую высокую оценку до имеющего самую низкую оценку.
 
 |Объект данных|Тип данных|Расположение данных|Значение|Оценке|
@@ -81,6 +148,8 @@ LUIS предоставляет данные из опубликованной [
 |Намерение|Строковое|intents[1].intent|"None"|0,0168218873|
 
 При добавлении готовых предметных областей имя намерения указывает предметную область, такую как `Utilties` или `Communication`, а также намерение:
+
+#### <a name="v2-prediction-endpoint-responsetabv2"></a>[Ответ конечной точки прогнозирования v2](#tab/V2)
 
 ```JSON
 {
@@ -106,6 +175,34 @@ LUIS предоставляет данные из опубликованной [
 }
 ```
 
+#### <a name="v3-prediction-endpoint-responsetabv3"></a>[V3 прогнозирование ответа конечной точки](#tab/V3)
+
+```JSON
+{
+    "query": "Turn on the lights next monday at 9am",
+    "prediction": {
+        "normalizedQuery": "Turn on the lights next monday at 9am",
+        "topIntent": "Utilities.ShowNext",
+        "intents": {
+            "Utilities.ShowNext": {
+                "score": 0.07842206
+            },
+            "Communication.StartOver": {
+                "score": 0.0239675418
+            },
+            "None": {
+                "score": 0.00085447653
+            }
+        },
+        "entities": []
+    }
+}
+```
+
+Дополнительные сведения о [конечной точке прогнозирования v3](luis-migration-api-v3.md).
+
+* * * 
+
 |Домен|Объект данных|Тип данных|Расположение данных|Значение|
 |--|--|--|--|--|
 |Коммунальные службы|Намерение|Строковое|intents[0].intent|"<b>Utilities</b>.ShowNext"|
@@ -119,6 +216,8 @@ LUIS предоставляет данные из опубликованной [
 Одно слово или фраза в высказывании может соответствовать нескольким сущностям. В этом случае каждая совпадающая сущность возвращается с оценкой.
 
 Все сущности возвращаются в массиве **сущностей** ответа от конечной точки:
+
+#### <a name="v2-prediction-endpoint-responsetabv2"></a>[Ответ конечной точки прогнозирования v2](#tab/V2)
 
 ```JSON
 "entities": [
@@ -141,6 +240,18 @@ LUIS предоставляет данные из опубликованной [
 ]
 ```
 
+#### <a name="v3-prediction-endpoint-responsetabv3"></a>[V3 прогнозирование ответа конечной точки](#tab/V3)
+
+```JSON
+"entities": {
+    "name":["bob jones"],
+    "number": [3]
+}
+```
+Дополнительные сведения о [конечной точке прогнозирования v3](luis-migration-api-v3.md).
+
+* * * 
+
 ## <a name="tokenized-entity-returned"></a>Возвращенная размеченная сущность
 Несколько [языков](luis-language-support.md#tokenization) возвращают объект сущности с [размеченным](luis-glossary.md#token) значением `entity`. startIndex и endIndex, возвращаемые службой LUIS в объекте сущности, не сопоставляются с новым размеченным значением. Они сопоставляются с исходным запросом, чтобы вы могли программно извлекать необработанные сущности. 
 
@@ -162,6 +273,8 @@ LUIS предоставляет данные из опубликованной [
 Обнаружение [предварительно созданных](luis-concept-entity-types.md) сущностей выполняется на основе совпадения регулярного выражения с помощью с проекта [Recognizers-Text](https://github.com/Microsoft/Recognizers-Text) с открытым исходным кодом. Предварительно созданные сущности возвращаются в массиве сущностей и используют имя типа с префиксом `builtin::`. Ниже приводится пример высказывания с возвращаемыми предварительно созданными сущностями.
 
 `Dec 5th send to +1 360-555-1212`
+
+#### <a name="v2-prediction-endpoint-responsetabv2"></a>[Ответ конечной точки прогнозирования v2](#tab/V2)
 
 ```JSON
 "entities": [
@@ -242,6 +355,186 @@ LUIS предоставляет данные из опубликованной [
   ]
 ```
 
+#### <a name="v3-prediction-endpoint-responsetabv3"></a>[V3 прогнозирование ответа конечной точки](#tab/V3)
+
+Без параметра QueryString `verbose=true`:
+
+```json
+"entities": {
+    "datetimeV2": [
+        {
+            "type": "date",
+            "values": [
+                {
+                    "timex": "XXXX-12-05",
+                    "value": "2018-12-05"
+                },
+                {
+                    "timex": "XXXX-12-05",
+                    "value": "2019-12-05"
+                }
+            ]
+        }
+    ],
+    "ordinal": [
+        {
+            "offset": 5,
+            "relativeTo": "start"
+        }
+    ],
+    "ordinalV2": [
+        {
+            "offset": 5,
+            "relativeTo": "start"
+        }
+    ],
+    "number": [
+        1360,
+        555,
+        1212
+    ],
+    "phonenumber": [
+        "1 360-555-1212"
+    ]
+}
+```
+
+С параметром QueryString `verbose=true`:
+
+```json
+
+"entities": {
+    "datetimeV2": [
+        {
+            "type": "date",
+            "values": [
+                {
+                    "timex": "XXXX-12-05",
+                    "value": "2018-12-05"
+                },
+                {
+                    "timex": "XXXX-12-05",
+                    "value": "2019-12-05"
+                }
+            ]
+        }
+    ],
+    "ordinal": [
+        {
+            "offset": 5,
+            "relativeTo": "start"
+        }
+    ],
+    "ordinalV2": [
+        {
+            "offset": 5,
+            "relativeTo": "start"
+        }
+    ],
+    "number": [
+        1360,
+        555,
+        1212
+    ],
+    "phonenumber": [
+        "1 360-555-1212"
+    ],
+    "$instance": {
+        "datetimeV2": [
+            {
+                "type": "builtin.datetimeV2.date",
+                "text": "Dec 5th",
+                "startIndex": 0,
+                "length": 7,
+                "modelTypeId": 2,
+                "modelType": "Prebuilt Entity Extractor",
+                "recognitionSources": [
+                    "model"
+                ]
+            }
+        ],
+        "ordinal": [
+            {
+                "type": "builtin.ordinal",
+                "text": "5th",
+                "startIndex": 4,
+                "length": 3,
+                "modelTypeId": 2,
+                "modelType": "Prebuilt Entity Extractor",
+                "recognitionSources": [
+                    "model"
+                ]
+            }
+        ],
+        "ordinalV2": [
+            {
+                "type": "builtin.ordinalV2",
+                "text": "5th",
+                "startIndex": 4,
+                "length": 3,
+                "modelTypeId": 2,
+                "modelType": "Prebuilt Entity Extractor",
+                "recognitionSources": [
+                    "model"
+                ]
+            }
+        ],
+        "number": [
+            {
+                "type": "builtin.number",
+                "text": "1 360",
+                "startIndex": 17,
+                "length": 5,
+                "modelTypeId": 2,
+                "modelType": "Prebuilt Entity Extractor",
+                "recognitionSources": [
+                    "model"
+                ]
+            },
+            {
+                "type": "builtin.number",
+                "text": "555",
+                "startIndex": 23,
+                "length": 3,
+                "modelTypeId": 2,
+                "modelType": "Prebuilt Entity Extractor",
+                "recognitionSources": [
+                    "model"
+                ]
+            },
+            {
+                "type": "builtin.number",
+                "text": "1212",
+                "startIndex": 27,
+                "length": 4,
+                "modelTypeId": 2,
+                "modelType": "Prebuilt Entity Extractor",
+                "recognitionSources": [
+                    "model"
+                ]
+            }
+        ],
+        "phonenumber": [
+            {
+                "type": "builtin.phonenumber",
+                "text": "1 360-555-1212",
+                "startIndex": 17,
+                "length": 14,
+                "score": 1.0,
+                "modelTypeId": 2,
+                "modelType": "Prebuilt Entity Extractor",
+                "recognitionSources": [
+                    "model"
+                ]
+            }
+        ]
+    }
+}
+```
+
+Дополнительные сведения о [конечной точке прогнозирования v3](luis-migration-api-v3.md).
+
+* * * 
 ## <a name="regular-expression-entity-data"></a>Данные сущности регулярного выражения
 
 [Сущность регулярного выражения](reference-entity-regular-expression.md) извлекает сущность на основе предоставленного шаблона регулярного выражения.
@@ -270,63 +563,127 @@ LUIS предоставляет данные из опубликованной [
 ## <a name="pattern-roles-data"></a>Данные ролей шаблонов
 Роли — это контекстно-зависимые различия сущностей.
 
+
+#### <a name="v2-prediction-endpoint-responsetabv2"></a>[Ответ конечной точки прогнозирования v2](#tab/V2)
+
+Имя сущности — `Location`, с двумя ролями `Origin` и `Destination`.
+
 ```JSON
-{
-  "query": "move bob jones from seattle to redmond",
-  "topScoringIntent": {
-    "intent": "MoveAssetsOrPeople",
-    "score": 0.9999998
+"entities": [
+  {
+    "entity": "bob jones",
+    "type": "Employee",
+    "startIndex": 5,
+    "endIndex": 13,
+    "score": 0.922820568,
+    "role": ""
   },
-  "intents": [
-    {
-      "intent": "MoveAssetsOrPeople",
-      "score": 0.9999998
-    },
-    {
-      "intent": "None",
-      "score": 1.02040713E-06
-    },
-    {
-      "intent": "GetEmployeeBenefits",
-      "score": 6.12244548E-07
-    },
-    {
-      "intent": "GetEmployeeOrgChart",
-      "score": 6.12244548E-07
-    },
-    {
-      "intent": "FindForm",
-      "score": 1.1E-09
-    }
-  ],
-  "entities": [
-    {
-      "entity": "bob jones",
-      "type": "Employee",
-      "startIndex": 5,
-      "endIndex": 13,
-      "score": 0.922820568,
-      "role": ""
-    },
-    {
-      "entity": "seattle",
-      "type": "Location",
-      "startIndex": 20,
-      "endIndex": 26,
-      "score": 0.948008537,
-      "role": "Origin"
-    },
-    {
-      "entity": "redmond",
-      "type": "Location",
-      "startIndex": 31,
-      "endIndex": 37,
-      "score": 0.7047979,
-      "role": "Destination"
-    }
-  ]
+  {
+    "entity": "seattle",
+    "type": "Location",
+    "startIndex": 20,
+    "endIndex": 26,
+    "score": 0.948008537,
+    "role": "Origin"
+  },
+  {
+    "entity": "redmond",
+    "type": "Location",
+    "startIndex": 31,
+    "endIndex": 37,
+    "score": 0.7047979,
+    "role": "Destination"
+  }
+]
+```
+
+#### <a name="v3-prediction-endpoint-responsetabv3"></a>[V3 прогнозирование ответа конечной точки](#tab/V3)
+
+В версии 3 **имя роли** является основным именем объекта. 
+
+Имя сущности — `Location`, с двумя ролями `Origin` и `Destination`.
+
+Без параметра QueryString `verbose=true`:
+
+```json
+"entities": {
+    "Employee": [
+        "bob jones"
+    ],
+    "Origin": [
+        "seattle"
+    ],
+    "Destination": [
+        "redmond"
+    ]
 }
 ```
+
+С параметром QueryString `verbose=true`:
+
+```json
+"entities": {
+    "Employee": [
+        "bob jones"
+    ],
+    "LocationOrigin": [
+        "seattle"
+    ],
+    "LocationDestination": [
+        "redmond"
+    ],
+    "$instance": {
+        "Employee": [
+            {
+                "type": "Employee",
+                "text": "bob jones",
+                "startIndex": 5,
+                "length": 9,
+                "score": 0.982873261,
+                "modelTypeId": 1,
+                "modelType": "Entity Extractor",
+                "recognitionSources": [
+                    "model"
+                ]
+            }
+        ],
+        "Origin": [
+            {
+                "role": "Origin",
+                "type": "Location",
+                "text": "seattle",
+                "startIndex": 20,
+                "length": 7,
+                "score": 0.9913306,
+                "modelTypeId": 1,
+                "modelType": "Entity Extractor",
+                "recognitionSources": [
+                    "model"
+                ]
+            }
+        ],
+        "Destination": [
+            {
+                "role": "Destination",
+                "type": "Location",
+                "text": "redmond",
+                "startIndex": 31,
+                "length": 7,
+                "score": 0.898179531,
+                "modelTypeId": 1,
+                "modelType": "Entity Extractor",
+                "recognitionSources": [
+                    "model"
+                ]
+            }
+        ]
+
+}
+```
+
+Дополнительные сведения о [конечной точке прогнозирования v3](luis-migration-api-v3.md).
+
+* * *
 
 ## <a name="patternany-entity-data"></a>Данные сущности Pattern.any
 
@@ -358,6 +715,9 @@ LUIS предоставляет данные из опубликованной [
 
 ### <a name="key-phrase-extraction-entity-data"></a>Данные сущности извлечения ключевой фразы
 Сущность извлечения ключевой фразы возвращает ключевые фразы в высказывании, предоставленном службой [анализа текста](https://docs.microsoft.com/azure/cognitive-services/text-analytics/).
+
+
+#### <a name="v2-prediction-endpoint-responsetabv2"></a>[Ответ конечной точки прогнозирования v2](#tab/V2)
 
 ```JSON
 {
@@ -392,13 +752,85 @@ LUIS предоставляет данные из опубликованной [
 }
 ```
 
+#### <a name="v3-prediction-endpoint-responsetabv3"></a>[V3 прогнозирование ответа конечной точки](#tab/V3)
+
+Дополнительные сведения о [конечной точке прогнозирования v3](luis-migration-api-v3.md).
+
+Без параметра QueryString `verbose=true`:
+
+```json
+"entities": {
+    "keyPhrase": [
+        "map of places",
+        "beautiful views",
+        "favorite trail"
+    ]
+}
+```
+
+С параметром QueryString `verbose=true`:
+
+```json
+"entities": {
+    "keyPhrase": [
+        "map of places",
+        "beautiful views",
+        "favorite trail"
+    ],
+    "$instance": {
+        "keyPhrase": [
+            {
+                "type": "builtin.keyPhrase",
+                "text": "map of places",
+                "startIndex": 11,
+                "length": 13,
+                "modelTypeId": 2,
+                "modelType": "Prebuilt Entity Extractor",
+                "recognitionSources": [
+                    "model"
+                ]
+            },
+            {
+                "type": "builtin.keyPhrase",
+                "text": "beautiful views",
+                "startIndex": 30,
+                "length": 15,
+                "modelTypeId": 2,
+                "modelType": "Prebuilt Entity Extractor",
+                "recognitionSources": [
+                    "model"
+                ]
+            },
+            {
+                "type": "builtin.keyPhrase",
+                "text": "favorite trail",
+                "startIndex": 51,
+                "length": 14,
+                "modelTypeId": 2,
+                "modelType": "Prebuilt Entity Extractor",
+                "recognitionSources": [
+                    "model"
+                ]
+            }
+        ]
+    }
+}
+```
+
+Дополнительные сведения о [конечной точке прогнозирования v3](luis-migration-api-v3.md).
+
+* * *
+
+
 ## <a name="data-matching-multiple-entities"></a>Данные, соответствующие нескольким сущностям
 
 LUIS возвращает все сущности, обнаруженные в высказывании. В результате чат-боту может потребоваться принять решение на основе результатов. Высказывание может содержать много сущностей:
 
 `book me 2 adult business tickets to paris tomorrow on air france`
 
-Конечная точка LUIS может обнаруживать те же данные в различных сущностях:
+Конечная точка LUIS может обнаруживать одни и те же данные в разных сущностях.
+
+#### <a name="v2-prediction-endpoint-responsetabv2"></a>[Ответ конечной точки прогнозирования v2](#tab/V2)
 
 ```JSON
 {
@@ -524,11 +956,194 @@ LUIS возвращает все сущности, обнаруженные в �
 }
 ```
 
+#### <a name="v3-prediction-endpoint-responsetabv3"></a>[V3 прогнозирование ответа конечной точки](#tab/V3)
+
+Без `verbose=true` в качестве параметра QueryString.
+
+```json
+"entities": {
+    "TicketsOrder": [
+        {
+            "number": [
+                2
+            ],
+            "PassengerCategory": [
+                "adult"
+            ],
+            "TravelClass": [
+                "business"
+            ]
+        }
+    ],
+    "Location::LocationTo": [
+        "paris"
+    ],
+    "datetimeV2": [
+        {
+            "type": "date",
+            "values": [
+                {
+                    "timex": "2019-09-28",
+                    "value": "2019-09-28"
+                }
+            ]
+        }
+    ],
+    "Airline": [
+        "air france"
+    ]
+}
+```
+
+С `verbose=true` в качестве параметра QueryString.
+
+
+```json
+"entities": {
+    "TicketsOrder": [
+        {
+            "number": [
+                2
+            ],
+            "PassengerCategory": [
+                "adult"
+            ],
+            "TravelClass": [
+                "business"
+            ],
+            "$instance": {
+                "number": [
+                    {
+                        "type": "builtin.number",
+                        "text": "2",
+                        "startIndex": 8,
+                        "length": 1,
+                        "modelTypeId": 2,
+                        "modelType": "Prebuilt Entity Extractor",
+                        "recognitionSources": [
+                            "model"
+                        ]
+                    }
+                ],
+                "PassengerCategory": [
+                    {
+                        "type": "PassengerCategory",
+                        "text": "adult",
+                        "startIndex": 10,
+                        "length": 5,
+                        "score": 0.9503733,
+                        "modelTypeId": 3,
+                        "modelType": "Hierarchical Entity Extractor",
+                        "recognitionSources": [
+                            "model"
+                        ]
+                    }
+                ],
+                "TravelClass": [
+                    {
+                        "type": "TravelClass",
+                        "text": "business",
+                        "startIndex": 16,
+                        "length": 8,
+                        "score": 0.950095,
+                        "modelTypeId": 3,
+                        "modelType": "Hierarchical Entity Extractor",
+                        "recognitionSources": [
+                            "model"
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "Location::LocationTo": [
+        "paris"
+    ],
+    "datetimeV2": [
+        {
+            "type": "date",
+            "values": [
+                {
+                    "timex": "2019-09-28",
+                    "value": "2019-09-28"
+                }
+            ]
+        }
+    ],
+    "Airline": [
+        "air france"
+    ],
+    "$instance": {
+        "TicketsOrder": [
+            {
+                "type": "TicketsOrder",
+                "text": "2 adult business",
+                "startIndex": 8,
+                "length": 16,
+                "score": 0.942183256,
+                "modelTypeId": 4,
+                "modelType": "Composite Entity Extractor",
+                "recognitionSources": [
+                    "model"
+                ]
+            }
+        ],
+        "Location::LocationTo": [
+            {
+                "type": "Location::LocationTo",
+                "text": "paris",
+                "startIndex": 36,
+                "length": 5,
+                "score": 0.9905354,
+                "modelTypeId": 3,
+                "modelType": "Hierarchical Entity Extractor",
+                "recognitionSources": [
+                    "model"
+                ]
+            }
+        ],
+        "datetimeV2": [
+            {
+                "type": "builtin.datetimeV2.date",
+                "text": "tomorrow",
+                "startIndex": 42,
+                "length": 8,
+                "modelTypeId": 2,
+                "modelType": "Prebuilt Entity Extractor",
+                "recognitionSources": [
+                    "model"
+                ]
+            }
+        ],
+        "Airline": [
+            {
+                "type": "Airline",
+                "text": "air france",
+                "startIndex": 54,
+                "length": 10,
+                "score": 0.9455415,
+                "modelTypeId": 1,
+                "modelType": "Entity Extractor",
+                "recognitionSources": [
+                    "model"
+                ]
+            }
+        ]
+    }
+}
+```
+
+Дополнительные сведения о [конечной точке прогнозирования v3](luis-migration-api-v3.md).
+
+* * *
+
 ## <a name="data-matching-multiple-list-entities"></a>Данные, соответствующие нескольким сущностям списка
 
 Если слово или фраза соответствует нескольким сущностям списка, запрос конечной точки возвращает каждую сущность списка.
 
 Если имеется запрос `when is the best time to go to red rock?` и слово `red` приложения находится в нескольких списках, LUIS распознает все сущности и возвратит массив сущностей в составе ответа JSON конечной точки: 
+
+#### <a name="v2-prediction-endpoint-responsetabv2"></a>[Ответ конечной точки прогнозирования v2](#tab/V2)
 
 ```JSON
 {
@@ -563,6 +1178,101 @@ LUIS возвращает все сущности, обнаруженные в �
   ]
 }
 ```
+
+
+
+#### <a name="v3-prediction-endpoint-responsetabv3"></a>[V3 прогнозирование ответа конечной точки](#tab/V3)
+
+Без `verbose=true` в строке запроса:
+
+```JSON
+{
+    "query": "when is the best time to go to red rock",
+    "prediction": {
+        "normalizedQuery": "when is the best time to go to red rock",
+        "topIntent": "None",
+        "intents": {
+            "None": {
+                "score": 0.823669851
+            }
+        },
+        "entities": {
+            "Colors": [
+                [
+                    "red"
+                ]
+            ],
+            "Cities": [
+                [
+                    "Destinations"
+                ]
+            ]
+        }
+    }
+}
+```
+
+
+С `verbose=true` в строке запроса:
+
+```JSON
+{
+    "query": "when is the best time to go to red rock",
+    "prediction": {
+        "normalizedQuery": "when is the best time to go to red rock",
+        "topIntent": "None",
+        "intents": {
+            "None": {
+                "score": 0.823669851
+            }
+        },
+        "entities": {
+            "Colors": [
+                [
+                    "red"
+                ]
+            ],
+            "Cities": [
+                [
+                    "Destinations"
+                ]
+            ],
+            "$instance": {
+                "Colors": [
+                    {
+                        "type": "Colors",
+                        "text": "red",
+                        "startIndex": 31,
+                        "length": 3,
+                        "modelTypeId": 5,
+                        "modelType": "List Entity Extractor",
+                        "recognitionSources": [
+                            "model"
+                        ]
+                    }
+                ],
+                "Cities": [
+                    {
+                        "type": "Cities",
+                        "text": "red rock",
+                        "startIndex": 31,
+                        "length": 8,
+                        "modelTypeId": 5,
+                        "modelType": "List Entity Extractor",
+                        "recognitionSources": [
+                            "model"
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}
+```
+
+Дополнительные сведения о [конечной точке прогнозирования v3](luis-migration-api-v3.md).
+
+* * *
 
 ## <a name="next-steps"></a>Следующие шаги
 

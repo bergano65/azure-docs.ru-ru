@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/14/2019
 ms.author: magoedte
-ms.openlocfilehash: 2b601825a58fe5739a43df607067acc8d629c5f4
-ms.sourcegitcommit: a6888fba33fc20cc6a850e436f8f1d300d03771f
+ms.openlocfilehash: 7cd915c47fa0661a9da66d7ca3315480ce7d6b98
+ms.sourcegitcommit: d4c9821b31f5a12ab4cc60036fde00e7d8dc4421
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69558906"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71709428"
 ---
 # <a name="configure-agent-data-collection-for-azure-monitor-for-containers"></a>Настройка сбора данных агента для Azure Monitor для контейнеров
 
@@ -163,7 +163,7 @@ config::unsupported/missing config schema version - 'v21' , using defaults
 
 ## <a name="applying-updated-configmap"></a>Применение обновленных ConfigMap
 
-Если вы уже развернули ConfigMap в кластере и хотите обновить ее с помощью более новой конфигурации, вы можете изменить ранее использовавшийся файл ConfigMap, а затем применить его с помощью той же команды, что и `kubectl apply -f <configmap_yaml_file.yaml`раньше,.
+Если вы уже развернули ConfigMap в кластере и хотите обновить ее с помощью более новой конфигурации, вы можете изменить ранее использовавшийся файл ConfigMap, а затем применить его с помощью той же команды, что и ранее, `kubectl apply -f <configmap_yaml_file.yaml`.
 
 До вступления в силу изменение конфигурации может занять несколько минут, и все omsagent Pod в кластере будут перезапущены. Перезагрузка является пошаговым перезапуском для всех модулей omsagent Pod, а не всех перезапусков одновременно. После завершения перезагрузки отображается сообщение, похожее на следующее и содержащее результат: `configmap "container-azm-ms-agentconfig" updated`.
 
@@ -187,6 +187,22 @@ config::unsupported/missing config schema version - 'v21' , using defaults
 ```
 
 ## <a name="review-prometheus-data-usage"></a>Проверка использования данных Prometheus
+
+Чтобы просмотреть метрики Prometheus, которые забракованы Azure Monitor, укажите "Prometheus" в качестве пространства имен. Ниже приведен пример запроса для просмотра метрик Prometheus из пространства имен `default` kubernetes.
+
+```
+InsightsMetrics 
+| where Namespace contains "prometheus"
+| extend tags=parse_json(Tags)
+| where tostring(tags.namespace) == "default" 
+```
+
+Данные Prometheus также можно запрашивать напрямую по имени.
+
+```
+InsightsMetrics 
+| where Name contains "some_prometheus_metric"
+```
 
 Чтобы определить, является ли объем приема для каждого метрики размером в ГБ в день, чтобы понять, насколько он высокий, предоставляется следующий запрос.
 

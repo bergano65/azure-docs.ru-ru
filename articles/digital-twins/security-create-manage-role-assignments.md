@@ -9,19 +9,16 @@ ms.topic: conceptual
 ms.date: 07/29/2019
 ms.author: lyhughes
 ms.custom: seodec18
-ms.openlocfilehash: 968ae62344f99edf8eb46eb62a4cf13f300c868f
-ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
+ms.openlocfilehash: 2c43dd7c0700efdd2fbf2f16c57c9c9dc69d3c6b
+ms.sourcegitcommit: 6fe40d080bd1561286093b488609590ba355c261
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68815644"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71703358"
 ---
 # <a name="create-and-manage-role-assignments-in-azure-digital-twins"></a>Создание назначений ролей и управление ими в Azure Digital Twins
 
 Для управления доступом к ресурсам в Azure Digital Twins используется управление доступом на основе ролей ([RBAC](./security-role-based-access-control.md)).
-
-
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="role-assignments-overview"></a>Обзор назначений ролей
 
@@ -39,7 +36,7 @@ ms.locfileid: "68815644"
 
 В таблице ниже описывается каждый атрибут.
 
-| Атрибут | Название | Обязательное значение | Тип | Описание |
+| Атрибут | Название | Обязательное значение | Type | Описание |
 | --- | --- | --- | --- | --- |
 | roleId | Идентификатор определения роли | Да | Строковое | Уникальный идентификатор необходимого назначения ролей. Поиск определения ролей и их идентификаторов с помощью запроса API или проверки таблицы ниже. |
 | objectId | Идентификатор объекта | Да | Строковое | Идентификатор Azure Active Directory, идентификатор объекта субъекта-службы или доменное имя. Чему или кому назначается роль. Назначение ролей должно быть отформатировано в соответствии со связанным типом. Для objectIdType `DomainName` свойство objectId должно начинаться со знака `“@”`. |
@@ -63,7 +60,7 @@ ms.locfileid: "68815644"
 
 Azure Digital Twins поддерживает полное функционирование операций *СОЗДАНИЕ*, *ЧТЕНИЕ* и *УДАЛЕНИЕ* для назначения ролей. Операции *ОБНОВЛЕНИЕ* обрабатываются путем добавления назначений ролей, удаление назначений ролей или изменение узлов [пространственного интеллектуального графа](./concepts-objectmodel-spatialgraph.md), к которым назначения ролей предоставляют доступ.
 
-![Конечные точки назначения ролей][1]
+[конечные точки назначения @no__t 1Role](media/security-roles/roleassignments.png)](media/security-roles/roleassignments.png#lightbox)
 
 В предоставленной справочной документации по Swagger содержатся дополнительные сведения о всех доступных API конечных точек, операций запроса и определения.
 
@@ -71,23 +68,28 @@ Azure Digital Twins поддерживает полное функциониро
 
 [!INCLUDE [Digital Twins Management API](../../includes/digital-twins-management-api.md)]
 
-<div id="grant"></div>
-
 ### <a name="grant-permissions-to-your-service-principal"></a>Предоставление разрешений для субъекта-службы
 
 Предоставление разрешений для субъекта-службы часто является одним из первых шагов при работе с Azure Digital Twins. Это влечет за собой:
 
-1. Выполнение входа в экземпляр Azure с помощью PowerShell.
+1. Вход в экземпляр Azure с помощью [Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest) или [PowerShell](https://docs.microsoft.com/powershell/azure/).
 1. Получение сведений о субъекте-службе.
 1. Назначение необходимой роли для субъекта-службы.
 
 Ваш идентификатор приложения передается через Azure Active Directory. Дополнительные сведения о настройке и подготовке Azure Digital Twins в Active Directory см. в статье [Краткое руководство. Поиск свободных помещений с помощью Azure Digital Twins](./quickstart-view-occupancy-dotnet.md).
 
-Получив идентификатор приложения, выполните следующие команды PowerShell.
+Получив идентификатор приложения, выполните одну из следующих команд. В Azure CLI:
 
-```shell
+```azurecli
+az login
+az ad sp show --id <ApplicationId>
+```
+
+В PowerShell:
+
+```powershell
 Login-AzAccount
-Get-AzADServicePrincipal -ApplicationId  <ApplicationId>
+Get-AzADServicePrincipal -ApplicationId <ApplicationId>
 ```
 
 Пользователь с ролью **Администратор** может затем назначить роль администратора пространства для пользователя, создав аутентифицированный запрос HTTP POST в URL-адресе.
@@ -108,11 +110,9 @@ YOUR_MANAGEMENT_API_URL/roleassignments
 }
 ```
 
-<div id="all"></div>
-
 ### <a name="retrieve-all-roles"></a>Получение всех ролей
 
-![Системные роли][2]
+[роли @no__t 1System](media/security-roles/system.png)](media/security-roles/system.png#lightbox)
 
 Чтобы получить список всех доступных ролей (определений ролей), создайте аутентифицированный запрос HTTP GET.
 
@@ -152,8 +152,6 @@ YOUR_MANAGEMENT_API_URL/system/roles
     }
 ]
 ```
-
-<div id="check"></div>
 
 ### <a name="check-a-specific-role-assignment"></a>Проверка конкретного назначения ролей
 
@@ -210,7 +208,7 @@ YOUR_MANAGEMENT_API_URL/roleassignments/YOUR_ROLE_ASSIGNMENT_ID
 | --- | --- |
 | *YOUR_ROLE_ASSIGNMENT_ID* | **Идентификатор** назначения ролей для удаления |
 
-Успешный запрос DELETE вернет состояние ответа 204. Проверьте удаление назначения ролей, [проверив](#check), сохраняется ли оно.
+Успешный запрос DELETE вернет состояние ответа 204. Проверьте удаление назначения ролей, [проверив](#check-a-specific-role-assignment), сохраняется ли оно.
 
 ### <a name="create-a-role-assignment"></a>Создание назначения роли
 
@@ -282,7 +280,3 @@ YOUR_MANAGEMENT_API_URL/roleassignments
 - Подробнее об управлении доступом на основе ролей Azure Digital Twins см. в статье [Подключение к API и аутентификация](./security-authenticating-apis.md).
 
 - Дополнительные сведения о проверке подлинности API Azure Digital Twins см. в статье [Подключение к API и аутентификация](./security-authenticating-apis.md).
-
-<!-- Images -->
-[1]: media/security-roles/roleassignments.png
-[2]: media/security-roles/system.png

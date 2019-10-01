@@ -33,7 +33,9 @@
           href: visual-search-sdk-node.md
         - name: Использование Python
           href: visual-search-sdk-python.md
-- name: Руководства
+        - name: Использование Java
+          href: visual-search-sdk-java.md
+- name: Учебники
   items:
     - name: Отправка изображения
       href: tutorial-visual-search-image-upload.md
