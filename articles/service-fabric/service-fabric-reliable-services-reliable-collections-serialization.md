@@ -40,11 +40,11 @@ ms.locfileid: "68599307"
 - sbyte
 - byte[]
 - char
-- строка
+- string
 - decimal
 - double
 - float
-- ssNoversion
+- int
 - uint
 - long
 - ulong
