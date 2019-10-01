@@ -315,7 +315,7 @@ ms.locfileid: "67839011"
 | enum |Строка, |
 | float |Single |
 | int unsigned |Int64 |
-| ssNoversion |Int32 |
+| int |Int32 |
 | integer unsigned |Int64 |
 | integer |Int32 |
 | long varbinary |Byte[] |
