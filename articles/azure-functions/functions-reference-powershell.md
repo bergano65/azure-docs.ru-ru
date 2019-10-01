@@ -283,13 +283,13 @@ MyQueue                        myData
 
 Все триггеры и привязки представлены в коде как несколько реальных типов данных:
 
-* Хэш-таблицы
-* строка
+* Hashtable
+* string
 * byte[]
-* ssNoversion
+* int
 * double
-* хттпрекуестконтекст
-* хттпреспонсеконтекст
+* HttpRequestContext
+* HttpResponseContext
 
 Первые пять типов в этом списке являются стандартными типами .NET. Последние два используются только [триггером HttpTrigger](#http-triggers-and-bindings).
 
