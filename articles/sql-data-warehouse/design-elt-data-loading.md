@@ -55,9 +55,9 @@ PolyBase загружает данные из текстовых файлов с
 | :-------------------: | :----------------------------------------------------------: |
 |        tinyint        |                           tinyint                            |
 |       smallint        |                           smallint                           |
-|          ssNoversion          |                             ssNoversion                              |
+|          int          |                             int                              |
 |        bigint         |                            bigint                            |
-|        Логический        |                             bit                              |
+|        boolean        |                             bit                              |
 |        double         |                            float                             |
 |         float         |                             real                             |
 |        double         |                            money                             |
