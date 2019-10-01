@@ -1093,8 +1093,8 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 | Параметр | Обязательное значение | Тип | Описание |
 |:--- |:--- |:--- |:--- |
-| startingInteger |Да |ssNoversion |Первое целое число в массиве. |
-| numberofElements |Да |ssNoversion |Количество целых чисел в массиве. |
+| startingInteger |Да |int |Первое целое число в массиве. |
+| numberofElements |Да |int |Количество целых чисел в массиве. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
