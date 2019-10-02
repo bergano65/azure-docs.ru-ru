@@ -1,6 +1,6 @@
 ---
-title: Статья об известных проблемах и ограничениях при сетевых миграциях в Базу данных Azure для MySQL | Документация Майкрософт
-description: Узнайте об известных проблемах и ограничениях при сетевых миграциях в Базу данных Azure для MySQL.
+title: Статья об известных проблемах и ограничениях миграции с миграцией по сети из PostgreSQL в базу данных Azure для PostgreSQL-Single Server | Документация Майкрософт
+description: Узнайте об известных проблемах и ограничениях миграции с помощью оперативной миграции с PostgreSQL на базу данных Azure для PostgreSQL.
 services: database-migration
 author: HJToland3
 ms.author: jtoland
@@ -10,21 +10,21 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: mvc
 ms.topic: article
-ms.date: 08/06/2019
-ms.openlocfilehash: 56758e2962adb41c9876171c89b37263a70ed0e4
-ms.sourcegitcommit: 86d49daccdab383331fc4072b2b761876b73510e
+ms.date: 10/03/2019
+ms.openlocfilehash: 891e8a261e092de0ffcef3941dd48f01942a8030
+ms.sourcegitcommit: 4f3f502447ca8ea9b932b8b7402ce557f21ebe5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70743539"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71802591"
 ---
-# <a name="known-issuesmigration-limitations-with-online-migrations-to-azure-db-for-postgresql"></a>Известные проблемы и ограничения при сетевых миграциях в базу данных Azure для PostgreSQL
+# <a name="known-issuesmigration-limitations-with-online-migrations-from-postgresql-to-azure-db-for-postgresql-single-server"></a>Известные проблемы и ограничения миграции с миграцией через Интернет с PostgreSQL на базу данных Azure для PostgreSQL-Single Server
 
-В следующих разделах описываются известные проблемы и ограничения, связанные с сетевыми миграциями из PostgreSQL в базу данных Azure для PostgreSQL.
+Известные проблемы и ограничения, связанные с оперативными миграциями из PostgreSQL в базу данных Azure для PostgreSQL-Single Server, описаны в следующих разделах.
 
 ## <a name="online-migration-configuration"></a>Настройка сетевой миграции
 
-- На исходном сервере должен использоваться PostgreSQL версии 9.5.11, 9.6.7, 10.3 или более поздней. Дополнительные сведения см. в статье [Поддерживаемые версии базы данных PostgreSQL](../postgresql/concepts-supported-versions.md).
+- Исходный сервер PostgreSQL должен работать под управлением версии 9.5.11, 9.6.7 или 10,3 или более поздней. Дополнительные сведения см. в статье [Поддерживаемые версии базы данных PostgreSQL](../postgresql/concepts-supported-versions.md).
 - Поддерживаются только миграции на ту же версию. Например, миграция PostgreSQL 9.5.11 в базу данных Azure для PostgreSQL 9.6.7 не поддерживается.
 
     > [!NOTE]
@@ -32,7 +32,7 @@ ms.locfileid: "70743539"
 
 - Чтобы включить логическую репликацию в **исходном файле PostgreSQL postgresql.conf**, задайте следующие параметры:
   - **wal_level** = logical
-  - **max_replication_slots** = [максимальное количество баз данных для миграции]. Если необходимо перенести 4 базы данных, укажите значение 4.
+  - **max_replication_slots** = [максимальное число баз данных для миграции]; Если вы хотите перенести четыре базы данных, установите значение 4.
   - **max_wal_senders** = [количество одновременно выполняющихся баз данных]; рекомендуемое значение — 10
 - Добавление IP-адреса агента DMS в исходный PostgreSQL pg_hba. conf
   1. Запишите IP-адрес DMS после того, как завершите подготовку экземпляра DMS.
@@ -42,7 +42,7 @@ ms.locfileid: "70743539"
 
 - У пользователя должны быть разрешения суперпользователя на сервере, на котором размещается база данных-источник.
 - За исключением того, что в схеме базы данных-источника не должно быть типа данных ENUM, схемы база данных-источник и целевой базы данных должны совпадать.
-- Схема целевой базы данных Azure для PostgreSQL не должна содержать внешних ключей. Чтобы удалить внешние ключи, используйте следующий запрос:
+- Схема в целевой базе данных Azure для PostgreSQL-Single Server не должна содержать внешние ключи. Чтобы удалить внешние ключи, используйте следующий запрос:
 
     ```
                                 SELECT Queries.tablename
@@ -73,7 +73,7 @@ ms.locfileid: "70743539"
 
     Запустите сценарий удаления внешнего ключа (второй столбец) в результате запроса.
 
-- Схема целевой базы данных Azure для PostgreSQL не должна содержать триггеров. Чтобы отключить триггеры в целевой базе данных, используйте следующий запрос:
+- Схема в целевой базе данных Azure для PostgreSQL-Single Server не должна иметь триггеров. Чтобы отключить триггеры в целевой базе данных, используйте следующий запрос:
 
      ```
     SELECT Concat('DROP TRIGGER ', Trigger_Name, ';') FROM  information_schema.TRIGGERS WHERE TRIGGER_SCHEMA = 'your_schema';

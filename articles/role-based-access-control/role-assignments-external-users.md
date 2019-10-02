@@ -16,12 +16,12 @@ ms.date: 09/12/2019
 ms.author: rolyon
 ms.reviewer: skwan
 ms.custom: it-pro
-ms.openlocfilehash: 12f4b0276074b6732cf57443f51ef5d867f205a6
-ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
+ms.openlocfilehash: 5ed9088bcc5776fe1fb0d09e6ae771adabb1b879
+ms.sourcegitcommit: 4f3f502447ca8ea9b932b8b7402ce557f21ebe5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70967344"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71802687"
 ---
 # <a name="manage-access-to-azure-resources-for-external-guest-users-using-rbac"></a>Управление доступом к ресурсам Azure для внешних гостевых пользователей с помощью RBAC
 
@@ -206,3 +206,4 @@ ms.locfileid: "70967344"
 - [Add Azure Active Directory B2B collaboration users in the Azure portal](../active-directory/b2b/add-users-administrator.md) (Добавление пользователей службы совместной работы Azure Active Directory B2B на портале Azure)
 - [Основные свойства пользователя службы совместной работы Azure AD B2B](../active-directory/b2b/user-properties.md)
 - [Элементы электронной почты с приглашением службы совместной работы B2B — Azure Active Directory](../active-directory/b2b/invitation-email-elements.md)
+- [Добавление гостевого пользователя в качестве соадминистратора](classic-administrators.md#adding-a-guest-user-as-a-co-administrator)

@@ -17,12 +17,12 @@ ms.date: 09/25/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6760677a94855c259501103a54a96d687c87910b
-ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
+ms.openlocfilehash: 8e7bd33d74d9ecf6ebc35981df7255ecc19253c7
+ms.sourcegitcommit: 80da36d4df7991628fd5a3df4b3aa92d55cc5ade
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71290968"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71812596"
 ---
 # <a name="azure-ad-connect-accounts-and-permissions"></a>Azure AD Connect выполняет следующие функции: Учетные записи и разрешения
 
@@ -57,6 +57,9 @@ Azure AD Connect использует 3 учетные записи, чтобы 
 > Выделенные административные леса позволяют организациям размещать административные учетные записи, рабочие станции и группы в среде с более надежными элементами управления безопасностью, чем в рабочей среде.
 > Дополнительные сведения о выделенных административных лесах см. в статье [подход к проектированию административного леса ЕСАЕ](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material#esae-administrative-forest-design-approach) .
 >>>>>>> e683a61b0ed62ae739941410f658a127534e2481
+
+> [!NOTE]
+> Роль глобального администратора не требуется после начальной установки, и единственной необходимой учетной записью будет учетная запись с ролью **учетных записей синхронизации каталогов** . Это не некссарили означает, что необходимо просто удалить учетную запись с ролью глобального администратора. Лучше изменить роль на менее мощную роль, так как полностью Удаление учетной записи может привести к проблемам, если вам когда-либо придется повторно запустить мастер. Уменьшая привилегию роли, вы всегда можете повторно повысить уровень полномочий, если вам нужно снова использовать мастер Azure AD Connect. 
 
 ## <a name="installing-azure-ad-connect"></a>Идет установка Azure AD Connect
 Мастер установки Azure AD Connect предлагает два разных варианта.

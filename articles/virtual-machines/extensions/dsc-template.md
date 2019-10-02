@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: na
 ms.date: 10/05/2018
 ms.author: robreed
-ms.openlocfilehash: 458ba61adba294af99f2265e4907e874ed3a6956
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 59f8035aa69f21196a2134bf6bc1b12f3e5b34c4
+ms.sourcegitcommit: 80da36d4df7991628fd5a3df4b3aa92d55cc5ade
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70084578"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71815712"
 ---
 # <a name="desired-state-configuration-extension-with-azure-resource-manager-templates"></a>Расширение Desired State Configuration (DSC) с использованием шаблонов Azure Resource Manager
 
@@ -236,8 +236,10 @@ ms.locfileid: "70084578"
 
 ```json
 "settings": {
-    "RegistrationUrl" : "[parameters('registrationUrl1')]",
-    "NodeConfigurationName" : "nodeConfigurationNameValue1"
+    "configurationArguments": {
+        "RegistrationUrl" : "[parameters('registrationUrl1')]",
+        "NodeConfigurationName" : "nodeConfigurationNameValue1"
+    }
 },
 "protectedSettings": {
     "configurationArguments": {
@@ -253,7 +255,7 @@ ms.locfileid: "70084578"
 
 Указанный ниже пример основан на примере конфигурации в статье [Общие сведения об обработчике расширения Desired State Configuration в Azure](dsc-overview.md).
 В этом примере для развертывания расширения используются шаблоны Resource Manager, а не командлеты.
-Сохраните конфигурацию IisInstall. ps1, поместите ее в ZIP-файл (пример: `iisinstall.zip`), а затем отправьте файл в доступном URL-адресе.
+Сохраните конфигурацию IisInstall. ps1, поместите ее в ZIP-файл (например, `iisinstall.zip`), а затем отправьте файл в доступный URL-адрес.
 В этом примере используется хранилище BLOB-объектов Azure, но ZIP-файл можно скачать из любого произвольного расположения.
 
 В шаблоне Resource Manager следующий код указывает виртуальной машине скачать правильный файл и выполнить соответствующую функцию PowerShell.
@@ -356,7 +358,7 @@ ms.locfileid: "70084578"
 
 **Проблема**. Указанное значение не допускается.
 
-**Решение**. Измените недопустимое значение на допустимое значение.
+**Решение** Измените недопустимое значение на допустимое значение.
 Дополнительные сведения см. в таблице раздела [Сведения](#details).
 
 ### <a name="invalid-url"></a>Недопустимый URL-адрес
@@ -365,7 +367,7 @@ ms.locfileid: "70084578"
 
 **Проблема**. Указан недопустимый URL-адрес.
 
-**Решение**. Проверьте все указанные URL-адреса.
+**Решение** Проверьте все указанные URL-адреса.
 Убедитесь, что все URL-адреса разрешаются в допустимые расположения, к которым расширение может получить доступ на удаленном компьютере.
 
 ### <a name="invalid-registrationkey-type"></a>Недопустимый тип RegistrationKey
@@ -374,7 +376,7 @@ ms.locfileid: "70084578"
 
 **Проблема**. Значение *RegistrationKey* в ProtectedSettings. configurationArguments не может быть указано как тип, отличный от PSCredential.
 
-**Решение**. Измените запись protectedSettings. configurationArguments для RegistrationKey на тип PSCredential, используя следующий формат:
+**Решение** Измените запись protectedSettings. configurationArguments для RegistrationKey на тип PSCredential, используя следующий формат:
 
 ```json
 "configurationArguments": {
@@ -391,7 +393,7 @@ ms.locfileid: "70084578"
 
 **Проблема**. Свойство *ConfigurationArguments* не может разрешаться в объект **хэш-таблицы** .
 
-**Решение**. Сделайте свойство *ConfigurationArguments* **хэш-таблицей**.
+**Решение** Сделайте свойство *ConfigurationArguments* **хэш-таблицей**.
 Следуйте формату из приведенного выше примеров. Обращайте внимание на кавычки, запятые и скобки.
 
 ### <a name="duplicate-configurationarguments"></a>Повторяющееся свойство ConfigurationArguments
@@ -400,7 +402,7 @@ ms.locfileid: "70084578"
 
 **Проблема**. *ConfigurationArguments* в общедоступных параметрах и *ConfigurationArguments* в защищенных параметрах имеют свойства с одинаковыми именами.
 
-**Решение**. Удалите одно из повторяющихся свойств.
+**Решение** Удалите одно из повторяющихся свойств.
 
 ### <a name="missing-properties"></a>Отсутствующие свойства
 

@@ -8,18 +8,22 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: bbb5b90ffac4a89c14a4a6df51022bb61b10fbb0
-ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
+ms.openlocfilehash: e5cea36760746eaa63451c9e9955368c71ba4472
+ms.sourcegitcommit: 80da36d4df7991628fd5a3df4b3aa92d55cc5ade
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70845496"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71816125"
 ---
 # <a name="quickstart---configure-a-private-cloud-environment"></a>Краткое руководство. Настройка окружения частного облака
 
 В этой статье вы узнаете, как создать частное облако Клаудсимпле и настроить среду частного облака.
 
-## <a name="sign-in-to-azure"></a>Войдите в Azure
+## <a name="before-you-begin"></a>Перед началом работы
+
+Ознакомьтесь с [предварительными требованиями к сети](cloudsimple-network-checklist.md).
+
+## <a name="sign-in-to-azure"></a>Вход в Azure
 
 Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
 

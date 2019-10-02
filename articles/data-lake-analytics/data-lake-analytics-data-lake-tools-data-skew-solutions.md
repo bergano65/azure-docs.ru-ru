@@ -8,12 +8,12 @@ ms.reviewer: jasonwhowell
 ms.service: data-lake-analytics
 ms.topic: conceptual
 ms.date: 12/16/2016
-ms.openlocfilehash: 440a36d00334840688f66d0027152d7581b7158c
-ms.sourcegitcommit: 0486aba120c284157dfebbdaf6e23e038c8a5a15
+ms.openlocfilehash: 9ff7ba5f04a8c1862f8ef136f8f3f6900f00a431
+ms.sourcegitcommit: 4f3f502447ca8ea9b932b8b7402ce557f21ebe5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71309907"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71802551"
 ---
 # <a name="resolve-data-skew-problems-by-using-azure-data-lake-tools-for-visual-studio"></a>Решение проблем неравномерного распределения данных с помощью средств Azure Data Lake для Visual Studio
 
@@ -165,7 +165,7 @@ ms.locfileid: "71309907"
 
 Атрибуты режима средства объединения:
 
-- [SqlUserDefinedCombiner(Mode=CombinerMode.Full)]: Every output row potentially depends on all the input rows from left and right with the same key value.
+- SqlUserDefinedCombiner (Mode = CombinerMode. Full): Каждая строка выходных данных может зависеть от всех входных строк, находящихся слева и справа с тем же значением ключа.
 
 - SqlUserDefinedCombiner (Mode = CombinerMode. Left): Каждая строка выходных данных зависит от одной входной строки слева (и, возможно, всех строк из правого с тем же значением ключа).
 

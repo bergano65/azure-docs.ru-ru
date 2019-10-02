@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 09/16/2019
 ms.reviewer: sdash
 ms.author: mbullwin
-ms.openlocfilehash: 8e9cc93a74c299be6fb4898b4af143a43fc079f5
-ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
+ms.openlocfilehash: 3c7ba10525dedf213a416d9ce6b55c80539fedd7
+ms.sourcegitcommit: 80da36d4df7991628fd5a3df4b3aa92d55cc5ade
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71067043"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71812204"
 ---
 # <a name="monitor-the-availability-of-any-website"></a>Мониторинг доступности любого веб-сайта
 
@@ -31,7 +31,7 @@ ms.locfileid: "71067043"
 
 * [Тест проверки связи с URL-адресом](#create-a-url-ping-test)– простой тест, который вы можете создать на портале Azure.
 * [Многошаговый веб-тест](availability-multistep.md): Запись последовательности веб-запросов, которую можно воспроизводить для тестирования более сложных сценариев. Многошаговые веб-тесты создаются в Visual Studio Enterprise и передаются на портал для выполнения.
-* [Тесты доступности пользовательской трассировки](https://docs.microsoft.com/dotnet/api/microsoft.applicationinsights.telemetryclient.trackavailability?view=azure-dotnet): `TrackAvailability()` Метод можно использовать для создания собственных пользовательских тестов доступности.
+* [Тесты доступности пользовательской трассировки](https://docs.microsoft.com/dotnet/api/microsoft.applicationinsights.telemetryclient.trackavailability?view=azure-dotnet): Если вы решили создать пользовательское приложение для выполнения тестов доступности, то для отправки результатов в Application Insights можно использовать метод `TrackAvailability()`.
 
 **Для каждого Application Insights ресурса можно создать до 100 тестов доступности.**
 

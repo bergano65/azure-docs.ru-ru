@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: article
-ms.date: 06/11/2019
+ms.date: 09/26/2019
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: 6605aa268a7ee7fe75254df5dbe96e9dfbc71d79
-ms.sourcegitcommit: a6718e2b0251b50f1228b1e13a42bb65e7bf7ee2
+ms.openlocfilehash: 7e1ea234bde96ce84259841bbc592bf6373bc639
+ms.sourcegitcommit: 4f3f502447ca8ea9b932b8b7402ce557f21ebe5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71272416"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71802795"
 ---
 # <a name="use-bot-with-qna-maker-and-luis-to-distribute-your-knowledge-base"></a>Использование бота с QnA Maker и LUIS для распределения базы знаний
 По мере роста базы знаний QnA Maker становится трудно поддерживать ее как единый монолитный набор, поэтому базу знаний необходимо разделить на маленькие логические блоки.
@@ -37,13 +37,13 @@ ms.locfileid: "71272416"
 1. [Создайте приложение](https://docs.microsoft.com/azure/cognitive-services/luis/create-new-app).
 1. [Добавьте намерение](https://docs.microsoft.com/azure/cognitive-services/luis/add-intents) к каждой базе знаний QnA Maker. Примеры высказываний должны соответствовать вопросам в базе знаний QnA Maker.
 1. В своем приложении LUIS выполните [обучение приложения LUIS](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-train) и [публикацию приложения LUIS](https://docs.microsoft.com/azure/cognitive-services/luis/publishapp).
-1. Обратите внимание на идентификатор приложения LUIS, ключ конечной точки LUIS и регион размещения в разделе **Управление**. Эти значения потребуются позже. 
+1. В разделе **Управление** запишите идентификатор приложения Luis, ключ КОНЕЧНОЙ точки Luis и [имя пользовательского домена](../../cognitive-services-custom-subdomains.md). Эти значения потребуются позже. 
 
 ## <a name="create-qna-maker-knowledge-bases"></a>Создание баз знаний QnA Maker
 
 1. Войдите в [QnA Maker](https://qnamaker.ai).
 1. [Создайте](https://www.qnamaker.ai/Create) базу знаний для каждого намерения в приложении LUIS.
-1. Проверьте и опубликуйте базы знаний. Выполняя публикацию каждой из баз знаний, необходимо обратить внимание на ее идентификатор, размещение (поддомен, который находится перед _.azurewebsites.net/qnamaker_) и ключ конечной точки авторизации. Эти значения потребуются позже. 
+1. Проверьте и опубликуйте базы знаний. При публикации каждой базы знаний запишите идентификатор базы знаний, имя ресурса (пользовательский поддомен до _. azurewebsites.NET/qnamaker_) и ключ конечной точки авторизации. Эти значения потребуются позже. 
 
     В этой статье предполагается, что все базы знаний созданы в одной подписке Azure QnA Maker.
 
@@ -109,13 +109,13 @@ ms.locfileid: "71272416"
     [Serializable]
     public class QnAMakerService
     {
-        private string qnaServiceHostName;
+        private string qnaServiceResourceName;
         private string knowledgeBaseId;
         private string endpointKey;
 
-        public QnAMakerService(string hostName, string kbId, string endpointkey)
+        public QnAMakerService(string resourceName, string kbId, string endpointkey)
         {
-            qnaServiceHostName = hostName;
+            qnaServiceResourceName = resourceName;
             knowledgeBaseId = kbId;
             endpointKey = endpointkey;
 
@@ -136,7 +136,7 @@ ms.locfileid: "71272416"
         }
         public async Task<string> GetAnswer(string question)
         {
-            string uri = qnaServiceHostName + "/qnamaker/knowledgebases/" + knowledgeBaseId + "/generateAnswer";
+            string uri = qnaServiceResourceName + "/qnamaker/knowledgebases/" + knowledgeBaseId + "/generateAnswer";
             string questionJSON = "{\"question\": \"" + question.Replace("\"","'") +  "\"}";
 
             var response = await Post(uri, questionJSON);
@@ -169,7 +169,7 @@ ms.locfileid: "71272416"
         // QnA Maker global settings
         // assumes all KBs are created with same Azure service
         static string qnamaker_endpointKey = "<QnA Maker endpoint KEY>";
-        static string qnamaker_endpointDomain = "my-qnamaker-s0-s";
+        static string qnamaker_resourceName = "my-qnamaker-s0-s";
         
         // QnA Maker Human Resources Knowledge base
         static string HR_kbID = "<QnA Maker KNOWLEDGE BASE ID>";
@@ -178,8 +178,8 @@ ms.locfileid: "71272416"
         static string Finance_kbID = "<QnA Maker KNOWLEDGE BASE ID>";
 
         // Instantiate the knowledge bases
-        public QnAMakerService hrQnAService = new QnAMakerService("https://" + qnamaker_endpointDomain + ".azurewebsites.net", HR_kbID, qnamaker_endpointKey);
-        public QnAMakerService financeQnAService = new QnAMakerService("https://" + qnamaker_endpointDomain + ".azurewebsites.net", Finance_kbID, qnamaker_endpointKey);
+        public QnAMakerService hrQnAService = new QnAMakerService("https://" + qnamaker_resourceName + ".azurewebsites.net", HR_kbID, qnamaker_endpointKey);
+        public QnAMakerService financeQnAService = new QnAMakerService("https://" + qnamaker_resourceName + ".azurewebsites.net", Finance_kbID, qnamaker_endpointKey);
 
         public BasicLuisDialog() : base(new LuisService(new LuisModelAttribute(
             LUIS_appId,

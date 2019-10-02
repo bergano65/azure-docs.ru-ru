@@ -11,15 +11,15 @@ ms.service: app-service
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 02/22/2019
+ms.date: 10/01/2019
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: c4e97a96687e5fa1d934ab8c0317b52cb753f72c
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: d2823158192ae9fc9182f3f60f82d5bd9c050b09
+ms.sourcegitcommit: 80da36d4df7991628fd5a3df4b3aa92d55cc5ade
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70088173"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71811626"
 ---
 # <a name="configure-tls-mutual-authentication-for-azure-app-service"></a>Настройка взаимной проверки подлинности TLS для службы приложений Azure
 
@@ -31,19 +31,28 @@ ms.locfileid: "70088173"
 
 ## <a name="enable-client-certificates"></a>Включение сертификатов клиента
 
-Чтобы настроить приложение для запроса сертификатов клиента, необходимо задать `clientCertEnabled` для `true`приложения параметр. Чтобы задать параметр, выполните следующую команду в [Cloud Shell](https://shell.azure.com).
+Чтобы настроить приложение для запроса сертификатов клиента, необходимо задать для приложения параметр `clientCertEnabled`, чтобы `true`. Чтобы задать параметр, выполните следующую команду в [Cloud Shell](https://shell.azure.com).
 
 ```azurecli-interactive
 az webapp update --set clientCertEnabled=true --name <app_name> --resource-group <group_name>
 ```
 
+## <a name="exclude-paths-from-requiring-authentication"></a>Исключить пути из требования проверки подлинности
+
+При включении взаимной проверки подлинности для приложения всем путям в корневом каталоге приложения потребуется сертификат клиента для доступа. Чтобы определенные пути оставались открытыми для анонимного доступа, можно определить пути для исключения в рамках конфигурации приложения.
+
+Пути исключения можно настроить, выбрав **конфигурация** > **Общие параметры** и определив путь исключения. В этом примере все, что в разделе `/public` Path для приложения, не запрашивает сертификат клиента.
+
+![Пути исключений сертификатов][exclusion-paths]
+
+
 ## <a name="access-client-certificate"></a>Доступ к сертификату клиента
 
-В службе приложений завершение запроса SSL происходит на интерфейсной подсистеме балансировки нагрузки. При пересылке запроса в код приложения с [включенными сертификатами клиента](#enable-client-certificates)служба приложений вставляет `X-ARR-ClientCert` заголовок запроса с сертификатом клиента. Служба приложений не выполняет никаких действий с этим сертификатом клиента, кроме перенаправления его в приложение. Код приложения отвечает за проверку сертификата клиента.
+В службе приложений завершение запроса SSL происходит на интерфейсной подсистеме балансировки нагрузки. При пересылке запроса в код приложения с [включенными сертификатами клиента](#enable-client-certificates)служба приложений вставляет заголовок запроса `X-ARR-ClientCert` с сертификатом клиента. Служба приложений не выполняет никаких действий с этим сертификатом клиента, кроме перенаправления его в приложение. Код приложения отвечает за проверку сертификата клиента.
 
 Для ASP.NET сертификат клиента можно получить с помощью свойства **HttpRequest. clientcertificate** .
 
-Для других стеков приложений (Node. js, PHP и т. д.) сертификат клиента доступен в приложении через значение в `X-ARR-ClientCert` заголовке запроса в кодировке Base64.
+Для других стеков приложений (Node. js, PHP и т. д.) сертификат клиента доступен в приложении с помощью значения в кодировке Base64 в заголовке запроса `X-ARR-ClientCert`.
 
 ## <a name="aspnet-sample"></a>Пример ASP.NET
 
@@ -171,7 +180,7 @@ az webapp update --set clientCertEnabled=true --name <app_name> --resource-group
 
 ## <a name="nodejs-sample"></a>Пример Node. js
 
-Следующий пример кода Node. js получает `X-ARR-ClientCert` заголовок и использует подделку [node](https://github.com/digitalbazaar/forge) для преобразования строки PEM в кодировке Base64 в объект сертификата и его проверки:
+Следующий пример кода Node. js получает заголовок `X-ARR-ClientCert` и использует [подделку узла](https://github.com/digitalbazaar/forge) для преобразования строки PEM в кодировке Base64 в объект сертификата и его проверки:
 
 ```javascript
 import { NextFunction, Request, Response } from 'express';
@@ -213,3 +222,5 @@ export class AuthorizationHandler {
     }
 }
 ```
+
+[exclusion-paths]: ./media/app-service-web-configure-tls-mutual-auth/exclusion-paths.png

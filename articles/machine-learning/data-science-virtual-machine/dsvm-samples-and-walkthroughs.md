@@ -10,18 +10,22 @@ author: vijetajo
 ms.author: vijetaj
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: f3d683ffb91639db64000efa2d9791d13d84b79b
-ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
+ms.openlocfilehash: ad58adb85077a27bce65595738ffdbd92bace9bd
+ms.sourcegitcommit: 4f3f502447ca8ea9b932b8b7402ce557f21ebe5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70195675"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71802456"
 ---
 # <a name="samples-on-azure-data-science-virtual-machines"></a>Примеры на виртуальных машинах Azure для обработки и анализа данных
 
 Виртуальные машины Azure для обработки и анализа данных (Dsvm) включают в себя полный набор примеров кода. Эти примеры включают в себя Jupyterные записные книжки и сценарии на языках, таких как Python и R.
 > [!NOTE]
 > Дополнительные сведения о том, как запускать записные книжки Jupyter на виртуальных машинах для обработки и анализа данных, см. в разделе [Access Jupyter](#access-jupyter) .
+
+## <a name="prerequisites"></a>Предварительные требования
+
+Для выполнения этих примеров необходимо подготовить виртуальную машину для обработки и анализа данных. Ознакомьтесь с краткими руководствами для [Windows](./provision-vm.md) и [Ubuntu](./dsvm-ubuntu-intro.md).
 
 ## <a name="available-samples"></a>Доступные образцы
 | Категории примеров | Описание | Расположение |
@@ -42,7 +46,7 @@ ms.locfileid: "70195675"
 
 ## <a name="access-jupyter"></a>Доступ к Jupyter 
 
-Чтобы получить доступ к Jupyter, выберите значок **Jupyter** в меню Рабочий стол или приложение. Вы также можете получить доступ к Jupyter в выпуске Linux DSVM. Для удаленного доступа из веб-браузера перейдите `https://<Full Domain Name or IP Address of the DSVM>:8000` на Ubuntu.
+Чтобы получить доступ к Jupyter, выберите значок **Jupyter** в меню Рабочий стол или приложение. Вы также можете получить доступ к Jupyter в выпуске Linux DSVM. Для удаленного доступа из веб-браузера перейдите в `https://<Full Domain Name or IP Address of the DSVM>:8000` на Ubuntu.
 
 Чтобы добавить исключения и предоставить доступ к Jupyter через браузер, используйте следующие рекомендации.
 

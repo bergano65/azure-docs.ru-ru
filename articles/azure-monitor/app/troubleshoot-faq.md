@@ -10,14 +10,14 @@ ms.service: application-insights
 ms.workload: mobile
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 12/17/2018
+ms.date: 09/16/2019
 ms.author: mbullwin
-ms.openlocfilehash: 778a95db8ce462d06e2464db56b542f8113a4960
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: 94e994a3dc1cd9d5d5d0b7acb5aed4783d881915
+ms.sourcegitcommit: 4f3f502447ca8ea9b932b8b7402ce557f21ebe5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67875375"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71802293"
 ---
 # <a name="application-insights-frequently-asked-questions"></a>Application Insights. Часто задаваемые вопросы
 
@@ -59,7 +59,7 @@ ms.locfileid: "67875375"
 
 [Изучите тарифный план](https://azure.microsoft.com/pricing/details/application-insights/).
 
-## <a name="how-much-is-it-costing"></a>Сколько это стоит?
+## <a name="how-much-does-it-cost"></a>Сколько это стоит?
 
 * Откройте страницу **Usage and estimated costs** (Данные об использовании и предполагаемые расходы) для ресурса Application Insights. На ней приводится диаграмма недавнего использования. При желании можно задать ограничение на объем данных.
 * Откройте [колонку подписок и выставления счетов Azure](https://portal.azure.com/#blade/Microsoft_Azure_Billing/BillingBlade/Overview), чтобы просмотреть счета за все ресурсы.
@@ -139,6 +139,8 @@ ms.locfileid: "67875375"
 
 * Телеметрия браузера: мы собираем сведения об IP-адресе отправителя.
 * Телеметрия сервера: модуль Application Insights собирает сведения об IP-адресе клиента. Эти сведения не собираются, если задан заголовок `X-Forwarded-For`.
+* Дополнительные сведения о сборе IP-адресов и данных географического расположения в Application Insights см. в этой [статье](https://docs.microsoft.com/azure/azure-monitor/app/ip-collection).
+
 
 Вы можете настроить `ClientIpHeaderTelemetryInitializer` для получения IP-адреса из другого заголовка. Например, в некоторых системах он переносится прокси-сервером, балансировщиком нагрузки или сетью CDN в `X-Originating-IP`. [Узнайте больше](https://apmtips.com/blog/2016/07/05/client-ip-address/).
 
@@ -211,7 +213,7 @@ ms.locfileid: "67875375"
 ```
 
 
-## <a name="automation"></a>Служба автоматизации
+## <a name="automation"></a>Автоматизация
 
 ### <a name="configuring-application-insights"></a>Настройка Application Insights
 
