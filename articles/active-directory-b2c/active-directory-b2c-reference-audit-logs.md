@@ -11,12 +11,12 @@ ms.date: 09/14/2019
 ms.author: marsma
 ms.subservice: B2C
 ms.custom: fasttrack-edit
-ms.openlocfilehash: a8e35254a79ac43b35f45d1a20f3d1f6815f32be
-ms.sourcegitcommit: 6fe40d080bd1561286093b488609590ba355c261
+ms.openlocfilehash: bf9b6a3ad40d46b628bfcdb3fa3e32b2419360c9
+ms.sourcegitcommit: 4f3f502447ca8ea9b932b8b7402ce557f21ebe5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71702822"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71802112"
 ---
 # <a name="accessing-azure-ad-b2c-audit-logs"></a>Обращение к журналам аудита Azure AD B2C
 
@@ -112,10 +112,7 @@ Azure Active Directory B2C (Azure AD B2C) выдает журналы аудит
 
 ### <a name="create-client-secret"></a>Создать секрет клиента
 
-1. В разделе **доступ через API**выберите **ключи**.
-1. Введите описание ключа в поле **Описание ключа** . Например, *раздел журнала аудита*.
-1. Выберите **срок действия, а**затем нажмите кнопку **сохранить**.
-1. Запишите **значение**ключа. Это значение требуется для проверки подлинности в скриптах автоматизации, как в примере сценария PowerShell, показанного в следующем разделе.
+[!INCLUDE [active-directory-b2c-client-secret](../../includes/active-directory-b2c-client-secret.md)]
 
 Теперь у вас есть приложение с требуемым доступом API, ИДЕНТИФИКАТОРом приложения и ключом, которые можно использовать в скриптах автоматизации. Пример того, как можно получить события действий с помощью скрипта, см. в разделе сценарий PowerShell далее в этой статье.
 

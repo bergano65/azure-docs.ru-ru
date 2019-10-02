@@ -10,16 +10,16 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: wolfma
-ms.openlocfilehash: c5e12812a4305493be2cdc234946796b21dd26d8
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: ee505cc78c16d85640c7e13541272f1bafe30061
+ms.sourcegitcommit: 4f3f502447ca8ea9b932b8b7402ce557f21ebe5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68558932"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71800008"
 ---
 # <a name="about-the-speech-sdk"></a>Сведения о пакете SDK службы "Речь"
 
-Пакет средств разработки речевых программ (SDK) предоставляет приложениям доступ к функциям речевых служб, что упрощает разработку программ с поддержкой речи. В настоящее время пакеты SDK предоставляют доступ к речевым трансляциям, преобразованию **текста в речь**, **распознаванию** **речи**и каналу **голосовой речи прямой линии**. Общий обзор возможностей и поддерживаемых платформ можно найти на [странице записи](https://aka.ms/csspeech)документации.
+Пакет средств разработки речевых программ (SDK) предоставляет приложениям доступ к функциям речевых служб, что упрощает разработку программ с поддержкой речи. В настоящее время пакеты SDK предоставляют доступ к **речевым** **трансляциям, преобразованию** **текста в речь**, **распознаванию**речи и **каналу голосовой речи прямой линии**. Общий обзор возможностей и поддерживаемых платформ можно найти на [странице записи](https://aka.ms/csspeech)документации.
 
 [!INCLUDE [Speech SDK Platforms](../../../includes/cognitive-services-speech-service-speech-sdk-platforms.md)]
 
@@ -33,12 +33,15 @@ ms.locfileid: "68558932"
 
 * C# (UWP и .NET), C++: можно ссылаться и использовать последнюю версию пакета средств разработки NuGet для распознавания речи. Пакет содержит 32-разрядные и 64-разрядные клиентские библиотеки и управляемые библиотеки (.NET). Пакет SDK можно установить в Visual Studio с помощью NuGet. Выполните поиск по **Microsoft.CognitiveServices.Speech**.
 
-* Java: можно ссылаться и использовать последнюю версию пакета Speech SDK Maven, который поддерживает только 64-разрядные версии Windows. В проект Maven добавьте `https://csspeechstorage.blob.core.windows.net/maven/` в качестве дополнительного репозитория и ссылку на `com.microsoft.cognitiveservices.speech:client-sdk:1.6.0` в качестве зависимости.
+* Java: можно ссылаться и использовать последнюю версию пакета Speech SDK Maven, который поддерживает только 64-разрядные версии Windows. В проект Maven добавьте `https://csspeechstorage.blob.core.windows.net/maven/` в качестве дополнительного репозитория и ссылку на `com.microsoft.cognitiveservices.speech:client-sdk:1.7.0` в качестве зависимости.
 
 ### <a name="linux"></a>Linux
 
 > [!NOTE]
-> Сейчас мы поддерживаем только Ubuntu 16,04, Ubuntu 18,04 и Debian 9 на ПК (x86 или x64 для C++ разработки и x64 для .NET Core, Java и Python).
+> Сейчас в следующих целевых архитектурах поддерживаются только Ubuntu 16,04, Ubuntu 18,04 и Debian 9.
+> - x86, x64 и ARM64 для C++ разработки
+> - x64 и ARM64 для Java
+> - x64 для .NET Core и Python
 
 Убедитесь, что установлены необходимые библиотеки, выполнив следующие команды оболочки:
 
@@ -59,10 +62,10 @@ sudo apt-get install libssl1.0.2 libasound2
 * C#: можно ссылаться и использовать последнюю версию пакета средств разработки NuGet для распознавания речи. Чтобы ссылаться на пакет SDK, добавьте следующую ссылку на пакет в проект:
 
   ```xml
-  <PackageReference Include="Microsoft.CognitiveServices.Speech" Version="1.6.0" />
+  <PackageReference Include="Microsoft.CognitiveServices.Speech" Version="1.7.0" />
   ```
 
-* Java: можно ссылаться и использовать последнюю версию пакета SDK Maven для распознавания речи. В проект Maven добавьте `https://csspeechstorage.blob.core.windows.net/maven/` в качестве дополнительного репозитория и ссылку на `com.microsoft.cognitiveservices.speech:client-sdk:1.6.0` в качестве зависимости.
+* Java: можно ссылаться и использовать последнюю версию пакета SDK Maven для распознавания речи. В проект Maven добавьте `https://csspeechstorage.blob.core.windows.net/maven/` в качестве дополнительного репозитория и ссылку на `com.microsoft.cognitiveservices.speech:client-sdk:1.7.0` в качестве зависимости.
 
 * C++: скачайте пакет SDK в виде [пакета TAR](https://aka.ms/csspeech/linuxbinary) и распакуйте файлы в папку по своему усмотрению. В таблице ниже показана структура папок пакета SDK:
 
@@ -78,7 +81,7 @@ sudo apt-get install libssl1.0.2 libasound2
 
 ### <a name="android"></a>Android
 
-Пакет SDK Java для Android входит в состав [AAR (библиотека Android)](https://developer.android.com/studio/projects/android-library), которая содержит необходимые библиотеки и требуемые разрешения Android. Она размещена в репозитории Maven в `https://csspeechstorage.blob.core.windows.net/maven/` в виде пакета `com.microsoft.cognitiveservices.speech:client-sdk:1.6.0`.
+Пакет SDK Java для Android входит в состав [AAR (библиотека Android)](https://developer.android.com/studio/projects/android-library), которая содержит необходимые библиотеки и требуемые разрешения Android. Она размещена в репозитории Maven в `https://csspeechstorage.blob.core.windows.net/maven/` в виде пакета `com.microsoft.cognitiveservices.speech:client-sdk:1.7.0`.
 
 Чтобы использовать этот пакет из проекта Android Studio, внесите следующие изменения:
 
@@ -91,7 +94,7 @@ sudo apt-get install libssl1.0.2 libasound2
 * В файл build.gradle уровня модуля добавьте следующий текст в раздел `dependencies`:
 
   ```gradle
-  implementation 'com.microsoft.cognitiveservices.speech:client-sdk:1.6.0'
+  implementation 'com.microsoft.cognitiveservices.speech:client-sdk:1.7.0'
   ```
 
 Пакет SDK для Java также входит в [пакет SDK для устройств распознавания речи](speech-devices-sdk.md).

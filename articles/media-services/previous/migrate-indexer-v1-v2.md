@@ -13,16 +13,16 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/20/2019
 ms.author: juliako
-ms.openlocfilehash: 304091634c9e07f0a34029e83111a537b95bc061
-ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
+ms.openlocfilehash: 329c7191482787f25cfddfd8c4d70074df9a7c1f
+ms.sourcegitcommit: a19f4b35a0123256e76f2789cd5083921ac73daf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71338532"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71719967"
 ---
 # <a name="migrate-from-media-indexer-and-media-indexer-2-to-video-indexer"></a>Миграция из индексатора мультимедиа и индексатора мультимедиа 2 в индексатор видео
 
-Процессор мультимедиа [Azure Media indexer v1](media-services-index-content.md) будет снят с 1 октября по 2020. Процессоры мультимедиа [Azure Media indexer v2 Preview](media-services-process-content-with-indexer2.md) будут сняты с 1 января 2020.  [Индексатор видео служб мультимедиа Azure](https://docs.microsoft.com/azure/media-services/video-indexer/) заменяет эти устаревшие обработчики мультимедиа.
+[Azure Media Indexerный](media-services-index-content.md) обработчик мультимедиа будет снят с 1 октября по 2020. Процессоры мультимедиа [Azure Media indexer 2 Preview](media-services-process-content-with-indexer2.md) будут сняты с 1 января 2020.  [Индексатор видео служб мультимедиа Azure](https://docs.microsoft.com/azure/media-services/video-indexer/) заменяет эти устаревшие обработчики мультимедиа.
 
 Индексатор видео служб мультимедиа Azure создан на основе Аналитика мультимедиа Azure, поиска Azure Cognitive Services (например, API распознавания лиц, Microsoft Translator, API компьютерного зрения и службы Пользовательское распознавание речи). Индексатор видео позволяет извлекать аналитические сведения из видеоматериалов с помощью видео- и аудиомоделей. Чтобы узнать, в каких сценариях можно использовать индексатор видео, какие функции он предлагает и как приступить к работе, см. статью [видео и звуковые модели индексатора видео](../video-indexer/video-indexer-overview.md). 
 

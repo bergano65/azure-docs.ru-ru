@@ -2,18 +2,18 @@
 title: Предоставление пользователям доступа к представлениям Ambari в Azure HDInsight
 description: Как управлять разрешениями пользователей и групп Ambari для кластеров HDInsight с включенным ESP.
 author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 09/26/2017
-ms.author: hrasheed
-ms.openlocfilehash: 533bd750056f2e961ca9239e995fbfc62b2381d0
-ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
+ms.date: 09/30/2019
+ms.openlocfilehash: 8fada1d944a3d6bb6c0f85b3fd456581b2b0bdc6
+ms.sourcegitcommit: a19f4b35a0123256e76f2789cd5083921ac73daf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71076679"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71720013"
 ---
 # <a name="authorize-users-for-apache-ambari-views"></a>Предоставление пользователям доступа к представлениям Apache Ambari
 
@@ -31,6 +31,139 @@ Active Directory пользователи могут входить на узл�
 Чтобы открыть **страницу управления Ambari** в [пользовательском веб-интерфейсе Apache Ambari](hdinsight-hadoop-manage-ambari.md), перейдите по адресу **`https://<YOUR CLUSTER NAME>.azurehdinsight.net`** . Введите имя пользователя и пароль администратора кластера, определенные при создании кластера. Затем на панели мониторинга Ambari выберите **Manage Ambari** (Управление Ambari) в меню **admin** (Администрирование).
 
 ![Управление панелью Apache Ambari](./media/hdinsight-authorize-users-to-ambari/manage-apache-ambari.png)
+
+## <a name="add-users"></a>Добавить пользователей
+
+### <a name="add-users-through-the-portal"></a>Добавление пользователей на портале
+
+1. На странице Управление выберите **Пользователи**.
+
+    ![Пользователи страницы управления Apache Ambari](./media/hdinsight-authorize-users-to-ambari/apache-ambari-management-page-users.png)
+
+1. Выберите **+ создать локального пользователя**.
+
+1. Укажите **имя пользователя** и **пароль**. Нажмите кнопку **сохранить**.
+
+### <a name="add-users-through-powershell"></a>Добавление пользователей с помощью PowerShell
+
+Измените приведенные ниже переменные, заменив значения `CLUSTERNAME`, `NEWUSER` и `PASSWORD` соответствующими значениями.
+
+```powershell
+# Set-ExecutionPolicy Unrestricted
+
+# Begin user input; update values
+$clusterName="CLUSTERNAME"
+$user="NEWUSER"
+$userpass='PASSWORD'
+# End user input
+
+$adminCredentials = Get-Credential -UserName "admin" -Message "Enter admin password"
+
+$clusterName = $clusterName.ToLower()
+$createUserUrl="https://$($clusterName).azurehdinsight.net/api/v1/users"
+
+$createUserBody=@{
+    "Users/user_name" = "$user"
+    "Users/password" = "$userpass"
+    "Users/active" = "$true"
+    "Users/admin" = "$false"
+} | ConvertTo-Json
+
+# Create user
+$statusCode =
+Invoke-WebRequest `
+    -Uri $createUserUrl `
+    -Credential $adminCredentials `
+    -Method POST `
+    -Headers @{"X-Requested-By" = "ambari"} `
+    -Body $createUserBody | Select-Object -Expand StatusCode
+
+if ($statusCode -eq 201) {
+    Write-Output "User is created: $user"
+}
+else
+{
+    Write-Output 'User is not created'
+    Exit
+}
+
+$grantPrivilegeUrl="https://$($clusterName).azurehdinsight.net/api/v1/clusters/$($clusterName)/privileges"
+
+$grantPrivilegeBody=@{
+    "PrivilegeInfo" = @{
+        "permission_name" = "CLUSTER.USER"
+        "principal_name" = "$user"
+        "principal_type" = "USER"
+    }
+} | ConvertTo-Json
+
+# Grant privileges
+$statusCode =
+Invoke-WebRequest `
+    -Uri $grantPrivilegeUrl `
+    -Credential $adminCredentials `
+    -Method POST `
+    -Headers @{"X-Requested-By" = "ambari"} `
+    -Body $grantPrivilegeBody | Select-Object -Expand StatusCode
+
+if ($statusCode -eq 201) {
+    Write-Output 'Privilege is granted'
+}
+else
+{
+    Write-Output 'Privilege is not granted'
+    Exit
+}
+
+Write-Host "Pausing for 100 seconds"
+Start-Sleep -s 100
+
+$userCredentials = "$($user):$($userpass)"
+$encodedUserCredentials = [System.Convert]::ToBase64String([System.Text.Encoding]::ASCII.GetBytes($userCredentials))
+$zookeeperUrlHeaders = @{ Authorization = "Basic $encodedUserCredentials" }
+$getZookeeperurl="https://$($clusterName).azurehdinsight.net/api/v1/clusters/$($clusterName)/services/ZOOKEEPER/components/ZOOKEEPER_SERVER"
+
+# Perform query with new user
+$zookeeperHosts =
+Invoke-WebRequest `
+    -Uri $getZookeeperurl `
+    -Method Get `
+    -Headers $zookeeperUrlHeaders
+
+Write-Output $zookeeperHosts
+```
+
+### <a name="add-users-through-curl"></a>Добавление пользователей через фигуру
+
+Измените приведенные ниже переменные, заменив значения `CLUSTERNAME`, `ADMINPASSWORD`, `NEWUSER` и `USERPASSWORD` соответствующими значениями. Скрипт предназначен для выполнения с bash. Для командной строки Windows потребуются небольшие изменения.
+
+```bash
+export clusterName="CLUSTERNAME"
+export adminPassword='ADMINPASSWORD'
+export user="NEWUSER"
+export userPassword='USERPASSWORD'
+
+# create user
+curl -k -u admin:$adminPassword -H "X-Requested-By: ambari" -X POST \
+-d "{\"Users/user_name\":\"$user\",\"Users/password\":\"$userPassword\",\"Users/active\":\"true\",\"Users/admin\":\"false\"}" \
+https://$clusterName.azurehdinsight.net/api/v1/users
+
+echo "user created: $user"
+
+# grant permissions
+curl -k -u admin:$adminPassword -H "X-Requested-By: ambari" -X POST \
+-d '[{"PrivilegeInfo":{"permission_name":"CLUSTER.USER","principal_name":"'$user'","principal_type":"USER"}}]' \
+https://$clusterName.azurehdinsight.net/api/v1/clusters/$clusterName/privileges
+
+echo "Privilege is granted"
+
+echo "Pausing for 100 seconds"
+sleep 10s
+
+# perform query using new user account
+curl -k -u $user:$userPassword -H "X-Requested-By: ambari" \
+-X GET "https://$clusterName.azurehdinsight.net/api/v1/clusters/$clusterName/services/ZOOKEEPER/components/ZOOKEEPER_SERVER"
+```
 
 ## <a name="grant-permissions-to-apache-hive-views"></a>Предоставление разрешений для представлений Apache Hive
 
@@ -139,3 +272,4 @@ Active Directory пользователи могут входить на узл�
 * [Управление кластерами в HDInsight с ESP](./domain-joined/apache-domain-joined-manage.md)
 * [Использование представления Apache Hive с Apache Hadoop в HDInsight](hadoop/apache-hadoop-use-hive-ambari-view.md)
 * [Синхронизация пользователей Azure Active Directory с кластером HDInsight](hdinsight-sync-aad-users-to-cluster.md)
+* [Управление кластерами HDInsight с помощью REST API Apache Ambari](./hdinsight-hadoop-manage-ambari-rest-api.md)

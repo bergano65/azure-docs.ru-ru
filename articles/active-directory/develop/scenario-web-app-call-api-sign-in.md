@@ -1,6 +1,6 @@
 ---
-title: Веб-приложения, что вызовы веб-API-интерфейсы (вход в систему) — платформе Microsoft identity
-description: Узнайте, как создать веб-приложение, которое вызывает веб-API (вход)
+title: Веб-приложение, вызывающее веб-API (вход) — платформа Microsoft Identity
+description: Узнайте, как создать веб-приложение, вызывающее веб-API (вход)
 services: active-directory
 documentationcenter: dev-center-name
 author: jmprieur
@@ -11,50 +11,74 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 05/07/2019
+ms.date: 09/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 663cea72eb620217ad5fa8925d3bb00eedbf890c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3036f8cb72f2a07673743a77e8be37614002563f
+ms.sourcegitcommit: a19f4b35a0123256e76f2789cd5083921ac73daf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65074565"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71720200"
 ---
-# <a name="web-app-that-calls-web-apis---sign-in"></a>Веб-приложение, вызывающее веб-интерфейсы API — вход
+# <a name="web-app-that-calls-web-apis---sign-in"></a>Веб-приложение, вызывающее веб-API — вход
 
-Вы уже умеете Добавление функции входа в веб-приложения. Вы узнаете, что в [веб-приложения, что входит в пользователи - Добавление функции входа в](scenario-web-app-sign-user-sign-in.md).
+Вы уже знакомы с добавлением единого входа в веб-приложение. Вы узнаете, что в [веб-приложении, в котором входят пользователи, — добавление входа в систему](scenario-web-app-sign-user-sign-in.md).
 
-Что здесь отличается, что когда пользователь выполнил выход из этого приложения и из любого приложения, нужно удалить из кэша токенов, токены, связанные с пользователем.
+В этом случае, если пользователь выйдет из этого приложения или из любого приложения, вы хотите удалить его из кэша маркеров, связанных с этим пользователем маркеров.
 
-## <a name="intercepting-the-callback-after-sign-out---single-sign-out"></a>Перехват обратный вызов после выхода - единого выхода
+## <a name="intercepting-the-callback-after-sign-out---single-sign-out"></a>Перехват обратного вызова после выхода — единый выход
 
-Приложение может перехватывать после `logout` событий, например для очистки записи кэша маркера, связанный с учетной записью, выхода из системы. Мы увидим во второй части этого руководства (о веб-приложении, вызвав веб-API), что веб-приложения будут храниться в кэше маркеров доступа для пользователя. Перехват после `logout` обратный вызов позволяет веб-приложения удалить пользователя из кэша маркера. Этот механизм проиллюстрирован на `AddMsal()` метод [StartupHelper.cs L137 143](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/b87a1d859ff9f9a4a98eb7b701e6a1128d802ec5/Microsoft.Identity.Web/StartupHelpers.cs#L137-L143)
+Приложение может перехватить событие после `logout`, например, чтобы очистить запись кэша маркеров, связанную с учетной записью, для которой выполнен выход. Веб-приложение будет хранить маркеры доступа для пользователя в кэше. Перехват обратного вызова после `logout` позволяет веб-приложению удалить пользователя из кэша маркеров.
 
-**URL-адрес выхода** , зарегистрированное для вашего приложения вы можете реализовать единый выход. Платформе Microsoft identity `logout` вызовет конечную точку **URL-адрес выхода** зарегистрировано приложение. Этот вызов выполняется, если выход был инициировано из веб-приложения или из браузера или другой веб-приложения. Дополнительные сведения см. в разделе [единого выхода](https://docs.microsoft.com/azure/active-directory/develop/v2-protocols-oidc#single-sign-out) в основной документации.
+# <a name="aspnet-coretabaspnetcore"></a>[ASP.NET Core](#tab/aspnetcore)
+
+Этот механизм показан в методе `AddMsal()` метода [вебаппсервицеколлектионекстенсионс. CS # L151-L157](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/db7f74fd7e65bab9d21092ac1b98a00803e5ceb2/Microsoft.Identity.Web/WebAppServiceCollectionExtensions.cs#L151-L157)
+
+**URL-адрес выхода** , зарегистрированный для приложения, позволяет реализовать единый выход. Конечная точка платформы Microsoft Identity `logout` будет вызывать **URL-адрес выхода** , зарегистрированный в приложении. Этот вызов происходит, если выход был инициирован из веб-приложения или из другого веб-приложения или браузера. Дополнительные сведения см. в разделе [единый выход](v2-protocols-oidc.md#single-sign-out).
 
 ```CSharp
-public static IServiceCollection AddMsal(this IServiceCollection services, IEnumerable<string> initialScopes)
+public static class WebAppServiceCollectionExtensions
 {
-    services.AddTokenAcquisition();
+ public static IServiceCollection AddMsal(this IServiceCollection services, IConfiguration configuration, IEnumerable<string> initialScopes, string configSectionName = "AzureAd")
+ {
+  // Code omitted here
 
-    services.Configure<OpenIdConnectOptions>(AzureADDefaults.OpenIdScheme, options =>
-    {
-     ...
-        // Handling the sign-out: removing the account from MSAL.NET cache
-        options.Events.OnRedirectToIdentityProviderForSignOut = async context =>
-        {
-            // Remove the account from MSAL.NET token cache
-            var _tokenAcquisition = context.HttpContext.RequestServices.GetRequiredService<ITokenAcquisition>();
-            await _tokenAcquisition.RemoveAccount(context);
-        };
-    });
-    return services;
+  services.Configure<OpenIdConnectOptions>(AzureADDefaults.OpenIdScheme, options =>
+  {
+   // Code omitted here
+
+   // Handling the sign-out: removing the account from MSAL.NET cache
+   options.Events.OnRedirectToIdentityProviderForSignOut = async context =>
+   {
+    // Remove the account from MSAL.NET token cache
+    var tokenAcquisition = context.HttpContext.RequestServices.GetRequiredService<ITokenAcquisition>();
+    await tokenAcquisition.RemoveAccountAsync(context).ConfigureAwait(false);
+   };
+  });
+  return services;
+ }
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+Код для Ремовеаккаунтасинк доступен в [Microsoft. Identity. Web/токенаккуиситион. CS # L264-L288](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/db7f74fd7e65bab9d21092ac1b98a00803e5ceb2/Microsoft.Identity.Web/TokenAcquisition.cs#L264-L288).
+
+# <a name="aspnettabaspnet"></a>[ASP.NET](#tab/aspnet)
+
+Пример ASP.NET не удаляет учетные записи из кэша при глобальном выходе
+
+# <a name="javatabjava"></a>[Java](#tab/java)
+
+Пример Java не удаляет учетные записи из кэша при глобальном выходе
+
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+Пример Python не удаляет учетные записи из кэша при глобальном выходе
+
+---
+
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
-> [Получение токена для веб-приложения](scenario-web-app-call-api-acquire-token.md)
+> [Получение маркера для веб-приложения](scenario-web-app-call-api-acquire-token.md)

@@ -6,14 +6,14 @@ manager: alinast
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 09/17/2019
+ms.date: 09/30/2019
 ms.author: lyhughes
-ms.openlocfilehash: ad51fbe7d2f8e8f115adf03d6333c0747765ee43
-ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
+ms.openlocfilehash: 6d8d6f03847fcd22a6d78c445ae039c73e9badfa
+ms.sourcegitcommit: a19f4b35a0123256e76f2789cd5083921ac73daf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71338606"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71719167"
 ---
 # <a name="connect-to-and-authenticate-with-apis"></a>Подключение и проверка подлинности с помощью API
 
@@ -34,7 +34,10 @@ Azure Digital Twins использует Azure Active Directory (Azure AD) дл�
 * Из веб-приложения в веб-интерфейс API: Веб-приложению требуется получать ресурсы из веб-API, защиту которого обеспечивает Azure Active Directory.
 * Управляющая программа или серверное приложение в веб-API: Управляющее приложение или серверное приложение без веб-интерфейса должны получать ресурсы из веб-API, защищенного с помощью Azure AD.
 
-Библиотека аутентификации Windows Azure предлагает множество способов получения токенов Active Directory. Дополнительные сведения о библиотеке и примерах кода см. [на вики-сайте ADAL.NET](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/wiki).
+> [!IMPORTANT]
+> Azure Digital двойников поддерживает обе следующие библиотеки проверки подлинности:
+> * Более свежая [Библиотека проверки подлинности Майкрософт (MSAL)](https://docs.microsoft.com/azure/active-directory/develop/msal-overview)
+> * [Библиотека проверки Подлинности Azure Active Directory (ADAL)](https://docs.microsoft.com/azure/active-directory/develop/active-directory-authentication-libraries)
 
 ## <a name="call-digital-twins-from-a-middle-tier-web-api"></a>Вызов Digital Twins из веб-API среднего уровня
 

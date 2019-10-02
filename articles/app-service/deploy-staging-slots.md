@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 09/19/2019
 ms.author: cephalin
-ms.openlocfilehash: 35618b80dc4731f4d679bab9f035987af50730e8
-ms.sourcegitcommit: 2ed6e731ffc614f1691f1578ed26a67de46ed9c2
+ms.openlocfilehash: 436ab0a561349185de58c3783f334ea1dce9001d
+ms.sourcegitcommit: a19f4b35a0123256e76f2789cd5083921ac73daf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71129711"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71720118"
 ---
 # <a name="set-up-staging-environments-in-azure-app-service"></a>Настройка промежуточных сред в службе приложений Azure
 <a name="Overview"></a>
@@ -140,9 +140,6 @@ ms.locfileid: "71129711"
 
 ### <a name="swap-with-preview-multi-phase-swap"></a>Переключение с предварительным просмотром (многофазное переключение)
 
-> [!NOTE]
-> Переключение с предварительным просмотром не поддерживается для веб-приложений в ОС Linux.
-
 Перед переключением в рабочее место в качестве целевого слота убедитесь, что приложение выполняется с переименованными параметрами. Исходный слот также загревается до завершения переключения, что желательно для критически важных приложений.
 
 При выполнении переключения с предварительным просмотром служба приложений выполняет ту же [операцию переключения](#AboutConfiguration) , но приостанавливается после первого шага. Затем можно проверить результат в промежуточном слоте перед завершением переключения. 
@@ -204,7 +201,8 @@ ms.locfileid: "71129711"
 <a name="Warm-up"></a>
 
 ## <a name="specify-custom-warm-up"></a>Укажите настраиваемый прогрев
-При использовании [автоматического переключения](#Auto-Swap)некоторые приложения могут потребовать особых действий по прогреву перед переключением. Элемент `applicationInitialization` Configuration в файле Web. config позволяет задавать пользовательские действия инициализации. [Операция переключения](#AboutConfiguration) ожидает завершения этого пользовательского прогрева перед переключением целевого слота. Ниже приведен пример фрагмента Web. config.
+
+Перед переключением некоторые приложения могут потребовать дополнительных действий по прогреву. Элемент `applicationInitialization` Configuration в файле Web. config позволяет задавать пользовательские действия инициализации. [Операция переключения](#AboutConfiguration) ожидает завершения этого пользовательского прогрева перед переключением целевого слота. Ниже приведен пример фрагмента Web. config.
 
     <system.webServer>
         <applicationInitialization>
@@ -334,7 +332,61 @@ Get-AzLog -ResourceGroup [resource group name] -StartTime 2018-03-07 -Caller Slo
 Remove-AzResource -ResourceGroupName [resource group name] -ResourceType Microsoft.Web/sites/slots –Name [app name]/[slot name] -ApiVersion 2015-07-01
 ```
 
----
+## <a name="automate-with-arm-templates"></a>Автоматизация с помощью шаблонов ARM
+
+[Шаблоны ARM](https://docs.microsoft.com/en-us/azure/azure-resource-manager/template-deployment-overview) — это декларативные файлы JSON, используемые для автоматизации развертывания и настройки ресурсов Azure. Чтобы поменять местами слоты с помощью шаблонов ARM, необходимо задать два свойства в ресурсах *Microsoft. Web/Sites/слоты* и *Microsoft. Web/Sites* :
+
+- `buildVersion` — это строковое свойство, представляющее текущую версию приложения, развернутого в слоте. Например: "v1", "1.0.0.1" или "2019-09-20T11:53:25.2887393-07:00".
+- `targetBuildVersion`: это строковое свойство, которое указывает, какой `buildVersion` должен иметь слот. Если Таржетбуилдверсион не равно текущему `buildVersion`, это приведет к активации операции переключения путем поиска слота с указанным `buildVersion`.
+
+### <a name="example-arm-template"></a>Пример шаблона ARM
+
+Следующий шаблон ARM обновит `buildVersion` промежуточного слота и установит `targetBuildVersion` в рабочем слоте. Это позволит поменять местами два слота. В шаблоне предполагается, что у вас уже есть webapp, созданный с помощью слота с именем "промежуточное хранение".
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "my_site_name": {
+            "defaultValue": "SwapAPIDemo",
+            "type": "String"
+        },
+        "sites_buildVersion": {
+            "defaultValue": "v1",
+            "type": "String"
+        }
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Web/sites/slots",
+            "apiVersion": "2018-02-01",
+            "name": "[concat(parameters('my_site_name'), '/staging')]",
+            "location": "East US",
+            "kind": "app",
+            "properties": {
+                "buildVersion": "[parameters('sites_buildVersion')]"
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites",
+            "apiVersion": "2018-02-01",
+            "name": "[parameters('my_site_name')]",
+            "location": "East US",
+            "kind": "app",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites/slots', parameters('my_site_name'), 'staging')]"
+            ],
+            "properties": {
+                "targetBuildVersion": "[parameters('sites_buildVersion')]"
+            }
+        }        
+    ]
+}
+```
+
+Этот шаблон ARM — идемпотентными, то есть он может быть выполнен повторно и выдавать то же состояние слотов. После первого выполнения `targetBuildVersion` будет соответствовать текущему `buildVersion`, поэтому переключение не будет запущено.
+
 <!-- ======== Azure CLI =========== -->
 
 <a name="CLI"></a>

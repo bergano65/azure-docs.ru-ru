@@ -11,16 +11,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 09/09/2019
+ms.date: 09/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3aa144c76fb0a8e479658efdb5d43361fbbc085c
-ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
+ms.openlocfilehash: 8fd66dcd6e3845aad79ebffb3cad656d0a14c1a6
+ms.sourcegitcommit: a19f4b35a0123256e76f2789cd5083921ac73daf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70860624"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71720216"
 ---
 # <a name="web-app-that-calls-web-apis---acquire-a-token-for-the-app"></a>Веб-приложение, вызывающее веб-API — получение маркера для приложения
 
@@ -29,7 +29,7 @@ ms.locfileid: "70860624"
 - Получение маркера для веб-API с помощью кэша маркеров. Чтобы получить этот маркер, вызовите `AcquireTokenSilent`.
 - Вызов защищенного API с помощью маркера доступа.
 
-## <a name="aspnet-core"></a>ASP.NET Core
+# <a name="aspnet-coretabaspnetcore"></a>[ASP.NET Core](#tab/aspnetcore)
 
 Методы контроллера защищены `[Authorize]` атрибутом, который заставляет пользователей проходить проверку подлинности для использования веб-приложения. Ниже приведен код, который вызывает Microsoft Graph.
 
@@ -37,35 +37,34 @@ ms.locfileid: "70860624"
 [Authorize]
 public class HomeController : Controller
 {
- ...
+ readonly ITokenAcquisition tokenAcquisition;
+
+ public HomeController(ITokenAcquisition tokenAcquisition)
+ {
+  this.tokenAcquisition = tokenAcquisition;
+ }
+
+ // Code for the controller actions(see code below)
+
 }
 ```
+
+Служба `ITokenAcquisition` внедряется ASP.NET посредством внедрения зависимостей.
+
 
 Ниже приведен упрощенный код действия HomeController, который получает маркер для вызова Microsoft Graph.
 
 ```CSharp
 public async Task<IActionResult> Profile()
 {
- var application = BuildConfidentialClientApplication(HttpContext, HttpContext.User);
- string accountIdentifier = claimsPrincipal.GetMsalAccountId();
- string loginHint = claimsPrincipal.GetLoginHint();
+ // Acquire the access token
+ string[] scopes = new string[]{"user.read"};
+ string accessToken = await tokenAcquisition.GetAccessTokenOnBehalfOfUserAsync(scopes);
 
- // Get the account
- IAccount account = await application.GetAccountAsync(accountIdentifier);
-
- // Special case for guest users as the Guest iod / tenant id are not surfaced.
- if (account == null)
- {
-  var accounts = await application.GetAccountsAsync();
-  account = accounts.FirstOrDefault(a => a.Username == loginHint);
- }
-
- AuthenticationResult result;
- result = await application.AcquireTokenSilent(new []{"user.read"}, account)
-                            .ExecuteAsync();
- var accessToken = result.AccessToken;
- ...
- // use the access token to call a web API
+// use the access token to call a protected web API
+HttpClient client = new HttpClient();
+client.DefaultRequestHeaders.Add("Authorization", result.CreateAuthorizationHeader());
+string json = await client.GetStringAsync(url);
 }
 ```
 
@@ -73,19 +72,82 @@ public async Task<IActionResult> Profile()
 
 Существует множество дополнительных сложностей, таких как:
 
-- Реализация кэша маркеров для веб-приложения (учебник представляет несколько реализаций)
-- Удаление учетной записи из кэша при выходе пользователя
-- Вызов нескольких API, включая последовательное согласие
+- Вызов нескольких API,
+- Обработка добавочного согласия и условного доступа.
 
-## <a name="aspnet"></a>ASP.NET
+Эти дополнительные действия обрабатываются в главе 3 руководства [3-webapp-Multi-API](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/3-WebApp-multi-APIs) .
+
+# <a name="aspnettabaspnet"></a>[ASP.NET](#tab/aspnet)
 
 Они похожи в ASP.NET:
 
-- Действие контроллера, защищенное атрибутом [авторизовать], извлекает идентификатор клиента и идентификатор `ClaimsPrincipal` пользователя для члена контроллера. (ASP.NET использует `HttpContext.User`.)
+- Действие контроллера, защищенное атрибутом [авторизовать], извлекает идентификатор клиента и идентификатор пользователя `ClaimsPrincipal` элемента контроллера. (ASP.NET использует `HttpContext.User`.)
 - После этого он создает MSAL.NET `IConfidentialClientApplication`.
 - Наконец, он вызывает `AcquireTokenSilent` метод конфиденциального клиентского приложения.
 
 Код похож на код, показанный для ASP.NET Core.
+
+# <a name="javatabjava"></a>[Java](#tab/java)
+
+В примере Java код, вызывающий API, находится в методе Жетусерсфромграф [ауспажеконтроллер. Java # L62](https://github.com/Azure-Samples/ms-identity-java-webapp/blob/d55ee4ac0ce2c43378f2c99fd6e6856d41bdf144/src/main/java/com/microsoft/azure/msalwebsample/AuthPageController.java#L62).
+
+Он пытается вызвать `getAuthResultBySilentFlow`. Если пользователь должен согласиться с дополнительными областями, код обрабатывает `MsalInteractionRequiredException` для вызова пользователю.
+
+```java
+@RequestMapping("/msal4jsample/graph/users")
+    public ModelAndView getUsersFromGraph(HttpServletRequest httpRequest, HttpServletResponse response)
+            throws Throwable {
+
+        IAuthenticationResult result;
+        ModelAndView mav;
+        try {
+            result = authHelper.getAuthResultBySilentFlow(httpRequest, response);
+        } catch (ExecutionException e) {
+            if (e.getCause() instanceof MsalInteractionRequiredException) {
+
+                // If silent call returns MsalInteractionRequired, then redirect to Authorization endpoint
+                // so user can consent to new scopes
+                String state = UUID.randomUUID().toString();
+                String nonce = UUID.randomUUID().toString();
+
+                SessionManagementHelper.storeStateAndNonceInSession(httpRequest.getSession(), state, nonce);
+
+                String authorizationCodeUrl = authHelper.getAuthorizationCodeUrl(
+                        httpRequest.getParameter("claims"),
+                        "User.ReadBasic.all",
+                        authHelper.getRedirectUriGraphUsers(),
+                        state,
+                        nonce);
+
+                return new ModelAndView("redirect:" + authorizationCodeUrl);
+            } else {
+
+                mav = new ModelAndView("error");
+                mav.addObject("error", e);
+                return mav;
+            }
+        }
+    // Code omitted here.
+```
+
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+В примере Python код, вызывающий Microsoft Graph, находится в [app. Корректировка l53-L62](https://github.com/Azure-Samples/ms-identity-python-webapp/blob/48637475ed7d7733795ebeac55c5d58663714c60/app.py#L53-L62).
+
+Он пытается получить маркер из кэша маркеров, а затем вызывает API EB после установки заголовка авторизации. Если это не так, он повторно подписывает пользователя.
+
+```python
+@app.route("/graphcall")
+def graphcall():
+    token = _get_token_from_cache(app_config.SCOPE)
+    if not token:
+        return redirect(url_for("login"))
+    graph_data = requests.get(  # Use token to call downstream service
+        app_config.ENDPOINT,
+        headers={'Authorization': 'Bearer ' + token['access_token']},
+        ).json()
+    return render_template('display.html', result=graph_data)
+```
 
 ## <a name="next-steps"></a>Следующие шаги
 

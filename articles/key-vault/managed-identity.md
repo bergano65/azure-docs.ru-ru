@@ -1,5 +1,5 @@
 ---
-title: Использование управляемого удостоверения, назначенного системой приложением службы приложений, для доступа к Azure Key Vault
+title: Использовать управляемое системой удостоверение для доступа к Azure Key Vault
 description: Узнайте, как создать управляемое удостоверение для приложений службы приложений и как использовать его для доступа к Azure Key Vault
 services: key-vault
 author: msmbaldwin
@@ -9,18 +9,19 @@ ms.service: key-vault
 ms.topic: conceptual
 ms.date: 09/04/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 8ac6f9be80d31804089ae2589998079dc7df66b3
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.openlocfilehash: 6c7a9fdb5ed60023a82984fd5be5b424c634e679
+ms.sourcegitcommit: a19f4b35a0123256e76f2789cd5083921ac73daf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "71004310"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71720245"
 ---
-# <a name="use-an-app-service-managed-identity-to-access-azure-key-vault"></a>Используйте управляемое удостоверение службы приложений для доступа к Azure Key Vault 
+# <a name="provide-key-vault-authentication-with-a-managed-identity"></a>Предоставление Key Vault проверки подлинности с помощью управляемого удостоверения
 
-В этой статье показано, как создать управляемое удостоверение для приложений службы приложений и использовать его для доступа к Azure Key Vault. Сведения о приложениях, размещенных на виртуальных машинах Azure, см. [в статье Использование управляемого удостоверения, назначенного системой виртуальной машины Windows для доступа к Azure Key Vault](../active-directory/managed-identities-azure-resources/tutorial-windows-vm-access-nonaad.md). 
+Управляемое удостоверение из Azure Active Directory позволяет приложению легко получать доступ к другим ресурсам, защищенным с помощью Azure AD. Удостоверения управляются платформой Azure, и для них не нужно подготавливать или изменять секреты. Дополнительные сведения см. в статье [Что такое управляемые удостоверения для ресурсов Azure?](../active-directory/managed-identities-azure-resources/overview.md) 
 
-Управляемое удостоверение из Azure Active Directory позволяет приложению легко получать доступ к другим ресурсам, защищенным с помощью Azure AD. Удостоверения управляются платформой Azure, и для них не нужно подготавливать или изменять секреты. Дополнительные сведения об управляемых удостоверениях в Azure AD см. в статье [управляемые удостоверения для ресурсов Azure](../active-directory/managed-identities-azure-resources/overview.md). 
+В этой статье показано, как создать управляемое удостоверение для приложения службы приложений и использовать его для доступа к Azure Key Vault. Сведения о приложениях, размещенных на виртуальных машинах Azure, см. [в статье Использование управляемого удостоверения, назначенного системой виртуальной машины Windows для доступа к Azure Key Vault](../active-directory/managed-identities-azure-resources/tutorial-windows-vm-access-nonaad.md).
+
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -32,7 +33,8 @@ ms.locfileid: "71004310"
    - [Создание хранилища ключей с Azure CLI](quick-create-cli.md)
    - [Создание хранилища ключей с Azure PowerShell](quick-create-powershell.md)
    - [Создайте хранилище ключей с портал Azure](quick-create-portal.md).
-- Существующее приложение службы приложений, к которому предоставляется доступ к хранилищу ключей. Его можно быстро создать, выполнив действия, описанные в [документации по службе приложений](../app-service/overview.md) ./
+- Существующее приложение службы приложений, к которому предоставляется доступ к хранилищу ключей. Его можно быстро создать, выполнив действия, описанные в [документации по службе приложений](../app-service/overview.md).
+- [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) или [Azure PowerShell](/powershell/azure/overview). Кроме того, можно использовать [портал Azure](http://portal.azure.com).
 
 
 ## <a name="adding-a-system-assigned-identity"></a>Добавление назначаемого системой удостоверения 
@@ -101,7 +103,7 @@ az functionapp identity assign --name myApp --resource-group myResourceGroup
 
 ### <a name="azure-cli"></a>Azure CLI
 
-Чтобы предоставить приложению доступ к хранилищу ключей, используйте команду Azure CLI [AZ keyvault Set-Policy](/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-set-policy) , указав параметр **ObjectID** с указанным выше **principalId* .
+Чтобы предоставить приложению доступ к хранилищу ключей, используйте команду Azure CLI [AZ keyvault Set-Policy](/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-set-policy) , указав параметр **ObjectID** с указанным выше **principalId** .
 
 ```azurecli-interactive
 az keyvault set-policy --name myKeyVault --object-id <PrincipalId> --secret-permissions get list 
@@ -109,7 +111,9 @@ az keyvault set-policy --name myKeyVault --object-id <PrincipalId> --secret-perm
 
 ## <a name="next-steps"></a>Следующие шаги
 
-- [Обзор Azure Key Vault](key-vault-overview.md)
-- [Руководство разработчика Azure Key Vault](key-vault-developers-guide.md)
-- Сведения о [ключах, секретах и сертификатах](about-keys-secrets-and-certificates.md)
+- безопасность [Azure Key Vault: Управление удостоверениями и доступом @ no__t-0
+- [Предоставление Key Vault проверки подлинности с помощью политики управления доступом](key-vault-group-permissions-for-apps.md)
+- [Сведения о ключах, секретах и сертификатах](about-keys-secrets-and-certificates.md)
+- [Обеспечьте безопасность хранилища ключей](key-vault-secure-your-key-vault.md).
+- [Azure Key Vaultное руководством разработчика](key-vault-developers-guide.md)
 - [Рекомендации по Azure Key Vault](key-vault-best-practices.md)

@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 06/24/2019
 ms.author: erhopf
-ms.openlocfilehash: 3d2c3e2bf693f763db13d90961a31e871aa25235
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: d12b952d298b41c8d06f0fcac141a45749de9051
+ms.sourcegitcommit: 4f3f502447ca8ea9b932b8b7402ce557f21ebe5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68558895"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71799955"
 ---
 # <a name="what-is-text-to-speech"></a>Что такое преобразование текста в речь?
 
@@ -55,7 +55,7 @@ ms.locfileid: "68558895"
 При использовании службы преобразования текста в речь плата взимается за каждый символ, который преобразуется в речь, включая пунктуацию. Хотя сам документ SSML не оплачивается, необязательные элементы, используемые для настройки преобразования текста в речь, такие как фонемы и тон, считаются оплачиваемыми символами. Ниже приведен список оплачиваемых единиц.
 
 * Текст, передаваемый в службу преобразования текста в речь в тексте SSML запроса
-* Вся разметка в текстовом поле текста запроса в формате SSML, за исключением `<speak>` тегов и `<voice>`
+* Вся разметка в текстовом поле текста запроса в формате SSML, за исключением тегов `<speak>` и `<voice>`
 * Буквы, пунктуация, пробелы, табуляция, разметка и все пробельные символы
 * Каждая кодовая точка, определенная в Юникоде.
 
@@ -77,7 +77,7 @@ ms.locfileid: "68558895"
 | Создание тестов голосовых шрифтов и управление ими. | Нет | Да\* |
 | Управление подписками. | Нет | Да\* |
 
-\**Эти службы доступны с помощью конечной точки Cris.AI. См. [Справочник по Swagger](https://westus.cris.ai/swagger/ui/index). Эти API пользовательского речевого обучения и управления реализуют регулирование, ограничивающее запросы до 25 секунд, в то время как сам API синтеза речи реализует регулирование, позволяющее 200 запросов в секунду в качестве самого высокого. Когда происходит регулирование, вы будете уведомлены через заголовки сообщений.*
+\* *These Services доступны с помощью конечной точки cris.ai. См. [Справочник по Swagger](https://westus.cris.ai/swagger/ui/index). Эти API пользовательского речевого обучения и управления реализуют регулирование, ограничивающее запросы до 25 секунд, в то время как сам API синтеза речи реализует регулирование, позволяющее 200 запросов в секунду в качестве самого высокого. Когда происходит регулирование, вы будете уведомлены через заголовки сообщений.*
 
 ## <a name="get-started-with-text-to-speech"></a>Начало работы с текстом в речь
 
@@ -93,6 +93,13 @@ ms.locfileid: "68558895"
 | [C#, Unity](quickstart-text-to-speech-csharp-unity.md) | Windows, Android | [Обзор](https://aka.ms/csspeech/csharpref) |
 | [C++](quickstart-text-to-speech-cpp-windows.md) | Windows | [Обзор](https://aka.ms/csspeech/cppref) |
 | [C++](quickstart-text-to-speech-cpp-linux.md) | Linux | [Обзор](https://aka.ms/csspeech/cppref) |
+| [Java](quickstart-text-to-speech-java-jre.md) | Windows, Linux, macOS | [Обзор](https://aka.ms/csspeech/javaref) |
+| [Java](quickstart-text-to-speech-java-android.md) | Android | [Обзор](https://aka.ms/csspeech/javaref) |
+| [Objective-C](quickstart-text-to-speech-objectivec-macos.md) | macOS | [Обзор](https://aka.ms/csspeech/objectivecref) |
+| [Objective-C](quickstart-text-to-speech-objectivec-ios.md) | iOS | [Обзор](https://aka.ms/csspeech/objectivecref) |
+| [Swift](quickstart-text-to-speech-swift-macos.md) | macOS | [Обзор](https://aka.ms/csspeech/objectivecref) |
+| [Swift](quickstart-text-to-speech-swift-ios.md) | iOS | [Обзор](https://aka.ms/csspeech/objectivecref) |
+| [Python](quickstart-text-to-speech-python.md) | Window, Linux, macOS | [Обзор](https://aka.ms/csspeech/pythonref) |
 
 ### <a name="rest-quickstarts"></a>Краткие руководства по работе с ОСТАЛЬными
 

@@ -12,15 +12,15 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 06/10/2019
+ms.date: 10/01/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: ceefb565a82301d2ddedf70d12c0fc564b801229
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: d3c810746218e9761ae4c821dc22fef921e62a60
+ms.sourcegitcommit: a19f4b35a0123256e76f2789cd5083921ac73daf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70101203"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71719065"
 ---
 # <a name="sap-hana-infrastructure-configurations-and-operations-on-azure"></a>Конфигурации инфраструктуры SAP HANA и работа с ней в Azure
 Этот документ содержит рекомендации по настройке архитектуры и работе с системами SAP HANA, развернутыми на виртуальных машинах Azure. Здесь также приведены сведения о настройке горизонтального масштабирования SAP HANA для номера SKU виртуальных машин M128s. Он не предназначен для замены стандартной документации SAP, к которой относятся следующие ресурсы:
@@ -67,7 +67,7 @@ ms.locfileid: "70101203"
 Вы также можете развернуть полностью установленную платформу SAP HANA в службы виртуальных машин Azure через [облачную платформу SAP](https://cal.sap.com/). Сведения о процессе установки см. в статье [Развертывание SAP S/4HANA или BW/4HANA в Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/cal-s4h), а сведения об автоматизации — на сайте [GitHub](https://github.com/AzureCAT-GSI/SAP-HANA-ARM).
 
 >[!IMPORTANT]
-> Чтобы использовать виртуальные машины M208xx_v2, необходимо соблюдать осторожность при выборе образа SUSE Linux из коллекции образов виртуальных машин Azure. Дополнительные сведения см. в статье [размеры виртуальных машин](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-memory#mv2-series), оптимизированных для памяти. Red Hat еще не поддерживается для виртуальных машин семейства Mv2 на основе HANA. Текущее планирование — предоставление поддержки для версий Red Hat, работающих с HANA, в семействе виртуальных машин Mv2 в квартале/CY2019 
+> Чтобы использовать виртуальные машины M208xx_v2, необходимо соблюдать осторожность при выборе образа Linux из коллекции образов виртуальных машин Azure. Дополнительные сведения см. в статье [размеры виртуальных машин, оптимизированных для памяти](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-memory#mv2-series). 
 > 
 
 
@@ -139,10 +139,8 @@ ms.locfileid: "70101203"
 >В горизонтально масштабируемых развертываниях виртуальных машин Azure нет возможности использовать резервный узел.
 >
 
-Есть две причины, по которым невозможно настроить резервный узел:
+Хотя Azure имеет собственную службу NFS с [Azure NetApp Files](https://azure.microsoft.com/services/netapp/), служба NFS, хотя и поддерживаемая на уровне приложений SAP, еще не сертифицирована для SAP HANA. В результате этого общие папки NFS по-прежнему необходимо настроить с помощью функций сторонних разработчиков. 
 
-- Azure на данный момент не имеет собственной службы NFS. В результате общедоступные ресурсы NFS необходимо настроить с помощью сторонних функций.
-- Ни одна из сторонних конфигураций NFS не может выполнить условия задержки хранилища SAP HANA, когда их решения развернуты в Azure.
 
 В результате тома **/hana/data** и **/hana/log** не могут использоваться совместно. Из-за раздельного использования этих томов отдельных узлов в конфигурации горизонтального масштабирования не может использоваться резервный узел SAP HANA.
 
@@ -152,11 +150,15 @@ ms.locfileid: "70101203"
 
 Базовая конфигурация узла виртуальной машины для горизонтального масштабирования SAP HANA выглядит так:
 
-- Для **/hana/shared** вы можете создать высокодоступный кластер NFS под управлением SUSE Linux 12 SP3. В этом кластере размещаются общие папки NFS **/Hana/Shared** для конфигурации МАСШТАБИРОВАНИЯ и SAP NETWEAVER или BW/4HANA Central Services. Документация для создания такой конфигурации доступна в статье [Обеспечение высокого уровня доступности NFS на виртуальных машинах Azure в SUSE Linux Enterprise Server](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-nfs).
+- Для **/Hana/Shared**необходимо создать общую папку NFS высокой доступности. До сих пор существуют различные возможности для получения доступа к такой общей папке высокой доступности. Они описаны совместно с SAP NetWeaver:
+    - [Высокий уровень доступности NFS на виртуальных машинах Azure на SUSE Linux Enterprise Server](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-nfs)
+    - [GlusterFS на виртуальных машинах Azure с Red Hat Enterprise Linux для SAP NetWeaver](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-rhel-glusterfs)
+    - [Высокий уровень доступности SAP NetWeaver на виртуальных машинах Azure на SUSE Linux Enterprise Server с Azure NetApp Files для приложений SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-netapp-files)
+    - [Высокая доступность виртуальных машин Azure для SAP NetWeaver на Red Hat Enterprise Linux с Azure NetApp Files для приложений SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-rhel-netapp-files)
 - Все остальные тома диска **НЕ** используются совместно различными узлами и **НЕ** основаны на NFS. Конфигурации и этапы установки для горизонтально масштабируемых установок HANA с раздельными томами **/hana/data** и **/hana/log** приведены ниже в этом документе.
 
 >[!NOTE]
->Отображаемый на рисунке высокодоступный кластер NFS пока поддерживается только в SUSE Linux. Решение NFS высокого уровня доступности, основанное на Red Hat, будет рекомендовано позже.
+>Кластер NFS высокой доступности, как показано в графике, задокументирован в статье [высокий уровень доступности для NFS на виртуальных машинах Azure на SUSE Linux Enterprise Server](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-nfs). Другие возможности описаны в приведенном выше списке.
 
 Определение размеров томов для узлов такое же, как для масштабирования, за исключением **/hana/shared**. Для номера SKU виртуальной машины M128s предлагаемые размеры и типы выглядят так:
 

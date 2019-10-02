@@ -11,12 +11,12 @@ ms.author: jovanpop
 ms.reviewer: sstein, carlrab, bonova
 ms.date: 08/12/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: dc01f8556fb1c88899cae1a8767cb23d6b6041eb
-ms.sourcegitcommit: 2ed6e731ffc614f1691f1578ed26a67de46ed9c2
-ms.translationtype: MT
+ms.openlocfilehash: 7f47798ec3d0be8885853454ced8c1ea4c2a268c
+ms.sourcegitcommit: a19f4b35a0123256e76f2789cd5083921ac73daf
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71128869"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71720392"
 ---
 # <a name="managed-instance-t-sql-differences-limitations-and-known-issues"></a>Различия в T-SQL управляемого экземпляра, ограничения и известные проблемы
 
@@ -149,7 +149,7 @@ WITH PRIVATE KEY (<private_key_options>)
 - Установка имени для входа Azure AD, сопоставленного с группой Azure AD, в качестве владельца базы данных, не поддерживается.
 - Поддерживается олицетворение участников уровня сервера Azure AD с помощью других участников Azure AD, например предложения [EXECUTE AS](/sql/t-sql/statements/execute-as-transact-sql) . Ограничения EXECUTE AS:
 
-  - ВЫПОЛНЕНИЕ от имени пользователя не поддерживается для пользователей Azure AD, если оно отличается от имени для входа. Например, если пользователь создан с помощью синтаксиса CREATE USER [мяадусер] WITH LOGIN [john@contoso.com] и выполняется попытка олицетворения через Exec от имени user = _мяадусер_. При создании **пользователя** на сервере-участнике Azure AD (имя входа) укажите user_name в качестве **имени для входа**.
+  - ВЫПОЛНЕНИЕ от имени пользователя не поддерживается для пользователей Azure AD, если оно отличается от имени для входа. Например, когда пользователь создается с помощью синтаксиса CREATE [Мяадусер] из имени входа [john@contoso.com], а попытка олицетворения выполняется через EXEC от имени USER = _мяадусер_. При создании **пользователя** на сервере-участнике Azure AD (имя входа) укажите user_name в качестве **имени для входа**.
   - Только участники уровня SQL Server (имена входа), являющиеся частью `sysadmin` роли, могут выполнять следующие операции, предназначенные для субъектов Azure AD:
 
     - EXECUTE AS USER;
@@ -317,7 +317,7 @@ WITH PRIVATE KEY (<private_key_options>)
 - [ПОТОКА](https://docs.microsoft.com/sql/relational-databases/blob/filestream-sql-server)
 - [ПРОВЕРОЧ](https://docs.microsoft.com/sql/relational-databases/blob/filetables-sql-server)
 - [внешняя таблица](https://docs.microsoft.com/sql/t-sql/statements/create-external-table-transact-sql) Polybase
-- [MEMORY_OPTIMIZED](https://docs.microsoft.com/sql/relational-databases/in-memory-oltp/introduction-to-memory-optimized-tables) (не поддерживается в общего назначения уровне)
+- [MEMORY_OPTIMIZED](https://docs.microsoft.com/sql/relational-databases/in-memory-oltp/introduction-to-memory-optimized-tables) (не поддерживается на уровне общего назначения)
 
 Сведения о создании и изменении таблиц см. в разделе [CREATE TABLE](https://docs.microsoft.com/sql/t-sql/statements/create-table-transact-sql) и [ALTER TABLE](https://docs.microsoft.com/sql/t-sql/statements/alter-table-transact-sql).
 
@@ -348,7 +348,7 @@ WITH PRIVATE KEY (<private_key_options>)
 
 - Поддерживается только ограниченное число глобальных флагов трассировки. Уровень `Trace flags` сеанса не поддерживается. См. раздел [Флаги трассировки](https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql).
 - [DBCC TRACEOFF](https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-traceoff-transact-sql) и [DBCC TRACEON](https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-traceon-transact-sql) работают с ограниченным числом глобальных флагов трассировки.
-- [Инструкция DBCC CHECKDB](https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-checkdb-transact-sql) с параметрами REPAIR_ALLOW_DATA_LOSS, REPAIR_FAST и REPAIR_REBUILD не может быть использована, так как база данных `SINGLE_USER` не может быть задана в режиме. см. раздел [изменение различий базы данных](#alter-database-statement). Потенциальные повреждения базы данных обрабатываются группой поддержки Azure. Если вы увидите повреждение базы данных, которое следует исправить, обратитесь в службу поддержки Azure.
+- [Инструкция DBCC CHECKDB](https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-checkdb-transact-sql) с параметрами REPAIR_ALLOW_DATA_LOSS, REPAIR_FAST и REPAIR_REBUILD не может быть использована, так как база данных не может быть задана в режиме `SINGLE_USER` — см. раздел [изменение различий базы данных](#alter-database-statement). Потенциальные повреждения базы данных обрабатываются группой поддержки Azure. Если вы увидите повреждение базы данных, которое следует исправить, обратитесь в службу поддержки Azure.
 
 ### <a name="distributed-transactions"></a>Распределенные транзакции
 
@@ -408,7 +408,7 @@ WITH PRIVATE KEY (<private_key_options>)
 
 - Поддерживаются типы моментальных снимков и двунаправленной репликации. Репликация слиянием, одноранговая репликация и обновляемые подписки не поддерживаются.
 - [Репликация транзакций](sql-database-managed-instance-transactional-replication.md) доступна для общедоступной предварительной версии управляемого экземпляра с некоторыми ограничениями:
-    - Все типы участников репликации (издателя, распространителя, подписчик по запросу и издатель принудительной отправки) можно разместить на управляемых экземплярах, но издатель и распространитель нельзя разместить на разных экземплярах.
+    - Все типы участников репликации (издатель, распространитель, подписчик по запросу и подписчик push-уведомлений) можно разместить на управляемых экземплярах, но издатель и распространитель должны быть либо в облаке, либо в локальной среде.
     - Управляемые экземпляры могут взаимодействовать с последними версиями SQL Server. Поддерживаемые версии см. [здесь](sql-database-managed-instance-transactional-replication.md#supportability-matrix-for-instance-databases-and-on-premises-systems).
     - Репликация транзакций имеет некоторые [Дополнительные требования к сети](sql-database-managed-instance-transactional-replication.md#requirements).
 
@@ -515,7 +515,7 @@ WITH PRIVATE KEY (<private_key_options>)
 - `SERVERPROPERTY('EngineEdition')`Возвращает значение 8. Это свойство уникально идентифицирует управляемый экземпляр. См. статью [SERVERPROPERTY (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/functions/serverproperty-transact-sql).
 - `SERVERPROPERTY('InstanceName')`Возвращает значение NULL, поскольку понятие экземпляра в том виде, в котором оно существует, SQL Server не применяется к управляемому экземпляру. См. статью [SERVERPROPERTY (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/functions/serverproperty-transact-sql).
 - `@@SERVERNAME`Возвращает полное DNS-имя "Connected" (например, my-managed-instance.wcus17662feb9ce98.database.windows.net). См. статью [@SERVERNAME](https://docs.microsoft.com/sql/t-sql/functions/servername-transact-sql). 
-- `SYS.SERVERS`Возвращает полное имя "Connected" DNS, например `myinstance.domain.database.windows.net` для свойств "Name" и "data_source". См. статью [sys.servers (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-servers-transact-sql).
+- `SYS.SERVERS` возвращает полное имя "Connected" DNS, например `myinstance.domain.database.windows.net` для свойств "Name" и "data_source". См. статью [sys.servers (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-servers-transact-sql).
 - `@@SERVICENAME`Возвращает значение NULL, поскольку концепция службы в том, что она существует для SQL Server не применяется к управляемому экземпляру. См. статью [@SERVICENAME](https://docs.microsoft.com/sql/t-sql/functions/servicename-transact-sql).
 - `SUSER_ID` поддерживается. Он возвращает значение NULL, если имя входа Azure AD отсутствует в sys. syslogins. См. статью [Идентификатор SUSER_ID (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/functions/suser-id-transact-sql). 
 - `SUSER_SID` не поддерживается. Возвращаются неверные данные, что является временной известной проблемой. См. статью [SUSER_SID (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/functions/suser-sid-transact-sql). 
@@ -594,7 +594,7 @@ WITH PRIVATE KEY (<private_key_options>)
 -   Пользователи AAD с псевдонимами. В этом случае `15517`возвращается следующая ошибка.
 - Имена входа и пользователей AAD, основанные на приложениях AAD или субъектах-службах. В этом случае `15517` возвращаются следующие ошибки и `15406`.
 
-### <a name="query-parameter-not-supported-in-sp_send_db_mail"></a>@queryпараметр не поддерживается в sp_send_db_mail
+### <a name="query-parameter-not-supported-in-sp_send_db_mail"></a>параметр @query не поддерживается в sp_send_db_mail
 
 **Дата** Апрель 2019 г.
 

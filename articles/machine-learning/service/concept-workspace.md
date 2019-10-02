@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 08/06/2019
-ms.openlocfilehash: 677a52572658f80d9cde4de28dd02d6e957407d2
-ms.sourcegitcommit: 263a69b70949099457620037c988dc590d7c7854
+ms.openlocfilehash: de215502f1ecb55bc331f29057a4f7c3f30b0132
+ms.sourcegitcommit: a19f4b35a0123256e76f2789cd5083921ac73daf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71269213"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71720163"
 ---
 # <a name="what-is-an-azure-machine-learning-workspace"></a>Что такое Рабочая область Машинное обучение Azure?
 
@@ -66,9 +66,6 @@ ms.locfileid: "71269213"
 + Просмотр артефактов машинного обучения, таких как эксперименты, конвейеры, модели, развертывания.
 + Отслеживание и мониторинг моделей.
 
-
-
-
 ## <a name="workspace-management"></a>Управление рабочей областью
 
 Вы также можете выполнять следующие задачи по управлению рабочими областями:
@@ -80,7 +77,7 @@ ms.locfileid: "71269213"
 | Управление доступом к рабочей области    | **&check;**   | |  **&check;**    |
 | создали виртуальную машину записных книжек; | **&check;**   | |     |
 
-### <a name='create-workspace'></a>Создание рабочей области
+## <a name='create-workspace'></a>Создание рабочей области
 
 Существует несколько способов создания рабочей области.
 

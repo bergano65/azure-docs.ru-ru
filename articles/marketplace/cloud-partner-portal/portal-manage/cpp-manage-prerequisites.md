@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: conceptual
 ms.date: 04/01/2019
 ms.author: pabutler
-ms.openlocfilehash: 9c55688674fe16f64bfb27788a6e038059694a77
-ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
+ms.openlocfilehash: 09bf8479921c9bd55b98e835a19ea995fa37e20b
+ms.sourcegitcommit: a19f4b35a0123256e76f2789cd5083921ac73daf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71087461"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71720065"
 ---
 # <a name="prerequisites-for-managing-accounts-on-the-cloud-partner-portal"></a>Необходимые условия для управления учетными записями в Портал Cloud Partner 
 
@@ -28,8 +28,7 @@ ms.locfileid: "71087461"
 
 ## <a name="registration-steps"></a>Этапы регистрации
 
-В следующей таблице перечислены действия, необходимые для полной регистрации в качестве издателя Microsoft Cloud.  Полные инструкции см. в [разделе Станьте издателем](https://docs.microsoft.com/azure/marketplace/become-publisher
-)облачной Marketplace. 
+В следующей таблице перечислены действия, необходимые для полной регистрации в качестве издателя Microsoft Cloud.  Полные инструкции см. [в разделе Станьте издателем облачной Marketplace](https://docs.microsoft.com/azure/marketplace/become-publisher). 
 
 
 |                   Шаг                   |  Результирующая регистрация или ресурс                     |

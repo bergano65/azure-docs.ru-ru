@@ -14,18 +14,14 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/23/2019
 ms.author: rkarlin
-ms.openlocfilehash: 25ae54ea8dd75fae74d4578b33146483ade53e4c
-ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
+ms.openlocfilehash: e74dd54403ed599aa95e8fc8a94c2bd7a3ca41d8
+ms.sourcegitcommit: a19f4b35a0123256e76f2789cd5083921ac73daf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71240748"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71719112"
 ---
 # <a name="connect-your-external-solution-using-common-event-format"></a>Подключение внешнего решения с помощью общего формата событий
-
-> [!IMPORTANT]
-> Сейчас Azure Sentinel предоставляется в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 Вы можете подключить метку Azure к внешнему решению, которое позволяет сохранять файлы журнала в системном журнале. Если устройство позволяет сохранять журналы в формате общего события syslog (CEF), интеграция с Azure Sentinel позволяет легко выполнять анализ и запросы по данным.
 
@@ -141,7 +137,7 @@ ms.locfileid: "71240748"
 
 7. Чтобы проверить наличие ошибок или отсутствие поступающих журналов, найдите `tail /var/opt/microsoft/omsagent/<workspace id>/log/omsagent.log`. Если это говорит о том, что обнаружены ошибки несоответствия `/etc/opt/microsoft/omsagent/{0}/conf/omsagent.d/security_events.conf "https://aka.ms/syslog-config-file-linux"` формата журнала, перейдите к `security_events.conf`файлу и проверьте, соответствуют ли журналы формату регулярного выражения, который вы видите в этом файле.
 
-8. Убедитесь, что размер сообщения системного журнала по умолчанию ограничен 2048 байтами (2 КБ). Если журналы имеют слишком большую длину, обновите security_events. conf с помощью следующей команды:`message_length_limit 4096`
+8. Убедитесь, что размер сообщения системного журнала по умолчанию ограничен 2048 байтами (2 КБ). Если журналы имеют слишком большую длину, обновите security_events. conf с помощью следующей команды: `message_length_limit 4096`
 
 
 ## <a name="next-steps"></a>Следующие шаги

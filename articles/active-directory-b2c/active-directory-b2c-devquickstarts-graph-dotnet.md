@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 09/24/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 02765538ce8a351db539438837b6426c0896d2d4
-ms.sourcegitcommit: 6fe40d080bd1561286093b488609590ba355c261
+ms.openlocfilehash: 2585b47d049047cc191bfc284c4486361917f1ed
+ms.sourcegitcommit: 4f3f502447ca8ea9b932b8b7402ce557f21ebe5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71701895"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71802056"
 ---
 # <a name="azure-ad-b2c-use-the-azure-ad-graph-api"></a>Azure AD B2C. Использование API Graph Azure AD
 
@@ -49,19 +49,11 @@ ms.locfileid: "71701895"
 
 ### <a name="assign-api-access-permissions"></a>Назначение разрешений доступа API
 
-1. На странице Обзор **зарегистрированного приложения** выберите **Параметры**.
-1. В разделе **доступ через API**выберите **необходимые разрешения**.
-1. Выберите **Windows Azure Active Directory**.
-1. В разделе **разрешения приложения**выберите **чтение и запись данных каталога**.
-1. Щелкните **Сохранить**.
-1. Щелкните **Предоставить разрешения** и затем выберите **Да**. Для полного распространения разрешений может потребоваться несколько минут.
+[!INCLUDE [active-directory-b2c-permissions-directory](../../includes/active-directory-b2c-permissions-directory.md)]
 
 ### <a name="create-client-secret"></a>Создать секрет клиента
 
-1. В разделе **доступ через API**выберите **ключи**.
-1. Введите описание ключа в поле **Описание ключа** . Например, *ключ управления*.
-1. Выберите **срок действия и нажмите** кнопку **сохранить**.
-1. Запишите **значение**ключа. Это значение используется для конфигурации на более позднем этапе.
+[!INCLUDE [active-directory-b2c-client-secret](../../includes/active-directory-b2c-client-secret.md)]
 
 Теперь у вас есть приложение, имеющее разрешение на *Создание*, *Чтение*и *обновление* пользователей в клиенте Azure AD B2C. Перейдите к следующему разделу, чтобы добавить разрешения на *Удаление* пользователя и *Обновление пароля* .
 

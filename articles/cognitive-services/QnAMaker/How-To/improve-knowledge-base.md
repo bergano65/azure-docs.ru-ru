@@ -8,14 +8,14 @@ services: cognitive-services
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
-ms.date: 09/24/2019
+ms.date: 09/26/2019
 ms.author: diberry
-ms.openlocfilehash: ab4447c8c07f8e8315c0258cc3254e5272ab7582
-ms.sourcegitcommit: a6718e2b0251b50f1228b1e13a42bb65e7bf7ee2
+ms.openlocfilehash: e605f2ab0e79fa3d7d3ee3735f47776654566cb6
+ms.sourcegitcommit: 4f3f502447ca8ea9b932b8b7402ce557f21ebe5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71272441"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71802330"
 ---
 # <a name="use-active-learning-to-improve-your-knowledge-base"></a>Использование активного обучения для расширения базы знаний
 
@@ -189,7 +189,7 @@ Content-Type: application/json
 |Свойство HTTP-запроса|Название|Type|Цель|
 |--|--|--|--|
 |Параметр URL-маршрута|Идентификатор базы знаний|строка|Идентификатор GUID для базы знаний.|
-|Дочерний домен узла|Имя ресурса QnAMaker|строка|Имя узла для QnA Maker в подписке Azure. Это можно найти на странице параметры после публикации базы знаний. |
+|Пользовательский поддомен|Имя ресурса QnAMaker|строка|Имя ресурса используется в качестве пользовательского поддомена для QnA Maker. Это можно найти на странице параметры после публикации базы знаний. Он указан как `host`.|
 |Header|Content-Type|строка|Тип носителя текста, отправляемого в API. Значение по умолчанию:`application/json`|
 |Header|Authorization|строка|Ключ конечной точки (EndpointKey xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx).|
 |Текст запроса POST|Объект JSON|JSON|Отзыв по обучению|
@@ -298,14 +298,14 @@ public class FeedbackRecord
 /// <summary>
 /// Method to call REST-based QnAMaker Train API for Active Learning
 /// </summary>
-/// <param name="host">Endpoint host of the runtime</param>
+/// <param name="endpoint">Endpoint URI of the runtime</param>
 /// <param name="FeedbackRecords">Feedback records train API</param>
 /// <param name="kbId">Knowledgebase Id</param>
 /// <param name="key">Endpoint key</param>
 /// <param name="cancellationToken"> Cancellation token</param>
-public async static void CallTrain(string host, FeedbackRecords feedbackRecords, string kbId, string key, CancellationToken cancellationToken)
+public async static void CallTrain(string endpoint, FeedbackRecords feedbackRecords, string kbId, string key, CancellationToken cancellationToken)
 {
-    var uri = host + "/knowledgebases/" + kbId + "/train/";
+    var uri = endpoint + "/knowledgebases/" + kbId + "/train/";
 
     using (var client = new HttpClient())
     {

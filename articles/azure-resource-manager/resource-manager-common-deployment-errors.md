@@ -8,12 +8,12 @@ ms.service: azure-resource-manager
 ms.topic: troubleshooting
 ms.date: 08/30/2019
 ms.author: tomfitz
-ms.openlocfilehash: fc6fdde4daa2d671b9d93673c2a78c2d9d85963c
-ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
+ms.openlocfilehash: 0e03cd3747fe6770be7dddaf36d634547ed75b39
+ms.sourcegitcommit: a19f4b35a0123256e76f2789cd5083921ac73daf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70275739"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71718944"
 ---
 # <a name="troubleshoot-common-azure-deployment-errors-with-azure-resource-manager"></a>Устранение распространенных ошибок развертывания в Azure с помощью Azure Resource Manager | Microsoft Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "70275739"
 
 ## <a name="error-codes"></a>Коды ошибок
 
-| Код ошибки | Предотвращение | Дополнительные сведения |
+| Код ошибки | Предотвращение | Дополнительная информация |
 | ---------- | ---------- | ---------------- |
 | AccountNameInvalid | Следуйте ограничениям для имен учетных записей хранения. | [Устранение ошибок, связанных с именами учетных записей хранения](resource-manager-storage-account-name-errors.md) |
 | AccountPropertyCannotBeSet | Проверьте доступные свойства учетной записи хранения. | [Справочник по шаблонам Microsoft.Storage/storageAccounts](/azure/templates/microsoft.storage/storageaccounts) |
@@ -36,7 +36,7 @@ ms.locfileid: "70275739"
 | Конфликт | Запрашиваемая операция не разрешена в текущем состоянии ресурса. Например, изменение размера диска разрешено только при создании или освобождении виртуальной машины. | |
 | DeploymentActive | Дождитесь завершения параллельного развертывания в эту группу ресурсов. | |
 | DeploymentFailed | Ошибка DeploymentFailed является общей ошибкой, которая не содержит сведений, необходимых для ее устранения. Найдите в сведениях об ошибке ее код, с помощью которого можно получить дополнительные сведения. | [Поиск кода ошибки](#find-error-code) |
-| DeploymentQuotaExceeded | Если вы достигли предела в 800 развертываний на группу ресурсов, удалите из журнала те развертывания, которые больше не нужны. Вы можете удалить записи из журнала с помощью команды [az group deployment delete](/cli/azure/group/deployment#az-group-deployment-delete) в Azure CLI или с помощью командлета [Remove-AzResourceGroupDeployment](/powershell/module/az.resources/remove-azresourcegroupdeployment) в PowerShell. Удаление записи из журнала развертывания не влияет на развертывание ресурсов. | |
+| DeploymentQuotaExceeded | Если вы достигли предела в 800 развертываний на группу ресурсов, удалите из журнала те развертывания, которые больше не нужны. | [Устранять ошибку, если число развертываний превышает 800](deployment-quota-exceeded.md) |
 | DnsRecordInUse | Имя записи DNS должно быть уникальным. Введите другое имя. | |
 | ImageNotFound | Проверьте параметры образа виртуальной машины. |  |
 | InUseSubnetCannotBeDeleted | Эта ошибка может возникать при попытке обновить ресурс, и запрос обрабатывается путем удаления и создания ресурса. Укажите все неизменяемые значения. | [Обновление ресурса](/azure/architecture/building-blocks/extending-templates/update-resource) |
@@ -248,6 +248,6 @@ az group deployment operation list \
 
 ## <a name="next-steps"></a>Следующие шаги
 
-* Руководство по устранению неполадок см. в [разделе Учебник. Troubleshoot Resource Manager template deployments](./resource-manager-tutorial-troubleshoot.md) (Руководство. Устранение неполадок развертывания шаблонов Resource Manager)
+* Руководство по устранению неполадок см. в разделе [Tutorial: Troubleshoot Resource Manager template deployments](./resource-manager-tutorial-troubleshoot.md) (Руководство. Устранение неполадок развертывания шаблонов Resource Manager)
 * Сведения о действиях аудита см. в статье [Операции аудита с помощью Resource Manager](resource-group-audit.md).
 * Дополнительные сведения об определении ошибок во время развертывания см. в статье [Просмотр операций развертывания с помощью портала Azure](resource-manager-deployment-operations.md).

@@ -1,6 +1,6 @@
 ---
 title: Отправка виртуального жесткого диска в Azure с помощью Azure CLI
-description: Узнайте, как передать VHD на управляемый диск Azure с помощью Azure CLI.
+description: Узнайте, как передать VHD на управляемый диск Azure и скопировать управляемый диск между регионами с помощью Azure CLI.
 services: virtual-machines-linux,storage
 author: roygara
 ms.author: rogarana
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: virtual-machines-linux
 ms.tgt_pltfrm: linux
 ms.subservice: disks
-ms.openlocfilehash: 938f1696c95f8feb9aeebd28139870e3ce020613
-ms.sourcegitcommit: 8bae7afb0011a98e82cbd76c50bc9f08be9ebe06
+ms.openlocfilehash: d16e37849ce8ba043fdb1fddb13df2abe8732cda
+ms.sourcegitcommit: a19f4b35a0123256e76f2789cd5083921ac73daf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71695449"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71717175"
 ---
 # <a name="upload-a-vhd-to-azure-using-azure-cli"></a>Отправка виртуального жесткого диска в Azure с помощью Azure CLI
 
@@ -29,6 +29,8 @@ ms.locfileid: "71695449"
 - Скачайте последнюю [версию AzCopy V10](../../storage/common/storage-use-azcopy-v10.md#download-and-install-azcopy).
 - [Установка Azure CLI](/cli/azure/install-azure-cli).
 - VHD-файл, хранящийся локально
+- Если планируется передать виртуальный жесткий диск из in-PEM: Виртуальный жесткий диск, [подготовленный для Azure](../windows/prepare-for-upload-vhd-image.md)и сохраненный локально.
+- Или управляемый диск в Azure, если планируется выполнить действие копирования.
 
 ## <a name="create-an-empty-managed-disk"></a>Создание пустого управляемого диска
 
@@ -45,7 +47,7 @@ ms.locfileid: "71695449"
 
 Создайте пустой жесткий диск "Стандартный" для отправки, указав оба параметра **—-for-upload** и **--upload-size-bytes** в командлете [создания диска](/cli/azure/disk#az-disk-create) .
 
-```azurecli-interactive
+```bash
 az disk create -n mydiskname -g resourcegroupname -l westus2 --for-upload --upload-size-bytes 34359738880 --sku standard_lrs
 ```
 
@@ -55,7 +57,7 @@ az disk create -n mydiskname -g resourcegroupname -l westus2 --for-upload --uplo
 
 Чтобы создать SAS с возможностью записи для пустого управляемого диска, используйте следующую команду:
 
-```azurecli-interactive
+```bash
 az disk grant-access -n mydiskname -g resourcegroupname --access-level Write --duration-in-seconds 86400
 ```
 
@@ -75,7 +77,7 @@ az disk grant-access -n mydiskname -g resourcegroupname --access-level Write --d
 
 Эта передача имеет ту же пропускную способность, что и эквивалент [стандартного жесткого диска](disks-types.md#standard-hdd). Например, если размер равен S4, у вас будет пропускная способность до 60 MiB/с. Но если у вас есть размер, который соответствует S70, вы получите пропускную способность до 500 MiB/с.
 
-```
+```bash
 AzCopy.exe copy "c:\somewhere\mydisk.vhd" "sas-URI" --blob-type PageBlob
 ```
 
@@ -83,8 +85,41 @@ AzCopy.exe copy "c:\somewhere\mydisk.vhd" "sas-URI" --blob-type PageBlob
 
 После завершения передачи вам больше не нужно писать какие-либо данные на диск, отозвать SAS. Отзыв SAS изменит состояние управляемого диска и позволит подключить диск к виртуальной машине.
 
-```azurecli-interactive
+```bash
 az disk revoke-access -n mydiskname -g resourcegroupname
+```
+
+## <a name="copy-a-managed-disk"></a>Копирование управляемого диска
+
+Прямая загрузка также упрощает процесс копирования управляемого диска. Можно скопировать в один и тот же регион или между регионами (в другой регион).
+
+Следующий сценарий сделает это для вас, процесс аналогичен описанному ранее действиям с некоторыми отличиями, которые возникают после работы с существующим диском.
+
+> [!IMPORTANT]
+> При предоставлении размера диска в байтах управляемого диска из Azure необходимо добавить смещение 512. Это обусловлено тем, что при возврате диска в Azure нижний колонтитул опускается. Если этого не сделать, копирование завершится ошибкой. Следующий сценарий уже выполняет это.
+
+Замените `<sourceResourceGroupHere>`, `<sourceDiskNameHere>`, `<targetDiskNameHere>`, `<targetResourceGroupHere>` и `<yourTargetLocationHere>` (например, значение расположения было бы uswest2) на значения, а затем выполните следующий сценарий, чтобы скопировать управляемый диск.
+
+```bash
+sourceDiskName = <sourceDiskNameHere>
+sourceRG = <sourceResourceGroupHere>
+targetDiskName = <targetDiskNameHere>
+targetRG = <targetResourceGroupHere>
+targetLocale = <yourTargetLocationHere>
+
+sourceDiskSizeBytes= $(az disk show -g $sourceRG -n $sourceDiskName --query '[uniqueId]' -o tsv)
+
+az disk create -n $targetRG -n $targetDiskName -l $targetLocale --for-upload --upload-size-bytes $(($sourceDiskSizeBytes+512)) --sku standard_lrs
+
+targetSASURI = $(az disk grant-access -n $targetDiskName -g $targetRG  --access-level Write --duration-in-seconds 86400 -o tsv)
+
+sourceSASURI=$(az disk grant-access -n <sourceDiskNameHere> -g $sourceRG --duration-in-seconds 86400 --query [acessSas] -o tsv)
+
+.\azcopy copy $sourceSASURI $targetSASURI --blob-type PageBlob
+
+az disk revoke-access -n $sourceDiskName -g $sourceRG
+
+az disk revoke-access -n $targetDiskName -g $targetRG
 ```
 
 ## <a name="next-steps"></a>Следующие шаги

@@ -1,38 +1,41 @@
 ---
 title: Потоковая передача сжатого аудио-кодека с помощью речевого пакета SDK — служба речи
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как выполнять потоковую передачу сжатых аудио в службы речевого обучения Azure с помощью речевого пакета SDK. Доступно для C++, C#и Java для Linux.
+description: Узнайте, как выполнять потоковую передачу сжатых аудио в службы речевого обучения Azure с помощью речевого пакета SDK. Доступно для C++, C#и Java для Linux, Java в Android и цели-C в iOS.
 services: cognitive-services
 author: amitkumarshukla
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 07/05/2019
+ms.date: 09/20/2019
 ms.author: amishu
-ms.openlocfilehash: b29b42dea9522526d49c1bda017a522855946def
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 8f2896a6289ecaf4046d705da106636258cdadc5
+ms.sourcegitcommit: 4f3f502447ca8ea9b932b8b7402ce557f21ebe5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68559549"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71802244"
 ---
 # <a name="using-codec-compressed-audio-input-with-the-speech-sdk"></a>Использование сжатых звуковых данных кодеков с помощью пакета SDK для распознавания речи
 
 Сжатый аудио-API-интерфейс пакета речевого **ввода** предоставляет способ потоковой передачи сжатого звука в службу распознавания речи с помощью Пуллстреам или пушстреам.
 
 > [!IMPORTANT]
-> Потоковая передача сжатого звука поддерживается C++только C#для, и Java в Linux (Ubuntu 16,04, Ubuntu 18,04, Debian 9).
-> Требуется пакет SDK для распознавания речи версии 1.4.0 или выше.
+> В настоящее время поддерживается потоковая передача сжатых аудио-данных в C++, C#и Java в Linux (Ubuntu 16,04, Ubuntu 18,04, Debian 9). Она также поддерживается для [Java в Android](how-to-use-codec-compressed-audio-input-streams-android.md) и [цели-C на платформе iOS](how-to-use-codec-compressed-audio-input-streams-ios.md) .
+> Требуется пакет SDK для распознавания речи версии 1.7.0 или выше.
 
 Сведения о WAV/PCM см. в документации по магистрали.  За пределами WAV/PCM поддерживаются следующие сжатые форматы входных данных кодеков:
 
 - MP3
 - ОПУС/OGG
+- FLAC
+- АЛАВ в контейнере WAV
+- МУЛАВ в контейнере WAV
 
-## <a name="prerequisites-to-using-codec-compressed-audio-input"></a>Предварительные требования для использования сжатых звуковых входов кодеков
+## <a name="prerequisites"></a>Предварительные требования
 
-Установите эти дополнительные зависимости, чтобы использовать сжатый речевой ввод с помощью пакета SDK для для Linux:
+Обработка сжатого аудио-сигнала реализуется с помощью [гстреамер](https://gstreamer.freedesktop.org). Для причины лицензирования двоичные файлы Гстреамер не компилируются и не связываются с голосовыми пакетами SDK. Поэтому для использования сжатого звукового звука разработчику приложения необходимо установить следующие данные: 18,04, 16,04 и Debian 9.
 
 ```sh
 sudo apt install libgstreamer1.0-0 gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly
@@ -40,9 +43,9 @@ sudo apt install libgstreamer1.0-0 gstreamer1.0-plugins-base gstreamer1.0-plugin
 
 ## <a name="example-code-using-codec-compressed-audio-input"></a>Пример кода, использующий сжатые звуковые входные кодеки
 
-Чтобы выполнить потоковую передачу в сжатом аудио формате в службы речи `PullAudioInputStream` , `PushAudioInputStream`Создайте или. Затем создайте объект `AudioConfig` из экземпляра класса Stream, указав формат сжатия потока.
+Чтобы выполнить потоковую передачу в сжатом аудио формате в речевые службы, создайте `PullAudioInputStream` или `PushAudioInputStream`. Затем создайте `AudioConfig` из экземпляра класса Stream, указав формат сжатия потока.
 
-Предположим, что у вас есть класс входного потока с `myPushStream` именем и используется опус/OGG. Код может выглядеть следующим образом:
+Предположим, что у вас есть класс входного потока с именем `myPushStream` и опус/OGG. Код может выглядеть следующим образом:
 
 ```csharp
 using Microsoft.CognitiveServices.Speech;

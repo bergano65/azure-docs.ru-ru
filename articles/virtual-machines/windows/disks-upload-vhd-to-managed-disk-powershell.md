@@ -1,6 +1,6 @@
 ---
 title: Отправка виртуального жесткого диска в Azure с помощью Azure PowerShell
-description: Узнайте, как передать VHD на управляемый диск Azure с помощью Azure PowerShell.
+description: Узнайте, как передать VHD на управляемый диск Azure и скопировать управляемый диск между регионами с помощью Azure PowerShell.
 author: roygara
 ms.author: rogarana
 ms.date: 05/06/2019
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: virtual-machines-linux
 ms.tgt_pltfrm: linux
 ms.subservice: disks
-ms.openlocfilehash: 5b7c612d349c3f596487db4af025e5e599b6589c
-ms.sourcegitcommit: 8bae7afb0011a98e82cbd76c50bc9f08be9ebe06
+ms.openlocfilehash: de9975151270ccce8d4a7abd58210c6550d40464
+ms.sourcegitcommit: a19f4b35a0123256e76f2789cd5083921ac73daf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71694782"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71720341"
 ---
 # <a name="upload-a-vhd-to-azure-using-azure-powershell"></a>Отправка виртуального жесткого диска в Azure с помощью Azure PowerShell
 
@@ -27,7 +27,8 @@ ms.locfileid: "71694782"
 
 - Скачайте последнюю [версию AzCopy V10](../../storage/common/storage-use-azcopy-v10.md#download-and-install-azcopy).
 - [Установите модуль Azure PowerShell](/powershell/azure/install-Az-ps).
-- VHD-файл, хранящийся локально.
+- Если планируется передать виртуальный жесткий диск из in-PEM: Виртуальный жесткий диск, [подготовленный для Azure](prepare-for-upload-vhd-image.md)и сохраненный локально.
+- Или управляемый диск в Azure, если планируется выполнить действие копирования.
 
 ## <a name="create-an-empty-managed-disk"></a>Создание пустого управляемого диска
 
@@ -82,6 +83,45 @@ AzCopy.exe copy "c:\somewhere\mydisk.vhd" $diskSas --blob-type PageBlob
 
 ```powershell
 Revoke-AzDiskAccess -ResourceGroupName 'myResourceGroup' -DiskName 'myDiskName'
+```
+
+## <a name="copy-a-managed-disk"></a>Копирование управляемого диска
+
+Прямая загрузка также упрощает процесс копирования управляемого диска. Можно скопировать в один и тот же регион или между регионами (в другой регион).
+
+Следующий сценарий сделает это для вас, процесс аналогичен описанному ранее действиям с некоторыми отличиями, которые возникают после работы с существующим диском.
+
+> [!IMPORTANT]
+> При предоставлении размера диска в байтах управляемого диска из Azure необходимо добавить смещение 512. Это обусловлено тем, что при возврате диска в Azure нижний колонтитул опускается. Если этого не сделать, копирование завершится ошибкой. Следующий сценарий уже выполняет это.
+
+Замените `<sourceResourceGroupHere>`, `<sourceDiskNameHere>`, `<targetDiskNameHere>`, `<targetResourceGroupHere>`, `<yourOSTypeHere>` и `<yourTargetLocationHere>` (например, значение расположения uswest2) значениями, а затем выполните следующий сценарий, чтобы скопировать управляемый диск.
+
+```powershell
+
+$sourceRG = <sourceResourceGroupHere>
+$sourceDiskName = <sourceDiskNameHere>
+$targetDiskName = <targetDiskNameHere>
+$targetRG = <targetResourceGroupHere>
+$targetLocate = <yourTargetLocationHere>
+#Expected value for OS is either "Windows" or "Linux"
+$targetOS = <yourOSTypeHere>
+
+$sourceDisk = Get-AzDisk -ResourceGroupName $sourceRG -DiskName $sourceDiskName
+
+# Adding the sizeInBytes with the 512 offset, and the -Upload flag
+$targetDiskconfig = New-AzDiskConfig -SkuName 'Standard_LRS' -osType $targetOS -UploadSizeInBytes $($sourceDisk.DiskSizeBytes+512) -Location $targetLocate -CreateOption 'Upload'
+
+$targetDisk = New-AzDisk -ResourceGroupName $targetRG -DiskName $targetDiskName -Disk $targetDiskconfig
+
+$sourceDiskSas = Grant-AzDiskAccess -ResourceGroupName $sourceRG -DiskName $sourceDiskName -DurationInSecond 86400 -Access 'Read'
+
+$targetDiskSas = Grant-AzDiskAccess -ResourceGroupName $targetRG -DiskName $targetDiskName -DurationInSecond 86400 -Access 'Write'
+
+azcopy copy $sourceDiskSas.AccessSAS $targetDiskSas.AccessSAS --blob-type PageBlob
+
+Revoke-AzDiskAccess -ResourceGroupName $sourceRG -DiskName $sourceDiskName
+
+Revoke-AzDiskAccess -ResourceGroupName $targetRG -DiskName $targetDiskName 
 ```
 
 ## <a name="next-steps"></a>Следующие шаги

@@ -11,14 +11,14 @@ ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 10/03/2018
+ms.date: 10/01/2019
 ms.author: bwren
-ms.openlocfilehash: d50a680ed2b054f87a9cf36e761bd16d79677fb3
-ms.sourcegitcommit: 770b060438122f090ab90d81e3ff2f023455213b
+ms.openlocfilehash: 7cdd471e6618e83483f6cc304f284a1669f3b67b
+ms.sourcegitcommit: a19f4b35a0123256e76f2789cd5083921ac73daf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68304699"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71718917"
 ---
 # <a name="azure-monitor-log-query-examples"></a>Примеры запроса журнала Azure Monitor
 Эта статья содержит несколько примеров [запросов](log-query-overview.md), составленных на основе [языка запросов Kusto](/azure/kusto/query/) для получения разных типов данных журнала из Azure Monitor. Для консолидации и анализа данных используются разные методы, и на основе этих примеров вы сможете определить, какие стратегии лучше всего подойдут под ваши конкретные требования.  
@@ -158,7 +158,7 @@ AzureDiagnostics
 | summarize arg_max(TimeGenerated, *) by Category
 ```
 
-## <a name="network-monitoring"></a>Мониторинг сетей.
+## <a name="network-monitoring"></a>Мониторинг сети
 
 ### <a name="computers-with-unhealthy-latency"></a>Компьютеры с ненормальной задержкой
 Этот пример создает список уникальных компьютеров, демонстрирующих ненормальную задержку.
@@ -425,13 +425,12 @@ Usage
 
 ```Kusto
 let ComputersMissingUpdates3DaysAgo = Update
-| where TimeGenerated between (ago(3d)..ago(2d))
-| where  Classification == "Critical Updates" and UpdateState != "Not needed" and UpdateState != "NotNeeded"
+| where TimeGenerated between (ago(30d)..ago(1h))
+| where Classification !has "Critical" and UpdateState =~ "Needed"
 | summarize makeset(Computer);
-
 Update
 | where TimeGenerated > ago(1d)
-| where  Classification == "Critical Updates" and UpdateState != "Not needed" and UpdateState != "NotNeeded"
+| where Classification has "Critical" and UpdateState =~ "Needed"
 | where Computer in (ComputersMissingUpdates3DaysAgo)
 | summarize UniqueUpdatesCount = dcount(Product) by Computer, OSType
 ```
