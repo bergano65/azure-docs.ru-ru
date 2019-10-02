@@ -6,14 +6,14 @@ author: alinamstanciu
 ms.custom: seodec18
 ms.service: digital-twins
 ms.topic: tutorial
-ms.date: 08/05/2019
+ms.date: 09/23/2019
 ms.author: alinast
-ms.openlocfilehash: 0244d6ac51b7cad6b74139c39914223928e2b627
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: db62d2209207a807570e971ef4af5f9b10b06cb8
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68827830"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71300065"
 ---
 # <a name="tutorial-visualize-and-analyze-events-from-your-azure-digital-twins-spaces-by-using-time-series-insights"></a>Руководство по Визуализация и анализ событий пространств Azure Digital Twins с помощью Аналитики временных рядов
 
@@ -38,6 +38,9 @@ ms.locfileid: "68827830"
 - [Примеры Digital Twins на C#](https://github.com/Azure-Samples/digital-twins-samples-csharp), скачанные и извлеченные на ваш рабочий компьютер.
 - [Пакет SDK для .NET Core версии 2.1.403 или более поздней](https://www.microsoft.com/net/download) на компьютере разработки. Он нужен для запуска примера. Выполните команду `dotnet --version`, чтобы проверить, установлена ли необходимая версия.
 
+> [!TIP]
+> При подготовке нового экземпляра присвойте уникальное имя экземпляру Digital Twins.
+
 ## <a name="stream-data-by-using-event-hubs"></a>Потоковая передача данных с помощью Центров событий
 
 Вы можете использовать службу [Центры событий](../event-hubs/event-hubs-about.md), чтобы создать конвейер для потоковой передачи данных. В этом разделе показано, как создать концентратор событий в качестве соединителя между экземплярами Azure Digital Twins и Аналитики временных рядов.
@@ -54,10 +57,10 @@ ms.locfileid: "68827830"
 
 1. В развертывании пространства имен Центров событий выберите панель **Обзор**, а затем щелкните **Перейти к ресурсу**.
 
-    ![Пространство имен Центров событий после развертывания](./media/tutorial-facilities-analyze/open-event-hub-ns.png)
+    [![Пространство имен Центров событий после развертывания](./media/tutorial-facilities-analyze/open-event-hub-ns.png)](./media/tutorial-facilities-analyze/open-event-hub-ns.png#lightbox)
 
 1. В области **Обзор** пространства имен Центров событий нажмите кнопку **Концентратор событий** вверху.
-    ![Кнопка концентратора событий](./media/tutorial-facilities-analyze/create-event-hub.png)
+    [![Кнопка концентратора событий](./media/tutorial-facilities-analyze/create-event-hub.png)](./media/tutorial-facilities-analyze/create-event-hub.png#lightbox)
 
 1. Введите **имя** концентратора событий, а затем щелкните **Создать**.
 
@@ -65,13 +68,13 @@ ms.locfileid: "68827830"
 
 1. Нажмите кнопку **Группа потребителей** вверху и введите имя для группы потребителей, например **tsievents**. Нажмите кнопку **Создать**.
 
-    ![Группа потребителей концентратора событий](./media/tutorial-facilities-analyze/event-hub-consumer-group.png)
+    [![Группа потребителей концентратора событий](./media/tutorial-facilities-analyze/event-hub-consumer-group.png)](./media/tutorial-facilities-analyze/event-hub-consumer-group.png#lightbox)
 
    Созданная группа потребителей отобразится в списке в нижней части области **Обзор** концентратора событий.
 
 1. Откройте область **Политика общего доступа** концентратора событий и нажмите кнопку **Добавить**. Введите **ManageSend** в качестве имени политики, убедитесь, что все флажки установлены, и нажмите кнопку **Создать**.
 
-    ![Строки подключения концентратора событий](./media/tutorial-facilities-analyze/event-hub-connection-strings.png)
+    [![Строки подключения концентратора событий](./media/tutorial-facilities-analyze/event-hub-connection-strings.png)](./media/tutorial-facilities-analyze/event-hub-connection-strings.png#lightbox)
 
 1. Откройте созданную политику ManageSend и скопируйте значения **Строка подключения — первичный ключ** и **Строка подключения — вторичный ключ** во временный файл. Эти значения потребуются, чтобы создать конечную точку для концентратора событий в следующем разделе.
 
@@ -124,21 +127,21 @@ ms.locfileid: "68827830"
 
    Эта команда создает две конечные точки для концентратора событий.
 
-   ![Конечные точки для Центров событий](./media/tutorial-facilities-analyze/dotnet-create-endpoints.png)
+   [![Конечные точки для Центров событий](./media/tutorial-facilities-analyze/dotnet-create-endpoints.png)](./media/tutorial-facilities-analyze/dotnet-create-endpoints.png#lightbox)
 
 ## <a name="analyze-with-time-series-insights"></a>Анализ с помощью Аналитики временных рядов
 
 1. В левой области [портала Azure](https://portal.azure.com) выберите **Создать ресурс**. 
 
-1. Найдите новый ресурс **Аналитика временных рядов** и выберите его. Нажмите кнопку **Создать**.
+1. Найдите и выберите ресурс **Аналитика временных рядов** (общедоступная версия). Нажмите кнопку **Создать**.
 
 1. Введите **имя** экземпляра Аналитики временных рядов, а затем выберите свою **подписку**. Выберите **группу ресурсов**, которую вы использовали для экземпляра Digital Twins, и укажите **расположение**. По завершении выберите **Next: Event Source** (Далее: Источник события) или перейдите на вкладку **Источник события**.
 
-    ![Выделенные элементы для создания экземпляра Аналитики временных рядов](./media/tutorial-facilities-analyze/create-tsi.png)
+    [![Выделенные элементы для создания экземпляра Аналитики временных рядов](./media/tutorial-facilities-analyze/create-tsi.png)](./media/tutorial-facilities-analyze/create-tsi.png#lightbox)
 
 1. На вкладке **Источник события** введите **имя**, выберите **Концентратор событий** в качестве **типа источника** и проверьте, правильно ли выбраны другие значения. Выберите **ManageSend** в качестве **имени политики доступа концентратора событий**, а затем в качестве **группы потребителей концентратора событий** выберите ту, которую создали в предыдущем разделе. Выберите **Review + create** (Просмотреть и создать).
 
-    ![Выделенные элементы для создания источника событий](./media/tutorial-facilities-analyze/tsi-event-source.png)
+    [![Выделенные элементы для создания источника событий](./media/tutorial-facilities-analyze/tsi-event-source.png)](./media/tutorial-facilities-analyze/tsi-event-source.png#lightbox)
 
 1. На панели **Просмотр и создание** просмотрите введенные данные и выберите **Создать**.
 
@@ -150,13 +153,13 @@ ms.locfileid: "68827830"
 
 1. После создания нескольких имитированных событий вернитесь к обозревателю службы "Аналитика временных рядов" и нажмите кнопку "Обновить" вверху. Вы увидите, как для имитированных данных датчиков создаются аналитические диаграммы. 
 
-    ![Диаграмма в обозревателе службы "Аналитика временных рядов"](./media/tutorial-facilities-analyze/tsi-explorer.png)
+    [![Диаграмма в обозревателе службы "Аналитика временных рядов"](./media/tutorial-facilities-analyze/tsi-explorer.png)](./media/tutorial-facilities-analyze/tsi-explorer.png#lightbox)
 
 1. В обозревателе службы "Аналитика временных рядов" можно создавать диаграммы и тепловые карты различных событий и данных комнат, датчиков и других ресурсов. В левой части щелкните раскрывающиеся списки с названиями **Мера** и **Разделение по**, чтобы создать собственные визуализации. 
 
    Например, выберите **События** как значение **меры** и **DigitalTwins-SensorHardwareId** как значение параметра **Разделение по**, чтобы создать тепловую карту для каждого датчика. Тепловая карта будет выглядеть примерно так:
 
-   ![Тепловая карта в обозревателе службы "Аналитика временных рядов"](./media/tutorial-facilities-analyze/tsi-explorer-heatmap.png)
+   [![Тепловая карта в обозревателе службы "Аналитика временных рядов"](./media/tutorial-facilities-analyze/tsi-explorer-heatmap.png)](./media/tutorial-facilities-analyze/tsi-explorer-heatmap.png#lightbox)
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

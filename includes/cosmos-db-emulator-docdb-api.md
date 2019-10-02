@@ -16,11 +16,11 @@ ms.workload: ''
 ms.date: 04/13/2018
 ms.author: sngun
 ms.custom: include file
-ms.openlocfilehash: 85fe028e35165ece0bdb143181bb1d8a6d4e1841
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: c071cd289a1304a561a821fc6b5ad86d9bf986af
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "67185039"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71299305"
 ---
-[Бесплатную пробную версию Azure Cosmos DB](https://azure.microsoft.com/try/cosmosdb/) можно использовать без подписки Azure, без оплаты и каких-либо обязательств. Или вы можете применить [эмулятор Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/local-emulator) с URI `https://localhost:8081`. Первичный ключ предоставляется в разделе [Выполнение проверки подлинности запросов](../articles/cosmos-db/local-emulator.md#authenticating-requests).
+[Бесплатную пробную версию Azure Cosmos DB](https://azure.microsoft.com/try/cosmosdb/) можно использовать без подписки Azure, без оплаты и каких-либо обязательств. Или вы можете применить [эмулятор Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/local-emulator) с URI `https://localhost:8081`. Сведения о ключе для использования с эмулятором см. в [этом разделе](../articles/cosmos-db/local-emulator.md#authenticating-requests).

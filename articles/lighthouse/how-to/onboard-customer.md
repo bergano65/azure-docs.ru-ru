@@ -7,12 +7,12 @@ ms.service: lighthouse
 ms.date: 09/19/2019
 ms.topic: overview
 manager: carmonm
-ms.openlocfilehash: 402f82059f939de204e489bb36c2c2b82f816a19
-ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
+ms.openlocfilehash: a199dde6b9e36683b817f908e385aabcc431ce16
+ms.sourcegitcommit: 116bc6a75e501b7bba85e750b336f2af4ad29f5a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71105275"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71155129"
 ---
 # <a name="onboard-a-customer-to-azure-delegated-resource-management"></a>Подключение клиента к системе делегированного управления ресурсами Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "71105275"
 Вы можете связать свой идентификатор Microsoft Partner Network (MPN) со встроенными подписками, чтобы отслеживать свое влияние на задействование клиентов и получать соответствующие свидетельства. Дополнительные сведения см. в статье [Link a partner ID to your Azure accounts](https://docs.microsoft.com/azure/billing/billing-partner-admin-link-started) (Привязка идентификатора партнера к учетной записи Azure). Обратите внимание, что эту привязку необходимо выполнять в клиенте поставщика службы.
 
 > [!NOTE]
-> Клиенты могут быть автоматически подключены при покупке предложения управляемых служб (общедоступных или частных), которое вы опубликовали в Azure Marketplace. Дополнительные сведения см. в статье [Publish a managed services offer to Azure Marketplace](publish-managed-services-offers.md) (Публикация предложения управляемых служб в Azure Marketplace). Описанный здесь процесс подключения также можно использовать с предложением, опубликованным в Azure Marketplace.
+> Клиенты могут также быть подключены при покупке предложения управляемых служб (общедоступных или частных), которое вы опубликовали в Azure Marketplace. Дополнительные сведения см. в статье [Publish a managed services offer to Azure Marketplace](publish-managed-services-offers.md) (Публикация предложения управляемых служб в Azure Marketplace). Описанный здесь процесс подключения также можно использовать с предложением, опубликованным в Azure Marketplace.
 
 Для процесса подключения требуется, чтобы действия выполнялись в клиенте поставщика услуг и клиенте пользователя. Все эти шаги описаны в данной статье.
 

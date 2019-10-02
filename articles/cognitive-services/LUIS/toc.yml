@@ -19,6 +19,8 @@
         - name: 2. Развертывание приложения
           href: get-started-portal-deploy-app.md
           displayName: 'assign key, assign resource, add key, add resource, test, deploy, endpoint, query, publish'
+    - name: Использование браузера
+      href: luis-get-started-get-intent-from-browser.md
     - name: Использование пакета SDK для .NET
       items:
         - name: Создание приложения и управление им
@@ -32,17 +34,7 @@
     - name: Использование REST API
       items:
         - name: Получение сведений о намерении
-          items:
-            - name: 'C#'
-              href: luis-get-started-cs-get-intent.md
-            - name: Go
-              href: luis-get-started-go-get-intent.md
-            - name: Java
-              href: luis-get-started-java-get-intent.md
-            - name: Node.js
-              href: luis-get-started-node-get-intent.md
-            - name: Python
-              href: luis-get-started-python-get-intent.md
+          href: luis-get-started-get-intent-from-rest.md
         - name: Изменение модели
           items:
             - name: 'C#'
@@ -403,8 +395,6 @@
   items:
     - name: Служба Azure Bot
       href: 'https://dev.botframework.com/'
-    - name: 'Пакет SDK для Bot Builder 3.x для C#'
-      href: 'https://github.com/Microsoft/BotBuilder'
     - name: 'Пакет SDK для Bot Builder 4.x для C#'
       href: 'https://github.com/Microsoft/botbuilder-dotnet'
     - name: QnA Maker

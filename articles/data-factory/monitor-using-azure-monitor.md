@@ -403,17 +403,17 @@ Log Analytics наследует схему от Monitor со следующим
 
     | Azure Monitor столбец | Log Analytics столбец | Type |
     | --- | --- | --- |
-    | $.properties.UserProperties | UserProperties | Dynamic |
-    | $.properties.Annotations | Annotations | Dynamic |
-    | $.properties.Input | Input | Dynamic |
-    | $.properties.Output | Output | Dynamic |
-    | $.properties.Error.errorCode | ErrorCode | int |
-    | $.properties.Error.message | ErrorMessage | string |
-    | $.properties.Error | Error | Dynamic |
-    | $.properties.Predecessors | Predecessors | Dynamic |
-    | $.properties.Parameters | Parameters | Dynamic |
-    | $.properties.SystemParameters | SystemParameters | Dynamic |
-    | $.properties.Tags | Tags | Dynamic |
+    | $. Properties. усерпропертиес | усерпропертиес | Dynamic |
+    | $. Properties. Примечания | аннотации | Dynamic |
+    | $. Properties. Входной | Ввод | Dynamic |
+    | $. Properties. Проверки | Output | Dynamic |
+    | $. Properties. Ошибка. errorCode | ErrorCode | int |
+    | $. Properties. Ошибка. сообщение | ErrorMessage | string |
+    | $. Properties. План | Ошибка | Dynamic |
+    | $. Properties. Предшественников | Предшественников | Dynamic |
+    | $. Properties. Вход | Параметры | Dynamic |
+    | $. Properties. SystemParameters | SystemParameters | Dynamic |
+    | $. Properties. Тэги | Tags | Dynamic |
     
 ## <a name="metrics"></a>metrics
 

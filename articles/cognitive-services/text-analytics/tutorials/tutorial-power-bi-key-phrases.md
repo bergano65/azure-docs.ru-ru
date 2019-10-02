@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: tutorial
 ms.date: 07/30/2019
 ms.author: aahi
-ms.openlocfilehash: dba65e68e7c2204a4d4d7f80a603de607bba7609
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: 97245a10602f763c3269218d87c6b1a5ba309817
+ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68697347"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71241026"
 ---
 # <a name="tutorial-integrate-power-bi-with-the-text-analytics-cognitive-service"></a>Руководство по Интеграция Power BI с Анализом текста в Cognitive Services
 
@@ -114,13 +114,14 @@ Microsoft Power BI Desktop — бесплатное приложение, поз
 Теперь на ленте **Главная** в группе **Запрос** щелкните **Расширенный редактор**, чтобы открыть окно "Расширенный редактор". Удалите находящийся в окне код и вставьте следующий. 
 
 > [!NOTE]
-> В приведенных ниже примерах предполагается, что конечная точка API анализа текста начинается с `https://westus.api.cognitive.microsoft.com`. Анализ текста поддерживает создавать подписки в 13 разных регионах. Если вы зарегистрированы в другом регионе, необходимо использовать конечную точку для выбранного региона. Эту конечную точку можно найти, войдя на [портал Azure](https://azure.microsoft.com/features/azure-portal/), выбрав подписку, использующую Анализ текста, и затем выбрав страницу "Обзор".
+> Замените приведенный ниже пример конечной точки (с `<your-custom-subdomain>`) конечной точкой, созданной для вашего ресурса Анализа текста. Эту конечную точку можно найти, войдя на [портал Azure](https://azure.microsoft.com/features/azure-portal/), выбрав подписку, использующую Анализ текста, и затем выбрав `Quick start`.
+
 
 ```fsharp
 // Returns key phrases from the text in a comma-separated list
 (text) => let
     apikey      = "YOUR_API_KEY_HERE",
-    endpoint    = "https://westus.api.cognitive.microsoft.com/text/analytics/v2.1/keyPhrases",
+    endpoint    = "https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics" & "/v2.1/keyPhrases",
     jsontext    = Text.FromBinary(Json.FromValue(Text.Start(Text.Trim(text), 5000))),
     jsonbody    = "{ documents: [ { language: ""en"", id: ""0"", text: " & jsontext & " } ] }",
     bytesbody   = Text.ToBinary(jsonbody),
@@ -164,7 +165,8 @@ in  keyphrases
 > [!NOTE]
 > Следует выбрать `Anonymous`, так как Служба "Анализ текста" выполнит аутентификацию с помощью ключа доступа, поэтому Power BI не нужно предоставлять учетные данные для самого HTTP-запроса.
 
-![[Выбор анонимного доступа для проверки подлинности]](../media/tutorials/power-bi/access-web-content.png)
+> [!div class="mx-imgBorder"]
+> ![[Выбор анонимного доступа для проверки подлинности]](../media/tutorials/power-bi/access-web-content.png)
 
 Если баннер "Изменить учетные данные" все еще активен после выбора анонимного доступа, вероятно, вы забыли вставить ключ доступа к службе "Анализ текста" в `KeyPhrases` в коде [пользовательской функции](#CreateCustomFunction).
 
@@ -223,7 +225,7 @@ Power BI Desktop требуется несколько секунд, чтобы 
 // Returns the sentiment score of the text, from 0.0 (least favorable) to 1.0 (most favorable)
 (text) => let
     apikey      = "YOUR_API_KEY_HERE",
-    endpoint    = "https://westus.api.cognitive.microsoft.com/text/analytics/v2.1/sentiment",
+    endpoint    = "https://<your-custom-subdomain>.cognitiveservices.azure.com" & "/text/analytics/v2.1/sentiment",
     jsontext    = Text.FromBinary(Json.FromValue(Text.Start(Text.Trim(text), 5000))),
     jsonbody    = "{ documents: [ { language: ""en"", id: ""0"", text: " & jsontext & " } ] }",
     bytesbody   = Text.ToBinary(jsonbody),
@@ -240,7 +242,7 @@ in  sentiment
 // Returns the two-letter language code (for example, 'en' for English) of the text
 (text) => let
     apikey      = "YOUR_API_KEY_HERE",
-    endpoint    = "https://westus.api.cognitive.microsoft.com/text/analytics/v2.1/languages",
+    endpoint    = "https://<your-custom-subdomain>.cognitiveservices.azure.com" & "/text/analytics/v2.1/languages",
     jsontext    = Text.FromBinary(Json.FromValue(Text.Start(Text.Trim(text), 5000))),
     jsonbody    = "{ documents: [ { id: ""0"", text: " & jsontext & " } ] }",
     bytesbody   = Text.ToBinary(jsonbody),
@@ -254,7 +256,7 @@ in  language
 // Returns the name (for example, 'English') of the language in which the text is written
 (text) => let
     apikey      = "YOUR_API_KEY_HERE",
-    endpoint    = "https://westus.api.cognitive.microsoft.com/text/analytics/v2.1/languages",
+    endpoint    = "https://<your-custom-subdomain>.cognitiveservices.azure.com" & "/text/analytics/v2.1/languages",
     jsontext    = Text.FromBinary(Json.FromValue(Text.Start(Text.Trim(text), 5000))),
     jsonbody    = "{ documents: [ { id: ""0"", text: " & jsontext & " } ] }",
     bytesbody   = Text.ToBinary(jsonbody),
@@ -274,7 +276,7 @@ in  language
 // Returns key phrases from the text as a list object
 (text) => let
     apikey      = "YOUR_API_KEY_HERE",
-    endpoint    = "https://westus.api.cognitive.microsoft.com/text/analytics/v2.1/keyPhrases",
+    endpoint    = "https://<your-custom-subdomain>.cognitiveservices.azure.com" & "/text/analytics/v2.1/keyPhrases",
     jsontext    = Text.FromBinary(Json.FromValue(Text.Start(Text.Trim(text), 5000))),
     jsonbody    = "{ documents: [ { language: ""en"", id: ""0"", text: " & jsontext & " } ] }",
     bytesbody   = Text.ToBinary(jsonbody),

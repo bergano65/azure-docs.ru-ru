@@ -1,12 +1,11 @@
 ---
-title: Подключение источников данных к предварительной версии Azure Sentinel | Документация Майкрософт
+title: Подключение источников данных к Azure Sentinel | Документация Майкрософт
 description: Узнайте, как подключить источники данных к Azure Sentinel.
 services: sentinel
 documentationcenter: na
 author: rkarlin
-manager: rkarlin
+manager: angrobe
 editor: ''
-ms.assetid: a3b63cfa-b5fe-4aff-b105-b22b424c418a
 ms.service: azure-sentinel
 ms.subservice: azure-sentinel
 ms.devlang: na
@@ -14,20 +13,18 @@ ms.topic: overview
 ms.custom: mvc
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 07/04/2019
+ms.date: 09/23/2019
 ms.author: rkarlin
-ms.openlocfilehash: 4928657aa9052b50faf1f326cc09797c5aaf69bb
-ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
+ms.openlocfilehash: d8d3e52882a5cde9b00bf07ded933ae4d45b454b
+ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68780512"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71240169"
 ---
 # <a name="connect-data-sources"></a>Подключение источников данных
 
-> [!IMPORTANT]
-> Сейчас Azure Sentinel предоставляется в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+
 
 
 
@@ -65,7 +62,7 @@ Azure Sentinel поддерживает следующие методы подк
 - **Внешние решения через API**. Некоторые источники данных подключены с помощью интерфейсов API, предоставляемых подключенным источником данных. Как правило, большинство технологий безопасности предоставляют набор API, с помощью которых можно получить журналы событий. API подключаются к Azure Sentinel и собирают определенные типы данных, а затем отправляют их в Azure Log Analytics. Устройства, подключенные с помощью API:
     - [Barracuda](connect-barracuda.md)
     - [Symantec](connect-symantec.md)
-- **Внешние решения через агента**. Azure Sentinel может подключаться ко всем источникам данных, которые могут выполнять потоковую передачу журнала в режиме реального времени с помощью протокола Syslog, через агента. <br>Большинство устройств использует протокол Syslog для отправки сообщений о событиях, которые включают сам журнал и данные о нем. Журналы имеют разный формат, но большинство устройств поддерживает стандарт общего формата событий (CEF). <br>Агент Azure Sentinel, основанный на Microsoft Monitoring Agent, преобразует журналы в формате CEF в формат, который принимается службой Log Analytics. В зависимости от типа устройства агент устанавливается или непосредственно на устройстве, или на выделенном сервере Linux. Агент для Linux получает события из управляющей программы Syslog по протоколу UDP. Если компьютер Linux должен собирать большое количество событий Syslog, отправка производится по протоколу TCP из управляющей программы Syslog в агент, а затем — в Log Analytics.
+- **Внешние решения через агента**. Azure Sentinel может подключаться ко всем источникам данных, которые могут выполнять потоковую передачу журнала в режиме реального времени с помощью протокола Syslog, через агента. <br>Большинство устройств использует протокол Syslog для отправки сообщений о событиях, которые включают сам журнал и данные о нем. Журналы имеют разный формат, но большинство устройств поддерживает стандарт общего формата событий (CEF). <br>Агент Azure Sentinel, основанный на агенте Log Analytics, преобразует журналы в формате CEF в формат, который принимается службой Log Analytics. В зависимости от типа устройства агент устанавливается или непосредственно на устройстве, или на выделенном сервере Linux. Агент для Linux получает события из управляющей программы Syslog по протоколу UDP. Если компьютер Linux должен собирать большое количество событий Syslog, отправка производится по протоколу TCP из управляющей программы Syslog в агент, а затем — в Log Analytics.
     - Брандмауэры, прокси-серверы и конечные точки.
         - [F5](connect-f5.md)
         - [Check Point](connect-checkpoint.md)
@@ -90,6 +87,42 @@ Azure Sentinel поддерживает следующие методы подк
 Вместо этого вы можете развернуть агент вручную на существующей виртуальной машине Azure, на виртуальной машине в другом облаке или на локальном компьютере.
 
 ![CEF в локальной среде](./media/connect-cef/cef-syslog-onprem.png)
+
+## <a name="map-data-types-with-azure-sentinel-connection-options"></a>Преобразование типов данных с помощью параметров подключения к Sentinel Azure
+
+
+| **Тип данных** | **Инструкции по подключению** | **Соединитель данных?** | **Комментарии** |
+|------|---------|-------------|------|
+| AWSCloudTrail | [Подключение AWS](connect-aws.md) | V | |
+| AzureActivity | [Подключение действий Azure](connect-azure-activity.md) и [обзора журналов действий](../azure-monitor/platform/activity-logs-overview.md)| V | |
+| AuditLogs | [Подключение Azure AD](connect-azure-active-directory.md)  | V | |
+| SigninLogs | [Подключение Azure AD](connect-azure-active-directory.md)  | V | |
+| AzureFirewall |[Система диагностики Azure](../firewall/tutorial-diagnostics.md) | V | |
+| InformationProtectionLogs_CL  | [Отчеты Azure Information Protection](https://docs.microsoft.com/azure/information-protection/reports-aip)<br>[Подключение Azure Information Protection](connect-azure-information-protection.md)  | V | Обычно в этом случае в дополнение к типу данных используется функция **InformationProtectionEvents**. Дополнительные сведения см. статью [Как изменять отчеты и создавать пользовательские запросы](https://docs.microsoft.com/azure/information-protection/reports-aip#how-to-modify-the-reports-and-create-custom-queries)|
+| AzureNetworkAnalytics_CL  | [Схема аналитики трафика](../network-watcher/traffic-analytics.md) [Аналитика трафика](../network-watcher/traffic-analytics.md)  | | |
+| CommonSecurityLog  | [Подключение CEF](connect-common-event-format.md)  | V | |
+| OfficeActivity | [Подключение Office 365](connect-office-365.md) | V | |
+| SecurityEvents | [Подключение событий безопасности Windows](connect-windows-security-events.md)  | V | Книги небезопасных протоколов см. в разделе [Настройка книг небезопасных протоколов](https://blogs.technet.microsoft.com/jonsh/azure-sentinel-insecure-protocols-dashboard-setup/)  |
+| Системный журнал | [Подключение системного журнала](connect-syslog.md) | V | |
+| Брандмауэр веб-приложений Майкрософт (WAF) – (AzureDiagnostics) |[Подключение брандмауэра веб-приложений Майкрософт](connect-microsoft-waf.md) | V | |
+| SymantecICDx_CL | [Подключение Symantec](connect-symantec.md) | V | |
+| ThreatIntelligenceIndicator  | [Подключение аналитики угроз](connect-threat-intelligence.md)  | V | |
+| VMConnection <br> ServiceMapComputer_CL<br> ServiceMapProcess_CL|  [Схема службы Azure Monitor](../azure-monitor/insights/service-map.md)<br>[Подключение аналитических сведений для виртуальных машин Azure Monitor](../azure-monitor/insights/vminsights-onboard.md) <br> [Включение аналитических сведений для виртуальных машин Azure Monitor](../azure-monitor/insights/vminsights-enable-overview.md) <br> [Подключение одиночной виртуальной машины](../azure-monitor/insights/vminsights-enable-single-vm.md)<br>  [Использование подключения через политику](../azure-monitor/insights/vminsights-enable-at-scale-policy.md)| X | Книга аналитики виртуальных машин  |
+| DnsEvents | [Подключение DNS](connect-dns.md) | V | |
+| W3CIISLog | [Подключение журналов IIS](../azure-monitor/platform/data-sources-iis-logs.md)  | X | |
+| Данные передачи | [Подключение передаваемых данных](../azure-monitor/insights/wire-data.md) | X | |
+| WindowsFirewall | [Подключение брандмауэра Windows](connect-windows-firewall.md) | V | |
+| SecurityAlert службы "Защита идентификации Azure AD"  | [Подключения Защиты идентификации Azure AD](connect-azure-ad-identity-protection.md)  | V | |
+| AATP SecurityAlert  | [Подключение Azure ATP](connect-azure-atp.md) | V | |
+| SecurityAlert сертификатов службы приложений  | [Подключение к центру безопасности Azure](connect-azure-security-center.md)  | V | |
+| MCAS SecurityAlert  | [Подключение Microsoft Cloud App Security](connect-cloud-app-security.md)  | V | |
+| SecurityAlert | | | |
+| Sysmon (событие) | [Подключение Sysmon](https://azure.microsoft.com/blog/detecting-in-memory-attacks-with-sysmon-and-azure-security-center)<br> [Подключение событий Windows](../azure-monitor/platform/data-sources-windows-events.md) <br> [Получение средства синтаксического анализа Sysmon](https://github.com/Azure/Azure-Sentinel/blob/master/Parsers/SysmonParser.txt)| X | По умолчанию на виртуальных машинах не установлена коллекция Sysmon. Дополнительные сведения об установке агента Sysmon см. в разделе [Sysmon](https://docs.microsoft.com/sysinternals/downloads/sysmon). |
+| ConfigurationData  | [Автоматизация учета виртуальной машины](../automation/automation-vm-inventory.md)| X | |
+| ConfigurationChange  | [Автоматизация отслеживания виртуальной машины](../automation/change-tracking.md) | X | |
+| F5 BIG-IP | [Подключение F5 BIG-IP](https://devcentral.f5.com/s/articles/Integrating-the-F5-BIGIP-with-Azure-Sentinel.md)  | X | |
+| McasShadowItReporting  |  | X | |
+| Barracuda_CL | [Подключение Barracuda](connect-barracuda.md) | V | |
 
 
 ## <a name="next-steps"></a>Дополнительная информация

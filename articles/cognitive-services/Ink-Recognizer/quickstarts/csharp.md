@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: ink-recognizer
 ms.topic: quickstart
-ms.date: 05/02/2019
+ms.date: 09/23/2019
 ms.author: aahi
-ms.openlocfilehash: 6a1b4ab43a7d87ac1162a7f0a3556d6bc3bfbfab
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: 86e69d75c067159a4daa637984a392a393dc46fa
+ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67721226"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71211788"
 ---
 # <a name="quickstart-recognize-digital-ink-with-the-ink-recognizer-rest-api-and-c"></a>Краткое руководство. Распознавание рукописного ввода с помощью REST API Распознавателя рукописного текста и C#
 
@@ -23,7 +23,7 @@ ms.locfileid: "67721226"
 
 Хотя это приложение создается на языке C#, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 
-Обычно вы вызываете API из приложения для рукописного ввода. Этот краткое руководство отправляет данные рукописного мазка для следующего рукописного образца из JSON-файла.
+Обычно вы вызываете API из приложения для рукописного ввода. Этот краткое руководство отправляет данные рукописного фрагмента для следующего рукописного образца из JSON-файла.
 
 ![изображение рукописного текста](../media/handwriting-sample.jpg)
 
@@ -60,7 +60,7 @@ ms.locfileid: "67721226"
     using Newtonsoft.Json.Linq;
     ```
 
-2. Создайте переменные для ключа подписки и конечной точки. Далее приведен универсальный код ресурса (URI), который можно использовать для распознавания рукописного ввода. Для создания URL-адреса запроса API он будет добавлен в конечную точку службы позднее.
+2. Создайте переменные для ключа подписки и конечной точки. Замените указанную ниже конечную точку на ту, которая создана для ресурса Распознавателя рукописного текста. Добавьте ее в URI Распознавателя рукописного текста для подключения к API.
 
     ```csharp
     // Replace the subscriptionKey string with your valid subscription key.
@@ -70,7 +70,7 @@ ms.locfileid: "67721226"
     const string dataPath = @"PATH-TO-INK-STROKE-DATA"; 
 
     // URI information for ink recognition:
-    const string endpoint = "https://api.cognitive.microsoft.com";
+    const string endpoint = "https://<your-custom-subdomain>.cognitiveservices.azure.com";
     const string inkRecognitionUrl = "/inkrecognizer/v1.0-preview/recognize";
     ```
 

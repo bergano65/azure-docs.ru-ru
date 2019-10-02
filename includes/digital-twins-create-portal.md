@@ -5,21 +5,21 @@ services: digital-twins
 author: dsk-2015
 ms.service: digital-twins
 ms.topic: include
-ms.date: 08/16/2019
+ms.date: 09/24/2019
 ms.author: dkshir
 ms.custom: include file
-ms.openlocfilehash: 87599c6e0c4bd4313eac154b4d07110cbe4389a0
-ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
+ms.openlocfilehash: 5b88e3f17c1bbf60d38763f7fb349302ae4a920b
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69622939"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71310515"
 ---
 1. Войдите на [портале Azure](https://portal.azure.com).
 
 1. В области слева выберите **Создать ресурс**. Выполните поиск по фразе **digital twins** и выберите **Digital Twins**. Нажмите кнопку **Создать**, чтобы начать развертывание.
 
-   ![Выбранные элементы для создания экземпляра Digital Twins](./media/create-digital-twins-portal/create-digital-twins.png)
+   [![Выбранные элементы для создания экземпляра Digital Twins](./media/create-digital-twins-portal/create-digital-twins.png)](./media/create-digital-twins-portal/create-digital-twins.png#lightbox)
 
 1. В области **Digital Twins** введите следующие сведения:
    * **Имя ресурса**: Задайте уникальное имя для экземпляра Digital Twins.
@@ -27,7 +27,7 @@ ms.locfileid: "69622939"
    * **Группа ресурсов.** Выберите или создайте [группу ресурсов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview#resource-groups) для экземпляра Digital Twins.
    * **Расположение.** Выберите ближайшее к вашим устройствам расположение.
 
-     ![Область Digital Twins с введенными сведениями](./media/create-digital-twins-portal/create-digital-twins-param.png)
+     [![Область Digital Twins с введенными сведениями](./media/create-digital-twins-portal/create-digital-twins-param.png)](./media/create-digital-twins-portal/create-digital-twins-param.png#lightbox)
 
 1. Проверьте сведения, указанные для Digital Twins, и щелкните **Создать**. Создание экземпляра Digital Twins может занять несколько минут. Ход создания можно отслеживать на панели **уведомлений**.
 
@@ -37,4 +37,4 @@ ms.locfileid: "69622939"
 
     Измените URL-адрес **API управления** следующим образом: `https://yourDigitalTwinsName.yourLocation.azuresmartspaces.net/management/api/v1.0/`. Этот измененный URL-адрес станет базовым адресом для доступа вашего приложения к экземпляру Digital Twins. Скопируйте измененный URL-адрес во временный файл. Этот URL-адрес понадобится вам в следующих разделах.
 
-    ![API управления](./media/create-digital-twins-portal/digital-twins-management-api.png)
+    [![API управления](./media/create-digital-twins-portal/digital-twins-management-api.png)](./media/create-digital-twins-portal/digital-twins-management-api.png#lightbox)

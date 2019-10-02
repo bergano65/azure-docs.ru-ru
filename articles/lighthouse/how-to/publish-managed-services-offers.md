@@ -7,12 +7,12 @@ ms.service: lighthouse
 ms.date: 09/19/2019
 ms.topic: overview
 manager: carmonm
-ms.openlocfilehash: 4a1adf1be8798f4bb21b89ff0654287a2958146e
-ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
+ms.openlocfilehash: 4781126bc4fcfb6391db42a75553a13e0e4cc4f9
+ms.sourcegitcommit: 116bc6a75e501b7bba85e750b336f2af4ad29f5a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71105263"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71155148"
 ---
 # <a name="publish-a-managed-services-offer-to-azure-marketplace"></a>Публикация предложения управляемых служб в Azure Marketplace
 
@@ -24,6 +24,8 @@ ms.locfileid: "71105263"
 > Если вы не хотите публиковать предложение в Azure Marketplace, вы можете вручную подключать клиентов с помощью шаблонов Azure Resource Manager. Дополнительные сведения см. в статье [Onboard a customer to Azure delegated resource management](onboard-customer.md) (Подключение клиента к системе делегированного управления ресурсами Azure)
 
 Публикация предложения управляемых служб аналогична публикации предложения любого другого типа в Azure Marketplace. Чтобы узнать об этом процессе, ознакомьтесь [с руководством по публикации в Azure Marketplace и AppSource](https://docs.microsoft.com/azure/marketplace/marketplace-publishers-guide) и статьей об [управлении предложениями Azure и AppSource Marketplace](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/manage-offers/cpp-manage-offers). Также следует ознакомиться [с политиками сертификации для коммерческой платформы Marketplace](https://docs.microsoft.com/legal/marketplace/certification-policies), в частности с разделом [Managed Services](https://docs.microsoft.com/legal/marketplace/certification-policies#700-managed-services) (Управляемые службы).
+
+Как только пользователь добавит ваше предложение, он [сможет делегировать одну или несколько конкретных подписок или групп ресурсов](#the-customer-onboarding-process), которые затем будут подключены к системе делегированного управления ресурсами Azure. Обратите внимание, что для подключения подписки (или группы ресурсов в рамках подписки), ее сначала необходимо авторизовать для подключения, вручную зарегистрировав поставщик ресурсов **Microsoft.ManagedServices**.
 
 > [!IMPORTANT]
 > Каждый план в предложении управляемых служб содержит раздел **Manifest Details** (Сведения о манифесте), в котором можно определить сущности Azure Active Directory (Azure AD) в клиенте, который будет иметь доступ к делегированным группам ресурсов и (или) подпискам для клиентов, купившим этот план. Важно помнить, что любая группа (или пользователь, или субъект-служба), добавленные на этом этапе, будут иметь одинаковые разрешения для всех клиентов, купивших план. Чтобы назначить разные группы для каждого клиента, необходимо опубликовать отдельный закрытый план, который является эксклюзивным для каждого клиента.

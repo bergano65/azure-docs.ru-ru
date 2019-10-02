@@ -12,19 +12,21 @@ ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 06/19/2019
+ms.date: 09/20/2019
 ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: e1a04cad7fe5c9c95397ffad2faa80c7d657d0f8
-ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
+ms.openlocfilehash: ab55583d72297f2a1c72bac21e4414919f31b91b
+ms.sourcegitcommit: a7a9d7f366adab2cfca13c8d9cbcf5b40d57e63a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68273798"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71161382"
 ---
-# <a name="quickstart-create-a-standard-load-balancer-to-load-balance-vms-by-using-an-azure-resource-manager-template"></a>Краткое руководство. Создание Load Balancer (цен. категория "Стандартный") с помощью шаблона Azure Resource Manager для распределения нагрузки между виртуальными машинами
+# <a name="quickstart-create-a-standard-load-balancer-to-load-balance-vms-by-using-azure-resource-manager-template"></a>Краткое руководство. Создание Load Balancer (цен. категория "Стандартный") с помощью шаблона Azure Resource Manager для распределения нагрузки между виртуальными машинами
 
-Балансировка нагрузки обеспечивает более высокий уровень доступности и масштабирования за счет распределения входящих запросов между несколькими виртуальными машинами. В этом кратком руководстве показано, как развернуть шаблон Azure Resource Manager, с помощью которого создается Load Balancer (цен. категория "Стандартный") для распределения нагрузки между виртуальными машинами.
+Балансировка нагрузки обеспечивает более высокий уровень доступности и масштабирования за счет распределения входящих запросов между несколькими виртуальными машинами. В этом кратком руководстве показано, как развернуть шаблон Azure Resource Manager, с помощью которого создается Load Balancer (цен. категория "Стандартный") для распределения нагрузки между виртуальными машинами. При использовании шаблона Resource Manager выполняется меньшее количество действий по сравнению с другими методами развертывания.
+
+[Шаблон Resource Manager](../azure-resource-manager/template-deployment-overview.md) является файлом нотации объектов JavaScript (JSON), определяющими инфраструктуру и конфигурацию вашего проекта. Шаблон использует декларативный синтаксис, который позволяет указать объект, который вы собираетесь развернуть. При этом, для развертывания объекта, не нужно писать последовательность команд. Дополнительные сведения о разработке шаблонов Resource Manager см. в разделе [Документация по Azure Resource Manager](/azure/azure-resource-manager/) и в [справочнике по шаблонам](/azure/templates/microsoft.network/loadbalancers).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -32,9 +34,22 @@ ms.locfileid: "68273798"
 
 Load Balancer (цен. категория "Стандартный") поддерживает только стандартные общедоступные IP-адреса. Вместе с Load Balancer (цен. категория "Стандартный") необходимо также создать стандартный общедоступный IP-адрес, настроенный в качестве интерфейсного для Load Balancer (цен. категория "Стандартный").
 
-Вы можете использовать множество методов для создания Load Balancer (цен. категория "Стандартный"). В этом кратком руководстве описывается, как развернуть [шаблон Resource Manager](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-load-balancer-standard-create/azuredeploy.json) с помощью Azure PowerShell. Шаблоны Resource Manager — это JSON-файлы, которые определяют ресурсы, необходимые для развертывания решения.
+В этом кратком руководстве используется [шаблон быстрого запуска](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-load-balancer-standard-create/azuredeploy.json).
 
-Основные понятия, связанные с развертыванием решений Azure и управлением ими, объясняются в [документации по Azure Resource Manager](/azure/azure-resource-manager/). Чтобы найти дополнительные связанные шаблоны Azure Load Balancer, перейдите на страницу [Шаблоны быстрого запуска Azure](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Network&pageNumber=1&sort=Popular).
+[!code-json[<Azure Resource Manager template create standard load balancer>](~/quickstart-templates/101-load-balancer-standard-create/azuredeploy.json)]
+
+В шаблоне определено несколько ресурсов Azure:
+
+- **Microsoft.Network/loadBalancers**
+- **Microsoft.Network/publicIPAddresses**: для подсистемы балансировки нагрузки;
+- **Microsoft.Network/networkSecurityGroups**
+- **Microsoft.Network/virtualNetworks**
+- **Microsoft.Compute/virutalMachines** (3 из них);
+- **Microsoft.Network/publicIPAddresses** (3 из них): для каждой из трех виртуальных машин;
+- **Microsoft.Network/networkInterfaces** (3 из них);
+- **Microsoft.Compute/virtualMachine/extensions** (3 из них): используется для настройки служб IIS и веб-страниц.
+
+Чтобы найти дополнительные связанные шаблоны Azure Load Balancer, перейдите на страницу [Шаблоны быстрого запуска Azure](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Network&pageNumber=1&sort=Popular).
 
 1. Выберите **Попробовать** в следующем блоке кода, чтобы открыть Azure Cloud Shell, и следуйте отображающимся инструкциям, чтобы войти в Azure.
 
@@ -65,7 +80,11 @@ Load Balancer (цен. категория "Стандартный") поддер
 
    Имя группы ресурсов — это имя проекта с добавлением **rg**. Имя группы ресурсов потребуется в следующем разделе.
 
-Развертывание шаблона занимает около 10 минут.
+Развертывание шаблона занимает около 10 минут. По завершении выходные данные должны быть следующего вида:
+
+![Выходные данные развертывания PowerShell для шаблона Azure Resource Manager в Load Balancer (цен. категория "Стандартный")](./media/quickstart-load-balancer-standard-public-template/azure-standard-load-balancer-resource-manager-template-powershell-output.png)
+
+Для развертывания шаблона используется Azure PowerShell. В дополнение к Azure PowerShell можно также использовать портал Azure, Azure CLI и REST API. Дополнительные сведения о других методах развертывания см. в статье о [развертывании с использованием шаблонов](../azure-resource-manager/resource-group-template-deploy-portal.md).
 
 ## <a name="test-the-load-balancer"></a>Тестирование подсистемы балансировки нагрузки
 
@@ -77,9 +96,13 @@ Load Balancer (цен. категория "Стандартный") поддер
 
 1. Выберите подсистему балансировки нагрузки. Имя по умолчанию — это имя проекта с добавлением **-lb**.
 
-1. Скопируйте только часть общедоступного IP-адреса и вставьте его в адресную строку браузера. В браузере отобразится страница по умолчанию веб-сервера службы IIS.
+1. Скопируйте только часть общедоступного IP-адреса и вставьте его в адресную строку браузера.
 
-   ![Веб-сервер IIS](./media/tutorial-load-balancer-standard-zonal-portal/load-balancer-test.png)
+   ![Общедоступный IP-адрес шаблона Azure Resource Manager в Azure Load Balancer (цен. категория "Стандартный")](./media/quickstart-load-balancer-standard-public-template/azure-standard-load-balancer-resource-manager-template-deployment-public-ip.png)
+
+    В браузере отобразится страница по умолчанию веб-сервера службы IIS.
+
+   ![Веб-сервер IIS](./media/quickstart-load-balancer-standard-public-template/load-balancer-test-web-page.png)
 
 Чтобы увидеть, как Load Balancer распределяет трафик между тремя виртуальными машинами, можно принудительно обновить веб-браузер на клиентском компьютере.
 
@@ -95,4 +118,3 @@ Load Balancer (цен. категория "Стандартный") поддер
 
 > [!div class="nextstepaction"]
 > [Руководства по Azure Load Balancer](tutorial-load-balancer-standard-public-zone-redundant-portal.md)
- 

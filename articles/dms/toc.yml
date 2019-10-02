@@ -2,49 +2,49 @@
   href: index.yml
 - name: Обзор
   items:
-    - name: Что такое служба Database Migration Service (DMS)?
+    - name: Что такое служба Azure Database Migration Service?
       href: dms-overview.md
 - name: Краткие руководства
   items:
-    - name: "Создание службы\_— портал"
+    - name: Создание службы с помощью портала
       href: quickstart-create-data-migration-service-portal.md
 - name: Учебники
   items:
-    - name: Миграция из SQL Server в Базу данных SQL Azure в автономном режиме
+    - name: "Перенос базы данных SQL\_Server в отдельную базу данных в службе \"База данных SQL Azure\" в автономном режиме"
       href: tutorial-sql-server-to-azure-sql.md
-    - name: Миграция из SQL Server в Базу данных SQL Azure через Интернет
+    - name: "Перенос базы данных SQL\_Server в отдельную базу данных в службе \"База данных SQL Azure\" по сети"
       href: tutorial-sql-server-azure-sql-online.md
-    - name: Миграция из SQL Server в Управляемый экземпляр Базы данных SQL Azure в автономном режиме
+    - name: "Перенос базы данных SQL\_Server в управляемый экземпляр Базы данных SQL Azure в автономном режиме"
       href: tutorial-sql-server-to-managed-instance.md
-    - name: Миграция из SQL Server в Управляемый экземпляр Базы данных SQL Azure через Интернет
+    - name: "Перенос базы данных SQL\_Server в управляемый экземпляр Базы данных SQL Azure по сети"
       href: tutorial-sql-server-managed-instance-online.md
-    - name: Перенос служб удаленных рабочих столов с SQL Server в Базу данных SQL Azure или в Управляемый экземпляр Базы данных SQL Azure через Интернет
+    - name: "Перенос базы данных RDS SQL\_Server в отдельную базу данных в службе \"База данных SQL Azure\" или управляемый экземпляр службы \"База данных SQL Azure\" по сети"
       href: tutorial-rds-sql-server-azure-sql-and-managed-instance-online.md
     - name: Миграция из MySQL в Базу данных Azure для MySQL через Интернет
       href: tutorial-mysql-azure-mysql-online.md
     - name: Миграция из MySQL RDS в Базу данных Azure для MySQL через Интернет
       href: tutorial-rds-mysql-server-azure-db-for-mysql-online.md
-    - name: Миграция из PostgreSQL в Базу данных Azure для PostgreSQL через Интернет
+    - name: Миграция из PostgreSQL в Базу данных Azure для PostgreSQL (отдельный сервер) по сети
       href: tutorial-postgresql-azure-postgresql-online.md
-    - name: Миграция из PostgreSQL RDS в Базу данных Azure для PostgreSQL через Интернет
+    - name: Миграция из RDS PostgreSQL в Базу данных Azure для PostgreSQL (отдельный сервер) по сети
       href: tutorial-rds-postgresql-server-azure-db-for-postgresql-online.md
     - name: Миграция с MongoDB в API Mongo для Azure Cosmos DB в автономном режиме
       href: tutorial-mongodb-cosmos-db.md
     - name: Миграция с MongoDB в API Mongo для Azure Cosmos DB через Интернет
       href: tutorial-mongodb-cosmos-db-online.md
-    - name: Миграция Oracle в Базу данных Azure для PostgreSQL через Интернет
+    - name: Миграция из Oracle в Базу данных Azure для PostgreSQL (отдельный сервер) по сети
       href: tutorial-oracle-azure-postgresql-online.md
 - name: Руководства
   items:
-    - name: Миграция с SQL Server в Базу данных SQL Azure с помощью PowerShell
+    - name: "Перенос базы данных SQL\_Server в отдельную базу данных в службе \"База данных SQL Azure\" с помощью PowerShell"
       href: howto-sql-server-to-azure-sql-powershell.md
-    - name: Миграция с SQL Server в Управляемый экземпляр Базы данных SQL Azure с помощью PowerShell
+    - name: "Перенос базы данных SQL\_Server в управляемый экземпляр Базы данных SQL Azure с помощью PowerShell"
       href: howto-sql-server-to-azure-sql-mi-powershell.md
     - name: Мониторинг действия миграции
       href: how-to-monitor-migration-activity.md
-    - name: Перенос пакетов SSIS в Базу данных SQL Azure
+    - name: Повторное развертывание пакетов SSIS в отдельной базе данных в службе "База данных SQL Azure"
       href: how-to-migrate-ssis-packages.md
-    - name: Перенос пакетов SSIS в управляемый экземпляр Базы данных SQL Azure
+    - name: Повторное развертывание пакетов SSIS в управляемом экземпляре Базы данных SQL Azure
       href: how-to-migrate-ssis-packages-managed-instance.md
 - name: Ресурсы
   expanded: true
@@ -53,7 +53,7 @@
       href: resource-scenario-status.md
     - name: Обзор предварительных требований
       href: pre-reqs.md
-    - name: Сетевые топологии для миграции в Управляемый экземпляр Базы данных SQL Azure
+    - name: Сетевые топологии для миграции в управляемый экземпляр Базы данных SQL
       href: resource-network-topologies.md
     - name: Устранение неполадок и известные проблемы
       items:
@@ -61,11 +61,11 @@
           href: known-issues-troubleshooting-dms-source-connectivity.md
         - name: Устранение распространенных неполадок и ошибок
           href: known-issues-troubleshooting-dms.md
-        - name: Известные проблемы при миграции в Базу данных SQL Azure через Интернет
+        - name: Известные проблемы с миграцией в отдельную базу данных в службе "База данных SQL Azure" по сети
           href: known-issues-azure-sql-online.md
         - name: Известные проблемы при миграции в Базу данных Azure для MySQL через Интернет
           href: known-issues-azure-mysql-online.md
-        - name: Известные проблемы при миграции в Базу данных Azure для PostgreSQL
+        - name: Известные проблемы с миграцией в Базу данных Azure для PostgreSQL (отдельный сервер) по сети
           href: known-issues-azure-postgresql-online.md
     - name: Видео
       items:
@@ -89,7 +89,7 @@
       items:
         - name: Доступные службы и средства для сценариев переноса данных
           href: dms-tools-matrix.md
-        - name: Руководство по переносу баз данных
+        - name: Руководство по Azure Database Migration
           href: 'https://aka.ms/datamigration'
         - name: Помощник по миграции данных
           href: 'https://aka.ms/dma'
@@ -97,6 +97,8 @@
           href: 'https://aka.ms/ssma'
         - name: Database Experimentation Assistant
           href: 'https://aka.ms/dea-docs'
+        - name: Набор средств для переноса доступа к данным
+          href: 'https://marketplace.visualstudio.com/items?itemName=ms-databasemigration.data-access-migration-toolkit'
     - name: Часто задаваемые вопросы
       href: faq.md
     - name: Отзывы на User Voice

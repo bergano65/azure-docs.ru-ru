@@ -7,12 +7,12 @@ ms.topic: quickstart
 ms.date: 10/18/2018
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: b7665caad60a5135da5780da242772af3c0a05a4
-ms.sourcegitcommit: 909ca340773b7b6db87d3fb60d1978136d2a96b0
+ms.openlocfilehash: fef3daf6e9e535736002e309e3d27491364dc553
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70984884"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71260287"
 ---
 # <a name="quickstart-create-and-manage-azure-file-shares-with-the-azure-portal"></a>Краткое руководство. Создание общих файловых ресурсов Azure и управление ими с помощью портала Azure 
 [Файлы Azure](storage-files-introduction.md) — это простая в использовании облачная файловая система от корпорации Майкрософт. Файловые ресурсы Azure можно подключить в Windows, Linux и macOS. В этом руководстве рассматриваются основы работы с файловыми ресурсами Azure с помощью [портала Azure](https://portal.azure.com/).
@@ -29,7 +29,7 @@ ms.locfileid: "70984884"
 2. На странице учетной записи хранения в разделе **Службы** выберите **Файлы**.
     ![Снимок экрана раздела служб учетной записи хранения; выбор службы "Файлы"](media/storage-how-to-use-files-portal/create-file-share-1.png)
 
-3. В меню в верхней части страницы **Служба файлов** щелкните **+ Файловый ресурс**. Откроется страница **Создать файловый ресурс**.
+3. В меню в верхней части страницы **Служба файлов** щелкните **Общая папка**. Откроется страница **Создать файловый ресурс**.
 4. В поле **Имя** введите *myshare*.
 5. Чтобы создать файловый ресурс Azure, нажмите кнопку **ОК**.
 

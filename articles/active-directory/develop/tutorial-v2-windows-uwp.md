@@ -12,37 +12,37 @@ ms.devlang: na
 ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 07/16/2019
+ms.date: 09/24/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 519a86bed6a3a09b476bce6435ae666d655dbe03
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: d0cafc439a24c10c4c5a678219a0e0dce84476ff
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68852265"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71290854"
 ---
 # <a name="call-microsoft-graph-api-from-a-universal-windows-platform-application-xaml"></a>Вызов API Microsoft Graph из приложения для универсальной платформы Windows (XAML)
 
 > [!div renderon="docs"]
 
-В этом руководстве объясняется, как собственное приложение универсальной платформы Windows (UWP) может запросить маркер доступа и затем вызвать API Microsoft Graph. Руководство также применимо к другим API, которым требуются маркеры доступа от конечной точки платформы удостоверений Майкрософт.
+В этом руководстве объясняется, как собственное приложение универсальной платформы Windows (UWP) может запросить маркер доступа. Затем приложение вызывает API Microsoft Graph. Руководство также применимо к другим API, которым требуются маркеры доступа от конечной точки платформы удостоверений Майкрософт.
 
 В конце этого руководства приложение вызывает защищенный API-интерфейс с использованием личных учетных записей, таких как outlook.com, live.com и другие. Приложение также вызывает рабочие и учебные учетные записи из любой компании или организации, использующей Azure Active Directory (Azure AD).
 
 >[!NOTE]
-> Для работы с этим руководством требуется Visual Studio 2017 с установленным компонентом "Разработка приложений для универсальной платформы Windows". Ознакомьтесь со статьей о [настройке](https://docs.microsoft.com/windows/uwp/get-started/get-set-up) для получения инструкций по скачиванию и настройке Visual Studio для разработки приложений для универсальной платформы Windows.
+> Для работы с этим руководством требуется Visual Studio с установленным компонентом "Разработка приложений для универсальной платформы Windows". Ознакомьтесь со статьей о [настройке](https://docs.microsoft.com/windows/uwp/get-started/get-set-up) для получения инструкций по скачиванию и настройке Visual Studio для разработки приложений для универсальной платформы Windows.
 
 ## <a name="how-this-guide-works"></a>Принцип работы с руководством
 
 ![Схема работы примера приложения, создаваемого в этом кратком руководстве](./media/tutorial-v2-windows-uwp/uwp-intro.svg)
 
-В этом руководстве создается пример приложения UWP, которое выполняет запрос к API Microsoft Graph или веб-API, принимающему маркеры от конечной точки платформы удостоверений Майкрософт. В этом сценарии маркер добавляется в запросы HTTP с помощью заголовка авторизации. Получение и продление маркеров выполняет библиотека проверки подлинности Майкрософт (MSAL).
+В этом руководстве показано, как создать приложение UWP, которое обращается к API Microsoft Graph. В этом сценарии маркер добавляется в запросы HTTP в заголовке "Authorization". Получение и продление маркеров выполняет библиотека проверки подлинности Майкрософт (MSAL).
 
 ## <a name="nuget-packages"></a>Пакеты NuGet
 
-В этом руководстве используются следующие пакеты NuGet:
+Для работы с руководством необходимы следующие пакеты NuGet:
 
 |Библиотека|ОПИСАНИЕ|
 |---|---|
@@ -50,66 +50,66 @@ ms.locfileid: "68852265"
 
 ## <a name="set-up-your-project"></a>Настройка проекта
 
-В этом разделе содержатся пошаговые инструкции по интеграции классического приложения .NET для Windows (XAML) с функцией *входа с учетной записью Майкрософт*. Затем приложение может выполнить запрос к веб-API, которым требуется маркер, например API Microsoft Graph.
+В этом разделе даны пошаговые инструкции по интеграции классического приложения .NET для Windows (XAML) с функцией входа с учетной записью Майкрософт. Затем приложение может выполнить запрос к веб-API, которым требуется маркер, например к API Microsoft Graph.
 
-В этом руководстве создается приложение, в котором отображается кнопка для запроса API Graph, кнопка выхода и текстовые поля с результатами вызовов.
+В руководстве показано, как создать приложение, в котором отображается кнопка для запроса к API Graph и кнопка выхода. В приложении также есть текстовые поля, содержащие результаты вызовов.
 
 > [!NOTE]
-> Предпочитаете скачать этот пример проекта Visual Studio? [Скачайте проект](https://github.com/Azure-Samples/active-directory-dotnet-native-uwp-v2/archive/msal3x.zip) и перейдите к шагу [регистрации приложения](#register-your-application "application registration step"), чтобы настроить пример кода перед выполнением.
+> Вы можете скачать этот пример проекта Visual Studio, а не создавать его заново. Если вы решили [скачать проект](https://github.com/Azure-Samples/active-directory-dotnet-native-uwp-v2/archive/msal3x.zip), переходите к шагу [регистрации приложения](#register-your-application "aШаг регистрации приложения), чтобы настроить пример кода перед выполнением.
 
 ### <a name="create-your-application"></a>Создание приложения
 
-1. В Visual Studio выберите **Файл** > **Создать** > **Проект**.
-2. В разделе **Шаблоны** выберите **Visual C#** .
-3. Выберите **Пустое приложение (универсальное приложение Windows)** .
-4. Присвойте приложению имя и щелкните **ОК**.
-5. Когда появится соответствующий запрос, выберите любую **целевую** и **минимальную** версии и нажмите кнопку **ОК**.
+1. Откройте Visual Studio и выберите **Создать проект**.
+1. В окне **Создание проекта** выберите шаблон проекта **Пустое приложение (универсальное приложение Windows)** для C# и щелкните **Далее**.
+1. В окне **Настроить новый проект** присвойте проекту имя и щелкните **Создать**.
+1. Когда появится соответствующий запрос, в поле **Новый проект приложения для универсальной платформы Windows** выберите произвольные **целевую** и **минимальную** версии и щелкните **ОК**.
 
-    >![Минимальная и целевая версии](./media/tutorial-v2-windows-uwp/vs-minimum-target.png)
+   ![Минимальная и целевая версии](./media/tutorial-v2-windows-uwp/select-uwp-target-minimum.png)
 
-## <a name="add-microsoft-authentication-library-to-your-project"></a>Добавление библиотеки проверки подлинности Майкрософт в проект
+### <a name="add-microsoft-authentication-library-to-your-project"></a>Добавление библиотеки проверки подлинности Майкрософт в проект
+
 1. В Visual Studio выберите **Сервис** > **Диспетчер пакетов NuGet** > **Консоль диспетчера пакетов**.
-2. Скопируйте и вставьте следующую команду в окно **консоли диспетчера пакетов**:
+1. Скопируйте и вставьте следующую команду в окно **консоли диспетчера пакетов**:
 
     ```powershell
-    Install-Package Microsoft.Identity.Client -IncludePrerelease
+    Install-Package Microsoft.Identity.Client
     ```
 
-> [!NOTE]
-> Эта команда устанавливает [библиотеку проверки подлинности Майкрософт](https://aka.ms/msal-net). MSAL получает, кэширует и обновляет маркеры пользователей для доступа к API, защищенным с помощью платформы удостоверений Майкрософт.
+   > [!NOTE]
+   > Эта команда устанавливает [библиотеку проверки подлинности Майкрософт](https://aka.ms/msal-net). MSAL получает, кэширует и обновляет маркеры пользователей для доступа к API, защищенным с помощью платформы удостоверений Майкрософт.
 
-## <a name="create-your-applications-ui"></a>Создание пользовательского интерфейса приложения
+### <a name="create-your-applications-ui"></a>Создание пользовательского интерфейса приложения
 
-Файл **MainPage.xaml** создается автоматически как часть шаблона проекта. Откройте этот файл и выполните инструкции:
+Visual Studio автоматически создает файл *MainPage.xaml* как часть шаблона проекта. Откройте этот файл и замените узел **Grid**, обозначающий приложение, следующим кодом:
 
-* Замените узел **Grid** вашего приложения следующим кодом:
-
-    ```xml
-    <Grid>
-        <StackPanel Background="Azure">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button x:Name="CallGraphButton" Content="Call Microsoft Graph API" HorizontalAlignment="Right" Padding="5" Click="CallGraphButton_Click" Margin="5" FontFamily="Segoe Ui"/>
-                <Button x:Name="SignOutButton" Content="Sign-Out" HorizontalAlignment="Right" Padding="5" Click="SignOutButton_Click" Margin="5" Visibility="Collapsed" FontFamily="Segoe Ui"/>
-            </StackPanel>
-            <TextBlock Text="API Call Results" Margin="2,0,0,-5" FontFamily="Segoe Ui" />
-            <TextBox x:Name="ResultText" TextWrapping="Wrap" MinHeight="120" Margin="5" FontFamily="Segoe Ui"/>
-            <TextBlock Text="Token Info" Margin="2,0,0,-5" FontFamily="Segoe Ui" />
-            <TextBox x:Name="TokenInfoText" TextWrapping="Wrap" MinHeight="70" Margin="5" FontFamily="Segoe Ui"/>
+```xml
+<Grid>
+    <StackPanel Background="Azure">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="CallGraphButton" Content="Call Microsoft Graph API" HorizontalAlignment="Right" Padding="5" Click="CallGraphButton_Click" Margin="5" FontFamily="Segoe Ui"/>
+            <Button x:Name="SignOutButton" Content="Sign-Out" HorizontalAlignment="Right" Padding="5" Click="SignOutButton_Click" Margin="5" Visibility="Collapsed" FontFamily="Segoe Ui"/>
         </StackPanel>
-    </Grid>
-    ```
-    
-## <a name="use-msal-to-get-a-token-for-microsoft-graph-api"></a>Получение маркера для API Microsoft Graph с помощью MSAL
+        <TextBlock Text="API Call Results" Margin="2,0,0,-5" FontFamily="Segoe Ui" />
+        <TextBox x:Name="ResultText" TextWrapping="Wrap" MinHeight="120" Margin="5" FontFamily="Segoe Ui"/>
+        <TextBlock Text="Token Info" Margin="2,0,0,-5" FontFamily="Segoe Ui" />
+        <TextBox x:Name="TokenInfoText" TextWrapping="Wrap" MinHeight="70" Margin="5" FontFamily="Segoe Ui"/>
+    </StackPanel>
+</Grid>
+```
 
-В этом разделе показано, как с помощью MSAL получить маркер для API Microsoft Graph.
+### <a name="use-msal-to-get-a-token-for-microsoft-graph-api"></a>Получение маркера для API Microsoft Graph с помощью MSAL
 
-1.  В файле **MainPage.xaml.cs** добавьте ссылку на библиотеку MSAL в класс:
+В этом разделе показано, как с помощью MSAL получить маркер для API Microsoft Graph. Внесите изменения в файл *MainPage.xaml.cs*.
+
+1. Добавьте в *MainPage.xaml.cs* следующие ссылки.
 
     ```csharp
     using Microsoft.Identity.Client;
+    using System.Diagnostics;
+    using System.Threading.Tasks;
     ```
 
-2. Замените код класса <code>MainPage</code> следующим кодом:
+1. Замените класс `MainPage` следующим кодом.
 
     ```csharp
     public sealed partial class MainPage : Page
@@ -123,8 +123,8 @@ ms.locfileid: "68852265"
         // Below are the clientId (Application Id) of your app registration and the tenant information. 
         // You have to replace:
         // - the content of ClientID with the Application Id for your app registration
-        // - Te content of Tenant by the information about the accounts allowed to sign-in in your application:
-        //   - For Work or School account in your org, use your tenant ID, or domain
+        // - the content of Tenant with the information about the accounts allowed to sign in in your application:
+        //   - for Work or School account in your org, use your tenant ID, or domain
         //   - for any Work or School accounts, use organizations
         //   - for any Work or School accounts, or Microsoft personal account, use common
         //   - for Microsoft Personal account, use consumers
@@ -201,197 +201,215 @@ ms.locfileid: "68852265"
            });
           }
         }
+    }
     ```
 
-### <a name="more-information"></a>Дополнительные сведения
+#### Интерактивное получение маркера<a name="more-information"></a>
 
-#### <a name="get-a-user-token-interactively"></a>Интерактивное получение маркера пользователя
-
-При вызове метода `AcquireTokenInteractive` появится окно, в котором пользователю предлагается выполнить вход. Когда пользователь впервые запрашивает доступ к защищенному ресурсу, приложение обычно требует выполнить интерактивный вход. Пользователям также может потребоваться выполнить вход при сбое автоматической операции получения маркера, например, если истек срок действия пароля пользователя.
+Метод `AcquireTokenInteractive` отображает окно, в котором пользователю предлагается выполнить вход. Когда пользователь впервые запрашивает доступ к защищенному ресурсу, приложение обычно требует выполнить интерактивный вход. Пользователям также может потребоваться выполнить вход при сбое автоматической операции получения маркера, например, если истек срок действия пароля пользователя.
 
 #### <a name="get-a-user-token-silently"></a>Автоматическое получение маркера пользователя
 
-Метод `AcquireTokenSilent` обрабатывает получение и обновление маркера без участия пользователя. После того как `AcquireTokenInteractive` выполнится в первый раз и пользователю будет предложено ввести учетные данные, следует использовать метод `AcquireTokenSilent` для запроса маркеров для последующих вызовов, так как он получает маркеры автоматически. Кэшированием и обновлением маркеров займется MSAL.
+Метод `AcquireTokenSilent` обрабатывает получение и обновление маркера без участия пользователя. После первого запуска `AcquireTokenInteractive` и запроса учетных данных пользователя выполните метод `AcquireTokenSilent`, чтобы запросить маркеры для последующих вызовов. Этот метод принимает маркеры без дополнительного взаимодействия. Кэшированием и обновлением маркеров занимается библиотека MSAL.
 
-Иногда метод `AcquireTokenSilent` завершается ошибкой. Причина может заключаться в том, что пользователь вышел из системы или изменил пароль на другом устройстве. Когда MSAL обнаруживает, что эту проблему можно решить, запросив интерактивное действие, возникает исключение `MsalUiRequiredException`. Приложение может обработать это исключение двумя способами:
+Иногда метод `AcquireTokenSilent` завершается ошибкой. Например, если пользователь вышел из системы или изменил пароль на другом устройстве. Когда MSAL обнаруживает, что для решения проблемы требуется интерактивное действие, она создает исключение `MsalUiRequiredException`. Приложение может обработать это исключение двумя способами:
 
-* Может немедленно вызвать `AcquireTokenInteractive`. Этот вызов приводит к появлению запроса на вход пользователя. Этот шаблон обычно используется в интернет-приложениях, где пользователю недоступно автономное содержимое. Пример, созданный в ходе пошаговой настройки, следует этому шаблону. Вы увидите его в действии при первом запуске примера.
-  * Так как приложение еще не использовалось, `accounts.FirstOrDefault()` будет содержать значение NULL и будет выдано исключение `MsalUiRequiredException`.
-  * Затем код в примере обрабатывает исключение, вызывая `AcquireTokenInteractive`. Этот вызов приводит к появлению запроса на вход пользователя.
+* Приложение немедленно вызывает `AcquireTokenInteractive`. Этот вызов приводит к появлению запроса на вход пользователя. Этот подход обычно используется в интернет-приложениях, где пользователю не предоставляется автономное содержимое. Пример, созданный в ходе пошаговой настройки, следует этому шаблону. Вы увидите его в действии при первом запуске примера.
 
-* Или вместо этого он демонстрирует пользователям визуальное оповещение о том, что требуется интерактивный вход. После этого пользователи могут выбрать нужное время для входа. Либо приложение может попытаться повторно выполнить метод `AcquireTokenSilent` позже. Зачастую этот шаблон применяется, когда пользователи могут использовать другие функциональные возможности приложения без прерывания его работы. Например, когда в приложении доступно автономное содержимое. В этом случае пользователи могут решать, что им нужно сделать после входа — получить доступ к защищенному ресурсу или обновить устаревшие данные. Или же приложение может попытаться повторно выполнить `AcquireTokenSilent` при восстановлении подключения к сети после временной недоступности.
+   Так как приложение еще не использовалось, `accounts.FirstOrDefault()` содержит значение NULL, поэтому создается исключение `MsalUiRequiredException`.
 
-## <a name="call-microsoft-graph-api-by-using-the-token-you-just-obtained"></a>Вызов API Microsoft Graph с помощью полученного маркера
+   Затем код в примере обрабатывает исключение, вызывая `AcquireTokenInteractive`. Этот вызов приводит к появлению запроса на вход пользователя.
 
-* Добавьте приведенный ниже новый метод в файл **MainPage.xaml.cs**. Этот метод используется для выполнения запроса `GET` к API Graph с помощью заголовка авторизации `Authorization`:
+* Приложение демонстрирует пользователям визуальное оповещение о том, что требуется вход. После этого пользователи могут выбрать нужное время для входа. Приложение может повторить вызов `AcquireTokenSilent` позже. Такой подход применяется, когда пользователи без проблем могут использовать другие функциональные возможности приложения. Например, когда в приложении доступно автономное содержимое. В этом случае пользователи могут самостоятельно решить, когда они хотят войти в систему. Приложение может повторно вызвать `AcquireTokenSilent` после временной недоступности сетевого подключения.
 
-    ```csharp
-    /// <summary>
-    /// Perform an HTTP GET request to a URL using an HTTP Authorization header
-    /// </summary>
-    /// <param name="url">The URL</param>
-    /// <param name="token">The token</param>
-    /// <returns>String containing the results of the GET operation</returns>
-    public async Task<string> GetHttpContentWithToken(string url, string token)
-    {
-        var httpClient = new System.Net.Http.HttpClient();
-        System.Net.Http.HttpResponseMessage response;
-        try
+### <a name="call-microsoft-graph-api-by-using-the-token-you-just-obtained"></a>Вызов API Microsoft Graph с помощью полученного маркера
+
+Добавьте приведенный ниже новый метод в файл *MainPage.xaml.cs*.
+
+   ```csharp
+   /// <summary>
+   /// Perform an HTTP GET request to a URL using an HTTP Authorization header
+   /// </summary>
+   /// <param name="url">The URL</param>
+   /// <param name="token">The token</param>
+   /// <returns>String containing the results of the GET operation</returns>
+   public async Task<string> GetHttpContentWithToken(string url, string token)
+   {
+       var httpClient = new System.Net.Http.HttpClient();
+       System.Net.Http.HttpResponseMessage response;
+       try
+       {
+           var request = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, url);
+           // Add the token in Authorization header
+           request.Headers.Authorization = 
+             new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+           response = await httpClient.SendAsync(request);
+           var content = await response.Content.ReadAsStringAsync();
+           return content;
+       }
+       catch (Exception ex)
         {
-            var request = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, url);
-            // Add the token in Authorization header
-            request.Headers.Authorization = 
-              new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
-            response = await httpClient.SendAsync(request);
-            var content = await response.Content.ReadAsStringAsync();
-            return content;
-        }
-        catch (Exception ex)
-        {
-            return ex.ToString();
-        }
+           return ex.ToString();
+       }
     }
-    ```
+   ```
 
-### <a name="more-information-on-making-a-rest-call-against-a-protected-api"></a>Дополнительные сведения о вызове REST через защищенный API
+ Этот метод выполняет запрос `GET` к API Graph с заголовком `Authorization`.
+
+#### <a name="more-information-on-making-a-rest-call-against-a-protected-api"></a>Дополнительные сведения о вызове REST через защищенный API
 
 В этом примере приложения метод `GetHttpContentWithToken` выполняет HTTP-запрос `GET` к защищенному ресурсу, которому требуется маркер. Затем метод возвращает содержимое вызывающему объекту. Этот метод добавляет полученный маркер в заголовок **авторизации HTTP**. В этом примере ресурс — это конечная точка **me** API Microsoft Graph, которая отображает сведения о профиле пользователя.
-<!--end-collapse-->
 
-## <a name="add-a-method-to-sign-out-the-user"></a>Добавление метода для выхода пользователя
+### <a name="add-a-method-to-sign-out-the-user"></a>Добавление метода для выхода пользователя
 
-* Для выхода пользователя добавьте следующий метод в файл **MainPage.xaml.cs**:
+Для выхода пользователя добавьте следующий метод в файл *MainPage.xaml.cs*:
 
-    ```csharp
-    /// <summary>
-    /// Sign out the current user
-    /// </summary>
-    private async void SignOutButton_Click(object sender, RoutedEventArgs e)
-    {
-        IEnumerable<IAccount> accounts = await PublicClientApp.GetAccountsAsync
-                                                              .ConfigureAwait(false);
-        IAccount firstAccount = accounts.FirstOrDefault();
+   ```csharp
+   /// <summary>
+   /// Sign out the current user
+   /// </summary>
+   private async void SignOutButton_Click(object sender, RoutedEventArgs e)
+   {
+       IEnumerable<IAccount> accounts = await PublicClientApp.GetAccountsAsync().ConfigureAwait(false);
+       IAccount firstAccount = accounts.FirstOrDefault();
 
-        try
-        {
-            await PublicClientApp.RemoveAsync(firstAccount).ConfigureAwait(false);
-            await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
-            {
-                ResultText.Text = "User has signed-out";
-                this.CallGraphButton.Visibility = Visibility.Visible;
-                    this.SignOutButton.Visibility = Visibility.Collapsed;
-                });
-            }
-            catch (MsalException ex)
-            {
-                ResultText.Text = $"Error signing-out user: {ex.Message}";
-            }
-        }
-    ```
+       try
+       {
+           await PublicClientApp.RemoveAsync(firstAccount).ConfigureAwait(false);
+           await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
+           {
+               ResultText.Text = "User has signed out";
+               this.CallGraphButton.Visibility = Visibility.Visible;
+                   this.SignOutButton.Visibility = Visibility.Collapsed;
+               });
+           }
+           catch (MsalException ex)
+           {
+               ResultText.Text = $"Error signing out user: {ex.Message}";
+           }
+       }
+   ```
 
 > [!NOTE]
-> MSAL.NET использует асинхронные методы для получения маркеров и управления учетными записями. Поэтому следует внимательно выполнять операции с помощью пользовательского интерфейса в цепочке действий, т. е. `Dispatcher.RunAsync`, и принимать меры предосторожности при вызове `ConfigureAwait(false)`.
+> MSAL.NET использует асинхронные методы для получения маркеров или управления учетными записями. Вам нужно поддерживать действия пользовательского интерфейса в потоке пользовательского интерфейса. Именно поэтому нужно вызвать `Dispatcher.RunAsync` и соблюдать меры предосторожности при вызове `ConfigureAwait(false)`.
 
-### <a name="more-information-on-sign-out"></a>Дополнительные сведения о выходе
+#### Дополнительные сведения о выходе<a name="more-information-on-sign-out"></a>
 
-Метод `SignOutButton_Click` удаляет пользователя из кэша пользователей MSAL. Этот метод фактически указывает MSAL забыть текущего пользователя. Затем будущий запрос получения маркера завершается успешно только в том случае, если он реализован как интерактивный.
-Приложение в этом примере поддерживает одиночного пользователя. Но MSAL поддерживает сценарии, где одновременно можно выполнить вход с помощью нескольких учетных записей. Пример — приложение электронной почты, в котором у пользователя есть несколько учетных записей.
+Метод `SignOutButton_Click` удаляет пользователя из кэша пользователей MSAL. Этот метод фактически указывает MSAL забыть текущего пользователя. Последующий запрос получения маркера завершается успешно только в том случае, если он выполняется интерактивно.
 
-## <a name="display-basic-token-information"></a>Отображение основных сведений о маркере
+Приложение в этом примере поддерживает одиночного пользователя. MSAL поддерживает сценарии одновременного входа пользователя с несколькими учетными записями. Пример — приложение электронной почты, в котором у пользователя есть несколько учетных записей.
 
-* Добавьте следующий метод в файл **MainPage.xaml.cs** для отображения основных сведений о маркере:
+### <a name="display-basic-token-information"></a>Отображение основных сведений о маркере
 
-    ```csharp
-    /// <summary>
-    /// Display basic information contained in the token. Needs to be called from the UI thead.
-    /// </summary>
-    private void DisplayBasicTokenInfo(AuthenticationResult authResult)
-    {
-        TokenInfoText.Text = "";
-        if (authResult != null)
-        {
-            TokenInfoText.Text += $"User Name: {authResult.Account.Username}" + Environment.NewLine;
-            TokenInfoText.Text += $"Token Expires: {authResult.ExpiresOn.ToLocalTime()}" + Environment.NewLine;
+Добавьте следующий метод в файл *MainPage.xaml.cs* для отображения основных сведений о маркере:
+
+   ```csharp
+   /// <summary>
+   /// Display basic information contained in the token. Needs to be called from the UI thread.
+   /// </summary>
+   private void DisplayBasicTokenInfo(AuthenticationResult authResult)
+   {
+       TokenInfoText.Text = "";
+       if (authResult != null)
+       {
+           TokenInfoText.Text += $"User Name: {authResult.Account.Username}" + Environment.NewLine;
+           TokenInfoText.Text += $"Token Expires: {authResult.ExpiresOn.ToLocalTime()}" + Environment.NewLine;
+       }
+   }
+   ```
+
+#### Дополнительные сведения<a name="more-information-1"></a>
+
+Маркеры идентификаторов, полученные с использованием **OpenID Connect**, также содержат небольшой набор данных, относящихся к пользователю. `DisplayBasicTokenInfo` отображает базовые сведения, содержащиеся в маркере, Эти сведения включают отображаемое имя и идентификатор пользователя. В них также есть сведения о сроке действия маркера и строка, представляющая сам маркер доступа. Если вы несколько раз нажмете кнопку **Call Microsoft Graph API** (Вызвать API Microsoft Graph), то увидите, что для последующих запросов повторно используется тот же маркер. Также можно увидеть, что библиотека MSAL продлила срок действия маркера.
+
+### <a name="display-message"></a>Отображение сообщения
+
+Добавьте приведенный ниже новый метод в файл *MainPage.xaml.cs*.
+
+   ```csharp
+   /// <summary>
+   /// Displays a message in the ResultText. Can be called from any thread.
+   /// </summary>
+   private async Task DisplayMessageAsync(string message)
+   {
+        await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal,
+            () =>
+            {
+                ResultText.Text = message;
+            });
         }
-    }
-    ```
-
-### <a name="more-information"></a>Дополнительные сведения
-
-Маркеры идентификаторов, полученные через **OpenID Connect**, также содержат небольшой набор данных, относящихся к пользователю. `DisplayBasicTokenInfo` отображает базовые сведения, содержащиеся в маркере, например отображаемое имя и идентификатор пользователя, срок действия маркера и строка, представляющая сам маркер доступа. Если нажать кнопку **Call Microsoft Graph API** (Вызвать API Microsoft Graph) несколько раз, вы увидите, что для последующих запросов повторно используется тот же маркер. Также можно увидеть, что библиотека MSAL продлила срок действия маркера.
+   ```
 
 ## <a name="register-your-application"></a>Регистрация приложения
 
-Теперь вам необходимо зарегистрировать приложение на портале регистрации приложений Майкрософт:
+Теперь вам нужно зарегистрировать приложение.
 
-1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
-1. Если ваша учетная запись присутствует в нескольких клиентах Azure AD, выберите `Directory + Subscription` в правом верхнем углу в меню, расположенном вверху страницы, и переключите сеанс работы с порталом на нужный клиент Azure AD.
-1. Перейдите на страницу [Регистрация приложений](https://go.microsoft.com/fwlink/?linkid=2083908) Платформы удостоверений Майкрософт для разработчиков.
-1. Выберите **Новая регистрация**.
-   - В разделе **Имя** введите понятное имя приложения, которое будет отображаться пользователям приложения, например `UWP-App-calling-MSGraph`.
-   - В разделе **Поддерживаемые типы учетных записей** выберите **Учетные записи в любом каталоге организации и личные учетные записи Майкрософт (например, Skype, Xbox, Outlook.com)** .
-   - Выберите **Зарегистрировать**, чтобы создать приложение.
-1. На странице приложения **Обзор** найдите **идентификатор приложения (клиента)** и запишите его, чтобы использовать позже. Вернитесь в Visual Studio, откройте файл **App.xaml.cs** и замените значение ClientId только что зарегистрированным идентификатором приложения.
-1. В списке страниц приложения выберите **Проверка подлинности**.
-   1. В разделе **URI перенаправления** в списке URI перенаправления сделайте следующее:
-   1. В столбце **Тип** выберите **Общедоступный клиент (мобильный и классический)** .
-   1. Введите `urn:ietf:wg:oauth:2.0:oob` в столбец **URI перенаправления**.
+1. Войдите на [портале Azure](https://portal.azure.com).
+1. Выберите **Azure Active Directory** > **Регистрация приложений**.
+1. Выберите **Новая регистрация**. Введите понятное имя приложения, которое будет отображаться пользователям, например *UWP-App-calling-MSGraph*.
+1. В разделе **Поддерживаемые типы учетных записей** выберите **Учетные записи в любом каталоге организации и личные учетные записи Майкрософт (например, Skype, Xbox, Outlook.com)** и щелкните **Зарегистрировать**, чтобы продолжить процесс.
+1. На странице общих сведений найдите **идентификатор приложения (клиента)** и скопируйте его. Вернитесь в Visual Studio, откройте файл *MainPage.xaml.cs* и замените значение `ClientId` полученным значением.
+
+Настройте проверку подлинности для приложения.
+
+1. На [портале Azure](https://portal.azure.com) в разделе **Управление** выберите **Аутентификация**.
+1. В списке **URI перенаправления** в поле **Тип** выберите значение **Public client (mobile & desktop)** (Общедоступный клиент (мобильный и классический) и введите `urn:ietf:wg:oauth:2.0:oob` в поле **URI перенаправления**.
 1. Щелкните **Сохранить**.
-1. Из списка страниц приложения выберите **Разрешения API**.
-   - Нажмите кнопку **Добавить разрешение**.
-   - Убедитесь, что вкладка **Microsoft API's** (Интерфейсы API (Майкрософт)) выбрана.
-   - В разделе *Часто используемые интерфейсы API Microsoft* щелкните **Microsoft Graph**.
-   - В разделе **Делегированные разрешения** убедитесь, что выбраны нужные разрешения: **User.Read**. При необходимости используйте поле поиска.
-   - Нажмите кнопку **Добавить разрешения**.
+
+Настройте разрешения API для приложения.
+
+1. В разделе **Управление** выберите **Разрешения API**.
+1. Выберите **Добавить разрешение** и выберите **API Microsoft**.
+1. Выберите **Microsoft Graph**.
+1. Выберите **Делегированные разрешения**, выполните поиск строки *User.Read* и убедитесь, что установлен параметр **User.Read**.
+1. Если вы внесли изменения, щелкните **Добавить разрешения**, чтобы сохранить эти изменения.
 
 ## <a name="enable-integrated-authentication-on-federated-domains-optional"></a>Включение встроенной проверки подлинности в федеративных доменах (необязательно)
 
-Чтобы включить встроенную проверку подлинности Windows при использовании с федеративным доменом Azure AD, необходимо включить дополнительные возможности в манифесте приложения.
+Чтобы включить встроенную проверку подлинности Windows при использовании с федеративным доменом Azure AD, необходимо включить дополнительные возможности в манифесте приложения. Вернитесь к приложению, открытому в Visual Studio.
 
-1. Дважды щелкните **Package.appxmanifest**.
-2. Выберите вкладку **Возможности** и убедитесь, что включены следующие параметры:
+1. Откройте файл *Package.appxmanifest*.
+1. Выберите элемент **Capabilities** (Возможности) и включите следующие параметры.
 
-    - Корпоративная проверка подлинности
-    - Частные сети (клиент и сервер)
-    - Общие сертификаты пользователей
+   * **Корпоративная проверка подлинности**
+   * **Частные сети (клиент и сервер)**
+   * **Общие сертификаты пользователей**
 
 > [!IMPORTANT]
-> [Встроенная проверка подлинности Windows](https://aka.ms/msal-net-iwa) не настроена по умолчанию для этого примера. Приложениям, запрашивающим возможности *Корпоративная проверка подлинности* или *Общие сертификаты пользователей*, требуется более высокий уровень проверки в Магазине Windows. Кроме того, не все разработчики желают выполнять проверку более высокого уровня. Этот параметр следует включать только в том случае, если требуется встроенная проверка подлинности Windows с федеративным доменом Azure AD.
+> [Встроенная проверка подлинности Windows](https://aka.ms/msal-net-iwa) не настроена по умолчанию для этого примера. Приложениям, которые запрашивают возможности `Enterprise Authentication` или `Shared User Certificates`, требуется более высокий уровень проверки в Windows Store. Кроме того, не все разработчики желают выполнять проверку более высокого уровня. Этот параметр следует включать только в том случае, если требуется встроенная проверка подлинности Windows с федеративным доменом Azure AD.
 
 ## <a name="test-your-code"></a>Тестирование кода
 
 Чтобы протестировать приложение, нажмите клавишу F5 для запуска проекта в Visual Studio. Откроется главное окно:
 
-![Пользовательский интерфейс приложения](./media/tutorial-v2-windows-uwp/testapp-ui.png)
+![Пользовательский интерфейс приложения](./media/tutorial-v2-windows-uwp/testapp-ui-vs2019.png)
 
-Когда будете готовы выполнить тестирование, выберите **Call Microsoft Graph API** (вызвать API Graph Microsoft). Затем используйте рабочую или учебную учетную запись Azure AD либо учетную запись Майкрософт (live.com, outlook.com) для входа. Если вход выполняется впервые, появится окно с предложением войти в систему:
-
-![Страница входа](./media/tutorial-v2-windows-uwp/sign-in-page.png)
+Когда будете готовы выполнить тестирование, выберите **Call Microsoft Graph API** (вызвать API Graph Microsoft). Затем используйте рабочую или учебную учетную запись Azure AD либо учетную запись Майкрософт (live.com, outlook.com) для входа. При первом запуске приложение отображает окно, где пользователю предлагается войти в систему.
 
 ### <a name="consent"></a>Согласие на предоставление разрешений
 
 При первом входе в приложение появится экран согласия, подобный показанному ниже. Выберите **Да**, чтобы дать явное согласие на доступ:
 
-![Экран согласия на доступ](./media/tutorial-v2-windows-uwp/consentscreen.png)
+![Экран согласия на доступ](./media/tutorial-v2-windows-uwp/consentscreen-vs2019.png)
 
 ### <a name="expected-results"></a>Ожидаемые результаты
 
 На экране **API Call Results** (Результаты вызова API) должны отобразиться сведения о профиле пользователя, возвращенные вызовом API Microsoft Graph:
 
-![Экран результатов вызова API](./media/tutorial-v2-windows-uwp/uwp-results-screen.PNG)
+![Экран результатов вызова API](./media/tutorial-v2-windows-uwp/uwp-results-screen-vs2019.png)
 
 Вы также увидите основные сведения о маркере, полученные с помощью `AcquireTokenInteractive` или `AcquireTokenSilent`, в окне **Token Info** (Сведения о маркере):
 
 |Свойство  |Формат  |ОПИСАНИЕ |
 |---------|---------|---------|
-|**Имя пользователя** |<span>user@domain.com</span> |Имя пользователя, которое позволяет его идентифицировать.|
-|**Истечение срока действия маркера** |Дата и время |Это время, когда истекает срок действия маркера. MSAL продлевает срок действия, по мере необходимости обновляя маркер.|
+|`Username` |`user@domain.com` |Имя пользователя, которое позволяет его идентифицировать.|
+|`Token Expires` |`DateTime` |Это время, когда истекает срок действия маркера. MSAL продлевает срок действия, по мере необходимости обновляя маркер.|
 
 ### <a name="more-information-about-scopes-and-delegated-permissions"></a>Дополнительные сведения об областях и делегированных разрешениях
 
-Для чтения профиля пользователя API Microsoft Graph требуется область *user.read*. По умолчанию эта область автоматически добавляется в каждое приложение, зарегистрированное на портале регистрации приложений. Для других API Microsoft Graph, а также для пользовательских API вашего внутреннего сервера могут потребоваться дополнительные области. Для отображения списка календарей пользователя API Microsoft Graph требуется область *Calendars.Read*.
+Для чтения профиля пользователя API Microsoft Graph требуется область `user.read`. По умолчанию эта область добавляется в каждое приложение, зарегистрированное на портале регистрации приложений. Для других API Microsoft Graph, а также для пользовательских API вашего внутреннего сервера могут потребоваться дополнительные области. Например, API Microsoft Graph требуется область `Calendars.Read` для отображения календарей пользователя.
 
-Чтобы из контекста приложения получить доступ к календарям пользователя, добавьте делегированное разрешение *Calendars.Read* в сведения о регистрации приложения. Затем добавьте область *Calendars.Read* в вызов `acquireTokenSilent`.
+Чтобы из контекста приложения получить доступ к календарям пользователя, добавьте делегированное разрешение `Calendars.Read` в сведения о регистрации приложения. Затем добавьте область `Calendars.Read` в вызов `acquireTokenSilent`.
 
 > [!NOTE]
 > При увеличении количества областей от пользователя могут потребоваться дополнительные согласия.
@@ -406,17 +424,17 @@ ms.locfileid: "68852265"
 * No valid certificates found in the user's certificate store (В хранилище сертификатов пользователя отсутствуют действительные сертификаты).
 * Попробуйте еще раз, выбрав другой метод проверки подлинности.
 
-**Причина.** Не включены возможности корпоративного уровня и сертификатов.
+Причина. Не включены возможности корпоративного уровня и сертификатов.
 
-**Решение.** Выполните действия из раздела о [встроенной аутентификации в федеративных доменах](#enable-integrated-authentication-on-federated-domains-optional).
+Решение. Выполните инструкции из раздела [Включение встроенной проверки подлинности в федеративных доменах (необязательно)](#enable-integrated-authentication-on-federated-domains-optional).
 
 ### <a name="issue-2"></a>Проблема 2
 
 Вы включили [встроенную проверку подлинности в федеративных доменах](#enable-integrated-authentication-on-federated-domains-optional) и пытаетесь использовать Windows Hello на компьютере под управлением Windows 10 для входа в среду с настроенной многофакторной проверкой подлинности. Отображается список сертификатов. Однако если вы решили использовать ПИН-код, окно ПИН-кода никогда не отображается.
 
-**Причина.** Эта проблема вызвана известным ограничением веб-брокера аутентификации в приложениях UWP, запускаемых на рабочем столе Windows 10. В Windows 10 Mobile он работает нормально.
+Причина. Эта проблема вызвана известным ограничением веб-брокера аутентификации в приложениях UWP, запускаемых на рабочем столе Windows 10. В Windows 10 Mobile он работает нормально.
 
-**Возможное решение.** Выберите **Sign in with other options** (Вход с другими параметрами). Затем выберите **Sign in with a username and password** (Вход с использованием имени пользователя и пароля). Выберите **Provide your password** (Ввести пароль). После этого пройдите процесс проверки подлинности по телефону.
+Обходное решение. Выберите **Sign in with other options** (Вход с другими параметрами). Затем выберите **Sign in with a username and password** (Вход с использованием имени пользователя и пароля). Выберите **Provide your password** (Ввести пароль). После этого пройдите процесс проверки подлинности по телефону.
 
 [!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]
 

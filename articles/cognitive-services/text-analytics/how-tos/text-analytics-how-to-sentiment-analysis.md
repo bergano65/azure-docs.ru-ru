@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: sample
-ms.date: 07/30/2019
+ms.date: 09/23/2019
 ms.author: aahi
-ms.openlocfilehash: 60ae2136c3fa934c178de95f51d490e570f45faa
-ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
+ms.openlocfilehash: ea145239d38a4030423a4517fe02c62b8eefa08a
+ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70845345"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71211770"
 ---
 # <a name="example-detect-sentiment-with-text-analytics"></a>Пример: Определение тональности в службе "Анализ текста"
 
@@ -139,7 +139,7 @@ ms.locfileid: "70845345"
 > [!NOTE]
 > * Формат запроса и [ограничения данных](../overview.md#data-limits) для анализа тональности версии 3 по сравнению с предыдущей версией не изменились.
 > * Сейчас анализ тональности версии 3:
->    * В настоящее время поддерживаются английский, китайский (упрощенное письмо) и японский языки.
+>    * Сейчас поддерживаются английский, французский, итальянский, японский и китайский (упрощенный и традиционный) языки.
 >    * Анализ тональности доступен в таких регионах: `Australia East`, `Central Canada`, `Central US`, `East Asia`, `East US`, `East US 2`, `North Europe`, `Southeast Asia`, `South Central US`, `UK South`, `West Europe` и `West US 2`.
 
 |Функция |ОПИСАНИЕ  |

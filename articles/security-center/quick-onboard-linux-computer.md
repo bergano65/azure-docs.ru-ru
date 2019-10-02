@@ -3,9 +3,8 @@ title: Начало работы с центром безопасности Azur
 description: В этом кратком руководстве показано, как подключить компьютеры Linux к центру безопасности.
 services: security-center
 documentationcenter: na
-author: rkarlin
-manager: barbkess
-editor: ''
+author: memildin
+manager: rkarlin
 ms.assetid: 61e95a87-39c5-48f5-aee6-6f90ddcd336e
 ms.service: security-center
 ms.devlang: na
@@ -14,13 +13,13 @@ ms.custom: mvc
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/02/2018
-ms.author: rkarlin
-ms.openlocfilehash: 110dcb1531390b207ae741af07fe0ad18964aae1
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.author: memildin
+ms.openlocfilehash: 82ce466f12acef529b5e45e5dd94c64b94be0f7e
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68816138"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71202887"
 ---
 # <a name="quickstart-onboard-linux-computers-to-azure-security-center"></a>Краткое руководство. Подключение компьютеров Linux к Центру безопасности Azure
 Когда вы подключите подписки Azure, можно включить Центр безопасности для ресурсов Linux, работающих за пределами среды Azure (например, в локальной среде или других облаках), подготовив агент Linux. Агент называется Microsoft Monitoring Agent (MMA) или агент OMS.
@@ -82,7 +81,7 @@ ms.locfileid: "68816138"
     `sudo sh ./omsagent-<version>.universal.x64.sh --purge`
 
 ## <a name="next-steps"></a>Дополнительная информация
-В этом кратком руководстве вы подготовили агент на компьютере Linux. Дополнительные сведения об использовании центра безопасности см. в руководстве по настройке политики безопасности и оценке безопасности ресурсов.
+При работе с этим кратким руководством вы подготовили к работе агент на компьютере Linux. Дополнительные сведения об использовании центра безопасности см. в руководстве по настройке политики безопасности и оценке безопасности ресурсов.
 
 > [!div class="nextstepaction"]
 > [Руководство. Определение и оценка политик безопасности](tutorial-security-policy.md)

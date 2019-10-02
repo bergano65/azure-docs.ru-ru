@@ -1,6 +1,6 @@
 ---
 title: Отправка данных устройства через прозрачный шлюз — Машинное обучение в Azure IoT Edge | Документация Майкрософт
-description: Используйте свой компьютер для разработки как имитированное устройство IoT Edge для отправки данных на устройство Центра Интернета вещей через устройство, настроенное в качестве прозрачного шлюза.
+description: Используйте свой компьютер для разработки в качестве имитированного устройства IoT Edge для отправки данных в Центр Интернета вещей через устройство, настроенное в качестве прозрачного шлюза.
 author: kgremban
 manager: philmea
 ms.author: kgremban
@@ -8,12 +8,12 @@ ms.date: 06/13/2019
 ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 12793ff28bf13f26bc2cc3d436b644601fc48ac8
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 0fe05131268b8a6a6c61323289d3017231e49706
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67081164"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71299821"
 ---
 # <a name="tutorial-send-data-via-transparent-gateway"></a>Руководство по отправке данных через прозрачный шлюз
 

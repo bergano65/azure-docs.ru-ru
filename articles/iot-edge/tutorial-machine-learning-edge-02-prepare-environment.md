@@ -8,12 +8,12 @@ ms.date: 06/13/2019
 ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: fd3b5766ec2bd8d1babf847598f1fbe5b6511ce7
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 1db94e683a0dfb3b60b12bc5ac205c766d405d0a
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67432831"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71299825"
 ---
 # <a name="tutorial-set-up-an-environment-for-machine-learning-on-iot-edge"></a>Руководство по настройке среды для машинного обучения в IoT Edge
 
@@ -26,7 +26,7 @@ ms.locfileid: "67432831"
 
 Этот шаг обычно выполняет разработчик облачных решений. Некоторое программное обеспечение, возможно, будет полезным также для специалиста по обработке и анализу данных.
 
-В рамках этой статьи мы выполним различные задачи для разработчиков, включая написание кода, компиляцию, настройку и развертывание модулей IoT Edge, а также устройств Интернета вещей. Для удобства мы разработали скрипт PowerShell, который позволяет создать виртуальную машину Azure с несколькими уже настроенными предварительными инструментами. Виртуальная машина, которую мы создаем, должна иметь возможность обрабатывать [вложенную виртуализацию](https://docs.microsoft.com/azure/virtual-machines/windows/nested-virtualization). Поэтому мы выбрали размер машины DS8V3.
+В рамках этой статьи мы выполним различные задачи для разработчиков, включая написание кода, компиляцию, настройку и развертывание модулей IoT Edge, а также устройств Интернета вещей. Для удобства мы разработали скрипт PowerShell, который позволяет создать виртуальную машину Azure с несколькими уже настроенными предварительными инструментами. Виртуальная машина, которую мы создаем, должна иметь возможность обрабатывать [вложенную виртуализацию](https://docs.microsoft.com/azure/virtual-machines/windows/nested-virtualization). Поэтому мы выбрали виртуальную машину [Standard_D8s_v3](../virtual-machines/windows/sizes-general.md#dsv3-series-1).
 
 На виртуальной машине для разработки будут настроены следующие инструменты:
 

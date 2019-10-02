@@ -10,12 +10,12 @@ ms.subservice: custom-vision
 ms.topic: tutorial
 ms.date: 07/03/2019
 ms.author: pafarley
-ms.openlocfilehash: b0a5b110951d7b13110fab935d5ca1333f7f8c1e
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: bdcf8a0d63b880075cd22c73305afa8cf09a2e3b
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68564209"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71261977"
 ---
 # <a name="tutorial-recognize-azure-service-logos-in-camera-pictures"></a>Руководство по Распознавание логотипов служб Azure на изображениях с камеры
 
@@ -57,7 +57,7 @@ ms.locfileid: "68564209"
 
 Это приложение настроено на работу с конкретным форматом строк для тегов. Определения можно найти в файле *Source\VisualProvision\Services\Recognition\RecognitionService.cs*:
 
-[!code-csharp[Tag definitions](~/AIVisualProvision/Source/VisualProvision/Services/Recognition/RecognitionService.cs?range=18-33)]
+[!code-csharp[Tag definitions](~/AIVisualProvision/Source/VisualProvision/Services/Recognition/RecognitionService.cs?name=snippet_constants)]
 
 Присвоив тег, перейдите к следующему изображению. Завершив процесс, закройте окно добавления тегов.
 
@@ -73,19 +73,19 @@ ms.locfileid: "68564209"
 
 ![Веб-сайт Пользовательского визуального распознавания, на котором открыто окно API прогнозирования со значениями URL-адреса и ключа API](media/azure-logo-tutorial/cusvis-endpoint.png)
 
-Скопируйте URL-адрес файла изображения и значение **Prediction-Key** в соответствующие поля в файле *Source\VisualProvision\AppSettings.cs*:
+Скопируйте URL-адрес конечной точки и значение **Prediction-Key** в соответствующие поля в файле *Source\VisualProvision\AppSettings.cs*:
 
-[!code-csharp[Custom Vision fields](~/AIVisualProvision/Source/VisualProvision/AppSettings.cs?range=22-26)]
+[!code-csharp[Custom Vision fields](~/AIVisualProvision/Source/VisualProvision/AppSettings.cs?name=snippet_cusvis_keys)]
 
 ## <a name="examine-custom-vision-usage"></a>Проверка работы Пользовательского визуального распознавания
 
 Откройте файл *Source/VisualProvision/Services/Recognition/CustomVisionService.cs*, чтобы проверить, как ключ и URL-адрес конечной точки Пользовательского визуального распознавания используются в приложении. Метод **PredictImageContentsAsync** принимает поток байтов файла изображения с токеном отмены (для управления асинхронными задачами), вызывает API прогнозирования Пользовательского визуального распознавания и возвращает результат прогнозирования. 
 
-[!code-csharp[Custom Vision fields](~/AIVisualProvision/Source/VisualProvision/Services/Recognition/CustomVisionService.cs?range=12-28)]
+[!code-csharp[Custom Vision fields](~/AIVisualProvision/Source/VisualProvision/Services/Recognition/CustomVisionService.cs?name=snippet_prediction)]
 
 Этот результат принимает форму экземпляра **PredictionResult**, который в свою очередь содержит список экземпляров **Prediction**. Экземпляр **Prediction** содержит обнаруженный тег и расположение ограничивающего прямоугольника на изображении.
 
-[!code-csharp[Custom Vision fields](~/AIVisualProvision/Source/VisualProvision/Services/Recognition/Prediction.cs?range=3-12)]
+[!code-csharp[Custom Vision fields](~/AIVisualProvision/Source/VisualProvision/Services/Recognition/Prediction.cs?name=snippet_prediction_class)]
 
 Чтобы узнать больше о том, как приложение обрабатывает эти данные, изучите метод **GetResourcesAsync**. Этот метод определен в файле *Source/VisualProvision/Services/Recognition/RecognitionService.cs*.  
 
@@ -99,7 +99,7 @@ ms.locfileid: "68564209"
 
 Теперь откройте файл *Source\VisualProvision\AppSettings.cs* и задайте переменным `ComputerVisionEndpoint` и `ComputerVisionKey` правильные значения.
 
-[!code-csharp[Computer Vision fields](~/AIVisualProvision/Source/VisualProvision/AppSettings.cs?range=28-32)]
+[!code-csharp[Computer Vision fields](~/AIVisualProvision/Source/VisualProvision/AppSettings.cs?name=snippet_comvis_keys)]
 
 ## <a name="create-a-service-principal"></a>Создание субъекта-службы
 
@@ -133,7 +133,7 @@ az ad sp create-for-rbac --name <servicePrincipalName> --password <yourSPStrongP
 
 Запишите значения `clientId` и `tenantId`. Введите их в соответствующие поля в файле *Source\VisualProvision\AppSettings.cs*.
 
-[!code-csharp[Computer Vision fields](~/AIVisualProvision/Source/VisualProvision/AppSettings.cs?range=8-16)]
+[!code-csharp[Computer Vision fields](~/AIVisualProvision/Source/VisualProvision/AppSettings.cs?name=snippet_serviceprincipal)]
 
 ## <a name="run-the-app"></a>Запуск приложения
 

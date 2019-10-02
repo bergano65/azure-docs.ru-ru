@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: ink-recognizer
 ms.topic: quickstart
-ms.date: 05/02/2019
+ms.date: 09/23/2019
 ms.author: aahi
-ms.openlocfilehash: b1c739b6355d3b32063e5289720ed1d191611e65
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: 36ff0fe4550b140a722ed25f4e372f7c88581211
+ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67721229"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71212683"
 ---
 # <a name="quickstart-recognize-digital-ink-with-the-ink-recognizer-rest-api-and-java"></a>Краткое руководство. Распознавание рукописного ввода с помощью REST API Распознавателя рукописного текста и Java
 
@@ -23,7 +23,7 @@ ms.locfileid: "67721229"
 
 Хотя это приложение создано на языке Java, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 
-Обычно вы вызываете API из приложения для рукописного ввода. Этот краткое руководство отправляет данные росчерка пера для следующего рукописного образца из JSON-файла.
+Обычно вы вызываете API из приложения для рукописного ввода. Этот краткое руководство отправляет данные рукописного фрагмента для следующего рукописного образца из JSON-файла.
 
 ![изображение рукописного текста](../media/handwriting-sample.jpg)
 
@@ -58,7 +58,7 @@ ms.locfileid: "67721229"
     import java.nio.file.Paths;
     ```
 
-2. Создайте переменные для ключа подписки и конечной точки. Далее приведен универсальный код ресурса (URI), который можно использовать для распознавания рукописного ввода. Для создания URL-адреса запроса API он будет добавлен в конечную точку службы позднее.
+2. Создайте переменные для ключа подписки и конечной точки. Замените указанную ниже конечную точку на ту, которая создана для ресурса Распознавателя рукописного текста. Добавьте ее в URI Распознавателя рукописного текста для подключения к API.
 
     ```java
     // Replace the subscriptionKey string value with your valid subscription key.
@@ -66,7 +66,7 @@ ms.locfileid: "67721229"
     // Replace the dataPath string with a path to the JSON formatted ink stroke data file.
     static final String dataPath = "PATH_TO_INK_STROKE_DATA";
     
-    static final String endpoint = "https://api.cognitive.microsoft.com";
+    static final String endpoint = "https://<your-custom-subdomain>.cognitiveservices.azure.com";
     static final String inkRecognitionUrl = "/inkrecognizer/v1.0-preview/recognize";
     ```
 

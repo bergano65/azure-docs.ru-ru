@@ -17,6 +17,8 @@
           href: ./hdinsight-administer-use-dotnet-sdk.md
         - name: "Управление кластерами HDInsight\_— PowerShell"
           href: ./hdinsight-administer-use-powershell.md
+        - name: 'Создание конвейера извлечения, преобразования и загрузки'
+          href: ./hdinsight-sales-insights-etl.md
     - name: Примеры
       items:
         - name: "Примеры для Azure\_CLI"

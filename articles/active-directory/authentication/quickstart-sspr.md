@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 58e3254d499e013dc686bf6b7d53f919a457c901
-ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
+ms.openlocfilehash: 7a863c8fe81a08f00385cb267bf360994918fe82
+ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58371290"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71212108"
 ---
 # <a name="quickstart-self-service-password-reset"></a>Краткое руководство. Самостоятельный сброс пароля
 
@@ -31,7 +31,7 @@ ms.locfileid: "58371290"
 
 ## <a name="enable-self-service-password-reset"></a>Включение самостоятельного сброса пароля
 
-> [!VIDEO https://www.youtube.com/embed/Pa0eyqjEjvQ]
+[Видео на YouTube с инструкциями](https://youtu.be/Pa0eyqjEjvQ)
 
 1. Из существующего клиента Azure AD на **портале Azure** в разделе **Azure Active Directory** выберите **Сброс пароля**.
 

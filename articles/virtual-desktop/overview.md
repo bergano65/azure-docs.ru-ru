@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: overview
 ms.date: 08/07/2019
 ms.author: helohr
-ms.openlocfilehash: 8827aa660d348ef9e42c617067c2837b8697ba6e
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: 440ebfffec9378e0dad1fd04e0880c90571bb0f1
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69876784"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71301001"
 ---
 # <a name="what-is-windows-virtual-desktop-preview"></a>Общие сведения о Виртуальном рабочем столе Windows (предварительная версия) 
 
@@ -76,6 +76,8 @@ ms.locfileid: "69876784"
 * Windows Server Active Directory с синхронизацией с Azure Active Directory. Это можно реализовать с помощью следующих компонентов:
   * Azure AD Connect
   * Доменные службы Azure AD
+  >[!NOTE]
+  >Виртуальный рабочий стол Windows поддерживает только пользователей доменных служб Azure AD, источником которых является Azure Active Directory. Пользователи, источником которых является Windows Server AD, в настоящее время не поддерживаются.
 * Подписка Azure с виртуальной сетью, которая содержит экземпляр Windows Server Active Directory или подключена к нему.
   
 Требования к виртуальным машинам Azure, созданным для Виртуального рабочего стола Windows, следующие:

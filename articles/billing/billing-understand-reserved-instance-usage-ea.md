@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/01/2019
 ms.author: banders
-ms.openlocfilehash: 507ad62a917120689bee3f1e293e23c9ab8b0f66
-ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.openlocfilehash: f2f5b2ecf096d7dc8babb79a38d00158a2120688
+ms.sourcegitcommit: 3fa4384af35c64f6674f40e0d4128e1274083487
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "68598099"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71218076"
 ---
 # <a name="get-enterprise-agreement-reservation-costs-and-usage"></a>Получение сведений о затратах на резервирование и использовании по Соглашениям Enterprise
 
@@ -57,18 +57,20 @@ ms.locfileid: "68598099"
 - Term (Срок) — 12 или 36 месяцев.
 - RINormalizationRatio — значение доступно в поле AdditionalInfo. Это доля резервирования, примененная к записи об использовании. Если для резервирования включена гибкость размера экземпляра, этот параметра может применяться и к другим размерам. Это значение обозначает, какая доля резервирования была применена к записи об использовании.
 
+[См. определение поля](https://docs.microsoft.com/rest/api/consumption/usagedetails/list#definitions)
+
 ## <a name="get-azure-consumption-and-reservation-usage-data-using-api"></a>Получение данных об использовании и резервированиях Azure с помощью API
 
 Вы можете получить эти данные через API-интерфейс или скачать их на портале Azure.
 
-Для получения новых данных используйте [API сведений об использовании](/rest/api/consumption/usagedetails/list) версии &quot;2019-04-01-preview&quot;. Дополнительные сведения о терминологии вы найдете в [разделе условий использования](billing-understand-your-usage.md). Вызывающая сторона должна иметь роль администратора предприятия по Соглашению Enterprise, назначенную на [портале EA](https://ea.azure.com). Администраторы предприятия с доступом только для чтения также могут получать эти данные.
+Для получения новых данных используйте [API сведений об использовании](/rest/api/consumption/usagedetails/list). Дополнительные сведения о терминологии вы найдете в [разделе условий использования](billing-understand-your-usage.md). Вызывающая сторона должна иметь роль администратора предприятия по Соглашению Enterprise, назначенную на [портале EA](https://ea.azure.com). Администраторы предприятия с доступом только для чтения также могут получать эти данные.
 
 Эти данные недоступны через [API-интерфейсы отчетов для корпоративных клиентов (см. сведения об использовании)](/rest/api/billing/enterprise/billing-enterprise-api-usage-detail).
 
 Ниже приведен пример вызова этого API.
 
 ```
-https://management.azure.com/providers/Microsoft.Billing/billingAccounts/{enrollmentId}/providers/Microsoft.Billing/billingPeriods/{billingPeriodId}/providers/Microsoft.Consumption/usagedetails?metric={metric}&amp;api-version=2019-04-01-preview&amp;$filter={filter}
+https://management.azure.com/providers/Microsoft.Billing/billingAccounts/{enrollmentId}/providers/Microsoft.Billing/billingPeriods/{billingPeriodId}/providers/Microsoft.Consumption/usagedetails?metric={metric}&amp;api-version=2019-05-01&amp;$filter={filter}
 ```
 
 Дополнительные сведения о параметрах {enrollmentId} (идентификатор Соглашения о регистрации) и {billingPeriodId} (идентификатор периода выставления счетов) см. в [списке параметров использования](https://docs.microsoft.com/rest/api/consumption/usagedetails/list) из статьи об этом API.

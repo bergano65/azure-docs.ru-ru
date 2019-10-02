@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 09/17/2019
 ms.author: jgao
-ms.openlocfilehash: 5a1e0329f8d0227c05924137d5eaddd9658d5b3c
-ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
+ms.openlocfilehash: 1e993ec50694d8672fbe05f982d5dbc45a815abb
+ms.sourcegitcommit: a7a9d7f366adab2cfca13c8d9cbcf5b40d57e63a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71076934"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71161475"
 ---
 # <a name="quickstart-set-and-retrieve-a-secret-from-azure-key-vault-using-resource-manager-template"></a>Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью шаблона Resource Manager
 
@@ -58,6 +58,11 @@ ms.locfileid: "71076934"
 
 [!code-json[<Azure Resource Manager template create key vault>](~/quickstart-templates/101-key-vault-create/azuredeploy.json)]
 
+В шаблоне определено два ресурса Azure:
+
+* **Microsoft.KeyVault/vaults** — создает хранилище ключей Azure.
+* **Microsoft.KeyVault/vaults/secrets** — создает секрет хранилища ключей.
+
 Другие примеры шаблонов хранилища Azure Key Vault можно найти [здесь](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Keyvault).
 
 1. Выберите следующее изображение, чтобы войти на портал Azure и открыть шаблон. Шаблон создает хранилище ключей и секрет.
@@ -82,6 +87,8 @@ ms.locfileid: "71076934"
 3. Щелкните **Приобрести**. После успешного развертывания хранилища ключей вы получите уведомление:
 
     ![Уведомление Resource Manager на портале интеграции развертывания Key Vault](./media/quick-create-template/resource-manager-template-portal-deployment-notification.png)
+
+Для развертывания шаблона используется портал Azure. В дополнение к порталу Azure можно также использовать Azure PowerShell, Azure CLI и REST API. Дополнительные сведения о других методах развертывания см. в статье о [развертывании с использованием шаблонов](../azure-resource-manager/resource-group-template-deploy.md).
 
 ## <a name="validate-the-deployment"></a>Проверка развертывания
 

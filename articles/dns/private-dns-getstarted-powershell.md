@@ -1,20 +1,20 @@
 ---
-title: Создание частной зоны Azure DNS с помощью Azure PowerShell
-description: В этой статье вы создадите и проверите частную зону DNS и запись в Azure DNS. Это пошаговое руководство по созданию первой частной зоны DNS и записи DNS, а также управлению ими с помощью PowerShell.
+title: Краткое руководство. Создание частной зоны Azure DNS с помощью Azure PowerShell
+description: В этой статье описано, как создать и проверить частную зону и запись DNS в Azure DNS. Это пошаговое руководство по созданию первой частной зоны DNS и записи DNS, а также управлению ими с помощью PowerShell.
 services: dns
 author: vhorne
 ms.service: dns
-ms.topic: article
-ms.date: 06/14/2019
+ms.topic: quickstart
+ms.date: 09/20/2019
 ms.author: victorh
-ms.openlocfilehash: 6603929fa7b4c597a846fc299577a9682d8f54e0
-ms.sourcegitcommit: 470041c681719df2d4ee9b81c9be6104befffcea
-ms.translationtype: MT
+ms.openlocfilehash: cf9ca1070461effc69d67614a11b1abd05363310
+ms.sourcegitcommit: a7a9d7f366adab2cfca13c8d9cbcf5b40d57e63a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67854120"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71162126"
 ---
-# <a name="create-an-azure-dns-private-zone-using-azure-powershell"></a>Создание частной зоны Azure DNS с помощью Azure PowerShell
+# <a name="quickstart-create-an-azure-private-dns-zone-using-azure-powershell"></a>Краткое руководство. Создание частной зоны Azure DNS с помощью Azure PowerShell
 
 [!INCLUDE [private-dns-public-preview-notice](../../includes/private-dns-public-preview-notice.md)]
 
@@ -27,7 +27,7 @@ ms.locfileid: "67854120"
 В этой статье раскрываются следующие темы:
 
 > [!div class="checklist"]
-> * Создание частной зоны DNS
+> * Создание частной зоны DNS.
 > * Создание тестовых виртуальных машин
 > * Создание дополнительной записи DNS
 > * Проверка частной зоны
@@ -46,11 +46,11 @@ ms.locfileid: "67854120"
 New-AzResourceGroup -name MyAzureResourceGroup -location "eastus"
 ```
 
-## <a name="create-a-dns-private-zone"></a>Создание частной зоны DNS
+## <a name="create-a-private-dns-zone"></a>Создание частной зоны DNS
 
 Зона DNS создается с помощью командлета `New-AzPrivateDnsZone`.
 
-В следующем примере создается виртуальная сеть с именем **myAzureVNet**. Затем он создает зону DNS с именем **Private.contoso.com** в группе ресурсов **мязурересаурцеграуп** , связывает зону DNS с виртуальной сетью **MyAzureVnet** и включает автоматическую регистрацию.
+В следующем примере создается виртуальная сеть с именем **myAzureVNet**. Затем создается зона DNS с именем **private.contoso.com** в группе ресурсов **MyAzureResourceGroup**, которая связывает зону DNS с виртуальной сетью **MyAzureVnet** и включает автоматическую регистрацию.
 
 ```azurepowershell
 Install-Module -Name Az.PrivateDns -force
@@ -70,7 +70,7 @@ $link = New-AzPrivateDnsVirtualNetworkLink -ZoneName private.contoso.com `
   -VirtualNetworkId $vnet.id -EnableRegistration
 ```
 
-Если вы хотите создать зону только для разрешения имен (без автоматической регистрации имени узла), `-EnableRegistration` параметр можно опустить.
+Если вы хотите создать зону только для разрешения имен (без автоматической регистрации имени узла), параметр `-EnableRegistration` можно опустить.
 
 ### <a name="list-dns-private-zones"></a>Список частных зон DNS
 
@@ -201,15 +201,13 @@ Get-AzPrivateDnsRecordSet -ZoneName private.contoso.com -ResourceGroupName MyAzu
 
 ## <a name="delete-all-resources"></a>Удаление всех ресурсов
 
-Удалите группу ресурсов **мязурересаурцеграуп** , которая больше не нужна, чтобы удалить ресурсы, созданные в этой статье.
+Удалите группу ресурсов **MyAzureResourceGroup**, если ресурсы, созданные в этой статье, больше не нужны.
 
 ```azurepowershell
 Remove-AzResourceGroup -Name MyAzureResourceGroup
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
-В этой статье вы развернули закрытую зону DNS, создали запись DNS и проверили зону.
-Далее можно получить дополнительные сведения о частных зонах DNS.
-
-* [Использование Azure DNS для частных доменов](private-dns-overview.md)
+> [!div class="nextstepaction"]
+> [Сценарии применения частных зон DNS Azure](private-dns-scenarios.md)

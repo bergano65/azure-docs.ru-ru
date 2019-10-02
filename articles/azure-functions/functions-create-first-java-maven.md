@@ -13,12 +13,12 @@ ms.date: 08/10/2018
 ms.author: routlaw
 ms.reviewer: glenga
 ms.custom: mvc, devcenter, seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: 381298abcfa4fa707af6b382565b4bfb990e96e6
-ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.openlocfilehash: 5447fdcfa86c35b7c5cf079ae8446c30785e893f
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70899504"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71299399"
 ---
 # <a name="quickstart-use-java-to-create-and-publish-a-function-to-azure-functions"></a>Краткое руководство. Создание и публикация функции в Функциях Azure с помощью Java
 
@@ -231,3 +231,6 @@ Hi, AzureFunctionsTest
 - Добавьте в проект дополнительные функции с помощью различных триггеров целевого объекта Maven`azure-functions:add`.
 - Создавайте и отлаживайте функции локально с помощью [Visual Studio Code](https://code.visualstudio.com/docs/java/java-azurefunctions), [IntelliJ](functions-create-maven-intellij.md) и [Eclipse](functions-create-maven-eclipse.md). 
 - Отлаживайте функции, развернутые в Azure, с помощью Visual Studio Code. Инструкции см. в документации Visual Studio Code по [бессерверным приложениям Java](https://code.visualstudio.com/docs/java/java-serverless#_remote-debug-functions-running-in-the-cloud).
+
+> [!NOTE] 
+> Вы также можете создать проект Функций Azure на основе Kotlin, используя azure-functions-kotlin-archetype. Дополнительные сведения см. в [этом репозитории](https://github.com/microsoft/azure-maven-archetypes/tree/develop/azure-functions-kotlin-archetype) на сайте GitHub.

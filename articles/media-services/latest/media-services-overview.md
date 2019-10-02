@@ -13,15 +13,15 @@ ms.devlang: multiple
 ms.topic: overview
 ms.tgt_pltfrm: multiple
 ms.workload: media
-ms.date: 05/13/2019
+ms.date: 09/17/2019
 ms.author: juliako
 ms.custom: mvc
-ms.openlocfilehash: b07675e25c0380921e24059ff0107fcfe1bb3873
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.openlocfilehash: a752d7759386828e916f68e5903115220812f3e0
+ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65602093"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71123043"
 ---
 # <a name="azure-media-services-v3-overview"></a>Что такое Службы мультимедиа Azure версии 3?
 
@@ -59,7 +59,7 @@ ms.locfileid: "65602093"
 * [Потоковая передача видеофайлов с помощью CLI](stream-files-cli-quickstart.md)
 * [Потоковая передача видеофайлов с помощью Node.js](stream-files-nodejs-quickstart.md)
     
-### <a name="tutorials"></a>Руководства 
+### <a name="tutorials"></a>Учебники 
 
 В руководствах изложены процедуры на основе сценариев для выполнения наиболее распространенных заданий Служб мультимедиа.
 
@@ -69,7 +69,11 @@ ms.locfileid: "65602093"
 * [Анализ видео — .NET](analyze-videos-tutorial-with-api.md)
 * [Динамическое шифрование AES-128 — .NET](protect-with-aes128.md)
     
-### <a name="how-to-guides"></a>Инструкции
+### <a name="samples"></a>Примеры
+
+Примеры кода Служб мультимедиа Azure доступны на [этой странице](https://docs.microsoft.com/samples/browse/?products=azure-media-services).
+
+### <a name="how-to-guides"></a>Руководства
 
 В статьях показаны примеры кода для выполнения задания. В этом разделе много примеров. Вот лишь некоторые из них:
 

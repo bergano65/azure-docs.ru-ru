@@ -9,12 +9,12 @@ ms.subservice: translator-text
 ms.date: 02/21/2019
 ms.author: swmachan
 ms.topic: overview
-ms.openlocfilehash: cdbbe9006f57c8b29e19fda85eefc0795da95a00
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: 0269b4e611432093ea677e2ea7e429c84ce9db87
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68595507"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71257669"
 ---
 # <a name="what-is-custom-translator"></a>Что такое Пользовательский переводчик?
 
@@ -40,7 +40,7 @@ Custom Translator предоставляет разные возможности
 
 В службе Microsoft Translator [нейронный машинный перевод (NMT)](https://blogs.msdn.microsoft.com/translation/2016/11/15/microsoft-translator-launching-neural-network-based-translations-for-all-its-speech-languages/) появился в 2016 году. NMT предоставляет существенные преимущества в отношении качества перевода через стандартную отраслевую технологию [статистического машинного перевода (SMT)](https://en.wikipedia.org/wiki/Statistical_machine_translation). NMT лучше фиксирует контекст целого предложения перед переводом, поэтому он предоставляет более качественные и более естественные переводы с лучшими формулировками. [Custom Translator](https://portal.customtranslator.azure.ai) предоставляет нейронный машинный перевод для пользовательских моделей, что повышает конечное качество перевода.
 
-Вы можете создать систему перевода, используя уже переведенные документы. В этих документах лучше представлена терминология и стиль вашей отрасли, чем в универсальной системе перевода. Пользователи могут отправлять документы в форматах ALIGN, PDF, LCL, HTML, HTM, XLF, TMX, XLIFF, TXT, DOCX и XLSX.
+Вы можете создать систему перевода, используя уже переведенные документы. При этом качество перевода будет выше, чем при использовании стандартных систем перевода. Пользователи могут отправлять документы в форматах ALIGN, PDF, LCL, HTML, HTM, XLF, TMX, XLIFF, TXT, DOCX и XLSX.
 
 Custom Translator также принимает данные, которые являются параллельными на уровне документов, чтобы оптимизировать сбор и подготовку данных. Если пользователи имеют доступ к разным версиям одного содержимого на нескольких языках, представленным в отдельных документах, Custom Translator сможет автоматически сопоставить предложения между этими документами.
 

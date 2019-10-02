@@ -21,19 +21,19 @@
       items:
         - name: С помощью Draft
           href: kubernetes-draft.md
-        - name: С помощью Java (VS Code и CLI)
-          href: ../dev-spaces/quickstart-java.md
-          maintainContext: true
-        - name: С помощью .NET Core (VS Code и CLI)
+        - name: Использование Visual Studio Code и Azure Dev Spaces
           href: ../dev-spaces/quickstart-netcore.md
           maintainContext: true
-        - name: "С помощью .NET Core (Visual Studio\_2017)"
+        - name: Использование Visual Studio и Azure Dev Spaces
           href: ../dev-spaces/quickstart-netcore-visualstudio.md
           maintainContext: true
-        - name: С помощью Node.js (VS Code и CLI)
-          href: ../dev-spaces/quickstart-nodejs.md
+        - name: Использование CLI и Azure Dev Spaces
+          href: ../dev-spaces/quickstart-cli.md
           maintainContext: true
-- name: Руководства
+        - name: Использование Azure Dev Spaces для групп разработчиков
+          href: ../dev-spaces/quickstart-team-development.md
+          maintainContext: true
+- name: Учебники
   items:
     - name: 1. Подготовка приложения для AKS
       href: tutorial-kubernetes-prepare-app.md

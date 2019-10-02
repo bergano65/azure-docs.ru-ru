@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-graph
 ms.topic: quickstart
 ms.date: 07/23/2019
 ms.author: lbosq
-ms.openlocfilehash: 0a6ddfe1337575f4f61f4bba4638a16e54b0cde6
-ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
+ms.openlocfilehash: cb365517c581ebf83026046f385496afd3e28d7f
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68735276"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71261587"
 ---
 # <a name="quickstart-create-query-and-traverse-an-azure-cosmos-db-graph-database-using-the-gremlin-console"></a>Краткое руководство. Создание, запрос и просмотр в консоли Gremlin графовой базы данных Azure Cosmos DB
 
@@ -60,7 +60,7 @@ Azure Cosmos DB — это глобально распределенная мн
     Имя пользователя|*Имя пользователя*|Ресурс в формате `/dbs/<db>/colls/<coll>`, где `<db>` — это имя базы данных, а `<coll>` — имя коллекции.
     password|*Значение первичного ключа*| Просмотрите второй снимок экрана ниже. Это первичный ключ, который можно получить на странице "Ключи" на портале Azure в поле "Первичный ключ". Скопируйте значение с помощью кнопки копирования в левой части поля.
     Пул подключений|{enableSsl: true}|Параметр пула подключений для SSL.
-    serializer|{ className: org.apache.tinkerpop.gremlin.<br>driver.ser.GraphSONMessageSerializerV1d0,<br> config: { serializeResultToString: true }}|Задайте это значение и удалите все разрывы строк `\n` при вставке значения.
+    serializer|{ className: org.apache.tinkerpop.gremlin.<br>driver.ser.GraphSONMessageSerializerV2d0,<br> config: { serializeResultToString: true }}|Задайте это значение и удалите все разрывы строк `\n` при вставке значения.
 
     Для параметра hosts скопируйте значение **Gremlin URI** на странице **Обзор**. ![Просмотр и копирование значения Gremlin URI на странице "Обзор" на портале Azure](./media/create-graph-gremlin-console/gremlin-uri.png)
 

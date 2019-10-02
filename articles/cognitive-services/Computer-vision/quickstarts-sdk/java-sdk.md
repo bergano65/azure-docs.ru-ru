@@ -10,12 +10,12 @@ ms.subservice: ''
 ms.topic: quickstart
 ms.date: 07/25/2019
 ms.author: pafarley
-ms.openlocfilehash: 16a487dc007526f685edb52726f5797303a30c11
-ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
+ms.openlocfilehash: 6d40eb9bf3b90fb66002b964aca0db42b76094bb
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70966990"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71261998"
 ---
 # <a name="quickstart-computer-vision-client-library-for-java"></a>Краткое руководство. Клиентская библиотека службы "Компьютерное зрение" для Java
 
@@ -24,6 +24,7 @@ ms.locfileid: "70966990"
 С помощью клиентской библиотеки службы "Компьютерное зрение" для Java можно выполнять следующую операцию:
 
 * анализ изображений на наличие тегов, текстового описания, лиц, содержимого для взрослых и многого другого.
+* распознавание печатного и рукописного текста с помощью API пакетной службы чтения.
 
 [Справочная документация](https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/computervision?view=azure-java-stable) | [Артефакт (Maven)](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Vision.ComputerVision/) | [Примеры](https://azure.microsoft.com/resources/samples/?service=cognitive-services&term=vision&sort=0)
 
@@ -83,7 +84,7 @@ mkdir -p src/main/java
 
 Перейдите в новую папку и создайте файл с именем *ComputerVisionQuickstarts.java*. Откройте его в предпочитаемом редакторе или интегрированной среде разработки и добавьте следующие операторы `import`:
 
-[!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/ComputerVisionQuickstart.java?name=snippet_imports)]
+[!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java?name=snippet_imports)]
 
 Затем добавьте определение класса для **ComputerVisionQuickstarts**.
 
@@ -115,6 +116,7 @@ dependencies {
 
 * [аутентификация клиента](#authenticate-the-client);
 * [Анализ изображения](#analyze-an-image)
+* [Чтение печатного и рукописного текста](#read-printed-and-handwritten-text).
 
 ## <a name="authenticate-the-client"></a>Аутентификация клиента
 
@@ -123,11 +125,11 @@ dependencies {
 
 Следующий код добавляет метод `main` в ваш класс и создает переменные для конечной точки и ключа Azure вашего ресурса. Вам нужно будет ввести собственную строку конечной точки, которую можно найти в разделе **Обзор** на портале Azure. 
 
-[!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/ComputerVisionQuickstart.java?name=snippet_mainvars)]
+[!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java?name=snippet_mainvars)]
 
 Затем добавьте приведенный ниже код, чтобы создать объект [ComputerVisionClient](https://docs.microsoft.com/java/api/com.microsoft.azure.cognitiveservices.vision.computervision.computervisionclient?view=azure-java-stable), и передайте его в другие методы, которые будут определены позже.
 
-[!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/ComputerVisionQuickstart.java?name=snippet_client)]
+[!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java?name=snippet_client)]
 
 > [!NOTE]
 > Если вы создали переменную среды после запуска приложения, для доступа к переменной следует закрыть и повторно открыть редактор, интегрированную среду разработки или оболочку, где эта переменная была запущена.
@@ -140,21 +142,21 @@ dependencies {
 
 Сначала создайте папку **resources/** в папке **src/main/** вашего проекта и добавьте изображение, которое нужно проанализировать. Затем добавьте следующее определение метода в класс **ComputerVisionQuickstarts**. При необходимости измените значение `pathToLocalImage` в соответствии с вашим файлом изображения. 
 
-[!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/ComputerVisionQuickstart.java?name=snippet_analyzelocal_refs)]
+[!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java?name=snippet_analyzelocal_refs)]
 
 > [!NOTE]
-> Кроме того, можно проанализировать удаленное изображение, используя его URL-адрес. Пример кода для сценариев, в которых используются удаленные изображения, см. на [сайте GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/java/ComputerVision/ComputerVisionQuickstart.java).
+> Кроме того, можно проанализировать удаленное изображение, используя его URL-адрес. Пример кода для сценариев, в которых используются удаленные изображения, см. на [сайте GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java).
 
 ### <a name="specify-visual-features"></a>Указание визуальных компонентов
 
 Затем укажите, какие визуальные компоненты вы хотите извлечь при анализе. Полный список компонентов см. в описании перечисления [VisualFeatureTypes](https://docs.microsoft.com/java/api/com.microsoft.azure.cognitiveservices.vision.computervision.models.visualfeaturetypes?view=azure-java-stable).
 
-[!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/ComputerVisionQuickstart.java?name=snippet_analyzelocal_features)]
+[!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java?name=snippet_analyzelocal_features)]
 
 ### <a name="analyze"></a>Анализ
 Этот метод выводит на консоль подробные результаты для каждой области анализа изображения. Мы рекомендуем заключить этот вызов метода в блок Try/Catch. Метод **analyzeImageInStream** возвращает объект **ImageAnalysis**, который содержит всю извлеченную информацию.
 
-[!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/ComputerVisionQuickstart.java?name=snippet_analyzelocal_analyze)]
+[!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java?name=snippet_analyzelocal_analyze)]
 
 В следующих разделах подробно показано, как анализировать эти сведения.
 
@@ -162,37 +164,37 @@ dependencies {
 
 Следующий код получает список созданных заголовков для изображения. Дополнительные сведения см. в статье [Описание изображений на понятном для пользователя языке](../concept-describing-images.md).
 
-[!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/ComputerVisionQuickstart.java?name=snippet_analyzelocal_captions)]
+[!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java?name=snippet_analyzelocal_captions)]
 
 ### <a name="get-image-category"></a>Получение категории изображения
 
 Следующий код получает обнаруженную категорию изображения. Дополнительные сведения см. в статье [Categorize images by subject matter](../concept-categorizing-images.md) (Классификация изображений по темам).
 
-[!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/ComputerVisionQuickstart.java?name=snippet_analyzelocal_category)]
+[!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java?name=snippet_analyzelocal_category)]
 
 ### <a name="get-image-tags"></a>Получение тегов изображения
 
 Следующий код получает набор обнаруженных тегов изображения. Дополнительные сведения см. в статье о [тегах содержимого](../concept-tagging-images.md).
 
-[!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/ComputerVisionQuickstart.java?name=snippet_analyzelocal_tags)]
+[!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java?name=snippet_analyzelocal_tags)]
 
 ### <a name="detect-faces"></a>Распознавание лиц
 
 Следующий код возвращает обнаруженные лица на изображении с их координатами прямоугольника и атрибутами выбора лиц. Дополнительные сведения см. в статье [Определение лиц с помощью компьютерного зрения](../concept-detecting-faces.md).
 
-[!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/ComputerVisionQuickstart.java?name=snippet_analyzelocal_faces)]
+[!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java?name=snippet_analyzelocal_faces)]
 
 ### <a name="detect-adult-or-racy-content"></a>Обнаружение содержимого для взрослых или содержимого непристойного характера
 
 Следующий код выводит сведения об обнаружении непристойного содержимого или содержимого для взрослых на изображении. Дополнительные сведения см. в статье [Обнаружение содержимого для взрослых и содержимого непристойного характера](../concept-detecting-adult-content.md).
 
-[!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/ComputerVisionQuickstart.java?name=snippet_analyzelocal_adult)]
+[!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java?name=snippet_analyzelocal_adult)]
 
 ### <a name="get-image-color-scheme"></a>Получение цветовой схемы изображения
 
 Следующий код выводит обнаруженные атрибуты цвета на изображении, например доминирующие и акцентные цвета. Дополнительные сведения см. в статье [Обнаружение цветовых схем на изображениях](../concept-detecting-color-schemes.md).
 
-[!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/ComputerVisionQuickstart.java?name=snippet_analyzelocal_colors)]
+[!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java?name=snippet_analyzelocal_colors)]
 
 ### <a name="get-domain-specific-content"></a>Получение содержимого, связанного с определенной предметной областью
 
@@ -200,17 +202,40 @@ dependencies {
 
 Следующий код анализирует данные об обнаруженных известных лицах на изображении.
 
-[!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/ComputerVisionQuickstart.java?name=snippet_analyzelocal_celebrities)]
+[!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java?name=snippet_analyzelocal_celebrities)]
 
 Следующий код анализирует данные об обнаруженных достопримечательностях на изображении.
 
-[!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/ComputerVisionQuickstart.java?name=snippet_analyzelocal_landmarks)]
+[!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java?name=snippet_analyzelocal_landmarks)]
 
 ### <a name="get-the-image-type"></a>Получение сведений о типе изображения
 
 Следующий код выводит информацию о типе изображения&mdash;, независимо от того, является ли это картинкой или рисунком.
 
-[!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/ComputerVisionQuickstart.java?name=snippet_imagetype)]
+[!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java?name=snippet_imagetype)]
+
+## <a name="read-printed-and-handwritten-text"></a>Чтение печатного и рукописного текста
+
+Компьютерное зрение может считывать видимый текст в образе и преобразовывать его в поток символов.
+
+> [!NOTE]
+> Кроме того, можно прочитать текст на удаленном изображении, используя его URL-адрес. Пример кода для сценариев, в которых используются удаленные изображения, см. на [сайте GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java).
+
+### <a name="call-the-recognize-api"></a>Вызов API распознавания
+
+Сначала используйте следующий код, чтобы вызвать метод **recognizePrintedTextInStream** для данного образа. При добавлении этого кода в проект необходимо заменить значение `localTextImagePath` на путь к локальному образу. 
+
+[!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java?name=snippet_imagetype)]
+
+### <a name="print-recognize-results"></a>Вывод результатов распознавания
+
+Следующий блок кода обрабатывает возвращаемый текст и анализирует его для вывода первого слова в каждой строке. Этот код можно использовать для быстрого понимания структуры экземпляра **OcrResult**.
+
+[!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java?name=snippet_read_print)]
+
+Наконец, закройте блок try-catch и определение метода.
+
+[!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java?name=snippet_read_catch)]
 
 ## <a name="run-the-application"></a>Выполнение приложения
 
@@ -241,4 +266,4 @@ gradle run
 >[Справочник по службе "Компьютерное зрение" для Java](https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/computervision?view=azure-java-stable)
 
 * [Что собой представляет Компьютерное зрение](../Home.md)
-* Исходный код для этого шаблона можно найти на портале [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/java/ComputerVision/ComputerVisionQuickstart.java).
+* Исходный код для этого шаблона можно найти на портале [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java).

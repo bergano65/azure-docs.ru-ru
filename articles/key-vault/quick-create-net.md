@@ -6,12 +6,12 @@ ms.author: mbaldwin
 ms.date: 05/20/2019
 ms.service: key-vault
 ms.topic: quickstart
-ms.openlocfilehash: d24323996e222caf6456372cbc65681d2055c3db
-ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
+ms.openlocfilehash: 4f039fde275e5dca49b3c78550722d827bead062
+ms.sourcegitcommit: 116bc6a75e501b7bba85e750b336f2af4ad29f5a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70996646"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71155118"
 ---
 # <a name="quickstart-azure-key-vault-client-library-for-net"></a>Краткое руководство. Клиентская библиотека Azure Key Vault для .NET
 
@@ -83,7 +83,7 @@ dotnet add package Microsoft.Azure.Management.ResourceManager.Fluent
 В этом кратком руководстве используется предварительно созданное хранилище ключей Azure. Хранилище ключей можно создать, выполнив действия, описанные в кратких руководствах по [Azure CLI](quick-create-cli.md), [Azure PowerShell](quick-create-powershell.md) или [порталу Azure](quick-create-portal.md). Можно также выполнить команду Azure CLI, которая предложена ниже:
 
 > [!Important]
-> Каждый Key Vault должен иметь уникальное имя. В следующем примере показан процесс создания Key Vault с именем *myKV*. Вам следует указать другое имя и использовать его далее на всем протяжении краткого руководства.
+> Каждое хранилище ключей должно иметь уникальное имя. В следующих примерах замените <your-unique-keyvault-name> именем своего хранилища ключей.
 
 ```azurecli
 az group create --name "myResourceGroup" -l "EastUS"

@@ -11,12 +11,12 @@ ms.topic: sample
 ms.date: 04/17/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 3da22d11dce1e535763476d906ac45f3da22bc8d
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: 01e932caf5edc91d5556b60d33e4d100574f93f5
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70141287"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71170049"
 ---
 # <a name="sample-explore-an-image-processing-app-with-c"></a>Пример: изучение приложения для обработки изображений с использованием C#
 
@@ -80,8 +80,8 @@ git clone --recurse-submodules https://github.com/Microsoft/Cognitive-Face-Windo
    ![Страница управления ключами подписки](../Images/Vision_UI_Subscription.PNG)  
 1. Введите ключ подписки в поле **Ключ подписки**.
 1. Введите URL-адрес конечной точки в поле **Конечная точка**.  
-   Например, если вы используете ключ подписки из бесплатной пробной версии API "Компьютерное зрение", введите следующий URL-адрес конечной точки: `https://westcentralus.api.cognitive.microsoft.com`
-   [!INCLUDE [Custom subdomains notice](../../../../includes/cognitive-services-custom-subdomains-note.md)].
+   Например, если вы используете ключ подписки из бесплатной пробной версии API "Компьютерное зрение", введите следующий URL-адрес конечной точки: `https://westcentralus.api.cognitive.microsoft.com`.  
+   [!INCLUDE [Custom subdomains notice](../../../../includes/cognitive-services-custom-subdomains-note.md)]
 1. Если вы не хотите вводить ключ подписки и URL-адрес конечной точки при следующем запуске примера приложения, выберите **Сохранить параметр**, чтобы сохранить ключ подписки и URL-адрес конечной точки на компьютере. Если вы хотите удалить ранее сохраненный ключ подписки и URL-адрес конечной точки, выберите **Удалить параметр**.
 
    > [!NOTE]

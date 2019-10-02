@@ -6,13 +6,13 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.topic: overview
-ms.date: 07/22/2019
-ms.openlocfilehash: 4619545ab1fed5f55504e80eede0d1cf240eea87
-ms.sourcegitcommit: bafb70af41ad1326adf3b7f8db50493e20a64926
+ms.date: 09/23/2019
+ms.openlocfilehash: e1863cc54759f6cc2266073629093d4923260525
+ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68488689"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71240407"
 ---
 # <a name="overview-of-enterprise-security-in-azure-hdinsight"></a>Общие сведения о корпоративной безопасности в Azure HDInsight
 
@@ -52,7 +52,7 @@ Azure HDInsight предлагает ряд методов для соответ
 
 Администратор может просмотреть все случаи получения доступа к ресурсам и данным кластера HDInsight и сообщить о них. Кроме того, администратор может просмотреть все изменения в политиках контроля доступа, созданных в поддерживаемых конечных точках Apache Ranger, и сообщить о них. 
 
-Чтобы получить доступ к журналам аудита Apache Ranger и Ambari, а также к журналам доступа по протоколу SSH, [включите Azure Monitor](../hdinsight-hadoop-oms-log-analytics-tutorial.md) и просмотрите соответствующие записи аудита.
+Чтобы получить доступ к журналам аудита Apache Ranger и Ambari, а также к журналам доступа по протоколу SSH, [включите Azure Monitor](../hdinsight-hadoop-oms-log-analytics-tutorial.md#cluster-auditing) и просмотрите таблицы с записями аудита.
 
 ### <a name="encryption"></a>Шифрование
 
@@ -73,6 +73,7 @@ Azure HDInsight предлагает ряд методов для соответ
 | Безопасность доступа к данным | Настройка [списков управления доступом (ACL)](../../storage/blobs/data-lake-storage-access-control.md) для Azure Data Lake Storage 1-го поколения и 2-го поколения  | Клиент |
 |  | Включите свойство [Требуется безопасное перемещение](../../storage/common/storage-require-secure-transfer.md) в учетной записи хранения. | Клиент |
 |  | Настройка [брандмауэров службы хранилища Azure](../../storage/common/storage-network-security.md) и виртуальных сетей | Клиент |
+|  | Настройка [конечных точек службы для виртуальной сети Azure](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview) для Cosmos DB и [Базы данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview) | Клиент |
 |  | Убедитесь, что [шифрование TLS](../../storage/common/storage-security-tls.md) включено для передаваемых данных. | Клиент |
 |  | Настройка [управляемых пользователем ключей](../../storage/common/storage-encryption-keys-portal.md) для шифрования службы хранилища Azure | Клиент |
 | Безопасность приложений и ПО промежуточного слоя | Интеграция с AAD-DS и [настройка проверки подлинности](apache-domain-joined-configure-using-azure-adds.md) | Клиент |

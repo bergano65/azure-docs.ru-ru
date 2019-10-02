@@ -8,13 +8,13 @@ ms.devlang: java
 ms.topic: quickstart
 ms.date: 03/26/2019
 ms.author: lbosq
-ms.custom: seo-java-july2019, seo-java-august2019
-ms.openlocfilehash: 8689cb74e35d5b87c300f5fce239993691652ee2
-ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
+ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019
+ms.openlocfilehash: 1b37475cfa8df38a00ea6017d47e90677ed457d2
+ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70172527"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71212640"
 ---
 # <a name="quickstart-build-a-graph-database-with-the-java-sdk-and-the-azure-cosmos-db-table-api"></a>Краткое руководство. Создание графовой базы данных с помощью пакета SDK для Java и API таблиц для Azure Cosmos DB
 
@@ -110,7 +110,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
     Скопируйте первую часть значения URI.
 
-    ![Просмотр и копирование ключа доступа на портале Azure, страница "Ключи"](./media/create-graph-java/keys.png)
+    ![Просмотр и копирование ключа доступа на портале Azure, страница "Ключи"](./media/create-graph-java/copy-access-key-azure-portal.png)
 2. Откройте файл src/remote.yaml и вставьте значение уникального идентификатора вместо `$name$` в `hosts: [$name$.graphs.azure.com]`.
 
     Теперь строка 1 в remote.yaml будет выглядеть примерно так: 
@@ -219,15 +219,15 @@ Azure Cosmos DB — это глобально распределенная мн
 
 12. Теперь вы можете соединить пользователей rakesh и ashley. Выберите в списке **Результаты** пользователя **ashley** и щелкните ![Изменение целевого объекта вершины в графе](./media/create-graph-java/edit-pencil-button.png) рядом с пунктом **Целевые объекты** внизу справа. Чтобы отобразить кнопку, может потребоваться развернуть окно.
 
-    ![Изменение целевого объекта вершины в графе](./media/create-graph-java/azure-cosmosdb-data-explorer-edit-target.png)
+    ![Изменение целевого объекта вершины в графе в Azure CosmosDB](./media/create-graph-java/azure-cosmosdb-data-explorer-edit-target.png)
 
 13. В поле **Целевой объект** введите *rakesh*, затем в поле **Граничная метка** введите слово *знает* и установите флажок.
 
-    ![Создание связи между пользователями ashley и rakesh в обозревателе данных](./media/create-graph-java/azure-cosmosdb-data-explorer-set-target.png)
+    ![Добавление подключения в обозревателе данных в Azure CosmosDB](./media/create-graph-java/azure-cosmosdb-data-explorer-set-target.png)
 
 14. Теперь выберите пользователя **rakesh** в списке результатов. Вы увидите, что пользователи ashley и rakesh связаны. 
 
-    ![Две вершины, связанные в обозревателе данных](./media/create-graph-java/azure-cosmosdb-graph-explorer.png)
+    ![Две соединенных вершины в обозревателе данных в Azure CosmosDB](./media/create-graph-java/azure-cosmosdb-graph-explorer.png)
 
     На этом часть руководства, посвященная созданию ресурсов, завершена. Вы можете дополнить граф новыми вершинами, а также изменить существующие вершины или запросы. Теперь давайте изучим метрики, которые предоставляет Azure Cosmos DB, а затем очистим все ресурсы. 
 

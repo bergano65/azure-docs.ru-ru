@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-graph
 ms.topic: overview
 ms.date: 06/24/2019
 ms.author: lbosq
-ms.openlocfilehash: db263c1c7f0a8b87b315c5aa6da31336229c9643
-ms.sourcegitcommit: 837dfd2c84a810c75b009d5813ecb67237aaf6b8
+ms.openlocfilehash: 159233da989a5bbec75dbd0a6cfe230b8a512979
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67502726"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71261297"
 ---
 # <a name="azure-cosmos-db-gremlin-graph-support"></a>Поддержка графа Gremlin в базе данных Azure Cosmos DB
 Azure Cosmos DB поддерживает язык обхода графов [Apache Tinkerpop](https://tinkerpop.apache.org), известный как [Gremlin](https://tinkerpop.apache.org/docs/3.3.2/reference/#graph-traversal-steps). Вы можете использовать язык Gremlin, чтобы создать сущности графа (вершины и ребра), изменить свойства в этих сущностях, выполнить запросы и обходы графа, а также удалить сущности. 
@@ -48,7 +48,7 @@ TinkerPop — это стандартная платформа, которая 
 
 ## <a name="gremlin-wire-format-graphson"></a>Формат подключения Gremlin: GraphSON
 
-При возвращении результатов операций Gremlin в базе данных Azure Cosmos DB используется [формат GraphSON](https://tinkerpop.apache.org/docs/3.3.2/reference/#graphson-reader-writer). GraphSON представляет собой стандартный формат Gremlin для представления вершин, ребер и свойств (единичных и со множественными значениями) с помощью JSON. 
+При возвращении результатов операций Gremlin в базе данных Azure Cosmos DB используется [формат GraphSON](http://tinkerpop.apache.org/docs/current/reference/#graphson). Azure Cosmos DB сейчас поддерживает работу с версией GraphSONv2. GraphSON представляет собой стандартный формат Gremlin для представления вершин, ребер и свойств (единичных и со множественными значениями) с помощью JSON.
 
 Например, в следующем фрагменте кода показано представление GraphSON вершины, *возвращенной клиенту* из базы данных Azure Cosmos DB. 
 

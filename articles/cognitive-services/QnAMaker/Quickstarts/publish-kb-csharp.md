@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: quickstart
-ms.date: 09/03/2019
+ms.date: 09/24/2019
 ms.author: diberry
-ms.openlocfilehash: dbd6bddd06713cae7ac69d19e8d13f20fa04f6d0
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.openlocfilehash: a116dd595b7bde3f320bc0617c99fdb2ab7830d4
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70306869"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71261960"
 ---
 # <a name="quickstart-publish-a-knowledge-base-in-qna-maker-using-c"></a>Краткое руководство. Публикация базы знаний в QnA Maker с использованием C#
 
@@ -51,15 +51,15 @@ ms.locfileid: "70306869"
 
 ## <a name="add-required-constants"></a>Добавление необходимых констант
 
-В методе **Main** добавьте необходимые константы для обеспечения доступа к QnA Maker. Вместо примеров подставьте собственные значения.
+В классе **Program** добавьте необходимые константы для доступа к QnA Maker.
 
-[!code-csharp[Add the required constants](~/samples-qnamaker-csharp/documentation-samples/quickstarts/publish-knowledge-base/QnAMakerPublishQuickstart/Program.cs?range=11-14 "Add the required constants")]
+[!code-csharp[Add the required constants](~/samples-qnamaker-csharp/documentation-samples/quickstarts/publish-knowledge-base/QnAMakerPublishQuickstart/Program.cs?range=8-34 "Add the required constants")]
 
-## <a name="add-post-request-to-publish-knowledge-base"></a>Добавление запроса POST для публикации базы знаний
+## <a name="add-the-main-method-to-publish-the-knowledge-base"></a>Добавление метода Main для публикации базы знаний
 
 Включив константы, добавьте следующий код, который отправляет HTTPS-запрос к API службы QnA Maker, чтобы опубликовать базу знаний и получить ответ:
 
-[!code-csharp[Add HTTP Post request and response](~/samples-qnamaker-csharp/documentation-samples/quickstarts/publish-knowledge-base/QnAMakerPublishQuickstart/Program.cs?range=16-29&dedent=8 "Add HTTP Post request and response")]
+[!code-csharp[Add HTTP Post request and response](~/samples-qnamaker-csharp/documentation-samples/quickstarts/publish-knowledge-base/QnAMakerPublishQuickstart/Program.cs?range=36-56 "Add HTTP Post request and response")]
 
 Вызов API возвращает состояние 204 для успешной публикации без содержимого в тексте ответа. 
  

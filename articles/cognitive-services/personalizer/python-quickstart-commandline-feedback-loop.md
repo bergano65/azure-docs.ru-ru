@@ -10,12 +10,12 @@ ms.subservice: personalizer
 ms.topic: quickstart
 ms.date: 09/12/2019
 ms.author: diberry
-ms.openlocfilehash: 5b5efa4a8c6d92f9937709f57f99851c90058dda
-ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
+ms.openlocfilehash: 014a5f264b9beed666f718cda52d197381d58876
+ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71067699"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71266256"
 ---
 # <a name="quickstart-personalize-client-library-for-python"></a>Краткое руководство. Клиентская библиотека Персонализатора для Python
 
@@ -127,6 +127,12 @@ pip install azure-cognitiveservices-personalizer
 [!code-python[The Personalizer learning loop ranks the request.](~/samples-personalizer/quickstarts/python/sample.py?name=mainLoop&highlight=9,10,29)]
 
 В следующих разделах мы подробнее рассмотрим вызовы ранжирования и вознаграждений.
+
+Перед запуском файла кода добавьте следующие методы для [получения вариантов содержимого](#get-content-choices-represented-as-actions):
+
+* get_user_preference
+* get_user_timeofday
+* get_actions
 
 ## <a name="request-a-rank"></a>Запрос ранжирования
 

@@ -1,28 +1,28 @@
 ---
-title: Создание частной зоны Azure DNS с помощью Azure CLI
-description: В этой процедуре создавать и тестировать частную зону DNS и записи в Azure DNS. В нем пошагово описывается создание первой частной зоны и записи DNS, а также управление ими с помощью Azure CLI.
+title: Краткое руководство. Создание частной зоны Azure DNS с помощью Azure CLI
+description: Из этого краткого руководства вы узнаете, как создать и проверить частную зону и запись DNS в Azure DNS. В нем пошагово описывается создание первой частной зоны и записи DNS, а также управление ими с помощью Azure CLI.
 services: dns
 author: vhorne
 ms.service: dns
-ms.topic: article
-ms.date: 6/13/2019
+ms.topic: quickstart
+ms.date: 09/20/2019
 ms.author: victorh
-ms.openlocfilehash: d882a9c40efc5e9bcb1a5e1c02f1ac73970d57db
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
-ms.translationtype: MT
+ms.openlocfilehash: 8aee640d8648abb623fe5ead0b21e3ae3084424a
+ms.sourcegitcommit: a7a9d7f366adab2cfca13c8d9cbcf5b40d57e63a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67076426"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71162141"
 ---
-# <a name="create-an-azure-dns-private-zone-using-the-azure-cli"></a>Создание частной зоны Azure DNS с помощью Azure CLI
+# <a name="quickstart-create-an-azure-private-dns-zone-using-the-azure-cli"></a>Краткое руководство. Создание частной зоны Azure DNS с помощью Azure CLI
 
 [!INCLUDE [private-dns-public-preview-notice](../../includes/private-dns-public-preview-notice.md)]
 
-Эта процедура поможет вам поэтапно создать закрытую зону DNS и первую запись, с помощью Azure CLI.
+В этом кратком руководстве описывается создание первой частной зоны и записи DNS с помощью Azure CLI.
 
-Зона DNS используется для размещения DNS-записей определенного домена. Чтобы разместить свой домен в Azure DNS, необходимо создать зону DNS для этого доменного имени. Каждая запись DNS для вашего домена создается внутри этой зоны DNS. Чтобы опубликовать частную зону DNS в виртуальной сети, укажите список виртуальных сетей, которые могут разрешать записи в зоне.  Они называются *связанного* виртуальных сетей. При включенной автоматической регистрацией Azure DNS также обновляет записи зоны, каждый раз, когда создается виртуальная машина, изменения его "IP-адрес или удаляется.
+Зона DNS используется для размещения DNS-записей определенного домена. Чтобы разместить свой домен в Azure DNS, необходимо создать зону DNS для этого доменного имени. Каждая запись DNS для вашего домена создается внутри этой зоны DNS. Чтобы опубликовать частную зону DNS в виртуальной сети, укажите список виртуальных сетей, которые могут разрешать записи в зоне.  Они называются *связанными* виртуальными сетями. Когда автоматическая регистрация включена, Azure DNS также обновляет записи зоны при каждом создании виртуальной машины, изменении ее IP-адреса или удалении.
 
-В этой процедуре вы узнаете, как:
+Из этого краткого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Создание частной зоны DNS
@@ -44,9 +44,9 @@ ms.locfileid: "67076426"
 az group create --name MyAzureResourceGroup --location "East US"
 ```
 
-## <a name="create-a-dns-private-zone"></a>Создание частной зоны DNS
+## <a name="create-a-private-dns-zone"></a>Создание частной зоны DNS
 
-В следующем примере создается виртуальная сеть с именем **myAzureVNet**. Затем он создает зону DNS с именем **private.contoso.com** в **MyAzureResourceGroup** группу ресурсов, связывает зоны DNS, которую **MyAzureVnet** виртуальной сети и Включение автоматической регистрации.
+В следующем примере создается виртуальная сеть с именем **myAzureVNet**. Затем создается зона DNS с именем **private.contoso.com** в группе ресурсов **MyAzureResourceGroup**, которая связывает зону DNS с виртуальной сетью **MyAzureVnet** и включает автоматическую регистрацию.
 
 ```azurecli
 az network vnet create \
@@ -64,7 +64,7 @@ az network private-dns link vnet create -g MyAzureResourceGroup -n MyDNSLink \
    -z private.contoso.com -v myAzureVNet -e true
 ```
 
-Если вы хотите создать зону для разрешения имен (регистрация не автоматическое имя узла), можно использовать `-e false` параметра.
+Если вы хотите создать зону только для разрешения имен (без автоматической регистрации имени узла), можно использовать параметр `-e false`.
 
 ### <a name="list-dns-private-zones"></a>Список частных зон DNS
 
@@ -206,16 +206,14 @@ az network private-dns record-set list \
 
 ## <a name="delete-all-resources"></a>Удаление всех ресурсов
 
-Если больше не нужен, удалите **MyAzureResourceGroup** группу ресурсов, чтобы удалить ресурсы, созданные в этой процедуре.
+Удалите группу ресурсов **MyAzureResourceGroup**, если ресурсы, созданные в этом руководстве, больше не нужны.
 
 ```azurecli
 az group delete --name MyAzureResourceGroup
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
-
-В этой процедуре развернутый частную зону DNS, созданную запись DNS и протестировать зоны.
-Далее можно получить дополнительные сведения о частных зонах DNS.
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Использование Azure DNS для частных доменов](private-dns-overview.md)
+> [Сценарии применения частных зон DNS Azure](private-dns-scenarios.md)
+

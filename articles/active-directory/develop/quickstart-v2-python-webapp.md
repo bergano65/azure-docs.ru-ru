@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 09/11/2019
+ms.date: 09/25/2019
 ms.author: abpati
 ms.custom: aaddev
-ms.openlocfilehash: c5817427102bf10dcd1ece932b0f582d973efaf7
-ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
+ms.openlocfilehash: 587e7a82e2a9cde8ff6d08274928ab22aa969061
+ms.sourcegitcommit: 0486aba120c284157dfebbdaf6e23e038c8a5a15
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71257893"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71309624"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-a-python-web-app"></a>Краткое руководство. Добавление возможности входа в веб-приложение Python с помощью учетной записи Майкрософт
 
@@ -101,48 +101,35 @@ ms.locfileid: "71257893"
 1. Откройте файл **app_config.py**, который можно найти в корневой папке, и замените его следующим фрагментом кода:
 
 ```python
-AUTHORITY = "https://login.microsoftonline.com/Enter_the_Tenant_Name_Here"
-CLIENT_ID = "Enter_the_Application_Id_here"
 CLIENT_SECRET = "Enter_the_Client_Secret_Here"
-SCOPE = ["https://graph.microsoft.com/User.Read"]
-REDIRECT_URI = "http://localhost:5000/getAToken"
+CLIENT_ID = "Enter_the_Application_Id_here"
 ```
 
 > [!div renderon="docs"]
 > Описание
 >
 > - `Enter_the_Application_Id_here` — идентификатор регистрируемого приложения.
-> - `Enter_the_Tenant_Info_Here` — один из следующих вариантов:
->   - Если ваше приложение поддерживает вариант **Только моя организация**, замените это значение на **идентификатор клиента** или **имя клиента** (например contoso.onmicrosoft.com).
->   - Если ваше приложение поддерживает вариант **Учетные записи в любом каталоге организации**, замените это значение на `organizations`.
->   - Если приложение поддерживает вариант **Все пользователи с учетными записями Майкрософт**, замените это значение на `common`.
 > - `Enter_the_Client_Secret_Here` — это **Секрет клиента**, созданного вами в пункте **Сертификаты и Секреты** для зарегистрированного приложения.
 
 #### <a name="step-4-run-the-code-sample"></a>Шаг 4. Запуск примера кода
 
-- Вам потребуется установить библиотеку Python MSAL, Flask Framework, Flask-Sessions для управления сеансами на стороне сервера и выполнения запросов с помощью PIP следующим образом:
+1. Вам потребуется установить библиотеку Python MSAL, Flask Framework, Flask-Sessions для управления сеансами на стороне сервера и выполнения запросов с помощью PIP следующим образом:
 
-```Shell
-pip install msal
-pip install flask
-pip install Flask-Session
-pip install requests
-```
+   ```Shell
+   pip install -r requirements.txt
+   ```
 
-- Если переменная среды для Flask уже задана: Запустите "app.py" из оболочки или командной строки:
+2. Запустите "app.py" из оболочки или командной строки:
 
-```Shell
-python app.py
-```
+   ```Shell
+   python app.py
+   ```
 
-- Если переменная среды для Flask еще не задана:
+## <a name="next-steps"></a>Дополнительная информация
 
-    1. Введите следующие команды в оболочку или в командную строку, перейдя в каталог проекта:
+Дополнительные сведения о веб-приложениях для входа пользователей в систему и вызова веб-API
 
-```Shell
-export FLASK_APP=app.py
-export FLASK_DEBUG=1
-flask run
-```
+> [!div class="nextstepaction"]
+> [Scenario: Веб-приложения для входа пользователей в систему](scenario-web-app-sign-user-overview.md)
 
 [!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]

@@ -70,6 +70,14 @@
               href: devtest-lab-use-claim-capabilities.md
 - name: Руководства
   items:
+    - name: "Лаборатории для аудитории\_— типы классов"
+      items:
+        - name: Типы классов
+          href: classroom-labs/class-types.md
+        - name: Глубокое обучение при обработке естественного языка
+          href: classroom-labs/class-type-deep-learning-natural-processing.md
+        - name: Создание скриптов оболочки в Linux
+          href: classroom-labs/class-type-shell-scripting-linux.md
     - name: Лаборатории для аудитории
       items:
         - name: Создание и настройка учетных записей лаборатории (владелец учетной записи лаборатории)

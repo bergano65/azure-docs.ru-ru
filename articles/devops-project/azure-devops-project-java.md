@@ -16,12 +16,12 @@ ms.date: 07/09/2018
 ms.author: mlearned
 ms.custom: mvc, seo-java-july2019, seo-java-august2019, seo-java-september2019
 monikerRange: vsts
-ms.openlocfilehash: d395855de6bb16841d54821c87a6af6d5d62c11c
-ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.openlocfilehash: 49514022dc00afcd07002c7a3278c18a606e5ad5
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70898054"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71203733"
 ---
 # <a name="quickstart-set-up-a-cicd-pipeline-for-a-java-app-with-azure-devops-projects"></a>Краткое руководство. Настройка конвейера CI/CD для приложения Java с помощью Azure DevOps Projects
 
@@ -39,7 +39,7 @@ ms.locfileid: "70898054"
 
 2. Нажмите кнопку **Создать**.
 
-    ![Начало конфигурации непрерывной поставки](_img/azure-devops-project-java/fullbrowser.png)
+    ![Создание ресурса Azure в DevOps Projects](_img/azure-devops-project-java/continuous-delivery-configuration-full-browser.png)
 
 ## <a name="select-a-sample-application-and-azure-service"></a>Выбор примера приложения и службы Azure
 
@@ -62,7 +62,7 @@ ms.locfileid: "70898054"
 
 2. Выберите **Обзор**, чтобы просмотреть выполняющееся приложение.
 
-    ![Представление панели мониторинга](_img/azure-devops-project-java/dashboardnopreview.png) 
+    ![Просмотр панели мониторинга приложения на портале Azure](_img/azure-devops-project-java/azure-devops-application-dashboard.png) 
     
    DevOps Projects автоматически настраивает сборку непрерывной интеграции и триггер выпуска.  Теперь вы готовы сотрудничать с командой в приложении Java с процессом CI/CD, который автоматически развертывает данные последней работы на вашем веб-сайте.
 

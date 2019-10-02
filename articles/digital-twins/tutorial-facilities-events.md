@@ -6,14 +6,14 @@ author: alinamstanciu
 ms.custom: seodec18
 ms.service: digital-twins
 ms.topic: tutorial
-ms.date: 08/05/2019
+ms.date: 09/23/2019
 ms.author: alinast
-ms.openlocfilehash: 30d43831b73edc52b461512faecac369f6bf00b0
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: fe2eb357ef89d70512e85db24d22f95cac1bd0ac
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68827810"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71300092"
 ---
 # <a name="tutorial-receive-notifications-from-your-azure-digital-twins-spaces-by-using-logic-apps"></a>Руководство по Получение уведомлений от пространств Azure Digital Twins с использованием Logic Apps
 
@@ -39,6 +39,9 @@ ms.locfileid: "68827810"
 - [Пакет SDK для .NET Core версии 2.1.403 или более поздней](https://www.microsoft.com/net/download) на компьютере разработки. Он нужен для запуска примера. Выполните команду `dotnet --version`, чтобы проверить, установлена ли необходимая версия.
 - Учетная запись Office 365 для отправки уведомлений по электронной почте.
 
+> [!TIP]
+> При подготовке нового экземпляра присвойте уникальное имя экземпляру Digital Twins.
+
 ## <a name="integrate-events-with-event-grid"></a>Интеграция событий со службой "Сетка событий"
 
 В этом разделе вы установите службу [Сетка событий](../event-grid/overview.md) для сбора событий из Azure Digital Twins и перенаправления их в [обработчик событий](../event-grid/event-handlers.md), например в Logic Apps.
@@ -55,13 +58,13 @@ ms.locfileid: "68827810"
 
 1. Введите **имя** для раздела сетки событий и выберите **подписку**. Выберите **группу ресурсов**, которую вы использовали или создали для экземпляра Digital Twins, и **расположение**. Нажмите кнопку **Создать**. 
 
-    ![Создание раздела службы "Сетка событий"](./media/tutorial-facilities-events/create-event-grid-topic.png)
+    [![Создание раздела службы "Сетка событий"](./media/tutorial-facilities-events/create-event-grid-topic.png)](./media/tutorial-facilities-events/create-event-grid-topic.png#lightbox)
 
 1. Перейдите в раздел сетки событий из группы ресурсов, выберите пункт **Обзор** и скопируйте значение **конечной точки раздела** во временный файл. Вам понадобится этот URL-адрес в следующих разделах. 
 
 1. Выберите **Ключи доступа** и скопируйте **YOUR_KEY_1** и **YOUR_KEY_2** во временный файл. Вам потребуются эти значения для создания конечной точки в следующем разделе.
 
-    ![Ключи службы "Сетка событий"](./media/tutorial-facilities-events/event-grid-keys.png)
+    [![Ключи службы "Сетка событий"](./media/tutorial-facilities-events/event-grid-keys.png)](./media/tutorial-facilities-events/event-grid-keys.png#lightbox)
 
 ### <a name="create-an-endpoint-for-the-event-grid-topic"></a>Создание конечной точки для раздела службы "Сетка событий"
 
@@ -98,7 +101,7 @@ ms.locfileid: "68827810"
 
    Эта команда создает конечную точку для службы "Сетка событий". 
 
-   ![Конечные точки для службы "Сетка событий"](./media/tutorial-facilities-events/dotnet-create-endpoints.png)
+   [![Конечные точки для службы "Сетка событий"](./media/tutorial-facilities-events/dotnet-create-endpoints.png)](./media/tutorial-facilities-events/dotnet-create-endpoints.png#lightbox)
 
 ## <a name="notify-events-with-logic-apps"></a>Уведомление о событиях с помощью Logic Apps
 
@@ -110,7 +113,7 @@ ms.locfileid: "68827810"
 
 1. Введите **имя** для своего ресурса приложения логики, а затем выберите **подписку**, **группу ресурсов** и **расположение**. Нажмите кнопку **Создать**.
 
-    ![Создание ресурса Logic Apps](./media/tutorial-facilities-events/create-logic-app.png)
+    [![Создание ресурса Logic Apps](./media/tutorial-facilities-events/create-logic-app.png)](./media/tutorial-facilities-events/create-logic-app.png#lightbox)
 
 1. Откройте развернутый ресурс Logic Apps, а затем откройте панель **Конструктор приложений логики**. 
 
@@ -124,7 +127,7 @@ ms.locfileid: "68827810"
 
    c. Выберите ваш ресурс службы "Сетка событий" из раскрывающегося списка в поле **Имя ресурса**.
 
-   ![Область "Конструктор приложений логики"](./media/tutorial-facilities-events/logic-app-resource-event.png)
+   [![Область "Конструктор приложений логики"](./media/tutorial-facilities-events/logic-app-resource-event.png)](./media/tutorial-facilities-events/logic-app-resource-event.png#lightbox)
 
 1. Нажмите кнопку **Новый шаг**.
 
@@ -156,7 +159,7 @@ ms.locfileid: "68827810"
 
     В этих полезных данных есть фиктивные значения. Служба Logic Apps использует пример полезных данных для создания *схемы*.
 
-    ![Окно "Анализ JSON" Logic Apps для службы "Сетка событий"](./media/tutorial-facilities-events/logic-app-parse-json.png)
+    [![Окно "Анализ JSON" в Logic Apps для службы "Сетка событий"](./media/tutorial-facilities-events/logic-app-parse-json.png)](./media/tutorial-facilities-events/logic-app-parse-json.png#lightbox)
 
 1. Нажмите кнопку **Новый шаг**.
 
@@ -168,7 +171,7 @@ ms.locfileid: "68827810"
 
    c. Во втором текстовом поле **Выберите значение** введите `UdfCustom`.
 
-   ![Выбранные условия](./media/tutorial-facilities-events/logic-app-condition.png)
+   [![Выбранные условия](./media/tutorial-facilities-events/logic-app-condition.png)](./media/tutorial-facilities-events/logic-app-condition.png#lightbox)
 
 1. Внутри окна **Если истинно** сделайте следующее:
 
@@ -180,7 +183,7 @@ ms.locfileid: "68827810"
 
    d. В поле **Текст** того же окна введите примерно такой текст: **В комнате обнаружено плохое качество воздуха, и температура должна быть отрегулирована**. Вы можете прорабатывать все до мелочей, используя элементы из списка **Динамическое содержимое**.
 
-   ![Выбор действия "Отправить электронное письмо" в Logic Apps](./media/tutorial-facilities-events/logic-app-send-email.png)
+   [![Выбор действия "Отправить электронное письмо" в Logic Apps](./media/tutorial-facilities-events/logic-app-send-email.png)](./media/tutorial-facilities-events/logic-app-send-email.png#lightbox)
 
 1. Нажмите кнопку **Сохранить** в верхней части панели **Конструктор приложений логики**.
 
@@ -188,7 +191,7 @@ ms.locfileid: "68827810"
 
 Через несколько минут вы начнете получать электронные уведомления из ресурса Logic Apps. 
 
-   ![Уведомление по электронной почте](./media/tutorial-facilities-events/logic-app-notification.png)
+   [![Уведомление по электронной почте](./media/tutorial-facilities-events/logic-app-notification.png)](./media/tutorial-facilities-events/logic-app-notification.png#lightbox)
 
 Чтобы отключить получение этих сообщений, перейдите к ресурсу Logic Apps на портале и выберите область **Обзор**. Выберите **Отключить**.
 

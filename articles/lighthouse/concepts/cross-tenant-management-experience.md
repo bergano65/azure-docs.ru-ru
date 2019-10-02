@@ -4,15 +4,15 @@ description: Делегированное управление ресурсам�
 author: JnHs
 ms.service: lighthouse
 ms.author: jenhayes
-ms.date: 07/11/2019
+ms.date: 09/25/2019
 ms.topic: overview
 manager: carmonm
-ms.openlocfilehash: f6468e62e9969aa87d51e25ed220bf7d4bed989e
-ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
+ms.openlocfilehash: 17a32d50e2e0330218ff51b849cb4f3aeadb3d13
+ms.sourcegitcommit: 0486aba120c284157dfebbdaf6e23e038c8a5a15
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69971567"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71309654"
 ---
 # <a name="cross-tenant-management-experiences"></a>Интерфейсы управления для различных клиентов
 
@@ -87,6 +87,10 @@ ms.locfileid: "69971567"
   - Повышение уровня защиты конфигурации группы безопасности сети с помощью адаптивной защиты сети.
   - Обеспечение работы только тех приложений и процессов на серверах, которые должны использоваться с адаптивными элементами управления приложениями.
   - Мониторинг изменений важных файлов и записей реестра с помощью мониторинга целостности файлов (FIM).
+
+[Azure Sentinel](https://docs.microsoft.com/azure/sentinel/multiple-tenants-service-providers):
+
+- управление ресурсами Azure Sentinel в клиентах
 
 [Работоспособность служб Azure](https://docs.microsoft.com/azure/service-health/).
 

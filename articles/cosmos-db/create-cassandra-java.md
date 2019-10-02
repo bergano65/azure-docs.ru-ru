@@ -8,13 +8,13 @@ ms.subservice: cosmosdb-cassandra
 ms.devlang: java
 ms.topic: quickstart
 ms.date: 09/24/2018
-ms.custom: seo-java-august2019
-ms.openlocfilehash: 6463a578d514a7bcc9fb703e34f94381e1e9cf65
-ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
+ms.custom: seo-java-august2019, seo-java-september2019
+ms.openlocfilehash: 5b1eacb1d0121f2dd0d97807f07042e828fe7932
+ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69981766"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71266023"
 ---
 # <a name="quickstart-build-a-java-app-to-manage-azure-cosmos-db-cassandra-api-data"></a>Краткое руководство. Создание приложения Java для управления данными API Cassandra Azure Cosmos DB
 
@@ -152,9 +152,9 @@ Azure Cosmos DB — это глобально распределенная мн
 
 1. На [портале Azure](https://portal.azure.com/) выберите **Строка подключения**. 
 
-    ![Просмотрите и скопируйте имя пользователя на странице "Строка подключения" на портале Azure.](./media/create-cassandra-java/keys.png)
+    ![Просмотрите и скопируйте имя пользователя на странице "Строка подключения" на портале Azure.](./media/create-cassandra-java/copy-username-connection-string-azure-portal.png)
 
-2. Вы можете использовать ![кнопку "Копировать"](./media/create-cassandra-java/copy.png) в правой части экрана, чтобы скопировать значение параметра CONTACT POINT.
+2. Вы можете использовать ![кнопку "Копировать"](./media/create-cassandra-java/copy-button-azure-portal.png) в правой части экрана, чтобы скопировать значение параметра CONTACT POINT.
 
 3. Откройте файл `config.properties` в папке `C:\git-samples\azure-cosmosdb-cassandra-java-getting-started\java-examples\src\main\resources`. 
 
@@ -208,7 +208,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 4. На портале Azure откройте **обозреватель данных**, чтобы запросить, изменить и обработать новые данные. 
 
-    ![Просмотр данных в обозревателе данных](./media/create-cassandra-java/data-explorer.png)
+    ![Просмотр данных в обозревателе данных — Azure Cosmos DB](./media/create-cassandra-java/view-data-explorer-java-app.png)
 
 ## <a name="review-slas-in-the-azure-portal"></a>Просмотр соглашений об уровне обслуживания на портале Azure
 
