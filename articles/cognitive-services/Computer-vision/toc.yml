@@ -113,7 +113,7 @@
       href: concept-generating-thumbnails.md
     - name: Распознавание печатного и рукописного текста
       href: concept-recognizing-text.md
-    - name: Обнаружение содержимого для взрослых и содержимого непристойного характера
+    - name: Обнаружение содержимого для взрослых
       href: concept-detecting-adult-content.md
 - name: Руководства
   items:

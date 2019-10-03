@@ -14,7 +14,15 @@
           href: tutorial-scale-cluster.md
         - name: "3.\_Удаление кластера Azure Red Hat OpenShift"
           href: tutorial-delete-cluster.md
-- name: Инструкции
+- name: Администрирование кластера
+  items:
+    - name: Администрирование кластера Azure Red Hat OpenShift
+      items:
+        - name: "1.\_Роль администратора кластера Azure Red Hat OpenShift"
+          href: cluster-administration-cluster-admin-role.md
+        - name: "2.\_Управление ограничениями контекста безопасности"
+          href: cluster-administration-security-context-constraints.md
+- name: Руководства
   expanded: true
   items:
     - name: Настройка среды разработки Azure Red Hat OpenShift

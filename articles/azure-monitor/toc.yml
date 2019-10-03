@@ -830,6 +830,8 @@
                   href: log-query/app-expression.md
                 - name: Выражение workspace
                   href: log-query/workspace-expression.md
+                - name: Выражение resource
+                  href: log-query/resource-expression.md
                 - name: Централизация ресурсов данных приложения
                   href: log-query/unify-app-resource-data.md
             - name: Примеры и руководства

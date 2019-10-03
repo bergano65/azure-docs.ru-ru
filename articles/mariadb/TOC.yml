@@ -4,6 +4,8 @@
   items:
     - name: Что такое База данных Azure для MariaDB?
       href: overview.md
+    - name: Какой вариант MariaDB следует выбрать?
+      href: select-right-deployment-type.md
 - name: Краткие руководства
   expanded: true
   items:

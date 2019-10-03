@@ -10,6 +10,8 @@
     - name: Краткое руководство
       expanded: true
       items:
+        - name: Планирование сети
+          href: cloudsimple-network-checklist.md
         - name: Инициализация и подготовка емкости
           href: quickstart-create-cloudsimple-service.md
         - name: Настройка среды частного облака
@@ -144,6 +146,8 @@
               href: configure-server-vrealize-automation-endpoint.md
             - name: Перенос виртуальных машин рабочей нагрузки в частное облако
               href: migrate-workloads.md
+            - name: Миграция с помощью Azure Data Box
+              href: migration-using-azure-data-box.md
             - name: Обеспечение высокой доступности приложения в VMware в Azure
               href: ensuring-high-availability.md
             - name: Выбор решения для балансировки нагрузки

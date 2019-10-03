@@ -4,6 +4,8 @@
   items:
     - name: Что такое База данных Azure для MySQL?
       href: overview.md
+    - name: Какой вариант MySQL следует выбрать?
+      href: select-right-deployment-type.md
 - name: Краткие руководства
   expanded: true
   items:

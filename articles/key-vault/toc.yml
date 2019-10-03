@@ -66,12 +66,12 @@
       items:
         - name: Общие сведения о безопасности
           href: overview-security.md
-        - name: Встроенные средства управления безопасностью
-          href: key-vault-security-controls.md
         - name: Системы безопасности
           href: key-vault-ovw-security-worlds.md
         - name: Защита хранилища ключей
           href: key-vault-secure-your-key-vault.md
+        - name: Встроенные средства управления безопасностью
+          href: key-vault-security-controls.md
     - name: Обратимое удаление
       href: key-vault-ovw-soft-delete.md
     - name: Регулирование
@@ -98,8 +98,12 @@
       items:
         - name: Рекомендации
           href: security-recommendations.md
-    - name: Использование управляемого удостоверения Службы приложений
-      href: managed-identity.md
+    - name: Аутентификация
+      items:
+        - name: Использование управляемого удостоверения Службы приложений
+          href: managed-identity.md
+        - name: Использование политики управления доступом
+          href: key-vault-group-permissions-for-apps.md
     - name: Ведение журнала Azure Key Vault
       href: key-vault-logging.md
     - name: Доступ за брандмауэрами
@@ -114,8 +118,6 @@
       href: key-vault-soft-delete-cli.md
     - name: Обратимое удаление в Key Vault с помощью Azure PowerShell
       href: key-vault-soft-delete-powershell.md
-    - name: Использование групп для предоставления доступа
-      href: key-vault-group-permissions-for-apps.md
     - name: Настройка брандмауэров и виртуальных сетей
       href: key-vault-network-security.md
     - name: Разработка Java

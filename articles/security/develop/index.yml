@@ -13,7 +13,7 @@ metadata:
   ms.tgt_pltfrm: na
   ms.devlang: na
   ms.topic: landing-page
-  ms.date: 09/14/2019
+  ms.date: 09/30/2019
   ms.author: terrylan
 abstract:
   description: 'Узнайте, как разрабатывать и развертывать безопасные приложения в Azure с помощью наших примеров приложений, рекомендаций и руководств.'
@@ -41,6 +41,7 @@ sections:
         className: spaced noBullet
         items:
           - html: <a href="/azure/security/develop/secure-web-app">Веб-приложение в контейнере Linux</a>
+          - html: <a href="/azure/security/develop/secure-aad-app">Использование веб-приложения с Azure Active Directory</a>
           - html: <a href="/azure/security/develop/secure-pci-web-app">Индустрия платежных карточек</a>
   - title: Основные понятия
     items:

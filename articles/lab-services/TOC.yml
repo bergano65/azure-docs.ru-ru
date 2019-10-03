@@ -72,7 +72,7 @@
   items:
     - name: "Лаборатории для аудитории\_— типы классов"
       items:
-        - name: Типы классов
+        - name: Общие сведения о типах классов
           href: classroom-labs/class-types.md
         - name: Глубокое обучение при обработке естественного языка
           href: classroom-labs/class-type-deep-learning-natural-processing.md

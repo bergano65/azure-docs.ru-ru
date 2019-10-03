@@ -47,6 +47,8 @@
       href: manage-cli.md
     - name: Управление консорциумом с помощью PowerShell
       href: manage-consortium-powershell.md
+    - name: Использование Logic Apps
+      href: ethereum-logic-app.md
 - name: Ресурсы
   items:
     - name: REST API службы "Блокчейн"

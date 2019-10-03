@@ -65,8 +65,10 @@
           href: known-issues-azure-sql-online.md
         - name: Известные проблемы при миграции в Базу данных Azure для MySQL через Интернет
           href: known-issues-azure-mysql-online.md
-        - name: Известные проблемы с миграцией в Базу данных Azure для PostgreSQL (отдельный сервер) по сети
+        - name: Известные проблемы с миграцией из PostgreSQL в Базу данных Azure для PostgreSQL (отдельный сервер) по сети
           href: known-issues-azure-postgresql-online.md
+        - name: Известные проблемы с миграцией из Oracle в Базу данных Azure для PostgreSQL (отдельный сервер) по сети
+          href: known-issues-oracle-azure-postgresql-online.md
     - name: Видео
       items:
         - name: Работа с руководством по переносу баз данных
