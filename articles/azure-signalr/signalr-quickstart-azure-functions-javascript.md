@@ -7,12 +7,12 @@ ms.devlang: javascript
 ms.topic: quickstart
 ms.date: 03/04/2019
 ms.author: zhshang
-ms.openlocfilehash: c234324bf76f9d944037a411ed8bb3b7e4841cbe
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: fd935ffda7d16988781d5debce9333ccf2adb16f
+ms.sourcegitcommit: d4c9821b31f5a12ab4cc60036fde00e7d8dc4421
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68882544"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71709759"
 ---
 # <a name="quickstart-create-a-chat-room-with-azure-functions-and-signalr-service-using-javascript"></a>Краткое руководство. Создание чат-комнаты с помощью служб "Функции Azure" и SignalR с использованием JavaScript
 
@@ -86,4 +86,4 @@ ms.locfileid: "68882544"
 В этом кратком руководстве вы создали и запустили бессерверное приложение в режиме реального времени в VS Code. Далее узнайте, как развертывать Функции Azure с помощью VS Code.
 
 > [!div class="nextstepaction"]
-> [Развертывание Функций Azure с помощью VS Code](https://code.visualstudio.com/tutorials/functions-extension/getting-started)
+> [Развертывание Функций Azure с помощью VS Code](/azure/javascript/tutorial-vscode-serverless-node-01)

@@ -9,15 +9,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 07/01/2019
+ms.date: 10/01/2019
 ms.author: banders
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 278e873d01eb3dd7d614d771e5b50b8fe624800a
-ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.openlocfilehash: 43986ce57b8d320beeae748d3b848cf9ef38744d
+ms.sourcegitcommit: a19f4b35a0123256e76f2789cd5083921ac73daf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "67490355"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71718730"
 ---
 # <a name="understand-your-azure-external-services-charges"></a>Основная информация о расходах на внешние службы в Azure
 Внешние службы публикуются сторонними поставщиками программного обеспечения в Azure Marketplace. Например, SendGrid — это внешняя служба, которую можно приобрести в Azure, но которая не опубликована корпорацией Майкрософт. Некоторые продукты Майкрософт также продаются через Azure Marketplace.

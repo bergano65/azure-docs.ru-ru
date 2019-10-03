@@ -7,12 +7,12 @@ ms.devlang: python
 ms.topic: quickstart
 ms.date: 08/08/2019
 ms.author: antchu
-ms.openlocfilehash: fbae9d15ba8572a8ae2c493ec85eb0010c2664eb
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 728111548176a0a3212b1677eeb192ccdc47fe88
+ms.sourcegitcommit: d4c9821b31f5a12ab4cc60036fde00e7d8dc4421
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68886426"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71709495"
 ---
 # <a name="quickstart-create-a-chat-room-with-azure-functions-and-signalr-service-using-python"></a>Краткое руководство. Создание комнаты чата с помощью Функций Azure и SignalR с помощью Python
 
@@ -102,4 +102,4 @@ ms.locfileid: "68886426"
 В этом кратком руководстве вы создали и запустили бессерверное приложение в режиме реального времени в VS Code. Далее узнайте, как развертывать Функции Azure с помощью VS Code.
 
 > [!div class="nextstepaction"]
-> [Развертывание Функций Azure с помощью VS Code](https://code.visualstudio.com/tutorials/functions-extension/getting-started)
+> [Развертывание Функций Azure с помощью VS Code](/azure/javascript/tutorial-vscode-serverless-node-01)

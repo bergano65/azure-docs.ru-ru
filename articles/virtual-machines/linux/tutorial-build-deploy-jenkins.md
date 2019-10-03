@@ -12,12 +12,12 @@ ms.workload: infrastructure
 ms.date: 07/31/2018
 ms.author: tarcher
 ms.custom: jenkins
-ms.openlocfilehash: a62a302748cb7e60b6a857c686d1833ad499cc7a
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 42e1ede7c762fef1f33436ea4c757b0c0531a8f2
+ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70081655"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71828430"
 ---
 # <a name="tutorial-deploy-your-app-to-linux-virtual-machines-in-azure-with-using-jenkins-and-azure-devops-services"></a>Руководство по Развертывание приложения на виртуальных машинах Linux в Azure с помощью Jenkins и Azure DevOps Services
 
@@ -54,7 +54,7 @@ ms.locfileid: "70081655"
 ## <a name="get-the-sample-app"></a>Получение примера приложения
 
 Развертываемое приложение должно храниться в репозитории Git.
-В данном руководстве мы рекомендуем использовать [этот пример приложения с сайта GitHub](https://github.com/azooinmyluggage/fabrikam-node). В этом руководстве содержится пример сценария, который использовался во время установки Node.js и приложения. Если нужно работать с собственным репозиторием, следует настроить такой же образец.
+В данном руководстве мы рекомендуем использовать [этот пример приложения с сайта GitHub](https://github.com/azure-devops/fabrikam-node). В этом руководстве содержится пример сценария, который использовался во время установки Node.js и приложения. Если нужно работать с собственным репозиторием, следует настроить такой же образец.
 
 Создайте вилку этого приложения и запишите расположение (URL-адрес), чтобы использовать его позже в данном руководстве. Дополнительные сведения см. в статье [Fork a repo](https://help.github.com/articles/fork-a-repo/) (Создание вилки репозитория).    
 

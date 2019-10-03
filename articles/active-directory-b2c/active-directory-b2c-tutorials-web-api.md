@@ -10,12 +10,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: 87d46fad1c0a5494910a8218c4e40994fc140386
-ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
+ms.openlocfilehash: fd4bf602cb5ca409b957e9dbd6f963d88428a63f
+ms.sourcegitcommit: 8bae7afb0011a98e82cbd76c50bc9f08be9ebe06
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71103404"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71694647"
 ---
 # <a name="tutorial-grant-access-to-an-aspnet-web-api-using-azure-active-directory-b2c"></a>Руководство по Предоставление доступа к веб-API ASP.NET с помощью Azure Active Directory B2C
 
@@ -54,23 +54,13 @@ ms.locfileid: "71103404"
 
 Области предоставляют способ контроля доступа к защищенным ресурсам. Области используются веб-API для реализации управления доступом на уровне области. Например, пользователи веб-API могут иметь доступ на чтение и запись или доступ только на чтение. В этом руководстве также можно использовать области для определения разрешений на чтение и запись для веб-API.
 
-1. Щелкните **Приложения**, а затем выберите *webapi1*.
-2. Выберите **Опубликованные области**.
-3. Для **области** введите `Hello.Read`, а для описания — `Read access to hello`.
-4. Для **области** введите `Hello.Write`, а для описания — `Write access to hello`.
-5. Выберите команду **Сохранить**.
-
-Опубликованные области можно использовать для предоставления приложению клиента разрешения на доступ к веб-API.
+[!INCLUDE [active-directory-b2c-scopes](../../includes/active-directory-b2c-scopes.md)]
 
 ## <a name="grant-permissions"></a>Предоставление разрешений
 
 Чтобы вызвать защищенный веб-API из приложения, необходимо предоставить приложению разрешения на доступ к API. Как часть предварительного требования, вы создали веб-приложение *webapp1* в Azure AD B2C. Используйте это приложение для вызова веб-API.
 
-1. Щелкните **Приложения**, а затем выберите *webapp1*.
-2. Щелкните **Доступ через API**, а затем выберите **Добавить**.
-3. В раскрывающемся списке **Выбрать API** выберите *webapi1*.
-4. В раскрывающемся списке **Выбрать области** выберите области **Hello.Read** и **Hello.Write**, определенные ранее.
-5. Последовательно выберите **ОК**.
+[!INCLUDE [active-directory-b2c-permissions-api](../../includes/active-directory-b2c-permissions-api.md)]
 
 Приложение зарегистрировано для вызова защищенного веб-API. Пользователь выполняет аутентификацию в Azure AD B2C для использования приложения. Приложение получает предоставление авторизации из Azure AD B2C для доступа к защищенному веб-API.
 
@@ -79,8 +69,6 @@ ms.locfileid: "71103404"
 Теперь, когда веб-API зарегистрирован и определены области, необходимо настроить веб-API для использования клиента Azure AD B2C. В этом руководстве настройте пример веб-API. Пример веб-API включен в проект, который вы скачали при работе с предыдущей статьей.
 
 Пример решения состоит из двух проектов.
-
-Пример решения состоит из следующих двух проектов:
 
 * **TaskWebApp** — создание и изменение списка задач. Пример использует поток пользователя **регистрации или входа** для регистрации пользователей или входа в систему.
 * **TaskService** — это веб-API, поддерживающий функции создания, чтения, обновления и удаления списка задач. API защищен с помощью Azure AD B2C и вызывается TaskWebApp.
@@ -99,8 +87,8 @@ ms.locfileid: "71103404"
 
     ```csharp
     <add key="api:ApiIdentifier" value="https://<Your tenant name>.onmicrosoft.com/api/" />
-    <add key="api:ReadScope" value="Hello.Read" />
-    <add key="api:WriteScope" value="Hello.Write" />
+    <add key="api:ReadScope" value="demo.read" />
+    <add key="api:WriteScope" value="demo.write" />
     ```
 
 ### <a name="configure-the-web-api"></a>Настройка веб-API
@@ -128,8 +116,8 @@ ms.locfileid: "71103404"
 1. Настройте параметр области в соответствии с тем, что вы создали на портале.
 
     ```csharp
-    <add key="api:ReadScope" value="Hello.Read" />
-    <add key="api:WriteScope" value="Hello.Write" />
+    <add key="api:ReadScope" value="demo.read" />
+    <add key="api:WriteScope" value="demo.write" />
     ```
 
 ## <a name="run-the-sample"></a>Запуск примера

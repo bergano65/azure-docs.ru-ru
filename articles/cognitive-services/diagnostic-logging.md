@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: article
 ms.date: 06/14/2019
 ms.author: erhopf
-ms.openlocfilehash: cd380b4e2a7c05f0beedc2ab102b268aa4068f66
-ms.sourcegitcommit: f5cc71cbb9969c681a991aa4a39f1120571a6c2e
+ms.openlocfilehash: 539a35f170b2ee0c94762a30ed9376ca4a416210
+ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68516375"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71827901"
 ---
 # <a name="enable-diagnostic-logging-for-azure-cognitive-services"></a>Включение ведения журнала диагностики для Azure Cognitive Services
 
@@ -35,7 +35,7 @@ ms.locfileid: "68516375"
 Начнем с включения ведения журнала диагностики с помощью портал Azure.
 
 > [!NOTE]
-> Чтобы включить эту функцию с помощью PowerShell или Azure CLI, следуйте инструкциям, приведенным в статье [Получение и использование данных журнала из ресурсов Azure](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-logs-overview#diagnostic-settings).
+> Чтобы включить эту функцию с помощью PowerShell или Azure CLI, следуйте инструкциям, приведенным в статье [Получение и использование данных журнала из ресурсов Azure](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-logs-overview).
 
 1. Перейдите на портал Azure. Затем найдите и выберите ресурс Cognitive Services. Например, подписка на Поиск в Интернете Bing.   
 2. Затем в меню навигации слева перейдите к разделу **мониторинг** и выберите **параметры диагностики**. Этот экран содержит все ранее созданные параметры диагностики для этого ресурса.
@@ -113,7 +113,7 @@ by bin(TimeGenerated, 10s), OperationName
 
 ## <a name="next-steps"></a>Следующие шаги
 
-* Чтобы понять, как включить ведение журнала, а также метрики и категории журналов, которые поддерживаются различными службами Azure, прочитайте [Обзор метрик](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-metrics) в Microsoft Azure и обзор статей о журналах [диагностики Azure](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-logs-overview) .
+* Чтобы понять, как включить ведение журнала, а также метрики и категории журналов, которые поддерживаются различными службами Azure, прочитайте [Обзор метрик](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-metrics) в Microsoft Azure и обзор статей о [журналах диагностики Azure](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-logs-overview) .
 * Прочтите эти статьи, чтобы узнать о концентраторах событий:
   * [Что такое Центры событий Azure?](https://docs.microsoft.com/azure/event-hubs/event-hubs-what-is-event-hubs)
   * [Начало работы с Центрами событий](https://docs.microsoft.com/azure/event-hubs/event-hubs-csharp-ephcs-getstarted)

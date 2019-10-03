@@ -14,14 +14,14 @@ ms.topic: quickstart
 ms.date: 08/22/2019
 ms.author: magoedte
 ms.custom: mvc, seo-javascript-september2019
-ms.openlocfilehash: cdaca0fd3e314ecb5c0b68438eaaf87fbfb699b0
-ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
+ms.openlocfilehash: 72f50754a28f0bbf5648ae64299d28ff13e2ec31
+ms.sourcegitcommit: 6fe40d080bd1561286093b488609590ba355c261
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70933035"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71703054"
 ---
-# <a name="collect-data-from-a-linux-computer-in-a-hybrid-environment-with-azure-monitor"></a>Сбор данных с компьютера Linux в гибридной среде с помощью Azure Monitor
+# <a name="quickstart-collect-data-from-a-linux-computer-in-a-hybrid-environment-with-azure-monitor"></a>Краткое руководство. Сбор данных с компьютера Linux в гибридной среде с помощью Azure Monitor
 
 [Azure Monitor](../overview.md) может собирать данные напрямую c физических компьютеров или виртуальных машин Linux в вашей среде в рабочую область Log Analytics для подробного анализа и корреляции. [Агент Log Analytics](../platform/log-analytics-agent.md) позволяет Azure Monitor собирать данные из центра обработки данных или другой облачной среды. В этом кратком руководстве показано, как настроить и собирать данные c сервера Linux с помощью нескольких простых действий. Сведения о виртуальных машинах Linux в Azure см. в статье [Сбор данных о виртуальных машинах Azure](../../azure-monitor/learn/quick-collect-azurevm.md).  
 

@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.service: azure-functions
 ms.custom: mvc
 manager: jeconnoc
-ms.openlocfilehash: 40a912a94dc61342c04528e902bb0e084546904d
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: 63065c918a6f78510b4908c5e2ae80df67665b40
+ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68592812"
+ms.lasthandoff: 09/29/2019
+ms.locfileid: "71672601"
 ---
 # <a name="connect-functions-to-azure-storage-using-visual-studio-code"></a>Подключение функций к службе хранилища Azure с помощью Visual Studio Code
 
@@ -51,25 +51,25 @@ ms.locfileid: "68592812"
 
 Так как вы используете выходную привязку Хранилища очередей, перед запуском проекта необходимо установить расширение привязок службы хранилища. 
 
-### <a name="javascript"></a>JavaScript
+# <a name="javascripttabnodejs"></a>[JavaScript](#tab/nodejs)
 
 [!INCLUDE [functions-extension-bundles](../../includes/functions-extension-bundles.md)]
 
-### <a name="c-class-library"></a>Библиотека классов C\#
+# <a name="ctabcsharp"></a>[C\#](#tab/csharp)
 
 За исключением триггеров HTTP и таймера, привязки реализованы в виде пакетов расширений. Выполните следующую команду [dotnet add package](/dotnet/core/tools/dotnet-add-package) в окне терминала, чтобы добавить пакет расширений службы хранилища в свой проект.
 
 ```bash
 dotnet add package Microsoft.Azure.WebJobs.Extensions.Storage --version 3.0.4
 ```
-
+---
 Теперь вы можете добавить выходную привязку службы хранилища к проекту.
 
 ## <a name="add-an-output-binding"></a>Добавление выходной привязки
 
 В службе "Функции" для каждого типа привязок требуется `direction`, `type` и уникальное `name`, которое определяется в файле function.json. Способ определения этих атрибутов зависит от языка приложения-функции.
 
-### <a name="javascript"></a>JavaScript
+# <a name="javascripttabnodejs"></a>[JavaScript](#tab/nodejs)
 
 Атрибуты привязки определяются непосредственно в файле function.json. В зависимости от типа привязки могут потребоваться дополнительные свойства. [Параметр выходных данных очереди](functions-bindings-storage-queue.md#output---configuration) описывает поля, требуемые для привязки очереди службы хранилища Azure. Расширение позволяет легко добавлять привязки в файл function.json. 
 
@@ -116,15 +116,17 @@ dotnet add package Microsoft.Azure.WebJobs.Extensions.Storage --version 3.0.4
 }
 ```
 
-### <a name="c-class-library"></a>Библиотека классов C\#
+# <a name="ctabcsharp"></a>[C\#](#tab/csharp)
 
 [!INCLUDE [functions-add-storage-binding-csharp-library](../../includes/functions-add-storage-binding-csharp-library.md)]
+
+---
 
 ## <a name="add-code-that-uses-the-output-binding"></a>Добавление кода, который использует выходную привязку
 
 После определения привязки можно использовать `name` привязки для доступа к ней как к атрибуту в сигнатуре функции. После использования выходной привязки вам для проверки подлинности, получения ссылки на очередь или записи данных больше не потребуется код пакета SDK службы хранилища Azure. Вместо вас эти задачи будут выполнены выходной привязкой очереди и средой выполнения функции.
 
-### <a name="javascript"></a>JavaScript
+# <a name="javascripttabnodejs"></a>[JavaScript](#tab/nodejs)
 
 Добавьте код, который использует объект выходной привязки `msg` в `context.bindings` для создания сообщения очереди. Добавьте этот код перед инструкцией `context.res`.
 
@@ -158,9 +160,11 @@ module.exports = async function (context, req) {
 };
 ```
 
-### <a name="c"></a>C\#
+# <a name="ctabcsharp"></a>[C\#](#tab/csharp)
 
 [!INCLUDE [functions-add-storage-binding-csharp-library-code](../../includes/functions-add-storage-binding-csharp-library-code.md)]
+
+---
 
 [!INCLUDE [functions-run-function-test-local-vs-code](../../includes/functions-run-function-test-local-vs-code.md)]
 

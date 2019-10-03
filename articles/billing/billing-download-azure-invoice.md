@@ -10,14 +10,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 07/18/2019
+ms.date: 10/01/2019
 ms.author: banders
-ms.openlocfilehash: 4dc5f88f7a5994e5bcd50d71c86bf1ba35b10734
-ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.openlocfilehash: 862ec629504da4d8ee7eadd8f9b925984d96614c
+ms.sourcegitcommit: a19f4b35a0123256e76f2789cd5083921ac73daf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "68321764"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71718894"
 ---
 # <a name="view-and-download-your-microsoft-azure-invoice"></a>Просмотр и скачивание счета Microsoft Azure
 
@@ -147,10 +147,10 @@ ms.locfileid: "68321764"
 - [Значение терминов в файле с подробными данными об использовании Microsoft Azure](billing-understand-your-usage.md)
 - [View and download your organization's Azure pricing](billing-ea-pricing.md) (Просмотр и скачивание сведений о ценах Azure для вашей организации)
 
-Если у вас есть клиентское соглашение Майкрософт:
+Если у вас есть Клиентское соглашение Майкрософт см. следующие сведения.
 
-- [Общие сведения о расходах, включенных в счет клиентского соглашения Майкрософт](billing-mca-understand-your-bill.md)
-- [Термины в счете клиентского соглашения Майкрософт](billing-mca-understand-your-invoice.md)
+- [Understand the charges on the invoice for your billing profile](billing-mca-understand-your-bill.md) (Пояснения к счету — только для клиентского соглашения Майкрософт)
+- [Understand terms on the invoice for your billing profile](billing-mca-understand-your-invoice.md) (Пояснения к условиям оплаты счетов — только для клиентского соглашения Майкрософт)
 - [Terms in the Azure usage and charges file for a Microsoft Customer Agreement](billing-mca-understand-your-usage.md) (Термины в файле об использовании и расходах Azure для клиентского соглашения Майкрософт)
 - [View the tax documents for your Microsoft Customer Agreement](billing-mca-download-tax-document.md) (Просмотр налоговых документов для клиентского соглашения Майкрософт)
 - [View and download your organization's Azure pricing](billing-ea-pricing.md) (Просмотр и скачивание сведений о ценах Azure для вашей организации)

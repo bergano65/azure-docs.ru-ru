@@ -7,12 +7,12 @@ ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: quickstart
 ms.date: 07/22/2019
-ms.openlocfilehash: 079f87dec67f98d502d135fc012b5523211d5957
-ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
+ms.openlocfilehash: 10030cf69009c59fa607ad68c3b7ab19c7a22860
+ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70381793"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71326712"
 ---
 # <a name="quickstart-create-an-azure-data-explorer-cluster-and-database"></a>Краткое руководство. Создание кластера и базы данных Azure Data Explorer
 
@@ -22,7 +22,7 @@ ms.locfileid: "70381793"
 > * [PowerShell](create-cluster-database-powershell.md)
 > * [C#](create-cluster-database-csharp.md)
 > * [Python](create-cluster-database-python.md)
->  
+> * [Шаблон ARM](create-cluster-database-resource-manager.md)
 
 
 Обозреватель данных Azure — это быстрая и высокомасштабируемая служба для изучения данных журналов и телеметрии. Чтобы использовать обозреватель данных Azure, сначала нужно создать кластер и одну или несколько баз данных в этом кластере. Затем вы должны принять (загрузить) данные в базы данных, чтобы к ним можно было выполнять запросы. В этом кратком руководстве вы создадите кластер и базу данных.

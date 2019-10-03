@@ -7,12 +7,12 @@ ms.date: 03/11/2019
 ms.topic: quickstart
 ms.service: blueprints
 manager: carmonm
-ms.openlocfilehash: 473e16c610e7dee0b2838cb1a54ef7cd98958889
-ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
+ms.openlocfilehash: 225f5cfe36daaafb7f6ab5d64e77c626e52edaac
+ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70232969"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71338197"
 ---
 # <a name="quickstart-define-and-assign-a-blueprint-in-the-portal"></a>Краткое руководство. Определение и назначение схемы на портале
 
@@ -223,7 +223,7 @@ ms.locfileid: "70232969"
 
    1. В раскрывающемся списке выберите доступное **предложение**.
 
-   1. С помощью кнопки с многоточием выберите [группу управления](../management-groups/index.md), для которой подписка будет дочерним элементом.
+   1. С помощью кнопки с многоточием выберите [группу управления](../management-groups/overview.md), для которой подписка будет дочерним элементом.
 
    1. В нижней части страницы выберите **Создать**.
 

@@ -6,14 +6,14 @@ author: yashesvi
 manager: yashar
 ms.service: billing
 ms.topic: conceptual
-ms.date: 07/16/2019
+ms.date: 10/01/2019
 ms.author: banders
-ms.openlocfilehash: cb4b371deadb1ae9e6ae048c3157809aff857c9d
-ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.openlocfilehash: 759f83001353957f23b917440b68719b54690bea
+ms.sourcegitcommit: a19f4b35a0123256e76f2789cd5083921ac73daf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "68298260"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71718801"
 ---
 # <a name="how-reservation-discounts-apply-to-azure-app-service-isolated-stamps"></a>Как скидки на резервирование применяются к меткам Службы приложений Azure (цен. категория "Изолированный")
 
@@ -51,5 +51,5 @@ ms.locfileid: "68298260"
 - Дополнительные сведения о резервировании в Azure см. по следующим ссылкам:
   - [Основные сведения о резервировании в Azure](billing-save-compute-costs-reservations.md)
   - [Управление резервированиями в Azure](billing-manage-reserved-vm-instance.md)
-  - [Understand Azure reservation usage for your individual subscription with pay-as-you-go rates subscription](billing-understand-reserved-instance-usage.md) (Общие сведения об использовании резервирования Azure для отдельной подписки с оплатой по мере использования)
+  - [Общие сведения об использовании резервирования Azure для отдельной подписки с оплатой по мере использования](billing-understand-reserved-instance-usage.md)
   - [Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise](billing-understand-reserved-instance-usage-ea.md)

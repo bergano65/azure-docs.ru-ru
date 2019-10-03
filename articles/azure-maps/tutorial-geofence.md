@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: a020ef91e52a5d801557399df827d3641bfb974e
-ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
+ms.openlocfilehash: 176cde77810a1c75cc18c351969a128fa78348af
+ms.sourcegitcommit: 8bae7afb0011a98e82cbd76c50bc9f08be9ebe06
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70934181"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71694928"
 ---
 # <a name="set-up-a-geofence-by-using-azure-maps"></a>Настройка геозоны с использованием Azure Maps
 
@@ -148,10 +148,24 @@ ms.locfileid: "70934181"
    }
    ```
 
-5. Отправьте данные и проверьте заголовок ответа. Заголовок со сведениями о расположении будет содержать URI для доступа к данным или их отправки впоследствии. Он также будет включать уникальное значение `udId` для отправленных данных.
+5. Отправьте данные и проверьте заголовок ответа. Если запрос выполнен успешно, заголовок **Location** будет содержать URI для проверки текущего состояния запроса на отправку. URI состояния имеет следующий формат. 
 
    ```HTTP
-   https://atlas.microsoft.com/mapData/{udId}/status?api-version=1.0&subscription-key={Subscription-key}
+   https://atlas.microsoft.com/mapData/{uploadStatusId}/status?api-version=1.0
+   ```
+
+6. Скопируйте полученный URI состояния и добавьте в него параметр `subscription-key`, значением которого является ключ подписки учетной записи Azure Maps. URI состояния должен иметь примерно такой формат:
+
+   ```HTTP
+   https://atlas.microsoft.com/mapData/{uploadStatusId}/status?api-version=1.0&subscription-key={Subscription-key}
+   ```
+
+7. Чтобы получить `udId`, откройте новую вкладку в приложении Postman, выберите "GET HTTP method " (Метод HTTP GET) на вкладке построителя запросов и выполните запрос GET по URI состояния. Если передача данных прошла успешно, вы получите в тексте ответа значение udId. Скопируйте этот udId для последующего использования.
+
+   ```JSON
+   {
+    "udid" : "{udId}"
+   }
    ```
 
 ## <a name="set-up-an-event-handler"></a>Настройка обработчика событий
