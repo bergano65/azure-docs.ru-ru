@@ -11,12 +11,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/01/2019
 ms.author: spelluru
-ms.openlocfilehash: fc06d5d36cb6004c79bec79838c8f0d51961d560
-ms.sourcegitcommit: a19f4b35a0123256e76f2789cd5083921ac73daf
-ms.translationtype: HT
+ms.openlocfilehash: d1dd059f1a6f9ce96b27d4fe1f214978dfc06a8f
+ms.sourcegitcommit: 80da36d4df7991628fd5a3df4b3aa92d55cc5ade
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/02/2019
-ms.locfileid: "71720157"
+ms.locfileid: "71815997"
 ---
 # <a name="use-azure-managed-identities-to-deploy-environments-in-a-lab"></a>Использование управляемых удостоверений Azure для развертывания сред в лаборатории 
 Как владелец лаборатории вы можете использовать управляемое удостоверение для развертывания сред в лаборатории. Эта функция полезна в сценариях, где среда содержит или содержит ссылки на ресурсы Azure, такие как хранилища ключей, общие галереи образов и сети, являющиеся внешними по отношению к группе ресурсов среды. Она позволяет создавать изолированные среды, которые не ограничиваются группой ресурсов этой среды.
@@ -54,7 +54,7 @@ ms.locfileid: "71720157"
 1. После создания удостоверения запишите идентификатор ресурса этого удостоверения. Он должен выглядеть, как в следующем примере: 
 
     `/subscriptions/0000000000-0000-0000-0000-00000000000000/resourceGroups/<RESOURCE GROUP NAME> /providers/Microsoft.ManagedIdentity/userAssignedIdentities/<NAME of USER IDENTITY>`.
-1. С помощью **Fiddler**выполните команду размещения, как показано в следующем примере. Для имени средства запуска службы рекомендуется использовать имя удостоверения, хотя можно указать любое имя. 
+1. Выполните метод размещения HTTPS, чтобы добавить новый ресурс `ServiceRunner` в лабораторию, как показано в следующем примере. Ресурс "средство запуска службы" — это прокси-ресурс для управления управляемыми удостоверениями и управления ими в DevTest Labs. Имя средства запуска службы может быть любым допустимым именем, но рекомендуется использовать имя управляемого ресурса удостоверений. 
  
     ```json
     PUT https://management.azure.com/subscriptions/{subId}/resourceGroups/{rg}/providers/Microsoft.Devtestlab/labs/{yourlabname}/serviceRunners/{serviceRunnerName}

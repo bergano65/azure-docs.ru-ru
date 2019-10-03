@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/28/2018
 ms.author: memildin
-ms.openlocfilehash: 0ae2b695a64e55b493453549627860872166ed25
-ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
+ms.openlocfilehash: b3d05e71726ae37dd30bbb68ceb84b67a3bef0e5
+ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71202485"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71822280"
 ---
 # <a name="apply-disk-encryption-in-azure-security-center"></a>Шифрование диска в центре безопасности Azure
 Центр безопасности Azure рекомендует шифровать диски виртуальных машин Windows или Linux, которые не зашифрованы с помощью шифрования дисков Azure. Шифрование дисков позволяет шифровать диски виртуальных машин IaaS Windows и Linux.  Шифровать рекомендуется как том операционной системы, так и том данных на виртуальной машине.
@@ -43,7 +43,7 @@ ms.locfileid: "71202485"
 * Получите и выполните сценарий Azure PowerShell с необходимыми компонентами для шифрования дисков Azure.
 * Зашифруйте свои виртуальные машины.
 
-В кратком руководстве [Шифрование виртуальной машины IaaS под управлением Windows с помощью Azure PowerShell](../security/azure-disk-encryption-linux-powershell-quickstart.md) подробно описаны эти шаги. В этом разделе предполагается, что в качестве клиентского компьютера, на котором будет настраиваться шифрование дисков, используется компьютер под управлением Windows.
+В кратком руководстве [Шифрование виртуальной машины IaaS под управлением Windows с помощью Azure PowerShell](../virtual-machines/linux/disk-encryption-powershell-quickstart.md) подробно описаны эти шаги. В этом разделе предполагается, что в качестве клиентского компьютера, на котором будет настраиваться шифрование дисков, используется компьютер под управлением Windows.
 
 Есть разные подходы, используемые при работе с виртуальными машинами Azure. Если у вас есть опыт работы с Azure PowerShell или интерфейсом командной строки Azure, вы можете использовать альтернативные подходы. См. дополнительные сведения о [дисковом шифровании Azure](../security/azure-security-disk-encryption.md).
 

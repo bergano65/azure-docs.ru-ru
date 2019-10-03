@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 03/15/2019
 ms.custom: seodec18
-ms.openlocfilehash: 7cbddc4b7af546396a1a5a4c86d349a96054a6f3
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: 4c065e1970a01f7e3737f8bd99672c84f2019bfe
+ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68726270"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71822335"
 ---
 # <a name="appendix-for-azure-disk-encryption"></a>Приложение к статье о шифровании дисков Azure 
 
@@ -104,7 +104,7 @@ ms.locfileid: "68726270"
      ```
 
 ### <a name="bkmk_prereq-script"></a> Выполнение сценария PowerShell для установки компонентов, необходимых при шифровании дисков Azure
-Если вы уже знакомы с предварительными требованиями для шифрования дисков Azure, можно использовать [соответствующий сценарий PowerShell предварительных требований](https://raw.githubusercontent.com/Azure/azure-powershell/master/src/Compute/Compute/Extension/AzureDiskEncryption/Scripts/AzureDiskEncryptionPreRequisiteSetup.ps1 ). Пример использования этого сценария PowerShell см. в статье [Краткое руководство. Шифрование виртуальной машины IaaS под управлением Windows с помощью Azure PowerShell](azure-disk-encryption-linux-powershell-quickstart.md). Вы можете удалить комментарии из раздела сценария, начиная со строки 211, чтобы шифровать все диски имеющихся виртуальных машин в имеющейся группе ресурсов. 
+Если вы уже знакомы с предварительными требованиями для шифрования дисков Azure, можно использовать [соответствующий сценарий PowerShell предварительных требований](https://raw.githubusercontent.com/Azure/azure-powershell/master/src/Compute/Compute/Extension/AzureDiskEncryption/Scripts/AzureDiskEncryptionPreRequisiteSetup.ps1 ). Пример использования этого сценария PowerShell см. в статье [Краткое руководство. Шифрование виртуальной машины IaaS под управлением Windows с помощью Azure PowerShell](../virtual-machines/linux/disk-encryption-powershell-quickstart.md). Вы можете удалить комментарии из раздела сценария, начиная со строки 211, чтобы шифровать все диски имеющихся виртуальных машин в имеющейся группе ресурсов. 
 
 В следующей таблице показано, какие параметры могут использоваться в сценарии PowerShell: 
 
@@ -115,9 +115,9 @@ ms.locfileid: "68726270"
 |$keyVaultName|Имя хранилища ключей, в котором будут размещаться ключи шифрования. При отсутствии хранилища ключей с таким именем — оно будет создано.| True|
 |$location|Расположение хранилища ключей. Убедитесь, что хранилище ключей и виртуальные машины, которые предстоит зашифровать, находятся в одном расположении. Получите список расположений с помощью команды `Get-AzLocation`.|True|
 |$subscriptionId|Идентификатор подписки Azure для использования.  Вы можете получить идентификатор подписки с помощью команды `Get-AzSubscription`.|True|
-|$aadAppName|Имя приложения Azure AD, которое будет использоваться для записи секретов в хранилище ключей. Будет создано приложение с таким именем (если оно еще не создано). Если это приложение уже есть, передайте параметр aadClientSecret в сценарий.|False|
-|$aadClientSecret|Секрет клиента приложения Azure AD, который был создан ранее.|False|
-|$keyEncryptionKeyName|Имя дополнительного ключа шифрования ключа в хранилище ключей. При отсутствии ключа с таким именем — он будет создан.|False|
+|$aadAppName|Имя приложения Azure AD, которое будет использоваться для записи секретов в хранилище ключей. Будет создано приложение с таким именем (если оно еще не создано). Если это приложение уже есть, передайте параметр aadClientSecret в сценарий.|Ложь|
+|$aadClientSecret|Секрет клиента приложения Azure AD, который был создан ранее.|Ложь|
+|$keyEncryptionKeyName|Имя дополнительного ключа шифрования ключа в хранилище ключей. При отсутствии ключа с таким именем — он будет создан.|Ложь|
 
 
 ## <a name="resource-manager-templates"></a>Шаблоны Resource Manager
@@ -206,7 +206,7 @@ ms.locfileid: "68726270"
 
 ### <a name="prerequisites-for-os-disk-encryption"></a>Предварительные требования для шифрования диска ОС
 
-* Виртуальная машина должна использовать дистрибутив, совместимый с шифрованием дисков ОС, как [указано в операционных системах, поддерживаемых шифрованием дисков Azure: Linux](azure-security-disk-encryption-prerequisites.md#linux) 
+* Виртуальная машина должна использовать дистрибутив, совместимый с шифрованием дисков ОС, как указано в операционных системах, поддерживаемых шифрованием дисков [Azure. Linux](azure-security-disk-encryption-prerequisites.md#linux) 
 * Виртуальная машина должна быть создана из образа Marketplace в Azure Resource Manager.
 * Виртуальная машина Azure по крайней мере с 4 ГБ ОЗУ (рекомендуемый размер — 7 ГБ).
 * (Для RHEL и CentOS.) Отключите SELinux. Чтобы отключить SELinux на виртуальной машине, ознакомьтесь с разделом "4.4.2. Disabling SELinux" (4.4.2. Отключение SELinux) [руководства пользователя и администратора SELinux](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/SELinux_Users_and_Administrators_Guide/sect-Security-Enhanced_Linux-Working_with_SELinux-Changing_SELinux_Modes.html#sect-Security-Enhanced_Linux-Enabling_and_Disabling_SELinux-Disabling_SELinux).

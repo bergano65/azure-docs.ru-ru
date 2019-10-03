@@ -11,12 +11,12 @@ ms.author: jovanpop
 ms.reviewer: sstein, carlrab, bonova
 ms.date: 08/12/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: 7f47798ec3d0be8885853454ced8c1ea4c2a268c
-ms.sourcegitcommit: a19f4b35a0123256e76f2789cd5083921ac73daf
+ms.openlocfilehash: 94e9a484afe42f8621380fa685f8bc9faeb894d3
+ms.sourcegitcommit: 80da36d4df7991628fd5a3df4b3aa92d55cc5ade
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/02/2019
-ms.locfileid: "71720392"
+ms.locfileid: "71816052"
 ---
 # <a name="managed-instance-t-sql-differences-limitations-and-known-issues"></a>Различия в T-SQL управляемого экземпляра, ограничения и известные проблемы
 
@@ -544,7 +544,15 @@ WITH PRIVATE KEY (<private_key_options>)
 
 ## <a name="Issues"></a>Известные проблемы
 
-### <a name="change-service-tier-and-create-instance-operations-are-blocked-by-ongioing-database-restore"></a>Изменение уровня служб и операций создания экземпляра заблокировано восстановлением базы данных онгиоинг
+### <a name="wrong-error-returned-while-trying-to-remove-a-file-that-is-not-empty"></a>При попытке удаления непустого файла возвращена неверная ошибка
+
+**Дата** Октябрь 2019
+
+SQL Server и Управляемый экземпляр [не позволяют пользователю удалять непустые файлы](https://docs.microsoft.com/sql/relational-databases/databases/delete-data-or-log-files-from-a-database.md#Prerequisites). Если попытаться удалить непустой файл данных с помощью инструкции `ALTER DATABASE REMOVE FILE`, то ошибка `Msg 5042 – The file '<file_name>' cannot be removed because it is not empty` не будет немедленно возвращена. Управляемый экземпляр будет пытаться удалить файл, и операция завершится ошибкой после 30 мин с `Internal server error`.
+
+**Возможное решение**: Удалите содержимое файла с помощью команды `DBCC SHRINKFILE (N'<file_name>', EMPTYFILE)`. Если это единственный файл в файловой группе, необходимо удалить данные из таблицы или секции, связанной с этой файловой группой, перед сжатием файла и при необходимости загрузить эти данные в другую таблицу или секцию.
+
+### <a name="change-service-tier-and-create-instance-operations-are-blocked-by-ongoing-database-restore"></a>Изменение уровня служб и операций создания экземпляра заблокировано текущим восстановлением базы данных
 
 **Дата** Sep 2019
 
