@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 03/11/2019
 ms.author: allensu
 ms.custom: seodec18
-ms.openlocfilehash: 22d0e56a77036c551b6006f43997c92fcce07499
-ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
+ms.openlocfilehash: a0887a66b6cb886419f86d93973b991151141e0a
+ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68273358"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71327206"
 ---
 # <a name="tutorial-load-balance-internet-traffic-to-vms-using-the-azure-portal"></a>Руководство. Балансировка интернет-трафика на виртуальных машинах с помощью портала Azure
 
@@ -50,7 +50,7 @@ ms.locfileid: "68273358"
     | Параметр                 | Значение                                              |
     | ---                     | ---                                                |
     | Subscription               | Выберите свою подписку.    |    
-    | Resource group         | Выберите **Создать** и в текстовом поле введите *myResourceGroupSLB*.|
+    | группа ресурсов.         | Выберите **Создать** и в текстовом поле введите *myResourceGroupSLB*.|
     | ИМЯ                   | *myLoadBalancer*                                   |
     | Регион         | Выберите **Западная Европа**.                                        |
     | type          | Щелкните **Общедоступный**.                                        |
@@ -90,7 +90,6 @@ ms.locfileid: "68273358"
     | Порт | Введите *80*.|
     | Интервал | В качестве **интервала** между попытками выполнения пробы (в секундах) введите *15*. |
     | Пороговое значение сбоя | Выберите *2* в качестве значения **порога состояния неработоспособности** или количества последовательных сбоев пробы, после которых виртуальная машина будет считаться неработоспособной.|
-    | Проверка работоспособности | Выберите *myHealthProbe*. |
     
 4. Нажмите кнопку **ОК**.
 
@@ -127,7 +126,7 @@ ms.locfileid: "68273358"
     | ИМЯ | Введите *myVNet*. |
     | Пространство адресов | Введите *10.1.0.0/16*. |
     | Subscription | Выберите свою подписку.|
-    | Resource group | Выберите существующий ресурс *myResourceGroupSLB*. |
+    | группа ресурсов. | Выберите существующий ресурс *myResourceGroupSLB*. |
     | Location | Выберите **Западная Европа**.|
     | Имя подсети | Введите *myBackendSubnet*. |
     | Диапазон адреса подсети | Введите *10.1.0.0/24*. |

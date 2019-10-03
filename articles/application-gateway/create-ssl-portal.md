@@ -5,14 +5,14 @@ services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: tutorial
-ms.date: 08/31/2019
+ms.date: 09/27/2019
 ms.author: victorh
-ms.openlocfilehash: b558384fe6bc86cd7b0ebd640407557e23f68ddd
-ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
+ms.openlocfilehash: 53a4fca0c05cd54bae6d01d07e72e1033a247a05
+ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70194567"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71327365"
 ---
 # <a name="tutorial-configure-an-application-gateway-with-ssl-termination-using-the-azure-portal"></a>Руководство по Настройка шлюза приложений с завершением SSL-запросов с помощью портала Azure
 
@@ -82,7 +82,7 @@ Export-PfxCertificate `
    - **Группа ресурсов.** Выберите **myResourceGroupAG** для группы ресурсов. Выберите **Создать** для создания группы ресурсов, если она еще не существует.
    - **Имя шлюза приложений**. Введите *myAppGateway* для имени шлюза приложений.
 
-     ![Создание шлюза приложений: Основы](./media/application-gateway-create-gateway-portal/application-gateway-create-basics.png)
+        ![Создание шлюза приложений: Основы](./media/application-gateway-create-gateway-portal/application-gateway-create-basics.png)
 
 2.  В Azure для обмена между создаваемыми ресурсами необходима виртуальная сеть. Вы можете создать новую виртуальную сеть или использовать существующую. В этом примере вы можете создать виртуальную сеть одновременно со шлюзом приложений. Экземпляры Шлюза приложений создаются в отдельных подсетях. В этом примере создаются две подсети: одна — для шлюза приложений, а вторая — для внутренних серверов.
 
@@ -98,7 +98,7 @@ Export-PfxCertificate `
 
     Выберите **ОК**, чтобы закрыть окно **Создание виртуальной сети** и сохранить настройки виртуальной сети.
 
-     ![Создание шлюза приложений: виртуальная сеть](./media/application-gateway-create-gateway-portal/application-gateway-create-vnet.png)
+    ![Создание шлюза приложений: виртуальная сеть](./media/application-gateway-create-gateway-portal/application-gateway-create-vnet.png)
     
 3. На вкладке **Основные сведения** примите значения по умолчанию для других параметров и выберите **Далее: интерфейсные серверы**.
 
@@ -110,7 +110,7 @@ Export-PfxCertificate `
 
 2. Выберите команду **Создать** для **Общедоступного IP-адреса** и введите *myAGPublicIPAddress* в качестве имени общедоступного IP-адреса, а затем щелкните **ОК**. 
 
-     ![Создание шлюза приложений: интерфейсные серверы](./media/application-gateway-create-gateway-portal/application-gateway-create-frontends.png)
+   ![Создание шлюза приложений: интерфейсные серверы](./media/application-gateway-create-gateway-portal/application-gateway-create-frontends.png)
 
 3. По завершении выберите **Next: серверные компоненты**.
 
@@ -127,7 +127,7 @@ Export-PfxCertificate `
 
 3. В окне **Добавление внутреннего пула** выберите **Добавить**, чтобы сохранить конфигурацию внутреннего пула и вернуться на вкладку **Серверные компоненты**.
 
-     ![Создание шлюза приложений: серверные компоненты](./media/application-gateway-create-gateway-portal/application-gateway-create-backends.png)
+   ![Создание шлюза приложений: серверные компоненты](./media/application-gateway-create-gateway-portal/application-gateway-create-backends.png)
 
 4. На вкладке **Серверные компоненты** выберите **Далее: конфигурация**.
 
@@ -152,19 +152,19 @@ Export-PfxCertificate `
    - **Имя сертификата**. Введите *mycert1* для имени сертификата.
    - **Пароль**. Введите *Azure123456!* . в качестве пароля.
   
-      Примите значения по умолчанию для других параметров на вкладке **Прослушиватель**, а затем выберите вкладку **Серверные целевые объекты**, чтобы настроить остальную часть правила маршрутизации.
+        Примите значения по умолчанию для других параметров на вкладке **Прослушиватель**, а затем выберите вкладку **Серверные целевые объекты**, чтобы настроить остальную часть правила маршрутизации.
 
-   ![Создание шлюза приложений: прослушиватель](./media/application-gateway-create-gateway-portal/application-gateway-create-rule-listener.png)
+   ![Создание шлюза приложений: прослушиватель](./media/create-ssl-portal/application-gateway-create-rule-listener.png)
 
 4. На вкладке **Серверные целевые объекты** выберите значение **myBackendPool** для параметра **Серверный целевой объект**.
 
 5. Для **Параметр HTTP** выберите **Создать**, чтобы создать новый параметр HTTP. Параметр HTTP будет определять поведение правила маршрутизации. В открывшемся окне **Добавление параметра HTTP** введите *myHTTPSetting* в поле **Имя параметра HTTP**. Примите значения по умолчанию для других параметров в окне **Добавление параметра HTTP**, затем выберите **Добавить**, чтобы вернуться к окну **Добавление правила маршрутизации**. 
 
-     ![Создание шлюза приложений: параметр HTTP](./media/application-gateway-create-gateway-portal/application-gateway-create-httpsetting.png)
+   ![Создание шлюза приложений: параметр HTTP](./media/create-ssl-portal/application-gateway-create-httpsetting.png)
 
 6. В окне **Добавление правила маршрутизации** выберите **Добавить**, чтобы сохранить правило маршрутизации и вернуться на вкладку **Конфигурация**.
 
-     ![Создание шлюза приложений: правило маршрутизации](./media/application-gateway-create-gateway-portal/application-gateway-create-rule-backends.png)
+   ![Создание шлюза приложений: правило маршрутизации](./media/application-gateway-create-gateway-portal/application-gateway-create-rule-backends.png)
 
 7. По завершении выберите **Next: Теги** , а затем **Далее: Отзыв и создание**.
 
@@ -214,17 +214,17 @@ Export-PfxCertificate `
 
 2. Чтобы установить службы IIS, выполните на виртуальной машине следующие команды: 
 
-    ```azurepowershell-interactive
-    Set-AzVMExtension `
-      -ResourceGroupName myResourceGroupAG `
-      -ExtensionName IIS `
-      -VMName myVM `
-      -Publisher Microsoft.Compute `
-      -ExtensionType CustomScriptExtension `
-      -TypeHandlerVersion 1.4 `
-      -SettingString '{"commandToExecute":"powershell Add-WindowsFeature Web-Server; powershell Add-Content -Path \"C:\\inetpub\\wwwroot\\Default.htm\" -Value $($env:computername)"}' `
-      -Location EastUS
-    ```
+   ```azurepowershell-interactive
+          Set-AzVMExtension `
+            -ResourceGroupName myResourceGroupAG `
+            -ExtensionName IIS `
+            -VMName myVM `
+            -Publisher Microsoft.Compute `
+            -ExtensionType CustomScriptExtension `
+            -TypeHandlerVersion 1.4 `
+            -SettingString '{"commandToExecute":"powershell Add-WindowsFeature Web-Server; powershell Add-Content -Path \"C:\\inetpub\\wwwroot\\Default.htm\" -Value $($env:computername)"}' `
+            -Location EastUS
+   ```
 
 3. Создайте вторую виртуальную машину и установите IIS, следуя только что выполненным инструкциям. Используйте *myVM2* в качестве имени виртуальной машины и параметр **VMName** для командлета **Set-AzVMExtension**.
 
