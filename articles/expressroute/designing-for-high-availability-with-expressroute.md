@@ -87,9 +87,9 @@ ExpressRoute поддерживает БФД через частный пири�
 Рекомендации по проектированию для создания геоизбыточного сетевого подключения к магистрали Майкрософт, которые могут выдерживать катастрофические сбои, которые влияют на весь регион, см. [в разделе Разработка для аварийного восстановления с помощью частного пиринга ExpressRoute][DR].
 
 <!--Image References-->
-[1]: ./media/designing-for-high-availability-with-expressroute/exr-reco.png  "Рекомендуемый способ подключения с помощью ExpressRoute"
-[2]: ./media/designing-for-high-availability-with-expressroute/suboptimal-lastmile-connectivity.png  "Неоптимальная Последняя миля" с подключением
-[3]: ./media/designing-for-high-availability-with-expressroute/nat-options.png  "Параметры NAT"
+[1]: ./media/designing-for-high-availability-with-expressroute/exr-reco.png "Рекомендуемый способ подключения с помощью ExpressRoute"
+[2]: ./media/designing-for-high-availability-with-expressroute/suboptimal-lastmile-connectivity.png "Неоптимальная Последняя миля с подключением"
+[3]: ./media/designing-for-high-availability-with-expressroute/nat-options.png "Параметры NAT"
 
 
 <!--Link References-->
