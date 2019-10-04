@@ -135,14 +135,14 @@
           href: how-to-update-iot-edge.md
     - name: Автоматическая подготовка с помощью DPS
       items:
-        - name: Аттестация симметричных ключей
-          href: how-to-auto-provision-symmetric-keys.md
         - name: Аттестация доверенного платформенного модуля
           items:
             - name: Linux
               href: how-to-auto-provision-simulated-device-linux.md
             - name: Windows
               href: how-to-auto-provision-simulated-device-windows.md
+        - name: Аттестация симметричных ключей
+          href: how-to-auto-provision-symmetric-keys.md
     - name: Разработка и отладка пользовательских модулей
       items:
         - name: "Visual Studio\_2019"

@@ -448,8 +448,6 @@
           href: sql-database-geo-replication-portal.md
         - name: Настройка параметров безопасности для георепликации
           href: sql-database-geo-replication-security-config.md
-        - name: Настройка группы отработки отказа
-          href: sql-database-configure-failover-group.md
         - name: 'Изучение компонентов, выполняющихся в памяти'
           href: sql-database-in-memory-sample.md
         - name: Включение автоматической настройки
@@ -588,6 +586,8 @@
               href: sql-database-xevent-code-ring-buffer.md
     - name: Настройка компонентов
       items:
+        - name: Настройка группы отработки отказа
+          href: sql-database-configure-failover-group.md
         - name: "Настройка аутентификации Azure\_AD"
           href: sql-database-aad-authentication-configure.md
         - name: Условный доступ
