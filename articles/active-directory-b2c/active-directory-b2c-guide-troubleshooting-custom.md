@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 08/13/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 5dee0ef768180057452a232436fc295b36fd756c
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: 4893025b7d54dad1f1da6c5967d3c1dec99b499b
+ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68963732"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71826898"
 ---
 # <a name="troubleshoot-azure-ad-b2c-custom-policies-and-identity-experience-framework"></a>Устранение неполадок в пользовательских политиках Azure AD B2C и инфраструктуре процедур идентификации
 
@@ -52,17 +52,15 @@ ms.locfileid: "68963732"
 
 > Фрагмент кода ошибки: `Reason: User is currently logged as a user of 'yourtenant.onmicrosoft.com' tenant. In order to manage 'yourtenant.onmicrosoft.com', please login as a user of 'yourtenant.onmicrosoft.com' tenant`
 
-* Убедитесь, что значение TenantId в `<TrustFrameworkPolicy\>` элементах и `<BasePolicy\>` соответствует целевому клиенту Azure AD B2C.
+* Убедитесь, что значение TenantId в элементах `<TrustFrameworkPolicy\>` и `<BasePolicy\>` соответствует целевому клиенту Azure AD B2C.
 
 ## <a name="troubleshoot-the-runtime"></a>Устранение неполадок среды выполнения
 
-* Используйте **команду "запустить сейчас** ", `https://jwt.ms` чтобы протестировать политики независимо от веб-или мобильного приложения. Этот веб-сайт работает как приложение проверяющей стороны. Он отображает содержимое маркера JSON Web Token (JWT), созданного политикой Azure AD B2C. Чтобы создать тестовое приложение, перейдите к **Azure AD B2C** \> **приложения** в портал Azure и добавьте приложение со следующими значениями:
+* Используйте **команду Запустить сейчас** и `https://jwt.ms`, чтобы протестировать политики независимо от веб-или мобильного приложения. Этот веб-сайт работает как приложение проверяющей стороны. Он отображает содержимое JSON Web Token (JWT), созданного политикой Azure AD B2C.
 
-  * **Имя.** TestApp
-  * **Веб-приложение или веб-API**: Нет
-  * **Собственный клиент**. Нет
+    Чтобы создать тестовое приложение, которое может перенаправляться в `https://jwt.ms` для проверки маркера:
 
-  Затем добавьте `https://jwt.ms` в качестве **URL-адреса ответа**.
+    [!INCLUDE [active-directory-b2c-appreg-idp](../../includes/active-directory-b2c-appreg-idp.md)]
 
 * Чтобы отследить обмен сообщениями между клиентским браузером и Azure AD B2C, используйте [Fiddler](https://www.telerik.com/fiddler). Это позволит узнать, где в шагах оркестрации случился сбой пути взаимодействия пользователя.
 

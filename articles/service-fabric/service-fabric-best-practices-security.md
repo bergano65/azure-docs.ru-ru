@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 01/23/2019
 ms.author: pepogors
-ms.openlocfilehash: 19ccd44888d64967baf82568c1cbb2540f3b3f68
-ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
+ms.openlocfilehash: 75edb385a86be849ec7c165759d3b451eab804f6
+ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68780339"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71828511"
 ---
 # <a name="azure-service-fabric-security"></a>Безопасность Azure Service Fabric 
 
@@ -152,6 +152,18 @@ user@linux:$ openssl smime -encrypt -in plaintext_UTF-16.txt -binary -outform de
 
 После шифрования защищенных значений [укажите зашифрованные секреты в приложении Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-application-secret-management#specify-encrypted-secrets-in-an-application) и [расшифруйте зашифрованные секреты из служебного кода](https://docs.microsoft.com/azure/service-fabric/service-fabric-application-secret-management#decrypt-encrypted-secrets-from-service-code).
 
+## <a name="include-certificate-in-service-fabric-applications"></a>Включить сертификат в Service Fabric приложения
+
+Чтобы предоставить приложению доступ к секретам, включите сертификат, добавив элемент **секретсцертификате** в манифест приложения.
+
+```xml
+<ApplicationManifest … >
+  ...
+  <Certificates>
+    <SecretsCertificate Name="MyCert" X509FindType="FindByThumbprint" X509FindValue="[YourCertThumbrint]"/>
+  </Certificates>
+</ApplicationManifest>
+```
 ## <a name="authenticate-service-fabric-applications-to-azure-resources-using-managed-service-identity-msi"></a>Аутентификация приложений Service Fabric в ресурсах Azure с помощью Управляемого удостоверения службы (MSI)
 
 Дополнительные сведения об управляемых удостоверениях в ресурсах Azure см. в разделе [Принцип работы управляемых удостоверений для ресурсов Azure](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview#how-does-it-work).
@@ -205,7 +217,7 @@ cosmos_db_password=$(curl 'https://management.azure.com/subscriptions/<YOUR SUBS
 [Мы рекомендуем реализовать стандартную промышленную конфигурацию, которая широко известна и хорошо тестируется, например базовые планы безопасности Майкрософт, а не самостоятельное создание базовых показателей](https://docs.microsoft.com/windows/security/threat-protection/windows-security-baselines). параметр для подготовки этих данных в масштабируемых наборах виртуальных машин заключается в использовании обработчика расширения Desired State Configuration (DSC) Azure для настройки виртуальных машин в режиме «в сети», чтобы они выполняли рабочее программное обеспечение.
 
 ## <a name="azure-firewall"></a>Брандмауэр Azure
-[Брандмауэр Azure — это управляемая облачная служба безопасности сети, которая защищает ресурсы виртуальной сети Azure. Это полностью работоспособный брандмауэр в качестве службы со встроенной высокой доступностью и масштабируемостью облака. ](https://docs.microsoft.com/azure/firewall/overview); это позволяет ограничить исходящий трафик HTTP/S указанным списком полных доменных имен (FQDN), включая подстановочные знаки. Эта функция не требует завершения SSL-запросов. Рекомендуется использовать [теги полного доменного имени брандмауэра Azure](https://docs.microsoft.com/azure/firewall/fqdn-tags) для обновлений Windows, а также включить сетевой трафик для конечных точек центр обновления Windows Майкрософт, которые могут проходить через брандмауэр. [Развертывание брандмауэра Azure с помощью шаблона](https://docs.microsoft.com/azure/firewall/deploy-template) содержит образец для определения шаблона ресурсов Microsoft. Network/азурефиреваллс. Правила брандмауэра, общие для Service Fabric приложений, позволяют выполнять следующие действия для виртуальной сети кластеров:
+Брандмауэр @no__t 0Azure — это управляемая облачная служба безопасности сети, которая защищает ресурсы виртуальной сети Azure. Это полностью работоспособный брандмауэр в качестве службы со встроенными возможностями обеспечения высокой доступности и масштабируемости облака. ](https://docs.microsoft.com/azure/firewall/overview); Это позволяет ограничить исходящий трафик HTTP/S указанным списком полных доменных имен (FQDN), включая подстановочные. Эта функция не требует завершения SSL-запросов. Рекомендуется использовать [теги полного доменного имени брандмауэра Azure](https://docs.microsoft.com/azure/firewall/fqdn-tags) для обновлений Windows, а также включить сетевой трафик для конечных точек центр обновления Windows Майкрософт, которые могут проходить через брандмауэр. [Развертывание брандмауэра Azure с помощью шаблона](https://docs.microsoft.com/azure/firewall/deploy-template) содержит образец для определения шаблона ресурсов Microsoft. Network/азурефиреваллс. Правила брандмауэра, общие для Service Fabric приложений, позволяют выполнять следующие действия для виртуальной сети кластеров:
 
 - \* download.microsoft.com
 - \* servicefabric.azure.com
@@ -213,7 +225,7 @@ cosmos_db_password=$(curl 'https://management.azure.com/subscriptions/<YOUR SUBS
 
 Эти правила брандмауэра дополняют разрешенные исходящие группы безопасности сети, которые включают ServiceFabric и хранилище в качестве разрешенных целевых объектов из виртуальной сети.
 
-## <a name="tls-12"></a>TLS 1.2
+## <a name="tls-12"></a>TLS 1.2
 [ТСГ](https://github.com/Azure/Service-Fabric-Troubleshooting-Guides/blob/master/Security/TLS%20Configuration.md)
 
 ## <a name="windows-defender"></a>Защитник Windows 

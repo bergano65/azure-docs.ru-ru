@@ -14,12 +14,12 @@ ms.tgt_pltfrm: cache
 ms.workload: tbd
 ms.date: 07/05/2017
 ms.author: yegu
-ms.openlocfilehash: ddb9dd49af4557e6ff8d38110de4a99a9cf6fed7
-ms.sourcegitcommit: 6013bacd83a4ac8a464de34ab3d1c976077425c7
+ms.openlocfilehash: eb6773d1547499fcd3a73aebf8f17ec61b6dc06a
+ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71687005"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71827588"
 ---
 # <a name="how-to-administer-azure-cache-for-redis"></a>Администрирование кэша Redis для Azure
 В этом разделе описывается выполнение задач администрирования, таких как [перезагрузка](#reboot) и [планирование обновлений](#schedule-updates) для экземпляров кэша Redis для Azure.
@@ -83,7 +83,7 @@ ms.locfileid: "71687005"
 Перезагрузка доступна для всех ценовых категорий.
 
 ## <a name="schedule-updates"></a>Запланировать обновления
-В колонке **Планирование обновлений** можно указать период обслуживания для кэша категории "Премиум". Если задан период обслуживания, то любые обновления сервера Redis выполняются в этот период. 
+Колонка **обновления в расписании** позволяет указать период обслуживания для экземпляра кэша. Если задан период обслуживания, то любые обновления сервера Redis выполняются в этот период. 
 
 > [!NOTE] 
 > Данный период обслуживания относится только к обновлениям сервера Redis, а не ко всем обновлениям Azure или операционной системы виртуальных машин, на которых размещен кэш.

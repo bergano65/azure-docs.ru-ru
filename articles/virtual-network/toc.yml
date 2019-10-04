@@ -230,6 +230,8 @@
           items:
             - name: Подсети
               href: virtual-network-manage-subnet.md
+            - name: Делегирование подсети
+              href: manage-subnet-delegation.md
             - name: Пиринг
               href: virtual-network-manage-peering.md
             - name: Защита от атак DDoS

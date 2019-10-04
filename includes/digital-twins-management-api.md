@@ -5,15 +5,15 @@ services: digital-twins
 author: kingdomofends
 ms.service: digital-twins
 ms.topic: include
-ms.date: 08/12/2019
+ms.date: 10/02/2019
 ms.author: v-adgera
 ms.custom: include file
-ms.openlocfilehash: f4e32599076b284eac15d394b08035c557a3489b
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
-ms.translationtype: MT
+ms.openlocfilehash: 06d728846b7a1eec1b18cfb7f005cb7e5e8ec2ab
+ms.sourcegitcommit: 15e3bfbde9d0d7ad00b5d186867ec933c60cebe6
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "69012259"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71843846"
 ---
 В приведенных ниже примерах `YOUR_MANAGEMENT_API_URL` относится к универсальному коду ресурса API Digital Twins:
 

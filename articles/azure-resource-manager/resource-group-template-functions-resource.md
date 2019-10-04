@@ -6,12 +6,12 @@ ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 09/04/2019
 ms.author: tomfitz
-ms.openlocfilehash: 9e50a2705982a022284e1c54bd5ed7360a2d1663
-ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
+ms.openlocfilehash: 7e13e2bed4e881d12737d8e0df0ff0ba2bb2bca9
+ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70390704"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71827474"
 ---
 # <a name="resource-functions-for-azure-resource-manager-templates"></a>Функции для работы с ресурсами в шаблонах Azure Resource Manager
 
@@ -37,7 +37,7 @@ ms.locfileid: "70390704"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательное значение | Тип | Описание |
+| Параметр | Обязательное значение | Type | Описание |
 |:--- |:--- |:--- |:--- |
 | имя_ресурса или идентификатор_ресурса |Да |строка |Уникальный идентификатор ресурса. |
 | версия_API |Да |строка |Версия API для состояния среды выполнения ресурса. Как правило, указывается в формате **гггг-мм-дд**. |
@@ -45,7 +45,7 @@ ms.locfileid: "70390704"
 
 ### <a name="valid-uses"></a>Допустимые варианты использования
 
-Функции List можно использовать только в свойствах определения ресурса и в разделе Outputs шаблона или развертывания. При использовании с [итерацией свойства](resource-group-create-multiple.md#property-iteration)можно использовать функции List для `input` , так как выражение назначается свойству ресурса. Их нельзя использовать с `count` , так как счетчик должен быть определен до разрешения функции List.
+Функции List можно использовать только в свойствах определения ресурса и в разделе Outputs шаблона или развертывания. При использовании с [итерацией свойства](resource-group-create-multiple.md#property-iteration)можно использовать функции list для `input`, так как выражение назначается свойству ресурса. Их нельзя использовать с `count`, так как число должно быть определено до разрешения функции List.
 
 ### <a name="implementations"></a>Варианты реализации решения
 
@@ -268,7 +268,7 @@ ms.locfileid: "70390704"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательное значение | Тип | Описание |
+| Параметр | Обязательное значение | Type | Описание |
 |:--- |:--- |:--- |:--- |
 | пространство_имен_поставщика |Да |строка |Пространство имен поставщика. |
 | resourceType |Нет |строка |Тип ресурса в указанном пространстве имен. |
@@ -343,7 +343,7 @@ ms.locfileid: "70390704"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательное значение | Тип | Описание |
+| Параметр | Обязательное значение | Type | Описание |
 |:--- |:--- |:--- |:--- |
 | имя_ресурса или идентификатор_ресурса |Да |строка |Имя или уникальный идентификатор ресурса. При указании ссылки на ресурс в текущем шаблоне укажите в качестве параметра только имя ресурса. При ссылке на ранее развернутый ресурс укажите идентификатор ресурса. |
 | apiVersion |Нет |строка |Версия API для указанного ресурса. Если ресурс не предоставляется в рамках того же шаблона, необходимо включить этот параметр. Как правило, указывается в формате **гггг-мм-дд**. Допустимые версии API для ресурса см. в разделе [Справочник по шаблонам](/azure/templates/). |
@@ -400,9 +400,9 @@ ms.locfileid: "70390704"
 
 Эталонную функцию можно использовать только в свойствах определения ресурса и в разделе выходных данных шаблона или развертывания. При использовании с [итерацией свойства](resource-group-create-multiple.md#property-iteration)можно использовать функцию Reference для `input` , так как выражение назначается свойству ресурса. Его нельзя использовать с `count` , так как счетчик должен быть определен до разрешения функции Reference.
 
-Нельзя использовать функцию Reference в выходных данных [вложенного шаблона](resource-group-linked-templates.md#nested-template) для возврата ресурса, развернутого во вложенном шаблоне. Вместо этого используйте [связанный шаблон](resource-group-linked-templates.md#external-template-and-external-parameters).
+Нельзя использовать функцию Reference в выходных данных [вложенного шаблона](resource-group-linked-templates.md#nested-template) для возврата ресурса, развернутого во вложенном шаблоне. Вместо этого используйте [связанный шаблон](resource-group-linked-templates.md#external-template).
 
-При использовании функции **Reference** в ресурсе, который условно развернут, функция вычисляется, даже если ресурс не развернут.  Если **Ссылочная** функция ссылается на несуществующий ресурс, возникает ошибка. Используйте функцию **If** , чтобы убедиться, что функция вычисляется только при развертывании ресурса. См. [функцию if](resource-group-template-functions-logical.md#if) для примера шаблона, который использует оператор If и ссылку с условно развернутым ресурсом.
+При использовании функции **Reference** в ресурсе, который условно развернут, функция вычисляется, даже если ресурс не развернут.  Если ссылочная функция ссылается на несуществующий ресурс, возникает ошибка. Используйте функцию **If** , чтобы убедиться, что функция вычисляется только при развертывании ресурса. См. [функцию if](resource-group-template-functions-logical.md#if) для примера шаблона, который использует оператор If и ссылку с условно развернутым ресурсом.
 
 ### <a name="implicit-dependency"></a>Неявная зависимость
 
@@ -774,12 +774,12 @@ ms.locfileid: "70390704"
 
 | Название | Type | Значение |
 | ---- | ---- | ----- |
-| sameRGOutput | Строковое | /subscriptions/{ИД_текущей_подписки}/resourceGroups/examplegroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
-| differentRGOutput | Строковое | /subscriptions/{ИД_текущей_подписки}/resourceGroups/otherResourceGroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
-| differentSubOutput | Строковое | /subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/otherResourceGroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
-| nestedResourceOutput | Строковое | /subscriptions/{ИД_текущей_подписки}/resourceGroups/examplegroup/providers/Microsoft.SQL/servers/serverName/databases/databaseName |
+| sameRGOutput | Строка, | /subscriptions/{ИД_текущей_подписки}/resourceGroups/examplegroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
+| differentRGOutput | Строка, | /subscriptions/{ИД_текущей_подписки}/resourceGroups/otherResourceGroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
+| differentSubOutput | Строка, | /subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/otherResourceGroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
+| nestedResourceOutput | Строка, | /subscriptions/{ИД_текущей_подписки}/resourceGroups/examplegroup/providers/Microsoft.SQL/servers/serverName/databases/databaseName |
 
-## <a name="subscription"></a>подписка
+## <a name="subscription"></a>subscription
 
 `subscription()`
 

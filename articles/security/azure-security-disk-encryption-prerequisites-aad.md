@@ -5,14 +5,14 @@ author: msmbaldwin
 ms.service: security
 ms.topic: article
 ms.author: mbaldwin
-ms.date: 03/15/2019
+ms.date: 09/30/2019
 ms.custom: seodec18
-ms.openlocfilehash: da3cb81eaeaa3b1609ffe67b2aea92a69b6bb47a
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: 07db6c5cecf2b8dec803e73d5775edef3f8906fa
+ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68726247"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71828632"
 ---
 # <a name="azure-disk-encryption-prerequisites-previous-release"></a>Предварительные требования для шифрования дисков Azure (предыдущий выпуск)
 
@@ -42,7 +42,7 @@ ms.locfileid: "68726247"
 
 ### <a name="linux"></a>Linux 
 
-Шифрование дисков Azure поддерживается в подмножестве дистрибутивов [Linux](../virtual-machines/linux/endorsed-distros.md), рекомендованных Azure, которые являются подмножеством всех возможных дистрибутивов Linux Server.
+Шифрование дисков Azure поддерживается в подмножестве [дистрибутивов Linux](../virtual-machines/linux/endorsed-distros.md), рекомендованных Azure, которые являются подмножеством всех возможных дистрибутивов Linux Server.
 
 ![Диаграмма Венна для дистрибутивов Linux Server, поддерживающих шифрование дисков Azure](./media/azure-security-disk-encryption-faq/ade-supported-distros.png)
 
@@ -53,6 +53,7 @@ ms.locfileid: "68726247"
 | Ubuntu | 18,04| Диск операционной системы и данных |
 | Ubuntu | 16.04| Диск операционной системы и данных |
 | Ubuntu | 14.04.5</br>[с ядром, оптимизированным для Azure, обновленным до версии 4.15 или более поздней версии](azure-security-disk-encryption-tsg.md#bkmk_Ubuntu14) | Диск операционной системы и данных |
+| RHEL | 7,7 | ОС и диск данных (см. Примечание ниже) |
 | RHEL | 7.6 | ОС и диск данных (см. Примечание ниже) |
 | RHEL | 7.5 | ОС и диск данных (см. Примечание ниже) |
 | RHEL | 7.4 | ОС и диск данных (см. Примечание ниже) |
@@ -60,6 +61,7 @@ ms.locfileid: "68726247"
 | RHEL | 7,2 | ОС и диск данных (см. Примечание ниже) |
 | RHEL | 6,8 | Диск данных (см. Примечание ниже) |
 | RHEL | 6.7 | Диск данных (см. Примечание ниже) |
+| CentOS | 7,7 | Диск операционной системы и данных |
 | CentOS | 7.6 | Диск операционной системы и данных |
 | CentOS | 7.5 | Диск операционной системы и данных |
 | CentOS | 7.4 | Диск операционной системы и данных |

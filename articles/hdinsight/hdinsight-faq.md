@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: 0a718786cc7c72ef4ee9573c3c3e40401c53a315
-ms.sourcegitcommit: 0486aba120c284157dfebbdaf6e23e038c8a5a15
+ms.openlocfilehash: 6bff2210e77f7af98c1289b08159a89f42f2a3bd
+ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71308070"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71827611"
 ---
 # <a name="azure-hdinsight-frequently-asked-questions"></a>Azure HDInsight: Часто задаваемые вопросы
 
@@ -193,7 +193,7 @@ ms.locfileid: "71308070"
 
 ### <a name="how-do-i-create-a-keytab-for-an-hdinsight-esp-cluster"></a>Разделы справки создать keytab для кластера HDInsight ESP?
 
-Создайте keytab Kerberos для имени пользователя домена. Позже это keytab можно использовать для проверки подлинности в присоединенных к домену кластерах без ввода пароля. Обратите внимание, что доменное имя имеет прописные буквы:
+Создайте keytab Kerberos для имени пользователя домена. Позже это keytab можно использовать для проверки подлинности в присоединенных к домену кластерах без ввода пароля. Доменное имя имеет прописные буквы:
 
 ```shell
 ktutil
@@ -310,14 +310,14 @@ done
 
 Для извлечения необходимой информации в формате JSON можно использовать следующие конечные точки RESTFUL. Для выполнения запросов используйте заголовки обычной проверки подлинности.
 
-- Tez представление запросов: *https:\//\<имя кластера >. azurehdinsight. NET/WS/v1/Timeline/HIVE_QUERY_ID/*
-- Tez DAG View: *https:\//\<имя кластера >. azurehdinsight. NET/WS/v1/Timeline/TEZ_DAG_ID/*
+- Tez представление запросов: *https: \/ @ no__t-2 @ no__t-3cluster name >. azurehdinsight. NET/WS/v1/Timeline/HIVE_QUERY_ID/*
+- Представление Tez DAG: *https: \/ @ no__t-2 @ no__t-3cluster name >. azurehdinsight. NET/WS/v1/Timeline/TEZ_DAG_ID/*
 
 ### <a name="how-do-i-retrieve-the-configuration-details-from-hdi-cluster-by-using-an-azure-active-directory-user"></a>Разделы справки получить сведения о конфигурации из кластера HDI с помощью Azure Active Directory пользователя?
 
 Чтобы согласовать маркеры проверки подлинности с пользователем AAD, пройдите через шлюз, используя следующий формат:
 
-* HTTPS://`<cluster dnsname>`. azurehdinsight.NET/API/V1/Clusters/testclusterdem/stack_versions/1/repository_versions/1 
+* https://@no__t — 0.azurehdinsight.net/api/v1/clusters/testclusterdem/stack_versions/1/repository_versions/1 
 
 ### <a name="how-do-i-use-ambari-restful-api-to-monitor-yarn-performance"></a>Разделы справки использовать API RESTful Ambari для мониторинга производительности YARN?
 
@@ -352,6 +352,10 @@ http://<headnodehost>:8080/api/v1/clusters/<ClusterName>/services/YARN/component
 ### <a name="how-much-does-it-cost-to-deploy-an-hdinsight-cluster"></a>Какова стоимость развертывания кластера HDInsight?
 
 Дополнительные сведения о ценах и часто задаваемых вопросах, связанных с выставлением счетов, см. на странице [цен на Azure HDInsight](https://azure.microsoft.com/pricing/details/hdinsight/) .
+
+### <a name="when-does-hdinsight-billing-start--stop"></a>Когда начинается оплата с учета HDInsight & останавливаться?
+
+Начисление оплаты начинается после создания кластера HDInsight и прекращается только после его удаления. Стоимость выставления счетов составляет Pro в минуту.
 
 ### <a name="how-do-i-cancel-my-subscription"></a>Разделы справки отменить подписку?
 

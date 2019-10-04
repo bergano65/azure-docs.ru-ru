@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 03/12/2019
 ms.author: magoedte
-ms.openlocfilehash: 6f27aeb65cb9077011e662c165ca26202546db26
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: b81495f19ce596d689778e6ab75512d744ae4588
+ms.sourcegitcommit: 15e3bfbde9d0d7ad00b5d186867ec933c60cebe6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66130418"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71836572"
 ---
 # <a name="create-a-log-analytics-workspace-with-azure-powershell"></a>Создание рабочей области Log Analytics с помощью Azure PowerShell
 
@@ -41,12 +41,12 @@ ms.locfileid: "66130418"
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать PowerShell локально, в этом руководстве требуется модуль Azure PowerShell Az. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если необходимо выполнить обновление, см. статью об [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
+Если вы решили установить и использовать PowerShell локально, для работы с этим руководством требуется модуль Azure PowerShell AZ. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если необходимо выполнить обновление, см. статью об [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
 
-## <a name="create-a-workspace"></a>Создание рабочей области
-Создание рабочей области с [New AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment). В следующем примере создается рабочая область с именем *TestWorkspace* в группе ресурсов *Lab* в регионе *eastus* с помощью шаблона Resource Manager на локальном компьютере. Шаблон в формате JSON настроен так, чтобы осталось только указать имя рабочей области и задать значения по умолчанию для других параметров, которые скорее всего будут использоваться в качестве стандартной конфигурации в вашей среде. 
+## <a name="create-a-workspace"></a>Создать рабочую область
+Создайте рабочую область с помощью [New-азресаурцеграупдеплоймент](/powershell/module/az.resources/new-azresourcegroupdeployment). В следующем примере создается рабочая область в расположении *eastus* с помощью шаблона диспетчер ресурсов на локальном компьютере. Шаблон в формате JSON настроен так, чтобы осталось только указать имя рабочей области и задать значения по умолчанию для других параметров, которые скорее всего будут использоваться в качестве стандартной конфигурации в вашей среде. 
 
-Сведения о поддерживаемых регионах см. в разделе [регионах, доступны в Log Analytics](https://azure.microsoft.com/regions/services/) и выполните поиск Azure Monitor от **поиск продукта** поля. 
+Сведения о поддерживаемых регионах см. [в разделе регионы log Analytics доступны в](https://azure.microsoft.com/regions/services/) и выполните поиск Azure Monitor в поле **поиска по полю продукта** . 
 
 Для следующих параметров задаются значения по умолчанию.
 
@@ -117,7 +117,7 @@ ms.locfileid: "66130418"
 
 2. Отредактируйте шаблон с учетом ваших требований. Просмотрите справочник по [шаблону Microsoft.OperationalInsights/workspaces](https://docs.microsoft.com/azure/templates/microsoft.operationalinsights/workspaces) с описанием поддерживаемых свойств и значений. 
 3. Сохраните этот файл как **deploylaworkspacetemplate.json** в локальной папке.   
-4. Теперь вы можете развернуть этот шаблон. Используйте следующие команды из папки, содержащей шаблон:
+4. Теперь вы можете развернуть этот шаблон. Используйте следующие команды из папки, содержащей шаблон. При запросе имени рабочей области Укажите имя, которое глобально уникально для всех подписок Azure.
 
     ```powershell
         New-AzResourceGroupDeployment -Name <deployment-name> -ResourceGroupName <resource-group-name> -TemplateFile deploylaworkspacetemplate.json
@@ -127,7 +127,7 @@ ms.locfileid: "66130418"
 
 ![Пример результатов по завершении развертывания](media/quick-create-workspace-posh/template-output-01.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Теперь, когда рабочая область доступна, вы можете настроить сбор данных телеметрии для мониторинга, выполнять поиск по журналам для анализа этих данных, а также добавить решение по управлению для предоставления дополнительных данных и аналитических сведений.  
 
 * Сведения о том, как включить сбор данных из ресурсов Azure с помощью системы диагностики Azure или хранилища Azure, см. в статье [Сбор журналов и метрик для служб Azure для использования в Azure Monitor](../platform/collect-azure-metrics-logs.md).  

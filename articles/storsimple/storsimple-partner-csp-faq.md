@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 02/08/2017
 ms.author: alkohli
-ms.openlocfilehash: 4750ba55c08ebac244e7515cae4e998155a79599
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 893e8de5efc523df34e2c1e139082d2b471cb63e
+ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60628887"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71828531"
 ---
 # <a name="storsimple-for-cloud-solutions-provider-program-frequently-asked-questions"></a>StorSimple для программы поставщиков облачных решений: Часто задаваемые вопросы
 
@@ -50,7 +50,7 @@ ms.locfileid: "60628887"
 Доступны все те же номера SKU, что и для автономных служб StorSimple. 
 
 ### <a name="is-there-any-difference-between-the-storsimple-directly-purchased-from-microsoft-under-ea-and-storsimple-as-a-part-of-csp"></a>Есть ли разница между StorSimple, приобретаемым по соглашению Enterprise у корпорации Майкрософт или в рамках программы CSP?
-№ По программе CSP клиенты могут одним счетом оплачивать и другие службы, предоставляемые партнером CSP наряду с виртуальным массивом StorSimple. Обратите внимание, что для приобретения физического устройства StorSimple серии 8000 можно использовать только соглашение Enterprise. 
+Нет. По программе CSP клиенты могут одним счетом оплачивать и другие службы, предоставляемые партнером CSP наряду с виртуальным массивом StorSimple. Обратите внимание, что для приобретения физического устройства StorSimple серии 8000 можно использовать только соглашение Enterprise. 
 
 ### <a name="in-which-markets-is-storsimple-available-for-csp-at-launch"></a>На каких рынках виртуальный массив StorSimple доступен по программе CSP на момент запуска?
 Виртуальный массив StorSimple доступен по программе CSP на всех рынках, где сейчас уже доступны устройства StorSimple. Дополнительные сведения см. в [списке регионов, где доступны устройства StorSimple](https://azure.microsoft.com/regions/services/).
@@ -63,7 +63,7 @@ ms.locfileid: "60628887"
 - Также партнеры могут разработать новые бизнес-модели предоставления управляемых служб.
 
 ### <a name="what-are-the-incentives-available-for-storsimple-csp-partners-do-i-qualify-for-any-csp-program-incentives"></a>Какие вознаграждения предлагаются для партнеров StorSimple CSP? Могу ли я получить вознаграждения по программе CSP?
-Сведения о вознаграждениях вы найдете см. в статье [странице с описанием программы CSP](https://partner.microsoft.com/en-US/cloud-solution-provider/program-details).
+Сведения о поощрениях см. на странице [поощрения программы CSP](https://partner.microsoft.com/en-US/cloud-solution-provider/program-details).
 
 
 ## <a name="deploy-and-manage-storsimple-as-a-partner"></a>Развертывание решений StorSimple и управление ими в качестве партнера
@@ -75,7 +75,7 @@ ms.locfileid: "60628887"
 Да. При работе с виртуальным массивом StorSimple по программе CSP мы рекомендуем партнерам обращаться к порталу Azure через [Центр партнеров](https://partnercenter.microsoft.com/), где они могут управлять клиентами и подписками. Для управления подписками StorSimple партнер или заказчик (в зависимости от предоставленных разрешений) должен войти на портал Azure. 
 
 ### <a name="is-microsoft-shipping-a-new-portal-for-storsimple-for-csp"></a>Предоставляет ли корпорация Майкрософт новый портал для StorSimple по программе CSP? 
-№ Вы можете управлять виртуальным массивом StorSimple по программе CSP через портал Azure.
+Нет. Вы можете управлять виртуальным массивом StorSimple по программе CSP через портал Azure.
 
 ### <a name="i-have-provisioned-a-standalone-storsimple-subscription-for-my-customer-do-i-have-to-use-the-azure-portal-to-administer-my-device"></a>Мною предоставлена клиенту отдельная подписка на StorSimple. Нужно ли мне для управления устройством обязательно использовать портал Azure? 
 Да. 
@@ -89,7 +89,7 @@ ms.locfileid: "60628887"
 Вы можете посетить раздел StorSimple на форуме программы CSP, чтобы получить ответы на часто задаваемые вопросы. Для этого вам потребуется вступить в [группу консультантов Azure на сайте](https://www.yammer.com/azureadvisors). Выполните поиск группы **StorSimple Partner Advisors** (партнеров-консультантов StorSimple) и присоединитесь к ней.
 
 ### <a name="how-does-the-support-work-for-storsimple-for-csp"></a>Как работает поддержка для StorSimple по программе CSP? 
-Для StorSimple по программе CSP сохраняется та же модель поддержки, что и для других служб Azure по программе CSP. Дополнительные сведения см. в статье [Поддержка клиентов](https://msdn.microsoft.com/partner-center/customer-support). 
+Для StorSimple по программе CSP сохраняется та же модель поддержки, что и для других служб Azure по программе CSP. Дополнительные сведения см. в статье [Поддержка клиентов](/partner-center/csp-overview).
 
 Дополнительные сведения о StorSimple по программе CSP вы найдете на следующих страницах.
 
@@ -97,5 +97,5 @@ ms.locfileid: "60628887"
 - [Центр партнеров](https://partnercenter.microsoft.com/) 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Если вы уже готовы развернуть StorSimple, перейдите к статье [Deploy your StorSimple in CSP](storsimple-partner-csp-deploy.md) (Развертывание StorSimple в рамках программы CSP).

@@ -7,35 +7,37 @@ ms.author: jzim
 ms.service: container-service
 ms.topic: article
 ms.date: 09/25/2019
-ms.openlocfilehash: 6d7aacea5e34e21513452880448227a1ca5f9b67
-ms.sourcegitcommit: d4c9821b31f5a12ab4cc60036fde00e7d8dc4421
+ms.openlocfilehash: 1c676b2671b73084a2b4ae8908acb83c23a59b7b
+ms.sourcegitcommit: f2d9d5133ec616857fb5adfb223df01ff0c96d0a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71709950"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71936930"
 ---
 # <a name="azure-red-hat-openshift-customer-administrator-role"></a>Роль администратора клиента Azure Red Hat OpenShift
 
-Как администратор кластера АТО (Azure Red Hat OpenShift) в кластере OpenShift, ваша учетная запись обладает повышенными разрешениями и доступом ко всем создаваемым пользователями проектам.
+Вы являетесь администратором кластера Azure Red Hat OpenShift. Ваша учетная запись обладает повышенными разрешениями и доступом ко всем создаваемым пользователями проектам.
 
-Если с учетной записью связана роль авторизации OSA-Customer-администраторы, она может автоматически управлять проектом.
+Если с учетной записью связана роль авторизации OSA-Customer-Admin, она может автоматически управлять проектом.
 
 > [!Note] 
-> OSA-Customer-Admin клустерроле не совпадает с параметром Cluster-Admin клустерроле
+> Роль кластера "OSA — клиент-Администратор" отличается от роли кластера "Администратор кластера".
 
 
 Например, можно выполнить действия, связанные с набором глаголов (`create`), для работы с набором имен ресурсов (`templates`). Чтобы просмотреть подробные сведения об этих ролях и их наборах команд и ресурсов, выполните следующую команду:
 
 `$ oc describe clusterrole/osa-customer-admin`
 
-Имена команд не обязательно сопоставляются непосредственно с командами OC, а в общем случае — для типов операций CLI, которые можно выполнять. Например, наличие глагола `list` означает, что можно отобразить список всех объектов заданного имени ресурса (`oc get`), а глагол `get` означает, что можно отобразить сведения об определенном объекте, если известно его имя (`oc describe`).
+Имена команд не обязательно сопоставляются непосредственно с командами `oc`. Они более широко соответствуют типам операций CLI, которые можно выполнять. 
 
-## <a name="how-to-configure-customer-administrator-role"></a>Настройка роли администратора клиента
+Например, наличие глагола `list` означает, что можно отобразить список всех объектов имени ресурса (`oc get`). Команда `get` означает, что можно отобразить сведения об определенном объекте, если известно его имя (`oc describe`).
 
-Роль "Администратор клиента" может быть настроена только во время создания кластера, предоставляя флаг `--customer-admin-group-id`. Инструкции по настройке группы Azure Active Directory и администраторов см. в разделе руководство. [Интеграция Azure Active Directory для Azure Red Hat OpenShift](howto-aad-app-configuration.md)
+## <a name="configure-the-customer-administrator-role"></a>Настройка роли администратора клиента
+
+Роль "Администратор клиента" можно настроить только во время создания кластера, указав флаг `--customer-admin-group-id`. Сведения о настройке Azure Active Directory и группы администраторов см. в статье [интеграция Azure Active Directory для Azure Red Hat OpenShift](howto-aad-app-configuration.md).
 
 ## <a name="next-steps"></a>Следующие шаги
 
-Настройка роли администратора OSA-Customer:
+Настройте роль OSA-клиент-Администратор:
 > [!div class="nextstepaction"]
 > [Интеграция Azure Active Directory для Azure Red Hat OpenShift](howto-aad-app-configuration.md)

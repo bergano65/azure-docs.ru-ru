@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/19/2019
 ms.author: bwren
-ms.openlocfilehash: ec72b0b9f2cdc932c7fb0c8a6fd8daecbc470c09
-ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
+ms.openlocfilehash: 16cad34290ecc518e95ec1a0ce0950722cfe0780
+ms.sourcegitcommit: 15e3bfbde9d0d7ad00b5d186867ec933c60cebe6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68779960"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71836141"
 ---
 # <a name="manage-log-analytics-workspace-in-azure-monitor-using-powershell"></a>Управление рабочей областью Log Analytics в Azure Monitor с помощью PowerShell
 
@@ -38,7 +38,7 @@ ms.locfileid: "68779960"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 Эти примеры работают с версией 1.0.0 или более поздней версии модуля AZ. OperationalInsights.
 
 
@@ -61,7 +61,7 @@ ms.locfileid: "68779960"
 ```powershell
 
 $ResourceGroup = "oms-example"
-$WorkspaceName = "log-analytics-" + (Get-Random -Maximum 99999) # workspace names need to be unique - Get-Random helps with this for the example code
+$WorkspaceName = "log-analytics-" + (Get-Random -Maximum 99999) # workspace names need to be unique across all Azure subscriptions - Get-Random helps with this for the example code
 $Location = "westeurope"
 
 # List of solutions to enable

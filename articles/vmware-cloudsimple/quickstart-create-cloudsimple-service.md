@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 39395c9d082bc40836c14ee4c0d328341f96edca
-ms.sourcegitcommit: 80da36d4df7991628fd5a3df4b3aa92d55cc5ade
+ms.openlocfilehash: 228ca0f43322c271b1a6db55a37c852ca1f66799
+ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/02/2019
-ms.locfileid: "71816118"
+ms.locfileid: "71828905"
 ---
 # <a name="quickstart---create-azure-vmware-solution-by-cloudsimple-service"></a>Краткое руководство. Создание решения Azure VMware с помощью службы Клаудсимпле
 
@@ -77,7 +77,7 @@ ms.locfileid: "71816118"
 7. Введите префикс для обозначения узлов.
 8. Выберите расположение ресурсов узла.
 9. Выберите выделенное расположение для размещения ресурсов узла.
-10. Выберите тип узла. Можно выбрать [параметр CS28 или CS36](cloudsimple-node.md). Последний вариант включает максимальный объем вычислений и объем памяти.
+10. Выберите [тип узла](cloudsimple-node.md).
 11. Выберите число узлов для инициализации.
 12. Выберите **Review + Create** (Просмотреть и создать).
 13. Проверьте параметры. Чтобы изменить параметры, нажмите кнопку **назад**.

@@ -7,12 +7,12 @@ ms.reviewer: oflipman
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 09/26/2019
-ms.openlocfilehash: dfc0cd6686ac4ea1af2beb34edeadd17e4c952e1
-ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
+ms.openlocfilehash: b8aa87b871b86a8dab3b1984b638366a42708483
+ms.sourcegitcommit: f2d9d5133ec616857fb5adfb223df01ff0c96d0a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71329439"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71936897"
 ---
 # <a name="create-an-azure-data-explorer-cluster-and-database-by-using-an-azure-resource-manager-template"></a>Создание кластера и базы данных Azure обозреватель данных с помощью шаблона Azure Resource Manager
 
@@ -110,7 +110,7 @@ ms.locfileid: "71329439"
 
     ![Развертывание в Azure](media/create-cluster-database-resource-manager/deploy-2-azure.png)
 
-Шаблон можно [изменить и развернуть в портал Azure](/azure/azure-resource-manager/resource-manager-quickstart-create-templates-use-the-portal#edit-and-deploy-the-template) с помощью формы.
+    Шаблон можно [изменить и развернуть в портал Azure](/azure/azure-resource-manager/resource-manager-quickstart-create-templates-use-the-portal#edit-and-deploy-the-template) с помощью формы.
 
 1. Выполните **Основные сведения** и разделы о **параметрах** . Выберите уникальные имена кластера и базы данных.
 Создание кластера Azure обозреватель данных и базы данных занимает несколько минут.
@@ -142,7 +142,7 @@ ms.locfileid: "71329439"
 
 #### <a name="verify-the-deployment-using-powershell"></a>Проверка развертывания с помощью PowerShell
 
-Чтобы проверить развертывание, используйте следующий скрипт Azure PowerShell.  Если Cloud Shell все еще открыт, вам не нужно копировать или запускать первую строку (для чтения и размещения). Дополнительные сведения об управлении ресурсами обозреватель данных Azure в PowerShell см. в статье [AZ. Kusto](/powershell/module/az.kusto/?view=azps-2.7.0). Внести соответствующие изменения
+Чтобы проверить развертывание, используйте следующий скрипт Azure PowerShell.  Если Cloud Shell по-прежнему открыт, вам не нужно копировать или запускать первую строку (Read-Host). Дополнительные сведения об управлении ресурсами обозреватель данных Azure в PowerShell см. в статье [AZ. Kusto](/powershell/module/az.kusto/?view=azps-2.7.0). 
 
 ```azurepowershell-interactive
 $projectName = Read-Host -Prompt "Enter the same project name that you used in the last procedure"
@@ -165,7 +165,7 @@ Write-Host "Press [ENTER] to continue ..."
 
 ### <a name="clean-up-resources-using-powershell"></a>Очистка ресурсов с помощью PowerShell
 
-Если Cloud Shell все еще открыт, вам не нужно копировать или запускать первую строку (для чтения и размещения).
+Если Cloud Shell по-прежнему открыт, вам не нужно копировать или запускать первую строку (Read-Host).
 
 ```azurepowershell-interactive
 $projectName = Read-Host -Prompt "Enter the same project name that you used in the last procedure"

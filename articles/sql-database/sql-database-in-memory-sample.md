@@ -11,12 +11,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: ''
 ms.date: 12/18/2018
-ms.openlocfilehash: 5f6f4ce4fc77533a4d893472298ef3a20f153136
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: e3e819fc90e8900219ebc7809adb293369084a72
+ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68567988"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71828212"
 ---
 # <a name="in-memory-sample"></a>Пример использования технологий обработки в оперативной памяти
 
@@ -49,7 +49,7 @@ ms.locfileid: "68567988"
 
 2. Подключитесь к базе данных с помощью SQL Server Management Studio [(SSMS.exe)](https://msdn.microsoft.com/library/mt238290.aspx).
 
-3. Скопируйте в буфер обмена [скрипт Transact-SQL для In-Memory OLTP](https://raw.githubusercontent.com/Microsoft/sql-server-samples/master/samples/features/in-memory/t-sql-scripts/sql_in-memory_oltp_sample.sql) . Скрипт T-SQL создаст необходимые объекты обработки в оперативной памяти в образце базы данных AdventureWorksLT, созданной на этапе 1.
+3. Скопируйте в буфер обмена [скрипт Transact-SQL для In-Memory OLTP](https://raw.githubusercontent.com/microsoft/sql-server-samples/master/samples/features/in-memory-database/in-memory-oltp/t-sql-scripts/sql_in-memory_oltp_sample.sql) . Скрипт T-SQL создаст необходимые объекты обработки в оперативной памяти в образце базы данных AdventureWorksLT, созданной на этапе 1.
 
 4. Вставьте сценарий T-SQL в SSMS, а затем выполните его. `MEMORY_OPTIMIZED = ON`Инструкции CREATE TABLE являются ключевыми. Пример:
 
@@ -198,7 +198,7 @@ whereas for SQL 2016+
 
 
 
-### <a name="run-the-inmem-stress-workload-first"></a>Запуск тестовой рабочей нагрузки *_inmem*
+### <a name="run-the-_inmem-stress-workload-first"></a>Запуск тестовой рабочей нагрузки *_inmem*
 
 
 Вы можете использовать окно *командной строки RML* , чтобы запустить командную строку ostress.exe. Параметры командной строки указывают следующие действия, которые необходимо выполнить программе `ostress`:
@@ -236,7 +236,7 @@ ostress.exe -n100 -r50 -S<servername>.database.windows.net -U<login> -P<password
 `11/12/15 00:35:00.873 [0x000030A8] OSTRESS exiting normally, elapsed time: 00:01:31.867`
 
 
-#### <a name="reset-edit-for-ondisk-then-rerun"></a>Сброс базы данных, изменение значения *_ondisk* и повторный запуск
+#### <a name="reset-edit-for-_ondisk-then-rerun"></a>Сброс базы данных, изменение значения *_ondisk* и повторный запуск
 
 
 Получив результат выполнения *_inmem*, выполните следующие действия для запуска *_ondisk*:
@@ -279,7 +279,7 @@ ostress.exe -n100 -r50 -S<servername>.database.windows.net -U<login> -P<password
    - Используйте такое же имя.
    - Выберите любой уровень служб категории «Премиум».
 
-2. Скопируйте [sql_inmemory_analytics_sample](https://raw.githubusercontent.com/Microsoft/sql-server-samples/master/samples/features/in-memory/t-sql-scripts/sql_in-memory_analytics_sample.sql) в буфер обмена.
+2. Скопируйте [sql_inmemory_analytics_sample](https://raw.githubusercontent.com/microsoft/sql-server-samples/master/samples/features/in-memory-database/in-memory-oltp/t-sql-scripts/sql_in-memory_analytics_sample.sql) в буфер обмена.
    - Скрипт T-SQL создаст необходимые объекты обработки в оперативной памяти в образце базы данных AdventureWorksLT, созданной на этапе 1.
    - Скрипт создаст таблицу измерений и две таблицы фактов. Таблицы фактов заполняются 3,5 млн строк.
    - Выполнение скрипта может занять до 15 минут.
@@ -302,7 +302,7 @@ ostress.exe -n100 -r50 -S<servername>.database.windows.net -U<login> -P<password
 #### <a name="key-queries-to-compare-the-columnstore-index"></a>Ключевые запросы для сравнения с индексом columnstore
 
 
-Существует [несколько типов запросов T-SQL, которые можно выполнить](https://raw.githubusercontent.com/Microsoft/sql-server-samples/master/samples/features/in-memory/t-sql-scripts/clustered_columnstore_sample_queries.sql) для анализа повышения производительности. На втором шаге скрипта T-SQL обратите внимание на следующую пару запросов. Они отличаются только одной строкой.
+Существует [несколько типов запросов T-SQL, которые можно выполнить](https://raw.githubusercontent.com/microsoft/sql-server-samples/master/samples/features/in-memory-database/in-memory-oltp/t-sql-scripts/clustered_columnstore_sample_queries.sql) для анализа повышения производительности. На втором шаге скрипта T-SQL обратите внимание на следующую пару запросов. Они отличаются только одной строкой.
 
 
 - `FROM FactResellerSalesXL_PageCompressed a`

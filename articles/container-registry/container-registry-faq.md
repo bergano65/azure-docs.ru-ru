@@ -8,12 +8,12 @@ ms.service: container-registry
 ms.topic: article
 ms.date: 07/02/2019
 ms.author: sajaya
-ms.openlocfilehash: 293f2a704fecb04bc6b65e49743ea80905f2394f
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: b365c914db0ce43da5dac4c5b889c854c0ea0639
+ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70142669"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71827402"
 ---
 # <a name="frequently-asked-questions-about-azure-container-registry"></a>Часто задаваемые вопросы о реестре контейнеров Azure
 
@@ -260,6 +260,7 @@ az acr login -n MyRegistry
 - [Новые разрешения пользователя могут не действовать сразу после обновления](#new-user-permissions-may-not-be-effective-immediately-after-updating)
 - [Данные проверки подлинности не задаются в правильном формате при вызове Direct REST API](#authentication-information-is-not-given-in-the-correct-format-on-direct-rest-api-calls)
 - [Почему портал Azure не содержит список всех репозиториев или тегов?](#why-does-the-azure-portal-not-list-all-my-repositories-or-tags)
+- [Почему портал Azure не удается получить репозитории или Теги?](#why-does-the-azure-portal-fail-to-fetch-repositories-or-tags)
 - [Разделы справки собирайте трассировки HTTP в Windows?](#how-do-i-collect-http-traces-on-windows)
 
 ### <a name="check-health-with-az-acr-check-health"></a>Проверить работоспособность с помощью`az acr check-health`
@@ -409,6 +410,17 @@ curl $redirect_url
 ### <a name="why-does-the-azure-portal-not-list-all-my-repositories-or-tags"></a>Почему портал Azure не содержит список всех репозиториев или тегов? 
 
 Если вы используете браузер Microsoft ребр/IE, можно увидеть не более 100 репозиториев или тегов. Если в реестре более 100 репозиториев или тегов, для их перечисления рекомендуется использовать браузер Firefox или Chrome.
+
+### <a name="why-does-the-azure-portal-fail-to-fetch-repositories-or-tags"></a>Почему портал Azure не удается получить репозитории или Теги?
+
+Возможно, браузер не сможет отправить запрос на получение репозиториев или тегов на сервер. Возможны различные причины:
+
+* Отсутствие подключения к сети
+* Брандмауэр
+* Блокирование рекламы
+* Ошибки DNS
+
+Обратитесь к администратору сети или проверьте конфигурацию сети и подключение. Кроме того, в браузере можно попытаться использовать режиме инкогнито или частный сеанс, чтобы избежать устаревших кэшей браузера или файлов cookie.
 
 ### <a name="how-do-i-collect-http-traces-on-windows"></a>Разделы справки собирайте трассировки HTTP в Windows?
 

@@ -8,12 +8,12 @@ ms.service: batch
 ms.topic: article
 ms.date: 08/28/2019
 ms.author: lahugh
-ms.openlocfilehash: c3f5155c7d1576657f36445562b5b425148a838a
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.openlocfilehash: fa232fb48e80e3ae3751920e4215c4b4d3ded19a
+ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71348954"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71827919"
 ---
 # <a name="use-the-shared-image-gallery-to-create-a-custom-pool"></a>Создание пользовательского пула с помощью коллекции общих образов
 
@@ -58,7 +58,7 @@ ms.locfileid: "71348954"
 
 ### <a name="prepare-a-vm"></a>Подготовка виртуальной машины
 
-Если вы создаете новую виртуальную машину для образа, используйте образ Azure Marketplace первого производителя, поддерживаемый пакетом в качестве базового образа управляемого образа. В качестве базового образа можно использовать только образы первого производителя. Полный список ссылок на образы Azure Marketplace, поддерживаемых пакетной службой Azure, см. в разделе операция [SKU агента узла списка](/rest/api/batchservice/account/listnodeagentskus) .
+Если вы создаете новую виртуальную машину для образа, используйте образ Azure Marketplace первого производителя, поддерживаемый пакетом в качестве базового образа управляемого образа. В качестве базового образа можно использовать только образы первого производителя. Полный список ссылок на образы Azure Marketplace, поддерживаемых пакетной службой Azure, см. в разделе операция [SKU агента узла списка](/java/api/com.microsoft.azure.batch.protocol.accounts.listnodeagentskus) .
 
 > [!NOTE]
 > В качестве базового образа нельзя использовать образы сторонних производителей, для которых предусматриваются дополнительные условия покупки и лицензия. Сведения об образах из Marketplace, см. в руководствах по виртуальным машинам [Linux](../virtual-machines/linux/cli-ps-findimage.md#deploy-an-image-with-marketplace-terms

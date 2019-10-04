@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 11/29/2018
 ms.author: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5f6139062c4d302284cc653606ae838206d3691a
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 0a8db0254f85980022115cab5d73f7f329b57001
+ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60290738"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71827552"
 ---
 # <a name="view-the-service-principal-of-a-managed-identity-in-the-azure-portal"></a>Просмотр субъекта-службы управляемого удостоверения на портале Azure
 
@@ -28,7 +28,10 @@ ms.locfileid: "60290738"
 
 В этой статье описано, как просмотреть субъект-службу управляемого удостоверения на портале Azure.
 
-## <a name="prerequisites"></a>Технические условия
+ > [!NOTE] 
+ > Субъекты-службы — это корпоративные приложения. 
+
+## <a name="prerequisites"></a>Предварительные требования
 
 - Если вы не работали с управляемыми удостоверениями для ресурсов Azure, изучите [общие сведения](overview.md).
 - Если у вас нет учетной записи Azure, зарегистрируйтесь для получения [бесплатной пробной версии](https://azure.microsoft.com/free/).
@@ -44,7 +47,7 @@ ms.locfileid: "60290738"
 
    ![Просмотр субъектов-служб для управляемых удостоверений на портале](./media/how-to-view-managed-identity-service-principal-portal/view-managed-identity-service-principal-portal.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Управляемые удостоверения для ресурсов Azure](/azure/active-directory/managed-identities-azure-resources/overview)
 

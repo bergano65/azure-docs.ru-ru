@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 09/25/2019
 ms.author: mjbrown
-ms.openlocfilehash: 77d70aaa9c1ae5a111a47e08f259c0ce95fd7c92
-ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
+ms.openlocfilehash: 3a13f8928ba243195c30200dae0525e72c1c161b
+ms.sourcegitcommit: 15e3bfbde9d0d7ad00b5d186867ec933c60cebe6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71300112"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71844408"
 ---
 # <a name="migrate-non-partitioned-containers-to-partitioned-containers"></a>Перенос несекционированных контейнеров в секционированные контейнеры
 
@@ -99,7 +99,7 @@ ItemResponse<DeviceInformationItem> readResponse =
 
 ## <a name="access-documents-that-dont-have-a-partition-key"></a>Доступ к документам, у которых нет ключа секции
 
-Приложения могут обращаться к существующим документам, у которых нет ключа секции, с помощью специального системного свойства с именем "Космосконтаинерсеттингс. Нонепартитионкэйвалуе". это значение для неперенесенных документов. Это свойство можно использовать во всех операциях CRUD и запросов. В следующем примере показан пример для чтения одного документа из Нонепартитионкэй. 
+Приложения могут получить доступ к существующим документам, у которых нет ключа секции, с помощью специального системного свойства с именем "PartitionKey. None". это значение относится к неперенесенным документам. Это свойство можно использовать во всех операциях CRUD и запросов. В следующем примере показан пример для чтения одного документа из Нонепартитионкэй. 
 
 ```csharp
 CosmosItemResponse<DeviceInformationItem> readResponse = 

@@ -4,14 +4,14 @@ description: Здесь показано, как происходит удале
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: conceptual
-ms.date: 09/13/2019
+ms.date: 10/03/2019
 ms.author: tomfitz
-ms.openlocfilehash: d8238dddee041573d9b122e62cec66118c681ef6
-ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
+ms.openlocfilehash: cdc00ccc61e20865e993a18c72b930d9570896f2
+ms.sourcegitcommit: f2d9d5133ec616857fb5adfb223df01ff0c96d0a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70995262"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71937053"
 ---
 # <a name="deletion-of-azure-resources-for-complete-mode-deployments"></a>Удаление ресурсов Azure для развертываний в полном режиме
 
@@ -43,7 +43,6 @@ ms.locfileid: "70995262"
 > - [Microsoft.Batch](#microsoftbatch)
 > - [Microsoft.Billing](#microsoftbilling)
 > - [Microsoft.BingMaps](#microsoftbingmaps)
-> - [Microsoft.BizTalkServices](#microsoftbiztalkservices)
 > - [Microsoft.Blockchain](#microsoftblockchain)
 > - [Microsoft.Blueprint](#microsoftblueprint)
 > - [Microsoft.BotService](#microsoftbotservice)
@@ -126,6 +125,7 @@ ms.locfileid: "70995262"
 > - [Microsoft.NetApp](#microsoftnetapp)
 > - [Microsoft.Network](#microsoftnetwork)
 > - [Microsoft.NotificationHubs](#microsoftnotificationhubs)
+> - [Microsoft. Обжектсторе](#microsoftobjectstore)
 > - [Microsoft.OffAzure](#microsoftoffazure)
 > - [Microsoft.OperationalInsights](#microsoftoperationalinsights)
 > - [Microsoft.OperationsManagement](#microsoftoperationsmanagement)
@@ -396,6 +396,7 @@ ms.locfileid: "70995262"
 > | Биллингаккаунтс и клиенты | Нет |
 > | Биллингаккаунтс/Customers/Биллингсубскриптионс | Нет |
 > | Биллингаккаунтс/Customers/Инитиатетрансфер | Нет |
+> | Биллингаккаунтс, клиенты и политики | Нет |
 > | Биллингаккаунтс/Customers/Products | Нет |
 > | Биллингаккаунтс/Customers/Transactions | Нет |
 > | Биллингаккаунтс/Customers/Transfers | Нет |
@@ -443,13 +444,6 @@ ms.locfileid: "70995262"
 > | ------------- | ----------- |
 > | mapApis | Да |
 > | updateCommunicationPreference | Нет |
-
-## <a name="microsoftbiztalkservices"></a>Microsoft.BizTalkServices
-
-> [!div class="mx-tableFixed"]
-> | Тип ресурса | Удаление ресурсов в полном режиме |
-> | ------------- | ----------- |
-> | BizTalk | Да |
 
 ## <a name="microsoftblockchain"></a>Microsoft.Blockchain
 
@@ -637,10 +631,10 @@ ms.locfileid: "70995262"
 > | дискенкриптионсетс | Да |
 > | диски | Да |
 > | galleries | Да |
-> | коллекции и приложения | Да |
-> | коллекции, приложения и версии | Да |
-> | galleries/images | Да |
-> | galleries/images/versions | Да |
+> | коллекции и приложения | Нет |
+> | коллекции, приложения и версии | Нет |
+> | galleries/images | Нет |
+> | galleries/images/versions | Нет |
 > | хостграупс | Да |
 > | Хостграупс и узлы | Да |
 > | образы | Да |
@@ -648,13 +642,11 @@ ms.locfileid: "70995262"
 > | restorePointCollections | Да |
 > | restorePointCollections/restorePoints | Нет |
 > | sharedVMImages | Да |
-> | sharedVMImages/versions | Да |
+> | sharedVMImages/versions | Нет |
 > | моментальные снимки | Да |
 > | virtualMachines | Да |
 > | virtualMachines/extensions | Да |
 > | virtualMachines/metricDefinitions | Нет |
-> | virtualMachines/Скриптжобс | Нет |
-> | virtualMachines/Софтвареупдатедеплойментс | Нет |
 > | virtualMachineScaleSets | Да |
 > | virtualMachineScaleSets/extensions | Нет |
 > | virtualMachineScaleSets/networkInterfaces | Нет |
@@ -871,7 +863,6 @@ ms.locfileid: "70995262"
 > | ------------- | ----------- |
 > | services; | Да |
 > | services/projects | Да |
-> | slots | Да |
 
 ## <a name="microsoftdatashare"></a>Общая папка Microsoft.
 
@@ -923,6 +914,9 @@ ms.locfileid: "70995262"
 > | серверграупс | Да |
 > | серверы | Да |
 > | servers/advisors | Нет |
+> | серверы и Приватиндпоинтконнектионпроксиес | Нет |
+> | серверы и Приватиндпоинтконнектионс | Нет |
+> | серверы и Привателинкресаурцес | Нет |
 > | servers/queryTexts | Нет |
 > | servers/recoverableServers | Нет |
 > | servers/topQueryStatistics | Нет |
@@ -1203,6 +1197,7 @@ ms.locfileid: "70995262"
 > | clusters/databases | Нет |
 > | clusters/databases/dataconnections | Нет |
 > | clusters/databases/eventhubconnections | Нет |
+> | кластеры/шаредидентитиес | Нет |
 
 ## <a name="microsoftlabservices"></a>Microsoft.LabServices
 
@@ -1367,11 +1362,13 @@ ms.locfileid: "70995262"
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
 > | нетаппаккаунтс | Да |
+> | Нетаппаккаунтс/БаккупполиЦиес | Да |
 > | Нетаппаккаунтс/КапаЦитипулс | Да |
 > | Нетаппаккаунтс/КапаЦитипулс/тома | Да |
+> | Нетаппаккаунтс/КапаЦитипулс/тома/резервные копии | Нет |
 > | Нетаппаккаунтс/КапаЦитипулс/Volumes/Маунттаржетс | Да |
 > | Нетаппаккаунтс/КапаЦитипулс/тома/моментальные снимки | Да |
-
+> | Нетаппаккаунтс и хранилища | Нет |
 ## <a name="microsoftnetwork"></a>Microsoft.Network.
 
 > [!div class="mx-tableFixed"]
@@ -1464,6 +1461,13 @@ ms.locfileid: "70995262"
 > | ------------- | ----------- |
 > | пространства имен | Да |
 > | namespaces/notificationHubs | Да |
+
+## <a name="microsoftobjectstore"></a>Microsoft. Обжектсторе
+
+> [!div class="mx-tableFixed"]
+> | Тип ресурса | Удаление ресурсов в полном режиме |
+> | ------------- | ----------- |
+> | оснамеспацес | Да |
 
 ## <a name="microsoftoffazure"></a>Microsoft.OffAzure
 
@@ -1618,7 +1622,6 @@ ms.locfileid: "70995262"
 > | subscriptions/resources | Нет |
 > | subscriptions/tagnames | Нет |
 > | subscriptions/tagNames/tagValues | Нет |
-> | теги | Нет |
 > | tenants | Нет |
 
 ## <a name="microsoftsaas"></a>Microsoft.SaaS
@@ -1682,6 +1685,7 @@ ms.locfileid: "70995262"
 > | securityStatusesSummaries | Нет |
 > | сервервулнерабилитяссессментс | Нет |
 > | параметры | Нет |
+> | подоценка | Нет |
 > | задачи; | Нет |
 > | topologies | Нет |
 > | workspaceSettings | Нет |

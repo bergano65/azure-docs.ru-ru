@@ -11,12 +11,12 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: vanto, genemi
 ms.date: 08/27/2019
-ms.openlocfilehash: 485c79bab90295cf9af9ef1dbbc209d46931a485
-ms.sourcegitcommit: 909ca340773b7b6db87d3fb60d1978136d2a96b0
+ms.openlocfilehash: 5506f95d532f69286bf29ec8916485bd63ce94da
+ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70984941"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71828825"
 ---
 # <a name="use-virtual-network-service-endpoints-and-rules-for-database-servers"></a>Использование конечных точек служб и правил виртуальной сети для серверов базы данных
 
@@ -138,7 +138,7 @@ PolyBase часто используют для загрузки данных в
    > - При наличии учетной записи хранения общего назначения версии 1 или учетной записи хранилища BLOB-объектов необходимо **сначала выполнить обновление до учетной записи хранения версии 2**, следуя инструкциям в этом [руководстве](https://docs.microsoft.com/azure/storage/common/storage-account-upgrade).
    > - Сведения об известных проблемах с Azure Data Lake Storage 2-го поколения см. в этом [руководстве](https://docs.microsoft.com/azure/storage/data-lake-storage/known-issues).
     
-1. В учетной записи хранения перейдите к элементу **Управление доступом (IAM)** и нажмите кнопку **Добавить назначение ролей**. Назначьте роли RBAC **участника данных BLOB-объекта хранилища** Azure SQL Server размещения хранилища данных SQL Azure, зарегистрированного в Azure Active ДИРЕКОТОРИ (AAD), как в шаге 1.
+1. В учетной записи хранения перейдите к элементу **Управление доступом (IAM)** и нажмите кнопку **Добавить назначение ролей**. Назначьте роли RBAC **участника данных BLOB-объекта хранилища** Azure SQL Server размещения хранилища данных SQL Azure, зарегистрированного в Azure Active Directory (AAD), как в шаге 1.
 
    > [!NOTE] 
    > Этот шаг могут выполнять только участники с правами владельца. Сведения о различных встроенных ролях для ресурсов Azure см. в этом [руководстве](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles).

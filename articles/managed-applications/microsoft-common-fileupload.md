@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/05/2018
 ms.author: tomfitz
-ms.openlocfilehash: 92a5f7c058904015cb22a239b7e7c4938ae1fdae
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b06134c6694e54cf246f9527d10147c573b95ad9
+ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61044651"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71828005"
 ---
 # <a name="microsoftcommonfileupload-ui-element"></a>Элемент пользовательского интерфейса Microsoft.Common.FileUpload
 Элемент управления, который позволяет пользователю указать один или несколько файлов для отправки.
@@ -48,7 +48,7 @@ ms.locfileid: "61044651"
 ```
 
 ## <a name="remarks"></a>Примечания
-- `constraints.accept` — указывает типы файлов, которые отображаются в файловом диалоговом окне браузера. Сведения о допустимых значениях см. в [спецификации HTML5](https://www.w3.org/TR/html5/forms.html#attr-input-accept). Значение по умолчанию — **null**.
+- `constraints.accept` — указывает типы файлов, которые отображаются в файловом диалоговом окне браузера. Сведения о допустимых значениях см. в [спецификации HTML5](https://html.spec.whatwg.org/multipage/input.html#attr-input-accept). Значение по умолчанию — **null**.
 - Если `options.multiple` имеет значение **true**, пользователь может выбрать несколько файлов в файловом диалоговом окне браузера. Значение по умолчанию — **false**.
 - Этот элемент поддерживает отправку файлов в двух режимах, которые задаются в параметре `options.uploadMode`. Если указан **file**, выходные данные предоставляют содержимое файла в виде большого двоичного объекта. Если указан **url**, файл передается во временное расположение и выходные данные содержат URL-адрес большого двоичного объекта. Временные большие двоичные объекты очищаются через 24 часа. Значение по умолчанию — **file**.
 - Отправленный файл защищен. Выходной URL-адрес включает в себя [маркер SAS](../storage/common/storage-dotnet-shared-access-signature-part-1.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) для доступа к файлу во время развертывания.
@@ -56,7 +56,7 @@ ms.locfileid: "61044651"
 - Если `options.uploadMode` имеет значение **file**, а `options.openMode` имеет значение **binary**, то выходные данные закодированы в формате Base64.
 - `options.encoding` — указывает кодирование, которое используется при чтении файла. Значение по умолчанию — **UTF-8**, которое используется только если для параметра `options.openMode` задано значение **text**.
 
-## <a name="sample-output"></a>Пример выходных данных
+## <a name="sample-output"></a>Пример полученных результатов
 Если options.multiple имеет значение false и options.uploadMode — file, содержимое файла в выходных данных будет представлено в виде строки JSON:
 
 ```json
@@ -92,6 +92,6 @@ ms.locfileid: "61044651"
 При тестировании определения CreateUiDefinition некоторые браузеры (например, Google Chrome) обрезают ULR-адреса, созданные элементом Microsoft.Common.FileUpload, в консоли браузера. Чтобы скопировать полные URL-адреса, вам может потребоваться щелкнуть правой кнопкой мыши отдельные ссылки.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Общие сведения о создании определений пользовательского интерфейса см. в статье [Начало работы с CreateUiDefinition](create-uidefinition-overview.md).
 * Дополнительные сведения об общих свойствах элементов пользовательского интерфейса см. в статье [Элементы CreateUiDefinition](create-uidefinition-elements.md).

@@ -16,12 +16,12 @@ ms.author: mimart
 ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b3d758b63b56bb84b1cb4e5793731da5eb4f5209
-ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
+ms.openlocfilehash: 6a81ecd855b098ec59c5b6f7761ceebfa7a03fa9
+ms.sourcegitcommit: f2d9d5133ec616857fb5adfb223df01ff0c96d0a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71103875"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71936729"
 ---
 # <a name="enable-remote-access-to-power-bi-mobile-with-azure-ad-application-proxy"></a>Включение удаленного доступа для Power BI Mobile с помощью AD Application Proxy Azure
 
@@ -121,6 +121,8 @@ ms.locfileid: "71103875"
    При настройке приложения для Power BI Mobile **Android**добавьте следующие URI перенаправления типа Public Client (мобильный & Desktop):
    - `urn:ietf:wg:oauth:2.0:oob`
    - `mspbi-adal://com.microsoft.powerbimobile`
+   - `msauth://com.microsoft.powerbim/g79ekQEgXBL5foHfTlO2TPawrbI%3D` 
+   - `msauth://com.microsoft.powerbim/izba1HXNWrSmQ7ZvMXgqeZPtNEU%3D`
 
    > [!IMPORTANT]
    > Для правильной работы приложения необходимо добавить URI перенаправления. Если вы настраиваете приложение как для Power BI Mobile iOS, так и для Android, добавьте следующий универсальный код ресурса (URI) перенаправления типа Public Client (мобильный & Desktop) в список URI `urn:ietf:wg:oauth:2.0:oob`перенаправления, настроенных для iOS:.

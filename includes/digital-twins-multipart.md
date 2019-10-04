@@ -5,15 +5,15 @@ services: digital-twins
 author: kingdomofends
 ms.service: digital-twins
 ms.topic: include
-ms.date: 08/12/2019
+ms.date: 10/02/2019
 ms.author: v-adgera
 ms.custom: include file
-ms.openlocfilehash: f9b1b32775393196a77bef3aa2257f6fb66afdcb
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
-ms.translationtype: MT
+ms.openlocfilehash: 76a05817ae91bb49240e5d72988c776ce67ec1c0
+ms.sourcegitcommit: 15e3bfbde9d0d7ad00b5d186867ec933c60cebe6
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "69012258"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71845475"
 ---
 > [!NOTE]
 > Для составных запросов обычно требуются три компонента:
@@ -26,7 +26,7 @@ ms.locfileid: "69012258"
 >
 > Применяемые **Content-Type** и **Content-Disposition** будут различаться в зависимости от сценария использования.
 
-Составные запросы выполняются программно (с использованием C#), с помощью клиента REST или средства, например [Postman](https://docs.microsoft.com/azure/digital-twins/how-to-configure-postman#multi). Клиентские средства REST могут предоставлять различные уровни поддержки для сложных составных запросов. Параметры конфигурации также могут немного отличаться в зависимости от средства. Проверьте, какое средство лучше всего подходит для вас.
+Составные запросы выполняются программно (с использованием C#), с помощью клиента REST или средства, например [Postman](https://docs.microsoft.com/azure/digital-twins/how-to-configure-postman#make-a-multipart-post-request). Клиентские средства REST могут предоставлять различные уровни поддержки для сложных составных запросов. Параметры конфигурации также могут немного отличаться в зависимости от средства. Проверьте, какое средство лучше всего подходит для вас.
 
 > [!IMPORTANT]
 > Составные запросы к API управления Azure Digital Twins, как правило, состоят из двух частей:

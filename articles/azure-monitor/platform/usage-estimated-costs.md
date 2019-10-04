@@ -9,22 +9,19 @@ ms.date: 04/18/2019
 ms.author: mbullwin
 ms.reviewer: Dale.Koetke
 ms.subservice: ''
-ms.openlocfilehash: 7117e7287f601b306893cb02dc5d7599d7c6224d
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 787618b59cd18dd4c38892ddf0861808211671cb
+ms.sourcegitcommit: f2d9d5133ec616857fb5adfb223df01ff0c96d0a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60453828"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71936622"
 ---
 # <a name="monitoring-usage-and-estimated-costs-in-azure-monitor"></a>Использование мониторинга и ожидаемые затраты в Azure Monitor
 
 > [!NOTE]
-> В этой статье описывается просмотр использования и ожидаемых затрат в различных функциях мониторинга Azure для разных моделей ценообразования.  Дополнительные сведения приведены в статьях ниже.
-> - В статье [Управление затратами на хранение путем регулирования объема и срока хранения данных в Log Analytics](manage-cost-storage.md) описано, как контролировать затраты, изменяя срок хранения данных.
-> - В статье [Анализ использования данных в службе Log Analytics](../../azure-monitor/platform/data-usage.md) описано, как анализировать и оповещать об использовании данных.
-> - В статье [Управление ценами и объемом данных в Application Insights](../../azure-monitor/app/pricing.md) описано, как анализировать использование данных в Application Insights.
-
-[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
+> В этой статье описывается просмотр и оценка затрат на использование нескольких функций мониторинга Azure для различных моделей ценообразования. Связанные статьи по конкретным компонентам Azure Monitor включают:
+> - [Управление использованием и затратами с помощью журналов Azure Monitor](manage-cost-storage.md) описывает управление затратами путем изменения срока хранения данных, а также анализ и оповещение об использовании данных.
+> - [Управление использованием и затратами Application Insights](../../azure-monitor/app/pricing.md) описывает анализ использования данных в Application Insights.
 
 На странице **Usage and estimated costs** (Использование и ожидаемые затраты) в центре мониторинга на портале Azure объясняется, как использовать такие основные функции мониторинга, как [оповещения, метрики и уведомления](https://azure.microsoft.com/pricing/details/monitor/), [Служба анализа журналов Azure](https://azure.microsoft.com/pricing/details/log-analytics/) и [Azure Log Analytics](https://azure.microsoft.com/pricing/details/application-insights/). Для клиентов с тарифными планами, доступными до апреля 2018 года, это также включает использование службы Log Analytics, приобретенной в соответствии с предложением "Анализ и аналитика".
 
@@ -42,9 +39,11 @@ ms.locfileid: "60453828"
 
 ![Снимок экрана: страница использования и ожидаемых затрат на портале — апрель 2018 г.](./media/usage-estimated-costs/003.png)
 
-## <a name="new-pricing-model"></a>Новая модель ценообразования
+## <a name="pricing-model"></a>Модель ценообразования
 
-В апреле 2018 года [была выпущена новая модель ценообразования](https://azure.microsoft.com/blog/introducing-a-new-way-to-purchase-azure-monitoring-services/).  Она обеспечивает удобную для облака ценовую политику, основанную на потреблении. Вы платите только за те ресурсы, которые используете, без обязательств по узлам. Подробные сведения о новой модели ценообразования доступны для [оповещений, метрик, уведомлений](https://azure.microsoft.com/pricing/details/monitor/), [Log Analytics](https://azure.microsoft.com/pricing/details/log-analytics/) и [Application Insights](https://azure.microsoft.com/pricing/details/application-insights/). 
+В апреле 2018 года [была выпущена новая модель ценообразования](https://azure.microsoft.com/blog/introducing-a-new-way-to-purchase-azure-monitoring-services/).  Это позволяет получить удобные в облаке цены на ресурсы на основе потребления (с оплатой по мере использования). Вы платите только за те ресурсы, которые используете, без обязательств по узлам. Подробные сведения о новой модели ценообразования доступны для [оповещений, метрик, уведомлений](https://azure.microsoft.com/pricing/details/monitor/), [Log Analytics](https://azure.microsoft.com/pricing/details/log-analytics/) и [Application Insights](https://azure.microsoft.com/pricing/details/application-insights/). 
+
+Помимо модели с оплатой по мере использования, в сентябре 2019 мы добавили резервирования емкости для Log Analytics, которые позволяют сэкономить до 25% по сравнению с ценой оплаты по мере использования. Цены резервирования емкости позволяют приобрести резервирование, начиная с 100 ГБ в день. При использовании выше уровня резервирования будет взиматься плата по тарифу по мере использования. Дополнительные [сведения](https://azure.microsoft.com/pricing/details/monitor/) о ценах на резервирование емкости.
 
 Для клиентов, подключающихся к Log Analytics или Application Insights после 2 апреля 2018 года, новая модель ценообразования является единственным доступным вариантом. Для клиентов, которые уже использовали эти службы, переход на новую модель ценообразования необязателен.
 
@@ -102,14 +101,13 @@ ms.locfileid: "60453828"
 
 ## <a name="moving-to-the-new-pricing-model"></a>Переход на новую модель ценообразования
 
-Если вы решили внедрить новую модель ценообразования для данной подписки, перейдите к каждому ресурсу Application Insights, откройте **использование и ожидаемые затраты** и убедитесь, что она находится в ценового уровня Basic, а затем перейдите к каждой Log Analytics Рабочая область, открытых **Ценовая** страницы и изменить на **за ГБ (2018 г.)** Ценовая категория. 
+Если вы решили присвоить новую модель ценообразования для конкретной подписки, перейдите к каждому Application Insights ресурсу, откройте сведения **об использовании и оценочной стоимости** и убедитесь, что он находится в ценовой категории "базовый", и перейдите в каждую log Analytics рабочую область, чтобы открыть все  **Страница ценовая** Категория и изменение ценовой категории **за гб (2018)** . 
 
 > [!NOTE]
-> Требование, что все ресурсы Application Insights и рабочих областей Log Analytics в рамках данной подписки внедрить последнюю модель ценообразования теперь были удалены, обеспечивающую большую гибкость работы, так и упрощенную конфигурацию. 
+> Требование о том, что все Application Insights ресурсы и Log Analytics рабочие области в рамках данной подписки применяют новейшую модель ценообразования, теперь была удалена, что позволяет повысить гибкость и упростить настройку. 
 
 ## <a name="automate-moving-to-the-new-pricing-model"></a>Автоматизация перехода на новую модель ценообразования
 
-Как отмечалось выше, больше не требуется переместить все ресурсы для мониторинга в подписке на новую модель ценообразования в то же время и, следовательно ``migratetonewpricingmodel`` действия больше не будет иметь эффекта. Теперь можно перемещать ресурсы Application Insights и рабочие области Log Analytics отдельно в новые ценовые категории.  
+Как отмечалось выше, больше не требуется одновременное перемещение всех ресурсов мониторинга в подписке на новую модель ценообразования. Таким образом, действие ``migratetonewpricingmodel`` больше не будет оказывать никакого влияния. Теперь вы можете перемещать Application Insights ресурсы и Log Analytics рабочие области отдельно в самые новые ценовые категории.  
 
-Автоматизация этого изменения описана для Application Insights с использованием [набора AzureRmApplicationInsightsPricingPlan](https://docs.microsoft.com/powershell/module/azurerm.applicationinsights/set-azurermapplicationinsightspricingplan) с ``-PricingPlan "Basic"`` и Log Analytics с помощью [Set-AzureRmOperationalInsightsWorkspace](https://docs.microsoft.com/powershell/module/AzureRM.OperationalInsights/Set-AzureRmOperationalInsightsWorkspace) с ``-sku "PerGB2018"``. 
-
+Автоматизация этого изменения описана Application Insights использовании [Set-азурермаппликатионинсигхтсприЦингплан](https://docs.microsoft.com/powershell/module/azurerm.applicationinsights/set-azurermapplicationinsightspricingplan) с ``-PricingPlan "Basic"`` и log Analytics с помощью [Set-AzureRmOperationalInsightsWorkspace](https://docs.microsoft.com/powershell/module/AzureRM.OperationalInsights/Set-AzureRmOperationalInsightsWorkspace) с ``-sku "PerGB2018"``. 

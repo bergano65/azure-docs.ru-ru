@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 06/28/2018
 ms.author: cynthn
-ms.openlocfilehash: c394b013b057a78e99cafc0adde9727d0a75a87c
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: effe1169fb531abd3fe8a206f2baf83380fcd28f
+ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70091825"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71828399"
 ---
 # <a name="mount-azure-file-storage-on-linux-vms-using-smb"></a>Подключение хранилища файлов Azure на виртуальных машинах Linux с помощью протокола SMB
 
@@ -41,7 +41,7 @@ az group create --name myResourceGroup --location eastus
 
 ## <a name="create-a-storage-account"></a>Создать учетную запись хранения
 
-Создайте учетную запись хранения в созданной вами группе ресурсов с помощью команды [az storage account create](/cli/azure/storage/account). В этом примере создается учетная запись хранения с именем *mySTORAGEACCT\<Random Number >* и в переменной **STORAGEACCT**помещается имя этой учетной записи хранения. Имена учетных записей хранения должны быть уникальными. Для этого используйте команду `$RANDOM`, которая добавляет к нему номер.
+Создайте учетную запись хранения в созданной вами группе ресурсов с помощью команды [az storage account create](/cli/azure/storage/account). В этом примере создается учетная запись хранения с именем *mySTORAGEACCT @ no__t-1random number >* и в переменной **STORAGEACCT**помещается имя этой учетной записи хранения. Имена учетных записей хранения должны быть уникальными. Для этого используйте команду `$RANDOM`, которая добавляет к нему номер.
 
 ```bash
 STORAGEACCT=$(az storage account create \
@@ -115,5 +115,5 @@ sudo mount -t cifs //$STORAGEACCT.file.core.windows.net/myshare /mnt/MyAzureFile
 
 - [Настройка виртуальной машины Linux во время создания с помощь cloud-init](using-cloud-init.md)
 - [Добавление диска к виртуальной машине Linux](add-disk.md)
-- [Шифрование дисков на виртуальной машине Linux с помощью интерфейса командной строки Azure](encrypt-disks.md)
+- [Шифрование дисков Azure для виртуальных машин Linux](disk-encryption-overview.md)
 

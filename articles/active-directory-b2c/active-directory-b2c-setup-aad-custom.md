@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 09/13/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 205809c34eb64255af511f316f138be1efd9983b
-ms.sourcegitcommit: 9fba13cdfce9d03d202ada4a764e574a51691dcd
+ms.openlocfilehash: 2aa2ed6fe4d8218737c42bb3d76084c5d677623f
+ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71315065"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71826948"
 ---
 # <a name="set-up-sign-in-with-an-azure-active-directory-account-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка входа в Azure Active Directory B2C с помощью учетной записи Azure Active Directory с использованием пользовательских политик
 
@@ -58,7 +58,7 @@ ms.locfileid: "71315065"
 1. В разделе **политики**выберите **инфраструктура процедур идентификации**.
 1. Выберите **ключи политики** и нажмите кнопку **Добавить**.
 1. Для пункта **Параметры** выберите `Manual`.
-1. Введите **имя** ключа политики. Например, `ContosoAppSecret`.  Префикс `B2C_1A_` добавляется автоматически к имени ключа, когда он создается, поэтому его ссылка в XML-коде в следующем разделе — *B2C_1A_ContosoAppSecret*.
+1. Введите **имя** ключа политики. Например, `ContosoAppSecret`.  Префикс `B2C_1A_` автоматически добавляется к имени ключа при его создании, поэтому его ссылка в XML-коде в следующем разделе — *B2C_1A_ContosoAppSecret*.
 1. В качестве **секрета**введите секрет клиента, записанный ранее.
 1. Для параметра **Использование ключа** выберите `Signature`.
 1. Нажмите кнопку **Создать**.
@@ -178,6 +178,8 @@ ms.locfileid: "71315065"
 1. Сохраните файл *TrustFrameworkExtensions.xml* и повторно отправьте его для проверки.
 
 ## <a name="create-an-azure-ad-b2c-application"></a>Создание приложения Azure AD B2C
+
+Связь с Azure AD B2C происходит через приложение, регистрируемое в клиенте B2C. В этом разделе перечислены необязательные действия, которые можно выполнить, чтобы создать тестовое приложение, если вы его еще не создали.
 
 [!INCLUDE [active-directory-b2c-appreg-idp](../../includes/active-directory-b2c-appreg-idp.md)]
 

@@ -7,12 +7,12 @@ author: vhorne
 ms.service: application-gateway
 ms.date: 6/18/2019
 ms.author: victorh
-ms.openlocfilehash: 9c04f805cf410d2306eda76c84a201a67b022b84
-ms.sourcegitcommit: a52f17307cc36640426dac20b92136a163c799d0
+ms.openlocfilehash: 154317e558c2c9a22f569f569684cced467900d5
+ms.sourcegitcommit: f2d9d5133ec616857fb5adfb223df01ff0c96d0a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68716624"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71937464"
 ---
 # <a name="custom-rules-for-web-application-firewall-v2"></a>Настраиваемые правила для брандмауэра веб-приложения версии 2
 
@@ -37,7 +37,7 @@ ms.locfileid: "68716624"
 
 Разрешить и заблокировать трафик просто с помощью настраиваемых правил. Например, можно заблокировать весь трафик, поступающий из диапазона IP-адресов. Можно сделать еще одно правило, разрешающее трафик, если запрос поступает из конкретного браузера.
 
-Чтобы разрешить что-либо, убедитесь `-Action` , что параметр имеет значение **allow**. Чтобы заблокировать что-либо, убедитесь `-Action` , что параметр имеет значение **Block**.
+Чтобы разрешить что-либо, убедитесь, что параметр `-Action` имеет значение **allow**. Чтобы заблокировать что-либо, убедитесь, что параметр `-Action` имеет значение **Block**.
 
 ```azurepowershell
 $AllowRule = New-AzApplicationGatewayFirewallCustomRule `
@@ -55,7 +55,7 @@ $BlockRule = New-AzApplicationGatewayFirewallCustomRule `
    -Action Block
 ```
 
-Предыдущий `$BlockRule` параметр сопоставляется со следующим пользовательским правилом в Azure Resource Manager:
+Предыдущий `$BlockRule` сопоставляется со следующим пользовательским правилом в Azure Resource Manager:
 
 ```json
 "customRules": [
@@ -96,8 +96,8 @@ $BlockRule = New-AzApplicationGatewayFirewallCustomRule `
 
 ### <a name="priority-required"></a>Priority [обязательный]
 
-- Определяет порядок, в котором оцениваются правила. Чем ниже значение, тем выше оценка правила.
-— Должно быть уникальным среди всех настраиваемых правил. Правило с приоритетом 100 будет оцениваться перед правилом с приоритетом 200.
+- Определяет порядок, в котором оцениваются правила. Чем ниже значение, тем выше оценка правила. Допустимый диапазон — от 1-100. 
+- Должно быть уникальным среди всех настраиваемых правил. Правило с приоритетом 40 будет оцениваться перед правилом с приоритетом 80.
 
 ### <a name="rule-type-required"></a>Тип правила [обязательный]
 
@@ -132,7 +132,7 @@ $BlockRule = New-AzApplicationGatewayFirewallCustomRule `
 - LessThanOrEqual;
 - GreaterThanOrEqual;
 - Начинается с
-- EndsWith
+- endsWith
 - Регулярное выражение
 
 ### <a name="negate-condition-optional"></a>Условие отрицания [необязательно]

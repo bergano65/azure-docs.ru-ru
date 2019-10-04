@@ -6,15 +6,15 @@ manager: alinast
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 08/09/2019
+ms.date: 10/01/2019
 ms.author: v-adgera
 ms.custom: seodec18
-ms.openlocfilehash: 61c09435606612377781fb382d2d31144e96b07b
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
-ms.translationtype: MT
+ms.openlocfilehash: 35bc5a4532f040aeb464a91b14adcb540ccc113a
+ms.sourcegitcommit: 15e3bfbde9d0d7ad00b5d186867ec933c60cebe6
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68965947"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71845477"
 ---
 # <a name="add-blobs-to-objects-in-azure-digital-twins"></a>Добавление больших двоичных объектов к объектам в Azure Digital Twins
 
@@ -36,7 +36,7 @@ Azure Digital Twins поддерживает присоединение боль
 
 Ниже приведены четыре основные схемы JSON:
 
-[![Схемы JSON](media/how-to-add-blobs/blob-models-img.png)](media/how-to-add-blobs/blob-models-img.png#lightbox)
+[схемы ![JSON](media/how-to-add-blobs/blob-models-img.png)](media/how-to-add-blobs/blob-models-img.png#lightbox)
 
 Метаданные большого двоичного объекта JSON соответствуют следующей модели:
 
@@ -51,7 +51,7 @@ Azure Digital Twins поддерживает присоединение боль
   }
 ```
 
-| Атрибут | Тип | Описание |
+| Атрибут | Type | Описание |
 | --- | --- | --- |
 | **parentId** | String | Родительская сущность, с которой связывается большой двоичный объект (пространства, устройства или пользователи) |
 | **name** |String | Понятное имя большого двоичного объекта |
@@ -69,8 +69,6 @@ Azure Digital Twins поддерживает присоединение боль
 [!INCLUDE [Digital Twins Swagger](../../includes/digital-twins-swagger.md)]
 
 Сведения об использовании справочной документации см. в статье [Использование Swagger с Digital Twins](./how-to-use-swagger.md).
-
-<div id="blobModel"></div>
 
 ### <a name="blobs-response-data"></a>Данные ответа большого двоичного объекта
 
@@ -108,7 +106,7 @@ Azure Digital Twins поддерживает присоединение боль
 }
 ```
 
-| Атрибут | Тип | Описание |
+| Атрибут | Type | Описание |
 | --- | --- | --- |
 | **id** | String | Уникальный идентификатор BLOB-объекта. |
 | **name** |String | Понятное имя большого двоичного объекта |
@@ -183,15 +181,14 @@ var response = await httpClient.PostAsync("spaces/blobs", multipartContent);
 
 Наконец, пользователи [cURL](https://curl.haxx.se/) могут выполнять запросы в составной форме таким же образом:
 
-[![BLOB-объекты устройств](media/how-to-add-blobs/curl-img.png)](media/how-to-add-blobs/curl-img.png#lightbox)
+[@no__tные BLOB-объекты 1Device](media/how-to-add-blobs/curl-img.png)](media/how-to-add-blobs/curl-img.png#lightbox)
 
 ```bash
-curl
- -X POST "YOUR_MANAGEMENT_API_URL/spaces/blobs"
- -H "Authorization: Bearer YOUR_TOKEN"
- -H "Accept: application/json"
- -H "Content-Type: multipart/form-data"
- -F "meta={\"ParentId\":\"YOUR_SPACE_ID\",\"Name\":\"My CURL Blob\",\"Type\":\"Map\",\"SubType\":\"GenericMap\",\"Description\":\"A well chosen description\",\"Sharing\":\"None\"};type=application/json"
+curl -X POST "YOUR_MANAGEMENT_API_URL/spaces/blobs" \
+ -H "Authorization: Bearer YOUR_TOKEN" \
+ -H "Accept: application/json" \
+ -H "Content-Type: multipart/form-data" \
+ -F "meta={\"ParentId\":\"YOUR_SPACE_ID\",\"Name\":\"My CURL Blob\",\"Type\":\"Map\",\"SubType\":\"GenericMap\",\"Description\":\"A well chosen description\",\"Sharing\":\"None\"};type=application/json" \
  -F "text=PATH_TO_FILE;type=text/plain"
 ```
 
@@ -211,7 +208,7 @@ curl
 
 Большие двоичные объекты можно подключать к устройствам. На следующем изображении представлена справочная документация по Swagger для ваших API управления. На нем указаны конечные точки API, связанные с устройством, для использования больших двоичных объектов и любые требуемые параметры пути, которые можно передать в них.
 
-[![BLOB-объекты устройств](media/how-to-add-blobs/blobs-device-api-img.png)](media/how-to-add-blobs/blobs-device-api-img.png#lightbox)
+[@no__tные BLOB-объекты 1Device](media/how-to-add-blobs/blobs-device-api-img.png)](media/how-to-add-blobs/blobs-device-api-img.png#lightbox)
 
 Например, для обновления или создания большого двоичного объекта, а затем подключения объекта к устройству выполняется аутентифицированный запрос HTTP PATCH к:
 
@@ -223,13 +220,13 @@ YOUR_MANAGEMENT_API_URL/devices/blobs/YOUR_BLOB_ID
 | --- | --- |
 | *YOUR_BLOB_ID* | Идентификатор требуемого большого двоичного объекта |
 
-Успешно выполненные запросы возвращают объект JSON, как [было описано ранее](#blobModel).
+Успешно выполненные запросы возвращают объект JSON, как [было описано ранее](#blobs-response-data).
 
 ### <a name="spaces"></a>Пространства
 
 Большие двоичные объекты можно также подключать к пространствам. На представленном ниже рисунке перечислены все конечные точки API пространства, отвечающие за обработку больших двоичных объектов. Кроме того, указаны разные параметры пути, которые можно передать в эти конечные точки.
 
-[![Пространство BLOB-объектов](media/how-to-add-blobs/blobs-space-api-img.png)](media/how-to-add-blobs/blobs-space-api-img.png#lightbox)
+[@no__tные BLOB-объекты 1Space](media/how-to-add-blobs/blobs-space-api-img.png)](media/how-to-add-blobs/blobs-space-api-img.png#lightbox)
 
 Например, для возврата больших двоичных объектов, присоединенных к пространству, выполняется аутентифицированный запрос HTTP GET к:
 
@@ -241,7 +238,7 @@ YOUR_MANAGEMENT_API_URL/spaces/blobs/YOUR_BLOB_ID
 | --- | --- |
 | *YOUR_BLOB_ID* | Идентификатор требуемого большого двоичного объекта |
 
-Успешно выполненные запросы возвращают объект JSON, как [было описано ранее](#blobModel).
+Успешно выполненные запросы возвращают объект JSON, как [было описано ранее](#blobs-response-data).
 
 Запрос PATCH к той же конечной точке обновляет описание метаданных и создает версии большого двоичного объекта. HTTP-запрос выполняется с использованием метода PATCH вместе с любыми необходимыми метаданными и составными данными.
 
@@ -249,7 +246,7 @@ YOUR_MANAGEMENT_API_URL/spaces/blobs/YOUR_BLOB_ID
 
 Большие двоичные объекты можно подключить к моделям пользователя (например, чтобы связать изображение профиля). На представленном ниже рисунке показаны соответствующие конечные точки API для пользователей и любые необходимые параметры пути, такие как `id`:
 
-[![Пользовательские BLOB-объекты](media/how-to-add-blobs/blobs-users-api-img.png)](media/how-to-add-blobs/blobs-users-api-img.png#lightbox)
+[@no__tные BLOB-объекты 1User](media/how-to-add-blobs/blobs-users-api-img.png)](media/how-to-add-blobs/blobs-users-api-img.png#lightbox)
 
 Например, для получения большого двоичного объекта, подключенного к пользователю, выполняется аутентифицированный запрос HTTP GET (с необходимыми данными формы) к:
 
@@ -261,7 +258,7 @@ YOUR_MANAGEMENT_API_URL/users/blobs/YOUR_BLOB_ID
 | --- | --- |
 | *YOUR_BLOB_ID* | Идентификатор требуемого большого двоичного объекта |
 
-Успешно выполненные запросы возвращают объект JSON, как [было описано ранее](#blobModel).
+Успешно выполненные запросы возвращают объект JSON, как [было описано ранее](#blobs-response-data).
 
 ## <a name="common-errors"></a>Распространенные ошибки
 

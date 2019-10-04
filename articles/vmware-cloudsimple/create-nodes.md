@@ -8,18 +8,18 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 5806198968d98fea4c5cbf8731358ca4041f0935
-ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
+ms.openlocfilehash: eb033425d18b472c9da1a2d6a1bb6f166702905e
+ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69972874"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71828184"
 ---
 # <a name="provision-nodes-for-azure-vmware-solution-by-cloudsimple"></a>Подготавливаете узлы для решения VMware для Azure с помощью Клаудсимпле
 
 Подготавливайте узлы в портал Azure. Затем можно настроить емкость с оплатой по мере использования для среды частного облака Клаудсимпле.
 
-## <a name="sign-in-to-azure"></a>Войдите в Azure
+## <a name="sign-in-to-azure"></a>Вход в Azure
 
 Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
 
@@ -40,7 +40,7 @@ ms.locfileid: "69972874"
 7. Введите префикс для обозначения узлов.
 8. Выберите расположение ресурсов узла.
 9. Выберите выделенное расположение для размещения ресурсов узла.
-10. Выберите тип узла. Можно выбрать [параметр CS28 или CS36](cloudsimple-node.md). Последний вариант включает максимальный объем вычислений и объем памяти.
+10. Выберите [тип узла](cloudsimple-node.md).
 11. Выберите число узлов для инициализации.
 12. Выберите **Review + Create** (Просмотреть и создать).
 13. Проверьте параметры. Чтобы изменить параметры, нажмите кнопку **назад**.

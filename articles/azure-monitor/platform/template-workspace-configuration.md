@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 07/11/2019
 ms.author: magoedte
-ms.openlocfilehash: 3ac5d5d31bb54ce87859a6eec52dbe5948864d4c
-ms.sourcegitcommit: aaa82f3797d548c324f375b5aad5d54cb03c7288
+ms.openlocfilehash: 810ecbd4421eec8e8e809b429270601a0c94d623
+ms.sourcegitcommit: 15e3bfbde9d0d7ad00b5d186867ec933c60cebe6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70147333"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71840900"
 ---
 # <a name="manage-log-analytics-workspace-using-azure-resource-manager-templates"></a>Управление рабочей областью Log Analytics с помощью шаблонов Azure Resource Manager
 
@@ -47,7 +47,7 @@ ms.locfileid: "70147333"
 | Resource | Тип ресурса | Версия API |
 |:---|:---|:---|
 | Рабочая область   | рабочие области    | 2017-03-15-preview |
-| Поиск      | savedSearches | 2015-03-20 |
+| Найти      | savedSearches | 2015-03-20 |
 | Источник данных | datasources   | 2015-11-01-preview |
 | Решение    | решения     | 2015-11-01-preview |
 
@@ -121,7 +121,7 @@ ms.locfileid: "70147333"
 
 2. Отредактируйте шаблон с учетом ваших требований. Просмотрите справочник по [шаблону Microsoft.OperationalInsights/workspaces](https://docs.microsoft.com/azure/templates/microsoft.operationalinsights/workspaces) с описанием поддерживаемых свойств и значений. 
 3. Сохраните этот файл как **deploylaworkspacetemplate.json** в локальной папке.
-4. Теперь вы можете развернуть этот шаблон. Для создания рабочей области можно использовать PowerShell или командную строку, указав имя рабочей области и расположение в составе команды.
+4. Теперь вы можете развернуть этот шаблон. Для создания рабочей области можно использовать PowerShell или командную строку, указав имя рабочей области и расположение в составе команды. Имя рабочей области должно быть глобально уникальным во всех подписках Azure.
 
    * Для PowerShell используйте следующие команды из папки с шаблоном.
    

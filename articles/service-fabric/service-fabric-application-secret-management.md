@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 01/04/2019
 ms.author: vturecek
-ms.openlocfilehash: d151dbf20e68a2152e9d886a74e51786bb8fbfa6
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 9854ad7118684e1a5e57b0809d733d812ad64176
+ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60614485"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71828839"
 ---
 # <a name="manage-encrypted-secrets-in-service-fabric-applications"></a>Управление зашифрованными секретами в приложениях Service Fabric
 В этом руководстве описаны шаги по управлению секретами в приложении Service Fabric. Секретом может считаться любая конфиденциальная информации, например строка подключения к хранилищу, пароль или другое значение, которое не должно обрабатываться в виде обычного текста.
@@ -31,13 +31,13 @@ ms.locfileid: "60614485"
 
 ## <a name="set-up-an-encryption-certificate-and-encrypt-secrets"></a>Настройка шифрования секретов и сертификата шифрования
 Настройка сертификата шифрования и его использование для шифрования секретов отличается в Windows и Linux.
-* [Set up an encryption certificate and encrypt secrets on Windows clusters][secret-management-windows-specific-link] (Настройка шифрование секретов и сертификата шифрования в кластерах Windows).
-* [Set up an encryption certificate and encrypt secrets on Linux clusters][secret-management-linux-specific-link] (Настройка шифрование секретов и сертификата шифрования в кластерах Linux).
+* [Настройка сертификата шифрования и шифрование секретов в кластерах Windows.][secret-management-windows-specific-link]
+* [Настройте сертификат шифрования и Зашифруйте секреты в кластерах Linux.][secret-management-linux-specific-link]
 
 ## <a name="specify-encrypted-secrets-in-an-application"></a>Указание зашифрованных секретов в приложении
-Предыдущий шаг описывает, как зашифровать секрет с помощью сертификата и создать строку в формате base-64 для использования в приложении. Эта строка в формате base-64 может быть указана как зашифрованный [параметр][parameters-link] в файле Settings.xml службы или как зашифрованная [переменная среды][environment-variables-link] в ServiceManifest.xml службы.
+Предыдущий шаг описывает, как зашифровать секрет с помощью сертификата и создать строку в формате base-64 для использования в приложении. Эту строку в кодировке Base-64 можно указать как зашифрованный [параметр][parameters-link] в файле Settings. XML службы или в виде зашифрованной [переменной среды][environment-variables-link] в ServiceManifest. XML службы.
 
-Укажите зашифрованный [параметр][parameters-link] в файле конфигурации Settings.xml службы. При этом атрибуту `IsEncrypted` необходимо задать значение `true`.
+Укажите зашифрованный [параметр][parameters-link] в файле конфигурации Settings. XML вашей службы с атрибутом `IsEncrypted`, для которого задано значение `true`:
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -47,13 +47,24 @@ ms.locfileid: "60614485"
   </Section>
 </Settings>
 ```
-Укажите зашифрованную [переменную среды][environment-variables-link] в файле ServiceManifest.xml службы. При этом атрибуту `Type` необходимо задать значение `Encrypted`.
+Укажите зашифрованную [переменную среды][environment-variables-link] в файле ServiceManifest. XML вашей службы с атрибутом `Type`, имеющим значение `Encrypted`:
 ```xml
 <CodePackage Name="Code" Version="1.0.0">
   <EnvironmentVariables>
     <EnvironmentVariable Name="MyEnvVariable" Type="Encrypted" Value="I6jCCAeYCAxgFhBXABFxzAt ... gNBRyeWFXl2VydmjZNwJIM=" />
   </EnvironmentVariables>
 </CodePackage>
+```
+
+Секреты также можно добавить в приложение Service Fabric, указав сертификат в манифесте приложения. Добавьте элемент **секретсцертификате** в **ApplicationManifest. XML** и включите отпечаток требуемого сертификата.
+
+```xml
+<ApplicationManifest … >
+  ...
+  <Certificates>
+    <SecretsCertificate Name="MyCert" X509FindType="FindByThumbprint" X509FindValue="[YourCertThumbrint]"/>
+  </Certificates>
+</ApplicationManifest>
 ```
 
 ### <a name="inject-application-secrets-into-application-instances"></a>Включение секретов приложений в экземпляры приложений
@@ -119,7 +130,7 @@ await fabricClient.ApplicationManager.CreateApplicationAsync(applicationDescript
 ```
 
 ## <a name="decrypt-encrypted-secrets-from-service-code"></a>Расшифровка зашифрованных секретов из кода службы
-Интерфейсы API для доступа к [параметрам] [parameters-link] и [переменным среды][environment-variables-link] позволяют легко расшифровать зашифрованные значения. Поскольку зашифрованная строка содержит сведения о сертификате, использованном для шифрования, то указывать сертификат вручную не требуется. Необходимо только установить сертификат на узле, на котором выполняется данная служба.
+Интерфейсы API для доступа к [параметрам][parameters-link] и [переменным среды][environment-variables-link] позволяют легко расшифровывать зашифрованные значения. Поскольку зашифрованная строка содержит сведения о сертификате, использованном для шифрования, то указывать сертификат вручную не требуется. Необходимо только установить сертификат на узле, на котором выполняется данная служба.
 
 ```csharp
 // Access decrypted parameters from Settings.xml
@@ -135,7 +146,7 @@ if (MySecretIsEncrypted)
 string MyEnvVariable = Environment.GetEnvironmentVariable("MyEnvVariable");
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Ознакомьтесь с дополнительными сведениями о [безопасности приложений и служб](service-fabric-application-and-service-security.md).
 
 <!-- Links -->

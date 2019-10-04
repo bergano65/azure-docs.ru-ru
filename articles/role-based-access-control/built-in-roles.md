@@ -11,16 +11,16 @@ ms.devlang: ''
 ms.topic: reference
 ms.tgt_pltfrm: ''
 ms.workload: identity
-ms.date: 08/27/2019
+ms.date: 09/25/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro
-ms.openlocfilehash: c2066502a6a9d742c347e08d528a2490a390bb7e
-ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
+ms.openlocfilehash: 65a049070806fd702497d50236e9d541de2e8b1a
+ms.sourcegitcommit: 15e3bfbde9d0d7ad00b5d186867ec933c60cebe6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2019
-ms.locfileid: "71672649"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71842294"
 ---
 # <a name="built-in-roles-for-azure-resources"></a>Встроенные роли для ресурсов Azure
 
@@ -60,6 +60,9 @@ ms.locfileid: "71672649"
 | [Роль администратора кластера в Службе Azure Kubernetes](#azure-kubernetes-service-cluster-admin-role) | Список действий, выполненных с помощью учетных данных администратора кластера. |
 | [Роль пользователя кластера в Службе Azure Kubernetes](#azure-kubernetes-service-cluster-user-role) | Список действий, выполненных с помощью учетных данных пользователя кластера. |
 | [Azure Maps модуль чтения данных (Предварительная версия)](#azure-maps-data-reader-preview) | Предоставляет доступ для чтения данных, связанных с картой, из учетной записи Azure Maps. |
+| [Участник Sentinel Azure](#azure-sentinel-contributor) | Участник Sentinel Azure |
+| [Читатель маркеров Azure](#azure-sentinel-reader) | Читатель маркеров Azure |
+| [Ответчик Sentinel Azure](#azure-sentinel-responder) | Ответчик Sentinel Azure |
 | [Владелец данных служебной шины Azure](#azure-service-bus-data-owner) | Обеспечивает полный доступ к ресурсам служебной шины Azure. |
 | [Приемник данных служебной шины Azure](#azure-service-bus-data-receiver) | Разрешает получать доступ к ресурсам служебной шины Azure. |
 | [Отправитель данных служебной шины Azure](#azure-service-bus-data-sender) | Разрешает отправку доступа к ресурсам служебной шины Azure. |
@@ -178,7 +181,7 @@ ms.locfileid: "71672649"
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Описание** | Позволяет управлять всем, кроме доступа к ресурсам. |
+> | **Описание** | Позволяет управлять всем, кроме предоставления доступа к ресурсам. |
 > | **Id** | b24988ac-6180-42a0-ab88-20f7382dd24c |
 > | **Действия** |  |
 > | * | Создание ресурсов всех типов и управление ими |
@@ -645,6 +648,89 @@ ms.locfileid: "71672649"
 > | *Нет* |  |
 > | **Действия с данными** |  |
 > | Microsoft.Maps/accounts/data/read | Предоставляет доступ на чтение данных учетных записей карт. |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+## <a name="azure-sentinel-contributor"></a>Участник Sentinel Azure
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Участник Sentinel Azure |
+> | **Id** | ab8e14d6-4a74-4a29-9ba8-549422addade |
+> | **Действия** |  |
+> | Microsoft. Секуритинсигхтс/* |  |
+> | Microsoft.OperationalInsights/workspaces/analytics/query/action | Поиск с помощью нового механизма. |
+> | Microsoft.OperationalInsights/workspaces/read | Возвращает существующую рабочую область. |
+> | Microsoft.OperationalInsights/workspaces/savedSearches/* |  |
+> | Microsoft.OperationsManagement/solutions/read | Возвращает существующее решение OMS. |
+> | Microsoft.OperationalInsights/workspaces/query/read | Выполнение запросов к данным в рабочей области |
+> | Microsoft. OperationalInsights/рабочие области/источники данных/чтение | Возвращает источники данных в рабочей области. |
+> | Microsoft. Insights/книги/* |  |
+> | Microsoft.Authorization/*/read | Чтение ролей и назначений ролей |
+> | Microsoft.Insights/alertRules/* | Создание правил оповещения Insights и управление ими |
+> | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
+> | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
+> | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+## <a name="azure-sentinel-reader"></a>Читатель маркеров Azure
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Читатель маркеров Azure |
+> | **Id** | 8d289c81-5878-46d4-8554-54e1e3d8b5cb |
+> | **Действия** |  |
+> | Microsoft. Секуритинсигхтс/*/Реад |  |
+> | Microsoft.OperationalInsights/workspaces/analytics/query/action | Поиск с помощью нового механизма. |
+> | Microsoft.OperationalInsights/workspaces/read | Возвращает существующую рабочую область. |
+> | Microsoft.OperationalInsights/workspaces/savedSearches/read | Возвращает сохраненный поисковый запрос. |
+> | Microsoft.OperationsManagement/solutions/read | Возвращает существующее решение OMS. |
+> | Microsoft.OperationalInsights/workspaces/query/read | Выполнение запросов к данным в рабочей области |
+> | Microsoft. OperationalInsights/рабочие области/источники данных/чтение | Возвращает источники данных в рабочей области. |
+> | Microsoft. Insights/книги/чтение | Чтение книги |
+> | Microsoft.Authorization/*/read | Чтение ролей и назначений ролей |
+> | Microsoft.Insights/alertRules/* | Создание правил оповещения Insights и управление ими |
+> | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
+> | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
+> | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+## <a name="azure-sentinel-responder"></a>Ответчик Sentinel Azure
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Ответчик Sentinel Azure |
+> | **Id** | 3e150937-b8fe-4cfb-8069-0eaf05ecd056 |
+> | **Действия** |  |
+> | Microsoft. Секуритинсигхтс/*/Реад |  |
+> | Microsoft. Секуритинсигхтс/cases/* |  |
+> | Microsoft.OperationalInsights/workspaces/analytics/query/action | Поиск с помощью нового механизма. |
+> | Microsoft.OperationalInsights/workspaces/read | Возвращает существующую рабочую область. |
+> | Microsoft. OperationalInsights/рабочие области/источники данных/чтение | Возвращает источники данных в рабочей области. |
+> | Microsoft.OperationalInsights/workspaces/savedSearches/read | Возвращает сохраненный поисковый запрос. |
+> | Microsoft.OperationsManagement/solutions/read | Возвращает существующее решение OMS. |
+> | Microsoft.OperationalInsights/workspaces/query/read | Выполнение запросов к данным в рабочей области |
+> | Microsoft. OperationalInsights/рабочие области/источники данных/чтение | Возвращает источники данных в рабочей области. |
+> | Microsoft. Insights/книги/чтение | Чтение книги |
+> | Microsoft.Authorization/*/read | Чтение ролей и назначений ролей |
+> | Microsoft.Insights/alertRules/* | Создание правил оповещения Insights и управление ими |
+> | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
+> | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
+> | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
 > | **NotDataActions** |  |
 > | *Нет* |  |
 
@@ -1767,7 +1853,7 @@ ms.locfileid: "71672649"
 > | Microsoft.Web/customApis/* | Создает настраиваемый API и управляет им. |
 > | Microsoft.Web/serverFarms/join/action |  |
 > | Microsoft.Web/serverFarms/read | Возвращает свойства плана службы приложений. |
-> | Microsoft.Web/sites/functions/listSecrets/action | Выводит список секретов для функций веб-приложений. |
+> | Microsoft.Web/sites/functions/listSecrets/action | Перечисление секретов функций. |
 > | **NotActions** |  |
 > | *Нет* |  |
 > | **Действия с данными** |  |
@@ -2278,6 +2364,7 @@ ms.locfileid: "71672649"
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/recoveryPoints/read | Считывает точки восстановления для репликации. |
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/repairReplication/action | Исправляет репликацию. |
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/reProtect/action | Повторно защищает защищенный элемент. |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/switchprotection/action | Переключает контейнер защиты. |
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/testFailover/action | Тестовая отработка отказа |
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/testFailoverCleanup/action | Тестирует очистку отработки отказа. |
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/unplannedFailover/action | Отработка отказа |

@@ -14,15 +14,15 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 10/30/2018
 ms.author: cynthn
-ms.openlocfilehash: 6a92ee6fe53b1676c493c54510dd0f6c4b4b5dc9
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: bee4b108d2747e8c386abe41dc61b5b19aecf4f5
+ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70079568"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71828687"
 ---
 # <a name="encrypt-virtual-disks-on-a-windows-vm"></a>Шифрование виртуальных дисков на виртуальной машине Windows
-Для улучшения уровня безопасности и соответствия требованиям виртуальной машины содержание виртуальных дисков в Azure можно зашифровать. Диски, зашифрованные с использованием криптографических ключей, защищенных в Azure Key Vault. Вы будете управлять этими криптографическими ключами и проводить аудит их использования. В этой статье описывается, как с помощью Azure PowerShell шифровать диски на виртуальной машине Windows. Вы также можете [зашифровать виртуальную машину Linux с помощью Azure CLI](../linux/encrypt-disks.md).
+Для улучшения уровня безопасности и соответствия требованиям виртуальной машины содержание виртуальных дисков в Azure можно зашифровать. Диски, зашифрованные с использованием криптографических ключей, защищенных в Azure Key Vault. Вы будете управлять этими криптографическими ключами и проводить аудит их использования. В этой статье описывается, как с помощью Azure PowerShell шифровать диски на виртуальной машине Windows. Вы также можете [зашифровать виртуальную машину Linux с помощью Azure CLI](../linux/disk-encryption-overview.md).
 
 [!INCLUDE [updated-for-az.md](../../../includes/updated-for-az.md)]
 

@@ -12,12 +12,12 @@ author: wenjiefu
 ms.author: wenjiefu
 ms.reviewer: sawinark
 manager: craigg
-ms.openlocfilehash: 8e800ec8a7a2dd52e052547efa51deaad8c9bb45
-ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
+ms.openlocfilehash: ec5a3ab0a2498e7d9bb24bed1bc0a37194e38e9e
+ms.sourcegitcommit: f2d9d5133ec616857fb5adfb223df01ff0c96d0a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71104920"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71936969"
 ---
 # <a name="troubleshoot-package-execution-in-the-ssis-integration-runtime"></a>Устранение неполадок при выполнении пакетов в среде выполнения интеграции SSIS
 
@@ -121,12 +121,17 @@ ms.locfileid: "71104920"
 ### <a name="error-message-microsoft-ole-db-provider-for-analysis-services-hresult-0x80004005-description-com-error-com-error-mscorlib-exception-has-been-thrown-by-the-target-of-an-invocation"></a>Сообщение об ошибке: "Поставщик OLE DB Майкрософт для Analysis Services. Состав Описание 0x80004005: " Ошибка COM: Ошибка COM: mscorlib; Исключение вызвано целевым объектом вызова "
 
 Одна из возможных причин заключается в том, что имя пользователя или пароль с включенной многофакторной идентификацией Azure настроены для проверки подлинности Azure Analysis Services. Эта проверка подлинности не поддерживается в среде выполнения интеграции SSIS. Попробуйте использовать субъект-службу для проверки подлинности Azure Analysis Services:
+
 1. Подготовьте субъект-службу, как описано в статье [Автоматизация с помощью субъектов-служб](https://docs.microsoft.com/azure/analysis-services/analysis-services-service-principal).
 2. В диспетчере соединений настройте **использовать указанные имя пользователя и пароль**: задайте **AppID** в качестве имени пользователя и **clientSecret** в качестве пароля.
 
 ### <a name="error-message-adonet-source-has-failed-to-acquire-the-connection-guid-with-the-following-error-message-login-failed-for-user-nt-authorityanonymous-logon-when-using-a-managed-identity"></a>Сообщение об ошибке: "Источнику ADO.NET не удалось установить подключение {идентификатор GUID} со следующим сообщением об ошибке: Пользователю "NT AUTHORITY\ANONYMOUS logon» LOGON" не удалось войти в систему при использовании управляемого удостоверения
 
 Убедитесь, что метод проверки подлинности диспетчера соединений не настроен как **Active Directory проверки подлинности** с помощью пароля, если параметр *Коннектусингманажедидентити* имеет **значение true**. Вместо этого можно настроить **проверку подлинности SQL** , что не учитывается, если задан параметр *коннектусингманажедидентити* .
+
+### <a name="error-message-0xc020801f-at--odata-source--cannot-acquire-a-managed-connection-from-the-run-time-connection-manager"></a>Сообщение об ошибке: "0xC020801F в..., источник OData [...]: Не удается получить управляемое соединение от диспетчера соединений времени выполнения "
+
+Одна из возможных причин заключается в том, что протокол TLS не включен в среде выполнения интеграции SSIS, который необходим для источника OData. Включить TLS в среде выполнения интеграции служб SSIS можно с помощью команды настроить установку. Дополнительные сведения см. в [подсоединении Project Online OData из служб SSIS](https://docs.microsoft.com/office365/troubleshoot/cant-connect-project-online-odata-from-ssis) и [настройке программы установки для среды выполнения интеграции Azure SSIS](how-to-configure-azure-ssis-ir-custom-setup.md).
 
 ### <a name="error-message-request-staging-task-with-operation-guid--fail-since-error-failed-to-dispatch-staging-operation-with-error-message-microsoftsqlserverintegrationservicesaisagentcoreaisagentexception-failed-to-load-data-proxy"></a>Сообщение об ошибке: "Запрос промежуточной задачи с идентификатором GUID операции... сбой с ошибкой: Не удалось подготовить промежуточную операцию, сообщение об ошибке: Microsoft. SqlServer. IntegrationServices. Аисаженткоре. Аисажентексцептион: Не удалось загрузить прокси-сервер данных ".
 

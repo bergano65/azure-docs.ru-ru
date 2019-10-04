@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 09/10/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 83379cc194f23ebff977babc7124a7bc90f4bc60
-ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
+ms.openlocfilehash: 77f0b196777ae0f2ff0b870eac0a01b11854190b
+ms.sourcegitcommit: f2d9d5133ec616857fb5adfb223df01ff0c96d0a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71063446"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71936814"
 ---
 # <a name="string-claims-transformations"></a>Преобразования утверждений строк
 
@@ -30,7 +30,7 @@ ms.locfileid: "71063446"
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | inputClaim1 | string | Тип первого утверждения, которое необходимо сравнить. |
-| inputClaim | inputClaim2 | string | Тип второго утверждения, которое необходимо сравнить. |
+| InputClaim | inputClaim2 | string | Тип второго утверждения, которое необходимо сравнить. |
 | InputParameter | stringComparison | string | сравнение строк, одно из значений: Ordinal, OrdinalIgnoreCase. |
 
 Преобразование строк **AssertStringClaimsAreEqual** всегда выполняется из [технического профиля проверки](validation-technical-profile.md), вызываемого с помощью [самоподтвержденного технического профиля](self-asserted-technical-profile.md). Метаданные самоподтвержденного технического профиля **UserMessageIfClaimsTransformationStringsAreNotEqual** управляют сообщением об ошибке, представляемым пользователю.
@@ -155,8 +155,8 @@ ms.locfileid: "71063446"
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | inputClaim1 | string | Тип первого утверждения, которое необходимо сравнить. |
-| inputClaim | inputClaim2 | string | Тип второго утверждения, которое необходимо сравнить. |
-| InputParameter | оператор | string | Возможные значения: `EQUAL` или `NOT EQUAL`. |
+| InputClaim | inputClaim2 | string | Тип второго утверждения, которое необходимо сравнить. |
+| InputParameter | operator | string | Возможные значения: `EQUAL` или `NOT EQUAL`. |
 | InputParameter | ignoreCase | boolean | Указывает, следует ли в этом сравнении игнорировать регистр сравниваемых строк. |
 | OutputClaim | OutputClaim | boolean | Параметр ClaimType, который создается после вызова этого преобразования утверждений. |
 
@@ -196,7 +196,7 @@ ms.locfileid: "71063446"
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | inputClaim1 | string | Тип утверждения, которое необходимо сравнить. |
-| InputParameter | оператор | string | Возможные значения: `EQUAL` или `NOT EQUAL`. |
+| InputParameter | operator | string | Возможные значения: `EQUAL` или `NOT EQUAL`. |
 | InputParameter | compareTo | string | сравнение строк, одно из значений: Ordinal, OrdinalIgnoreCase. |
 | InputParameter | ignoreCase | boolean | Указывает, следует ли в этом сравнении игнорировать регистр сравниваемых строк. |
 | OutputClaim | OutputClaim | boolean | Параметр ClaimType, который создается после вызова этого преобразования утверждений. |

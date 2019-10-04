@@ -11,12 +11,12 @@ ms.author: jovanpop
 ms.reviewer: sstein, carlrab, bonova
 ms.date: 08/12/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: 94e9a484afe42f8621380fa685f8bc9faeb894d3
-ms.sourcegitcommit: 80da36d4df7991628fd5a3df4b3aa92d55cc5ade
-ms.translationtype: HT
+ms.openlocfilehash: 9796a4efdacef04390705607defb7b5cdd462886
+ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/02/2019
-ms.locfileid: "71816052"
+ms.locfileid: "71828732"
 ---
 # <a name="managed-instance-t-sql-differences-limitations-and-known-issues"></a>Различия в T-SQL управляемого экземпляра, ограничения и известные проблемы
 
@@ -334,7 +334,7 @@ WITH PRIVATE KEY (<private_key_options>)
 
 Управляемый экземпляр не может получить доступ к файловым ресурсам и папкам Windows, поэтому применяются следующие ограничения.
 
-- Поддерживается только `CREATE ASSEMBLY FROM BINARY`. См. статью [CREATE ASSEMBLY (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-assembly-transact-sql). 
+- Поддерживается только `CREATE ASSEMBLY FROM BINARY`. См. раздел [Создание АССЕМ артефакт из двоичного файла](https://docs.microsoft.com/sql/t-sql/statements/create-assembly-transact-sql). 
 - `CREATE ASSEMBLY FROM FILE` не поддерживается. См. статью [CREATE ASSEMBLY (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-assembly-transact-sql).
 - `ALTER ASSEMBLY` не может ссылаться на файлы. См. статью [ALTER ASSEMBLY (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-assembly-transact-sql).
 
@@ -548,7 +548,7 @@ WITH PRIVATE KEY (<private_key_options>)
 
 **Дата** Октябрь 2019
 
-SQL Server и Управляемый экземпляр [не позволяют пользователю удалять непустые файлы](https://docs.microsoft.com/sql/relational-databases/databases/delete-data-or-log-files-from-a-database.md#Prerequisites). Если попытаться удалить непустой файл данных с помощью инструкции `ALTER DATABASE REMOVE FILE`, то ошибка `Msg 5042 – The file '<file_name>' cannot be removed because it is not empty` не будет немедленно возвращена. Управляемый экземпляр будет пытаться удалить файл, и операция завершится ошибкой после 30 мин с `Internal server error`.
+SQL Server и Управляемый экземпляр [не позволяют пользователю удалять непустые файлы](https://docs.microsoft.com/sql/relational-databases/databases/delete-data-or-log-files-from-a-database#Prerequisites). Если попытаться удалить непустой файл данных с помощью инструкции `ALTER DATABASE REMOVE FILE`, то ошибка `Msg 5042 – The file '<file_name>' cannot be removed because it is not empty` не будет немедленно возвращена. Управляемый экземпляр будет пытаться удалить файл, и операция завершится ошибкой после 30 мин с `Internal server error`.
 
 **Возможное решение**: Удалите содержимое файла с помощью команды `DBCC SHRINKFILE (N'<file_name>', EMPTYFILE)`. Если это единственный файл в файловой группе, необходимо удалить данные из таблицы или секции, связанной с этой файловой группой, перед сжатием файла и при необходимости загрузить эти данные в другую таблицу или секцию.
 

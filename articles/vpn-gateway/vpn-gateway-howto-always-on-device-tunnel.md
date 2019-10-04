@@ -5,14 +5,14 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: conceptual
-ms.date: 07/09/2019
+ms.date: 10/02/2019
 ms.author: cherylmc
-ms.openlocfilehash: 98d8c2f6870be16f3eb92219fc3d02f988390a41
-ms.sourcegitcommit: a8b638322d494739f7463db4f0ea465496c689c6
+ms.openlocfilehash: bc2ec2b952b4f0c6e61fc4953559fa882edfff09
+ms.sourcegitcommit: 15e3bfbde9d0d7ad00b5d186867ec933c60cebe6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68295468"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71841140"
 ---
 # <a name="configure-an-always-on-vpn-device-tunnel"></a>Настройка туннеля Always On VPN для устройства
 
@@ -32,12 +32,7 @@ Always On VPN-подключения включают два типа тунне
 
 Настройка VPN-шлюза для использования IKEv2 и аутентификации на основе сертификата с помощью этой [статьи "точка — сеть](vpn-gateway-howto-point-to-site-resource-manager-portal.md)".
 
-## <a name="2-configure-the-user-tunnel"></a>2. Настройка пользовательского туннеля
-
-1. Установите клиентские сертификаты в клиенте Windows 10, как показано в [статье клиент VPN типа "точка — сеть](point-to-site-how-to-vpn-client-install-azure-cert.md)". Сертификат должен находиться в хранилище текущего пользователя
-2. Настройте Always On VPN-клиент с помощью PowerShell, SCCM или Intune, используя [эти инструкции](https://docs.microsoft.com/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/vpn-deploy-client-vpn-connections).
-
-## <a name="3-configure-the-device-tunnel"></a>3. Настройка туннеля устройства
+## <a name="2-configure-the-device-tunnel"></a>2. Настройка туннеля устройства
 
 Чтобы успешно установить туннель устройства, необходимо соблюдение следующих требований.
 

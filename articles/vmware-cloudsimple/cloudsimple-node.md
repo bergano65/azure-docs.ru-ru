@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 58af69b401400c7b2f663a91de8bf38bc9a296a3
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: 729b832c068dcd401fa6e9d2f4af9193d3859a83
+ms.sourcegitcommit: 15e3bfbde9d0d7ad00b5d186867ec933c60cebe6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69877702"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71845552"
 ---
 # <a name="cloudsimple-nodes-overview"></a>Обзор узлов Клаудсимпле
 
@@ -36,13 +36,14 @@ ms.locfileid: "69877702"
 
 Для покупок или резервирования доступны следующие типы узлов.
 
-| номер SKU | CS28-node | CS36-node |
-|-----|-------------|-------------|
-| ЦП | 2 2,2 ГГц, 28 ядер (56 HT) | 2 ядра с частотой 2.3 ГГц, 36 ядер (72 HT) |
-| ОЗУ | 256 ГБ | 512 ГБ |
-| Диск кэша |  1,6-ТБ NVMe | 3,2-ТБ NVMe |
-| Диск емкости | 5,625 ТБ необработанных | 11,25 ТБ необработанных |
-| тип хранилища; | All Flash | All Flash |
+| номер SKU           | CS28-node                 | CS36-node                 | CS36m-node                |
+|---------------|-----------------------------|-----------------------------|-----------------------------|
+| Район        | Восточная часть США, западная часть США            | Восточная часть США, западная часть США            | Западная Европа                 |
+| ЦП           | 2 2,2 ГГц, 28 ядер (56 HT) | 2 ядра с частотой 2.3 ГГц, 36 ядер (72 HT) | 2 ядра с частотой 2.3 ГГц, 36 ядер (72 HT) |
+| ОЗУ           | 256 ГБ                      | 512 ГБ                      | 576 ГБ                      |
+| Диск кэша    | 1,6-ТБ NVMe                 | 3,2-ТБ NVMe                 | 3,2-ТБ NVMe                 |
+| Диск емкости | 5,625 ТБ необработанных                | 11,25 ТБ необработанных                | 15,36 ТБ необработанных                |
+| тип хранилища;  | All Flash                   | All Flash                   | All Flash                   |
 
 ## <a name="limits"></a>Ограничения
 

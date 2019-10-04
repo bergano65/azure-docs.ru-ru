@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: e5cea36760746eaa63451c9e9955368c71ba4472
-ms.sourcegitcommit: 80da36d4df7991628fd5a3df4b3aa92d55cc5ade
+ms.openlocfilehash: 1bd84a40236b54d799efcf04eae707aea9c6c945
+ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/02/2019
-ms.locfileid: "71816125"
+ms.locfileid: "71828946"
 ---
 # <a name="quickstart---configure-a-private-cloud-environment"></a>Краткое руководство. Настройка окружения частного облака
 
@@ -42,7 +42,7 @@ ms.locfileid: "71816125"
 
 5. На портале Клаудсимпле укажите имя частного облака.
 6. Выберите **Расположение** частного облака.
-7. Выберите **тип узла**в соответствии с тем, что вы приобрели в Azure. Можно выбрать [параметр CS28 или CS36](cloudsimple-node.md#vmware-solution-by-cloudsimple-nodes-sku). Последний вариант включает максимальный объем вычислений и объем памяти.
+7. Выберите **тип узла**в соответствии с тем, что вы приобрели в Azure.
 8. Укажите **количество узлов**.  Для создания частного облака требуется по крайней мере три узла.
 
     ![Создание частного облака — основные сведения](media/create-private-cloud-basic-info.png)

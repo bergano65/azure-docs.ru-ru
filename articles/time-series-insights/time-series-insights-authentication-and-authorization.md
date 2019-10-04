@@ -12,12 +12,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 09/23/2019
 ms.custom: seodec18
-ms.openlocfilehash: 88734b0ee05f5193da89f33e1639e4e7a187f225
-ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
+ms.openlocfilehash: 9cee148b6cb17f18c06e98158ac21638cedf519c
+ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71264661"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71828756"
 ---
 # <a name="authentication-and-authorization-for-azure-time-series-insights-api"></a>Проверка подлинности и авторизация для API Azure Time Series Insights
 
@@ -107,7 +107,7 @@ ms.locfileid: "71264661"
 
 ### <a name="authentication"></a>Проверка подлинности
 
-Для выполнения запросов с проверкой подлинности к [API-интерфейсам "аналитика временных рядов](https://docs.microsoft.com/rest/api/time-series-insights/)" необходимо передать допустимый токен носителя OAuth 2,0 в [заголовок авторизации](/rest/api/apimanagement/authorizationserver/createorupdate) с помощью клиента произвольного выбора (POST, JavaScript C#). 
+Для выполнения запросов с проверкой подлинности к [API-интерфейсам "аналитика временных рядов](https://docs.microsoft.com/rest/api/time-series-insights/)" необходимо передать допустимый токен носителя OAuth 2,0 в [заголовок авторизации](/rest/api/apimanagement/2019-01-01/authorizationserver/createorupdate) с помощью клиента произвольного выбора (POST, JavaScript C#). 
 
 > [!IMPORTANT]
 > Маркер должен быть полностью `https://api.timeseries.azure.com/` выдан ресурсу (также известен как "аудитория" маркера).

@@ -9,12 +9,12 @@ manager: barbkess
 ms.topic: conceptual
 ms.date: 09/05/2019
 ms.author: mbaldwin
-ms.openlocfilehash: c4ddda164a2d8a4e2a4d106c2d7bb8bfcbae3690
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.openlocfilehash: 0e35efc0da929136a889b1611a48a60671ed2af8
+ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70886349"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71828331"
 ---
 # <a name="security-controls-for-windows-virtual-machines"></a>Элементы управления безопасностью для Виртуальные машины Windows
 
@@ -22,9 +22,9 @@ ms.locfileid: "70886349"
 
 [!INCLUDE [Security controls header](../../../includes/security-controls-header.md)]
 
-## <a name="network"></a>Network
+## <a name="network"></a>Сеть
 
-| Управление безопасностью | Да или нет | Примечания |
+| Управление безопасностью | Да/нет | Примечания |
 |---|---|--|
 | Поддержка конечных точек службы| Да | |
 | Поддержка внедрения виртуальной сети| Да | |
@@ -33,24 +33,24 @@ ms.locfileid: "70886349"
 
 ## <a name="monitoring--logging"></a>Мониторинг & ведения журнала
 
-| Управление безопасностью | Да или нет | Примечания|
+| Управление безопасностью | Да/нет | Примечания|
 |---|---|--|
-| Поддержка мониторинга Azure (log Analytics, App Insights и т. д.)| Да | См. статью [мониторинг и обновление виртуальной машины Linux в Azure](/azure/virtual-machines/linux/tutorial-monitoring) и [Отслеживание и обновление виртуальной машины Windows в Azure](/azure/virtual-machines/windows/tutorial-monitoring). |
+| Поддержка мониторинга Azure (log Analytics, App Insights и т. д.)| Да | [Мониторинг и обновление виртуальной машины Windows в Azure](tutorial-monitoring.md). |
 | Ведение журнала и аудит в плоскости управления и управления| Да |  |
 | Ведение журнала и аудит в плоскости данных | Нет |  |
 
 ## <a name="identity"></a>идентификации
 
-| Управление безопасностью | Да или нет | Примечания|
+| Управление безопасностью | Да/нет | Примечания|
 |---|---|--|
 | Проверка подлинности| Да |  |
 | Authorization| Да |  |
 
 ## <a name="data-protection"></a>Защита данных
 
-| Управление безопасностью | Да или нет | Примечания |
+| Управление безопасностью | Да/нет | Примечания |
 |---|---|--|
-| Шифрование неактивных на стороне сервера: Ключи, управляемые корпорацией Майкрософт | Да | Узнайте, [как зашифровать виртуальную машину Linux в Azure](/azure/virtual-machines/linux/encrypt-disks) и зашифровать [Виртуальные диски на виртуальной машине Windows](/azure/virtual-machines/windows/encrypt-disks). |
+| Шифрование неактивных на стороне сервера: Ключи, управляемые корпорацией Майкрософт | Да | См. раздел [шифрование виртуальных дисков на виртуальной машине Windows](/azure/virtual-machines/windows/encrypt-disks). |
 | Шифрование при передаче (например, шифрование ExpressRoute, Шифрование виртуальной сети и шифрование виртуальной сети)| Да | Виртуальные машины Azure поддерживают шифрование [ExpressRoute](/azure/expressroute) и виртуальной сети. См. раздел [Шифрование транзитного пути в виртуальных машинах](/azure/security/security-azure-encryption-overview#in-transit-encryption-in-vms). |
 | Шифрование неактивных на стороне сервера: ключи, управляемые клиентом (BYOK) | Да | Ключи, управляемые клиентом, являются поддерживаемым сценарием шифрования Azure. см. раздел [Общие сведения о шифровании Azure](/azure/security/security-azure-encryption-overview#in-transit-encryption-in-vms).|
 | Шифрование на уровне столбцов (службы данных Azure)| Н/Д | |
@@ -60,7 +60,7 @@ ms.locfileid: "70886349"
 
 ## <a name="configuration-management"></a>Управление конфигурацией
 
-| Управление безопасностью | Да или нет | Примечания|
+| Управление безопасностью | Да/нет | Примечания|
 |---|---|--|
 | Поддержка управления конфигурацией (управление версиями конфигураций и т. д.)| Да |  | 
 

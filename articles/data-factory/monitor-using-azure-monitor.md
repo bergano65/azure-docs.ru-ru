@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 12/11/2018
-ms.openlocfilehash: 2a707eda6a7e32a95666dd70e196c8da3c3b7834
-ms.sourcegitcommit: 80da36d4df7991628fd5a3df4b3aa92d55cc5ade
+ms.openlocfilehash: 6f5472e42b7ef43123698f01ee76fb0e691aa45e
+ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/02/2019
-ms.locfileid: "71815944"
+ms.locfileid: "71827806"
 ---
 # <a name="alert-and-monitor-data-factories-by-using-azure-monitor"></a>Предупреждения и мониторинг фабрик данных с помощью Azure Monitor
 
@@ -472,7 +472,7 @@ Log Analytics наследует схему от Monitor со следующим
 * В режиме _диагностики Azure_ журналы диагностики передаются в таблицу _AzureDiagnostics_
 
 > [!NOTE]
-> Так как таблица журналов Azure не может содержать более 500 столбцов, мы настоятельно рекомендуем выбрать режим для конкретного ресурса. Дополнительные сведения см. в разделе [log Analytics известные ограничения](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-logs-stream-log-store#known-limitation-column-limit-in-azurediagnostics).
+> Так как таблица журналов Azure не может содержать более 500 столбцов, мы настоятельно рекомендуем выбрать режим для конкретного ресурса. Дополнительные сведения см. в разделе [log Analytics известные ограничения](../azure-monitor/platform/resource-logs-collect-workspace.md#column-limit-in-azurediagnostics).
 
 ### <a name="install-azure-data-factory-analytics-from-azure-marketplace"></a>Установка пакета "Аналитика фабрики данных Azure" из Azure Marketplace
 

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 09/13/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: fdad2f2dfec6f13fe4a40641db3417f29273349c
-ms.sourcegitcommit: 9fba13cdfce9d03d202ada4a764e574a51691dcd
+ms.openlocfilehash: a0b9166d24bea28bb3271d719e8ffe0b24d71381
+ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71315047"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71826925"
 ---
 # <a name="set-up-sign-in-for-multi-tenant-azure-active-directory-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка входа для мультитенантного Azure Active Directory с помощью пользовательских политик в Azure Active Directory B2C
 
@@ -58,7 +58,7 @@ ms.locfileid: "71315047"
 1. В разделе **политики**выберите **инфраструктура процедур идентификации**.
 1. Выберите **ключи политики** и нажмите кнопку **Добавить**.
 1. Для пункта **Параметры** выберите `Manual`.
-1. Введите **имя** ключа политики. Например, `AADAppSecret`.  Префикс `B2C_1A_` добавляется автоматически к имени ключа, когда он создается, поэтому его ссылка в XML-коде в следующем разделе — *B2C_1A_AADAppSecret*.
+1. Введите **имя** ключа политики. Например, `AADAppSecret`.  Префикс `B2C_1A_` автоматически добавляется к имени ключа при его создании, поэтому его ссылка в XML-коде в следующем разделе — *B2C_1A_AADAppSecret*.
 1. В качестве **секрета**введите секрет клиента, записанный ранее.
 1. Для параметра **Использование ключа** выберите `Signature`.
 1. Нажмите кнопку **Создать**.
@@ -187,6 +187,8 @@ ms.locfileid: "71315047"
 3. Сохраните файл *TrustFrameworkExtensions.xml* и повторно отправьте его для проверки.
 
 ## <a name="create-an-azure-ad-b2c-application"></a>Создание приложения Azure AD B2C
+
+Связь с Azure AD B2C происходит через приложение, регистрируемое в клиенте B2C. В этом разделе перечислены необязательные действия, которые можно выполнить, чтобы создать тестовое приложение, если вы его еще не создали.
 
 [!INCLUDE [active-directory-b2c-appreg-idp](../../includes/active-directory-b2c-appreg-idp.md)]
 

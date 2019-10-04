@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 09/10/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 077915705c242805d3709b5d52d445288fa5336a
-ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
+ms.openlocfilehash: 13c3f3aaf54bc3fb8ef656b5c1ce227fa70cee0b
+ms.sourcegitcommit: f2d9d5133ec616857fb5adfb223df01ff0c96d0a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71064352"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71936786"
 ---
 # <a name="date-claims-transformations"></a>Преобразования утверждений даты
 
@@ -92,7 +92,7 @@ ms.locfileid: "71064352"
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | InputClaim | date | ClaimType, который необходимо преобразовать. |
-| outputClaim | outputClaim | dateTime | ClaimType, который создается после вызова ClaimsTransformation. |
+| OutputClaim | OutputClaim | dateTime | ClaimType, который создается после вызова ClaimsTransformation. |
 
 В следующем примере показано преобразование утверждения `dateOfBirth` (тип данных date) в другое утверждение `dateOfBirthWithTime` (тип данных dateTime).
 
@@ -120,7 +120,7 @@ ms.locfileid: "71064352"
 
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| outputClaim | currentDateTime | dateTime | ClaimType, который создается после вызова ClaimsTransformation. |
+| OutputClaim | currentDateTime | dateTime | ClaimType, который создается после вызова ClaimsTransformation. |
 
 ```XML
 <ClaimsTransformation Id="GetSystemDateTime" TransformationMethod="GetCurrentDateTime">
@@ -143,9 +143,9 @@ ms.locfileid: "71064352"
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | firstDateTime | dateTime | Первое значение dateTime для сравнения со вторым значением dateTime. При значении NULL возникает исключение. |
 | InputClaim | secondDateTime | dateTime | Второе значение dateTime для сравнения с первым значением dateTime. Значение NULL обрабатывается как текущее значение dateTime. |
-| InputParameter | оператор | string | Одно из следующих значений: "same", "later than" или "earlier than" ("равно", "позже" или "раньше"). |
+| InputParameter | operator | string | Одно из следующих значений: "same", "later than" или "earlier than" ("равно", "позже" или "раньше"). |
 | InputParameter | timeSpanInSeconds | int | Добавление временного диапазона к первым дате и времени. |
-| outputClaim | Результат | boolean | ClaimType, который создается после вызова ClaimsTransformation. |
+| OutputClaim | Результат | boolean | ClaimType, который создается после вызова ClaimsTransformation. |
 
 Это преобразование позволяет определить, являются ли два утверждения ClaimType равными, больше (позже) или меньше (раньше) друг друга. Например, вы можете сохранить время, когда пользователь последний раз принимал ваши условия предоставления услуг (TOS). Через 3 месяца вы можете попросить пользователя принять TOS еще раз.
 Чтобы выполнить преобразование утверждений, необходимо сначала получить текущее значение даты и времени, а также время, когда пользователь последний раз принимал TOS.

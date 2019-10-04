@@ -8,26 +8,26 @@ ms.topic: include
 ms.date: 08/16/2019
 ms.author: alinast
 ms.custom: include file
-ms.openlocfilehash: ef6b395aeff18a63f52f58e2477679b48a19b002
-ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
-ms.translationtype: MT
+ms.openlocfilehash: fcb4b3d54e1e62a7f197f2f499e2b176bb707fd8
+ms.sourcegitcommit: 15e3bfbde9d0d7ad00b5d186867ec933c60cebe6
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69624740"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71843826"
 ---
 1. На [портале Azure](https://portal.azure.com) выберите **Azure Active Directory** на панели слева, а затем откройте область **Свойства**. Скопируйте **идентификатор каталога** во временный файл. Это значение будет использоваться для настройки примера приложения в следующем разделе.
 
-    ![Идентификатор каталога Azure Active Directory](./media/digital-twins-permissions-legacy/aad-app-reg-tenant.png)
+    [Идентификатор каталога ![Azure Active Directory](./media/digital-twins-permissions-legacy/aad-app-reg-tenant.png)](./media/digital-twins-permissions-legacy/aad-app-reg-tenant.png#lightbox)
 
 1. В [портал Azure](https://portal.azure.com)откройте **Azure Active Directory** в левой области, а затем откройте панель **Регистрация приложений (устаревшие)** . Нажмите кнопку **Регистрация нового приложения** .
 
 1. Задайте понятное имя для этой регистрации приложения в поле **Имя**. В поле **Тип приложения** укажите **Собственное**, а в поле **URL-адрес перенаправления** — `https://microsoft.com`. Нажмите кнопку **Создать**.
 
-    ![Область создания](./media/digital-twins-permissions-legacy/aad-app-reg-create.png)
+    [![Область создания](./media/digital-twins-permissions-legacy/aad-app-reg-create.png)](./media/digital-twins-permissions-legacy/aad-app-reg-create.png#lightbox)
 
 1.  Откройте зарегистрированное приложение и скопируйте значение в поле **Идентификатор приложения** во временный файл. Это значение является идентификатором приложения Azure Active Directory. Этот идентификатор будет использоваться для настройки примера приложения в следующих разделах.
 
-    ![Идентификатор приложения Azure Active Directory](./media/digital-twins-permissions-legacy/aad-app-reg-app-id.png)
+    [![Идентификатор приложения Azure Active Directory](./media/digital-twins-permissions-legacy/aad-app-reg-app-id.png)](./media/digital-twins-permissions-legacy/aad-app-reg-app-id.png#lightbox)
 
 1. Откройте панель регистрации своего приложения. Выберите **Параметры** > **Необходимые разрешения**, а затем:
 
@@ -43,6 +43,6 @@ ms.locfileid: "69624740"
 
    f. В области **необходимые разрешения** нажмите кнопку **предоставить разрешения** и примите подтверждение, которое появляется. Если разрешение не предоставлено для этого API, обратитесь к администратору.
 
-      ![Область необходимых разрешений](./media/digital-twins-permissions-legacy/aad-app-req-permissions.png)
+      [панель разрешений ![Required](./media/digital-twins-permissions-legacy/aad-app-req-permissions.png)](./media/digital-twins-permissions-legacy/aad-app-req-permissions.png#lightbox)
 
  

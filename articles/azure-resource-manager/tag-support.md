@@ -4,14 +4,14 @@ description: В этой статье описываются типы ресур
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: conceptual
-ms.date: 09/13/2019
+ms.date: 10/03/2019
 ms.author: tomfitz
-ms.openlocfilehash: 7b8d3de3eaa9cdbb945879f2acc283d74c8b4e82
-ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
+ms.openlocfilehash: 06028224379bd42e1e0ea21b684ce443abd5992a
+ms.sourcegitcommit: f2d9d5133ec616857fb5adfb223df01ff0c96d0a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70996830"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71937016"
 ---
 # <a name="tag-support-for-azure-resources"></a>Поддержка тегов для ресурсов Azure
 В этой статье приводятся сведения о поддержке типом ресурса функции [тегов](resource-group-using-tags.md). Столбец с подписью **поддерживает теги** . указывает, имеет ли тип ресурса свойство для тега. Столбец с меткой **тег в отчете о затратах** указывает, передает ли этот тип ресурса тег в отчет о затратах.
@@ -40,7 +40,6 @@ ms.locfileid: "70996830"
 > - [Microsoft.Batch](#microsoftbatch)
 > - [Microsoft.Billing](#microsoftbilling)
 > - [Microsoft.BingMaps](#microsoftbingmaps)
-> - [Microsoft.BizTalkServices](#microsoftbiztalkservices)
 > - [Microsoft.Blockchain](#microsoftblockchain)
 > - [Microsoft.Blueprint](#microsoftblueprint)
 > - [Microsoft.BotService](#microsoftbotservice)
@@ -123,6 +122,7 @@ ms.locfileid: "70996830"
 > - [Microsoft.NetApp](#microsoftnetapp)
 > - [Microsoft.Network](#microsoftnetwork)
 > - [Microsoft.NotificationHubs](#microsoftnotificationhubs)
+> - [Microsoft. Обжектсторе](#microsoftobjectstore)
 > - [Microsoft.OffAzure](#microsoftoffazure)
 > - [Microsoft.OperationalInsights](#microsoftoperationalinsights)
 > - [Microsoft.OperationsManagement](#microsoftoperationsmanagement)
@@ -393,6 +393,7 @@ ms.locfileid: "70996830"
 > | Биллингаккаунтс и клиенты | Нет |Нет |
 > | Биллингаккаунтс/Customers/Биллингсубскриптионс | Нет |Нет |
 > | Биллингаккаунтс/Customers/Инитиатетрансфер | Нет |Нет |
+> | Биллингаккаунтс, клиенты и политики | Нет |Нет |
 > | Биллингаккаунтс/Customers/Products | Нет |Нет |
 > | Биллингаккаунтс/Customers/Transactions | Нет |Нет |
 > | Биллингаккаунтс/Customers/Transfers | Нет |Нет |
@@ -440,13 +441,6 @@ ms.locfileid: "70996830"
 > | ------------- | ----------- | ----------- |
 > | mapApis | Да |Да |
 > | updateCommunicationPreference | Нет |Нет |
-
-## <a name="microsoftbiztalkservices"></a>Microsoft.BizTalkServices
-
-> [!div class="mx-tableFixed"]
-> | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
-> | ------------- | ----------- | ----------- |
-> | BizTalk | Да |Да |
 
 ## <a name="microsoftblockchain"></a>Microsoft.Blockchain
 
@@ -542,7 +536,7 @@ ms.locfileid: "70996830"
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
 > | capabilities | Нет |Нет |
-> | domainNames | Да |Да |
+> | domainNames | Нет |Нет |
 > | domainNames/capabilities | Нет |Нет |
 > | domainNames/internalLoadBalancers | Нет |Нет |
 > | domainNames/serviceCertificates | Нет |Нет |
@@ -556,7 +550,7 @@ ms.locfileid: "70996830"
 > | quotas | Нет |Нет |
 > | resourceTypes | Нет |Нет |
 > | validateSubscriptionMoveAvailability | Нет |Нет |
-> | virtualMachines | Да |Да |
+> | virtualMachines | Нет |Нет |
 > | virtualMachines/diagnosticSettings | Нет |Нет |
 > | virtualMachines/metricDefinitions | Нет |Нет |
 > | virtualMachines/metrics | Нет |Нет |
@@ -577,10 +571,10 @@ ms.locfileid: "70996830"
 > | expressRouteCrossConnections | Нет |Нет |
 > | expressRouteCrossConnections/peerings | Нет |Нет |
 > | gatewaySupportedDevices | Нет |Нет |
-> | networkSecurityGroups | Да |Да |
+> | networkSecurityGroups | Нет |Нет |
 > | quotas | Нет |Нет |
-> | reservedIps | Да |Да |
-> | virtualNetworks | Да |Да |
+> | reservedIps | Нет |Нет |
+> | virtualNetworks | Нет |Нет |
 > | virtualNetworks/remoteVirtualNetworkPeeringProxies | Нет |Нет |
 > | virtualNetworks/virtualNetworkPeerings | Нет |Нет |
 
@@ -596,7 +590,7 @@ ms.locfileid: "70996830"
 > | osPlatformImages | Нет |Нет |
 > | publicImages | Нет |Нет |
 > | quotas | Нет |Нет |
-> | storageAccounts | Да |Да |
+> | storageAccounts | Нет |Нет |
 > | storageAccounts/blobServices | Нет |Нет |
 > | storageAccounts/fileServices | Нет |Нет |
 > | storageAccounts/metricDefinitions | Нет |Нет |
@@ -634,10 +628,10 @@ ms.locfileid: "70996830"
 > | дискенкриптионсетс | Да |Да |
 > | диски | Да |Да |
 > | galleries | Да |Да |
-> | коллекции и приложения | Да |Да |
-> | коллекции, приложения и версии | Да |Да |
-> | galleries/images | Да |Да |
-> | galleries/images/versions | Да |Да |
+> | коллекции и приложения | Нет |Нет |
+> | коллекции, приложения и версии | Нет |Нет |
+> | galleries/images | Нет |Нет |
+> | galleries/images/versions | Нет |Нет |
 > | хостграупс | Да |Да |
 > | Хостграупс и узлы | Да |Да |
 > | образы | Да |Да |
@@ -645,13 +639,11 @@ ms.locfileid: "70996830"
 > | restorePointCollections | Да |Да |
 > | restorePointCollections/restorePoints | Нет |Нет |
 > | sharedVMImages | Да |Да |
-> | sharedVMImages/versions | Да |Да |
+> | sharedVMImages/versions | Нет |Нет |
 > | моментальные снимки | Да |Да |
 > | virtualMachines | Да |Да |
 > | virtualMachines/extensions | Да |Да |
 > | virtualMachines/metricDefinitions | Нет |Нет |
-> | virtualMachines/Скриптжобс | Нет |Нет |
-> | virtualMachines/Софтвареупдатедеплойментс | Нет |Нет |
 > | virtualMachineScaleSets | Да |Да |
 > | virtualMachineScaleSets/extensions | Нет |Нет |
 > | virtualMachineScaleSets/networkInterfaces | Нет |Нет |
@@ -919,6 +911,9 @@ ms.locfileid: "70996830"
 > | серверграупс | Да |Да |
 > | серверы | Да |Да |
 > | servers/advisors | Нет |Нет |
+> | серверы и Приватиндпоинтконнектионпроксиес | Нет |Нет |
+> | серверы и Приватиндпоинтконнектионс | Нет |Нет |
+> | серверы и Привателинкресаурцес | Нет |Нет |
 > | servers/queryTexts | Нет |Нет |
 > | servers/recoverableServers | Нет |Нет |
 > | servers/topQueryStatistics | Нет |Нет |
@@ -1199,6 +1194,7 @@ ms.locfileid: "70996830"
 > | clusters/databases | Нет |Нет |
 > | clusters/databases/dataconnections | Нет |Нет |
 > | clusters/databases/eventhubconnections | Нет |Нет |
+> | кластеры/шаредидентитиес | Нет |Нет |
 
 ## <a name="microsoftlabservices"></a>Microsoft.LabServices
 
@@ -1363,11 +1359,13 @@ ms.locfileid: "70996830"
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
 > | нетаппаккаунтс | Да |Да |
+> | Нетаппаккаунтс/БаккупполиЦиес | Да |Да |
 > | Нетаппаккаунтс/КапаЦитипулс | Да |Да |
 > | Нетаппаккаунтс/КапаЦитипулс/тома | Да |Да |
+> | Нетаппаккаунтс/КапаЦитипулс/тома/резервные копии | Нет |Нет |
 > | Нетаппаккаунтс/КапаЦитипулс/Volumes/Маунттаржетс | Да |Да |
 > | Нетаппаккаунтс/КапаЦитипулс/тома/моментальные снимки | Да |Да |
-
+> | Нетаппаккаунтс и хранилища | Нет |Нет |
 ## <a name="microsoftnetwork"></a>Microsoft.Network.
 
 > [!div class="mx-tableFixed"]
@@ -1458,6 +1456,7 @@ ms.locfileid: "70996830"
 > [!NOTE]
 > Для службы "Передняя дверца Azure" можно применять теги при создании ресурса, но обновление или добавление тегов в настоящее время не поддерживается.
 
+
 ## <a name="microsoftnotificationhubs"></a>Microsoft.NotificationHubs
 
 > [!div class="mx-tableFixed"]
@@ -1465,6 +1464,13 @@ ms.locfileid: "70996830"
 > | ------------- | ----------- | ----------- |
 > | пространства имен | Да |Нет |
 > | namespaces/notificationHubs | Да |Нет |
+
+## <a name="microsoftobjectstore"></a>Microsoft. Обжектсторе
+
+> [!div class="mx-tableFixed"]
+> | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
+> | ------------- | ----------- | ----------- |
+> | оснамеспацес | Да |Да |
 
 ## <a name="microsoftoffazure"></a>Microsoft.OffAzure
 
@@ -1614,6 +1620,8 @@ ms.locfileid: "70996830"
 > | ресурсы | Нет |Нет |
 > | — подписки | Нет |Нет |
 > | subscriptions/providers | Нет |Нет |
+> | subscriptions/resourceGroups | Нет |Нет |
+> | subscriptions/resourcegroups/resources | Нет |Нет |
 > | subscriptions/resources | Нет |Нет |
 > | subscriptions/tagnames | Нет |Нет |
 > | subscriptions/tagNames/tagValues | Нет |Нет |
@@ -1680,6 +1688,7 @@ ms.locfileid: "70996830"
 > | securityStatusesSummaries | Нет |Нет |
 > | сервервулнерабилитяссессментс | Нет |Нет |
 > | параметры | Нет |Нет |
+> | подоценка | Нет |Нет |
 > | задачи; | Нет |Нет |
 > | topologies | Нет |Нет |
 > | workspaceSettings | Нет |Нет |

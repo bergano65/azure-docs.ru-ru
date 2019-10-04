@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/28/2019
 ms.author: terrylan
-ms.openlocfilehash: 7b33484084b4ada5aeaf89eb90167658ade15ad8
-ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
+ms.openlocfilehash: 4aca2a4495d4b6c3669982b2e7757b7252d70f6a
+ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69899786"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71828561"
 ---
 # <a name="azure-virtual-machines-security-overview"></a>Общие сведения о безопасности при использовании виртуальных машин Azure
 В этой статье представлен обзор основных функций безопасности Azure, которые можно использовать с виртуальными машинами.
@@ -102,7 +102,7 @@ Azure предлагает антивредоносное ПО таких пос
 Дополнительные сведения
 
 * [Шифрование дисков Azure для виртуальных машин IaaS](/azure/security/azure-security-disk-encryption-overview)
-* [Краткое руководство. Шифрование виртуальной машины IaaS в Windows с помощью Azure PowerShell](../azure-disk-encryption-linux-powershell-quickstart.md)
+* [Краткое руководство. Шифрование виртуальной машины IaaS в Windows с помощью Azure PowerShell](../../virtual-machines/linux/disk-encryption-powershell-quickstart.md)
 
 ## <a name="virtual-machine-backup"></a>Резервное копирование виртуальной машины
 

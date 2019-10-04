@@ -5,14 +5,14 @@ author: msmbaldwin
 ms.service: security
 ms.topic: article
 ms.author: mbaldwin
-ms.date: 03/25/2019
+ms.date: 09/30/2019
 ms.custom: seodec18
-ms.openlocfilehash: bd51e70122a5457c8dcf1bd8f2061fe25943e87f
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 551918373f8292d798980600d6e0d43add55bd18
+ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "71224509"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71828274"
 ---
 # <a name="azure-disk-encryption-prerequisites"></a>Предварительные требования для шифрования дисков Azure
 
@@ -70,6 +70,7 @@ ms.locfileid: "71224509"
 | Ubuntu | 18,04| Диск операционной системы и данных |
 | Ubuntu | 16.04| Диск операционной системы и данных |
 | Ubuntu | 14.04.5</br>[с ядром, оптимизированным для Azure, обновленным до версии 4.15 или более поздней версии](azure-security-disk-encryption-tsg.md#bkmk_Ubuntu14) | Диск операционной системы и данных |
+| RHEL | 7,7 | ОС и диск данных (см. Примечание ниже) |
 | RHEL | 7.6 | ОС и диск данных (см. Примечание ниже) |
 | RHEL | 7.5 | ОС и диск данных (см. Примечание ниже) |
 | RHEL | 7.4 | ОС и диск данных (см. Примечание ниже) |
@@ -77,6 +78,7 @@ ms.locfileid: "71224509"
 | RHEL | 7,2 | ОС и диск данных (см. Примечание ниже) |
 | RHEL | 6,8 | Диск данных (см. Примечание ниже) |
 | RHEL | 6.7 | Диск данных (см. Примечание ниже) |
+| CentOS | 7,7 | Диск операционной системы и данных |
 | CentOS | 7.6 | Диск операционной системы и данных |
 | CentOS | 7.5 | Диск операционной системы и данных |
 | CentOS | 7.4 | Диск операционной системы и данных |
@@ -181,7 +183,7 @@ ms.locfileid: "71224509"
 
 
 ## <a name="prerequisite-workflow-for-key-vault"></a>Необходимый рабочий процесс для Key Vault
-Если вы уже знакомы с предварительными требованиями Key Vault и Azure AD для шифрования дисков Azure, можно использовать [скрипт PowerShell предварительных требований к шифрованию дисков Azure](https://raw.githubusercontent.com/Azure/azure-powershell/master/src/Compute/Compute/Extension/AzureDiskEncryption/Scripts/AzureDiskEncryptionPreRequisiteSetup.ps1 ). Дополнительные сведения об использовании скрипта предварительных требований см. в [кратком руководстве по шифрованию виртуальных машин](azure-disk-encryption-linux-powershell-quickstart.md) и [приложении шифрования дисков Azure](azure-security-disk-encryption-appendix.md#bkmk_prereq-script). 
+Если вы уже знакомы с предварительными требованиями Key Vault и Azure AD для шифрования дисков Azure, можно использовать [скрипт PowerShell предварительных требований к шифрованию дисков Azure](https://raw.githubusercontent.com/Azure/azure-powershell/master/src/Compute/Compute/Extension/AzureDiskEncryption/Scripts/AzureDiskEncryptionPreRequisiteSetup.ps1 ). Дополнительные сведения об использовании скрипта предварительных требований см. в [кратком руководстве по шифрованию виртуальных машин](../virtual-machines/linux/disk-encryption-powershell-quickstart.md) и [приложении шифрования дисков Azure](azure-security-disk-encryption-appendix.md#bkmk_prereq-script). 
 
 1. При необходимости создайте группу ресурсов.
 2. Создать хранилище ключей. 

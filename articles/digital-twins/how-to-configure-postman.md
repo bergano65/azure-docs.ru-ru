@@ -6,14 +6,14 @@ manager: alinast
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 08/21/2019
+ms.date: 09/30/2019
 ms.author: v-adgera
-ms.openlocfilehash: a39663adedfdb9c00c4429f65ec1bd27286cb136
-ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
-ms.translationtype: MT
+ms.openlocfilehash: f04946dffd66dcd44743197a0ca8f0fe21624285
+ms.sourcegitcommit: 15e3bfbde9d0d7ad00b5d186867ec933c60cebe6
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69904297"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71844509"
 ---
 # <a name="how-to-configure-postman-for-azure-digital-twins"></a>Настройка Postman для Azure Digital Twins
 
@@ -35,21 +35,42 @@ ms.locfileid: "69904297"
 
 Настройте приложение Azure AD на использование потока неявного предоставления разрешений OAuth 2.0.
 
-1. Чтобы создать приложение Azure AD, выполните действия, описанные в этом [кратком руководстве](./quickstart-view-occupancy-dotnet.md) . Или создайте [собственное приложение, используя устаревшую колонку AAD](./how-to-use-legacy-aad.md).
+1. Откройте область **Разрешения API** для регистрации приложения. Нажмите кнопку **Add a permission** (Добавить разрешение). В области **Запрос разрешений API** щелкните вкладку **Интерфейсы API, используемые моей организацией**, а затем выполните поиск по запросу
+    
+    1. `Azure Digital Twins`. Выберите API **Azure Digital Twins**.
 
-1. В разделе **разрешения API**выберите **Добавить разрешение**. Затем **Azure Digital двойников** в разделе **API, которые использует Моя организация**. Если найти API не удается, выполните поиск по запросу **Azure Smart Spaces**. Затем выберите **делегированные разрешения**, **Чтение** > чтение **. запись**и разрешение на **Добавление**.
+        [![Поиск API или Azure Digital Twins](../../includes/media/digital-twins-permissions/aad-aap-search-api-dt.png)](../../includes/media/digital-twins-permissions/aad-aap-search-api-dt.png#lightbox)
 
-    [![Добавление API Azure Active Directory регистрации приложений](../../includes/media/digital-twins-permissions/aad-app-req-permissions.png)](../../includes/media/digital-twins-permissions/aad-app-req-permissions.png#lightbox)
+    1. Кроме того, можно выполнить поиск по `Azure Smart Spaces Service`. Выберите API **Azure Smart Spaces Service**.
+
+        [![Поиск API для Azure Smart Spaces](../../includes/media/digital-twins-permissions/aad-app-search-api.png)](../../includes/media/digital-twins-permissions/aad-app-search-api.png#lightbox)
+
+    > [!IMPORTANT]
+    > Имя и идентификатор API Azure AD, которые будут отображаться, зависят от вашего клиента:
+    > * Тестовый клиент и учетные записи клиентов должны искать `Azure Digital Twins`.
+    > * Другие учетные записи Майкрософт должны искать `Azure Smart Spaces Service`.
+
+1. Выбранный API появится как **Azure Digital Twins** в той же области **Запрос разрешений API**. Выберите раскрывающийся список **Read (1)** (Чтение (1)), а затем установите флажок **Read.Write**. Нажмите кнопку **Add permissions** (Добавить разрешения).
+
+    [![Добавление разрешений API](../../includes/media/digital-twins-permissions/aad-app-req-permissions.png)](../../includes/media/digital-twins-permissions/aad-app-req-permissions.png#lightbox)
+
+1. В зависимости от параметров вашей организации вам может потребоваться предпринять дополнительные шаги для предоставления доступа администратора к этому API. Для получения дополнительной информации обратитесь к администратору. Как только доступ администратора будет утвержден, столбец **ADMIN CONSENT REQUIRED** (Требуется согласие администратора) в области **Разрешения API** будет отображать примерно следующее для интерфейсов API:
+
+    [![Добавление разрешений API](../../includes/media/digital-twins-permissions/aad-app-admin-consent.png)](../../includes/media/digital-twins-permissions/aad-app-admin-consent.png#lightbox)
+
 
 1. Выберите **Манифест** , чтобы открыть манифест приложения для приложения. Для *oauth2AllowImplicitFlow* задайте значение `true`.
 
-    [![Azure Active Directory неявный поток](media/how-to-configure-postman/implicit-flow.png)](media/how-to-configure-postman/implicit-flow.png#lightbox)
+    [неявный поток ![Azure Active Directory](media/how-to-configure-postman/implicit-flow.png)](media/how-to-configure-postman/implicit-flow.png#lightbox)
 
 1. В качестве **URL-адреса ответа** укажите `https://www.getpostman.com/oauth2/callback`.
 
-    [![URL-адрес ответа Azure Active Directory](media/how-to-configure-postman/reply-url.png)](media/how-to-configure-postman/reply-url.png#lightbox)
+    [URL-адрес ответа @no__t 1Azure Active Directory](media/how-to-configure-postman/reply-url.png)](media/how-to-configure-postman/reply-url.png#lightbox)
 
 1. Скопируйте и сохраните **идентификатор приложения** Azure AD. Он используется в последующих шагах.
+
+   [![Идентификатор приложения Azure Active Directory](../../includes/media/digital-twins-permissions/aad-app-reg-app-id.png)](../../includes/media//digital-twins-permissions/aad-app-reg-app-id.png#lightbox)
+
 
 ## <a name="obtain-an-oauth-20-token"></a>Получение маркера OAuth 2.0
 
@@ -74,15 +95,15 @@ ms.locfileid: "69904297"
     |---------|---------|
     | Тип предоставления разрешения | `Implicit` |
     | URL-адрес обратного вызова | `https://www.getpostman.com/oauth2/callback` |
-    | URL-адрес аутентификации | Использование **URL-адреса авторизации** из шага 2 |
+    | URL-адрес аутентификации | Используйте **URL-адрес авторизации** из **шага 2** . |
     | Идентификатор клиента | Используйте **идентификатор приложения** для Azure Active Directoryного приложения, созданного или повторно используемого из предыдущего раздела. |
     | `Scope` | Не указывайте |
-    | Область | Не указывайте |
+    | State | Не указывайте |
     | Проверка подлинности клиента | `Send as Basic Auth header` |
 
 1. Теперь клиент должен выглядеть следующим образом.
 
-    [![Пример клиента POST](media/how-to-configure-postman/postman-oauth-token.png)](media/how-to-configure-postman/postman-oauth-token.png#lightbox)
+    [Пример клиента @no__t 1Postman](media/how-to-configure-postman/postman-oauth-token.png)](media/how-to-configure-postman/postman-oauth-token.png#lightbox)
 
 1. Выберите **Request Token** (Токен запроса).
 
@@ -92,21 +113,20 @@ ms.locfileid: "69904297"
   
 1. Прокрутите вниз и выберите **Use Token** (Использовать токен).
 
-<div id="multi"></div>
-
 ## <a name="make-a-multipart-post-request"></a>Создание составного запроса POST
 
 После выполнения предыдущих шагов настройте Postman на выполнение аутентифицированного HTTP-запроса POST, состоящего из нескольких частей.
 
 1. На вкладке **Верхний колонтитул** добавьте ключ заголовка HTTP-запроса **Content-Type** со значением `multipart/mixed`.
 
-   [![Тип содержимого multipart/Mixed](media/how-to-configure-postman/content-type.png)](media/how-to-configure-postman/content-type.png#lightbox)
+   [![Content тип multipart/Mixed](media/how-to-configure-postman/content-type.png)](media/how-to-configure-postman/content-type.png#lightbox)
 
 1. Сериализируйте текстовые данные в файлы. Данные JSON будут сохранены в качестве JSON-файла.
-1. На вкладке **Основной текст** добавьте каждый файл с присвоенным именем **key**, выбрав `file` или `text`.
+1. На вкладке **текст** выберите `form-data`. 
+1. Добавьте каждый файл, назначив имя **ключа** , выбрав `file`.
 1. Далее выберите каждый файл, используя кнопку **Выберите файл**.
 
-   [![Пример клиента POST](media/how-to-configure-postman/form-body.png)](media/how-to-configure-postman/form-body.png#lightbox)
+   [Пример клиента @no__t 1Postman](media/how-to-configure-postman/form-body.png)](media/how-to-configure-postman/form-body.png#lightbox)
 
    >[!NOTE]
    > * Клиент Postman не требует, чтобы составные части имели назначенный вручную **Content-Type** или **Content-Disposition**.

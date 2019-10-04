@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/12/2019
 ms.author: kumud
-ms.openlocfilehash: a6ba401d9d10e900fef5e2d296e74a07f84162cd
-ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
+ms.openlocfilehash: 1a3859e1831f64269e7684072ddf166f29566fd9
+ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2019
-ms.locfileid: "71670753"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71828975"
 ---
 # <a name="azure-virtual-network-frequently-asked-questions-faq"></a>Виртуальная сеть Azure: часто задаваемые вопросы
 
@@ -395,7 +395,7 @@ TAP для виртуальной сети используется предва
 
 ### <a name="does-azure-active-directory-azure-ad-support-vnet-service-endpoints"></a>Поддерживает ли Azure Active Directory (Azure AD) конечные точки службы виртуальной сети?
 
-Azure Active Directory (Azure AD) не поддерживает конечные точки службы изначально. Полный список служб Azure, поддерживающих конечные точки службы виртуальной сети, можно просмотреть [здесь](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview). Обратите внимание, что тег Microsoft. AzureActiveDirectory, указанный в разделе службы, поддерживающие конечные точки службы, используется для поддержки конечных точек службы для ADLS Gen 1. Для ADLS Gen 1 Интеграция виртуальной сети для Azure Data Lake Storage 1-го поколения использует безопасность конечной точки службы виртуальной сети между виртуальной сетью и Azure Active Directory (Azure AD) для создания дополнительных утверждений безопасности в маркере доступа. Эти утверждения используются для проверки подлинности виртуальной сети в учетной записи ADLS 1-го поколения и для предоставления доступа. Дополнительные сведения о [Azure Data Lake Store интеграции с виртуальной сетью для поколения 1] (.. /Дата-Лаке-Сторе/Дата-Лаке-Сторе-Нетворк-секурити.МД? TOC =% 2fazure% 2fvirtual — Network% 2ftoc. JSON
+Azure Active Directory (Azure AD) не поддерживает конечные точки службы изначально. Полный список служб Azure, поддерживающих конечные точки службы виртуальной сети, можно просмотреть [здесь](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview). Обратите внимание, что тег Microsoft. AzureActiveDirectory, указанный в разделе службы, поддерживающие конечные точки службы, используется для поддержки конечных точек службы для ADLS Gen 1. Для ADLS Gen 1 Интеграция виртуальной сети для Azure Data Lake Storage 1-го поколения использует безопасность конечной точки службы виртуальной сети между виртуальной сетью и Azure Active Directory (Azure AD) для создания дополнительных утверждений безопасности в маркере доступа. Эти утверждения используются для проверки подлинности виртуальной сети в учетной записи ADLS 1-го поколения и для предоставления доступа. Дополнительные сведения об [интеграции с виртуальной сетью Azure Data Lake Store Gen 1](../data-lake-store/data-lake-store-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
 
 ### <a name="are-there-any-limits-on-how-many-vnet-service-endpoints-i-can-set-up-from-my-vnet"></a>Существуют ли какие-либо ограничения на количество конечных точек службы в виртуальной сети, которые я могу настроить из своей виртуальной сети?
 Общее количество конечных точек служб в виртуальной сети не ограничено. Для ресурса службы Azure (например, учетной записи хранения Azure) службы могут применять ограничения на количество подсетей, используемых для защиты ресурса. В следующей таблице приведены примеры некоторых ограничений. 

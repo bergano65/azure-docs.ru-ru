@@ -7,14 +7,14 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 08/29/2019
 ms.author: helohr
-ms.openlocfilehash: f041889f1594ef3852c8f2393be93bb7a6513b4c
-ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
+ms.openlocfilehash: 5401260921aee5fc54b50c1222188a6b244a0c5a
+ms.sourcegitcommit: 15e3bfbde9d0d7ad00b5d186867ec933c60cebe6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71676635"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71840142"
 ---
-# <a name="identify-issues-with-the-diagnostics-feature"></a>Выявление проблем с функцией диагностики
+# <a name="identify-and-diagnose-issues"></a>Выявление и диагностика проблем
 
 Виртуальный рабочий стол Windows предлагает функцию диагностики, которая позволяет администратору определять проблемы с помощью одного интерфейса. Роли виртуальных рабочих столов Windows заносить диагностические действия в журнал при каждом взаимодействии пользователя с системой. Каждый журнал содержит важную информацию, такую как роли виртуальных рабочих столов Windows, связанные с транзакцией, сообщения об ошибках, сведения о клиенте и сведения о пользователе. Диагностические действия создаются как конечными пользователями, так и административными действиями. их можно разделить на три основных сегмента:
 

@@ -7,13 +7,13 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 06/06/2019
-ms.openlocfilehash: e6b3fc4f9badeedbed55f89702933b41a952977b
-ms.sourcegitcommit: a19bee057c57cd2c2cd23126ac862bd8f89f50f5
+ms.date: 10/02/2019
+ms.openlocfilehash: fdfd026be1a10410cd7c875dbdf0de9660c8412c
+ms.sourcegitcommit: f2d9d5133ec616857fb5adfb223df01ff0c96d0a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71180800"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71937620"
 ---
 # <a name="use-apache-spark-to-read-and-write-apache-hbase-data"></a>Чтение и запись данных Apache HBase с помощью Apache Spark
 
@@ -25,7 +25,7 @@ ms.locfileid: "71180800"
 
 * Клиент SSH. Дополнительные сведения см. в руководстве по [подключению к HDInsight (Apache Hadoop) с помощью SSH](hdinsight-hadoop-linux-use-ssh-unix.md).
 
-* [Схема универсального кода ресурса (URI)](hdinsight-hadoop-linux-information.md#URI-and-scheme) для основного хранилища кластеров. Это будет wasb://для хранилища BLOB-объектов Azure, abfs://для Azure Data Lake Storage 2-го поколения или adl://для Azure Data Lake Storage 1-го поколения. Если для хранилища BLOB-объектов включено безопасное перемещение, URI будет иметь `wasbs://`значение.  См. также [безопасное перемещение](../storage/common/storage-require-secure-transfer.md).
+* [Схема универсального кода ресурса (URI)](hdinsight-hadoop-linux-information.md#URI-and-scheme) для основного хранилища кластеров. Это будет wasb://для хранилища BLOB-объектов Azure, abfs://для Azure Data Lake Storage 2-го поколения или adl://для Azure Data Lake Storage 1-го поколения. Если для хранилища BLOB-объектов включено безопасное перемещение, URI будет иметь `wasbs://`значение.  См. также сведения о [безопасной передаче](../storage/common/storage-require-secure-transfer.md).
 
 ## <a name="overall-process"></a>Общий процесс
 
@@ -144,7 +144,7 @@ hdfs dfs -copyFromLocal /etc/hbase/conf/hbase-site.xml wasbs://SPARK_STORAGE_CON
     |}""".stripMargin
     ```
 
-    Код выполняет следующие действия:  
+    Код делает следующее:  
 
      1\. Определите схему каталога для таблицы HBase с именем `Contacts`.  
      2\. Определите rowkey как `key` и сопоставьте имена столбцов, используемые в Spark, с семейством столбцов, именем столбца и типом столбца, используемыми в HBase.  
@@ -192,8 +192,7 @@ hdfs dfs -copyFromLocal /etc/hbase/conf/hbase-site.xml wasbs://SPARK_STORAGE_CON
 8. Выполните SQL-запрос к таблице `contacts`:
 
     ```scala
-    val query = spark.sqlContext.sql("select personalName, officeAddress from contacts")
-    query.show()
+    spark.sqlContext.sql("select personalName, officeAddress from contacts").show
     ```
 
 9. Вы должны увидеть примерно такой результат:

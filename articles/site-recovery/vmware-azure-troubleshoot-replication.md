@@ -7,18 +7,18 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 08/2/2019
 ms.author: mayg
-ms.openlocfilehash: 54686a96385532e17fe0ac6e59058b91b40c1342
-ms.sourcegitcommit: d060947aae93728169b035fd54beef044dbe9480
+ms.openlocfilehash: b02e819255db0cdf8b9d241f2ec0d41df7494162
+ms.sourcegitcommit: 15e3bfbde9d0d7ad00b5d186867ec933c60cebe6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68742565"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71844359"
 ---
 # <a name="troubleshoot-replication-issues-for-vmware-vms-and-physical-servers"></a>Устранение неполадок с репликацией виртуальных машин VMware и физических серверов
 
 В этой статье описываются некоторые распространенные проблемы и конкретные ошибки, которые могут возникнуть при репликации локальных виртуальных машин VMware и физических серверов в Azure с помощью [Site Recovery](site-recovery-overview.md).
 
-## <a name="step-1-monitor-process-server-health"></a>Шаг 1.: Мониторинг работоспособности сервера обработки
+## <a name="step-1-monitor-process-server-health"></a>Шаг 1. Мониторинг работоспособности сервера обработки
 
 Site Recovery использует [сервер обработки](vmware-physical-azure-config-process-server-overview.md#process-server) для получения и оптимизации реплицированных данных и отправки их в Azure.
 
@@ -28,7 +28,7 @@ Site Recovery использует [сервер обработки](vmware-phys
 - [Анализ рекомендаций](vmware-physical-azure-troubleshoot-process-server.md#best-practices-for-process-server-deployment)
 - [Устранение неполадок](vmware-physical-azure-troubleshoot-process-server.md#check-process-server-health) работоспособности сервера обработки.
 
-## <a name="step-2-troubleshoot-connectivity-and-replication-issues"></a>Шаг 2.: Устранение неполадок подключения и репликации
+## <a name="step-2-troubleshoot-connectivity-and-replication-issues"></a>Шаг 2. Устранение неполадок подключения и репликации
 
 Начальная и текущая ошибки репликации часто вызываются проблемами подключения между исходным сервером и сервером обработки либо между сервером обработки и Azure. 
 
@@ -55,35 +55,15 @@ Site Recovery использует [сервер обработки](vmware-phys
 
 Виртуальные машины, которые реплицируются Site Recovery, недоступны на портале Azure, если в системе существуют повторяющиеся записи. Чтобы узнать, как удалить устаревшие записи и устранить проблему, обратитесь к статье [ASR VMware-to-Azure: How To cleanup duplicate/stale entries](https://social.technet.microsoft.com/wiki/contents/articles/32026.asr-vmware-to-azure-how-to-cleanup-duplicatestale-entries.aspx) (Репликация VMware в Azure с помощью ASR: как удалить повторяющиеся или устаревшие записи).
 
-## <a name="common-errors-and-solutions"></a>Распространенные ошибки и решения
+## <a name="no-crash-consistent-recovery-point-available-for-the-vm-in-the-last-xxx-minutes"></a>Нет доступной отказоустойчивой точки восстановления для виртуальной машины за последние "XXX" мин.
+
+Ниже перечислены некоторые из наиболее распространенных проблем.
 
 ### <a name="initial-replication-issues-error-78169"></a>Проблемы начальной репликации [Ошибка 78169]
 
 Убедитесь в отсутствии проблем с подключением, пропускной способностью или синхронизацией времени, убедившись в том, что:
 
 - Антивирусная программа не блокирует Azure Site Recovery. Дополнительные [сведения](vmware-azure-set-up-source.md#azure-site-recovery-folder-exclusions-from-antivirus-program) об исключениях папок, необходимых для Azure Site Recovery.
-
-### <a name="missing-app-consistent-recovery-points-error-78144"></a>Отсутствующие точки восстановления, совместимые с приложениями [Ошибка 78144]
-
- Это происходит из-за проблем со службой теневого копирования томов (VSS). Чтобы устранить проблему, сделайте следующее: 
- 
-- Убедитесь, что установленная версия агента Azure Site Recovery является по крайней мере 9.22.2. 
-- Убедитесь, что поставщик VSS установлен как служба в службах Windows, а также проверьте, что в консоли MMC службы компонентов указан Azure Site Recovery поставщик VSS.
-- Если поставщик VSS не установлен, обратитесь к [статье Устранение неполадок при установке](vmware-azure-troubleshoot-push-install.md#vss-installation-failures).
-
-- Если служба VSS отключена,
-    - Убедитесь, что для параметра Тип запуска службы поставщика VSS задано значение **автоматически**.
-    - Перезапустите следующие службы:
-        - Служба VSS
-        - поставщик VSS Azure Site Recovery.
-        - Служба VDS
-
-- Если вы используете рабочие нагрузки SQL или Exchange, проверьте журналы этих модулей записи приложений на наличие сбоев. Часто встречающиеся ошибки и их разрешение записываются в следующих статьях:
-    -  [Параметр автоматического закрытия SQL Server базы данных имеет значение TRUE](https://support.microsoft.com/help/4504104)
-    - [SQL Server 2008 R2 порождение ошибки, не допускающей повторение](https://support.microsoft.com/help/4504103)
-    - [Известная ошибка в SQL Server 2016 и 2017](https://support.microsoft.com/help/4493364)
-    - [Распространенная ошибка на серверах Exchange 2013 и 2016](https://support.microsoft.com/help/4037535)
-
 
 ### <a name="source-machines-with-high-churn-error-78188"></a>Исходные компьютеры с высоким уровнем обновления [Ошибка 78188]
 
@@ -138,8 +118,21 @@ Site Recovery использует [сервер обработки](vmware-phys
     - Проверьте журналы в расположении, чтобы получить сведения об ошибке:
         
           C:\Program Files (X86)\Microsoft Azure Site Recovery\agent\svagents*log
+3. Чтобы зарегистрировать главный целевой сервер на сервере конфигурации, перейдите в папку **%ProgramData%\ASR\Agent**и выполните следующую команду в командной строке:
+   ```
+   cmd
+   cdpcli.exe --registermt
+
+   net stop obengine
+
+   net start obengine
+
+   exit
+   ```
 
 ## <a name="error-id-78144---no-app-consistent-recovery-point-available-for-the-vm-in-the-last-xxx-minutes"></a>Идентификатор ошибки 78144-нет доступной для виртуальной машины точки восстановления с постоянными приложениями за последние "XXX" мин.
+
+В версии агента Mobility Agent [9,23](vmware-physical-mobility-service-overview.md##from-923-version-onwards) & [9,27](site-recovery-whats-new.md#update-rollup-39) были внесены улучшения для обработки сбоев при установке VSS. Убедитесь, что вы используете последние версии для получения лучших рекомендаций по устранению ошибок VSS.
 
 Ниже перечислены некоторые из наиболее распространенных проблем.
 
