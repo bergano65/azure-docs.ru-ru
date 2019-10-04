@@ -4,14 +4,14 @@ description: Список типов ресурсов Azure, подлежащи�
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: reference
-ms.date: 09/30/2019
+ms.date: 10/03/2019
 ms.author: tomfitz
-ms.openlocfilehash: b34c244708c52ec7324c766286aff8ee9340db0b
-ms.sourcegitcommit: 6013bacd83a4ac8a464de34ab3d1c976077425c7
+ms.openlocfilehash: 81096a4299ec190cb4299f1b8ea4f9c2533d37ad
+ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71687120"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71948028"
 ---
 # <a name="move-operation-support-for-resources"></a>Поддержка операции перемещения для ресурсов
 В этой статье указано, поддерживается ли для тех или иных типов ресурсов Azure операция перемещения. В нем также содержатся сведения о специальных условиях, которые следует учитывать при перемещении ресурса.

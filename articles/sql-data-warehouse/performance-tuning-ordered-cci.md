@@ -10,12 +10,12 @@ ms.subservice: development
 ms.date: 09/05/2019
 ms.author: xiaoyul
 ms.reviewer: nibruno; jrasnick
-ms.openlocfilehash: 7adf43110cffdc669b39632521c69ed5d3723257
-ms.sourcegitcommit: 15e3bfbde9d0d7ad00b5d186867ec933c60cebe6
-ms.translationtype: HT
+ms.openlocfilehash: ca0ac228bfe10992b658796d123c8dfbed74947f
+ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71845702"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71948176"
 ---
 # <a name="performance-tuning-with-ordered-clustered-columnstore-index"></a>Настройка производительности с упорядоченным кластеризованным индексом columnstore  
 
@@ -44,6 +44,43 @@ ORDER BY o.name, pnp.distribution_id, cls.min_data_id
 
 > [!NOTE] 
 > В упорядоченной таблице CCI новые данные, полученные из операций DML или загрузки данных, не сортируются автоматически.  Пользователи могут перестроить упорядоченный объект CCI для сортировки всех данных в таблице.  
+
+## <a name="query-performance"></a>Производительность запросов
+
+Увеличение производительности запроса от упорядоченного объекта CCI зависит от шаблонов запросов, размера данных, объема отсортированных данных, физической структуры сегментов, а также класса DWU и ресурсов, выбранных для выполнения запроса.  Прежде чем выбирать столбцы упорядочения при проектировании упорядоченной таблицы CCI, пользователям следует ознакомиться со всеми этими факторами.
+
+Запросы со всеми этими шаблонами обычно выполняются быстрее с упорядоченным CCI.  
+1. Запросы имеют предикаты равенства, неравенства или диапазона
+1. Столбцы предиката и упорядоченные столбцы CCI одинаковы.  
+1. Столбцы предиката используются в том же порядке, что и порядковый номер столбца в упорядоченных столбцах CCI.  
+ 
+В этом примере в таблице T1 имеется кластеризованный индекс columnstore, упорядоченный в последовательности Col_C, Col_B и Col_A.
+
+```sql
+
+CREATE CLUSTERED COLUMNSTORE INDEX MyOrderedCCI ON  T1
+ORDER (Col_C, Col_B, Col_A)
+
+```
+
+Производительность запроса 1 может повыситься от заказанного объекта CCI, отличного от других 3 запросов. 
+
+```sql
+-- Query #1: 
+
+SELECT * FROM T1 WHERE Col_C = 'c' AND Col_B = 'b' AND Col_A = 'a';
+
+-- Query #2
+
+SELECT * FROM T1 WHERE Col_B = 'b' AND Col_C = 'c' AND Col_A = 'a';
+
+-- Query #3
+SELECT * FROM T1 WHERE Col_B = 'b' AND Col_A = 'a';
+
+-- Query #4
+SELECT * FROM T1 WHERE Col_A = 'a' AND Col_C = 'c';
+
+```
 
 ## <a name="data-loading-performance"></a>Производительность загрузки данных
 
@@ -85,7 +122,7 @@ OPTION (MAXDOP 1);
 
 ## <a name="examples"></a>Примеры
 
-**A. Для проверки упорядоченных столбцов и порядкового номера заказа:**
+**A. Проверка упорядоченных столбцов и порядкового номера заказа:**
 ```sql
 SELECT object_name(c.object_id) table_name, c.name column_name, i.column_store_order_ordinal 
 FROM sys.index_columns i 

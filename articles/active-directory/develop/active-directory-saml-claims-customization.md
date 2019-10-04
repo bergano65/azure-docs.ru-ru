@@ -13,17 +13,17 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 04/03/2019
+ms.date: 10/01/2019
 ms.author: ryanwi
 ms.reviewer: luleon, paulgarn, jeedes
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8e7681afe3f5361b17670312c8391349c650a89d
-ms.sourcegitcommit: f2d9d5133ec616857fb5adfb223df01ff0c96d0a
-ms.translationtype: HT
+ms.openlocfilehash: fd752540d078ef57c8b6150edbf9b124bc445fe0
+ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71936774"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71949365"
 ---
 # <a name="how-to-customize-claims-issued-in-the-saml-token-for-enterprise-applications"></a>Практическое руководство. Настройка утверждений, выпущенных в токене SAML для корпоративных приложений
 
@@ -83,6 +83,20 @@ ms.locfileid: "71936774"
 | Атрибуты расширения 1–15 | Локальные атрибуты расширения, используемые для расширения схемы Azure AD |
 
 Дополнительные сведения см. в разделе [Table 3: Допустимые значения ID для каждого источника @ no__t-0.
+
+Можно также назначить любые постоянные (статические) значения всем заявкам, определенным в Azure AD. Выполните следующие действия, чтобы присвоить постоянное значение:
+
+1. В [портал Azure](https://portal.azure.com/)в разделе **пользовательские атрибуты & утверждения** щелкните значок **изменить** , чтобы изменить утверждения.
+
+1. Щелкните обязательное утверждение, которое необходимо изменить.
+
+1. Введите постоянное значение в **исходном атрибуте** в соответствии с вашей организацией и нажмите кнопку **сохранить**.
+
+    ![Откройте раздел "пользовательские атрибуты & утверждения" в портал Azure](./media/active-directory-saml-claims-customization/organization-attribute.png)
+
+1. Значение константы будет показано ниже.
+
+    ![Откройте раздел "пользовательские атрибуты & утверждения" в портал Azure](./media/active-directory-saml-claims-customization/edit-attributes-claims.png)
 
 ### <a name="special-claims---transformations"></a>Специальные утверждения — преобразования
 

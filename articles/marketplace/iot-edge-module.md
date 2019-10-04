@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.topic: article
 ms.date: 09/22/2018
 ms.author: pabutler
-ms.openlocfilehash: 3010b63c7c4c575d915789c19b60710194c79196
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: 54369e0f2c943c146d186605833198253b960022
+ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67874675"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71949527"
 ---
 # <a name="iot-edge-modules"></a>Модули IoT Edge
 
@@ -82,9 +82,7 @@ Marketplace в настоящее время поддерживает **бесп
 
 Если это еще не сделано:
 
-- Зарегистрируйтесь в партнерской сети [Microsoft Partner Network](https://partner.microsoft.com/membership).
-- Создайте [учетную запись Майкрософт](https://account.microsoft.com/account/) (требуется для предложений типа "Транзакция" Microsoft Azure Marketplace; рекомендуется для других).
-- Подайте [форму регистрации в Marketplace](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/azureisv). Дополнительные сведения см. в статье [Создание учетной записи центра партнеров](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) .
+- [зарегистрируйтесь](https://azuremarketplace.microsoft.com/sell) в Marketplace.
 
 Если вы зарегистрированы и создаете предложение или работаете над существующим,
 

@@ -53,9 +53,9 @@ ms.locfileid: "71673298"
 Чтобы задать разрешения для контейнера с помощью клиентской библиотеки службы хранилища Azure для .NET, сначала извлеките существующие разрешения контейнера, вызвав один из следующих методов:
 
 - [GetPermissions](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.getpermissions)
-- [жетпермиссионсасинк](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.getpermissionsasync)
+- [GetPermissionsAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.getpermissionsasync)
 
-Затем задайте свойство **publicAccess** объекта [блобконтаинерпермиссионс](/dotnet/api/microsoft.azure.storage.blob.blobcontainerpermissions) , возвращаемого **методом GetNext** .
+Затем задайте свойство **publicAccess** объекта [BlobContainerPermissions](/dotnet/api/microsoft.azure.storage.blob.blobcontainerpermissions) , возвращаемого **методом GetNext** .
 
 Наконец, вызовите один из следующих методов, чтобы обновить разрешения контейнера:
 

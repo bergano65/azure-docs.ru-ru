@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 10/02/2019
 ms.author: helohr
-ms.openlocfilehash: c9ae01b3a8f49b210c363fea20bc3c221d9e837a
-ms.sourcegitcommit: 15e3bfbde9d0d7ad00b5d186867ec933c60cebe6
-ms.translationtype: HT
+ms.openlocfilehash: 83f10eb9dadfda5b87f1da287718f59da17c5110
+ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71839632"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71947606"
 ---
 # <a name="deploy-the-diagnostics-tool"></a>Развертывание средства диагностики
 
@@ -51,14 +51,22 @@ ms.locfileid: "71839632"
 >Разрешения API представляют собой виртуальные рабочие столы Windows, Log Analytics и Microsoft Graph разрешения API добавляются в приложение Azure Active Directory.
 
 1. Откройте PowerShell с правами администратора.
-2. Перейдите в [репозиторий GitHub RDS-Templates](https://github.com/Azure/RDS-Templates/tree/master/wvd-templates/diagnostics-sample/deploy/scripts) и запустите сценарий " **Создание регистрации приложения AD для диагностики. ps1** " в PowerShell.
-3.  Когда сценарий запросит имя приложения, введите уникальное имя приложения.
-4.  После этого скрипт попросит вас войти с помощью учетной записи администратора. Введите учетные данные пользователя с [делегированным административным доступом](delegated-access-virtual-desktop.md). Администратор должен иметь права владельца или участника RDS.
+2. Войдите в Azure с помощью учетной записи, имеющей разрешения владельца или участника на подписку Azure, которую вы хотите использовать для средства диагностики:
+   ```powershell
+   Login-AzAccount
+   ```
+3. Войдите в Azure AD с помощью той же учетной записи:
+   ```powershell
+   Connect-AzureAD
+   ```
+4. Перейдите в [репозиторий GitHub RDS-Templates](https://github.com/Azure/RDS-Templates/tree/master/wvd-templates/diagnostics-sample/deploy/scripts) и запустите сценарий **креатеадаппрегистратионфордиагностикс. ps1** в PowerShell.
+5.  Когда сценарий запросит имя приложения, введите уникальное имя приложения.
+
 
 После успешного выполнения скрипта в выходных данных должны отобразиться следующие элементы:
 
 -  Сообщение, которое подтверждает, что приложение теперь имеет назначение роли субъекта-службы.
--  Идентификатор клиента печати и секретный ключ клиента, которые понадобятся при развертывании средства диагностики.
+-  Идентификатор клиента и секретный ключ клиента, которые понадобятся при развертывании средства диагностики.
 
 Теперь, когда приложение зарегистрировано, пришло время настроить рабочую область Log Analytics.
 
@@ -76,7 +84,7 @@ ms.locfileid: "71839632"
 Чтобы запустить сценарий PowerShell, выполните следующие действия.
 
 1.  Откройте PowerShell с правами администратора.
-2.  Перейдите в [репозиторий GitHub RDS-Templates](https://github.com/Azure/RDS-Templates/tree/master/wvd-templates/diagnostics-sample/deploy/scripts) и выполните сценарий **CREATE логаналитиксворкспаце для Diagnostics. ps1** в PowerShell.
+2.  Перейдите в [репозиторий GitHub RDS-Templates](https://github.com/Azure/RDS-Templates/tree/master/wvd-templates/diagnostics-sample/deploy/scripts) и запустите сценарий **креателоганалитиксворкспацефордиагностикс. ps1** в PowerShell.
 3. Введите следующие значения параметров.
 
     - В поле **ResourceGroupName**введите имя группы ресурсов.

@@ -50,7 +50,8 @@
     - name: 'Получение видео, набирающих популярность'
       href: trending-videos.md
     - name: Отображение видео на страницах
-      href: paging-videos.md
+      maintainContext: true
+      href: ../Bing-Web-Search/paging-search-results.md
     - name: Изменение размера и обрезка эскизов
       maintainContext: true
       href: ../bing-web-search/resize-and-crop-thumbnails.md

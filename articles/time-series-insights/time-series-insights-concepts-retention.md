@@ -9,14 +9,14 @@ manager: cshankar
 ms.reviewer: jasonh, kfile
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 08/06/2019
+ms.date: 10/03/2019
 ms.custom: seodec18
-ms.openlocfilehash: 5388b157ebea78a69355eb745492910f260be3ad
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: 5799974581ba74d3265f0a5a66f9b081ded9f800
+ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68823645"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71948207"
 ---
 # <a name="understand-data-retention-in-azure-time-series-insights"></a>Общие сведения о хранении данных в службе "аналитика временных рядов Azure"
 
@@ -89,9 +89,9 @@ ms.locfileid: "68823645"
 
 Для затронутых концентраторов событий можно настроить свойство **Хранение сообщений**, чтобы минимизировать потерю данных при остановке приема данных в службе "Аналитика временных рядов".
 
-[![Хранение сообщений концентратора событий.](media/time-series-insights-contepts-retention/event-hub-retention.png)](media/time-series-insights-contepts-retention/event-hub-retention.png#lightbox)
+[@no__t — хранение сообщений центра 1Event.](media/time-series-insights-contepts-retention/event-hub-retention.png)](media/time-series-insights-contepts-retention/event-hub-retention.png#lightbox)
 
-Если в источнике событий (`timeStampPropertyName`) не настроено ни одного свойства, по умолчанию для аналитики временных рядов используется метка времени прибытия в концентраторе событий в качестве оси X. Если `timeStampPropertyName` настроено что-то другое, среда ищет параметр, настроенный `timeStampPropertyName` в пакете данных при анализе событий.
+Если в источнике событий (`timeStampPropertyName`) не настроено ни одного свойства, по умолчанию для аналитики временных рядов используется метка времени прибытия в концентраторе событий в качестве оси X. Если `timeStampPropertyName` настроена на что-то другое, среда ищет настроенную `timeStampPropertyName` в пакете данных при анализе событий.
 
 Дополнительные сведения о масштабировании среды и продлении срока хранения см. в статье [Как масштабировать среду Azure Time Series Insights ](time-series-insights-how-to-scale-your-environment.md).  
 

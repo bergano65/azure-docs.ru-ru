@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/12/2019
 ms.author: magoedte
-ms.openlocfilehash: d6e65331db53be5ba13a75e6b03b271f1071716d
-ms.sourcegitcommit: 6b41522dae07961f141b0a6a5d46fd1a0c43e6b2
+ms.openlocfilehash: ae8dd4cccb6795faa02e6705404644f6ccc24864
+ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67989832"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71948050"
 ---
 # <a name="how-to-query-logs-from-azure-monitor-for-containers"></a>Запрос журналов из Azure Monitor для контейнеров
 
@@ -42,7 +42,7 @@ Azure Monitor для контейнеров собирает метрики пр
 | Метрики производительности контейнеров кластера Kubernetes | Perf &#124; where ObjectName == “K8SContainer” | CounterName &#40; Кпурекуестнанокорес, Меморирекуестбитес, Кпулимитнанокорес, Мемориворкингсетбитес, RestartTimeEpoch, CpuUsageNanoCores, memoryRssBytes&#41;, CounterValue, timegenerated, CounterPath, sourcesystem имеет значение | 
 | Пользовательские метрики |`InsightsMetrics` | Компьютер, имя, пространство имен, источник, Sourcesystem имеет значение, теги<sup>1</sup>, timegenerated, тип, ва, _ResourceId | 
 
-<sup>1</sup> свойство *Tags* представляет [несколько измерений](../platform/data-platform-metrics.md#multi-dimensional-metrics) для соответствующей метрики. Дополнительные сведения о метриках, собираемых и хранимых в `InsightsMetrics` таблице, а также описание свойств записи см. в разделе [инсигхтсметрикс Overview](https://github.com/microsoft/OMS-docker/blob/vishwa/june19agentrel/docs/InsightsMetrics.md).
+<sup>1</sup> свойство *Tags* представляет [несколько измерений](../platform/data-platform-metrics.md#multi-dimensional-metrics) для соответствующей метрики. Дополнительные сведения о метриках, собираемых и хранимых в таблице `InsightsMetrics`, а также описание свойств записи см. в разделе [инсигхтсметрикс Overview](https://github.com/microsoft/OMS-docker/blob/vishwa/june19agentrel/docs/InsightsMetrics.md).
 
 >[!NOTE]
 >В настоящее время поддержка Prometheus является функцией в общедоступной предварительной версии.
@@ -62,13 +62,14 @@ Azure Monitor для контейнеров собирает метрики пр
 
 При создании запросов часто бывает полезно начать с одного-двух примеров, внося затем в них изменения в соответствии со своими требованиями. Можно поэкспериментировать с приведенными ниже примерами запросов, чтобы научиться создавать более сложные запросы.
 
-| Запрос | Описание | 
+| query | Описание | 
 |-------|-------------|
 | ContainerInventory<br> &#124; project Computer, Name, Image, ImageTag, ContainerState, CreatedTime, StartedTime, FinishedTime<br> &#124; render table | Вывод всех сведений о жизненном цикле контейнера| 
 | KubeEvents_CL<br> &#124; where not(isempty(Namespace_s))<br> &#124; sort by TimeGenerated desc<br> &#124; render table | События Kubernetes|
 | ContainerImageInventory<br> &#124; summarize AggregatedValue = count() by Image, ImageTag, Running | Инвентаризация образа | 
 | **Выберите вариант отображения графика**.<br> Perf<br> &#124; where ObjectName == "K8SContainer" and CounterName == "cpuUsageNanoCores" &#124; summarize AvgCPUUsageNanoCores = avg(CounterValue) by bin(TimeGenerated, 30m), InstanceName | Ресурсы ЦП контейнера. | 
 | **Выберите вариант отображения графика**.<br> Perf<br> &#124; where ObjectName == "K8SContainer" and CounterName == "memoryRssBytes" &#124; summarize AvgUsedRssMemoryBytes = avg(CounterValue) by bin(TimeGenerated, 30m), InstanceName | Память контейнера |
+| инсигхтсметрикс<br> &#124;где name = = "requests_count"<br> &#124;суммировать Val = Any (Val) по TimeGenerated = bin (TimeGenerated, 1м)<br> &#124;Сортировать по TimeGenerated ASC<br> &#124;Project Рекуестсперминуте = Val-prev (Val), TimeGenerated <br> &#124;барчарт отрисовки  | Количество запросов в минуту с пользовательскими метриками |
 
 В следующем примере показан запрос метрик Prometheus. Собранные метрики являются подсчетами и, чтобы определить, сколько ошибок произошло в течение определенного периода времени, необходимо вычесть из числа. Набор данных секционируется с помощью *partitionKey*, то есть для каждого уникального набора *имен*, *HostName*и *OperationType*, мы выполняем вложенный запрос на этом наборе, который упорядочивает журналы по *timegenerated*, процесс, который позволяет Найдите предыдущие *timegenerated* и количество записанных в течение этого времени, чтобы определить ставку.
 
@@ -104,4 +105,4 @@ operationData
 
 ## <a name="next-steps"></a>Следующие шаги
 
-Azure Monitor для контейнеров не включает предопределенный набор предупреждений. Ознакомьтесь с разработкой оповещений о [производительности с помощью Azure Monitor для контейнеров](container-insights-alerts.md) , чтобы узнать, как создавать Рекомендуемые оповещения для высокой загрузки ЦП и памяти для поддержки DevOps или рабочих процессов и процедур. 
+Azure Monitor для контейнеров не включает предопределенный набор предупреждений. Ознакомьтесь с разработкой [оповещений о производительности с помощью Azure Monitor для контейнеров](container-insights-alerts.md) , чтобы узнать, как создавать Рекомендуемые оповещения для высокой загрузки ЦП и памяти для поддержки DevOps или рабочих процессов и процедур. 

@@ -15,12 +15,12 @@ ms.custom: vs-azure
 ms.workload: azure-vs
 ms.date: 11/02/2017
 ms.author: vturecek
-ms.openlocfilehash: b9ab36343dd11bdb5bd7cc1adcf2c8b1b971dab3
-ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
+ms.openlocfilehash: ee5354845efba0cce92ccf4f11eb3480684e7509
+ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71300680"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71947906"
 ---
 # <a name="debug-your-service-fabric-application-by-using-visual-studio"></a>Отладка приложения Service Fabric с помощью Visual Studio
 > [!div class="op_single_selector"]
@@ -76,14 +76,10 @@ ms.locfileid: "71300680"
 
 > [!NOTE]
 > Компоненту требуется [пакет SDK 2.0 для Service Fabric](https://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=MicrosoftAzure-ServiceFabric-VS2015) и [пакет SDK Azure для .NET 2.9](https://azure.microsoft.com/downloads/).    
-> 
-> 
 
 <!-- -->
 > [!WARNING]
 > Удаленная отладка предназначена для сценариев разработки и тестирования и не должна использоваться в производственной среде, поскольку влияет на запущенные приложения.
-> 
-> 
 
 1. Перейдите к кластеру в **Cloud Explorer**. Щелкните правой кнопкой мыши и выберите **включить отладку** .
    
@@ -128,8 +124,6 @@ ms.locfileid: "71300680"
 > [!WARNING]
 > Потоковая передача трассировок предназначена для сценариев разработки и тестирования и не должна использоваться в производственной среде, поскольку влияет на запущенные приложения.
 > В рабочем сценарии следует применять пересылку событий с помощью средств диагностики Azure.
-> 
-> 
 
 1. Перейдите к кластеру в **Cloud Explorer**. Щелкните правой кнопкой мыши и выберите **включить трассировки потоковой передачи** .
    

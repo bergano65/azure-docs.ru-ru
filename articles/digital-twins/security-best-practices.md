@@ -1,19 +1,19 @@
 ---
 title: Рекомендации по обеспечению безопасности в Azure Digital двойников | Документация Майкрософт
 description: Дополнительные сведения о рекомендациях по обеспечению безопасности для цифровых двойников Azure и "Интернет вещей".
-author: kingdomofends
-manager: alinast
+ms.author: alinast
+author: alinamstanciu
+manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
 ms.date: 09/30/2019
-ms.author: v-adgera
-ms.openlocfilehash: e98f8a4becad41d27d89de16f598b6fa531ad5e3
-ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
-ms.translationtype: HT
+ms.openlocfilehash: ba10a6105972eddc8474841b234d2eeddc994f5d
+ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71827663"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71948917"
 ---
 # <a name="security-best-practices"></a>Рекомендации по обеспечению безопасности
 

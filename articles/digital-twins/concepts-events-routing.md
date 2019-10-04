@@ -1,19 +1,19 @@
 ---
-title: Маршрутизация событий и сообщений с помощью Azure Digital Twins | Документация Майкрософт
+title: Маршрутизация событий и сообщений в Azure Digital двойников | Документация Майкрософт
 description: Общие сведения о маршрутизации событий и сообщений в конечные точки службы с помощью Digital Twins
+ms.author: alinast
 author: alinamstanciu
 manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
 ms.date: 09/17/2019
-ms.author: alinast
-ms.openlocfilehash: 81f2cc32ee10e891ffab127d6ecd7909eb75abd6
-ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
+ms.openlocfilehash: 217a1d94a4a5235fc5886f34986ffcb3aef60873
+ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2019
-ms.locfileid: "71177085"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71949262"
 ---
 # <a name="routing-events-and-messages"></a>Маршрутизация событий и сообщений
 
@@ -29,7 +29,7 @@ Azure Digital двойников предлагает два способа по
 
 Для отправки событий или пересылки сообщений пользователи могут указать одну или несколько исходящих конечных точек. События и сообщения будут отправляться в конечные точки в соответствии с этими предопределенными настройками маршрутизации. Другими словами, пользователи могут указать определенную конечную точку для получения событий операций графа и другую для получения событий телеметрии устройства и т. д.
 
-[![Маршрутизация событий двойников в Azure Digital](media/concepts/digital-twins-events-routing.png)](media/concepts/digital-twins-events-routing.png#lightbox)
+[Маршрутизация событий @no__t 1Azure Digital двойников](media/concepts/digital-twins-events-routing.png)](media/concepts/digital-twins-events-routing.png#lightbox)
 
 При маршрутизации в Центры событий сохраняется порядок отправки сообщений телеметрии. Таким образом, они достигают конечной точки в той же последовательности, в которой они были первоначально получены. Сетка событий и служебная шина не гарантируют, что конечные точки получат события в порядке их возникновения. Однако в схеме события есть метка времени, с помощью которой можно узнать порядок поступления событий в конечную точку.
 
