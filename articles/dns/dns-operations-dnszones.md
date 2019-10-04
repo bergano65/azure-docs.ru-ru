@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/19/2018
 ms.author: victorh
-ms.openlocfilehash: 1ef44c16a8ae3b6254a6cea252501b72ddb24a5c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: dd238be6dbfcd14480b2c0cf03236902ef39e722
+ms.sourcegitcommit: 4d177e6d273bba8af03a00e8bb9fe51a447196d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61293635"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71959413"
 ---
 # <a name="how-to-manage-dns-zones-using-powershell"></a>Как управлять зонами DNS с помощью PowerShell
 
@@ -53,7 +53,7 @@ New-AzureRmDnsZone -Name contoso.com -ResourceGroupName MyAzureResourceGroup
 New-AzureRmDnsZone -Name contoso.com -ResourceGroupName MyAzureResourceGroup -Tag @{ project="demo"; env="test" }
 ```
 
-Теперь Azure DNS также поддерживает частные зоны DNS (сейчас в виде общедоступной предварительной версии).  Дополнительные сведения об использовании частных зон DNS см. в статье [Using Azure DNS for private domains](private-dns-overview.md) (Использование Azure DNS для частных доменов). Инструкции по созданию частной зоны DNS см. в статье [Get started with Azure DNS private zones using PowerShell](./private-dns-getstarted-powershell.md) (Начало работы с частными зонами Azure DNS с помощью PowerShell).
+Azure DNS также поддерживает частные зоны DNS.  Дополнительные сведения об использовании частных зон DNS см. в статье [Using Azure DNS for private domains](private-dns-overview.md) (Использование Azure DNS для частных доменов). Инструкции по созданию частной зоны DNS см. в статье [Get started with Azure DNS private zones using PowerShell](./private-dns-getstarted-powershell.md) (Начало работы с частными зонами Azure DNS с помощью PowerShell).
 
 ## <a name="get-a-dns-zone"></a>Получение зоны DNS
 
@@ -168,7 +168,7 @@ Get-AzureRmDnsZone -Name contoso.com -ResourceGroupName MyAzureResourceGroup | R
 
 Дополнительные сведения об элементах `-Confirm` и `$ConfirmPreference` см. в статье о [привилегированных переменных](/powershell/module/microsoft.powershell.core/about/about_preference_variables).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте, как [управлять наборами записей и записями](dns-operations-recordsets.md) в зоне DNS.
 <br>

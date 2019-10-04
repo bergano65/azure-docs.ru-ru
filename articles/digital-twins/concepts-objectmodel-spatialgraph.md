@@ -1,19 +1,19 @@
 ---
-title: Основные сведения об объектных моделях и пространственном интеллектуальном графе в Digital Twins | Документация Майкрософт
+title: Общие сведения об объектных моделях Azure Digital двойников и диаграмме пространственной аналитики | Документация Майкрософт
 description: Моделирование связей между пользователями, расположениями и устройствами с помощью Azure Digital Twins
+ms.author: alinast
 author: alinamstanciu
 manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
 ms.date: 09/17/2019
-ms.author: alinast
-ms.openlocfilehash: 37f2afbd9bae4ca6bccc5062515f166687d8913c
-ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
+ms.openlocfilehash: 67a4aceb157ee3fe1b1d1553efd587a0f2838d88
+ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2019
-ms.locfileid: "71177068"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71950012"
 ---
 # <a name="understand-digital-twins-object-models-and-spatial-intelligence-graph"></a>Основные сведения об объектных моделях и пространственном интеллектуальном графе в Digital Twins
 
@@ -23,7 +23,7 @@ Azure Digital Twins — это служба Интернета вещей Azure,
 
 После создания объектных моделей и онтологий Digital Twins можно переходить к заполнению _пространственного графа_. Пространственные графы — это виртуальные представления множества взаимосвязей между пространствами, устройствами и людьми, имеющими отношение к решению Интернета вещей. На приведенной ниже схеме показан пример пространственного графа, который использует онтологию умного здания.
 
-[![Построение пространственного графа Digital двойников](media/concepts/digital-twins-spatial-graph-building.png)](media/concepts/digital-twins-spatial-graph-building.png#lightbox)
+[Построение пространственного графа @no__t 1Digital двойников](media/concepts/digital-twins-spatial-graph-building.png)](media/concepts/digital-twins-spatial-graph-building.png#lightbox)
 
 Пространственный граф объединяет пространства, устройства, датчики и пользователей. Связи между ними воспроизводят зависимости из реального мира. В этом примере представлен объект 43 с четырьмя этажами, на каждом из которых есть много разных областей. Пользователи связаны со своими рабочими станциями и имеют доступ к частям графа. Администратор имеет право вносить изменения в пространственный граф, а посетитель может только просматривать определенные сведения о здании.
 

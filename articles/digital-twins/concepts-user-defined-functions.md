@@ -1,19 +1,19 @@
 ---
-title: Обработка данных и определяемые пользователем функции в Azure Digital Twins | Документация Майкрософт
+title: Обработка данных и определяемые пользователем функции в Azure Digital двойников | Документация Майкрософт
 description: Обзор обработки данных, сопоставителей и определяемых пользователем функций в Azure Digital Twins
+ms.author: alinast
 author: alinamstanciu
 manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
 ms.date: 09/17/2019
-ms.author: alinast
-ms.openlocfilehash: 07facf06702a63df8ea93d43b9896b72322b209f
-ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
+ms.openlocfilehash: b8ea5c54afd4b1e2c212422417688e528367d44f
+ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2019
-ms.locfileid: "71178249"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71949974"
 ---
 # <a name="data-processing-and-user-defined-functions"></a>Обработка данных и определяемые пользователем функции
 
@@ -23,7 +23,7 @@ Azure Digital Twins предлагает расширенные вычислит
 
 Когда устройства отправляют данные телеметрии в Azure Digital Twins, разработчики могут обрабатывать данные в четыре этапа: *проверка*, *сопоставление*, *вычисление* и *диспетчеризация*.
 
-[![Поток обработки данных в цифровом двойников Azure](media/concepts/digital-twins-data-processing-flow.png)](media/concepts/digital-twins-data-processing-flow.png#lightbox)
+[поток обработки данных ![Azure Digital двойников](media/concepts/digital-twins-data-processing-flow.png)](media/concepts/digital-twins-data-processing-flow.png#lightbox)
 
 1. На этапе проверки входящее сообщение телеметрии преобразуется в общепринятый формат [объекта передачи данных](https://docs.microsoft.com/aspnet/web-api/overview/data/using-web-api-with-entity-framework/part-5). На этом этапе также выполняется проверка устройств и датчиков.
 1. На этапе сопоставления происходит поиск соответствующих определяемых пользователем функций для выполнения. Предопределенные сопоставления сущностей обнаруживают определяемые пользователем функции на основе устройств, датчиков и сведений о пространстве из входящего сообщения телеметрии.
@@ -34,7 +34,7 @@ Azure Digital Twins предлагает расширенные вычислит
 
 Обработка данных в Azure Digital Twins состоит из определения трех объектов: *сопоставлений*, *определяемых пользователем функций* и *назначений ролей*.
 
-[![Объекты обработки данных Azure Digital двойников](media/concepts/digital-twins-user-defined-functions.png)](media/concepts/digital-twins-user-defined-functions.png#lightbox)
+[объекты обработки данных ![Azure Digital двойников](media/concepts/digital-twins-user-defined-functions.png)](media/concepts/digital-twins-user-defined-functions.png#lightbox)
 
 ### <a name="matchers"></a>Сопоставления
 

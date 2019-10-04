@@ -13,12 +13,12 @@ ms.workload: identity
 ms.date: 09/20/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: b7f701cd3ce07099d80bca40e506108bcc9a9da9
-ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
+ms.openlocfilehash: b4eebf7dac4d388411f570b1546c96e3b82b2a98
+ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2019
-ms.locfileid: "71178098"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71950066"
 ---
 # <a name="manage-access-to-azure-resources-using-rbac-and-azure-resource-manager-templates"></a>Управление доступом к ресурсам Azure с помощью RBAC и шаблонов Azure Resource Manager
 
@@ -159,6 +159,9 @@ New-AzDeployment -Location centralus -TemplateFile rbac-test.json -principalId $
 az deployment create --location centralus --template-file rbac-test.json --parameters principalId=$userid builtInRoleType=Reader
 ```
 
+> [!NOTE]
+> Этот шаблон не идемпотентными, если только значение `roleNameGuid` не указано в качестве параметра для каждого развертывания шаблона. Если `roleNameGuid` не указано, по умолчанию создается новый идентификатор GUID для каждого развертывания, и последующие развертывания завершатся ошибкой `Conflict: RoleAssignmentExists`.
+
 ## <a name="create-a-role-assignment-at-a-resource-scope"></a>Создание назначения роли в области действия ресурса
 
 Если необходимо создать назначение роли на уровне ресурса, то формат назначения роли отличается. Укажите пространство имен поставщика ресурсов и тип ресурса для назначения роли. Вы также включаете имя ресурса в имя назначения роли.
@@ -180,8 +183,6 @@ az deployment create --location centralus --template-file rbac-test.json --param
 
 - уникальный идентификатор пользователя, группы или приложения, которым назначается роль;
 - роль для назначения;
-- Уникальный идентификатор, который будет использоваться для назначения роли, или можно использовать идентификатор по умолчанию
-
 
 ```json
 {
@@ -203,13 +204,6 @@ az deployment create --location centralus --template-file rbac-test.json --param
             ],
             "metadata": {
                 "description": "Built-in role to assign"
-            }
-        },
-        "roleNameGuid": {
-            "type": "string",
-            "defaultValue": "[newGuid()]",
-            "metadata": {
-                "description": "A new GUID used to identify the role assignment"
             }
         },
         "location": {
@@ -238,7 +232,7 @@ az deployment create --location centralus --template-file rbac-test.json --param
         {
             "type": "Microsoft.Storage/storageAccounts/providers/roleAssignments",
             "apiVersion": "2018-09-01-preview",
-            "name": "[concat(variables('storageName'), '/Microsoft.Authorization/', parameters('roleNameGuid'))]",
+            "name": "[concat(variables('storageName'), '/Microsoft.Authorization/', guid(uniqueString(parameters('storageName'))))]",
             "dependsOn": [
                 "[variables('storageName')]"
             ],
@@ -267,12 +261,12 @@ az group deployment create --resource-group ExampleGroup --template-file rbac-te
 
 ## <a name="create-a-role-assignment-for-a-new-service-principal"></a>Создание назначения роли для нового субъекта-службы
 
-Если создать новый субъект-службу и сразу же попытаться назначить роль этому субъекту-службе, в некоторых случаях такое назначение роли может завершиться ошибкой. Например, если создать новое управляемое удостоверение и затем попытаться назначить роль этому субъекту-службе в том же шаблоне Azure Resource Manager, то назначение роли может завершиться ошибкой. Причиной этого сбоя может быть задержка репликации. Субъект-служба создается в одном регионе; Однако назначение роли может происходить в другом регионе, который еще не реплицирует субъект-службу. Для решения этой ситуации `principalType` `ServicePrincipal` свойству следует присвоить значение при создании назначения роли.
+Если создать новый субъект-службу и сразу же попытаться назначить роль этому субъекту-службе, в некоторых случаях такое назначение роли может завершиться ошибкой. Например, если создать новое управляемое удостоверение и затем попытаться назначить роль этому субъекту-службе в том же шаблоне Azure Resource Manager, то назначение роли может завершиться ошибкой. Причиной этого сбоя может быть задержка репликации. Субъект-служба создается в одном регионе; Однако назначение роли может происходить в другом регионе, который еще не реплицирует субъект-службу. Для решения этой ситуации следует задать для свойства `principalType` значение `ServicePrincipal` при создании назначения роли.
 
 Приведенный ниже шаблон демонстрирует:
 
 - Создание нового субъекта-службы управляемого удостоверения
-- Как указать`principalType`
+- Как указать `principalType`
 - Назначение роли участника этому субъекту-службе в области группы ресурсов
 
 Чтобы использовать шаблон, необходимо указать следующие входные данные:

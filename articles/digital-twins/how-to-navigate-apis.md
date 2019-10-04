@@ -1,19 +1,19 @@
 ---
 title: Переход по API-интерфейсам Azure Digital Twins | Документация Майкрософт
 description: Сведения об общих шаблонах запросов API управления Azure Digital Twins.
-author: kingdomofends
-manager: philmea
+ms.author: alinast
+author: alinamstanciu
+manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
 ms.date: 08/29/2019
-ms.author: v-adgera
-ms.openlocfilehash: 8472a86800d13cedd228ca881a7c095ff748350a
-ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
+ms.openlocfilehash: b01b83ab0e673254da19888210d9678e313acca2
+ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70172817"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71949862"
 ---
 # <a name="how-to-use-azure-digital-twins-management-apis"></a>Как использовать API управления Azure Digital Twins
 

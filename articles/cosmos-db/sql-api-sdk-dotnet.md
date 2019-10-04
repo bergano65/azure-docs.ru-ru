@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 03/09/2018
 ms.author: sngun
-ms.openlocfilehash: 8017f02e694f5c9e2cd677c7b1f28c5de973d077
-ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
+ms.openlocfilehash: f8c38c46bd60834c166721f62088d8edb2c722a9
+ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70932575"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71949583"
 ---
 # <a name="azure-cosmos-db-net-sdk-for-sql-api-download-and-release-notes"></a>Пакет SDK .NET для Azure Cosmos DB для API SQL: скачивание и заметки о выпуске
 > [!div class="op_single_selector"]
@@ -45,18 +45,26 @@ ms.locfileid: "70932575"
 > [!NOTE]
 > Если вы используете .NET Framework, ознакомьтесь с последней версией [пакета SDK для .NET](sql-api-sdk-dotnet-standard.md)версии 3. x, которая предназначена для .NET Standard. 
 
-### <a name="a-name260260"></a><a name="2.6.0"/>2.6.0
+### <a name="a-name270270"></a>@no__t 02.7.0
+
+* Добавлена поддержка массивов и объектов в порядке запросов.
+* Обрабатывайте действующие конфликты ключей секций
+* Добавлена поддержка LINQ для нескольких операторов OrderBy с оператором ThenBy
+* Параметры настраиваемой сериализации теперь применяются ко всем операциям Upsert и Replace.
+* Исправлена проблема взаимоблокировки Айснккаче, чтобы она работала с одним потоком планировщика задач
+
+### <a name="a-name260260"></a>@no__t 02.6.0
 
 * Добавлен Портреусеполици в ConnectionPolicy
 * Фиксированный NTDLL! Ошибка Ртлжетверсион TypeLoadException при использовании пакета SDK в приложении UWP
 
-### <a name="a-name251251"></a><a name="2.5.1"/>2.5.1
+### <a name="a-name251251"></a>@no__t 02.5.1
 
 * Версия System .NET. HTTP пакета SDK теперь соответствует тому, что определено в пакете NuGet.
 * Разрешить запросы на запись в другой регион в случае сбоя исходного.
 * Добавьте политику повтора сеанса для запроса на запись.
 
-### <a name="a-name241241"></a><a name="2.4.1"/>2.4.1
+### <a name="a-name241241"></a>@no__t 02.4.1
 
 * Исправляет состояние отслеживания состояния гонки для запросов, вызвавших пустые страницы
 
@@ -348,7 +356,7 @@ ms.locfileid: "70932575"
 ### <a name="a-name130130"></a><a name="1.3.0"/>1.3.0
 * Добавлена поддержка изменения политики индексации.
   * Новый метод ReplaceDocumentCollectionAsync в классе DocumentClient.
-  * Новое свойство IndexTransformationProgress в ResourceResponse\<T > для отслеживания процента изменения политики индекса
+  * Новое свойство IndexTransformationProgress в ResourceResponse @ no__t-0T > для отслеживания процента выполнения изменений политики индекса
   * Свойство DocumentCollection.IndexingPolicy теперь является изменяемым.
 * Добавлена поддержка индексирования и создания запросов к пространственным типам данных.
   * Новое пространство имен Microsoft.Azure.Documents.Spatial для сериализации и десериализации пространственных типов, таких как Point и Polygon.
@@ -390,6 +398,7 @@ ms.locfileid: "70932575"
 
 | Version | Дата выпуска | Дата вывода |
 | --- | --- | --- |
+| [2.7.0](#2.7.0) |23 сентября 2019 г. |--- |
 | [2.6.0](#2.6.0) |30 августа 2019 г. |--- |
 | [2.5.1](#2.5.1) |02 июля 2019 г. |--- |
 | [2.4.1](#2.4.1) |20 июня 2019 г. |--- |

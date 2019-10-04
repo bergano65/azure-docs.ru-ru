@@ -3,7 +3,7 @@ title: Azure Application Insights. Функции, поддерживаемые 
 description: Поддерживаемые функции Application Insights для службы "Функции Azure"
 services: application-insights
 documentationcenter: .net
-author: MS-TimothyMothra
+author: TimothyMothra
 manager: ''
 ms.service: application-insights
 ms.workload: TBD
@@ -12,12 +12,12 @@ ms.topic: reference
 ms.date: 4/23/2019
 ms.reviewer: mbullwin
 ms.author: tilee
-ms.openlocfilehash: 0199d8f0c4a76a10fffcab7cf2819643d0ac2d68
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: cf39c8b5e204493380c095519e0ff25c3ce19f68
+ms.sourcegitcommit: 4d177e6d273bba8af03a00e8bb9fe51a447196d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67075344"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71959914"
 ---
 # <a name="application-insights-for-azure-functions-supported-features"></a>Application Insights для функций, поддерживаемых в службе "Функции Azure"
 
@@ -66,9 +66,9 @@ ms.locfileid: "67075344"
 
 Служба "Функции Azure" включает в своей конфигурации выборку по умолчанию. Дополнительные сведения см. в разделе [о настройке выборки](https://docs.microsoft.com/azure/azure-functions/functions-monitoring#configure-sampling).
 
-Если проект зависит от пакета SDK Application Insights делать вручную телеметрии трассировки, возможно появление странное поведение вашей конфигурации выборки отличается от функции конфигурации выборки. 
+Если проект использует зависимость от пакета SDK Application Insights для ручного отслеживания телеметрии, то может наблюдаться странное поведение, если конфигурация выборки отличается от конфигурации выборки функций. 
 
-Мы рекомендуем использовать ту же конфигурацию как функции. С помощью **v2 функции**, вы можете получить ту же конфигурацию с помощью внедрения зависимости в конструкторе:
+Мы рекомендуем использовать ту же конфигурацию, что и функции. В **функциях версии 2**можно получить ту же конфигурацию с помощью внедрения зависимостей в конструкторе:
 
 ```csharp
 using Microsoft.ApplicationInsights;

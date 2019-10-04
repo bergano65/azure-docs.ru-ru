@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 306382a7dede44a0f1db53373e14e81cb54098ca
-ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
+ms.openlocfilehash: a5d89c0784c2125f5a7810ff134686645e8314a6
+ms.sourcegitcommit: 4d177e6d273bba8af03a00e8bb9fe51a447196d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70914740"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71960220"
 ---
 # <a name="how-to-plan-your-hybrid-azure-active-directory-join-implementation"></a>Как Планирование реализации гибридного присоединения к Azure Active Directory
 
@@ -155,8 +155,8 @@ ms.locfileid: "70914740"
 ## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
-> [Настройка гибридного Azure Active Directory Join для федеративных среды](hybrid-azuread-join-federated-domains.md)
-> [Настройка гибридного Azure Active Directory Join для управляемой среды](hybrid-azuread-join-managed-domains.md)
+> [Настройка гибридного Azure Active Directory Join для Федеративной среды](hybrid-azuread-join-federated-domains.md)
+> [настройка гибридного Azure Active Directory присоединение для управляемой среды](hybrid-azuread-join-managed-domains.md)
 
 <!--Image references-->
 [1]: ./media/hybrid-azuread-join-plan/12.png

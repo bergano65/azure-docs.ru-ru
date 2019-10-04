@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 05/11/2019
 ms.author: genli
-ms.openlocfilehash: 3922388aaa7dd244b74404e50001e9c87870728d
-ms.sourcegitcommit: f2d9d5133ec616857fb5adfb223df01ff0c96d0a
-ms.translationtype: HT
+ms.openlocfilehash: 86ce2ada9ebd19c88414fab33a62dda5ba41ecb0
+ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71937495"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71949655"
 ---
 # <a name="prepare-a-windows-vhd-or-vhdx-to-upload-to-azure"></a>Подготовка диска VHD или VHDX для Windows к отправке в Azure
 
@@ -55,8 +55,8 @@ ms.locfileid: "71937495"
 1. Откройте диспетчер Hyper-V и выберите свой локальный компьютер в левой части окна. В меню над списком компьютер выберите **действие** > **изменить диск**.
 2. На странице **Обнаружение виртуального жесткого диска** выберите виртуальный диск.
 3. На странице **Выбор действия** выберите **преобразовать** > **Далее**.
-4. Если необходимо преобразовать VHDX-файл, выберите **VHD** > **Далее**.
-5. Если необходимо преобразовать динамически расширяемый диск, выберите параметр фиксированный **Размер** > **Далее**.
+4. Если необходимо выполнить преобразование из VHDX, выберите **VHD** > **Далее**.
+5. Если необходимо преобразовать динамически расширяемый диск, выберите **фиксированный размер** > **Далее**.
 6. Укажите путь к папке, в которой нужно сохранить новый VHD-файл.
 7. Выберите **Готово**.
 
@@ -72,27 +72,26 @@ ms.locfileid: "71937495"
 Convert-VHD –Path c:\test\MY-VM.vhdx –DestinationPath c:\test\MY-NEW-VM.vhd -VHDType Fixed
 ```
 
-В этой команде замените значение `-Path` на путь к виртуальному жесткому диску, который требуется преобразовать. Замените значение `-DestinationPath` на новый путь и имя преобразованного диска.
+В этой команде замените значение `-Path` на путь к виртуальному жесткому диску, который требуется преобразовать. Замените значение `-DestinationPath` новым путем и именем преобразованного диска.
 
 ### <a name="convert-from-vmware-vmdk-disk-format"></a>Преобразование диска VMware в формате VMDK
-Если вы используете образ виртуальной машины Windows в [формате VMDK](https://en.wikipedia.org/wiki/VMDK), используйте преобразователь [виртуальной машины Microsoft](https://www.microsoft.com/download/details.aspx?id=42497) для преобразования его в формат VHD. Дополнительные сведения см. в статье [Преобразование виртуального жесткого диска VMware в виртуальный жесткий диск Hyper-V](https://blogs.msdn.com/b/timomta/archive/2015/06/11/how-to-convert-a-vmware-vmdk-to-hyper-v-vhd.aspx).
+Если вы используете образ виртуальной машины Windows в [формате VMDK](https://en.wikipedia.org/wiki/VMDK), используйте [Преобразователь виртуальной машины Microsoft](https://www.microsoft.com/download/details.aspx?id=42497) для преобразования его в формат VHD. Дополнительные сведения см. в статье [Преобразование виртуального жесткого диска VMware в виртуальный жесткий диск Hyper-V](https://blogs.msdn.com/b/timomta/archive/2015/06/11/how-to-convert-a-vmware-vmdk-to-hyper-v-vhd.aspx).
 
 ## <a name="set-windows-configurations-for-azure"></a>Настройка конфигурации Windows для Azure
 
-На виртуальной машине, которую планируется отправить в Azure, выполните следующие команды в [окне командной строки](https://technet.microsoft.com/library/cc947813.aspx)с повышенными привилегиями:
+На виртуальной машине, которую планируется отправить в Azure, выполните следующие команды в [окне командной строки с повышенными привилегиями](https://technet.microsoft.com/library/cc947813.aspx):
 
 1. Удалите все постоянные статические маршруты из таблицы маршрутизации.
    
    * Чтобы просмотреть таблицу маршрутов, запустите `route print` из окна командной строки.
-   * `Persistence Routes` Проверьте разделы. Если имеется постоянный маршрут, удалите его с помощью `route delete` команды.
+   * Проверьте `Persistence Routes` разделов. Если имеется постоянный маршрут, удалите его с помощью команды `route delete`.
 2. Удалите прокси-сервер WinHTTP.
    
     ```PowerShell
     netsh winhttp reset proxy
     ```
 
-    Если виртуальная машина должна работать с конкретным прокси-сервером, добавьте исключение прокси-сервера в IP-адрес[Azure](https://blogs.msdn.microsoft.com/mast/2015/05/18/what-is-the-ip-address-168-63-129-16/
-)(168.63.129.16), чтобы виртуальная машина могла подключаться к Azure:
+    Если виртуальная машина должна работать с конкретным прокси-сервером, добавьте исключение прокси-сервера в адрес IP Azure ([168.63.129.16 @ no__t-1), чтобы виртуальная машина могла подключаться к Azure:
     ```
     $proxyAddress="<your proxy server>"
     $proxyBypassList="<your list of bypasses>;168.63.129.16"
@@ -100,7 +99,7 @@ Convert-VHD –Path c:\test\MY-VM.vhdx –DestinationPath c:\test\MY-NEW-VM.vhd 
     netsh winhttp set proxy $proxyAddress $proxyBypassList
     ```
 
-3. Задайте для [`Onlineall`](https://technet.microsoft.com/library/gg252636.aspx)политики San диска значение:
+3. Задайте для политики SAN диска значение [`Onlineall`](https://technet.microsoft.com/library/gg252636.aspx):
    
     ```PowerShell
     diskpart 
@@ -112,10 +111,10 @@ Convert-VHD –Path c:\test\MY-VM.vhdx –DestinationPath c:\test\MY-NEW-VM.vhd 
     exit   
     ```
 
-4. Установить время в формате UTC для Windows. Также задайте для`w32time` `Automatic`параметра Тип запуска службы времени Windows () значение:
+4. Установить время в формате UTC для Windows. Также задайте для параметра Тип запуска службы времени Windows (`w32time`) значение `Automatic`.
    
     ```PowerShell
-    Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\TimeZoneInformation' -name "RealTimeIsUniversal" -Value 1 -Type DWord -force
+    Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\TimeZoneInformation' -Name "RealTimeIsUniversal" -Value 1 -Type DWord -Force
 
     Set-Service -Name w32time -StartupType Automatic
     ```
@@ -124,12 +123,12 @@ Convert-VHD –Path c:\test\MY-VM.vhdx –DestinationPath c:\test\MY-NEW-VM.vhd 
     ```PowerShell
     powercfg /setactive SCHEME_MIN
     ```
-6. Убедитесь, что для переменных `TEMP` `TMP` среды заданы значения по умолчанию:
+6. Убедитесь, что для переменных среды `TEMP` и `TMP` заданы значения по умолчанию:
 
     ```PowerShell
-    Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Environment' -name "TEMP" -Value "%SystemRoot%\TEMP" -Type ExpandString -force
+    Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Environment' -Name "TEMP" -Value "%SystemRoot%\TEMP" -Type ExpandString -Force
 
-    Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Environment' -name "TMP" -Value "%SystemRoot%\TEMP" -Type ExpandString -force
+    Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Environment' -Name "TMP" -Value "%SystemRoot%\TEMP" -Type ExpandString -Force
     ```
 
 ## <a name="check-the-windows-services"></a>Настройка служб Windows
@@ -153,56 +152,56 @@ Set-Service -Name RemoteRegistry -StartupType Automatic
 Убедитесь, что для удаленного доступа правильно настроены следующие параметры:
 
 >[!NOTE] 
->При запуске `Set-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services -name <object name> -value <value>`может появиться сообщение об ошибке. Это сообщение можно спокойно проигнорировать. Это означает только то, что домен не помещает эту конфигурацию через объект групповая политика.
+>При запуске `Set-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services -Name <object name> -Value <value>` может появиться сообщение об ошибке. Это сообщение можно спокойно проигнорировать. Это означает только то, что домен не помещает эту конфигурацию через объект групповая политика.
 
 1. Включите протокол удаленного рабочего стола (RDP):
    
     ```PowerShell
-    Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server' -name "fDenyTSConnections" -Value 0 -Type DWord -force
+    Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server' -Name "fDenyTSConnections" -Value 0 -Type DWord -Force
 
-    Set-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services' -name "fDenyTSConnections" -Value 0 -Type DWord -force
+    Set-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services' -Name "fDenyTSConnections" -Value 0 -Type DWord -Force
     ```
    
 2. Порт RDP настроен правильно. Порт по умолчанию — 3389:
    
     ```PowerShell
-   Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\Winstations\RDP-Tcp' -name "PortNumber" -Value 3389 -Type DWord -force
+   Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\Winstations\RDP-Tcp' -Name "PortNumber" -Value 3389 -Type DWord -Force
     ```
     При развертывании виртуальной машины для порта 3389 создаются правила по умолчанию. Если вы хотите изменить номер порта, сделайте это после развертывания виртуальной машины в Azure.
 
 3. Прослушиватель должен работать в каждом сетевом интерфейсе:
    
     ```PowerShell
-    Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\Winstations\RDP-Tcp' -name "LanAdapter" -Value 0 -Type DWord -force
+    Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\Winstations\RDP-Tcp' -Name "LanAdapter" -Value 0 -Type DWord -Force
    ```
 4. Настройте режим проверки подлинности на уровне сети (NLA) для подключений по протоколу RDP:
    
     ```PowerShell
-   Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 1 -Type DWord -force
+   Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -Name "UserAuthentication" -Value 1 -Type DWord -Force
 
-    Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "SecurityLayer" -Value 1 -Type DWord -force
+    Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -Name "SecurityLayer" -Value 1 -Type DWord -Force
 
-    Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "fAllowSecProtocolNegotiation" -Value 1 -Type DWord -force
+    Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -Name "fAllowSecProtocolNegotiation" -Value 1 -Type DWord -Force
      ```
 
 5. Задайте значение для проверки активности:
     
     ```PowerShell
-    Set-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services' -name "KeepAliveEnable" -Value 1  -Type DWord -force
-    Set-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services' -name "KeepAliveInterval" -Value 1  -Type DWord -force
-    Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\Winstations\RDP-Tcp' -name "KeepAliveTimeout" -Value 1 -Type DWord -force
+    Set-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services' -Name "KeepAliveEnable" -Value 1  -Type DWord -Force
+    Set-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services' -Name "KeepAliveInterval" -Value 1  -Type DWord -Force
+    Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\Winstations\RDP-Tcp' -Name "KeepAliveTimeout" -Value 1 -Type DWord -Force
     ```
 6. Выполните переподключение:
     
     ```PowerShell
-    Set-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services' -name "fDisableAutoReconnect" -Value 0 -Type DWord -force
-    Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\Winstations\RDP-Tcp' -name "fInheritReconnectSame" -Value 1 -Type DWord -force
-    Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\Winstations\RDP-Tcp' -name "fReconnectSame" -Value 0 -Type DWord -force
+    Set-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services' -Name "fDisableAutoReconnect" -Value 0 -Type DWord -Force
+    Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\Winstations\RDP-Tcp' -Name "fInheritReconnectSame" -Value 1 -Type DWord -Force
+    Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\Winstations\RDP-Tcp' -Name "fReconnectSame" -Value 0 -Type DWord -Force
     ```
 7. Ограничьте количество одновременных подключений:
     
     ```PowerShell
-    Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\Winstations\RDP-Tcp' -name "MaxInstanceCount" -Value 4294967295 -Type DWord -force
+    Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\Winstations\RDP-Tcp' -Name "MaxInstanceCount" -Value 4294967295 -Type DWord -Force
     ```
 8. Удалите все самозаверяющие сертификаты, привязанные к прослушивателю RDP:
     
@@ -234,7 +233,7 @@ Set-Service -Name RemoteRegistry -StartupType Automatic
 2. Выполните следующую команду в PowerShell, чтобы разрешить WinRM через три профиля брандмауэра (домен, частный и общедоступный), а затем включите удаленную службу PowerShell:
    
    ```PowerShell
-    Enable-PSRemoting -force
+    Enable-PSRemoting -Force
 
     Set-NetFirewallRule -DisplayName "Windows Remote Management (HTTP-In)" -Enabled True
    ```
@@ -293,16 +292,16 @@ Set-Service -Name RemoteRegistry -StartupType Automatic
 
     ```powershell
     # Set up the guest OS to collect a kernel dump on an OS crash event
-    Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\CrashControl' -name CrashDumpEnabled -Type DWord -force -Value 2
-    Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\CrashControl' -name DumpFile -Type ExpandString -force -Value "%SystemRoot%\MEMORY.DMP"
-    Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\CrashControl' -name NMICrashDump -Type DWord -force -Value 1
+    Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\CrashControl' -Name CrashDumpEnabled -Type DWord -Force -Value 2
+    Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\CrashControl' -Name DumpFile -Type ExpandString -Force -Value "%SystemRoot%\MEMORY.DMP"
+    Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\CrashControl' -Name NMICrashDump -Type DWord -Force -Value 1
 
     # Set up the guest OS to collect user mode dumps on a service crash event
     $key = 'HKLM:\SOFTWARE\Microsoft\Windows\Windows Error Reporting\LocalDumps'
     if ((Test-Path -Path $key) -eq $false) {(New-Item -Path 'HKLM:\SOFTWARE\Microsoft\Windows\Windows Error Reporting' -Name LocalDumps)}
-    New-ItemProperty -Path $key -name DumpFolder -Type ExpandString -force -Value "c:\CrashDumps"
-    New-ItemProperty -Path $key -name CrashCount -Type DWord -force -Value 10
-    New-ItemProperty -Path $key -name DumpType -Type DWord -force -Value 2
+    New-ItemProperty -Path $key -Name DumpFolder -Type ExpandString -Force -Value "c:\CrashDumps"
+    New-ItemProperty -Path $key -Name CrashCount -Type DWord -Force -Value 10
+    New-ItemProperty -Path $key -Name DumpType -Type DWord -Force -Value 2
     Set-Service -Name WerSvc -StartupType Manual
     ```
 4. Убедитесь, что репозиторий инструментарий управления Windows (WMI) (WMI) является согласованным:
@@ -310,7 +309,7 @@ Set-Service -Name RemoteRegistry -StartupType Automatic
     ```PowerShell
     winmgmt /verifyrepository
     ```
-    Если репозиторий поврежден, ознакомьтесь с [этим разделом Повреждение](https://blogs.technet.microsoft.com/askperf/2014/08/08/wmi-repository-corruption-or-not)репозитория.
+    Если репозиторий поврежден, ознакомьтесь с [этим разделом Повреждение репозитория или не @ no__t-0.
 
 5. Убедитесь, что никакое другое приложение не использует порт 3389. Этот порт используется для службы RDP в Azure. Чтобы узнать, какие порты используются на виртуальной машине, выполните `netstat -anob`:
 
@@ -407,14 +406,14 @@ Set-Service -Name RemoteRegistry -StartupType Automatic
 - [Создание виртуальной машины Windows из специализированного диска](create-vm-specialized.md)
 - [Create a VM from a specialized VHD disk](https://docs.microsoft.com/azure/virtual-machines/windows/create-vm-specialized-portal?branch=master) (Создание виртуальной машины из специализированного VHD-диска)
 
-Если вы хотите создать обобщенный образ, необходимо запустить Sysprep. Дополнительные сведения см. в [разделе Использование Sysprep. Введение](https://technet.microsoft.com/library/bb457073.aspx). 
+Если вы хотите создать обобщенный образ, необходимо запустить Sysprep. Дополнительные сведения см. в разделе [How to use Sysprep: Введение @ no__t-0. 
 
 Не все роли или приложения, установленные на компьютере под управлением Windows, поддерживают обобщенные образы. Поэтому перед выполнением этой процедуры убедитесь, что Sysprep поддерживает роль компьютера. Дополнительные сведения см. в статье о [поддержке ролей сервера в Sysprep](https://msdn.microsoft.com/windows/hardware/commercialize/manufacture/desktop/sysprep-support-for-server-roles).
 
 ### <a name="generalize-a-vhd"></a>Подготовка виртуального жесткого диска к использованию
 
 >[!NOTE]
-> `sysprep.exe` Выполнив следующие действия, выключите виртуальную машину. Не включайте его снова, пока вы не создадите образ в Azure.
+> После запуска `sysprep.exe` на следующих шагах выключите виртуальную машину. Не включайте его снова, пока вы не создадите образ в Azure.
 
 1. Войдите на виртуальную машину Windows.
 1. Запустите **командную строку** от имени администратора. 
@@ -430,7 +429,7 @@ Set-Service -Name RemoteRegistry -StartupType Automatic
 
 
 >[!NOTE]
-> Пользовательский файл *Unattend. XML* не поддерживается. Хотя мы поддерживаем `additionalUnattendContent` свойство, которое предоставляет ограниченную поддержку добавления параметров [Microsoft-Windows-Shell-Setup](https://docs.microsoft.com/windows-hardware/customize/desktop/unattend/microsoft-windows-shell-setup) в файл *Unattend. XML* , используемый агентом подготовки Azure. Можно использовать, например, [аддитионалунаттендконтент](https://docs.microsoft.com/dotnet/api/microsoft.azure.management.compute.models.additionalunattendcontent?view=azure-dotnet) , чтобы добавить Фирстлогонкоммандс и логонкоммандс. Дополнительные сведения см. в разделе [Аддитионалунаттендконтент фирстлогонкоммандс example](https://github.com/Azure/azure-quickstart-templates/issues/1407).
+> Пользовательский файл *Unattend. XML* не поддерживается. Хотя мы поддерживаем свойство `additionalUnattendContent`, которое предоставляет ограниченную поддержку добавления параметров [Microsoft-Windows-Shell-Setup](https://docs.microsoft.com/windows-hardware/customize/desktop/unattend/microsoft-windows-shell-setup) в файл *Unattend. XML* , используемый агентом подготовки Azure. Можно использовать, например, [аддитионалунаттендконтент](https://docs.microsoft.com/dotnet/api/microsoft.azure.management.compute.models.additionalunattendcontent?view=azure-dotnet) , чтобы добавить Фирстлогонкоммандс и логонкоммандс. Дополнительные сведения см. в разделе [Аддитионалунаттендконтент фирстлогонкоммандс example](https://github.com/Azure/azure-quickstart-templates/issues/1407).
 
 
 ## <a name="complete-the-recommended-configurations"></a>Выполнение рекомендуемых конфигураций
@@ -440,7 +439,7 @@ Set-Service -Name RemoteRegistry -StartupType Automatic
 * После создания виртуальной машины в Azure рекомендуется разместить файл подкачки на *томе временного диска* , чтобы повысить производительность. Расположение файла можно настроить следующим образом:
 
    ```PowerShell
-   Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management' -name "PagingFiles" -Value "D:\pagefile.sys" -Type MultiString -force
+   Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management' -Name "PagingFiles" -Value "D:\pagefile.sys" -Type MultiString -Force
    ```
   Если диск данных подключен к виртуальной машине, то буква тома временного диска обычно равна *D*. Это может быть различным, в зависимости от параметров и количества доступных дисков.
   * Рекомендуется отключить блокирование сценариев, которое может быть предоставлено антивирусным программным обеспечением. Они могут помешать и блокировать сценарии агента подготовки Windows, выполняемые при развертывании новой виртуальной машины из образа.

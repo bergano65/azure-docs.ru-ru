@@ -60,8 +60,9 @@
     - name: Обработка выделения совпадений
       href: ../Bing-Web-Search/hit-highlighting.md
       maintainContext: true
-    - name: Просмотр результатов поиска веб-страниц
-      href: page-webpages.md
+    - name: Переход по страницам результатов поиска.
+      href: ../Bing-Web-Search/paging-search-results.md
+      maintainContext: true
 - name: Справочные материалы
   items:
     - name: Справочник по API Пользовательского автозаполнения Bing

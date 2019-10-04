@@ -52,8 +52,9 @@
       href: gif-images.md
     - name: 'Получение изображений, набирающих популярность'
       href: trending-images.md
-    - name: Отображение изображений на страницах
-      href: paging-images.md
+    - name: Переход по страницам результатов поиска.
+      maintainContext: true
+      href: ../bing-web-search/paging-search-results.md
     - name: Изменение размера и обрезка эскизов
       maintainContext: true
       href: ../bing-web-search/resize-and-crop-thumbnails.md

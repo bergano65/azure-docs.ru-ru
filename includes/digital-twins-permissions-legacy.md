@@ -2,18 +2,19 @@
 title: включение файла
 description: включение файла
 services: digital-twins
+ms.author: alinast
 author: alinamstanciu
+manager: bertvanhoof
 ms.service: digital-twins
 ms.topic: include
 ms.date: 08/16/2019
-ms.author: alinast
 ms.custom: include file
-ms.openlocfilehash: fcb4b3d54e1e62a7f197f2f499e2b176bb707fd8
-ms.sourcegitcommit: 15e3bfbde9d0d7ad00b5d186867ec933c60cebe6
-ms.translationtype: HT
+ms.openlocfilehash: 690ff402c632bfc28f1a9a218677e9772f5a3200
+ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71843826"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71949947"
 ---
 1. На [портале Azure](https://portal.azure.com) выберите **Azure Active Directory** на панели слева, а затем откройте область **Свойства**. Скопируйте **идентификатор каталога** во временный файл. Это значение будет использоваться для настройки примера приложения в следующем разделе.
 

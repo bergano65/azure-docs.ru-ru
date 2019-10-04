@@ -10,12 +10,12 @@ ms.date: 04/29/2019
 ms.topic: conceptual
 manager: carmonm
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 2d6976e872223cbb66682b9a02ce343487bec35d
-ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
+ms.openlocfilehash: 8a1395c89b047bb120c7f7e2d2d9bb9b4d2b0c50
+ms.sourcegitcommit: 4d177e6d273bba8af03a00e8bb9fe51a447196d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71240272"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71959963"
 ---
 # <a name="track-changes-in-your-environment-with-the-change-tracking-solution"></a>Отслеживание изменений в среде с помощью решения для отслеживания изменений
 
@@ -176,7 +176,7 @@ ms.locfileid: "71240272"
 В настоящее время известны следующие проблемы решения для отслеживания изменений.
 
 * Для компьютеров Windows Server 2016 Core RS3 не собираются исправления обновлений.
-* Управляющие программы Linux могут показывать измененное состояние, несмотря на отсутствие изменений. Это происходит из-за того `SvcRunLevels` , как захватывается поле.
+* Управляющие программы Linux могут показывать измененное состояние, несмотря на отсутствие изменений. Это обусловлено тем, как захватывается поле `SvcRunLevels`.
 
 ## <a name="change-tracking-data-collection-details"></a>Сведения о сборе данных отслеживания изменений.
 
@@ -221,42 +221,25 @@ ms.locfileid: "71240272"
 Целью отслеживания изменений в разделах реестра является точное определение точек расширения, в которых может быть активирован сторонний код или вредоносная программа. Ниже представлен список предварительно настроенных разделов реестра. Эти разделы настроены, но не включены для отслеживания. Чтобы отслеживать эти разделы реестра, необходимо включить каждый из них.
 
 > [!div class="mx-tdBreakAll"]
-> |  |
-> |---------|
-> |**HKEY\_LOCAL\_MACHINE\Software\Classes\Directory\ShellEx\ContextMenuHandlers**     |
-|&nbsp;&nbsp;&nbsp;&nbsp;Отслеживаются общие записи автозапуска, привязывающиеся непосредственно к проводнику Windows и выполняющиеся с внутрипроцессным файлом Explorer.exe.    |
-> |**HKEY\_LOCAL\_MACHINE\Software\Microsoft\Windows\CurrentVersion\Group Policy\Scripts\Startup**     |
-|&nbsp;&nbsp;&nbsp;&nbsp;Отслеживаются сценарии, выполняемые при запуске.     |
-> |**HKEY\_LOCAL\_MACHINE\Software\Microsoft\Windows\CurrentVersion\Group Policy\Scripts\Shutdown**    |
-|&nbsp;&nbsp;&nbsp;&nbsp;Отслеживаются сценарии, выполняемые при завершении работы.     |
-> |**HKEY\_LOCAL\_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Run**     |
-|&nbsp;&nbsp;&nbsp;&nbsp;Отслеживаются разделы, загружаемые перед входом пользователя в учетную запись Windows. Этот раздел используется для 32-разрядных программ, выполняющихся на 64-разрядных компьютерах.    |
-> |**HKEY\_LOCAL\_MACHINE\SOFTWARE\Microsoft\Active Setup\Installed Components**     |
-|&nbsp;&nbsp;&nbsp;&nbsp;Отслеживаются изменения параметров приложения.     |
-> |**HKEY\_LOCAL\_MACHINE\Software\Classes\Directory\ShellEx\ContextMenuHandlers**|
-|&nbsp;&nbsp;&nbsp;&nbsp;Отслеживаются общие записи автозапуска, привязывающиеся непосредственно к проводнику Windows и выполняющиеся с внутрипроцессным файлом Explorer.exe.|
-> |**HKEY\_LOCAL\_MACHINE\Software\Classes\Directory\Shellex\CopyHookHandlers**|
-|&nbsp;&nbsp;&nbsp;&nbsp;Отслеживаются общие записи автозапуска, привязывающиеся непосредственно к проводнику Windows и выполняющиеся с внутрипроцессным файлом Explorer.exe.|
-> |**HKEY\_LOCAL\_MACHINE\Software\Microsoft\Windows\CurrentVersion\Explorer\ShellIconOverlayIdentifiers**|
-|&nbsp;&nbsp;&nbsp;&nbsp;Отслеживается регистрация обработчика дополнительных значков.|
-|**HKEY\_LOCAL\_MACHINE\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\ShellIconOverlayIdentifiers**|
-|&nbsp;&nbsp;&nbsp;&nbsp;Отслеживается регистрация обработчика дополнительных значков для 32-битных программ, работающих на 64-разрядных компьютерах.|
-> |**HKEY\_LOCAL\_MACHINE\Software\Microsoft\Windows\CurrentVersion\Explorer\Browser Helper Objects**|
-|&nbsp;&nbsp;&nbsp;&nbsp;Отслеживаются новые подключаемые модули вспомогательных объектов браузера для Internet Explorer. Используется для доступа к модели DOM текущей страницы и управления навигацией.|
-> |**HKEY\_LOCAL\_MACHINE\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\Browser Helper Objects**|
-|&nbsp;&nbsp;&nbsp;&nbsp;Отслеживаются новые подключаемые модули вспомогательных объектов браузера для Internet Explorer. Используется для получения доступа к модели DOM текущей страницы и управления навигацией для 32-разрядных программ, работающих на 64-разрядных компьютерах.|
-> |**HKEY\_LOCAL\_MACHINE\Software\Microsoft\Internet Explorer\Extensions**|
-|&nbsp;&nbsp;&nbsp;&nbsp;Отслеживаются новые расширения Internet Explorer, например пользовательские меню инструментов и пользовательские кнопки панели инструментов.|
-> |**HKEY\_LOCAL\_MACHINE\Software\Wow6432Node\Microsoft\Internet Explorer\Extensions**|
-|&nbsp;&nbsp;&nbsp;&nbsp;Отслеживаются новые расширения Internet Explorer, например пользовательские меню инструментов и пользовательские кнопки панели инструментов для 32-битных программ, работающих на 64-разрядных компьютерах.|
-> |**HKEY\_LOCAL\_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Drivers32**|
-|&nbsp;&nbsp;&nbsp;&nbsp;Отслеживаются 32-битные драйверы, связанные с устройствами wavemapper — wave1 и wave2, msacm.imaadpcm, .msadpcm, .msgsm610 и vidc. Ознакомьтесь с разделом о [драйверах] в файле SYSTEM.INI.|
-> |**HKEY\_LOCAL\_MACHINE\Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32**|
-|&nbsp;&nbsp;&nbsp;&nbsp;Отслеживаются 32-битные драйверы, связанные с устройствами wavemapper — wave1 и wave2, msacm.imaadpcm, .msadpcm, .msgsm610 и vidc для 32-битных программ, работающих на 64-разрядных компьютерах. Ознакомьтесь с разделом о [драйверах] в файле SYSTEM.INI.|
-> |**HKEY\_LOCAL\_MACHINE\System\CurrentControlSet\Control\Session Manager\KnownDlls**|
-|&nbsp;&nbsp;&nbsp;&nbsp;Отслеживается список известных или часто используемых системных библиотек DLL. Эта система предотвращает использование ненадежных разрешений каталога приложений за счет удаления версий вредоносной программы типа "Троянский конь" системных библиотек DLL.|
-> |**HKEY\_LOCAL\_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\Notify**|
-|&nbsp;&nbsp;&nbsp;&nbsp;Отслеживается список пакетов, получающих уведомления о событиях из Winlogon — интерактивной модели поддержки входа в систему для операционной системы Windows.|
+> |Раздел реестра | Цель |
+> |---------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+> |`HKEY\LOCAL\MACHINE\Software\Classes\Directory\ShellEx\ContextMenuHandlers` | Отслеживаются общие записи автозапуска, привязывающиеся непосредственно к проводнику Windows и выполняющиеся с внутрипроцессным файлом Explorer.exe.
+> |`HKEY\LOCAL\MACHINE\Software\Microsoft\Windows\CurrentVersion\Group Policy\Scripts\Startup` | Отслеживаются сценарии, выполняемые при запуске.
+> |`HKEY\LOCAL\MACHINE\Software\Microsoft\Windows\CurrentVersion\Group Policy\Scripts\Shutdown` | Отслеживаются сценарии, выполняемые при завершении работы.
+> |`HKEY\LOCAL\MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Run` | Отслеживаются разделы, загружаемые перед входом пользователя в учетную запись Windows. Этот раздел используется для 32-разрядных программ, выполняющихся на 64-разрядных компьютерах.
+> |`HKEY\LOCAL\MACHINE\SOFTWARE\Microsoft\Active Setup\Installed Components` | Отслеживаются изменения параметров приложения.
+> |`HKEY\LOCAL\MACHINE\Software\Classes\Directory\ShellEx\ContextMenuHandlers` | Отслеживаются общие записи автозапуска, привязывающиеся непосредственно к проводнику Windows и выполняющиеся с внутрипроцессным файлом Explorer.exe.
+> |`HKEY\LOCAL\MACHINE\Software\Classes\Directory\Shellex\CopyHookHandlers` | Отслеживаются общие записи автозапуска, привязывающиеся непосредственно к проводнику Windows и выполняющиеся с внутрипроцессным файлом Explorer.exe.
+> |`HKEY\LOCAL\MACHINE\Software\Microsoft\Windows\CurrentVersion\Explorer\ShellIconOverlayIdentifiers` | Отслеживается регистрация обработчика дополнительных значков.
+> |`HKEY\LOCAL\MACHINE\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\ShellIconOverlayIdentifiers` | Отслеживается регистрация обработчика дополнительных значков для 32-битных программ, работающих на 64-разрядных компьютерах.
+> |`HKEY\LOCAL\MACHINE\Software\Microsoft\Windows\CurrentVersion\Explorer\Browser Helper Objects` | Отслеживаются новые подключаемые модули вспомогательных объектов браузера для Internet Explorer. Используется для доступа к модели DOM текущей страницы и управления навигацией.
+> |`HKEY\LOCAL\MACHINE\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\Browser Helper Objects` | Отслеживаются новые подключаемые модули вспомогательных объектов браузера для Internet Explorer. Используется для получения доступа к модели DOM текущей страницы и управления навигацией для 32-разрядных программ, работающих на 64-разрядных компьютерах.
+> |`HKEY\LOCAL\MACHINE\Software\Microsoft\Internet Explorer\Extensions` | Отслеживаются новые расширения Internet Explorer, например пользовательские меню инструментов и пользовательские кнопки панели инструментов.
+> |`HKEY\LOCAL\MACHINE\Software\Wow6432Node\Microsoft\Internet Explorer\Extensions` | Отслеживаются новые расширения Internet Explorer, например пользовательские меню инструментов и пользовательские кнопки панели инструментов для 32-битных программ, работающих на 64-разрядных компьютерах.
+> |`HKEY\LOCAL\MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Drivers32` | Отслеживаются 32-битные драйверы, связанные с устройствами wavemapper — wave1 и wave2, msacm.imaadpcm, .msadpcm, .msgsm610 и vidc. Ознакомьтесь с разделом о [драйверах] в файле SYSTEM.INI.
+> |`HKEY\LOCAL\MACHINE\Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32` | Отслеживаются 32-битные драйверы, связанные с устройствами wavemapper — wave1 и wave2, msacm.imaadpcm, .msadpcm, .msgsm610 и vidc для 32-битных программ, работающих на 64-разрядных компьютерах. Ознакомьтесь с разделом о [драйверах] в файле SYSTEM.INI.
+> |`HKEY\LOCAL\MACHINE\System\CurrentControlSet\Control\Session Manager\KnownDlls` | Отслеживается список известных или часто используемых системных библиотек DLL. Эта система предотвращает использование ненадежных разрешений каталога приложений за счет удаления версий вредоносной программы типа "Троянский конь" системных библиотек DLL.
+> |`HKEY\LOCAL\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\Notify` | Отслеживается список пакетов, получающих уведомления о событиях из Winlogon — интерактивной модели поддержки входа в систему для операционной системы Windows.
 
 ## <a name="network-requirements"></a>Требования к сети
 
@@ -326,8 +309,8 @@ ms.locfileid: "71240272"
 |ConfigurationChange <br>&#124; где ConfigChangeType == "Daemons" и SvcName содержит "ssh" и SvcState != "Running"|Полезно для отслеживания изменений в системных критически важных службах|
 |ConfigurationChange <br>&#124; где ConfigChangeType == "Software" и ChangeCategory == "Added"|Полезно для сред, которые требуют заблокированных конфигураций программного обеспечения|
 |ConfigurationData <br>&#124; где SoftwareName содержит "Monitoring Agent" и CurrentVersion != "8.0.11081.0"|Полезно для просмотра, на каких машинах установлена устаревшая или несовместимая версия программного обеспечения. Он сообщает о последнем сообщенном состоянии конфигурации, а не об изменениях.|
-|ConfigurationChange <br>&#124; где RegistryKey == "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\QualityCompat"| Полезно для отслеживания изменений в важных антивирусных ключах|
-|ConfigurationChange <br>&#124; где RegistryKey содержит "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy"| Полезно для отслеживания изменений в параметрах брандмауэра|
+|ConfigurationChange <br>&#124;где RegistryKey = = @ "HKEY_LOCAL_MACHINE @ no__t-1SOFTWARE @ no__t-2Microsoft @ no__t-3Windows @ no__t-4CurrentVersion @ no__t-5QualityCompat"| Полезно для отслеживания изменений в важных антивирусных ключах|
+|ConfigurationChange <br>&#124;где RegistryKey содержит @ "HKEY_LOCAL_MACHINE @ no__t-1SYSTEM @ no__t-2CurrentControlSet @ no__t-3Services @ no__t-4SharedAccess @ no__t-5Parameters @ no__t-6FirewallPolicy"| Полезно для отслеживания изменений в параметрах брандмауэра|
 
 ## <a name="next-steps"></a>Следующие шаги
 

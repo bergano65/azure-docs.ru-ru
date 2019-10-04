@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 06/26/2019
 ms.author: apimpm
-ms.openlocfilehash: c566dc28338a47c1bf24066436c21544eb7c5c7d
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 9c97723687484e8af82d63b6fb4999401a69fb2c
+ms.sourcegitcommit: 7868d1c40f6feb1abcafbffcddca952438a3472d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70072450"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71958527"
 ---
 # <a name="how-to-implement-disaster-recovery-using-service-backup-and-restore-in-azure-api-management"></a>Реализация аварийного восстановления с помощью функций резервного копирования и восстановления службы в Azure API Management
 
@@ -152,7 +152,7 @@ POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/
 -   `subscriptionId` — идентификатор подписки, содержащей службу управления API, для которой вы пытаетесь выполнить резервное копирование;
 -   `resourceGroupName` — имя группы ресурсов службы управления API Azure
 -   `serviceName` — имя службы управления API, резервное копирование которой вы выполняете, на момент ее создания;
--   `api-version`-заменить на`2018-06-01-preview`
+-   `api-version`-заменить на `2018-06-01-preview`
 
 В тексте запроса укажите целевую учетную запись хранения Azure, ключ доступа, имя контейнера BLOB-объектов и имя резервной копии:
 
@@ -193,7 +193,7 @@ POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/
 -   `subscriptionId` — идентификатор подписки, включающей в себя службу управления API, которую нужно восстановить из резервной копии;
 -   `resourceGroupName` — имя группы ресурсов, включающей в себя службу управления API Azure, в которую нужно восстановить резервную копию;
 -   `serviceName` — имя восстанавливаемой службы управления API на момент ее создания;
--   `api-version`-заменить на`2018-06-01-preview`
+-   `api-version`-заменить на `2018-06-01-preview`
 
 В тексте запроса укажите расположение файла резервной копии, то есть добавьте целевую учетную запись хранения Azure, ключ доступа, имя контейнера больших двоичных объектов и имя резервной копии:
 
@@ -218,7 +218,7 @@ POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/
 <!-- Dummy comment added to suppress markdown lint warning -->
 
 > [!NOTE]
-> Операции резервного копирования и восстановления также можно выполнять с помощью команд PowerShell _BACKUP-азапиманажемент_ и RESTORE _-азапиманажемент_ соответственно.
+> Операции резервного копирования и восстановления также можно выполнять с помощью команд PowerShell [_BACKUP-азапиманажемент_](/powershell/module/az.apimanagement/backup-azapimanagement) и [_RESTORE-азапиманажемент_](/powershell/module/az.apimanagement/restore-azapimanagement) соответственно.
 
 ## <a name="next-steps"></a>Следующие шаги
 

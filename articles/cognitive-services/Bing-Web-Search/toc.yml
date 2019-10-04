@@ -54,7 +54,7 @@
     - name: Обработка выделения совпадений
       href: hit-highlighting.md
     - name: Отображение результатов на страницах
-      href: paging-webpages.md
+      href: paging-search-results.md
     - name: Изменение размера и обрезка эскизов
       href: resize-and-crop-thumbnails.md
     - name: Обновление с версии 5 до версии 7

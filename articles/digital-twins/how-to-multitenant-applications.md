@@ -1,19 +1,19 @@
 ---
 title: Включение мультитенантных приложений с помощью Azure Digital Twins | Документация Майкрософт
 description: Как настроить мультитенантные приложения Azure Active Directory для Azure Digital Twins.
-author: mavoge
+ms.author: alinast
+author: alinamstanciu
 manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 08/12/2019
-ms.author: mavoge
-ms.openlocfilehash: 2ee3681640f68839c32e2963b34d5547abb6943b
-ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
+ms.date: 10/02/2019
+ms.openlocfilehash: 070b04b27982b84f101ee4d6f85f4e5b82760092
+ms.sourcegitcommit: 7868d1c40f6feb1abcafbffcddca952438a3472d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68976878"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71958781"
 ---
 # <a name="enable-multitenant-applications-with-azure-digital-twins"></a>Включение мультитенантных приложений с помощью Azure Digital Twins
 
@@ -57,20 +57,16 @@ ms.locfileid: "68976878"
   1. Открыть **подписки**.
   1. Выберите подписку с клиентом Azure Active Directory, который будет использоваться в приложении **разработчика**.
 
-     ![Подписки Azure Active Directory][1]
+     [подписки @no__t 1Azure Active Directory](media/multitenant/ad-subscriptions.png)](media/multitenant/ad-subscriptions.png#lightbox)
 
   1. Выбрать **Поставщики ресурсов**.
   1. Найти **Microsoft.IoTSpaces**.
   1. Выберите **Зарегистрировать**.
 
-     ![Поставщики ресурсов Azure Active Directory][2]
+     [поставщики ресурсов ![Azure Active Directory](media/multitenant/ad-resource-providers.png)](media/multitenant/ad-resource-providers.png#lightbox)
   
 ## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения см. в статье [Создание определяемых пользователем функций в Azure Digital Twins](./how-to-user-defined-functions.md).
 
 - Дополнительные сведения об использовании управления доступом на основе ролей для дальнейшей защиты приложения см. в статье [Создание назначений ролей и управление ими в Azure Digital Twins](./security-create-manage-role-assignments.md).
-
-<!-- Images -->
-[1]: media/multitenant/ad-subscriptions.png
-[2]: media/multitenant/ad-resource-providers.png

@@ -1,6 +1,6 @@
 ---
-title: Запрос данных из общедоступной среды службы "аналитика временных рядов C# Azure" с помощью кода | Документация Майкрософт
-description: Из этой статьи вы узнаете, как запрашивать данные из среды службы "Аналитика временных рядов Azure", создав код для пользовательского приложения на C# (c-sharp) .NET.
+title: Query data from an Azure Time Series Insights GA environment using C# code | Microsoft Docs
+description: This article describes how to query data from an Azure Time Series Insights environment by coding a custom app written in the  C# (C-sharp) .NET language.
 ms.service: time-series-insights
 services: time-series-insights
 author: ashannon7
@@ -10,39 +10,39 @@ reviewer: jasonwhowell, kfile, tsidocs
 ms.devlang: csharp
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 08/08/2019
+ms.date: 10/03/2019
 ms.custom: seodec18
-ms.openlocfilehash: 66c79bed59c8966156d6f000e74e5300edc0245a
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 353e3463c2be552210847ac3fe17bbfe2cec58c7
+ms.sourcegitcommit: 7868d1c40f6feb1abcafbffcddca952438a3472d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68883927"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71958130"
 ---
-# <a name="query-data-from-the-azure-time-series-insights-ga-environment-using-c"></a>Запрос данных из общедоступной среды службы "аналитика временных рядов Azure" с помощьюC#
+# <a name="query-data-from-the-azure-time-series-insights-ga-environment-using-c"></a>Query data from the Azure Time Series Insights GA environment using C#
 
-В C# этом примере показано, как запросить данные из среды "аналитика временных рядов Azure".
+This C# example demonstrates how to query data from the Azure Time Series Insights GA environment.
 
-В нем показано несколько простых способов использования API запроса:
+The sample shows several basic examples of Query API usage:
 
-1. На этапе подготовки следует получить маркер доступа через API Azure Active Directory. Передавайте этот маркер в заголовке `Authorization` каждого запроса API запроса. Сведения о настройке неинтерактивных приложений см. в статье [Проверка подлинности и авторизация для API Azure Time Series Insights](time-series-insights-authentication-and-authorization.md). Кроме того, убедитесь, что все константы, определенные в начале примера, указаны правильно.
-1. Запрашивается список сред, к которым у пользователя есть доступ. Выбирается одна из этих сред, и последующие данные запрашиваются для этой среды.
-1. В качестве примера HTTPS-запроса для выбранной среды запрашиваются данные о доступности.
-1. В качестве примера запроса веб-сокета для выбранной среды запрашиваются объединенные данные событий. Данные запрашиваются для всего диапазона времени доступности.
+1. As a preparation step, acquire the access token through the Azure Active Directory API. Pass this token in the `Authorization` header of every Query API request. For setting up non-interactive applications, see [Authentication and authorization](time-series-insights-authentication-and-authorization.md). Also, ensure all the constants defined at the beginning of the sample are correctly set.
+1. The list of environments that the user has access to is obtained. One of the environments is picked up as the environment of interest, and further data is queried for this environment.
+1. As an example of HTTPS request, availability data is requested for the environment of interest.
+1. As an example of web socket request, event aggregates data is requested for the environment of interest. Data is requested for the whole availability time range.
 
 > [!NOTE]
-> Пример кода можно найти по адресу [https://github.com/Azure-Samples/Azure-Time-Series-Insights](https://github.com/Azure-Samples/Azure-Time-Series-Insights/tree/master/csharp-tsi-ga-sample).
+> The example code is available at [https://github.com/Azure-Samples/Azure-Time-Series-Insights](https://github.com/Azure-Samples/Azure-Time-Series-Insights/tree/master/csharp-tsi-ga-sample).
 
-## <a name="project-dependencies"></a>Зависимости проекта
+## <a name="project-dependencies"></a>Project Dependencies
 
-Добавьте пакеты `Microsoft.IdentityModel.Clients.ActiveDirectory` NuGet и `Newtonsoft.Json`.
+Add NuGet packages `Microsoft.IdentityModel.Clients.ActiveDirectory` and `Newtonsoft.Json`.
 
-## <a name="c-example"></a>Пример C#
+## <a name="c-example"></a>C# example
 
 [!code-csharp[csharpquery-example](~/samples-tsi/csharp-tsi-ga-sample/Program.cs)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next steps
 
-- Дополнительные сведения о запросах см. в справочнике по [API запросов](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api).
+- To learn more about querying, read the [Query API reference](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api).
 
-- Узнайте, как [подключить одностраничное приложение JavaScript к службе](tutorial-create-tsi-sample-spa.md) "аналитика временных рядов".
+- Read how to [connect a JavaScript single-page app](tutorial-create-tsi-sample-spa.md) to Time Series Insights.

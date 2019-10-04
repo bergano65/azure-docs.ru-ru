@@ -49,8 +49,8 @@
     - name: Обработка выделения совпадений
       href: ../Bing-Web-Search/hit-highlighting.md
       maintainContext: true
-    - name: Страницы новостей
-      href: paging-news.md
+    - name: Переход по страницам результатов поиска.
+      href: ../Bing-Web-Search/paging-search-results.md
     - name: Изменение размера и обрезка эскизов
       maintainContext: true
       href: ../bing-web-search/resize-and-crop-thumbnails.md

@@ -15,16 +15,16 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/18/2019
 ms.author: manayar
-ms.openlocfilehash: d12fde33ec9d55c891c801f1b89143b4db6f8ae7
-ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
+ms.openlocfilehash: 87d2b19f6143f567782778e35c8511f233d8b0e8
+ms.sourcegitcommit: 7868d1c40f6feb1abcafbffcddca952438a3472d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70035759"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71958145"
 ---
 # <a name="vertical-autoscale-with-virtual-machine-scale-sets"></a>Вертикальное автомасштабирование масштабируемых наборов виртуальных машин
 
-В этой статье описывается, как выполнить вертикальное масштабирование [масштабируемых наборов виртуальных машин](https://azure.microsoft.com/services/virtual-machine-scale-sets/) Azure с повторной подготовкой или без нее. Дополнительные сведения о вертикальном масштабировании виртуальных машин, которые не входят в масштабируемые наборы, с помощью службы автоматизации Azure см. в [этой статье](../virtual-machines/windows/vertical-scaling-automation.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
+В этой статье описывается, как выполнить вертикальное масштабирование [масштабируемых наборов виртуальных машин](https://azure.microsoft.com/services/virtual-machine-scale-sets/) Azure с повторной подготовкой или без нее. 
 
 Вертикальное масштабирование — это изменение размеров виртуальной машины (*увеличение масштаба* или его *уменьшение*) в ответ на рабочую нагрузку. Сравните это с [горизонтальным масштабированием](virtual-machine-scale-sets-autoscale-overview.md) (также называется *развертыванием* и *свертыванием* количества экземпляров), при котором в зависимости от рабочей нагрузки изменяется количество виртуальных машин.
 

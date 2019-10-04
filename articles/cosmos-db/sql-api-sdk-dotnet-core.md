@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 03/22/2018
 ms.author: sngun
-ms.openlocfilehash: c39db870e44d4e810817b70e2793b8805088180e
-ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
+ms.openlocfilehash: 325e84ec4489eb2f1f530585af7d3c4bc4b201fc
+ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70932541"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71949568"
 ---
 # <a name="azure-cosmos-db-net-core-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: Заметки о выпуске и материалы
 > [!div class="op_single_selector"]
@@ -45,18 +45,26 @@ ms.locfileid: "70932541"
 > [!NOTE]
 > Если вы используете .NET Core, ознакомьтесь с последней версией [пакета SDK для .NET](sql-api-sdk-dotnet-standard.md)версии 3. x, которая предназначена для .NET Standard. 
 
-### <a name="a-name260260"></a><a name="2.6.0"/>2.6.0
+### <a name="a-name270270"></a>@no__t 02.7.0
+
+* Добавлена поддержка массивов и объектов в порядке запросов.
+* Обрабатывайте действующие конфликты ключей секций
+* Добавлена поддержка LINQ для нескольких операторов OrderBy с оператором ThenBy
+* Параметры настраиваемой сериализации теперь применяются ко всем операциям Upsert и Replace.
+* Исправлена проблема взаимоблокировки Айснккаче, чтобы она работала с одним потоком планировщика задач
+
+### <a name="a-name260260"></a>@no__t 02.6.0
 
 * Добавлен Портреусеполици в ConnectionPolicy
 * Фиксированный NTDLL! Ошибка Ртлжетверсион TypeLoadException при использовании пакета SDK в приложении UWP
 
-### <a name="a-name251251"></a><a name="2.5.1"/>2.5.1
+### <a name="a-name251251"></a>@no__t 02.5.1
 
 * Версия System .NET. HTTP пакета SDK теперь соответствует тому, что определено в пакете NuGet.
 * Разрешить запросы на запись в другой регион в случае сбоя исходного.
 * Добавьте политику повтора сеанса для запроса на запись.
 
-### <a name="a-name241241"></a><a name="2.4.1"/>2.4.1
+### <a name="a-name241241"></a>@no__t 02.4.1
 
 * Исправляет состояние отслеживания состояния гонки для запросов, вызвавших пустые страницы
 
@@ -272,6 +280,7 @@ ms.locfileid: "70932541"
 
 | Version | Дата выпуска | Дата вывода |
 | --- | --- | --- |
+| [2.7.0](#2.7.0) |23 сентября 2019 г. |--- |
 | [2.6.0](#2.6.0) |30 августа 2019 г. |--- |
 | [2.5.1](#2.5.1) |02 июля 2019 г. |--- |
 | [2.4.1](#2.4.1) |20 июня 2019 г. |--- |

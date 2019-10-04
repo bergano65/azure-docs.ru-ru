@@ -1,20 +1,20 @@
 ---
 title: Отладка пользовательских функций в Azure Digital Twins | Документация Майкрософт
 description: Рекомендации по отладке пользовательских функций в Azure Digital Twins
-author: kingdomofends
-manager: alinast
+ms.author: alinast
+author: alinamstanciu
+manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
 ms.date: 10/01/2019
-ms.author: v-adgera
 ms.custom: seodec18
-ms.openlocfilehash: df12d6866f5e9e6bf492e228e32b0b10f7266eb4
-ms.sourcegitcommit: 15e3bfbde9d0d7ad00b5d186867ec933c60cebe6
-ms.translationtype: HT
+ms.openlocfilehash: 7b122df279ecde8ed9ed49b5a89251073f3feda7
+ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71843864"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71949883"
 ---
 # <a name="how-to-debug-user-defined-functions-in-azure-digital-twins"></a>Сведения о том, как выполнять отладку пользовательских функций в Azure Digital Twins
 

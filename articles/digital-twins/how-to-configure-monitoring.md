@@ -1,20 +1,20 @@
 ---
-title: Настройка мониторинга в Azure Digital Twins | Документация Майкрософт
+title: Настройка мониторинга в Azure Digital двойников | Документация Майкрософт
 description: Настройка мониторинга в Azure Digital Twins.
-author: kingdomofends
-manager: alinast
+ms.author: alinast
+author: alinamstanciu
+manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
 ms.date: 10/01/2019
-ms.author: v-adgera
 ms.custom: seodec18
-ms.openlocfilehash: 3fb00977a2e1dba5cf9627b8081aee2f76bc8bd4
-ms.sourcegitcommit: 15e3bfbde9d0d7ad00b5d186867ec933c60cebe6
-ms.translationtype: HT
+ms.openlocfilehash: d7d81636bfb60c2d5fa059da01ac535e09b829f4
+ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71845461"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71949998"
 ---
 # <a name="how-to-configure-monitoring-in-azure-digital-twins"></a>Настройка мониторинга в Azure Digital Twins
 
@@ -40,17 +40,17 @@ Azure Digital Twins поддерживает надежные механизмы
 1. Выберите экземпляр Azure Digital Twins.
 1. Выберите **Журнал действий**, чтобы открыть эту панель отображения:
 
-    [![Журнал действий](media/how-to-configure-monitoring/activity-log.png)](media/how-to-configure-monitoring/activity-log.png#lightbox)
+    [Журнал ![Activity](media/how-to-configure-monitoring/activity-log.png)](media/how-to-configure-monitoring/activity-log.png#lightbox)
 
 Расширенные данные о ведении журнала действий вы найдете, выполнив указанные ниже действия.
 
 1. Выберите параметр **Журналы**, чтобы отобразить панель **Обзор аналитики журнала действий**:
 
-    [![Выбор](media/how-to-configure-monitoring/activity-log-select.png)](media/how-to-configure-monitoring/activity-log-select.png#lightbox)
+    [@no__t 1Selection](media/how-to-configure-monitoring/activity-log-select.png)](media/how-to-configure-monitoring/activity-log-select.png#lightbox)
 
 1. В разделе **Обзор аналитики журнала действий** указаны важнейшие сводные данные по журналу действий.
 
-    [![Обзор анализа журнала действий]( media/how-to-configure-monitoring/log-analytics-overview.png)]( media/how-to-configure-monitoring/log-analytics-overview.png#lightbox)
+    [Общие сведения о @no__t 1Activity log Analytics]( media/how-to-configure-monitoring/log-analytics-overview.png)]( media/how-to-configure-monitoring/log-analytics-overview.png#lightbox)
 
 >[!TIP]
 >Используйте **журналы действий** для быстрого анализа событий на уровне подписки.
@@ -70,12 +70,12 @@ Azure Digital Twins поддерживает надежные механизмы
 1. Откройте нужный ресурс на портале Azure.
 1. Выберите **параметры диагностики**:
 
-    [![Параметры диагностики один](media/how-to-configure-monitoring/diagnostic-settings-one.png)](media/how-to-configure-monitoring/diagnostic-settings-one.png#lightbox)
+    [Параметры @no__t 1Diagnostic один](media/how-to-configure-monitoring/diagnostic-settings-one.png)](media/how-to-configure-monitoring/diagnostic-settings-one.png#lightbox)
 
 1. Выберите **включить диагностику** для получения данных (если они не были включены ранее).
 1. Заполните предложенные поля и выберите, как и где будут храниться данные.
 
-    [![Параметры диагностики два](media/how-to-configure-monitoring/diagnostic-settings-two.png)](media/how-to-configure-monitoring/diagnostic-settings-two.png#lightbox)
+    [Параметры ![Diagnostic 2](media/how-to-configure-monitoring/diagnostic-settings-two.png)](media/how-to-configure-monitoring/diagnostic-settings-two.png#lightbox)
 
     Журналы диагностики часто сохраняются с помощью [хранилища файлов Azure](../storage/files/storage-files-deployment-guide.md) и совместно используются с [журналами Azure Monitor](../azure-monitor/log-query/get-started-portal.md). Вы можете выбрать оба варианта.
 
@@ -99,15 +99,15 @@ Azure Monitor включает в себя мощную службу log Analyti
 1. Найдите **Log Analytics** на портале Azure.
 1. Вы увидите доступные экземпляры **рабочей области log Analytics** . Выберите один из них и щелкните **Журналы**, чтобы создать запрос.
 
-    [![Log Analytics](media/how-to-configure-monitoring/log-analytics.png)](media/how-to-configure-monitoring/log-analytics.png#lightbox)
+    [Аналитика @no__t 1Log](media/how-to-configure-monitoring/log-analytics.png)](media/how-to-configure-monitoring/log-analytics.png#lightbox)
 
 1. Если у вас еще нет экземпляра **рабочей области log Analytics** , можно создать рабочую область, нажав кнопку **Добавить** :
 
-    [![Создание OMS](media/how-to-configure-monitoring/log-analytics-oms.png)](media/how-to-configure-monitoring/log-analytics-oms.png#lightbox)
+    [@no__t 1Create OMS](media/how-to-configure-monitoring/log-analytics-oms.png)](media/how-to-configure-monitoring/log-analytics-oms.png#lightbox)
 
 После подготовки экземпляра **рабочей области log Analytics** вы можете использовать мощные запросы для поиска записей в нескольких журналах или поиска с использованием конкретных критериев с помощью **управления журналами**:
 
-   [![Управление журналами](media/how-to-configure-monitoring/log-analytics-management.png)](media/how-to-configure-monitoring/log-analytics-management.png#lightbox)
+   [Управление @no__t 1Log](media/how-to-configure-monitoring/log-analytics-management.png)](media/how-to-configure-monitoring/log-analytics-management.png#lightbox)
 
 Дополнительные сведения о мощных операциях с запросами см. в статье [о начале работы с запросами](../azure-monitor/log-query/get-started-queries.md).
 
@@ -116,7 +116,7 @@ Azure Monitor включает в себя мощную службу log Analyti
 
 Журналы Azure Monitor также предоставляют мощные службы уведомлений об ошибках и предупреждений, которые можно просмотреть, выбрав пункт **Диагностика и решение проблем**.
 
-   [![Оповещения и уведомления об ошибках](media/how-to-configure-monitoring/log-analytics-notifications.png)](media/how-to-configure-monitoring/log-analytics-notifications.png#lightbox)
+   [![Alert и уведомления об ошибках](media/how-to-configure-monitoring/log-analytics-notifications.png)](media/how-to-configure-monitoring/log-analytics-notifications.png#lightbox)
 
 >[!TIP]
 >Используйте **рабочую область log Analytics** для запроса журналов для нескольких функциональных возможностей приложения, подписок или служб.

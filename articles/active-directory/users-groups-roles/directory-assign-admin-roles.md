@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 412bfee12e50b66a780f33b2bca8c4ecc61d83f7
-ms.sourcegitcommit: 3fa4384af35c64f6674f40e0d4128e1274083487
+ms.openlocfilehash: 8fee8692b2e09f9e4f5580d60d2f7a5a5cea2858
+ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71219350"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71950342"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Разрешения роли администратора в Azure Active Directory
 
@@ -169,7 +169,10 @@ In | Может
 
 ### <a name="directory-readersdirectory-readers-permissions"></a>[Читатели каталогов](#directory-readers-permissions)
 
-Это роль, которая должна быть назначена только устаревшим приложениям, которые не поддерживают [инфраструктуру согласия](../develop/quickstart-v1-integrate-apps-with-azure-ad.md). Не назначайте его пользователям.
+Пользователи с этой ролью могут читать основные сведения о каталоге. Эта роль должна использоваться для:
+* Предоставление определенному набору гостевых пользователей доступа на чтение вместо предоставления его всем гостевым пользователям.
+* Предоставление определенного набора пользователей, не являющихся администраторами, доступа к порталу Azure, если параметр "ограничить доступ к порталу Azure AD только администраторам" имеет значение "Да".
+* Предоставление субъектам-службам доступа к каталогу, где Directory. Read. ALL, не является параметром.
 
 ### <a name="directory-synchronization-accountsdirectory-synchronization-accounts-permissions"></a>[Учетные записи синхронизации каталогов](#directory-synchronization-accounts-permissions)
 
@@ -233,7 +236,7 @@ In | Может
 * Пользователи без прав администратора, например руководители, юристы и сотрудники отдела кадров, у которых может быть доступ к конфиденциальным или частным сведениям.
 
 > [!NOTE]
-> Делегирование административных разрешений на подмножества пользователей и применение политик к подмножеству пользователей возможно благодаря административным [единицам (Предварительная версия)](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-administrative-units).
+> Делегирование административных разрешений на подмножества пользователей и применение политик к подмножеству пользователей возможно благодаря [административным единицам (Предварительная версия)](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-administrative-units).
 >
 > Эта роль ранее называлась "Администратор паролей" в [портал Azure](https://portal.azure.com/). Мы изменили свое имя на "Администратор службы поддержки", чтобы оно соответствовало имени в Azure AD PowerShell, Azure AD API Graph и Microsoft Graph API.
 

@@ -1,19 +1,19 @@
 ---
 title: Исходящий трафик и конечные точки в Azure Digital Twins | Документация Майкрософт
 description: Руководство по созданию конечных точек с помощью Azure Digital Twins.
+ms.author: alinast
 author: alinamstanciu
 manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 08/12/2019
-ms.author: alinast
-ms.openlocfilehash: 3c33992ce3c130d6c06e0709a9c4ddcab4fff159
-ms.sourcegitcommit: fe50db9c686d14eec75819f52a8e8d30d8ea725b
+ms.date: 10/02/2019
+ms.openlocfilehash: e7516fffb4aa8806062655e39c591e4691e779b1
+ms.sourcegitcommit: 7868d1c40f6feb1abcafbffcddca952438a3472d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69013942"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71959117"
 ---
 # <a name="egress-and-endpoints"></a>Исходящий трафик и конечные точки
 
@@ -96,7 +96,7 @@ ms.locfileid: "69013942"
 - SpaceResource
 - SpaceRoleAssignment
 - Система
-- пользователя
+- Пользовательская
 - UserBlobMetadata
 - UserExtendedProperty
 

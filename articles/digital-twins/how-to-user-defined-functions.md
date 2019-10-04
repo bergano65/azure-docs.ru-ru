@@ -1,56 +1,56 @@
 ---
-title: Создание определяемых пользователем функций в Azure Digital Twins | Документация Майкрософт
-description: Создание определяемых пользователем функций, сопоставителей и назначений ролей с помощью Azure Digital Twins.
+title: How to create user-defined functions in Azure Digital Twins | Microsoft Docs
+description: How to create user-defined functions, matchers, and role assignments in Azure Digital Twins.
+ms.author: alinast
 author: alinamstanciu
 manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 08/12/2019
-ms.author: alinast
+ms.date: 10/02/2019
 ms.custom: seodec18
-ms.openlocfilehash: 8a39a79f4b3aeacd267a0c4b9351d2400f11d1ff
-ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
+ms.openlocfilehash: 24b7f05bc59f3eb951897f5e36030b531d8f3aa9
+ms.sourcegitcommit: 7868d1c40f6feb1abcafbffcddca952438a3472d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71336908"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71959094"
 ---
-# <a name="how-to-create-user-defined-functions-in-azure-digital-twins"></a>Создание определяемых пользователем функций в Azure Digital Twins
+# <a name="how-to-create-user-defined-functions-in-azure-digital-twins"></a>How to create user-defined functions in Azure Digital Twins
 
-[Определяемые пользователем функции](./concepts-user-defined-functions.md) предоставляют пользователям возможность настраивать логику для выполнения из входящих сообщений телеметрии и метаданных пространственного графа. Это также позволит пользователям отправлять события в заранее определенные [конечные точки](./how-to-egress-endpoints.md).
+[User-defined functions](./concepts-user-defined-functions.md) enable users to configure custom logic to be executed from incoming telemetry messages and spatial graph metadata. Users can also send events to predefined [endpoints](./how-to-egress-endpoints.md).
 
-В этом руководстве рассматривается пример, демонстрирующий, как обнаруживать и оповещать о любых показаниях, которые превышают определенную температуру в результате полученных температурных событий.
+This guide walks through an example demonstrating how to detect and alert on any reading that exceeds a certain temperature from received temperature events.
 
 [!INCLUDE [Digital Twins Management API](../../includes/digital-twins-management-api.md)]
 
-## <a name="client-library-reference"></a>Справочник по клиентской библиотеке
+## <a name="client-library-reference"></a>Client library reference
 
-Функции, доступные в качестве вспомогательных методов в среде выполнения определяемых пользователем функций, перечислены в документе [Справочник по клиентским библиотекам определяемых пользователем функций](./reference-user-defined-functions-client-library.md).
+Functions available as helper methods in the user-defined functions runtime are listed in the [client library reference](./reference-user-defined-functions-client-library.md) document.
 
-## <a name="create-a-matcher"></a>Создание сопоставителя
+## <a name="create-a-matcher"></a>Create a matcher
 
-Сопоставители как объекты графа хранят сведения о том, какие определяемые пользователем функции будут выполняться для некоторого сообщения телеметрии.
+Matchers are graph objects that determine what user-defined functions run for a given telemetry message.
 
-- Сравнения допустимых состояний сопоставителя:
+- Valid matcher condition comparisons:
 
   - `Equals`
   - `NotEquals`
   - `Contains`
 
-- Целевые показатели допустимых состояний сопоставителя:
+- Valid matcher condition targets:
 
   - `Sensor`
   - `SensorDevice`
   - `SensorSpace`
 
-В приведенном ниже примере сопоставитель возвращает значение true для любого события телеметрии датчика с типом значения данных `"Temperature"`. Вы можете создать несколько сопоставлений сущностей на определяемую пользователем функцию, сделав аутентифицированный запрос HTTP POST.
+The following example matcher evaluates to true on any sensor telemetry event with `"Temperature"` as its data type value. You can create multiple matchers on a user-defined function by making an authenticated HTTP POST request to:
 
 ```plaintext
 YOUR_MANAGEMENT_API_URL/matchers
 ```
 
-С помощью текста в формате JSON:
+With JSON body:
 
 ```JSON
 {
@@ -67,23 +67,23 @@ YOUR_MANAGEMENT_API_URL/matchers
 }
 ```
 
-| Значение | Заменить на |
+| Value | Replace with |
 | --- | --- |
-| YOUR_SPACE_IDENTIFIER | Регион сервера, в котором размещен ваш экземпляр |
+| YOUR_SPACE_IDENTIFIER | Which server region your instance is hosted on |
 
-## <a name="create-a-user-defined-function"></a>создание определяемой пользователем функции;
+## <a name="create-a-user-defined-function"></a>Create a user-defined function
 
-Создание определяемой пользователем функции включает в себя составной HTTP-запрос к API управления Azure Digital Twins.
+Creating a user-defined function involves making a multipart HTTP request to the Azure Digital Twins Management APIs.
 
 [!INCLUDE [Digital Twins multipart requests](../../includes/digital-twins-multipart.md)]
 
-После создания сопоставления загрузите фрагмент функции со следующим аутентифицированным составным HTTP-запросом POST в следующее расположение.
+After the matchers are created, upload the function snippet with the following authenticated multipart HTTP POST request to:
 
 ```plaintext
 YOUR_MANAGEMENT_API_URL/userdefinedfunctions
 ```
 
-Используйте следующий текст.
+Use the following body:
 
 ```plaintext
 --USER_DEFINED_BOUNDARY
@@ -107,24 +107,24 @@ function process(telemetry, executionContext) {
 --USER_DEFINED_BOUNDARY--
 ```
 
-| Значение | Заменить на |
+| Value | Replace with |
 | --- | --- |
-| USER_DEFINED_BOUNDARY | Имя границы составного содержимого |
-| YOUR_SPACE_IDENTIFIER | Идентификатор пространства  |
-| YOUR_MATCHER_IDENTIFIER | Идентификатор необходимого сопоставителя |
+| USER_DEFINED_BOUNDARY | A multipart content boundary name |
+| YOUR_SPACE_IDENTIFIER | The space identifier  |
+| YOUR_MATCHER_IDENTIFIER | The ID of the matcher you want to use |
 
-1. Убедитесь, что заголовки включают `Content-Type: multipart/form-data; boundary="USER_DEFINED_BOUNDARY"`.
-1. Убедитесь, что текст состоит из нескольких частей:
+1. Verify that the headers include: `Content-Type: multipart/form-data; boundary="USER_DEFINED_BOUNDARY"`.
+1. Verify that the body is multipart:
 
-   - Первая часть содержит необходимые метаданные определяемой пользователем функции.
-   - Вторая часть содержит логику вычислений на JavaScript.
+   - The first part contains the required user-defined function metadata.
+   - The second part contains the JavaScript compute logic.
 
-1. В разделе **USER_DEFINED_BOUNDARY** замените значения **spaceId** (`YOUR_SPACE_IDENTIFIER`) и **matchers** (`YOUR_MATCHER_IDENTIFIER`).
-1. Убедитесь, что определяемая пользователем функция JavaScript указана как `Content-Type: text/javascript`.
+1. In the **USER_DEFINED_BOUNDARY** section, replace the **spaceId** (`YOUR_SPACE_IDENTIFIER`) and **matchers** (`YOUR_MATCHER_IDENTIFIER`)  values.
+1. Verify that the JavaScript user-defined function is supplied as `Content-Type: text/javascript`.
 
-### <a name="example-functions"></a>Примеры функций
+### <a name="example-functions"></a>Example functions
 
-Установите чтение данных телеметрии датчика непосредственно для датчика с типом данных **Temperature**, который является `sensor.DataType`.
+Set the sensor telemetry reading directly for the sensor with data type **Temperature**, which is `sensor.DataType`:
 
 ```JavaScript
 function process(telemetry, executionContext) {
@@ -140,7 +140,7 @@ function process(telemetry, executionContext) {
 }
 ```
 
-Параметр **telemetry** предоставляет атрибуты **SensorId** и **Message** для описания отправленного датчиком сообщения. Параметр **ExecutionContext** предоставляет следующие атрибуты.
+The **telemetry** parameter exposes the **SensorId** and **Message** attributes, corresponding to a message sent by a sensor. The **executionContext** parameter exposes the following attributes:
 
 ```csharp
 var executionContext = new UdfExecutionContext
@@ -152,7 +152,7 @@ var executionContext = new UdfExecutionContext
 };
 ```
 
-В следующем примере мы сохраняет сообщение в журнал, если значение температуры из телеметрии датчика превысит предварительно заданный порог. Если для экземпляра Azure Digital Twins включены параметры диагностики, передаются также журналы из определяемых пользователем функций.
+In the next example, we log a message if the sensor telemetry reading surpasses a predefined threshold. If your diagnostic settings are enabled on the Azure Digital Twins instance, logs from user-defined functions are also forwarded:
 
 ```JavaScript
 function process(telemetry, executionContext) {
@@ -167,7 +167,7 @@ function process(telemetry, executionContext) {
 }
 ```
 
-Следующий код активирует уведомление, когда уровень температуры превышает предопределенную константу.
+The following code triggers a notification if the temperature level rises above the predefined constant:
 
 ```JavaScript
 function process(telemetry, executionContext) {
@@ -191,37 +191,37 @@ function process(telemetry, executionContext) {
 }
 ```
 
-Более сложный пример кода функции, определяемый пользователем, см. в кратком руководстве по заполненности [здесь](https://github.com/Azure-Samples/digital-twins-samples-csharp/blob/master/occupancy-quickstart/src/actions/userDefinedFunctions/availability.js).
+For a more complex user-defined function code sample, see the [Occupancy quickstart](https://github.com/Azure-Samples/digital-twins-samples-csharp/blob/master/occupancy-quickstart/src/actions/userDefinedFunctions/availability.js).
 
-## <a name="create-a-role-assignment"></a>Создание назначения роли
+## <a name="create-a-role-assignment"></a>Create a role assignment
 
-Создайте назначение роли для выполнения определяемой пользователем функции. Если для определяемой пользователем функции не назначена никакая роль, у нее не будет нужных разрешений для взаимодействия с API управления или доступа к выполнению действий над графическими объектами. Действия, которые может выполнять определяемая пользователем функция, задаются и определяются с помощью управления доступом на основе ролей в API управления Azure Digital Twins. Например, функции, определенные пользователем, можно ограничить по областям, указав определенные роли или пути управления доступом. Дополнительные сведения см. в статье [Управление доступом на основе ролей в службе автоматизации Azure Digital Twins](./security-role-based-access-control.md).
+Create a role assignment for the user-defined function to run under. If no role assignment exists for the user-defined function, it won't have the proper permissions to interact with the Management API or have access to perform actions on graph objects. Actions that a user-defined function may perform are specified and defined via role-based access control within the Azure Digital Twins Management APIs. For example, user-defined functions can be limited in scope by specifying certain roles or certain access control paths. For more information, see the [Role-based access control](./security-role-based-access-control.md) documentation.
 
-1. [Запросите API системы](./security-create-manage-role-assignments.md#retrieve-all-roles) для всех ролей, чтобы получить идентификатор роли, которую необходимо назначить определяемой пользователем функции. Сделайте это, создавая аутентифицированный запрос HTTP GET.
+1. [Query the System API](./security-create-manage-role-assignments.md#retrieve-all-roles) for all roles to get the role ID you want to assign to your user-defined function. Do so by making an authenticated HTTP GET request to:
 
     ```plaintext
     YOUR_MANAGEMENT_API_URL/system/roles
     ```
-   Сохраните идентификатор требуемой роли. Он будет передан в качестве атрибута текста JSON **roleId** (`YOUR_DESIRED_ROLE_IDENTIFIER`) ниже.
+   Keep the desired role ID. It will be passed as the JSON body attribute **roleId** (`YOUR_DESIRED_ROLE_IDENTIFIER`) below.
 
-1. **objectId** (`YOUR_USER_DEFINED_FUNCTION_ID`) будет созданным ранее идентификатором определяемой пользователем функции.
-1. Найдите значение **path** (`YOUR_ACCESS_CONTROL_PATH`), запрашивая пространство с помощью `fullpath`.
-1. Скопируйте возвращенное значение `spacePaths`. Оно понадобится вам далее. Создайте аутентифицированный запрос HTTP GET.
+1. **objectId** (`YOUR_USER_DEFINED_FUNCTION_ID`) will be the user-defined function ID that was created earlier.
+1. Find the value of **path** (`YOUR_ACCESS_CONTROL_PATH`) by querying your spaces with `fullpath`.
+1. Copy the returned `spacePaths` value. You'll use that below. Make an authenticated HTTP GET request to:
 
     ```plaintext
     YOUR_MANAGEMENT_API_URL/spaces?name=YOUR_SPACE_NAME&includes=fullpath
     ```
 
-    | Значение | Заменить на |
+    | Value | Replace with |
     | --- | --- |
-    | YOUR_SPACE_NAME | Имя необходимого пространства |
+    | YOUR_SPACE_NAME | The name of the space you wish to use |
 
-1. Вставьте возвращенное значение `spacePaths` в **path**, чтобы создать назначение роли определяемой пользователем функции, сделав аутентифицированный HTTP-запрос POST в следующее расположение.
+1. Paste the returned `spacePaths` value into **path** to create a user-defined function role assignment by making an authenticated HTTP POST request to:
 
     ```plaintext
     YOUR_MANAGEMENT_API_URL/roleassignments
     ```
-    С помощью текста в формате JSON:
+    With JSON body:
 
     ```JSON
     {
@@ -232,28 +232,28 @@ function process(telemetry, executionContext) {
     }
     ```
 
-    | Значение | Заменить на |
+    | Value | Replace with |
     | --- | --- |
-    | YOUR_DESIRED_ROLE_IDENTIFIER | Идентификатор необходимой роли |
-    | YOUR_USER_DEFINED_FUNCTION_ID | Идентификатор необходимой определяемой пользователем функции |
-    | YOUR_USER_DEFINED_FUNCTION_TYPE_ID | Идентификатор типа для определяемой пользователем функции |
-    | YOUR_ACCESS_CONTROL_PATH | Путь для управления доступом |
+    | YOUR_DESIRED_ROLE_IDENTIFIER | The identifier for the desired role |
+    | YOUR_USER_DEFINED_FUNCTION_ID | The ID for the user-defined function you want to use |
+    | YOUR_USER_DEFINED_FUNCTION_TYPE_ID | The ID specifying the user-defined function type |
+    | YOUR_ACCESS_CONTROL_PATH | The access control path |
 
 >[!TIP]
-> Дополнительные сведения об операциях API управления, связанных с определяемой пользователем функцией и конечными точками, см. в статье [Создание назначений ролей и управление ими в Azure Digital Twins](./security-create-manage-role-assignments.md).
+> Read the article [How to create and manage role assignments](./security-create-manage-role-assignments.md) for more information about user-defined function Management API operations and endpoints.
 
-## <a name="send-telemetry-to-be-processed"></a>Отправка данных телеметрии для обработки
+## <a name="send-telemetry-to-be-processed"></a>Send telemetry to be processed
 
-Датчик, определенный на пространственном интеллектуальном графике, отправляет телеметрию. В свою очередь, телеметрия запускает выполнение пользовательской функции, которая была загружена. Обработчик данных получает данные телеметрии. Затем создает план выполнения для вызова определяемой пользователем функции.
+The sensor defined in the spatial intelligence graph sends telemetry. In turn, the telemetry triggers the execution of the user-defined function that was uploaded. The data processor picks up the telemetry. Then an execution plan is created for the invocation of the user-defined function.
 
-1. Извлеките сопоставители для датчика, с которого было выполнено чтение.
-1. В зависимости от того, что именно сопоставители успешно оценили, извлеките связанные определяемые пользователем функции.
-1. Выполните каждую определяемую пользователем функцию.
+1. Retrieve the matchers for the sensor the reading was generated from.
+1. Depending on what matchers were evaluated successfully, retrieve the associated user-defined functions.
+1. Execute each user-defined function.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next steps
 
-- Узнайте, как [создать конечные точки Azure Digital Twins](./how-to-egress-endpoints.md), чтобы отправлять в них события.
+- Learn how to [create Azure Digital Twins endpoints](./how-to-egress-endpoints.md) to send events to.
 
-- Дополнительные сведения о маршрутизации событий и сообщений в Azure Digital Twins см. в [этой статье](./concepts-events-routing.md).
+- For more details about routing in Azure Digital Twins, read [Routing events and messages](./concepts-events-routing.md).
 
-- См. статью [Справочник по клиентским библиотекам определяемых пользователем функций](./reference-user-defined-functions-client-library.md).
+- Review the [client library reference documentation](./reference-user-defined-functions-client-library.md).

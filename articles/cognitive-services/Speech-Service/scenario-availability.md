@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 05/07/2019
 ms.author: cbasoglu
-ms.openlocfilehash: 94fd415909e86a43916ee2f510732a6a6d9c5ed3
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: af5bb7126af65a755cb1d58788d39cb8bdcbbb3b
+ms.sourcegitcommit: 7868d1c40f6feb1abcafbffcddca952438a3472d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68552948"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71959027"
 ---
 # <a name="scenario-availability"></a>Доступность сценариев
 
@@ -26,6 +26,10 @@ ms.locfileid: "68552948"
 - **Преобразование текста в речь (TTS)**
   - C++/Виндовс & Linux
   - C#/Виндовс & UWP & Unity
+  - Java (JRE и Android)
+  - Python
+  - Код SWIFT
+  - Objective-C
   - REST API TTS можно использовать в любой другой ситуации.
 - **Пробуждение слова (ключевое слово корректировщик/КВС)**
   - C++/Виндовс & Linux
@@ -46,4 +50,4 @@ ms.locfileid: "68552948"
 - **Звуковые входные данные, сжатые кодеком**
   - C++/линукс
   - C#/линукс
-  - Java/Linux & Android
+  - Java, Linux, Android и iOS

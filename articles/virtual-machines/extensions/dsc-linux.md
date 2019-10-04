@@ -13,16 +13,18 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 06/12/2018
 ms.author: robreed
-ms.openlocfilehash: c37b81e08e5d9f150081a9dc12af51175e3f590c
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 6df6bb5c0be4bf1779541a815bd933965024809f
+ms.sourcegitcommit: 4d177e6d273bba8af03a00e8bb9fe51a447196d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70084725"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71960406"
 ---
 # <a name="dsc-extension-for-linux-microsoftostcextensionsdscforlinux"></a>Расширение DSC для Linux (Microsoft.OSTCExtensions.DSCForLinux)
 
 Desired State Configuration (DSC) — это платформа, которая позволяет управлять инфраструктурой ИТ и разработки, используя конфигурацию как код.
+
+> ! Обратите внимание, что расширение DSC для Linux и [Azure Monitor расширение виртуальной машины для Linux](/virtual-machines/extensions/oms-linux) в настоящее время представляют конфликт и не поддерживаются в параллельной конфигурации.  Это означает, что эти два решения не следует использовать вместе на одной виртуальной машине.
 
 Расширение DSCForLinux публикуется и поддерживается корпорацией Майкрософт. Оно устанавливает агенты OMI и DSC на виртуальных машинах Azure. Расширение DSC также может выполнить следующие действия:
 
@@ -39,7 +41,7 @@ Desired State Configuration (DSC) — это платформа, которая 
 
 ### <a name="operating-system"></a>Операционная система
 
-Расширение DSC для Linux поддерживает все [дистрибутивы Linux, рекомендованные для Azure](https://docs.microsoft.com/azure/virtual-machines/linux/endorsed-distros), за исключением следующих.
+Расширение DSC для Linux поддерживает все [дистрибутивы Linux, рекомендованные для Azure](/virtual-machines/linux/endorsed-distros), за исключением следующих.
 
 | Распространение | Version |
 |---|---|

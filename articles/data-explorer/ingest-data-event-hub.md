@@ -7,12 +7,12 @@ ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 07/17/2019
-ms.openlocfilehash: 2dbb900d297f1acf05e77dca3e1753745e9b2b38
-ms.sourcegitcommit: f2d9d5133ec616857fb5adfb223df01ff0c96d0a
-ms.translationtype: HT
+ms.openlocfilehash: a83e2163c9aa970932f2eea8e2e04a715107ac7f
+ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71937397"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71950251"
 ---
 # <a name="ingest-data-from-event-hub-into-azure-data-explorer"></a>Прием данных из концентратора событий в Azure Data Explorer
 
@@ -114,6 +114,7 @@ ms.locfileid: "71937397"
     | Пространство имен концентратора событий | Уникальное имя пространства имен | Имя, выбранное ранее и определяющее пространство имен. |
     | Концентратор событий | *test-hub* | Созданный концентратор событий. |
     | Группа потребителей | *test-group* | Группа получателей событий, определенная в созданном концентраторе событий. |
+    | Свойства системы событий | Выбор соответствующих свойств | [Свойства системы концентратора событий](/azure/service-bus-messaging/service-bus-amqp-protocol-guide#message-annotations) |
     | | |
 
     Целевая таблица
@@ -124,7 +125,7 @@ ms.locfileid: "71937397"
      **Параметр** | **Рекомендуемое значение** | **Описание поля**
     |---|---|---|
     | Таблица | *TestTable* | Таблица, созданная в базе данных **TestDatabase**. |
-    | Формат данных | *JSON* | К поддерживаемым форматам относятся: Avro, CSV, JSON, многострочный JSON, PSV, SOH, SCSV, TSV и TXT. Поддерживаемые параметры сжатия: GZip |
+    | Формат данных | *JSON* | Поддерживаются форматы Avro, CSV, JSON, многострочные JSON, ПСВ, СОХСВ, СКСВ, TSV, ТСВЕ и TXT. Поддерживаемые параметры сжатия: GZip |
     | Сопоставление столбцов | *TestMapping* | Сопоставление, созданное в таблице **TestDatabase**, которое сопоставляет входящие данные JSON с именами столбцов и типами данных **TestTable**. Является обязательным для JSON, MULTILINE JSON, AVRO и необязательным для других форматов.|
     | | |
 

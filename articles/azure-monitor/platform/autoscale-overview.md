@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: robb
 ms.subservice: autoscale
-ms.openlocfilehash: 05f20aec536ebdb702caea37051a65af9bbc659f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3c70d11b83a116a9ce29ce202edeac6fe9464674
+ms.sourcegitcommit: 7868d1c40f6feb1abcafbffcddca952438a3472d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60787605"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71959045"
 ---
 # <a name="overview-of-autoscale-in-microsoft-azure-virtual-machines-cloud-services-and-web-apps"></a>Обзор автомасштабирования в виртуальных машинах, облачных службах и веб-приложениях Microsoft Azure
 В этой статье объясняется, что такое автомасштабирование Microsoft Azure, каковы преимущества этой функции и как начать ее использовать.  
@@ -43,7 +43,7 @@ ms.locfileid: "60787605"
 ## <a name="custom-metrics"></a>Пользовательские метрики
 Вы также можете использовать собственные пользовательские метрики, выдаваемые приложениями. Если вы настроили приложения для отправки метрик в Application Insights, вы сможете использовать эти метрики для принятия решений о том, нужно ли выполнять масштабирование.
 
-## <a name="time"></a>Время
+## <a name="time"></a>Time
 В правилах на основе расписания используется формат UTC. При настройке правил необходимо правильно задать свой часовой пояс.  
 
 ## <a name="rules"></a>Правила
@@ -91,7 +91,6 @@ ms.locfileid: "60787605"
 
 С вертикальным масштабированием дело обстоит иначе. Имеющееся количество виртуальных машин всегда остается неизменным, а увеличивается или уменьшается их мощность. Мощность измеряется по объему памяти, скорости ЦП, дисковому пространству и т. д.  Вертикальное масштабирование связано с дополнительными ограничениями. Оно зависит от доступности оборудования большего размера, что, в свою очередь, зависит от региона. К тому же при таком масштабировании быстро достигается верхнее ограничение. Обычно при вертикальном масштабировании требуется запускать и останавливать виртуальную машину.
 
-Дополнительные сведения см. в статье [Вертикальное масштабирование виртуальной машины Azure c помощью службы автоматизации Azure](../../virtual-machines/linux/vertical-scaling-automation.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
 ## <a name="methods-of-access"></a>Варианты доступа
 Автомасштабирование можно настроить с помощью следующих инструментов:
@@ -102,7 +101,7 @@ ms.locfileid: "60787605"
 * [Azure Monitor REST API](https://msdn.microsoft.com/library/azure/dn931953.aspx)
 
 ## <a name="supported-services-for-autoscale"></a>Службы, поддерживающие автомасштабирование
-| Service | Схемы и документы |
+| Служба | Схемы и документы |
 | --- | --- |
 | Веб-приложения |[Scaling Web Apps (Масштабирование веб-приложения)](../../azure-monitor/platform/autoscale-get-started.md) |
 | Облачные службы |[Автомасштабирование облачной службы](../../cloud-services/cloud-services-how-to-scale-portal.md) |
@@ -112,7 +111,7 @@ ms.locfileid: "60787605"
 | Виртуальные машины: пример Windows |[Расширенная настройка автомасштабирования с помощью шаблонов Resource Manager для набора масштабирования виртуальных машин](../../azure-monitor/platform/autoscale-virtual-machine-scale-sets.md) |
 | Служба управления API|[Автоматическое масштабирование экземпляра службы управления API Azure](https://docs.microsoft.com/azure/api-management/api-management-howto-autoscale)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения об автомасштабировании см. в пошаговых руководствах по автомасштабированию выше, а также в следующих статьях:
 
 * [Общие метрики автомасштабирования Azure Monitor](../../azure-monitor/platform/autoscale-common-metrics.md)
