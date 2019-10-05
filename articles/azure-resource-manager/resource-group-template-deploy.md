@@ -6,18 +6,16 @@ ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 08/21/2019
 ms.author: tomfitz
-ms.openlocfilehash: 1f9fb786933d03b27be47c9f778a5f1575ca17c2
-ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
+ms.openlocfilehash: 88aabb676d3a15dd2efff3acd751818301519ae1
+ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69970912"
+ms.lasthandoff: 10/05/2019
+ms.locfileid: "71972710"
 ---
 # <a name="deploy-resources-with-resource-manager-templates-and-azure-powershell"></a>Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell
 
 Узнайте, как использовать Azure PowerShell с шаблонами Resource Manager для развертывания ресурсов в Azure. См. дополнительные сведения о развертывании решений Azure и управлении ими в обзоре [Azure Resource Manager](resource-group-overview.md).
-
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="deployment-scope"></a>Область развертывания
 
@@ -96,37 +94,6 @@ New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName `
 ```
 
 Чтобы вставить код в Cloud Shell, щелкните правой кнопкой мыши внутри окна, а затем выберите **Paste** (Вставить).
-
-## <a name="redeploy-when-deployment-fails"></a>Повторное развертывание при сбое развертывания
-
-Эта функция также называется откатом *при ошибке*. Если развертывание завершается ошибкой, вы можете автоматически повторно развернуть ресурс, успешно развернутый ранее, из журнала развертывания. Чтобы запустить повторное развертывание, используйте параметр `-RollbackToLastDeployment` или `-RollBackDeploymentName` в команде развертывания. Эта функция полезна, если вы получили известное хорошее состояние развертывания инфраструктуры и хотите вернуться к этому состоянию. Существует ряд предостережений и ограничений.
-
-- Повторное развертывание выполняется точно так же, как было запущено ранее с теми же параметрами. Изменить параметры невозможно.
-- Предыдущее развертывание выполняется с использованием [полного режима](./deployment-modes.md#complete-mode). Все ресурсы, не входящие в предыдущее развертывание, удаляются, а для всех конфигураций ресурсов устанавливается предыдущее состояние. Убедитесь, что вы полностью понимаете [режимы развертывания](./deployment-modes.md).
-- Повторное развертывание влияет только на ресурсы, любые изменения данных не затрагиваются.
-- Эта функция поддерживается только для развертываний групп ресурсов, а не для развертываний на уровне подписки. Дополнительные сведения о развертывании уровня подписки см. в статье [Создание групп ресурсов и ресурсов на уровне подписки](./deploy-to-subscription.md).
-
-Для этого развертывания должны иметь уникальные имена, чтобы их можно было идентифицировать в журнале. Если у вас нет уникальных имен, текущее неудачное развертывание может перезаписать более раннее успешное развертывание, зафиксированное в журнале. Этот параметр можно использовать только с развертываниями корневого уровня. Повторное развертывание из вложенных шаблонов не поддерживается.
-
-Чтобы выполнить повторно последнее успешное развертывание, добавьте параметр `-RollbackToLastDeployment` в качестве флага.
-
-```azurepowershell-interactive
-New-AzResourceGroupDeployment -Name ExampleDeployment02 `
-  -ResourceGroupName $resourceGroupName `
-  -TemplateFile c:\MyTemplates\azuredeploy.json `
-  -RollbackToLastDeployment
-```
-
-Чтобы выполнить повторно конкретное развертывание, используйте параметр `-RollBackDeploymentName` и укажите имя развертывания.
-
-```azurepowershell-interactive
-New-AzResourceGroupDeployment -Name ExampleDeployment02 `
-  -ResourceGroupName $resourceGroupName `
-  -TemplateFile c:\MyTemplates\azuredeploy.json `
-  -RollBackDeploymentName ExampleDeployment01
-```
-
-Указанное развертывание должно быть успешным.
 
 ## <a name="pass-parameter-values"></a>Передача значений параметров
 
@@ -220,7 +187,7 @@ Test-AzResourceGroupDeployment : After parsing a value an unexpected character w
 
 ## <a name="next-steps"></a>Следующие шаги
 
-- Для безопасного развертывания службы в нескольких регионах обратитесь к статье о [диспетчере развертывания Azure](deployment-manager-overview.md).
+- Сведения о откате к успешному развертыванию при возникновении ошибки см. в разделе [откат при ошибке для успешного развертывания](rollback-on-error.md).
 - Сведения о том, как указать способ обработки ресурсов, которые существуют в группе ресурсов, но не определены в шаблоне, см. в [описании режимов развертывания с помощью Azure Resource Manager](deployment-modes.md).
 - Сведения об определении параметров в шаблоне см. в статье [Описание структуры и синтаксиса шаблонов Azure Resource Manager](resource-group-authoring-templates.md).
 - Сведения о развертывании шаблона, которому нужен токен SAS, см. в статье [Развертывание частного шаблона с помощью маркера SAS](resource-manager-powershell-sas-token.md).

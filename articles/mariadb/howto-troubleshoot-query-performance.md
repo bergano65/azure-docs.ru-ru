@@ -1,17 +1,17 @@
 ---
-title: Устранение неполадок производительности запросов в Базе данных Azure для MariaDB
-description: В этой статье описано, как использовать инструкцию EXPLAIN для устранения неполадок с производительностью запросов в Базе данных Azure для MariaDB.
+title: Устранение неполадок с производительностью запросов в базе данных Azure для MariaDB
+description: Узнайте, как использовать объяснение для устранения неполадок с производительностью запросов в базе данных Azure для MariaDB.
 author: ajlam
 ms.author: andrela
 ms.service: mariadb
-ms.topic: conceptual
+ms.topic: troubleshooting
 ms.date: 11/09/2018
-ms.openlocfilehash: 672635c8d8c84fa16c106ae79e97332fd740928d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a2f5e7e7c9ca39c092e13242ecdac2675b09fc0d
+ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60745168"
+ms.lasthandoff: 10/05/2019
+ms.locfileid: "71973504"
 ---
 # <a name="how-to-use-explain-to-profile-query-performance-in-azure-database-for-mariadb"></a>Использование инструкции EXPLAIN для профилирования производительности запросов в Базе данных Azure для MariaDB
 Инструкция **EXPLAIN** представляет собой удобное средство для оптимизации запросов. С помощью инструкций EXPLAIN можно получать информацию о том, как выполняются инструкции SQL. Ниже показан пример выполнения инструкции EXPLAIN.
@@ -163,7 +163,7 @@ possible_keys: NULL
  
 ## <a name="conclusion"></a>Заключение
  
-Использование инструкции EXPLAIN и разных типов индексов позволяет существенно повысить производительность. Одно наличие индекса для таблицы не обязательно означает, что MariaDB сможет использовать его в запросах. Следует всегда проверять свои предположения с помощью инструкции EXPLAIN и оптимизировать запросы с помощью индексов.
+Использование инструкции EXPLAIN и разных типов индексов позволяет существенно повысить производительность. Наличие индекса в таблице не обязательно означает, что MariaDB сможет использовать ее для ваших запросов. Следует всегда проверять свои предположения с помощью инструкции EXPLAIN и оптимизировать запросы с помощью индексов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Чтобы найти ответы на наиболее важные вопросы либо опубликовать новый вопрос или ответ, посетите [Форум MSDN](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureDatabaseforMariadb) или [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-database-mariadb).

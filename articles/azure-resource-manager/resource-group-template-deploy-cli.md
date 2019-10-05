@@ -6,12 +6,12 @@ ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 08/21/2019
 ms.author: tomfitz
-ms.openlocfilehash: bd43e919cc0b2bcf1d130c7e616b7da064abcc65
-ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
+ms.openlocfilehash: bef9d0490ce9109a960b69febf2970a289c25e40
+ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69971028"
+ms.lasthandoff: 10/05/2019
+ms.locfileid: "71973398"
 ---
 # <a name="deploy-resources-with-resource-manager-templates-and-azure-cli"></a>Развертывание ресурсов с использованием шаблонов Resource Manager и Azure CLI
 
@@ -95,41 +95,6 @@ az group deployment create --resource-group examplegroup \
   --template-uri <copied URL> \
   --parameters storageAccountType=Standard_GRS
 ```
-
-## <a name="redeploy-when-deployment-fails"></a>Повторное развертывание при сбое развертывания
-
-Эта функция также называется откатом *при ошибке*. Если развертывание завершается ошибкой, вы можете автоматически повторно развернуть ресурс, успешно развернутый ранее, из журнала развертывания. Чтобы запустить повторное развертывание, используйте параметр `--rollback-on-error` в команде развертывания. Эта функция полезна, если вы получили известное хорошее состояние развертывания инфраструктуры и хотите вернуться к этому состоянию. Существует ряд предостережений и ограничений.
-
-- Повторное развертывание выполняется точно так же, как было запущено ранее с теми же параметрами. Изменить параметры невозможно.
-- Предыдущее развертывание выполняется с использованием [полного режима](./deployment-modes.md#complete-mode). Все ресурсы, не входящие в предыдущее развертывание, удаляются, а для всех конфигураций ресурсов устанавливается предыдущее состояние. Убедитесь, что вы полностью понимаете [режимы развертывания](./deployment-modes.md).
-- Повторное развертывание влияет только на ресурсы, любые изменения данных не затрагиваются.
-- Эта функция поддерживается только для развертываний групп ресурсов, а не для развертываний на уровне подписки. Дополнительные сведения о развертывании уровня подписки см. в статье [Создание групп ресурсов и ресурсов на уровне подписки](./deploy-to-subscription.md).
-
-Для этого развертывания должны иметь уникальные имена, чтобы их можно было идентифицировать в журнале. Если у вас нет уникальных имен, текущее неудачное развертывание может перезаписать более раннее успешное развертывание, зафиксированное в журнале. Этот параметр можно использовать только с развертываниями корневого уровня. Повторное развертывание из вложенных шаблонов не поддерживается.
-
-Чтобы выполнить повторно последнее успешное развертывание, добавьте параметр `--rollback-on-error` в качестве флага.
-
-```azurecli-interactive
-az group deployment create \
-  --name ExampleDeployment \
-  --resource-group ExampleGroup \
-  --template-file storage.json \
-  --parameters storageAccountType=Standard_GRS \
-  --rollback-on-error
-```
-
-Чтобы выполнить повторно конкретное развертывание, используйте параметр `--rollback-on-error` и укажите имя развертывания.
-
-```azurecli-interactive
-az group deployment create \
-  --name ExampleDeployment02 \
-  --resource-group ExampleGroup \
-  --template-file storage.json \
-  --parameters storageAccountType=Standard_GRS \
-  --rollback-on-error ExampleDeployment01
-```
-
-Указанное развертывание должно быть успешным.
 
 ## <a name="parameters"></a>Параметры
 
@@ -237,7 +202,7 @@ az group deployment validate \
 
 ## <a name="next-steps"></a>Следующие шаги
 
-- В примерах этой статьи ресурсы развертываются в группу ресурсов в подписке по умолчанию. Чтобы использовать другую подписку, см. статью [Управление несколькими подписками Azure](/cli/azure/manage-azure-subscriptions-azure-cli).
+- Сведения о откате к успешному развертыванию при возникновении ошибки см. в разделе [откат при ошибке для успешного развертывания](rollback-on-error.md).
 - Сведения о том, как указать способ обработки ресурсов, которые существуют в группе ресурсов, но не определены в шаблоне, см. в [описании режимов развертывания с помощью Azure Resource Manager](deployment-modes.md).
 - Сведения об определении параметров в шаблоне см. в статье [Описание структуры и синтаксиса шаблонов Azure Resource Manager](resource-group-authoring-templates.md).
 - Советы по устранению распространенных ошибок развертывания см. в разделе [Устранение распространенных ошибок развертывания в Azure с помощью Azure Resource Manager](resource-manager-common-deployment-errors.md).

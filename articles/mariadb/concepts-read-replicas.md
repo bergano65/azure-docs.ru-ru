@@ -1,17 +1,17 @@
 ---
 title: Чтение реплик в базе данных Azure для MariaDB
-description: В этой статье описываются реплики чтения для базы данных Azure для MariaDB.
+description: 'Сведения о репликах чтения в базе данных Azure для MariaDB: выбор регионов, создание реплик, подключение к репликам, мониторинг репликации и остановка репликации.'
 author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 09/06/2019
-ms.openlocfilehash: 5018cab1213fb99f4c3b07944d0cb3172d1cd2c7
-ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
+ms.openlocfilehash: 29725c302887448689f4aafd86f1f834d81c23ed
+ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71123232"
+ms.lasthandoff: 10/05/2019
+ms.locfileid: "71973595"
 ---
 # <a name="read-replicas-in-azure-database-for-mariadb"></a>Чтение реплик в базе данных Azure для MariaDB
 
@@ -19,7 +19,7 @@ ms.locfileid: "71123232"
 
 Реплики — это новые серверы, управление которыми осуществляется аналогично обычным серверам базы данных Azure для MariaDB. За каждую реплику чтения выставляется счет с учетом подготовленных вычислительных ресурсов (количество виртуальных ядер) и хранилища (ГБ/месяц).
 
-Дополнительные сведения о репликации ГТИД см. в документации по [репликации MariaDB](https://mariadb.com/kb/en/library/gtid/).
+Дополнительные сведения о репликации ГТИД см. в [документации по репликации MariaDB](https://mariadb.com/kb/en/library/gtid/).
 
 ## <a name="when-to-use-a-read-replica"></a>Использование реплик чтения
 
@@ -40,10 +40,10 @@ ms.locfileid: "71123232"
 
 Главный сервер можно использовать в любом [регионе базы данных Azure для MariaDB](https://azure.microsoft.com/global-infrastructure/services/?products=mariadb).  Главный сервер может иметь реплику в связанном регионе или в регионах универсальной реплики. На рисунке ниже показано, какие регионы реплик доступны в зависимости от главного региона.
 
-[![Чтение регионов реплики](media/concepts-read-replica/read-replica-regions.png)](media/concepts-read-replica/read-replica-regions.png#lightbox)
+[регионы реплики @no__t 1Read](media/concepts-read-replica/read-replica-regions.png)](media/concepts-read-replica/read-replica-regions.png#lightbox)
 
 ### <a name="universal-replica-regions"></a>Регионы универсальной реплики
-Вы всегда можете создать реплику чтения в любом из следующих регионов, независимо от того, где находится главный сервер. Это регионы универсальной реплики:
+Реплику чтения можно создать в любом из следующих регионов, независимо от того, где находится главный сервер. В число поддерживаемых регионов универсальной реплики входят:
 
 Восточная Австралия, Юго-Восточная Австралия, Центральная часть США, Восточная Азия, Восточная часть США, Восточная часть США 2, Восточная Япония, Западная Япония, Центральная Корея, Юго-Запад, северо-центральная часть США, Северная Европа, Юго-Центральная часть США, Юго-Восточная Азия, южная часть Соединенного Королевства, западная часть Соединенного Королевства, Западная Европа, Западная часть США, Западная часть США 2.
 
@@ -90,7 +90,7 @@ mysql -h myreplica.mariadb.database.azure.com -u myadmin@myreplica -p
 
 База данных Azure для MariaDB обеспечивает **задержку репликации в секундах** в Azure Monitor. Эта метрика доступна только для реплик.
 
-Эта метрика вычисляется с `seconds_behind_master` помощью метрики, доступной `SHOW SLAVE STATUS` в команде MariaDB.
+Эта метрика вычисляется с помощью метрики `seconds_behind_master`, доступной в команде MariaDB `SHOW SLAVE STATUS`.
 
 Настройте оповещение, чтобы сообщить вам, когда задержка репликации достигнет значения, неприемлемого для вашей рабочей нагрузки.
 
@@ -114,7 +114,7 @@ mysql -h myreplica.mariadb.database.azure.com -u myadmin@myreplica -p
 
 ### <a name="master-server-restart"></a>Перезапуск главного сервера
 
-При создании реплики для главного сервера, не имеющего существующих реплик, сначала выполняется перезапуск, чтобы подготовиться к репликации. Следует это учитывать и выполнять такие операции в период низкой нагрузки.
+При создании реплики для главного сервера, не имеющего существующих реплик, сначала выполняется перезапуск, чтобы подготовиться к репликации. Примите это в виду и выполните эти операции в течение непикового периода.
 
 ### <a name="new-replicas"></a>Новые реплики
 
@@ -141,13 +141,13 @@ mysql -h myreplica.mariadb.database.azure.com -u myadmin@myreplica -p
 
 ### <a name="server-parameters"></a>Параметры сервера
 
-Чтобы предотвратить синхронизацию данных и избежать возможной потери или повреждения данных, некоторые параметры сервера не обновляются при использовании реплик чтения.
+Чтобы предотвратить синхронизацию данных и избежать их возможной потери, при использовании реплики чтения некоторые параметры сервера блокируются.
 
 На серверах главной и реплики заблокированы следующие параметры сервера:
 - [`innodb_file_per_table`](https://mariadb.com/kb/en/library/innodb-system-variables/#innodb_file_per_table) 
 - [`log_bin_trust_function_creators`](https://mariadb.com/kb/en/library/replication-and-binary-log-system-variables/#log_bin_trust_function_creators)
 
-[`event_scheduler`](https://mariadb.com/kb/en/library/server-system-variables/#event_scheduler) Параметр заблокирован на серверах реплик.
+Параметр [`event_scheduler`](https://mariadb.com/kb/en/library/server-system-variables/#event_scheduler) заблокирован на серверах реплики.
 
 ### <a name="other"></a>Другие
 

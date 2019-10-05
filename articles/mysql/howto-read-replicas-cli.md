@@ -1,23 +1,23 @@
 ---
-title: Создание реплик чтения и управление ими в базе данных Azure для MySQL — Azure CLI, REST API
-description: В этой статье описывается, как настроить и управлять репликами чтения в базе данных Azure для MySQL с помощью Azure CLI REST API
+title: Создание & Управление репликами чтения — база данных Azure для MySQL
+description: Узнайте, как настроить реплики чтения и управлять ими в базе данных Azure для MySQL с помощью Azure CLI или REST API.
 author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 09/14/2019
-ms.openlocfilehash: 5bec4e7284e78506372d395bf022055fa31998e3
-ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
+ms.openlocfilehash: 741b50bdb2ec9c8d29a9f759e46209856de3a49c
+ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70993552"
+ms.lasthandoff: 10/05/2019
+ms.locfileid: "71970308"
 ---
 # <a name="how-to-create-and-manage-read-replicas-in-azure-database-for-mysql-using-the-azure-cli-and-rest-api"></a>Как создавать реплики чтения и управлять ими в базе данных Azure для MySQL с помощью Azure CLI и REST API
 
 В этой статье вы узнаете, как создавать реплики чтения и управлять ими в службе "база данных Azure для MySQL" с помощью Azure CLI и REST API. Дополнительные сведения о репликах чтения см. в [этой статье](concepts-read-replicas.md).
 
-## <a name="azure-cli"></a>Azure CLI
+## <a name="azure-cli"></a>Инфраструктура CLI Azure
 Вы можете создавать реплики чтения и управлять ими с помощью Azure CLI.
 
 ### <a name="prerequisites"></a>Предварительные требования
@@ -44,7 +44,7 @@ az mysql server replica create --name mydemoreplicaserver --source-server mydemo
 | name | mydemoreplicaserver | Имя нового сервера реплики, который создается. |
 | source-server | mydemoserver | Имя или идентификатор имеющегося главного сервера для репликации. |
 
-Чтобы создать реплику чтения между регионами, используйте `--location` параметр. Приведенный ниже пример интерфейса командной строки создает реплику в западной части США.
+Чтобы создать реплику чтения между регионами, используйте параметр `--location`. Приведенный ниже пример интерфейса командной строки создает реплику в западной части США.
 
 ```azurecli-interactive
 az mysql server replica create --name mydemoreplicaserver --source-server mydemoserver --resource-group myresourcegroup --location westus
@@ -133,7 +133,7 @@ PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 > [!NOTE]
 > Дополнительные сведения о том, в каких регионах можно создать реплику, см. в [статье чтение основных сведений о репликах](concepts-read-replicas.md). 
 
-Если `azure.replication_support` параметр не задан для **реплики** на общего назначения или на главном сервере, оптимизированном для памяти, и сервер перезагружен, появится сообщение об ошибке. Перед созданием реплики выполните эти два действия.
+Если вы не установили параметр `azure.replication_support` для **реплики** на общего назначения или на главном сервере, оптимизированном для памяти, и перезапустили сервер, появится сообщение об ошибке. Перед созданием реплики выполните эти два действия.
 
 Реплика создается с использованием тех же параметров вычислений и хранилища, что и у главного сервера. После создания реплики вы можете независимо от главного сервера изменять следующие ее параметры: поколение вычислительных ресурсов, число виртуальных ядер, объем хранилища и период хранения резервных копий. Изменить также можно ценовую категорию (за исключением уровня "Базовый").
 

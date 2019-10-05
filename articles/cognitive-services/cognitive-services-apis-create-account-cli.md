@@ -7,16 +7,16 @@ author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: conceptual
-ms.date: 07/17/2019
+ms.date: 10/04/2019
 ms.author: aahi
-ms.openlocfilehash: cd00f49aea08e5c94a9206b64f66f4424ef3ca04
-ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
+ms.openlocfilehash: d50b0858ac7c4c0e5e0263bd157e044d0fec4489
+ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71057654"
+ms.lasthandoff: 10/05/2019
+ms.locfileid: "71972671"
 ---
-# <a name="create-a-cognitive-services-resource-using-the-azure-command-line-interfacecli"></a>Создание Cognitive Services ресурса с помощью интерфейса командной строки Azure (CLI)
+# <a name="create-a-cognitive-services-resource-using-the-azure-command-line-interfacecli"></a>Создание Cognitive Services ресурса с помощью интерфейс командной строки Azure (CLI)
 
 Используйте это краткое руководство для начала работы с Azure Cognitive Services с помощью [интерфейса командной строки Azure (CLI)](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Cognitive Services представлены [ресурсами](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal) Azure, созданными в подписке Azure. После создания ресурса используйте ключи и конечную точку, созданные для проверки подлинности приложений. 
 
@@ -60,7 +60,7 @@ az account list-locations \
 
 Создав расположение Azure, создайте новую группу ресурсов в Azure CLI с помощью команды [AZ Group Create](/cli/azure/group#az-group-create) .
 
-В приведенном ниже примере замените расположение `westus2` Azure на одно из расположений Azure, доступных для вашей подписки.
+В следующем примере замените расположение Azure `westus2` на одно из расположений Azure, доступных для вашей подписки.
 
 ```azurecli-interactive
 az group create \
@@ -75,11 +75,11 @@ az group create \
 При создании нового ресурса необходимо знать тип службы, которую вы хотите использовать, а также [ценовую категорию](https://azure.microsoft.com/pricing/details/cognitive-services/) (или номер SKU). Эта и другие сведения будут использоваться в качестве параметров при создании ресурса.
 
 > [!NOTE]
-> Многие службы для работы с назначением имеют бесплатный уровень, который можно использовать для пробного использования службы. Чтобы использовать уровень "бесплатный", `F0` используйте в качестве номера SKU для ресурса.
+> Многие службы для работы с назначением имеют бесплатный уровень, который можно использовать для пробного использования службы. Чтобы использовать уровень Free, используйте `F0` в качестве номера SKU для ресурса.
 
 ### <a name="vision"></a>Визуальное распознавание
 
-| Служба                    | Тип                      |
+| Служба                    | Вид                      |
 |----------------------------|---------------------------|
 | Компьютерное зрение            | `ComputerVision`          |
 | Прогнозирование Пользовательское визуальное распознавание | `CustomVision.Prediction` |
@@ -88,9 +88,9 @@ az group create \
 | Распознаватель документов            | `FormRecognizer`          |
 | Распознаватель рукописного текста             | `InkRecognizer`           |
 
-### <a name="search"></a>Поиск
+### <a name="search"></a>Найти
 
-| Служба            | Тип                  |
+| Служба            | Вид                  |
 |--------------------|-----------------------|
 | Автозаполнение Bing   | `Bing.Autosuggest.v7` |
 | Пользовательский поиск Bing | `Bing.CustomSearch`   |
@@ -100,14 +100,14 @@ az group create \
 
 ### <a name="speech"></a>Речь
 
-| Служба            | Тип                 |
+| Служба            | Вид                 |
 |--------------------|----------------------|
 | Службы "Речь"    | `SpeechServices`     |
 | Распознавание речи | `SpeakerRecognition` |
 
 ### <a name="language"></a>Язык
 
-| Служба            | Тип                |
+| Служба            | Вид                |
 |--------------------|---------------------|
 | Основные сведения о форме | `FormUnderstanding` |
 | LUIS               | `LUIS`              |
@@ -117,7 +117,7 @@ az group create \
 
 ### <a name="decision"></a>Решение
 
-| Служба           | Тип               |
+| Служба           | Вид               |
 |-------------------|--------------------|
 | Детектор аномалий  | `AnomalyDetector`  |
 | Модератор контента | `ContentModerator` |
@@ -133,7 +133,7 @@ az cognitiveservices account list-kinds
 
 Чтобы создать новый ресурс Cognitive Services и подписываться на него, используйте команду [AZ cognitiveservices Account Create](https://docs.microsoft.com/cli/azure/cognitiveservices/account?view=azure-cli-latest#az-cognitiveservices-account-create) . Эта команда добавляет новый оплачиваемый ресурс в группу ресурсов, созданную ранее. При создании нового ресурса необходимо знать тип службы, которую вы хотите использовать, а также ценовую категорию (или SKU) и расположение Azure:
 
-Вы можете создать ресурс F0 (Free) для детектора аномалий с именем `anomaly-detector-resource` , используя приведенную ниже команду.
+Вы можете создать ресурс F0 (Free) для детектора аномалий с именем `anomaly-detector-resource` с помощью приведенной ниже команды.
 
 ```azurecli-interactive
 az cognitiveservices account create \
@@ -170,6 +170,16 @@ az login
 * функции службы, включенные в ценовой категории.
 * Стоимость предопределенного количества транзакций. При превышении этого объема взимается плата за дополнительную плату, указанную в [сведениях о ценах](https://azure.microsoft.com/pricing/details/cognitive-services/custom-vision-service/) для вашей службы.
 
+## <a name="get-current-quota-usage-for-your-resource"></a>Получение сведений об используемой квоте для ресурса
+
+Используйте команду [AZ cognitiveservices Account List-Usage](https://docs.microsoft.com/en-us/cli/azure/cognitiveservices/account?view=azure-cli-latest#az-cognitiveservices-account-list-usage) , чтобы получить сведения об использовании для вашего ресурса службы "неприятный".
+
+```azurecli-interactive
+az cognitiveservices account list-usage \
+    --name anomaly-detector-resource \
+    --resource-group cognitive-services-resource-group \
+    --subscription subscription-name
+```
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

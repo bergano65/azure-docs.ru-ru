@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 10/01/2019
 ms.author: magoedte
 ms.subservice: ''
-ms.openlocfilehash: fa0bd847596a601875d5662da1c000a5b1388eef
-ms.sourcegitcommit: 4d177e6d273bba8af03a00e8bb9fe51a447196d0
+ms.openlocfilehash: e1875ebdb62cfc6d606465b863215513aaa47c02
+ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71960266"
+ms.lasthandoff: 10/05/2019
+ms.locfileid: "71972910"
 ---
 # <a name="manage-usage-and-costs-with-azure-monitor-logs"></a>Управление использованием и затратами с помощью журналов Azure Monitor
 
@@ -147,7 +147,7 @@ Azure предоставляет большое количество полез�
     GET /subscriptions/00000000-0000-0000-0000-00000000000/resourceGroups/MyResourceGroupName/providers/Microsoft.OperationalInsights/workspaces/MyWorkspaceName/Tables?api-version=2017-04-26-preview
 ```
 
-Чтобы задать срок хранения определенного типа данных (в этом примере — SecurityEvent) до 730 дня, выполните
+Чтобы задать срок хранения определенного типа данных (в этом примере — SecurityEvent) до 730 дней, выполните
 
 ```JSON
     PUT /subscriptions/00000000-0000-0000-0000-00000000000/resourceGroups/MyResourceGroupName/providers/Microsoft.OperationalInsights/workspaces/MyWorkspaceName/Tables/SecurityEvent?api-version=2017-04-26-preview
@@ -161,7 +161,11 @@ Azure предоставляет большое количество полез�
 
 Типы данных `Usage` и `AzureActivity` не могут быть заданы с помощью настраиваемого хранения. Они будут принимать максимум времени хранения рабочей области по умолчанию или 90 дней. 
 
-Отличным инструментом для прямого подключения к ARM, чтобы задать хранение по типу данных, является средство OSS [ARMclient](https://github.com/projectkudu/ARMClient).  Дополнительные сведения о ARMclient см. в статьях по [Дэвид эббо](http://blog.davidebbo.com/2015/01/azure-resource-manager-client.html) и [Даниэль бовбес](https://blog.bowbyes.co.nz/2016/11/02/using-armclient-to-directly-access-azure-arm-rest-apis-and-list-arm-policy-details/). 
+Отличным инструментом для прямого подключения к ARM, чтобы задать хранение по типу данных, является средство OSS [ARMclient](https://github.com/projectkudu/ARMClient).  Дополнительные сведения о ARMclient см. в статьях по [Дэвид эббо](http://blog.davidebbo.com/2015/01/azure-resource-manager-client.html) и [Даниэль бовбес](https://blog.bowbyes.co.nz/2016/11/02/using-armclient-to-directly-access-azure-arm-rest-apis-and-list-arm-policy-details/).  Вот примере, использующий ARMClient, который устанавливает данные SecurityEvent в 730 день:
+
+```
+armclient PUT /subscriptions/00000000-0000-0000-0000-00000000000/resourceGroups/MyResourceGroupName/providers/Microsoft.OperationalInsights/workspaces/MyWorkspaceName/Tables/SecurityEvent?api-version=2017-04-26-preview "{properties: {retentionInDays: 730}}"
+```
 
 > [!NOTE]
 > Задание хранения для отдельных типов данных можно использовать для снижения затрат на хранение данных.  Для данных, собираемых начиная с октября 2019 (когда эта функция была выпущена), уменьшение срока хранения для некоторых типов данных может снизить стоимость хранения с течением времени.  Для данных, собранных ранее, установка более низкого срока хранения для отдельного типа не повлияет на стоимость хранения.  

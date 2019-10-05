@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: 81d19552b56de540f235960c498c64e7b276320c
-ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
+ms.openlocfilehash: 781884b0973ca42db542f53d452dbaaf7a7f1fa7
+ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69030967"
+ms.lasthandoff: 10/05/2019
+ms.locfileid: "71973275"
 ---
 # <a name="azure-iot-edge-supported-systems"></a>Поддерживаемые Azure IoT Edge системы
 
@@ -35,8 +35,7 @@ Azure IoT Edge модули реализуются как контейнеры, 
 <br>
 <center>
 
-![Значок Кита в качестве среды выполнения контейнера](./media/support/only-moby-for-production.png)
-</center>
+@no__t 0Moby в качестве среды выполнения контейнеров @ no__t-1 @ no__t-2
 
 ## <a name="operating-systems"></a>Операционные системы
 Azure IoT Edge работает в большинстве операционных систем, которые могут выполнять контейнеры; Однако все эти системы не поддерживаются одинаково. Операционные системы разделены на несколько уровней, которые определяют предоставляемый пользователям уровень поддержки.
@@ -52,8 +51,7 @@ Azure IoT Edge работает в большинстве операционны
 <br>
 <center>
 
-![ОС узла соответствует гостевой ОС](./media/support/edge-on-device.png)
-</center>
+@no__t 0Host OS соответствует гостевой ОС @ no__t-1 @ no__t-2
 
 ### <a name="tier-1"></a>Уровень 1
 
@@ -61,33 +59,35 @@ Azure IoT Edge работает в большинстве операционны
 
 | Операционная система | AMD64 | ARM32v7 | ARM64 |
 | ---------------- | ----- | ------- | ----- |
-| Raspbian-stretch |  | ![Raspbian Stretch + ARM32v7](./media/tutorial-c-module/green-check.png) |  |
-| Ubuntu Server 16.04 | ![Ubuntu Server 16,04 + AMD64](./media/tutorial-c-module/green-check.png) |  | Общедоступная предварительная версия  |
-| Ubuntu Server 18.04 | ![Ubuntu Server 18,04 + AMD64](./media/tutorial-c-module/green-check.png) |  | Общедоступная предварительная версия |
-| Windows 10 IoT Корпоративная, сборка 17763 | ![Windows 10 IoT Корпоративная + AMD64](./media/tutorial-c-module/green-check.png) |  |  |
-| Windows Server 2019, сборка 17763 | ![Windows Server 2019 и AMD64](./media/tutorial-c-module/green-check.png) |  |  |
-| Windows Server IoT 2019, сборка 17763 | ![Windows Server IoT 2019 и AMD64](./media/tutorial-c-module/green-check.png) |  |  |
-| Windows 10 IoT базовая, сборка 17763 | ![Windows IoT базовая и AMD64](./media/tutorial-c-module/green-check.png) |  |  |
+| Raspbian Stretch |  | ![Raspbian Stretch + ARM32v7](./media/tutorial-c-module/green-check.png) |  |
+| [Ubuntu Server 16,04](https://wiki.ubuntu.com/XenialXerus/ReleaseNotes) | ![Ubuntu Server 16,04 + AMD64](./media/tutorial-c-module/green-check.png) |  | Общедоступная предварительная версия  |
+| [Ubuntu Server 18,04](https://wiki.ubuntu.com/BionicBeaver/ReleaseNotes) | ![Ubuntu Server 18,04 + AMD64](./media/tutorial-c-module/green-check.png) |  | Общедоступная предварительная версия |
+| [Windows 10 IOT базовая](https://docs.microsoft.com/windows/iot-core/windows-iot-core), сборка 17763 | ![Windows IoT базовая и AMD64](./media/tutorial-c-module/green-check.png) |  |  |
+| [Windows 10 IOT Корпоративная](https://docs.microsoft.com/windows/iot-core/windows-iot-enterprise), сборка 17763 | ![Windows 10 IoT Корпоративная + AMD64](./media/tutorial-c-module/green-check.png) |  |  |
+| [Windows Server 2019](https://docs.microsoft.com/windows-server/get-started-19/rel-notes-19), сборка 17763 | ![Windows Server 2019 и AMD64](./media/tutorial-c-module/green-check.png) |  |  |
+| [Windows Server IoT 2019](https://docs.microsoft.com/windows/iot-core/windows-server), сборка 17763 | ![Windows Server IoT 2019 и AMD64](./media/tutorial-c-module/green-check.png) |  |  |
 
 
 Перечисленные выше операционные системы Windows являются требованиями для устройств, которые работают с контейнерами Windows в Windows, что является единственной поддерживаемой конфигурацией для рабочей среды. Пакеты установки Azure IoT Edge для Windows позволяют использовать контейнеры Linux в Windows. Однако эта конфигурация предназначена только для разработки и тестирования. Дополнительные сведения см. в статье [использование IOT EDGE в Windows для запуска контейнеров Linux](how-to-install-iot-edge-windows-with-linux.md).
 
 ### <a name="tier-2"></a>Уровень 2
 
-Системы, перечисленные в следующей таблице, считаются совместимыми с Azure IoT Edge, но не проверяются и не обслуживаются в активном состоянии. 
+Системы, перечисленные в следующей таблице, считаются совместимыми с Azure IoT Edge, но не проверяются и не обслуживаются корпорацией Майкрософт.
 
 | Операционная система | AMD64 | ARM32v7 | ARM64 |
 | ---------------- | ----- | ------- | ----- |
-| CentOS 7.5 | ![CentOS и AMD64](./media/tutorial-c-module/green-check.png) | ![CentOS + ARM32v7](./media/tutorial-c-module/green-check.png) | ![CentOS + ARM64](./media/tutorial-c-module/green-check.png) |
-| Debian 8; | ![Debian 8 + AMD64](./media/tutorial-c-module/green-check.png) | ![Debian 8 + ARM32v7](./media/tutorial-c-module/green-check.png) | ![Debian 8 + ARM64](./media/tutorial-c-module/green-check.png) |
-| Debian 9 | ![Debian 9 + AMD64](./media/tutorial-c-module/green-check.png) | ![Debian 9 + ARM32v7](./media/tutorial-c-module/green-check.png) | ![Debian 9 + ARM64](./media/tutorial-c-module/green-check.png) |
-| Debian 10<sup>1</sup> | ![Debian 10 + AMD64](./media/tutorial-c-module/green-check.png) | ![Debian 10 + ARM32v7](./media/tutorial-c-module/green-check.png) | ![Debian 10 + ARM64](./media/tutorial-c-module/green-check.png) |
-| RHEL 7.5 | ![RHEL 7,5 + AMD64](./media/tutorial-c-module/green-check.png) | ![RHEL 7,5 + ARM32v7](./media/tutorial-c-module/green-check.png) | ![RHEL 7,5 + ARM64](./media/tutorial-c-module/green-check.png) |
-| Ubuntu 16.04 | ![Ubuntu 16,04 + AMD64](./media/tutorial-c-module/green-check.png) | ![Ubuntu 16,04 + ARM32v7](./media/tutorial-c-module/green-check.png) | ![Ubuntu 16,04 + ARM64](./media/tutorial-c-module/green-check.png) |
-| Ubuntu 18.04 | ![Ubuntu 18,04 + AMD64](./media/tutorial-c-module/green-check.png) | ![Ubuntu 18,04 + ARM32v7](./media/tutorial-c-module/green-check.png) | ![Ubuntu 18,04 + ARM64](./media/tutorial-c-module/green-check.png) |
-| Wind River 8 | ![Обмотка River 8 + AMD64](./media/tutorial-c-module/green-check.png) |  |  |
-| Yocto | ![Йокто и AMD64](./media/tutorial-c-module/green-check.png) | ![Йокто + ARM32v7](./media/tutorial-c-module/green-check.png) | ![Йокто + ARM64](./media/tutorial-c-module/green-check.png) |
-| Raspbian бустер<sup>1</sup> |  | ![Raspbian бустер + ARM32v7](./media/tutorial-c-module/green-check.png) | ![Raspbian бустер + ARM64](./media/tutorial-c-module/green-check.png) |
+| [CentOS 7,5](https://wiki.centos.org/Manuals/ReleaseNotes/CentOS7.1804) | ![CentOS и AMD64](./media/tutorial-c-module/green-check.png) | ![CentOS + ARM32v7](./media/tutorial-c-module/green-check.png) | ![CentOS + ARM64](./media/tutorial-c-module/green-check.png) |
+| [Debian 8](https://www.debian.org/releases/jessie/) | ![Debian 8 + AMD64](./media/tutorial-c-module/green-check.png) | ![Debian 8 + ARM32v7](./media/tutorial-c-module/green-check.png) | ![Debian 8 + ARM64](./media/tutorial-c-module/green-check.png) |
+| [Debian 9](https://www.debian.org/releases/stretch/) | ![Debian 9 + AMD64](./media/tutorial-c-module/green-check.png) | ![Debian 9 + ARM32v7](./media/tutorial-c-module/green-check.png) | ![Debian 9 + ARM64](./media/tutorial-c-module/green-check.png) |
+| [Debian 10](https://www.debian.org/releases/buster/) <sup>1</sup> | ![Debian 10 + AMD64](./media/tutorial-c-module/green-check.png) | ![Debian 10 + ARM32v7](./media/tutorial-c-module/green-check.png) | ![Debian 10 + ARM64](./media/tutorial-c-module/green-check.png) |
+| [Внедренная ОС Linux Flex](https://www.mentor.com/embedded-software/linux/mel-flex-os/) | ![Внедрение Embedded Linux Flex OS + AMD64](./media/tutorial-c-module/green-check.png) | ![Обучение Embedded Linux Flex OS + ARM32v7](./media/tutorial-c-module/green-check.png) | ![Обучение Embedded Linux Flex OS + ARM64](./media/tutorial-c-module/green-check.png) |
+| [Версия операционной системы лампочки для Linux Embedded](https://www.mentor.com/embedded-software/linux/mel-omni-os/) | ![Инструктор Embedded Linux лампочка и AMD64](./media/tutorial-c-module/green-check.png) |  | ![Инструктор Embedded Linux лампочка, ОС + ARM64](./media/tutorial-c-module/green-check.png) |
+| [RHEL 7,5](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/7.5_release_notes/index) | ![RHEL 7,5 + AMD64](./media/tutorial-c-module/green-check.png) | ![RHEL 7,5 + ARM32v7](./media/tutorial-c-module/green-check.png) | ![RHEL 7,5 + ARM64](./media/tutorial-c-module/green-check.png) |
+| [Ubuntu 16.04](https://wiki.ubuntu.com/XenialXerus/ReleaseNotes) | ![Ubuntu 16,04 + AMD64](./media/tutorial-c-module/green-check.png) | ![Ubuntu 16,04 + ARM32v7](./media/tutorial-c-module/green-check.png) | ![Ubuntu 16,04 + ARM64](./media/tutorial-c-module/green-check.png) |
+| [Ubuntu 18,04](https://wiki.ubuntu.com/BionicBeaver/ReleaseNotes) | ![Ubuntu 18,04 + AMD64](./media/tutorial-c-module/green-check.png) | ![Ubuntu 18,04 + ARM32v7](./media/tutorial-c-module/green-check.png) | ![Ubuntu 18,04 + ARM64](./media/tutorial-c-module/green-check.png) |
+| [Обмотка River 8](https://docs.windriver.com/category/os-wind_river_linux) | ![Обмотка River 8 + AMD64](./media/tutorial-c-module/green-check.png) |  |  |
+| [йокто](https://www.yoctoproject.org/) | ![Йокто и AMD64](./media/tutorial-c-module/green-check.png) | ![Йокто + ARM32v7](./media/tutorial-c-module/green-check.png) | ![Йокто + ARM64](./media/tutorial-c-module/green-check.png) |
+| Raspbian бустер <sup>1</sup> |  | ![Raspbian бустер + ARM32v7](./media/tutorial-c-module/green-check.png) | ![Raspbian бустер + ARM64](./media/tutorial-c-module/green-check.png) |
 
 <sup>1</sup> Debian 10 систем, включая распиан бустер, используют версию OpenSSL, которая IOT EDGE не поддерживается. Используйте следующую команду, чтобы установить более раннюю версию, прежде чем устанавливать IoT Edge: 
 
@@ -101,8 +101,7 @@ Azure IoT Edge может выполняться на виртуальных м�
 <br>
 <center>
 
-![Azure IoT Edge на виртуальной машине](./media/support/edge-on-vm.png)
-</center>
+![Azure IoT Edge на виртуальной машине @ no__t-1 @ no__t-2
 
 ## <a name="minimum-system-requirements"></a>Минимальные системные требования
 Azure IoT Edge отлично работает на различных устройствах, от Raspberry Pi3 до серверного оборудования. Выбор подходящего оборудования для вашего сценария зависит от рабочих нагрузок, которые необходимо выполнить. Принятие окончательного решения может быть затруднительно. Но можно легко запустить прототип решения на традиционных переносных или настольных компьютерах.

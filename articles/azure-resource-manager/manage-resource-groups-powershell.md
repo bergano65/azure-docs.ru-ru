@@ -8,20 +8,20 @@ ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 02/11/2019
 ms.author: jgao
-ms.openlocfilehash: 5197358e3bd8a3052fbf71cafc2f1e3acda46b26
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: e78a6ffd269b7a93c1d224fd4afe580cf0b31b06
+ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67721142"
+ms.lasthandoff: 10/05/2019
+ms.locfileid: "71972720"
 ---
 # <a name="manage-azure-resource-manager-resource-groups-by-using-azure-powershell"></a>Управление группами ресурсов Azure Resource Manager с помощью Azure PowerShell
 
-Узнайте, как использовать Azure PowerShell с [Azure Resource Manager](resource-group-overview.md) для управления группами ресурсов Azure. Для управления ресурсами Azure, см. в разделе [управление ресурсами Azure с помощью Azure PowerShell](./manage-resources-powershell.md).
+Узнайте, как использовать Azure PowerShell с [Azure Resource Manager](resource-group-overview.md) для управления группами ресурсов Azure. Сведения об управлении ресурсами Azure см. в статье [Управление ресурсами Azure с помощью Azure PowerShell](./manage-resources-powershell.md).
 
 Другие статьи об управлении группами ресурсов:
 
-- [Управление группами ресурсов Azure с помощью портала Azure](./manage-resources-portal.md)
+- [Управление группами ресурсов Azure с помощью портал Azure](./manage-resources-portal.md)
 - [Управление группами ресурсов Azure с помощью Azure CLI](./manage-resources-cli.md)
 
 ## <a name="what-is-a-resource-group"></a>Что такое группа ресурсов
@@ -30,11 +30,11 @@ ms.locfileid: "67721142"
 
 В группе ресурсов хранятся метаданные о ресурсах. Таким образом, указывая расположение группы ресурсов, вы определяете расположение метаданных. В целях обеспечения соответствия необходимо убедиться, что данные хранятся в определенном регионе.
 
-В группе ресурсов хранятся метаданные о ресурсах. При указании расположения группы ресурсов, вы указываете, где хранятся эти метаданные.
+В группе ресурсов хранятся метаданные о ресурсах. Указывая расположение группы ресурсов, вы определяете расположение метаданных.
 
 ## <a name="create-resource-groups"></a>Создание группы ресурсов
 
-Следующий сценарий PowerShell создает группу ресурсов и затем отображает группы ресурсов.
+Следующий сценарий PowerShell создает группу ресурсов, а затем отображает группу ресурсов.
 
 ```azurepowershell-interactive
 $resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
@@ -45,15 +45,15 @@ New-AzResourceGroup -Name $resourceGroupName -Location $location
 Get-AzResourceGroup -Name $resourceGroupName
 ```
 
-## <a name="list-resource-groups"></a>Перечислить группы ресурсов
+## <a name="list-resource-groups"></a>Список групп ресурсов
 
-Следующий сценарий PowerShell список групп ресурсов в подписке.
+Следующий сценарий PowerShell выводит список групп ресурсов в подписке.
 
 ```azurepowershell-interactive
 Get-AzResourceGroup
 ```
 
-Чтобы получить одну группу ресурсов:
+Чтобы получить одну группу ресурсов, сделайте следующее:
 
 ```azurepowershell-interactive
 $resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
@@ -61,7 +61,7 @@ $resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
 Get-AzResourceGroup -Name $resourceGroupName
 ```
 
-## <a name="delete-resource-groups"></a>Удаление группы ресурсов
+## <a name="delete-resource-groups"></a>Удаление групп ресурсов
 
 Следующий сценарий PowerShell удаляет группу ресурсов:
 
@@ -71,31 +71,31 @@ $resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
 Remove-AzResourceGroup -Name $resourceGroupName
 ```
 
-Дополнительные сведения о как упорядочивает удаление ресурсов в Azure Resource Manager, см. в разделе [удаление группы ресурсов Azure Resource Manager](./resource-group-delete.md).
+Дополнительные сведения о том, как Azure Resource Manager упорядочивают удаление ресурсов, см. в разделе [Azure Resource Manager удаление группы ресурсов](./resource-group-delete.md).
 
-## <a name="deploy-resources-to-an-existing-resource-group"></a>Развертывание ресурсов в существующую группу ресурсов
+## <a name="deploy-resources-to-an-existing-resource-group"></a>Развертывание ресурсов в существующей группе ресурсов
 
-См. в разделе [развертывание ресурсов в существующую группу ресурсов](./manage-resources-powershell.md#deploy-resources-to-an-existing-resource-group).
+См. раздел [развертывание ресурсов в существующей группе ресурсов](./manage-resources-powershell.md#deploy-resources-to-an-existing-resource-group).
 
-Чтобы проверить развертывание группы ресурсов, см. в разделе [AzResourceGroupDeployment теста](https://docs.microsoft.com/powershell/module/Az.Resources/Test-AzResourceGroupDeployment?view=azps-1.3.0).
+Сведения о проверке развертывания группы ресурсов см. в разделе [Test-азресаурцеграупдеплоймент](https://docs.microsoft.com/powershell/module/Az.Resources/Test-AzResourceGroupDeployment?view=azps-1.3.0).
 
-## <a name="deploy-a-resource-group-and-resources"></a>Развернуть группу ресурсов и ресурсы
+## <a name="deploy-a-resource-group-and-resources"></a>Развертывание группы ресурсов и ресурсов
 
-Можно создать группу ресурсов и развернуть ресурсы в группу с помощью шаблона Resource Manager. См. дополнительные сведения в разделе [Создание группы ресурсов и развертывание ресурсов](./deploy-to-subscription.md#create-resource-group-and-deploy-resources).
+Вы можете создать группу ресурсов и развернуть ресурсы в группе с помощью шаблона диспетчер ресурсов. См. дополнительные сведения в разделе [Создание группы ресурсов и развертывание ресурсов](./deploy-to-subscription.md#create-resource-group-and-deploy-resources).
 
 ## <a name="redeploy-when-deployment-fails"></a>Повторное развертывание при сбое развертывания
 
-Эта функция также называется *отката в случае ошибки*. Дополнительные сведения см. в разделе [повторное развертывание при сбое развертывания](./resource-group-template-deploy.md#redeploy-when-deployment-fails).
+Эта функция также называется *откатом при ошибке*. Дополнительные сведения см. в разделе [Повторное развертывание при сбое развертывания](./rollback-on-error.md).
 
 ## <a name="move-to-another-resource-group-or-subscription"></a>Переместить в другую группу ресурсов или подписку
 
 Ресурсы в группе можно переместить в другую группу ресурсов. Дополнительные сведения см. в статье [Перемещение ресурсов в новую группу ресурсов или подписку](./resource-group-move-resources.md).
 
-## <a name="lock-resource-groups"></a>Блокировки группы ресурсов
+## <a name="lock-resource-groups"></a>Заблокировать группы ресурсов
 
-Блокировка запрещает другим пользователям в организации случайно удалить или изменить критически важные ресурсы, такие как подписки Azure, группу ресурсов или ресурс. 
+Блокировка запрещает другим пользователям в организации случайно удалить или изменить критически важные ресурсы, такие как подписка Azure, Группа ресурсов или ресурс. 
 
-Следующий сценарий блокирует группу ресурсов, поэтому невозможно удалить группу ресурсов.
+Следующий скрипт блокирует группу ресурсов, чтобы группу ресурсов нельзя было удалить.
 
 ```azurepowershell-interactive
 $resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
@@ -103,7 +103,7 @@ $resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
 New-AzResourceLock -LockName LockGroup -LockLevel CanNotDelete -ResourceGroupName $resourceGroupName 
 ```
 
-Следующий сценарий получает все блокировки для группы ресурсов:
+Следующий скрипт получает все блокировки для группы ресурсов:
 
 ```azurepowershell-interactive
 $resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
@@ -113,18 +113,18 @@ Get-AzResourceLock -ResourceGroupName $resourceGroupName
 
 Дополнительные сведения см. в статье [Блокировка ресурсов с помощью диспетчера ресурсов Azure](resource-group-lock-resources.md).
 
-## <a name="tag-resource-groups"></a>Тег группы ресурсов
+## <a name="tag-resource-groups"></a>Теги для групп ресурсов
 
-К ресурсам и их группам можно добавлять теги. Это позволяет логически их упорядочивать. Сведения см. в разделе [использование тегов для организации ресурсов в Azure](./resource-group-using-tags.md#powershell).
+К ресурсам и их группам можно добавлять теги. Это позволяет логически их упорядочивать. Дополнительные сведения см. [в статье Использование тегов для Организации ресурсов Azure](./resource-group-using-tags.md#powershell).
 
-## <a name="export-resource-groups-to-templates"></a>Экспорт групп ресурсов в шаблонах
+## <a name="export-resource-groups-to-templates"></a>Экспорт групп ресурсов в шаблоны
 
-После настройки группы ресурсов, можно просмотреть шаблон Resource Manager для группы ресурсов. Экспорт шаблона обеспечивает два преимущества:
+После настройки группы ресурсов можно просмотреть шаблон диспетчер ресурсов для группы ресурсов. Экспорт шаблона обеспечивает два преимущества:
 
-- Автоматизируйте будущие развертывания решения, так как шаблон содержит полноценную инфраструктуру.
-- Узнайте синтаксис шаблона путем поиска в в объект нотацию JavaScript (JSON) своего решения.
+- Автоматизируйте будущие развертывания решения, поскольку шаблон содержит полную инфраструктуру.
+- Познакомьтесь с синтаксисом шаблона, просмотрев нотация объектов JavaScript (JSON), который представляет ваше решение.
 
-Чтобы экспортировать все ресурсы в группе ресурсов, используйте [AzResourceGroup экспорта](/powershell/module/az.resources/Export-AzResourceGroup) командлет и укажите имя группы ресурсов.
+Чтобы экспортировать все ресурсы в группе ресурсов, используйте командлет [Export-азресаурцеграуп](/powershell/module/az.resources/Export-AzResourceGroup) и укажите имя группы ресурсов.
 
 ```azurepowershell-interactive
 $resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
@@ -132,11 +132,11 @@ $resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
 Export-AzResourceGroup -ResourceGroupName $resourceGroupName
 ```
 
-Она сохраняет шаблон в виде локального файла.
+Шаблон сохраняется как локальный файл.
 
-Вместо экспорта все ресурсы в группе ресурсов, вы можете выбрать, какие ресурсы для экспорта.
+Вместо экспорта всех ресурсов в группе ресурсов можно выбрать ресурсы для экспорта.
 
-Чтобы экспортировать один ресурс, передайте идентификатор этого ресурса.
+Чтобы экспортировать один ресурс, передайте этот идентификатор ресурса.
 
 ```azurepowershell-interactive
 $resource = Get-AzResource `
@@ -156,7 +156,7 @@ Export-AzResourceGroup `
   -Resource @($resource1.ResourceId, $resource2.ResourceId)
 ```
 
-При экспорте шаблона, можно указать, используются ли параметры в шаблоне. По умолчанию включаются параметры для имен ресурсов, но они не имеет значения по умолчанию. Значение этого параметра необходимо передать во время развертывания.
+При экспорте шаблона можно указать, используются ли параметры в шаблоне. По умолчанию параметры для имен ресурсов включены, но не имеют значения по умолчанию. Необходимо передать это значение параметра во время развертывания.
 
 ```json
 "parameters": {
@@ -184,7 +184,7 @@ Export-AzResourceGroup `
 ]
 ```
 
-Если вы используете `-IncludeParameterDefaultValue` параметр при экспорте шаблона, включает в себя параметр шаблона по умолчанию ей присваивается текущее значение. Можно использовать это значение по умолчанию или заменить значение по умолчанию, передав другое значение.
+При использовании параметра `-IncludeParameterDefaultValue` при экспорте шаблона параметр шаблона включает значение по умолчанию, для которого задано текущее значение. Можно либо использовать это значение по умолчанию, либо перезаписать значение по умолчанию, передав другое значение.
 
 ```json
 "parameters": {
@@ -199,7 +199,7 @@ Export-AzResourceGroup `
 }
 ```
 
-Если вы используете `-SkipResourceNameParameterization` параметр при экспорте шаблона, параметры для имен ресурсов не включается в шаблон. Вместо этого непосредственно на ресурсе, чтобы его текущее значение задано имя ресурса. Имя не может настроить во время развертывания.
+Если при экспорте шаблона используется параметр `-SkipResourceNameParameterization`, параметры для имен ресурсов не включаются в шаблон. Вместо этого имя ресурса задается непосредственно в ресурсе с текущим значением. Невозможно настроить имя во время развертывания.
 
 ```json
 "resources": [
@@ -212,15 +212,15 @@ Export-AzResourceGroup `
 ]
 ```
 
-Дополнительные сведения см. в разделе [экспорта одной или нескольких ресурсов в шаблон на портале Azure](./export-template-portal.md).
+Дополнительные сведения см. [в разделе один и несколько ресурсов экспорт в шаблон в портал Azure](./export-template-portal.md).
 
 ## <a name="manage-access-to-resource-groups"></a>Управление доступом к группам ресурсов
 
-[Управление доступом на основе ролей (RBAC)](../role-based-access-control/overview.md) — это способ управления доступом к ресурсам в Azure. Дополнительные сведения см. в разделе [управление доступом с помощью Azure PowerShell и RBAC](../role-based-access-control/role-assignments-powershell.md).
+[Управление доступом на основе ролей (RBAC)](../role-based-access-control/overview.md) — это способ управления доступом к ресурсам в Azure. Дополнительные сведения см. в разделе [Управление доступом с помощью RBAC и Azure PowerShell](../role-based-access-control/role-assignments-powershell.md).
 
 ## <a name="next-steps"></a>Следующие шаги
 
-- Чтобы узнать, Azure Resource Manager, см. в разделе [обзоре Azure Resource Manager](./resource-group-overview.md).
-- Чтобы узнать синтаксис шаблона Resource Manager, см. в разделе [описание структуры и синтаксиса шаблонов Azure Resource Manager](./resource-group-authoring-templates.md).
-- Чтобы научиться разрабатывать шаблоны, см. в разделе [пошаговые учебники](/azure/azure-resource-manager/).
-- Чтобы просмотреть схемы шаблонов Azure Resource Manager, см. в разделе [Справочник по шаблонам](/azure/templates/).
+- Сведения о Azure Resource Manager см. в разделе [Общие сведения о Azure Resource Manager](./resource-group-overview.md).
+- Сведения о синтаксисе шаблона диспетчер ресурсов см. в разделе [Общие сведения о структуре и синтаксисе шаблонов Azure Resource Manager](./resource-group-authoring-templates.md).
+- Дополнительные сведения о разработке шаблонов см. в пошаговых [руководствах](/azure/azure-resource-manager/).
+- Сведения о том, как просмотреть схемы шаблонов Azure Resource Manager, см. в разделе [Справочник по шаблонам](/azure/templates/).

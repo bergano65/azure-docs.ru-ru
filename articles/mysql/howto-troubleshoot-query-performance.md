@@ -1,17 +1,17 @@
 ---
 title: Устранение неполадок с производительностью запросов в службе "База данных Azure для MySQL"
-description: В этой статье описано, как использовать инструкцию EXPLAIN для устранения неполадок с производительностью запросов в службе "База данных Azure для MySQL".
+description: Узнайте, как использовать объяснение для устранения неполадок с производительностью запросов в базе данных Azure для MySQL.
 author: ajlam
 ms.author: andrela
 ms.service: mysql
-ms.topic: conceptual
+ms.topic: troubleshooting
 ms.date: 02/28/2018
-ms.openlocfilehash: 819e2393619766d46385cdd6fe550fff1e1a7631
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d58721f1fedd234b3c400a82035048d8e70f8c32
+ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60720218"
+ms.lasthandoff: 10/05/2019
+ms.locfileid: "71972853"
 ---
 # <a name="how-to-use-explain-to-profile-query-performance-in-azure-database-for-mysql"></a>Использование инструкции EXPLAIN для профилирования производительности запросов в службе "База данных Azure для MySQL"
 Инструкция **EXPLAIN** представляет собой удобное средство для оптимизации запросов. С помощью инструкций EXPLAIN можно получать информацию о том, как выполняются инструкции SQL. Ниже показан пример выполнения инструкции EXPLAIN.
@@ -163,8 +163,8 @@ possible_keys: NULL
  
 ## <a name="conclusion"></a>Заключение
  
-Использование инструкции EXPLAIN и разных типов индексов позволяет существенно повысить производительность. Одно наличие индекса для таблицы не обязательно означает, что MySQL будет иметь возможность использовать его в запросах. Следует всегда проверять свои предположения с помощью инструкции EXPLAIN и оптимизировать запросы с помощью индексов.
+Использование инструкции EXPLAIN и разных типов индексов позволяет существенно повысить производительность. Наличие индекса в таблице не обязательно означает, что MySQL сможет использовать ее для ваших запросов. Следует всегда проверять свои предположения с помощью инструкции EXPLAIN и оптимизировать запросы с помощью индексов.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Чтобы найти ответы на наиболее важные вопросы либо опубликовать новый вопрос или ответ, посетите [Форум MSDN](https://social.msdn.microsoft.com/forums/security/en-US/home?forum=AzureDatabaseforMySQL) или [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-database-mysql).

@@ -6,18 +6,17 @@ author: bwren
 manager: carmonm
 editor: tysonn
 ms.service: azure-monitor
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/23/2019
 ms.author: bwren
-ms.openlocfilehash: dabc336a1f92169ab573e7cf29e1a7a069ae20b1
-ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
+ms.openlocfilehash: 164d1db1a80ef577792740f67a27a856a4ba4c3b
+ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71262051"
+ms.lasthandoff: 10/05/2019
+ms.locfileid: "71972930"
 ---
 # <a name="sources-of-monitoring-data-for-azure-monitor"></a>Источники данных мониторинга для Azure Monitor
 Azure Monitor основан на [общей платформе данных мониторинга](data-platform.md) , которая включает [журналы](data-platform-logs.md) и [метрики](data-platform-metrics.md). Сбор данных в эту платформу позволяет анализировать данные из нескольких ресурсов вместе с помощью общего набора средств в Azure Monitor. Данные мониторинга могут также отправляться в другие расположения для поддержки определенных сценариев, а некоторые ресурсы могут выполнять запись в другие расположения, прежде чем их можно будет собрать в журналы или метрики.
@@ -61,8 +60,8 @@ Azure Monitor основан на [общей платформе данных м
 | Destination | Описание | Ссылка |
 |:---|:---|:---|
 | Журналы Azure Monitor | Настройте сбор журналов Azure AD в Azure Monitor для их анализа с помощью других данных мониторинга. | [Интеграция журналов Azure AD с Azure Monitor журналами (Предварительная версия)](../../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md) |
-| Служба хранилища Azure | Экспортируйте журналы Azure AD в службу хранилища Azure для архивирования. | [Учебник. Архивация журналов Azure AD в учетную запись хранения Azure (Предварительная версия)](../../active-directory/reports-monitoring/quickstart-azure-monitor-route-logs-to-storage-account.md) |
-| Концентратор событий | Потоковая передача журналов Azure AD в другие расположения с помощью концентраторов событий. | [Учебник. Потоковая Azure Active Directory журналов в концентратор событий Azure (Предварительная](../../active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub.md)версия). |
+| Служба хранилища Azure | Экспортируйте журналы Azure AD в службу хранилища Azure для архивирования. | [Учебник. Архивация журналов Azure AD в учетную запись хранения Azure (Предварительная версия) ](../../active-directory/reports-monitoring/quickstart-azure-monitor-route-logs-to-storage-account.md) |
+| Концентратор событий | Потоковая передача журналов Azure AD в другие расположения с помощью концентраторов событий. | [Учебник. Stream Azure Active Directory журналы в концентратор событий Azure (Предварительная версия) ](../../active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub.md). |
 
 
 

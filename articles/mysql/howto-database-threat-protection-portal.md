@@ -1,17 +1,17 @@
 ---
-title: Расширенная защита от угроз для Базы данных Azure для MySQL | Документация Майкрософт
-description: Система защиты от угроз обнаруживает подозрительные действия в базе данных, указывающие на наличие потенциальных угроз безопасности.
+title: Расширенная защита от угроз — база данных Azure для MySQL
+description: Узнайте, как настроить расширенную защиту от угроз для обнаружения аномальных действий базы данных, указывающих на потенциальные угрозы безопасности для базы данных.
 author: bolzmj
 ms.author: mbolz
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 01/24/2019
-ms.openlocfilehash: 76f6c15fc1e186e254c4edbb53a2a0ccf7050b3e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: fe058433cfe4c6c9f89f14d2c74e33ff1b8372ac
+ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61458984"
+ms.lasthandoff: 10/05/2019
+ms.locfileid: "71970484"
 ---
 # <a name="advanced-threat-protection-for-azure-database-for-mysql"></a>Расширенная защита от угроз для Базы данных Azure для MySQL
 
@@ -54,14 +54,14 @@ ms.locfileid: "61458984"
 
 ## <a name="explore-threat-detection-alerts"></a>Анализ оповещений об обнаружении угроз
 
-Оповещения об обнаружении угроз базы данных SQL интегрируются с [центром безопасности Azure](https://azure.microsoft.com/services/security-center/). Динамический элемент обнаружения угроз SQL в колонках базы данных и SQL ATP на портале Azure отображает состояние активных угроз.
+Оповещения об обнаружении угроз базы данных SQL интегрируются с [центром безопасности Azure](https://azure.microsoft.com/services/security-center/). Активная плитка обнаружения угроз SQL отслеживает состояние активных угроз на страницах базы данных и SQL ATP в портал Azure.
 
 Щелкните **Threat detection alert** (Оповещение об обнаружении угроз), чтобы запустить страницу оповещений центра безопасности Azure и получить обзор активных угроз SQL, обнаруженных в базе данных.
 
    ![Оповещение об обнаружении угроз](./media/howto-database-threat-protection-portal/threat-detection-alert-asc.png)
    
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Узнайте больше о [центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-intro).
 * Дополнительные сведения о ценах см. на [странице цен на Базу данных Azure для MySQL](https://azure.microsoft.com/pricing/details/mysql/).  

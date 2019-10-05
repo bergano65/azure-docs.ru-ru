@@ -1,17 +1,17 @@
 ---
-title: Создание реплик чтения и управление ими в базе данных Azure для MySQL
-description: В этой статье описывается, как создать реплики чтения и управлять ими в базе данных Azure для MySQL с помощью портала.
+title: Создание & Управление репликами чтения (портал Azure) — база данных Azure для MySQL
+description: Узнайте, как настраивать реплики чтения и управлять ими в базе данных Azure для MySQL с помощью портал Azure.
 author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 09/04/2019
-ms.openlocfilehash: 275c7bc8127855712c191141ef681526da7c377b
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.openlocfilehash: a90e9cccf8b59dabbee8415818c0e819ba1b26c3
+ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70309503"
+ms.lasthandoff: 10/05/2019
+ms.locfileid: "71972876"
 ---
 # <a name="how-to-create-and-manage-read-replicas-in-azure-database-for-mysql-using-the-azure-portal"></a>Создание реплик чтения и управление ими в базе данных Azure для MySQL с помощью портала Azure
 

@@ -5,14 +5,14 @@ ms.service: iot-central
 services: iot-central
 author: viv-liu
 ms.author: viviali
-ms.date: 06/09/2019
+ms.date: 10/4/2019
 ms.topic: conceptual
-ms.openlocfilehash: 897b72dd7b292492e45cdc7401fe1acc5c86ca20
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: 3ce2f4304787107d0d6875333e4630dae8d7d1dd
+ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69877455"
+ms.lasthandoff: 10/05/2019
+ms.locfileid: "71973772"
 ---
 # <a name="visualize-and-analyze-your-azure-iot-central-data-in-a-power-bi-dashboard"></a>Визуализация и анализ данных Azure IoT Central на панели мониторинга Power BI
 
@@ -31,12 +31,19 @@ ms.locfileid: "69877455"
 
 Это решение устанавливает конвейер, который принимает данные в учетной записи хранилища BLOB-объектов Azure из [непрерывного экспорта данных](howto-export-data.md). Этот поток данных проходит через функции Azure, фабрики данных Azure и базы данных SQL Azure для обработки и преобразования данных. Выходные данные можно визуализировать и проанализировать в отчете Power BI, который можно загрузить в виде PBIX-файла. Все эти ресурсы создаются в подписке Azure, поэтому можно настроить каждый компонент в соответствии с потребностями.
 
+> [!Note] 
+> Power BI решение для Azure IoT Central работает с IoT Central приложениями, которые не поддерживают IoT Plug and Play (Предварительная версия приложений уже сегодня).
+
 ## <a name="get-the-power-bi-solution-for-azure-iot-centralhttpsakamsiotcentralpowerbisolutiontemplate-from-microsoft-appsource"></a>Скачайте [решение Power BI для Azure IoT Central](https://aka.ms/iotcentralpowerbisolutiontemplate) с Microsoft AppSource.
 
 ## <a name="prerequisites"></a>Предварительные требования
 Для настройки решения требуется следующее:
 - Доступ к подписке Azure
-- Данные, экспортированные из вашего приложения IoT Central с использованием [непрерывного экспорта данных](howto-export-data.md). Рекомендуется включать измерения, устройства и потоки шаблонов устройств, чтобы максимально использовать панель мониторинга Power BI.
+- IoT Central приложение, которое не поддерживает Plug and Play IoT (предварительные версии приложений уже сегодня)
+- Настройка непрерывного экспорта данных в хранилище BLOB-объектов Azure из приложения IoT Central
+    - Убедитесь, что формат данных — Avro.
+    - Рекомендуется включать измерения, устройства и потоки шаблонов устройств, чтобы максимально использовать панель мониторинга Power BI.
+    - Узнайте [, как настроить непрерывный экспорт данных](howto-export-data-blob-storage.md)
 - Power BI Desktop (последняя версия)
 - Power BI Pro (если необходимо совместно использовать панели мониторинга с другими пользователями)
 

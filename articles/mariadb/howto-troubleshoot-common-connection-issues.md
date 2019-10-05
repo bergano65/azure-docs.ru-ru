@@ -1,18 +1,17 @@
 ---
-title: Устранение проблем с подключением к Базе данных Azure для MariaDB | Документация Майкрософт
-description: Узнайте, как устранить проблемы с подключением к Базе данных Azure для MariaDB.
-keywords: mariadb connection,connection string,connectivity issues,transient error,connection error
+title: Устранение проблем с подключением к Базе данных Azure для MariaDB
+description: Узнайте, как устранять проблемы с подключением к базе данных Azure для MariaDB, включая временные ошибки, связанные с повторными попытками, брандмауэром и простоями.
 author: jan-eng
 ms.author: janeng
 ms.service: mariadb
-ms.topic: conceptual
+ms.topic: troubleshooting
 ms.date: 11/09/2018
-ms.openlocfilehash: f5c5a980a99bac3bf02eaaf9c072861ca753d449
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a8354cdc364f221a086f4d2f4ec7da95c55baf6e
+ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61038502"
+ms.lasthandoff: 10/05/2019
+ms.locfileid: "71973519"
 ---
 # <a name="troubleshoot-connection-issues-to-azure-database-for-mariadb"></a>Устранение проблем с подключением к Базе данных Azure для MariaDB
 
@@ -48,7 +47,7 @@ ms.locfileid: "61038502"
 
 * Настройка брандмауэра: Сервер Базы данных Azure для MariaDB или клиентский брандмауэр блокирует подключения.
 * Перенастройка сети на стороне клиента: добавлен новый IP-адрес или прокси-сервер.
-* Ошибка пользователя. Например, при вводе параметры подключения, например имя сервера в строке подключения или отсутствием  *\@servername* суффикса в имени пользователя.
+* Ошибка пользователя. Например, могут быть заданы недопустимые параметры подключения, например имя сервера в строке подключения или отсутствующий суффикс *\@servername* в имени пользователя.
 
 ### <a name="steps-to-resolve-persistent-connectivity-issues"></a>Порядок устранения постоянных проблем подключения
 
@@ -57,6 +56,6 @@ ms.locfileid: "61038502"
 3. Проверьте строку подключения и другие параметры подключения. Ознакомьтесь со статьей [How to connect applications to Azure Database for MariaDB](howto-connection-string.md) (Как подключить приложения к Базе данных Azure для MariaDB).
 4. Проверьте работоспособность службы на панели мониторинга. Если присутствует региональный сбой, см. статью [Overview of business continuity with Azure Database for MariaDB](concepts-business-continuity.md) (Обзор обеспечения непрерывности бизнес-процессов с помощью Базы данных Azure для MariaDB), чтобы выполнить инструкции по восстановлению в новом регионе.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Обработка временных ошибок подключения к Базе данных Azure для MariaDB](concepts-connectivity.md)

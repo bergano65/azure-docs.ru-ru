@@ -1,28 +1,28 @@
 ---
 title: Устранение неполадок при восстановлении размещения в локальную инфраструктуру во время аварийного восстановления виртуальных машин VMware в Azure с помощью Azure Site Recovery | Документация Майкрософт
 description: В этой статье описываются способы устранения неполадок восстановления размещения и повторного включения защиты в процессе аварийного восстановления виртуальных машин VMware в Azure с помощью Azure Site Recovery.
-author: vDonGlover
-manager: JarrettRenshaw
+author: rayne-wiselman
+manager: carmonm
 ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 02/19/2019
-ms.author: v-doglov
-ms.openlocfilehash: c598c5e238458c010500579c5371622b85e71de0
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: raynew
+ms.openlocfilehash: c27e72333618f73b67eec9b5c0c3a70239a1c0b3
+ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60565197"
+ms.lasthandoff: 10/05/2019
+ms.locfileid: "71970856"
 ---
 # <a name="troubleshoot-vcenter-discovery-failures"></a>Устранять неполадок обнаружения vCenter
 
-Эта статья поможет вам устранить проблемы, возникающие из-за ошибки обнаружения vCenter VMware.
+Эта статья поможет вам устранить неполадки, возникающие из-за сбоев при обнаружении VMware vCenter.
 
-## <a name="non-numeric-values-in-the-maxsnapshots-property"></a>Нечисловые значения в свойстве maxSnapShots
+## <a name="non-numeric-values-in-the-maxsnapshots-property"></a>Нечисловые значения в свойстве Максснапшотс
 
-В версиях, предшествующих 9.20, vCenter отключается при извлечении нечисловое значение для свойства `snapshot.maxSnapShots` свойство на виртуальной Машине.
+В версиях до 9,20 vCenter отключается при извлечении нечислового значения свойства `snapshot.maxSnapShots` на виртуальной машине.
 
-Идентификатор ошибки 95126 определяет эту проблему.
+Эта проблема определяется по ИДЕНТИФИКАТОРу ошибки 95126.
 
     ERROR :: Hit an exception while fetching the required informationfrom vCenter/vSphere.Exception details:
     System.FormatException: Input string was not in a correct format.
@@ -32,51 +32,51 @@ ms.locfileid: "60565197"
     
 Чтобы устранить проблему:
 
-- Найдите виртуальную Машину и задайте значение в числовое значение (виртуальной Машины, изменение параметров на сервере vCenter).
+- Укажите виртуальную машину и присвойте ей числовое значение (параметры изменения виртуальной машины в vCenter).
 
 или
 
-- Обновите сервер конфигурации до версии 9.20 или более поздней версии.
+- Обновите сервер конфигурации до версии 9,20 или более поздней.
 
-## <a name="proxy-configuration-issues-for-vcenter-connectivity"></a>Проблемы конфигурации прокси-сервера для подключения к vCenter
+## <a name="proxy-configuration-issues-for-vcenter-connectivity"></a>Проблемы конфигурации прокси-сервера для подключения vCenter
 
-vCenter обнаружении учитывается системные настройки прокси-сервера по умолчанию, заданный пользователем системы. Служба агента DRA учитывает параметры прокси-сервера, указанное пользователем во время установки сервера конфигурации с помощью программы единой установки установщика или ova-файла шаблона. 
+Обнаружение vCenter учитывает системные параметры прокси-сервера по умолчанию, настроенные системным пользователем. Служба DRA учитывает параметры прокси-сервера, предоставленные пользователем во время установки сервера конфигурации с помощью единой программы установки или шаблона OVA. 
 
-Как правило прокси-сервер используется для связи к общедоступным сетям; Например общение с Azure. Если прокси-сервер настроен и vCenter находится в локальной среде, оно может взаимодействовать с DRA.
+Как правило, прокси-сервер используется для связи с общедоступными сетями. Например, взаимодействие с Azure. Если прокси-сервер настроен и vCenter находится в локальной среде, он не сможет взаимодействовать с DRA.
 
-При возникновении этой проблемы возникновения следующих ситуаций:
+При возникновении этой проблемы возникают следующие ситуации.
 
-- Сервер vCenter \<vCenter > недоступен из-за ошибки: The remote server returned an error: (503) сервер недоступен
-- Сервер vCenter \<vCenter > недоступен из-за ошибки: The remote server returned an error: Не удалось подключиться к удаленному серверу.
-- Не удалось подключиться к серверу vCenter или ESXi.
+- Сервер vCenter \<vCenter > недоступен по причине ошибки: The remote server returned an error: (503) сервер недоступен
+- Сервер vCenter \<vCenter > недоступен по причине ошибки: The remote server returned an error: Не удалось подключиться к удаленному серверу.
+- Не удалось подключиться к серверу vCenter/ESXi.
 
 Чтобы устранить проблему:
 
-Скачайте [средством PsExec](https://aka.ms/PsExec). 
+Загрузите [Средство PsExec](https://aka.ms/PsExec). 
 
-Средство PsExec для доступа к контексту пользователя системы и определить, настроен ли адрес прокси-сервера. Затем можно добавить сервер vCenter, список обхода, с помощью следующих процедур.
+Используйте средство PsExec для доступа к контексту пользователя системы и определите, настроен ли адрес прокси-сервера. Затем можно добавить vCenter в список обхода, выполнив следующие процедуры.
 
-Для обнаружения конфигурации прокси-сервера:
+Для конфигурации прокси-сервера обнаружения:
 
-1. Откройте IE в контексте пользователя системы, используя средство PsExec.
+1. Откройте IE в контексте пользователя системы с помощью средства PsExec.
     
     psexec -s -i "%programfiles%\Internet Explorer\iexplore.exe"
 
-2. Измените параметры прокси-сервера в Internet Explorer для обхода IP-адрес vCenter.
-3. Перезапустите службу tmanssvc.
+2. Измените параметры прокси в Internet Explorer, чтобы обойти IP-адрес vCenter.
+3. Перезапустите службу тманссвк.
 
-Для конфигурации прокси-сервера агента DRA:
+Для конфигурации прокси-сервера DRA:
 
 1. Откройте командную строку и откройте папку поставщика Microsoft Azure Site Recovery.
  
-    **Поставщик CD C:\Program Files\Microsoft Azure Site Recovery**
+    **Поставщик Azure Site Recovery CD C:\Program Files\Microsoft**
 
 3. В командной строке выполните следующую команду.
    
-   **DRCONFIGURATOR. EXE / configure /AddBypassUrls [IP адрес или полное ДОМЕННОЕ имя vCenter Server предоставил во время добавления vCenter]**
+   **DRCONFIGURATOR. EXE/configure/Аддбипассурлс [IP-адрес/полное доменное имя vCenter Server предоставлено во время добавления vCenter]**
 
-4. Перезапустите службу агента DRA поставщика.
+4. Перезапустите службу поставщика DRA.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-[Управление сервером конфигурации для аварийного восстановления виртуальных Машин VMware](https://docs.microsoft.com/azure/site-recovery/vmware-azure-manage-configuration-server#refresh-configuration-server) 
+[Управление сервером конфигурации для аварийного восстановления виртуальной машины VMware](https://docs.microsoft.com/azure/site-recovery/vmware-azure-manage-configuration-server#refresh-configuration-server) 

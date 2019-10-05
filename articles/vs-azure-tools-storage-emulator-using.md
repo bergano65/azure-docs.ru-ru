@@ -3,7 +3,7 @@ title: Настройка и использование эмулятора хр�
 description: Настройка и использование эмулятора хранения с помощью Visual Studio
 services: visual-studio-online
 author: ghogen
-manager: douge
+manager: jillfra
 assetId: c8e7996f-6027-4762-806e-614b93131867
 ms.prod: visual-studio-dev15
 ms.technology: vs-azure
@@ -12,12 +12,12 @@ ms.workload: azure-vs
 ms.topic: conceptual
 ms.date: 8/17/2017
 ms.author: ghogen
-ms.openlocfilehash: 39e2071a62d6a1f6ee050f862856815048e50430
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 08e3f5d5bb32d15b9d8d164c898d2b8d7a90108c
+ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62128302"
+ms.lasthandoff: 10/05/2019
+ms.locfileid: "71969709"
 ---
 # <a name="configuring-and-using-the-storage-emulator-with-visual-studio"></a>Настройка и использование эмулятора хранения с помощью Visual Studio
 [!INCLUDE [storage-try-azure-tools](../includes/storage-try-azure-tools.md)]

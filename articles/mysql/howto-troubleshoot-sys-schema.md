@@ -1,19 +1,19 @@
 ---
-title: Как использовать sys_schema для настройки производительности и обслуживания базы данных в службе "База данных Azure для MySQL"
-description: В этой статье описано, как использовать средство sys_schema для поиска проблем с производительностью и обслуживания базы данных в службе "База данных Azure для MySQL".
+title: Настройка производительности и обслуживание базы данных Azure для MySQL с помощью sys_schema
+description: Узнайте, как использовать sys_schema для поиска проблем с производительностью и обслуживания базы данных в базе данных Azure для MySQL.
 author: ajlam
 ms.author: andrela
 ms.service: mysql
-ms.topic: conceptual
+ms.topic: troubleshooting
 ms.date: 08/01/2018
-ms.openlocfilehash: 993c77056c09c1dc21d5317ddbfe8e937341718d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7dc6b4744c74c56803127f63a8a6f29ca5a15090
+ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61422377"
+ms.lasthandoff: 10/05/2019
+ms.locfileid: "71972797"
 ---
-# <a name="how-to-use-sysschema-for-performance-tuning-and-database-maintenance-in-azure-database-for-mysql"></a>Как использовать sys_schema для настройки производительности и обслуживания базы данных в службе "База данных Azure для MySQL"
+# <a name="how-to-use-sys_schema-for-performance-tuning-and-database-maintenance-in-azure-database-for-mysql"></a>Как использовать sys_schema для настройки производительности и обслуживания базы данных в службе "База данных Azure для MySQL"
 
 Схема performance_schema MySQL, которая стала впервые доступна в MySQL 5.5, предоставляет способ инструментирования многих важных ресурсов серверов, таких как выделение памяти, хранимые программы, блокировка метаданных и т. д. Однако performance_schema содержит более 80 таблиц. Для получения необходимой информации часто требуется объединение таблиц в performance_schema, а также таблицы из information_schema. Созданная на основе performance_schema и information_schema схема sys_schema предоставляет большую коллекцию [понятных представлений](https://dev.mysql.com/doc/refman/5.7/en/sys-schema-views.html) в базе данных только для чтения и полностью поддерживается в службе "База данных Azure для MySQL" версии 5.7.
 
@@ -33,7 +33,7 @@ ms.locfileid: "61422377"
 
 ## <a name="performance-tuning"></a>Настройка производительности
 
-### <a name="sysusersummarybyfileio"></a>*sys.user_summary_by_file_io*
+### <a name="sysuser_summary_by_file_io"></a>*sys.user_summary_by_file_io*
 
 Операции ввода-вывода являются наиболее ресурсоемкими операциями в базе данных. Мы можем узнать среднюю задержку операций ввода-вывода, запросив представление *sys.user_summary_by_file_io*. При использовании подготовленного хранилища по умолчанию размером 125 ГБ задержка ввода-вывода составляет около 15 секунд.
 
@@ -43,13 +43,13 @@ ms.locfileid: "61422377"
 
 ![Задержка ввода-вывода: 1 ТБ](./media/howto-troubleshoot-sys-schema/io-latency-1TB.png)
 
-### <a name="sysschematableswithfulltablescans"></a>*sys.schema_tables_with_full_table_scans*
+### <a name="sysschema_tables_with_full_table_scans"></a>*sys.schema_tables_with_full_table_scans*
 
 Несмотря на тщательное планирование, многие запросы могут по-прежнему привести к сканированию всей таблицы. Дополнительные сведения о типах индексов и способах их оптимизации см. в следующей статье: [Решение проблем с производительностью запросов](./howto-troubleshoot-query-performance.md). Полное сканирование таблиц является ресурсоемким и снижает производительность вашей базы данных. Самый быстрый способ поиска таблиц с полным сканированием — запросить представление *sys.schema_tables_with_full_table_scans*.
 
 ![Сканирование всей таблицы](./media/howto-troubleshoot-sys-schema/full-table-scans.png)
 
-### <a name="sysusersummarybystatementtype"></a>*sys.user_summary_by_statement_type*
+### <a name="sysuser_summary_by_statement_type"></a>*sys.user_summary_by_statement_type*
 
 Чтобы устранить проблемы с производительностью базы данных, может быть полезно просто выявить события, происходящие внутри базы данных, а представление *sys.user_summary_by_statement_type* выведет необходимые сведения по типу инструкций.
 
@@ -59,7 +59,7 @@ ms.locfileid: "61422377"
 
 ## <a name="database-maintenance"></a>Обслуживание базы данных
 
-### <a name="sysinnodbbufferstatsbytable"></a>*sys.innodb_buffer_stats_by_table*
+### <a name="sysinnodb_buffer_stats_by_table"></a>*sys.innodb_buffer_stats_by_table*
 
 Буферный пул InnoDB находится в памяти и является основным механизмом кэширования между СУБД и хранилищем. Размер буферного пула привязан к уровню производительности. Его можно изменить, только выбрав другой номер SKU продукта. Как и с памятью в операционной системе, старые страницы выгружаются, чтобы освободить место для новых данных. Чтобы узнать, какие таблицы используют больше всего памяти буферного пула InnoDB, можно запросить представление *sys.innodb_buffer_stats_by_table*.
 
@@ -67,7 +67,7 @@ ms.locfileid: "61422377"
 
 На рисунке выше видно, что, за исключением системных таблиц и представлений, каждая таблица базы данных mysqldatabase033, которая размещает один из сайтов WordPress, занимает 16 КБ или 1 страницу данных в памяти.
 
-### <a name="sysschemaunusedindexes--sysschemaredundantindexes"></a>*sys.schema_unused_indexes* & *sys.schema_redundant_indexes*
+### <a name="sysschema_unused_indexes--sysschema_redundant_indexes"></a>*sys.schema_unused_indexes* & *sys.schema_redundant_indexes*
 
 Индексы являются эффективным инструментом повышения производительности чтения, однако они влекут дополнительные затраты, связанные с операциями вставки и хранением. *sys.schema_unused_indexes* и *sys.schema_redundant_indexes* предоставляют сведения об неиспользуемых или повторяющихся индексах.
 
@@ -79,5 +79,5 @@ ms.locfileid: "61422377"
 
 Таким образом, sys_schema является мощным инструментом, который подходит и для настройки производительности, и для обслуживания базы данных. Обязательно воспользуйтесь этой функцией в Базе данных Azure для MySQL. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Чтобы найти ответы на наиболее важные вопросы либо опубликовать новый вопрос или ответ, посетите [Форум MSDN](https://social.msdn.microsoft.com/forums/security/en-US/home?forum=AzureDatabaseforMySQL) или [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-database-mysql).

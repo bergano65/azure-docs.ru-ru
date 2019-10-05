@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 07/18/2019
 ms.author: mlearned
-ms.openlocfilehash: e96d501196a629c7e37de7e5ad66b68863bf556f
-ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
+ms.openlocfilehash: b2973a8e826ab8cc8da29f1ec9678d6a6e4fa975
+ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71097915"
+ms.lasthandoff: 10/05/2019
+ms.locfileid: "71971846"
 ---
 # <a name="preview---automatically-scale-a-cluster-to-meet-application-demands-on-azure-kubernetes-service-aks"></a>Предварительная версия. Автоматическое масштабирование кластера в соответствии с потребностями приложений в службе Kubernetes Azure (AKS)
 
@@ -90,21 +90,21 @@ az aks create \
   --resource-group myResourceGroup \
   --name myAKSCluster \
   --node-count 1 \
-  --vm-set-type VirtualMachineScaleSets \
+  ---enable-vmss \
   --enable-cluster-autoscaler \
   --min-count 1 \
   --max-count 3
 ```
 
 > [!NOTE]
-> Если при выполнении указан параметр *--kubernetes-Version* , `az aks create`то эта версия должна соответствовать минимальному номеру версии или превышать его, как описано в предыдущем разделе [перед началом](#before-you-begin) работы.
+> Если указать параметр *--kubernetes-Version* при запуске `az aks create`, эта версия должна соответствовать минимальному номеру версии или превышать его, как описано в предыдущем разделе [перед началом](#before-you-begin) работы.
 
 Создание кластера и настройка параметров автомасштабирования кластера занимает несколько минут.
 
 ## <a name="change-the-cluster-autoscaler-settings"></a>Изменение параметров средства автомасштабирования кластера
 
 > [!IMPORTANT]
-> Если в вашей подписке включена функция *пулов с несколькими агентами* , перейдите к [разделу Автомасштабирование с несколькими пулами агентов](#use-the-cluster-autoscaler-with-multiple-node-pools-enabled). Для кластеров с несколькими пулами агентов необходимо использовать `az aks nodepool` набор команд для изменения свойств пула узлов `az aks`вместо. В приведенных ниже инструкциях предполагается, что вы не включили несколько пулов узлов. Чтобы проверить, включен ли он, выполните команду `az feature  list -o table` и `Microsoft.ContainerService/multiagentpoolpreview`найдите.
+> Если в вашей подписке включена функция *пулов с несколькими агентами* , перейдите к [разделу Автомасштабирование с несколькими пулами агентов](#use-the-cluster-autoscaler-with-multiple-node-pools-enabled). Для кластеров с несколькими пулами агентов необходимо использовать набор команд `az aks nodepool` для изменения свойств пула узлов вместо `az aks`. В приведенных ниже инструкциях предполагается, что вы не включили несколько пулов узлов. Чтобы проверить, включен ли он, выполните `az feature  list -o table` и найдите `Microsoft.ContainerService/multiagentpoolpreview`.
 
 На предыдущем шаге, чтобы создать кластер AKS или обновить существующий пул узлов, для параметра минимальное число узлов автомасштабирования кластера было установлено значение *1*, а для параметра Максимальное число узлов — значение *3*. По мере изменения требований приложения вы можете скорректировать настроенное количество узлов для средства автомасштабирования кластера.
 
@@ -159,7 +159,7 @@ az aks nodepool update \
   --max-count 5
 ```
 
-Можно отключить Автомасштабирование кластера, выполнив команду [AZ AKS нодепул Update][az-aks-nodepool-update] и передав `--disable-cluster-autoscaler` параметр.
+Автоматическое масштабирование кластера можно отключить с помощью команды [AZ AKS нодепул Update][az-aks-nodepool-update] и передав параметр `--disable-cluster-autoscaler`.
 
 ```azurecli-interactive
 az aks nodepool update \

@@ -10,12 +10,12 @@ ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 09/25/2019
 ms.author: diberry
-ms.openlocfilehash: 1a9f3eb0ea79a0cd79850e721d081b00dc582a31
-ms.sourcegitcommit: 8bae7afb0011a98e82cbd76c50bc9f08be9ebe06
+ms.openlocfilehash: 4bd1386c68f3173c19b282c1e01ecff545c4bcd7
+ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71695282"
+ms.lasthandoff: 10/05/2019
+ms.locfileid: "71972063"
 ---
 # <a name="data-sources-for-qna-maker-content"></a>Источники данных для содержимого QnA Maker
 
@@ -34,9 +34,9 @@ QnA Maker автоматически извлекает пары "вопрос �
 |\* Excel|Файл структурированных вопросов и ответов (QnA)<br> (включая поддержку RTF, HTML)|[Пример часто задаваемых вопросов QnA.xls](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/qna-maker/data-source-formats/QnA%20Maker%20Sample%20FAQ.xlsx)|
 |\* TXT/TSV|Файл структурированных вопросов и ответов (QnA)|[Пример беседы.tsv](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/qna-maker/data-source-formats/Scenario_Responses_Friendly.tsv)|
 
-**Файлы TSV и XLS**, полученные из экспортированных баз знаний, можно использовать только при импорте файлов со страницы **параметров** на портале QnA Maker. Их нельзя использовать в качестве источников данных во время создания базы знаний или с помощью функции добавления файла или URL-адреса на странице **Параметры** . 
+### <a name="import-and-export-knowledge-base"></a>Импорт и экспорт базы знаний
 
-Дополнительные сведения об использовании [множественной переворачивания документов](). 
+**Файлы TSV и XLS**, полученные из экспортированных баз знаний, можно использовать только при импорте файлов со страницы **параметров** на портале QnA Maker. Их нельзя использовать в качестве источников данных во время создания базы знаний или с помощью функции **+ Добавить файл** или **+ Добавить URL-адрес** на странице **Параметры** . 
 
 ## <a name="data-source-locations"></a>Расположение источника данных
 
@@ -193,19 +193,19 @@ Answer2
 |Цель|Формат|Пример Markdown|Отрисовка<br>как отображается в чате чата|
 |--|--|--|--|
 Новая строка из двух предложений.|`\n\n`|`How can I create a bot with \n\n QnA Maker?`|![форматировать новую строку между двумя предложениями](../media/qnamaker-concepts-datasources/format-newline.png)|
-|Заголовки от H1 до H6, количество `#` определяет, какой заголовок. 1 `#` — это H1.|`\n# text \n## text \n### text \n####text \n#####text` |`## Creating a bot \n ...text.... \n### Important news\n ...text... \n### Related Information\n ....text...`<br><br>`\n# my h1 \n## my h2\n### my h3 \n#### my h4 \n##### my h5`|![формат с заголовками Markdown](../media/qnamaker-concepts-datasources/format-headers.png)<br>![формат с заголовками Markdown от H1 до H5](../media/qnamaker-concepts-datasources/format-h1-h5.png)|
+|Заголовки от H1 до H6, число `#` указывает, какой заголовок. 1 `#` является H1.|`\n# text \n## text \n### text \n####text \n#####text` |`## Creating a bot \n ...text.... \n### Important news\n ...text... \n### Related Information\n ....text...`<br><br>`\n# my h1 \n## my h2\n### my h3 \n#### my h4 \n##### my h5`|![формат с заголовками Markdown](../media/qnamaker-concepts-datasources/format-headers.png)<br>![формат с заголовками Markdown от H1 до H5](../media/qnamaker-concepts-datasources/format-h1-h5.png)|
 |Курсив |`*text*`|`How do I create a bot with *QnA Maker*?`|![форматировать курсивом](../media/qnamaker-concepts-datasources/format-italics.png)|
 |Строка (полужирный)|`**text**`|`How do I create a bot with **QnA Maker**?`|![формат с усиленной маркировкой для полужирного шрифта](../media/qnamaker-concepts-datasources/format-strong.png)|
 |URL-адрес для ссылки|`[text](https://www.my.com)`|`How do I create a bot with [QnA Maker](https://www.qnamaker.ai)?`|![формат URL-адреса (гиперссылка)](../media/qnamaker-concepts-datasources/format-url.png)|
 |\* URL-адрес для общедоступного образа|`![text](https://www.my.com/image.png)`|`How can I create a bot with ![QnAMaker](https://review.docs.microsoft.com/en-us/azure/cognitive-services/qnamaker/media/qnamaker-how-to-key-management/qnamaker-resource-list.png)`|![формат URL-адреса общедоступного образа ](../media/qnamaker-concepts-datasources/format-image-url.png)|
-|Зачеркнутый|`~~text~~`|`some ~~questoins~~ questions need to be asked`|![формат для зачеркивания](../media/qnamaker-concepts-datasources/format-strikethrough.png)|
+|Черкивания|`~~text~~`|`some ~~questoins~~ questions need to be asked`|![формат для зачеркивания](../media/qnamaker-concepts-datasources/format-strikethrough.png)|
 |Полужирный и курсив|`***text***`|`How can I create a ***QnA Maker*** bot?`|![формат для полужирного шрифта и курсива](../media/qnamaker-concepts-datasources/format-bold-italics.png)|
 |Полужирный URL-адрес для ссылки|`[**text**](https://www.my.com)`|`How do I create a bot with [**QnA Maker**](https://www.qnamaker.ai)?`|![формат для URL-адреса полужирного шрифта](../media/qnamaker-concepts-datasources/format-bold-url.png)|
 |URL-адрес курсивов для ссылки|`[*text*](https://www.my.com)`|`How do I create a bot with [*QnA Maker*](https://www.qnamaker.ai)?`|![формат URL-адреса курсивов](../media/qnamaker-concepts-datasources/format-url-italics.png)|
 |Escape-символы Markdown|`\*text\*`|`How do I create a bot with \*QnA Maker\*?`|![формат URL-адреса курсивов](../media/qnamaker-concepts-datasources/format-escape-markdown-symbols.png)|
 |Упорядоченный список|`\n 1. item1 \n 1. item2`|`This is an ordered list: \n 1. List item 1 \n 1. List item 2`<br>В предыдущем примере используется автоматическая нумерация, встроенная в Markdown.<br>`This is an ordered list: \n 1. List item 1 \n 2. List item 2`<br>В предыдущем примере используется явная нумерация.|![формат упорядоченного списка](../media/qnamaker-concepts-datasources/format-ordered-list.png)|
 |Неупорядоченный список|`\n * item1 \n * item2`<br>или<br>`\n - item1 \n - item2`|`This is an ordered list: \n * List item 1 \n * List item 2`|![формат неупорядоченного списка](../media/qnamaker-concepts-datasources/format-unordered-list.png)|
-|Вложенные списки|`\n * Parent1 \n\t * Child1 \n\t * Child2 \n * Parent2`<br><br>`\n * Parent1 \n\t 1. Child1 \n\t * Child2 \n 1. Parent2`<br><br>Упорядоченные и неупорядоченные списки можно вкладывать вместе. Вкладка `\t`, указывает уровень отступа дочернего элемента.|`This is an unordered list: \n * List item 1 \n\t * Child1 \n\t * Child2 \n * List item 2`<br><br>`This is an ordered nested list: \n 1. Parent1 \n\t 1. Child1 \n\t 1. Child2 \n 1. Parent2`|![формат вложенного неупорядоченного списка](../media/qnamaker-concepts-datasources/format-nested-unordered-list.png)<br>![формат вложенного упорядоченного списка](../media/qnamaker-concepts-datasources/format-nested-ordered-list.png)|
+|Вложенные списки|`\n * Parent1 \n\t * Child1 \n\t * Child2 \n * Parent2`<br><br>`\n * Parent1 \n\t 1. Child1 \n\t * Child2 \n 1. Parent2`<br><br>Упорядоченные и неупорядоченные списки можно вкладывать вместе. Вкладка `\t` указывает уровень отступа дочернего элемента.|`This is an unordered list: \n * List item 1 \n\t * Child1 \n\t * Child2 \n * List item 2`<br><br>`This is an ordered nested list: \n 1. Parent1 \n\t 1. Child1 \n\t 1. Child2 \n 1. Parent2`|![формат вложенного неупорядоченного списка](../media/qnamaker-concepts-datasources/format-nested-unordered-list.png)<br>![формат вложенного упорядоченного списка](../media/qnamaker-concepts-datasources/format-nested-ordered-list.png)|
 
 \* QnA Maker не обрабатывает образ каким бы то ни было образом. Это роль клиентского приложения для отрисовки образа. 
 
@@ -213,10 +213,10 @@ Answer2
 
 | Сохранить HTML  | Представление в запросе API  | Представление в КБ |
 |-----------|---------|-------------------------|
-| Да | \&lt; br\&gt; | &lt;br&gt; |
-| Да | \&lt; H3\&gt; заголовок\&lt;/H3\&gt; | &lt;/H3&gt;заголовка&lt;H3&gt; |
+| Да | \&lt; BR @ no__t-1GT; | &lt;BR @ no__t-1 |
+| Да | \&lt; H3 @ no__t-1GT; Header @ no__t-2LT;/H3 @ no__t-3gt; | &lt;h3 @ no__t-1header @ no__t-2/H3 @ no__t-3 |
 
-Кроме того, CR LF (\r\n) преобразуется в значение \n в КИЛОБАЙТах. LF (\n) сохраняется как есть. Если вы хотите экранировать любую escape-последовательность, например \t или \n, можно использовать обратную косую черту\\, например "\\\\\\r\\\\n" и "t".
+Кроме того, CR LF (\r\n) преобразуется в значение \n в КИЛОБАЙТах. LF (\n) сохраняется как есть. Если вы хотите экранировать любую escape-последовательность, например \t или \n, можно использовать обратную косую черту, например: ' \\ @ no__t-1R @ no__t-2 @ no__t-3N ' и ' \\ @ no__t-5T '
 
 ## <a name="editing-your-knowledge-base-locally"></a>Локальное изменение базы знаний
 

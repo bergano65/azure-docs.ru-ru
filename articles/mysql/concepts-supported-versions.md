@@ -1,17 +1,17 @@
 ---
-title: Поддерживаемые версии в службе "База данных Azure для MySQL"
-description: Описываются поддерживаемые версии в базе данных Azure для MySQL.
+title: Поддерживаемые версии — база данных Azure для MySQL
+description: Узнайте, какие версии сервера MySQL поддерживаются в службе "база данных Azure для MySQL".
 author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 09/12/2019
-ms.openlocfilehash: 25251b617522840412a4868331e155285f64a18c
-ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
+ms.openlocfilehash: f9c7278e60c8342aa7d5b68ab8da7143abaf4c89
+ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70962580"
+ms.lasthandoff: 10/05/2019
+ms.locfileid: "71970534"
 ---
 # <a name="supported-azure-database-for-mysql-server-versions"></a>Поддерживаемые версии сервера базы данных Azure для MySQL
 

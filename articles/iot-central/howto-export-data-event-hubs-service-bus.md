@@ -8,12 +8,12 @@ ms.date: 07/09/2019
 ms.topic: conceptual
 ms.service: iot-central
 manager: peterpr
-ms.openlocfilehash: e6df6a1f751106f62cdfecc3a7b5efb0fe4c63bf
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: 732ce570f8235d1f147055af6972c2a8d12599dc
+ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69875996"
+ms.lasthandoff: 10/05/2019
+ms.locfileid: "71971622"
 ---
 # <a name="export-your-data-in-azure-iot-central"></a>Экспорт данных в Azure IoT Central
 
@@ -33,9 +33,9 @@ ms.locfileid: "69875996"
 
 ## <a name="set-up-export-destination"></a>Настройка места назначения экспорта
 
-Если у вас нет существующих концентраторов событий или служебной шины для экспорта, выполните следующие действия.
+Если у вас нет существующих концентраторов событий или служебной шины для экспорта, выполните следующие действия, чтобы создать ее.
 
-## <a name="create-event-hubs-namespace"></a>Создание пространства имен Центров событий
+### <a name="create-event-hubs-namespace"></a>Создание пространства имен Центров событий
 
 1. Создайте [пространство имен Центров событий на портале Azure](https://ms.portal.azure.com/#create/Microsoft.EventHub). Дополнительные сведения см. в [документации по Центрам событий Azure](https://docs.microsoft.com/azure/event-hubs/event-hubs-create).
 2. Выберите подписку. 
@@ -44,7 +44,7 @@ ms.locfileid: "69875996"
     > Теперь вы можете экспортировать данные в другие подписки, которые **отличаются** от подписки приложения IoT Central с оплатой по мере использования. В этом случае вы подключаетесь с использованием строки подключения.
 3. Создайте концентратор событий в пространстве имен в Центрах событий. Перейдите к пространству имен и выберите **+ Концентратор событий** в верхней части, чтобы создать экземпляр концентратора событий.
 
-## <a name="create-service-bus-namespace"></a>Создание пространства имен Служебной шины
+### <a name="create-service-bus-namespace"></a>Создание пространства имен Служебной шины
 
 1. Создайте [пространство имен Служебной шины на портале Azure](https://ms.portal.azure.com/#create/Microsoft.ServiceBus.1.0.5). Дополнительные сведения см. в [документации по Служебной шине Azure](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-create-namespace-portal).
 2. Выберите подписку. 
@@ -61,19 +61,17 @@ ms.locfileid: "69875996"
 
 1. Войдите в приложение IoT Central.
 
-2. В меню слева выберите непрерывная **Экспорт данных**.
+2. В меню слева выберите **Непрерывная экспорт данных**.
 
     > [!Note]
     > Если вы не видите этого пункта в меню слева, вы не являетесь администратором в приложении. Обратитесь к администратору, чтобы настроить экспорт данных.
-
-    ![Создание нового концентратора событий для непрерывного экспорта данных](media/howto-export-data/export_menu1.png)
 
 3. Нажмите кнопку **+ создать** в правом верхнем углу. Выберите один из **концентраторов событий Azure** или **служебную шину Azure** в качестве назначения для экспорта. 
 
     > [!NOTE] 
     > Максимальное число экспортов на каждое приложение равно пяти. 
 
-    ![Создание непрерывного экспорта данных](media/howto-export-data/export_new1.png)
+    ![Создание непрерывного экспорта данных](media/howto-export-data/export-new2.png)
 
 4. В раскрывающемся списке выберите пространство имен **концентраторов событий или пространство имен служебной шины**. Вы также можете выбрать последний вариант в списке — **Enter a connection string** (Ввести строку подключения). 
 
@@ -83,7 +81,7 @@ ms.locfileid: "69875996"
     > [!NOTE] 
     > Для приложений с 7-дневной бесплатной пробной версией единственным способом настроить непрерывный экспорт данных — использовать строку подключения. Это обусловлено тем, что приложения с 7-дневной бесплатной пробной версией не связаны с подпиской Azure.
 
-    ![Создание нового концентратора событий для непрерывного экспорта данных](media/howto-export-data/export_create1.png)
+    ![Создание нового концентратора событий для непрерывного экспорта данных](media/howto-export-data/export-eh.png)
 
 5. (Необязательно.) Если вы выбрали **Enter a connection string** (Ввести строку подключения), открывается новое окно, в которое нужно вставить строку подключения. Чтобы получить строку подключения, сделайте следующее:
     - Концентраторы событий или служебная шина, перейдите к пространству имен в портал Azure.
@@ -95,14 +93,12 @@ ms.locfileid: "69875996"
 
 7. В разделе **Data to export** (Данные для экспорта) укажите каждый тип данных для экспорта, задав для типа значение **Включено**.
 
-6. Чтобы включить непрерывный экспорт данных, убедитесь, что для параметра **Экспорт данных** установлено значение **Включено**. Щелкните **Сохранить**.
+8. Чтобы включить непрерывный экспорт данных, убедитесь, **что включен режим** **экспорта данных** . Щелкните **Сохранить**.
 
-    ![Настройка экспорта непрерывных данных](media/howto-export-data/export_list1.png)
-
-7. Через несколько минут ваши данные будут отображаться в выбранном назначении.
+9. Через несколько минут ваши данные будут отображаться в выбранном назначении.
 
 
-## <a name="export-to-azure-event-hubs-and-azure-service-bus"></a>Экспорт данных в Центры событий Azure и Служебную шину Azure
+## <a name="data-format"></a>Формат данных
 
 Данные измерений, устройств и шаблонов устройств экспортируются в концентратор событий либо в очередь или раздел Служебной шины почти в реальном времени. Экспортированные данные измерений содержат полные сообщения, которые ваши устройства отправили в IoT Central, а не только сами значения измерений. Экспортированные данные устройств содержат изменения свойств и параметров всех устройств, а экспортированные шаблоны устройств содержат изменения для всех шаблонов устройств. Экспортированные данные находятся в формате JSON в свойстве body.
 
@@ -146,7 +142,7 @@ ms.locfileid: "69875996"
     "x-opt-enqueued-time": 1539381030200
   },
   "sequenceNumber": 25325,
-  "enqueuedTimeUtc": "2018-10-12T21:50:30.200Z",
+  "enqueuedTimeUtc": "2018-10-02T21:50:30.200Z",
   "offset": "<offset>",
   "properties": {
     "content_type": "application/json",
@@ -155,7 +151,7 @@ ms.locfileid: "69875996"
 }
 ```
 
-### <a name="devices"></a>Устройства
+### <a name="devices"></a>Устройств
 
 Сообщения, содержащие данные устройств, отправляются в концентратор событий либо очередь или раздел служебной шины каждые несколько минут. Это означает, что каждые несколько минут поступают пакеты сообщений с данными о:
 - новых устройствах, которые были добавлены;
@@ -211,7 +207,7 @@ ms.locfileid: "69875996"
   },
   "partitionKey": "<partitionKey>",
   "sequenceNumber": 39740,
-  "enqueuedTimeUtc": "2018-10-11T16:22:39.654Z",
+  "enqueuedTimeUtc": "2018-10-02T16:22:39.654Z",
   "offset": "<offset>",
 }
 ```
@@ -236,62 +232,62 @@ ms.locfileid: "69875996"
 В следующем примере показано сообщение с данными шаблонов устройств в концентраторе событий, очереди или разделе служебной шины:
 
 ```json
-{
-  "body": {
-    "id": "<id>",
-    "version": "1.0.0",
-    "name": "<templateName>",
-    "measurements": {
-      "telemetry": {
-        "humidity": {
-          "dataType": "double",
-          "name": "humidity"
+{ 
+  "body":{ 
+    "id":"<id>",
+    "version":"1.0.0",
+    "name":"<templateName>",
+    "measurements":{ 
+      "telemetry":{ 
+        "humidity":{ 
+          "dataType":"double",
+          "name":"humidity"
         },
-        "pressure": {
-          "dataType": "double",
-          "name": "pressure"
+        "pressure":{ 
+          "dataType":"double",
+          "name":"pressure"
         },
-        "temp": {
-          "dataType": "double",
-          "name": "temperature"
+        "temp":{ 
+          "dataType":"double",
+          "name":"temperature"
         }
       }
     },
-    "properties": {
-      "cloud": {
-        "location": {
-          "dataType": "string",
-          "name": "Location"
+    "properties":{ 
+      "cloud":{ 
+        "location":{ 
+          "dataType":"string",
+          "name":"Location"
         }
       },
-      "device": {
-        "dieNumber": {
-          "dataType": "double",
-          "name": "Die Number"
+      "device":{ 
+        "dieNumber":{ 
+          "dataType":"double",
+          "name":"Die Number"
         }
       }
     },
-    "settings": {
-      "device": {
-        "fanSpeed": {
-          "dataType": "double",
-          "name": "Fan Speed",
-          "initialValue": 0
+    "settings":{ 
+      "device":{ 
+        "fanSpeed":{ 
+          "dataType":"double",
+          "name":"Fan Speed",
+          "initialValue":0
         }
       }
     }
   },
-  "annotations": {
-    "iotcentral-message-source": "deviceTemplates",
-    "x-opt-partition-key": "<partitionKey>",
-    "x-opt-sequence-number": 25315,
-    "x-opt-offset": "<offset>",
-    "x-opt-enqueued-time": 1539274985085
+  "annotations":{ 
+    "iotcentral-message-source":"deviceTemplates",
+    "x-opt-partition-key":"<partitionKey>",
+    "x-opt-sequence-number":25315,
+    "x-opt-offset":"<offset>",
+    "x-opt-enqueued-time":1539274985085
   },
-  "partitionKey": "<partitionKey>",
-  "sequenceNumber": 25315,
-  "enqueuedTimeUtc": "2018-10-11T16:23:05.085Z",
-  "offset": "<offset>",
+  "partitionKey":"<partitionKey>",
+  "sequenceNumber":25315,
+  "enqueuedTimeUtc":"2018-10-02T16:23:05.085Z",
+  "offset":"<offset>"
 }
 ```
 

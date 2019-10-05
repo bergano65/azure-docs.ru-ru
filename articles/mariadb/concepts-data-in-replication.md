@@ -1,17 +1,17 @@
 ---
-title: Репликация данных в базу данных Azure для MariaDB.
-description: В этой статье описывается настройка репликации входных данных в базу данных Azure для MariaDB.
+title: Репликация данных в базу данных Azure для MariaDB
+description: Сведения об использовании репликации данных для синхронизации с внешнего сервера в службе "база данных Azure для MariaDB".
 author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 09/13/2019
-ms.openlocfilehash: 3ceb8b4f3c2c50ac0ac3bd12831b5497f9a05afb
-ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
+ms.openlocfilehash: 826a6db289bf8b938e85d270f91836b3d8790206
+ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70993040"
+ms.lasthandoff: 10/05/2019
+ms.locfileid: "71973637"
 ---
 # <a name="replicate-data-into-azure-database-for-mariadb"></a>Репликация данных в базу данных Azure для MariaDB
 
@@ -34,12 +34,12 @@ ms.locfileid: "70993040"
 - Каждая таблица должна иметь первичный ключ.
 - Главный сервер должен использовать ядро InnoDB.
 - Пользователь должен иметь разрешения на настройку ведения двоичного журнала и создания новых пользователей на главном сервере.
-- Если на главном сервере включен протокол SSL, убедитесь, что сертификат ЦС SSL, предоставленный для домена, включен в `mariadb.az_replication_change_master` хранимую процедуру. См. следующие [примеры](https://docs.microsoft.com/azure/mariadb/howto-data-in-replication#link-the-master-and-replica-servers-to-start-data-in-replication) и `master_ssl_ca` параметр.
+- Если на главном сервере включен протокол SSL, убедитесь, что сертификат ЦС SSL, предоставленный для домена, включен в хранимую процедуру `mariadb.az_replication_change_master`. См. следующие [примеры](https://docs.microsoft.com/azure/mariadb/howto-data-in-replication#link-the-master-and-replica-servers-to-start-data-in-replication) и параметр `master_ssl_ca`.
 - Убедитесь, что IP-адрес главного сервера добавлен в правила брандмауэра на сервере-реплике Базы данных Azure для MariaDB. Измените правила брандмауэра на [портале Azure](https://docs.microsoft.com/azure/mariadb/howto-manage-firewall-portal) или с помощью [Azure CLI](https://docs.microsoft.com/azure/mariadb/howto-manage-firewall-cli).
 - Убедитесь, что компьютер, на котором размещен главный сервер, разрешает входящий и исходящий трафик в порте 3306.
 - Убедитесь, что главный сервер имеет общедоступный **IP-адрес**, DNS является общедоступным или имеет полное доменное имя (FQDN).
 
-### <a name="other"></a>Другой
+### <a name="other"></a>Другие
 - Репликация данных поддерживается только в ценовых категориях общего назначения и с оптимизацией для операций в памяти.
 
 ## <a name="next-steps"></a>Следующие шаги

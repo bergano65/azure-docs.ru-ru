@@ -4,12 +4,12 @@ ms.service: azure-resource-manager
 ms.topic: include
 ms.date: 08/19/2019
 ms.author: tomfitz
-ms.openlocfilehash: 25928ef35da1ce4b3824303a5d46749c32aa701f
-ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
+ms.openlocfilehash: 1190798b234f9c73e02fda41c03ffa296246be63
+ms.sourcegitcommit: 4d177e6d273bba8af03a00e8bb9fe51a447196d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "69626393"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71975337"
 ---
 | Resource | Ограничение по умолчанию | Максимальное ограничение |
 | --- | --- | --- |
@@ -21,7 +21,7 @@ ms.locfileid: "69626393"
 | Длина ключа тега |512 |512 |
 | Длина значения тега |256 |256 |
 
-<sup>1</sup> Если достигнут предел в 800 развертываний на группу ресурсов, удалите из журнала развертывания, которые больше не нужны. Удаление записи из журнала развертывания не влияет на развернутые ресурсы. Вы можете удалить записи из журнала с помощью команды [az group deployment delete](/cli/azure/group/deployment) в Azure CLI или с помощью командлета [Remove-AzResourceGroupDeployment](/powershell/module/az.resources/remove-azresourcegroupdeployment) в PowerShell.  Сценарий PowerShell, автоматизирующий удаление развертываний в сценарии непрерывной интеграции и непрерывной поставки (CI/CD), см. в разделе [ремове-деплойментс. ps1](https://gist.github.com/bmoore-msft/ed33fb940dafb09380174b7fca57651f).
+<sup>1</sup> Если достигнут предел в 800 развертываний на группу ресурсов, удалите из журнала развертывания, которые больше не нужны. Удаление записи из журнала развертывания не влияет на развернутые ресурсы. Дополнительные сведения см. в разделе [Устранение ошибки, когда число развертываний превышает 800](../articles/azure-resource-manager/deployment-quota-exceeded.md).
 
 #### <a name="template-limits"></a>Ограничения шаблонов
 

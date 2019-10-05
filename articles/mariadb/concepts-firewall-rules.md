@@ -1,17 +1,17 @@
 ---
 title: Правила брандмауэра сервера Базы данных Azure для MariaDB
-description: В этой статье описываются правила брандмауэра сервера Базы данных Azure для MariaDB.
+description: Узнайте, как использовать правила брандмауэра, чтобы включить подключения к серверу базы данных Azure для MariaDB.
 author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 09/22/2019
-ms.openlocfilehash: 94efc87cdea8e1d9b63361d4652b63909c6ce3e7
-ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
+ms.openlocfilehash: 89c4bce33b80e988a9da363a89854e921bee30b0
+ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71203599"
+ms.lasthandoff: 10/05/2019
+ms.locfileid: "71973664"
 ---
 # <a name="azure-database-for-mariadb-server-firewall-rules"></a>Правила брандмауэра сервера Базы данных Azure для MariaDB
 Брандмауэр запрещает любой доступ к серверу базы данных, пока вы не укажете компьютеры, у которых есть разрешение на доступ. Брандмауэр предоставляет доступ к серверу на основе исходного IP-адреса каждого запроса.
@@ -61,7 +61,7 @@ ms.locfileid: "71203599"
 
    * Получите статические IP-адреса для клиентских компьютеров, а затем добавьте IP-адреса как правила брандмауэра.
 
-* **IP-адрес сервера выглядит как общедоступный:** Подключения к серверу базы данных Azure для MariaDB направляются через общедоступный шлюз Azure. Однако фактический IP-адрес сервера защищен брандмауэром. Дополнительные сведения см. в [статье Архитектура подключения](concepts-connectivity-architecture.md). 
+* **IP-адрес сервера выглядит как общедоступный:** Подключения к серверу Базы данных Azure для MariaDB направляются через общедоступный шлюз Azure. Однако фактический IP-адрес сервера защищен брандмауэром. Дополнительные сведения см. в статье об [архитектуре подключения](concepts-connectivity-architecture.md). 
 
 ## <a name="next-steps"></a>Следующие шаги
 - [Создание правил брандмауэра Базы данных Azure для MariaDB и управление ими с помощью портала Azure](./howto-manage-firewall-portal.md)

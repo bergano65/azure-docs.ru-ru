@@ -4,14 +4,14 @@ description: Список типов ресурсов Azure, которые мо
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: conceptual
-ms.date: 7/30/2019
+ms.date: 10/4/2019
 ms.author: tomfitz
-ms.openlocfilehash: eec448dcbf1c550b6b0a0ee0f17505fd6ddd3c74
-ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
+ms.openlocfilehash: 6677290999049dead40f39e9a840735810c7c763
+ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70194735"
+ms.lasthandoff: 10/05/2019
+ms.locfileid: "71973320"
 ---
 # <a name="resources-not-limited-to-800-instances-per-resource-group"></a>Ресурсы, не ограниченные 800 экземплярами на группу ресурсов
 
@@ -40,6 +40,10 @@ ms.locfileid: "70194735"
 * образы
 * моментальные снимки
 * virtualMachines
+
+## <a name="microsoftcontainerinstance"></a>Microsoft.ContainerInstance
+
+* containerGroups
 
 ## <a name="microsoftcontainerregistry"></a>Microsoft.ContainerRegistry
 
@@ -81,6 +85,14 @@ ms.locfileid: "70194735"
 
 * integrationAccounts
 * workflows
+
+## <a name="microsoftnetapp"></a>Microsoft.NetApp
+
+* нетаппаккаунтс
+* Нетаппаккаунтс/КапаЦитипулс
+* Нетаппаккаунтс/КапаЦитипулс/тома
+* Нетаппаккаунтс/КапаЦитипулс/Volumes/Маунттаржетс
+* Нетаппаккаунтс/КапаЦитипулс/тома/моментальные снимки
 
 ## <a name="microsoftnetwork"></a>Microsoft.Network.
 
@@ -132,6 +144,15 @@ ms.locfileid: "70194735"
 ## <a name="microsoftscheduler"></a>Microsoft.Scheduler
 
 * jobcollections
+
+## <a name="microsoftservicefabricmesh"></a>Microsoft.ServiceFabricMesh
+
+* приложения
+* containerGroups
+* gateways
+* Сети
+* секреты
+* тома
 
 ## <a name="microsoftstorage"></a>Microsoft.Storage;
 

@@ -4,21 +4,20 @@ description: Настройка учетной записи пользовате
 services: app-service
 documentationcenter: ''
 author: kraigb
-manager: douge
+manager: barbkess
 ms.assetid: 0d657fcc-26bc-41dd-abf0-3e5cfd66e0e0
 ms.service: azure-notebooks
 ms.workload: na
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 04/15/2019
 ms.author: kraigb
-ms.openlocfilehash: 311f4d612c9deab23e7537b0c53ff3932c312cd4
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: bc93f55a3349498fa82095c2bc2b3178e234c107
+ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60632147"
+ms.lasthandoff: 10/05/2019
+ms.locfileid: "71973140"
 ---
 # <a name="your-user-account-for-azure-notebooks"></a>Собственная учетная запись пользователя для Записных книжек Azure
 
@@ -71,7 +70,7 @@ ms.locfileid: "60632147"
 
 Чтобы предоставить согласие от имени администратора, выполните пошаговые инструкции на [странице согласия администратора](https://notebooks.azure.com/account/adminConsent).
 
-## <a name="next-steps"></a>Дальнейшие действия  
+## <a name="next-steps"></a>Следующие шаги  
 
 > [!div class="nextstepaction"]
 > [Изменение профиля и идентификатора пользователя](azure-notebooks-user-profile.md)

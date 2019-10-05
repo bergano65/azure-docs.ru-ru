@@ -7,7 +7,7 @@ metadata:
   meta.description: null
   services: devops-project
   author: mlearned
-  manager: douge
+  manager: gwallace
   ms.service: devops-project
   ms.tgt_pltfrm: na
   ms.devlang: na
@@ -26,7 +26,7 @@ abstract:
     href: 'https://channel9.msdn.com/Events/Connect/2017/T174/player/'
     width: 250
 sections:
-  - title: 5-минутные руководства по началу работы
+  - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph
         text: 'Узнайте, как создать приложение нужного типа и развернуть его в требуемой службе Azure:'
@@ -61,7 +61,7 @@ sections:
               src: media\logo_gopher.svg
             text: Go
             href: /azure/devops-project/azure-devops-project-go
-  - title: Пошаговые руководства
+  - title: Пошаговые инструкции
     items:
       - type: paragraph
         text: 'Узнайте, как использовать DevOps Projects для создания конвейеров выпуска'
@@ -71,5 +71,5 @@ sections:
           - html: <a href="/azure/devops-project/azure-devops-project-github">Использование собственного кода с помощью GitHub</a>
           - html: <a href="/azure/devops-project/azure-devops-project-vms">Развертывание приложения ASP.NET на Виртуальных машинах Azure</a>
           - html: <a href="/azure/devops-project/azure-devops-project-sql-database">Развертывание приложения ASP.NET и Базы данных SQL Azure</a>
-          - html: <a href="/azure/devops-project/azure-devops-project-aks">Развертывание приложения в AKS</a>
+          - html: <a href="/azure/devops-project/azure-devops-project-aks">Развертывание приложения в Службе контейнеров Azure и Kubernetes</a>
           - html: <a href="/azure/devops-project/azure-devops-project-service-fabric">Развертывание приложения в Azure Service Fabric</a>

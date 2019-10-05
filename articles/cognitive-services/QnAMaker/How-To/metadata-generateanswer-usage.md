@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
-ms.date: 06/27/2019
+ms.date: 10/02/2019
 ms.author: diberry
-ms.openlocfilehash: 2f9b624ffcc04963046ad817bb2bc9c025161506
-ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
+ms.openlocfilehash: 03e04853e93bb78391476a365b20550d471e1dbb
+ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71300252"
+ms.lasthandoff: 10/05/2019
+ms.locfileid: "71971812"
 ---
 # <a name="get-an-answer-with-the-generateanswer-api-and-metadata"></a>Получение ответа с помощью API и метаданных Женератеансвер
 
@@ -48,7 +48,7 @@ QnA Maker позволяет добавлять метаданные в виде
 Вот как это можно сделать.
 1. Войдите на портал [https://www.qnamaker.ai](https://www.qnamaker.ai).
 1. В окне **Мои базы знаний**выберите **Просмотреть код** для своей базы знаний.
-    ![Снимок экрана с базами знаний](../media/qnamaker-how-to-metadata-usage/my-knowledge-bases.png)
+    @no__t 0Screenshot из моих баз знаний @ no__t-1
 1. Получите сведения о конечной точке GenerateAnswer.
 
     ![Снимок экрана сведений о конечной точке](../media/qnamaker-how-to-metadata-usage/view-code.png)
@@ -64,7 +64,7 @@ QnA Maker позволяет добавлять метаданные в виде
 Запрос POST использует:
 
 * Обязательные [Параметры URI](https://docs.microsoft.com/rest/api/cognitiveservices/qnamakerruntime/runtime/train#uri-parameters)
-* Обязательное [свойство заголовка](https://docs.microsoft.com/azure/cognitive-services/qnamaker/quickstarts/get-answer-from-knowledge-base-nodejs#add-a-post-request-to-send-question-and-get-an-answer), `Authorization`, для безопасности
+* Требуемое [свойство заголовка](https://docs.microsoft.com/azure/cognitive-services/qnamaker/quickstarts/get-answer-from-knowledge-base-nodejs#add-a-post-request-to-send-question-and-get-an-answer), `Authorization`, для безопасности
 * Обязательные [Свойства текста](https://docs.microsoft.com/rest/api/cognitiveservices/qnamakerruntime/runtime/train#feedbackrecorddto). 
 
 URL-адрес Женератеансвер имеет следующий формат: 
@@ -73,7 +73,7 @@ URL-адрес Женератеансвер имеет следующий фор
 https://{QnA-Maker-endpoint}/knowledgebases/{knowledge-base-ID}/generateAnswer
 ```
 
-Не забудьте задать в качестве значения свойства `Authorization` "заголовок HTTP" значение строки `EndpointKey` с конечным пробелом, а затем ключ конечной точки, найденный на странице **параметров** .
+Не забудьте задать свойство "заголовок HTTP" `Authorization` со значением строки `EndpointKey` с конечным пробелом, после чего ключ конечной точки находится на странице **параметров** .
 
 Пример текста JSON выглядит следующим образом:
 
@@ -161,7 +161,7 @@ var qnaResults = await this.qnaMaker.getAnswers(stepContext.context, qnaMakerOpt
 
 ## <a name="use-metadata-to-filter-answers-by-custom-metadata-tags"></a>Использование метаданных для фильтрации ответов по тегам пользовательских метаданных
 
-Добавление метаданных позволяет фильтровать ответы по этим тегам метаданных. Добавьте столбец метаданных из меню **Параметры представления** . Добавьте метаданные в базу знаний, щелкнув значок метаданных **+** , чтобы добавить пару метаданных. Эта пара состоит из одного ключа и одного значения.
+Добавление метаданных позволяет фильтровать ответы по этим тегам метаданных. Добавьте столбец метаданных из меню **Параметры представления** . Добавьте метаданные в базу знаний, выбрав значок метаданных **+** , чтобы добавить пару метаданных. Эта пара состоит из одного ключа и одного значения.
 
 ![Снимок экрана: Добавление метаданных](../media/qnamaker-how-to-metadata-usage/add-metadata.png)
 
@@ -219,9 +219,9 @@ var qnaResults = await this.qnaMaker.getAnswers(stepContext.context, qnaMakerOpt
 
 ## <a name="match-questions-only-by-text"></a>Сопоставлять только вопросы по тексту
 
-По умолчанию QnA Maker выполняет поиск по вопросам и ответам. Если вы хотите выполнять поиск только по вопросам, используйте `RankerType=QuestionOnly` в тексте сообщения запроса женератеансвер.
+По умолчанию QnA Maker выполняет поиск по вопросам и ответам. Если требуется выполнять поиск только по вопросам, то для создания ответа используйте `RankerType=QuestionOnly` в тексте сообщения запроса Женератеансвер.
 
-Можно выполнять поиск в опубликованной базе знаний, `isTest=false`с помощью или в тесте базы `isTest=true`знаний с помощью.
+Вы можете выполнить поиск в опубликованной базе знаний, используя `isTest=false`, или в тесте базы знаний, используя `isTest=true`.
 
 ```json
 {
@@ -249,4 +249,4 @@ var qnaResults = await this.qnaMaker.getAnswers(stepContext.context, qnaMakerOpt
 На странице **Публикация** также содержатся сведения для создания ответа с помощью [Postman](../Quickstarts/get-answer-from-kb-using-postman.md) и [cURL](../Quickstarts/get-answer-from-kb-using-curl.md). 
 
 > [!div class="nextstepaction"]
-> [Создание базы знаний](./create-knowledge-base.md)
+> [Создание программы-робота в базе знаний](../tutorials/integrate-qnamaker-luis.md)
