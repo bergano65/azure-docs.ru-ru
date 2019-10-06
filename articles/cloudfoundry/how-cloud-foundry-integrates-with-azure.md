@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 05/11/2018
 ms.author: ningk
-ms.openlocfilehash: eb5de6bf42769e7fd04782fc52d93764d1d7a3d6
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: e341cc5beeb8e8362a848bb1e208ddf1dc773978
+ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70093927"
+ms.lasthandoff: 10/06/2019
+ms.locfileid: "71976802"
 ---
 # <a name="integrate-cloud-foundry-with-azure"></a>Интеграция Cloud Foundry и Azure
 
@@ -65,7 +65,7 @@ Azure Load Balancer — это подсистема балансировки н�
 По умолчанию можно использовать локальную системную базу данных (MySQL). Для обеспечения высокой доступности и масштабирования используйте преимущества управляемых Azure служб MySQL или PostgreSQL. См. дополнительные сведения о [включении Azure MySQL или PostgreSQL для CCDB, UAADB и других системных баз данных в Cloud Foundry с открытым исходным кодом](https://github.com/cloudfoundry-incubator/bosh-azure-cpi-release/tree/master/docs/advanced/configure-cf-external-databases-using-azure-mysql-postgres-service).
 
 ## <a name="5-open-service-broker"></a>5. Open Service Broker
-Azure Service Broker обеспечивает унифицированный интерфейс для управления доступом приложений к службам Azure. Новый [проект Open Service Broker для Azure](https://github.com/Azure/open-service-broker-azure) предоставляет единый и простой способ доставки служб приложениям через Cloud Foundry, OpenShift и Kubernetes. Дополнительные сведения о развертывании в PCF см. на [плитке Azure Open Service Broker для PCF](https://network.pivotal.io/products/azure-open-service-broker-pcf/).
+Azure Service Broker обеспечивает унифицированный интерфейс для управления доступом приложений к службам Azure. Новый [проект Open Service Broker для Azure](https://github.com/Azure/open-service-broker-azure) предоставляет единый и простой способ доставки служб приложениям через Cloud Foundry, OpenShift и Kubernetes. Дополнительные сведения о развертывании в PCF см. на [плитке Azure Open Service Broker для PCF](https://pivotal.io/platform/services-marketplace/data-management/microsoft-azure).
 
 ## <a name="6-metrics-and-logging"></a>6. Метрики и ведение журнала
 Log Analytics сопла Azure — это Cloud Foundry компонент, который перенаправляет метрики из [Cloud Foundry loggregator firehose](https://docs.cloudfoundry.org/loggregator/architecture.html) в [журналы Azure Monitor](https://azure.microsoft.com/services/log-analytics/). С помощью Nozzle можно собирать, просматривать и анализировать метрики производительности и работоспособности системы CF в нескольких развертываниях.

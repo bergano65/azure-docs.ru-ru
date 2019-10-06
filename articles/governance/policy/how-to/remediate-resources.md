@@ -6,13 +6,12 @@ ms.author: dacoulte
 ms.date: 09/09/2019
 ms.topic: conceptual
 ms.service: azure-policy
-manager: carmonm
-ms.openlocfilehash: d6ca7827200815cf9b9b1c7ac697d06f9c6b306d
-ms.sourcegitcommit: b03516d245c90bca8ffac59eb1db522a098fb5e4
+ms.openlocfilehash: 219a3c56f9e4e4c9e132fa759b017fac63ade766
+ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71147050"
+ms.lasthandoff: 10/06/2019
+ms.locfileid: "71977989"
 ---
 # <a name="remediate-non-compliant-resources-with-azure-policy"></a>Исправление несоответствующих ресурсов с помощью службы "Политика Azure"
 
@@ -161,7 +160,7 @@ if ($roleDefinitionIds.Count -gt 0)
 
 ### <a name="create-a-remediation-task-through-azure-cli"></a>Создание задачи исправления с помощью Azure CLI
 
-Чтобы создать **задачу исправления** с Azure CLI, используйте `az policy remediation` команды. Замените `{subscriptionId}` идентификатором подписки и `{myAssignmentId}` **deployIfNotExists** или **измените** идентификатор назначения политики.
+Чтобы создать **задачу исправления** с Azure CLI, используйте команды `az policy remediation`. Замените `{subscriptionId}` на идентификатор подписки и `{myAssignmentId}` на свой **deployIfNotExists** или **измените** идентификатор назначения политики.
 
 ```azurecli-interactive
 # Login first with az login if not using Cloud Shell
@@ -174,7 +173,7 @@ az policy remediation create --name myRemediation --policy-assignment '/subscrip
 
 ### <a name="create-a-remediation-task-through-azure-powershell"></a>Создание задачи исправления с помощью Azure PowerShell
 
-Чтобы создать **задачу исправления** с Azure PowerShell, используйте `Start-AzPolicyRemediation` команды. Замените `{subscriptionId}` идентификатором подписки и `{myAssignmentId}` **deployIfNotExists** или **измените** идентификатор назначения политики.
+Чтобы создать **задачу исправления** с Azure PowerShell, используйте команды `Start-AzPolicyRemediation`. Замените `{subscriptionId}` на идентификатор подписки и `{myAssignmentId}` на свой **deployIfNotExists** или **измените** идентификатор назначения политики.
 
 ```azurepowershell-interactive
 # Login first with Connect-AzAccount if not using Cloud Shell

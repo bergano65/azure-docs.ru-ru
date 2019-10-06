@@ -1,18 +1,17 @@
 ---
-title: Устранение неполадок при распространенных ошибках
+title: Устранение распространенных ошибок
 description: Узнайте, как устранять проблемы с запросом ресурсов Azure с помощью графа ресурсов Azure.
 author: DCtheGeek
 ms.author: dacoulte
 ms.date: 08/21/2019
 ms.topic: troubleshooting
 ms.service: resource-graph
-manager: carmonm
-ms.openlocfilehash: 4cd4d89f276770cba401d7941a975fad8e49c8cd
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.openlocfilehash: abf6d22f2010db9bff97c7a93354c1cf8e1e1644
+ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "71000526"
+ms.lasthandoff: 10/06/2019
+ms.locfileid: "71976607"
 ---
 # <a name="troubleshoot-errors-using-azure-resource-graph"></a>Устранение ошибок с помощью графа ресурсов Azure
 
@@ -69,11 +68,11 @@ $response
 
 #### <a name="cause"></a>Причина:
 
-Граф ресурсов Azure REST API поддерживает `Content-Type` только **приложение/JSON**. Некоторые инструменты или агенты по умолчанию имеют **текст/Plain**, который не поддерживается REST API.
+Граф ресурсов Azure REST API поддерживает только `Content-Type` **приложения/JSON**. Некоторые инструменты или агенты по умолчанию имеют **текст/Plain**, который не поддерживается REST API.
 
 #### <a name="resolution"></a>Разрешение
 
-Убедитесь, что средство или агент, которые вы используете для запроса графа ресурсов Azure, имеют `Content-Type` заголовок REST API, настроенный для **Application/JSON**.
+Убедитесь, что средство или агент, которые вы используете для запроса графа ресурсов Azure, имеют заголовок REST API `Content-Type`, настроенный для **Application/JSON**.
 ### <a name="rest-403"></a>Сценарий. Нет разрешения на чтение для всех подписок в списке
 
 #### <a name="issue"></a>Проблемы

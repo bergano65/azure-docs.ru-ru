@@ -6,13 +6,12 @@ ms.author: dacoulte
 ms.date: 09/20/2019
 ms.topic: conceptual
 ms.service: azure-policy
-manager: carmonm
-ms.openlocfilehash: 51129f89f45d65007f8a7f37df0353121ebdbdd8
-ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
+ms.openlocfilehash: ac8d4d2519ce918a943cfe1e93ed2c5c7afd9a47
+ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71338385"
+ms.lasthandoff: 10/06/2019
+ms.locfileid: "71978056"
 ---
 # <a name="understand-azure-policys-guest-configuration"></a>Общие сведения о гостевой конфигурации службы "Политика Azure"
 
@@ -113,7 +112,7 @@ Windows Server Nano Server не поддерживается ни в одной 
   - установки последней версии расширения **Microsoft.GuestConfiguration**;
   - установки [средств проверки](#validation-tools) и зависимостей, если это необходимо.
 
-Если назначение **DeployIfNotExists** не соответствует требованиям, можно использовать [задачу](../how-to/remediate-resources.md#create-a-remediation-task) по исправлению.
+Если назначение **DeployIfNotExists** не соответствует требованиям, можно использовать [задачу по исправлению](../how-to/remediate-resources.md#create-a-remediation-task) .
 
 После того как назначение **DeployIfNotExists** соответствует требованиям, назначение политики **помощью параметров auditifnotexists** использует средства локальной проверки, чтобы определить, является ли назначение конфигурации совместимым или несоответствующим. Средство проверки предоставляет результаты клиенту гостевой конфигурации. Клиент перенаправляет результаты в гостевое расширение, чтобы сделать их доступными через поставщик ресурсов гостевой конфигурации.
 
@@ -122,7 +121,7 @@ Windows Server Nano Server не поддерживается ни в одной 
 > [!NOTE]
 > Политика **DeployIfNotExists** необходима, чтобы политика **помощью параметров auditifnotexists** возвращала результаты. Без **DeployIfNotExists**политика **помощью параметров auditifnotexists** показывает ресурсы "0 из 0" в качестве состояния.
 
-Все встроенные политики гостевой конфигурации включены в инициативу для группировки определений, которые могут использоваться в назначениях. Встроенная инициатива *[Предварительная версия]. Аудит параметров безопасности паролей в Linux и Windows* содержит 18 политик. Существует шесть пар определений **DeployIfNotExists** и **AuditIfNotExists** для Windows и три пары для Linux. Логика [определения политики](definition-structure.md#policy-rule) проверяет, что оценивается только Целевая операционная система.
+Все встроенные политики гостевой конфигурации включены в инициативу для группировки определений, которые могут использоваться в назначениях. Встроенная инициатива *[Предварительная версия]. Аудит параметров безопасности паролей в Linux и Windows @ no__t-0 содержит 18 политик. Существует шесть пар определений **DeployIfNotExists** и **AuditIfNotExists** для Windows и три пары для Linux. Логика [определения политики](definition-structure.md#policy-rule) проверяет, что оценивается только Целевая операционная система.
 
 ### <a name="multiple-assignments"></a>Несколько назначений
 
@@ -141,11 +140,11 @@ Windows: `C:\Packages\Plugins\Microsoft.GuestConfiguration.ConfigurationforWindo
 
 Linux: `/var/lib/waagent/Microsoft.GuestConfiguration.ConfigurationforLinux-<version>/GCAgent/logs/dsc.log`
 
-Где `<version>` — номер текущей версии.
+Где `<version>` относится к номеру текущей версии.
 
 ### <a name="collecting-logs-remotely"></a>Удаленная сбор журналов
 
-Первым шагом в устранении неполадок конфигураций гостевых конфигураций или модулей является `Test-GuestConfigurationPackage` использование командлета, следуя инструкциям в разделе [тестирование гостевого пакета конфигурации](../how-to/guest-configuration-create.md#test-a-guest-configuration-package).
+Первым шагом в устранении неполадок конфигураций гостевых конфигураций или модулей является использование командлета `Test-GuestConfigurationPackage`, как описано в разделе [тестирование гостевого пакета конфигурации](../how-to/guest-configuration-create.md#test-a-guest-configuration-package).
 Если это не удалось, сбор журналов клиентов может помочь в диагностике проблем.
 
 #### <a name="windows"></a>Windows

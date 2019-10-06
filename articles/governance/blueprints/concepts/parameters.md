@@ -6,13 +6,12 @@ ms.author: dacoulte
 ms.date: 03/12/2019
 ms.topic: conceptual
 ms.service: blueprints
-manager: carmonm
-ms.openlocfilehash: ee44d744c580dd9fbf20e7186b6e76fdc74cc5d0
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.openlocfilehash: 2bb38e0698d7504ba1bb139ca1bd5e3b14e5cdd4
+ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "71004079"
+ms.lasthandoff: 10/06/2019
+ms.locfileid: "71981069"
 ---
 # <a name="creating-dynamic-blueprints-through-parameters"></a>Создание динамических схем с использованием параметров
 

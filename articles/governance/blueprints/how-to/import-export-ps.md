@@ -6,13 +6,12 @@ ms.author: dacoulte
 ms.date: 09/03/2019
 ms.topic: conceptual
 ms.service: blueprints
-manager: carmonm
-ms.openlocfilehash: f7bc3610841bcc3c40435f077073ffa0d55acd93
-ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
+ms.openlocfilehash: 30e734c99a87364acfba9a58d83fe9a377958607
+ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70243182"
+ms.lasthandoff: 10/06/2019
+ms.locfileid: "71978440"
 ---
 # <a name="import-and-export-blueprint-definitions-with-powershell"></a>Импорт и экспорт определений схем с помощью PowerShell
 
@@ -25,7 +24,7 @@ ms.locfileid: "70243182"
   - Автоматическое тестирование определений схем в тестовых средах
   - Поддержка конвейеров непрерывной интеграции и непрерывного развертывания (CI/CD)
 
-По каким бы то ни было вашим причинам, Управление определениями схем в качестве кода имеет свои преимущества. В этой статье показано, как использовать `Import-AzBlueprintWithArtifact` команды `Export-AzBlueprintWithArtifact` и в модуле [AZ. чертеж](https://powershellgallery.com/packages/Az.Blueprint/) .
+По каким бы то ни было вашим причинам, Управление определениями схем в качестве кода имеет свои преимущества. В этой статье показано, как использовать команды `Import-AzBlueprintWithArtifact` и `Export-AzBlueprintWithArtifact` в модуле [AZ. чертеж](https://powershellgallery.com/packages/Az.Blueprint/) .
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -35,16 +34,16 @@ ms.locfileid: "70243182"
 - Ознакомьтесь с [этапами развертывания](../concepts/deployment-stages.md) и [жизненным циклом](../concepts/lifecycle.md) проекта
 - [Создание](../create-blueprint-powershell.md) определений [и назначений схем и](./manage-assignments-ps.md) их назначение с помощью PowerShell
 
-Если он еще не установлен, следуйте инструкциям в разделе [Добавление модуля AZ. чертеж](./manage-assignments-ps.md#add-the-azblueprint-module) для установки и проверки модуля **AZ. чертеж** из коллекция PowerShell.
+Выполните инструкции из [этой статьи](./manage-assignments-ps.md#add-the-azblueprint-module), чтобы установить модуль **Az.Blueprint** из коллекции PowerShell и проверить его работу.
 
 ## <a name="folder-structure-of-a-blueprint-definition"></a>Структура папок определения схемы
 
 Перед просмотром экспорта и импорта схем рассмотрим, как структурированы файлы, составляющие определение схемы. Определение схемы должно храниться в отдельной папке.
 
 > [!IMPORTANT]
-> Если в параметр `Import-AzBlueprintWithArtifact` **Name** командлета не передается значение, то используется имя папки, в которой хранится определение схемы.
+> Если значение параметра **Name** командлета `Import-AzBlueprintWithArtifact` не передается, используется имя папки, в которой хранится определение схемы.
 
-Вместе с определением схемы, которое должно называться `blueprint.json`, — это артефакты, из которых состоит определение схемы. Каждый артефакт должен находиться в подпапке с `artifacts`именем.
+Вместе с определением схемы, которое должно иметь имя `blueprint.json`, — это артефакты, из которых состоит определение схемы. Каждый артефакт должен находиться в подпапке с именем `artifacts`.
 Вместе, структура определения схемы как JSON Files в папках должна выглядеть следующим образом:
 
 ```text
@@ -64,13 +63,13 @@ ms.locfileid: "70243182"
 
 Действия по экспорту определения схемы просты. Экспорт определения схемы может быть полезен для совместного использования, резервного копирования или размещения в системе управления версиями.
 
-- Схема необходимости
+- **Чертеж** [обязательный]
   - Указывает определение схемы
-  - Используйте `Get-AzBlueprint` для получения объекта Reference
-- **OutputPath** необходимости
+  - Чтобы получить ссылочный объект, используйте `Get-AzBlueprint`.
+- **OutputPath** [обязательный]
   - Указывает путь для сохранения JSON определения схемы в
   - Выходные файлы находятся во вложенной папке с именем определения схемы.
-- **Версия** используемых
+- **Версия** (необязательно)
   - Указывает версию для **вывода, если эталонный** объект схемы содержит ссылки на более чем одну версию.
 
 1. Получите ссылку на определение схемы для экспорта из подписки, представленной в виде `{subId}`:
@@ -82,7 +81,7 @@ ms.locfileid: "70243182"
    $bpDefinition = Get-AzBlueprint -SubscriptionId '{subId}' -Name 'MyBlueprint' -Version '1.1'
    ```
 
-1. С помощью `Export-AzBlueprintWithArtifact` командлета экспортируйте указанное определение схемы:
+1. Используйте командлет `Export-AzBlueprintWithArtifact`, чтобы экспортировать указанное определение схемы:
 
    ```azurepowershell-interactive
    Export-AzBlueprintWithArtifact -Blueprint $bpDefinition -OutputPath 'C:\Blueprints'
@@ -94,19 +93,19 @@ ms.locfileid: "70243182"
 
 Примеры встроенных определений схем см. в [репозитории Azure Blueprint GitHub](https://github.com/Azure/azure-blueprints/tree/master/samples/builtins).
 
-- **Имя** необходимости
+- **Имя** [обязательный]
   - Указывает имя для нового определения схемы
-- **InputPath** необходимости
+- **InputPath** [обязательный]
   - Указывает путь для создания определения схемы из
   - Должно соответствовать [требуемой структуре папок](#folder-structure-of-a-blueprint-definition)
-- **ManagementGroupId** используемых
+- **ManagementGroupId** (необязательно)
   - Идентификатор группы управления, в которую необходимо сохранить определение схемы, если не является текущим контекстом по умолчанию
   - Необходимо указать либо **ManagementGroupId** , либо **SubscriptionId** .
-- **SubscriptionId** используемых
+- **SubscriptionId** (необязательно)
   - Идентификатор подписки, в которую необходимо сохранить определение схемы, если не является текущим контекстом по умолчанию
   - Необходимо указать либо **ManagementGroupId** , либо **SubscriptionId** .
 
-1. С помощью `Import-AzBlueprintWithArtifact` командлета импортируйте указанное определение схемы:
+1. Используйте командлет `Import-AzBlueprintWithArtifact`, чтобы импортировать указанное определение схемы:
 
    ```azurepowershell-interactive
    # Login first with Connect-AzAccount if not using Cloud Shell

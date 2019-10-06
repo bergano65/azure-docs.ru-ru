@@ -7,15 +7,17 @@ author: alinamstanciu
 manager: bertvanhoof
 ms.service: digital-twins
 ms.topic: include
-ms.date: 08/16/2019
+ms.date: 10/03/2019
 ms.custom: include file
-ms.openlocfilehash: 690ff402c632bfc28f1a9a218677e9772f5a3200
-ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
+ms.openlocfilehash: 7e0396c032a9f3dc26b82648604624446d6ad191
+ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71949947"
+ms.lasthandoff: 10/06/2019
+ms.locfileid: "71978640"
 ---
+## <a name="azure-active-directory-legacy-registration"></a>Регистрация устаревших Azure Active Directory
+
 1. На [портале Azure](https://portal.azure.com) выберите **Azure Active Directory** на панели слева, а затем откройте область **Свойства**. Скопируйте **идентификатор каталога** во временный файл. Это значение будет использоваться для настройки примера приложения в следующем разделе.
 
     [Идентификатор каталога ![Azure Active Directory](./media/digital-twins-permissions-legacy/aad-app-reg-tenant.png)](./media/digital-twins-permissions-legacy/aad-app-reg-tenant.png#lightbox)

@@ -6,13 +6,12 @@ ms.author: dacoulte
 ms.date: 04/22/2019
 ms.topic: conceptual
 ms.service: resource-graph
-manager: carmonm
-ms.openlocfilehash: c6e35d688581d0839e12806117e63c7d71fbc459
-ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
+ms.openlocfilehash: 54bb0b4f21752b91ceb9d4004c153ff4d95006aa
+ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70231514"
+ms.lasthandoff: 10/06/2019
+ms.locfileid: "71976761"
 ---
 # <a name="understanding-the-azure-resource-graph-query-language"></a>Общие сведения о языке запросов графика ресурсов Azure
 
@@ -56,7 +55,7 @@ ms.locfileid: "70231514"
 
 Некоторые имена свойств, например те, которые включают `.` или `$`, должны быть заключены в запрос или экранированы в запросе, либо имя свойства интерпретируется неправильно и не предоставляет ожидаемые результаты.
 
-- `.`— Заключите имя свойства в следующее:`['propertyname.withaperiod']`
+- `.` — заключите имя свойства в следующее: `['propertyname.withaperiod']`
   
   Пример запроса, который заключает в оболочку свойство _OData. Type_:
 
@@ -64,21 +63,21 @@ ms.locfileid: "70231514"
   where type=~'Microsoft.Insights/alertRules' | project name, properties.condition.['odata.type']
   ```
 
-- `$`— Escape-последовательность символа в имени свойства. Используемый escape-символ зависит от графа ресурсов оболочки, из которого выполняется.
+- `$` — escape-последовательность символа в имени свойства. Используемый escape-символ зависит от графа ресурсов оболочки, из которого выполняется.
 
-  - **Bug** - `\`
+  - **bash** -  @ no__t-2
 
-    Пример запроса, который экранирование  _\$типа_ свойства в Bash:
+    Пример запроса, который обходит свойство _\$type_ в Bash:
 
     ```kusto
     where type=~'Microsoft.Insights/alertRules' | project name, properties.condition.\$type
     ```
 
-  - **cmd** — не Escape `$` -символ.
+  - **cmd** — не экранирование символа `$`.
 
   - **PowerShell** - ``` ` ```
 
-    Пример запроса, который обходит  _\$тип_ свойства в PowerShell:
+    Пример запроса, управляющий свойством _\$type_ в PowerShell:
 
     ```kusto
     where type=~'Microsoft.Insights/alertRules' | project name, properties.condition.`$type

@@ -7,12 +7,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 02/17/2019
 ms.author: dacurwin
-ms.openlocfilehash: 6b79b34b1db6c201a8f132e4c608e251edb3666a
-ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
+ms.openlocfilehash: 9671ddcf98ae97c0a3df49cce008faf403f5dcd2
+ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68735425"
+ms.lasthandoff: 10/06/2019
+ms.locfileid: "71981095"
 ---
 # <a name="support-matrix-for-azure-backup"></a>Матрица поддержки для Azure Backup
 
@@ -59,7 +59,7 @@ Azure Backup использует хранилища служб восстано
 **Ограничение** | **Сведения**
 --- | ---
 **Диски данных виртуальной машины Azure** | Ограничение в 16
-**Размер диска данных виртуальной машины Azure** | Для отдельных дисков может быть до 4 095 ГБ
+**Размер диска данных виртуальной машины Azure** | Поддерживает резервное копирование виртуальных машин с каждым диском размером до 30 ТБ и не более 256 ТБ для всех дисков в виртуальной машине.
 
 ### <a name="azure-vm-backup-options"></a>Параметры резервной копии виртуальной машины Azure
 

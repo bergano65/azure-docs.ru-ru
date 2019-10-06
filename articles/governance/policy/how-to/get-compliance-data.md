@@ -6,13 +6,12 @@ ms.author: dacoulte
 ms.date: 02/01/2019
 ms.topic: conceptual
 ms.service: azure-policy
-manager: carmonm
-ms.openlocfilehash: d9aadc477c3f39cfbb108d2f3eece0c9e0b06264
-ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
+ms.openlocfilehash: ff50619d7b3d5bc803e8ee8d9e4cbf4389a4191f
+ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70239149"
+ms.lasthandoff: 10/06/2019
+ms.locfileid: "71978085"
 ---
 # <a name="get-compliance-data-of-azure-resources"></a>Получение данных о соответствии ресурсов Azure
 
@@ -91,9 +90,9 @@ https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.
 | Состояние ресурса | Эффект | Оценка политики | Состояние соответствия |
 | --- | --- | --- | --- |
 | Exists | Deny, Audit, Append\*, DeployIfNotExist\*, AuditIfNotExist\* | True | Не соответствует |
-| Exists | Deny, Audit, Append\*, DeployIfNotExist\*, AuditIfNotExist\* | False | соответствующие требованиям |
+| Exists | Deny, Audit, Append\*, DeployIfNotExist\*, AuditIfNotExist\* | Ложь | Соответствует |
 | Оператор new | Audit, AuditIfNotExist\* | True | Не соответствует |
-| Оператор new | Audit, AuditIfNotExist\* | False | соответствующие требованиям |
+| Оператор new | Audit, AuditIfNotExist\* | Ложь | Соответствует |
 
 \*Для эффектов Append, DeployIfNotExist и AuditIfNotExist требуется, чтобы оператор IF имел значение TRUE.
 Эффекты также требуют, чтобы условие существования FALSE было несоответствующим. Когда установлено значение TRUE, условие IF запускает оценку условия существования для связанных ресурсов.
@@ -413,7 +412,7 @@ Trent Baker
 
 ## <a name="azure-monitor-logs"></a>Журналы Azure Monitor
 
-При наличии [рабочей области log Analytics](../../../log-analytics/log-analytics-overview.md) с `AzureActivity` [решением аналитика журнала действий](../../../azure-monitor/platform/activity-log-collect.md) , привязанным к вашей подписке, можно также просматривать результаты несоответствия в цикле оценки `AzureActivity` с помощью простых запросов Kusto и Таблица. С учетом подробных сведений о несоответствии в журналах Azure Monitor вы также можете настроить оповещения для отслеживания несоответствия.
+Если у вас есть [Рабочая область log Analytics](../../../log-analytics/log-analytics-overview.md) с `AzureActivity` из [решения аналитика журнала действий](../../../azure-monitor/platform/activity-log-collect.md) , привязанного к вашей подписке, можно также просмотреть результаты несоответствия в цикле оценки с помощью простых запросов Kusto и таблицы `AzureActivity`. С учетом подробных сведений о несоответствии в журналах Azure Monitor вы также можете настроить оповещения для отслеживания несоответствия.
 
 
 ![Соответствие политики Azure с помощью журналов Azure Monitor](../media/getting-compliance-data/compliance-loganalytics.png)

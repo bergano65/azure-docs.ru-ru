@@ -6,13 +6,12 @@ ms.author: dacoulte
 ms.date: 07/30/2019
 ms.topic: conceptual
 ms.service: blueprints
-manager: carmonm
-ms.openlocfilehash: 6112f6f2834f02cec970af886360844c5314150d
-ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
+ms.openlocfilehash: 154e66366d4a687e60d7bddd28278414e3a4ccd7
+ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68678987"
+ms.lasthandoff: 10/06/2019
+ms.locfileid: "71981030"
 ---
 # <a name="understand-the-lifecycle-of-an-azure-blueprint"></a>Общие сведения о жизненном цикле схемы Azure Blueprints
 

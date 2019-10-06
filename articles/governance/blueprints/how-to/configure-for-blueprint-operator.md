@@ -6,13 +6,12 @@ ms.author: dacoulte
 ms.date: 08/26/2019
 ms.topic: conceptual
 ms.service: blueprints
-manager: carmonm
-ms.openlocfilehash: 27f7c747dfd39fed7a67924da71b9293979e0f94
-ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
+ms.openlocfilehash: 8c6d3a4d30d8b0b5ec361584846f31a7714b43ec
+ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70231893"
+ms.lasthandoff: 10/06/2019
+ms.locfileid: "71978468"
 ---
 # <a name="configure-your-environment-for-a-blueprint-operator"></a>Настройка среды для роли "Оператор схем"
 
@@ -34,7 +33,7 @@ ms.locfileid: "70231893"
 
 1. [Создание управляемого удостоверения, назначаемого пользователем](../../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md#create-a-user-assigned-managed-identity) для использования назначенным планом
 
-1. [Добавьте назначение роли](../../../role-based-access-control/role-assignments-portal.md#add-a-role-assignment) управляемого **оператора идентификации** в учетную запись или группу безопасности. Назначение роли новому назначенному пользователем управляемому удостоверению.
+1. [Добавьте назначение роли](../../../role-based-access-control/role-assignments-portal.md#add-a-role-assignment) **управляемого оператора идентификации** в учетную запись или группу безопасности. Назначение роли новому назначенному пользователем управляемому удостоверению.
 
 1. В качестве **оператора**схемы [назначьте](../create-blueprint-portal.md#assign-a-blueprint) схему, которая использует новое назначенное пользователем управляемое удостоверение.
 

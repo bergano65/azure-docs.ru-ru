@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 05/29/2019
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 6820daf34e63fd48e83c645e7509a3256bc8435b
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 0c8c270681794621b2a12671d4bcf350cd6cc4d8
+ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70066989"
+ms.lasthandoff: 10/06/2019
+ms.locfileid: "71981113"
 ---
 # <a name="use-an-ssl-certificate-in-your-application-code-in-azure-app-service"></a>Использование SSL-сертификата в коде приложения службы приложений Azure
 
@@ -44,7 +44,7 @@ az webapp config ssl upload --name <app-name> --resource-group <resource-group-n
 
 Общедоступные сертификаты поддерживаются в формате *CER* . Чтобы отправить открытый сертификат, <a href="https://portal.azure.com" target="_blank">портал Azure</a>и перейдите к своему приложению.
 
-Щелкните **Параметры** > SSL**открытые сертификаты (CER)**  > **отправить открытый сертификат** в левой области навигации приложения.
+Щелкните **Параметры SSL** > **открытые сертификаты (CER)**  > **отправить открытый сертификат** в левой области навигации приложения.
 
 В поле **имя**введите имя сертификата. В **файле сертификата CER**выберите файл CER.
 
@@ -62,16 +62,16 @@ az webapp config ssl upload --name <app-name> --resource-group <resource-group-n
 
 ## <a name="make-the-certificate-accessible"></a>Предоставление доступа к сертификату
 
-Чтобы использовать отправленный или импортированный сертификат в коде приложения, сделайте его отпечатком доступным с `WEBSITE_LOAD_CERTIFICATES` помощью параметра приложения, выполнив следующую команду в <a target="_blank" href="https://shell.azure.com" >Cloud Shell</a>:
+Чтобы использовать отправленный или импортированный сертификат в коде приложения, сделайте его отпечаток доступным с параметром приложения `WEBSITE_LOAD_CERTIFICATES`, выполнив следующую команду в <a target="_blank" href="https://shell.azure.com" >Cloud Shell</a>:
 
 ```azurecli-interactive
 az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings WEBSITE_LOAD_CERTIFICATES=<comma-separated-certificate-thumbprints>
 ```
 
-Чтобы сделать все сертификаты доступными, задайте значение `*`.
+Чтобы сделать все сертификаты доступными, установите значение `*`.
 
 > [!NOTE]
-> Этот параметр помещает указанные сертификаты в [Текущее хранилище усер\ми](/windows-hardware/drivers/install/local-machine-and-current-user-certificate-stores) для большинства ценовых категорий, но на изолированном уровне (т. е. приложение выполняется в [Среда службы приложений](environment/intro.md)) помещает сертификаты в [локальный мачине\ми](/windows-hardware/drivers/install/local-machine-and-current-user-certificate-stores) сообщений.
+> Этот параметр помещает указанные сертификаты в [Текущее хранилище усер\ми](/windows-hardware/drivers/install/local-machine-and-current-user-certificate-stores) для большинства ценовых категорий, но если приложение выполняется на **изолированном** уровне (т. е. приложение выполняется в [Среда службы приложений](environment/intro.md)), может потребоваться вернуть [локальный ](/windows-hardware/drivers/install/local-machine-and-current-user-certificate-stores)Вместо этого сохраните мачине\ми.
 >
 
 ![Настройка параметров приложения](./media/app-service-web-ssl-cert-load/configure-app-setting.png)
@@ -112,13 +112,13 @@ certStore.Close();
 
 Если необходимо загрузить файл сертификата из каталога приложения, лучше передать его с помощью [FTPS](deploy-ftp.md) , а не [Git](deploy-local-git.md), например. Конфиденциальные данные следует учитывать как закрытый сертификат из системы управления версиями.
 
-Несмотря на то, что файл загружается непосредственно в код .NET, Библиотека по-прежнему проверяет, загружен ли текущий профиль пользователя. Чтобы загрузить текущий профиль пользователя, задайте `WEBSITE_LOAD_USER_PROFILE` параметр приложения с помощью следующей команды в <a target="_blank" href="https://shell.azure.com" >Cloud Shell</a>.
+Несмотря на то, что файл загружается непосредственно в код .NET, Библиотека по-прежнему проверяет, загружен ли текущий профиль пользователя. Чтобы загрузить текущий профиль пользователя, установите параметр приложения `WEBSITE_LOAD_USER_PROFILE` с помощью следующей команды в <a target="_blank" href="https://shell.azure.com" >Cloud Shell</a>.
 
 ```azurecli-interactive
 az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings WEBSITE_LOAD_USER_PROFILE=1
 ```
 
-После установки этого параметра в следующем C# примере загружается сертификат, вызываемый `certs` `mycert.pfx` из каталога репозитория приложения.
+После установки этого параметра в следующем C# примере загружается сертификат с именем `mycert.pfx` из каталога `certs` репозитория приложения.
 
 ```csharp
 using System;

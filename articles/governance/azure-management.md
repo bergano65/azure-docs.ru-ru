@@ -2,17 +2,16 @@
 title: Общие сведения об управлении в Azure — Система управления Azure
 description: Общие сведения об областях управления для приложений и ресурсов Azure со ссылками на содержимое по средствам управления Azure.
 author: DCtheGeek
-manager: carmonm
 ms.service: governance
 ms.topic: article
 ms.date: 12/06/2018
 ms.author: dacoulte
-ms.openlocfilehash: 958f82ef94a08adaf2bbae1ef8ceefae5db289ea
-ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
+ms.openlocfilehash: 2535b64380f67da440698c7577840d5319e6ca4f
+ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68780796"
+ms.lasthandoff: 10/06/2019
+ms.locfileid: "71978550"
 ---
 # <a name="overview-of-management-services-in-azure"></a>Общие сведения о службах управления в Azure
 

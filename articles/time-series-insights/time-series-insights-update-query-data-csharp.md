@@ -12,12 +12,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: da4e9626b2bf5b180cddba012af81059dd8b67fe
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 6d2395dcfae5d512412048a683a7f1397967499e
+ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68883280"
+ms.lasthandoff: 10/06/2019
+ms.locfileid: "71978649"
 ---
 # <a name="query-data-from-the-azure-time-series-insights-preview-environment-using-c"></a>Запрос данных из среды предварительной версии службы "аналитика временных рядов Azure" с помощьюC#
 
@@ -42,6 +42,6 @@ ms.locfileid: "68883280"
 
 ## <a name="next-steps"></a>Следующие шаги
 
-- Дополнительные сведения о запросах см. в справочнике по [API запросов](https://docs.microsoft.com/rest/api/time-series-insights/preview-query).
+- Дополнительные сведения о запросах см. в [справочнике по API запросов](https://docs.microsoft.com/rest/api/time-series-insights/preview-query).
 
-- Узнайте, как [подключить одностраничное приложение JavaScript к службе](tutorial-create-tsi-sample-spa.md) "аналитика временных рядов".
+- Узнайте, как [подключить приложение JavaScript с помощью клиентского пакета SDK к службе](https://github.com/microsoft/tsiclient) "аналитика временных рядов".
