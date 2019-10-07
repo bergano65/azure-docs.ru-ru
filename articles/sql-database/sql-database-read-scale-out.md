@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: anosov1960
 ms.author: sashan
 ms.reviewer: sstein, carlrab
-manager: craigg
 ms.date: 06/03/2019
-ms.openlocfilehash: 3d9da312f86128dc738b367371016d03da2c1629
-ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
-ms.translationtype: MT
+ms.openlocfilehash: aefd3da1908b2be879b5ba500746fab48e43d5bd
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68228234"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68566963"
 ---
 # <a name="use-read-only-replicas-to-load-balance-read-only-query-workloads"></a>Использование реплик только для чтения для балансировки нагрузки рабочих нагрузок запросов только для чтения
 
@@ -89,7 +88,7 @@ SELECT DATABASEPROPERTYEX(DB_NAME(), 'Updateability')
 > [!NOTE]
 > Возможность отключения горизонтального масштабирования для чтения предоставляется для обеспечения обратной совместимости.
 
-### <a name="azure-portal"></a>Портал Azure
+### <a name="azure-portal"></a>портала Azure
 
 Вы можете управлять параметром масштабирования чтения в колонке **Настройка** базы данных. 
 

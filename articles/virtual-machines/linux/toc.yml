@@ -143,6 +143,10 @@
       items:
         - name: Безопасность и политика
           href: security-policy.md
+        - name: Шифрование дисков Azure
+          href: disk-encryption-overview.md
+        - name: Встроенные средства управления безопасностью
+          href: virtual-machines-linux-security-controls.md
     - name: Состояния и жизненный цикл
       href: states-lifecycle.md
     - name: Мониторинг
@@ -151,8 +155,6 @@
       href: backup-recovery.md
     - name: Рекомендации по инфраструктуре
       href: infrastructure-example.md
-    - name: Встроенные средства управления безопасностью
-      href: virtual-machines-linux-security-controls.md
 - name: Руководства
   items:
     - name: Создание виртуальных машин
@@ -179,7 +181,29 @@
         - name: JIT-доступ
           href: ../../security-center/security-center-just-in-time.md
         - name: Шифрование
-          href: encrypt-disks.md
+          items:
+            - name: Сценарии шифрования дисков для Linux
+              href: disk-encryption-linux.md
+            - name: Шифрование виртуальных машин с помощью Azure CLI
+              href: disk-encryption-cli-quickstart.md
+            - name: Шифрование виртуальных машин с помощью Azure PowerShell
+              href: disk-encryption-powershell-quickstart.md
+            - name: Хранилище ключей для шифрования дисков Azure
+              href: disk-encryption-key-vault.md
+            - name: Примеры скриптов шифрования дисков
+              href: disk-encryption-sample-scripts.md
+            - name: Устранение неполадок с шифрованием дисков
+              href: disk-encryption-troubleshooting.md
+            - name: Часто задаваемые вопросы о шифровании дисков
+              href: disk-encryption-faq.md
+            - name: "Шифрование диска\_— предыдущая версия (AAD)"
+              items:
+                - name: Обзор
+                  href: disk-encryption-overview-aad.md
+                - name: Хранилище ключей для шифрования дисков Azure
+                  href: disk-encryption-key-vault-aad.md
+                - name: Сценарии шифрования дисков для Linux
+                  href: disk-encryption-linux-aad.md
         - name: Использование элементов управления доступом
           href: ../../role-based-access-control/overview.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json
         - name: Использование политик

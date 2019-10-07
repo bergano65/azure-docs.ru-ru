@@ -13,12 +13,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 9/11/2018
 ms.author: dekapur
-ms.openlocfilehash: e5fa46930a3be3c85cd76e655fac3164cc45d957
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
-ms.translationtype: MT
+ms.openlocfilehash: 78db25fed7c284b31491bdc9e5498493da4c7479
+ms.sourcegitcommit: 08d3a5827065d04a2dc62371e605d4d89cf6564f
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60544744"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68618846"
 ---
 # <a name="plan-and-prepare-your-service-fabric-standalone-cluster-deployment"></a>Планирование и подготовка развертывания изолированного кластера Service Fabric
 
@@ -65,7 +65,7 @@ ms.locfileid: "60544744"
 * Наличие не менее 40 ГБ свободного дискового пространства.
 * Центральный процессор с 4 ядрами или больше.
 * Подключение к защищенной сети или сетям для всех компьютеров.
-* Установленная ОС Windows Server (допустимые версии: 2012 R2, 2016, 1709 или 1803).
+* Установленная ОС Windows Server (допустимые версии: 2012 R2, 2016, 1709, 1803 или 2019)
 * Полностью установленная платформа [.NET Framework 4.5.1 или более поздней версии](https://www.microsoft.com/download/details.aspx?id=40773).
 * [Windows PowerShell 3.0](https://msdn.microsoft.com/powershell/scripting/setup/installing-windows-powershell).
 * На всех компьютерах должна быть запущена [служба RemoteRegistry](https://technet.microsoft.com/library/cc754820).
@@ -166,5 +166,5 @@ Passed                     : True
 > 
 > 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Создание изолированного кластера под управлением Windows Server](service-fabric-cluster-creation-for-windows-server.md)

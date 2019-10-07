@@ -191,6 +191,8 @@
       items:
         - name: Создание субъекта-службы
           href: kubernetes-service-principal.md
+        - name: Использование управляемых удостоверений (предварительная версия)
+          href: use-managed-identity.md
         - name: Ограничение доступа к файлу конфигурации кластера
           href: control-kubeconfig-access.md
         - name: Защита трафика для групп pod с помощью политик сети

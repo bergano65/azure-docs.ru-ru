@@ -85,7 +85,7 @@
           href: join-rhel-linux-vm.md
         - name: Сервер Ubuntu
           href: join-ubuntu-linux-vm.md
-    - name: "Развертывание приложений в Azure AD\_DS"
+    - name: Развертывание приложений
       items:
         - name: Развертывание Azure AD Application Proxy
           href: deploy-azure-app-proxy.md
@@ -95,11 +95,17 @@
       items:
         - name: Распространенные ошибки
           href: troubleshoot.md
-        - name: Ошибки несоответствия клиента
+        - name: Проблемы с присоединением к домену
+          href: troubleshoot-domain-join.md
+        - name: Блокировки учетной записи
+          href: troubleshoot-account-lockout.md
+        - name: Проблемы при входе пользователей
+          href: troubleshoot-sign-in.md
+        - name: Устранение ошибок несоответствия клиента
           href: mismatched-tenant-error.md
         - name: Приостановленные домены
           href: suspension.md
-        - name: Защищенный протокол LDAP
+        - name: Проблемы с защищенным протоколом LDAP
           href: tshoot-ldaps.md
         - name: Известные проблемы
           items:

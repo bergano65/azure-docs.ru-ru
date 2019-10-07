@@ -77,19 +77,21 @@
     - name: Создание оценки
       href: how-to-create-assessment.md
     - name: Оценка базы данных SQL Server
-      href: 'https://docs.microsoft.com/sql/dma/dma-assess-sql-data-estate-to-sqldb?toc=/azure/migrate/toc.json&bc=/azure/migrate/breadcrumb/toc.json&view=sql-server-2017'
+      href: 'https://docs.microsoft.com/sql/dma/dma-assess-sql-data-estate-to-sqldb'
     - name: Настройка оценки
       href: how-to-modify-assessment.md
     - name: Добавление средств миграции
       href: how-to-migrate.md
-    - name: Масштабирование оценки и миграции
-      items:
-        - name: Оценка большого количества виртуальных машин VMware
-          href: scale-vmware-assessment.md
-        - name: Оценка большого количества виртуальных машин Hyper-V
-          href: scale-hyper-v-assessment.md
-        - name: Автоматизация переноса большого количества виртуальных машин
-          href: how-to-migrate-at-scale.md
+    - name: Подготовка компьютеров к миграции
+      href: prepare-for-migration.md
+- name: Масштабирование оценки и миграции
+  items:
+    - name: Оценка большого количества виртуальных машин VMware
+      href: scale-vmware-assessment.md
+    - name: Оценка большого количества виртуальных машин Hyper-V
+      href: scale-hyper-v-assessment.md
+    - name: Автоматизация переноса большого количества виртуальных машин
+      href: how-to-migrate-at-scale.md
     - name: Ряд примеров по миграции Contoso
       href: contoso-migration-overview.md
 - name: Устранение неполадок
