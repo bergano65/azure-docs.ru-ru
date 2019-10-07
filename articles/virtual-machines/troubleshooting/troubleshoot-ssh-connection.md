@@ -5,7 +5,7 @@ keywords: отклонение SSH-подключения, ошибка SSH, Azu
 services: virtual-machines-linux
 documentationcenter: ''
 author: genlin
-manager: gwallace
+manager: dcscontentpm
 editor: ''
 tags: top-support-issue,azure-service-management,azure-resource-manager
 ms.assetid: dcb82e19-29b2-47bb-99f2-900d4cfb5bbb
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: troubleshooting
 ms.date: 05/30/2017
 ms.author: genli
-ms.openlocfilehash: fd3c40d56e0ba9cdb50847832051606f81d0e952
-ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
-ms.translationtype: HT
+ms.openlocfilehash: 006dbbe1b7472982a894691d019eb88ef2041dac
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68677673"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71088266"
 ---
 # <a name="troubleshoot-ssh-connections-to-an-azure-linux-vm-that-fails-errors-out-or-is-refused"></a>Устранение неполадок с SSH-подключением к виртуальной машине Azure Linux: сбой, ошибка или отклонение
 В этой статье вы узнаете, как найти и исправить проблемы, возникающие из-за ошибок Secure Shell (SSH), сбоев SSH-соединения или отказа SSH при попытке подключения к виртуальной машине Linux. Для устранения неполадок и решения проблем с подключением можно воспользоваться порталом Azure, Azure CLI или расширением для доступа к виртуальной машине для Linux.
@@ -49,7 +49,7 @@ ms.locfileid: "68677673"
 Вы можете сбросить учетные данные или конфигурацию SSH одним из следующих методов:
 
 * [Портал Azure](#use-the-azure-portal) отлично подходит, когда нужно быстро сбросить конфигурацию или ключ SSH, а у вас не установлены инструменты Azure.
-* [Последовательная консоль виртуальной машины Azure](https://aka.ms/serialconsolelinux) . последовательная консоль виртуальной машины будет работать независимо от конфигурации SSH и предоставит вам интерактивную консоль для виртуальной машины. На самом деле, «не может SSH» — именно то, что последовательное консоль разрабатывалась для решения этой проблемы. Дополнительные сведения см. ниже.
+* [Последовательная консоль виртуальной машины Azure](https://aka.ms/serialconsolelinux) . последовательная консоль виртуальной машины будет работать независимо от конфигурации SSH и предоставит вам интерактивную консоль для виртуальной машины. На самом деле, «не может SSH» — именно то, что последовательное консоль разрабатывалась для решения этой проблемы. Дополнительные сведения приведены ниже.
 * [Azure CLI](#use-the-azure-cli). Если вы уже открыли командную строку, быстро сбросьте конфигурацию SSH или учетные данные. Если вы работаете на классической виртуальной машине, можно использовать [классический интерфейс командной строки Azure](#use-the-azure-classic-cli).
 * [Расширение Azure VMAccessForLinux.](#use-the-vmaccess-extension) Создайте и повторно используйте файлы определения JSON для сброса учетных данных пользователя или конфигурации SSH.
 
@@ -211,7 +211,7 @@ azure vm reset-access --resource-group myResourceGroup --name myVM \
 
 ![Перезапуск виртуальной машины на портале Azure](./media/troubleshoot-ssh-connection/restart-vm-using-portal.png)
 
-### <a name="azure-cli"></a>Azure CLI
+### <a name="azure-cli"></a>Инфраструктура CLI Azure
 В следующем примере используется команда [az vm restart](/cli/azure/vm), чтобы перезапустить виртуальную машину `myVM` в группе ресурсов `myResourceGroup`. Используйте свои значения следующим образом:
 
 ```azurecli
@@ -238,7 +238,7 @@ azure vm restart --resource-group myResourceGroup --name myVM
 
 ![Повторное развертывание виртуальной машины на портале Azure](./media/troubleshoot-ssh-connection/redeploy-vm-using-portal.png)
 
-### <a name="azure-cli"></a>Azure CLI
+### <a name="azure-cli"></a>Инфраструктура CLI Azure
 В следующем примере используется команда [az vm restart](/cli/azure/vm), чтобы повторно развернуть виртуальную машину `myVM` в группе ресурсов `myResourceGroup`. Используйте свои значения следующим образом:
 
 ```azurecli

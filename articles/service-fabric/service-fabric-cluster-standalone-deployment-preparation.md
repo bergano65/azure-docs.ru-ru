@@ -13,12 +13,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 9/11/2018
 ms.author: dekapur
-ms.openlocfilehash: 78db25fed7c284b31491bdc9e5498493da4c7479
-ms.sourcegitcommit: 08d3a5827065d04a2dc62371e605d4d89cf6564f
-ms.translationtype: HT
+ms.openlocfilehash: dad37af030c456f9ba2cd814fa92a7811dce6aa1
+ms.sourcegitcommit: 2ed6e731ffc614f1691f1578ed26a67de46ed9c2
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68618846"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71130330"
 ---
 # <a name="plan-and-prepare-your-service-fabric-standalone-cluster-deployment"></a>Планирование и подготовка развертывания изолированного кластера Service Fabric
 
@@ -65,10 +65,11 @@ ms.locfileid: "68618846"
 * Наличие не менее 40 ГБ свободного дискового пространства.
 * Центральный процессор с 4 ядрами или больше.
 * Подключение к защищенной сети или сетям для всех компьютеров.
-* Установленная ОС Windows Server (допустимые версии: 2012 R2, 2016, 1709, 1803 или 2019)
+* Установленная ОС Windows Server (допустимые версии: 2012 R2, 2016, 1709 или 1803). Service Fabric версии 6.4.654.9590 и более поздних версий также поддерживает сервер 2019 и 1809.
 * Полностью установленная платформа [.NET Framework 4.5.1 или более поздней версии](https://www.microsoft.com/download/details.aspx?id=40773).
 * [Windows PowerShell 3.0](https://msdn.microsoft.com/powershell/scripting/setup/installing-windows-powershell).
 * На всех компьютерах должна быть запущена [служба RemoteRegistry](https://technet.microsoft.com/library/cc754820).
+* Диск установки Service Fabric должен быть файловой системой NTFS
 
 У администратора кластера, который развертывает и настраивает кластер, должны быть [привилегии администратора](https://social.technet.microsoft.com/wiki/contents/articles/13436.windows-server-2012-how-to-add-an-account-to-a-local-administrator-group.aspx) на всех компьютерах. Пакет Service Fabric нельзя установить на контроллере домена.
 
