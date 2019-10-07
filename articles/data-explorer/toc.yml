@@ -114,22 +114,34 @@
           href: sisense.md
     - name: Управление
       items:
-        - name: Проверка работоспособности кластера
-          href: check-cluster-health.md
-        - name: Выбор номера SKU виртуальной машины кластера
-          href: manage-cluster-choose-sku.md
-        - name: Управление горизонтальным масштабированием кластера
-          href: manage-cluster-horizontal-scaling.md
-        - name: Управление вертикальным масштабированием кластера
-          href: manage-cluster-vertical-scaling.md
-        - name: Управление безопасностью кластера
-          href: manage-cluster-security.md
-        - name: Управление разрешениями базы данных
-          href: manage-database-permissions.md
-        - name: Удаление данных
-          href: delete-data.md
-        - name: Обработка дублированных данных
-          href: dealing-with-duplicates.md
+        - name: HDInsight
+          items:
+            - name: Выбор номера SKU виртуальной машины кластера
+              href: manage-cluster-choose-sku.md
+            - name: Управление горизонтальным масштабированием кластера
+              href: manage-cluster-horizontal-scaling.md
+            - name: Управление вертикальным масштабированием кластера
+              href: manage-cluster-vertical-scaling.md
+            - name: Управление безопасностью кластера
+              href: manage-cluster-security.md
+            - name: Проверка работоспособности кластера
+              href: check-cluster-health.md
+        - name: База данных
+          items:
+            - name: Управление разрешениями базы данных
+              href: manage-database-permissions.md
+            - name: Политики
+              items:
+                - name: 'C#'
+                  href: database-table-policies-csharp.md
+                - name: Python
+                  href: database-table-policies-python.md
+        - name: Данные
+          items:
+            - name: Удаление данных
+              href: delete-data.md
+            - name: Обработка дублированных данных
+              href: dealing-with-duplicates.md
     - name: Мониторинг
       items:
         - name: Использование журналов диагностики для мониторинга приема

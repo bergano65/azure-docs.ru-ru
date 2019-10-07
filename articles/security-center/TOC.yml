@@ -147,6 +147,8 @@
   items:
     - name: Интерфейсы REST API
       href: 'https://docs.microsoft.com/rest/api/securitycenter/'
+    - name: Заметки о выпуске
+      href: 'https://azure.microsoft.com/updates/?product=security-center'
     - name: "Прекращение поддержки компонентов и API (июль 2019\_г.)"
       href: security-center-features-retirement-july2019.md
     - name: Оценка защиты конечной точки и рекомендации

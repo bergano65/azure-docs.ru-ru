@@ -84,7 +84,7 @@
     - name: Шаблоны Resource Manager
       href: template-samples.md
     - name: Примеры кода
-      href: 'https://azure.microsoft.com/resources/samples/?sort=0&service=event-grid'
+      href: 'https://docs.microsoft.com/samples/browse/?term=Event%20Grid'
 - name: Основные понятия
   items:
     - name: Основные понятия службы "Сетка событий"
