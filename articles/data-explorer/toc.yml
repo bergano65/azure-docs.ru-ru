@@ -43,11 +43,29 @@
     - name: Прием данных
       items:
         - name: Концентратор событий
-          href: ingest-data-event-hub.md
+          items:
+            - name: Портал Azure
+              href: ingest-data-event-hub.md
+            - name: python
+              href: data-connection-event-hub-python.md
+            - name: 'C#'
+              href: data-connection-event-hub-csharp.md
         - name: Сетка событий Azure
-          href: ingest-data-event-grid.md
+          items:
+            - name: Портал Azure
+              href: ingest-data-event-grid.md
+            - name: python
+              href: data-connection-event-grid-python.md
+            - name: 'C#'
+              href: data-connection-event-grid-csharp.md
         - name: Центр Интернета вещей
-          href: ingest-data-iot-hub.md
+          items:
+            - name: Портал Azure
+              href: ingest-data-iot-hub.md
+            - name: python
+              href: data-connection-iot-hub-python.md
+            - name: 'C#'
+              href: data-connection-iot-hub-csharp.md
         - name: Прием данных одним щелчком
           href: ingest-data-one-click.md
         - name: Прием потоковой передачи

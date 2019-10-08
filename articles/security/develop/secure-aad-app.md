@@ -443,7 +443,7 @@ $appgw = New-AzApplicationGateway -Name appgateway -SSLCertificates $cert -Resou
 1.  Вернитесь к портал Azure. В области навигации слева выберите Azure Active Directory служба, а затем выберите Регистрация приложений.
 2.  В окне результатов выберите приложение WebApp-OpenIDConnect-DotNet-Code-v2.
 3.  На вкладке Проверка подлинности o в разделе URI перенаправления выберите веб в поле со списком и добавьте следующие URI перенаправления.
-    https://WebApp-OpenIDConnect-DotNet-code-v2-contoso.azurewebsites.net https://WebApp-OpenIDConnect-DotNet-code-v2-contoso.azurewebsites.net/signin-oidc o в разделе Дополнительные параметры задайте для параметра URL-адрес выхода значение https://WebApp-OpenIDConnect-DotNet-code-v2-contoso.azurewebsites.net/signout-oidc
+    [https://WebApp-OpenIDConnect-DotNet-code-v2-contoso.azurewebsites.net](https://WebApp-OpenIDConnect-DotNet-code-v2-contoso.azurewebsites.net ) https://WebApp-OpenIDConnect-DotNet-code-v2-contoso.azurewebsites.net/signin-oidc o в разделе Дополнительные параметры задайте для параметра URL-адрес выхода значение https://WebApp-OpenIDConnect-DotNet-code-v2-contoso.azurewebsites.net/signout-oidc
 4.  На вкладке фирменная символика измените URL-адрес домашней страницы на адрес службы приложений, https://WebApp-OpenIDConnect-DotNet-code-v2-contoso.azurewebsites.net например.
         o сохраните конфигурацию.
 5.  Если приложение вызывает веб-API, обязательно примените необходимые изменения к проекту appSettings. JSON, чтобы он вызывал URL-адрес опубликованного API, а не localhost.
