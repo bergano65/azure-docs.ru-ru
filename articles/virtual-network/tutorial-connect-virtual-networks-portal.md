@@ -17,12 +17,12 @@ ms.workload: infrastructure
 ms.date: 08/16/2018
 ms.author: kumud
 ms.custom: ''
-ms.openlocfilehash: 943cad871330e2f3b6e13b33dca582ab545fe4be
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: a83980c3d4d03f53a19918ed213c965e50baa406
+ms.sourcegitcommit: a19f4b35a0123256e76f2789cd5083921ac73daf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64726566"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71720057"
 ---
 # <a name="tutorial-connect-virtual-networks-with-virtual-network-peering-using-the-azure-portal"></a>Руководство по Подключение виртуальных сетей с помощью пиринговой связи на портале Azure
 
@@ -52,13 +52,13 @@ ms.locfileid: "64726566"
     |---|---|
     |ИМЯ|myVirtualNetwork1|
     |Пространство адресов|10.0.0.0/16|
-    |Подписка| Выберите свою подписку.|
-    |Группа ресурсов| Выберите **Создать новую**, а затем введите *myResourceGroup*.|
-    |Расположение| Выберите **Восточная часть США**.|
+    |Subscription| Выберите свою подписку.|
+    |группа ресурсов.| Выберите **Создать новую**, а затем введите *myResourceGroup*.|
+    |Location| Выберите **Восточная часть США**.|
     |Имя подсети|Подсеть 1|
     |Диапазон адресов подсети|10.0.0.0/24|
 
-      ![Создать виртуальную сеть](./media/tutorial-connect-virtual-networks-portal/create-virtual-network.png)
+      ![Создание виртуальной сети](./media/tutorial-connect-virtual-networks-portal/create-virtual-network.png)
 
 4. Выполните шаги 1–3 повторно со следующими изменениями.
 
@@ -66,7 +66,7 @@ ms.locfileid: "64726566"
     |---|---|
     |ИМЯ|myVirtualNetwork2|
     |Пространство адресов|10.1.0.0/16|
-    |Группа ресурсов| Щелкните **Use existing** (Использовать существующую), а затем выберите **myResourceGroup**.|
+    |группа ресурсов.| Щелкните **Use existing** (Использовать существующую), а затем выберите **myResourceGroup**.|
     |Диапазон адресов подсети|10.1.0.0/24|
 
 ## <a name="peer-virtual-networks"></a>Установка пиринговой связи между виртуальными сетями
@@ -80,27 +80,18 @@ ms.locfileid: "64726566"
 
     |Параметр|Значение|
     |---|---|
-    |ИМЯ|myVirtualNetwork1-myVirtualNetwork2|
-    |Подписка| Выберите свою подписку.|
-    |Виртуальная сеть|myVirtualNetwork2. Чтобы выбрать виртуальную сеть *myVirtualNetwork2*, щелкните **Виртуальная сеть**, а затем — **myVirtualNetwork2**. Вы можете выбрать виртуальную сеть в том же или другом регионе.|
+    |Имя пиринга между myVirtualNetwork1 и удаленной виртуальной сетью|myVirtualNetwork1-myVirtualNetwork2. При первой загрузке страницы вы увидите фразу "Удаленная виртуальная сеть". После выбора удаленной виртуальной сети фраза "Удаленная виртуальная сеть" будет заменена именем этой сети.|
+    |Subscription| Выберите свою подписку.|
+    |Виртуальная сеть|myVirtualNetwork2. Чтобы выбрать виртуальную сеть *myVirtualNetwork2*, щелкните **Виртуальная сеть**, а затем — **myVirtualNetwork2 (myResourceGroup)** . Вы можете выбрать виртуальную сеть в том же или другом регионе.|
+    |Имя пиринга между myVirtualNetwork2 и myVirtualNetwork1|myVirtualNetwork2-myVirtualNetwork1|
 
-    ![Параметры пиринга](./media/tutorial-connect-virtual-networks-portal/peering-settings.png)
+    ![Параметры пиринга](./media/tutorial-connect-virtual-networks-portal/peering-settings-bidirectional.png)
 
-    Параметр **Состояние пиринга** имеет значение *Инициировано*, как показано на следующем рисунке:
+    Параметр **Состояние пиринга** имеет значение *Подключено*, как показано на следующем рисунке:
 
-    ![Состояние пиринга](./media/tutorial-connect-virtual-networks-portal/peering-status.png)
+    ![Состояние пиринга](./media/tutorial-connect-virtual-networks-portal/peering-status-connected.png)
 
     Если состояние не отображается, обновите страницу в браузере.
-
-4. В поле **Поиск** в верхней части портала Azure начните вводить *MyVirtualNetwork2*. Когда в результатах поиска появится пункт **myVirtualNetwork2**, выберите его.
-5. Выполните шаги 2–3 еще раз со следующими изменениями, а затем нажмите кнопку **ОК**.
-
-    |Параметр|Значение|
-    |---|---|
-    |ИМЯ|myVirtualNetwork2-myVirtualNetwork1|
-    |Виртуальная сеть|myVirtualNetwork1|
-
-    Параметр **Состояние пиринга** имеет значение *Подключено*. Azure также изменяет состояние пиринга *myVirtualNetwork2-myVirtualNetwork1* с *Инициировано* на *Подключено*. Пиринг виртуальных сетей не будет установлен полностью до тех пор, пока его состояние для обеих виртуальных сетей не будет иметь значение *Подключено*. 
 
 ## <a name="create-virtual-machines"></a>Создание виртуальных машин
 
@@ -117,8 +108,8 @@ ms.locfileid: "64726566"
     |ИМЯ|myVm1|
     |Имя пользователя| Введите выбранное имя пользователя.|
     |Пароль| Введите выбранный пароль. Пароль должен включать минимум 12 символов и соответствовать [определенным требованиям к сложности](../virtual-machines/windows/faq.md?toc=%2fazure%2fvirtual-network%2ftoc.json#what-are-the-password-requirements-when-creating-a-vm).|
-    |Группа ресурсов| Щелкните **Use existing** (Использовать существующую), а затем выберите **myResourceGroup**.|
-    |Расположение| Выберите **Восточная часть США**.|
+    |группа ресурсов.| Щелкните **Use existing** (Использовать существующую), а затем выберите **myResourceGroup**.|
+    |Location| Выберите **Восточная часть США**.|
 4. Выберите размер виртуальной машины в области **Выбор размера**.
 5. В разделе **Параметры** выберите следующие значения и нажмите кнопку **ОК**.
 

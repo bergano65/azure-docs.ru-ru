@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 01/29/2019
 ms.author: suhuruli
 ms.custom: mvc, devcenter, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: 2aa5879ee3960bd5d26855ac7e7c3e12994ee54e
-ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
+ms.openlocfilehash: 4ec6addb348b8c13f124ec225e056d2003a93c38
+ms.sourcegitcommit: 6fe40d080bd1561286093b488609590ba355c261
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70861346"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71703521"
 ---
 # <a name="quickstart-deploy-a-java-spring-boot-app-on-azure-service-fabric"></a>Краткое руководство. Развертывание приложения Java Spring Boot в Azure Service Fabric
 
@@ -28,7 +28,7 @@ ms.locfileid: "70861346"
 
 Это краткое руководство использует пример [Начало работы](https://spring.io/guides/gs/spring-boot/) с веб-сайта Spring Boot. В этом кратком руководстве приведены пошаговые инструкции по развертыванию Spring Boot в виде приложения Service Fabric с использованием знакомых средств командной строки. Когда вы завершите работу с руководством, у вас будет пример Spring Boot, работающий на Service Fabric.
 
-![Снимок экрана приложения](./media/service-fabric-quickstart-java-spring-boot/springbootsflocalhost.png)
+![Пример Spring Boot Service Fabric](./media/service-fabric-quickstart-java-spring-boot/spring-boot-service-fabric-sample.png)
 
 Из этого краткого руководства вы узнаете, как выполнять следующие задачи:
 
@@ -79,7 +79,7 @@ git clone https://github.com/spring-guides/gs-spring-boot.git
 
 1. Введите следующие сведения для каждого запроса.
 
-    ![Записи Yeoman](./media/service-fabric-quickstart-java-spring-boot/yeomanspringboot.png)
+    ![Записи Spring Boot Yeoman](./media/service-fabric-quickstart-java-spring-boot/yeoman-entries-spring-boot.png)
 
 1. В папке `SpringServiceFabric/SpringServiceFabric/SpringGettingStartedPkg/code` создайте файл с именем `entryPoint.sh`. Добавьте в файл `entryPoint.sh` следующий код. 
 
@@ -147,7 +147,7 @@ git clone https://github.com/spring-guides/gs-spring-boot.git
 
     Запуск локального кластера занимает некоторое время. Чтобы убедиться, что кластер является рабочим, откройте Service Fabric Explorer по адресу **http://localhost:19080** . Наличие пяти работоспособных узлов означает, что локальный кластер запущен и работает. 
     
-    ![Работоспособное состояние локального кластера](./media/service-fabric-quickstart-java-spring-boot/sfxlocalhost.png)
+    ![В Service Fabric Explorer отображаются работоспособные узлы](./media/service-fabric-quickstart-java-spring-boot/service-fabric-explorer-healthy-nodes.png)
 
 1. Откройте папку `gs-spring-boot/SpringServiceFabric`.
 1. Выполните следующую команду, чтобы подключиться к локальному кластеру.
@@ -163,7 +163,7 @@ git clone https://github.com/spring-guides/gs-spring-boot.git
 
 1. Откройте любой веб-браузер и перейдите к приложению по адресу `http://localhost:8080`.
 
-    ![Локальная клиентская часть приложения](./media/service-fabric-quickstart-java-spring-boot/springbootsflocalhost.png)
+    ![Пример Spring Boot Service Fabric](./media/service-fabric-quickstart-java-spring-boot/spring-boot-service-fabric-sample.png)
 
 Теперь вы можете получить доступ к приложению Spring Boot, которое развернуто в кластере Service Fabric.
 
@@ -178,7 +178,7 @@ git clone https://github.com/spring-guides/gs-spring-boot.git
 1. Откройте Service Fabric Explorer в своем кластере (например, по ссылке `http://localhost:19080`).
 1. Щелкните многоточие ( **...** ) рядом с узлом **fabric:/SpringServiceFabric/SpringGettingStarted** в представлении в виде дерева и выберите **Масштабировать службу**.
 
-    ![Масштабирование службы в Service Fabric Explorer](./media/service-fabric-quickstart-java-spring-boot/sfxscaleservicehowto.png)
+    ![Пример масштабирования службы Service Fabric Explorer](./media/service-fabric-quickstart-java-spring-boot/service-fabric-explorer-scale-sample.png)
 
     Теперь вы можете выбрать нужное количество экземпляров службы.
 
@@ -196,7 +196,7 @@ git clone https://github.com/spring-guides/gs-spring-boot.git
 
 1. Выберите узел **fabric:/SpringServiceFabric/SpringGettingStarted** в представлении в виде дерева и разверните узел раздела (здесь отображается его идентификатор GUID).
 
-    ![Масштабирование службы в Service Fabric Explorer завершено](./media/service-fabric-quickstart-java-spring-boot/sfxscaledservice.png)
+    ![Масштабирование службы в Service Fabric Explorer завершено](./media/service-fabric-quickstart-java-spring-boot/service-fabric-explorer-partition-node.png)
 
     У службы есть три экземпляра. Представление в виде дерева демонстрирует, на каких узлах они запущены.
 
@@ -209,10 +209,10 @@ git clone https://github.com/spring-guides/gs-spring-boot.git
 1. Откройте Service Fabric Explorer в своем кластере (например, по ссылке `http://localhost:19080`).
 1. Щелкните многоточие ( **...** ) рядом с узлом, на котором запущен экземпляр этой службы, и перезапустите узел.
 
-    ![Service Fabric Explorer с командой перезапуска узла](./media/service-fabric-quickstart-java-spring-boot/sfxhowtofailover.png)
+    ![Service Fabric Explorer с командой перезапуска узла](./media/service-fabric-quickstart-java-spring-boot/service=fabric-explorer-restart=node.png)
 1. Этот экземпляр службы перемещается в другой узел без простоев в работе приложения.
 
-    ![Service Fabric Explorer после успешного перезапуска узла](./media/service-fabric-quickstart-java-spring-boot/sfxfailedover.png)
+    ![Service Fabric Explorer после успешного перезапуска узла](./media/service-fabric-quickstart-java-spring-boot/service-fabric-explorer-service-moved.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
 

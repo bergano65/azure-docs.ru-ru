@@ -6,14 +6,14 @@ author: yashesvi
 manager: yashar
 ms.service: billing
 ms.topic: conceptual
-ms.date: 07/10/2019
+ms.date: 10/01/2019
 ms.author: banders
-ms.openlocfilehash: 7c1855b587ab1d603e9c6ac24a67b0f50065361f
-ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.openlocfilehash: 9651a61cb7b5c995a46571b7628d5416c08f4161
+ms.sourcegitcommit: a19f4b35a0123256e76f2789cd5083921ac73daf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "67827639"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71719663"
 ---
 # <a name="how-azure-databricks-pre-purchase-discount-is-applied"></a>Как применяется скидка на предварительную покупку Azure Databricks
 
@@ -37,11 +37,11 @@ ms.locfileid: "67827639"
 
 ## <a name="determine-plan-use"></a>Определение использования плана
 
-Чтобы определить использование плана DBCU, перейдите на портал Azure > **Резервирования** и щелкните план приобретенного Databricks. Текущая степень использования отображается с любыми оставшимися единицами. Дополнительные сведения об определении использования резервирования см. в статье <bpt id="p1">[</bpt>Использование резервирования<ept id="p1">](billing-reservation-apis.md#see-reservation-usage)</ept>.
+Чтобы определить использование плана DBCU, перейдите на портал Azure > **Резервирования** и щелкните план приобретенного Databricks. Текущая степень использования отображается с любыми оставшимися единицами. Дополнительные сведения об определении использования резервирования см. в [этом разделе](billing-reservation-apis.md#see-reservation-usage).
 
 ## <a name="how-discount-application-shows-in-usage-data"></a>Отображение приложения для скидок в данных об использовании
 
-Если скидка на предварительную покупку распространяется на использование Databricks, то в данных об использовании по требованию она равна нулю. Дополнительную информацию о стоимости резервирования и использовании см. в разделе <bpt id="p1">[</bpt>Получение сведений о затратах на резервирование и использовании для Соглашения Enterprise<ept id="p1">](billing-understand-reserved-instance-usage-ea.md)</ept>.
+Если скидка на предварительную покупку распространяется на использование Databricks, то в данных об использовании по требованию она равна нулю. Дополнительные сведения о данных о стоимости резервирования и использовании см. в статье [Get Enterprise Agreement reservation costs and usage](billing-understand-reserved-instance-usage-ea.md) (Получение сведений о затратах на резервирование и его использовании для Соглашения Enterprise).
 
 ## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 

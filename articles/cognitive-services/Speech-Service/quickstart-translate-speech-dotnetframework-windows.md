@@ -1,27 +1,27 @@
 ---
 title: Краткое руководство. Перевод речи с помощью C# (.NET Framework в Windows) — служба "Речь"
 titleSuffix: Azure Cognitive Services
-description: В этом кратком руководстве вы создадите простое приложение .NET Framework для записи речи пользователя, ее перевода на другой язык и вывода текста в командную строку. Это руководство предназначено для пользователей Windows.
+description: В этом кратком руководстве вы создадите приложение .NET Framework для записи речи пользователя, ее перевода на другой язык и вывода текста в командную строку. Это руководство предназначено для пользователей Windows.
 services: cognitive-services
 author: wolfma61
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 07/05/2019
+ms.date: 08/28/2019
 ms.author: erhopf
-ms.openlocfilehash: e62756ab428135ca3d5d9107f37e61813097d21f
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: bb710a3e3adb13aa3999c13043c8bb93f6b885f1
+ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68553469"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71327347"
 ---
-# <a name="quickstart-translate-speech-with-the-speech-sdk-for-net-framework"></a>Краткое руководство. Перевод речи с помощью пакета SDK службы "Речь" для .NET Framework
+# <a name="quickstart-translate-speech-with-the-speech-sdk-for-net-framework-windows"></a>Краткое руководство. Перевод речи с помощью пакета SDK службы "Речь" для .NET Framework (Windows)
 
-Также доступны краткие руководства по [преобразованию речи в текст](quickstart-csharp-dotnet-windows.md) и [преобразованию текста в речь](quickstart-text-to-speech-dotnet-windows.md).
+Кроме того, доступны краткие руководства по [распознаванию речи](quickstart-csharp-dotnet-windows.md) и [синтезу речи](quickstart-text-to-speech-dotnet-windows.md).
 
-В этом кратком руководстве вы создадите простое приложение .NET Framework, которое захватывает речь пользователя с микрофона компьютера, переводит речь и расшифровывает переведенный текст в командную строку в режиме реального времени. Приложение предназначено для работы в 64-разрядной версии Windows с использованием [пакета NuGet SDK службы "Речь"](https://aka.ms/csspeech/nuget) и Microsoft Visual Studio 2017.
+В этом кратком руководстве вы создадите приложение .NET Framework, которое захватывает речь пользователя с микрофона компьютера, переводит речь и расшифровывает переведенный текст в командную строку в режиме реального времени. Приложение предназначено для работы в 32- или 64-разрядной версии Windows с использованием [пакета NuGet SDK службы "Речь"](https://aka.ms/csspeech/nuget) и Microsoft Visual Studio 2019.
 
 Полный список языков для перевода речи см. в статье, посвященной [поддержке языков](language-support.md).
 
@@ -29,8 +29,8 @@ ms.locfileid: "68553469"
 
 Для работы с этим кратким руководством вам понадобится:
 
-* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/)
-* Ключ подписки Azure для службы "Речь". [Его можно получить бесплатно](get-started.md).
+* [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/).
+* Ключ подписки Azure для службы "Речь". [Получить бесплатно](get-started.md).
 
 ## <a name="create-a-visual-studio-project"></a>Создание проекта Visual Studio
 
@@ -38,29 +38,25 @@ ms.locfileid: "68553469"
 
 ## <a name="add-sample-code"></a>Добавление примеров кода
 
-1. Откройте файл `Program.cs` и замените все содержимое приведенным ниже кодом.
+1. Откройте файл **Program.cs** и замените имеющийся код приведенным ниже кодом.
 
-    [!code-csharp[Quickstart Code](~/samples-cognitive-services-speech-sdk/quickstart/speech-translation/csharp-dotnet-windows/helloworld/Program.cs#code)]
+   [!code-csharp[Quickstart Code](~/samples-cognitive-services-speech-sdk/quickstart/speech-translation/csharp-dotnet-windows/helloworld/Program.cs#code)]
 
-1. В том же файле замените строку `YourSubscriptionKey` своим ключом подписки.
+1. Найдите строку `YourSubscriptionKey` и замените ее своим ключом подписки.
 
-1. Замените строку `YourServiceRegion` значением [региона](regions.md), связанного с подпиской (например, `westus` для бесплатной пробной подписки).
+1. Найдите строку `YourServiceRegion` и замените ее названием [региона](regions.md), связанного с вашей подпиской. Например, если вы используете бесплатную пробную подписку, ваш регион — `westus`.
 
-1. Сохраните внесенные в проект изменения.
+1. В строке меню выберите **Файл** > **Сохранить все**.
 
-## <a name="build-and-run-the-app"></a>Создание и запуск приложения
+## <a name="build-and-run-the-application"></a>Создание и запуск приложения
 
-1. Создайте приложение. В строке меню последовательно выберите **Сборка** > **Собрать решение**. Теперь код должен компилироваться без ошибок.
+1. В строке меню выберите **Сборка** > **Построить решение**, чтобы создать приложение. Теперь код должен компилироваться без ошибок.
 
-    ![Снимок экрана приложения Visual Studio с выделенным параметром "Собрать решение"](media/sdk/qs-csharp-dotnetcore-windows-05-build.png "Успешная сборка")
+1. Выберите **Отладка** > **Начать отладку** (или нажмите клавишу **F5**), чтобы запустить приложение **helloworld**.
 
-1. Запустите приложение. В строке меню последовательно выберите **Отладка** > **Начать отладку** или нажмите клавишу **F5**.
+1. Произнесите фразу или предложение на английском языке в микрофон устройства. Приложение передает речь в речевую службу, которая переводит речь в текст на другом языке (в нашем примере это немецкий). Служба распознавания речи отправляет переведенный текст обратно в приложение, которое отображает перевод в окне.
 
-    ![Снимок экрана приложения Visual Studio с выделенным параметром "Начать отладку"](media/sdk/qs-csharp-dotnetcore-windows-06-start-debugging.png "Start the app into debugging")
-
-1. Появится всплывающее окно консоли с запросом произнести что-либо. Произнесите фразу или предложение на английском языке. Ваша речь передается в службу "Речь", переводится и транскрибируется в текст, который появляется в том же окне.
-
-    ![Снимок экрана с выходными данными консоли после успешного преобразования](media/sdk/qs-translate-csharp-dotnetcore-windows-output.png "Выходные данные после успешного преобразования")
+   ![Пользовательский интерфейс перевода речи](media/sdk/qs-translate-csharp-dotnetcore-windows-output.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
 
@@ -71,5 +67,4 @@ ms.locfileid: "68553469"
 
 ## <a name="see-also"></a>См. также
 
-- [Настройка акустических моделей](how-to-customize-acoustic-models.md)
-- [Настройка языковых моделей](how-to-customize-language-model.md)
+- [Train a model for Custom Speech](how-to-custom-speech-train-model.md) (Обучение модели для Пользовательского распознавания речи)

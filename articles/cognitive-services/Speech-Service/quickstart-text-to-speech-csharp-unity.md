@@ -1,42 +1,41 @@
 ---
 title: Краткое руководство. Синтез речи с помощью службы Unity — служба "Речь"
 titleSuffix: Azure Cognitive Services
-description: Используйте данное руководство при создании приложения для преобразования речи в текст с помощью Unity и пакета Speech SDK для Unity (бета-версия). После завершения можно будет синтезировать речь из текста в режиме реального времени через микрофон устройства.
+description: Используйте это руководство при создании приложения для преобразования речи в текст с помощью Unity и пакета Speech SDK для Unity. После завершения можно будет синтезировать речь из текста в режиме реального времени через микрофон устройства.
 services: cognitive-services
 author: yinhew
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 6/26/2019
+ms.date: 9/19/2019
 ms.author: yinhew
-ms.openlocfilehash: 507ab9ef9bb3e482e5a33d2406424dfb9116de54
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: be5f07b8ea58d0d62c70e0e9dc8ab187ce4a0f63
+ms.sourcegitcommit: 4f3f502447ca8ea9b932b8b7402ce557f21ebe5a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68553622"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71803187"
 ---
-# <a name="quickstart-synthesize-speech-with-the-speech-sdk-for-unity-beta"></a>Краткое руководство. Синтез речи с помощью пакета SDK службы "Речь" для Unity (бета-версия)
+# <a name="quickstart-synthesize-speech-with-the-speech-sdk-for-unity"></a>Краткое руководство. Синтез речи с помощью пакета SDK службы "Речь" для Unity
 
-Также доступны краткие руководства по [распознаванию речи](quickstart-csharp-unity.md).
+Доступны также краткие руководства по [распознаванию речи](quickstart-csharp-unity.md).
 
-Используйте данное руководство при создании приложения для преобразования речи в текст с помощью [Unity](https://unity3d.com/) и пакета SDK службы "Речь" для Unity (бета-версия).
+Используйте данное руководство при создании приложения для преобразования речи в текст с помощью [Unity](https://unity3d.com/) и пакета SDK службы "Речь" для Unity.
 После завершения можно будет синтезировать речь из текста в режиме реального времени через микрофон устройства.
 Если вы не знакомы с Unity, рекомендуется изучить [Unity User Manual (2018.3)](https://docs.unity3d.com/Manual/UnityManual.html) (Руководство пользователя Unity (2018.3)) перед началом разработки приложения.
 
 > [!NOTE]
-> Пакет SDK службы "Речь" для Unity в настоящее время доступен в бета-версии.
-> Он поддерживает Windows Desktop (x86 и x64) или универсальную платформу Windows (x86, x64, ARM и ARM64) и Android (x86 ARM32/64).
+> Он поддерживает Windows Desktop (x86 и x64) или универсальную платформу Windows (x86, x64, ARM и ARM64), Android (x86, ARM32/64) и iOS (симулятор x64, ARM32 и ARM64).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы выполнить этот проект, вам потребуется:
 
 * [Unity 2018.3 или более поздней версии](https://store.unity.com/) с [Unity 2019.1, добавляющий поддержку для UWP ARM64](https://blogs.unity3d.com/2019/04/16/introducing-unity-2019-1/#universal)
-* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/)
-     * Для поддержки ARM64 установите [дополнительные инструменты сборки для ARM64 и Windows 10 SDK для ARM64](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development/) 
-* Ключ подписки для службы "Речь". [Его можно получить бесплатно](get-started.md).
+* [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/). Можно также использовать Visual Studio 2017 версии 15.9 или более поздней.
+* Для поддержки Windows ARM64 установите [дополнительные инструменты сборки для ARM64 и пакет SDK Windows 10 для ARM64](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development/). 
+* Ключ подписки для службы "Речь". [Получить бесплатно](get-started.md).
 
 ## <a name="create-a-unity-project"></a>Создание проекта Unity
 

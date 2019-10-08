@@ -8,31 +8,29 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 07/05/2019
+ms.date: 08/27/2019
 ms.author: yinhew
-ms.openlocfilehash: 65db847c5df1a05671e3b1c0ac4541f00506c8fd
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 1a411455e4a6dea22e092cdfc8e70ee23b656435
+ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68854697"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71327447"
 ---
 # <a name="quickstart-synthesize-speech-with-the-speech-sdk-for-net-framework-windows"></a>Краткое руководство. Синтезирование речи с помощью пакета SDK службы "Речь" для .NET Framework (Windows)
 
-Также доступны краткие руководства по [распознаванию речи](quickstart-csharp-dotnet-windows.md) и [переводу речи](quickstart-translate-speech-dotnetframework-windows.md).
+Кроме того, доступны краткие руководства по [распознаванию речи](quickstart-csharp-dotnet-windows.md) и [переводу речи](quickstart-translate-speech-dotnetframework-windows.md).
 
 Сведения в этом руководстве помогут создать консольное приложение для преобразования текста в речь с помощью .NET Framework для Windows и пакета SDK службы "Речь". Завершив работу, вы сможете синтезировать речь из текста и прослушивать речь из динамика в реальном времени.
 
-Быстрая демонстрация (без самостоятельного создания проекта Visual Studio, как показано ниже).
-
-Получите новейшие [примеры пакета SDK службы "Речь" в Cognitive Services](https://github.com/Azure-Samples/cognitive-services-speech-sdk) на GitHub.
+Для быстрой демонстрации (без самостоятельного создания проекта Visual Studio, как описано в этой статье) загрузите новейшие [примеры пакета SDK службы "Речь" в Cognitive Services](https://github.com/Azure-Samples/cognitive-services-speech-sdk) с GitHub.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы выполнить этот проект, вам потребуется:
 
-* [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/)
-* Ключ подписки для службы "Речь". [Его можно получить бесплатно](get-started.md).
+* [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/).
+* Ключ подписки для службы "Речь". [Получить бесплатно](get-started.md).
 * Динамик (или гарнитура).
 
 ## <a name="create-a-visual-studio-project"></a>Создание проекта Visual Studio
@@ -41,29 +39,25 @@ ms.locfileid: "68854697"
 
 ## <a name="add-sample-code"></a>Добавление примеров кода
 
-1. Откройте файл `Program.cs` и замените автоматически созданный код этим примером:
+1. Откройте файл **Program.cs** и замените автоматически созданный код этим примером:
 
-    [!code-csharp[Quickstart Code](~/samples-cognitive-services-speech-sdk/quickstart/text-to-speech/csharp-dotnet-windows/helloworld/Program.cs#code)]
+   [!code-csharp[Quickstart Code](~/samples-cognitive-services-speech-sdk/quickstart/text-to-speech/csharp-dotnet-windows/helloworld/Program.cs#code)]
 
 1. Найдите строку `YourSubscriptionKey` и замените ее ключом подписки службы "Речь".
 
-1. Найдите и замените строку `YourServiceRegion` на [регион](regions.md), связанный с вашей подпиской. Например, если вы используете бесплатную пробную версию, ваш регион — `westus`.
+1. Найдите строку `YourServiceRegion` и замените ее названием [региона](regions.md), связанного с вашей подпиской. Например, если вы используете бесплатную пробную подписку, ваш регион — `westus`.
 
-1. Сохраните изменения в проекте.
+1. В строке меню выберите **Файл** > **Сохранить все**.
 
-## <a name="build-and-run-the-app"></a>Создание и запуск приложения
+## <a name="build-and-run-the-application"></a>Создание и запуск приложения
 
-1. В строке меню последовательно выберите **Сборка** > **Собрать решение**. Теперь код должен компилироваться без ошибок.
+1. В строке меню выберите **Сборка** > **Построить решение**, чтобы создать приложение. Теперь код должен компилироваться без ошибок.
 
-    ![Снимок экрана приложения Visual Studio с выделенным параметром "Собрать решение"](media/sdk/qs-csharp-dotnet-windows-08-build.png "Успешная сборка")
+1. Выберите **Отладка** > **Начать отладку** (или нажмите клавишу **F5**), чтобы запустить приложение **helloworld**.
 
-1. В строке меню выберите **Отладка** > **Начать отладку** или нажмите клавишу **F5**, чтобы запустить приложение.
+1. Введите фразу или предложение на английском языке. Приложение передает текст в службы "Речь", которые отправляют синтезированную речь в приложение для воспроизведения динамиком.
 
-    ![Снимок экрана приложения Visual Studio с выделенным параметром "Начать отладку"](media/sdk/qs-csharp-dotnet-windows-09-start-debugging.png "Start the app into debugging")
-
-1. Появится окно консоли с запросом на ввод текста. Введите несколько слов или предложение. Введенный текст передается в службы "Речь" и синтезируется в речь, воспроизводящуюся через динамик.
-
-    ![Снимок экрана с выходными данными консоли после успешного распознавания](media/sdk/qs-tts-csharp-dotnet-windows-console-output.png "Console output after successful recognition")
+   ![Пользовательский интерфейс для синтеза речи](media/sdk/qs-tts-csharp-dotnet-windows-console-output.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
 
@@ -72,5 +66,5 @@ ms.locfileid: "68854697"
 
 ## <a name="see-also"></a>См. также
 
-- [Настройка голосов](how-to-customize-voice-font.md)
-- [Запись образцов голосов](record-custom-voice-samples.md)
+- [Создание пользовательского голоса](how-to-custom-voice-create-voice.md)
+- [Запись пользовательских образцов голоса](record-custom-voice-samples.md)

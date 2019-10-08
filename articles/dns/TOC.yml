@@ -39,10 +39,6 @@
           href: tutorial-alias-pip.md
         - name: Записи псевдонимов для записей зон
           href: tutorial-alias-rr.md
-- name: Примеры
-  items:
-    - name: Azure CLI
-      href: cli-samples.md
 - name: Основные понятия
   items:
     - name: Общедоступное имя DNS
@@ -63,10 +59,18 @@
           href: ../networking/disaster-recovery-dns-traffic-manager.md
     - name: Частная зона DNS
       items:
-        - name: "Вопросы и ответы\_— Частная зона DNS"
-          href: dns-faq-private.md
+        - name: Частная зона DNS
+          href: private-dns-privatednszone.md
+        - name: Связи виртуальных сетей
+          href: private-dns-virtual-network-links.md
+        - name: Авторегистрация
+          href: private-dns-autoregistration.md
         - name: Сценарии с использованием Частной зоны DNS
           href: private-dns-scenarios.md
+        - name: Разрешение DNS в виртуальных сетях
+          href: ../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md
+        - name: Часто задаваемые вопросы
+          href: dns-faq-private.md
 - name: Практическое руководство
   items:
     - name: Общедоступное имя DNS
@@ -119,6 +123,8 @@
       items:
         - name: Примеры кода
           href: 'https://azure.microsoft.com/resources/samples/?service=dns'
+        - name: Примеры для CLI
+          href: cli-samples.md
         - name: Azure PowerShell
           href: /powershell/module/az.dns
         - name: Azure CLI
@@ -147,8 +153,10 @@
           href: /dotnet/api/overview/azure/privatedns/management
         - name: REST
           href: /rest/api/dns/privatedns/privatezones
-- name: Связанные материалы
+- name: Сопутствующие материалы
   items:
+    - name: Приватный канал
+      href: ../private-link/private-link-overview.md
     - name: Шлюз приложений
       href: /azure/application-gateway/
     - name: Виртуальная сеть

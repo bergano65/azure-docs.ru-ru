@@ -198,6 +198,14 @@
           href: compute-benchmark-scores.md
         - name: Квоты на виртуальные ЦП
           href: quotas.md
+        - name: Зарезервированные экземпляры
+          items:
+            - name: Предоплата за виртуальные машины
+              href: prepay-reserved-vm-instances.md
+            - name: Основные сведения о резервировании в Azure
+              href: ../../billing/billing-save-compute-costs-reservations.md
+            - name: Гибкость размера экземпляра виртуальной машины
+              href: reserved-vm-instance-size-flexibility.md
     - name: Выделенные узлы
       href: dedicated-hosts.md
     - name: Обслуживание и обновления
@@ -359,14 +367,6 @@
           href: ../../azure-monitor/platform/alerts-metric.md
         - name: Создание оповещений журнала
           href: ../../azure-monitor/platform/alerts-log.md
-    - name: Управление затратами
-      items:
-        - name: Предварительная оплата виртуальных машин — резервирования Azure
-          href: prepay-reserved-vm-instances.md
-        - name: Основные сведения о резервировании в Azure
-          href: ../../billing/billing-save-compute-costs-reservations.md
-        - name: Гибкость размера экземпляра виртуальной машины
-          href: reserved-vm-instance-size-flexibility.md
     - name: Использование образов
       items:
         - name: Общие образы
@@ -422,8 +422,6 @@
         - name: Создание группы размещения близкого взаимодействия
           href: proximity-placement-groups.md
         - name: Вертикальное масштабирование
-          href: vertical-scaling-automation.md
-        - name: Создание виртуальной машины в зоне доступности
           items:
             - name: PowerShell
               href: create-powershell-availability-zone.md

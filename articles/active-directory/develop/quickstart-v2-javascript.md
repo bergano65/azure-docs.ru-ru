@@ -16,25 +16,22 @@ ms.workload: identity
 ms.date: 04/11/2019
 ms.author: nacanuma
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 988c73236d9f5ef360ded03bca36a4bb24ebd308
-ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
+ms.openlocfilehash: c41dedf6b4fe52ba3250ada14b0cca6bbeb636af
+ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71290817"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71827109"
 ---
 # <a name="quickstart-sign-in-users-and-acquire-an-access-token-from-a-javascript-single-page-application"></a>Краткое руководство. Выполнение входа пользователей и получение маркера доступа от одностраничного приложения JavaScript
 
-Из этого краткого руководства вы узнаете, как использовать пример кода, который демонстрирует, как одностраничное приложение (SPA) JavaScript может выполнять вход с помощью личных, рабочих и учебных учетных записей. Одностраничное приложение JavaScript также может получить маркер доступа для вызова API Microsoft Graph или любого веб-API.
-
-![Как работает пример приложения, созданный в этом кратком руководстве](media/quickstart-v2-javascript/javascriptspa-intro.svg)
+В этом кратком руководстве описано, как с помощью примера кода можно узнать, как одностраничное приложение (SPA) JavaScript может выполнять вход с помощью личных, рабочих и учебных учетных записей. Одностраничное приложение JavaScript также может получить маркер доступа для вызова API Microsoft Graph или любого веб-API. (Иллюстрацию см. в разделе [Как работает этот пример](#how-the-sample-works).)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-В этом руководстве требуется следующая конфигурация.
-* Чтобы запустить проект с сервером Node.js, скачайте и установите [Node.js](https://nodejs.org/en/download/).
-* Чтобы внести правки в файлы проекта, скачайте и установите [Visual Studio Code](https://code.visualstudio.com/download).
-* Чтобы запустить проект как решение Visual Studio, скачайте и установите [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/).
+* Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* [Node.js](https://nodejs.org/en/download/).
+* [Visual Studio Code](https://code.visualstudio.com/download) (для редактирования файлов проекта) или [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/) (для запуска проекта как решения Visual Studio).
 
 > [!div renderon="docs"]
 > ## <a name="register-and-download-your-quickstart-application"></a>Регистрация и скачивание приложения, используемого в этом кратком руководстве
@@ -81,8 +78,6 @@ ms.locfileid: "71290817"
 * [Скачайте основные файлы проекта](https://github.com/Azure-Samples/active-directory-javascript-graphapi-v2/archive/quickstart.zip), чтобы запустить проект с помощью веб-сервера, используя Node.js. Чтобы открыть файлы, используйте редактор, например [Visual Studio Code](https://code.visualstudio.com/).
 
 * (Необязательно.) [Скачайте проект Visual Studio](https://github.com/Azure-Samples/active-directory-javascript-graphapi-v2/archive/vsquickstart.zip), чтобы запустить его с помощью сервера IIS. Извлеките ZIP-файл в локальную папку (например, *C:\Azure-Samples*).
-
-
 
 #### <a name="step-3-configure-your-javascript-app"></a>Шаг 3. Настройка приложения JavaScript
 
@@ -144,6 +139,10 @@ var msalConfig = {
 Когда приложение загрузится в браузере, нажмите кнопку **Войти**. После первого входа предоставьте приложению разрешение на использование данных вашего профиля для входа. После выполнения входа сведения о вашем профиле пользователя должны отображаться на странице.
 
 ## <a name="more-information"></a>Дополнительные сведения
+
+### <a name="how-the-sample-works"></a>Как работает этот пример
+
+![Как работает пример приложения, созданный в этом кратком руководстве](media/quickstart-v2-javascript/javascriptspa-intro.svg)
 
 ### <a name="msaljs"></a>msal.js
 

@@ -1,35 +1,34 @@
 ---
 title: Краткое руководство. Распознавание речи с помощью Unity — служба "Речь"
 titleSuffix: Azure Cognitive Services
-description: В этом руководстве объясняется, как создать приложение для преобразования речи в текст, использующее Unity и пакет SDK службы "Речь" для Unity (бета-версия). После завершения вы сможете преобразовывать речь в текст в режиме реального времени с использованием микрофона компьютера.
+description: В этом руководстве объясняется, как создать приложение для преобразования речи в текст, использующее Unity и пакет SDK службы "Речь" для Unity. После завершения вы сможете преобразовывать речь в текст в режиме реального времени с использованием микрофона компьютера.
 services: cognitive-services
 author: jhakulin
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 07/24/2019
+ms.date: 09/17/2019
 ms.author: jhakulin
-ms.openlocfilehash: 1b6e60edd86cff2d657b562f05351e20571c0909
-ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
+ms.openlocfilehash: a7ac6831fd21fcc0dc425b57f5d73d8c328f9350
+ms.sourcegitcommit: 4f3f502447ca8ea9b932b8b7402ce557f21ebe5a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68815388"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71803466"
 ---
-# <a name="quickstart-recognize-speech-with-the-speech-sdk-for-unity-beta"></a>Краткое руководство. Распознавание речи с помощью пакета SDK службы "Речь" для Unity (бета-версия)
+# <a name="quickstart-recognize-speech-with-the-speech-sdk-for-unity"></a>Краткое руководство. Распознавание речи с помощью пакета SDK службы "Речь" для Unity
 
 Также доступны краткие руководства по [преобразованию текста в речь](quickstart-text-to-speech-csharp-unity.md).
 
 [!INCLUDE [Selector](../../../includes/cognitive-services-speech-service-quickstart-selector.md)]
 
-В этом руководстве объясняется, как создать приложение для преобразования речи в текст с помощью [Unity](https://unity3d.com/) и пакета SDK службы "Речь" для Unity (бета-версия).
+В этом руководстве объясняется, как создать приложение для преобразования речи в текст, использующее [Unity](https://unity3d.com/) и пакет SDK службы "Речь" для Unity.
 Изучив руководство, вы сможете преобразовывать речь в текст в режиме реального времени на своем устройстве.
 Если вы не знакомы с Unity, рекомендуем изучить [руководство пользователя по Unity](https://docs.unity3d.com/Manual/UnityManual.html) перед разработкой приложения.
 
 > [!NOTE]
-> Пакет SDK службы "Речь" для Unity в настоящее время доступен в бета-версии.
-> Он поддерживает Windows Desktop (x86 и x64) или универсальную платформу Windows (x86, x64, ARM и ARM64) и Android (x86 ARM32/64).
+> Пакет SDK службы "Речь" для Unity поддерживает Windows Desktop (x86 и x64) или универсальную платформу Windows (x86, x64, ARM и ARM64), Android (x86, ARM32/64) и iOS (симулятор x64, ARM32 и ARM64).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -37,8 +36,8 @@ ms.locfileid: "68815388"
 
 - [Unity 2018.3 или последующей версии](https://store.unity.com/). В [Unity 2019.1 добавлена поддержка UWP ARM64](https://blogs.unity3d.com/2019/04/16/introducing-unity-2019-1/#universal).
 - [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/). Можно также использовать Visual Studio 2017 версии 15.9 или более поздней.
-  - Для поддержки ARM64 установите [дополнительные инструменты сборки для ARM64 и пакет SDK Windows 10 для ARM64](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development/).
-- Ключ подписки для службы "Речь". [Его можно получить бесплатно](get-started.md).
+- Для поддержки Windows ARM64 установите [дополнительные инструменты сборки для ARM64 и пакет SDK Windows 10 для ARM64](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development/).
+- Ключ подписки для службы "Речь". [Получить бесплатно](get-started.md).
 - Доступ к микрофону компьютера.
 
 ## <a name="create-a-unity-project"></a>Создание проекта Unity
@@ -62,7 +61,7 @@ ms.locfileid: "68815388"
 
 [!INCLUDE [License Notice](../../../includes/cognitive-services-speech-service-license-notice.md)]
 
-1. Скачайте и откройте [пакет SDK службы "Речь" для Unity (бета-версия)](https://aka.ms/csspeech/unitypackage), который упакован как пакет ресурсов Unity (.unitypackage). При открытии пакета ресурса появляется диалоговое окно **импорта пакета Unity**.
+1. Скачайте и откройте [пакет SDK службы "Речь" для Unity](https://aka.ms/csspeech/unitypackage), который упакован как пакет ресурсов Unity (.unitypackage). При открытии пакета ресурса появляется диалоговое окно **импорта пакета Unity**.
 
    [![Диалоговое окно импорта пакета Unity в Unity Editor](media/sdk/qs-csharp-unity-01-import.png)](media/sdk/qs-csharp-unity-01-import.png#lightbox)
 1. Убедитесь, что выбраны все файлы, и нажмите кнопку **Import** (Импортировать). Через некоторое время пакет ресурса Unity будет импортирован в проект.

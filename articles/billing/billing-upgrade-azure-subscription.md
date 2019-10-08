@@ -10,19 +10,19 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 07/01/2019
+ms.date: 10/01/2019
 ms.author: banders
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 1a670976b199a558f7adedeb52811d465f644058
-ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.openlocfilehash: 208909c31fc5bcdc8876d95eca0aac62c7df2129
+ms.sourcegitcommit: a19f4b35a0123256e76f2789cd5083921ac73daf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "67490248"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71719617"
 ---
 # <a name="upgrade-your-azure-free-account-or-azure-for-students-starter-subscription"></a>Обновление бесплатной учетной записи Azure или подписки на Начальный набор Microsoft Azure для учащихся
 
-Если у вас есть подписка <bpt id="p1">[</bpt>Бесплатная пробная версия<ept id="p1">](https://azure.microsoft.com/free/)</ept> или подписка <bpt id="p2">[</bpt>Начальный набор Microsoft Azure для учащихся<ept id="p2">](https://azure.microsoft.com/offers/ms-azr-0144p/)</ept>, вы можете перейти на <bpt id="p3">[</bpt>индивидуальную подписку с опцией оплаты по факту <ept id="p3">](https://azure.microsoft.com/offers/ms-azr-0003p/)</ept> на портале Azure. Если у вас есть подписка на Начальную версию Azure для учащихся и вы имеете право на бесплатную пробную версию, вы можете выполнить обновление до бесплатной пробной версии.
+Если у вас есть [бесплатная пробная версия](https://azure.microsoft.com/free/) или [Начальный набор Microsoft Azure для учащихся](https://azure.microsoft.com/offers/ms-azr-0144p/), можно выполнить обновление до [отдельной подписки с оплатой по мере использования](https://azure.microsoft.com/offers/ms-azr-0003p/) на портале Azure. Если у вас есть подписка на Начальную версию Azure для учащихся и вы имеете право на бесплатную пробную версию, вы можете выполнить обновление до бесплатной пробной версии.
 
 <a id="freetrial"></a>
 

@@ -10,19 +10,19 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 07/05/2019
 ms.author: fmegen
-ms.openlocfilehash: 7c1c616ec6ce36ee58f32dbcada8ead6fc339f2e
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.openlocfilehash: 77afdb491e4a6cee0a3d6861ea76f57502e56278
+ms.sourcegitcommit: 4f3f502447ca8ea9b932b8b7402ce557f21ebe5a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70306973"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71802435"
 ---
 # <a name="quickstart-recognize-speech-in-javascript-in-a-browser-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в браузере с помощью JavaScript и пакета SDK службы "Речь"
 
 [!INCLUDE [Selector](../../../includes/cognitive-services-speech-service-quickstart-selector.md)]
 
 Из этой статьи вы узнаете, как создать веб-сайт, использующий привязку JavaScript из пакета SDK для службы "Речь" в Cognitive Services, который будет преобразовывать речь в текст.
-Приложение основано на пакете SDK службы "Речь" для JavaScript ([скачать версию 1.6.0](https://aka.ms/csspeech/jsbrowserpackage)).
+Приложение основано на [службе "Речь" пакета SDK для JavaScript](https://aka.ms/csspeech/jsbrowserpackage).
 
 ## <a name="prerequisites"></a>Предварительные требования
 

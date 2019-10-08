@@ -9,14 +9,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: quickstart
-ms.date: 09/05/2019
+ms.date: 09/27/2019
 ms.author: diberry
-ms.openlocfilehash: 1704b62cae6375d376fc43fb7a2940cd9c717072
-ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
+ms.openlocfilehash: 748c51e74db20ac101dc2dff0d924567acded114
+ms.sourcegitcommit: 6fe40d080bd1561286093b488609590ba355c261
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70382505"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71703242"
 ---
 # <a name="quickstart-use-prebuilt-home-automation-app"></a>Краткое руководство. Использование предварительно созданного приложения для системы домашней автоматики
 
@@ -31,15 +31,15 @@ ms.locfileid: "70382505"
 ## <a name="create-a-new-app"></a>Создание нового приложения
 Создавать и администрировать приложения можно на странице **Мои приложения**. 
 
-2. Выберите **Создать приложение**.
+1. Выберите **Создать приложение**.
 
     [![Снимок экрана со списком приложений](media/luis-quickstart-new-app/app-list.png "Screenshot of app list")](media/luis-quickstart-new-app/app-list.png)
 
-3. В диалоговом окне присвойте приложению имя Home Automation.
+1. В диалоговом окне присвойте приложению имя Home Automation.
 
     [![Снимок экрана со всплывающим диалоговым окном "Создание приложения"](media/luis-quickstart-new-app/create-new-app-dialog.png "Screenshot of Create new app pop-up dialog")](media/luis-quickstart-new-app/create-new-app-dialog.png)
 
-4. Выберите язык и региональные параметры для приложения. Для нашего примера Home Automation выберите английский язык. Затем выберите **Готово**. LUIS создаст приложение Home Automation. 
+1. Выберите язык и региональные параметры для приложения. Для нашего примера Home Automation выберите английский язык. Затем выберите **Готово**. LUIS создаст приложение Home Automation. 
 
     >[!NOTE]
     >Язык и региональные параметры нельзя изменить после создания приложения. 
@@ -101,69 +101,27 @@ Turn off the lights
 
 1. [!INCLUDE [LUIS How to get endpoint first step](../../../includes/cognitive-services-luis-tutorial-how-to-get-endpoint.md)] 
 
-1. Перейдите в конец URL-адреса, введите `turn off the living room light` и нажмите клавишу ВВОД. Браузер отображает ответ JSON от **API V2** для конечной точки HTTP.
+1. Перейдите в конец URL-адреса, введите `turn off the living room light` и нажмите клавишу ВВОД. 
+
+    #### <a name="v2-prediction-endpointtabv2"></a>[Конечная точка прогнозирования V2](#tab/V2)
+
+    `https://<region>.api.cognitive.microsoft.com/luis/**v2.0**/apps/<appID>?subscription-key=<YOUR_KEY>&**q=<user-utterance-text>**`
+
+    Браузер отображает ответ JSON от **API V2** для конечной точки HTTP.
 
     ```json
     {
-      "query": "turn off the living room light",
+      "query": "turn off the lights",
       "topScoringIntent": {
         "intent": "HomeAutomation.TurnOff",
-        "score": 0.9753089
+        "score": 0.995867
       },
-      "intents": [
-        {
-          "intent": "HomeAutomation.TurnOff",
-          "score": 0.9753089
-        },
-        {
-          "intent": "HomeAutomation.QueryState",
-          "score": 0.01027893
-        },
-        {
-          "intent": "HomeAutomation.TurnUp",
-          "score": 0.006881481
-        },
-        {
-          "intent": "HomeAutomation.SetDevice",
-          "score": 0.006786365
-        },
-        {
-          "intent": "HomeAutomation.TurnDown",
-          "score": 0.005145787
-        },
-        {
-          "intent": "HomeAutomation.TurnOn",
-          "score": 0.004114749
-        },
-        {
-          "intent": "None",
-          "score": 0.000598924
-        }
-      ],
       "entities": [
         {
-          "entity": "living room",
-          "type": "HomeAutomation.Location",
-          "startIndex": 13,
-          "endIndex": 23,
-          "score": 0.94558233
-        },
-        {
-          "entity": "living room light",
-          "type": "HomeAutomation.DeviceName",
-          "startIndex": 13,
-          "endIndex": 29,
-          "resolution": {
-            "values": [
-              "living room light"
-            ]
-          }
-        },
-        {
-          "entity": "light",
+          "entity": "lights",
           "type": "HomeAutomation.DeviceType",
-          "startIndex": 25,
-          "endIndex": 29,
+          "startIndex": 13,
+          "endIndex": 18,
           "resolution": {
             "values": [
               "light"
@@ -174,56 +132,38 @@ Turn off the lights
     }
     ```
     
-## <a name="query-the-v3-api-prediction-endpoint"></a>Запрос конечной точки прогнозирования API V3
+    #### <a name="v3-prediction-endpointtabv3"></a>[Конечная точка прогнозирования V3](#tab/V3)
 
-Для [запроса API V3](luis-migration-api-v3.md) в браузере измените HTTPS-запрос метода GET, изменив значения в угловых скобках для ваших значений. 
+    Для [запроса API V3](luis-migration-api-v3.md) в браузере измените HTTPS-запрос метода GET, изменив значения в угловых скобках для ваших значений.     
 
-**URL-адрес V2 с методом GET**:
+    `https://<region>.api.cognitive.microsoft.com/luis/**v3.0-preview**/apps/<appID>/**slots**/**production**/**predict**?subscription-key=<YOUR_KEY>&**query=<user-utterance-text>**`
 
-https://\<регион>.api.cognitive.microsoft.com/luis/**v2.0**/apps/\<идентификатор_приложения>?verbose=true&subscription-key=\<ВАШ_КЛЮЧ&**q=\<текстовый-фрагмент-пользователя>**
-
-**URL-адрес V3 с методом GET**:
-
-https://\<регион>.api.cognitive.microsoft.com/luis/**v3.0-preview**/apps/\<идентификатор_приложения>/**slots**/**production**/**predict**?verbose=true&subscription-key=\<ВАШ_КЛЮЧ>&**query=\<текстовый-фрагмент-пользователя>**
-
-Браузер отображает ответ JSON от **API V3** для конечной точки HTTP.
-
-```json
-{
-    "query": "turn off the lights",
-    "prediction": {
-        "normalizedQuery": "turn off the lights",
-        "topIntent": "HomeAutomation.TurnOff",
-        "intents": {
-            "HomeAutomation.TurnOff": {
-                "score": 0.99649024
-            }
-        },
-        "entities": {
-            "HomeAutomation.DeviceType": [
-                [
-                    "light"
-                ]
-            ],
-            "$instance": {
+    ```json
+    {
+        "query": "turn off the lights",
+        "prediction": {
+            "normalizedQuery": "turn off the lights",
+            "topIntent": "HomeAutomation.TurnOff",
+            "intents": {
+                "HomeAutomation.TurnOff": {
+                    "score": 0.99649024
+                }
+            },
+            "entities": {
                 "HomeAutomation.DeviceType": [
-                    {
-                        "type": "HomeAutomation.DeviceType",
-                        "text": "lights",
-                        "startIndex": 13,
-                        "length": 6,
-                        "modelTypeId": 5,
-                        "modelType": "List Entity Extractor",
-                        "recognitionSources": [
-                            "model"
-                        ]
-                    }
+                    [
+                        "light"
+                    ]
                 ]
             }
         }
     }
-}
-```
+    ```
+
+
+    Дополнительные сведения о [конечной точке прогнозирования V3](luis-migration-api-v3.md).
+    
+    * * * 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

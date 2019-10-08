@@ -11,12 +11,12 @@ ms.topic: overview
 ms.date: 03/20/2019
 ms.author: noelc
 ROBOTS: NOINDEX
-ms.openlocfilehash: 51bfcc47961e870fb7fb87b26a78aea0f1564d46
-ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
+ms.openlocfilehash: 65678f08399f378b8580eed79e49197dd4d84c64
+ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70390313"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71351150"
 ---
 # <a name="what-is-project-acoustics"></a>Что такое Project Acoustics?
 Project Acoustics — это подсистема волновой акустики для трехмерных интерактивных интерфейсов. Она моделирует волновые эффекты (окклюзия, помехи, перемещение и реверберация) в сложных сценах, не требуя выполнения разметки зон вручную или трассировки лучей с использованием большого количества ресурсов ЦП. Кроме того, она содержит игровой модуль и интеграцию аудио ПО промежуточного слоя. Философия Project Acoustics схожа со статическим освещением: моделирование детализированной физики в автономном режиме с целью обеспечения физической основы, а также использование упрощенной среды выполнения с выразительными элементами управления проектированием с целью реализации художественных целей для акустики или виртуального мира.
@@ -58,11 +58,10 @@ Project Acoustics — это подсистема волновой акусти
 ## <a name="download"></a>Скачивание
 * [Подключаемый модуль Project Acoustics Unity с примерами](https://www.microsoft.com/en-us/download/details.aspx?id=57346)
 * [Подключаемые модули Project Acoustics Unreal и Wwise с примерами](https://www.microsoft.com/download/details.aspx?id=58090)
-  * Чтобы получить двоичные файлы и поддержку Xbox, свяжитесь с нами с помощью приведенной ниже формы регистрации.
+  * Чтобы получить сведения о двоичных файлах Xbox или другую поддержку, свяжитесь с нами на [форуме](https://github.com/microsoft/ProjectAcoustics/issues).
 
 ## <a name="contact-us"></a>Свяжитесь с нами
 * [Обсуждение Project Acoustics и отчеты по проблемам](https://github.com/microsoft/ProjectAcoustics/issues)
-* [Зарегистрируйтесь, чтобы получать сведения об обновления Project Acoustics](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRwMoAEhDCLJNqtVIPwQN6rpUOFRZREJRR0NIQllDOTQ1U0JMNVc4OFNFSy4u)
 
 ## <a name="next-steps"></a>Дополнительная информация
 * Ознакомьтесь с [кратким руководством по Project Acoustics для Unity](unity-quickstart.md) или [Unreal](unreal-quickstart.md)

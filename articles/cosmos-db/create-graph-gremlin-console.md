@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-graph
 ms.topic: quickstart
 ms.date: 07/23/2019
 ms.author: lbosq
-ms.openlocfilehash: cb365517c581ebf83026046f385496afd3e28d7f
-ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
+ms.openlocfilehash: 3f25bbbbc8b3f34bdb89ba8797b042826a88ca8d
+ms.sourcegitcommit: 80da36d4df7991628fd5a3df4b3aa92d55cc5ade
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71261587"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71815963"
 ---
 # <a name="quickstart-create-query-and-traverse-an-azure-cosmos-db-graph-database-using-the-gremlin-console"></a>Краткое руководство. Создание, запрос и просмотр в консоли Gremlin графовой базы данных Azure Cosmos DB
 
@@ -55,7 +55,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
     Параметр|Рекомендуемое значение|ОПИСАНИЕ
     ---|---|---
-    Узлы|[*имя_учетной_записи*.gremlin.cosmos.azure.com]|Экран должен выглядеть следующим образом. Это значение Gremlin URI на странице обзора портала Azure, заключенное в квадратные скобки и без окончания 443/.
+    Узлы|[*имя_учетной_записи*.**gremlin**.cosmos.azure.com]|Экран должен выглядеть следующим образом. Это значение **Gremlin URI** на странице обзора портала Azure, заключенное в квадратные скобки и без окончания 443/. Примечание. Обязательно используйте значение Gremlin, а **не** универсальный код ресурса (URI), который заканчивается на [*имя_учетной_записи*.documents.azure.com] (его использование может привести к появлению исключения Host did not respond in a timely fashion (Узел не ответил вовремя) при попытке выполнить запросы Gremlin позже). 
     порт|443|Задайте значение 443.
     Имя пользователя|*Имя пользователя*|Ресурс в формате `/dbs/<db>/colls/<coll>`, где `<db>` — это имя базы данных, а `<coll>` — имя коллекции.
     password|*Значение первичного ключа*| Просмотрите второй снимок экрана ниже. Это первичный ключ, который можно получить на странице "Ключи" на портале Azure в поле "Первичный ключ". Скопируйте значение с помощью кнопки копирования в левой части поля.
@@ -85,7 +85,7 @@ serializer: { className: org.apache.tinkerpop.gremlin.driver.ser.GraphSONMessage
 1. Чтобы подключиться к службе приложений, в окне терминала запустите файл `:remote connect tinkerpop.server conf/remote-secure.yaml`.
 
     > [!TIP]
-    > При возникновении ошибки `No appenders could be found for logger` убедитесь, что значение сериализатора в файле remote-secure.yaml обновлено, как описано на шаге 2. 
+    > При возникновении ошибки `No appenders could be found for logger` убедитесь, что значение сериализатора в файле remote-secure.yaml обновлено, как описано на шаге 2. Если конфигурация правильная, это предупреждение можно спокойно игнорировать, так как оно не должно влиять на использование консоли. 
 
 1. Затем выполните команду `:remote console`, чтобы перенаправить все консольные команды на удаленный сервер.
 

@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: personalizer
 ms.topic: quickstart
-ms.date: 09/12/2019
+ms.date: 09/26/2019
 ms.author: diberry
-ms.openlocfilehash: 2289c21fcc172c8dffd7d6b3f9c0e2e11736e71a
-ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
+ms.openlocfilehash: 174f0f3d8984e102e098b4c981d3784f50c7d7c6
+ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71266005"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71345237"
 ---
 # <a name="quickstart-personalize-client-library-for-net"></a>Краткое руководство. Клиентская библиотека Персонализатора для .NET
 
@@ -33,9 +33,17 @@ ms.locfileid: "71266005"
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Текущая версия [.NET Core](https://dotnet.microsoft.com/download/dotnet-core).
 
-## <a name="setting-up"></a>Настройка
+## <a name="using-this-quickstart"></a>Использование этого краткого руководства
 
-### <a name="create-a-personalizer-azure-resource"></a>Создание ресурса Azure для Персонализатора
+Для использования этого краткого руководства необходимо выполнить несколько действий.
+
+* Создайте ресурс "Персонализатор" на портале Azure.
+* В ресурсе "Персонализатор" на странице **Параметров** измените частоту обновления модели.
+* В редакторе кода создайте и измените файл кода.
+* В командной строке или терминале установите пакет SDK из командной строки.
+* В командной строке (или терминале) запустите файл кода
+
+## <a name="create-a-personalizer-azure-resource"></a>Создание ресурса Azure для Персонализатора
 
 Ресурсами Azure, на которые вы подписаны, будет представлено семейство служб Azure Cognitive Services. Создайте ресурс для Персонализатора с помощью [портала Azure](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) или [Azure CLI](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account-cli) на локальном компьютере. Также можно:
 
@@ -50,15 +58,15 @@ ms.locfileid: "71266005"
 
 На портале Azure ключ и значения конечных точек можно найти на странице **Быстрый запуск**.
 
-### <a name="change-the-model-update-frequency"></a>Изменение частоты обновления модели
+## <a name="change-the-model-update-frequency"></a>Изменение частоты обновления модели
 
-В ресурсе "Персонализатор" на портале Azure установите для параметра **Частота обновления модели** значение 10 секунд. С этим значением служба будет обучаться быстро, и вы увидите, как главное действие меняется с каждой итерацией.
+В ресурсе "Персонализатор" на странице **Параметров** установите значение для параметра **Частота обновления модели** на 10 секунд. С этим значением служба будет обучаться быстро, и вы увидите, как главное действие меняется с каждой итерацией.
 
 ![Изменение частоты обновления модели](./media/settings/configure-model-update-frequency-settings.png)
 
 После создания цикла Персонализатора модель не используется, поскольку отсутствуют вызовы API вознаграждения для обучения. Вызовы ранжирования будут возвращать равновероятностный результат для каждого элемента. Приложение должно по-прежнему ранжировать содержимое на основе выходных данных RewardActionId.
 
-### <a name="create-a-new-c-application"></a>Создание нового приложения C#
+## <a name="create-a-new-c-application"></a>Создание нового приложения C#
 
 Создайте консольное приложение .NET Core на C# в предпочитаемой интегрированной среде разработки или редакторе. 
 
@@ -84,7 +92,7 @@ Build succeeded.
 ...
 ```
 
-### <a name="install-the-sdk"></a>Установка пакета SDK
+## <a name="install-the-sdk"></a>Установка пакета SDK
 
 В каталоге приложения установите клиентскую библиотеку Персонализатора для .NET с помощью следующей команды:
 

@@ -10,12 +10,12 @@ ms.subservice: immersive-reader
 ms.topic: tutorial
 ms.date: 08/02/2019
 ms.author: dylankil
-ms.openlocfilehash: 5e33108c9fc674abaf980a1272cca31aa21cffff
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: 6404a5d49bd7af1ed5d74299f03eda8d0bb14b89
+ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68991131"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71326447"
 ---
 # <a name="tutorial-launch-the-immersive-reader-using-the-python-sample-project"></a>Руководство по запуска иммерсивного средства чтения с помощью тестового проекта Python
 
@@ -113,7 +113,7 @@ pip install jinja2
 Установите virtualenv. Средство для создания изолированных сред Python
 
 ```cmd
-pip install pip install virtualenv
+pip install virtualenv
 ```
 
 Установите virtualenvwrapper-win. virtualenvwrapper предназначен для упрощения работы с virtualenv.
@@ -126,6 +126,12 @@ pip install virtualenvwrapper-win
 
 ```cmd
 pip install requests
+```
+
+Установите модуль python-dotenv. Этот модуль считывает пару "ключ-значение" из ENV-файла и добавляет их в переменную среды.
+
+```cmd
+pip install python-dotenv
 ```
 
 Создайте виртуальную среду
@@ -251,6 +257,12 @@ pip install virtualenvwrapper --user
 
 ```bash
 pip install requests --user
+```
+
+Установите модуль python-dotenv. Этот модуль считывает пару "ключ-значение" из ENV-файла и добавляет их в переменную среды.
+
+```bash
+pip install python-dotenv --user
 ```
 
 Выберите папку, в которой вы хотите разместить виртуальные среды, и выполните эту команду.

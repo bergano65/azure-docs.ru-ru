@@ -241,6 +241,8 @@
           items:
             - name: Устранение неполадок с подготовкой пользователей
               href: application-provisioning-config-problem.md
+            - name: Состояние карантина
+              href: application-provisioning-quarantine-status.md
             - name: Подготовка журналов
               href: /azure/active-directory/reports-monitoring/concept-provisioning-logs?context=azure/active-directory/manage-apps/context/manage-apps-context
             - name: Синхронизация атрибутов для сопоставления (приложение из коллекции)
@@ -357,6 +359,8 @@
           href: provisioning-agent-release-version-history.md
     - name: Прокси приложения для локальных приложений
       items:
+        - name: 'Прокси приложения: вопросы и ответы'
+          href: application-proxy-faq.md
         - name: Журнал версий прокси приложения
           href: application-proxy-release-version-history.md
 - name: Ресурсы

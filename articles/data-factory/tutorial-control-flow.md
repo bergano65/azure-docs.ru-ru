@@ -10,208 +10,208 @@ ms.reviewer: maghan
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: tutorial
-ms.date: 02/20/2019
-ms.openlocfilehash: 264d8e049cc7b714e00aaa77441cdc81a1e0a0c9
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.date: 9/27/2019
+ms.openlocfilehash: 5b9be86b0a3d17c9c325b565979fccbec92f5733
+ms.sourcegitcommit: 80da36d4df7991628fd5a3df4b3aa92d55cc5ade
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70140738"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71815875"
 ---
 # <a name="branching-and-chaining-activities-in-a-data-factory-pipeline"></a>Ветвления и создание цепочки действий в конвейере фабрики данных
 
-В этом руководстве создается конвейер фабрики данных, который демонстрирует некоторые функции потока управления. Этот конвейер просто копирует данные из контейнера в хранилище BLOB-объектов Azure в другой контейнер в той же учетной записи хранения. Если действие копирования завершается успешно, нужно отправить подробную информацию об успешной операции копирования (например, количество записанных данных) по электронной почте. Если произошел сбой действия копирования, необходимо отправить данные об ошибке копирования (например, сообщение об ошибке) по электронной почте. В этом руководстве вы научитесь передавать параметры.
+В этом руководстве создается конвейер фабрики данных, который демонстрирует некоторые функции потока управления. Этот конвейер копирует данные из контейнера в хранилище BLOB-объектов Azure в другой контейнер в той же учетной записи хранения. Если копирование завершается успешно, конвейер отправляет сведения об успешной операции копирования в сообщении электронной почты. Эта информация может включать в себя объем записанных данных. Если действие копирования не удается, в сообщении электронной почты отправляются сведения о сбое копирования, например сообщение об ошибке. В этом руководстве вы научитесь передавать параметры.
 
-Общий обзор сценария: ![Обзор](media/tutorial-control-flow/overview.png)
+Этот рисунок содержит общие сведения о сценарии:
 
-В этом руководстве вы выполните следующие шаги:
+![Обзор](media/tutorial-control-flow/overview.png)
+
+В этом учебнике показано, как выполнять следующие задачи.
 
 > [!div class="checklist"]
-> * Создадите фабрику данных.
-> * Создание связанной службы хранилища Azure.
+> * Создание фабрики данных
+> * Создание связанной службы хранилища Azure
 > * Создание набора данных больших двоичных объектов Azure
 > * Создание конвейера, содержащего действия копирования и веб-действие.
 > * Отправка выходных данных действий для последующих действий.
-> * Использование передачи параметров и системных переменных.
+> * Использование передачи параметров и системных переменных
 > * Запуск конвейера.
 > * Мониторинг конвейера и выполнения действий.
 
-В этом руководстве используется пакет SDK для .NET. Вы можете использовать другие механизмы для взаимодействия с фабрикой данных Azure (см. раздел "Быстрое начало работы" в оглавлении).
+В этом руководстве используется пакет SDK для .NET. Для взаимодействия с фабрикой данных Azure можно использовать другие механизмы. Краткие руководства по Фабрике данных см. в [5-минутных руководствах по началу работы](https://docs.microsoft.com/azure/data-factory/#5-minute-quickstarts).
 
-Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* **Учетная запись хранения Azure.** В этом руководстве в качестве **источника** будет использоваться хранилище BLOB-объектов. Если у вас нет учетной записи хранения Azure, ознакомьтесь с разделом [Создание учетной записи хранения](../storage/common/storage-quickstart-create-account.md).
-* **База данных SQL Azure**. Используйте базу данных как хранилище данных-**приемник**. Если у вас нет базы данных SQL Azure, вы можете создать ее, выполнив шаги из статьи [Создание базы данных SQL Azure на портале Azure](../sql-database/sql-database-get-started-portal.md).
-* **Visual Studio** 2013, 2015 или 2017. В этом руководстве используется Visual Studio 2017.
-* **Скачайте и установите [пакет Azure SDK для .NET](https://azure.microsoft.com/downloads/)** .
-* [Используйте следующие инструкции](../active-directory/develop/howto-create-service-principal-portal.md#create-an-azure-active-directory-application), **чтобы создать приложение в Azure Active Directory**. Запишите следующие значения, которые вы используете в следующих шагах: **идентификатор приложения**, **ключ аутентификации** и **идентификатор клиента**. Назначьте приложению роль **Участник**, следуя указаниям в той же статье.
+* Учетная запись хранения Azure. В этом руководстве в качестве источника будет использоваться хранилище BLOB-объектов. Если у вас нет учетной записи хранения Azure, ознакомьтесь с разделом [Создание учетной записи хранения](../storage/common/storage-quickstart-create-account.md).
+* Обозреватель хранилищ Azure Сведения об установке этого инструмента см. раздел [Обозреватель службы хранилища Azure](https://storageexplorer.com/).
+* База данных SQL Azure. Вы используете базу данных как хранилище данных-приемник. Если у вас нет базы данных SQL Azure, см. статью [Создание базы данных SQL Azure](../sql-database/sql-database-get-started-portal.md).
+* приведенному. В этой статье используется Visual Studio 2019.
+* Пакет Azure SDK для .NET. Загрузите и установите пакет [Azure SDK для .NET](https://azure.microsoft.com/downloads/).
 
-### <a name="create-blob-table"></a>Создание таблицы больших двоичных объектов
+Список регионов Azure, в которых в настоящее время доступна Фабрика Данных, см. в статье [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/). Хранилища данных и вычислительные мощности могут находиться в других регионах. Это могут быть как хранилища Azure, так базы данных SQL Azure. В качестве средства вычислений может быть HDInsight, используемый Фабрикой Данных.
 
-1. Запустите Блокнот. Скопируйте следующий текст и сохраните его в файл **input.txt** на диске.
+Создайте приложение, как описано в разделе [Создание приложения Azure Active Directory](../active-directory/develop/howto-create-service-principal-portal.md#create-an-azure-active-directory-application). Назначьте приложению роль **Участник**, следуя указаниям в той же статье. Вам потребуются несколько значений для последующих частей этого руководства, такие как **Application (client) ID** (Идентификатор приложения (клиента)) и **Directory (tenant) ID** (Идентификатор каталога (клиента)).
 
-    ```
-    John|Doe
-    Jane|Doe
-    ```
+### <a name="create-a-blob-table"></a>Создание таблицы больших двоичных объектов
 
-2. При помощи таких средств, как [обозреватель службы хранилища Azure](https://storageexplorer.com/), создайте контейнер **adfv2branch** и отправьте в него файл **input.txt**.
+1. Откройте текстовый редактор. Скопируйте следующий текст и сохраните его локально в файл *input.txt*.
 
-## <a name="create-visual-studio-project"></a>Создание проекта Visual Studio
+   ```
+   Ethel|Berg
+   Tamika|Walsh
+   ```
 
-С помощью Visual Studio 2015 или 2017 создайте консольное приложение C# .NET.
+1. Откройте обозреватель службы хранилища Azure. Разверните учетную запись хранения. Щелкните правой кнопкой мыши элемент **Blob Containers** (Контейнеры больших двоичных объектов) и выберите **Create Blob Container** (Создать контейнер BLOB-объектов).
+1. Присвойте новому контейнеру имя *adfv2branch* и выберите **Передать**, чтобы добавить файл *input. txt* в контейнер.
 
-1. Запустите **Visual Studio**.
-2. Щелкните **Файл**, наведите указатель мыши на пункт **Создать** и щелкните **Проект**. Требуется .NET версии 4.5.2 или более поздней.
-3. Выберите **Visual C#**  -> **Консольное приложение (.NET Framework)** из списка типов проектов справа.
-4. Введите **ADFv2BranchTutorial** в качестве имени.
-5. Нажмите кнопку **ОК** , чтобы создать проект.
+## Создание проекта Visual Studio<a name="create-visual-studio-project"></a>
 
-## <a name="install-nuget-packages"></a>Установка пакетов Nuget
+Создайте консольное приложение .NET на C#.
 
-1. Выберите **Инструменты** -> **Диспетчер пакетов NuGet** -> **Консоль диспетчера пакетов**.
-2. В **консоли диспетчера пакетов** выполните следующие команды, чтобы установить пакеты. Дополнительные сведения см. в документации по пакету NuGet [Microsoft.Azure.Management.DataFactory](https://www.nuget.org/packages/Microsoft.Azure.Management.DataFactory/).
+1. Откройте Visual Studio и выберите **Создать проект**.
+1. В окне **Создание проекта** выберите **Консольное приложение (.NET Framework)** для C# и нажмите кнопку **Далее**.
+1. Назовите проект *ADFv2BranchTutorial*.
+1. Выберите **.NET версии 4.5.2** или более поздней, а затем выберите команду **Создать**.
 
-    ```powershell
-    Install-Package Microsoft.Azure.Management.DataFactory
-    Install-Package Microsoft.Azure.Management.ResourceManager
-    Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory
-    ```
+### <a name="install-nuget-packages"></a>Установка пакетов Nuget
 
-## <a name="create-a-data-factory-client"></a>Создание клиента фабрики данных
+1. Выберите **Инструменты** > **Диспетчер пакетов NuGet** > **Консоль диспетчера пакетов**.
+1. В **консоли диспетчера пакетов** выполните следующие команды, чтобы установить пакеты. Дополнительные сведения см. в документации по пакету NuGet [Microsoft.Azure.Management.DataFactory](https://www.nuget.org/packages/Microsoft.Azure.Management.DataFactory/).
 
-1. Откройте файл **Program.cs** и включите следующие инструкции, чтобы добавить ссылки на пространства имен.
+   ```powershell
+   Install-Package Microsoft.Azure.Management.DataFactory
+   Install-Package Microsoft.Azure.Management.ResourceManager -IncludePrerelease
+   Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory
+   ```
 
-    ```csharp
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using Microsoft.Rest;
-    using Microsoft.Azure.Management.ResourceManager;
-    using Microsoft.Azure.Management.DataFactory;
-    using Microsoft.Azure.Management.DataFactory.Models;
-    using Microsoft.IdentityModel.Clients.ActiveDirectory;
-    ```
+### <a name="create-a-data-factory-client"></a>Создание клиента фабрики данных
 
-2. Добавьте следующие статические переменные в **класс Program**. Замените заполнители своими значениями. Чтобы получить список регионов Azure, в которых сейчас доступна Фабрика данных, выберите интересующие вас регионы на следующей странице, а затем разверните раздел **Аналитика**, чтобы найти пункт **Фабрика данных**: [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/). Хранилища данных (служба хранилища Azure, база данных SQL Azure и т. д.) и вычисления (HDInsight и т. д.), используемые фабрикой данных, могут располагаться в других регионах.
+1. Откройте файл *Program.cs* и добавьте следующие инструкции:
 
-    ```csharp
-        // Set variables
-        static string tenantID = "<tenant ID>";
-        static string applicationId = "<application ID>";
-        static string authenticationKey = "<Authentication key for your application>";
-        static string subscriptionId = "<Azure subscription ID>";
-        static string resourceGroup = "<Azure resource group name>";
+   ```csharp
+   using System;
+   using System.Collections.Generic;
+   using System.Linq;
+   using Microsoft.Rest;
+   using Microsoft.Azure.Management.ResourceManager;
+   using Microsoft.Azure.Management.DataFactory;
+   using Microsoft.Azure.Management.DataFactory.Models;
+   using Microsoft.IdentityModel.Clients.ActiveDirectory;
+   ```
 
-        static string region = "East US";
-        static string dataFactoryName = "<Data factory name>";
+1. Добавьте эти статические переменные в класс `Program`. Замените заполнители своими значениями.
 
-        // Specify the source Azure Blob information
-        static string storageAccount = "<Azure Storage account name>";
-        static string storageKey = "<Azure Storage account key>";
-        // confirm that you have the input.txt file placed in th input folder of the adfv2branch container. 
-        static string inputBlobPath = "adfv2branch/input";
-        static string inputBlobName = "input.txt";
-        static string outputBlobPath = "adfv2branch/output";
-        static string emailReceiver = "<specify email address of the receiver>";
+   ```csharp
+   // Set variables
+   static string tenantID = "<tenant ID>";
+   static string applicationId = "<application ID>";
+   static string authenticationKey = "<Authentication key for your application>";
+   static string subscriptionId = "<Azure subscription ID>";
+   static string resourceGroup = "<Azure resource group name>";
 
-        static string storageLinkedServiceName = "AzureStorageLinkedService";
-        static string blobSourceDatasetName = "SourceStorageDataset";
-        static string blobSinkDatasetName = "SinkStorageDataset";
-        static string pipelineName = "Adfv2TutorialBranchCopy";
+   static string region = "East US";
+   static string dataFactoryName = "<Data factory name>";
 
-        static string copyBlobActivity = "CopyBlobtoBlob";
-        static string sendFailEmailActivity = "SendFailEmailActivity";
-        static string sendSuccessEmailActivity = "SendSuccessEmailActivity";
-    
-    ```
+   // Specify the source Azure Blob information
+   static string storageAccount = "<Azure Storage account name>";
+   static string storageKey = "<Azure Storage account key>";
+   // confirm that you have the input.txt file placed in th input folder of the adfv2branch container. 
+   static string inputBlobPath = "adfv2branch/input";
+   static string inputBlobName = "input.txt";
+   static string outputBlobPath = "adfv2branch/output";
+   static string emailReceiver = "<specify email address of the receiver>";
 
-3. Добавьте в метод **Main** приведенный ниже код, создающий экземпляр класса **DataFactoryManagementClient**. Этот объект используется не только для создания фабрики данных, связанной службы, наборов данных и конвейера, но и для отслеживания подробностей выполнения конвейера.
+   static string storageLinkedServiceName = "AzureStorageLinkedService";
+   static string blobSourceDatasetName = "SourceStorageDataset";
+   static string blobSinkDatasetName = "SinkStorageDataset";
+   static string pipelineName = "Adfv2TutorialBranchCopy";
 
-    ```csharp
-    // Authenticate and create a data factory management client
-    var context = new AuthenticationContext("https://login.windows.net/" + tenantID);
-    ClientCredential cc = new ClientCredential(applicationId, authenticationKey);
-    AuthenticationResult result = context.AcquireTokenAsync("https://management.azure.com/", cc).Result;
-    ServiceClientCredentials cred = new TokenCredentials(result.AccessToken);
-    var client = new DataFactoryManagementClient(cred) { SubscriptionId = subscriptionId };
-    ```
+   static string copyBlobActivity = "CopyBlobtoBlob";
+   static string sendFailEmailActivity = "SendFailEmailActivity";
+   static string sendSuccessEmailActivity = "SendSuccessEmailActivity";
+   ```
 
-## <a name="create-a-data-factory"></a>Создание фабрики данных
+1. Добавьте в метод `Main` следующий код. Этот код создает экземпляр класса `DataFactoryManagementClient`. Этот объект используется не только для создания фабрики данных, связанной службы, наборов данных и конвейера, но и для отслеживания подробностей выполнения конвейера.
 
-Создайте функцию CreateOrUpdateDataFactory в файле Program.cs:
+   ```csharp
+   // Authenticate and create a data factory management client
+   var context = new AuthenticationContext("https://login.windows.net/" + tenantID);
+   ClientCredential cc = new ClientCredential(applicationId, authenticationKey);
+   AuthenticationResult result = context.AcquireTokenAsync("https://management.azure.com/", cc).Result;
+   ServiceClientCredentials cred = new TokenCredentials(result.AccessToken);
+   var client = new DataFactoryManagementClient(cred) { SubscriptionId = subscriptionId };
+   ```
 
-```csharp
-static Factory CreateOrUpdateDataFactory(DataFactoryManagementClient client)
-{
-    Console.WriteLine("Creating data factory " + dataFactoryName + "...");
-    Factory resource = new Factory
-    {
-        Location = region
-    };
-    Console.WriteLine(SafeJsonConvert.SerializeObject(resource, client.SerializationSettings));
+### <a name="create-a-data-factory"></a>Создание фабрики данных
 
-    Factory response;
-    {
-        response = client.Factories.CreateOrUpdate(resourceGroup, dataFactoryName, resource);
-    }
+1. Добавьте метод `CreateOrUpdateDataFactory` в файл *Program.cs*:
 
-    while (client.Factories.Get(resourceGroup, dataFactoryName).ProvisioningState == "PendingCreation")
-    {
-        System.Threading.Thread.Sleep(1000);
-    }
-    return response;
-}
-```
+   ```csharp
+   static Factory CreateOrUpdateDataFactory(DataFactoryManagementClient client)
+   {
+       Console.WriteLine("Creating data factory " + dataFactoryName + "...");
+       Factory resource = new Factory
+       {
+           Location = region
+       };
+       Console.WriteLine(SafeJsonConvert.SerializeObject(resource, client.SerializationSettings));
 
+       Factory response;
+       {
+           response = client.Factories.CreateOrUpdate(resourceGroup, dataFactoryName, resource);
+       }
 
+       while (client.Factories.Get(resourceGroup, dataFactoryName).ProvisioningState == "PendingCreation")
+       {
+           System.Threading.Thread.Sleep(1000);
+       }
+       return response;
+   }
+   ```
 
-Добавьте следующий код, создающий **фабрику данных**, в метод **Main**. 
+1. Добавьте следующую строку, создающую фабрику данных, в метод `Main`.
 
-```csharp
-Factory df = CreateOrUpdateDataFactory(client);
-```
+   ```csharp
+   Factory df = CreateOrUpdateDataFactory(client);
+   ```
 
 ## <a name="create-an-azure-storage-linked-service"></a>Создание связанной службы хранилища Azure
 
-Создайте функцию StorageLinkedServiceDefinition в файле Program.cs:
+1. Добавьте метод `StorageLinkedServiceDefinition` в файл *Program.cs*:
 
-```csharp
-static LinkedServiceResource StorageLinkedServiceDefinition(DataFactoryManagementClient client)
-{
-    Console.WriteLine("Creating linked service " + storageLinkedServiceName + "...");
-    AzureStorageLinkedService storageLinkedService = new AzureStorageLinkedService
-    {
-        ConnectionString = new SecureString("DefaultEndpointsProtocol=https;AccountName=" + storageAccount + ";AccountKey=" + storageKey)
-    };
-    Console.WriteLine(SafeJsonConvert.SerializeObject(storageLinkedService, client.SerializationSettings));
-    LinkedServiceResource linkedService = new LinkedServiceResource(storageLinkedService, name:storageLinkedServiceName);
-    return linkedService;
-}
-```
+   ```csharp
+   static LinkedServiceResource StorageLinkedServiceDefinition(DataFactoryManagementClient client)
+   {
+      Console.WriteLine("Creating linked service " + storageLinkedServiceName + "...");
+      AzureStorageLinkedService storageLinkedService = new AzureStorageLinkedService
+      {
+          ConnectionString = new SecureString("DefaultEndpointsProtocol=https;AccountName=" + storageAccount + ";AccountKey=" + storageKey)
+      };
+      Console.WriteLine(SafeJsonConvert.SerializeObject(storageLinkedService, client.SerializationSettings));
+      LinkedServiceResource linkedService = new LinkedServiceResource(storageLinkedService, name:storageLinkedServiceName);
+      return linkedService;
+   }
+   ```
 
-Добавьте следующий код, создающий **связанную службу хранилища Azure**, в метод **Main**. Дополнительные сведения о свойствах связанных служб BLOB-объектов Azure см. в [этом разделе](connector-azure-blob-storage.md#linked-service-properties).
+1. Добавьте следующую строку, создающую связанную службу хранилища Azure, в метод `Main`.
 
-```csharp
-client.LinkedServices.CreateOrUpdate(resourceGroup, dataFactoryName, storageLinkedServiceName, StorageLinkedServiceDefinition(client));
-```
+   ```csharp
+   client.LinkedServices.CreateOrUpdate(resourceGroup, dataFactoryName, storageLinkedServiceName, StorageLinkedServiceDefinition(client));
+   ```
+
+Дополнительные сведения о поддерживаемых свойствах и сведениях см. в разделе [Свойства связанной службы](connector-azure-blob-storage.md#linked-service-properties).
 
 ## <a name="create-datasets"></a>Создание наборов данных
 
-В этом разделе создайте два набора данных: для источника и приемника. 
+В этом разделе создайте два набора данных: для источника и приемника.
 
-### <a name="create-a-dataset-for-source-azure-blob"></a>Создание набора данных для исходного большого двоичного объекта Azure
+### <a name="create-a-dataset-for-a-source-azure-blob"></a>Создание набора данных для исходного большого двоичного объекта Azure
 
-Добавьте следующий код, который создает **набор данных большого двоичного объекта Azure**, в метод **Main**. Дополнительные сведения о свойствах набора данных больших двоичных объектов Azure см. в [этом разделе](connector-azure-blob-storage.md#dataset-properties).
+Добавьте метод, создающий *набор данных BLOB-объекта Azure*. Дополнительные сведения о поддерживаемых свойствах и сведениях см. в разделе [Свойства набора данных BLOB-объектов Azure](connector-azure-blob-storage.md#dataset-properties).
 
-Задайте набор данных, представляющий исходные данные в большом двоичном объекте Azure. Этот набор данных большого двоичного объекта относится к связанной службе хранилища Azure, созданной на предыдущем шаге, и описывает следующее:
-
-- Расположение большого двоичного объекта для копирования: **FolderPath** и **FileName**.
-- Обратите внимание на использование параметров FolderPath. sourceBlobContainer — это имя параметра. Выражение заменяется значениями, передаваемыми в конвейере. Синтаксис для определения параметров: `@pipeline().parameters.<parameterName>`
-
-Создание функции StorageLinkedServiceDefinition в файле Program.cs
+Добавьте метод `SourceBlobDatasetDefinition` в файл *Program.cs*:
 
 ```csharp
 static DatasetResource SourceBlobDatasetDefinition(DataFactoryManagementClient client)
@@ -232,44 +232,48 @@ static DatasetResource SourceBlobDatasetDefinition(DataFactoryManagementClient c
 }
 ```
 
-### <a name="create-a-dataset-for-sink-azure-blob"></a>Создание набора данных для большого двоичного объекта Azure приемника
+Задайте набор данных, представляющий исходные данные в большом двоичном объекте Azure. Этот набор данных большого двоичного объекта относится к связанной службе хранилища Azure, созданной на предыдущем шаге. Набор данных BLOB-объектов описывает расположение большого двоичного объекта, из которого производится копирование: *FolderPath* и *FileName*.
 
-Создание функции StorageLinkedServiceDefinition в файле Program.cs
+Обратите внимание на использование параметров *FolderPath*. `sourceBlobContainer` — это имя параметра. Выражение заменяется значениями, передаваемыми в конвейере. Синтаксис для определения параметров: `@pipeline().parameters.<parameterName>`
 
-```csharp
-static DatasetResource SinkBlobDatasetDefinition(DataFactoryManagementClient client)
-{
-    Console.WriteLine("Creating dataset " + blobSinkDatasetName + "...");
-    AzureBlobDataset blobDataset = new AzureBlobDataset
-    {
-        FolderPath = new Expression { Value = "@pipeline().parameters.sinkBlobContainer" },
-        LinkedServiceName = new LinkedServiceReference
-        {
-            ReferenceName = storageLinkedServiceName
-        }
-    };
-    Console.WriteLine(SafeJsonConvert.SerializeObject(blobDataset, client.SerializationSettings));
-    DatasetResource dataset = new DatasetResource(blobDataset, name: blobSinkDatasetName);
-    return dataset;
-}
-```
+### <a name="create-a-dataset-for-a-sink-azure-blob"></a>Создание набора данных для большого двоичного объекта Azure приемника
 
-Добавьте следующий код, создающий наборы данных-приемники и источники большого двоичного объекта Azure, в метод **Main**. 
+1. Добавьте метод `SourceBlobDatasetDefinition` в файл *Program.cs*:
 
-```csharp
-client.Datasets.CreateOrUpdate(resourceGroup, dataFactoryName, blobSourceDatasetName, SourceBlobDatasetDefinition(client));
+   ```csharp
+   static DatasetResource SinkBlobDatasetDefinition(DataFactoryManagementClient client)
+   {
+       Console.WriteLine("Creating dataset " + blobSinkDatasetName + "...");
+       AzureBlobDataset blobDataset = new AzureBlobDataset
+       {
+           FolderPath = new Expression { Value = "@pipeline().parameters.sinkBlobContainer" },
+           LinkedServiceName = new LinkedServiceReference
+           {
+               ReferenceName = storageLinkedServiceName
+           }
+       };
+       Console.WriteLine(SafeJsonConvert.SerializeObject(blobDataset, client.SerializationSettings));
+       DatasetResource dataset = new DatasetResource(blobDataset, name: blobSinkDatasetName);
+       return dataset;
+   }
+   ```
 
-client.Datasets.CreateOrUpdate(resourceGroup, dataFactoryName, blobSinkDatasetName, SinkBlobDatasetDefinition(client));
-```
+1. Добавьте следующий код, создающий наборы данных-приемники и источники большого двоичного объекта Azure, в метод `Main`.
+
+   ```csharp
+   client.Datasets.CreateOrUpdate(resourceGroup, dataFactoryName, blobSourceDatasetName, SourceBlobDatasetDefinition(client));
+
+   client.Datasets.CreateOrUpdate(resourceGroup, dataFactoryName, blobSinkDatasetName, SinkBlobDatasetDefinition(client));
+   ```
 
 ## <a name="create-a-c-class-emailrequest"></a>Создание класса C# с именем EmailRequest
 
-В проекте C# создайте класс с именем **EmailRequest**. Он определяет свойства, которые конвейер отправляет в тексте запроса при отправке электронной почты. В этом руководстве конвейер отправляет четыре свойства из конвейера по адресу электронной почты:
+В проекте C# создайте класс с именем `EmailRequest`. Этот класс определяет свойства, которые конвейер отправляет в тексте запроса при отправке электронной почты. В этом руководстве конвейер отправляет четыре свойства из конвейера по адресу электронной почты:
 
-- **Сообщение**: текст сообщения электронной почты. В случае успешного копирования это свойство содержит сведения о выполнении (количество записанных данных). В случае сбоя копирования это свойство содержит сведения об ошибке.
-- **Имя фабрики данных**: имя фабрики данных.
-- **Имя конвейера**: имя конвейера.
-- **Получатель**: передаваемый параметр. Это свойство указывает получателя сообщения электронной почты.
+* Message. Текст сообщения электронной почты. В случае успешного копирования это свойство содержит объем записанных данных. В случае сбоя копирования это свойство содержит сведения об ошибке.
+* Имя фабрики данных. Имя фабрики данных
+* Имя конвейера. Имя конвейера.
+* Получатель. Переданный параметр. Это свойство указывает получателя сообщения электронной почты.
 
 ```csharp
     class EmailRequest
@@ -298,15 +302,11 @@ client.Datasets.CreateOrUpdate(resourceGroup, dataFactoryName, blobSinkDatasetNa
 
 ## <a name="create-email-workflow-endpoints"></a>Создание конечных точек рабочего процесса электронной почты
 
-Чтобы инициировать отправку сообщения электронной почты, используйте [Logic Apps](../logic-apps/logic-apps-overview.md) для определения рабочего процесса. Сведения о создании рабочего процесса приложения логики см. в статье [Создание первого рабочего процесса приложения логики для автоматизации процессов между облачными приложениями и облачными службами](../logic-apps/quickstart-create-first-logic-app-workflow.md). 
+Чтобы инициировать отправку сообщения электронной почты, используйте [Logic Apps](../logic-apps/logic-apps-overview.md) для определения рабочего процесса. Сведения о создании рабочего процесса приложения логики см. в статье [Создание первого рабочего процесса приложения логики для автоматизации процессов между облачными приложениями и облачными службами](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 
-### <a name="success-email-workflow"></a>Рабочий процесс успешной отправки сообщения электронной почты 
+### <a name="success-email-workflow"></a>Рабочий процесс успешной отправки сообщения электронной почты
 
-Создайте рабочий процесс приложения логики с именем `CopySuccessEmail`. Определите триггер рабочего процесса `When an HTTP request is received` и добавьте действие `Office 365 Outlook – Send an email`.
-
-![Рабочий процесс успешной отправки сообщения электронной почты](media/tutorial-control-flow/success-email-workflow.png)
-
-Для триггера запроса укажите в `Request Body JSON Schema` следующий фрагмент кода JSON:
+На [портале Azure](https://portal.azure.com) создайте рабочий процесс Logic Apps с именем *CopySuccessEmail*. Определите триггер рабочего процесса как `When an HTTP request is received`. Для триггера запроса укажите в `Request Body JSON Schema` следующий фрагмент кода JSON:
 
 ```json
 {
@@ -328,39 +328,29 @@ client.Datasets.CreateOrUpdate(resourceGroup, dataFactoryName, blobSinkDatasetNa
 }
 ```
 
-Это соответствует классу **EmailRequest**, созданному в предыдущем разделе. 
+Рабочий процесс выглядит примерно так, как показано в примере ниже:
 
-В конструкторе приложений логики запрос должен выглядеть следующим образом:
+![Рабочий процесс успешной отправки сообщения электронной почты](media/tutorial-control-flow/success-email-workflow-trigger.png)
 
-![Запрос в окне конструктора приложений логики](media/tutorial-control-flow/logic-app-designer-request.png)
+Это содержимое JSON соответствует классу `EmailRequest`, созданному в предыдущем разделе.
 
-Для действия **Отправка электронного сообщения** настройте способ форматирования электронного сообщения, используя свойства, переданные в схеме запроса текста JSON. Вот пример:
+Добавляет действие `Office 365 Outlook – Send an email`. Для действия **Отправка электронного сообщения** настройте способ форматирования электронного сообщения, используя свойства, переданные в **схеме** запроса текста JSON. Ниже приведен пример:
 
-![Конструктор приложения логики. Действие отправки электронной почты](media/tutorial-control-flow/send-email-action.png)
+![Конструктор приложения логики. Действие отправки электронной почты](media/tutorial-control-flow/customize-send-email-action.png)
 
-Запишите URL-адрес запроса HTTP Post рабочего процесса успешной отправки электронной почты:
+После сохранения рабочего процесса скопируйте и сохраните значение **HTTP POST URL** из триггера.
 
-```
-//Success Request Url
-https://prodxxx.eastus.logic.azure.com:443/workflows/000000/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=000000
-```
+## <a name="fail-email-workflow"></a>Рабочий процесс сбоя отправки сообщения электронной почты
 
-## <a name="fail-email-workflow"></a>Рабочий процесс сбоя отправки сообщения электронной почты 
-
-Клонируйте действие **CopySuccessEmail** и создайте еще один рабочий процесс Logic Apps **CopyFailEmail**. В триггере запроса действие `Request Body JSON schema` такое же. Просто измените формат электронной почты, например `Subject`, чтобы настроить процесс сбоя отправки сообщения электронной почты. Вот пример:
+Клонируйте **CopySuccessEmail** как другой рабочий процесс Logic Apps с именем *CopyFailEmail*. В триггере запроса действие `Request Body JSON schema` такое же. Измените формат сообщения электронной почты, например поле `Subject`, чтобы создать другое сообщение на случай сбоя. Вот пример:
 
 ![Конструктор приложения логики. Рабочий процесс сбоя отправки сообщения электронной почты](media/tutorial-control-flow/fail-email-workflow.png)
 
-Запишите URL-адрес запроса HTTP Post для рабочего процесса успешной отправки электронной почты:
+После сохранения рабочего процесса скопируйте и сохраните значение **HTTP POST URL** из триггера.
 
-```
-//Fail Request Url
-https://prodxxx.eastus.logic.azure.com:443/workflows/000000/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=000000
-```
+Теперь у вас должны быть два URL-адреса рабочего процесса, как в следующих примерах:
 
-Теперь у вас должно быть два URL-адреса рабочих процессов:
-
-```
+```csharp
 //Success Request Url
 https://prodxxx.eastus.logic.azure.com:443/workflows/000000/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=000000
 
@@ -370,104 +360,102 @@ https://prodxxx.eastus.logic.azure.com:443/workflows/000000/triggers/manual/path
 
 ## <a name="create-a-pipeline"></a>Создание конвейера
 
-Добавьте следующий код, создающий конвейер с действием копирования и свойством dependsOn, в метод Main. В этом руководстве конвейер содержит одно действие: операцию копирования, которая принимает набор данных большого двоичного объекта в качестве источника и другой набор данных большого двоичного объекта в качестве приемника. После завершения действия копирования (успех или сбой) вызываются разные задачи электронной почты.
+Вернитесь к проекту в Visual Studio. Теперь мы добавим код, создающий конвейер с действием копирования и свойством `DependsOn`. В этом руководстве конвейер содержит одно действие: операцию копирования, которая принимает набор данных большого двоичного объекта в качестве источника и другой набор данных большого двоичного объекта в качестве приемника. Если действие копирования завершается успешно или неудачно, оно вызывает другие задачи электронной почты.
 
 В этом конвейере используются следующие функции:
 
-- Параметры
-- Веб-действие
-- зависимость действия;
-- использование выходных данных действия в качестве входных данных для последующего действия.
+* Параметры
+* Веб-действие
+* Зависимость действий
+* Использование выходных данных действия в качестве входных данных для другого действия
 
-Давайте разобьем следующий конвейер на части.
+1. Добавьте следующий метод в проект. В следующих разделах приведены дополнительные сведения.
 
-```csharp
-
-static PipelineResource PipelineDefinition(DataFactoryManagementClient client)
-        {
-            Console.WriteLine("Creating pipeline " + pipelineName + "...");
-            PipelineResource resource = new PipelineResource
+    ```csharp
+    static PipelineResource PipelineDefinition(DataFactoryManagementClient client)
             {
-                Parameters = new Dictionary<string, ParameterSpecification>
+                Console.WriteLine("Creating pipeline " + pipelineName + "...");
+                PipelineResource resource = new PipelineResource
                 {
-                    { "sourceBlobContainer", new ParameterSpecification { Type = ParameterType.String } },
-                    { "sinkBlobContainer", new ParameterSpecification { Type = ParameterType.String } },
-                    { "receiver", new ParameterSpecification { Type = ParameterType.String } }
+                    Parameters = new Dictionary<string, ParameterSpecification>
+                    {
+                        { "sourceBlobContainer", new ParameterSpecification { Type = ParameterType.String } },
+                        { "sinkBlobContainer", new ParameterSpecification { Type = ParameterType.String } },
+                        { "receiver", new ParameterSpecification { Type = ParameterType.String } }
 
-                },
-                Activities = new List<Activity>
-                {
-                    new CopyActivity
+                    },
+                    Activities = new List<Activity>
                     {
-                        Name = copyBlobActivity,
-                        Inputs = new List<DatasetReference>
+                        new CopyActivity
                         {
-                            new DatasetReference
+                            Name = copyBlobActivity,
+                            Inputs = new List<DatasetReference>
                             {
-                                ReferenceName = blobSourceDatasetName
+                                new DatasetReference
+                                {
+                                    ReferenceName = blobSourceDatasetName
+                                }
+                            },
+                            Outputs = new List<DatasetReference>
+                            {
+                                new DatasetReference
+                                {
+                                    ReferenceName = blobSinkDatasetName
+                                }
+                            },
+                            Source = new BlobSource { },
+                            Sink = new BlobSink { }
+                        },
+                        new WebActivity
+                        {
+                            Name = sendSuccessEmailActivity,
+                            Method = WebActivityMethod.POST,
+                            Url = "https://prodxxx.eastus.logic.azure.com:443/workflows/00000000000000000000000000000000000/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=0000000000000000000000000000000000000000000000",
+                            Body = new EmailRequest("@{activity('CopyBlobtoBlob').output.dataWritten}", "@{pipeline().DataFactory}", "@{pipeline().Pipeline}", "@pipeline().parameters.receiver"),
+                            DependsOn = new List<ActivityDependency>
+                            {
+                                new ActivityDependency
+                                {
+                                    Activity = copyBlobActivity,
+                                    DependencyConditions = new List<String> { "Succeeded" }
+                                }
                             }
                         },
-                        Outputs = new List<DatasetReference>
+                        new WebActivity
                         {
-                            new DatasetReference
+                            Name = sendFailEmailActivity,
+                            Method =WebActivityMethod.POST,
+                            Url = "https://prodxxx.eastus.logic.azure.com:443/workflows/000000000000000000000000000000000/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=0000000000000000000000000000000000000000000",
+                            Body = new EmailRequest("@{activity('CopyBlobtoBlob').error.message}", "@{pipeline().DataFactory}", "@{pipeline().Pipeline}", "@pipeline().parameters.receiver"),
+                            DependsOn = new List<ActivityDependency>
                             {
-                                ReferenceName = blobSinkDatasetName
-                            }
-                        },
-                        Source = new BlobSource { },
-                        Sink = new BlobSink { }
-                    },
-                    new WebActivity
-                    {
-                        Name = sendSuccessEmailActivity,
-                        Method = WebActivityMethod.POST,
-                        Url = "https://prodxxx.eastus.logic.azure.com:443/workflows/00000000000000000000000000000000000/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=0000000000000000000000000000000000000000000000",
-                        Body = new EmailRequest("@{activity('CopyBlobtoBlob').output.dataWritten}", "@{pipeline().DataFactory}", "@{pipeline().Pipeline}", "@pipeline().parameters.receiver"),
-                        DependsOn = new List<ActivityDependency>
-                        {
-                            new ActivityDependency
-                            {
-                                Activity = copyBlobActivity,
-                                DependencyConditions = new List<String> { "Succeeded" }
-                            }
-                        }
-                    },
-                    new WebActivity
-                    {
-                        Name = sendFailEmailActivity,
-                        Method =WebActivityMethod.POST,
-                        Url = "https://prodxxx.eastus.logic.azure.com:443/workflows/000000000000000000000000000000000/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=0000000000000000000000000000000000000000000",
-                        Body = new EmailRequest("@{activity('CopyBlobtoBlob').error.message}", "@{pipeline().DataFactory}", "@{pipeline().Pipeline}", "@pipeline().parameters.receiver"),
-                        DependsOn = new List<ActivityDependency>
-                        {
-                            new ActivityDependency
-                            {
-                                Activity = copyBlobActivity,
-                                DependencyConditions = new List<String> { "Failed" }
+                                new ActivityDependency
+                                {
+                                    Activity = copyBlobActivity,
+                                    DependencyConditions = new List<String> { "Failed" }
+                                }
                             }
                         }
                     }
-                }
-            };
-            Console.WriteLine(SafeJsonConvert.SerializeObject(resource, client.SerializationSettings));
-            return resource;
-        }
-```
+                };
+                Console.WriteLine(SafeJsonConvert.SerializeObject(resource, client.SerializationSettings));
+                return resource;
+            }
+    ```
 
-Добавьте следующий код, создающий конвейер, в метод **Main**:
+1. Добавьте следующую строку, создающую конвейер, в метод `Main`:
 
-```
-client.Pipelines.CreateOrUpdate(resourceGroup, dataFactoryName, pipelineName, PipelineDefinition(client));
-```
+   ```csharp
+   client.Pipelines.CreateOrUpdate(resourceGroup, dataFactoryName, pipelineName, PipelineDefinition(client));
+   ```
 
 ### <a name="parameters"></a>Параметры
 
-В первой части нашего конвейера определяются параметры. 
+В первой части кода конвейера определяются параметры.
 
-- Параметр sourceBlobContainer в конвейере использует исходный набор данных большого двоичного объекта.
-- Параметр sinkBlobContainer в конвейере использует набор данных-приемник большого двоичного объекта.
-- Параметр receiver используется двумя веб-действиями в конвейере для отправки получателю сообщений электронной почты об успешном или неуспешном выполнении (адрес электронной почты получателя указан в этом параметре).
-
+* `sourceBlobContainer`. Исходный набор данных больших двоичных объектов использует этот параметр в конвейере.
+* `sinkBlobContainer`. Исходный набор данных для целевого BLOB-объекта использует этот параметр в конвейере.
+* `receiver`. Этот параметр используется в двух веб-действиях в конвейере, которые отправляют получателю сообщения об успешном или неуспешном выполнении.
 
 ```csharp
 Parameters = new Dictionary<string, ParameterSpecification>
@@ -480,7 +468,7 @@ Parameters = new Dictionary<string, ParameterSpecification>
 
 ### <a name="web-activity"></a>Веб-действие
 
-Веб-действие разрешает выполнять вызов любой конечной точки REST. Дополнительные сведения о действиях см. в статье [Веб-действие в фабрике данных Azure](control-flow-web-activity.md). Этот конвейер использует веб-действие для вызова рабочего процесса электронной почты Logic Apps. Вы создаете два веб-действия: вызывающие рабочий процесс **CopySuccessEmail** и **CopyFailWorkFlow**.
+Веб-действие разрешает выполнять вызов любой конечной точки REST. Дополнительные сведения о этом действии см. в разделе [Веб-действие в фабрике данных Azure](control-flow-web-activity.md). Этот конвейер использует веб-действие для вызова рабочего процесса электронной почты Logic Apps. Вы создаете два веб-действия: одно, которое вызывает рабочий процесс `CopySuccessEmail`, и другое, которое вызывает `CopyFailWorkFlow`.
 
 ```csharp
         new WebActivity
@@ -500,18 +488,18 @@ Parameters = new Dictionary<string, ParameterSpecification>
         }
 ```
 
-В свойстве Url вставьте конечные точки URL-адреса запроса из соответствующего рабочего процесса Logic Apps. В свойстве Body передайте экземпляр класса EmailRequest. Запрос сообщения электронной почты содержит следующие свойства.
+В свойстве `Url` вставьте конечные точки **HTTP POST URL** из рабочих процессов Logic Apps. В свойстве `Body` передайте экземпляр класса `EmailRequest`. Запрос сообщения электронной почты содержит следующие свойства.
 
-- Сообщение — передает значение `@{activity('CopyBlobtoBlob').output.dataWritten`. Обращается к свойству предыдущего действия копирования и передает значение dataWritten. В случае сбоя передает выходные данные ошибки вместо `@{activity('CopyBlobtoBlob').error.message`.
-- Имя фабрики данных — передает значение `@{pipeline().DataFactory}`. Это системная переменная, которая позволяет получить доступ к соответствующему имени фабрики данных. Список поддерживаемых системных переменных см. в статье [Системные переменные, поддерживаемые фабрикой данных Azure](control-flow-system-variables.md).
-- Имя конвейера — передает значение `@{pipeline().Pipeline}`. Это системная переменная, которая позволяет обращаться к соответствующему имени конвейера. 
-- Получатель — передает значение "\@pipeline().parameters.receiver"). Получает доступ к параметрам конвейера.
- 
-Этот код создает зависимость действия на основе предыдущей успешной операции копирования.
+* Message. Передает значение `@{activity('CopyBlobtoBlob').output.dataWritten`. Обращается к свойству предыдущего действия копирования и передает значение `dataWritten`. В случае сбоя передает выходные данные ошибки вместо `@{activity('CopyBlobtoBlob').error.message`.
+* Имя Фабрики данных. Передает значение `@{pipeline().DataFactory}`. Эта системная переменная позволяет получить доступ к соответствующему имени фабрики данных. Список поддерживаемых системных переменных см. в статье [Системные переменные, поддерживаемые фабрикой данных Azure](control-flow-system-variables.md).
+* Имя конвейера. Передает значение `@{pipeline().Pipeline}`. Эта системная переменная позволяет получить доступ к соответствующему имени конвейера.
+* Получатель. Передает значение `"@pipeline().parameters.receiver"`. Получает доступ к параметрам конвейера.
+
+Этот код создает новую зависимость действия, которая зависит от предыдущего действия копирования.
 
 ## <a name="create-a-pipeline-run"></a>Создание конвейера
 
-Добавьте в метод **Main** следующий код, **активирующий выполнение конвейера**.
+Добавьте в метод `Main` следующий код, активирующий выполнение конвейера.
 
 ```csharp
 // Create a pipeline run
@@ -527,9 +515,9 @@ CreateRunResponse runResponse = client.Pipelines.CreateRunWithHttpMessagesAsync(
 Console.WriteLine("Pipeline run ID: " + runResponse.RunId);
 ```
 
-## <a name="main-class"></a>Класс Main 
+## <a name="main-class"></a>Класс Main
 
-Итоговый метод Main должен выглядеть следующим образом. Создайте и запустите программу для запуска конвейера.
+Итоговый метод `Main` должен выглядеть следующим образом.
 
 ```csharp
 // Authenticate and create a data factory management client
@@ -559,9 +547,11 @@ CreateRunResponse runResponse = client.Pipelines.CreateRunWithHttpMessagesAsync(
 Console.WriteLine("Pipeline run ID: " + runResponse.RunId);
 ```
 
+Создайте и запустите программу для запуска конвейера.
+
 ## <a name="monitor-a-pipeline-run"></a>Мониторинг выполнения конвейера
 
-1. Добавьте следующий код в метод **Main**, чтобы постоянно проверять состояние выполнения конвейера до завершения копирования данных.
+1. Добавьте в метод `Main` следующий код:
 
     ```csharp
     // Monitor the pipeline run
@@ -578,7 +568,9 @@ Console.WriteLine("Pipeline run ID: " + runResponse.RunId);
     }
     ```
 
-2. Добавьте в метод **Main** следующий код, извлекающий сведения о выполнении действия копирования, например размер записанных и прочитанных данных.
+    Этот код постоянно проверяет состояние запуска до тех пор, пока копирование данных не завершится.
+
+1. Добавьте в метод `Main` следующий код, извлекающий сведения о выполнении действия копирования, например размер записанных и прочитанных данных.
 
     ```csharp
     // Check the copy activity run details
@@ -602,9 +594,10 @@ Console.WriteLine("Pipeline run ID: " + runResponse.RunId);
 ## <a name="run-the-code"></a>Выполнение кода
 
 Создайте и запустите приложение, а затем проверьте выполнение конвейера.
-Консоль выведет ход выполнения создания фабрики данных, связанной службы, наборов данных, конвейера и выполнения конвейера. Затем она проверяет состояние выполнения конвейера. Дождитесь появления сведений о действии копирования с размером записанных и прочитанных данных. Затем воспользуйтесь такими средствами, как обозреватель службы хранилища Azure, чтобы проверить, скопирован ли большой двоичный объект в outputBlobPath из inputBlobPath, как указано в переменных.
 
-**Пример выходных данных**
+Приложение выведет ход выполнения создания фабрики данных, связанной службы, наборов данных, конвейера и выполнения конвейера. Затем она проверяет состояние выполнения конвейера. Дождитесь появления сведений о действии копирования с размером записанных и прочитанных данных. Затем воспользуйтесь такими средствами, как обозреватель службы хранилища Azure, чтобы проверить, скопирован ли большой двоичный объект в *outputBlobPath* из *inputBlobPath*, как указано в переменных.
+
+Результат должен выглядеть так:
 
 ```json
 Creating data factory DFTutorialTest...
@@ -758,15 +751,15 @@ Press any key to exit...
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом руководстве вы выполнили следующие шаги: 
+В этом руководстве описано, как выполнять следующие задачи:
 
 > [!div class="checklist"]
-> * Создадите фабрику данных.
-> * Создание связанной службы хранилища Azure.
+> * Создание фабрики данных
+> * Создание связанной службы хранилища Azure
 > * Создание набора данных больших двоичных объектов Azure
 > * Создание конвейера, содержащего действия копирования и веб-действие.
 > * Отправка выходных данных действий для последующих действий.
-> * Использование передачи параметров и системных переменных.
+> * Использование передачи параметров и системных переменных
 > * Запуск конвейера.
 > * Мониторинг конвейера и выполнения действий.
 

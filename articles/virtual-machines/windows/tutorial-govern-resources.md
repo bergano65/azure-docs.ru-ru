@@ -13,12 +13,12 @@ ms.topic: tutorial
 ms.date: 12/05/2018
 ms.author: tomfitz
 ms.custom: mvc
-ms.openlocfilehash: 8c551e5c61c091e46870efcc8bffcb669aa78ea9
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: cb0050f79f2f6a38b9cd58ee87aa88899f0f5a15
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70100333"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71674989"
 ---
 # <a name="tutorial-learn-about-windows-virtual-machine-management-with-azure-powershell"></a>Руководство по Управление виртуальными машинами Windows с помощью Azure PowerShell
 
@@ -235,8 +235,8 @@ Remove-AzResourceGroup -Name myResourceGroup
 > * защита важных ресурсов с помощью блокировок;
 > * добавление к ресурсам тегов для выставления счетов и управления.
 
-Перейдите к следующему руководству, чтобы узнать о высокодоступных виртуальных машинах.
+Перейдите к следующему руководству, чтобы узнать, как выявлять изменения и управлять обновлениями пакетов на виртуальной машине Linux.
 
 > [!div class="nextstepaction"]
-> [Мониторинг виртуальных машин](tutorial-monitoring.md)
+> [Управление виртуальными машинами](tutorial-config-management.md)
 

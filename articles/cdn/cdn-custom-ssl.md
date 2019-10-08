@@ -12,15 +12,15 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 08/28/2019
+ms.date: 10/1/2019
 ms.author: magattus
 ms.custom: mvc
-ms.openlocfilehash: 10e0f24642d54c43d6c818773d0eb17815ab784b
-ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
+ms.openlocfilehash: b6ac528d0d2916f513be4e2a72bff061bdad8e58
+ms.sourcegitcommit: a19f4b35a0123256e76f2789cd5083921ac73daf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70996907"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71718647"
 ---
 # <a name="tutorial-configure-https-on-an-azure-cdn-custom-domain"></a>Руководство по Настройка протокола HTTPS для личного домена в Azure CDN
 
@@ -190,7 +190,7 @@ Azure CDN по умолчанию поддерживает HTTPS в имени �
 ### <a name="custom-domain-is-not-mapped-to-your-cdn-endpoint"></a>Пользовательский домен не сопоставлен с конечной точкой CDN
 
 >[!NOTE]
->Если вы используете **Azure CDN от Akamai**, личный домен необходимо сопоставить с конечной точкой CDN с помощью записи CNAME, как указано выше.  Эта функция сейчас доступна в режиме невыполненной работы. 
+>Если вы используете **Azure CDN от Akamai**, необходимо настроить следующую запись CNAME для включения автоматической проверки домена. "_acme-challenge.<custom domain hostname> -> CNAME -> <custom domain hostname>.ak-acme-challenge.azureedge.net"
 
 Если запись CNAME содержит поддомен cdnverify, следуйте остальным инструкциям в этом шаге.
 

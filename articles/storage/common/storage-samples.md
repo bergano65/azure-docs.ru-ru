@@ -7,12 +7,12 @@ ms.date: 09/06/2019
 ms.service: storage
 ms.subservice: common
 ms.topic: sample
-ms.openlocfilehash: 03a036ce5381130af4bbcea88c87d77cd93cf6a9
-ms.sourcegitcommit: 86d49daccdab383331fc4072b2b761876b73510e
+ms.openlocfilehash: e2816d8e6fdd900473cceebb20c96794f3f9f0f9
+ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70743889"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71350874"
 ---
 # <a name="azure-storage-samples"></a>Примеры для службы хранилища Azure
 
@@ -40,13 +40,7 @@ ms.locfileid: "70743889"
 ## <a name="nodejs-samples"></a>Примеры для Node.js
 Для просмотра примеров Node.js загрузите [Клиентскую библиотеку хранилища Node.js](https://github.com/Azure/azure-storage-node).
 
-* [Средство отправки BLOB-объектов](https://github.com/Azure/azure-storage-node/tree/master/examples/blobuploader)
-* [Отправка и загрузка BLOB-объектов](https://github.com/Azure/azure-storage-node/blob/master/examples/samples/blobuploaddownloadsample.js)
-* [Метка продолжения](https://github.com/Azure/azure-storage-node/blob/master/examples/samples/continuationsample.js)
-* [Политика повтора](https://github.com/Azure/azure-storage-node/blob/master/examples/samples/retrypolicysample.js)
-* [Подписанный URL-адрес](https://github.com/Azure/azure-storage-node/blob/master/examples/samples/sassample.js)
-* [Моментальный снимок](https://github.com/Azure/azure-storage-node/blob/master/examples/samples/snapshotsample.js)
-* [Табличный запрос](https://github.com/Azure/azure-storage-node/blob/master/examples/samples/tablequerysample.js)
+* [Примеры для службы хранилища Azure с использованием JavaScript/Node.js](storage-samples-javascript.md)
 
 ## <a name="c-samples"></a>Примеры для C++
 Для просмотра примеров C++ загрузите [Клиентскую библиотеку хранилища C++](https://www.nuget.org/packages/wastorage/) на NuGet.
@@ -71,4 +65,5 @@ ms.locfileid: "70743889"
 
 * [Примеры для службы хранилища Azure с использованием .NET](storage-samples-dotnet.md)
 * [Примеры для службы хранилища Azure с использованием Java](storage-samples-java.md)
+* [Примеры для службы хранилища Azure с использованием JavaScript](storage-samples-javascript.md)
 * [Примеры для работы со службой хранилища Azure с помощью Python](storage-samples-python.md)

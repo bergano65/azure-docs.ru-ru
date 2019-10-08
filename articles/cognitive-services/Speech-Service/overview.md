@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: overview
 ms.date: 07/05/2019
 ms.author: erhopf
-ms.openlocfilehash: 0aa4286d8cb630f221613bebd13f7ea722224ac6
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 993064a36bd12c95e83ffb7c9635c3e4dfcec0f0
+ms.sourcegitcommit: 4f3f502447ca8ea9b932b8b7402ce557f21ebe5a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70068842"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71803346"
 ---
 # <a name="what-are-the-speech-services"></a>Общие сведения о службе "Речь"
 
@@ -41,6 +41,8 @@ ms.locfileid: "70068842"
 
 Узнайте о новых возможностях служб речи Azure.
 
+* Сентябрь 2019 г.
+  * Выпущен пакет SDK версии 1.7.0 для службы "Речь". Полный список обновлений, улучшений и распространенных проблем см. в статье [Release notes](releasenotes.md) (Заметки о выпуске).
 * Август 2019 г.
   * **Новое руководство**. [Включение голосовых команд в боте с помощью пакета SDK службы "Речь" для C#](tutorial-voice-enable-your-bot-speech-sdk.md)
   * Добавлен новый стиль речи [`chat`](speech-synthesis-markup.md#adjust-speaking-styles) для голоса `en-US-JessaNeural`. 

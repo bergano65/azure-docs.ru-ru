@@ -8,12 +8,12 @@ ms.service: search
 ms.topic: tutorial
 ms.date: 05/02/2019
 ms.author: heidist
-ms.openlocfilehash: d0f0abade5d1eea952c5abde293ae90745ee9b04
-ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
+ms.openlocfilehash: 1ba0a965de356cfbe7d9a1cfc8d6d2e8da092934
+ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69640656"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71327178"
 ---
 # <a name="c-tutorial-crawl-an-azure-sql-database-using-azure-search-indexers"></a>Руководство по C#. Сканирование базы данных Azure SQL с помощью индексаторов в службе "Поиск Azure"
 
@@ -230,7 +230,7 @@ public string HotelName { get; set; }
 
 + Сведения о подключении к базе данных в **appsettings.json**. Это должна быть строка подключения ADO.NET, полученная на портале, в которую добавлены допустимые для базы данных имя пользователя и пароль. Учетная запись пользователя должна предоставлять разрешение на получение данных.
 
-+ Ограничения ресурсов. Помните, что для общедоступной (бесплатной) службы действуют ограничения в три индекса, индексатора и источника данных. В службе с максимальным количеством объектов нельзя создавать новые.
++ Ограничения ресурсов. Помните, что для уровня "Бесплатный" действуют ограничения в три индекса, индексатора и источника данных. В службе с максимальным количеством объектов нельзя создавать новые.
 
 ## <a name="search-the-index"></a>Поиск по индексу 
 

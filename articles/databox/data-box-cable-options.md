@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: overview
 ms.date: 10/24/2018
 ms.author: alkohli
-ms.openlocfilehash: 4759676eff03606998759a586f758b7a26ead23d
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 661cec672aa02f62b479b7f5831adfdaff9e6b21
+ms.sourcegitcommit: 9fba13cdfce9d03d202ada4a764e574a51691dcd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58077553"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71316558"
 ---
 # <a name="cabling-options-for-your-azure-data-box"></a>Варианты подключения кабелей к устройству Azure Data Box
 
@@ -74,7 +74,7 @@ ms.locfileid: "58077553"
 
 Выполните следующие действия, чтобы подключить кабель к устройству.
 
-1. Для конфигурации используйте кабель Ethernet RJ45, подключенный с сервера непосредственно к порту MGMT.
+1. Для конфигурации используйте кабель Ethernet RJ45, подключенный с отдельного компьютера непосредственно к порту MGMT.
 2. Используйте кабели RJ45 для DATA 3 или SFP+ для подключения DATA 1 или DATA 2 к серверу. Мы рекомендуем использовать порты 10 GbE DATA 1 или DATA 2 для обеспечения высокой производительности. Порты данных подключаются через коммутатор 10 GbE к серверу с данными.
 3. Настройте адаптер Ethernet на ноутбуке, который используется для подключения к устройству, указав следующие значения:
 

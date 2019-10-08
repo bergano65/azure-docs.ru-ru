@@ -12,12 +12,12 @@ metadata:
   author: KingdomOfEnds
   ms.author: v-adgera
   ms.date: 09/04/2019
-  ms.openlocfilehash: 46cea77843b388f128885891dcdbb9b01b6cd2f5
-  ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
+  ms.openlocfilehash: 14358c23bf9739c75915b66849a657633e2cc2db
+  ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 09/26/2019
-  ms.locfileid: "71289161"
+  ms.lasthandoff: 10/06/2019
+  ms.locfileid: "71978847"
 landingContent:
 - title: Общие сведения об Аналитике временных рядов Azure
   linkLists:
@@ -41,10 +41,8 @@ landingContent:
     links:
     - text: Руководство по службе "Аналитика временных рядов Azure" (предварительная версия)
       url: time-series-insights-update-create-environment.md
-    - text: Создание одностраничного веб-приложения
-      url: tutorial-create-tsi-sample-spa.md
-    - text: Клиентская библиотека JavaScript Аналитики временных рядов
-      url: tutorial-explore-js-client-lib.md
+    - text: Пример визуализации с использованием клиентского пакета SDK
+      url: https://tsiclientsample.azurewebsites.net/
   - linkListType: how-to-guide
     links:
     - text: Подготовка и управление
@@ -85,10 +83,8 @@ landingContent:
     links:
     - text: Создание среды службы "Аналитика временных рядов"
       url: tutorial-create-populate-tsi-environment.md
-    - text: Создание одностраничного веб-приложения
-      url: tutorial-create-tsi-sample-spa.md
-    - text: Клиентская библиотека JavaScript Аналитики временных рядов
-      url: tutorial-explore-js-client-lib.md
+    - text: Пример визуализации с использованием клиентского пакета SDK
+      url: https://tsiclientsample.azurewebsites.net/
   - linkListType: how-to-guide
     links:
     - text: Создание среды

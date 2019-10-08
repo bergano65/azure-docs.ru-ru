@@ -7,12 +7,12 @@ author: gvashishtha
 ms.author: gopalv
 ms.topic: quickstart
 ms.date: 09/10/2019
-ms.openlocfilehash: f50d784b7518bd01a3a0069cb474296d359420a8
-ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
+ms.openlocfilehash: 951191422e80ef6224cd140beed782de31cb3822
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71200049"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71677840"
 ---
 # <a name="quickstart-set-up-the-data-science-virtual-machine-for-linux-ubuntu"></a>Краткое руководство. Настройка Виртуальной машины Linux (Ubuntu) для обработки и анализа данных
 
@@ -21,6 +21,7 @@ ms.locfileid: "71200049"
 ## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы создать виртуальную машину Windows для обработки и анализа данных, вам потребуется подписка Azure. [Воспользуйтесь бесплатной пробной версией Azure](https://azure.com/free).
+Обратите внимание, что бесплатные учетные записи Azure не поддерживают номера SKU виртуальных машин с поддержкой GPU.
 
 ## <a name="create-your-data-science-virtual-machine-for-linux"></a>Создание виртуальной машины Linux для обработки и анализа данных
 

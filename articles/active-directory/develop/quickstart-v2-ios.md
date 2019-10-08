@@ -17,12 +17,12 @@ ms.author: twhitney
 ms.reviewer: jmprieur, saeeda
 ms.custom: aaddev, identityplatformtop40
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1b8637bb1a1ba397750bd04c88c6535fa3d1caa0
-ms.sourcegitcommit: 0486aba120c284157dfebbdaf6e23e038c8a5a15
+ms.openlocfilehash: bdb1ae92b17bef281e3b82a8c1a21344fa37f0da
+ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71309639"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71345535"
 ---
 # <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-an-ios-or-macos-app"></a>Краткое руководство. Вход пользователей и вызов Microsoft API Graph из приложения iOS или macOS
 
@@ -94,11 +94,11 @@ ms.locfileid: "71309639"
 > 1. Извлеките ZIP-файл и откройте проект в XCode.
 > 1. Измените **ViewController.swift** и замените строку, начинающуюся с "let kClientID", следующим фрагментом кода. Не забудьте обновить значение `kClientID`, указав идентификатор клиента, который вы ранее сохранили при регистрации приложения на портале в этом кратком руководстве.
 >    ```swift
->    let kClientID = "<ENTER_YOUR_APPLICATION/CLIENT_ID>"
+>    let kClientID = "Enter_the_Application_Id_Here"
 >    ```
 > 1. Откройте параметры проекта. В разделе **Идентификатор** введите **идентификатор пакета**, введенный на портале.
 > 1. (Только для iOS) Щелкните **Info.plist**, а затем выберите **Открыть как** > **Исходный код**.
-> 1. (Только для iOS) В корневом узле словаря замените `Enter_the_bundle_Id_Here`на ***идентификатор пакета***, введенный на портале.
+> 1. (Только для iOS) В корневом узле словаря замените `CFBundleURLSchemes` на ***идентификатор пакета***, введенный на портале.
 >
 >    ```xml
 >    <key>CFBundleURLTypes</key>
@@ -120,11 +120,11 @@ ms.locfileid: "71309639"
 > 1. Извлеките ZIP-файл и откройте проект в XCode.
 > 1. Измените **ViewController.swift** и замените строку, начинающуюся с "let kClientID", следующим фрагментом кода. Не забудьте обновить значение `kClientID`, указав идентификатор клиента, который вы ранее сохранили при регистрации приложения на портале в этом кратком руководстве:
 >    ```swift
->    let kClientID = "<ENTER_YOUR_APPLICATION/CLIENT_ID>"
+>    let kClientID = "Enter_the_Application_Id_Here"
 >    ```
 > 1. Откройте параметры проекта. В разделе **Идентификатор** введите **идентификатор пакета**, введенный на портале.
 > 1. (Только для iOS) Щелкните **Info.plist**, а затем выберите **Открыть как** > **Исходный код**.
-> 1. (Только для iOS) В корневом узле словаря замените `Enter_the_bundle_Id_Here`на ***идентификатор пакета***, использованный на портале.
+> 1. (Только для iOS) В корневом узле словаря замените `Enter_the_bundle_Id_Here` на ***идентификатор пакета***, использованный на портале.
 >
 >    ```xml
 >    <key>CFBundleURLTypes</key>

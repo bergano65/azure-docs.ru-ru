@@ -10,12 +10,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: 6d354ab25125b0df90ac3d6852d7eafe5d5aba46
-ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
+ms.openlocfilehash: 60fe9569b0e6e92ae161271439ecbf1b04788ed4
+ms.sourcegitcommit: 8bae7afb0011a98e82cbd76c50bc9f08be9ebe06
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71064696"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71694582"
 ---
 # <a name="tutorial-grant-access-to-an-aspnet-core-web-api-from-a-single-page-application-using-azure-active-directory-b2c"></a>Руководство по Предоставление доступа к веб-API ASP.NET Core из одностраничного приложения с помощью Azure Active Directory B2C
 
@@ -38,32 +38,15 @@ ms.locfileid: "71064696"
 
 ## <a name="add-a-web-api-application"></a>Добавление приложения веб-API
 
-Ресурсы веб-API необходимо зарегистрировать в клиенте, чтобы они могли принимать запросы защищенных ресурсов от клиентских приложений, которые представляют токен доступа, и отвечать на них.
-
-1. Войдите на [портале Azure](https://portal.azure.com).
-1. Убедитесь, что используете каталог с клиентом Azure AD B2C, выбрав фильтр **Каталог и подписка** в меню вверху и каталог с вашим клиентом.
-1. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
-1. Щелкните **Приложения**, а затем выберите **Добавить**.
-1. Введите имя приложения. Например, *webapi1*.
-1. Для поля **Включить веб-приложение или веб-API** и **Разрешить неявный поток** выберите **Да**.
-1. Для **URL-адреса ответа** введите конечные точки, куда Azure AD B2C возвращает все маркеры, запрашиваемые вашим приложением. В этом руководстве пример выполняется локально и ожидает передачи данных по адресу `https://localhost:5000`.
-1. В поле **URI кода приложения** введите идентификатор конечной точки API для указанного URI. Для этого учебника введите `api`, чтобы полный URI имел вид `https://contosotenant.onmicrosoft.com/api`.
-1. Нажмите кнопку **Создать**.
-1. Выберите приложение *webapi1*, чтобы открыть страницу его свойств.
-1. Запишите **идентификатор приложения**, указанный на странице свойств. Этот идентификатор потребуется вам на следующих шагах при настройке веб-приложения.
+[!INCLUDE [active-directory-b2c-appreg-webapi](../../includes/active-directory-b2c-appreg-webapi.md)]
 
 ## <a name="configure-scopes"></a>Настройка областей
 
 Области предоставляют способ контроля доступа к защищенным ресурсам. Области используются веб-API для реализации управления доступом на уровне области. Например, некоторые пользователи могут иметь доступ на чтение и запись, тогда как другие пользователи могут иметь разрешения только на чтение. В этом учебнике вы определяете разрешения на чтение и запись для веб-API.
 
-1. Выберите **Приложения** и щелкните *webapi1*, чтобы открыть страницу его свойств, если она еще не открыта.
-1. Выберите **Опубликованные области**.
-1. Для параметра **Область** введите `Hello.Read`, а для параметра **Описание** — `Read access to hello`.
-1. Для параметра **Область** введите `Hello.Write`, а для параметра **Описание** — `Write access to hello`.
-1. Щелкните **Сохранить**.
-1. Запишите **значение полной области**, которое будет использоваться в области `Hello.Read` на следующих шагах при настройке одностраничного приложения. Значение полной области аналогично `https://yourtenant.onmicrosoft.com/api/Hello.Read`.
+[!INCLUDE [active-directory-b2c-scopes](../../includes/active-directory-b2c-scopes.md)]
 
-Опубликованные области можно использовать для предоставления приложению клиента разрешения на доступ к веб-API.
+Запишите **значение полной области**, которое будет использоваться в области `demo.read` на следующих шагах при настройке одностраничного приложения. Значение полной области аналогично `https://yourtenant.onmicrosoft.com/api/demo.read`.
 
 ## <a name="grant-permissions"></a>Предоставление разрешений
 
@@ -71,12 +54,7 @@ ms.locfileid: "71064696"
 
 Выполняя предварительные требования, вы создали веб-приложение *webapp1*. В этом учебнике вы настроите это приложение для вызова веб-API *webapi1*, созданного в предыдущем разделе.
 
-1. Перейдите к клиенту B2C на портале Azure.
-1. Щелкните **Приложения**, а затем выберите *webapp1*.
-1. Щелкните **Доступ через API**, а затем выберите **Добавить**.
-1. В раскрывающемся списке **Выбрать API** выберите *webapi1*.
-1. В раскрывающемся списке **Выбрать области** выберите области **Hello.Read** и **Hello.Write**, определенные ранее.
-1. Последовательно выберите **ОК**.
+[!INCLUDE [active-directory-b2c-permissions-api](../../includes/active-directory-b2c-permissions-api.md)]
 
 Одностраничное веб-приложение зарегистрировано для вызова защищенного веб-API. Пользователь выполняет проверку подлинности в Azure AD B2C для использования одностраничного приложения. Одностраничное приложение получает предоставление авторизации из Azure AD B2C для доступа к защищенному веб-API.
 
@@ -101,8 +79,8 @@ git clone https://github.com/Azure-Samples/active-directory-b2c-dotnetcore-webap
       "ClientId": "<webapi-application-ID>",
       "Policy": "B2C_1_signupsignin1",
 
-      "ScopeRead": "Hello.Read",
-      "ScopeWrite": "Hello.Write"
+      "ScopeRead": "demo.read",
+      "ScopeWrite": "demo.write"
     },
     ```
 
@@ -154,7 +132,7 @@ git clone https://github.com/Azure-Samples/active-directory-b2c-dotnetcore-webap
 Чтобы изменить параметры в SPA, выполните приведенные ниже действия.
 
 1. Откройте файл *index.html* в проекте [active-directory-b2c-javascript-msal-singlepageapp][github-js-spa], скачанном или клонированном в предыдущем учебнике.
-1. Настройте пример с помощью URI для области *Hello.Read*, созданной ранее, а также URL-адрес веб-API.
+1. Настройте пример с помощью URI для области *demo.read*, созданной ранее, а также URL-адрес веб-API.
     1. В определении `appConfig` замените значение `b2cScopes` полным URI для области (**значение полной области**, записанное ранее).
     1. Замените значение `webApi` значением `applicationURL`, указанным в предыдущем разделе.
 
@@ -163,7 +141,7 @@ git clone https://github.com/Azure-Samples/active-directory-b2c-dotnetcore-webap
     ```javascript
     // The current application coordinates were pre-registered in a B2C tenant.
     var appConfig = {
-      b2cScopes: ["https://<your-tenant-name>.onmicrosoft.com/api/Hello.Read"],
+      b2cScopes: ["https://<your-tenant-name>.onmicrosoft.com/api/demo.read"],
       webApi: "http://localhost:5000/"
     };
     ```

@@ -111,6 +111,14 @@
           href: acu.md
         - name: Квоты на виртуальные ЦП
           href: quotas.md
+        - name: Зарезервированные экземпляры
+          items:
+            - name: Предоплата за виртуальные машины
+              href: prepay-reserved-vm-instances.md
+            - name: Основные сведения о резервировании в Azure
+              href: ../../billing/billing-save-compute-costs-reservations.md
+            - name: Гибкость размера экземпляра виртуальной машины
+              href: reserved-vm-instance-size-flexibility.md
         - name: Результаты теста производительности
           href: compute-benchmark-scores.md
     - name: Рекомендуемые дистрибутивы
@@ -302,16 +310,6 @@
           href: ../../azure-monitor/platform/alerts-metric.md
         - name: Создание оповещений журнала
           href: ../../azure-monitor/platform/alerts-log.md
-    - name: Управление затратами
-      items:
-        - name: Предварительная оплата виртуальных машин — резервирования Azure
-          href: prepay-reserved-vm-instances.md
-        - name: Предварительная оплата планов программного обеспечения Azure
-          href: prepay-suse-software-charges.md
-        - name: Основные сведения о резервировании в Azure
-          href: ../../billing/billing-save-compute-costs-reservations.md
-        - name: Гибкость размера экземпляра виртуальной машины
-          href: reserved-vm-instance-size-flexibility.md
     - name: Использование образов
       items:
         - name: Общедоступные коллекции образов
@@ -378,8 +376,6 @@
           href: manage-availability.md
         - name: Создание группы размещения близкого взаимодействия
           href: proximity-placement-groups.md
-        - name: Вертикальное масштабирование
-          href: vertical-scaling-automation.md
         - name: Создание виртуальной машины в зоне доступности
           href: create-cli-availability-zone.md
     - name: Использование средств автоматизации

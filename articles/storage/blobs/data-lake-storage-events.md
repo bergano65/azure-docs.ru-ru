@@ -1,5 +1,5 @@
 ---
-title: Руководство по Использование событий Azure Data Lake Storage 2-го поколения для обновления таблицы Databricks Delta | Документация Майкрософт
+title: Руководство по Реализация шаблона сохранения озера данных для обновления таблицы Azure Databricks Delta | Документация Майкрософт
 description: Из этого руководства вы узнаете, как вставлять строки данных в таблицу, которая хранится в Azure Data Lake Storage 2-го поколения, с помощью подписки на Сетку событий, функции Azure и задания Azure Databricks.
 author: normesta
 ms.subservice: data-lake-storage-gen2
@@ -8,14 +8,14 @@ ms.topic: tutorial
 ms.date: 08/20/2019
 ms.author: normesta
 ms.reviewer: sumameh
-ms.openlocfilehash: 5a85e3b16a5a93fedd6a2257f5601b0673f825ad
-ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
+ms.openlocfilehash: 03a07e70c967f92fe5dcc7c951aeea299b050405
+ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69904661"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71326994"
 ---
-# <a name="tutorial-use-azure-data-lake-storage-gen2-events-to-update-a-databricks-delta-table"></a>Руководство по Обновление таблицы Databricks Delta с помощью событий Azure Data Lake Storage 2-го поколения
+# <a name="tutorial-implement-the-data-lake-capture-pattern-to-update-a-databricks-delta-table"></a>Руководство по Реализация шаблона сохранения озера данных для обновления таблицы Databricks Delta
 
 В этом руководстве описана обработка событий в учетной записи хранения с иерархическим пространством имен.
 

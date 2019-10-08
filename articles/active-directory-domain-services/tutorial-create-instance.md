@@ -9,12 +9,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 08/14/2019
 ms.author: iainfou
-ms.openlocfilehash: 8c346b75b30737645721d8b39a655a85ed446fae
-ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
+ms.openlocfilehash: 536ada668db724ca50d7db820aff173f7222bab2
+ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71229526"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71336855"
 ---
 # <a name="tutorial-create-and-configure-an-azure-active-directory-domain-services-instance"></a>Руководство по Создание и настройка экземпляра доменных служб Azure Active Directory
 
@@ -42,7 +42,8 @@ ms.locfileid: "71229526"
     * Если потребуется, [создайте клиент Azure Active Directory][create-azure-ad-tenant] или [свяжите подписку Azure Active Directory со своей учетной записью][associate-azure-ad-tenant].
 * Привилегии *глобального администратора* для клиента Azure AD, чтобы включить доменные службы Azure AD.
 * Для создания нужных ресурсов Azure AD DS требуются привилегии *участника* в подписке Azure.
-* Для клиента Azure AD должна быть настроена [функция самостоятельного сброса пароля][configure-sspr].
+
+Хотя это и не обязательно для Azure AD DS, рекомендуем [настроить самостоятельный сброс пароля (SSPR)][configure-sspr] для клиента Azure AD. Пользователи могут менять свой пароль без SSPR. Однако SSPR помогает в случае, если они забыли пароль и им нужно сбросить его.
 
 > [!IMPORTANT]
 > После создания управляемого домена AD DS Azure вы не сможете переместить экземпляр в другую группу ресурсов, виртуальную сеть, подписку и т. д. Выберите наиболее подходящую подписку, группу ресурсов, регион и виртуальную сеть при развертывании экземпляра AD DS Azure.

@@ -13,16 +13,16 @@ ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 07/25/2019
+ms.date: 09/27/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fb2e3e45da0a072eadb0eac9f8a0266f9e14cda2
-ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
+ms.openlocfilehash: 5330111e5ae56471d26ebc39dca1a036246945e1
+ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69031969"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71348584"
 ---
 # <a name="authentication-flows-and-application-scenarios"></a>Потоки проверки подлинности и сценарии приложений
 
@@ -169,33 +169,97 @@ MSAL iOS и MSAL Android по умолчанию используют систе
 
 Сценарии с использованием получения маркеров также сопоставляются с потоками проверки подлинности OAuth 2.0, описанными в [протоколах платформы удостоверений Майкрософт](active-directory-v2-protocols.md).
 
-|Сценарий | Подробный пример сценария | Поток/предоставление разрешения OAuth 2.0 | Аудитория |
-|--|--|--|--|
-| [![Одностраничное приложение](media/scenarios/spa-app.svg)](scenario-spa-overview.md) | [Одностраничное приложение](scenario-spa-overview.md) | [Неявный](v2-oauth2-implicit-grant-flow.md) | Рабочие или учебные учетные записи и личные учетные записи, B2C
-| [![Веб-приложение, которое поддерживает вход пользователей](media/scenarios/scenario-webapp-signs-in-users.svg)](scenario-web-app-sign-user-overview.md) | [Веб-приложение, которое поддерживает вход пользователей](scenario-web-app-sign-user-overview.md) | [Код авторизации](v2-oauth2-auth-code-flow.md) | Рабочие или учебные учетные записи и личные учетные записи, B2C |
-| [![Веб-приложение, которое вызывает веб-API](media/scenarios/web-app.svg)](scenario-web-app-call-api-overview.md) | [Веб-приложение, которое вызывает веб-API](scenario-web-app-call-api-overview.md) | [Код авторизации](v2-oauth2-auth-code-flow.md) | Рабочие или учебные учетные записи и личные учетные записи, B2C |
-| [![Классическое приложение, которое вызывает веб-API](media/scenarios/desktop-app.svg)](scenario-desktop-overview.md) | [Классическое приложение, которое вызывает веб-API](scenario-desktop-overview.md)| Интерактивный ([код авторизации](v2-oauth2-auth-code-flow.md) с PKCE) | Рабочие или учебные учетные записи и личные учетные записи, B2C |
-| | | Встроенная Windows | Рабочие или учебные учетные записи |
-| | | [Пароль владельца ресурса](v2-oauth-ropc.md)  | Рабочие или учебные учетные записи, B2C |
-| ![Поток кода устройства](media/scenarios/device-code-flow-app.svg)| [Классическое приложение, которое вызывает веб-API](scenario-desktop-overview.md) | [Код устройства](v2-oauth2-device-code.md)  | Рабочие или учебные учетные записи* |
-| [![Мобильное приложение, которое вызывает веб-API](media/scenarios/mobile-app.svg)](scenario-mobile-overview.md) | [Мобильное приложение, которое вызывает веб-API](scenario-mobile-overview.md) | Интерактивный ([код авторизации](v2-oauth2-auth-code-flow.md) с PKCE)  |   Рабочие или учебные учетные записи и личные учетные записи, B2C
-| | | Пароль владельца ресурса  | Рабочие или учебные учетные записи, B2C |
-| [![Управляющая программа](media/scenarios/daemon-app.svg)](scenario-daemon-overview.md) | [Управляющая программа](scenario-daemon-overview.md) | [Учетные данные клиента](v2-oauth2-client-creds-grant-flow.md)  |   Разрешения только для приложения (без пользователя) только в организациях AAD
-| [![Веб-API, которые вызывают веб-API](media/scenarios/web-api.svg)](scenario-web-api-call-api-overview.md) | [Веб-API, которые вызывают веб-API](scenario-web-api-call-api-overview.md)| [От имени](v2-oauth2-on-behalf-of-flow.md) | Рабочие или учебные учетные записи и личные учетные записи |
+<table>
+ <thead>
+  <tr><th>Сценарий</th> <th>Подробный пример сценария</th> <th>Поток/предоставление разрешения OAuth 2.0</th> <th>Аудитория</th></tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="scenario-spa-overview.md"><img alt="Single Page App" src="media/scenarios/spa-app.svg"></a></td>
+   <td><a href="scenario-spa-overview.md">Одностраничное приложение</a></td>
+   <td><a href="v2-oauth2-implicit-grant-flow.md">Неявный</a></td>
+   <td>Рабочие или учебные учетные записи и личные учетные записи, B2C</td>
+ </tr>
+
+  <tr>
+   <td><a href="scenario-web-app-sign-user-overview.md"><img alt="Web App that signs in users" src="media/scenarios/scenario-webapp-signs-in-users.svg"></a></td>
+   <td><a href="scenario-web-app-sign-user-overview.md">Веб-приложение, которое поддерживает вход пользователей</a></td>
+   <td><a href="v2-oauth2-auth-code-flow.md">Код авторизации</a></td>
+   <td>Рабочие или учебные учетные записи и личные учетные записи, B2C</td>
+ </tr>
+
+  <tr>
+   <td><a href="scenario-web-app-call-api-overview.md"><img alt="Web App that signs in users" src="media/scenarios/web-app.svg"></a></td>
+   <td><a href="scenario-web-app-call-api-overview.md">Веб-приложение, которое вызывает веб-API</a></td>
+   <td><a href="v2-oauth2-auth-code-flow.md">Код авторизации</a></td>
+   <td>Рабочие или учебные учетные записи и личные учетные записи, B2C</td>
+ </tr>
+
+  <tr>
+   <td rowspan="3"><a href="scenario-desktop-overview.md"><img alt=Desktop app that calls web APIs" src="media/scenarios/desktop-app.svg"></a></td>
+   <td rowspan="4"><a href="scenario-desktop-overview.md">Классическое приложение, которое вызывает веб-API</a></td>
+   <td>Интерактивный (<a href="v2-oauth2-auth-code-flow.md">код авторизации</a> с PKCE)</td>
+   <td>Рабочие или учебные учетные записи и личные учетные записи, B2C</td>
+ </tr>
+
+  <tr>
+   <td>Встроенная проверка подлинности Windows</td>
+   <td>Рабочие или учебные учетные записи</td>
+ </tr>
+
+  <tr>
+   <td><a href="v2-oauth-ropc.md">Пароль владельца ресурса</a></td>
+   <td>Рабочие или учебные учетные записи, B2C</td>
+ </tr>
+
+  <tr>
+   <td><a href="scenario-desktop-acquire-token.md#command-line-tool-without-web-browser"><img alt="Browserless application" src="media/scenarios/device-code-flow-app.svg"></a></td>
+   <td><a href="v2-oauth2-device-code.md">Код устройства</a></td>
+   <td>Рабочие или учебные учетные записи*</td>
+ </tr>
+
+ <tr>
+   <td rowspan="2"><a href="scenario-mobile-overview.md"><img alt="Mobile app that calls web APIs" src="media/scenarios/mobile-app.svg"></a></td>
+   <td rowspan="2"><a href="scenario-mobile-overview.md">Мобильное приложение, которое вызывает веб-API</a></td>
+   <td>Интерактивный (<a href="v2-oauth2-auth-code-flow.md">код авторизации</a> с PKCE)</td>
+   <td>Рабочие или учебные учетные записи и личные учетные записи, B2C</td>
+ </tr>
+
+  <tr>
+   <td><a href="v2-oauth-ropc.md">Пароль владельца ресурса</a></td>
+   <td>Рабочие или учебные учетные записи, B2C</td>
+ </tr>
+
+  <tr>
+   <td><a href="scenario-daemon-overview.md"><img alt="Daemon app that calls Web APIs" src="media/scenarios/daemon-app.svg"></a></td>
+   <td><a href=scenario-daemon-overview.md">Управляющая программа, которая вызывает веб-API</td>
+   <td><a href="v2-oauth2-client-creds-grant-flow.md">Учетные данные клиента</a></td>
+   <td>Разрешения только для приложения (без пользователя) только в организациях AAD</td>
+ </tr>
+
+  <tr>
+   <td><a href=scenario-web-api-call-api-overview.md"><img alt="Web API that calls web APIs" src="media/scenarios/web-api.svg"></a></td>
+   <td><a href=scenario-web-api-call-api-overview.md">Веб-API, которые вызывают веб-API</a></td>
+   <td><a href="v2-oauth2-on-behalf-of-flow.md">От имени</a></td>
+   <td>Рабочие или учебные учетные записи и личные учетные записи</td>
+ </tr>
+
+ </tbody>
+</table>
 
 ## <a name="scenarios-and-supported-platforms-and-languages"></a>Сценарии, поддерживаемые платформы и языки
 
-Не все типы приложений доступны на каждой платформе. Для создания приложений также можно использовать различные языки. Библиотеки проверки подлинности Майкрософт поддерживают ряд **платформ** (JavaScript, .NET Framework, .NET Core, Windows 10 или UWP, Xamarin.iOS, Xamarin.Android, собственная платформа iOS, собственная платформа Android, Java, Python).
+Не все типы приложений доступны на каждой платформе. Для создания приложений также можно использовать различные языки. Библиотеки проверки подлинности Майкрософт поддерживают ряд **платформ** (JavaScript, .NET Framework, .NET Core, Windows 10 или UWP, Xamarin.iOS, Xamarin.Android, собственная платформа iOS, macOS, собственная платформа Android, Java, Python). В приведенной ниже таблице при каждом упоминании .NET Core в Windows также имеется в виду платформа .NET Framework (ее упустили, чтобы избежать загромождения таблицы).
 
 |Сценарий  | Windows | Linux | Mac | iOS | Android
 |--|--|--|--|--|--|--|
-| [Одностраничное приложение](scenario-spa-overview.md) <br/>[![Одностраничное приложение](media/scenarios/spa-app.svg)](scenario-spa-overview.md) | ![MSAL.js](media/sample-v2-code/logo_js.png) MSAL.js | ![MSAL.js](media/sample-v2-code/logo_js.png) MSAL.js | ![MSAL.js](media/sample-v2-code/logo_js.png) MSAL.js | ![MSAL.js](media/sample-v2-code/logo_js.png) MSAL.js | ![MSAL.js](media/sample-v2-code/logo_js.png) MSAL.js
-| [Веб-приложение, которое поддерживает вход пользователей](scenario-web-app-sign-user-overview.md) <br/>[![Веб-приложение, которое поддерживает вход пользователей](media/scenarios/scenario-webapp-signs-in-users.svg)](scenario-web-app-sign-user-overview.md) | ![ASP.NET](media/sample-v2-code/logo_NET.png)</br> ASP.NET ![ASP.NET Core](media/sample-v2-code/logo_NETcore.png)ASP.NET Core | ![ASP.NET Core](media/sample-v2-code/logo_NETcore.png)ASP.NET Core | ![ASP.NET Core](media/sample-v2-code/logo_NETcore.png)ASP.NET Core
-| [Веб-приложение, которое вызывает веб-API](scenario-web-app-call-api-overview.md) <br/> [![Веб-приложение, которое вызывает веб-API](media/scenarios/web-app.svg)](scenario-web-app-call-api-overview.md) | ![ASP.NET](media/sample-v2-code/logo_NET.png) </br> ASP.NET + MSAL.NET </br> ![ASP.NET Core](media/sample-v2-code/logo_NETcore.png)ASP.NET Core + MSAL.NET ![MSAL Java](media/sample-v2-code/logo_java.png) msal4j ![MSAL Python](media/sample-v2-code/logo_python.png) Flask + MSAL Python| ![ASP.NET Core](media/sample-v2-code/logo_NETcore.png)ASP.NET Core + MSAL.NET ![MSAL Java](media/sample-v2-code/logo_java.png) msal4j ![MSAL Python](media/sample-v2-code/logo_python.png) Flask + MSAL Python| ![ASP.NET Core](media/sample-v2-code/logo_NETcore.png)ASP.NET Core + MSAL.NET ![MSAL Java](media/sample-v2-code/logo_java.png) msal4j ![MSAL Python](media/sample-v2-code/logo_python.png) Flask + MSAL Python
-| [Классическое приложение, которое вызывает веб-API](scenario-desktop-overview.md) <br/> [![Классическое приложение, которое вызывает веб-API](media/scenarios/desktop-app.svg)](scenario-desktop-overview.md) ![Поток кода устройства](media/scenarios/device-code-flow-app.svg) | ![MSAL.NET](media/sample-v2-code/logo_NET.png)  MSAL.NET ![.NET Core](media/sample-v2-code/logo_NETcore.png) MSAL.NET ![MSAL Java](media/sample-v2-code/logo_java.png) msal4j ![MSAL Python](media/sample-v2-code/logo_python.png) MSAL Python| ![.NET Core](media/sample-v2-code/logo_NETcore.png)MSAL.NET ![MSAL Java](media/sample-v2-code/logo_java.png) msal4j ![MSAL Python](media/sample-v2-code/logo_python.png) MSAL Python| ![.NET Core](media/sample-v2-code/logo_NETcore.png) MSAL.NET ![MSAL Java](media/sample-v2-code/logo_java.png) msal4j ![MSAL Python](media/sample-v2-code/logo_python.png) MSAL Python
-| [Мобильное приложение, которое вызывает веб-API](scenario-mobile-overview.md) <br/> [![Мобильное приложение, которое вызывает веб-API](media/scenarios/mobile-app.svg)](scenario-mobile-overview.md) | ![UWP](media/sample-v2-code/logo_windows.png) MSAL.NET ![Xamarin](media/sample-v2-code/logo_xamarin.png) MSAL.NET | | | ![iOS, Objective-C или swift](media/sample-v2-code/logo_iOS.png) MSAL.iOS | ![Android](media/sample-v2-code/logo_Android.png) MSAL.Android
-| [Управляющая программа](scenario-daemon-overview.md) <br/> [![Управляющая программа](media/scenarios/daemon-app.svg)](scenario-daemon-overview.md) | ![.NET](media/sample-v2-code/logo_NET.png) MSAL.NET ![.NET Core](media/sample-v2-code/logo_NETcore.png)MSAL.NET ![MSAL Java](media/sample-v2-code/logo_java.png) msal4j ![MSAL Python](media/sample-v2-code/logo_python.png) MSAL Python| ![.NET Core](media/sample-v2-code/logo_NETcore.png) MSAL.NET ![MSAL Java](media/sample-v2-code/logo_java.png) msal4j ![MSAL Python](media/sample-v2-code/logo_python.png) MSAL Python| ![.NET Core](media/sample-v2-code/logo_NETcore.png)MSAL.NET ![MSAL Java](media/sample-v2-code/logo_java.png) msal4j ![MSAL Python](media/sample-v2-code/logo_python.png) MSAL Python
-| [Веб-API, которые вызывают веб-API](scenario-web-api-call-api-overview.md) <br/> [![Веб-API, которые вызывают веб-API](media/scenarios/web-api.svg)](scenario-web-api-call-api-overview.md) | ![.NET](media/sample-v2-code/logo_NET.png) MSAL.NET ![.NET Core](media/sample-v2-code/logo_NETcore.png)MSAL.NET ![MSAL Java](media/sample-v2-code/logo_java.png) msal4j ![MSAL Python](media/sample-v2-code/logo_python.png) MSAL Python| ![.NET Core](media/sample-v2-code/logo_NETcore.png) MSAL.NET ![MSAL Java](media/sample-v2-code/logo_java.png) msal4j ![MSAL Python](media/sample-v2-code/logo_python.png) MSAL Python| ![.NET Core](media/sample-v2-code/logo_NETcore.png)MSAL.NET ![MSAL Java](media/sample-v2-code/logo_java.png) msal4j ![MSAL Python](media/sample-v2-code/logo_python.png) MSAL Python
+| [Одностраничное приложение](scenario-spa-overview.md) <br/>[![Одностраничное приложение](media/scenarios/spa-app.svg)](scenario-spa-overview.md) | ![MSAL.js](media/sample-v2-code/small_logo_js.png)<br/>MSAL.js | ![MSAL.js](media/sample-v2-code/small_logo_js.png)<br/>MSAL.js | ![MSAL.js](media/sample-v2-code/small_logo_js.png)<br/>MSAL.js | ![MSAL.js](media/sample-v2-code/small_logo_js.png) MSAL.js | ![MSAL.js](media/sample-v2-code/small_logo_js.png)<br/>MSAL.js
+| [Веб-приложение, которое поддерживает вход пользователей](scenario-web-app-sign-user-overview.md) <br/>[![Веб-приложение, которое поддерживает вход пользователей](media/scenarios/scenario-webapp-signs-in-users.svg)](scenario-web-app-sign-user-overview.md) | ![ASP.NET Core](media/sample-v2-code/small_logo_NETcore.png)<br/>ASP.NET Core | ![ASP.NET Core](media/sample-v2-code/small_logo_NETcore.png)<br/>ASP.NET Core | ![ASP.NET Core](media/sample-v2-code/small_logo_NETcore.png)<br/>ASP.NET Core
+| [Веб-приложение, которое вызывает веб-API](scenario-web-app-call-api-overview.md) <br/> <br/>[![Веб-приложение, которое вызывает веб-API](media/scenarios/web-app.svg)](scenario-web-app-call-api-overview.md) | ![ASP.NET Core](media/sample-v2-code/small_logo_NETcore.png)<br/>ASP.NET Core + MSAL.NET ![MSAL Java](media/sample-v2-code/small_logo_java.png) <br/>msal4j<br/>![MSAL Python](media/sample-v2-code/small_logo_python.png)<br/>Flask + MSAL Python| ![ASP.NET Core](media/sample-v2-code/small_logo_NETcore.png)<br/>ASP.NET Core + MSAL.NET ![MSAL Java](media/sample-v2-code/small_logo_java.png)<br/>msal4j<br/>![MSAL Python](media/sample-v2-code/small_logo_python.png)<br/>Flask + MSAL Python| ![ASP.NET Core](media/sample-v2-code/small_logo_NETcore.png)<br/>ASP.NET Core + MSAL.NET ![MSAL Java](media/sample-v2-code/small_logo_java.png)<br/>msal4j<br/> ![MSAL Python](media/sample-v2-code/small_logo_python.png)<br/>Flask + MSAL Python
+| [Классическое приложение, которое вызывает веб-API](scenario-desktop-overview.md) <br/> <br/>[![Классическое приложение, которое вызывает веб-API](media/scenarios/desktop-app.svg)](scenario-desktop-overview.md) ![Поток кода устройства](media/scenarios/device-code-flow-app.svg) | ![.NET Core](media/sample-v2-code/small_logo_NETcore.png)MSAL.NET ![MSAL Java](media/sample-v2-code/small_logo_java.png)<br/>msal4j<br/> ![MSAL Python](media/sample-v2-code/small_logo_python.png)<br/>MSAL Python| ![.NET Core](media/sample-v2-code/small_logo_NETcore.png)MSAL.NET ![MSAL Java](media/sample-v2-code/small_logo_java.png)msal4j<br/>![MSAL Python](media/sample-v2-code/small_logo_python.png)<br/>MSAL Python| ![.NET Core](media/sample-v2-code/small_logo_NETcore.png)MSAL.NET ![MSAL Java](media/sample-v2-code/small_logo_java.png)<br/>msal4j<br/>![MSAL Python](media/sample-v2-code/small_logo_python.png)<br/>MSAL Python <br/> MSAL.objc |
+| [Мобильное приложение, которое вызывает веб-API](scenario-mobile-overview.md) <br/> [![Мобильное приложение, которое вызывает веб-API](media/scenarios/mobile-app.svg)](scenario-mobile-overview.md) | ![UWP](media/sample-v2-code/small_logo_windows.png) MSAL.NET ![Xamarin](media/sample-v2-code/small_logo_xamarin.png) MSAL.NET | | | ![iOS, Objective-C или swift](media/sample-v2-code/small_logo_iOS.png) MSAL.objc | ![Android](media/sample-v2-code/small_logo_Android.png) MSAL.Android
+| [Управляющая программа](scenario-daemon-overview.md) <br/> [![Управляющая программа](media/scenarios/daemon-app.svg)](scenario-daemon-overview.md) | ![.NET Core](media/sample-v2-code/small_logo_NETcore.png)MSAL.NET ![MSAL Java](media/sample-v2-code/small_logo_java.png)<br/>msal4j<br/>![MSAL Python](media/sample-v2-code/small_logo_python.png)<br/>MSAL Python| ![.NET Core](media/sample-v2-code/small_logo_NETcore.png) MSAL.NET ![MSAL Java](media/sample-v2-code/small_logo_java.png)<br/>msal4j<br/>![MSAL Python](media/sample-v2-code/small_logo_python.png)<br/>MSAL Python| ![.NET Core](media/sample-v2-code/small_logo_NETcore.png)MSAL.NET ![MSAL Java](media/sample-v2-code/small_logo_java.png)<br/>msal4j<br/>![MSAL Python](media/sample-v2-code/small_logo_python.png)<br/>MSAL Python
+| [Веб-API, которые вызывают веб-API](scenario-web-api-call-api-overview.md) <br/><br/> [![Веб-API, которые вызывают веб-API](media/scenarios/web-api.svg)](scenario-web-api-call-api-overview.md) | ![ASP.NET Core](media/sample-v2-code/small_logo_NETcore.png)<br/>ASP.NET Core + MSAL.NET ![MSAL Java](media/sample-v2-code/small_logo_java.png)<br/>msal4j<br/>![MSAL Python](media/sample-v2-code/small_logo_python.png)<br/>MSAL Python| ![.NET Core](media/sample-v2-code/small_logo_NETcore.png)<br/>ASP.NET Core + MSAL.NET ![MSAL Java](media/sample-v2-code/small_logo_java.png)<br/>msal4j<br/>![MSAL Python](media/sample-v2-code/small_logo_python.png)<br/>MSAL Python| ![.NET Core](media/sample-v2-code/small_logo_NETcore.png)<br/>ASP.NET Core + MSAL.NET ![MSAL Java](media/sample-v2-code/small_logo_java.png)<br/>msal4j<br/>![MSAL Python](media/sample-v2-code/small_logo_python.png)<br/>MSAL Python
 
 См.также [Библиотеки, поддерживаемые корпорацией Майкрософт, по ОС/языку](reference-v2-libraries.md#microsoft-supported-libraries-by-os--language)
 

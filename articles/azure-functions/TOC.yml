@@ -82,6 +82,8 @@
       href: functions-deployment-technologies.md
     - name: События и обмен сообщениями
       items:
+        - name: Надежная обработка событий
+          href: functions-reliable-event-processing.md
         - name: Разработка функций для формирования идентичных входных данных
           href: functions-idempotent.md
     - name: Триггеры и привязки

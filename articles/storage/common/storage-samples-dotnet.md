@@ -7,12 +7,12 @@ ms.date: 09/06/2019
 ms.service: storage
 ms.subservice: common
 ms.topic: sample
-ms.openlocfilehash: 57249bd2fa4d3c8aefe19a85ec9a2b6b584b00d2
-ms.sourcegitcommit: 86d49daccdab383331fc4072b2b761876b73510e
+ms.openlocfilehash: 9d6e441adeb7025e09b8d73764d2defab439dd90
+ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70743955"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71350908"
 ---
 # <a name="azure-storage-samples-using-net"></a>Примеры для службы хранилища Azure с использованием .NET
 
@@ -98,5 +98,6 @@ ms.locfileid: "70743955"
 Дополнительные сведения о примерах для других языков см. здесь:
 
 * Java: [Примеры для службы хранилища Azure с использованием Java](storage-samples-java.md)
+* JavaScript/Node.js: [Примеры для службы хранилища Azure с использованием JavaScript](storage-samples-javascript.md)
 * Python: [Примеры для работы со службой хранилища Azure с помощью Python](storage-samples-python.md)
 * Остальные языки: [Примеры для службы хранилища Azure](../storage-samples.md)

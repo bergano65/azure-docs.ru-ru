@@ -7,16 +7,16 @@ ms.date: 09/06/2019
 ms.service: storage
 ms.subservice: common
 ms.topic: sample
-ms.openlocfilehash: 5d823059842bf539f00ad372127fc8b636c74b65
-ms.sourcegitcommit: 86d49daccdab383331fc4072b2b761876b73510e
+ms.openlocfilehash: 3fc18646270bbec3836845bcf317afc2c1d3a6df
+ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70745971"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71351164"
 ---
 # <a name="azure-storage-samples-using-python"></a>Примеры для работы со службой хранилища Azure с помощью Python
 
-В таблице ниже приведен обзор репозитория примеров и сценарии, описанные в каждом примере. Щелкните ссылки для просмотра соответствующего примера кода на сайте GitHub.
+В таблицах ниже приведен обзор репозитория примеров и сценарии, описанные в каждом примере. Щелкните ссылки для просмотра соответствующего примера кода на сайте GitHub.
 
 ## <a name="blob-samples"></a>Примеры больших двоичных объектов
 
@@ -99,4 +99,5 @@ ms.locfileid: "70745971"
 
 * .NET: [Примеры для службы хранилища Azure с использованием .NET](storage-samples-dotnet.md)
 * Java: [Примеры для службы хранилища Azure с использованием Java](storage-samples-java.md)
+* JavaScript/Node.js: [Примеры для службы хранилища Azure с использованием JavaScript](storage-samples-javascript.md)
 * Остальные языки: [Примеры для службы хранилища Azure](storage-samples.md)

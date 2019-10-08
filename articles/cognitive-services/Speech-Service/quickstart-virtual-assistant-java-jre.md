@@ -10,16 +10,16 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 07/05/2019
 ms.author: bidishac
-ms.openlocfilehash: b1be09a2af712277ccaad827b8e84e24ed9f5c5c
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: c5a6042e4b181190849b3759325e4aab0c22413b
+ms.sourcegitcommit: 4f3f502447ca8ea9b932b8b7402ce557f21ebe5a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68553256"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71800032"
 ---
 # <a name="quickstart-create-a-voice-first-virtual-assistant-with-the-speech-sdk-java"></a>Краткое руководство. Создание виртуального помощника по обработке голоса с помощью пакета SDK для распознавания речи, Java
 
-Также доступны краткие руководства по [преобразованию речи в текст](quickstart-java-jre.md) и [переводу речи](quickstart-translate-speech-java-jre.md).
+Кроме того, доступны краткие руководства по [преобразованию речи в текст](quickstart-java-jre.md), [текста в речь](quickstart-text-to-speech-java-jre.md) и [переводу речи](quickstart-translate-speech-java-jre.md).
 
 Из этой статьи вы узнаете, как создать консольное приложение Java с помощью [пакета SDK для службы "Речь" в Cognitive Services](speech-sdk.md). Приложение подключится к ранее созданному боту, настроенному на использование канала "Речь Direct Line", отправит голосовой запрос и вернет действие голосового ответа (если настроено). Приложение создается с помощью пакета SDK Maven службы "Речь" и Eclipse Java IDE для Windows, Ubuntu Linux или macOS. Оно работает в 64-разрядной среде выполнения Java 8 (JRE).
 

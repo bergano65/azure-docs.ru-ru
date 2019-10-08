@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 07/11/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 3ba804f76f8d443c0b49a9b4e5425333f01f0b9a
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: bbf127f105f0ef22a23f00541396c2ac66b0e5f9
+ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70102329"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71828361"
 ---
 # <a name="quickstart-create-a-sql-server-2017-windows-virtual-machine-in-the-azure-portal"></a>Краткое руководство. Создание виртуальной машины SQL Server 2017 на платформе Windows с помощью портала Azure
 
@@ -81,9 +81,10 @@ ms.locfileid: "70102329"
 На вкладке **Настройки SQL Server** настройте следующие параметры.
 
 1. В разделе **Безопасность и сетевые подключения** выберите _Общедоступный (Интернет)_ для параметра **Подключение SQL** и измените порт на `1401`, чтобы не использовать хорошо известный номер порта в сценарии общедоступного подключения. 
-1. В разделе **Проверка подлинности SQL** выберите значение **Включить**. В качестве имени для входа SQL указаны имя пользователя и пароль, настроенные для виртуальной машины. Используйте параметры по умолчанию для параметров **Интеграция Azure Key Vault** и **Конфигурация хранилища**.  
+1. В разделе **Проверка подлинности SQL** выберите значение **Включить**. В качестве имени для входа SQL указаны имя пользователя и пароль, настроенные для виртуальной машины. Используйте для параметра [**Интеграция с Azure Key Vault**](virtual-machines-windows-ps-sql-keyvault.md) значение по умолчанию. **Конфигурация хранилища** недоступна для базового образа виртуальной машины SQL Server, но дополнительные сведения о доступных параметрах для других образов можно найти в разделе о [настройке хранилища](virtual-machines-windows-sql-server-storage-configuration.md#new-vms).  
 
    ![Параметры безопасности SQL Server](media/quickstart-sql-vm-create-portal/sql-server-settings.png)
+
 
 1. При необходимости измените любые другие параметры, а затем выберите **Отзыв и создание**. 
 

@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Распознавание речи с помощью Java (Windows, Linux) — служба "Речь"
+title: Краткое руководство. Распознавание речи с помощью Java (Windows, Linux, macOS) — служба "Речь"
 titleSuffix: Azure Cognitive Services
 description: Из этого краткого руководства вы узнаете, как создать простое приложение Java, которое записывает речь пользователя с микрофона компьютера и транскрибирует ее.
 services: cognitive-services
@@ -10,16 +10,16 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 07/05/2019
 ms.author: fmegen
-ms.openlocfilehash: 498e41b08133113be9789ef49291b8e2bb0f3705
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 9438cd1345d324b068db8837216afb39241cb2a2
+ms.sourcegitcommit: 4f3f502447ca8ea9b932b8b7402ce557f21ebe5a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68554111"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71802464"
 ---
 # <a name="quickstart-recognize-speech-with-the-speech-sdk-for-java"></a>Краткое руководство. Распознавание речи с помощью пакета SDK службы "Речь" для Java
 
-Также доступны краткие руководства по [переводу речи](quickstart-translate-speech-java-jre.md) и [виртуальному помощнику для обработки голоса](quickstart-virtual-assistant-java-jre.md).
+Кроме того, доступны краткие руководства по [переводу речи](quickstart-translate-speech-java-jre.md), [виртуальному помощнику для обработки голоса](quickstart-virtual-assistant-java-jre.md) и [синтезу речи](quickstart-text-to-speech-java-jre.md).
 
 При необходимости переключитесь на другой язык программирования и (или) среду:<br/>
 [!INCLUDE [Selector](../../../includes/cognitive-services-speech-service-quickstart-selector.md)]
@@ -36,7 +36,7 @@ ms.locfileid: "68554111"
 * Операционная система: 64-разрядная версия Windows, 64-разрядная версия Linux (Ubuntu 16.04, Ubuntu 18.04, Debian 9) или macOS 10.13 или более поздней версии
 * [Eclipse Java IDE](https://www.eclipse.org/downloads/)
 * [Java 8](https://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) или [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
-* Ключ подписки Azure для службы "Речь". [Его можно получить бесплатно](get-started.md).
+* Ключ подписки Azure для службы "Речь". [Получить бесплатно](get-started.md).
 
 Если вы используете Linux, убедитесь, что эти зависимости установлены до запуска Eclipse.
 
@@ -95,6 +95,7 @@ ms.locfileid: "68554111"
 
 ## <a name="see-also"></a>См. также
 
-- [Краткое руководство Перевод речи с помощью пакета SDK службы "Речь" для Java"](quickstart-translate-speech-java-jre.md)
+- [Краткое руководство по переводу речи с помощью Java (Windows, Linux, macOS)](quickstart-translate-speech-java-jre.md)
+- [Краткое руководство по синтезу речи с помощью Java (Windows, Linux, macOS)](quickstart-text-to-speech-java-jre.md)
 - [Настройка акустических моделей](how-to-customize-acoustic-models.md)
 - [Настройка языковых моделей](how-to-customize-language-model.md)

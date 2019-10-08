@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 01/29/2019
 ms.author: suhuruli
 ms.custom: mvc, devcenter, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: ca6a1063f6ddd5c42d0d08f43b87a3387cc46a14
-ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
+ms.openlocfilehash: 4ef0db5f72f5849942bb043261f1166cf7c046b1
+ms.sourcegitcommit: 6fe40d080bd1561286093b488609590ba355c261
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70859270"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71703282"
 ---
 # <a name="quickstart--deploy-a-java-app-to-azure-service-fabric-on-linux"></a>Краткое руководство.  Развертывание приложения Java в Azure Service Fabric в Linux
 
@@ -28,7 +28,7 @@ ms.locfileid: "70859270"
 
 Azure Service Fabric — это платформа распределенных систем для развертывания микрослужб и контейнеров и управления ими.
 
-![Снимок экрана приложения](./media/service-fabric-quickstart-java/votingapp.png)
+![Пример для голосования Azure Service Fabric](./media/service-fabric-quickstart-java/service-fabric-voting-sample.png)
 
 Из этого краткого руководства вы узнаете, как выполнять следующие задачи:
 
@@ -62,22 +62,22 @@ git clone https://github.com/Azure-Samples/service-fabric-java-quickstart.git
     ```
     Запуск локального кластера занимает некоторое время. Чтобы убедиться, что кластер является рабочим, откройте Service Fabric Explorer по адресу **http://localhost:19080** . Наличие пяти работоспособных узлов означает, что локальный кластер запущен и работает.
 
-    ![Работоспособное состояние локального кластера](./media/service-fabric-quickstart-java/localclusterup.png)
+    ![В Service Fabric Explorer Azure отображаются работоспособные узлы](./media/service-fabric-quickstart-java/service-fabric-explorer-healthy-nodes.png)
 
 2. Откройте Eclipse.
 3. Щелкните **File** > **Import** > **Gradle** > **Existing Gradle Project** (Файл > Импорт > Gradle > Существующий проект Gradle) и следуйте указаниям мастера.
 4. Щелкните **Каталог** и выберите каталог `Voting` в папке `service-fabric-java-quickstart`, клонированной из GitHub. Выберите **Готово**.
 
-    ![Диалоговое окно Eclipse "Import" (Импорт)](./media/service-fabric-quickstart-java/eclipseimport.png)
+    ![Импорт проекта Gradle в Eclipse](./media/service-fabric-quickstart-java/eclipse-import-gradle-project.png)
 
 5. Теперь у вас имеется проект `Voting` в обозревателе пакетов для Eclipse.
 6. Щелкните правой кнопкой мыши проект и выберите **Publish Application** (Опубликовать приложение) в раскрывающемся списке **Service Fabric**. Выберите **PublishProfiles/Local.json** в качестве целевого профиля и нажмите кнопку **Publish** (Опубликовать).
 
-    ![Диалоговое окно публикации локально](./media/service-fabric-quickstart-java/localjson.png)
+    ![Публикация локального JSON-файла в Azure Service Fabric](./media/service-fabric-quickstart-java/service-fabric-publish-local-json.png)
 
 7. Откройте любой веб-браузер и перейдите к приложению по адресу `http://localhost:8080`.
 
-    ![Локальная клиентская часть приложения](./media/service-fabric-quickstart-java/runninglocally.png)
+    ![Публикация локального узла в Azure Service Fabric](./media/service-fabric-quickstart-java/service-fabric-local-host.png)
 
 Теперь можно добавить варианты для выбора в голосовании и начать прием голосов. Приложение запускается и хранит все данные в кластере Service Fabric без необходимости использования отдельной базы данных.
 
@@ -92,14 +92,14 @@ git clone https://github.com/Azure-Samples/service-fabric-java-quickstart.git
 1. Откройте Service Fabric Explorer в своем кластере (например, по ссылке `https://localhost:19080`).
 2. Щелкните многоточие ( **...** ) рядом с узлом **fabric:/Voting/VotingWeb** в дереве и выберите **Масштабировать службу**.
 
-    ![Масштабирование службы в Service Fabric Explorer](./media/service-fabric-quickstart-java/scaleservicejavaquickstart.png)
+    ![Масштабирование службы в Azure Service Fabric](./media/service-fabric-quickstart-java/service-fabric-scale-service.png)
 
     Теперь вы можете изменить количество экземпляров службы веб-интерфейса.
 
 3. Измените количество на **2** и щелкните **Масштабировать службу**.
 4. Выберите узел **fabric:/Voting/VotingWeb** в дереве и разверните узел раздела (он отображается в виде идентификатора GUID).
 
-    ![Масштабирование службы в Service Fabric Explorer завершено](./media/service-fabric-quickstart-java/servicescaled.png)
+    ![Масштабированная служба в Azure Service Fabric](./media/service-fabric-quickstart-java/service-fabric-explorer-service-scaled.png)
 
     Теперь вы видите, что у службы есть два экземпляра, а с помощью дерева вы можете определить узлы, на которых запущены эти экземпляры.
 

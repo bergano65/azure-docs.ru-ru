@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 07/05/2019
 ms.author: erhopf
-ms.openlocfilehash: 0afe5897c723e22405d9bde2e9c9e729d0373a06
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: a2e43b72bda65c5f1e7515888ac33b0ac806e64c
+ms.sourcegitcommit: 4f3f502447ca8ea9b932b8b7402ce557f21ebe5a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68553670"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71803245"
 ---
 # <a name="quickstart-convert-text-to-speech-using-python"></a>Краткое руководство. Преобразование текста в речь с использованием Python
 
@@ -101,7 +101,7 @@ def get_token(self):
 Затем создайте текст запроса с соблюдением синтаксиса SSML. Этот пример определяет структуру и применяет входные данные `tts`, которые вы создали ранее.
 
 >[!NOTE]
-> В этом примере используется голос `ZiraRUS`. См. [полный список предоставляемых корпорацией Майкрософт голосов и языков](language-support.md).
+> В этом примере используется голос `Guy24KRUS`. См. [полный список предоставляемых корпорацией Майкрософт голосов и языков](language-support.md).
 > Если вы хотите создать для своего бренда уникальный и узнаваемый голос, см. руководство по [созданию пользовательского голоса](how-to-customize-voice-font.md).
 
 И наконец, направьте запрос в службу. Если запрос выполнен успешно, возвращается код состояния 200 и речевой ответ сохраняется в файл с меткой времени.
@@ -173,5 +173,6 @@ python tts.py
 ## <a name="see-also"></a>См. также
 
 * [Справочник по API преобразования текста в речь](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis)
+* [Quickstart: Synthesize speech with the Speech SDK for Python](quickstart-text-to-speech-python.md) (Краткое руководство. Синтез речи с помощью пакета SDK службы "Речь" для Python)
 * [Создание настраиваемого голоса](how-to-customize-voice-font.md)
 * [Запись примеров голоса для создания пользовательских голосовых моделей](record-custom-voice-samples.md)

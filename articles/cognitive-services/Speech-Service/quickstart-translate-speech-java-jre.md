@@ -10,16 +10,16 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 07/05/2019
 ms.author: erhopf
-ms.openlocfilehash: cbb86dd4b24cb325b8ea6708ebc2ffc89a697757
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 402bf198981641db74a86bbc420fab83124f0b47
+ms.sourcegitcommit: 4f3f502447ca8ea9b932b8b7402ce557f21ebe5a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68553401"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71802018"
 ---
 # <a name="quickstart-translate-speech-with-the-speech-sdk-for-java"></a>Краткое руководство. Перевод речи с помощью пакета SDK службы "Речь" для Java
 
-Также доступны краткие руководства по [преобразованию речи в текст](quickstart-java-jre.md) и [виртуальному помощнику для обработки голоса](quickstart-virtual-assistant-java-jre.md).
+Кроме того, доступны краткие руководства по [преобразованию речи в текст](quickstart-java-jre.md), [текста в речь](quickstart-text-to-speech-java-jre.md) и [виртуальному помощнику для обработки голоса](quickstart-virtual-assistant-java-jre.md).
 
 В этом кратком руководстве вы создадите простое приложение Java, которое захватывает речь пользователя с микрофона компьютера, преобразует речь и расшифровывает переведенный текст в командную строку в режиме реального времени. Это приложение предназначено для работы в 64-разрядной версии Windows или 64-разрядной версии Linux (Ubuntu 16.04, Ubuntu 18.04, Debian 9) или в macOS 10.13 или более поздней версии. Оно создано с использованием пакета SDK Maven службы "Речь" и Eclipse Java IDE.
 
@@ -32,7 +32,7 @@ ms.locfileid: "68553401"
 * Операционная система: 64-разрядная версия Windows, 64-разрядная версия Linux (Ubuntu 16.04, Ubuntu 18.04, Debian 9) или macOS 10.13 или более поздней версии
 * [Eclipse Java IDE](https://www.eclipse.org/downloads/)
 * [Java 8](https://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) или [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
-* Ключ подписки Azure для службы "Речь". [Его можно получить бесплатно](get-started.md).
+* Ключ подписки Azure для службы "Речь". [Получить бесплатно](get-started.md).
 
 Если вы используете Linux, убедитесь, что эти зависимости установлены до запуска Eclipse.
 

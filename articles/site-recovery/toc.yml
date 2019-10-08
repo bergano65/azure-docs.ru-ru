@@ -371,7 +371,7 @@
               href: delete-vault.md
     - name: Аварийное восстановление для приложений
       items:
-        - name: Настройка аварийного восстановления в Azure для локальных приложений
+        - name: Сведения об аварийном восстановлении для локальных приложений
           href: site-recovery-workload.md
         - name: Active Directory и DNS
           href: site-recovery-active-directory.md

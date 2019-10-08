@@ -87,7 +87,8 @@
           href: concepts-connectivity-architecture.md
     - name: Непрерывность бизнес-процессов
       items:
-        - name: Обзор
+        - name: Общие сведения о непрерывности бизнес-процессов
+          displayName: 'backup, restore, backups, restores, georestore, geo-restore, outage'
           href: concepts-business-continuity.md
         - name: Резервное копирование и восстановление
           href: concepts-backup.md
@@ -231,7 +232,7 @@
       href: /rest/api/mysql
     - name: Шаблон Resource Manager
       href: /azure/templates/microsoft.dbformysql/allversions
-    - name: Хранимые процедуры Azure
+    - name: Управление хранимыми процедурами
       href: reference-stored-procedures.md
 - name: Ресурсы
   items:

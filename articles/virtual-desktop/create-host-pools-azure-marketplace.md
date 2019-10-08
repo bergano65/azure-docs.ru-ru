@@ -1,22 +1,22 @@
 ---
-title: Создание пула узлов Виртуального рабочего стола Windows (предварительная версия) с помощью Azure Marketplace в Azure
-description: Сведения о том, как создать пул узлов Виртуального рабочего стола Windows (предварительная версия) с помощью Azure Marketplace.
+title: Создание пула узлов Виртуального рабочего стола Windows с помощью Azure Marketplace в Azure
+description: Сведения о том, как создать пул узлов Виртуального рабочего стола Windows с помощью Azure Marketplace.
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: tutorial
 ms.date: 08/30/2019
 ms.author: helohr
-ms.openlocfilehash: d6628f1522880f650bfd8c728fe46fd050a8e6a0
-ms.sourcegitcommit: 5f67772dac6a402bbaa8eb261f653a34b8672c3a
+ms.openlocfilehash: c0b93529872de774e1a6e915ef8254c5c0e0a1a9
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2019
-ms.locfileid: "70208383"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71676708"
 ---
 # <a name="tutorial-create-a-host-pool-by-using-the-azure-marketplace"></a>Руководство по Создание пула узлов с использованием Azure Marketplace
 
-Пулы узлов — это коллекция, состоящая из одной или нескольких идентичных виртуальных машин в средах клиента предварительной версии Виртуального рабочего стола Windows. Каждый пул узлов может содержать группы приложений, с которыми пользователи могут взаимодействовать, как с физическим рабочим столом.
+Пулы узлов — это коллекция, состоящая из одной или нескольких идентичных виртуальных машин в средах клиента Виртуального рабочего стола Windows. Каждый пул узлов может содержать группы приложений, с которыми пользователи могут взаимодействовать, как с физическим рабочим столом.
 
 В этой статье описывается процесс создания пула узлов в клиенте Виртуального рабочего стола Windows с помощью предложения Microsoft Azure Marketplace. Сюда входят следующие задачи:
 
@@ -80,7 +80,7 @@ Add-RdsAccount -DeploymentUrl "https://rdbroker.wvd.microsoft.com"
 3. Выберите виртуальную сеть с подключением к серверу Active Directory, а затем подсеть для размещения виртуальных машин.
 4. Нажмите кнопку **ОК**.
 
-### <a name="windows-virtual-desktop-preview-tenant-information"></a>Сведения о клиенте предварительной версии Виртуального рабочего стола Windows
+### <a name="windows-virtual-desktop-tenant-information"></a>Сведения о клиенте Виртуального рабочего стола Windows
 
 В колонке **Windows Virtual Desktop tenant information** (Сведения о клиенте Виртуального рабочего стола Windows) сделайте следующее:
 

@@ -1,21 +1,21 @@
 ---
 title: Руководство по Создание приложения машинного обучения Spark в Azure HDInsight
 description: 'Учебник: пошаговые инструкции по созданию приложения машинного обучения Apache Spark в кластерах HDInsight Spark с помощью записной книжки Jupyter.'
-ms.service: hdinsight
 author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
+ms.service: hdinsight
 ms.custom: hdinsightactive,mvc
 ms.topic: tutorial
 ms.date: 06/26/2019
-ms.author: hrasheed
-ms.openlocfilehash: e1a52072ab3309454742d2d3e8582b58a33666e3
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: e77414da964d548b64250bbf98f86bee1529f2ab
+ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67448708"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71327020"
 ---
-# <a name="tutorial-build-an-apache-spark-machine-learning-application-in-azure-hdinsight"></a>Руководство по Создание приложения машинного обучения Apache Spark в Azure HDInsight 
+# <a name="tutorial-build-an-apache-spark-machine-learning-application-in-azure-hdinsight"></a>Руководство по Создание приложения машинного обучения Apache Spark в Azure HDInsight
 
 Из этого руководства вы узнаете, как с помощью [Jupyter Notebook](https://jupyter.org/) создать приложение машинного обучения [Apache Spark](https://spark.apache.org/) для Azure HDInsight.
 
@@ -43,7 +43,7 @@ ms.locfileid: "67448708"
 
 1. Создайте записную книжку Jupyter, используя ядро PySpark. Инструкции см. в разделе по [созданию записной книжки Jupyter](./apache-spark-jupyter-spark-sql.md#create-a-jupyter-notebook).
 
-1. Импортируйте типы, необходимые для этого сценария. Вставьте следующий фрагмент кода в пустую ячейку и нажмите клавиши **SHIFT + ВВОД**. 
+1. Импортируйте типы, необходимые для этого сценария. Вставьте следующий фрагмент кода в пустую ячейку и нажмите клавиши **SHIFT + ВВОД**.
 
     ```PySpark
     from pyspark.ml import Pipeline
@@ -60,7 +60,7 @@ ms.locfileid: "67448708"
     from numpy import array
     ```
 
-3. Загрузите данные (hvac.csv), проанализируйте их и используйте эти данные для обучения модели. 
+1. Загрузите данные (hvac.csv), проанализируйте их и используйте эти данные для обучения модели.
 
     ```PySpark
     # Define a type called LabelDocument
@@ -72,7 +72,7 @@ ms.locfileid: "67448708"
         if (values[3] > values[2]):
             hot = 1.0
         else:
-            hot = 0.0        
+            hot = 0.0
 
         textValue = str(values[4]) + " " + str(values[5])
 
@@ -87,7 +87,7 @@ ms.locfileid: "67448708"
 
     В фрагменте кода определите функцию, которая сравнивает фактическую температуру с целевой. Если фактическая температура больше, то здание горячее (значение **1.0**). В противном случае в здании холодно (значение **0,0**).
 
-4. Настройте конвейер машинного обучения Spark, который состоит из трех частей: логического анализатора, hashingTF и lr.
+1. Настройте конвейер машинного обучения Spark, который состоит из трех частей: логического анализатора, hashingTF и lr.
 
     ```PySpark
     tokenizer = Tokenizer(inputCol="SystemInfo", outputCol="words")
@@ -98,18 +98,18 @@ ms.locfileid: "67448708"
 
     См. дополнительные сведения о [конвейере машинного обучения Apache Spark и том, как он работает](https://spark.apache.org/docs/latest/ml-pipeline.html).
 
-5. Впишите конвейер в документ для обучения.
+1. Впишите конвейер в документ для обучения.
 
     ```PySpark
     model = pipeline.fit(training)
     ```
 
-6. Проверьте, чтобы в документе для обучения имелась контрольная точка хода выполнения для приложения.
+1. Проверьте, чтобы в документе для обучения имелась контрольная точка хода выполнения для приложения.
 
     ```PySpark
     training.show()
     ```
-   
+
     Выходные данные должны быть следующего вида.
 
     ```output
@@ -145,7 +145,7 @@ ms.locfileid: "67448708"
 
     Обратите внимание на то, насколько фактическая температура меньше целевой, что свидетельствует о том, что здание холодное. В выходных данных обучения видно, что значение в первой строке столбца **label** составляет **0,0**. Это означает, что в здании не тепло.
 
-7. Подготовьте набор данных, в отношении которого необходимо выполнить обученную модель. Для этого передайте идентификатор системы и данные о сроке эксплуатации (значения в столбце **SystemInfo** в выходных данных обучения). После этого модель предскажет, станет ли в здании с таким идентификатором системы и сроком эксплуатации теплее (значение 1,0) или холоднее (значение 0,0).
+1. Подготовьте набор данных, в отношении которого необходимо выполнить обученную модель. Для этого передайте идентификатор системы и данные о сроке эксплуатации (значения в столбце **SystemInfo** в выходных данных обучения). После этого модель предскажет, станет ли в здании с таким идентификатором системы и сроком эксплуатации теплее (значение 1,0) или холоднее (значение 0,0).
 
     ```PySpark
     # SystemInfo here is a combination of system ID followed by system age
@@ -159,7 +159,7 @@ ms.locfileid: "67448708"
         .map(lambda x: Document(*x)).toDF()
     ```
 
-8. Наконец, создайте прогнозы на основе тестовых данных.
+1. Наконец, создайте прогнозы на основе тестовых данных.
 
     ```PySpark
     # Make predictions on test documents and print columns of interest
@@ -182,9 +182,10 @@ ms.locfileid: "67448708"
 
    В первой строке прогноза видно, что при использовании системы кондиционирования с идентификатором 20 и возрастом 25 лет температура в здании высокая (**прогноз = 1.0**). Первое значение параметра DenseVector (0,49999) соответствует прогнозу 0,0, а второе значение (0,5001) — прогнозу 1,0. В выходных данных видно, что, даже если второе значение лишь незначительно выше, модель показывает **прогноз = 1.0**.
 
-10. Завершите работу записной книжки для освобождения ресурсов. Для этого в меню **File** (Файл) записной книжки выберите пункт **Close and Halt** (Закрыть и остановить). Записная книжка завершит работу и закроется.
+1. Завершите работу записной книжки для освобождения ресурсов. Для этого в меню **File** (Файл) записной книжки выберите пункт **Close and Halt** (Закрыть и остановить). Записная книжка завершит работу и закроется.
 
 ## <a name="use-anaconda-scikit-learn-library-for-spark-machine-learning"></a>Использование библиотеки scikit-learn Anaconda для машинного обучения Spark
+
 Кластеры Apache Spark в HDInsight включают библиотеки Anaconda. Они также включают библиотеку **scikit-learn** для машинного обучения. Кроме того, библиотека включает различные наборы данных, которые можно использовать для создания примеров приложений прямо в записной книжке Jupyter. Примеры использования библиотеки scikit-learn см. здесь: [https://scikit-learn.org/stable/auto_examples/index.html](https://scikit-learn.org/stable/auto_examples/index.html).
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
@@ -201,7 +202,7 @@ ms.locfileid: "67448708"
 
 1. Нажмите кнопку **Удалить**. Выберите **Да**.
 
-![Удаление кластера HDInsight](./media/apache-spark-ipython-notebook-machine-learning/hdinsight-azure-portal-delete-cluster.png "Удаление кластера HDInsight")
+![Удаление кластера HDInsight на портале Azure](./media/apache-spark-ipython-notebook-machine-learning/hdinsight-azure-portal-delete-cluster.png "Удаление кластера HDInsight")
 
 ## <a name="next-steps"></a>Дополнительная информация
 

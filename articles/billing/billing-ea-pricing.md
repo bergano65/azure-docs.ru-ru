@@ -9,19 +9,19 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 07/01/2019
+ms.date: 10/01/2019
 ms.author: banders
 ms.custom: seodec18
-ms.openlocfilehash: a7f7da197a06dbbb730a7386882e534b8381cf9e
-ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.openlocfilehash: 486a6b46b6c4590b7f49cd8aba449204cd8f4fac
+ms.sourcegitcommit: d4c9821b31f5a12ab4cc60036fde00e7d8dc4421
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "67491356"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71709700"
 ---
 # <a name="view-and-download-your-organizations-azure-pricing"></a>Просмотр и скачивание сведений о ценах для вашей организации
 
-Клиенты с Соглашением Enterprise Azure (EA) или <bpt id="p1">[</bpt>Клиентским соглашением Майкрософт<ept id="p1">](#check-your-access-to-a-microsoft-customer-agreement)</ept> могут просматривать и загружать свои цены на портале Azure.
+Клиенты с Соглашением Enterprise Azure (EA) или [Клиентским соглашением Майкрософт](#check-your-access-to-a-microsoft-customer-agreement) могут просматривать и загружать свои цены на портале Azure.
 
 ## <a name="ea-pricing"></a>Цены на EA
 
@@ -51,9 +51,9 @@ ms.locfileid: "67491356"
 1. Войдите на [портал Azure](https://portal.azure.com).
 1. Выполните поиск по фразе *Управление затратами + выставление счетов*.
 1. Выберите профиль выставления счетов. В зависимости от уровня вашего доступа вам, возможно, сначала потребуется выбрать учетную запись выставления счетов.
-1. В области <bpt id="p1">**</bpt>Обзор<ept id="p1">**</ept> найдите ссылки на скачивание под тарифами за текущий месяц.
+1. В области **Обзор** найдите ссылки на скачивание под тарифами за текущий месяц.
 1. Выберите **Прейскурант Azure**.
-![![![![
+![Снимок экрана, показывающий загрузку из раздела "Обзор"](./media/billing-ea-pricing/open-pricing.png)
 
 ### <a name="download-price-sheets-for-billed-charges"></a>Скачивание прейскурантов для оплаченных счетов
 

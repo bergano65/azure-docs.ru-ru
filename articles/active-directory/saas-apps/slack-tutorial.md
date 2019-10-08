@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 08/23/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1c2d877a1dc611e02e9fbc245df230ca669a2ae4
-ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
+ms.openlocfilehash: b94607691b662dcfcf0e166cd5c339b00ed0573d
+ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70171444"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71326681"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-slack"></a>Руководство по интеграции единого входа Azure Active Directory со Slack
 
@@ -87,7 +87,7 @@ ms.locfileid: "70171444"
 
 1. На странице **Базовая конфигурация SAML** введите значения следующих полей.
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.slack.com`.
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<your Slack company>.slack.com`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес следующим образом: `https://slack.com`
 
@@ -136,7 +136,7 @@ ms.locfileid: "70171444"
 
 1. В другом окне веб-браузера войдите на свой корпоративный сайт Slack в качестве администратора.
 
-2. Выберите **Microsoft Azure AD** > **Team Settings** (Параметры команды).
+2. Перейдите к названию вашей организации в Slack слева, которое в нашем случае было **Microsoft Azure AD**, а затем перейдите к **параметрам команды**, как показано на следующем снимке экрана.
 
      ![Настройка единого входа на стороне приложения](./media/slack-tutorial/tutorial_slack_001.png)
 

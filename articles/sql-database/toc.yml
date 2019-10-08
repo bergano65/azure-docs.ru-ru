@@ -778,29 +778,35 @@
   items:
     - name: Глоссарий терминов
       href: sql-database-glossary-terms.md
-    - name: Развитие навыков с помощью Microsoft Learn
-      href: /learn/browse/?products=azure-sql-database
-    - name: Блог по SQL Server
-      href: 'https://cloudblogs.microsoft.com/sqlserver/?product=azure-sql-database'
-    - name: Блог Microsoft Azure
-      href: 'https://azure.microsoft.com/blog/'
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/'
-    - name: Открытые наборы данных
-      href: sql-database-public-data-sets.md
-    - name: Устранение неполадок с подключением
-      href: 'https://support.microsoft.com/help/10085/troubleshooting-connectivity-issues-with-microsoft-azure-sql-database'
-    - name: Цены
-      href: 'https://azure.microsoft.com/pricing/details/sql-database/'
-    - name: Форум MSDN
-      href: 'https://social.msdn.microsoft.com/Forums/home?forum=ssdsgetstarted'
-    - name: Stack Overflow
-      href: 'https://stackoverflow.com/questions/tagged/sql-azure'
-    - name: Видео
-      href: 'https://azure.microsoft.com/documentation/videos/index/?services=sql-database'
-    - name: Обновления службы
-      href: 'https://azure.microsoft.com/updates/?service=sql-database'
     - name: Центр архитектуры
       href: /azure/architecture/
+    - name: Развитие навыков с помощью Microsoft Learn
+      href: /learn/browse/?products=azure-sql-database
     - name: Истории клиентов
       href: 'https://customers.microsoft.com/en-us/search?sq=%22Azure%20SQL%20Database%22&ff=&p=0&so=story_publish_date%20desc'
+    - name: Блог Microsoft Azure
+      href: 'https://azure.microsoft.com/blog/'
+    - name: Форум MSDN
+      href: 'https://social.msdn.microsoft.com/Forums/home?forum=ssdsgetstarted'
+    - name: Открытые наборы данных
+      href: sql-database-public-data-sets.md
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/sql-database/'
+    - name: Обновления службы
+      href: 'https://azure.microsoft.com/updates/?service=sql-database'
+    - name: Блог по SQL Server
+      href: 'https://cloudblogs.microsoft.com/sqlserver/?product=azure-sql-database'
+    - name: Stack Overflow
+      href: 'https://stackoverflow.com/questions/tagged/sql-azure'
+    - name: Устранение неполадок
+      items:
+        - name: 'Проблемы, связанные с подключением'
+          href: troubleshoot-connectivity-issues-microsoft-azure-sql-database.md
+        - name: Решение проблем
+          items:
+            - name: Служба импорта и экспорта не отвечает на запросы
+              href: azure-sql-database-hangs-importing-exporting.md
+    - name: Видео
+      href: 'https://azure.microsoft.com/documentation/videos/index/?services=sql-database'

@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.author: v-pettur
 author: PeterTurcan
 ms.date: 06/21/2019
-ms.openlocfilehash: 32e253b4e131d753ab6937d0aa2a49bda471e091
-ms.sourcegitcommit: c63e5031aed4992d5adf45639addcef07c166224
+ms.openlocfilehash: 684ce33e5ecf587aa2030a817680f2d405225117
+ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67466569"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71327646"
 ---
 # <a name="c-tutorial-order-the-results---azure-search"></a>Руководство по C#. Упорядочение результатов (Поиск Azure)
 
@@ -31,7 +31,7 @@ ms.locfileid: "67466569"
 
 Для работы с этим руководством вам потребуется следующее:
 
-Получить версию проекта с бесконечной прокруткой из статьи [C# Tutorial: Search results pagination — Azure Search](tutorial-csharp-paging.md) (Руководство по C#. Разбиение результатов поиска на страницы (Поиск Azure)) и запустить его. Вы можете подготовить собственную версию проекта или установить готовый вариант из репозитория GitHub: [Создайте первое приложение](https://github.com/Azure-Samples/azure-search-dotnet-samples).
+Получить версию проекта с бесконечной прокруткой из статьи [C# Tutorial: Search results pagination — Azure Search](tutorial-csharp-paging.md) (Руководство по C#. Разбиение результатов поиска на страницы (Поиск Azure)) и запустить его. Это может быть ваша собственная версия проекта либо версия, установленная с сайта GitHub: [Создайте первое приложение](https://github.com/Azure-Samples/azure-search-dotnet-samples).
 
 ## <a name="order-results-based-on-one-property"></a>Упорядочение результатов по одному свойству
 
@@ -320,7 +320,7 @@ ms.locfileid: "67466569"
 
     ![Отображение диапазонов стоимости номеров](./media/tutorial-csharp-create-first-app/azure-search-orders-rooms.png)
 
-Свойство **OrderBy** в параметрах поиска не будет принимать такие значения, как **Rooms.BaseRate**, для отображения самой низкой стоимости номеров, даже если номера уже отсортированы по стоимости (а это не так). Чтобы отображать отели из тестового набора данных в порядке увеличения стоимости номеров, вам придется сортировать результаты в контроллере Home и отправлять их в представление уже в нужном порядке.
+Свойство **OrderBy** в параметрах поиска не будет принимать такие значения, как **Rooms.BaseRate**, для отображения самой низкой стоимости номеров, даже если номера уже отсортированы по стоимости. В этом случае номера не сортируются по стоимости. Чтобы отображать отели из тестового набора данных в порядке увеличения стоимости номеров, вам придется сортировать результаты в контроллере Home и отправлять их в представление уже в нужном порядке.
 
 ## <a name="order-results-based-on-multiple-values"></a>Упорядочение результатов по нескольким значениям
 

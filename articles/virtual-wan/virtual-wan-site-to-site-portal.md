@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 07/25/2019
 ms.author: cherylmc
 Customer intent: As someone with a networking background, I want to connect my local site to my VNets using Virtual WAN and I don't want to go through a Virtual WAN partner.
-ms.openlocfilehash: e9be7ef5c4f37c66f7cbf2c6226936438b367108
-ms.sourcegitcommit: f5cc71cbb9969c681a991aa4a39f1120571a6c2e
+ms.openlocfilehash: 357cc23c9dedb49dfd19dc897102762066ffd1b2
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68515164"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71679346"
 ---
 # <a name="tutorial-create-a-site-to-site-connection-using-azure-virtual-wan"></a>Руководство по Создание подключения "сеть — сеть" с помощью Виртуальной глобальной сети Azure
 
@@ -53,7 +53,7 @@ ms.locfileid: "68515164"
 
 Создайте нужное количество сайтов, которые соответствуют вашим физическим расположениям. Например, если у вас есть филиал в Нью-Йорке, в Лондоне, а также в Лос-Анджелесе, создайте три отдельных сайта. Эти сайты содержат конечные точки локального VPN-устройства. На данный момент вы можете указать только одно личное адресное пространство для вашего сайта.
 
-1. Щелкните имя глобальной сети, которую вы создали. На странице глобальной сети в разделе **архитектуры глобальной сети** щелкните **Сайты VPN**, чтобы открыть соответствующую страницу.
+1. Щелкните имя глобальной сети, которую вы создали. На странице глобальной сети в разделе **Архитектура виртуальной глобальной сети** щелкните **Сайты VPN**, чтобы открыть соответствующую страницу.
 2. На странице **Сайты VPN** щелкните **+Создать сайт**.
 3. На странице **создания сайта** заполните следующие поля:
 

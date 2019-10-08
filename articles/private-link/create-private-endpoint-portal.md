@@ -7,18 +7,22 @@ ms.service: private-link
 ms.topic: quickstart
 ms.date: 09/16/2019
 ms.author: kumud
-ms.openlocfilehash: 15b4d3208be693a5b8d858d30b663347515f5a68
-ms.sourcegitcommit: 2ed6e731ffc614f1691f1578ed26a67de46ed9c2
+ms.openlocfilehash: d7c2aee3ad73552a57776af5ce6585b36518d169
+ms.sourcegitcommit: 6013bacd83a4ac8a464de34ab3d1c976077425c7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71130292"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71687054"
 ---
 # <a name="create-a-private-endpoint-using-azure-portal"></a>Создание частной конечной точки с помощью портала Azure
 
 Частная конечная точка — ключевой компонент для построения частной ссылки в Azure. Это позволяет ресурсам Azure, таким как виртуальные машины (VM), обмениваться данными в частном порядке с ресурсами частной ссылки. В этом кратком руководстве вы узнаете, как создать виртуальную машину в виртуальной сети Azure и сервер базы данных SQL с частной конечной точкой Azure, используя Azure PowerShell. Затем вы сможете безопасно получить доступ к серверу базы данных SQL с виртуальной машины.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+
+
+> [!NOTE]
+> Частные конечные точки в сочетании с конечными точками службы в той же подсети не допускаются!
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
@@ -210,30 +214,31 @@ ms.locfileid: "71130292"
     Name:    myserver.privatelink.database.windows.net
     Address:  10.0.0.5
     Aliases:   myserver.database.windows.net
-3. Install [SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-2017).
+    ```
+3. Установите [SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-2017).
 
-4. In **Connect to server**, enter or select this information:
+4. В окне  **Подключение к серверу** введите или выберите следующую информацию:
 
-    | Setting | Value |
+    | Параметр | Значение |
     | ------- | ----- |
-    | Server type| Select **Database Engine**.|
-    | Server name| Select *myserver.database.windows.net* |
-    | User name | Enter a password provided during the SQL server creation. |
-    |Password |Enter a password provided during the SQL server creation. |
-    |Remember password|Select **Yes**.|
+    | Тип сервера| Выберите **Ядро СУБД**.|
+    | Имя сервера| Выберите *myserver.database.windows.net* |
+    | Имя пользователя | Введите пароль, указанный при создании SQL Server. |
+    |Пароль |Введите пароль, указанный при создании SQL Server. |
+    |Запоминание пароля|Выберите **Да**.|
     |||
-1. Select **Connect**.
-2. Browse databases from left menu.
-3. (Optionally) Create or query information from mydatabase.
-4. Close the remote desktop connection to *myVm*. 
+1. Выберите  **Подключение**.
+2. Просмотр баз данных из левого меню.
+3. (Дополнительно) Создание или запрос информации из базы данных mydatabase.
+4. Закройте подключение к удаленному рабочему столу  *myVm*. 
 
-## Clean up resources 
-When you're done using the private endpoint, SQL server, and the VM, delete the resource group and all of the resources it contains: 
-1. Enter *myResourceGroup* in the **Search** box at the top of the portal and select *myResourceGroup* from the search results. 
-2. Select **Delete resource group**. 
-3. Enter myResourceGroup for **TYPE THE RESOURCE GROUP NAME** and select **Delete**.
+## <a name="clean-up-resources"></a>Очистка ресурсов 
+После завершения работы с частной конечной точкой,SQL server и виртуальными машинами удалите группу ресурсов и все содержащиеся в ней ресурсы: 
+1. Введите  *myResourceGroup* в поле  **Поиск** в верхней части портала и выберите  *myResourceGroup* в результатах поиска. 
+2. Выберите  **Удалить группу ресурсов**. 
+3. Введите myResourceGroup в поле  **TYPE THE RESOURCE GROUP NAME**  (Введите имя группы ресурсов) и нажмите кнопку  **Удалить**.
 
-## Next steps
+## <a name="next-steps"></a>Дополнительная информация
 
-In this quickstart, you created a VM on a virtual network, a SQL database server, and a private endpoint for private access. You connected to one VM from the internet and securely communicated to the SQL database server using Private Link. To learn more about private endpoints, see [What is Azure private endpoint?](private-endpoint-overview.md).
+В этом кратком руководстве вы создали виртуальную машину в виртуальной сети, сервер базы данных SQL и частную конечную точку для закрытого доступа. Вы подключились к одной виртуальной машине из Интернета и безопасно взаимодействовали с сервером базы данных SQL с помощью частной ссылки. Дополнительные сведения о частных конечных точках см. в разделе [Что такое частная конечная точка Azure?](private-endpoint-overview.md).
 

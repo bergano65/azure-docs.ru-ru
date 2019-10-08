@@ -12,48 +12,42 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/12/2019
 ms.author: jaserano
-ms.openlocfilehash: 45f6f181ddbf7e76662f76c433d8ff68c18f0de1
-ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.openlocfilehash: 7795007b5bb27b9da540c6c3bcb0df45d1e17d80
+ms.sourcegitcommit: a19f4b35a0123256e76f2789cd5083921ac73daf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "69657090"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71718699"
 ---
 # <a name="troubleshoot-azure-payment-issues"></a>Устранение проблем с оплатой Azure
 
-Вы можете столкнуться с проблемой при обновлении учетной записи сведений об оплате на портале Microsoft Azure или в центре учетных записей. Прежде чем устранять эту неполадку, ознакомьтесь со следующими рекомендациями:
+Вы можете столкнуться с проблемой или ошибкой при обновлении учетной записи сведений об оплате на портале Microsoft Azure или в центре учетных записей.
 
-- Проверьте правильность сведений, указанных в профиле учетной записи Azure (включая контактный адрес электронной почты, почтовый адрес и номер телефона).
-- Проверьте правильность информации о кредитной карте.
-- Убедитесь, что у вас нет учетной записи Майкрософт с такими же сведениями.
+Чтобы устранить проблему, выберите раздел ниже, содержимое в котором сильнее всего похоже на вашу ошибку.
 
-## <a name="issues"></a>Проблемы
-
-Чтобы устранить любые ошибки, выберите проблему, с которой вы столкнулись при попытке зарегистрироваться в Azure.
-
-### <a name="unable-to-remove-a-credit-card-from-a-saved-billing-payment-method"></a>Не удалось удалить кредитную карту из сохраненного метода оплаты счетов
+## <a name="unable-to-remove-a-credit-card-from-a-saved-billing-payment-method"></a>Не удалось удалить кредитную карту из сохраненного метода оплаты счетов
 
 Кредитную карту нельзя удалить из активной подписки. Это сделано специально.
 
 Если необходимо удалить существующую карту, необходимо добавить новую карту в подписку, чтобы старое средство оплаты можно было успешно удалить, или отменить подписку. Это приведет к окончательному удалению подписки и карточки.
 
-### <a name="unable-to-delete-an-old-payment-method-after-adding-a-new-payment-method"></a>Не удалось удалить старый метод оплаты после добавления нового
+## <a name="unable-to-delete-an-old-payment-method-after-adding-a-new-payment-method"></a>Не удалось удалить старый метод оплаты после добавления нового
 
 Новое платежное средство может не быть связано с подпиской. Чтобы связать платежное средство с подпиской, см. раздел [Add, update, or remove a credit card for Azure](billing-how-to-change-credit-card.md) (Добавление, обновление или удаление кредитной карты для Azure).
 
 Информацию об устранении неполадок, связанных с отклоненной картой, см. в разделе [How to troubleshoot a declined card at Azure sign-up](billing-troubleshoot-declined-card.md) (Устранение неполадок с отклоненной картой при регистрации в Azure).
 
-### <a name="unable-to-delete-a-payment-method-because-of-cannot-delete-payment-method-error"></a>Не удалось удалить метод оплаты из-за ошибки *Не удается удалить метод оплаты*
+## <a name="unable-to-delete-a-payment-method-because-of-cannot-delete-payment-method-error"></a>Не удалось удалить метод оплаты из-за ошибки *Не удается удалить метод оплаты*
 
 Это происходит из-за задолженности. Погасите все задолженности, прежде чем удалять метод оплаты.
 
-### <a name="unable-to-see-subscriptions-under-my-account-to-update-the-payment-method"></a>Не удалось просмотреть подписки в учетной записи для изменения метода оплаты
+## <a name="unable-to-see-subscriptions-under-my-account-to-update-the-payment-method"></a>Не удалось просмотреть подписки в учетной записи для изменения метода оплаты
 
 Возможно, вы используете идентификатор электронной почты, отличающийся от того, который используется для подписок.
 
 Для устранения этой проблемы см. [No subscriptions found sign-in error for Azure portal or Azure account center](billing-no-subscriptions-found.md) (Ошибка "Подписки не найдены" при попытке входа на портал Azure или в Центр управления учетной записью Azure).
 
-### <a name="unable-to-make-payment-for-a-subscription"></a>Не удается выполнить оплату для подписки
+## <a name="unable-to-make-payment-for-a-subscription"></a>Не удается выполнить оплату для подписки
 
 При появлении ошибки: *Платеж просрочен. Возникла проблема с методом оплаты,* или *не удалось сохранить информацию. Закройте браузер и повторите попытку.* , после чего на карте появится ожидающий оплаты платеж, поскольку ваше финансовое учреждение отказало в выдаче карты.
 
@@ -65,7 +59,7 @@ ms.locfileid: "69657090"
 - У карты есть кредитный лимит, и остаток должен быть оплачен.
 - На карте разрешены регулярные платежи.
 
-### <a name="unable-to-change-payment-method-because-of-browser-issues-browser-does-not-respond-does-not-load-and-so-on"></a>Не удалось изменить метод оплаты из-за проблем с браузером (браузер не отвечает, не загружается и т. д.)
+## <a name="unable-to-change-payment-method-because-of-browser-issues-browser-does-not-respond-does-not-load-and-so-on"></a>Не удалось изменить метод оплаты из-за проблем с браузером (браузер не отвечает, не загружается и т. д.)
 
 Выйдите из всех активных сеансов Azure, а затем выполните шаги, описанные в статье [Просмотр в режиме InPrivate в Microsoft Edge](https://support.microsoft.com/help/4026200/microsoft-edge-browse-inprivate), чтобы начать сеанс в режиме InPrivate в Microsoft Edge или Internet Explorer.
 
@@ -77,11 +71,11 @@ ms.locfileid: "69657090"
 - Использовать другой браузер
 - Удалить кэшированные файлы cookie
 
-### <a name="my-subscription-is-still-disabled-after-updating-the-payment-method"></a>Моя подписка по-прежнему отключена после обновления метода оплаты.
+## <a name="my-subscription-is-still-disabled-after-updating-the-payment-method"></a>Моя подписка по-прежнему отключена после обновления метода оплаты.
 
 Это происходит из-за задолженности. Погасите все задолженности, прежде чем удалять метод оплаты.
 
-### <a name="unable-to-change-payment-method-because-of-an-xml-error-response-page"></a>Не удалось изменить метод оплаты из-за страницы ответа "Ошибка XML"
+## <a name="unable-to-change-payment-method-because-of-an-xml-error-response-page"></a>Не удалось изменить метод оплаты из-за страницы ответа "Ошибка XML"
 
 Это сообщение появляется, если вы используете [портал Azure](https://portal.azure.com/) для добавления новой кредитной карты.
 
@@ -89,7 +83,7 @@ ms.locfileid: "69657090"
 
 ## <a name="additional-help-resources"></a>Дополнительные справочные ресурсы
 
-Другие статьи по устранению неполадок при выставлении счетов и подписках Azure
+Другие статьи по устранению проблем при выставлении счетов и с подписками Azure
 
 - [Карта не принимается](billing-troubleshoot-declined-card.md)
 - [Проблемы со входом в подписку](billing-troubleshoot-sign-in-issue.md)

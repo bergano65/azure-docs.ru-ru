@@ -1,22 +1,22 @@
 ---
-title: Создание субъектов-служб и назначений ролей в предварительной версии Виртуального рабочего стола Windows с помощью PowerShell — Azure
-description: Из этой статьи вы узнаете, как создать субъекты-службы и назначить роли с помощью PowerShell в предварительной версии Виртуального рабочего стола Windows.
+title: Создание субъектов-служб и назначений ролей в Виртуальном рабочем столе Windows с помощью PowerShell — Azure
+description: Из этой статьи вы узнаете, как создать субъекты-службы и назначить роли с помощью PowerShell в Виртуальном рабочем столе Windows.
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: tutorial
 ms.date: 09/09/2019
 ms.author: helohr
-ms.openlocfilehash: dbde4ccede7f27ae494c8326babc7ec69b4a1266
-ms.sourcegitcommit: 909ca340773b7b6db87d3fb60d1978136d2a96b0
+ms.openlocfilehash: 87057d29d9d95ac0ebca298e40ca0d8c2aa9b0b1
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70985011"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71679635"
 ---
 # <a name="tutorial-create-service-principals-and-role-assignments-by-using-powershell"></a>Руководство по Создание субъектов-служб и назначений ролей с использованием PowerShell
 
-Субъекты-службы — это удостоверения, которые вы можете создать в Azure Active Directory для назначения ролей и разрешений с определенной целью. В предварительной версии Виртуального рабочего стола Windows вы можете создать субъект-службу для решения следующих задач:
+Субъекты-службы — это удостоверения, которые вы можете создать в Azure Active Directory для назначения ролей и разрешений с определенной целью. В Виртуальном рабочем столе Windows вы можете создать субъект-службу для решения следующих задач:
 
 - автоматизация определенных задач управления Виртуального рабочего стола Windows.
 - использование в качестве учетных данных вместо пользователей Многофакторной идентификации при использовании какого-либо из шаблонов Resource Manager в Виртуальном рабочем столе Windows.

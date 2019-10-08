@@ -1,17 +1,17 @@
 ---
-title: Руководство по совместному использованию данных клиентами и партнерами с помощью предварительной версии Azure Data Share
+title: Руководство по Общий доступ за пределами организации в предварительной версии Azure Data Share
 description: Руководство по совместному использованию данных клиентами и партнерами с помощью предварительной версии Azure Data Share
 author: joannapea
+ms.author: joanpo
 ms.service: data-share
 ms.topic: tutorial
 ms.date: 07/10/2019
-ms.author: joanpo
-ms.openlocfilehash: 01888f3656765b922c1b646e7ca8e07d81e799f3
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
+ms.openlocfilehash: f7df46a6a6f149ef0228fda8c967469a25dc3d50
+ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67838421"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71327414"
 ---
 # <a name="tutorial-share-your-data-using-azure-data-share-preview"></a>Руководство по Совместное использование данных с помощью предварительной версии Azure Data Share
 
@@ -52,7 +52,7 @@ ms.locfileid: "67838421"
     |---|---|---|
     | ИМЯ | *datashareacount* | Укажите имя вашей учетной записи Data Share. |
     | Subscription | Ваша подписка | Выберите подписку Azure, которую нужно использовать для своей учетной записи Data Share.|
-    | Resource group | *test-resource-group* | Воспользуйтесь существующей группой ресурсов или создайте новую. |
+    | группа ресурсов. | *test-resource-group* | Воспользуйтесь существующей группой ресурсов или создайте новую. |
     | Location | *Восточная часть США 2* | Выберите регион для учетной записи Data Share.
     | | |
 

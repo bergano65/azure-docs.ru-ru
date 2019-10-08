@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: personalizer
 ms.topic: quickstart
-ms.date: 09/12/2019
+ms.date: 09/26/2019
 ms.author: diberry
-ms.openlocfilehash: ab593ae33f11fe3e39846c50e9f43f73f80894ba
-ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
+ms.openlocfilehash: b7ea28f98340d3c3547b0ed66771b3982a03143d
+ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71265961"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71345250"
 ---
 # <a name="quickstart-personalize-client-library-for-nodejs"></a>Краткое руководство. Клиентская библиотека Персонализатора для Node.js
 
@@ -31,11 +31,21 @@ ms.locfileid: "71265961"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
-* Текущая версия [Node.js](https://nodejs.org).
+* Текущая версия [Node.js](https://nodejs.org) и NPM.
 
-## <a name="setting-up"></a>Настройка
+## <a name="using-this-quickstart"></a>Использование этого краткого руководства
 
-### <a name="create-a-personalizer-azure-resource"></a>Создание ресурса Azure для Персонализатора
+
+Для использования этого краткого руководства необходимо выполнить несколько действий.
+
+* Создайте ресурс "Персонализатор" на портале Azure.
+* В ресурсе "Персонализатор" на странице **Параметров** измените частоту обновления модели.
+* В редакторе кода создайте и измените файл кода.
+* В командной строке или терминале установите пакет SDK из командной строки.
+* В командной строке (или терминале) запустите файл кода.
+
+
+## <a name="create-a-personalizer-azure-resource"></a>Создание ресурса Azure для Персонализатора
 
 Ресурсами Azure, на которые вы подписаны, будет представлено семейство служб Azure Cognitive Services. Создайте ресурс для Персонализатора с помощью [портала Azure](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) или [Azure CLI](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account-cli) на локальном компьютере. Также можно:
 
@@ -50,7 +60,7 @@ ms.locfileid: "71265961"
 На портале Azure ключ и значения конечных точек можно найти на странице **Быстрый запуск**.
 
 
-### <a name="create-a-new-nodejs-application"></a>создание приложения Node.js;
+## <a name="create-a-new-nodejs-application"></a>создание приложения Node.js;
 
 В окне консоли (например, cmd, PowerShell или Bash) создайте новый каталог для приложения и перейдите в него. 
 
@@ -64,7 +74,7 @@ mkdir myapp && cd myapp
 npm init -y
 ```
 
-### <a name="install-the-nodejs-library-for-personalizer"></a>Установка библиотеки Node.js для Персонализатора
+## <a name="install-the-nodejs-library-for-personalizer"></a>Установка библиотеки Node.js для Персонализатора
 
 Установите клиентскую библиотеку Персонализатора для Node.js с помощью следующей команды:
 
@@ -78,9 +88,9 @@ npm install @azure/cognitiveservices-personalizer --save
 npm install @azure/ms-rest-azure-js @azure/ms-rest-js readline-sync uuid --save
 ```
 
-### <a name="change-the-model-update-frequency"></a>Изменение частоты обновления модели
+## <a name="change-the-model-update-frequency"></a>Изменение частоты обновления модели
 
-В ресурсе "Персонализатор" на портале Azure установите для параметра **Частота обновления модели** значение 10 секунд. С этим значением служба будет обучаться быстро, и вы увидите, как главное действие меняется с каждой итерацией.
+В ресурсе "Персонализатор" на странице **Параметров** установите значение для параметра **Частота обновления модели** на 10 секунд. С этим значением служба будет обучаться быстро, и вы увидите, как главное действие меняется с каждой итерацией.
 
 ![Изменение частоты обновления модели](./media/settings/configure-model-update-frequency-settings.png)
 

@@ -12,12 +12,12 @@ keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, 
 manager: gwallace
 ms.custom: vs-azure
 ms.workload: azure-vs
-ms.openlocfilehash: ece47c86fba6bc975a4146f596fa001014352a4f
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: 41dea16f7938d391f8cdf03e1a731e8082f74b26
+ms.sourcegitcommit: 8bae7afb0011a98e82cbd76c50bc9f08be9ebe06
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68725844"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71695475"
 ---
 # <a name="quickstart-debug-and-iterate-with-visual-studio-and-net-core-on-kubernetes-with-azure-dev-spaces"></a>Краткое руководство. Отладка и итерация с помощью Visual Studio, .NET Core и Azure Dev Spaces в Kubernetes
 
@@ -26,6 +26,11 @@ ms.locfileid: "68725844"
 - Настройка Azure Dev Spaces с помощью управляемого кластера Kubernetes в Azure.
 - итеративно разрабатывать код в контейнерах с помощью Visual Studio.
 - Отладка кода, запущенного в кластере, с помощью Visual Studio.
+
+Azure Dev Spaces также позволяет выполнять отладку и итерацию с помощью:
+- [Java и Visual Studio Code](quickstart-java.md);
+- [Node.js и Visual Studio Code](quickstart-nodejs.md);
+- [.NET Core и Visual Studio Code](quickstart-netcore.md);
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -38,7 +43,7 @@ ms.locfileid: "68725844"
 
 1. Войдите на [портал Azure](https://portal.azure.com)
 1. Выберите *+ Создать ресурс > Служба Kubernetes*. 
-1. Задайте значения в полях _Подписка_ , _Группа ресурсов_ , _Имя кластера Kubernetes_ , _Регион_ , _Версия Kubernetes_ и _Префикс DNS-имени_ .
+1. Задайте значения в полях _Подписка_, _Группа ресурсов_, _Имя кластера Kubernetes_, _Регион_, _Версия Kubernetes_ и _Префикс DNS-имени_.
 
     ![Создание кластера AKS на портале Azure](media/get-started-netcore-visualstudio/create-aks-portal.png)
 
