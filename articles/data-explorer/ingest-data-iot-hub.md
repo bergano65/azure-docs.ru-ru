@@ -7,12 +7,12 @@ ms.reviewer: orspodek
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 08/27/2019
-ms.openlocfilehash: 327fd5352a3f067638c7f9ceb51e2de9e284d845
-ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
+ms.openlocfilehash: ef66e6a69b6d33b16a558293fe29b8adf51cd137
+ms.sourcegitcommit: 9f330c3393a283faedaf9aa75b9fcfc06118b124
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71947844"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "71996761"
 ---
 # <a name="ingest-data-from-iot-hub-into-azure-data-explorer-preview"></a>Прием данных из центра Интернета вещей в обозреватель данных Azure (Предварительная версия)
 
@@ -77,11 +77,10 @@ ms.locfileid: "71947844"
     **Параметр** | **Описание поля**
     |---|---|
     | Имя подключения к данным | Имя подключения, которое необходимо создать в Azure обозреватель данных
-    | Центр Интернета вещей | Имя центра Интернета вещей |
+    | Центр Интернета вещей | Имя Центра Интернета вещей |
     | Политика общего доступа | Имя политики общего доступа. Должны иметь разрешения на чтение |
     | Группа потребителей |  Группа потребителей, определенная в встроенной конечной точке центра Интернета вещей |
-    | Свойства системы событий | [Свойства системы событий центра Интернета вещей](/azure/iot-hub/iot-hub-devguide-messages-construct#system-properties-of-d2c-iot-hub-messages) при наличии нескольких записей на каждое сообщение о событии, системные свойства будут добавлены к первому из них.|
-    | | 
+    | Свойства системы событий | [Свойства системы событий центра Интернета вещей](/azure/iot-hub/iot-hub-devguide-messages-construct#system-properties-of-d2c-iot-hub-messages). При добавлении системных свойств [Создайте](/azure/kusto/management/tables#create-table) или [Обновите](/azure/kusto/management/tables#alter-table-and-alter-merge-table) схему таблицы и [сопоставление](/azure/kusto/management/mappings) , чтобы включить выбранные свойства. | | | 
 
     > [!NOTE]
     > В случае [отработки отказа вручную](/azure/iot-hub/iot-hub-ha-dr#manual-failover)необходимо создать подключение к данным.
@@ -95,7 +94,7 @@ ms.locfileid: "71947844"
     |---|---|---|
     | Таблица | *TestTable* | Таблица, созданная в **TestDB**. |
     | Формат данных | *JSON* | Поддерживаются форматы Avro, CSV, JSON, многострочные JSON, ПСВ, СОХСВ, СКСВ, TSV, ТСВЕ и TXT. |
-    | Сопоставление столбцов | *TestMapping* | Сопоставление, созданное в **TestDB**, которое сопоставляет входящие данные JSON с именами столбцов и типами данных **TestDB**. Требуется для JSON, многострочного JSON и AVRO, а для других форматов — необязательно.|
+    | Сопоставление столбцов | *TestMapping* | [Сопоставление](/azure/kusto/management/mappings) , созданное в **TestDB**, которое сопоставляет входящие данные JSON с именами столбцов и типами данных **TestDB**. Требуется для JSON, многострочного JSON и AVRO, а для других форматов — необязательно.|
     | | |
 
     > [!NOTE]

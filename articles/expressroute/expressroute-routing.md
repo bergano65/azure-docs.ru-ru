@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 09/19/2019
 ms.author: cherylmc
 ms.custom: seodec18
-ms.openlocfilehash: 9bc0d1b31ebeaecce8b4be8699cf87811047b6f9
-ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
+ms.openlocfilehash: 77c90cccbbfa5865878ae4dc47e5009697560ed3
+ms.sourcegitcommit: be344deef6b37661e2c496f75a6cf14f805d7381
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71123262"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72001317"
 ---
 # <a name="expressroute-routing-requirements"></a>Требования ExpressRoute к маршрутизации
 Для подключения к облачным службам Майкрософт с помощью ExpressRoute необходимо настроить маршрутизацию и управлять ею. Некоторые поставщики услуг подключения предлагают настройку маршрутизации как управляемой службы и управление этой службой. Узнайте у поставщика услуг подключения, предоставляет ли он такую услугу. В противном случае необходимо выполнить требования, указанные ниже:
@@ -67,7 +67,7 @@ ms.locfileid: "71123262"
 ### <a name="ip-addresses-used-for-azure-public-peering"></a>IP-адреса для общедоступного пиринга Azure
 
 > [!NOTE]
-> Общедоступный пиринг Azure недоступен для новых каналов.
+> Общедоступный пиринг Azure не рекомендуется для новых каналов.
 > 
 
 Для настройки сеансов BGP используйте принадлежащие вам общедоступные IP-адреса. У Майкрософт должна быть возможность проверить владельца IP-адреса по региональному интернет-реестру или интернет-реестру маршрутизации. 

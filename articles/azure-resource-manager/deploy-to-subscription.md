@@ -1,35 +1,52 @@
 ---
-title: Создание группы ресурсов и ресурсов в подписке — шаблон Azure Resource Manager
+title: Создание групп ресурсов и ресурсов в подписке — шаблон Azure Resource Manager
 description: В этой статье описывается создание группы ресурсов в шаблоне Azure Resource Manager. Здесь также показано, как развернуть ресурсы в области подписки Azure.
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: conceptual
-ms.date: 09/06/2019
+ms.date: 10/07/2019
 ms.author: tomfitz
-ms.openlocfilehash: 37f2b04a62d94cce42b095540380460c38bc5b79
-ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
+ms.openlocfilehash: 913014a9b7e24345cd21979ba20ea1a1a938d022
+ms.sourcegitcommit: be344deef6b37661e2c496f75a6cf14f805d7381
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70772941"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72001600"
 ---
 # <a name="create-resource-groups-and-resources-at-the-subscription-level"></a>Создание групп ресурсов и ресурсов на уровне подписки
 
-Как правило, вы развертываете ресурсы Azure в группу ресурсов в подписке Azure. Но можете также создавать группы ресурсов Azure и создавать ресурсы Azure на уровне подписки. Чтобы развернуть шаблоны на уровне подписки, используйте Azure CLI и Azure PowerShell. Портал Azure не поддерживает развертывания на уровне подписки.
+Как правило, вы развертываете ресурсы Azure в группу ресурсов в подписке Azure. Однако вы также можете создавать ресурсы на уровне подписки. Развертывания на уровне подписки используются для выполнения действий, имеющих смысл на этом уровне, таких как создание групп ресурсов или назначение [управления доступом на основе ролей](../role-based-access-control/overview.md).
 
-Чтобы создать группу ресурсов в шаблоне Azure Resource Manager, определите для ресурса [Microsoft.Resources/resourceGroups](/azure/templates/microsoft.resources/allversions) имя и расположение. Вы можете создать группу ресурсов и развернуть ресурсы в нее в одном шаблоне. Ресурсы, которые можно развернуть на уровне подписки: [Политики](../governance/policy/overview.md) и [Управление доступом на основе ролей](../role-based-access-control/overview.md).
+Чтобы развернуть шаблоны на уровне подписки, используйте Azure CLI, PowerShell или REST API. Портал Azure не поддерживает развертывания на уровне подписки.
 
-## <a name="deployment-considerations"></a>Рекомендации по развертыванию
+## <a name="supported-resources"></a>Поддерживаемые ресурсы
 
-Развертывание уровня подписки отличается от развертывания группы ресурсов следующими аспектами.
+На уровне подписки можно развернуть следующие типы ресурсов:
 
-### <a name="schema-and-commands"></a>Схема и команды
+* [размещения](/azure/templates/microsoft.resources/deployments) 
+* [пираснс](/azure/templates/microsoft.peering/peerasns)
+* [полициассигнментс](/azure/templates/microsoft.authorization/policyassignments)
+* [policyDefinitions](/azure/templates/microsoft.authorization/policydefinitions)
+* [полицисетдефинитионс](/azure/templates/microsoft.authorization/policysetdefinitions)
+* [resourceGroups](/azure/templates/microsoft.resources/resourcegroups)
+* [roleAssignments](/azure/templates/microsoft.authorization/roleassignments)
+* [roleDefinitions](/azure/templates/microsoft.authorization/roledefinitions)
 
-Схема и команды, используемые для развертываний на уровне подписки, отличаются от развертываний в группу ресурсов. 
+### <a name="schema"></a>Схема
 
-Для схемы используйте `https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#`.
+Схема, используемая для развертываний на уровне подписки, отличается от схемы развертываний группы ресурсов.
 
-В качестве команды развертывания Azure CLI используйте [az deployment create](/cli/azure/deployment?view=azure-cli-latest#az-deployment-create). Например, следующая команда CLI развертывает шаблон для создания группы ресурсов.
+Для схемы используйте:
+
+```json
+https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#
+```
+
+## <a name="deployment-commands"></a>Команды развертывания
+
+Команды для развертываний на уровне подписки отличаются от команд для развертываний групп ресурсов.
+
+Для Azure CLI используйте команду [AZ Deployment Create](/cli/azure/deployment?view=azure-cli-latest#az-deployment-create). В следующем примере выполняется развертывание шаблона для создания группы ресурсов.
 
 ```azurecli-interactive
 az deployment create \
@@ -39,7 +56,8 @@ az deployment create \
   --parameters rgName=demoResourceGroup rgLocation=centralus
 ```
 
-В качестве команды развертывания PowerShell используйте [New-AzureRmDeployment](/powershell/module/az.resources/new-azdeployment). Например, следующая команда PowerShell развертывает шаблон для создания группы ресурсов.
+
+В качестве команды развертывания PowerShell используйте [New-AzureRmDeployment](/powershell/module/az.resources/new-azdeployment). В следующем примере выполняется развертывание шаблона для создания группы ресурсов.
 
 ```azurepowershell-interactive
 New-AzDeployment `
@@ -50,13 +68,17 @@ New-AzDeployment `
   -rgLocation centralus
 ```
 
-### <a name="deployment-name-and-location"></a>Имя и расположение для развертывания
+Для REST API используйте [развертывания — создание в области подписки](/rest/api/resources/deployments/createorupdateatsubscriptionscope).
 
-При развертывании в подписке, необходимо указать расположение для развертывания. Можно также указать имя для развертывания. Если не указать имя для развертывания, имя шаблона будет использоваться как имя развертывания. Например, развернув шаблон с именем **azuredeploy.json** создается имя развертывания по умолчанию **azuredeploy**.
+## <a name="deployment-location-and-name"></a>Расположение и имя развертывания
 
-Расположение развертывания уровня подписки является неизменяемым. Не возможно создать развертывание в одном расположении, если в другом расположении уже существует развертывание с таким же именем. Если появится код ошибки `InvalidDeploymentLocation`, используйте другое имя или то же расположение, что и для предыдущего развертывания с этим именем.
+Для развертываний на уровне подписки необходимо указать расположение для развертывания. Расположение развертывания отделено от расположения развертываемых ресурсов. В расположении развертывания указывается место хранения данных развертывания.
 
-### <a name="use-template-functions"></a>Использование функций шаблонов
+Можно указать имя развертывания или использовать имя развертывания по умолчанию. Имя по умолчанию — это имя файла шаблона. Например, развернув шаблон с именем **azuredeploy.json** создается имя развертывания по умолчанию **azuredeploy**.
+
+Для каждого имени развертывания расположение является неизменяемым. Не возможно создать развертывание в одном расположении, если в другом расположении уже существует развертывание с таким же именем. Если появится код ошибки `InvalidDeploymentLocation`, используйте другое имя или то же расположение, что и для предыдущего развертывания с этим именем.
+
+## <a name="use-template-functions"></a>Использование функций шаблонов
 
 Важные рекомендации при использовании функций шаблонов для развертываний на уровне подписки:
 
@@ -65,6 +87,8 @@ New-AzDeployment `
 * Функции [reference()](resource-group-template-functions-resource.md#reference) и [list()](resource-group-template-functions-resource.md#list) поддерживаются.
 
 ## <a name="create-resource-groups"></a>Создание группы ресурсов
+
+Чтобы создать группу ресурсов в шаблоне Azure Resource Manager, определите для ресурса [Microsoft.Resources/resourceGroups](/azure/templates/microsoft.resources/allversions) имя и расположение. Вы можете создать группу ресурсов и развернуть ресурсы в нее в одном шаблоне.
 
 В следующем примере создается пустая группа ресурсов.
 
@@ -93,10 +117,6 @@ New-AzDeployment `
     "outputs": {}
 }
 ```
-
-Схему шаблона можно найти [здесь](/azure/templates/microsoft.resources/allversions). Аналогичные шаблоны можно найти в [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/subscription-level-deployments).
-
-## <a name="create-multiple-resource-groups"></a>Создание нескольких групп ресурсов
 
 Используйте [элемент copy](resource-group-create-multiple.md) с группами ресурсов, чтобы создать несколько групп ресурсов. 
 
@@ -135,7 +155,7 @@ New-AzDeployment `
 
 Дополнительные сведения см. в статьях [Развертывание нескольких экземпляров ресурса или свойства в шаблонах Azure Resource Manager](./resource-group-create-multiple.md) и [Руководство. Создание нескольких экземпляров ресурса с помощью шаблонов Resource Manager](./resource-manager-tutorial-create-multiple-instances.md).
 
-## <a name="create-resource-group-and-deploy-resources"></a>Создание группы ресурсов и развертывание ресурсов
+## <a name="resource-group-and-resources"></a>Группа ресурсов и ресурсы
 
 Чтобы создать группу ресурсов и развернуть в нее ресурсы, используйте вложенный шаблон. Вложенный шаблон определяет ресурсы для развертывания в группе ресурсов. Установите вложенный шаблон как зависимый от группы ресурсов, чтобы группа существовала до развертывания ресурсов.
 
@@ -339,5 +359,6 @@ New-AzDeployment `
 
 * Дополнительные сведения о назначении ролей см. в статье [Управление доступом к ресурсам Azure с помощью RBAC и шаблонов Azure Resource Manager](../role-based-access-control/role-assignments-template.md).
 * Пример развертывания параметров рабочей области для центра безопасности Azure см. в разделе о [deployASCwithWorkspaceSettings.json](https://github.com/krnese/AzureDeploy/blob/master/ARM/deployments/deployASCwithWorkspaceSettings.json).
+* Примеры шаблонов можно найти на сайте [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/subscription-level-deployments).
 * Сведения о создании шаблонов диспетчера ресурсов Azure см. в статье о [создании шаблонов](resource-group-authoring-templates.md). 
 * Список доступных в шаблоне функций см. в статье о [функциях шаблонов](resource-group-template-functions.md).

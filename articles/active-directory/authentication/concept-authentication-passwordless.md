@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: librown
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fc633780d8b816d8fc2e313bb1955a5719979efe
-ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
+ms.openlocfilehash: ab48579c6eda085d77e2a6ab080b0a4a1ce806bd
+ms.sourcegitcommit: be344deef6b37661e2c496f75a6cf14f805d7381
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70240871"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72000336"
 ---
 # <a name="what-is-passwordless"></a>Общие сведения о входе без пароля
 
@@ -62,10 +62,10 @@ ms.locfileid: "70240871"
 | юбико | [https://www.yubico.com/support/contact/](https://www.yubico.com/support/contact/) |
 | феитиан | [https://www.ftsafe.com/about/Contact_Us](https://www.ftsafe.com/about/Contact_Us) |
 | БЫЛИ | [https://www.hidglobal.com/contact-us](https://www.hidglobal.com/contact-us) |
-| енсурити | [https://ensurity.com/contact-us.html](https://ensurity.com/contact-us.html) |
+| енсурити | [https://www.ensurity.com/contact](https://www.ensurity.com/contact) |
 | евбм | [https://www.ewbm.com/page/sub1_5](https://www.ewbm.com/page/sub1_5) |
 
-Если вы являетесь поставщиком и хотите получить устройство в этом списке, обратитесь к [Fido2Request@Microsoft.com](mailto:Fido2Request@Microsoft.com).
+Если вы являетесь поставщиком и хотите получить устройство в этом списке, обратитесь в [Fido2Request@Microsoft.com](mailto:Fido2Request@Microsoft.com).
 
 Ключи безопасности FIDO2 являются отличным вариантом для предприятий, которые имеют очень высокий уровень безопасности или имеют сценарии или сотрудники, которые не могут использовать свой телефон в качестве второго фактора.
 

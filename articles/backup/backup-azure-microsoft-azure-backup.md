@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 11/13/2018
 ms.author: dacurwin
-ms.openlocfilehash: 3f427726a128eed426a64bc533075ba0cdde9544
-ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
+ms.openlocfilehash: 7a0f1f7dd79be250370fa97096a0cbf6dfc7f637
+ms.sourcegitcommit: 387da88b8262368c1b67fffea58fe881308db1c2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71241080"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "71982858"
 ---
 # <a name="install-and-upgrade-azure-backup-server"></a>Установка и обновление Azure Backup Server
 
@@ -184,11 +184,14 @@ Azure Backup Server наследует большую часть функцио�
 
     Для этой конфигурации SSRS используйте следующие значения: 
     - Учетная запись службы: "Использовать встроенную учетную запись" должна быть сетевой службой
-    - URL веб-службы: "Виртуальный каталог" должен быть ReportServer_<SQLInstanceName>
-    - База данных: DatabaseName должно быть ReportServer $<SQLInstanceName>
-    - URL-адрес портала: "Виртуальный каталог" должен быть Reports_<SQLInstanceName>
+    - URL веб-службы: "Виртуальный каталог" должен быть ReportServer_ @ no__t-0
+    - База данных: DatabaseName должно быть ReportServer $ <SQLInstanceName>
+    - URL-адрес портала: "Виртуальный каталог" должен быть Reports_ @ no__t-0
 
     [Подробнее](https://docs.microsoft.com/sql/reporting-services/report-server/configure-and-administer-a-report-server-ssrs-native-mode?view=sql-server-2017) о конфигурации SSRS.
+
+    > [!NOTE]
+    > Лицензирование SQL Server, используемых в качестве базы данных для MABS, регулируется [условиями Microsoft Online Services](https://www.microsoft.com/en-us/licensing/product-licensing/products) (OST). В соответствии с OST, SQL Server, Объединенные с MABS, могут использоваться только в качестве базы данных для MABS.
 
 4. Укажите расположение для установки файлов сервера Microsoft Azure Backup и нажмите кнопку **Далее**.
 
@@ -270,7 +273,7 @@ MABS использует агент защиты System Center Data Protection 
 9. Из SQL восстановите DPMDB.
 10. Из командной строки администратора на компакт-диске нового сервера в Microsoft Azure Backup установите расположение и папку bin.
 
-    Пример пути: C:\Windows\System32 > CD "c:\Program Files\Microsoft Azure Баккуп\дпм\дпм\бин\"
+    Пример пути: C:\Windows\System32 > CD "c:\Program Files\Microsoft Azure Баккуп\дпм\дпм\бин @ no__t-0
 
 11. Для службы архивации Azure выполните команду DPMSYNC-SYNC.
 

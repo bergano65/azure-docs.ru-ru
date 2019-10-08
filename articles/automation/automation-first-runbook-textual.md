@@ -10,12 +10,12 @@ ms.author: robreed
 ms.date: 09/24/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 010c6b00161c7a0a004932528fa4f608aa7c5e23
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: ab6d213e83c2d7eba95c6c9a6dca5edc1f0f2215
+ms.sourcegitcommit: 9f330c3393a283faedaf9aa75b9fcfc06118b124
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68850685"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "71996522"
 ---
 # <a name="my-first-powershell-workflow-runbook"></a>Первый Runbook рабочего процесса PowerShell
 
@@ -80,7 +80,7 @@ ms.locfileid: "68850685"
 1. Щелкните **Пуск** , чтобы начать тестирование. Этот параметр должен быть единственным включенным параметром.
 1. При этом создается [задание Runbook](automation-runbook-execution.md) и отображается его состояние.
 
-   Состояние задания начнется с постановкой в *очередь* , что означает, что он ожидает, пока Рабочая роль Runbook в облаке станет доступной. Как только рабочая роль запросит задание, оно получит состояние *Запущено*, а после того как модуль runbook начнет выполняться, состояние изменится на *Выполняется*.
+   Состояние задания начнется с *постановкой в очередь* , что означает, что он ожидает, пока Рабочая роль Runbook в облаке станет доступной. Как только рабочая роль запросит задание, оно получит состояние *Запущено*, а после того как модуль runbook начнет выполняться, состояние изменится на *Выполняется*.
 
 1. Когда задание модуля Runbook будет выполнено, на экране появится результат. В вашем случае отобразится текст *Hello World*.
 
@@ -123,7 +123,7 @@ ms.locfileid: "68850685"
 
 ## <a name="step-5---add-authentication-to-manage-azure-resources"></a>Шаг 5. Добавление проверки подлинности для управления ресурсами Azure
 
-Вы протестировали и опубликовали свой модуль runbook, но пока он не выполняет никаких полезных действий. Нужно, чтобы он управлял ресурсами Azure. Это не может сделать это, если только вы не прошли проверку подлинности с использованием учетных данных, упомянутых в [предварительных требованиях](#prerequisites). Для этого используйте командлет **Connect-AzureRmAccount**.
+Вы протестировали и опубликовали свой модуль runbook, но пока он не выполняет никаких полезных действий. Нужно, чтобы он управлял ресурсами Azure. Это не может сделать это, если только вы не прошли проверку подлинности с использованием учетных данных, упомянутых в [предварительных требованиях](#prerequisites). Это можно сделать с помощью командлета **Connect-азаккаунт** .
 
 1. Откройте текстовый редактор, щелкнув **Изменить** в области MyFirstRunbook-Workflow.
 2. Вам больше не потребуется строка **Write-Output**, поэтому удалите ее.
@@ -132,17 +132,17 @@ ms.locfileid: "68850685"
 
    ```powershell-interactive
    # Ensures you do not inherit an AzureRMContext in your runbook
-   Disable-AzureRmContextAutosave –Scope Process
+   Disable-AzContextAutosave –Scope Process
 
    $Conn = Get-AutomationConnection -Name AzureRunAsConnection
-   Connect-AzureRmAccount -ServicePrincipal -Tenant $Conn.TenantID `
+   Connect-AzAccount -ServicePrincipal -Tenant $Conn.TenantID `
    -ApplicationId $Conn.ApplicationID -CertificateThumbprint $Conn.CertificateThumbprint
 
-   $AzureContext = Select-AzureRmSubscription -SubscriptionId $Conn.SubscriptionID
+   $AzureContext = Select-AzSubscription -SubscriptionId $Conn.SubscriptionID
    ```
 
    > [!IMPORTANT]
-   > **Add-AzureRmAccount** и **Login-AzureRmAccount** теперь являются псевдонимами для **Connect-AzureRMAccount**. Если командлет **Connect-AzureRMAccount** отсутствует, вы можете использовать командлет **Add-AzureRmAccount** или **Login-AzureRmAccount** либо [обновить модули](automation-update-azure-modules.md) в своей учетной записи службы автоматизации до последних версий.
+   > **Add-азаккаунт** и **Login-азаккаунт** теперь являются псевдонимами для **Connect-азаккаунт**. Если командлет **Connect-азаккаунт** не существует, можно использовать **Add-азаккаунт** или **Login-Азаккаунт**или [обновить модули](automation-update-azure-modules.md) в учетной записи службы автоматизации до последних версий.
 
 > [!NOTE]
 > [Обновить модули](automation-update-azure-modules.md) может потребоваться несмотря на то, что учетная запись службы автоматизации только что создана.
@@ -154,22 +154,22 @@ ms.locfileid: "68850685"
 
 ## <a name="step-6---add-code-to-start-a-virtual-machine"></a>Шаг 6. Добавление кода запуска виртуальной машины
 
-Теперь, когда модуль runbook прошел аутентификацию в подписке Azure, вы можете управлять ресурсами. Добавьте команду для запуска виртуальной машины. Вы можете выбрать любую виртуальную машину в подписке Azure. Теперь вы прописано это имя в Runbook. Если вы управляете ресурсами в нескольких подписках, необходимо использовать параметр **-AzureRmContext** вместе с командлетом [Get-AzureRmContext](/powershell/module/azurerm.profile/get-azurermcontext).
+Теперь, когда модуль runbook прошел аутентификацию в подписке Azure, вы можете управлять ресурсами. Добавьте команду для запуска виртуальной машины. Вы можете выбрать любую виртуальную машину в подписке Azure. Теперь вы прописано это имя в Runbook. Если вы управляете ресурсами в нескольких подписках, необходимо использовать параметр **-азконтекст** вместе с командлетом [Get-азконтекст](/powershell/module/az.accounts/get-azcontext).
 
-1. После команды *Connect-AzureRmAccount* введите команду *Start-AzureRmVM -Name 'имя_ВМ' -ResourceGroupName 'имя_группы_ресурсов'* , указав имя виртуальной машины, которую нужно запустить, и имя ее группы ресурсов.
+1. После *Connect-азаккаунт*введите *Start-AzVM-name ' VMName '-ResourceGroupName ' намеофресаурцеграуп '* , указав имя и имя группы ресурсов для запуска виртуальной машины.
 
    ```powershell-interactive
    workflow MyFirstRunbook-Workflow
    {
-   # Ensures you do not inherit an AzureRMContext in your runbook
-   Disable-AzureRmContextAutosave –Scope Process
+   # Ensures you do not inherit an AzContext in your runbook
+   Disable-AzContextAutosave –Scope Process
 
    $Conn = Get-AutomationConnection -Name AzureRunAsConnection
-   Connect-AzureRmAccount -ServicePrincipal -Tenant $Conn.TenantID -ApplicationId $Conn.ApplicationID -CertificateThumbprint $Conn.CertificateThumbprint
+   Connect-AzAccount -ServicePrincipal -Tenant $Conn.TenantID -ApplicationId $Conn.ApplicationID -CertificateThumbprint $Conn.CertificateThumbprint
 
-   $AzureContext = Select-AzureRmSubscription -SubscriptionId $Conn.SubscriptionID
+   $AzureContext = Select-AzSubscription -SubscriptionId $Conn.SubscriptionID
 
-   Start-AzureRmVM -Name 'VMName' -ResourceGroupName 'ResourceGroupName' -AzureRmContext $AzureContext
+   Start-AzVM -Name 'VMName' -ResourceGroupName 'ResourceGroupName' -AzContext $AzureContext
    }
    ```
 
@@ -180,7 +180,7 @@ ms.locfileid: "68850685"
 
 Созданный модуль runbook сейчас запускает виртуальную машину, указанную в коде runbook, но лучше указать виртуальную машину при запуске runbook. Для этого добавьте в модуль runbook входные параметры.
 
-1. Добавьте значения для параметров *VMName* (Имя ВМ) и *ResourceGroupName* (Имя группы ресурсов) в модуль Runbook и используйте эти переменные в командлете **Start-AzureRmVM**, как показано в примере ниже.
+1. Добавьте параметры для *VMName* и *ResourceGroupName* в модуль Runbook и используйте эти переменные с командлетом **Start-AzVM** , как показано в примере ниже.
 
    ```powershell-interactive
    workflow MyFirstRunbook-Workflow
@@ -189,12 +189,12 @@ ms.locfileid: "68850685"
      [string]$VMName,
      [string]$ResourceGroupName
     )
-   # Ensures you do not inherit an AzureRMContext in your runbook
-   Disable-AzureRmContextAutosave –Scope Process
+   # Ensures you do not inherit an AzContext in your runbook
+   Disable-AzContextAutosave –Scope Process
 
    $Conn = Get-AutomationConnection -Name AzureRunAsConnection
-   Connect-AzureRmAccount -ServicePrincipal -Tenant $Conn.TenantID -ApplicationId $Conn.ApplicationID -CertificateThumbprint $Conn.CertificateThumbprint
-   Start-AzureRmVM -Name $VMName -ResourceGroupName $ResourceGroupName
+   Connect-AzAccount -ServicePrincipal -Tenant $Conn.TenantID -ApplicationId $Conn.ApplicationID -CertificateThumbprint $Conn.CertificateThumbprint
+   Start-AzVM -Name $VMName -ResourceGroupName $ResourceGroupName
    }
    ```
 

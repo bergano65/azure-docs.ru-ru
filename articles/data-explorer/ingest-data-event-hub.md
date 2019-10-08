@@ -7,12 +7,12 @@ ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 07/17/2019
-ms.openlocfilehash: a83e2163c9aa970932f2eea8e2e04a715107ac7f
-ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
+ms.openlocfilehash: a0568d3c3258fe082fe8451820fe7a25390cfe78
+ms.sourcegitcommit: 9f330c3393a283faedaf9aa75b9fcfc06118b124
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71950251"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "71996773"
 ---
 # <a name="ingest-data-from-event-hub-into-azure-data-explorer"></a>Прием данных из концентратора событий в Azure Data Explorer
 
@@ -114,7 +114,7 @@ ms.locfileid: "71950251"
     | Пространство имен концентратора событий | Уникальное имя пространства имен | Имя, выбранное ранее и определяющее пространство имен. |
     | Концентратор событий | *test-hub* | Созданный концентратор событий. |
     | Группа потребителей | *test-group* | Группа получателей событий, определенная в созданном концентраторе событий. |
-    | Свойства системы событий | Выбор соответствующих свойств | [Свойства системы концентратора событий](/azure/service-bus-messaging/service-bus-amqp-protocol-guide#message-annotations) |
+    | Свойства системы событий | Выбор соответствующих свойств | [Свойства системы концентратора событий](/azure/service-bus-messaging/service-bus-amqp-protocol-guide#message-annotations). Если имеется несколько записей для каждого сообщения о событии, системные свойства будут добавлены к первому из них. При добавлении системных свойств [Создайте](/azure/kusto/management/tables#create-table) или [Обновите](/azure/kusto/management/tables#alter-table-and-alter-merge-table) схему таблицы и [сопоставление](/azure/kusto/management/mappings) , чтобы включить выбранные свойства. |
     | | |
 
     Целевая таблица
@@ -126,7 +126,7 @@ ms.locfileid: "71950251"
     |---|---|---|
     | Таблица | *TestTable* | Таблица, созданная в базе данных **TestDatabase**. |
     | Формат данных | *JSON* | Поддерживаются форматы Avro, CSV, JSON, многострочные JSON, ПСВ, СОХСВ, СКСВ, TSV, ТСВЕ и TXT. Поддерживаемые параметры сжатия: GZip |
-    | Сопоставление столбцов | *TestMapping* | Сопоставление, созданное в таблице **TestDatabase**, которое сопоставляет входящие данные JSON с именами столбцов и типами данных **TestTable**. Является обязательным для JSON, MULTILINE JSON, AVRO и необязательным для других форматов.|
+    | Сопоставление столбцов | *TestMapping* | [Сопоставление](/azure/kusto/management/mappings) , созданное в **тестдатабасе**, которое сопоставляет входящие данные JSON с именами столбцов и типами данных **тесттабле**. Является обязательным для JSON, MULTILINE JSON, AVRO и необязательным для других форматов.|
     | | |
 
     > [!NOTE]

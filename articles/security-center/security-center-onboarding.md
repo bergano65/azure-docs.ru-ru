@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/19/2019
 ms.author: memildin
-ms.openlocfilehash: 7448516e464a379e27abd45834b31760fca3fedd
-ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
+ms.openlocfilehash: 01cc625767cbf437031f503cf4b0d4dc59b62e08
+ms.sourcegitcommit: 9f330c3393a283faedaf9aa75b9fcfc06118b124
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71201848"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "71996300"
 ---
 # <a name="onboarding-to-azure-security-center-standard-for-enhanced-security"></a>Подключение к центру безопасности Azure уровня "Стандартный" для повышения уровня безопасности
 Обновите центр безопасности до уровня "Стандартный", чтобы воспользоваться преимуществами управления повышенной безопасностью и защиты от угроз для гибридных облачных рабочих нагрузок.  Пробную версию уровня "Стандартный" можно использовать бесплатно. Дополнительные сведения см. на странице [цен на центр безопасности](https://azure.microsoft.com/pricing/details/security-center/).
@@ -111,7 +111,7 @@ ms.locfileid: "71201848"
 
 - [Включение сбора данных](security-center-enable-data-collection.md)
 - [Отчет об исследовании угроз](security-center-threat-report.md)
-- [Управление доступом к виртуальным машинам с помощью JIT](security-center-just-in-time.md)
+- [JIT-доступ к виртуальной машине](security-center-just-in-time.md)
 
 <!--Image references-->
 [1]: ./media/security-center-onboarding/onboard.png

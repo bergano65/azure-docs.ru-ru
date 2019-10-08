@@ -11,12 +11,12 @@ author: nacharya1
 ms.author: nilesha
 ms.date: 06/20/2019
 ms.custom: seodec18
-ms.openlocfilehash: 8b38b359821d3d4926085fee8e412fbe06155739
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.openlocfilehash: e9bc0cf3ab0d168a55ab04913bdc71eed5c5fced
+ms.sourcegitcommit: be344deef6b37661e2c496f75a6cf14f805d7381
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71350627"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72001237"
 ---
 # <a name="what-is-automated-machine-learning"></a>Что такое автоматическое машинное обучение?
 
@@ -37,6 +37,14 @@ ms.locfileid: "71350627"
 + Использование рекомендаций по обработке и анализу данных
 + Предоставление гибкой задачи — решение
 
+Распространенные сценарии автоматического использования ML включают:
++ [Обнаружение мошенничества](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/classification-credit-card-fraud/auto-ml-classification-credit-card-fraud.ipynb)
++ [Прогноз маркетинга](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/classification-bank-marketing/auto-ml-classification-bank-marketing.ipynb)
++ [Прогнозирование спроса](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/forecasting-energy-demand/auto-ml-forecasting-energy-demand.ipynb)
++ [Прогнозирование продаж](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/forecasting-orange-juice-sales/auto-ml-forecasting-orange-juice-sales.ipynb)
++ [Прогноз производительности](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/regression-hardware-performance/auto-ml-regression-hardware-performance.ipynb)
++ [Прогноз устойчивости материалов](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/regression-concrete-strength/auto-ml-regression-concrete-strength.ipynb)
+
 ## <a name="how-automated-ml-works"></a>Принцип работы автоматизированного ML
 
 С помощью **машинное обучение Azure**вы можете разработать и запустить эксперименты по автоматизации машинного обучения, выполнив следующие действия:
@@ -55,7 +63,7 @@ ms.locfileid: "71350627"
 
 Во время обучения Машинное обучение Azure создает ряд параллельных конвейеров, которые пытаются использовать различные алгоритмы и параметры. Он будет останавливаться после того, как он достигнет критерия выхода, определенного в эксперименте.
 
-Можно также проверить записанные в журнал сведения о запуске, которые [содержат метрики](how-to-understand-automated-ml.md) , собранные во время выполнения. Обучающий запуск создает сериализованный объект Python (`.pkl` файл), который содержит модель и предварительную обработку данных.
+Можно также проверить записанные в журнал сведения о запуске, которые [содержат метрики](how-to-understand-automated-ml.md) , собранные во время выполнения. В ходе обучающего запуска создается сериализованный объект Python (файл `.pkl`), содержащий модель и предварительную обработку данных.
 
 Хотя создание модели автоматизировано, вы также можете [узнать, насколько важные или соответствующие функции относятся](how-to-configure-auto-train.md#explain) к созданным моделям.
 
@@ -74,7 +82,7 @@ ms.locfileid: "71350627"
 
 В каждом автоматическом эксперименте машинного обучения данные автоматически масштабируются или нормализованы, что способствует эффективному выполнению алгоритмов.  Во время обучения модели для каждой модели будет применен один из следующих методов масштабирования или нормализации.
 
-|Нормализация масштабирования&nbsp;&&nbsp;| Описание |
+|Масштабирование @ no__t-0 @ no__t-1 @ no__t-2normalization| Описание |
 | ------------- | ------------- |
 | [стандардскалевраппер](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html)  | Стандартизация функций путем удаления среднего и масштабирования в дисперсию единиц  |
 | [минмаксскалар](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html)  | Преобразует функции путем масштабирования каждой функции по минимальному и максимальному столбцам.  |
@@ -90,7 +98,7 @@ ms.locfileid: "71350627"
 
 + Портал Azure: Установите флажок **Предварительная обработка** в **дополнительных параметрах** , [выполнив следующие действия](how-to-create-portal-experiments.md).
 
-+ Пакет SDK для Python: Указание `"preprocess": True` [для класса`AutoMLConfig` ](https://docs.microsoft.com/python/api/azureml-train-automl/azureml.train.automl.automlconfig?view=azure-ml-py).
++ Пакет SDK для Python: Указание `"preprocess": True` для [класса `AutoMLConfig`](https://docs.microsoft.com/python/api/azureml-train-automl/azureml.train.automl.automlconfig?view=azure-ml-py).
 
 
 ## <a name="time-series-forecasting"></a>Прогнозирование временных рядов
@@ -165,7 +173,7 @@ ms.locfileid: "71350627"
 
 См. примеры и научитесь создавать модели с помощью автоматизированного машинного обучения.
 
-+ Следуйте указаниям в [руководстве. Автоматическое обучение модели регрессии с помощью автоматизированных Машинное обучение Azure](tutorial-auto-train-models.md)
++ Следуйте указаниям [Tutorial: Автоматическое обучение модели регрессии с помощью Azure автоматически Машинное обучение @ no__t-0
 
 + Настройте параметры для автоматического обучения.
   + В портал Azure интерфейсе или на целевой странице рабочей области (Предварительная версия) [выполните следующие действия](how-to-create-portal-experiments.md).

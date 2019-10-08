@@ -14,22 +14,22 @@ ms.devlang: nodejs
 ms.topic: article
 ms.date: 04/10/2019
 ms.author: aschhab
-ms.custom: seo-javascript-september2019
-ms.openlocfilehash: 5c539570e4127a6715ea63fe8ec617d3cfa83ba1
-ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
+ms.custom: seo-javascript-september2019, seo-javascript-october2019
+ms.openlocfilehash: 1aba29f8ed7cacb8f2911ae2d37358869e6a7730
+ms.sourcegitcommit: be344deef6b37661e2c496f75a6cf14f805d7381
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2019
-ms.locfileid: "71671992"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72001122"
 ---
 # <a name="use-service-bus-queues-in-azure-with-nodejs-and-the-azure-sb-package"></a>Использование очередей служебной шины в Azure с Node. js и пакетом Azure-SB
 > [!div class="op_multi_selector" title1="Язык программирования" title2="Пакета Node. js"]
 > - [(Node. js | Azure-SB)](service-bus-nodejs-how-to-use-queues.md)
 > - [(Node. js | @azure/service-bus)](service-bus-nodejs-how-to-use-queues-new-package.md)
 
-В этом руководстве вы узнаете, как создавать приложения Node. js для отправки и получения сообщений из очереди служебной шины с помощью пакета [Azure-SB](https://www.npmjs.com/package/azure-sb) . Примеры написаны на JavaScript и используют [модуль Azure](https://www.npmjs.com/package/azure) Node. js, который внутренне использует `azure-sb` пакет.
+В этом руководстве вы узнаете, как создавать приложения Node. js для отправки и получения сообщений из очереди служебной шины Azure с помощью пакета [Azure-SB](https://www.npmjs.com/package/azure-sb) . Примеры написаны на JavaScript и используют [модуль Azure](https://www.npmjs.com/package/azure) Node. js, который внутренне использует пакет Azure-SB.
 
-Пакет [Azure-SB](https://www.npmjs.com/package/azure-sb) использует [интерфейсы API среды выполнения служебной шины](/rest/api/servicebus/service-bus-runtime-rest). Вы можете ускорить работу с помощью нового [@azure/service-bus](https://www.npmjs.com/package/@azure/service-bus) пакета, который использует более быстрый [протокол AMQP 1,0](service-bus-amqp-overview.md). Дополнительные сведения о новом пакете см. в статье [Использование очередей служебной шины с Node. js и @azure/service-bus пакетом](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-nodejs-how-to-use-queues-new-package). в противном случае продолжите чтение, чтобы увидеть, как использовать пакет [Azure](https://www.npmjs.com/package/azure) .
+Пакет [Azure-SB](https://www.npmjs.com/package/azure-sb) использует [интерфейсы API среды выполнения служебной шины](/rest/api/servicebus/service-bus-runtime-rest). Вы можете повысить скорость работы, используя новый [@azure/service-bus](https://www.npmjs.com/package/@azure/service-bus) , который использует более быстрый [протокол AMQP 1,0](service-bus-amqp-overview.md). Дополнительные сведения о новом пакете см. в статье [Использование очередей служебной шины с пакетами Node. js и @azure/service-bus](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-nodejs-how-to-use-queues-new-package). в противном случае продолжите чтение, чтобы увидеть, как использовать пакет [Azure](https://www.npmjs.com/package/azure) .
 
 ## <a name="prerequisites"></a>Предварительные требования
 - Подписка Azure. Для работы с этим учебником требуется учетная запись Azure. Вы можете активировать [преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/?WT.mc_id=A85619ABF) или зарегистрироваться для использования [бесплатной учетной записи](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
@@ -75,7 +75,7 @@ var azure = require('azure');
 ```
 
 ### <a name="set-up-an-azure-service-bus-connection"></a>Настройка подключения к служебной шине Azure
-Модуль Azure считывает переменную среды `AZURE_SERVICEBUS_CONNECTION_STRING`, чтобы получить сведения, необходимые для подключения к служебной шине. Если эта переменная среды не задана, необходимо указать сведения об учетной записи `createServiceBusService`при вызове.
+Модуль Azure считывает переменную среды `AZURE_SERVICEBUS_CONNECTION_STRING`, чтобы получить сведения, необходимые для подключения к служебной шине. Если эта переменная среды не задана, необходимо указать сведения об учетной записи при вызове `createServiceBusService`.
 
 Пример настройки переменных среды в [портал Azure][Azure portal] для веб-сайта Azure см. в разделе [веб-приложение Node. js с хранилищем][Node.js Web Application with Storage].
 
@@ -124,7 +124,7 @@ function handle (requestOptions, next)
 function (returnObject, finalCallback, next)
 ```
 
-В этом обратном вызове и после `returnObject` обработки (ответ от запроса к серверу) обратный вызов должен либо вызывать `next` , если он существует, чтобы продолжить обработку других фильтров, либо вызвать метод `finalCallback`, который завершает вызов службы. .
+В этом обратном вызове и после обработки `returnObject` (ответ от запроса к серверу) обратный вызов должен либо вызвать `next`, если он существует, чтобы продолжить обработку других фильтров, либо вызвать метод `finalCallback`, который завершает вызов службы.
 
 Два фильтра (`ExponentialRetryPolicyFilter` и `LinearRetryPolicyFilter`), которые позволяют реализовать логику повторных попыток, входят в состав пакета Azure SDK для Node.js. Следующий код создает объект `ServiceBusService`, который использует метод `ExponentialRetryPolicyFilter`.
 
@@ -158,7 +158,7 @@ serviceBusService.sendQueueMessage('myqueue', message, function(error){
 
 Поведение по умолчанию при чтении и удалении сообщения в рамках операции получения является самой простой моделью, что лучше всего подходит для сценариев, в которых приложение может не обрабатывать сообщения при возникновении сбоя. Чтобы понять это поведение, рассмотрим сценарий, в котором объект-получатель выдает запрос на получение и выходит из строя до его обработки. Так как служебная шина будет помечать сообщение как использованное, тогда, когда приложение перезапускается и снова начнет потреблять сообщения, оно пропустит сообщение, которое было использовано до сбоя.
 
-Если параметр имеет значение true, то получение становится операцией с двумя этапами, что позволяет поддерживать приложения, не допуская потери сообщений. `isPeekLock` Получив запрос, служебная шина находит следующее сообщение, блокирует его, чтобы предотвратить его получение другими получателями, и возвращает его приложению. Обработав сообщение (или сохранив его в надежном месте для последующей обработки), приложение вызывает метод `deleteMessage` и указывает сообщение, которое будет удалено как параметр, таким образом завершая второй этап процесса получения. Метод `deleteMessage` помечает сообщение как использованное и удаляет его из очереди.
+Если для параметра `isPeekLock` задано значение **true**, то получение становится операцией с двумя этапами, что позволяет поддерживать приложения, которые не могут допускать отсутствующих сообщений. Получив запрос, служебная шина находит следующее сообщение, блокирует его, чтобы предотвратить его получение другими получателями, и возвращает его приложению. Обработав сообщение (или сохранив его в надежном месте для последующей обработки), приложение вызывает метод `deleteMessage` и указывает сообщение, которое будет удалено как параметр, таким образом завершая второй этап процесса получения. Метод `deleteMessage` помечает сообщение как использованное и удаляет его из очереди.
 
 В следующем примере показано, как получать и обрабатывать сообщения с помощью метода `receiveQueueMessage`. Сначала приложение получает и удаляет сообщение в примере, затем получает его с помощью параметра `isPeekLock`, для которого задано значение **true**, и удаляет с помощью метода `deleteMessage`.
 

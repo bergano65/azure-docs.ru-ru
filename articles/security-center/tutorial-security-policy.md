@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/18/2019
 ms.author: memildin
-ms.openlocfilehash: 488210e4f2c5d3a8a978079d0c7293ce091d998b
-ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
+ms.openlocfilehash: fce8c75dadbb255a357b85bf85049423f50d18ec
+ms.sourcegitcommit: 9f330c3393a283faedaf9aa75b9fcfc06118b124
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71338775"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "71996351"
 ---
 # <a name="working-with-security-policies"></a>Использование политик безопасности
 
@@ -226,7 +226,7 @@ ms.locfileid: "71338775"
 |Аудит SQL |Мониторинг баз данных SQL без аудита в Центре безопасности Azure |sqlAuditingMonitoringEffect|
 |Обновления системы |Мониторинг отсутствия обновлений системы в Центре безопасности Azure |systemUpdatesMonitoringEffect|
 |Шифрование хранилища |Аудит отсутствия шифрования больших двоичных объектов для учетных записей хранения |storageEncryptionMonitoringEffect|
-|JIT-доступ к сети |Мониторинг возможного JIT-доступа к сети в Центре безопасности Azure |jitNetworkAccessMonitoringEffect |
+|JIT-доступ к сети |Мониторинг возможных JIT-доступа к сети в центре безопасности Azure |jitNetworkAccessMonitoringEffect |
 |Адаптивное управление приложениями |Мониторинг возможных списков разрешенных приложений в Центре безопасности Azure |adaptiveApplicationControlsMonitoringEffect|
 |Группы безопасности сети |Мониторинг нестрогого доступа к сети в Центре безопасности Azure |networkSecurityGroupsMonitoringEffect| 
 |Конфигурации безопасности |Мониторинг уязвимостей ОС в Центре безопасности Azure |systemConfigurationsMonitoringEffect| 

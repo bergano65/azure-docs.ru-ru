@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/28/2018
 ms.author: memildin
-ms.openlocfilehash: 30f4358bea2670cfa8d825bf1ef75feeba7ea851
-ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
+ms.openlocfilehash: 3c63283a1a13e2deb178a53dfc5045d371d6a28a
+ms.sourcegitcommit: 9f330c3393a283faedaf9aa75b9fcfc06118b124
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71202340"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "71996936"
 ---
 # <a name="azure-security-center-data-security"></a>Защита данных в центре безопасности Azure
 Чтобы помочь клиентам предотвращать и выявлять угрозы, а также реагировать на них, центр безопасности Azure собирает и обрабатывает данные о безопасности, в том числе сведения о конфигурации, метаданные, журналы событий, файлы аварийных дампов и многое другое. Корпорация Майкрософт следует строгим нормативным требованиям и указаниям по безопасности — от создания кода до эксплуатации служб.
@@ -80,7 +80,7 @@ Microsoft Monitoring Agent сканирует систему на наличие
 
 Клиенты могут использовать связанные с центром безопасности данные из разных потоков данных, как показано ниже:
 
-* **Действие Azure.** Все оповещения системы безопасности, утвержденные [JIT](https://docs.microsoft.com/azure/security-center/security-center-just-in-time)-запросы к центру безопасности и все оповещения, созданные [адаптивными элементами управления приложения](https://docs.microsoft.com/azure/security-center/security-center-adaptive-application).
+* **Активность Azure**. все оповещения безопасности, утвержденные запросы центра безопасности, [а также все](https://docs.microsoft.com/azure/security-center/security-center-just-in-time) предупреждения, созданные [адаптивными элементами управления приложениями](https://docs.microsoft.com/azure/security-center/security-center-adaptive-application).
 * **Журналы Azure Monitor**: все оповещения системы безопасности.
 
 
