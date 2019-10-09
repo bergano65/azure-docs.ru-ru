@@ -32,8 +32,10 @@
       items:
         - name: Правила брандмауэра для IP-адресов на уровне сервера
           href: sql-database-server-level-firewall-rule.md
-        - name: Настройка общедоступной конечной точки в Управляемом экземпляре
+        - name: Настройка общедоступной конечной точки в управляемом экземпляре
           href: sql-database-managed-instance-public-endpoint-configure.md
+        - name: Настройка типов соединения в управляемом экземпляре
+          href: sql-database-managed-instance-connection-type.md
         - name: Подключение клиентской виртуальной машины к управляемому экземпляру
           href: sql-database-managed-instance-configure-vm.md
         - name: "Подключение \"точка\_— сеть\" к управляемому экземпляру"

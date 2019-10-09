@@ -134,8 +134,7 @@
           href: resource-group-linked-templates.md
         - name: Развертывание нескольких экземпляров
           href: resource-group-create-multiple.md
-        - name: Создание групп ресурсов и ресурсов в подписке
-          displayName: subscription level deployment
+        - name: Ресурсы на уровне подписки
           href: deploy-to-subscription.md
     - name: Развертывание шаблонов
       items:
