@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 05/24/2018
 ms.author: v-jysur
-ms.openlocfilehash: 31d9307d23d308192b362d9570911c86a7dd8372
-ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
+ms.openlocfilehash: eb9d803bcc9667c26acecbfd098a3022b7421478
+ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70051832"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72177650"
 ---
 # <a name="connect-azure-to-itsm-tools-using-it-service-management-connector"></a>Подключение Azure к инструментам ITSM с помощью соединителя управления ИТ-услугами
 
@@ -31,8 +31,8 @@ ms.locfileid: "70051832"
 Соединитель управления ИТ-услугами поддерживает подключения к следующим инструментам ITSM:
 
 -   ServiceNow
--   System Center Service Manager
--   Provance
+-   System Center Service Manager;
+-   Provance;
 -   Cherwell
 
 С помощью ITSMC можно:
@@ -83,7 +83,7 @@ ms.locfileid: "70051832"
 
 Для этого вам необходимо подготовить инструмент ITSM, чтобы разрешить подключение от решения "Соединитель управления ИТ-услугами".  
 
-Выберите продукт ITSM, к которому вы подключаетесь, чтобы выполнить соответствующие шаги:
+В зависимости от продукта ITSM, к которому вы подключаетесь, выполните следующие действия.
 
 - [System Center Service Manager](../../azure-monitor/platform/itsmc-connections.md#connect-system-center-service-manager-to-it-service-management-connector-in-azure);
 - [ServiceNow](../../azure-monitor/platform/itsmc-connections.md#connect-servicenow-to-it-service-management-connector-in-azure)
@@ -167,7 +167,7 @@ ms.locfileid: "70051832"
 Дополнительные сведения: [Схема услуги](../../azure-monitor/insights/service-map.md)
 
 
-## <a name="additional-information"></a>Дополнительные сведения
+## <a name="additional-information"></a>Дополнительная информация
 
 ### <a name="data-synced-from-itsm-product"></a>Данные, синхронизированные из продукта ITSM
 Инциденты и запросы на изменение синхронизируются из продукта ITSM с рабочей областью Log Analytics на основе конфигурации подключения.
@@ -185,24 +185,24 @@ ServiceDeskWorkItemType_s="Incident"
 
 - ServiceDeskConnectionName;
 - "Идентификатор службы поддержки";
-- Область
+- State
 - "Срочность";
-- Воздействие
+- Влияние
 - Priority
 - Escalation (Эскалация);
-- Автор
+- "Кем создано";
 - "Кем разрешено";
 - Closed By (Кем закрыто);
 - Source
-- Кому назначено:
-- Категория
+- Кому назначено
+- Category
 - Заголовок
 - Описание
-- Дата создания
+- "Дата создания";
 - Closed Date (Дата закрытия);
 - Resolved Date (Дата разрешения);
 - "Дата последнего изменения";
-- Компьютер
+- Computer
 
 
 **Рабочий элемент:** **Запросы на изменение**
@@ -211,54 +211,54 @@ ServiceDeskWorkItemType_s="ChangeRequest"
 
 **Поля**
 - ServiceDeskConnectionName;
-- Идентификатор службы поддержки
+- "Идентификатор службы поддержки";
 - "Кем создано";
 - Closed By (Кем закрыто);
 - Source
 - Кому назначено
 - Заголовок
 - Type
-- Категория
+- Category
 - Состояние
 - Escalation (Эскалация);
 - Conflict Status (Состояние конфликта);
-- Срочность
+- "Срочность";
 - Priority
 - "Риск";
-- Воздействие
-- Кому назначено:
+- Влияние
+- Кому назначено
 - "Дата создания";
 - Closed Date (Дата закрытия);
-- Дата последнего изменения
+- "Дата последнего изменения";
 - Requested Date (Запрошенная дата);
 - Planned Start Date (Планируемая дата начала);
 - Planned End Date (Планируемая дата окончания);
 - Work Start Date (Дата начала работы);
 - Work End Date (Дата окончания работы);
 - Описание
-- Компьютер
+- Computer
 
 ## <a name="output-data-for-a-servicenow-incident"></a>Выходные данные инцидента ServiceNow
 
 | Поле Log Analytics | Поле ServiceNow |
 |:--- |:--- |
 | ServiceDeskId_s| Number |
-| IncidentState_s | Область |
-| Urgency_s |Срочность |
-| Impact_s |Воздействие|
+| IncidentState_s | State |
+| Urgency_s |"Срочность"; |
+| Impact_s |Влияние|
 | Priority_s | Priority |
 | CreatedBy_s | Opened by (Кем открыто) |
 | ResolvedBy_s | "Кем разрешено"|
 | ClosedBy_s  | Closed By (Кем закрыто) |
 | Source_s| Contact type (Тип контакта) |
 | AssignedTo_s | Кому назначено  |
-| Category_s | Категория |
+| Category_s | Category |
 | Title_s|  Краткое описание |
 | Description_s|  Примечания |
 | CreatedDate_t|  Opened (Открыто) |
-| ClosedDate_t| закрыто|
+| ClosedDate_t| closed|
 | ResolvedDate_t|"Разрешено"|
-| Компьютер  | Элемент конфигурации |
+| Computer  | Элемент конфигурации |
 
 ## <a name="output-data-for-a-servicenow-change-request"></a>Выходные данные запроса на изменение ServiceNow
 
@@ -267,15 +267,15 @@ ServiceDeskWorkItemType_s="ChangeRequest"
 | ServiceDeskId_s| Number |
 | CreatedBy_s | "Кем запрошено" |
 | ClosedBy_s | Closed By (Кем закрыто) |
-| AssignedTo_s | Назначено  |
+| AssignedTo_s | Кому назначено  |
 | Title_s|  Краткое описание |
-| Type_s|  Тип |
-| Category_s|  Категория |
-| CRState_s|  Область|
-| Urgency_s|  Срочность |
+| Type_s|  Type |
+| Category_s|  Category |
+| CRState_s|  State|
+| Urgency_s|  "Срочность"; |
 | Priority_s| Priority|
-| Risk_s| Риск|
-| Impact_s| Воздействие|
+| Risk_s| "Риск";|
+| Impact_s| Влияние|
 | RequestedDate_t  | Requested by date |
 | ClosedDate_t | Closed Date (Дата закрытия) |
 | PlannedStartDate_t  |     Planned Start Date (Планируемая дата начала) |
@@ -283,7 +283,7 @@ ServiceDeskWorkItemType_s="ChangeRequest"
 | WorkStartDate_t  | Actual start date (Фактическая дата начала) |
 | WorkEndDate_t | Actual end date (Фактическая дата окончания)|
 | Description_s | Описание |
-| Компьютер  | Элемент конфигурации |
+| Computer  | Элемент конфигурации |
 
 
 ## <a name="troubleshoot-itsm-connections"></a>Устранение неполадок с подключениями ITSM
@@ -305,7 +305,7 @@ ServiceDeskWorkItemType_s="ChangeRequest"
 3.  Если вам не удается создать пространство имен ретранслятора шины обслуживания, убедитесь, в подписке зарегистрирован требуемый поставщик ресурсов. Если он не зарегистрирован, создайте пространство имен ретранслятора служебной шины на портале Azure вручную. Его также можно создать на портале Azure во время создания [гибридного подключения](../../azure-monitor/platform/itsmc-connections.md#configure-the-hybrid-connection).
 
 
-## <a name="contact-us"></a>Наши координаты
+## <a name="contact-us"></a>Свяжитесь с нами
 
 Свяжитесь с нами по адресу [omsitsmfeedback@microsoft.com](mailto:omsitsmfeedback@microsoft.com), чтобы оставить отзывы или запросы касательно соединителя управления ИТ-службами.
 

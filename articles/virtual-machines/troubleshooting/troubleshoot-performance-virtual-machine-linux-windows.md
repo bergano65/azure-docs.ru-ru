@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 09/18/2019
 ms.author: v-miegge
-ms.openlocfilehash: 4e4a2b1df178d884e02ab5029f2e76a0376a7653
-ms.sourcegitcommit: 15e3bfbde9d0d7ad00b5d186867ec933c60cebe6
+ms.openlocfilehash: fc8cc4834997033203376cd33670cc907e2911e7
+ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71846567"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72170293"
 ---
 # <a name="generic-performance-troubleshooting-for-azure-virtual-machine-running-linux-or-windows"></a>Устранение распространенных проблем с производительностью для виртуальной машины Azure под управлением Linux или Windows
 
@@ -28,7 +28,7 @@ ms.locfileid: "71846567"
 
 ### <a name="azure-iaas-virtual-machine-monitoring"></a>Мониторинг виртуальных машин IAAS Azure
 
-Для мониторинга гостевой виртуальной машины используйте наблюдение за виртуальными машинами Azure, которое предупреждает вас о некоторых условиях высокого уровня ресурсов. Чтобы проверить, включена ли диагностика виртуальной машины, ознакомьтесь с [обзором журналов ресурсов Azure](https://docs.microsoft.com/azure/azure-monitor/platform/resource-logs-overview#change-settings-for-an-existing-resource). Если вы видите следующее, скорее всего, диагностика не включена.
+Для мониторинга гостевой виртуальной машины используйте наблюдение за виртуальными машинами Azure, которое предупреждает вас о некоторых условиях высокого уровня ресурсов. Чтобы проверить, включена ли диагностика виртуальной машины, ознакомьтесь с [обзором журналов ресурсов Azure](https://docs.microsoft.com/azure/azure-monitor/platform/resource-logs-overview#collecting-resource-logs). Если вы видите следующее, скорее всего, диагностика не включена.
 
 ![Мониторинг не включен](media/troubleshoot-performance-virtual-machine-linux-windows/1-virtual-machines-monitoring-not-enabled.png)
  
@@ -175,7 +175,7 @@ AverageE2ELatency представляет задержку клиента. Пр
 
 Чтобы определить, достигается ли предельное число операций ввода-вывода в секунду, перейдите в раздел диагностика учетной записи хранения и проверьте значение TotalRequests, чтобы увидеть, приближается ли вы к 20000 TotalRequests. Укажите либо изменение в шаблоне, либо то, что вы видите в первый раз, либо это ограничение происходит в определенное время.
 
-#### <a name="references"></a>Ссылки
+#### <a name="references"></a>Справочники
 
 * [Целевые показатели масштабируемости для дисков виртуальных машин](https://azure.microsoft.com/documentation/articles/storage-scalability-targets/#scalability-targets-for-virtual-machine-disks)
 

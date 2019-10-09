@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 09/18/2019
 ms.author: rajanaki
-ms.openlocfilehash: f6e2fedf3f2f8384d4a6062852888c312e8285a1
-ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
+ms.openlocfilehash: ecfe993a137ca63c84438870ec54ac1e6d6707da
+ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71212869"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72173482"
 ---
 # <a name="add-azure-automation-runbooks-to-recovery-plans"></a>Добавление модулей Runbook службы автоматизации Azure в планы восстановления
 
@@ -95,7 +95,7 @@ $vmMap = $RecoveryPlanContext.VmMap
 
 
 
-## <a name="before-you-start"></a>Перед началом
+## <a name="before-you-start"></a>Перед началом работы
 
 - Если вы еще не знакомы со службой автоматизации Azure, вы можете [зарегистрироваться](https://azure.microsoft.com/services/automation/) и [скачать примеры сценариев](https://azure.microsoft.com/documentation/scripts/).
 - Убедитесь, что в учетную запись службы автоматизации добавлены следующие модули.
@@ -112,12 +112,12 @@ $vmMap = $RecoveryPlanContext.VmMap
 ## <a name="customize-the-recovery-plan"></a>Настройка плана восстановления
 
 1. В хранилище выберите **планы восстановления (Site Recovery)** .
-2. Чтобы создать план восстановления, щелкните **+ план восстановления**. [Узнайте больше](/site-recovery-create-recovery-plans.md). Если у вас уже есть план восстановления, выберите его, чтобы открыть.
+2. Чтобы создать план восстановления, щелкните **+ план восстановления**. [Узнайте больше](site-recovery-create-recovery-plans.md). Если у вас уже есть план восстановления, выберите его, чтобы открыть.
 3. На странице план восстановления нажмите кнопку **настроить**.
 
     ![Нажмите кнопку "Настроить"](media/site-recovery-runbook-automation-new/custom-rp.png)
 
-2. Нажмите кнопку с многоточием (...) рядом **с группой 1: Начать**Добавление > **действия после**.
+2. Нажмите кнопку с многоточием (...) рядом с **Group 1: Запустите @ no__t-0 @ no__t-1**Добавить действие после**.
 3. В поле **действие при вставке**убедитесь, что выбран параметр **Скрипт** , и укажите имя скрипта (**Hello World**).
 4. Укажите учетную запись службы автоматизации и выберите Runbook. Нажмите кнопку **ОК**, чтобы сохранить этот сценарий. Сценарий будет добавлен в группу **Группа 1: последующие действия**.
 

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/24/2018
 ms.author: damaerte
-ms.openlocfilehash: eb7deacc068661ca9a4f473ee2d36b7d4464c81c
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 91dc87cd6bda93663fb4b4eae3d498ae56ba4b3e
+ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60199465"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72169600"
 ---
 # <a name="troubleshooting--limitations-of-azure-cloud-shell"></a>Устранение неполадок и ограничения в Azure Cloud Shell
 
@@ -36,7 +36,7 @@ ms.locfileid: "60199465"
 
 ### <a name="disabling-cloud-shell-in-a-locked-down-network-environment"></a>Отключение Cloud Shell в заблокированной среде сети
 
-- **Подробности:** администраторам может потребоваться отключить доступ к Cloud Shell для своих пользователей. Cloud Shell использует доступ к домену `ux.console.azure.com`, который может быть запрещен, останавливая любой доступ к точкам входа Cloud Shell, включая portal.azure.com, shell.azure.com, расширения Visual Studio Code для учетной записи Azure и на сайте docs.microsoft.com.
+- **Подробности:** администраторам может потребоваться отключить доступ к Cloud Shell для своих пользователей. Cloud Shell использует доступ к домену `ux.console.azure.com`, который можно запретить, заключив любой доступ к EntryPoint Cloud Shell, включая portal.azure.com, shell.azure.com, Visual Studio Code расширение учетной записи Azure и docs.microsoft.com.
 - **Решение**. Ограничьте доступ к `ux.console.azure.com` через параметры сети для вашей среды. Значок Cloud Shell по-прежнему будет присутствовать на сайте portal.azure.com, но подключение к службе не произойдет.
 
 ### <a name="storage-dialog---error-403-requestdisallowedbypolicy"></a>Диалоговое окно хранилища. Ошибка: 403 RequestDisallowedByPolicy
@@ -54,7 +54,7 @@ ms.locfileid: "60199465"
 - **Решение**. Убедитесь, что параметры сети настроены для разрешения отправки HTTP-запросов и запросов WebSocket к доменам по адресу *.console.azure.com.
 
 ### <a name="set-your-cloud-shell-connection-to-support-using-tls-12"></a>Настройка поддержки TLS 1.2 в подключении Cloud Shell
- - **Подробности:** чтобы определить версию TLS для подключения к Cloud Shell, необходимо задать определенные параметры браузера.
+ - **Подробности:** Чтобы определить версию протокола TLS для подключения к Cloud Shell, необходимо задать параметры для конкретного браузера.
  - **Решение**. Перейдите к параметрам безопасности браузера и установите флажок "Использовать TLS 1.2".
 
 ## <a name="bash-troubleshooting"></a>Устранение неполадок в Bash
@@ -157,7 +157,7 @@ Azure Cloud Shell серьезно относится к личным данны
 
 [!INCLUDE [GDPR-related guidance](../../includes/gdpr-intro-sentence.md)]
 
-### <a name="export"></a>Экспортировать
+### <a name="export"></a>Экспорт
 Чтобы **экспортировать** пользовательские настройки, сохраненные Cloud Shell, такие как предпочитаемая оболочка, размер и тип шрифта, выполните следующие команды.
 
 1. [![](https://shell.azure.com/images/launchcloudshell.png "Запуск Azure Cloud Shell")](https://shell.azure.com)
@@ -177,7 +177,7 @@ PowerShell:
   ((Invoke-WebRequest -Uri https://management.azure.com/providers/Microsoft.Portal/usersettings/cloudconsole?api-version=2017-12-01-preview -Headers @{Authorization = "Bearer $token"}).Content | ConvertFrom-Json).properties | Format-List
 ```
 
-### <a name="delete"></a>Delete (Удалить)
+### <a name="delete"></a>Оператор delete
 Чтобы **удалить** пользовательские настройки, сохраненные Cloud Shell, такие как предпочитаемая оболочка, размер и тип шрифта, выполните следующие команды. При следующем запуске Cloud Shell вам будет предложено еще раз выставить файловый ресурс. 
 
 >[!Note]
@@ -199,3 +199,5 @@ PowerShell:
   $token= ((Invoke-WebRequest -Uri "$env:MSI_ENDPOINT`?resource=https://management.core.windows.net/" -Headers @{Metadata='true'}).content |  ConvertFrom-Json).access_token
   Invoke-WebRequest -Method Delete -Uri https://management.azure.com/providers/Microsoft.Portal/usersettings/cloudconsole?api-version=2017-12-01-preview -Headers @{Authorization = "Bearer $token"}
   ```
+## <a name="azure-government-limitations"></a>Ограничения Azure для государственных организаций
+Azure Cloud Shell в Azure для государственных организаций доступны только в портал Azure.

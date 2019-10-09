@@ -5,14 +5,14 @@ services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: article
-ms.date: 3/28/2019
+ms.date: 10/09/2019
 ms.author: victorh
-ms.openlocfilehash: 896e1fb3e93fc0a542f0dca75cc1d87b3a2c237c
-ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
+ms.openlocfilehash: 36f26808b94893990ceec65e114b11113dbafd6f
+ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71057895"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72177479"
 ---
 # <a name="back-end-health-and-diagnostic-logs-for-application-gateway"></a>Журналы работоспособности и диагностики серверной части для шлюза приложений
 
@@ -309,7 +309,7 @@ az network application-gateway show-backend-health --resource-group AdatumAppGat
 |details.data     | Определенные данные из запроса, которые соответствуют правилу.         |
 |details.file     | Файл конфигурации, содержащий правило.        |
 |details.line     | Номер строки в файле конфигурации, активировавшей событие.       |
-|имя узла   | Имя узла или IP-адрес шлюза приложений.    |
+|hostname   | Имя узла или IP-адрес шлюза приложений.    |
 |transactionId  | Уникальный идентификатор для данной транзакции, который помогает сгруппировать несколько нарушений правил, произошедших в одном запросе.   |
 
 ```json
@@ -347,7 +347,7 @@ az network application-gateway show-backend-health --resource-group AdatumAppGat
 Данные журнала действий можно просматривать и анализировать с помощью любого из следующих методов:
 
 * **Инструменты Azure**. Информацию из журналов действий можно получать с помощью Azure PowerShell, Azure CLI, REST API Azure или портала Azure. Пошаговые инструкции для каждого метода подробно описаны в статье [Activity operations with Resource Manager](../azure-resource-manager/resource-group-audit.md) (Выполнение операций в журналах действий с помощью Resource Manager).
-* **Power BI**. Если у вас еще нет учетной записи [Power BI](https://powerbi.microsoft.com/pricing), вы можете использовать бесплатную пробную версию. Используя [пакет содержимого журналов действий Azure для Power BI](https://powerbi.microsoft.com/en-us/documentation/powerbi-content-pack-azure-audit-logs/), можно анализировать данные с помощью предварительно настроенных панелей мониторинга, которые можно использовать "как есть" или дополнительно настроить.
+* **Power BI**. Если у вас еще нет учетной записи [Power BI](https://powerbi.microsoft.com/pricing), вы можете использовать бесплатную пробную версию. С помощью [Power BIных приложений шаблонов](https://docs.microsoft.com/power-bi/service-template-apps-overview)можно анализировать данные.
 
 ### <a name="view-and-analyze-the-access-performance-and-firewall-logs"></a>Просмотр и анализ журналов доступа, производительности и брандмауэра
 

@@ -7,16 +7,16 @@ ms.author: jzim
 ms.service: container-service
 ms.topic: article
 ms.date: 09/25/2019
-ms.openlocfilehash: afbde512ecb5a38eac38d6f5db614d92cd44c908
-ms.sourcegitcommit: f2d9d5133ec616857fb5adfb223df01ff0c96d0a
+ms.openlocfilehash: f98f55dca8b3dbbfbe03cb8c79691cedb63335a0
+ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71937416"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72168983"
 ---
 # <a name="manage-security-context-constraints-in-azure-red-hat-openshift"></a>Управление ограничениями контекста безопасности в Azure Red Hat OpenShift 
 
-Ограничения контекста безопасности (SCC) позволяют администраторам кластера управлять разрешениями для модулей Pod. Дополнительные сведения об этом типе API см. в [документации по архитектуре для SCC](https://https://docs.openshift.com/container-platform/3.11/architecture/additional_concepts/authorization.html). Вы можете управлять SCC в экземпляре как обычные объекты API с помощью интерфейса командной строки.
+Ограничения контекста безопасности (SCC) позволяют администраторам кластера управлять разрешениями для модулей Pod. Дополнительные сведения об этом типе API см. в [документации по архитектуре для SCC](https://docs.openshift.com/container-platform/3.11/architecture/additional_concepts/authorization.html). Вы можете управлять SCC в экземпляре как обычные объекты API с помощью интерфейса командной строки.
 
 ## <a name="list-security-context-constraints"></a>Перечисление ограничений контекста безопасности
 

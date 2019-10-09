@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/07/2019
 ms.author: anavin
-ms.openlocfilehash: c488b96940cac03b9c392f0ac4bd1d32a15ba111
-ms.sourcegitcommit: f9e81b39693206b824e40d7657d0466246aadd6e
+ms.openlocfilehash: a53d5810b20aa8389c152889fed5d7f4e8cfc5b7
+ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72035288"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72177674"
 ---
 # <a name="virtual-network-peering"></a>Пиринг между виртуальными сетями
 
@@ -90,7 +90,7 @@ ms.locfileid: "72035288"
 
 За входящий и исходящий трафик по пиринговой связи между виртуальными сетями взимается номинальная плата. Дополнительные сведения о пиринговой связи виртуальных сетей и ценах на глобальную пиринговую связь между ними см. на [странице цен](https://azure.microsoft.com/pricing/details/virtual-network).
 
-Транзитный шлюз — это свойство пиринга, которое позволяет виртуальной сети использовать шлюз VPN или ExpressRoute в одноранговой виртуальной сети для подключения между локальными сетями или виртуальной сетью. Дополнительные сведения см. в разделе плата за использование [VPN-шлюза](https://azure.microsoft.com/pricing/details/vpn-gateway/) или плата за шлюз ExpressRoute и [Оплата за пиринг](https://azure.microsoft.com/pricing/details/virtual-network) виртуальных сетей.
+Транзитный шлюз — это свойство пиринга, которое позволяет виртуальной сети использовать шлюз VPN или ExpressRoute в одноранговой виртуальной сети для подключения между локальными сетями или виртуальной сетью. Трафик к шлюзу (входящим или исходящим) в одноранговой виртуальной сети будет взиматься за пиринг виртуальной сети. Дополнительные сведения см. в разделе плата за использование [VPN-шлюза](https://azure.microsoft.com/pricing/details/vpn-gateway/) или плата за шлюз ExpressRoute и [Оплата за пиринг](https://azure.microsoft.com/pricing/details/virtual-network) виртуальных сетей.
 
 ## <a name="next-steps"></a>Следующие шаги
 

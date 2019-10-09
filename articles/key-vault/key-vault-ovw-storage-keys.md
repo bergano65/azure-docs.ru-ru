@@ -8,12 +8,12 @@ author: msmbaldwin
 ms.author: mbaldwin
 manager: rkarlin
 ms.date: 09/18/2019
-ms.openlocfilehash: 8b9478dda83b85e937faa8915fa5e9b77660f194
-ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
+ms.openlocfilehash: 62faf33dc8b3690036407972e12633e741a85d78
+ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71203616"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72176749"
 ---
 # <a name="manage-storage-account-keys-with-key-vault-and-the-azure-cli"></a>Управление ключами учетной записи хранения с помощью Key Vault и Azure CLI
 
@@ -41,10 +41,10 @@ Azure AD использует управление доступом на осн�
 
 Key Vault — это приложение Майкрософт, которое предварительно зарегистрировано во всех клиентах Azure AD. Key Vault регистрируется в одном и том же ИДЕНТИФИКАТОРе приложения в каждом облаке Azure.
 
-| Клиенты | Облако | ИД приложения |
+| Клиенты | Облако | Идентификатор приложения |
 | --- | --- | --- |
 | Azure AD | Azure для государственных организаций | `7e7c393b-45d0-48b1-a35e-2905ddf8183c` |
-| Azure AD | Общедоступный пиринг Azure | `cfa8b339-82a2-471a-a3c9-0fc0be7a4093` |
+| Azure AD | Общедоступная служба Azure | `cfa8b339-82a2-471a-a3c9-0fc0be7a4093` |
 | Другие  | Any | `cfa8b339-82a2-471a-a3c9-0fc0be7a4093` |
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -71,7 +71,7 @@ az login
 
 - `--role`. Передайте роль службы оператора ключа "оператор ключей учетной записи хранения". Эта роль ограничивает область доступа учетной записью хранения. Для классической учетной записи хранения передайте "роль службы оператора ключа классической учетной записи хранения".
 - `--assignee-object-id`. Передайте значение "93c27d83-f79b-4cb2-8dd4-4aa716542e74", которое является ИДЕНТИФИКАТОРом объекта для Key Vault в общедоступном облаке Azure. (Чтобы получить идентификатор объекта для Key Vault в облаке Azure для государственных организаций, см. раздел [идентификатор приложения субъекта-службы](#service-principal-application-id).)
-- `--scope`. Передайте идентификатор ресурса учетной записи хранения, который находится в `/subscriptions/<subscriptionID>/resourceGroups/<StorageAccountResourceGroupName>/providers/Microsoft.Storage/storageAccounts/<YourStorageAccountName>`форме. Чтобы найти идентификатор подписки, воспользуйтесь командой Azure CLI [AZ Account List](/cli/azure/account?view=azure-cli-latest#az-account-list) . чтобы найти имя учетной записи хранения и группу ресурсов учетной записи хранения, воспользуйтесь командой Azure CLI [AZ Storage Account List](/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-list) .
+- `--scope`. Передайте идентификатор ресурса учетной записи хранения, который имеет форму `/subscriptions/<subscriptionID>/resourceGroups/<StorageAccountResourceGroupName>/providers/Microsoft.Storage/storageAccounts/<YourStorageAccountName>`. Чтобы найти идентификатор подписки, воспользуйтесь командой Azure CLI [AZ Account List](/cli/azure/account?view=azure-cli-latest#az-account-list) . чтобы найти имя учетной записи хранения и группу ресурсов учетной записи хранения, воспользуйтесь командой Azure CLI [AZ Storage Account List](/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-list) .
 
 ```azurecli-interactive
 az role assignment create --role "Storage Account Key Operator Service Role" --assignee-object-id 93c27d83-f79b-4cb2-8dd4-4aa716542e74 --scope "/subscriptions/<subscriptionID>/resourceGroups/<StorageAccountResourceGroupName>/providers/Microsoft.Storage/storageAccounts/<YourStorageAccountName>"
@@ -79,11 +79,11 @@ az role assignment create --role "Storage Account Key Operator Service Role" --a
 
 ### <a name="create-a-key-vault-managed-storage-account"></a>Создание управляемой учетной записи хранения Key Vault
 
- Создайте Key Vault управляемую учетную запись хранения с помощью команды Azure CLI [AZ keyvault Storage](/cli/azure/keyvault/storage?view=azure-cli-latest#az-keyvault-storage-add) . Задайте период повторного создания 90 дней. Через 90 дней Key Vault повторно создает `key1` и меняет местами активный ключ с `key2` на `key1`. `key1`затем помечается как активный ключ. Укажите следующие значения параметров для команды:
+ Создайте Key Vault управляемую учетную запись хранения с помощью команды Azure CLI [AZ keyvault Storage](/cli/azure/keyvault/storage?view=azure-cli-latest#az-keyvault-storage-add) . Задайте период повторного создания 90 дней. Через 90 дней Key Vault повторно создает `key1` и меняет местами активный ключ с `key2` на `key1`. `key1` помечается как активный ключ. Укажите следующие значения параметров для команды:
 
 - `--vault-name`. Передайте имя хранилища ключей. Чтобы найти имя хранилища ключей, воспользуйтесь командой Azure CLI [AZ keyvault List](/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-list) .
 - `-n`. Передайте имя учетной записи хранения. Чтобы найти имя учетной записи хранения, используйте команду [AZ Storage Account list](/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-list) Azure CLI.
-- `--resource-id`. Передайте идентификатор ресурса учетной записи хранения, который находится в `/subscriptions/<subscriptionID>/resourceGroups/<StorageAccountResourceGroupName>/providers/Microsoft.Storage/storageAccounts/<YourStorageAccountName>`форме. Чтобы найти идентификатор подписки, используйте Azure CLI [AZ Account List](/cli/azure/account?view=azure-cli-latest#az-account-list) команды; чтобы найти имя учетной записи хранения и группу ресурсов учетной записи хранения, воспользуйтесь командой Azure CLI [AZ Storage Account List](/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-list) .
+- `--resource-id`. Передайте идентификатор ресурса учетной записи хранения, который имеет форму `/subscriptions/<subscriptionID>/resourceGroups/<StorageAccountResourceGroupName>/providers/Microsoft.Storage/storageAccounts/<YourStorageAccountName>`. Чтобы найти идентификатор подписки, воспользуйтесь командой Azure CLI [AZ Account List](/cli/azure/account?view=azure-cli-latest#az-account-list) . чтобы найти имя учетной записи хранения и группу ресурсов учетной записи хранения, воспользуйтесь командой Azure CLI [AZ Storage Account List](/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-list) .
    
  ```azurecli-interactive
 az keyvault storage add --vault-name <YourKeyVaultName> -n <YourStorageAccountName> --active-key-name key1 --auto-regenerate-key --regeneration-period P90D --resource-id "/subscriptions/<subscriptionID>/resourceGroups/<StorageAccountResourceGroupName>/providers/Microsoft.Storage/storageAccounts/<YourStorageAccountName>"
@@ -95,14 +95,14 @@ az keyvault storage add --vault-name <YourKeyVaultName> -n <YourStorageAccountNa
 
 Команды в этом разделе выполняются в следующих действиях.
 
-- Задайте определение `<YourSASDefinitionName>`подписанного URL для общего доступа. Определение задается в Key Vault управляемой учетной `<YourStorageAccountName>` записью хранения в `<YourKeyVaultName>`хранилище ключей.
+- Задайте для учетной записи определение подписи общего доступа `<YourSASDefinitionName>`. Определение задается в Key Vault управляемой учетной записи хранения `<YourStorageAccountName>` в хранилище ключей `<YourKeyVaultName>`.
 - Создание маркера подписанного URL-имени учетной записи для служб BLOB-объектов, файлов, таблиц и очередей. Маркер создается для служб типов ресурсов, контейнеров и объектов. Маркер создается со всеми разрешениями, по протоколу HTTPS и с указанными датами начала и окончания.
-- Задайте определение подписанного общего доступа к хранилищу Key Vault в хранилище. Определение содержит универсальный код ресурса (URI) шаблона созданного маркера подписи общего доступа. Определение имеет тип `account` подписанного общего доступа и является допустимым в течение N дней.
+- Задайте определение подписанного общего доступа к хранилищу Key Vault в хранилище. Определение содержит универсальный код ресурса (URI) шаблона созданного маркера подписи общего доступа. Определение имеет тип подписи общего доступа `account` и является допустимым в течение N дней.
 - Убедитесь, что подписанный URL-доступ сохранен в хранилище ключей в качестве секрета.
 
 ### <a name="create-a-shared-access-signature-token"></a>Создание маркера подписи общего доступа
 
-Создайте определение подписи общего доступа с помощью команды Azure CLI [AZ Storage Account Generate-SAS](/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-generate-sas) . Для `storage` этой операции требуются разрешения `setsas` и.
+Создайте определение подписи общего доступа с помощью команды Azure CLI [AZ Storage Account Generate-SAS](/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-generate-sas) . Для этой операции требуются разрешения `storage` и `setsas`.
 
 
 ```azurecli-interactive
@@ -114,11 +114,11 @@ az storage account generate-sas --expiry 2020-01-01 --permissions rw --resource-
 "se=2020-01-01&sp=***"
 ```
 
-Эти выходные данные будут переданы `--template-id` параметру на следующем шаге.
+Эти выходные данные будут переданы параметру `--template-id` на следующем шаге.
 
 ### <a name="generate-a-shared-access-signature-definition"></a>Создание определения подписи общего доступа
 
-Используйте команду Azure CLI [AZ keyvault Storage SAS-Definition Create](/cli/azure/keyvault/storage/sas-definition?view=azure-cli-latest#az-keyvault-storage-sas-definition-create) , передав выходные данные из предыдущего шага `--template-id` в параметр, чтобы создать определение подписи общего доступа.  Можно указать имя для `-n` параметра.
+Используйте команду Azure CLI [AZ keyvault Storage SAS-Definition Create](/cli/azure/keyvault/storage/sas-definition?view=azure-cli-latest#az-keyvault-storage-sas-definition-create) , передав выходные данные предыдущего шага в параметр `--template-id`, чтобы создать определение подписи общего доступа.  Вы можете указать имя своего выбора в параметре `-n`.
 
 ```azurecli-interactive
 az keyvault storage sas-definition create --vault-name <YourKeyVaultName> --account-name <YourStorageAccountName> -n <YourSASDefinitionName> --validity-period P2D --sas-type account --template-uri <OutputOfSasTokenCreationStep>
@@ -141,13 +141,13 @@ az keyvault secret list --vault-name <YourKeyVaultName>
     "id": "https://<YourKeyVaultName>.vault.azure.net/secrets/<YourStorageAccountName>-<YourSASDefinitionName>",
 ```
 
-Теперь можно использовать команду [AZ keyvault Secret Показать](/cli/azure/keyvault/secret?view=azure-cli-latest#az-keyvault-secret-show) и `id` свойство, чтобы просмотреть содержимое этого секрета.
+Теперь можно использовать команду [AZ keyvault Secret Показать](/cli/azure/keyvault/secret?view=azure-cli-latest#az-keyvault-secret-show) и свойство `id` для просмотра содержимого этого секрета.
 
 ```azurecli-interactive
 az keyvault secret show --vault-name <YourKeyVaultName> --id <SasDefinitionID>
 ```
 
-В выходных данных этой команды строка определения SAS будет отображаться как`value`.
+Выходные данные этой команды будут показывать строку определения SAS в виде @ no__t-0.
 
 
 ## <a name="next-steps"></a>Следующие шаги

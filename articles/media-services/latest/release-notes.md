@@ -9,14 +9,14 @@ editor: ''
 ms.service: media-services
 ms.workload: na
 ms.topic: article
-ms.date: 09/06/2019
+ms.date: 10/07/2019
 ms.author: juliako
-ms.openlocfilehash: 2d01828cb61937b45665e953a13795b5346a5f1b
-ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
+ms.openlocfilehash: 34d68974366eb17704b4ea1291bd1d29a0eea95a
+ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72030532"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72168632"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Заметки о выпуске Служб мультимедиа Azure версии 3
 
@@ -36,16 +36,38 @@ ms.locfileid: "72030532"
 
 ## <a name="september-2019"></a>Сентябрь 2019 г.
 
+###  <a name="media-services-v3"></a>Службы мультимедиа версии 3  
+
+#### <a name="live-linear-encoding-of-live-events"></a>Динамическое линейное кодирование событий в реальном времени
+
 Службы мультимедиа v3 сообщают о предварительной версии в 24 часа x 365 дней в реальном времени в реальном времени.
- 
+
+###  <a name="media-services-v2"></a>Службы мультимедиа версии 2  
+
+#### <a name="deprecation-of-media-processors"></a>Устаревшие обработчики мультимедиа
+
+Мы объявляем объявление о нерекомендуемых *Azure Media indexer* и *Azure Media indexer 2 Preview*. [Azure Media Indexerный](../previous/media-services-index-content.md) обработчик мультимедиа будет снят с 1 октября по 2020. Процессоры мультимедиа [Azure Media indexer 2 Preview](../previous/media-services-process-content-with-indexer2.md) будут сняты с 1 января 2020. [Индексатор видео служб мультимедиа Azure](https://docs.microsoft.com/azure/media-services/video-indexer/) заменяет эти устаревшие обработчики мультимедиа.
+
+Дополнительные сведения см. в статье [Миграция с Azure Media indexer и Azure Media indexer 2 в индексатор видео служб мультимедиа Azure](../previous/migrate-indexer-v1-v2.md).
+
 ## <a name="august-2019"></a>Август 2019 г.
 
-### <a name="south-africa-regional-pair-is-open-for-media-services"></a>Для служб мультимедиа открыта пара региональных стандартов Южно-Африканского языка 
+###  <a name="media-services-v3"></a>Службы мультимедиа версии 3  
+
+#### <a name="south-africa-regional-pair-is-open-for-media-services"></a>Для служб мультимедиа открыта пара региональных стандартов Южно-Африканского языка 
 
 Теперь службы мультимедиа доступны в регионах Южной и Южной Африки.
 
 Дополнительные сведения см. [в разделе облака и регионы, в которых существует версия 3 служб мультимедиа](azure-clouds-regions.md).
 
+###  <a name="media-services-v2"></a>Службы мультимедиа версии 2  
+
+#### <a name="deprecation-of-media-processors"></a>Устаревшие обработчики мультимедиа
+
+Мы сообщаем о прекращении использования *Windows Azure Media Encoder* (Ваме) и обработчиков мультимедиа *кодировщика мультимедиа Azure* (\ Media Encoder), которые выводятся на выходе 30 ноября 2019.
+
+Дополнительные сведения см. в статье [Миграция Ваме в Media Encoder Standard](https://go.microsoft.com/fwlink/?LinkId=2101334) и [перенос в Media Encoder Standard](https://go.microsoft.com/fwlink/?LinkId=2101335).
+ 
 ## <a name="july-2019"></a>2019 июля
 
 ### <a name="content-protection"></a>Защита содержимого

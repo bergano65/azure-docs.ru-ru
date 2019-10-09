@@ -9,12 +9,12 @@ ms.author: mbaldwin
 ms.date: 08/28/2019
 ms.topic: conceptual
 ms.service: key-vault
-ms.openlocfilehash: 0f8c8900782ec8beb9f9b11c8fe7f7651901c343
-ms.sourcegitcommit: 7868d1c40f6feb1abcafbffcddca952438a3472d
+ms.openlocfilehash: 6996a5965454dfd5997f0c0404e0c348c68b626f
+ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71958996"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72177468"
 ---
 # <a name="service-to-service-authentication-to-azure-key-vault-using-net"></a>Проверка подлинности с взаимодействием между службами в Azure Key Vault с помощью .NET
 
@@ -87,7 +87,7 @@ ms.locfileid: "71958996"
 
 1. Войдите в портал Azure: *AZ login* , чтобы войти в Azure.
 
-1. Проверьте доступ, введя команду *AZ Account Get-Access-Token*. Если появляется сообщение об ошибке, убедитесь, что правильно установлена правильная версия Azure CLI.
+1. Проверьте доступ, введя команду *AZ Account Get-Access-Token--resource https://vault.azure.net* . Если появляется сообщение об ошибке, убедитесь, что правильно установлена правильная версия Azure CLI.
 
    Если Azure CLI не установлен в каталог по умолчанию, может появиться сообщение об ошибке, которое `AzureServiceTokenProvider` не может найти путь для Azure CLI. Используйте переменную среды **азуреклипас** , чтобы определить папку установки Azure CLI. При необходимости `AzureServiceTokenProvider` добавляет каталог, указанный в переменной среды **AzureCLIPath**, в переменную среды **Path**.
 

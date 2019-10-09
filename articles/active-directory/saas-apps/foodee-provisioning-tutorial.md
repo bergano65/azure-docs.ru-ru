@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/30/2019
 ms.author: Zhchia
-ms.openlocfilehash: abf2a752eaf0f1d0a9a8b07072dfc0b4c1ae45b7
-ms.sourcegitcommit: 80da36d4df7991628fd5a3df4b3aa92d55cc5ade
+ms.openlocfilehash: 97ecf3ea324f43753030f415c8a5e254b87595e5
+ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71812720"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72170066"
 ---
 # <a name="tutorial-configure-foodee-for-automatic-user-provisioning"></a>Учебник. Настройка пищи для автоматической подготовки пользователей
 
@@ -118,7 +118,7 @@ Azure AD использует концепцию, называемую *назн
 
 1. В разделе **учетные данные администратора**выполните следующие действия.
 
-   1\. В поле **URL-адрес клиента** введите значение **https://concierge.food.ee/scim/v2** , полученное ранее.
+   1\. В поле **URL-адрес клиента** введите значение **https: \//Concierge. Food. ee/scim/v2** , полученное ранее.
 
    2\. В поле **секретный токен** введите значение **токена API** , полученное ранее.
    

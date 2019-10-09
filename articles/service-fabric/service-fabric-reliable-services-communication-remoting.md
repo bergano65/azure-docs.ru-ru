@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: required
 ms.date: 09/20/2017
 ms.author: vturecek
-ms.openlocfilehash: a9ef2cd695f9591f299bb85b95d14d60b987c38d
-ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
+ms.openlocfilehash: 1654a7be8c3aba4efa6fcf96024ea987e2957e73
+ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70258695"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72173459"
 ---
 # <a name="service-remoting-in-c-with-reliable-services"></a>Удаленное взаимодействие в Reliable Services с помощью C#
 
@@ -36,7 +36,7 @@ ms.locfileid: "70258695"
 Чтобы настроить для службы удаленный доступ, достаточно выполнить два простых шага:
 
 1. Создание интерфейса для реализации в службе. Этот интерфейс определяет методы, которые будут доступны для удаленного вызова процедур в службе. Эти методы должны быть асинхронными методами, возвращающими задачи. Интерфейс должен реализовать `Microsoft.ServiceFabric.Services.Remoting.IService` , чтобы показать, что служба имеет интерфейс удаленного взаимодействия.
-2. Используйте прослушиватель удаленного взаимодействия в службе. Прослушиватель удаленного взаимодействия — это реализация `ICommunicationListener`, которая предоставляет возможности удаленного взаимодействия. Пространство имен `Microsoft.ServiceFabric.Services.Remoting.Runtime` содержит метод расширения `CreateServiceRemotingListener` для служб без отслеживания и с отслеживанием состояния, который позволяет создать прослушиватель удаленного взаимодействия с использованием соответствующего стандартного транспортного протокола.
+2. Используйте прослушиватель удаленного взаимодействия в службе. Прослушиватель удаленного взаимодействия — это реализация `ICommunicationListener`, которая предоставляет возможности удаленного взаимодействия. Пространство имен `Microsoft.ServiceFabric.Services.Remoting.Runtime` содержит метод расширения `CreateServiceRemotingInstanceListeners` для служб без отслеживания и с отслеживанием состояния, который позволяет создать прослушиватель удаленного взаимодействия с использованием соответствующего стандартного транспортного протокола.
 
 >[!NOTE]
 >Пространство имен `Remoting` доступно как отдельный пакет NuGet `Microsoft.ServiceFabric.Services.Remoting`.
@@ -322,7 +322,7 @@ string message = await helloWorldClient.HelloWorldAsync();
 Чтобы обновить версию 1 до версии 2 (с совместимым интерфейсом, или версия 2_1), выполните двухэтапное обновление. Соблюдайте порядок действий в этой процедуре.
 
 > [!NOTE]
-> При обновлении с версии v1 на v2 убедитесь, `Remoting` что пространство имен Обновлено для использования версии 2. Пример: "Microsoft. ServiceFabric. Services. Remoting. v2. FabricTransport. Client"
+> При обновлении с версии v1 на v2 убедитесь, что пространство имен `Remoting` Обновлено для использования версии 2. Пример: "Microsoft. ServiceFabric. Services. Remoting. v2. FabricTransport. Client"
 >
 >
 

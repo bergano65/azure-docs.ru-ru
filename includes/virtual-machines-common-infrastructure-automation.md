@@ -4,12 +4,12 @@ ms.service: virtual-machines
 ms.topic: include
 ms.date: 04/11/2019
 ms.author: cynthn
-ms.openlocfilehash: 15724adfc6eb875f3d2d5b6d3ecbbb54135a7265
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: 90ccc89f80da7c2abce324c077f0fb1a436b8d44
+ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67671433"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72171036"
 ---
 # <a name="use-infrastructure-automation-tools-with-virtual-machines-in-azure"></a>Использование средств автоматизации инфраструктуры на виртуальных машинах в Azure
 Средства автоматизации, как правило, позволяют быстро и согласованно создавать виртуальные машины Azure в нужном масштабе, а также управлять ими. Существует множество средств и решений, которые помогают полностью автоматизировать жизненный цикл развертывания и администрирования инфраструктуры Azure. В этой статье приведены сведения о некоторых средствах автоматизации инфраструктуры Azure. Обычно их используют с такими целями:
@@ -64,15 +64,15 @@ ms.locfileid: "67671433"
 
 
 ## <a name="powershell-dsc"></a>PowerShell DSC
-[PowerShell Desired State Configuration](https://msdn.microsoft.com/powershell/dsc/overview) — это платформа управления, которая позволяет определить конфигурацию целевых виртуальных машин. DSC также можно использовать в Linux через [сервер Open Management Infrastructure](https://collaboration.opengroup.org/omi/).
+[PowerShell Desired State Configuration](/powershell/scripting/dsc/overview/overview) — это платформа управления, которая позволяет определить конфигурацию целевых виртуальных машин. DSC также можно использовать в Linux через [сервер Open Management Infrastructure](https://collaboration.opengroup.org/omi/).
 
 Конфигурации DSC определяют компоненты, которые следует установить на виртуальной машине, а также параметры настройки узла. На каждом целевом узле, который обрабатывает запрашиваемые действия на основе отправленных конфигураций, выполняется модуль локального диспетчера конфигураций (LCM). Опрашивающий сервер — это веб-служба, запущенная на центральном узле lkz хранения конфигурации DSC и связанных ресурсов. Этот сервер взаимодействует с модулем LCM на каждом целевом узле и тем самым предоставляет требуемую конфигурацию и отчеты о соответствии.
 
 Вы узнаете, как выполнять следующие задачи:
 
 - [Краткое руководство по настройке требуемого состояния](https://msdn.microsoft.com/powershell/dsc/quickstarts/website-quickstart)
-- [Настройка опрашивающего веб-сервера DSC](https://msdn.microsoft.com/powershell/dsc/pullserver)
-- [Начало работы с настройкой требуемого состояния (DSC) для Linux](https://msdn.microsoft.com/powershell/dsc/lnxgettingstarted)
+- [Настройка опрашивающего веб-сервера DSC](/powershell/scripting/dsc/pull-server/pullserver)
+- [Начало работы с настройкой требуемого состояния (DSC) для Linux](/powershell/scripting/dsc/getting-started/lnxgettingstarted)
 
 
 ## <a name="azure-custom-script-extension"></a>Расширение пользовательских скриптов Azure

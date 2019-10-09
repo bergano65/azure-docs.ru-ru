@@ -23,9 +23,9 @@
       href: storage-sync-files-extend-servers.md
 - name: Основные понятия
   items:
-    - name: Общие сведения о работе с Файлами Azure
+    - name: Планирование развертывания службы файлов Azure
       href: storage-files-planning.md
-    - name: Общие сведения о Синхронизации файлов Azure
+    - name: Планирование развертывания службы синхронизации файлов Azure
       href: storage-sync-files-planning.md
     - name: Общие сведения о распределении по уровням в облаке
       href: storage-sync-cloud-tiering.md

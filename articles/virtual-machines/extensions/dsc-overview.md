@@ -7,7 +7,7 @@ author: bobbytreed
 manager: carmonm
 editor: ''
 tags: azure-resource-manager
-keywords: dsc
+keywords: DSC
 ms.assetid: bbacbc93-1e7b-4611-a3ec-e3320641f9ba
 ms.service: virtual-machines-windows
 ms.topic: article
@@ -15,19 +15,19 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: na
 ms.date: 05/02/2018
 ms.author: robreed
-ms.openlocfilehash: c759567e4d8c183452eccbbdca8459c8993d1361
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 7e309237589dfaf037114401172fc8f928a30077
+ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70092418"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72176648"
 ---
 # <a name="introduction-to-the-azure-desired-state-configuration-extension-handler"></a>Общие сведения об обработчике расширения Desired State Configuration в Azure
 
 Агент виртуальной машины Azure и связанные расширения являются частью служб инфраструктуры Microsoft Azure. Расширения виртуальной машины — это программные компоненты, которые расширяют функциональные возможности виртуальной машины и упрощают различные операции управления ею.
 
 Основным вариантом использования расширения Azure Desired State Configuration (DSC) является начальная загрузка виртуальной машины в [службу настройки состояния службы автоматизации Azure (DSC)](../../automation/automation-dsc-overview.md).
-Служба предоставляет [преимущества](/powershell/dsc/metaconfig#pull-service) , которые включают постоянное управление КОНФИГУРАЦИЕЙ виртуальной машины и интеграцию с другими операционными средствами, такими как мониторинг Azure.
+Служба предоставляет [преимущества](/powershell/scripting/dsc/managing-nodes/metaConfig#pull-service) , которые включают постоянное управление КОНФИГУРАЦИЕЙ виртуальной машины и интеграцию с другими операционными средствами, такими как мониторинг Azure.
 Использование расширения для регистрации виртуальной машины в службе предоставляет гибкое решение, которое даже работает в рамках подписок Azure.
 
 Расширение DSC можно использовать независимо от службы Automation DSC.
@@ -39,7 +39,7 @@ ms.locfileid: "70092418"
 ## <a name="prerequisites"></a>Предварительные требования
 
 - **Локальный компьютер**. Для взаимодействия с расширением виртуальной машины Azure нужно использовать портал Azure или пакет SDK для Azure PowerShell.
-- **Гостевой агент**. Виртуальная машина Azure, настроенная с помощью конфигурации DSC, должна работать под управлением ОС, которая поддерживает Windows Management Framework (WMF) версии 4.0 или более поздней. Полный список поддерживаемых версий ОС см. в [журнале версий расширения DSC](/powershell/dsc/azuredscexthistory).
+- **Гостевой агент**. Виртуальная машина Azure, настроенная с помощью конфигурации DSC, должна работать под управлением ОС, которая поддерживает Windows Management Framework (WMF) версии 4.0 или более поздней. Полный список поддерживаемых версий ОС см. в [журнале версий расширения DSC](/powershell/scripting/dsc/getting-started/azuredscexthistory).
 
 ## <a name="terms-and-concepts"></a>Термины и основные понятия
 
@@ -51,7 +51,7 @@ ms.locfileid: "70092418"
 
 ## <a name="architecture"></a>Архитектура
 
-Расширение DSC Azure использует платформу агента Azure, чтобы доставлять и применять конфигурации DSC виртуальных машин Azure, а также сообщать об этих конфигурациях. Расширение DSC принимает документ конфигурации и набор параметров. Если файл не предоставлен, внедряется [скрипт конфигурации по умолчанию](#default-configuration-script) с расширением. Скрипт конфигурации по умолчанию используется только для задания метаданных в [локальном диспетчере конфигураций](/powershell/dsc/metaconfig).
+Расширение DSC Azure использует платформу агента Azure, чтобы доставлять и применять конфигурации DSC виртуальных машин Azure, а также сообщать об этих конфигурациях. Расширение DSC принимает документ конфигурации и набор параметров. Если файл не предоставлен, внедряется [скрипт конфигурации по умолчанию](#default-configuration-script) с расширением. Скрипт конфигурации по умолчанию используется только для задания метаданных в [локальном диспетчере конфигураций](/powershell/scripting/dsc/managing-nodes/metaConfig).
 
 Когда расширение вызывается впервые, с его помощью устанавливается определенная версия WMF, следуя приведенной ниже логике:
 
@@ -63,7 +63,7 @@ ms.locfileid: "70092418"
 
 ### <a name="default-configuration-script"></a>Скрипт конфигурации по умолчанию
 
-Расширение DSC Azure включает скрипт конфигурации по умолчанию, предназначенный для использования при подключении виртуальной машины к DSC службы автоматизации Azure. Параметры сценария сопоставляются с настраиваемыми свойствами [локального диспетчера конфигураций](/powershell/dsc/metaconfig). Параметры скрипта см. в разделе [Скрипт конфигурации по умолчанию](dsc-template.md#default-configuration-script) статьи [Расширение Desired State Configuration (DSC) с использованием шаблонов Azure Resource Manager](dsc-template.md). Полный скрипт см. в [шаблоне быстрого запуска Azure на GitHub](https://github.com/Azure/azure-quickstart-templates/blob/master/dsc-extension-azure-automation-pullserver/UpdateLCMforAAPull.zip?raw=true).
+Расширение DSC Azure включает скрипт конфигурации по умолчанию, предназначенный для использования при подключении виртуальной машины к DSC службы автоматизации Azure. Параметры сценария сопоставляются с настраиваемыми свойствами [локального диспетчера конфигураций](/powershell/scripting/dsc/managing-nodes/metaConfig). Параметры скрипта см. в разделе [Скрипт конфигурации по умолчанию](dsc-template.md#default-configuration-script) статьи [Расширение Desired State Configuration (DSC) с использованием шаблонов Azure Resource Manager](dsc-template.md). Полный скрипт см. в [шаблоне быстрого запуска Azure на GitHub](https://github.com/Azure/azure-quickstart-templates/blob/master/dsc-extension-azure-automation-pullserver/UpdateLCMforAAPull.zip?raw=true).
 
 ## <a name="information-for-registering-with-azure-automation-state-configuration-dsc-service"></a>Сведения для регистрации в службе настройки состояния службы автоматизации Azure (DSC)
 
@@ -82,7 +82,7 @@ ms.locfileid: "70092418"
 
 В качестве имени конфигурации узла убедитесь, что конфигурация узла существует в конфигурации состояния Azure.  В противном случае развертывание расширения вернет ошибку.  Также убедитесь, что вы используете имя *конфигурации узла* , а не конфигурацию.
 Конфигурация определяется в скрипте, который используется [для компиляции конфигурации узла (MOF-файл)](https://docs.microsoft.com/azure/automation/automation-dsc-compile).
-Имя всегда будет содержать конфигурацию, за которой следует точка `.` , а также либо `localhost` конкретное имя компьютера.
+Имя всегда будет содержать конфигурацию, за которой следует точка `.`, а также значение `localhost` или определенное имя компьютера.
 
 ## <a name="dsc-extension-in-resource-manager-templates"></a>Использование расширения DSC в шаблонах Resource Manager
 
@@ -194,7 +194,7 @@ az vm extension set \
 
 - **Сбор данных**. Определяет, собирает ли расширение данные телеметрии. Дополнительные сведения см. в записи блога [Azure DSC Extension Data Collection](https://blogs.msdn.microsoft.com/powershell/2016/02/02/azure-dsc-extension-data-collection-2/) (Коллекция данных расширения DSC Azure).
 
-- **Версия.** Указывает версию устанавливаемого расширения DSC. Сведения о версиях приведены в [журнале версий расширения DSC](/powershell/dsc/azuredscexthistory).
+- **Версия.** Указывает версию устанавливаемого расширения DSC. Сведения о версиях приведены в [журнале версий расширения DSC](/powershell/scripting/dsc/getting-started/azuredscexthistory).
 
 - **Автоматическое обновление версии с дополнительным номером**. Это поле сопоставляется с параметром **AutoUpdate** в командлетах и позволяет расширению выполнять автоматическое обновление до последней версии во время установки. Если указать значение **Yes** (Да), то обработчик расширений будет использовать последнюю версию. Если указать значение **No** (Нет), то будет установлена версия, указанная в свойстве **Version** (Версия). Если не выбрано ни значение **Yes** (Да), ни значение **No** (Нет), это аналогично выбору значения **No** (Нет).
 
@@ -204,7 +204,7 @@ az vm extension set \
 
 ## <a name="next-steps"></a>Следующие шаги
 
-- Дополнительные сведения о DSC PowerShell можно найти в [центре документации PowerShell](/powershell/dsc/overview).
+- Дополнительные сведения о DSC PowerShell можно найти в [центре документации PowerShell](/powershell/scripting/dsc/overview/overview).
 - Изучите [шаблон Resource Manager для расширения DSC](dsc-template.md).
 - Дополнительные функции, которыми можно управлять с помощью DSC PowerShell, и ресурсы DSC можно найти в [коллекции PowerShell](https://www.powershellgallery.com/packages?q=DscResource&x=0&y=0).
 - Сведения о передаче конфиденциальных параметров в конфигурации см. в статье [Передача учетных данных в обработчик расширений DSC Azure](dsc-credentials.md).

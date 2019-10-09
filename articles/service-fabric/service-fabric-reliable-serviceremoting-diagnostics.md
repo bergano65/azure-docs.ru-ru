@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 06/29/2017
-ms.author: chackdan
-ms.openlocfilehash: 4e9aa2bbb99cac2ffc2b57ccb9299bf4ee7a729e
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.author: pepogors
+ms.openlocfilehash: a7c5ec023eb03d7d68a43ffecdc74aa4e505a0ce
+ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67876256"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72170476"
 ---
 # <a name="diagnostics-and-performance-monitoring-for-reliable-service-remoting"></a>Диагностика и мониторинг производительности в модели Reliable Service Remoting
 Среда выполнения Reliable ServiceRemoting генерирует [счетчики производительности](https://msdn.microsoft.com/library/system.diagnostics.performancecounter.aspx). Они содержат полезную информацию о работоспособности ServiceRemoting и помогают устранять неполадки и контролировать производительность.
@@ -28,7 +28,7 @@ ms.locfileid: "67876256"
 ## <a name="performance-counters"></a>Счетчики производительности
 Среда выполнения Reliable ServiceRemoting определяет указанные ниже категории счетчиков производительности.
 
-| Категория | Описание |
+| Category | Описание |
 | --- | --- |
 | Service Fabric Service |Счетчики, относящиеся к Azure Service Fabric Service Remoting, например счетчик среднего времени, затраченного на обработку запроса. |
 | Service Fabric Service Method |Счетчики, относящиеся к методам, которые реализуются Service Fabric Remoting Service, например выявляющие частоту вызова того или иного метода службы. |
@@ -96,7 +96,7 @@ ms.locfileid: "67876256"
 | --- | --- | --- |
 | Service Fabric Service |Число невыполненных запросов |Число запросов, обрабатываемых в службе |
 | Service Fabric Service |Среднее время запроса (мс) |Время обработки запроса службой (мс) |
-| Service Fabric Service |Среднее время десериализации запроса (мс) |Время десериализации сообщения запроса службы при получении его службой (мс) |
+| Service Fabric Service |Среднее время десериализации запроса, мс |Время десериализации сообщения запроса службы при получении его службой (мс) |
 | Service Fabric Service |Среднее время сериализации ответа (мс) |Время сериализации ответного сообщения службы в службе до отправки ответа клиенту (мс) |
 
 ## <a name="next-steps"></a>Следующие шаги

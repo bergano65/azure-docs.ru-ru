@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 8/04/2019
-ms.openlocfilehash: c56e6e004fe7f63725b5f6f4b9c71f60cc7b91ed
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: 5f98cb29bd61c674ef7d7e6af781760fe81a5085
+ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68829116"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72177892"
 ---
 # <a name="use-azure-data-factory-to-migrate-data-from-amazon-s3-to-azure-storage"></a>Перенос данных из Amazon S3 в службу хранилища Azure с помощью фабрики данных Azure 
 
@@ -36,7 +36,7 @@ ADF предлагает бессерверную архитектуру, кот
 
 Клиенты успешно выполнили миграцию петабайтов данных, состоящих из сотен миллионов файлов из Amazon S3 в хранилище BLOB-объектов Azure, с устойчивой пропускной способностью 2 Гбит/с и выше. 
 
-![производительность](media/data-migration-guidance-s3-to-azure-storage/performance.png)
+![Производительность](media/data-migration-guidance-s3-to-azure-storage/performance.png)
 
 На рисунке выше показано, как можно достичь оптимальной скорости перемещения данных с помощью различных уровней параллелизма.
  
@@ -136,7 +136,6 @@ ADF предлагает бессерверную архитектуру, кот
 
 ![цены — таблица](media/data-migration-guidance-s3-to-azure-storage/pricing-table.png)
 
-
 ### <a name="additional-references"></a>Дополнительные ссылки 
 - [Соединитель простой службы хранилища Amazon](https://docs.microsoft.com/azure/data-factory/connector-amazon-simple-storage-service)
 - [Соединитель хранилища BLOB-объектов Azure](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage)
@@ -149,6 +148,10 @@ ADF предлагает бессерверную архитектуру, кот
 - [Копировать файл добавочно в соответствии с временным секционированным именем файла](https://docs.microsoft.com/azure/data-factory/tutorial-incremental-copy-partitioned-file-name-copy-data-tool)
 - [Копировать новые и измененные файлы на основе LastModifiedDate](https://docs.microsoft.com/azure/data-factory/tutorial-incremental-copy-lastmodified-copy-data-tool)
 - [Страница с ценами на ADF](https://azure.microsoft.com/pricing/details/data-factory/data-pipeline/)
+
+## <a name="template"></a>Шаблон
+
+Ниже приведен [шаблон](solution-template-migration-s3-azure.md) , с которого начинается миграция петабайтов данных, состоящих из сотен миллионов файлов из Amazon S3, в Azure Data Lake Storage 2-го поколения.
 
 ## <a name="next-steps"></a>Следующие шаги
 

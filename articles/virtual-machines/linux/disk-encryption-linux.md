@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: e7f8c029c5ceff0865b060cf8edc794454d6c282
-ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
+ms.openlocfilehash: 0a1515144f340938cddfd5ca9f2ac4803bcb3f77
+ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71828470"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72174720"
 ---
 # <a name="azure-disk-encryption-scenarios-on-linux-vms"></a>Сценарии шифрования дисков Azure на виртуальных машинах Linux
 
@@ -36,9 +36,9 @@ ms.locfileid: "71828470"
 
 ## <a name="install-tools-and-connect-to-azure"></a>Установка средств и подключение к Azure
 
-Шифрование дисков Azure можно включить и управлять с помощью [Azure CLI](/cli/azure) и [Azure PowerShell](/azure/new-azureps-module-az). Для этого необходимо установить средства локально и подключиться к подписке Azure.
+Шифрование дисков Azure можно включить и управлять с помощью [Azure CLI](/cli/azure) и [Azure PowerShell](/powershell/azure/new-azureps-module-az). Для этого необходимо установить средства локально и подключиться к подписке Azure.
 
-### <a name="azure-cli"></a>Azure CLI
+### <a name="azure-cli"></a>Инфраструктура CLI Azure
 
 [Azure CLI 2.0](/cli/azure) — это интерфейс командной строки для управления ресурсами Azure. Этот интерфейс обеспечивает гибкие функции подачи запросов, выполнение длительных операций без блокировки и простое создание скриптов. Его можно установить локально, выполнив действия, описанные в разделе [установка Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest).
 
@@ -66,7 +66,7 @@ az account set --subscription "<subscription name or ID>"
 Дополнительные сведения можно найти в документации по [началу работы с Azure CLI 2.0](/cli/azure/get-started-with-azure-cli). 
 
 ### <a name="azure-powershell"></a>Azure PowerShell
-[Модуль Azure PowerShell AZ](/azure/new-azureps-module-az) предоставляет набор командлетов, использующих модель [Azure Resource Manager](../../azure-resource-manager/resource-group-overview.md) для управления ресурсами Azure. Его можно использовать в браузере с [Azure Cloud Shell](../../cloud-shell/overview.md)или установить на локальном компьютере, выполнив инструкции из статьи [Установка модуля Azure PowerShell](/powershell/azure/install-az-ps). 
+[Модуль Azure PowerShell AZ](/powershell/azure/new-azureps-module-az) предоставляет набор командлетов, использующих модель [Azure Resource Manager](../../azure-resource-manager/resource-group-overview.md) для управления ресурсами Azure. Его можно использовать в браузере с [Azure Cloud Shell](../../cloud-shell/overview.md)или установить на локальном компьютере, выполнив инструкции из статьи [Установка модуля Azure PowerShell](/powershell/azure/install-az-ps). 
 
 Если вы уже установили его локально, убедитесь, что вы используете последнюю версию версии пакета SDK для Azure PowerShell для настройки шифрования дисков Azure. Скачайте последнюю версию [Azure PowerShell](https://github.com/Azure/azure-powershell/releases).
 
@@ -202,7 +202,7 @@ Get-command *diskencryption*
 | volumeType | Тип тома, для которого будет выполняться шифрование. Допустимые значения: _OS_, _Data_ и _All_. 
 | forceUpdateTag | Передает уникальное значение, такое как GUID, каждый раз, когда операция должна выполняться принудительно. |
 | resizeOSDisk | Если размер раздела ОС будет изменен и займет весь виртуальный жесткий диск ОС до разделения системного тома. |
-| расположение | Расположение для всех ресурсов. |
+| location | Расположение для всех ресурсов. |
 
 
 ## <a name="use-encryptformatall-feature-for-data-disks-on-linux-vms"></a>Использование функции Енкриптформаталл для дисков данных на виртуальных машинах Linux

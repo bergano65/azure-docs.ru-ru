@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: d6d4af28d79b2375e774da98d4fdb1ad9dc22063
-ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
+ms.openlocfilehash: 99194c42dbc6ef07301be517021bf0fb4b4e7c23
+ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71035723"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72173503"
 ---
 # <a name="create-the-azure-vmware-solution-by-cloudsimple-service"></a>Создание решения Azure VMware с помощью службы Клаудсимпле
 
@@ -22,7 +22,7 @@ ms.locfileid: "71035723"
 > [!IMPORTANT]
 > Перед созданием службы Клаудсимпле необходимо зарегистрировать поставщик ресурсов Microsoft. Вмвареклаудсимпле в подписке Azure. Выполните действия, описанные в разделе [Включение поставщика ресурсов Microsoft. вмвареклаудсимпле в подписке Azure](enable-cloudsimple-service.md).
 
-## <a name="sign-in-to-azure"></a>Войдите в Azure
+## <a name="sign-in-to-azure"></a>Вход в Azure
 
 Войдите на [портале Azure](https://portal.azure.com).
 
@@ -30,10 +30,10 @@ ms.locfileid: "71035723"
 
 1. Выбор пункта **Все службы**.
 2. Выполните поиск по запросу **Клаудсимпле Services**.
-    ![Поиск службы Клаудсимпле](media/create-cloudsimple-service-search.png)
+    @no__t 0Search Клаудсимпле Service @ no__t-1
 3. Выберите **Клаудсимпле Services (службы**).
 4. Нажмите кнопку **Добавить** , чтобы создать новую службу.
-    ![Добавление службы Клаудсимпле](media/create-cloudsimple-service-add.png)
+    @no__t 0Add Клаудсимпле Service @ no__t-1
 5. Выберите подписку, в которой вы хотите создать службу Клаудсимпле.
 6. Выберите группу ресурсов для службы. Чтобы добавить новую группу ресурсов, щелкните **создать**.
 7. Введите имя для идентификатора службы.
@@ -46,5 +46,6 @@ ms.locfileid: "71035723"
 
 ## <a name="next-steps"></a>Следующие шаги
 
+* Сведения о [подготовке узлов](create-nodes.md)
 * Узнайте, как [создать частное облако](create-private-cloud.md)
 * Узнайте, как [настроить среду частного облака](quickstart-create-private-cloud.md)

@@ -9,12 +9,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/08/2018
 ms.author: glenga
-ms.openlocfilehash: 5a4bc05e0a0b0b6a2c1b859caea2aadc12b8e0e0
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 3ae75dc988ad70871efa45eb8c61db15804922ee
+ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70096406"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72176584"
 ---
 # <a name="hostjson-reference-for-azure-functions-2x"></a>Справочник по файлу host.json для службы "Функции Azure" версии 2.x  
 
@@ -117,6 +117,9 @@ ms.locfileid: "70096406"
 |---------|---------|---------| 
 |isEnabled|true|Включает или отключает выборку.| 
 |maxTelemetryItemsPerSecond|5|Пороговое значение, при котором начинается выборка.| 
+|енаблеливеметрикс |true|Включает сбор динамических метрик.|
+|енабледепенденцитраккинг|true|Включает отслеживание зависимостей.|
+|енаблеперформанцекаунтерсколлектион|true|Включает сбор счетчиков производительности KUDU.|
 
 ## <a name="cosmosdb"></a>СosmosDB
 
@@ -134,7 +137,7 @@ ms.locfileid: "70096406"
 
 Свойство, которое возвращает объект, содержащий все параметры определенной привязки, такие как [http](#http) и [eventHub](#eventhub).
 
-## <a name="functions"></a>функц.
+## <a name="functions"></a>functions
 
 Список функций, которые выполняют узел заданий. Пустой массив означает выполнение всех функций. Предназначен для использования только при [локальном выполнении](functions-run-local.md). Чтобы отключить определенные функции в приложениях-функциях Azure, выполните следующие действия в разделе [Способы отключения функций в решении "Функции Azure"](disable-function.md) вместо использования этого параметра.
 
@@ -210,9 +213,9 @@ ms.locfileid: "70096406"
 |Свойство  |Значение по умолчанию | Описание |
 |---------|---------|---------|
 |fileLoggingMode|debugOnly|Определяет, какой уровень журнала файла включен.  Доступны следующие параметры: `never`, `always` и `debugOnly`. |
-|logLevel|Н/Д|Объект, который определяет фильтрацию категорий журналов для функций в приложении. Версия 2.x соответствует макету ASP.NET Core для фильтрации категорий журналов. Это позволяет фильтровать ведения журнала определенных функций. Дополнительные сведения см. в документации по использованию ASP.NET Core [Фильтрация журнала](https://docs.microsoft.com/aspnet/core/fundamentals/logging/?view=aspnetcore-2.1#log-filtering). |
-|console|Н/Д| Параметр ведения журнала [console](#console). |
-|applicationInsights|Н/Д| Параметр [applicationInsights](#applicationinsights). |
+|logLevel|Недоступно|Объект, который определяет фильтрацию категорий журналов для функций в приложении. Версия 2.x соответствует макету ASP.NET Core для фильтрации категорий журналов. Это позволяет фильтровать ведения журнала определенных функций. Дополнительные сведения см. в документации по использованию ASP.NET Core [Фильтрация журнала](https://docs.microsoft.com/aspnet/core/fundamentals/logging/?view=aspnetcore-2.1#log-filtering). |
+|console|Недоступно| Параметр ведения журнала [console](#console). |
+|applicationInsights|Недоступно| Параметр [applicationInsights](#applicationinsights). |
 
 ## <a name="console"></a>console
 
@@ -268,7 +271,7 @@ ms.locfileid: "70096406"
 |listenerLockPeriod|00:01:00|Период времени, на который применяются блокировки прослушивателя.| 
 |listenerLockRecoveryPollingInterval|00:01:00|Интервал времени, используемый для восстановления блокировки прослушивателя, если блокировку прослушивателя не удалось получить при запуске.| 
 |lockAcquisitionTimeout|00:01:00|Максимальный период времени, за который среда выполнения будет пытаться получить блокировку.| 
-|lockAcquisitionPollingInterval|Н/Д|Интервал между попытками получения блокировки.| 
+|lockAcquisitionPollingInterval|Недоступно|Интервал между попытками получения блокировки.| 
 
 ## <a name="version"></a>version
 

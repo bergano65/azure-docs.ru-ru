@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: article
 ms.date: 09/16/2019
 ms.author: kumud
-ms.openlocfilehash: 8ed3b8e507a93f75b036b3a97eb34395ce525314
-ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
+ms.openlocfilehash: 2f9b7b148900e827f4bfb17de1ef3cf05d8bbf10
+ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71202936"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72169151"
 ---
 # <a name="create-a-private-link-service-using-azure-powershell"></a>Создание службы частной связи с помощью Azure PowerShell
 В этой статье показано, как создать службу частной связи в Azure с помощью Azure PowerShell.
@@ -21,7 +21,7 @@ ms.locfileid: "71202936"
 
 Если вы решили установить и использовать PowerShell локально, для работы с этой статьей потребуется последняя версия модуля Azure PowerShell. Выполните командлет `Get-Module -ListAvailable Az`, чтобы узнать установленную версию. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-Az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
 
-## <a name="create-a-resource-group"></a>Создать группу ресурсов
+## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
 Перед созданием частной ссылки необходимо создать группу ресурсов с помощью [New-азресаурцеграуп](/powershell/module/az.resources/new-azresourcegroup). В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *WestCentralUS* :
 
@@ -32,7 +32,7 @@ New-AzResourceGroup `
   -ResourceGroupName $rgName `
   -Location $location
 ```
-## <a name="create-a-virtual-network"></a>Создать виртуальную сеть
+## <a name="create-a-virtual-network"></a>Создание виртуальной сети
 Создайте виртуальную сеть для частной ссылки с помощью [New-азвиртуалнетворк](/powershell/module/az.network/new-azvirtualnetwork). В следующем примере создается виртуальная сеть с именем *myvnet* с подсетью для интерфейсной части (*frontendSubnet*), серверная часть (*backendSubnet*), Частная ссылка (*otherSubnet*):
 
 ```azurepowershell
@@ -76,7 +76,7 @@ $frontendIP = New-AzLoadBalancerFrontendIpConfig -Name $lbFrontName -PrivateIpAd
 $beaddresspool= New-AzLoadBalancerBackendAddressPoolConfig -Name $lbBackendName 
 $probe = New-AzLoadBalancerProbeConfig -Name 'myHealthProbe' -Protocol Http -Port 80 `
   -RequestPath / -IntervalInSeconds 360 -ProbeCount 5
-$rule = New-AzLoadBalancerRuleConfig -Name HTTP -FrontendIpConfiguration $feip -BackendAddressPool  $bepool -Probe $probe -Protocol Tcp -FrontendPort 80 -BackendPort 80
+$rule = New-AzLoadBalancerRuleConfig -Name HTTP -FrontendIpConfiguration $frontendIP -BackendAddressPool  $beaddresspool -Probe $probe -Protocol Tcp -FrontendPort 80 -BackendPort 80
 $NRPLB = New-AzLoadBalancer -ResourceGroupName $rgName -Name $lbName -Location $location -FrontendIpConfiguration $frontendIP -BackendAddressPool $beAddressPool -Probe $probe -LoadBalancingRule $rule -Sku Standard 
 ```
 ## <a name="create-a-private-link-service"></a>Создание службы частной связи
@@ -114,8 +114,8 @@ $pls = Get-AzPrivateLinkService -Name $plsName -ResourceGroupName $rgName
 Далее мы продемонстрируем, как сопоставлять эту службу с частной конечной точкой в другой виртуальной сети с помощью PowerShell. Опять же, пример ограничен созданием частной конечной точки и подключением к службе закрытых ссылок, созданной выше. Вы можете создать виртуальные машины в виртуальной сети, чтобы отправлять и получать трафик в закрытую конечную точку для создания сценария. 
 
 ## <a name="create-a-private-endpoint"></a>Создание частной конечной точки
-### <a name="create-a-virtual-network"></a>Создать виртуальную сеть
-Создайте виртуальную сеть для частной конечной точки с помощью [New-азвиртуалнетворк](/powershell/module/az.network/new-azvirtualnetwork). В этом примере создается виртуальная сеть с именем *внетпе* в группе ресурсов с именем *myResourceGroup*:
+### <a name="create-a-virtual-network"></a>Создание виртуальной сети
+Создайте виртуальную сеть для частной конечной точки с помощью [New-азвиртуалнетворк](/powershell/module/az.network/new-azvirtualnetwork). В этом примере создается виртуальная сеть с именем *внетпе* in Resource Group с именем *myResourceGroup*:
  
 ```azurepowershell
 $virtualNetworkNamePE = "vnetPE"
@@ -147,7 +147,7 @@ $privateEndpoint = New-AzPrivateEndpoint -ResourceGroupName $rgName -Name $peNam
 ```
  
 ### <a name="get-private-endpoint"></a>Получение частной конечной точки
-Получите IP-адрес частной конечной точки `Get-AzPrivateEndpoint` следующим образом:
+Получите IP-адрес частной конечной точки с `Get-AzPrivateEndpoint` следующим образом:
 
 ```azurepowershell
 # Get Private Endpoint and its IP Address 

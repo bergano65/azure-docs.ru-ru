@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/01/2019
 ms.author: kumud
-ms.openlocfilehash: 9bf44aa5ab18f94ec91650548dc13360ce1b1f3d
-ms.sourcegitcommit: f2d9d5133ec616857fb5adfb223df01ff0c96d0a
+ms.openlocfilehash: 5fa340fc3c839d74f292f551b73184ea4df1c0f1
+ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71938503"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72175951"
 ---
 # <a name="add-or-remove-a-subnet-delegation"></a>Добавление или удаление делегирования подсети
 
@@ -36,15 +36,21 @@ ms.locfileid: "71938503"
 
     | Параметр | Значение |
     | ------- | ----- |
-    | Название | Введите *myVirtualNetwork*. |
-    | Адресное пространство | Введите *10.0.0.0/16*. |
-    | Подписка | Выберите свою подписку.|
-    | Группа ресурсов | Выберите **Создать**, а затем введите *myResourceGroup* и нажмите кнопку **ОК**. |
+    | ИМЯ | Введите *myVirtualNetwork*. |
+    | Пространство адресов | Введите *10.0.0.0/16*. |
+    | Subscription | Выберите свою подписку.|
+    | группа ресурсов. | Выберите **Создать**, а затем введите *myResourceGroup* и нажмите кнопку **ОК**. |
     | Location | Выберите **EastUS**.|
     | Имя подсети | Введите *mySubnet*. |
     | Диапазон адреса подсети | Введите *10.0.0.0/24*. |
     |||
 1. Оставьте остальные значения по умолчанию и нажмите кнопку **создать**.
+
+## <a name="permissons"></a>Разрешения
+
+Если вы не создали подсеть, которую вы хотите делегировать службе Azure, вам потребуется следующее разрешение: `Microsoft.Network/virtualNetworks/subnets/write`.
+
+Встроенная роль « [участник сети](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor) » также содержит необходимые разрешения.
 
 ## <a name="delegate-a-subnet-to-an-azure-service"></a>Делегирование подсети в службу Azure
 

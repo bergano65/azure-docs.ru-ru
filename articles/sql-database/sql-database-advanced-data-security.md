@@ -6,16 +6,16 @@ ms.service: sql-database
 ms.subservice: security
 ms.devlang: ''
 ms.topic: conceptual
-author: monhaber
-ms.author: v-mohabe
+author: rkarlin
+ms.author: rkarlin
 ms.reviewer: vanto
 ms.date: 03/31/2019
-ms.openlocfilehash: b8fc82ca8f4b42adf595680541042ef38efe1470
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: dc302d5435234b8cad9d79b5d626056e4d1e2cf2
+ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68569550"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72170374"
 ---
 # <a name="advanced-data-security-for-azure-sql-database"></a>Расширенная защита данных для Базы данных SQL Azure
 
@@ -42,7 +42,7 @@ ms.locfileid: "68569550"
 Чтобы включить ADS, перейдите в **Расширенная защита данных** под заголовком **Безопасность** на вашем сервере или в управляемом экземпляре Базы данных SQL. Чтобы включить ADS для всех баз данных на сервере или управляемом экземпляре базы данных, щелкните **Включить Расширенную защиту данных на сервере**.
 
 > [!NOTE]
-> Учетная запись хранения автоматически создается и настраивается для хранения результатов проверки уязвимостей. Если вы уже включили рекламу для другого сервера в той же группе ресурсов и регионе, используется существующая учетная запись хранения.
+> Учетная запись хранения автоматически создается и настраивается для хранения результатов проверки **уязвимостей** . Если вы уже включили рекламу для другого сервера в той же группе ресурсов и регионе, используется существующая учетная запись хранения.
 
 ![Включение ADS](./media/sql-advanced-protection/enable_ads.png) 
 
@@ -69,7 +69,7 @@ ms.locfileid: "68569550"
 
 Параметры расширенной защиты данных для вашего сервера или управляемого экземпляра также доступны из панели базы данных ADS. Щелкните **Параметры** в основной области ADS, а затем выберите **Просмотреть параметры сервера Расширенной защиты данных**. 
 
-![Параметры баз данных](./media/sql-advanced-protection/database_settings.png) 
+![Параметры базы данных](./media/sql-advanced-protection/database_settings.png) 
 
 ## <a name="next-steps"></a>Следующие шаги 
 

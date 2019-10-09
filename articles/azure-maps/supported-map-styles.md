@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: 1aad2284c0f64c92efaefe3f9145d95c4aabec67
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: 457154a797a4b6d9853b1effe0d8121053653a99
+ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68839444"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72174763"
 ---
 # <a name="azure-maps-supported-map-styles"></a>Стили карт, поддерживаемые в службе Azure Maps
 Служба Azure Maps поддерживает несколько различных встроенных стилей карт, как описано ниже.
@@ -34,7 +34,7 @@ ms.locfileid: "68839444"
 **Пустые** и **blank_accessibleные** стили карт предоставляют пустой холст для визуализации данных. В стиле **blank_accessible** будет по-прежнему предоставляться информация о расположении, где расположена схема, и в том случае, если базовая схема не отображается.
 
 > [!Note]
-> В веб-пакете SDK можно изменить цвет фона на карте, установив стиль CSS `background-color` для элемента Map div.
+> В веб-пакете SDK можно изменить цвет фона на карте, установив стиль CSS `background-color` элемента Map DIV.
 
 **Применимые API:**
 * Элемент управления картой веб-пакета SDK
@@ -96,3 +96,11 @@ ms.locfileid: "68839444"
 * [Фрагмент карты](https://docs.microsoft.com/rest/api/maps/render/getmaptile)
 * Элемент управления картой веб-пакета SDK
 * Элемент управления картой Android
+
+
+## <a name="next-steps"></a>Следующие шаги
+
+Узнайте, как задать стиль схемы в Azure Maps.
+
+> [!div class="nextstepaction"]
+> [Выбор стиля карты](https://docs.microsoft.com/en-us/azure/azure-maps/choose-map-style)

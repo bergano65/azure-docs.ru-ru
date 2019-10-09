@@ -9,16 +9,16 @@ ms.topic: article
 ms.date: 09/25/2019
 ms.author: danlep
 ms.custom: mvc
-ms.openlocfilehash: 7c4812a63137dc2efc5eab2cb3b9e136a5465e78
-ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
+ms.openlocfilehash: 28a391fded422b00508e006bfd613d6c98d82f17
+ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71300463"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72166468"
 ---
 # <a name="troubleshoot-common-issues-in-azure-container-instances"></a>Устранение распространенных неполадок с помощью службы "Экземпляры контейнеров Azure"
 
-В этой статье показано, как устранять распространенные неполадки при развертывании контейнеров и управлении ими в службе "Экземпляры контейнеров Azure". См. также [часто задаваемые вопросы](container-instances-faq.md). 
+В этой статье показано, как устранять распространенные неполадки при развертывании контейнеров и управлении ими в службе "Экземпляры контейнеров Azure". См. также [часто задаваемые вопросы](container-instances-faq.md).
 
 Если требуется дополнительная поддержка, см. раздел доступная **Справка и варианты поддержки** в [портал Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
 
@@ -31,7 +31,7 @@ ms.locfileid: "71300463"
 | Имя группы контейнеров | От 1 до 64 |Без учета регистра |Буквы, цифры, дефис в любом месте, за исключением первого знака |`<name>-<role>-CG<number>` |`web-batch-CG1` |
 | Имя контейнера | От 1 до 64 |Без учета регистра |Буквы, цифры, дефис в любом месте, за исключением первого знака |`<name>-<role>-CG<number>` |`web-batch-CG1` |
 | Порты контейнера | От 1 до 65 535 |Integer |Целое число от 1 до 65 535. |`<port-number>` |`443` |
-| Метка DNS-имени | 5–63 |Без учета регистра |Буквы, цифры, дефис в любом месте, за исключением первого знака |`<name>` |`frontend-site1` |
+| Метка имени DNS | 5–63 |Без учета регистра |Буквы, цифры, дефис в любом месте, за исключением первого знака |`<name>` |`frontend-site1` |
 | Переменная среды | 1–63 |Без учета регистра |Буквы, цифры и подчеркивание (_) в любом месте, за исключением первого знака |`<name>` |`MY_VARIABLE` |
 | Имя тома | 5–63 |Без учета регистра |Буквы в нижнем регистре, цифры и дефисы в любом месте, кроме первого или последнего знака. Не может содержать два дефиса подряд. |`<name>` |`batch-output-volume` |
 
@@ -176,7 +176,7 @@ mcr.microsoft.com/azuredocs/aci-helloworld    latest    7367f3256b41    15 month
 
 ### <a name="cached-images"></a>Кэшированные изображения
 
-Служба "экземпляры контейнеров Azure" использует механизм кэширования, позволяющий ускорить время запуска контейнера для образов, построенных на `nanoserver:1809`основе `servercore:ltsc2019`общих [базовых образов Windows](container-instances-faq.md#what-windows-base-os-images-are-supported), включая, и `servercore:1809`. Часто используемые образы Linux, такие `ubuntu:1604` как `alpine:3.6` и, также кэшируются. Чтобы получить актуальный список кэшированных изображений и тегов, используйте API [List][list-cached-images] с кэшированными изображениями.
+Служба "экземпляры контейнеров Azure" использует механизм кэширования, позволяющий ускорить время запуска контейнера для образов, основанных на стандартных [базовых образах Windows](container-instances-faq.md#what-windows-base-os-images-are-supported), включая `nanoserver:1809`, `servercore:ltsc2019` и `servercore:1809`. Также кэшируются часто используемые образы Linux, такие как `ubuntu:1604` и `alpine:3.6`. Чтобы получить актуальный список кэшированных изображений и тегов, используйте API [List с кэшированными изображениями][list-cached-images] .
 
 > [!NOTE]
 > Возможность использования образов на основе Windows Server 2019 в службе "Экземпляры контейнеров Azure" предоставляется в режиме предварительной версии.
@@ -204,9 +204,9 @@ mcr.microsoft.com/azuredocs/aci-helloworld    latest    7367f3256b41    15 month
 
 ## <a name="container-group-ip-address-may-not-be-accessible-due-to-mismatched-ports"></a>IP-адрес группы контейнеров может быть недоступен из-за несовпадений портов
 
-Служба "экземпляры контейнеров Azure" пока не поддерживает сопоставление портов, как в обычных конфигурациях DOCKER. Если IP-адрес группы контейнеров недоступен, если вы считаете, что он должен быть, убедитесь, что вы настроили образ контейнера для прослушивания тех же портов, которые вы предоставляете в `ports` группе контейнеров, с помощью свойства.
+Служба "экземпляры контейнеров Azure" пока не поддерживает сопоставление портов, как в обычных конфигурациях DOCKER. Если IP-адрес группы контейнеров недоступен, если вы считаете, что он должен быть, убедитесь, что вы настроили образ контейнера для прослушивания тех же портов, которые вы предоставляете в группе контейнеров, с помощью свойства `ports`.
 
-Если вы хотите убедиться, что служба "экземпляры контейнеров Azure" может прослушивать порт, настроенный в образе контейнера, протестируйте `aci-helloworld` развертывание образа, предоставляющего порт. Также запустите `aci-helloworld` приложение, чтобы оно прослушивает порт. `aci-helloworld`принимает необязательную переменную `PORT` среды для переопределения порта по умолчанию 80, который он прослушивает. Например, для проверки порта 9000:
+Если вы хотите убедиться, что служба "экземпляры контейнеров Azure" может прослушивать порт, настроенный в образе контейнера, протестируйте развертывание образа `aci-helloworld`, предоставляющего порт. Также запустите приложение `aci-helloworld`, чтобы оно прослушивает порт. `aci-helloworld` принимает необязательную переменную среды `PORT`, чтобы переопределить порт по умолчанию 80, который он прослушивает. Например, для проверки порта 9000:
 
 1. Настройте группу контейнеров для предоставления порта 9000 и передайте номер порта в качестве значения переменной среды:
     ```azurecli
@@ -215,11 +215,11 @@ mcr.microsoft.com/azuredocs/aci-helloworld    latest    7367f3256b41    15 month
     --ip-address Public --ports 9000 \
     --environment-variables 'PORT'='9000'
     ```
-1. Найдите IP-адрес группы контейнеров в выходных данных `az container create`команды. Найдите значение **IP**. 
+1. Найдите IP-адрес группы контейнеров в выходных данных команды `az container create`. Найдите значение **IP**. 
 1. После успешного завершения подготовки контейнера перейдите к IP-адресу и порту приложения контейнера в браузере, например: `192.0.2.0:9000`. 
 
     Вы должны увидеть "Добро пожаловать в службу" экземпляры контейнеров Azure ". сообщение, отображаемое веб-приложением.
-1. Завершив работу с контейнером, удалите его с помощью `az container delete` команды:
+1. Завершив работу с контейнером, удалите его с помощью команды `az container delete`:
 
     ```azurecli
     az container delete --resource-group myResourceGroup --name mycontainer
@@ -230,7 +230,7 @@ mcr.microsoft.com/azuredocs/aci-helloworld    latest    7367f3256b41    15 month
 Узнайте, как [получить журналы и события контейнеров](container-instances-get-logs.md) , чтобы упростить отладку контейнеров.
 
 <!-- LINKS - External -->
-[azure-name-restrictions]: https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions#naming-rules-and-restrictions
+[azure-name-restrictions]: https://docs.microsoft.com/azure/cloud-adoption-framework/ready/considerations/naming-and-tagging#resource-naming
 [windows-sac-overview]: https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview
 [docker-multi-stage-builds]: https://docs.docker.com/engine/userguide/eng-image/multistage-build/
 [docker-hub-windows-core]: https://hub.docker.com/_/microsoft-windows-servercore

@@ -7,7 +7,7 @@ author: bobbytreed
 manager: carmonm
 editor: ''
 tags: azure-resource-manager
-keywords: dsc
+keywords: DSC
 ms.assetid: ea76b7e8-b576-445a-8107-88ea2f3876b9
 ms.service: virtual-machines-windows
 ms.topic: article
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: na
 ms.date: 05/02/2018
 ms.author: robreed
-ms.openlocfilehash: 38a302545f2dd46a8123816a41c97ae26ee4c260
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: b0625e3ac14e28cb4d43313bf1d9bc8b7afa08b1
+ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70092515"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72176692"
 ---
 # <a name="pass-credentials-to-the-azure-dscextension-handler"></a>Передача учетных данных в обработчик Azure DSCExtension
 
@@ -83,11 +83,11 @@ $vm | Update-AzVM
 
 При выполнении этого кода запрашиваются учетные данные. После предоставления учетных данных они недолго хранятся в памяти. При публикации с помощью командлета **Set-AzVMDscExtension** учетные данные передаются на виртуальную машину по протоколу HTTPS, где Azure сохраняет их в зашифрованном виде на диске с использованием локального сертификата виртуальной машины. Затем они быстро расшифровываются в памяти и повторно шифруются для передачи в DSC.
 
-Этот процесс отличается от [использования безопасных конфигураций без обработчика расширений](/powershell/dsc/securemof). Среда Azure предоставляет способ безопасной передачи данных конфигурации с помощью сертификатов. При использовании обработчика расширений DSC нет необходимости указывать запись **$CertificatePath** либо **$CertificateID**/  **$Thumbprint** в **ConfigurationData**.
+Этот процесс отличается от [использования безопасных конфигураций без обработчика расширений](/powershell/scripting/dsc/pull-server/securemof). Среда Azure предоставляет способ безопасной передачи данных конфигурации с помощью сертификатов. При использовании обработчика расширений DSC нет необходимости указывать запись **$CertificatePath** либо **$CertificateID**/  **$Thumbprint** в **ConfigurationData**.
 
 ## <a name="next-steps"></a>Следующие шаги
 
 - Ознакомьтесь с [общими сведениями об обработчике расширения Desired State Configuration в Azure](dsc-overview.md).
 - Изучите [шаблон Azure Resource Manager для расширения DSC](dsc-template.md).
-- Дополнительные сведения о DSC PowerShell можно найти в [центре документации PowerShell](/powershell/dsc/overview).
+- Дополнительные сведения о DSC PowerShell можно найти в [центре документации PowerShell](/powershell/scripting/dsc/overview/overview).
 - Дополнительные функции, которыми можно управлять с помощью DSC PowerShell, и ресурсы DSC можно найти в [коллекции PowerShell](https://www.powershellgallery.com/packages?q=DscResource&x=0&y=0).

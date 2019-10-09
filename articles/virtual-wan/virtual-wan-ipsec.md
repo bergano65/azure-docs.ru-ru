@@ -1,27 +1,31 @@
 ---
-title: Политики IPsec по умолчанию Azure виртуальной глобальной сети | Документация Майкрософт
-description: В этой статье сведения о политиках IPsec для виртуальной глобальной сети.
+title: Политики IPsec по умолчанию виртуальной глобальной сети Azure | Документация Майкрософт
+description: В этой статье содержатся сведения о политиках IPsec для виртуальной глобальной сети.
 services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: conceptual
-ms.date: 05/28/2019
+ms.date: 10/07/2019
 ms.author: cherylmc
-ms.openlocfilehash: fcc9979b9f6d2efcdcbb575f3fd149d8df9c20b0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5533e35a632f2d58bd8af8f52aafa11d1b677cb9
+ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66307217"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72168388"
 ---
-# <a name="virtual-wan-default-policies-for-ipsec-connectivity"></a>Политики виртуальных глобальной сети по умолчанию для подключений IPsec
+# <a name="virtual-wan-default-policies-for-ipsec-connectivity"></a>Политики виртуальной глобальной сети по умолчанию для подключений IPsec
 
-В этой статье показано, поддерживаемые сочетания политики IPsec.
+В этой статье приведены поддерживаемые сочетания политик IPsec.
 
-## <a name="default-ipsec-policies"></a>Стандартные политики IPsec
+## <a name="default-ipsec-policies"></a>Политики IPsec по умолчанию
 
 [!INCLUDE [IPsec](../../includes/virtual-wan-ipsec-include.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="custom-ipsec-policies"></a>Настраиваемые политики IPsec
+
+[!INCLUDE [IPsec](../../includes/virtual-wan-ipsec-custom-include.md)]
+
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о Виртуальной глобальной сети см. в разделе [Сведения о Виртуальной глобальной сети Azure](virtual-wan-about.md) и [Часто задаваемые вопросы о Виртуальной глобальной сети Azure (WAN)](virtual-wan-faq.md).

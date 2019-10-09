@@ -7,16 +7,16 @@ ms.service: marketplace
 ms.topic: conceptual
 ms.date: 07/30/2019
 ms.author: evansma
-ms.openlocfilehash: 03d67249ef1d74844a7e9019e90f6331ecfdf0c3
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 181a3f3a8d3cabb2fdf6caf79cef16201fab0c68
+ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70102975"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72177806"
 ---
 # <a name="configure-lead-management-for-dynamics-365-for-customer-engagement"></a>Настройка управления интересами для Dynamics 365 для участия клиентов
 
-В этой статье описывается, как настроить Dynamics 365 для взаимодействия с клиентами (ранее Dynamics CRM Online). Дополнительные сведения об изменениях см. [здесь](https://docs.microsoft.com/dynamics365/customer-engagement/admin/switch-dynamics-crm-online-dynamics-365) . 
+В этой статье описывается, как настроить Dynamics 365 для взаимодействия с клиентами (ранее Dynamics CRM Online). Дополнительные сведения об изменениях см. [здесь](https://docs.microsoft.com/dynamics365/customerengagement/on-premises/admin/on-prem-server-based-sharepoint-online) . 
 
 >[!Note]
 >Эти инструкции относятся только к размещенной облачной среде Microsoft Dynamics 365 для среды взаимодействия клиентов. Прямое подключение к локальной среде Dynamics в настоящее время не поддерживается. Существуют и другие варианты получения интересов, таких как настройка [конечной точки HTTPS](./commercial-marketplace-lead-management-instructions-https.md) или [таблицы Azure](./commercial-marketplace-lead-management-instructions-azure-table.md) для получения интересов.
@@ -97,13 +97,13 @@ ms.locfileid: "70102975"
 
     ![Добавление разрешений](./media/commercial-marketplace-lead-management-instructions-dynamics/api-permissions.png)
 
-14. После выполнения шагов 1-13 на портал Azure перейдите к своему экземпляру Dynamics 365 для взаимодействия с клиентами, перейдя по URL-адресу ( `https://tenant.crm.dynamics.com`например,).
+14. После выполнения шагов 1-13 на портал Azure перейдите к своему экземпляру Dynamics 365 для взаимодействия с клиентами, перейдя по URL-адресу (например, `https://tenant.crm.dynamics.com`).
 15. Параметры доступа, щелкнув значок шестеренки и **Дополнительные параметры** на верхней панели навигации.
 16. На странице Параметры откройте меню Параметры на верхней панели навигации и выберите **Безопасность**.
 17. На странице Безопасность выберите **Пользователи**.  На странице пользователи выберите раскрывающийся список "включенные пользователи", чтобы переключиться на **пользователей приложений**.
 18. Нажмите **Создать**, чтобы создать пользователя. 
 
-    ![Создать нового пользователя](./media/commercial-marketplace-lead-management-instructions-dynamics/application-users.png)
+    ![Создание пользователя](./media/commercial-marketplace-lead-management-instructions-dynamics/application-users.png)
 
 19. В поле **Новый пользователь**убедитесь, что пользователь: Выбран пользователь приложения. Укажите имя пользователя, полное имя и адрес электронной почты, которые будут использоваться для этого подключения. Кроме того, вставьте **идентификатор приложения** , созданного на портал Azure из шага 8. Нажмите кнопку **сохранить и закрыть** , чтобы завершить добавление пользователя.
 
@@ -179,13 +179,13 @@ ms.locfileid: "70102975"
 
     ![Сведения о подключении — назначение интереса](./media/commercial-marketplace-lead-management-instructions-dynamics/connection-details-lead-destination.png)
 
-4. Укажите **URL-адрес экземпляра Dynamics 365** , `https://contoso.crm4.dynamics.com`например.
-5. Выберите метод **проверки**подлинности, Azure Active Directory или Office 365. 
-6. Если вы выбрали Azure Active Directory, укажите **идентификатор приложения** (например `23456052-aaaa-bbbb-8662-1234df56788f`:), **идентификатор каталога** (например `12345678-8af1-4asf-1234-12234d01db47`:) и **секрет клиента** (пример: `1234ABCDEDFRZ/G/FdY0aUABCEDcqhbLn/ST122345nBc=`).
+4. Укажите **URL-адрес экземпляра Dynamics 365** , например `https://contoso.crm4.dynamics.com`.
+5. Выберите метод **проверки подлинности**, Azure Active Directory или Office 365. 
+6. Если вы выбрали Azure Active Directory, укажите **идентификатор приложения** (например: `23456052-aaaa-bbbb-8662-1234df56788f`), **идентификатор каталога** (например: `12345678-8af1-4asf-1234-12234d01db47`) и **секрет клиента** (например: `1234ABCDEDFRZ/G/FdY0aUABCEDcqhbLn/ST122345nBc=`).
 
     ![Сведения о подключении — Azure Active Directory](./media/commercial-marketplace-lead-management-instructions-dynamics/connection-details-application-id.png)
 
-7. Если вы выбрали Office 365, укажите **имя пользователя** (пример: `contoso@contoso.onmicrosoft.com`) и пароль (пример: `P@ssw0rd`).
+7. Если вы выбрали Office 365, укажите **имя пользователя** (например: `contoso@contoso.onmicrosoft.com`) и пароль (пример: `P@ssw0rd`).
 
     ![Сведения о подключении — имя пользователя](./media/commercial-marketplace-lead-management-instructions-dynamics/connection-details-authentication.png)
 

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/20/2019
 ms.author: magoedte
-ms.openlocfilehash: fa3c8b8cee0b8621a6a2800655f62a3d339f67c3
-ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
+ms.openlocfilehash: 24eb8440ed4746b51b92ce371b5d58b8d55de9a3
+ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71211998"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72177593"
 ---
 # <a name="designing-your-azure-monitor-logs-deployment"></a>Разработка развертывания журналов Azure Monitor
 
@@ -32,7 +32,7 @@ Azure Monitor хранит данные [журнала](data-platform-logs.md) 
 
 * Географическое расположение хранилища данных.
 * Изоляция данных за счет предоставления различным пользователям прав доступа, следующих за одной из наших рекомендуемых стратегий проектирования.
-* Область для настройки параметров, например [ценовой категории](https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#changing-pricing-tier), [удержания](https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period)и [ограниченного выделения данных](https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#daily-cap).
+* Область для настройки параметров, например [ценовой категории](https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#changing-pricing-tier), [удержания](https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period)и [ограниченного выделения данных](https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#manage-your-maximum-daily-data-volume).
 
 В этой статье приводятся подробные сведения о вопросах проектирования и миграции, обзоре управления доступом и понимании реализаций, которые мы рекомендуем использовать для ИТ-организации.
 
@@ -93,7 +93,7 @@ Azure Monitor хранит данные [журнала](data-platform-logs.md) 
     > [!NOTE]
     > Журналы доступны для запросов контекста ресурсов, только если они должным образом связаны с соответствующим ресурсом. В настоящее время следующие ресурсы имеют ограничения.
     > - Компьютеры за пределами Azure
-    > - Платформа Service Fabric
+    > - Service Fabric
     > - Application Insights
     >
     > Вы можете проверить, правильно ли связаны журналы с их ресурсами, выполнив запрос и проверив интересующие вас записи. Если правильный идентификатор ресурса находится в свойстве [_ResourceId](log-standard-properties.md#_resourceid) , то данные доступны для запросов, ориентированных на ресурсы.
@@ -121,7 +121,7 @@ Azure Monitor автоматически определяет правильны
 
     Это значение по умолчанию для всех рабочих областей, созданных до марта 2019.
 
-* **Использовать разрешения ресурса или рабочей области**: Этот режим управления позволяет детально RBAC. Пользователям можно предоставить доступ только к данным, связанным с ресурсами, которые они могут просматривать `read` , назначая разрешение Azure. 
+* **Использовать разрешения ресурса или рабочей области**: Этот режим управления позволяет детально RBAC. Пользователям можно предоставить доступ только к данным, связанным с ресурсами, которые они могут просматривать, назначив разрешение Azure `read`. 
 
     Когда пользователь обращается к рабочей области в режиме контекста рабочей области, применяются разрешения рабочей области. Когда пользователь обращается к рабочей области в режиме контекста ресурсов, проверяются только разрешения на ресурсы, а разрешения рабочей области игнорируются. Включите RBAC для пользователя, удалив их из разрешений рабочей области и разрешив распознавание разрешений на доступ к ресурсам.
 

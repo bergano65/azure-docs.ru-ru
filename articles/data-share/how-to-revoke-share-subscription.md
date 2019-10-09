@@ -1,17 +1,17 @@
 ---
 title: Отзыв общей подписки в предварительной версии Azure Data Share
-description: Отмена подписки на общую папку
+description: Узнайте, как отозвать подписку на общий ресурс у получателя с помощью предварительной версии Azure Data Share.
 author: joannapea
 ms.author: joanpo
 ms.service: data-share
 ms.topic: conceptual
 ms.date: 07/10/2019
-ms.openlocfilehash: 08a48202c26df1c24216572b1a52ac45506c6229
-ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
+ms.openlocfilehash: bd8ef23ead500acb9e403b38fd52a2d980d12bf4
+ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71326535"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72169052"
 ---
 # <a name="how-to-revoke-a-consumers-share-subscription-in-azure-data-share-preview"></a>Как отозвать общую подписку потребителя в предварительной версии Azure Data Share
 
@@ -26,4 +26,4 @@ ms.locfileid: "71326535"
 Установите флажки рядом с получателями, чьи подписки нужно удалить, а затем нажмите кнопку **отозвать**. Потребитель больше не будет получать обновления своих данных.
 
 ## <a name="next-steps"></a>Следующие шаги
-Дополнительные сведения о мониторинге [общих папок данных](how-to-monitor.md).
+Дополнительные сведения о [мониторинге общих папок данных](how-to-monitor.md).

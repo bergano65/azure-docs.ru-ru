@@ -1,23 +1,26 @@
 ---
-title: Запуск приложения с пружинным облаком из исходного кода
+title: Краткое руководство. Запуск приложения с пружинным облаком из исходного кода
 description: Узнайте, как запустить облачное приложение Azure весны непосредственно из исходного кода.
 author: jpconnock
 ms.service: spring-cloud
 ms.topic: conceptual
 ms.date: 9/27/2019
 ms.author: jeconnoc
-ms.openlocfilehash: a161b38ab6d23ad86df1ef7e843640276ba486bf
-ms.sourcegitcommit: d773b5743cb54b8cbcfa5c5e4d21d5b45a58b081
+ms.openlocfilehash: 445cac1494828362d54a8c15e68d27f01b165841
+ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72038812"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72170533"
 ---
 # <a name="launch-your-spring-cloud-application-from-source-code"></a>Запуск приложения с пружинным облаком из исходного кода
 
 Azure Веснного облака позволяет запускать приложение непосредственно из исходного кода Java или из предварительно созданного JAR-файла. В этой статье описаны необходимые шаги.
 
-## <a name="initial-requirements"></a>Начальные требования
+## <a name="prerequisites"></a>Предварительные требования
+
+>[!Note]
+> Прежде чем приступить к работе с этим кратким руководством, убедитесь, что ваша подписка Azure имеет доступ к Azure Веснного облака.  Как услуга предварительной версии мы просим Вас связаться с нами, чтобы мы могли добавить подписку в наш список разрешений.  Если вы хотите изучить возможности Azure Веснного облака, [fill эту форму @ no__t-1.
 
 Прежде чем начать, убедитесь, что подписка Azure имеет необходимые зависимости:
 

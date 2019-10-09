@@ -13,13 +13,13 @@ ms.topic: troubleshooting
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/18/2017
-ms.author: chackdan
-ms.openlocfilehash: 0bd8a7d403ad1fe0f7abb15356cc9c90ed6b3f02
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: pepogors
+ms.openlocfilehash: 23479692e815b5dda010ec2035c206df15715347
+ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66153831"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72167415"
 ---
 # <a name="commonly-asked-service-fabric-questions"></a>Распространенные вопросы о Service Fabric
 
@@ -107,7 +107,7 @@ ms.locfileid: "66153831"
 Да.  Дополнительные сведения см. в разделе [Создание кластера Service Fabric с подключенными дисками данных](../virtual-machine-scale-sets/virtual-machine-scale-sets-attached-disks.md#create-a-service-fabric-cluster-with-attached-data-disks) и статьях о шифровании дисков с помощью [PowerShell](../virtual-machine-scale-sets/virtual-machine-scale-sets-encrypt-disks-ps.md) и [CLI](../virtual-machine-scale-sets/virtual-machine-scale-sets-encrypt-disks-cli.md).
 
 ### <a name="can-i-use-low-priority-vms-in-a-cluster-node-type-virtual-machine-scale-set"></a>Можно ли использовать низкоприоритетные виртуальные машины с типом узла кластера (масштабируемый набор виртуальных машин)?
-№ Низкоприоритетные виртуальные машины не поддерживаются. 
+Нет. Низкоприоритетные виртуальные машины не поддерживаются. 
 
 ### <a name="what-are-the-directories-and-processes-that-i-need-to-exclude-when-running-an-anti-virus-program-in-my-cluster"></a>Какие каталоги и процессы необходимо исключить при запуске антивирусной программы в кластере?
 
@@ -135,8 +135,8 @@ ms.locfileid: "66153831"
 ### <a name="how-can-my-application-authenticate-to-keyvault-to-get-secrets"></a>Как приложение может выполнить аутентификацию в хранилище ключей и получить секреты?
 Ниже приведены средства для того, чтобы ваше приложение получило учетные данные для аутентификации в KeyVault:
 
-О. Во время задания сборки и упаковки вы можете внедрить сертификат в пакет данных приложения Service Fabric и использовать его для аутентификации в KeyVault.
-Б. Для виртуальной машины масштабируемого набора узлов с поддержкой MSI, можно разработать простой PowerShell SetupEntryPoint SF приложения для получения [маркер доступа из конечной точки MSI](https://docs.microsoft.com/azure/active-directory/managed-service-identity/how-to-use-vm-token), а затем [получения секретов из хранилища ключей](/powershell/module/azurerm.keyvault/get-azurekeyvaultsecret).
+A. Во время задания сборки и упаковки вы можете внедрить сертификат в пакет данных приложения Service Fabric и использовать его для аутентификации в KeyVault.
+Б. Для узлов с поддержкой MSI масштабируемого набора виртуальных машин можно разработать простой SetupEntryPoint PowerShell для приложения SF, чтобы получить [маркер доступа из конечной точки MSI](https://docs.microsoft.com/azure/active-directory/managed-service-identity/how-to-use-vm-token), а затем [извлечь свои секреты из KeyVault](/powershell/module/azurerm.keyvault/get-azurekeyvaultsecret).
 
 ## <a name="application-design"></a>Проектирование приложений
 
@@ -190,6 +190,6 @@ Reliable Services обычно состоит из нескольких разд
 
 После объявления о начале их реализации см. дополнительные сведения в [блоге Service Fabric](https://blogs.msdn.microsoft.com/azureservicefabric/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Дополнительные сведения о [ключевые понятия Service Fabric](service-fabric-technical-overview.md) и [рекомендации](service-fabric-best-practices-overview.md) льдом Fabric concepts](service-fabric-technical-overview.md) и [советы и рекомендации](service-fabric-best-practices-overview.md)
+Сведения о [базовых Service Fabric основных понятиях](service-fabric-technical-overview.md) и рекомендациях по [управлению](service-fabric-best-practices-overview.md) Fabric] (Service-Fabric-Technical-Overview.md [) и рекомендации](service-fabric-best-practices-overview.md)

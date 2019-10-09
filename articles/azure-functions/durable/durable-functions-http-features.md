@@ -8,12 +8,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/04/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 953558e34d41184f75d72baf5982e84eb51b1781
-ms.sourcegitcommit: 8bae7afb0011a98e82cbd76c50bc9f08be9ebe06
+ms.openlocfilehash: e9b2967905bc927432d1ca4606bc2b2ba2ac4108
+ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71694875"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72177357"
 ---
 # <a name="http-features"></a>Функции HTTP
 
@@ -210,6 +210,38 @@ HTTP-запросы, отправленные функциями Orchestrator и
 > Если вы являетесь разработчиком .NET, то можете спросить, почему эта функция использует типы **дураблехттпрекуест** и **дураблехттпреспонсе** вместо встроенных типов .NET **HttpRequestMessage** и **HttpResponseMessage** .
 >
 > Этот вариант разработки является намеренным. Основная причина заключается в том, что пользовательские типы помогают убедиться в том, что пользователи не делают неправильные предположения о поддерживаемых поведениях внутреннего HTTP-клиента. Типы, характерные для Устойчивые функции, позволяют упростить разработку API. Они также могут упростить доступ к специальным функциям, таким как [Интеграция управляемой идентификации](#managed-identities) и [шаблон опрашивающего потребителя](#http-202-handling). 
+
+### <a name="extensibility-net-only"></a>Расширяемость (только .NET)
+
+Настройка поведения внутреннего HTTP-клиента оркестрации возможна с помощью [внедрения зависимостей .NET для функций Azure](https://docs.microsoft.com/azure/azure-functions/functions-dotnet-dependency-injection). Эта возможность может быть полезной для внесения небольших изменений в поведение. Он также может быть полезен для модульного тестирования HTTP-клиента путем внедрения макетов объектов.
+
+В следующем примере демонстрируется использование внедрения зависимостей для отключения проверки SSL-сертификата для функций Orchestrator, вызывающих внешние конечные точки HTTP.
+
+```csharp
+public class Startup : FunctionsStartup
+{
+    public override void Configure(IFunctionsHostBuilder builder)
+    {
+        // Register own factory
+        builder.Services.AddSingleton<
+            IDurableHttpMessageHandlerFactory,
+            MyDurableHttpMessageHandlerFactory>();
+    }
+}
+
+public class MyDurableHttpMessageHandlerFactory : IDurableHttpMessageHandlerFactory
+{
+    public HttpMessageHandler CreateHttpMessageHandler()
+    {
+        // Disable SSL certificate validation (not recommended in production!)
+        return new HttpClientHandler
+        {
+            ServerCertificateCustomValidationCallback =
+                HttpClientHandler.DangerousAcceptAnyServerCertificateValidator,
+        };
+    }
+}
+```
 
 ## <a name="next-steps"></a>Следующие шаги
 

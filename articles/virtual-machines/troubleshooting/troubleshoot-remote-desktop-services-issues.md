@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 10/23/2018
 ms.author: genli
-ms.openlocfilehash: 9f7957fb0e6e888367c1f8ded1abfb3828697cbb
-ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
+ms.openlocfilehash: 7949bedec2d304cd87fb512b44cd61d6f0894638
+ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71087090"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72168950"
 ---
 # <a name="remote-desktop-services-isnt-starting-on-an-azure-vm"></a>Службы удаленных рабочих столов не запускаются на виртуальной машине Azure
 
@@ -36,11 +36,11 @@ ms.locfileid: "71087090"
 
 - Вы удаленно просматриваете журналы событий в виртуальной машине c помощью средства "Просмотр событий". Вы увидите, что службы удаленных рабочих столов (TermService) не запускаются или происходит сбой запуска. Ниже приведен пример журнала:
 
-    **Log Name**:      Система </br>
+    **Log Name**:      системный; </br>
     **Source**:        Service Control Manager </br>
     **Дата**.          16.12.2017 11:19:36</br>
     **Event ID**:      7022</br>
-    **Task Category**: Отсутствуют</br>
+    **Task Category**: Нет</br>
     **Level**:         Ошибка</br>
     **Keywords**:      Классический</br>
     **User**:          Н/Д</br>
@@ -113,7 +113,7 @@ ms.locfileid: "71087090"
 #### <a name="termservice-service-is-stopped-because-of-an-access-denied-problem"></a>Служба TermService остановлена из-за отказа в доступе
 
 1. Подключитесь к [последовательной консоли](serial-console-windows.md) и откройте экземпляр PowerShell.
-2. Скачайте средство Process Monitor, выполнив следующий скрипт:
+2. Загрузите средство "монитор процессов", выполнив следующий скрипт:
 
    ```
    remove-module psreadline  
@@ -141,16 +141,16 @@ ms.locfileid: "71087090"
    procmon /Terminate 
    ```
 
-5. Соберите файл  **c:\temp\ProcMonTrace.PML**:
+5. Собирайте файл **к:\темп\прокмонтраце.ПМЛ**:
 
     1. [Подключение диска данных к виртуальной машине](../windows/attach-managed-disk-portal.md
 ).
     2. С помощью последовательной консоли можно скопировать файл на новый диск. Например, `copy C:\temp\ProcMonTrace.PML F:\`. В этой команде F является буквой подключенного диска данных.
     3. Отключите диск данных и подключите его на работающей виртуальной машине, на которой установлено средство ubstakke Process Monitor.
 
-6. Откройте **ProcMonTrace.PML** с помощью Process Monitor рабочей виртуальной машины. Затем отфильтруйте элементы, для результата которых задано значение  **В доступе отказано**, как показано на указанном ниже снимке экрана:
+6. Откройте **ProcMonTrace.PML** с помощью Process Monitor рабочей виртуальной машины. Затем для фильтра по **результату будет отказано в доступе**, как показано на следующем снимке экрана:
 
-    ![Фильтрация по результатам в Process Monitor](./media/troubleshoot-remote-desktop-services-issues/process-monitor-access-denined.png)
+    ![Фильтр по результату в мониторе обработки](./media/troubleshoot-remote-desktop-services-issues/process-monitor-access-denined.png)
 
  
 6. Исправьте разделы реестра, папки или файлы, которые включены в выходные данные. Обычно эта проблема возникает, если у учетной записи, использованной для входа в систему, нет разрешения ACL на доступ к этим объектам. Чтобы узнать правильное разрешение в ACL для учетной записи, используемой для входа в систему, просмотрите данные на исправной виртуальной машине. 
@@ -221,6 +221,6 @@ ms.locfileid: "71087090"
 
 4. [Отключение диска операционной системы и повторное создание виртуальной машины](../windows/troubleshoot-recovery-disks-portal.md). Затем проверьте, устранена ли проблема.
 
-## <a name="need-help-contact-support"></a>Требуется помощь? Связаться со службой поддержки
+## <a name="need-help-contact-support"></a>Требуется помощь? Обращение в службу поддержки
 
 Если вам все еще нужна помощь, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), которая поможет быстро устранить проблему.
