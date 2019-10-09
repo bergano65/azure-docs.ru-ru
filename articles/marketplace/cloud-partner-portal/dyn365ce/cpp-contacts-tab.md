@@ -1,47 +1,21 @@
 ---
-title: Dynamics 365 для взаимодействия с клиентами предлагают вкладку Контакты | Azure Marketplace
-description: Настройте контактные данные для предложение Dynamics 365 for Customer Engagement в AppSource Marketplace.
+title: Вкладка "Контакты" для предложений по Dynamics 365 для служб взаимодействия с клиентами | Azure Marketplace
+description: Нерекомендуемая статья на CPP, связанная со статьей ПК; WAS "настройте контактную информацию для Dynamics 365 для предложения участия клиентов в AppSource Marketplace".
 services: Dynamics 365 for Customer Engagement, Azure, AppSource, Marketplace, Cloud Partner Portal,
-author: v-miclar
+author: ChJenk
 ms.service: marketplace
 ms.topic: conceptual
-ms.date: 04/24/2019
-ms.author: pabutler
-ms.openlocfilehash: cdd3d01c9295ef5ae8e7bc1936b5926fb38cfe77
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 09/30/2019
+ms.author: v-chjen
+ms.openlocfilehash: 8a04d7d6f5913a100ab6c4187a42a4d6c470cbda
+ms.sourcegitcommit: f9e81b39693206b824e40d7657d0466246aadd6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64942513"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72033905"
 ---
 # <a name="azure-application-contacts-tab"></a>Вкладка "Контакты" приложения Azure
 
-Используйте вкладку **Контакты**, чтобы получить сведения о проектировании и поддержке клиентов для предложения Dynamics 365 for Customer Engagement.
+[Портал Cloud Partner](https://cloudpartner.azure.com/) больше не поддерживает создание и Управление предложениями по взаимодействию с клиентом Dynamics 365. Вместо этого эта функция была перемещена на [портал центра партнеров](https://partner.microsoft.com/)Майкрософт. Дополнительные сведения см. [в статье Создание нового Dynamics 365 для участия клиентов & PowerApps](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-new-customer-engagement-offer).
 
-![Вкладка "Контакты" для предложения](./media/dynce-contacts-tab.png)
-
-
-## <a name="specify-customer-and-engineering-contacts"></a>Назначение контактов клиента и технического специалиста
-
-Предоставьте следующие значения для определения основного **технического специалиста** и для вашего предложения. Обязательные поля помечены звездочкой (*).
-
-|    Поле        |  Описание                    |
-|    ---------    |  ---------------                |
-|  **Имя\***       |  Имя технического специалиста, ответственного за ваше приложение. Этому человеку будет передаваться техническая информация от корпорации Майкрософт.   |
-|  **Электронная почта\***      |  Адрес электронной почты технического специалиста  |
-|  **Телефон\***      |  Телефон технического специалиста, ответственного за ваше приложение  |
-|  |  |
-
-Укажите следующие значения для определения основного **сотрудника службы поддержки** и для вашего предложения.
-
-|    Поле        |   Описание                   |
-|    ---------    |  ---------------                |
-|  **Имя\***       |  Имя сотрудника службы поддержки, ответственного за ваше приложение. Этому человеку корпорация Майкрософт будет передавать сведения, касающиеся поддержки.   |
-|  **Электронная почта\***      |  Адрес электронной почты сотрудника службы поддержки  |
-|  **Телефон\***      |  Телефон сотрудника службы поддержки  |
-|  |  |
-
-
-## <a name="next-steps"></a>Дальнейшие действия
-
-После того, как вы убедитесь в наличии необходимых технических средств для вашего предложения (дополнительные сведения см. в [этой статье](./cpp-create-technical-assets.md)), вы сможете приступить к изучению статьи [Publish a Dynamics 365 for Customer Engagement offer](./cpp-publish-offer.md) (Публикация предложения Dynamics 365 for Customer Engagement).
+Перед созданием нового предложения по работе с клиентом Dynamics 365 для участия в нем следует ознакомиться со статьей [Создание учетной записи центра партнеров](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) , а затем открыть [панель мониторинга коммерческого рынка](https://partner.microsoft.com/dashboard/directory) с выбранной страницей **обзора** . Чтобы создать предложение, следуйте инструкциям в статье [Создание нового Dynamics 365 для участия клиентов & PowerApps](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-new-customer-engagement-offer) .

@@ -12,14 +12,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/17/2018
+ms.date: 10/07/2019
 ms.author: spelluru
-ms.openlocfilehash: 70469a9e8737a9df18628951a061c97081c74080
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9b31f3e68fbabc32f301fdcd8066a3bfbf1c2dbd
+ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62127384"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72028438"
 ---
 # <a name="grant-user-permissions-to-specific-lab-policies"></a>Предоставление пользователю разрешений для определенных политик лаборатории
 ## <a name="overview"></a>Обзор
@@ -30,12 +30,12 @@ ms.locfileid: "62127384"
 
 В DevTest Labs политика — это тип ресурса, который включает действие RBAC **Microsoft.DevTestLab/labs/policySets/policies/** . Каждая политика лаборатории представляет собой ресурс типа "Политика" и может быть назначена в качестве области действия для роли RBAC.
 
-Например, чтобы предоставить пользователям разрешения на чтение/запись **размеры виртуальных Машин разрешен** политики, необходимо создать пользовательскую роль, которая работает с **Microsoft.DevTestLab/labs/policySets/policies/** действия , а затем назначить пользователей этой роли в рамках **Microsoft.DevTestLab/labs/policySets/policies/AllowedVmSizesInLab**.
+Например, чтобы предоставить пользователям разрешение на чтение и запись для политики **разрешенных размеров виртуальных машин** , необходимо создать пользовательскую роль, которая работает с **Microsoft. DevTestLab/Labs/policySets/** policys/Action, а затем назначить соответствующих пользователей Эта пользовательская роль в области действия **Microsoft. DevTestLab/Labs/policySets/Policies/AllowedVmSizesInLab**.
 
 Дополнительные сведения о пользовательских ролях в RBAC см. в статье [Пользовательские роли в Azure RBAC](../role-based-access-control/custom-roles.md).
 
 ## <a name="creating-a-lab-custom-role-using-powershell"></a>Создание пользовательской роли лаборатории с помощью PowerShell
-Чтобы приступить к работе, вам потребуется [установите Azure PowerShell](/powershell/azure/install-az-ps). 
+Чтобы начать работу, необходимо [установить Azure PowerShell](/powershell/azure/install-az-ps). 
 
 Настроив командлеты Azure PowerShell, вы сможете выполнять следующие задачи:
 
@@ -45,13 +45,13 @@ ms.locfileid: "62127384"
 
 Примеры выполнения этих задач демонстрирует следующий сценарий PowerShell:
 
-    ‘List all the operations/actions for a resource provider.
+    # List all the operations/actions for a resource provider.
     Get-AzProviderOperation -OperationSearchString "Microsoft.DevTestLab/*"
 
-    ‘List actions in a particular role.
+    # List actions in a particular role.
     (Get-AzRoleDefinition "DevTest Labs User").Actions
 
-    ‘Create custom role.
+    # Create custom role.
     $policyRoleDef = (Get-AzRoleDefinition "DevTest Labs User")
     $policyRoleDef.Id = $null
     $policyRoleDef.Name = "Policy Contributor"
@@ -62,7 +62,7 @@ ms.locfileid: "62127384"
     $policyRoleDef = (New-AzRoleDefinition -Role $policyRoleDef)
 
 ## <a name="assigning-permissions-to-a-user-for-a-specific-policy-using-custom-roles"></a>Предоставление пользователю разрешений в отношении определенной политики с помощью пользовательских ролей
-Определив пользовательские роли, можно назначить их пользователям. Чтобы назначить пользовательскую роль, необходимо получить **ObjectId** соответствующего пользователя. Чтобы сделать это, используйте **Get AzADUser** командлета.
+Определив пользовательские роли, можно назначить их пользователям. Чтобы назначить пользовательскую роль, необходимо получить **ObjectId** соответствующего пользователя. Для этого используйте командлет **Get-азадусер** .
 
 В следующем примере **ObjectId** пользователя *SomeUser* имеет значение 05DEFF7B-0AC3-4ABF-B74D-6A72CD5BF3F3.
 
@@ -72,7 +72,7 @@ ms.locfileid: "62127384"
     -----------                    ----                           --------
     someuser@hotmail.com                                          05DEFF7B-0AC3-4ABF-B74D-6A72CD5BF3F3
 
-При наличии **ObjectId** для пользователя и имя пользовательской роли, можно назначить эту роль пользователю с **New AzRoleAssignment** командлета:
+После получения идентификатора **ObjectID** для пользователя и имени пользовательской роли можно назначить эту роль пользователю с помощью командлета **New-азролеассигнмент** :
 
     PS C:\>New-AzRoleAssignment -ObjectId 05DEFF7B-0AC3-4ABF-B74D-6A72CD5BF3F3 -RoleDefinitionName "Policy Contributor" -Scope /subscriptions/<SubscriptionID>/resourceGroups/<ResourceGroupName>/providers/Microsoft.DevTestLab/labs/<LabName>/policySets/default/policies/AllowedVmSizesInLab
 
@@ -85,7 +85,7 @@ ms.locfileid: "62127384"
 
 [!INCLUDE [devtest-lab-try-it-out](../../includes/devtest-lab-try-it-out.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 После того как пользователю будут предоставлены разрешения для определенных политик лаборатории, можно выполнить следующие действия.
 
 * [Безопасный доступ к лаборатории](devtest-lab-add-devtest-user.md)

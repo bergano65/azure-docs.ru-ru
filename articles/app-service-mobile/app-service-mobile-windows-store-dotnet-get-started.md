@@ -14,20 +14,20 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 06/25/2019
 ms.author: emalani
-ms.openlocfilehash: 2b718a000bb5805cc615a59aebb2d5dcca6906a4
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 6bb94828344b6f6e846b573a94e3049d03effe89
+ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67440211"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72025193"
 ---
 # <a name="create-a-windows-app-with-an-azure-backend"></a>Создание приложения Windows с серверной частью Azure
 
 [!INCLUDE [app-service-mobile-selector-get-started](../../includes/app-service-mobile-selector-get-started.md)]
 
 > [!NOTE]
-> Центр приложений Visual Studio вкладывает средства в новые и интегрированной службы, необходимые для разработки мобильных приложений. Разработчики могут использовать **построения**, **теста** и **распределить** служб для настройки конвейера непрерывной интеграции и доставки. После развертывания приложения, разработчики могут отслеживать состояние и использования их приложений с помощью **Analytics** и **диагностики** служб и общайтесь с пользователями, с помощью **Push** Служба. Разработчики также могут использовать **Auth** подлинность пользователей и **данных** службы для сохранения и синхронизировать данные приложения в облаке. Ознакомьтесь с [App Center](https://appcenter.ms/?utm_source=zumo&utm_campaign=app-service-mobile-windows-store-dotnet-get-started) уже сегодня.
->
+> Центр приложений Visual Studio поддерживает комплексные и интегрированные службы для разработки мобильных приложений. Разработчики могут использовать службы **сборки**, **тестирования** и **распространения** для настройки конвейера непрерывной интеграции и доставки. После развертывания приложения разработчики могут отслеживать состояние и использование своих приложений с помощью служб **аналитики** и **диагностики** , а также привлекать пользователей с помощью службы **push-уведомлений** . Разработчики также **могут использовать проверку подлинности** для аутентификации пользователей и службы **данных** , чтобы сохранять и синхронизировать данные приложений в облаке.
+> Если вы хотите интегрировать облачные службы в мобильное приложение, зарегистрируйтесь в центре приложений Center [App Center](https://appcenter.ms/?utm_source=zumo&utm_medium=Azure&utm_campaign=zumo%20doc) уже сегодня.
 
 ## <a name="overview"></a>Обзор
 
@@ -37,7 +37,7 @@ ms.locfileid: "67440211"
 
 Изучение этого руководства является необходимым условием для работы со всеми остальными руководствами, посвященными мобильным приложениям UWP.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим учебником требуется:
 
@@ -52,22 +52,22 @@ ms.locfileid: "67440211"
 
 [!INCLUDE [app-service-mobile-dotnet-backend-create-new-service](../../includes/app-service-mobile-dotnet-backend-create-new-service.md)]
 
-## <a name="create-a-database-connection-and-configure-the-client-and-server-project"></a>Создание подключения к базе данных и настройка проекта клиента и сервера
+## <a name="create-a-database-connection-and-configure-the-client-and-server-project"></a>Создание подключения к базе данных и настройка клиентского и серверного проекта
 [!INCLUDE [app-service-mobile-configure-new-backend.md](../../includes/app-service-mobile-configure-new-backend.md)]
 
-## <a name="run-the-client-project"></a>Запустите клиентский проект
+## <a name="run-the-client-project"></a>Запуск клиентского проекта
 
-1. Откройте проект универсальной платформы Windows.
+1. Откройте проект UWP.
 
-2. Перейдите к [портала Azure](https://portal.azure.com/) и перейдите к мобильное приложение, которое вы создали. На `Overview` колонке найдите URL-адрес, который является общедоступной конечной точки для мобильного приложения. Пример - sitename для моей имя приложения «test123» будет https://test123.azurewebsites.net.
+2. Перейдите к [портал Azure](https://portal.azure.com/) и перейдите к созданному вами мобильному приложению. В колонке `Overview` найдите URL-адрес, который является общедоступной конечной точкой для мобильного приложения. Пример. имя сайта для имени моего приложения "test123" будет https://test123.azurewebsites.net.
 
-3. Откройте файл `App.xaml.cs` в этой папке - windows-uwp-cs/ZUMOAPPNAME /. Имя приложения — `ZUMOAPPNAME`.
+3. Откройте файл `App.xaml.cs` в этой папке — Windows-UWP-CS/ЗУМОАППНАМЕ/. Имя приложения — `ZUMOAPPNAME`.
 
-4. В `App` класса, замените `ZUMOAPPURL` параметр с общедоступной конечной точки выше.
+4. В классе `App` замените параметр `ZUMOAPPURL` общедоступной конечной точкой выше.
 
     `public static MobileServiceClient MobileService = new MobileServiceClient("ZUMOAPPURL");`
 
-    становится
+    обретает
     
     `public static MobileServiceClient MobileService = new MobileServiceClient("https://test123.azurewebsites.net");`
 

@@ -6,28 +6,28 @@ ms.author: makromer
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 02/03/2019
-ms.openlocfilehash: dd51cc2d5f95598154b76b5da8e3fc9e4801100d
-ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
+ms.openlocfilehash: fec2b09b9dc471135d9cdd00ac2465728a47bdbf
+ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71104955"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72026919"
 ---
 # <a name="mapping-data-flow-conditional-split-transformation"></a>Сопоставление преобразования "Условное разбиение потока данных"
 
-[!INCLUDE [notes](../../includes/data-factory-data-flow-preview.md)]
 
-![область элементов условного разбиения](media/data-flow/conditionalsplit2.png "область элементов условного разбиения")
+
+(media/data-flow/conditionalsplit2.png "панель") элементов с условным ![разбиением]в области элементов
 
 Преобразование "Условное разбиение" может направлять строки данных в разные потоки, в зависимости от содержимого данных. Реализация преобразования "Условное разбиение" аналогична применению структур решения CASE в языке программирования. Преобразование вычисляет выражения, и на основе результатов направляет строку данных в указанный поток. Это преобразование также обеспечивает выход по умолчанию, таким образом, если строка не совпадает с выражением, она направляется на выход по умолчанию.
 
-![Условное разбиение](media/data-flow/conditionalsplit1.png "Параметры условного разбиения")
+(media/data-flow/conditionalsplit1.png "Параметры условного разбиения") ![условного разбиения]
 
 ## <a name="multiple-paths"></a>Несколько путей
 
 Чтобы добавить дополнительные условия, выберите "Добавить поток" на нижней панели конфигурации и щелкните текстовое поле для построения выражения.
 
-![Условное разбиение Multi](media/data-flow/conditionalsplit3.png "Условное разбиение Multi")
+![Условное разбиение]множественного(media/data-flow/conditionalsplit3.png "условного разбиения")
 
 ## <a name="next-steps"></a>Следующие шаги
 

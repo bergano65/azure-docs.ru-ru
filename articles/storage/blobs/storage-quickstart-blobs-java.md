@@ -7,12 +7,12 @@ ms.date: 10/05/2019
 ms.service: storage
 ms.subservice: blobs
 ms.topic: conceptual
-ms.openlocfilehash: 87bae74265c4d3abe7301af35888561fcd256717
-ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
+ms.openlocfilehash: c88202c41a7ee6b6d215bd185aeca580bcc88eef
+ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2019
-ms.locfileid: "71971995"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72030463"
 ---
 # <a name="quickstart-azure-blob-storage-client-library-for-java-sdk-v8"></a>Краткое руководство. Клиентская библиотека хранилища BLOB-объектов Azure для пакета SDK для Java V8
 
@@ -20,7 +20,7 @@ ms.locfileid: "71971995"
 
 Используйте клиентскую библиотеку хранилища BLOB-объектов Azure для Java, чтобы:
 
-* Создать контейнер
+* Создание контейнера
 * установка разрешений для контейнера;
 * создание большого двоичного объекта в службе хранилища Azure;
 * скачивание большого двоичного объекта на локальный компьютер;
@@ -114,7 +114,7 @@ Deleting the source, and downloaded files
 > [!IMPORTANT]
 > Имена контейнеров должны состоять из знаков нижнего регистра. Дополнительные сведения о контейнерах см. в статье [Naming and Referencing Containers, Blobs, and Metadata](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata) (Именование контейнеров, больших двоичных объектов и метаданных и ссылка на них).
 
-### <a name="create-a-container"></a>Создать контейнер
+### <a name="create-a-container"></a>Создание контейнера
 
 В этом разделе описано создание экземпляров объектов, создание контейнера и последующее задание разрешений для контейнера, что позволяет предоставить общий доступ к большим двоичным объектам по URL-адресу. Контейнер называется **quickstartcontainer**. 
 
@@ -209,5 +209,5 @@ sourceFile.deleteOnExit();
 В этом кратком руководстве описано, как передавать файлы между локальным диском и хранилищем BLOB-объектов Azure с помощью Java. Чтобы узнать подробнее о работе с Java, перейдите в репозиторий исходного кода на GitHub.
 
 > [!div class="nextstepaction"]
-> [Справочник по API java](https://docs.microsoft.com/java/azure/)
+> [Справочник по API java](https://docs.microsoft.com/java/api/overview/azure/storage?view=azure-java-legacy)
 > [примеры кода для Java](../common/storage-samples-java.md)

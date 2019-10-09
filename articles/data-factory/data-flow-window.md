@@ -7,16 +7,16 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 01/30/2019
-ms.openlocfilehash: 6f3f06ff54fc76416ba63f4f09835897d546f8dc
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: cf58db14398026da62ed13c66be815be8fe166a2
+ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61349966"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72029903"
 ---
 # <a name="azure-data-factory-window-transformation"></a>Преобразование окна фабрики данных Azure
 
-[!INCLUDE [notes](../../includes/data-factory-data-flow-preview.md)]
+
 
 Преобразование окна позволяет определять агрегирования столбцов на основе окон в ваших потоках данных. В построителе выражений вы можете определить различные типы объединений на основе данных или временных окон (предложение SQL OVER, например LEAD, LAG, NTILE, CUMEDIST, RANK и т. д.). В ваших выходных данных будет сгенерировано новое поле, которое будет включать такие агрегаты. Вы также можете включить дополнительные поля "Группировать по".
 
@@ -27,7 +27,7 @@ ms.locfileid: "61349966"
 
 ![Параметры окна](media/data-flow/windows4.png "окно 4")
 
-## <a name="sort"></a>Сортировать
+## <a name="sort"></a>Сортировка
 Еще одна функция предложения Over —это установка параметра ```Order By```. Он задает порядок сортировки данных. Вы также можете создать выражение для значения расчета в этом поле столбца для сортировки.
 
 ![Параметры окна](media/data-flow/windows5.png "окно 5")
@@ -39,13 +39,13 @@ ms.locfileid: "61349966"
 
 ![Параметры окна](media/data-flow/windows6.png "окно 6")
 
-## <a name="window-columns"></a>Столбцы в окне
+## <a name="window-columns"></a>Столбцы окна
 Наконец, с помощью построителя выражений определите объединения, которые вы хотите использовать с окнами данных, например RANK, COUNT, MIN, MAX, DENSE RANK, LEAD, LAG и т. д.
 
 ![Параметры окна](media/data-flow/windows7.png "окно 7")
 
 Полный список объединений и аналитических функций, которые доступны вам для использования в языке выражений Потока данных ADF через построитель выражений, приведены здесь: https://aka.ms/dataflowexpressions.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Если вам нужны для статистической обработки простого предложения group-by, использовать [статистической обработки преобразования](data-flow-aggregate.md)
+Если вы ищете простое агрегирование по группам, используйте [Преобразование «Статистическая обработка](data-flow-aggregate.md) »

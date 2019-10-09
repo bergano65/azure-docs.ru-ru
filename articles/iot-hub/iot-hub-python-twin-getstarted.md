@@ -8,12 +8,12 @@ ms.devlang: python
 ms.topic: conceptual
 ms.date: 08/26/2019
 ms.author: robinsh
-ms.openlocfilehash: 565330528638bb6c8e0458a9761e2cf9fa4e3d2a
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.openlocfilehash: 729371ede8df3dc21f70bc5742de52f2be874507
+ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "71001483"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72029999"
 ---
 # <a name="get-started-with-device-twins-python"></a>Начало работы с двойниками устройств (Python)
 
@@ -70,7 +70,7 @@ ms.locfileid: "71001483"
    from iothub_service_client import IoTHubDeviceTwin, IoTHubError
    ```
 
-4. Добавьте следующий код. Замените `[IoTHub Connection String]` строкой подключения центра Интернета вещей, скопированной в поле [Получение строки подключения для центра Интернета вещей](#get-the-iot-hub-connection-string). Замените `[Device Id]` идентификатором устройства, зарегистрированным в окне [Регистрация нового устройства в центре Интернета вещей](#register-a-new-device-in-the-iot-hub).
+4. Добавьте следующий код. Замените `[IoTHub Connection String]` строкой подключения центра Интернета вещей, скопированной в [поле получение строки подключения центра Интернета вещей](#get-the-iot-hub-connection-string). Замените `[Device Id]` ИДЕНТИФИКАТОРом устройства, зарегистрированным в окне [Регистрация нового устройства в центре Интернета вещей](#register-a-new-device-in-the-iot-hub).
   
     ```python
     CONNECTION_STRING = "[IoTHub Connection String]"
@@ -171,7 +171,7 @@ ms.locfileid: "71001483"
     from azure.iot.device import IoTHubModuleClient
     ```
 
-4. Добавьте следующий код. Замените значение заполнителя строкой подключения устройства, скопированной в раздел [Регистрация нового устройства в центре Интернета вещей.](#register-a-new-device-in-the-iot-hub) `[IoTHub Device Connection String]`
+4. Добавьте следующий код. Замените значение заполнителя `[IoTHub Device Connection String]` строкой подключения устройства, скопированной в раздел [Регистрация нового устройства в центре Интернета вещей](#register-a-new-device-in-the-iot-hub).
 
     ```python
     CONNECTION_STRING = "[IoTHub Device Connection String]"
@@ -187,7 +187,7 @@ ms.locfileid: "71001483"
             print(patch)
 
     def iothub_client_init():
-        client = IoTHubDeviceClient.create_from_connection_string(CONNECTION_STRING)
+        client = IoTHubModuleClient.create_from_connection_string(CONNECTION_STRING)
         return client
 
     def iothub_client_sample_run():

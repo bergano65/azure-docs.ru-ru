@@ -8,14 +8,14 @@ manager: cshankar
 ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
-ms.date: 08/08/2019
+ms.date: 10/07/2019
 ms.custom: seodec18
-ms.openlocfilehash: 29418345aaa8042e50b1297541cac3af0a3c1504
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 7b7d041b678ccf2a476afc6d0744f6971349677e
+ms.sourcegitcommit: f9e81b39693206b824e40d7657d0466246aadd6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68935209"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72034879"
 ---
 # <a name="data-querying"></a>Запрашивание данных
 
@@ -35,7 +35,7 @@ ms.locfileid: "68935209"
 
 Поддерживаются следующие основные программные интерфейсы.
 
-[![Общие сведения о запросе временных рядов](media/v2-update-tsq/tsq.png)](media/v2-update-tsq/tsq.png#lightbox)
+[Обзор запросов @no__t 1Time Series](media/v2-update-tsq/tsq.png)](media/v2-update-tsq/tsq.png#lightbox)
 
 ## <a name="environment-apis"></a>Программные интерфейсы среды
 
@@ -77,6 +77,6 @@ ms.locfileid: "68935209"
 
 - Узнайте больше о [хранении и](./time-series-insights-update-storage-ingress.md) входе в предварительной версии службы "аналитика временных рядов Azure".
 
-- Прочтите статью анализ [данных](./time-series-insights-update-tsm.md) о моделировании временных рядов в предварительной версии.
+- Прочтите статью анализ [данных о моделировании](./time-series-insights-update-tsm.md) временных рядов в предварительной версии.
 
 - Ознакомьтесь [с рекомендациями по выбору идентификатора временного ряда](./time-series-insights-update-how-to-id.md).

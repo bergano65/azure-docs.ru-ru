@@ -13,12 +13,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f883741577de22f66cd7a9bfaf733aa3c59b879b
-ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
+ms.openlocfilehash: c91de3de743d168bea207f27fb162486ea625a63
+ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68707686"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72026283"
 ---
 # <a name="quickstart-grant-permission-to-create-unlimited-app-registrations"></a>Краткое руководство. Предоставление разрешения на создание неограниченных регистраций приложений
 
@@ -26,14 +26,14 @@ ms.locfileid: "68707686"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisite"></a>Предварительное требование
+## <a name="prerequisite"></a>Предварительные требования
 
 Для создания и назначения настраиваемых ролей Azure AD требуется роль администратора с минимальными полномочиями.
 
 ## <a name="create-a-new-custom-role-using-the-azure-ad-portal"></a>Создание новой настраиваемой роли с помощью портала Azure AD
 
-1. Войдите в  [центр администрирования Azure AD](https://aad.portal.azure.com)с правами администратора привилегированных ролей или глобального администратора в Организации Azure AD.
-1. Выберите **Azure Active Directory**, выберите **роли и администраторы**, а затем выберите **создать настраиваемую роль**.
+1. Войдите в [центр администрирования Azure ad](https://aad.portal.azure.com) with с правами администратора привилегированных ролей или разрешения глобального администратора в Организации Azure AD.
+1. Выберите **Azure Active Directory**, выберите **роли и администраторы**, а затем выберите **создать настраиваемую роль**.
 
     ![Создание или изменение ролей на странице "роли и Администраторы"](./media/roles-create-custom/new-custom-role.png)
 
@@ -49,8 +49,8 @@ ms.locfileid: "68707686"
 
 ### <a name="assign-the-role-to-a-user-using-the-azure-ad-portal"></a>Назначение роли пользователю с помощью портала Azure AD
 
-1. Войдите в  [центр администрирования Azure AD](https://aad.portal.azure.com)с правами администратора привилегированных ролей или глобального администратора в вашей организации Azure AD.
-1. Выберите **Azure Active Directory** и выберите **роли и администраторы**.
+1. Войдите в [центр администрирования Azure ad](https://aad.portal.azure.com) with с правами администратора привилегированных ролей или разрешения глобального администратора в вашей организации Azure AD.
+1. Выберите **Azure Active Directory** и выберите **роли и администраторы**.
 1. Выберите роль создателя регистрация приложения и щелкните **добавить назначение**.
 1. Выберите нужного пользователя и нажмите кнопку **выбрать** , чтобы добавить пользователя к роли.
 

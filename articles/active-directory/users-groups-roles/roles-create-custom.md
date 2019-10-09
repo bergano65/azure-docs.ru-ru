@@ -13,12 +13,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f008cdf80e15e2737fea19f72ec6703932cf301f
-ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
+ms.openlocfilehash: b1a5aee1be7580956c32947e9bda7e2928a006c3
+ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70382822"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72026399"
 ---
 # <a name="create-and-assign-a-custom-role-in-azure-active-directory"></a>Создание и назначение пользовательской роли в Azure Active Directory
 
@@ -30,8 +30,8 @@ ms.locfileid: "70382822"
 
 ### <a name="create-a-new-custom-role-to-grant-access-to-manage-app-registrations"></a>Создание новой настраиваемой роли для предоставления доступа для управления регистрацией приложений
 
-1. Войдите в  [центр администрирования Azure AD](https://aad.portal.azure.com)с правами администратора привилегированных ролей или глобального администратора в Организации Azure AD.
-1. Выберите роли **Azure Active Directory** > **и администраторы** > **создать настраиваемую роль**.
+1. Войдите в [центр администрирования Azure ad](https://aad.portal.azure.com) with с правами администратора привилегированных ролей или разрешения глобального администратора в Организации Azure AD.
+1. Выберите **Azure Active Directory** > **ролей и администраторов** > **Новая настраиваемая роль**.
 
    ![Создание или изменение ролей на странице "роли и Администраторы"](./media/roles-create-custom/new-custom-role.png)
 
@@ -40,11 +40,11 @@ ms.locfileid: "70382822"
    ![Укажите имя и описание настраиваемой роли на вкладке "основы"](./media/roles-create-custom/basics-tab.png)
 
 1. На вкладке **разрешения** выберите разрешения, необходимые для управления основными свойствами и свойствами учетных данных для регистрации приложений. Подробное описание каждого разрешения см. в разделе [подтипы регистрации приложений и разрешения в Azure Active Directory](./roles-custom-available-permissions.md).
-   1. Сначала введите "учетные данные" в строке поиска и выберите `microsoft.directory/applications/credentials/update` разрешение.
+   1. Сначала введите "учетные данные" в строке поиска и выберите разрешение `microsoft.directory/applications/credentials/update`.
 
       ![Выберите разрешения для пользовательской роли на вкладке разрешения.](./media/roles-create-custom/permissions-tab.png)
 
-   1. Затем в строке поиска введите "Basic", выберите `microsoft.directory/applications/basic/update` разрешение и нажмите кнопку **Далее**.
+   1. Затем в строке поиска введите "Basic", выберите разрешение `microsoft.directory/applications/basic/update`, а затем нажмите кнопку **Далее**.
 1. На вкладке " **Проверка и создание** " Проверьте разрешения и нажмите кнопку " **создать**".
 
 Ваша настраиваемая роль отобразится в списке доступных ролей для назначения.

@@ -12,19 +12,22 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 05/18/2019
 ms.author: mbullwin
-ms.openlocfilehash: ac9bd6021b5fcec36e3aadfdf4c30020971f3be5
-ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
+ms.openlocfilehash: 99a18125fa5ce07a46fcc1af554fd03746ebf110
+ms.sourcegitcommit: d773b5743cb54b8cbcfa5c5e4d21d5b45a58b081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71299253"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72038152"
 ---
 # <a name="explore-java-trace-logs-in-application-insights"></a>Просмотр журналов трассировки Java в Application Insights
 Если вы используете Logback или Log4J (версия 1.2 или 2.0) для трассировки, можно настроить автоматическую пересылку журналов в Application Insights, где вы сможете их изучить.
 
+> [!TIP]
+> Для приложения необходимо только установить ключ инструментирования Application Insights. Если вы используете такую платформу, как пружина Java, возможно, вы уже зарегистрировали ключ в конфигурации приложения.
+
 ## <a name="using-the-application-insights-java-agent"></a>Использование агента Application Insights Java
 
-Можно настроить Application Insights агент Java для автоматической записи журналов, включив эту функцию в `AI-Agent.xml` файл:
+Можно настроить Application Insights агент Java для автоматической записи журналов, включив эту функцию в файл `AI-Agent.xml`:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

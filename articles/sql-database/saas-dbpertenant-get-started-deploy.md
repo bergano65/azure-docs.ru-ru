@@ -11,12 +11,12 @@ author: MightyPen
 ms.author: genemi
 ms.reviewer: sstein
 ms.date: 01/25/2019
-ms.openlocfilehash: d5326a3a154ed6f193b5527a0150ad84c843c273
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: d5f64f0a9abfa736c1db0e562b6f18ecfc1f6de5
+ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68570445"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72023831"
 ---
 # <a name="deploy-and-explore-a-multitenant-saas-app-that-uses-the-database-per-tenant-pattern-with-sql-database"></a>Разверните и изучите мультитенантное приложение SaaS на основе базы данных SQL, в котором используется отдельная база данных для каждого клиента.
 
@@ -36,7 +36,7 @@ ms.locfileid: "68570445"
 
 Чтобы изучить различные модели проектирования и управления SaaS, вы можете ознакомиться с доступной [серией связанных руководств](saas-dbpertenant-wingtip-app-overview.md#sql-database-wingtip-saas-tutorials). Они являются продолжением этого руководства, необходимого для выполнения первоначального развертывания. Изучая руководства, вы можете понять способ реализации различных шаблонов SaaS, ознакомившись с приведенными сценариями. В этих сценариях показано, как функции базы данных SQL упрощают развертывание приложений SaaS.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством нужно установить Azure PowerShell. Дополнительные сведения см. в статье [Начало работы с Azure PowerShell](https://docs.microsoft.com/powershell/azure/get-started-azureps).
 
@@ -51,7 +51,7 @@ ms.locfileid: "68570445"
 
 Теперь выберите ваши имена и запишите их.
 
-### <a name="steps"></a>Шаги
+### <a name="steps"></a>Действия
 
 1. Щелкните **Развертывание в Azure**, чтобы открыть на портале Azure шаблон развертывания приложения SaaS Wingtip Tickets, использующего одну базу данных на клиент.
 
@@ -74,7 +74,7 @@ ms.locfileid: "68570445"
 
 1. Чтобы отслеживать состояние развертывания, щелкните **Уведомления** (значок колокольчика справа от поля поиска). Развертывание приложения SaaS Wingtip Tickets занимает примерно пять минут.
 
-   ![Развертывание прошло успешно](media/saas-dbpertenant-get-started-deploy/succeeded.png)
+   ![Развертывание выполнено](media/saas-dbpertenant-get-started-deploy/succeeded.png)
 
 ## <a name="download-and-unblock-the-wingtip-tickets-management-scripts"></a>Загрузка и разблокировка скриптов управления для приложения Wingtip Tickets
 
@@ -114,11 +114,11 @@ ms.locfileid: "68570445"
 
     ![Концентратор событий](media/saas-dbpertenant-get-started-deploy/events-hub.png)
 
-2. Щелкните **Fabrikam Jazz Club** в концентраторе событий.
+2. Выберите **Fabrikam джаз клуб** в концентраторе событий.
 
     ![События](./media/saas-dbpertenant-get-started-deploy/fabrikam.png)
 
-### <a name="azure-traffic-manager"></a>Диспетчер трафика Azure
+### <a name="azure-traffic-manager"></a>Azure Traffic Manager
 
 Приложение Wingtip использует [*диспетчер трафика Azure*](../traffic-manager/traffic-manager-overview.md), чтобы управлять распределением входящих запросов. URL-адрес для доступа к странице событий для конкретного клиента указывается в следующем формате:
 
@@ -220,14 +220,14 @@ ms.locfileid: "68570445"
 
 Теперь, когда вы запустили выполнение нагрузки в коллекции клиентов, давайте рассмотрим некоторые из развернутых ресурсов.
 
-1. На [портале Azure](https://portal.azure.com) перейдите к списку серверов SQL. После этого откройте сервер **catalog-dpt-&lt;пользователь&gt;** . 
+1. На [портале Azure](https://portal.azure.com) перейдите к списку серверов SQL. Откройте сервер **catalog-dpt-&lt;Пользователь&gt;** .
     - Этот сервер каталога содержит две базы данных: **tenantcatalog** и **basetenantdb**. Вторая из них является шаблоном базы данных, который копируется для создания новых клиентов.
 
    ![Базы данных](./media/saas-dbpertenant-get-started-deploy/databases.png)
 
 2. Вернитесь к списку серверов SQL.
 
-3. Откройте сервер **tenants1-dpt-&lt;пользователь&gt;** , который содержит клиентские базы данных.  
+3. Откройте сервер **tenants1-dpt-&lt;пользователь&gt;** , который содержит клиентские базы данных.
 
 4. Обратите внимание на следующие элементы:
 
@@ -240,7 +240,7 @@ ms.locfileid: "68570445"
 
 После выполнения *LoadGenerator.ps1* несколько минут вы должны иметь достаточный объем данных, чтобы рассмотреть некоторые функции мониторинга. Эти функции встроены в пулы и базы данных.
 
-Перейдите к серверу **tenants1-dpt-&lt;пользователь&gt;** и щелкните **selectPool1to**, чтобы просмотреть использование ресурсов для этого пула.   На следующих диаграммах показан генератор нагрузки, который работал в течение часа.
+Перейдите к серверу **tenants1-dpt-&lt;пользователь&gt;** , а затем щелкните **Pool1**, чтобы просмотреть использование ресурсов для пула. На следующих диаграммах показан генератор нагрузки, который работал в течение часа.
 
    ![Отслеживание пула](./media/saas-dbpertenant-get-started-deploy/monitor-pool.png)
 

@@ -6,12 +6,12 @@ ms.service: managed-applications
 ms.topic: conceptual
 ms.date: 08/06/2019
 ms.author: tomfitz
-ms.openlocfilehash: 54eb2df06df56c33e1a3cd74e7a4a93c07aab682
-ms.sourcegitcommit: 5ded08785546f4a687c2f76b2b871bbe802e7dae
+ms.openlocfilehash: 5a28acfeeda12ab999b16f71cbe789fefcea736f
+ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69575664"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72028347"
 ---
 # <a name="test-your-portal-interface-for-azure-managed-applications"></a>Тестирование интерфейса портала для управляемых приложений Azure
 
@@ -45,7 +45,7 @@ ms.locfileid: "69575664"
 
 Если форма не отображается, а отображается значок облака с отрывным удалением, то форма содержит ошибку, например, отсутствующее свойство. Откройте веб-Средства для разработчиков в браузере. В **консоли** отображаются важные сообщения об интерфейсе.
 
-![Показать ошибку](./media/test-createuidefinition/show-error.png)
+![Отображение ошибки](./media/test-createuidefinition/show-error.png)
 
 ## <a name="use-test-script"></a>Использование скрипта теста
 
@@ -93,7 +93,7 @@ ms.locfileid: "69575664"
 
 Укажите значения для полей. По завершении вы увидите значения, которые передаются в шаблон, который можно найти в консоли средств разработчика в браузере.
 
-![Показать значения](./media/test-createuidefinition/show-json.png)
+![Отображение значений](./media/test-createuidefinition/show-json.png)
 
 Эти значения можно использовать как файл параметров для тестирования шаблона развертывания.
 
@@ -101,7 +101,7 @@ ms.locfileid: "69575664"
 
 ## <a name="test-your-solution-files"></a>Тестирование файлов решения
 
-Теперь, когда вы проверили, что ваш интерфейс портала работает так, как ожидается, пришло время проверить, что ваш файл createUiDefinition правильно интегрирован с файлом mainTemplate.json. Можно запустить тестирование сценария проверки для проверки содержимого файлов решения, включая файл createUiDefinition. Сценарий проверяет синтаксис JSON, регулярные выражения в текстовых полях и обеспечивает соответствие выходных значений интерфейса портала параметрам шаблона. Со сведениями о запуске этого сценария можно ознакомиться в статье, посвященной [запуску статических проверок шаблонов](https://github.com/Azure/azure-quickstart-templates/tree/master/test/template-validation-tests).
+Теперь, когда вы проверили, что ваш интерфейс портала работает так, как ожидается, пришло время проверить, что ваш файл createUiDefinition правильно интегрирован с файлом mainTemplate.json. Можно запустить тестирование сценария проверки для проверки содержимого файлов решения, включая файл createUiDefinition. Сценарий проверяет синтаксис JSON, регулярные выражения в текстовых полях и обеспечивает соответствие выходных значений интерфейса портала параметрам шаблона. Со сведениями о запуске этого сценария можно ознакомиться в статье, посвященной [запуску статических проверок шаблонов](https://github.com/Azure/azure-quickstart-templates/tree/master/test).
 
 ## <a name="next-steps"></a>Следующие шаги
 

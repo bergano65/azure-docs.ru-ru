@@ -6,16 +6,16 @@ ms.author: makromer
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 08/30/2019
-ms.openlocfilehash: 69dce46052c18eec7c3f1fa2082907ed62b367d6
-ms.sourcegitcommit: 6fe40d080bd1561286093b488609590ba355c261
+ms.openlocfilehash: 37db3e153e8dfcbc1120fcb1f6d2f77187edc78e
+ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71703343"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72029667"
 ---
 # <a name="mapping-data-flow-json-handling"></a>Обработка потока данных с сопоставлением JSON
 
-[!INCLUDE [notes](../../includes/data-factory-data-flow-preview.md)]
+
 
 ## <a name="creating-json-structures-in-expression-editor"></a>Создание структур JSON в редакторе выражений
 ### <a name="derived-column-transformation"></a>Преобразование «Производный столбец»
@@ -163,7 +163,7 @@ map([1, 2, 3, 4], #item + 2) => [3, 4, 5, 6]
 map(['a', 'b', 'c', 'd'], #item + '_processed') => ['a_processed', 'b_processed', 'c_processed', 'd_processed']
 ```
 
-## <a name="reduce"></a>Свести
+## <a name="reduce"></a>свести
 Накапливает элементы в массиве. Функция Reduce принимает ссылку на накапливаемое и один элемент в первой функции expression как #acc и #item и ждет, что результирующее значение #resultся для использования во второй функции выражения.
 
 ### <a name="examples"></a>Примеры
@@ -185,7 +185,7 @@ sort(['a3', 'b2', 'c1'],
         iif(#item1 >= #item2, 1, -1)) => ['a3', 'b2', 'c1']
 ```
 
-## <a name="contains"></a>содержит
+## <a name="contains"></a>contains
 Возвращает значение true, если любой элемент в предоставленном массиве принимает значение true в указанном предикате. Функция Contains принимает ссылку на один элемент в функции предиката как #item.
 
 ### <a name="examples"></a>Примеры

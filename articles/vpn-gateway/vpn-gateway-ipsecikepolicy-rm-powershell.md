@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/14/2018
 ms.author: yushwang
-ms.openlocfilehash: d04d62d66b4ba22437e6d854566f8bbf5536a6fc
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: a4a0431a8d40f7905805e0a7d902988b7eb26208
+ms.sourcegitcommit: f9e81b39693206b824e40d7657d0466246aadd6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66121122"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72035050"
 ---
 # <a name="configure-ipsecike-policy-for-s2s-vpn-or-vnet-to-vnet-connections"></a>Настройка политики IPsec/IKE для VPN-подключений типа "сеть — сеть" или "виртуальная сеть — виртуальная сеть"
 
@@ -109,7 +109,7 @@ ms.locfileid: "66121122"
 | 2                         | DHGroup2                 | PFS2         | MODP (1024 бит)  |
 | 14                        | DHGroup14<br>DHGroup2048 | PFS2048      | MODP (2048 бит)  |
 | 19                        | ECP256                   | ECP256       | ECP (256 бит)    |
-| 20                        | ECP384                   | ECP284       | ECP (384 бит)    |
+| 20                        | ECP384                   | ECP384       | ECP (384 бит)    |
 | 24                        | DHGroup24                | PFS24        | MODP (2048 бит)  |
 
 Дополнительные сведения см. в статье о группе [RFC3526](https://tools.ietf.org/html/rfc3526) и [RFC5114](https://tools.ietf.org/html/rfc5114).
@@ -407,7 +407,7 @@ Set-AzVirtualNetworkGatewayConnection -VirtualNetworkGatewayConnection $connecti
 
 Вы снова можете использовать тот же скрипт, чтобы проверить, удалена ли политика из подключения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о селекторах трафика на основе политик см. в статье [Подключение VPN-шлюзов Azure к нескольким локальным VPN-устройствам на основе политики с помощью PowerShell](vpn-gateway-connect-multiple-policybased-rm-ps.md).
 

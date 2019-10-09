@@ -7,16 +7,16 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 01/30/2019
-ms.openlocfilehash: 160ff8bbcb8ce5a4f1f32245cc366281640c5919
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 28fedf96ec178aae0615129421bdae7721a66105
+ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61348315"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72029927"
 ---
-# <a name="azure-data-factory-unpivot-transformation"></a>Преобразование отмены свертывания фабрики данных Azure
+# <a name="azure-data-factory-unpivot-transformation"></a>Преобразование отмены свертывания в фабрике данных Azure
 
-[!INCLUDE [notes](../../includes/data-factory-data-flow-preview.md)]
+
 
 Используйте отмену свертывания в ADF сопоставления потока данных, чтобы превратить ненормализованный набор данных в более нормализованную версию, расширив значения из нескольких столбцов в одной записи в несколько записей с одинаковыми значениями в одном столбце.
 
@@ -52,6 +52,6 @@ ms.locfileid: "61348315"
 
 В окончательном наборе результатов для несвернутых данных отображаются итоговые значения столбца, которые теперь не объединены в значения отдельных строк.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Используйте [преобразование "Сведение"](data-flow-pivot.md) pivot строк на столбцы.
+Используйте [Преобразование «Сведение](data-flow-pivot.md) » для сведения строк в столбцы.

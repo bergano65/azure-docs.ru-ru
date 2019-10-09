@@ -11,14 +11,14 @@ ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 09/30/2019
+ms.date: 10/07/2019
 ms.author: magoedte
-ms.openlocfilehash: 66f3a9ae1f29d863170dcb4bc43e38b648602eed
-ms.sourcegitcommit: 8bae7afb0011a98e82cbd76c50bc9f08be9ebe06
+ms.openlocfilehash: 1eec8b79579a1c4d5c889b830706299ccc25e88b
+ms.sourcegitcommit: f9e81b39693206b824e40d7657d0466246aadd6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71695028"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72035632"
 ---
 # <a name="collect-log-data-with-the-log-analytics-agent"></a>Получение данных журнала с помощью агента Log Analytics
 
@@ -52,8 +52,8 @@ ms.locfileid: "71695028"
 
 Для агента Windows официально поддерживаются следующие версии операционной системы Windows:
 
-* Windows Server 2019
-* Windows Server 2008 R2, 2012, 2012 R2, 2016, версия 1709 и 1803
+* Windows Server 2019
+* Windows Server 2008 SP2 (x64), 2008 R2, 2012, 2012 R2, 2016, Version 1709 и 1803
 * Windows 7 с пакетом обновления 1 (SP1), Windows 8 Корпоративная и профессиональная, Windows 10 Корпоративная и профессиональная
 
 >[!NOTE]
@@ -110,7 +110,7 @@ ms.locfileid: "71695028"
 
 Ниже перечислены сведения о конфигурации прокси-сервера и брандмауэра, необходимые агентам Linux и Windows для взаимодействия с журналами Azure Monitor.  
 
-|Ресурс агента|Порты |Direction |Обход проверки HTTPS|
+|Ресурс агента|порты; |Direction |Обход проверки HTTPS|
 |------|---------|--------|--------|   
 |*.ods.opinsights.azure.com |Порт 443 |Исходящие|Да |  
 |*.oms.opinsights.azure.com |Порт 443 |Исходящие|Да |  
@@ -133,7 +133,7 @@ ms.locfileid: "71695028"
 |Свойство| Описание |
 |--------|-------------|
 |Protocol | HTTPS |
-|Пользователь | Необязательное имя пользователя для аутентификации прокси-сервера |
+|user | Необязательное имя пользователя для аутентификации прокси-сервера |
 |password | Необязательный пароль для аутентификации прокси-сервера |
 |proxyhost | Адрес или полное доменное имя прокси-сервера или шлюза Log Analytics |
 |port | Необязательный номер порта прокси-сервера или шлюза Log Analytics |

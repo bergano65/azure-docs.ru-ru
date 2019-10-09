@@ -4,14 +4,14 @@ description: Выводит список всех пространств име�
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: conceptual
-ms.date: 06/25/2019
+ms.date: 10/07/2019
 ms.author: tomfitz
-ms.openlocfilehash: 3df481245db8d737032d1abf5906a2ffe949a2fe
-ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
+ms.openlocfilehash: e8bcaf1e55b042f8dfd8bba2e2113894a67e8b13
+ms.sourcegitcommit: f9e81b39693206b824e40d7657d0466246aadd6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70275710"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72035624"
 ---
 # <a name="resource-providers-for-azure-services"></a>Поставщики ресурсов для служб Azure
 
@@ -30,6 +30,7 @@ ms.locfileid: "70275710"
 | Microsoft.AnalysisServices | [Azure Analysis Services](/azure/analysis-services/) |
 | Microsoft.ApiManagement | [Управление API](../api-management/index.yml) |
 | Microsoft. Аппконфигуратион | core |
+| Microsoft.Attestation | Служба аттестации Azure |
 | Microsoft.Authorization | [Azure Resource Manager](index.yml) |
 | Microsoft.Automation | [Служба автоматизации](../automation/index.yml) |
 | Microsoft.AzureActiveDirectory | [Azure Active Directory B2C](../active-directory-b2c/index.yml) |
@@ -45,6 +46,7 @@ ms.locfileid: "70275710"
 | Microsoft.Capacity | core |
 | Microsoft.Cdn | [Сеть доставки содержимого](../cdn/index.yml) |
 | Microsoft.CertificateRegistration | [Сертификаты службы приложений](../app-service/web-sites-purchase-ssl-web-site.md) |
+| Microsoft. Чанжеаналисис | [Azure Monitor](../azure-monitor/index.yml) |
 | Microsoft.ClassicCompute | Виртуальная машина классической модели развертывания |
 | Microsoft.ClassicInfrastructureMigrate | Миграция классической модели развертывания |
 | Microsoft.ClassicNetwork | Виртуальная сеть классической модели развертывания |
@@ -52,13 +54,14 @@ ms.locfileid: "70275710"
 | Microsoft. Классиксубскриптион | Классическая модель развертывания |
 | Microsoft.CognitiveServices | [Cognitive Services](/azure/cognitive-services/) |
 | Microsoft.Commerce | core |
-| Microsoft.Compute; | [Виртуальные машины](/azure/virtual-machines/) |
+| Microsoft.Compute; | [Виртуальные машины](/azure/virtual-machines/)<br />[Наборы для масштабирования виртуальных машин](/azure/virtual-machine-scale-sets/) |
 | Microsoft.Consumption | [Управление затратами](/azure/cost-management/) |
 | Microsoft.ContainerInstance | [Экземпляры контейнеров](/azure/container-instances/) |
 | Microsoft.ContainerRegistry | [Реестр контейнеров](/azure/container-registry/) |
 | Microsoft.ContainerService | [Служба Azure Kubernetes (AKS)](/azure/aks/) |
 | Microsoft.ContentModerator | [Content Moderator Azure](../cognitive-services/content-moderator/index.yml) |
 | Microsoft.CostManagement | [Управление затратами](/azure/cost-management/) |
+| Microsoft. Костманажементекспортс | [Управление затратами](/azure/cost-management/) |
 | Microsoft.CustomerInsights | Customer Insights |
 | Microsoft. Кустомерлоккбокс | защищенное хранилище для Microsoft Azure |
 | Microsoft. Кустомпровидерс | [Настраиваемые поставщики Azure](../managed-applications/custom-providers-overview.md) |
@@ -70,11 +73,14 @@ ms.locfileid: "70275710"
 | Microsoft.DataLakeAnalytics | [Data Lake Analytics](/azure/data-lake-analytics/) |
 | Microsoft.DataLakeStore | [Azure Data Lake Store](../storage/blobs/data-lake-storage-introduction.md) |
 | Microsoft.DataMigration | [Azure Database Migration Service](/azure/dms/) |
+| Общая папка Microsoft. | [Общая папка данных Azure](/azure/data-share/) |
 | Microsoft.DBforMariaDB | [База данных Azure для MariaDB](/azure/mariadb/) |
 | Microsoft.DBforMySQL | [База данных Azure для MySQL](/azure/mysql/) |
 | Microsoft.DBforPostgreSQL | [База данных Azure для PostgreSQL](/azure/postgresql/) |
+| Microsoft. Десктопвиртуализатион | [Виртуальный рабочий стол Windows](/azure/virtual-desktop/) |
 | Microsoft.DeploymentManager | [диспетчер развертывания Azure](deployment-manager-overview.md) |
 | Microsoft.Devices | [Центр Интернета вещей](/azure/iot-hub/)<br />[Служба подготовки устройств к добавлению в Центр Интернета вещей](/azure/iot-dps/) |
+| Microsoft. DevOps | [Azure DevOps](/azure/devops/) |
 | Microsoft.DevSpaces | [Azure Dev Spaces](/azure/dev-spaces/) |
 | Microsoft.DevTestLab | [Службы лаборатории Azure](../lab-services/index.yml) |
 | Microsoft.DocumentDB | [Azure Cosmos DB](../cosmos-db/index.yml) |
@@ -89,6 +95,7 @@ ms.locfileid: "70275710"
 | Microsoft.HardwareSecurityModules | [Выделенное устройство HSM Azure](../dedicated-hsm/index.yml) |
 | Microsoft.HDInsight | [HDInsight](../hdinsight/index.yml) |
 | Microsoft. Хеалскареапис | [API Azure для FHIR](../healthcare-apis/index.yml) |
+| Microsoft.HybridData | [StorSimple](/azure/storsimple/) |
 | Microsoft.ImportExport | [Импорт и экспорт Azure](../storage/common/storage-import-export-service.md) |
 | microsoft.insights | [Azure Monitor](../azure-monitor/index.yml) |
 | Microsoft.Intune | [Intune](/intune/) |
@@ -107,20 +114,23 @@ ms.locfileid: "70275710"
 | Microsoft.MachineLearningServices | [Служба Машинное обучение](../machine-learning/index.yml) |
 | Microsoft.ManagedIdentity | [Управляемые удостоверения для ресурсов Azure](../active-directory/managed-identities-azure-resources/index.yml) |
 | Microsoft.ManagedLab | [Службы лаборатории Azure](../lab-services/index.yml) |
+| Microsoft. ManagedServices | [Azure Lighthouse](/azure/lighthouse/) |
 | Microsoft.Management | [Группы управления](/azure/governance/management-groups/) |
 | Microsoft.Maps | [Azure Maps](../azure-maps/index.yml) |
 | Microsoft.Marketplace | core |
 | Microsoft.MarketplaceApps | core |
 | Microsoft.MarketplaceOrdering | core |
 | Microsoft.Media | [Службы мультимедиа](../media-services/index.yml) |
+| Microsoft. Microservices4Spring | [Spring в Azure](/azure/java/spring-framework/) |
 | Microsoft.Migrate | [Служба "миграция Azure"](../migrate/migrate-overview.md) |
-| Microsoft. Микседреалити | [Пространственные привязки Azure](/azure/spatial-anchors/) |
+| Microsoft. Микседреалити | [Пространственные привязки Azure.](/azure/spatial-anchors/) |
 | Microsoft.NetApp | [Azure NetApp Files](../azure-netapp-files/index.yml) |
 | Microsoft.Network. | [Виртуальная сеть](../virtual-network/index.yml)<br />[Load Balancer](../load-balancer/index.yml)<br />[Шлюз приложений](../application-gateway/index.yml)<br />[Azure DNS](../dns/index.yml)<br />[ExpressRoute](../expressroute/index.yml)<br />[VPN-шлюз](../vpn-gateway/index.yml)<br />[Диспетчер трафика](../traffic-manager/index.yml)<br />[Наблюдатель за сетями](../network-watcher/index.yml)<br />[Брандмауэр Azure](../firewall/index.yml)<br />[Azure Front Door Service](../frontdoor/index.yml)<br />[Azure бастиона](/azure/bastion/) |
 | Microsoft.NotificationHubs | [Центры уведомлений](../notification-hubs/index.yml) |
 | Microsoft.OffAzure | [Служба "миграция Azure"](../migrate/migrate-overview.md) |
 | Microsoft.OperationalInsights | [Azure Monitor](../azure-monitor/index.yml) |
 | Microsoft.OperationsManagement | [Azure Monitor](../azure-monitor/index.yml) |
+| Microsoft. пиринг | Служба пиринга Microsoft Azure |
 | Microsoft.PolicyInsights | [Политика Azure](../governance/policy/index.yml) |
 | Microsoft.Portal | [портал Azure](/azure/azure-portal/) |
 | Microsoft.PowerBI | [Power BI](/power-bi/power-bi-overview) |
@@ -134,15 +144,17 @@ ms.locfileid: "70275710"
 | Microsoft.Scheduler | [Планировщик](/azure/scheduler/) |
 | Microsoft.Search | [Поиск Azure](../search/index.yml) |
 | Microsoft.Security | [Центр безопасности](../security-center/index.yml) |
+| Microsoft. Секуритинсигхтс | [Sentinel Azure](/azure/sentinel/) |
 | Microsoft.ServiceBus | [Служебная шина](/azure/service-bus/) |
 | Microsoft.ServiceFabric | [Service Fabric](../service-fabric/index.yml) |
 | Microsoft.ServiceFabricMesh | [Служба "Сетка Service Fabric"](../service-fabric-mesh/index.yml) |
 | Microsoft.SignalRService | [Служба Azure SignalR](../azure-signalr/index.yml) |
 | Microsoft.SiteRecovery | [Site Recovery](../site-recovery/index.yml) |
 | Microsoft.Solutions | [Управляемые приложения Azure](../managed-applications/index.yml) |
-| Microsoft.Sql | [база данных SQL Azure;](../sql-database/index.yml) |
+| Microsoft.Sql | [база данных SQL Azure;](../sql-database/index.yml)<br />[Хранилище данных SQL](/azure/sql-data-warehouse/) |
 | Microsoft.SqlVirtualMachine | [SQL Server на виртуальных машинах Azure](../virtual-machines/windows/sql/virtual-machines-windows-sql-server-iaas-overview.md) |
 | Microsoft.Storage; | [Хранилище](../storage/index.yml) |
+| Microsoft. Сторажекаче | [Кэш HPC Azure](/azure/hpc-cache/) |
 | Microsoft.StorageSync | [Хранилище](../storage/index.yml) |
 | Microsoft.StorSimple | [StorSimple](/azure/storsimple/) |
 | Microsoft.StreamAnalytics | [Stream Analytics](../stream-analytics/index.yml) |

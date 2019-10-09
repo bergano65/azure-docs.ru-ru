@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/24/2019
 ms.author: memildin
-ms.openlocfilehash: 07934e3c7d9f61ecb4153e6a169882509a81dc75
-ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
+ms.openlocfilehash: fb401226e9697afb71dfa7a30f9814e07c3422c2
+ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71241042"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72028081"
 ---
 # <a name="microsoft-defender-advanced-threat-protection-with-azure-security-center"></a>Усовершенствованная защита от угроз Microsoft Defender с помощью центра безопасности Azure
 
@@ -70,7 +70,7 @@ ms.locfileid: "71241042"
 
 ## <a name="enable-microsoft-defender-atp-integration"></a>Включить интеграцию ATP в защитнике Майкрософт
 
-Чтобы просмотреть, включена ли интеграция Microsoft Defender ATP, выберите параметры цены **центра** > безопасности **& настройки** > щелкните подписку.
+Чтобы просмотреть, включена ли интеграция Microsoft Defender ATP, выберите **Центр безопасности** > **цены & параметры** > щелкните подписку.
 Здесь можно увидеть включенные в данный момент интеграции.
 
   ![Страница параметров обнаружения угроз в центре безопасности Azure с включенной интеграцией Microsoft Defender ATP](media/security-center-wdatp/enable-integrations.png)
@@ -107,7 +107,7 @@ ms.locfileid: "71241042"
 
 3. Если команда выполнена успешно, вы увидите новое оповещение на панели мониторинга центра безопасности Azure и на портале ATP в защитнике Майкрософт. Это оповещение может отобразиться через несколько минут.
 
-4. Чтобы просмотреть оповещение в центре безопасности, перейдите в раздел **Оповещения системы безопасности** >  **Suspicious Powershell CommandLine** (Подозрительная командная строка PowerShell).
+4. Чтобы просмотреть оповещение в центре безопасности, перейдите в раздел **Оповещения системы безопасности** >  **Suspicious Powershell CommandLine** (Подозрительная командная строка PowerShell).
 
 5. В окне расследования выберите ссылку для перехода на портал ATP в защитнике Майкрософт.
 

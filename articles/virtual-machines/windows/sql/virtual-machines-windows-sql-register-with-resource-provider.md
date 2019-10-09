@@ -14,12 +14,12 @@ ms.workload: iaas-sql-server
 ms.date: 06/24/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 2bf7118d1f4be065969312d1fb9b0cf77e820d48
-ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
+ms.openlocfilehash: b0a7221107f05ff2239bd77cc18e7ffedc18efc1
+ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71262877"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72023599"
 ---
 # <a name="register-a-sql-server-virtual-machine-in-azure-with-the-sql-vm-resource-provider"></a>Регистрация SQL Server виртуальной машины в Azure с помощью поставщика ресурсов виртуальной машины SQL
 
@@ -43,6 +43,11 @@ ms.locfileid: "71262877"
   > [!NOTE]
   > Нет дополнительных требований к лицензированию, связанных с регистрацией в поставщике ресурсов. Регистрация в поставщике ресурсов виртуальной машины SQL предоставляет упрощенный метод для выполнения требования уведомления корпорации Майкрософт о том, что Преимущество гибридного использования Azure была включена в процессе управления формами регистрации лицензий для каждого ресурса. 
 
+Дополнительные сведения о преимуществах использования поставщика ресурсов виртуальной машины SQL см. в следующем видео [Channel9](https://channel9.msdn.com/Shows/Data-Exposed/Benefit-from-SQL-VM-Resource-Provider-when-self-installing-SQL-Server-on-Azure?WT.mc_id=dataexposed-c9-niner) : 
+
+<iframe src="https://channel9.msdn.com/Shows/Data-Exposed/Benefit-from-SQL-VM-Resource-Provider-when-self-installing-SQL-Server-on-Azure/player" width="960" height="540" allowFullScreen frameBorder="0" title="Преимущества от поставщика ресурсов виртуальной машины SQL при самостоятельной установке SQL Server в Azure — видео Microsoft Channel 9"></iframe>
+
+
 ## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы зарегистрировать виртуальную машину SQL Server с помощью поставщика ресурсов, вам потребуется следующее: 
@@ -61,7 +66,7 @@ ms.locfileid: "71262877"
 
 
 # <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
-Используйте следующий фрагмент кода для регистрации в поставщике ресурсов виртуальной машины SQL, если расширение SQL Server IaaS уже установлено на виртуальной машине. Необходимо указать тип SQL Server лицензии при регистрации в поставщике ресурсов виртуальной машины SQL: с оплатой по мере использования (`PAYG`) или преимущество гибридного использования Azure (`AHUB`). 
+Используйте следующий фрагмент кода для регистрации в поставщике ресурсов виртуальной машины SQL, если расширение SQL Server IaaS уже установлено на виртуальной машине. Необходимо указать тип SQL Server лицензии при регистрации в поставщике ресурсов виртуальной машины SQL: с оплатой по мере использования (`PAYG`) или Преимущество гибридного использования Azure (`AHUB`). 
 
 Зарегистрируйте SQL Server виртуальную машину с помощью следующего фрагмента кода PowerShell:
 
@@ -148,7 +153,7 @@ SQL Server 2008 и 2008 R2, установленные на Windows Server 2008,
 ## <a name="verify-registration-status"></a>Проверка состояния регистрации
 Вы можете проверить, зарегистрирована ли SQL Server виртуальная машина в поставщике ресурсов виртуальной машины SQL с помощью портал Azure, Azure CLI или PowerShell. 
 
-### <a name="azure-portal"></a>портала Azure 
+### <a name="azure-portal"></a>Портал Azure 
 
 1. Войдите на [портале Azure](https://portal.azure.com). 
 1. Перейдите к [виртуальным машинам SQL Server](virtual-machines-windows-sql-manage-portal.md).
@@ -159,7 +164,7 @@ SQL Server 2008 и 2008 R2, установленные на Windows Server 2008,
 
 ### <a name="command-line"></a>Командная строка
 
-Проверьте текущее состояние регистрации виртуальной машины SQL Server с помощью команды AZ CLI или PowerShell. `ProvisioningState`Отобразится `Succeeded` , если регистрация прошла успешно. 
+Проверьте текущее состояние регистрации виртуальной машины SQL Server с помощью команды AZ CLI или PowerShell. `ProvisioningState` будет показывать `Succeeded`, если регистрация прошла успешно. 
 
 # <a name="az-clitabbash"></a>[Azure CLI](#tab/bash)
 
@@ -203,7 +208,7 @@ SQL Server виртуальные машины, на которых устано
 Чтобы обновить режим агента до уровня Full, выполните следующие действия. 
 
 
-### <a name="azure-portal"></a>портала Azure
+### <a name="azure-portal"></a>Портал Azure
 
 1. Войдите на [портале Azure](https://portal.azure.com).
 1. Перейдите к ресурсу [виртуальных машин SQL](virtual-machines-windows-sql-manage-portal.md#access-the-sql-virtual-machines-resource) . 
@@ -245,7 +250,7 @@ SQL Server виртуальные машины, на которых устано
 
 Чтобы зарегистрировать виртуальную машину SQL Server с поставщиком ресурсов виртуальной машины SQL, необходимо зарегистрировать поставщик ресурсов в подписке. Это можно сделать с помощью портал Azure, Azure CLI или PowerShell.
 
-### <a name="azure-portal"></a>портала Azure
+### <a name="azure-portal"></a>Портал Azure
 
 1. Откройте портал Azure и перейдите ко **всем службам**. 
 1. Перейдите к разделу **подписки** и выберите интересующую вас подписку.  

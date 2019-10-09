@@ -11,14 +11,14 @@ ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 06/14/2019
+ms.date: 10/07/2019
 ms.author: magoedte
-ms.openlocfilehash: 5e1fe6252f396a4585b5d7d7190728b79229d5c7
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 6c8d25a9df49323866e99487ef6c648dede40ec4
+ms.sourcegitcommit: f9e81b39693206b824e40d7657d0466246aadd6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70073973"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72033957"
 ---
 # <a name="connect-windows-computers-to-azure-monitor"></a>Подключение компьютеров Windows к Azure Monitor
 
@@ -51,7 +51,11 @@ ms.locfileid: "70073973"
 5. Скопируйте **идентификатор рабочей области** и **первичный ключ** и вставьте их в удобный для вас редактор.    
    
 ## <a name="configure-agent-to-use-tls-12"></a>Настройка агента для использования TLS 1.2
-Чтобы настроить использование протокола [TLS 1.2](https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings#tls-12) для обмена данными между агентом Windows и службой Log Analytics, можно выполнить следующие действия для включения протокола до установки агента на виртуальной машине или после.   
+Чтобы настроить использование протокола [TLS 1.2](https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings#tls-12) для обмена данными между агентом Windows и службой Log Analytics, можно выполнить следующие действия для включения протокола до установки агента на виртуальной машине или после.
+
+>[!NOTE]
+>Если вы настраиваете виртуальную машину под управлением Windows Server 2008 с пакетом обновления 2 (SP2) x64 для использования TLS 1,2, сначала необходимо установить следующее [Обновление поддержки подписывания кода SHA-2](https://support.microsoft.com/help/4474419/sha-2-code-signing-support-update) перед выполнением описанных ниже действий. 
+>
 
 1. Найдите следующий подраздел реестра: **HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols**
 2. Создайте подраздел в разделе **Protocols** for TLS 1,2 **хклм\систем\куррентконтролсет\контрол\секуритипровидерс\счаннел\протоколс\тлс 1,2**

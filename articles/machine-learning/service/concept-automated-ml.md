@@ -11,12 +11,12 @@ author: nacharya1
 ms.author: nilesha
 ms.date: 06/20/2019
 ms.custom: seodec18
-ms.openlocfilehash: e9bc0cf3ab0d168a55ab04913bdc71eed5c5fced
-ms.sourcegitcommit: be344deef6b37661e2c496f75a6cf14f805d7381
-ms.translationtype: HT
+ms.openlocfilehash: e80d79c16b0748e25e549365001990fb014b5f14
+ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72001237"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72030555"
 ---
 # <a name="what-is-automated-machine-learning"></a>Что такое автоматическое машинное обучение?
 
@@ -37,13 +37,12 @@ ms.locfileid: "72001237"
 + Использование рекомендаций по обработке и анализу данных
 + Предоставление гибкой задачи — решение
 
-Распространенные сценарии автоматического использования ML включают:
-+ [Обнаружение мошенничества](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/classification-credit-card-fraud/auto-ml-classification-credit-card-fraud.ipynb)
-+ [Прогноз маркетинга](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/classification-bank-marketing/auto-ml-classification-bank-marketing.ipynb)
-+ [Прогнозирование спроса](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/forecasting-energy-demand/auto-ml-forecasting-energy-demand.ipynb)
-+ [Прогнозирование продаж](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/forecasting-orange-juice-sales/auto-ml-forecasting-orange-juice-sales.ipynb)
-+ [Прогноз производительности](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/regression-hardware-performance/auto-ml-regression-hardware-performance.ipynb)
-+ [Прогноз устойчивости материалов](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/regression-concrete-strength/auto-ml-regression-concrete-strength.ipynb)
+В следующей таблице перечислены распространенные сценарии автоматического использования ML. 
+
+классификация;| Регрессия | Прогнозирование временных рядов
+---|---|---
+[Обнаружение мошенничества](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/classification-credit-card-fraud/auto-ml-classification-credit-card-fraud.ipynb)|[Прогноз производительности ЦП](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/regression-hardware-performance/auto-ml-regression-hardware-performance.ipynb) |[Прогнозирование спроса](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/forecasting-energy-demand/auto-ml-forecasting-energy-demand.ipynb)|
+[Прогноз маркетинга](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/classification-bank-marketing/auto-ml-classification-bank-marketing.ipynb)|[Прогноз устойчивости материалов](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/regression-concrete-strength/auto-ml-regression-concrete-strength.ipynb)|[Прогнозирование продаж](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/forecasting-orange-juice-sales/auto-ml-forecasting-orange-juice-sales.ipynb)
 
 ## <a name="how-automated-ml-works"></a>Принцип работы автоматизированного ML
 

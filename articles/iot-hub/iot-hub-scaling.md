@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 06/28/2019
 ms.author: wesmc
-ms.openlocfilehash: 8d7bb201a9d01725f933105a4a0beb85c82ca105
-ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
+ms.openlocfilehash: d1de29124825a7f398b9722bb2455d1105e9c9f7
+ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71203708"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72023645"
 ---
 # <a name="choose-the-right-iot-hub-tier-for-your-solution"></a>Выбор правильного уровня Центра Интернета вещей для решения
 
@@ -35,11 +35,11 @@ ms.locfileid: "71203708"
 
 В пределах уровня для Центра Интернета вещей можно выбрать только один тип [выпуска](https://azure.microsoft.com/pricing/details/iot-hub/). Например, можно создать центр Интернета вещей с несколькими единицами S1, но не с набором единиц из разных выпусков, таких как S1 и S2.
 
-| Возможность | Уровень "Базовый" | Уровень Free/Standard |
+| Функция | Уровень Basic | Уровень Free/Standard |
 | ---------- | ---------- | ------------- |
 | [Телеметрия "С устройства в облако"](iot-hub-devguide-messaging.md) | Да | Да |
 | [Удостоверение для каждого устройства](iot-hub-devguide-identity-registry.md) | Да | Да |
-| [Маршрутизация сообщений](iot-hub-devguide-messages-read-custom.md) и [интеграция службы "Сетка событий"](iot-hub-event-grid.md) | Да | Да |
+| [Маршрутизация сообщений](iot-hub-devguide-messages-read-custom.md), [обогащение сообщений](iot-hub-message-enrichments-overview.md)и [Интеграция службы "Сетка событий](iot-hub-event-grid.md) " | Да | Да |
 | [Протоколы HTTP, AMQP и MQTT](iot-hub-devguide-protocols.md) | Да | Да |
 | [Служба подготовки устройств](../iot-dps/about-iot-dps.md) | Да | Да |
 | [Мониторинг и диагностика](iot-hub-monitor-resource-health.md) | Да | Да |
@@ -51,7 +51,7 @@ ms.locfileid: "71203708"
 
 Центр Интернета вещей также предлагает уровень "Бесплатный", который предназначен для тестирования и оценки. Он обладает всеми возможностями уровня "Стандартный", но ограничен квотами на сообщения. С уровня "Бесплатный" нельзя обновиться до уровня "Базовый" или "Стандартный".
 
-## <a name="partitions"></a>Секции
+## <a name="partitions"></a>Разделы
 
 Центры Интернета вещей Azure содержат несколько основных компонентов [Центров событий Azure](../event-hubs/event-hubs-features.md), включая [секции](../event-hubs/event-hubs-features.md#partitions). Потоки событий для Центров Интернета вещей обычно заполняются входящими данными телеметрии, которые сообщают различные устройства Интернета вещей. Секционирование потока событий используется для сокращения конфликтов, возникающих при одновременном считывании потоков событий и записи в эти потоки.
 
@@ -70,7 +70,7 @@ ms.locfileid: "71203708"
 
 Разница в поддерживаемых возможностях между Центрами Интернета вещей уровня "Базовый" и "Стандартный" означает, что некоторые вызовы API не работают с концентраторами уровня "Базовый". В следующей таблице показаны доступные API:
 
-| API | Уровень "Базовый" | Уровень Free/Standard |
+| API | Уровень Basic | Уровень Free/Standard |
 | --- | ---------- | ------------- |
 | [Удаление устройства](https://docs.microsoft.com/rest/api/iothub/service/deletedevice) | Да | Да |
 | [Получение устройства](https://docs.microsoft.com/rest/api/iothub/service/getdevice) | Да | Да |

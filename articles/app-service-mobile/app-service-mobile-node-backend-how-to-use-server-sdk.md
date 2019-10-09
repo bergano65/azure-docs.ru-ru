@@ -14,16 +14,20 @@ ms.devlang: node
 ms.topic: article
 ms.date: 10/01/2016
 ms.author: crdun
-ms.openlocfilehash: 6eaaeba8a36bcba8134d605889185fb8827dd05c
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 74a522f8761c2eeaf329c90ae35aef0f44c40254
+ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68851189"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72027192"
 ---
 # <a name="how-to-use-the-mobile-apps-nodejs-sdk"></a>Использование пакета SDK Node.js для функции "Мобильные приложения"
 
 [!INCLUDE [app-service-mobile-selector-server-sdk](../../includes/app-service-mobile-selector-server-sdk.md)]
+
+> [!NOTE]
+> Центр приложений Visual Studio поддерживает комплексные и интегрированные службы для разработки мобильных приложений. Разработчики могут использовать службы **сборки**, **тестирования** и **распространения** для настройки конвейера непрерывной интеграции и доставки. После развертывания приложения разработчики могут отслеживать состояние и использование своих приложений с помощью служб **аналитики** и **диагностики** , а также привлекать пользователей с помощью службы **push-уведомлений** . Разработчики также **могут использовать проверку подлинности** для аутентификации пользователей и службы **данных** , чтобы сохранять и синхронизировать данные приложений в облаке.
+> Если вы хотите интегрировать облачные службы в мобильное приложение, зарегистрируйтесь в центре приложений Center [App Center](https://appcenter.ms/?utm_source=zumo&utm_medium=Azure&utm_campaign=zumo%20doc) уже сегодня.
 
 Эта статья содержит подробную информацию о программировании серверной части на платформе Node.js в компоненте "Мобильные приложения" службы приложений Azure, а также соответствующие примеры.
 
@@ -135,7 +139,7 @@ ms.locfileid: "68851189"
 
     Сохраните файл.
 
-1. Запустите приложение локально (интерфейс API `http://localhost:3000`) или опубликуйте в Azure.
+1. Запустите приложение локально (API будет обслуживаться на `http://localhost:3000`) или опубликуйте в Azure.
 
 ### <a name="create-node-backend-portal"></a>Создание серверной части Node.js с помощью портала Azure
 
@@ -340,7 +344,7 @@ module.exports = table;
 
 Файл azureMobile.js должен экспортировать объект конфигурации. Ниже перечислены основные параметры.
 
-* Параметры баз данных
+* Параметры базы данных
 * Параметры журнала ведения диагностики.
 * Дополнительные параметры CORS.
 
@@ -374,7 +378,7 @@ module.exports = {
 |:--- |:--- |:--- |:--- |
 | **MS_MobileAppName** |name |Имя приложения |строка |
 | **MS_MobileLoggingLevel** |logging.level |Минимальный уровень ведения журнала для регистрируемых сообщений |error, warning, info, verbose, debug, silly |
-| **MS_DebugMode** |отладка |Включает или отключает режим отладки |true, false |
+| **MS_DebugMode** |debug |Включает или отключает режим отладки |true, false |
 | **MS_TableSchema** |data.schema |Имя схемы по умолчанию для таблиц SQL |строка (значение по умолчанию: dbo) |
 | **MS_DynamicSchema** |data.dynamicSchema |Включает или отключает режим отладки |true, false |
 | **MS_DisableVersionHeader** |version (задано значение undefined) |Отключение заголовка X-ZUMO-Server-Version |true, false |

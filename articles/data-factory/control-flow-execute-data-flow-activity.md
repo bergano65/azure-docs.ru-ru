@@ -8,20 +8,18 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 10/07/2019
 ms.author: makromer
-ms.openlocfilehash: 7db410e97046b6d251eb73e754e40eab09a2ee64
-ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
+ms.date: 10/07/2019
+ms.openlocfilehash: cbfa1acac34187263f8c4203e41bbe61d7e4c745
+ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71981811"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72030510"
 ---
 # <a name="data-flow-activity-in-azure-data-factory"></a>Действие потока данных в фабрике данных Azure
 
 Используйте действие потока данных для преобразования и перемещения данных посредством сопоставления потоков данных. Если вы не знакомы с потоками данных, см. раздел [Общие сведения о сопоставлении потока данных](concepts-data-flow-overview.md)
-
-[!INCLUDE [notes](../../includes/data-factory-data-flow-preview.md)]
 
 ## <a name="syntax"></a>Синтаксис
 
@@ -51,7 +49,7 @@ ms.locfileid: "71981811"
 
 ## <a name="type-properties"></a>Свойства типа
 
-Свойство | Описание | Допустимые значения | Обязательное значение
+Свойство | Описание | Допустимые значения | Обязательно для заполнения
 -------- | ----------- | -------------- | --------
 DataFlow | Ссылка на выполняемый поток данных | датафловреференце | Да
 интегратионрунтиме | Среда вычислений, на которой выполняется поток данных | интегратионрунтимереференце | Да

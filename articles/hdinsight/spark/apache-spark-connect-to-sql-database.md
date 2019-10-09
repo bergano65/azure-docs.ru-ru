@@ -7,13 +7,13 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 05/21/2019
-ms.openlocfilehash: 74bff4059442c85cfcde589c5a6cc7ab36472881
-ms.sourcegitcommit: b03516d245c90bca8ffac59eb1db522a098fb5e4
+ms.date: 10/03/2019
+ms.openlocfilehash: cc225f4cae3935212844c19464afc716092e73ca
+ms.sourcegitcommit: f9e81b39693206b824e40d7657d0466246aadd6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71147045"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72035201"
 ---
 # <a name="use-hdinsight-spark-cluster-to-read-and-write-data-to-azure-sql-database"></a>Чтение данных из базы данных SQL Azure и запись в нее с использованием кластера HDInsight Spark
 
@@ -21,32 +21,32 @@ ms.locfileid: "71147045"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* **Кластер Azure HDInsight Spark**.  Инструкции см. в статье [Создание кластера Apache Spark в Azure HDInsight](apache-spark-jupyter-spark-sql.md).
+* Azure HDInsight Spark кластер *.  Инструкции см. в статье [Создание кластера Apache Spark в Azure HDInsight](apache-spark-jupyter-spark-sql.md).
 
-* **База данных SQL Azure**. Инструкции см. в статье [Создание базы данных SQL Azure на портале Azure](../../sql-database/sql-database-get-started-portal.md). Создайте базу данных с примером схемы и данными **AdventureWorksLT**. Создайте также правило брандмауэра на уровне сервера, чтобы предоставить клиентским IP-адресам доступ к базе данных SQL на сервере. Инструкции по добавлению правила брандмауэра находятся в той же статье. После создания базы данных SQL Azure сохраните следующие значения. Они понадобятся вам для подключения к базе данных из кластера Spark.
+* База данных SQL Azure. Инструкции см. в статье [Создание базы данных SQL Azure на портале Azure](../../sql-database/sql-database-get-started-portal.md). Создайте базу данных с примером схемы и данными **AdventureWorksLT**. Создайте также правило брандмауэра на уровне сервера, чтобы предоставить клиентским IP-адресам доступ к базе данных SQL на сервере. Инструкции по добавлению правила брандмауэра находятся в той же статье. После создания базы данных SQL Azure убедитесь, что вы хотите использовать следующие значения. Они понадобятся вам для подключения к базе данных из кластера Spark.
 
     * Имя сервера, на котором размещена база данных SQL Azure.
     * Имя базы данных SQL Azure.
     * Имя и пароль администратора базы данных SQL Azure.
 
-* **SQL Server Management Studio.** Инструкции см. в статье [Подключайтесь к базе данных Azure SQL и создавайте запросы к ней с помощью SQL Server Management Studio](../../sql-database/sql-database-connect-query-ssms.md).
+* SQL Server Management Studio (SSMS). Инструкции см. в статье [Подключайтесь к базе данных Azure SQL и создавайте запросы к ней с помощью SQL Server Management Studio](../../sql-database/sql-database-connect-query-ssms.md).
 
-## <a name="create-a-jupyter-notebook"></a>Создание записной книжки Jupyter 
+## <a name="create-a-jupyter-notebook"></a>Создание записной книжки Jupyter
 
-Сначала создайте [записную книжку Jupyter](https://jupyter.org/), связанную с кластером Spark. Она понадобится для выполнения фрагментов кода, используемых в этой статье. 
+Сначала создайте [записную книжку Jupyter](https://jupyter.org/), связанную с кластером Spark. Она понадобится для выполнения фрагментов кода, используемых в этой статье.
 
 1. Откройте кластер на [портале Azure](https://portal.azure.com/).
 1. Выберите **Записная книжка Jupyter** в разделе **Панели мониторинга кластера** справа.  Если **панели мониторинга кластера**не отображаются, выберите **Обзор** в меню слева. При появлении запроса введите учетные данные администратора для кластера.
 
-    ![Записная книжка Jupyter на Apache Spark](./media/apache-spark-connect-to-sql-database/hdinsight-spark-cluster-dashboard-jupyter-notebook.png "Записная книжка Jupyter в Spark")
-   
+    ![Записная книжка Jupyter на Apache Spark](./media/apache-spark-connect-to-sql-database/hdinsight-spark-cluster-dashboard-jupyter-notebook.png "Jupyter Notebook в Spark")
+
    > [!NOTE]  
    > Вы также можете получить доступ к записной книжке Jupyter в кластере Spark, открыв следующий URL-адрес в браузере. Замените **CLUSTERNAME** именем кластера:
    >
    > `https://CLUSTERNAME.azurehdinsight.net/jupyter`
 
 1. Чтобы создать записную книжку Scala, в записной книжке Jupyter в правом верхнем углу щелкните **New** (Создать), а затем — **Spark**. Записные книжки Jupyter в кластере HDInsight Spark предоставляют ядро **PySpark** для приложений Python2 и ядро **PySpark3** для приложений Python3. В этой статье мы создаем записную книжку Scala.
-   
+
     ![Ядра для записной книжки Jupyter в Spark](./media/apache-spark-connect-to-sql-database/kernel-jupyter-notebook-on-spark.png "Ядра для записной книжки Jupyter в Spark")
 
     Дополнительные сведения о ядрах см. в статье [Ядра для записных книжек Jupyter с кластерами Apache Spark в HDInsight](apache-spark-jupyter-notebook-kernels.md).
@@ -59,7 +59,7 @@ ms.locfileid: "71147045"
     ![Указание имени для записной книжки](./media/apache-spark-connect-to-sql-database/hdinsight-spark-jupyter-notebook-name.png "Указание имени для записной книжки")
 
 Теперь можно приступить к созданию приложения.
-    
+
 ## <a name="read-data-from-azure-sql-database"></a>Cчитывание данных из базы данных SQL Azure
 
 В этом разделе вы выполняете операцию чтения данных из таблицы (например, **SalesLT.Address**), которая находится в базе данных AdventureWorks.
@@ -76,7 +76,7 @@ ms.locfileid: "71147045"
 
     Чтобы выполнить ячейку кода, нажмите клавиши **SHIFT+ВВОД**.  
 
-1. С помощью приведенного ниже фрагмента кода создается URL-адрес JDBC, который можно передать в API кадров данных Spark, а также объект `Properties` для хранения параметров. Вставьте фрагмент кода в ячейку кода и нажмите клавиши **SHIFT+ВВОД**, чтобы выполнить код.
+1. Используйте приведенный ниже фрагмент кода, чтобы создать URL-адрес JDBC, который можно передать в интерфейсы API кадров Spark. Код создает объект `Properties` для хранения параметров. Вставьте фрагмент кода в ячейку кода и нажмите клавиши **SHIFT+ВВОД**, чтобы выполнить код.
 
        import java.util.Properties
 
@@ -92,10 +92,10 @@ ms.locfileid: "71147045"
 1. Теперь вы можете выполнять операции над кадром данных (например, получение схемы данных).
 
        sqlTableDF.printSchema
-   
+
     Должен отобразиться следующий результат:
 
-    ![выходные данные схемы](./media/apache-spark-connect-to-sql-database/read-from-sql-schema-output.png "выходные данные схемы")
+    (./media/apache-spark-connect-to-sql-database/read-from-sql-schema-output.png "выходные данные схемы") ![вывода схемы]
 
 1. Вы также можете выполнять такие операции, как извлечение первых 10 строк.
 
@@ -121,7 +121,7 @@ ms.locfileid: "71147045"
 
     Чтобы выполнить ячейку кода, нажмите клавиши **SHIFT+ВВОД**.  
 
-1. Следующий фрагмент кода создает URL-адрес JDBC, который можно передать в API кадров данных Spark, а также объект `Properties` для хранения параметров. Вставьте фрагмент кода в ячейку кода и нажмите клавиши **SHIFT+ВВОД**, чтобы выполнить код.
+1. В следующем фрагменте кода создается URL-адрес JDBC, который можно передать в интерфейсы API "кадры данных Spark". Код создает объект `Properties` для хранения параметров. Вставьте фрагмент кода в ячейку кода и нажмите клавиши **SHIFT+ВВОД**, чтобы выполнить код.
 
        import java.util.Properties
 
@@ -150,13 +150,15 @@ ms.locfileid: "71147045"
 
     ![Подключение к базе данных SQL с помощью SSMS1](./media/apache-spark-connect-to-sql-database/connect-to-sql-db-ssms.png "Подключение к базе данных SQL с помощью SSMS1")
 
-    2\. В обозревателе объектов разверните узел "База данных SQL Azure" и "Таблица", чтобы увидеть созданную таблицу **dbo.hvactable**.
+    2\. В **обозревателе объектов**разверните базу данных SQL Azure и узел таблицы, чтобы увидеть созданную таблицу **dbo. таблицу hvactable** .
 
     ![Подключение к базе данных SQL с помощью SSMS2](./media/apache-spark-connect-to-sql-database/connect-to-sql-db-ssms-locate-table.png "Подключение к базе данных SQL с помощью SSMS2")
 
 1. Выполните запрос в SSMS для просмотра всех столбцов в таблице.
 
-        SELECT * from hvactable
+    ```sql
+    SELECT * from hvactable
+    ```
 
 ## <a name="stream-data-into-azure-sql-database"></a>Потоковая передача данных в базу данных SQL Azure
 
@@ -164,7 +166,9 @@ ms.locfileid: "71147045"
 
 1. Сначала проверьте, что таблица **hvactable** пустая. С помощью SSMS выполните следующий запрос к таблице.
 
-       TRUNCATE TABLE [dbo].[hvactable]
+    ```sql
+    TRUNCATE TABLE [dbo].[hvactable]
+    ```
 
 1. Создайте записную книжку Jupyter в кластере HDInsight Spark. Вставьте следующий фрагмент кода в ячейку кода и нажмите клавиши **SHIFT+ВВОД**.
 
@@ -182,7 +186,7 @@ ms.locfileid: "71147045"
 
 1. Выходные данные будут содержать схему файла **HVAC.csv**. В таблице **hvactable** также есть схема. В выходных данных перечислены столбцы в таблице.
 
-    ![Таблица схемы Apache Spark hdinsight](./media/apache-spark-connect-to-sql-database/hdinsight-schema-table.png "Схема таблицы")
+    схема ![таблицы схемы Apache Spark hdinsight](./media/apache-spark-connect-to-sql-database/hdinsight-schema-table.png "в таблице")
 
 1. Наконец, используйте следующий фрагмент кода, чтобы считать данные из HVAC.csv и передать их в **hvactable** в базе данных SQL Azure. Вставьте фрагмент кода в ячейку кода, замените значения заполнителей значениями для базы данных SQL Azure, а затем нажмите клавиши **SHIFT+ENTER**, чтобы выполнить код.
 
@@ -227,7 +231,9 @@ ms.locfileid: "71147045"
 
 1. Убедитесь, что данные передаются в таблицу **hvactable**, выполнив следующий запрос в SQL Server Management Studio. При каждом выполнении запроса отображется большее количество строк в таблице.
 
-        SELECT COUNT(*) FROM hvactable
+    ```sql
+    SELECT COUNT(*) FROM hvactable
+    ```
 
 ## <a name="next-steps"></a>Следующие шаги
 

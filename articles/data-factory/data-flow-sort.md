@@ -1,22 +1,22 @@
 ---
-title: 'Фабрика данных Azure, сопоставление потока данных: преобразование «Сортировка»'
-description: Фабрика данных Azure, сопоставление данных преобразование «Сортировка»
+title: Преобразование сортировки потока данных в фабрике данных Azure
+description: Преобразование сортировки данных сопоставления фабрики данных Azure
 author: kromerm
 ms.author: makromer
 ms.reviewer: douglasl
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 10/08/2018
-ms.openlocfilehash: d0482d1081c16dc89e7371c4c33de9b2bb4e4c2e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f9d2699c870de21daea9ce421c79f089c04b99fa
+ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61348391"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72029121"
 ---
-# <a name="azure-data-factory-data-flow-sort-transformations"></a>Преобразования сортировки потока данных фабрики данных Azure
+# <a name="azure-data-factory-data-flow-sort-transformations"></a>Преобразования сортировки потока данных в фабрике данных Azure
 
-[!INCLUDE [notes](../../includes/data-factory-data-flow-preview.md)]
+
 
 ![Параметры сортировки](media/data-flow/sort.png "Sort")
 
@@ -33,6 +33,6 @@ ms.locfileid: "61348391"
 
 Средство "Поток данных" Фабрики данных Azure работает в кластерах больших данных Spark, обрабатывая данные, распределенные между несколькими узлами и секциями. Это важно учитывать при разработке архитектуры потока данных, если в приложении используется преобразование сортировки для хранения данных в определенном порядке. Если вы решили повторно секционировать данные при последующим преобразовании, сортировка данных может нарушиться из-за перегруппировки данных.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-После сортировки, может потребоваться использовать [Aggregate Transformation](data-flow-aggregate.md)
+После сортировки может потребоваться использовать [Преобразование «Статистическая обработка](data-flow-aggregate.md) »

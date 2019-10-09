@@ -1,40 +1,22 @@
 ---
 title: Подписка LCS
-description: Введение в руководство по созданию подписки.
+description: Нерекомендуемая статья на CPP, связанная со статьей ПК; был «знакомство с руководством по созданию подписки».
 services: Azure, Marketplace, Cloud Partner Portal,
-author: pbutlerm
+author: ChJenk
 manager: Ricardo.Villalobos
 ms.service: marketplace
 ms.topic: conceptual
-ms.date: 09/13/2018
-ms.author: pabutler
-ms.openlocfilehash: 43d27f832d5eb456de60e86257e2be8575f94bf9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 09/30/2019
+ms.author: v-chjen
+ms.openlocfilehash: 58733bec13c99f2c871c1782d56db8304386dc44
+ms.sourcegitcommit: f9e81b39693206b824e40d7657d0466246aadd6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64935196"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72034386"
 ---
 # <a name="lcs-subscription"></a>Подписка LCS
 
-Из этого руководства вы узнаете, как создать подписку. Эта подписка предоставит тестовый клиент Microsoft Online и проект Microsoft Dynamics Lifecycle Services, в котором можно развернуть среду. Кроме того, вы настроите дополнительных пользователей в клиенте Microsoft Online и получите опыт работы со следующими возможностями администрирования службы. Вы получите следующие навыки:
+[Портал Cloud Partner](https://cloudpartner.azure.com/) больше не поддерживает создание и управление Dynamics 365 для финансовых предложений и операций. Вместо этого эта функция была перемещена на [портал центра партнеров](https://partner.microsoft.com/)Майкрософт. Дополнительные сведения см. [в статье Создание нового Dynamics 365 для операций с предложениями](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-new-operations-offer).
 
-- создание подписки и новых тестовых клиентов Microsoft Online;
-- переход к проектам службы Lifecycle Services;
-- использование функций службы Lifecycle Services;
-- добавление дополнительных пользователей в Microsoft Azure Active Directory и клиенте;
-- просмотр ресурсов в электронной почте подписки.
-
-## <a name="key-terms"></a>Основные термины
-
-**Клиент Microsoft Online Services** — это группа всех подписок и пользователей в организации. Клиент создается одновременно с первой подпиской в Microsoft Online Services.
-
-**Подписка** обеспечивает интернет-среду. Эта среда позволяет работать с операциями в Dynamics 365 в облаке, а также позволяет увидеть, как разрабатываемые настройки можно развернуть в облаке.
-
-**Microsoft Azure Active Directory** -облачной среде включает в себя Azure Active Directory (AD), которая поможет вам управлять пользователей, групп, ролей безопасности и лицензий для веб-приложений точно так же способ, управлять ими для локальной сред.
-
-**Пользователи**. Управление пользователями служб, на которые подписана организация, происходит в Azure AD. Каждого пользователя в клиенте можно добавить и назначить роли безопасности.
-
-**Разработчики и администраторы** — это пользователи, имеющие доступ к службе Lifecycle Services, которая позволяет им управлять проектами и средами. Эти пользователи также являются конечными пользователями.
-
-Дополнительные сведения см. в разделе [Sign up for preview subscriptions](https://docs.microsoft.com/dynamics365/operations/dev-itpro/dev-tools/sign-up-preview-subscription) (Регистрация в пробных версиях подписок).
+Перед созданием нового предложения Dynamics 365 для операций необходимо ознакомиться со статьей [Создание учетной записи центра партнеров](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) , а затем открыть [панель мониторинга коммерческого рынка](https://partner.microsoft.com/dashboard/directory) с выбранной страницей **обзора** . Чтобы создать предложение, следуйте инструкциям в статье [Создание новой виртуальной возможности Dynamics 365 для операций](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-new-operations-offer) .

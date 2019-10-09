@@ -12,16 +12,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 11/14/2018
+ms.date: 10/07/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b12acf083e83d42ff3e8d6967d747f4bb2d93543
-ms.sourcegitcommit: 4d177e6d273bba8af03a00e8bb9fe51a447196d0
+ms.openlocfilehash: 7241c8dfbedb24f95c29ea9e1c3f763218a5668d
+ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71960205"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72025676"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on-frequently-asked-questions"></a>Простой единый вход Azure Active Directory: Часто задаваемые вопросы
 
@@ -43,7 +43,7 @@ ms.locfileid: "71960205"
 
 Ниже приведен неполный список приложений, которые могут отправить эти параметры в Azure AD и тем самым обеспечить автоматический вход пользователей с помощью простого единого входа (то есть пользователю не требуется вводить имя пользователя или пароль):
 
-| Имя приложения | Используемый URL-адрес приложения |
+| имя приложения; | Используемый URL-адрес приложения |
 | -- | -- |
 | Панель доступа | HTTPS: \//MyApps. Microsoft. com/contoso. com |
 | Outlook on Web | HTTPS: \//Outlook. Office 365. com/contoso. com |
@@ -51,10 +51,10 @@ ms.locfileid: "71960205"
 
 Кроме того, пользователи получают возможность автоматического входа в систему, если приложение отправляет запросы на вход в конечные точки Azure AD, настроенные как клиенты, то есть HTTPS: \//Login. микрософтонлине. com/contoso. com/<.. > или HTTPS: \//Login. микрософтонлине. com/< tenant_ID >/<.. > — вместо общей конечной точки Azure AD — т. е. HTTPS: \//Login. микрософтонлине. com/Common/<... >. Ниже приведен неполный список приложений, которые выполняют такие типы запросов на вход.
 
-| Имя приложения | Используемый URL-адрес приложения |
+| имя приложения; | Используемый URL-адрес приложения |
 | -- | -- |
 | SharePoint Online | HTTPS: \//contoso. SharePoint. com |
-| портала Azure | HTTPS: \//портал. Azure. com/contoso. com |
+| Портал Azure | HTTPS: \//портал. Azure. com/contoso. com |
 
 В приведенных выше таблицах замените contoso.com своим доменным именем, чтобы получить соответствующие URL-адреса приложений для своего клиента.
 
@@ -96,7 +96,10 @@ ms.locfileid: "71960205"
    1. Вызовите `$creds = Get-Credential`. При запросе введите свои учетные данные администратора домена для нужного леса AD.
 
    > [!NOTE]
-   > Мы используем имя пользователя администратора домена, указанное в формате имени участника-пользователя (johndoe@contoso.com) или формате полного доменного имени учетной записи SAM (contoso\johndoe или contoso.com\johndoe), чтобы найти предполагаемый лес AD. Если вы используете полное доменное имя учетной записи SAM, то мы используем доменную часть имени пользователя, чтобы [найти контроллер домена администратора домена с помощью DNS](https://social.technet.microsoft.com/wiki/contents/articles/24457.how-domain-controllers-are-located-in-windows.aspx). Если же вы используете имя участника-пользователя, то мы [преобразуем его в полное доменное имя учетной записи SAM](https://docs.microsoft.com/windows/desktop/api/ntdsapi/nf-ntdsapi-dscracknamesa), прежде чем найти соответствующий контроллер домена.
+   >Имя пользователя учетных данных администратора домена необходимо указать в формате имени учетной записи SAM (contoso\johndoe или contoso. ком\жохндое). Мы используем доменную часть имени пользователя для указания контроллера домена администратора домена с помощью DNS.
+
+   >[!NOTE]
+   >Используемая учетная запись администратора домена не должна быть членом группы "защищенные пользователи". В этом случае операция завершится ошибкой.
 
    2. Вызовите `Update-AzureADSSOForest -OnPremCredentials $creds`. Эта команда обновляет ключ расшифровки Kerberos для компьютерной учетной записи `AZUREADSSOACC` в этом лесу AD и обновляет его в Azure AD.
    3. Повторите предыдущие шаги для каждого леса AD, где настроена эта функция.

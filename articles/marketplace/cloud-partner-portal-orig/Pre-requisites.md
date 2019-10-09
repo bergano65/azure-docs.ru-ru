@@ -1,40 +1,22 @@
 ---
 title: Предварительные требования для проверки приложения
-description: Список предварительных требований для проверки приложения.
+description: Устаревшая статья CPP, связанная со статьей ПК; WAS — "список предварительных требований для приложения контроль".
 services: Azure, Marketplace, Cloud Partner Portal,
-author: pbutlerm
+author: ChJenk
 manager: Ricardo.Villalobos
 ms.service: marketplace
 ms.topic: conceptual
-ms.date: 03/13/2019
-ms.author: pabutler
-ms.openlocfilehash: 0219d7e8a94dd6710c553f2133442867e39f6870
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 09/30/2019
+ms.author: v-chjen
+ms.openlocfilehash: a92d32084dd36433fdc872db66f0f375a770bfda
+ms.sourcegitcommit: f9e81b39693206b824e40d7657d0466246aadd6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64935547"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72034429"
 ---
 # <a name="prerequisites-for-application-curation"></a>Предварительные требования для проверки приложения
 
-Корпорация Майкрософт требует выполнения определенных проверок, приведенных далее.
+[Портал Cloud Partner](https://cloudpartner.azure.com/) больше не поддерживает создание и управление Dynamics 365 для финансовых предложений и операций. Вместо этого эта функция была перемещена на [портал центра партнеров](https://partner.microsoft.com/)Майкрософт. Дополнительные сведения см. [в статье Создание нового Dynamics 365 для операций с предложениями](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-new-operations-offer).
 
-- Пользовательский код партнеров\' должен соответствовать требованиям корпорации Майкрософт.
-- Пакет решений Microsoft Dynamics Lifecycle Services (LCS) может быть развернут.
-- Транзакция может быть завершена.
-
-В настоящее время партнеры должны продемонстрировать то, что код соответствует требованиям. Чтобы это сделать, они должны провести тестовое развертывание и отправить результаты в корпорацию Майкрософт. В пользовательской среде будет развернут только тот код, который был проверен\' корпорацией Майкрософт. Прежде всего партнерам необходимо выполнить следующие проверки артефактов и тесты.
-
-- Отчет по анализу кода (CAR)
-- Средство моделирования бизнес-процессов (BPM)/сценарии тестирования
-- Имя и описание проекта
-- Резервное копирование рабочей базы данных
-- Пакеты данных и пакеты данных процессов (PDP)
-- Методика
-- Двоичные файлы (необязательно)
-- Развертываемые пакеты
-- Модели (программирование и проверка)
-- Маркетинговые материалы
-
-Дополнительные сведения о технологии и требования, см. в разделе [проверки приложений для Finance and Operations](https://docs.microsoft.com/dynamics365/operations/dev-itpro/lcs-solutions/app-validation-lcs-solutions).  Кроме того, если вы еще не сделано, просмотрите [Office 365, Dynamics 365, PowerApps и Power BI предоставляют руководство по публикации](../appsource-offer-publishing-guide.md).
-
+Перед созданием нового предложения Dynamics 365 для операций необходимо ознакомиться со статьей [Создание учетной записи центра партнеров](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) , а затем открыть [панель мониторинга коммерческого рынка](https://partner.microsoft.com/dashboard/directory) с выбранной страницей **обзора** . Чтобы создать предложение, следуйте инструкциям в статье [Создание новой виртуальной возможности Dynamics 365 для операций](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-new-operations-offer) .

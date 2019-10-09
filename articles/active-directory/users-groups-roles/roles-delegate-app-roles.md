@@ -15,12 +15,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8b5479bc7f4e65f23a2e2dcf7deb91742fe50610
-ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
+ms.openlocfilehash: 1d5a29ca7ed4eb23c2e0edd4d39cc2920e779acb
+ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70382491"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72025515"
 ---
 # <a name="delegate-app-registration-permissions-in-azure-active-directory"></a>Делегирование разрешений регистрации приложения в Azure Active Directory
 
@@ -61,10 +61,10 @@ ms.locfileid: "70382491"
 
 ### <a name="to-assign-an-owner-to-an-enterprise-application"></a>Назначение владельца для корпоративного приложения
 
-1. Войдите в  [свою организацию Azure AD](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview)с помощью учетной записи, которая имеет право администратора приложения или администратора облачного приложения для Организации.
-1. На [странице](https://portal.azure.com/#blade/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/AllApps/menuId/) регистрация приложений организации выберите приложение, чтобы открыть страницу обзора для приложения.
-1. Выберите **владельцы** , чтобы просмотреть список владельцев для приложения.
-1. Выберите **Добавить** , чтобы выбрать одного или нескольких владельцев для добавления в приложение.
+1. Войдите в [организацию Azure AD](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview)@no__t — 1with учетную запись, которая подходит для администратора приложений или администратора облачных приложений для Организации.
+1. На [странице Регистрация приложений](https://portal.azure.com/#blade/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/AllApps/menuId/) for в организации выберите приложение, чтобы открыть страницу обзора для приложения.
+1. Выберите **Владельцы** для просмотра списка владельцев в приложении.
+1. Выберите **Добавить** для выбора одного или нескольких владельцев для добавления в приложение.
 
 > [!IMPORTANT]
 > Пользователи и субъекты-службы могут быть владельцами регистрации приложений. Только пользователи могут быть владельцами корпоративных приложений. Группы не могут быть назначены как владельцы.

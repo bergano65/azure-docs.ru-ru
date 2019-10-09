@@ -13,57 +13,57 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 06/25/2019
 ms.author: emalani
-ms.openlocfilehash: bca0f0de7de321060635459c4435525f650c7467
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 42ec213a191ff460b05f94dff401fbed1a3bd510
+ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67446324"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72025066"
 ---
 # <a name="create-a-xamarinforms-app-with-azure"></a>Создание приложения Xamarin.Forms в Azure
 
 [!INCLUDE [app-service-mobile-selector-get-started](../../includes/app-service-mobile-selector-get-started.md)]
 
 > [!NOTE]
-> Центр приложений Visual Studio вкладывает средства в новые и интегрированной службы, необходимые для разработки мобильных приложений. Разработчики могут использовать **построения**, **теста** и **распределить** служб для настройки конвейера непрерывной интеграции и доставки. После развертывания приложения, разработчики могут отслеживать состояние и использования их приложений с помощью **Analytics** и **диагностики** служб и общайтесь с пользователями, с помощью **Push** Служба. Разработчики также могут использовать **Auth** подлинность пользователей и **данных** службы для сохранения и синхронизировать данные приложения в облаке. Ознакомьтесь с [App Center](https://appcenter.ms/?utm_source=zumo&utm_campaign=app-service-mobile-xamarin-forms-get-started) уже сегодня.
->
+> Центр приложений Visual Studio поддерживает комплексные и интегрированные службы для разработки мобильных приложений. Разработчики могут использовать службы **сборки**, **тестирования** и **распространения** для настройки конвейера непрерывной интеграции и доставки. После развертывания приложения разработчики могут отслеживать состояние и использование своих приложений с помощью служб **аналитики** и **диагностики** , а также привлекать пользователей с помощью службы **push-уведомлений** . Разработчики также **могут использовать проверку подлинности** для аутентификации пользователей и службы **данных** , чтобы сохранять и синхронизировать данные приложений в облаке.
+> Если вы хотите интегрировать облачные службы в мобильное приложение, зарегистрируйтесь в центре приложений Center [App Center](https://appcenter.ms/?utm_source=zumo&utm_medium=Azure&utm_campaign=zumo%20doc) уже сегодня.
 
 ## <a name="overview"></a>Обзор
 В этом учебнике рассказывается, как добавить облачную серверную службу в мобильное приложение Xamarin.Forms с помощью функции "Мобильные приложения" службы приложений Azure в качестве серверной части. Вы создадите новую серверную часть при помощи функции "Мобильные приложения" и простое приложение Xamarin.Forms для списка дел, в котором в Azure хранятся данные приложения.
 
 Завершение изучения этого учебника является необходимым условием для работы со всеми другими учебниками, посвященными мобильным приложениям для приложений Xamarin.Forms.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим учебником требуется:
 
 * Активная учетная запись Azure. Если у вас нет учетной записи, можно зарегистрироваться для получения бесплатной пробной версии Azure и получить до 10 бесплатных мобильных приложений, которые можно использовать и после окончания пробного периода. Дополнительные сведения см. на странице [Создайте бесплатную учетную запись Azure уже сегодня](https://azure.microsoft.com/pricing/free-trial/).
 
-* Инструменты Visual Studio для Xamarin в Visual Studio 2017 или более поздней версии, или Visual Studio для Mac. См. в разделе [страница установки Xamarin][Install Xamarin] инструкции.
+* Инструменты Visual Studio для Xamarin, в Visual Studio 2017 или более поздней версии или Visual Studio для Mac. Инструкции см. на [странице установки Xamarin][Install Xamarin] .
 
-* (Необязательно) Чтобы создать приложение iOS, потребуется компьютер Mac с установкой Xcode 9.0 или более поздней версии. Visual Studio для Mac можно использовать для разработки приложений iOS или Visual Studio 2017 или более поздней версии можно использовать (условии, что компьютер Mac доступен в сети).
+* (Необязательно) Чтобы создать приложение iOS, потребуется компьютер Mac с установкой Xcode 9.0 или более поздней версии. Visual Studio для Mac можно использовать для разработки приложений iOS, можно использовать Visual Studio 2017 или более поздней версии (если компьютер Mac доступен в сети).
 
 ## <a name="create-a-new-mobile-apps-back-end"></a>Создание серверной части при помощи функции "Мобильные приложения"
 [!INCLUDE [app-service-mobile-dotnet-backend-create-new-service](../../includes/app-service-mobile-dotnet-backend-create-new-service.md)]
 
-## <a name="create-a-database-connection-and-configure-the-client-and-server-project"></a>Создание подключения к базе данных и настройка проекта клиента и сервера
+## <a name="create-a-database-connection-and-configure-the-client-and-server-project"></a>Создание подключения к базе данных и настройка клиентского и серверного проекта
 [!INCLUDE [app-service-mobile-configure-new-backend.md](../../includes/app-service-mobile-configure-new-backend.md)]
 
-## <a name="run-the-xamarinforms-solution"></a>Запуск решения Xamarin.Forms
+## <a name="run-the-xamarinforms-solution"></a>Запуск решения Xamarin. Forms
 
-В Visual Studio Tools для Xamarin, требуется, чтобы открыть решение, см. в разделе [инструкции по установке Xamarin][Install Xamarin]. Если эти инструменты уже установлены, сделайте следующее, чтобы скачать и открыть решение:
+Инструменты Visual Studio для Xamarin требуется открыть решение, см. [инструкции по установке Xamarin][Install Xamarin]. Если эти инструменты уже установлены, сделайте следующее, чтобы скачать и открыть решение:
 
 ### <a name="visual-studio-windows-and-mac"></a>Visual Studio (Windows и Mac)
 
-1. Перейдите к [портала Azure](https://portal.azure.com/) и перейдите к мобильное приложение, которое вы создали. На `Overview` колонке найдите URL-адрес, который является общедоступной конечной точки для мобильного приложения. Пример - sitename для моей имя приложения «test123» будет https://test123.azurewebsites.net.
+1. Перейдите к [портал Azure](https://portal.azure.com/) и перейдите к созданному вами мобильному приложению. В колонке `Overview` найдите URL-адрес, который является общедоступной конечной точкой для мобильного приложения. Пример. имя сайта для имени моего приложения "test123" будет https://test123.azurewebsites.net.
 
-2. Откройте файл `Constants.cs` в этой папке - xamarin.forms/ZUMOAPPNAME. Имя приложения — `ZUMOAPPNAME`.
+2. Откройте файл `Constants.cs` в этой папке — Xamarin. Forms/ЗУМОАППНАМЕ. Имя приложения — `ZUMOAPPNAME`.
 
-3. В `Constants.cs` класса, замените `ZUMOAPPURL` переменной с общедоступной конечной точки выше.
+3. В классе `Constants.cs` Замените переменную `ZUMOAPPURL` общедоступной конечной точкой выше.
 
     `public static string ApplicationURL = @"ZUMOAPPURL";`
 
-    становится
+    обретает
 
     `public static string ApplicationURL = @"https://test123.azurewebsites.net";`
     

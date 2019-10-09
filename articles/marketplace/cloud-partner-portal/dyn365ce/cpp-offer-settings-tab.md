@@ -1,42 +1,21 @@
 ---
-title: Dynamics 365 для вкладки параметров предложения служб взаимодействия клиента | Azure Marketplace
-description: Узнайте, как настроить предложение приложения Dynamics 365 for Customer Engagement в AppSource Marketplace.
+title: Вкладка параметров для предложения "Dynamics 365 для служб взаимодействия клиентов" | Azure Marketplace
+description: Устаревшая статья CPP, связанная со статьей ПК; WAS "настроил параметры предложения для предложения приложения Dynamics 365 для служб взаимодействия с клиентами в AppSource Marketplace".
 services: Dynamics 365 for Customer Engagement Offer, Azure, Marketplace, Cloud Partner Portal, AppSource
-author: v-miclar
+author: ChJenk
 ms.service: marketplace
 ms.topic: conceptual
-ms.date: 04/24/2019
-ms.author: pabutler
-ms.openlocfilehash: 219a69632fe29b1d756702d97804613021b57006
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 09/30/2019
+ms.author: v-chjen
+ms.openlocfilehash: 71cea44a428fe9eca40ac70e56e6e0a80362115a
+ms.sourcegitcommit: f9e81b39693206b824e40d7657d0466246aadd6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64942445"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72033893"
 ---
 # <a name="dynamics-365-for-customer-engagement-offer-settings-tab"></a>Вкладка "Параметры предложения" Dynamics 365 for Customer Engagement
 
-В этой статье описывается, как настроить параметры предложения для приложения Dynamics 365 for Customer Engagement.
+[Портал Cloud Partner](https://cloudpartner.azure.com/) больше не поддерживает создание и Управление предложениями по взаимодействию с клиентом Dynamics 365. Вместо этого эта функция была перемещена на [портал центра партнеров](https://partner.microsoft.com/)Майкрософт. Дополнительные сведения см. [в статье Создание нового Dynamics 365 для участия клиентов & PowerApps](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-new-customer-engagement-offer).
 
-Открывается страница **Dynamics 365 for Customer Engagement** > **Новое предложение** с фокусом на вкладке **Параметры предложения**.  Символ звездочки (*) после имени поля указывает, что оно является обязательным.
-
-![Вкладка "Параметры предложения" для Dynamics 365 for Customer Engagement](./media/dyn365ce-offer-settings-tab.png)
-
-
-## <a name="offer-settings-fields"></a>Поля параметров предложения
-
-В следующей таблице описаны поля этой вкладки. Обязательные поля помечены звездочкой (*).
-
-|    Поле         |       Описание                                                            |
-|  ---------       |     ---------------                                                          |
-| **Идентификатор предложения\***   | Уникальный идентификатор предложения (в профиле издателя). Он будет отображаться в URL-адресах продукта и отчетах о полезных сведениях. Его максимальная длина — 50 символов (можно использовать строчные буквы, цифры и дефисы (-)). (Идентификатор не может заканчиваться дефисом.) **Примечание.** Это поле нельзя изменить после активации предложения, так как оно привязано к базовому URL-адресу Marketplace предложения.  |
-| **Идентификатор издателя\***  | Уникальный идентификатор организации в Azure Marketplace. Для всех предложений необходимо указывать свой идентификатор издателя. Это значение нельзя изменить после сохранения предложения. |
-| **Имя\***       | Отображаемое имя для предложения. Это имя отображается в AppSource Marketplace. Его длина не должна превышать 50 символов. Рекомендовано использовать для своего продукта узнаваемое название торговой марки. Не указывайте название своей организации в том случае, если ваш продукт не продается. Если вы продаете это предложение на других веб-сайтах и в ​​публикациях, убедитесь, что имя во всех публикациях одинаково. |
-|  |  |
-
-Нажмите кнопку **Сохранить**, чтобы сохранить параметры предложения.
-
-
-## <a name="next-steps"></a>Дальнейшие действия
-
-Используйте вкладку "Техническая информация", чтобы настроить сведения о пакетах и приложениях для вашего предложения. Дополнительные сведения см. [здесь](./cpp-technical-info-tab.md).
+Перед созданием нового предложения по работе с клиентом Dynamics 365 для участия в нем следует ознакомиться со статьей [Создание учетной записи центра партнеров](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) , а затем открыть [панель мониторинга коммерческого рынка](https://partner.microsoft.com/dashboard/directory) с выбранной страницей **обзора** . Чтобы создать предложение, следуйте инструкциям в статье [Создание нового Dynamics 365 для участия клиентов & PowerApps](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-new-customer-engagement-offer) .

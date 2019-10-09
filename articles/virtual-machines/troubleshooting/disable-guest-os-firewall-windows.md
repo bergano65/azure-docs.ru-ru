@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.devlang: azurecli
 ms.date: 11/22/2018
 ms.author: delhan
-ms.openlocfilehash: 9ae8620b803fa9a911f44840a5fff5d190a316a1
-ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
+ms.openlocfilehash: 6883d046078b5dccd2f1e83e87b41ca83edc92e3
+ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71086532"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72030604"
 ---
 # <a name="disable-the-guest-os-firewall-in-azure-vm"></a>Отключение брандмауэра гостевой ОС на виртуальной машине Azure
 
@@ -92,7 +92,7 @@ ms.locfileid: "71086532"
 
 1.  На виртуальной машине для устранения неполадок запустите редактор реестра и выберите **Файл** > **Подключить сетевой реестр**.
 
-2.  Откройте ветвь  *ИМЯ_ЦЕЛЕВОГО_КОМПЬЮТЕРА*\SYSTEM и укажите следующие значения:
+2.  Откройте ветвь \SYSTEM *целевого компьютера*и укажите следующие значения:
 
     ```
     <TARGET MACHINE>\SYSTEM\CurrentControlSet\services\SharedAccess\Parameters\FirewallPolicy\DomainProfile\EnableFirewall           -->        0 
@@ -102,13 +102,13 @@ ms.locfileid: "71086532"
 
 3.  Перезапустите службу. Это нельзя сделать с помощью удаленного реестра, поэтому используйте консоль удаления службы.
 
-4.  Откройте экземпляр  **Services.msc**.
+4.  Откройте экземпляр **Services. msc**.
 
 5.  Щелкните элемент **Службы (локальные)** .
 
 6.  Выберите **Connect to another computer** (Подключение к другому компьютеру).
 
-7.  Введите  **частный IP-адрес**  проблемной виртуальной машины.
+7.  Введите **частный IP-адрес (DIP)** проблемы виртуальной машины.
 
 8.  Перезапустите политику локального брандмауэра.
 

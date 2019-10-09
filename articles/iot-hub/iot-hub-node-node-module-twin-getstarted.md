@@ -9,12 +9,12 @@ services: iot-hub
 ms.devlang: nodejs
 ms.topic: conceptual
 ms.date: 04/26/2018
-ms.openlocfilehash: 3796017af643c993871757482ed17d1765cd6494
-ms.sourcegitcommit: b7b0d9f25418b78e1ae562c525e7d7412fcc7ba0
+ms.openlocfilehash: e33987d382a2afd93644a413084339fcd330d2e2
+ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/08/2019
-ms.locfileid: "70802418"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72029714"
 ---
 # <a name="get-started-with-iot-hub-module-identity-and-module-twin-nodejs"></a>Приступая к работе с удостоверением модуля центра Интернета вещей и модулем двойника (Node. js)
 
@@ -54,9 +54,9 @@ ms.locfileid: "70802418"
 
 1. Создайте каталог для размещения файлов с кодом.
 
-2. Выполните в этом каталоге команду **npm init -y** для создания пустого файла package.json со значениями по умолчанию. Это файл проекта, в котором будет содержаться код.
+2. Выполните в этом каталоге команду **npm init -y**, чтобы создать пустой файл package.json со значениями по умолчанию. Это файл проекта, в котором будет содержаться код.
 
-3. Запустите **NPM Install-S Azure-iothub\@modules-Preview** , чтобы установить пакет SDK для службы в подкаталог **node_modules** .
+3. Запустите **NPM Install-S Azure-iothub @ no__t-1modules-Preview** , чтобы установить пакет SDK для службы в подкаталог **node_modules** .
 
     > [!NOTE]
     > Слово module в имени подкаталога node_modules обозначает "библиотеку узла". Он не имеет никакого отношения к модулям Центра Интернета вещей.
@@ -133,7 +133,7 @@ ms.locfileid: "70802418"
 
    ![Сведения о модуле на портале Azure](./media/iot-hub-node-node-module-twin-getstarted/module-detail.png)
 
-2. Как и на предыдущем шаге, создайте каталог для кода устройства и используйте NPM для его инициализации и установки пакета SDK для устройства (**NPM Install-S Azure-IOT-Device-AMQP\@modules-Preview**).
+2. Как и на предыдущем шаге, создайте каталог для кода устройства и используйте NPM для его инициализации и установки пакета SDK для устройства (**NPM Install-S Azure-IOT-Device-AMQP @ no__t-1modules-Preview**).
 
    > [!NOTE]
    > Команда npm install может показаться довольно медленной. Не спешите, ведь ей нужно извлечь большой объем кода из репозитория пакетов.
@@ -192,7 +192,7 @@ ms.locfileid: "70802418"
     });
     ```
 
-4. Теперь запустите этот файл командой **node twin.js**.
+4. Теперь запустите этот файл командой **node twin.js**.
 
    ```cmd/sh
    F:\temp\module_twin>node twin.js

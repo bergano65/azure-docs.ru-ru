@@ -8,16 +8,16 @@ ms.topic: include
 ms.date: 5/30/2019
 ms.author: jingwang
 ms.custom: include file
-ms.openlocfilehash: c92bb8b2adb3e91e691e9fd1c17a7ee43e84fd11
-ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
+ms.openlocfilehash: 6dc846ab6af0ed4d6d48c6f6db0abbce06427c36
+ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "68362612"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72035889"
 ---
 Фабрика данных Azure — это многоклиентская служба, которая имеет следующие ограничения по умолчанию, чтобы гарантировать защиту подписок клиентов от рабочих нагрузок друг друга. Чтобы увеличить предел до максимального значения для подписки, обратитесь в службу поддержки.
 
-### <a name="version-2"></a>Версия 2
+### <a name="version-2"></a>версия 2
 
 | Resource | Ограничение по умолчанию | Максимальное ограничение |
 | -------- | ------------- | ------------- |
@@ -27,7 +27,7 @@ ms.locfileid: "68362612"
 | Параллельное выполнение конвейера на фабрику данных, которая совместно используется всеми конвейерами в фабрике | 10 000  | [Обратитесь в службу поддержки](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
 | Параллельное выполнение внешних действий на подписку на [Azure Integration Runtime регион](../articles/data-factory/concepts-integration-runtime.md#integration-runtime-location)<br><small>Управление внешними действиями осуществляется в среде выполнения интеграции, но выполняется на связанных службах, включая кирпичы, хранимые процедуры, HDInsight и т. д.</small> | 3000 | [Обратитесь в службу поддержки](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
 | Параллельные выполнения действий конвейера на одну подписку на [Azure Integration Runtime регион](../articles/data-factory/concepts-integration-runtime.md#integration-runtime-location) <br><small>Действия конвейера выполняются в среде выполнения интеграции, включая уточняющие запросы, метаданные и удаление.</small>| 1000 | [Обратитесь в службу поддержки](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
-| Параллельные операции создания для каждой подписки на [Azure Integration Runtime регион](../articles/data-factory/concepts-integration-runtime.md#integration-runtime-location)<br><small>В том числе проверить подключение, просмотреть список папок и список таблиц, просмотреть данные. | 200 | [Обратитесь в службу поддержки](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
+| Параллельные операции создания для каждой подписки на [Azure Integration Runtime регион](../articles/data-factory/concepts-integration-runtime.md#integration-runtime-location)<br><small>Including проверить подключение, просмотреть список папок и список таблиц, просмотреть данные. | 200 | [Обратитесь в службу поддержки](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
 | Одновременные единицы интеграции данных<sup>1</sup> потребление на подписку на один [регион Azure Integration Runtime](../articles/data-factory/concepts-integration-runtime.md#integration-runtime-location)| Группа регионов 1<sup>2</sup>: 6000<br>Группа регионов 2<sup>2</sup>: 3000<br>Группа регионов 3<sup>2</sup>: 1500 | [Обратитесь в службу поддержки](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
 | Максимальное число действий на конвейер, включая внутренние действия для контейнеров | 40 | 40 |
 | Максимальное количество связанных сред выполнения интеграции, которые могут быть созданы для одной локальной среды выполнения интеграции | 100 | [Обратитесь в службу поддержки](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
@@ -44,6 +44,10 @@ ms.locfileid: "68362612"
 | Количество вызовов API чтения | 12 500/ч<br/><br/> Это ограничение накладывается Azure Resource Manager, а не фабрикой данных Azure. | [Обратитесь в службу поддержки](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
 | Мониторинг запросов в минуту | 1000 | [Обратитесь в службу поддержки](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
 | Операции CRUD с сущностями в минуту | 50 | [Обратитесь в службу поддержки](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
+| Максимальное время сеанса отладки потока данных | 8 часов | 8 часов |
+| Число параллельных потоков данных на фабрику | 50 | [Обратитесь в службу поддержки](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
+| Число параллельных сеансов отладки потока данных на одного пользователя на фабрику | 3 | 3 |
+| Предельный срок жизни Azure IR потока данных | 4 часа | [Обратитесь в службу поддержки](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
 
 <sup>1</sup> единица интеграции данных (Диу) используется в операции копирования из облака в облако. Дополнительные сведения см. в статье [единицы интеграции данных (версия 2)](../articles/data-factory/copy-activity-performance.md#data-integration-units). Сведения о выставлении счетов см. на странице [цен на фабрику данных Azure](https://azure.microsoft.com/pricing/details/data-factory/).
 
@@ -57,7 +61,7 @@ ms.locfileid: "68362612"
 
 <sup>3</sup> конвейер, набор данных и объекты связанной службы представляют логическую группировку рабочей нагрузки. Ограничения для этих объектов не связаны с объемом данных, которые можно перемещать и обрабатывать с помощью фабрики данных Azure. Фабрика данных предназначена для масштабирования для обработки петабайтов данных.
 
-### <a name="version-1"></a>Версия 1
+### <a name="version-1"></a>версия 1
 
 | **Ресурс** | **Ограничение по умолчанию** | **Максимальное ограничение** |
 | --- | --- | --- |
@@ -80,8 +84,8 @@ ms.locfileid: "68362612"
 | **Ресурс** | **Нижнее ограничение по умолчанию** | **Минимальное ограничение** |
 | --- | --- | --- |
 | Интервал планирования |15 минут |15 минут |
-| Интервал между повторными попытками |1 с |1 с |
-| Значение времени ожидания повтора |1 с |1 с |
+| Интервал между повторными попытками |1 с |1 с |
+| Значение времени ожидания повтора |1 с |1 с |
 
 #### <a name="web-service-call-limits"></a>Ограничения вызова веб-служб
 Для Azure Resource Manager действуют ограничения для вызовов API. Можно вызывать API с частотой, соответствующей [ограничениям API диспетчера ресурсов Azure](../articles/azure-subscription-service-limits.md#resource-group-limits).

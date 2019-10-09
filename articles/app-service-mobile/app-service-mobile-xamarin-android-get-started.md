@@ -14,19 +14,19 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 06/25/2019
 ms.author: emalani
-ms.openlocfilehash: eed900ee54f62056eceeb35a43a4ba6526b049ca
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: a94b302ad813094cb4ce67e4bffc3dd43586366b
+ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67447091"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72027040"
 ---
 # <a name="create-a-xamarinandroid-app"></a>Создание приложения Xamarin.Android
 [!INCLUDE [app-service-mobile-selector-get-started](../../includes/app-service-mobile-selector-get-started.md)]
 
 > [!NOTE]
-> Центр приложений Visual Studio вкладывает средства в новые и интегрированной службы, необходимые для разработки мобильных приложений. Разработчики могут использовать **построения**, **теста** и **распределить** служб для настройки конвейера непрерывной интеграции и доставки. После развертывания приложения, разработчики могут отслеживать состояние и использования их приложений с помощью **Analytics** и **диагностики** служб и общайтесь с пользователями, с помощью **Push** Служба. Разработчики также могут использовать **Auth** подлинность пользователей и **данных** службы для сохранения и синхронизировать данные приложения в облаке. Ознакомьтесь с [App Center](https://appcenter.ms/?utm_source=zumo&utm_campaign=app-service-mobile-xamarin-android-get-started) уже сегодня.
->
+> Центр приложений Visual Studio поддерживает комплексные и интегрированные службы для разработки мобильных приложений. Разработчики могут использовать службы **сборки**, **тестирования** и **распространения** для настройки конвейера непрерывной интеграции и доставки. После развертывания приложения разработчики могут отслеживать состояние и использование своих приложений с помощью служб **аналитики** и **диагностики** , а также привлекать пользователей с помощью службы **push-уведомлений** . Разработчики также **могут использовать проверку подлинности** для аутентификации пользователей и службы **данных** , чтобы сохранять и синхронизировать данные приложений в облаке.
+> Если вы хотите интегрировать облачные службы в мобильное приложение, зарегистрируйтесь в центре приложений Center [App Center](https://appcenter.ms/?utm_source=zumo&utm_medium=Azure&utm_campaign=zumo%20doc) уже сегодня.
 
 ## <a name="overview"></a>Обзор
 В этом руководстве показано, как добавить облачную серверную службу в приложение Xamarin.Android. Дополнительные сведения см. в статье [Что такое мобильные приложения?](app-service-mobile-value-prop.md).
@@ -37,7 +37,7 @@ ms.locfileid: "67447091"
 
 Завершение изучения этого учебника является необходимым условием для работы со всеми другими учебниками, посвященными мобильным приложениям для приложений Xamarin.Android.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 Для работы с данным руководством вам потребуется:
 
 * Активная учетная запись Azure. Если у вас еще нет учетной записи, зарегистрируйтесь для использования пробной версии Azure и получите до 10 бесплатных мобильных приложений. Дополнительные сведения см. в разделе [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/).
@@ -50,21 +50,21 @@ ms.locfileid: "67447091"
 
 Итак, вы подготовили серверную часть мобильного Azure, которая может использоваться мобильными клиентскими приложениями. Теперь скачайте серверный проект со списком простых задач и опубликуйте его в Azure.
 
-## <a name="create-a-database-connection-and-configure-the-client-and-server-project"></a>Создание подключения к базе данных и настройка проекта клиента и сервера
+## <a name="create-a-database-connection-and-configure-the-client-and-server-project"></a>Создание подключения к базе данных и настройка клиентского и серверного проекта
 [!INCLUDE [app-service-mobile-configure-new-backend.md](../../includes/app-service-mobile-configure-new-backend.md)]
 
-## <a name="run-the-xamarinandroid-app"></a>Запуск приложения Xamarin.Android
-1. Откройте проект Xamarin.Android.
+## <a name="run-the-xamarinandroid-app"></a>Запуск приложения Xamarin. Android
+1. Откройте проект Xamarin. Android.
 
-2. Перейдите к [портала Azure](https://portal.azure.com/) и перейдите к мобильное приложение, которое вы создали. На `Overview` колонке найдите URL-адрес, который является общедоступной конечной точки для мобильного приложения. Пример - sitename для моей имя приложения «test123» будет https://test123.azurewebsites.net.
+2. Перейдите к [портал Azure](https://portal.azure.com/) и перейдите к созданному вами мобильному приложению. В колонке `Overview` найдите URL-адрес, который является общедоступной конечной точкой для мобильного приложения. Пример. имя сайта для имени моего приложения "test123" будет https://test123.azurewebsites.net.
 
-3. Откройте файл `ToDoActivity.cs` в этой папке - xamarin.android/ZUMOAPPNAME/ToDoActivity.cs. Имя приложения — `ZUMOAPPNAME`.
+3. Откройте файл `ToDoActivity.cs` в этой папке — Xamarin. Android/ЗУМОАППНАМЕ/ToDoActivity. cs. Имя приложения — `ZUMOAPPNAME`.
 
-4. В `ToDoActivity` класса, замените `ZUMOAPPURL` переменной с общедоступной конечной точки выше.
+4. В классе `ToDoActivity` Замените переменную `ZUMOAPPURL` общедоступной конечной точкой выше.
 
     `const string applicationURL = @"ZUMOAPPURL";`
 
-    становится
+    обретает
     
     `const string applicationURL = @"https://test123.azurewebsites.net";`
     

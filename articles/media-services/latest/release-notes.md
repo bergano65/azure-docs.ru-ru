@@ -11,12 +11,12 @@ ms.workload: na
 ms.topic: article
 ms.date: 09/06/2019
 ms.author: juliako
-ms.openlocfilehash: 618aa58fe8553789c831ca933ae6be73843b93dd
-ms.sourcegitcommit: b7b0d9f25418b78e1ae562c525e7d7412fcc7ba0
+ms.openlocfilehash: 2d01828cb61937b45665e953a13795b5346a5f1b
+ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/08/2019
-ms.locfileid: "70801392"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72030532"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Заметки о выпуске Служб мультимедиа Azure версии 3
 
@@ -34,7 +34,7 @@ ms.locfileid: "70801392"
 
 Дополнительные сведения см. в статье [Руководство по миграции из версии 2 в версию 3 Служб мультимедиа](migrate-from-v2-to-v3.md#known-issues).
 
-## <a name="september-2019"></a>Сентябрь 2019 г.
+## <a name="september-2019"></a>Сентябрь 2019 г.
 
 Службы мультимедиа v3 сообщают о предварительной версии в 24 часа x 365 дней в реальном времени в реальном времени.
  
@@ -275,4 +275,5 @@ ms.locfileid: "70801392"
 
 ## <a name="next-steps"></a>Следующие шаги
 
-[Обзор](media-services-overview.md)
+- [Обзор](media-services-overview.md)
+- [Заметки о выпуске служб мультимедиа версии 2](../previous/media-services-release-notes.md)

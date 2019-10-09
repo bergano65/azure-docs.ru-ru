@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/23/2019
 ms.author: rkarlin
-ms.openlocfilehash: 9d85b5a72c2e37719348d61250d167eb9a5688a1
-ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
+ms.openlocfilehash: e7dc1e6c1bb1ca81ada59cb3dae8fecbc6452b7f
+ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71240022"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72029787"
 ---
 # <a name="connect-data-from-microsoft-web-application-firewall"></a>Подключение данных из брандмауэра веб-приложения Майкрософт
 
@@ -40,10 +40,10 @@ ms.locfileid: "71240022"
     
 1. На портале Sentinel Azure выберите **соединители данных**.
 1. На странице соединители данных выберите плитку **WAF** .
-1. Перейдите к [ресурсу шлюза приложений](https://ms.portal.azure.com/#blade/HubsExtension/BrowseAllResourcesBlade/resourceType/Microsoft.Network%2FapplicationGateways)и выберите свой WAF.
-    1. Выберите **параметры диагностики**.
-    1. Выберите **+ Добавить параметр диагностики** в таблице.
-    1. На странице **параметры диагностики** введите **имя** и выберите **отправить в log Analytics**.
+1. Перейдите к [ресурсу шлюза приложений](https://ms.portal.azure.com/#blade/HubsExtension/BrowseAllResourcesBlade/resourceType/Microsoft.Network%2FapplicationGateways)@no__t — 1and выберите свой WAF.
+    1. Выберите **Параметры диагностики**.
+    1. Выберите **+ Добавить параметр диагностики** в таблице.
+    1. На странице **параметры диагностики** введите **имя** и выберите **отправить в log Analytics**.
     1. В разделе **log Analytics Рабочая область** выберите рабочую область "Sentinel Azure".
     1. Выберите типы журналов, которые необходимо проанализировать. Мы рекомендуем: ApplicationGatewayAccessLog и ApplicationGatewayFirewallLog.
 1. Чтобы использовать соответствующую схему в Log Analytics для оповещений брандмауэра веб-приложения Майкрософт, выполните поиск по запросу **AzureDiagnostics**.

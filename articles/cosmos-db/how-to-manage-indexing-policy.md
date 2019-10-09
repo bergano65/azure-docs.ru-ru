@@ -4,14 +4,14 @@ description: Узнайте, как управлять политиками ин
 author: ThomasWeiss
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 09/10/2019
+ms.date: 09/28/2019
 ms.author: thweiss
-ms.openlocfilehash: ede4266457aaa76bdd9f1141df5c2981bb722326
-ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
+ms.openlocfilehash: 46d0124eb701b0c2d779a96c8efd50ba43e8fc07
+ms.sourcegitcommit: f9e81b39693206b824e40d7657d0466246aadd6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70915904"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72034449"
 ---
 # <a name="manage-indexing-policies-in-azure-cosmos-db"></a>Управление политиками индексирования в Azure Cosmos DB
 
@@ -42,7 +42,7 @@ ms.locfileid: "70915904"
     }
 ```
 
-Эта политика индексирования эквивалентна приведенной ниже таблице, в ```kind```которой ```dataType```вручную устанавливаются, и ```precision``` в значения по умолчанию. Эти свойства больше не нужны для явной установки, и их можно полностью опустить в политике индексирования (как показано в примере выше).
+Эта политика индексирования эквивалентна той, которую вручную задает значения по умолчанию ```kind```, ```dataType``` и ```precision```. Эти свойства больше не нужны для явной установки, и их можно полностью опустить в политике индексирования (как показано в примере выше).
 
 ```json
     {
@@ -96,7 +96,7 @@ ms.locfileid: "70915904"
     }
 ```
 
-Эта политика индексирования эквивалентна приведенной ниже таблице, в ```kind```которой ```dataType```вручную устанавливаются, и ```precision``` в значения по умолчанию. Эти свойства больше не нужны для явной установки, и их можно полностью опустить в политике индексирования (как показано в примере выше).
+Эта политика индексирования эквивалентна той, которую вручную задает значения по умолчанию ```kind```, ```dataType``` и ```precision```. Эти свойства больше не нужны для явной установки, и их можно полностью опустить в политике индексирования (как показано в примере выше).
 
 ```json
     {
@@ -320,7 +320,7 @@ WHERE c.name = "Tim" AND c.age > 18
 
 ### <a name="no-indexing"></a>Без индексирования
 
-Эта политика отключит индексирование. Если `indexingMode` параметр имеет `none`значение, то нельзя задать TTL для контейнера.
+Эта политика отключит индексирование. Если `indexingMode` имеет значение `none`, нельзя задать TTL для контейнера.
 
 ```json
     {
@@ -334,6 +334,7 @@ WHERE c.name = "Tim" AND c.age > 18
 
 - на портале Azure;
 - с помощью Azure CLI;
+- Использование PowerShell
 - с помощью одного из пакетов SDK.
 
 [Обновление политики индексирования](index-policy.md#modifying-the-indexing-policy) приводит к преобразованию индекса. Ход выполнения этого преобразования можно отслеживать с помощью пакетов SDK.
@@ -361,60 +362,30 @@ WHERE c.name = "Tim" AND c.age > 18
 
 ## <a name="use-the-azure-cli"></a>Использование Azure CLI
 
-Команда [az cosmosdb collection update](/cli/azure/cosmosdb/collection#az-cosmosdb-collection-update) в Azure CLI позволяет заменить определение JSON политики индексирования контейнера.
+Сведения о создании контейнера с пользовательской политикой индексации см. в разделе [Создание контейнера с настраиваемой политикой индексов с помощью интерфейса командной строки](manage-with-cli.md#create-a-container-with-a-custom-index-policy) .
 
-```azurecli-interactive
-az cosmosdb collection update \
-    --resource-group-name $resourceGroupName \
-    --name $accountName \
-    --db-name $databaseName \
-    --collection-name $containerName \
-    --indexing-policy "{\"indexingMode\": \"consistent\", \"includedPaths\": [{ \"path\": \"/*\", \"indexes\": [{ \"dataType\": \"String\", \"kind\": \"Range\" }] }], \"excludedPaths\": [{ \"path\": \"/headquarters/employees/?\" } ]}"
-```
+## <a name="use-powershell"></a>Использование PowerShell
+
+Сведения о создании контейнера с пользовательской политикой индексации см. в разделе [Создание контейнера с настраиваемой политикой индексов с помощью PowerShell](manage-with-powershell.md#create-container-custom-index) .
 
 ## <a name="use-the-net-sdk-v2"></a>Использование пакета SDK для .NET версии 2
 
-Объект `DocumentCollection` из [пакета SDK для .NET версии 2](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/) (его использование описано в [этом кратком руководстве](create-sql-api-dotnet.md)) предоставляет свойство `IndexingPolicy`, которое позволяет изменить `IndexingMode` и добавить или удалить `IncludedPaths` и `ExcludedPaths`.
-
-Получение сведений о контейнере
+Объект `DocumentCollection` из [пакета SDK .NET версии 2](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/) предоставляет свойство `IndexingPolicy`, которое позволяет изменить `IndexingMode`, а также добавить или удалить `IncludedPaths` и `ExcludedPaths`.
 
 ```csharp
+// Retrieve the container's details
 ResourceResponse<DocumentCollection> containerResponse = await client.ReadDocumentCollectionAsync(UriFactory.CreateDocumentCollectionUri("database", "container"));
-```
-
-Установить режим индексирования "последовательный"
-
-```csharp
+// Set the indexing mode to consistent
 containerResponse.Resource.IndexingPolicy.IndexingMode = IndexingMode.Consistent;
-```
-
-Добавление включаемого пути
-
-```csharp
-containerResponse.Resource.IndexingPolicy.IncludedPaths.Add(new IncludedPath { Path = "/age/*" });
-```
-
-Добавление исключенного пути
-
-```csharp
+// Add an included path
+containerResponse.Resource.IndexingPolicy.IncludedPaths.Add(new IncludedPath { Path = "/*" });
+// Add an excluded path
 containerResponse.Resource.IndexingPolicy.ExcludedPaths.Add(new ExcludedPath { Path = "/name/*" });
-```
-
-Добавление пространственного индекса
-
-```csharp
+// Add a spatial index
 containerResponse.Resource.IndexingPolicy.SpatialIndexes.Add(new SpatialSpec() { Path = "/locations/*", SpatialTypes = new Collection<SpatialType>() { SpatialType.Point } } );
-```
-
-Добавление составного индекса
-
-```csharp
+// Add a composite index
 containerResponse.Resource.IndexingPolicy.CompositeIndexes.Add(new Collection<CompositePath> {new CompositePath() { Path = "/name", Order = CompositePathSortOrder.Ascending }, new CompositePath() { Path = "/age", Order = CompositePathSortOrder.Descending }});
-```
-
-Обновление контейнера с изменениями
-
-```csharp
+// Update container with changes
 await client.ReplaceDocumentCollectionAsync(containerResponse.Resource);
 ```
 
@@ -427,73 +398,117 @@ ResourceResponse<DocumentCollection> container = await client.ReadDocumentCollec
 long indexTransformationProgress = container.IndexTransformationProgress;
 ```
 
+## <a name="use-the-net-sdk-v3"></a>Использование пакета SDK для .NET v3
+
+Объект `ContainerProperties` из [пакета SDK .NET v3](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/) (см. [это краткое руководство](create-sql-api-dotnet.md) по использованию) предоставляет свойство `IndexingPolicy`, которое позволяет изменить `IndexingMode`, а также добавить или удалить `IncludedPaths` и `ExcludedPaths`.
+
+```csharp
+// Retrieve the container's details
+ContainerResponse containerResponse = await client.GetContainer("database", "container").ReadContainerAsync();
+// Set the indexing mode to consistent
+containerResponse.Resource.IndexingPolicy.IndexingMode = IndexingMode.Consistent;
+// Add an included path
+containerResponse.Resource.IndexingPolicy.IncludedPaths.Add(new IncludedPath { Path = "/*" });
+// Add an excluded path
+containerResponse.Resource.IndexingPolicy.ExcludedPaths.Add(new ExcludedPath { Path = "/name/*" });
+// Add a spatial index
+SpatialPath spatialPath = new SpatialPath
+{
+    Path = "/locations/*"
+};
+spatialPath.SpatialTypes.Add(SpatialType.Point);
+containerResponse.Resource.IndexingPolicy.SpatialIndexes.Add(spatialPath);
+// Add a composite index
+containerResponse.Resource.IndexingPolicy.CompositeIndexes.Add(new Collection<CompositePath> { new CompositePath() { Path = "/name", Order = CompositePathSortOrder.Ascending }, new CompositePath() { Path = "/age", Order = CompositePathSortOrder.Descending } });
+// Update container with changes
+await client.GetContainer("database", "container").ReplaceContainerAsync(containerResponse.Resource);
+```
+
+Чтобы отслеживать ход преобразования индекса, передайте объект `RequestOptions`, который задает для свойства `PopulateQuotaInfo` значение `true`, а затем извлеките значения из заголовка ответа `x-ms-documentdb-collection-index-transformation-progress`.
+
+```csharp
+// retrieve the container's details
+ContainerResponse containerResponse = await client.GetContainer("database", "container").ReadContainerAsync(new ContainerRequestOptions { PopulateQuotaInfo = true });
+// retrieve the index transformation progress from the result
+long indexTransformationProgress = long.Parse(containerResponse.Headers["x-ms-documentdb-collection-index-transformation-progress"]);
+```
+
+При определении пользовательской политики индексирования при создании нового контейнера API-интерфейс V3's Fluent пакета SDK позволяет быстро и эффективно писать это определение:
+
+```csharp
+await client.GetDatabase("database").DefineContainer(name: "container", partitionKeyPath: "/myPartitionKey")
+    .WithIndexingPolicy()
+        .WithIncludedPaths()
+            .Path("/*")
+        .Attach()
+        .WithExcludedPaths()
+            .Path("/name/*")
+        .Attach()
+        .WithSpatialIndex()
+            .Path("/locations/*", SpatialType.Point)
+        .Attach()
+        .WithCompositeIndex()
+            .Path("/name", CompositePathSortOrder.Ascending)
+            .Path("/age", CompositePathSortOrder.Descending)
+        .Attach()
+    .Attach()
+    .CreateIfNotExistsAsync();
+```
+
 ## <a name="use-the-java-sdk"></a>Использование пакета SDK для Java
 
 Объект `DocumentCollection` из [пакета SDK для Java](https://mvnrepository.com/artifact/com.microsoft.azure/azure-cosmosdb) (его использование описано в [этом кратком руководстве](create-sql-api-java.md)) предоставляет методы `getIndexingPolicy()` и `setIndexingPolicy()`. Объект `IndexingPolicy`, которым они управляют, позволяет изменить режим индексирования и добавить или удалить включенные и исключенные пути.
 
-Получение сведений о контейнере
-
 ```java
+// Retrieve the container's details
 Observable<ResourceResponse<DocumentCollection>> containerResponse = client.readCollection(String.format("/dbs/%s/colls/%s", "database", "container"), null);
 containerResponse.subscribe(result -> {
 DocumentCollection container = result.getResource();
 IndexingPolicy indexingPolicy = container.getIndexingPolicy();
-```
 
-Установить режим индексирования "последовательный"
-
-```java
+// Set the indexing mode to consistent
 indexingPolicy.setIndexingMode(IndexingMode.Consistent);
-```
 
-Добавление включаемого пути
+// Add an included path
 
-```java
 Collection<IncludedPath> includedPaths = new ArrayList<>();
 ExcludedPath includedPath = new IncludedPath();
-includedPath.setPath("/age/*");
+includedPath.setPath("/*");
 includedPaths.add(includedPath);
 indexingPolicy.setIncludedPaths(includedPaths);
-```
 
-Добавление исключенного пути
+// Add an excluded path
 
-```java
 Collection<ExcludedPath> excludedPaths = new ArrayList<>();
 ExcludedPath excludedPath = new ExcludedPath();
 excludedPath.setPath("/name/*");
 excludedPaths.add(excludedPath);
 indexingPolicy.setExcludedPaths(excludedPaths);
-```
 
-Добавление пространственного индекса
+// Add a spatial index
 
-```java
 Collection<SpatialSpec> spatialIndexes = new ArrayList<SpatialSpec>();
 Collection<SpatialType> collectionOfSpatialTypes = new ArrayList<SpatialType>();
 
 SpatialSpec spec = new SpatialSpec();
 spec.setPath("/locations/*");
-collectionOfSpatialTypes.add(SpatialType.Point);          
+collectionOfSpatialTypes.add(SpatialType.Point);
 spec.setSpatialTypes(collectionOfSpatialTypes);
 spatialIndexes.add(spec);
 
 indexingPolicy.setSpatialIndexes(spatialIndexes);
 
-```
+// Add a composite index
 
-Добавление составного индекса
-
-```java
 Collection<ArrayList<CompositePath>> compositeIndexes = new ArrayList<>();
 ArrayList<CompositePath> compositePaths = new ArrayList<>();
 
 CompositePath nameCompositePath = new CompositePath();
-nameCompositePath.setPath("/name/*");
+nameCompositePath.setPath("/name");
 nameCompositePath.setOrder(CompositePathSortOrder.Ascending);
 
 CompositePath ageCompositePath = new CompositePath();
-ageCompositePath.setPath("/age/*");
+ageCompositePath.setPath("/age");
 ageCompositePath.setOrder(CompositePathSortOrder.Descending);
 
 compositePaths.add(ageCompositePath);
@@ -501,12 +516,11 @@ compositePaths.add(nameCompositePath);
 
 compositeIndexes.add(compositePaths);
 indexingPolicy.setCompositeIndexes(compositeIndexes);
-```
 
-Обновление контейнера с изменениями
+// Update the container with changes
 
-```java
  client.replaceCollection(container, null);
+});
 ```
 
 Чтобы отслеживать ход выполнения преобразования индекса в контейнере, передайте объект `RequestOptions`, который запрашивает сведения о квоте для заполнения, а затем извлеките значение из заголовка ответа `x-ms-documentdb-collection-index-transformation-progress`.

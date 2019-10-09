@@ -1,34 +1,21 @@
 ---
-title: Создание Dynamics 365 для взаимодействия с клиентами технических средств | Azure Marketplace
-description: Создание технических ресурсов для предложения приложения Dynamics 365 для взаимодействия с клиентами.
+title: Создание Dynamics 365 для технических ресурсов в службах взаимодействия с клиентами | Azure Marketplace
+description: Эта статья CPP устарела и связана со статьей ПК. был "создан технический ресурс для приложения Dynamics 365 для предложения приложений для сотрудничества с клиентами".
 services: Dynamics 365 for Customer Engagement, Azure, Marketplace, Cloud Partner Portal, AppSource
-author: v-miclar
+author: ChJenk
 ms.service: marketplace
 ms.topic: article
-ms.date: 12/29/2018
-ms.author: pabutler
-ms.openlocfilehash: eff175264677d6b8ffb885229b5e68b306424335
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 09/30/2019
+ms.author: v-chjen
+ms.openlocfilehash: 378dc7d4b267a27088616cbe46b1a4309471af6b
+ms.sourcegitcommit: f9e81b39693206b824e40d7657d0466246aadd6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64943110"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72033832"
 ---
 # <a name="create-technical-assets-for-azure-application-offer"></a>Создание технических ресурсов для предложения приложения Azure
 
-Обычно вы разрабатываете решения с помощью [пакета SDK для приложений Dynamics 365 для взаимодействия с клиентами](https://docs.microsoft.com/dynamics365/customer-engagement/developer/get-started-sdk).  Решения могут принимать различные формы, как описано в [моделях программирования приложений Dynamics 365 для взаимодействия с клиентами ](https://docs.microsoft.com/dynamics365/customer-engagement/developer/programming-models).  Выберите форму, которая наилучшим образом соответствует требованиям вашего решения.  При разработке решения необходимо учитывать ряд проблем, таких как выбор расширяемости, компоненты решения и совместимость версий.  Дополнительную информацию см. в статье [Введение в решения](https://docs.microsoft.com/dynamics365/customer-engagement/developer/introduction-solutions).
+[Портал Cloud Partner](https://cloudpartner.azure.com/) больше не поддерживает создание и Управление предложениями по взаимодействию с клиентом Dynamics 365. Вместо этого эта функция была перемещена на [портал центра партнеров](https://partner.microsoft.com/)Майкрософт. Дополнительные сведения см. [в статье Создание нового Dynamics 365 для участия клиентов & PowerApps](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-new-customer-engagement-offer).
 
-Большинство решений Dynamics 365, опубликованных в AppSource, представляют собой управляемые приложения, которые распространяются в виде файлов пакетов.
-
-
-## <a name="creating-and-storing-the-package"></a>Создание и хранение пакета
-
-Параллельная документация по созданию предложений Dynamics 365 для взаимодействия с клиентами находится в разделе [Публикация приложения в AppSource](https://docs.microsoft.com/dynamics365/customer-engagement/developer/publish-app-appsource).  Cnfysckfd GjksoerНиже содержатся подробные сведения о создании файла пакета решения и его отправки в службу хранилища Azure.
-
-- [Шаг 4. Создание пакета AppSource для вашего приложения](https://docs.microsoft.com/dynamics365/customer-engagement/developer/create-package-app-appsource). На этом шаге вы узнаете, как создать ZIP-файл, который представляет приложение и содержит: папку с ресурсами решения, настаиваемый код DLL, файл сведений о типе MIME, значок пакета AppSource, файл условий лицензии (HTML) и содержимое файла (XML).
-- [Шаг 5. Хранение пакета AppSource в службе хранилища Azure и создание URL-адреса с помощью ключа SAS](https://docs.microsoft.com/dynamics365/customer-engagement/developer/store-appsource-package-azure-storage). На этом шаге объясняется, как сохранить файл пакета AppSource в учетную запись хранения больших двоичных объектов Microsoft Azure, а также как использовать ключ SAS для совместного использования файла пакета. Файл пакета будет извлечен из расположения службы хранилища Azure для сертификации и будет использоваться в пробных версиях и публикациях AppSource.
-
-
-## <a name="next-steps"></a>Дальнейшие действия
-
-Если вы еще не создали предложение для Dynamics 365 for Customer Engagement, изучите [эту статью](./cpp-create-offer.md).  См. [здесь](./cpp-publish-offer.md), чтобы опубликовать предложение.
+Перед созданием нового предложения по работе с клиентом Dynamics 365 для участия в нем следует ознакомиться со статьей [Создание учетной записи центра партнеров](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) , а затем открыть [панель мониторинга коммерческого рынка](https://partner.microsoft.com/dashboard/directory) с выбранной страницей **обзора** . Чтобы создать предложение, следуйте инструкциям в статье [Создание нового Dynamics 365 для участия клиентов & PowerApps](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-new-customer-engagement-offer) .

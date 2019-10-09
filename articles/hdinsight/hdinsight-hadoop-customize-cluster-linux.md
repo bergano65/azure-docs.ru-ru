@@ -6,13 +6,13 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
-ms.date: 04/02/2019
-ms.openlocfilehash: df9e6e3a9116b9a4490d8847e9a9d3e9e112f4f7
-ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
+ms.date: 10/03/2019
+ms.openlocfilehash: 16b0fdcbae51b30e14fbf7ea4d98699dfaf19804
+ms.sourcegitcommit: f9e81b39693206b824e40d7657d0466246aadd6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71098792"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72035742"
 ---
 # <a name="customize-azure-hdinsight-clusters-by-using-script-actions"></a>Настройка кластеров Azure HDInsight с помощью действий сценария
 
@@ -29,7 +29,7 @@ ms.locfileid: "71098792"
 
 Дополнительные сведения о работе с разрешениями в присоединенном к домену кластере HDInsight см. в статье [Управление кластерами HDInsight с помощью корпоративного пакета безопасности](./domain-joined/apache-domain-joined-manage.md).
 
-## <a name="access-control"></a>Контроль доступа
+## <a name="access-control"></a>Управление доступом
 
 Если вы не администратор или владелец подписки Azure, ваша учетная запись должна иметь доступ к группе ресурсов, содержащей кластер HDInsight, по крайней мере с правами участника.
 
@@ -144,9 +144,9 @@ ms.locfileid: "71098792"
 
 В HDInsight доступны скрипты для установки следующих компонентов в кластерах HDInsight.
 
-| Название | Скрипт |
+| ИМЯ | Скрипт |
 | --- | --- |
-| добавление учетной записи хранения Azure; |`https://hdiconfigactions.blob.core.windows.net/linuxaddstorageaccountv01/add-storage-account-v01.sh`. Ознакомьтесь со статьей [Добавление дополнительных учетных записей хранения в HDInsight](hdinsight-hadoop-add-storage.md). |
+| Добавить учетную запись хранения Azure |`https://hdiconfigactions.blob.core.windows.net/linuxaddstorageaccountv01/add-storage-account-v01.sh`. Ознакомьтесь со статьей [Добавление дополнительных учетных записей хранения в HDInsight](hdinsight-hadoop-add-storage.md). |
 | установка Hue; |`https://hdiconfigactions.blob.core.windows.net/linuxhueconfigactionv02/install-hue-uber-v02.sh`. Ознакомьтесь со статьей [Установка и использование Hue на кластерах HDInsight Hadoop](hdinsight-hadoop-hue-linux.md). |
 | установка Giraph; |`https://hdiconfigactions.blob.core.windows.net/linuxgiraphconfigactionv01/giraph-installer-v01.sh`. Ознакомьтесь со статьей [Установка Apache Giraph в кластерах HDInsight Hadoop и использование Giraph для обработки диаграмм больших объемов](hdinsight-hadoop-giraph-install-linux.md). |
 | Предварительная загрузка библиотек Hive |`https://hdiconfigactions.blob.core.windows.net/linuxsetupcustomhivelibsv01/setup-customhivelibs-v01.sh`. Ознакомьтесь со статьей [Добавление пользовательских библиотек Apache Hive при создании кластера HDInsight](hdinsight-hadoop-add-hive-libraries.md). |
@@ -157,13 +157,9 @@ ms.locfileid: "71098792"
 
 ### <a name="use-a-script-action-during-cluster-creation-from-the-azure-portal"></a>Использование действия сценария при создании кластера с портала Azure
 
-1. Начните создавать кластер, как описано в статье [Установка кластеров в HDInsight с использованием Apache Hadoop, Apache Spark, Apache Kafka и других технологий](hdinsight-hadoop-provision-linux-clusters.md). При создании кластера отобразится страница __Сводка кластера__. На странице __Сводка кластера__ щелкните ссылку __Изменить__ для элемента __Дополнительные параметры__.
+1. Начните создавать кластер, как описано в статье [Создание кластеров под управлением Linux в HDInsight с помощью портал Azure](hdinsight-hadoop-create-linux-clusters-portal.md). Во время создания кластера вы приступите к шагу 6, **действиям скрипта**. Перейдите к **Необязательному** >  **+ отправить новый**.
 
-    ![Дополнительные параметры кластера портал Azure](./media/hdinsight-hadoop-customize-cluster-linux/advanced-settings-link.png)
-
-1. В колонке __Дополнительные параметры__ выберите __Действия скрипта__. В колонке __Действия сценария__ выберите __+ Submit new__ (+Отправить новое).
-
-    ![Действия сценария портала отправить новый](./media/hdinsight-hadoop-customize-cluster-linux/add-new-script-action.png)
+    ![Действие сценария кластера портал Azure](./media/hdinsight-hadoop-customize-cluster-linux/azure-portal-cluster-classic-script-action.png)
 
 1. Используйте запись __Выберите сценарий__, чтобы выбрать готовый сценарий. Чтобы использовать настраиваемый сценарий, выберите __Настраиваемый__. Затем укажите __имя__ и __универсальный код ресурса (URI) Bash-сценария__ своего сценария.
 
@@ -173,8 +169,8 @@ ms.locfileid: "71098792"
 
     | Свойство | Значение |
     | --- | --- |
-    | Выберите скрипт. | Чтобы использовать собственный скрипт, выберите __Настраиваемый__. В противном случае выберите один из предоставленных скриптов. |
-    | Название |Укажите имя для действия сценария. |
+    | Выберите скрипт | Чтобы использовать собственный скрипт, выберите __Настраиваемый__. В противном случае выберите один из предоставленных скриптов. |
+    | ИМЯ |Укажите имя для действия сценария. |
     | URI bash-скрипта |Укажите URI сценария. |
     | Головной/рабочий/ZooKeeper |Укажите узлы, на которых выполняется сценарий: **Head**, **Worker** или **ZooKeeper** |
     | Параметры |Укажите параметры, если они требуются для сценария. |
@@ -185,7 +181,7 @@ ms.locfileid: "71098792"
 
     ![Действия нескольких скриптов HDInsight](./media/hdinsight-hadoop-customize-cluster-linux/multiple-scripts-actions.png)
 
-    Завершив добавление сценариев, нажмите кнопку __Выбрать__, а затем — кнопку __Далее__, чтобы вернуться в раздел __Сводка по кластерам__.
+    Завершив добавление скриптов, нажмите кнопку __выбрать__ , а затем кнопку __Далее__ , чтобы перейти к разделу __Сводка кластера__ .
 
 1. Чтобы создать кластер, в разделе __Сводка по кластерам__ нажмите __Создать__.
 
@@ -235,9 +231,7 @@ ms.locfileid: "71098792"
 
 Перейдите на [портал Azure](https://portal.azure.com).
 
-1. В меню слева выберите **Все службы**.
-
-1. В разделе **АНАЛИТИКА** выберите **Кластеры HDInsight**.
+1. В меню слева перейдите ко **всем службам** >  **Analytics** > **кластеры HDInsight**.
 
 1. Выберите свой кластер в списке. Откроется представление по умолчанию.
 
@@ -255,8 +249,8 @@ ms.locfileid: "71098792"
 
     | Свойство | Значение |
     | --- | --- |
-    | Выберите скрипт. | Чтобы использовать собственный скрипт, выберите __Настраиваемый__. В противном случае выберите предоставленный скрипт. |
-    | Название |Укажите имя для действия сценария. |
+    | Выберите скрипт | Чтобы использовать собственный скрипт, выберите __Настраиваемый__. В противном случае выберите предоставленный скрипт. |
+    | ИМЯ |Укажите имя для действия сценария. |
     | URI bash-скрипта |Укажите URI сценария. |
     | Head, Worker или ZooKeeper |Укажите узлы, на которых выполняется сценарий: **Head**, **Worker** или **ZooKeeper** |
     | Параметры |Укажите параметры, если они требуются для сценария. |
@@ -336,9 +330,7 @@ ms.locfileid: "71098792"
 
 1. Войдите на [портале Azure](https://portal.azure.com).
 
-1. В меню слева выберите **Все службы**.
-
-1. В разделе **АНАЛИТИКА** выберите **Кластеры HDInsight**.
+1. В меню слева перейдите ко **всем службам** > **Analytics** > **кластеры HDInsight**.
 
 1. Выберите свой кластер в списке. Откроется представление по умолчанию.
 
@@ -403,8 +395,8 @@ ms.locfileid: "71098792"
 
   * Диспетчер ресурсов [Apache Hadoop YARN](https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html).
   * Язык запросов Hive [HiveQL](https://cwiki.apache.org/confluence/display/Hive/LanguageManual).
-  * [Apache Mahout](https://mahout.apache.org/). 
-    
+  * [Apache Mahout](https://mahout.apache.org/).
+
     Полный список компонентов кластера доступен в статье [Что представляют собой компоненты и версии Apache Hadoop, доступные в HDInsight?](hdinsight-component-versioning.md).
 
 * **Настраиваемые компоненты.** Как пользователь кластера вы можете установить или использовать в рабочей нагрузке любой компонент, полученный из сообщества или созданный самостоятельно.

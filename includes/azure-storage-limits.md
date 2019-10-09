@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 07/19/2019
 ms.author: tamram
 ms.custom: include file
-ms.openlocfilehash: b51d984726cfd178189e7fe1a994c35c7efaed36
-ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
+ms.openlocfilehash: a48c1352e4628d8e1776a9479aceac7c294a2ea1
+ms.sourcegitcommit: be344deef6b37661e2c496f75a6cf14f805d7381
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71124099"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72023072"
 ---
 В следующей таблице описаны ограничения по умолчанию для учетных записей хранения общего назначения Azure v1, v2 и BLOB. *Предельное* значение относится ко всем данным из запросов, отправляемых в учетную запись хранения. Ограничение исходящего *трафика* относится ко всем данным из ответов, полученных из учетной записи хранения.
 
@@ -31,7 +31,8 @@ ms.locfileid: "71124099"
 
 <sup>1</sup> Учетные записи хранения Azure уровня "Стандартный" поддерживают более высокие ограничения емкости и более высокие ограничения для входящего трафика по запросу. Чтобы подать запрос на увеличение скорости передачи входящих данных для учетной записи, обратитесь в [службу поддержки Azure](https://azure.microsoft.com/support/faq/). Дополнительные сведения см. в статье [объявление более крупных учетных записей хранения с более высоким уровнем масштабирования](https://azure.microsoft.com/blog/announcing-larger-higher-scale-storage-accounts/).
 
-<sup>2</sup> если доступ на чтение РАЗРЕШЕН (RA-GRS/RA-гзрс), целевые объекты исходящего трафика для вторичного расположения идентичны параметрам основного расположения. Параметры [репликации службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-redundancy) включают:[!INCLUDE [azure-storage-redundancy](azure-storage-redundancy.md)]
+<sup>2</sup> если доступ на чтение РАЗРЕШЕН (RA-GRS/RA-гзрс), целевые объекты исходящего трафика для вторичного расположения идентичны параметрам основного расположения. Параметры [репликации службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-redundancy) включают:  
+[!INCLUDE [azure-storage-redundancy](azure-storage-redundancy.md)]
 
 > [!NOTE]
 > Для большинства сценариев рекомендуется использовать учетную запись хранения общего назначения версии 2. Вы можете легко обновить общее назначение или учетную запись хранилища BLOB-объектов Azure до учетной записи общего назначения v2 без простоя и без необходимости копировать данные.

@@ -10,12 +10,12 @@ ms.reviewer: jmartens, garye
 ms.author: jordane
 author: jpe316
 ms.date: 07/12/2019
-ms.openlocfilehash: 3997f327bd6512eeee2cb5e7a0af802f12d1727a
-ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
+ms.openlocfilehash: 910974eac6a67c9c9fe68c502f2876ef68bb94eb
+ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71034310"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72028519"
 ---
 # <a name="run-batch-predictions-on-large-data-sets-with-azure-machine-learning-pipelines"></a>Выполнение пакетных прогнозов в больших наборах данных с помощью конвейеров Машинное обучение Azure
 
@@ -193,7 +193,7 @@ model = Model.register(
 >[!Warning]
 >Приведенный ниже код является только примером содержимого файла [batch_score.py](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines/pipeline-batch-scoring/batch_scoring.py), используемого [примером записной книжки](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines/pipeline-batch-scoring/pipeline-batch-scoring.ipynb). Вам потребуется создать собственный сценарий оценки, подходящий для вашей ситуации.
 
-Сценарий `batch_score.py` принимает входные изображения из папки  *dataset_path* и обученные модели из папки  *model_dir*, а файл результатов *results-label.txt*  сохраняет в папку  *output_dir*.
+Сценарий `batch_score.py` принимает входные изображения в *dataset_path*, предварительно обученные модели в *model_dir* и выводит *ресултс-лабел. txt* в *output_dir*.
 
 ```python
 # Snippets from a sample scoring script

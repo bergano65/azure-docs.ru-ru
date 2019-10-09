@@ -6,16 +6,16 @@ ms.author: makromer
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 09/30/2019
-ms.openlocfilehash: 67a6de6d85a58f48af4761e0b5d5b0a1a4d74b1a
-ms.sourcegitcommit: 6fe40d080bd1561286093b488609590ba355c261
+ms.openlocfilehash: 9862866d5cddb227d9417ac15db6b8ea851507e6
+ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71703398"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72030294"
 ---
 # <a name="mapping-data-flow-expression-builder"></a>Построитель выражений сопоставления Потоков данных
 
-[!INCLUDE [notes](../../includes/data-factory-data-flow-preview.md)]
+
 
 В Потоке данных в Фабрике данных Azure доступны поля для ввода выражений для преобразования данных. Используйте в этих полях столбцы, поля, переменные, параметры и функции из своего потока данных. Для создания выражений используйте построитель выражений. Чтобы открыть его, щелкните в текстовом поле выражения в окне преобразования. Иногда при выборе столбцов для преобразования отображается вариант Computed Column (Вычисляемый столбец). Если щелкнуть его, также запустится построитель выражений.
 

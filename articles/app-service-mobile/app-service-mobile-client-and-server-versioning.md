@@ -14,14 +14,18 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 10/01/2016
 ms.author: crdun
-ms.openlocfilehash: 7133e8bc7d04b3653b6b788347b7bc5176087f4c
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.openlocfilehash: 87c64a98d783d2604c985017fbce586ed51e5c9d
+ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70883477"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72025422"
 ---
 # <a name="client-and-server-versioning-in-mobile-apps-and-mobile-services"></a>Управление версиями клиента и сервера в мобильных приложениях и мобильных службах
+> [!NOTE]
+> Центр приложений Visual Studio поддерживает комплексные и интегрированные службы для разработки мобильных приложений. Разработчики могут использовать службы **сборки**, **тестирования** и **распространения** для настройки конвейера непрерывной интеграции и доставки. После развертывания приложения разработчики могут отслеживать состояние и использование своих приложений с помощью служб **аналитики** и **диагностики** , а также привлекать пользователей с помощью службы **push-уведомлений** . Разработчики также **могут использовать проверку подлинности** для аутентификации пользователей и службы **данных** , чтобы сохранять и синхронизировать данные приложений в облаке.
+> Если вы хотите интегрировать облачные службы в мобильное приложение, зарегистрируйтесь в центре приложений Center [App Center](https://appcenter.ms/?utm_source=zumo&utm_medium=Azure&utm_campaign=zumo%20doc) уже сегодня.
+
 Последняя версия мобильных служб Azure — компонент **Мобильные приложения** службы приложений Azure.
 
 Пакеты SDK для клиента и сервера мобильных приложений основаны на аналогичных пакетах мобильных служб, но *не совместимы* с ними.
@@ -65,10 +69,10 @@ POST https://service.azurewebsites.net/tables/TodoItem?ZUMO-API-VERSION=2.0.0
 | Node.js |[azure-mobile-apps)](https://www.npmjs.com/package/azure-mobile-apps) |2.0.0 |
 
 ### <a name="behavior-of-mobile-apps-backends"></a>Поведение внутренних серверов мобильных приложений
-| ZUMO-API-VERSION | Значение параметра MS_SkipVersionCheck | Отклик |
+| ZUMO-API-VERSION | Значение параметра MS_SkipVersionCheck | Ответ |
 | --- | --- | --- |
 | x.y.z или значение NULL |True |200 – OK |
-| NULL |False/не указан |400 – неверный запрос |
+| Null |False/не указан |400 – неверный запрос |
 | 1.x.y |False/не указан |400 – неверный запрос |
 | 2.0.0-2.x.y |False/не указан |200 – OK |
 | 3.0.0-3.x.y |False/не указан |400 – неверный запрос |
