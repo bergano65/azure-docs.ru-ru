@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 08/13/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2d2c6719cf37959d01375ec099cdf1c2cea3afa5
-ms.sourcegitcommit: 0c906f8624ff1434eb3d3a8c5e9e358fcbc1d13b
+ms.openlocfilehash: 03dcc0c62781b6bec0369b7e642976e6d6f9c2f5
+ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69543900"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72026637"
 ---
 # <a name="tutorial-tutorial-azure-active-directory-single-sign-on-sso-integration-with-pronovos-analytics"></a>Руководство по Руководство по интеграции единого входа Azure Active Directory с ProNovos Analytics
 
@@ -82,7 +82,7 @@ ms.locfileid: "69543900"
 
    ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-1. В разделе  **Базовая конфигурация SAML** приложение предварительно настроено в режиме, инициированном **поставщиком удостоверений** , и для приложения заданы требуемые URL-адреса в Azure. Пользователь должен сохранить конфигурацию, нажав кнопку **Сохранить** .
+1. В разделе **Базовая конфигурация SAML** приложение предварительно настроено в режиме инициированном **IDP** и ему заданы требуемые URL-адреса в Azure. Пользователь должен сохранить конфигурацию, нажав кнопку **Сохранить**.
 
 1. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 

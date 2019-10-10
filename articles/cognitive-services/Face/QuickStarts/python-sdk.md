@@ -9,12 +9,12 @@ ms.subservice: face-api
 ms.topic: quickstart
 ms.date: 07/26/2019
 ms.author: pafarley
-ms.openlocfilehash: f237af58bb98f667d4481a88bbb4daa77657468c
-ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
+ms.openlocfilehash: 617e9a40c253d98c32ae8b4c9426f3148c23d125
+ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70966910"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72176134"
 ---
 # <a name="quickstart-face-client-library-for-python"></a>Краткое руководство. Клиентская библиотека API Распознавания лиц для Python
 
@@ -65,7 +65,7 @@ ms.locfileid: "70966910"
 Клиентскую библиотеку можно установить с помощью следующей команды:
 
 ```console
-pip install --upgrade azure-cognitiveservices-Face
+pip install --upgrade azure-cognitiveservices-vision-face
 ```
 
 ## <a name="object-model"></a>Объектная модель

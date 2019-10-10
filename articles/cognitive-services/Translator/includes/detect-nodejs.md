@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 08/06/2019
 ms.author: erhopf
-ms.openlocfilehash: b342838c41ad72609cf9917b345ef0f72b352f2e
-ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
+ms.openlocfilehash: c180a5d751b44346760706b1bd3d1e8acb70099d
+ms.sourcegitcommit: 15e3bfbde9d0d7ad00b5d186867ec933c60cebe6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69907214"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71837523"
 ---
 [!INCLUDE [Prerequisites](prerequisites-nodejs.md)]
 
@@ -51,9 +51,6 @@ var endpoint = process.env[endpoint_var];
 ## <a name="configure-the-request"></a>Настройка запроса
 
 Метод `request()`, доступный через модуль запросов, позволяет передавать метод HTTP, URL-адрес, параметры запроса, заголовки и текст JSON как объект `options`. В этом фрагменте кода мы настроим запрос:
-
->[!NOTE]
-> Дополнительные сведения о конечных точках, маршрутах и параметрах запросов см. в руководстве по [определениям в API перевода текстов 3.0](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-detect).
 
 ```javascript
 let options = {
@@ -103,7 +100,10 @@ node detect.js
 
 ## <a name="sample-response"></a>Пример ответа
 
-Найдите сокращенное наименование страны или региона в этом [списке языков](https://docs.microsoft.com/azure/cognitive-services/translator/language-support).
+После выполнения примера в окне терминала должны быть выведены такие данные:
+
+> [!NOTE]
+> Найдите сокращенное наименование страны или региона в этом [списке языков](https://docs.microsoft.com/azure/cognitive-services/translator/language-support).
 
 ```json
 [

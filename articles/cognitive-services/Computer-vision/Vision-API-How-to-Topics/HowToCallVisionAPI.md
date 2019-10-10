@@ -11,12 +11,12 @@ ms.topic: sample
 ms.date: 09/09/2019
 ms.author: kefre
 ms.custom: seodec18
-ms.openlocfilehash: 417ff7ac345b9a83b3d3f4c50e9fd141d74bc99c
-ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
+ms.openlocfilehash: 298228eedb73298f00654f4f72c201d9ed671090
+ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71103544"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72177062"
 ---
 # <a name="call-the-computer-vision-api"></a>Вызов API компьютерного зрения
 
@@ -56,7 +56,7 @@ ms.locfileid: "71103544"
 * Передать его через строку запроса, как в следующем примере API Компьютерного зрения.
 
   ```
-  https://westus.api.cognitive.microsoft.com/vision/v2.0/analyze?visualFeatures=Description,Tags&subscription-key=<Your subscription key>
+  https://westus.api.cognitive.microsoft.com/vision/v2.1/analyze?visualFeatures=Description,Tags&subscription-key=<Your subscription key>
   ```
 
 * Указать в заголовке HTTP-запроса.
@@ -83,7 +83,7 @@ ms.locfileid: "71103544"
 ### <a name="option-1-get-a-list-of-tags-and-a-description"></a>Вариант 1. Получение списка тегов и описания
 
 ```
-POST https://westus.api.cognitive.microsoft.com/vision/v2.0/analyze?visualFeatures=Description,Tags&subscription-key=<Your subscription key>
+POST https://westus.api.cognitive.microsoft.com/vision/v2.1/analyze?visualFeatures=Description,Tags&subscription-key=<Your subscription key>
 ```
 
 ```csharp
@@ -105,14 +105,14 @@ using (var fs = new FileStream(@"C:\Vision\Sample.jpg", FileMode.Open))
 В случае получения только тегов выполните:
 
 ```
-POST https://westus.api.cognitive.microsoft.com/vision/v2.0/tag?subscription-key=<Your subscription key>
+POST https://westus.api.cognitive.microsoft.com/vision/v2.1/tag?subscription-key=<Your subscription key>
 var tagResults = await visionClient.TagImageAsync("http://contoso.com/example.jpg");
 ```
 
 В случае получения только описания выполните:
 
 ```
-POST https://westus.api.cognitive.microsoft.com/vision/v2.0/describe?subscription-key=<Your subscription key>
+POST https://westus.api.cognitive.microsoft.com/vision/v2.1/describe?subscription-key=<Your subscription key>
 using (var fs = new FileStream(@"C:\Vision\Sample.jpg", FileMode.Open))
 {
   imageDescription = await visionClient.DescribeImageInStreamAsync(fs);
@@ -123,14 +123,14 @@ using (var fs = new FileStream(@"C:\Vision\Sample.jpg", FileMode.Open))
 
 ### <a name="option-1-scoped-analysis---analyze-only-a-specified-model"></a>Вариант 1. Анализ с заданной областью — анализ только указанной модели
 ```
-POST https://westus.api.cognitive.microsoft.com/vision/v2.0/models/celebrities/analyze
+POST https://westus.api.cognitive.microsoft.com/vision/v2.1/models/celebrities/analyze
 var celebritiesResult = await visionClient.AnalyzeImageInDomainAsync(url, "celebrities");
 ```
 
 Для этого параметра все остальные параметры запроса {visualFeatures, details} недопустимы. Чтобы увидеть все поддерживаемые модели, используйте следующее.
 
 ```
-GET https://westus.api.cognitive.microsoft.com/vision/v2.0/models 
+GET https://westus.api.cognitive.microsoft.com/vision/v2.1/models 
 var models = await visionClient.ListModelsAsync();
 ```
 
@@ -139,7 +139,7 @@ var models = await visionClient.ListModelsAsync();
 В приложениях, где пользователи хотят получить анализ обычного изображения с дополнительными сведениями из одной или нескольких моделей, предназначенных для определенных сфер, расширьте API версии 1 с помощью параметра модели запроса.
 
 ```
-POST https://westus.api.cognitive.microsoft.com/vision/v2.0/analyze?details=celebrities
+POST https://westus.api.cognitive.microsoft.com/vision/v2.1/analyze?details=celebrities
 ```
 
 При вызове этого метода сначала вызывается классификатор по [86 категориям](../Category-Taxonomy.md). Если какие-либо категории соответствуют известным или сопоставленным моделям, возникает второй этап вызовов классификатора. Например, если "details=all" или "details" содержит "celebrities", то модель знаменитостей вызывается после вызова классификатора по 86 категориям. Полученный результат содержит определенную категорию. В отличие от варианта 1, этот метод увеличивает задержку для пользователей, заинтересованных в знаменитостях.

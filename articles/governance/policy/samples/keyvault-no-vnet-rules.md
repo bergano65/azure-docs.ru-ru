@@ -2,17 +2,16 @@
 title: Пример — выявление хранилищ Key Vault без конечных точек виртуальной сети
 description: В этом примере определения политики выполняется проверка хранилищ Key Vault с целью обнаружить экземпляры без конечных точек служб для виртуальной сети.
 author: DCtheGeek
-manager: carmonm
 ms.service: azure-policy
 ms.topic: sample
 ms.date: 01/26/2019
 ms.author: dacoulte
-ms.openlocfilehash: bc5ce4a6a2e52ed8d21de8db8da1f815293b61f7
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: ccfba0eae8d3c51cf153f58d554dc09b574d3873
+ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59276377"
+ms.lasthandoff: 10/06/2019
+ms.locfileid: "71976968"
 ---
 # <a name="sample---key-vault-vaults-with-no-virtual-network-endpoints"></a>Пример — хранилища Key Vault без конечных точек виртуальной сети
 
@@ -182,8 +181,8 @@ az policy definition delete --name `echo $definition | jq '.name' -r`
 |---|---|---|---|
 | Управление ресурсами | Определения политик | [Создание](/rest/api/resources/policydefinitions/createorupdate) | Создается новое определение политики Azure в подписке. Альтернативный вариант: [создание группы управления](/rest/api/resources/policydefinitions/createorupdateatmanagementgroup) |
 | Управление ресурсами | Назначения политик | [Создание](/rest/api/resources/policyassignments/create) | Создается новое назначение политики Azure. В этом примере политики предоставляется определение, но она также может взять на себя инициативу. |
-| Управление ресурсами | Назначения политик | [Удалить](/rest/api/resources/policyassignments/delete) | Удаление существующего назначения политики Azure. |
-| Управление ресурсами | Определения политик | [Удалить](/rest/api/resources/policydefinitions/delete) | Удаление существующего определения политики Azure. Альтернативный вариант: [удаление группы управления](/rest/api/resources/policydefinitions/deleteatmanagementgroup) |
+| Управление ресурсами | Назначения политик | [Удаление](/rest/api/resources/policyassignments/delete) | Удаление существующего назначения политики Azure. |
+| Управление ресурсами | Определения политик | [Удаление](/rest/api/resources/policydefinitions/delete) | Удаление существующего определения политики Azure. Альтернативный вариант: [удаление группы управления](/rest/api/resources/policydefinitions/deleteatmanagementgroup) |
 
 ## <a name="next-steps"></a>Дополнительная информация
 

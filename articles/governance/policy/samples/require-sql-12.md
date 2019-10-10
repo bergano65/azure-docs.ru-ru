@@ -2,17 +2,16 @@
 title: 'Пример: требование наличия SQL Server версии 12.0'
 description: В этом примере определения политики необходимо использовать SQL Server версии 12.0.
 author: DCtheGeek
-manager: carmonm
 ms.service: azure-policy
 ms.topic: sample
 ms.date: 01/23/2019
 ms.author: dacoulte
-ms.openlocfilehash: 498764d1fbd69762c09279303d75a6e2f1f2e0c6
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 0164d986566761900e859ea1474f51886d2b4458
+ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59283721"
+ms.lasthandoff: 10/06/2019
+ms.locfileid: "71980393"
 ---
 # <a name="sample---require-sql-server-version-120"></a>Пример: требование наличия SQL Server версии 12.0
 

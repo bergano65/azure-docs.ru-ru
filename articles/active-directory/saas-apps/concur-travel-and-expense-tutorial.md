@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 09/05/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 64d2c5bc38a91c60186ca1249ca69326858b6c37
-ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
+ms.openlocfilehash: 75f933cf54b354475146c1291b486173e0b57dbb
+ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70846869"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72026714"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-concur-travel-and-expense"></a>Руководство по Интеграции единого входа Azure Active Directory с Concur Travel and Expense
 
@@ -83,7 +83,7 @@ ms.locfileid: "70846869"
 
    ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-1. В разделе  **Базовая конфигурация SAML** приложение предварительно настроено в режиме, инициированном **поставщиком удостоверений** , и для приложения заданы требуемые URL-адреса в Azure. Пользователь должен сохранить конфигурацию, нажав кнопку **Сохранить** .
+1. В разделе **Базовая конфигурация SAML** приложение предварительно настроено в режиме инициированном **IDP** и ему заданы требуемые URL-адреса в Azure. Пользователь должен сохранить конфигурацию, нажав кнопку **Сохранить**.
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите элемент **XML метаданных федерации** и выберите **Скачать**, чтобы скачать сертификат и сохранить его на компьютере.
 

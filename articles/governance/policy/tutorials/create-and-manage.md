@@ -6,13 +6,12 @@ ms.author: dacoulte
 ms.date: 02/04/2019
 ms.topic: tutorial
 ms.service: azure-policy
-manager: carmonm
-ms.openlocfilehash: c12345791e62aa99bd07dde7fc44dd52d0989941
-ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
+ms.openlocfilehash: 82c56a01d7f14f1eeae26dfa784f3545552bf6b9
+ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65979179"
+ms.lasthandoff: 10/06/2019
+ms.locfileid: "71981387"
 ---
 # <a name="tutorial-create-and-manage-policies-to-enforce-compliance"></a>Руководство по Создание политик и управление ими для обеспечения соответствия требованиям
 
@@ -343,7 +342,7 @@ az policy definition list
 
 1. Просмотрите список **доступных определений** (правая половина страницы **Initiative definition** (Определение инициативы)) и выберите определения политики, которые вы хотите добавить к этой инициативе. Для инициативы **Защита** добавьте следующие встроенные определения политик, щелкнув **+** рядом с информацией об определении политики или щелкнув строку определения политики и параметр **+ Add** (+ Добавить) на странице сведений:
 
-   - Требование наличия SQL Server версии 12.0
+   - Требование наличия SQL Server версии 12.0
    - [Preview]: Monitor unprotected web applications in Security Center.
    - [Preview]: Monitor permissive network across in Security Center.
    - [Preview]: Monitor possible app Whitelisting in Security Center.

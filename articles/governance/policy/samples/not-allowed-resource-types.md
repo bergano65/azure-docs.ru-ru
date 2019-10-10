@@ -2,17 +2,16 @@
 title: 'Пример: недопустимые типы ресурсов'
 description: В этом примере определения политики налагается запрет на развертывание определенных типов ресурсов.
 author: DCtheGeek
-manager: carmonm
 ms.service: azure-policy
 ms.topic: sample
 ms.date: 01/23/2019
 ms.author: dacoulte
-ms.openlocfilehash: d84fdaad34ef35ac9aace86ca0813ad7982a4db0
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: b053d3de627432ec5d0db9ff25d826a4dd7464d7
+ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59271260"
+ms.lasthandoff: 10/06/2019
+ms.locfileid: "71980440"
 ---
 # <a name="sample---not-allowed-resource-types"></a>Пример: недопустимые типы ресурсов
 

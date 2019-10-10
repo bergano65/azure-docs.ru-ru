@@ -1,22 +1,22 @@
 ---
-title: Руководство. Развертывание приложения ASP.NET Core в Службе Azure Kubernetes с помощью Azure DevOps Projects
+title: Руководство по Развертывание приложения ASP.NET Core в Службе Azure Kubernetes с помощью Azure DevOps Projects
 description: Azure DevOps Projects упрощает начало работы с Azure. С помощью DevOps Projects вы можете развернуть приложение ASP.NET Core в Службе Azure Kubernetes, выполнив несколько простых действий.
 ms.author: mlearned
-ms.manager: douge
+ms.manager: gwallace
 ms.prod: devops
 ms.technology: devops-cicd
 ms.topic: tutorial
 ms.date: 07/09/2018
 author: mlearned
 monikerRange: vsts
-ms.openlocfilehash: 2aa103b36f60a84aaafc47f03a6cf6d5b6b66160
-ms.sourcegitcommit: fd488a828465e7acec50e7a134e1c2cab117bee8
+ms.openlocfilehash: b27d56d78296dc5500f97802f811a8923c4e87a8
+ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53993796"
+ms.lasthandoff: 10/05/2019
+ms.locfileid: "71969675"
 ---
-# <a name="tutorial-deploy-aspnet-core-apps-to-azure-kubernetes-service-with-azure-devops-projects"></a>Руководство. Развертывание приложения ASP.NET Core в Службе Azure Kubernetes с помощью Azure DevOps Projects
+# <a name="tutorial-deploy-aspnet-core-apps-to-azure-kubernetes-service-with-azure-devops-projects"></a>Руководство по Развертывание приложения ASP.NET Core в Службе Azure Kubernetes с помощью Azure DevOps Projects
 
 Azure DevOps Projects — это упрощенный интерфейс, который позволяет добавить существующий код и репозиторий Git либо выбрать пример приложения, чтобы создать конвейер непрерывной интеграции (CI) и непрерывной поставки (CD) в Azure. 
 

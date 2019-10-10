@@ -6,13 +6,12 @@ ms.author: dacoulte
 ms.date: 03/28/2019
 ms.topic: tutorial
 ms.service: blueprints
-manager: carmonm
-ms.openlocfilehash: 274c437acd8df50d631727fc352c4b9ebecead18
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.openlocfilehash: a82b24f89cea580a1c79a1dec60996629b7b14f3
+ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66479975"
+ms.lasthandoff: 10/06/2019
+ms.locfileid: "71978147"
 ---
 # <a name="tutorial-protect-new-resources-with-azure-blueprints-resource-locks"></a>Руководство по Защита новых ресурсов с помощью блокировок ресурсов Azure Blueprints
 
@@ -157,8 +156,8 @@ ms.locfileid: "66479975"
 
      |Имя артефакта|Тип артефакта|Имя параметра|Значение|ОПИСАНИЕ|
      |-|-|-|-|-|
-     |Группа ресурсов RGtoLock|Группа ресурсов|ИМЯ|TestingBPLocks|Определяет имя новой группы ресурсов, к которой необходимо применить блокировки схемы.|
-     |Группа ресурсов RGtoLock|Группа ресурсов|Расположение|Западный регион США 2|Определяет расположение новой группы ресурсов, к которой необходимо применить блокировки схемы.|
+     |Группа ресурсов RGtoLock|группа ресурсов.|ИМЯ|TestingBPLocks|Определяет имя новой группы ресурсов, к которой необходимо применить блокировки схемы.|
+     |Группа ресурсов RGtoLock|группа ресурсов.|Location|Западный регион США 2|Определяет расположение новой группы ресурсов, к которой необходимо применить блокировки схемы.|
      |StorageAccount|Шаблон Resource Manager|storageAccountType (StorageAccount)|Standard_GRS|Номер SKU хранилища. Значение по умолчанию — _Standard_LRS_.|
 
 1. Когда укажете все параметры, в нижней части страницы выберите **Назначить**.

@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.date: 01/20/2018
 ms.author: yexu
-ms.openlocfilehash: d46c460f7158635e520b47517fb3aab005af94a2
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: 44ae433040c2c9cab47567cb663d4e588311a4a1
+ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70140752"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72177418"
 ---
 # <a name="incrementally-load-data-from-multiple-tables-in-sql-server-to-an-azure-sql-database"></a>Добавочная загрузка данных из нескольких таблиц в SQL Server в базу данных SQL Azure
 В этом руководстве вы создадите фабрику данных Azure с конвейером, который загружает разностные данные из нескольких таблиц локальной базы данных SQL Server в базу данных SQL Azure.    
@@ -386,7 +386,7 @@ END
    ![Вкладка "Подключение" целевого набора данных](./media/tutorial-incremental-copy-multiple-tables-portal/sink-dataset-connection-dynamicContent.png)
 
    
- 1. Нажав кнопку **Готово**, вы увидите **@dataset().SinkTableName** в качестве имени таблицы.
+ 1. Нажав кнопку **Готово**, вы увидите **\@dataset().SinkTableName** в качестве имени таблицы.
    
    ![Вкладка "Подключение" целевого набора данных](./media/tutorial-incremental-copy-multiple-tables-portal/sink-dataset-connection-completion.png)
 

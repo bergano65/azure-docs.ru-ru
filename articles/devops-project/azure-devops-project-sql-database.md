@@ -1,22 +1,22 @@
 ---
-title: Руководство. Развертывание кода базы данных SQL Azure и приложения ASP.NET с помощью Azure DevOps Projects
+title: Руководство по Развертывание кода базы данных SQL Azure и приложения ASP.NET с помощью Azure DevOps Projects
 description: Служба DevOps Projects позволяет быстро приступить к работе с Azure. С помощью DevOps Projects можно развернуть код приложения ASP.NET, использующего Базу данных SQL Azure, выполнив несколько простых действий.
 ms.author: mlearned
-ms.manager: douge
+ms.manager: gwallace
 ms.prod: devops
 ms.technology: devops-cicd
 ms.topic: tutorial
 ms.date: 07/09/2018
 author: mlearned
 monikerRange: vsts
-ms.openlocfilehash: 0d05a2f3de92791572f0a5e6313777b5388af3df
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 560b16a40d73d07df6c9f446c7196cd930e2274e
+ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57845228"
+ms.lasthandoff: 10/05/2019
+ms.locfileid: "71971501"
 ---
-# <a name="tutorial-deploy-your-aspnet-app-and-azure-sql-database-code-by-using-azure-devops-projects"></a>Руководство. Развертывание кода базы данных SQL Azure и приложения ASP.NET с помощью Azure DevOps Projects
+# <a name="tutorial-deploy-your-aspnet-app-and-azure-sql-database-code-by-using-azure-devops-projects"></a>Руководство по Развертывание кода базы данных SQL Azure и приложения ASP.NET с помощью Azure DevOps Projects
 
 Azure DevOps Projects — это упрощенный интерфейс, который позволяет добавить существующий код и репозиторий Git либо выбрать пример приложения, чтобы создать конвейер непрерывной интеграции (CI) и непрерывной поставки (CD) в Azure. 
 
@@ -216,6 +216,6 @@ DevOps Projects автоматически создает и настраива�
 > [!div class="nextstepaction"]
 > [Define your multi-stage continuous deployment (CD) pipeline](https://docs.microsoft.com/azure/devops/pipelines/release/define-multistage-release-process?view=vsts) (Настройка многоэтапного конвейера для непрерывного развертывания)
 
-## <a name="videos"></a>Видеоролики
+## <a name="videos"></a>Видео
 
 > [!VIDEO https://channel9.msdn.com/Events/Build/2018/BRK3308/player]

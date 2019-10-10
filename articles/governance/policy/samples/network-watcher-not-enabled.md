@@ -2,17 +2,16 @@
 title: 'Пример: проверка отключения службы "Наблюдатель за сетями" для региона'
 description: В этом примере определения политики выполняется проверка, отключена ли служба "Наблюдатель за сетью" для указанного региона.
 author: DCtheGeek
-manager: carmonm
 ms.service: azure-policy
 ms.topic: sample
 ms.date: 01/23/2019
 ms.author: dacoulte
-ms.openlocfilehash: 7614b000f69eb74c83084aec0849a2741c82cd5a
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 94d4bbd70c21713fa366907b3fe8cec8543350eb
+ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59268268"
+ms.lasthandoff: 10/06/2019
+ms.locfileid: "71981375"
 ---
 # <a name="sample---audit-if-network-watcher-is-not-enabled-for-region"></a>Пример: проверка отключения службы "Наблюдатель за сетями" для региона
 

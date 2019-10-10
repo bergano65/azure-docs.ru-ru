@@ -9,12 +9,12 @@ ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: philmea
-ms.openlocfilehash: db9f7e75af01ed83c39ef3a37ab2612426ef6ea4
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: a3faa76c1506664a075648edc7d57fbba542b011
+ms.sourcegitcommit: 4d177e6d273bba8af03a00e8bb9fe51a447196d0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70099605"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71960536"
 ---
 # <a name="tutorial-define-a-new-device-type-in-your-azure-iot-central-application"></a>Руководство по Определение типа нового устройства в приложении Azure IoT Central
 
@@ -365,7 +365,7 @@ ms.locfileid: "70099605"
     | Отображаемое имя         | Команда вывода на экран    |
     | Имя поля           | echo (вывод на экран)            |
     | Default Timeout (Время ожидания по умолчанию)      | 30              |
-    | Display Type (Отображаемый тип)         | text            |
+    | Тип данных         | text            |
     | ОПИСАНИЕ          | Команда устройства  |  
 
     Вы можете добавить дополнительные входные данные для команды, выбрав **+** в разделе **Поля ввода**.

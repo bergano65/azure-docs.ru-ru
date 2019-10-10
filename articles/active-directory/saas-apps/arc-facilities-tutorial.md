@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 09/05/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a7cf5a5e2669fcbb5344fc6dd4b5c6de8318c3a5
-ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
+ms.openlocfilehash: 43fd1375ac8ffa850ca3f2c4c2b34e63631a9811
+ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70846859"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72025920"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-arc-facilities"></a>Руководство по Интеграции единого входа Azure Active Directory с ARC Facilities
 
@@ -91,7 +91,7 @@ ms.locfileid: "70846859"
 
     ![image](common/edit-attribute.png)
 
-1. В дополнение к описанному выше приложение ARC Facilities ожидает несколько дополнительных атрибутов в ответе SAML. В разделе **Утверждения и атрибуты пользователя** в диалоговом окне **Утверждения групп (предварительная версия)**  выполните следующие действия:
+1. В дополнение к описанному выше приложение ARC Facilities ожидает несколько дополнительных атрибутов в ответе SAML. В разделе**Утверждения и атрибуты пользователя** в диалоговом окне **Утверждения групп (предварительная версия)** выполните следующие действия:
 
     a. Щелкните **значок ручки** рядом с параметром **Группы, возвращенные в утверждении**.
 

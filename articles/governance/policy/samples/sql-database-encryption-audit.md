@@ -2,17 +2,16 @@
 title: 'Пример: аудит состояния прозрачного шифрования данных для базы данных SQL'
 description: В этом примере определения политики выполняется проверка, включено ли прозрачное шифрование данных для базы данных SQL.
 author: DCtheGeek
-manager: carmonm
 ms.service: azure-policy
 ms.topic: sample
 ms.date: 01/23/2019
 ms.author: dacoulte
-ms.openlocfilehash: e8ee800ff9f286f901a84a039e3c433442ae11b2
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: de7819f43b2d0ce4d6d047b324db94d3e5f85eec
+ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59789584"
+ms.lasthandoff: 10/06/2019
+ms.locfileid: "71981321"
 ---
 # <a name="sample---audit-sql-database-encryption"></a>Пример проверки на предмет шифрования базы данных SQL
 

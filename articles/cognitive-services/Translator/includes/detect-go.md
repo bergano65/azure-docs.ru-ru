@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 08/06/2019
 ms.author: erhopf
-ms.openlocfilehash: 0c2408d8ea8fb6458761ef1d853d5dde52ac2311
-ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
+ms.openlocfilehash: d75c925ef55163ce06b2ceff585e230d95b38c77
+ms.sourcegitcommit: 15e3bfbde9d0d7ad00b5d186867ec933c60cebe6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69907127"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71837503"
 ---
 [!INCLUDE [Prerequisites](prerequisites-go.md)]
 
@@ -156,7 +156,11 @@ go run detect-language.go
 
 ## <a name="sample-response"></a>Пример ответа
 
-Найдите сокращенное наименование страны или региона в этом [списке языков](https://docs.microsoft.com/azure/cognitive-services/translator/language-support).
+После выполнения примера в окне терминала должны быть выведены такие данные:
+
+> [!NOTE]
+> Найдите сокращенное наименование страны или региона в этом [списке языков](https://docs.microsoft.com/azure/cognitive-services/translator/language-support).
+
 
 ```json
 [

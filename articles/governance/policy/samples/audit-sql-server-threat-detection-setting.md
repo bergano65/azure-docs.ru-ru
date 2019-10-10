@@ -2,17 +2,16 @@
 title: 'Пример: аудит параметра обнаружения угроз на уровне сервера'
 description: В этом примере определения политики проверяется, имеют ли политики оповещения системы безопасности для SQL Server указанное состояние.
 author: DCtheGeek
-manager: carmonm
 ms.service: azure-policy
 ms.topic: sample
 ms.date: 01/23/2019
 ms.author: dacoulte
-ms.openlocfilehash: 6d75ffb961828448f9ab410e292cfd363ac1ecf4
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 25504b558a930ae6dcea710ee850ae296c63c4ae
+ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59277346"
+ms.lasthandoff: 10/06/2019
+ms.locfileid: "71977262"
 ---
 # <a name="sample---audit-server-level-threat-detection-setting"></a>Пример: аудит параметра обнаружения угроз на уровне сервера
 

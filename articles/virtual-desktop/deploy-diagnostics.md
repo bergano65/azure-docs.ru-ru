@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 10/02/2019
 ms.author: helohr
-ms.openlocfilehash: 83f10eb9dadfda5b87f1da287718f59da17c5110
-ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
+ms.openlocfilehash: 1bb23e3330f2350572175733445c8ef2c5ea79bb
+ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71947606"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72177772"
 ---
 # <a name="deploy-the-diagnostics-tool"></a>Развертывание средства диагностики
 
@@ -109,7 +109,7 @@ ms.locfileid: "71947606"
 4. После этого перейдите в раздел **Data** > **счетчики производительности Windows** и добавьте следующие счетчики:
 
     -   Логический диск (\*) \|% свободного места
-    -   Логический диск (C:) @no__t 0Avg. Длина очереди диска
+    -   Логический диск (C:) @no__t 0Avg. Длина дисковой очереди
     -   Память (\*) \\Available МБ
     -   Сведения о процессоре (\*) @no__t 1Processor Time
     -   Задержка ввода данных пользователем на сеанс (\*) \\Max входная задержка
@@ -197,7 +197,7 @@ ms.locfileid: "71947606"
 
 Прежде чем сделать средство диагностики доступным для пользователей, убедитесь, что у них есть следующие разрешения:
 
-- Пользователям требуется доступ на чтение для log Analytics. Дополнительные сведения см. в статье [Приступая к работе с ролями, разрешениями и безопасностью с помощью Azure Monitor](/articles/azure-monitor/platform/roles-permissions-security.md).
+- Пользователям требуется доступ на чтение для log Analytics. Дополнительные сведения см. в статье [Приступая к работе с ролями, разрешениями и безопасностью с помощью Azure Monitor](/azure/azure-monitor/platform/roles-permissions-security).
 -  Пользователям также требуется доступ на чтение для клиента виртуальных рабочих столов Windows (роль RDS Reader). Дополнительные сведения см. [в статье делегированный доступ в виртуальном рабочем столе Windows](delegated-access-virtual-desktop.md).
 
 Кроме того, необходимо предоставить пользователям следующие сведения:

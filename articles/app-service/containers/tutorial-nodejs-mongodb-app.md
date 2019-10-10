@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 3a5f6b5b1f66542a534c9016c5d9d60a1273975f
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.openlocfilehash: cf145e04ca0e0ddf336521e72f6dc230dc8fc86b
+ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59544807"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72024955"
 ---
 # <a name="build-a-nodejs-and-mongodb-app-in-azure-app-service-on-linux"></a>Разработка приложения на основе Node.js и MongoDB в Службе приложений Azure в Linux
 
@@ -186,7 +186,7 @@ az cosmosdb list-keys --name <cosmosdb-name> --resource-group myResourceGroup
 
 ### <a name="configure-the-connection-string-in-your-nodejs-application"></a>Настройка строки подключения в приложении Node.js
 
-В локальном репозитории MEAN.js создайте файл с именем _local-production.js_ в папке _config/env/_. Чтобы этот файл хранился вне репозитория, настраивается _.gitignore_.
+В локальном репозитории MEAN.js создайте файл с именем _local-production.js_ в папке _config/env/_ . Чтобы этот файл хранился вне репозитория, настраивается _.gitignore_.
 
 Скопируйте в него следующий код: Замените два заполнителя *\<cosmosdb-name>* именем базы данных Cosmos DB, а заполнитель *\<primary-master-key>*  — ключом, скопированным на предыдущем шаге.
 
@@ -259,7 +259,7 @@ MEAN.JS version: 0.5.0
 
 Чтобы задать параметры приложения, выполните команду [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set) в Cloud Shell.
 
-В следующем примере настраивается параметр приложения `MONGODB_URI` в приложении Azure. Замените заполнители *\<app-name>*, *\<cosmosdb-name>* и *\<primary-master-key>*.
+В следующем примере настраивается параметр приложения `MONGODB_URI` в приложении Azure. Замените заполнители *\<app-name>* , *\<cosmosdb-name>* и *\<primary-master-key>* .
 
 ```azurecli-interactive
 az webapp config appsettings set --name <app-name> --resource-group myResourceGroup --settings MONGODB_URI="mongodb://<cosmosdb-name>:<primary-master-key>@<cosmosdb-name>.documents.azure.com:10250/mean?ssl=true"
@@ -297,7 +297,7 @@ remote: Handling node.js deployment.
 .
 remote: Deployment successful.
 To https://<app-name>.scm.azurewebsites.net/<app-name>.git
- * [new branch]      master -> master
+ * [new branch]      master -> master
 ```
 
 Вы можете заметить, что в ходе развертывания после `npm install` запускается [Gulp](https://gulpjs.com/). Служба приложений не запускает задачи Gulp или Grunt во время развертывания, поэтому для запуска скрипта в этом примере в корневом каталоге репозитория расположены два дополнительных файла:
@@ -428,7 +428,7 @@ NODE_ENV=production node server.js
 
 Откройте в браузере адрес `http://localhost:8443` и убедитесь, что вход выполнен.
 
-Выберите **Администрирование > Управление статьями** и добавьте статью, нажав кнопку **+**.
+Выберите **Администрирование > Управление статьями** и добавьте статью, нажав кнопку **+** .
 
 Должно появиться новое текстовое поле `Comment`.
 
@@ -486,7 +486,7 @@ git push azure master
 Перейдите к следующему руководству, чтобы научиться сопоставлять пользовательские DNS-имена с приложением.
 
 > [!div class="nextstepaction"]
-> [Руководство Сопоставление настраиваемого DNS-имени с приложением](../app-service-web-tutorial-custom-domain.md)
+> [Руководство. Сопоставление настраиваемого DNS-имени с приложением](../app-service-web-tutorial-custom-domain.md)
 
 Также ознакомьтесь с другими ресурсами:
 

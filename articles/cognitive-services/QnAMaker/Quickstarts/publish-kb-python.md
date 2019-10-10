@@ -11,18 +11,18 @@ ms.subservice: qna-maker
 ms.topic: quickstart
 ms.date: 10/01/2019
 ms.author: diberry
-ms.openlocfilehash: 54f9e1eb9614708880c9a45cddcf9d7a282d0305
-ms.sourcegitcommit: 4f3f502447ca8ea9b932b8b7402ce557f21ebe5a
+ms.openlocfilehash: 09523bb6c9c8a58f5f7bd102d2ac30ad77f28d1c
+ms.sourcegitcommit: 15e3bfbde9d0d7ad00b5d186867ec933c60cebe6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71802858"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71840189"
 ---
 # <a name="quickstart-publish-a-knowledge-base-in-qna-maker-using-python"></a>Краткое руководство. Публикация базы знаний в QnA Maker с использованием Python
 
 В этом кратком руководстве по REST описано, как программным способом опубликовать базу знаний. В процессе публикации последняя версия базы знаний отправляется в индекс выделенной службы "Поиск Azure" и создается конечная точка, которую можно вызывать в приложении или чат-боте.
 
-В этом кратком руководстве вызываются API службы QnA Maker:
+В этом кратком руководстве демонстрируется вызов REST API службы QnA Maker:
 * [Публикация.](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/publish) При использовании этого API в тексте запроса не нужно указывать какие-либо сведения.
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -33,7 +33,7 @@ ms.locfileid: "71802858"
 
     ![Идентификатор базы знаний QnA Maker](../media/qnamaker-quickstart-kb/qna-maker-id.png)
 
-    Если у вас еще нет базы знаний, ее можно создать для этого руководства. [Создать базу знаний](create-new-kb-nodejs.md).
+    Если у вас еще нет базы знаний, ее можно создать для этого руководства. [Создать базу знаний](../how-to/create-knowledge-base.md).
 
 > [!NOTE] 
 > Полные файлы решения доступны в [репозитории GitHub **Azure-Samples/cognitive-services-qnamaker-python**](https://github.com/Azure-Samples/cognitive-services-qnamaker-python/tree/master/documentation-samples/quickstarts/publish-knowledge-base).

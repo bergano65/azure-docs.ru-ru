@@ -2,17 +2,16 @@
 title: Пример. Выполнение аудита в случае, если приложения не установлены на виртуальных машинах Linux
 description: Этот пример инициативы и определений гостевой конфигурации Политики проверяет, установлены ли указанные приложения на виртуальных машинах Linux.
 author: DCtheGeek
-manager: carmonm
 ms.service: azure-policy
 ms.topic: sample
 ms.date: 05/02/2019
 ms.author: dacoulte
-ms.openlocfilehash: eda5a2a6d2dae58f8da72deccbb89a34c7f21dae
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: ef2ab4bebf2247b08cdc80ed74bbe17a67c5baae
+ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65204013"
+ms.lasthandoff: 10/06/2019
+ms.locfileid: "71977032"
 ---
 # <a name="sample---audit-if-specified-applications-arent-installed-inside-linux-vms"></a>Пример. Выполнение аудита в случае, если заданные приложения не установлены на виртуальных машинах Linux
 
@@ -47,7 +46,7 @@ ms.locfileid: "65204013"
 
 |ИМЯ |type |ОПИСАНИЕ |
 |---|---|---|
-|applicationName |Строка |Имена приложений. Например, 'python', 'powershell' или список через запятую ('python, powershell'). Используйте знак \* для сопоставления с подстановочными знаками, например "power\*". |
+|applicationName |Строка, |Имена приложений. Например, 'python', 'powershell' или список через запятую ('python, powershell'). Используйте знак \* для сопоставления с подстановочными знаками, например "power\*". |
 
 При создании задания через PowerShell или Azure CLI значения параметров могут передаваться как JSON или в строке, или через файл с использованием `-PolicyParameter` (PowerShell) или `--params` (Azure CLI).
 PowerShell также поддерживает `-PolicyParameterObject`, требующий передать командлету хэш-таблицу имен и значений, где **Имя** является именем параметра, а **значение** — отдельным значением или массивом значений, передаваемых во время назначения.

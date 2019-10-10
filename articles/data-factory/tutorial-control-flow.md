@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: tutorial
 ms.date: 9/27/2019
-ms.openlocfilehash: 5b9be86b0a3d17c9c325b565979fccbec92f5733
-ms.sourcegitcommit: 80da36d4df7991628fd5a3df4b3aa92d55cc5ade
+ms.openlocfilehash: d8ea5a507cc110c92bb74491c3376f7b671638d9
+ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71815875"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72176010"
 ---
 # <a name="branching-and-chaining-activities-in-a-data-factory-pipeline"></a>Ветвления и создание цепочки действий в конвейере фабрики данных
 
@@ -38,7 +38,7 @@ ms.locfileid: "71815875"
 > * Запуск конвейера.
 > * Мониторинг конвейера и выполнения действий.
 
-В этом руководстве используется пакет SDK для .NET. Для взаимодействия с фабрикой данных Azure можно использовать другие механизмы. Краткие руководства по Фабрике данных см. в [5-минутных руководствах по началу работы](https://docs.microsoft.com/azure/data-factory/#5-minute-quickstarts).
+В этом руководстве используется пакет SDK для .NET. Для взаимодействия с фабрикой данных Azure можно использовать другие механизмы. Краткие руководства по Фабрике данных см. в [5-минутных руководствах по началу работы](/azure/data-factory/quickstart-create-data-factory-portal).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
