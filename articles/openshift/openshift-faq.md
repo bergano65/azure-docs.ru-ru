@@ -8,12 +8,12 @@ manager: jeconnoc
 ms.service: container-service
 ms.topic: article
 ms.date: 05/08/2019
-ms.openlocfilehash: 86875643950e11f1e5030676c1ab3825039749ed
-ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
+ms.openlocfilehash: 8f7349310f72c8cccc7b1906239ece3038dd7861
+ms.sourcegitcommit: 961468fa0cfe650dc1bec87e032e648486f67651
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71203537"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72249215"
 ---
 # <a name="azure-red-hat-openshift-faq"></a>Вопросы и ответы об Azure Red Hat OpenShift
 
@@ -39,7 +39,7 @@ ms.locfileid: "71203537"
 
 ## <a name="what-cluster-operations-are-available"></a>Какие операции кластера доступны?
 
-Можно увеличить или уменьшить масштаб только числа узлов вычислений. Другие изменения не разрешены для `Microsoft.ContainerService/openShiftManagedClusters` ресурса после его создания. Максимальное число узлов вычислений ограничено 20.
+Можно увеличить или уменьшить масштаб только числа узлов вычислений. Другие изменения не разрешены для ресурса `Microsoft.ContainerService/openShiftManagedClusters` после создания. Максимальное число узлов вычислений ограничено 20.
 
 ## <a name="what-virtual-machine-sizes-can-i-use"></a>Какие размеры виртуальных машин можно использовать?
 
@@ -59,11 +59,11 @@ ms.locfileid: "71203537"
 
 ## <a name="is-the-docker-registry-available-externally-so-i-can-use-tools-such-as-jenkins"></a>Доступен ли реестр DOCKER извне, поэтому я могу использовать такие средства, как Jenkins?
 
-Реестр DOCKER доступен `https://docker-registry.apps.<clustername>.<region>.azmosa.io/` , однако гарантия надежности хранилища не предоставляется. Вы также можете использовать [Реестр контейнеров Azure](https://azure.microsoft.com/services/container-registry/).
+Реестр DOCKER доступен в `https://docker-registry.apps.<clustername>.<region>.azmosa.io/`. Однако гарантия надежности хранилища не предоставляется. Вы также можете использовать [Реестр контейнеров Azure](https://azure.microsoft.com/services/container-registry/).
 
 ## <a name="is-cross-namespace-networking-supported"></a>Поддерживается ли поддержка сетей с несколькими пространствами имен?
 
-Администраторы клиентов и индивидуальных проектов могут настраивать сеть между пространствами имен (включая отклонения) для каждого проекта с помощью `NetworkPolicy` объектов.
+Администраторы клиентов и индивидуальных проектов могут настраивать сеть между пространствами имен (включая запрет ИТ) для каждого проекта, используя объекты `NetworkPolicy`.
 
 ## <a name="can-an-admin-manage-users-and-quotas"></a>Может ли администратор управлять пользователями и квотами?
 
@@ -71,7 +71,7 @@ ms.locfileid: "71203537"
 
 ## <a name="can-i-restrict-a-cluster-to-only-certain-azure-ad-users"></a>Можно ли ограничить кластер только определенными пользователями Azure AD?
 
-Да. Вы можете ограничить, какие пользователи Azure AD могут входить в кластер, настроив приложение Azure AD. Дополнительные сведения см. [в разделе как Ограничить приложение набором пользователей](https://docs.microsoft.com/azure/active-directory/develop/howto-restrict-your-app-to-a-set-of-users)
+Да. Вы можете ограничить, какие пользователи Azure AD могут входить в кластер, настроив приложение Azure AD. Дополнительные сведения см. в разделе [How: Ограничить приложение набором пользователей @ no__t-0
 
 ## <a name="can-a-cluster-have-compute-nodes-across-multiple-azure-regions"></a>Может ли кластер вычислять узлы в нескольких регионах Azure?
 
@@ -85,15 +85,15 @@ ms.locfileid: "71203537"
 
 Да. Вы можете использовать OSBA с Azure Red Hat OpenShift. Дополнительные сведения см. в статье [Open Service Broker for Azure](https://github.com/Azure/open-service-broker-azure#openshift-project-template) .
 
-## <a name="i-am-trying-to-peer-into-a-virtual-network-in-a-different-subscription-but-getting-failed-to-get-vnet-cidr-error"></a>Я пытаюсь выполнить пиринг в виртуальной сети в другой подписке, но получить `Failed to get vnet CIDR` ошибку.
+## <a name="i-am-trying-to-peer-into-a-virtual-network-in-a-different-subscription-but-getting-failed-to-get-vnet-cidr-error"></a>Я пытаюсь выполнить одноранговое подключение к виртуальной сети в другой подписке, но получив `Failed to get vnet CIDR`.
 
-В подписке с виртуальной сетью обязательно Зарегистрируйте `Microsoft.ContainerService` поставщик с помощью`az provider register -n Microsoft.ContainerService --wait` 
+В подписке с виртуальной сетью обязательно зарегистрируйте поставщик `Microsoft.ContainerService` с `az provider register -n Microsoft.ContainerService --wait`. 
 
 ## <a name="what-is-the-azure-red-hat-openshift-aro-maintenance-process"></a>Что такое процесс обслуживания Azure Red Hat OpenShift (АТО)?
 
 Существует три типа обслуживания для АТО: обновления, резервное копирование и восстановление данных etcd, а затем обслуживание, инициированное поставщиком облачных служб.
 
-+ Обновления включают обновления программного обеспечения и CVE. Обновление CVE происходит при запуске, запуская `yum update` и предоставляющая немедленное устранение проблем.  В параллельном режиме новая сборка образа будет создана для создания в будущем кластере.
++ Обновления включают обновления программного обеспечения и CVE. Исправление CVE происходит при запуске, запустив `yum update` и обеспечивающее немедленное устранение рисков.  В параллельном режиме новая сборка образа будет создана для создания в будущем кластере.
 
 + Резервное копирование и управление данными etcd — это автоматизированный процесс, который может потребовать простоя кластера в зависимости от действия. Если база данных etcd восстанавливается из резервной копии, это приведет к простою. Мы создаем резервную копию etcd ежечасно и сохраняем последние 6 часов резервных копий.
 
@@ -129,9 +129,9 @@ ms.locfileid: "71203537"
 
 Системный журнал, журналы DOCKER, журнал и дмесг обрабатываются управляемой службой и не предоставляются клиентам.
 
-## <a name="how-can-a-customer-get-access-to-metrics-like-cpumemory-at-the-node-level-to-take-action-to-scale-debug-issues-etc-i-cannot-seem-to-run-kubectl-top-on-an-aro-cluster"></a>Как клиент может получить доступ к метрикам, таким как ЦП/память на уровне узла, чтобы выполнить действия по масштабированию, отладке проблем и т. д. Мне кажется, что я `kubectl top` не могу работать в кластере АТО.
+## <a name="how-can-a-customer-get-access-to-metrics-like-cpumemory-at-the-node-level-to-take-action-to-scale-debug-issues-etc-i-cannot-seem-to-run-kubectl-top-on-an-aro-cluster"></a>Как клиент может получить доступ к метрикам, таким как ЦП/память на уровне узла, чтобы выполнить действия по масштабированию, отладке проблем и т. д. Мне кажется, что я не могу запустить `kubectl top` в кластере АТО.
 
-`kubectl top`недоступна в Red Hat OpenShift. Для этого требуется источник метрик, Heapster (не рекомендуется) или "метрики-сервер" (инкубация или Alpha), ни один из которых не входит в стек мониторинга OpenShift.
+`kubectl top` недоступна в Red Hat OpenShift. Для этого требуется источник метрик, Heapster (не рекомендуется) или "метрики-сервер" (инкубация или Alpha), ни один из которых не входит в стек мониторинга OpenShift.
 
 ## <a name="what-is-the-default-pod-scheduler-configuration-for-aro"></a>Какова конфигурация планировщика Pod по умолчанию для АТО?
 
@@ -189,7 +189,7 @@ SDN является openshift-OVS-нетворкполици и не может
 
 Каждый кластер Azure Red Hat OpenShift предназначен для конкретного клиента и находится в подписке клиента. 
 
-## <a name="can-we-choose-any-persistent-storage-solution-ocs"></a>Можно выбрать любое решение постоянного хранения. OCS? 
+## <a name="can-we-choose-any-persistent-storage-solution-like-ocs"></a>Можно ли выбрать любое решение постоянного хранения, например OCS? 
 
 Для выбора доступны два класса хранения: Диск Azure и файл Azure.
 

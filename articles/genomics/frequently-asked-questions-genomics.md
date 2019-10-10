@@ -1,28 +1,28 @@
 ---
-title: 'Microsoft Genomics: Часто задаваемые вопросы — часто задаваемые вопросы | Документация Майкрософт'
-titleSuffix: Azure
+title: Часто задаваемые вопросы
+titleSuffix: Microsoft Genomics
 description: Ответы на часто задаваемые клиентами вопросы о Microsoft Genomics.
 services: genomics
 author: grhuynh
 manager: cgronlun
 ms.author: grhuynh
 ms.service: genomics
-ms.topic: article
+ms.topic: troubleshooting
 ms.date: 12/07/2017
-ms.openlocfilehash: d36a2c6379a95cc67a55c2cc266ced94b4a0179a
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: 80a656ee687b71fcaf09a02d70d0a5a4300186bc
+ms.sourcegitcommit: 961468fa0cfe650dc1bec87e032e648486f67651
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67672227"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72249233"
 ---
 # <a name="microsoft-genomics-common-questions"></a>Microsoft Genomics: Часто задаваемые вопросы
 
 В этой статье перечислены самые популярные вопросы, связанные с Microsoft Genomics. Дополнительные сведения о службе Microsoft Genomics см. в [этой статье](overview-what-is-genomics.md). Дополнительные сведения об устранении неполадок см. в [этом руководстве](troubleshooting-guide-genomics.md). 
 
 
-## <a name="how-do-i-run-gatk4-workflows-on-microsoft-genomics"></a>Как запускать рабочие процессы GATK4 на Microsoft Genomics?
-В файле config.txt в службе Microsoft Genomics, указать имя_процесса для `gatk4`. Обратите внимание на то, что вам будет выставлен счет по обычным тарифам выставления счетов.
+## <a name="how-do-i-run-gatk4-workflows-on-microsoft-genomics"></a>Разделы справки запускать рабочие процессы GATK4 в Microsoft Genomics?
+В файле config. txt Microsoft Genomics службы укажите для PROCESS_NAME значение `gatk4`. Обратите внимание, что плата взимается по обычным тарифам.
 
 
 ## <a name="what-is-the-sla-for-microsoft-genomics"></a>Что такое Соглашение об уровне обслуживания для Microsoft Genomics?
@@ -85,6 +85,6 @@ msgen распознает файлы конфигурации в следующ
 ## <a name="next-steps"></a>Следующие шаги
 
 Используйте следующие ресурсы, чтобы приступить к работе с Microsoft Genomics:
-- Приступить к работе, запустив первый рабочий процесс с помощью службы Microsoft Genomics. [Запуск рабочего процесса в службе Microsoft Genomics](quickstart-run-genomics-workflow-portal.md)
+- Приступить к работе, запустив первый рабочий процесс с помощью службы Microsoft Genomics. [Запуск рабочего процесса с помощью службы Microsoft Genomics](quickstart-run-genomics-workflow-portal.md)
 - Отправить свои данные для обработки в службу Microsoft Genomics. Дополнительные сведения см. в статьях [Отправка рабочего процесса с помощью входных FASTQ-файлов](quickstart-input-pair-FASTQ.md) | [Отправка рабочего процесса с помощью входного BAM-файла](quickstart-input-BAM.md) | [Отправка рабочего процесса с помощью нескольких входных данных из одного примера](quickstart-input-multiple.md) 
 
