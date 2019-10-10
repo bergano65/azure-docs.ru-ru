@@ -4,7 +4,9 @@
   items:
     - name: Сведения о Службах мультимедиа
       href: media-services-overview.md
-- name: Руководства
+    - name: Новые возможности в Службах мультимедиа
+      href: release-notes.md
+- name: Учебники
   expanded: true
   items:
     - name: Кодирование размещенных удаленно файлов и потоковая передача видео
@@ -343,8 +345,6 @@
           href: 'https://aka.ms/ams-v3-ruby-sdk'
     - name: Обозреватель Служб мультимедиа Azure
       href: 'https://github.com/Azure/Azure-Media-Services-Explorer'
-    - name: Заметки о выпуске
-      href: release-notes.md
     - name: Квоты и ограничения
       href: limits-quotas-constraints.md
     - name: Вопросы и ответы

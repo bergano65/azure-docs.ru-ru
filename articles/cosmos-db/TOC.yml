@@ -57,8 +57,10 @@
       href: tutorial-global-distribution-sql-api.md
 - name: Примеры
   items:
-    - name: Примеры для .NET
+    - name: "Примеры для пакета SDK .NET версии\_2"
       href: sql-api-dotnet-samples.md
+    - name: "Примеры для пакета SDK .NET версии\_3"
+      href: sql-api-dotnet-v3sdk-samples.md
     - name: Примеры для Java
       href: sql-api-java-samples.md
     - name: Примеры для Async Java
@@ -1022,6 +1024,8 @@
           href: odbc-driver.md
     - name: "Перенос данных в Cosmos\_DB"
       items:
+        - name: "Варианты переноса данных в Cosmos\_DB"
+          href: cosmosdb-migrationchoices.md
         - name: Миграция в API SQL с помощью Striim
           href: cosmosdb-sql-api-migrate-data-striim.md
         - name: Миграция в API Cassandra с помощью Striim

@@ -1,89 +1,111 @@
-items:
 - name: Документация по Ansible в Azure
   href: ./index.yml
 - name: Обзор
   items:
-  - name: Общие сведения об Ansible в Azure
-    href: ./ansible-overview.md
-- name: Быстрое начало работы
-  items:
-  - name: Развертывание шаблона решения Ansible
-    href: ./ansible-deploy-solution-template.md
-  - name: Установка Ansible на виртуальной машине Linux
-    href: /azure/virtual-machines/linux/ansible-install-configure
-    maintainContext: true
-  - name: Создание виртуальной машины Linux
-    href: /azure/virtual-machines/linux/ansible-create-vm
-    maintainContext: true
-  - name: Управление виртуальной машиной Linux
-    href: /azure/virtual-machines/linux/ansible-manage-linux-vm
-    maintainContext: true
-  - name: Запуск playbook в Cloud Shell
-    href: ./ansible-run-playbook-in-cloudshell.md
+    - name: Общие сведения об Ansible в Azure
+      href: ./ansible-overview.md
+- name: Краткие руководства
   expanded: true
+  items:
+    - name: Развертывание шаблона решения Ansible в CentOS
+      href: ./ansible-deploy-solution-template.md
+    - name: Установка Ansible на виртуальные машины Linux
+      href: /azure/virtual-machines/linux/ansible-install-configure
+      maintainContext: true
+    - name: Запуск модулей playbook в Cloud Shell
+      href: ./ansible-run-playbook-in-cloudshell.md
+    - name: Работа с Виртуальными машинами Linux
+      expanded: true
+      items:
+        - name: Настройка виртуальных машин Linux
+          href: /azure/virtual-machines/linux/ansible-create-vm
+          maintainContext: true
+        - name: Управление виртуальными машинами Linux
+          href: /azure/virtual-machines/linux/ansible-manage-linux-vm
+          maintainContext: true
 - name: Учебники
   items:
-  - name: AKS
-    items:
-    - name: Создание и настройка кластеров AKS
-      href: ./ansible-create-configure-aks.md
-  - name: Служба приложений
-    items:
-    - name: Создание и настройка веб-приложений Azure
-      href: ./ansible-create-configure-azure-web-apps.md
-    - name: Масштабирование веб-приложений Azure
-      href: ./ansible-scale-azure-web-apps.md
-  - name: Шлюз приложений
-    items:
-    - name: Создание и настройка Шлюза приложений Azure
-      href: ./ansible-create-configure-application-gateway.md
-  - name: Базы данных
-    items:
-    - name: Создание и настройка базы данных Azure для MySQL
-      href: ./ansible-create-configure-mysql.md
-  - name: Динамический список
-    items:
-    - name: Управление динамическими списками
-      href: ./ansible-manage-azure-dynamic-inventories.md
-  - name: Виртуальная сеть
-    items:
-    - name: Создание и настройка таблиц маршрутов
-      href: ./ansible-create-configure-route-table.md
-  - name: Масштабируемый набор виртуальных машин
-    items:
-    - name: Создание и настройка VMSS
-      href: ./ansible-create-configure-vmss.md
-    - name: Развертывание приложения в VMSS
-      href: ./ansible-deploy-app-vmss.md
-    - name: Автомасштабирование VMSS
-      href: ./ansible-auto-scale-vmss.md
+    - name: Шлюз приложений Azure
+      items:
+        - name: Управление веб-трафиком
+          href: ./ansible-create-configure-application-gateway.md
+    - name: Служба приложений Azure
+      items:
+        - name: Настройка приложений
+          href: ./ansible-create-configure-azure-web-apps.md
+        - name: Масштабирование приложений
+          href: ./ansible-scale-azure-web-apps.md
+    - name: Azure DevTest Labs
+      items:
+        - name: Настройка лабораторий
+          href: ./ansible-devtest-labs-configure.md
+    - name: Служба Azure Kubernetes (AKS)
+      items:
+        - name: Настройка кластеров AKS
+          href: ./ansible-create-configure-aks.md
+        - name: Настройка сети Azure CNI
+          href: ./ansible-aks-configure-cni-networking.md
+        - name: Настройка сети kubenet
+          href: ./ansible-aks-configure-kubenet-networking.md
+        - name: Настройка ролей RBAC в кластере AKS
+          href: ./ansible-aks-configure-rbac.md
+    - name: Azure HDInsight
+      items:
+        - name: Настройка кластеров
+          href: ./ansible-azure-hdinsight-configure.md
+    - name: Служебная шина Azure
+      items:
+        - name: Настройка очередей
+          href: ./ansible-service-bus-queue-configure.md
+        - name: Настройка разделов
+          href: ./ansible-service-bus-topic-configure.md
+    - name: База данных
+      items:
+        - name: Настройка Базы данных Azure для MySQL
+          href: ./ansible-create-configure-mysql.md
+        - name: "Настройка учетных записей Azure Cosmos\_DB"
+          href: ./ansible-data-cosmos-configure.md
+        - name: Настройка кэша Redis для Azure
+          href: ./ansible-data-cache-for-redis-configure.md
+    - name: Динамический список
+      items:
+        - name: Управление ресурсами Azure
+          href: ./ansible-manage-azure-dynamic-inventories.md
+    - name: Масштабируемые наборы виртуальных машин
+      items:
+        - name: Настройка
+          href: ./ansible-create-configure-vmss.md
+        - name: Развертывание
+          href: ./ansible-deploy-app-vmss.md
+        - name: Автомасштабирование
+          href: ./ansible-auto-scale-vmss.md
+        - name: Обновление пользовательского образа
+          href: ./ansible-vmss-update-image.md
+    - name: Виртуальная сеть
+      items:
+        - name: Настройка пиринга
+          href: ./ansible-vnet-peering-configure.md
+        - name: Настройка таблиц маршрутов
+          href: ./ansible-create-configure-route-table.md
+- name: Примеры
+  items:
+    - name: Тестовая служба Ansible для Azure
+      href: 'https://github.com/microsoft/ansiblelabs'
+    - name: Примеры для сборника схем Ansible для Azure
+      href: 'https://github.com/Azure-Samples/ansible-playbooks'
 - name: Справочные материалы
   items:
-  - name: Роли Playbook
-    items:
-    - name: azure_module
-      href: https://galaxy.ansible.com/Azure/azure_modules/
-    - name: azure_preview_module
-      href: https://galaxy.ansible.com/Azure/azure_preview_modules
-  - name: Выпуски и компоненты
-    href: ./ansible-matrix.md
-  - name: Экземпляры контейнеров Azure
-    href: https://docs.ansible.com/ansible/latest/azure_rm_containerinstance_module.html
-  - name: Функции Azure
-    href: https://docs.ansible.com/ansible/latest/azure_rm_functionapp_module.html
-  - name: Балансировщики нагрузки
-    href: https://docs.ansible.com/ansible/latest/azure_rm_loadbalancer_module.html
-  - name: Виртуальные машины
-    href: https://docs.ansible.com/ansible/latest/azure_rm_virtualmachine_module.html
-  - name: Все модули для Azure
-    href: https://docs.ansible.com/ansible/latest/modules/list_of_cloud_modules#azure
+    - name: Роли в сборнике схем
+      items:
+        - name: azure_module
+          href: 'https://galaxy.ansible.com/Azure/azure_modules/'
+        - name: azure_preview_module
+          href: 'https://galaxy.ansible.com/Azure/azure_preview_modules'
+    - name: Выпуски и компоненты
+      href: ./ansible-matrix.md
+    - name: Все модули для Azure
+      href: 'https://docs.ansible.com/ansible/latest/modules/list_of_cloud_modules#azure'
 - name: Средства
   items:
-  - name: Расширение Visual Studio Code для Ansible
-    href: https://marketplace.visualstudio.com/items?itemName=vscoss.vscode-ansible
-ms.openlocfilehash: a3f1dcf9c7672938b35ba5615c8d901cbd1d1332
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55226644"
+    - name: Расширение Visual Studio Code для Ansible
+      href: 'https://marketplace.visualstudio.com/items?itemName=vscoss.vscode-ansible'

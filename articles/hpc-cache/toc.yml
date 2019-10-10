@@ -36,3 +36,5 @@
   items:
     - name: Открытие запроса в службу поддержки
       href: hpc-cache-support-ticket.md
+    - name: Восстановление после регионального сбоя
+      href: hpc-region-recovery.md

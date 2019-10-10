@@ -137,23 +137,6 @@
           href: how-to-train-with-datasets.md
     - name: Обучение моделей
       items:
-        - name: Настройка сред обучения
-          displayName: 'run config, compute target, dsvm, Data Science Virtual Machine, local, cluster, ACI, container instance, Databricks, data lake, lake, HDI, HDInsight'
-          href: how-to-set-up-training-targets.md
-        - name: Использование средств оценки для обучения
-          items:
-            - name: Создание средств оценки при обучении модели
-              href: how-to-train-ml-models.md
-            - name: Использование Scikit-learn
-              href: how-to-train-scikit-learn.md
-            - name: Использование класса TensorFlow
-              href: how-to-train-tensorflow.md
-            - name: Использование Keras
-              href: how-to-train-keras.md
-            - name: Использование класса PyTorch
-              href: how-to-train-pytorch.md
-            - name: Использование Chainer
-              href: how-to-train-chainer.md
         - name: Использование визуального интерфейса
           displayName: sample visual interface experiments
           items:
@@ -175,25 +158,29 @@
             - name: Прогнозирование задержки рейсов
               displayName: 'classification, studio'
               href: how-to-ui-sample-classification-predict-flight-delay.md
-        - name: Настройка гиперпараметров
-          displayName: parameter
-          href: how-to-tune-hyperparameters.md
-        - name: Использование Key Vault при обучении
-          displayName: secrets keyvault
-          href: how-to-use-secrets-in-runs.md
-    - name: Отслеживание и мониторинг экспериментов
-      items:
-        - name: 'Запуск, мониторинг и отмена выполнения'
-          displayName: 'cancel, fail, status, child run'
-          href: how-to-manage-runs.md
-        - name: Запись метрик для учебных запусков
-          href: how-to-track-experiments.md
-        - name: Отслеживание экспериментов с помощью потока ML
-          displayName: 'log, monitor, metrics'
-          href: how-to-use-mlflow.md
-        - name: Визуализация выполняется с помощью TensorBoard
-          displayName: 'log, monitor, metrics'
-          href: how-to-monitor-tensorboard.md
+        - name: Использование средств оценки для машинного обучения
+          items:
+            - name: Создание средств оценки при обучении модели
+              href: how-to-train-ml-models.md
+            - name: Настройка сред обучения
+              displayName: 'run config, compute target, dsvm, Data Science Virtual Machine, local, cluster, ACI, container instance, Databricks, data lake, lake, HDI, HDInsight'
+              href: how-to-set-up-training-targets.md
+            - name: Настройка гиперпараметров
+              displayName: parameter
+              href: how-to-tune-hyperparameters.md
+            - name: Использование Key Vault при обучении
+              displayName: secrets keyvault
+              href: how-to-use-secrets-in-runs.md
+        - name: Scikit-learn
+          href: how-to-train-scikit-learn.md
+        - name: TensorFlow
+          href: how-to-train-tensorflow.md
+        - name: Keras
+          href: how-to-train-keras.md
+        - name: PyTorch
+          href: how-to-train-pytorch.md
+        - name: Chainer
+          href: how-to-train-chainer.md
     - name: Автоматизация машинного обучения
       displayName: 'automl, auto ml'
       items:
@@ -210,6 +197,19 @@
           href: how-to-auto-train-forecast.md
         - name: Общие сведения о диаграммах и метриках
           href: how-to-understand-automated-ml.md
+    - name: Отслеживание и мониторинг экспериментов
+      items:
+        - name: 'Запуск, мониторинг и отмена выполнения'
+          displayName: 'cancel, fail, status, child run'
+          href: how-to-manage-runs.md
+        - name: Запись метрик для учебных запусков
+          href: how-to-track-experiments.md
+        - name: Отслеживание экспериментов с помощью потока ML
+          displayName: 'log, monitor, metrics'
+          href: how-to-use-mlflow.md
+        - name: Визуализация выполняется с помощью TensorBoard
+          displayName: 'log, monitor, metrics'
+          href: how-to-monitor-tensorboard.md
     - name: Развертывание и обслуживание моделей
       items:
         - name: Где и как развернуть

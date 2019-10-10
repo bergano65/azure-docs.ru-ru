@@ -44,6 +44,8 @@
       href: expressroute-erdirect-about.md
     - name: Общие сведения об ExpressRoute Global Reach
       href: expressroute-global-reach.md
+    - name: Сведения о шифровании ExpressRoute
+      href: expressroute-about-encryption.md
     - name: Подключение Azure к общедоступному облаку
       href: expressroute-connect-azure-to-public-cloud.md
     - name: Взаимодействие компонентов при подключении к серверной части
@@ -119,8 +121,10 @@
       items:
         - name: Azure PowerShell
           href: expressroute-howto-erdirect.md
-        - name: "Azure\_CLI"
+        - name: Инфраструктура CLI Azure
           href: expressroute-howto-expressroute-direct-cli.md
+    - name: Настройка MACsec для прямых портов ExpressRoute
+      href: expressroute-howto-macsec.md
     - name: Настройка фильтров маршрутов для пиринга Майкрософт
       items:
         - name: Портал Azure

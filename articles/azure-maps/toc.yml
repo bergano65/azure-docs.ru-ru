@@ -105,6 +105,8 @@
               href: map-add-line-layer.md
             - name: Добавление слоя многоугольников
               href: map-add-shape.md
+            - name: Добавление слоя многоугольников с объемным эффектом
+              href: map-extruded-polygon.md
             - name: Добавление слоя тепловой карты
               href: map-add-heat-map-layer.md
             - name: Добавление контекстного меню

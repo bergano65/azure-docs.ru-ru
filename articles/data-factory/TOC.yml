@@ -80,6 +80,8 @@
           items:
             - name: Средство копирования данных
               href: tutorial-incremental-copy-partitioned-file-name-copy-data-tool.md
+    - name: Преобразование данных с помощью функции сопоставления потоков данных
+      href: tutorial-data-flow.md
     - name: Преобразование данных в облаке
       items:
         - name: HDInsight Spark
@@ -143,7 +145,7 @@
       href: concepts-integration-runtime.md
     - name: Сопоставление потоков данных
       items:
-        - name: Принципы сопоставления потоков данных
+        - name: Общие сведения о сопоставлении потоков данных
           href: concepts-data-flow-overview.md
         - name: Режим отладки
           href: concepts-data-flow-debug-mode.md
@@ -151,8 +153,6 @@
           href: concepts-data-flow-json.md
         - name: Смещение схемы
           href: concepts-data-flow-schema-drift.md
-        - name: Область проверки
-          href: concepts-data-flow-inspect-pane.md
         - name: Шаблоны столбцов
           href: concepts-data-flow-column-pattern.md
         - name: Мониторинг потоков данных
@@ -161,12 +161,8 @@
           href: concepts-data-flow-performance.md
         - name: Перенос узлов
           href: concepts-data-flow-move-nodes.md
-        - name: Вкладка оптимизации
-          href: concepts-data-flow-optimize-tab.md
         - name: Построитель выражений
           href: concepts-data-flow-expression-builder.md
-        - name: Узлы ссылки
-          href: concepts-data-flow-reference-node.md
         - name: Язык выражений
           href: data-flow-expression-functions.md
     - name: Роли и разрешения
@@ -390,6 +386,8 @@
     - name: Преобразование данных
       href: transform-data.md
       items:
+        - name: Выполнение действия потока данных
+          href: control-flow-execute-data-flow-activity.md
         - name: Действия функции Azure
           href: control-flow-azure-function-activity.md
         - name: Настраиваемое действие
@@ -424,8 +422,6 @@
       items:
         - name: Добавление действия переменной
           href: control-flow-append-variable-activity.md
-        - name: Выполнение действия потока данных
-          href: control-flow-execute-data-flow-activity.md
         - name: Действие выполнения конвейера
           href: control-flow-execute-pipeline-activity.md
         - name: Действие фильтра

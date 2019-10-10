@@ -151,6 +151,10 @@
               href: 'https://docs.microsoft.com/en-us/sql/t-sql/statements/alter-database-transact-sql-set-options?view=azure-sqldw-latest'
             - name: Настройка сеанса
               href: /sql/t-sql/statements/set-result-set-caching-transact-sql
+            - name: Проверка размера кэша
+              href: 'https://docs.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-showresultcachespaceused-transact-sql?view=azure-sqldw-latest'
+            - name: Очистка кэша
+              href: 'https://docs.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-dropresultsetcache-transact-sql?view=azure-sqldw-latest'
         - name: Таблицы
           items:
             - name: Обзор
