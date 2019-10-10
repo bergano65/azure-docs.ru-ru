@@ -16,12 +16,12 @@ ums.workload: na
 ms.date: 05/28/2019
 ms.author: barclayn
 ms.custom: azlog
-ms.openlocfilehash: 0820ca227a4d0e8c71ed3f35cd8fa2841163d38f
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: e7f3a9bc9aade5f8ade857e9c2f14f8e9898a7da
+ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68727650"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72244674"
 ---
 # <a name="integrate-azure-active-directory-audit-logs"></a>Интеграция журналов аудита Azure Active Directory
 
@@ -50,7 +50,7 @@ ms.locfileid: "68727650"
 
    ``Azlog.exe authorizedirectoryreader tenantId``
 
-   Пример
+   Пример:
 
    ``AZLOG.exe authorizedirectoryreader ba2c0000-d24b-4f4e-92b1-48c4469999``
 
@@ -74,7 +74,7 @@ ms.locfileid: "68727650"
 ## <a name="next-steps"></a>Следующие шаги
 Чтобы узнать больше об интеграции журналов Azure, ознакомьтесь со следующей информацией:
 
-* [Microsoft Azure Log Integration for Azure logs](https://www.microsoft.com/download/details.aspx?id=53324) (Служба "Интеграция журналов данных Microsoft Azure"). На этой странице Центра загрузки можно получить дополнительные сведения, изучить требования к системе и получить инструкции по установке службы "Интеграция журналов Azure".
+* [Microsoft Azure Log Integration for Azure logs](https://azure.microsoft.com/services/monitor/) (Служба "Интеграция журналов данных Microsoft Azure"). На этой странице Центра загрузки можно получить дополнительные сведения, изучить требования к системе и получить инструкции по установке службы "Интеграция журналов Azure".
 * [Общие сведения о службе "Интеграция журналов данных Azure"](azure-log-integration-overview.md). В этой статье рассказывается о службе "Интеграция журналов данных Azure", ее основных возможностях и принципах работы.
 * [Часто задаваемые вопросы об Интеграции журналов Azure](azure-log-integration-faq.md). Эта статья содержит ответы на часто задаваемые вопросы об интеграции журналов Azure.
 * [New features for Azure diagnostics and Azure Audit logs](https://azure.microsoft.com/blog/new-features-for-azure-diagnostics-and-azure-audit-logs/) (Новые возможности системы диагностики Azure и журналов аудита Azure). В этой записи блога рассказывается о журналах аудита Azure и других функциях, помогающих лучше понять, как работают ваши ресурсы Azure.

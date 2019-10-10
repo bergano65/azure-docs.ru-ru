@@ -17,12 +17,12 @@ ms.date: 04/18/2019
 ms.author: chadam
 ms.reviewer: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 77eb03089d956d0fb32ef0463b3d1cdb49ff0dbb
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: 1670c93f83ecd6f5bd557d24ec754998a225db0c
+ms.sourcegitcommit: 1c2659ab26619658799442a6e7604f3c66307a89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68989814"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72255628"
 ---
 # <a name="analyze-azure-ad-activity-logs-with-azure-monitor-logs"></a>Анализ журналов действий Azure AD с помощью журналов Azure Monitor
 
@@ -32,13 +32,19 @@ ms.locfileid: "68989814"
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../../includes/azure-monitor-log-analytics-rebrand.md)]
 
-## <a name="prerequisites"></a>предварительные требования 
+## <a name="prerequisites"></a>Предварительные требования 
 
 Для работы вам потребуется следующее:
 
 * Рабочая область Log Analytics в подписке Azure. Узнайте, [как создать рабочую область Log Analytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-quick-create-workspace).
 * Сначала настройте передачу [журналов действий Azure AD в рабочую область Log Analytics](howto-integrate-activity-logs-with-log-analytics.md).
-
+*  [Доступ](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/manage-access#manage-access-using-workspace-permissions) к рабочей области log Analytics
+* Следующие роли в Azure Active Directory (при обращении к Log Analytics через портал Azure Active Directory)
+    - администратор безопасности;
+    - Читатель сведений о безопасности
+    - Средство чтения отчетов
+    - глобальный администратор.
+    
 ## <a name="navigate-to-the-log-analytics-workspace"></a>Переход к рабочей области Log Analytics
 
 1. Войдите на [портале Azure](https://portal.azure.com). 

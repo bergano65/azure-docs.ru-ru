@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 05/06/2019
 ms.author: mlearned
-ms.openlocfilehash: 59e64b7c84e589da57ea28d6655c9305f4fdc101
-ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
+ms.openlocfilehash: 5819a6c6d73b2ee51fc72d2b56d99b0efb3ea0be
+ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71058345"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72241139"
 ---
 # <a name="preview---secure-access-to-the-api-server-using-authorized-ip-address-ranges-in-azure-kubernetes-service-aks"></a>Предварительный просмотр — безопасный доступ к серверу API с помощью допустимых диапазонов IP-адресов в службе Kubernetes Azure (AKS)
 
@@ -228,7 +228,7 @@ echo "Public IP address for the Azure Firewall instance that should be added to 
 
 Выполните команду [AZ AKS Update][az-aks-update] и укажите разрешения *--API-Server-Allowed-IP-ranges* . Эти диапазоны IP-адресов обычно являются диапазонами адресов, используемыми локальными сетями. Добавьте общедоступный IP-адрес собственного брандмауэра Azure, полученного на предыдущем шаге, например *20.42.25.196/32*.
 
-В следующем примере включается авторизация IP-адресов сервера API в кластере с именем *myAKSCluster* в группе ресурсов с именем *myResourceGroup*. Диапазоны IP-адресов для авторизации: *20.42.25.196/32* (общедоступный IP-адрес брандмауэра Azure), затем *172.0.0.0/16* и *168.10.0.0/18*:
+В следующем примере включается авторизация IP-адресов сервера API в кластере с именем *myAKSCluster* в группе ресурсов с именем *myResourceGroup*. Диапазоны IP-адресов для авторизации: *20.42.25.196/32* (общедоступный IP-адрес брандмауэра Azure), затем *172.0.0.0/16* (диапазон адресов Pod/nodes) и *168.10.0.0/18* (сервицеЦидр):
 
 ```azurecli-interactive
 az aks update \
@@ -236,6 +236,13 @@ az aks update \
     --name myAKSCluster \
     --api-server-authorized-ip-ranges 20.42.25.196/32,172.0.0.0/16,168.10.0.0/18
 ```
+
+> [!NOTE]
+> Эти диапазоны следует добавить в список разрешений:
+> - Общедоступный IP-адрес брандмауэра
+> - CIDR службы
+> - Диапазон адресов для подсетей с использованием узлов и модулей Pod
+> - Любой диапазон, представляющий сети, из которых будет осуществляться администрирование кластера.
 
 ## <a name="update-or-disable-authorized-ip-ranges"></a>Обновление или отключение диапазонов IP-адресов с правом доступа
 

@@ -1,5 +1,5 @@
 - name: Документация по Хранилищу данных SQL
-  href: index.md
+  href: index.yml
 - name: Обзор
   items:
     - name: Общие сведения о Хранилище данных SQL

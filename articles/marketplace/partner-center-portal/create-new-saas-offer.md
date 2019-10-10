@@ -7,12 +7,12 @@ ms.author: v-qiwe
 ms.service: marketplace
 ms.topic: conceptual
 ms.date: 10/04/2019
-ms.openlocfilehash: 48ef7aeb1804aca9001288f6babd302b9c3a8347
-ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
+ms.openlocfilehash: d035f26e4b550eb1e5d2cca161f14880814a15f6
+ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2019
-ms.locfileid: "71969536"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72244166"
 ---
 # <a name="create-a-new-saas-offer"></a>Создание нового предложения SaaS
 
@@ -160,18 +160,7 @@ SaaS поддерживает ежемесячный или ежегодный �
 
 ## <a name="connect-lead-management"></a>Подключение управления интересами
 
-Напрямую Подключайтесь к клиентам, перечисляя свое предложение в Marketplace и применяя систему управления отношениями с клиентами (CRM), чтобы вы могли получить контактные данные клиента сразу же после того, как клиент выражает интерес или развертывает продукта.
-
-- **Выберите назначение интереса** (раскрывающееся меню): Укажите сведения о подключении к системе CRM, куда вы хотите отправить клиентские интересы. 
-
-Центр партнеров поддерживает следующие системы CRM для управления интересами. Выберите ссылку на инструкции по настройке.
-
-- BLOB-объект Azure — укажите адрес электронной почты, имя контейнера и строку подключения к учетной записи хранения. 
-- [Таблица Azure](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-azure-table) — укажите адрес электронной почты и строку подключения к учетной записи хранения. 
-- [Dynamics CRM Online](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-dynamics) — укажите контактную почту, URL-адрес и режим проверки подлинности (Office 365 или Azure Active Directory).
-- [Конечная точка HTTPS](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-https) — укажите контактную почту и URL-адрес КОНЕЧНОЙ точки HTTPS. 
-- [Marketo](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-marketo) — укажите контактный адрес электронной почты, идентификатор формы, идентификатор учетной записи Munchkin и идентификатор сервера.
-- [Salesforce](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-salesforce) — укажите контактный адрес электронной почты и идентификатор организации. 
+[!INCLUDE [Connect lead management](./includes/connect-lead-management-a.md)]
 
 #### <a name="additional-lead-management-resources"></a>Дополнительные ресурсы по управлению интересами
 - [Вопросы и ответы по управлению интересами](https://docs.microsoft.com/azure/marketplace/lead-management-for-cloud-marketplace#frequently-asked-questions)
@@ -484,7 +473,7 @@ SaaS поддерживает ежемесячный или ежегодный �
 
 [!INCLUDE [Test drive content](./includes/commercial-marketplace-test-drive.md)]
 
-## <a name="publish"></a>Опубликовать
+## <a name="publish"></a>Публикация
 
 #### <a name="submit-offer-to-preview"></a>Отправить предложение в предварительную версию
 

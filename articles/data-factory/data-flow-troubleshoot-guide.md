@@ -7,18 +7,20 @@ ms.service: data-factory
 ms.topic: troubleshooting
 ms.date: 10/08/2019
 ms.author: makromer
-ms.openlocfilehash: 5eafa0cc6284df5c969f63e2ab3fac4113fab417
-ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
+ms.openlocfilehash: b5895b061426066d265d3ff68dc948014e641322
+ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72178622"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72242272"
 ---
 # <a name="troubleshoot-azure-data-factory-data-flows"></a>Устранение неполадок в потоках данных фабрики данных Azure
 
 В этой статье рассматриваются распространенные методы устранения неполадок для потоков данных в фабрике данных Azure.
 
-## <a name="error-message-df-sys-01-shadeddatabricksorgapachehadoopfsazureazureexception-commicrosoftazurestoragestorageexception-the-specified-container-does-not-exist"></a>Сообщение об ошибке: DF-SYS-01: затененные. кирпичи. org. Apache. Hadoop. FS. Azure. Азуриксцептион: com. Microsoft. Azure. Storage. StorageException: Указанный контейнер не существует.
+## <a name="common-errors-and-messages"></a>Распространенные ошибки и сообщения
+
+### <a name="error-message-df-sys-01-shadeddatabricksorgapachehadoopfsazureazureexception-commicrosoftazurestoragestorageexception-the-specified-container-does-not-exist"></a>Сообщение об ошибке: DF-SYS-01: затененные. кирпичи. org. Apache. Hadoop. FS. Azure. Азуриксцептион: com. Microsoft. Azure. Storage. StorageException: Указанный контейнер не существует.
 
 - **Проблема.** Не удается выполнить предварительный просмотр данных, отладка и поток данных конвейера, так как контейнер не существует
 
@@ -26,7 +28,7 @@ ms.locfileid: "72178622"
 
 - **Решение**. Убедитесь, что контейнер, на который вы ссылаетесь, существует в наборе данных.
 
-## <a name="error-message-df-sys-01-javalangassertionerror-assertion-failed-conflicting-directory-structures-detected-suspicious-paths"></a>Сообщение об ошибке: DF-SYS-01: Java. lang. Ассертионеррор: сбой утверждения: Обнаружены конфликтующие структуры каталогов. Подозрительные пути
+### <a name="error-message-df-sys-01-javalangassertionerror-assertion-failed-conflicting-directory-structures-detected-suspicious-paths"></a>Сообщение об ошибке: DF-SYS-01: Java. lang. Ассертионеррор: сбой утверждения: Обнаружены конфликтующие структуры каталогов. Подозрительные пути
 
 - **Проблема.** Использование подстановочных знаков в преобразовании «источник» с Parquet-файлами
 
@@ -34,7 +36,7 @@ ms.locfileid: "72178622"
 
 - **Решение**. Проверьте синтаксис с подстановочными знаками, который используется в параметрах преобразования источника.
 
-## <a name="error-message-df-src-002-container-container-name-is-required"></a>Сообщение об ошибке: DF-SRC-002: "контейнер" (имя контейнера) является обязательным
+### <a name="error-message-df-src-002-container-container-name-is-required"></a>Сообщение об ошибке: DF-SRC-002: "контейнер" (имя контейнера) является обязательным
 
 - **Проблема.** Не удается выполнить предварительный просмотр данных, отладка и поток данных конвейера, так как контейнер не существует
 
@@ -42,7 +44,7 @@ ms.locfileid: "72178622"
 
 - **Решение**. Убедитесь, что контейнер, на который вы ссылаетесь, существует в наборе данных.
 
-## <a name="error-message-df-uni-001-primarykeyvalue-has-incompatible-types-integertype-and-stringtype"></a>Сообщение об ошибке: DF-UNI-001: Примарикэйвалуе имеет несовместимые типы IntegerType и Стрингтипе
+### <a name="error-message-df-uni-001-primarykeyvalue-has-incompatible-types-integertype-and-stringtype"></a>Сообщение об ошибке: DF-UNI-001: Примарикэйвалуе имеет несовместимые типы IntegerType и Стрингтипе
 
 - **Проблема.** Не удается выполнить предварительный просмотр данных, отладка и поток данных конвейера, так как контейнер не существует
 
@@ -50,7 +52,7 @@ ms.locfileid: "72178622"
 
 - **Решение**. Используйте производный столбец для приведения столбца, используемого для первичного ключа в потоке данных, в соответствии с типом данных целевой базы данных.
 
-## <a name="error-message-df-sys-01-commicrosoftsqlserverjdbcsqlserverexception-the-tcpip-connection-to-the-host-xxxxxdatabasewindowsnet-port-1433-has-failed-error-xxxxdatabasewindowsnet-verify-the-connection-properties-make-sure-that-an-instance-of-sql-server-is-running-on-the-host-and-accepting-tcpip-connections-at-the-port-make-sure-that-tcp-connections-to-the-port-are-not-blocked-by-a-firewall"></a>Сообщение об ошибке: DF-SYS-01: com. Microsoft. SqlServer. JDBC. SQLServerException: Сбой подключения TCP/IP к узлу xxxxx.database.windows.net порт 1433. Ошибка: "xxxx.database.windows.net. Проверьте свойства соединения. Убедитесь, что экземпляр SQL Server работает на узле и принимает подключения TCP/IP через порт. Убедитесь, что TCP-подключения к порту не заблокированы брандмауэром.
+### <a name="error-message-df-sys-01-commicrosoftsqlserverjdbcsqlserverexception-the-tcpip-connection-to-the-host-xxxxxdatabasewindowsnet-port-1433-has-failed-error-xxxxdatabasewindowsnet-verify-the-connection-properties-make-sure-that-an-instance-of-sql-server-is-running-on-the-host-and-accepting-tcpip-connections-at-the-port-make-sure-that-tcp-connections-to-the-port-are-not-blocked-by-a-firewall"></a>Сообщение об ошибке: DF-SYS-01: com. Microsoft. SqlServer. JDBC. SQLServerException: Сбой подключения TCP/IP к узлу xxxxx.database.windows.net порт 1433. Ошибка: "xxxx.database.windows.net. Проверьте свойства соединения. Убедитесь, что экземпляр SQL Server работает на узле и принимает подключения TCP/IP через порт. Убедитесь, что TCP-подключения к порту не заблокированы брандмауэром.
 
 - **Проблема.** Не удается предварительно просмотреть данные или выполнить конвейер с источником или приемником базы данных
 
@@ -58,7 +60,7 @@ ms.locfileid: "72178622"
 
 - **Решение**. Открытие доступа брандмауэра к базе данных
 
-## <a name="error-message-df-sys-01-commicrosoftsqlserverjdbcsqlserverexception-there-is-already-an-object-named-xxxxxx-in-the-database"></a>Сообщение об ошибке: DF-SYS-01: com. Microsoft. SqlServer. JDBC. SQLServerException: В базе данных уже имеется объект с именем "XXXXXX".
+### <a name="error-message-df-sys-01-commicrosoftsqlserverjdbcsqlserverexception-there-is-already-an-object-named-xxxxxx-in-the-database"></a>Сообщение об ошибке: DF-SYS-01: com. Microsoft. SqlServer. JDBC. SQLServerException: В базе данных уже имеется объект с именем "XXXXXX".
 
 - **Проблема.** Приемнику не удалось создать таблицу
 
@@ -66,7 +68,11 @@ ms.locfileid: "72178622"
 
 - **Решение**. Изменение имени таблицы, которую вы пытаетесь создать
 
+## <a name="general-troubleshooting-guidance"></a>Общие рекомендации по устранению неполадок
 
+1. Проверьте состояние подключений к набору данных. В каждом преобразовании источника и приемника посетите связанную службу для каждого набора данных, который вы используете, и проверьте соединения.
+2. Проверьте состояние соединения файла и таблицы в конструкторе потока данных. Чтобы убедиться, что вы можете получить доступ к данным, переключитесь на отладку и щелкните Предварительный просмотр данных в исходных преобразованиях.
+3. Если все выглядит хорошо в предварительной версии данных, перейдите в конструктор конвейера и разместите поток данных в действии конвейера. Отладка конвейера для сквозного тестирования.
 
 ## <a name="next-steps"></a>Следующие шаги
 
@@ -78,3 +84,4 @@ ms.locfileid: "72178622"
 *  [Форум MSDN](https://social.msdn.microsoft.com/Forums/home?sort=relevancedesc&brandIgnore=True&searchTerm=data+factory)
 *  [Форум Stack Overflow для фабрики данных](https://stackoverflow.com/questions/tagged/azure-data-factory)
 *  [Сведения о фабрике данных в Twitter](https://twitter.com/hashtag/DataFactory)
+*  [Пошаговое руководств по производительности потоков данных сопоставления ADF](concepts-data-flow-performance.md)

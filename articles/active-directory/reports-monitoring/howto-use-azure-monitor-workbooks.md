@@ -14,12 +14,12 @@ ms.subservice: report-monitor
 ms.date: 04/18/2019
 ms.author: chadam
 ms.reviewer: dhanyahk
-ms.openlocfilehash: 288fa54a1a6dd4eb05f953a4490bf7736d6d7ff8
-ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
+ms.openlocfilehash: 9bea8da4f0d694be3a39a8f5dfaca8e54ce2773d
+ms.sourcegitcommit: 1c2659ab26619658799442a6e7604f3c66307a89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70931249"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72255659"
 ---
 # <a name="how-to-use-azure-monitor-workbooks-for-azure-active-directory-reports"></a>Использование книг Azure Monitor для Azure Active Directory отчетов
 
@@ -49,10 +49,17 @@ ms.locfileid: "70931249"
 
 - [Рабочая область log Analytics](https://docs.microsoft.com/azure/azure-monitor/learn/quick-create-workspace).
 
+- [Доступ](https://docs.microsoft.com/azure/azure-monitor/platform/manage-access#manage-access-using-workspace-permissions) к рабочей области log Analytics
+- Следующие роли в Azure Active Directory (при доступе к Log Analytics через портал Azure Active Directory)
+    - администратор безопасности;
+    - Читатель сведений о безопасности
+    - Средство чтения отчетов
+    - глобальный администратор.
+
 ## <a name="roles"></a>Роли
 Вы должны быть в одной из следующих ролей, а также иметь [доступ к базовой](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/manage-access#manage-access-using-azure-permissions) рабочей области log Analytics для управления книгами:
--   Глобальный администратор
--   Администратор системы безопасности
+-   глобальный администратор.
+-   администратор безопасности;
 -   Читатель сведений о безопасности
 -   Средство чтения отчетов
 -   Администратор приложения
@@ -85,7 +92,7 @@ ms.locfileid: "70931249"
 
 - Success
 
-- Ожидается действие пользователя
+- Ожидающее действие пользователя
 
 - Сбой
 
@@ -102,7 +109,7 @@ ms.locfileid: "70931249"
 
 Для каждого тренда вы получаете декомпозицию по следующим категориям:
 
-- Местоположение
+- Location
 
     ![Входы в систему по расположению](./media/howto-use-azure-monitor-workbooks/45.png)
 
@@ -181,7 +188,7 @@ ms.locfileid: "70931249"
 
 - Требовать заявление о конфиденциальности
 
-- Другой
+- Другие
 
 
 Можно отфильтровать каждую тенденцию по следующим категориям:
@@ -208,7 +215,7 @@ ms.locfileid: "70931249"
 
 - Вход в систему
 - Политики условного доступа
-- Устаревший механизм проверки подлинности 
+- Устаревшие способы аутентификации 
 
 
 Чтобы получить доступ к входам с помощью данных условного доступа, в разделе " **Устранение неполадок** " выберите **входы с использованием устаревшей проверки подлинности**. 
@@ -219,7 +226,7 @@ ms.locfileid: "70931249"
 
 - Success
 
-- Незавершенное действие
+- Ожидающее действие
 
 - Сбой
 

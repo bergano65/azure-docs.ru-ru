@@ -5,14 +5,14 @@ author: sowmyavenkat86
 ms.author: svenkat
 ms.date: 06/20/2019
 ms.topic: article
-ms.service: azure
+ms.service: azure-supportability
 ms.assetid: ce37c848-ddd9-46ab-978e-6a1445728a3b
-ms.openlocfilehash: c7860a098096d718a6c5d7cd661ef2b1c1b21e89
-ms.sourcegitcommit: 4f3f502447ca8ea9b932b8b7402ce557f21ebe5a
+ms.openlocfilehash: d803cc0dfa4a266f79b522207a8cf0f70e06cf3d
+ms.sourcegitcommit: 961468fa0cfe650dc1bec87e032e648486f67651
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71802668"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72248721"
 ---
 # <a name="classic-deployment-model"></a>Классическая модель развертывания
 
@@ -30,13 +30,13 @@ ms.locfileid: "71802668"
 
 Следуйте приведенным ниже инструкциям, чтобы создать запрос на поддержку через колонку "Справка и поддержка" Azure, доступную в портал Azure. 
 
-1. В https://portal.azure.com выберите пункт **Справка и поддержка**.
+1. В https://portal.azure.com выберите **Справка и поддержка**.
 
    ![Справка и поддержка](./media/resource-manager-core-quotas-request/helpsupport.png)
  
 2.  Выберите **Новый запрос в службу поддержки**. 
 
-      ![Новый запрос в службу поддержки](./media/resource-manager-core-quotas-request/newsupportrequest.png)
+      ![Новый запрос на техническую поддержку](./media/resource-manager-core-quotas-request/newsupportrequest.png)
 
 3. В раскрывающемся списке Тип проблемы выберите **пределы службы и подписки (квоты)** .
 
@@ -66,7 +66,7 @@ ms.locfileid: "71802668"
 
    ![Новые ограничения](./media/resource-manager-core-quotas-request/new-limits-classic.png)
 
-## <a name="request-per-vm-series-vcpu-quota-increase-at-subscription-level-using-usages--quota-blade"></a>Число запросов на каждую виртуальную серию виртуальных машин виртуальных ЦП увеличение квоты на уровне подписки с использованием **использования +** колонка квоты
+## <a name="request-per-vm-series-vcpu-quota-increase-at-subscription-level-using-usages--quota-blade"></a>Число запросов на каждую виртуальную серию виртуальных машин виртуальных ЦП увеличение квоты на уровне подписки с использованием **использования + колонка квоты**
 
 Следуйте приведенным ниже инструкциям по созданию запроса на поддержку через колонку "использование и квота" Azure, доступную в портал Azure. 
 
@@ -76,7 +76,7 @@ ms.locfileid: "71802668"
 
 2. Выберите подписку, которая требует увеличенную квоту.
 
-   ![Выбрать подписку](./media/resource-manager-core-quotas-request/select-subscription.png)
+   ![Выберите подписку.](./media/resource-manager-core-quotas-request/select-subscription.png)
 
 3. Выберите **Использование и квоты**.
 

@@ -5,13 +5,13 @@ author: ekpgh
 ms.service: fxt-edge-filer
 ms.topic: conceptual
 ms.date: 07/10/2019
-ms.author: v-erkell
-ms.openlocfilehash: 04bc7c4d2ff96ef8b403449cf58d131bdc22a101
-ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
+ms.author: rohogue
+ms.openlocfilehash: 292844f611008b6dafbed4e46cad07c45dbecc54
+ms.sourcegitcommit: 1c2659ab26619658799442a6e7604f3c66307a89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69624111"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72255982"
 ---
 # <a name="open-a-support-ticket-for-the-azure-fxt-edge-filer"></a>Откройте запрос в службу поддержки для фильтр Azure ФКСТ.
 
@@ -26,11 +26,11 @@ ms.locfileid: "69624111"
    ![Снимок экрана: пустая форма запроса на поддержку](media/fxt-support-blank.png)
 
 1. Заполните форму запроса.  
-    1. На вкладке **Основные сведения** выберите **тип** ``Technical``проблемы. 
+    1. На вкладке **Основные сведения** выберите **тип проблемы** ``Technical``. 
     1. Выберите свою подписку. 
     1. В разделе **Служба**выберите **Azure фкст ребра фильтр**. Чтобы найти его, может потребоваться щелкнуть элемент управления фильтр **всех служб** . 
     1. Введите **сводку** и выберите **тип проблемы**. 
-    ![Снимок экрана: пустая форма запроса на поддержку](media/fxt-support-populated.png) 
+    @no__t 0Screenshot пустая форма запроса на поддержку @ no__t-1 
     1. Нажмите кнопку **Next** (Далее), чтобы продолжить. 
 1. На вкладке **сведения** добавьте дополнительные сведения о проблеме и способах связи с вами. Вы можете отправить файл, связанный с проблемой. 
 1. В окне " **Проверка и создание**" Проверьте сведения и нажмите кнопку " **создать** ", чтобы отправить запрос.

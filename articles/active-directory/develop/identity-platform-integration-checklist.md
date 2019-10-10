@@ -16,12 +16,12 @@ ms.date: 09/11/2019
 ms.author: ryanwi
 ms.reviewer: lenalepa, sureshja, jesakowi
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 1f4afe1c31ae964aab82664de12144185069af5a
-ms.sourcegitcommit: b03516d245c90bca8ffac59eb1db522a098fb5e4
+ms.openlocfilehash: f7e9b738a55248678a207f0b298ef65e6c2761a4
+ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71145661"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72240154"
 ---
 # <a name="microsoft-identity-platform-best-practices-and-recommendations"></a>Рекомендации и рекомендации по платформе Microsoft Identity
 
@@ -31,7 +31,7 @@ ms.locfileid: "71145661"
 
 Используйте следующий контрольный список, чтобы убедиться, что приложение эффективно интегрировано с [платформой Microsoft Identity](https://docs.microsoft.com/azure/active-directory/develop/).
 
-## <a name="basics"></a>Основные сведения
+## <a name="basics"></a>Основы
 
 |   |   |
 |---|---|
@@ -56,11 +56,11 @@ ms.locfileid: "71145661"
 |---|---|
 | ![Установка](./media/active-directory-integration-checklist/checkbox-two.svg) | Укажите ссылки на условия предоставления услуг и заявление о конфиденциальности приложения. |
 
-## <a name="security"></a>Группа безопасности
+## <a name="security"></a>Безопасность
 
 |   |   |
 |---|---|
-| ![Установка](./media/active-directory-integration-checklist/checkbox-two.svg) | Управление URI перенаправления: <ul><li>Обеспечьте владение всеми URI перенаправления и обеспечьте актуальность записей DNS.</li><li>Не используйте подстановочные знаки (*) в URI.</li><li>Для веб-приложений убедитесь, что все URI безопасны и зашифрованы (например, с помощью схем HTTPS).</li><li>Для общедоступных клиентов используйте зависящие от платформы URI перенаправления, если это применимо (в основном для iOS и Android). В противном случае используйте URI перенаправления с большим количеством случайных значений, чтобы избежать конфликтов при обратном вызове приложения.</li><li>Если приложение используется изолированным веб-агентом, вы можете использовать https://login.microsoftonline.com/common/oauth2/nativeclient.</li><li>Регулярно просматривайте и обрежьте все неиспользуемые или ненужные URI перенаправления.</li></ul> |
+| ![Установка](./media/active-directory-integration-checklist/checkbox-two.svg) | Управление URI перенаправления: <ul><li>Обеспечьте владение всеми URI перенаправления и обеспечьте актуальность записей DNS.</li><li>Не используйте подстановочные знаки (*) в URI.</li><li>Для веб-приложений убедитесь, что все URI безопасны и зашифрованы (например, с помощью схем HTTPS).</li><li>Для общедоступных клиентов используйте зависящие от платформы URI перенаправления, если это применимо (в основном для iOS и Android). В противном случае используйте URI перенаправления с большим количеством случайных значений, чтобы избежать конфликтов при обратном вызове приложения.</li><li>Если приложение используется в изолированном веб-агенте, вы можете использовать https://login.microsoftonline.com/common/oauth2/nativeclient.</li><li>Регулярно просматривайте и обрежьте все неиспользуемые или ненужные URI перенаправления.</li></ul> |
 | ![Установка](./media/active-directory-integration-checklist/checkbox-two.svg) | Если приложение зарегистрировано в каталоге, сократите и вручную проведите наблюдение за списком владельцев регистрации приложений. |
 | ![Установка](./media/active-directory-integration-checklist/checkbox-two.svg) | Не включайте поддержку [потока неявного предоставления OAuth2](v2-oauth2-implicit-grant-flow.md) , если это не требуется явным образом. Сведения о допустимом сценарии см. [здесь](v1-oauth2-implicit-grant-flow.md#suitable-scenarios-for-the-oauth2-implicit-grant). |
 | ![Установка](./media/active-directory-integration-checklist/checkbox-two.svg) | Переместитесь за пределы имени пользователя и пароля. Не используйте [поток учетных данных пароля владельца ресурса (ропк)](v2-oauth-ropc.md), который напрямую обрабатывает пароли пользователей. Этот поток требует высокого уровня доверия и раскрытия пользователей, и его следует использовать, только если другие, более безопасные, потоки использовать нельзя. Этот поток по-прежнему необходим в некоторых сценариях (например, DevOps), но следует помнить, что его использование накладывает ограничения на приложение.  Для более современных подходов прочитайте [потоки проверки подлинности и сценарии приложений](authentication-flows-app-scenarios.md).|
@@ -87,7 +87,7 @@ ms.locfileid: "71145661"
 | ![Установка](./media/active-directory-integration-checklist/checkbox-two.svg) | [Ознакомьтесь с согласия](application-consent-experience.md) пользователя и настройте части запроса согласия вашего приложения таким образом, чтобы конечные пользователи и администраторы имели достаточную информацию для определения того, доверяете ли они вашему приложению. |
 | ![Установка](./media/active-directory-integration-checklist/checkbox-two.svg) | Сократите число попыток ввода учетных данных входа пользователя при использовании приложения, попытайтесь выполнить автоматическую проверку подлинности (получение токена без уведомления) перед интерактивными потоками. |
 | ![Установка](./media/active-directory-integration-checklist/checkbox-two.svg) | Не используйте параметр "prompt = согласие" для каждого входа. Используйте предложение Prompt = согласие, если вы определили, что вам нужно предоставить согласие на предоставление дополнительных разрешений (например, если вы изменили необходимые разрешения приложения). |
-| ![Установка](./media/active-directory-integration-checklist/checkbox-two.svg) | Там, где это применимо, следует расширить возможности приложения с помощью пользовательских данных. Для этого удобно использовать [Microsoft Graph API](https://developer.microsoft.com/graph) . Средство [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) , которое поможет приступить к работе. |
+| ![Установка](./media/active-directory-integration-checklist/checkbox-two.svg) | Там, где это применимо, следует расширить возможности приложения с помощью пользовательских данных. Использовать [Microsoft Graph API](https://developer.microsoft.com/graph) — это простой способ сделать это. Средство [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) , которое поможет приступить к работе. |
 | ![Установка](./media/active-directory-integration-checklist/checkbox-two.svg) | Зарегистрируйте полный набор разрешений, необходимых вашему приложению, чтобы администраторы могли легко предоставить согласие клиенту. Используйте [добавочное согласие](azure-ad-endpoint-comparison.md#incremental-and-dynamic-consent) во время выполнения, чтобы помочь пользователям понять, почему приложение запрашивает разрешения, которые могут потребовать или запутать пользователей при запросе при первом запуске. |
 | ![Установка](./media/active-directory-integration-checklist/checkbox-two.svg) | Реализуйте [чистый интерфейс единого](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/1-WebApp-OIDC/1-6-SignOut)выхода. Это требование к конфиденциальности и безопасности, что обеспечивает хорошую работу пользователей. |
 

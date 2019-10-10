@@ -18,12 +18,12 @@ ms.author: ryanwi
 ms.reviewer: luleon, paulgarn, jeedes
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fd752540d078ef57c8b6150edbf9b124bc445fe0
-ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
+ms.openlocfilehash: f4f26c82d4cda6ce3d8bf01c7fd52fa579e86dcf
+ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71949365"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72240226"
 ---
 # <a name="how-to-customize-claims-issued-in-the-saml-token-for-enterprise-applications"></a>Практическое руководство. Настройка утверждений, выпущенных в токене SAML для корпоративных приложений
 
@@ -66,20 +66,20 @@ ms.locfileid: "71949365"
 | **EmailAddress** | Azure AD будет использовать EmailAddress в качестве формата NameID. |
 | **Unspecified** | Azure AD будет использовать в качестве формата NameID значение не указано. |
 
-Дополнительные сведения об атрибуте NameIDPolicy см. в разделе [протокол SAML единого входа](single-sign-on-saml-protocol.md).
+Также поддерживается временная NameID, но она недоступна в раскрывающемся списке и не может быть настроена на стороне Azure. Дополнительные сведения об атрибуте NameIDPolicy см. в разделе [протокол SAML единого входа](single-sign-on-saml-protocol.md).
 
 ### <a name="attributes"></a>Атрибуты
 
 Выберите нужный источник для утверждения `NameIdentifier` (или NameID). Вы можете выбирать из следующих параметров.
 
-| Название | Описание |
+| ИМЯ | Описание |
 |------|-------------|
-| Адрес эл. почты | Адрес электронной почты пользователя |
+| Email | Адрес электронной почты пользователя |
 | userprincipalName | Имя участника-пользователя (UPN) пользователя |
 | onpremisessamaccount | Имя учетной записи SAM, синхронизированное из локального Azure AD |
 | objectid | ObjectID пользователя в Azure AD |
 | employeeid | КодСотрудника пользователя |
-| Расширения каталога | Расширения каталогов, [синхронизированные из локальной Active Directory с помощью синхронизации Azure AD Connect](../hybrid/how-to-connect-sync-feature-directory-extensions.md) |
+| Расширения каталогов | Расширения каталогов, [синхронизированные из локальной Active Directory с помощью синхронизации Azure AD Connect](../hybrid/how-to-connect-sync-feature-directory-extensions.md) |
 | Атрибуты расширения 1–15 | Локальные атрибуты расширения, используемые для расширения схемы Azure AD |
 
 Дополнительные сведения см. в разделе [Table 3: Допустимые значения ID для каждого источника @ no__t-0.

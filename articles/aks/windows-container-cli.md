@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 06/17/2019
 ms.author: mlearned
-ms.openlocfilehash: 8e00053d5ce7c481b026d2fe0ce590d7b8799d8a
-ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
+ms.openlocfilehash: ff4367194f06a8a6895c9c16252b01c3b94995d3
+ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71075460"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72241258"
 ---
 # <a name="preview---create-a-windows-server-container-on-an-azure-kubernetes-service-aks-cluster-using-the-azure-cli"></a>Предварительный просмотр. Создание контейнера Windows Server в кластере Azure Kubernetes Service (AKS) с помощью Azure CLI
 
@@ -88,7 +88,7 @@ az provider register --namespace Microsoft.ContainerService
 * Кластер AKS может содержать не более 400 узлов в восьми пулах узлов.
 * Длина имени пула узлов Windows Server ограничена 6 символами.
 
-## <a name="create-a-resource-group"></a>Создать группу ресурсов
+## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
 Группа ресурсов Azure — это логическая группа, в которой выполняется развертывание и администрирование ресурсов Azure. Во время создания группы ресурсов вам будет предложено указать расположение. В этом расположении сохраняются метаданные группы ресурсов, а также выполняется их работа в Azure, если во время создания ресурса вы не указали другой регион. Создайте группу ресурсов с помощью команды [az group create][az-group-create].
 
@@ -141,7 +141,7 @@ az aks create \
     --generate-ssh-keys \
     --windows-admin-password $PASSWORD_WIN \
     --windows-admin-username azureuser \
-    --vm-set-type VirtualMachineScaleSets \
+    --enable-vmss \
     --network-plugin azure
 ```
 
@@ -153,7 +153,7 @@ az aks create \
 
 ## <a name="add-a-windows-server-node-pool"></a>Добавление пула узлов Windows Server
 
-По умолчанию кластер AKS создается с пулом узлов, который может выполнять контейнеры Linux. Используйте `az aks nodepool add` команду, чтобы добавить дополнительный пул узлов, который может запускать контейнеры Windows Server.
+По умолчанию кластер AKS создается с пулом узлов, который может выполнять контейнеры Linux. Используйте команду `az aks nodepool add`, чтобы добавить дополнительный пул узлов, который может запускать контейнеры Windows Server.
 
 ```azurecli
 az aks nodepool add \
@@ -165,7 +165,7 @@ az aks nodepool add \
     --kubernetes-version 1.14.6
 ```
 
-Приведенная выше команда создает пул узлов с именем *нпвин* и добавляет его в *myAKSCluster*. При создании пула узлов для запуска контейнеров Windows Server по умолчанию для *node-VM-size* используется значение *Standard_D2s_v3*. Если вы решили задать параметр *node-VM-size* , просмотрите список [ограниченных размеров виртуальных машин][restricted-vm-sizes]. Минимальный рекомендуемый размер — *Standard_D2s_v3*. Приведенная выше команда также использует подсеть по умолчанию в виртуальной сети по `az aks create`умолчанию, создаваемой при запуске.
+Приведенная выше команда создает пул узлов с именем *нпвин* и добавляет его в *myAKSCluster*. При создании пула узлов для запуска контейнеров Windows Server по умолчанию для *node-VM-size* используется значение *Standard_D2s_v3*. Если вы решили задать параметр *node-VM-size* , просмотрите список [ограниченных размеров виртуальных машин][restricted-vm-sizes]. Минимальный рекомендуемый размер — *Standard_D2s_v3*. Приведенная выше команда также использует подсеть по умолчанию в виртуальной сети по умолчанию, созданной при запуске `az aks create`.
 
 ## <a name="connect-to-the-cluster"></a>Подключение к кластеру
 
@@ -289,7 +289,7 @@ sample  LoadBalancer   10.0.37.27   52.179.23.131   80:30572/TCP   2m
 
 ![Изображение с примером приложения ASP.NET](media/windows-container/asp-net-sample-app.png)
 
-## <a name="delete-cluster"></a>Удалить кластер
+## <a name="delete-cluster"></a>Удаление кластера
 
 Чтобы удалить ненужные кластер, группу ресурсов, службу контейнеров и все связанные с ней ресурсы, выполните команду [az group delete][az-group-delete].
 

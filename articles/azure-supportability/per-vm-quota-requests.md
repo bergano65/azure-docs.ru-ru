@@ -5,14 +5,14 @@ author: sowmyavenkat86
 ms.author: svenkat
 ms.date: 06/07/2019
 ms.topic: article
-ms.service: azure
+ms.service: azure-supportability
 ms.assetid: ce37c848-ddd9-46ab-978e-6a1445728a3b
-ms.openlocfilehash: 9caf82d2fa4683e845d23b5496f9e7b8f9682ec7
-ms.sourcegitcommit: b2db98f55785ff920140f117bfc01f1177c7f7e2
+ms.openlocfilehash: e99bdd92d4a1aab833a95943b22aaabe7f0daa1d
+ms.sourcegitcommit: 961468fa0cfe650dc1bec87e032e648486f67651
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68234827"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72248663"
 ---
 # <a name="vm-series-vcpu-limit-increase"></a>Увеличение лимита виртуальных ЦП для серии виртуальных машин
 
@@ -23,13 +23,13 @@ ms.locfileid: "68234827"
 
 Дополнительные сведения о квотах см. на странице [квоты виртуальных ЦП виртуальной машины](https://docs.microsoft.com/azure/virtual-machines/windows/quotas) , а также на странице [подписки Azure и ограничения службы](https://aka.ms/quotalimits) . 
 
-Теперь вы можете запросить увеличение через колонку **Справка и поддержка** или колонку **Использование** и квота на портале. 
+Теперь вы можете запросить увеличение через колонку **Справка и поддержка** или колонку **использование и квота** на портале. 
 
 ## <a name="request-per-vm-series-vcpu-quota-increase-at-subscription-level-using-the-help--support-blade"></a>Число запросов на каждую виртуальную серию виртуальных машин виртуальных ЦП увеличение квоты на уровне подписки с помощью колонки " **Справка и поддержка** "
 
 Следуйте приведенным ниже инструкциям, чтобы создать запрос на поддержку через колонку "Справка и поддержка" Azure, доступную в портал Azure. 
 
-1. В https://portal.azure.com выберите пункт **Справка и поддержка**.
+1. В https://portal.azure.com выберите **Справка и поддержка**.
 
    ![Справка и поддержка](./media/resource-manager-core-quotas-request/helpsupport.png)
  
@@ -66,7 +66,7 @@ ms.locfileid: "68234827"
    ![Новые ограничения](./media/resource-manager-core-quotas-request/new-limits.png)
 
 
-## <a name="request-per-vm-series-vcpu-quota-increase-at-subscription-level-using-usages--quota-blade"></a>Число запросов на каждую виртуальную серию виртуальных машин виртуальных ЦП увеличение квоты на уровне подписки с использованием **использования +** колонка квоты
+## <a name="request-per-vm-series-vcpu-quota-increase-at-subscription-level-using-usages--quota-blade"></a>Число запросов на каждую виртуальную серию виртуальных машин виртуальных ЦП увеличение квоты на уровне подписки с использованием **использования + колонка квоты**
 
 Следуйте приведенным ниже инструкциям по созданию запроса на поддержку через колонку "использование и квота" Azure, доступную в портал Azure. 
 

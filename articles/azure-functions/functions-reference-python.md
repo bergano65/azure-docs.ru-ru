@@ -13,12 +13,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 04/16/2018
 ms.author: glenga
-ms.openlocfilehash: d74d1c33816b3c028a26335af4c6d5b23b7a2046
-ms.sourcegitcommit: 7868d1c40f6feb1abcafbffcddca952438a3472d
+ms.openlocfilehash: 4fd73f528ac823a8e794a880f87dd5f8872e1251
+ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71958484"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72243276"
 ---
 # <a name="azure-functions-python-developer-guide"></a>Справочник разработчика Python. Функции Azure
 
@@ -176,7 +176,7 @@ def main(req: func.HttpRequest,
 При активации этой функции HTTP-запрос передается в функцию с помощью `req`. Запись будет извлечена из хранилища больших двоичных объектов Azure на основе _идентификатора_ в URL-адресе маршрута и стала доступна как `obj` в теле функции.  Здесь указанная учетная запись хранения является строкой подключения в, которая является той же учетной записью хранения, используемой приложением-функцией.
 
 
-## <a name="outputs"></a>Выходные данные
+## <a name="outputs"></a>outputs
 
 Выходные данные можно выразить как возвращаемое значение или параметры вывода. Если используется только один вывод, мы рекомендуем использовать возвращаемое значение. Для нескольких выводов нужно использовать параметры вывода.
 
@@ -331,7 +331,7 @@ def main(req: azure.functions.HttpRequest,
     return f'{context.invocation_id}'
 ```
 
-Класс [**контекста**](/python/api/azure-functions/azure.functions.context?view=azure-python) имеет следующие методы.
+Класс [**контекста**](/python/api/azure-functions/azure.functions.context?view=azure-python) имеет следующие строковые атрибуты:
 
 `function_directory`  
 Каталог, в котором выполняется функция.

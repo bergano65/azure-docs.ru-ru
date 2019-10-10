@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 03/22/2019
 ms.author: apimpm
-ms.openlocfilehash: fa5e84ba62896969458b84cf014e2b35ee869df7
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: e9e6eff4c527ff2e22be57ebc1eb3dcdb3c4e0ab
+ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70072177"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72241978"
 ---
 # <a name="api-management-policy-expressions"></a>Выражения политики в службе управления API
 В этой статье описывается синтаксис выражений политики C# 7. У каждого выражения есть доступ к неявно заданной переменной [контекста](api-management-policy-expressions.md#ContextVariables) и разрешенному [подмножеству](api-management-policy-expressions.md#CLRTypes) типов .NET Framework.
@@ -52,15 +52,16 @@ ms.locfileid: "70072177"
 @(context.Variables.ContainsKey("maxAge") ? int.Parse((string)context.Variables["maxAge"]) : 3600)
 
 @{
-  string value;
+  string[] value;
   if (context.Request.Headers.TryGetValue("Authorization", out value))
   {
-    return Encoding.UTF8.GetString(Convert.FromBase64String(value));
+      if(value != null && value.Length > 0)
+      {
+          return Encoding.UTF8.GetString(Convert.FromBase64String(value[0]));
+      }
   }
-  else
-  {
-    return null;
-  }
+  return null;
+
 }
 ```
 
@@ -93,19 +94,19 @@ ms.locfileid: "70072177"
 |System.Byte|Все|
 |System.Char|Все|
 |System. Collections. Generic. Dictionary < TKey, TValue >|Все|
-|System. Collections. Generic. hashing\<T >|Все|
-|System. Collections. Generic.\<ICollection T >|Все|
+|System. Collections. Generic. hashing @ no__t-0T >|Все|
+|System. Collections. Generic. ICollection @ no__t-0T >|Все|
 |System. Collections. Generic. IDictionary < TKey, TValue >|Все|
-|System. Collections. Generic.\<IEnumerable T >|Все|
-|System. Collections. Generic.\<IEnumerator T >|Все|
-|System. Collections. Generic.\<IList T >|Все|
-|System. Collections. Generic.\<IReadOnlyCollection T >|Все|
+|System. Collections. Generic. IEnumerable @ no__t-0T >|Все|
+|System. Collections. Generic. IEnumerator @ no__t-0T >|Все|
+|System. Collections. Generic. IList @ no__t-0T >|Все|
+|System. Collections. Generic. IReadOnlyCollection @ no__t-0T >|Все|
 |System. Collections. Generic. IReadOnlyDictionary < TKey, TValue >|Все|
-|System. Collections. Generic.\<ISET T >|Все|
+|System. Collections. Generic. ISet @ no__t-0T >|Все|
 |System. Collections. Generic. KeyValuePair < TKey, TValue >|Все|
-|System. Collections. Generic.\<List T >|Все|
-|System. Collections. Generic.\<Queue T >|Все|
-|> System. Collections. Generic\<. Stack T|Все|
+|System. Collections. Generic. List @ no__t-0T >|Все|
+|System. Collections. Generic. Queue @ no__t-0T >|Все|
+|System. Collections. Generic. Stack @ no__t-0T >|Все|
 |System.Convert|Все|
 |System.DateTime|(Конструктор), Add, AddDays, AddHours, Аддмиллисекондс, Аддминутес, Аддмонсс, Аддсекондс, Аддтиккс, Аддеарс, Дата, день, DayOfWeek, DayOfYear, Дайсинмонс, Hour, Исдайлигхтсавингтиме, IsLeapYear, MaxValue, миллисекунда, минута, MinValue, month, Now , Синтаксический анализ, второй, вычитание, такты, TimeOfDay, Today, ToString, UtcNow, Year|
 |System.DateTimeKind|Время в формате UTC|
@@ -155,7 +156,7 @@ ms.locfileid: "70072177"
 |System. Security. Cryptography. SymmetricAlgorithm|Все|
 |System. Security. Cryptography. X509Certificates. PublicKey|Все|
 |System. Security. Cryptography. X509Certificates. Рсацертификатикстенсионс|Все|
-|System. Security. Cryptography. X509Certificates. X500DistinguishedName|Название|
+|System. Security. Cryptography. X509Certificates. X500DistinguishedName|ИМЯ|
 |System. Security. Cryptography. X509Certificates. X509Certificate|Все|
 |System.Security.Cryptography.X509Certificates.X509Certificate2|Все|
 |System. Security. Cryptography. X509Certificates. X509ContentType|Все|
@@ -191,7 +192,7 @@ ms.locfileid: "70072177"
 |System.Xml.Linq.XComment|Все|
 |System.Xml.Linq.XContainer|Все|
 |System.Xml.Linq.XDeclaration|Все|
-|System.Xml.Linq.XDocument|ALL, за исключением: Загрузить|
+|System.Xml.Linq.XDocument|ALL, за исключением: загрузить|
 |System.Xml.Linq.XDocumentType|Все|
 |System.Xml.Linq.XElement|Все|
 |System.Xml.Linq.XName|Все|
@@ -209,13 +210,13 @@ ms.locfileid: "70072177"
 
 |Переменная контекста|Допустимые методы, свойства и значения параметров|
 |----------------------|-------------------------------------------------------|
-|context|[API](#ref-context-api): [иапи](#ref-iapi)<br /><br /> [Развертывание](#ref-context-deployment)<br /><br /> Elapsed: TimeSpan — интервал времени между значением Timestamp и текущим временем<br /><br /> [LastError](#ref-context-lasterror)<br /><br /> [Операция](#ref-context-operation)<br /><br /> [Продукт](#ref-context-product)<br /><br /> [Запрос](#ref-context-request)<br /><br /> RequestId: Guid — уникальный идентификатор запроса<br /><br /> [Ответ](#ref-context-response)<br /><br /> [Подписка](#ref-context-subscription)<br /><br /> Timestamp: DateTime — время получения запроса<br /><br /> Tracing: логическое значение — указывает, включена ли трассировка <br /><br /> [User](#ref-context-user)<br /><br /> [Переменные](#ref-context-variables). IReadOnlyDictionary<строка, объект><br /><br /> void Trace(message: строка)|
+|context|[API](#ref-context-api): [иапи](#ref-iapi)<br /><br /> [Развертывание](#ref-context-deployment)<br /><br /> Elapsed: TimeSpan — интервал времени между значением Timestamp и текущим временем<br /><br /> [LastError](#ref-context-lasterror)<br /><br /> [Операция](#ref-context-operation)<br /><br /> [Продукт](#ref-context-product)<br /><br /> [Запрос](#ref-context-request)<br /><br /> RequestId: Guid — уникальный идентификатор запроса<br /><br /> [Ответ](#ref-context-response)<br /><br /> [подписка](#ref-context-subscription)<br /><br /> Timestamp: DateTime — время получения запроса<br /><br /> Tracing: логическое значение — указывает, включена ли трассировка <br /><br /> [User](#ref-context-user)<br /><br /> [Переменные](#ref-context-variables). IReadOnlyDictionary<строка, объект><br /><br /> void Trace(message: строка)|
 |<a id="ref-context-api"></a>локального. API|Id: строка<br /><br /> IsCurrentRevision: bool<br /><br />  Name: строка<br /><br /> Path: строка<br /><br /> Revision: строка<br /><br /> ServiceUrl: [иурл](#ref-iurl)<br /><br /> Version: строка |
 |<a id="ref-context-deployment"></a>локального. Развертывания|Region: строка<br /><br /> ServiceName: строка<br /><br /> Certificates: IReadOnlyDictionary<строка, X509Certificate2>|
 |<a id="ref-context-lasterror"></a>локального. LastError|Source: строка<br /><br /> Reason: строка<br /><br /> Message: строка<br /><br /> Scope: строка<br /><br /> Section: строка<br /><br /> Path: строка<br /><br /> PolicyId: строка<br /><br /> Дополнительные сведения о переменной context.LastError см. в разделе [Error handling](api-management-error-handling-policies.md) (Обработка ошибок).|
 |<a id="ref-context-operation"></a>локального. Операцию|Id: строка<br /><br /> Method: строка<br /><br /> Name: строка<br /><br /> UrlTemplate: строка|
 |<a id="ref-context-product"></a>локального. Продукта|Apis: IEnumerable <[иапи](#ref-iapi)\><br /><br /> ApprovalRequired: логическое значение<br /><br /> Groups: IEnumerable <[играуп](#ref-igroup)\><br /><br /> Id: строка<br /><br /> Name: строка<br /><br /> State: enum ProductState {NotPublished, Published}<br /><br /> SubscriptionLimit: целое число?<br /><br /> SubscriptionRequired: логическое значение|
-|<a id="ref-context-request"></a>локального. Получения|Текст: [Имессажебоди](#ref-imessagebody) или `null` , если запрос не имеет текста.<br /><br /> Certificate: System.Security.Cryptography.X509Certificates.X509Certificate2<br /><br /> [Заголовки](#ref-context-request-headers): IReadOnlyDictionary<строка, строка[]><br /><br /> IpAddress: строка<br /><br /> MatchedParameters: IReadOnlyDictionary<строка, строка><br /><br /> Method: строка<br /><br /> Оригиналурл: [иурл](#ref-iurl)<br /><br /> Url: [иурл](#ref-iurl)|
+|<a id="ref-context-request"></a>локального. Получения|Текст: [Имессажебоди](#ref-imessagebody) или `null`, если запрос не имеет текста.<br /><br /> Certificate: System.Security.Cryptography.X509Certificates.X509Certificate2<br /><br /> [Заголовки](#ref-context-request-headers): IReadOnlyDictionary<строка, строка[]><br /><br /> IpAddress: строка<br /><br /> MatchedParameters: IReadOnlyDictionary<строка, строка><br /><br /> Method: строка<br /><br /> Оригиналурл: [иурл](#ref-iurl)<br /><br /> Url: [иурл](#ref-iurl)|
 |<a id="ref-context-request-headers"></a>контекст строки. Request. Headers. GetValueOrDefault (Хеадернаме: строка, defaultValue: строка)|headerName: строка<br /><br /> defaultValue: строка<br /><br /> Возвращает значения заголовков запросов, разделенные запятыми, или значение `defaultValue`, если заголовок не найден.|
 |<a id="ref-context-response"></a>локального. Ответ|Текст: [имессажебоди](#ref-imessagebody)<br /><br /> [Заголовки](#ref-context-response-headers): IReadOnlyDictionary<строка, строка[]><br /><br /> StatusCode: целое число<br /><br /> StatusReason: строка|
 |<a id="ref-context-response-headers"></a>контекст строки. Response. Headers. GetValueOrDefault (Хеадернаме: строка, defaultValue: String)|headerName: строка<br /><br /> defaultValue: строка<br /><br /> Возвращает значения заголовков ответов, разделенные запятыми, или значение `defaultValue`, если заголовок не найден.|
@@ -228,7 +229,7 @@ ms.locfileid: "70072177"
 |<a id="ref-iuseridentity"></a>иусеридентити|Id: строка<br /><br /> Provider: строка|
 |<a id="ref-isubscriptionkeyparameternames"></a>исубскриптионкэйпараметернамес|Header: строка<br /><br /> Query: строка|
 |<a id="ref-iurl-query"></a>Строка Иурл. Query. GetValueOrDefault (queryParameterName: строка, defaultValue: String)|queryParameterName: строка<br /><br /> defaultValue: строка<br /><br /> Возвращает разделенные запятыми значения параметров запроса или значение `defaultValue`, если параметр не найден.|
-|<a id="ref-context-variables"></a>T контекст. Variables. GetValueOrDefault <\>T (variablename: String, DefaultValue: T)|variableName: строка<br /><br /> defaultValue: T<br /><br /> Возвращает значение переменной, приведенное к типу `T` или `defaultValue`, если переменная не найдена.<br /><br /> Этот метод выдает исключение, если указанный тип не соответствует фактическому типу возвращаемой переменной.|
+|<a id="ref-context-variables"></a>T контекст. Variables. GetValueOrDefault < T @ no__t-1 (variableName: String, defaultValue: T)|variableName: строка<br /><br /> defaultValue: T<br /><br /> Возвращает значение переменной, приведенное к типу `T` или `defaultValue`, если переменная не найдена.<br /><br /> Этот метод выдает исключение, если указанный тип не соответствует фактическому типу возвращаемой переменной.|
 |BasicAuthCredentials AsBasic(input: this string)|input: строка<br /><br /> Если входной параметр содержит допустимое значение заголовка запроса авторизации для обычной проверки подлинности HTTP, метод возвращает объект типа `BasicAuthCredentials`; в противном случае метод возвращает значение NULL.|
 |bool TryParseBasic(input: this string, result: out BasicAuthCredentials)|input: строка<br /><br /> result: выходное значение BasicAuthCredentials<br /><br /> Если входной параметр содержит допустимое значение заголовка запроса авторизации для обычной проверки подлинности и HTTP, метод возвращает значение `true`, а параметр результата содержит значение типа `BasicAuthCredentials`. В противном случае метод возвращает значение `false`.|
 |BasicAuthCredentials|Password: строка<br /><br /> UserId: строка|
@@ -242,7 +243,7 @@ ms.locfileid: "70072177"
 |byte[] Decrypt(input: this byte[], alg: строка, key:byte[], iv:byte[])|input — зашифрованный текст, который нужно расшифровать<br /><br />alg — имя алгоритма симметричного шифрования<br /><br />key — ключ шифрования<br /><br />iv — вектор инициализации<br /><br />Возвращает открытый текст.|
 |byte[] Decrypt(input: this byte[], alg: System.Security.Cryptography.SymmetricAlgorithm)|input — зашифрованный текст, который нужно расшифровать<br /><br />alg — алгоритм шифрования<br /><br />Возвращает открытый текст.|
 |byte[] Decrypt(input: this byte[], alg: System.Security.Cryptography.SymmetricAlgorithm, key:byte[], iv:byte[])|input — зашифрованный текст, который нужно расшифровать<br /><br />alg — алгоритм шифрования<br /><br />key — ключ шифрования<br /><br />iv — вектор инициализации<br /><br />Возвращает открытый текст.|
-|bool Верифиноревокатион (входные данные: Этот системный. Security. Cryptography. X509Certificates. X509Certificate2)|Выполняет проверку цепочки X. 509 без проверки состояния отзыва сертификата.<br /><br />input-Certificate, объект<br /><br />Возвращает `true` значение, если проверка прошла. `false` значение, если проверка завершается неудачно.|
+|bool Верифиноревокатион (входные данные: Этот системный. Security. Cryptography. X509Certificates. X509Certificate2)|Выполняет проверку цепочки X. 509 без проверки состояния отзыва сертификата.<br /><br />input-Certificate, объект<br /><br />Возвращает значение `true`, если проверка прошла успешнее; `false`, если проверка завершается неудачно.|
 
 
 ## <a name="next-steps"></a>Следующие шаги

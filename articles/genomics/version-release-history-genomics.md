@@ -1,20 +1,20 @@
 ---
-title: История выпусков версий — Microsoft Genomics
-titleSuffix: Azure
-description: Microsoft Genomics регулярно выпускает обновления для клиента Python Microsoft Genomics, связанные с исправлениями и новыми функциями.
+title: Журнал выпуска версий
+titleSuffix: Microsoft Genomics
+description: Журнал выпусков обновлений для клиента Microsoft Genomics Python для исправлений и новых функций.
 services: genomics
 author: grhuynh
 manager: cgronlun
 ms.author: grhuynh
 ms.service: genomics
-ms.topic: article
+ms.topic: conceptual
 ms.date: 01/11/2019
-ms.openlocfilehash: 2037bcf173951769f1627f809352ef60afce2d50
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 03bbbed53cd0494e8507a156d0fadac8dcd4297a
+ms.sourcegitcommit: 961468fa0cfe650dc1bec87e032e648486f67651
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60780956"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72249139"
 ---
 # <a name="version-release-history"></a>Журнал выпуска версий
 Команда Microsoft Genomics регулярно выпускает обновления для клиента Python Microsoft Genomics, связанные с исправлениями и новыми функциями. 

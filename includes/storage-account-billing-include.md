@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 10/19/2018
 ms.author: tamram
 ms.custom: include file
-ms.openlocfilehash: ed7bfca6095dbb03042efd14456f34556f74a843
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 6ad5bafe66e6e39503d3987aa6ddd9159c532fa0
+ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185509"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72237440"
 ---
 За пользование услугами службы хранилища Azure вам будет выставлен счет согласно вашей учетной записи хранения. Все объекты в учетной записи хранения при выставлении счета учитываются вместе как группа. 
 
@@ -25,7 +25,7 @@ ms.locfileid: "67185509"
 * **Объем** хранилища определяет, какая часть выделенного объема учетной записи хранения используется для хранения данных.
 * **Репликация** определяет, какое количество копий ваших данных следует хранить и где.
 * **Транзакции** — это все операции чтения и записи в службе хранилища Azure.
-* **Передача данных** означает любые данные, переданные из региона Azure. Когда к данным вашей учетной записи хранения обращается приложение, выполняемое в другом регионе, вам начисляется плата за исходящие данные. Сведения об использовании групп ресурсов для группирования данных и служб в одном регионе, чтобы ограничить плату за исходящий трафик, см. в разделе [Что такое группа ресурсов Azure?](https://docs.microsoft.com/azure/architecture/cloud-adoption/governance/resource-consistency/azure-resource-access#what-is-an-azure-resource-group) 
+* **Передача данных** означает любые данные, переданные из региона Azure. Когда к данным вашей учетной записи хранения обращается приложение, выполняемое в другом регионе, вам начисляется плата за исходящие данные. Сведения об использовании групп ресурсов для группирования данных и служб в одном регионе, чтобы ограничить плату за исходящий трафик, см. в разделе [Что такое группа ресурсов Azure?](https://docs.microsoft.com/azure/cloud-adoption-framework/govern/resource-consistency/resource-access-management#what-is-an-azure-resource-group) 
 
 На странице с [ценами на хранилище Azure](https://azure.microsoft.com/pricing/details/storage/) представлена подробная информация о ценах в зависимости от типа учетной записи, емкости хранилища, репликации и транзакций. Подробные сведения о ценах на исходящие данные см. на странице с [ценами на передачу данных](https://azure.microsoft.com/pricing/details/data-transfers/). Используйте [калькулятор цен на хранилище Azure](https://azure.microsoft.com/pricing/calculator/?scenario=data-management) для оценки затрат.
 

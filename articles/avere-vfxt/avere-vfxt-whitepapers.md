@@ -3,15 +3,15 @@ title: Техническая документация и примеры в Aver
 description: В этой статье приводятся ссылки на скачиваемую техническую документацию, примеры и другие статьи, в которых представлено Avere vFXT для Azure и способы его использования.
 ms.service: avere-vfxt
 author: ekpgh
-ms.author: v-erkell
+ms.author: rohogue
 ms.topic: conceptual
 ms.date: 02/13/2019
-ms.openlocfilehash: cf111f2ebe4233ea5d02cf5c7fbc0967655475d9
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 257164a7417d4356c83cd1804939973b7029a4f1
+ms.sourcegitcommit: 1c2659ab26619658799442a6e7604f3c66307a89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60409198"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72255342"
 ---
 # <a name="azure-vftx-for-azure-whitepapers-and-other-resources"></a>Техническая документация и другие ресурсы Avere vFXT для Azure 
 
@@ -41,7 +41,7 @@ ms.locfileid: "60409198"
 
  В этом кратком руководстве о решении по выходу в облако показано, как, не прерывая работу с Avere vFXT для Azure, можно быстро сделать доступными данные для облачных вычислений.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Чтобы планировать развертывание Avere vFXT в Azure, ознакомьтесь со статьей [Планирование системы Avere vFXT](avere-vfxt-deploy-plan.md).
 * Дополнительные сведения см. в статье [Часто задаваемые вопросы об Avere vFXT для Azure](avere-vfxt-faq.md).

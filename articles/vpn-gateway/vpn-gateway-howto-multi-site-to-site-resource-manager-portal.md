@@ -2,25 +2,18 @@
 title: Добавление нескольких подключений типа "сеть — сеть" через VPN-шлюз к виртуальной сети с помощью портала Azure и Resource Manager | Документация Майкрософт
 description: Добавление многосайтовых подключений типа "сеть — сеть" к VPN-шлюзу с имеющимся подключением
 services: vpn-gateway
-documentationcenter: na
 author: cherylmc
-manager: jpconnock
-editor: ''
-tags: azure-resource-manager
-ms.assetid: f3e8b165-f20a-42ab-afbb-bf60974bb4b1
 ms.service: vpn-gateway
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 02/14/2018
+ms.date: 10/09/2019
 ms.author: cherylmc
-ms.openlocfilehash: 4b9f007e00d0912687b723bd4f7e747da893948d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d2c32fd35bbc6de1f010013c40a06af69052d3f5
+ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60760510"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72244616"
 ---
 # <a name="add-a-site-to-site-connection-to-a-vnet-with-an-existing-vpn-gateway-connection"></a>Добавление подключения типа "сеть — сеть" к виртуальной сети с помощью существующего подключения VPN-шлюза
 
@@ -32,7 +25,7 @@ ms.locfileid: "60760510"
 
 В этой статье рассматривается использование портала Azure для добавления подключений типа "сеть — сеть" в VPN-шлюз с имеющимся подключением. Этот тип подключения часто называется "многосайтовым". Можно добавить подключение типа "сеть-сеть" к виртуальной сети, которая уже имеет подключение типа "сеть-сеть", "точка-сеть" или "виртуальная сеть — виртуальная сеть". При добавлении подключения есть некоторые ограничения. Прежде чем начать настройку, просмотрите раздел [Перед началом работы](#before) в этой статье. 
 
-Эта статья относится к виртуальным сетям Resource Manager, использующим VPN-шлюз на основе маршрутов. Эти действия не применяются к параллельно существующим конфигурациям подключений ExpressRoute и "сеть — сеть". Сведения о параллельно существующих подключениях см. в разделе [Параллельно существующие подключения ExpressRoute и "сеть — сеть"](../expressroute/expressroute-howto-coexist-resource-manager.md).
+Эта статья относится к виртуальным сетям Resource Manager, использующим VPN-шлюз на основе маршрутов. Эти действия не применяются к новым конфигурациям подключения ExpressRoute или "сеть — сеть". Однако, если вы просто добавляете новое VPN-подключение к уже существующей конфигурации, вы можете использовать эти действия. Сведения о параллельно существующих подключениях см. в разделе [Параллельно существующие подключения ExpressRoute и "сеть — сеть"](../expressroute/expressroute-howto-coexist-resource-manager.md).
 
 ### <a name="deployment-models-and-methods"></a>Модели и методы развертывания
 [!INCLUDE [vpn-gateway-classic-rm](../../includes/vpn-gateway-classic-rm-include.md)]
@@ -44,7 +37,7 @@ ms.locfileid: "60760510"
 ## <a name="before"></a>Перед началом работы
 Проверьте следующее.
 
-* Убедитесь, что не создаете параллельно действующие подключения ExpressRoute и "сеть — сеть".
+* Вы не настраиваете новую конфигурацию сосуществующих ExpressRoute и VPN-шлюза.
 * У вас должна быть виртуальная сеть, созданная с помощью модели развертывания Resource Manager, с имеющимся подключением.
 * Тип шлюза виртуальной сети — RouteBased. При наличии VPN-шлюза типа PolicyBased необходимо удалить шлюз виртуальной сети и создать VPN-шлюз типа RouteBased.
 * Ни один из диапазонов адресов не должен перекрываться ни в одной из виртуальных сетей, к которой подключается эта виртуальная сеть.
@@ -92,6 +85,6 @@ ms.locfileid: "60760510"
 
 [!INCLUDE [vpn-gateway-verify-connection-ps-rm](../../includes/vpn-gateway-verify-connection-ps-rm-include.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Установив подключение, можно добавить виртуальные машины в виртуальные сети. Дополнительную информацию о виртуальных машинах см. в [схеме обучения](/learn/paths/deploy-a-website-with-azure-virtual-machines/).

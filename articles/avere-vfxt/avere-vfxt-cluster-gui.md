@@ -5,13 +5,13 @@ author: ekpgh
 ms.service: avere-vfxt
 ms.topic: conceptual
 ms.date: 06/24/2019
-ms.author: v-erkell
-ms.openlocfilehash: 830be92d37f304598cca05c3ac80973158c38a59
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.author: rohogue
+ms.openlocfilehash: 098ed98c1680fa2ea38c377e9e34719ba778b175
+ms.sourcegitcommit: 1c2659ab26619658799442a6e7604f3c66307a89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67439972"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72255033"
 ---
 # <a name="access-the-vfxt-cluster"></a>Доступ к кластеру vFXT
 
@@ -29,9 +29,9 @@ ms.locfileid: "67439972"
 
 ## <a name="create-an-ssh-tunnel"></a>Создание туннеля SSH 
 
-Можно создать туннель SSH в командной строке, основанная на Linux или Windows 10 клиентских систем. 
+Вы можете создать туннель SSH из командной строки клиентской системы под управлением Linux или Windows 10. 
 
-Используйте команду с помощью этой формы туннелирования SSH: 
+Используйте команду туннелирования SSH в следующей форме: 
 
 ssh -L *локальный порт*:*IP-адрес управления кластера*:443 *имя пользователя контроллера*\@*общедоступный IP-адрес контроллера*
 
@@ -63,6 +63,6 @@ ssh -L 8443:10.0.0.5:443 azureuser@203.0.113.51
 
 Нажмите кнопку **Login** (Вход) или нажмите клавишу ВВОД на клавиатуре.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда вы можете получить доступ к кластеру, включите функции [поддержки](avere-vfxt-enable-support.md).

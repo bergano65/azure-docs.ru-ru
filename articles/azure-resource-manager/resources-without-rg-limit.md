@@ -4,14 +4,14 @@ description: Список типов ресурсов Azure, которые мо
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: conceptual
-ms.date: 10/4/2019
+ms.date: 10/09/2019
 ms.author: tomfitz
-ms.openlocfilehash: 6677290999049dead40f39e9a840735810c7c763
-ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
+ms.openlocfilehash: 0f9db618b69ff692350f333b8a4a4354f4980169
+ms.sourcegitcommit: 961468fa0cfe650dc1bec87e032e648486f67651
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2019
-ms.locfileid: "71973320"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72249135"
 ---
 # <a name="resources-not-limited-to-800-instances-per-resource-group"></a>Ресурсы, не ограниченные 800 экземплярами на группу ресурсов
 
@@ -32,13 +32,13 @@ ms.locfileid: "71973320"
 
 ## <a name="microsoftbotservice"></a>Microsoft.BotService
 
-* Ботсервицес — обратитесь в службу поддержки, чтобы продлить ограничение.
+* Ботсервицес — по умолчанию ограничено до 800 экземпляров. Это ограничение можно увеличить, обратившись в службу поддержки.
 
 ## <a name="microsoftcompute"></a>Microsoft.Compute;
 
-* диски
-* образы
-* моментальные снимки
+* disks
+* images
+* snapshots
 * virtualMachines
 
 ## <a name="microsoftcontainerinstance"></a>Microsoft.ContainerInstance
@@ -58,16 +58,16 @@ ms.locfileid: "71973320"
 
 ## <a name="microsoftdbformariadb"></a>Microsoft.DBforMariaDB
 
-* серверы
+* servers
 
 ## <a name="microsoftdbformysql"></a>Microsoft.DBforMySQL
 
-* серверы
+* servers
 
 ## <a name="microsoftdbforpostgresql"></a>Microsoft.DBforPostgreSQL
 
 * серверграупс
-* серверы
+* servers
 * serversv2
 
 ## <a name="microsoftenterpriseknowledgegraph"></a>Microsoft. Ентерприсекновледжеграф
@@ -128,7 +128,7 @@ ms.locfileid: "71973320"
 * Приватеднсзонес/Виртуалнетворклинкс
 * приватиндпоинтс
 * privateLinkServices
-* publicIPAddresses — обратитесь в службу поддержки, чтобы продлить ограничение.
+* publicIPAddresses — по умолчанию ограничено до 800 экземпляров. Это ограничение можно увеличить, обратившись в службу поддержки.
 * serviceEndpointPolicies
 * trafficmanagerprofiles
 * virtualNetworkTaps
@@ -139,7 +139,7 @@ ms.locfileid: "71973320"
 
 ## <a name="microsoftpowerbi"></a>Microsoft.PowerBI
 
-* Воркспацеколлектионс — обратитесь в службу поддержки, чтобы продлить ограничение.
+* Воркспацеколлектионс — по умолчанию ограничено до 800 экземпляров. Это ограничение можно увеличить, обратившись в службу поддержки.
 
 ## <a name="microsoftscheduler"></a>Microsoft.Scheduler
 
@@ -147,12 +147,12 @@ ms.locfileid: "71973320"
 
 ## <a name="microsoftservicefabricmesh"></a>Microsoft.ServiceFabricMesh
 
-* приложения
+* веб-масштабированием;
 * containerGroups
 * gateways
-* Сети
-* секреты
-* тома
+* networks
+* секретные коды
+* volumes.
 
 ## <a name="microsoftstorage"></a>Microsoft.Storage;
 
@@ -161,7 +161,7 @@ ms.locfileid: "71973320"
 ## <a name="microsoftweb"></a>Microsoft.Web
 
 * apiManagementAccounts/apis
-* сайты
+* sites
 
 ## <a name="next-steps"></a>Следующие шаги
 

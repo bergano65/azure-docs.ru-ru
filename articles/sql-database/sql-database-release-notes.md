@@ -9,12 +9,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 05/15/2019
 ms.author: sstein
-ms.openlocfilehash: 90be253a4763aebd31b663aa0e765c187c8bff92
-ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
+ms.openlocfilehash: f1450399dc027a6977f4c99507e2e15b301272c4
+ms.sourcegitcommit: 961468fa0cfe650dc1bec87e032e648486f67651
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71266424"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72249384"
 ---
 # <a name="sql-database-release-notes"></a>Заметки о выпуске базы данных SQL
 
@@ -24,7 +24,7 @@ ms.locfileid: "71266424"
 
 ### <a name="single-databasetabsingle-database"></a>[Отдельная база данных](#tab/single-database)
 
-| Компонент | Подробнее |
+| Компонент | Сведения |
 | ---| --- |
 | [Частная ссылка Azure](https://azure.microsoft.com/updates/private-link-now-available-in-preview/)| Служба "Приватный канал" упрощает сетевую архитектуру и гарантирует безопасность подключения между конечными точками в Azure благодаря тому, что данные хранятся в сети Azure и не попадают в общедоступный Интернет. Кроме того, эта служба позволяет создавать и предоставлять собственные службы в Azure. |
 | Ускоренное восстановление базы данных с отдельными базами данных и эластичными пулами | Дополнительные сведения см. в разделе [Ускорение восстановления базы данных](sql-database-accelerated-database-recovery.md).|
@@ -44,10 +44,11 @@ ms.locfileid: "71266424"
 
 ### <a name="managed-instancetabmanaged-instance"></a>[Управляемый экземпляр](#tab/managed-instance)
 
-| Компонент | Подробнее |
+| Компонент | Сведения |
 | ---| --- |
+| <a href="/azure/sql-database/sql-database-managed-instance-connectivity-architecture#service-aided-subnet-configuration-public-preview-in-east-us-and-west-us">Конфигурация подсети с разавтоматизированной службой</a> | Безопасный и удобный способ управления конфигурацией подсети. |
 | <a href="/azure/sql-database/sql-database-instance-pools">Пулы экземпляров</a> | Удобный и экономичный способ переноса небольших экземпляров SQL в облако. |
-| <a href="https://aka.ms/managed-instance-tde-byok">Прозрачное шифрование данных (TDE) с создание собственных ключей (BYOK)</a> |Дополнительные сведения см. [в разделе прозрачное шифрование данных Azure SQL с управляемыми клиентом ключами в Azure Key Vault: Поддержка](transparent-data-encryption-byok-azure-sql.md)создание собственных ключей.|
+| <a href="https://aka.ms/managed-instance-tde-byok">Прозрачное шифрование данных (TDE) с создание собственных ключей (BYOK)</a> |Дополнительные сведения см. в разделе [Azure SQL прозрачное шифрование данных с ключами, управляемыми клиентом, в Azure Key Vault. Создание собственных ключей поддержки @ no__t-0.|
 | <a href="https://aka.ms/managed-instance-aadlogins">Участники сервера Azure AD уровня экземпляра (имена для входа)</a> | Создайте имена входа на уровне сервера, используя инструкцию <a href="https://docs.microsoft.com/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current">Create login из внешнего поставщика</a> . |
 | [Репликация транзакций](sql-database-managed-instance-transactional-replication.md) | Репликация изменений из таблиц в другие базы данных, размещенные на управляемых экземплярах, отдельных базах данных или SQL Server экземплярах, или при изменении некоторых строк в других управляемых экземплярах или экземплярах SQL Server. Дополнительные сведения см. [в статье Настройка репликации в базе данных управляемого экземпляра базы данных SQL Azure](replication-with-sql-database-managed-instance.md). |
 | Обнаружение угроз |Дополнительные сведения см. [в статье Настройка обнаружения угроз в управляемом экземпляре базы данных SQL Azure](sql-database-managed-instance-threat-detection.md).|

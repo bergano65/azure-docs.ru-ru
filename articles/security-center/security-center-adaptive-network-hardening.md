@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/24/2019
 ms.author: memildin
-ms.openlocfilehash: 28761b78b49ad0774594b45db4587c710fc7d810
-ms.sourcegitcommit: 9f330c3393a283faedaf9aa75b9fcfc06118b124
+ms.openlocfilehash: 060a5a6a356574e04a3492cdeadd93ddf9a38535
+ms.sourcegitcommit: 1c2659ab26619658799442a6e7604f3c66307a89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "71996725"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72255248"
 ---
 # <a name="adaptive-network-hardening-in-azure-security-center"></a>Адаптивное усиление защиты сети в центре безопасности Azure
 Узнайте, как настроить Адаптивное усиление защиты сети в центре безопасности Azure.
@@ -49,7 +49,7 @@ ms.locfileid: "71996725"
 
 2. На вкладке **неработоспособные ресурсы** выберите виртуальную машину, чтобы просмотреть оповещения и Рекомендуемые правила усиления защиты, которые необходимо применить.
 
-    ![предупреждения усиления защиты](./media/security-center-adaptive-network-hardening/hardening-alerts.png)
+    ![предупреждения усиления защиты](./media/security-center-adaptive-network-hardening/anh-recommendation-rules.png)
 
 
 ## <a name="review-and-apply-adaptive-network-hardening-recommended-rules"></a>Проверка и применение рекомендуемых правил адаптивной защиты сети

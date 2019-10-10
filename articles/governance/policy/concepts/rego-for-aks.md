@@ -1,17 +1,17 @@
 ---
-title: Сведения о том, как выполнять аудит содержимого виртуальной машины
+title: Сведения о политике Azure для службы Kubernetes Azure
 description: Узнайте, как политика Azure использует Рего и Open Policy Agent для управления кластерами в службе Kubernetes Azure.
 author: DCtheGeek
 ms.author: dacoulte
 ms.date: 06/24/2019
 ms.topic: conceptual
 ms.service: azure-policy
-ms.openlocfilehash: 9af29495fca4c8197040a5556de0ea6966b3d68d
-ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
+ms.openlocfilehash: 56bc8934db86bb03446a6d2637bd54daaf2b5fb9
+ms.sourcegitcommit: 1c2659ab26619658799442a6e7604f3c66307a89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71981446"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72254744"
 ---
 # <a name="understand-azure-policy-for-azure-kubernetes-service"></a>Общие сведения о политике Azure для службы Kubernetes Azure
 
@@ -63,9 +63,22 @@ ms.locfileid: "71981446"
 
   # Feature register: enables installing the add-on
   az feature register --namespace Microsoft.ContainerService --name AKS-AzurePolicyAutoApprove
-
+  
+  # Use the following to confirm the feature has registered
+  az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/AKS-AzurePolicyAutoApprove')].{Name:name,State:properties.state}"
+  
+  # Once the above shows 'Registered' run the following to propagate the update
+  az provider register -n Microsoft.ContainerService
+  
   # Feature register: enables the add-on to call the Azure Policy resource provider
   az feature register --namespace Microsoft.PolicyInsights --name AKS-DataplaneAutoApprove
+  
+  # Use the following to confirm the feature has registered
+  az feature list -o table --query "[?contains(name, 'Microsoft.PolicyInsights/AKS-DataPlaneAutoApprove')].{Name:name,State:properties.state}"
+  
+  # Once the above shows 'Registered' run the following to propagate the update
+  az provider register -n Microsoft.PolicyInsights
+  
   ```
 
 ## <a name="azure-policy-add-on"></a>Надстройка политики Azure
@@ -113,7 +126,7 @@ _Надстройка политики Azure_ для Kubernetes подключа
 
 После завершения предварительных требований установите надстройку политики Azure в кластере AKS, которым вы хотите управлять.
 
-- портала Azure
+- Портал Azure
 
   1. Запустите службу AKS в портал Azure, щелкнув **все службы**, а затем выполнив поиск и выбрав **Kubernetes Services**.
 
@@ -193,7 +206,7 @@ _Надстройка политики Azure_ для Kubernetes подключа
 
 Чтобы удалить надстройку политики Azure из кластера AKS, используйте либо портал Azure, либо Azure CLI.
 
-- портала Azure
+- Портал Azure
 
   1. Запустите службу AKS в портал Azure, щелкнув **все службы**, а затем выполнив поиск и выбрав **Kubernetes Services**.
 

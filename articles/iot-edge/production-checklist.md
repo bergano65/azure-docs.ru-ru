@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: 36465f016eeb066c0e12f6434deb98fd7b10966a
-ms.sourcegitcommit: 7868d1c40f6feb1abcafbffcddca952438a3472d
+ms.openlocfilehash: 599b5b075f32294f9e68c776c4a7744283e9c269
+ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71958750"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72244038"
 ---
 # <a name="prepare-to-deploy-your-iot-edge-solution-in-production"></a>Подготовка к развертыванию решения IoT Edge в рабочей среде
 
@@ -147,7 +147,7 @@ ms.locfileid: "71958750"
 
 Пример соглашения о тегах представлен в разделе [Сведения о тегах IoT Edge](how-to-update-iot-edge.md#understand-iot-edge-tags). Он поможет вам понять, как IoT Edge использует последовательные и конкретные теги для отслеживания версий. 
 
-## <a name="networking"></a>Сети
+## <a name="networking"></a>Сеть
 
 * **Полезное**
     * Просмотр конфигурации исходящих и входящих подключений
@@ -177,9 +177,11 @@ ms.locfileid: "71958750"
    | mcr.microsoft.com  | 443 | Реестр контейнеров Майкрософт |
    | global.azure-devices-provisioning.net  | 443 | Доступ к DPS (необязательно) |
    | \*.azurecr.io | 443 | Личные и сторонние реестры контейнеров |
-   | \*.blob.core.windows.net | 443 | Скачивание изменений образа | 
+   | \*.blob.core.windows.net | 443 | Скачивание изменений образа реестра контейнеров Azure из хранилища BLOB-объектов  | 
    | \*.azure-devices.net | 5671, 8883, 443 | Доступ к Центру Интернета вещей |
    | \*.docker.io  | 443 | Доступ к концентратору DOCKER (необязательно) |
+
+Некоторые из этих правил брандмауэра наследуются от реестра контейнеров Azure. Дополнительные сведения см. в статье [Настройка правил для доступа к реестру контейнеров Azure за брандмауэром](../container-registry/container-registry-firewall-access-rules.md).
 
 ### <a name="configure-communication-through-a-proxy"></a>Настройка связи через прокси-сервер
 

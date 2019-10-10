@@ -5,16 +5,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 04/16/2019
+ms.date: 10/09/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 982996bdbc5e618cf90aa4b028c0585a7898f465
-ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
+ms.openlocfilehash: 30fed5a75e368e9d87da54d4c75e6f69759813e7
+ms.sourcegitcommit: 961468fa0cfe650dc1bec87e032e648486f67651
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2019
-ms.locfileid: "71670965"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72249288"
 ---
 # <a name="configure-customer-managed-keys-for-azure-storage-encryption-from-powershell"></a>Настройка ключей, управляемых клиентом, для шифрования службы хранилища Azure из PowerShell
 
@@ -23,7 +23,7 @@ ms.locfileid: "71670965"
 В этой статье показано, как настроить хранилище ключей с управляемыми клиентом ключами с помощью PowerShell.
 
 > [!IMPORTANT]
-> Для использования управляемых клиентом ключей с шифрованием службы хранилища Azure необходимо, чтобы в хранилище ключей было настроено два обязательных свойства, **обратимое удаление** и **не выполнять очистку**. Эти свойства включены по умолчанию при создании нового хранилища ключей в портал Azure. Однако если необходимо включить эти свойства в существующем хранилище ключей, необходимо использовать PowerShell или Azure CLI.
+> Для использования управляемых клиентом ключей с шифрованием службы хранилища Azure необходимо, чтобы в хранилище ключей были установлены два свойства: **обратимое удаление** и **не очищать**. По умолчанию эти свойства отключены. Чтобы включить эти свойства, используйте либо PowerShell, либо Azure CLI.
 > Поддерживаются только ключи RSA и размер ключа 2048.
 
 ## <a name="assign-an-identity-to-the-storage-account"></a>Назначение удостоверения учетной записи хранения
@@ -67,7 +67,7 @@ Set-AzKeyVaultAccessPolicy `
     -PermissionsToKeys wrapkey,unwrapkey,get,recover
 ```
 
-## <a name="create-a-new-key"></a>Создайте ключ
+## <a name="create-a-new-key"></a>Создание ключа
 
 Затем создайте новый ключ в хранилище ключей. Чтобы создать новый ключ, вызовите [Add-азкэйваулткэй](/powershell/module/az.keyvault/add-azkeyvaultkey). Не забудьте заменить значения заполнителей в квадратных скобках собственными значениями и использовать переменные, определенные в предыдущих примерах.
 

@@ -1,17 +1,17 @@
 ---
-title: Создание групп управления для упорядочения ресурсов Azure. Система управления Azure
+title: Создание групп управления для Организации ресурсов. Управление Azure
 description: Узнайте, как создавать группы управления Azure для управления множеством ресурсов с помощью портала, Azure PowerShell и Azure CLI.
 author: rthorn17
 ms.service: governance
 ms.date: 04/05/2019
 ms.author: rithorn
 ms.topic: conceptual
-ms.openlocfilehash: 92ab550aa76adc39863a6557d3959b4538bc9a63
-ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
+ms.openlocfilehash: 17154ea72a49ff48a482b1149eeecf0229fcccd7
+ms.sourcegitcommit: 1c2659ab26619658799442a6e7604f3c66307a89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71980797"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72254690"
 ---
 # <a name="create-management-groups-for-resource-organization-and-management"></a>Создание групп управления для упорядочения ресурсов и управления ими
 

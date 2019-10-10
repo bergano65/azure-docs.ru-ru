@@ -5,14 +5,14 @@ author: ganganarayanan
 ms.author: gangan
 ms.date: 1/31/2017
 ms.topic: article
-ms.service: azure
+ms.service: azure-supportability
 ms.assetid: 58a0ca9d-86d2-469a-9714-3b8320c33cf5
-ms.openlocfilehash: 3cf17f6e391608af9d17591a81c579a1db779a6a
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: 94f21e973063dc627ef1424ca5393dd85aedd671
+ms.sourcegitcommit: 961468fa0cfe650dc1bec87e032e648486f67651
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68967805"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72248841"
 ---
 # <a name="azure-role-based-access-control-rbac-to-control-access-rights-to-create-and-manage-support-requests"></a>Контроль прав доступа для создания запросов в службу поддержки и управления ими с помощью управления доступом на основе ролей (RBAC) Azure
 
@@ -67,7 +67,7 @@ ms.locfileid: "68967805"
 
 1. Первый шаг — перейти к подписке. В разделе **Параметры**отображается список пользователей. Выберите пользователя Joe, который имеет доступ читателя к подписке. Давайте настроим новую пользовательскую роль Джо.
 
-    ![Добавить роль](./media/create-manage-support-requests-using-access-control/add-role.png)
+    ![Добавление роли](./media/create-manage-support-requests-using-access-control/add-role.png)
 
 2. В колонке "Пользователи" щелкните "Добавить". Выберите в списке ролей пользовательскую роль "Участник с правом создавать запросы на поддержку".
 
@@ -75,7 +75,7 @@ ms.locfileid: "68967805"
 
 3. Выбрав имя роли, щелкните "Добавить пользователей" и введите учетные данные электронной почты Дмитрия. Нажмите "Выбрать".
 
-    ![Добавить пользователей](./media/create-manage-support-requests-using-access-control/add-users.png)
+    ![Добавление пользователей](./media/create-manage-support-requests-using-access-control/add-users.png)
 
 4. Нажмите кнопку "ОК", чтобы продолжить.
 
@@ -89,7 +89,7 @@ ms.locfileid: "68967805"
 
 7. Если он нажмет "Новый запрос в службу поддержки" в колонке "Справка и поддержка", то сможет создать запросы на поддержку для Visual Studio Ultimate с подпиской MSDN.
 
-    ![Новый запрос в службу поддержки](./media/create-manage-support-requests-using-access-control/new-support-request.png)
+    ![Новый запрос на техническую поддержку](./media/create-manage-support-requests-using-access-control/new-support-request.png)
 
 8. Щелкнув "Все запросы на поддержку", Дмитрий может просмотреть список запросов на поддержку, созданных для этой подписки. ![Представление сведений об обращении](./media/create-manage-support-requests-using-access-control/case-details-view.png)
 

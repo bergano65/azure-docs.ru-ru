@@ -56,11 +56,11 @@
     - name: Устранение неполадок с SSH
       href: troubleshoot-ssh-connection.md
     - name: Устранение ошибок файловой системы
-      href: 'https://support.microsoft.com/help/3213321'
+      href: linux-recovery-cannot-start-file-system-errors.md
     - name: 'Устранение проблем с загрузкой, связанных с ядром'
       href: 'https://support.microsoft.com/help/4091524'
     - name: Устранение ошибок fstab
-      href: 'https://support.microsoft.com/help/3206699'
+      href: linux-virtual-machine-cannot-start-fstab-errors.md
     - name: Подробные сведения об устранении неполадок с SSH
       href: detailed-troubleshoot-ssh-connection.md
 - name: Распространенные сообщения об ошибках

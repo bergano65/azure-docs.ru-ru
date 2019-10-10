@@ -2,32 +2,27 @@
 title: Как создать запрос в службу поддержки Azure | Документация Майкрософт
 description: Создание запроса на поддержку Azure
 services: Azure Supportability
-documentationcenter: ''
 author: ganganarayanan
 manager: scotthit
-editor: ''
 ms.assetid: fd6841ea-c1d5-4bb7-86bd-0c708d193b89
 ms.service: azure-supportability
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 10/25/2016
 ms.author: gangan
-ms.openlocfilehash: 462a14d7845c6723a3482e50b01c50e3d913beee
-ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
+ms.openlocfilehash: 0195cc86875b075e00e9305d803b8d637905db78
+ms.sourcegitcommit: 961468fa0cfe650dc1bec87e032e648486f67651
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71072083"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72248711"
 ---
 # <a name="how-to-create-an-azure-support-request"></a>Создание запроса на поддержку Azure
 ## <a name="summary"></a>Сводка
 Клиенты Azure могут создавать запросы на получение поддержки и управлять ими на портале Azure ([https://portal.azure.com](https://portal.azure.com)).
 
 > [!NOTE]
-> Портал Azure для коммерческих [https://portal.azure.com](https://portal.azure.com) используется портал Azure для Германии[https://portal.microsoftazure.de](https://portal.microsoftazure.de)   
-> портал Azure для государственных организаций США[https://portal.azure.us](https://portal.azure.us)
+> Портал Azure для коммерческих используется [https://portal.azure.com](https://portal.azure.com) портал Azure для германии — [https://portal.microsoftazure.de](https://portal.microsoftazure.de)   
+> Портал Azure для государственных организаций США [https://portal.azure.us](https://portal.azure.us)
 
 
 Основываясь на отзывах клиентов, мы обновили процедуру работы с запросами на поддержку, чтобы сосредоточиться на трех основных целях:
@@ -36,7 +31,7 @@ ms.locfileid: "71072083"
 * **Интеграция**: При устранении проблемы с ресурсом Azure необходимо просто открыть запрос в службу поддержки для этого ресурса без переключения контекста.
 * **Эффективный**. Соберите сведения о ключе, необходимые инженеру службы поддержки для эффективного устранения проблемы.
 
-## <a name="getting-started"></a>Приступая к работе
+## <a name="getting-started"></a>Начало работы
 Запрос на поддержку можно создать в верхнем меню навигации или непосредственно из колонки ресурсов.
 
 **Использование верхней панели навигации**
@@ -51,7 +46,7 @@ ms.locfileid: "71072083"
 
 ![Контекст](./media/how-to-create-azure-support-request/Incontext.png)
 
-## <a name="basics"></a>Основные сведения
+## <a name="basics"></a>Основы
 Первый шаг при отправке запроса на поддержку заключается в сборе сведений о возникшей проблеме и вашем плане поддержки.
 
 Возьмем пример: У вас возникли технические трудности с виртуальной машиной и подозрительная неполадка с сетевым подключением.
@@ -76,7 +71,7 @@ ms.locfileid: "71072083"
 ## <a name="related-help"></a>Связанные материалы
 Мы предложим решение, которое может помочь вам устранить проблему, на основе выбранных вами категории и типа проблемы.
 
-![Справка по этой теме](./media/how-to-create-azure-support-request/RelatedHelp.png)
+![Связанные материалы](./media/how-to-create-azure-support-request/RelatedHelp.png)
 
 Кроме того, исходя из текстового описания проблемы, мы предложим решения для самостоятельного устранения, вытекающие из контекста.
 
@@ -127,8 +122,8 @@ ms.locfileid: "71072083"
 
 ![VID-2](./media/how-to-create-azure-support-request/VID-2.png)
 
-## <a name="feedback"></a>Отзывы
+## <a name="feedback"></a>Отзыв
 Мы всегда рады вашим отзывам и предложениям! Отправьте нам свои [предложения](https://feedback.azure.com/forums/266794-support-feedback). Кроме того, с нами можно связаться через [Twitter](https://twitter.com/azuresupport) или [форумы MSDN](https://social.msdn.microsoft.com/Forums/azure).
 
-## <a name="learn-more"></a>Подробнее...
+## <a name="learn-more"></a>Подробнее
 [Часто задаваемые вопросы о поддержке Azure](https://azure.microsoft.com/support/faq)

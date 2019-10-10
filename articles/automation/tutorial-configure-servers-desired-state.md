@@ -9,12 +9,12 @@ ms.author: robreed
 manager: carmonm
 ms.topic: conceptual
 ms.date: 08/08/2018
-ms.openlocfilehash: 0d877dafc4ab4f8ec4edb0a94450fa9c5dfcd0bb
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 09ba4bc9e5ac496a7d1d65ff145d56818e53116e
+ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68850231"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72243339"
 ---
 # <a name="configure-servers-to-a-desired-state-and-manage-drift"></a>Настройка требуемого состояния серверов и управление смещением
 
@@ -27,14 +27,14 @@ ms.locfileid: "68850231"
 > - Назначение конфигурации узла управляемому узлу.
 > - Проверка состояния соответствия управляемого узла
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим учебником требуется:
 
 - Учетная запись службы автоматизации Azure. Указания по созданию учетной записи запуска от имени пользователя для службы автоматизации Azure см. в статье [Проверка подлинности модулей Runbook в Azure с помощью учетной записи запуска от имени](automation-sec-configure-azure-runas-account.md).
 - Виртуальная машина Azure Resource Manager (неклассическая) под управлением Windows Server 2008 R2 или более поздней версии. Инструкции по созданию виртуальной машины см. в статье [Создание первой виртуальной машины Windows на портале Azure](../virtual-machines/virtual-machines-windows-hero-tutorial.md).
 - Azure PowerShell 3.6.0 или более поздней версии. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable AzureRM`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps).
-- Знакомство с платформой Desired State Configuration (DSC) Дополнительные сведения о DSC см. в статье [Общие сведения о службе настройки требуемого состояния Windows PowerShell](https://docs.microsoft.com/powershell/dsc/overview).
+- Знакомство с платформой Desired State Configuration (DSC) Дополнительные сведения о DSC см. в статье [Общие сведения о службе настройки требуемого состояния Windows PowerShell](/powershell/scripting/dsc/overview/overviews).
 
 ## <a name="log-in-to-azure"></a>Вход в Azure
 
@@ -48,7 +48,7 @@ Connect-AzureRmAccount
 
 В этом руководстве используется простая конфигурация DSC, которая гарантирует, что на виртуальной машине установлены службы IIS.
 
-Дополнительные сведения о конфигурации DSC см. в статье [Конфигурации DSC](/powershell/dsc/configurations).
+Дополнительные сведения о конфигурации DSC см. в статье [Конфигурации DSC](/powershell/scripting/dsc/configurations/configurations).
 
 В текстовом редакторе введите следующую команду и сохраните ее локально как `TestConfig.ps1`.
 
@@ -65,7 +65,7 @@ configuration TestConfig {
 ```
 
 > [!NOTE]
-> В более сложных сценариях, где требуется импортировать несколько модулей, которые предоставляют ресурсы DSC, убедитесь, что каждый модуль имеет уникальную `Import-DscResource` строку в вашей конфигурации.
+> В более сложных сценариях, где требуется импортировать несколько модулей, которые предоставляют ресурсы DSC, убедитесь, что каждый модуль имеет уникальную строку `Import-DscResource` в конфигурации.
 
 Вызовите командлет `Import-AzureRmAutomationDscConfiguration`, чтобы отправить конфигурацию в учетную запись службы автоматизации:
 
@@ -77,7 +77,7 @@ configuration TestConfig {
 
 Прежде чем назначать конфигурацию DSC узлу, ее нужно скомпилировать в конфигурации узла.
 
-Дополнительные сведения о компилировании конфигураций см. в статье [Конфигурации DSC](/powershell/dsc/configurations).
+Дополнительные сведения о компилировании конфигураций см. в статье [Конфигурации DSC](/powershell/scripting/dsc/configurations/configurations).
 
 Вызовите командлет `Start-AzureRmAutomationDscCompilationJob`, чтобы скомпилировать конфигурацию `TestConfig` в конфигурацию узла:
 
@@ -116,7 +116,7 @@ Register-AzureRmAutomationDscNode -ResourceGroupName 'MyResourceGroup' -Automati
 
 Дополнительные сведения о настройке свойств конфигурации для управляемого узла см. в статье о [Register-AzureRmAutomationDscNode](/powershell/module/azurerm.automation/register-azurermautomationdscnode).
 
-Дополнительные сведения о настройках конфигурации DSC см. в статье [Настройка локального диспетчера конфигураций](/powershell/dsc/metaconfig).
+Дополнительные сведения о настройках конфигурации DSC см. в статье [Настройка локального диспетчера конфигураций](/powershell/scripting/dsc/managing-nodes/metaConfig).
 
 ## <a name="assign-a-node-configuration-to-a-managed-node"></a>Назначение конфигурации узла управляемому узлу
 
@@ -132,7 +132,7 @@ Set-AzureRmAutomationDscNode -ResourceGroupName 'MyResourceGroup' -AutomationAcc
 
 При этом конфигурация узла с именем `TestConfig.WebServer` присваивается зарегистрированному узлу DSC с именем `DscVm`.
 По умолчанию узел DSC проверяется на соответствие конфигурации узла каждые 30 минут.
-Сведения о том, как изменить интервал проверки соответствия, см. в статье [Настройка локального диспетчера конфигураций](/PowerShell/DSC/metaConfig).
+Сведения о том, как изменить интервал проверки соответствия, см. в статье [Настройка локального диспетчера конфигураций](/powershell/scripting/dsc/managing-nodes/metaConfig).
 
 ## <a name="working-with-partial-configurations"></a>Работа с частичными конфигурациями
 
@@ -141,7 +141,7 @@ Set-AzureRmAutomationDscNode -ResourceGroupName 'MyResourceGroup' -AutomationAcc
 Однако для каждой учетной записи службы автоматизации можно назначить только одну конфигурацию.
 Это означает, что при использовании двух конфигураций для узла потребуется две учетные записи службы автоматизации.
 
-Дополнительные сведения о регистрации частичной конфигурации из опрашивающей службы см. в документации по частичным [конфигурациям](https://docs.microsoft.com/powershell/dsc/pull-server/partialconfigs#partial-configurations-in-pull-mode).
+Дополнительные сведения о регистрации частичной конфигурации из опрашивающей службы см. в документации по [частичным конфигурациям](https://docs.microsoft.com/powershell/dsc/pull-server/partialconfigs#partial-configurations-in-pull-mode).
 
 Дополнительные сведения о совместной работе групп для совместного управления серверами с помощью конфигурации в качестве кода см. [в разделе Основные сведения о роли DSC в конвейере CI/CD](/powershell/dsc/overview/authoringadvanced).
 
@@ -170,7 +170,7 @@ $reports[0]
 > Это не влияет на конфигурацию, которая в настоящее время применяется к узлу.
 > Чтобы удалить текущую конфигурацию, используйте [PowerShell](https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/remove-dscconfigurationdocument?view=powershell-5.1) или удалите локальный файл конфигурации (это единственный вариант для узлов Linux).
 
-### <a name="azure-portal"></a>портала Azure
+### <a name="azure-portal"></a>Портал Azure
 
 Из службы автоматизации Azure щелкните **Конфигурация состояния (DSC)** в содержании.
 Затем щелкните **узлы** , чтобы просмотреть список узлов, зарегистрированных в службе.

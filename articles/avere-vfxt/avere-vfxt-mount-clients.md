@@ -5,13 +5,13 @@ author: ekpgh
 ms.service: avere-vfxt
 ms.topic: conceptual
 ms.date: 10/31/2018
-ms.author: v-erkell
-ms.openlocfilehash: 41065b4ac6bc486e204c2bfd72b78ba8722270c4
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: rohogue
+ms.openlocfilehash: c461b379629927e8f367fad9bfc70b87413f47b7
+ms.sourcegitcommit: 1c2659ab26619658799442a6e7604f3c66307a89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60409388"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72255387"
 ---
 # <a name="mount-the-avere-vfxt-cluster"></a>Подключение кластера Avere vFXT  
 
@@ -116,7 +116,7 @@ IP-адрес представляет собой один из определе
 ``nointr``            | Параметр nointr предпочтителен для клиентов с устаревшими ядрами (до апреля 2008 г.), которые его поддерживают. Обратите внимание, что значением по умолчанию выступает параметр intr.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 После подключения клиентов вы можете использовать их для заполнения серверного хранилища данных (основное файловое хранилище). Сведения о дополнительных задачах настройки см. в следующих статьях.
 

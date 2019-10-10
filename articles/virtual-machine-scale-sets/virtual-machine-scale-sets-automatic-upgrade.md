@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/16/2019
 ms.author: vashan
-ms.openlocfilehash: 9825ef1426a1c93f94b502c396fbaab1f86a924e
-ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
+ms.openlocfilehash: 95a313b3c6995d55b86561c685641b447edae127
+ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71263504"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72240925"
 ---
 # <a name="azure-virtual-machine-scale-set-automatic-os-image-upgrades"></a>Автоматические обновления образа ОС масштабируемого набора виртуальных машин Azure
 
@@ -56,10 +56,10 @@ ms.locfileid: "71263504"
 
 Сейчас поддерживаются следующие номера SKU (и периодически будут добавляться дополнительные):
 
-| Издатель               | Предложение ОС      |  Номер SKU               |
+| Издатель               | Предложение ОС      |  Sku               |
 |-------------------------|---------------|--------------------|
-| Канонический               | UbuntuServer  | 16.04-LTS          |
-| Канонический               | UbuntuServer  | 18.04-LTS          |
+| Canonical               | UbuntuServer  | 16.04-LTS          |
+| Canonical               | UbuntuServer  | 18.04-LTS          |
 | Rogue Wave (OpenLogic)  | CentOS        | 7.5                |
 | CoreOS                  | CoreOS        | Stable             |
 | Корпорация Майкрософт   | WindowsServer | 2012-R2-Datacenter |
@@ -112,14 +112,14 @@ PUT or PATCH on `/subscriptions/subscription_id/resourceGroups/myResourceGroup/p
 ```
 
 ### <a name="azure-powershell"></a>Azure PowerShell
-Используйте командлет [Update-AzVmss](/powershell/module/az.compute/update-azvmss), чтобы проверить журнал обновлений ОС для масштабируемого набора. В следующем примере выполняется настройка автоматического обновления для масштабируемого набора с именем *myScaleSet* в группе ресурсов с именем *myResourceGroup*:
+Используйте командлет [Update-азвмсс](/powershell/module/az.compute/update-azvmss) , чтобы настроить автоматическое обновление образа ОС для масштабируемого набора. В следующем примере выполняется настройка автоматического обновления для масштабируемого набора с именем *myScaleSet* в группе ресурсов с именем *myResourceGroup*:
 
 ```azurepowershell-interactive
 Update-AzVmss -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSet" -AutomaticOSUpgrade $true
 ```
 
 ### <a name="azure-cli-20"></a>Azure CLI 2.0
-Используйте командлет [az vmss update](/cli/azure/vmss#az-vmss-update), чтобы проверить журнал обновления ОС масштабируемого набора. Использование Azure CLI 2.0.47 или более поздней версии В следующем примере выполняется настройка автоматического обновления для масштабируемого набора с именем *myScaleSet* в группе ресурсов с именем *myResourceGroup*:
+Чтобы настроить автоматическое обновление образа ОС для масштабируемого набора, используйте команду [AZ vmss Update](/cli/azure/vmss#az-vmss-update) . Использование Azure CLI 2.0.47 или более поздней версии В следующем примере выполняется настройка автоматического обновления для масштабируемого набора с именем *myScaleSet* в группе ресурсов с именем *myResourceGroup*:
 
 ```azurecli-interactive
 az vmss update --name myScaleSet --resource-group myResourceGroup --set UpgradePolicy.AutomaticOSUpgradePolicy.EnableAutomaticOSUpgrade=true

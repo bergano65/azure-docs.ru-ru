@@ -1,17 +1,17 @@
 ---
-title: Как изменять, удалять группы управления и управлять ими — Управление Azure
+title: Как работать с группами управления — Управление Azure
 description: Узнайте, как просматривать, сохранять, обновлять и удалять иерархию групп управления.
 author: rthorn17
 ms.service: governance
 ms.date: 05/22/2019
 ms.author: rithorn
 ms.topic: conceptual
-ms.openlocfilehash: 28bfabd5c28fe833050551e7be690c0ea3d1e6a0
-ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
+ms.openlocfilehash: 57695157119b81580777c0581adccb267e7e9faa
+ms.sourcegitcommit: 1c2659ab26619658799442a6e7604f3c66307a89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71338938"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72255931"
 ---
 # <a name="manage-your-resources-with-management-groups"></a>Управление ресурсами с помощью групп управления
 
@@ -126,7 +126,7 @@ az account management-group delete --name 'Contoso'
 
 1. Чтобы просмотреть сведения о группе управления, перейдите по ссылке **(подробности)** рядом с заголовком группы управления. Если ссылка недоступна, у вас нет разрешения на просмотр этой группы управления.
 
-   ![Основной](./media/main.png)
+   ![Главная](./media/main.png)
 
 ### <a name="view-in-powershell"></a>Просмотр в PowerShell
 

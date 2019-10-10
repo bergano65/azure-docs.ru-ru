@@ -10,18 +10,18 @@ ms.topic: conceptual
 ms.date: 09/20/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 9a1366b24e4e46a93af777753debb1cce7c0f0ce
-ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
+ms.openlocfilehash: cc7e7b334791194cd4f8ebbd2038e9c1877eb297
+ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71826968"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72240218"
 ---
 # <a name="set-up-sign-in-with-a-google-account-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка входа в Azure Active Directory B2C с помощью учетной записи Google с использованием пользовательских политик
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-В этой статье показано, как включить вход для пользователей из учетной записи Google с помощью [настраиваемых политик](active-directory-b2c-overview-custom.md) в Azure Active Directory B2C (Azure AD B2C).
+В этой статье показано, как включить вход для пользователей с учетной записью Google с помощью [настраиваемых политик](active-directory-b2c-overview-custom.md) в Azure Active Directory B2C (Azure AD B2C).
 
 ## <a name="prerequisites"></a>Предварительные требования
 

@@ -17,12 +17,12 @@ ms.date: 04/19/2019
 ms.author: chadam
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6e4f0f81c5f135e885fe06d4fb4fa67514e8781b
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: 8d202cb0cc2d073326a5bcc8fb0d540c232afa98
+ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68988157"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72240894"
 ---
 # <a name="integrate-azure-active-directory-logs-with-arcsight-using-azure-monitor"></a>Интеграция журналов Azure Active Directory с ArcSight с помощью Azure Monitor
 
@@ -30,13 +30,13 @@ ms.locfileid: "68988157"
 
 В этой статье вы узнаете, как перенаправлять журналы Azure AD в ArcSight с помощью Azure Monitor. 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для использования этой функции необходимо иметь следующее.
 * Концентратор событий Azure, содержащий журналы действий Azure AD. Узнайте, как [настроить потоковую передачу журналов действий в концентратор событий](quickstart-azure-monitor-stream-logs-to-event-hub.md). 
 * Настроенный экземпляр ArcSight Syslog NG Daemon SmartConnector (SmartConnector) или ArcSight Load Balancer. Если события отправляются в ArcSight Load Balancer, то он отправляет их в SmartConnector.
 
-Скачайте и откройте [руководство по настройке ArcSight SmartConnector для концентратора событий Azure Monitor](https://community.softwaregrp.com/dcvta86296/attachments/dcvta86296/connector-documentation/1232/2/Microsoft%20Azure%20Monitor%20Event%20Hub.pdf). Это руководство содержит шаги, необходимые для установки и настройки ArcSight SmartConnector для Azure Monitor. 
+Скачайте и откройте [руководство по настройке ArcSight SmartConnector для концентратора событий Azure Monitor](https://community.microfocus.com/dcvta86296/attachments/dcvta86296/connector-documentation/1232/8/Microsoft%20Azure%20Monitor%20Event%20Hub.pdf). Это руководство содержит шаги, необходимые для установки и настройки ArcSight SmartConnector для Azure Monitor. 
 
 ## <a name="integrate-azure-ad-logs-with-arcsight"></a>Интеграция журналов Azure AD в ArcSight
 

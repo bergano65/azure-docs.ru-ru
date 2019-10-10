@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 08/08/2019
 ms.author: normesta
 ms.subservice: common
-ms.openlocfilehash: bb816658faff9fb924d075e0fca17e9643c18e40
-ms.sourcegitcommit: 8bae7afb0011a98e82cbd76c50bc9f08be9ebe06
+ms.openlocfilehash: 980156284b27478163760b1f833a91ba7cddec21
+ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71694762"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72244790"
 ---
 # <a name="get-started-with-azcopy"></a>Начало работы с AzCopy
 
@@ -95,8 +95,8 @@ tar -xf azcopy.tar.gz
 
 - Контейнер (файловая система)
 - Учетная запись хранения
-- Группа ресурсов
-- Подписка
+- группа ресурсов.
+- Subscription
 
 Сведения о проверке и назначении ролей см. [в разделе Предоставление доступа к данным BLOB-объектов и очередей Azure с помощью RBAC в портал Azure](https://docs.microsoft.com/azure/storage/common/storage-auth-aad-rbac-portal?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).
 
@@ -125,7 +125,7 @@ azcopy login --tenant-id=<tenant-id>
 
 Эта команда возвращает код проверки подлинности и URL-адрес веб-сайта. Откройте веб-сайт, укажите код и нажмите кнопку **Далее**.
 
-![Создать контейнер](media/storage-use-azcopy-v10/azcopy-login.png)
+![Создание контейнера](media/storage-use-azcopy-v10/azcopy-login.png)
 
 Откроется окно входа. В этом окне войдите в свою учетную запись Azure с помощью соответствующих данных. Выполнив вход, можно закрыть окно браузера и начать работу с AzCopy.
 
@@ -287,7 +287,7 @@ URL-адрес отображается в выходных данных это�
 
 | Операционная система  | Command |
 |--------|-----------|
-| **Linux** | `wget -O azcopyv10.tar https://azcopyvnext.azureedge.net/release20190301/azcopy_linux_amd64_10.0.8.tar.gz tar -xf azcopyv10.tar --strip-components=1 ./azcopy` |
+| **Linux** | `wget -O azcopy_v10.tar.gz https://aka.ms/downloadazcopy-v10-linux && tar -xf azcopy_v10.tar.gz --strip-components=1` |
 | **Windows** | `Invoke-WebRequest https://azcopyvnext.azureedge.net/release20190517/azcopy_windows_amd64_10.1.2.zip -OutFile azcopyv10.zip <<Unzip here>>` |
 
 ### <a name="escape-special-characters-in-sas-tokens"></a>Экранирование специальных символов в маркерах SAS

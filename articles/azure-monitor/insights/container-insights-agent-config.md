@@ -11,14 +11,14 @@ ms.service: azure-monitor
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 10/07/2019
+ms.date: 10/08/2019
 ms.author: magoedte
-ms.openlocfilehash: ada573cc919d775af52abc5a75004866aebbeddb
-ms.sourcegitcommit: f9e81b39693206b824e40d7657d0466246aadd6e
+ms.openlocfilehash: dfa823955cccba4ac7ec6859894a4562f0810d76
+ms.sourcegitcommit: 961468fa0cfe650dc1bec87e032e648486f67651
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72033936"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72248754"
 ---
 # <a name="configure-agent-data-collection-for-azure-monitor-for-containers"></a>Настройка сбора данных агента для Azure Monitor для контейнеров
 
@@ -64,7 +64,7 @@ Azure Monitor для контейнеров — это простой интер
 
 | Конечная точка | `Scope` | Пример |
 |----------|-------|---------|
-| Аннотация к Pod | На уровне кластера | Примечания <br>`prometheus.io/scrape: "true"` <br>`prometheus.io/path: "/mymetrics"` <br>`prometheus.io/port: "8000" <br>prometheus.io/scheme: "http"` |
+| Аннотация к Pod | На уровне кластера | Примечания <br>`prometheus.io/scrape: "true"` <br>`prometheus.io/path: "/mymetrics"` <br>`prometheus.io/port: "8000"` <br>`prometheus.io/scheme: "http"` |
 | Служба Kubernetes | На уровне кластера | `http://my-service-dns.my-namespace:9100/metrics` <br>`https://metrics-server.kube-system.svc.cluster.local/metrics` |
 | URL-адрес или конечная точка | На узел или на уровне кластера | `http://myurl:9101/metrics` |
 
@@ -79,9 +79,9 @@ Azure Monitor для контейнеров — это простой интер
 | | `prometheus.io/scrape` | Логическое | Значение true или false | Включает брак/отход модуля Pod. Для параметра `monitor_kubernetes_pods` нужно задать значение `true`. |
 | | `prometheus.io/scheme` | Строка, | HTTP или HTTPS | По умолчанию используется отработка отказа по протоколу HTTP. При необходимости задайте значение `https`. | 
 | | `prometheus.io/path` | Строка, | Массив с разделителями-запятыми | Путь HTTP-ресурса, из которого извлекать метрики. Если путь метрик не `/metrics`, определите его с помощью этой заметки. |
-| | `prometheus.io/port` | Строка, | 9102 | Укажите порт для прослушивания. Если параметр port не установлен, по умолчанию будет 9102. |
+| | `prometheus.io/port` | Строка, | 9102 | Укажите порт, из которого будет списано значение. Если параметр port не установлен, по умолчанию будет 9102. |
 | На уровне узла | `urls` | Строка, | Массив с разделителями-запятыми | Конечная точка HTTP (указан IP-адрес или допустимый путь URL-адреса). Например, `urls=[$NODE_IP/metrics]`. ($NODE _IP — это конкретная Azure Monitor для параметра Containers, которую можно использовать вместо IP-адреса узла. Необходимо использовать все прописные буквы.) |
-| На уровне узла или на уровне кластера | `interval` | Строка, | 60 | Интервал сбора по умолчанию равен одной минуте (60 секунд). Коллекцию можно изменить для *[prometheus_data_collection_settings. Node]* и/или *[prometheus_data_collection_settings. Cluster]* на единицы времени, такие как NS, US (или âμс), MS, s, m, h. |
+| На уровне узла или на уровне кластера | `interval` | Строка, | 60 | Интервал сбора по умолчанию равен одной минуте (60 секунд). Можно изменить коллекцию для *[prometheus_data_collection_settings. Node]* и/или *[prometheus_data_collection_settings. Cluster]* на единицы времени, такие как s, m, h. |
 | На уровне узла или на уровне кластера | `fieldpass`<br> `fielddrop`| Строка, | Массив с разделителями-запятыми | Можно указать определенные метрики для сбора или не из конечной точки, установив список Allow (`fieldpass`) и запретить (`fielddrop`). Сначала необходимо задать список разрешений. |
 
 Конфигмапс является глобальным списком, и к нему может быть применен только один ConfigMap. У вас не может быть другой Конфигмапс.
@@ -91,7 +91,8 @@ Azure Monitor для контейнеров — это простой интер
 Выполните следующие действия, чтобы настроить и развернуть файл конфигурации ConfigMap в кластере.
 
 1. [Скачайте](https://github.com/microsoft/OMS-docker/blob/ci_feature_prod/Kubernetes/container-azm-ms-agentconfig.yaml) файл шаблона ConfigMap YAML и сохраните его как Container-АЗМ-MS-ажентконфиг. YAML.  
-1. Измените файл ConfigMap YAML с вашими настройками.
+
+2. Измените файл YAML ConfigMap, используя настройки для получения переменных среды stdout, stderr и (или).
 
     - Чтобы исключить определенные пространства имен для сбора журналов stdout, необходимо настроить ключ или значение, используя следующий пример: `[log_collection_settings.stdout] enabled = true exclude_namespaces = ["my-namespace-1", "my-namespace-2"]`.
     
@@ -99,48 +100,67 @@ Azure Monitor для контейнеров — это простой интер
     
     - Чтобы отключить кластер для сбора журналов stderr, настройте ключ/значение, используя следующий пример: `[log_collection_settings.stderr] enabled = false`.
     
-    - В следующих примерах показано, как настроить метрики файлов ConfigMap из всего кластера URL-адресов, из Дамеонсет на уровне узла агента и указав аннотацию Pod.
+3. Чтобы настроить сбор данных в кластере Kubernetes Services на уровне кластера, настройте файл ConfigMap, используя следующий пример.
 
-        - Prometheus метрики из определенного URL-адреса в кластере.
+    ```
+    prometheus-data-collection-settings: |- 
+    # Custom Prometheus metrics data collection settings
+    [prometheus_data_collection_settings.cluster] 
+    interval = "1m"  ## Valid time units are s, m, h.
+    fieldpass = ["metric_to_pass1", "metric_to_pass12"] ## specify metrics to pass through 
+    fielddrop = ["metric_to_drop"] ## specify metrics to drop from collecting
+    kubernetes_services = ["http://my-service-dns.my-namespace:9102/metrics"]
+    ```
+
+4. Чтобы настроить отходы метрик Prometheus по определенному URL-адресу в кластере, настройте файл ConfigMap, используя следующий пример.
+
+    ```
+    prometheus-data-collection-settings: |- 
+    # Custom Prometheus metrics data collection settings
+    [prometheus_data_collection_settings.cluster] 
+    interval = "1m"  ## Valid time units are s, m, h.
+    fieldpass = ["metric_to_pass1", "metric_to_pass12"] ## specify metrics to pass through 
+    fielddrop = ["metric_to_drop"] ## specify metrics to drop from collecting
+    urls = ["http://myurl:9101/metrics"] ## An array of urls to scrape metrics from
+    ```
+
+5. Чтобы настроить отходы метрик Prometheus из набора управляющих программ агента для каждого отдельного узла в кластере, настройте следующие параметры в ConfigMap:
+    
+    ```
+    prometheus-data-collection-settings: |- 
+    # Custom Prometheus metrics data collection settings 
+    [prometheus_data_collection_settings.node] 
+    interval = "1m"  ## Valid time units are s, m, h. 
+    urls = ["http://$NODE_IP:9103/metrics"] 
+    fieldpass = ["metric_to_pass1", "metric_to_pass2"] 
+    fielddrop = ["metric_to_drop"] 
+    ```
+
+    >[!NOTE]
+    >$NODE _IP — это конкретная Azure Monitor для параметра Containers, которую можно использовать вместо IP-адреса узла. Необходимо использовать все прописные буквы. 
+
+6. Чтобы настроить отходы метрик Prometheus, указав аннотацию Pod, выполните следующие действия.
+
+    1. В ConfigMap укажите следующее:
 
         ```
          prometheus-data-collection-settings: |- 
          # Custom Prometheus metrics data collection settings
          [prometheus_data_collection_settings.cluster] 
-         interval = "1m"  ## Valid time units are ns, us (or µs), ms, s, m, h.
-         fieldpass = ["metric_to_pass1", "metric_to_pass12"] ## specify metrics to pass through 
-         fielddrop = ["metric_to_drop"] ## specify metrics to drop from collecting
-         urls = ["http://myurl:9101/metrics"] ## An array of urls to scrape metrics from
+         interval = "1m"  ## Valid time units are s, m, h
+         monitor_kubernetes_pods = true 
         ```
 
-        - Prometheus метрики из управляющей программы агента, выполняемой на каждом узле в кластере.
+    2. Укажите следующую конфигурацию для заметок Pod:
 
         ```
-         prometheus-data-collection-settings: |- 
-         # Custom Prometheus metrics data collection settings 
-         [prometheus_data_collection_settings.node] 
-         interval = "1m"  ## Valid time units are ns, us (or µs), ms, s, m, h. 
-         # Node level scrape endpoint(s). These metrics will be scraped from agent's DaemonSet running in every node in the cluster 
-         urls = ["http://$NODE_IP:9103/metrics"] 
-         fieldpass = ["metric_to_pass1", "metric_to_pass2"] 
-         fielddrop = ["metric_to_drop"] 
+         - prometheus.io/scrape:"true" #Enable scraping for this pod 
+         - prometheus.io/scheme:"http:" #If the metrics endpoint is secured then you will need to set this to `https`, if not default ‘http’
+         - prometheus.io/path:"/mymetrics" #If the metrics path is not /metrics, define it with this annotation. 
+         - prometheus.io/port:"8000" #If port is not 9102 use this annotation
         ```
 
-        - Prometheus метрики, указав аннотацию Pod.
-
-        ```
-         prometheus-data-collection-settings: |- 
-         # Custom Prometheus metrics data collection settings
-         [prometheus_data_collection_settings.cluster] 
-         interval = "1m"  ## Valid time units are ns, us (or µs), ms, s, m, h
-         monitor_kubernetes_pods = true #replicaset will scrape Kubernetes pods for the following prometheus annotations: 
-          - prometheus.io/scrape:"true" #Enable scraping for this pod 
-          - prometheus.io/scheme:"http:" #If the metrics endpoint is secured then you will need to set this to `https`, if not default ‘http’
-          - prometheus.io/path:"/mymetrics" #If the metrics path is not /metrics, define it with this annotation. 
-          - prometheus.io/port:"8000" #If port is not 9102 use this annotation
-        ```
-
-1. Создайте ConfigMap, выполнив следующую команду kubectl: `kubectl apply -f <configmap_yaml_file.yaml>`.
+7. Создайте ConfigMap, выполнив следующую команду kubectl: `kubectl apply -f <configmap_yaml_file.yaml>`.
     
     Пример: `kubectl apply -f container-azm-ms-agentconfig.yaml`. 
     
@@ -186,29 +206,32 @@ config::unsupported/missing config schema version - 'v21' , using defaults
                     schema-versions=v1 
 ```
 
-## <a name="review-prometheus-data-usage"></a>Проверка использования данных Prometheus
+## <a name="query-prometheus-metrics-data"></a>Запрос данных метрик Prometheus
 
 Чтобы просмотреть метрики Prometheus, которые забракованы Azure Monitor, укажите "Prometheus" в качестве пространства имен. Ниже приведен пример запроса для просмотра метрик Prometheus из пространства имен `default` kubernetes.
 
 ```
 InsightsMetrics 
-| where Namespace contains "prometheus"
+| where Namespace == "prometheus"
 | extend tags=parse_json(Tags)
-| where tostring(tags.namespace) == "default" 
+| summarize count() by Name
 ```
 
 Данные Prometheus также можно запрашивать напрямую по имени.
 
 ```
 InsightsMetrics 
+| where Namespace == "prometheus"
 | where Name contains "some_prometheus_metric"
 ```
+
+## <a name="review-prometheus-data-usage"></a>Проверка использования данных Prometheus
 
 Чтобы определить, является ли объем приема для каждого метрики размером в ГБ в день, чтобы понять, насколько он высокий, предоставляется следующий запрос.
 
 ```
 InsightsMetrics 
-| where Namespace contains "prometheus"
+| where Namespace == "prometheus"
 | where TimeGenerated > ago(24h)
 | summarize VolumeInGB = (sum(_BilledSize) / (1024 * 1024 * 1024)) by Name
 | order by VolumeInGB desc

@@ -9,12 +9,12 @@ ms.author: robreed
 ms.date: 09/10/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 58aa310316a31eb63ca8dd614b60fb4bad73d997
-ms.sourcegitcommit: 4d177e6d273bba8af03a00e8bb9fe51a447196d0
+ms.openlocfilehash: 3d9c6c9b73f8887d4fdb85da277b2e27d8f5221c
+ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71959990"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72243573"
 ---
 # <a name="compiling-dsc-configurations-in-azure-automation-state-configuration"></a>Компилирование конфигураций DSC в службе "Настройка состояния службы автоматизации Azure"
 
@@ -124,7 +124,7 @@ Start-AzureRmAutomationDscCompilationJob -ResourceGroupName 'MyResourceGroup' -A
 
 ### <a name="compiling-configurations-in-azure-automation-that-contain-composite-resources"></a>Компиляция конфигураций в службе автоматизации Azure, содержащих составные ресурсы
 
-**Составные ресурсы** позволяют использовать конфигурации DSC в качестве вложенных ресурсов в рамках конфигурации. Благодаря этому можно применить несколько конфигураций к одному ресурсу. См. статью [Composite resources: Using a DSC configuration as a resource ](/powershell/dsc/authoringresourcecomposite) (Составные ресурсы.Использование конфигурации DSC как ресурса) для получения дополнительных сведений о **составных ресурсах**.
+**Составные ресурсы** позволяют использовать конфигурации DSC в качестве вложенных ресурсов в рамках конфигурации. Благодаря этому можно применить несколько конфигураций к одному ресурсу. См. статью [Composite resources: Using a DSC configuration as a resource ](/powershell/scripting/dsc/resources/authoringresourcecomposite) (Составные ресурсы.Использование конфигурации DSC как ресурса) для получения дополнительных сведений о **составных ресурсах**.
 
 > [!NOTE]
 > Для правильной компиляции конфигураций, содержащих **Составные ресурсы** , необходимо сначала убедиться, что все ресурсы DSC, на которые полагается составной компонент, сначала импортируются в службу автоматизации Azure.

@@ -11,17 +11,17 @@ ms.topic: article
 ms.date: 09/03/2019
 ms.author: mahender
 ms.custom: seodec18
-ms.openlocfilehash: cf4eade598de24e323a8c8647a64921f8797e3a2
-ms.sourcegitcommit: 6013bacd83a4ac8a464de34ab3d1c976077425c7
+ms.openlocfilehash: 311a9fc887db399cb16d6cbb2bcec665a7ddfce7
+ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71686739"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72240117"
 ---
 # <a name="use-key-vault-references-for-app-service-and-azure-functions-preview"></a>Использование ссылок на Key Vault в Службе приложений и Функциях Azure (предварительная версия)
 
 > [!NOTE] 
-> Ссылки на Key Vault сейчас доступны в предварительной версии.
+> В настоящее время Key Vault ссылки доступны в предварительной версии, и в настоящее время они не поддерживаются планами потребления Linux.
 
 В этой статье показано, как работать с секретами из Azure Key Vault в приложении Службы приложений или Функций Azure без каких-либо изменений кода. Служба [Azure Key Vault](../key-vault/key-vault-overview.md) обеспечивает централизованное управление секретами и полный контроль над политиками доступа и журналами аудита.
 
