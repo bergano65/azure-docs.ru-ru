@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
-ms.openlocfilehash: b2bfbed33433521fd086d474ea4b754f5435f5e6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6eaa1be81d3ac0733c0829bc45e1b62f8aae5755
+ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67092924"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72027120"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-riskware"></a>Руководство по Интеграция Azure Active Directory с Riskware
 
@@ -170,7 +170,7 @@ ms.locfileid: "67092924"
 
     ж. В текстовом поле **XML Identity Tag Name** (Имя тега идентификатора XML) введите имя атрибута ответа SAML, который содержит уникальный идентификатор, например NameID.
 
-    h. Откройте в Блокноте скачанный с портала Azure  **XML-файл метаданных** и скопируйте из этого файла сертификат безопасности. Затем вставьте его в текстовое поле **Certificate** (Сертификат).
+    h. Откройте в Блокноте скачанный с портала Azure **XML-файл метаданных**, скопируйте из этого файла сертификат безопасности и вставьте его в текстовое поле **Certificate** (Сертификат).
 
     i. В текстовом поле **Consumer URL** (URL-адрес объекта-получателя) вставьте значение **URL-адреса ответа**, которое вы получили от службы поддержки.
 
@@ -296,4 +296,4 @@ ms.locfileid: "67092924"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
