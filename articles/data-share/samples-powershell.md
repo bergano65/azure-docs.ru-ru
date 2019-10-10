@@ -1,20 +1,19 @@
 ---
-title: Примеры Azure PowerShell для общей папки данных Azure | Документация Майкрософт
-description: Azure PowerShell примеров — сценарии, помогающие создавать общие папки данных и управлять ими.
-services: data-share
+title: Примеры Azure PowerShell для общей папки данных Azure
+description: Узнайте о Azure PowerShell примерах сценариев, которые помогут вам создавать общие папки данных и управлять ими в предварительной версии общего ресурса данных Azure.
 ms.service: data-share
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 07/6/2019
+ms.devlang: powershell
 author: joannapea
 ms.author: joanpo
-ms.openlocfilehash: 90b23da3ae911038c67dc1d99c5b98d04b935281
-ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
+ms.date: 07/6/2019
+ms.openlocfilehash: a694ced2697cba8cc50e3c7b5b14f712527e1cd9
+ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70243104"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72166333"
 ---
 # <a name="azure-powershell-samples-for-azure-data-share"></a>Примеры Azure PowerShell для общей папки данных Azure
 
@@ -33,9 +32,3 @@ ms.locfileid: "70243104"
 |[Просмотр сведений об общих ресурсах данных](scripts/powershell/view-share-details-powershell.md)| Этот пример скрипта PowerShell перечисляет и извлекает сведения об общих ресурсах данных. |
 |[Отслеживание использования общих данных](scripts/powershell/monitor-usage-powershell.md)| Этот пример скрипта PowerShell отслеживает использование отправленных общих данных. |
 |[Создание и просмотр триггеров моментальных снимков](scripts/powershell/create-view-trigger-powershell.md)| Этот пример скрипта PowerShell создает триггеры моментальных снимков для общей папки.
-
-
-
-
-
-

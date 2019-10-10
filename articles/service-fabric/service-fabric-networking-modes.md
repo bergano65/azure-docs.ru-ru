@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 2/23/2018
-ms.author: subramar
-ms.openlocfilehash: d749e1355e69ad93c8c211474043f88127ec76f0
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.author: atsenthi
+ms.openlocfilehash: aa7b63453a5147742e27b9bb32ad05221e745f8c
+ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68599385"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72168806"
 ---
 # <a name="service-fabric-container-networking-modes"></a>Сетевые режимы контейнеров Service Fabric
 
@@ -203,11 +203,11 @@ ms.locfileid: "68599385"
    |Параметр |Значение | |
    | --- | --- | --- |
    |Priority |2000 | |
-   |Название |Custom_Dns  | |
+   |ИМЯ |Custom_Dns  | |
    |Source |VirtualNetwork | |
-   |Назначение | VirtualNetwork | |
-   |Служба | DNS (UDP/53) | |
-   |Action | Разрешить  | |
+   |Destination | VirtualNetwork | |
+   |Service | DNS (UDP/53) | |
+   |Action | Allow  | |
    | | |
 
 4. Укажите сетевой режим в манифесте приложения для каждой службы: `<NetworkConfig NetworkType="Open">`. При использовании **открытого** сетевого режима служба получит выделенный IP-адрес. Если режим не указан, по умолчанию служба использует режим **NAT**. В следующем примере манифеста видно, что службы `NodeContainerServicePackage1` и `NodeContainerServicePackage2` могут ожидать передачи данных на одном и том же порту (обе службы прослушивают `Endpoint1`). Если установлен открытый режим сети, вы не сможете задать конфигурации `PortBinding`.

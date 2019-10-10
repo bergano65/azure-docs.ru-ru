@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 2/23/2018
-ms.author: subramar
-ms.openlocfilehash: 8fe0bf9c8827b7248195f89377176fd834845e32
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: atsenthi
+ms.openlocfilehash: 5e693a219c4a430f742ebd27878518ebb99ce5da
+ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60615179"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72167370"
 ---
 # <a name="service-fabric-application-upgrade-tutorial-using-visual-studio"></a>Учебник по обновлению приложений Service Fabric с помощью Visual Studio
 > [!div class="op_single_selector"]
@@ -32,7 +32,7 @@ ms.locfileid: "60615179"
 
 Azure Service Fabric упрощает процесс обновления облачных приложений за счет того, что обновляются только измененные службы, кроме того, в процессе обновления отслеживается работоспособность приложения. При обнаружении проблем автоматически выполняется откат к предыдущей версии приложения. Обновление приложений Service Fabric выполняется *без времени простоя*, так как приложение можно обновить без времени простоя. В этом учебнике описывается развертывание последовательного обновления из Visual Studio.
 
-## <a name="step-1-build-and-publish-the-visual-objects-sample"></a>Шаг 1. Создавайте и публикуйте образца визуальных объектов
+## <a name="step-1-build-and-publish-the-visual-objects-sample"></a>Шаг 1. Создание и публикация примера визуальных объектов
 Во-первых, скачайте приложение [Visual Objects](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started/tree/classic/Actors/VisualObjects) с сайта GitHub. Затем выполните сборку приложения и опубликуйте его. Для этого щелкните правой кнопкой мыши проект приложения **VisualObjects** и выберите в меню Service Fabric команду **Опубликовать**.
 
 ![Контекстное меню для приложения Service Fabric][image1]
@@ -43,7 +43,7 @@ Azure Service Fabric упрощает процесс обновления обл
 
 Теперь можно нажать кнопку **Опубликовать** в диалоговом окне. Для просмотра кластера и приложения теперь можно использовать [обозреватель Service Fabric](service-fabric-visualizing-your-cluster.md). Приложение Visual Objects включает в себя веб-службу, к которой можно перейти, указав в адресной строке браузера [http://localhost:8081/visualobjects/](http://localhost:8081/visualobjects/).  Вы должны увидеть 10 плавающих визуальных объектов, перемещающихся по экрану.
 
-**Примечание**. Если развертывание `Cloud.xml` профиля (Azure Service Fabric), приложение должно быть доступно по **http://{ServiceFabricName}. {} Region}.cloudapp.Azure.com:8081/visualobjects/** . Убедитесь, что в балансировщике нагрузки настроен `8081/TCP` (балансировщик нагрузки находится в той же группе ресурсов, что и экземпляр Service Fabric).
+**Примечание**. При развертывании в профиле `Cloud.xml` (Azure Service Fabric) приложение должно быть доступно по адресу **http://{сервицефабрикнаме}. { Регион}. cloudapp. Azure. com: 8081/visualobjects/** . Убедитесь, что в балансировщике нагрузки настроен `8081/TCP` (балансировщик нагрузки находится в той же группе ресурсов, что и экземпляр Service Fabric).
 
 ## <a name="step-2-update-the-visual-objects-sample"></a>Шаг 2. Обновление образца визуальных объектов
 Вы можете заметить, что в версии, развернутой на шаге 1, визуальные объекты не вращаются. Давайте обновим это приложение до версии, в которой визуальные объекты будут вращаться.
@@ -73,7 +73,7 @@ Azure Service Fabric упрощает процесс обновления обл
 
 Вы можете попробовать изменить версии и перейти от версии 2.0.0 к версии 3.0.0 в качестве упражнения или даже от версии 2.0.0 назад к версии 1.0.0. Попробуйте изменить значения времени ожидания и параметры политики работоспособности в качестве тренировки. При развертывании в кластер Azure параметры могут отличаться от используемых при развертывании в локальный кластер. Рекомендуется применить консервативный подход при настройке значений времени ожидания.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 [Обновление приложения с помощью PowerShell](service-fabric-application-upgrade-tutorial-powershell.md) поможет вам выполнить обновление приложения с помощью PowerShell.
 
 Управление обновлениями приложения осуществляется с помощью [параметров обновления](service-fabric-application-upgrade-parameters.md).

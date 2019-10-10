@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 2/23/2018
-ms.author: subramar
-ms.openlocfilehash: c8f56897380bc3108cb979d9d15e7dbd0a329064
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: atsenthi
+ms.openlocfilehash: db0627c72ea6e7e3b272b818697b8e61b485be78
+ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60614375"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72167511"
 ---
 # <a name="service-fabric-application-upgrade-using-powershell"></a>Обновление приложения Service Fabric с помощью PowerShell
 > [!div class="op_single_selector"]
@@ -134,7 +134,7 @@ Get-ServiceFabricApplicationUpgrade fabric:/VisualObjects
 
 В качестве упражнения вы можете выполнить обновление с версии 2 до версии 3 или с версии 2 до версии 1. Переход с версии 2 на версию 1 также считается обновлением. Попробуйте изменить значения времени ожидания и параметры политики работоспособности в качестве тренировки. При развертывании в кластере Azure необходимо правильно настроить параметры. Рекомендуется использовать консервативный подход при настройке значений времени ожидания.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 [Руководство по обновлению приложений Service Fabric с помощью Visual Studio](service-fabric-application-upgrade-tutorial.md) поможет вам выполнить поэтапное обновление приложения с помощью Visual Studio.
 
 Управление обновлениями приложения осуществляется с помощью [параметров обновления](service-fabric-application-upgrade-parameters.md).

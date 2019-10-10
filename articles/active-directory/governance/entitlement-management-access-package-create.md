@@ -16,12 +16,12 @@ ms.date: 09/24/2019
 ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1283549ce78535757b7ba42eaf7054538f0c9784
-ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
+ms.openlocfilehash: a99aa766ed4e6cacbe22933db226b2037d3e736d
+ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71326342"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72170013"
 ---
 # <a name="create-a-new-access-package-in-azure-ad-entitlement-management-preview"></a>Создание нового пакета Access в управлении назначением Azure AD (Предварительная версия)
 
@@ -56,7 +56,7 @@ ms.locfileid: "71326342"
 
 1. Щелкните **Создать пакет для доступа**.
 
-## <a name="basics"></a>Основные сведения
+## <a name="basics"></a>Основы
 
 На вкладке " **основы** " Присвойте пакету доступа имя и укажите каталог для создания пакета доступа в.
 
@@ -126,5 +126,3 @@ ms.locfileid: "71326342"
 ## <a name="next-steps"></a>Следующие шаги
 
 - [Изменение и администрирование существующего пакета для доступа](entitlement-management-access-package-edit.md)
-- [Добавление владельца каталога или диспетчера пакетов Access](entitlement-management-delegate.md#add-a-catalog-owner-or-an-access-package-manager)
-- [Создание каталога и управление им](entitlement-management-catalog-create.md)

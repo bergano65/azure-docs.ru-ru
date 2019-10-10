@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/08/2019
 ms.author: kumud
-ms.openlocfilehash: 05794cfaf6a550d32acdfb731a5f477111e65606
-ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
+ms.openlocfilehash: c924e59a50994827eb2e9be40caa7021c7e4ac3c
+ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70011418"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72174468"
 ---
 # <a name="deploy-an-ipv6-dual-stack-application-in-azure---powershell-preview"></a>Развертывание приложения с двумя стеками IPv6 в Azure с помощью PowerShell (Предварительная версия)
 
@@ -50,7 +50,7 @@ Get-AzProviderFeature -FeatureName AllowIPv6CAOnStandardLB -ProviderNamespace
 Register-AzResourceProvider -ProviderNamespace Microsoft.Network
 ```
 
-## <a name="create-a-resource-group"></a>Создать группу ресурсов
+## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
 Прежде чем можно будет создать виртуальную сеть с двумя стеками, необходимо создать группу ресурсов с помощью [New-азресаурцеграуп](/powershell/module/az.resources/new-azresourcegroup). В следующем примере создается группа ресурсов с именем *миргдуалстакк* в расположении *Восточная часть США* :
 
@@ -173,7 +173,7 @@ $lb = New-AzLoadBalancer `
 
 ## <a name="create-network-resources"></a>Создание сетевых ресурсов
 Перед развертыванием некоторых виртуальных машин и проверки балансировщика необходимо создать вспомогательные сетевые ресурсы — группы доступности, группу безопасности сети, виртуальную сеть и виртуальные сетевые карты. 
-### <a name="create-an-availability-set"></a>Создать группу доступности
+### <a name="create-an-availability-set"></a>"Создать группу доступности"
 Чтобы улучшить высокую доступность приложения, поместите виртуальные машины в группу доступности.
 
 Создайте группу доступности с помощью командлета [New-AzAvailabilitySet](/powershell/module/az.compute/new-azavailabilityset). В следующем примере создается группа доступности *myAvailabilitySet*.
@@ -237,9 +237,9 @@ $nsg = New-AzNetworkSecurityGroup `
 -Name "dsNSG1"  `
 -SecurityRules $rule1,$rule2
 ```
-### <a name="create-a-virtual-network"></a>Создать виртуальную сеть
+### <a name="create-a-virtual-network"></a>Создание виртуальной сети
 
-Создайте виртуальную сеть с помощью командлета [New-AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork). В следующем примере создаются виртуальная сеть *myVnet* и подсеть *mySubnet*.
+Создайте виртуальную сеть с помощью командлета [New-AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork). В следующем примере создается виртуальная сеть с именем *дсвнет* и *mySubnet*.
 
 ```azurepowershell-interactive
 # Create dual stack subnet
@@ -323,7 +323,7 @@ $VM2 = New-AzVM -ResourceGroupName $rg.ResourceGroupName  -Location $rg.Location
 ```
 
 ## <a name="determine-ip-addresses-of-the-ipv4-and-ipv6-endpoints"></a>Определение IP-адресов конечных точек IPv4 и IPv6
-Получите все объекты сетевых интерфейсов в группе ресурсов, чтобы обобщить IP-адрес, используемый в этом развертывании, с `get-AzNetworkInterface`. Кроме того, получите внешние адреса Load Balancer конечных точек IPv4 и IPv6 с помощью `get-AzpublicIpAddress`.
+Получите все объекты сетевых интерфейсов в группе ресурсов, чтобы обобщить IP-адрес, используемый в этом развертывании, с `get-AzNetworkInterface`. Кроме того, получите внешние адреса Load Balancer конечных точек IPv4 и IPv6 с `get-AzpublicIpAddress`.
 
 ```azurepowershell-interactive
 $rgName= "dsRG1"
@@ -364,7 +364,7 @@ foreach ($NIC in $NICsInRG) {
 ## <a name="view-ipv6-dual-stack-virtual-network-in-azure-portal"></a>Просмотр двух виртуальных сетей IPv6 с двумя стеками в портал Azure
 Виртуальную сеть с двумя стеками IPv6 можно просмотреть в портал Azure следующим образом:
 1. На панели поиска портала введите *дсвнет*.
-2. Когда в результатах поиска появится пункт **myVirtualNetwork**, выберите его. Откроется страница **обзора** для виртуальной сети с двумя стеками с именем *дсвнет*. В виртуальной сети с двумя стеками показаны две сетевые карты с конфигурациями IPv4 и IPv6, расположенными в подсети с двойным стеком с именем *дссубнет*.
+2. Когда в результатах поиска появится **дсвнет** , выберите его. Откроется страница **обзора** для виртуальной сети с двумя стеками с именем *дсвнет*. В виртуальной сети с двумя стеками показаны две сетевые карты с конфигурациями IPv4 и IPv6, расположенными в подсети с двойным стеком с именем *дссубнет*.
 
   ![Виртуальная сеть с двумя стеками IPv6 в Azure](./media/virtual-network-ipv4-ipv6-dual-stack-powershell/dual-stack-vnet.png)
 

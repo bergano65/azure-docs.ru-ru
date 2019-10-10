@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 07/23/2019
+ms.date: 10/08/2019
 ms.author: mlottner
-ms.openlocfilehash: bb6a975d2a2fc2cc3e65fa8969f8b005be8b1417
-ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
+ms.openlocfilehash: 128265cd3e69cd27bab6538c9eb376410439824d
+ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71299708"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72176663"
 ---
 # <a name="deploy-a-security-module-on-your-iot-edge-device"></a>Развертывание модуля безопасности на устройстве IoT Edge
 
@@ -48,7 +48,7 @@ ms.locfileid: "71299708"
     - Проверьте, активен ли аудит, выполнив следующую команду: 
    
     `sudo systemctl status auditd`<br>
-    - Ожидаемый ответ:`active (running)` 
+    - Ожидаемый ответ: `active (running)` 
         
 
 ### <a name="deployment-using-azure-portal"></a>Развертывание с помощью портал Azure
@@ -61,7 +61,7 @@ ms.locfileid: "71299708"
 
 1. Нажмите кнопку **создать** , чтобы настроить развертывание. 
 
-1. Выберите подписку Azure центра Интернета вещей, а затем выберите **центр Интернета вещей**.<br>Выберите **развернуть на устройстве** для использования с одним устройством или выберите **развернуть в масштабе** для выбора нескольких устройств и нажмите кнопку **создать**. Дополнительные сведения о развертывании в масштабе см. [в разделе Развертывание](https://docs.microsoft.com/azure/iot-edge/how-to-deploy-monitor). 
+1. Выберите **подписку** Azure центра Интернета вещей, а затем выберите **центр Интернета вещей**.<br>Выберите **развернуть на устройстве** для использования с одним устройством или выберите **развернуть в масштабе** для выбора нескольких устройств и нажмите кнопку **создать**. Дополнительные сведения о развертывании в масштабе см. [в разделе Развертывание](https://docs.microsoft.com/azure/iot-edge/how-to-deploy-monitor). 
 
     >[!Note] 
     >Если выбран параметр **развернуть в масштабе**, добавьте имя и сведения об устройстве, прежде чем перейти к вкладке **Add modules (Добавление модулей** ) в следующих инструкциях.     
@@ -70,7 +70,7 @@ ms.locfileid: "71299708"
 
 #### <a name="step-1-add-modules"></a>Шаг 1. Добавление модулей
 
-1. На вкладке **Добавление модулей** в области **модули развертывания** щелкните **азуресекуритицентерфориот**. 
+1. На вкладке **Добавление модулей** в области **модули развертывания** выберите параметр **Настройка** для **азуресекуритицентерфориот**. 
    
 1. Измените **имя** на **азуреиотсекурити**.
 1. Измените **URI образа** на **MCR.Microsoft.com/ascforiot/azureiotsecurity:1.0.0**.
@@ -95,10 +95,13 @@ ms.locfileid: "71299708"
 1. Убедитесь, что выбран параметр **задать требуемые свойства двойникаа модуля** , и измените объект конфигурации на:
       
     ``` json
-    "desired": {
-        "ms_iotn:urn_azureiot_Security_SecurityAgentConfiguration": {
-          } 
-        }
+    { 
+       "properties.desired":{ 
+      "ms_iotn:urn_azureiot_Security_SecurityAgentConfiguration":{ 
+
+          }
+       }
+    }
     ```
 
 1. Нажмите кнопку **Сохранить**.
@@ -110,13 +113,25 @@ ms.locfileid: "71299708"
          
     ``` json
     { 
-    "HostConfig":{
-                    "PortBindings":{
-                    "8883/tcp": [{"HostPort": "8883"}],
-                    "443/tcp": [{"HostPort": "443"}],
-                    "5671/tcp": [{"HostPort": "5671"}]
-                    }
-        }
+       "HostConfig":{ 
+          "PortBindings":{ 
+             "8883/tcp":[ 
+                { 
+                   "HostPort":"8883"
+                }
+             ],
+             "443/tcp":[ 
+                { 
+                   "HostPort":"443"
+                }
+             ],
+             "5671/tcp":[ 
+                { 
+                   "HostPort":"5671"
+                }
+             ]
+          }
+       }
     }
     ```
 1. Нажмите кнопку **Сохранить**.
@@ -125,16 +140,15 @@ ms.locfileid: "71299708"
 
 #### <a name="step-2-specify-routes"></a>Шаг 2. Настройка маршрутов 
 
-1. На вкладке **указать маршруты** убедитесь, что у вас есть маршрут (явный или неявный), который будет пересылать сообщения из модуля **азуреиотсекурити** в **$upstream**. 
-1. Нажмите кнопку **Далее**.
+1. На вкладке **указать маршруты** убедитесь, что у вас есть маршрут (явный или неявный), который будет пересылать сообщения из модуля **азуреиотсекурити** , чтобы **$upstream** в соответствии со следующими примерами, только затем нажмите кнопку **Далее**. 
 
-    ~~~Default implicit route
-    "route": "FROM /messages/* INTO $upstream" 
-    ~~~
+~~~Default implicit route
+"route": "FROM /messages/* INTO $upstream" 
+~~~
 
-    ~~~Explicit route
-    "ASCForIoTRoute": "FROM /messages/modules/azureiotsecurity/* INTO $upstream"
-    ~~~
+~~~Explicit route
+"ASCForIoTRoute": "FROM /messages/modules/azureiotsecurity/* INTO $upstream"
+~~~
 
 #### <a name="step-3-review-deployment"></a>Шаг 3. Проверка развертывания
 
@@ -152,7 +166,7 @@ ms.locfileid: "71299708"
    
 1. Убедитесь, что выполняются следующие контейнеры:
    
-   | Название | ЭСКИЗ |
+   | ИМЯ | ЭСКИЗ |
    | --- | --- |
    | азуреиотсекурити | mcr.microsoft.com/ascforiot/azureiotsecurity:1.0.0 |
    | edgeHub | mcr.microsoft.com/azureiotedge-hub:1.0.9-rc2 |

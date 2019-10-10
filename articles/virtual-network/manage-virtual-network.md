@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/10/2019
 ms.author: kumud
-ms.openlocfilehash: 235a82c6bba4165790c370c2641ee6cd41f10840
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 04cd5035d012e7846cc97a5a057fd71ebe103ce3
+ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64700485"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72168747"
 ---
 # <a name="create-change-or-delete-a-virtual-network"></a>Создание, изменение или удаление виртуальной сети
 
@@ -35,11 +35,11 @@ ms.locfileid: "64700485"
 - При использовании команд интерфейса командной строки Azure (CLI) для работы с этой статьей выполняйте их в [Azure Cloud Shell](https://shell.azure.com/bash) или в интерфейсе командной строки на своем компьютере. Для этого руководства требуется Azure CLI 2.0.31 или более поздней версии. Выполните командлет `az --version`, чтобы узнать установленную версию. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli). Если Azure CLI запущен локально, необходимо также выполнить командлет `az login`, чтобы создать подключение к Azure.
 - Учетной записи, в которую вы входите или с помощью которой подключаетесь к Azure, должна быть назначена роль [Участник сетей](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor) или [пользовательская роль](../role-based-access-control/custom-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json), которой назначены соответствующие действия, перечисленные в таблице [Разрешения](#permissions).
 
-## <a name="create-a-virtual-network"></a>Создать виртуальную сеть
+## <a name="create-a-virtual-network"></a>Создание виртуальной сети
 
 1. Щелкните **+Создать ресурс** > **Сети** > **Виртуальная сеть**.
 2. Введите или выберите значения описанных ниже параметров, а затем щелкните **Создать**.
-   - **Имя.** Имя должно быть уникальным в пределах [группы ресурсов](../azure-glossary-cloud-terminology.md?toc=%2fazure%2fvirtual-network%2ftoc.json#resource-group), выбранной для создания виртуальной сети. Имя невозможно изменить после создания виртуальной сети. Со временем вы сможете создать несколько виртуальных сетей. Рекомендации по именованию см. в статье, посвященной [соглашениям об именовании](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions#naming-rules-and-restrictions). Придерживаясь соглашений об именовании, вы сможете упростить управление несколькими виртуальными сетями.
+   - **Имя**: Имя должно быть уникальным в пределах [группы ресурсов](../azure-glossary-cloud-terminology.md?toc=%2fazure%2fvirtual-network%2ftoc.json#resource-group), выбранной для создания виртуальной сети. Имя невозможно изменить после создания виртуальной сети. Со временем вы сможете создать несколько виртуальных сетей. Рекомендации по именованию см. в статье, посвященной [соглашениям об именовании](/azure/cloud-adoption-framework/ready/considerations/naming-and-tagging#resource-naming). Придерживаясь соглашений об именовании, вы сможете упростить управление несколькими виртуальными сетями.
    - **Диапазон адресов**: Адресное пространство виртуальной сети состоит из одного диапазона адресов или нескольких неперекрывающихся, указанных в нотации CIDR. Определяемый диапазон адресов может быть общедоступным или частным (RFC 1918). Независимо от того, какой диапазон адресов вы укажете (общедоступный или частный), он будет доступен только внутри виртуальной сети, из взаимосвязанных виртуальных сетей и из всех локальных сетей, подключенных к виртуальной сети. Невозможно добавить следующий диапазон адресов:
      - 224.0.0.0/4 (многоадресная рассылка)
      - 255.255.255.255/32 (широковещательный адрес)
@@ -165,19 +165,19 @@ ms.locfileid: "64700485"
 **Команды**
 
 - Azure CLI: [azure network vnet delete](/cli/azure/network/vnet)
-- PowerShell: [Remove-AzVirtualNetwork](/powershell/module/az.network/remove-azvirtualnetwork)
+- PowerShell: [Remove-Азвиртуалнетворк](/powershell/module/az.network/remove-azvirtualnetwork)
 
 ## <a name="permissions"></a>Разрешения
 
 Для выполнения задач в виртуальных сетях учетной записи должна быть назначена роль [Участник сети](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor) или [пользовательская](../role-based-access-control/custom-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json) роль, которой назначены соответствующие действия, перечисленные в следующей таблице.
 
-| Действие                                  |   ИМЯ                                |
+| Action                                  |   ИМЯ                                |
 |---------------------------------------- |   --------------------------------    |
 |Microsoft.Network/virtualNetworks/read   |   Чтение виртуальной сети.              |
 |Microsoft.Network/virtualNetworks/write  |   Создание или обновление виртуальной сети.  |
 |Microsoft.Network/virtualNetworks/delete |   Удаление виртуальной сети            |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Создайте виртуальную сеть с помощью примеров сценариев [PowerShell](powershell-samples.md) или [Azure CLI](cli-samples.md) либо на основе [шаблонов Azure Resource Manager](template-samples.md).
 - Создайте и примените [политику Azure](policy-samples.md) для виртуальных сетей.

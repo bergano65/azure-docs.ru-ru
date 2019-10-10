@@ -14,40 +14,40 @@ ms.devlang: nodejs
 ms.topic: article
 ms.date: 04/15/2019
 ms.author: aschhab
-ms.openlocfilehash: 7686014adb989494e6df277de4137b76c3125696
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f927274e1e866a9cba72330280316cc5ee7d8047
+ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65992135"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72178057"
 ---
-# <a name="how-to-use-service-bus-topics-and-subscriptions-with-nodejs-and-the-azureservice-bus-package"></a>Как использовать разделы служебной шины и подписки с помощью Node.js и пакет azure и служебной шины
-> [!div class="op_multi_selector" title1="Язык программирования" title2="Пакета node.js"]
-> - [(Node.js | azure-sb)](service-bus-nodejs-how-to-use-topics-subscriptions.md)
-> - [(Node.js | @azure/service-bus)](service-bus-nodejs-how-to-use-topics-subscriptions-new-package.md)
+# <a name="how-to-use-service-bus-topics-and-subscriptions-with-nodejs-and-the-azureservice-bus-package"></a>Использование разделов и подписок служебной шины с Node. js и пакетом Azure/Service-Bus
+> [!div class="op_multi_selector" title1="Язык программирования" title2="Пакета Node. js"]
+> - [(Node. js | Azure-SB)](service-bus-nodejs-how-to-use-topics-subscriptions.md)
+> - [(Node. js | @azure/service-bus)](service-bus-nodejs-how-to-use-topics-subscriptions-new-package.md)
 
-В этом руководстве вы узнаете, как написать программу Node.js для отправки сообщений в раздел служебной шины и получения сообщений из подписки служебной шины с помощью нового [ @azure/service-bus ](https://www.npmjs.com/package/@azure/service-bus) пакета. Этот пакет использует быстрее [протокол AMQP 1.0](service-bus-amqp-overview.md) то время как более старую версию [azure-sb](https://www.npmjs.com/package/azure-sb) пакет, используемый [API среды выполнения служебной шины REST](/rest/api/servicebus/service-bus-runtime-rest). Примеры написаны на языке JavaScript.
+В этом руководстве вы узнаете, как написать программу Node. js для отправки сообщений в раздел служебной шины и получать сообщения из подписки служебной шины с помощью нового пакета [@azure/service-bus](https://www.npmjs.com/package/@azure/service-bus) . Этот пакет использует более быстрый [протокол AMQP 1,0](service-bus-amqp-overview.md) , в то время как более старый пакет [Azure-SB](https://www.npmjs.com/package/azure-sb) использовал [API среды выполнения служебной шины](/rest/api/servicebus/service-bus-runtime-rest). Примеры написаны на JavaScript.
 
-## <a name="prerequisites"></a>Технические условия
-- Подписка Azure. Для работы с этим учебником требуется учетная запись Azure. Вы можете активировать ваши [преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/?WT.mc_id=A85619ABF) или зарегистрироваться для [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
-- Если у вас нет раздела и подписки для работы с, выполните шаги [с помощью портала Azure для создания служебной шины разделов и подписок](service-bus-quickstart-topics-subscriptions-portal.md) статье, чтобы создать их. Запишите строку подключения для экземпляра Service Bus и имена раздела и подписки, которую вы создали. Мы будем использовать эти значения в образцах.
+## <a name="prerequisites"></a>Предварительные требования
+- Подписка Azure. Для работы с этим учебником требуется учетная запись Azure. Вы можете активировать [преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/?WT.mc_id=A85619ABF) или зарегистрироваться для использования [бесплатной учетной записи](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
+- Если у вас нет раздела и подписки для работы, выполните действия, описанные в статье [использование портал Azure для создания разделов и подписок служебной шины](service-bus-quickstart-topics-subscriptions-portal.md) , чтобы создать их. Запишите строку подключения для экземпляра служебной шины и имена созданного раздела и подписки. Мы будем использовать эти значения в примерах.
 
 > [!NOTE]
-> - В этом руководстве используется с примерами, которые можно скопировать и запустить с помощью [Nodejs](https://nodejs.org/). Инструкции по созданию приложения Node.js см. в разделе [Создание и развертывание приложения Node.js на веб-сайте Azure](../app-service/app-service-web-get-started-nodejs.md), или [Node.js в облачной службе с помощью Windows PowerShell](../cloud-services/cloud-services-nodejs-develop-deploy-app.md).
-> - Новый [ @azure/service-bus ](https://www.npmjs.com/package/@azure/service-bus) пакет не поддерживает создание еще topcis и подписок. Используйте [ @azure/arm-servicebus ](https://www.npmjs.com/package/@azure/arm-servicebus) пакета, если вы хотите создать их программно.
+> - Этот учебник работает с примерами, которые можно скопировать и запустить с помощью [NodeJS](https://nodejs.org/). Инструкции по созданию приложения Node. js см. в статье [Создание и развертывание приложения Node. js на веб-сайте Azure](../app-service/app-service-web-get-started-nodejs.md)или в [облачной службе Node. js с помощью Windows PowerShell](../cloud-services/cloud-services-nodejs-develop-deploy-app.md).
+> - Новый пакет [@azure/service-bus](https://www.npmjs.com/package/@azure/service-bus) еще не поддерживает создание топЦис и подписок. Используйте пакет [@azure/arm-servicebus](https://www.npmjs.com/package/@azure/arm-servicebus) , если вы хотите создать их программными средствами.
 
 ### <a name="use-node-package-manager-npm-to-install-the-package"></a>Использование диспетчера пакета Node (NPM) для установки пакета
-Чтобы установить пакет npm для служебной шины, откройте командную строку с `npm` в пути, перейдите в каталог на папку, где вы хотите иметь ваших примеров и затем выполните следующую команду.
+Чтобы установить пакет NPM для служебной шины, откройте командную строку с `npm` по ее пути, измените каталог на папку, в которой вы хотите получить примеры, а затем выполните эту команду.
 
 ```bash
 npm install @azure/service-bus
 ```
 
 ## <a name="send-messages-to-a-topic"></a>Отправка сообщений в раздел
-Взаимодействие с Service Bus раздел начинается с создания экземпляра [ServiceBusClient](https://docs.microsoft.com/javascript/api/@azure/service-bus/servicebusclient) класс и использовать его для создания [TopicClient](https://docs.microsoft.com/javascript/api/%40azure/service-bus/topicclient) класса. Когда клиент раздела, можно создать отправителя и использовать [отправки](https://docs.microsoft.com/javascript/api/%40azure/service-bus/sender#send-sendablemessageinfo-) или [sendBatch](https://docs.microsoft.com/javascript/api/@azure/service-bus/sender#sendbatch-sendablemessageinfo---) метод для отправки сообщений.
+Взаимодействие с разделом служебной шины начинается с создания экземпляра класса [сервицебусклиент](https://docs.microsoft.com/javascript/api/@azure/service-bus/servicebusclient) и его использования для создания экземпляра класса [TopicClient](https://docs.microsoft.com/javascript/api/%40azure/service-bus/topicclient) . После создания раздела клиент можно создать отправителя и использовать для отправки сообщений метод [Send](https://docs.microsoft.com/javascript/api/%40azure/service-bus/sender#send-sendablemessageinfo-) или [sendBatch](https://docs.microsoft.com/javascript/api/@azure/service-bus/sender#sendbatch-sendablemessageinfo---) .
 
-1. Откройте предпочитаемый редактор, такой как [Visual Studio Code](https://code.visualstudio.com/)
-2. Создайте файл с именем `send.js` и вставьте ниже кода в него. Этот код отправит 10 сообщений в раздел.
+1. Откройте любой редактор, например [Visual Studio Code](https://code.visualstudio.com/)
+2. Создайте файл с именем `send.js` и вставьте в него приведенный ниже код. Этот код отправляет 10 сообщений в раздел.
 
     ```javascript
     const { ServiceBusClient } = require("@azure/service-bus"); 
@@ -87,17 +87,17 @@ npm install @azure/service-bus
 3. Введите строку подключения и имя раздела в приведенном выше коде.
 4. Затем выполните команду `node send.js` в командной строке, чтобы выполнить этот файл. 
 
-Поздравляем! Вы просто отправлять сообщения в очередь служебной шины.
+Поздравляем! Вы только что отправляли сообщения в очередь служебной шины.
 
-Сообщения имеют некоторые стандартные свойства, такие как `label` и `messageId` , которые можно задать при отправке. Если вы хотите задать все настраиваемые свойства, используйте `userProperties`, который представляет собой объект json, который может содержать пары ключ значение пользовательских данных.
+Сообщения имеют стандартные свойства, такие как `label` и `messageId`, которые можно задать при отправке. Если вы хотите задать пользовательские свойства, используйте `userProperties`, который является объектом JSON, который может содержать пары "ключ-значение" пользовательских данных.
 
-Разделы служебной шины поддерживают максимальный размер сообщения 256 КБ для [уровня "Стандартный"](service-bus-premium-messaging.md) и 1 МБ для [уровня Premium](service-bus-premium-messaging.md). Нет ограничений на количество сообщений, содержащихся в разделе, но есть ограничение на общий размер сообщений, содержащихся в разделе. Этот размер раздела определяется при создании с верхним пределом 5 ГБ. Дополнительные сведения о квотах см. в статье [Квоты на служебную шину](service-bus-quotas.md).
+Разделы служебной шины поддерживают максимальный размер сообщения 256 КБ для [уровня "Стандартный"](service-bus-premium-messaging.md) и 1 МБ для [уровня Premium](service-bus-premium-messaging.md). Количество сообщений, хранящихся в разделе, не ограничено, но существует ограничение общего размера сообщений, хранящихся в разделе. Этот размер раздела определяется при создании с верхним пределом 5 ГБ. Дополнительные сведения о квотах см. в статье [Квоты на служебную шину](service-bus-quotas.md).
 
 ## <a name="receive-messages-from-a-subscription"></a>Получение сообщений из подписки
-Взаимодействие с Service Bus подписки начинается с создания экземпляра [ServiceBusClient](https://docs.microsoft.com/javascript/api/@azure/service-bus/servicebusclient) класс и использовать его для создания [SubscriptionClient](https://docs.microsoft.com/javascript/api/%40azure/service-bus/subscriptionclient) класса. Когда клиент подписки, можно создать получатель и использовать либо [receiveMessages](https://docs.microsoft.com/javascript/api/%40azure/service-bus/receiver#receivemessages-number--undefined---number-) или [registerMessageHandler](https://docs.microsoft.com/javascript/api/%40azure/service-bus/receiver#registermessagehandler-onmessage--onerror--messagehandleroptions-) метод для получения сообщений.
+Взаимодействие с подпиской служебной шины начинается с создания экземпляра класса [сервицебусклиент](https://docs.microsoft.com/javascript/api/@azure/service-bus/servicebusclient) и его использования для создания экземпляра класса [SubscriptionClient](https://docs.microsoft.com/javascript/api/%40azure/service-bus/subscriptionclient) . После создания клиента подписки можно создать приемник и использовать для него метод [рецеивемессажес](https://docs.microsoft.com/javascript/api/%40azure/service-bus/receiver#receivemessages-number--undefined---number-) или [регистермессажехандлер](https://docs.microsoft.com/javascript/api/%40azure/service-bus/receiver#registermessagehandler-onmessage--onerror--messagehandleroptions-) для получения сообщений.
 
-1. Откройте предпочитаемый редактор, такой как [Visual Studio Code](https://code.visualstudio.com/)
-2. Создайте файл с именем `recieve.js` и вставьте ниже кода в него. Этот код будет предпринята попытка получить 10 сообщений из подписки. Фактическое число получаемых зависит от количества сообщений в подписке и задержки в сети.
+1. Откройте любой редактор, например [Visual Studio Code](https://code.visualstudio.com/)
+2. Создайте файл с именем `recieve.js` и вставьте в него приведенный ниже код. Этот код попытается получить 10 сообщений от вашей подписки. Фактическое количество получаемых данных зависит от количества сообщений в подписке и задержки сети.
 
     ```javascript
     const { ServiceBusClient, ReceiveMode } = require("@azure/service-bus"); 
@@ -110,7 +110,7 @@ npm install @azure/service-bus
     async function main(){
       const sbClient = ServiceBusClient.createFromConnectionString(connectionString); 
       const subscriptionClient = sbClient.createSubscriptionClient(topicName, subscriptionName);
-      const receiver = subscriptionClient.createReceiver(ReceiveMode.ReceiveAndDelete);
+      const receiver = subscriptionClient.createReceiver(ReceiveMode.receiveAndDelete);
       
       try {
         const messages = await receiver.receiveMessages(10);
@@ -127,32 +127,32 @@ npm install @azure/service-bus
       console.log("Error occurred: ", err);
     });
     ```
-3. Введите строку подключения и имена разделов и подписок в приведенном выше коде.
+3. Введите строку подключения и имена раздела и подписки в приведенном выше коде.
 4. Затем выполните команду `node receiveMessages.js` в командной строке, чтобы выполнить этот файл.
 
-Поздравляем! Вы просто получать сообщения из подписки служебной шины.
+Поздравляем! Вы только что получили сообщения от подписки служебной шины.
 
-[CreateReceiver](https://docs.microsoft.com/javascript/api/%40azure/service-bus/subscriptionclient#createreceiver-receivemode-) метод принимает `ReceiveMode` которого является перечислением со значениями [ReceiveAndDelete](message-transfers-locks-settlement.md#settling-receive-operations) и [PeekLock](message-transfers-locks-settlement.md#settling-receive-operations). Не забудьте [сопоставления сообщений](message-transfers-locks-settlement.md#settling-receive-operations) при использовании `PeekLock` режиме с помощью любого из `complete()`, `abandon()`, `defer()`, или `deadletter()` методов в сообщения.
+Метод [креатерецеивер](https://docs.microsoft.com/javascript/api/%40azure/service-bus/subscriptionclient#createreceiver-receivemode-) принимает `ReceiveMode`, который является перечислением со значениями [ReceiveAndDelete](message-transfers-locks-settlement.md#settling-receive-operations) и [PeekLock](message-transfers-locks-settlement.md#settling-receive-operations). Не забывайте [сопоставлять сообщения](message-transfers-locks-settlement.md#settling-receive-operations) , если используется режим `PeekLock` с помощью любого из методов `complete()`, `abandon()`, `defer()` или `deadletter()` для сообщения.
 
-## <a name="subscription-filters-and-actions"></a>Фильтры подписки и действия
-Служебная шина поддерживает [фильтры и действия по подписке на](topic-filters.md), который служит для фильтрации входящих сообщений для подписки и для редактирования их свойств.
+## <a name="subscription-filters-and-actions"></a>Фильтры и действия подписки
+Служебная шина поддерживает [фильтры и действия в подписках](topic-filters.md), что позволяет фильтровать входящие сообщения в подписку и изменять их свойства.
 
-Получив экземпляр `SubscriptionClient` можно использовать указанных ниже методов для создания, добавлять и удалять правила подписки для управления, фильтры и действия.
+Получив экземпляр `SubscriptionClient`, вы можете использовать приведенные ниже методы для получения, добавления и удаления правил в подписке для управления фильтрами и действиями.
 
-- getRules
-- addRule
-- removeRule
+- Правила
+- аддруле
+- ремоверуле
 
-Каждая подписка имеет правило по умолчанию, которое использует значение true, фильтр, чтобы разрешить все входящие сообщения. Когда вы добавляете новое правило, не забудьте удалить фильтр по умолчанию в порядке для фильтра в новое правило для работы. Если подписка не имеет правил, он получит ни одного сообщения.
+У каждой подписки есть правило по умолчанию, которое использует фильтр true, чтобы разрешить все входящие сообщения. При добавлении нового правила не забудьте удалить фильтр по умолчанию, чтобы фильтр в новом правиле работал. Если у подписки нет правил, то она не получит сообщений.
 
 > [!NOTE]
 > Вы можете управлять ресурсами служебной шины с помощью [обозревателя служебной шины](https://github.com/paolosalvatori/ServiceBusExplorer/). Обозреватель служебной шины позволяет без труда подключаться к пространству имен служебной шины и управлять сущностями обмена сообщениями. Средство предоставляет дополнительные возможности, например функции импорта и экспорта или возможность проверять разделы, очереди, подписки, службы ретрансляции, центры уведомлений и концентраторы событий. 
 
 ## <a name="next-steps"></a>Следующие шаги
-Дополнительные сведения см. следующие ресурсы.
+Дополнительные сведения см. в следующих ресурсах.
 
 - [Очереди, разделы и подписки](service-bus-queues-topics-subscriptions.md)
-- Просмотрите другие [Nodejs примеры для служебной шины на сайте GitHub](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/servicebus/service-bus/samples/javascript)
+- Извлечение других [примеров NodeJS для служебной шины на GitHub](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/servicebus/service-bus/samples/javascript)
 - [Центр разработчика Node.js](https://azure.microsoft.com/develop/nodejs/)
 
 

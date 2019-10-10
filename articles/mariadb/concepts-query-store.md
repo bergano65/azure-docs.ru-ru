@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 06/27/2019
-ms.openlocfilehash: 69e001530de238f5d38c46b0a238a087f4487d9c
-ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
+ms.openlocfilehash: d68934174c3bbb53bba4eb786ac79ab94725151b
+ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72023678"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72166229"
 ---
 # <a name="monitor-azure-database-for-mariadb-performance-with-query-store"></a>Мониторинг производительности базы данных Azure для MariaDB с помощью хранилища запросов
 
@@ -104,7 +104,7 @@ SELECT * FROM mysql.query_store_wait_stats;
 > [!NOTE]
 > В настоящее время **query_store_capture_mode** заменяет эту конфигурацию, что означает, что оба **query_store_capture_mode** и **QUERY_STORE_WAIT_SAMPLING_CAPTURE_MODE** должны быть включены для всех, чтобы статистика ожидания работала. Если **query_store_capture_mode** отключен, то статистика ожидания отключается, так как в статистике ожидания используется включенная функция performance_schema и query_text, захваченная хранилищем запросов.
 
-Используйте [портал Azure](howto-server-parameters.md) , чтобы получить или задать другое значение для параметра.
+Используйте [портал Azure](howto-server-parameters.md) , чтобы получить или задать другое значение для параметра.
 
 ## <a name="views-and-functions"></a>Представления и функции
 

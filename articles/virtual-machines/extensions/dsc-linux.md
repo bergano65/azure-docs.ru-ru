@@ -13,18 +13,18 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 06/12/2018
 ms.author: robreed
-ms.openlocfilehash: 6df6bb5c0be4bf1779541a815bd933965024809f
-ms.sourcegitcommit: 4d177e6d273bba8af03a00e8bb9fe51a447196d0
+ms.openlocfilehash: e2faf444aa411f0e60f1b5c7b1f811abc2f6b63a
+ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71960406"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72176691"
 ---
 # <a name="dsc-extension-for-linux-microsoftostcextensionsdscforlinux"></a>Расширение DSC для Linux (Microsoft.OSTCExtensions.DSCForLinux)
 
 Desired State Configuration (DSC) — это платформа, которая позволяет управлять инфраструктурой ИТ и разработки, используя конфигурацию как код.
 
-> ! Обратите внимание, что расширение DSC для Linux и [Azure Monitor расширение виртуальной машины для Linux](/virtual-machines/extensions/oms-linux) в настоящее время представляют конфликт и не поддерживаются в параллельной конфигурации.  Это означает, что эти два решения не следует использовать вместе на одной виртуальной машине.
+> ! Обратите внимание, что расширение DSC для Linux и [Azure Monitor расширение виртуальной машины для Linux](/azure/virtual-machines/extensions/oms-linux) в настоящее время представляют конфликт и не поддерживаются в параллельной конфигурации.  Это означает, что эти два решения не следует использовать вместе на одной виртуальной машине.
 
 Расширение DSCForLinux публикуется и поддерживается корпорацией Майкрософт. Оно устанавливает агенты OMI и DSC на виртуальных машинах Azure. Расширение DSC также может выполнить следующие действия:
 
@@ -41,9 +41,9 @@ Desired State Configuration (DSC) — это платформа, которая 
 
 ### <a name="operating-system"></a>Операционная система
 
-Расширение DSC для Linux поддерживает все [дистрибутивы Linux, рекомендованные для Azure](/virtual-machines/linux/endorsed-distros), за исключением следующих.
+Расширение DSC для Linux поддерживает все [дистрибутивы Linux, рекомендованные для Azure](/azure/virtual-machines/linux/endorsed-distros), за исключением следующих.
 
-| Распространение | Version |
+| Дистрибутив | Version |
 |---|---|
 | Debian | Все версии. |
 | Ubuntu| 18,04 |

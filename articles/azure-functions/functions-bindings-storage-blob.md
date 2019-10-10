@@ -10,12 +10,12 @@ ms.service: azure-functions
 ms.topic: reference
 ms.date: 11/15/2018
 ms.author: cshoe
-ms.openlocfilehash: 84e4cc69d173fd37ecd15f537feadf19c275ef34
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: b565a48b56162d19a07f0f54bfe780b7dda04b96
+ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70086221"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72177399"
 ---
 # <a name="azure-blob-storage-bindings-for-azure-functions"></a>Привязки хранилища BLOB-объектов Azure для службы "Функции Azure"
 
@@ -74,15 +74,7 @@ ms.locfileid: "70086221"
 
 ## <a name="trigger---example"></a>Пример триггера
 
-Языковой пример см. в разделах:
-
-* [C#](#trigger---c-example)
-* [Скрипт C# (CSX)](#trigger---c-script-example)
-* [Java](#trigger---java-example)
-* [JavaScript](#trigger---javascript-example)
-* [Python](#trigger---python-example)
-
-### <a name="trigger---c-example"></a>Пример C# в триггере
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 В следующем примере показана [функция C#](functions-dotnet-class-library.md), которая добавляет запись в журнал при добавлении или обновлении большого двоичного объекта в контейнере `samples-workitems`.
 
@@ -98,9 +90,9 @@ public static void Run([BlobTrigger("samples-workitems/{name}")] Stream myBlob, 
 
 Дополнительные сведения об атрибуте `BlobTrigger` см. в разделе [Атрибуты триггера для предкомпилированного кода C#](#trigger---attributes).
 
-### <a name="trigger---c-script-example"></a>Пример скрипта C# в триггере
+# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
 
-В следующем примере показана привязка триггера большого двоичного объекта в файле *function.json* и [код Python](functions-reference-python.md), который использует привязку данных. Функция делает запись в журнал при добавлении или обновлении большого двоичного объекта в [контейнере](../storage/blobs/storage-blobs-introduction.md#blob-storage-resources) `samples-workitems`.
+В следующем примере показана привязка триггера большого двоичного объекта в файле *Function. JSON* и код, использующий привязку. Функция делает запись в журнал при добавлении или обновлении большого двоичного объекта в [контейнере](../storage/blobs/storage-blobs-introduction.md#blob-storage-resources) `samples-workitems`.
 
 Данные привязки в файле *function.json*:
 
@@ -145,7 +137,7 @@ public static void Run(CloudBlockBlob myBlob, string name, ILogger log)
 }
 ```
 
-### <a name="trigger---javascript-example"></a>Пример JavaScript в триггере
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 В следующем примере показана привязка триггера большого двоичного объекта в файле *function.json* и [коде JavaScript](functions-reference-node.md), который использует привязку. Функция делает запись в журнал при добавлении или обновлении большого двоичного объекта в контейнере `samples-workitems`.
 
@@ -179,7 +171,7 @@ module.exports = function(context) {
 };
 ```
 
-### <a name="trigger---python-example"></a>Пример Python: триггер
+# <a name="pythontabpython"></a>[Python](#tab/python)
 
 В следующем примере показана привязка триггера большого двоичного объекта в файле *function.json* и [код Python](functions-reference-python.md), который использует привязку данных. Функция делает запись в журнал при добавлении или обновлении большого двоичного объекта в [контейнере](../storage/blobs/storage-blobs-introduction.md#blob-storage-resources) `samples-workitems`.
 
@@ -216,7 +208,7 @@ def main(myblob: func.InputStream):
     logging.info('Python Blob trigger function processed %s', myblob.name)
 ```
 
-### <a name="trigger---java-example"></a>Пример Java в триггере
+# <a name="javatabjava"></a>[Java](#tab/java)
 
 В следующем примере показана привязка триггера большого двоичного объекта в файле *function.json* и [код Java](functions-reference-java.md), который использует привязку данных. Функция делает запись в журнал при добавлении или обновлении большого двоичного объекта в контейнере `myblob`.
 
@@ -253,8 +245,11 @@ public void run(
 }
 ```
 
+---
 
 ## <a name="trigger---attributes"></a>Атрибуты триггера
+
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 В [библиотеках классов C#](functions-dotnet-class-library.md) используйте следующие атрибуты для настройки триггера большого двоичного объекта:
 
@@ -284,7 +279,7 @@ public void run(
   }
    ```
 
-  Полный пример см. в разделе [Пример C# в триггере](#trigger---c-example).
+  Полный пример см. в разделе [пример триггера](#trigger---example).
 
 * [StorageAccountAttribute](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/StorageAccountAttribute.cs)
 
@@ -310,15 +305,33 @@ public void run(
 * Атрибут `StorageAccount`, примененный к классу.
 * Учетная запись хранения по умолчанию для приложения-функции (параметр приложения AzureWebJobsStorage).
 
+# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
+
+Атрибуты не поддерживаются C# сценарием.
+
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
+Атрибуты не поддерживаются в JavaScript.
+
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+Атрибуты не поддерживаются в Python.
+
+# <a name="javatabjava"></a>[Java](#tab/java)
+
+Атрибут `@BlobTrigger` используется для предоставления доступа к большому двоичному объекту, запускающему функцию. Дополнительные сведения см. в [примере триггера](#trigger---example) .
+
+---
+
 ## <a name="trigger---configuration"></a>Конфигурация триггера
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `BlobTrigger`.
 
 |свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
-|**type** | Н/Д | Нужно задать значение `blobTrigger`. Это свойство задается автоматически при создании триггера на портале Azure.|
-|**direction** | Н/Д | Нужно задать значение `in`. Это свойство задается автоматически при создании триггера на портале Azure. Исключения приведены в этом [разделе](#trigger---usage). |
-|**name** | Н/Д | Имя переменной, представляющей большой двоичный объект в коде функции. |
+|**type** | Недоступно | Нужно задать значение `blobTrigger`. Это свойство задается автоматически при создании триггера на портале Azure.|
+|**direction** | Недоступно | Нужно задать значение `in`. Это свойство задается автоматически при создании триггера на портале Azure. Исключения приведены в этом [разделе](#trigger---usage). |
+|**name** | Недоступно | Имя переменной, представляющей большой двоичный объект в коде функции. |
 |**path** | **BlobPath** |[Контейнер](../storage/blobs/storage-blobs-introduction.md#blob-storage-resources) для мониторинга.  Может быть [шаблоном имени большого двоичного объекта](#trigger---blob-name-patterns). |
 |**подключение** | **Connection** | Имя параметра приложения, содержащего строку подключения к службе хранилища, используемой для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если задать для `connection` значение MyStorage, среда выполнения службы "Функции" будет искать параметр приложения с именем AzureWebJobsMyStorage. Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.<br><br>Строка подключения необходима для учетной записи хранения общего назначения, а не [учетной записи хранения больших двоичных объектов](../storage/common/storage-account-overview.md#types-of-storage-accounts).|
 
@@ -326,25 +339,27 @@ public void run(
 
 ## <a name="trigger---usage"></a>Использование триггера
 
-В C# и скрипте C# для большого двоичного объекта, запускающего триггер, можно использовать параметры следующих типов:
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
-* `Stream`
-* `TextReader`
-* `string`
-* `Byte[]`
-* объект POCO, сериализуемый как JSON;
-* `ICloudBlob`<sup>1</sup>
-* `CloudBlockBlob`<sup>1</sup>
-* `CloudPageBlob`<sup>1</sup>
-* `CloudAppendBlob`<sup>1</sup>
+[!INCLUDE [functions-bindings-blob-storage-trigger](../../includes/functions-bindings-blob-storage-trigger.md)]
 
-<sup>1</sup> Требует привязки inout `direction` в файле *function.json* или `FileAccess.ReadWrite` в библиотеке классов C#.
+# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
 
-Если при попытке привязаться к одному из типов SDK для службы хранилища получено сообщение об ошибке, убедитесь, что у вас есть ссылка на [правильную версию пакета SDK для службы хранилища](#azure-storage-sdk-version-in-functions-1x).
+[!INCLUDE [functions-bindings-blob-storage-trigger](../../includes/functions-bindings-blob-storage-trigger.md)]
 
-Привязку к `string`, `Byte[]` или POCO рекомендуется использовать, только если большой двоичный объект имеет небольшой размер, так как в память загружается все содержимое большого двоичного объекта. Как правило, предпочтительнее использовать тип `Stream` или `CloudBlockBlob`. Дополнительные сведения см. в разделе о [параллелизме и использовании памяти](#trigger---concurrency-and-memory-usage) далее в этой статье.
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
-В JavaScript доступ к данным входного большого двоичного объекта можно получить, используя `context.bindings.<name from function.json>`.
+Доступ к данным большого двоичного объекта осуществляется с помощью `context.bindings.<name from function.json>`.
+
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+Доступ к данным большого двоичного объекта с помощью параметра, типизированного как [InputStream](https://docs.microsoft.com/python/api/azure-functions/azure.functions.inputstream?view=azure-python). Дополнительные сведения см. в [примере триггера](#trigger---example) .
+
+# <a name="javatabjava"></a>[Java](#tab/java)
+
+Атрибут `@BlobTrigger` используется для предоставления доступа к большому двоичному объекту, запускающему функцию. Дополнительные сведения см. в [примере триггера](#trigger---example) .
+
+---
 
 ## <a name="trigger---blob-name-patterns"></a>Шаблоны имени большого двоичного объекта в триггере
 
@@ -357,6 +372,7 @@ public void run(
 ```json
 "path": "input/{blobname}.{blobextension}",
 ```
+
 Если большой двоичный объект имеет имя *original-Blob1.txt*, он передает в код функции переменные `blobname` и `blobextension` со значениями *original-Blob1* и *txt* соответственно.
 
 ### <a name="filter-on-blob-name"></a>Фильтрация по имени большого двоичного объекта
@@ -389,23 +405,15 @@ public void run(
 
 ## <a name="trigger---metadata"></a>Метаданные триггера
 
-Триггер BLOB-объектов предоставляет несколько свойств метаданных. Эти свойства можно использовать как часть выражений привязки в других привязках или как параметры в коде. Эти значения имеют ту же семантику, что и тип [CloudBlob](https://docs.microsoft.com/dotnet/api/microsoft.azure.storage.blob.cloudblob?view=azure-dotnet).
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
-|Свойство  |type  |Описание  |
-|---------|---------|---------|
-|`BlobTrigger`|`string`|Путь к большому двоичному объекту, активирующему триггер.|
-|`Uri`|`System.Uri`|Код URI BLOB-объекта для основного расположения.|
-|`Properties` |[BlobProperties](https://docs.microsoft.com/dotnet/api/microsoft.azure.storage.blob.blobproperties)|Системные свойства BLOB-объекта. |
-|`Metadata` |`IDictionary<string,string>`|Определяемые пользователем метаданные для BLOB-объекта.|
+[!INCLUDE [functions-bindings-blob-storage-trigger](../../includes/functions-bindings-blob-storage-metadata.md)]
 
-Например, следующие примеры скрипта C# и JavaScript записывают путь в большой двоичный объект, активирующий триггер, вместе с контейнером:
+# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
 
-```csharp
-public static void Run(string myBlob, string blobTrigger, ILogger log)
-{
-    log.LogInformation($"Full blob path: {blobTrigger}");
-} 
-```
+[!INCLUDE [functions-bindings-blob-storage-trigger](../../includes/functions-bindings-blob-storage-metadata.md)]
+
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 module.exports = function (context, myBlob) {
@@ -413,6 +421,16 @@ module.exports = function (context, myBlob) {
     context.done();
 };
 ```
+
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+Метаданные недоступны в Python.
+
+# <a name="javatabjava"></a>[Java](#tab/java)
+
+Метаданные недоступны в Java.
+
+---
 
 ## <a name="trigger---blob-receipts"></a>Уведомления о получении большого двоичного объекта в триггере
 
@@ -464,15 +482,7 @@ module.exports = function (context, myBlob) {
 
 ## <a name="input---example"></a>Пример входных данных
 
-Языковой пример см. в разделах:
-
-* [C#](#input---c-example)
-* [Скрипт C# (CSX)](#input---c-script-example)
-* [Java](#input---java-examples)
-* [JavaScript](#input---javascript-example)
-* [Python](#input---python-example)
-
-### <a name="input---c-example"></a>Пример входных данных C#
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 Ниже приведен пример [функции C#](functions-dotnet-class-library.md), которая использует триггер очереди и входную привязку большого двоичного объекта. Сообщение в очереди содержит имя большого двоичного объекта, а функция записывает в журнал размер большого двоичного объекта.
 
@@ -487,7 +497,7 @@ public static void Run(
 }
 ```
 
-### <a name="input---c-script-example"></a>Пример входных данных сценария C#
+# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
 
 <!--Same example for input and output. -->
 
@@ -536,7 +546,7 @@ public static void Run(string myQueueItem, string myInputBlob, out string myOutp
 }
 ```
 
-### <a name="input---javascript-example"></a>Пример входных данных JavaScript
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 <!--Same example for input and output. -->
 
@@ -585,7 +595,7 @@ module.exports = function(context) {
 };
 ```
 
-### <a name="input---python-example"></a>Пример Python: входные данные
+# <a name="pythontabpython"></a>[Python](#tab/python)
 
 <!--Same example for input and output. -->
 
@@ -637,16 +647,16 @@ def main(queuemsg: func.QueueMessage, inputblob: func.InputStream) -> func.Input
     return inputblob
 ```
 
-### <a name="input---java-examples"></a>Примеры входных данных Java
+# <a name="javatabjava"></a>[Java](#tab/java)
 
 В этом разделе содержатся следующие примеры:
 
-* [Триггер HTTP, поиск имени BLOB-объекта из строки запроса](#http-trigger-look-up-blob-name-from-query-string-java)
-* [Очередь триггера, получение имени BLOB-объекта из сообщения очереди](#queue-trigger-receive-blob-name-from-queue-message-java)
+* [Триггер HTTP, поиск имени BLOB-объекта из строки запроса](#http-trigger-look-up-blob-name-from-query-string)
+* [Очередь триггера, получение имени BLOB-объекта из сообщения очереди](#queue-trigger-receive-blob-name-from-queue-message)
 
-#### <a name="http-trigger-look-up-blob-name-from-query-string-java"></a>Триггер HTTP, поиск имени BLOB-объекта из строки запроса (Java)
+#### <a name="http-trigger-look-up-blob-name-from-query-string"></a>Триггер HTTP, поиск имени большого двоичного объекта из строки запроса
 
- В следующем примере показана функция Java, которая использует заметку ```HttpTrigger``` для получения параметра, содержащего имя файла в контейнере хранилища BLOB-объектов. После этого заметка ```BlobInput``` считывает файл и передает его содержимое в функцию как ```byte[]```.
+ В следующем примере показана функция Java, которая использует заметку `HttpTrigger` для получения параметра, содержащего имя файла в контейнере хранилища BLOB-объектов. После этого заметка `BlobInput` считывает файл и передает его содержимое в функцию как `byte[]`.
 
 ```java
   @FunctionName("getBlobSizeHttp")
@@ -669,9 +679,9 @@ def main(queuemsg: func.QueueMessage, inputblob: func.InputStream) -> func.Input
   }
 ```
 
-#### <a name="queue-trigger-receive-blob-name-from-queue-message-java"></a>Очередь триггера, получение имени BLOB-объекта из сообщения очереди (Java)
+#### <a name="queue-trigger-receive-blob-name-from-queue-message"></a>Триггер очереди, получение имени большого двоичного объекта из сообщения очереди
 
- В следующем примере показана функция Java, которая использует заметку ```QueueTrigger``` для получения сообщения, содержащего имя файла в контейнере хранилища BLOB-объектов. После этого заметка ```BlobInput``` считывает файл и передает его содержимое в функцию как ```byte[]```.
+ В следующем примере показана функция Java, которая использует заметку `QueueTrigger` для получения сообщения, содержащего имя файла в контейнере хранилища BLOB-объектов. После этого заметка `BlobInput` считывает файл и передает его содержимое в функцию как `byte[]`.
 
 ```java
   @FunctionName("getBlobSize")
@@ -693,7 +703,11 @@ def main(queuemsg: func.QueueMessage, inputblob: func.InputStream) -> func.Input
 
 В [библиотеке среды выполнения функций Java](/java/api/overview/azure/functions/runtime) используйте заметку `@BlobInput` для параметров, значение которых будут поступать из большого двоичного объекта.  Эта заметка может использоваться с собственными типами Java, объектами POJO или значениями, допускающими значения NULL, используя `Optional<T>`.
 
+---
+
 ## <a name="input---attributes"></a>Входные атрибуты
+
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 В [библиотеках классов C#](functions-dotnet-class-library.md) используйте [BlobAttribute](https://github.com/Azure/azure-webjobs-sdk/blob/dev/src/Microsoft.Azure.WebJobs.Extensions.Storage/Blobs/BlobAttribute.cs).
 
@@ -726,59 +740,70 @@ public static void Run(
 
 Чтобы указать учетную запись хранения на уровне класса, метода или параметра, можно использовать атрибут `StorageAccount`. Дополнительные сведения см. в разделе [Атрибуты триггера для предкомпилированного кода C#](#trigger---attributes).
 
+# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
+
+Атрибуты не поддерживаются C# сценарием.
+
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
+Атрибуты не поддерживаются в JavaScript.
+
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+Атрибуты не поддерживаются в Python.
+
+# <a name="javatabjava"></a>[Java](#tab/java)
+
+Атрибут `@BlobInput` предоставляет доступ к большому двоичному объекту, вызвавшему функцию. Если используется массив байтов с атрибутом, задайте `dataType` в `binary`. Дополнительные сведения см. в [примере входного данных](#input---example) .
+
+---
+
 ## <a name="input---configuration"></a>Входная конфигурация
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `Blob`.
 
 |свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
-|**type** | Н/Д | Нужно задать значение `blob`. |
-|**direction** | Н/Д | Нужно задать значение `in`. Исключения приведены в этом [разделе](#input---usage). |
-|**name** | Н/Д | Имя переменной, представляющей большой двоичный объект в коде функции.|
+|**type** | Недоступно | Нужно задать значение `blob`. |
+|**direction** | Недоступно | Нужно задать значение `in`. Исключения приведены в этом [разделе](#input---usage). |
+|**name** | Недоступно | Имя переменной, представляющей большой двоичный объект в коде функции.|
 |**path** |**BlobPath** | Путь к BLOB-объекту. |
 |**подключение** |**Connection**| Имя параметра приложения, содержащего [строку подключения к службе хранилища](../storage/common/storage-configure-connection-string.md), используемой для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если задать для `connection` значение MyStorage, среда выполнения службы "Функции" будет искать параметр приложения с именем AzureWebJobsMyStorage. Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.<br><br>Строка подключения необходима для учетной записи хранения общего назначения, а не [учетной записи хранения только для больших двоичных объектов](../storage/common/storage-account-overview.md#types-of-storage-accounts).|
-|Н/Д | **Access** | Указывает, какая операция будет выполняться (запись или чтение). |
+|Недоступно | **Access** | Указывает, какая операция будет выполняться (запись или чтение). |
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
 ## <a name="input---usage"></a>Использование входной привязки
 
-В C# и скрипте C# для привязки к входным данным большого двоичного объекта можно использовать параметры следующих типов:
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
-* `Stream`
-* `TextReader`
-* `string`
-* `Byte[]`
-* `CloudBlobContainer`
-* `CloudBlobDirectory`
-* `ICloudBlob`<sup>1</sup>
-* `CloudBlockBlob`<sup>1</sup>
-* `CloudPageBlob`<sup>1</sup>
-* `CloudAppendBlob`<sup>1</sup>
+[!INCLUDE [functions-bindings-blob-storage-input-usage.md](../../includes/functions-bindings-blob-storage-input-usage.md)]
 
-<sup>1</sup> Требует привязки inout `direction` в файле *function.json* или `FileAccess.ReadWrite` в библиотеке классов C#.
+# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
 
-Если при попытке привязаться к одному из типов SDK для службы хранилища получено сообщение об ошибке, убедитесь, что у вас есть ссылка на [правильную версию пакета SDK для службы хранилища](#azure-storage-sdk-version-in-functions-1x).
+[!INCLUDE [functions-bindings-blob-storage-input-usage.md](../../includes/functions-bindings-blob-storage-input-usage.md)]
 
-Привязку к `string` или `Byte[]` рекомендуется использовать, только если большой двоичный объект имеет небольшой размер, так как в память загружается все содержимое большого двоичного объекта. Как правило, предпочтительнее использовать тип `Stream` или `CloudBlockBlob`. Дополнительные сведения см. в разделе о [параллелизме и использовании памяти](#trigger---concurrency-and-memory-usage) выше в этой статье.
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
-В JavaScript получите доступ к данным больших двоичных объектов с помощью `context.bindings.<name from function.json>`.
+Получите доступ к данным большого двоичного объекта, используя `context.bindings.<name from function.json>`.
 
-## <a name="output"></a>Вывод
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+Доступ к данным большого двоичного объекта с помощью параметра, типизированного как [InputStream](https://docs.microsoft.com/python/api/azure-functions/azure.functions.inputstream?view=azure-python). Дополнительные сведения см. в [примере входного данных](#input---example) .
+
+# <a name="javatabjava"></a>[Java](#tab/java)
+
+Атрибут `@BlobInput` предоставляет доступ к большому двоичному объекту, вызвавшему функцию. Если используется массив байтов с атрибутом, задайте `dataType` в `binary`. Дополнительные сведения см. в [примере входного данных](#input---example) .
+
+---
+
+## <a name="output"></a>Output
 
 Используйте выходные привязки хранилища BLOB-объектов для записи больших двоичных объектов.
 
 ## <a name="output---example"></a>Пример выходных данных
 
-Языковой пример см. в разделах:
-
-* [C#](#output---c-example)
-* [Скрипт C# (CSX)](#output---c-script-example)
-* [Java](#output---java-examples)
-* [JavaScript](#output---javascript-example)
-* [Python](#output---python-example)
-
-### <a name="output---c-example"></a>Пример выходных данных C#
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 Ниже приведен пример [функции C#](functions-dotnet-class-library.md), которая использует триггер большого двоичного объекта и две выходные привязки больших двоичных объектов. Эта функция активируется путем создания большого двоичного объекта образа в контейнере *sample-images*. Она создает небольшие и средние копии большого двоичного объекта образа.
 
@@ -828,7 +853,7 @@ private static Dictionary<ImageSize, (int, int)> imageDimensionsTable = new Dict
 };
 ```
 
-### <a name="output---c-script-example"></a>Пример выходных данных скрипта C#
+# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
 
 <!--Same example for input and output. -->
 
@@ -877,7 +902,7 @@ public static void Run(string myQueueItem, string myInputBlob, out string myOutp
 }
 ```
 
-### <a name="output---javascript-example"></a>Пример выходных данных JavaScript
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 <!--Same example for input and output. -->
 
@@ -926,7 +951,7 @@ module.exports = function(context) {
 };
 ```
 
-### <a name="output---python-example"></a>Пример Python: выходные данные
+# <a name="pythontabpython"></a>[Python](#tab/python)
 
 <!--Same example for input and output. -->
 
@@ -979,7 +1004,7 @@ def main(queuemsg: func.QueueMessage, inputblob: func.InputStream,
     outputblob.set(inputblob)
 ```
 
-### <a name="output---java-examples"></a>Примеры выходных данных Java
+# <a name="javatabjava"></a>[Java](#tab/java)
 
 В этом разделе содержатся следующие примеры:
 
@@ -988,7 +1013,7 @@ def main(queuemsg: func.QueueMessage, inputblob: func.InputStream,
 
 #### <a name="http-trigger-using-outputbinding-java"></a>Триггер HTTP, использование OutputBinding (Java)
 
- В следующем примере показана функция Java, которая использует заметку ```HttpTrigger``` для получения параметра, содержащего имя файла в контейнере хранилища BLOB-объектов. После этого заметка ```BlobInput``` считывает файл и передает его содержимое в функцию как ```byte[]```. Заметка ```BlobOutput``` выполняет привязку к ```OutputBinding outputItem```, которая затем используется функцией для записи содержимого входного BLOB-объекта в контейнер настраиваемого хранилища.
+ В следующем примере показана функция Java, которая использует заметку `HttpTrigger` для получения параметра, содержащего имя файла в контейнере хранилища BLOB-объектов. После этого заметка `BlobInput` считывает файл и передает его содержимое в функцию как `byte[]`. Заметка `BlobOutput` выполняет привязку к `OutputBinding outputItem`, которая затем используется функцией для записи содержимого входного BLOB-объекта в контейнер настраиваемого хранилища.
 
 ```java
   @FunctionName("copyBlobHttp")
@@ -1020,7 +1045,7 @@ def main(queuemsg: func.QueueMessage, inputblob: func.InputStream,
 
 #### <a name="queue-trigger-using-function-return-value-java"></a>Триггер очереди, использование возвращаемого значения функции (Java)
 
- В следующем примере показана функция Java, которая использует заметку ```QueueTrigger``` для получения сообщения, содержащего имя файла в контейнере хранилища BLOB-объектов. После этого заметка ```BlobInput``` считывает файл и передает его содержимое в функцию как ```byte[]```. Заметка ```BlobOutput``` выполняет привязку к возвращаемому значению функции, которая затем используется средой выполнения для записи содержимого входного BLOB-объекта в контейнер настраиваемого хранилища.
+ В следующем примере показана функция Java, которая использует заметку `QueueTrigger` для получения сообщения, содержащего имя файла в контейнере хранилища BLOB-объектов. После этого заметка `BlobInput` считывает файл и передает его содержимое в функцию как `byte[]`. Заметка `BlobOutput` выполняет привязку к возвращаемому значению функции, которая затем используется средой выполнения для записи содержимого входного BLOB-объекта в контейнер настраиваемого хранилища.
 
 ```java
   @FunctionName("copyBlobQueueTrigger")
@@ -1046,7 +1071,11 @@ def main(queuemsg: func.QueueMessage, inputblob: func.InputStream,
 
  В [библиотеке среды выполнения функций Java](/java/api/overview/azure/functions/runtime) используйте заметку `@BlobOutput` для параметров функции, значение которых будут записываться в хранилище больших двоичных объектов.  Параметр должен быть типа `OutputBinding<T>`, где T — любой собственный тип Java или POJO.
 
+---
+
 ## <a name="output---attributes"></a>Выходные атрибуты
+
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 В [библиотеках классов C#](functions-dotnet-class-library.md) используйте [BlobAttribute](https://github.com/Azure/azure-webjobs-sdk/blob/dev/src/Microsoft.Azure.WebJobs.Extensions.Storage/Blobs/BlobAttribute.cs).
 
@@ -1074,7 +1103,25 @@ public static void Run(
 }
 ```
 
-Полный пример см. в разделе [Пример выходных данных C#](#output---c-example).
+# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
+
+Атрибуты не поддерживаются C# сценарием.
+
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
+Атрибуты не поддерживаются в JavaScript.
+
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+Атрибуты не поддерживаются в Python.
+
+# <a name="javatabjava"></a>[Java](#tab/java)
+
+Атрибут `@BlobOutput` предоставляет доступ к большому двоичному объекту, вызвавшему функцию. Если используется массив байтов с атрибутом, задайте `dataType` в `binary`. Дополнительные сведения см. в [примере выходных данных](#output---example) .
+
+---
+
+Полный пример см. в разделе [пример выходных данных](#output---example).
 
 Чтобы указать учетную запись хранения на уровне класса, метода или параметра, можно использовать атрибут `StorageAccount`. Дополнительные сведения см. в разделе [Атрибуты триггера для предкомпилированного кода C#](#trigger---attributes).
 
@@ -1084,43 +1131,43 @@ public static void Run(
 
 |свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
-|**type** | Н/Д | Нужно задать значение `blob`. |
-|**direction** | Н/Д | Нужно задать значение `out` для выходной привязки. Исключения приведены в этом [разделе](#output---usage). |
-|**name** | Н/Д | Имя переменной, представляющей большой двоичный объект в коде функции.  Задайте значение `$return`, ссылающееся на возвращаемое значение функции.|
+|**type** | Недоступно | Нужно задать значение `blob`. |
+|**direction** | Недоступно | Нужно задать значение `out` для выходной привязки. Исключения приведены в этом [разделе](#output---usage). |
+|**name** | Недоступно | Имя переменной, представляющей большой двоичный объект в коде функции.  Задайте значение `$return`, ссылающееся на возвращаемое значение функции.|
 |**path** |**BlobPath** | Путь к контейнеру больших двоичных объектов. |
 |**подключение** |**Connection**| Имя параметра приложения, содержащего строку подключения к службе хранилища, используемой для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если задать для `connection` значение MyStorage, среда выполнения службы "Функции" будет искать параметр приложения с именем AzureWebJobsMyStorage. Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.<br><br>Строка подключения необходима для учетной записи хранения общего назначения, а не [учетной записи хранения только для больших двоичных объектов](../storage/common/storage-account-overview.md#types-of-storage-accounts).|
-|Н/Д | **Access** | Указывает, какая операция будет выполняться (запись или чтение). |
+|Недоступно | **Access** | Указывает, какая операция будет выполняться (запись или чтение). |
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
 ## <a name="output---usage"></a>Использование выходной привязки
 
-В C# и в скрипте C# можно привязать следующие типы для записи больших двоичных объектов:
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
-* `TextWriter`
-* `out string`
-* `out Byte[]`
-* `CloudBlobStream`
-* `Stream`
-* `CloudBlobContainer`<sup>1</sup>
-* `CloudBlobDirectory`
-* `ICloudBlob`<sup>2</sup>
-* `CloudBlockBlob`<sup>2</sup>
-* `CloudPageBlob`<sup>2</sup>
-* `CloudAppendBlob`<sup>2</sup>
+[!INCLUDE [functions-bindings-blob-storage-output-usage.md](../../includes/functions-bindings-blob-storage-output-usage.md)]
 
-<sup>1</sup> Требует привязки in `direction` в файле *function.json* или `FileAccess.Read` в библиотеке классов C#. Однако вы можете использовать объект контейнера, предоставляемый средой выполнения для записи таких операций, как отправка больших двоичных объектов в контейнер.
+# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
 
-<sup>2</sup> Требует привязки inout `direction` в файле *function.json* или `FileAccess.ReadWrite` в библиотеке классов C#.
+[!INCLUDE [functions-bindings-blob-storage-output-usage.md](../../includes/functions-bindings-blob-storage-output-usage.md)]
 
-Если при попытке привязаться к одному из типов SDK для службы хранилища получено сообщение об ошибке, убедитесь, что у вас есть ссылка на [правильную версию пакета SDK для службы хранилища](#azure-storage-sdk-version-in-functions-1x).
-
-В асинхронных функциях используйте возвращаемое значение или `IAsyncCollector` вместо параметра `out`.
-
-Привязку к `string` или `Byte[]` рекомендуется использовать, только если большой двоичный объект имеет небольшой размер, так как в память загружается все содержимое большого двоичного объекта. Как правило, предпочтительнее использовать тип `Stream` или `CloudBlockBlob`. Дополнительные сведения см. в разделе о [параллелизме и использовании памяти](#trigger---concurrency-and-memory-usage) выше в этой статье.
-
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 В JavaScript получите доступ к данным больших двоичных объектов с помощью `context.bindings.<name from function.json>`.
+
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+Параметры функции можно объявить как следующие типы для записи в хранилище BLOB-объектов:
+
+* Строки как `func.Out(str)`
+* Потоки как `func.Out(func.InputStream)`
+
+Дополнительные сведения см. в [примере выходных данных](#output---example) .
+
+# <a name="javatabjava"></a>[Java](#tab/java)
+
+Атрибут `@BlobOutput` предоставляет доступ к большому двоичному объекту, вызвавшему функцию. Если используется массив байтов с атрибутом, задайте `dataType` в `binary`. Дополнительные сведения см. в [примере выходных данных](#output---example) .
+
+---
 
 ## <a name="exceptions-and-return-codes"></a>Исключения и коды возврата
 

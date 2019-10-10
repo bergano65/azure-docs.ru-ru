@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 05/06/2019
 ms.author: mlearned
-ms.openlocfilehash: 63678ad7260210d86daf035bfec9bb467a526042
-ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
+ms.openlocfilehash: 6c7cf82381dfb895fdaa0f130e33b2dc9a6e7403
+ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71950310"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72169756"
 ---
 # <a name="secure-traffic-between-pods-using-network-policies-in-azure-kubernetes-service-aks"></a>Защита трафика между контейнерами pod с использованием политик сети в Службе Azure Kubernetes (AKS)
 
@@ -52,12 +52,12 @@ Azure предоставляет два способа реализации се
 
 ### <a name="differences-between-azure-and-calico-policies-and-their-capabilities"></a>Различия между политиками Azure и Калико и их возможностями
 
-| Возможность                               | Azure                      | калико                      |
+| Функция                               | Azure                      | калико                      |
 |------------------------------------------|----------------------------|-----------------------------|
 | Поддерживаемые платформы                      | Linux                      | Linux                       |
 | Поддерживаемые параметры сети             | Azure CNI                  | Azure CNI и кубенет       |
 | Соответствие спецификации Kubernetes | Все поддерживаемые типы политик |  Все поддерживаемые типы политик |
-| Дополнительные функции                      | Отсутствуют                       | Расширенная модель политики, состоящая из глобальной сетевой политики, набора глобальных сетей и конечной точки узла. Дополнительные сведения об использовании интерфейса командной строки `calicoctl` для управления этими расширенными функциями см. в разделе [Справочник пользователя по каликоктл][calicoctl]. |
+| Дополнительные функции                      | Нет                       | Расширенная модель политики, состоящая из глобальной сетевой политики, набора глобальных сетей и конечной точки узла. Дополнительные сведения об использовании интерфейса командной строки `calicoctl` для управления этими расширенными функциями см. в разделе [Справочник пользователя по каликоктл][calicoctl]. |
 | Поддержка                                  | Поддерживаются группой поддержки и инженеров по технической поддержке Azure | Поддержка сообщества Калико. Дополнительные сведения о дополнительной платной поддержке см. в разделе [варианты поддержки Project Калико][calico-support]. |
 | Ведение журнала                                  | Правила, добавленные или удаленные в IPTables, регистрируются на каждом узле в разделе */Вар/лог/Азуре-НПМ.лог* | Дополнительные сведения см. в разделе [журналы компонентов Калико][calico-logs] . |
 
@@ -464,7 +464,7 @@ kubectl delete namespace development
 [aks-github]: https://github.com/azure/aks/issues
 [tigera]: https://www.tigera.io/
 [calicoctl]: https://docs.projectcalico.org/v3.9/reference/calicoctl/
-[calico-support]: https://www.projectcalico.org/support
+[calico-support]: https://www.tigera.io/tigera-products/calico/
 [calico-logs]: https://docs.projectcalico.org/v3.9/maintenance/component-logs
 [calico-aks-cleanup]: https://github.com/Azure/aks-engine/blob/master/docs/topics/calico-3.3.1-cleanup-after-upgrade.yaml
 
