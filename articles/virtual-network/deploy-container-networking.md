@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 9/18/2018
 ms.author: aanandr
 ms.custom: ''
-ms.openlocfilehash: 657c23ad410d7aade17b3153f02ba0138edf4250
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 5146675b6eefd11fc1e6875ed9009ece92753ffb
+ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58104103"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72028092"
 ---
 # <a name="deploy-the-azure-virtual-network-container-network-interface-plug-in"></a>Развертывание подключаемого модуля сетевого интерфейса контейнера виртуальной сети Azure
 
@@ -159,10 +159,10 @@ ms.locfileid: "58104103"
 
 - **cniVersion**. Подключаемые модули CNI виртуальной сети Azure поддерживают версии 0.3.0 и 0.3.1 из  [спецификации CNI](https://github.com/containernetworking/cni/blob/master/SPEC.md).
 - **name**. Имя сети. Это свойство может иметь любое уникальное значение.
-- **type**. Имя подключаемого модуля сети. Задано значение  *azure-vnet*.
+- **type**. Имя подключаемого модуля сети. Установлено *azure-vnet*.
 - **mode**. Режим работы. Это поле является необязательным. Поддерживается только режим bridge. Дополнительные сведений см. в разделе о  [режимах работы](https://github.com/Azure/azure-container-networking/blob/master/docs/network.md).
 - **bridge**. Имя моста, который будет использоваться для подключения контейнеров к виртуальной сети. Это поле является необязательным. Если этот параметр опущен, подключаемый модуль автоматически выбирает уникальное имя на основе главного индекса интерфейса.
-- **ipam type**. Имя подключаемого модуля IPAM. Постоянно задано значение  *azure-vnet-ipam*.
+- **ipam type**. Имя подключаемого модуля IPAM. Всегда установлено *azure-vnet-ipam*.
 
 ## <a name="download-and-install-the-plug-in"></a>Загрузка и установка подключаемого модуля
 

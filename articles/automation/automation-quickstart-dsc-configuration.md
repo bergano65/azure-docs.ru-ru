@@ -11,12 +11,12 @@ ms.date: 11/06/2018
 ms.topic: quickstart
 ms.custom: mvc
 manager: carmonm
-ms.openlocfilehash: 2c01172bf22fb286f790543b02a4c1e482b05fe7
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: d5eca6ffce8390b2f8b4deae589d43f40897756d
+ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68850565"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72243459"
 ---
 # <a name="configure-a-virtual-machine-with-desired-state-configuration"></a>Настройка Desired State Configuration на виртуальной машине Linux
 
@@ -42,7 +42,7 @@ ms.locfileid: "68850565"
 2. Чтобы открыть страницу для выбора виртуальной машины, нажмите кнопку **Добавить**.
 3. Найдите виртуальную машину, для которой вы хотите включить DSC. Для поиска конкретной виртуальной машины можно применить поле поиска и фильтры.
 4. Щелкните виртуальную машину, а затем выберите **Подключить**.
-5. Выберите настройки DSC для этой виртуальной машины. Если у вас есть уже готовая конфигурация, укажите ее в поле *Имя конфигурации узла*. Также вы можете задать [режим конфигурации](https://docs.microsoft.com/powershell/dsc/metaconfig), который определяет правила применения настройки для виртуальной машины.
+5. Выберите настройки DSC для этой виртуальной машины. Если у вас есть уже готовая конфигурация, укажите ее в поле *Имя конфигурации узла*. Также вы можете задать [режим конфигурации](https://docs.microsoft.com/powershell/scripting/dsc/managing-nodes/metaConfig), который определяет правила применения настройки для виртуальной машины.
 6. Щелкните **ОК**
 
 ![Подключение виртуальной машины Azure к DSC](./media/automation-quickstart-dsc-configuration/dsc-onboard-azure-vm.png)
@@ -64,7 +64,7 @@ ms.locfileid: "68850565"
 
 В этом руководстве используется конфигурация DSC, которая настраивает на компьютере HTTP-сервер Apache, PHP и MySQL.
 
-Дополнительные сведения о конфигурации DSC см. в статье [Конфигурации DSC](https://docs.microsoft.com/powershell/dsc/configurations).
+Дополнительные сведения о конфигурации DSC см. в статье [Конфигурации DSC](https://docs.microsoft.com/powershell/scripting/dsc/configurations/configurations).
 
 В текстовом редакторе введите следующую команду и сохраните ее локально как `LAMPServer.ps1`.
 
@@ -142,7 +142,7 @@ configuration LAMPServer {
 > [!div class="nextstepaction"]
 > [Пример использования. Непрерывное развертывание на виртуальных машинах с помощью Automation DSC и Chocolatey](./automation-dsc-cd-chocolatey.md)
 
-* Дополнительные сведения о настройке требуемого состояния для PowerShell см. в статье [Обзор платформы Desired State Configuration в Windows PowerShell](https://docs.microsoft.com/powershell/dsc/overview).
+* Дополнительные сведения о настройке требуемого состояния для PowerShell см. в статье [Обзор платформы Desired State Configuration в Windows PowerShell](https://docs.microsoft.com/powershell/scripting/dsc/overview/overview).
 * Дополнительные сведения об управлении Automation DSC из PowerShell см. в документации по [Azure PowerShell](https://docs.microsoft.com/powershell/module/azurerm.automation/).
 * Чтобы научиться пересылать отчеты DSC в журналы Azure Monitor для создания отчетов и оповещений, изучите статью [Пересылка данных отчетов "Настройка состояния службы автоматизации Azure" в Log Analytics](https://docs.microsoft.com/azure/automation/automation-dsc-diagnostics). 
 

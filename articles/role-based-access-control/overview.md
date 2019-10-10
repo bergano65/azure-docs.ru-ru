@@ -14,12 +14,12 @@ ms.workload: identity
 ms.date: 09/11/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: ff539311139d7e9823a2d7db2f5d8ee56f9231b6
-ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
+ms.openlocfilehash: 59708be1de53ab231ccb6dc89bd56c795734fccc
+ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71338661"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72176821"
 ---
 # <a name="what-is-role-based-access-control-rbac-for-azure-resources"></a>Общие сведения об управлении доступом на основе ролей (RBAC) для ресурсов Azure
 
@@ -139,4 +139,4 @@ Azure предоставляет операции с данными, котор�
 - [Краткое руководство Использование портала Azure для просмотра ролей, назначенных пользователю](check-access.md)
 - [Управление доступом с помощью RBAC и портала Azure](role-assignments-portal.md)
 - [Сведения о различных ролях в Azure](rbac-and-directory-admin-roles.md)
-- [Внедрение облачных решений в организации. Управление доступом к ресурсам в Azure](/azure/architecture/cloud-adoption/governance/resource-consistency/azure-resource-access)
+- [Внедрение облачных решений в организации. Управление доступом к ресурсам в Azure](/azure/cloud-adoption-framework/govern/resource-consistency/resource-access-management)

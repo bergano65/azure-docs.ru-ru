@@ -1,5 +1,5 @@
 ---
-title: Использование Ansible в Azure | Документация Майкрософт
+title: Использование Ansible с Azure
 description: Основные сведения об использовании Ansible для автоматизированной подготовки облачных решений, управления конфигурацией и развертывания приложений.
 keywords: ansible, azure, devops, overview, cloud provision, configuration management, application deployment, ansible modules, ansible playbooks
 ms.topic: overview
@@ -8,12 +8,12 @@ author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.date: 04/30/2019
-ms.openlocfilehash: 4d7e9f8a0527587106985d8a6f0a95e19e640245
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: b6b9656edc43f38a4cb005be53c33bb98781679c
+ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65230124"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72241516"
 ---
 # <a name="using-ansible-with-azure"></a>Использование Ansible с Azure
 
@@ -60,5 +60,5 @@ Ansible содержит набор модулей для подготовки �
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- [Краткое руководство. Развертывание шаблона решения Ansible для Azure в CentOS](./ansible-deploy-solution-template.md)
-- [Краткое руководство. Настройка виртуальных машин Linux в Azure с помощью Ansible](/azure/virtual-machines/linux/ansible-install-configure?toc=%2Fazure%2Fansible%2Ftoc.json&bc=%2Fazure%2Fbread%2Ftoc.json)
+- [Краткое руководство Развертывание шаблона решения Ansible для Azure в CentOS](./ansible-deploy-solution-template.md)
+- [Краткое руководство Настройка виртуальных машин Linux в Azure с помощью Ansible](/azure/virtual-machines/linux/ansible-install-configure?toc=%2Fazure%2Fansible%2Ftoc.json&bc=%2Fazure%2Fbread%2Ftoc.json)

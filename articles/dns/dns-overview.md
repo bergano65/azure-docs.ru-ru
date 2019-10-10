@@ -6,12 +6,12 @@ ms.service: dns
 ms.topic: overview
 ms.date: 3/21/2019
 ms.author: victorh
-ms.openlocfilehash: 06e53f07969ab5dfdebec88d36d0cb3d06cc87e1
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 5055734ae3529d7fca87688c5f9410f38368a634
+ms.sourcegitcommit: 4d177e6d273bba8af03a00e8bb9fe51a447196d0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67078429"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71959370"
 ---
 # <a name="what-is-azure-dns"></a>Что такое Azure DNS?
 
@@ -51,7 +51,7 @@ Azure DNS включает следующие функции.
 
 ## <a name="customizable-virtual-networks-with-private-domains"></a>Настраиваемые виртуальные сети с частными доменами
 
-Azure DNS также поддерживает частные DNS-домены c помощью функции, которая сейчас находится в общедоступной предварительной версии. Эта функция позволяет использовать имена личных доменов в частных виртуальных сетях, а не только имена, предоставленные Azure, как ранее.
+Azure DNS также поддерживает частные домены DNS. Эта функция позволяет использовать имена личных доменов в частных виртуальных сетях, а не только имена, предоставленные Azure, как ранее.
 
 Дополнительные сведения см. в статье [Использование Azure DNS для частных доменов](private-dns-overview.md).
 

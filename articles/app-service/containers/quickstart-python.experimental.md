@@ -3,8 +3,8 @@ title: Создание приложения Python в Службе прилож
 description: Быстрое развертывание первого приложения Hello World на Python в Службе приложений Azure на платформе Linux.
 services: app-service\web
 documentationcenter: ''
-author: cephalin
-manager: jeconnoc
+author: msangapu-msft
+manager: gwallace
 editor: ''
 ms.assetid: ''
 ms.service: app-service-web
@@ -14,18 +14,18 @@ ms.topic: quickstart
 ms.date: 08/23/2019
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 08b1b85b980f992e799fc5198891290ec0d55c5d
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+experimental: false
+experiment_id: 1e304dc9-5add-4b
+ms.openlocfilehash: d6e062145474b8479db749627b56163106f088d8
+ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70070999"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72024942"
 ---
-# <a name="create-a-python-app-in-azure-app-service-on-linux-preview"></a>Создание приложения Python в Службе приложений Azure в Linux (предварительная версия)
+# <a name="create-a-python-app-in-azure-app-service-on-linux"></a>Создание приложения Python в Службе приложений Azure в Linux
 
-[Служба приложений на платформе Linux](app-service-linux-intro.md) — это высокомасштабируемая служба размещения с самостоятельной установкой исправлений на основе операционной системы Linux. В этом кратком руководстве показано, как развернуть приложение Python на основе встроенного образа Python (предварительная версия) в Службе приложений в Linux с помощью [Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview).
-
-Выполните инструкции, приведенные в этом руководстве, с помощью компьютера Mac, Windows или Linux.
+В этом кратком руководстве вы развернете простое приложение Python в [Службе приложений на платформе Linux](app-service-linux-intro.md), которая предоставляет высокомасштабируемую веб-службу размещения с самостоятельной установкой исправлений. В руководстве используется интерфейс командной строки Azure ([Azure CLI](/cli/azure/install-azure-cli)) в интерактивной браузерной оболочке Azure Cloud Shell. Поэтому все инструкции можно выполнять на компьютере Mac, Linux или Windows.
 
 ![Пример приложения, выполняющегося в Azure](media/quickstart-python/hello-world-in-browser.png)
 
@@ -106,7 +106,7 @@ All done.
 
 - создание приложения с указанным именем.
 
-- [Разверните ZIP-файлы](https://docs.microsoft.com/azure/app-service/deploy-zip) для приложения из текущего рабочего каталога.
+- [развертывание ZIP-файлов](https://docs.microsoft.com/azure/app-service/deploy-zip) для приложения из текущего рабочего каталога.
 
 ## <a name="browse-to-the-app"></a>Переход в приложение
 
@@ -122,7 +122,7 @@ http://<app_name>.azurewebsites.net
 
 **Поздравляем!** Вы развернули свое первое приложение Python в службе приложений в Linux.
 
-## <a name="update-locally-and-redeploy-the-code"></a>Обновление на локальном компьютере и повторное развертывание кода
+## <a name="update-and-redeploy-the-code"></a>Обновление и повторное развертывание кода
 
 В Cloud Shell введите `code application.py`, чтобы открыть текстовый редактор Cloud Shell.
 
@@ -163,8 +163,6 @@ az webapp up -n <app_name>
 [!INCLUDE [cli-samples-clean-up](../../../includes/cli-samples-clean-up.md)]
 
 ## <a name="next-steps"></a>Дополнительная информация
-
-Сейчас встроенный образ Python в Службе приложений на платформе Linux доступен в предварительной версии. Вы можете настроить команду для запуска приложения. Также приложения Python для рабочей среды можно создавать с помощью настраиваемого контейнера.
 
 > [!div class="nextstepaction"]
 > [Руководство. по использованию приложения Python с PostgreSQL](tutorial-python-postgresql-app.md)
