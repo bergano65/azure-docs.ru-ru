@@ -4,12 +4,12 @@ ms.service: virtual-machines
 ms.topic: include
 ms.date: 11/25/2018
 ms.author: cynthn
-ms.openlocfilehash: 40f0a667ffa23010ef00ed105454ab305171cc19
-ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
+ms.openlocfilehash: 11924b44a51767df68372cd94c581b2feaa8ac25
+ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67812493"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72247110"
 ---
 ### <a name="number-of-fault-domains-per-region"></a>Количество доменов сбоя по регионам
 
@@ -23,7 +23,7 @@ ms.locfileid: "67812493"
 | Центрально-северная часть США    | 3                       |
 | Центрально-южная часть США    | 3                       |
 | Западно-центральная часть США     | 2                       |
-| Центральная Канада      | 3                      |
+| Центральная Канада      | 3                       |
 | Восточная Канада         | 2                       |
 |                     |                         |
 | Северная Европа        | 3                       |
@@ -42,6 +42,11 @@ ms.locfileid: "67812493"
 | Южная Корея         | 2                       |
 | Северная часть ОАЭ           | 2                       |
 |                     |                         |
+| Восток Китая          | 2                       |
+| Восточный Китай 2        | 2                       |
+| Север Китая         | 2                       |
+| Северный Китай 2       | 2                       |
+|
 | Восточная часть Австралии      | 2                       |
 | Юго-Восточная часть Австралии | 2                       |
 | Центральная Австралия   | 2                       |
