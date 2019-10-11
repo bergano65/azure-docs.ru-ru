@@ -3,15 +3,15 @@ title: Работа с большими наборами данных
 description: Узнайте, как получать большие наборы данных и управлять ими в Azure Resource Graph.
 author: DCtheGeek
 ms.author: dacoulte
-ms.date: 04/01/2019
+ms.date: 10/10/2019
 ms.topic: conceptual
 ms.service: resource-graph
-ms.openlocfilehash: 4da890a5ef7acb44d0e8628dc4ec3904f6a065e4
-ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
+ms.openlocfilehash: 0ecd0ea997520947b766912f834de2a0c2e64429
+ms.sourcegitcommit: f272ba8ecdbc126d22a596863d49e55bc7b22d37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71980300"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72274233"
 ---
 # <a name="working-with-large-azure-resource-data-sets"></a>Работа с большими наборами данных ресурса Azure
 
@@ -68,7 +68,7 @@ Search-AzGraph -Query "project name | order by name asc" -Skip 10
 
 Когда свойство **resultTruncated** равно **true**, свойство **$skipToken** задается в ответе. Это значение используется с теми же значениями запроса и подписки для получения следующего набора записей, который соответствует запросу.
 
-В следующих примерах показано, как **пропустить** первые 3000 записей и вернуть **первые** 1000 записей после пропуска Azure CLI и Azure PowerShell.
+В следующих примерах показано, как **пропустить** первые 3000 записей и вернуть **первые** 1000 записей после того, как эти записи пропущены Azure CLI и Azure PowerShell.
 
 ```azurecli-interactive
 az graph query -q "project id, name | order by id asc" --first 1000 --skip 3000
@@ -82,6 +82,90 @@ Search-AzGraph -Query "project id, name | order by id asc" -First 1000 -Skip 300
 > Запрос должен **проецировать** поле **id**, чтобы сработала нумерация страниц. Если он отсутствует в запросе, ответ не будет содержать **$skipToken**.
 
 Пример см. в разделе [Запрос следующей страницы](/rest/api/azureresourcegraph/resources/resources#next-page-query) в документации REST API.
+
+## <a name="formatting-results"></a>Форматирование результатов
+
+Результаты запроса графа ресурсов предоставляются в двух форматах: _Table_ и _обжектаррай_. Этот формат настраивается с помощью параметра **ресултформат** в составе параметров запроса. Формат _таблицы_ является значением по умолчанию для **ресултформат**.
+
+Результаты из Azure CLI предоставляются по умолчанию в JSON. Результаты в Azure PowerShell являются **PSCustomObject** по умолчанию, но их можно быстро преобразовать в формат JSON с помощью командлета `ConvertTo-Json`. Для других пакетов SDK результаты запроса можно настроить для вывода формата _обжектаррай_ .
+
+### <a name="format---table"></a>Format-Table
+
+Формат по умолчанию, _Таблица_, возвращает результаты в формате JSON, предназначенном для выделения структуры столбцов и значений строк свойств, возвращаемых запросом. Этот формат похож на данные, определенные в структурированной таблице или таблице, с столбцами, идентифицируемыми первыми, а затем каждая строка, представляющая данные, выравниваемая по этим столбцам.
+
+Ниже приведен пример результата запроса с форматированием _таблицы_ .
+
+```json
+{
+    "totalRecords": 47,
+    "count": 1,
+    "data": {
+        "columns": [{
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "name": "type",
+                "type": "string"
+            },
+            {
+                "name": "location",
+                "type": "string"
+            },
+            {
+                "name": "subscriptionId",
+                "type": "string"
+            }
+        ],
+        "rows": [
+            [
+                "veryscaryvm2-nsg",
+                "microsoft.network/networksecuritygroups",
+                "eastus",
+                "11111111-1111-1111-1111-111111111111"
+            ]
+        ]
+    },
+    "facets": [],
+    "resultTruncated": "true"
+}
+```
+
+### <a name="format---objectarray"></a>Format-Обжектаррай
+
+Формат _обжектаррай_ также возвращает результаты в формате JSON. Однако эта схема соответствует связи пары "ключ-значение", которая встречается в JSON, где данные столбца и строки сопоставляются в группах массивов.
+
+Ниже приведен пример результата запроса с форматированием _обжектаррай_ :
+
+```json
+{
+    "totalRecords": 47,
+    "count": 1,
+    "data": [{
+        "name": "veryscaryvm2-nsg",
+        "type": "microsoft.network/networksecuritygroups",
+        "location": "eastus",
+        "subscriptionId": "11111111-1111-1111-1111-111111111111"
+    }],
+    "facets": [],
+    "resultTruncated": "true"
+}
+```
+
+Ниже приведены некоторые примеры настройки **ресултформат** для использования формата _обжектаррай_ :
+
+```csharp
+var requestOptions = new QueryRequestOptions( resultFormat: ResultFormat.ObjectArray);
+var request = new QueryRequest(subscriptions, "limit 1", options: requestOptions);
+```
+
+```python
+request_options = QueryRequestOptions(
+    result_format=ResultFormat.object_array
+)
+request = QueryRequest(query="limit 1", subscriptions=subs_list, options=request_options)
+response = client.resources(request)
+```
 
 ## <a name="next-steps"></a>Следующие шаги
 

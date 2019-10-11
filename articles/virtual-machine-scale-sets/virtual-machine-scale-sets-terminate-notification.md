@@ -3,7 +3,7 @@ title: Завершение уведомления для экземпляров
 description: Узнайте, как включить уведомление об увольнении для экземпляров масштабируемых наборов виртуальных машин Azure.
 services: virtual-machine-scale-sets
 documentationcenter: ''
-author: mayanknayar
+author: shandilvarun
 manager: drewm
 editor: ''
 tags: azure-resource-manager
@@ -14,13 +14,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 08/27/2019
-ms.author: manayar
-ms.openlocfilehash: de303032fcbbde30534c802e3d5185aedf05cb98
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.author: vashan
+ms.openlocfilehash: 7269c76236b7cbe60995d84e85857da596bec961
+ms.sourcegitcommit: b4665f444dcafccd74415fb6cc3d3b65746a1a31
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70076242"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72264676"
 ---
 # <a name="terminate-notification-for-azure-virtual-machine-scale-set-instances-preview"></a>Завершение уведомления для экземпляров масштабируемых наборов виртуальных машин Azure (Предварительная версия)
 Экземпляры масштабируемых наборов могут использовать для получения уведомлений об увольнении экземпляра и задать предопределенное время ожидания задержки для операции завершения. Уведомление об увольнении отправляется через службу метаданных Azure — [запланированные события](../virtual-machines/windows/scheduled-events.md), которая предоставляет уведомления для и задержки таких операций, как перезагрузка и повторное развертывание. Решение предварительной версии добавляет еще одно событие — завершение — в список Запланированные события, а связанная задержка события завершения будет зависеть от предельной задержки, заданной пользователями в конфигурации модели масштабируемого набора.

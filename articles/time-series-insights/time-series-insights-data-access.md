@@ -9,14 +9,14 @@ manager: cshankar
 ms.reviewer: v-mamcge, jasonh, kfile
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 08/06/2019
+ms.date: 10/10/2019
 ms.custom: seodec18
-ms.openlocfilehash: 4455d499ab4c52a27a7d9cf878e8130ff38b1c62
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 670615980b7fd78441a08ba987073dc139b3792a
+ms.sourcegitcommit: f272ba8ecdbc126d22a596863d49e55bc7b22d37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68846949"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72274438"
 ---
 # <a name="grant-data-access-to-an-environment"></a>Предоставление доступа к данным в среде
 
@@ -34,11 +34,11 @@ ms.locfileid: "68846949"
 
 1. Выберите **Политики доступа к данным**, а затем нажмите кнопку **+ Добавить**.
 
-    [![Доступ к данным — один](media/data-access/data-access-one.png)](media/data-access/data-access-one.png#lightbox)
+    [![Data-Access — один](media/data-access/data-access-one.png)](media/data-access/data-access-one.png#lightbox)
 
 1. Выберите **Выбор пользователя**. Выполните поиск по имени пользователя или адресу электронной почты, чтобы найти пользователя, которого следует добавить. Нажмите **кнопку Выбрать** , чтобы подтвердить выбор.
 
-    [![Доступ к данным — два](media/data-access/data-access-two.png)](media/data-access/data-access-two.png#lightbox)
+    [![Data-Access-2](media/data-access/data-access-two.png)](media/data-access/data-access-two.png#lightbox)
 
 1. Выберите **Выбор ролей**. Выберите соответствующую роль доступа для пользователя.
 
@@ -48,15 +48,15 @@ ms.locfileid: "68846949"
 
    Нажмите кнопку **ОК**, чтобы подтвердить выбор роли.
 
-    [![Доступ к данным — три](media/data-access/data-access-three.png)](media/data-access/data-access-three.png#lightbox)
+    [![Data-Access-3](media/data-access/data-access-three.png)](media/data-access/data-access-three.png#lightbox)
 
 1. На странице **Выбор роли пользователя** нажмите кнопку **ОК**.
 
-    [![Доступ к данным-четыре](media/data-access/data-access-four.png)](media/data-access/data-access-four.png#lightbox)
+    [![Data-Access-4](media/data-access/data-access-four.png)](media/data-access/data-access-four.png#lightbox)
 
 1. Убедитесь, что на странице **Политики доступа к данным** перечислены пользователи и соответствующие роли.
 
-    [![Доступ к данным — пять](media/data-access/data-access-five.png)](media/data-access/data-access-five.png#lightbox)
+    [![Data-Access-5](media/data-access/data-access-five.png)](media/data-access/data-access-five.png#lightbox)
 
 ## <a name="provide-guest-access-from-another-aad-tenant"></a>Предоставление гостевого доступа из другого клиента AAD
 
@@ -66,19 +66,19 @@ ms.locfileid: "68846949"
 
 1. Выберите **Политики доступа к данным**, а затем нажмите кнопку **+ Пригласить**.
 
-    [![Доступ к данным — шесть](media/data-access/data-access-six.png)](media/data-access/data-access-six.png#lightbox)
+    [![Data-доступ-шесть](media/data-access/data-access-six.png)](media/data-access/data-access-six.png#lightbox)
 
 1. Введите адрес электронной почты пользователя, которого вы хотите пригласить. Этот адрес электронной почты должен быть связан с Azure AD. Вы также можете добавить к приглашению личное сообщение.
 
-    [![Доступ к данным — семь](media/data-access/data-access-seven.png)](media/data-access/data-access-seven.png#lightbox)
+    [![Data-Access-7](media/data-access/data-access-seven.png)](media/data-access/data-access-seven.png#lightbox)
 
 1. Найдите всплывающее окно с подтверждением, которое отображается на экране.
 
-    [![Доступ к данным — восемь](media/data-access/data-access-eight.png)](media/data-access/data-access-eight.png#lightbox)
+    [![Data-Access-8](media/data-access/data-access-eight.png)](media/data-access/data-access-eight.png#lightbox)
 
 1. Выберите **Выбор пользователя**. Найдите адрес электронной почты приглашенного гостевого пользователя, чтобы найти пользователя, которого необходимо добавить. Затем **выберите** , чтобы подтвердить выбор.
 
-    [![Доступ к данным — девять](media/data-access/data-access-nine.png)](media/data-access/data-access-nine.png#lightbox)
+    [![Data-доступ-девять](media/data-access/data-access-nine.png)](media/data-access/data-access-nine.png#lightbox)
 
 1. Выберите **Выбор ролей**. Выберите соответствующую роль гостевого пользователя.
 
@@ -88,29 +88,29 @@ ms.locfileid: "68846949"
 
    Нажмите кнопку **ОК**, чтобы подтвердить выбор роли.
 
-    [![Доступ к данным — десять](media/data-access/data-access-ten.png)](media/data-access/data-access-ten.png#lightbox)
+    [![Data-Access-десять](media/data-access/data-access-ten.png)](media/data-access/data-access-ten.png#lightbox)
 
 1. На странице **Выбор роли пользователя** нажмите кнопку **ОК**.
 
 1. Убедитесь, что на странице **Политики доступа к данным** перечислены гостевые пользователи и соответствующие роли.
 
-    [![Доступ к данным — одиннадцать](media/data-access/data-access-eleven.png)](media/data-access/data-access-eleven.png#lightbox)
+    [![Data-Access-одиннадцать](media/data-access/data-access-eleven.png)](media/data-access/data-access-eleven.png#lightbox)
 
 1. Теперь гостевой пользователь должен выполнить определенные действия, чтобы получить доступ к среде, находящейся в клиенте Azure, в которую вы его пригласили. Сначала этот пользователь принимает отправленное ему приглашение. Это приглашение отправляется по адресу электронной почты, использованной в приглашении на шаге 5. Он выбирает **Начало работы**, чтобы принять приглашение.
 
-    [![Доступ к данным — двенадцать](media/data-access/data-access-twelve.png)](media/data-access/data-access-twelve.png#lightbox)
+    [![Data-Access-двенадцать](media/data-access/data-access-twelve.png)](media/data-access/data-access-twelve.png#lightbox)
 
 1. Затем гостевой пользователь принимает разрешения, связанные с организацией администратора.
 
-    [![Доступ к данным — тринадцать](media/data-access/data-access-thirteen.png)](media/data-access/data-access-thirteen.png#lightbox)
+    [![Data-Access-тринадцать](media/data-access/data-access-thirteen.png)](media/data-access/data-access-thirteen.png#lightbox)
 
 1. Когда гостевой пользователь войдет в учетную запись электронной почты, куда вы отправили приглашение, и примет это приглашение, он перейдет на сайт insights.azure.com. После этого ему понадобится щелкнуть аватар рядом с его адресом электронной почты в правом верхнем углу экрана.
 
-    [![Доступ к данным — четырнадцать](media/data-access/data-access-fourteen.png)](media/data-access/data-access-fourteen.png#lightbox)
+    [![Data-Access-четырнадцать](media/data-access/data-access-fourteen.png)](media/data-access/data-access-fourteen.png#lightbox)
 
 1. Затем гостевой пользователь выбирает клиент Azure из раскрывающегося меню каталога. Это тот клиент, в который вы пригласили пользователя.
 
-    [![Доступ к данным — пятнадцать](media/data-access/data-access-fifteen.png)](media/data-access/data-access-fifteen.png#lightbox)
+    [![Data-Access-пятнадцать](media/data-access/data-access-fifteen.png)](media/data-access/data-access-fifteen.png#lightbox)
 
 После выбора клиента для гостевого пользователя станет доступной среда службы "Аналитика временных рядов", к которой вы предоставили ему доступ. Теперь у них есть все возможности, связанные с ролью, которую вы указали на **шаге 5**.
 

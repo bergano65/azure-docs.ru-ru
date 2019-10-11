@@ -1,45 +1,44 @@
 ---
-title: Настройка пользовательских правил брандмауэра веб-приложения версии 2 с помощью Azure PowerShell
-description: Сведения о настройке WAF v2 настраиваемые правила с помощью Azure PowerShell
+title: Настройка настраиваемых правил брандмауэра веб-приложения v2 с помощью Azure PowerShell
+description: Узнайте, как настроить настраиваемые правила брандмауэра веб-приложения v2 с помощью Azure PowerShell
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: article
 ms.date: 6/18/2019
 ms.author: victorh
-ms.openlocfilehash: f4d2fd7342e0efe95a1bc69e0dba77692053cf14
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 9e50b47e22f5760c213cd0cafad82ecca592dec8
+ms.sourcegitcommit: b4665f444dcafccd74415fb6cc3d3b65746a1a31
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67164748"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72263742"
 ---
-# <a name="configure-web-application-firewall-v2--with-a-custom-rule-using-azure-powershell"></a>Настройка брандмауэра веб-приложения версии 2 с помощью настраиваемого правила с помощью Azure PowerShell
+# <a name="configure-web-application-firewall-v2-custom-rules-by-using-azure-powershell"></a>Настройка настраиваемых правил брандмауэра веб-приложения v2 с помощью Azure PowerShell
 
 <!--- If you make any changes to the PowerShell in this article, also make the change in the corresponding Sample file: azure-docs-powershell-samples/application-gateway/waf-rules/waf-custom-rules.ps1 --->
 
-Настраиваемые правила позволяют создавать собственные правила, вычисляемое для каждого запроса, который проходит через брандмауэр веб-приложения (WAF) v2. Эти правила хранения более высокий приоритет, чем остальные правила в наборы правил для управляемого кода. Настраиваемые правила имеют действие (разрешить или запретить), условие соответствия и оператора, позволяет полностью перенастраивать.
+С помощью настраиваемых правил можно создавать собственные правила, которые оцениваются для каждого запроса, который проходит через брандмауэр веб-приложения (WAF). Эти правила содержат более высокий приоритет, чем остальные правила в наборах управляемых правил. Чтобы разрешить полную настройку, пользовательские правила имеют действие (для разрешения или блокировки), условие соответствия и оператор.
 
-В этой статье создает WAF шлюза приложений версии 2, использующий настраиваемое правило. Настраиваемое правило блокирует трафик, если заголовок запроса содержит User-Agent *evilbot*.
+В этой статье описывается создание шлюза приложений Azure WAF v2, использующего настраиваемое правило. Настраиваемое правило блокирует трафик, если заголовок запроса содержит User-Agent *evilbot*.
 
-Дополнительные примеры пользовательских правил см. в разделе [Создание и использование правил брандмауэра пользовательского веб-приложения](create-custom-waf-rules.md)
+Дополнительные примеры настраиваемых правил см. в разделе [Создание и использование пользовательских правил брандмауэра веб-приложения](create-custom-waf-rules.md).
 
-При необходимости выполнения Azure PowerShell в этой статье в один непрерывный сценарий, который можно скопировать, вставьте и запустите см. в разделе [примеры PowerShell шлюза приложения Azure](powershell-samples.md).
+Чтобы запустить Azure PowerShell код в этой статье в одном непрерывном сценарии, который можно скопировать, вставить и запустить, ознакомьтесь с [примерами PowerShell для шлюза приложений Azure](powershell-samples.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
+* [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-### <a name="azure-powershell-module"></a>модуль Azure PowerShell;
+* Необходим модуль Azure PowerShell. Если вы решили установить и использовать Azure PowerShell локально, для этого скрипта требуется Azure PowerShell Module версии 2.1.0 или более поздней. Выполните следующее:
 
-Чтобы установить и использовать Azure PowerShell локально для работы с этим скриптом, вам понадобится модуль Azure PowerShell 2.1.0 или последующей версии.
-
-1. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps).
-2. Чтобы создать подключение к Azure, выполните команду `Connect-AzAccount`.
-
-[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
+  1. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps).
+  2. Чтобы создать подключение к Azure, выполните команду `Connect-AzAccount`.
 
 ## <a name="example-script"></a>Пример сценария
 
 ### <a name="set-up-variables"></a>Настройка переменных
+
+Выполните следующий код:
 
 ```azurepowershell
 $rgname = "CustomRulesTest"
@@ -51,11 +50,15 @@ $appgwName = "WAFCustomRules"
 
 ### <a name="create-a-resource-group"></a>Создание группы ресурсов
 
+Выполните следующий код:
+
 ```azurepowershell
 $resourceGroup = New-AzResourceGroup -Name $rgname -Location $location
 ```
 
-### <a name="create-a-vnet"></a>Создание виртуальной сети
+### <a name="create-a-virtual-network"></a>Создание виртуальной сети
+
+Выполните следующий код:
 
 ```azurepowershell
 $sub1 = New-AzVirtualNetworkSubnetConfig -Name "appgwSubnet" -AddressPrefix "10.0.0.0/24"
@@ -66,14 +69,18 @@ $vnet = New-AzvirtualNetwork -Name "Vnet1" -ResourceGroupName $rgname -Location 
   -AddressPrefix "10.0.0.0/16" -Subnet @($sub1, $sub2)
 ```
 
-### <a name="create-a-static-public-vip"></a>Создайте статический общедоступный виртуальный IP-адрес
+### <a name="create-a-static-public-vip"></a>Создание статического общедоступного виртуального IP-адреса
+
+Выполните следующий код:
 
 ```azurepowershell
 $publicip = New-AzPublicIpAddress -ResourceGroupName $rgname -name "AppGwIP" `
   -location $location -AllocationMethod Static -Sku Standard
 ```
 
-### <a name="create-pool-and-frontend-port"></a>Создание пула и интерфейсный порт
+### <a name="create-a-pool-and-front-end-port"></a>Создание пула и внешнего порта
+
+Выполните следующий код:
 
 ```azurepowershell
 $gwSubnet = Get-AzVirtualNetworkSubnetConfig -Name "appgwSubnet" -VirtualNetwork $vnet
@@ -88,7 +95,9 @@ $pool = New-AzApplicationGatewayBackendAddressPool -Name "pool1" `
 $fp01 = New-AzApplicationGatewayFrontendPort -Name "port1" -Port 80
 ```
 
-### <a name="create-a-listener-http-setting-rule-and-autoscale"></a>Создание прослушивателя, параметры http, правила и автоматического масштабирования
+### <a name="create-a-listener-http-setting-rule-and-autoscale"></a>Создание прослушивателя, параметра HTTP, правила и автомасштабирования
+
+Выполните следующий код:
 
 ```azurepowershell
 $listener01 = New-AzApplicationGatewayHttpListener -Name "listener1" -Protocol Http `
@@ -105,7 +114,9 @@ $autoscaleConfig = New-AzApplicationGatewayAutoscaleConfiguration -MinCapacity 3
 $sku = New-AzApplicationGatewaySku -Name WAF_v2 -Tier WAF_v2
 ```
 
-### <a name="create-the-custom-rule-and-apply-it-to-waf-policy"></a>Создать настраиваемое правило и применить его к политике WAF
+### <a name="create-the-custom-rule-and-apply-it-to-waf-policy"></a>Создание настраиваемого правила и его применение к политике WAF
+
+Выполните следующий код:
 
 ```azurepowershell
 $variable = New-AzApplicationGatewayFirewallMatchVariable -VariableName RequestHeaders -Selector User-Agent
@@ -119,7 +130,9 @@ $wafPolicy = New-AzApplicationGatewayFirewallPolicy -Name wafPolicy -ResourceGro
 $wafConfig = New-AzApplicationGatewayWebApplicationFirewallConfiguration -Enabled $true -FirewallMode "Prevention"
 ```
 
-### <a name="create-the-application-gateway"></a>Создание шлюза приложений
+### <a name="create-an-application-gateway"></a>Создание шлюза приложений
+
+Выполните следующий код:
 
 ```azurepowershell
 $appgw = New-AzApplicationGateway -Name $appgwName -ResourceGroupName $rgname `
@@ -132,6 +145,6 @@ $appgw = New-AzApplicationGateway -Name $appgwName -ResourceGroupName $rgname `
    -FirewallPolicy $wafPolicy
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-[Дополнительные сведения о брандмауэр веб-приложения](waf-overview.md)
+[Дополнительные сведения о брандмауэре веб-приложения](waf-overview.md)

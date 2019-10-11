@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.service: container-service
 ms.date: 05/06/2019
 ms.author: mlearned
-ms.openlocfilehash: 8752d888e24e7135d488be6d1b377070a30fe4eb
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.openlocfilehash: ab0aebf0b66ac01e19699795b14063df31cb9621
+ms.sourcegitcommit: b4665f444dcafccd74415fb6cc3d3b65746a1a31
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "67613839"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72263761"
 ---
 # <a name="create-and-configure-an-azure-kubernetes-services-aks-cluster-to-use-virtual-nodes-in-the-azure-portal"></a>Создание и настройка кластера Службы Azure Kubernetes (AKS) для использования виртуальных узлов на портале Azure
 
@@ -44,7 +44,7 @@ Microsoft.ContainerInstance  Registered
 az provider register --namespace Microsoft.ContainerInstance
 ```
 
-## <a name="regional-availability"></a>Доступность в регионах
+## <a name="regional-availability"></a>Доступность по регионам
 
 Для развертываний виртуальных узлов поддерживаются следующие регионы:
 
@@ -71,7 +71,7 @@ az provider register --namespace Microsoft.ContainerInstance
 * [Daemonset](concepts-clusters-workloads.md#statefulsets-and-daemonsets) не будет выполнять развертывание модулей Pod на виртуальном узле
 * [Узлы Windows Server (в настоящее время в предварительной версии в AKS)](windows-container-cli.md) не поддерживаются вместе с виртуальными узлами. Виртуальные узлы можно использовать для планирования контейнеров Windows Server без необходимости использования узлов Windows Server в кластере AKS.
 
-## <a name="sign-in-to-azure"></a>Войдите в Azure
+## <a name="sign-in-to-azure"></a>Вход в Azure
 
 Войдите на портал Azure по адресу https://portal.azure.com.
 
@@ -86,7 +86,7 @@ az provider register --namespace Microsoft.ContainerInstance
 - *ПУЛ ОСНОВНЫХ УЗЛОВ*: Выберите размер виртуальной машины для узлов AKS. Размер виртуальной машины **невозможно** изменить после развертывания кластера с AKS.
      - Выберите количество узлов для развертывания в кластере. Для задач в этой статье задайте для параметра **Число узлов** значение *1*. Количество узлов **можно** изменить после развертывания кластера.
 
-Щелкните **Далее: Масштабирование**.
+Щелкните **Далее: Scale @ no__t-0.
 
 На странице **масштаб** выберите параметр *включено* в разделе **виртуальные узлы**.
 
@@ -106,7 +106,7 @@ Azure Cloud Shell — это бесплатная интерактивная о�
 
 Чтобы открыть Cloud Shell, выберите **Попробовать** в правом верхнем углу блока кода. Cloud Shell можно также запустить в отдельной вкладке браузера, перейдя на страницу [https://shell.azure.com/bash](https://shell.azure.com/bash). Нажмите кнопку **Копировать**, чтобы скопировать блоки кода. Вставьте код в Cloud Shell и нажмите клавишу "ВВОД", чтобы выполнить его.
 
-Используйте команду [AZ AKS Get-Credential][az-aks-get-credentials] , чтобы настроить `kubectl` подключение к кластеру Kubernetes. В следующем примере возвращаются учетные данные для имени кластера *myAKSCluster* в группе ресурсов *myResourceGroup*.
+Используйте команду [AZ AKS Get-Credential][az-aks-get-credentials] , чтобы настроить `kubectl` для подключения к кластеру Kubernetes. В следующем примере возвращаются учетные данные для имени кластера *myAKSCluster* в группе ресурсов *myResourceGroup*.
 
 ```azurecli-interactive
 az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
@@ -169,7 +169,7 @@ spec:
 kubectl apply -f virtual-node.yaml
 ```
 
-Используйте команду [kubectl Get][kubectl-get] Pod с `-o wide` аргументом для вывода списка модулей Pod и запланированного узла. Обратите внимание, что pod `virtual-node-helloworld` был назначен на узел `virtual-node-linux`.
+Используйте команду [kubectl Get][kubectl-get] Pod с аргументом `-o wide` для вывода списка модулей Pod и запланированного узла. Обратите внимание, что pod `virtual-node-helloworld` был назначен на узел `virtual-node-linux`.
 
 ```
 $ kubectl get pods -o wide
@@ -238,6 +238,7 @@ $ curl -L 10.241.0.4
 [aks-github]: https://github.com/azure/aks/issues]
 [virtual-node-autoscale]: https://github.com/Azure-Samples/virtual-node-autoscale
 [virtual-kubelet-repo]: https://github.com/virtual-kubelet/virtual-kubelet
+[acr-aks-secrets]: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
 
 <!-- LINKS - internal -->
 [aks-network]: ./networking-overview.md
@@ -245,5 +246,4 @@ $ curl -L 10.241.0.4
 [aks-hpa]: tutorial-kubernetes-scale.md
 [aks-cluster-autoscaler]: cluster-autoscaler.md
 [aks-basic-ingress]: ingress-basic.md
-[acr-aks-secrets]: ../container-registry/container-registry-auth-aks.md#access-with-kubernetes-secret
 [az-provider-list]: /cli/azure/provider#az-provider-list

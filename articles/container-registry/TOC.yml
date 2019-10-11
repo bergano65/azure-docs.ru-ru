@@ -98,7 +98,7 @@
             - name: Проверка подлинности из службы "Экземпляры контейнеров Azure"
               href: container-registry-auth-aci.md
             - name: Проверка подлинности из Службы Azure Kubernetes (AKS)
-              href: container-registry-auth-aks.md
+              href: ../aks/cluster-container-registry-integration.md
         - name: Роли и разрешения
           href: container-registry-roles.md
         - name: Доверие к содержимому

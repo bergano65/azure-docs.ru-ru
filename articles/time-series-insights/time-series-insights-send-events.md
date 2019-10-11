@@ -10,14 +10,14 @@ ms.reviewer: v-mamcge, jasonh, kfile
 ms.devlang: csharp
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 08/26/2019
+ms.date: 10/10/2019
 ms.custom: seodec18
-ms.openlocfilehash: 84eb0e230875b999218b67d47a66a3c92b494253
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: accf3adea08e713a7a2f06bb175c759ae66a72c0
+ms.sourcegitcommit: f272ba8ecdbc126d22a596863d49e55bc7b22d37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70072829"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72274526"
 ---
 # <a name="send-events-to-a-time-series-insights-environment-by-using-an-event-hub"></a>Отправка событий в среду службы "Аналитика временных рядов" с помощью концентратора событий
 
@@ -30,14 +30,14 @@ ms.locfileid: "70072829"
 1. Выберите свой концентратор событий.
 1. При создании концентратора событий создается пространство имен концентратора событий. Если вы еще не создали концентратор событий в пространстве имен, в меню в разделе **сущности**создайте концентратор событий.  
 
-    [![Список концентраторов событий](media/send-events/updated.png)](media/send-events/updated.png#lightbox)
+    [@no__t 1List концентраторов событий](media/send-events/1-event-hub-namespace.png)](media/send-events/1-event-hub-namespace.png#lightbox)
 
 1. После создания концентратора событий выберите его в списке.
 1. В меню **сущности**выберите **концентраторы событий**.
 1. Выберите имя концентратора событий, чтобы настроить его.
 1. В разделе **Обзор**выберите **группы потребителей**, а затем выберите **Группа потребителей**.
 
-    [![Создание группы потребителей](media/send-events/consumer-group.png)](media/send-events/consumer-group.png#lightbox)
+    [@no__t 1Create группа потребителей](media/send-events/2-consumer-group.png)](media/send-events/2-consumer-group.png#lightbox)
 
 1. Убедитесь, что создана группа потребителей, которая используется исключительно источником событий "аналитика временных рядов".
 
@@ -46,17 +46,17 @@ ms.locfileid: "70072829"
 
 1. В меню в разделе **Параметры**выберите **политики общего доступа**, а затем нажмите кнопку **добавить**.
 
-    [![Выберите политики общего доступа, а затем нажмите кнопку Добавить.](media/send-events/shared-access-policy.png)](media/send-events/shared-access-policy.png#lightbox)
+    [![Select политики общего доступа, а затем нажмите кнопку Добавить.](media/send-events/3-shared-access-policy.png)](media/send-events/3-shared-access-policy.png#lightbox)
 
 1. На панели **Добавить новую политику общего доступа** создайте политику общего доступа с именем **MySendPolicy**. Эта политика общего доступа используется для отправки событий в C# примерах далее в этой статье.
 
-    [![В поле Имя политики введите MySendPolicy.](media/send-events/shared-access-policy-2.png)](media/send-events/shared-access-policy-2.png#lightbox)
+    [![In в поле Имя политики введите MySendPolicy.](media/send-events/4-shared-access-policy-confirm.png)](media/send-events/4-shared-access-policy-confirm.png#lightbox)
 
 1. В разделе **утверждение**установите флажок **Отправить** .
 
 ## <a name="add-a-time-series-insights-instance"></a>Добавление экземпляра службы "Аналитика временных рядов"
 
-При обновлении службы "Аналитика временных рядов" используются экземпляры для добавления контекстных данных ко входящим данным телеметрии. Данные объединяются во время выполнения запроса на основе **идентификатора временного ряда**. **Идентификатор временного ряда** для примера проекта Виндмиллс, который мы используем далее в этой статье, — `id`это. Дополнительные сведения об экземплярах службы "Аналитика временных рядов" и **идентификаторе временного ряда** см. в [этой статье](./time-series-insights-update-tsm.md).
+При обновлении службы "Аналитика временных рядов" используются экземпляры для добавления контекстных данных ко входящим данным телеметрии. Данные объединяются во время выполнения запроса на основе **идентификатора временного ряда**. **Идентификатор временных рядов** для примера проекта Виндмиллс, который мы используем далее в этой статье, — `id`. Дополнительные сведения об экземплярах службы "Аналитика временных рядов" и **идентификаторе временного ряда** см. в [этой статье](./time-series-insights-update-tsm.md).
 
 ### <a name="create-a-time-series-insights-event-source"></a>Создание источника событий службы "Аналитика временных рядов"
 
@@ -64,28 +64,28 @@ ms.locfileid: "70072829"
 
 1. Задайте значение для `timeSeriesId`. Дополнительные сведения об **идентификаторе временного ряда** см. в статье [Time Series Model](./time-series-insights-update-tsm.md) (Модель временных рядов).
 
-### <a name="push-events"></a>Принудительная отправка событий (пример с ветряными мельницами)
+### <a name="push-events-to-windmills-sample"></a>Пример принудительной отправки событий в Виндмиллс
 
 1. В поле поиска введите **Центры событий**. В возвращенном списке выберите **Центры событий**.
 
 1. Выберите экземпляр концентратора событий.
 
-1. Перейдите в раздел >  **политики общего доступа** **MySendPolicy**. Скопируйте значение для параметра **строка подключения — первичный ключ**.
+1. Перейдите к **политикам общего доступа** > **MySendPolicy**. Скопируйте значение для параметра **строка подключения — первичный ключ**.
 
-    [![Скопируйте значение для строки подключения по первичному ключу.](media/send-events/sample-code-connection-string.png)](media/send-events/sample-code-connection-string.png#lightbox)
+    [@no__t — 1Copy значение для строки подключения по первичному ключу.](media/send-events/5-sample-code-connection-string.png)](media/send-events/5-sample-code-connection-string.png#lightbox)
 
 1. Перейдите на сайт https://tsiclientsample.azurewebsites.net/windFarmGen.html. После перехода по этому URL-адресу будут запущены имитированные устройства ветряных мельниц.
-1. В поле **Event Hub Connection String** (Строка подключения концентратора событий) на веб-странице вставьте строку подключения, скопированную в разделе о [принудительной отправке событий](#push-events).
+1. В поле **строка подключения концентратора событий** на веб-странице вставьте строку подключения, скопированную в [поле ввода Виндмилл](#push-events-to-windmills-sample).
   
-    [![Вставьте строку подключения первичного ключа в поле Строка подключения к концентратору событий.](media/send-events/updated_two.png)](media/send-events/updated_two.png#lightbox)
+    [![Paste строка подключения первичного ключа в поле строки подключения к концентратору событий](media/send-events/6-wind-mill-sim.png)](media/send-events/6-wind-mill-sim.png#lightbox)
 
 1. Выберите **Click to start** (Запустить). Симулятор создаст JSON-файл экземпляра, который вы можете использовать напрямую.
 
 1. Перейдите к концентратору событий на портале Azure. На странице **Обзор** отображаются новые события, получаемые концентратором событий.
 
-    [![Страница обзора концентратора событий, на которой показаны метрики для концентратора событий](media/send-events/telemetry.png)](media/send-events/telemetry.png#lightbox)
+    [Страница обзора концентратора событий ![An, на которой показаны метрики для концентратора событий](media/send-events/7-telemetry.png)](media/send-events/7-telemetry.png#lightbox)
 
-## <a name="json"></a>Поддерживаемые фигуры JSON
+## <a name="supported-json-shapes"></a>Поддерживаемые формы JSON
 
 ### <a name="example-one"></a>Пример 1
 
@@ -150,7 +150,7 @@ ms.locfileid: "70072829"
 
 * **Выходные данные**: Два события. Свойство **location** копируется для каждого события.
 
-    |расположение|events.id|events.timestamp|
+    |location|events.id|events.timestamp|
     |--------|---------------|----------------------|
     |WestUs|device1|2016-01-08T01:08:00Z|
     |WestUs|device2|2016-01-08T01:17:00Z|
@@ -191,7 +191,7 @@ ms.locfileid: "70072829"
 
 * **Выходные данные**: Два события.
 
-    |расположение|manufacturer.name|manufacturer.location|events.id|events.timestamp|events.data.type|events.data.units|events.data.value|
+    |location|manufacturer.name|manufacturer.location|events.id|events.timestamp|events.data.type|events.data.units|events.data.value|
     |---|---|---|---|---|---|---|---|
     |WestUs|manufacturer1|EastUs|device1|2016-01-08T01:08:00Z|pressure|psi|108.09|
     |WestUs|manufacturer1|EastUs|device2|2016-01-08T01:17:00Z|vibration|abs G|217.09|
@@ -199,3 +199,5 @@ ms.locfileid: "70072829"
 ## <a name="next-steps"></a>Следующие шаги
 
 - [Просмотр среды](https://insights.timeseries.azure.com) в обозревателе "аналитика временных рядов".
+
+- Дополнительные сведения об [сообщениях устройств центра Интернета вещей](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messages-construct)

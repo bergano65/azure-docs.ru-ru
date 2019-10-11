@@ -12,12 +12,12 @@ ms.server: functions
 ms.topic: conceptual
 ms.date: 04/03/2019
 ms.author: glenga
-ms.openlocfilehash: 976121e2fd7af280ccc959ba2a93aceb4ae2bdea
-ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
+ms.openlocfilehash: ff5b104c9fa1bedf1f710c06761b6449b20bbf05
+ms.sourcegitcommit: b4665f444dcafccd74415fb6cc3d3b65746a1a31
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70276831"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72263198"
 ---
 # <a name="automate-resource-deployment-for-your-function-app-in-azure-functions"></a>Автоматизация развертывания ресурсов приложения-функции для службы "Функции Azure"
 
@@ -38,9 +38,9 @@ ms.locfileid: "70276831"
 
 | Resource                                                                           | Требование | Справочник по синтаксису и свойствам                                                         |   |
 |------------------------------------------------------------------------------------|-------------|-----------------------------------------------------------------------------------------|---|
-| Приложение-функция.                                                                     | Обязательное значение    | [Microsoft.Web/sites](/azure/templates/microsoft.web/sites)                             |   |
-| [Учетная запись хранения Azure.](../storage/index.yml)                                   | Обязательное значение    | [Microsoft.Storage/storageAccounts](/azure/templates/microsoft.storage/storageaccounts) |   |
-| Компонент [Application Insights](../azure-monitor/app/app-insights-overview.md) | Необязательный    | [Microsoft. Insights/компоненты](/azure/templates/microsoft.insights/components)         |   |
+| Приложение-функция.                                                                     | Обязательно для заполнения    | [Microsoft.Web/sites](/azure/templates/microsoft.web/sites)                             |   |
+| [Учетная запись хранения Azure.](../storage/index.yml)                                   | Обязательно для заполнения    | [Microsoft.Storage/storageAccounts](/azure/templates/microsoft.storage/storageaccounts) |   |
+| Компонент [Application Insights](../azure-monitor/app/app-insights-overview.md) | Необязательно    | [Microsoft. Insights/компоненты](/azure/templates/microsoft.insights/components)         |   |
 | [План размещения](./functions-scale.md)                                             | Необязательно<sup>1</sup>    | [Microsoft.Web/serverfarms](/azure/templates/microsoft.web/serverfarms)                 |   |
 
 <sup>1</sup> План размещения требуется только в том случае, если вы решили запустить приложение-функцию в [плане Premium](./functions-premium-plan.md) (Предварительная версия) или в [плане службы приложений](../app-service/overview-hosting-plans.md).
@@ -57,11 +57,11 @@ ms.locfileid: "70276831"
 {
     "type": "Microsoft.Storage/storageAccounts",
     "name": "[variables('storageAccountName')]",
-    "apiVersion": "2018-07-01",
+    "apiVersion": "2019-04-01",
     "location": "[resourceGroup().location]",
     "kind": "StorageV2",
-    "properties": {
-        "accountType": "[parameters('storageAccountType')]"
+    "sku": {
+        "name": "[parameters('storageAccountType')]"
     }
 }
 ```
@@ -106,7 +106,7 @@ ms.locfileid: "70276831"
         },
 ```
 
-Кроме того, ключ инструментирования необходимо предоставить приложению функции, используя `APPINSIGHTS_INSTRUMENTATIONKEY` параметр приложения. Это свойство указывается в `appSettings` коллекции `siteConfig` объекта:
+Кроме того, ключ инструментирования необходимо предоставить приложению-функции с помощью параметра приложения @no__t – 0. Это свойство указывается в коллекции `appSettings` в объекте `siteConfig`:
 
 ```json
 "appSettings": [
@@ -120,11 +120,11 @@ ms.locfileid: "70276831"
 ### <a name="hosting-plan"></a>План размещения
 
 Определение плана размещения изменяется и может быть одним из следующих:
-* [План потребления](#consumption) параметры
+* [План потребления](#consumption) (по умолчанию)
 * [План Premium](#premium) (Предварительная версия)
 * [План обслуживания приложения](#app-service-plan)
 
-### <a name="function-app"></a>Приложение функций
+### <a name="function-app"></a>Приложение-функция
 
 Ресурс приложения-функции определяется с помощью ресурса типа **Microsoft. Web/Sites** и типа **functionapp**:
 
@@ -142,7 +142,7 @@ ms.locfileid: "70276831"
 ```
 
 > [!IMPORTANT]
-> Если вы явно определяете план размещения, в массиве dependsOn потребуется дополнительный элемент:`"[resourceId('Microsoft.Web/serverfarms', variables('hostingPlanName'))]"`
+> Если вы явно определяете план размещения, в массиве dependsOn потребуется дополнительный элемент: `"[resourceId('Microsoft.Web/serverfarms', variables('hostingPlanName'))]"`
 
 Приложение-функция должно включать следующие параметры приложения:
 
@@ -150,10 +150,10 @@ ms.locfileid: "70276831"
 |------------------------------|-------------------------------------------------------------------------------------------|---------------------------------------|
 | AzureWebJobsStorage          | Строка подключения к учетной записи хранения, которую среда выполнения функций для внутренней очереди | См. [учетную запись хранения](#storage)       |
 | FUNCTIONS_EXTENSION_VERSION  | Версия среды выполнения функций Azure                                                | `~2`                                  |
-| FUNCTIONS_WORKER_RUNTIME     | Стек языка, используемый для функций в этом приложении                                   | `dotnet`, `node`, `java`или`python` |
-| WEBSITE_NODE_DEFAULT_VERSION | Указывает используемую версию, `node` только если используется языковой стек.              | `10.14.1`                             |
+| FUNCTIONS_WORKER_RUNTIME     | Стек языка, используемый для функций в этом приложении                                   | `dotnet`, `node`, `java` или `python` |
+| WEBSITE_NODE_DEFAULT_VERSION | Требуется только при использовании стека языков `node`. указывает используемую версию              | `10.14.1`                             |
 
-Эти свойства указываются в `appSettings` коллекции `siteConfig` в свойстве:
+Эти свойства указываются в коллекции `appSettings` в свойстве `siteConfig`:
 
 ```json
 "properties": {
@@ -192,7 +192,7 @@ ms.locfileid: "70276831"
 
 План потребления не требуется определять. Он будет автоматически создан или выбран для каждого региона при создании самого ресурса приложения-функции.
 
-План потребления — это особый тип ресурса "ферма серверов". Для Windows это можно указать с помощью `Dynamic` значения `computeMode` свойств и `sku` .
+План потребления — это особый тип ресурса "ферма серверов". Для Windows его можно указать с помощью значения `Dynamic` для свойств `computeMode` и `sku`:
 
 ```json
 {  
@@ -217,13 +217,13 @@ ms.locfileid: "70276831"
 > [!NOTE]
 > План потребления нельзя явно определить для Linux. Он будет создан автоматически.
 
-Если вы явно определили план потребления, необходимо задать `serverFarmId` свойство в приложении, чтобы оно указывало на идентификатор ресурса плана. Необходимо также убедиться, что у приложения-функции `dependsOn` есть параметр для плана.
+Если вы явно определили план потребления, необходимо установить свойство `serverFarmId` в приложении, чтобы оно указывало на идентификатор ресурса плана. Необходимо убедиться, что в приложении-функции для плана также задан параметр @no__t – 0.
 
 ### <a name="create-a-function-app"></a>Создание приложения-функции
 
 #### <a name="windows"></a>Windows
 
-В Windows план потребления требует два дополнительных параметра в конфигурации сайта: `WEBSITE_CONTENTAZUREFILECONNECTIONSTRING` и. `WEBSITE_CONTENTSHARE` Эти свойства настраивают учетную запись хранения и путь к файлам кода приложения-функции и конфигурации.
+В Windows план потребления требует два дополнительных параметра в конфигурации сайта: `WEBSITE_CONTENTAZUREFILECONNECTIONSTRING` и `WEBSITE_CONTENTSHARE`. Эти свойства настраивают учетную запись хранения и путь к файлам кода приложения-функции и конфигурации.
 
 ```json
 {
@@ -270,7 +270,7 @@ ms.locfileid: "70276831"
 
 #### <a name="linux"></a>Linux
 
-В Linux `kind` приложение функции должно иметь `functionapp,linux`значение, `reserved` а свойство должно `true`иметь значение:
+В Linux приложение-функция должно иметь значение @no__t 0, равное `functionapp,linux`, и свойство `reserved` должно иметь значение `true`:
 
 ```json
 {
@@ -318,7 +318,7 @@ ms.locfileid: "70276831"
 
 ### <a name="create-a-premium-plan"></a>Создание плана "Премиум"
 
-План "Премиум" — это особый тип ресурса "ферма серверов". Его можно указать с `EP1`помощью, `EP2`или `EP3` для `sku` значения свойства.
+План "Премиум" — это особый тип ресурса "ферма серверов". Его можно указать с помощью `EP1`, `EP2` или `EP3` для значения свойства `sku`.
 
 ```json
 {
@@ -335,7 +335,7 @@ ms.locfileid: "70276831"
 
 ### <a name="create-a-function-app"></a>Создание приложения-функции
 
-Для приложения-функции в плане Premium должно быть `serverFarmId` задано значение идентификатора ресурса созданного ранее плана. Кроме того, для плана Premium требуются два дополнительных параметра в конфигурации сайта: `WEBSITE_CONTENTAZUREFILECONNECTIONSTRING` и. `WEBSITE_CONTENTSHARE` Эти свойства настраивают учетную запись хранения и путь к файлам кода приложения-функции и конфигурации.
+Для приложения-функции в плане "Премиум" необходимо, чтобы свойство @no__t – 0 было задано равным ИДЕНТИФИКАТОРу ресурса, созданному ранее. Кроме того, для плана Premium требуются два дополнительных параметра в конфигурации сайта: `WEBSITE_CONTENTAZUREFILECONNECTIONSTRING` и `WEBSITE_CONTENTSHARE`. Эти свойства настраивают учетную запись хранения и путь к файлам кода приложения-функции и конфигурации.
 
 ```json
 {
@@ -398,41 +398,41 @@ ms.locfileid: "70276831"
 ```json
 {
     "type": "Microsoft.Web/serverfarms",
-    "apiVersion": "2015-04-01",
+    "apiVersion": "2018-02-01",
     "name": "[variables('hostingPlanName')]",
     "location": "[resourceGroup().location]",
-    "properties": {
-        "name": "[variables('hostingPlanName')]",
-        "sku": "[parameters('sku')]",
-        "workerSize": "[parameters('workerSize')]",
-        "hostingEnvironment": "",
-        "numberOfWorkers": 1
+    "sku": {
+        "name": "S1",
+        "tier": "Standard",
+        "size": "S1",
+        "family": "S",
+        "capacity": 1
     }
 }
 ```
 
-Чтобы запустить приложение в Linux, необходимо также задать для `kind` `Linux`параметра значение:
+Чтобы запустить приложение в Linux, необходимо также установить `kind` в `Linux`:
 
 ```json
 {
     "type": "Microsoft.Web/serverfarms",
-    "apiVersion": "2015-04-01",
+    "apiVersion": "2018-02-01",
     "name": "[variables('hostingPlanName')]",
     "location": "[resourceGroup().location]",
     "kind": "Linux",
-    "properties": {
-        "name": "[variables('hostingPlanName')]",
-        "sku": "[parameters('sku')]",
-        "workerSize": "[parameters('workerSize')]",
-        "hostingEnvironment": "",
-        "numberOfWorkers": 1
+    "sku": {
+        "name": "S1",
+        "tier": "Standard",
+        "size": "S1",
+        "family": "S",
+        "capacity": 1
     }
 }
 ```
 
 ### <a name="create-a-function-app"></a>Создание приложения-функции 
 
-Для приложения-функции в плане службы приложений `serverFarmId` свойство должно иметь значение, равное идентификатору ресурса созданного ранее плана.
+Для приложения-функции в плане службы приложений свойство @no__t – 0 должно иметь значение, равное ИДЕНТИФИКАТОРу созданного ранее плана.
 
 ```json
 {
@@ -471,9 +471,9 @@ ms.locfileid: "70276831"
 }
 ```
 
-Приложения Linux также должны содержать `linuxFxVersion` свойство в разделе. `siteConfig` Если вы только разворачиваете код, значение для этого параметра определяется требуемым стеком времени выполнения:
+Приложения Linux также должны содержать свойство `linuxFxVersion` в разделе `siteConfig`. Если вы только разворачиваете код, значение для этого параметра определяется требуемым стеком времени выполнения:
 
-| Стек            | Пример значения                                         |
+| Ячейку            | Пример значения                                         |
 |------------------|-------------------------------------------------------|
 | Python           | `DOCKER|microsoft/azure-functions-python3.6:2.0`      |
 | JavaScript       | `DOCKER|microsoft/azure-functions-node8:2.0`          |
@@ -517,7 +517,7 @@ ms.locfileid: "70276831"
 }
 ```
 
-Если вы [развертываете пользовательский образ контейнера](./functions-create-function-linux-custom-image.md), необходимо указать его с помощью `linuxFxVersion` и включить конфигурацию, позволяющую получать образ, как в [веб-приложение для контейнеров](/azure/app-service/containers). Кроме того, `WEBSITES_ENABLE_APP_SERVICE_STORAGE` задайте `false`для значение, так как содержимое приложения предоставляется в контейнере:
+При [развертывании пользовательского образа контейнера](./functions-create-function-linux-custom-image.md)необходимо указать `linuxFxVersion` и включить конфигурацию, позволяющую получать образ, как в [веб-приложение для контейнеров](/azure/app-service/containers). Кроме того, установите `WEBSITES_ENABLE_APP_SERVICE_STORAGE` в `false`, так как содержимое приложения предоставляется в контейнере:
 
 ```json
 {
@@ -671,7 +671,7 @@ ms.locfileid: "70276831"
 
 ### <a name="deploy-using-powershell"></a>Развертывание с помощью PowerShell
 
-Следующие команды PowerShell создают группу ресурсов и развертывают шаблон, который создает приложение-функцию с необходимыми ресурсами. Для локального запуска необходимо установить [Azure PowerShell](/powershell/azure/install-az-ps) . Выполните [`Connect-AzAccount`](/powershell/module/az.accounts/connect-azaccount) команду, чтобы войти.
+Следующие команды PowerShell создают группу ресурсов и развертывают шаблон, который создает приложение-функцию с необходимыми ресурсами. Для локального запуска необходимо установить [Azure PowerShell](/powershell/azure/install-az-ps) . Запустите [`Connect-AzAccount`](/powershell/module/az.accounts/connect-azaccount) , чтобы войти в систему.
 
 ```powershell
 # Register Resource Providers if they're not already registered

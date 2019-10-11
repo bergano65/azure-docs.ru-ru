@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.service: container-service
 ms.date: 05/06/2019
 ms.author: mlearned
-ms.openlocfilehash: a6acdd6255278123ff13a8597cadd2a386536bd4
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.openlocfilehash: d3651c63b206c37b1f41ecab7f69e24fc94ddffd
+ms.sourcegitcommit: b4665f444dcafccd74415fb6cc3d3b65746a1a31
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "67613781"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72263866"
 ---
 # <a name="create-and-configure-an-azure-kubernetes-services-aks-cluster-to-use-virtual-nodes-using-the-azure-cli"></a>Создание и настройка кластера Службы Azure Kubernetes (AKS) для использования виртуальных узлов с помощью Azure CLI
 
@@ -44,7 +44,7 @@ Microsoft.ContainerInstance  Registered
 az provider register --namespace Microsoft.ContainerInstance
 ```
 
-## <a name="regional-availability"></a>Доступность в регионах
+## <a name="regional-availability"></a>Доступность по регионам
 
 Для развертываний виртуальных узлов поддерживаются следующие регионы:
 
@@ -79,7 +79,7 @@ Azure Cloud Shell — это бесплатная интерактивная о�
 
 Если вы решили установить и использовать CLI локально, для выполнения инструкций из этой статьи вам потребуется Azure CLI 2.0.49 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
 
-## <a name="create-a-resource-group"></a>Создать группу ресурсов
+## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
 Группа ресурсов Azure — это логическая группа, в которой выполняется развертывание и администрирование ресурсов Azure. Создайте группу ресурсов с помощью команды [az group create][az-group-create]. В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *westus*.
 
@@ -87,7 +87,7 @@ Azure Cloud Shell — это бесплатная интерактивная о�
 az group create --name myResourceGroup --location westus
 ```
 
-## <a name="create-a-virtual-network"></a>Создать виртуальную сеть
+## <a name="create-a-virtual-network"></a>Создание виртуальной сети
 
 Создайте виртуальную сеть с помощью команды [az network vnet create][az-network-vnet-create]. В следующем примере создается виртуальная сеть с именем *myVnet* и префиксом адреса *10.0.0.0/8*, а также подсеть с именем *myAKSSubnet*: По умолчанию используется префикс адреса подсети *10.240.0.0/16*:
 
@@ -253,7 +253,7 @@ spec:
 kubectl apply -f virtual-node.yaml
 ```
 
-Используйте команду [kubectl Get][kubectl-get] Pod с `-o wide` аргументом для вывода списка модулей Pod и запланированного узла. Обратите внимание, что pod `aci-helloworld` был назначен на узел `virtual-node-aci-linux`.
+Используйте команду [kubectl Get][kubectl-get] Pod с аргументом `-o wide` для вывода списка модулей Pod и запланированного узла. Обратите внимание, что pod `aci-helloworld` был назначен на узел `virtual-node-aci-linux`.
 
 ```
 $ kubectl get pods -o wide
@@ -364,6 +364,7 @@ az network vnet subnet update --resource-group $RES_GROUP --vnet-name $AKS_VNET 
 [aks-github]: https://github.com/azure/aks/issues
 [virtual-node-autoscale]: https://github.com/Azure-Samples/virtual-node-autoscale
 [virtual-kubelet-repo]: https://github.com/virtual-kubelet/virtual-kubelet
+[acr-aks-secrets]: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
 
 <!-- LINKS - internal -->
 [azure-cli-install]: /cli/azure/install-azure-cli
@@ -384,4 +385,3 @@ az network vnet subnet update --resource-group $RES_GROUP --vnet-name $AKS_VNET 
 [aks-basic-ingress]: ingress-basic.md
 [az-provider-list]: /cli/azure/provider#az-provider-list
 [az-provider-register]: /cli/azure/provider#az-provider-register
-[acr-aks-secrets]: ../container-registry/container-registry-auth-aks.md#access-with-kubernetes-secret

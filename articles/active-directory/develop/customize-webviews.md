@@ -17,16 +17,16 @@ ms.author: twhitney
 ms.reviewer: ''
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c1b7417de8de6fb063de18fe670ef474a3b486d0
-ms.sourcegitcommit: 263a69b70949099457620037c988dc590d7c7854
+ms.openlocfilehash: 0dd5be3944bdff459f6d920b358ae08efedcc431
+ms.sourcegitcommit: b4665f444dcafccd74415fb6cc3d3b65746a1a31
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71269081"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72264204"
 ---
 # <a name="how-to-customize-browsers-and-webviews-for-iosmacos"></a>Практическое руководство. Настройка браузеров и представлений для iOS и macOS
 
-Для интерактивной проверки подлинности требуется веб-браузер. В iOS Библиотека проверки подлинности Майкрософт (MSAL) по умолчанию использует системный веб-браузер (который может отображаться на вашем приложении) для выполнения интерактивной проверки подлинности для входа пользователей. Использование системного браузера дает значительные преимущества совместного использования состояния единого входа (SSO) с другими приложениями и веб-приложениями.
+Для интерактивной проверки подлинности требуется веб-браузер. В iOS Библиотека проверки подлинности Майкрософт (MSAL) по умолчанию использует системный веб-браузер (который может отображаться на вашем приложении) для выполнения интерактивной проверки подлинности для входа пользователей. Использование системного браузера дает преимущества совместного использования состояния единого входа (SSO) с другими приложениями и веб-приложениями.
 
 Вы можете изменить интерфейс, настроив конфигурацию на другие параметры отображения веб-содержимого, например:
 
@@ -40,13 +40,13 @@ ms.locfileid: "71269081"
 
 - [Вквебвиев](https://developer.apple.com/documentation/webkit/wkwebview?language=objc).
 
-MSAL для macOS поддерживает `WKWebView`только.
+MSAL для macOS поддерживает только `WKWebView`.
 
 ## <a name="system-browsers"></a>Браузеры системы
 
-Для iOS, `ASWebAuthenticationSession`, `SFAuthenticationSession`и `SFSafariViewController` считаются системными браузерами. В общем случае системные браузеры совместно используют файлы cookie и другие данные веб-сайта с помощью приложения браузера Safari.
+Для iOS `ASWebAuthenticationSession`, `SFAuthenticationSession` и `SFSafariViewController` считаются системными браузерами. В общем случае системные браузеры совместно используют файлы cookie и другие данные веб-сайта с помощью приложения браузера Safari.
 
-По умолчанию MSAL динамически обнаружит версию iOS и выберет рекомендуемый системный браузер, доступный в этой версии. В iOS 12 + это будет `ASWebAuthenticationSession`. 
+По умолчанию MSAL динамически обнаружит версию iOS и выберет рекомендуемый системный браузер, доступный в этой версии. В iOS 12 + он будет `ASWebAuthenticationSession`. 
 
 | Version | браузер |
 |:-------------:|:-------------:|
@@ -56,8 +56,8 @@ MSAL для macOS поддерживает `WKWebView`только.
 
 Разработчики также могут выбрать другой обозреватель системы для приложений MSAL:
 
-- `SFAuthenticationSession`— версия `ASWebAuthenticationSession`iOS 11.
-- `SFSafariViewController`является более общим предназначением и предоставляет интерфейс для обзора веб-страниц и может также использоваться для входа в систему. В iOS 9 и 10 файлы cookie и другие веб-сайты предоставляются с помощью Safari, но не в iOS 11 и более поздних версиях.
+- `SFAuthenticationSession` — версия iOS 11 `ASWebAuthenticationSession`.
+- `SFSafariViewController` является более общим назначением и предоставляет интерфейс для обзора веб-страниц и может также использоваться для входа в систему. В iOS 9 и 10 файлы cookie и другие веб-сайты предоставляются с помощью Safari, но не в iOS 11 и более поздних версиях.
 
 ## <a name="in-app-browser"></a>Браузер в приложении
 
@@ -69,10 +69,10 @@ MSAL для macOS поддерживает `WKWebView`только.
 
 | Технология    | Тип браузера  | доступность iOS | доступность macOS | Совместное использование файлов cookie и других данных  | Доступность MSAL | Единый вход |
 |:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|-------------:|
-| [асвебаусентикатионсессион](https://developer.apple.com/documentation/authenticationservices/aswebauthenticationsession) | Система | iOS12 и выше | macOS 10,15 и выше | Да | только iOS | экземпляры «w/Safari»
-| [сфаусентикатионсессион](https://developer.apple.com/documentation/safariservices/sfauthenticationsession) | Система | iOS11 и выше | Н/Д | Да | только iOS |  экземпляры «w/Safari»
-| [сфсафаривиевконтроллер](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller) | Система | iOS11 и выше | Н/Д | Нет | только iOS | Нет * *
-| **сфсафаривиевконтроллер** | Система | iOS10 | Н/Д | Да | только iOS |  экземпляры «w/Safari»
+| [асвебаусентикатионсессион](https://developer.apple.com/documentation/authenticationservices/aswebauthenticationsession) | системный; | iOS12 и выше | macOS 10,15 и выше | Да | только iOS | экземпляры «w/Safari»
+| [сфаусентикатионсессион](https://developer.apple.com/documentation/safariservices/sfauthenticationsession) | системный; | iOS11 и выше | Н/Д | Да | только iOS |  экземпляры «w/Safari»
+| [сфсафаривиевконтроллер](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller) | системный; | iOS11 и выше | Н/Д | Нет | только iOS | Нет * *
+| **сфсафаривиевконтроллер** | системный; | iOS10 | Н/Д | Да | только iOS |  экземпляры «w/Safari»
 | **вквебвиев**  | В приложении | iOS8 и выше | macOS 10,10 и выше | Нет | iOS и macOS | Нет * *
 
 \* * Чтобы единый вход работал, маркеры должны совместно использоваться приложениями. Для этого требуется кэш маркеров или приложение брокера, например Microsoft Authenticator для iOS.
@@ -87,9 +87,9 @@ MSAL для macOS поддерживает `WKWebView`только.
 
 ## <a name="change-per-interactive-request"></a>Изменение на интерактивный запрос
 
-Каждый запрос можно настроить на переопределение браузера по умолчанию, изменив `MSALInteractiveTokenParameters.webviewParameters.webviewType` свойство перед передачей его `acquireTokenWithParameters:completionBlock:` в API.
+Каждый запрос может быть настроен на переопределение браузера по умолчанию путем изменения свойства `MSALInteractiveTokenParameters.webviewParameters.webviewType` перед передачей его в API `acquireTokenWithParameters:completionBlock:`.
 
-Кроме того, MSAL поддерживает передачу пользовательских `WKWebView` `MSALInteractiveTokenParameters.webviewParameters.customWebView` параметров, задавая свойство.
+Кроме того, MSAL поддерживает передачу пользовательских `WKWebView`, устанавливая свойство `MSALInteractiveTokenParameters.webviewParameters.customWebView`.
 
 Пример:
 
@@ -104,7 +104,7 @@ MSALInteractiveTokenParameters *interactiveParameters = [[MSALInteractiveTokenPa
     
 [app acquireTokenWithParameters:interactiveParameters completionBlock:completionBlock];
 ```
-Код SWIFT
+Swift
 ```swift
 let myParentController: UIViewController = ...
 let myCustomWebView: WKWebView = ...
@@ -163,4 +163,4 @@ typedef NS_ENUM(NSInteger, MSALWebviewType)
 
 ## <a name="next-steps"></a>Следующие шаги
 
-Дополнительные сведения о [потоках проверки подлинности и сценариях приложений](authentication-flows-app-scenarios.md)
+Дополнительные сведения см. в [Потоки проверки подлинности и сценарии приложений](authentication-flows-app-scenarios.md)

@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 01/30/2019
 ms.reviewer: lmolkova
 ms.author: mbullwin
-ms.openlocfilehash: b6ecf1e9cece51635afc0bf0f8025b6e117438ee
-ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
+ms.openlocfilehash: 53a765cd2e71b5b1eb1ac2c70506fd55aec6736e
+ms.sourcegitcommit: f272ba8ecdbc126d22a596863d49e55bc7b22d37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71169452"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72274130"
 ---
 # <a name="application-insights-for-net-console-applications"></a>Application Insights для консольных приложений .NET
 
@@ -27,10 +27,10 @@ ms.locfileid: "71169452"
 Вам потребуется подписка [Microsoft Azure](https://azure.com). Войдите с помощью учетной записи Майкрософт, которую вы, возможно, уже используете для Windows, XBox Live или других облачных служб Майкрософт. Возможно, у вашей группы есть подписка организации Azure: попросите ее владельца добавить вас к ней с помощью вашей учетной записи Майкрософт.
 
 > [!NOTE]
-> Новый пакет SDK для бета-Application Insights называется [Microsoft. ApplicationInsights. воркерсервице](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WorkerService) , который можно использовать для включения Application Insights для любых консольных приложений. Рекомендуется использовать этот пакет и соответствующие инструкции [отсюда.](../../azure-monitor/app/worker-service.md) Этот пакет предназначен [`NetStandard2.0`](https://docs.microsoft.com/dotnet/standard/net-standard)для использования и поэтому может использоваться в .NET Core 2,0 или более поздней версии, а также .NET Framework 4.7.2 или более поздней версии.
+> Новый пакет SDK для бета-Application Insights называется [Microsoft. ApplicationInsights. воркерсервице](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WorkerService) , который можно использовать для включения Application Insights для любых консольных приложений. Рекомендуется использовать этот пакет и соответствующие инструкции [отсюда.](../../azure-monitor/app/worker-service.md) Этот пакет предназначен для [`NetStandard2.0`](https://docs.microsoft.com/dotnet/standard/net-standard), поэтому его можно использовать в .net Core 2,0 или более поздней версии и .NET Framework 4.7.2 или более поздней версии.
 Этот документ будет признан устаревшим после выпуска стабильной версии этого нового пакета.
 
-## <a name="getting-started"></a>Приступая к работе
+## <a name="getting-started"></a>Начало работы
 
 * На [портале Azure](https://portal.azure.com) [создайте ресурс Application Insights](../../azure-monitor/app/create-new-resource.md). Для параметра типа приложения выберите приложение **Общий**.
 * Сделайте копию ключа инструментирования. Найдите ключ в раскрывающемся списке **Основные компоненты** нового ресурса, который вы создали. 
@@ -130,7 +130,7 @@ module.Initialize(configuration);
 configuration.TelemetryInitializers.Add(new HttpDependenciesParsingTelemetryInitializer());
 ```
 
-Если вы создали конфигурацию с обычным `TelemetryConfiguration()` конструктором, необходимо включить поддержку корреляции дополнительно. **Он не требуется** при чтении конфигурации из файла, используется `TelemetryConfiguration.CreateDefault()` или. `TelemetryConfiguration.Active`
+Если вы создали конфигурацию с обычным конструктором `TelemetryConfiguration()`, необходимо включить поддержку корреляции дополнительно. **Он не нужен** при чтении конфигурации из файла, используемой `TelemetryConfiguration.CreateDefault()` или `TelemetryConfiguration.Active`.
 
 ```csharp
 configuration.TelemetryInitializers.Add(new OperationCorrelationTelemetryInitializer());
@@ -159,7 +159,7 @@ namespace ConsoleApp
             configuration.InstrumentationKey = "removed";
             configuration.TelemetryInitializers.Add(new HttpDependenciesParsingTelemetryInitializer());
 
-            var telemetryClient = new TelemetryClient();
+            var telemetryClient = new TelemetryClient(configuration);
             using (InitializeDependencyTracking(configuration))
             {
                 // run app...

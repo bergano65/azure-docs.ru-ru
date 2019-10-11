@@ -10,13 +10,13 @@ ms.topic: conceptual
 author: MladjoA
 ms.author: mlandzic
 ms.reviewer: sstein
-ms.date: 12/18/2018
-ms.openlocfilehash: cc59d7cb1ce09aad834130818e5af533719e04c1
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.date: 10/10/2019
+ms.openlocfilehash: 4e896fae0d8459629c58dfd0bbdfbb32b90b1cac
+ms.sourcegitcommit: b4665f444dcafccd74415fb6cc3d3b65746a1a31
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68568606"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72264232"
 ---
 # <a name="report-across-scaled-out-cloud-databases-preview"></a>Отчеты по масштабируемым облачным базам данных (предварительная версия)
 
@@ -33,7 +33,7 @@ ms.locfileid: "68568606"
 ## <a name="create-a-shard-map-manager-using-the-sample-app"></a>Создание диспетчера сопоставления сегментов с помощью примера приложения
 Здесь мы создадим диспетчер сопоставления сегментов вместе с несколькими сегментами, а затем выполним вставку данных в сегменты. Если вы уже знакомы с настройкой сегментов с помощью сегментированных данных, описанные ниже действия можно пропустить и перейти к следующему разделу.
 
-1. Постройте и запустите пример приложения **Приступая к работе с инструментами эластичной базы данных** . Следуйте инструкциям до шага 7 в разделе [Загрузка и запуск примера приложения](sql-database-elastic-scale-get-started.md#download-and-run-the-sample-app). В конце шага 7 появится следующее окно командной строки:
+1. Выполните сборку и запустите пример приложения " **Приступая к работе со средствами эластичной базы данных** ", выполнив действия, описанные в разделе [Загрузка и запуск примера приложения](sql-database-elastic-scale-get-started.md#download-and-run-the-sample-app-1). После завершения всех шагов вы увидите следующую командную строку:
 
     ![командная строка][1]
 2. В окне команд введите "1" и нажмите клавишу **ВВОД**. Это позволит создать диспетчер сопоставления сегментов и добавить два сегмента на сервер. Затем введите "3" и нажмите клавишу **ВВОД**. Повторите это действие четыре раза. Это позволит вставить строки демонстрационных данных в свои сегменты.
@@ -62,13 +62,13 @@ ms.locfileid: "68568606"
 1. Откройте SQL Server Management Studio или SQL Server Data Tools в Visual Studio.
 2. Подключитесь к базе данных ElasticDBQuery и выполните следующие команды T-SQL:
 
-        CREATE MASTER KEY ENCRYPTION BY PASSWORD = '<password>';
+        CREATE MASTER KEY ENCRYPTION BY PASSWORD = '<master_key_password>';
 
         CREATE DATABASE SCOPED CREDENTIAL ElasticDBQueryCred
         WITH IDENTITY = '<username>',
         SECRET = '<password>';
 
-    Имя пользователя и пароль должны быть теми же, которые использовались на шаге 6 раздела [Загрузка и запуск примера приложения](sql-database-elastic-scale-get-started.md#download-and-run-the-sample-app) в статье [Приступая к работе с инструментами эластичной базы данных](sql-database-elastic-scale-get-started.md).
+    "Username" и "Password" должны быть такими же, как и сведения об имени входа, используемые в шаге 3 раздела [скачать и запустить пример приложения](sql-database-elastic-scale-get-started.md#download-and-run-the-sample-app) в статье **Приступая к работе со средствами эластичной базы данных** .
 
 ### <a name="external-data-sources"></a>Внешние источники данных
 Для создания внешнего источника данных выполните следующую команду в базе данных ElasticDBQuery.

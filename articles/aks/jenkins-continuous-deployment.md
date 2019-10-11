@@ -7,14 +7,14 @@ author: zr-msft
 ms.author: zarhoads
 ms.topic: article
 ms.date: 01/09/2019
-ms.openlocfilehash: 7a81f26b4dad5f7257e5c3fd012dffaf06d573bb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e46e2c2933ee9afda860b68b10c135ac75a5d247
+ms.sourcegitcommit: b4665f444dcafccd74415fb6cc3d3b65746a1a31
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65073780"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72263926"
 ---
-# <a name="tutorial-deploy-from-github-to-azure-kubernetes-service-aks-with-jenkins-continuous-integration-and-deployment"></a>Руководство по Развертывание из GitHub в Службе Azure Kubernetes (AKS) с использованием непрерывной интеграции и непрерывного развертывания Jenkins
+# <a name="tutorial-deploy-from-github-to-azure-kubernetes-service-aks-with-jenkins-continuous-integration-and-deployment"></a>Учебник. Развертывание из GitHub в Службе Azure Kubernetes (AKS) с использованием непрерывной интеграции и непрерывного развертывания Jenkins
 
 В рамках этого руководства мы развернем пример приложения из GitHub в [Службе Azure Kubernetes (AKS) на платформе Linux](/azure/aks/intro-kubernetes), настроив непрерывную интеграцию (CI) и непрерывное развертывание (CD) в Jenkins. Таким образом, когда вы решите обновить приложение, отправив фиксации в GitHub, Jenkins автоматически запустит новую сборку контейнера, поместит образы контейнеров в Реестр контейнеров Azure (ACR), а затем запустит приложение в AKS. 
 
@@ -27,30 +27,30 @@ ms.locfileid: "65073780"
 > * создание задания сборки Jenkins и веб-перехватчика GitHub для автоматических сборок;
 > * тестирование конвейера CI/CD для обновления приложения в AKS на основе фиксаций кода в GitHub.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством вам потребуется следующее:
 
 - Базовое представление о Kubernetes, Git, непрерывной интеграции и непрерывной поставке, а также об образах контейнеров.
 
-- [Кластер AKS][aks-quickstart] и `kubectl`, настроенные с [учетными данными кластера AKS][aks-credentials].
+- [Кластер AKS][aks-quickstart] и `kubectl` настроены с [учетными данными кластера AKS][aks-credentials]
 
-- [Реестр службы "Реестр контейнеров Azure"][acr-quickstart], имя сервера ACR для входа и кластер AKS, настроенный для [проверки подлинности в реестре ACR][acr-authentication].
+- [Реестр контейнеров Azure (запись контроля доступа)][acr-quickstart], имя сервера для входа в систему записи контроля доступа и кластер AKS, настроенный для [проверки подлинности с помощью реестра записей контроля][acr-authentication] доступа.
 
-- Установленная и настроенная версия Azure CLI 2.0.46 или более поздняя. Чтобы узнать версию, выполните команду  `az --version`. Если вам необходимо выполнить установку или обновление, см. статью  [Установка Azure CLI][install-azure-cli].
+- Установленная и настроенная версия Azure CLI 2.0.46 или более поздняя. Чтобы узнать версию, выполните команду  `az --version`. Если необходимо установить или обновить, см. раздел [install Azure CLI][install-azure-cli].
 
-- [Установленный компонент Docker][docker-install] в системе разработки.
+- [DOCKER, установленный][docker-install] в системе разработки
 
-- Учетная запись GitHub, [личный маркер доступа GitHub][git-access-token] и клиент Git, установленный в системе разработки.
+- Учетная запись GitHub, [личный маркер доступа GitHub][git-access-token]и клиент Git, установленные в системе разработки
 
-- Если вы используете собственный экземпляр Jenkins вместо описанного здесь примера скрипта развертывания Jenkins, для него понадобится [установленная и настроенная служба Docker][docker-install], а также [kubectl][kubectl-install].
+- Если вы предоставляете собственный экземпляр Jenkins, а не этот пример скрипта для развертывания Jenkins, то для экземпляра Jenkins необходимо [установить и настроить DOCKER][docker-install] и [kubectl][kubectl-install].
 
 ## <a name="prepare-your-app"></a>Подготовка приложения
 
 Для работы с этой статьей используется пример приложения для голосования Azure, которое содержит веб-интерфейс, размещенный в одном или нескольких pod, и еще один pod с размещенной службой Redis для хранения временных данных. Прежде чем интегрировать Jenkins и AKS для автоматических развертываний, вручную подготовьте и разверните приложение для голосования Azure в кластере AKS. Приложение, развернутое вручную, представляет собой первую версию приложения. Это позволяет увидеть приложение в действии.
 
 > [!NOTE]
-> Приложения для голосования Azure в примере приложения используется pod Linux, которое планируется запустить на узле Linux. Поток, описанный в этой статье также подходит для Windows Server pod, планируется на узле Windows Server.
+> В примере приложения Azure для голосования используется модуль Linux, запланированный для запуска на узле Linux. Последовательность, описанная в этой статье, также работает для ОС Windows Server, запланированной на узле Windows Server.
 
 Создайте вилку следующего репозитория GitHub для примера приложения: [https://github.com/Azure-Samples/azure-voting-app-redis](https://github.com/Azure-Samples/azure-voting-app-redis). Чтобы создать разветвление репозитория для своей учетной записи GitHub, нажмите кнопку **Fork** (Разветвление) в правом верхнем углу.
 
@@ -72,7 +72,7 @@ cd azure-voting-app-redis
 docker-compose up -d
 ```
 
-Будут извлечены необходимые базовые образы и созданы контейнеры приложения. Затем можете воспользоваться командой [docker images][docker-images], чтобы просмотреть данные о созданном образе. Было создано или скачано три образа. Образ `azure-vote-front` содержит приложение и использует образ `nginx-flask` в качестве основы. Образ `redis` используется для запуска экземпляра Redis:
+Будут извлечены необходимые базовые образы и созданы контейнеры приложения. Затем можно использовать команду [DOCKER Images][docker-images] , чтобы увидеть созданный образ. Было создано или скачано три образа. Образ `azure-vote-front` содержит приложение и использует образ `nginx-flask` в качестве основы. Образ `redis` используется для запуска экземпляра Redis:
 
 ```
 $ docker images
@@ -83,13 +83,13 @@ redis                        latest     a1b99da73d05        7 days ago          
 tiangolo/uwsgi-nginx-flask   flask      788ca94b2313        9 months ago        694MB
 ```
 
-Прежде чем отправить образ контейнера *azure-vote-front* в ACR, получите данные о сервере входа ACR с помощью команды [az acr list][az-acr-list]. В следующем примере возвращается адрес сервера входа ACR для реестра в группе ресурсов с именем *myResourceGroup*:
+Прежде чем можно будет отправить образ контейнера *Azure-голосу-Front* в запись контроля доступа, получите его с помощью команды [AZ login List][az-acr-list] . В следующем примере возвращается адрес сервера входа ACR для реестра в группе ресурсов с именем *myResourceGroup*:
 
 ```azurecli
 az acr list --resource-group myResourceGroup --query "[].{acrLoginServer:loginServer}" --output table
 ```
 
-Используйте команду [docker tag][docker-tag], чтобы добавить для образа теги имени сервера входа ACR и номера версии `v1`. Вместо `<acrLoginServer>` укажите имя сервера, полученное на предыдущем шаге.
+Используйте команду [DOCKER Tag][docker-tag] , чтобы пометить образ именем сервера для входа в систему записи контроля доступа и номером версии `v1`. Вместо `<acrLoginServer>` укажите имя сервера, полученное на предыдущем шаге.
 
 ```console
 docker tag azure-vote-front <acrLoginServer>/azure-vote-front:v1
@@ -111,13 +111,13 @@ containers:
   image: microsoft/azure-vote-front:v1
 ```
 
-Затем используйте команду [kubectl apply][kubectl-apply], чтобы развернуть приложение в кластере AKS:
+Затем используйте команду [kubectl Apply][kubectl-apply] , чтобы развернуть приложение в кластере AKS.
 
 ```console
 kubectl apply -f azure-vote-all-in-one-redis.yaml
 ```
 
-Будет создана служба балансировки нагрузки Kubernetes, которая открывает доступ к приложению через Интернет. Это может занять несколько минут. Чтобы отслеживать, как выполняется развертывание подсистемы балансировки нагрузки, используйте команду [kubectl get service][kubectl-get] с аргументом `--watch`. Как только *ВНЕШНИЙ IP-АДРЕС* изменится с состояния *ожидания* на *IP-адрес*, используйте команду `Control + C`, чтобы остановить процесс отслеживания kubectl.
+Будет создана служба балансировки нагрузки Kubernetes, которая открывает доступ к приложению через Интернет. Это может занять несколько минут. Чтобы отслеживать ход развертывания подсистемы балансировки нагрузки, используйте команду [kubectl Get Service][kubectl-get] с аргументом `--watch`. Как только *ВНЕШНИЙ IP-АДРЕС* изменится с состояния *ожидания* на *IP-адрес*, используйте команду `Control + C`, чтобы остановить процесс отслеживания kubectl.
 
 ```console
 $ kubectl get service azure-vote-front --watch
@@ -179,7 +179,7 @@ Enter the following to Unlock Jenkins:
 
 ### <a name="create-a-service-principal-for-jenkins-to-use-acr"></a>Создание субъекта-службы для использования ACR в Jenkins
 
-Сначала создайте субъект-службу с помощью команды [az ad sp create-for-rbac][az-ad-sp-create-for-rbac]:
+Сначала создайте субъект-службу с помощью команды [AZ AD SP Create для for-RBAC][az-ad-sp-create-for-rbac] :
 
 ```azurecli
 $ az ad sp create-for-rbac --skip-assignment
@@ -195,7 +195,7 @@ $ az ad sp create-for-rbac --skip-assignment
 
 Запишите значения параметров *appId* и *password*, показанные в выходных данных. Эти значения используются в следующих шагах для настройки ресурса учетных данных в Jenkins.
 
-Получите идентификатор ресурса для реестра ACR с помощью команды [az acr show][az-acr-show] и сохраните его как переменную. Укажите имя группы ресурсов и имя ACR.
+Получите идентификатор ресурса реестра записей контроля доступа с помощью команды [AZ запись контроля][az-acr-show] доступа и сохраните его как переменную. Укажите имя группы ресурсов и имя ACR.
 
 ```azurecli
 ACR_ID=$(az acr show --resource-group myResourceGroup --name <acrLoginServer> --query "id" --output tsv)
@@ -230,8 +230,8 @@ az role assignment create --assignee 626dd8ea-042d-4043-a8df-4ef56273670f --role
 На домашней странице портала Jenkins выберите **New item** (Создать элемент) с левой стороны:
 
 1. Введите *azure-vote* в качестве имени задания. Выберите **Freestyle project** (Универсальный проект) и нажмите кнопку **ОК**.
-1. В разделе **Общие** выберите **проекта GitHub** и введите URL-адрес разветвления репозитория, например *https:\//github.com/\<-github-учетной записи\>/azure-voting-app-redis*
-1. В разделе **Source code management** выберите **Git**, введите разветвление репозитория *.git* URL-адрес, например *https:\//github.com/\<-github-учетной записи\>/azure-voting-app-redis.git*
+1. В разделе **Общие** выберите **проект GitHub** и введите URL-адрес разветвленного репозитория, например *https: \//GitHub. com/\<your-GitHub-Account @ no__t-5/Azure-голосование-App-Redis*
+1. В разделе **Управление исходным кодом** выберите **Git**и введите URL-адрес *Git* с разветвлением, например *https: \//GitHub. com/\<your-GitHub-Account @ no__t-6/Азуре-вотинг-АПП-редис. git*
 
 1. В разделе **Build Triggers** (Создание триггеров) выберите **GitHub hook trigger for GITScm polling** (Обработчик триггера GitHub для опроса GITScm).
 1. В разделе **Build Environment** (Среда сборки) выберите **Use secret texts or files** (Использовать секретные тексты или файлы).
@@ -311,9 +311,9 @@ SHOWHOST = 'false'
 
 ![Пример приложения для голосования Azure в AKS, обновленный с помощью задания сборки Jenkins](media/aks-jenkins/azure-vote-updated.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Из этой статьи вы узнали, как использовать Jenkins в рамках решения CI/CD. AKS можно интегрировать с другими решениями для CI/CD и средствами автоматизации, такими как [проект Azure DevOps][azure-devops] или [создание кластера AKS с помощью Ansible][aks-ansible].
+Из этой статьи вы узнали, как использовать Jenkins в рамках решения CI/CD. AKS можно интегрировать с другими решениями CI/CD и средствами автоматизации, такими как [проект DevOps Azure][azure-devops] или [созданием кластера AKS с Ansible][aks-ansible].
 
 <!-- LINKS - external -->
 [docker-images]: https://docs.docker.com/engine/reference/commandline/images/
@@ -326,7 +326,7 @@ SHOWHOST = 'false'
 
 <!-- LINKS - internal -->
 [az-acr-list]: /cli/azure/acr#az-acr-list
-[acr-authentication]: ../container-registry/container-registry-auth-aks.md#grant-aks-access-to-acr
+[acr-authentication]: cluster-container-registry-integration.md
 [acr-quickstart]: ../container-registry/container-registry-get-started-azure-cli.md
 [aks-credentials]: /cli/azure/aks#az-aks-get-credentials
 [aks-quickstart]: kubernetes-walkthrough.md
