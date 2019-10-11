@@ -1,18 +1,18 @@
 ---
-title: Примеры. Схемы UK OFFICIAL и UK NHS. Общие сведения
-description: Общие сведения о примерах схем UK OFFICIAL и UK NHS и их архитектура.
+title: Примеры — схемы UK OFFICIAL и UK NHS — общие сведения
+description: Общие сведения о примерах схем UK OFFICIAL и UK NHS и их архитектура. Этот пример схемы помогает клиентам оценить определенные средства управления.
 services: blueprints
 author: DCtheGeek
 ms.author: dacoulte
 ms.date: 06/26/2019
 ms.topic: conceptual
 ms.service: blueprints
-ms.openlocfilehash: 96e0a8e6d1a028cece6b8cc36a079062a02320eb
-ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
+ms.openlocfilehash: 2478dce573fac52d948e6e180d9716beda34b44b
+ms.sourcegitcommit: 961468fa0cfe650dc1bec87e032e648486f67651
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71980743"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72248767"
 ---
 # <a name="overview-of-the-uk-official-and-uk-nhs-blueprint-samples"></a>Общие сведения о примерах схем UK OFFICIAL и UK NHS
 

@@ -234,6 +234,10 @@
       items:
         - name: Безопасность и политика
           href: security-policy.md
+        - name: Шифрование дисков Azure
+          href: disk-encryption-overview.md
+        - name: Встроенные средства управления безопасностью
+          href: virtual-machines-windows-security-controls.md
     - name: Состояния и жизненный цикл
       href: states-lifecycle.md
     - name: Мониторинг
@@ -242,9 +246,7 @@
       href: backup-recovery.md
     - name: Пример инфраструктуры
       href: infrastructure-example.md
-    - name: Встроенные средства управления безопасностью
-      href: virtual-machines-windows-security-controls.md
-- name: Руководства
+- name: Инструкции
   items:
     - name: Создание виртуальных машин
       items:
@@ -286,8 +288,31 @@
         - name: JIT-доступ
           href: ../../security-center/security-center-just-in-time.md
         - name: Шифрование
-          href: encrypt-disks.md
-          displayName: encryption
+          items:
+            - name: Сценарии шифрования дисков для Windows
+              href: disk-encryption-windows.md
+            - name: Шифрование виртуальных машин с помощью Azure CLI
+              href: disk-encryption-cli-quickstart.md
+            - name: Шифрование виртуальных машин с помощью Azure PowerShell
+              href: disk-encryption-powershell-quickstart.md
+            - name: Шифрование виртуальных машин с помощью портала Azure
+              href: disk-encryption-portal-quickstart.md
+            - name: Хранилище ключей для шифрования дисков Azure
+              href: disk-encryption-key-vault.md
+            - name: Примеры скриптов шифрования дисков
+              href: disk-encryption-sample-scripts.md
+            - name: Устранение неполадок с шифрованием дисков
+              href: disk-encryption-troubleshooting.md
+            - name: Часто задаваемые вопросы о шифровании дисков
+              href: disk-encryption-faq.md
+            - name: "Шифрование диска\_— предыдущая версия (AAD)"
+              items:
+                - name: Обзор
+                  href: disk-encryption-overview-aad.md
+                - name: Хранилище ключей для шифрования дисков Azure
+                  href: disk-encryption-key-vault-aad.md
+                - name: Сценарии шифрования дисков для Windows
+                  href: disk-encryption-windows-aad.md
         - name: Использование WinRM
           href: winrm.md
         - name: Использование элементов управления доступом

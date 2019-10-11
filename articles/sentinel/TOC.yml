@@ -46,6 +46,8 @@
               href: connect-azure-ad-identity-protection.md
             - name: Подключение Azure Information Protection
               href: connect-azure-information-protection.md
+            - name: Подключение ATP в Microsoft Defender
+              href: connect-microsoft-defender-advanced-threat-protection.md
             - name: Подключение Azure ATP
               href: connect-azure-atp.md
             - name: Подключение Центра безопасности Azure

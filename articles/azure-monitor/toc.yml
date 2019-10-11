@@ -119,6 +119,10 @@
           href: app/troubleshoot-faq.md
 - name: Руководства
   items:
+    - name: Сценарии мониторинга
+      items:
+        - name: Мониторинг службы Azure
+          href: insights/monitor-azure-resource.md
     - name: Управление Azure Monitor
       items:
         - name: Проектирование развертывания рабочей области

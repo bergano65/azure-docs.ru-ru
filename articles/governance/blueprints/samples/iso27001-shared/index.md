@@ -1,17 +1,17 @@
 ---
 title: 'Обзор примера схемы "ISO 27001: общие службы"'
-description: 'Обзор и описание архитектуры примера схемы "ISO 27001: общие службы".'
+description: 'Обзор и описание архитектуры примера схемы "ISO 27001: общие службы". Этот пример схемы помогает клиентам оценить определенные средства управления ISO 27001.'
 author: DCtheGeek
 ms.author: dacoulte
 ms.date: 03/14/2019
 ms.topic: sample
 ms.service: blueprints
-ms.openlocfilehash: 25e16056b83d1a36be66cffacfc0ffe0e7e32c85
-ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
+ms.openlocfilehash: d344ccab2587494f14c4f518294032016fa3cb21
+ms.sourcegitcommit: 961468fa0cfe650dc1bec87e032e648486f67651
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71981560"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72248910"
 ---
 # <a name="overview-of-the-iso-27001-shared-services-blueprint-sample"></a>Обзор примера схемы "ISO 27001: общие службы"
 

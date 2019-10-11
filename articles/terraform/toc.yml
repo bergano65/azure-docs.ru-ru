@@ -25,7 +25,7 @@
       items:
         - name: Создание кластера Kubernetes с помощью AKS
           href: terraform-create-k8s-cluster-with-tf-and-aks.md
-        - name: Создание кластера Kubernetes с помощью AKS со Шлюзом приложений в качестве контроллера входящего трафика
+        - name: Создание контроллера входящего трафика Шлюза приложений в AKS
           href: terraform-create-k8s-cluster-with-aks-applicationgateway-ingress.md
     - name: Инфраструктура
       items:

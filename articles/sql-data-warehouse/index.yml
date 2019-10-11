@@ -1,0 +1,97 @@
+### YamlMime:Landing
+title: Хранилище данных SQL Azure
+summary: Узнайте, как использовать Хранилище данных SQL Azure, которое объединяет в себе технологии реляционных баз данных SQL и массовой параллельной обработки (MPP). В руководствах и другой документации показано, как проектировать, загружать, администрировать и анализировать данные с использованием хранилища данных.
+metadata:
+  title: Хранилище данных SQL Azure
+  description: description
+  services: sql-data-warehouse
+  ms.service: sql-data-warehouse
+  ms.subservice: design
+  ms.topic: landing-page
+  ms.collection: collection
+  author: julieMSFT
+  ms.author: jrasnick
+  ms.date: 10/03/2019
+  ms.openlocfilehash: ffb90d5d15b83570511c3f70b39f9f83f000ab35
+  ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 10/10/2019
+  ms.locfileid: "72245853"
+landingContent:
+- title: Сведения о хранилище данных SQL Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Общие сведения о Хранилище данных SQL
+      url: sql-data-warehouse-overview-what-is.md
+  - linkListType: architecture
+    links:
+    - text: Хранилище данных SQL. Архитектура MPP
+      url: massively-parallel-processing-mpp-architecture.md
+    - text: Советы и рекомендации по использованию хранилища данных
+      url: cheat-sheet.md
+- title: Начало работы
+  linkLists:
+  - linkListType: deploy
+    links:
+    - text: Создание хранилища данных SQL
+      url: create-data-warehouse-portal.md
+- title: Загрузка данных
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Разработка стратегии загрузки данных PolyBase
+      url: design-elt-data-loading.md
+    - text: Рекомендации по загрузке данных
+      url: guidance-for-loading-data.md
+  - linkListType: how-to-guide
+    links:
+    - text: Загрузка данных из Azure Data Lake Storage
+      url: sql-data-warehouse-load-from-azure-data-lake-store.md
+  - linkListType: tutorial
+    links:
+    - text: Загрузка данных из хранилища BLOB-объектов Azure
+      url: load-data-from-azure-blob-storage-using-polybase.md
+- title: Настройка производительности
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Рекомендации по использованию Хранилища данных SQL
+      url: sql-data-warehouse-best-practices.md
+    - text: Настройка упорядоченного кластеризованного индекса columnstore
+      url: performance-tuning-ordered-cci.md
+    - text: Использование материализованных представлений для настройки рабочей нагрузки
+      url: performance-tuning-materialized-views.md
+  - linkListType: how-to-guide
+    links:
+    - text: Анализ рабочей нагрузки
+      url: analyze-your-workload.md
+- title: Мониторинг Хранилища данных SQL и управление им
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Сведения об мониторинге хранилища данных SQL и управлении им
+      url: sql-data-warehouse-overview-manageability-monitoring.md
+  - linkListType: how-to-guide
+    links:
+    - text: Мониторинг рабочей нагрузки с помощью динамических административных представлений
+      url: sql-data-warehouse-manage-monitor.md
+    - text: Администрирование и мониторинг уровня важности рабочей нагрузки
+      url: sql-data-warehouse-how-to-manage-and-monitor-workload-importance.md
+- title: Защита хранилища данных SQL
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Общие сведения о защите Хранилища данных SQL
+      url: sql-data-warehouse-overview-manage-security.md
+  - linkListType: how-to-guide
+    links:
+    - text: Настройка аутентификации Azure Active Directory
+      url: /azure/sql-database/sql-database-aad-authentication-configure?toc=/azure/sql-data-warehouse/toc.json&bc=/azure/sql-data-warehouse/breadcrumb/toc.json
+- title: Ресурсы
+  linkLists:
+  - linkListType: video
+    links:
+    - text: Просмотрите последние видеоматериалы по Хранилищу данных SQL Azure
+      url: sql-data-warehouse-videos.md

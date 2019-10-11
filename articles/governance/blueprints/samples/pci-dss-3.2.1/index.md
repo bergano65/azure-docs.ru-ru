@@ -1,18 +1,18 @@
 ---
-title: Примеры. Схема PCI-DSS версии 3.2.1. Общие сведения
-description: Общие сведения о примере схемы Payment Card Industry Data Security Standard версии 3.2.1.
+title: Примеры — схема PCI-DSS версии 3.2.1 — общие сведения
+description: Общие сведения о примере схемы Payment Card Industry Data Security Standard версии 3.2.1. Этот пример схемы помогает клиентам оценить определенные средства управления.
 services: blueprints
 author: DCtheGeek
 ms.author: dacoulte
 ms.date: 06/24/2019
 ms.topic: conceptual
 ms.service: blueprints
-ms.openlocfilehash: bd89ee1f449f4598eaf2fcea567709162644a512
-ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
+ms.openlocfilehash: c05f3457b4195c9054a1ce99f2567097a034ebd3
+ms.sourcegitcommit: 961468fa0cfe650dc1bec87e032e648486f67651
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71981475"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72248253"
 ---
 # <a name="overview-of-the-pci-dss-v321-blueprint-sample"></a>Общие сведения о примере схемы PCI-DSS версии 3.2.1
 
