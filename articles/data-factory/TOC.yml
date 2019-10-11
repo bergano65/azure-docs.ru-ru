@@ -432,6 +432,8 @@
           href: control-flow-get-metadata-activity.md
         - name: Действие условия If
           href: control-flow-if-condition-activity.md
+        - name: Действие переключения
+          href: control-flow-switch-activity.md
         - name: Действие поиска
           href: control-flow-lookup-activity.md
         - name: Действие задания переменной
@@ -598,6 +600,8 @@
           href: ssis-integration-runtime-management-troubleshoot.md
         - name: "Устранение неполадок с выполнением пакетов в Azure-SSIS\_IR"
           href: ssis-integration-runtime-ssis-activity-faq.md
+        - name: Устранение неполадок с Потоком данных
+          href: data-flow-troubleshoot-guide.md
 - name: Сценарии
   items:
     - name: Перенос данных для озера данных и EDW
