@@ -6,14 +6,14 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.devlang: dotnet
 ms.topic: reference
-ms.date: 10/08/2019
+ms.date: 10/11/2019
 ms.author: ramkris
-ms.openlocfilehash: 90537a7e24e5f87087fb718322a7271043d1d229
-ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
+ms.openlocfilehash: 7d30b685d0debb0aeb0f79db8b078dcc165a8ca1
+ms.sourcegitcommit: e0a1a9e4a5c92d57deb168580e8aa1306bd94723
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72176830"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72286672"
 ---
 # <a name="net-bulk-executor-library-download-information"></a>Библиотека NET выполнителя .NET: информация о скачивании 
 
@@ -42,6 +42,10 @@ ms.locfileid: "72176830"
 
 ## <a name="release-notes"></a>Заметки о выпуске
 
+### <a name="a-name241-preview241-preview"></a><a name="2.4.1-preview"/>2.4.1-Preview
+
+* Исправлена Тоталелапседтиме в ответе Булкделете для правильного измерения общего времени, включая повторные попытки.
+
 ### <a name="a-name240-preview240-preview"></a><a name="2.4.0-preview"/>2.4.0-Preview
 
 * Изменена зависимость SDK на > = 2.5.1
@@ -65,6 +69,10 @@ ms.locfileid: "72176830"
 ### <a name="a-name200-preview200-preview"></a><a name="2.0.0-preview"/>2.0.0-preview
 
 * Добавлена .NET Standard 2,0 в качестве одной из поддерживаемых целевых платформ, чтобы библиотека NET выполнителя работала с приложениями .NET Core.
+
+### <a name="a-name183183"></a>@no__t 01.8.3
+
+* Исправлена Тоталелапседтиме в ответе Булкделете для правильного измерения общего времени, включая повторные попытки.
 
 ### <a name="a-name182182"></a><a name="1.8.2"/>1.8.2
 

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 09/16/2019
 ms.author: tilee
-ms.openlocfilehash: 3060659c5f870be60f1ac02e432dd0a8333f0900
-ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
+ms.openlocfilehash: 7f045a95bcc9d5a61b26036e14e050a597347d1a
+ms.sourcegitcommit: e0a1a9e4a5c92d57deb168580e8aa1306bd94723
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71057835"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72286444"
 ---
 # <a name="status-monitor-v2"></a>Монитор состояния версии 2
 
@@ -33,7 +33,7 @@ ms.locfileid: "71057835"
 ![Коллекция PowerShell](https://img.shields.io/powershellgallery/v/Az.ApplicationMonitor.svg?color=Blue&label=Current%20Version&logo=PowerShell&style=for-the-badge)
 
 
-## <a name="instructions"></a>Инструкции
+## <a name="instructions"></a>Указания
 - Ознакомьтесь с [инструкциями по началу работы](status-monitor-v2-get-started.md) , чтобы получить краткие примеры кода.
 - [Подробные инструкции](status-monitor-v2-detailed-instructions.md) по началу работы см. здесь.
 
@@ -56,17 +56,13 @@ ms.locfileid: "71057835"
 
 - Поддерживает ли монитор состояния v2 установку прокси-серверов?
 
-  *Да*. Существует несколько способов загрузки монитор состояния v2. Если компьютер имеет доступ к Интернету, можно подключить коллекция PowerShell с помощью `-Proxy` параметров.
+  *Да*. Существует несколько способов загрузки монитор состояния v2. Если компьютер имеет доступ к Интернету, можно подключить коллекция PowerShell с помощью параметров `-Proxy`.
 Можно также вручную скачать модуль и либо установить его на компьютер, либо использовать его напрямую.
-Каждый из этих вариантов описан в подробных [инструкциях](status-monitor-v2-detailed-instructions.md).
+Каждый из этих вариантов описан в [подробных инструкциях](status-monitor-v2-detailed-instructions.md).
 
 - Поддерживает ли монитор состояния v2 ASP.NET Core приложений?
 
   *Нет*. Инструкции по включению мониторинга ASP.NET Core приложений см. в разделе [Application Insights for ASP.NET Core Applications](https://docs.microsoft.com/azure/azure-monitor/app/asp-net-core). Нет необходимости устанавливать Статусмонитор для приложения ASP.NET Core. Это справедливо, даже если приложение ASP.NET Core размещено в службах IIS.
-  
-Поддерживает ли монитор состояния v2 ASP.NET Core приложений? 
-
-  *Нет*. Выполните [эти](https://docs.microsoft.com/azure/azure-monitor/app/asp-net-core) инструкции, чтобы включить мониторинг для ASP.NET Core приложений. Нет необходимости устанавливать Статусмонитор для приложения ASP.NET Core. Это справедливо, даже если приложение ASP.NET Core размещено в службах IIS.
 
 - Разделы справки убедиться в успешности включения?
 

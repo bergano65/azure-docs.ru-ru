@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 08/09/2019
 ms.custom: seodec18
-ms.openlocfilehash: 8fbb09ecf09008c25c84a11c7b43dfb26450e30a
-ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
+ms.openlocfilehash: ee7bbff8ab501a1159030a8ee9c57f1c5a64ea22
+ms.sourcegitcommit: e0a1a9e4a5c92d57deb168580e8aa1306bd94723
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71338749"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72286551"
 ---
 # <a name="known-issues-and-troubleshooting-azure-machine-learning"></a>Известные проблемы и устранение неполадок Машинное обучение Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "71338749"
  
 Перед исправлением можно подключить набор данных к любому модулю преобразования данных (выберите столбцы в наборе данных, изменить метаданные, разделить данные и т. д.) и запустить эксперимент. Затем можно визуализировать набор данных. 
 
-На рисунке ниже показано, ![как: висулизе-Data](./media/resource-known-issues/aml-visualize-data.png)
+На рисунке ниже показано, как: ![visulize-Data @ no__t-1
 
 ## <a name="sdk-installation-issues"></a>Проблемы с установкой пакета SDK
 
@@ -73,7 +73,7 @@ conda create -n <env-name> python=3.7.3
 
 Вы не сможете развернуть модели на FPGA до тех пор, пока не будет запрошена и одобрена квота FPGA. Чтобы запросить доступ, заполните форму запроса квоты: https://aka.ms/aml-real-time-ai
 
-## <a name="automated-machine-learning"></a>Автоматизированное машинное обучение
+## <a name="automated-machine-learning"></a>Автоматическое машинное обучение
 
 Автоматическое машинное обучение тензорные Flow в настоящее время не поддерживает тензорные Flow версии 1,13. Установка этой версии приведет к прекращению работы зависимостей пакетов. Мы работаем над устранением этой проблемы в будущем выпуске. 
 
@@ -101,7 +101,7 @@ psutil cryptography==1.5 pyopenssl==16.0.0 ipython==2.2.0
 
 ### <a name="10-iterations-for-automated-machine-learning"></a>> 10 итераций для автоматического машинного обучения
 
-В параметрах автоматического машинного обучения при наличии более 10 итераций задайте для `show_output` `False` параметра значение при отправке выполнения.
+Если в параметрах автоматического машинного обучения имеется более 10 итераций, установите `show_output` в `False` при отправке выполнения.
 
 ### <a name="widget-for-the-azure-machine-learning-sdkautomated-machine-learning"></a>Мини-приложение для Машинное обучение Azure пакета SDK или автоматического машинного обучения
 
@@ -128,13 +128,13 @@ displayHTML("<a href={} target='_blank'>Azure Portal: {}</a>".format(local_run.g
 
 ### <a name="failtosendfeather"></a>фаилтосендфеасер
 
-Если при чтении данных в кластере Azure Databricks возникаетошибка,см.следующиерешения.`FailToSendFeather`
+Если при чтении данных в кластере Azure Databricks отображается ошибка `FailToSendFeather`, см. следующие решения.
 
-* Обновите `azureml-sdk[automl_databricks]` пакет до последней версии.
-* Добавьте `azure-dataprep` версию 1.1.8 или более позднюю.
-* Добавьте `pyarrow` версию 0,11 или более позднюю.
+* Обновите пакет `azureml-sdk[automl_databricks]` до последней версии.
+* Добавьте `azure-dataprep` версии 1.1.8 или более поздней.
+* Добавьте `pyarrow` версии 0,11 или более поздней.
 
-## <a name="azure-portal"></a>портала Azure
+## <a name="azure-portal"></a>Портал Azure
 
 При переходе непосредственно к просмотру рабочей области с помощью ссылки для общего доступа из пакета SDK или на портале невозможно будет отобразить обычную страницу обзора со сведениями о подписке в расширении. Кроме того, вы не сможете переключиться на другую рабочую область. Если вам нужно просмотреть другую рабочую область, можно перейти непосредственно на [портал Azure](https://portal.azure.com) и выполнить поиск рабочей области по имени.
 
@@ -177,7 +177,7 @@ displayHTML("<a href={} target='_blank'>Azure Portal: {}</a>".format(local_run.g
 
 ## <a name="webservices-in-azure-kubernetes-service-failures"></a>Ошибки WebService в службе Kubernetes Azure 
 
-Многие сбои WebService в службе Kubernetes Azure можно отлаживать, подключившись к кластеру с помощью `kubectl`. Чтобы получить `kubeconfig.json` для кластера службы Azure Kubernetes, запустите
+Многие сбои WebService в службе Kubernetes Azure можно отладить, подключившись к кластеру с помощью `kubectl`. Вы можете получить `kubeconfig.json` для кластера службы Azure Kubernetes, выполнив
 
 ```bash
 az aks get-credentials -g <rg> -n <aks cluster name>
@@ -185,7 +185,12 @@ az aks get-credentials -g <rg> -n <aks cluster name>
 
 ## <a name="updating-azure-machine-learning-components-in-aks-cluster"></a>Обновление компонентов Машинное обучение Azure в кластере AKS
 
-Обновления компонентов Машинное обучение Azure, установленных в кластере службы Azure Kubernetes, необходимо применять вручную. Эти обновления можно применить, отключив кластер из рабочей области Машинное обучение Azure, а затем повторно присоединив кластер к рабочей области. Если в кластере включен протокол SSL, необходимо предоставить SSL-сертификат и закрытый ключ при повторном подключении кластера. 
+Обновления компонентов Машинное обучение Azure, установленных в кластере службы Azure Kubernetes, необходимо применять вручную. 
+
+> [!WARNING]
+> Перед выполнением следующих действий проверьте версию кластера службы Azure Kubernetes. Если версия кластера больше или равна 1,14, вы не сможете повторно подключить кластер к рабочей области Машинное обучение Azure.
+
+Эти обновления можно применить, отключив кластер из рабочей области Машинное обучение Azure, а затем повторно присоединив кластер к рабочей области. Если в кластере включен протокол SSL, необходимо предоставить SSL-сертификат и закрытый ключ при повторном подключении кластера. 
 
 ```python
 compute_target = ComputeTarget(workspace=ws, name=clusterWorkspaceName)
@@ -206,14 +211,14 @@ compute_target = ComputeTarget.attach(workspace=ws, name=args.clusterWorkspaceNa
 compute_target.wait_for_completion(show_output=True)
 ```
 
-Если у вас больше нет сертификата SSL и закрытого ключа или вы используете сертификат, созданный машинное обучение Azure, вы можете получить файлы перед отсоединением кластера, подключившись к кластеру с помощью `kubectl` и извлекая секретный код. `azuremlfessl`.
+Если у вас больше нет сертификата SSL и закрытого ключа или вы используете сертификат, созданный Машинное обучение Azure, вы можете получить файлы до отключения кластера, подключившись к кластеру, используя `kubectl` и получая секрет `azuremlfessl`.
 
 ```bash
 kubectl get secret/azuremlfessl -o yaml
 ```
 
 >[!Note]
->Kubernetes сохраняет секреты в формате в кодировке Base-64. Необходимо сначала декодировать `cert.pem` компоненты и `key.pem` для этих секретов в Base-64, прежде чем предоставлять их `attach_config.enable_ssl`в. 
+>Kubernetes сохраняет секреты в формате в кодировке Base-64. Необходимо сначала декодировать компоненты `cert.pem` и `key.pem` для секретов, прежде чем предоставлять их `attach_config.enable_ssl`.64 
 
 ## <a name="recommendations-for-error-fix"></a>Рекомендации по исправлению ошибок
 Ниже приведены рекомендации Azure ML по устранению некоторых распространенных ошибок в МАШИНном обучении Azure.

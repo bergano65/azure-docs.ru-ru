@@ -1,18 +1,19 @@
 ---
 title: Расширенная защита от угроз для Azure Cosmos DB
 description: Узнайте, как Azure Cosmos DB обеспечивает шифрование неактивных данных и их реализацию.
-author: rkarlin
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 08/21/2019
-ms.author: sngun
 ms.custom: seodec18
-ms.openlocfilehash: 2b12d639e734502113b6afdd7250fca6a520c687
-ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
+ms.author: memildin
+author: memildin
+manager: rkarlin
+ms.openlocfilehash: dca653bfaf625ff31e4dd7f43752219b312779d1
+ms.sourcegitcommit: e0a1a9e4a5c92d57deb168580e8aa1306bd94723
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72176021"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72286760"
 ---
 # <a name="advanced-threat-protection-for-azure-cosmos-db"></a>Расширенная защита от угроз для Azure Cosmos DB
 

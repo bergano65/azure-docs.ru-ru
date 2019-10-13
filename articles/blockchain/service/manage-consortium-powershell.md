@@ -5,23 +5,23 @@ services: azure-blockchain
 keywords: ''
 author: PatAltimore
 ms.author: patricka
-ms.date: 05/10/2019
+ms.date: 10/10/2019
 ms.topic: article
 ms.service: azure-blockchain
 ms.reviewer: zeyadr
 manager: femila
-ms.openlocfilehash: 9f76597a91c0e22f57d1ba66ff1a16eea9002af0
-ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
+ms.openlocfilehash: 3e149a4a8e5ce7c82f0c9bf951bf9625763b30af
+ms.sourcegitcommit: e0a1a9e4a5c92d57deb168580e8aa1306bd94723
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68250090"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72285994"
 ---
 # <a name="manage-consortium-members-in-azure-blockchain-service-by-using-powershell"></a>Управление членами консорциума в службе Блокчейн Azure с помощью PowerShell
 
 Вы можете использовать PowerShell для управления членами блокчейн Consortium в службе Блокчейн Azure. Участники, имеющие права администратора, могут приглашать, добавлять, удалять и изменять роли для всех участников в консорциуме блокчейн. Участники, имеющие привилегии пользователя, могут просматривать всех участников в консорциуме блокчейн и изменять отображаемое имя участника.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Создайте элемент блокчейн с помощью [портал Azure](create-member.md).
 * Дополнительные сведения о консортиа, членах и узлах см. в статье [консорциум по службам Azure блокчейн](consortium.md).
@@ -61,7 +61,7 @@ $MemberAccount = Import-Web3Account -ManagedAccountAddress '<Member account addr
 $ContractConnection = Import-ConsortiumManagementContracts -RootContractAddress '<RootContract address>' -Web3Client $Connection
 ```
 
-*Замените\<пароль\> учетной записи члена* паролем учетной записи участника, который использовался при создании члена.
+Замените *пароль учетной записи \<Member @ no__t-2* на пароль учетной записи участника, который использовался при создании члена.
 
 Найдите другие значения в портал Azure:
 
@@ -70,14 +70,14 @@ $ContractConnection = Import-ConsortiumManagementContracts -RootContractAddress 
 
     ![Обзор членов](./media/manage-consortium-powershell/member-overview.png)
 
-    *Замените\<учетную\> запись участника* и *\<рутконтракт address\>* значениями с портала.
+    Замените *\<Member Account @ no__t-2* и *\<RootContract Address @ no__t-5* значениями с портала.
 
 1. В поле адрес конечной точки выберите **узлы транзакции**, а затем выберите **узел транзакция по умолчанию**. Имя узла по умолчанию совпадает с именем члена блокчейн.
 1. Выберите элемент **Строки подключения**.
 
     ![Строки подключения](./media/manage-consortium-powershell/connection-strings.png)
 
-    *Замените\<адрес\> конечной точки* значением из **HTTPS (ключ доступа 1)** или **HTTPS (ключ доступа 2)** .
+    Замените *\<Endpoint Address @ no__t-2* значением из **HTTPS (ключ доступа 1)** или **HTTPS (ключ доступа 2)** .
 
 ## <a name="manage-the-network-and-smart-contracts"></a>Управление сетью и интеллектуальными контрактами
 
@@ -89,7 +89,7 @@ $ContractConnection = Import-ConsortiumManagementContracts -RootContractAddress 
 
 `Import-ConsortiumManagementContracts -RootContractAddress <String> -Web3Client <IClient>`
 
-| Параметр | Описание | Обязательное значение |
+| Параметр | Описание | Обязательно для заполнения |
 |-----------|-------------|:--------:|
 | рутконтрактаддресс | Адрес корневого контракта для смарт-контрактов управления консорциумом | Да |
 | Web3Client | Объект Web3Client, полученный из New-Web3Connection | Да |
@@ -106,7 +106,7 @@ Import-ConsortiumManagementContracts -RootContractAddress '<RootContract address
 
 `Import-Web3Account -ManagedAccountAddress <String> -ManagedAccountPassword <String>`
 
-| Параметр | Описание | Обязательное значение |
+| Параметр | Описание | Обязательно для заполнения |
 |-----------|-------------|:--------:|
 | манажедаккаунтаддресс | Адрес учетной записи члена блокчейн | Да |
 | манажедаккаунтпассворд | Пароль адреса учетной записи | Да |
@@ -123,7 +123,7 @@ Import-Web3Account -ManagedAccountAddress '<Member account address>'  -ManagedAc
 
 `New-Web3Connection [-RemoteRPCEndpoint <String>]`
 
-| Параметр | Описание | Обязательное значение |
+| Параметр | Описание | Обязательно для заполнения |
 |-----------|-------------|:--------:|
 | ремотерпцендпоинт | Адрес конечной точки члена блокчейн | Да |
 
@@ -143,13 +143,15 @@ New-Web3Connection -RemoteRPCEndpoint '<Endpoint address>'
 
 `Get-BlockchainMember [[-Name] <String>] -Members <IContract> -Web3Client <IClient>`
 
-| Параметр | Описание | Обязательное значение |
+| Параметр | Описание | Обязательно для заполнения |
 |-----------|-------------|:--------:|
-| Имя | Имя члена службы Блокчейн, сведения о котором необходимо получить. Если указано имя, оно возвращает сведения об элементе. Если имя не указано, возвращается список всех членов консорциума. | Нет |
+| ИМЯ | Имя члена службы Блокчейн, сведения о котором необходимо получить. Если указано имя, оно возвращает сведения об элементе. Если имя не указано, возвращается список всех членов консорциума. | Нет |
 | Members | Объект Members, полученный из Import-Консортиумманажементконтрактс | Да |
 | Web3Client | Объект Web3Client, полученный из New-Web3Connection | Да |
 
 #### <a name="example"></a>Пример
+
+Установите [соединение Web3](#establish-a-web3-connection) , чтобы задать переменную $ContractConnection.
 
 ```powershell-interactive
 $ContractConnection | Get-BlockchainMember -Name <Member Name>
@@ -172,14 +174,16 @@ Role           : ADMIN
 
 `Remove-BlockchainMember -Name <String> -Members <IContract> -Web3Account <IAccount> -Web3Client <IClient>`
 
-| Параметр | Описание | Обязательное значение |
+| Параметр | Описание | Обязательно для заполнения |
 |-----------|-------------|:--------:|
-| Название | Имя удаляемого члена | Да |
+| ИМЯ | Имя удаляемого члена | Да |
 | Members | Объект Members, полученный из Import-Консортиумманажементконтрактс | Да |
 | Web3Account | Объект Web3Account, полученный из Import-Web3Account | Да |
 | Web3Client | Объект Web3Client, полученный из New-Web3Connection | Да |
 
 #### <a name="example"></a>Пример
+
+Установите [соединение Web3](#establish-a-web3-connection) , чтобы задать переменные $ContractConnection и $MemberAccount.
 
 ```powershell-interactive
 $ContractConnection | Remove-BlockchainMember -Name <Member Name> -Web3Account $MemberAccount
@@ -196,9 +200,9 @@ Set-BlockchainMember -Name <String> [-DisplayName <String>] [-AccountAddress <St
  -Members <IContract> -Web3Account <IAccount> -Web3Client <IClient>
 ```
 
-| Параметр | Описание | Обязательное значение |
+| Параметр | Описание | Обязательно для заполнения |
 |-----------|-------------|:--------:|
-| Имя | Имя элемента блокчейн | Да |
+| ИМЯ | Имя элемента блокчейн | Да |
 | DisplayName | Новое отображаемое имя | Нет |
 | аккаунтаддресс | Адрес учетной записи | Нет |
 | Members | Объект Members, полученный из Import-Консортиумманажементконтрактс | Да |
@@ -206,6 +210,8 @@ Set-BlockchainMember -Name <String> [-DisplayName <String>] [-AccountAddress <St
 | Web3Client |  Объект Web3Client, полученный из New-Web3Connection| Да |
 
 #### <a name="example"></a>Пример
+
+Установите [соединение Web3](#establish-a-web3-connection) , чтобы задать переменные $ContractConnection и $MemberAccount.
 
 ```powershell-interactive
 $ContractConnection | Set-BlockchainMember -Name <Member Name> -DisplayName <Display name> -Web3Account $MemberAccount
@@ -224,7 +230,7 @@ New-BlockchainMemberInvitation -SubscriptionId <String> -Role <String> -Members 
  -Web3Account <IAccount> -Web3Client <IClient>
 ```
 
-| Параметр | Описание | Обязательное значение |
+| Параметр | Описание | Обязательно для заполнения |
 |-----------|-------------|:--------:|
 | SubscriptionId | Идентификатор подписки Azure участника, которого нужно пригласить | Да |
 | Role | Роль консорциума. Может принимать значения ADMIN или USER. Администратор является ролью администратора консорциума. ПОЛЬЗОВАТЕЛЬ является ролью члена консорциума. | Да |
@@ -233,6 +239,8 @@ New-BlockchainMemberInvitation -SubscriptionId <String> -Role <String> -Members 
 | Web3Client | Объект Web3Client, полученный из New-Web3Connection | Да |
 
 #### <a name="example"></a>Пример
+
+Установите [соединение Web3](#establish-a-web3-connection) , чтобы задать переменные $ContractConnection и $MemberAccount.
 
 ```powershell-interactive
 $ContractConnection | New-BlockchainMemberInvitation -SubscriptionId <Azure Subscription ID> -Role USER -Web3Account $MemberAccount
@@ -244,13 +252,15 @@ $ContractConnection | New-BlockchainMemberInvitation -SubscriptionId <Azure Subs
 
 `Get-BlockchainMemberInvitation [[-SubscriptionId] <String>] -Members <IContract> -Web3Client <IClient>`
 
-| Параметр | Описание | Обязательное значение |
+| Параметр | Описание | Обязательно для заполнения |
 |-----------|-------------|:--------:|
 | SubscriptionId | Идентификатор подписки Azure участника, которого нужно пригласить. Если указан идентификатор подписки, он возвращает сведения о приглашении для идентификатора подписки. Если идентификатор подписки пропущен, он возвращает список всех приглашений участников. | Нет |
 | Members | Объект Members, полученный из Import-Консортиумманажементконтрактс | Да |
 | Web3Client | Объект Web3Client, полученный из New-Web3Connection | Да |
 
 #### <a name="example"></a>Пример
+
+Установите [соединение Web3](#establish-a-web3-connection) , чтобы задать переменную $ContractConnection.
 
 ```powershell-interactive
 $ContractConnection | Get-BlockchainMemberInvitation – SubscriptionId <Azure subscription ID>
@@ -273,7 +283,7 @@ Remove-BlockchainMemberInvitation -SubscriptionId <String> -Members <IContract> 
  -Web3Client <IClient>
 ```
 
-| Параметр | Описание | Обязательное значение |
+| Параметр | Описание | Обязательно для заполнения |
 |-----------|-------------|:--------:|
 | SubscriptionId | Идентификатор подписки Azure члена, который требуется отозвать. | Да |
 | Members | Объект Members, полученный из Import-Консортиумманажементконтрактс | Да |
@@ -281,6 +291,8 @@ Remove-BlockchainMemberInvitation -SubscriptionId <String> -Members <IContract> 
 | Web3Client | Объект Web3Client, полученный из New-Web3Connection | Да |
 
 #### <a name="example"></a>Пример
+
+Установите [соединение Web3](#establish-a-web3-connection) , чтобы задать переменные $ContractConnection и $MemberAccount.
 
 ```powershell-interactive
 $ContractConnection | Remove-BlockchainMemberInvitation -SubscriptionId <Subscription ID> -Web3Account $MemberAccount
@@ -295,7 +307,7 @@ Set-BlockchainMemberInvitation -SubscriptionId <String> -Role <String> -Members 
  -Web3Account <IAccount> -Web3Client <IClient>
 ```
 
-| Параметр | Описание | Обязательное значение |
+| Параметр | Описание | Обязательно для заполнения |
 |-----------|-------------|:--------:|
 | SubscriptionId | Идентификатор подписки Azure участника, которого нужно пригласить | Да |
 | Role | Новая роль консорциума для приглашения. Значения могут быть "пользователь **" или "Администратор"** . | Да |
@@ -304,6 +316,8 @@ Set-BlockchainMemberInvitation -SubscriptionId <String> -Role <String> -Members 
 | Web3Client | Объект Web3Client, полученный из New-Web3Connection | Да |
 
 #### <a name="example"></a>Пример
+
+Установите [соединение Web3](#establish-a-web3-connection) , чтобы задать переменные $ContractConnection и $MemberAccount.
 
 ```powershell-interactive
 $ContractConnection | Set-BlockchainMemberInvitation -SubscriptionId <Azure subscription ID> -Role USER -Web3Account $MemberAccount

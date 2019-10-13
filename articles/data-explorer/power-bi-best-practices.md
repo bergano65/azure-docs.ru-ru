@@ -7,12 +7,12 @@ ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 09/26/2019
-ms.openlocfilehash: e6767c1e03b074f43993e449ca81af951c579090
-ms.sourcegitcommit: f2d9d5133ec616857fb5adfb223df01ff0c96d0a
+ms.openlocfilehash: 39fab02ebc3a80e0aae34a86a1a6b7f3f46c96f3
+ms.sourcegitcommit: e0a1a9e4a5c92d57deb168580e8aa1306bd94723
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71937326"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72286749"
 ---
 # <a name="best-practices-for-using-power-bi-to-query-and-visualize-azure-data-explorer-data"></a>Рекомендации по использованию Power BI для запроса и визуализации данных обозреватель данных Azure
 
@@ -48,7 +48,7 @@ ms.locfileid: "71937326"
 
 Сложные запросы более легко выражаются в Kusto, чем в Power Query. Они должны быть реализованы в виде [функций Kusto](/azure/kusto/query/functions)и вызываться в Power BI. Этот метод является обязательным при использовании **DirectQuery** с инструкциями `let` в запросе Kusto. Поскольку Power BI соединяет два запроса, и операторы `let` не могут использоваться с оператором `join`, могут возникать синтаксические ошибки. Поэтому сохраните каждую часть объединения как функцию Kusto и разрешите Power BI объединить эти две функции.
 
-### <a name="how-to-simulate-a-relative-data-time-operator"></a>Имитация относительного оператора времени в данных
+### <a name="how-to-simulate-a-relative-date-time-operator"></a>Имитация относительного оператора даты и времени
 
 Power BI не содержит *относительный* оператор даты и времени, например `ago()`.
 Чтобы имитировать `ago()`, используйте сочетание функций `DateTime.FixedLocalNow()` и `#duration` Power BI.
@@ -106,7 +106,7 @@ in
 
 1. Замените соответствующую часть запроса параметром. Разделите запрос на несколько частей и объедините их обратно с помощью амперсанда (&) вместе с параметром.
 
-   Например, в приведенном выше запросе `State == 'ALABAMA'` мы рассмотрим часть и разделите его на: `State == '` и `'` , и мы поместим `State` параметр между ними:
+   Например, в приведенном выше запросе мы рассмотрим часть `State == 'ALABAMA'` и разделите ее на: `State == '` и `'`, и мы поместим в них параметр `State`:
    
     ```kusto
     "StormEvents | where State == '" & State & "' | take 100"
@@ -142,7 +142,7 @@ Power BI включает Планировщик обновления данны
 
 ### <a name="power-bi-can-send-only-short-lt2000-characters-queries-to-kusto"></a>Power BI можно отправить запросы только коротких (&lt;2000 символов) в Kusto
 
-Если выполнение запроса в Power BI приводит к следующей ошибке: _"Источник данных. Ошибка: Web. contents не удалось получить содержимое из... "_ . возможно, длина запроса превышает 2000 символов. Power BI использует **PowerQuery** для запроса Kusto, ВЫДАВАЯ HTTP-запрос GET, который кодирует запрос как часть получаемого URI. Таким образом, Kusto запросы, выданные Power BI, ограничиваются максимальной длиной URI запроса (2000 символов, за вычетом небольшого смещения). В качестве обходного решения можно определить [хранимую функцию](/azure/kusto/query/schema-entities/stored-functions) в Kusto и иметь Power BI использовать эту функцию в запросе.
+Если выполнение запроса в Power BI приводит к следующей ошибке:  _"DataSource. Error: Web. contents не удалось получить содержимое из... "_ . возможно, длина запроса превышает 2000 символов. Power BI использует **PowerQuery** для запроса Kusto, ВЫДАВАЯ HTTP-запрос GET, который кодирует запрос как часть получаемого URI. Таким образом, Kusto запросы, выданные Power BI, ограничиваются максимальной длиной URI запроса (2000 символов, за вычетом небольшого смещения). В качестве обходного решения можно определить [хранимую функцию](/azure/kusto/query/schema-entities/stored-functions) в Kusto и иметь Power BI использовать эту функцию в запросе.
 
 ## <a name="next-steps"></a>Следующие шаги
 

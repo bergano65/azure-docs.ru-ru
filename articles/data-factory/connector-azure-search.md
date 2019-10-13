@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 09/13/2019
 ms.author: jingwang
-ms.openlocfilehash: c2165d0ff16233766918f9e274324b02d1bf1ac8
-ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
+ms.openlocfilehash: 703dcb5fee0c31328eee91c9673e62653d7aa698
+ms.sourcegitcommit: e0a1a9e4a5c92d57deb168580e8aa1306bd94723
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70962114"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72286341"
 ---
 # <a name="copy-data-to-an-azure-search-index-using-azure-data-factory"></a>Копирование данных в индекс службы "Поиск Azure" с использованием фабрики данных Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "70962114"
 
 Данные можно копировать из любых поддерживаемых исходных хранилищ данных в индекс службы "Поиск Azure". Список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования, приведен в таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats).
 
-## <a name="getting-started"></a>Приступая к работе
+## <a name="getting-started"></a>Начало работы
 
 [!INCLUDE [data-factory-v2-connector-get-started](../../includes/data-factory-v2-connector-get-started.md)]
 
@@ -170,16 +170,16 @@ AzureSearchSink проявляет два типа поведения upsert (с
 
 | Тип данных Поиска Azure | Поддерживается в приемнике Поиска Azure |
 | ---------------------- | ------------------------------ |
-| String | Y |
-| Int32 | Y |
-| Int64 | Y |
-| Double | Y |
-| Boolean | Y |
-| DataTimeOffset | Y |
-| String Array | в |
-| GeographyPoint | в |
+| String | Да |
+| Int32 | Да |
+| Int64 | Да |
+| Double | Да |
+| Boolean | Да |
+| DataTimeOffset | Да |
+| String Array | Нет |
+| GeographyPoint | Нет |
 
-В настоящее время другие типы данных, например, ComplexType, не поддерживаются. Полный список поддерживаемых типов данных Azure Серач см. в разделе [Поддерживаемые типы данных (Поиск Azure)](https://docs.microsoft.com/rest/api/searchservice/supported-data-types).
+В настоящее время другие типы данных, например, ComplexType, не поддерживаются. Полный список поддерживаемых типов данных службы поиска Azure см. в разделе [Поддерживаемые типы данных (Поиск Azure)](https://docs.microsoft.com/rest/api/searchservice/supported-data-types).
 
 ## <a name="next-steps"></a>Следующие шаги
 В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md##supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

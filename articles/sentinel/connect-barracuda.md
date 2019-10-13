@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/23/2019
+ms.date: 10/13/2019
 ms.author: rkarlin
-ms.openlocfilehash: b3ca93d9e70456d25d5f78b2ca1fde8e4ea24f8d
-ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
+ms.openlocfilehash: 5142204db86158937c16d19bf52fb677099598a5
+ms.sourcegitcommit: e0a1a9e4a5c92d57deb168580e8aa1306bd94723
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71240207"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72284663"
 ---
 # <a name="connect-your-barracuda-appliance"></a>Подключение устройства Barracuda 
 
@@ -37,10 +37,7 @@ ms.locfileid: "71240207"
 1. Перейдите в [Barracuda WAF Configuration Flow](https://campus.barracuda.com/product/webapplicationfirewall/doc/73696965/configure-the-barracuda-web-application-firewall-to-integrate-with-the-oms-server-and-export-logs/)и следуйте инструкциям по настройке подключения, используя следующие параметры:
     - **Идентификатор рабочей области**: СКОПИРУЙТЕ значение идентификатора рабочей области со страницы соединителя Azure Sentinel Barracuda.
     - **Первичный ключ**. Скопируйте значение первичного ключа со страницы соединителя Azure Sentinel Barracuda.
-2. На портале Sentinel Azure перейдите к рабочей области, в которой развернута метка Azure, и нажмите кнопку с многоточием (...) в конце строки и выберите **Дополнительные параметры**. 
-1. Выберите **данные** , а затем **системный журнал**.
-1. Убедитесь, что устройство, заданное в Barracuda, существует, и задайте серьезность и нажмите кнопку **сохранить**.
-6. Чтобы использовать соответствующую схему в Log Analytics для событий Barracuda, выполните поиск по запросу **CommonSecurityLog** и **barracuda_CL**.
+1. Чтобы использовать соответствующую схему в Log Analytics для событий Barracuda, выполните поиск по запросу **CommonSecurityLog** и **barracuda_CL**.
 
 
 ## <a name="validate-connectivity"></a>Проверка подключения
