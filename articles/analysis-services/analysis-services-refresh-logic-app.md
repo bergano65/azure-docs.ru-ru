@@ -2,17 +2,16 @@
 title: Обновление с помощью Logic Apps для моделей Azure Analysis Services | Документация Майкрософт
 description: Узнайте, как кодировать асинхронное обновление с помощью Azure Logic Apps.
 author: chrislound
-manager: kfile
 ms.service: analysis-services
 ms.topic: conceptual
 ms.date: 04/26/2019
 ms.author: chlound
-ms.openlocfilehash: 2234a2c6cd42be45a2b2e7784c1dd5aec8839cb9
-ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
+ms.openlocfilehash: acf31bf3e7e8c3a0835640dee36f8435a1eba625
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68311736"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72294621"
 ---
 # <a name="refresh-with-logic-apps"></a>Обновление с помощью Logic Apps
 
@@ -29,7 +28,7 @@ ms.locfileid: "68311736"
 > [!IMPORTANT]
 > В следующих примерах предполагается, что брандмауэр Azure Analysis Services отключен.  Если брандмауэр включен, общедоступный IP-адрес инициатора запроса должен быть список разрешений в брандмауэре Azure Analysis Services. Дополнительные сведения о диапазонах IP-адресов приложений логики для каждого региона см. в разделе [ограничения и сведения о конфигурации для Azure Logic Apps](../logic-apps/logic-apps-limits-and-config.md#firewall-configuration-ip-addresses).
 
-### <a name="prerequisites"></a>предварительные требования
+### <a name="prerequisites"></a>Предварительные требования
 
 #### <a name="create-a-service-principal-spn"></a>Создание субъекта-службы (SPN)
 
@@ -66,7 +65,7 @@ ms.locfileid: "68311736"
 |Свойство  |Значение  |
 |---------|---------|
 |**Метод**     |ПОМЕСТИТЬ         |
-|**URI**     | https:// */серверс/* имя*сервера консультантов*/Моделс/*имя базы данных*/рефрешес <br /> <br /> Пример: https:\//westus.asazure.Windows.NET/Servers/MyServer/Models/AdventureWorks/refreshes|
+|**URI**     | https:// */серверс/* имя*сервера консультантов*/Моделс/*имя базы данных*/рефрешес <br /> <br /> Пример: https: \//westus. asazure. Windows. NET/Servers/MyServer/Models/AdventureWorks/обновляет|
 |**Заголовки**     |   Content-Type, Application/JSON <br /> <br />  ![Заголовки](./media/analysis-services-async-refresh-logic-app/6.png)    |
 |**Текст**     |   Дополнительные сведения о создании текста запроса см. в разделе [асинхронное обновление с помощью REST API-POST/рефрешес](analysis-services-async-refresh.md#post-refreshes). |
 |**Authentication**     |Active Directory OAuth         |
@@ -102,7 +101,7 @@ ms.locfileid: "68311736"
 
 ![Действие по расписанию](./media/analysis-services-async-refresh-logic-app/13.png)
 
-В этом примере будет использоваться повторение.
+В этом примере будет использоваться **повторение**.
 
 После добавления действия настройте интервал и частоту, а затем добавьте новый параметр и выберите **эти часы**.
 

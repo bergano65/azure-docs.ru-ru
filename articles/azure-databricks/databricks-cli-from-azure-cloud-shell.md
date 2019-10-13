@@ -1,6 +1,6 @@
 ---
 title: 'Использование интерфейса командной строки Databricks через Azure Cloud Shell '
-description: Сведения об использовании интерфейса командной строки Databricks через Azure Cloud Shell.
+description: Узнайте, как использовать интерфейс командной строки (CLI) в модулях Azure Cloud Shell для выполнения операций с Azure Databricks.
 services: azure-databricks
 author: mamccrea
 ms.reviewer: jasonh
@@ -9,18 +9,18 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: mamccrea
-ms.openlocfilehash: dae481fb477223f149404c6a09cad024bc15cd90
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: b327403b29f26f6c1f43f9dfe7aabd5c3c7e0a68
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67204959"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72299912"
 ---
 # <a name="use-databricks-cli-from-azure-cloud-shell"></a>Использование интерфейса командной строки Databricks через Azure Cloud Shell
 
 Сведения об использовании интерфейса командной строки Databricks через Azure Cloud Shell при работе в Databricks.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Рабочее пространство и кластер в Azure Databricks. Инструкции см. в статье [Начало работы с Azure Databricks](quickstart-create-databricks-workspace-portal.md). 
 
@@ -76,7 +76,7 @@ ms.locfileid: "67204959"
 Полный справочник по командам см. в статье [Databricks CLI](https://docs.azuredatabricks.net/user-guide/dev-tools/databricks-cli.html) (Интерфейс командной строки Databricks).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения об интерфейсе командной строки Azure см. в статье [Обзор Azure Cloud Shell](../cloud-shell/overview.md)
 * Список команд для интерфейса командной строки Azure см. в статье [Azure CLI reference](https://docs.microsoft.com/cli/azure/reference-index?view=azure-cli-latest) (Справочные материалы по интерфейсу командной строки Azure)

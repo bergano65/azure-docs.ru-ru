@@ -11,12 +11,12 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 09/12/2018
 ms.author: glenga
-ms.openlocfilehash: 388b389cca7c3e820ea3ccfd37a2a93ccd476b31
-ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
+ms.openlocfilehash: c3c13b7e28ef7c17fd45682d828f318de5326542
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68254635"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72293871"
 ---
 # <a name="azure-functions-c-developer-reference"></a>Справочник разработчика C# по функциям Azure
 
@@ -30,6 +30,10 @@ ms.locfileid: "68254635"
 
 * [Руководство для разработчиков по Функциям Azure](functions-reference.md)
 * [Средства Visual Studio 2019 для функций Azure](functions-develop-vs.md)
+
+## <a name="supported-versions"></a>Поддерживаемые версии
+
+Среда выполнения функций Azure 2. x использует .NET Core 2,2. Код функции может использовать API-интерфейсы .NET Core 2,2, обновив параметры проекта Visual Studio. Шаблоны функций не являются стандартными для .NET Core 2,2, чтобы избежать негативного воздействия на клиентов, на которых не установлен .NET Core 2,2.
 
 ## <a name="functions-class-library-project"></a>Проект библиотеки классов функций
 
@@ -55,6 +59,7 @@ ms.locfileid: "68254635"
 > [!IMPORTANT]
 > Процесс сборки создает файл *function.json* для каждой функции. Этот файл *function.json* не предназначен для непосредственного редактирования. Невозможно изменить конфигурацию привязки или отключить функцию путем редактирования этого файла. Чтобы узнать, как отключить функцию, см. раздел [Отключение функций](disable-function.md#functions-2x---c-class-libraries).
 
+
 ## <a name="methods-recognized-as-functions"></a>Методы, распознаваемые как функции
 
 В библиотеке классов функция — это статический метод с `FunctionName` и атрибутом триггера, как показано в следующем примере:
@@ -72,7 +77,7 @@ public static class SimpleExample
 } 
 ```
 
-Атрибут `FunctionName` помечает метод как точку входа функции. Имя должно быть уникальным в пределах проекта, начинаться с буквы и содержать только буквы, цифры, `_`и `-`, до 127 символов. Шаблоны проектов часто создают метод `Run`, но метод может иметь любое допустимое имя для метода C#.
+Атрибут `FunctionName` помечает метод как точку входа функции. Имя должно быть уникальным в пределах проекта, начинаться с буквы и содержать только буквы, цифры, `_` и `-`, длиной до 127 символов. Шаблоны проектов часто создают метод `Run`, но метод может иметь любое допустимое имя для метода C#.
 
 Атрибут триггера указывает тип триггера и привязывает входные данные к параметру метода. Пример функции срабатывает по сообщению очереди, а сообщение очереди передается методу в параметре `myQueueItem`.
 
@@ -344,7 +349,7 @@ public static class EnvironmentVariablesExample
   }
   ```
 
-  где `BindingTypeAttribute` — атрибут .NET, определяющий пользовательскую привязку, а `T` — входной или выходной тип, поддерживаемый этим типом привязки. `T` не может быть параметром типа `out` (например, `out JObject`). Например, выходная привязка таблицы мобильных приложений поддерживает [шесть выходных типов](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions.MobileApps/MobileTableAttribute.cs#L17-L22), но можно использовать только [\<ICollector t >](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/ICollector.cs) или [IAsyncCollector\<t >](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/IAsyncCollector.cs) с императивной привязкой.
+  где `BindingTypeAttribute` — атрибут .NET, определяющий пользовательскую привязку, а `T` — входной или выходной тип, поддерживаемый этим типом привязки. `T` не может быть параметром типа `out` (например, `out JObject`). Например, выходная привязка таблицы мобильных приложений поддерживает [шесть выходных типов](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions.MobileApps/MobileTableAttribute.cs#L17-L22), но можно использовать только [ICollector @ no__t-2T >](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/ICollector.cs) или [IAsyncCollector @ no__t-4T поддерживается >](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/IAsyncCollector.cs) с императивной привязкой.
 
 ### <a name="single-attribute-example"></a>Пример с одним атрибутом
 

@@ -1,5 +1,5 @@
 ---
-title: Что произошло с моим проектом веб-заданий (подключенными к службе хранилища Azure службами Visual Studio)? | Документы Майкрософт
+title: Что случилось с моим проектом веб-задания (хранилище Azure в Visual Studio)?
 description: Описывает, что произошло в проекте веб-задания Azure после подключения к учетной записи хранения с помощью подключенных служб Visual Studio
 services: storage
 author: ghogen
@@ -12,12 +12,13 @@ ms.workload: azure-vs
 ms.topic: conceptual
 ms.date: 12/02/2016
 ms.author: ghogen
-ms.openlocfilehash: c54214e0b919ddaa60403a1c986a144100143577
-ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
+ROBOTS: NOINDEX,NOFOLLOW
+ms.openlocfilehash: 17861b7c25dfaf9bc9399e5261cdf2a5b43caf21
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69510479"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72298729"
 ---
 # <a name="what-happened-to-my-webjob-project-visual-studio-azure-storage-connected-service"></a>Что произошло с моим проектом веб-заданий (подключенными к службе хранилища Azure службами Visual Studio)?
 ## <a name="references-added"></a>Добавленные ссылки

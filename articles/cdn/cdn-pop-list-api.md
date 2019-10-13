@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 08/22/2019
 ms.author: magattus
 ms.custom: ''
-ms.openlocfilehash: f677d6b8edfe60646c6368acce9d47b23a35237d
-ms.sourcegitcommit: b03516d245c90bca8ffac59eb1db522a098fb5e4
+ms.openlocfilehash: 95b85aa11d99ddd48c90c8d9fa28789e79ee979f
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71146891"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72299235"
 ---
 # <a name="retrieve-the-current-pop-ip-list-for-azure-cdn"></a>Получение списка текущих IP-адресов POP для Azure CDN
 
@@ -41,7 +41,6 @@ ms.locfileid: "71146891"
 
 Диапазоны IP-адресов и теги служб для служб Майкрософт можно найти [здесь](https://www.microsoft.com/download/details.aspx?id=56519) .
 
-Фильтрация по значениям для входящего заголовка "X-Forwardd-Host", отправленного Azure CDN от Майкрософт. Единственными допустимыми значениями заголовка должны быть все узлы конечных точек, как указано в конфигурации CDN. На самом деле, только имена узлов, от которых требуется принимать трафик, в этом конкретном источнике.
 
 ## <a name="typical-use-case"></a>Типичный случай использования
 

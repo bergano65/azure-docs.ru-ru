@@ -2,18 +2,17 @@
 title: Асинхронное обновление для моделей Azure Analysis Services | Документация Майкрософт
 description: Узнайте, как написать код, выполняющий асинхронное обновление с использованием REST API.
 author: minewiskan
-manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
 ms.date: 05/09/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 82e40f756e0d8e0b5627b7c8856bd25fa98adbcb
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: daa25ecd12cb4c3b6ba72164c36cef01001448cf
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68932294"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72301163"
 ---
 # <a name="asynchronous-refresh-with-the-rest-api"></a>Асинхронное обновление с помощью REST API
 
@@ -98,7 +97,7 @@ https://westus.asazure.windows.net/servers/myserver/models/AdventureWorks/refres
 
 Указывать параметры не обязательно. Применяются значения по умолчанию.
 
-| Название             | Тип  | Описание  |Значение по умолчанию  |
+| ИМЯ             | Тип  | Описание  |Значение по умолчанию  |
 |------------------|-------|--------------|---------|
 | `Type`           | Enum  | Тип выполняемой обработки. Тип выполняемой обработки зависит от типа [команды refresh](https://docs.microsoft.com/bi-reference/tmsl/refresh-command-tmsl) TMSL: full, clearValues, calculate, dataOnly, automatic или defragment. Тип add не поддерживается.      |   automatic      |
 | `CommitMode`     | Enum  | Определяет, будут объекты зафиксированы в пакетах или только после завершения. Режимы: default, transactional, partialBatch.  |  transactional       |
@@ -201,7 +200,7 @@ https://westus.asazure.windows.net/servers/myserver/models/AdventureWorks/refres
 1.  Клонируйте или скачайте репозиторий. Откройте решение RestApiSample.
 2.  Найдите строку **client.BaseAddress = …** и укажите [базовый URL-адрес](#base-url).
 
-В примере кода используется проверка подлинности субъекта- [службы](#service-principal) .
+В примере кода используется проверка подлинности [субъекта-службы](#service-principal) .
 
 ### <a name="service-principal"></a>Субъект-служба
 

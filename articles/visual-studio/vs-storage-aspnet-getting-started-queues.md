@@ -1,5 +1,5 @@
 ---
-title: Приступая к работе с хранилищем очередей Azure и подключенными службами Visual Studio (ASP.NET) | Документация Майкрософт
+title: Начало работы с хранилищем очередей Azure с помощью Visual Studio (ASP.NET)
 description: Как приступить к работе, используя хранилище очередей Azure в проекте ASP.NET в Visual Studio после подключения к учетной записи хранения с помощью подключенных служб Visual Studio.
 services: storage
 author: ghogen
@@ -12,12 +12,13 @@ ms.workload: azure-vs
 ms.topic: conceptual
 ms.date: 12/23/2016
 ms.author: ghogen
-ms.openlocfilehash: 19cf2dd912968d0a5df8743c1e720776b8a949f0
-ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
+ROBOTS: NOINDEX,NOFOLLOW
+ms.openlocfilehash: 5b57f171a9407acea8231d796a80c3a1cc1d9474
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69515986"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72300113"
 ---
 # <a name="get-started-with-azure-queue-storage-and-visual-studio-connected-services-aspnet"></a>Приступая к работе с хранилищем очередей Azure и подключенными службами Visual Studio (ASP.NET)
 
@@ -62,7 +63,7 @@ ms.locfileid: "69515986"
     using Microsoft.WindowsAzure.Storage.Auth;
     using Microsoft.WindowsAzure.Storage.Queue;
     ```
-   ## <a name="create-a-queue"></a>Создать очередь
+   ## <a name="create-a-queue"></a>Создание очереди
 
 Чтобы создать очередь, выполните приведенные ниже действия.
 
@@ -139,7 +140,7 @@ ms.locfileid: "69515986"
 
 1. Запустите приложение и выберите **создать очередь** , чтобы увидеть результаты, как на снимке экрана ниже.
   
-    ![Создать очередь](./media/vs-storage-aspnet-getting-started-queues/create-queue-results.png)
+    ![Создание очереди](./media/vs-storage-aspnet-getting-started-queues/create-queue-results.png)
 
     Как упоминалось ранее, метод **CloudQueue.CreateIfNotExists** возвращает значение **true**, только если создается не существовавшая ранее очередь. Если вы запустите приложение, когда очередь уже существует, метод вернет значение **false**. Чтобы запустить приложение несколько раз, вам нужно удалять очередь перед каждым повторным запуском приложения. Чтобы удалить очередь, используйте метод **CloudQueue.Delete**. Ее также можно удалить с помощью [портала Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040) или в [обозревателе хранилищ Microsoft Azure](../vs-azure-tools-storage-manage-with-storage-explorer.md).  
 
@@ -572,7 +573,7 @@ ms.locfileid: "69515986"
 
 1. Запустите приложение и выберите **получить длину очереди** , чтобы увидеть результаты, как на снимке экрана ниже.
   
-    ![Удалить очередь](./media/vs-storage-aspnet-getting-started-queues/delete-queue-results.png)
+    ![Удаление очереди.](./media/vs-storage-aspnet-getting-started-queues/delete-queue-results.png)
 
 ## <a name="next-steps"></a>Следующие шаги
 Просмотрите дополнительные руководства, чтобы изучить дополнительные возможности хранения данных в Azure.

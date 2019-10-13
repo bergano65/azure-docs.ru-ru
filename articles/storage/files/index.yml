@@ -2,7 +2,7 @@
 title: Документация по Файлам Azure
 summary: Служба "Файлы Azure" предоставляет полностью управляемые кроссплатформенные общие папки в облаке, доступ к которым можно получить с помощью протокола SMB.
 metadata:
-  title: Файлы Azure
+  title: Документация по Файлам Azure
   description: Общие папки можно подключать в облаке и локальной среде под управлением Windows, Linux или macOS. Общие папки Azure на серверах Windows Server можно кэшировать с помощью функции "Синхронизация файлов Azure" для доступа в локальной среде.
   services: storage
   ms.service: storage
@@ -12,12 +12,12 @@ metadata:
   author: roygara
   ms.author: rogarana
   ms.date: 08/27/2019
-  ms.openlocfilehash: 21be0cb23dc5673d0a060636da148ee97463ec4b
-  ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
+  ms.openlocfilehash: 3e9224746c400f9795e16edd51b69740fb3c45c7
+  ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 09/04/2019
-  ms.locfileid: "70241719"
+  ms.lasthandoff: 10/13/2019
+  ms.locfileid: "72299561"
 landingContent:
 - title: Общие сведения о работе с Файлами Azure
   linkLists:

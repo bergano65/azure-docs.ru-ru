@@ -1,6 +1,6 @@
 ---
 title: 'Подключение к различным источникам данных из Azure Databricks '
-description: Сведения о подключении к разным источникам данных из Azure Databricks.
+description: Узнайте, как подключиться к базе данных SQL Azure, Azure Data Lake Store, хранилищу BLOB-объектов, Cosmos DB, концентраторам событий и хранилищу данных SQL Azure из Azure Databricks.
 services: azure-databricks
 author: mamccrea
 ms.reviewer: jasonh
@@ -9,18 +9,18 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 03/21/2018
 ms.author: mamccrea
-ms.openlocfilehash: f2b7136ec21416e31c2af658974577023a4494de
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: c77d1d1a66d3ee92f5ad3f2016d2160831fa3ad9
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60240350"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72299310"
 ---
 # <a name="connect-to-data-sources-from-azure-databricks"></a>Подключение к источникам данных из Azure Databricks
 
 Эта статья содержит ссылки на все источники данных, которые можно подключать к Azure Databricks. Статьи по этим ссылкам содержат примеры, которые позволяют извлечь в кластер Azure Databricks данные из источников данных Azure (таких как хранилище больших двоичных объектов Azure, Центры событий Azure, и т. д.) и запустить задания аналитики для этих данных. 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Вам потребуется рабочая область Azure Databricks и кластер Spark. Выполните инструкции из статьи [Начало работы с Azure Databricks](quickstart-create-databricks-workspace-portal.md).
 
@@ -31,7 +31,7 @@ ms.locfileid: "60240350"
 - [База данных SQL Azure](https://docs.azuredatabricks.net/spark/latest/data-sources/sql-databases.html)
 
     Это ссылка на API DataFrame для подключения к базам данных SQL с помощью JDBC и сведения об управлении параллелизмом при операциях чтения через интерфейс JDBC. Эта статья содержит подробные примеры использования API Scala, а также краткие примеры для Python и Spark SQL (в конце).
-- [Хранилище озера данных Azure](https://docs.azuredatabricks.net/spark/latest/data-sources/azure/azure-datalake-gen2.html)
+- [Azure Data Lake Storage](https://docs.azuredatabricks.net/spark/latest/data-sources/azure/azure-datalake-gen2.html)
 
     Здесь представлены примеры по использованию субъекта-службы Azure Active Directory для аутентификации в Data Lake Store. Также в статье объясняется, как получить доступ из Azure Databricks к данным в Data Lake Store.
 
@@ -52,7 +52,7 @@ ms.locfileid: "60240350"
     Здесь представлены инструкции о том, как использовать соединитель хранилища данных SQL Azure для подключения из Azure Databricks.
     
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения об источниках, которые Azure Databricks поддерживает для импорта данных, см. в [этой статье](https://docs.azuredatabricks.net/spark/latest/data-sources/index.html#).
 

@@ -1,5 +1,5 @@
 ---
-title: Что произошло с моим проектом ASP.NET? | Документы Майкрософт
+title: Что произошло с моим проектом ASP.NET?
 description: Описывает, что происходит после добавления службы хранилища Azure в проект ASP.NET с помощью подключенных служб Visual Studio
 services: storage
 author: ghogen
@@ -12,12 +12,13 @@ ms.workload: azure-vs
 ms.topic: conceptual
 ms.date: 12/02/2016
 ms.author: ghogen
-ms.openlocfilehash: 74db2e1e15c282f4393715c67561b2ed61bbcdfb
-ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
+ROBOTS: NOINDEX,NOFOLLOW
+ms.openlocfilehash: 4374955d6d51c1ae44c211aaa93d0b5e8930fe5b
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69512067"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72300038"
 ---
 # <a name="what-happened-to-my-aspnet-project-visual-studio-azure-storage-connected-service"></a>Что произошло с моим проектом ASP.NET (подключенными к службе хранилища Azure службами Visual Studio)?
 ## <a name="references-added"></a>Добавлены ссылки

@@ -2,18 +2,17 @@
 title: Создание ODC-файла для подключения к серверу Azure Analysis Services | Документация Майкрософт
 description: Узнайте, как создать файл подключения к данным Office для подключения к серверу Analysis Services в Azure и получить от него данные.
 author: minewiskan
-manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
 ms.date: 01/09/2018
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 37f068be544f964f3aec63d85702098c8f382ab8
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e12717b37171df55c7559bb1b05c467f332236bc
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60785716"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72294834"
 ---
 # <a name="create-an-office-data-connection-file"></a>Создание файла подключения к данным Office
 

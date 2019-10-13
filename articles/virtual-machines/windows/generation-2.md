@@ -11,14 +11,14 @@ ms.service: virtual-machines-windows
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-windows
 ms.topic: article
-ms.date: 09/10/2019
+ms.date: 10/11/2019
 ms.author: lahugh
-ms.openlocfilehash: e4572ac6041caffc6c77d74dcbb2cf52f9f0aed0
-ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
+ms.openlocfilehash: 314056b6e55838d32c70d81570cdeaf7a84b6671
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71173785"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72300632"
 ---
 # <a name="support-for-generation-2-vms-preview-on-azure"></a>Поддержка виртуальных машин поколения 2 (Предварительная версия) в Azure
 
@@ -86,14 +86,14 @@ ms.locfileid: "71173785"
 
 ### <a name="generation-1-vs-generation-2-capabilities"></a>Возможности поколения 1 и поколения 2
 
-| Возможность | Поколение 1 | Поколение 2 |
+| Функция | Поколение 1 | Поколение 2 |
 |------------|--------------|--------------|
 | Диск ОС > 2 ТБ                    | :x:                | :heavy_check_mark: |
 | Пользовательский диск, образ или ОС замены         | :heavy_check_mark: | :heavy_check_mark: |
 | Поддержка масштабируемого набора виртуальных машин | :heavy_check_mark: | :heavy_check_mark: |
-| Служба Azure Site Recovery               | :heavy_check_mark: | :x:                |
+| Azure Site Recovery               | :heavy_check_mark: | :x:                |
 | Резервное копирование и восстановление                    | :heavy_check_mark: | :heavy_check_mark: |
-| Общедоступная коллекция образов              | :heavy_check_mark: | :x:                |
+| Коллекция общих образов              | :heavy_check_mark: | :heavy_check_mark: |
 | Шифрование дисков Azure             | :heavy_check_mark: | :x:                |
 
 ## <a name="creating-a-generation-2-vm"></a>Создание виртуальной машины поколения 2
@@ -102,7 +102,7 @@ ms.locfileid: "71173785"
 
 В портал Azure или Azure CLI можно создать виртуальные машины поколения 2 из образа Marketplace, который поддерживает загрузку UEFI.
 
-#### <a name="azure-portal"></a>портала Azure
+#### <a name="azure-portal"></a>Портал Azure
 
 Образы поколения 2 для Windows и SLES включены в одно и то же предложение сервера в качестве образов Gen1. Это означает, что с точки зрения потока вы выбрали предложение и номер SKU на портале для виртуальной машины. Если SKU поддерживает образы поколения 1 и 2, можно выбрать создание виртуальной машины поколения 2 на вкладке *Дополнительно* в последовательности создания виртуальной машины.
 
@@ -111,7 +111,7 @@ ms.locfileid: "71173785"
 * Windows Server 2012
 * Windows Server 2012 R2
 * Windows Server 2016
-* Windows Server 2019
+* Windows Server 2019
 
 При выборе SKU Windows Server в качестве предложения на вкладке **Дополнительно** можно создать виртуальную машину **поколения 1** (BIOS) или **Gen 2** (UEFI). Если вы выбрали **Gen 2**, убедитесь, что размер виртуальной машины, выбранный на вкладке " **основы** ", [поддерживается для виртуальных машин поколения 2](#generation-2-vm-sizes).
 
@@ -121,7 +121,7 @@ ms.locfileid: "71173785"
 
 Вы также можете создать виртуальную машину с помощью PowerShell, обратившись непосредственно к SKU поколения 1 или поколения 2.
 
-Например, используйте следующий командлет PowerShell, чтобы получить список номеров SKU в `WindowsServer` предложении.
+Например, используйте следующий командлет PowerShell, чтобы получить список номеров SKU в предложении `WindowsServer`.
 
 ```powershell
 Get-AzVMImageSku -Location westus2 -PublisherName MicrosoftWindowsServer -Offer WindowsServer
@@ -152,7 +152,7 @@ Get-AzVMImageSku -Location westus2 -PublisherName MicrosoftWindowsServer -Offer 
 * **Есть ли разница в ценах между виртуальными машинами поколения 1 и 2?**  
    Нет.
 
-* **У меня есть VHD-файл из локальной виртуальной машины поколения 2. Можно ли использовать этот VHD-файл для создания виртуальной машины поколения 2 в Azure?**
+* @no__t 0I имеют VHD-файл из локальной виртуальной машины поколения 2. Можно ли использовать этот VHD-файл для создания виртуальной машины поколения 2 в Azure? **
   Да, вы можете перенести VHD-файл версии 2 в Azure и использовать его для создания виртуальной машины поколения 2. Для этого выполните следующие действия.
     1. Отправьте VHD-файл в учетную запись хранения в том же регионе, где вы хотите создать виртуальную машину.
     1. Создайте управляемый диск из VHD-файла. Задайте для свойства создания Hyper-V значение v2. Следующие команды PowerShell задают свойство создания Hyper-V при создании управляемого диска.

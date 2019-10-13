@@ -10,18 +10,18 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 02/01/2019
 ms.author: swmachan
-ms.openlocfilehash: 67d323d5a3574100760c78427db6983f6aff5ac8
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: bc03e10e40e90845c8e1a3dd064c4f50fafeac00
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68933998"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72299827"
 ---
-# <a name="translator-text-api-30-translate"></a>API перевода текстов 3.0: Перенести
+# <a name="translator-text-api-30-translate"></a>API перевода текстов 3.0: Перевод
 
 Этот интерфейс позволяет переводить текст.
 
-## <a name="request-url"></a>URL-адрес запроса
+## <a name="request-url"></a>Request URL (URL-адрес запроса)
 
 Отправьте запрос `POST` на следующий адрес.
 
@@ -42,7 +42,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
   </tr>
   <tr>
     <td>from</td>
-    <td><em>Необязательный параметр.</em><br/>Определяет язык оригинального текста. Чтобы просмотреть, какие языки доступны для перевода, выполните поиск <a href="./v3-0-languages.md">поддерживаемых языков</a>, используя область <code>translation</code>. Если параметр <code>from</code> не указан, исходный язык определяется автоматически. <br/><br/>При использовании функции <code>from</code> <a href="https://docs.microsoft.com/azure/cognitive-services/translator/dynamic-dictionary">динамического словаря</a> необходимо использовать параметр, а не автообнаружение.</td>
+    <td><em>Необязательный параметр.</em><br/>Определяет язык оригинального текста. Чтобы просмотреть, какие языки доступны для перевода, выполните поиск <a href="./v3-0-languages.md">поддерживаемых языков</a>, используя область <code>translation</code>. Если параметр <code>from</code> не указан, исходный язык определяется автоматически. <br/><br/>При использовании функции <a href="https://docs.microsoft.com/azure/cognitive-services/translator/dynamic-dictionary">динамического словаря</a> необходимо использовать параметр <code>from</code> вместо автоматического обнаружения.</td>
   </tr>
   <tr>
     <td>to</td>
@@ -114,7 +114,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
   </tr>
 </table> 
 
-## <a name="request-body"></a>Текст запроса
+## <a name="request-body"></a>Тело запроса
 
 Текст запроса является массивом в формате JSON. Каждый элемент этого массива представляет собой объект JSON со строковым свойством `Text`, который являет собой строку для перевода.
 
@@ -201,7 +201,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
   </tr>
   <tr>
     <td>401</td>
-    <td>Не удалось выполнить проверку подлинности запроса. Убедитесь, что указаны допустимые учетные данные.</td>
+    <td>Не удалось выполнить аутентификацию запроса. Убедитесь, что указаны допустимые учетные данные.</td>
   </tr>
   <tr>
     <td>403</td>
@@ -469,8 +469,10 @@ curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-versio
 
 Сведения о выравнивании начинаются со строки `0:2-0:1`. Это значит, что первые три символа в исходном тексте (`The`) сопоставляются с двумя первыми символами в переведенном тексте (`La`).
 
+#### <a name="limitations"></a>Ограничения
 Обратите внимание на следующие ограничения:
 
+* Выравнивание недоступно для текста в формате HTML, т. е. Тексттипе = HTML
 * Сведения о выравнивании возвращаются только для группы языковых пар:
   - с английского на любой другой язык;
   - с любого другого языка на английский, за исключением китайского упрощенного, китайского традиционного и латышского на английский;
@@ -511,7 +513,7 @@ curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-versio
 <mstrans:dictionary translation=”translation of phrase”>phrase</mstrans:dictionary>
 ```
 
-Например, рассмотрим следующее русское предложение: "Слово "словоматик" — это словарная запись". Чтобы сохранить при переводе слово _словоматик_ , необходимо отправить запрос:
+Например, рассмотрим следующее русское предложение: "Слово "словоматик" — это словарная запись". Чтобы сохранить при переводе слово _словоматик_, необходимо отправить запрос:
 
 ```
 curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=de" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json" -d "[{'Text':'The word <mstrans:dictionary translation=\"wordomatic\">word or phrase</mstrans:dictionary> is a dictionary entry.'}]"

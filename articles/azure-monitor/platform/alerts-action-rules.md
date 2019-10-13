@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: robb
 ms.subservice: alerts
-ms.openlocfilehash: 34997c130094b7e8b209b3ad3030038670d0a254
-ms.sourcegitcommit: 6fe40d080bd1561286093b488609590ba355c261
+ms.openlocfilehash: 19f17aff4f915f8a16ccf9d69b12a845d9493e96
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71702993"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72299300"
 ---
 # <a name="action-rules-preview"></a>Правила действий (Предварительная версия)
 
@@ -104,7 +104,7 @@ ms.locfileid: "71702993"
 ### <a name="action-rule-details"></a>Сведения о правиле действия
 
 Наконец, настройте следующие сведения для правила действия.
-* Название
+* ИМЯ
 * Группа ресурсов, в которой он сохранен
 * Описание 
 
@@ -198,22 +198,22 @@ Contoso хочет отключить уведомления для всех Sev
 
 ### <a name="what-happens-if-i-have-a-resource-thats-monitored-in-two-separate-action-rules-do-i-get-one-or-two-notifications-for-example-vm2-in-the-following-scenario"></a>Что произойдет, если у меня есть ресурс, который отслеживается в двух отдельных правилах действий? Я получаю одно или два уведомления? Например, **VM2** в следующем сценарии:
 
-      "action rule AR1 defined for VM1 and VM2 with action group AG1
-      action rule AR2 defined for VM2 and VM3 with action group AG1"
+      action rule AR1 defined for VM1 and VM2 with action group AG1
+      action rule AR2 defined for VM2 and VM3 with action group AG1
 
 Для каждого оповещения в VM1 и VM3 группа действий AG1 будет активирована один раз. Для каждого оповещения в **VM2**группа действий AG1 будет вызываться дважды, так как правила действий не будут выполнять дублирование действий. 
 
 ### <a name="what-happens-if-i-have-a-resource-monitored-in-two-separate-action-rules-and-one-calls-for-action-while-another-for-suppression-for-example-vm2-in-the-following-scenario"></a>Что произойдет, если ресурс отслеживается в двух отдельных правилах действий и один вызов действия, а другой — для подавления? Например, **VM2** в следующем сценарии:
 
-      "action rule AR1 defined for VM1 and VM2 with action group AG1 
-      action rule AR2 defined for VM2 and VM3 with suppression"
+      action rule AR1 defined for VM1 and VM2 with action group AG1 
+      action rule AR2 defined for VM2 and VM3 with suppression
 
 Для каждого оповещения в VM1 группа действий AG1 будет активирована один раз. Действия и уведомления для каждого предупреждения в VM2 и VM3 будут подавлены. 
 
 ### <a name="what-happens-if-i-have-an-alert-rule-and-an-action-rule-defined-for-the-same-resource-calling-different-action-groups-for-example-vm1-in-the-following-scenario"></a>Что произойдет, если у меня есть правило генерации оповещений и правило действий, определенное для того же ресурса, вызывающего различные группы действий? Например, **VM1** в следующем сценарии:
 
-      "alert rule rule1 on VM1 with action group AG2
-      action rule AR1 defined for VM1 with action group AG1" 
+      alert rule rule1 on VM1 with action group AG2
+      action rule AR1 defined for VM1 with action group AG1 
  
 Для каждого оповещения в VM1 группа действий AG1 будет активирована один раз. Каждый раз, когда срабатывает правило генерации оповещений "Rule1", оно также будет запускать ГД2 дополнительно. Группы действий, определенные в правилах действий и правилах генерации оповещений, работают независимо друг от друга без дедупликации. 
 

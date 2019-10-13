@@ -1,5 +1,5 @@
 ---
-title: Пример — Федеральный ПБММный проект для Канады — шаги по развертыванию
+title: Пример для федерального ПБММного чертежа Канады. шаги по развертыванию
 description: Шаги развертывания для примера федерального ПБММного чертежа Канады, включая сведения о параметрах артефактов схемы.
 services: blueprints
 author: DCtheGeek
@@ -7,12 +7,12 @@ ms.author: dacoulte
 ms.date: 09/05/2019
 ms.topic: conceptual
 ms.service: blueprints
-ms.openlocfilehash: 0e799de92f25c688b41d3ac5718fe3a2b7a8aba0
-ms.sourcegitcommit: 961468fa0cfe650dc1bec87e032e648486f67651
+ms.openlocfilehash: e2c061b69771214a770b3b42626d28672bd9fe77
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72249012"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72297811"
 ---
 # <a name="deploy-the-canada-federal-pbmm-blueprint-samples"></a>Развертывание примеров для федерального ПБММного чертежа Канады
 

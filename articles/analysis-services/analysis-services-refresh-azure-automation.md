@@ -1,155 +1,154 @@
 ---
-title: Обновление моделей Azure Analysis Services со службой автоматизации Azure | Документация Майкрософт
-description: Узнайте, как код обновляет модель с использованием службы автоматизации Azure.
+title: Обновление моделей Azure Analysis Services с помощью службы автоматизации Azure | Документация Майкрософт
+description: Узнайте, как обновить модель кода с помощью службы автоматизации Azure.
 author: chrislound
-manager: kfile
 ms.service: analysis-services
 ms.topic: conceptual
 ms.date: 04/26/2019
 ms.author: chlound
-ms.openlocfilehash: 4cae93cff594ad561973f8029ea7335dc4c60263
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ed1634ef1009149dc2937174b20248eab9cd335f
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66357000"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72294796"
 ---
 # <a name="refresh-with-azure-automation"></a>Обновление с помощью службы автоматизации Azure
 
-С помощью службы автоматизации Azure и модули Runbook PowerShell, можно выполнять автоматические обновления данных в табличных моделях Azure Analysis.  
+С помощью службы автоматизации Azure и модулей Runbook PowerShell можно выполнять автоматические операции обновления данных в табличных моделях анализа Azure.  
 
-В примере в этой статье используется [модули PowerShell SqlServer](https://docs.microsoft.com/powershell/module/sqlserver/?view=sqlserver-ps).
+В примере в этой статье используются [модули PowerShell SQLServer](https://docs.microsoft.com/powershell/module/sqlserver/?view=sqlserver-ps).
 
-Далее в этой статье предоставляется пример модуля PowerShell Runbook, который демонстрирует обновление модели.  
+Пример модуля Runbook PowerShell, демонстрирующий обновление модели, приведен далее в этой статье.  
 
-## <a name="authentication"></a>Authentication
+## <a name="authentication"></a>Проверка подлинности
 
-Все вызовы должны пройти проверку подлинности допустимый токен Azure Active Directory (OAuth 2).  Пример в этой статье будут выполнять проверку подлинности в Azure Analysis Services (Субъекта-службы).
+Все вызовы должны пройти проверку подлинности с помощью допустимого маркера Azure Active Directory (OAuth 2).  В примере, приведенном в этой статье, для проверки подлинности в Azure Analysis Services используется субъект-служба (SPN).
 
-Дополнительные сведения о создании субъекта-службы, см. в разделе [создать субъект-службу с помощью портала Azure](../active-directory/develop/howto-create-service-principal-portal.md).
+Дополнительные сведения о создании субъекта-службы см. в разделе [Создание субъекта-службы с помощью портал Azure](../active-directory/develop/howto-create-service-principal-portal.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 > [!IMPORTANT]
-> В следующем примере предполагается, что брандмауэр Azure Analysis Services отключена. Если включен брандмауэр попасть в брандмауэре потребуется общедоступный IP-адрес инициатора запроса.
+> В следующем примере предполагается, что Azure Analysis Services брандмауэр отключен. Если брандмауэр включен, общедоступный IP-адрес инициатора запроса необходимо будет список разрешений в брандмауэре.
 
-### <a name="install-sqlserver-modules-from-powershell-gallery"></a>Установите модули SqlServer из коллекции PowerShell.
+### <a name="install-sqlserver-modules-from-powershell-gallery"></a>Установка модулей SqlServer из коллекции PowerShell.
 
-1. В учетной записи службы автоматизации Azure, щелкните **модули**, затем **Обзор коллекции**.
+1. В учетной записи службы автоматизации Azure щелкните **модули**, а затем — **Обзор коллекции**.
 
-2. На панели поиска выполните поиск **SqlServer**.
+2. В строке поиска выполните поиск **SQLServer**.
 
     ![Поиск модулей](./media/analysis-services-refresh-azure-automation/1.png)
 
-3. Выберите SqlServer, а затем нажмите кнопку **импорта**.
+3. Выберите SqlServer, а затем нажмите кнопку **Импорт**.
  
     ![Импорт модуля](./media/analysis-services-refresh-azure-automation/2.png)
 
-4. Последовательно выберите **ОК**.
+4. Нажмите кнопку **ОК**.
  
 ### <a name="create-a-service-principal-spn"></a>Создание субъекта-службы (SPN)
 
-Дополнительные сведения о создании субъекта-службы, см. в разделе [создать субъект-службу с помощью портала Azure](../active-directory/develop/howto-create-service-principal-portal.md).
+Дополнительные сведения о создании субъекта-службы см. в разделе [Создание субъекта-службы с помощью портал Azure](../active-directory/develop/howto-create-service-principal-portal.md).
 
-### <a name="configure-permissions-in-azure-analysis-services"></a>Настройка разрешений в службах Azure Analysis Services
+### <a name="configure-permissions-in-azure-analysis-services"></a>Настройка разрешений в Azure Analysis Services
  
-Создании субъекта-службы должна иметь разрешения администратора сервера на сервере. Дополнительные сведения см. в статье [Добавление субъекта-службы к роли администратора сервера](analysis-services-addservprinc-admins.md).
+Создаваемый субъект-служба должен иметь разрешения администратора сервера на сервере. Дополнительные сведения см. в статье [Добавление субъекта-службы к роли администратора сервера](analysis-services-addservprinc-admins.md).
 
-## <a name="design-the-azure-automation-runbook"></a>Разработка Runbook службы автоматизации Azure
+## <a name="design-the-azure-automation-runbook"></a>Разработка модуля Runbook службы автоматизации Azure
 
-1. В учетной записи службы автоматизации, создайте **учетные данные** ресурсов, которая будет использоваться для безопасного хранения субъекта-службы.
+1. В учетной записи службы автоматизации создайте ресурс **учетных данных** , который будет использоваться для безопасного хранения субъекта-службы.
 
     ![Создание учетных данных](./media/analysis-services-refresh-azure-automation/6.png)
 
-2. Введите сведения для учетных данных.  Для **имя пользователя**, введите **ClientId имени участника-службы**, для **пароль**, введите **имени участника-службы секрет**.
+2. Введите сведения для учетных данных.  В качестве **имени пользователя введите имя** **участника-службы (SPN**), а в поле **пароль**введите **секрет имени субъекта-службы**.
 
     ![Создание учетных данных](./media/analysis-services-refresh-azure-automation/7.png)
 
-3. Импорт Runbook службы автоматизации
+3. Импорт модуля Runbook службы автоматизации
 
     ![Импортировать модуль Runbook](./media/analysis-services-refresh-azure-automation/8.png)
 
-4. Поиск **обновления Model.ps1** файл, укажите **имя** и **описание**, а затем нажмите кнопку **создать**.
+4. Найдите файл **РЕФРЕШ-модел. ps1** , укажите **имя** и **Описание**, а затем нажмите кнопку **создать**.
 
     ![Импортировать модуль Runbook](./media/analysis-services-refresh-azure-automation/9.png)
 
-5. При создании Runbook автоматически перейдет в режим редактирования.  Нажмите кнопку **Опубликовать**.
+5. Когда модуль Runbook создан, он автоматически переходит в режим редактирования.  Нажмите кнопку **Опубликовать**.
 
     ![Публикация модуля Runbook](./media/analysis-services-refresh-azure-automation/10.png)
 
     > [!NOTE]
-    > Ресурс учетных данных, который был создан ранее извлекается модулем runbook с помощью **Get-AutomationPSCredential** команды.  Эта команда передается **Invoke ProcessASADatabase** команду PowerShell для проверки подлинности для служб Azure Analysis Services.
+    > Ресурс учетных данных, созданный ранее, извлекается модулем Runbook с помощью команды **Get-AutomationPSCredential** .  Затем эта команда передается в команду PowerShell **Invoke-процессасадатабасе** , чтобы выполнить проверку подлинности для Azure Analysis Services.
 
-6. Тестирование модуля runbook, щелкнув **запустить**.
+6. Протестируйте модуль Runbook, нажав кнопку **Пуск**.
 
     ![Запуск модуля Runbook](./media/analysis-services-refresh-azure-automation/11.png)
 
-7. Заполните **DATABASENAME**, **строку СЕРВЕР_АНАЛИЗА_ДАННЫХ**, и **REFRESHTYPE** параметров, а затем щелкните **ОК**. **WEBHOOKDATA** параметр не требуется, когда модуль Runbook запускается вручную.
+7. Заполните параметры **DATABASENAME**, **аналисиссервер**и **REFRESHTYPE** , а затем нажмите кнопку **ОК**. Параметр **WEBHOOKDATA** не требуется при запуске модуля Runbook вручную.
 
     ![Запуск модуля Runbook](./media/analysis-services-refresh-azure-automation/12.png)
 
 Если модуль Runbook успешно выполнен, вы получите выходные данные следующего вида:
 
-![При успешном выполнении](./media/analysis-services-refresh-azure-automation/13.png)
+![Успешный запуск](./media/analysis-services-refresh-azure-automation/13.png)
 
-## <a name="use-a-self-contained-azure-automation-runbook"></a>Используйте автономное Runbook службы автоматизации Azure
+## <a name="use-a-self-contained-azure-automation-runbook"></a>Использование автономного модуля Runbook службы автоматизации Azure
 
-Модуль Runbook можно настроить для триггера, модель Azure Analysis Services обновление по расписанию.
+Модуль Runbook можно настроить для запуска обновления Azure Analysis Servicesной модели по расписанию.
 
-Это можно настроить следующим образом:
+Это можно настроить следующим образом.
 
-1. В модуле Runbook службы автоматизации щелкните **расписания**, затем **Добавить расписание**.
+1. В модуле Runbook службы автоматизации щелкните **расписания**, а затем **добавьте расписание**.
  
-    ![Создание расписания](./media/analysis-services-refresh-azure-automation/14.png)
+    ![Создать расписание](./media/analysis-services-refresh-azure-automation/14.png)
 
-2. Нажмите кнопку **расписание** > **создать новое расписание**, а затем введите необходимые сведения.
+2. Щелкните **schedule** > **создать новое расписание**, а затем введите сведения.
 
     ![Настройка расписания](./media/analysis-services-refresh-azure-automation/15.png)
 
 3. Нажмите кнопку **Создать**.
 
-4. Заполните параметры для расписания. Они будут использоваться каждый раз, активирует модуль Runbook. **WEBHOOKDATA** параметр следует оставить пустым при выполнении по расписанию.
+4. Заполните параметры расписания. Они будут использоваться при каждом срабатывании модуля Runbook. При выполнении по расписанию параметр **WEBHOOKDATA** должен оставаться пустым.
 
     ![Настройка параметров](./media/analysis-services-refresh-azure-automation/16.png)
 
-5. Последовательно выберите **ОК**.
+5. Нажмите кнопку **ОК**.
 
 ## <a name="consume-with-data-factory"></a>Использование с фабрикой данных
 
-Чтобы использовать модуль runbook с помощью фабрики данных Azure, необходимо сначала создать **веб-перехватчика** для модуля runbook. **Веб-перехватчика** предоставит URL-адрес, который можно вызывать с помощью веб-действие фабрики данных Azure.
+Чтобы использовать модуль Runbook с помощью фабрики данных Azure, сначала создайте **веб-перехватчик** для модуля Runbook. Веб- **перехватчик** предоставит URL-адрес, который можно вызвать с помощью Web Activity фабрики данных Azure.
 
 > [!IMPORTANT]
-> Чтобы создать **веб-перехватчика**, должна быть в состоянии модуля Runbook **опубликовано**.
+> Чтобы создать **веб-перехватчик**, необходимо **опубликовать**состояние модуля Runbook.
 
-1. В модуле Runbook службы автоматизации щелкните **веб-перехватчики**, а затем нажмите кнопку **добавить веб-перехватчик**.
+1. В модуле Runbook службы автоматизации щелкните **веб-перехватчики**, а затем щелкните **Добавить веб-перехватчик**.
 
    ![Добавить веб-перехватчик](./media/analysis-services-refresh-azure-automation/17.png)
 
-2. Присвойте веб-перехватчика, имя и срок действия.  Только идентифицируют веб-перехватчика в модуль Runbook службы автоматизации, он не является частью URL-адрес.
+2. Укажите имя и срок действия веб-перехватчика.  Это имя определяет только веб-перехватчик внутри модуля Runbook службы автоматизации, он не формирует часть URL.
 
    >[!CAUTION]
-   >Убедитесь, что скопируйте URL-адрес, прежде чем закрывать вы его не удается вернуть после закрытия мастера.
+   >Перед закрытием мастера убедитесь, что вы скопировали URL-адрес, так как его нельзя вернуть после закрытия.
     
    ![Настройка веб-перехватчика](./media/analysis-services-refresh-azure-automation/18.png)
 
-    Параметры для веб-перехватчик может остаться пустым.  При настройке веб-действие фабрики данных Azure, параметры могут передаваться в текст вызова веб.
+    Параметры веб-перехватчика могут остаться пустыми.  При настройке веб-действия фабрики данных Azure параметры могут передаваться в тело веб-вызова.
 
-3. В фабрике данных, Настройка **веб-действие**
+3. Настройка **веб-действия** в фабрике данных
 
 ### <a name="example"></a>Пример
 
-   ![Пример веб-действие](./media/analysis-services-refresh-azure-automation/19.png)
+   ![Пример веб-действия](./media/analysis-services-refresh-azure-automation/19.png)
 
-**URL-адрес** URL-адрес, созданный из веб-перехватчика.
+**URL** -адрес — это URL-адрес, создаваемый веб-перехватчиком.
 
-**Текст** — это документ JSON, которое должно содержать следующие свойства:
+**Текст** — это документ JSON, который должен содержать следующие свойства:
 
 
 |Свойство  |Значение  |
 |---------|---------|
-|**AnalysisServicesDatabase**     |Имя базы данных Azure Analysis Services <br/> Пример: AdventureWorksDB         |
-|**AnalysisServicesServer**     |Имя сервера Azure Analysis Services. <br/> Пример: https:\//westus.asazure.windows.net/servers/myserver/models/AdventureWorks/         |
-|**DatabaseRefreshType**     |Тип обновления для выполнения. <br/> Пример: Полное         |
+|**аналисиссервицесдатабасе**     |Имя базы данных Azure Analysis Services <br/> Пример: AdventureWorksDB         |
+|**аналисиссервицессервер**     |Имя сервера Azure Analysis Services. <br/> Пример: https: \//westus. asazure. Windows. NET/Servers/MyServer/Models/AdventureWorks/         |
+|**датабасерефрештипе**     |Тип выполняемого обновления. <br/> Пример: Полное         |
 
 Пример текста JSON:
 
@@ -161,30 +160,30 @@ ms.locfileid: "66357000"
 }
 ```
 
-Эти параметры определены в модуле runbook сценария PowerShell.  При выполнении веб-действие, переданный полезные данные JSON равно WEBHOOKDATA.
+Эти параметры определяются в сценарии Runbook PowerShell.  При выполнении веб-действия передаются полезные данные JSON WEBHOOKDATA.
 
-Это десериализуется и хранится как параметры PowerShell, которые затем используются с помощью команды PowerShell Invoke-ProcesASDatabase.
+Он десериализуется и сохраняется как параметры PowerShell, которые затем используются командой PowerShell Invoke-Процесасдатабасе.
 
-![Десериализованный веб-перехватчика](./media/analysis-services-refresh-azure-automation/20.png)
+![Десериализованный веб-перехватчик](./media/analysis-services-refresh-azure-automation/20.png)
 
-## <a name="use-a-hybrid-worker-with-azure-analysis-services"></a>Использование гибридной рабочей роли Azure Analysis Services
+## <a name="use-a-hybrid-worker-with-azure-analysis-services"></a>Использование гибридной рабочей роли с Azure Analysis Services
 
-Виртуальной машине Azure с помощью статический общедоступный IP-адрес может использоваться в качестве гибридной рабочей роли службы автоматизации Azure.  Этот общедоступный IP-адрес, затем добавляются в брандмауэр Azure Analysis Services.
+Виртуальную машину Azure со статическим общедоступным IP-адресом можно использовать в качестве гибридная рабочая роль службы автоматизации Azure.  Затем этот общедоступный IP-адрес можно добавить в брандмауэр Azure Analysis Services.
 
 > [!IMPORTANT]
 > Убедитесь, что общедоступный IP-адрес виртуальной машины настроен как статический.
 >
->Дополнительные сведения о настройке гибридными рабочими ролями службы автоматизации Azure, см. в разделе [автоматизация ресурсов в центре обработки данных или облаке с помощью гибридной рабочей роли Runbook](../automation/automation-hybrid-runbook-worker.md#install-a-hybrid-runbook-worker).
+>Дополнительные сведения о настройке гибридных рабочих ролей службы автоматизации Azure см. в статье [Автоматизация ресурсов в центре обработки данных или в облаке с помощью гибридной рабочей роли Runbook](../automation/automation-hybrid-runbook-worker.md#install-a-hybrid-runbook-worker).
 
-После настройки гибридной рабочей роли, создание объекта Webhook, как описано в разделе [Consume с фабрикой данных](#consume-with-data-factory).  Единственное отличие заключается в том, чтобы выбрать **проведение** > **гибридной рабочей роли** параметр при настройке веб-перехватчика.
+После настройки гибридной рабочей роли создайте веб-перехватчик, как описано в разделе [Использование фабрики данных](#consume-with-data-factory).  Единственное отличие заключается в том, что при настройке веб-перехватчика можно выбрать параметр **выполнить в** **гибридной рабочей роли**  > .
 
-Пример веб-перехватчика с помощью гибридной рабочей роли:
+Пример веб-перехватчика с использованием гибридной рабочей роли:
 
-![Пример гибридной рабочей роли Webhook](./media/analysis-services-refresh-azure-automation/21.png)
+![Пример веб-перехватчика гибридной рабочей роли](./media/analysis-services-refresh-azure-automation/21.png)
 
-## <a name="sample-powershell-runbook"></a>Пример модуля PowerShell Runbook
+## <a name="sample-powershell-runbook"></a>Пример модуля Runbook PowerShell
 
-В следующем фрагменте кода приведен пример того, как выполнять обновления модели Azure Analysis Services, с помощью PowerShell Runbook.
+В следующем фрагменте кода приведен пример того, как выполнить обновление модели Azure Analysis Services с помощью модуля Runbook PowerShell.
 
 ```powershell
 param
@@ -225,7 +224,7 @@ else
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Примеры](analysis-services-samples.md)  
 [REST API](https://docs.microsoft.com/rest/api/analysisservices/servers)

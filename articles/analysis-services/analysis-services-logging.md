@@ -2,18 +2,17 @@
 title: Ведение журнала диагностики для Azure Analysis Services | Документация Майкрософт
 description: Узнайте том, как настроить журнал ведения диагностики для Azure Analysis Services.
 author: minewiskan
-manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: b158545390dafa36e7dad285953c78243f891f28
-ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
+ms.openlocfilehash: a9684042a76c9c906a75334c319b4ca8ee0b727b
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71259432"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72298606"
 ---
 # <a name="setup-diagnostic-logging"></a>Настройка журнала ведения диагностики
 
@@ -27,7 +26,7 @@ ms.locfileid: "71259432"
 
 Можно выбрать категории **Подсистема**, **Служба** и **Метрики**.
 
-### <a name="engine"></a>Подсистема
+### <a name="engine"></a>Двигатель
 
 При выборе категории **Подсистема** в журнале регистрируется все события [xEvent](https://docs.microsoft.com/analysis-services/instances/monitor-analysis-services-with-sql-server-extended-events). Невозможно будет выбрать отдельные события. 
 
@@ -44,17 +43,17 @@ ms.locfileid: "71259432"
 |Команды     |  Command Begin       |
 |Команды     |  Command End       |
 |Ошибки и предупреждения     |   Ошибка      |
-|Обзор     |   Discover End      |
+|Поиск     |   Discover End      |
 |Уведомление     |    Уведомление     |
 |Сеанс     |  Session Initialize       |
-|Блокировки    |  Взаимоблокировка       |
+|Блокировки    |  Deadlock       |
 |Обработка запросов     |   VertiPaq SE Query Begin      |
 |Обработка запросов     |   VertiPaq SE Query End      |
 |Обработка запросов     |   VertiPaq SE Query Cache Match      |
 |Обработка запросов     |   Direct Query Begin      |
 |Обработка запросов     |  Direct Query End       |
 
-### <a name="service"></a>Служба
+### <a name="service"></a>Service
 
 |Имя операции  |Когда выполняется  |
 |---------|---------|
@@ -71,7 +70,7 @@ ms.locfileid: "71259432"
 
 ## <a name="setup-diagnostics-logging"></a>Настройка ведения журнала диагностики
 
-### <a name="azure-portal"></a>портала Azure
+### <a name="azure-portal"></a>Портал Azure
 
 1. На [портале Azure](https://portal.azure.com) выберите сервер, в левой области навигации выберите **Журналы диагностики**, а затем — **Включить диагностику**.
 
@@ -268,7 +267,7 @@ $account = Get-AzResource -ResourceGroupName awsales_resgroup `
 -ResourceName awsales -ResourceType "Microsoft.AnalysisServices/servers"
 ```
 
-### <a name="enable-logging"></a>Включить ведение журнала
+### <a name="enable-logging"></a>Включение ведения журналов
 
 Чтобы включить ведение журнала, используйте командлет Set-Аздиагностиксеттинг вместе с переменными для новой учетной записи хранения, учетной записи сервера и категории. Выполните следующую команду, задав для флага **-Enabled** значение **$true**:
 

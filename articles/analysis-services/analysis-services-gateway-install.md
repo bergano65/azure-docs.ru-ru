@@ -2,18 +2,17 @@
 title: Установка локального шлюза данных для Azure Analysis Services | Документация Майкрософт
 description: Узнайте, как установить и настроить локальный шлюз данных.
 author: minewiskan
-manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
 ms.date: 07/30/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: e87a8221a4db4dfab132a91a31a9ba5b5602a3db
-ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
+ms.openlocfilehash: 6f182976ac655692f8c50d4e7560aa21444ce848
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68678433"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72298649"
 ---
 # <a name="install-and-configure-an-on-premises-data-gateway"></a>Установка и настройка локального шлюза данных
 
@@ -21,7 +20,7 @@ ms.locfileid: "68678433"
 
 Дополнительные сведения о шлюзе и его использовании с помощью Azure Analysis Services см. в разделе [Подключение к локальным источникам данных](analysis-services-gateway.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 **Минимальные требования:**
 
@@ -57,7 +56,7 @@ ms.locfileid: "68678433"
 
 2. Выберите **локальный шлюз данных**.
 
-   ![Выбор](media/analysis-services-gateway-install/aas-gateway-installer-select.png)
+   ![Выберите пункт](media/analysis-services-gateway-install/aas-gateway-installer-select.png)
 
 2. Выберите расположение, примите условия соглашения и нажмите кнопку **Установить**.
 
@@ -65,7 +64,7 @@ ms.locfileid: "68678433"
 
 3. Войдите в Azure. Учетная запись должна быть у вашего Azure Active Directory клиента. Эта учетная запись используется для администратора шлюза. Учетные записи Azure B2B (гостевые) не поддерживаются при установке и регистрации шлюза.
 
-   ![Войдите в Azure](media/analysis-services-gateway-install/aas-gateway-installer-account.png)
+   ![Вход в Azure](media/analysis-services-gateway-install/aas-gateway-installer-account.png)
 
    > [!NOTE]
    > При входе с использованием учетной записи домена она сопоставляется с учетной записью организации в Azure AD. Учетная запись вашей организации используется как администратор шлюза.
@@ -76,14 +75,14 @@ ms.locfileid: "68678433"
 
 1.  Выберите **Регистрация нового шлюза на этом компьютере**.
 
-    ![Регистрация](media/analysis-services-gateway-install/aas-gateway-register-new.png)
+    ![Зарегистрировать](media/analysis-services-gateway-install/aas-gateway-register-new.png)
 
 2. Введите имя и ключ восстановления для шлюза. По умолчанию шлюз использует регион, установленный по умолчанию для вашей подписки. Если вам необходим другой регион, выберите **Смена региона**.
 
     > [!IMPORTANT]
     > Сохраните ключ восстановления в безопасном месте. Ключ восстановления требуется для перехвата, переноса или восстановления шлюза. 
 
-   ![Регистрация](media/analysis-services-gateway-install/aas-gateway-register-name.png)
+   ![Зарегистрировать](media/analysis-services-gateway-install/aas-gateway-register-name.png)
 
 
 ## <a name="create-resource"></a>Создание ресурса шлюза Azure
@@ -96,7 +95,7 @@ ms.locfileid: "68678433"
 
 2. В разделе **Create connection gateway** (Создать шлюз для подключения) введите следующие параметры:
 
-   * **Имя.** Введите имя для вашего ресурса шлюза. 
+   * **Имя**: Введите имя для вашего ресурса шлюза. 
 
    * **Подписка**: Выберите подписку Azure, связанную с вашим ресурсом шлюза. 
    

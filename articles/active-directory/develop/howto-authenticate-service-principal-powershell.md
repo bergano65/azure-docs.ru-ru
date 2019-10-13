@@ -13,16 +13,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: multiple
 ms.workload: na
-ms.date: 08/19/2019
+ms.date: 10/10/2019
 ms.author: ryanwi
 ms.reviewer: tomfitz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fe0a3c8cbee92be85fe415a4d44d5493940bb45a
-ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
+ms.openlocfilehash: f7c75a567dbefc71b4b0fea595dae56a03def5ed
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69638621"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72295449"
 ---
 # <a name="how-to-use-azure-powershell-to-create-a-service-principal-with-a-certificate"></a>Практическое руководство. Использование Azure PowerShell для создания субъекта-службы с сертификатом
 
@@ -46,9 +46,14 @@ ms.locfileid: "69638621"
 
 Проверить, есть ли у вас соответствующие разрешения, проще всего на портале. Ознакомьтесь с [проверкой наличия необходимых разрешений](howto-create-service-principal-portal.md#required-permissions).
 
+## <a name="assign-the-application-to-a-role"></a>Назначение приложению роли
+Чтобы обеспечить доступ к ресурсам в подписке, необходимо назначить приложению роль. Укажите, какая роль предоставляет приложению необходимые разрешения. Дополнительные сведения о доступных ролях см. в статье [RBAC: встроенные роли](/azure/role-based-access-control/built-in-roles).
+
+Вы можете задать область действия на уровне подписки, группы ресурсов или ресурса. Разрешения наследуют более низкие уровни области действия. Например, Добавление приложения в роль *читатель* для группы ресурсов означает, что она может читать группу ресурсов и все содержащиеся в ней ресурсы. Чтобы разрешить приложению выполнять такие действия, как перезагрузка, запуск и завершение экземпляров, выберите роль *участник* .
+
 ## <a name="create-service-principal-with-self-signed-certificate"></a>Создание субъекта-службы с самозаверяющим сертификатом
 
-Ниже приводится простой пример сценария. В нем используется команда [New-AzADServicePrincipal](/powershell/module/az.resources/new-azadserviceprincipal), чтобы создать субъект-службу с самозаверяющим сертификатом, а затем выполняется командлет [New-AzureRmRoleAssignment](/powershell/module/az.resources/new-azroleassignment) для присвоения этому субъекту-службе роли [участника](../../role-based-access-control/built-in-roles.md#contributor). Назначение ролей ограничивается текущей выбранной подпиской Azure. Чтобы выбрать другую подписку, выполните командлет [Set-AzContext](/powershell/module/Az.Accounts/Set-AzContext).
+Ниже приводится простой пример сценария. Для создания субъекта-службы с самозаверяющим сертификатом используются [новые азадсервицепринЦипал](/powershell/module/az.resources/new-azadserviceprincipal) . с помощью [New-AzureRmRoleAssignment](/powershell/module/az.resources/new-azroleassignment) можно назначить роль [читателя](/azure/role-based-access-control/built-in-roles#reader) субъекту-службе. Назначение ролей ограничивается текущей выбранной подпиской Azure. Чтобы выбрать другую подписку, выполните командлет [Set-AzContext](/powershell/module/Az.Accounts/Set-AzContext).
 
 > [!NOTE]
 > Командлет New-SelfSignedCertificate и модуль PKI сейчас не поддерживаются в PowerShell Core. 
@@ -64,7 +69,7 @@ $sp = New-AzADServicePrincipal -DisplayName exampleapp `
   -EndDate $cert.NotAfter `
   -StartDate $cert.NotBefore
 Sleep 20
-New-AzRoleAssignment -RoleDefinitionName Contributor -ServicePrincipalName $sp.ApplicationId
+New-AzRoleAssignment -RoleDefinitionName Reader -ServicePrincipalName $sp.ApplicationId
 ```
 
 Пример бездействует 20 секунд, чтобы данные нового субъекта-службы распространились в Azure AD. Если сценарий не подождет достаточно долго, появится сообщение об ошибке. "Субъект {ИД} не существует в каталоге {ИД каталога}". Чтобы устранить эту ошибку, подождите немного и выполните команду **New-AzRoleAssignment** еще раз.
@@ -105,7 +110,7 @@ $ApplicationId = (Get-AzADApplication -DisplayNameStartWith exampleapp).Applicat
 
 ## <a name="create-service-principal-with-certificate-from-certificate-authority"></a>Создание субъекта-службы с помощью сертификата из центра сертификации
 
-В приведенном ниже примере создается субъект-служба с сертификатом, выданным центром сертификации. Назначение ограничено указанной подпиской Azure. Также в примере этот субъект-служба добавляется в роль [участника](../../role-based-access-control/built-in-roles.md#contributor). Если при назначении ролей возникнет ошибка, назначение выполняется повторно.
+В приведенном ниже примере создается субъект-служба с сертификатом, выданным центром сертификации. Назначение ограничено указанной подпиской Azure. Он добавляет субъект-службу к роли [читателя](../../role-based-access-control/built-in-roles.md#reader) . Если при назначении ролей возникнет ошибка, назначение выполняется повторно.
 
 ```powershell
 Param (
@@ -141,7 +146,7 @@ Param (
  {
     # Sleep here for a few seconds to allow the service principal application to become active (should only take a couple of seconds normally)
     Sleep 15
-    New-AzRoleAssignment -RoleDefinitionName Contributor -ServicePrincipalName $ServicePrincipal.ApplicationId | Write-Verbose -ErrorAction SilentlyContinue
+    New-AzRoleAssignment -RoleDefinitionName Reader -ServicePrincipalName $ServicePrincipal.ApplicationId | Write-Verbose -ErrorAction SilentlyContinue
     $NewRole = Get-AzRoleAssignment -ObjectId $ServicePrincipal.Id -ErrorAction SilentlyContinue
     $Retries++;
  }
@@ -222,6 +227,5 @@ Get-AzADApplication -DisplayName exampleapp | New-AzADAppCredential `
 ## <a name="next-steps"></a>Следующие шаги
 
 * Настройка субъекта-службы с паролем описана в статье [Создание субъекта-службы Azure с помощью Azure PowerShell](/powershell/azure/create-azure-service-principal-azureps).
-* Подробные инструкции по интеграции приложения в Azure для управления ресурсами см. в [Управление ресурсами клиента с помощью Azure Active Directory и Resource Manager](../../azure-resource-manager/resource-manager-api-authentication.md).
 * Более подробное описание приложений и субъектов-служб см. в статье [Объекты приложений и объекты участников-служб](app-objects-and-service-principals.md).
 * Дополнительные сведения о проверке подлинности Azure AD см. [здесь](authentication-scenarios.md).

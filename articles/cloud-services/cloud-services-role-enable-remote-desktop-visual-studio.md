@@ -1,5 +1,5 @@
 ---
-title: Включение подключения к удаленному рабочему столу для роли в облачных службах Azure
+title: Использование Visual Studio для включения удаленный рабочий стол роли (облачные службы Azure)
 description: Настройка подключения к удаленному рабочему столу в приложении облачной службы Azure.
 services: cloud-services
 author: ghogen
@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.workload: azure-vs
 ms.date: 03/06/2018
 ms.author: ghogen
-ms.openlocfilehash: 6a6d045513e3e91c5a8b2004e47378a097be8963
-ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
+ms.openlocfilehash: 96f71306c060a6a533a3ab1c0c54b49d74e5cd82
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69515915"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72298385"
 ---
 # <a name="enable-remote-desktop-connection-for-a-role-in-azure-cloud-services-using-visual-studio"></a>Включение подключения к удаленному рабочему столу для роли в облачных службах Azure с помощью Visual Studio
 

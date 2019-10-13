@@ -123,6 +123,8 @@
               href: automation-scenario-source-control-integration-with-VSTS.md
     - name: Устранение неполадок
       items:
+        - name: 'Данные, которые необходимо собрать для отправки запроса в службу автоматизации Microsoft Azure'
+          href: troubleshoot/collect-data-microsoft-azure-automation-case.md
         - name: Устранение неполадок в гибридной рабочей роли Runbook
           href: troubleshoot/hybrid-runbook-worker.md
           displayName: 'troubleshoot, HRW, hybrid worker'

@@ -7,19 +7,19 @@ ms.topic: conceptual
 ms.date: 05/22/2018
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 802b4deb91f1df784ac0aed2952d3f915b54ce73
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: 3ce754a67643f4506fa825f0780969dc4a06f826
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68699718"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72299583"
 ---
 # <a name="how-to-deploy-azure-files"></a>Как развернуть службу файлов Azure
 [Служба файлов Azure](storage-files-introduction.md) предлагает полностью управляемые общие файловые ресурсы в облаке, доступ к которым можно получить с помощью стандартного отраслевого протокола SMB. В этой статье демонстрируется практическое развертывание службы файлов Azure в вашей организации.
 
 Перед выполнением действий в этой статье настоятельно рекомендуется прочесть статью [Planning for an Azure Files deployment](storage-files-planning.md) (Планирование развертывания службы файлов Azure).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 В данной статье предполагается, что вы уже выполнили следующие действия:
 
 - Создали учетную запись хранения Azure с необходимыми параметрами устойчивости шифрования в нужном регионе. Пошаговые инструкции по созданию учетной записи хранения см. в разделе о [создании учетной записи хранения](../common/storage-create-storage-account.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json).
@@ -28,7 +28,7 @@ ms.locfileid: "68699718"
 ## <a name="transfer-data-into-azure-files"></a>Передача данных в службу файлов Azure
 Вы можете перенести существующие общие файловые ресурсы, например хранящиеся локально, в новую общую папку Azure. В этом разделе будет показано, как переместить данные в общую папку Azure, используя распространенные способы, приведенные в [руководстве по планированию](storage-files-planning.md#data-transfer-method)
 
-### <a name="azure-file-sync"></a>Синхронизация файлов Azure
+### <a name="azure-file-sync"></a>Служба синхронизации файлов Azure
 Служба "Синхронизация файлов Azure" позволяет централизованно хранить файловые ресурсы организации в службе файлов Azure, обеспечивая гибкость, производительность и совместимость локального файлового сервера. Это достигается путем преобразования серверов Windows Server в быстрый кэш общей папки Azure. Для локального доступа к данным вы можете использовать любой протокол (в том числе SMB, NFS и FTPS), доступный в Windows Server. Кроме того, вы можете создать любое число кэшей в любом регионе.
 
 Службу "Синхронизация файлов Azure" можно использовать для переноса данных в общую папку Azure, даже если для долгосрочного использования не требуется механизм синхронизации. Дополнительные сведения об использовании службы "Синхронизация файлов Azure" для передачи данных в общую папку Azure можно найти в статьях [Планирование развертывания службы синхронизации файлов Azure (предварительная версия)](storage-sync-files-planning.md) и [Развертывание службы синхронизации файлов Azure (предварительная версия)](storage-sync-files-deployment-guide.md).
@@ -63,7 +63,7 @@ ms.locfileid: "68699718"
     "F:\shares\scratch\","MyAzureFileShare/",file,rename,"None",None
     ```
 
-    С помощью учетной записи хранения можно указать несколько общих ресурсов. Дополнительные сведения см. в разделе [Подготовка CSV-файла набора данных](../common/storage-import-export-tool-preparing-hard-drives-import.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json#prepare-the-dataset-csv-file).
+    С помощью учетной записи хранения можно указать несколько общих ресурсов. Дополнительные сведения см. в разделе [Подготовка CSV-файла набора данных](../common/storage-import-export-tool-preparing-hard-drives-import.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json).
 
 5. Создайте CSV-файл набора дисков. CSV-файл набора дисков содержит перечень дисков, доступных агенту локального экспорта. Например, следующий CSV-файл набора дисков перечисляет диски `X:`, `Y:` и `Z:`, которые будут использоваться в задании локального экспорта:
 
@@ -74,7 +74,7 @@ ms.locfileid: "68699718"
     Z,Format,SilentMode,Encrypt,
     ```
     
-    Дополнительные сведения см. в статье [Подготовка CSV-файла набора дисков](../common/storage-import-export-tool-preparing-hard-drives-import.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json#prepare-initialdriveset-or-additionaldriveset-csv-file).
+    Дополнительные сведения см. в статье [Подготовка CSV-файла набора дисков](../common/storage-import-export-tool-preparing-hard-drives-import.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json).
 
 6. Используйте [средство WAImportExport](https://www.microsoft.com/download/details.aspx?id=55280) для копирования данных на один или несколько жестких дисков.
 

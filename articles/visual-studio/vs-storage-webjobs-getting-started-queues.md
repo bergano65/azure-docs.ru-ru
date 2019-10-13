@@ -1,5 +1,5 @@
 ---
-title: Приступая к работе с хранилищем очередей и подключенными службами Visual Studio (проекты веб-заданий) | Документация Майкрософт
+title: Начало работы с хранилищем очередей с помощью Visual Studio (проекты веб-заданий)
 description: Как приступить к работе, используя хранилище очередей Azure в проекте веб-задания после подключения к учетной записи хранения с использованием подключенных служб Visual Studio.
 services: storage
 author: ghogen
@@ -12,12 +12,13 @@ ms.workload: azure-vs
 ms.topic: article
 ms.date: 12/02/2016
 ms.author: ghogen
-ms.openlocfilehash: 0afed158f5a19f3d82a3953f828f2b5566a6d5ff
-ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
+ROBOTS: NOINDEX,NOFOLLOW
+ms.openlocfilehash: ffba203bafaf3837cd2d7fc1a6fd962a6926b186
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69510790"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72298751"
 ---
 # <a name="getting-started-with-azure-queue-storage-and-visual-studio-connected-services-webjob-projects"></a>Приступая к работе с подключенными службами хранилища очередей Azure и Visual Studio (проекты веб-заданий)
 [!INCLUDE [storage-try-azure-tools-queues](../../includes/storage-try-azure-tools-queues.md)]
@@ -190,7 +191,7 @@ public static void GracefulShutdownDemo(
 Чтобы написать функцию, которая создает новое сообщение очереди, используйте атрибут **Queue** . Как и в случае с **QueueTrigger**, имя очереди можно передать в виде строки или [задать динамически](#how-to-set-configuration-options).
 
 ### <a name="string-queue-messages"></a>Строковые сообщения очереди
-Следующий пример неасинхронного кода создает новое сообщение очереди в очереди с именем «outputqueue» с тем же содержимым, что и сообщение очереди, поступившее в очередь с именем «inputqueue». (Для асинхронных функций **Используйте\<IAsyncCollector T >** , как показано далее в этом разделе.)
+Следующий пример неасинхронного кода создает новое сообщение очереди в очереди с именем «outputqueue» с тем же содержимым, что и сообщение очереди, поступившее в очередь с именем «inputqueue». (Для асинхронных функций используйте **IAsyncCollector @ no__t-1T >** , как показано далее в этом разделе.)
 
 ```csharp
 public static void CreateQueueMessage(
@@ -216,7 +217,7 @@ public static void CreateQueueMessage(
 Пакет SDK автоматически выполняет сериализацию объекта в формат JSON. Сообщение очереди создается всегда, даже если объект имеет значение null.
 
 ### <a name="create-multiple-messages-or-in-async-functions"></a>Создание нескольких сообщений или сообщений в асинхронных функциях
-Чтобы создать несколько сообщений, сделайте тип параметра для выходной очереди **\<ICollector t >** или **\<IAsyncCollector t >** , как показано в следующем примере.
+Чтобы создать несколько сообщений, сделайте тип параметра для выходной очереди **ICollector @ no__t-1T >** или **IAsyncCollector @ no__t-3T >** , как показано в следующем примере.
 
 ```csharp
 public static void CreateQueueMessages(

@@ -16,12 +16,12 @@ ms.author: ryanwi
 ms.reviewer: tomfitz
 ms.custom: aaddev, seoapril2019, identityplatformtop40
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a28354f54978e8ba776d8b0da294652ff462a05f
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 14c3f90918d246a63d50af7b3542e8e74d5fbcf1
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68853459"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72295518"
 ---
 # <a name="how-to-use-the-portal-to-create-an-azure-ad-application-and-service-principal-that-can-access-resources"></a>Практическое руководство. Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала
 
@@ -87,7 +87,7 @@ ms.locfileid: "68853459"
 ## <a name="certificates-and-secrets"></a>Сертификаты и секреты
 Управляющие приложения могут использовать два вида учетных данных для аутентификации в Azure AD: сертификаты и секреты приложений.  Рекомендуется использовать сертификат, но можно также создать новый секрет приложения.
 
-### <a name="upload-a-certificate"></a>Отправить сертификат
+### <a name="upload-a-certificate"></a>Загрузить сертификат
 
 Вы можете использовать существующий сертификат, если он есть.  При необходимости можно создать самозаверяющий сертификат для целей тестирования. Откройте PowerShell и выполните команду [New-SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate) со следующими параметрами, чтобы создать самозаверяющий сертификат в хранилище сертификатов пользователя на компьютере: `$cert=New-SelfSignedCertificate -Subject "CN=DaemonConsoleCert" -CertStoreLocation "Cert:\CurrentUser\My"  -KeyExportPolicy Exportable -KeySpec Signature`.  Экспортируйте этот сертификат с помощью оснастки MMC " [Управление сертификатом пользователя](/dotnet/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in) ", доступной на панели управления Windows.
 
@@ -150,6 +150,5 @@ ms.locfileid: "68853459"
 
 ## <a name="next-steps"></a>Следующие шаги
 
-* Сведения о настройке мультитенантного приложения см. в статье [Управление ресурсами клиента с помощью Azure Active Directory и Resource Manager](../../azure-resource-manager/resource-manager-api-authentication.md).
 * Дополнительные сведения о настройке политик безопасности см. в статье о [контроле доступа на основе ролей Azure](../../role-based-access-control/role-assignments-portal.md).  
 * Список доступных действий, которые можно разрешить или запретить пользователям, см. в разделе [Операции поставщиков ресурсов Azure Resource Manager](../../role-based-access-control/resource-provider-operations.md).

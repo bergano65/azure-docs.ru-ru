@@ -2,18 +2,17 @@
 title: Управление ролями и пользователями базы данных в службах Azure Analysis Services | Документация Майкрософт
 description: Узнайте, как управлять ролями и пользователями базы данных на сервере служб Analysis Services в Azure.
 author: minewiskan
-manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
 ms.date: 07/29/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 2a6c63c4ae58079c79a9d344f1e2550e4768088f
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 426b69173994fc94a52ef0fcccb0dbc6315de14a
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68932238"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72301151"
 ---
 # <a name="manage-database-roles-and-users"></a>Управление ролями и пользователями базы данных
 
@@ -28,7 +27,7 @@ ms.locfileid: "68932238"
 
 При создании проекта табличной модели вы создаете роли и добавляете пользователей или группы к этим ролям с помощью диспетчера ролей в SQL Server Data Tools (SSDT). При развертывании на сервере вы используете SQL Server Management Studio (SSMS), [Analysis Services командлеты PowerShell](https://docs.microsoft.com/analysis-services/powershell/analysis-services-powershell-reference)или [язык сценариев табличных моделей](https://docs.microsoft.com/bi-reference/tmsl/tabular-model-scripting-language-tmsl-reference) (TMSL) для добавления и удаления ролей и членов пользователей.
 
-Для **групп безопасности** необходимо включить [поддержку почты](https://docs.microsoft.com/exchange/recipients-in-exchange-online/manage-mail-enabled-security-groups), если свойство `MailEnabled` имеет значение `True`. При указании группы по адресу электронной `obj:groupid@tenantid`почты используйте.
+Для **групп безопасности** необходимо включить [поддержку почты](https://docs.microsoft.com/exchange/recipients-in-exchange-online/manage-mail-enabled-security-groups), если свойство `MailEnabled` имеет значение `True`. При указании группы по адресу электронной почты используйте `obj:groupid@tenantid`.
 
 
 ## <a name="to-add-or-manage-roles-and-users-in-ssdt"></a>Чтобы добавить роли и пользователей в SSDT или управлять ими, сделайте следующее:  
@@ -140,7 +139,7 @@ ms.locfileid: "68932238"
   
 |Таблица|Выражение DAX|  
 |-----------|--------------------|  
-|Район|=Region[Country]="USA"|  
+|Регион|=Region[Country]="USA"|  
 |Категория продукта|=ProductCategory[Name]="Bicycles"|  
 |Транзакции|=Transactions[Year]=2016|  
   

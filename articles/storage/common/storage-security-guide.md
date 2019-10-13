@@ -9,12 +9,12 @@ ms.date: 03/21/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 548f37d6a0d4390fb98ceaee7b59314400debb38
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: 2847a25411ed0125f4af0a84f30cd3d9d630eb84
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68986552"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72299619"
 ---
 # <a name="azure-storage-security-guide"></a>Руководство по безопасности службы хранилища Azure
 
@@ -102,9 +102,7 @@ ms.locfileid: "68986552"
 * [Справочник по API REST поставщика ресурсов службы хранилища Azure](https://msdn.microsoft.com/library/azure/mt163683.aspx)
 
   В этом справочнике по интерфейсам API описаны API, с помощью которых можно управлять учетной записью хранения программными средствами.
-* [Использование API проверки подлинности Resource Manager для доступа к подпискам](../../azure-resource-manager/resource-manager-api-authentication.md)
 
-  В этой статье показано, как выполнять аутентификацию с помощью интерфейсов API Resource Manager.
 * [Конференция Ignite: управление доступом на основе ролей в Microsoft Azure](https://channel9.msdn.com/events/Ignite/2015/BRK2707)
 
   Это ссылка на видеоролик с конференции Microsoft Ignite 2015 на сайте Channel 9. На этой сессии обсуждались возможности управления доступом и ведения отчетов в Azure, а также давались рекомендации по защите доступа к подпискам Azure с помощью Azure Active Directory.

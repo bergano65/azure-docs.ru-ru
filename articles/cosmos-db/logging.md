@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/23/2019
 ms.author: sngun
 ms.custom: seodec18
-ms.openlocfilehash: e43bc4b8eb1db91493f279f5c46681483e4b18c4
-ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
+ms.openlocfilehash: 1e9f852d01d60ead9979b6b1190e285b35d5c312
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71261394"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72294047"
 ---
 # <a name="diagnostic-logging-in-azure-cosmos-db"></a>Журнал ведения диагностики в Azure Cosmos DB 
 
@@ -108,6 +108,12 @@ ms.locfileid: "71261394"
        { "time": "2019-04-14T19:08:11.6353239Z", "resourceId": "/SUBSCRIPTIONS/<your_subscription_ID>/RESOURCEGROUPS/<your_resource_group>/PROVIDERS/MICROSOFT.DOCUMENTDB/DATABASEACCOUNTS/<your_database_account>", "category": "QueryRuntimeStatistics", "properties": {"activityId": "278b0661-7452-4df3-b992-8aa0864142cf","databasename": "Tasks","collectionname": "Items","partitionkeyrangeid": "0","querytext": "{"query":"SELECT *\nFROM c\nWHERE (c.p1__10 != true)","parameters":[]}"}}
        ```
 
+      * **Партитионкэйстатистикс**: В этом журнале сообщается статистика ключей секций. В настоящее время статистика представлена с использованием размера хранилища (КБ) ключей секций. Журнал создается для первых трех ключей разделов, которые занимают большую часть хранилища данных.
+
+       ```
+       { "time": "2019-10-11T02:33:24.2018744Z", "resourceId": "/SUBSCRIPTIONS/<your_subscription_ID>/RESOURCEGROUPS/<your_resource_group>/PROVIDERS/MICROSOFT.DOCUMENTDB/DATABASEACCOUNTS/<your_database_account>", "category": "PartitionKeyStatistics", "properties": {"subscriptionId": "<your_subscription_ID>","regionName": "West US 2","databaseName": "KustoQueryResults","collectionname": "CapacityMetrics","partitionkey": "["CapacityMetricsPartition.136"]","sizeKb": "2048270"}}
+       ```
+
       * **Metric Requests** (Запросы метрик). Выберите этот параметр, чтобы хранить подробные данные в [метриках Azure](../azure-monitor/platform/metrics-supported.md). Если выполняется архивация в учетную запись хранения, можно выбрать период хранения журналов диагностики. По окончании периода хранения журналы удаляются автоматически.
 
 3. Щелкните **Сохранить**.
@@ -126,7 +132,7 @@ ms.locfileid: "71261394"
    az monitor diagnostic-settings create --name DiagStorage --resource <resourceId> --storage-account <storageAccountName> --logs '[{"category": "QueryRuntimeStatistics", "enabled": true, "retentionPolicy": {"enabled": true, "days": 0}}]'
    ```
 
-   `resource` — это имя учетной записи Azure Cosmos DB. Ресурс имеет формат "/Subscriptions/`<subscriptionId>`/resourceGroups/`<resource_group_name>`/провидерс/Микрософт.документдб/датабасеаккаунтс/ `storage-account` < Azure_Cosmos_account_name >" — имя учетной записи хранения, в которую вы необходимо отправить журналы. Можно записать в журнал другие журналы, обновив значения параметров категории на "MongoRequests" или "DataPlaneRequests". 
+   `resource` — это имя учетной записи Azure Cosmos DB. Ресурс имеет формат "/Subscriptions/`<subscriptionId>`/resourceGroups/`<resource_group_name>`/providers/Microsoft. DocumentDB/databaseAccounts/< Azure_Cosmos_account_name >". `storage-account` — имя учетной записи хранения, в которую необходимо отправить журналы. Можно записать в журнал другие журналы, обновив значения параметров категории на "MongoRequests" или "DataPlaneRequests". 
 
 - Чтобы включить потоковую передачу журналов диагностики в концентратор событий, используйте следующую команду:
 
@@ -134,7 +140,7 @@ ms.locfileid: "71261394"
    az monitor diagnostic-settings create --name cdbdiagsett --resourceId <resourceId> --event-hub-rule <eventHubRuleID> --logs '[{"category":"QueryRuntimeStatistics","enabled":true,"retentionPolicy":{"days":6,"enabled":true}}]'
    ```
 
-   `resource` — это имя учетной записи Azure Cosmos DB. `event-hub-rule` — Это идентификатор правила концентратора событий. 
+   `resource` — это имя учетной записи Azure Cosmos DB. @No__t-0 является ИДЕНТИФИКАТОРом правила концентратора событий. 
 
 - Чтобы включить отправку журналов диагностики в рабочую область Log Analytics, используйте следующую команду:
 

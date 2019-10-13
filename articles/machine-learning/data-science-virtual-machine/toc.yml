@@ -71,3 +71,7 @@
       href: reference-ubuntu-vm.md
     - name: Виртуальная машина CentOS для обработки и анализа данных
       href: reference-centos-vm.md
+    - name: Заметки о выпуске
+      href: release-notes.md
+    - name: Известные проблемы
+      href: reference-known-issues.md

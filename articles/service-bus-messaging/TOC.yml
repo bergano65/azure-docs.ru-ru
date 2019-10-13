@@ -91,6 +91,8 @@
       href: service-bus-async-messaging.md
     - name: Обработка сбоев и аварийных ситуаций
       href: service-bus-outages-disasters.md
+    - name: Регулирование
+      href: service-bus-throttling.md
     - name: Безопасность
       items:
         - name: Аутентификация и авторизация

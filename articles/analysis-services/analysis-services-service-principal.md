@@ -2,18 +2,17 @@
 title: Автоматизация задач Azure Analysis Services с помощью субъектов-служб | Документация Майкрософт
 description: Сведения о создании субъекта-службы для автоматизации задач Azure Analysis Services.
 author: minewiskan
-manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 4bfa969089407a35658160cf05a6407f8c717714
-ms.sourcegitcommit: e72073911f7635cdae6b75066b0a88ce00b9053b
+ms.openlocfilehash: 94f1313825b21b3adf7173b56798fce22736ea87
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68347969"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72294563"
 ---
 # <a name="automation-with-service-principals"></a>Автоматизация с помощью субъектов-служб
 
@@ -49,9 +48,9 @@ Analysis Services также поддерживает операции, выпо
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-#### <a name="a-nameazmodule-using-azanalysisservices-module"></a><a name="azmodule" />Использование модуля AZ. AnalysisServices
+#### <a name="a-nameazmodule-using-azanalysisservices-module"></a><a name="azmodule" />Using AZ. AnalysisServices Module
 
-При использовании субъекта-службы для операций управления ресурсами с помощью модуля [AZ. AnalysisServices](/powershell/module/az.analysisservices) используйте `Connect-AzAccount` командлет. 
+При использовании субъекта-службы для операций управления ресурсами с помощью модуля [AZ. AnalysisServices](/powershell/module/az.analysisservices) используйте командлет @no__t – 1. 
 
 В следующем примере appID и пароль используются для выполнения операций плоскости управления для синхронизации с репликами только для чтения и увеличения/уменьшения.
 

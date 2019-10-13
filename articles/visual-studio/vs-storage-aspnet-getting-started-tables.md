@@ -1,5 +1,5 @@
 ---
-title: Начало работы с хранилищем таблиц Azure и подключенными службами Visual Studio (ASP.NET) | Документация Майкрософт
+title: Приступая к работе с хранилищем таблиц Azure с помощью Visual Studio (ASP.NET)
 description: Начало работы с хранилищем таблиц Azure в проекте ASP.NET в Visual Studio при подключении к учетной записи хранения с помощью подключенных служб Visual Studio
 services: storage
 author: ghogen
@@ -12,12 +12,13 @@ ms.workload: azure-vs
 ms.topic: conceptual
 ms.date: 12/21/2016
 ms.author: ghogen
-ms.openlocfilehash: 6f0858d3c2e3f79dda58710031c105e83418058e
-ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
+ROBOTS: NOINDEX,NOFOLLOW
+ms.openlocfilehash: ec391db0e18128ad85d3bacb79fa51770aa70ea1
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69511166"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72298883"
 ---
 # <a name="get-started-with-azure-table-storage-and-visual-studio-connected-services-aspnet"></a>Начало работы с хранилищем таблиц Azure и подключенными службами Visual Studio (ASP.NET)
 [!INCLUDE [storage-try-azure-tools-tables](../../includes/storage-try-azure-tools-tables.md)]

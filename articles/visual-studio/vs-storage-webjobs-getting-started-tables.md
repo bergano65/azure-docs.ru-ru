@@ -1,5 +1,5 @@
 ---
-title: Приступая к работе с подключенными службами хранилища Azure и Visual Studio (проекты веб-заданий)
+title: Начало работы со службой хранилища Azure с помощью Visual Studio (проекты веб-заданий)
 description: Как приступить к работе, используя табличное хранилище Azure в проекте веб-задания Azure в Visual Studio после подключения к учетной записи хранения с помощью подключенных служб Visual Studio.
 services: storage
 author: ghogen
@@ -12,12 +12,13 @@ ms.workload: azure-vs
 ms.topic: conceptual
 ms.date: 12/02/2016
 ms.author: ghogen
-ms.openlocfilehash: 8875f680c8bb83c2375d6fe767f376cbb35d5a0a
-ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
+ROBOTS: NOINDEX,NOFOLLOW
+ms.openlocfilehash: 042f2659d3691e8c51e092bf69473187b8615ee6
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69510665"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72299953"
 ---
 # <a name="getting-started-with-azure-storage-azure-webjob-projects"></a>Начало работы со службой хранилища Azure (проекты веб-заданий Azure)
 [!INCLUDE [storage-try-azure-tools-tables](../../includes/storage-try-azure-tools-tables.md)]
@@ -30,7 +31,7 @@ ms.locfileid: "69510665"
 В некоторых фрагментах кода демонстрируется использование атрибута **Table** в функциях, вызванных вручную, т. е. без использования атрибутов активации.
 
 ## <a name="how-to-add-entities-to-a-table"></a>Как добавить сущность в таблицу
-Чтобы добавить сущности в таблицу, используйте атрибут **Table** с параметром **ICollector\<t >** или **IAsyncCollector\<> t** , где **t** указывает схему сущностей, которую необходимо добавить. Конструктор атрибута принимает строковый параметр, который указывает имя таблицы.
+Чтобы добавить сущности в таблицу, используйте атрибут **Table** с параметром **ICollector @ no__t-2T >** или **IAsyncCollector @ no__t-4T поддерживается >** , где **t** указывает схему сущностей, которую нужно добавить. Конструктор атрибута принимает строковый параметр, который указывает имя таблицы.
 
 Следующий пример кода добавляет сущности **Person** в таблицу с именем *Ingress*.
 
@@ -79,7 +80,7 @@ ms.locfileid: "69510665"
 ![Функция входа выполнена](./media/vs-storage-webjobs-getting-started-tables/ingresssuccess.png)
 
 ## <a name="how-to-read-multiple-entities-from-a-table"></a>Как выполнять чтение нескольких сущностей из таблицы
-Для чтения таблицы используйте атрибут **Table** с параметром **\<IQueryable T >** , где тип **t** является производным от **TableEntity** или реализует **ITableEntity**.
+Для чтения таблицы используйте атрибут **Table** с параметром **IQueryable @ no__t-2T >** , где тип **t** является производным от **TableEntity** или реализует **ITableEntity**.
 
 Следующий пример кода считывает и записывает все строки таблицы **Ingress** .
 

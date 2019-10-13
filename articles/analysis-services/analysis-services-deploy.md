@@ -2,24 +2,23 @@
 title: Развертывание в службах Azure Analysis Services с помощью Visual Studio (SSDT) | Документация Майкрософт
 description: Сведения о развертывании табличной модели на сервере служб Azure Analysis Services с помощью SSDT.
 author: minewiskan
-manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
 ms.date: 01/09/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 2811685df678730b90f2fdb28d472f8fa268ec6a
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 759d85db26ac7370c0b884d2e4839d3045384673
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68932453"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72301136"
 ---
 # <a name="deploy-a-model-from-visual-studio"></a>Развертывание модели из Visual Studio
 
 После создания сервера в подписке Azure все готово к развертыванию на нем базы данных табличной модели. Для создания и развертывания проекта табличной модели, над которым вы работаете, можно использовать средства SQL Server Data Tools (SSDT). 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для начала работы необходимы перечисленные ниже компоненты и данные.
 

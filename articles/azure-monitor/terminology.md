@@ -10,17 +10,20 @@ ms.service: azure-monitor
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 02/18/2019
+ms.date: 10/08/2019
 ms.author: bwren
-ms.openlocfilehash: f8a86c0b71a5248164ea522472f9f2ecb2ce36bc
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: dc7d839c81edd67d69e1525d219f87ee70f17502
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68827360"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72300521"
 ---
 # <a name="azure-monitor-naming-and-terminology-changes"></a>Изменения терминологии и именования Azure Monitor
 Недавно в Azure Monitor были внесены значительные изменения, а также произошло слияние различных служб, для того чтобы упростить мониторинг для клиентов Azure. В этой статье описываются недавние изменения имени и терминологии в документации Azure Monitor.
+
+## <a name="october-2019---diagnostic-log-to-resource-log"></a>Октябрь 2019 — журнал диагностики для журнала ресурсов
+Журналы диагностики были изменены на "Журналы ресурсов", чтобы они лучше соответствовали фактически собираемым данным. Термин "параметры диагностики" остается неизменным.  
 
 ## <a name="february-2019---log-analytics-terminology"></a>Терминология Log Analytics, февраль 2019 г.
 Чтобы лучше описать службу Azure Monitor и ее различные компоненты после слияния различных служб в Azure Monitor, мы делаем следующий шаг, изменяя терминологию в нашей документации. 
@@ -33,7 +36,7 @@ ms.locfileid: "68827360"
 ### <a name="log-analytics-workspaces"></a>Рабочие области Log Analytics
 [Рабочие области](platform/manage-access.md), которые содержат данные журнала в Azure Monitor, по-прежнему называются рабочими областями Log Analytics. Меню **Log Analytics** на портале Azure было переименовано в **Рабочие области Log Analytics**. Здесь вы [создаете новые рабочие области](learn/quick-create-workspace.md) и настраиваете источники данных. Анализ журналов и других данных мониторинга в **Azure Monitor** и настройка **рабочих областей Log Analytics**.
 
-### <a name="management-solutions"></a>Решения по управлению
+### <a name="management-solutions"></a>Решения для управления
 [Решения для управления](insights/solutions.md) были переименованы на _Решения для мониторинга_, что лучше описывает их функциональность.
 
 

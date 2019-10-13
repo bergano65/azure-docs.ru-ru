@@ -65,8 +65,6 @@
       href: detailed-troubleshoot-ssh-connection.md
 - name: Распространенные сообщения об ошибках
   href: error-messages.md
-- name: 'Данные, которые необходимо собрать для отправки запроса в службу автоматизации Microsoft Azure'
-  href: collect-data-microsoft-azure-automation-case.md
 - name: Проблемы с производительностью виртуальных машин
   href: performance-diagnostics.md
 - name: Устранение распространенных проблем с производительностью для виртуальной машины Azure под управлением Linux или Windows

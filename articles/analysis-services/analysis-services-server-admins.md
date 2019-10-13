@@ -2,24 +2,23 @@
 title: Управление администраторами серверов в службах Azure Analysis Services | Документы Майкрософт
 description: Узнайте, как управлять администраторами серверов служб Analysis Services в Azure.
 author: minewiskan
-manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
 ms.date: 07/29/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: eb5248d374fa6212398ad652b4db1496833473ae
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: fbb7d339c5c3c12990a49d6ebd53760e101f4eb7
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68696309"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72301090"
 ---
 # <a name="manage-server-administrators"></a>Управление администраторами серверов
 
 Администраторами сервера должны быть допустимые пользователи или группы безопасности в Azure Active Directory (Azure AD) для клиента, в котором размещен сервер. Для управления администраторами сервера можно использовать элемент **Администраторы служб Analysis Services** для сервера на портале Azure или свойств сервера в SSMS, PowerShell или REST API. 
 
-Для **групп безопасности** необходимо включить [поддержку почты](https://docs.microsoft.com/exchange/recipients-in-exchange-online/manage-mail-enabled-security-groups), если свойство `MailEnabled` имеет значение `True`. При указании группы по адресу электронной `obj:groupid@tenantid`почты используйте.
+Для **групп безопасности** необходимо включить [поддержку почты](https://docs.microsoft.com/exchange/recipients-in-exchange-online/manage-mail-enabled-security-groups), если свойство `MailEnabled` имеет значение `True`. При указании группы по адресу электронной почты используйте `obj:groupid@tenantid`.
 
 ## <a name="to-add-server-administrators-by-using-azure-portal"></a>Добавление администраторов на портале Azure
 

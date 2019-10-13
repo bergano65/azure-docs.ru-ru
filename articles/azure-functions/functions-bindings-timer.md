@@ -12,12 +12,12 @@ ms.topic: reference
 ms.date: 09/08/2018
 ms.author: cshoe
 ms.custom: ''
-ms.openlocfilehash: 6ac83a054b146b9d515386332779c4fe94cde7c3
-ms.sourcegitcommit: b4665f444dcafccd74415fb6cc3d3b65746a1a31
+ms.openlocfilehash: 439e5ab4bf943293ff4ed20ed477bc98bb683836
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72263431"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72299330"
 ---
 # <a name="timer-trigger-for-azure-functions"></a>Триггеры таймера для службы "Функции Azure" 
 
@@ -317,7 +317,7 @@ public static void Run([TimerTrigger("0 */5 * * * *")]TimerInfo myTimer, ILogger
 |---------|---------|
 |"01:00:00" | каждый час        |
 |"00:01:00"|каждую минуту         |
-|"24:00:00" | каждые 24 дня        |
+|"24:00:00" | каждые 24 часа        |
 |"1,00:00:00" | Каждый день        |
 
 ## <a name="scale-out"></a>Горизонтальное масштабирование

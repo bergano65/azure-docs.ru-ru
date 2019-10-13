@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 09/25/2019
+ms.date: 10/12/2019
 ms.author: b-juche
-ms.openlocfilehash: ec0fa0ba7c7cad698cda0f7b440415c3dbb0236a
-ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
+ms.openlocfilehash: eefa54806d9f5ec9ef3a0c02e4abbaf6b4bf22e2
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71299623"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72298469"
 ---
 # <a name="faqs-about-azure-netapp-files"></a>Часто задаваемые вопросы о Azure NetApp Files
 
@@ -50,7 +50,7 @@ ms.locfileid: "71299623"
 
 ### <a name="can-the-network-traffic-between-the-azure-vm-and-the-storage-be-encrypted"></a>Может ли шифроваться сетевой трафик между виртуальной машиной Azure и хранилищем?
 
-Трафик данных (трафик от клиента NFSv3 или SMBv3 к Azure NetApp Filesным томам) не шифруется. Тем не менее трафик от виртуальной машины Azure (с клиентом NFS или SMB) на Azure NetApp Files является безопасным, как и любой другой трафик Azure-ВМ-VM. Этот трафик является локальным для сети центра обработки данных Azure. 
+Трафик данных (трафик от клиента NFSv3, Нфсв 4.1 или SMBv3 к Azure NetApp Filesным томам) не шифруется. Тем не менее трафик от виртуальной машины Azure (с клиентом NFS или SMB) на Azure NetApp Files является безопасным, как и любой другой трафик Azure-ВМ-VM. Этот трафик является локальным для сети центра обработки данных Azure. 
 
 ### <a name="can-the-storage-be-encrypted-at-rest"></a>Может ли хранилище быть зашифровано неактивных данных?
 
@@ -103,7 +103,7 @@ Azure NetApp Files предоставляет метрики производи�
 
 ### <a name="i-want-to-have-a-volume-mounted-automatically-when-an-azure-vm-is-started-or-rebooted--how-do-i-configure-my-host-for-persistent-nfs-volumes"></a>Я хочу автоматически подключить том при запуске или перезагрузке виртуальной машины Azure.  Разделы справки настроить узел для постоянных томов NFS?
 
-Чтобы том NFS автоматически подключаться при запуске или перезагрузке виртуальной машины, добавьте запись в `/etc/fstab` файл на узле. 
+Чтобы том NFS автоматически подключаться при запуске или перезагрузке виртуальной машины, добавьте запись в файл `/etc/fstab` на узле. 
 
 Например: `$ANFIP:/$FILEPATH      /$MOUNTPOINT    nfs bg,rw,hard,noatime,nolock,rsize=65536,wsize=65536,vers=3,tcp,_netdev 0 0`
 
@@ -120,7 +120,11 @@ Azure NetApp Files предоставляет метрики производи�
 
 ### <a name="what-nfs-version-does-azure-netapp-files-support"></a>Какая версия NFS поддерживает Azure NetApp Files?
 
-Azure NetApp Files в настоящее время поддерживает NFSv3.
+Azure NetApp Files поддерживает NFSv3 и Нфсв 4.1. Вы можете создать том с помощью версии NFS. 
+
+> [!IMPORTANT] 
+> Для доступа к функции Нфсв 4.1 требуется список разрешений.  Чтобы запросить список разрешений, отправьте запрос в <anffeedback@microsoft.com>. 
+
 
 ### <a name="how-do-i-enable-root-squashing"></a>Разделы справки включить корневую использование параметра Squash?
 
@@ -140,7 +144,7 @@ Azure NetApp Files в настоящее время поддерживает NFS
 
 Поддерживаются [службы доменов Azure Active Directory (AD)](https://docs.microsoft.com/azure/active-directory-domain-services/overview) и [домен Active Directory Services (AD DS)](https://docs.microsoft.com/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview) . С Azure NetApp Files можно использовать существующие Active Directory контроллеры домена. Контроллеры домена могут размещаться в Azure как виртуальные машины или локально с помощью ExpressRoute или S2S VPN. В настоящее время Azure NetApp Files не поддерживает присоединение к AD для [Azure Active Directory](https://azure.microsoft.com/resources/videos/azure-active-directory-overview/) .
 
-Если вы используете Azure NetApp Files с доменными службами Azure Active Directory, путь подразделения задается `OU=AADDC Computers` при настройке Active Directory для учетной записи NetApp.
+Если вы используете Azure NetApp Files с доменными службами Azure Active Directory, путь подразделения будет `OU=AADDC Computers` при настройке Active Directory для учетной записи NetApp.
 
 ### <a name="what-versions-of-windows-server-active-directory-are-supported"></a>Какие версии Windows Server Active Directory поддерживаются?
 

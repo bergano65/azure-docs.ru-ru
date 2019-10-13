@@ -7,16 +7,16 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 01/15/2019
+ms.date: 10/10/2019
 author: nabhishek
 ms.author: abnarain
 manager: craigg
-ms.openlocfilehash: 2daae1637c568b72d548330abbcb73da21b12683
-ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
+ms.openlocfilehash: ae3350b14ca1073a5fbb1a353b9301c57e7f1ea4
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72176854"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72298322"
 ---
 # <a name="compute-environments-supported-by-azure-data-factory"></a>Вычислительные среды, поддерживаемые фабрикой данных Azure
 В этой статье описываются различные среды вычислений, которые можно использовать для обработки и преобразования данных. Здесь содержатся также сведения о различных конфигурациях (конфигурациях по запросу и ваших собственных), которые поддерживаются фабрикой данных при настройке связанных служб, связывающих эти среды вычислений с фабрикой данных Azure.
@@ -27,7 +27,8 @@ ms.locfileid: "72176854"
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [Кластер HDInsight по запросу](#azure-hdinsight-on-demand-linked-service) или [собственный кластер HDInsight](#azure-hdinsight-linked-service) | [Hive](transform-data-using-hadoop-hive.md), [Pig](transform-data-using-hadoop-pig.md), [Spark](transform-data-using-spark.md), [MapReduce](transform-data-using-hadoop-map-reduce.md), [потоковая передача Hadoop](transform-data-using-hadoop-streaming.md) |
 | [Пакетная служба Azure](#azure-batch-linked-service)                   | [Настраиваемая](transform-data-using-dotnet-custom-activity.md)     |
-| [машинное обучение Azure](#azure-machine-learning-linked-service) | [Создание прогнозирующих конвейеров с помощью машинного обучения Azure и фабрики данных Azure](transform-data-using-machine-learning.md) |
+| [Студия машинного обучения Azure](#azure-machine-learning-studio-linked-service) | [Создание прогнозирующих конвейеров с помощью машинного обучения Azure и фабрики данных Azure](transform-data-using-machine-learning.md) |
+| [Служба "Машинное обучение Azure"](#azure-machine-learning-service-linked-service) | [Машинное обучение Azure выполнения конвейера](transform-data-machine-learning-service.md) |
 | [Аналитика озера данных Azure](#azure-data-lake-analytics-linked-service) | [Аналитика озера данных U-SQL](transform-data-using-data-lake-analytics.md) |
 | [Azure SQL](#azure-sql-database-linked-service), [хранилище данных Azure SQL](#azure-sql-data-warehouse-linked-service), [SQL Server](#sql-server-linked-service) | [Хранимая процедура](transform-data-using-stored-procedure.md) |
 | [Azure Databricks](#azure-databricks-linked-service)         | [Notebook](transform-data-databricks-notebook.md), [Jar](transform-data-databricks-jar.md), [Python](transform-data-databricks-python.md) |
@@ -354,8 +355,8 @@ ms.locfileid: "72176854"
 | linkedServiceName | Имя связанной службы хранилища Azure, которая ассоциируется с этой связанной пакетной службой Azure. Эта связанная служба используется для промежуточных файлов, необходимых для выполнения действий. | Да      |
 | connectVia        | Среда выполнения интеграции, используемая для отправки действий в связанную службу. Вы можете использовать среду выполнения интеграции Azure или локальную среду выполнения интеграции. Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. | Нет       |
 
-## <a name="azure-machine-learning-linked-service"></a>Связанная служба Машинного обучения Azure
-Создайте связанную службу Машинного обучения Azure, чтобы зарегистрировать конечную точку пакетной оценки показателей машинного обучения оценки в фабрике данных.
+## <a name="azure-machine-learning-studio-linked-service"></a>Связанная служба Машинное обучение Azure Studio
+Чтобы зарегистрировать конечную точку пакетной оценки Машинное обучение в фабрике данных, создайте связанную службу Машинное обучение Azure Studio.
 
 ### <a name="example"></a>Пример
 
@@ -385,11 +386,55 @@ ms.locfileid: "72176854"
 | Type                   | Свойству type необходимо присвоить значение **AzureML**. | Да                                      |
 | mlEndpoint             | URL-адрес пакетной оценки.                   | Да                                      |
 | apiKey                 | API модели опубликованной рабочей области.     | Да                                      |
-| updateResourceEndpoint | URL-адрес обновления ресурса для конечной точки веб-службы "Машинное обучение Azure", используемый для обновления прогнозной веб-службы с помощью файла обученной модели. | Нет                                       |
+| updateResourceEndpoint | URL-адрес ресурса обновления для конечной точки веб-службы Машинное обучение Azure, используемой для обновления прогнозной веб-службы с помощью файла обученной модели | Нет                                       |
 | servicePrincipalId     | Укажите идентификатора клиента приложения.     | Требуется, если задано свойство updateResourceEndpoint |
 | servicePrincipalKey    | Укажите ключ приложения.           | Требуется, если задано свойство updateResourceEndpoint |
 | tenant                 | Укажите сведения о клиенте (доменное имя или идентификатор клиента), в котором находится приложение. Эти сведения можно получить, наведя указатель мыши на правый верхний угол страницы портала Azure. | Требуется, если задано свойство updateResourceEndpoint |
 | connectVia             | Среда выполнения интеграции, используемая для отправки действий в связанную службу. Вы можете использовать среду выполнения интеграции Azure или локальную среду выполнения интеграции. Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. | Нет                                       |
+
+## <a name="azure-machine-learning-service-linked-service"></a>Связанная служба Машинное обучение Azure службы
+Чтобы подключить рабочую область Машинное обучение Azure службы к фабрике данных, создайте связанную службу Машинное обучение Azure службы.
+
+> [!NOTE]
+> В настоящее время для связанной службы Машинное обучение Azure Service поддерживается только проверка подлинности субъекта-службы.
+
+### <a name="example"></a>Пример
+
+```json
+{
+    "name": "AzureMLServiceLinkedService",
+    "properties": {
+        "type": "AzureMLService",
+        "typeProperties": {
+            "subscriptionId": "subscriptionId",
+            "resourceGroupName": "resourceGroupName",
+            "mlWorkspaceName": "mlWorkspaceName",
+            "servicePrincipalId": "service principal id",
+            "servicePrincipalKey": {
+                "value": "service principal key",
+                "type": "SecureString"
+            },
+            "tenant": "tenant ID"
+        },
+        "connectVia": {
+            "referenceName": "<name of Integration Runtime?",
+            "type": "IntegrationRuntimeReference"
+        }
+    }
+}
+```
+
+### <a name="properties"></a>Свойства
+| Свойство               | Описание                              | Обязательно для заполнения                                 |
+| ---------------------- | ---------------------------------------- | ---------------------------------------- |
+| Type                   | Свойству type необходимо присвоить значение **Азуремлсервице**. | Да                                      |
+| subscriptionId         | Идентификатор подписки Azure.              | Да                                      |
+| resourceGroupName      | name | Да                                      |
+| млворкспаценаме        | Имя рабочей области службы Машинное обучение Azure | Да  |
+| servicePrincipalId     | Укажите идентификатора клиента приложения.     | Нет |
+| servicePrincipalKey    | Укажите ключ приложения.           | Нет |
+| tenant                 | Укажите сведения о клиенте (доменное имя или идентификатор клиента), в котором находится приложение. Эти сведения можно получить, наведя указатель мыши на правый верхний угол страницы портала Azure. | Требуется, если задано свойство updateResourceEndpoint | Нет |
+| connectVia             | Среда выполнения интеграции, используемая для отправки действий в связанную службу. Вы можете использовать среду выполнения интеграции Azure или локальную среду выполнения интеграции. Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. | Нет |    
 
 ## <a name="azure-data-lake-analytics-linked-service"></a>Связанная служба Azure Data Lake Analytics
 Можно создать связанную службу **Azure Data Lake Analytics** , чтобы связать службу вычислений Azure Data Lake Analytics с фабрикой данных Azure. Действие U-SQL Data Lake Analytics в конвейере ссылается на эту связанную службу. 
@@ -410,7 +455,7 @@ ms.locfileid: "72176854"
                 "type": "SecureString"
             },
             "tenant": "tenant ID",
-            "subscriptionId": "<optional, subscription id of ADLA>",
+            "subscriptionId": "<optional, subscription ID of ADLA>",
             "resourceGroupName": "<optional, resource group name of ADLA>"
         },
         "connectVia": {
@@ -428,7 +473,7 @@ ms.locfileid: "72176854"
 | type                 | Свойству type необходимо присвоить значение **AzureDataLakeAnalytics**. | Да                                      |
 | accountName          | Имя учетной записи аналитики озера данных Azure.  | Да                                      |
 | dataLakeAnalyticsUri | Универсальный код ресурса (URI) аналитики озера данных Azure.           | Нет                                       |
-| subscriptionId       | Идентификатор подписки Azure                    | Нет                                       |
+| subscriptionId       | Идентификатор подписки Azure.                    | Нет                                       |
 | resourceGroupName    | Имя группы ресурсов Azure                | Нет                                       |
 | servicePrincipalId   | Укажите идентификатора клиента приложения.     | true                                      |
 | servicePrincipalKey  | Укажите ключ приложения.           | Да                                      |

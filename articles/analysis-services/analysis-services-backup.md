@@ -2,18 +2,17 @@
 title: Архивация и восстановление базы данных Azure Analysis Services | Документы Майкрософт
 description: Описывает, как выполнять архивацию и восстановление базы данных Analysis Services Azure.
 author: minewiskan
-manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
 ms.date: 07/29/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 2e751d45e4b76852426d454f8d29196c01396504
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: fde545f3764f5910d00da5a8ce7f0e8c1772c7ea
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68932462"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72295413"
 ---
 # <a name="backup-and-restore"></a>Резервное копирование и восстановление
 
@@ -38,7 +37,7 @@ ms.locfileid: "68932462"
 
 2.  Щелкните **Включено**, а затем — **Параметры хранилища**.
 
-    ![Включить](./media/analysis-services-backup/aas-backup-enable.png)
+    ![Включение](./media/analysis-services-backup/aas-backup-enable.png)
 
 3. Выберите имеющуюся учетную запись хранения или создайте новую.
 
@@ -50,7 +49,7 @@ ms.locfileid: "68932462"
 
     ![Сохранение параметров архивации](./media/analysis-services-backup/aas-backup-save.png)
 
-## <a name="backup"></a>Архивация
+## <a name="backup"></a>Azure Backup
 
 ### <a name="to-backup-by-using-ssms"></a>Архивация с помощью SSMS
 

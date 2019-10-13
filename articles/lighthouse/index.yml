@@ -3,19 +3,19 @@ title: Документация по Azure Lighthouse
 summary: Azure Lighthouse позволяет поставщикам служб управлять ресурсами Azure для всех клиентов, обеспечивая повышенный уровень автоматизации и масштабируемости, а также усовершенствованную систему управления.
 metadata:
   title: Документация по Azure Lighthouse
-  description: Сведения об управлении ресурсами клиентов в масштабе
+  description: Azure Lighthouse позволяет поставщикам служб управлять ресурсами Azure для всех клиентов, обеспечивая повышенный уровень автоматизации и масштабируемости, а также усовершенствованную систему управления.
   ms.service: lighthouse
   ms.topic: landing-page
   ms.collection: collection
   author: JnHs
   ms.author: jenhayes
   ms.date: 09/25/2019
-  ms.openlocfilehash: d2003af574961a5729949f60824aa67692be1655
-  ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
+  ms.openlocfilehash: 9543ac8a6e7dc30fa44e4bada42ca4786cc53ba0
+  ms.sourcegitcommit: e0a1a9e4a5c92d57deb168580e8aa1306bd94723
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 09/25/2019
-  ms.locfileid: "71264571"
+  ms.lasthandoff: 10/11/2019
+  ms.locfileid: "72286559"
 landingContent:
 - title: Сведения об Azure Lighthouse
   linkLists:

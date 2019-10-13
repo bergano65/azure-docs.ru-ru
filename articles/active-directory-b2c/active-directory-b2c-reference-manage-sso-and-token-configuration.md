@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 10/09/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 966386bfed5f94556f145afab1c665eb3c90546a
-ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
+ms.openlocfilehash: 36a95b502c13ccf360ba4ac56b4837d41ee487c8
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71065554"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72296410"
 ---
 # <a name="manage-sso-and-token-customization-using-custom-policies-in-azure-active-directory-b2c"></a>Управление единым входом и настройкой токенов с помощью пользовательских политик в Azure Active Directory B2C
 
@@ -102,5 +102,5 @@ ms.locfileid: "71065554"
 В предыдущем примере установлены следующие значения.
 
 - **Включение единого входа (SSO).** Включение единого входа (SSO) настроено с помощью **SingleSignOn**. Применимые значения — `Tenant`, `Application`, `Policy` и `Suppressed`.
-- **Время существования сеанса веб-приложения (в минутах).** Время существования сеанса веб-приложения устанавливается с помощью элемента **SessionExpiryInSeconds**. Значение по умолчанию составляет 86400 секунд (1440 минут).
 - **Время ожидания сеанса веб-приложения.** Время ожидания сеанса веб-приложения устанавливается с помощью элемента **SessionExpiryType**. Применимые значения — `Absolute` и `Rolling`.
+- **Время существования сеанса веб-приложения** . время существования сеанса веб-приложения задается с помощью элемента **сессионекспиринсекондс** . Значение по умолчанию составляет 86400 секунд (1440 минут).

@@ -2,18 +2,17 @@
 title: Источники данных, поддерживаемые в службах Azure Analysis Services | Документы Майкрософт
 description: Описание источников данных, поддерживаемых для моделей данных в службах Azure Analysis Services.
 author: minewiskan
-manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
 ms.date: 09/13/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 81fc73ffd61a49eae1c4f107733b6f9f53efbb4f
-ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
+ms.openlocfilehash: 79346f0bf80386fb83f55daccda8790652ff8541
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70993388"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72298635"
 ---
 # <a name="data-sources-supported-in-azure-analysis-services"></a>Источники данных, поддерживаемые в службах Azure Analysis Services
 
@@ -24,7 +23,7 @@ ms.locfileid: "70993388"
 |Источник данных  |В памяти  |DirectQuery  |
 |---------|---------|---------|
 |База данных SQL Azure<sup>[2](#azsqlmanaged)</sup>     |   Да      |    Да      |
-|Хранилище данных SQL Azure     |   Да      |   Да       |
+|Хранилище данных SQL Azure     |   Да      |   Да       |
 |Хранилище BLOB-объектов Azure<sup>[1](#tab1400a)</sup>     |   Да       |    Нет      |
 |Табличное хранилище Azure<sup>[1](#tab1400a)</sup>    |   Да       |    Нет      |
 |Azure Cosmos DB<sup>[1](#tab1400a)</sup>     |  Да        |  Нет        |
@@ -62,7 +61,7 @@ ms.locfileid: "70993388"
 |---------|
 |База данных Access     |  
 |Active Directory<sup>[1](#tab1400b)</sup>     |  
-|Службы Analysis Services     |  
+|Analysis Services     |  
 |Система платформы аналитики     |  
 |CSV-файл  |
 |Dynamics CRM<sup>[1](#tab1400b)</sup>     |  

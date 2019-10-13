@@ -2,18 +2,17 @@
 title: Локальный шлюз данных для Azure Analysis Services | Документация Майкрософт
 description: Локальный шлюз данных необходим тогда, когда сервер служб Analysis Services в Azure будет подключен к локальным источникам данных.
 author: minewiskan
-manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
 ms.date: 07/30/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: b783e6b709700104985ef3f052443cf1284bf2d6
-ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
+ms.openlocfilehash: 8d9df32070ff252dff791650788888d1d9a6ce84
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68678389"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72294934"
 ---
 # <a name="connecting-to-on-premises-data-sources-with-on-premises-data-gateway"></a>Подключение к локальным источникам данных с помощью локального шлюза данных
 
@@ -32,7 +31,7 @@ ms.locfileid: "68678389"
 ## <a name="how-it-works"> </a>Принцип работы
 Установленный на компьютере в вашей организации шлюз работает как служба Windows, **локальный шлюз данных**. Эта локальная служба зарегистрирована в облачной службе шлюза с помощью служебной шины Azure. Затем вы создадите локальный ресурс шлюза данных для подписки Azure. Затем ваши серверы Azure Analysis Services будут подключены к ресурсу шлюза Azure. Если моделям вашего сервера необходимо подключиться к локальным источникам данных для запросов или обработки, запрос и поток данных проходит через ресурс шлюза, служебную шину Azure, локальную службу локального шлюза данных и источники данных. 
 
-![Как это работает](./media/analysis-services-gateway/aas-gateway-how-it-works.png)
+![Принцип работы](./media/analysis-services-gateway/aas-gateway-how-it-works.png)
 
 Запросы и поток данных
 
@@ -55,7 +54,7 @@ ms.locfileid: "68678389"
 
 Ниже приведены полные доменные имена, используемые шлюзом.
 
-| Доменные имена | Исходящие порты | Описание |
+| Имена доменов | Исходящие порты | Описание |
 | --- | --- | --- |
 | *.powerbi.com |80 |HTTP для скачивания установщика. |
 | *.powerbi.com |443 |HTTPS |
