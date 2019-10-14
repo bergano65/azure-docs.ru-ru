@@ -68,7 +68,7 @@
         - name: Целевые показатели масштабируемости и производительности хранилища
           href: ../common/storage-scalability-targets.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json
         - name: Контрольный список производительности и масштабируемости
-          href: ../common/storage-performance-checklist.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json
+          href: storage-performance-checklist.md
     - name: Параллелизм
       href: ../common/storage-concurrency.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json
     - name: Мониторинг и устранение неполадок

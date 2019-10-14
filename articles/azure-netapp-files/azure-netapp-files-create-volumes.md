@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 10/12/2019
 ms.author: b-juche
-ms.openlocfilehash: b7474ca8e8489edb37b3ac9b7c8b5be52867363c
-ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
+ms.openlocfilehash: 1a479b4928631f27d5453d462a59fe7fed09a88c
+ms.sourcegitcommit: bd4198a3f2a028f0ce0a63e5f479242f6a98cc04
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2019
-ms.locfileid: "72298494"
+ms.lasthandoff: 10/14/2019
+ms.locfileid: "72302760"
 ---
 # <a name="create-an-nfs-volume-for-azure-netapp-files"></a>Создание тома NFS для Azure NetApp Files
 
@@ -33,11 +33,11 @@ Azure NetApp Files поддерживает тома NFS (NFSv3 и Нфсв 4.1)
 
 ## <a name="considerations"></a>Рекомендации 
 
-* Выбор используемой версии NFS  
-  NFSv3 может поддерживать широкий спектр вариантов использования и обычно развертывается в большинстве корпоративных приложений. Необходимо проверить, какая версия (NFSv3 или Нфсв 4.1) требуется приложению, и создать том с использованием соответствующей версии. Например, при использовании [Apache активемк](https://activemq.apache.org/shared-file-system-master-slave)рекомендуется блокировать файл с помощью нфсв 4.1 вместо NFSv3. 
-
 > [!IMPORTANT] 
 > Для доступа к функции Нфсв 4.1 требуется список разрешений.  Чтобы запросить список разрешений, отправьте запрос в <anffeedback@microsoft.com>. 
+
+* Выбор используемой версии NFS  
+  NFSv3 может поддерживать широкий спектр вариантов использования и обычно развертывается в большинстве корпоративных приложений. Необходимо проверить, какая версия (NFSv3 или Нфсв 4.1) требуется приложению, и создать том с использованием соответствующей версии. Например, при использовании [Apache активемк](https://activemq.apache.org/shared-file-system-master-slave)рекомендуется блокировать файл с помощью нфсв 4.1 вместо NFSv3. 
 
 * Безопасность  
   Поддержка бит в режиме UNIX (чтение, запись и выполнение) доступна для NFSv3 и Нфсв 4.1. Для подключения томов NFS требуется доступ на корневом уровне к клиенту NFS.

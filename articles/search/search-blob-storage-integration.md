@@ -1,22 +1,21 @@
 ---
-title: Добавление возможности полнотекстового поиска в хранилище BLOB-объектов Azure (служба "Поиск Azure")
-description: Узнайте, как с помощью HTTP REST API сканировать содержимое текста в коде в хранилище BLOB-объектов Azure для индексирования в службе "Поиск Azure".
-services: search
+title: Добавление полнотекстового поиска в хранилище BLOB-объектов Azure
+titleSuffix: Azure Search
+description: Извлеките содержимое и добавьте структуру в большие двоичные объекты Azure при создании индекса полнотекстового поиска в службе поиска Azure.
+manager: nitinme
+author: HeidiSteen
+ms.author: heidist
 ms.service: search
 ms.topic: conceptual
-ms.date: 03/01/2019
-author: mgottein
-manager: nitinme
-ms.author: magottei
-ms.custom: seodec2018
-ms.openlocfilehash: f0801931b57302ae1d627dab783a40d2407c19ac
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.date: 10/09/2019
+ms.openlocfilehash: 7e5eb73cc6abc72689bbc674b29f4d288dd66b6f
+ms.sourcegitcommit: bd4198a3f2a028f0ce0a63e5f479242f6a98cc04
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69650084"
+ms.lasthandoff: 10/14/2019
+ms.locfileid: "72302893"
 ---
-# <a name="searching-blob-storage-with-azure-search"></a>Поиск в хранилище BLOB-объектов с помощью поиска Azure
+# <a name="add-full-text-search-to-azure-blob-data-using-azure-search"></a>Добавление полнотекстового поиска в данные большого двоичного объекта Azure с помощью службы поиска Azure
 
 Поиск различных типов содержимого в хранилище BLOB-объектов Azure может представлять собой трудную для решения задачу. Тем не менее с помощью поиска Azure можно искать и индексировать содержимое BLOB-объектов несколькими щелчками мыши. Для поиска в хранилище BLOB-объектов необходимо подготовить службу поиска Azure. Ограничения и ценовые категории службы поиска Azure можно найти на [странице цен](https://aka.ms/azspricing).
 
@@ -45,7 +44,7 @@ ms.locfileid: "69650084"
 
 Синтаксический анализ JSON сейчас невозможно настроить с помощью портала. [Дополнительные сведения о синтаксическом анализе JSON в поиске Azure.](https://aka.ms/azsjsonblobindexing)
 
-## <a name="quick-start"></a>Быстрый запуск
+## <a name="quickstart"></a>Краткое руководство
 Добавить службу "Поиск Azure" к большим двоичным объектам можно прямо на странице хранилища BLOB-объектов портала.
 
 ![](./media/search-blob-storage-integration/blob-blade.png)

@@ -12,14 +12,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/17/2018
+ms.date: 10/13/2019
 ms.author: spelluru
-ms.openlocfilehash: e4d9aeb527461cc7292235fef1de0abdfa4242bd
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 1d7175d000eebd3f68665e7f097bbe3f68025bc8
+ms.sourcegitcommit: bd4198a3f2a028f0ce0a63e5f479242f6a98cc04
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60311374"
+ms.lasthandoff: 10/14/2019
+ms.locfileid: "72302797"
 ---
 # <a name="add-tags-to-a-lab-in-azure-devtest-labs"></a>Добавление тегов в лабораторию в Azure DevTest Labs
 
@@ -52,6 +52,9 @@ ms.locfileid: "60311374"
 
     ![Управление тегами](./media/devtest-lab-add-tag/devtestlab-manage-tags.png)
 
+> [!NOTE]
+> Теги, созданные на уровне лаборатории, проходят через все оплачиваемые ресурсы, которые лаборатория выполняет в вашей подписке. Например, Теги уровня лаборатории поступают в базовые виртуальные машины лабораторных виртуальных машин. Теги можно использовать в контексте управления затратами. Теги уровня лаборатории отображаются в фильтре тегов для управления затратами.
+
 ## <a name="understanding-limitations-to-tags"></a>Общие сведения об ограничениях тегов
 
 Действительны следующие ограничения для тегов.
@@ -64,6 +67,6 @@ ms.locfileid: "60311374"
 
 [!INCLUDE [devtest-lab-try-it-out](../../includes/devtest-lab-try-it-out.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * В подписку можно добавить ограничения и соглашения, используя настраиваемые политики. Некоторые политики могут требовать, чтобы для всех ресурсов было задано значение определенного тега. Дополнительные сведения см. в статье [Управление всеми политиками лаборатории в Azure DevTest Labs](devtest-lab-set-lab-policy.md).
-* Изучите [коллекцию шаблонов быстрого запуска Azure Resource Manager для DevTest Labs](https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/QuickStartTemplates).
+* Изучите [коллекцию шаблонов быстрого запуска DevTest Labs Azure Resource Manager](https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/QuickStartTemplates).

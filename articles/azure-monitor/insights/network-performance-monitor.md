@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 02/20/2018
 ms.author: vinigam
-ms.openlocfilehash: 80bca606a2b06d85afc8a2115133f44d738f7e0a
-ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
+ms.openlocfilehash: 185bdd5f666da04238a575f3b7704baf10f5e281
+ms.sourcegitcommit: 9858ab651a520c26f0ed18215e650efbf1fc5de9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70035251"
+ms.lasthandoff: 10/14/2019
+ms.locfileid: "72303481"
 ---
 # <a name="network-performance-monitor-solution-in-azure"></a>Решение "Монитор производительности сети" в Azure
 
@@ -44,7 +44,7 @@ ms.locfileid: "70035251"
 ## <a name="supported-regions"></a>Поддерживаемые регионы
 Монитор производительности сети может отслеживать подключение между сетями и приложениями в любой части мира из рабочей области, размещенной в одном из следующих регионов:
 * Западная Европа
-* Центрально-западная часть США
+* Западно-центральная часть США
 * East US
 * Восточная Япония
 * Юго-Восточная Азия
@@ -52,6 +52,7 @@ ms.locfileid: "70035251"
 * Южная часть Соединенного Королевства
 * Центральная Индия
 * Правительство США (Вирджиния)
+* Восточный Китай 2
 
 
 Список поддерживаемых регионов для мониторинга ExpressRoute см. в разделе [Поддерживаемые регионы](https://docs.microsoft.com/azure/expressroute/how-to-npm?utm_swu=8117).
@@ -101,7 +102,7 @@ ms.locfileid: "70035251"
    ```
  
 
-### <a name="configure-the-solution"></a>Настроить решение 
+### <a name="configure-the-solution"></a>Настройка решения 
 
 1. Добавьте решение "Монитор производительности сети" из [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.NetworkMonitoringOMS?tab=Overview) в рабочую область. Вы также можете использовать процесс, описанный в разделе [добавление Azure Monitor решений из коллекция решений](../../azure-monitor/insights/solutions.md). 
 2. Откройте рабочую область Log Analytics и щелкните плитку **Обзор**. 
@@ -133,7 +134,7 @@ ms.locfileid: "70035251"
 
 #### <a name="edit-monitoring-settings-for-subnets-and-nodes"></a>Изменение параметров мониторинга для подсетей и узлов 
 
-Все подсети, на которых установлен хотя бы один агент, перечислены на вкладке подсети на странице Конфигурация. 
+Все подсети, на которых установлен хотя бы один агент, перечислены на вкладке **подсети** на странице Конфигурация. 
 
 
 Чтобы включить или отключить мониторинг определенных подсетей:
@@ -164,7 +165,7 @@ ms.locfileid: "70035251"
 
 В следующей таблице приведены методы сбора данных и другие сведения о сборе данных для монитора производительности сети.
 
-| Платформа | Direct Agent | Агент System Center Operations Manager | Служба хранилища Azure | Нужен ли Operations Manager? | Отправка данных агента Operations Manager через группу управления | Частота сбора |
+| Платформа | Direct Agent | Агент System Center Operations Manager | Хранилище Azure | Нужен ли Operations Manager? | Отправка данных агента Operations Manager через группу управления | Частота сбора |
 | --- | --- | --- | --- | --- | --- | --- |
 | Windows | &#8226; | &#8226; |  |  |  |Подтверждения TCP/сообщения ICMP ECHO отправляются каждые 5 секунд. Данные отправляются каждые 3 минуты. |
  
@@ -273,7 +274,7 @@ ms.locfileid: "70035251"
 
 Сведения о ценах можно найти [в Интернете](network-performance-monitor-pricing-faq.md).
 
-## <a name="provide-feedback"></a>Оставить отзыв 
+## <a name="provide-feedback"></a>Отзывы 
 
 * **UserVoice**. Если вы хотите, чтобы мы разработали новые функции для монитора производительности сети, здесь вы можете публиковать свои идеи. Посетите нашу [страницу UserVoice](https://feedback.azure.com/forums/267889-log-analytics/category/188146-network-monitoring). 
 

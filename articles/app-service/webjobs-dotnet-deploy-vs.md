@@ -1,26 +1,21 @@
 ---
 title: Разработка и развертывание веб-заданий с помощью Visual Studio в Azure
 description: Сведения о разработке и развертывании веб-заданий Azure в службе приложений Azure с помощью Visual Studio.
-services: app-service
-documentationcenter: ''
 author: ggailey777
-manager: jeconnoc
+manager: gwallace
 ms.assetid: a3a9d320-1201-4ac8-9398-b4c9535ba755
 ms.service: app-service
-ms.devlang: dotnet
-ms.topic: article
-ms.tgt_pltfrm: na
+ms.topic: conceptual
 ms.custom: vs-azure
-ms.workload: azure-vs
 ms.date: 02/18/2019
 ms.author: glenga
 ms.reviewer: david.ebbo;suwatch;pbatum;naren.soni
-ms.openlocfilehash: 58d03d80c82fbf58803f7fefa8ef60c19f99bced
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: ac458b01135be8628fbf939e310f8bda02b8d290
+ms.sourcegitcommit: 9858ab651a520c26f0ed18215e650efbf1fc5de9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69876888"
+ms.lasthandoff: 10/14/2019
+ms.locfileid: "72303540"
 ---
 # <a name="develop-and-deploy-webjobs-using-visual-studio---azure-app-service"></a>Разработка и развертывание веб-заданий в службе приложений Azure с помощью Visual Studio
 
@@ -63,7 +58,7 @@ ms.locfileid: "69876888"
 
 1. На вкладке **Публикация** выберите **Параметры**. 
 
-1. В диалоговом окне **Параметры профиля** выберите значение непрерывно для параметра **тип веб-задания**и нажмите кнопку **сохранить**.
+1. В диалоговом окне **Параметры профиля** выберите значение **непрерывно** для параметра **тип веб-задания**и нажмите кнопку **сохранить**.
 
     ![Диалоговое окно параметров публикации для веб-задания](./media/webjobs-dotnet-deploy-vs/publish-settings.png)
 
@@ -220,7 +215,7 @@ ms.locfileid: "69876888"
 }
 ```
 
-Этот файл должен находиться в корне папки веб-заданий, а также на стороне скрипта задания, например `wwwroot\app_data\jobs\triggered\{job name}` или. `wwwroot\app_data\jobs\continuous\{job name}` При развертывании веб-задания из Visual Studio для свойств файла `settings.job` установите значение **Копировать, если новее**. 
+Этот файл должен находиться в корне папки "веб-задания", а также на стороне сценария задания, например `wwwroot\app_data\jobs\triggered\{job name}` или `wwwroot\app_data\jobs\continuous\{job name}`. При развертывании веб-задания из Visual Studio для свойств файла `settings.job` установите значение **Копировать, если новее**. 
 
 При [создании веб-задания на основе портал Azure](webjobs-create.md)создается файл Settings. job.
 
@@ -228,7 +223,9 @@ ms.locfileid: "69876888"
 
 ### <a name="cron-expressions"></a>Выражения CRON
 
-Веб-задания используют те же выражения CRON для планирования, что и триггер таймера в функциях Azure. Дополнительные сведения о поддержке CRON см. в [статье Справочник](../azure-functions/functions-bindings-timer.md#ncrontab-expressions)по триггерам таймера.
+Веб-задания используют те же выражения CRON для планирования, что и триггер таймера в функциях Azure. Дополнительные сведения о поддержке CRON см. в [статье Справочник по триггерам таймера](../azure-functions/functions-bindings-timer.md#ncrontab-expressions).
+
+[!INCLUDE [webjobs-cron-timezone-note](../../includes/webjobs-cron-timezone-note.md)]
 
 ### <a name="settingjob-reference"></a>Указание. ссылка на задание
 
@@ -237,8 +234,8 @@ ms.locfileid: "69876888"
 | **Параметр** | **Тип**  | **Описание** |
 | ----------- | --------- | --------------- |
 | `is_in_place` | Все | Позволяет выполнять задание на месте без его первоначального копирования во временную папку. Дополнительные сведения см. в разделе [Рабочий каталог](https://github.com/projectkudu/kudu/wiki/WebJobs#webjob-working-directory)веб-заданий. |
-| `is_singleton` | Непрерывный | Запускайте веб-задания только в одном экземпляре при масштабировании. Дополнительные сведения см. в разделе [Задание непрерывного задания как singleton](https://github.com/projectkudu/kudu/wiki/WebJobs-API#set-a-continuous-job-as-singleton). |
-| `schedule` | Активируемые | Запуск веб-задания по расписанию на основе CRON. Дополнительные сведения см. в [статье Справочник](../azure-functions/functions-bindings-timer.md#ncrontab-expressions)по триггерам таймера. |
+| `is_singleton` | Непрерывные | Запускайте веб-задания только в одном экземпляре при масштабировании. Дополнительные сведения см. в разделе [Задание непрерывного задания как singleton](https://github.com/projectkudu/kudu/wiki/WebJobs-API#set-a-continuous-job-as-singleton). |
+| `schedule` | Активируемые | Запуск веб-задания по расписанию на основе CRON. Дополнительные сведения см. в [статье Справочник по триггерам таймера](../azure-functions/functions-bindings-timer.md#ncrontab-expressions). |
 | `stopping_wait_time`| Все | Позволяет управлять поведением при завершении работы. Дополнительные сведения см. в разделе [корректное завершение работы](https://github.com/projectkudu/kudu/wiki/WebJobs#graceful-shutdown). |
 
 ## <a name="next-steps"></a>Следующие шаги

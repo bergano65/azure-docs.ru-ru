@@ -14,20 +14,22 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/07/2019
 ms.author: b-juche
-ms.openlocfilehash: a401cae7140d9ceec5ec81274e1b6f3b2b46b55a
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 76e01055043932f2c7e7d57bd7eed6265d666a8c
+ms.sourcegitcommit: bd4198a3f2a028f0ce0a63e5f479242f6a98cc04
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60371535"
+ms.lasthandoff: 10/14/2019
+ms.locfileid: "72302773"
 ---
 # <a name="mount-or-unmount-a-volume-for-windows-or-linux-virtual-machines"></a>Подключение или отключение тома для виртуальных машин Windows или Linux 
 
 При необходимости вы можете подключить или отключить том для виртуальных машин Windows или Linux.  Инструкции по подключению для виртуальных машин Linux доступны в службе Azure NetApp Files.  
 
-1. Нажмите кнопку **тома** колонки, а затем выберите том, для которого требуется подключить. 
-2. Нажмите кнопку **инструкции для подключения** из выбранного тома, а затем следуйте инструкциям, чтобы подключить том. 
+1. Щелкните колонку **тома** , а затем выберите том, для которого необходимо установить подключение. 
+2. Нажмите кнопку **подключить инструкции** из выбранного тома, а затем следуйте инструкциям по подключению тома. 
 
-    ![Инструкции для подключения NFS](../media/azure-netapp-files/azure-netapp-files-mount-instructions-nfs.png)
+    ![Инструкции по подключению NFS](../media/azure-netapp-files/azure-netapp-files-mount-instructions-nfs.png)
 
-    ![Инструкции SMB для подключения](../media/azure-netapp-files/azure-netapp-files-mount-instructions-smb.png)
+    ![Инструкции по подключению SMB](../media/azure-netapp-files/azure-netapp-files-mount-instructions-smb.png)
+    
+Если вы используете Нфсв 4.1, для подключения файловой системы используйте следующую команду: `sudo mount -t nfs -o rw,hard,rsize=65536,wsize=65536,vers=4.1,tcp,sec=sys $MOUNTTARGETIPADDRESS:/$VOLUMENAME $MOUNTPOINT`.
