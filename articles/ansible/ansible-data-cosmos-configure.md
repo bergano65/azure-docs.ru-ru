@@ -1,5 +1,5 @@
 ---
-title: Учебник по настройке учетных записей Azure Cosmos DB с помощью Ansible | Документация Майкрософт
+title: Руководство по настройке учетных записей Azure Cosmos DB с помощью Ansible
 description: Узнайте, как с помощью Ansible создать и настроить Базу данных Azure.
 keywords: ansible, azure, devops, bash, сборник схем, cosmo db, база данных
 ms.topic: tutorial
@@ -8,12 +8,12 @@ author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.date: 04/30/2019
-ms.openlocfilehash: 06d416358c1886f09b0b2336cc1ea53ce89947ae
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: 82cb29cfe3aeb7b6ca43fceca4c900b2eeb148c2
+ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65230804"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72242071"
 ---
 # <a name="tutorial-configure-azure-cosmos-db-accounts-using-ansible"></a>Руководство по настройке учетных записей Azure Cosmos DB с помощью Ansible
 
@@ -143,9 +143,9 @@ ms.locfileid: "65230804"
 
 ## <a name="get-the-sample-playbook"></a>Получение примера сборника схем
 
-Существуют два способа получить полный пример сборника схем.
+Существует два способа получения полного примера сборника схем:
 - [Скачайте сборник схем](https://github.com/Azure-Samples/ansible-playbooks/blob/master/cosmosdb_create.yml) и сохраните его в `cosmosdb.yml`.
-- Создайте файл с именем `cosmosdb.yml` и скопируйте в него приведенное ниже содержимое.
+- Создайте файл с именем `cosmosdb.yml` и скопируйте в него следующее содержимое.
 
 ```yml
 ---

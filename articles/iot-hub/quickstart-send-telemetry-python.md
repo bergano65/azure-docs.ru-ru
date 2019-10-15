@@ -10,12 +10,12 @@ ms.devlang: python
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 02/28/2019
-ms.openlocfilehash: a08719d322f044bbf1ced8103af5e4e23ed948c9
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.openlocfilehash: 0e4cafee26d9d3345d9099c3c9fc048fb982ada5
+ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "70998490"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72166413"
 ---
 # <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-and-read-it-with-a-back-end-application-python"></a>Краткое руководство. Отправка данных телеметрии из устройства в Центр Интернета вещей и их чтение с помощью внутреннего приложения (Python)
 
@@ -49,27 +49,27 @@ az extension add --name azure-cli-iot-ext
 
 1. Выполните приведенные ниже команды в Azure Cloud Shell, чтобы создать удостоверение устройства.
 
-    **YourIoTHubName**. Замените этот заполнитель именем вашего Центра Интернета вещей.
+    **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
 
-    **MyPythonDevice**. Это имя, присвоенное зарегистрированному устройству. Используйте MyPythonDevice, как показано ниже. Если вы выбрали другое имя для устройства, используйте его при работе с этим руководством и обновите имя устройства в примерах приложений перед их запуском.
+    **MyPythonDevice**. Это имя регистрируемого устройства. Рекомендуется использовать **MyPythonDevice**, как показано ниже. Если вы выбрали другое имя для устройства, используйте его при работе с этим руководством и обновите имя устройства в примерах приложений перед их запуском.
 
     ```azurecli-interactive
-    az iot hub device-identity create --hub-name YourIoTHubName --device-id MyPythonDevice
+    az iot hub device-identity create --hub-name {YourIoTHubName} --device-id MyPythonDevice
     ```
 
-1. Выполните следующую команду в Azure Cloud Shell, чтобы получить _строку подключения_ зарегистрированного устройства:
+1. Выполните приведенную ниже команду в Azure Cloud Shell, чтобы получить _строку подключения_ зарегистрированного устройства.
 
     **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
 
     ```azurecli-interactive
-    az iot hub device-identity show-connection-string --hub-name YourIoTHubName --device-id MyPythonDevice --output table
+    az iot hub device-identity show-connection-string --hub-name {YourIoTHubName} --device-id MyPythonDevice --output table
     ```
 
     Запишите строку подключения устройства, которая выглядит так:
 
-   `HostName={YourIoTHubName}.azure-devices.net;DeviceId=MyNodeDevice;SharedAccessKey={YourSharedAccessKey}`
+   `HostName={YourIoTHubName}.azure-devices.net;DeviceId=MyPythonDevice;SharedAccessKey={YourSharedAccessKey}`
 
-    Это значение понадобится позже в рамках этого краткого руководства.
+    Это значение понадобится позже при работе с этим кратким руководством.
 
 ## <a name="send-simulated-telemetry"></a>Отправка имитированной телеметрии
 
@@ -105,7 +105,7 @@ az extension add --name azure-cli-iot-ext
 Выполните следующие команды в Azure Cloud Shell, заменив `YourIoTHubName` на имя вашего центра Интернета вещей:
 
 ```azurecli-interactive
-az iot hub monitor-events --hub-name YourIoTHubName --device-id MyPythonDevice 
+az iot hub monitor-events --hub-name {YourIoTHubName} --device-id MyPythonDevice 
 ```
 
 На следующем снимке экрана показан пример выходных данных, когда расширение получает данные телеметрии, отправленные в центр имитированным устройством:
@@ -118,7 +118,7 @@ az iot hub monitor-events --hub-name YourIoTHubName --device-id MyPythonDevice
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом кратком руководстве вы настроили Центр Интернета вещей, зарегистрировали устройство, отправили имитированные данные телеметрии в центр с помощью приложения Python, а также считали данные телеметрии из центра, используя простое внутреннее приложение.
+При работе с этим кратким руководством вы настроили центр Интернета вещей, зарегистрировали устройство, отправили имитированные данные телеметрии в центр с помощью приложения Python, а также считали данные телеметрии из центра, используя простое внутреннее приложение.
 
 Чтобы узнать, как управлять имитированным устройством из внутреннего приложения, перейдите к следующему краткому руководству.
 

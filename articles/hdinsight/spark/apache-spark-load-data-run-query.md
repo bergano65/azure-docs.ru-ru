@@ -2,18 +2,18 @@
 title: Руководство по Загрузка данных и выполнение запросов в кластере Apache Spark в Azure HDInsight
 description: 'Учебник: узнайте, как загружать данные и выполнять интерактивные запросы в кластерах Spark в Azure HDInsight.'
 author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive,mvc
 ms.topic: tutorial
-ms.author: hrasheed
-ms.date: 05/16/2019
-ms.openlocfilehash: 109ed1a2ef22e498c2d19fd2e4f1848f289e9b55
-ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
+ms.date: 10/03/2019
+ms.openlocfilehash: 3d6b7cf67faa94d0947d16cc79d0d5b839de7acb
+ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70735275"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72027793"
 ---
 # <a name="tutorial-load-data-and-run-queries-on-an-apache-spark-cluster-in-azure-hdinsight"></a>Руководство по Загрузка данных и выполнение запросов в кластере Apache Spark в Azure HDInsight
 
@@ -30,11 +30,11 @@ ms.locfileid: "70735275"
 
 ## <a name="create-a-jupyter-notebook"></a>Создание записной книжки Jupyter
 
-Jupyter Notebook — это интерактивная среда Notebook, которая поддерживает различные языки программирования. Notebook позволяет работать с данными, объединять код с текстом Markdown и выполнять простые визуализации. 
+Jupyter Notebook — это интерактивная среда Notebook, которая поддерживает различные языки программирования. Notebook позволяет работать с данными, объединять код с текстом Markdown и выполнять простые визуализации.
 
 1. Измените URL-адрес `https://SPARKCLUSTER.azurehdinsight.net/jupyter`, заменив `SPARKCLUSTER` именем кластера Spark. В веб-браузере введите измененный URL-адрес. При появлении запроса введите учетные данные для входа в кластер.
 
-2. На веб-странице Jupyter выберите **New** (Создать)  > **PySpark**, чтобы создать записную книжку. 
+2. На веб-странице Jupyter выберите **New** (Создать)  > **PySpark**, чтобы создать записную книжку.
 
    ![Создание записной книжки Jupyter для выполнения интерактивного запроса Spark SQL](./media/apache-spark-load-data-run-query/hdinsight-spark-create-jupyter-interactive-spark-sql-query.png "Create a Jupyter Notebook to run interactive Spark SQL queryL")
 
@@ -45,8 +45,8 @@ Jupyter Notebook — это интерактивная среда Notebook, ко
 
 ## <a name="create-a-dataframe-from-a-csv-file"></a>Создание кадра данных из CSV-файла
 
-Приложения могут создавать кадры данных прямо из файлов и папок в удаленном хранилище (например, Служба хранилища Azure или Azure Data Lake Storage), из таблиц Hive, а также из других источников данных, поддерживаемых Spark (например, Cosmos DB, База данных SQL Azure, Хранилище данных и т. д.). На снимке экрана показан моментальный снимок файла hvac.csv, используемого в этом руководстве. CSV-файл содержит все кластеры HDInsight Spark. Эти данные демонстрируют колебания температуры в некоторых зданиях.
-    
+Приложения могут создавать кадры данных непосредственно из файлов и папок в удаленном хранилище (например, Служба хранилища Azure или Azure Data Lake Storage), из таблиц Hive, а также из других источников данных, поддерживаемых Spark (например, Cosmos DB, База данных SQL Azure, Хранилище данных и т. д.). На снимке экрана показан моментальный снимок файла hvac.csv, используемого в этом руководстве. CSV-файл содержит все кластеры HDInsight Spark. Эти данные демонстрируют колебания температуры в некоторых зданиях.
+
 ![Моментальный снимок данных для интерактивных запросов Spark SQL](./media/apache-spark-load-data-run-query/hdinsight-spark-sample-data-interactive-spark-sql-query.png "Snapshot of data for interactive Spark SQL query")
 
 1. Вставьте следующий код в пустую ячейку записной книжки Jupyter и нажмите **SHIFT+ВВОД** для выполнения кода. Код импортирует типы, необходимые для этого сценария:
@@ -60,7 +60,7 @@ Jupyter Notebook — это интерактивная среда Notebook, ко
 
     ![Состояние интерактивного запроса Spark SQL](./media/apache-spark-load-data-run-query/hdinsight-spark-interactive-spark-query-status.png "Состояние интерактивного запроса Spark SQL")
 
-2. Выполните следующий код, чтобы создать кадр данных и временную таблицу **hvac**. 
+2. Выполните следующий код, чтобы создать кадр данных и временную таблицу **hvac**.
 
     ```python
     # Create a dataframe and table from sample data
@@ -93,7 +93,7 @@ Jupyter Notebook — это интерактивная среда Notebook, ко
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-С HDInsight ваши данные и записные книжки Jupyter Notebook сохраняются в Службе хранилища Azure или Azure Data Lake Storage, что позволяет безопасно удалить неиспользуемый кластер. Плата за кластеры HDInsight взимается, даже когда они не используются. Поскольку стоимость кластера во много раз превышает стоимость хранилища, экономически целесообразно удалять неиспользуемые кластеры. Если вы планируете сразу приступить к следующему руководству, можно оставить кластер.
+С HDInsight ваши данные и записные книжки Jupyter Notebook сохраняются в Службе хранилища Azure или Azure Data Lake Storage, что позволяет безопасно удалить неиспользуемый кластер. Плата за кластеры HDInsight взимается, даже когда они не используются. Так как затраты на кластер во много раз превышают затраты на хранилище, экономически целесообразно удалять неиспользуемые кластеры. Если вы планируете сразу приступить к следующему руководству, можно оставить кластер.
 
 Откройте кластер на портале Azure и выберите **Удалить**.
 

@@ -6,14 +6,14 @@ ms.service: cosmos-db
 ms.topic: sample
 ms.date: 09/20/2019
 ms.author: mjbrown
-ms.openlocfilehash: 7d57264daf4036d1823d3da27c248bdca1d7466d
-ms.sourcegitcommit: 116bc6a75e501b7bba85e750b336f2af4ad29f5a
+ms.openlocfilehash: ec160f03fa5a8b9415dc33885fca512d4289f37b
+ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71154744"
+ms.lasthandoff: 10/05/2019
+ms.locfileid: "71969693"
 ---
-# <a name="update-an-azure-cosmos-account-or-add-modify-regions-using-powershell"></a>Обновление учетной записи Azure Cosmos, добавление и изменения регионов с помощью PowerShell
+# <a name="update-an-azure-cosmos-account-or-modify-regions-using-powershell"></a>Обновление учетной записи Azure Cosmos и изменение регионов с помощью PowerShell
 
 [!INCLUDE [updated-for-az](../../../../../includes/updated-for-az.md)]
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Обновление пользовательского образа масштабируемого набора виртуальных машин Azure с помощью Ansible | Документация Майкрософт
+title: Руководство по обновлению пользовательского образа масштабируемого набора виртуальных машин Azure с помощью Ansible
 description: Использование Ansible для обновления масштабируемого набора виртуальных машин в Azure с помощью пользовательского образа
 keywords: ansible, azure, devops, bash, playbook, virtual machine, virtual machine scale set, vmss
 ms.topic: tutorial
@@ -8,12 +8,12 @@ author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.date: 04/30/2019
-ms.openlocfilehash: d3eedc5b83190af46669b9b5df8643f3c80e9bb1
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: 3b7baffe6ce0fadbac2dd56b9c8296c80546fa72
+ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65230844"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72241332"
 ---
 # <a name="tutorial-update-the-custom-image-of-azure-virtual-machine-scale-sets-using-ansible"></a>Руководство по обновлению пользовательского образа масштабируемого набора виртуальных машин Azure с помощью Ansible
 
@@ -50,7 +50,7 @@ ms.locfileid: "65230844"
 
 Существует два способа получения примера сборника схем:
 
-* [Загрузите сборник схем](https://github.com/Azure-Samples/ansible-playbooks/blob/master/vmss_images/01-create-vms.yml) и сохраните его в `create_vms.yml`.
+* [Скачайте сборник схем](https://github.com/Azure-Samples/ansible-playbooks/blob/master/vmss_images/01-create-vms.yml) и сохраните его в `create_vms.yml`.
 * Создайте файл с именем `create_vms.yml` и скопируйте в него следующее:
 
 ```yml
@@ -198,7 +198,7 @@ ansible-playbook create-vms.yml --extra-vars "resource_group=myrg"
 
 Существует два способа получения примера сборника схем:
 
-* [Загрузите сборник схем](https://github.com/Azure-Samples/ansible-playbooks/blob/master/vmss_images/02-capture-images.yml) и сохраните его в `capture-images.yml`.
+* [Скачайте сборник схем](https://github.com/Azure-Samples/ansible-playbooks/blob/master/vmss_images/02-capture-images.yml) и сохраните его в `capture-images.yml`.
 * Создайте файл с именем `capture-images.yml` и скопируйте в него следующее:
 
 ```yml
@@ -343,7 +343,7 @@ ansible-playbook create-vmss.yml --extra-vars "resource_group=myrg"
 
 Существует два способа получения примера сборника схем:
 
-* [Загрузите сборник схем](https://github.com/Azure-Samples/ansible-playbooks/blob/master/vmss_images/04-update-vmss-image.yml) и сохраните его в `update-vmss-image.yml`.
+* [Скачайте сборник схем](https://github.com/Azure-Samples/ansible-playbooks/blob/master/vmss_images/04-update-vmss-image.yml) и сохраните его в `update-vmss-image.yml`.
 * Создайте файл с именем `update-vmss-image.yml` и скопируйте в него следующее:
 
 ```yml
@@ -425,7 +425,7 @@ ansible-playbook update-vmss-image.yml --extra-vars "resource_group=myrg"
         state: absent
 ```
 
-Запустите сборник схем с помощью команды `ansible-playbook`:
+Запустите сборник схем с помощью команды `ansible-playbook`.
 
 ```bash
 ansible-playbook cleanup.yml

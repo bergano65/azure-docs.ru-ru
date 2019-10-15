@@ -1,5 +1,5 @@
 ---
-title: Учебник по настройке динамических списков ресурсов Azure с помощью Ansible | Документация Майкрософт
+title: Руководство по настройке динамических списков ресурсов Azure с помощью Ansible
 description: Узнайте, как управлять динамическими списками Azure с помощью Ansible
 keywords: ansible, azure, разработка и операции, bash, cloudshell, динамические списки
 ms.topic: tutorial
@@ -8,12 +8,12 @@ author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.date: 04/30/2019
-ms.openlocfilehash: 46b13fae437a555edf0bdd0b0d4c1496d7596e0f
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: d89150f43205a4b38612008033ab5649acd9af5b
+ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65230692"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72241582"
 ---
 # <a name="tutorial-configure-dynamic-inventories-of-your-azure-resources-using-ansible"></a>Руководство по настройке динамических списков ресурсов Azure с помощью Ansible
 
@@ -291,4 +291,4 @@ ansible-inventory-test-vm1 | SUCCESS => {
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"] 
-> [Краткое руководство. Настройка виртуальных машин Linux в Azure с помощью Ansible](/azure/virtual-machines/linux/ansible-create-vm)
+> [Краткое руководство Настройка виртуальных машин Linux в Azure с помощью Ansible](/azure/virtual-machines/linux/ansible-create-vm)

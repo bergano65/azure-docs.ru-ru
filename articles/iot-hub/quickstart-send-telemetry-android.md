@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 03/15/2019
 ms.author: wesmc
-ms.openlocfilehash: 6e7d0ff396a4d264ee1f724d192c6c36abb400b1
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: e213a92397240f2646ceda30688ecef422cdf29c
+ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67051563"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72166355"
 ---
 # <a name="quickstart-send-iot-telemetry-from-an-android-device"></a>Краткое руководство. Отправка данных телеметрии в центр Интернета вещей с устройства Android
 
@@ -55,10 +55,10 @@ ms.locfileid: "67051563"
 
    **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
 
-   **MyAndroidDevice**. Это имя, присвоенное зарегистрированному устройству. Используйте имя MyAndroidDevice, как показано ниже. Если вы выбрали другое имя для устройства, используйте его при работе с этим руководством и обновите имя устройства в примерах приложений перед их запуском.
+   **MyAndroidDevice**. Это имя регистрируемого устройства. Рекомендуется использовать **MyAndroidDevice**, как показано ниже. Если вы выбрали другое имя для устройства, используйте его при работе с этим руководством и обновите имя устройства в примерах приложений перед их запуском.
 
     ```azurecli-interactive
-    az iot hub device-identity create --hub-name YourIoTHubName --device-id MyAndroidDevice
+    az iot hub device-identity create --hub-name {YourIoTHubName} --device-id MyAndroidDevice
     ```
 
 2. Выполните следующую команду в Azure Cloud Shell, чтобы получить _строку подключения_ зарегистрированного устройства:
@@ -66,7 +66,7 @@ ms.locfileid: "67051563"
     **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
 
     ```azurecli-interactive
-    az iot hub device-identity show-connection-string --hub-name YourIoTHubName --device-id MyAndroidDevice --output table
+    az iot hub device-identity show-connection-string --hub-name {YourIoTHubName} --device-id MyAndroidDevice --output table
     ```
 
     Запишите строку подключения устройства, которая выглядит так:
@@ -75,16 +75,16 @@ ms.locfileid: "67051563"
 
     Это значение потребуется вам в дальнейшем для отправки данных телеметрии в рамках этого руководства.
 
-## <a name="send-telemetry"></a>Отправка данных телеметрии
+## <a name="send-simulated-telemetry"></a>Отправка имитированной телеметрии
 
 1. В Android Studio откройте пример проекта Android, полученный из GitHub. Проект находится в указанном ниже каталоге копии клонированного или скачанного репозитория [azure-iot-sample-java](https://github.com/Azure-Samples/azure-iot-samples-java).
 
         \azure-iot-samples-java\iot-hub\Samples\device\AndroidSample
 
-2. В Android Studio откройте *gradle.properties* для примера проекта и замените заполнитель **Device_Connection_String** строкой подключения к устройству, которую вы записали ранее.
+2. В Android Studio откройте *gradle.properties* для примера проекта и замените заполнитель **Device_Connection_String** строкой подключения устройства, которую вы записали ранее.
 
     ```
-    DeviceConnectionString=HostName={YourIoTHubName}.azure-devices.net;DeviceId=MyNodeDevice;SharedAccessKey={YourSharedAccessKey}
+    DeviceConnectionString=HostName={YourIoTHubName}.azure-devices.net;DeviceId=MyAndroidDevice;SharedAccessKey={YourSharedAccessKey}
     ```
 
 3. В Android Studio последовательно выберите **File (Файл)**  > **Sync Project with Gradle Files (Синхронизировать проект с файлами Gradle)** . Проверьте, завершена ли сборка.
@@ -108,10 +108,10 @@ ms.locfileid: "67051563"
 
 1. С помощью Azure Cloud Shell выполните следующую команду для установки подключения к центру Интернета вещей и чтения поступающих из него сообщений:
 
-   **YourIoTHubName**. Замените этот заполнитель именем вашего Центра Интернета вещей.
+   **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
 
     ```azurecli-interactive
-    az iot hub monitor-events --hub-name YourIoTHubName --output table
+    az iot hub monitor-events --hub-name {YourIoTHubName} --output table
     ```
 
     На следующем снимке экрана показан пример выходных данных, когда центр Интернета вещей получает данные телеметрии, отправленные устройством Android:
@@ -123,7 +123,7 @@ ms.locfileid: "67051563"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-При работе с этим кратким руководством вы настроили Центр Интернета вещей, зарегистрировали устройство, отправили имитированные данные телеметрии в центр с помощью приложения Android, а также считали данные телеметрии из центра, используя Azure Cloud Shell.
+При работе с этим кратким руководством вы настроили центр Интернета вещей, зарегистрировали устройство, отправили имитированные данные телеметрии в центр с помощью приложения Android, а также считали данные телеметрии из центра, используя Azure Cloud Shell.
 
 Чтобы узнать, как управлять имитированным устройством из внутреннего приложения, перейдите к следующему краткому руководству.
 

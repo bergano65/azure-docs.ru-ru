@@ -10,15 +10,15 @@ ms.service: azure-resource-manager
 ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.date: 02/25/2019
+ms.date: 10/08/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: bf004f07558ae1f252a6bd26b4fd59ea9e4eea6e
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: bcf64d98f53d85937ee7960ec3938280814267d8
+ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67069268"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72170195"
 ---
 # <a name="tutorial-secure-artifacts-in-azure-resource-manager-template-deployments"></a>Руководство. Защита артефактов в развертываниях шаблонов Azure Resource Manager
 
@@ -64,7 +64,7 @@ ms.locfileid: "67069268"
 
 ### <a name="download-the-bacpac-file"></a>Скачивание BACPAC-файла
 
-Скачайте [BACPAC-файл](https://armtutorials.blob.core.windows.net/sqlextensionbacpac/SQLDatabaseExtension.bacpac) и сохраните его на локальный компьютер с таким именем — **SQLDatabaseExtension.bacpac**.
+Скачайте [BACPAC-файл](https://github.com/Azure/azure-docs-json-samples/raw/master/tutorial-sql-extension/SQLDatabaseExtension.bacpac) и сохраните его на локальный компьютер с таким именем — **SQLDatabaseExtension.bacpac**.
 
 ### <a name="create-a-storage-account"></a>Создание учетной записи хранения
 
@@ -134,13 +134,13 @@ ms.locfileid: "67069268"
 
 ## <a name="open-an-existing-template"></a>Открытие имеющегося шаблона
 
-В этом сеансе будет изменен шаблон, созданный в [руководстве по импорту BACPAC-файлов SQL с помощью шаблонов Azure Resource Manager](./resource-manager-tutorial-deploy-sql-extensions-bacpac.md), чтобы вызвать BACPAC-файл с помощью маркера SAS.  Шаблон, разработанный в руководстве по расширению SQL, опубликован по адресу [https://armtutorials.blob.core.windows.net/sqlextensionbacpac/azuredeploy.json](https://armtutorials.blob.core.windows.net/sqlextensionbacpac/azuredeploy.json).
+В этом сеансе будет изменен шаблон, созданный в [руководстве по импорту BACPAC-файлов SQL с помощью шаблонов Azure Resource Manager](./resource-manager-tutorial-deploy-sql-extensions-bacpac.md), чтобы вызвать BACPAC-файл с помощью маркера SAS.  Шаблон, разработанный при выполнении инструкций из руководства по расширению SQL, доступен на [GitHub](https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/tutorial-sql-extension/azuredeploy.json).
 
 1. В Visual Studio Code выберите **Файл**>**Открыть файл**.
 2. Скопируйте приведенный ниже URL-адрес и вставьте его в поле **Имя файла**.
 
     ```url
-    https://armtutorials.blob.core.windows.net/sqlextensionbacpac/azuredeploy.json
+    https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/tutorial-sql-extension/azuredeploy.json
     ```
 3. Чтобы открыть файл, выберите **Открыть**.
 

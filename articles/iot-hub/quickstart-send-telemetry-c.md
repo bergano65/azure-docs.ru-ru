@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 04/10/2019
 ms.author: wesmc
-ms.openlocfilehash: 842efca1b40827f63ab23581aeac7e5226d04349
-ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
+ms.openlocfilehash: 4ccfa45c56a7e59024ce0639f218861054e32395
+ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69900276"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72166944"
 ---
 # <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-and-read-it-with-a-back-end-application-c"></a>Краткое руководство. Отправка данных телеметрии из устройства в Центр Интернета вещей и их чтение с помощью внутреннего приложения (C)
 
@@ -25,7 +25,7 @@ ms.locfileid: "69900276"
 
 В этом кратком руководстве используется пример приложения C из [пакета SDK для устройств Azure IoT для C](iot-hub-device-sdk-c-intro.md) для отправки данных телеметрии в центр Интернета вещей. Пакеты SDK для устройств Azure IoT написаны в соответствии со стандартом [ANSI C (C99)](https://wikipedia.org/wiki/C99) для обеспечения переносимости и совместимости с широким диапазоном платформ. Прежде чем запустить пример кода, вы создадите центр Интернета вещей и зарегистрируете в нем имитированное устройство.
 
-Данная статья написана для Windows, но вы можете выполнить шаги этого краткого руководства и на платформе Linux.
+Эта статья написана для Windows. Но вы можете выполнить задачи из этого краткого руководства и на платформе Linux.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -45,7 +45,7 @@ ms.locfileid: "69900276"
 
 При работе с этим кратким руководством вы будете использовать [пакет SDK для устройств Azure IoT для C](iot-hub-device-sdk-c-intro.md). 
 
-Этот пакет SDK можно использовать, установив пакеты и библиотеки для следующих сред:
+Для указанных ниже сред можно использовать этот пакет SDK, установив следующие пакеты и библиотеки:
 
 * **Linux**: доступны пакеты apt-get для Ubuntu 16.04 и 18.04 на основе следующих архитектур ЦП: amd64, arm64, armhf и i386. Дополнительные сведения см. в разделе [Using apt-get to create a C device client project on Ubuntu](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/ubuntu_apt-get_sample_setup.md) (Создание проекта клиента для устройств на C в Ubuntu с помощью apt-get).
 
@@ -111,12 +111,12 @@ ms.locfileid: "69900276"
 
 1. Выполните приведенные ниже команды в Azure Cloud Shell, чтобы создать удостоверение устройства.
 
-   **YourIoTHubName**. Замените этот заполнитель именем вашего Центра Интернета вещей.
+   **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
 
-   **MyCDevice**. Это имя, присвоенное зарегистрированному устройству. Используйте имя MyCDevice, как показано в примере. Если вы выбрали другое имя для устройства, используйте его при работе с этим руководством и обновите имя устройства в примерах приложений перед их запуском.
+   **MyCDevice**. Это имя регистрируемого устройства. Рекомендуется использовать **MyCDevice**, как показано ниже. Если вы выбрали другое имя для устройства, используйте его при работе с этим руководством и обновите имя устройства в примерах приложений перед их запуском.
 
     ```azurecli-interactive
-    az iot hub device-identity create --hub-name YourIoTHubName --device-id MyCDevice
+    az iot hub device-identity create --hub-name {YourIoTHubName} --device-id MyCDevice
     ```
 
 2. Выполните следующую команду в Azure Cloud Shell, чтобы получить _строку подключения_ зарегистрированного устройства:
@@ -124,14 +124,14 @@ ms.locfileid: "69900276"
    **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
 
     ```azurecli-interactive
-    az iot hub device-identity show-connection-string --hub-name YourIoTHubName --device-id MyCDevice --output table
+    az iot hub device-identity show-connection-string --hub-name {YourIoTHubName} --device-id MyCDevice --output table
     ```
 
     Запишите строку подключения устройства, которая выглядит так:
 
-   `HostName={YourIoTHubName}.azure-devices.net;DeviceId=MyNodeDevice;SharedAccessKey={YourSharedAccessKey}`
+   `HostName={YourIoTHubName}.azure-devices.net;DeviceId=MyCDevice;SharedAccessKey={YourSharedAccessKey}`
 
-    Это значение понадобится позже в рамках этого краткого руководства.
+    Это значение понадобится позже при работе с этим кратким руководством.
 
 ## <a name="send-simulated-telemetry"></a>Отправка имитированной телеметрии
 
@@ -183,7 +183,7 @@ ms.locfileid: "69900276"
    **YourIoTHubName**. Замените этот заполнитель именем вашего Центра Интернета вещей.
 
     ```azurecli-interactive
-    az iot hub monitor-events --hub-name YourIoTHubName --output table
+    az iot hub monitor-events --hub-name {YourIoTHubName} --output table
     ```
 
     ![Чтение сообщений устройства с помощью Azure CLI](media/quickstart-send-telemetry-c/read-device-to-cloud-messages-app.png)
@@ -194,7 +194,7 @@ ms.locfileid: "69900276"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-При работе с этим кратким руководством вы настроили центр Интернета вещей, зарегистрировали устройство, отправили имитированные данные телеметрии в центр с помощью приложения C, а также считали данные телеметрии из центра, используя Azure Cloud Shell.
+При работе с этим кратким руководством вы настроили Центр Интернета вещей, зарегистрировали устройство, отправили имитированные данные телеметрии в центр с помощью приложения C, а также считали данные телеметрии из центра, используя Azure Cloud Shell.
 
 Чтобы узнать больше о разработке с помощью пакета SDK Центра Интернета вещей Azure для C, перейдите к следующему практическому руководству:
 

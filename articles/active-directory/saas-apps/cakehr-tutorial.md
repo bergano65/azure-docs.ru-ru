@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 09/19/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9acedc081166c84935e3abfde8401b55c64156a7
-ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
+ms.openlocfilehash: 34ef0497b5cacb66ccf92079e740acd98a05021a
+ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71174380"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72026440"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-cakehr"></a>Руководство по Интеграция единого входа Azure Active Directory с CakeHR
 
@@ -137,11 +137,11 @@ ms.locfileid: "71174380"
 
 1. Откройте новое окно веб-браузера и войдите на корпоративный сайт CakeHR с правами администратора.
 
-2. В правом верхнем углу страницы щелкните  **Profile**  (Профиль) и выберите  **Settings** (Параметры).
+2. В правом верхнем углу страницы щелкните **профиль** и выберите **Settings** (Параметры).
 
     ![Настройка CakeHR](./media/cakehr-tutorial/config01.png)
 
-3. В левой части строки меню щелкните  **INTEGRATIONS** > **SAML SSO** (Интеграции > Единый вход SAML) и выполните следующие действия:
+3. В левой части строки меню щелкните **INTEGRATIONS** > **SAML SSO** (Интеграции > Единый вход SAML) и выполните следующие действия:
 
      ![Настройка CakeHR](./media/cakehr-tutorial/config02.png)
 
@@ -163,7 +163,7 @@ ms.locfileid: "71174380"
 
 1. Войдите в CakeHR с правами администратора безопасности.
 
-2. В левой части строки меню щелкните  **COMPANY** > **ADD** (Компания > Добавить).
+2. В левой части строки меню щелкните **COMPANY** > **ADD** (Компания > Добавить).
 
     ![Настройка CakeHR](./media/cakehr-tutorial/config03.png)
 

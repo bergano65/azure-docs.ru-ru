@@ -1,5 +1,5 @@
 ---
-title: Руководство. Настройка лабораторий в Azure DevTest Labs с помощью Ansible | Документация Майкрософт
+title: Руководство по настройке лаборатории в Azure DevTest Labs с помощью Ansible
 description: Сведения о настройке лаборатории в Azure DevTest Labs с помощью Ansible
 ms.service: ansible
 keywords: ansible, azure, devops, bash, playbook, devtest lab
@@ -8,12 +8,12 @@ manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 04/30/2019
-ms.openlocfilehash: c6bc4d50e4db52f772a137495658492018ee5360
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: d035c76a811df45af5ed8183b86e14a2ee6218b7
+ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65230973"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72241661"
 ---
 # <a name="tutorial-configure-labs-in-azure-devtest-labs-using-ansible"></a>Руководство по Настройка лаборатории в Azure DevTest Labs с помощью Ansible
 
@@ -45,7 +45,7 @@ ms.locfileid: "65230973"
 
 ## <a name="create-resource-group"></a>Создать группу ресурсов
 
-Образец с фрагментом кода из сборник схем, который используется для создания группы ресурсов Azure. Группа ресурсов — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими.
+Фрагмент кода из примера сборника схем создает группу ресурсов Azure. Группа ресурсов — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими.
 
 ```yml
   - name: Create a resource group
@@ -278,7 +278,7 @@ ms.locfileid: "65230973"
 ## <a name="get-the-sample-playbook"></a>Получение примера сборника схем
 
 Существует два способа получения полного примера сборника схем:
-- [Загрузите сборник схем](https://github.com/Azure-Samples/ansible-playbooks/blob/master/devtestlab-create.yml) и сохраните его в `devtestlab-create.yml`.
+- [Скачайте сборник схем](https://github.com/Azure-Samples/ansible-playbooks/blob/master/devtestlab-create.yml) и сохраните его в `devtestlab-create.yml`.
 - Создайте файл с именем `devtestlab-create.yml` и скопируйте в него следующее:
 
 ```yml
@@ -448,7 +448,7 @@ ms.locfileid: "65230973"
 
 Чтобы проверить различные возможности, описанные в этой статье, здесь необходимо выполнить сборник схем.
 
-Перед выполнением сборника схем внесите следующие изменения:
+Перед выполнением сборника схем внесите следующие изменения.
 - В разделе `vars` замените заполнитель `{{ resource_group_name }}` именем вашей группы ресурсов.
 - Сохраните маркер GitHub в качестве переменной среды `GITHUB_ACCESS_TOKEN`.
 
@@ -462,7 +462,7 @@ ansible-playbook devtestlab-create.yml
 
 Удалите ресурсы Azure, созданные в рамках этой статьи, если они вам больше не нужны. 
 
-Сохраните следующий код в качестве `cleanup.yml`:
+Сохраните следующий код как `cleanup.yml`:
 
 ```yml
 - hosts: localhost
@@ -476,7 +476,7 @@ ansible-playbook devtestlab-create.yml
         state: absent
 ```
 
-Запустите сборник схем с помощью команды `ansible-playbook`:
+Запустите сборник схем с помощью команды `ansible-playbook`.
 
 ```bash
 ansible-playbook cleanup.yml

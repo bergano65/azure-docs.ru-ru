@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство по запуску сборников схем Ansible с помощью Bash в Azure Cloud Shell | Документация Майкрософт
+title: Краткое руководство по запуску сборников схем Ansible с помощью Bash в Azure Cloud Shell
 description: В этом кратком руководстве вы узнаете, как выполнять разные задачи Ansible с использованием Bash в Azure Cloud Shell.
 keywords: ansible, azure, devops, bash, cloudshell, сборник тренировочных заданий, bash
 ms.topic: quickstart
@@ -8,12 +8,12 @@ author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.date: 04/30/2019
-ms.openlocfilehash: 083d10de94c39ab134b8e475b66ebf2df30088bc
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: 10f71d5bcb7134ca0560e4fac617e6835cb3d48c
+ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65407655"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72241523"
 ---
 # <a name="quickstart-run-ansible-playbooks-via-bash-in-azure-cloud-shell"></a>Краткое руководство. Запуск сборников схем Ansible с помощью Bash в Azure Cloud Shell
 
@@ -51,4 +51,4 @@ export AZURE_SUBSCRIPTION_ID=<your-subscription-id>
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"] 
-> [Краткое руководство. Настройка виртуальных машин в Azure с помощью Ansible](/azure/virtual-machines/linux/ansible-create-vm)
+> [Краткое руководство Настройка виртуальных машин в Azure с помощью Ansible](/azure/virtual-machines/linux/ansible-create-vm)

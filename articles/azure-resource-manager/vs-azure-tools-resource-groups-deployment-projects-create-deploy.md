@@ -6,16 +6,16 @@ ms.service: azure-resource-manager
 ms.topic: quickstart
 ms.date: 06/20/2019
 ms.author: tomfitz
-ms.openlocfilehash: 8677d906375853bdde5c192c86dacc7479f2e31e
-ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
+ms.openlocfilehash: c7f71dbadf24244756cf65f68ceea24547190737
+ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67311208"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72170239"
 ---
 # <a name="creating-and-deploying-azure-resource-groups-through-visual-studio"></a>Создание и развертывание групп ресурсов Azure с помощью Visual Studio
 
-С помощью Visual Studio можно создать проект для развертывания инфраструктуры и кода в Azure. Например, вы можете развернуть веб-узел, веб-сайт и код для веб-сайта. Visual Studio предоставляет разные начальные шаблоны для распространенных сценариев развертывания. В этой статье показано, как развернуть веб-приложение.  
+С помощью Visual Studio можно создать проект для развертывания инфраструктуры и кода в Azure. Например, вы можете развернуть веб-узел, веб-сайт и код для веб-сайта. Visual Studio предоставляет разные начальные шаблоны для распространенных сценариев развертывания. В этой статье показано, как развернуть веб-приложение.
 
 В этой статье показано, как использовать [Visual Studio 2019 или более поздней версии для разработки Azure и установленных рабочих нагрузок ASP.NET](/visualstudio/install/install-visual-studio?view=vs-2019). Использование Visual Studio 2017 в основном такое же.
 
@@ -205,13 +205,13 @@ ms.locfileid: "67311208"
 
     ![Добавление ресурса](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/add-resource-2.png)
 
-1. На этот раз выберите **Веб-развертывание для веб-приложений**. 
+1. На этот раз выберите **Веб-развертывание для веб-приложений**.
 
     ![Добавление веб-развертывания](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/add-web-deploy.png)
 
    Сохраните свой шаблон.
 
-1. В вашем шаблоне есть несколько новых параметров. Они были добавлены на предыдущем этапе. Вам не нужно задавать значения для параметров **_artifactsLocation** или **_artifactsLocationSasToken**, так как эти значения создаются автоматически. Тем не менее, вы должны задать папку и имя файла, соответствующие пути, по которому расположен пакет развертывания. Имена этих параметров заканчиваются на **PackageFolder** и **PackageFileName**. Первая часть имени — это имя добавленного вами ресурса веб-развертывания. В этой статье они названы **ExampleAppPackageFolder** и **ExampleAppPackageFileName**. 
+1. В вашем шаблоне есть несколько новых параметров. Они были добавлены на предыдущем этапе. Вам не нужно задавать значения для параметров **_artifactsLocation** или **_artifactsLocationSasToken**, так как эти значения создаются автоматически. Тем не менее, вы должны задать папку и имя файла, соответствующие пути, по которому расположен пакет развертывания. Имена этих параметров заканчиваются на **PackageFolder** и **PackageFileName**. Первая часть имени — это имя добавленного вами ресурса веб-развертывания. В этой статье они названы **ExampleAppPackageFolder** и **ExampleAppPackageFileName**.
 
    Откройте файл **Website.parameters.json** и установите для этих параметров значения, которые вы видели в справочных свойствах. Задайте для параметра **ExampleAppPackageFolder** имя папки. Задайте для параметра **ExampleAppPackageFileName** имя ZIP-файла.
 
@@ -386,7 +386,7 @@ ms.locfileid: "67311208"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом кратком руководстве вы узнали, как создать и развернуть шаблоны с помощью Visual Studio. В следующем руководстве показано, как в справочнике по шаблону найти информацию, чтобы создать зашифрованную учетную запись хранения Azure.
+В этом кратком руководстве вы узнали, как создать и развернуть шаблоны с помощью Visual Studio. Дополнительные сведения о разработке шаблонов см. в новой серии
 
 > [!div class="nextstepaction"]
-> [Создание шаблона Azure Resource Manager для развертывания зашифрованной учетной записи хранения](./resource-manager-tutorial-create-encrypted-storage-accounts.md)
+> [руководств для начинающих](./template-tutorial-create-first-template.md).

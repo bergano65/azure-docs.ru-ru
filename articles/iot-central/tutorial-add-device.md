@@ -9,18 +9,18 @@ ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: peterpr
-ms.openlocfilehash: 192374971e92bae282c5092dd8c5e7261fce0c5f
-ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
+ms.openlocfilehash: 2673d0d2c1cb174316e99a79a10a67347e2bc031
+ms.sourcegitcommit: be344deef6b37661e2c496f75a6cf14f805d7381
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71066365"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72001348"
 ---
 # <a name="tutorial-add-a-real-device-to-your-azure-iot-central-application"></a>Руководство по Добавление реального устройства в приложение Azure IoT Central
 
 [!INCLUDE [iot-central-original-pnp](../../includes/iot-central-original-pnp-note.md)]
 
-В этом руководстве показано, как добавить реальное устройство в приложение Microsoft Azure IoT Central и настроить его.
+В этом руководстве показано, как добавить *реальное устройство* в приложение Microsoft Azure IoT Central и настроить его. В этом руководстве вы создадите реальное устройство с помощью Node.js и выполните его код на настольном компьютере. Для работы с этим руководством не требуется отдельное устройство IoT, такое как Raspberry Pi или устройство MXChip IoT DevKit.
 
 Это руководство состоит из двух частей:
 
@@ -52,11 +52,11 @@ ms.locfileid: "71066365"
 
    В **Device Explorer** отображается шаблон устройства **Подключенный кондиционер** и имитированное устройство. IoT Central автоматически создает имитированное устройство во время создания шаблона устройства.
 
-2. Чтобы подключить реальный кондиционер, выберите **Создать+** , а затем — **Реальный**.
+2. Обратите внимание, что в **Обозревателе устройств** выбран шаблон устройства **Connected Air Conditioner** (Подключенный кондиционер). Чтобы приступить к подключению реального устройства кондиционирования воздуха, использующего этот шаблон, выберите **+** , а затем **Real**:
 
    ![Первые шаги добавления нового реального подключенного кондиционера](media/tutorial-add-device/newreal.png)
 
-3. Введите идентификатор устройства (должен состоять из символов нижнего регистра) или используйте предложенный идентификатор устройства. Также можно ввести имя нового устройства и нажать **Create** (Создать).
+3. Введите собственный **Идентификатор устройства** (должен быть строчным) или используйте предлагаемое значение. Также можно ввести **Имя устройства** для нового устройства и нажать кнопку **Create** (Создать).
 
    ![Переименование устройства](media/tutorial-add-device/rename.png)
 
@@ -76,9 +76,9 @@ ms.locfileid: "71066365"
 
 ## <a name="prepare-the-client-code"></a>Подготовка клиентского кода
 
-Пример кода в этой статье написан на [Node.js](https://nodejs.org/). Этот код используется для выполнения следующих задач:
+Пример кода в этой статье написан на [Node.js](https://nodejs.org/). Этот код устройства используется для выполнения следующих задач:
 
-* подключение устройства к приложению Azure IoT Central;
+* подключение к приложению Azure IoT Central;
 * отправка данных телеметрии температуры из подключенного кондиционера;
 * отправка свойств устройства в приложение Azure IoT Central;
 * отправка ответа оператору, который использует параметр **Set Temperature** (Установить температуру).
@@ -96,7 +96,7 @@ ms.locfileid: "71066365"
 
    ![Страница устройства, отображающая ссылку на сведения о подключении](media/tutorial-add-device/connectionlink.png)
 
-1. Запишите значения **Идентификатор области**, **Идентификатор устройства** и **Первичный ключ** на странице "Подключение к устройству. Они понадобятся позже.
+1. Запишите значения **Идентификатор области**, **Идентификатор устройства** и **Первичный ключ** на странице **Подключение к устройству**. Они понадобятся позже.
 
    ![Сведения о подключении](media/tutorial-add-device/device-connect.png)
 
@@ -139,7 +139,7 @@ ms.locfileid: "71066365"
     var provisioningHost = 'global.azure-devices-provisioning.net';
     var idScope = '{your Scope ID}';
     var registrationId = '{your Device ID}';
-    var symmetricKey = '{your Primary Key};
+    var symmetricKey = '{your Primary Key}';
     var provisioningSecurityClient = new SymmetricKeySecurityClient(registrationId, symmetricKey);
     var provisioningClient = ProvisioningDeviceClient.create(provisioningHost, idScope, new ProvisioningTransport(), provisioningSecurityClient);
     var hubClient;
@@ -150,7 +150,7 @@ ms.locfileid: "71066365"
 
 ## <a name="review-client-code"></a>Просмотр кода клиента
 
-В предыдущем разделе вы создали основу проекта Node.js для приложения, которое подключается к приложению Azure IoT Central. Далее нужно добавить код для выполнения таких задач:
+В предыдущем разделе вы создали основу проекта Node.js для приложения устройства, которое подключается к приложению Azure IoT Central. Далее нужно добавить код для выполнения таких задач:
 
 * подключение к приложению Azure IoT Central;
 * отправка данных телеметрии в приложение Azure IoT Central;

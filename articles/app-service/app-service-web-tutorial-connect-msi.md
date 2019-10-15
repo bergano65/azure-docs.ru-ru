@@ -14,12 +14,12 @@ ms.topic: tutorial
 ms.date: 09/16/2019
 ms.author: cephalin
 ms.custom: mvc
-ms.openlocfilehash: d4e0d632fe476df159710f800eca3a2a283f7908
-ms.sourcegitcommit: 71db032bd5680c9287a7867b923bf6471ba8f6be
+ms.openlocfilehash: b39c1596dd16f8ec6235878abdbf37492abd1ea8
+ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71018287"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72177072"
 ---
 # <a name="tutorial-secure-azure-sql-database-connection-from-app-service-using-a-managed-identity"></a>Руководство по Безопасное подключение к Базе данных SQL Azure из службы приложений с использованием управляемого удостоверения
 
@@ -188,6 +188,9 @@ conn.AccessToken = (new Microsoft.Azure.Services.AppAuthentication.AzureServiceT
 > Этот демонстрационный код является синхронным для ясности. Дополнительные сведения об асинхронных операциях для конструкторов см. в [этой статье](https://github.com/davidfowl/AspNetCoreDiagnosticScenarios/blob/master/AsyncGuidance.md#constructors).
 
 Это все, что необходимо для подключения к Базе данных SQL. При отладке в Visual Studio ваш код использует имя пользователя Azure AD, указанное в разделе [Настройка Visual Studio](#set-up-visual-studio). Позже вы настроите сервер Базы данных SQL, чтобы разрешить установку подключения с использованием управляемого удостоверения вашего приложения Службы приложений. Класс `AzureServiceTokenProvider` кэширует токен в памяти и извлекает его из Azure AD прямо перед истечением срока действия. Для обновления токена не требуется пользовательский код.
+
+> [!TIP]
+> Если настроенный вами пользователь Azure AD имеет доступ к нескольким клиентам, вызовите `GetAccessTokenAsync("https://database.windows.net/", tenantid)` с идентификатором нужного клиента, чтобы получить соответствующий маркер доступа.
 
 Введите `Ctrl+F5`, чтобы снова запустить приложение. То же приложение CRUD в вашем браузере теперь подключается к базе данных SQL Azure напрямую, используя аутентификацию Azure AD. Эта настройка позволяет запускать перенос базы данных из Visual Studio.
 

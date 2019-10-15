@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство по развертыванию шаблона решения Ansible для Azure в CentOS | Документация Майкрософт
+title: Краткое руководство по развертыванию шаблона решения Ansible для Azure в CentOS
 description: В этом кратком руководстве в узнаете, как развернуть шаблон решения Ansible на виртуальной машине CentOS, размещенной в Azure, а также изучите инструменты, которые настроены для работы с Azure.
 keywords: ansible, azure, devops, solution template, virtual machine, managed identities for azure resources, centos, red hat
 ms.topic: quickstart
@@ -8,12 +8,12 @@ author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.date: 04/30/2019
-ms.openlocfilehash: 58f28d5cf7d31a3fbddc8e1ca18be4dbcf617f61
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: 5ababe9eb1f680378e882970df2d0b008287a7c4
+ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65230999"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72241713"
 ---
 # <a name="quickstart-deploy-the-ansible-solution-template-for-azure-to-centos"></a>Краткое руководство. Развертывание шаблона решения Ansible для Azure в CentOS
 
@@ -89,4 +89,4 @@ ms.locfileid: "65230999"
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"] 
-> [Краткое руководство. Настройка виртуальной машины Linux в Azure с помощью Ansible](/azure/virtual-machines/linux/ansible-create-vm)
+> [Краткое руководство Настройка виртуальной машины Linux в Azure с помощью Ansible](/azure/virtual-machines/linux/ansible-create-vm)

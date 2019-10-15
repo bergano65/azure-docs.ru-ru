@@ -1,5 +1,5 @@
 ---
-title: Руководство. Настройка кэшей в Кэше Azure для Redis с помощью Ansible | Документация Майкрософт
+title: Руководство по настройке кэшей в Кэше Azure для Redis с использованием Ansible
 description: Дополнительные сведения о том, как использовать Ansible для создания, масштабирования и перезапуска Кэша Azure для Redis
 keywords: ansible, azure, devops, bash, playbook, cache, redis
 ms.topic: tutorial
@@ -8,12 +8,12 @@ author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.date: 04/30/2019
-ms.openlocfilehash: 693b042f631044352eaae708905fefca02f38415
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: 92592dffb3a9094ae74328e8819cafc9469c2ac7
+ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65231020"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72241790"
 ---
 # <a name="tutorial-configure-caches-in-azure-cache-for-redis-using-ansible"></a>Руководство по Настройка кэшей в Кэше Azure для Redis с использованием Ansible
 
@@ -161,8 +161,8 @@ ok: [localhost]
 ## <a name="get-the-sample-playbook"></a>Получение примера сборника схем
 
 Существует два способа получения полного примера сборника схем:
-- [Загрузите сборник схем](https://github.com/Azure-Samples/ansible-playbooks/blob/master/rediscache.yml) и сохраните его в `rediscache.yml`.
-- Создайте файл с именем `rediscache.yml` и скопируйте в него следующее:
+- [Скачайте сборник схем](https://github.com/Azure-Samples/ansible-playbooks/blob/master/rediscache.yml) и сохраните его в `rediscache.yml`.
+- Создайте файл с именем `rediscache.yml` и скопируйте в него следующее содержимое.
 
 ```yml
 - name: Manage Azure Cache for Redis

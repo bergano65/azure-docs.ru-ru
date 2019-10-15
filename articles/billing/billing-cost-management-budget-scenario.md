@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: billing
 ms.date: 10/01/2019
 ms.author: banders
-ms.openlocfilehash: 8ff402299b26637473f3fb762a3320255ea4df64
-ms.sourcegitcommit: a19f4b35a0123256e76f2789cd5083921ac73daf
+ms.openlocfilehash: bc35ba74acb2ce807597230fee0685606a93a775
+ms.sourcegitcommit: 7868d1c40f6feb1abcafbffcddca952438a3472d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71719911"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71958360"
 ---
 # <a name="manage-costs-with-azure-budgets"></a>Управление затратами с помощью API управления бюджетом Azure
 
@@ -272,7 +272,7 @@ Logic Apps помогает создавать, планировать и авт
 При создании группы действий вы перейдете в приложение логики, созданное ранее в этом руководстве.
 
 1.  Если вы еще не вошли на [портал Azure](https://portal.azure.com/), войдите в систему и выберите **Все службы** > **Монитор**.
-2.  Выберите **Группы действий** из раздела **Настройка**.
+2.  Выберите **Оповещения**, а затем **Управление действиями**.
 3.  Выберите **Добавить группу действий** в колонке **Группы действий**.
 4.  Добавьте и проверьте следующее:
     - имя группы действий;

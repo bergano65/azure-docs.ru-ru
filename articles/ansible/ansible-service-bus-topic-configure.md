@@ -1,5 +1,5 @@
 ---
-title: Учебник по настройке разделов в Служебной шине Azure с помощью Ansible | Документация Майкрософт
+title: Руководство по настройке разделов в Служебной шине Azure с помощью Ansible
 description: Узнайте, как создать раздел Служебной шины Azure с помощью Ansible.
 keywords: ansible, azure, devops, bash, сборник схем, служебная шина, разделы, подписки
 ms.topic: tutorial
@@ -8,12 +8,12 @@ author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.date: 04/30/2019
-ms.openlocfilehash: ca8d849796520ac260d888d772c064316db68a30
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: 952779db582f9437f10608bf86b0b80560ded2c0
+ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65230864"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72241215"
 ---
 # <a name="tutorial-configure-topics-in-azure-service-bus-using-ansible"></a>Руководство по настройке разделов в Служебной шине Azure с помощью Ansible
 
@@ -40,7 +40,7 @@ ms.locfileid: "65230864"
 ## <a name="create-the-service-bus-topic"></a>Создание раздела служебной шины
 
 Код из примера сборника схем создает следующие ресурсы:
-- группа ресурсов Azure;
+- Группа ресурсов Azure
 - пространство имен Служебной шины в группе ресурсов;
 - раздел служебной шины с пространством имен.
 

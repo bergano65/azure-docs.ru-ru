@@ -10,12 +10,12 @@ ms.devlang: java
 ms.topic: quickstart
 ms.custom: mvc, seo-java-august2019, seo-java-september2019
 ms.date: 06/21/2019
-ms.openlocfilehash: 9fb110eff1d498b2b20952048759c76a2dac39f2
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.openlocfilehash: f59a3409d508c63f232294d8d66ade5669815b3c
+ms.sourcegitcommit: 15e3bfbde9d0d7ad00b5d186867ec933c60cebe6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70306487"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71843354"
 ---
 # <a name="quickstart-control-a-device-connected-to-an-azure-iot-hub-with-java"></a>Краткое руководство. Управление подключенным к центру Интернета вещей устройством с использованием Java
 
@@ -35,9 +35,9 @@ ms.locfileid: "70306487"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Примеры приложений, запускаемые в рамках этого краткого руководства, написаны на языке Java. Вам потребуется установить Java SE 8 на компьютере для разработки.
+Примеры приложений, запускаемые в рамках этого краткого руководства, написаны на языке Java. Вам потребуется Java SE 8 на компьютере для разработки.
 
-Ссылки на скачивание пакета SDK для Java SE 8 для разных платформ доступны на [этой странице](https://docs.microsoft.com/en-us/java/azure/jdk/?view=azure-java-stable). В разделе **Долгосрочная поддержка** вам нужно выбрать ссылку **Java 8**, чтобы скачать пакет SDK для Java SE 8.
+Ссылки на скачивание пакета SDK для Java SE 8 для разных платформ доступны на [странице долгосрочной поддержки Java для Azure и Azure Stack](https://docs.microsoft.com/en-us/java/azure/jdk/?view=azure-java-stable). Щелкните ссылку **Java 8** в разделе **Долгосрочная поддержка**, чтобы скачать все необходимое для работы с JDK 8.
 
 Текущую версию Java на компьютере, на котором ведется разработка, можно проверить, используя следующую команду:
 
@@ -141,7 +141,7 @@ az iot hub show-connection-string --name YourIoTHubName --policy-name service --
 
     На следующем снимке экрана показан пример выходных данных, когда приложение имитированного устройства отправляет данные телеметрии в Центр Интернета вещей:
 
-    ![Запуск виртуального устройства](./media/quickstart-control-device-java/SimulatedDevice-1.png)
+    ![Данные телеметрии, переданные устройством в центр Интернета вещей](./media/quickstart-control-device-java/iot-hub-application-send-telemetry-output.png)
 
 ## <a name="call-the-direct-method"></a>Вызов прямого метода
 
@@ -167,11 +167,11 @@ az iot hub show-connection-string --name YourIoTHubName --policy-name service --
 
     На следующем снимке экрана показан пример выходных данных, когда приложение выполняет вызов прямого метода к устройству и получает подтверждение:
 
-    ![Запуск внутреннего приложения](./media/quickstart-control-device-java/BackEndApplication.png)
+    ![Выходные данные при прямом вызове метода приложением через центр Интернета вещей](./media/quickstart-control-device-java/iot-hub-direct-method-call-output.png)
 
     После запуска внутреннего приложения в окне консоли, в котором выполняется имитированное устройство, отобразится сообщение и изменится интервал, с которым это приложение отправляет сообщения:
 
-    ![Изменения в имитированном клиенте](./media/quickstart-control-device-java/SimulatedDevice-2.png)
+    ![Сообщение в консоли от устройства с отображением скорости изменения](./media/quickstart-control-device-java/iot-hub-sent-message-change-rate.png)
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

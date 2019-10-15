@@ -1,5 +1,5 @@
 ---
-title: Учебник по настройке приложений в Службе приложений Azure с помощью Ansible | Документация Майкрософт
+title: Руководство по настройке приложений в Службе приложений Azure с помощью Ansible
 description: Узнайте, как создать приложение со средой выполнения контейнеров Java 8 и Tomcat в Службе приложений Azure.
 keywords: ansible, azure, devops, bash, playbook, azure app service, web app, java
 ms.topic: tutorial
@@ -8,12 +8,12 @@ author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.date: 04/30/2019
-ms.openlocfilehash: aed09baf410ce25f2e5383aa746344a440e2a052
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: 5104db6bd7fa57600c7212e041263971ca4c91d4
+ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65231244"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72242045"
 ---
 # <a name="tutorial-configure-apps-in-azure-app-service-using-ansible"></a>Руководство по настройке приложений в Службе приложений Azure с помощью Ansible
 
@@ -248,4 +248,4 @@ localhost                  : ok=9    changed=6    unreachable=0    failed=0
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"] 
-> [Руководство по масштабированию приложений в Службе приложений Azure с помощью Ansible](/azure/ansible/ansible-scale-azure-web-apps)
+> [Руководство. масштабированию приложений в Службе приложений Azure с помощью Ansible](/azure/ansible/ansible-scale-azure-web-apps)

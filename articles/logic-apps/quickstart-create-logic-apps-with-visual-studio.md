@@ -12,12 +12,12 @@ ms.manager: carmonm
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 04/25/2019
-ms.openlocfilehash: c9248e5bcc9ebd819518b6ee609f529ea9b8f8bc
-ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
+ms.openlocfilehash: 47b7609fe111ecbe41a161bfbff1f7225ad66357
+ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70051697"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72165915"
 ---
 # <a name="quickstart-create-automated-tasks-processes-and-workflows-with-azure-logic-apps---visual-studio"></a>Краткое руководство. Создание автоматизированных задач, операций и рабочих процессов с помощью Azure Logic Apps в Visual Studio
 
@@ -27,7 +27,7 @@ ms.locfileid: "70051697"
 
 В этом кратком руководстве с помощью Visual Studio создается то же приложение логики, что и с помощью портала Azure. Это приложение логики отслеживает RSS-канал веб-сайта и отправляет сообщения электронной почты с появлением каждого нового элемента в веб-канале. По завершении приложение логики будет выглядеть как этот высокоуровневый рабочий процесс:
 
-![Готовое приложение логики](./media/quickstart-create-logic-apps-with-visual-studio/overview.png)
+![Обзор: рабочий процесс приложения логики](./media/quickstart-create-logic-apps-with-visual-studio/high-level-workflow-overview.png)
 
 <a name="prerequisites"></a>
 
@@ -59,6 +59,8 @@ ms.locfileid: "70051697"
     Вы можете скачать и установить средства Azure Logic Apps напрямую из Visual Studio Marketplace или узнать, [как установить это расширение из Visual Studio](https://docs.microsoft.com/visualstudio/ide/finding-and-using-visual-studio-extensions). 
     После завершения установки перезагрузите Visual Studio.
 
+* Чтобы упростить работу с разными средами Azure, такими как Azure для государственных организаций, вы можете установить и использовать расширение [средства переключения сред Azure](https://marketplace.visualstudio.com/items?itemName=SteveMichelotti.AzureEnvironmentSelector). См. сведения о [расширении средства переключения сред Azure (Visual Studio)](https://devblogs.microsoft.com/azuregov/introducing-the-azure-environment-selector-visual-studio-extension/).
+
 * Доступ к Интернету при использовании встроенного конструктора приложений логики
 
   Конструктору требуется подключение к Интернету, чтобы создать ресурсы в Azure и считать свойства и данные из соединителей в приложении логики. 
@@ -76,7 +78,7 @@ ms.locfileid: "70051697"
 
 1. В меню **Файл** выберите **Создать** > **Проект**. (Или нажмите клавиши Ctrl+Shift+N.)
 
-   ![В меню "Файл" выберите "Создать > Проект".](./media/quickstart-create-logic-apps-with-visual-studio/create-new-visual-studio-project.png)
+   ![Создание проекта Visual Studio](./media/quickstart-create-logic-apps-with-visual-studio/create-new-visual-studio-project.png)
 
 1. В разделе **Установленные** выберите **Visual C#** или **Visual Basic**. Выберите **Облако** > **Группа ресурсов Azure**. Назовите свой проект, например:
 
@@ -95,7 +97,7 @@ ms.locfileid: "70051697"
 
 1. В списке шаблонов выберите **Приложение логики**. Нажмите кнопку **ОК**.
 
-   ![Выбор шаблона Logic App](./media/quickstart-create-logic-apps-with-visual-studio/select-logic-app-template.png)
+   ![Выбор шаблона "Приложение логики" для создания проекта](./media/quickstart-create-logic-apps-with-visual-studio/select-logic-app-template.png)
 
    После того, как в Visual Studio будет создан проект, в обозревателе решений откроется ваше решение. 
    В решении файл **LogicApp.json** не только хранит определение приложения логики, но также является шаблоном Azure Resource Manager, который можно использовать для развертывания.
@@ -122,7 +124,7 @@ ms.locfileid: "70051697"
    | Параметр | Пример значения | ОПИСАНИЕ |
    | ------- | ------------- | ----------- |
    | Список профилей пользователя | Contoso <br> jamalhartnett@contoso.com | По умолчанию это учетная запись, используемая для входа |
-   | **Подписка** | Оплата по мере использования <br> (jamalhartnett@contoso.com) | Имя подписки Azure и связанной учетной записи |
+   | **подписка** | Оплата по мере использования <br> (jamalhartnett@contoso.com) | Имя подписки Azure и связанной учетной записи |
    | **Группа ресурсов** | MyLogicApp-RG <br> (Западная часть США) | Группа ресурсов Azure и расположение для хранения и развертывания ресурсов приложения логики |
    | **Местоположение.** | MyLogicApp-RG2 <br> (Западная часть США) | Другое расположение, если вы не хотите использовать расположение группы ресурсов |
    ||||
@@ -142,7 +144,7 @@ ms.locfileid: "70051697"
 
 1. Когда триггер появится в конструкторе, завершите создание приложения логики, следуя инструкциям из [краткого руководства по порталу Azure](../logic-apps/quickstart-create-first-logic-app-workflow.md#add-rss-trigger), а затем вернитесь к этой статье. По завершении приложение логики может выглядеть следующим образом:
 
-   ![Готовое приложение логики](./media/quickstart-create-logic-apps-with-visual-studio/finished-logic-app.png)
+   ![Завершенный пример рабочего процесса приложения логики](./media/quickstart-create-logic-apps-with-visual-studio/finished-logic-app-workflow.png)
 
 1. Сохраните решение Visual Studio. (Или нажмите клавиши Ctrl + S.)
 
@@ -154,7 +156,7 @@ ms.locfileid: "70051697"
 
 1. В обозревателе решений в контекстном меню проекта выберите **Развернуть** > **Создать**. Если отобразится запрос на вход в учетную запись Azure, выполните его.
 
-   ![Создайте развертывание приложения логики](./media/quickstart-create-logic-apps-with-visual-studio/create-logic-app-deployment.png)
+   ![Создание развертывания приложения логики](./media/quickstart-create-logic-apps-with-visual-studio/create-logic-app-deployment.png)
 
 1. Для этого развертывания сохраните подписку, группу ресурсов и другие настройки Azure по умолчанию. Выберите **Развернуть**.
 
@@ -166,18 +168,18 @@ ms.locfileid: "70051697"
 
    При запуске развертывания его состояние отобразится в окне **Выходные данные** Visual Studio. Если состояние не отображается, откройте список **Показать вывод из** и выберите свою группу ресурсов Azure.
 
-   ![Вывод информации о состоянии развертывания](./media/quickstart-create-logic-apps-with-visual-studio/logic-app-output-window.png)
+   ![Состояние развертывания в окне вывода Visual Studio](./media/quickstart-create-logic-apps-with-visual-studio/logic-app-output-window.png)
 
    Если подключенные соединители требуют ввода данных, может открыться окно PowerShell в фоновом режиме с запросом на ввод необходимых паролей или секретных ключей. После ввода этих сведений развертывание продолжится.
 
-   ![Окно PowerShell](./media/quickstart-create-logic-apps-with-visual-studio/logic-apps-powershell-window.png)
+   ![Запрос PowerShell на ввод паролей или секретных ключей](./media/quickstart-create-logic-apps-with-visual-studio/logic-apps-powershell-window.png)
 
    После развертывания приложение логики будет работать в реальном времени на портале Azure согласно заданному расписанию (каждую минуту). Триггер срабатывает при обнаружении новых элементов веб-канала, создавая экземпляр рабочего процесса, который выполняет действия приложения логики. Приложение логики отправляет сообщение электронной почты при появлении каждого нового элемента. Если же триггер не обнаруживает новые элементы, он не срабатывает и не создает экземпляр рабочего процесса. В свою очередь, приложение логики ожидает наступления следующего интервала перед повторной проверкой.
 
    Ниже приведены примеры электронных писем, которые отправляет это приложение логики. 
    Если сообщения электронной почты не приходят, проверьте папку нежелательной почты.
 
-   ![Outlook отправляет сообщение электронной почты для каждого нового элемента RSS](./media/quickstart-create-logic-apps-with-visual-studio/outlook-email.png)
+   ![Outlook отправляет сообщение электронной почты для каждого нового элемента RSS](./media/quickstart-create-logic-apps-with-visual-studio/example-outlook-email.png)
 
 Итак, вы успешно создали и развернули приложение логики с помощью Visual Studio. Чтобы управлять приложением логики и просматривать его журнал выполнения, ознакомьтесь со статьей [Manage logic apps with Visual Studio](../logic-apps/manage-logic-apps-with-visual-studio.md) (Управление приложениями логики в Visual Studio).
 
@@ -191,11 +193,11 @@ ms.locfileid: "70051697"
 
 1. Чтобы добавить ресурс в файл шаблона, нажмите **Добавить ресурс** в верхней части окна "Структура JSON". Также можно щелкнуть правой кнопкой мыши **ресурсы** в окне "Структура JSON", а затем выбрать пункт **Добавить новый ресурс**.
 
-   ![Окно "Структура JSON"](./media/quickstart-create-logic-apps-with-visual-studio/jsonoutline.png)
+   ![Добавление нового ресурса в окне структуры JSON](./media/quickstart-create-logic-apps-with-visual-studio/json-outline-window-add-resource.png)
 
 1. В диалоговом окне **Добавление ресурса** найдите и выберите **Приложение логики**. Присвойте имя приложению логики и выберите **Добавить**.
 
-   ![Добавление ресурса](./media/quickstart-create-logic-apps-with-visual-studio/addresource.png)
+   ![Добавление нового ресурса приложения логики в проект](./media/quickstart-create-logic-apps-with-visual-studio/add-logic-app-resource.png)
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -208,7 +210,7 @@ ms.locfileid: "70051697"
 
 1. На вкладке **Обзор** выберите поле **Удалить группу ресурсов**. Введите имя группы ресурсов для подтверждения и нажмите кнопку **Удалить**.
 
-   !["Группы ресурсов > Обзор > Удалить группу ресурсов"](./media/quickstart-create-logic-apps-with-visual-studio/delete-resource-group.png)
+   ![Удаление группы ресурсов приложения логики](./media/quickstart-create-logic-apps-with-visual-studio/delete-resource-group.png)
 
 1. Удалите решение Visual Studio со своего локального компьютера.
 

@@ -1,5 +1,5 @@
 ---
-title: Учебник по настройке ролей RBAC (управление доступом на основе ролей) в Службе Azure Kubernetes (AKS) с помощью Ansible | Документация Майкрософт
+title: Руководство по настройке управления доступом на основе ролей (RBAC) в Службе Azure Kubernetes с помощью Ansible
 description: Узнайте, как с помощью Ansible настроить управление доступом на основе ролей (RBAC) в кластере Службы Azure Kubernetes (AKS).
 keywords: ansible, azure, devops, bash, cloudshell, сборник схем, aks, контейнер, aks, kubernetes, azure active directory, rbac
 ms.topic: tutorial
@@ -8,12 +8,12 @@ author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.date: 04/30/2019
-ms.openlocfilehash: eae23806ee1b4e2dac1d3410e32c3242e89d4be8
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: 36a6f5ade7a60a989d2e80f2405aaa2d1d50b756
+ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67719818"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72242340"
 ---
 # <a name="tutorial-configure-role-based-access-control-rbac-roles-in-azure-kubernetes-service-aks-using-ansible"></a>Руководство по настройке ролей RBAC (управление доступом на основе ролей) в Службе Azure Kubernetes (AKS) с помощью Ansible
 

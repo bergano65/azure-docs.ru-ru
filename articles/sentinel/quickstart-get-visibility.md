@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/23/2019
 ms.author: rkarlin
-ms.openlocfilehash: c81f4cacd4c93d681122f3c8cd692ca8645288af
-ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
+ms.openlocfilehash: 676a41b64b79be6b11c3ef22b34d3de0e37e2a92
+ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71240092"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72023795"
 ---
 # <a name="quickstart-get-started-with-azure-sentinel"></a>Краткое руководство. Начало работы с Azure Sentinel
 
@@ -122,7 +122,7 @@ ms.locfileid: "71240092"
 
 При создании обнаружения, используйте встроенные обнаружения, созданные специалистами Майкрософт по вопросам безопасности и предназначенные для источников данных, к которым вы подключены.
 
-Чтобы просмотреть все готовые обнаружения, перейдите в раздел **Аналитика** а затем  **Шаблоны правил**. На этой вкладке содержатся все встроенные правила Azure Sentinel.
+Чтобы просмотреть все готовые обнаружения, перейдите в раздел **Аналитика** а затем **Шаблоны правил**. На этой вкладке содержатся все встроенные правила Azure Sentinel.
 
    ![Использование встроенных обнаружений для поиска угроз с помощью Azure Sentinel](media/tutorial-detect-built-in/view-oob-detections.png)
 

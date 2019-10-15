@@ -11,18 +11,18 @@ ms.reviewer: klam, LADocs
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 08/20/2019
-ms.openlocfilehash: d6c7f04d35a91e30a98ec403b6811a2be0aaee20
-ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
+ms.openlocfilehash: c85b3e3ced661eb36d9cb1eb0ae443a5ab21a913
+ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70051683"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72029439"
 ---
 # <a name="quickstart-create-your-first-automated-workflow-with-azure-logic-apps---azure-portal"></a>Краткое руководство. Создание первого автоматизированного рабочего процесса с помощью Azure Logic Apps на портале Azure
 
 Это краткое руководство содержит данные о способах создания первого автоматизированного рабочего процесса с помощью [Azure Logic Apps](../logic-apps/logic-apps-overview.md). В этой статье вы создадите приложение логики, которое регулярно проверяет RSS-канал веб-сайта на наличие новых элементов. Если они есть, приложение логики отправляет сообщение электронной почты для каждого из них. По завершении приложение логики будет выглядеть как этот высокоуровневый рабочий процесс:
 
-![Обзор: пример приложения логики](./media/quickstart-create-first-logic-app-workflow/overview.png)
+![Пример рабочего процесса приложения логики](./media/quickstart-create-first-logic-app-workflow/quickstart-workflow-overview.png)
 
 Для роботы с этим кратким руководством необходима учетная запись электронной почты любого поставщика, поддерживаемого Logic Apps, например Office 365 Outlook, Outlook.com или Gmail. Сведения о дополнительных поставщиках см. в [списке соединителей](https://docs.microsoft.com/connectors/). Это приложение логики использует учетную запись Office 365 Outlook. Если вы используете другую учетную запись электронной почты, общие шаги те же, но пользовательский интерфейс может немного отличаться.
 
@@ -36,30 +36,30 @@ ms.locfileid: "70051683"
 
 1. В главном меню на портале Azure последовательно выберите **Создать ресурс** > **Интеграция** > **Приложение логики**.
 
-   ![Создание приложения логики](./media/quickstart-create-first-logic-app-workflow/create-logic-app.png)
+   ![Создание приложения логики — портал Azure](./media/quickstart-create-first-logic-app-workflow/create-new-logic-app.png)
 
 1. В разделе **Создание приложения логики** предоставьте сведения о приложении логики, как показано здесь. Когда все будет готово, выберите **Создать**.
 
-   ![Ввод данных приложения логики](./media/quickstart-create-first-logic-app-workflow/create-logic-app-settings.png)
+   ![Укажите сведения о новом приложении логики](./media/quickstart-create-first-logic-app-workflow/create-logic-app-settings.png)
 
    | Свойство | Значение | ОПИСАНИЕ |
    |----------|-------|-------------|
    | **Имя** | <*logic-app-name*> | Имя приложения логики, которое может содержать только буквы, цифры, дефисы (`-`), символы подчеркивания (`_`), круглые скобки (`(`, `)`) и точки (`.`). В этом примере используется имя My-First-Logic-App. |
-   | **Подписка** | <*Azure-subscription-name*> | Имя подписки Azure. |
-   | **Группа ресурсов** | <*имя_группы_ресурсов_Azure*> | Имя [группы ресурсов Azure](../azure-resource-manager/resource-group-overview.md), используемой для упорядочения связанных ресурсов. В этом примере используется имя My-First-LA-RG. |
+   | **подписка** | <*Azure-subscription-name*> | Имя подписки Azure. |
+   | **группа ресурсов** | <*имя_группы_ресурсов_Azure*> | Имя [группы ресурсов Azure](../azure-resource-manager/resource-group-overview.md), используемой для упорядочения связанных ресурсов. В этом примере используется имя My-First-LA-RG. |
    | **Местоположение.** | <*Azure-Region*> | Регион для хранения данных приложения логики. В этом примере используется регион "Западная часть США". |
    | **Служба Log Analytics** | Отключить | Сохраните параметр **Выкл.** для журнала ведения диагностики. |
    ||||
 
 1. После развертывания приложения в Azure на панели инструментов Azure выберите **Уведомления** > **Перейти к ресурсу** для развернутого приложения логики.
 
-   ![Переход к ресурсу](./media/quickstart-create-first-logic-app-workflow/go-to-logic-app.png)
+   ![Перейдите к созданному ресурсу приложения логики](./media/quickstart-create-first-logic-app-workflow/go-to-new-logic-app-resource.png)
 
    Вы также можете найти и выбрать приложение логики, введя его имя в поле поиска.
 
    Открывается конструктор Logic Apps и отображается страница с вводным видео и часто используемыми триггерами. В разделе **Шаблоны** выберите **Пустое приложение логики**.
 
-   ![Выбор шаблона пустого приложения логики](./media/quickstart-create-first-logic-app-workflow/choose-logic-app-template.png)
+   ![Выберите пустой шаблон для приложения логики](./media/quickstart-create-first-logic-app-workflow/choose-logic-app-template.png)
 
 Затем добавьте [триггер](../logic-apps/logic-apps-overview.md#logic-app-concepts), который срабатывает при появлении нового элемента RSS-канала. Каждое приложение логики должно запускаться по триггеру, который активируется, когда происходит определенное событие или если выполняются заданные условия. При каждом срабатывании триггера обработчик Logic Apps создает экземпляр приложения логики, запускающий и выполняющий рабочий процесс.
 
@@ -71,15 +71,15 @@ ms.locfileid: "70051683"
 
 1. В поле поиска введите rss. В списке триггеров выберите триггер: **При публикации элемента веб-канала — RSS**.
 
-   ![Выбор триггера "RSS — при публикации элемента веб-канала"](./media/quickstart-create-first-logic-app-workflow/add-trigger-rss.png)
+   ![Выберите триггер "При публикации элемента веб-канала"](./media/quickstart-create-first-logic-app-workflow/add-rss-trigger-new-feed-item.png)
 
 1. Предоставьте сведения для триггера, как показано и описано далее:
 
-   ![Укажите RSS-канал, частоту и интервал триггера.](./media/quickstart-create-first-logic-app-workflow/add-trigger-rss-settings.png)
+   ![Укажите RSS-канал, частоту и интервал триггера.](./media/quickstart-create-first-logic-app-workflow/add-rss-trigger-settings.png)
 
    | Свойство | Значение | ОПИСАНИЕ |
    |----------|-------|-------------|
-   | **URL-адрес RSS-канала** | ```http://feeds.reuters.com/reuters/topNews``` | Ссылка для RSS-канала, который вы хотите отслеживать |
+   | **URL-адрес RSS-канала** | `http://feeds.reuters.com/reuters/topNews` | Ссылка для RSS-канала, который вы хотите отслеживать |
    | **Интервал** | 1 | Количество интервалов ожидания между проверками. |
    | **Frequency** | Минута | Единица измерения времени для каждого интервала между проверками  |
    ||||
@@ -88,7 +88,7 @@ ms.locfileid: "70051683"
 
 1. Чтобы скрыть сведения о триггере, щелкните внутри заголовка окна триггера.
 
-   ![Свертывание фигуры, чтобы скрыть сведения](./media/quickstart-create-first-logic-app-workflow/collapse-trigger-shape.png)
+   ![Сверните форму приложения логики, чтобы скрыть сведения](./media/quickstart-create-first-logic-app-workflow/collapse-trigger-shape.png)
 
 1. Сохраните приложение логики. На панели инструментов конструктора щелкните **Сохранить**.
 
@@ -100,13 +100,13 @@ ms.locfileid: "70051683"
 
 1. В разделе триггера **При публикации элемента веб-канала** выберите **Новый шаг**.
 
-   ![Добавление действия](./media/quickstart-create-first-logic-app-workflow/add-new-action.png)
+   ![В разделе триггера щелкните "Добавить шаг"](./media/quickstart-create-first-logic-app-workflow/add-new-step-under-trigger.png)
 
 1. В разделе **Выберите действие** под полем поиска выберите **Все**.
 
 1. В поле поиска введите "отправка сообщения". В списке действий выберите "отправить сообщения электронной почты" для нужного вам поставщика услуг электронной почты.
 
-   ![Выбор действия "Office 365 Outlook — отправка сообщения электронной почты".](./media/quickstart-create-first-logic-app-workflow/add-action-send-email.png)
+   ![Выберите действие "сообщение электронной почты" для Office 365 Outlook](./media/quickstart-create-first-logic-app-workflow/add-action-send-email.png)
 
    Чтобы отфильтровать список действий для определенного приложения или службы, можно сначала выбрать это приложение или службу.
 
@@ -123,21 +123,21 @@ ms.locfileid: "70051683"
 
    1. В поле **Тема** введите следующий текст с пробелом: ```New RSS item:```.
 
-      ![Ввод темы сообщения](./media/quickstart-create-first-logic-app-workflow/add-action-send-email-subject.png)
+      ![В свойстве "Тема" введите тему сообщения электронной почты](./media/quickstart-create-first-logic-app-workflow/add-action-send-email-subject.png)
 
    1. В списке **Добавить динамическое содержимое** выберите **Название канала**, чтобы включить его в заголовок RSS-элемента.
 
-      ![Список динамического содержимого — Feed title (Название канала)](./media/quickstart-create-first-logic-app-workflow/add-action-send-email-subject-dynamic-content.png)
+      ![В списке динамического содержимого выберите свойство "Название веб-канала"](./media/quickstart-create-first-logic-app-workflow/add-action-send-email-subject-dynamic-content.png)
 
       В конечном итоге тема сообщения будет выглядеть примерно так:
 
-      ![Добавленное название веб-канала](./media/quickstart-create-first-logic-app-workflow/add-action-send-email-feed-title.png)
+      ![Пример темы готового сообщения электронной почты для добавленного заголовка веб-канала](./media/quickstart-create-first-logic-app-workflow/add-action-send-email-feed-title.png)
 
       Если в конструкторе появляется цикл "For each", выберите маркер, содержащий массив, например маркер **categories-Item**. Для этих типов маркеров конструктор автоматически добавляет цикл к действию, которое ссылается на конкретный маркер. Таким образом приложение логики будет выполнять это действие для каждого элемента массива. Чтобы удалить цикл, нажмите кнопку с **многоточием** ( **...** ) на панели заголовка цикла, а затем выберите **Удалить**.
 
    1. В поле **Тело** введите текст и выберите необходимые маркеры для тела сообщения электронной почты. Чтобы добавить пустые строки в поле редактирования, нажмите Shift + ВВОД.
 
-      ![Добавление содержимого в тело сообщения электронной почты](./media/quickstart-create-first-logic-app-workflow/add-action-send-email-body.png)
+      ![Выберите свойства для содержимого сообщения электронной почты](./media/quickstart-create-first-logic-app-workflow/add-action-send-email-body.png)
 
       | Свойство | ОПИСАНИЕ |
       |----------|-------------|
@@ -156,7 +156,7 @@ ms.locfileid: "70051683"
 
 Например, ниже приведен образец сообщения электронной почты, которое отправляет это приложение логики.
 
-![Отправленное сообщение о новом элементе веб-канала RSS](./media/quickstart-create-first-logic-app-workflow/monitor-rss-feed-email.png)
+![Образец сообщения электронной почты, отправляемого при появлении нового элемента RSS-канала](./media/quickstart-create-first-logic-app-workflow/monitor-rss-feed-email.png)
 
 Технически, когда триггер проверяет веб-канал RSS и находит новые элементы, он срабатывает, и подсистема Logic Apps создает для приложения логики экземпляр рабочего процесса, в котором выполняются действия. Если триггер не находит новые элементы, он не срабатывает и "пропускает" создание экземпляра рабочего процесса.
 
@@ -168,11 +168,11 @@ ms.locfileid: "70051683"
 
 1. В главном меню Azure перейдите на вкладку **Группы ресурсов** и выберите группу ресурсов для приложения логики. На вкладке **Обзор** выберите **Удалить группу ресурсов**.
 
-   !["Группы ресурсов > Обзор > Удалить группу ресурсов"](./media/quickstart-create-first-logic-app-workflow/delete-resource-group.png)
+   ![Поиск, выбор и удаление группы ресурсов](./media/quickstart-create-first-logic-app-workflow/delete-resource-group.png)
 
 1. Введите имя группы ресурсов для подтверждения и нажмите кнопку **Удалить**.
 
-   ![Подтверждение удаления](./media/quickstart-create-first-logic-app-workflow/delete-resource-group-2.png)
+   ![Чтобы подтвердить удаление, выберите "Удалить"](./media/quickstart-create-first-logic-app-workflow/delete-resource-group-2.png)
 
 > [!NOTE]
 > При удалении приложения логики новые экземпляры запуска не создаются. Всех выполняющиеся и ожидающие выполнения запуски будут отменены. При наличии тысяч операций запуска отмена может занять значительное время.

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/26/2019
 ms.author: jeedes
-ms.openlocfilehash: 013e477b66d2772698ce5c9cc61a59f8a5a04a5a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: bd54466e054055ff84cd5bb2b28c5cc074ac0017
+ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67094885"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72026801"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-pega-systems"></a>Руководство по Интеграция Azure Active Directory с Pega Systems
 
@@ -124,7 +124,7 @@ ms.locfileid: "67094885"
     > [!NOTE]
     > Указанные здесь значения — это заполнители. Вместо них нужно указать фактический идентификатор, URL-адрес ответа, URL-адрес для входа и URL-адрес состояния ретранслятора. Далее в этом руководстве объясняется, как получить значения идентификатора и URL-адреса ответа в приложении Pega. Чтобы получить значение состояния ретранслятора, обратитесь к [группе поддержки Pega Systems](https://www.pega.com/contact-us). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-6. Приложению Pega Systems требуются утверждения SAML в определенном формате. Чтобы получать их в правильном формате, необходимо добавить сопоставления настраиваемых атрибутов в свою конфигурацию атрибутов токена SAML. На следующем снимке экрана показаны атрибуты по умолчанию. Щелкните значок **Изменить** , чтобы открыть диалоговое окно **Атрибуты пользователя** .
+6. Приложению Pega Systems требуются утверждения SAML в определенном формате. Чтобы получать их в правильном формате, необходимо добавить сопоставления настраиваемых атрибутов в свою конфигурацию атрибутов токена SAML. На следующем снимке экрана показаны атрибуты по умолчанию. Щелкните значок **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
     ![Атрибуты пользователя](common/edit-attribute.png)
 
@@ -282,4 +282,4 @@ ms.locfileid: "67094885"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

@@ -11,12 +11,12 @@ ms.reviewer: daviste
 ms.custom: mvc
 ms.topic: quickstart
 manager: carmonm
-ms.openlocfilehash: 40b3e0260e08ab5a8870c726042d06d80393fb15
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 2c198ce8af17912d3174269b6cced96b5c1ac8bd
+ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68849079"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72243234"
 ---
 # <a name="start-analyzing-your-mobile-app-with-app-center-and-application-insights"></a>Анализ мобильного приложения с помощью App Center и Application Insights
 
@@ -30,6 +30,9 @@ ms.locfileid: "68849079"
 - Приложение под управлением iOS, Android, Xamarin, универсальное приложение для Windows или приложение React Native.
  
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
+
+## <a name="sign-up-with-app-center"></a>Зарегистрироваться в Центре приложений
+Для начала создайте учетную запись и [зарегистрируйтесь в Центре приложений](https://appcenter.ms/signup?utm_source=ApplicationInsights&utm_medium=Azure&utm_campaign=docs).
 
 ## <a name="onboard-to-app-center"></a>Знакомство с App Center
 
