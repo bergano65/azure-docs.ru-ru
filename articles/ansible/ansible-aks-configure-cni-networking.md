@@ -1,5 +1,5 @@
 ---
-title: Учебник по настройке сети Azure CNI в Службе Azure Kubernetes (AKS) с помощью Ansible | Документация Майкрософт
+title: Руководство по настройке сети Azure CNI в Службе Azure Kubernetes (AKS) с помощью Ansible
 description: Узнайте, как с помощью Ansible настроить сеть Kubenet в кластере Службы Azure Kubernetes (AKS).
 keywords: ansible, azure, devops, bash, cloudshell, сборник схем, aks, контейнер, aks, kubernetes
 ms.topic: tutorial
@@ -8,12 +8,12 @@ author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.date: 04/30/2019
-ms.openlocfilehash: 2d43b1ffbb7910b16c81df2ff5b21e67dbcb0193
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: 04da0e8fb06d0a32c8e8bdc39d7722fc1c3fcdba
+ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65231358"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72242032"
 ---
 # <a name="tutorial-configure-azure-cni-networking-in-azure-kubernetes-service-aks-using-ansible"></a>Руководство по настройке сети Azure CNI в Службе Azure Kubernetes (AKS) с помощью Ansible
 
@@ -45,7 +45,7 @@ ms.locfileid: "65231358"
 
 Код из примера сборника схем в этом разделе используется для следующего.
 
-- Создать виртуальную сеть
+- Создание виртуальной сети
 - Создание подсети в виртуальной сети.
 
 Сохраните следующий сборник схем как `vnet.yml`:
@@ -283,4 +283,4 @@ ansible-playbook cleanup.yml
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Руководство по настройке Azure Active Directory в AKS с помощью Ansible](./ansible-aks-configure-rbac.md)
+> [Руководство. настройке Azure Active Directory в AKS с помощью Ansible](./ansible-aks-configure-rbac.md)

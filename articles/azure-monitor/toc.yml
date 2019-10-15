@@ -202,10 +202,10 @@
                       href: /java/azure/spring-framework/configure-spring-boot-java-applicationinsights
                     - name: Устранение неполадок
                       href: app/java-troubleshoot.md
-                - name: Приложения Node.js
-                  items:
-                    - name: Node.js
-                      href: app/nodejs.md
+                - name: Node.js
+                  href: app/nodejs.md
+                - name: Python
+                  href: app/opencensus-python.md
                 - name: Веб-страницы
                   items:
                     - name: Клиентская часть JavaScript
@@ -280,6 +280,9 @@
                 - name: Многошаговые тесты
                   displayname: 'availability, GSM, visual studio web test, web test'
                   href: app/availability-multistep.md
+                - name: Проверка доступности с помощью Функций Azure
+                  href: app/availability-azure-functions.md
+                  displayname: 'availability,azure functions,TrackAvailability(), timer function, azure gov, azure china, custom test, customized tests, contentmatch'
                 - name: Оповещения о доступности
                   displayname: 'alerts, global, alerting'
                   href: app/availability-alerts.md
@@ -297,8 +300,6 @@
                   displayname: 'correlation headers, w3c, distributed tracing, tracing'
                 - name: Локальный сервер переадресации
                   href: app/opencensus-local-forwarder.md
-                - name: Python
-                  href: app/opencensus-python.md
                 - name: Go
                   href: app/opencensus-go.md
             - name: Live Metrics Stream

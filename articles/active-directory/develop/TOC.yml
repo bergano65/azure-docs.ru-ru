@@ -553,7 +553,7 @@
         - name: Аутентификация
           items:
             - name: Основные сведения об аутентификации
-              href: authentication-scenarios.md
+              href: v1-authentication-scenarios.md
             - name: Протоколы OAuth 2.0 и OpenID Connect
               items:
                 - name: OpenID Connect

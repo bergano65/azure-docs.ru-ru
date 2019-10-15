@@ -299,8 +299,6 @@
           href: search-manage-powershell.md
         - name: Отслеживание действий и ведение журнала
           href: search-monitor-usage.md
-        - name: Поиск в аналитике трафика
-          href: search-traffic-analytics.md
 - name: Справочные материалы
   items:
     - name: Azure CLI
