@@ -135,6 +135,8 @@
               href: /sql/t-sql/statements/create-materialized-view-as-select-transact-sql
             - name: Изменение
               href: /sql/t-sql/statements/alter-materialized-view-transact-sql
+            - name: Проверка затрат на просмотр
+              href: 'https://docs.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-pdw-showmaterializedviewoverhead-transact-sql?view=azure-sqldw-latest'
         - name: Упорядоченный кластеризованный индекс columnstore
           items:
             - name: Руководство по настройке производительности

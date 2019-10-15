@@ -606,7 +606,9 @@
                   href: insights/vminsights-overview.md
                 - name: Известные проблемы
                   href: insights/vminsights-known-issues.md
-                - name: Вопросы и ответы
+                - name: Часто задаваемые вопросы об общедоступной версии
+                  href: insights/vminsights-ga-release-faq.md
+                - name: Часто задаваемые вопросы
                   href: insights/vminsights-faq.md
                 - name: Включение мониторинга
                   items:

@@ -1,8 +1,8 @@
 ---
-title: Выполнение фоновых задач с помощью веб-заданий в Службе приложений Azure
+title: Выполнение фоновых задач с помощью веб-заданий в службе приложений Azure
 description: Узнайте, как использовать веб-задания для выполнения фоновых задач в веб-приложениях службы приложений Azure, приложениях API и мобильных приложениях.
 author: ggailey777
-manager: wgallace
+manager: gwallace
 s.assetid: af01771e-54eb-4aea-af5f-f883ff39572b
 ms.service: app-service
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.date: 10/16/2018
 ms.author: glenga
 ms.reviewer: msangapu;david.ebbo;suwatch;pbatum;naren.soni
 ms.custom: seodec18
-ms.openlocfilehash: 2d97f826f4288d13589a2fb9da8148d58a2c5e1e
-ms.sourcegitcommit: 9858ab651a520c26f0ed18215e650efbf1fc5de9
+ms.openlocfilehash: 293227352f27a724228136532c88e35fe877feb2
+ms.sourcegitcommit: 9dec0358e5da3ceb0d0e9e234615456c850550f6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/14/2019
-ms.locfileid: "72303582"
+ms.locfileid: "72312165"
 ---
 # <a name="run-background-tasks-with-webjobs-in-azure-app-service"></a>Выполнение фоновых задач с помощью веб-заданий в службе приложений Azure
 
