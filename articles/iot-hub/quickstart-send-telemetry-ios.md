@@ -9,12 +9,12 @@ services: iot-hub
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 04/03/2019
-ms.openlocfilehash: 03a0f285b2e8c74070a30bfbaac50e9bd9c58f65
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: a23518cd016a1711e47734df0f7179770aa92a87
+ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67051475"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72166984"
 ---
 # <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-ios"></a>Краткое руководство. Отправка данных телеметрии из устройства в центр Интернета вещей (iOS)
 
@@ -49,25 +49,27 @@ ms.locfileid: "67051475"
 
 1. Выполните приведенные ниже команды в Azure Cloud Shell, чтобы создать удостоверение устройства.
 
-   **YourIoTHubName**. Замените этот заполнитель именем вашего Центра Интернета вещей.
+   **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
 
-   **myiOSdevice**. Это имя, присвоенное зарегистрированному устройству. Используйте myiOSdevice, как показано ниже. Если вы выбрали другое имя для устройства, используйте его при работе с этим руководством и обновите имя устройства в примерах приложений перед их запуском.
+   **myiOSdevice**. Это имя регистрируемого устройства. Рекомендуется использовать **myiOSdevice**, как показано ниже. Если вы выбрали другое имя для устройства, используйте его при работе с этим руководством и обновите имя устройства в примерах приложений перед их запуском.
 
    ```azurecli-interactive
-   az iot hub device-identity create --hub-name YourIoTHubName --device-id myiOSdevice
+   az iot hub device-identity create --hub-name {YourIoTHubName} --device-id myiOSdevice
    ```
 
-1. Выполните следующую команду, чтобы получить _строку подключения устройства_ для зарегистрированного устройства:
+1. Выполните следующую команду в Azure Cloud Shell, чтобы получить _строку подключения_ зарегистрированного устройства:
+
+   **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
 
    ```azurecli-interactive
-   az iot hub device-identity show-connection-string --hub-name YourIoTHubName --device-id myiOSdevice --output table
+   az iot hub device-identity show-connection-string --hub-name {YourIoTHubName} --device-id myiOSdevice --output table
    ```
 
    Запишите строку подключения устройства, которая выглядит так:
 
-   `HostName={YourIoTHubName}.azure-devices.net;DeviceId=MyNodeDevice;SharedAccessKey={YourSharedAccessKey}`
+   `HostName={YourIoTHubName}.azure-devices.net;DeviceId=myiOSdevice;SharedAccessKey={YourSharedAccessKey}`
 
-    Это значение понадобится позже в рамках этого краткого руководства.
+    Это значение понадобится позже при работе с этим кратким руководством.
 
 ## <a name="send-simulated-telemetry"></a>Отправка имитированной телеметрии
 
@@ -120,7 +122,7 @@ pod install
 Выполните следующие команды в Azure Cloud Shell, заменив `YourIoTHubName` на имя вашего центра Интернета вещей:
 
 ```azurecli-interactive
-az iot hub monitor-events --device-id myiOSdevice --hub-name YourIoTHubName
+az iot hub monitor-events --device-id myiOSdevice --hub-name {YourIoTHubName}
 ```
 
 На следующем снимке экрана показан пример выходных данных, когда расширение получает данные телеметрии, отправленные в центр имитированным устройством:
@@ -135,7 +137,7 @@ az iot hub monitor-events --device-id myiOSdevice --hub-name YourIoTHubName
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этой статье вы настраивали Центр Интернета вещей, регистрировали устройство, отправляли имитируемую телеметрию в концентратор из устройства iOS, а также читали телеметрию из концентратора. 
+С помощью этого краткого руководства вы настроили Центр Интернета вещей, зарегистрировали устройство, отправили имитируемую телеметрию в концентратор из устройства iOS, а также считали телеметрию из концентратора. 
 
 Чтобы узнать, как управлять имитированным устройством из внутреннего приложения, перейдите к следующему краткому руководству.
 

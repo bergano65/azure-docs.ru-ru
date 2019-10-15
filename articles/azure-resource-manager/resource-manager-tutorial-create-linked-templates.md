@@ -10,15 +10,15 @@ ms.service: azure-resource-manager
 ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.date: 03/18/2019
+ms.date: 10/04/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: c5399f46106d94d593a15530ee0c223a3f5f3eaf
-ms.sourcegitcommit: b7b0d9f25418b78e1ae562c525e7d7412fcc7ba0
+ms.openlocfilehash: 869e59aea9b78c44b1a920e58ecefab5e0ca4920
+ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/08/2019
-ms.locfileid: "70802052"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72169411"
 ---
 # <a name="tutorial-create-linked-azure-resource-manager-templates"></a>Руководство. Создание связанных шаблонов Azure Resource Manager
 
@@ -166,7 +166,7 @@ ms.locfileid: "70802052"
 
 ## <a name="upload-the-linked-template"></a>Передача связанного шаблона
 
-Основной шаблон и связанный шаблон должны быть доступны из любой точки выполнения развертывания. В этом руководстве используется метод развертывания Cloud Shell, который применялся в статье [Руководство. Создание шаблонов Azure Resource Manager с зависимыми ресурсами](./resource-manager-tutorial-create-templates-with-dependent-resources.md). Основной шаблон (azuredeploy.json) загружается в оболочку. Связанный шаблон (linkedTemplate.json) должен быть размещен в общем безопасном расположении. Следующий сценарий PowerShell создает учетную запись хранения Azure, передает в нее шаблон, а затем создает маркер SAS для предоставления ограниченного доступа к файлу шаблона. Для упрощения руководства этот скрипт скачивает полный связанный шаблон из общего расположения. Если вы хотите использовать созданный связанный шаблон, можно отправить его с помощью [Cloud Shell](https://shell.azure.com), а затем изменить скрипт для использования этого шаблона.
+Основной шаблон и связанный шаблон должны быть доступны из любой точки выполнения развертывания. В этом руководстве используется метод развертывания Cloud Shell, который применялся в статье [Руководство. Создание шаблонов Azure Resource Manager с зависимыми ресурсами](./resource-manager-tutorial-create-templates-with-dependent-resources.md). Основной шаблон (azuredeploy.json) загружается в оболочку. Связанный шаблон (linkedTemplate.json) должен быть размещен в общем безопасном расположении. Следующий сценарий PowerShell создает учетную запись хранения Azure, передает в нее шаблон, а затем создает маркер SAS для предоставления ограниченного доступа к файлу шаблона. Для упрощения руководства этот скрипт скачивает полный связанный шаблон из репозитория GitHub. Если вы хотите использовать созданный связанный шаблон, можно отправить его с помощью [Cloud Shell](https://shell.azure.com), а затем изменить скрипт для использования этого шаблона.
 
 > [!NOTE]
 > Сценарий ограничивает срок использования маркера SAS до восьми часов. Если для работы с этим руководством необходимо больше времени, увеличьте срок действия.
@@ -179,7 +179,7 @@ $resourceGroupName = $projectNamePrefix + "rg"
 $storageAccountName = $projectNamePrefix + "store"
 $containerName = "linkedtemplates" # The name of the Blob container to be created.
 
-$linkedTemplateURL = "https://armtutorials.blob.core.windows.net/linkedtemplates/linkedStorageAccount.json" # A completed linked template used in this tutorial.
+$linkedTemplateURL = "https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/tutorial-linked-templates/linkedStorageAccount.json" # A completed linked template used in this tutorial.
 $fileName = "linkedStorageAccount.json" # A file name used for downloading and uploading the linked template.
 
 # Download the tutorial linked template
@@ -259,7 +259,7 @@ echo "Linked template URI with SAS token: $templateURI"
       "properties": {
           "mode": "Incremental",
           "templateLink": {
-              "uri":"https://armtutorials.blob.core.windows.net/linkedtemplates/linkedStorageAccount.json"
+              "uri":"https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/tutorial-linked-templates/linkedStorageAccount.json"
           },
           "parameters": {
               "storageAccountName":{"value": "[variables('storageAccountName')]"},

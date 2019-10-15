@@ -10,12 +10,12 @@ ms.devlang: java
 ms.topic: quickstart
 ms.custom: mvc, seo-java-august2019, seo-java-september2019
 ms.date: 06/21/2019
-ms.openlocfilehash: a97081101df5199d3201a6ec47df4c2ac2747416
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.openlocfilehash: cb115b8658850fc85f93fc7a9508a82ecee920d8
+ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70309138"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72166443"
 ---
 # <a name="quickstart-send-telemetry-to-an-azure-iot-hub-and-read-it-with-a-java-application"></a>Краткое руководство. Отправка данных телеметрии в Центр Интернета вещей и их чтение с помощью приложения Java
 
@@ -67,39 +67,41 @@ az extension add --name azure-cli-iot-ext
 
 1. Выполните приведенные ниже команды в Azure Cloud Shell, чтобы создать удостоверение устройства.
 
-   **YourIoTHubName**. Замените этот заполнитель именем вашего Центра Интернета вещей.
+   **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
 
-   **MyJavaDevice**. Имя регистрируемого устройства. Используйте **MyJavaDevice**, как показано ниже. Если вы выбрали другое имя для устройства, используйте его при работе с этим руководством и обновите имя устройства в примерах приложений перед их запуском.
+   **MyJavaDevice**. Это имя регистрируемого устройства. Рекомендуется использовать **MyJavaDevice**, как показано ниже. Если вы выбрали другое имя для устройства, используйте его при работе с этим руководством и обновите имя устройства в примерах приложений перед их запуском.
 
     ```azurecli-interactive
-    az iot hub device-identity create --hub-name YourIoTHubName --device-id MyJavaDevice
+    az iot hub device-identity create --hub-name {YourIoTHubName} --device-id MyJavaDevice
     ```
 
-2. Выполните следующую команду в Azure Cloud Shell, чтобы получить _строку подключения_ зарегистрированного устройства. **YourIoTHubName. Замените этот заполнитель именем вашего Центра Интернета вещей.
+2. Выполните следующую команду в Azure Cloud Shell, чтобы получить _строку подключения_ зарегистрированного устройства:
+
+    **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
 
     ```azurecli-interactive
-    az iot hub device-identity show-connection-string --hub-name YourIoTHubName --device-id MyJavaDevice --output table
+    az iot hub device-identity show-connection-string --hub-name {YourIoTHubName} --device-id MyJavaDevice --output table
     ```
 
     Запишите строку подключения устройства, которая выглядит так:
 
-   `HostName={YourIoTHubName}.azure-devices.net;DeviceId=MyNodeDevice;SharedAccessKey={YourSharedAccessKey}`
+   `HostName={YourIoTHubName}.azure-devices.net;DeviceId=MyJavaDevice;SharedAccessKey={YourSharedAccessKey}`
 
-    Это значение понадобится позже в рамках этого краткого руководства.
+    Это значение понадобится позже при работе с этим кратким руководством.
 
 3. Вам также понадобится _конечная точка, совместимая с Центрами событий_, _путь, совместимый с Центрами событий_, и _первичный ключ службы_ из Центра Интернета вещей, чтобы подключить внутреннее приложение к Центру Интернета вещей и получить сообщения. Следующие команды позволяют получить эти значения для Центра Интернета вещей:
 
-     **YourIoTHubName. Замените этот заполнитель именем вашего Центра Интернета вещей.
+     **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
 
     ```azurecli-interactive
-    az iot hub show --query properties.eventHubEndpoints.events.endpoint --name YourIoTHubName
+    az iot hub show --query properties.eventHubEndpoints.events.endpoint --name {YourIoTHubName}
 
-    az iot hub show --query properties.eventHubEndpoints.events.path --name YourIoTHubName
+    az iot hub show --query properties.eventHubEndpoints.events.path --name {YourIoTHubName}
 
-    az iot hub policy show --name service --query primaryKey --hub-name YourIoTHubName
+    az iot hub policy show --name service --query primaryKey --hub-name {YourIoTHubName}
     ```
 
-    Запишите эти три значения, которые нужно использовать позже в рамках этого краткого руководства.
+    Запишите эти три значения, они понадобятся позже при работе с этим кратким руководством.
 
 ## <a name="send-simulated-telemetry"></a>Отправка имитированной телеметрии
 
@@ -125,7 +127,7 @@ az extension add --name azure-cli-iot-ext
 
     На следующем снимке экрана показан пример выходных данных, когда приложение имитированного устройства отправляет данные телеметрии в Центр Интернета вещей:
 
-    ![Запуск виртуального устройства](media/quickstart-send-telemetry-java/SimulatedDevice.png)
+    ![Данные телеметрии, переданные устройством в центр Интернета вещей](media/quickstart-send-telemetry-java/iot-hub-simulated-device.png)
 
 ## <a name="read-the-telemetry-from-your-hub"></a>Чтение данных телеметрии из концентратора
 
@@ -137,8 +139,8 @@ az extension add --name azure-cli-iot-ext
 
     | Переменная | Значение |
     | -------- | ----------- |
-    | `eventHubsCompatibleEndpoint` | Замените значение переменной записанной ранее конечной точкой, совместимой с центрами событий. |
-    | `eventHubsCompatiblePath`     | Замените значение переменной записанным ранее путем, совместимым с центрами событий. |
+    | `eventHubsCompatibleEndpoint` | Замените значение переменной записанной ранее конечной точкой, совместимой с Центрами событий. |
+    | `eventHubsCompatiblePath`     | Замените значение переменной записанным ранее путем, совместимым с Центрами событий. |
     | `iotHubSasKey`                | Замените значение переменной записанным ранее первичным ключом службы. |
 
 3. Установите необходимые библиотеки и создайте внутреннее приложение, выполнив в окне терминала на локальном компьютере следующие команды:
@@ -155,7 +157,7 @@ az extension add --name azure-cli-iot-ext
 
     На следующем снимке экрана показан пример выходных данных, когда внутреннее приложение получает данные телеметрии, отправленные в концентратор имитированным устройством:
 
-    ![Запуск внутреннего приложения](media/quickstart-send-telemetry-java/ReadDeviceToCloud.png)
+    ![Выходные данные после получения серверным приложением данных телеметрии, отправляемых в центр Интернета вещей](media/quickstart-send-telemetry-java/iot-hub-read-device-to-cloud.png)
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

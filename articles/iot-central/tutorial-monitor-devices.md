@@ -9,12 +9,12 @@ ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: philmea
-ms.openlocfilehash: d716eb761ab406b65f10898b29775327a801ac45
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: f68bc211be3cffb61b3381390ae2eeacaffa4213
+ms.sourcegitcommit: 4d177e6d273bba8af03a00e8bb9fe51a447196d0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69875489"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71960424"
 ---
 # <a name="tutorial-use-azure-iot-central-to-monitor-your-devices"></a>Руководство по Использование Azure IoT Central для мониторинга устройств
 
@@ -41,7 +41,7 @@ ms.locfileid: "69875489"
 
 Azure IoT Central отправляет уведомления об устройствах как сообщения электронной почты. Конструктор добавил правило для отправки уведомления в случае, если температура в подключенном кондиционере превышает порог. Проверьте сообщения, отправленные в учетную запись, выбранную конструктором для получения уведомлений.
 
-Откройте сообщение, полученное в конце работы с руководством [Настройка правил и действий для своего устройства в Azure IoT Central](tutorial-configure-rules.md). В сообщении выберите **Click here to open your device** (Щелкните здесь, чтобы открыть устройство):
+Откройте сообщение, полученное в конце работы с руководством [Настройка правил и действий для своего устройства в Azure IoT Central](tutorial-configure-rules.md). В сообщении электронной почты выберите ссылку на устройство рядом с **именем устройства** в разделе **сведений**.
 
 ![Письма с уведомлениями](media/tutorial-monitor-devices/email.png)
 

@@ -7,17 +7,17 @@ ms.service: container-service
 ms.topic: quickstart
 ms.date: 09/13/2019
 ms.author: mlearned
-ms.custom: H1Hack27Feb2017, mvc, devcenter, seo-javascript-september2019
-ms.openlocfilehash: 0ad1bb4acf27ff542b94b2e6f4aef82705f4b46a
-ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
+ms.custom: H1Hack27Feb2017, mvc, devcenter, seo-javascript-september2019, seo-javascript-october2019
+ms.openlocfilehash: 3a07186856fd05c65f583a94f324df05e348d24f
+ms.sourcegitcommit: 4d177e6d273bba8af03a00e8bb9fe51a447196d0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71097992"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71960012"
 ---
 # <a name="quickstart-deploy-an-azure-kubernetes-service-aks-cluster-using-the-azure-cli"></a>Краткое руководство. Развертывание кластера Службы Azure Kubernetes (AKS) с помощью Azure CLI
 
-Служба Azure Kubernetes (AKS) — это управляемая служба Kubernetes, которая позволяет быстро развертывать кластеры и управлять ими. В этом кратком руководстве вы развернете кластер AKS с помощью Azure CLI. Затем в кластере будет запущено многоконтейнерное приложение, которое включает в себя веб-интерфейс и экземпляр Redis. Затем вы узнаете, как отслеживать работоспособность кластера и модулей pod, на которых выполняется ваше приложение.
+Выполнив инструкции из этого краткого руководства, вы развернете кластер Службы Azure Kubernetes (AKS) с помощью Azure CLI. Служба Azure Kubernetes (AKS) — это управляемая служба Kubernetes, которая позволяет быстро развертывать кластеры и управлять ими. Затем в кластере будет запущено многоконтейнерное приложение, которое включает в себя веб-интерфейс и экземпляр Redis. Затем вы узнаете, как отслеживать работоспособность кластера и модулей pod, на которых выполняется ваше приложение.
 
 Если вам нужно использовать контейнеры Windows Server (сейчас реализована предварительная версия в AKS), см. статью о [создании кластера AKS, который поддерживает контейнеры Windows Server][windows-container-cli].
 

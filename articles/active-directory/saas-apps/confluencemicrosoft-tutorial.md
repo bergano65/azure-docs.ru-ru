@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 09/05/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1384a8c9cfc4da9e8757c26bdb3e92defdb73708
-ms.sourcegitcommit: 86d49daccdab383331fc4072b2b761876b73510e
+ms.openlocfilehash: d54580d395b17d80742ed95aefa479f4bc104484
+ms.sourcegitcommit: 4d177e6d273bba8af03a00e8bb9fe51a447196d0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70743662"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71960083"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-confluence-saml-sso-by-microsoft"></a>Руководство по Интеграции единого входа Azure Active Directory с Confluence SAML SSO by Microsoft
 
@@ -75,9 +75,13 @@ ms.locfileid: "70743662"
 - Confluence: 6.8.1
 - Confluence: 6.9.0
 - Confluence: 6.10.0
+- Confluence: 6.10.3
 - Confluence: 6.11.0
 - Confluence: 6.12.0
+- Confluence: 6.13.5
 - Confluence: 6.15.3
+- Confluence: 6.15.4
+- Confluence: 6.15.8
 
 > [!NOTE]
 > Обратите внимание, что наш подключаемый модуль Confluence также работает в Ubuntu версии 16.04.
@@ -196,11 +200,11 @@ ms.locfileid: "70743662"
 
 1. После установки подключаемый модуль появится в разделе **Управление надстройками**, подраздел **Установленные пользователем**. Щелкните **Configure** (Настройка), чтобы настроить новый подключаемый модуль.
 
-    ![Настройка единого входа](./media/confluencemicrosoft-tutorial/addon13.png)
+    ![Настройка единого входа](./media/confluencemicrosoft-tutorial/addon15.png)
 
 1. Выполните следующие действия на странице настройки:
 
-    ![Настройка единого входа](./media/confluencemicrosoft-tutorial/addon53.png)
+    ![Настройка единого входа](./media/confluencemicrosoft-tutorial/addon54.png)
 
     > [!TIP]
     > Убедитесь, что с приложением сопоставлен только один сертификат, чтобы при разрешении метаданных не возникла ошибка. Если имеется несколько сертификатов, то при разрешении метаданных администратор увидит сообщение об ошибке.
@@ -210,6 +214,8 @@ ms.locfileid: "70743662"
     1. Скопируйте значения **идентификатора, URL-адреса ответа и URL-адреса входа** и вставьте их в соответствующие поля **идентификатора, URL-адреса ответа и URL-адреса входа** в разделе **Базовая конфигурация SAML** на портале Azure.
 
     1. В поле **Имя кнопки входа** введите имя кнопки, которую должны видеть на экране входа пользователи вашей организации.
+    
+    1. В поле **Login Button Description** (Описание кнопки входа) введите описание кнопки, которое будут видеть пользователи на экране входа.
 
     1. Для параметра **SAML User ID Locations** (Расположения идентификатора пользователя SAML) укажите значение **User ID is in the NameIdentifier element of the Subject statement** (Идентификатор пользователя указан в элементе NameIdentifier утверждения Subject) или **User ID is in an Attribute element** (Идентификатор пользователя указан в элементе Attribute).  Этим идентификатором должен быть идентификатор пользователя Confluence. Если идентификатор пользователя не совпадет, система не позволит пользователям выполнить вход. 
 

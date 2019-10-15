@@ -1,5 +1,5 @@
 ---
-title: Скрипт Azure CLI. Изменение конфигураций серверов
+title: Скрипт Azure CLI. Изменение конфигураций серверов (PostgreSQL)
 description: Этот пример сценария интерфейса командной строки выводит список всех доступных параметров конфигурации сервера и обновляет значение одного из этих параметров.
 author: rachel-msft
 ms.author: raagyema
@@ -8,12 +8,12 @@ ms.devlang: azurecli
 ms.topic: sample
 ms.custom: mvc
 ms.date: 02/28/2018
-ms.openlocfilehash: 6b5a855c8db5cb87f313e14c42396ae70b407e61
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: d2b54d1173b9591de2482f4b3368d3dde8b8c766
+ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66122088"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71947798"
 ---
 # <a name="list-and-update-configurations-of-an-azure-database-for-postgresql-server-using-azure-cli"></a>Вывод и обновление конфигураций сервера базы данных Azure для PostgreSQL с помощью Azure CLI
 В этом примере сценария интерфейса командной строки выводятся все доступные параметры конфигурации и их допустимые значения для сервера базы данных Azure для PostgreSQL. Кроме того, он задает значение *log_retention_days*, отличное от значения по умолчанию.

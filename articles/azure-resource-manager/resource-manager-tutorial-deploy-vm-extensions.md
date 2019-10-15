@@ -11,12 +11,12 @@ ms.devlang: na
 ms.date: 11/13/2018
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: a6d0c3e9daba6f4f37778fabde161751944e174a
-ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
+ms.openlocfilehash: 338054aadbf04c6c6e2b496677476c2c5634b6ba
+ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2019
-ms.locfileid: "68774876"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72169300"
 ---
 # <a name="tutorial-deploy-virtual-machine-extensions-with-azure-resource-manager-templates"></a>Руководство по Развертывание расширений виртуальной машины с помощью шаблонов Azure Resource Manager
 
@@ -48,7 +48,7 @@ ms.locfileid: "68774876"
 
 ## <a name="prepare-a-powershell-script"></a>Подготовка скрипта PowerShell
 
-Скрипт PowerShell со следующим содержимым совместно используется [из учетной записи хранения Azure с открытым доступом](https://armtutorials.blob.core.windows.net/usescriptextensions/installWebServer.ps1):
+Используется доступный на [GitHub](https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/tutorial-vm-extension/installWebServer.ps1) скрипт PowerShell со следующим содержимым:
 
 ```azurepowershell
 Install-WindowsFeature -name Web-Server -IncludeManagementTools
@@ -63,7 +63,7 @@ Install-WindowsFeature -name Web-Server -IncludeManagementTools
 1. В Visual Studio Code выберите **Файл** > **Открыть файл**.
 1. В поле **Имя файла** вставьте следующий URL-адрес: https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-simple-windows/azuredeploy.json.
 
-1. Чтобы открыть файл, выберите **Открыть**.  
+1. Чтобы открыть файл, выберите **Открыть**.
     Шаблон определяет пять ресурсов:
 
    * **Microsoft.Storage/storageAccounts**. Ознакомьтесь со статьей о [справочнике по шаблонам](https://docs.microsoft.com/azure/templates/Microsoft.Storage/storageAccounts).
@@ -96,7 +96,7 @@ Install-WindowsFeature -name Web-Server -IncludeManagementTools
         "autoUpgradeMinorVersion":true,
         "settings": {
             "fileUris": [
-                "https://armtutorials.blob.core.windows.net/usescriptextensions/installWebServer.ps1"
+                "https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/tutorial-vm-extension/installWebServer.ps1"
             ],
             "commandToExecute": "powershell.exe -ExecutionPolicy Unrestricted -File installWebServer.ps1"
         }
@@ -109,7 +109,7 @@ Install-WindowsFeature -name Web-Server -IncludeManagementTools
 * **name**. Так как ресурс расширения является дочерним ресурсом объекта виртуальной машины, у имени должен быть префикс имени виртуальной машины. См. о [настройке имени и типа дочернего ресурса](child-resource-name-type.md).
 * **dependsOn**. Создайте ресурс расширения после создания виртуальной машины.
 * **fileUris**. Это расположение, в котором хранятся файлы скриптов. Если вы решили не использовать указанное расположение, необходимо обновить значения.
-* **commandToExecute**. Эта команда запускает скрипт.  
+* **commandToExecute**. Эта команда запускает скрипт.
 
 ## <a name="deploy-the-template"></a>Развертывание шаблона
 
@@ -118,8 +118,7 @@ Install-WindowsFeature -name Web-Server -IncludeManagementTools
 ## <a name="verify-the-deployment"></a>Проверка развертывания
 
 1. На портале Azure выберите виртуальную машину.
-1. В обзоре виртуальной машины скопируйте IP-адрес, выбрав **Щелкните, чтобы скопировать**, а затем вставьте его на вкладке браузера.  
-   Откроется страница приветствия IIS по умолчанию, которая будет выглядеть следующим образом:
+1. В обзоре виртуальной машины скопируйте IP-адрес, выбрав **Щелкните, чтобы скопировать**, а затем вставьте его на вкладке браузера. Откроется страница приветствия IIS по умолчанию, которая будет выглядеть следующим образом:
 
 ![Страница приветствия служб IIS](./media/resource-manager-tutorial-deploy-vm-extensions/resource-manager-template-deploy-extensions-customer-script-web-server.png)
 
@@ -129,7 +128,7 @@ Install-WindowsFeature -name Web-Server -IncludeManagementTools
 
 1. На портале Azure на панели слева выберите **Группа ресурсов**.
 2. В поле **Фильтровать по имени** введите имя группы ресурсов.
-3. Выберите имя группы ресурсов.  
+3. Выберите имя группы ресурсов.
     В группе ресурсов будет отображаться шесть ресурсов.
 4. В главном меню выберите **Удалить группу ресурсов**.
 

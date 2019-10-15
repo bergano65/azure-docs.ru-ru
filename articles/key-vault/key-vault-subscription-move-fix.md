@@ -9,41 +9,54 @@ ms.service: key-vault
 ms.topic: tutorial
 ms.date: 08/12/2019
 ms.author: ambapat
-ms.openlocfilehash: 2159b5b515e22458edf3ba0eb5b6f23f3f37ce95
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: 3819742e82fe6877b6a1aa58e52eec01b6b05515
+ms.sourcegitcommit: be344deef6b37661e2c496f75a6cf14f805d7381
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68990107"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72001243"
 ---
 # <a name="change-a-key-vault-tenant-id-after-a-subscription-move"></a>Изменение идентификатора клиента хранилища ключей после перемещения подписки
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="q-my-subscription-was-moved-from-tenant-a-to-tenant-b-how-do-i-change-the-tenant-id-for-my-existing-key-vault-and-set-correct-acls-for-principals-in-tenant-b"></a>Вопрос. Моя подписка перемещена из клиента А в клиент Б. Как изменить идентификатор клиента существующего хранилища ключей и настроить правильные списки ACL для субъектов в клиенте Б?
 
-При создании хранилища ключей в подписке оно автоматически привязывается к идентификатору клиента Azure Active Directory по умолчанию для этой подписки. Все записи политики доступа также привязываются к этому идентификатору клиента. При перемещении подписки Azure из клиента A в клиент Б существующие хранилища ключей недоступны для субъектов (пользователей и приложений) в клиенте Б. Вот как устранить эту проблему.
+При создании хранилища ключей в подписке оно автоматически привязывается к идентификатору клиента Azure Active Directory по умолчанию для этой подписки. Все записи политики доступа также привязываются к этому идентификатору клиента. 
 
-* Измените идентификатор клиента, связанный со всеми существующими хранилищами ключей в этой подписке, для клиента Б.
+При перемещении подписки Azure из клиента A в клиент Б существующие хранилища ключей недоступны для субъектов (пользователей и приложений) в клиенте Б. Вот как устранить эту проблему.
+
+* Измените идентификатор клиента, связанный со всеми существующими хранилищами ключей в этой подписке, для клиента Б.
 * Удалите все существующие записи политики доступа.
-* Добавьте новые записи политики доступа, связанные с клиентом Б.
+* Добавьте новые записи политики доступа, связанные с клиентом Б.
 
-Например, при наличии хранилища ключей myvault в подписке, которая была перенесена из клиента A в клиент Б, необходимо изменить идентификатор клиента для этого хранилища ключей и удалить старые политики доступа.
+Например, при наличии хранилища ключей myvault в подписке, которая была перенесена из клиента A в клиент Б, используя Azure PowerShell можно изменить идентификатор клиента и удалить старые политики доступа.
 
-<pre>
-Select-AzSubscription -SubscriptionId YourSubscriptionID                   # Select your Azure Subscription
-$vaultResourceId = (Get-AzKeyVault -VaultName myvault).ResourceId          # Get your Keyvault's Resource ID 
-$vault = Get-AzResource –ResourceId $vaultResourceId -ExpandProperties     # Get the properties for your Keyvault
-$vault.Properties.TenantId = (Get-AzContext).Tenant.TenantId               # Change the Tenant that your Keyvault resides in
-$vault.Properties.AccessPolicies = @()                                     # Accesspolicies can be updated with real
-                                                                           # applications/users/rights so that it does not need to be                                                                              # done after this whole activity. Here we are not setting 
+```azurepowershell
+Select-AzSubscription -SubscriptionId <your-subscriptionId>                # Select your Azure Subscription
+$vaultResourceId = (Get-AzKeyVault -VaultName myvault).ResourceId          # Get your key vault's Resource ID 
+$vault = Get-AzResource –ResourceId $vaultResourceId -ExpandProperties     # Get the properties for your key vault
+$vault.Properties.TenantId = (Get-AzContext).Tenant.TenantId               # Change the Tenant that your key vault resides in
+$vault.Properties.AccessPolicies = @()                                     # Access policies can be updated with real
+                                                                           # applications/users/rights so that it does not need to be                             # done after this whole activity. Here we are not setting 
                                                                            # any access policies. 
-Set-AzResource -ResourceId $vaultResourceId -Properties $vault.Properties  # Modifies the kevault's properties.
-</pre>
+Set-AzResource -ResourceId $vaultResourceId -Properties $vault.Properties  # Modifies the key vault's properties.
+````
 
-Так как это хранилище располагалось в клиенте A перед перемещением, исходное значение **$vault.Properties.TenantId** является клиентом А, а значение **(Get-AzContext).Tenant.TenantId** — это клиент Б.
+Или же можно использовать интерфейс командной строки Azure.
 
-Теперь, когда хранилище связано с правильным идентификатором клиента и старые записи политики доступа удалены, можно настроить новые записи политики доступа с помощью командлета [Set-AzKeyVaultAccessPolicy](https://docs.microsoft.com/powershell/module/az.keyvault/Set-azKeyVaultAccessPolicy).
+```azurecli
+az account set <your-subscriptionId>                                       # Select your Azure Subscription
+tenantId=$(az account show --query tenantId)                               # Get your tenantId
+az keyvault update -n myvault --remove Properties.accessPolicies           # Remove the access policies
+az keyvault update -n myvault --set Properties.tenantId=$tenantId          # Update the key vault tenantId
+```
+
+Теперь, когда хранилище связано с правильным идентификатором клиента, и старые записи политики доступа удалены, задайте новые записи политики доступа с помощью командлета [Set-AzKeyVaultAccessPolicy](https://powershell/module/az.keyvault/Set-azKeyVaultAccessPolicy) или команды Azure CLI [az keyvault set-policy](/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-set-policy).
+
+Если вы используете управляемое удостоверение для ресурсов Azure, необходимо также обновить его до нового клиента Azure AD. Дополнительные сведения об управляемых удостоверениях см. в разделе [Выполнение проверки подлинности Key Vault с помощью управляемого удостоверения](managed-identity.md).
+
+
+Если вы используете MSI, необходимо также обновить идентификатор MSI, так как старый идентификатор больше не будет находиться в правильном клиенте AAD.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

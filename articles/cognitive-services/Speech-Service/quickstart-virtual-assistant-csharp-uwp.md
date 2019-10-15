@@ -11,15 +11,15 @@ ms.topic: quickstart
 ms.date: 08/19/2019
 ms.author: travisw
 ms.openlocfilehash: c676e98eb812a31d6fb8d7cc0f58929f803c868e
-ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
+ms.sourcegitcommit: 9f330c3393a283faedaf9aa75b9fcfc06118b124
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2019
+ms.lasthandoff: 10/07/2019
 ms.locfileid: "70382011"
 ---
 # <a name="quickstart-create-a-voice-first-virtual-assistant-with-the-speech-sdk-uwp"></a>Краткое руководство. Создание виртуального помощника по обработке голоса с помощью пакета SDK для распознавания речи, UWP.
 
-Краткое руководство также доступно для <bpt id="p1">[</bpt>распознавания речи<ept id="p1">](quickstart-csharp-uwp.md)</ept>, <bpt id="p2">[</bpt>синтеза речи<ept id="p2">](quickstart-text-to-speech-csharp-uwp.md)</ept> и <bpt id="p3">[</bpt>перевода речи<ept id="p3">](quickstart-translate-speech-uwp.md)</ept>.
+Также доступны краткие руководства по [распознаванию](quickstart-csharp-uwp.md), [синтезу](quickstart-text-to-speech-csharp-uwp.md) и [переводу](quickstart-translate-speech-uwp.md) речи.
 
 Из этой статьи вы узнаете, как разработать приложение C# для универсальной платформы Windows с помощью [пакета SDK службы "Речь"](speech-sdk.md). Программа подключится к ранее созданному и настроенному боту, чтобы включить из клиентского приложения интерфейс виртуального помощника по обработке голоса. Приложение создается с использованием [пакета SDK NuGet для службы "Речь"](https://aka.ms/csspeech/nuget) и Microsoft Visual Studio 2019 (любого выпуска).
 
@@ -401,7 +401,7 @@ ms.locfileid: "70382011"
     }
     ```
 
-1. В строке меню выберите <bpt id="p1">**</bpt>Файл<ept id="p1">**</ept><ph id="ph1"> &gt; </ph><bpt id="p2">**</bpt>Сохранить все<ept id="p2">**</ept>, чтобы сохранить изменения.
+1. В строке меню выберите **Файл** > **Сохранить все**, чтобы сохранить изменения.
 
 ## <a name="build-and-run-the-application"></a>Создание и запуск приложения
 

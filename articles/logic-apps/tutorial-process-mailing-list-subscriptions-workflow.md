@@ -11,12 +11,12 @@ ms.reviewer: klam, LADocs
 ms.topic: tutorial
 ms.custom: mvc
 ms.date: 09/20/2019
-ms.openlocfilehash: 734a6be81a8052b2894f4c27b165bb8dc4f14caf
-ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
+ms.openlocfilehash: fb92e882607575e99ae800bd9c6d7c36b5d89d8e
+ms.sourcegitcommit: f9e81b39693206b824e40d7657d0466246aadd6e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71171731"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72034525"
 ---
 # <a name="tutorial-create-automated-approval-based-workflows-by-using-azure-logic-apps"></a>Руководство по созданию автоматических рабочих процессов на основе утверждений с помощью Azure Logic Apps
 
@@ -35,7 +35,7 @@ ms.locfileid: "71171731"
 
 По завершении приложение логики будет выглядеть как этот высокоуровневый рабочий процесс:
 
-![Высокоуровневое готовое приложение логики](./media/tutorial-process-mailing-list-subscriptions-workflow/tutorial-overview.png)
+![Общие сведения о высокоуровневом готовом приложении логики](./media/tutorial-process-mailing-list-subscriptions-workflow/tutorial-high-level-overview.png)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -53,7 +53,7 @@ ms.locfileid: "71171731"
 
 1. В главном меню на портале Azure последовательно выберите **Создать ресурс** > **Интеграция** > **Приложение логики**.
 
-   ![Создание приложения логики](./media/tutorial-process-mailing-list-subscriptions-workflow/create-logic-app.png)
+   ![Создание ресурса приложения логики](./media/tutorial-process-mailing-list-subscriptions-workflow/create-new-logic-app-resource.png)
 
 1. В разделе **Создание приложения логики** предоставьте сведения о приложении логики, как показано и описано. Когда все будет готово, выберите **Создать**.
 
@@ -70,7 +70,7 @@ ms.locfileid: "71171731"
 
 1. После развертывания приложения в Azure на панели инструментов Azure выберите **Уведомления** > **Перейти к ресурсу** для развернутого приложения логики.
 
-   ![Переход к ресурсу](./media/tutorial-process-mailing-list-subscriptions-workflow/go-to-logic-app.png)
+   ![Переход к новому ресурсу приложения логики](./media/tutorial-process-mailing-list-subscriptions-workflow/go-to-logic-app-resource.png)
 
    Вы также можете найти и выбрать приложение логики, введя его имя в поле поиска.
 
@@ -108,13 +108,13 @@ ms.locfileid: "71171731"
 
    1. Теперь добавьте в триггер еще одно свойство, чтобы можно было выполнить фильтрацию по строке темы в сообщении электронной почты. Откройте список **Добавить новый параметр** и выберите свойство **Фильтр темы**.
 
-      ![Добавление нового параметра](./media/tutorial-process-mailing-list-subscriptions-workflow/add-trigger-add-properties.png)
+      ![Добавление к триггеру свойства "Фильтр темы"](./media/tutorial-process-mailing-list-subscriptions-workflow/add-trigger-add-properties.png)
 
       Дополнительные сведения о свойствах этого триггера см. в [справочнике по соединителю Office 365 Outlook](https://docs.microsoft.com/connectors/office365/) или в [справочнике по соединителю Outlook.com](https://docs.microsoft.com/connectors/outlook/).
 
    1. Когда это свойство появится в триггере, введите такой текст: `subscribe-test-members-ML`.
 
-      ![Установка фильтра темы и добавление параметра](./media/tutorial-process-mailing-list-subscriptions-workflow/add-trigger-subject-filter-property.png)
+      ![Ввод текста для свойства "Фильтр темы"](./media/tutorial-process-mailing-list-subscriptions-workflow/add-trigger-subject-filter-property.png)
 
 1. Чтобы скрыть сведения о триггере, щелкните его заголовок.
 
@@ -161,13 +161,13 @@ ms.locfileid: "71171731"
 
 1. В разделе **Выберите действие** выберите **Встроенный**. В поле поиска введите `condition` в качестве фильтра. В списке действий выберите действие **Условие**.
 
-   ![Выбор "Condition" (Условие)](./media/tutorial-process-mailing-list-subscriptions-workflow/select-condition.png)
+   ![Поиск и выбор действия "Условие"](./media/tutorial-process-mailing-list-subscriptions-workflow/select-condition-action.png)
 
 1. Переименуйте условие, чтобы оно содержало более понятное описание.
 
    1. В строке заголовка условия нажмите кнопку с **многоточием** ( **…** ) и выберите **Переименовать**.
 
-      ![Переименование условия](./media/tutorial-process-mailing-list-subscriptions-workflow/rename-condition.png)
+      ![Переименование описания условия](./media/tutorial-process-mailing-list-subscriptions-workflow/rename-condition-description.png)
 
    1. Переименуйте условие, используя описание: `If request approved`.
 
@@ -177,7 +177,7 @@ ms.locfileid: "71171731"
 
    1. В отобразившемся списке динамического содержимого в разделе **Отправить письмо с запросом на утверждение** выберите свойство **SelectedOption** (Выбранный вариант).
 
-      ![Область "Отправка сообщения электронной почты с утверждением", выбор SelectedOption](./media/tutorial-process-mailing-list-subscriptions-workflow/build-condition-check-approval-response.png)
+      ![Выбор SelectedOption в списке динамического содержимого](./media/tutorial-process-mailing-list-subscriptions-workflow/build-condition-check-approval-response.png)
 
    1. В среднем поле сравнения выберите оператор **равно**.
 
@@ -185,7 +185,7 @@ ms.locfileid: "71171731"
 
       После ввода значения условие должно выглядеть приблизительно так, как показано в примере ниже:
 
-      ![Условие завершения](./media/tutorial-process-mailing-list-subscriptions-workflow/build-condition-check-approval-response-2.png)
+      ![Завершенное действие условия для примера утвержденного запроса](./media/tutorial-process-mailing-list-subscriptions-workflow/build-condition-check-approval-response-2.png)
 
 1. Сохраните приложение логики.
 
@@ -242,7 +242,7 @@ ms.locfileid: "71171731"
 
       После ввода значения условие должно выглядеть приблизительно так, как показано в примере ниже:
 
-      ![Условие завершения](./media/tutorial-process-mailing-list-subscriptions-workflow/build-condition-check-added-member-2.png)
+      ![Завершенное действие условия для примера подписавшегося участника](./media/tutorial-process-mailing-list-subscriptions-workflow/build-condition-check-added-member-2.png)
 
 Далее настройте электронную почту на отправку сообщений об успешном или неудачном добавлении утвержденного участника в список рассылки.
 
@@ -250,7 +250,7 @@ ms.locfileid: "71171731"
 
 1. В узле условия **If add member succeeded** (При успешном добавлении участника) для ветви **Если истинно** выберите **Добавить действие**.
 
-   ![Выбор "Добавить действие" в ветви условия "Если истинно"](./media/tutorial-process-mailing-list-subscriptions-workflow/add-action-email-success.png)
+   ![Внутри ветви "Если истинно" выберите "Добавить действие".](./media/tutorial-process-mailing-list-subscriptions-workflow/add-action-email-success.png)
 
 1. В разделе **Выберите действие** введите фильтр `outlook send email` в поле поиска и выберите действие **Отправить сообщение электронной почты**.
 
@@ -275,7 +275,7 @@ ms.locfileid: "71171731"
 
 1. В узле условия **If add member succeeded** (При успешном добавлении участника) для ветви **Если ложно** выберите **Добавить действие**.
 
-   ![Выбор "Добавить действие" в ветви условия "Если ложно"](./media/tutorial-process-mailing-list-subscriptions-workflow/add-action-email-failed.png)
+   ![Внутри ветви "Если ложно" выберите "Добавить действие".](./media/tutorial-process-mailing-list-subscriptions-workflow/add-action-email-failed.png)
 
 1. В разделе **Выберите действие** введите фильтр `outlook send email` в поле поиска и выберите действие **Отправить сообщение электронной почты**.
 
@@ -298,7 +298,7 @@ ms.locfileid: "71171731"
 
 Затем протестируйте приложение логики, которое теперь выглядит, как показано в примере:
 
-![Готовое приложение логики](./media/tutorial-process-mailing-list-subscriptions-workflow/tutorial-complete.png)
+![Пример завершенного рабочего процесса приложения логики](./media/tutorial-process-mailing-list-subscriptions-workflow/tutorial-high-level-completed.png)
 
 ## <a name="run-your-logic-app"></a>Запуск приложения логики
 
@@ -312,11 +312,11 @@ ms.locfileid: "71171731"
 
 1. Если адреса электронной почты подписчика нет в списке рассылки, приложение логики добавит его и отправит сообщение почты, которое будет выглядеть, как показано в примере ниже:
 
-   ![Сообщение об успешном выполнении операции](./media/tutorial-process-mailing-list-subscriptions-workflow/add-member-success.png)
+   ![Пример электронной почты — успешная подписка](./media/tutorial-process-mailing-list-subscriptions-workflow/add-member-mailing-list-success.png)
 
    Если приложение логики не добавит подписчика, вы получите сообщение, которое будет выглядеть, как показано в примере ниже:
 
-   ![Сообщение о неудачном выполнении операции](./media/tutorial-process-mailing-list-subscriptions-workflow/add-member-failed.png)
+   ![Пример электронной почты — неудачная попытка подписки](./media/tutorial-process-mailing-list-subscriptions-workflow/add-member-mailing-list-failed.png)
 
    Если электронные сообщения не приходят, проверьте папку нежелательной почты. Фильтр нежелательной почты может перенаправлять такие виды электронных сообщений. В противном случае, если вы не уверены, что приложение логики работает правильно, см. статью [Диагностика сбоев приложений логики](../logic-apps/logic-apps-diagnosing-failures.md).
 

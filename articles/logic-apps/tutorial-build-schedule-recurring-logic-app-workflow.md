@@ -11,12 +11,12 @@ ms.reviewer: klam, LADocs
 ms.topic: tutorial
 ms.custom: mvc
 ms.date: 09/12/2019
-ms.openlocfilehash: 809d76791522fa135932baaf6e237570ab0af35a
-ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
+ms.openlocfilehash: eae2319e8d1c162969a04f8dafa18eec671ee1d0
+ms.sourcegitcommit: f9e81b39693206b824e40d7657d0466246aadd6e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71172165"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72034652"
 ---
 # <a name="tutorial-create-automated-schedule-based-recurring-workflows-by-using-azure-logic-apps"></a>Руководство по cозданию автоматических, выполняемых по расписанию, повторяющихся рабочих процессов с помощью Azure Logic Apps
 
@@ -34,7 +34,7 @@ ms.locfileid: "71172165"
 
 По завершении приложение логики будет выглядеть как этот высокоуровневый рабочий процесс:
 
-![Высокоуровневое приложение логики](./media/tutorial-build-scheduled-recurring-logic-app-workflow/check-travel-time-overview.png)
+![Обзор: рабочий процесс приложения логики](./media/tutorial-build-scheduled-recurring-logic-app-workflow/check-travel-time-overview.png)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -52,7 +52,7 @@ ms.locfileid: "71172165"
 
 1. В главном меню на портале Azure последовательно выберите **Создать ресурс** > **Интеграция** > **Приложение логики**.
 
-   ![Создание приложения логики](./media/tutorial-build-scheduled-recurring-logic-app-workflow/create-logic-app.png)
+   ![Создание ресурса приложения логики](./media/tutorial-build-scheduled-recurring-logic-app-workflow/create-new-logic-app-resource.png)
 
 1. В разделе **Создание приложения логики** предоставьте сведения о приложении логики, как показано и описано. Когда все будет готово, выберите **Создать**.
 
@@ -69,7 +69,7 @@ ms.locfileid: "71172165"
 
 1. После развертывания приложения в Azure на панели инструментов Azure выберите **Уведомления** > **Перейти к ресурсу** для развернутого приложения логики.
 
-   ![Переход к ресурсу](./media/tutorial-build-scheduled-recurring-logic-app-workflow/go-to-logic-app.png)
+   ![Переход к новому ресурсу приложения логики](./media/tutorial-build-scheduled-recurring-logic-app-workflow/go-to-new-logic-app-resource.png)
 
    Вы также можете найти и выбрать приложение логики, введя его имя в поле поиска.
 
@@ -87,11 +87,11 @@ ms.locfileid: "71172165"
 
 1. На фигуре **Повторение** нажмите кнопку с **многоточием** ( **...** ), а затем нажмите кнопку **Переименовать**. Переименуйте триггер, используя это описание: `Check travel time every weekday morning`.
 
-   ![Переименование триггера](./media/tutorial-build-scheduled-recurring-logic-app-workflow/rename-recurrence-schedule-trigger.png)
+   ![Переименование триггера повторения](./media/tutorial-build-scheduled-recurring-logic-app-workflow/rename-recurrence-schedule-trigger.png)
 
 1. В триггере измените эти свойства.
 
-   ![Изменение интервала и частоты](./media/tutorial-build-scheduled-recurring-logic-app-workflow/change-interval-frequency.png)
+   ![Изменение интервала и частоты триггера повторения](./media/tutorial-build-scheduled-recurring-logic-app-workflow/change-interval-frequency.png)
 
    | Свойство | Обязательно | Value | ОПИСАНИЕ |
    |----------|----------|-------|-------------|
@@ -105,7 +105,7 @@ ms.locfileid: "71172165"
    * **В эти часы**
    * **В эти минуты**
 
-   ![Добавление свойств триггера](./media/tutorial-build-scheduled-recurring-logic-app-workflow/add-trigger-properties.png)
+   ![Добавление свойств для триггера повторения](./media/tutorial-build-scheduled-recurring-logic-app-workflow/add-trigger-properties.png)
 
 1. Теперь задайте значения для дополнительных свойств, как показано здесь.
 
@@ -140,7 +140,7 @@ ms.locfileid: "71172165"
 
 1. Если у вас нет подключения к Картам Bing, появится запрос на его установку. Укажите сведения о подключении и выберите **Создать**.
 
-   ![Создание подключения к картам Bing](./media/tutorial-build-scheduled-recurring-logic-app-workflow/create-maps-connection.png)
+   ![Создание подключения к API Карт Bing](./media/tutorial-build-scheduled-recurring-logic-app-workflow/create-maps-connection.png)
 
    | Свойство | Обязательно | Value | ОПИСАНИЕ |
    |----------|----------|-------|-------------|
@@ -221,7 +221,7 @@ ms.locfileid: "71172165"
 
    1. Как только значение свойства в выражении разрешится, нажмите кнопку **ОК**.
 
-      ![Нажатие кнопки "ОК"](./media/tutorial-build-scheduled-recurring-logic-app-workflow/initialize-variable-action-settings-5.png)
+      ![Чтобы завершить создание выражения, щелкните "ОК".](./media/tutorial-build-scheduled-recurring-logic-app-workflow/initialize-variable-action-settings-5.png)
 
       Свойство **Value** теперь отображается, как показано ниже:
 
@@ -247,7 +247,7 @@ ms.locfileid: "71172165"
 
    1. В появившемся списке динамического содержимого выберите свойство **travelTime** в разделе **Переменные**.
 
-      ![Левая часть сборки условия](./media/tutorial-build-scheduled-recurring-logic-app-workflow/build-condition-left-side.png)
+      ![Создание левой части сборки условия](./media/tutorial-build-scheduled-recurring-logic-app-workflow/build-condition-left-side.png)
 
    1. В среднем поле сравнения выберите оператор **больше**.
 
@@ -255,7 +255,7 @@ ms.locfileid: "71172165"
 
       После ввода значения условие должно выглядеть приблизительно так, как показано в примере ниже:
 
-      ![Условие завершения](./media/tutorial-build-scheduled-recurring-logic-app-workflow/build-condition-check-travel-time.png)
+      ![Завершенное условие для проверки времени в пути](./media/tutorial-build-scheduled-recurring-logic-app-workflow/build-condition-check-travel-time.png)
 
 1. Сохраните приложение логики.
 
@@ -269,7 +269,7 @@ ms.locfileid: "71172165"
 
 1. В разделе **Выберите действие** выберите **Стандартный**. В поле поиска введите "отправка сообщения". Список возвращает много результатов, поэтому сначала выберите нужный соединитель электронной почты, например:
 
-   ![Выбор соединителя электронной почты](./media/tutorial-build-scheduled-recurring-logic-app-workflow/add-action-send-email.png)
+   ![Выбор требуемого соединителя электронной почты](./media/tutorial-build-scheduled-recurring-logic-app-workflow/add-action-send-email.png)
 
    * Для рабочих или учебных учетных записей Azure выберите **Office 365 Outlook**.
    * Для личных учетных записей Майкрософт выберите **Outlook.com**.
@@ -320,17 +320,17 @@ ms.locfileid: "71172165"
 
    1. Как только свойство в выражении разрешится, нажмите кнопку **ОК**.
 
-      ![Свойство Body с разрешенным выражением](./media/tutorial-build-scheduled-recurring-logic-app-workflow/send-email-body-settings-5.png)
+      ![После разрешения свойства Body щелкните "ОК".](./media/tutorial-build-scheduled-recurring-logic-app-workflow/send-email-body-settings-5.png)
 
       Свойство **Body** теперь отображается, как показано ниже:
 
-      ![Свойство Body с разрешенным выражением](./media/tutorial-build-scheduled-recurring-logic-app-workflow/send-email-body-settings-6.png)
+      ![Разрешенное свойство Body в выражении](./media/tutorial-build-scheduled-recurring-logic-app-workflow/send-email-body-settings-6.png)
 
 1. Сохраните приложение логики.
 
 Затем протестируйте приложение логики, которое теперь выглядит, как показано в примере:
 
-![Готовое приложение логики](./media/tutorial-build-scheduled-recurring-logic-app-workflow/check-travel-time-finished.png)
+![Завершенный пример рабочего процесса приложения логики](./media/tutorial-build-scheduled-recurring-logic-app-workflow/check-travel-time-finished.png)
 
 ## <a name="run-your-logic-app"></a>Запуск приложения логики
 
@@ -340,7 +340,7 @@ ms.locfileid: "71172165"
 
 * Если текущее время в пути превышает ограничение, вы получаете электронное письмо с текущим временем в пути и количеством минут сверх ограничения. Ниже приведен пример сообщения, которое отправляет приложение логики:
 
-![Отправленное сообщение электронной почты с временем в пути](./media/tutorial-build-scheduled-recurring-logic-app-workflow/email-notification.png)
+![Пример отправленного сообщения электронной почты с указанным временем в пути](./media/tutorial-build-scheduled-recurring-logic-app-workflow/received-example-email-notification.png)
 
 Если электронные сообщения не приходят, проверьте папку нежелательной почты. Фильтр нежелательной почты может перенаправлять такие виды электронных сообщений. В противном случае, если вы не уверены, что приложение логики работает правильно, см. статью [Диагностика сбоев приложений логики](../logic-apps/logic-apps-diagnosing-failures.md).
 

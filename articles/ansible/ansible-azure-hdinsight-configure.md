@@ -1,5 +1,5 @@
 ---
-title: Учебник по настройке кластера в Azure HDInsight с помощью Ansible | Документация Майкрософт
+title: Руководство по настройке кластера в Azure HDInsight с помощью Ansible
 description: Узнайте, как создать кластер Azure HDInsight и изменить его размер с помощью Ansible.
 keywords: ansible, azure, devops, bash, сборник схем, apache hadoop, hdinsight
 ms.topic: tutorial
@@ -8,12 +8,12 @@ author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.date: 04/30/2019
-ms.openlocfilehash: ff135473443589650d90bfb7f3e5aa248f72e821
-ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
+ms.openlocfilehash: ad17e6ff4cbf5b583e3a4be410847c1349c9edce
+ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70861270"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72241949"
 ---
 # <a name="tutorial-configure-a-cluster-in-azure-hdinsight-using-ansible"></a>Руководство по настройке кластера в Azure HDInsight с помощью Ansible
 

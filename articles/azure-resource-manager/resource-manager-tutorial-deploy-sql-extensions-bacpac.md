@@ -13,12 +13,12 @@ ms.devlang: na
 ms.date: 04/08/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 08befabfbd14651475fa56dec95bdf4c2fe54c9c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 239bb77d486e8cb845ec439d84def5e34cf64348
+ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60390307"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72170230"
 ---
 # <a name="tutorial-import-sql-bacpac-files-with-azure-resource-manager-templates"></a>Руководство. Импорт BACPAC-файлов SQL с помощью шаблонов Azure Resource Manager
 
@@ -49,17 +49,17 @@ ms.locfileid: "60390307"
 
 ## <a name="prepare-a-bacpac-file"></a>Подготовка BACPAC-файла
 
-BACPAC-файл совместно используется в [учетной записи хранения Azure](https://armtutorials.blob.core.windows.net/sqlextensionbacpac/SQLDatabaseExtension.bacpac) с общим доступом. Сведения о создании собственного файла см. в статье [Экспорт базы данных SQL Azure в BACPAC-файл](../sql-database/sql-database-export.md). Если вы решили опубликовать файл в своем расположении, необходимо обновить шаблон позже в этом руководстве.
+BACPAC-файл доступен на [GitHub](https://github.com/Azure/azure-docs-json-samples/raw/master/tutorial-sql-extension/SQLDatabaseExtension.bacpac). Сведения о создании собственного файла см. в статье [Экспорт базы данных SQL Azure в BACPAC-файл](../sql-database/sql-database-export.md). Если вы решили опубликовать файл в своем расположении, необходимо обновить шаблон позже в этом руководстве.
 
 ## <a name="open-a-quickstart-template"></a>Открытие шаблона быстрого запуска
 
-Используемый в этом руководстве шаблон хранится в [учетной записи хранения Azure](https://armtutorials.blob.core.windows.net/createsql/azuredeploy.json). 
+Используемый в этом руководстве шаблон доступен на [GitHub](https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/tutorial-sql-extension/azuredeploy.json).
 
 1. В Visual Studio Code выберите **Файл**>**Открыть файл**.
 2. Скопируйте приведенный ниже URL-адрес и вставьте его в поле **Имя файла**.
 
     ```url
-    https://armtutorials.blob.core.windows.net/createsql/azuredeploy.json
+    https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/tutorial-sql-extension/azuredeploy.json
     ```
 3. Чтобы открыть файл, выберите **Открыть**.
 
@@ -112,7 +112,7 @@ BACPAC-файл совместно используется в [учетной �
             "properties": {
                 "storageKeyType": "SharedAccessKey",
                 "storageKey": "?",
-                "storageUri": "https://armtutorials.blob.core.windows.net/sqlextensionbacpac/SQLDatabaseExtension.bacpac",
+                "storageUri": "https://github.com/Azure/azure-docs-json-samples/raw/master/tutorial-sql-extension/SQLDatabaseExtension.bacpac",
                 "administratorLogin": "[variables('databaseServerAdminLogin')]",
                 "administratorLoginPassword": "[variables('databaseServerAdminLoginPassword')]",
                 "operationMode": "Import",
@@ -157,7 +157,7 @@ New-AzResourceGroupDeployment `
 
 ## <a name="verify-the-deployment"></a>Проверка развертывания
 
-На портале выберите Базу данных SQL из только что развернутой группы ресурсов. Выберите **Редактор запросов (предварительная версия)**, а затем введите учетные данные администратора. Должны отобразиться две таблицы, импортированные в базу данных:
+На портале выберите Базу данных SQL из только что развернутой группы ресурсов. Выберите **Редактор запросов (предварительная версия)** , а затем введите учетные данные администратора. Должны отобразиться две таблицы, импортированные в базу данных:
 
 ![Развертывание BACPAC-файла в расширении SQL с помощью Azure Resource Manager](./media/resource-manager-tutorial-deploy-sql-extensions-bacpac/resource-manager-tutorial-deploy-sql-extensions-bacpac-query-editor.png)
 

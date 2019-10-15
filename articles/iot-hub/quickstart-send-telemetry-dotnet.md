@@ -10,12 +10,12 @@ ms.devlang: csharp
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 06/21/2019
-ms.openlocfilehash: c8bfb159dc56ff701f8d3c7eff00f04e28f8704a
-ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
+ms.openlocfilehash: 9f9e84570c7e7a4a2049c9f357d001c3316a4106
+ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68667819"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72166343"
 ---
 # <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-and-read-it-with-a-back-end-application-net"></a>Краткое руководство. Отправка данных телеметрии из устройства в Центр Интернета вещей и их чтение с помощью внутреннего приложения (.NET)
 
@@ -59,12 +59,12 @@ az extension add --name azure-cli-iot-ext
 
 1. Выполните приведенные ниже команды в Azure Cloud Shell, чтобы создать удостоверение устройства.
 
-   **YourIoTHubName**. Замените этот заполнитель именем вашего Центра Интернета вещей.
+   **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
 
-   **MyDotnetDevice**. Имя регистрируемого устройства. Используйте **MyDotnetDevice**, как показано ниже. Если вы выбрали другое имя для устройства, используйте его при работе с этим руководством и обновите имя устройства в примерах приложений перед их запуском.
+   **MyDotnetDevice**. Это имя регистрируемого устройства. Рекомендуется использовать **MyDotnetDevice**, как показано ниже. Если вы выбрали другое имя для устройства, используйте его при работе с этим руководством и обновите имя устройства в примерах приложений перед их запуском.
 
     ```azurecli-interactive
-    az iot hub device-identity create --hub-name YourIoTHubName --device-id MyDotnetDevice
+    az iot hub device-identity create --hub-name {YourIoTHubName} --device-id MyDotnetDevice
     ```
 
 2. Выполните следующую команду в Azure Cloud Shell, чтобы получить _строку подключения_ зарегистрированного устройства:
@@ -72,28 +72,28 @@ az extension add --name azure-cli-iot-ext
    **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
 
     ```azurecli-interactive
-    az iot hub device-identity show-connection-string --hub-name YourIoTHubName --device-id MyDotnetDevice --output table
+    az iot hub device-identity show-connection-string --hub-name {YourIoTHubName} --device-id MyDotnetDevice --output table
     ```
 
     Запишите строку подключения устройства, которая выглядит так:
 
-   `HostName={YourIoTHubName}.azure-devices.net;DeviceId=MyNodeDevice;SharedAccessKey={YourSharedAccessKey}`
+   `HostName={YourIoTHubName}.azure-devices.net;DeviceId=MyDotnetDevice;SharedAccessKey={YourSharedAccessKey}`
 
-    Это значение понадобится позже в рамках этого краткого руководства.
+    Это значение понадобится позже при работе с этим кратким руководством.
 
 3. Вам также понадобится _конечная точка, совместимая с Центрами событий_, _путь, совместимый с Центрами событий_, и _первичный ключ службы_ из Центра Интернета вещей, чтобы подключить внутреннее приложение к Центру Интернета вещей и получить сообщения. Следующие команды позволяют получить эти значения для Центра Интернета вещей:
 
    **YourIoTHubName**. Замените этот заполнитель именем вашего Центра Интернета вещей.
 
     ```azurecli-interactive
-    az iot hub show --query properties.eventHubEndpoints.events.endpoint --name YourIoTHubName
+    az iot hub show --query properties.eventHubEndpoints.events.endpoint --name {YourIoTHubName}
 
-    az iot hub show --query properties.eventHubEndpoints.events.path --name YourIoTHubName
+    az iot hub show --query properties.eventHubEndpoints.events.path --name {YourIoTHubName}
 
-    az iot hub policy show --name service --query primaryKey --hub-name YourIoTHubName
+    az iot hub policy show --name service --query primaryKey --hub-name {YourIoTHubName}
     ```
 
-    Запишите эти три значения, которые нужно использовать позже в рамках этого краткого руководства.
+    Запишите эти три значения, они понадобятся позже при работе с этим кратким руководством.
 
 ## <a name="send-simulated-telemetry"></a>Отправка имитированной телеметрии
 
@@ -131,8 +131,8 @@ az extension add --name azure-cli-iot-ext
 
     | Переменная | Значение |
     | -------- | ----------- |
-    | `s_eventHubsCompatibleEndpoint` | Замените значение переменной записанной ранее конечной точкой, совместимой с центрами событий. |
-    | `s_eventHubsCompatiblePath`     | Замените значение переменной записанным ранее путем, совместимым с центрами событий. |
+    | `s_eventHubsCompatibleEndpoint` | Замените значение переменной записанной ранее конечной точкой, совместимой с Центрами событий. |
+    | `s_eventHubsCompatiblePath`     | Замените значение переменной записанным ранее путем, совместимым с Центрами событий. |
     | `s_iotHubSasKey`                | Замените значение переменной записанным ранее первичным ключом службы. |
 
 3. Установите необходимые библиотеки внутреннего приложения, выполнив в окне терминала на локальном компьютере следующие команды:
@@ -157,7 +157,7 @@ az extension add --name azure-cli-iot-ext
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом кратком руководстве вы настроили Центр Интернета вещей, зарегистрировали устройство, отправили имитированные данные телеметрии в центр с помощью приложения C#, а также считали данные телеметрии из центра, используя простое внутреннее приложение.
+Выполнив инструкции в этом кратком руководстве, вы настроили Центр Интернета вещей, зарегистрировали устройство, отправили имитированные данные телеметрии в центр с помощью приложения C#, а также считали данные телеметрии из центра с помощью простого внутреннего приложения.
 
 Чтобы узнать, как управлять имитированным устройством из внутреннего приложения, перейдите к следующему краткому руководству.
 

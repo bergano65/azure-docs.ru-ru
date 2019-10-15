@@ -13,18 +13,18 @@ ms.devlang: na
 ms.date: 03/04/2019
 ms.topic: quickstart
 ms.author: jgao
-ms.openlocfilehash: c73084b03736a422e5e3b617ec058ade1de0fbb9
-ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.openlocfilehash: b62d4f8b43c62ff401b4d74932b131c1bf8fd63f
+ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2019
-ms.locfileid: "57317124"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72169562"
 ---
 # <a name="quickstart-create-azure-resource-manager-templates-by-using-visual-studio-code"></a>Краткое руководство. Создание шаблона Azure Resource Manager c помощью Visual Studio Code
 
 См. дополнительные сведения об использовании Visual Studio Code и расширения средств Azure Resource Manager для создания и изменения шаблонов Azure Resource Manager. Шаблоны Resource Manager в Visual Studio Code можно создавать и без расширения. Но расширение предоставляет варианты автозаполнения, которые упрощают разработку шаблона. Основные понятия, связанные с развертыванием и управлением решений Azure, см. в [обзоре Azure Resource Manager](resource-group-overview.md).
 
-В этом руководстве вы узнаете, как развернуть учетную запись хранения.
+В этом кратком руководстве вы развернете учетную запись хранения.
 
 ![Схема быстрого запуска шаблона Resource Manager в Visual Studio Code](./media/resource-manager-quickstart-create-templates-use-visual-studio-code/resource-manager-template-quickstart-vscode-diagram.png)
 
@@ -44,7 +44,7 @@ ms.locfileid: "57317124"
 
 ## <a name="open-a-quickstart-template"></a>Открытие шаблона быстрого запуска
 
-Чтобы не создавать шаблон с нуля, откройте его в [Шаблонах быстрого запуска Azure](https://azure.microsoft.com/resources/templates/). Шаблоны быстрого запуска Azure являются репозиторием для шаблонов Resource Manager.
+Чтобы не создавать шаблон с нуля, откройте его в [Шаблонах быстрого запуска Azure](https://azure.microsoft.com/resources/templates/). Шаблоны быстрого запуска Azure — это репозиторий для шаблонов Resource Manager.
 
 Шаблон, используемый в этом кратком руководстве, называется [Create a standard storage account](https://azure.microsoft.com/resources/templates/101-storage-account-create/) (Создание стандартной учетной записи хранения). Шаблон определяет ресурс учетной записи службы хранилища Azure.
 
@@ -102,7 +102,7 @@ ms.locfileid: "57317124"
 
 2. В левом верхнем углу выберите используемую среду — **PowerShell** или **Bash** (CLI).  После переключения желательно перезагрузить оболочку.
 
-    # <a name="clitabcli"></a>[ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](#tab/CLI)
+    # <a name="clitabcli"></a>[CLI](#tab/CLI)
 
     ![Cloud Shell CLI на портале Azure](./media/resource-manager-quickstart-create-templates-use-visual-studio-code/azure-portal-cloud-shell-choose-cli.png)
 
@@ -114,32 +114,32 @@ ms.locfileid: "57317124"
 
 3. Выберите **Отправка и скачивание файлов**, а затем **Отправить**.
 
-    # <a name="clitabcli"></a>[ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](#tab/CLI)
+    # <a name="clitabcli"></a>[CLI](#tab/CLI)
 
     ![Файл отправки Cloud Shell портале Azure](./media/resource-manager-quickstart-create-templates-use-visual-studio-code/azure-portal-cloud-shell-upload-file.png)
-   
+
     # <a name="powershelltabpowershell"></a>[PowerShell](#tab/PowerShell)
-    
+
     ![Файл отправки Cloud Shell портале Azure](./media/resource-manager-quickstart-create-templates-use-visual-studio-code/azure-portal-cloud-shell-upload-file-powershell.png)
-    
+
     ---
 
     Выберите файл, сохраненный ранее. **azuredeploy.json** — имя по умолчанию. Файл шаблона должен быть доступным из облака.
 
-    При необходимости можно использовать команды **ls** и **cat**, чтобы проверить отправку файла. 
+    При необходимости можно использовать команды **ls** и **cat**, чтобы проверить отправку файла.
 
-    # <a name="clitabcli"></a>[ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](#tab/CLI)
+    # <a name="clitabcli"></a>[CLI](#tab/CLI)
 
     ![Файл списка оболочки Cloud портала Azure](./media/resource-manager-quickstart-create-templates-use-visual-studio-code/azure-portal-cloud-shell-list-file.png)
-   
+
     # <a name="powershelltabpowershell"></a>[PowerShell](#tab/PowerShell)
-    
+
     ![Файл списка оболочки Cloud портала Azure](./media/resource-manager-quickstart-create-templates-use-visual-studio-code/azure-portal-cloud-shell-list-file-powershell.png)
-    
+
     ---
 4. Выполните следующие команды в Cloud Shell. Выберите вкладку, чтобы отобразить код PowerShell или код CLI.
 
-    # <a name="clitabcli"></a>[ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](#tab/CLI)
+    # <a name="clitabcli"></a>[CLI](#tab/CLI)
     ```azurecli
     echo "Enter the Resource Group name:" &&
     read resourceGroupName &&
@@ -148,38 +148,38 @@ ms.locfileid: "57317124"
     az group create --name $resourceGroupName --location "$location" &&
     az group deployment create --resource-group $resourceGroupName --template-file "$HOME/azuredeploy.json"
     ```
-   
+
     # <a name="powershelltabpowershell"></a>[PowerShell](#tab/PowerShell)
-    
+
     ```azurepowershell
     $resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
     $location = Read-Host -Prompt "Enter the location (i.e. centralus)"
-    
+
     New-AzResourceGroup -Name $resourceGroupName -Location "$location"
     New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateFile "$HOME/azuredeploy.json"
     ```
-    
+
     ---
 
-    Обновите имя файла шаблона, если вы сохраняете файл с именем, отличающимся от **azuredeploy.json**. 
+    Обновите имя файла шаблона, если вы сохраняете файл с именем, отличающимся от **azuredeploy.json**.
 
     На следующем снимке экрана показан пример развертывания.
 
-    # <a name="clitabcli"></a>[ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](#tab/CLI)
+    # <a name="clitabcli"></a>[CLI](#tab/CLI)
 
     ![Шаблон развертывания оболочки Cloud портала Azure](./media/resource-manager-quickstart-create-templates-use-visual-studio-code/azure-portal-cloud-shell-deploy-template.png)
-   
+
     # <a name="powershelltabpowershell"></a>[PowerShell](#tab/PowerShell)
-    
+
     ![Шаблон развертывания оболочки Cloud портала Azure](./media/resource-manager-quickstart-create-templates-use-visual-studio-code/azure-portal-cloud-shell-deploy-template-powershell.png)
-    
+
     ---
 
     Имя учетной записи хранения и URL-адрес хранилища в разделе выходных данных выделены на снимке экрана ниже. Чтобы продолжить, необходимо ввести имя учетной записи хранения.
 
 5. Чтобы перечислить созданные учетные записи хранения, выполните следующую команду PowerShell или CLI:
 
-    # <a name="clitabcli"></a>[ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](#tab/CLI)
+    # <a name="clitabcli"></a>[CLI](#tab/CLI)
     ```azurecli
     echo "Enter the Resource Group name:" &&
     read resourceGroupName &&
@@ -187,15 +187,15 @@ ms.locfileid: "57317124"
     read storageAccountName &&
     az storage account show --resource-group $resourceGroupName --name $storageAccountName
     ```
-   
+
     # <a name="powershelltabpowershell"></a>[PowerShell](#tab/PowerShell)
-    
+
     ```azurepowershell
     $resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
     $storageAccountName = Read-Host -Prompt "Enter the Storage Account name"
     Get-AzStorageAccount -ResourceGroupName $resourceGroupName -Name $storageAccountName
     ```
-    
+
     ---
 
 Дополнительные сведения об использовании учетных записях хранения Azure см. в статье [Краткое руководство. Передача, скачивание и составление списка больших двоичных объектов с помощью портала Azure](../storage/blobs/storage-quickstart-blobs-portal.md).
@@ -211,7 +211,7 @@ ms.locfileid: "57317124"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Основное внимание в этом руководстве уделяется использованию Visual Studio Code для редактирования существующего шаблона Быстрого начала Azure. Вы также узнали, как развернуть шаблон, используя CLI или PowerShell из Azure Cloud Shell. Шаблоны быстрого запуска Azure могут не обеспечить вас всем необходимым. В следующем руководстве показано, как в справочнике по шаблону найти информацию, чтобы создать зашифрованную учетную запись хранения Azure.
+Основное внимание в этом руководстве уделяется использованию Visual Studio Code для редактирования существующего шаблона Быстрого начала Azure. Вы также узнали, как развернуть шаблон, используя CLI или PowerShell из Azure Cloud Shell. Шаблоны быстрого запуска Azure могут не обеспечить вас всем необходимым. Дополнительные сведения о разработке шаблонов см. в новой серии
 
 > [!div class="nextstepaction"]
-> [Создание шаблона Azure Resource Manager для развертывания зашифрованной учетной записи хранения](./resource-manager-tutorial-create-encrypted-storage-accounts.md)
+> [руководств для начинающих](./template-tutorial-create-first-template.md).

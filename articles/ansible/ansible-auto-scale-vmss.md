@@ -1,5 +1,5 @@
 ---
-title: Учебник по автомасштабированию масштабируемых наборов виртуальных машин в Azure с помощью Ansible | Документация Майкрософт
+title: Руководство по автомасштабированию масштабируемых наборов виртуальных машин в Azure с помощью Ansible
 description: Узнайте, как использовать Ansible для масштабирования масштабируемого набора виртуальных машин с помощью функции автомасштабирования в Azure.
 keywords: ansible, azure, devops, bash, playbook, scale, autoscale, virtual machine, virtual machine scale set, vmss
 ms.topic: tutorial
@@ -8,12 +8,12 @@ author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.date: 04/30/2019
-ms.openlocfilehash: 4f2cd66b7460fc6fe48cb55f45bf4bc309ae054c
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: 784cb532c11b16c820336ceeaf8d38f0225c832f
+ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65231278"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72242107"
 ---
 # <a name="tutorial-autoscale-virtual-machine-scale-sets-in-azure-using-ansible"></a>Руководство по автомасштабированию масштабируемых наборов виртуальных машин в Azure с помощью Ansible
 

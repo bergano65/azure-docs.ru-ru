@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 05/02/2019
 ms.author: jeedes
-ms.openlocfilehash: a2a0ffd670a03aeaaa262b83127a385be9efc978
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e5575a2e8f776e87fcd4e6f4a7a9244752ebfd9a
+ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67088478"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71950421"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-topdesk---public"></a>Руководство по Интеграция Azure Active Directory с TOPdesk — Public
 
@@ -120,8 +120,10 @@ ms.locfileid: "67088478"
 
     d. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.topdesk.net`.
 
-    д. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<companyname>.topdesk.net/tas/public/login/verify`
-
+    д. В текстовое поле **URL-адрес идентификатора** введите URL-адрес метаданных TOPdesk, который вы можете скопировать из конфигурации TOPdesk. При этом нужно использовать такой формат: `https://<companyname>.topdesk.net/saml-metadata/<identifier>`.
+    
+    Е. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<companyname>.topdesk.net/tas/public/login/verify`.
+    
     > [!NOTE] 
     > Если поля **Идентификатор** и **URL-адрес ответа** автоматически не заполняются, введите эти значения вручную. Следуйте описанному выше шаблону и вы получите нужные значения, как описано далее в разделе **Настройка единого входа в TOPdesk — Public**. Значение **URL-адреса входа** не является реальным, поэтому введите фактический URL-адрес входа. Чтобы получить эти данные, обратитесь в [службу поддержки клиентов TOPdesk — Public](https://help.topdesk.com/saas/enterprise/user/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
@@ -288,4 +290,4 @@ ms.locfileid: "67088478"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

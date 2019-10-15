@@ -1,5 +1,5 @@
 ---
-title: Руководство. Настройка очередей в Служебной шине Azure с помощью Ansible | Документация Майкрософт
+title: Руководство по настройке очередей в Служебной шине Azure с помощью Ansible
 description: Узнайте, как создать очередь Служебной шины Azure с помощью Ansible
 keywords: ansible, azure, devops, bash, playbook, service bus, queue
 ms.topic: tutorial
@@ -8,12 +8,12 @@ author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.date: 04/30/2019
-ms.openlocfilehash: 6efc11106fae18beac43ab1896733ab6bfc64dad
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: a48796c2177a8b5b818553bf8aa0ff36f712d4e0
+ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65230775"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72241395"
 ---
 # <a name="tutorial-configure-queues-in-azure-service-bus-using-ansible"></a>Руководство по Настройка очередей в Служебной шине Azure с помощью Ansible
 
@@ -72,7 +72,7 @@ ms.locfileid: "65230775"
           var: queue
 ```
 
-Запустите сборник схем с помощью команды `ansible-playbook`:
+Запустите сборник схем с помощью команды `ansible-playbook`.
 
 ```bash
 ansible-playbook servicebus_queue.yml
@@ -82,7 +82,7 @@ ansible-playbook servicebus_queue.yml
 
 [Подписанные URL-адреса (SAS)](/azure/storage/common/storage-dotnet-shared-access-signature-part-1) — это механизм авторизации на основе утверждений с использованием маркеров. 
 
-Код из сборника схем создает две политики SAS для очереди Служебной шины с разными привилегиями.
+Код из примера сборника схем создает две политики SAS для очереди служебной шины с разными привилегиями.
 
 Сохраните следующий сборник схем как `servicebus_queue_policy.yml`:
 
@@ -117,7 +117,7 @@ ansible-playbook servicebus_queue_policy.yml
 
 ## <a name="retrieve-namespace-information"></a>Получение сведений о пространстве имен
 
-Код из сборника схем запрашивает сведения о пространстве имен.
+Код из примера сборника схем запрашивает сведения о пространстве имен.
 
 Сохраните следующий сборник схем как `servicebus_namespace_info.yml`:
 
@@ -139,7 +139,7 @@ ansible-playbook servicebus_queue_policy.yml
           var: ns
 ```
 
-Перед выполнением сборника схем учтите следующее:
+Перед выполнением сборника схем ознакомьтесь со следующими указаниями.
 - Значение `show_sas_policies` указывает, следует ли отображать политики SAS в указанном пространстве имен. Используется значение по умолчанию `False`, чтобы избежать дополнительных сетевых издержек.
 
 Запустите сборник схем с помощью команды `ansible-playbook`:
@@ -174,10 +174,10 @@ ansible-playbook servicebus_namespace_info.yml
           var: queue
 ```
 
-Перед выполнением сборника схем учтите следующее:
+Перед выполнением сборника схем ознакомьтесь со следующими указаниями.
 - Значение `show_sas_policies` указывает, следует ли отображать политики SAS в указанной очереди. Используется значение по умолчанию `False`, чтобы избежать дополнительных сетевых издержек.
 
-Запустите сборник схем с помощью команды `ansible-playbook`:
+Запустите сборник схем с помощью команды `ansible-playbook`.
 
 ```bash
 ansible-playbook servicebus_queue_info.yml
@@ -185,7 +185,7 @@ ansible-playbook servicebus_queue_info.yml
 
 ## <a name="revoke-the-queue-sas-policy"></a>Отзыв политики SAS очереди
 
-Код из сборника схем удаляет политику SAS очереди.
+Код из примера сборника схем удаляет политику SAS очереди.
 
 Сохраните следующий сборник схем как `servicebus_queue_policy_delete.yml`:
 
@@ -206,7 +206,7 @@ ansible-playbook servicebus_queue_info.yml
           state: absent
 ```
 
-Запустите сборник схем с помощью команды `ansible-playbook`:
+Запустите сборник схем с помощью команды `ansible-playbook`.
 
 ```bash
 ansible-playbook servicebus_queue_policy_delete.yml
@@ -244,7 +244,7 @@ ansible-playbook servicebus_queue_policy_delete.yml
           force_delete_nonempty: yes
 ```
 
-Запустите сборник схем с помощью команды `ansible-playbook`:
+Запустите сборник схем с помощью команды `ansible-playbook`.
 
 ```bash
 ansible-playbook cleanup.yml
@@ -252,4 +252,4 @@ ansible-playbook cleanup.yml
 
 ## <a name="next-steps"></a>Дополнительная информация
 > [!div class="nextstepaction"] 
-> [Руководство Настройка раздела в Служебной шине Azure с помощью Ansible](ansible-service-bus-topic-configure.md)
+> [Руководство. Настройка раздела в Служебной шине Azure с помощью Ansible](ansible-service-bus-topic-configure.md)

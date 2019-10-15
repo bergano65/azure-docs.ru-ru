@@ -10,12 +10,12 @@ ms.subservice: ink-recognizer
 ms.topic: quickstart
 ms.date: 09/23/2019
 ms.author: aahi
-ms.openlocfilehash: 36ff0fe4550b140a722ed25f4e372f7c88581211
-ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
+ms.openlocfilehash: e8cd6a4acbd1492bba1c9e88b523a7c44a44f009
+ms.sourcegitcommit: 9f330c3393a283faedaf9aa75b9fcfc06118b124
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71212683"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "71996843"
 ---
 # <a name="quickstart-recognize-digital-ink-with-the-ink-recognizer-rest-api-and-java"></a>Краткое руководство. Распознавание рукописного ввода с помощью REST API Распознавателя рукописного текста и Java
 
@@ -37,38 +37,21 @@ ms.locfileid: "71212683"
     - пакет [JSON в Java](https://mvnrepository.com/artifact/org.json/json);
     - пакет [Apache HttpClient](https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient).
 
-- Пример данных росчерка пера для этого краткого руководства можно найти на портале [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/java/InkRecognition/quickstart/example-ink-strokes.json).
+- Пример данных рукописного фрагмента для этого краткого руководства можно найти на портале [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/java/InkRecognition/quickstart/example-ink-strokes.json).
 
-[!INCLUDE [cognitive-services-ink-recognizer-signup-requirements](../../../../includes/cognitive-services-ink-recognizer-signup-requirements.md)]
+### <a name="create-an-ink-recognizer-resource"></a>Создание ресурса Распознавателя рукописного текста
+
+[!INCLUDE [creating an ink recognizer resource](../includes/setup-instructions.md)]
 
 ## <a name="create-a-new-application"></a>Создание приложения
 
 1. Создайте проект Java в любой интегрированной среде разработки или редакторе, а затем импортируйте в него следующие библиотеки.
-
-    ```java
-    import org.apache.http.HttpEntity;
-    import org.apache.http.client.methods.CloseableHttpResponse;
-    import org.apache.http.client.methods.HttpPost;
-    import org.apache.http.entity.StringEntity;
-    import org.apache.http.impl.client.CloseableHttpClient;
-    import org.apache.http.impl.client.HttpClients;
-    import org.apache.http.util.EntityUtils;
-    import java.io.IOException;
-    import java.nio.file.Files;
-    import java.nio.file.Paths;
-    ```
-
-2. Создайте переменные для ключа подписки и конечной точки. Замените указанную ниже конечную точку на ту, которая создана для ресурса Распознавателя рукописного текста. Добавьте ее в URI Распознавателя рукописного текста для подключения к API.
-
-    ```java
-    // Replace the subscriptionKey string value with your valid subscription key.
-    static final String subscriptionKey = "YOUR_SUBSCRIPTION_KEY";
-    // Replace the dataPath string with a path to the JSON formatted ink stroke data file.
-    static final String dataPath = "PATH_TO_INK_STROKE_DATA";
     
-    static final String endpoint = "https://<your-custom-subdomain>.cognitiveservices.azure.com";
-    static final String inkRecognitionUrl = "/inkrecognizer/v1.0-preview/recognize";
-    ```
+    [!code-java[import statements](~/cognitive-services-rest-samples/java/InkRecognition/quickstart/RecognizeInk.java?name=imports)]
+
+2. Создайте переменные для вашего ключа подписки, конечную точку и файл JSON. Конечная точка затем будет добавлена в конец URI Распознавателя рукописного текста.
+
+    [!code-java[initial vars](~/cognitive-services-rest-samples/java/InkRecognition/quickstart/RecognizeInk.java?name=vars)]
 
 ## <a name="create-a-function-to-send-requests"></a>Создание функции для отправки запросов
 
@@ -84,41 +67,13 @@ ms.locfileid: "71212683"
 
 6. Создайте объект `HttpEntity`, в котором будет храниться содержимое ответа. Получите содержимое с `getEntity()`. Если ответ не пустой, верните его.
     
-    ```java
-    static String sendRequest(String apiAddress, String endpoint, String subscriptionKey, String requestData) {
-        try (CloseableHttpClient client = HttpClients.createDefault()) {
-            HttpPut request = new HttpPut(endpoint + apiAddress);
-            // Request headers.
-            request.setHeader("Content-Type", "application/json");
-            request.setHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
-            request.setEntity(new StringEntity(requestData));
-            try (CloseableHttpResponse response = client.execute(request)) {
-                HttpEntity respEntity = response.getEntity();
-                if (respEntity != null) {
-                    return EntityUtils.toString(respEntity, "utf-8");
-                }
-            } catch (Exception respEx) {
-                respEx.printStackTrace();
-            }
-        } catch (IOException ex) {
-            System.err.println("Exception recognizing ink: " + ex.getMessage());
-            ex.printStackTrace();
-        }
-        return null;
-    }
-    ```
+    [!code-java[send a request](~/cognitive-services-rest-samples/java/InkRecognition/quickstart/RecognizeInk.java?name=sendRequest)]
 
 ## <a name="send-an-ink-recognition-request"></a>Отправка запроса на распознавание рукописного текста
 
 Создайте метод с именем `recognizeInk()` для распознавания данных росчерка пера. С помощью конечной точки, URL-адреса, ключа подписки и данных JSON вызовите созданный метод `sendRequest()`. Получите результат и выведите его в консоль.
 
-```java
-static void recognizeInk(String requestData) {
-    System.out.println("Sending an ink recognition request");
-    String result = sendRequest(inkRecognitionUrl, endpoint, subscriptionKey, requestData);
-    System.out.println(result);
-}
-```
+[!code-java[recognizeInk](~/cognitive-services-rest-samples/java/InkRecognition/quickstart/RecognizeInk.java?name=recognizeInk)]
 
 ## <a name="load-your-digital-ink-data-and-send-the-request"></a>Загрузка данных рукописного ввода и отправка запроса
 
@@ -126,12 +81,8 @@ static void recognizeInk(String requestData) {
 
 2. Вызовите функцию распознавания рукописного ввода, созданную ранее.
     
-    ```java
-    public static void main(String[] args) throws Exception {
-        String requestData = new String(Files.readAllBytes(Paths.get(dataPath)), "UTF-8");
-        recognizeInk(requestData);
-    }
-    ```
+    [!code-java[main method](~/cognitive-services-rest-samples/java/InkRecognition/quickstart/RecognizeInk.java?name=main)]
+
 
 ## <a name="run-the-application-and-view-the-response"></a>Запуск приложения и просмотр ответа
 

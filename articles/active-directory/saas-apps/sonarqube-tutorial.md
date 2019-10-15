@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 09/18/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9b9e28f986f28bde6e46319ddb404d424c100726
-ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
+ms.openlocfilehash: 571d8849fd7cae5c872a56182858848dbb43ef42
+ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71174470"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72026684"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-sonarqube"></a>Руководство по интеграции единого входа Azure Active Directory с Sonarqube
 
@@ -139,7 +139,7 @@ ms.locfileid: "71174470"
 
 2. Установите подключаемый модуль SAML из Marketplace для Sonarqube.
 
-3. В верхней части страницы щелкните  **ADMIN**  (Администрирование) и выберите  **SAML**.
+3. В верхней части страницы щелкните **ADMIN** (Администрирование) и выберите **SAML**.
 
 4. На странице **SAML** выполните следующие действия.
 

@@ -13,12 +13,12 @@ ms.devlang: java
 ms.date: 08/01/2019
 ms.topic: quickstart
 ms.author: yucwan
-ms.openlocfilehash: cbeaccf4cdea87d6f34d5ee77e6a08b32abd76b5
-ms.sourcegitcommit: 6ad03fa28a0f60cb6dce6144f728c2ceb56ff6e2
+ms.openlocfilehash: d25a5720e3aaa8ad6306a72d2db8d3ca2e89861b
+ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68708197"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72169448"
 ---
 # <a name="quickstart-create-and-deploy-azure-resource-manager-templates-by-using-the-intellij-idea"></a>Краткое руководство. Создание и развертывание шаблонов Azure Resource Manager с помощью IntelliJ IDEA
 
@@ -40,7 +40,7 @@ ms.locfileid: "68708197"
 
 ## <a name="deploy-a-quickstart-template"></a>Развертывание шаблона быстрого запуска
 
-Чтобы не создавать шаблон с нуля, откройте его в [Шаблонах быстрого запуска Azure](https://azure.microsoft.com/resources/templates/). Шаблоны быстрого запуска Azure являются репозиторием для шаблонов Resource Manager. Шаблон, используемый в этом кратком руководстве, называется [Create a standard storage account](https://github.com/Azure/azure-quickstart-templates/tree/master/101-storage-account-create/) (Создание стандартной учетной записи хранения). Он определяет ресурс учетной записи службы хранилища Azure. 
+Чтобы не создавать шаблон с нуля, откройте его в [Шаблонах быстрого запуска Azure](https://azure.microsoft.com/resources/templates/). Шаблоны быстрого запуска Azure — это репозиторий для шаблонов Resource Manager. Шаблон, используемый в этом кратком руководстве, называется [Create a standard storage account](https://github.com/Azure/azure-quickstart-templates/tree/master/101-storage-account-create/) (Создание стандартной учетной записи хранения). Он определяет ресурс учетной записи службы хранилища Azure.
 
 1. Щелкните правой кнопкой мыши и сохраните [`azuredeploy.json`](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-storage-account-create/azuredeploy.json) и [`azuredeploy.parameters.json`](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-storage-account-create/azuredeploy.parameters.json) на локальном компьютере.
 
@@ -89,10 +89,10 @@ ms.locfileid: "68708197"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Основное внимание в этом руководстве уделяется использованию IntelliJ IDEA для развертывания существующего шаблона быстрого запуска Azure. Кроме того, в нем содержатся сведения о просмотре и обновлении имеющегося развертывания в Azure. Шаблоны быстрого запуска Azure могут не обеспечить вас всем необходимым. В следующем руководстве показано, как в справочнике по шаблону найти информацию, чтобы создать зашифрованную учетную запись хранения Azure.
+Основное внимание в этом руководстве уделяется использованию IntelliJ IDEA для развертывания существующего шаблона быстрого запуска Azure. Кроме того, в нем содержатся сведения о просмотре и обновлении имеющегося развертывания в Azure. Шаблоны быстрого запуска Azure могут не обеспечить вас всем необходимым. Дополнительные сведения о разработке шаблонов см. в новой серии
 
 > [!div class="nextstepaction"]
-> [Создание шаблона Azure Resource Manager для развертывания зашифрованной учетной записи хранения](./resource-manager-tutorial-create-encrypted-storage-accounts.md)
+> [руководств для начинающих](./template-tutorial-create-first-template.md).
 
 > [!div class="nextstepaction"]
 > [Azure для разработчиков облачных решений Java](https://docs.microsoft.com/azure/java)

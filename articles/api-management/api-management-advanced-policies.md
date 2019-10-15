@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/28/2017
 ms.author: apimpm
-ms.openlocfilehash: efc439d56ee864d940942369b3d226ed2a94a383
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 166ff5f8866fca955cbe99c5896eb509f52261f6
+ms.sourcegitcommit: 3fa4384af35c64f6674f40e0d4128e1274083487
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70072631"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71219554"
 ---
 # <a name="api-management-advanced-policies"></a>Расширенные политики в службе управления API
 
@@ -38,7 +38,7 @@ ms.locfileid: "70072631"
 -   [Установка метода запроса](#SetRequestMethod) — позволяет изменить метод HTTP для запроса.
 -   [Установка кода состояния](#SetStatus) — меняет код состояния HTTP на указанное значение.
 -   [Задание переменной](api-management-advanced-policies.md#set-variable) — сохраняет значение в именованной переменной [контекста](api-management-policy-expressions.md#ContextVariables) для последующего использования.
--   [Трассировка](#Trace) — добавляет строку в выходные данные [инспектора API](https://azure.microsoft.com/documentation/articles/api-management-howto-api-inspector/).
+-   [Трассировка](#Trace) . Добавляет пользовательские трассировки в выходные данные [инспектора API](https://azure.microsoft.com/documentation/articles/api-management-howto-api-inspector/) , Application Insights телеметрии и журналы диагностики.
 -   [Ожидание](#Wait) — ожидает завершения вложенных политик [отправки запроса](api-management-advanced-policies.md#SendRequest), [получения значения из кэша](api-management-caching-policies.md#GetFromCacheByKey) или [управления потоком](api-management-advanced-policies.md#choose) перед продолжением.
 
 ## <a name="choose"></a> Управление потоками
@@ -148,7 +148,7 @@ ms.locfileid: "70072631"
 
 ## <a name="ForwardRequest"></a> Перенаправляющий запрос
 
-Политика `forward-request` перенаправляет входящий запрос во внутреннюю службу, указанную в [контексте](api-management-policy-expressions.md#ContextVariables) запроса. URL-адрес внутренней службы указывается в [параметрах](https://azure.microsoft.com/documentation/articles/api-management-howto-create-apis/#configure-api-settings) API и может быть изменен с помощью политики [настройки внутренней службы](api-management-transformation-policies.md) .
+Политика `forward-request` перенаправляет входящий запрос во внутреннюю службу, указанную в [контексте](api-management-policy-expressions.md#ContextVariables) запроса. URL-адрес внутренней службы указывается в [параметрах ](https://azure.microsoft.com/documentation/articles/api-management-howto-create-apis/#configure-api-settings) API и может быть изменен с помощью политики [настройки внутренней службы](api-management-transformation-policies.md) .
 
 > [!NOTE]
 > Удаление этой политики приводит к тому, что запрос не перенаправляется во внутреннюю службу и политики в разделе outbound вычисляются сразу после успешного завершения обработки политик в разделе inbound.
@@ -253,8 +253,8 @@ ms.locfileid: "70072631"
 | Атрибут                               | Описание                                                                                                      | Обязательное значение | Значение по умолчанию     |
 | --------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | -------- | ----------- |
 | timeout="целое число"                       | Время ожидания (в секундах), в течение которого заголовки HTTP-ответа будут возвращены внутренней службой до возникновения ошибки времени ожидания. Минимальное значение — 0 секунд. Значения, превышающие 240 секунд, могут не учитываться, так как Базовая сетевая инфраструктура может удалить неактивные подключения после этого времени. | Нет       | Отсутствуют |
-| follow-redirects="true &#124; false"    | Указывает, что происходит с перенаправлениями от внутренней службы: шлюз выполняет их или они возвращаются вызывающему объекту.      | Нет       | false       |
-| buffer-request-body="true &#124; false" | Если задано значение "true", запрос буферизован и будет повторно использован при [повторной попытке](api-management-advanced-policies.md#Retry). | Нет       | false       |
+| follow-redirects="true &#124; false"    | Указывает, что происходит с перенаправлениями от внутренней службы: шлюз выполняет их или они возвращаются вызывающему объекту.      | Нет       | Ложь       |
+| buffer-request-body="true &#124; false" | Если задано значение "true", запрос буферизован и будет повторно использован при [повторной попытке](api-management-advanced-policies.md#Retry). | Нет       | Ложь       |
 
 ### <a name="usage"></a>Использование
 
@@ -583,7 +583,7 @@ status code and media type. If no example or schema found, the content is empty.
 | -------------------------- | ----------------------------------------------------------------------------------------------------------- | ------------------------------- |
 | send-one-way-request       | Корневой элемент.                                                                                               | Да                             |
 | url                        | URL-адрес запроса.                                                                                     | Нет, если mode=copy. В противном случае да. |
-| метод                     | Метод HTTP, используемый для запроса.                                                                            | Нет, если mode=copy. В противном случае да. |
+| method                     | Метод HTTP, используемый для запроса.                                                                            | Нет, если mode=copy. В противном случае да. |
 | Верхний колонтитул                     | Заголовок запроса. Используйте несколько элементов заголовка для нескольких заголовков запросов.                                  | Нет                              |
 | body                       | Текст запроса.                                                                                           | Нет                              |
 | authentication-certificate | [Сертификат, используемый для проверки подлинности клиента.](api-management-authentication-policies.md#ClientCertificate) | Нет                              |
@@ -667,7 +667,7 @@ status code and media type. If no example or schema found, the content is empty.
 | -------------------------- | ----------------------------------------------------------------------------------------------------------- | ------------------------------- |
 | send-request               | Корневой элемент.                                                                                               | Да                             |
 | url                        | URL-адрес запроса.                                                                                     | Нет, если mode=copy. В противном случае да. |
-| метод                     | Метод HTTP, используемый для запроса.                                                                            | Нет, если mode=copy. В противном случае да. |
+| method                     | Метод HTTP, используемый для запроса.                                                                            | Нет, если mode=copy. В противном случае да. |
 | Верхний колонтитул                     | Заголовок запроса. Используйте несколько элементов заголовка для нескольких заголовков запросов.                                  | Нет                              |
 | body                       | Текст запроса.                                                                                           | Нет                              |
 | authentication-certificate | [Сертификат, используемый для проверки подлинности клиента.](api-management-authentication-policies.md#ClientCertificate) | Нет                              |
@@ -679,7 +679,7 @@ status code and media type. If no example or schema found, the content is empty.
 | mode="строка"                   | Определяет, является ли это новым запросом или копией текущего запроса. В исходящем режиме mode=copy не инициализирует текст запроса.                                                                                                                                                                                                                                                                                                                                                                                                                                                                | Нет       | Оператор new      |
 | response-variable-name="строка" | Имя переменной контекста, которая примет объект response. Если переменная отсутствует, она будет создана при успешном выполнении условий политики. К переменной можно будет получить доступ с помощью коллекции [`context.Variable`](api-management-policy-expressions.md#ContextVariables).                                                                                                                                                                                                                                                                                                                          | Да      | Н/Д      |
 | timeout="целое число"               | Интервал времени ожидания в секундах до того, как вызов, адресованный URL-адресу, завершится сбоем.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | Нет       | 60       |
-| ignore-error                    | Если получено значение true и запрос завершился ошибкой:<br /><br /> -Если параметр Response-Variable-Name был указан, он будет содержать значение null.<br />— Если Response-Variable-Name не задано, context. Запрос не будет обновлен.                                                                                                                                                                                                                                                                                                                                                                                   | Нет       | false    |
+| ignore-error                    | Если получено значение true и запрос завершился ошибкой:<br /><br /> -Если параметр Response-Variable-Name был указан, он будет содержать значение null.<br />— Если Response-Variable-Name не задано, context. Запрос не будет обновлен.                                                                                                                                                                                                                                                                                                                                                                                   | Нет       | Ложь    |
 | name                            | Указывает имя заголовка, которое должно быть установлено.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | Да      | Н/Д      |
 | exists-action                   | Указывает действие, которое должно быть выполнено, когда заголовок уже задан. Атрибут должен иметь одно из следующих значений:<br /><br /> -override — заменяет значение существующего заголовка.<br />-Skip — не заменяет существующее значение заголовка.<br />-Append — добавляет значение к существующему значению заголовка.<br />-Delete — удаляет заголовок из запроса.<br /><br /> Если установлено значение `override`, перечисление нескольких записей с одним и тем же именем будет приводить к тому, что заголовок будет устанавливаться в соответствии со всеми записями (будут перечисляться несколько раз). В результате будут установлены только перечисленные значения. | Нет       | override |
 
@@ -913,16 +913,31 @@ status code and media type. If no example or schema found, the content is empty.
 
 ## <a name="Trace"></a> Трассировка
 
-Политика добавляет строку в выходные данные [инспектора API.](https://azure.microsoft.com/documentation/articles/api-management-howto-api-inspector/) `trace` Политика будет выполняться, только если инициирована трассировка, т. е. заголовок запроса `Ocp-Apim-Trace` присутствует и имеет значение `true`, а заголовок запроса `Ocp-Apim-Subscription-Key` присутствует и содержит допустимый ключ, связанный с учетной записью администратора.
+`trace` Политика добавляет пользовательскую трассировку в выходные данные инспектора API, Application Insights телеметрии и (или) журналы диагностики. 
+
+* Политика добавляет пользовательскую трассировку в выходные данные [инспектора API](https://azure.microsoft.com/documentation/articles/api-management-howto-api-inspector/) при активации трассировки, т. е `Ocp-Apim-Trace` . заголовок запроса представлен и имеет значение true, `Ocp-Apim-Subscription-Key` а заголовок запроса имеется и содержит допустимый ключ, позволяющий отслеживать. 
+* Политика создает данные телеметрии [трассировки](https://docs.microsoft.com/azure/azure-monitor/app/data-model-trace-telemetry) в Application Insights, когда [Application Insights интеграция](https://docs.microsoft.com/azure/api-management/api-management-howto-app-insights) `severity` включена и уровень, указанный в политике, `verbosity` находится в состоянии или выше уровня, указанного в диагностике. задав. 
+* Политика добавляет свойство в запись журнала при включении [журналов диагностики](https://docs.microsoft.com/en-us/azure/api-management/api-management-howto-use-azure-monitor#diagnostic-logs) и уровень серьезности, указанный в политике, превышает уровень детализации, указанный в параметре диагностики, или выше.  
+
 
 ### <a name="policy-statement"></a>Правило политики
 
 ```xml
 
-<trace source="arbitrary string literal">
-    <!-- string expression or literal -->
+<trace source="arbitrary string literal" severity="verbose|information|error">
+    <message>String literal or expressions</message>
+    <metadata name="string literal or expressions" value="string literal or expressions"/>
 </trace>
 
+```
+
+### <a name="traceExample"></a> Пример
+
+```xml
+<trace source="PetStore API" severity="verbose">
+    <message>@((string)context.Variables["clientConnectionID"])</message>
+    <metadata name="Operation Name" value="New-Order"/>
+</trace>
 ```
 
 ### <a name="elements"></a>Элементы
@@ -930,12 +945,17 @@ status code and media type. If no example or schema found, the content is empty.
 | Элемент | Описание   | Обязательное значение |
 | ------- | ------------- | -------- |
 | trace   | Корневой элемент. | Да      |
+| message | Строка или выражение для записи. | Да |
+| метаданные | Добавляет пользовательское свойство в данные телеметрии [трассировки](https://docs.microsoft.com/en-us/azure/azure-monitor/app/data-model-trace-telemetry) Application Insights. | Нет |
 
 ### <a name="attributes"></a>Атрибуты
 
 | Атрибут | Описание                                                                             | Обязательное значение | Значение по умолчанию |
 | --------- | --------------------------------------------------------------------------------------- | -------- | ------- |
 | источник    | Строковый литерал, понятный средству просмотра трассировки и указывающий источник сообщения. | Да      | Н/Д     |
+| серьезность    | Задает степень серьезности трассировки. Допустимые значения `verbose`: `information`, `error` , (от нижнего к верхнему). | Нет      | Подробный     |
+| name    | Имя свойства. | Да      | Н/Д     |
+| value    | Значение свойства. | Да      | Н/Д     |
 
 ### <a name="usage"></a>Использование
 

@@ -7,12 +7,12 @@ ms.date: 07/20/2019
 ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
-ms.openlocfilehash: 1b6348173f47b570efff25bf09e9a427ff2ba9b5
-ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
+ms.openlocfilehash: 27ae562d38ee8734201299e10dbe6ac4be3cb2ee
+ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69640997"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71947651"
 ---
 # <a name="quickstart-azure-blob-storage-client-library-for-net"></a>Краткое руководство. Клиентская библиотека хранилища BLOB-объектов Azure для .NET
 
@@ -31,11 +31,11 @@ ms.locfileid: "69640997"
 
 [!INCLUDE [storage-multi-protocol-access-preview](../../../includes/storage-multi-protocol-access-preview.md)]
 
-## <a name="required-before-you-begin"></a>Компоненты, требуемые перед началом работы
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Учетная запись хранения Azure — [создайте такую учетную запись](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account).
-* [Пакет SDK для .NET Core](https://dotnet.microsoft.com/download/dotnet-core) или более поздней версии для вашей операционной системы. Обязательно получите пакет SDK, а не среду выполнения.
+* [Пакет SDK для .NET Core](https://dotnet.microsoft.com/download/dotnet-core) последней версии для вашей операционной системы. Обязательно получите пакет SDK, а не среду выполнения.
 
 ## <a name="setting-up"></a>Настройка
 

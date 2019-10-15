@@ -1,5 +1,5 @@
 ---
-title: Учебник по настройке пиринга виртуальных сетей Azure с помощью Ansible | Документация Майкрософт
+title: Руководство по настройке пиринга виртуальных сетей Azure с помощью Ansible
 description: Узнайте, как установить пиринговое подключение между виртуальными сетями с помощью Ansible.
 keywords: ansible, azure, devops, bash, сборник схем, схемы, пиринг
 ms.topic: tutorial
@@ -8,12 +8,12 @@ author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.date: 04/30/2019
-ms.openlocfilehash: f51e7c857a22a362a3d295fbe087c54b25f85780
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: 180bdff48a2ace4dfee1d1cb10eb75a33d360f4c
+ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65230758"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72241235"
 ---
 # <a name="tutorial-configure-azure-virtual-network-peering-using-ansible"></a>Руководство по настройке пиринга виртуальных сетей Azure с помощью Ansible
 
@@ -59,7 +59,7 @@ ms.locfileid: "65230758"
 
 Код из примера сборника схем в этом разделе используется для следующего.
 
-- Создать виртуальную сеть
+- Создание виртуальной сети
 - Создание подсети в виртуальной сети.
 
 ```yml
@@ -80,7 +80,7 @@ ms.locfileid: "65230758"
 
 Код из примера сборника схем в этом разделе используется для следующего.
 
-- Создать виртуальную сеть
+- Создание виртуальной сети
 - Создание подсети в виртуальной сети.
 
 ```yml
@@ -145,10 +145,10 @@ ms.locfileid: "65230758"
 
 ## <a name="get-the-sample-playbook"></a>Получение примера сборника схем
 
-Существуют два способа получить полный пример сборника схем.
+Существует два способа получения полного примера сборника схем:
 
 - [Скачайте сборник схем](https://github.com/Azure-Samples/ansible-playbooks/blob/master/vnet_peering.yml) и сохраните его в `vnet_peering.yml`.
-- Создайте файл с именем `vnet_peering.yml` и скопируйте в него приведенное ниже содержимое.
+- Создайте файл с именем `vnet_peering.yml` и скопируйте в него следующее содержимое.
 
 ```yml
 - hosts: localhost

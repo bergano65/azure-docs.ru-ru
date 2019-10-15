@@ -1,5 +1,5 @@
 ---
-title: Руководство по обучению модели Машинного обучения
+title: Руководство по обучению модели Машинного обучения Azure на Python
 titleSuffix: Azure Machine Learning
 description: В этом руководстве описаны базовые конструктивные шаблоны Машинного обучения Azure и показано, как обучить простую модель scikit-learn, созданную на основе набора данных о заболеваемости диабетом.
 services: machine-learning
@@ -10,12 +10,12 @@ author: trevorbye
 ms.author: trbye
 ms.reviewer: trbye
 ms.date: 09/03/2019
-ms.openlocfilehash: c775b16eaa15ccd7115f4770bf197545a9de2500
-ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
+ms.openlocfilehash: c78a45cedbeb5cfa0f0cc7c5c976fceb36f1da2a
+ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71828019"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72173308"
 ---
 # <a name="tutorial-train-your-first-ml-model"></a>Руководство по обучению модели Машинного обучения
 

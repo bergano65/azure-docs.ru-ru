@@ -10,14 +10,14 @@ ms.devlang: nodejs
 ms.topic: quickstart
 ms.custom: mvc, seo-javascript-september2019
 ms.date: 06/21/2019
-ms.openlocfilehash: ab064798d21dd6d6ba87f2f2d093dfc0849c1cb6
-ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
+ms.openlocfilehash: 107b3401d23ea853a16722544385d72432cff308
+ms.sourcegitcommit: 15e3bfbde9d0d7ad00b5d186867ec933c60cebe6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70967187"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71841322"
 ---
-# <a name="quickstart-control-a-device-connected-to-an-iot-hub-nodejs"></a>Краткое руководство. Управление подключенным к центру Интернета вещей устройством (Node.js)
+# <a name="quickstart-use-nodejs-to-control-a-device-connected-to-an-azure-iot-hub"></a>Краткое руководство. Управление подключенным к центру Интернета вещей устройством с использованием Node.js
 
 [!INCLUDE [iot-hub-quickstarts-2-selector](../../includes/iot-hub-quickstarts-2-selector.md)]
 

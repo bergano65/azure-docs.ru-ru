@@ -1,19 +1,19 @@
 ---
-title: Руководство. Настройка сети Kubenet в Службе Azure Kubernetes (AKS) с помощью Ansible | Документация Майкрософт
-description: Сведения об использовании Ansible для настройки сети Kubenet в кластере Службы Azure Kubernetes (AKS)
-keywords: ansible, azure, devops, bash, cloudshell, playbook, aks, container, aks, kubernetes
+title: Руководство по настройке сети Kubenet в Службе Azure Kubernetes (AKS) с помощью Ansible
+description: Узнайте, как с помощью Ansible настроить сеть Kubenet в кластере Службы Azure Kubernetes (AKS).
+keywords: ansible, azure, devops, bash, cloudshell, сборник схем, aks, контейнер, aks, kubernetes
 ms.topic: tutorial
 ms.service: ansible
 author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.date: 04/30/2019
-ms.openlocfilehash: cd32347f9de87ea6272be922d0359f1cc7f6f758
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: 949a55fd8c004bc656d02816231c4ebb6dd8f92b
+ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65231301"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72242166"
 ---
 # <a name="tutorial-configure-kubenet-networking-in-azure-kubernetes-service-aks-using-ansible"></a>Руководство по Настройка сети Kubenet в Службе Azure Kubernetes (AKS) с помощью Ansible
 
@@ -116,7 +116,7 @@ ms.locfileid: "65231301"
 - Диапазон IP-адресов объектов pod используется для назначения адресного пространства /24 каждому узлу в кластере. В приведенном ниже примере `pod_cidr` для 192.168.0.0/16 назначает первому узлу 192.168.0.0/24, второму узлу — 192.168.1.0/24 и третьему узлу —192.168.2.0/24.
 - При масштабировании или обновлении кластера Azure продолжает назначать диапазон IP-адресов объектов pod каждому новому узлу.
 - Сборник схем выполняет загрузку `ssh_key` из `~/.ssh/id_rsa.pub`. При его изменении следует использовать однострочный формат, который начинается с "ssh-rsa" (без кавычек).
-- Значения `client_id` и `client_secret` загружаются из `~/.azure/credentials`, который является файлом учетные данные по умолчанию. Эти значения можно установить в качестве субъекта-службы или загрузить их значения из переменных среды.
+- Значения `client_id` и `client_secret` загружаются из `~/.azure/credentials`, который является файлом учетных данных по умолчанию. Эти значения можно установить в качестве субъекта-службы или загрузить их значения из переменных среды.
 
     ```yml
     client_id: "{{ lookup('env', 'AZURE_CLIENT_ID') }}"

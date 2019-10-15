@@ -10,17 +10,17 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: v-masebo
 ms.date: 03/25/2019
-ms.custom: seo-javascript-september2019
-ms.openlocfilehash: b865bca5db11c4a34a1be4deb2e3145d73599e81
-ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
+ms.custom: seo-javascript-september2019, seo-javascript-october2019
+ms.openlocfilehash: 4d9c3954aea5fe64439190a2a0886fd8300c4cf9
+ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71059281"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72178044"
 ---
 # <a name="quickstart-use-nodejs-to-query-an-azure-sql-database"></a>Краткое руководство. Использование Node.js для создания запросов к базе данных SQL Azure
 
-В этой статье показано, как подключаться к базе данных SQL Azure с помощью [Node.js](https://nodejs.org). Затем можно запросить данные с использованием инструкций T-SQL.
+В этом кратком руководстве показано, как использовать [Node.js](https://nodejs.org) для подключения к базе данных SQL Azure. Затем можно запросить данные с использованием инструкций T-SQL.
 
 ## <a name="prerequisites"></a>Предварительные требования
 

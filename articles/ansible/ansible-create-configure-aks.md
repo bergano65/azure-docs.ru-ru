@@ -1,5 +1,5 @@
 ---
-title: Учебник по настройке сети кластеров Службы Azure Kubernetes (AKS) с помощью Ansible | Документация Майкрософт
+title: Руководство по настройке кластеров Службы Azure Kubernetes в Azure с помощью Ansible
 description: Узнайте, как использовать Ansible для создания кластеров службы Azure Kubernetes и управления ими в Azure.
 keywords: ansible, azure, devops, bash, cloudshell, сборник схем, aks, контейнер, aks, kubernetes
 ms.topic: tutorial
@@ -8,12 +8,12 @@ author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.date: 04/30/2019
-ms.openlocfilehash: 1467afce60038e086daace72947c1ab21569865a
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: 9b70a9c364768322a3eae6ef5b92c87b6839c540
+ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65231328"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72242090"
 ---
 # <a name="tutorial-configure-azure-kubernetes-service-aks-clusters-in-azure-using-ansible"></a>Руководство по настройке кластеров Службы Azure Kubernetes в Azure с помощью Ansible
 

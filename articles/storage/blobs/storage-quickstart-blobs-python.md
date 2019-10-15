@@ -7,12 +7,12 @@ ms.date: 09/11/2019
 ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
-ms.openlocfilehash: 4d371026b932a0870798a32b3102102836962b78
-ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
+ms.openlocfilehash: a6c0ae8c63739d37ad8417d1dff2d0f7181e6ae9
+ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71203923"
+ms.lasthandoff: 10/06/2019
+ms.locfileid: "71981225"
 ---
 # <a name="quickstart-upload-download-and-list-blobs-with-python"></a>Краткое руководство. Отправка, скачивание и составление списка больших двоичных объектов с помощью Python
 
@@ -183,7 +183,7 @@ for blob in generator:
 
 
 Чтобы скачать большие двоичные объекты на локальный диск, используйте метод `get_blob_to_path`.
-Следующий код скачивает BLOB-объект, который мы передали в предыдущем разделе. К имени BLOB-объекта система добавляет *_DOWNLOADED*, поэтому на локальном диске можно видеть оба файла."
+Следующий код скачивает BLOB-объект, который мы передали в предыдущем разделе. К имени BLOB-объекта система добавляет *_DOWNLOADED*, поэтому на локальном диске присутствуют оба файла.
 
 ```python
 # Download the blob(s).

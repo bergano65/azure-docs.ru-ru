@@ -1,26 +1,26 @@
 ---
-title: Что такое Microsoft Genomics? | Документация Майкрософт
-titleSuffix: Azure
-description: Сведения о том, как Microsoft Genomics помогает выполнять секвенирование генома с помощью облачной реализации таких средств, как Burrows-Wheeler Aligner (BWA) и Genome Analysis Toolkit (GATK) для дополнительного анализа. Он имеет сертификацию ISO и соответствует нормативам HIPAA.
+title: Что такое Microsoft Genomics?
+titleSuffix: Microsoft Genomics
+description: Из этой статьи вы узнаете, как Microsoft Genomics помогает выполнять секвенирование генома с помощью облачной реализации таких средств, как Burrows-Wheeler Aligner (BWA) и Genome Analysis Toolkit (GATK).
 services: genomics
 author: grhuynh
 manager: cgronlun
 ms.author: grhuynh
 ms.service: genomics
-ms.topic: article
+ms.topic: overview
 ms.date: 12/07/2017
-ms.openlocfilehash: 1b52f47d692cf2fb2925ebb2a9882b9c79c29a87
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: MT
+ms.openlocfilehash: 04ecab58db822aa80ca2abba1bebaa39598498bd
+ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60780903"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72244008"
 ---
 # <a name="what-is-microsoft-genomics"></a>Что такое Microsoft Genomics?
 Microsoft Genomics предлагает облачную реализацию таких средств, как Burrows-Wheeler Aligner (BWA) и Genome Analysis Toolkit (GATK) для дополнительного анализа. Служба имеет сертификаты ISO, соответствует нормативам HIPAA и обеспечивает прогнозирование затрат в соответствии с требованиями по секвенированию генома. В кратких руководствах, справочниках и документации представлены сведения об использовании службы Microsoft Genomics и интеграции с API.
 
 ## <a name="support-your-most-demanding-sequencing-needs"></a>Удовлетворение высоких требований к секвенированию
-Вместо управления собственными центрами обработки данных воспользуйтесь преимуществами масштабирования и опыта корпорации Майкрософт, позволяющими выполнять рабочие нагрузки с эксабайтами данных. Наши облачную реализацию BWA и GATK исследовательского центра broad с широкой института лучшие методики конвейера.
+Вместо управления собственными центрами обработки данных воспользуйтесь преимуществами масштабирования и опыта корпорации Майкрософт, позволяющими выполнять рабочие нагрузки с эксабайтами данных. Облачная реализация инструментов BWA и GATK тесно согласована с эксплуатационными рекомендациями исследовательского центра Broad Institute.
 
 
 ## <a name="keep-your-business-running"></a>Развитые бизнеса
@@ -28,10 +28,10 @@ Microsoft Genomics предлагает облачную реализацию т
 
 
 ## <a name="secure-your-data"></a>Защита данных
-Служба Microsoft Genomics сертифицирована по стандартам ISO 27001, ISO 27018 и ISO 9001 и соответствует нормативам HIPAA. Посетите [центр управления безопасностью Azure](https://www.microsoft.com/en-us/trustcenter/security), чтобы посмотреть сведения о безопасности платформы Azure.
+Служба Microsoft Genomics сертифицирована по стандартам ISO 27001, ISO 27018 и ISO 9001 и соответствует нормативам HIPAA. Посетите [центр управления безопасностью Azure](https://www.microsoft.com/trustcenter/security), чтобы посмотреть сведения о безопасности платформы Azure.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 Ознакомившись с основными сведениями о Microsoft Genomics, вы можете сделать следующее:
 - Ознакомьтесь со страницей цен для сравнения цен и доступа к калькуляторам. [Цены](https://azure.microsoft.com/pricing/details/genomics/)
 - Приступить к работе, запустив первый рабочий процесс с помощью службы Microsoft Genomics. [Запуск рабочего процесса в службе Microsoft Genomics](quickstart-run-genomics-workflow-portal.md)

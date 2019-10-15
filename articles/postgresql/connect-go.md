@@ -8,12 +8,12 @@ ms.custom: mvc
 ms.devlang: go
 ms.topic: quickstart
 ms.date: 5/6/2019
-ms.openlocfilehash: 9356379262cc078cd6a62f3280bcb8cc3d315844
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.openlocfilehash: 645d34961fb735542729091719dd55c42436db95
+ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65067344"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72244476"
 ---
 # <a name="azure-database-for-postgresql---single-server-use-go-language-to-connect-and-query-data"></a>База данных Azure для PostgreSQL — отдельный сервер: подключение и запрос данных с помощью Go
 В этом кратком руководстве описывается, как подключиться к базе данных Azure для PostgreSQL с помощью кода на языке [Go](https://golang.org/) (golang). Здесь также показано, как использовать инструкции SQL для запроса, вставки, обновления и удаления данных в базе данных. В этой статье предполагается, что у вас уже есть опыт разработки на Go, и вы только начали работу с базой данных Azure для PostgreSQL.
@@ -26,7 +26,7 @@ ms.locfileid: "65067344"
 ## <a name="install-go-and-pq-connector"></a>Установка Go и соединителя pq
 Установите язык [Go](https://golang.org/doc/install) и [драйвер Pure Go Postgres](https://github.com/lib/pq) на своем компьютере. В зависимости от используемой платформы выполните соответствующие действия.
 
-### <a name="windows"></a> Windows
+### <a name="windows"></a>Windows
 1. [Скачайте](https://golang.org/dl/) и установите Go для Microsoft Windows [согласно инструкциям по установке](https://golang.org/doc/install).
 2. Запустите командную строку из меню "Пуск".
 3. Создайте папку для проекта, например `mkdir  %USERPROFILE%\go\src\postgresqlgo`.
@@ -85,7 +85,7 @@ ms.locfileid: "65067344"
  ![Имя сервера службы "База данных Azure для PostgreSQL"](./media/connect-go/1-connection-string.png)
 
 ## <a name="build-and-run-go-code"></a>Сборка и выполнение кода Go 
-1. Для написания кода на Golang можно использовать обычный текстовый редактор, например Блокнот в Microsoft Windows, [vi](https://manpages.ubuntu.com/manpages/xenial/man1/nvi.1.html#contenttoc5) или [Nano](https://www.nano-editor.org/) в Ubuntu, а также TextEdit в macOS. Если вы предпочитаете использовать полнофункциональную интерактивную среду разработки (IDE), попробуйте [Gogland](https://www.jetbrains.com/go/) от JetBrains, [Visual Studio Code](https://code.visualstudio.com/) от Майкрософт или [Atom](https://atom.io/).
+1. Для написания кода на Golang можно использовать обычный текстовый редактор, например Блокнот в Microsoft Windows, [vi](https://manpages.ubuntu.com/manpages/xenial/man1/nvi.1.html#contenttoc5) или [Nano](https://www.nano-editor.org/) в Ubuntu, а также TextEdit в macOS. Если вы предпочитаете использовать полнофункциональную интегрированную среду разработки, попробуйте [GoLand](https://www.jetbrains.com/go/) от JetBrains, [Visual Studio Code](https://code.visualstudio.com/) от корпорации Майкрософт или [Atom](https://atom.io/).
 2. Вставьте код Golang из приведенных ниже разделов в текстовые файлы и сохраните их с расширением \*.go в папке проекта, например `%USERPROFILE%\go\src\postgresqlgo\createtable.go` в Windows или `~/go/src/postgresqlgo/createtable.go` в Linux.
 3. Найдите константы `HOST`, `DATABASE`, `USER` и `PASSWORD` в коде и замените приведенные для примера значения своими собственными.  
 4. Запустите командную строку или оболочку Bash. Перейдите в папку проекта. В Windows это будет команда `cd %USERPROFILE%\go\src\postgresqlgo\`, а в Linux — `cd ~/go/src/postgresqlgo/`. Некоторые из упомянутых сред IDE позволяют выполнять отладку и использовать среду выполнения без применения команд оболочки.
@@ -158,7 +158,7 @@ func main() {
 }
 ```
 
-## <a name="read-data"></a>Считывание данных
+## <a name="read-data"></a>Чтение данных
 Используйте указанный ниже код с инструкцией SQL **SELECT** для подключения и чтения данных. 
 
 Код импортирует три пакета: [пакет sql](https://golang.org/pkg/database/sql/), [пакет pq](https://godoc.org/github.com/lib/pq) как драйвер для обмена данными с сервером PostgreSQL и [пакет fmt](https://golang.org/pkg/fmt/) для вывода входных и выходных данных в командной строке.

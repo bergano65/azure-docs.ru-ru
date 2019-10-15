@@ -1,5 +1,5 @@
 ---
-title: Учебник по развертыванию приложений в масштабируемых наборах виртуальных машин в Azure с помощью Ansible | Документация Майкрософт
+title: Руководство по развертыванию приложений в масштабируемых наборах виртуальных машин в Azure c помощью Ansible
 description: Узнайте, как с помощью Ansible настроить масштабируемые наборы виртуальных машин Azure и развернуть приложение в масштабируемом наборе.
 keywords: ansible, azure, devops, bash, playbook, virtual machine, virtual machine scale set, vmss
 ms.topic: tutorial
@@ -8,12 +8,12 @@ author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.date: 04/30/2019
-ms.openlocfilehash: a44fd06ace9b21122f5f4253ac7d9601b54e6b62
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: f9035259d466a50b83fe0094d43bc0fe985e8c4e
+ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65231061"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72241752"
 ---
 # <a name="tutorial-deploy-apps-to-virtual-machine-scale-sets-in-azure-using-ansible"></a>Руководство по развертыванию приложений в масштабируемых наборах виртуальных машин в Azure c помощью Ansible
 
@@ -36,7 +36,7 @@ ms.locfileid: "65231061"
 [!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)] 
 [!INCLUDE [ansible-prereqs-vm-scale-set.md](../../includes/ansible-prereqs-vm-scale-set.md)]
 - **git** - [git](https://git-scm.com) используется для скачивания примеров Java, которые есть в этом руководстве.
-- **Пакет SDK для Java SE (JDK)**. [JDK](https://aka.ms/azure-jdks) используется для сборки примера проекта Java.
+- **Пакет SDK для Java SE (JDK)** . [JDK](https://aka.ms/azure-jdks) используется для сборки примера проекта Java.
 - **Apache Maven** - [Apache Maven](https://maven.apache.org/download.cgi) используется для сборки примера проекта Java.
 
 ## <a name="get-host-information"></a>Получение сведений об узле
@@ -126,7 +126,7 @@ ms.locfileid: "65231061"
 Существуют два способа получить пример сборника схем.
 
 * [Скачайте сборник схем](https://github.com/Azure-Samples/ansible-playbooks/blob/master/vmss/vmss-setup-deploy.yml) и сохраните его в `vmss-setup-deploy.yml`.
-* Создайте файл с именем `vmss-setup-deploy.yml` и скопируйте в него приведенное ниже содержимое.
+* Создайте файл с именем `vmss-setup-deploy.yml` и скопируйте в него следующее содержимое.
 
 ```yml
 - hosts: localhost
@@ -241,4 +241,4 @@ ms.locfileid: "65231061"
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Руководство по автомасштабированию масштабируемых наборов виртуальных машин в Azure с помощью Ansible](./ansible-auto-scale-vmss.md)
+> [Руководство. автомасштабированию масштабируемых наборов виртуальных машин в Azure с помощью Ansible](./ansible-auto-scale-vmss.md)

@@ -10,12 +10,12 @@ ms.subservice: ink-recognizer
 ms.topic: quickstart
 ms.date: 09/23/2019
 ms.author: aahi
-ms.openlocfilehash: 5e3b97faaed84f2c07ea70ddb73bd8e8c9efa71d
-ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
+ms.openlocfilehash: 19626bd68ad82108b2ebaa823d196d0f22008e29
+ms.sourcegitcommit: 9f330c3393a283faedaf9aa75b9fcfc06118b124
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71212648"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "71996914"
 ---
 # <a name="quickstart-recognize-digital-ink-with-the-ink-recognizer-rest-api-and-javascript"></a>Краткое руководство. Распознавание рукописного ввода с помощью REST API Распознавателя рукописного текста и JavaScript
 
@@ -34,8 +34,9 @@ ms.locfileid: "71212648"
 - веб-браузера;
 - Пример данных рукописного фрагмента для этого краткого руководства можно найти на портале [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/javascript/InkRecognition/quickstart/example-ink-strokes.json).
 
+### <a name="create-an-ink-recognizer-resource"></a>Создание ресурса Распознавателя рукописного текста
 
-[!INCLUDE [cognitive-services-ink-recognizer-signup-requirements](../../../../includes/cognitive-services-ink-recognizer-signup-requirements.md)]
+[!INCLUDE [creating an ink recognizer resource](../includes/setup-instructions.md)]
 
 ## <a name="create-a-new-application"></a>Создание приложения
 
@@ -110,10 +111,9 @@ ms.locfileid: "71212648"
         ```javascript
         // Replace the below URL with the correct one for your subscription. 
         // Your endpoint can be found in the Azure portal. For example: "https://<your-custom-subdomain>.cognitiveservices.azure.com";
-        var SERVER_ADDRESS = "YOUR-SUBSCRIPTION-URL";
+        var SERVER_ADDRESS = process.env["INK_RECOGNITION_ENDPOINT"];
         var ENDPOINT_URL = SERVER_ADDRESS + "/inkrecognizer/v1.0-preview/recognize";
-        // Replace the subscriptionKey string value with your valid subscription key.
-        var SUBSCRIPTION_KEY = "YOUR-SUBSCRIPTION-KEY";
+        var SUBSCRIPTION_KEY = process.env["INK_RECOGNITION_SUBSCRIPTION_KEY"];
         var xhttp = new XMLHttpRequest();
         ```
     2. Создайте функцию возврата для объекта `XMLHttpRequest`. Эта функция будет анализировать ответ API из успешного запроса и отображать его в приложении. 

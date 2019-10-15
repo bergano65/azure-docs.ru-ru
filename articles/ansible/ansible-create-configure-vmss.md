@@ -1,5 +1,5 @@
 ---
-title: Учебник по настройке масштабируемых наборов виртуальных машин в Azure с помощью Ansible | Документация Майкрософт
+title: Руководство по настройке масштабируемых наборов виртуальных машин в Azure с помощью Ansible
 description: Узнайте, как с помощью Ansible для создавать и настраивать масштабируемые наборы виртуальных машин в Azure.
 keywords: ansible, azure, devops, bash, playbook, virtual machine, virtual machine scale set, vmss
 ms.topic: tutorial
@@ -8,12 +8,12 @@ author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.date: 04/30/2019
-ms.openlocfilehash: 41ef6103a899970142df1a6beee0ad428419f3df
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: 1d9b8cd207596aefa01af852627f11cb9b4ce5dc
+ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65230745"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72241730"
 ---
 # <a name="tutorial-configure-virtual-machine-scale-sets-in-azure-using-ansible"></a>Руководство по настройке масштабируемых наборов виртуальных машин в Azure с помощью Ansible
 
@@ -316,4 +316,4 @@ localhost                  : ok=5    changed=1    unreachable=0    failed=0
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"] 
-> [Руководство по развертыванию приложений в масштабируемых наборах виртуальных машин в Azure c помощью Ansible](./ansible-deploy-app-vmss.md)
+> [Руководство. развертыванию приложений в масштабируемых наборах виртуальных машин в Azure c помощью Ansible](./ansible-deploy-app-vmss.md)
