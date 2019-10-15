@@ -1,17 +1,17 @@
 ---
-title: Создание политик для свойств массива в ресурсах Azure
+title: Создание политик для свойств массива в ресурсах
 description: Научитесь создавать параметры массива, создавать правила для выражений языка массива, оценивать псевдоним [*] и добавлять элементы в существующий массив с помощью правил определения политики Azure.
 author: DCtheGeek
 ms.author: dacoulte
 ms.date: 03/06/2019
 ms.topic: conceptual
 ms.service: azure-policy
-ms.openlocfilehash: e5b90eb975d0d495723a70095b447d37e051fc0b
-ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
-ms.translationtype: HT
+ms.openlocfilehash: 33607d790f564075623d6f61d1b7b8b70a119f98
+ms.sourcegitcommit: 1c2659ab26619658799442a6e7604f3c66307a89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71978034"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72255807"
 ---
 # <a name="author-policies-for-array-properties-on-azure-resources"></a>Создание политик для свойств массива в ресурсах Azure
 
