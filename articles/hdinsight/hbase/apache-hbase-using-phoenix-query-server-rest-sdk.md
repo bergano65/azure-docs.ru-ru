@@ -8,16 +8,16 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 12/04/2017
-ms.openlocfilehash: 1f468cac29579d8748f61a47b548a67d36ff8279
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c9e9258fb7ace93d0866463563d328456cbd1daa
+ms.sourcegitcommit: 9dec0358e5da3ceb0d0e9e234615456c850550f6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64695953"
+ms.lasthandoff: 10/14/2019
+ms.locfileid: "72311682"
 ---
 # <a name="apache-phoenix-query-server-rest-sdk"></a>Пакет REST SDK для Apache Phoenix Query Server
 
-[Apache Phoenix](https://phoenix.apache.org/) представляет собой реляционную базу данных на основе [Apache HBase](apache-hbase-overview.md) с открытым кодом и высоким уровнем параллелизма. Phoenix позволяет выполнять SQL-подобные запросы к HBase с помощью средств SSH, например [SQLLine](apache-hbase-phoenix-squirrel-linux.md). Также Phoenix предоставляет HTTP-сервер, именуемый Phoenix Query Server (PQS), — тонкий клиент, который поддерживает два механизма транспортировки для связи с клиентами: JSON и буферы протокола. Буферы протокола — механизм по умолчанию, предоставляющий более эффективную связь, чем JSON.
+[Apache Phoenix](https://phoenix.apache.org/) представляет собой реляционную базу данных на основе [Apache HBase](apache-hbase-overview.md) с открытым кодом и высоким уровнем параллелизма. Phoenix позволяет выполнять SQL-подобные запросы к HBase с помощью средств SSH, например [SQLLine](apache-hbase-query-with-phoenix.md). Также Phoenix предоставляет HTTP-сервер, именуемый Phoenix Query Server (PQS), — тонкий клиент, который поддерживает два механизма транспортировки для связи с клиентами: JSON и буферы протокола. Буферы протокола — механизм по умолчанию, предоставляющий более эффективную связь, чем JSON.
 
 В этой статье описывается использование пакета PQS REST SDK для создания таблиц, построчного и массового выполнения операции upsert, а также выбора данных с помощью инструкций SQL. В примерах используется [драйвер Microsoft .NET для Apache Phoenix Query Server](https://www.nuget.org/packages/Microsoft.Phoenix.Client). Этот пакет SDK основан на API-интерфейсах [Apache Calcite Avatica](https://calcite.apache.org/avatica/), где монопольно используются буферы протокола для формата сериализации.
 
@@ -87,7 +87,7 @@ await client.ConnectionSyncRequestAsync(connId, connProperties, options);
 | 0 | Транзакции не поддерживаются. |
 | 1 | Могут возникать операции чтения "грязных" данных, а также неповторяемые и фантомные операции чтения. |
 | 2 | Операции чтения "грязных" данных предотвращаются, но могут возникать неповторяемые и фантомные операции чтения. |
-| 4\. | Операции чтения "грязных" данных и неповторяемые операции чтения предотвращаются, но могут возникать фантомные операции чтения. |
+| 4 | Операции чтения "грязных" данных и неповторяемые операции чтения предотвращаются, но могут возникать фантомные операции чтения. |
 | 8 | Все операции чтения "грязных" данных, неповторяемые и фантомные операции чтения предотвращаются. |
 
 ## <a name="create-a-new-table"></a>Создание таблицы
@@ -537,7 +537,7 @@ MH: 6
 FM: 5
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия 
+## <a name="next-steps"></a>Следующие шаги 
 
 * [Apache Phoenix в HDInsight](../hdinsight-phoenix-in-hdinsight.md)
 * [Использование пакета REST SDK для Apache HBase](apache-hbase-rest-sdk.md)

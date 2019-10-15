@@ -9,15 +9,15 @@ ms.service: application-insights
 ms.workload: TBD
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 04/25/2017
+ms.date: 10/14/2019
 ms.reviewer: sergkanz
 ms.author: mbullwin
-ms.openlocfilehash: 749b4077b457eff836ec515f21d97e892e663156
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 50109d7ba4688606a5a4f1b813d15d78636b7817
+ms.sourcegitcommit: 9dec0358e5da3ceb0d0e9e234615456c850550f6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60899196"
+ms.lasthandoff: 10/14/2019
+ms.locfileid: "72311777"
 ---
 # <a name="application-insights-telemetry-data-model"></a>Модель данных телеметрии Application Insights
 
@@ -49,9 +49,9 @@ Application Insights предоставляет три дополнительн�
 
 Модель данных Application Insights представляет собой простой и эффективный способ моделирования телеметрии вашего приложения. Мы стремимся сохранить простоту модели, чтобы поддержать ключевые сценарии и обеспечить возможность расширения схемы для углубленного использования.
 
-Чтобы сообщить о проблемах или предложениях, связанных с моделью данных или схемой, используйте репозиторий [ApplicationInsights-Home](https://github.com/Microsoft/ApplicationInsights-Home/labels/schema) GitHub.
+Чтобы сообщить о проблемах или предложениях, связанных с моделью данных или схемой, используйте репозиторий [ApplicationInsights-Home](https://github.com/Microsoft/ApplicationInsights-Home/issues) GitHub.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [API Application Insights для пользовательских событий и метрик](../../azure-monitor/app/api-custom-events-metrics.md)
 - Вы можете узнать, как [расширять и фильтровать данные телеметрии](../../azure-monitor/app/api-filtering-sampling.md).

@@ -8,12 +8,12 @@ ms.author: normesta
 ms.reviewer: dineshm
 ms.date: 05/29/2019
 ms.subservice: blobs
-ms.openlocfilehash: 85f7ea11638278a010b2a94d9c6472857f51b687
-ms.sourcegitcommit: d4c9821b31f5a12ab4cc60036fde00e7d8dc4421
+ms.openlocfilehash: 8de36ea9f7bb77443b22e038172ee69bb8435b29
+ms.sourcegitcommit: 9dec0358e5da3ceb0d0e9e234615456c850550f6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71710174"
+ms.lasthandoff: 10/14/2019
+ms.locfileid: "72311221"
 ---
 # <a name="static-website-hosting-in-azure-storage"></a>Размещение статических веб-сайтов в службе хранилища Azure
 
@@ -50,7 +50,7 @@ ms.locfileid: "71710174"
 
 Пользователи могут просматривать содержимое сайта в браузере с помощью общедоступного URL-адреса веб – сайта. URL-адрес можно найти с помощью портал Azure, Azure CLI или PowerShell. Используйте эту таблицу в качестве справочника.
 
-|Tool| Руководство |
+|Средство| Руководство |
 |----|----|
 |**портал Azure** | [Поиск URL-адреса веб-сайта с помощью портал Azure](storage-blob-static-website-how-to.md#portal-find-url) |
 |**Интерфейс командной строки Azure** | [Поиск URL-адреса веб-сайта с помощью Azure CLI](storage-blob-static-website-how-to.md#cli-find-url) |
@@ -58,7 +58,7 @@ ms.locfileid: "71710174"
 
 URL-адрес сайта содержит региональный код. Например, URL-адрес `https://contosoblobaccount.z22.web.core.windows.net/` содержит региональный код `z22`.
 
-Хотя этот код должен оставаться URL-адресом, он предназначен только для внутреннего использования, и вам не придется использовать этот код другим способом.
+Хотя этот код должен оставаться в URL-адресе, он предназначен только для внутреннего использования, и вам не придется использовать этот код другим способом.
 
 Документ индекса, указанный при включении размещения статических веб-сайтов, отображается, когда пользователи открывают сайт и не указывают конкретный файл (например, `https://contosoblobaccount.z22.web.core.windows.net`).  
 
