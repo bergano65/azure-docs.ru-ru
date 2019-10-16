@@ -1,5 +1,5 @@
 ---
-title: Средства разработки
+title: Инструменты разработки
 titleSuffix: Azure Data Science Virtual Machine
 description: Сведения о средствах и интегрированных средах разработки, доступных на виртуальной машине для обработки и анализа данных.
 keywords: средства анализа и обработки данных, виртуальная машина для анализа и обработки данных, средства для анализа и обработки данных, анализ и обработка данных Linux
@@ -10,18 +10,18 @@ author: gvashishtha
 ms.author: gopalv
 ms.topic: conceptual
 ms.date: 10/3/2019
-ms.openlocfilehash: 62eb5f72d4b4395602b2665c0d1b3da4f6bb459b
-ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
+ms.openlocfilehash: 76a550e95de24bf65b9b6097dd332e535da5b1c4
+ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71950201"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72330714"
 ---
 # <a name="development-tools-on-the-azure-data-science-virtual-machine"></a>Средства разработки на виртуальной машине Azure для обработки и анализа данных
 
 Виртуальная машина для обработки и анализа данных (DSVM) объединяет несколько популярных средств в высокопроизводительную интегрированную среду разработки (IDE). Ниже приведены некоторые средства, предоставляемые на виртуальной машине для обработки и анализа данных.
 
-## <a name="visual-studio-2017"></a>Visual Studio 2017
+## <a name="visual-studio-community-2017"></a>Visual Studio Community 2017
 
 |    |           |
 | ------------- | ------------- |
@@ -29,10 +29,13 @@ ms.locfileid: "71950201"
 | Поддерживаемые версии DSVM      | Windows      |
 | Распространенные способы применения      | Разработка программного обеспечения    |
 | Как она настраивается и устанавливается на DSVM?      | Рабочая нагрузка обработки и анализа данных (средства Python и R), рабочая нагрузка Azure (Hadoop, Data Lake), средства Node.js и SQL Server, [Машинное обучение Azure для Visual Studio Code](https://github.com/Microsoft/vs-tools-for-ai)    |
-| Использование и запуск      | Ярлык рабочего стола (`C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe`)    |
+| Использование и запуск      | Ярлык рабочего стола (`C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe`). Графически откройте Visual Studio с помощью значка рабочего стола или меню " **Пуск** ". Откройте окно поиска программ (кнопки Windows + S) и введите **Visual Studio**. Здесь можно создавать проекты на разных языках, например C#, Python, R и Node.js.   |
 | Связанные средства на DSVM      |     Visual Studio Code, RStudio, Juno  |
 
-## <a name="visual-studio-code"></a>Visual Studio Code 
+> [!NOTE]
+> Может появиться сообщение о том, что период ознакомления завершился. Введите учетные данные для учетной записи Майкрософт. Вы можете создать новую бесплатную учетную запись, чтобы получить доступ к Visual Studio Community.
+
+## <a name="visual-studio-code"></a>Код Visual Studio 
 
 |    |           |
 | ------------- | ------------- |

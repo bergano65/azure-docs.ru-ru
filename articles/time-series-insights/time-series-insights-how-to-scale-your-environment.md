@@ -10,18 +10,18 @@ ms.reviewer: v-mamcge, jasonh, kfile
 ms.devlang: csharp
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 08/27/2019
+ms.date: 10/10/2019
 ms.custom: seodec18
-ms.openlocfilehash: 13fa2b892013cf4a3fb96220c901030c6b0aee0b
-ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+ms.openlocfilehash: a899de22137decc1eb1578369a2751710c17abda
+ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70129116"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72332890"
 ---
 # <a name="how-to-scale-your-time-series-insights-environment"></a>Как масштабировать среду Azure Time Series Insights
 
-В этой статье описывается, как изменять емкость среды Time Series Insights с помощью портала Azure. Емкость — множитель, применяемый к скорости входящих данных, емкости хранилища и затратам, связанным с выбранным номером SKU.
+В этой статье описывается, как изменить емкость среды "аналитика временных рядов" с помощью [портал Azure](https://portal.azure.com). Емкость — множитель, применяемый к скорости входящих данных, емкости хранилища и затратам, связанным с выбранным номером SKU.
 
 Портал Azure можно использовать для увеличения или уменьшения емкости в пределах ценовой категории SKU.
 
@@ -49,16 +49,22 @@ ms.locfileid: "70129116"
 
 1. В меню среды службы "Аналитика временных рядов" выберите **Настроить**.
 
-   [![Настройка. png](media/scale-your-environment/configure.png)](media/scale-your-environment/configure.png#lightbox)
+   [@no__t -1configure. png](media/scale-your-environment/configure.png)](media/scale-your-environment/configure.png#lightbox)
 
 1. Настройте ползунок **емкости** соответственно требованиям скорости приема и емкости хранилища. Обратите внимание, что **скорость приема**, **емкость хранилища** и **оценочная стоимость** обновляются динамически, чтобы показать эффект изменения.
 
-   [![Группу](media/scale-your-environment/slider.png)](media/scale-your-environment/slider.png#lightbox)
+   [@no__t 1Slider](media/scale-your-environment/slider.png)](media/scale-your-environment/slider.png#lightbox)
 
    Кроме того, можно ввести число множителя емкости в текстовом поле справа от ползунка.
 
 1. Выберите **Сохранить**, чтобы масштабировать среду. Индикатор хода выполнения будет отображаться, пока изменения не зафиксируются.
 
-## <a name="next-steps"></a>Следующие шаги
+1. Убедитесь, что Новая емкость [достаточна для предотвращения регулирования](time-series-insights-diagnose-and-solve-problems.md).
 
-- Убедитесь, что Новая емкость [достаточна для предотвращения регулирования](time-series-insights-diagnose-and-solve-problems.md).
+## <a name="next-steps"></a>Дальнейшие действия
+
+- Дополнительные сведения см. в статье, посвященной [обзору периода удержания данных в службе "Аналитика временных рядов"](time-series-insights-concepts-retention.md).
+
+- Узнайте, как [настроить хранение данных в службе "аналитика временных рядов Azure](time-series-insights-how-to-configure-retention.md)".
+
+- Узнайте о [планировании среды](time-series-insights-environment-planning.md).

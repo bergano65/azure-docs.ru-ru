@@ -9,13 +9,13 @@ ms.subservice: data-science-vm
 author: gvashishtha
 ms.author: gopalv
 ms.topic: conceptual
-ms.date: 10/3/2019
-ms.openlocfilehash: 47a701cce348e86359947376b3d6a9915dfb2264
-ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
+ms.date: 10/11/2019
+ms.openlocfilehash: 72a881a2ab508caa2274f3b9299157921cb8ceff
+ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71950157"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72330679"
 ---
 # <a name="data-science-virtual-machine-data-ingestion-tools"></a>Средства приема данных виртуальных машин для обработки и анализа данных
 
@@ -34,7 +34,7 @@ ms.locfileid: "71950157"
 | Ссылки на примеры      | [С помощью AdlCopy](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-copy-data-azure-storage-blob)      |
 | Связанные средства на DSVM      | AzCopy, Azure CLI     |
 
-## <a name="azure-cli"></a>Azure CLI
+## <a name="azure-cli"></a>Azure CLI
 
 |    |           |
 | ------------- | ------------- |
@@ -62,12 +62,22 @@ ms.locfileid: "71950157"
 
 |    |           |
 | ------------- | ------------- |
-| Что это такое?   | Средство для импорта данных из различных источников в Azure Cosmos DB. К этим источникам относятся JSON-файлы, CSV-файлы, SQL, MongoDB, хранилище таблиц Azure, Amazon DynamoDB и Azure Cosmos DB коллекции API SQL.      |
+| Что это такое?   | Средство для импорта данных из различных источников в Azure Cosmos DB, базу данных NoSQL в облаке. К этим источникам относятся JSON-файлы, CSV-файлы, SQL, MongoDB, хранилище таблиц Azure, Amazon DynamoDB и Azure Cosmos DB коллекции API SQL.      |
 | Поддерживаемые версии DSVM      | Windows      |
 | Распространенные способы применения      | Импорт файлов из виртуальной машины в CosmosDB, импорт данных из хранилища таблиц Azure в CosmosDB и импорт данных из базы данных Microsoft SQL Server в CosmosDB.     |
 |  Запуск и использование    |   Чтобы использовать версию из командной строки, откройте командную строку и введите `dt`. Чтобы использовать средство графического интерфейса пользователя, откройте командную строку и введите `dtui`.    |
 | Ссылки на примеры      | [Импорт данных CosmosDB](https://docs.microsoft.com/azure/cosmos-db/import-data)      |
 | Связанные средства на DSVM      | AzCopy, AdlCopy      |
+
+## <a name="azure-storage-explorer"></a>Обозреватель хранилища Azure
+
+|    |           |
+| ------------- | ------------- |
+| Что это такое?   | Графический пользовательский интерфейс для взаимодействия с файлами, хранящимися в облаке Azure. |
+| Поддерживаемые версии DSVM      | Windows      |
+| Распространенные способы применения      | Импорт и экспорт данных из DSVM.    |
+|  Запуск и использование    | Выполните поиск строки "Обозреватель службы хранилища Azure" в меню "Пуск". |
+| Ссылки на примеры      | [Azure Storage Explorer;](vm-do-ten-things.md#access-azure-data-and-analytics-services)      |
 
 
 ## <a name="bcp"></a>bcp
@@ -90,4 +100,4 @@ ms.locfileid: "71950157"
 | Распространенные способы применения      | Чтение и запись больших двоичных объектов в контейнере.      |
 |  Как использовать и запускать его?    |   В окне терминала запустите _blobfuse_.    |
 | Ссылки на примеры      | [blobfuse в GitHub](https://github.com/Azure/azure-storage-fuse)      |
-| Связанные средства на DSVM      | Azure CLI      |
+| Связанные средства на DSVM      | Azure CLI      |

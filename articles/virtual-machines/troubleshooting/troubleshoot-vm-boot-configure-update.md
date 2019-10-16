@@ -13,22 +13,22 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 09/18/2018
 ms.author: delhan
-ms.openlocfilehash: d0a946ede154561aaa49d335b7b91fdae72c51d3
-ms.sourcegitcommit: 116bc6a75e501b7bba85e750b336f2af4ad29f5a
+ms.openlocfilehash: 4263afe33caa4d6471848c8e7dbf9bc1eeec4bee
+ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71155556"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72332522"
 ---
 # <a name="vm-startup-is-stuck-on-getting-windows-ready-dont-turn-off-your-computer-in-azure"></a>При запуске виртуальная машина зависла на сообщении "Подготовка Windows. Не выключайте компьютер" в Azure
 
-Эта статья помогает решить проблему, когда виртуальная машина зависает на этапе "Подготовка Windows. Не выключайте компьютер" во время запуска.
+В этой статье описываются экраны "подготовка" и "Подготовка Windows", которые могут возникнуть при загрузке виртуальной машины Windows в Microsoft Azure. Представляем шаги, которые помогут вам при сборе данных для запроса в службу поддержки.
 
 [!INCLUDE [updated-for-az.md](../../../includes/updated-for-az.md)]
 
-## <a name="symptoms"></a>Проблемы
+## <a name="symptoms"></a>Симптомы
 
-При использовании **диагностики загрузки** для получения снимка экрана виртуальной машины операционная система не полностью запускается. В виртуальной машине отображается сообщение "Подготовка Windows. Не выключайте компьютер".
+Виртуальная машина Windows не загружается. При использовании **диагностики загрузки** для получения снимка экрана виртуальной машины вы можете увидеть, что виртуальная машина отобразит сообщение "подготовка" или "Подготовка Windows".
 
 ![Пример сообщения для Windows Server 2012 R2](./media/troubleshoot-vm-configure-update-boot/message1.png)
 
@@ -38,178 +38,71 @@ ms.locfileid: "71155556"
 
 Обычно эта проблема возникает, когда сервер выполняет окончательную перезагрузку после изменения конфигурации. Изменение конфигурации может быть инициализировано обновлениями Windows либо изменением ролей или функций сервера. Если размер обновления, устанавливаемого в Центре обновления Windows, большой, операционной системе потребуется больше времени, чтобы перенастроить изменения.
 
-## <a name="back-up-the-os-disk"></a>Создание резервной копии диска ОС
-
-Прежде чем попытаться устранить проблему, создайте резервную копию диска ОС.
-
-### <a name="for-vms-with-an-encrypted-disk-you-must-unlock-the-disks-first"></a>На виртуальных машинах с зашифрованными дисками сначала необходимо разблокировать диски
-
-Чтобы определить, является ли виртуальная машина зашифрованной, сделайте следующее.
-
-1. Откройте свою виртуальную машину на портале Azure и перейдите к дискам.
-
-2. Просмотрите столбец **Шифрование**, чтобы увидеть, включено ли шифрование.
-
-Если диск ОС зашифрован, разблокируйте зашифрованный диск. Чтобы разблокировать диск, сделайте следующее.
-
-1. Создайте виртуальную машину восстановления, которая размещена в той же группе ресурсов, учетной записи хранения и расположении, что и затронутая виртуальная машина.
-
-2. На портале Azure удалите затронутую виртуальную машину и сохраните диск.
-
-3. Откройте сеанс PowerShell от имени администратора.
-
-4. Выполните следующий командлет, чтобы получить имя секрета.
-
-    ```Powershell
-    Login-AzAccount
- 
-    $vmName = “VirtualMachineName”
-    $vault = “AzureKeyVaultName”
- 
-    # Get the Secret for the C drive from Azure Key Vault
-    Get-AzureKeyVaultSecret -VaultName $vault | where {($_.Tags.MachineName -eq $vmName) -and ($_.Tags.VolumeLetter -eq “C:\”) -and ($_.ContentType -eq ‘BEK‘)}
-
-    # OR Use the below command to get BEK keys for all the Volumes
-    Get-AzureKeyVaultSecret -VaultName $vault | where {($_.Tags.MachineName -eq   $vmName) -and ($_.ContentType -eq ‘BEK’)}
-    ```
-
-5. Получив имя секрета, выполните следующие команды в PowerShell.
-
-    ```Powershell
-    $secretName = 'SecretName'
-    $keyVaultSecret = Get-AzureKeyVaultSecret -VaultName $vault -Name $secretname
-    $bekSecretBase64 = $keyVaultSecret.SecretValueText
-    ```
-
-6. Преобразуйте значение в кодировке Base64 в байты и запишите выходные данные в файл. 
-
-    > [!Note]
-    > Если вы используете вариант разблокирования по USB, имя файла BEK должно соответствовать исходному глобальному уникальному идентификатору BEK. Создайте на диске C папку с именем "BEK", прежде чем выполнять следующие действия.
-    
-    ```Powershell
-    New-Item -ItemType directory -Path C:\BEK
-    $bekFileBytes = [Convert]::FromBase64String($bekSecretbase64)
-    $path = “c:\BEK\$secretName.BEK”
-    [System.IO.File]::WriteAllBytes($path,$bekFileBytes)
-    ```
-
-7. После создания файла BEK на компьютере скопируйте этот файл на виртуальную машину восстановления, к которой подключен заблокированный диск ОС. Выполните следующие команды, используя расположение файла BEK.
-
-    ```Powershell
-    manage-bde -status F:
-    manage-bde -unlock F: -rk C:\BEKFILENAME.BEK
-    ```
-    **Необязательно.** В некоторых сценариях может потребоваться расшифровать диск с помощью следующей команды.
-   
-    ```Powershell
-    manage-bde -off F:
-    ```
-
-    > [!Note]
-    > В предыдущей команде предполагается, что диску для шифрования присвоена буква F.
-
-8. Если требуется собрать журналы, перейдите по пути **буква диска:\Windows\System32\winevt\Logs**.
-
-9. Отсоедините диск от компьютера восстановления.
-
-### <a name="create-a-snapshot"></a>Создание моментального снимка
-
-Чтобы создать моментальный снимок, выполните действия, описанные в статье [Создание моментального снимка](../windows/snapshot-copy-managed-disk.md).
-
 ## <a name="collect-an-os-memory-dump"></a>Сбор файла дампа памяти операционной системы
 
-Следуйте инструкциям в разделе [Сбор файла дампа памяти](troubleshoot-common-blue-screen-error.md#collect-memory-dump-file), чтобы собрать файл дампа операционной системы, когда виртуальная машина зависает на этапе настройки.
+Если проблему не удается устранить после ожидания обработки изменений, необходимо будет получить файл дампа памяти и обратиться в службу поддержки. Чтобы собрать файл дампа, выполните следующие действия.
 
-## <a name="contact-microsoft-support"></a>Обратитесь в службу поддержки Майкрософт
+### <a name="attach-the-os-disk-to-a-recovery-vm"></a>Подключите диск ОС к виртуальной машине восстановления.
+
+1. Сделайте снимок диска ОС затронутой виртуальной машины в качестве резервной копии. Дополнительные сведения см. в статье [Создание моментального снимка](../windows/snapshot-copy-managed-disk.md).
+2. [Устранение неполадок с виртуальной машиной Windows при подключении диска операционной системы к виртуальной машине восстановления с помощью портала Azure](../windows/troubleshoot-recovery-disks-portal.md).
+3. Подключитесь по протоколу удаленного рабочего стола к виртуальной машине восстановления. 
+4. Если диск ОС зашифрован, необходимо отключить шифрование перед переходом к следующему шагу. Дополнительные сведения см. в разделе [расшифровка зашифрованного диска ОС в виртуальной машине, которая не может быть загружена](troubleshoot-bitlocker-boot-error.md#solution).
+
+### <a name="locate-dump-file-and-submit-a-support-ticket"></a>Найдите файл дампа и отправьте запрос в службу поддержки
+
+1. На виртуальной машине восстановления в подключенном диске ОС перейдите в папку Windows. Если подключенному диску ОС присвоена буква F, то необходимо перейти в F:\Windows.
+2. Найдите файл Memory. dmp и отправьте запрос в [службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) с файлом дампа. 
+
+Если не удается найти файл дампа, перейдите на следующий шаг для включения журнала дампа и последовательной консоли.
+
+### <a name="enable-dump-log-and-serial-console"></a>Включение журнала дампа и последовательной консоли
+
+Чтобы включить журнал дампа и последовательную консоль, выполните следующий сценарий.
+
+1. Откройте сеанс командной строки с повышенными привилегиями (выполнив запуск от имени администратора).
+2. Выполните следующий скрипт:
+
+    В этом сценарии мы предполагаем, что подключенному диску ОС присвоена буква F. Замените ее соответствующим значением на своей виртуальной машине.
+
+    ```powershell
+    reg load HKLM\BROKENSYSTEM F:\windows\system32\config\SYSTEM.hiv
+
+    REM Enable Serial Console
+    bcdedit /store F:\boot\bcd /set {bootmgr} displaybootmenu yes
+    bcdedit /store F:\boot\bcd /set {bootmgr} timeout 5
+    bcdedit /store F:\boot\bcd /set {bootmgr} bootems yes
+    bcdedit /store F:\boot\bcd /ems {<BOOT LOADER IDENTIFIER>} ON
+    bcdedit /store F:\boot\bcd /emssettings EMSPORT:1 EMSBAUDRATE:115200
+
+    REM Suggested configuration to enable OS Dump
+    REG ADD "HKLM\BROKENSYSTEM\ControlSet001\Control\CrashControl" /v CrashDumpEnabled /t REG_DWORD /d 1 /f
+    REG ADD "HKLM\BROKENSYSTEM\ControlSet001\Control\CrashControl" /v DumpFile /t REG_EXPAND_SZ /d "%SystemRoot%\MEMORY.DMP" /f
+    REG ADD "HKLM\BROKENSYSTEM\ControlSet001\Control\CrashControl" /v NMICrashDump /t REG_DWORD /d 1 /f
+
+    REG ADD "HKLM\BROKENSYSTEM\ControlSet002\Control\CrashControl" /v CrashDumpEnabled /t REG_DWORD /d 1 /f
+    REG ADD "HKLM\BROKENSYSTEM\ControlSet002\Control\CrashControl" /v DumpFile /t REG_EXPAND_SZ /d "%SystemRoot%\MEMORY.DMP" /f
+    REG ADD "HKLM\BROKENSYSTEM\ControlSet002\Control\CrashControl" /v NMICrashDump /t REG_DWORD /d 1 /f
+
+    reg unload HKLM\BROKENSYSTEM
+    ```
+
+    1. Убедитесь, что на диске достаточно места для выделения объема памяти, соответствующего объему ОЗУ, который зависит от выбираемого вами размера для виртуальной машины.
+    2. Если места недостаточно или используется виртуальная машина большого размера (серии G, GS или E), то можно затем изменить расположение создания этого файла и указать любой другой диск данных, который присоединен к виртуальной машине. Для этого необходимо изменить следующий раздел.
+
+            reg load HKLM\BROKENSYSTEM F:\windows\system32\config\SYSTEM.hiv
+
+            REG ADD "HKLM\BROKENSYSTEM\ControlSet001\Control\CrashControl" /v DumpFile /t REG_EXPAND_SZ /d "<DRIVE LETTER OF YOUR DATA DISK>:\MEMORY.DMP" /f
+            REG ADD "HKLM\BROKENSYSTEM\ControlSet002\Control\CrashControl" /v DumpFile /t REG_EXPAND_SZ /d "<DRIVE LETTER OF YOUR DATA DISK>:\MEMORY.DMP" /f
+
+            reg unload HKLM\BROKENSYSTEM
+
+3. [Отсоедините диск ОС и снова подключите его к необходимой виртуальной машине](../windows/troubleshoot-recovery-disks-portal.md).
+4. Запустите виртуальную машину и получите доступ к последовательной консоли.
+5. Выберите параметр **Отправить немаскируемое прерывание (NMI)** , чтобы активировать дамп памяти.
+    @no__t образом 0the, куда отправить немаскируемое прерывание @ no__t-1
+6. Снова подключите диск операционной системы к виртуальной машине восстановления и собирайте файл дампа.
+
+## <a name="contact-microsoft-support"></a>Обратиться в службу поддержки Майкрософт
 
 После сбора файла дампа обратитесь в [службу поддержки Майкрософт](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), чтобы проанализировать первопричину.
-
-
-## <a name="rebuild-the-vm-by-using-powershell"></a>Повторное создание виртуальной машины с помощью PowerShell
-
-После сбора файла дампа памяти выполните следующие шаги для повторного создания виртуальной машины.
-
-**Для неуправляемых дисков**
-
-```powershell
-# To log in to Azure Resource Manager
-Login-AzAccount
-
-# To view all subscriptions for your account
-Get-AzSubscription
-
-# To select a default subscription for your current session
-Get-AzSubscription –SubscriptionID “SubscriptionID” | Select-AzSubscription
-
-$rgname = "RGname"
-$loc = "Location"
-$vmsize = "VmSize"
-$vmname = "VmName"
-$vm = New-AzVMConfig -VMName $vmname -VMSize $vmsize;
-
-$nic = Get-AzNetworkInterface -Name ("NicName") -ResourceGroupName $rgname;
-$nicId = $nic.Id;
-
-$vm = Add-AzVMNetworkInterface -VM $vm -Id $nicId;
-
-$osDiskName = "OSdiskName"
-$osDiskVhdUri = "OSdiskURI"
-
-$vm = Set-AzVMOSDisk -VM $vm -VhdUri $osDiskVhdUri -name $osDiskName -CreateOption attach -Windows
-
-New-AzVM -ResourceGroupName $rgname -Location $loc -VM $vm -Verbose
-```
-
-**Для управляемых дисков**
-
-```powershell
-# To log in to Azure Resource Manager
-Login-AzAccount
-
-# To view all subscriptions for your account
-Get-AzSubscription
-
-# To select a default subscription for your current session
-Get-AzSubscription –SubscriptionID "SubscriptionID" | Select-AzSubscription
-
-#Fill in all variables
-$subid = "SubscriptionID"
-$rgName = "ResourceGroupName";
-$loc = "Location";
-$vmSize = "VmSize";
-$vmName = "VmName";
-$nic1Name = "FirstNetworkInterfaceName";
-#$nic2Name = "SecondNetworkInterfaceName";
-$avName = "AvailabilitySetName";
-$osDiskName = "OsDiskName";
-$DataDiskName = "DataDiskName"
-
-#This can be found by selecting the Managed Disks you wish you use in the Azure portal if the format below doesn't match
-$osDiskResourceId = "/subscriptions/$subid/resourceGroups/$rgname/providers/Microsoft.Compute/disks/$osDiskName";
-$dataDiskResourceId = "/subscriptions/$subid/resourceGroups/$rgname/providers/Microsoft.Compute/disks/$DataDiskName";
-
-$vm = New-AzVMConfig -VMName $vmName -VMSize $vmSize;
-
-#Uncomment to add Availability Set
-#$avSet = Get-AzAvailabilitySet –Name $avName –ResourceGroupName $rgName;
-#$vm = New-AzVMConfig -VMName $vmName -VMSize $vmSize -AvailabilitySetId $avSet.Id;
-
-#Get NIC Resource Id and add
-$nic1 = Get-AzNetworkInterface -Name $nic1Name -ResourceGroupName $rgName;
-$vm = Add-AzVMNetworkInterface -VM $vm -Id $nic1.Id -Primary;
-
-#Uncomment to add a secondary NIC
-#$nic2 = Get-AzNetworkInterface -Name $nic2Name -ResourceGroupName $rgName;
-#$vm = Add-AzVMNetworkInterface -VM $vm -Id $nic2.Id;
-
-#Windows VM
-$vm = Set-AzVMOSDisk -VM $vm -ManagedDiskId $osDiskResourceId -name $osDiskName -CreateOption Attach -Windows;
-
-#Linux VM
-#$vm = Set-AzVMOSDisk -VM $vm -ManagedDiskId $osDiskResourceId -name $osDiskName -CreateOption Attach -Linux;
-
-#Uncomment to add additional Data Disk
-#Add-AzVMDataDisk -VM $vm -ManagedDiskId $dataDiskResourceId -Name $dataDiskName -Caching None -DiskSizeInGB 1024 -Lun 0 -CreateOption Attach;
-
-New-AzVM -ResourceGroupName $rgName -Location $loc -VM $vm;
-```

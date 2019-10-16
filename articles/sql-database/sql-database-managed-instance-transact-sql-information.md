@@ -11,23 +11,23 @@ ms.author: jovanpop
 ms.reviewer: sstein, carlrab, bonova
 ms.date: 08/12/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: 9a043d07004870c00c656b655d56a1526f8993d8
-ms.sourcegitcommit: be344deef6b37661e2c496f75a6cf14f805d7381
+ms.openlocfilehash: b7ace716f920304eff3ddcfa3fab887f780cec0e
+ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72000498"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72372322"
 ---
 # <a name="managed-instance-t-sql-differences-limitations-and-known-issues"></a>Различия в T-SQL управляемого экземпляра, ограничения и известные проблемы
 
 В этой статье кратко описаны различия в синтаксисе и поведении между управляемым экземпляром базы данных SQL Azure и локальными ядро СУБД SQL Server. Вариант развертывания в виде управляемого экземпляра обеспечивает высокий уровень совместимости с локальным ядром СУБД SQL Server. В управляемом экземпляре поддерживается большинство функций ядра СУБД SQL Server.
 
-![Перенос](./media/sql-database-managed-instance/migration.png)
+![Миграция](./media/sql-database-managed-instance/migration.png)
 
 Существуют некоторые ограничения PaaS, появившиеся в Управляемый экземпляр и некоторые изменения в поведении по сравнению с SQL Server. Различия делятся на следующие категории:<a name="Differences"></a>
 
-- [Доступность](#availability) включает различия в [Always-On](#always-on-availability) и [Backups](#backup).
-- [Безопасность](#security) включает в себя различия [в аудите](#auditing), [сертификатах](#certificates), [учетных данных](#credential), [поставщиках служб шифрования](#cryptographic-providers), [именах входа и пользователях](#logins-and-users), а также [ключе службы и главный ключ службы](#service-key-and-service-master-key).
+- [Доступность](#availability) включает различия в [Always on](#always-on-availability) и [Backups](#backup).
+- [Безопасность](#security) включает в себя различия в [аудите](#auditing), [сертификатах](#certificates), [учетных данных](#credential), [поставщиках служб шифрования](#cryptographic-providers), [именах входа и пользователях](#logins-and-users), а также [ключе службы и главный ключ службы](#service-key-and-service-master-key).
 - [Конфигурация](#configuration) включает различия в [расширении буферного пула](#buffer-pool-extension), параметрах [сортировки](#collation), [уровнях совместимости](#compatibility-levels), [зеркальном отображении баз данных](#database-mirroring), [параметрах базы данных](#database-options), [Агент SQL Server](#sql-server-agent)и [параметрах таблиц](#tables).
 - К [функциональным возможностям](#functionalities) относятся [BULK INSERT/OPENROWSET](#bulk-insert--openrowset), [CLR](#clr), [DBCC](#dbcc), [распределенные транзакции](#distributed-transactions), [Расширенные события](#extended-events), [внешние библиотеки](#external-libraries), [FileStream и FileTable](#filestream-and-filetable), [полнотекстовые Семантический поиск](#full-text-semantic-search), [связанные серверы](#linked-servers), [polybase](#polybase), [репликация](#replication), [Восстановление](#restore-statement), [Service Broker](#service-broker), [хранимые процедуры, функции и триггеры](#stored-procedures-functions-and-triggers).
 - [Параметры среды](#Environment) , такие как виртуальных сетей и конфигурации подсети.
@@ -48,7 +48,7 @@ ms.locfileid: "72000498"
 - [DROP AVAILABILITY GROUP](https://docs.microsoft.com/sql/t-sql/statements/drop-availability-group-transact-sql);
 - Предложение [Set HADR](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql-set-hadr) инструкции [ALTER DATABASE](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql)
 
-### <a name="backup"></a>Архивация
+### <a name="backup"></a>Backup
 
 Управляемые экземпляры имеют автоматическое резервное копирование, поэтому пользователи могут создавать полные резервные копии базы данных `COPY_ONLY`. Разностные резервные копии, журналы и моментальные снимки файлов не поддерживаются.
 
@@ -78,7 +78,7 @@ ms.locfileid: "72000498"
 
 Сведения о резервном копировании с помощью T-SQL см. в статье [BACKUP (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/backup-transact-sql).
 
-## <a name="security"></a>Группа безопасности
+## <a name="security"></a>Безопасность
 
 ### <a name="auditing"></a>Аудит
 
@@ -95,7 +95,7 @@ ms.locfileid: "72000498"
 - Имеется новый синтаксис `TO URL`, который можно использовать для указания URL-адреса контейнера хранилища BLOB-объектов Azure, в который помещаются файлы @no__t 1.
 - Синтаксис `TO FILE` не поддерживается, так как управляемый экземпляр не может получить доступ к общим файловым ресурсам Windows.
 
-Дополнительные сведения можно найти в разделе 
+Дополнительные сведения см. здесь: 
 
 - [CREATE SERVER AUDIT (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-server-audit-transact-sql) 
 - [ALTER SERVER AUDIT (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-server-audit-transact-sql)
@@ -110,7 +110,7 @@ ms.locfileid: "72000498"
 
 См. статьи [Инструкция CREATE CERTIFICATE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-certificate-transact-sql) и [BACKUP CERTIFICATE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/backup-certificate-transact-sql). 
  
-**Возможное решение**: Вместо создания резервной копии сертификата и восстановления резервной копии, [получите двоичное содержимое сертификата и закрытый ключ, сохраните его в виде SQL Server и создайте из двоичного файла](https://docs.microsoft.com/sql/t-sql/functions/certencoded-transact-sql#b-copying-a-certificate-to-another-database):
+**Обходное решение**. вместо создания резервной копии сертификата и восстановления резервной копии [получите двоичное содержимое сертификата и закрытый ключ, сохраните его в виде SQL Server и создайте из двоичного файла](https://docs.microsoft.com/sql/t-sql/functions/certencoded-transact-sql#b-copying-a-certificate-to-another-database):
 
 ```sql
 CREATE CERTIFICATE  
@@ -140,7 +140,7 @@ WITH PRIVATE KEY (<private_key_options>)
 
 - Имена входа Windows, созданные с помощью синтаксиса `CREATE LOGIN ... FROM WINDOWS`, не поддерживаются. Используйте пользователей и имена для входа Azure Active Directory.
 - Пользователь Azure AD, создавший экземпляр, имеет [неограниченные права администратора](sql-database-manage-logins.md#unrestricted-administrative-accounts).
-- Пользователи уровня базы данных Azure AD без прав администратора могут создаваться с помощью синтаксиса `CREATE USER ... FROM EXTERNAL PROVIDER`. См. раздел [Пользователи без FROM EXTERNAL PROVIDER](sql-database-manage-logins.md#non-administrator-users).
+- Пользователи уровня базы данных Azure AD без прав администратора могут создаваться с помощью синтаксиса `CREATE USER ... FROM EXTERNAL PROVIDER`. См [. раздел Создание пользователя... ОТ внешнего поставщика](sql-database-manage-logins.md#non-administrator-users).
 - Участники сервера Azure AD (имена входа) поддерживают функции SQL только в пределах одного управляемого экземпляра. Функции, требующие взаимодействия между экземплярами, независимо от того, находятся ли они в одном клиенте Azure AD или разных клиентах, не поддерживаются для пользователей Azure AD. Ниже приведены примеры таких функций:
 
   - Репликация транзакций SQL.
@@ -188,14 +188,14 @@ WITH PRIVATE KEY (<private_key_options>)
 - [Резервное копирование главного ключа службы](https://docs.microsoft.com/sql/t-sql/statements/backup-service-master-key-transact-sql) не поддерживается (управляется службой базы данных SQL).
 - [Восстановление главного ключа службы](https://docs.microsoft.com/sql/t-sql/statements/restore-service-master-key-transact-sql) не поддерживается (управляется службой базы данных SQL).
 
-## <a name="configuration"></a>Конфигурация
+## <a name="configuration"></a>Настройка
 
 ### <a name="buffer-pool-extension"></a>Расширение буферного пула
 
 - [Расширение буферного пула](https://docs.microsoft.com/sql/database-engine/configure-windows/buffer-pool-extension) не поддерживается.
 - `ALTER SERVER CONFIGURATION SET BUFFER POOL EXTENSION` не поддерживается. См. статью [ALTER SERVER CONFIGURATION (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-server-configuration-transact-sql).
 
-### <a name="collation"></a>Параметры сортировки
+### <a name="collation"></a>Collation
 
 Параметр сортировки экземпляра по умолчанию — `SQL_Latin1_General_CP1_CI_AS`. Этот параметр можно указать как параметр создания. См. статью [Параметры сортировки](https://docs.microsoft.com/sql/t-sql/statements/collations).
 
@@ -284,7 +284,7 @@ WITH PRIVATE KEY (<private_key_options>)
   - Шаги задания T-SQL поддерживаются.
   - Поддерживаются следующие задания репликации:
     - Читатель журнала транзакций.
-    - Снимок
+    - Моментальный снимок
     - Распространитель.
   - Поддерживаются шаги задания служб SSIS.
   - Другие типы шагов заданий в настоящее время не поддерживаются:
@@ -303,10 +303,10 @@ WITH PRIVATE KEY (<private_key_options>)
 
 В настоящее время следующие функции агента SQL Server не поддерживаются:
 
-- Прокси-серверы
+- прокси-серверы;
 - Планирование заданий на неактивном ЦП
 - Включение или отключение агента
-- Предупреждения
+- Оповещения
 
 Сведения об агенте SQL Server см. в статье [Агент SQL Server](https://docs.microsoft.com/sql/ssms/agent/sql-server-agent).
 
@@ -393,7 +393,7 @@ WITH PRIVATE KEY (<private_key_options>)
 - Связанные серверы не поддерживают распределенные транзакции с возможностью записи (MS DTC).
 - Неподдерживаемые целевые объекты — это файлы, Analysis Services и другие РСУБД. Попробуйте использовать собственный импорт CSV из хранилища больших двоичных объектов Azure с помощью `BULK INSERT` или `OPENROWSET` в качестве альтернативы для импорта файлов.
 
-Операции
+Operations
 
 - Транзакции записи между несколькими экземплярами не поддерживаются.
 - `sp_dropserver` поддерживается для удаления связанного сервера. См. статью [sp_dropserver (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-dropserver-transact-sql).
@@ -462,7 +462,7 @@ WITH PRIVATE KEY (<private_key_options>)
   - `FROM DISK`/`TAPE` или устройство резервного копирования не поддерживаются.
   - Резервные наборы данных не поддерживаются.
 - Параметры `WITH` не поддерживаются, такие как No `DIFFERENTIAL` или `STATS`.
-- `ASYNC RESTORE`. Восстановление продолжится, даже если соединение с клиентом будет прервано. Если подключение разорвано, можно проверить состояние операции восстановления в представлении `sys.dm_operation_status`, а также для создания и удаления базы данных. См. статью [sys.dm_operation_status (база данных SQL Azure)](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-operation-status-azure-sql-database). 
+- `ASYNC RESTORE`: восстановление продолжится, даже если соединение с клиентом будет прервано. Если подключение разорвано, можно проверить состояние операции восстановления в представлении `sys.dm_operation_status`, а также для создания и удаления базы данных. См. статью [sys.dm_operation_status (база данных SQL Azure)](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-operation-status-azure-sql-database). 
 
 Следующие параметры базы данных задаются или переопределяются, и их нельзя изменить позже: 
 
@@ -491,9 +491,9 @@ WITH PRIVATE KEY (<private_key_options>)
 
 Компонент Service Broker между экземплярами не поддерживается:
 
-- `sys.routes`. В качестве необходимого компонента необходимо выбрать адрес из каталога sys. routes. Адрес должен быть ЛОКАЛЬным по отношению к каждому маршруту. См. статью [sys.routes (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-routes-transact-sql).
-- `CREATE ROUTE`. Нельзя использовать `CREATE ROUTE` с `ADDRESS`, кроме `LOCAL`. См. статью [CREATE ROUTE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-route-transact-sql).
-- `ALTER ROUTE`. Нельзя использовать `ALTER ROUTE` с `ADDRESS`, кроме `LOCAL`. См. статью [ALTER ROUTE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-route-transact-sql). 
+- `sys.routes`: в качестве необходимого компонента необходимо выбрать адрес из каталога sys. routes. Адрес должен быть ЛОКАЛЬным по отношению к каждому маршруту. См. статью [sys.routes (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-routes-transact-sql).
+- `CREATE ROUTE`: нельзя использовать `CREATE ROUTE` с `ADDRESS`, кроме `LOCAL`. См. статью [CREATE ROUTE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-route-transact-sql).
+- `ALTER ROUTE`: нельзя использовать `ALTER ROUTE` с `ADDRESS`, кроме `LOCAL`. См. статью [ALTER ROUTE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-route-transact-sql). 
 
 ### <a name="stored-procedures-functions-and-triggers"></a>Хранимые процедуры, функции и триггеры
 
@@ -523,7 +523,7 @@ WITH PRIVATE KEY (<private_key_options>)
 
 ## <a name="Environment"></a>Ограничения среды
 
-### <a name="subnet"></a>Subnet
+### <a name="subnet"></a>Подсеть
 -  Другие ресурсы (например, виртуальные машины) нельзя поместить в подсеть, в которой развернут управляемый экземпляр. Разверните эти ресурсы с помощью другой подсети.
 - Подсеть должна иметь достаточное количество доступных [IP-адресов](sql-database-managed-instance-connectivity-architecture.md#network-requirements). Минимальное значение — 16, хотя в подсети рекомендуется иметь по крайней мере 32 IP-адресов.
 - [Конечные точки службы не могут быть связаны с подсетью управляемого экземпляра](sql-database-managed-instance-connectivity-architecture.md#network-requirements). Убедитесь, что при создании виртуальной сети параметр конечные точки службы отключен.
@@ -537,67 +537,75 @@ WITH PRIVATE KEY (<private_key_options>)
 
 ### <a name="tempdb"></a>БАЗЕ
 
-Максимальный размер файла `tempdb` не может быть больше 24 ГБ на ядро на уровне общего назначения. Максимальный размер `tempdb` на уровне критически важный для бизнеса ограничивается размером хранилища экземпляра. `Tempdb` Размер файла журнала ограничен 120 ГБ на уровнях общего назначения и критически важный для бизнеса. Некоторые запросы могут возвращать ошибку, если для них требуется более 24 ГБ на ядро в `tempdb` или они получают более 120 ГБ данных журнала.
+Максимальный размер файла `tempdb` не может быть больше 24 ГБ на ядро на уровне общего назначения. Максимальный размер `tempdb` на уровне критически важный для бизнеса ограничивается размером хранилища экземпляра. `Tempdb` Размер файла журнала ограничен 120 ГБ на уровне общего назначения. Некоторые запросы могут возвращать ошибку, если для них требуется более 24 ГБ на ядро в `tempdb` или они получают более 120 ГБ данных журнала.
 
 ### <a name="error-logs"></a>Журналы ошибок
 
-Управляемый экземпляр помещает подробные сведения в журналы ошибок. Существует множество внутренних системных событий, которые регистрируются в журнале ошибок. Используйте пользовательскую процедуру для чтения журналов ошибок, которые отфильтровывают некоторые ненужные записи. Дополнительные сведения см. в разделе [управляемый экземпляр — sp_readmierrorlog](https://blogs.msdn.microsoft.com/sqlcat/2018/05/04/azure-sql-db-managed-instance-sp_readmierrorlog/).
+Управляемый экземпляр помещает подробные сведения в журналы ошибок. Существует множество внутренних системных событий, которые регистрируются в журнале ошибок. Используйте пользовательскую процедуру для чтения журналов ошибок, которые отфильтровывают некоторые ненужные записи. Дополнительные сведения см. в разделе [управляемый экземпляр — sp_readmierrorlog](https://blogs.msdn.microsoft.com/sqlcat/2018/05/04/azure-sql-db-managed-instance-sp_readmierrorlog/) или [расширение управляемого экземпляра (Предварительная версия)](https://docs.microsoft.com/sql/azure-data-studio/azure-sql-managed-instance-extension#logs) для Azure Data Studio.
 
 ## <a name="Issues"></a>Известные проблемы
 
+### <a name="in-memory-oltp-memory-limits-are-not-applied"></a>Ограничения памяти выполняющейся в памяти OLTP не применяются
+
+**Дата:** Октябрь 2019
+
+Критически важный для бизнеса уровня служб не будет правильно применять [максимальные ограничения памяти для оптимизированных для памяти объектов](sql-database-managed-instance-resource-limits.md#in-memory-oltp-available-space) в некоторых случаях. Управляемый экземпляр может позволить воркоад использовать больше памяти для операций OLTP в памяти, что может повлиять на доступность и стабильность экземпляра. Запросы выполняющейся в памяти OLTP, которые достигли этих ограничений, могут не завершаться сбоем иммедиателли. Эта проблема будет исправлена в ближайшее время. Запросы, в которых используется больше памяти OLTP в памяти, будут завершаться сбоем быстрее, если достигнут [предел](sql-database-managed-instance-resource-limits.md#in-memory-oltp-available-space).
+
+**Обходное решение.** [отслеживайте использование хранилища выполняющейся в памяти OLTP](https://docs.microsoft.com/azure/sql-database/sql-database-in-memory-oltp-monitoring) с помощью [SQL Server Management Studio](https://docs.microsoft.com/sql/relational-databases/in-memory-oltp/monitor-and-troubleshoot-memory-usage#bkmk_Monitoring) , чтобы убедиться, что Рабочая нагрузка не использует больше доступной памяти. Увеличьте ограничения памяти, зависящие от числа виртуальных ядер, или оптимизируйте рабочую нагрузку для использования меньшего объема памяти.
+
 ### <a name="wrong-error-returned-while-trying-to-remove-a-file-that-is-not-empty"></a>При попытке удаления непустого файла возвращена неверная ошибка
 
-**Дата** Октябрь 2019
+**Дата:** Октябрь 2019
 
 SQL Server и Управляемый экземпляр [не позволяют пользователю удалять непустые файлы](https://docs.microsoft.com/sql/relational-databases/databases/delete-data-or-log-files-from-a-database#Prerequisites). Если попытаться удалить непустой файл данных с помощью инструкции `ALTER DATABASE REMOVE FILE`, то ошибка `Msg 5042 – The file '<file_name>' cannot be removed because it is not empty` не будет немедленно возвращена. Управляемый экземпляр будет пытаться удалить файл, и операция завершится ошибкой после 30 мин с `Internal server error`.
 
-**Возможное решение**: Удалите содержимое файла с помощью команды `DBCC SHRINKFILE (N'<file_name>', EMPTYFILE)`. Если это единственный файл в файловой группе, необходимо удалить данные из таблицы или секции, связанной с этой файловой группой, перед сжатием файла и при необходимости загрузить эти данные в другую таблицу или секцию.
+Инструкции по **решению**: удалите содержимое файла с помощью команды `DBCC SHRINKFILE (N'<file_name>', EMPTYFILE)`. Если это единственный файл в файловой группе, необходимо удалить данные из таблицы или секции, связанной с этой файловой группой, перед сжатием файла и при необходимости загрузить эти данные в другую таблицу или секцию.
 
 ### <a name="change-service-tier-and-create-instance-operations-are-blocked-by-ongoing-database-restore"></a>Изменение уровня служб и операций создания экземпляра заблокировано текущим восстановлением базы данных
 
-**Дата** Sep 2019
+**Дата:** Sep 2019
 
 Текущая инструкция `RESTORE`, процесс миграции данных и встроенное восстановление до точки во времени приведет к блокировке обновления уровня служб или изменения размера существующего экземпляра и создания новых экземпляров до завершения процесса восстановления. Процесс восстановления блокирует эти операции с управляемыми экземплярами и пулами экземпляров в той же подсети, где выполняется процесс восстановления. Экземпляры в пулах экземпляров не затрагиваются. Операции создания или изменения уровня служб не будут завершаться сбоем или превышено время ожидания — они будут продолжены после завершения или отмены процесса восстановления.
 
-**Возможное решение**: Дождитесь завершения процесса восстановления или отмените процесс восстановления, если операция создания или обновления уровня службы имеет более высокий приоритет.
+**Решение**. Дождитесь завершения процесса восстановления или отмените процесс восстановления, если операция создания или обновления уровня службы имеет более высокий приоритет.
 
 ### <a name="missing-validations-in-restore-process"></a>Отсутствующие проверки в процессе восстановления
 
-**Дата** Sep 2019
+**Дата:** Sep 2019
 
 `RESTORE` и встроенное восстановление на момент времени не выполняют некоторые проверки нессекари для восстановленной базы данных:
 - Инструкция **DBCC CHECKDB** -  @ no__t-2 не выполняет `DBCC CHECKDB` в восстановленной базе данных. Если исходная база данных повреждена или файл резервной копии поврежден во время копирования в хранилище BLOB-объектов Azure, автоматическое резервное копирование не будет выполнено, и служба поддержки Azure свяжется с клиентом. 
 - Встроенный процесс восстановления на момент времени не проверяет, содержит ли автоматизированное резервное копирование из критически важный для бизнеса экземпляра объекты выполняющейся [в памяти OLTP](sql-database-in-memory.md#in-memory-oltp). 
 
-**Возможное решение**: Перед созданием резервной копии убедитесь, что выполняется `DBCC CHECKDB` в исходной базе данных, и используйте параметр `WITH CHECKSUM` в Backup, чтобы избежать возможных повреждений, которые могут быть восстановлены на управляемом экземпляре. Убедитесь, что база данных-источник не содержит [объекты OLTP в памяти](sql-database-in-memory.md#in-memory-oltp) , если вы восстанавливаете ее на общего назначения уровне.
+**Обходное решение**. перед созданием резервной копии убедитесь, что выполняется `DBCC CHECKDB` в исходной базе данных, и используйте параметр `WITH CHECKSUM` в Backup, чтобы избежать возможных повреждений, которые могут быть восстановлены на управляемом экземпляре. Убедитесь, что база данных-источник не содержит [объекты OLTP в памяти](sql-database-in-memory.md#in-memory-oltp) , если вы восстанавливаете ее на общего назначения уровне.
 
 ### <a name="resource-governor-on-business-critical-service-tier-might-need-to-be-reconfigured-after-failover"></a>Resource Governor на уровне служб критически важный для бизнеса может потребоваться перенастроить после отработки отказа
 
-**Дата** Sep 2019
+**Дата:** Sep 2019
 
 [Resource Governor](https://docs.microsoft.com/sql/relational-databases/resource-governor/resource-governor) функция, которая позволяет ограничить ресурсы, назначенные пользовательской рабочей нагрузке, может неправильно классифицировать определенную рабочую нагрузку пользователя после отработки отказа или изменения уровня служб (например, изменение максимального Виртуальное ядро или максимального экземпляра). Размер хранилища).
 
-**Возможное решение**: Запустите `ALTER RESOURCE GOVERNOR RECONFIGURE` периодически или в рамках задания агента SQL Server, которое выполняет задачу SQL при запуске экземпляра, если используется [Resource Governor](https://docs.microsoft.com/sql/relational-databases/resource-governor/resource-governor).
+Инструкции по **решению**: выполните `ALTER RESOURCE GOVERNOR RECONFIGURE` периодически или в рамках задания агента SQL Server, которое ВЫПОЛНЯЕТ задачу SQL при запуске экземпляра, если используется [Resource Governor](https://docs.microsoft.com/sql/relational-databases/resource-governor/resource-governor).
 
 ### <a name="cannot-authenticate-to-external-mail-servers-using-secure-connection-ssl"></a>Не удается выполнить проверку подлинности на внешних почтовых серверах с помощью безопасного соединения (SSL)
 
-**Дата** Авг 2019
+**Дата:** Авг 2019
 
 Компонент Database Mail, [настроенный с помощью безопасного подключения (SSL)](https://docs.microsoft.com/sql/relational-databases/database-mail/configure-database-mail) , не может пройти проверку подлинности на некоторых серверах электронной почты за пределами Azure. Это проблема конфигурации безопасности, которая будет устранена в ближайшее время.
 
-**Решение:** Временное удаление безопасного подключения (SSL) из конфигурации компонента Database Mail до устранения проблемы. 
+**Обходной путь:** Временное удаление безопасного подключения (SSL) из конфигурации компонента Database Mail до устранения проблемы. 
 
 ### <a name="cross-database-service-broker-dialogs-must-be-re-initialized-after-service-tier-upgrade"></a>После обновления уровня службы необходимо повторно инициализировать диалоговые окна межбазовых Service Broker
 
-**Дата** Авг 2019
+**Дата:** Авг 2019
 
 Межбазовые Service Broker диалоговые окна перестают предоставлять сообщения службам в других базах данных после изменения уровня служб. Сообщения **не теряются** , и их можно найти в очереди отправителя. Любое изменение размера хранилища виртуальных ядер или экземпляра в Управляемый экземпляр приведет к изменению значения `service_broke_guid` в представлении [sys. databases](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-databases-transact-sql) для всех баз данных. Любая `DIALOG`, созданная с помощью инструкции [BEGIN DIALOG](https://docs.microsoft.com/en-us/sql/t-sql/statements/begin-dialog-conversation-transact-sql) , которая ссылается на брокеры служб в другой базе данных, прекращает доставку сообщений целевой службе.
 
-**Решение:** Перед обновлением уровня службы и повторной их инициализацией после этого отключите все действия, использующие диалоговые окна межбазовых Service Broker. Если остались сообщения, которые не доставляются после изменения уровня службы, прочтите сообщения из очереди источника и повторно отправьте их в целевую очередь.
+**Обходной путь:** Перед обновлением уровня службы и повторной их инициализацией после этого отключите все действия, использующие диалоговые окна межбазовых Service Broker. Если остались сообщения, которые не доставляются после изменения уровня службы, прочтите сообщения из очереди источника и повторно отправьте их в целевую очередь.
 
 ### <a name="impersonification-of-aad-login-types-is-not-supported"></a>Имперсонификатион типов входа AAD не поддерживается
 
-**Дата** 2019 июля
+**Дата:** 2019 июля
 
 Олицетворение с использованием `EXECUTE AS USER` или `EXECUTE AS LOGIN` из следующих субъектов AAD не поддерживается:
 -   Пользователи AAD с псевдонимами. В этом случае возвращается следующая ошибка `15517`.
@@ -605,19 +613,19 @@ SQL Server и Управляемый экземпляр [не позволяют
 
 ### <a name="query-parameter-not-supported-in-sp_send_db_mail"></a>параметр @query не поддерживается в sp_send_db_mail
 
-**Дата** Апрель 2019 г.
+**Дата:** Апрель 2019
 
 Параметр `@query` в процедуре [sp_send_db_mail](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-send-dbmail-transact-sql) не работает.
 
 ### <a name="transactional-replication-must-be-reconfigured-after-geo-failover"></a>После географической отработки отказа необходимо перенастроить репликацию транзакций
 
-**Дата** Мар 2019
+**Дата:** Мар 2019
 
 Если репликация транзакций включена для базы данных в группе автоматической отработки отказа, администратор управляемого экземпляра должен очистить все публикации на старом первичном ресурсе и перенастроить их на новом первичном ресурсе после отработки отказа в другой регион. Дополнительные сведения см. в разделе [репликация](#replication) .
 
 ### <a name="aad-logins-and-users-are-not-supported-in-tools"></a>Имена входа и пользователей AAD не поддерживаются в средствах
 
-**Дата** Янв 2019
+**Дата:** Янв 2019
 
 SQL Server Management Studio и SQL Server Data Tools не полностью поддерживают имена входа и пользователей Azure Active Directory.
 - Использование участников сервера Azure AD (имена для входа) и пользователи (общедоступная Предварительная версия) с SQL Server Data Tools в настоящее время не поддерживаются.
@@ -627,7 +635,7 @@ SQL Server Management Studio и SQL Server Data Tools не полностью п
 
 При восстановлении базы данных в Управляемый экземпляр Служба восстановления сначала создаст пустую базу данных с нужным именем, чтобы выделить имя экземпляра. Через некоторое время эта база данных будет удалена и восстановлена фактическая база данных. База данных, которая находится в состоянии *восстановления* , будет иметь случайное значение идентификатора GUID вместо имени. После завершения процесса восстановления временное имя будет изменено на нужное имя, указанное в `RESTORE`. На начальном этапе пользователь может получить доступ к пустой базе данных и даже создать таблицы или загрузить данные в эту базу данных. Эта временная база данных будет удалена, когда служба восстановления запустит второй этап.
 
-**Возможное решение**: Не отменяйте доступ к восстанавливаемой базе данных до тех пор, пока не будет отображено завершение восстановления.
+Инструкции по решению: не **пытайтесь**получить доступ к восстанавливаемой базе данных до тех пор, пока не будет показано, что восстановление завершено.
 
 ### <a name="tempdb-structure-and-content-is-re-created"></a>Структура и содержимое базы данных TEMPDB создано повторно
 
@@ -687,15 +695,15 @@ using (var scope = new TransactionScope())
 
 Несмотря на то, что этот код работает с данными в одном и том же экземпляре, требуется MSDTC.
 
-**Решение:** Используйте [SqlConnection. чанжедатабасе (String)](https://docs.microsoft.com/dotnet/api/system.data.sqlclient.sqlconnection.changedatabase) для использования другой базы данных в контексте соединения вместо двух соединений.
+**Обходной путь:** Используйте [SqlConnection. чанжедатабасе (String)](https://docs.microsoft.com/dotnet/api/system.data.sqlclient.sqlconnection.changedatabase) для использования другой базы данных в контексте соединения вместо двух соединений.
 
 ### <a name="clr-modules-and-linked-servers-sometimes-cant-reference-a-local-ip-address"></a>Модули CLR и связанные серверы иногда не могут ссылаться на локальный IP-адрес.
 
 Модули CLR, размещенные в управляемом экземпляре, а также на связанных серверах или распределенных запросах, которые ссылаются на текущий экземпляр, иногда не могут разрешить IP-адрес локального экземпляра. Это временная ошибка.
 
-**Решение:** По возможности используйте контекстные соединения в модуле CLR.
+**Обходной путь:** По возможности используйте контекстные соединения в модуле CLR.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения об управляемых экземплярах см [. в разделе понятие управляемого экземпляра.](sql-database-managed-instance.md)
 - Список функций и сравнительных списков см. в статье [Сравнение функций базы данных SQL Azure](sql-database-features.md).

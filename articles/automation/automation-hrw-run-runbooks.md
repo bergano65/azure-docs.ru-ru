@@ -9,18 +9,18 @@ ms.author: robreed
 ms.date: 01/29/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 100740e87c13887a3e7ac85aa5fce3d67c838ea0
-ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
+ms.openlocfilehash: 5ff36230095b90418a2619bbf1c5bb02863072b5
+ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71240330"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72372845"
 ---
 # <a name="running-runbooks-on-a-hybrid-runbook-worker"></a>Запуск модулей runbook в гибридной рабочей роли Runbook
 
 В структуре модулей Runbook, которые работают в службе автоматизации Azure, отсутствует разница между ними и теми модулями, которые работают в гибридной рабочей роли Runbook. Модули Runbook, которые используются с каждым из этих элементов, скорее всего, значительно отличаются друг от друга. Эта разница связана с тем, что модули Runbook, предназначенные для гибридной рабочей роли Runbook, обычно управляют ресурсами на самом локальном компьютере или ресурсами в локальной среде, где она развернута. Модули Runbook в службе автоматизации Azure обычно управляют ресурсами в облаке Azure.
 
-Когда вы создаете модули runbook для запуска на гибридной рабочей роли Runbook, настройте и протестируйте их выполнение на компьютере, где размещена эта гибридная рабочая роль. Этот компьютер имеет все модули PowerShell и доступ к сети, необходимые для доступа к локальным ресурсам и управления ими. Протестировав модуль runbook на компьютере с гибридной рабочей ролью, вы можете передать его в среду службы автоматизации Azure, где он будет доступен для запуска в гибридной рабочей роли. Важно понимать задания, выполняемые в локальной системной учетной записи для Windows или специальной учетной записи пользователя `nxautomation` в Linux. В Linux это означает, что `nxautomation` учетная запись должна иметь доступ к расположению, где хранятся модули. При использовании командлета [Install-Module](/powershell/module/powershellget/install-module) укажите `naxautomation` **ALLUSERS** в `-Scope` параметре, чтобы убедиться, что у учетной записи есть доступ.
+Когда вы создаете модули runbook для запуска на гибридной рабочей роли Runbook, настройте и протестируйте их выполнение на компьютере, где размещена эта гибридная рабочая роль. Этот компьютер имеет все модули PowerShell и доступ к сети, необходимые для доступа к локальным ресурсам и управления ими. Протестировав модуль runbook на компьютере с гибридной рабочей ролью, вы можете передать его в среду службы автоматизации Azure, где он будет доступен для запуска в гибридной рабочей роли. Важно понимать задания, выполняемые в локальной системной учетной записи для Windows или специальной учетной записи пользователя `nxautomation` в Linux. В Linux это означает, что учетная запись `nxautomation` должна иметь доступ к расположению, где хранятся модули. При использовании командлета [Install-Module](/powershell/module/powershellget/install-module) укажите **ALLUSERS** в параметре `-Scope`, чтобы убедиться, что у учетной записи `naxautomation` есть доступ.
 
 Дополнительные сведения о PowerShell в Linux см. в статье [Известные проблемы для PowerShell на платформах, отличных от Windows](https://docs.microsoft.com/powershell/scripting/whats-new/known-issues-ps6?view=powershell-6#known-issues-for-powershell-on-non-windows-platforms).
 
@@ -89,9 +89,8 @@ Restart-Computer -ComputerName $Computer -Credential $Cred
 
 1. Создание виртуальной машины Azure
 2. [Настройте управляемые удостоверения для ресурсов Azure на вашей виртуальной машине](../active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm.md#enable-system-assigned-managed-identity-on-an-existing-vm).
-3. [Предоставьте виртуальной машине доступ к группе ресурсов в Resource Manager](../active-directory/managed-identities-azure-resources/tutorial-windows-vm-access-arm.md#grant-your-vm-access-to-a-resource-group-in-resource-manager).
-4. [Получите маркер доступа, используя назначенное системой управляемое удостоверение виртуальной машины](../active-directory/managed-identities-azure-resources/tutorial-windows-vm-access-arm.md#get-an-access-token-using-the-vms-system-assigned-managed-identity-and-use-it-to-call-azure-resource-manager).
-5. [Установите гибридную рабочую роль Runbook Windows](automation-windows-hrw-install.md#installing-the-windows-hybrid-runbook-worker) на виртуальную машину.
+3. [Предоставьте виртуальной машине доступ к группе ресурсов в Диспетчер ресурсов](../active-directory/managed-identities-azure-resources/tutorial-windows-vm-access-arm.md#grant-your-vm-access-to-a-resource-group-in-resource-manager) руководстве — Windows-VM-Access-ARM. md # Get-an-Access-Token-using-,-VMS-System-назначил-Managed-Identity-and-Reuse-it-to-Call-.
+4. [Установите гибридную рабочую роль Runbook Windows](automation-windows-hrw-install.md#installing-the-windows-hybrid-runbook-worker) на виртуальную машину.
 
 По завершении предыдущих этапов можно использовать `Connect-AzureRmAccount -Identity` в модуле Runbook для аутентификации ресурсов Azure. Эта конфигурация снижает потребность использовать учетную запись запуска от имени и управлять ее сертификатом.
 
@@ -102,6 +101,9 @@ Connect-AzureRmAccount -Identity
 # Get all VM names from the subscription
 Get-AzureRmVm | Select Name
 ```
+
+> [!NOTE]
+> `Connect-AzureRMAccount -Identity` работает для гибридной рабочей роли Runbook, используя назначенное системой удостоверение и пользовательское удостоверение. Если необходимо использовать несколько пользовательских удостоверений в роли RUNBOOK, необходимо указать параметр `-AccountId`, чтобы выбрать конкретное назначенное пользователем удостоверение.
 
 ### <a name="runas-script"></a>Учетная запись запуска от имени службы автоматизации
 
@@ -308,7 +310,7 @@ gpg –-clear-sign <runbook name>
 
 Теперь подписанный модуль runbook можно отправить в службу автоматизации Azure и выполнять как обычный модуль runbook.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о разных методах запуска модуля см. в статье [Запуск модуля Runbook в службе автоматизации Azure](automation-starting-a-runbook.md).
 * Описание разных методов работы с модулями Runbook PowerShell в службе автоматизации Azure с использованием текстового редактора см. в статье [Изменение модулей Runbook в службе автоматизации Azure](automation-edit-textual-runbook.md).

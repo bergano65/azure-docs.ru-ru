@@ -1,20 +1,20 @@
 ---
 title: Справочник по артефактам шаблона развертывания управляемого приложения Azure
-description: Эта статья содержит ссылку на артефакт шаблона развертывания.
+description: Содержит пример артефакта шаблона развертывания для управляемых приложений Azure.
 services: managed-applications
 ms.service: managed-applications
 ms.topic: conceptual
 ms.author: lazinnat
 author: lazinnat
 ms.date: 07/11/2019
-ms.openlocfilehash: fe2517a8cc2ddee6623f88b2ae5e46c9e5319567
-ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
+ms.openlocfilehash: ec59c9cde4f23b4a9d641d286e152ea737576534
+ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68336495"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72330175"
 ---
-# <a name="reference-deployment-template-artifact"></a>Справочные материалы. Артефакт шаблона развертывания
+# <a name="reference-deployment-template-artifact"></a>Ссылка: артефакт шаблона развертывания
 
 Эта статья представляет собой справочник по артефакту *mainTemplate. JSON* в управляемых приложениях Azure. Дополнительные сведения о создании шаблона развертывания см. в разделе [шаблоны Azure Resource Manager](../azure-resource-manager/resource-group-authoring-templates.md).
 
@@ -189,8 +189,8 @@ ms.locfileid: "68336495"
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Учебник. Создание управляемого приложения с настраиваемыми действиями и ресурсами](tutorial-create-managed-app-with-custom-provider.md)
-- [Общие сведения Артефакт элементов пользовательского интерфейса](reference-createuidefinition-artifact.md)
-- [Общие сведения Просмотр артефакта определения](reference-view-definition-artifact.md)
+- [Ссылка: артефакт элементов пользовательского интерфейса](reference-createuidefinition-artifact.md)
+- [Ссылка: Просмотр артефакта определения](reference-view-definition-artifact.md)

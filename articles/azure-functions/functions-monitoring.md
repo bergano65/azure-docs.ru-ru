@@ -1,21 +1,20 @@
 ---
 title: Мониторинг Функций Azure
 description: Узнайте, как использовать Azure Application Insights с функциями Azure для наблюдения за выполнением функций.
-services: functions
 author: ggailey777
-manager: jeconnoc
+manager: gwallace
 keywords: функции azure, функции, обработка событий, веб-перехватчики, динамические вычисления, независимая архитектура
 ms.assetid: 501722c3-f2f7-4224-a220-6d59da08a320
 ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 04/04/2019
 ms.author: glenga
-ms.openlocfilehash: 8092108ef13f4b86f20cf5a8a0b41b49d75aa626
-ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
+ms.openlocfilehash: dc333ef542da1330672ad1dc8ad731969eef6742
+ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71098686"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72374576"
 ---
 # <a name="monitor-azure-functions"></a>Мониторинг Функций Azure
 
@@ -29,6 +28,8 @@ ms.locfileid: "71098686"
 
 Вы можете протестировать интеграцию Application Insights с приложением-функцией бесплатно. Существует ежедневное ограничение на объем данных, которые могут быть обработаны бесплатно. Это ограничение может быть достигнуто во время тестирования. Azure отправляет уведомления на портале и по электронной почте при приближении к ежедневному ограничению. Если вы пропустили эти оповещения и достигли предельного значения, новые журналы не будут отображаться в Application Insightsных запросах. Обратите внимание на ограничение, чтобы избежать ненужного времени для устранения неполадок. Дополнительные сведения см. в статье [Управление ценами и объемом данных в Application Insights](../azure-monitor/app/pricing.md).
 
+Полный список функций Application Insights, доступных для приложения-функции, подробно описан в [Application Insights для поддерживаемых функций функций Azure](../azure-monitor/app/azure-functions-supported-features.md).
+
 ## <a name="enable-application-insights-integration"></a>Включение интеграции с Application Insights
 
 Для отправки данных в Application Insights приложению-функции требуется ключ инструментирования для ресурса Application Insights. В параметре приложения должен быть ключ с именем **APPINSIGHTS_INSTRUMENTATIONKEY**.
@@ -37,11 +38,11 @@ ms.locfileid: "71098686"
 
 При [создании приложения-функции в портал Azure](functions-create-first-azure-function.md)интеграция Application Insights включена по умолчанию. Ресурс Application Insights имеет то же имя, что и приложение функции, и создается либо в том же регионе, либо в ближайшем регионе.
 
-Чтобы проверить создаваемый ресурс Application Insights, выберите его, чтобы развернуть окно **Application Insights** . Вы можете изменить **новое имя ресурса** или выбрать другое **Расположение** в географии [Azure](https://azure.microsoft.com/global-infrastructure/geographies/) , где вы хотите хранить данные.
+Чтобы проверить создаваемый ресурс Application Insights, выберите его, чтобы развернуть окно **Application Insights** . Вы можете изменить **новое имя ресурса** или выбрать другое **Расположение** в [географии Azure](https://azure.microsoft.com/global-infrastructure/geographies/) , где вы хотите хранить данные.
 
 ![Включение Application Insights при создании приложения-функции](media/functions-monitoring/enable-ai-new-function-app.png)
 
-При выборе **создать**Application Insights ресурс создается с помощью приложения-функции, которое имеет `APPINSIGHTS_INSTRUMENTATIONKEY` набор в параметрах приложения. Все готово к работе.
+При нажатии на кнопку " **создать**" в приложении-функции будет создан Application Insights ресурс с заданным @no__t 1 в параметрах приложения. Все готово к работе.
 
 <a id="manually-connect-an-app-insights-resource"></a>
 ### <a name="add-to-an-existing-function-app"></a>Добавить в существующее приложение функции 
@@ -76,7 +77,7 @@ ms.locfileid: "71098686"
 
 Вы видите, что обе страницы имеют **команду "выполнить" в Application Insights** ссылку на запрос Application Insights Analytics, который получает данные.
 
-![Запустить в Application Insights](media/functions-monitoring/run-in-ai.png)
+![Выполнение в Application Insights](media/functions-monitoring/run-in-ai.png)
 
 Отобразится следующий запрос. Вы видите, что список вызовов ограничен последними 30 днями. В списке отображается не более 20 строк (`where timestamp > ago(30d) | take 20`). Список сведений о вызовах находится за последние 30 дней без ограничений.
 
@@ -90,13 +91,13 @@ ms.locfileid: "71098686"
 
 ![Открытие Application Insights на странице обзора приложения-функции](media/functions-monitoring/ai-link.png)
 
-Дополнительные сведения об использовании Application Insights см. в [документации по Application Insights](https://docs.microsoft.com/azure/application-insights/). В этом разделе представлено несколько примеров просмотра данных в Application Insights. Если вы уже знакомы с Application Insights, можно перейти непосредственно к разделам [о настройке и настройке данных телеметрии](#configure-categories-and-log-levels).
+Дополнительные сведения об использовании Application Insights см. в [документации по Application Insights](https://docs.microsoft.com/azure/application-insights/). В этом разделе представлено несколько примеров просмотра данных в Application Insights. Если вы уже знакомы с Application Insights, можно перейти непосредственно к [разделам о настройке и настройке данных телеметрии](#configure-categories-and-log-levels).
 
 ![Вкладка обзора Application Insights](media/functions-monitoring/metrics-explorer.png)
 
 Следующие области Application Insights могут быть полезны при оценке поведения, производительности и ошибок в функциях.
 
-| Вкладка | Описание |
+| Tab | Описание |
 | ---- | ----------- |
 | **[Сбоев](../azure-monitor/app/asp-net-exceptions.md)** |  Создавайте диаграммы и оповещения на основе ошибок функций и исключений сервера. **Имя операции** обозначает имя функции. Сбои в зависимостях не отображаются, если не реализовать пользовательскую телеметрию для зависимостей. |
 | **[Системного](../azure-monitor/app/performance-counters.md)** | Анализ проблем производительности. |
@@ -123,13 +124,13 @@ requests
 
 Доступные таблицы показаны на вкладке **схема** слева. Данные, создаваемые при вызовах функций, вы найдете в следующих таблицах:
 
-| Таблица | Описание |
+| Таблицы | Описание |
 | ----- | ----------- |
 | **отладоч** | Журналы, созданные средой выполнения и кодом функции. |
 | **requests** | Один запрос для каждого вызова функции. |
 | **exceptions** | Любые исключения, вызываемые средой выполнения. |
 | **customMetrics** | Число успешных и неудачных вызовов, частота успешных операций и длительность. |
-| **customEvents** | События, которые отписываются средой выполнения, например: HTTP-запросы, которые активируют функции; |
+| **customEvents** | События, которые отписываются средой выполнения, например: HTTP-запросы, которые активируют функцию. |
 | **performanceCounters** | Сведения о производительности серверов, на которых выполняются функции. |
 
 Другие таблицы предназначены для тестов доступности, телеметрии клиентов и браузеров. Вы можете реализовать пользовательскую телеметрию, чтобы добавлять в них данные.
@@ -141,7 +142,7 @@ traces
 | where customDimensions.LogLevel == "Error"
 ```
 
-Среда выполнения предоставляет `customDimensions.LogLevel` поля и `customDimensions.Category` . Вы можете указать дополнительные поля в журналах, которые вы пишете в коде функции. См. раздел [Структурированное ведение журнала](#structured-logging) далее в этой статье.
+Среда выполнения предоставляет поля `customDimensions.LogLevel` и `customDimensions.Category`. Вы можете указать дополнительные поля в журналах, которые вы пишете в коде функции. См. раздел [Структурированное ведение журнала](#structured-logging) далее в этой статье.
 
 ## <a name="configure-categories-and-log-levels"></a>Настройка категорий и уровней ведения журнала
 
@@ -151,9 +152,9 @@ traces
 
 В средстве ведения журнала Функций Azure предусмотрена *категория* для каждого журнала. Категория указывает, какая часть кода среды выполнения или кода функции записывала данные в этот журнал. 
 
-Среда выполнения функций создает журналы с категорией, которая начинается с "Host". В версии `function started`1. x журналы, `function executed`и `function completed` имеют категорию `Host.Executor`. Начиная с версии 2. x, эти журналы имеют категорию `Function.<YOUR_FUNCTION_NAME>`.
+Среда выполнения функций создает журналы с категорией, которая начинается с "Host". В версии 1. x журналы `function started`, `function executed` и `function completed` имеют категорию `Host.Executor`. Начиная с версии 2. x, эти журналы имеют категорию `Function.<YOUR_FUNCTION_NAME>`.
 
-Если вы записываете журналы в код функции, категория будет `Function` находиться в версии 1. x среды выполнения функций. В версии 2. x категория имеет `Function.<YOUR_FUNCTION_NAME>.User`значение.
+Если вы пишете журналы в код функции, категория будет `Function` в версии 1. x среды выполнения функций. В версии 2. x категория имеет значение `Function.<YOUR_FUNCTION_NAME>.User`.
 
 ### <a name="log-levels"></a>Уровни журнала
 
@@ -163,11 +164,11 @@ traces
 |------------|---|
 |Трассировка       | 0 |
 |Отладка       | 1 |
-|Сведения | 2 |
+|Информация | 2 |
 |Предупреждение     | 3 |
-|Error       | 4 |
-|Critical    | 5 |
-|Отсутствуют        | 6 |
+|Ошибка       | 4 |
+|Критический    | 5 |
+|Нет        | 6 |
 
 Уровень ведения журнала `None` описан в следующем разделе. 
 
@@ -212,13 +213,13 @@ traces
 
 В этом примере настраиваются следующие правила:
 
-* Для журналов с `Host.Results` категорией `Function`или отправку `Error` уровня и выше для Application Insights. Данные журналов с уровнем `Warning` и ниже игнорируются.
+* Для журналов с категорией `Host.Results` или `Function` отправляйте только `Error` и выше для Application Insights. Данные журналов с уровнем `Warning` и ниже игнорируются.
 * Все журналы с категорией `Host.Aggregator` отправляются в Application Insights. Уровень ведения журнала `Trace` — это то же, что в некоторых средствах ведения журналов именуется как `Verbose`. В файле [Host. JSON] необходимо использовать `Trace`.
 * Для всех остальных журналов в Application Insights отправляются данные с уровнем `Information` и выше.
 
-Значение категории в [Host. JSON] управляет ведением журнала для всех категорий, название которых начинается с аналогичного значения. `Host`в [Host. JSON] управляет ведением журнала `Host.General`для `Host.Executor`, `Host.Results`, и т. д.
+Значение категории в [Host. JSON] управляет ведением журнала для всех категорий, название которых начинается с аналогичного значения. `Host` в [Host. JSON] управляет ведением журнала для `Host.General`, `Host.Executor`, `Host.Results` и т. д.
 
-Если [Host. JSON] содержит несколько категорий с одинаковым началом строки, сопоставление начинается с более длинных строк. Предположим, что все, что требуется из `Host.Aggregator` среды выполнения, `Error` за исключением ведения журнала `Host.Aggregator` на уровне, но `Information` вы хотите вести журнал на уровне:
+Если [Host. JSON] содержит несколько категорий с одинаковым началом строки, сопоставление начинается с более длинных строк. Предположим, что все, что нужно сделать, за исключением `Host.Aggregator` для входа в систему на уровне `Error`, но вы хотите, чтобы `Host.Aggregator` заходило на уровне `Information`:
 
 ### <a name="version-2x"></a>Версия 2.x 
 
@@ -263,7 +264,7 @@ traces
 
 ![Диаграмма запросов](media/functions-monitoring/requests-chart.png)
 
-Все эти журналы записываются на `Information` уровне. Если фильтр выполняется в `Warning` или более поздней версии, эти данные отображаться не будут.
+Все эти журналы записываются на уровне `Information`. При фильтрации по `Warning` или более поздней версии эти данные отображаться не будут.
 
 ### <a name="category-hostaggregator"></a>Категория Host.Aggregator
 
@@ -273,7 +274,7 @@ traces
 
 ![Запрос по customMetrics](media/functions-monitoring/custom-metrics-query.png)
 
-Все эти журналы записываются на `Information` уровне. Если фильтр выполняется в `Warning` или более поздней версии, эти данные отображаться не будут.
+Все эти журналы записываются на уровне `Information`. При фильтрации по `Warning` или более поздней версии эти данные отображаться не будут.
 
 ### <a name="other-categories"></a>Другие категории
 
@@ -281,9 +282,9 @@ traces
 
 ![Запрос по трассировкам](media/functions-monitoring/analytics-traces.png)
 
-Все журналы с категориями, начинающимися с `Host` , записываются средой выполнения функций. Журналы "функция запущена" и "функция завершена" имеют категорию `Host.Executor`. Для успешных запусков эти журналы являются `Information` уровнями. Исключения записываются `Error` на уровне. Кроме того, среда выполнения создает журналы уровня `Warning`, например очередь сообщений, отправленных в очередь подозрительных сообщений.
+Все журналы с категориями, начинающимися с `Host`, записываются средой выполнения функций. Журналы "функция запущена" и "функция завершена" имеют категорию `Host.Executor`. Для успешного выполнения эти журналы имеют уровень `Information`. Исключения записываются на уровне `Error`. Кроме того, среда выполнения создает журналы уровня `Warning`, например очередь сообщений, отправленных в очередь подозрительных сообщений.
 
-Журналы, написанные кодом функции, имеют `Function` категорию и могут иметь любой уровень ведения журнала.
+Журналы, написанные кодом функции, имеют категорию `Function` и могут быть любым уровнем ведения журнала.
 
 ## <a name="configure-the-aggregator"></a>Настройка агрегатора
 
@@ -339,9 +340,9 @@ Application Insights имеет функцию [выборки](../azure-monitor
 
 ### <a name="ilogger"></a>ILogger
 
-Используйте параметр [ILogger](https://docs.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger) в функциях вместо параметра `TraceWriter`. Журналы, созданные с `TraceWriter` помощью команды go to Application Insights `ILogger` , но позволяют выполнять [структурированное ведение журнала](https://softwareengineering.stackexchange.com/questions/312197/benefits-of-structured-logging-vs-basic-logging).
+Используйте параметр [ILogger](https://docs.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger) в функциях вместо параметра `TraceWriter`. Журналы, созданные с помощью `TraceWriter` перейдите к Application Insights, но `ILogger` позволяет выполнять [структурированное ведение журнала](https://softwareengineering.stackexchange.com/questions/312197/benefits-of-structured-logging-vs-basic-logging).
 
-Объект `ILogger` позволяет вызывать для создания журналов [методы расширения ILogger](https://docs.microsoft.com/dotnet/api/microsoft.extensions.logging.loggerextensions#methods) `Log<level>`. Следующий код записывает `Information` журналы с функцией Category.
+Объект `ILogger` позволяет вызывать для создания журналов [методы расширения ILogger](https://docs.microsoft.com/dotnet/api/microsoft.extensions.logging.loggerextensions#methods) `Log<level>`. Следующий код записывает `Information` журналов с функцией Category.
 
 ```cs
 public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, ILogger logger)
@@ -363,7 +364,7 @@ logger.LogInformation("partitionKey={partitionKey}, rowKey={rowKey}", partitionK
 
 Такой метод обработки заполнителей позволяет выполнять структурированное ведение журналов. Application Insights сохраняет пары имя-значение параметра и строку сообщения. Благодаря этому все аргументы сообщения становятся полями, по которым можно выполнять запросы.
 
-Если вызов метода ведения журнала выглядит как в предыдущем примере, можно выполнить запрос к полю `customDimensions.prop__rowKey`. Добавляется `prop__` префикс, гарантирующий отсутствие конфликтов между полями, добавляемыми средой выполнения, и полями, которые добавляет код функции.
+Если вызов метода средства ведения журнала выглядит как в предыдущем примере, можно запросить поле `customDimensions.prop__rowKey`. Добавлен префикс `prop__`, чтобы гарантировать отсутствие конфликтов между полями, добавляемыми средой выполнения, и полями, которые добавляет код функции.
 
 Исходную строку сообщения можно получить, указав в запросе поле `customDimensions.prop__{OriginalFormat}`.  
 
@@ -400,7 +401,7 @@ context.log('JavaScript HTTP trigger function processed a request.' + context.in
 
 ### <a name="custom-metrics-logging"></a>Ведение журнала пользовательских метрик
 
-При использовании [версии 1. x](functions-versions.md#creating-1x-apps) среды выполнения функций функции node. js могут использовать `context.log.metric` метод для создания пользовательских метрик в Application Insights. В настоящее время этот метод не поддерживается в версии 2. x. Ниже приведен пример вызова метода.
+При использовании [версии 1. x](functions-versions.md#creating-1x-apps) среды выполнения функций функции node. js могут использовать метод `context.log.metric` для создания пользовательских метрик в Application Insights. В настоящее время этот метод не поддерживается в версии 2. x. Ниже приведен пример вызова метода.
 
 ```javascript
 context.log.metric("TestMetric", 1234);
@@ -414,7 +415,7 @@ context.log.metric("TestMetric", 1234);
 
 ### <a name="version-2x"></a>Версия 2.x
 
-Среда выполнения версии 2.x использует новые функции в Application Insights для выполнения автоматической корреляции данных телеметрии с текущей операцией. Нет необходимости вручную задавать поля для операции `Id`, `ParentId`или `Name` .
+Среда выполнения версии 2.x использует новые функции в Application Insights для выполнения автоматической корреляции данных телеметрии с текущей операцией. Вам не нужно вручную задавать `Id`, `ParentId` или `Name` поля.
 
 ```cs
 using System;
@@ -563,7 +564,7 @@ namespace functionapp0915
 }
 ```
 
-Не `TrackRequest` вызывайте `StartOperation<RequestTelemetry>` или, так как вы увидите дублирующиеся запросы на вызов функции.  Среда выполнения Функций Azure автоматически отслеживает запросы.
+Не вызывайте `TrackRequest` или `StartOperation<RequestTelemetry>`, так как вы увидите дублирующиеся запросы на вызов функции.  Среда выполнения Функций Azure автоматически отслеживает запросы.
 
 Не указывайте `telemetryClient.Context.Operation.Id`. Этот глобальный параметр приводит к неправильной корреляции при одновременном выполнении множества функций. Вместо этого создайте экземпляр телеметрии (`DependencyTelemetry`, `EventTelemetry`) и измените его свойство `Context`. Затем передайте экземпляр телеметрии в соответствующий метод `Track` в `TelemetryClient` (`TrackDependency()`, `TrackEvent()`). Этот метод гарантирует, что данные телеметрии будет иметь правильные сведения о корреляции для текущего вызова функции.
 
@@ -590,15 +591,15 @@ module.exports = function (context, req) {
 };
 ```
 
-Параметр задает в качестве `operation_Id` идентификатора вызова функции. `tagOverrides` Этот параметр позволяет сопоставлять все автоматически создаваемые и пользовательские данные телеметрии с конкретным вызовом функции.
+Параметр `tagOverrides` задает `operation_Id` для идентификатора вызова функции. Этот параметр позволяет сопоставлять все автоматически создаваемые и пользовательские данные телеметрии с конкретным вызовом функции.
 
 ## <a name="dependencies"></a>Зависимости
 
 Функции v2 автоматически собирают зависимости для HTTP-запросов, ServiceBus и SQL.
 
-Можно написать пользовательский код для отображения зависимостей. Примеры см. в примере кода в [ C# разделе Custom телеметрии](#log-custom-telemetry-in-c-functions). Пример кода приводит к отображению *схемы приложения* в Application Insights, которая выглядит как на следующем рисунке:
+Можно написать пользовательский код для отображения зависимостей. Примеры см. в примере кода в [ C# разделе Custom телеметрии](#log-custom-telemetry-in-c-functions). Пример кода приводит к *отображению схемы приложения* в Application Insights, которая выглядит как на следующем рисунке:
 
-![Схема приложений](./media/functions-monitoring/app-map.png)
+![Схема сопоставления приложений](./media/functions-monitoring/app-map.png)
 
 ## <a name="report-issues"></a>Сообщение о проблемах
 
@@ -606,7 +607,7 @@ module.exports = function (context, req) {
 
 ## <a name="streaming-logs"></a>Журналы потоковой передачи
 
-При разработке приложения часто требуется, чтобы записи записывались в журналы практически в реальном времени при работе в Azure.
+При разработке приложения часто требуется узнать, какие записи записываются в журналы практически в реальном времени при работе в Azure.
 
 Существует два способа просмотра потока файлов журнала, создаваемых при выполнении функций.
 
@@ -616,7 +617,7 @@ module.exports = function (context, req) {
 
 Потоки журнала можно просматривать как на портале, так и в большинстве локальных сред разработки. 
 
-### <a name="portal"></a>Портал
+### <a name="portal"></a>Microsoft Azure
 
 На портале можно просматривать оба типа потоков журналов.
 
@@ -630,7 +631,7 @@ module.exports = function (context, req) {
 
 ![Просмотр журналов потоковой передачи на портале](./media/functions-monitoring/streaming-logs-window.png)
 
-#### <a name="live-metrics-stream"></a>Live Metrics Stream
+#### <a name="live-metrics-stream"></a>Динамический поток метрик
 
 Чтобы просмотреть Live Metrics Stream для приложения, перейдите на вкладку **Обзор** приложения функции. При наличии Application Insights включается ссылка на **Application Insights** в разделе **настроенные компоненты**. Эта ссылка позволяет перейти на страницу Application Insights приложения.
 
@@ -638,7 +639,7 @@ module.exports = function (context, req) {
 
 ![Просмотр Live Metrics Stream на портале](./media/functions-monitoring/live-metrics-stream.png) 
 
-### <a name="visual-studio-code"></a>Visual Studio Code
+### <a name="visual-studio-code"></a>Код Visual Studio
 
 [!INCLUDE [functions-enable-log-stream-vs-code](../../includes/functions-enable-log-stream-vs-code.md)]
 
@@ -646,7 +647,7 @@ module.exports = function (context, req) {
 
 [!INCLUDE [functions-streaming-logs-core-tools](../../includes/functions-streaming-logs-core-tools.md)]
 
-### <a name="azure-cli"></a>Azure CLI
+### <a name="azure-cli"></a>Azure CLI
 
 Вы можете включить журналы потоковой передачи с помощью [Azure CLI](/cli/azure/install-azure-cli). Используйте следующие команды для входа в систему, выбора подписки и потоковой передачи файлов журнала:
 
@@ -674,7 +675,7 @@ Get-AzWebSiteLog -Name <FUNCTION_APP_NAME> -Tail
 
 Чтобы отключить встроенное ведение журнала, удалите параметр приложения `AzureWebJobsDashboard`. Дополнительные сведения о том, как удалять параметры приложения на портале Azure, см. в разделе **Параметры приложения** статьи [Управление приложением-функцией на портале Azure](functions-how-to-use-azure-function-app-settings.md#settings). Перед удалением параметра приложения убедитесь, что ни одна из функций в том же приложении не использует параметр для триггеров или привязок службы хранилища Azure.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Для получения дополнительных сведений см. следующие ресурсы:
 

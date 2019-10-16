@@ -8,12 +8,12 @@ ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
 ms.date: 09/17/2019
-ms.openlocfilehash: 67a4aceb157ee3fe1b1d1553efd587a0f2838d88
-ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
+ms.openlocfilehash: 1186fec8d50d7e986d1c613cd96f741c34ca181a
+ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71950012"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72372621"
 ---
 # <a name="understand-digital-twins-object-models-and-spatial-intelligence-graph"></a>Основные сведения об объектных моделях и пространственном интеллектуальном графе в Digital Twins
 
@@ -78,14 +78,14 @@ Azure Digital Twins — это служба Интернета вещей Azure,
 https://YOUR_INSTANCE_NAME.YOUR_LOCATION.azuresmartspaces.net/management/swagger
 ```
 
-| Название | Заменить на |
+| Name | Заменить на |
 | --- | --- |
 | YOUR_INSTANCE_NAME | Имя экземпляра Digital Twins |
-| YOUR_LOCATION | Регион сервера, в котором размещен ваш экземпляр |
+| YOUR_LOCATION | Регион сервера, в котором размещен ваш экземпляр. |
 
  На этом изображении представлен полный формат URL-адреса.
 
-(![API управления на портале Digital Twins](media/concepts/digital-twins-spatial-graph-management-api-url.png)] (Media/концепция/дигитал-Твинс-спатиал-граф-манажемент-АПИ-УРЛ. png # уменьшать)
+[API управления порталом ![Digital двойников](media/concepts/digital-twins-spatial-graph-management-api-url.png)](media/concepts/digital-twins-spatial-graph-management-api-url.png#lightbox)
 
 Дополнительные сведения об использовании пространственных интеллектуальных графов см. в кратком обзоре интерфейсов API управления Azure Digital Twins.
 
@@ -97,7 +97,7 @@ https://YOUR_INSTANCE_NAME.YOUR_LOCATION.azuresmartspaces.net/management/swagger
 
 Все вызовы API должны пройти аутентификацию с помощью [OAuth](https://docs.microsoft.com/azure/active-directory/develop/v1-protocols-oauth-code). В API-интерфейсах выполняются [рекомендации по REST API от корпорации Майкрософт](https://github.com/Microsoft/api-guidelines/blob/master/Guidelines.md). Большинство API-интерфейсов, возвращающих коллекции, поддерживают параметры системного запроса [OData](https://www.odata.org/getting-started/basic-tutorial/#queryData).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о подключении к устройству и отправке сообщений телеметрии в Digital Twins см. в статье [Возможность подключения устройств и входящие данные телеметрии](concepts-device-ingress.md).
 

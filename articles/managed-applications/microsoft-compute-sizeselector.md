@@ -1,6 +1,6 @@
 ---
 title: Элемент пользовательского интерфейса SizeSelector для портала Azure | Документация Майкрософт
-description: Сведения об элементе пользовательского интерфейса Microsoft.Compute.SizeSelector для портала Azure.
+description: Сведения об элементе пользовательского интерфейса Microsoft.Compute.SizeSelector для портала Azure. Используется для выбора размера виртуальной машины.
 services: managed-applications
 documentationcenter: na
 author: tfitzmac
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/27/2018
 ms.author: tomfitz
-ms.openlocfilehash: e5be5635964ebeedc7be4d1d1f5403e4d281b55c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 288ea7e887a170c8560b0126fa53c9132da35db6
+ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64722344"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72332668"
 ---
 # <a name="microsoftcomputesizeselector-ui-element"></a>Элемент пользовательского интерфейса Microsoft.Compute.SizeSelector
 Элемент управления для выбора размера одного или нескольких экземпляров виртуальной машины.
@@ -33,7 +33,7 @@ ms.locfileid: "64722344"
 
 ![Развернутый элемент Microsoft.Compute.SizeSelector](./media/managed-application-elements/microsoft.compute.sizeselector-expanded.png)
 
-## <a name="schema"></a>Схема
+## <a name="schema"></a>SCHEMA (Схема)
 ```json
 {
   "name": "element1",

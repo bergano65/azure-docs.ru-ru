@@ -5,17 +5,17 @@ services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 10/08/2019
+ms.date: 10/14/2019
 ms.topic: conceptual
 ms.service: cost-management
 manager: micflan
 ms.custom: ''
-ms.openlocfilehash: 433bcd31399d8443355edcb2e8586993644174ca
-ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
+ms.openlocfilehash: 6870297eea194b89a84a89e1e8ef8decf5c1788e
+ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72242359"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72374529"
 ---
 # <a name="understand-cost-management-data"></a>Интерпретация данных службы "Управление затратами"
 
@@ -30,10 +30,11 @@ ms.locfileid: "72242359"
 | **Категория**  | **Название предложения** | **Идентификатор квоты** | **Номер предложения** | **Данные, доступные из** |
 | --- | --- | --- | --- | --- |
 | **Azure для государственных организаций** | Azure для государственных организаций                                                         | EnterpriseAgreement_2014-09-01 | MS-AZR-USGOV-0017P | Май 2014<sup>1</sup> |
-| **Соглашение Enterprise (EA)** | Enterprise — разработка и тестирование                                                        | MSDNDevTest_2014-09-01 | MS-AZR-0148P | Май 2014<sup>1</sup> |
+| **Соглашение Enterprise (EA)** | Разработка и тестирование Enterprise                                                        | MSDNDevTest_2014-09-01 | MS-AZR-0148P | Май 2014<sup>1</sup> |
 | **Соглашение Enterprise (EA)** | [Microsoft Azure Enterprise](https://azure.microsoft.com/offers/enterprise-agreement-support-upgrade) | EnterpriseAgreement_2014-09-01 | MS-AZR-0017P | Май 2014<sup>1</sup> |
 | **Соглашение клиента Майкрософт** | [План Microsoft Azure](https://azure.microsoft.com/offers/ms-azr-0017g) | EnterpriseAgreement_2014-09-01 | Н/Д | 2019 марта,<sup>3</sup> |
 | **Соглашение клиента Майкрософт** | [План Microsoft Azure для разработки и тестирования](https://azure.microsoft.com/offers/ms-azr-0148g) | MSDNDevTest_2014-09-01 | Н/Д | 2019 марта,<sup>3</sup> |
+| **Соглашение для партнеров Майкрософт** | План Microsoft Azure | CSP_2015-05-01, CSP_MG_2017-12-01, CSPDEVTEST_2018-05-01 | Н/Д | Октябрь 2019 г. |
 | **Microsoft Developer Network (MSDN)** | [MSDN Platforms](https://azure.microsoft.com/offers/ms-azr-0062p)<sup>4</sup> | MSDN_2014-09-01 | MS-AZR-0062P | 2 октября, 2018<sup>2</sup> |
 | **Оплата по мере использования** | [Оплата по мере использования](https://azure.microsoft.com/offers/ms-azr-0003p)                  | PayAsYouGo_2014-09-01 | MS-AZR-0003P | 2 октября, 2018<sup>2</sup> |
 | **Оплата по мере использования** | [Разработка и тестирование с оплатой по мере использования](https://azure.microsoft.com/offers/ms-azr-0023p)         | MSDNDevTest_2014-09-01 | MS-AZR-0023P | 2 октября, 2018<sup>2</sup> |
@@ -45,7 +46,7 @@ ms.locfileid: "72242359"
 | **Visual Studio** | [Visual Studio Professional](https://azure.microsoft.com/offers/ms-azr-0059p)<sup>4</sup>         | MSDN_2014-09-01 | MS-AZR-0059P | 2 октября, 2018<sup>2</sup> |
 | **Visual Studio** | [Visual Studio Test Professional](https://azure.microsoft.com/offers/ms-azr-0060p)<sup>4</sup>    | MSDNDevTest_2014-09-01 | MS-AZR-0060P | 2 октября, 2018<sup>2</sup> |
 | **Visual Studio** | [Visual Studio Enterprise](https://azure.microsoft.com/offers/ms-azr-0063p)<sup>4</sup>           | MSDN_2014-09-01 | MS-AZR-0063P | 2 октября, 2018<sup>2</sup> |
-| **Visual Studio** | [Visual Studio Enterprise: BizSpark @ no__t-0<sup>4</sup> | MSDN_2014-09-01 | MS-AZR-0064P | 2 октября, 2018<sup>2</sup> |
+| **Visual Studio** | [Visual Studio Enterprise: BizSpark](https://azure.microsoft.com/offers/ms-azr-0064p)<sup>4</sup> | MSDN_2014-09-01 | MS-AZR-0064P | 2 октября, 2018<sup>2</sup> |
 
 _<sup>**1**</sup> для данных до 2014 мая посетите [портал Azure Enterprise](https://ea.azure.com)._
 
@@ -53,20 +54,20 @@ _<sup>**2**</sup> для данных до 2 октября 2018 см. [цент
 
 _<sup>**3**</sup> соглашения с клиентами Майкрософт, запущенные в марте 2019 и не имеющие исторических данных до этой точки._
 
-_<sup>**4**</sup> исторические данные для подписок, основанных на кредитах, так и для авансовых выплат, могут не соответствовать счету. См. статью [исторические данные могут не соответствовать счетам](#historical-data-might-not-match-invoice) ниже._
+_<sup>**4**</sup> исторические данные для подписок, основанных на кредитах и выплат, могут не соответствовать счету. См. статью [исторические данные могут не соответствовать счетам](#historical-data-might-not-match-invoice) ниже._
 
 Следующие предложения пока не поддерживаются:
 
-| Category  | **Название предложения** | **Идентификатор квоты** | **Номер предложения** |
+| Категория  | **Название предложения** | **Идентификатор квоты** | **Номер предложения** |
 | --- | --- | --- | --- |
 | **Azure для Германии** | [Azure для Германии с оплатой по мере использования](https://azure.microsoft.com/offers/ms-azr-de-0003p) | PayAsYouGo_2014-09-01 | MS-AZR-DE-0003P |
 | **Поставщик облачных решений (CSP)** | Microsoft Azure.                                    | CSP_2015-05-01 | MS-AZR-0145P |
 | **Поставщик облачных решений (CSP)** | Поставщик облачных решений Azure для государственных организаций                               | CSP_2015-05-01 | MS-AZR-USGOV-0145P |
 | **Поставщик облачных решений (CSP)** | Azure для Германии в CSP для Microsoft Cloud для Германии   | CSP_2015-05-01 | MS-AZR-DE-0145P |
-| **Оплата по мере использования**                 | Начальный набор Microsoft Azure для учащихся | DreamSpark_2015-02-01 | MS-AZR-0144P |
+| **Оплата по мере использования**                 | Azure Starter для учащихся | DreamSpark_2015-02-01 | MS-AZR-0144P |
 | **Оплата по мере использования** | [Azure для учащихся](https://azure.microsoft.com/offers/ms-azr-0170p)<sup>4</sup> | AzureForStudents_2018-01-01 | MS-AZR-0170P |
 | **Оплата по мере использования**                 | [Спонсорское предложение Microsoft Azure](https://azure.microsoft.com/offers/ms-azr-0036p/) | Sponsored_2016-01-01 | MS-AZR-0036P |
-| **Планы поддержки** | Поддержка уровня "Стандартный"                    | Default_2014-09-01 | MS-AZR-0041P |
+| **Планы поддержки** | Поддержка Standard                    | Default_2014-09-01 | MS-AZR-0041P |
 | **Планы поддержки** | Поддержка Professional Direct         | Default_2014-09-01 | MS-AZR-0042P |
 | **Планы поддержки** | Поддержка разработчика                   | Default_2014-09-01 | MS-AZR-0043P |
 | **Планы поддержки** | Планы поддержки для Германии                | Default_2014-09-01 | MS-AZR-DE-0043P |
@@ -146,6 +147,6 @@ _<sup>**8**</sup> тегов ресурсов применяются по мер
 - MSDN (MS-AZR-0062P)
 - Visual Studio (MS-AZR-0029P, MS-AZR-0059P, MS-AZR-0060P, MS-AZR-0063P, MS-AZR-0064P)
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>Дополнительные материалы
 
 - См. первое краткое руководство по [работе с Управлением затратами](quick-acm-cost-analysis.md).

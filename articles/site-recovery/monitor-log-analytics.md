@@ -1,18 +1,18 @@
 ---
-title: Мониторинг Azure Site Recovery с помощью журналов Azure Monitor (Log Analytics)
+title: Мониторинг Azure Site Recovery с помощью журналов Azure Monitor (Log Analytics) | Документация Майкрософт
 description: Сведения о мониторинге Azure Site Recovery с помощью журналов Azure Monitor (Log Analytics)
 author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 07/30/2019
+ms.date: 10/13/2019
 ms.author: raynew
-ms.openlocfilehash: 4eb88658437d3b29cc55d24bb83f73b660daea43
-ms.sourcegitcommit: a52f17307cc36640426dac20b92136a163c799d0
+ms.openlocfilehash: 889fa3bee17aa3b0300431b058332c5ec10d9faf
+ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68718487"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72331924"
 ---
 # <a name="monitor-site-recovery-with-azure-monitor-logs"></a>Мониторинг Site Recovery с помощью журналов Azure Monitor
 
@@ -25,8 +25,12 @@ ms.locfileid: "68718487"
 - **Наблюдение за работоспособностью и состоянием Site Recovery**. Например, можно наблюдать за работоспособностью репликации, состоянием тестовой отработки отказа, Site Recovery событиями, целями точки восстановления (RPO) для защищенных компьютеров и частотой изменения дисковых данных.
 - **Настройте оповещения для Site Recovery**. Например, можно настроить оповещения о работоспособности компьютера, состоянии тестовой отработки отказа или Site Recovery состояния задания.
 
-Использование журналов Azure Monitor с Site Recovery поддерживается для репликации Azure в Azure, а также для репликации виртуальных машин и физических серверов VMware в Azure.
-## <a name="before-you-start"></a>Перед началом
+Использование журналов Azure Monitor с Site Recovery поддерживается для репликации **Azure в Azure** , а также для репликации **виртуальных машин и физических серверов VMware в Azure** .
+
+> [!NOTE]
+> Журналы данных об обработке и журналы скорости передачи доступны только для виртуальных машин Azure, реплицируемых в дополнительный регион Azure.
+
+## <a name="before-you-start"></a>Перед началом работы
 
 Вам потребуется следующее.
 
@@ -38,15 +42,16 @@ ms.locfileid: "68718487"
 
 ## <a name="configure-site-recovery-to-send-logs"></a>Настройка Site Recovery для отправки журналов
 
-1. В хранилище щелкните **Параметры** > диагностики**Добавить параметр диагностики**.
+1. В хранилище щелкните **параметры диагностики** > **Добавить параметр диагностики**.
 
     ![Выбор журнала диагностики](./media/monitoring-log-analytics/add-diagnostic.png)
 
-2. В окне **параметры диагностики**укажите имя действия журнала и выберите **отправить в log Analytics**.
+2. В окне **параметры диагностики**укажите имя и установите флажок **отправить на log Analytics**.
 3. Выберите подписку на Azure Monitor журналы и рабочую область Log Analytics.
-4. В списке Журнал выберите все журналы с префиксом **азуреситерековери**. Затем нажмите кнопку **ОК**.
+4. Выберите **система диагностики Azure** в переключателе.
+5. В списке Журнал выберите все журналы с префиксом **азуреситерековери**. Нажмите кнопку **ОК**.
 
-    ![Выберите рабочую область](./media/monitoring-log-analytics/select-workspace.png)
+    ![Выбор рабочей области](./media/monitoring-log-analytics/select-workspace.png)
 
 Журналы Site Recovery начинается с перевода в таблицу (**AzureDiagnostics**) в выбранной рабочей области.
 
@@ -61,7 +66,7 @@ ms.locfileid: "68718487"
 
 ### <a name="query-replication-health"></a>Запрос работоспособности репликации
 
-Этот запрос строит круговую диаграмму о текущей работоспособности репликации всех защищенных виртуальных машин Azure, разбитую на три состояния: Обычная, предупреждение или критическое.
+Этот запрос строит круговую диаграмму о текущей работоспособности репликации всех защищенных виртуальных машин Azure, разбитую на три состояния: обычная, предупреждение или критическая.
 
 ```
 AzureDiagnostics  
@@ -88,7 +93,7 @@ AzureDiagnostics 
 
 ### <a name="query-rpo-time"></a>Время RPO запроса
 
-Этот запрос строит линейчатую диаграмму виртуальных машин Azure, реплицированных с Site Recovery, разбитой на целевую точку восстановления (RPO): Менее чем за 15 минут, от 15-30 минут до 30 минут.
+Этот запрос строит линейчатую диаграмму виртуальных машин Azure, реплицированных с Site Recovery, разделенных на целевую точку восстановления (RPO): менее 15 минут, от 15-30 минут до 30 минут.
 
 ```
 AzureDiagnostics 
@@ -171,7 +176,10 @@ AzureDiagnostics  
 
 ### <a name="query-data-change-rate-churn-for-a-vm"></a>Частота запросов на изменение данных (обновление) для виртуальной машины
 
-Этот запрос строит диаграмму тренда для конкретной виртуальной машины Azure (ContosoVM123), которая отслеживает скорость изменения данных (байт в секунду) и скорость передачи данных. Эта информация доступна только для виртуальных машин Azure, реплицируемых в дополнительный регион Azure.
+> [!NOTE] 
+> Сведения об обработке доступны только для виртуальных машин Azure, реплицируемых в дополнительный регион Azure.
+
+Этот запрос строит диаграмму тренда для конкретной виртуальной машины Azure (ContosoVM123), которая отслеживает скорость изменения данных (байт в секунду) и скорость передачи данных. 
 
 ```
 AzureDiagnostics   
@@ -229,7 +237,7 @@ AzureDiagnostics  
 | summarize hint.strategy=partitioned arg_max(TimeGenerated, *) by name_s   
 | summarize count() 
 ```
-Для предупреждения установите пороговое **значение** 20.
+Для предупреждения установите **пороговое значение** 20.
 
 ### <a name="single-machine-in-a-critical-state"></a>Один компьютер в критическом состоянии
 
@@ -244,7 +252,7 @@ AzureDiagnostics  
 | summarize hint.strategy=partitioned arg_max(TimeGenerated, *) by name_s   
 | summarize count()  
 ```
-Для предупреждения установите пороговое **значение** 1.
+Для предупреждения установите **пороговое значение** 1.
 
 ### <a name="multiple-machines-exceed-rpo"></a>Превышение RPO для нескольких компьютеров
 
@@ -258,7 +266,7 @@ AzureDiagnostics  
 | project name_s , rpoInSeconds_d   
 | summarize count()  
 ```
-Для предупреждения установите пороговое **значение** 20.
+Для предупреждения установите **пороговое значение** 20.
 
 ### <a name="single-machine-exceeds-rpo"></a>Один компьютер превышает RPO
 
@@ -274,7 +282,7 @@ AzureDiagnostics  
 | project name_s , rpoInSeconds_d   
 | summarize count()  
 ```
-Для предупреждения установите пороговое **значение** 1.
+Для предупреждения установите **пороговое значение** 1.
 
 ### <a name="test-failover-for-multiple-machines-exceeds-90-days"></a>Тестовая отработка отказа для нескольких компьютеров превышает 90 дней
 
@@ -289,7 +297,7 @@ AzureDiagnostics 
 | summarize hint.strategy=partitioned arg_max(TimeGenerated, *) by name_s   
 | summarize count()  
 ```
-Для предупреждения установите пороговое **значение** 20.
+Для предупреждения установите **пороговое значение** 20.
 
 ### <a name="test-failover-for-single-machine-exceeds-90-days"></a>Тестовая отработка отказа для одного компьютера превышает 90 дней
 
@@ -304,7 +312,7 @@ AzureDiagnostics 
 | summarize hint.strategy=partitioned arg_max(TimeGenerated, *) by name_s   
 | summarize count()  
 ```
-Для предупреждения установите пороговое **значение** 1.
+Для предупреждения установите **пороговое значение** 1.
 
 ### <a name="site-recovery-job-fails"></a>Сбой задания Site Recovery
 
@@ -317,8 +325,8 @@ AzureDiagnostics  
 | summarize count()  
 ```
 
-Для предупреждения установите пороговое **значение** 1, а **период** — 1440 минут, чтобы проверить ошибки за последний день.
+Для предупреждения установите **пороговое значение** 1, а **период** — 1440 минут, чтобы проверить ошибки за последний день.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Дополнительные сведения о](site-recovery-monitor-and-troubleshoot.md) встроенном мониторинге Site Recovery.

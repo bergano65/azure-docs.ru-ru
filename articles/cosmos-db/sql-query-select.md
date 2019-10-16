@@ -6,14 +6,14 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 06/10/2019
 ms.author: girobins
-ms.openlocfilehash: d34b1c39d9789409dc365cd4cf07fdc3d5a780fd
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.openlocfilehash: b90fc6f1f50ec2ea75619188cca36f78061f28df
+ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "71003522"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72326792"
 ---
-# <a name="select-clause"></a>Предложение SELECT
+# <a name="select-clause-in-azure-cosmos-db"></a>Предложение SELECT в Azure Cosmos DB
 
 Каждый запрос состоит из предложения SELECT и необязательных предложений [from](sql-query-from.md) и [WHERE](sql-query-where.md) для стандартов ANSI SQL. Как правило, источник в предложении FROM является перечислимым, а предложение WHERE применяет фильтр к источнику для получения подмножества элементов JSON. Затем предложение SELECT проецирует запрошенные значения JSON в списке выбора.
 
@@ -66,19 +66,19 @@ SELECT <select_specification>
   
 1. `SELECT * FROM ... AS from_alias ...`  
   
-   эквивалентно выражению:  
+   эквивалентно правилу  
   
    `SELECT from_alias FROM ... AS from_alias ...`  
   
 2. `SELECT <expr1> AS p1, <expr2> AS p2,..., <exprN> AS pN [other clauses...]`  
   
-   эквивалентно выражению:  
+   эквивалентно правилу  
   
    `SELECT VALUE { p1: <expr1>, p2: <expr2>, ..., pN: <exprN> }[other clauses...]`  
   
 ## <a name="examples"></a>Примеры
 
-Следующий пример запроса SELECT `address` возвращает из `Families` , чьи `id` соответствия `AndersenFamily`:
+Следующий пример запроса SELECT возвращает `address` из `Families`, чьи `id` соответствуют `AndersenFamily`:
 
 ```sql
     SELECT f.address
@@ -109,7 +109,7 @@ SELECT <select_specification>
 
 ### <a name="nested-properties"></a>Вложенные свойства
 
-В следующем примере проецируется два вложенных `f.address.state` свойства `f.address.city`, и.
+В следующем примере проецируется два вложенных свойства: `f.address.state` и `f.address.city`.
 
 ```sql
     SELECT f.address.state, f.address.city
@@ -147,7 +147,7 @@ SELECT <select_specification>
     }]
 ```
 
-В предыдущем примере предложение SELECT должно создать объект JSON, а поскольку в примере нет ключа, предложение использует неявное имя `$1`переменной аргумента. Следующий запрос возвращает две неявные переменные аргумента `$2`: `$1` и.
+В предыдущем примере предложение SELECT должно создать объект JSON, а поскольку в примере нет ключа, предложение использует неявное имя переменной аргумента `$1`. Следующий запрос возвращает две неявные переменные аргумента: `$1` и `$2`.
 
 ```sql
     SELECT { "state": f.address.state, "city": f.address.city },
@@ -170,7 +170,7 @@ SELECT <select_specification>
     }]
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Начало работы](sql-query-getting-started.md)
 - [Примеры .NET для Azure Cosmos DB](https://github.com/Azure/azure-cosmos-dotnet-v3)

@@ -5,26 +5,25 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: article
-ms.date: 04/16/2019
+ms.date: 10/15/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 892cbe66222626a6847ad7a5b6c990d23991c182
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.openlocfilehash: 74ca6f15baeeb9fe8adad4bda80e313a4b4cf03a
+ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "71002269"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72376242"
 ---
 # <a name="configure-customer-managed-keys-for-azure-storage-encryption-from-the-azure-portal"></a>Настройка ключей, управляемых клиентом, для шифрования службы хранилища Azure из портал Azure
 
 [!INCLUDE [storage-encryption-configure-keys-include](../../../includes/storage-encryption-configure-keys-include.md)]
 
-В этой статье показано, как настроить хранилище ключей с управляемыми клиентом ключами с помощью [портал Azure](https://portal.azure.com/). Сведения о создании хранилища ключей с помощью портал Azure см. в разделе [краткое руководство. Задайте и извлеките секрет из Azure Key Vault с помощью портал Azure](../../key-vault/quick-create-portal.md). 
-
+В этой статье показано, как настроить хранилище ключей с управляемыми клиентом ключами с помощью [портал Azure](https://portal.azure.com/). Сведения о создании хранилища ключей с помощью портал Azure см. в разделе [Краткое руководство. Установка и извлечение секрета из Azure Key Vault с помощью портал Azure](../../key-vault/quick-create-portal.md). 
 
 > [!IMPORTANT]
-> Для использования управляемых клиентом ключей с шифрованием службы хранилища Azure необходимо, чтобы в хранилище ключей было настроено два обязательных свойства, **обратимое удаление** и **не выполнять очистку**. Эти свойства включены по умолчанию при создании нового хранилища ключей в портал Azure. Однако если необходимо включить эти свойства в существующем хранилище ключей, необходимо использовать PowerShell или Azure CLI.
+> Для использования управляемых клиентом ключей с шифрованием службы хранилища Azure необходимо, чтобы в хранилище ключей были установлены два свойства: **обратимое удаление** и **не очищать**. По умолчанию эти свойства отключены. Чтобы включить эти свойства, используйте либо PowerShell, либо Azure CLI.
 > Поддерживаются только ключи RSA и размер ключа 2048.
 
 ## <a name="enable-customer-managed-keys"></a>Включить управляемые клиентом ключи
@@ -65,12 +64,12 @@ ms.locfileid: "71002269"
 
 ## <a name="update-the-key-version"></a>Обновление версии ключа
 
-При создании новой версии ключа необходимо обновить учетную запись хранения, чтобы она использовала новую версию. Выполните следующие действия.
+При создании новой версии ключа необходимо обновить учетную запись хранения, чтобы она использовала новую версию. Выполните следующие действия:
 
 1. Перейдите к своей учетной записи хранения и отобразите параметры **шифрования** .
 1. Укажите универсальный код ресурса (URI) для новой версии ключа. Кроме того, можно выбрать хранилище ключей и ключ еще раз, чтобы обновить версию.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Шифрование неактивных данных в службе хранилища Azure](storage-service-encryption.md)
 - [Что такое Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-overview)?

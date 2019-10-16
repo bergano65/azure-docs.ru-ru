@@ -9,11 +9,11 @@ ms.topic: article
 ms.service: security
 ms.subservice: security-fundamentals
 ms.workload: identity
-ms.openlocfilehash: ba9cda5aeebaf0764068a463cdb55f3ef5542ea3
-ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
+ms.openlocfilehash: 22a5a2e157c0b2095673e75e7a3bc9ccb80f8ffd
+ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
+ms.lasthandoff: 10/15/2019
 ms.locfileid: "69997823"
 ---
 # <a name="choose-the-right-authentication-method-for-your-azure-active-directory-hybrid-identity-solution"></a>Выбор правильного метода аутентификации для гибридного решения для идентификации Azure Active Directory 
@@ -37,7 +37,7 @@ ms.locfileid: "69997823"
 ### <a name="out-of-scope"></a>Вне области
 Организации, у которых нет локального каталога, в этой статье не рассматриваются. Как правило, эти предприятия создают идентификаторы только в облаке, что не требует гибридного решения для идентификации. Облачные удостоверения существуют исключительно в облаке и не связаны с соответствующими локальными удостоверениями.
 
-## <a name="authentication-methods"></a>Способы проверки подлинности
+## <a name="authentication-methods"></a>Методы проверки подлинности
 При использовании решения для гибридной идентификации Azure AD в качестве новой плоскости управления аутентификация является основой доступа к облаку. Выбор правильного метода аутентификации является основным первым решением при настройке решения для гибридной идентификации Azure AD. Реализация метода аутентификации настраивается с помощью Azure AD Connect, что также дает возможность подготовить пользователей в облаке.
 
 Чтобы выбрать метод аутентификации, необходимо учитывать время, имеющуюся инфраструктуру, сложность и стоимость реализации решения. Эти факторы отличаются для каждой организации и могут изменяться с течением времени. 
@@ -67,9 +67,6 @@ Azure AD поддерживает следующие методы аутенти
 
 ## <a name="decision-tree"></a>Дерево принятия решений
 
-> [!NOTE]
-> PTA работает только с альтернативным ИДЕНТИФИКАТОРом, когда UserPrincipalName выбран в качестве альтернативного идентификатора. Только после этого будет выполнена синхронизация локального атрибута UserPrincipalName из AD в AAD. Дополнительные сведения см. [в разделе Поддержка сквозной проверки подлинности "альтернативный идентификатор" в качестве имени пользователя вместо "userPrincipalName"](https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-pta-faq#does-pass-through-authentication-support-alternate-id-as-the-username-instead-of-userprincipalname).
-
 ![Дерево принятия решений аутентификации Azure AD](./media/choose-ad-authn/azure-ad-authn-image1.png)
 
 Уточнение вопросов дерева принятия решений:
@@ -89,7 +86,7 @@ Azure AD поддерживает следующие методы аутенти
 
 ## <a name="detailed-considerations"></a>Подробные рекомендации
 
-### <a name="cloud-authentication-password-hash-synchronization"></a>Облачная проверка подлинности Синхронизация хэшей паролей
+### <a name="cloud-authentication-password-hash-synchronization"></a>Облачная аутентификация: синхронизация хэша паролей
 
 * **Трудозатраты**. Синхронизация хэша паролей требует минимальных трудозатрат для развертывания, обслуживания и обеспечения инфраструктуры.  Этот уровень трудозатрат обычно подходит для организаций, которым требуется только, чтобы пользователи входили в Office 365, приложения SaaS и другие ресурсы на основе Azure AD. После включения синхронизация хэша паролей становится частью процесса синхронизации Azure AD Connect и запускается каждые две минуты.
 
@@ -111,7 +108,7 @@ Azure AD поддерживает следующие методы аутенти
 
 Ознакомьтесь с [реализацией синхронизации хэша паролей](../../active-directory/hybrid/how-to-connect-password-hash-synchronization.md), чтобы получить указания по развертыванию.
 
-### <a name="cloud-authentication-pass-through-authentication"></a>Облачная проверка подлинности Сквозная проверка подлинности  
+### <a name="cloud-authentication-pass-through-authentication"></a>Облачная аутентификация: сквозная аутентификация  
 
 * **Трудозатраты**. Для сквозной аутентификации требуется один или несколько (рекомендуется три) упрощенных агентов, установленных на серверах. Эти агенты должны иметь доступ к вашим локальным доменным службам Active Directory, включая локальные контроллеры домена AD. Им необходим исходящий доступ к Интернету и доступ к контроллерам домена. По этой причине не поддерживается развертывание агентов в сети периметра. 
 
@@ -179,16 +176,16 @@ Azure AD поддерживает следующие методы аутенти
 
 |Рассматриваемый вопрос|Синхронизация хэша паролей и простой единый вход|Сквозная аутентификация и простой единый вход|Федерация с AD FS|
 |:-----|:-----|:-----|:-----|
-|Где происходит аутентификация?|В облаке|В облаке после безопасного обмена данными проверки пароля с локальным агентом аутентификации|Локальная система|
-|Каковы требования к локальному серверу, помимо системы подготовки: Azure AD Connect?|Отсутствуют|Один сервер для каждого дополнительного агента аутентификации|Не менее двух серверов AD FS<br><br>Не менее двух WAP-серверов в сети периметра|
-|Каковы локальные требования к доступу к Интернету и сетевым подключениям помимо системы подготовки?|Отсутствуют|[Исходящий доступ к Интернету](../../active-directory/hybrid/how-to-connect-pta-quick-start.md) с серверов, где работают агенты аутентификации|[Входящий доступ к Интернету](https://docs.microsoft.com/windows-server/identity/ad-fs/overview/ad-fs-requirements) к WAP-серверам в сети периметра<br><br>Входящий сетевой доступ к серверам AD FS с WAP-серверов в сети периметра<br><br>Балансировка сетевой нагрузки|
-|Существует ли требование к SSL-сертификату?|Нет|Нет|Да|
+|Где происходит аутентификация?|В облаке|В облаке после безопасного обмена данными проверки пароля с локальным агентом аутентификации|Локальная среда|
+|Каковы требования к локальному серверу помимо системы подготовки (Azure AD Connect)?|Нет|Один сервер для каждого дополнительного агента аутентификации|Не менее двух серверов AD FS<br><br>Не менее двух WAP-серверов в сети периметра|
+|Каковы локальные требования к доступу к Интернету и сетевым подключениям помимо системы подготовки?|Нет|[Исходящий доступ к Интернету](../../active-directory/hybrid/how-to-connect-pta-quick-start.md) с серверов, где работают агенты аутентификации|[Входящий доступ к Интернету](https://docs.microsoft.com/windows-server/identity/ad-fs/overview/ad-fs-requirements) к WAP-серверам в сети периметра<br><br>Входящий сетевой доступ к серверам AD FS с WAP-серверов в сети периметра<br><br>Балансировка сетевой нагрузки|
+|Существует ли требование к SSL-сертификату?|Нет|Нет|ДА|
 |Имеется ли решение для мониторинга работоспособности?|Не требуется|Состояние агента, предоставляемое [Центром администрирования Azure Active Directory](../../active-directory/hybrid/tshoot-connect-pass-through-authentication.md)|[Azure AD Connect Health](../../active-directory/hybrid/how-to-connect-health-adfs.md)|
-|Пользователи получают единый вход в облачные ресурсы с присоединенных к домену устройств в корпоративной сети?|Да, с [простым единым входом](../../active-directory/hybrid/how-to-connect-sso.md)|Да, с [простым единым входом](../../active-directory/hybrid/how-to-connect-sso.md)|Да|
+|Пользователи получают единый вход в облачные ресурсы с присоединенных к домену устройств в корпоративной сети?|Да, с [простым единым входом](../../active-directory/hybrid/how-to-connect-sso.md)|Да, с [простым единым входом](../../active-directory/hybrid/how-to-connect-sso.md)|ДА|
 |Какие типы входа поддерживаются?|UserPrincipalName и пароль<br><br>Встроенная проверка подлинности Windows с [простым единым входом](../../active-directory/hybrid/how-to-connect-sso.md)<br><br>[Альтернативный идентификатор входа](../../active-directory/hybrid/how-to-connect-install-custom.md)|UserPrincipalName и пароль<br><br>Встроенная проверка подлинности Windows с [простым единым входом](../../active-directory/hybrid/how-to-connect-sso.md)<br><br>[Альтернативный идентификатор входа](../../active-directory/hybrid/how-to-connect-pta-faq.md)|UserPrincipalName и пароль<br><br>sAMAccountName и пароль<br><br>Встроенная проверка подлинности Windows<br><br>[Аутентификация с использованием сертификатов и смарт-карт](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-user-certificate-authentication)<br><br>[Альтернативный идентификатор входа](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configuring-alternate-login-id)|
 |Поддерживается ли Windows Hello для бизнеса?|[Модель доверия на основе ключей](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification)|[Модель доверия на основе ключей](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification)<br>*Требует режима работы домена Windows Server 2016*|[Модель доверия на основе ключей](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification)<br><br>[Модель доверия на основе сертификатов](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-key-trust-adfs)|
 |Какие варианты многофакторной проверки подлинности существуют?|[Многофакторная идентификация Azure](https://docs.microsoft.com/azure/multi-factor-authentication/)<br><br>[Пользовательские элементы управления с условным доступом *](../../active-directory/conditional-access/controls.md)|[Многофакторная идентификация Azure](https://docs.microsoft.com/azure/multi-factor-authentication/)<br><br>[Пользовательские элементы управления с условным доступом *](../../active-directory/conditional-access/controls.md)|[Многофакторная идентификация Azure](https://docs.microsoft.com/azure/multi-factor-authentication/)<br><br>[Сервер Azure MFA](../../active-directory/authentication/howto-mfaserver-deploy.md)<br><br>[Стороннее решение многофакторной идентификации](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-additional-authentication-methods-for-ad-fs)<br><br>[Пользовательские элементы управления с условным доступом *](../../active-directory/conditional-access/controls.md)|
-|Какие состояния учетной записи пользователя поддерживаются?|Отключенные учетные записи<br>(до 30-минутной задержки)|Отключенные учетные записи<br><br>Учетная запись заблокирована<br><br>Срок действия учетной записи истек.<br><br>Срок действия пароля истек<br><br>Время входа|Отключенные учетные записи<br><br>Учетная запись заблокирована<br><br>Срок действия учетной записи истек.<br><br>Срок действия пароля истек<br><br>Время входа|
+|Какие состояния учетной записи пользователя поддерживаются?|Отключенные учетные записи<br>(до 30-минутной задержки)|Отключенные учетные записи<br><br>Учетная запись заблокирована<br><br>Срок действия учетной записи истек<br><br>Срок действия пароля истек<br><br>Время входа|Отключенные учетные записи<br><br>Учетная запись заблокирована<br><br>Срок действия учетной записи истек<br><br>Срок действия пароля истек<br><br>Время входа|
 |Что такое параметры условного доступа?|[Условный доступ Azure AD с Azure AD Premium](../../active-directory/conditional-access/overview.md)|[Условный доступ Azure AD с Azure AD Premium](../../active-directory/conditional-access/overview.md)|[Условный доступ Azure AD с Azure AD Premium](../../active-directory/conditional-access/overview.md)<br><br>[Правила утверждений AD FS](https://adfshelp.microsoft.com/AadTrustClaims/ClaimsGenerator)|
 |Поддерживается ли блокировка устаревших протоколов?|[Да](../../active-directory/conditional-access/conditions.md)|[Да](../../active-directory/conditional-access/conditions.md)|[Да](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/access-control-policies-w2k12)|
 |Можно ли настроить логотип, изображение и описание на страницах входа?|[Да, в Azure AD Premium](../../active-directory/fundamentals/customize-branding.md)|[Да, в Azure AD Premium](../../active-directory/fundamentals/customize-branding.md)|[Да](../../active-directory/hybrid/how-to-connect-fed-management.md)|
@@ -222,7 +219,7 @@ Azure AD поддерживает следующие методы аутенти
 
 Рассмотрите каждый метод аутентификации. Соответствуют вашим бизнес-требованиям трудозатраты, необходимые для развертывания решения, и взаимодействие с пользователем при входе в систему? Оцените, нужны ли вашей организации расширенные сценарии и возможности обеспечения непрерывности бизнес-процессов каждого метода аутентификации. Наконец, учтите рекомендации для каждого метода аутентификации. Возможно, какая-либо из них изменит ваше решение.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В современном мире угрозы есть постоянно и повсюду. Реализация правильного метода аутентификации поможет снизить риски для безопасности и защитить удостоверения.
 

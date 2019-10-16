@@ -18,12 +18,12 @@ ms.author: ryanwi
 ms.reviewer: andret
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 034c02c89c6e720311b3dc36428035e8cbdd2b3b
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: 139c7c2e6736eeb3e78ac0aab913378ac84160e1
+ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68835219"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72374095"
 ---
 # <a name="how-to-get-appsource-certified-for-azure-active-directory"></a>Как получить сертификат AppSource для Azure Active Directory
 
@@ -33,7 +33,7 @@ ms.locfileid: "68835219"
 
 ## <a name="guides-and-code-samples"></a>Руководства и примеры кода
 
-Если вы хотите узнать о том, как интегрировать приложения с Azure AD с помощью Open ID Connect, следуйте инструкциям и используйте примеры кода из раздела (v1-overview.md#get-started "Начало работы") статьи [Azure Active Directory для разработчиков].
+Если вы хотите узнать о том, как интегрировать приложение с Azure AD с помощью Open ID Connect, следуйте нашим руководствам и примерам кода в [Руководстве разработчика Azure Active Directory](v1-overview.md#get-started "Приступая к работе с Azure AD для разработчиков").
 
 ## <a name="multi-tenant-applications"></a>Мультитенантные приложения
 
@@ -107,16 +107,16 @@ ms.locfileid: "68835219"
 </tr>
 </table>
 
-### <a name="more-information"></a>Дополнительная информация
+### <a name="more-information"></a>Дополнительные сведения
 
 Дополнительные сведения о пробной версии AppSource см. [в этом видео](https://aka.ms/trialexperienceforwebapps). 
 
 ## <a name="next-steps"></a>Следующие шаги
 
-- Дополнительные сведения о разработке приложений, поддерживающих вход с помощью Azure AD, см. в статье [Сценарии проверки подлинности в Azure AD](https://docs.microsoft.com/azure/active-directory/develop/authentication-scenarios).
+- Дополнительные сведения о разработке приложений, поддерживающих вход с помощью Azure AD, см. в статье [Сценарии проверки подлинности в Azure AD](https://docs.microsoft.com/azure/active-directory/develop/v1-authentication-scenarios).
 - Сведения о выводе списка приложений SaaS в AppSource см. на [странице сведений для партнеров AppSource](https://appsource.microsoft.com/partners).
 
-## <a name="get-support"></a>Поддержка
+## <a name="get-support"></a>Получение поддержки
 
 Для интеграции Azure AD мы используем [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-active-directory+appsource). Кроме того, участники сообщества могут предоставлять поддержку.
 
@@ -125,8 +125,8 @@ ms.locfileid: "68835219"
 Оставляйте свои замечания и пожелания в разделе ниже. Они помогают нам улучшать содержимое веб-сайта.
 
 <!--Reference style links -->
-[AAD-Auth-Scenarios]:authentication-scenarios.md
-[AAD-Auth-Scenarios-Browser-To-WebApp]:authentication-scenarios.md#web-browser-to-web-application
+[AAD-Auth-Scenarios]:v1-authentication-scenarios.md
+[AAD-Auth-Scenarios-Browser-To-WebApp]:v1-authentication-scenarios.md#web-browser-to-web-application
 [AAD-Dev-Guide]: v1-overview.md
 [AAD-Howto-Multitenant-Overview]: howto-convert-app-to-be-multi-tenant.md
 [AAD-QuickStart-Web-Apps]: v1-overview.md#get-started

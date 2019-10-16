@@ -10,14 +10,14 @@ ms.reviewer: v-mamcge, jasonh, kfile
 ms.devlang: csharp
 ms.workload: big-data
 ms.topic: troubleshooting
-ms.date: 08/27/2019
+ms.date: 10/10/2019
 ms.custom: seodec18
-ms.openlocfilehash: 275eff59c56229f45a131e107668b8fefab24536
-ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+ms.openlocfilehash: 389e1472e1e1fcbed6dd3b6c1d155199246d877f
+ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70123766"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72332983"
 ---
 # <a name="monitor-and-mitigate-throttling-to-reduce-latency-in-azure-time-series-insights"></a>Отслеживание и уменьшение регулирования для сокращения задержек в службе "Аналитика временных рядов Azure"
 
@@ -44,15 +44,15 @@ ms.locfileid: "70123766"
 
 1. В портал Azure выберите **оповещения**.
 
-   [![Уведомление](media/environment-mitigate-latency/add-alerts.png)](media/environment-mitigate-latency/add-alerts.png#lightbox)
+   [@no__t 1Alerts](media/environment-mitigate-latency/add-alerts.png)](media/environment-mitigate-latency/add-alerts.png#lightbox)
 
 1. После этого отобразится панель **Создание правила** . Выберите **Добавить** в поле **условие**.
 
-   [![Добавить оповещение](media/environment-mitigate-latency/alert-pane.png)](media/environment-mitigate-latency/alert-pane.png#lightbox)
+   [предупреждение о @no__t 1Add](media/environment-mitigate-latency/alert-pane.png)](media/environment-mitigate-latency/alert-pane.png#lightbox)
 
 1. Затем настройте точные условия для логики сигнала.
 
-   [![Настройка логики сигнала](media/environment-mitigate-latency/configure-alert-rule.png)](media/environment-mitigate-latency/configure-alert-rule.png#lightbox)
+   [логика сигнала ![Configure](media/environment-mitigate-latency/configure-alert-rule.png)](media/environment-mitigate-latency/configure-alert-rule.png#lightbox)
 
    В нем можно настроить оповещения с помощью некоторых из следующих условий.
 
@@ -70,15 +70,15 @@ ms.locfileid: "70123766"
 
 1. После настройки требуемой логики сигнала Просмотрите выбранное правило генерации оповещений визуально.
 
-   [![Входящего трафика](media/environment-mitigate-latency/ingress.png)](media/environment-mitigate-latency/ingress.png#lightbox)
+   [@no__t 1Ingress](media/environment-mitigate-latency/ingress.png)](media/environment-mitigate-latency/ingress.png#lightbox)
 
 ## <a name="throttling-and-ingress-management"></a>Регулирование и управление входящими сообщениями
 
-* Если выполняется регулирование, вы увидите значение *задержки "полученное сообщение входящих сообщений*", информирующее о том, сколько секунд находится за пределами TSI, из фактического времени, когда сообщение поступает в источник события (за исключением времени индексирования Appx. 30–60 секунд).  
+* Если выполняется регулирование, вы увидите значение *задержки "полученное сообщение входящих сообщений*", информирующее о том, сколько секунд находится за средой "аналитика временных рядов" из фактического времени, когда сообщение поступает в источник события (за исключением времени индексирования). Appx. 30–60 секунд).  
 
   Метрика *Ingress Recieved Message Count Lag* (Интервал между номерами полученных сообщений во входящих данных) также должна иметь значение, которое позволяет определить, на сколько сообщений вы отстали.  Самым простым способом устранить задержку является увеличение емкости среды до размера, который позволит сделать это.  
 
-  Например, если у вас есть одна среда Unit S1 и вы видите, что задержка сообщения 5 000 000, можно увеличить размер среды до шести единиц, чтобы обойти день.  Чтобы устранить задержку еще быстрее, количество единиц можно увеличить еще. Увеличение периода — обычная практика при первоначальной настройке среды, особенно когда вы подключаете ее к источнику событий, в котором уже есть события или когда вы загружаете много исторических данных.
+  Например, если вы видите, что среда S1 демонстрирует задержку в 5 000 000 сообщениях, можно увеличить размер среды до шести единиц в течение дня.  Чтобы устранить задержку еще быстрее, количество единиц можно увеличить еще. Увеличение периода — обычная практика при первоначальной настройке среды, особенно когда вы подключаете ее к источнику событий, в котором уже есть события или когда вы загружаете много исторических данных.
 
 * Кроме того, вы можете установить оповещение, которое сработает, если значение параметра **Ingress Stored Events** (Хранится сообщений входящих данных) в течение 2 часов превышает некоторое пороговое значение, установленное чуть ниже общей емкости вашей среды.  Такое предупреждение позволит понять, что возможности среды постоянно используются полностью, что указывает на высокую вероятность задержки. 
 
@@ -92,8 +92,8 @@ ms.locfileid: "70123766"
 
 Чтобы избежать задержки и регулирования, следует правильно настроить среду для того объема данных, который поступает для анализа. Дополнительные сведения о том, как повысить емкость среды, вы найдете в [статье о масштабировании среды](time-series-insights-how-to-scale-your-environment.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные рекомендации по устранению неполадок см. в статье [Диагностика и устранение неполадок в среде Time Series Insights](time-series-insights-diagnose-and-solve-problems.md).
+- Узнайте о [диагностике и устранении проблем в среде "аналитика временных рядов](time-series-insights-diagnose-and-solve-problems.md)".
 
-- Чтобы получить помощь по этим темам, откройте дискуссию на [форуме MSDN](https://social.msdn.microsoft.com/Forums/home?forum=AzureTimeSeriesInsights) или [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-timeseries-insights). Также вы можете обратиться в [службу поддержки Azure](https://azure.microsoft.com/support/options/).
+- Узнайте [, как масштабировать среду "аналитика временных рядов](time-series-insights-how-to-scale-your-environment.md)".

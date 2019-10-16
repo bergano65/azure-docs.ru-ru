@@ -5,16 +5,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 09/17/2019
+ms.date: 10/15/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 036322e73470ad4aa25de03e95c506e9f04496d8
-ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
+ms.openlocfilehash: 18209816b5b73f58a8112efca0363b31dd47bd91
+ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2019
-ms.locfileid: "71670979"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72374272"
 ---
 # <a name="configure-customer-managed-keys-for-azure-storage-encryption-from-azure-cli"></a>Настройка ключей, управляемых клиентом, для шифрования службы хранилища Azure от Azure CLI
 
@@ -23,7 +23,7 @@ ms.locfileid: "71670979"
 В этой статье показано, как настроить хранилище ключей с управляемыми клиентом ключами с помощью Azure CLI.
 
 > [!IMPORTANT]
-> Для использования управляемых клиентом ключей с шифрованием службы хранилища Azure необходимо, чтобы в хранилище ключей было настроено два обязательных свойства, **обратимое удаление** и **не выполнять очистку**. Эти свойства включены по умолчанию при создании нового хранилища ключей в портал Azure. Однако если необходимо включить эти свойства в существующем хранилище ключей, необходимо использовать PowerShell или Azure CLI.
+> Для использования управляемых клиентом ключей с шифрованием службы хранилища Azure необходимо, чтобы в хранилище ключей были установлены два свойства: **обратимое удаление** и **не очищать**. По умолчанию эти свойства отключены. Чтобы включить эти свойства, используйте либо PowerShell, либо Azure CLI.
 > Поддерживаются только ключи RSA и размер ключа 2048.
 
 ## <a name="assign-an-identity-to-the-storage-account"></a>Назначение удостоверения учетной записи хранения
@@ -77,7 +77,7 @@ az keyvault set-policy \
     --key-permissions get recover unwrapKey wrapKey
 ```
 
-## <a name="create-a-new-key"></a>Создайте ключ
+## <a name="create-a-new-key"></a>Создание ключа
 
 Затем создайте ключ в хранилище ключей. Чтобы создать ключ, вызовите команду [AZ keyvault Key Create](/cli/azure/keyvault/key#az-keyvault-key-create). Не забудьте заменить значения заполнителей в квадратных скобках собственными значениями.
 
@@ -117,7 +117,7 @@ az storage account update
 
 При создании новой версии ключа необходимо обновить учетную запись хранения, чтобы она использовала новую версию. Сначала запросите универсальный код ресурса (URI) хранилища ключей, вызвав команду [AZ keyvault показывать](/cli/azure/keyvault#az-keyvault-show), а для версии key [— вызов AZ keyvault Key List-Versions](/cli/azure/keyvault/key#az-keyvault-key-list-versions). Затем вызовите команду [AZ Storage Account Update](/cli/azure/storage/account#az-storage-account-update) , чтобы обновить параметры шифрования учетной записи хранения для использования новой версии ключа, как показано в предыдущем разделе.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Шифрование неактивных данных в службе хранилища Azure](storage-service-encryption.md) 
 - [Что такое Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-overview)?

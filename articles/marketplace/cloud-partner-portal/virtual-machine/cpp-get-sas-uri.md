@@ -1,5 +1,5 @@
 ---
-title: Получение URI подписи общего доступа для вашего образа виртуальной Машины Azure под управлением Microsoft | Azure Marketplace
+title: Получение URI подписанного URL-адрес для образа виртуальной машины на основе Microsoft Azure | Azure Marketplace
 description: Сведения о получении универсального кода ресурса (URI) подписанного URL-адреса (SAS) для образа виртуальной машины.
 services: Azure, Marketplace, Cloud Partner Portal,
 author: pbutlerm
@@ -7,16 +7,16 @@ ms.service: marketplace
 ms.topic: article
 ms.date: 10/19/2018
 ms.author: pabutler
-ms.openlocfilehash: 4da82b2f6aaa3fc664d2e91b80722329533b0cd0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c242fbcd19187abb608ca80a49d04dae195bd7c6
+ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64938668"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72374373"
 ---
 # <a name="get-shared-access-signature-uri-for-your-vm-image"></a>Получение универсального кода ресурса (URI) подписанного URL-адреса для образа виртуальной машины
 
-При публикации вы предоставляете универсальный код ресурса (URI) для каждого виртуального жесткого диска, связанного с вашими номерами SKU. Майкрософт понадобится доступ к этим дискам во время сертификации. В этой статье объясняется, как создать URI подписанного URL-адреса (SAS) для каждого виртуального жесткого диска. Этот URI нужно ввести на вкладке с **номерами SKU** на Портале Cloud Partner. 
+При публикации вы предоставляете универсальный код ресурса (URI) для каждого виртуального жесткого диска, связанного с вашими номерами SKU. Майкрософт понадобится доступ к этим VHD во время процесса сертификации. В этой статье объясняется, как создать URI подписанного URL-адреса (SAS) для каждого виртуального жесткого диска. Этот URI нужно ввести на вкладке с **номерами SKU** на Портале Cloud Partner. 
 
 Создавая URI SAS для виртуальных жестких дисков, придерживайтесь следующих требований:
 
@@ -33,7 +33,7 @@ URL-адрес SAS можно создать двумя способами с п
 -   интерфейс командной строки Microsoft Azure — рекомендуется для ОС, отличных от Windows, а также для сред автоматической или непрерывной интеграции.
 
 
-### <a name="azure-cli"></a>Инфраструктура CLI Azure
+### <a name="azure-cli"></a>Azure CLI
 
 Создайте URL-адрес SAS с помощью Azure CLI, выполнив следующие действия:
 
@@ -44,7 +44,7 @@ URL-адрес SAS можно создать двумя способами с п
    az storage container generate-sas --connection-string 'DefaultEndpointsProtocol=https;AccountName=<account-name>;AccountKey=<account-key>;EndpointSuffix=core.windows.net' --name <vhd-name> --permissions rl --start '<start-date>' --expiry '<expiry-date>'
    ```
     
-3. Измените текст файла, добавив следующие значения параметров.  Даты и время следует указывать в формате UTC, например: `10-25-2016T00:00:00Z`.
+3. Измените текст файла, добавив следующие значения параметров.  Даты и время следует указывать в формате UTC, например: `2016-10-25T00:00:00Z`.
    - `<account-name>` — имя учетной записи хранения Azure.
    - `<account-key>` — ключ учетной записи хранения Azure.
    - `<vhd-name>` — имя виртуального жесткого диска.

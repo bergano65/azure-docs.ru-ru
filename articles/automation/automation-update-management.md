@@ -9,12 +9,12 @@ ms.author: robreed
 ms.date: 05/22/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 3e2781229974ed872d477579d6c738822f910df6
-ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
+ms.openlocfilehash: 1751e8d67f59285d011df33a2d4d1d6d8abcec6a
+ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72243510"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72376051"
 ---
 # <a name="update-management-solution-in-azure"></a>Решение для управления обновлениями в Azure
 
@@ -57,7 +57,7 @@ ms.locfileid: "72243510"
 
 Вы можете развернуть и установить обновления программного обеспечения на компьютерах, требующих обновлений с помощью запланированного развертывания. *Необязательные* обновления не включены в область развертывания для компьютеров с Windows. В область развертывания включаются только необходимые обновления.
 
-Запланированное развертывание определяет, какие целевые компьютеры получают применимые обновления, путем явного указания компьютеров или выбора [группы компьютеров](../azure-monitor/platform/computer-groups.md) на основе поиска по журналам определенного набора компьютеров или [запроса Azure](#azure-machines) . Это позволяет динамически выбирать виртуальные машины Azure в соответствии с указанными критериями. Эти группы отличаются от [конфигурации области](../azure-monitor/insights/solution-targeting.md), которая используется только для определения того, какие компьютеры получают пакеты управления, которые включают решение.
+Запланированное развертывание определяет, какие целевые компьютеры получают применимые обновления, путем явного указания компьютеров или выбора [группы компьютеров](../azure-monitor/platform/computer-groups.md) на основе поиска по журналам определенного набора компьютеров или [запроса Azure](automation-update-management-query-logs.md) . Это позволяет динамически выбирать виртуальные машины Azure в соответствии с указанными критериями. Эти группы отличаются от [конфигурации области](../azure-monitor/insights/solution-targeting.md), которая используется только для определения того, какие компьютеры получают пакеты управления, которые включают решение.
 
 Вы также можете указать расписание для назначения и подтверждения периода времени, в течение которого могут быть установлены обновления. Этот период времени называется окном обслуживания. 24 минуты периода обслуживания зарезервированы для перезагрузки, если требуется перезагрузка и вы выбрали соответствующий параметр перезагрузки. Если установка исправления занимает больше времени, чем ожидалось, и в период обслуживания приходится менее двадцати минут, перезагрузка не выполняется.
 
@@ -73,7 +73,7 @@ ms.locfileid: "72243510"
 
 В следующей таблице приведен список поддерживаемых операционных систем для оценки обновлений. Для установки исправлений требуется Гибридная Рабочая роль Runbook. Сведения о требованиях гибридной рабочей роли Runbook см. в руководствах по установке для [Windows роли Runbook](automation-windows-hrw-install.md#installing-the-windows-hybrid-runbook-worker) и [Linux роли Runbook](automation-linux-hrw-install.md#installing-a-linux-hybrid-runbook-worker).
 
-|Операционная система  |Примечания  |
+|Операционная система  |Заметки  |
 |---------|---------|
 |Windows Server 2019 (Datacenter/Datacenter Core/Standard)<br><br>Windows Server 2016 (Datacenter/Datacenter Core/Standard)<br><br>Windows Server 2012 R2 (Datacenter/Standard)<br><br>Windows Server 2012<br><br>Windows Server 2008 R2 (RTM и SP1 Standard)||
 |CentOS 6 (x86 или x64) и 7 (x64).      | У агентов Linux должен быть доступ к репозиторию обновлений. Для исправления на основе классификации требуется, чтобы программа yum вернула данные безопасности, которых нет в CentOS, без дополнительной настройки. Дополнительные сведения об исправлениях на основе классификации в CentOS см. в [статье классификации обновлений в Linux](#linux-2) .          |
@@ -89,7 +89,7 @@ ms.locfileid: "72243510"
 
 В следующей таблице перечислены неподдерживаемые операционные системы:
 
-|Операционная система  |Примечания  |
+|Операционная система  |Заметки  |
 |---------|---------|
 |Клиент Windows     | Клиентские операционные системы (например, Windows 7 и Windows 10) не поддерживаются.        |
 |Nano Server Windows Server 2016     | Не поддерживается.       |
@@ -97,9 +97,15 @@ ms.locfileid: "72243510"
 
 ### <a name="client-requirements"></a>Требования к клиенту
 
+В приведенных ниже сведениях описываются требования для клиента, относящиеся к операционной системе.  Кроме того, следует ознакомиться с руководством по [планированию сети](#ports) .
+
 #### <a name="windows"></a>Windows
 
-На агентах Windows необходимо настроить связь с сервером служб WSUS или доступ к Центру обновления Майкрософт. Решение "Управление обновлениями" можно использовать вместе с System Center Configuration Manager. Дополнительные сведения о сценариях интеграции см. в разделе [Параметр Configuration](oms-solution-updatemgmt-sccmintegration.md#configuration). [Агент Windows](../azure-monitor/platform/agent-windows.md) является обязательным компонентом. При подключении виртуальной машины Azure этот агент устанавливается автоматически.
+На агентах Windows необходимо настроить связь с сервером служб WSUS или доступ к Центру обновления Майкрософт.
+
+Решение "Управление обновлениями" можно использовать вместе с System Center Configuration Manager. Дополнительные сведения о сценариях интеграции см. в разделе [Параметр Configuration](oms-solution-updatemgmt-sccmintegration.md#configuration). [Агент Windows](../azure-monitor/platform/agent-windows.md) является обязательным компонентом. При подключении виртуальной машины Azure этот агент устанавливается автоматически.
+
+Виртуальные машины с Windows, развернутые по умолчанию из Azure Marketplace, настроены для получения автоматических обновлений из службы обновлений Windows. Поведение не изменяется при добавлении этого решения или виртуальных машин Windows в эту рабочую область. Если вы не управляете обновлениями с помощью этого решения, будет применено поведение по умолчанию (автоматическое применение обновлений).
 
 > [!NOTE]
 > Пользователь может изменить групповая политика, чтобы перезагрузка компьютера выполнялась только пользователем, а не системой. Управляемые компьютеры могут зависнуть, если Управление обновлениями не имеет прав на перезагрузку компьютера без вмешательства пользователя.
@@ -111,6 +117,8 @@ ms.locfileid: "72243510"
 У компьютеров под управлением Linux должен быть доступ к репозиторию обновлений. Репозиторий обновлений может быть общедоступным или частным. Для взаимодействия с решением "Управление обновлениями" требуется TLS 1.1 или TLS 1.2. Это решение не поддерживает агент Log Analytics для Linux, в котором настроена отправка отчетов в несколько рабочих областей Azure Log Analytics.  На компьютере также должен быть установлен Python 2. x.
 
 Сведения о том, как установить агент Log Analytics для Linux и загрузить последнюю версию, см. в статье [log Analytics Agent for Linux](https://github.com/microsoft/oms-agent-for-linux). Дополнительные сведения об установке агента Log Analytics для Windows см. в разделе [Microsoft Monitoring Agent для Windows](../log-analytics/log-analytics-windows-agent.md).
+
+Виртуальным машинам, которые созданы на основе доступных в Azure Marketplace предоставляемых по запросу образов Red Hat Enterprise Linux (RHEL), обеспечивается доступ к развернутому в Azure решению [Red Hat Update Infrastructure (RHUI)](../virtual-machines/virtual-machines-linux-update-infrastructure-redhat.md). Любой другой дистрибутив Linux должен быть обновлен с помощью интернет-репозитория дистрибутивов посредством поддерживаемых методов.
 
 ## <a name="permissions"></a>Разрешения
 
@@ -144,61 +152,17 @@ ms.locfileid: "72243510"
 > [!NOTE]
 > Для полнофункционального управления системами с агентом Operations Manager при помощи решения "Управление обновлениями" агент необходимо обновить до Microsoft Monitoring Agent. Чтобы узнать, как обновить агент, см. [эту статью](https://docs.microsoft.com/system-center/scom/deploy-upgrade-agents). Для сред, использующих Operations Manager, требуется System Center Operations Manager 2012 R2 UR 14 или более поздней версии.
 
-## <a name="onboard"></a>Включение решения "Управление обновлениями"
-
-Чтобы начать установку исправлений системы, нужно включить решение "Управление обновлениями". Подключить это решение на виртуальных машинах можно несколькими способами. Ниже приведены рекомендуемые и поддерживаемые способы подключения решения:
-
-* [на одной виртуальной машине](automation-onboard-solutions-from-vm.md);
-* [на нескольких виртуальных машинах](automation-onboard-solutions-from-browse.md);
-* [в учетной записи службы автоматизации](automation-onboard-solutions-from-automation-account.md);
-* [с помощью модуля runbook службы автоматизации Azure](automation-onboard-solutions.md).
-
-### <a name="confirm-that-non-azure-machines-are-onboarded"></a>Подтверждение подключения виртуальных машин, не относящихся к Azure
-
-Чтобы убедиться, что непосредственно подключенные компьютеры взаимодействуют с журналами Azure Monitor, через несколько минут можно выполнить один из следующих операций поиска по журналам.
-
-#### <a name="linux"></a>Linux
-
-```loganalytics
-Heartbeat
-| where OSType == "Linux" | summarize arg_max(TimeGenerated, *) by SourceComputerId | top 500000 by Computer asc | render table
-```
-
-#### <a name="windows"></a>Windows
-
-```loganalytics
-Heartbeat
-| where OSType == "Windows" | summarize arg_max(TimeGenerated, *) by SourceComputerId | top 500000 by Computer asc | render table
-```
-
-На компьютере Windows можно ознакомиться со следующими сведениями, чтобы проверить подключение агента к журналам Azure Monitor.
-
-1. На панели управления откройте **Microsoft Monitoring Agent**. На вкладке **Служба анализа журналов Azure** агент отображает следующее сообщение: **The Microsoft Monitoring Agent has successfully connected to Log Analytics** (Microsoft Monitoring Agent успешно подключен к Log Analytics).
-2. Откройте журнал событий Windows. Перейдите к **журналам приложения и служб или Operations Manager** и выполните поиск идентификатора события 3000 или 5002 в исходном **соединителе службы**. Эти события указывают, что компьютер был зарегистрирован для рабочей области Log Analytics и получает конфигурации.
-
-Если агент не может взаимодействовать с журналами Azure Monitor и агент настроен для взаимодействия с Интернетом через брандмауэр или прокси-сервер, убедитесь, что брандмауэр или прокси-сервер настроен правильно. Чтобы узнать, как проверить это, ознакомьтесь со статьей [Подключение компьютеров Windows к службе Log Analytics в Azure](../azure-monitor/platform/agent-windows.md) или [Настройка агента Log Analytics для компьютеров Linux в гибридной среде](../log-analytics/log-analytics-agent-linux.md).
-
-> [!NOTE]
-> Если при подключении этого решения системы Linux настроены для взаимодействия с прокси-сервером или шлюзом Log Analytics, обновите разрешения *proxy.conf*, чтобы предоставить группе omiuser разрешение на чтение файла. Для этого выполните следующие команды:
->
-> `sudo chown omsagent:omiusers /etc/opt/microsoft/omsagent/proxy.conf`
-> `sudo chmod 644 /etc/opt/microsoft/omsagent/proxy.conf`
-
-Добавленные агенты Linux отобразят состояние **обновления** после оценки. Этот процесс может занять до 6 часов.
-
-Чтобы убедиться, что Группа управления Operations Manager взаимодействует с журналами Azure Monitor, см. раздел [Проверка интеграции Operations Manager с журналами Azure Monitor](../azure-monitor/platform/om-agents.md#validate-operations-manager-integration-with-azure-monitor).
-
 ## <a name="data-collection"></a>Сбор данных
 
 ### <a name="supported-agents"></a>Поддерживаемые агенты
 
 В следующей таблице описаны подключенные источники, поддерживаемые этим решением.
 
-| Подключенный источник | Поддерживаются | Описание |
+| Подключенный источник | Поддерживается | Описание |
 | --- | --- | --- |
-| Агенты Windows |Да |Решение собирает сведения об обновлениях системы с агентов Windows и запускает установку требуемых обновлений. |
-| Агенты Linux |Да |Решение собирает сведения об обновлениях системы с агентов Linux и запускает установку требуемых обновлений для поддерживаемых дистрибутивов. |
-| Группа управления Operations Manager |Да |Решение собирает сведения о системных обновлениях с агентов, состоящих в подключенной группе обновления.<br/>Прямое подключение агента Operations Manager к Azure Monitor журналов не требуется. Данные пересылаются из группы управления в рабочую область Log Analytics. |
+| Агенты Windows |ДА |Решение собирает сведения об обновлениях системы с агентов Windows и запускает установку требуемых обновлений. |
+| Агенты Linux |ДА |Решение собирает сведения об обновлениях системы с агентов Linux и запускает установку требуемых обновлений для поддерживаемых дистрибутивов. |
+| Группа управления Operations Manager |ДА |Решение собирает сведения о системных обновлениях с агентов, состоящих в подключенной группе обновления.<br/>Прямое подключение агента Operations Manager к Azure Monitor журналов не требуется. Данные пересылаются из группы управления в рабочую область Log Analytics. |
 
 ### <a name="collection-frequency"></a>Частота сбора
 
@@ -210,7 +174,28 @@ Heartbeat
 
 В среднем Azure Monitor записывает сведения об использовании данных для компьютера, использующего Управление обновлениями, приблизительно 25 МБ в месяц. Это приблизительное значение, которое может отличаться в зависимости от среды. Мы рекомендуем вам провести мониторинг среды, чтобы узнать точные данные об использовании.
 
-## <a name="viewing-update-assessments"></a>Просмотр оценок обновления
+## <a name="ports"></a>Планирование сети
+
+Для Управления обновлениями требуются следующие адреса. Взаимодействие с этими адресами выполняется через порт 443.
+
+|Azure Public  |Azure для государственных организаций  |
+|---------|---------|
+|*.ods.opinsights.azure.com     |*.ods.opinsights.azure.us         |
+|*.oms.opinsights.azure.com     | *.oms.opinsights.azure.us        |
+|*.blob.core.windows.net|*.blob.core.usgovcloudapi.net|
+|*.azure-automation.net|*.azure-automation.us|
+
+Для компьютеров Windows необходимо также разрешить передачу трафика на любые конечные точки, необходимые для Центр обновления Windows.  Обновленный список обязательных конечных точек можно найти в [проблемах, связанных с HTTP/proxy](/windows/deployment/update/windows-update-troubleshooting#issues-related-to-httpproxy). Если у вас есть локальный [Центр обновления Windows сервер](/windows-server/administration/windows-server-update-services/plan/plan-your-wsus-deployment), необходимо также разрешить трафик на сервер, указанный в [ключе WSUS](/windows/deployment/update/waas-wu-settings#configuring-automatic-updates-by-editing-the-registry).
+
+Для компьютеров с Red Hat Linux обратитесь к IP-адресам [серверов доставки содержимого RHUI](../virtual-machines/linux/update-infrastructure-redhat.md#the-ips-for-the-rhui-content-delivery-servers) для требуемых конечных точек. Другие дистрибутивы Linux см. в документации поставщика.
+
+Дополнительные сведения о портах, которым необходима гибридная рабочая роль Runbook, см. в статье [Автоматизация ресурсов в центре обработки данных или облаке с помощью гибридной рабочей роли Runbook](automation-hybrid-runbook-worker.md#hybrid-worker-role).
+
+При определении исключений рекомендуется использовать адреса из списка. Если вам нужны IP-адреса, вы можете скачать [список диапазонов IP-адресов центров обработки данных Microsoft Azure](https://www.microsoft.com/download/details.aspx?id=41653). Файл обновляется еженедельно, и в нем отражаются развернутые в настоящее время диапазоны и все предстоящие изменения диапазонов IP-адресов.
+
+Следуйте инструкциям в разделе [Подключение компьютеров без доступа к Интернету](../azure-monitor/platform/gateway.md) для настройки компьютеров, не имеющих доступа к Интернету.
+
+## <a name="view-update-assessments"></a>Просмотр оценок обновлений
 
 Выберите **Управление обновлениями** в своей учетной записи службы автоматизации, чтобы просмотреть состояние компьютеров.
 
@@ -220,74 +205,11 @@ Heartbeat
 
 ![Представление по умолчанию решения "Управление обновлениями"](media/automation-update-management/update-management-view.png)
 
-## <a name="install-updates"></a>Установка обновлений
-
-После оценки обновлений для всех компьютеров с Windows и Linux в рабочей области можно установить обязательные обновления, создав *развертывание обновлений*. Чтобы создать развертывание обновлений, необходимо иметь доступ на запись к учетной записи службы автоматизации и доступ на запись к любым виртуальным машинам Azure, целевым в развертывании. Развертывание обновлений — это запланированная установка требуемых обновлений для одного или нескольких компьютеров. Вы можете указать дату и время развертывания, а также компьютер или группу компьютеров, которые будут включены в развертывание. Дополнительные сведения о группах компьютеров см. [в разделе группы компьютеров в журналах Azure Monitor](../azure-monitor/platform/computer-groups.md).
-
-При включении групп компьютеров в развертывание обновлений они будут проанализированы один раз после создания расписания. Последующие изменения группы отображаться не будут. Чтобы обойти это, используйте [динамические группы](#using-dynamic-groups). Эти группы разрешаются во время развертывания и определяются запросом к виртуальным машинам Azure или сохраненным поиском для виртуальных машин, не относящихся к Azure.
-
-> [!NOTE]
-> Виртуальные машины с Windows, развернутые по умолчанию из Azure Marketplace, настроены для получения автоматических обновлений из службы обновлений Windows. Поведение не изменяется при добавлении этого решения или виртуальных машин Windows в эту рабочую область. Если вы не управляете обновлениями с помощью этого решения, будет применено поведение по умолчанию (автоматическое применение обновлений).
-
-Чтобы обновления применялись только в период обслуживания в Ubuntu, повторно настройте пакет unattended-upgrades и отключите автоматическое обновление. Дополнительные сведения о настройке пакета см. в разделе [Автоматические обновления](https://help.ubuntu.com/lts/serverguide/automatic-updates.html) руководства по Ubuntu Server.
-
-Виртуальным машинам, которые созданы на основе доступных в Azure Marketplace предоставляемых по запросу образов Red Hat Enterprise Linux (RHEL), обеспечивается доступ к развернутому в Azure решению [Red Hat Update Infrastructure (RHUI)](../virtual-machines/virtual-machines-linux-update-infrastructure-redhat.md). Любой другой дистрибутив Linux должен быть обновлен с помощью интернет-репозитория дистрибутивов посредством поддерживаемых методов.
-
-Чтобы создать развертывание обновления, выберите **Запланировать развертывание обновлений**. Откроется страница **новое развертывание обновлений** . Введите значения для свойств, описанных в следующей таблице и нажмите **Создать**:
-
-| Свойство | Description |
-| --- | --- |
-| ИМЯ |Уникальное имя для идентификации развертывания обновлений. |
-|Операционная система| Windows или Linux|
-| Группы для обновления |Для виртуальных машин Azure определите запрос на основе сочетания подписки, группы ресурсов, расположения и тегов, чтобы создать динамическую группу виртуальных машин Azure и добавить их в развертывание. </br></br>Для других виртуальных машин выберите сохраненный поисковый запрос, чтобы выбрать такие виртуальные машины и добавить их в развертывание. </br></br>Дополнительные сведения см. в статье [о динамических группах](automation-update-management.md#using-dynamic-groups).|
-| Компьютеры, на которые нужно установить обновления |Щелкните "Сохраненные условия поиска", "Импортировать группу" или выберите "Компьютер" в раскрывающемся списке и выберите нужные компьютеры. Если выберете **Компьютеры**, готовность к обновлению будет показана в столбце **Готовность к обновлению агента**.</br> Дополнительные сведения о различных способах создания групп компьютеров в журналах Azure Monitor см. в статье [Группы компьютеров в запросах к журналам Azure Monitor](../azure-monitor/platform/computer-groups.md). |
-|Классификации обновлений|Выберите все необходимые категории обновления.|
-|Включение или исключение обновлений|Позволяет открыть страницу **Включить или исключить**. Обновления, которые можно включить или исключить, находятся на отдельных вкладках. Дополнительные сведения об обработке исключений см. в разделе о [поведении включения](automation-update-management.md#inclusion-behavior). |
-|Параметры расписания|Выберите время запуска, а затем — однократное применение или повторяющееся.|
-| Сценарии предварительного и последующего выполнения|Выберите сценарии, которые будут выполняться до и после развертывания|
-| Период обслуживания |Количество минут, установленное для обновлений. Значение должно составлять не менее 30 минут, но не более 6 часов |
-| Перезагрузка элемента управления| Определяет, как следует выполнять перезагрузку. Доступные параметры:</br>Перезагрузка при необходимости (по умолчанию)</br>Всегда выполнять перезагрузку</br>Никогда не перезагружать</br>Только перезагрузка без установки обновлений.|
-
-Развертывания обновлений также можно создать программно. Чтобы узнать, как создать развертывание обновлений с помощью REST API, ознакомьтесь со статьей [Software Update Configurations — Create](/rest/api/automation/softwareupdateconfigurations/create) (Конфигурации обновления программного обеспечения. Создание). Кроме того, имеется пример модуля runbook, который можно использовать для создания развертывания еженедельного обновления. Дополнительные сведения об этом модуле runbook см. в статье [Create a weekly update deployment for one or more VMs in a resource group](https://gallery.technet.microsoft.com/scriptcenter/Create-a-weekly-update-2ad359a1) (Создание развертывания еженедельного обновления для одной или нескольких виртуальных машин в группе ресурсов).
-
-> [!NOTE]
-> Разделы реестра, перечисленные в разделе [разделы реестра, используемые для управления перезапуском](/windows/deployment/update/waas-restart#registry-keys-used-to-manage-restart) , могут вызвать событие перезагрузки, если для параметра **контроль** перезагрузки задано значение **никогда не перезагружаться**.
-
-### <a name="maintenance-windows"></a>Периоды обслуживания
-
-Управление периодами времени, в течение которых может устанавливаться обновление. При указании периода обслуживания учитывайте следующие сведения.
-
-* Управление периодами обслуживания, сколько обновлений пытается установить.
-* Управление обновлениями не останавливает установку новых обновлений, если приближается конец периода обслуживания.
-* Управление обновлениями не прекращает выполняющиеся обновления, если время ожидания периода обслуживания истекло.
-* Если период обслуживания в Windows превышен, это часто обусловлено тем, что установка пакета обновления занимает много времени.
-
-### <a name="multi-tenant"></a>Развертывание обновлений между клиентами
-
-Если компьютеры в другом клиенте Azure отправляют отчеты в решение "Управления обновлениями" о том, что необходимы исправления, вам необходимо использовать следующее обходное решение, чтобы запланировать их. Вы можете использовать командлет [New-AzureRmAutomationSchedule](/powershell/module/azurerm.automation/new-azurermautomationschedule) с переходом `-ForUpdate`для создания расписания, а также можете использовать командлет [New-AzureRmAutomationSoftwareUpdateConfiguration](/powershell/module/azurerm.automation/new-azurermautomationsoftwareupdateconfiguration
-) и задать параметр `-NonAzureComputer` для компьютеров другого клиента. Ниже приведен пример, как это сделать.
-
-```azurepowershell-interactive
-$nonAzurecomputers = @("server-01", "server-02")
-
-$startTime = ([DateTime]::Now).AddMinutes(10)
-
-$sched = New-AzureRmAutomationSchedule -ResourceGroupName mygroup -AutomationAccountName myaccount -Name myupdateconfig -Description test-OneTime -OneTime -StartTime $startTime -ForUpdate
-
-New-AzureRmAutomationSoftwareUpdateConfiguration  -ResourceGroupName $rg -AutomationAccountName <automationAccountName> -Schedule $sched -Windows -NonAzureComputer $nonAzurecomputers -Duration (New-TimeSpan -Hours 2) -IncludedUpdateClassification Security,UpdateRollup -ExcludedKbNumber KB01,KB02 -IncludedKbNumber KB100
-```
-
 ## <a name="view-missing-updates"></a>Просмотр отсутствующих обновлений
 
 Выберите **Отсутствующие обновления**, чтобы просмотреть список обновлений, отсутствующих на ваших компьютерах. Каждое обновление перечислено и может быть выбрано. Отображается информация о количестве компьютеров, которым оно требуется, операционная система и ссылка для получения дополнительных сведений. В области **Поиск журналов** отображаются дополнительные сведения об обновлениях.
 
-## <a name="view-update-deployments"></a>Просмотр развертываний обновлений
-
-Выберите вкладку **Развертывания обновлений**, чтобы просмотреть список существующих развертываний обновлений. Если выбрать какое-либо развертывание обновления в таблице, откроется область **Обновление запуска развертывания** для этого развертывания обновления. Журналы заданий хранятся не более 30 дней.
-
-![Обзор результатов развертывания обновлений](./media/automation-update-management/update-deployment-run.png)
-
-Чтобы просмотреть обновление развертывания из REST API, ознакомьтесь со статьей [Software Update Configuration Runs](/rest/api/automation/softwareupdateconfigurationruns) (Выполнение конфигурации обновления программного обеспечения).
+![Отсутствующие обновления](./media/automation-view-update-assessments/automation-view-update-assessments-missing-updates.png)
 
 ## <a name="update-classifications"></a>Классификации обновлений
 
@@ -321,321 +243,15 @@ sudo yum -q --security check-update
 
 В настоящее время отсутствуют поддерживаемые методы настройки исходной доступности данных классификации в CentOS. Сейчас для клиентов, которые включили ее самостоятельно, предоставляется только возможная поддержка.
 
-## <a name="firstparty-predownload"></a>Дополнительные параметры
-
-Решение "Управление обновлениями" основано на загрузке и установке обновлений Windows через Центр обновления Windows. Это означает, что мы учитываем многие параметры, настраиваемые для Центра обновления Windows. Если вы настроите параметры для установки обновлений, отличных от Windows, решение "Управление обновлениями" также будет обрабатывать такие обновления. Если вы настроите скачивание обновлений перед каждым развертыванием обновлений, развертывание обновлений будет проходить быстрее и с меньшей вероятностью выйдет за рамки периода обслуживания.
-
-### <a name="pre-download-updates"></a>Предварительное скачивание обновлений
-
-Чтобы настроить автоматическое скачивание обновлений в групповой политике, задайте для параметра [Настройка автоматического обновления](/windows-server/administration/windows-server-update-services/deploy/4-configure-group-policy-settings-for-automatic-updates##configure-automatic-updates) значение **3**. В этом режиме обновления скачиваются в фоновом режиме, но не устанавливаются. Это позволяет решению "Управление обновлениями" контролировать расписание установки, но скачивать данные вне периода обслуживания, настроенного для решения "Управление обновлениями". Это снизит вероятность ошибок **превышения длительности периода обслуживания** в решении "Управление обновлениями".
-
-Также этот параметр можно задать с помощью PowerShell, выполнив следующие команды в системе, для которой нужно настроить автоматическое скачивание обновлений.
-
-```powershell
-$WUSettings = (New-Object -com "Microsoft.Update.AutoUpdate").Settings
-$WUSettings.NotificationLevel = 3
-$WUSettings.Save()
-```
-
-### <a name="disable-automatic-installation"></a>Отключить автоматическую установку
-
-По умолчанию на виртуальных машинах Azure автоматическая установка обновлений включена. Это может привести к установке обновлений перед тем, как запланировать их установку с помощью Управление обновлениями. Это поведение можно отключить, задав для раздела реестра `NoAutoUpdate` значение `1`. В следующем фрагменте кода PowerShell показан один из способов.
-
-```powershell
-$AutoUpdatePath = "HKLM:SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU"
-Set-ItemProperty -Path $AutoUpdatePath -Name NoAutoUpdate -Value 1
-```
-
-### <a name="enable-updates-for-other-microsoft-products"></a>Включение обновлений для других продуктов Майкрософт
-
-По умолчанию Центр обновления Windows предоставляет обновления только для ОС Windows. Если включить **обновления для других продуктов Майкрософт при обновлении Windows**, вы получите обновления для других продуктов, включая исправления системы безопасности для SQL Server или другого программного обеспечения, предназначенного для первого производителя. Этот параметр нельзя настроить с помощью групповой политики. Выполните следующие команды PowerShell в системах, для которых вы хотите включить установку наших собственных исправлений, и решение "Управление обновлениями" будет учитывать это параметр.
-
-```powershell
-$ServiceManager = (New-Object -com "Microsoft.Update.ServiceManager")
-$ServiceManager.Services
-$ServiceID = "7971f918-a847-4430-9279-4a52d1efe18d"
-$ServiceManager.AddService2($ServiceId,7,"")
-```
-
-## <a name="third-party"></a> Сторонние исправления в Windows
-
-Управление обновлениями использует локально настроенный репозиторий обновлений для обновления поддерживаемых систем Windows. Это либо WSUS, либо Центр обновления Windows. Такие средства, как [System Center Updates Publisher](/sccm/sum/tools/updates-publisher
-) (Updates Publisher) позволяют публиковать пользовательские обновления в WSUS. Этот сценарий позволяет Управление обновлениями исправлять компьютеры, использующие System Center Configuration Manager в качестве репозитория обновлений программного обеспечения стороннего производителя. Чтобы узнать, как настроить Updates Publisher, см. статью [Установка Updates Publisher](/sccm/sum/tools/install-updates-publisher).
-
-## <a name="ports"></a>Планирование сети
-
-Для Управления обновлениями требуются следующие адреса. Взаимодействие с этими адресами выполняется через порт 443.
-
-|Azure Public  |Azure для государственных организаций  |
-|---------|---------|
-|*.ods.opinsights.azure.com     |*.ods.opinsights.azure.us         |
-|*.oms.opinsights.azure.com     | *.oms.opinsights.azure.us        |
-|*.blob.core.windows.net|*.blob.core.usgovcloudapi.net|
-|*.azure-automation.net|*.azure-automation.us|
-
-Для компьютеров Windows необходимо также разрешить передачу трафика на любые конечные точки, необходимые для Центр обновления Windows.  Обновленный список обязательных конечных точек можно найти в [проблемах, связанных с HTTP/proxy](/windows/deployment/update/windows-update-troubleshooting#issues-related-to-httpproxy). Если у вас есть локальный [Центр обновления Windows сервер](/windows-server/administration/windows-server-update-services/plan/plan-your-wsus-deployment), необходимо также разрешить трафик на сервер, указанный в [ключе WSUS](/windows/deployment/update/waas-wu-settings#configuring-automatic-updates-by-editing-the-registry).
-
-Для компьютеров с Red Hat Linux обратитесь к IP-адресам [серверов доставки содержимого RHUI](../virtual-machines/linux/update-infrastructure-redhat.md#the-ips-for-the-rhui-content-delivery-servers) для требуемых конечных точек. Другие дистрибутивы Linux см. в документации поставщика.
-
-Дополнительные сведения о портах, которым необходима гибридная рабочая роль Runbook, см. в статье [Автоматизация ресурсов в центре обработки данных или облаке с помощью гибридной рабочей роли Runbook](automation-hybrid-runbook-worker.md#hybrid-worker-role).
-
-При определении исключений рекомендуется использовать адреса из списка. Если вам нужны IP-адреса, вы можете скачать [список диапазонов IP-адресов центров обработки данных Microsoft Azure](https://www.microsoft.com/download/details.aspx?id=41653). Файл обновляется еженедельно, и в нем отражаются развернутые в настоящее время диапазоны и все предстоящие изменения диапазонов IP-адресов.
-
-Следуйте инструкциям в разделе [Подключение компьютеров без доступа к Интернету](../azure-monitor/platform/gateway.md) для настройки компьютеров, не имеющих доступа к Интернету.
-
-## <a name="search-logs"></a>Поиск по журналам
-
-Кроме подробных сведений, которые предоставляются на портале Azure, можно выполнить поиск по журналам. На страницах решений выберите **Log Analytics**. Откроется область **Поиск по журналам**.
-
-Также вы можете узнать, как настроить запросы или использовать их с других клиентов, а также многое другое, ознакомившись  с [Azure Log Analytics REST API](
-https://dev.loganalytics.io/).
-
-### <a name="sample-queries"></a>Примеры запросов
-
-В следующих разделах приведены примеры запросов журнала для записей обновлений, которые собираются этим решением:
-
-#### <a name="single-azure-vm-assessment-queries-windows"></a>Запросы оценки одной виртуальной машины Azure (Windows)
-
-Замените значение VMUUID на GUID запрашиваемой виртуальной машины. Вы можете найти ВМУУИД, который следует использовать, выполнив следующий запрос в журналах Azure Monitor: `Update | where Computer == "<machine name>" | summarize by Computer, VMUUID`.
-
-##### <a name="missing-updates-summary"></a>Сводка об отсутствующих обновлениях
-
-```loganalytics
-Update
-| where TimeGenerated>ago(14h) and OSType!="Linux" and (Optional==false or Classification has "Critical" or Classification has "Security") and VMUUID=~"b08d5afa-1471-4b52-bd95-a44fea6e4ca8"
-| summarize hint.strategy=partitioned arg_max(TimeGenerated, UpdateState, Classification, Approved) by Computer, SourceComputerId, UpdateID
-| where UpdateState=~"Needed" and Approved!=false
-| summarize by UpdateID, Classification
-| summarize allUpdatesCount=count(), criticalUpdatesCount=countif(Classification has "Critical"), securityUpdatesCount=countif(Classification has "Security"), otherUpdatesCount=countif(Classification !has "Critical" and Classification !has "Security")
-```
-
-##### <a name="missing-updates-list"></a>Список отсутствующих обновлений
-
-```loganalytics
-Update
-| where TimeGenerated>ago(14h) and OSType!="Linux" and (Optional==false or Classification has "Critical" or Classification has "Security") and VMUUID=~"8bf1ccc6-b6d3-4a0b-a643-23f346dfdf82"
-| summarize hint.strategy=partitioned arg_max(TimeGenerated, UpdateState, Classification, Title, KBID, PublishedDate, Approved) by Computer, SourceComputerId, UpdateID
-| where UpdateState=~"Needed" and Approved!=false
-| project-away UpdateState, Approved, TimeGenerated
-| summarize computersCount=dcount(SourceComputerId, 2), displayName=any(Title), publishedDate=min(PublishedDate), ClassificationWeight=max(iff(Classification has "Critical", 4, iff(Classification has "Security", 2, 1))) by id=strcat(UpdateID, "_", KBID), classification=Classification, InformationId=strcat("KB", KBID), InformationUrl=iff(isnotempty(KBID), strcat("https://support.microsoft.com/kb/", KBID), ""), osType=2
-| sort by ClassificationWeight desc, computersCount desc, displayName asc
-| extend informationLink=(iff(isnotempty(InformationId) and isnotempty(InformationUrl), toobject(strcat('{ "uri": "', InformationUrl, '", "text": "', InformationId, '", "target": "blank" }')), toobject('')))
-| project-away ClassificationWeight, InformationId, InformationUrl
-```
-
-#### <a name="single-azure-vm-assessment-queries-linux"></a>Запросы оценки одной виртуальной машины Azure (Linux)
-
-Для некоторых дистрибутивов Linux существует несоответствие [порядок следования байтов](https://en.wikipedia.org/wiki/Endianness) со значением вмууид, которое берется из Azure Resource Manager и что хранится в журналах Azure Monitor. Следующий запрос проверяет совпадение по порядку байтов. Чтобы вернулись правильные результаты, замените значения VMUUID форматом GUID с прямым и обратным порядком. Вы можете найти ВМУУИД, который следует использовать, выполнив следующий запрос в журналах Azure Monitor: `Update | where Computer == "<machine name>"
-| summarize by Computer, VMUUID`.
-
-##### <a name="missing-updates-summary"></a>Сводка об отсутствующих обновлениях
-
-```loganalytics
-Update
-| where TimeGenerated>ago(5h) and OSType=="Linux" and (VMUUID=~"625686a0-6d08-4810-aae9-a089e68d4911" or VMUUID=~"a0865662-086d-1048-aae9-a089e68d4911")
-| summarize hint.strategy=partitioned arg_max(TimeGenerated, UpdateState, Classification) by Computer, SourceComputerId, Product, ProductArch
-| where UpdateState=~"Needed"
-| summarize by Product, ProductArch, Classification
-| summarize allUpdatesCount=count(), criticalUpdatesCount=countif(Classification has "Critical"), securityUpdatesCount=countif(Classification has "Security"), otherUpdatesCount=countif(Classification !has "Critical" and Classification !has "Security")
-```
-
-##### <a name="missing-updates-list"></a>Список отсутствующих обновлений
-
-```loganalytics
-Update
-| where TimeGenerated>ago(5h) and OSType=="Linux" and (VMUUID=~"625686a0-6d08-4810-aae9-a089e68d4911" or VMUUID=~"a0865662-086d-1048-aae9-a089e68d4911")
-| summarize hint.strategy=partitioned arg_max(TimeGenerated, UpdateState, Classification, BulletinUrl, BulletinID) by Computer, SourceComputerId, Product, ProductArch
-| where UpdateState=~"Needed"
-| project-away UpdateState, TimeGenerated
-| summarize computersCount=dcount(SourceComputerId, 2), ClassificationWeight=max(iff(Classification has "Critical", 4, iff(Classification has "Security", 2, 1))) by id=strcat(Product, "_", ProductArch), displayName=Product, productArch=ProductArch, classification=Classification, InformationId=BulletinID, InformationUrl=tostring(split(BulletinUrl, ";", 0)[0]), osType=1
-| sort by ClassificationWeight desc, computersCount desc, displayName asc
-| extend informationLink=(iff(isnotempty(InformationId) and isnotempty(InformationUrl), toobject(strcat('{ "uri": "', InformationUrl, '", "text": "', InformationId, '", "target": "blank" }')), toobject('')))
-| project-away ClassificationWeight, InformationId, InformationUrl
-
-```
-
-#### <a name="multi-vm-assessment-queries"></a>Запросы для оценки нескольких виртуальных машин
-
-##### <a name="computers-summary"></a>Сводка по компьютерам
-
-```loganalytics
-Heartbeat
-| where TimeGenerated>ago(12h) and OSType=~"Windows" and notempty(Computer)
-| summarize arg_max(TimeGenerated, Solutions) by SourceComputerId
-| where Solutions has "updates"
-| distinct SourceComputerId
-| join kind=leftouter
-(
-    Update
-    | where TimeGenerated>ago(14h) and OSType!="Linux"
-    | summarize hint.strategy=partitioned arg_max(TimeGenerated, UpdateState, Approved, Optional, Classification) by SourceComputerId, UpdateID
-    | distinct SourceComputerId, Classification, UpdateState, Approved, Optional
-    | summarize WorstMissingUpdateSeverity=max(iff(UpdateState=~"Needed" and (Optional==false or Classification has "Critical" or Classification has "Security") and Approved!=false, iff(Classification has "Critical", 4, iff(Classification has "Security", 2, 1)), 0)) by SourceComputerId
-)
-on SourceComputerId
-| extend WorstMissingUpdateSeverity=coalesce(WorstMissingUpdateSeverity, -1)
-| summarize computersBySeverity=count() by WorstMissingUpdateSeverity
-| union (Heartbeat
-| where TimeGenerated>ago(12h) and OSType=="Linux" and notempty(Computer)
-| summarize arg_max(TimeGenerated, Solutions) by SourceComputerId
-| where Solutions has "updates"
-| distinct SourceComputerId
-| join kind=leftouter
-(
-    Update
-    | where TimeGenerated>ago(5h) and OSType=="Linux"
-    | summarize hint.strategy=partitioned arg_max(TimeGenerated, UpdateState, Classification) by SourceComputerId, Product, ProductArch
-    | distinct SourceComputerId, Classification, UpdateState
-    | summarize WorstMissingUpdateSeverity=max(iff(UpdateState=~"Needed", iff(Classification has "Critical", 4, iff(Classification has "Security", 2, 1)), 0)) by SourceComputerId
-)
-on SourceComputerId
-| extend WorstMissingUpdateSeverity=coalesce(WorstMissingUpdateSeverity, -1)
-| summarize computersBySeverity=count() by WorstMissingUpdateSeverity)
-| summarize assessedComputersCount=sumif(computersBySeverity, WorstMissingUpdateSeverity>-1), notAssessedComputersCount=sumif(computersBySeverity, WorstMissingUpdateSeverity==-1), computersNeedCriticalUpdatesCount=sumif(computersBySeverity, WorstMissingUpdateSeverity==4), computersNeedSecurityUpdatesCount=sumif(computersBySeverity, WorstMissingUpdateSeverity==2), computersNeedOtherUpdatesCount=sumif(computersBySeverity, WorstMissingUpdateSeverity==1), upToDateComputersCount=sumif(computersBySeverity, WorstMissingUpdateSeverity==0)
-| summarize assessedComputersCount=sum(assessedComputersCount), computersNeedCriticalUpdatesCount=sum(computersNeedCriticalUpdatesCount),  computersNeedSecurityUpdatesCount=sum(computersNeedSecurityUpdatesCount), computersNeedOtherUpdatesCount=sum(computersNeedOtherUpdatesCount), upToDateComputersCount=sum(upToDateComputersCount), notAssessedComputersCount=sum(notAssessedComputersCount)
-| extend allComputersCount=assessedComputersCount+notAssessedComputersCount
-
-
-```
-
-##### <a name="missing-updates-summary"></a>Сводка об отсутствующих обновлениях
-
-```loganalytics
-Update
-| where TimeGenerated>ago(5h) and OSType=="Linux" and SourceComputerId in ((Heartbeat
-| where TimeGenerated>ago(12h) and OSType=="Linux" and notempty(Computer)
-| summarize arg_max(TimeGenerated, Solutions) by SourceComputerId
-| where Solutions has "updates"
-| distinct SourceComputerId))
-| summarize hint.strategy=partitioned arg_max(TimeGenerated, UpdateState, Classification) by Computer, SourceComputerId, Product, ProductArch
-| where UpdateState=~"Needed"
-| summarize by Product, ProductArch, Classification
-| union (Update
-| where TimeGenerated>ago(14h) and OSType!="Linux" and (Optional==false or Classification has "Critical" or Classification has "Security") and SourceComputerId in ((Heartbeat
-| where TimeGenerated>ago(12h) and OSType=~"Windows" and notempty(Computer)
-| summarize arg_max(TimeGenerated, Solutions) by SourceComputerId
-| where Solutions has "updates"
-| distinct SourceComputerId))
-| summarize hint.strategy=partitioned arg_max(TimeGenerated, UpdateState, Classification, Approved) by Computer, SourceComputerId, UpdateID
-| where UpdateState=~"Needed" and Approved!=false
-| summarize by UpdateID, Classification )
-| summarize allUpdatesCount=count(), criticalUpdatesCount=countif(Classification has "Critical"), securityUpdatesCount=countif(Classification has "Security"), otherUpdatesCount=countif(Classification !has "Critical" and Classification !has "Security")
-```
-
-##### <a name="computers-list"></a>Список компьютеров
-
-```loganalytics
-Heartbeat
-| where TimeGenerated>ago(12h) and OSType=="Linux" and notempty(Computer)
-| summarize arg_max(TimeGenerated, Solutions, Computer, ResourceId, ComputerEnvironment, VMUUID) by SourceComputerId
-| where Solutions has "updates"
-| extend vmuuId=VMUUID, azureResourceId=ResourceId, osType=1, environment=iff(ComputerEnvironment=~"Azure", 1, 2), scopedToUpdatesSolution=true, lastUpdateAgentSeenTime=""
-| join kind=leftouter
-(
-    Update
-    | where TimeGenerated>ago(5h) and OSType=="Linux" and SourceComputerId in ((Heartbeat
-    | where TimeGenerated>ago(12h) and OSType=="Linux" and notempty(Computer)
-    | summarize arg_max(TimeGenerated, Solutions) by SourceComputerId
-    | where Solutions has "updates"
-    | distinct SourceComputerId))
-    | summarize hint.strategy=partitioned arg_max(TimeGenerated, UpdateState, Classification, Product, Computer, ComputerEnvironment) by SourceComputerId, Product, ProductArch
-    | summarize Computer=any(Computer), ComputerEnvironment=any(ComputerEnvironment), missingCriticalUpdatesCount=countif(Classification has "Critical" and UpdateState=~"Needed"), missingSecurityUpdatesCount=countif(Classification has "Security" and UpdateState=~"Needed"), missingOtherUpdatesCount=countif(Classification !has "Critical" and Classification !has "Security" and UpdateState=~"Needed"), lastAssessedTime=max(TimeGenerated), lastUpdateAgentSeenTime="" by SourceComputerId
-    | extend compliance=iff(missingCriticalUpdatesCount > 0 or missingSecurityUpdatesCount > 0, 2, 1)
-    | extend ComplianceOrder=iff(missingCriticalUpdatesCount > 0 or missingSecurityUpdatesCount > 0 or missingOtherUpdatesCount > 0, 1, 3)
-)
-on SourceComputerId
-| project id=SourceComputerId, displayName=Computer, sourceComputerId=SourceComputerId, scopedToUpdatesSolution=true, missingCriticalUpdatesCount=coalesce(missingCriticalUpdatesCount, -1), missingSecurityUpdatesCount=coalesce(missingSecurityUpdatesCount, -1), missingOtherUpdatesCount=coalesce(missingOtherUpdatesCount, -1), compliance=coalesce(compliance, 4), lastAssessedTime, lastUpdateAgentSeenTime, osType=1, environment=iff(ComputerEnvironment=~"Azure", 1, 2), ComplianceOrder=coalesce(ComplianceOrder, 2)
-| union(Heartbeat
-| where TimeGenerated>ago(12h) and OSType=~"Windows" and notempty(Computer)
-| summarize arg_max(TimeGenerated, Solutions, Computer, ResourceId, ComputerEnvironment, VMUUID) by SourceComputerId
-| where Solutions has "updates"
-| extend vmuuId=VMUUID, azureResourceId=ResourceId, osType=2, environment=iff(ComputerEnvironment=~"Azure", 1, 2), scopedToUpdatesSolution=true, lastUpdateAgentSeenTime=""
-| join kind=leftouter
-(
-    Update
-    | where TimeGenerated>ago(14h) and OSType!="Linux" and SourceComputerId in ((Heartbeat
-    | where TimeGenerated>ago(12h) and OSType=~"Windows" and notempty(Computer)
-    | summarize arg_max(TimeGenerated, Solutions) by SourceComputerId
-    | where Solutions has "updates"
-    | distinct SourceComputerId))
-    | summarize hint.strategy=partitioned arg_max(TimeGenerated, UpdateState, Classification, Title, Optional, Approved, Computer, ComputerEnvironment) by Computer, SourceComputerId, UpdateID
-    | summarize Computer=any(Computer), ComputerEnvironment=any(ComputerEnvironment), missingCriticalUpdatesCount=countif(Classification has "Critical" and UpdateState=~"Needed" and Approved!=false), missingSecurityUpdatesCount=countif(Classification has "Security" and UpdateState=~"Needed" and Approved!=false), missingOtherUpdatesCount=countif(Classification !has "Critical" and Classification !has "Security" and UpdateState=~"Needed" and Optional==false and Approved!=false), lastAssessedTime=max(TimeGenerated), lastUpdateAgentSeenTime="" by SourceComputerId
-    | extend compliance=iff(missingCriticalUpdatesCount > 0 or missingSecurityUpdatesCount > 0, 2, 1)
-    | extend ComplianceOrder=iff(missingCriticalUpdatesCount > 0 or missingSecurityUpdatesCount > 0 or missingOtherUpdatesCount > 0, 1, 3)
-)
-on SourceComputerId
-| project id=SourceComputerId, displayName=Computer, sourceComputerId=SourceComputerId, scopedToUpdatesSolution=true, missingCriticalUpdatesCount=coalesce(missingCriticalUpdatesCount, -1), missingSecurityUpdatesCount=coalesce(missingSecurityUpdatesCount, -1), missingOtherUpdatesCount=coalesce(missingOtherUpdatesCount, -1), compliance=coalesce(compliance, 4), lastAssessedTime, lastUpdateAgentSeenTime, osType=2, environment=iff(ComputerEnvironment=~"Azure", 1, 2), ComplianceOrder=coalesce(ComplianceOrder, 2) )
-| order by ComplianceOrder asc, missingCriticalUpdatesCount desc, missingSecurityUpdatesCount desc, missingOtherUpdatesCount desc, displayName asc
-| project-away ComplianceOrder
-```
-
-##### <a name="missing-updates-list"></a>Список отсутствующих обновлений
-
-```loganalytics
-Update
-| where TimeGenerated>ago(5h) and OSType=="Linux" and SourceComputerId in ((Heartbeat
-| where TimeGenerated>ago(12h) and OSType=="Linux" and notempty(Computer)
-| summarize arg_max(TimeGenerated, Solutions) by SourceComputerId
-| where Solutions has "updates"
-| distinct SourceComputerId))
-| summarize hint.strategy=partitioned arg_max(TimeGenerated, UpdateState, Classification, BulletinUrl, BulletinID) by SourceComputerId, Product, ProductArch
-| where UpdateState=~"Needed"
-| project-away UpdateState, TimeGenerated
-| summarize computersCount=dcount(SourceComputerId, 2), ClassificationWeight=max(iff(Classification has "Critical", 4, iff(Classification has "Security", 2, 1))) by id=strcat(Product, "_", ProductArch), displayName=Product, productArch=ProductArch, classification=Classification, InformationId=BulletinID, InformationUrl=tostring(split(BulletinUrl, ";", 0)[0]), osType=1
-| union(Update
-| where TimeGenerated>ago(14h) and OSType!="Linux" and (Optional==false or Classification has "Critical" or Classification has "Security") and SourceComputerId in ((Heartbeat
-| where TimeGenerated>ago(12h) and OSType=~"Windows" and notempty(Computer)
-| summarize arg_max(TimeGenerated, Solutions) by SourceComputerId
-| where Solutions has "updates"
-| distinct SourceComputerId))
-| summarize hint.strategy=partitioned arg_max(TimeGenerated, UpdateState, Classification, Title, KBID, PublishedDate, Approved) by Computer, SourceComputerId, UpdateID
-| where UpdateState=~"Needed" and Approved!=false
-| project-away UpdateState, Approved, TimeGenerated
-| summarize computersCount=dcount(SourceComputerId, 2), displayName=any(Title), publishedDate=min(PublishedDate), ClassificationWeight=max(iff(Classification has "Critical", 4, iff(Classification has "Security", 2, 1))) by id=strcat(UpdateID, "_", KBID), classification=Classification, InformationId=strcat("KB", KBID), InformationUrl=iff(isnotempty(KBID), strcat("https://support.microsoft.com/kb/", KBID), ""), osType=2)
-| sort by ClassificationWeight desc, computersCount desc, displayName asc
-| extend informationLink=(iff(isnotempty(InformationId) and isnotempty(InformationUrl), toobject(strcat('{ "uri": "', InformationUrl, '", "text": "', InformationId, '", "target": "blank" }')), toobject('')))
-| project-away ClassificationWeight, InformationId, InformationUrl
-```
-
-## <a name="using-dynamic-groups"></a>Использование динамических групп
-
-Управление обновлениями предоставляет возможность ориентироваться на динамическую группу Azure или виртуальных машин, не относящихся к Azure, для развертываний обновлений. Эти группы оцениваются во время развертывания, поэтому вам не нужно изменять развертывание для добавления компьютеров.
-
-> [!NOTE]
-> При создании развертывания обновлений необходимо иметь соответствующие разрешения. Дополнительные сведения см. в разделе [Установка обновлений](#install-updates).
-
-### <a name="azure-machines"></a>Компьютеры Azure
-
-Эти группы определяются по запросу. Когда начинается развертывание обновлений, оцениваются участники этой группы. Динамические группы не работают с классическими виртуальными машинами. При определении запроса следующие элементы могут использоваться для совместного заполнения динамической группы.
-
-* Subscription
-* Группы ресурсов
-* Расположения
-* Tags
-
-![Выбор групп](./media/automation-update-management/select-groups.png)
-
-Чтобы просмотреть результаты в динамической группе, нажмите кнопку **Preview** (Просмотр). В этом представлении для предварительного просмотра показан состав группы на текущий момент. В этом примере мы выполняем поиск компьютеров с тегом **Роль** со значением **BackendServer**. Если добавить этот тег большему количеству компьютеров, они будут добавлены во все будущие развертывания данной группы.
-
-![просмотр групп](./media/automation-update-management/preview-groups.png)
-
-### <a name="non-azure-machines"></a>Компьютеры, не относящиеся к Azure
-
-Для компьютеров, не отличных от Azure, для создания динамической группы используются сохраненные поисковые запросы, которые также называются группами компьютеров. Сведения о создании сохраненного поиска см. в разделе [Создание группы компьютеров](../azure-monitor/platform/computer-groups.md#creating-a-computer-group). После создания группы ее можно выбрать из списка сохраненных поисков. Щелкните **Предварительный просмотр** , чтобы просмотреть компьютеры в сохраненном поиске в это время.
-
-![Выбор групп](./media/automation-update-management/select-groups-2.png)
-
 ## <a name="integrate-with-system-center-configuration-manager"></a>Интеграция с System Center Configuration Manager
 
 Клиенты, которые инвестировали в System Center Configuration Manager для управления ПК, серверами и мобильными устройствами, также полагаются на надежность и зрелость Configuration Manager, чтобы помочь им управлять обновлениями программного обеспечения. Configuration Manager входит в их цикл управления обновлением программного обеспечения (SUM).
 
 Сведения об интеграции решения по управлению с Sytem Center Configuration Manager см. в статье [Интеграция Integrate System Center Configuration Manager с решением "Управление обновлениями"](oms-solution-updatemgmt-sccmintegration.md).
 
-## <a name="inclusion-behavior"></a>Поведение включения
+### <a name="third-party-patches-on-windows"></a>Исправления сторонних производителей в Windows
 
-Обновление включения позволяет определить, какие обновления применить. Устанавливаются исправления или пакеты, которые будут включены. Когда пакеты и исправления включены, а также выбрана классификация, устанавливаются как включенные элементы, так и элементы, соответствующие классификации.
-
-Важно знать, что исключения переопределяют включения. Например, при определении правила исключения `*` ни исправления, ни пакеты не устанавливаются, так как они все будут исключены. Исключенные исправления по-прежнему отображаются как отсутствующие на компьютере. В компьютерах Linux, если пакет включен, но имеет зависимый пакет, который был исключен, пакет не устанавливается.
+Управление обновлениями использует локально настроенный репозиторий обновлений для обновления поддерживаемых систем Windows. Это либо WSUS, либо Центр обновления Windows. Такие средства, как [System Center Updates Publisher](/sccm/sum/tools/updates-publisher) (Updates Publisher) позволяют публиковать пользовательские обновления в WSUS. Этот сценарий позволяет Управление обновлениями исправлять компьютеры, использующие System Center Configuration Manager в качестве репозитория обновлений программного обеспечения стороннего производителя. Чтобы узнать, как настроить Updates Publisher, см. статью [Установка Updates Publisher](/sccm/sum/tools/install-updates-publisher).
 
 ## <a name="patch-linux-machines"></a>Исправление компьютеров Linux
 
@@ -661,14 +277,31 @@ Update
 
 Развертывание обновлений на основе их классификации не поддерживается в CentOS без дополнительной настройки. Чтобы правильно развернуть обновления для CentOS, выберите все классификации для гарантированной установки обновлений. В SUSE выбор *только* "Другие обновления" в качестве классификации может привести к тому, что некоторые обновления безопасности также будут установлены, если сначала потребуются обновления безопасности, связанные с zypper (диспетчер пакетов) или его зависимостями. Это поведение является ограничением zypper. В некоторых случаях вам может потребоваться перезапустить развертывание обновлений. Для проверки обратитесь к журналу обновлений.
 
-## <a name="remove-a-vm-from-update-management"></a>Удаление виртуальной машины из Управление обновлениями
+### <a name="multi-tenant"></a>Развертывание обновлений между клиентами
 
-Чтобы удалить виртуальную машину для Управления обновлениями, необходимо сделать следующее.
+Если компьютеры в другом клиенте Azure отправляют отчеты в решение "Управления обновлениями" о том, что необходимы исправления, вам необходимо использовать следующее обходное решение, чтобы запланировать их. Вы можете использовать командлет [New-AzureRmAutomationSchedule](/powershell/module/azurerm.automation/new-azurermautomationschedule) с переходом `-ForUpdate`для создания расписания, а также можете использовать командлет [New-AzureRmAutomationSoftwareUpdateConfiguration](/powershell/module/azurerm.automation/new-azurermautomationsoftwareupdateconfiguration
+) и задать параметр `-NonAzureComputer` для компьютеров другого клиента. Ниже приведен пример, как это сделать.
 
-* В рабочей области Log Analytics удалите виртуальную машину из сохраненных поисковых запросов конфигурации области `MicrosoftDefaultScopeConfig-Updates`. Сохраненные поисковые запросы хранятся на вкладке **Общие** рабочей области.
-* Удалите [Microsoft Monitoring Agent](../azure-monitor/learn/quick-collect-windows-computer.md#clean-up-resources) или [Агент Log Analytics для Linux](../azure-monitor/learn/quick-collect-linux-computer.md#clean-up-resources).
+```azurepowershell-interactive
+$nonAzurecomputers = @("server-01", "server-02")
 
-## <a name="next-steps"></a>Следующие шаги
+$startTime = ([DateTime]::Now).AddMinutes(10)
+
+$sched = New-AzureRmAutomationSchedule -ResourceGroupName mygroup -AutomationAccountName myaccount -Name myupdateconfig -Description test-OneTime -OneTime -StartTime $startTime -ForUpdate
+
+New-AzureRmAutomationSoftwareUpdateConfiguration  -ResourceGroupName $rg -AutomationAccountName <automationAccountName> -Schedule $sched -Windows -NonAzureComputer $nonAzurecomputers -Duration (New-TimeSpan -Hours 2) -IncludedUpdateClassification Security,UpdateRollup -ExcludedKbNumber KB01,KB02 -IncludedKbNumber KB100
+```
+
+## <a name="onboard"></a>Включение решения "Управление обновлениями"
+
+Чтобы начать установку исправлений системы, нужно включить решение "Управление обновлениями". Подключить это решение на виртуальных машинах можно несколькими способами. Ниже приведены рекомендуемые и поддерживаемые способы подключения решения:
+
+* [на одной виртуальной машине](automation-onboard-solutions-from-vm.md);
+* [на нескольких виртуальных машинах](automation-onboard-solutions-from-browse.md);
+* [в учетной записи службы автоматизации](automation-onboard-solutions-from-automation-account.md);
+* [с помощью модуля runbook службы автоматизации Azure](automation-onboard-solutions.md).
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с руководством ниже, чтобы узнать, как управлять обновлениями для виртуальных машин Windows.
 

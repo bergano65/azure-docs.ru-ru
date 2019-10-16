@@ -1,6 +1,6 @@
 ---
 title: Элемент пользовательского интерфейса FileUpload для портала Azure | Документация Майкрософт
-description: Сведения об элементе пользовательского интерфейса Microsoft.Common.FileUpload для портала Azure.
+description: Сведения об элементе пользовательского интерфейса Microsoft.Common.FileUpload для портала Azure. Позволяет пользователям отправлять файлы при развертывании управляемого приложения.
 services: managed-applications
 documentationcenter: na
 author: tfitzmac
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/05/2018
 ms.author: tomfitz
-ms.openlocfilehash: b06134c6694e54cf246f9527d10147c573b95ad9
-ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
+ms.openlocfilehash: b7f73dcfe3e0e2827083feba906e2efcd0265305
+ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71828005"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72331699"
 ---
 # <a name="microsoftcommonfileupload-ui-element"></a>Элемент пользовательского интерфейса Microsoft.Common.FileUpload
 Элемент управления, который позволяет пользователю указать один или несколько файлов для отправки.
@@ -26,7 +26,7 @@ ms.locfileid: "71828005"
 ## <a name="ui-sample"></a>Пример элемента пользовательского интерфейса
 ![Элемент пользовательского интерфейса Microsoft.Common.FileUpload](./media/managed-application-elements/microsoft.common.fileupload.png)
 
-## <a name="schema"></a>Схема
+## <a name="schema"></a>SCHEMA (Схема)
 ```json
 {
   "name": "element1",
@@ -56,7 +56,7 @@ ms.locfileid: "71828005"
 - Если `options.uploadMode` имеет значение **file**, а `options.openMode` имеет значение **binary**, то выходные данные закодированы в формате Base64.
 - `options.encoding` — указывает кодирование, которое используется при чтении файла. Значение по умолчанию — **UTF-8**, которое используется только если для параметра `options.openMode` задано значение **text**.
 
-## <a name="sample-output"></a>Пример полученных результатов
+## <a name="sample-output"></a>Пример выходных данных
 Если options.multiple имеет значение false и options.uploadMode — file, содержимое файла в выходных данных будет представлено в виде строки JSON:
 
 ```json
@@ -92,6 +92,6 @@ ms.locfileid: "71828005"
 При тестировании определения CreateUiDefinition некоторые браузеры (например, Google Chrome) обрезают ULR-адреса, созданные элементом Microsoft.Common.FileUpload, в консоли браузера. Чтобы скопировать полные URL-адреса, вам может потребоваться щелкнуть правой кнопкой мыши отдельные ссылки.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Общие сведения о создании определений пользовательского интерфейса см. в статье [Начало работы с CreateUiDefinition](create-uidefinition-overview.md).
 * Дополнительные сведения об общих свойствах элементов пользовательского интерфейса см. в статье [Элементы CreateUiDefinition](create-uidefinition-elements.md).

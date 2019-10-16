@@ -1,6 +1,6 @@
 ---
 title: Элемент пользовательского интерфейса DropDown для портала Azure | Документация Майкрософт
-description: Сведения об элементе пользовательского интерфейса Microsoft.Common.DropDown для портала Azure.
+description: Сведения об элементе пользовательского интерфейса Microsoft.Common.DropDown для портала Azure. Используйте для выбора из доступных параметров при развертывании управляемого приложения.
 services: managed-applications
 documentationcenter: na
 author: tfitzmac
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/27/2018
 ms.author: tomfitz
-ms.openlocfilehash: e78fa419b067c0bad48229dcfd8d4e986fc16903
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5784b5df9b522f0489ca1f6087627b45cec5349d
+ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62117307"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72331738"
 ---
 # <a name="microsoftcommondropdown-ui-element"></a>Элемент пользовательского интерфейса Microsoft.Common.DropDown
 Элемент управления для выбора с раскрывающимся списком.
@@ -26,7 +26,7 @@ ms.locfileid: "62117307"
 ## <a name="ui-sample"></a>Пример элемента пользовательского интерфейса
 ![Элемент пользовательского интерфейса Microsoft.Common.DropDown](./media/managed-application-elements/microsoft.common.dropdown.png)
 
-## <a name="schema"></a>Схема
+## <a name="schema"></a>SCHEMA (Схема)
 ```json
 {
   "name": "element1",

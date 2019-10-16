@@ -1,6 +1,6 @@
 ---
 title: Элемент пользовательского интерфейса UserNameTextBox для портала Azure | Документация Майкрософт
-description: Сведения об элементе пользовательского интерфейса Microsoft.Common.UserNameTextBox для портала Azure.
+description: Сведения об элементе пользовательского интерфейса Microsoft.Common.UserNameTextBox для портала Azure. Позволяет пользователям указывать имена пользователей Windows или Linux.
 services: managed-applications
 documentationcenter: na
 author: tfitzmac
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/27/2018
 ms.author: tomfitz
-ms.openlocfilehash: 88ab13329a719ba1e1b8a7b5fba2f7a2d381eca2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 875c73c546fa52642959e2593d41f9af82c13797
+ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64700858"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72331581"
 ---
 # <a name="microsoftcomputeusernametextbox-ui-element"></a>Элемент пользовательского интерфейса Microsoft.Compute.UserNameTextBox
 Элемент управления "Текстовое поле" со встроенной проверкой имен пользователей Windows и Linux.
@@ -25,7 +25,7 @@ ms.locfileid: "64700858"
 ## <a name="ui-sample"></a>Пример элемента пользовательского интерфейса
 ![Элемент пользовательского интерфейса Microsoft.Compute.UserNameTextBox](./media/managed-application-elements/microsoft.compute.usernametextbox.png)
 
-## <a name="schema"></a>Схема
+## <a name="schema"></a>SCHEMA (Схема)
 ```json
 {
   "name": "element1",

@@ -8,12 +8,12 @@ ms.service: search
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: heidist
-ms.openlocfilehash: e50d88181a27dcc46da858f220404eb09ad9b4bd
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.openlocfilehash: 55a9e06ad09c4c3635a2925956cac75c24b2c3c6
+ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70308972"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72376386"
 ---
 # <a name="indexers-in-azure-search"></a>Индексаторы в службе поиска Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "70308972"
 
 * [Мастер импорта данных > портала](search-import-data-portal.md)
 * [API REST службы](https://docs.microsoft.com/rest/api/searchservice/Indexer-operations)
-* [Пакет SDK для .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.iindexersoperations)
+* [ПАКЕТ SDK .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.iindexersoperations)
 
 Изначально новый индексатор объявляется в качестве предварительной версии функции. Предварительные версии функций добавляют в API (REST и .NET), а затем после выхода общедоступной версии интегрируются на портале. При оценке нового индексатора следует запланировать написание кода.
 
@@ -45,26 +45,28 @@ ms.locfileid: "70308972"
 
 Данные о сканировании, выполненном индексаторами, хранятся в Azure.
 
-* [Azure SQL;](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
-* [Azure Cosmos DB](search-howto-index-cosmosdb.md)
 * [Хранилище BLOB-объектов Azure](search-howto-indexing-azure-blob-storage.md)
 * [хранилище таблиц Azure](search-howto-indexing-azure-tables.md)
+* [Azure Cosmos DB](search-howto-index-cosmosdb.md)
+* [база данных SQL Azure;](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
+* [SQL Server на виртуальных машинах Azure](search-howto-connecting-azure-sql-iaas-to-azure-search-using-indexers.md)
+* [Управляемые экземпляры SQL в Azure](search-howto-connecting-azure-sql-mi-to-azure-search-using-indexers.md)
 
 ## <a name="basic-configuration-steps"></a>Основные этапы настройки
 В индексаторах реализованы уникальные функции для работы с источниками данных. Поэтому тип индексатора будет определять особенности настройки источника данных или индексатора. Тем не менее всем индексаторам присущи сходные структура и требования. Ниже описаны действия, общие для всех индексаторов.
 
-### <a name="step-1-create-a-data-source"></a>Шаг 1. Создание источника данных
+### <a name="step-1-create-a-data-source"></a>Шаг 1. Создание источника данных
 Индексатор получает соединение с источником данных из объекта *источника данных* . Определение источника данных предоставляет строку подключения и, возможно, учетные данные. Чтобы создать ресурс, вызовите REST API для [создания источника данных](https://docs.microsoft.com/rest/api/searchservice/create-data-source) или [класс DataSource](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.datasource).
 
 Источники данных настраиваются и управляются независимо от индексаторов, которые их используют. Это означает, что источник данных может использоваться несколькими индексаторами для одновременной загрузки нескольких индексов.
 
-### <a name="step-2-create-an-index"></a>Шаг 2. Создание индекса
+### <a name="step-2-create-an-index"></a>Шаг 2. Создание индекса
 Хотя индексатор автоматизирует некоторые задачи, связанные с приемом данных, это обычно не распространяется на создание индекса. Перед началом работы у вас должен быть стандартный индекс с полями, которые соответствуют полям во внешнем источнике данных. Поля должны совпадать по имени и типу данных. Дополнительные сведения о структурировании индекса см. в статье, посвященной [созданию индекса (с использованием REST API службы "Поиск Azure")](https://docs.microsoft.com/rest/api/searchservice/Create-Index) или [классу Index](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.index). Справочные сведения по сопоставлению полей см. в статье [Сопоставление полей в индексаторах Поиска Azure](search-indexer-field-mappings.md).
 
 > [!Tip]
 > Хотя индексаторы не могут создавать индексы, вы можете это сделать с помощью мастера **импорта данных**. В большинстве случаев мастер может определить схему индекса на основе существующих метаданных в источнике, предоставляя предварительную схему, которую можно изменить в мастере во время его работы. После создания индекса в службе последующие изменения на портале ограничиваются добавлением новых полей. Используйте мастер для создания индекса, но не для изменения. Чтобы пройти практическое обучение, перейдите к [пошаговому руководству по порталу](search-get-started-portal.md).
 
-### <a name="step-3-create-and-schedule-the-indexer"></a>Шаг 3. Создание и планирование индексатора
+### <a name="step-3-create-and-schedule-the-indexer"></a>Шаг 3. Создание и планирование индексатора
 Определение индексатора — это конструкция, которая объединяет все элементы, связанные с приемом данных. Обязательные элементы включают источник данных и индекс. Необязательные элементы включают в себя расписание и сопоставления полей. Сопоставление полей необязательно, если поля источника и поля индекса четко соответствуют друг другу. Индексатор может ссылаться на источник данных из другой службы, если этот источник данных принадлежит к той же подписке. Дополнительные сведения о структурировании индексатора см. в статье, посвященной [созданию индекса (с использованием REST API службы поиска Azure)](https://docs.microsoft.com/rest/api/searchservice/Create-Indexer).
 
 <a id="RunIndexer"></a>
@@ -121,7 +123,7 @@ ms.locfileid: "70308972"
 
 История выполнения включает не более 50 последних завершенных выполнений, которые сортируются в обратном хронологическом порядке (то есть в ответе первым отображается последнее выполнение).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда вы ознакомились с основной идеей, можно переходить к изучению требований и задач, связанных с каждым типом источника данных.
 
 * [База данных Azure SQL (или SQL Server на виртуальных машинах Azure);](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)

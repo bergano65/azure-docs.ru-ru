@@ -1,22 +1,22 @@
 ---
 title: Ссылка на C# конечную точку настраиваемого поставщика для RESTful — Azure
-description: Эта статья является основной ссылкой на настраиваемую конечную C# точку RESTful поставщика.
+description: Содержит базовый справочник по конечной точке RESTful настраиваемых поставщиков C# Azure. Конечная точка предоставляется через приложение-функцию Azure.
 services: managed-applications
 ms.service: managed-applications
 ms.topic: conceptual
 ms.author: jobreen
 author: jjbfour
 ms.date: 06/20/2019
-ms.openlocfilehash: 8007c92c832ab7621d0192f924b15abf8bda9262
-ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
+ms.openlocfilehash: 37b7997bc029942a84c9be5743f6ef3c6195fd27
+ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71172919"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72332646"
 ---
 # <a name="custom-provider-c-restful-endpoint-reference"></a>Ссылка на C# конечную точку настраиваемого поставщика
 
-Эта статья является основной ссылкой на настраиваемую конечную C# точку RESTful поставщика. Если вы не знакомы с пользовательскими поставщиками Azure, ознакомьтесь с [обзором пользовательских поставщиков ресурсов](./custom-providers-overview.md).
+Эта статья является основной ссылкой на настраиваемую конечную C# точку RESTful поставщика. Если вы еще не знакомы с настраиваемыми поставщиками Azure, перейдите к этой [обзорной статье](./custom-providers-overview.md).
 
 ## <a name="azure-function-app-restful-endpoint"></a>Конечная точка RESTFUL приложения функции Azure
 
@@ -255,9 +255,9 @@ public static async Task<HttpResponseMessage> RemoveCustomResource(HttpRequestMe
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Обзор поставщиков настраиваемых ресурсов Azure](./custom-providers-overview.md)
-- [Учебник. Создание настраиваемого поставщика ресурсов Azure и развертывание настраиваемых ресурсов](./create-custom-provider.md)
-- [Практическое руководство. Добавление настраиваемых действий в Azure REST API](./custom-providers-action-endpoint-how-to.md)
-- [Общие сведения Ссылка на пользовательский кэш ресурсов](./custom-providers-proxy-cache-resource-endpoint-reference.md)
+- [Руководство. Создание настраиваемого поставщика ресурсов Azure и развертывание настраиваемых ресурсов](./create-custom-provider.md)
+- [Как добавлять настраиваемые действия в Azure REST API](./custom-providers-action-endpoint-how-to.md)
+- [Справочник: Справочник по пользовательскому кэшу ресурсов](./custom-providers-proxy-cache-resource-endpoint-reference.md)

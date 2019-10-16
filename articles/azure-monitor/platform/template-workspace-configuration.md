@@ -11,14 +11,14 @@ ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 07/11/2019
+ms.date: 10/15/2019
 ms.author: magoedte
-ms.openlocfilehash: 810ecbd4421eec8e8e809b429270601a0c94d623
-ms.sourcegitcommit: 15e3bfbde9d0d7ad00b5d186867ec933c60cebe6
+ms.openlocfilehash: 9c5fb38e66cb783b02d314d55cf0d0510523b6a7
+ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71840900"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72375975"
 ---
 # <a name="manage-log-analytics-workspace-using-azure-resource-manager-templates"></a>Управление рабочей областью Log Analytics с помощью шаблонов Azure Resource Manager
 
@@ -27,7 +27,7 @@ ms.locfileid: "71840900"
 [Шаблоны Azure Resource Manager](../../azure-resource-manager/resource-group-authoring-templates.md) можно использовать для создания и настройки log Analytics рабочих областей в Azure Monitor. Примеры задач, которые можно выполнять с помощью шаблонов.
 
 * Создание рабочей области, включая настройку ценовой категории 
-* Добавить решение
+* Добавление решения
 * Создание сохраненных поисковых запросов
 * Создание группы компьютеров
 * Включение сбора журналов IIS с компьютеров, на которых установлен агент Windows
@@ -44,12 +44,12 @@ ms.locfileid: "71840900"
 
 В следующей таблице перечислены версии API для ресурсов, используемых в этом примере.
 
-| Resource | Тип ресурса | Версия API |
+| Ресурс | Тип ресурса | Версия API |
 |:---|:---|:---|
-| Рабочая область   | рабочие области    | 2017-03-15-preview |
-| Найти      | savedSearches | 2015-03-20 |
+| Рабочая область   | workspaces    | 2017-03-15-preview |
+| служба поиска.      | savedSearches | 2015-03-20 |
 | Источник данных | datasources   | 2015-11-01-preview |
-| Решение    | решения     | 2015-11-01-preview |
+| Решение    | solutions     | 2015-11-01-preview |
 
 ## <a name="create-a-log-analytics-workspace"></a>Создание рабочей области Log Analytics
 
@@ -243,7 +243,7 @@ ms.locfileid: "71840900"
     "customlogName": {
     "type": "string",
     "metadata": {
-      "description": "custom log name"
+      "description": "The custom log name"
       }
     },
     "variables": {
@@ -419,7 +419,7 @@ ms.locfileid: "71840900"
           "type": "dataSources",
           "name": "[concat(parameters('workspaceName'), parameters('customlogName'))]",
           "dependsOn": [
-            "[concat('Microsoft.OperationalInsights/workspaces/', parameters('workspaceName'))]"
+            "[concat('Microsoft.OperationalInsights/workspaces/', '/', parameters('workspaceName'))]"
           ],
           "kind": "CustomLog",
           "properties": {
@@ -462,7 +462,7 @@ ms.locfileid: "71840900"
               }
             ]
           }
-        }
+        },
         {
           "apiVersion": "2015-11-01-preview",
           "type": "datasources",
@@ -592,6 +592,7 @@ ms.locfileid: "71840900"
 }
 
 ```
+
 ### <a name="deploying-the-sample-template"></a>Развертывание примера шаблона
 
 Чтобы развернуть этот шаблон, запустите следующую команду:
@@ -623,7 +624,7 @@ azure group deployment create <my-resource-group> <my-deployment-name> --Templat
 * [Мониторинг веб-приложений Azure с использованием существующей рабочей области Log Analytics](https://azure.microsoft.com/documentation/templates/101-webappazure-oms-monitoring/)
 * [Добавление существующей учетной записи хранения в Log Analytics](https://azure.microsoft.com/resources/templates/oms-existing-storage-account/)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Развертывание агента Windows на виртуальных машинах Azure с помощью шаблона Resource Manager](../../virtual-machines/extensions/oms-windows.md)
 

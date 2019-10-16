@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/23/2019
 ms.author: rkarlin
-ms.openlocfilehash: 18c11198f6b81e72e371b3ab06ed3a7330078c52
-ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
+ms.openlocfilehash: 5d4c549eaded78c69d3e7fa7173b5ad9b1d82f2f
+ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72023784"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72333140"
 ---
 # <a name="tutorial-create-custom-analytic-rules-to-detect-suspicious-threats"></a>Учебник. Создание настраиваемых правил аналитики для обнаружения подозрительных угроз
 
@@ -56,7 +56,7 @@ ms.locfileid: "72023784"
     \| make-series dcount(ResourceId)  default=0 on EventSubmissionTimestamp in range(ago(7d), now(), 1d) by Caller`
 
    > [!NOTE]
-   > Длина запроса должна быть в диапазоне от 1 до 1, 0000 символов и не может содержать "Search \*" или "Union \*".
+   > Длина запроса должна составлять от 1 до 1 000 символов и не может содержать "Search \*" или "Union \*".
 
     1. В разделе **планирование запросов**задайте следующие параметры.
 
@@ -84,7 +84,7 @@ ms.locfileid: "72023784"
 > [!NOTE]
 > Оповещения, созданные в Azure Sentinel, доступны через [Microsoft Graph безопасность](https://aka.ms/securitygraphdocs). Дополнительные сведения см. в [документации по Microsoft Graph оповещениями системы безопасности](https://aka.ms/graphsecurityreferencebetadocs).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы узнали, как приступить к обнаружению угроз с помощью Sentinel Azure.
 

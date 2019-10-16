@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: time-series-insights
 services: time-series-insights
 ms.custom: seodec18
-ms.openlocfilehash: 3437634ff70371f9679423149b6996a099c044b5
-ms.sourcegitcommit: 78ebf29ee6be84b415c558f43d34cbe1bcc0b38a
+ms.openlocfilehash: fb464d2c75e271bf2f7f1684ed991d01691d70e4
+ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68950734"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72330937"
 ---
 # <a name="summary-of-customer-data-request-features"></a>Сводка о возможностях запроса данных клиента
 
@@ -66,9 +66,9 @@ ms.locfileid: "68950734"
 
 Дополнительные сведения см. в статье, посвященной [настройке периода удержания данных в службе "Аналитика временных рядов"](time-series-insights-how-to-configure-retention.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* Узнайте больше о [предоставлении доступа к данным в среде TSI](./time-series-insights-data-access.md).
+* Узнайте больше о [предоставлении доступа к данным в среду службы "аналитика временных рядов Azure](./time-series-insights-data-access.md)".
 
 * Просмотр обозревателя службы " [аналитика временных рядов Azure](time-series-insights-explorer.md)".
 

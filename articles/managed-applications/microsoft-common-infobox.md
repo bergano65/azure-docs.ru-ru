@@ -1,6 +1,6 @@
 ---
 title: Элемент пользовательского интерфейса Azure InfoBox | Документация Майкрософт
-description: Сведения об элементе пользовательского интерфейса Microsoft.Common.TextBlock для портала Azure.
+description: Описывает элемент пользовательского интерфейса Microsoft. Common. Инфобокс для портал Azure. Используйте для добавления текста или предупреждений при развертывании управляемого приложения.
 services: managed-applications
 documentationcenter: na
 author: tfitzmac
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/15/2018
 ms.author: tomfitz
-ms.openlocfilehash: 2330197b4512dfdd72de3529145103b644594e25
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 67ae05c2ec7b36d76e49f26d5765bbc68b952292
+ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64711218"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72331689"
 ---
 # <a name="microsoftcommoninfobox-ui-element"></a>Элемент пользовательского интерфейса Microsoft.Common.InfoBox
 Элемент управления, который добавляет поле сведений. Поле содержит важный текст или предупреждения, которые помогают пользователям понять, какие значения нужно указать. Он также может быть связан с URI, по которому можно получить более подробную информацию.
@@ -27,7 +27,7 @@ ms.locfileid: "64711218"
 ![Microsoft.Common.InfoBox](./media/managed-application-elements/microsoft.common.infobox.png)
 
 
-## <a name="schema"></a>Схема
+## <a name="schema"></a>SCHEMA (Схема)
 ```json
 {
   "name": "text1",

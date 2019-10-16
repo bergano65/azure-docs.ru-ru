@@ -15,12 +15,12 @@ ms.date: 07/23/2019
 ms.author: baselden
 ms.reviewer: zhchia
 ms.collection: active-directory
-ms.openlocfilehash: 11fda31cd06db67e0a11a68a02da8b91a77e04e1
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: c44006b20f4c0ef186f406e554ff555cda0c1dd8
+ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68729221"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72373388"
 ---
 # <a name="enable-automatic-user-provisioning-for-your-multi-tenant-application"></a>Включение автоматической подготовки пользователей для приложения с несколькими клиентами
 
@@ -76,20 +76,20 @@ Azure AD предоставляет несколько путей интегра
 | Поддержка учетных записей гостей (B2B)| √| √| √ |
 | Поддержка некорпоративных учетных записей (B2C)| X| √| √ |
 
-<sup>*</sup>— Для синхронизации пользователей из AD с Azure AD требуется Azure AD Connect Setup.  
-<sup>+</sup >— Использование SCIM для подготовки не исключает возможность интеграции приложения с MIcrosoft Graph для других целей.
+<sup>*</sup> — для синхронизации пользователей из AD с Azure AD требуется настройка Azure AD Connect.  
+<sup>+</sup >— использование scim для подготовки не исключает возможность интеграции приложения с Microsoft Graph для других целей.
 
-## <a name="azure-ad-provisioning-service"></a>Служба подготовки Azure AD
+## <a name="azure-ad-provisioning-service-scim"></a>Служба подготовки Azure AD (SCIM)
 
-Службы подготовки Azure AD используют SCIM, протокол, поддерживаемый многими поставщиками удостоверений (поставщиков удостоверений). Мы рекомендуем использовать службу подготовки Azure AD, если вы хотите поддерживать поставщиков удостоверений в дополнение к Azure AD, так как любые SCIM, совместимые с IdP, могут подключаться к конечной точке SCIM.
+Службы подготовки Azure AD используют [SCIM] (https://aka.ms/SCIMOverview, протокол, поддерживаемый многими поставщиками удостоверений (поставщиков удостоверений). Мы рекомендуем использовать службу подготовки Azure AD, если вы хотите поддерживать поставщиков удостоверений в дополнение к Azure AD, так как любые SCIM, совместимые с IdP, могут подключаться к конечной точке SCIM.
 
 Дополнительные сведения о том, как пользователи службы подготовки Azure AD SCIM, см. в следующих статьях: 
+
+* [Дополнительные сведения о стандарте SCIM](https://aka.ms/SCIMOverview)
 
 * [Использование системы для управления междоменными удостоверениями (SCIM) для автоматической инициализации пользователей и групп из Azure Active Directory в приложения](https://docs.microsoft.com/azure/active-directory/manage-apps/use-scim-to-provision-users-and-groups)
 
 * [Общие сведения о реализации Azure AD SCIM](https://docs.microsoft.com/azure/active-directory/manage-apps/use-scim-to-provision-users-and-groups)
-
-* [Создание конечной точки SCIM с помощью библиотек Microsoft CLI](https://docs.microsoft.com/azure/active-directory/manage-apps/use-scim-to-provision-users-and-groups)
 
 ## <a name="microsoft-graph-for-provisioning"></a>Microsoft Graph для подготовки
 

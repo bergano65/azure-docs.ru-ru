@@ -6,12 +6,12 @@ ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 05/13/2019
 ms.author: tomfitz
-ms.openlocfilehash: aba06b07fef1cbc5d84d93cf38fec3bd936c1ac8
-ms.sourcegitcommit: e0a1a9e4a5c92d57deb168580e8aa1306bd94723
+ms.openlocfilehash: 25bce613ab45f20f7060447bcfc47f452f4d70f2
+ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72286121"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72329436"
 ---
 # <a name="view-activity-logs-to-monitor-actions-on-resources"></a>Просмотр журналов действий для отслеживания действий с ресурсами
 
@@ -29,7 +29,7 @@ ms.locfileid: "72286121"
 
 Сведения из журналов действий можно получить с помощью портала, PowerShell, интерфейса командной строки Azure, API REST Insights или с помощью [библиотеки .NET для Insights](https://www.nuget.org/packages/Microsoft.Azure.Insights/).
 
-## <a name="azure-portal"></a>Портал Azure
+## <a name="azure-portal"></a>портала Azure
 
 1. Чтобы просмотреть журналы действий на портале, выберите **Монитор**.
 
@@ -139,7 +139,7 @@ Get-AzLog -ResourceGroup ExampleGroup | Where-Object {$_.OperationName.value -eq
 
 Диаграмму ресурсов можно использовать для просмотра журнала изменений ресурса. Дополнительные сведения см. в разделе [Получение изменений ресурсов](../governance/resource-graph/how-to/get-resource-changes.md).
 
-## <a name="azure-cli"></a>Инфраструктура CLI Azure
+## <a name="azure-cli"></a>Azure CLI
 
 Чтобы получить записи журнала, выполните команду [az monitor activity-log list](/cli/azure/monitor/activity-log#az-monitor-activity-log-list) со смещением, чтобы указать на диапазон времени.
 
@@ -185,15 +185,15 @@ az monitor activity-log list -g ExampleGroup --offset 1d --query "[?operationNam
 
 Диаграмму ресурсов можно использовать для просмотра журнала изменений ресурса. Дополнительные сведения см. в разделе [Получение изменений ресурсов](../governance/resource-graph/how-to/get-resource-changes.md).
 
-## <a name="rest-api"></a>REST API
+## <a name="rest-api"></a>REST API
 
 Операции REST для работы с журналом действий включены в интерфейс [REST API Insights](/rest/api/monitor/). Получение событий журнала действий описано в статье [Список событий управления в подписке](/rest/api/monitor/activitylogs).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Чтобы получить больше информации о действиях в вашей подписке, можно использовать журналы аудита Azure совместно с Power BI. Дополнительные сведения см. в записи блога [View and analyze Azure Audit Logs in Power BI and more](https://azure.microsoft.com/blog/analyze-azure-audit-logs-in-powerbi-more/) (Журналы аудита Azure в Power BI: просмотр, анализ и другие возможности).
 * Дополнительные сведения о настройке политик безопасности см. в статье о [контроле доступа на основе ролей Azure](../role-based-access-control/role-assignments-portal.md).
-* Дополнительные сведения об изменениях, внесенных в приложения с уровня инфраструктуры, для всех способов развертывания приложений см. в разделе [использование анализа изменений приложений в Azure Monitor] (.. /Азуре-монитор/АПП/чанже-аналисис. md).
+* Дополнительные сведения об изменениях, внесенных в приложения с уровня инфраструктуры, для всех способов развертывания приложений см. в разделе [Использование анализа изменений приложений в Azure Monitor](../azure-monitor/app/change-analysis.md).
 * Чтобы узнать о командах для просмотра операций развертывания, ознакомьтесь с разделом [View deployment operations with Azure Resource Manager](resource-manager-deployment-operations.md) (Просмотр операций развертывания с помощью Azure Resource Manager).
 * Вы можете запретить всем пользователям операции удаления для определенного ресурса, как описано в статье [Блокировка ресурсов с помощью Azure Resource Manager](resource-group-lock-resources.md).
 * Список операций, доступных для каждого поставщика Microsoft Azure Resource Manager, см. в статье [Операции поставщиков ресурсов Azure Resource Manager](../role-based-access-control/resource-provider-operations.md).

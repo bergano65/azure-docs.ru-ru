@@ -1,6 +1,6 @@
 ---
 title: Элемент пользовательского интерфейса OptionsGroup для портала Azure | Документация Майкрософт
-description: Сведения об элементе пользовательского интерфейса Microsoft.Common.OptionsGroup для портала Azure.
+description: Сведения об элементе пользовательского интерфейса Microsoft.Common.OptionsGroup для портала Azure. Позволяет пользователям выбирать доступные варианты при развертывании управляемого приложения.
 services: managed-applications
 documentationcenter: na
 author: tfitzmac
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/27/2018
 ms.author: tomfitz
-ms.openlocfilehash: 9aee881844e9338cc1da2484a94c8355f2516c82
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7bec506575f1c526e59487edb67349cdf862f1a7
+ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64720757"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72331672"
 ---
 # <a name="microsoftcommonoptionsgroup-ui-element"></a>Элемент пользовательского интерфейса Microsoft.Common.OptionsGroup
 Элемент управления для выбора со строкой доступных вариантов.
@@ -26,7 +26,7 @@ ms.locfileid: "64720757"
 ## <a name="ui-sample"></a>Пример элемента пользовательского интерфейса
 ![Элемент пользовательского интерфейса Microsoft.Common.OptionsGroup](./media/managed-application-elements/microsoft.common.optionsgroup.png)
 
-## <a name="schema"></a>Схема
+## <a name="schema"></a>SCHEMA (Схема)
 ```json
 {
   "name": "element1",

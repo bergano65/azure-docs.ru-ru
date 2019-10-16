@@ -1,5 +1,5 @@
 ---
-title: Мониторинг приложений Python с помощью Azure Monitor | Документация Майкрософт
+title: Мониторинг приложений Python с помощью Azure Monitor (Предварительная версия) | Документация Майкрософт
 description: Содержит инструкции по установлению связи Опенценсус Python с Azure Monitor
 services: application-insights
 keywords: ''
@@ -10,18 +10,18 @@ ms.service: application-insights
 ms.topic: conceptual
 ms.reviewer: mbullwin
 manager: carmonm
-ms.openlocfilehash: 1316cf6808f6ccfc4165ad162c51421638b130be
-ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
+ms.openlocfilehash: ed61cb1bc88c48fe89c4a9390f04747749bd48c5
+ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2019
-ms.locfileid: "72294003"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72329477"
 ---
-# <a name="set-up-azure-monitor-for-your-python-application"></a>Настройка Azure Monitor для приложения Python
+# <a name="set-up-azure-monitor-for-your-python-application-preview"></a>Настройка Azure Monitor для приложения Python (Предварительная версия)
 
 Azure Monitor поддерживает распределенную трассировку, сбор метрик и ведение журнала приложений Python с помощью интеграции с [опенценсус](https://opencensus.io). В этой статье описывается пошаговая процедура настройки Опенценсус для Python и получения данных мониторинга для Azure Monitor.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - Вам понадобится подписка Azure.
 - Необходимо установить Python. в этой статье используется [Python 3.7.0](https://www.python.org/downloads/), хотя более ранние версии, скорее всего, будут работать с незначительными корректировками.
@@ -42,13 +42,13 @@ Azure Monitor поддерживает распределенную трасси
 
    Откроется окно настроек, в котором нужно заполнить все поля в соответствии с приведенной ниже таблицей.
 
-    | Параметры        | Значение           | Описание  |
+    | Настройки        | Value           | Описание  |
    | ------------- |:-------------|:-----|
-   | **Name**      | Глобально уникальное значение | Имя, идентифицирующее отслеживаемое приложение |
+   | **Имя**      | Глобально уникальное значение | Имя, идентифицирующее отслеживаемое приложение |
    | **Группа ресурсов**     | myResourceGroup      | Имя новой группы ресурсов для размещения данных App Insights |
-   | **Location** | East US | Выберите ближайшее расположение или расположение вблизи места размещения приложения |
+   | **Расположение** | Восточная часть США | Выберите ближайшее расположение или расположение вблизи места размещения приложения |
 
-2. Нажмите кнопку **Создать**.
+2. Щелкните **Create**(Создать).
 
 ## <a name="instrumenting-with-opencensus-python-sdk-for-azure-monitor"></a>Инструментирование с помощью пакета SDK для Опенценсус Python для Azure Monitor
 
@@ -130,7 +130,7 @@ Azure Monitor поддерживает распределенную трасси
 
 4. Теперь при запуске скрипта Python вам по-прежнему будет предложено ввести значения, но теперь только значение печатается в оболочке. Созданная `SpanData` будет отправлена в Azure Monitor. Выпущенные данные span можно найти в `dependencies`.
 
-### <a name="metrics"></a>metrics
+### <a name="metrics"></a>Метрики
 
 1. Сначала создадим данные локальной метрики. Мы создадим простую метрику, чтобы отвести количество нажатий клавиш ВВОД.
 
@@ -339,14 +339,14 @@ Azure Monitor поддерживает распределенную трасси
 * [Интеграция с MySQL](https://github.com/census-instrumentation/opencensus-python/tree/master/contrib/opencensus-ext-mysql).
 * [PostgreSQL](https://github.com/census-instrumentation/opencensus-python/tree/master/contrib/opencensus-ext-postgresql)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Сводка по API](./../../azure-monitor/app/api-custom-events-metrics.md)
 * [Сопоставление приложений](./../../azure-monitor/app/app-map.md)
 * [Поиск и диагностика проблем производительности с помощью Azure Application Insights](./../../azure-monitor/learn/tutorial-performance.md)
 
-### <a name="alerts"></a>Предупреждения
+### <a name="alerts"></a>Оповещения
 
-* [Тесты доступности](../../azure-monitor/app/monitor-web-app-availability.md). Создавайте тесты, позволяющие проверить, доступен ли ваш сайт в Интернете.
-* [Интеллектуальная диагностика](../../azure-monitor/app/proactive-diagnostics.md). Эти тесты выполняются автоматически, поэтому вам не нужно их настраивать. Благодаря ей вы узнаете о необычном количестве неудачных запросов.
-* [Оповещения о метриках](../../azure-monitor/app/alerts.md). Настройте оповещения, чтобы предупредить вас, если метрика превышает пороговое значение. Их можно настроить для пользовательских метрик, добавляемых в код приложения.
+* [Тесты доступности.](../../azure-monitor/app/monitor-web-app-availability.md) Создавайте тесты, позволяющие проверить, доступен ли ваш сайт в Интернете.
+* [Интеллектуальная диагностика.](../../azure-monitor/app/proactive-diagnostics.md) Эти тесты выполняются автоматически, поэтому вам не нужно их настраивать. Благодаря ей вы узнаете о необычном количестве неудачных запросов.
+* [Оповещения метрики](../../azure-monitor/app/alerts.md). Настройте оповещения, чтобы предупредить вас, если метрика превышает пороговое значение. Их можно настроить для пользовательских метрик, добавляемых в код приложения.

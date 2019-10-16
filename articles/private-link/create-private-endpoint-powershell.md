@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: article
 ms.date: 09/16/2019
 ms.author: kumud
-ms.openlocfilehash: db0921d709f842b004ec4c23d15a986f2e59ec23
-ms.sourcegitcommit: 6013bacd83a4ac8a464de34ab3d1c976077425c7
+ms.openlocfilehash: 43b8dfd571537aaaf6753d6b762ab84cfe4cfd0d
+ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71687079"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72376170"
 ---
 # <a name="create-a-private-endpoint-using-azure-powershell"></a>Создание частной конечной точки с помощью Azure PowerShell
 Частная конечная точка — ключевой компонент для построения частной ссылки в Azure. Это позволяет ресурсам Azure, таким как виртуальные машины (VM), обмениваться данными в частном порядке с ресурсами частной ссылки. 
@@ -21,7 +21,7 @@ ms.locfileid: "71687079"
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-## <a name="create-a-resource-group"></a>Создать группу ресурсов
+## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
 Перед созданием ресурсов необходимо создать группу ресурсов, в которой размещается виртуальная сеть и частная конечная точка, с помощью [New-азресаурцеграуп](/powershell/module/az.resources/new-azresourcegroup). В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *WestUS* :
 
@@ -32,10 +32,10 @@ New-AzResourceGroup `
   -Location westcentralus
 ```
 
-## <a name="create-a-virtual-network"></a>Создать виртуальную сеть
+## <a name="create-a-virtual-network"></a>Создайте виртуальную сеть
 В этом разделе вы создадите виртуальную сеть и подсеть. Затем подсеть связывается с виртуальной сетью.
 
-### <a name="create-a-virtual-network"></a>Создать виртуальную сеть
+### <a name="create-a-virtual-network"></a>Создайте виртуальную сеть
 
 Создайте виртуальную сеть для частной конечной точки с помощью [New-азвиртуалнетворк](/powershell/module/az.network/new-azvirtualnetwork). В следующем примере создается виртуальная сеть с именем *MyVirtualNetwork*:
  
@@ -50,7 +50,7 @@ $virtualNetwork = New-AzVirtualNetwork `
 
 ### <a name="add-a-subnet"></a>Добавление подсети
 
-Azure развертывает ресурсы в подсеть в виртуальной сети, поэтому необходимо создать подсеть. Создайте конфигурацию подсети с именем *mySubnet* с помощью [Add-азвиртуалнетворксубнетконфиг](/powershell/module/az.network/add-azvirtualnetworksubnetconfig). В следующем примере создается подсеть с именем *mySubnet* с флагом политики сети частной конечной точки, установленным в значение **Disabled (отключено**).
+Azure развертывает ресурсы в подсеть в виртуальной сети, поэтому необходимо создать подсеть. Создайте конфигурацию подсети с именем *mySubnet* с помощью [Add-азвиртуалнетворксубнетконфиг](/powershell/module/az.network/add-azvirtualnetworksubnetconfig). В следующем примере создается подсеть с именем *mySubnet* с флагом политики сети частной конечной точки, установленным в значение **Disabled (отключено**).
 
 ```azurepowershell
 $subnetConfig = Add-AzVirtualNetworkSubnetConfig `
@@ -167,7 +167,7 @@ New-AzPrivateDnsRecordSet -Name $recordName -RecordType A -ZoneName "privatelink
   
 ## <a name="connect-to-a-vm-from-the-internet"></a>Подключение к виртуальной машине из Интернета
 
-Чтобы получить общедоступный IP-адрес виртуальной машины, используйте [Get-азпублиЦипаддресс](/powershell/module/az.network/Get-AzPublicIpAddress) . В этом примере возвращается общедоступный IP-адрес виртуальной машины *myVM* :
+Используйте [Get-азпублиЦипаддресс](/powershell/module/az.network/Get-AzPublicIpAddress) to, чтобы вернуть общедоступный IP-адрес виртуальной машины. В этом примере возвращается общедоступный IP-адрес виртуальной машины *myVM* :
 
 ```azurepowershell
 Get-AzPublicIpAddress `
@@ -175,7 +175,7 @@ Get-AzPublicIpAddress `
   -ResourceGroupName myResourceGroup `
   | Select IpAddress 
 ```  
-Откройте командную строку на локальном компьютере. Выполните команду mstsc.  <publicIpAddress>Замените общедоступным IP-адресом, возвращенным на последнем шаге: 
+Откройте командную строку на локальном компьютере. Выполните команду mstsc. Замените @ no__t-0 @ no__t-1with общедоступным IP-адресом, возвращенным на последнем шаге: 
 
 
 > [!NOTE]
@@ -184,13 +184,13 @@ Get-AzPublicIpAddress `
 mstsc /v:<publicIpAddress>
 ```
 
-1. При появлении запроса выберите **подключить**. 
+1. При появлении запроса выберите **Подключиться**. 
 2. Введите имя пользователя и пароль, указанные при создании виртуальной машины.
   > [!NOTE]
   > Вам может потребоваться выбрать дополнительные варианты > использовать другую учетную запись, чтобы указать учетные данные, введенные при создании виртуальной машины. 
   
-3. Выберите **OK**. 
-4. Вы можете получить предупреждение о сертификате. В этом случае выберите **Да** или **продолжить**. 
+3. Нажмите кнопку **ОК**. 
+4. Вы можете получить предупреждение о сертификате. В таком случае выберите **Да** или **Продолжить**. 
 
 ## <a name="access-sql-database-server-privately-from-the-vm"></a>Доступ к серверу базы данных SQL в частном порядке с виртуальной машины
 
@@ -206,15 +206,15 @@ mstsc /v:<publicIpAddress>
     Address:  10.0.0.5
     Aliases:   myserver.database.windows.net
     ```
-3. Установить SQL Server Management Studio
-4. В окне Подключение к серверу введите или выберите следующие сведения: Параметр тип сервера значение выберите ядро СУБД.
+3. Установка SQL Server Management Studio
+4. В окне Подключение к серверу введите или выберите эту информацию: Настройка значения тип сервера выберите ядро СУБД.
       Имя сервера выберите myserver.database.windows.net Username введите имя пользователя, указанное во время создания.
       Пароль введите пароль, указанный во время создания.
       Запомнить пароль выберите Да.
 5. Выберите Подключить.
 6. Просмотр баз данных из левого меню. 
 7. При необходимости Создание или запрос информации из MyDatabase
-8. Закройте подключение к удаленному рабочему столу *myVM*. 
+8. Закройте подключение к удаленному рабочему столу *myVM*. 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов 
 Завершив использование частной конечной точки, сервера базы данных SQL и виртуальной машины, удалите группу ресурсов и все ресурсы, используя команду [Remove-азресаурцеграуп](/powershell/module/az.resources/remove-azresourcegroup) .
@@ -223,5 +223,5 @@ mstsc /v:<publicIpAddress>
 Remove-AzResourceGroup -Name myResourceGroup -Force
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о [частной ссылке Azure](private-link-overview.md)

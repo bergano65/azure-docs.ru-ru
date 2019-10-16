@@ -18,12 +18,12 @@ ms.author: ryanwi
 ms.reviewer: elisol, bryanla
 ms.custom: aaddev, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bd20928816a30ad2843ce6c876bd77152dcd69e1
-ms.sourcegitcommit: be344deef6b37661e2c496f75a6cf14f805d7381
+ms.openlocfilehash: c77657101f5cd8a117b2163386f6d551b7985458
+ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72001731"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72374076"
 ---
 # <a name="list-your-application-in-the-azure-active-directory-application-gallery"></a>Добавление приложения в коллекцию приложений Azure Active Directory
 
@@ -38,7 +38,7 @@ ms.locfileid: "72001731"
 - Нашим общим клиентам предлагается пошаговое руководство по настройке.
 - Клиенты, использующие систему для управления идентификаторами в разных доменах ([scim](https://techcommunity.microsoft.com/t5/Identity-Standards-Blog/Provisioning-with-SCIM-getting-started/ba-p/880010)), могут использовать подготовку для одного и того же приложения.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - Для федеративных приложений (Open ID и SAML/WS-подача) приложение должно поддерживать модель SaaS (программное обеспечение как услуга) для получения списка в коллекции приложений Azure AD. Приложения из коллекции предприятия должны поддерживать несколько пользовательских конфигураций, а не конкретных клиентов.
 - Для Open ID Connect приложение должно быть многоклиентским, а [инфраструктура согласия Azure AD](consent-framework.md) должна быть правильно реализована для приложения. Пользователь может отправить запрос на вход в общую конечную точку, чтобы любой клиент мог предоставить согласие для приложения. Доступом пользователей можно управлять на основе идентификатора клиента и имени участника-пользователя, которые передаются в маркере.
@@ -71,14 +71,14 @@ ms.locfileid: "72001731"
 
 Чтобы включить приложение в коллекцию Azure AD, сначала необходимо реализовать один из следующих протоколов федерации, поддерживаемых Azure AD. Кроме того, необходимо принять условия и условия для коллекции приложений Azure AD. Ознакомьтесь с условиями коллекции приложений Azure AD на [этом веб-сайте](https://azure.microsoft.com/support/legal/active-directory-app-gallery-terms/).
 
-- **OpenID Connect**. Чтобы интегрировать приложение с Azure AD с помощью протокола Open ID Connect, следуйте [инструкциям для разработчиков](authentication-scenarios.md).
+- **OpenID Connect Connect**: чтобы интегрировать приложение с Azure AD с помощью протокола Open ID Connect, следуйте [инструкциям для разработчиков](v1-authentication-scenarios.md).
 
     ![Перечисление приложения OpenID Connect Connect в коллекции](./media/howto-app-gallery-listing/openid.png)
 
     * Если вы хотите добавить приложение в список в коллекции с помощью OpenID Connect Connect, выберите **OpenID Connect connect & OAuth 2,0** , как показано ниже.
     * Если у вас возникли проблемы с доступом, обратитесь к [группе интеграции единого входа Azure AD](<mailto:SaaSApplicationIntegrations@service.microsoft.com>).
 
-- **SAML 2.0** или **WS-Fed**. Если приложение поддерживает SAML 2,0, его можно интегрировать непосредственно с клиентом Azure AD, следуя [инструкциям по добавлению пользовательского приложения](../active-directory-saas-custom-apps.md).
+- **Saml 2,0** или **WS-подач**. если приложение поддерживает SAML 2,0, его можно интегрировать непосредственно с клиентом Azure AD, следуя [инструкциям по добавлению пользовательского приложения](../active-directory-saas-custom-apps.md).
 
   ![Перечисление приложения SAML 2,0 или WS-подач в коллекции](./media/howto-app-gallery-listing/saml.png)
 
@@ -122,7 +122,7 @@ ms.locfileid: "72001731"
 
 ![Показывает поток приложений, запрошенных клиентом](./media/howto-app-gallery-listing/customer-request.png)
 
-## <a name="timelines"></a>Временные шкалы
+## <a name="timelines"></a>График выполнения процессов
 
 Временная шкала для процесса перечисления приложения SAML 2,0 или WS-подач в коллекции составляет от 7 до 10 рабочих дней.
 

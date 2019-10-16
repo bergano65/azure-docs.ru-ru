@@ -9,14 +9,14 @@ manager: cshankar
 ms.reviewer: v-mamcge, jasonh, kfile
 ms.workload: big-data
 ms.topic: troubleshooting
-ms.date: 08/27/2019
+ms.date: 10/10/2019
 ms.custom: seodec18
-ms.openlocfilehash: e7c5786f4510e11d431f9e80dd52d1ffc3adb410
-ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+ms.openlocfilehash: 78a991fb310c635648513e6472543b9f5c01119d
+ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70129121"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72330880"
 ---
 # <a name="diagnose-and-solve-issues-in-your-time-series-insights-environment"></a>Диагностика и устранение неполадок в среде "Аналитика временных рядов Azure"
 
@@ -40,11 +40,11 @@ ms.locfileid: "70129121"
 
 * Для Центра Интернета вещей в Центре Интернета вещей Azure необходимо указать ключ с разрешениями на **подключение службы**. Политики **iothubowner** или **service** будут работать, поскольку у них обеих есть разрешения **service connect**.
 
-   [![Разрешения на подключение к службе центра Интернета вещей](media/diagnose-and-solve-problems/iothub-serviceconnect-permissions.png)](media/diagnose-and-solve-problems/iothub-serviceconnect-permissions.png#lightbox)
+   [разрешения на подключение к службе центра 1IoT @no__t](media/diagnose-and-solve-problems/iothub-serviceconnect-permissions.png)](media/diagnose-and-solve-problems/iothub-serviceconnect-permissions.png#lightbox)
 
 * Для концентратора событий в концентраторах событий Azure необходимо указать ключ с разрешением **listen**. Политики **read** или **manage** будут работать, поскольку у них обеих есть разрешение **listen**.
 
-   [![Разрешения на прослушивание концентратора событий](media/diagnose-and-solve-problems/eventhub-listen-permissions.png)](media/diagnose-and-solve-problems/eventhub-listen-permissions.png#lightbox)
+   [@no__t — разрешения прослушивания центра 1Event](media/diagnose-and-solve-problems/eventhub-listen-permissions.png)](media/diagnose-and-solve-problems/eventhub-listen-permissions.png#lightbox)
 
 ### <a name="cause-c-the-consumer-group-provided-isnt-exclusive-to-time-series-insights"></a>Причина C. предоставленная группа потребителей не является монопольной для Time Series Insights
 
@@ -69,7 +69,7 @@ ms.locfileid: "70129121"
 
 На рисунке ниже показана среда "Аналитика временных рядов" с номером SKU S1 и емкостью 3. Она может принимать 3 миллиона событий в день.
 
-[![Текущая емкость SKU окружения](media/diagnose-and-solve-problems/environment-sku-current-capacity.png)](media/diagnose-and-solve-problems/environment-sku-current-capacity.png#lightbox)
+[![Environment SKU текущая емкость](media/diagnose-and-solve-problems/environment-sku-current-capacity.png)](media/diagnose-and-solve-problems/environment-sku-current-capacity.png#lightbox)
 
 Например, предположим, что среда принимает сообщения из концентратора событий. ежедневная частота приема данных составляет около 67 000 сообщений. Такая скорость соответствует примерно 46 сообщениям каждую минуту. 
 
@@ -109,12 +109,12 @@ ms.locfileid: "70129121"
 
 Вы не должны видеть следующие значения.
 
-- *(abc)* . Указывает на то, что служба "Аналитика временных рядов" считывает значения данных как строки.
-- *Значок календаря*. Указывает на то, что служба "Аналитика временных рядов" считывает значения данных как дату/время.
-- *#* . Указывает на то, что служба "Аналитика временных рядов" считывает значения данных как целое значение.
+- *(ABC)* : указывает, что аналитика временных рядов считывает значения данных в виде строк.
+- *Значок календаря*: указывает, что аналитика временных рядов считывает значение данных как *DateTime*.
+- *#* : указывает, что аналитика временных рядов считывает значения данных в виде целого числа.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Если вам понадобится помощь, начните с [форума MSDN](https://social.msdn.microsoft.com/Forums/home?forum=AzureTimeSeriesInsights) или [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-timeseries-insights).
+- Узнайте [, как устранить задержку в службе "аналитика временных рядов Azure](time-series-insights-environment-mitigate-latency.md)".
 
-- Также вы можете получить помощь в службе [поддержки Azure](https://azure.microsoft.com/support/options/).
+- Узнайте [, как масштабировать среду "аналитика временных рядов](time-series-insights-how-to-scale-your-environment.md)".

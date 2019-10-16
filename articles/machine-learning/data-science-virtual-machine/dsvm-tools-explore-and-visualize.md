@@ -6,16 +6,16 @@ keywords: средства анализа и обработки данных, в
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: data-science-vm
-author: vijetajo
-ms.author: vijetaj
+author: gvashishtha
+ms.author: gopalv
 ms.topic: conceptual
-ms.date: 03/16/2018
-ms.openlocfilehash: 14c34a13440d50fcf42c2207f9933dc1de014a14
-ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
+ms.date: 10/11/2019
+ms.openlocfilehash: a18c374df0cad7994af855089f1096d52fe30ce2
+ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70191967"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72330707"
 ---
 # <a name="data-exploration-and-visualization-tools-on-the-azure-data-science-virtual-machine"></a>Средства исследования и визуализации данных на виртуальной машине Azure для обработки и анализа данных
 
@@ -31,15 +31,18 @@ ms.locfileid: "70191967"
 | Использование и запуск      | Ярлык на рабочем столе  <br/> [Drill in 10 Minutes](https://drill.apache.org/docs/drill-in-10-minutes/) (Начало работы с Drill за 10 минут)  |
 | Связанные средства на DSVM      |   Rattle, Weka, SQL Server Management Studio      |
 
-## <a name="weka"></a>Weka
+## <a name="power-bi-desktop"></a>Power BI Desktop 
 |    |           |
 | ------------- | ------------- |
-| Что это такое?   |  Коллекция алгоритмов машинного обучения для задач интеллектуального анализа данных. Эти алгоритмы можно применять непосредственно к набору данных или вызывать из собственного кода Java. Weka содержит инструменты для предварительной обработки данных, классификации, регрессии, кластеризации, правил взаимосвязей и визуализации. |
-| Поддерживаемые выпуски виртуальных машин для обработки и анализа данных (DSVM)     | Windows, Linux     |
-| Распространенные способы применения      | Общее средство машинного обучения     |
-| Использование и запуск      | В Windows выполните поиск Weka в меню "Пуск". В Linux выполните вход с помощью X2Go, а затем перейдите в раздел приложения > Разработка > weka. |
-| Ссылки на примеры      | [Примеры Weka](https://www.cs.waikato.ac.nz/ml/weka/documentation.html) |
-| Связанные средства на DSVM      |LightGBM, Rattle, XGBoost   |
+| Что это такое?   | Интерактивная визуализация данных и средство бизнес-аналитики    |
+| Поддерживаемые версии DSVM      | Windows  |
+| Распространенные способы применения      |  Визуализация данных и создание панелей мониторинга   |
+| Использование и запуск      | Ярлык рабочего стола (`C:\Program Files\Microsoft Power BI Desktop\bin\PBIDesktop.exe`) или просто запустите из меню " **Пуск** ".      |
+| Связанные средства на DSVM      |   Visual Studio 2019, Visual Studio Code, Juno      |
+
+> [!NOTE]
+> Для доступа к Power BI необходима учетная запись Microsoft Office 365.
+
 
 ## <a name="rattle"></a>Rattle;
 |    |           |
@@ -51,12 +54,17 @@ ms.locfileid: "70191967"
 | Ссылки на примеры      | [Rattle](https://togaware.com/onepager/) |
 | Связанные средства на DSVM      |LightGBM, Weka, XGBoost   |
 
-## <a name="power-bi-desktop"></a>Power BI Desktop 
+
+## <a name="weka"></a>Weka
 |    |           |
 | ------------- | ------------- |
-| Что это такое?   | Интерактивная визуализация данных и средство бизнес-аналитики    |
-| Поддерживаемые версии DSVM      | Windows  |
-| Распространенные способы применения      |  Визуализация данных и создание панелей мониторинга   |
-| Использование и запуск      | Ярлык рабочего стола`C:\Program Files\Microsoft Power BI Desktop\bin\PBIDesktop.exe`()      |
-| Связанные средства на DSVM      |   Visual Studio 2019, Visual Studio Code, Juno      |
+| Что это такое?   |  Коллекция алгоритмов машинного обучения для задач интеллектуального анализа данных. Эти алгоритмы можно применять непосредственно к набору данных или вызывать из собственного кода Java. Weka содержит инструменты для предварительной обработки данных, классификации, регрессии, кластеризации, правил взаимосвязей и визуализации. |
+| Поддерживаемые выпуски виртуальных машин для обработки и анализа данных (DSVM)     | Windows, Linux     |
+| Распространенные способы применения      | Общее средство машинного обучения     |
+| Использование и запуск      | В Windows выполните поиск Weka в меню "Пуск". В Linux выполните вход с помощью X2Go, а затем перейдите в раздел приложения > Разработка > weka. |
+| Ссылки на примеры      | [Примеры Weka](https://www.cs.waikato.ac.nz/ml/weka/documentation.html) |
+| Связанные средства на DSVM      |LightGBM, Rattle, XGBoost   |
+
+
+
 

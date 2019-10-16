@@ -8,12 +8,12 @@ ms.author: robreed
 ms.date: 04/26/2019
 ms.topic: article
 manager: carmonm
-ms.openlocfilehash: de45f2fe6230e48c3cffc999e2c84d6ee0a60edc
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 0a9a5e465e160da34a21f66fd7176a8fea5d1aac
+ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67476772"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72376251"
 ---
 # <a name="run-powershell-scripts-in-your-windows-vm-with-run-command"></a>Выполнение сценариев PowerShell в виртуальной машине Windows с помощью команды "Выполнить"
 
@@ -43,7 +43,41 @@ ms.locfileid: "67476772"
 > [!NOTE]
 > Чтобы команда запуска работала правильно, требуется подключение (через порт 443) к общедоступным IP-адресам Azure. Если расширение не имеет доступа к этим конечным точкам, скрипты могут успешно выполняться, но результаты не будут возвращаться. Если вы блокируете трафик на виртуальной машине, вы можете использовать [теги служб](../../virtual-network/security-overview.md#service-tags), чтобы разрешить трафик к общедоступным IP-адресам Azure с помощью тега `AzureCloud`.
 
-## <a name="run-a-command"></a>Запуск команды
+## <a name="available-commands"></a>Доступные команды
+
+В таблице ниже представлен список команд, доступных для виртуальных машин Windows. Команда **RunPowerShellScript** может использоваться для выполнения любых сценариев. При использовании Azure CLI или PowerShell для выполнения команды значение, указанное для параметра `--command-id` или `-CommandId`, должно быть одним из значений, перечисленных ниже. При указании значения, которое не является доступной командой, появляется сообщение об ошибке.
+
+```error
+The entity was not found in this Azure location
+```
+
+|**Имя**|**Описание**|
+|---|---|
+|**RunPowerShellScript**|Выполняет сценарий PowerShell.|
+|**EnableRemotePS**|Настраивает компьютер для удаленного подключения к PowerShell.|
+|**EnableAdminAccount**|Проверяет, отключена ли учетная запись локального администратора, если да — включает ее.|
+|**IPConfig**| Предоставляет подробные сведения об IP-адресе, маске подсети и шлюзе по умолчанию для каждого адаптера, использующего стек TCP/IP.|
+|**RDPSettings**|Проверяет параметры реестра и параметры политики домена. Предлагает действия в рамках политики, если компьютер принадлежит домену, или сбрасывает параметры к значениям по умолчанию.|
+|**ResetRDPCert**|Удаляет SSL-сертификат, привязанный к прослушивателю RDP, и восстанавливает защиту прослушивателя RDP по умолчанию. Используйте этот сценарий при появлении проблем с сертификатом.|
+|**SetRDPPort**|Задает номер порта по умолчанию или указанный пользователем для подключений удаленного рабочего стола. Включает правило брандмауэра для входящего подключения к порту.|
+
+## <a name="azure-cli"></a>Azure CLI
+
+Ниже приведен пример с использованием команды [az vm run-command](/cli/azure/vm/run-command?view=azure-cli-latest#az-vm-run-command-invoke) для запуска сценария оболочки на виртуальной машине Linux Azure.
+
+```azurecli-interactive
+# script.ps1
+#   param(
+#       [string]$arg1,
+#       [string]$arg2
+#   )
+#   Write-Host This is a sample script with parameters $arg1 and $arg2
+
+az vm run-command invoke  --command-id RunPowerShellScript --name win-vm -g my-resource-group \
+    --scripts @script.ps1 --parameters "arg1=somefoo" "arg2=somebar"
+```
+
+## <a name="azure-portal"></a>портала Azure
 
 Перейдите к виртуальной машине в [Azure](https://portal.azure.com) и выберите **Запуск команды** под **ОПЕРАЦИИ**. Появится список доступных команд, выполняемых на виртуальной машине.
 
@@ -58,37 +92,22 @@ ms.locfileid: "67476772"
 
 ![Вывод сценария команды запуска](./media/run-command/run-command-script-output.png)
 
-## <a name="commands"></a>Команды
-
-В таблице ниже представлен список команд, доступных для виртуальных машин Windows. Команда **RunPowerShellScript** может использоваться для выполнения любых сценариев.
-
-|**Имя**|**Описание**|
-|---|---|
-|**RunPowerShellScript**|Выполняет сценарий PowerShell.|
-|**EnableRemotePS**|Настраивает компьютер для удаленного подключения к PowerShell.|
-|**EnableAdminAccount**|Проверяет, отключена ли учетная запись локального администратора, если да — включает ее.|
-|**IPConfig**| Предоставляет подробные сведения об IP-адресе, маске подсети и шлюзе по умолчанию для каждого адаптера, использующего стек TCP/IP.|
-|**RDPSettings**|Проверяет параметры реестра и параметры политики домена. Предлагает действия в рамках политики, если компьютер принадлежит домену, или сбрасывает параметры к значениям по умолчанию.|
-|**ResetRDPCert**|Удаляет SSL-сертификат, привязанный к прослушивателю RDP, и восстанавливает по умолчанию его защиту. Используйте этот сценарий при появлении проблем с сертификатом.|
-|**SetRDPPort**|Задает номер порта по умолчанию или указанный пользователем для подключений удаленного рабочего стола. Включает правило брандмауэра для входящего подключения к порту.|
-
 ## <a name="powershell"></a>PowerShell
 
 Ниже приведен пример с использованием командлета [Invoke-AzVMRunCommand](https://docs.microsoft.com/powershell/module/az.compute/invoke-azvmruncommand) для выполнения скрипта PowerShell на виртуальной машине Azure. Этот командлет ожидает, что скрипт, указанный в параметре `-ScriptPath`, расположен в локальной среде, в которой выполняется командлет.
-
 
 ```azurepowershell-interactive
 Invoke-AzVMRunCommand -ResourceGroupName '<myResourceGroup>' -Name '<myVMName>' -CommandId 'RunPowerShellScript' -ScriptPath '<pathToScript>' -Parameter @{"arg1" = "var1";"arg2" = "var2"}
 ```
 
-## <a name="limiting-access-to-run-command"></a>Ограничение доступа к команде запуска
+## <a name="limiting-access-to-run-command"></a>Ограничение доступа для выполнения команды
 
-Перечисление выполнение команд или отображение сведений о команде требуется `Microsoft.Compute/locations/runCommands/read` разрешение на уровне подписки, который встроенной [чтения](../../role-based-access-control/built-in-roles.md#reader) роли и более поздней версии.
+Для перечисления команд выполнения или отображения сведений о команде требуется разрешение `Microsoft.Compute/locations/runCommands/read` на уровне подписки, который имеет встроенную роль [читателя](../../role-based-access-control/built-in-roles.md#reader) и выше.
 
-Для выполнения команды необходимо `Microsoft.Compute/virtualMachines/runCommand/action` разрешение на уровне подписки, который [участник виртуальных машин](../../role-based-access-control/built-in-roles.md#virtual-machine-contributor) роли и более поздней версии.
+Для выполнения команды требуется разрешение `Microsoft.Compute/virtualMachines/runCommand/action` на уровне подписки, который имеет роль [участника виртуальной машины](../../role-based-access-control/built-in-roles.md#virtual-machine-contributor) и выше.
 
 Можно использовать одну из [встроенных](../../role-based-access-control/built-in-roles.md) ролей или создать [пользовательскую](../../role-based-access-control/custom-roles.md) роль для запуска команды.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Сведения о других способах удаленного запуска сценариев и команд на виртуальной машине см. в разделе [Выполнение сценариев в виртуальных машинах Windows](run-scripts-in-vm.md).
+Дополнительные сведения о других способах удаленного выполнения сценариев и команд на виртуальной машине см. в статье [Запуск сценариев на виртуальной машине Windows](run-scripts-in-vm.md) .

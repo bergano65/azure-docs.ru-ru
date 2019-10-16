@@ -6,16 +6,16 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 06/10/2019
 ms.author: mjbrown
-ms.openlocfilehash: 362024868de269ed64a440a25e8c19c5b68bef80
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.openlocfilehash: cd5643d8be06afcd43c5bfe38d6f5e9caa6f906e
+ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "71003476"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72326641"
 ---
-# <a name="where-clause"></a>Предложение WHERE
+# <a name="where-clause-in-azure-cosmos-db"></a>Предложение WHERE в Azure Cosmos DB
 
-Необязательное предложение Where`WHERE <filter_condition>`() указывает условия, которым должны соответствовать исходные элементы JSON, чтобы запрос включал их в результаты. Элемент JSON должен оценивать указанные условия `true` , чтобы считаться результатом. Слой индекса использует предложение WHERE для определения наименьшего подмножества исходных элементов, которые могут быть частью результата.
+Необязательное предложение WHERE (`WHERE <filter_condition>`) указывает условия, которым должны соответствовать исходные элементы JSON, чтобы запрос включал их в результаты. Элемент JSON должен оценивать указанные условия до `true`, чтобы считаться результатом. Слой индекса использует предложение WHERE для определения наименьшего подмножества исходных элементов, которые могут быть частью результата.
   
 ## <a name="syntax"></a>Синтаксис
   
@@ -42,7 +42,7 @@ WHERE <filter_condition>
 
 ## <a name="examples"></a>Примеры
 
-Следующий запрос запрашивает элементы, содержащие `id` свойство со `AndersenFamily`значением. Он исключает любой элемент, не имеющий `id` свойства или значения которого не совпадают. `AndersenFamily`
+Следующий запрос запрашивает элементы, содержащие свойство `id` со значением `AndersenFamily`. Он исключает любой элемент, у которого нет свойства `id` или значение которого не соответствует `AndersenFamily`.
 
 ```sql
     SELECT f.address
@@ -74,7 +74,7 @@ WHERE <filter_condition>
 |Побитовые    | \|, &, ^, <<, >>, >>> (сдвиг вправо с заполнением нулями) |
 |Логические    | AND, OR, NOT      |
 |Сравнение | =, !=, &lt;, &gt;, &lt;=, &gt;=, <> |
-|Строковое     |  \|\| (объединение) |
+|Строка     |  \|\| (объединение) |
 
 В следующих запросах используются бинарные операторы:
 
@@ -104,9 +104,9 @@ WHERE <filter_condition>
     WHERE (-c.grade = -5)  -- matching grades == 5
 ```
 
-В запросах также можно использовать ссылки на свойства. Например, `SELECT * FROM Families f WHERE f.isRegistered` Возвращает элемент JSON, содержащий свойство `isRegistered` со значением, равным `true`. Любое `false`другое значение, например `Undefined`, `null` `<number>` ,,`<object>`, ,или`<array>`, исключает элемент из результата. `<string>` 
+В запросах также можно использовать ссылки на свойства. Например, `SELECT * FROM Families f WHERE f.isRegistered` возвращает элемент JSON, содержащий свойство `isRegistered` со значением, равным `true`. Любое другое значение, например `false`, `null`, `Undefined`, `<number>`, `<string>`, `<object>` или `<array>`, исключает элемент из результата. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Начало работы](sql-query-getting-started.md)
 - [Примеры .NET для Azure Cosmos DB](https://github.com/Azure/azure-cosmos-dotnet-v3)

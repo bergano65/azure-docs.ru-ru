@@ -5,20 +5,20 @@ services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: conceptual
-ms.date: 04/03/2019
+ms.date: 10/14/2019
 ms.author: helohr
-ms.openlocfilehash: 57070b297446badb92ae1df4c435dd54cfe26823
-ms.sourcegitcommit: d4c9821b31f5a12ab4cc60036fde00e7d8dc4421
+ms.openlocfilehash: 622b4e53be68025ad9553ce604041d14885bb2b2
+ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71710181"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72330833"
 ---
 # <a name="prepare-and-customize-a-master-vhd-image"></a>Подготовка и настройка главного образа VHD
 
-В этой статье описывается, как подготовить главный виртуальный жесткий диск (VHD) для отправки в Azure, включая создание виртуальных машин и установку на них программного обеспечения. Эти инструкции предназначены для настройки виртуальных рабочих столов Windows, которые можно использовать с существующими процессами Организации.
+В этой статье описывается, как подготовить главный виртуальный жесткий диск (VHD) для отправки в Azure, включая создание виртуальных машин и установку на них программного обеспечения. Эти инструкции предназначены для конфигурации Виртуального рабочего стола Windows, которую можно использовать в имеющихся процессах вашей организации.
 
-## <a name="create-a-vm"></a>Создание виртуальной машины
+## <a name="create-a-vm"></a>Создание ВМ
 
 Многосеансовая поддержка Windows 10 Enterprise доступна в коллекции образов Azure. Существует два варианта настройки этого образа.
 
@@ -62,11 +62,25 @@ Convert-VHD –Path c:\\test\\MY-VM.vhdx –DestinationPath c:\\test\\MY-NEW-VM.
 
 ## <a name="software-preparation-and-installation"></a>Подготовка и установка программного обеспечения
 
-В этом разделе описано, как подготовить и установить Фслогикс, защитник Windows и другие общие приложения. 
+В этом разделе описывается подготовка и установка Фслогикс и защитника Windows, а также некоторые основные параметры конфигурации для приложений и реестра образа. 
 
-Если вы устанавливаете Office 365 профессиональный плюс и OneDrive на виртуальной машине, см. статью [Установка Office в главном VHD-образе](install-office-on-wvd-master-image.md). Перейдите по ссылке в разделе дальнейшие действия этой статьи, чтобы вернуться к этой статье и завершить главный процесс виртуального жесткого диска.
+Если вы устанавливаете Office 365 профессиональный плюс и OneDrive на виртуальной машине, перейдите к разделу [Установка Office в главном образе VHD](install-office-on-wvd-master-image.md) и следуйте инструкциям по установке приложений. После этого вернитесь к этой статье.
 
 Если пользователям требуется доступ к определенным бизнес-приложениям, рекомендуется установить их после выполнения инструкций этого раздела.
+
+### <a name="set-up-user-profile-container-fslogix"></a>Настройка контейнера профиля пользователя (Фслогикс)
+
+Чтобы включить контейнер Фслогикс как часть образа, следуйте инструкциям в разделе [Создание контейнера профилей для пула узлов с помощью общей папки](create-host-pools-user-profile.md#configure-the-fslogix-profile-container). С помощью [этого краткого руководства](https://docs.microsoft.com/en-us/fslogix/configure-cloud-cache-tutorial)вы можете протестировать функциональные возможности контейнера фслогикс.
+
+### <a name="configure-windows-defender"></a>Настройка защитника Windows
+
+Если в виртуальной машине настроен защитник Windows, убедитесь, что он не просматривает все содержимое VHD-и VHDX-файлов во время вложения.
+
+Эта конфигурация удаляет только сканирование VHD-и VHDX-файлов во время вложения, но не влияет на проверку в реальном времени.
+
+Более подробные инструкции по настройке защитника Windows в Windows Server см. в разделе [Настройка исключений антивирусной программы защитника Windows в Windows Server](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-antivirus/configure-server-exclusions-windows-defender-antivirus).
+
+Дополнительные сведения о настройке защитника Windows для исключения определенных файлов из проверки см. в разделе [Настройка и проверка исключений на основе расширения файла и расположения папки](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-antivirus/configure-extension-file-exclusions-windows-defender-antivirus).
 
 ### <a name="disable-automatic-updates"></a>Отключить автоматическое обновление
 
@@ -88,20 +102,6 @@ reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" /v NoAutoUpd
 ```batch
 reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" /v SpecialRoamingOverrideAllowed /t REG_DWORD /d 1 /f
 ```
-
-### <a name="set-up-user-profile-container-fslogix"></a>Настройка контейнера профиля пользователя (Фслогикс)
-
-Чтобы включить контейнер Фслогикс как часть образа, следуйте инструкциям в разделе [Создание контейнера профилей для пула узлов с помощью общей папки](create-host-pools-user-profile.md#configure-the-fslogix-profile-container). С помощью [этого краткого руководства](https://docs.microsoft.com/en-us/fslogix/configure-cloud-cache-tutorial)вы можете протестировать функциональные возможности контейнера фслогикс.
-
-### <a name="configure-windows-defender"></a>Настройка защитника Windows
-
-Если в виртуальной машине настроен защитник Windows, убедитесь, что он не просматривает все содержимое VHD-и VHDX-файлов во время вложения.
-
-Эта конфигурация удаляет только сканирование VHD-и VHDX-файлов во время вложения, но не влияет на проверку в реальном времени.
-
-Более подробные инструкции по настройке защитника Windows в Windows Server см. в разделе [Настройка исключений антивирусной программы защитника Windows в Windows Server](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-antivirus/configure-server-exclusions-windows-defender-antivirus).
-
-Дополнительные сведения о настройке защитника Windows для исключения определенных файлов из проверки см. в разделе [Настройка и проверка исключений на основе расширения файла и расположения папки](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-antivirus/configure-extension-file-exclusions-windows-defender-antivirus).
 
 ### <a name="configure-session-timeout-policies"></a>Настройка политик времени ожидания сеанса
 
@@ -220,12 +220,12 @@ reg add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\rdp-s
 
     ![Снимок экрана уведомления об успешно созданном образе.](media/1f41b7192824a2950718a2b7bb9e9d69.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда у вас есть образ, можно создать или обновить пулы узлов. Дополнительные сведения о создании и обновлении пулов узлов см. в следующих статьях:
 
 - [Create a host pool with an Azure Resource Manager template](create-host-pools-arm-template.md) (Создание пула узлов с помощью шаблона Azure Resource Manager)
-- [Учебник. Создание пула узлов с помощью Azure Marketplace](create-host-pools-azure-marketplace.md)
+- [Руководство. Создание пула узлов с помощью Azure Marketplace](create-host-pools-azure-marketplace.md)
 - [Create a host pool with PowerShell](create-host-pools-powershell.md) (Создание пула узлов с помощью PowerShell)
 - [Создание контейнера профиля для пула узлов с помощью общей папки](create-host-pools-user-profile.md)
 - [Настройка метода балансировки нагрузки виртуальных рабочих столов Windows](configure-host-pool-load-balancing.md)

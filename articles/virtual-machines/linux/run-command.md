@@ -8,12 +8,12 @@ ms.author: robreed
 ms.date: 04/26/2019
 ms.topic: article
 manager: carmonm
-ms.openlocfilehash: abf0f69ea70bae4102806214f0ef0fcfc25aad3a
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 6550b6e3f59ff7e6bac39dfc1abcf829256122d4
+ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67477051"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72376354"
 ---
 # <a name="run-shell-scripts-in-your-linux-vm-with-run-command"></a>Выполнение скриптов оболочки в виртуальной машине Linux с помощью команды запуска
 
@@ -41,7 +41,20 @@ ms.locfileid: "67477051"
 > [!NOTE]
 > Чтобы команда запуска работала правильно, требуется подключение (через порт 443) к общедоступным IP-адресам Azure. Если расширение не имеет доступа к этим конечным точкам, скрипты могут успешно выполняться, но результаты не будут возвращаться. Если вы блокируете трафик на виртуальной машине, вы можете использовать [теги служб](../../virtual-network/security-overview.md#service-tags), чтобы разрешить трафик к общедоступным IP-адресам Azure с помощью тега `AzureCloud`.
 
-## <a name="azure-cli"></a>Инфраструктура CLI Azure
+## <a name="available-commands"></a>Доступные команды
+
+В этой таблице представлен список команд, доступных для виртуальных машин Linux. Команда **RunShellScript** может использоваться для выполнения любых скриптов. При использовании Azure CLI или PowerShell для выполнения команды значение, указанное для параметра `--command-id` или `-CommandId`, должно быть одним из значений, перечисленных ниже. При указании значения, которое не является доступной командой, появляется сообщение об ошибке.
+
+```error
+The entity was not found in this Azure location
+```
+
+|**Имя**|**Описание**|
+|---|---|
+|**RunShellScript**|Выполняет сценарий оболочки Linux.|
+|**ifconfig**| Получает конфигурации всех сетевых интерфейсов.|
+
+## <a name="azure-cli"></a>Azure CLI
 
 Ниже приведен пример с использованием команды [az vm run-command](/cli/azure/vm/run-command?view=azure-cli-latest#az-vm-run-command-invoke) для запуска сценария оболочки на виртуальной машине Linux Azure.
 
@@ -52,7 +65,7 @@ az vm run-command invoke -g myResourceGroup -n myVm --command-id RunShellScript 
 > [!NOTE]
 > Для выполнения команд от имени другого пользователя можно использовать `sudo -u`, чтобы указать учетную запись пользователя, которую нужно использовать.
 
-## <a name="azure-portal"></a>Портал Azure
+## <a name="azure-portal"></a>портала Azure
 
 Перейдите к виртуальной машине в [Azure](https://portal.azure.com) и выберите **Запуск команды** под **ОПЕРАЦИИ**. Появится список доступных команд, выполняемых на виртуальной машине.
 
@@ -67,20 +80,19 @@ az vm run-command invoke -g myResourceGroup -n myVm --command-id RunShellScript 
 
 ![Вывод сценария команды запуска](./media/run-command/run-command-script-output.png)
 
-## <a name="available-commands"></a>Доступные команды
+### <a name="powershell"></a>PowerShell
 
-В этой таблице представлен список команд, доступных для виртуальных машин Linux. Команда **RunShellScript** может использоваться для выполнения любых скриптов.
+Ниже приведен пример с использованием командлета [Invoke-AzVMRunCommand](https://docs.microsoft.com/powershell/module/az.compute/invoke-azvmruncommand) для выполнения скрипта PowerShell на виртуальной машине Azure. Этот командлет ожидает, что скрипт, указанный в параметре `-ScriptPath`, расположен в локальной среде, в которой выполняется командлет.
 
-|**Имя**|**Описание**|
-|---|---|
-|**RunShellScript**|Выполняет сценарий оболочки Linux.|
-|**ifconfig**| Получает конфигурации всех сетевых интерфейсов.|
+```powershell-interactive
+Invoke-AzVMRunCommand -ResourceGroupName '<myResourceGroup>' -Name '<myVMName>' -CommandId 'RunPowerShellScript' -ScriptPath '<pathToScript>' -Parameter @{"arg1" = "var1";"arg2" = "var2"}
+```
 
 ## <a name="limiting-access-to-run-command"></a>Ограничение доступа к команде запуска
 
-Перечисление выполнение команд или отображение сведений о команде требуется `Microsoft.Compute/locations/runCommands/read` разрешение на уровне подписки, который встроенной [чтения](../../role-based-access-control/built-in-roles.md#reader) роли и более поздней версии.
+Для перечисления команд выполнения или отображения сведений о команде требуется разрешение `Microsoft.Compute/locations/runCommands/read` на уровне подписки, который имеет встроенную роль [читателя](../../role-based-access-control/built-in-roles.md#reader) и выше.
 
-Для выполнения команды необходимо `Microsoft.Compute/virtualMachines/runCommand/action` разрешение на уровне подписки, который [участник виртуальных машин](../../role-based-access-control/built-in-roles.md#virtual-machine-contributor) роли и более поздней версии.
+Для выполнения команды требуется разрешение `Microsoft.Compute/virtualMachines/runCommand/action` на уровне подписки, который имеет роль [участника виртуальной машины](../../role-based-access-control/built-in-roles.md#virtual-machine-contributor) и выше.
 
 Можно использовать одну из [встроенных](../../role-based-access-control/built-in-roles.md) ролей или создать [пользовательскую](../../role-based-access-control/custom-roles.md) роль для запуска команды.
 

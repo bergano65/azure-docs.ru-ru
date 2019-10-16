@@ -1,6 +1,6 @@
 ---
-title: Настройка сценариев pre и POST в развертывании Управление обновлениями в Azure
-description: В этой статье описывается настройка сценариев предварительного и последующего выполнения, а также управление этими сценариями.
+title: Настройка предварительных и последующей скриптов в развертывании Управление обновлениями в Azure
+description: В этой статье описывается, как настроить предварительные и последующий скрипты для развертываний обновлений и управлять ими.
 services: automation
 ms.service: automation
 ms.subservice: update-management
@@ -9,16 +9,16 @@ ms.author: robreed
 ms.date: 05/17/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: f13851dd43c80a63ec628e04b98271894c15afc0
-ms.sourcegitcommit: 0c906f8624ff1434eb3d3a8c5e9e358fcbc1d13b
+ms.openlocfilehash: 84cd5db812d995f1160a02917eac5857ee076c7f
+ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69542864"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72374446"
 ---
-# <a name="manage-pre-and-post-scripts"></a>Управление пред и POST Scripts
+# <a name="manage-pre-and-post-scripts"></a>Управление предварительными и последующей сценариями
 
-Сценарии предварительного и последующего выполнения позволяют запускать модули Runbook PowerShell в учетной записи Службы автоматизации до и после задач развертывания обновлений. Такие сценарии выполняются в контексте Azure, а не в локальной среде. Предварительные сценарии выполняются в начале развертывания обновлений. Запись сценариев запускается в конце развертывания и после каждой настроенной перезагрузки.
+Предварительные и почтовые скрипты позволяют запускать модули Runbook PowerShell в учетной записи службы автоматизации до (до задачи) и после (после задачи) развертывания обновлений. Скрипты pre и POST выполняются в контексте Azure, а не локально. Предварительные сценарии выполняются в начале развертывания обновлений. Запись сценариев запускается в конце развертывания и после каждой настроенной перезагрузки.
 
 ## <a name="runbook-requirements"></a>Требования к модулям Runbook
 
@@ -26,7 +26,7 @@ ms.locfileid: "69542864"
 
 ## <a name="using-a-prepost-script"></a>Использование сценария, выполняемого перед развертыванием или после него
 
-Чтобы использовать сценарий предварительного или последующего выполнения, прежде всего создайте развертывание обновлений. Выберите **Предварительные скрипты + POST-скрипты**. Откроется страница **Выбор сценариев предварительного и последующего выполнения**.  
+Чтобы использовать сценарий предварительного или последующего выполнения, прежде всего создайте развертывание обновлений. Выберите **Предварительные скрипты + POST-скрипты**. Откроется страница **Выбор сценариев предварительного и последующего выполнения**.
 
 ![Выбор сценариев](./media/pre-post-scripts/select-scripts.png)
 
@@ -42,15 +42,15 @@ ms.locfileid: "69542864"
 
 Когда развертывание обновлений будет готово, откройте страницу **Развертывания обновлений** и проверьте результаты. Здесь вы увидите, среди прочего, состояние обоих сценариев.
 
-![Обновление результатов](./media/pre-post-scripts/update-results.png)
+![Результаты обновления](./media/pre-post-scripts/update-results.png)
 
-Чтобы получить дополнительные сведения о том или ином сценарии, щелкните строку состояния развертывания обновлений. В открывшемся окне будет ссылка на код сценария, который выполнялся.
+Перейдя к развертыванию обновления, вы предоставили дополнительные сведения о предварительных и последующей сценариях. В открывшемся окне будет ссылка на код сценария, который выполнялся.
 
 ![Результаты развертывания](./media/pre-post-scripts/deployment-run.png)
 
 ## <a name="passing-parameters"></a>Передача параметров
 
-Настроив сценарии предварительного и последующего выполнения, вы можете передавать в них параметры, как в обычные модули Runbook. Параметры определяются при создании развертывания обновлений. В скриптах предварительного и последующего выполнения поддерживаются следующие типы данных:
+При настройке предварительных и последующего сценариев можно передавать параметры, как и планирование модуля Runbook. Параметры определяются при создании развертывания обновлений. Сценарии pre и POST поддерживают следующие типы:
 
 * [char]
 * [byte]
@@ -104,7 +104,7 @@ ms.locfileid: "69542864"
             "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myresources/providers/Microsoft.Compute/virtualMachines/vm-01",
             "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myresources/providers/Microsoft.Compute/virtualMachines/vm-02",
             "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myresources/providers/Microsoft.Compute/virtualMachines/vm-03"
-         ], 
+         ],
          "nonAzureComputerNames":[
             "box1.contoso.com",
             "box2.contoso.com"
@@ -116,12 +116,12 @@ ms.locfileid: "69542864"
 Полный пример со всеми доступными свойствами можно просмотреть [здесь](/rest/api/automation/softwareupdateconfigurations/getbyname#examples).
 
 > [!NOTE]
-> `SoftwareUpdateConfigurationRunContext` Объект может содержать дублирующиеся записи для компьютеров. Это может привести к многократному выполнению сценариев pre и POST на одном компьютере. Чтобы обойти это поведение, `Sort-Object -Unique` используйте для выбора в скрипте только уникальных имен виртуальных машин.
+> Объект `SoftwareUpdateConfigurationRunContext` может содержать дублирующиеся записи для компьютеров. Это может привести к многократному выполнению сценариев pre и POST на одном компьютере. Чтобы обойти это поведение, используйте `Sort-Object -Unique`, чтобы выбрать в скрипте только уникальные имена виртуальных машин.
 
 
 ## <a name="stopping-a-deployment"></a>Остановка развертывания
 
-Если требуется отключить развертывание на основе предварительного скрипта, необходимо [создать](automation-runbook-execution.md#throw) исключение. Если исключение не возникает, скрипт развертывания и публикации по-прежнему будет выполняться. В [примере модуля Runbook](https://gallery.technet.microsoft.com/Update-Management-Run-6949cc44?redir=0) в галерее показано, как это можно сделать. Ниже приведен фрагмент кода из этого модуля Runbook.
+Если требуется отключить развертывание на основе предварительного скрипта, необходимо [создать](automation-runbook-execution.md#throw) исключение. Если исключение не возникает, скрипт развертывания и публикации по-прежнему будет выполняться. В следующем фрагменте кода показано, как создать исключение.
 
 ```powershell
 #In this case, we want to terminate the patch job if any run fails.
@@ -130,16 +130,15 @@ foreach($summary in $finalStatus)
 {
     if ($summary.Type -eq "Error")
     {
-        #We must throw in order to fail the patch deployment.  
+        #We must throw in order to fail the patch deployment.
         throw $summary.Summary
     }
 }
 ```
 
-
 ## <a name="samples"></a>Примеры
 
-Примеры сценариев предварительного и последующего выполнения можно найти в [коллекции центра сценариев](https://gallery.technet.microsoft.com/scriptcenter/site/search?f%5B0%5D.Type=RootCategory&f%5B0%5D.Value=WindowsAzure&f%5B0%5D.Text=Windows%20Azure&f%5B1%5D.Type=SubCategory&f%5B1%5D.Value=WindowsAzure_automation&f%5B1%5D.Text=Automation&f%5B2%5D.Type=SearchText&f%5B2%5D.Value=update%20management&f%5B3%5D.Type=Tag&f%5B3%5D.Value=Patching&f%5B3%5D.Text=Patching&f%5B4%5D.Type=ProgrammingLanguage&f%5B4%5D.Value=PowerShell&f%5B4%5D.Text=PowerShell) или импортировать через портал Azure. Чтобы импортировать сценарии через портал, в учетной записи Службы автоматизации выберите в разделе **Автоматизация процессов** элемент **Коллекция модулей Runbook**. В качестве фильтра укажите **Управление обновлениями**.
+Примеры для сценариев предварительного и последующей публикации можно найти в [коллекции центра скриптов](https://gallery.technet.microsoft.com/scriptcenter/site/search?f%5B0%5D.Type=RootCategory&f%5B0%5D.Value=WindowsAzure&f%5B0%5D.Text=Windows%20Azure&f%5B1%5D.Type=SubCategory&f%5B1%5D.Value=WindowsAzure_automation&f%5B1%5D.Text=Automation&f%5B2%5D.Type=SearchText&f%5B2%5D.Value=update%20management&f%5B3%5D.Type=Tag&f%5B3%5D.Value=Patching&f%5B3%5D.Text=Patching&f%5B4%5D.Type=ProgrammingLanguage&f%5B4%5D.Value=PowerShell&f%5B4%5D.Text=PowerShell), [коллекция PowerShell](https://www.powershellgallery.com/packages?q=Tags%3A%22UpdateManagement%22+Tags%3A%22Automation%22)или импортировать с помощью портал Azure. Чтобы импортировать сценарии через портал, в учетной записи Службы автоматизации выберите в разделе **Автоматизация процессов** элемент **Коллекция модулей Runbook**. В качестве фильтра укажите **Управление обновлениями**.
 
 ![Список в коллекции](./media/pre-post-scripts/runbook-gallery.png)
 
@@ -154,66 +153,66 @@ foreach($summary in $finalStatus)
 > [!IMPORTANT]
 > Чтобы воспользоваться импортированным модулем Runbook, его нужно **опубликовать**. Для этого найдите нужный модуль в учетной записи Службы автоматизации, а затем щелкните **Изменить** и **Опубликовать**.
 
-Все примеры основаны на базовом шаблоне, который представлен ниже. Этот шаблон можно использовать для создания собственных модулей Runbook, которые можно применять в сценариях предварительного и последующего выполнения. В шаблон уже включена вся необходимая логика для аутентификации в Azure и обработки параметра `SoftwareUpdateConfigurationRunContext`.
+Все примеры основаны на базовом шаблоне, который представлен ниже. Этот шаблон можно использовать для создания собственного модуля Runbook для использования с предварительными и последующими скриптами. В шаблон уже включена вся необходимая логика для аутентификации в Azure и обработки параметра `SoftwareUpdateConfigurationRunContext`.
 
 ```powershell
-<# 
-.SYNOPSIS 
- Barebones script for Update Management Pre/Post 
- 
-.DESCRIPTION 
-  This script is intended to be run as a part of Update Management Pre/Post scripts.  
-  It requires a RunAs account. 
- 
-.PARAMETER SoftwareUpdateConfigurationRunContext 
-  This is a system variable which is automatically passed in by Update Management during a deployment. 
-#> 
- 
-param( 
-    [string]$SoftwareUpdateConfigurationRunContext 
-) 
-#region BoilerplateAuthentication 
-#This requires a RunAs account 
-$ServicePrincipalConnection = Get-AutomationConnection -Name 'AzureRunAsConnection' 
- 
-Add-AzureRmAccount ` 
-    -ServicePrincipal ` 
-    -TenantId $ServicePrincipalConnection.TenantId ` 
-    -ApplicationId $ServicePrincipalConnection.ApplicationId ` 
-    -CertificateThumbprint $ServicePrincipalConnection.CertificateThumbprint 
- 
-$AzureContext = Select-AzureRmSubscription -SubscriptionId $ServicePrincipalConnection.SubscriptionID 
-#endregion BoilerplateAuthentication 
- 
-#If you wish to use the run context, it must be converted from JSON 
-$context = ConvertFrom-Json  $SoftwareUpdateConfigurationRunContext 
-#Access the properties of the SoftwareUpdateConfigurationRunContext 
+<#
+.SYNOPSIS
+ Barebones script for Update Management Pre/Post
+
+.DESCRIPTION
+  This script is intended to be run as a part of Update Management Pre/Post scripts.
+  It requires a RunAs account.
+
+.PARAMETER SoftwareUpdateConfigurationRunContext
+  This is a system variable which is automatically passed in by Update Management during a deployment.
+#>
+
+param(
+    [string]$SoftwareUpdateConfigurationRunContext
+)
+#region BoilerplateAuthentication
+#This requires a RunAs account
+$ServicePrincipalConnection = Get-AutomationConnection -Name 'AzureRunAsConnection'
+
+Add-AzureRmAccount `
+    -ServicePrincipal `
+    -TenantId $ServicePrincipalConnection.TenantId `
+    -ApplicationId $ServicePrincipalConnection.ApplicationId `
+    -CertificateThumbprint $ServicePrincipalConnection.CertificateThumbprint
+
+$AzureContext = Select-AzureRmSubscription -SubscriptionId $ServicePrincipalConnection.SubscriptionID
+#endregion BoilerplateAuthentication
+
+#If you wish to use the run context, it must be converted from JSON
+$context = ConvertFrom-Json  $SoftwareUpdateConfigurationRunContext
+#Access the properties of the SoftwareUpdateConfigurationRunContext
 $vmIds = $context.SoftwareUpdateConfigurationSettings.AzureVirtualMachines | Sort-Object -Unique
-$runId = $context.SoftwareUpdateConfigurationRunId 
- 
-Write-Output $context 
- 
-#Example: How to create and write to a variable using the pre-script: 
-<# 
-#Create variable named after this run so it can be retrieved 
-New-AzureRmAutomationVariable -ResourceGroupName $ResourceGroup –AutomationAccountName $AutomationAccount –Name $runId -Value "" –Encrypted $false 
-#Set value of variable  
-Set-AutomationVariable –Name $runId -Value $vmIds 
-#> 
- 
-#Example: How to retrieve information from a variable set during the pre-script 
-<# 
-$variable = Get-AutomationVariable -Name $runId 
-#>      
+$runId = $context.SoftwareUpdateConfigurationRunId
+
+Write-Output $context
+
+#Example: How to create and write to a variable using the pre-script:
+<#
+#Create variable named after this run so it can be retrieved
+New-AzureRmAutomationVariable -ResourceGroupName $ResourceGroup –AutomationAccountName $AutomationAccount –Name $runId -Value "" –Encrypted $false
+#Set value of variable
+Set-AutomationVariable –Name $runId -Value $vmIds
+#>
+
+#Example: How to retrieve information from a variable set during the pre-script
+<#
+$variable = Get-AutomationVariable -Name $runId
+#>
 ```
 
 ## <a name="interacting-with-machines"></a>Взаимодействие с компьютерами
 
-Задачи pre и POST выполняются в качестве модуля Runbook в учетной записи службы автоматизации, а не непосредственно на компьютерах в развертывании. Задачи pre и POST также выполняются в контексте Azure и не имеют доступа к компьютерам, не являющимся компьютерами Azure. В следующих разделах показано, как можно напрямую взаимодействовать с компьютерами, будь это ВИРТУАЛЬная машина Azure или не Azure.
+Задачи, выполняемые до и после выполнения задач, выполняются как модуль Runbook в учетной записи службы автоматизации, а не на компьютерах в развертывании. Задачи, выполняемые до и после выполнения, также выполняются в контексте Azure и не имеют доступа к компьютерам, не являющимся машинами Azure. В следующих разделах показано, как можно напрямую взаимодействовать с компьютерами, будь это ВИРТУАЛЬная машина Azure или не Azure.
 
 ### <a name="interacting-with-azure-machines"></a>Взаимодействие с компьютерами Azure
 
-Задачи pre и POST выполняются как модули Runbook и не запускаются на виртуальных машинах Azure в развертывании. Для взаимодействия с виртуальными машинами Azure необходимо иметь следующие элементы:
+Задачи, выполняемые до и после выполнения задач, выполняются в виде модулей Runbook и не запускаются на виртуальных машинах Azure в развертывании. Для взаимодействия с виртуальными машинами Azure необходимо иметь следующие элементы:
 
 * учетная запись запуска от имени;
 * Runbook, который требуется запустить
@@ -222,14 +221,14 @@ $variable = Get-AutomationVariable -Name $runId
 
 ### <a name="interacting-with-non-azure-machines"></a>Взаимодействие с компьютерами, не входящими в Azure
 
-Задачи предварительного и последующего выполнения работают в контексте Azure и не имеют доступ к компьютерам в других средах. Чтобы взаимодействовать с компьютерами, не входящими в Azure, вам потребуется следующее:
+Задачи, выполняемые до и после выполнения задач, выполняются в контексте Azure и не имеют доступа к компьютерам, не являющимся компьютерами Azure. Чтобы взаимодействовать с компьютерами, не входящими в Azure, вам потребуется следующее:
 
 * учетная запись запуска от имени;
 * установленная на компьютере гибридная рабочая роль Runbook;
 * модуль Runbook, который будет запускаться локально;
 * родительский модуль Runbook.
 
-Для взаимодействия с компьютерами, не относящимися к Azure, в контексте Azure выполняется родительский модуль Runbook. Он вызывает дочерний модуль Runbook с помощью командлета [Start-AzureRmAutomationRunbook](/powershell/module/azurerm.automation/start-azurermautomationrunbook). Ему нужно передать параметр `-RunOn` и имя гибридной рабочей роли Runbook, которая будет выполнять сценарий. Пример того, как это сделать, см. в примере модуля Runbook, [Управление обновлениями — запуск скрипта локально](https://gallery.technet.microsoft.com/Update-Management-Run-6949cc44).
+Для взаимодействия с компьютерами, не относящимися к Azure, в контексте Azure выполняется родительский модуль Runbook. Он вызывает дочерний модуль Runbook с помощью командлета [Start-AzureRmAutomationRunbook](/powershell/module/azurerm.automation/start-azurermautomationrunbook). Ему нужно передать параметр `-RunOn` и имя гибридной рабочей роли Runbook, которая будет выполнять сценарий. Пример см. в статье пример модуля Runbook [Управление обновлениями — запуск скрипта локально](https://gallery.technet.microsoft.com/Update-Management-Run-6949cc44).
 
 ## <a name="abort-patch-deployment"></a>Отмена развертывания исправлений
 
@@ -238,16 +237,16 @@ $variable = Get-AutomationVariable -Name $runId
 ```powershell
 if (<My custom error logic>)
 {
-    #Throw an error to fail the patch deployment.  
+    #Throw an error to fail the patch deployment.
     throw "There was an error, abort deployment"
 }
 ```
 
 ## <a name="known-issues"></a>Известные проблемы
 
-* Нельзя передавать логические значения, объекты или массивы в параметры при использовании скриптов pre и POST. При такой попытке модуль Runbook возвратит ошибку. Полный список поддерживаемых типов см. в разделе [Parameters](#passing-parameters).
+* Нельзя передавать логические значения, объекты или массивы в параметры при использовании сценариев pre и POST. При такой попытке модуль Runbook возвратит ошибку. Полный список поддерживаемых типов см. в разделе [Parameters](#passing-parameters).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с руководством ниже, чтобы узнать, как управлять обновлениями для виртуальных машин Windows.
 

@@ -1,24 +1,24 @@
 ---
 title: Ссылка артефакта определения представления управляемого приложения Azure
-description: Эта статья содержит ссылку на артефакт определения представления.
+description: Содержит пример артефакта определения представления для управляемых приложений Azure. Имя файла — viewDefinition. JSON.
 services: managed-applications
 ms.service: managed-applications
 ms.topic: conceptual
 ms.author: lazinnat
 author: lazinnat
 ms.date: 07/11/2019
-ms.openlocfilehash: e60f26fe0a7144d768bac020d62c61cb92594914
-ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
+ms.openlocfilehash: 1f56f6c9c519bd29423d92a8dc8b8ce5904b523c
+ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68336547"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72332638"
 ---
-# <a name="reference-view-definition-artifact"></a>Справочные материалы. Просмотр артефакта определения
+# <a name="reference-view-definition-artifact"></a>Ссылка: Просмотр артефакта определения
 
 Эта статья представляет собой справочник по артефакту *viewDefinition. JSON* в управляемых приложениях Azure. Дополнительные сведения о конфигурации создания представлений см. в разделе [View definition артефакт](concepts-view-definition.md).
 
-## <a name="view-definition"></a>Просмотреть определение
+## <a name="view-definition"></a>Просмотр определений
 
 В следующем JSON показан пример файла *viewDefinition. JSON* для управляемых приложений Azure:
 
@@ -87,8 +87,8 @@ ms.locfileid: "68336547"
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Учебник. Создание управляемого приложения с настраиваемыми действиями и ресурсами](tutorial-create-managed-app-with-custom-provider.md)
-- [Общие сведения Артефакт элементов пользовательского интерфейса](reference-createuidefinition-artifact.md)
-- [Общие сведения Артефакт шаблона развертывания](reference-main-template-artifact.md)
+- [Ссылка: артефакт элементов пользовательского интерфейса](reference-createuidefinition-artifact.md)
+- [Ссылка: артефакт шаблона развертывания](reference-main-template-artifact.md)

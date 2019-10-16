@@ -11,19 +11,19 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/05/2019
+ms.date: 10/12/2019
 ms.author: spelluru
-ms.openlocfilehash: 65cc2d9ac2b96822f2c1b740f3180ba1d9eaf98c
-ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
+ms.openlocfilehash: e9073e7cba97c4f5e2d550e5e49a6655ec76abbe
+ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70389969"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72332086"
 ---
 # <a name="use-a-shared-image-gallery-in-azure-lab-services"></a>Использование общей коллекции образов в службах лаборатории Azure
 В этой статье показано, как преподаватели и Администраторы лаборатории могут сохранить образ виртуальной машины шаблона для повторного использования другими пользователями. Эти образы сохраняются в [коллекции общих образов](../../virtual-machines/windows/shared-image-galleries.md)Azure. В качестве первого шага Администратор лаборатории Присоединяет существующую коллекцию общих образов к учетной записи лаборатории. После присоединения коллекции общих образов лаборатории, созданные в учетной записи лаборатории, могут сохранять образы в общей коллекции образов. Другие преподаватели могут выбрать этот образ из коллекции общих образов, чтобы создать шаблон для своих классов. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 - Создайте коллекцию общих образов, используя [Azure PowerShell](../../virtual-machines/windows/shared-images.md) или [Azure CLI](../../virtual-machines/linux/shared-images.md).
 - Вы подключили коллекцию общих образов к учетной записи лаборатории. Пошаговые инструкции см. [в разделе как подключить или отключить коллекцию общих образов](how-to-attach-detach-shared-image-gallery.md).
 
@@ -31,18 +31,18 @@ ms.locfileid: "70389969"
 ## <a name="save-an-image-to-the-shared-image-gallery"></a>Сохранение изображения в коллекции общих образов
 После присоединения коллекции общих образов Администратор учетной записи лаборатории или преподаватель может сохранить образ в галерее общих образов, чтобы его можно было повторно использовать в других преподавателях. 
 
-1. На домашней странице лаборатории выберите **сохранить изображение** на плитке в разделе **шаблон** .
+1. На странице **шаблона** лаборатории выберите **Экспорт в общую коллекцию образов** на панели инструментов.
 
-    ![Кнопка сохранения изображения](../media/how-to-use-shared-image-gallery/save-image-button.png)
-2.  В окне **Сохранение образа виртуальной машины** введите имя образа и нажмите кнопку **сохранить**. 
+    ![Кнопка сохранения изображения](../media/how-to-use-shared-image-gallery/export-to-shared-image-gallery-button.png)
+2. В диалоговом окне **Экспорт в общую коллекцию образов** введите **имя образа**, а затем выберите **Экспорт**. 
 
-    ![Окно сохранения образа виртуальной машины](../media/how-to-use-shared-image-gallery/save-virtual-machine-image.png)
-3. Проверьте состояние плитки лаборатории. 
+    ![Диалоговое окно экспорта в коллекцию общих образов](../media/how-to-use-shared-image-gallery/export-to-shared-image-gallery-dialog.png)
+3. Ход выполнения этой операции можно просмотреть на странице **шаблона** . Эта операция может занять некоторое время. 
 
-    ![Состояние операции сохранения образа](../media/how-to-use-shared-image-gallery/save-image-status.png)
-4. Убедитесь, что операция выполнена успешно.
+    ![Выполняется экспорт](../media/how-to-use-shared-image-gallery/exporting-image-in-progress.png)
+4. Когда операция экспорта завершится успешно, вы увидите следующее сообщение:
 
-    ![Операция сохранения образа выполнена успешно](../media/how-to-use-shared-image-gallery/save-image-successful.png)
+    ![Экспорт завершен](../media/how-to-use-shared-image-gallery/exporting-image-completed.png)
 
 Вы также можете передать изображение в коллекцию общих образов вне контекста лаборатории. Дополнительные сведения см. в разделе [Общие сведения о коллекции общих образов](../../virtual-machines/windows/shared-images.md). 
 
@@ -51,5 +51,5 @@ ms.locfileid: "70389969"
 
 ![Использование образа виртуальной машины из коллекции](../media/how-to-use-shared-image-gallery/use-shared-image.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения об общих галереях изображений см. в разделе [Коллекция общих образов](../../virtual-machines/windows/shared-image-galleries.md).

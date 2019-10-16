@@ -56,8 +56,8 @@ Azure Maps [службы Mobility service](https://aka.ms/AzureMapsMobilityServi
 |--------|---------|
 | Австралия      | <p>Аделаида, Алиса Спрингс, Медведева, Брисбен, Bundaberg QLD, Burnie, Cairns, Канберра, Дарвин, Gladstone, Хобарт, Innisfail, Launceston, Mackay, магнитных остров, Maryborough Hervey отсек, Мельбурн, Новый Южный Уэльс, ПЕРТ, RockHampton, Юго-восточная часть Квинсленд, Сидней, Toowoomba, Townsville, Виктория, Warwick, Yeppoon</p> |
 | Китай | <p> Changchun, Changsha, Чэнду, Чунцин, Dalian, Datong, Dongguan, Hangzhou, Jiangyin, Jinan, "нанкин", Nantong, Ningbo, Pingdingshan, Qingdao, Shenyang, Suzhou, Tangshan, Tianjin, Weifang, Wuhan, Wuxi, Yantai, Yixing, Zhuhai, Шанхай, Пекин, Zhengzhou Guangzhou Shenzhen,</P>| 
-| Гонконг, САР | Гонконг *|
-| Специальный административный регион Макао | Макао *|
+| Гонконг, САР | Гонконг (САР) *|
+| Специальный административный регион Макао | Макао (САР) *|
 | Индия | Ahmedabad, Bengaluru, Дели, Мумбаи, Mysuru|
 | Индонезия | Бандунге, Banyuwangi, Батам, сегодня каждый, Джакарта, Kediri, Malang, Palembang, Semarang, Surabaya, Surakarta, Йогикарта |
 | Япония | Wakkanai Префектура, Токио, Shizuoka, Префектура Yamanashi |

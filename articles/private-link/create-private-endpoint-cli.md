@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: article
 ms.date: 09/16/2019
 ms.author: kumud
-ms.openlocfilehash: 30994133b19c4f59ae9e8be26caffe14348638f6
-ms.sourcegitcommit: 3fa4384af35c64f6674f40e0d4128e1274083487
+ms.openlocfilehash: 30394ba7b71d7dcb4233e5dca341dda47fd9ffa7
+ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71219370"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72376317"
 ---
 # <a name="create-a-private-endpoint-using-azure-cli"></a>Создание частной конечной точки с помощью Azure CLI
 Частная конечная точка — это фундаментальный Стандартный блок для частной ссылки в Azure. Она позволяет ресурсам Azure, таким как виртуальные машины, обмениваться данными с частными ресурсами. В этом кратком руководстве вы узнаете, как создать виртуальную машину в виртуальной сети, сервере базы данных SQL с частной конечной точкой, использующей Azure CLI. Затем вы можете получить доступ к виртуальной машине и получить безопасный доступ к ресурсу частной ссылки (в этом примере это частный сервер базы данных SQL Azure). 
@@ -21,7 +21,7 @@ ms.locfileid: "71219370"
 
 Если вы решили установить и использовать Azure CLI локально, для выполнения инструкций из этого руководства вам потребуется использовать Azure CLI 2.0.28 или более поздней версии. Выполните команду `az --version`, чтобы узнать установленную версию. Сведения об установке или обновлении Azure CLI см. в [этой статье](/cli/azure/install-azure-cli).
 
-## <a name="create-a-resource-group"></a>Создать группу ресурсов
+## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
 Прежде чем можно будет создать ресурс, необходимо создать группу ресурсов для размещения виртуальной сети. Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group). В этом примере создается группа ресурсов с именем *myResourceGroup* в расположении *westcentralus* :
 
@@ -29,7 +29,7 @@ ms.locfileid: "71219370"
 az group create --name myResourceGroup --location westcentralus
 ```
 
-## <a name="create-a-virtual-network"></a>Создать виртуальную сеть
+## <a name="create-a-virtual-network"></a>Создайте виртуальную сеть
 Создайте виртуальную сеть с помощью команды [AZ Network vnet Create](/cli/azure/network/vnet). В этом примере создается виртуальная сеть по умолчанию с именем *myVirtualNetwork* с одной подсетью с именем *mySubnet*:
 
 ```azurecli-interactive
@@ -39,7 +39,7 @@ az network vnet create \
  --subnet-name mySubnet
 ```
 ## <a name="disable-subnet-private-endpoint-policies"></a>Отключить политики частной конечной точки подсети 
-Azure развертывает ресурсы в подсеть в виртуальной сети, поэтому необходимо создать или обновить подсеть, чтобы отключить политики сети частной конечной точки. Обновите конфигурацию подсети с именем * mySubnet * *, выполнив [Обновление для подсети AZ Network vnet](https://docs.microsoft.com/cli/azure/network/vnet/subnet?view=azure-cli-latest#az-network-vnet-subnet-update):
+Azure развертывает ресурсы в подсеть в виртуальной сети, поэтому необходимо создать или обновить подсеть, чтобы отключить политики сети частной конечной точки. Обновите конфигурацию подсети с именем *mySubnet* with [AZ Network vnet подсети Update](https://docs.microsoft.com/cli/azure/network/vnet/subnet?view=azure-cli-latest#az-network-vnet-subnet-update):
 
 ```azurecli-interactive
 az network vnet subnet update \
@@ -81,7 +81,7 @@ az sql db create \
     --capacity 1 
 ```
 
-Обратите внимание, что идентификатор SQL Server ```/subscriptions/subscriptionId/resourceGroups/myResourceGroup/providers/Microsoft.Sql/servers/myserver.``` аналогичен, в следующем шаге будет использоваться идентификатор SQL Server. 
+Обратите внимание, что идентификатор SQL Server похож на параметр @ no__t-0. на следующем шаге будет использоваться идентификатор SQL Server. 
 
 ## <a name="create-the-private-endpoint"></a>Создание частной конечной точки 
 Создайте частную конечную точку для сервера базы данных SQL в виртуальной сети. 
@@ -149,7 +149,7 @@ az network private-dns record-set a add-record --record-set-name myserver --zone
 В этом разделе вы будете подключаться к серверу базы данных SQL из виртуальной машины с помощью частной конечной точки.
 
  1. На удаленном рабочем столе  *myVm* откройте PowerShell.
- 2. Введите nslookup MyServer.Database.Windows.NET  , чтобы получить примерно следующее сообщение: 
+ 2. Введите nslookup MyServer. Database. Windows. NET @ no__t-0. Вы получите примерно следующее сообщение: 
 
 ```
       Server:  UnKnown 
@@ -159,13 +159,13 @@ az network private-dns record-set a add-record --record-set-name myserver --zone
       Address:  10.0.0.5 
       Aliases:  myserver.database.windows.net 
 ```
- 3. Установить SQL Server Management Studio 
- 4. В окне Подключение к серверу введите или выберите следующие сведения: Тип сервера: Выберите ядро СУБД.
- Имя сервера: Выберите имя пользователя myserver.database.windows.net: Введите имя пользователя, указанное во время создания.
- Пароль: Введите пароль, указанный во время создания.
- Запомнить пароль: Выберите Да.
+ 3. Установка SQL Server Management Studio 
+ 4. В окне Подключение к серверу введите или выберите следующие сведения: тип сервера: выберите ядро СУБД.
+ Имя сервера: выберите myserver.database.windows.net имя пользователя: введите имя пользователя, указанное во время создания.
+ Пароль. Введите пароль, указанный во время создания.
+ Запомнить пароль: выберите Да.
  
- 5. Выберите **подключить**.
+ 5. Выберите  **Подключение**.
  6. Просмотр **баз данных** из левого меню.
  7. При необходимости Создание или запрос информации из *MyDatabase*
  8. Закройте подключение к удаленному рабочему столу *myVm*.
@@ -177,6 +177,6 @@ az network private-dns record-set a add-record --record-set-name myserver --zone
 az group delete --name myResourceGroup --yes 
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о [частной ссылке Azure](private-link-overview.md)
  

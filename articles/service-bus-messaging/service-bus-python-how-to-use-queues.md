@@ -1,5 +1,5 @@
 ---
-title: Использование очередей служебной шины Azure с Python | Документация Майкрософт
+title: Учебник. Использование очередей служебной шины Azure с Python
 description: Узнайте, как использовать очереди служебной шины в Python.
 services: service-bus-messaging
 documentationcenter: python
@@ -14,12 +14,13 @@ ms.devlang: python
 ms.topic: article
 ms.date: 04/10/2019
 ms.author: aschhab
-ms.openlocfilehash: 9bb53a8e68866e2ed346277171e2706f5907e8af
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.custom: seo-python-october2019
+ms.openlocfilehash: 3561d7e3569b31698fbbc5f8cf2518d9fe1fc398
+ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70141914"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72331130"
 ---
 # <a name="how-to-use-service-bus-queues-with-python"></a>Как использовать очереди служебной шины с Python
 
@@ -27,7 +28,7 @@ ms.locfileid: "70141914"
 
 В этом руководстве вы узнаете, как создавать приложения Python для отправки сообщений в очередь служебной шины и получать сообщения из нее. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 1. Подписка Azure. Для работы с этим учебником требуется учетная запись Azure. Вы можете активировать [преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/?WT.mc_id=A85619ABF) или зарегистрироваться для использования [бесплатной учетной записи](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
 2. Выполните действия, описанные в разделе [использование портал Azure для создания очереди служебной шины](service-bus-quickstart-portal.md) .
     1. Ознакомьтесь с кратким **обзором** **очередей**служебной шины. 
@@ -38,7 +39,7 @@ ms.locfileid: "70141914"
         > Вы создадите **очередь** в пространстве имен служебной шины с помощью Python в этом руководстве. 
 1. Установка Python или [пакета служебной шины Azure для Python][Python Azure Service Bus package]см. в разделе [руководства по установке Python](/azure/python/python-sdk-azure-install). Полную документацию по пакету SDK для Python служебной шины см. [здесь](/python/api/overview/azure/servicebus?view=azure-python).
 
-## <a name="create-a-queue"></a>Создать очередь
+## <a name="create-a-queue"></a>Создание очереди
 Объект **сервицебусклиент** позволяет работать с очередями. Добавьте следующий код в начало любого файла Python, из которого планируется получать доступ к служебной шине программным способом.
 
 ```python
@@ -67,7 +68,7 @@ sb_client.create_queue("taskqueue", max_size_in_megabytes=5120,
 Дополнительные сведения см. в [документации по Python служебной шины Azure](/python/api/overview/azure/servicebus?view=azure-python).
 
 ## <a name="send-messages-to-a-queue"></a>Отправка сообщений в очередь
-Чтобы отправить сообщение в очередь служебной шины, приложение вызывает `send` метод `ServiceBusClient` для объекта.
+Чтобы отправить сообщение в очередь служебной шины, приложение вызывает метод `send` для объекта `ServiceBusClient`.
 
 В следующем примере показано, как отправить тестовое сообщение в очередь с именем `taskqueue` с помощью метода `send_queue_message`:
 
@@ -88,7 +89,7 @@ queue_client.send(msg)
 Дополнительные сведения см. в [документации по Python служебной шины Azure](/python/api/overview/azure/servicebus?view=azure-python).
 
 ## <a name="receive-messages-from-a-queue"></a>Получение сообщений из очереди
-Сообщения получаются из очереди с помощью `get_receiver` метода `ServiceBusService` для объекта:
+Сообщения получаются из очереди с помощью метода `get_receiver` для объекта `ServiceBusService`:
 
 ```python
 from azure.servicebus import QueueClient, Message
@@ -128,7 +129,7 @@ msg.delete()
 > [!NOTE]
 > Вы можете управлять ресурсами служебной шины с помощью [обозревателя служебной шины](https://github.com/paolosalvatori/ServiceBusExplorer/). Обозреватель служебной шины позволяет без труда подключаться к пространству имен служебной шины и управлять сущностями обмена сообщениями. Средство предоставляет дополнительные возможности, например функции импорта и экспорта или возможность проверять разделы, очереди, подписки, службы ретрансляции, центры уведомлений и концентраторы событий. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Вы ознакомились с основными сведениями об очередях служебной шины. Дополнительные сведения см. в статье:
 
 * [Очереди, разделы и подписки][Queues, topics, and subscriptions]
