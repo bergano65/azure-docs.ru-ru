@@ -195,8 +195,6 @@
       href: ../azure-resource-manager/resource-group-move-resources.md?toc=/azure/billing/TOC.json
     - name: Создание дополнительной подписки
       href: billing-create-subscription.md
-    - name: "Создание дополнительной подписки\_— клиентское соглашение Майкрософт"
-      href: billing-mca-create-subscription.md
     - name: Создание корпоративных подписок программными средствами
       href: ../azure-resource-manager/programmatically-create-subscription.md?toc=/azure/billing/TOC.json
     - name: Экспорт сведений о подписке

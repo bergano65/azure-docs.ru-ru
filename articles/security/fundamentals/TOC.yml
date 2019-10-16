@@ -3,6 +3,10 @@
 - name: Архитектура и разработка
   href: overview.md
   expanded: false
+  items: null
+- name: Архитектура и разработка
+  href: overview.md
+  expanded: false
   items:
     - name: Расширенные возможности обнаружения угроз
       displayName: 'vulnerability, virus, IDs, incident'
@@ -12,14 +16,7 @@
       href: log-audit.md
     - name: Сетевая безопасность Azure
       displayName: 'firewall, ssl, vpn, IDs, gateway, https, application gateway, azure application gateway, ips, waf'
-      href: abstract-network-security.md
-    - name: Безопасность бессерверной платформы Azure
-      href: abstract-serverless-platform-security.md
-    - name: Защита контейнеров в Azure
-      href: abstract-container-security.md
-    - name: Включение функций операционной безопасности
-      displayName: 'policy, policies, azure monitor, soc'
-      href: abstract-operational-security.md
+      href: 'https://azure.microsoft.com/resources/azure-network-security/'
     - name: Изоляция в облаке Azure
       displayName: trust boundary
       href: isolation-choices.md
@@ -28,8 +25,6 @@
       href: 'https://docs.microsoft.com/azure/architecture/reference-architectures/dmz/secure-vnet-hybrid?toc=/azure/security/toc.json&bc=/azure/security/breadcrumb/toc.json'
     - name: Технические возможности обеспечения безопасности
       href: technical-capabilities.md
-    - name: Разработка безопасных приложений в Azure
-      href: abstract-develop-secure-apps.md
 - name: Шифрование и обеспечение защиты данных
   href: encryption-overview.md
   items:
@@ -90,8 +85,6 @@
                     - name: Шифрование дисков виртуальных машин Linux с использованием приложения Azure AD
                       displayName: active directory
                       href: 'https://docs.microsoft.com/azure/security/azure-security-disk-encryption-linux-aad'
-    - name: Безопасность службы хранилища Azure
-      href: storage-overview.md
     - name: Руководство по обеспечению безопасности службы хранилища
       href: 'https://docs.microsoft.com/azure/storage/common/storage-security-guide?toc=/azure/security/toc.json&bc=/azure/security/breadcrumb/toc.json'
     - name: Защищенное хранилище клиента
