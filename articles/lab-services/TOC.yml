@@ -98,20 +98,20 @@
               href: classroom-labs/how-to-manage-classroom-labs.md
             - name: Настройка и публикация шаблонов
               href: classroom-labs/how-to-create-manage-template.md
-            - name: Настройка параметров и контроль использования
+            - name: Настройка и администрирование пула виртуальных машин
+              href: classroom-labs/how-to-set-virtual-machine-passwords.md
+            - name: Создание и администрирование пользователей лаборатории
               href: classroom-labs/how-to-configure-student-usage.md
             - name: Создание расписаний и управление ими
               href: classroom-labs/how-to-create-schedules.md
-            - name: Создание среды с несколькими виртуальными машинами в шаблоне виртуальной машины
-              href: classroom-labs/how-to-enable-multi-vm-environment.md
             - name: Использование коллекции общих образов
               href: classroom-labs/how-to-use-shared-image-gallery.md
             - name: Включение соединения с удаленным рабочим столом для Linux
               href: classroom-labs/how-to-enable-remote-desktop-linux.md
-            - name: Установка или сброс паролей для виртуальных машин
-              href: classroom-labs/how-to-set-virtual-machine-passwords.md
             - name: Включение вложенной виртуализации в шаблоне виртуальной машины
               href: classroom-labs/how-to-enable-nested-virtualization-template-vm.md
+            - name: Создание среды с несколькими виртуальными машинами в шаблоне виртуальной машины
+              href: classroom-labs/how-to-enable-multi-vm-environment.md
         - name: Подключение к виртуальным машинам в лабораториях для аудитории (учащийся)
           items:
             - name: Доступ к лабораториям для аудитории

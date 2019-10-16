@@ -177,6 +177,8 @@
       href: how-to-configure-proxy-support.md
     - name: Хранение данных в пограничной системе
       items:
+        - name: Предоставление модулям доступа к локальному хранилищу устройства
+          href: how-to-access-host-storage-from-module.md
         - name: Хранилище BLOB-объектов Azure в IoT Edge
           href: how-to-store-data-blob.md
         - name: Развертывание модулей хранилища BLOB-объектов

@@ -410,10 +410,12 @@
           href: transform-data-using-spark.md
         - name: Действие потоковой передачи HDInsight
           href: transform-data-using-hadoop-streaming.md
-        - name: Действие выполнения пакета Машинного обучения
+        - name: Действие выполнения пакета в службе Машинного обучения
           href: transform-data-using-machine-learning.md
-        - name: Действия ресурса обновления Машинного обучения
+        - name: Действие обновления ресурса в службе Машинного обучения
           href: update-machine-learning-models.md
+        - name: Действия выполнения конвейера в Машинном обучении
+          href: transform-data-machine-learning-service.md
         - name: Действие хранимой процедуры
           href: transform-data-using-stored-procedure.md
         - name: Связанные службы вычислений

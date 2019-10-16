@@ -22,14 +22,13 @@
               href: sql-database-purchase-models.md
             - name: Модель приобретения на основе виртуальных ядер
               href: sql-database-service-tiers-vcore.md
+              items:
+                - name: Уровень бессерверных вычислений
+                  href: sql-database-serverless.md
+                - name: Предварительная оплата резервной мощности
+                  href: sql-database-reserved-capacity.md
             - name: Выбор уровня служб на основе DTU
               href: sql-database-service-tiers-dtu.md
-            - name: Уровень бессерверных вычислений
-              href: sql-database-serverless.md
-            - name: Предварительная оплата резервной мощности
-              href: sql-database-reserved-capacity.md
-            - name: Миграция с уровня служб "Премиум RS"
-              href: sql-database-service-tiers-prs.md
         - name: Вычисления и хранение
           items:
             - name: Обзор
@@ -43,6 +42,8 @@
               href: sql-database-service-tier-hyperscale.md
             - name: Часто задаваемые вопросы о гипермасштабировании
               href: sql-database-service-tier-hyperscale-faq.md
+            - name: Миграция с уровня служб "Премиум RS"
+              href: sql-database-service-tiers-prs.md
 - name: Краткие руководства
   expanded: true
   items:
@@ -224,6 +225,8 @@
               href: sql-database-disaster-recovery.md
             - name: Упражнения по восстановлению
               href: sql-database-disaster-recovery-drills.md
+            - name: Настройка группы отработки отказа
+              href: sql-database-configure-failover-group.md
     - name: Мониторинг и настройка
       items:
         - name: Документация по мониторингу и настройке
@@ -604,8 +607,6 @@
           href: sql-database-geo-replication-portal.md
         - name: Настройка параметров безопасности для георепликации
           href: sql-database-geo-replication-security-config.md
-        - name: Настройка группы отработки отказа
-          href: sql-database-configure-failover-group.md
         - name: 'Изучение компонентов, выполняющихся в памяти'
           href: sql-database-in-memory-sample.md
         - name: Включение автоматической настройки
@@ -714,6 +715,8 @@
           href: replication-with-sql-database-managed-instance.md
         - name: Настройка безопасности
           href: sql-database-managed-instance-aad-security-tutorial.md
+        - name: Добавление управляемого экземпляра в группу отработки отказа
+          href: sql-database-managed-instance-failover-group-tutorial.md
     - name: Основные понятия
       items:
         - name: Справочник по API управления

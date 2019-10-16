@@ -1,5 +1,5 @@
 ---
-title: Создание оповещения метрики с помощью шаблона Resource Manager
+title: Создание оповещения о метриках с помощью шаблона Resource Manager
 description: Сведения об использовании шаблона Resource Manager для создания оповещения метрики.
 author: snehithm
 services: azure-monitor
@@ -8,21 +8,21 @@ ms.topic: conceptual
 ms.date: 9/27/2018
 ms.author: snmuvva
 ms.subservice: alerts
-ms.openlocfilehash: 70da3a518746d1989e8807cee9bc7c87cc634c27
-ms.sourcegitcommit: 23389df08a9f4cab1f3bb0f474c0e5ba31923f12
+ms.openlocfilehash: b08c7d1b91f89aba4c9cb8a23bb5c688521cb37e
+ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70873297"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72372772"
 ---
-# <a name="create-a-metric-alert-with-a-resource-manager-template"></a>Создание оповещения метрики с помощью шаблона Resource Manager
+# <a name="create-a-metric-alert-with-a-resource-manager-template"></a>Создание оповещения о метриках с помощью шаблона Resource Manager
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 В этой статье показано, как можно использовать [шаблон Azure Resource Manager](../../azure-resource-manager/resource-group-authoring-templates.md) для настройки [новых оповещений метрик](../../azure-monitor/platform/alerts-metric-near-real-time.md) в Azure Monitor. Шаблоны Resource Manager позволяют программно настроить оповещения согласованным и воспроизводимым образом в разных средах. Сейчас в [этом наборе типов ресурсов](../../azure-monitor/platform/alerts-metric-near-real-time.md#metrics-and-dimensions-supported) доступны новые оповещения метрик.
 
 > [!IMPORTANT]
-> Шаблон ресурсов для создания оповещений метрик для типа ресурса: для рабочей области Azure Log Analytics (т. е. `Microsoft.OperationalInsights/workspaces`) требуется выполнить дополнительные шаги. См. дополнительные сведения о [шаблоне ресурсов для создания оповещения метрик для журналов](../../azure-monitor/platform/alerts-metric-logs.md#resource-template-for-metric-alerts-for-logs).
+> Шаблон ресурса для создания оповещений метрик для типа ресурса. Рабочая область Azure Log Analytics (т. е.) `Microsoft.OperationalInsights/workspaces` требует дополнительных действий. См. дополнительные сведения о [шаблоне ресурсов для создания оповещения метрик для журналов](../../azure-monitor/platform/alerts-metric-logs.md#resource-template-for-metric-alerts-for-logs).
 
 Основные этапы:
 
@@ -2480,7 +2480,7 @@ az group deployment create \
                 "PT5M",
                 "PT15M",
                 "PT30M",
-                "PT1H""
+                "PT1H"
             ],
             "metadata": {
                 "description": "how often the metric alert is evaluated represented in ISO 8601 duration format"
@@ -3097,7 +3097,7 @@ az group deployment create \
     --parameters @availabilityalert.parameters.json
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения об [оповещениях в Azure](alerts-overview.md)
 - Сведения о [создании группы действий с помощью шаблона Resource Manager](action-groups-create-resource-manager-template.md)

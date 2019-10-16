@@ -116,7 +116,7 @@
           displayName: 'isTest, test, route, request, http, post, body, header, json, metadata, top, strictFilters, GenerateAnswer, API, answer, RankerType, id, text, question, context, 200, 2xx, 400, 401, 403, 404'
         - name: Создание бота с помощью QnA Maker и LUIS
           href: Tutorials/integrate-qnamaker-luis.md
-        - name: Создание базы знаний на разных языках
+        - name: Выбор языка
           href: How-To/language-knowledge-base.md
         - name: Перенос базы знаний
           href: Tutorials/migrate-knowledge-base.md
@@ -141,6 +141,12 @@
           href: How-To/business-continuity-plan.md
 - name: Справочные материалы
   items:
+    - name: Языки
+      href: Overview/language-support.md
+    - name: Ограничения
+      href: limits.md
+    - name: Устранение неполадок
+      href: troubleshooting.md
     - name: Справочник по REST API
       items:
         - name: Разработка API-интерфейсов
@@ -150,10 +156,6 @@
         - name: API обучения
           href: 'https://docs.microsoft.com/rest/api/cognitiveservices/qnamakerruntime/runtime/train'
       href: 'https://go.microsoft.com/fwlink/?linkid=2092179'
-    - name: Устранение неполадок
-      href: troubleshooting.md
-    - name: Ограничения
-      href: limits.md
     - name: Примеры
       items:
         - name: Бот-помощник QnA Maker
@@ -206,8 +208,6 @@
       href: 'https://azure.microsoft.com/roadmap/'
     - name: Цены и ограничения
       href: 'https://aka.ms/qnamaker-pricing'
-    - name: Поддержка языков
-      href: Overview/language-support.md
     - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/QnAMaker'
     - name: UserVoice

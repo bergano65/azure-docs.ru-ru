@@ -65,8 +65,6 @@
       href: /azure/architecture/data-guide/technology-choices/r-developers-guide?context=azure/machine-learning/data-science-virtual-machine/context/ml-context
 - name: Справочные материалы
   items:
-    - name: Виртуальная машина Windows для обработки и анализа данных
-      href: reference-windows-vm.md
     - name: Виртуальная машина Ubuntu для обработки и анализа данных
       href: reference-ubuntu-vm.md
     - name: Виртуальная машина CentOS для обработки и анализа данных
@@ -75,3 +73,5 @@
       href: release-notes.md
     - name: Известные проблемы
       href: reference-known-issues.md
+    - name: Объявления об устаревании
+      href: reference-deprecation.md

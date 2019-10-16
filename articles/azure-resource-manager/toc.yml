@@ -228,7 +228,9 @@
           href: resource-group-delete.md
         - name: Блокировка ресурсов
           href: resource-group-lock-resources.md
-        - name: Создание подписок EA
+        - name: API проверки подлинности для доступа к подпискам
+          href: resource-manager-api-authentication.md
+        - name: Создание дополнительных подписок
           href: programmatically-create-subscription.md
         - name: Предоставление доступа для создания подписок EA
           href: grant-access-to-create-subscription.md

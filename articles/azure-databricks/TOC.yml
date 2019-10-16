@@ -26,7 +26,7 @@
     - name: Потоковая передача данных с помощью Центров событий
       href: databricks-stream-from-eventhubs.md
     - name: Анализ тональности с помощью Cognitive Services
-  href: databricks-sentiment-analysis-cognitive-services.md
+      href: databricks-sentiment-analysis-cognitive-services.md
 - name: Руководства
   items:
     - name: Начало работы
@@ -60,7 +60,7 @@
             - name: Машинное обучение
               href: /azure/databricks/getting-started/spark/machine-learning
               maintainContext: true
-            - name: Структурированные потоки
+            - name: Структурированная потоковая передача
               href: /azure/databricks/getting-started/spark/streaming
               maintainContext: true
             - name: Что дальше?
@@ -543,7 +543,7 @@
         - name: Основные сведения о Delta Lake
           href: /azure/databricks/delta/delta-intro
           maintainContext: true
-        - name: Приступая к работе с Delta
+        - name: Приступая к работе с Delta Lake
           href: /azure/databricks/delta/quick-start
           maintainContext: true
         - name: Вступительные записные книжки
@@ -618,6 +618,9 @@
         - name: Часто задаваемые вопросы
           href: /azure/databricks/delta/delta-faq
           maintainContext: true
+        - name: Дополнительные ресурсы Delta
+          href: /azure/databricks/delta/delta-resources
+          maintainContext: true
     - name: DataFrames и наборы данных
       items:
         - name: Общие сведения о DataFrames и наборах данных
@@ -638,12 +641,12 @@
         - name: Агрегаторы
           href: /azure/databricks/spark/latest/dataframes-datasets/aggregators
           maintainContext: true
-    - name: Структурированные потоки
+    - name: Структурированная потоковая передача
       items:
         - name: Общие сведения о структурированной потоковой передаче
           href: /azure/databricks/spark/latest/structured-streaming/index
           maintainContext: true
-        - name: Вступительные Записные книжки
+        - name: Вступительные записные книжки
           href: /azure/databricks/spark/latest/structured-streaming/demo-notebooks
           maintainContext: true
         - name: Источники и приемники потоковой передачи данных
@@ -772,9 +775,6 @@
             - name: PyTorch
               href: /azure/databricks/applications/deep-learning/single-node-training/pytorch
               maintainContext: true
-            - name: JCuda
-              href: /azure/databricks/applications/deep-learning/single-node-training/jcuda
-              maintainContext: true
             - name: Преобразование одноузлового PyTorch в распределенное глубокое обучение
               href: /azure/databricks/applications/deep-learning/distributed-training/mnist-pytorch
               maintainContext: true
@@ -852,35 +852,28 @@
           maintainContext: true
     - name: Анализ графов
       items:
-        - name: Учебник по анализу графов с помощью GraphFrames
-          href: /azure/databricks/spark/latest/graph-analysis/graphframes/graph-analysis-tutorial
-          maintainContext: true
-        - name: GraphFrames в Python
-          href: /azure/databricks/spark/latest/graph-analysis/graphframes/user-guide-python
-          maintainContext: true
-        - name: GraphFrames в Scala
-          href: /azure/databricks/spark/latest/graph-analysis/graphframes/user-guide-scala
-          maintainContext: true
-        - name: Анализ графов с помощью GraphX (прежние версии)
-          href: /azure/databricks/spark/latest/graph-analysis/graph-analysis-graphx-tutorial
-          maintainContext: true
         - name: Обзор анализа графов
           href: /azure/databricks/spark/latest/graph-analysis/index
           maintainContext: true
-        - name: Учебник по анализу графов
-          href: /azure/databricks/spark/latest/graph-analysis/graphframes/graph-analysis-tutorial
-          maintainContext: true
-        - name: Обзор GraphFrames
-          href: /azure/databricks/spark/latest/graph-analysis/graphframes/index
-          maintainContext: true
-        - name: GraphFrames в Python
-          href: /azure/databricks/spark/latest/graph-analysis/graphframes/user-guide-python
-          maintainContext: true
-        - name: GraphFrames в Scala
-          href: /azure/databricks/spark/latest/graph-analysis/graphframes/user-guide-scala
+        - name: GraphFrames
+          items:
+            - name: Руководство по анализу графов с помощью GraphFrames
+              href: /azure/databricks/spark/latest/graph-analysis/graphframes/graph-analysis-tutorial
+              maintainContext: true
+            - name: GraphFrames в Python
+              href: /azure/databricks/spark/latest/graph-analysis/graphframes/user-guide-python
+              maintainContext: true
+            - name: GraphFrames в Scala
+              href: /azure/databricks/spark/latest/graph-analysis/graphframes/user-guide-scala
+              maintainContext: true
+        - name: Анализ графов с помощью GraphX (прежние версии)
+          href: /azure/databricks/spark/latest/graph-analysis/graph-analysis-graphx-tutorial
           maintainContext: true
     - name: Genomics
       items:
+        - name: Общие сведения о Genomics
+          href: /azure/databricks/applications/genomics/index
+          maintainContext: true
         - name: Общие сведения о ETL Genomics
           href: /azure/databricks/applications/genomics/etl/index
           maintainContext: true
@@ -921,6 +914,9 @@
             - name: Контроль качества примеров
               href: /azure/databricks/applications/genomics/etl/sample-qc
               maintainContext: true
+            - name: Перенос
+              href: /azure/databricks/applications/genomics/etl/lift-over
+              maintainContext: true
         - name: Третичный анализ
           items:
             - name: Общие сведения о третичном анализе
@@ -937,9 +933,6 @@
               maintainContext: true
             - name: Регрессионные тесты
               href: /azure/databricks/applications/genomics/tertiary/regression-tests
-              maintainContext: true
-            - name: SAIGE и SAIGE-GENE
-              href: /azure/databricks/applications/genomics/tertiary/saige
               maintainContext: true
             - name: Библиотеки статистики Python
               href: /azure/databricks/applications/genomics/tertiary/pandas-udf
@@ -1072,6 +1065,9 @@
               maintainContext: true
             - name: Установка пиринговой связи между виртуальными сетями
               href: /azure/databricks/administration-guide/cloud-configurations/azure/vnet-peering
+              maintainContext: true
+            - name: Обновление рабочей области предварительной версии до общедоступной версии
+              href: /azure/databricks/administration-guide/cloud-configurations/azure/vnet-inject-upgrade
               maintainContext: true
             - name: Развертывание Azure Databricks в виртуальной сети
               href: /azure/databricks/administration-guide/cloud-configurations/azure/vnet-inject
@@ -1282,6 +1278,9 @@
               maintainContext: true
             - name: Задание Spark перестает отвечать на запросы из-за определяемой пользователем функции
               href: /azure/databricks/kb/jobs/spark-udf-performance
+              maintainContext: true
+            - name: Сбой задания maxresultsize
+              href: /azure/databricks/kb/jobs/job-fails-maxresultsize-exception
               maintainContext: true
         - name: Библиотеки
           items:
@@ -1587,8 +1586,17 @@
                 - name: Поддерживаемые выпуски среды выполнения
                   href: /azure/databricks/release-notes/runtime/supported
                   maintainContext: true
+                - name: Databricks Runtime 6.1
+                  href: /azure/databricks/release-notes/runtime/6.1
+                  maintainContext: true
+                - name: Databricks Runtime 6.1 ML
+                  href: /azure/databricks/release-notes/runtime/6.1ml
+                  maintainContext: true
                 - name: Databricks Runtime 6.0
                   href: /azure/databricks/release-notes/runtime/6.0
+                  maintainContext: true
+                - name: Databricks Runtime 6.0 с Conda
+                  href: /azure/databricks/release-notes/runtime/6.0conda
                   maintainContext: true
                 - name: Databricks Runtime 6.0 ML
                   href: /azure/databricks/release-notes/runtime/6.0ml

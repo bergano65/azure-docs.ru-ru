@@ -111,7 +111,9 @@
   items:
     - name: Аналитика временных рядов
       items:
-        - name: Аналитика временных рядов Azure (общедоступная версия)
+        - name: Azure Time Series Insights
+          href: /rest/api/time-series-insights/index
+        - name: Доступ к данным (общедоступная версия)
           href: /rest/api/time-series-insights/ga
           items:
             - name: Запрос
@@ -123,17 +125,8 @@
                   href: /rest/api/time-series-insights/ga-query-syntax
             - name: API эталонных данных
               href: /rest/api/time-series-insights/ga-reference-data-api
-        - name: Аналитика временных рядов Azure (предварительная версия)
+        - name: Доступ к данным (предварительный просмотр концепций)
           href: /rest/api/time-series-insights/preview
-          items:
-            - name: Запрашивание временных рядов
-              href: /rest/api/time-series-insights/preview-query
-            - name: Модель временных рядов
-              href: /rest/api/time-series-insights/preview-model
-            - name: API среды временных рядов
-              href: /rest/api/time-series-insights/preview-env
-            - name: Синтаксис и общие сведения о языке TSX
-              href: /rest/api/time-series-insights/preview-tsx
     - name: Клиентский пакет SDK
       items:
         - name: Пакет SDK для клиента JavaScript

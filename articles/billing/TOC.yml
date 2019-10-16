@@ -7,28 +7,34 @@
       href: billing-understand-your-bill.md
     - name: Интерпретация счета EA
       href: billing-understand-your-bill-ea.md
-    - name: "Пояснения к счету\_— только для клиентского соглашения Майкрософт"
+    - name: "Пояснения к счету\_— для клиентского соглашения Майкрософт"
       href: billing-mca-understand-your-bill.md
+    - name: "Пояснения к счету\_— для партнерского соглашения Майкрософт"
+      href: billing-mpa-understand-your-bill.md
     - name: Просмотр и скачивание счета Microsoft Azure
       href: billing-download-azure-invoice.md
     - name: Просмотр и скачивание сведений об использовании и расходах в Microsoft Azure
       href: billing-download-azure-daily-usage.md
-    - name: Просмотр и скачивание налоговых документов по клиентскому соглашению Майкрософт
+    - name: Просмотр и скачивание налоговых документов
       href: billing-mca-download-tax-document.md
     - name: Плата за использование ресурсов сторонних разработчиков
       href: billing-understand-your-azure-marketplace-charges.md
     - name: Сведения об условиях использования
       href: billing-understand-your-usage.md
-    - name: "Пояснения к условиям использования\_— только для клиентского соглашения Майкрософт"
+    - name: "Пояснения к условиям использования\_— для клиентского соглашения Майкрософт"
       href: billing-mca-understand-your-usage.md
     - name: Сведения о счетах
       href: billing-understand-your-invoice.md
-    - name: "Пояснения к условиям оплаты счетов\_— только для клиентского соглашения Майкрософт"
+    - name: "Пояснения к условиям оплаты счетов\_— для клиентского соглашения Майкрософт"
       href: billing-mca-understand-your-invoice.md
-    - name: Как оплатить счет (только для клиентского соглашения Майкрософт)
+    - name: "Пояснения к условиям оплаты счетов\_— для партнерского соглашения Майкрософт"
+      href: billing-mpa-invoice-terms-explained.md
+    - name: "Как оплатить счет\_— для клиентского соглашения Майкрософт"
       href: billing-how-to-pay-bill.md
     - name: Учетные записи выставления счетов для клиентского соглашения Майкрософт
       href: billing-mca-overview.md
+    - name: Учетные записи выставления счетов для партнерского соглашения Майкрософт
+      href: mpa-overview.md
 - name: Управление затратами
   items:
     - name: Предотвращение непредвиденных расходов
@@ -115,10 +121,8 @@
           href: billing-avoid-charges-free-account.md
         - name: Проверка использования
           href: billing-check-free-service-usage.md
-        - name: Обновление подписки
+        - name: Обновление учетной записи
           href: billing-upgrade-azure-subscription.md
-        - name: Общие сведения о сопоставлении единиц измерения
-          href: billing-understand-free-service-meter-mapping.md
     - name: Изменение профиля
       href: billing-how-to-change-azure-account-profile.md
     - name: Открытые банковские операции и строгая проверка подлинности клиентов
@@ -158,7 +162,7 @@
         - name: Задачи EA в клиентском соглашении Майкрософт
           href: billing-mca-enterprise-operations.md
     - name: Настройка учетных записей выставления счетов для клиентского соглашения Майкрософт
-      href: billing-mca-setup-account.md
+      href: mca-setup-account.md
     - name: "Регистрация с помощью учетной записи Office\_365"
       href: billing-use-existing-office-365-account-azure-subscription.md
     - name: Оформление подписки на Office 365 с помощью учетной записи Azure
@@ -173,6 +177,8 @@
       href: billing-subscription-transfer.md
     - name: "Запрос прав владения\_— клиентское соглашение Майкрософт"
       href: billing-mca-request-billing-ownership.md
+    - name: "Запрос на права владения\_— партнерское соглашение Майкрософт"
+      href: mpa-request-ownership.md
     - name: Отмена подписки
       href: billing-how-to-cancel-azure-subscription.md
     - name: Изменение кредитной карты

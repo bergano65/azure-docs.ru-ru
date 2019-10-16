@@ -1,17 +1,17 @@
 ---
-title: Пример — схема NIST SP 800-53 R4 — общие сведения
+title: Пример схемы NIST SP 800-53 R4 — общие сведения
 description: Общие сведения об образце схемы NIST SP 800-53 R4. Этот пример схемы помогает клиентам оценить определенные средства управления NIST SP 800-53 R4.
 author: DCtheGeek
 ms.author: dacoulte
 ms.date: 06/24/2019
 ms.topic: sample
 ms.service: blueprints
-ms.openlocfilehash: 6edec05d157df35fb4096e41059b12e36cefd3da
-ms.sourcegitcommit: 961468fa0cfe650dc1bec87e032e648486f67651
+ms.openlocfilehash: 2aa8b413ff6489e9d893b17348f7a0760527dbda
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72248359"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72299054"
 ---
 # <a name="overview-of-the-nist-sp-800-53-r4-blueprint-sample"></a>Общие сведения об образце схемы NIST SP 800-53 R4
 

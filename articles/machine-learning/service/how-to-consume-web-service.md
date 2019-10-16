@@ -11,12 +11,12 @@ author: aashishb
 ms.reviewer: larryfr
 ms.date: 08/15/2019
 ms.custom: seodec18
-ms.openlocfilehash: e005cf0860faeaad7010ea4da3ca1c5227ade14b
-ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
+ms.openlocfilehash: fda6c72504a75d600931185e224bb46db03e23ed
+ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71034795"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72374290"
 ---
 # <a name="consume-an-azure-machine-learning-model-deployed-as-a-web-service"></a>Использование модели Машинного обучения Azure, развернутой в качестве веб-службы
 
@@ -40,21 +40,18 @@ ms.locfileid: "71034795"
 
 Класс [azureml.core.Webservice](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice(class)?view=azure-ml-py) предоставляет необходимые сведения для создания клиента. Следующие свойства `Webservice` могут быть полезны при создании клиентского приложения:
 
-* `auth_enabled`— Если включена `True`проверка подлинности ключа; `False`в противном случае — значение.
-* `token_auth_enabled`— Если включена `True`проверка подлинности токенов; `False`в противном случае — значение.
+* `auth_enabled` — если включена проверка подлинности ключа, `True`; в противном случае `False`.
+* `token_auth_enabled` — если включена проверка подлинности маркера, `True`; в противном случае `False`.
 * `scoring_uri` — адрес REST API.
-* `swagger_uri`— Адрес спецификации OpenAPI. Этот URI доступен, если включено автоматическое создание схем. Дополнительные сведения см. в разделе [Развертывание моделей с помощью машинное обучение Azure](how-to-deploy-and-where.md#schema).
+* `swagger_uri` — адрес спецификации OpenAPI. Этот URI доступен, если включено автоматическое создание схем. Дополнительные сведения см. в разделе [Развертывание моделей с помощью машинное обучение Azure](how-to-deploy-and-where.md#schema).
 
 Эти сведения для развернутой веб-службы можно получить тремя способами.
 
 * При развертывании модели, возвращается объект `Webservice` с информацией о службе:
 
     ```python
-    service = Webservice.deploy_from_model(name='myservice',
-                                           deployment_config=myconfig,
-                                           models=[model],
-                                           image_config=image_config,
-                                           workspace=ws)
+    service = Model.deploy(ws, "myservice", [model], inference_config, deployment_config)
+    service.wait_for_deployment(show_output = True)
     print(service.scoring_uri)
     print(service.swagger_uri)
     ```
@@ -79,12 +76,12 @@ ms.locfileid: "71034795"
 
 Машинное обучение Azure предоставляет два способа управления доступом к веб-службам.
 
-|Способ проверки подлинности|ACI|AKS|
+|Метод проверки подлинности|ACI|AKS|
 |---|---|---|
 |Ключ|Отключено по умолчанию| Включено по умолчанию|
-|Токен| Недоступен| Отключено по умолчанию |
+|по маркеру| Недоступно| Отключено по умолчанию |
 
-При отправке запроса к службе, защищенной с помощью ключа или токена, используйте заголовок __authorization__ для передачи ключа или маркера. Ключ или токен должен иметь формат `Bearer <key-or-token>`, где `<key-or-token>` — это значение ключа или токена.
+При отправке запроса к службе, защищенной с помощью ключа или токена, используйте заголовок __authorization__ для передачи ключа или маркера. Ключ или маркер должен быть отформатирован как `Bearer <key-or-token>`, где `<key-or-token>` — это значение ключа или маркера.
 
 #### <a name="authentication-with-keys"></a>Проверка подлинности с помощью ключей
 
@@ -112,9 +109,9 @@ print(primary)
 * При развертывании в службе Kubernetes Azure проверка подлинности по маркеру отключена по умолчанию.
 * При развертывании в службе "экземпляры контейнеров Azure" Проверка подлинности с помощью маркеров не поддерживается.
 
-Чтобы управлять проверкой подлинности `token_auth_enabled` на маркере, используйте параметр при создании или обновлении развертывания.
+Чтобы управлять проверкой подлинности на основе маркеров, используйте параметр `token_auth_enabled` при создании или обновлении развертывания.
 
-Если включена проверка подлинности на маркере, `get_token` можно использовать метод для получения токена носителя и срока действия маркеров:
+Если включена проверка подлинности на основе маркеров, можно использовать метод `get_token`, чтобы получить токен носителя и срок действия токена:
 
 ```python
 token, refresh_by = service.get_token()
@@ -122,7 +119,7 @@ print(token)
 ```
 
 > [!IMPORTANT]
-> После `refresh_by` времени маркера потребуется запросить новый токен. 
+> Необходимо запросить новый токен после времени `refresh_by` маркера. 
 
 ## <a name="request-data"></a>Данные запроса
 
@@ -501,6 +498,6 @@ Power BI поддерживает использование Машинное о
 
 После развертывания веб-службы ее можно использовать в Power BI потоках данных. [Узнайте, как использовать веб-службу машинное обучение Azure из Power BI](https://docs.microsoft.com/power-bi/service-machine-learning-integration).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы просмотреть эталонную архитектуру для оценки моделей Python и глубокого обучения в реальном времени, перейдите в [центр архитектуры Azure](/azure/architecture/reference-architectures/ai/realtime-scoring-python).

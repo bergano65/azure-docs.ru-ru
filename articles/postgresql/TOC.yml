@@ -103,7 +103,7 @@
           items:
             - name: Мониторинг и настройка
               href: concepts-monitoring.md
-            - name: Журналы сервера
+            - name: Журналы
               href: concepts-server-logs.md
             - name: Журналы аудита
               href: concepts-audit.md
@@ -205,9 +205,9 @@
           items:
             - name: Портал Azure
               href: howto-auto-grow-storage-portal.md
-            - name: Azure CLI
+            - name: Инфраструктура CLI Azure
               href: howto-auto-grow-storage-cli.md
-        - name: Доступ к журналам сервера
+        - name: Журналы доступа
           items:
             - name: Портал Azure
               href: howto-configure-server-logs-in-portal.md

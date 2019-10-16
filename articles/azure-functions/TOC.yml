@@ -15,7 +15,7 @@
   items:
     - name: "Создание функции\_— C#"
       href: functions-create-your-first-function-visual-studio.md
-    - name: 'Создание функции: Java/Maven'
+    - name: "Создание функции\_— Java"
       href: functions-create-first-java-maven.md
     - name: "Создание функции\_— JavaScript"
       href: functions-create-first-function-vs-code.md
@@ -27,6 +27,8 @@
       items:
         - name: "Служба хранилища\_— C#"
           href: functions-add-output-binding-storage-queue-vs.md
+        - name: "Служба хранилища\_— Java"
+          href: functions-add-output-binding-storage-queue-java.md
         - name: "Служба хранилища\_— JavaScript"
           href: functions-add-output-binding-storage-queue-vs-code.md
         - name: "Хранилище\_— Python"

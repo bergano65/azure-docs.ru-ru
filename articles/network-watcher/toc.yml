@@ -172,6 +172,8 @@
       href: /rest/api/network-watcher/
 - name: Ресурсы
   items:
+    - name: Вопросы и ответы о Наблюдателе за сетями
+      href: frequently-asked-questions.md
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/'
     - name: Форум MSDN
