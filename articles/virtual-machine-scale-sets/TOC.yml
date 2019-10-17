@@ -150,8 +150,14 @@
     - name: Автоматизация инфраструктуры
       href: ../virtual-machines/windows/infrastructure-automation.md
       maintainContext: true
-    - name: Безопасность и политика
-      href: ../virtual-machines/windows/security-policy.md
+    - name: Безопасность
+      items:
+        - name: Безопасность и политика
+          href: ../virtual-machines/windows/security-policy.md
+        - name: Шифрование дисков Azure
+          href: disk-encryption-overview.md
+        - name: Встроенные средства управления безопасностью
+          href: virtual-machine-scale-sets-security-controls.md
       maintainContext: true
     - name: Мониторинг
       href: ../virtual-machines/windows/monitor.md
@@ -163,8 +169,6 @@
           maintainContext: true
     - name: Вопросы и ответы о масштабируемых наборах
       href: virtual-machine-scale-sets-faq.md
-    - name: Встроенные средства управления безопасностью
-      href: virtual-machine-scale-sets-security-controls.md
 - name: Практическое руководство
   items:
     - name: Планирование и проектирование
@@ -212,12 +216,15 @@
         - name: Шифрование дисков в масштабируемых наборах
           items:
             - name: Использование PowerShell
-              href: virtual-machine-scale-sets-encrypt-disks-ps.md
+              href: disk-encryption-powershell.md
             - name: Использование Azure CLI
-              href: virtual-machine-scale-sets-encrypt-disks-cli.md
+              href: disk-encryption-cli.md
+            - name: Использование шаблонов Azure Resource Manager
+              href: disk-encryption-azure-resource-manager.md
             - name: Последовательность расширений
-              href: ../security/azure-security-disk-encryption-extension-sequencing.md
-              maintainContext: true
+              href: disk-encryption-extension-sequencing.md
+            - name: Хранилище ключей для шифрования дисков Azure
+              href: disk-encryption-key-vault.md
         - name: Работа с большими масштабируемыми наборами
           href: virtual-machine-scale-sets-placement-groups.md
         - name: Преобразование шаблона масштабируемого набора для использования управляемого диска
