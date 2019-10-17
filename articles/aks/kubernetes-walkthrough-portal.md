@@ -7,19 +7,19 @@ ms.service: container-service
 ms.topic: quickstart
 ms.date: 5/31/2019
 ms.author: mlearned
-ms.custom: mvc
-ms.openlocfilehash: 0df60cac241151b5968c5ddfc01ca9c0515a5e6b
-ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
+ms.custom: mvc, seo-javascript-october2019
+ms.openlocfilehash: 0e09d541cb84ef7857e4d68f776b92f845488771
+ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70996975"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72329894"
 ---
 # <a name="quickstart-deploy-an-azure-kubernetes-service-aks-cluster-using-the-azure-portal"></a>Краткое руководство. Развертывание кластера Службы Azure Kubernetes (AKS) с помощью портала Azure
 
 Служба Azure Kubernetes (AKS) — это управляемая служба Kubernetes, которая позволяет быстро развертывать кластеры и управлять ими. В этом кратком руководстве вы развернете кластер AKS с помощью портала Azure. Затем в кластере будет запущено многоконтейнерное приложение, которое включает в себя веб-интерфейс и экземпляр Redis. Затем вы узнаете, как отслеживать работоспособность кластера и модулей pod, на которых выполняется ваше приложение.
 
-![Изображение перехода к примеру приложения Azure для голосования](media/container-service-kubernetes-walkthrough/azure-vote.png)
+![Изображение перехода к примеру приложения Azure для голосования](media/container-service-kubernetes-walkthrough/azure-voting-application.png)
 
 В этом руководстве предполагается, что у вас есть некоторое представление о функциях Kubernetes. Дополнительные сведения см. в статье о [ключевых концепциях Kubernetes для Службы Azure Kubernetes (AKS)][kubernetes-concepts].
 
@@ -48,6 +48,7 @@ ms.locfileid: "70996975"
 2. На странице **Масштаб** оставьте значения по умолчанию. В нижней части страницы щелкните **Next: Authentication** (Далее: аутентификация).
 > [!CAUTION]
 > При создании новых субъектов-служб AAD может потребоваться несколько минут на их распространение и запуск, а также поиск субъектом-службой ошибок и сбоев проверки на портале Azure. Если таковые будут обнаружены, см.[эту статью](troubleshooting.md#im-receiving-errors-that-my-service-principal-was-not-found-when-i-try-to-create-a-new-cluster-without-passing-in-an-existing-one) для их устранения.
+
 3. На странице **Аутентификация** настройте следующие параметры.
    - Создайте новый субъект-службу, оставив в поле **Субъект-служба** значение **Субъект-служба по умолчанию (новый)** . Можно также выбрать *Настроить субъект-службу*, чтобы использовать существующий субъект-службу. При использовании существующего имени субъекта-службы необходимо указать для него идентификатор клиента и секрет.
    - Включите параметр для элементов управления доступом на основе ролей (RBAC) Kubernetes. Это обеспечит более точный контроль доступа к ресурсам Kubernetes, развернутым в кластере AKS.
@@ -219,7 +220,7 @@ azure-vote-front   LoadBalancer   10.0.37.27   52.179.23.131   80:30572/TCP   2m
 
 Чтобы увидеть приложение для голосования Azure в действии, откройте в веб-браузере внешний IP-адрес вашей службы.
 
-![Изображение перехода к примеру приложения Azure для голосования](media/container-service-kubernetes-walkthrough/azure-vote.png)
+![Изображение перехода к примеру приложения Azure для голосования](media/container-service-kubernetes-walkthrough/azure-voting-application.png)
 
 ## <a name="monitor-health-and-logs"></a>Мониторинг работоспособности и журналов
 

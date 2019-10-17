@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 5/23/2019
 ms.author: travisw
-ms.openlocfilehash: a8118d80e85d562fa4137ed1f1844e6bf9f1793e
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: e1f9b561efb1fd88fe2dd00f8c175f1ebae848d8
+ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67485032"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72391759"
 ---
 1. Запустите Android Studio и в окне приветствия выберите **Start a new Android Studio project** (Создать проект Android Studio).
 
@@ -27,7 +27,7 @@ Android Studio требуется несколько минут, чтобы по
 
 [!INCLUDE [License Notice](cognitive-services-speech-service-license-notice.md)]
 
-Текущая версия пакета SDK для распознавания речи для Cognitive Services — `1.6.0`.
+Текущая версия пакета SDK для распознавания речи для Cognitive Services — `1.7.0`.
 
 Пакет SDK службы "Речь" для Android входит в состав [AAR (библиотека Android)](https://developer.android.com/studio/projects/android-library), которая содержит необходимые библиотеки и требуемые разрешения Android.
 Он доступен в репозитории Maven по адресу https:\//csspeechstorage.blob.core.windows.net/maven/.
@@ -42,7 +42,7 @@ Android Studio требуется несколько минут, чтобы по
 
    ![Снимок экрана окна Project Structure (Структура проекта)](../articles/cognitive-services/Speech-Service/media/sdk/qs-java-android-07-add-module-dependency.png)
 
-1. В появившемся окне введите имя и версию нашего пакета SDK службы "Речь" для Android, `com.microsoft.cognitiveservices.speech:client-sdk:1.6.0`. Нажмите кнопку **ОК**.
+1. В появившемся окне введите имя и версию нашего пакета SDK службы "Речь" для Android, `com.microsoft.cognitiveservices.speech:client-sdk:1.7.0`. Нажмите кнопку **ОК**.
    Пакет SDK для службы "Речь" должен быть добавлен в список зависимостей, как показано ниже.
 
    ![Снимок экрана окна Project Structure (Структура проекта)](../articles/cognitive-services/Speech-Service/media/sdk/qs-java-android-08-dependency-added-1.0.0.png)

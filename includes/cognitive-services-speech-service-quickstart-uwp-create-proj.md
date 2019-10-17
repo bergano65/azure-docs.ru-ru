@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 08/19/2019
 ms.author: erhopf
-ms.openlocfilehash: 0140981a694a7a7cd8556f7139a90d0656679d7d
-ms.sourcegitcommit: 9f330c3393a283faedaf9aa75b9fcfc06118b124
+ms.openlocfilehash: 64c93e5c8e139dbdcfd3faad3a9ac4328fb01972
+ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "70382153"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72391760"
 ---
 Чтобы создать проект Visual Studio для разработки универсальной платформы Windows (UWP), необходимо настроить параметры разработки Visual Studio, создать проект, выбрать целевую архитектуру, настроить запись звука и установить пакет SDK службы "Речь".
 
@@ -104,4 +104,4 @@ ms.locfileid: "70382153"
 
 1. В диалоговом окне **Просмотр изменений** нажмите **ОК**.
 
-1. В диалоговом окне **Принятие условий лицензионного соглашения** просмотрите лицензию, а затем выберите **Я принимаю**. Начнется установка пакета, и после завершения установки в области **Output** (вывод) отобразится сообщение следующего вида: `Successfully installed 'Microsoft.CognitiveServices.Speech 1.6.0' to helloworld`.
+1. В диалоговом окне **Принятие условий лицензионного соглашения** просмотрите лицензию, а затем выберите **Я принимаю**. Начнется установка пакета, и после завершения установки в области **Output** (вывод) отобразится сообщение следующего вида: `Successfully installed 'Microsoft.CognitiveServices.Speech 1.7.0' to helloworld`.

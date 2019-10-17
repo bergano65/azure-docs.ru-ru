@@ -11,12 +11,12 @@ author: srdan-bozovic-msft
 ms.author: srbozovi
 ms.reviewer: sstein, carlrab, bonova
 ms.date: 12/14/2018
-ms.openlocfilehash: 2aae0ce7bbf5c8804dcaab90fcb60a66dfe59cf0
-ms.sourcegitcommit: 86d49daccdab383331fc4072b2b761876b73510e
+ms.openlocfilehash: ca0dcc850b2db513c8d85d43ad76bc75053c0d04
+ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70744406"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72514008"
 ---
 # <a name="quickstart-restore-a-database-to-a-managed-instance"></a>Краткое руководство. Восстановление базы данных в Управляемый экземпляр
 
@@ -40,7 +40,7 @@ ms.locfileid: "70744406"
 - Требует наличия учетной записи хранилища BLOB-объектов Azure (например, Standard_LRS V2) с **общедоступным IP-адресом**, защищенным **учетными данными SAS** с разрешением `rw`. [Частные IP-адреса для хранилища BLOB-объектов, защищенные брандмауэром,](https://docs.microsoft.com/azure/storage/common/storage-network-security) и конечные точки службы хранилища BLOB-объектов Azure в настоящее время не поддерживаются.
 
 > [!NOTE]
-> Дополнительные сведения о резервном копировании и восстановлении базы данных SQL Server при помощи хранилища BLOB-объектов Azure и [ключа подписанного URL-адреса (SAS)](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1) см. в статье [Краткое руководство. Восстановление резервной копии базы данных в Управляемый экземпляр Базы данных SQL Azure](sql-database-managed-instance-get-started-restore.md).
+> Дополнительные сведения о резервном копировании и восстановлении базы данных SQL Server при помощи хранилища BLOB-объектов Azure и [ключа подписанного URL-адреса (SAS)](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1) см. в статье [Краткое руководство. Восстановление резервной копии базы данных в Управляемый экземпляр Базы данных SQL Azure](https://docs.microsoft.com/en-us/sql/relational-databases/backup-restore/sql-server-backup-to-url?view=sql-server-2017).
 
 ## <a name="restore-the-database-from-a-backup-file"></a>Восстановление базы данных из файла резервной копии
 

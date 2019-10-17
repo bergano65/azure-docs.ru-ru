@@ -10,12 +10,12 @@ ms.subservice: ink-recognizer
 ms.topic: quickstart
 ms.date: 09/23/2019
 ms.author: aahi
-ms.openlocfilehash: 0c7d3ed7e2cbaee7d30f368efa004bbb3daaafdd
-ms.sourcegitcommit: 9f330c3393a283faedaf9aa75b9fcfc06118b124
+ms.openlocfilehash: 6ef58d1444eb0ec7b2b8891f944b428a613edf3a
+ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "71996868"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72515616"
 ---
 # <a name="quickstart-recognize-digital-ink-with-the-ink-recognizer-rest-api-and-c"></a>Краткое руководство. Распознавание рукописного ввода с помощью REST API Распознавателя рукописного текста и C#
 
@@ -49,11 +49,11 @@ ms.locfileid: "71996868"
 
 1. В Visual Studio создайте новое консольное решение и добавьте следующие пакеты. 
     
-    [!code-csharp[imports](~/cognitive-services-rest-samples/dotnet/InkRecognition/quickstart/recognizeInk.cs?name=imports)]
+    [!code-csharp[import statements](~/cognitive-services-rest-samples/dotnet/InkRecognition/quickstart/recognizeInk.cs?name=imports)]
 
 2. Создайте переменные для ключа подписки и конечной точки, а также пример файла JSON. Конечная точка позже будет совмещена с `inkRecognitionUrl` для доступа к API. 
 
-    [!code-csharp[endpoint file path and key variables](~/cognitive-services-rest-samples/dotnet/InkRecognition/quickstart/recognizeInk.cs?name=vars)]
+    [!code-csharp[endpoint file and key variables](~/cognitive-services-rest-samples/dotnet/InkRecognition/quickstart/recognizeInk.cs?name=vars)]
 
 ## <a name="create-a-function-to-send-requests"></a>Создание функции для отправки запросов
 

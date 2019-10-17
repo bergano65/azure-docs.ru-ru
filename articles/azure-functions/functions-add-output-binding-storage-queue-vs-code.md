@@ -6,18 +6,17 @@ ms.author: glenga
 ms.date: 06/25/2019
 ms.topic: quickstart
 ms.service: azure-functions
-ms.custom: mvc
-manager: jeconnoc
-ms.openlocfilehash: dfb4abaf3868b76e17fb35f952c4db6bcdf30634
-ms.sourcegitcommit: 15e3bfbde9d0d7ad00b5d186867ec933c60cebe6
+manager: gwallace
+ms.openlocfilehash: 951e48e591f490ea6321329352fd798fea58855d
+ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71838946"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72329699"
 ---
 # <a name="connect-functions-to-azure-storage-using-visual-studio-code"></a>Подключение функций к службе хранилища Azure с помощью Visual Studio Code
 
-Функции Azure позволяют выполнять подключение функций к службам Azure и другим ресурсам без необходимости написания кода для интеграции. Эти *привязки*, которые представляют как входные, так и выходные данные, объявляются в определении функции. Данные привязок предоставляются функции в качестве параметров. Триггер является специальным типом входных привязок. В то время как функция обладает только одним триггером, она может состоять из нескольких входных и выходных привязок. Дополнительные сведения см. в статье [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md).
+[!INCLUDE [functions-add-storage-binding-intro](../../includes/functions-add-storage-binding-intro.md)]
 
 В этой статье приведены сведения об использовании Visual Studio Code для подключения функции, которая была создана в рамках [предыдущей статьи](functions-create-first-function-vs-code.md), к службе хранилища Azure. Выходная привязка, которая была добавлена в эту функцию, записывает данные HTTP-запроса в сообщение очереди Хранилища очередей Azure. 
 

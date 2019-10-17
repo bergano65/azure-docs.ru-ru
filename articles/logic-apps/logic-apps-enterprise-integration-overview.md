@@ -11,10 +11,10 @@ ms.topic: overview
 ms.assetid: dd517c4d-1701-4247-b83c-183c4d8d8aae
 ms.date: 08/01/2019
 ms.openlocfilehash: 54d665d6a4fd9aa0216d9eccf821f5af539a3636
-ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
+ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
+ms.lasthandoff: 10/15/2019
 ms.locfileid: "71087568"
 ---
 # <a name="b2b-enterprise-integration-solutions-with-azure-logic-apps-and-enterprise-integration-pack"></a>Решения для корпоративной интеграции B2B с Azure Logic Apps и пакетом интеграции Enterprise
