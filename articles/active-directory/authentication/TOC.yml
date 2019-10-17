@@ -131,6 +131,8 @@
       href: howto-password-smart-lockout.md
     - name: Вход без пароля
       items:
+        - name: Развертывание без пароля
+          href: howto-authentication-passwordless-deployment.md
         - name: Ключи безопасности без пароля
           href: howto-authentication-passwordless-security-key.md
         - name: Вход без пароля с помощью телефона

@@ -285,6 +285,8 @@
       items:
         - name: "Публикация ресурса\_— CLI"
           href: cli-publish-asset.md
+        - name: Описательный звуковой сигнал
+          href: signal-descriptive-audio-howto.md
 - name: Справочные материалы
   items:
     - name: Спецификация OpenAPI (Swagger)

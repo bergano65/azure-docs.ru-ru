@@ -240,6 +240,8 @@
           href: virtual-machine-scale-sets-automatic-upgrade.md
         - name: Защита экземпляров (предварительная версия)
           href: virtual-machine-scale-sets-instance-protection.md
+        - name: Политика масштабирования (предварительная версия)
+          href: virtual-machine-scale-sets-scale-in-policy.md
         - name: Прерывание уведомления при удалении (предварительная версия)
           href: virtual-machine-scale-sets-terminate-notification.md
         - name: Общедоступные коллекции образов

@@ -345,6 +345,8 @@
               href: active-directory-how-applications-are-added.md
             - name: Ограничения для универсального кода ресурса (URI) перенаправления и URL-адреса ответа
               href: reply-url.md
+            - name: Различия при проверке по поддерживаемым типам учетных записей
+              href: supported-accounts-validation.md
             - name: Одно- и мультитенантные приложения
               href: single-and-multi-tenant-apps.md
         - name: Разрешения и согласие

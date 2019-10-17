@@ -102,7 +102,7 @@
           items:
             - name: Использование Локальных дисковых пространств
               href: virtual-machines-windows-portal-sql-create-failover-cluster.md
-            - name: Использование хранилища файлов класса Premium
+            - name: Использование с общей папкой (цен. категория "Премиум")
               href: virtual-machines-windows-portal-sql-create-failover-cluster-premium-file-storage.md
 - name: Справочные материалы
   items:

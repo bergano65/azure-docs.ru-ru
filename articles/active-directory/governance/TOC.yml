@@ -42,6 +42,8 @@
           items:
             - name: Делегирование управления создателям каталога
               href: entitlement-management-delegate-catalog.md
+            - name: Управление доступом для внешних пользователей
+              href: entitlement-management-external-users.md
             - name: Просмотр отчетов и журналов
               href: entitlement-management-reports.md
             - name: Устранение неполадок
@@ -56,7 +58,19 @@
           items:
             - name: Создание пакета для доступа
               href: entitlement-management-access-package-create.md
-            - name: Изменение пакета для доступа
+            - name: Предоставление ссылки на пакет доступа
+              href: entitlement-management-access-package-settings.md
+            - name: Изменение ролей ресурсов
+              href: entitlement-management-access-package-resources.md
+            - name: Изменение параметров запроса и утверждения
+              href: entitlement-management-access-package-request-policy.md
+            - name: Изменение параметров жизненного цикла
+              href: entitlement-management-access-package-lifecycle-policy.md
+            - name: Просмотр заданий и управление ими
+              href: entitlement-management-access-package-requests.md
+            - name: 'Просмотр, добавление и удаление назначений'
+              href: entitlement-management-access-package-assignments.md
+            - name: Скрытие или удаление
               href: entitlement-management-access-package-edit.md
         - name: Утверждающие
           items:
