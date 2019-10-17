@@ -10,18 +10,21 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 05/24/2019
+ms.date: 08/26/2019
 ms.author: mbullwin
-ms.openlocfilehash: ea324d616928b0d517c00dc9cab3e282f1e3415e
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.openlocfilehash: e7d69e2258036318b736f245f9e3aec3cf5f54de
+ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "67876422"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72389945"
 ---
 # <a name="instrument-web-apps-at-runtime-with-application-insights-codeless-attach"></a>Инструментирование веб-приложений во время выполнения с помощью Application Insights бескодового подключения
 
-Действующее веб-приложение можно инструментировать с помощью Azure Application Insights, не прибегая к изменению или повторному развертыванию кода. Вам потребуется подписка [Microsoft Azure](https://azure.com) .
+> [!IMPORTANT]
+> Монитор состояния больше не рекомендуется использовать. Он был заменен агентом Azure Monitor Application Insights (прежнее название — монитор состояния v2). См. нашу документацию по [развертыванию локальных серверов](https://docs.microsoft.com/azure/azure-monitor/app/status-monitor-v2-overview) , [виртуальным машинам Azure и развертываниям масштабируемых наборов виртуальных машин](https://docs.microsoft.com/azure/azure-monitor/app/azure-vm-vmss-apps).
+
+Действующее веб-приложение можно инструментировать с помощью Azure Application Insights, не прибегая к изменению или повторному развертыванию кода. Вам потребуется подписка на [Microsoft Azure](https://azure.com) .
 
 Монитор состояний используется для инструментирования приложения .NET, размещенного в IIS (локально или на виртуальной машине).
 
@@ -35,24 +38,24 @@ ms.locfileid: "67876422"
 
 Вы можете выбрать один из двух указанных ниже вариантов применения Application Insights для веб-приложений .NET.
 
-* **Во время сборки.** [Добавьте пакет SDK для Application Insights][greenbrown] в код веб-приложения.
-* **Во время выполнения**. Инструментируйте веб-приложение на сервере, как описано ниже, без повторной сборки и развертывания кода.
+* **Время сборки:** [Добавьте пакет SDK для Application Insights][greenbrown] в код веб-приложения.
+* **Во время выполнения.** Инструментируйте веб-приложение на сервере, как описано ниже, без повторной сборки и развертывания кода.
 
 > [!NOTE]
-> Если вы используете инструментирование времени сборки, инструментирование времени выполнения не будет работать, даже если оно включено.
+> При использовании инструментирования времени сборки инструментирование времени выполнения не будет работать, даже если оно включено.
 
 Ниже представлено общее сравнение предлагаемых вариантов.
 
-|  | Во время сборки | Время выполнения |
+|  | Во время сборки | Во время выполнения |
 | --- | --- | --- |
-| Запросы и исключения |Да |Да |
-| [Более подробные исключения](../../azure-monitor/app/asp-net-exceptions.md) | |Да |
+| Запросы и исключения |ДА |ДА |
+| [Более подробные исключения](../../azure-monitor/app/asp-net-exceptions.md) | |ДА |
 | [Диагностика зависимостей](../../azure-monitor/app/asp-net-dependencies.md) |На платформе .NET 4.6 или более поздней, неполные сведения |Да, полные сведения: коды результатов, текст команд SQL, HTTP-команда|
-| [Счетчики производительности системы](../../azure-monitor/app/performance-counters.md) |Да |Да |
-| [API для пользовательской телеметрии][api] |Да |Нет |
-| [Интеграция журнала трассировки](../../azure-monitor/app/asp-net-trace-logs.md) |Да |Нет |
-| [Просмотр страницы и пользовательские данные](../../azure-monitor/app/javascript.md) |Да |Нет |
-| Требуется повторная сборка кода |Да | Нет |
+| [Счетчики производительности системы](../../azure-monitor/app/performance-counters.md) |ДА |ДА |
+| [API для пользовательской телеметрии][api] |ДА |Нет |
+| [Интеграция журнала трассировки](../../azure-monitor/app/asp-net-trace-logs.md) |ДА |Нет |
+| [Просмотр страницы и пользовательские данные](../../azure-monitor/app/javascript.md) |ДА |Нет |
+| Требуется повторная сборка кода |ДА | Нет |
 
 
 
@@ -152,7 +155,7 @@ Start-ApplicationInsightsMonitoring -Name appName -InstrumentationKey 00000000-0
 
 * Так как монитор состояния является приложением .NET, можно также включить [трассировку .NET, добавив соответствующие средства диагностики в файл конфигурации](https://docs.microsoft.com/dotnet/framework/configure-apps/file-schema/trace-debug/system-diagnostics-element). Например, в некоторых сценариях может быть полезно узнать, что происходит на уровне сети, [настроив трассировку сети](https://docs.microsoft.com/dotnet/framework/network-programming/how-to-configure-network-tracing) .
 
-### <a name="insufficient-permissions"></a>Недостаточно разрешений
+### <a name="insufficient-permissions"></a>Недостаточные разрешения
   
 * Если на сервере отображается сообщение "Недостаточно разрешений", выполните следующее:
   * В диспетчере IIS выберите свой пул приложений, откройте **Дополнительные параметры** и в разделе **Модель процесса** скопируйте значение параметра "Идентификация".
@@ -182,16 +185,16 @@ Start-ApplicationInsightsMonitoring -Name appName -InstrumentationKey 00000000-0
 Операционные системы, которые поддерживаются для монитора состояний Application Insights на сервере:
 
 * Windows Server 2008
-* Windows Server 2008 R2
+* Windows Server 2008 R2
 * Windows Server 2012
 * Windows Server 2012 R2.
-* Windows Server 2016
+* Windows Server 2016
 
 с последней версией SP и .NET Framework 4,5 (монитор состояния построена на основе этой версии платформы)
 
-На клиентских компьютерах: Windows 7, 8, 8.1 или 10 с платформой .NET Framework 4.5.
+На клиентских компьютерах должна быть установлена ОС Windows 7, 8, 8.1 или 10 с платформой .NET Framework 4.5.
 
-Поддержка IIS: IIS 7, 7.5, 8, 8.5 (требуются службы IIS).
+Поддерживаются такие версии IIS: 7, 7.5, 8, 8.5 (IIS – обязательный компонент).
 
 ## <a name="automation-with-powershell"></a>Автоматизация с помощью PowerShell
 Мониторинг можно запускать и останавливать с помощью PowerShell на сервере IIS.
@@ -208,9 +211,9 @@ Start-ApplicationInsightsMonitoring -Name appName -InstrumentationKey 00000000-0
 * Отображает состояние мониторинга Application Insights для каждого веб-приложения (или именованного приложения) на этом сервере IIS.
 * Возвращает `ApplicationInsightsApplication` для каждого приложения.
 
-  * `SdkState==EnabledAfterDeployment`. Приложение отслеживается. Оно инструментировано во время выполнения с помощью монитора состояний или командлета `Start-ApplicationInsightsMonitoring`.
-  * `SdkState==Disabled`. Приложение не инструментировано для Application Insights. Оно либо никогда не было инструментировано, либо мониторинг во время выполнения был отключен с помощью монитора состояния или командлета `Stop-ApplicationInsightsMonitoring`.
-  * `SdkState==EnabledByCodeInstrumentation`. Приложение инструментировано путем добавления пакета SDK в исходный код. Этот пакет SDK нельзя обновить или остановить.
+  * `SdkState==EnabledAfterDeployment`: приложение отслеживается. Оно инструментировано во время выполнения с помощью монитора состояния или командлета `Start-ApplicationInsightsMonitoring`.
+  * `SdkState==Disabled`: приложение не инструментировано для Application Insights. Оно либо никогда не было инструментировано, либо мониторинг во время выполнения был отключен с помощью монитора состояния или командлета `Stop-ApplicationInsightsMonitoring`.
+  * `SdkState==EnabledByCodeInstrumentation`: приложение инструментировано путем добавления пакета SDK в исходный код. Этот пакет SDK нельзя обновить или остановить.
   * `SdkVersion` — отображает версию, которая используется для мониторинга этого приложения.
   * `LatestAvailableSdkVersion`— отображает версию, доступную сейчас в коллекции NuGet. Чтобы обновить приложение до этой версии, используйте командлет `Update-ApplicationInsightsMonitoring`.
 
@@ -243,8 +246,8 @@ Start-ApplicationInsightsMonitoring -Name appName -InstrumentationKey 00000000-0
 
 `Update-ApplicationInsightsMonitoring -Name appName [-InstrumentationKey "0000000-0000-000-000-0000"`]
 
-* `-Name`. Имя веб-приложения на сервере IIS.
-* `-InstrumentationKey` (необязательный параметр). используется для изменения ресурса, в который отправляются данные телеметрии приложения.
+* `-Name` — имя веб-приложения на сервере IIS.
+* `-InstrumentationKey` (необязательно). Используйте этот параметр, чтобы изменить ресурс, в который отправляется телеметрии приложения.
 * Этот командлет:
   * Обновляет именованное приложение до последней версии пакета SDK, загруженной на этот компьютер (работает, только если `SdkState==EnabledAfterDeployment`).
   * Если указан ключ инструментирования, именованное приложение повторно настраивается для отправки данных телеметрии в ресурс с этим ключом (работает, если `SdkState != Disabled`).
@@ -304,7 +307,7 @@ Start-ApplicationInsightsMonitoring -Name appName -InstrumentationKey 00000000-0
  * вызовы зависимостей (.NET 4.5) и возвращаемые значения в вызовах зависимостей (.NET 4.6);
  * значения трассировки стека исключений.
 
-[Подробнее](https://apmtips.com/blog/2016/11/18/how-application-insights-status-monitor-not-monitors-dependencies/)
+[Дополнительные сведения](https://apmtips.com/blog/2016/11/18/how-application-insights-status-monitor-not-monitors-dependencies/)
 
 ## <a name="video"></a>Видео
 

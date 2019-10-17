@@ -14,17 +14,18 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 10/01/2016
 ms.author: crdun
-ms.openlocfilehash: 87c64a98d783d2604c985017fbce586ed51e5c9d
-ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
+ms.openlocfilehash: 5be72a4125b276d85174a7a056cbbc2c23053e89
+ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72025422"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72388885"
 ---
 # <a name="client-and-server-versioning-in-mobile-apps-and-mobile-services"></a>Управление версиями клиента и сервера в мобильных приложениях и мобильных службах
 > [!NOTE]
 > Центр приложений Visual Studio поддерживает комплексные и интегрированные службы для разработки мобильных приложений. Разработчики могут использовать службы **сборки**, **тестирования** и **распространения** для настройки конвейера непрерывной интеграции и доставки. После развертывания приложения разработчики могут отслеживать состояние и использование своих приложений с помощью служб **аналитики** и **диагностики** , а также привлекать пользователей с помощью службы **push-уведомлений** . Разработчики также **могут использовать проверку подлинности** для аутентификации пользователей и службы **данных** , чтобы сохранять и синхронизировать данные приложений в облаке.
-> Если вы хотите интегрировать облачные службы в мобильное приложение, зарегистрируйтесь в центре приложений Center [App Center](https://appcenter.ms/?utm_source=zumo&utm_medium=Azure&utm_campaign=zumo%20doc) уже сегодня.
+>
+> Если вы хотите интегрировать облачные службы в мобильное приложение, зарегистрируйтесь в [центре приложений](https://appcenter.ms/?utm_source=zumo&utm_medium=Azure&utm_campaign=zumo%20doc) уже сегодня.
 
 Последняя версия мобильных служб Azure — компонент **Мобильные приложения** службы приложений Azure.
 
@@ -36,7 +37,7 @@ ms.locfileid: "72025422"
 ## <a name="header-specification"></a>Спецификация заголовка
 Ключ `ZUMO-API-VERSION` можно указать в заголовке HTTP или в строке запроса. Его значение представляет строку версии в формате **x.y.z**.
 
-Пример:
+Пример.
 
 GET https://service.azurewebsites.net/tables/TodoItem
 
@@ -54,7 +55,7 @@ POST https://service.azurewebsites.net/tables/TodoItem?ZUMO-API-VERSION=2.0.0
 ### <a name="MobileAppsClients"></a> Пакеты SDK для клиента мобильных *приложений*
 Проверка версии была добавлена, начиная со следующих версий пакета SDK для клиента **мобильных приложений Azure**:
 
-| Платформа клиента | Version | Значение заголовка версии |
+| Платформа клиента | Версия | Значение заголовка версии |
 | --- | --- | --- |
 | Управляемый клиент (Windows, Xamarin) |[2.0.0](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/2.0.0) |2.0.0 |
 | iOS |[3.0.0](https://go.microsoft.com/fwlink/?LinkID=529823) |2.0.0 |
@@ -71,7 +72,7 @@ POST https://service.azurewebsites.net/tables/TodoItem?ZUMO-API-VERSION=2.0.0
 ### <a name="behavior-of-mobile-apps-backends"></a>Поведение внутренних серверов мобильных приложений
 | ZUMO-API-VERSION | Значение параметра MS_SkipVersionCheck | Ответ |
 | --- | --- | --- |
-| x.y.z или значение NULL |True |200 – OK |
+| x.y.z или значение NULL |Да |200 – OK |
 | Null |False/не указан |400 – неверный запрос |
 | 1.x.y |False/не указан |400 – неверный запрос |
 | 2.0.0-2.x.y |False/не указан |200 – OK |

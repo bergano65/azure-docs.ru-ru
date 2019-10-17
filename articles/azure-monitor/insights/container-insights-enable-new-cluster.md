@@ -1,6 +1,6 @@
 ---
-title: Отслеживать кластер Azure Kubernetes Service (AKS) | Документация Майкрософт
-description: Узнайте, как включить мониторинг для нового кластера Azure Kubernetes Service (AKS) с помощью Azure Monitor для контейнеров подписки.
+title: Мониторинг нового кластера Azure Kubernetes Service (AKS) | Документация Майкрософт
+description: Узнайте, как включить мониторинг для нового кластера Azure Kubernetes Service (AKS) с Azure Monitor для подписки на контейнеры.
 services: azure-monitor
 documentationcenter: ''
 author: mgoedtel
@@ -13,20 +13,20 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/25/2019
 ms.author: magoedte
-ms.openlocfilehash: d73ab2d5cca4f20f954a0b0e972111d3f395c3c8
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: cff0286e944414d70cffd801620159ffef3db1a5
+ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65077535"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72389810"
 ---
-# <a name="enable-monitoring-of-a-new-azure-kubernetes-service-aks-cluster"></a>Включить мониторинг нового кластера Azure Kubernetes Service (AKS)
+# <a name="enable-monitoring-of-a-new-azure-kubernetes-service-aks-cluster"></a>Включение мониторинга нового кластера Azure Kubernetes Service (AKS)
 
-В этой статье описывается, как настроить Azure Monitor для контейнеров, чтобы отслеживать управляемого кластера Kubernetes, размещенных на [службе Azure Kubernetes](https://docs.microsoft.com/azure/aks/) , которые подготавливаются для развертывания в вашей подписке.
+В этой статье описывается, как настроить Azure Monitor для контейнеров, чтобы отслеживать управляемый кластер Kubernetes, размещенный в [службе Kubernetes Azure](https://docs.microsoft.com/azure/aks/) , которая готовится к развертыванию в вашей подписке.
 
-Вы можете включить мониторинг кластера AKS с помощью одного из поддерживаемых методов:
+Мониторинг кластера AKS можно включить с помощью одного из поддерживаемых методов:
 
-* Инфраструктура CLI Azure
+* Azure CLI
 * Terraform
 
 ## <a name="enable-using-azure-cli"></a>Включение мониторинга с помощью Azure CLI
@@ -34,8 +34,7 @@ ms.locfileid: "65077535"
 Чтобы включить мониторинг нового кластера AKS, созданного с помощью Azure CLI, следуйте указаниям в разделе [Создание кластера AKS](../../aks/kubernetes-walkthrough.md#create-aks-cluster).  
 
 >[!NOTE]
->Если вы решили использовать Azure CLI, необходимо сначала установить интерфейс командной строки и использовать его локально. Необходимо запустить Azure CLI версии 2.0.59 или более поздней версии. Для определения версии выполните `az --version`. Если вам необходимо установить или обновить Azure CLI, ознакомьтесь со статьей [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli). 
->
+>Если вы решили использовать Azure CLI, необходимо сначала установить интерфейс командной строки и использовать его локально. Необходимо запустить Azure CLI версии 2.0.74 или более поздней. Для определения версии выполните `az --version`. Если вам необходимо установить или обновить Azure CLI, ознакомьтесь со статьей [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli). Если вы установили расширение CLI AKS-Preview версии 0.4.12 или более поздней, удалите все внесенные изменения, чтобы включить предварительную версию расширения, так как она может переопределить поведение Azure CLI по умолчанию, так как функции предварительной версии AKS недоступны в Azure US министерстве Cloud.
 
 ## <a name="enable-using-terraform"></a>Включение с помощью Terraform
 

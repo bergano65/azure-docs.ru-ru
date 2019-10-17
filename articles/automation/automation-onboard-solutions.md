@@ -9,12 +9,12 @@ manager: carmonm
 ms.topic: tutorial
 ms.date: 05/10/2018
 ms.custom: mvc
-ms.openlocfilehash: d247369647106cf1671a8770a6dce21f1a34a4b9
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: cacd9206eb0213d410a11ee3a2dcf5c0e28989c6
+ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58082200"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72372820"
 ---
 # <a name="onboard-update-and-change-tracking-solutions-to-azure-automation"></a>Внедрение решений по обновлению и отслеживанию изменений в службу автоматизации Azure
 
@@ -130,6 +130,13 @@ ms.locfileid: "58082200"
 
 1. Выберите **ОК**, чтобы выполнить задание runbook.
 1. Отслеживайте ход выполнения и наличие ошибок на странице задания runbook.
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Чтобы удалить виртуальную машину для Управления обновлениями, необходимо сделать следующее.
+
+* В рабочей области Log Analytics удалите виртуальную машину из сохраненных поисковых запросов конфигурации области `MicrosoftDefaultScopeConfig-Updates`. Сохраненные поисковые запросы хранятся на вкладке **Общие** рабочей области.
+* Удалите [Microsoft Monitoring Agent](../azure-monitor/learn/quick-collect-windows-computer.md#clean-up-resources) или [Агент Log Analytics для Linux](../azure-monitor/learn/quick-collect-linux-computer.md#clean-up-resources).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -1,6 +1,6 @@
 ---
-title: 'Справочник по API Azure монитор состояния v2: Отключить модуль инструментирования | Документация Майкрософт'
-description: Справочник по API монитор состояния v2. Disable-Инструментатионенгине. Отслеживайте производительность веб-сайта без повторного развертывания веб-сайта. Работает с веб-приложениями ASP.NET, размещенными локально, в виртуальных машинах или в Azure.
+title: 'Справочник по API агента Azure Application Insights: Отключение модуля инструментирования | Документация Майкрософт'
+description: Справочник по API агента Application Insights. Disable-Инструментатионенгине. Отслеживайте производительность веб-сайта без повторного развертывания веб-сайта. Работает с веб-приложениями ASP.NET, размещенными локально, в виртуальных машинах или в Azure.
 services: application-insights
 documentationcenter: .net
 author: TimothyMothra
@@ -12,14 +12,14 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: tilee
-ms.openlocfilehash: 98f70a457b1e09f755a854a28cfd31a8fc9ee9f2
-ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
+ms.openlocfilehash: aaf493b5f2075ead62087824773f21643a1246e4
+ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71033175"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72388311"
 ---
-# <a name="status-monitor-v2-api-disable-instrumentationengine"></a>API монитор состояния v2: Disable-Инструментатионенгине
+# <a name="application-insights-agent-api-disable-instrumentationengine"></a>API агента Application Insights: Disable-Инструментатионенгине
 
 В этой статье описывается командлет, который является членом [модуля PowerShell AZ. аппликатионмонитор](https://www.powershellgallery.com/packages/Az.ApplicationMonitor/).
 
@@ -41,7 +41,7 @@ PS C:\> Disable-InstrumentationEngine
 ### <a name="-verbose"></a>-Verbose
 **Общий параметр.** Используйте этот параметр для вывода подробных журналов.
 
-## <a name="output"></a>Вывод
+## <a name="output"></a>Выходные данные
 
 
 #### <a name="example-output-from-successfully-disabling-the-instrumentation-engine"></a>Пример выходных данных для успешного отключения модуля инструментирования
@@ -55,7 +55,7 @@ Configuring registry for instrumentation engine...
 ```
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
- Дополнительные возможности монитор состояния версии 2:
- - Воспользуйтесь нашим руководством по [устранению неполадок](status-monitor-v2-troubleshoot.md) монитор состояния v2.
+ Другие действия с агентом Application Insights:
+ - Используйте наше справочное по для [устранения неполадок](status-monitor-v2-troubleshoot.md) агента Application Insights.

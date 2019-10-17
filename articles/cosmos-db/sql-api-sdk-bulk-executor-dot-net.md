@@ -1,5 +1,5 @@
 ---
-title: Azure Cosmos DB — API .NET для пакетного исполнителя, ресурсы SDK &
+title: 'Azure Cosmos DB: API .NET для пакетного исполнителя, ресурсы SDK &'
 description: Сведения об API и пакетах SDK .NET для библиотеки BulkExecutor, в том числе даты выхода, даты снятия с учета и изменения, внесенные в каждую версию пакета SDK .NET для BulkExecutor в Azure Cosmos DB.
 author: tknandu
 ms.service: cosmos-db
@@ -8,14 +8,14 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 10/11/2019
 ms.author: ramkris
-ms.openlocfilehash: 7d30b685d0debb0aeb0f79db8b078dcc165a8ca1
-ms.sourcegitcommit: e0a1a9e4a5c92d57deb168580e8aa1306bd94723
+ms.openlocfilehash: 9da994550609b0be44362e0f0059844b288aabbd
+ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72286672"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72388065"
 ---
-# <a name="net-bulk-executor-library-download-information"></a>Библиотека NET выполнителя .NET: информация о скачивании 
+# <a name="net-bulk-executor-library-download-information"></a>Библиотека массового исполнителя .NET — информация о скачивании 
 
 > [!div class="op_single_selector"]
 > * [.NET](sql-api-sdk-dotnet.md)
@@ -37,7 +37,7 @@ ms.locfileid: "72286672"
 |**Скачивание пакета SDK**| [NuGet](https://www.nuget.org/packages/Microsoft.Azure.CosmosDB.BulkExecutor/) |
 | **Библиотека с массовым исполнителем в GitHub**| [GitHub](https://github.com/Azure/azure-cosmosdb-bulkexecutor-dotnet-getting-started)|
 |**Документация по API**|[Справочная документация по API .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmosdb.bulkexecutor?view=azure-dotnet)|
-|**Начало работы**|[Начало работы с пакетом SDK для .NET для библиотеки массового исполнителя](bulk-executor-dot-net.md)|
+|**Приступая к работе с условным доступом**|[Начало работы с пакетом SDK для .NET для библиотеки массового исполнителя](bulk-executor-dot-net.md)|
 | **Текущая поддерживаемая платформа**| Microsoft .NET Framework 4.5.2, 4.6.1 и .NET Standard 2.0 |
 
 ## <a name="release-notes"></a>Заметки о выпуске
@@ -69,6 +69,10 @@ ms.locfileid: "72286672"
 ### <a name="a-name200-preview200-preview"></a><a name="2.0.0-preview"/>2.0.0-preview
 
 * Добавлена .NET Standard 2,0 в качестве одной из поддерживаемых целевых платформ, чтобы библиотека NET выполнителя работала с приложениями .NET Core.
+
+### <a name="a-name184184"></a>@no__t 01.8.4
+
+* Исправлена обработка идентификаторов при вызове Булкимпорт со списком объектов POCO с числовыми значениями.
 
 ### <a name="a-name183183"></a>@no__t 01.8.3
 
@@ -130,7 +134,7 @@ ms.locfileid: "72286672"
 
 * Добавлена поддержка операции BulkImport и BulkUpdate для учетных записей API Azure Cosmos DB SQL.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о библиотеке Java для неполного выполнителя см. в следующей статье:
 
