@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 930e482ab85113ac802932929fdbea358ee26035
-ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
+ms.openlocfilehash: 880b31702cf1c0a92ab7ee536cd88e8e6957f6f8
+ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69619603"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72430854"
 ---
 # <a name="back-up-workload-vms-on-cloudsimple-private-cloud-using-veeam-br"></a>Резервное копирование виртуальных машин рабочей нагрузки в частном облаке Клаудсимпле с помощью Veeam B & R
 
@@ -54,7 +54,7 @@ ms.locfileid: "69619603"
 
 * Veeam Backup Server и прокси-сервер установлены на одной виртуальной машине в частном облаке.
 * Первичный репозиторий резервных копий на основе Linux в Azure, настроенный в качестве цели для заданий резервного копирования.
-* `azcopy`используется для копирования данных из основного репозитория резервных копий в контейнер больших двоичных объектов Azure, который реплицируется в другой регион.
+* `azcopy` используется для копирования данных из основного репозитория резервных копий в контейнер больших двоичных объектов Azure, который реплицируется в другой регион.
 
 ![Основные сценарии развертывания](media/veeam-basicdeployment.png)
 
@@ -65,7 +65,7 @@ ms.locfileid: "69619603"
 * Один прокси-сервер на узел в кластере vSAN, как рекомендуется для Veeam.
 * Основной репозиторий резервных копий на основе Windows в частном облаке для кэширования данных за пять дней для быстрого восстановления.
 * Резервное хранилище Linux в Azure в качестве целевого объекта для заданий резервного копирования для длительного хранения. Этот репозиторий следует настроить в качестве хранилища резервных копий с горизонтальным масштабированием.
-* `azcopy`используется для копирования данных из основного репозитория резервных копий в контейнер больших двоичных объектов Azure, который реплицируется в другой регион.
+* `azcopy` используется для копирования данных из основного репозитория резервных копий в контейнер больших двоичных объектов Azure, который реплицируется в другой регион.
 
 ![Основные сценарии развертывания](media/veeam-advanceddeployment.png)
 
@@ -90,13 +90,13 @@ ms.locfileid: "69619603"
 
 1. [Пользовательский интерфейс vCenter: Настройка служб инфраструктуры в частном облаке](#vcenter-ui-set-up-infrastructure-services-in-your-private-cloud)
 2. [Портал Клаудсимпле: Настройка сети частного облака для Veeam](#cloudsimple-private-cloud-set-up-private-cloud-networking-for-veeam)
-3. [Портал Клаудсимпле: Эскалация привилегий](#cloudsimple-private-cloud-escalate-privileges-for-cloudowner)
-4. [Портал Azure: Подключение виртуальной сети к частному облаку](#azure-portal-connect-your-virtual-network-to-the-private-cloud)
-5. [Портал Azure: Создание резервного репозитория в Azure](#azure-portal-connect-your-virtual-network-to-the-private-cloud)
+3. [Портал Клаудсимпле: эскалация привилегий](#cloudsimple-private-cloud-escalate-privileges-for-cloudowner)
+4. [Портал Azure: подключение виртуальной сети к частному облаку](#azure-portal-connect-your-virtual-network-to-the-private-cloud)
+5. [Портал Azure: Создание репозитория резервных копий в Azure](#azure-portal-connect-your-virtual-network-to-the-private-cloud)
 6. [Портал Azure: Настройка хранилища BLOB-объектов Azure для долгосрочного хранения данных](#configure-azure-blob-storage-for-long-term-data-retention)
-7. [Пользовательский интерфейс vCenter частного облака: Установка Veeam B & R](#vcenter-console-of-private-cloud-install-veeam-br)
+7. [Пользовательский интерфейс vCenter частного облака: install Veeam B & R](#vcenter-console-of-private-cloud-install-veeam-br)
 8. [Консоль Veeam: Настройка программного обеспечения для восстановления Veeam Backup &](#veeam-console-install-veeam-backup-and-recovery-software)
-9. [Портал Клаудсимпле: Настройка Veeam доступа и отмены эскалации привилегий](#cloudsimple-portal-set-up-veeam-access-and-de-escalate-privileges)
+9. [Портал Клаудсимпле: Настройте права доступа Veeam и разэскалации.](#cloudsimple-portal-set-up-veeam-access-and-de-escalate-privileges)
 
 ### <a name="before-you-begin"></a>Перед началом работы
 
@@ -155,22 +155,22 @@ ms.locfileid: "69619603"
 
 Чтобы продолжить установку, вам потребуется ключ авторизации и URI одноранговой цепи, а также доступ к своей подписке Azure.  Эти сведения доступны на странице подключения к виртуальной сети на портале Клаудсимпле. Инструкции см. [в статье Получение сведений о пиринга для виртуальной сети Azure в клаудсимпле Connection](virtual-network-connection.md). Если у вас возникли проблемы с получением сведений, [обратитесь в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
 
-### <a name="cloudsimple-private-cloud-escalate-privileges-for-cloudowner"></a>Клаудсимпле частное облако: Эскалация привилегий для клаудовнер
+### <a name="cloudsimple-private-cloud-escalate-privileges-for-cloudowner"></a>Клаудсимпле частное облако: эскалация привилегий для клаудовнер
 
 Пользователь по умолчанию "клаудовнер" не имеет достаточных привилегий в частном облаке vCenter для установки VEEAM, поэтому привилегии пользователя vCenter должны быть расширены. Дополнительные сведения см. в разделе [эскалация привилегий](escalate-private-cloud-privileges.md).
 
-### <a name="azure-portal-connect-your-virtual-network-to-the-private-cloud"></a>Портал Azure: Подключение виртуальной сети к частному облаку
+### <a name="azure-portal-connect-your-virtual-network-to-the-private-cloud"></a>Портал Azure: подключение виртуальной сети к частному облаку
 
 Подключите виртуальную сеть к частному облаку, следуя инструкциям в статье [Подключение к виртуальной сети Azure с помощью ExpressRoute](azure-expressroute-connection.md).
 
-### <a name="azure-portal-create-a-backup-repository-vm"></a>Портал Azure: Создание виртуальной машины репозитория резервных копий
+### <a name="azure-portal-create-a-backup-repository-vm"></a>Портал Azure: создание виртуальной машины репозитория резервных копий
 
 1. Создайте стандартную виртуальную машину D2 v3 с (2 виртуальных ЦП и 8 ГБ памяти).
 2. Выберите образ на основе CentOS 7,4.
 3. Настройте группу безопасности сети (NSG) для виртуальной машины. Убедитесь, что виртуальная машина не имеет общедоступного IP-адреса и недоступна из общедоступного Интернета.
 4. Создайте учетную запись пользователя и пароль на основе пароля для новой виртуальной машины. Инструкции см. [в разделе Создание виртуальной машины Linux на портал Azure](../virtual-machines/linux/quick-create-portal.md).
 5. Создайте HDD 512 гиб Standard и подключите его к виртуальной машине репозитория.  Инструкции см. в разделе [Подключение управляемого диска данных к виртуальной машине Windows в портал Azure](../virtual-machines/windows/attach-managed-disk-portal.md).
-6. [Создайте том XFS на управляемом диске](https://www.digitalocean.com/docs/volumes/how-to/format-and-mount). Войдите на виртуальную машину, используя упомянутые выше учетные данные. Выполните следующий скрипт, чтобы создать логический том, добавить в него диск, создать раздел файловой системы XFS и подключить раздел по пути/backup1.
+6. [Создайте том XFS на управляемом диске](https://www.digitalocean.com/docs/volumes/how-to/). Войдите на виртуальную машину, используя упомянутые выше учетные данные. Выполните следующий скрипт, чтобы создать логический том, добавить в него диск, создать [раздел](https://www.digitalocean.com/docs/volumes/how-to/partition/) файловой системы XFS и [подключить](https://www.digitalocean.com/docs/volumes/how-to/mount/) раздел по пути/backup1.
 
     Пример скрипта:
 
@@ -196,7 +196,7 @@ ms.locfileid: "69619603"
 
 1. Создайте учетную запись хранения общего назначения (GPv2) типа "Стандартный" и контейнер больших двоичных объектов, как описано в [видеоначало работы Майкрософт со службой хранилища Azure](https://azure.microsoft.com/en-gb/resources/videos/get-started-with-azure-storage).
 2. Создайте контейнер службы хранилища Azure, как описано в справочнике по [созданию контейнера](https://docs.microsoft.com/rest/api/storageservices/create-container) .
-2. Скачайте служебную программу командной строки для Linux от Майкрософт. `azcopy` Вы можете использовать следующие команды в оболочке bash в CentOS 7,5.
+2. Скачайте служебную программу командной строки `azcopy` для Linux от Майкрософт. Вы можете использовать следующие команды в оболочке bash в CentOS 7,5.
 
     ```
     wget -O azcopy.tar.gz https://aka.ms/downloadazcopylinux64
@@ -206,9 +206,9 @@ ms.locfileid: "69619603"
     sudo yum -y install icu
     ```
 
-3. `azcopy` Используйте команду, чтобы скопировать файлы резервных копий в контейнер больших двоичных объектов и из него.  Подробные команды см. [в статье перенос данных с помощью AzCopy в Linux](../storage/common/storage-use-azcopy-linux.md) .
+3. Используйте команду `azcopy`, чтобы скопировать файлы резервных копий в контейнер больших двоичных объектов и из него.  Подробные команды см. [в статье перенос данных с помощью AzCopy в Linux](../storage/common/storage-use-azcopy-linux.md) .
 
-### <a name="vcenter-console-of-private-cloud-install-veeam-br"></a>консоль vCenter частного облака: Установка Veeam B & R
+### <a name="vcenter-console-of-private-cloud-install-veeam-br"></a>консоль vCenter из частного облака: Установка Veeam B & R
 
 Получите доступ к vCenter из частного облака, чтобы создать учетную запись службы Veeam, установите Veeam B & R 9,5 и настройте Veeam с помощью учетной записи службы.
 
@@ -228,7 +228,7 @@ ms.locfileid: "69619603"
 
 С помощью консоли Veeam настройте программное обеспечение для резервного копирования и восстановления Veeam. Дополнительные сведения см. в разделе [Veeam Backup & Replication V9 — Установка и развертывание](https://www.youtube.com/watch?v=b4BqC_WXARk).
 
-1. Добавьте VMware vSphere в качестве управляемой серверной среды. При появлении запроса введите учетные данные учетной записи службы Veeam, созданной в начале [консоли vCenter частного облака: Установите Veeam B & R](#vcenter-console-of-private-cloud-install-veeam-br).
+1. Добавьте VMware vSphere в качестве управляемой серверной среды. При появлении запроса введите учетные данные учетной записи службы Veeam, созданной в начале [консоли VCenter частного облака: install Veeam B & R](#vcenter-console-of-private-cloud-install-veeam-br).
 
     * Использовать параметры по умолчанию для управления загрузкой и дополнительных параметров по умолчанию.
     * Задайте расположение сервера архивации в качестве расположения сервера.
@@ -253,14 +253,14 @@ ms.locfileid: "69619603"
     * Чтобы настроить задания резервного копирования, следуйте инструкциям в видео [Создание задания резервного](https://www.youtube.com/watch?v=LvEHV0_WDWI&t=2s)копирования.
     * Включите шифрование файлов резервных копий в разделе **Дополнительные параметры > хранилище**.
 
-### <a name="cloudsimple-portal-set-up-veeam-access-and-de-escalate-privileges"></a>Портал Клаудсимпле: Настройка Veeam доступа и отмены эскалации привилегий
+### <a name="cloudsimple-portal-set-up-veeam-access-and-de-escalate-privileges"></a>Портал Клаудсимпле: Настройте права доступа Veeam и разэскалации.
 Создайте общедоступный IP-адрес для сервера резервного копирования и восстановления Veeam. Инструкции см. в разделе [выделение общедоступных IP-адресов](public-ips.md).
 
 Создайте правило брандмауэра, используя, чтобы позволить Veeam Backup Server создать исходящее подключение к веб-сайту Veeam для загрузки обновлений и исправлений на TCP порт 80. Инструкции см. в разделе [Настройка таблиц и правил брандмауэра](firewall.md).
 
 Сведения о том, как отменять привилегии, см. в разделе [de-эскалировать Privileges](escalate-private-cloud-privileges.md#de-escalate-privileges).
 
-## <a name="references"></a>Ссылки
+## <a name="references"></a>Справочники
 
 ### <a name="cloudsimple-references"></a>Ссылки Клаудсимпле
 

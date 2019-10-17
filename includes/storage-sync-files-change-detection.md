@@ -1,15 +1,15 @@
 ---
-author: tamram
+author: roygara
 ms.service: storage
 ms.topic: include
 ms.date: 10/26/2018
-ms.author: tamram
-ms.openlocfilehash: 59adee2f1d6a99a0a984b9b63c7201266b6381d4
-ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
+ms.author: rogarana
+ms.openlocfilehash: 55456a6be938411d3c08a0eaa8fdbfb0844e7129
+ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69984558"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72391768"
 ---
 Изменения, внесенные в общий файловый ресурс Azure с использованием портала Azure или SMB, сразу не обнаруживаются и не реплицируются, как изменения в конечной точке сервера. В службе файлов Azure пока не предусмотрена возможность уведомлений об изменениях или ведение журнала изменений, поэтому автоматически инициировать сеанс синхронизации при изменении файлов невозможно. На Windows Server служба "Синхронизация файлов Azure" использует [ведение журнала номеров последовательного обновления Windows](https://msdn.microsoft.com/library/windows/desktop/aa363798.aspx) для автоматического запуска сеанса синхронизации при изменении файлов.
 

@@ -12,20 +12,20 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 10/23/2018
+ms.date: 10/14/2019
 ms.author: haroldw
-ms.openlocfilehash: f9f1072954e01f718fd3d9f03430b6ed6666bb62
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 97529118d420813cf638f211bdd5559068802c95
+ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70082596"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72390653"
 ---
 # <a name="deploy-openshift-container-platform-or-okd-in-azure-stack"></a>Развертывание платформы контейнеров OpenShift (OKD) в Azure Stack
 
 Вы можете развернуть OpenShift в Azure Stack. Есть несколько важных различий между Azure и Azure Stack, из-за которых процесс развертывания и функции также будут немного отличаться.
 
-Сейчас поставщик облачных служб Azure не работает в Azure Stack. Это означает, что вы не сможете присоединить диск для организации постоянного хранения в Azure Stack. Но вы можете настроить другие варианты хранилища, например NFS, iSCSI, GlusterFS и т. д. В качестве альтернативы можно включить CNS и использовать постоянное хранилище GlusterFS. Если включить CNS, для GlusterFS развертываются три дополнительных узла с дополнительным хранилищем.
+Сейчас поставщик облачных служб Azure не работает в Azure Stack. Это означает, что вы не сможете присоединить диск для организации постоянного хранения в Azure Stack. Вместо этого можно настроить другие параметры хранилища, такие как NFS, iSCSI, Глустерфс и т. д. В качестве альтернативы можно включить CNS и использовать Глустерфс для постоянного хранения. Если включить CNS, для GlusterFS развертываются три дополнительных узла с дополнительным хранилищем.
 
 Для развертывания платформы OpenShift Container Platform (OKD) в Azure Stack можно использовать один из нескольких способов.
 
@@ -66,9 +66,9 @@ ms.locfileid: "70082596"
 - особенности кластера OpenShift, изменяемые в файле hosts (deployOpenShift.sh).
 - размер образа RHEL (переменная в azuredeploy.json).
 
-Инструкции по развертыванию с помощью Azure CLI вы найдете в соответствующем разделе документации по [платформе контейнеров OpenShift](./openshift-container-platform.md) или [OKD](./openshift-okd.md).
+Инструкции по развертыванию с помощью Azure CLI вы найдете в соответствующем разделе документации по [платформе контейнеров OpenShift](./openshift-container-platform-3x.md) или [OKD](./openshift-okd.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Задачи, выполняемые после развертывания](./openshift-post-deployment.md)
-- [Устранение неполадок с развертыванием OpenShift в Azure](./openshift-troubleshooting.md)
+- [Задачи, выполняемые после развертывания](./openshift-container-platform-3x-post-deployment.md)
+- [Устранение неполадок с развертыванием OpenShift в Azure](./openshift-container-platform-3x-troubleshooting.md)

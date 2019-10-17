@@ -1,6 +1,6 @@
 ---
-title: Устранение неполадок в Azure монитор состояния v2 и известные проблемы | Документация Майкрософт
-description: Известные проблемы монитор состояния v2 и примеры устранения неполадок. Отслеживайте производительность веб-сайта без повторного развертывания веб-сайта. Работает с веб-приложениями ASP.NET, размещенными локально, в виртуальных машинах или в Azure.
+title: Устранение неполадок и известные проблемы агента Application Insights Azure | Документация Майкрософт
+description: Известные проблемы Application Insights агента и примеры устранения неполадок. Отслеживайте производительность веб-сайта без повторного развертывания веб-сайта. Работает с веб-приложениями ASP.NET, размещенными локально, в виртуальных машинах или в Azure.
 services: application-insights
 documentationcenter: .net
 author: TimothyMothra
@@ -12,14 +12,14 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: tilee
-ms.openlocfilehash: c3e9bffaf3b533ef8fbe3e32c1dca671fb67c911
-ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
+ms.openlocfilehash: ab1ce01c41679c6ff686ab37692d3b8e9167a4f8
+ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71058290"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72388202"
 ---
-# <a name="troubleshooting-status-monitor-v2"></a>Устранение неполадок монитор состояния v2
+# <a name="troubleshooting-application-insights-agent-formerly-named-status-monitor-v2"></a>Устранение неполадок агента Application Insights (прежнее название — монитор состояния v2)
 
 При включении мониторинга могут возникнуть проблемы, препятствующие сбору данных.
 В этой статье перечислены все известные проблемы и приведены примеры устранения неполадок.
@@ -32,7 +32,7 @@ ms.locfileid: "71058290"
 Если какая-либо из этих библиотек DLL находится в каталоге bin, мониторинг может завершиться ошибкой:
 
 - Microsoft. ApplicationInsights. dll
-- Microsoft.AspNet.TelemetryCorrelation.dll
+- Microsoft. AspNet. Телеметрикоррелатион. dll
 - System. Diagnostics. DiagnosticSource. dll
 
 Некоторые из этих библиотек DLL включены в шаблоны приложений Visual Studio по умолчанию, даже если приложение не использует их.
@@ -88,21 +88,21 @@ ms.locfileid: "71058290"
 
     
     
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Устранение неисправностей
     
 ### <a name="troubleshooting-powershell"></a>Устранение неполадок PowerShell
 
 #### <a name="determine-which-modules-are-available"></a>Определение доступных модулей
-Чтобы определить, какие `Get-Module -ListAvailable` модули установлены, можно использовать команду.
+Чтобы определить, какие модули установлены, можно использовать команду `Get-Module -ListAvailable`.
 
 #### <a name="import-a-module-into-the-current-session"></a>Импорт модуля в текущий сеанс
-Если модуль не был загружен в сеанс PowerShell, его можно загрузить вручную с помощью `Import-Module <path to psd1>` команды.
+Если модуль не был загружен в сеанс PowerShell, его можно загрузить вручную с помощью команды `Import-Module <path to psd1>`.
 
 
-### <a name="troubleshooting-the-status-monitor-v2-module"></a>Устранение неполадок модуля монитор состояния v2
+### <a name="troubleshooting-the-application-insights-agent-module"></a>Устранение неполадок модуля агента Application Insights
 
-#### <a name="list-the-commands-available-in-the-status-monitor-v2-module"></a>Список команд, доступных в модуле монитор состояния v2
-Выполните команду `Get-Command -Module Az.ApplicationMonitor` , чтобы получить доступные команды:
+#### <a name="list-the-commands-available-in-the-application-insights-agent-module"></a>Список команд, доступных в модуле агента Application Insights
+Выполните команду `Get-Command -Module Az.ApplicationMonitor`, чтобы получить доступные команды:
 
 ```
 CommandType     Name                                               Version    Source
@@ -117,13 +117,13 @@ Cmdlet          Set-ApplicationInsightsMonitoringConfig            0.4.0      Az
 Cmdlet          Start-ApplicationInsightsMonitoringTrace           0.4.0      Az.ApplicationMonitor
 ```
 
-#### <a name="determine-the-current-version-of-the-status-monitor-v2-module"></a>Определение текущей версии модуля монитор состояния v2
-`Get-ApplicationInsightsMonitoringStatus -PowerShellModule` Выполните команду, чтобы отобразить следующие сведения о модуле:
+#### <a name="determine-the-current-version-of-the-application-insights-agent-module"></a>Определение текущей версии модуля агента Application Insights
+Выполните команду `Get-ApplicationInsightsMonitoringStatus -PowerShellModule`, чтобы отобразить следующие сведения о модуле:
    - Версия модуля PowerShell
    - Версия пакета SDK Application Insights
    - Пути к файлам модуля PowerShell
     
-Подробное описание использования этого командлета см. в справочнике по [API](status-monitor-v2-api-get-status.md) .
+Подробное описание использования этого командлета см. в [справочнике по API](status-monitor-v2-api-get-status.md) .
 
 
 ### <a name="troubleshooting-running-processes"></a>Устранение неполадок выполняющихся процессов
@@ -131,14 +131,14 @@ Cmdlet          Start-ApplicationInsightsMonitoringTrace           0.4.0      Az
 Можно проверить процессы на инструментированном компьютере, чтобы определить, загружены ли все библиотеки DLL.
 Если наблюдение работает, необходимо загрузить не менее 12 библиотек DLL.
 
-`Get-ApplicationInsightsMonitoringStatus -InspectProcess` Используйте команду для проверки библиотек DLL.
+Для проверки библиотек DLL используйте команду `Get-ApplicationInsightsMonitoringStatus -InspectProcess`.
 
-Подробное описание использования этого командлета см. в справочнике по [API](status-monitor-v2-api-get-status.md) .
+Подробное описание использования этого командлета см. в [справочнике по API](status-monitor-v2-api-get-status.md) .
 
 
 ### <a name="collect-etw-logs-by-using-perfview"></a>Получение журналов ETW с помощью PerfView
 
-#### <a name="setup"></a>Установка
+#### <a name="setup"></a>Настройка
 
 1. Скачайте PerfView. exe и PerfView64. exe с сайта [GitHub](https://github.com/Microsoft/perfview/releases).
 2. Запустите PerfView64. exe.
@@ -147,20 +147,20 @@ Cmdlet          Start-ApplicationInsightsMonitoringTrace           0.4.0      Az
     - **Архиваци**
     - **AutoMerge**
     - **Коллекция символов .NET**
-5. Задайте следующие **дополнительные поставщики**:`61f6ca3b-4b5f-5602-fa60-759a2a2d1fbd,323adc25-e39b-5c87-8658-2c1af1a92dc5,925fa42b-9ef6-5fa7-10b8-56449d7a2040,f7d60e07-e910-5aca-bdd2-9de45b46c560,7c739bb9-7861-412e-ba50-bf30d95eae36,61f6ca3b-4b5f-5602-fa60-759a2a2d1fbd,323adc25-e39b-5c87-8658-2c1af1a92dc5,252e28f4-43f9-5771-197a-e8c7e750a984`
+5. Задайте следующие **дополнительные поставщики**: `61f6ca3b-4b5f-5602-fa60-759a2a2d1fbd,323adc25-e39b-5c87-8658-2c1af1a92dc5,925fa42b-9ef6-5fa7-10b8-56449d7a2040,f7d60e07-e910-5aca-bdd2-9de45b46c560,7c739bb9-7861-412e-ba50-bf30d95eae36,61f6ca3b-4b5f-5602-fa60-759a2a2d1fbd,323adc25-e39b-5c87-8658-2c1af1a92dc5,252e28f4-43f9-5771-197a-e8c7e750a984`.
 
 
-#### <a name="collecting-logs"></a>Собираем журналы
+#### <a name="collecting-logs"></a>Сбор журналов
 
-1. В командной консоли с правами администратора выполните `iisreset /stop` команду, чтобы отключить службы IIS и все веб-приложения.
+1. В командной консоли с правами администратора выполните команду `iisreset /stop`, чтобы отключить службы IIS и все веб-приложения.
 2. В PerfView выберите **начать сбор**.
-3. В командной консоли с правами администратора выполните `iisreset /start` команду, чтобы запустить службы IIS.
+3. В командной консоли с правами администратора выполните команду `iisreset /start`, чтобы запустить службы IIS.
 4. Попробуйте перейти к приложению.
 5. После загрузки приложения вернитесь в PerfView и выберите команду " **Закрыть коллекцию**".
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь со [справочником по API](status-monitor-v2-overview.md#powershell-api-reference) , чтобы узнать о параметрах, которые могли быть пропущены.
 - Если вы перейдете по вопросу, не указанному здесь, вы можете связаться с нами на [GitHub](https://github.com/Microsoft/ApplicationInsights-Home/issues).

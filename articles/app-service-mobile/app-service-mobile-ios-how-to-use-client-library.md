@@ -13,12 +13,12 @@ ms.devlang: objective-c
 ms.topic: article
 ms.date: 06/25/2019
 ms.author: emalani
-ms.openlocfilehash: 44b3259745877ddb43e643f1fa8307e100ca8b38
-ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
+ms.openlocfilehash: 175351d6bab6cc6aee06b83bdeb8544c2e7c2d24
+ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72025240"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72435395"
 ---
 # <a name="how-to-use-ios-client-library-for-azure-mobile-apps"></a>Использование клиентской библиотеки iOS для мобильных приложений Azure
 
@@ -26,14 +26,15 @@ ms.locfileid: "72025240"
 
 > [!NOTE]
 > Центр приложений Visual Studio поддерживает комплексные и интегрированные службы для разработки мобильных приложений. Разработчики могут использовать службы **сборки**, **тестирования** и **распространения** для настройки конвейера непрерывной интеграции и доставки. После развертывания приложения разработчики могут отслеживать состояние и использование своих приложений с помощью служб **аналитики** и **диагностики** , а также привлекать пользователей с помощью службы **push-уведомлений** . Разработчики также **могут использовать проверку подлинности** для аутентификации пользователей и службы **данных** , чтобы сохранять и синхронизировать данные приложений в облаке.
-> Если вы хотите интегрировать облачные службы в мобильное приложение, зарегистрируйтесь в центре приложений Center [App Center](https://appcenter.ms/?utm_source=zumo&utm_medium=Azure&utm_campaign=zumo%20doc) уже сегодня.
+>
+> Если вы хотите интегрировать облачные службы в мобильное приложение, зарегистрируйтесь в [центре приложений](https://appcenter.ms/?utm_source=zumo&utm_medium=Azure&utm_campaign=zumo%20doc) уже сегодня.
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Краткое описание
 В этом руководстве описывается, как выполнять типичные сценарии с помощью последнего [пакета SDK iOS для мобильных приложений Azure][1]. Если вы не знакомы с мобильными приложениями Azure, изучите статью [Быстрый запуск мобильного приложения Azure], чтобы создать серверную часть и таблицу, а также скачать предварительно собранный проект Xcode для iOS. В данном руководстве мы сосредоточимся на клиентской части пакета iOS SDK. Дополнительные сведения о серверном пакете SDK для внутреннего сервера см. практических руководствах по пакету SDK для сервера.
 
 ## <a name="reference-documentation"></a>Справочная документация
 
-Справочную документацию по пакету SDK для клиента iOS см. здесь: [Справочник по клиенту iOS для мобильных приложений Azure][2].
+Справочная документация по пакету SDK для клиента iOS находится здесь: [Справочник по клиенту iOS для мобильных приложений Azure][2].
 
 ## <a name="supported-platforms"></a>Поддерживаемые платформы
 
@@ -46,7 +47,7 @@ ms.locfileid: "72025240"
 
 В данном руководстве предполагается, что вы уже создали серверную часть с таблицей. В этом руководстве предполагается, что в таблице используется та же схему, что и в таблицах, приведенных в этих учебниках. Кроме того, в данном руководстве предполагается, что в коде можно ссылаться на `MicrosoftAzureMobile.framework` и импортировать `MicrosoftAzureMobile/MicrosoftAzureMobile.h`.
 
-## <a name="create-client"></a>Практическое руководство. Создание клиента
+## <a name="create-client"></a>Создание клиента
 
 Чтобы получить доступ к серверной части мобильных приложений Azure в вашем проекте, создайте `MSClient`. Замените `AppUrl` на URL-адрес приложения. Параметры `gatewayURLString` и `applicationKey` можно оставить пустыми. Если вы настроите шлюз для проверки подлинности, укажите в параметре `gatewayURLString` его URL-адрес.
 
@@ -285,7 +286,7 @@ table.pullWithQuery(query, queryId:nil, settings: pullSettings) { (error) in
 }
 ```
 
-## <a name="inserting"></a>Практическое руководство. Добавление данных
+## <a name="inserting"></a>Практическое руководство. Вставка данных
 
 Чтобы вставить новую строку таблицы, создайте `NSDictionary` и вызовите `table insert`. Если включена [динамическая схема], то серверная часть мобильной службы службы приложений Azure автоматически создает столбцы на основе `NSDictionary`.
 
@@ -440,7 +441,7 @@ table.deleteWithId("37BBF396-11F0-4B39-85C8-B319C729AF6D") { (itemId, error) in
 
 С помощью настраиваемого API можно включить любые функциональные возможности серверной части. Они не должны совпадать с операциями с таблицами. Вы не только расширяете контроль над процессом обмена сообщениями, но также получаете возможность читать и задавать заголовки и изменять формат текста ответа.
 
-Для вызова настраиваемого API вызовите `MSClient.invokeAPI`. Содержимое запроса и ответа содержимого рассматривается как JSON. Чтобы использовать другие типы носителей, [используйте другую перегрузку `invokeAPI`][5].  Чтобы вместо запроса `POST` выполнить запрос `GET`, задайте параметру `HTTPMethod` значение `"GET"`, а параметру `body` — значение `nil` (поскольку запросы GET не имеют текста сообщений). Если настраиваемый API поддерживает другие команды HTTP, измените `HTTPMethod` соответствующим образом.
+Для вызова настраиваемого API вызовите `MSClient.invokeAPI`. Содержимое запроса и ответа содержимого рассматривается как JSON. Чтобы использовать другие типы носителей, [используйте другую перегрузку `invokeAPI`][5].  Чтобы сделать запрос `GET` вместо запроса `POST`, задайте параметру `HTTPMethod` значение `"GET"`, а параметр `body` — `nil` (так как запросы GET не содержат тела сообщений). Если пользовательский API поддерживает другие глаголы HTTP, измените `HTTPMethod` соответствующим образом.
 
 **Objective-C**:
 
@@ -477,7 +478,7 @@ client.invokeAPI("sendEmail",
         }
 ```
 
-## <a name="templates"></a>Практическое руководство. Использование шаблонов для отправки кроссплатформенных push-уведомлений
+## <a name="templates"></a>Использование шаблонов для отправки кроссплатформенных push- уведомлений
 
 Чтобы зарегистрировать шаблоны, передайте их с помощью метода **client.push registerDeviceToken** в свое клиентское приложение.
 
@@ -549,7 +550,7 @@ if (error.code == MSErrorPreconditionFailed) {
 if (error.code == MSErrorPreconditionFailed) {
 ```
 
-## <a name="adal"></a>Практическое руководство. Аутентификация пользователей с помощью Библиотеки проверки подлинности Active Directory
+## <a name="adal"></a>Практическое руководство. Проверка подлинности пользователей с помощью библиотеки проверки подлинности Active Directory
 
 Библиотеку проверки подлинности Active Directory (ADAL) можно использовать для входа пользователей в приложение с помощью Azure Active Directory. Клиентский поток аутентификации с использованием пакета SDK поставщика удостоверений предпочтительнее использования метода `loginWithProvider:completion:` .  Клиентский поток аутентификации обеспечивает более удобный пользовательский интерфейс входа и позволяет выполнять дополнительную настройку.
 
@@ -567,7 +568,7 @@ if (error.code == MSErrorPreconditionFailed) {
 3. С помощью приложения Terminal запустите `pod install` из каталога, содержащего проект, а затем откройте созданную рабочую область Xcode (не проект).
 4. Добавьте в приложение приведенный ниже код, соответствующий используемому языку. Выполните следующие замены:
 
-   * Замените строку **INSERT-AUTHORITY-HERE** именем клиента, в котором подготовлено приложение. Его необходимо указать в формате https://login.microsoftonline.com/contoso.onmicrosoft.com. Это значение можно скопировать на вкладке "Домен" в разделе Azure Active Directory на [портал Azure].
+   * Замените строку **INSERT-AUTHORITY-HERE** именем клиента, в котором подготовлено приложение. Его необходимо указать в формате https://login.microsoftonline.com/contoso.onmicrosoft.com. Это значение можно скопировать на вкладке "Домен" в разделе Azure Active Directory на [Портал Azure].
    * Замените текст **INSERT-RESOURCE-ID-HERE** идентификатором клиента для серверной части мобильного приложения. Идентификатор клиента можно скопировать на портале в разделе **Настройки Azure Active Directory** на вкладке **Дополнительно**.
    * Замените текст **INSERT-CLIENT-ID-HERE** идентификатором клиента, скопированным из собственного клиентского приложения.
    * Замените текст **INSERT-REDIRECT-URI-HERE** конечной точкой сайта */.auth/login/done* , используя схему HTTPS. Это значение должно быть аналогично *https://contoso.azurewebsites.net/.auth/login/done* .
@@ -636,7 +637,7 @@ func authenticate(parent: UIViewController, completion: (MSUser?, NSError?) -> V
 }
 ```
 
-## <a name="facebook-sdk"></a>Практическое руководство. Проверка подлинности пользователей с помощью пакета SDK Facebook для iOS
+## <a name="facebook-sdk"></a>Практическое руководство: проверка подлинности пользователей с помощью пакета SDK Facebook для iOS
 
 Пакет SDK Facebook для iOS можно использовать для входа пользователей в приложение с помощью Facebook.  Использование клиентского потока аутентификации предпочтительнее использования метода `loginWithProvider:completion:` .  Клиентский поток аутентификации обеспечивает более удобный пользовательский интерфейс входа и позволяет выполнять дополнительную настройку.
 
@@ -715,7 +716,7 @@ func authenticate(parent: UIViewController, completion: (MSUser?, NSError?) -> V
     }
     ```
 
-## <a name="twitter-fabric"></a>Практическое руководство. Проверка подлинности пользователей с помощью структуры Twitter для iOS
+## <a name="twitter-fabric"></a>Практическое руководство: проверка подлинности пользователей с помощью структуры Twitter для iOS
 
 Структуру для iOS можно использовать для входа пользователей в приложение с помощью Twitter. Использование клиентского потока аутентификации является более предпочтительным, чем использование метода `loginWithProvider:completion:` , так как он обеспечивает более удобный пользовательский интерфейс входа и позволяет выполнять дополнительную настройку.
 
@@ -797,7 +798,7 @@ func authenticate(parent: UIViewController, completion: (MSUser?, NSError?) -> V
     }
     ```
 
-## <a name="google-sdk"></a>Практическое руководство. Проверка подлинности пользователей с помощью пакета SDK Google Sign-In для iOS
+## <a name="google-sdk"></a>Практическое руководство: проверка подлинности пользователей с помощью пакета SDK Google Sign-In для iOS
 
 Пакет SDK Google Sign-In для iOS можно использовать для входа пользователей в приложение с помощью учетной записи Google.  Недавно компания Google объявила о внесении изменений в свои политики безопасности OAuth.  Эти изменения политик в дальнейшем потребуют использовать пакет SDK для Google.
 
@@ -903,13 +904,13 @@ func authenticate(parent: UIViewController, completion: (MSUser?, NSError?) -> V
 [Mobile Services SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 [Authentication]: /develop/mobile/tutorials/get-started-with-users-ios
 [iOS SDK]: https://developer.apple.com/xcode
-[портал Azure]: https://portal.azure.com/
+[Портал Azure]: https://portal.azure.com/
 [Handling Expired Tokens]: https://go.microsoft.com/fwlink/p/?LinkId=301955
 [Live Connect SDK]: https://go.microsoft.com/fwlink/p/?LinkId=301960
 [Permissions]: https://msdn.microsoft.com/library/windowsazure/jj193161.aspx
 [Service-side Authorization]: mobile-services-javascript-backend-service-side-authorization.md
 [Use scripts to authorize users]: /develop/mobile/tutorials/authorize-users-in-scripts-ios
-[динамическая схема]: https://go.microsoft.com/fwlink/p/?LinkId=296271
+[динамическая схема]: https://github.com/Azure/azure-mobile-apps-node/tree/master/samples/dynamic-schema
 [How to: access custom parameters]: /develop/mobile/how-to-guides/work-with-server-scripts#access-headers
 [Create a table]: https://msdn.microsoft.com/library/windowsazure/jj193162.aspx
 [NSDictionary object]: https://go.microsoft.com/fwlink/p/?LinkId=301965

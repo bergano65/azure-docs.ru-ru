@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 05/29/2019
-ms.openlocfilehash: 4d801ada8fd8a8b35c71601d3ca274f26afb24f6
-ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
+ms.openlocfilehash: 90f3e80c92cd4409a77d4661462ae027c535eaf7
+ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71262281"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72434284"
 ---
 # <a name="slow-query-logs-in-azure-database-for-mysql"></a>Журналы запросов в базе данных Azure для MySQL
 В базе данных Azure для MySQL пользователям доступен журнал медленных запросов. Доступ к журналам транзакций не поддерживается. Журнал медленных запросов можно использовать для выявления проблем с производительностью при устранении неполадок.
@@ -38,7 +38,10 @@ ms.locfileid: "71262281"
 - **long_query_time.** Если запрос занимает больше времени, чем задано значением long_query_time (в секундах), информация о нем заносится в журнал. По умолчанию это 10 секунд.
 - **log_slow_admin_statements.** Указывает, нужно ли сохранять в журнал slow_query_log административные инструкции, например ALTER_TABLE и ANALYZE_TABLE.
 - **log_queries_not_using_indexes**. Указывает, нужно ли сохранять в журнал slow_query_log запросы, не использующие индексы.
-- **log_throttle_queries_not_using_indexes**: Ограничивает число не использующих индексы запросов, сохраняемых в журнале медленных запросов. Этот параметр применяется, только если log_queries_not_using_indexes имеет значение "ON" (Включено).
+- **log_throttle_queries_not_using_indexes.** Ограничивает число не использующих индексы запросов, сохраняемых в журнале медленных запросов. Этот параметр применяется, только если log_queries_not_using_indexes имеет значение "ON" (Включено).
+
+> [!Note]
+> Для `sql_text` журнал будет обрезан, если его длина превышает 2048 символов.
 
 Полное описание параметров, применимых для журнала медленных запросов, вы найдете в [соответствующем разделе документации по MySQL](https://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html).
 
@@ -54,7 +57,7 @@ ms.locfileid: "71262281"
 |---|---|
 | `TenantId` | Идентификатор клиента |
 | `SourceSystem` | `Azure` |
-| `TimeGenerated`ФОРМАТА | Метка времени, когда журнал был записан в формате UTC |
+| `TimeGenerated` [UTC] | Метка времени, когда журнал был записан в формате UTC |
 | `Type` | Тип журнала Всегда `AzureDiagnostics` |
 | `SubscriptionId` | Идентификатор GUID для подписки, принадлежащей серверу |
 | `ResourceGroup` | Имя группы ресурсов, принадлежащей серверу |
@@ -65,9 +68,9 @@ ms.locfileid: "71262281"
 | `Category` | `MySqlSlowLogs` |
 | `OperationName` | `LogEvent` |
 | `Logical_server_name_s` | Имя сервера |
-| `start_time_t`ФОРМАТА | Время начала запроса. |
-| `query_time_s` | Общее время, которое потребовалось для выполнения запроса. |
-| `lock_time_s` | Общее время блокировки запроса. |
+| `start_time_t` [UTC] | Время начала запроса. |
+| `query_time_s` | Общее время в секундах, затраченное на выполнение запроса |
+| `lock_time_s` | Общее время блокировки запроса (в секундах) |
 | `user_host_s` | Имя пользователя |
 | `rows_sent_s` | Количество отправленных строк. |
 | `rows_examined_s` | Число проверенных строк. |

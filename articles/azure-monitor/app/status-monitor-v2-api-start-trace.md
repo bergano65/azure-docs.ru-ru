@@ -1,6 +1,6 @@
 ---
-title: 'Справочник по API Azure монитор состояния v2: Запустить трассировку | Документация Майкрософт'
-description: Справочник по API монитор состояния v2. Start-Trace. Собирайте журналы ETW из монитор состояния и Application Insights SDK.
+title: 'Справочник по API агента Application Insights Azure: запуск трассировки | Документация Майкрософт'
+description: Справочник по API агента Application Insights. Start-Trace. Собирайте журналы ETW из монитор состояния и Application Insights SDK.
 services: application-insights
 documentationcenter: .net
 author: TimothyMothra
@@ -12,14 +12,14 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: tilee
-ms.openlocfilehash: f4c43e6bdb70687606041c2f0859ab072db2b587
-ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
+ms.openlocfilehash: b1c5aa34c46a20631b328abfb061dc2477150c72
+ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71200377"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72389852"
 ---
-# <a name="status-monitor-v2-api-start-applicationinsightsmonitoringtrace"></a>API монитор состояния v2: Start-Аппликатионинсигхтсмониторингтраце
+# <a name="application-insights-agent-api-start-applicationinsightsmonitoringtrace"></a>API агента Application Insights: Start-Аппликатионинсигхтсмониторингтраце
 
 В этой статье описывается командлет, который является членом [модуля PowerShell AZ. аппликатионмонитор](https://www.powershellgallery.com/packages/Az.ApplicationMonitor/).
 
@@ -29,7 +29,7 @@ ms.locfileid: "71200377"
 
 Собранные события будут выводиться на консоль в режиме реального времени и сохранены в ETL-файл. Выходной ETL-файл можно открыть с помощью [PerfView](https://github.com/microsoft/perfview) для дальнейшего изучения.
 
-Этот командлет будет выполняться до тех пор, пока не достигнет времени ожидания (по умолчанию 5 минут)`Ctrl + C`или остановлен вручную ().
+Этот командлет будет выполняться до тех пор, пока не достигнет времени ожидания (по умолчанию 5 минут) или остановлен вручную (`Ctrl + C`).
 
 > [!IMPORTANT] 
 > Для этого командлета требуется сеанс PowerShell с разрешениями администратора.
@@ -43,17 +43,17 @@ ms.locfileid: "71200377"
 Среда выполнения присоединения, не имеющая кода, будет создавать события ETW при запуске IIS и при запуске приложения.
 
 Чтобы получить эти события, сделайте следующее:
-1. В консоли CMD с правами администратора выполните `iisreset /stop` команду, чтобы отключить службы IIS и все веб-приложения.
+1. В консоли CMD с правами администратора выполните `iisreset /stop`, чтобы отключить службы IIS и все веб-приложения.
 2. Выполните этот командлет
-3. В консоли CMD с правами администратора выполните `iisreset /start` команду, чтобы запустить IIS.
+3. В консоли CMD с правами администратора выполните `iisreset /start`, чтобы запустить службы IIS.
 4. Попробуйте перейти к приложению.
 5. После завершения загрузки приложения можно вручную его отключить (`Ctrl + C`) или подождать истечения времени ожидания.
 
 ### <a name="what-events-to-collect"></a>События для собраний
 
 При сборе событий можно использовать три варианта:
-1. Используйте параметр `-CollectSdkEvents` для получения сведений о событиях, выдаваемых из пакета SDK для Application Insights.
-2. Используйте параметр `-CollectRedfieldEvents` , чтобы получить события, созданные монитор состояния и средой выполнения Redfield. Эти журналы полезны при диагностике служб IIS и запуска приложений.
+1. Используйте параметр `-CollectSdkEvents` для получения событий, порожденных из пакета SDK для Application Insights.
+2. Используйте параметр `-CollectRedfieldEvents`, чтобы получить события, выдаваемые монитор состояния и средой выполнения Redfield. Эти журналы полезны при диагностике служб IIS и запуска приложений.
 3. Используйте оба параметра для накопления обоих типов событий.
 4. По умолчанию, если параметр не указан, будут собираться оба типа событий.
 
@@ -78,7 +78,7 @@ ms.locfileid: "71200377"
 
 
 
-## <a name="output"></a>Output
+## <a name="output"></a>Выходные данные
 
 
 ### <a name="example-of-application-startup-logs"></a>Пример журналов запуска приложений
@@ -111,17 +111,17 @@ Timeout Reached. Stopping...
 ```
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные способы устранения неполадок:
 
-- Ознакомьтесь с дополнительными инструкциями по устранению неполадок: https://docs.microsoft.com/azure/azure-monitor/app/status-monitor-v2-troubleshoot
+- Дополнительные шаги по устранению неполадок приведены здесь: https://docs.microsoft.com/azure/azure-monitor/app/status-monitor-v2-troubleshoot
 - Ознакомьтесь со [справочником по API](status-monitor-v2-overview.md#powershell-api-reference) , чтобы узнать о параметрах, которые могли быть пропущены.
 - Если вам нужна дополнительная помощь, вы можете связаться с нами на сайте [GitHub](https://github.com/Microsoft/ApplicationInsights-Home/issues).
 
 
 
- Дополнительные возможности монитор состояния версии 2:
- - Воспользуйтесь нашим руководством по [устранению неполадок](status-monitor-v2-troubleshoot.md) монитор состояния v2.
+ Другие действия с агентом Application Insights:
+ - Используйте наше справочное по для [устранения неполадок](status-monitor-v2-troubleshoot.md) агента Application Insights.
  - [Получите конфигурацию](status-monitor-v2-api-get-config.md) , чтобы убедиться, что параметры записаны правильно.
  - [Получение состояния](status-monitor-v2-api-get-status.md) для проверки мониторинга.

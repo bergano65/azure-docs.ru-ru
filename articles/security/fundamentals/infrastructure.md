@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/06/2018
 ms.author: terrylan
-ms.openlocfilehash: 3da9fef8c7de248f30100f94724cd5dcdb7db8e3
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: a17d98d49d2c653e2498a663829d26e8a171fd74
+ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68727075"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72433508"
 ---
 # <a name="azure-infrastructure-security"></a>Безопасность инфраструктуры Azure
 Microsoft Azure работает в центрах обработки данных, управляемых и обслуживаемых корпорацией Майкрософт. Эти географически распределенные центры обработки данных соответствуют основным отраслевым стандартам обеспечения безопасности и надежности, например ISO/IEC 27001:2013 и NIST SP 800-53. Контроль, управление и администрирование центров обработки данных осуществляется операционным персоналом Майкрософт. Наши специалисты имеют многолетний опыт обслуживания крупнейшей в мире сети веб-служб с круглосуточным доступом.
@@ -45,17 +45,17 @@ Microsoft Azure работает в центрах обработки данны
 
 Независимо от типа развертывания вы всегда отвечаете за следующее:
 
-- Data
+- Данные
 - Конечные точки
-- Учетная запись
+- Учетная запись.
 - управление доступом
 
-Убедитесь, что вы понимаете разделение обязанностей между вами и корпорацией Майкрософт в развертывании SaaS, PaaS и IaaS. Дополнительные сведения см. на странице [общих обязанностей для облачных вычислений](https://gallery.technet.microsoft.com/Shared-Responsibilities-81d0ff91/file/153019/1/Shared%20responsibilities%20for%20cloud%20computing.pdf).
+Убедитесь, что вы понимаете разделение обязанностей между вами и корпорацией Майкрософт в развертывании SaaS, PaaS и IaaS. Дополнительные сведения см. на странице [общих обязанностей для облачных вычислений](https://gallery.technet.microsoft.com/Shared-Responsibilities-81d0ff91/file/225237/1/Shared%20Responsibilities%20for%20Cloud%20Computing%20(2017-04-03).pdf).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о действиях корпорации Майкрософт для защиты инфраструктуры Azure приведены в следующих статьях:
 
-- [Объекты, локальная среда и физическая безопасность в Azure](physical-security.md)
+- [Объекты Azure, локальная среда и физическая безопасность](physical-security.md)
 - [Доступность инфраструктуры Azure](infrastructure-availability.md)
 - [Компоненты и границы информационной системы Azure](infrastructure-components.md)
 - [Сетевая архитектура Azure](infrastructure-network.md)

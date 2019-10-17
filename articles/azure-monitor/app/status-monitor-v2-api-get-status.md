@@ -1,6 +1,6 @@
 ---
-title: 'Справочник по API Azure монитор состояния v2: Получить состояние | Документация Майкрософт'
-description: Справочник по API монитор состояния v2. Get-Аппликатионинсигхтсмониторингстатус. Отслеживайте производительность веб-сайта без повторного развертывания веб-сайта. Работает с веб-приложениями ASP.NET, размещенными локально, на виртуальных машинах или в Azure.
+title: 'Справочник по API агента Azure Application Insights: получение состояния | Документация Майкрософт'
+description: Справочник по API агента Application Insights. Get-Аппликатионинсигхтсмониторингстатус. Отслеживайте производительность веб-сайта без повторного развертывания веб-сайта. Работает с веб-приложениями ASP.NET, размещенными локально, на виртуальных машинах или в Azure.
 services: application-insights
 documentationcenter: .net
 author: TimothyMothra
@@ -12,14 +12,14 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: tilee
-ms.openlocfilehash: c3982e7eb78c1113c73a8e7e9d7b00ad403ac486
-ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
+ms.openlocfilehash: 6e103e1856e338669224540a991c4b9ea6b10d6d
+ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71058253"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72389868"
 ---
-# <a name="status-monitor-v2-api-get-applicationinsightsmonitoringstatus"></a>API монитор состояния v2: Get-Аппликатионинсигхтсмониторингстатус
+# <a name="application-insights-agent-api-get-applicationinsightsmonitoringstatus"></a>API агента Application Insights: Get-Аппликатионинсигхтсмониторингстатус
 
 В этой статье описывается командлет, который является членом [модуля PowerShell AZ. аппликатионмонитор](https://www.powershellgallery.com/packages/Az.ApplicationMonitor/).
 
@@ -34,9 +34,9 @@ ms.locfileid: "71058253"
 
 ## <a name="examples"></a>Примеры
 
-### <a name="example-application-status"></a>Пример: Состояние приложения
+### <a name="example-application-status"></a>Пример: состояние приложения
 
-Выполните команду `Get-ApplicationInsightsMonitoringStatus` , чтобы отобразить состояние мониторинга веб-сайтов.
+Выполните команду `Get-ApplicationInsightsMonitoringStatus`, чтобы отобразить состояние мониторинга веб-сайтов.
 
 ```
 PS C:\Windows\system32> Get-ApplicationInsightsMonitoringStatus
@@ -80,9 +80,9 @@ AppAlreadyInstrumented : true
 - **DemoWebApp333** был вручную инструментирован с помощью пакета SDK для Application Insights. Монитор состояния обнаружил пакет SDK и не отслеживает этот сайт.
 
 
-### <a name="example-powershell-module-information"></a>Пример: Сведения о модуле PowerShell
+### <a name="example-powershell-module-information"></a>Пример: сведения о модуле PowerShell
 
-Выполните команду `Get-ApplicationInsightsMonitoringStatus -PowerShellModule` , чтобы отобразить сведения о текущем модуле:
+Выполните команду `Get-ApplicationInsightsMonitoringStatus -PowerShellModule`, чтобы отобразить сведения о текущем модуле.
 
 ```
 PS C:\> Get-ApplicationInsightsMonitoringStatus -PowerShellModule
@@ -134,7 +134,7 @@ ApplicationInsightsSdkPath (Exists: True)
 C:\Program Files\WindowsPowerShell\Modules\Az.ApplicationMonitor\content\Runtime\Microsoft.ApplicationInsights.dll
 ```
 
-### <a name="example-runtime-status"></a>Пример: Состояние среды выполнения
+### <a name="example-runtime-status"></a>Пример: состояние среды выполнения
 
 Вы можете проверить процесс на инструментированном компьютере, чтобы узнать, загружены ли все библиотеки DLL. Если наблюдение работает, необходимо загрузить не менее 12 библиотек DLL.
 
@@ -182,12 +182,12 @@ listdlls64.exe -accepteula w3wp
 
 
 ### <a name="-powershellmodule"></a>-Повершеллмодуле
-**Необязательный**. Используйте этот параметр, чтобы сообщить номера версий и пути библиотек DLL, необходимых для мониторинга.
+**Необязательно**. Используйте этот параметр, чтобы сообщить номера версий и пути библиотек DLL, необходимых для мониторинга.
 Используйте этот параметр, если необходимо указать версию любой библиотеки DLL, включая пакет SDK для Application Insights.
 
 ### <a name="-inspectprocess"></a>-Инспектпроцесс
 
-**Необязательный**. Используйте этот параметр для сообщения о том, запущен ли сервер IIS.
+**Необязательно**. Используйте этот параметр для сообщения о том, запущен ли сервер IIS.
 Также будут скачаны внешние средства, чтобы определить, загружены ли необходимые библиотеки DLL в среду выполнения IIS.
 
 
@@ -199,10 +199,10 @@ listdlls64.exe -accepteula w3wp
 
 ### <a name="-force"></a>-Force
 
-**Необязательный**. Используется только с Инспектпроцесс. Используйте этот параметр, чтобы пропустить запрос пользователя, который появляется перед скачиванием дополнительных средств.
+**Необязательно**. Используется только с Инспектпроцесс. Используйте этот параметр, чтобы пропустить запрос пользователя, который появляется перед скачиванием дополнительных средств.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
- Дополнительные возможности монитор состояния версии 2:
- - Воспользуйтесь нашим руководством по [устранению неполадок](status-monitor-v2-troubleshoot.md) монитор состояния v2.
+ Другие действия с агентом Application Insights:
+ - Используйте наше справочное по для [устранения неполадок](status-monitor-v2-troubleshoot.md) агента Application Insights.

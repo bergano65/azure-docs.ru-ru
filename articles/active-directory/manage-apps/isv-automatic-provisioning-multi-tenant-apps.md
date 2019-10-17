@@ -15,12 +15,12 @@ ms.date: 07/23/2019
 ms.author: baselden
 ms.reviewer: zhchia
 ms.collection: active-directory
-ms.openlocfilehash: c44006b20f4c0ef186f406e554ff555cda0c1dd8
-ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
+ms.openlocfilehash: 119c46ac2d1d34d86a6bfb9f75384f262f89219b
+ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72373388"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72429449"
 ---
 # <a name="enable-automatic-user-provisioning-for-your-multi-tenant-application"></a>Включение автоматической подготовки пользователей для приложения с несколькими клиентами
 
@@ -81,7 +81,7 @@ Azure AD предоставляет несколько путей интегра
 
 ## <a name="azure-ad-provisioning-service-scim"></a>Служба подготовки Azure AD (SCIM)
 
-Службы подготовки Azure AD используют [SCIM] (https://aka.ms/SCIMOverview, протокол, поддерживаемый многими поставщиками удостоверений (поставщиков удостоверений). Мы рекомендуем использовать службу подготовки Azure AD, если вы хотите поддерживать поставщиков удостоверений в дополнение к Azure AD, так как любые SCIM, совместимые с IdP, могут подключаться к конечной точке SCIM.
+Службы подготовки Azure AD используют [scim](https://aka.ms/SCIMOverview), промышленный стандарт для подготовки, поддерживаемый многими поставщиками удостоверений (поставщиков удостоверений), а также приложениями (например, резервный элемент, g Suite, Dropbox). Мы рекомендуем использовать службу подготовки Azure AD, если вы хотите поддерживать поставщиков удостоверений в дополнение к Azure AD, так как любые SCIM, совместимые с IdP, могут подключаться к конечной точке SCIM. Создавая простую конечную точку/User, вы можете включить подготовку без необходимости поддерживать собственный модуль синхронизации. 
 
 Дополнительные сведения о том, как пользователи службы подготовки Azure AD SCIM, см. в следующих статьях: 
 
@@ -106,16 +106,6 @@ Azure AD предоставляет несколько путей интегра
 * [Обзор Microsoft Graph проверки подлинности](https://docs.microsoft.com/graph/auth/)
 
 * [Приступая к работе с Microsoft Graph](https://developer.microsoft.com/graph/get-started)
-
-* [Использование API Microsoft Graph](https://docs.microsoft.com/graph/use-the-api)
-
-* [Microsoft Graph Explorer](https://aka.ms/ge) 
-
-* [Справочник по разрешениям Microsoft Graph](https://docs.microsoft.com/graph/permissions-reference)
-
-* [Рекомендации по работе с Microsoft Graph](https://docs.microsoft.com/graph/best-practices-concept)
-
-* [Рекомендуемые сценарии для Microsoft Graph](https://developer.microsoft.com/graph/examples)
 
 ## <a name="using-saml-jit-for-provisioning"></a>Использование SAML JIT для подготовки
 

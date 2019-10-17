@@ -1,6 +1,6 @@
 ---
-title: Azure монитор состояния v2. Приступая к работе | Документация Майкрософт
-description: Краткое руководство по монитор состояния v2. Отслеживайте производительность веб-сайта без повторного развертывания веб-сайта. Работает с веб-приложениями ASP.NET, размещенными локально, в виртуальных машинах или в Azure.
+title: Агент Application Insights Azure — Приступая к работе | Документация Майкрософт
+description: Краткое руководство по Application Insightsу агенту. Отслеживайте производительность веб-сайта без повторного развертывания веб-сайта. Работает с веб-приложениями ASP.NET, размещенными локально, в виртуальных машинах или в Azure.
 services: application-insights
 documentationcenter: .net
 author: TimothyMothra
@@ -12,18 +12,18 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: tilee
-ms.openlocfilehash: d9c354edac3cbd3faccaa261654e56f858befdf6
-ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
+ms.openlocfilehash: f1911d8187b186f301bea771963f922ee3574fd6
+ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71058237"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72388215"
 ---
-# <a name="get-started-with-status-monitor-v2"></a>Начало работы с монитором состояний версии 2
+# <a name="get-started-with-azure-monitor-application-insights-agent-for-on-premises-servers"></a>Начало работы с агентом Azure Monitor Application Insights для локальных серверов
 
 Эта статья содержит команды краткого руководства, которые должны работать в большинстве сред.
 Инструкции зависят от коллекция PowerShell распространения обновлений.
-Эти команды поддерживают параметр PowerShell `-Proxy` .
+Эти команды поддерживают параметр PowerShell `-Proxy`.
 
 Описание этих команд, инструкции по настройке и сведения об устранении неполадок см. в [подробных инструкциях](status-monitor-v2-detailed-instructions.md).
 
@@ -31,7 +31,7 @@ ms.locfileid: "71058237"
 
 ## <a name="download-and-install-via-powershell-gallery"></a>Загрузка и установка с помощью коллекция PowerShell
 
-### <a name="install-prerequisites"></a>установить необходимые компоненты;
+### <a name="install-prerequisites"></a>Установка необходимых компонентов
 Запустите PowerShell от имени администратора.
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process -Force
@@ -41,7 +41,7 @@ Install-Module -Name PowerShellGet -Force
 ``` 
 Закройте PowerShell.
 
-### <a name="install-status-monitor-v2"></a>Установка монитор состояния v2
+### <a name="install-application-insights-agent"></a>Установка агента Application Insights
 Запустите PowerShell от имени администратора.
 ```powershell   
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process -Force
@@ -59,7 +59,7 @@ Enable-ApplicationInsightsMonitoring -InstrumentationKey xxxxxxxx-xxxx-xxxx-xxxx
 ### <a name="download-the-module"></a>Скачать модуль
 Вручную Скачайте последнюю версию модуля из [коллекция PowerShell](https://www.powershellgallery.com/packages/Az.ApplicationMonitor).
 
-### <a name="unzip-and-install-status-monitor-v2"></a>Распакуйте и установите монитор состояния версии 2
+### <a name="unzip-and-install-application-insights-agent"></a>Распакуйте и установите агент Application Insights
 ```powershell
 $pathToNupkg = "C:\Users\t\Desktop\Az.ApplicationMonitor.0.3.0-alpha.nupkg"
 $pathToZip = ([io.path]::ChangeExtension($pathToNupkg, "zip"))
@@ -74,7 +74,7 @@ Enable-ApplicationInsightsMonitoring -InstrumentationKey xxxxxxxx-xxxx-xxxx-xxxx
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
  Просмотр телеметрии:
 
@@ -89,7 +89,7 @@ Enable-ApplicationInsightsMonitoring -InstrumentationKey xxxxxxxx-xxxx-xxxx-xxxx
 - [Добавьте данные телеметрии веб-клиента](../../azure-monitor/app/javascript.md) , чтобы просмотреть исключения из кода веб-страницы и включить вызовы трассировки.
 - [Добавьте в код пакет SDK для Application Insights](../../azure-monitor/app/asp-net.md) , чтобы можно было вставить вызовы трассировки и журнала.
 
-Дополнительные возможности монитор состояния версии 2:
+Другие действия с агентом Application Insights:
 
 - Ознакомьтесь с [подробными инструкциями](status-monitor-v2-detailed-instructions.md) для объяснения команд, найденных здесь.
-- Воспользуйтесь нашим руководством по [устранению неполадок](status-monitor-v2-troubleshoot.md) монитор состояния v2.
+- Используйте наше справочное по для [устранения неполадок](status-monitor-v2-troubleshoot.md) агента Application Insights.

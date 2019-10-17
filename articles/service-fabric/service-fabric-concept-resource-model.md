@@ -7,19 +7,19 @@ ms.service: service-fabric
 ms.topic: conceptual
 ms.date: 08/07/2019
 ms.author: atsenthi
-ms.openlocfilehash: 36c0f02202c738ac96d26b748b741cd8eee27380
-ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
+ms.openlocfilehash: dcffc1ba783b49343bf3380b62c3d4085f5aa347
+ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70241825"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72390095"
 ---
 # <a name="what-is-the-service-fabric-application-resource-model"></a>Что такое модель ресурсов приложения Service Fabric?
 Рекомендуется развертывать Service Fabric приложения на кластере Service Fabric с помощью Azure Resource Manager. Этот метод позволяет описать приложения и службы в JSON и развернуть их в том же шаблоне диспетчер ресурсов, что и кластер. В отличие от развертывания приложений и управления ими с помощью PowerShell или Azure CLI, нет необходимости ждать готовности кластера. Регистрацию, подготовку и развертывание приложения можно выполнить за один шаг. Это рекомендуемая методика управления жизненным циклом приложения в кластере. Дополнительные сведения см. в [рекомендациях](https://docs.microsoft.com/azure/service-fabric/service-fabric-best-practices-infrastructure-as-code#azure-service-fabric-resources).
 
 Если это возможно, следует управлять приложениями как ресурсами Resource Manager, чтобы улучшить:
-* Журнал аудита: Диспетчер ресурсов выполняет аудит каждой операции и хранит подробный *Журнал действий* , который поможет отслеживать любые изменения, внесенные в эти приложения и кластер.
-* Управление доступом на основе ролей: Управление доступом к кластерам, а также приложениям, развернутым в кластере, можно выполнить с помощью одного шаблона диспетчер ресурсов.
+* Журнал аудита: Resource Manager выполняется аудит каждой операции и хранит подробный *журнал действий*, позволяющий отслеживать все изменения, внесенные в эти приложения и кластер.
+* Управление доступом на основе ролей. Управление доступом к кластерам, а также приложениям, развернутым в кластере, можно выполнить с помощью одного и того же шаблона диспетчер ресурсов.
 * Azure Resource Manager (через портал Azure) станет одним-остановкой для управления кластером и критическими развертываниями приложений.
 
 ## <a name="service-fabric-application-life-cycle-with-azure-resource-manager"></a>Service Fabric жизненного цикла приложения с Azure Resource Manager 
@@ -38,7 +38,7 @@ ms.locfileid: "70241825"
 ### <a name="create-a-storage-account"></a>Создание учетной записи хранения 
 Для развертывания приложения из шаблона диспетчер ресурсов требуется учетная запись хранения для размещения образа приложения. Вы можете повторно использовать существующую учетную запись хранения или создать новую учетную запись хранения для размещения приложений. Если вы хотите использовать существующую учетную запись хранения, этот шаг можно пропустить. 
 
-![Создать учетную запись хранения][CreateStorageAccount]
+![Создание учетной записи хранилища][CreateStorageAccount]
 
 ### <a name="configure-storage-account"></a>Настройка учетной записи хранения 
 После создания учетной записи хранения необходимо создать контейнер больших двоичных объектов, в котором можно разместить приложения. В портал Azure перейдите к учетной записи хранения, в которой вы хотите хранить приложения. Выберите колонку **BLOB-объектов** и нажмите кнопку **добавить контейнер** . Добавьте новый контейнер с общим уровнем доступа к BLOB-объекту.
@@ -51,10 +51,10 @@ ms.locfileid: "70241825"
 1. В Visual Studio щелкните правой кнопкой мыши проект голосования и выберите пакет.   
 ![Приложение пакета][PackageApplication]  
 2. Откройте только что созданный каталог **.\сервице-фабрик-дотнет-куиккстарт\вотинг\пкг\дебуг** и заархивировать содержимое в файл с именем **голосование. zip** , чтобы файл ApplicationManifest. XML находился в корне ZIP-файла.  
-![ZIP-приложение][ZipApplication]  
+![Zip приложение @ no__t-1  
 3. Переименуйте расширение файла с ZIP на **sfpkg**.
 4. В портал Azure в контейнере **приложения** вашей учетной записи хранения щелкните **Отправить** и отправить **голосование. sfpkg**.  
-![Отправить пакет приложения][UploadAppPkg]
+Пакет приложений ![Upload @ no__t-1
 
 Теперь приложение размещается на промежуточном уровне. Теперь все готово для создания шаблона Azure Resource Manager для развертывания приложения.      
    
@@ -69,9 +69,9 @@ ms.locfileid: "70241825"
 | Параметр              | Описание                                 | Пример                                                      | Комментарии                                                     |
 | ---------------------- | ------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | clusterName            | Имя кластера, в который выполняется развертывание | SF-cluster123                                                |                                                              |
-| приложение            | Имя приложения                 | Голосовани                                                       |
+| application            | Имя приложения                 | Голосовани                                                       |
 | applicationTypeName    | Имя типа приложения.           | VotingType                                                   | Должно соответствовать ApplicationManifest. XML                 |
-| applicationTypeVersion | Версия типа приложения         | 1.0.0                                                        | Должно соответствовать ApplicationManifest. XML                 |
+| ApplicationTypeVersion | Версия типа приложения         | 1.0.0                                                        | Должно соответствовать ApplicationManifest. XML                 |
 | serviceName            | Имя службы,         | Голосование ~ VotingWeb                                             | Должен быть в формате ApplicationName ~ ServiceType            |
 | serviceTypeName        | Имя типа службы                | VotingWeb                                                    | Должно соответствовать значению в файле ServiceManifest. XML                 |
 | апппаккажеурл          | URL-адрес хранилища больших двоичных объектов приложения     | https://servicefabricapps.blob.core.windows.net/apps/Voting.sfpkg | URL-адрес пакета приложения в хранилище BLOB-объектов (процедура для установки описана ниже) |
@@ -149,15 +149,15 @@ New-AzResourceGroupDeployment -ResourceGroupName "sf-cluster-rg" -TemplateParame
     Remove-AzResource  -ResourceId <String> [-Force] [-ApiVersion <String>]
     ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Получение сведений о модели ресурсов приложения:
 
 * [Моделирование приложения в Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-application-model)
 * [Service Fabric манифесты приложения и службы](https://docs.microsoft.com/azure/service-fabric/service-fabric-application-and-service-manifests)
 
 ## <a name="see-also"></a>См. также
-* [Рекомендации](https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-best-practices-infrastructure-as-code)
-* [Управление приложениями и службами как ресурсами Azure](https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-best-practices-infrastructure-as-code)
+* [Рекомендации по использованию хранилища данных SQL Azure](https://docs.microsoft.com/azure/service-fabric/service-fabric-best-practices-infrastructure-as-code)
+* [Управление приложениями и службами как ресурсами Azure](https://docs.microsoft.com/azure/service-fabric/service-fabric-best-practices-infrastructure-as-code)
 
 <!--Image references-->
 [CreateStorageAccount]: ./media/service-fabric-application-model/create-storage-account.png

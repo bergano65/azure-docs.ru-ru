@@ -1,6 +1,6 @@
 ---
 title: Ошибки квоты Azure | Документация Майкрософт
-description: Описывается, как устранять ошибки квоты ресурсов.
+description: Описывает, как устранять ошибки квот ресурсов при развертывании ресурсов с помощью Azure Resource Manager.
 services: azure-resource-manager
 documentationcenter: ''
 author: tfitzmac
@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 03/09/2018
 ms.author: tomfitz
-ms.openlocfilehash: 7938f2c47e4af8d8804191fbb9e55b379f9554ef
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 201ddf69f9c28b5b3a4197f91768f749152094de
+ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60390229"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72390308"
 ---
 # <a name="resolve-errors-for-resource-quotas"></a>Устранение ошибок квот ресурсов
 
@@ -50,9 +50,9 @@ please delete some resources of this type before creating a new one.
 Квоты применяются к группам ресурсов, подпискам, учетным записям и другим областям. Например, для подписки может быть настроено ограничение числа ядер для региона. При попытке развертывания виртуальной машины с большим количеством ядер, чем разрешено, вы получите сообщение о том, что квота превышена.
 Дополнительные сведения о квотах Azure см. в статье [Подписка Azure, границы, квоты и ограничения службы](../azure-subscription-service-limits.md).
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Устранение неисправностей
 
-### <a name="azure-cli"></a>Инфраструктура CLI Azure
+### <a name="azure-cli"></a>Azure CLI
 
 Чтобы узнать квоты виртуальной машины, выполните команду `az vm list-usage` в Azure CLI.
 

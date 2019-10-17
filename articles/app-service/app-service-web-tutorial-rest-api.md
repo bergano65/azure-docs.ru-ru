@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 11/21/2018
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 137b569820ea7394b6a3beb24129c905a2efd123
-ms.sourcegitcommit: 86d49daccdab383331fc4072b2b761876b73510e
+ms.openlocfilehash: f13b390047ea4d8280b106f3b02a8f18944a6f99
+ms.sourcegitcommit: 1c2659ab26619658799442a6e7604f3c66307a89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70743862"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72255175"
 ---
 # <a name="tutorial-host-a-restful-api-with-cors-in-azure-app-service"></a>Руководство. Размещение API-интерфейсов RESTful с поддержкой CORS в службе приложений Azure
 
@@ -72,7 +72,7 @@ dotnet run
 
 Перейдите в расположение `http://localhost:5000/swagger` в браузере, чтобы поэкспериментировать с пользовательским интерфейсом Swagger.
 
-![Выполняющийся локально API ASP.NET Core](./media/app-service-web-tutorial-rest-api/local-run.png)
+![Выполняющийся локально API ASP.NET Core](./media/app-service-web-tutorial-rest-api/azure-app-service-local-swagger-ui.png)
 
 Перейдите в расположение `http://localhost:5000/api/todo`, чтобы просмотреть список элементов списка задач в формате JSON.
 
@@ -136,7 +136,7 @@ To https://<app_name>.scm.azurewebsites.net/<app_name>.git
 
 Перейдите в расположение `http://<app_name>.azurewebsites.net/swagger` в браузере и ознакомьтесь с пользовательским интерфейсом Swagger.
 
-![API ASP.NET Core, выполняющийся в службе приложений Azure](./media/app-service-web-tutorial-rest-api/azure-run.png)
+![API ASP.NET Core, выполняющийся в службе приложений Azure](./media/app-service-web-tutorial-rest-api/azure-app-service-browse-app.png)
 
 Перейдите в `http://<app_name>.azurewebsites.net/swagger/v1/swagger.json`, чтобы просмотреть файл _swagger.json_ для развернутого API.
 
@@ -160,7 +160,7 @@ dotnet run
 
 Перейдите в приложение браузера по адресу `http://localhost:5000`. Откройте окно инструментов разработчика в браузере (`Ctrl`+`Shift`+`i` в Chrome для Windows) и просмотрите вкладку **Консоль**. Вы должны увидеть сообщение об ошибке: `No 'Access-Control-Allow-Origin' header is present on the requested resource`.
 
-![Ошибка CORS в клиенте браузера](./media/app-service-web-tutorial-rest-api/cors-error.png)
+![Ошибка CORS в клиенте браузера](./media/app-service-web-tutorial-rest-api/azure-app-service-cors-error.png)
 
 Из-за несоответствия домена между приложением браузера (`http://localhost:5000`) и удаленным ресурсом (`http://<app_name>.azurewebsites.net`), а также того факта, что ваш API в службе приложений не отправляет заголовок `Access-Control-Allow-Origin`, браузер ограничил загрузку междоменного содержимого в приложении браузера.
 
@@ -183,7 +183,7 @@ az resource update --name web --resource-group myResourceGroup --namespace Micro
 
 Обновите приложение браузера, перейдя по адресу `http://localhost:5000`. Сообщение об ошибке в окне **консоли** исчезнет, вы сможете просмотреть данные из развернутого API и выполнить с ними операции. Теперь ваш удаленный API поддерживает CORS для приложения браузера, запущенного в локальной среде. 
 
-![Успешное тестирование CORS в клиенте браузера](./media/app-service-web-tutorial-rest-api/cors-success.png)
+![Успешное тестирование CORS в клиенте браузера](./media/app-service-web-tutorial-rest-api/azure-app-service-cors-success.png)
 
 Поздравляем! Вы запустили API в службе приложений Azure с поддержкой CORS.
 

@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: martinco
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c75ec0ec212c99e474d13892178acbdc14e5f386
-ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
+ms.openlocfilehash: c34f59c3e9f679adf8ae410f648cb7de6dba6447
+ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71075275"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72430051"
 ---
 #  <a name="adopting-azure-ad-conditional-access"></a>Внедрение условного доступа Azure AD
 
@@ -52,7 +52,7 @@ Azure AD усовершенствуется на постоянной основ
 * 24 сентября 2018 г., [Azure Active Directory условный доступ в Azure Databricks](https://azure.microsoft.com/updates/azure-active-directory-conditional-access-in-azure-databricks/)
 * 21 сентября 2018, [пользовательские элементы управления условного доступа Azure AD доступны в общедоступной предварительной версии](https://azure.microsoft.com/updates/azure-ad-conditional-access-custom-controls-are-in-public-preview/)
 * 21 сентября 2018, [теперь доступна поддержка условного доступа Azure AD для ограниченного доступа с Microsoft Cloud App Security](https://azure.microsoft.com/updates/azure-ad-conditional-access-support-for-limited-access-with-microsoft-cloud-app-security-is-now-available/)
-* 21 сентября 2018 г. [, условный доступ Azure AD: Поддержка управляемого браузера для платформ iOS и Android теперь доступна в предварительной версии](https://azure.microsoft.com/updates/azure-ad-conditional-access-managed-browser-support-for-ios-android-platforms-now-in-preview/)
+* 21 сентября 2018 г [., условный доступ Azure AD: поддержка управляемого браузера для платформ iOS и Android теперь доступна в предварительной версии](https://azure.microsoft.com/updates/azure-ad-conditional-access-managed-browser-support-for-ios-android-platforms-now-in-preview/)
 * 21 сентября 2018, [Условный доступ Azure AD для кодов стран предоставляется в общедоступной предварительной версии](https://azure.microsoft.com/updates/azure-ad-conditional-access-for-country-codes-is-in-public-preview/)
 * 21 сентября 2018 г., [условия использования Azure AD уже доступны](https://azure.microsoft.com/updates/azure-ad-terms-of-use-now-available/)
 
@@ -69,7 +69,6 @@ Azure AD усовершенствуется на постоянной основ
 
 Кроме того, ознакомьтесь со следующими ссылками, чтобы получить рекомендации по защите доступа ко всем службам, интегрированным с Azure Active Directory.
 
-* [Что такое защита базовых показателей (Предварительная версия)?](baseline-protection.md) Базовая защита гарантирует, что в среде Azure Active Directory установлен по крайней мере базовый уровень безопасности.
 * [Конфигурации доступа к удостоверениям и устройствам](https://docs.microsoft.com/microsoft-365/enterprise/microsoft-365-policies-configurations). В этой статье описывается настройка безопасного доступа к облачным службам с помощью Enterprise Mobility + Security продуктов путем реализации рекомендуемой среды и конфигурации, включая предписанный набор политик условного доступа и связанных возможностей.
 * [Справочник по параметрам условного доступа Azure Active Directory](technical-reference.md). Том
    * Какие приложения используют условный доступ?
@@ -91,7 +90,7 @@ Azure AD усовершенствуется на постоянной основ
 
 См. следующие курсы по условному доступу и многое другое в [pluralsight.com](https://www.pluralsight.com/):
 
-* Pluralsight.com: [Проектирование управления удостоверениями в Microsoft Azure](https://www.pluralsight.com/courses/microsoft-azure-identity-management-design)
+* Pluralsight.com: [Разработка управления удостоверениями в Microsoft Azure](https://www.pluralsight.com/courses/microsoft-azure-identity-management-design)
    * "Этот курс проведет вас по ключевым элементам, которые необходимо знать для проектирования решения управления удостоверениями с помощью Azure AD". Условный доступ Azure AD рассматривается в разделе "Использование ролей и управление доступом с помощью Azure AD".
 
 * Pluralsight.com: [Разработка проверки подлинности для Microsoft Azure](https://www.pluralsight.com/courses/microsoft-azure-authentication-design)
@@ -116,7 +115,7 @@ Azure AD усовершенствуется на постоянной основ
 * Опубликовано 18 сентября 2018 г., [ресурсы для переноса приложений в Azure Active Directory](../manage-apps/migration-resources.md)
    * Этот технический документ содержит список ресурсов, которые помогут вам перенести доступ к приложениям и проверку подлинности в Azure Active Directory (Azure AD).
 
-* Опубликовано 12 июля 2018 [схема безопасности и соответствия требованиям Azure: Размещение веб-приложений PaaS для официальных рабочих нагрузок в Великобритании](../../security/blueprints/ukofficial-paaswa-overview.md)
+* Опубликовано 12 июля 2018 [схема безопасности и соответствия требованиям Azure: размещение веб-приложений PaaS для официальных рабочих нагрузок в Великобритании](../../security/blueprints/ukofficial-paaswa-overview.md)
    * Схемы Azure Blueprint содержат документацию и шаблоны автоматизации, позволяющие развертывать облачную архитектуру. Они предоставляют решения для сценариев, включающих требования к аккредитации и (или) соответствию.
 
 ## <a name="guidance-for-it-administrators"></a>Руководство для ИТ администраторов
@@ -129,32 +128,32 @@ Azure AD усовершенствуется на постоянной основ
 
 * [Рекомендации по условному доступу в Azure Active Directory](best-practices.md)
 * [Использование проверок доступа Azure AD для управления пользователями, которые были исключены из политик условного доступа](../governance/conditional-access-exclusion.md)
-* [Практическое руководство. Планирование развертывания условного доступа в Azure Active Directory](plan-conditional-access.md)
-* [Краткое руководство Требовать MFA для конкретных приложений с Azure Active Directory условным доступом](app-based-mfa.md)
-* [Краткое руководство Требование принятия условий использования перед доступом к облачным приложениям](require-tou.md)
-* [Краткое руководство Блокировать доступ при обнаружении риска в сеансе с Azure Active Directory условным доступом](app-sign-in-risk.md)
+* [Руководство. Планирование развертывания условного доступа в Azure Active Directory](plan-conditional-access.md)
+* [Краткое руководство. требование MFA для конкретных приложений с помощью Azure Active Directory условного доступа](app-based-mfa.md)
+* [Краткое руководство. принятие условий использования перед доступом к облачным приложениям](require-tou.md)
+* [Краткое руководство. Блокирование доступа при обнаружении риска в сеансе с Azure Active Directory условным доступом](app-sign-in-risk.md)
 * [Вопросы и ответы по условному доступу Azure AD](faqs.md)
    * Для просмотра дополнительных вопросов можно также просмотреть [форум MSDN](https://social.msdn.microsoft.com/Forums/home?forum=WindowsAzureAD&sort=relevancedesc&brandIgnore=True&searchTerm=password+reset+azure).
    * Если вы не можете найти ответ на проблему, наши группы поддержки всегда доступны для дальнейшей помощи. Используйте службу [поддержки Майкрософт](../authentication/active-directory-passwords-troubleshoot.md#contact-microsoft-support).
 
 ### <a name="tutorials"></a>Учебники
 
-* [**Краткое руководство. Требовать MFA для конкретных приложений с Azure Active Directory условным доступом**](app-based-mfa.md)
+* [**Краткое руководство. требование MFA для конкретных приложений с помощью Azure Active Directory условного доступа**](app-based-mfa.md)
    * В этом кратком руководстве показано, как настроить политику условного доступа Azure AD, которая требует многофакторной проверки подлинности для выбранного облачного приложения в вашей среде.
 
-* [**Краткое руководство. Требовать принятия условий использования перед доступом к облачным приложениям**](require-tou.md)
+* [**Краткое руководство. принятие условий использования перед доступом к облачным приложениям**](require-tou.md)
    * В этом кратком руководстве показано, как настроить политику условного доступа Azure AD, которая требует, чтобы условий использования был принят для выбранного облачного приложения в вашей среде.
 
-* [**Краткое руководство. Блокировать доступ при обнаружении риска в сеансе с Azure Active Directory условным доступом**](app-sign-in-risk.md)
+* [**Краткое руководство. Блокирование доступа при обнаружении риска в сеансе с Azure Active Directory условным доступом**](app-sign-in-risk.md)
    * В этом кратком руководстве показано, как настроить политику условного доступа, которая блокирует вход при обнаружении настроенного уровня риска при входе.
 
-* [Учебник. **Перенос классической политики, требующей многофакторной проверки подлинности, в портал Azure**](policy-migration-mfa.md)
+* [Руководство. **Миграция классической политики, требующей многофакторной проверки подлинности, в портал Azure**](policy-migration-mfa.md)
    * В этом руководстве показано, как перенести классическую политику, требующую многофакторную проверку подлинности (MFA) для облачного приложения.
 
 ## <a name="end-user-readiness-and-communication"></a>Готовность и взаимодействие конечных пользователей
 
 Условный доступ использует другие возможности Azure AD, которые могут повлиять на работу конечного пользователя. Например, вы можете использовать многофакторную идентификацию Azure, чтобы включить надежную проверку подлинности для пользователей. В этом случае вы будете использовать шаблоны конечных пользователей Azure MFA.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Запустите развертывание с помощью [документации по планированию развертывания условного доступа](plan-conditional-access.md).

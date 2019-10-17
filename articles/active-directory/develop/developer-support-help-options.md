@@ -17,12 +17,12 @@ ms.author: ryanwi
 ms.reviewer: jmprieur, saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: efa14e88eeb8ab43f998a32aaa0c14220acab03a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a160f78f69ed559c576147e9758c837d5ae9b77e
+ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66235342"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72429979"
 ---
 # <a name="support-and-help-options-for-developers"></a>Возможности получения поддержки и справки для разработчиков
 
@@ -35,7 +35,7 @@ ms.locfileid: "66235342"
 > * Если возникла проблема с одной из наших библиотек аутентификации, сообщите об этом на сайте *GitHub*.
 > * И, наконец, если вам требуется консультация, подайте запрос в службу поддержки.
 
-## <a name="search"></a>поиска
+## <a name="search"></a>служба поиска.
 
 Если у вас есть вопрос по разработке, вы можете найти ответ на него в нашей документации, [примерах на сайте GitHub](https://github.com/azure-samples) или на сайте [Stack Overflow](https://www.stackoverflow.com).
 
@@ -62,7 +62,7 @@ Stack Overflow — это идеальное место для вопросов
 
 Если вы не нашли ответ на свой вопрос через поиск, опубликуйте его на сайте Stack Overflow. При этом используйте один из указанных ниже тегов. Это поможет сообществу своевременно определить ваш вопрос и ответить на него.
 
-|Компонент/область  | Tags |
+|Компонент/область  | Теги |
 |---------|---------|
 | Библиотека ADAL | [[adal]](https://stackoverflow.com/questions/tagged/adal) |
 | Библиотека MSAL     | [[msal]](https://stackoverflow.com/questions/tagged/msal) |
@@ -81,10 +81,10 @@ Stack Overflow — это идеальное место для вопросов
 
 Если возникла ошибка или проблема, связанная с нашими библиотеками, сообщите о ней на сайте GitHub. Так как в наших библиотеках используется открытый код, вы также можете отправить запрос на вытягивание.
 
-Список библиотек и репозиториев GitHub см. в следующих:
+Список библиотек и их репозиториев GitHub см. в следующих статьях:
 
 * Библиотеки и репозитории GitHub [ADAL](active-directory-authentication-libraries.md).
-* [MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet) [MSAL.js](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-angularjs/README.md), [MSAL. Android](https://github.com/AzureAD/microsoft-authentication-library-for-android), и [MSAL.obj_c](https://github.com/AzureAD/microsoft-authentication-library-for-objc) библиотеки и репозитории GitHub
+* [MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet) [MSAL. js](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-angularjs/README.md), [MSAL. Android](https://github.com/AzureAD/microsoft-authentication-library-for-android)и [MSAL. obj _C](https://github.com/AzureAD/microsoft-authentication-library-for-objc) библиотеки и репозитории GitHub
 
 ## <a name="open-a-support-request"></a>Подача запроса в службу поддержки
 
@@ -95,9 +95,3 @@ Stack Overflow — это идеальное место для вопросов
 * Если вы не являетесь клиентом Azure, можно подать запрос в корпорацию Майкрософт на странице [коммерческой поддержки](https://support.microsoft.com/en-us/gp/contactus81?Audience=Commercial).
 
 Также можно получить поддержку или задать вопрос при помощи [виртуального агента](https://support.microsoft.com/contactus/?ws=support).
-
-### <a name="free-chat-support-for-a-limited-time"></a>Бесплатная техническая поддержка в формате чата
-
-Кроме того, вы можете воспользоваться технической поддержкой в формате чата. Она предоставляется бесплатно для партнеров корпорации Майкрософт в течение ограниченного времени. Если ваша компания не является партнером корпорации Майкрософт, можно бесплатно зарегистрировать ее для использования других возможностей [здесь](https://partners.microsoft.com/PartnerProgram/simplifiedenrollment.aspx).
-
-После регистрации компании отправьте запрос в чат [здесь](https://aka.ms/devchat).
