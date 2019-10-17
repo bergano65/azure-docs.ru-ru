@@ -1,5 +1,5 @@
 ---
-title: Делегированное управление ресурсами. Azure Lighthouse
+title: Делегированное управление ресурсами Azure
 description: Предложения управляемых служб позволяют поставщикам услуг продавать предложения по управлению ресурсами клиентам в Azure Marketplace.
 author: JnHs
 ms.service: lighthouse
@@ -7,12 +7,12 @@ ms.author: jenhayes
 ms.date: 07/11/2019
 ms.topic: overview
 manager: carmonm
-ms.openlocfilehash: cec6453cdf339e82420a1b12af6c8e60526fdc03
-ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
+ms.openlocfilehash: 8cc75fde348d070a19d1987d1403c63e8e6d2278
+ms.sourcegitcommit: e0a1a9e4a5c92d57deb168580e8aa1306bd94723
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67811008"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72286632"
 ---
 # <a name="azure-delegated-resource-management"></a>Делегированное управление ресурсами Azure
 

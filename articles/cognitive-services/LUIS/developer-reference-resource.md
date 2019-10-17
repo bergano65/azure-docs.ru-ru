@@ -10,12 +10,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 09/27/2019
 ms.author: diberry
-ms.openlocfilehash: 0707ed3dfee9af27b7cab66c7952d1e7c1d57cb8
-ms.sourcegitcommit: 6fe40d080bd1561286093b488609590ba355c261
+ms.openlocfilehash: 8accac7fe6068007180403fdab27013da161b28c
+ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71703198"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72437188"
 ---
 # <a name="developer-resources-for-language-understanding"></a>Ресурсы для разработчиков Language Understanding
 
@@ -27,7 +27,7 @@ ms.locfileid: "71703198"
 
 Найдите справочную документацию на основе средства:
 
-* [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/cognitiveservices#az-cognitiveservices-list)
+* [Azure CLI](https://docs.microsoft.com/cli/azure/cognitiveservices#az-cognitiveservices-list)
 
 * [Azure RM PowerShell](https://docs.microsoft.com/powershell/module/azurerm.cognitiveservices/?view=azurermps-4.4.1#cognitive_services)
 
@@ -37,7 +37,7 @@ ms.locfileid: "71703198"
 
 Дополнительные сведения о [конечной точке прогнозирования v3](luis-migration-api-v3.md).
 
-### <a name="rest-apis"></a>REST API
+### <a name="rest-apis"></a>API-интерфейсы REST
 
 Интерфейсы API для конечных точек создания и прогнозирования доступны в API-интерфейсах:
 
@@ -46,13 +46,13 @@ ms.locfileid: "71703198"
 
 ### <a name="language-based-sdks"></a>Пакеты SDK на основе языка
 
-|Язык |Справочная документация|Пакет|Примеры|Краткие руководства|
+|Язык |Справочная документация|Package|Примеры|Краткие руководства|
 |--|--|--|--|--|
 |C#|[Разработка](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.language.luis.authoring?view=azure-dotnet)</br>[Прогнозирование](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.language.luis.runtime?view=azure-dotnet)|[Создание NuGet](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring/)<br>[Прогнозирование NuGet](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime/)|[Примеры пакета SDK для .NET](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/LUIS)|[Создание приложения и управление им](sdk-csharp-quickstart-authoring-app.md)<br>[Конечная точка прогнозирования запросов](sdk-csharp-quickstart-query-prediction-endpoint.md)|
 |Go|[Создание и прогнозирование](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v2.0/luis)|[Пакет SDK](https://github.com/Azure/azure-sdk-for-go/tree/master/services/cognitiveservices/v2.0/luis)|[Разработка](https://github.com/Azure-Samples/cognitive-services-language-understanding/tree/master/documentation-samples/quickstarts/change-model/go)<br>[Прогнозирование](https://github.com/Azure-Samples/cognitive-services-language-understanding/tree/master/documentation-samples/quickstarts/analyze-text/go)|[Разработка с помощью функции "ОСТАВШАЯся"](luis-get-started-go-add-utterance.md)<br>[Прогнозирование с помощью функции RESTFUL](luis-get-started-go-get-intent.md)|
-|Java|[Создание и прогнозирование](https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/languageunderstanding?view=azure-java-stable)|[Создание Maven](https://search.maven.org/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-luis-authoring)<br>[Прогноз Maven](https://search.maven.org/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-luis-runtime)|[Разработка](https://github.com/Azure-Samples/cognitive-services-language-understanding/tree/master/documentation-samples/quickstarts/change-model/java)<br>[Прогнозирование](https://github.com/Azure-Samples/cognitive-services-language-understanding/tree/master/documentation-samples/quickstarts/analyze-text/java)|[Разработка](luis-get-started-java-add-utterance.md)<br>[Прогнозирование](luis-get-started-java-get-intent.md)
+|Java:|[Создание и прогнозирование](https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/languageunderstanding?view=azure-java-stable)|[Создание Maven](https://search.maven.org/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-luis-authoring)<br>[Прогноз Maven](https://search.maven.org/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-luis-runtime)|[Разработка](https://github.com/Azure-Samples/cognitive-services-language-understanding/tree/master/documentation-samples/quickstarts/change-model/java)<br>[Прогнозирование](https://github.com/Azure-Samples/cognitive-services-language-understanding/tree/master/documentation-samples/quickstarts/analyze-text/java)|[Разработка](luis-get-started-java-add-utterance.md)<br>[Прогнозирование](luis-get-started-java-get-intent.md)
 |Node.js|[Разработка](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-luis-authoring/?view=azure-node-latest)<br>[Прогнозирование](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-luis-runtime/?view=azure-node-latest)|[Создание NPM](https://www.npmjs.com/package/azure-cognitiveservices-luis-authoring)<br>[Прогноз NPM](https://www.npmjs.com/package/azure-cognitiveservices-luis-runtime)|[Разработка](https://github.com/Azure-Samples/cognitive-services-language-understanding/tree/master/documentation-samples/quickstarts/change-model/node)<br>[Прогнозирование](https://github.com/Azure-Samples/cognitive-services-language-understanding/tree/master/documentation-samples/quickstarts/analyze-text/node)|[Разработка с помощью функции "ОСТАВШАЯся"](https://docs.microsoft.com/azure/cognitive-services/luis/luis-get-started-node-get-intent)<br>[Прогнозирование с помощью функции RESTFUL](https://docs.microsoft.com/azure/cognitive-services/luis/luis-get-started-node-add-utterance)|
-|Python|[Создание и прогнозирование](https://docs.microsoft.com/python/api/azure-cognitiveservices-language-luis/?view=azure-python)|[Pip](https://pypi.org/project/azure-cognitiveservices-language-luis/)|[Разработка](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/python/LUIS/application_quickstart.py)|[Разработка](sdk-python-quickstart-authoring-app.md)<br>[Прогнозирование с помощью функции RESTFUL](luis-get-started-python-get-intent.md)
+|Python|[Создание и прогнозирование](sdk-python-quickstart-authoring-app.md)|[Pip](https://pypi.org/project/azure-cognitiveservices-language-luis/)|[Разработка](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/python/LUIS/application_quickstart.py)|[Разработка](sdk-python-quickstart-authoring-app.md)<br>[Прогнозирование с помощью функции RESTFUL](luis-get-started-python-get-intent.md)
 
 ## <a name="other-tools-and-sdks"></a>Другие средства и пакеты SDK
 
@@ -67,6 +67,6 @@ ms.locfileid: "71703198"
 * [Эмулятор Bot](https://github.com/Microsoft/BotFramework-Emulator/releases) — классическое приложение, позволяющее Bot-разработчикам тестировать и отлаживать программы-роботы, созданные с помощью пакета SDK для Bot Framework.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения об общих [кодах ошибок HTTP](luis-reference-response-codes.md)

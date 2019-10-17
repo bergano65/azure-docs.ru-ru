@@ -150,7 +150,7 @@ ms.locfileid: "72434740"
 | **[TIME dotCom](https://www.time.com.my/enterprise/connectivity/cloud-interconnect)** | Поддерживается | Поддерживается | Куала-Лумпур |
 | **[Transtelco](https://transtelco.net/enterprise-services/)** |Поддерживается |Поддерживается |Даллас, Лос-Анджелес|
 | **[UOLDIVEO](https://www.uoldiveo.com.br/)** |Поддерживается |Поддерживается |Сан-Паулу |
-| **[Verizon](https://enterprise.verizon.com/products/network/application-enablement/secure-cloud-interconnect/)** |Поддерживается |Поддерживается |Амстердам, Чикаго, Далласе, Гонконг ОАР, Лондон, Мумбаи, Silicon впадина, Сингапур, Сидней, Токио, Торонто, Вашингтон (округ Колумбия) |
+| **[Verizon](https://enterprise.verizon.com/products/network/application-enablement/secure-cloud-interconnect/)** |Поддерживается |Поддерживается |Амстердам, Чикаго, Далласе, Гонконг (САР), Лондон, Мумбаи, Silicon впадина, Сингапур, Сидней, Токио, Торонто, Вашингтон (округ Колумбия) |
 | **[виасат](http://www.directcloud.viasatbusiness.com/)** | Поддерживается | Поддерживается | Вашингтон (округ Колумбия) 2; |
 | **[Вокус Group NZ](https://www.vocus.co.nz/business/cloud-data-centres)** | Поддерживается | Поддерживается | О., Сидней |
 | **[Vodafone](https://www.vodafone.com/business/global-enterprise/global-connectivity/vodafone-ip-vpn-cloud-connect)** |Поддерживается |Поддерживается |Amsterdam2, Лондон, Сингапур |

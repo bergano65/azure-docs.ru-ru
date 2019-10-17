@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 01/18/2019
 ms.author: cynthn
-ms.openlocfilehash: ab5af0e5971b91f45cbb12b4d0583caafa5ad504
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: d79cefa9adec403ebbb5105351d2909eac9d02a4
+ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70079657"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72390506"
 ---
 # <a name="create-a-vm-from-a-vhd-by-using-the-azure-portal"></a>Создание виртуальной машины из виртуального жесткого диска с помощью портала Azure
 
@@ -34,6 +34,7 @@ ms.locfileid: "70079657"
 
 Не используйте специализированный диск, если нужно создать несколько виртуальных машин. Вместо этого для крупных развертываний нужно [создать образ](capture-image-resource.md), а затем [использовать его для создания нескольких виртуальных машин](create-vm-generalized-managed.md).
 
+Рекомендуется ограничить число параллельных развертываний до 20 виртуальных машин с помощью одного моментального снимка или виртуального жесткого диска. 
 
 ## <a name="copy-a-disk"></a>Копирование диска
 
@@ -75,7 +76,8 @@ ms.locfileid: "70079657"
 11. Когда все будет готово, выберите **Просмотр и создание**. 
 12. Если конфигурация виртуальной машины пройдет проверку, щелкните **Создать**, чтобы начать развертывание.
 
-## <a name="next-steps"></a>Следующие шаги
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 Можно также использовать PowerShell для [отправки VHD в Azure и создания специализированной виртуальной машины](create-vm-specialized.md).
 

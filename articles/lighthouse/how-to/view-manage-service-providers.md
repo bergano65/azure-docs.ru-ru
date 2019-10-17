@@ -1,5 +1,5 @@
 ---
-title: Просмотр поставщиков служб и управление ими на портале Azure
+title: Просмотр поставщиков служб и управление ими
 description: Клиенты могут использовать страницу "Поставщики услуг" на портале Azure для просмотра сведений о поставщиках услуг, предложениях поставщиков услуг и делегированных ресурсах.
 author: JnHs
 ms.author: jenhayes
@@ -7,12 +7,12 @@ ms.service: lighthouse
 ms.date: 07/11/2019
 ms.topic: overview
 manager: carmonm
-ms.openlocfilehash: a45458e7417bba058522fdc0dbc34fee04ad9af8
-ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
+ms.openlocfilehash: 0a7d39d95e35e30a16ce11db5b942024b6890438
+ms.sourcegitcommit: e0a1a9e4a5c92d57deb168580e8aa1306bd94723
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67810828"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72286597"
 ---
 # <a name="view-and-manage-service-providers"></a>Просмотр поставщиков служб и управление ими
 

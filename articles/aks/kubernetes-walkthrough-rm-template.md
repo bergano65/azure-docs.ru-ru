@@ -8,18 +8,18 @@ ms.topic: quickstart
 ms.date: 04/19/2019
 ms.author: mlearned
 ms.custom: mvc
-ms.openlocfilehash: e7cc9b63768385e4665e330b2b02a884b84c2188
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.openlocfilehash: 307074618cae75ba57be219b4f975e2aec279682
+ms.sourcegitcommit: 1c2659ab26619658799442a6e7604f3c66307a89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "67615385"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72255499"
 ---
 # <a name="quickstart-deploy-an-azure-kubernetes-service-aks-cluster-using-an-azure-resource-manager-template"></a>Краткое руководство. Развертывание кластера Службы Azure Kubernetes (AKS) с использованием шаблона Azure Resource Manager
 
 Служба Azure Kubernetes (AKS) — это управляемая служба Kubernetes, которая позволяет быстро развертывать кластеры и управлять ими. В этом кратком руководстве вы развернете кластер AKS с использованием шаблона Azure Resource Manager. Затем в кластере будет запущено многоконтейнерное приложение, которое включает в себя веб-интерфейс и экземпляр Redis.
 
-![Изображение перехода к приложению Azure для голосования](media/container-service-kubernetes-walkthrough/azure-vote.png)
+![Изображение перехода к приложению Azure для голосования](media/container-service-kubernetes-walkthrough/azure-voting-application.png)
 
 В этом руководстве предполагается, что у вас есть некоторое представление о функциях Kubernetes. Дополнительные сведения см. в статье о [ключевых концепциях Kubernetes для Службы Azure Kubernetes (AKS)][kubernetes-concepts].
 
@@ -259,7 +259,7 @@ azure-vote-front   LoadBalancer   10.0.37.27   52.179.23.131   80:30572/TCP   2m
 
 Чтобы увидеть приложение для голосования Azure в действии, откройте в веб-браузере внешний IP-адрес вашей службы.
 
-![Изображение перехода к приложению Azure для голосования](media/container-service-kubernetes-walkthrough/azure-vote.png)
+![Изображение перехода к приложению Azure для голосования](media/container-service-kubernetes-walkthrough/azure-voting-application.png)
 
 ## <a name="delete-cluster"></a>Удаление кластера
 

@@ -10,18 +10,18 @@ ms.subservice: immersive-reader
 ms.topic: reference
 ms.date: 06/20/2019
 ms.author: metan
-ms.openlocfilehash: b25a002cb1e2563ab97a2081c6b6a05362b66779
-ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
+ms.openlocfilehash: 1908ed916d61c7a65b1f0061c0fe8d8a08b5e41c
+ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71338516"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72388094"
 ---
-# <a name="immersive-reader-sdk-reference"></a>Справочник по пакету SDK для иммерсивного чтения
+# <a name="immersive-reader-sdk-reference-guide"></a>Справочное руководство по пакету SDK для иммерсивного чтения
 
 Пакет SDK для иммерсивное средство чтения — это библиотека JavaScript, которая позволяет интегрировать иммерсивное средство чтения в веб-приложение.
 
-# <a name="functions"></a>Функции
+# <a name="functions"></a>Функции Azure
 
 Пакет SDK предоставляет функции:
 
@@ -41,14 +41,14 @@ launchAsync(token: string, subdomain: string, content: Content, options?: Option
 
 ### <a name="parameters"></a>Параметры
 
-| Название | Тип | Описание |
+| Name | Тип | Описание |
 | ---- | ---- |------------ |
 | `token` | string | Маркер проверки подлинности Azure AD. См. [руководство по проверке подлинности Azure AD](./azure-active-directory-authentication.md). |
 | `subdomain` | string | Пользовательский поддомен для иммерсивного ресурса чтения в Azure. См. [руководство по проверке подлинности Azure AD](./azure-active-directory-authentication.md). |
 | `content` | [Содержимое](#content) | Объект, содержащий содержимое, которое должно отображаться в иммерсивное средство чтения. |
 | `options` | [Варианты](#options) | Параметры для настройки определенного поведения иммерсивное средство чтения. Необязательный элемент. |
 
-### <a name="returns"></a>Возвращает
+### <a name="returns"></a>Результаты
 
 Возвращает значение `Promise<HTMLDivElement>`, которое разрешается при загрузке иммерсивное средство чтения. @No__t-0 разрешается в элемент `div`, единственным дочерним элементом которого является элемент `iframe`, содержащий страницу «иммерсивное средство чтения».
 
@@ -56,7 +56,7 @@ launchAsync(token: string, subdomain: string, content: Content, options?: Option
 
 Возвращенный `Promise` будет отклонен с помощью объекта [`Error`](#error) , если не удается загрузить иммерсивное средство чтения. Дополнительные сведения см. в [кодах ошибок](#error-codes).
 
-## <a name="close"></a>закрыть
+## <a name="close"></a>Закрыть
 
 Закрывает иммерсивное средство чтения.
 
@@ -80,13 +80,13 @@ renderButtons(options?: RenderButtonsOptions): void;
 
 ### <a name="parameters"></a>Параметры
 
-| Название | Тип | Описание |
+| Name | Тип | Описание |
 | ---- | ---- |------------ |
 | `options` | [рендербуттонсоптионс](#renderbuttonsoptions) | Параметры для настройки определенного поведения функции Рендербуттонс. Необязательный элемент. |
 
 ## <a name="types"></a>Типы
 
-### <a name="content"></a>Content
+### <a name="content"></a>Контент
 
 Содержит содержимое, отображаемое в иммерсивное средство чтения.
 
@@ -114,7 +114,7 @@ renderButtons(options?: RenderButtonsOptions): void;
 | Тип MIME | Описание |
 | --------- | ----------- |
 | text/plain | Обычный текст. |
-| text/html | Содержимое HTML. [Подробнее](#html-support)|
+| text/html | Содержимое HTML. [Дополнительные сведения](#html-support)|
 | Application/масмл + XML | Язык математической разметки (Масмл). [Узнайте больше](https://developer.mozilla.org/en-US/docs/Web/MathML).
 | приложение/vnd. openxmlformats-officeDocument. WordprocessingML. Document | Документ в формате Microsoft Word. docx.
 
@@ -171,9 +171,9 @@ renderButtons(options?: RenderButtonsOptions): void;
 | Код | Описание |
 | ---- | ----------- |
 | бадаргумент | Указан недопустимый аргумент. Дополнительные сведения см. в `message`. |
-| Тайм-аут | Не удалось загрузить иммерсивное средство чтения в течение указанного времени ожидания. |
+| Время ожидания | Не удалось загрузить иммерсивное средство чтения в течение указанного времени ожидания. |
 | TokenExpired | Срок действия заданного маркера истек. |
-| До значения | Превышено ограничение скорости вызовов. |
+| Регулирование | Превышено ограничение скорости вызовов. |
 
 ## <a name="launching-the-immersive-reader"></a>Запуск иммерсивное средство чтения
 
@@ -189,7 +189,7 @@ renderButtons(options?: RenderButtonsOptions): void;
 
 | Атрибут | Описание |
 | --------- | ----------- |
-| `data-button-style` | Задает стиль кнопки. Возможные значения: `icon`, `text` или `iconAndText`. По умолчанию — `icon`. |
+| `data-button-style` | Задает стиль кнопки. Возможные значения: `icon`, `text` или `iconAndText`. По умолчанию равен `icon`. |
 | `data-locale` | Задает языковой стандарт. Например, `en-US` или `fr-FR`. По умолчанию используется английский `en`. |
 | `data-icon-px-size` | Задает размер значка в пикселях. По умолчанию используется 20px. |
 
@@ -198,12 +198,12 @@ renderButtons(options?: RenderButtonsOptions): void;
 Используйте последние версии следующих браузеров, чтобы получить лучшие впечатления от работы с иммерсивное средство чтения.
 
 * Microsoft Edge
-* Internet Explorer 11
+* Internet Explorer 11;
 * Google Chrome
 * Mozilla Firefox
 * Apple Safari;
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Изучите [пакет SDK иммерсивного средства чтения на сайте GitHub](https://github.com/microsoft/immersive-reader-sdk).
-* [Краткое руководство Создание веб-приложения, запускающего иммерсивное средство чтения (C#) ](./quickstart.md)
+* [Краткое руководство. Создание веб-приложения, запускающего иммерсивное средство чтения (C#)](./quickstart.md)

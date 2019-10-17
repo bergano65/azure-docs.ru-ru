@@ -255,7 +255,7 @@ ktutil: q
 
 - [Использование PowerShell](../storage/scripts/storage-blobs-container-calculate-size-powershell.md)
 
-- Найти размер */Усер/Хиве/. Корзина/* папка в кластере HDInsight с помощью следующей командной строки:
+- Найти размер */user/hive/.Trash/* папка в кластере HDInsight с помощью следующей командной строки:
   
   `hdfs dfs -du -h /user/hive/.Trash/`
 
