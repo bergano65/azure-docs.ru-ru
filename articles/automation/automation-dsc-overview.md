@@ -10,16 +10,16 @@ ms.author: robreed
 ms.date: 11/06/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: a3a52fbda91d19905bd6add631f536010197c4dd
-ms.sourcegitcommit: 388c8f24434cc96c990f3819d2f38f46ee72c4d8
+ms.openlocfilehash: b0b5e02009ddbb72bb062d341e7d233acfb0ceb3
+ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70061386"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72429400"
 ---
 # <a name="azure-automation-state-configuration-overview"></a>Обзор службы "Настройка состояния службы автоматизации Azure"
 
-"Настройка состояния службы автоматизации Azure" — это служба Azure, которая позволяет создавать и компилировать [конфигурации](/powershell/dsc/configurations)PowerShell Desired State Configuration (DSC), управлять ими, импортировать [ресурсы DSC](/powershell/dsc/resources), а также назначать конфигурации целевым узлам, и все это в облаке.
+"Настройка состояния службы автоматизации Azure" — это служба Azure, которая позволяет создавать и компилировать [конфигурации](/powershell/scripting/dsc/configurations/configurations)PowerShell Desired State Configuration (DSC), управлять ими, импортировать [ресурсы DSC](/powershell/scripting/dsc/resources/resources), а также назначать конфигурации целевым узлам, и все это в облаке.
 
 ## <a name="why-use-azure-automation-state-configuration"></a>Преимущества службы "Настройка состояния службы автоматизации Azure"
 
@@ -27,11 +27,11 @@ ms.locfileid: "70061386"
 
 ### <a name="built-in-pull-server"></a>Встроенный опрашивающий сервер
 
-Служба "Настройка состояния службы автоматизации Azure" предоставляет опрашивающий сервер DSC, подобный [службе DSC компонента Windows](/powershell/dsc/pullserver), чтобы целевые узлы автоматически получали конфигурации, соответствовали требуемому состоянию и сообщали о соответствии. Встроенный опрашивающий сервер в службе автоматизации Azure избавляет от необходимости устанавливать и обслуживать собственный опрашивающий сервер. Служба автоматизации Azure может работать с виртуальными и физическими машинами под управлением Windows или Linux, размещенными в облаке или локально.
+Служба "Настройка состояния службы автоматизации Azure" предоставляет опрашивающий сервер DSC, подобный [службе DSC компонента Windows](/powershell/scripting/dsc/pull-server/pullserver), чтобы целевые узлы автоматически получали конфигурации, соответствовали требуемому состоянию и сообщали о соответствии. Встроенный опрашивающий сервер в службе автоматизации Azure избавляет от необходимости устанавливать и обслуживать собственный опрашивающий сервер. Служба автоматизации Azure может работать с виртуальными и физическими машинами под управлением Windows или Linux, размещенными в облаке или локально.
 
 ### <a name="management-of-all-your-dsc-artifacts"></a>Управление всеми артефактами DSC
 
-Служба "Настройка состояния службы автоматизации Azure" обеспечивает тот же слой управления для [Desired State Configuration PowerShell](/powershell/dsc/overview), который служба автоматизации Azure предлагает для скриптов PowerShell.
+Служба "Настройка состояния службы автоматизации Azure" обеспечивает тот же слой управления для [Desired State Configuration PowerShell](/powershell/scripting/dsc/overview/overview), который служба автоматизации Azure предлагает для скриптов PowerShell.
 
 Вы можете управлять всеми конфигурациями, ресурсами и целевыми узлами DSC с помощью портала Azure или PowerShell.
 
@@ -41,7 +41,7 @@ ms.locfileid: "70061386"
 
 Узлы, управление которыми осуществляется с помощью "Настройка состояния службы автоматизации Azure", отправляют подробные отчеты с данными о состоянии на встроенный опрашивающий сервер. В службе "Настройка состояния службы автоматизации Azure" можно настроить отправку этих данных в рабочую область Log Analytics. Сведения о том, как отправлять данные о состоянии конфигурации состояния в рабочую область Log Analytics, см. в разделе [пересылка данных отчетов о настройке состояния службы автоматизации Azure в журналы Azure Monitor](automation-dsc-diagnostics.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 При использовании конфигурации состояния службы автоматизации Azure (DSC) учитывайте следующие требования.
 
@@ -49,12 +49,12 @@ ms.locfileid: "70061386"
 
 Для узлов под управлением Windows поддерживаются следующие версии:
 
-- Windows Server 2019
-- Windows Server 2016
+- Windows Server 2019
+- Windows Server 2016
 - Windows Server 2012R2
 - Windows Server 2012
-- Windows Server 2008 R2 с пакетом обновления 1
-- Windows 10
+- Windows Server 2008 R2 с пакетом обновления 1;
+- Windows 10
 - Windows 8.1
 - Windows 7
 
@@ -74,7 +74,7 @@ ms.locfileid: "70061386"
 
 Если узлы находятся в частной сети, для взаимодействия с автоматизацией требуется следующий порт и URL-адреса для настройки состояния (DSC):
 
-* Port: только исходящий интернет-трафик через TCP-порт 443.
+* порт: только исходящий трафик Интернета через TCP-порт 443.
 * Глобальный URL-адрес: *.azure-automation.net.
 * Глобальный URL-адрес US Gov (Вирджиния): *.azure automation.us
 * Служба агента: https://\<ИД рабочей области\>.agentsvc.azure-automation.net
@@ -86,7 +86,7 @@ ms.locfileid: "70061386"
 #### <a name="proxy-support"></a>Поддержка прокси-сервера
 
 Поддержка прокси-сервера для агента DSC доступна в Windows версии 1809 и более поздних версиях.
-Чтобы настроить этот параметр, задайте значение для **прокси** и **ProxyCredential** в скрипте [метаконфигурации](automation-dsc-onboarding.md#generating-dsc-metaconfigurations) , используемом для регистрации узлов.
+Чтобы настроить этот параметр, задайте значение для **прокси** и **ProxyCredential** в [скрипте метаконфигурации](automation-dsc-onboarding.md#generating-dsc-metaconfigurations) , используемом для регистрации узлов.
 Прокси-сервер недоступен в DSC для предыдущих версий Windows.
 
 Для узлов Linux агент DSC поддерживает прокси-сервер и будет использовать переменную http_proxy для определения URL-адреса.
@@ -99,19 +99,19 @@ ms.locfileid: "70061386"
 
 | **Регион** | **Запись DNS** |
 | --- | --- |
-| Центрально-западная часть США | wcus-jobruntimedata-prod-su1.azure-automation.net</br>wcus-agentservice-prod-1.azure-automation.net |
+| Западно-центральная часть США | wcus-jobruntimedata-prod-su1.azure-automation.net</br>wcus-agentservice-prod-1.azure-automation.net |
 | Центрально-южная часть США |scus-jobruntimedata-prod-su1.azure-automation.net</br>scus-agentservice-prod-1.azure-automation.net |
-| East US   | eus-jobruntimedata-prod-su1.azure-automation.net</br>eus-agentservice-prod-1.azure-automation.net |
-| Восточная часть США 2 |eus2-jobruntimedata-prod-su1.azure-automation.net</br>eus2-agentservice-prod-1.azure-automation.net |
+| Восточная часть США   | eus-jobruntimedata-prod-su1.azure-automation.net</br>eus-agentservice-prod-1.azure-automation.net |
+| Восток США 2 |eus2-jobruntimedata-prod-su1.azure-automation.net</br>eus2-agentservice-prod-1.azure-automation.net |
 | Центральная Канада |cc-jobruntimedata-prod-su1.azure-automation.net</br>cc-agentservice-prod-1.azure-automation.net |
 | Западная Европа |we-jobruntimedata-prod-su1.azure-automation.net</br>we-agentservice-prod-1.azure-automation.net |
 | Северная Европа |ne-jobruntimedata-prod-su1.azure-automation.net</br>ne-agentservice-prod-1.azure-automation.net |
 | Юго-Восточная Азия |sea-jobruntimedata-prod-su1.azure-automation.net</br>sea-agentservice-prod-1.azure-automation.net|
 | Центральная Индия |cid-jobruntimedata-prod-su1.azure-automation.net</br>cid-agentservice-prod-1.azure-automation.net |
-| Восточная Япония |jpe-jobruntimedata-prod-su1.azure-automation.net</br>jpe-agentservice-prod-1.azure-automation.net |
+| Япония, восток |jpe-jobruntimedata-prod-su1.azure-automation.net</br>jpe-agentservice-prod-1.azure-automation.net |
 | Юго-Восточная Австралия |ase-jobruntimedata-prod-su1.azure-automation.net</br>ase-agentservice-prod-1.azure-automation.net |
 | Южная часть Соединенного Королевства | uks-jobruntimedata-prod-su1.azure-automation.net</br>uks-agentservice-prod-1.azure-automation.net |
-| US Gov (Вирджиния) | usge-jobruntimedata-prod-su1.azure-automation.us<br>usge-agentservice-prod-1.azure-automation.us |
+| Штат Виргиния, США | usge-jobruntimedata-prod-su1.azure-automation.us<br>usge-agentservice-prod-1.azure-automation.us |
 
 Для списка IP-адресов региона вместо его имен скачайте XML-файл [IP-адресов центра обработки данных Azure](https://www.microsoft.com/download/details.aspx?id=41653) из Центра загрузки Майкрософт и ознакомьтесь с ним.
 
@@ -122,7 +122,7 @@ ms.locfileid: "70061386"
 >
 > Скачивайте новый XML-файл каждую неделю и вносите соответствующие изменения на своем сайте, чтобы правильно определять службы, выполняемые в Azure. Пользователям Azure ExpressRoute следует обратить внимание, что этот файл используется для того, чтобы обновлять протокол BGP в пространстве Azure в первую неделю каждого месяца.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Чтобы приступить к работе со службой "Настройка состояния службы автоматизации Azure", см. сведения в [этой статье](automation-dsc-getting-started.md).
 - Дополнительные сведения о подключении узлов см. в статье [Подключение компьютеров для управления с помощью Azure Automation DSC](automation-dsc-onboarding.md).

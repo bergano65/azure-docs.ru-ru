@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 09/11/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 713b43f720e3bccae3b9c6457a3317427fb3fc1a
-ms.sourcegitcommit: 4d177e6d273bba8af03a00e8bb9fe51a447196d0
+ms.openlocfilehash: 20d5db9656dbcab31d73e504f1ca67fd577aec8e
+ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71960068"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72439741"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-jira-saml-sso-by-microsoft"></a>Руководство по Интеграция единого входа Azure Active Directory с JIRA SAML SSO by Microsoft
 
@@ -214,8 +214,8 @@ ms.locfileid: "71960068"
     1. Установите флажок **Force Azure Login** (Принудительный вход в Azure), если вы хотите выполнять вход, используя только учетные данные Azure AD.
     
        > [!Note]
-       >Чтобы включить форму входа по умолчанию для входа администратора на странице входа при включенном параметре принудительного входа в Azure, добавьте параметр запроса в URL-адресе в браузере.
-       > `https://<domain:port>/login.action?force_azure_login=false`
+       > Чтобы включить форму входа по умолчанию для входа администратора на странице входа при включенном параметре принудительного входа в Azure, добавьте параметр запроса в URL-адресе в браузере.
+       > `https://<domain:port>/login.jsp?force_azure_login=false`
 
     1. Нажмите кнопку **Сохранить**, чтобы сохранить изменения.
 

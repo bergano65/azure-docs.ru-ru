@@ -2,18 +2,18 @@
 title: включение файла
 description: включение файла
 services: storage
-author: wmgries
+author: roygara
 ms.service: storage
 ms.topic: include
 ms.date: 07/08/2018
-ms.author: wgries
+ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: 359347e41264711a6ac0fa4d2dd0c3633590e917
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 07cae1cee9810646de5bf9610a29991376736373
+ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185360"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72391769"
 ---
 Эта ошибка может возникать всякий раз, когда служба "Синхронизация файлов Azure" недоступна с сервера. Вы можете устранить эту ошибку, выполнив следующие шаги:
 

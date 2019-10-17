@@ -3,15 +3,15 @@ title: Работа с большими наборами данных
 description: Узнайте, как получать большие наборы данных и управлять ими в Azure Resource Graph.
 author: DCtheGeek
 ms.author: dacoulte
-ms.date: 10/10/2019
+ms.date: 10/18/2019
 ms.topic: conceptual
 ms.service: resource-graph
-ms.openlocfilehash: 0ecd0ea997520947b766912f834de2a0c2e64429
-ms.sourcegitcommit: f272ba8ecdbc126d22a596863d49e55bc7b22d37
+ms.openlocfilehash: c78f2e37fa29fa1cdcb9acc6a4600688750b6d74
+ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72274233"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72387595"
 ---
 # <a name="working-with-large-azure-resource-data-sets"></a>Работа с большими наборами данных ресурса Azure
 
@@ -29,11 +29,11 @@ Azure Resource Graph предназначен для работы и получ�
 Ограничение по умолчанию может быть отменено всеми методами взаимодействия с Resource Graph. Следующие примеры демонстрируют изменение ограничения размера набора данных на _200_.
 
 ```azurecli-interactive
-az graph query -q "project name | order by name asc" --first 200 --output table
+az graph query -q "Resources | project name | order by name asc" --first 200 --output table
 ```
 
 ```azurepowershell-interactive
-Search-AzGraph -Query "project name | order by name asc" -First 200
+Search-AzGraph -Query "Resources | project name | order by name asc" -First 200
 ```
 
 В [REST API](/rest/api/azureresourcegraph/resources/resources) элемент управления является **$top** и частью **QueryRequestOptions**.
@@ -52,11 +52,11 @@ Search-AzGraph -Query "project name | order by name asc" -First 200
 В следующих примерах показано, как пропустить первые _10_ записей, в результате которых будет получен запрос, вместо этого начиная возвращаемый набор результатов с 11-й записи.
 
 ```azurecli-interactive
-az graph query -q "project name | order by name asc" --skip 10 --output table
+az graph query -q "Resources | project name | order by name asc" --skip 10 --output table
 ```
 
 ```azurepowershell-interactive
-Search-AzGraph -Query "project name | order by name asc" -Skip 10
+Search-AzGraph -Query "Resources | project name | order by name asc" -Skip 10
 ```
 
 В [REST API](/rest/api/azureresourcegraph/resources/resources) элемент управления является **$skip** и частью **QueryRequestOptions**.
@@ -71,11 +71,11 @@ Search-AzGraph -Query "project name | order by name asc" -Skip 10
 В следующих примерах показано, как **пропустить** первые 3000 записей и вернуть **первые** 1000 записей после того, как эти записи пропущены Azure CLI и Azure PowerShell.
 
 ```azurecli-interactive
-az graph query -q "project id, name | order by id asc" --first 1000 --skip 3000
+az graph query -q "Resources | project id, name | order by id asc" --first 1000 --skip 3000
 ```
 
 ```azurepowershell-interactive
-Search-AzGraph -Query "project id, name | order by id asc" -First 1000 -Skip 3000
+Search-AzGraph -Query "Resources | project id, name | order by id asc" -First 1000 -Skip 3000
 ```
 
 > [!IMPORTANT]
@@ -156,18 +156,18 @@ Search-AzGraph -Query "project id, name | order by id asc" -First 1000 -Skip 300
 
 ```csharp
 var requestOptions = new QueryRequestOptions( resultFormat: ResultFormat.ObjectArray);
-var request = new QueryRequest(subscriptions, "limit 1", options: requestOptions);
+var request = new QueryRequest(subscriptions, "Resources | limit 1", options: requestOptions);
 ```
 
 ```python
 request_options = QueryRequestOptions(
     result_format=ResultFormat.object_array
 )
-request = QueryRequest(query="limit 1", subscriptions=subs_list, options=request_options)
+request = QueryRequest(query="Resources | limit 1", subscriptions=subs_list, options=request_options)
 response = client.resources(request)
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - См. язык, используемый в [начальных запросах](../samples/starter.md).
 - См. Дополнительные сведения о расширенном использовании в [расширенных запросах](../samples/advanced.md).

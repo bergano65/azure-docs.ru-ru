@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 09/20/2019
 ms.author: yulili
-ms.openlocfilehash: 9d7fb4dfef2ac3ab14a8a10eb4d9a7afb91ac71e
-ms.sourcegitcommit: 4f3f502447ca8ea9b932b8b7402ce557f21ebe5a
+ms.openlocfilehash: 099a2f707431827996aa304aa706a9efbe54f589
+ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71803692"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72438837"
 ---
 # <a name="quickstart-synthesize-speech-in-objective-c-on-ios-using-the-speech-sdk"></a>Краткое руководство. Синтез речи в iOS с помощью Objective-C и пакета SDK службы "Речь"
 
@@ -67,7 +67,8 @@ ms.locfileid: "71803692"
 ## <a name="add-the-sample-code"></a>Добавление примеров кода
 
 1. Откройте рабочую область `helloworld.xcworkspace` в Xcode.
-1. Замените содержимое автоматически сгенерированного файла `AppDelegate.m` на [!code-objectivec[Quickstart Code](~/samples-cognitive-services-speech-sdk/quickstart/text-to-speech/objectivec-ios/helloworld/helloworld/AppDelegate.m#code)].
+1. Замените содержимое автоматически сгенерированного файла `AppDelegate.m` на:  
+   [!code-objectivec[Quickstart Code](~/samples-cognitive-services-speech-sdk/quickstart/text-to-speech/objectivec-ios/helloworld/helloworld/AppDelegate.m#code)]
 1. Замените содержимое автоматически сгенерированного файла `ViewController.m` на:  
    [!code-objectivec[Quickstart Code](~/samples-cognitive-services-speech-sdk/quickstart/text-to-speech/objectivec-ios/helloworld/helloworld/ViewController.m#code)]
 1. Замените строку `YourSubscriptionKey` своим ключом подписки.

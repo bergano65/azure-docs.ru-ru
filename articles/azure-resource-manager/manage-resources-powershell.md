@@ -1,6 +1,6 @@
 ---
 title: Управление ресурсами Azure с помощью Azure PowerShell | Документация Майкрософт
-description: Используйте Azure PowerShell и управление ресурсами Azure для управления ресурсами.
+description: Используйте Azure PowerShell и Azure Resource Manager для управления ресурсами. Показывает, как развертывать и удалять ресурсы.
 services: azure-resource-manager
 documentationcenter: ''
 author: mumian
@@ -8,12 +8,12 @@ ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 02/11/2019
 ms.author: jgao
-ms.openlocfilehash: f61fcf7833021f23485992c7445f91d9a7b9ee45
-ms.sourcegitcommit: be344deef6b37661e2c496f75a6cf14f805d7381
+ms.openlocfilehash: aa215555fdd39e9d756d5fc925282b1eaffc9ebf
+ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72001513"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72390366"
 ---
 # <a name="manage-azure-resources-by-using-azure-powershell"></a>Управление ресурсами Azure с помощью Azure PowerShell
 
@@ -49,7 +49,7 @@ $ctx = $storageAccount.Context
 
 ### <a name="deploy-a-template"></a>Развертывание шаблона
 
-Следующий скрипт создает шаблон быстрого запуска для создания учетной записи хранения. Дополнительные сведения см. в [кратком руководстве Создание шаблона Azure Resource Manager c помощью Visual Studio Code](./resource-manager-quickstart-create-templates-use-visual-studio-code.md?tabs=PowerShell).
+Следующий скрипт создает шаблон быстрого запуска для создания учетной записи хранения. Дополнительные сведения см. в разделе [Краткое руководство. Создание шаблонов Azure Resource Manager с помощью Visual Studio Code](./resource-manager-quickstart-create-templates-use-visual-studio-code.md?tabs=PowerShell).
 
 ```azurepowershell-interactive
 $resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
@@ -138,7 +138,7 @@ Remove-AzResourceLock -LockId $lockId
 
 [Управление доступом на основе ролей (RBAC)](../role-based-access-control/overview.md) — это способ управления доступом к ресурсам в Azure. Дополнительные сведения см. в разделе [Управление доступом с помощью RBAC и Azure PowerShell](../role-based-access-control/role-assignments-powershell.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о Azure Resource Manager см. в разделе [Общие сведения о Azure Resource Manager](./resource-group-overview.md).
 - Сведения о синтаксисе шаблона диспетчер ресурсов см. в разделе [Общие сведения о структуре и синтаксисе шаблонов Azure Resource Manager](./resource-group-authoring-templates.md).

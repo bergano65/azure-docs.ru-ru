@@ -3,15 +3,15 @@ title: Руководство по регулируемым запросам
 description: Узнайте, как создавать более совершенные запросы, чтобы избежать регулирования запросов к графу ресурсов Azure.
 author: DCtheGeek
 ms.author: dacoulte
-ms.date: 06/19/2019
+ms.date: 10/18/2019
 ms.topic: conceptual
 ms.service: resource-graph
-ms.openlocfilehash: 85d68beb27ab27a2ada9acbf9482d35dec438c06
-ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
+ms.openlocfilehash: 1bbfd2a64de0b42da19d0a978874d564f1755c59
+ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71980314"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72387628"
 ---
 # <a name="guidance-for-throttled-requests-in-azure-resource-graph"></a>Руководство по регулируемым запросам в графе ресурсов Azure
 
@@ -30,8 +30,8 @@ ms.locfileid: "71980314"
 
 В каждом ответе на запрос граф ресурсов Azure добавляет два заголовка регулирования:
 
-- `x-ms-user-quota-remaining` (целое число): оставшаяся квота ресурсов для пользователя. Это значение соответствует количеству запросов.
-- `x-ms-user-quota-resets-after` (чч:мм:сс): Период времени до сброса потребления квоты пользователем.
+- `x-ms-user-quota-remaining` (int): оставшаяся квота ресурса для пользователя. Это значение соответствует количеству запросов.
+- `x-ms-user-quota-resets-after` (чч: мм: СС): период времени до сброса потребления квоты пользователем.
 
 Чтобы продемонстрировать работу заголовков, рассмотрим ответ на запрос с заголовком и значениями `x-ms-user-quota-remaining: 10` и `x-ms-user-quota-resets-after: 00:00:03`.
 
@@ -55,7 +55,7 @@ ms.locfileid: "71980314"
   {
       var userQueryRequest = new QueryRequest(
           subscriptions: new[] { subscriptionId },
-          query: "project name, type");
+          query: "Resoures | project name, type");
 
       var azureOperationResponse = await this.resourceGraphClient
           .ResourcesWithHttpMessagesAsync(userQueryRequest, header)
@@ -78,7 +78,7 @@ ms.locfileid: "71980314"
       var currSubscriptionBatch = subscriptionIds.Skip(i * batchSize).Take(batchSize).ToList();
       var userQueryRequest = new QueryRequest(
           subscriptions: currSubscriptionBatch,
-          query: "project name, type");
+          query: "Resources | project name, type");
 
       var azureOperationResponse = await this.resourceGraphClient
           .ResourcesWithHttpMessagesAsync(userQueryRequest, header)
@@ -102,7 +102,7 @@ ms.locfileid: "71980314"
           resourceIds.Skip(i * batchSize).Take(batchSize).Select(id => string.Format("'{0}'", id)));
       var userQueryRequest = new QueryRequest(
           subscriptions: subscriptionList,
-          query: $"where id in~ ({resourceIds}) | project name, type");
+          query: $"Resources | where id in~ ({resourceIds}) | project name, type");
 
       var azureOperationResponse = await this.resourceGraphClient
           .ResourcesWithHttpMessagesAsync(userQueryRequest, header)
@@ -196,7 +196,7 @@ async Task ExecuteQueries(IEnumerable<string> queries)
   var results = new List<object>();
   var queryRequest = new QueryRequest(
       subscriptions: new[] { mySubscriptionId },
-      query: "project id, name, type | top 5000");
+      query: "Resources | project id, name, type | top 5000");
   var azureOperationResponse = await this.resourceGraphClient
       .ResourcesWithHttpMessagesAsync(queryRequest, header)
       .ConfigureAwait(false);
@@ -218,11 +218,11 @@ async Task ExecuteQueries(IEnumerable<string> queries)
   При использовании Azure CLI или Azure PowerShell запросы к графу ресурсов Azure автоматически размещаются, чтобы получить не более 5000 записей. Результаты запроса возвращают объединенный список записей из всех вызовов с разбивкой на страницы. В этом случае, в зависимости от числа записей в результатах запроса, один запрос разбивки на страницы может использовать более одной квоты запроса. Например, в приведенном ниже примере один запуск запроса может использовать до пяти квот запросов:
 
   ```azurecli-interactive
-  az graph query -q 'project id, name, type' -top 5000
+  az graph query -q 'Resources | project id, name, type' -top 5000
   ```
 
   ```azurepowershell-interactive
-  Search-AzGraph -Query 'project id, name, type' -Top 5000
+  Search-AzGraph -Query 'Resources | project id, name, type' -Top 5000
   ```
 
 ## <a name="still-get-throttled"></a>Все еще регулируется?
@@ -236,7 +236,7 @@ async Task ExecuteQueries(IEnumerable<string> queries)
 - Какие типы ресурсов вас интересуют?
 - Что такое шаблон запроса? X запросов на Y секунд и т. д.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - См. язык, используемый в [начальных запросах](../samples/starter.md).
 - См. Дополнительные сведения о расширенном использовании в [расширенных запросах](../samples/advanced.md).

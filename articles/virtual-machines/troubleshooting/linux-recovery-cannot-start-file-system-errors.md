@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.devlang: azurecli
 ms.date: 10/09/2019
 ms.author: v-six
-ms.openlocfilehash: 298fd336e87d07f9e65221d5e5f539e255c94993
-ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
+ms.openlocfilehash: a47dc1032115f8bcae0c7bdc37c84ab3b68ec4a8
+ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72245335"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72432305"
 ---
 # <a name="troubleshoot-linux-vm-starting-issues-due-to-file-system-errors"></a>Устранение неполадок, возникающих при запуске виртуальной машины Linux из-за ошибок файловой системы
 
@@ -71,9 +71,9 @@ Checking all file systems.
 
 Эта проблема может возникать, если файловая система не завершила работу в чистом виде или проблемы с хранилищем. Проблемы включают в себя ошибки оборудования или программного обеспечения, проблемы с драйверами или программами, ошибки записи и т. д. Всегда важно иметь резервную копию критически важных данных. Средства, описанные в этой статье, могут помочь в восстановлении файловых систем, но при этом могут возникать потери данных.
 
-В Linux доступно несколько проверок файловой системы. Наиболее распространенными для дистрибутивов в Azure являются: [FSCK](https://access.redhat.com/documentation/red_hat_enterprise_linux/6/html/storage_administration_guide/fsck-fs-specific), [E2FSCK](https://access.redhat.com/documentation/red_hat_enterprise_linux/7/html/storage_administration_guide/fsck-fs-specific)и [Xfs_repair](https://access.redhat.com/documentation/red_hat_enterprise_linux/7/html/storage_administration_guide/xfsrepair).
+В Linux доступно несколько проверок файловой системы. Наиболее распространенным для дистрибутивов в Azure являются: [FSCK](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/storage_administration_guide/fsck-fs-specific), [E2FSCK](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide/fsck-fs-specific)и [Xfs_repair](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide/xfsrepair).
 
-## <a name="resolution"></a>Способы устранения:
+## <a name="resolution"></a>Разрешение
 
 Чтобы устранить эту проблему, загрузите виртуальную машину в аварийный режим с помощью [последовательной консоли](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/serial-console-linux) и используйте это средство для восстановления файловой системы. Если последовательная консоль не включена на виртуальной машине или не работает, см. раздел [Восстановление виртуальной машины в автономном режиме](#repair-the-vm-offline) этой статьи.
 
@@ -88,7 +88,7 @@ Checking all file systems.
 
 2. Нажмите кнопку с индикатором питания, а затем выберите перезапустить виртуальную машину. (Если последовательная консоль не включена или не подключена успешно, кнопка не отображается.)
 
-   ![ЭСКИЗ](./media/linux-recovery-cannot-ssh-to-linux-vm-due-to-file-system-errors-fsck/restart-vm.png)
+   ![Эскиз](./media/linux-recovery-cannot-ssh-to-linux-vm-due-to-file-system-errors-fsck/restart-vm.png)
 
 3. Загрузите виртуальную машину в аварийном режиме.
 
@@ -106,7 +106,7 @@ Checking all file systems.
    xfs_repair /dev/sda1
    ```
 
-7. Если появляется сообщение об ошибке "ошибка: Файловая система содержит ценные изменения метаданных в журнале, который необходимо воспроизвести, создайте временный каталог и подключите файловую систему:
+7. При появлении сообщения об ошибке "ошибка: файловая система содержит ценные изменения метаданных в журнале, который необходимо воспроизвести", создайте временный каталог и подключите файловую систему:
 
    ```
    mkdir /temp
@@ -150,7 +150,7 @@ Checking all file systems.
    xfs_repair /dev/sdc1
    ```
 
-5. Если появляется сообщение об ошибке "ошибка: Файловая система содержит ценные изменения метаданных в журнале, который необходимо воспроизвести, создайте временный каталог и подключите файловую систему:
+5. При появлении сообщения об ошибке "ошибка: файловая система содержит ценные изменения метаданных в журнале, который необходимо воспроизвести", создайте временный каталог и подключите файловую систему:
 
    ```
    mkdir /temp
@@ -176,7 +176,7 @@ Checking all file systems.
 
 8. Проверьте, устранена ли проблема.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Устранение неполадок виртуальной машины Linux путем подключения диска ОС к виртуальной машине восстановления с помощью Azure CLI 2,0](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-linux-troubleshoot-recovery-disks)
 * [Подключение диска данных к виртуальной машине Linux с помощью портала](https://docs.microsoft.com/azure/virtual-machines/linux/attach-disk-portal)

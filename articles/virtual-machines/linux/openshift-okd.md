@@ -12,14 +12,14 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 02/02/2019
+ms.date: 10/15/2019
 ms.author: haroldw
-ms.openlocfilehash: fccb77110eafa131733ecea70fb209b2a168436c
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 66d17fb2a96bbb5b1dcb51151242f014b4116b86
+ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70082501"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72390527"
 ---
 # <a name="deploy-okd-in-azure"></a>Развертывание OKD в Azure
 
@@ -134,7 +134,7 @@ az group deployment create -g openshiftrg --name myOpenShiftCluster \
       --parameters @./azuredeploy.parameters.json
 ```
 
-Развертывание длится не менее 30 минут в зависимости от общего количества развертываемых узлов. После завершения развертывания в терминале отобразятся URL-адрес консоли OpenShift и DNS-имя главного узла OpenShift. Также можно просмотреть раздел выходных данных для развертывания на портале Azure.
+Развертывание длится не менее 30 минут в зависимости от общего количества развертываемых узлов. После завершения развертывания в терминале появятся сведения об URL-адресе консоли OpenShift, а также DNS-имя основного кластера OpenShift. Также можно просмотреть раздел выходных данных для развертывания на портале Azure.
 
 ```json
 {
@@ -161,8 +161,8 @@ $ ssh -p 2200 clusteradmin@myopenshiftmaster.cloudapp.azure.com
 az group delete --name openshiftrg
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Задачи, выполняемые после развертывания](./openshift-post-deployment.md)
-- [Устранение неполадок с развертыванием OpenShift](./openshift-troubleshooting.md)
+- [Задачи, выполняемые после развертывания](./openshift-container-platform-3x-post-deployment.md)
+- [Устранение неполадок с развертыванием OpenShift](./openshift-container-platform-3x-troubleshooting.md)
 - [Начало работы с OKD](https://docs.okd.io)

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/12/2018
 ms.author: dekapur
-ms.openlocfilehash: ae7fbef864634e47866de13384871a98b8ce4675
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ca04539049766e1f053d74b3a8536f154c3fd830
+ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65209709"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72383583"
 ---
 # <a name="configuration-settings-for-a-standalone-windows-cluster"></a>Параметры конфигурации для изолированного кластера Windows
 В этой статье описаны параметры конфигурации изолированного кластера Azure Service Fabric, которые можно задать в файле *ClusterConfig.json*. Этот файл используется для указания сведений об узлах кластера, конфигурациях безопасности, а также топологии сети в плане доменов сбоя и обновления.  После изменения или добавления параметров конфигурации вы можете [создать изолированный кластер](service-fabric-cluster-creation-for-windows-server.md) или [обновить конфигурацию изолированного кластера](service-fabric-cluster-config-upgrade-windows-server.md).
@@ -85,7 +85,7 @@ ms.locfileid: "65209709"
 ### <a name="reliability"></a>Надежность
 Термин reliabilityLevel определяет количество реплик или экземпляров системных служб Service Fabric, которые могут выполняться на первичных узлах кластера. От этого зависит надежность этих служб и, следовательно, кластера. Значение вычисляется системой во время создания и обновления кластера.
 
-### <a name="diagnostics"></a>Диагностика
+### <a name="diagnostics"></a>Диагностика:
 В разделе diagnosticsStore вы можете настроить параметры, чтобы включить диагностику и устранение неполадок узлов и кластера, как показано в следующем фрагменте кода: 
 
 ```json
@@ -122,7 +122,7 @@ ms.locfileid: "65209709"
 }
 ```
 
-Переменная metadata представляет собой описание защищенного кластера и может быть задана в соответствии с вашей конфигурацией. Переменные ClusterCredentialType и ServerCredentialType определяют тип безопасности, реализуемой кластером и узлами. Их можно задать либо *X509* для защиты на основе сертификатов или *Windows* безопасности на основе Active Directory. Остальная часть раздела security зависит от выбранного типа безопасности. Сведения о том, как заполнить остальную часть раздела security, см. в статьях [Защита автономного кластера под управлением Windows с помощью сертификатов X.509](service-fabric-windows-cluster-x509-security.md) или [Защита изолированного кластера под управлением Windows с помощью системы безопасности Windows](service-fabric-windows-cluster-windows-security.md).
+Переменная metadata представляет собой описание защищенного кластера и может быть задана в соответствии с вашей конфигурацией. Переменные ClusterCredentialType и ServerCredentialType определяют тип безопасности, реализуемой кластером и узлами. Для них можно задать значение *X509* для безопасности на основе сертификатов или *Windows* для обеспечения безопасности на основе Active Directory. Остальная часть раздела security зависит от выбранного типа безопасности. Сведения о том, как заполнить остальную часть раздела security, см. в статьях [Защита автономного кластера под управлением Windows с помощью сертификатов X.509](service-fabric-windows-cluster-x509-security.md) или [Защита изолированного кластера под управлением Windows с помощью системы безопасности Windows](service-fabric-windows-cluster-windows-security.md).
 
 ### <a name="node-types"></a>Типы узлов
 В разделе nodeTypes описывается тип узлов в кластере. Для кластера нужно указать по крайней мере один тип узла, как показано в следующем фрагменте кода: 
@@ -202,6 +202,7 @@ name — понятное имя этого конкретного типа уз
     ]
 }
 ```
+Все доступные надстройки можно просмотреть в [справочнике по Service Fabric REST API](https://docs.microsoft.com/rest/api/servicefabric/sfrp-model-addonfeatures).
 
 ### <a name="container-support"></a>Поддержка контейнеров
 Чтобы включить в изолированных кластерах поддержку контейнеров для контейнеров Windows Server и Hyper-V, необходимо включить компонент надстройки DnsService.

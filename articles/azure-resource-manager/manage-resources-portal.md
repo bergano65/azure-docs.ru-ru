@@ -1,6 +1,6 @@
 ---
-title: Управлять ресурсами Azure с помощью портала Azure | Документация Майкрософт
-description: Используйте портал Azure и Azure Resource Manager для управления ресурсами.
+title: Управление ресурсами Azure с помощью портал Azure | Документация Майкрософт
+description: Используйте портал Azure и Azure Resource Manager для управления ресурсами. Показывает, как развертывать и удалять ресурсы.
 services: azure-resource-manager,azure-portal
 documentationcenter: ''
 author: mumian
@@ -8,52 +8,52 @@ ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 02/11/2019
 ms.author: jgao
-ms.openlocfilehash: a4ff94a98514041290518e72e1b13c76722b9d4f
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: c52d54ca02436f7224346a65048244a5ec8d104c
+ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67205604"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72390392"
 ---
-# <a name="manage-azure-resources-by-using-the-azure-portal"></a>Управлять ресурсами Azure с помощью портала Azure
+# <a name="manage-azure-resources-by-using-the-azure-portal"></a>Управление ресурсами Azure с помощью портал Azure
 
-Сведения об использовании [портала Azure](https://portal.azure.com) с [Azure Resource Manager](resource-group-overview.md) для управления ресурсами Azure. Для управления группами ресурсов, см. в разделе [групп ресурсов Azure, управлять ими с помощью портала Azure](./manage-resource-groups-portal.md).
+Узнайте, как использовать [портал Azure](https://portal.azure.com) с [Azure Resource Manager](resource-group-overview.md) для управления ресурсами Azure. Сведения об управлении группами ресурсов см. [в статье Управление группами ресурсов Azure с помощью портал Azure](./manage-resource-groups-portal.md).
 
 Другие статьи об управлении ресурсами:
 
-- [Управлять ресурсами Azure с помощью Azure CLI](./manage-resources-cli.md)
-- [Управлять ресурсами Azure с помощью Azure PowerShell](./manage-resources-powershell.md)
+- [Управление ресурсами Azure с помощью Azure CLI](./manage-resources-cli.md)
+- [Управление ресурсами Azure с помощью Azure PowerShell](./manage-resources-powershell.md)
 
 [!INCLUDE [Handle personal data](../../includes/gdpr-intro-sentence.md)]
 
 ## <a name="deploy-resources-to-a-resource-group"></a>Развертывание ресурсов в группе ресурсов
 
-После создания шаблона Resource Manager, можно использовать портал Azure для развертывания ресурсов Azure. Создание шаблона, см. в разделе [краткое руководство: по созданию и развертыванию шаблонов Azure Resource Manager с помощью портала Azure](./resource-manager-quickstart-create-templates-use-the-portal.md). Развертывание шаблона с помощью портала, см. в разделе [развертывание ресурсов с использованием шаблонов Resource Manager и портала Azure](resource-group-template-deploy-portal.md).
+После создания шаблона диспетчер ресурсов можно использовать портал Azure для развертывания ресурсов Azure. Сведения о создании шаблона см. [в разделе Краткое руководство. Создание и развертывание шаблонов Azure Resource Manager с помощью портал Azure](./resource-manager-quickstart-create-templates-use-the-portal.md). Сведения о развертывании шаблона с помощью портала см. в разделе [развертывание ресурсов с использованием шаблонов диспетчер ресурсов и портал Azure](resource-group-template-deploy-portal.md).
 
-## <a name="open-resources"></a>Открытые ресурсы
+## <a name="open-resources"></a>Открытие ресурсов
 
-Ресурсы Azure организованы службами Azure и групп ресурсов. Следующая процедура показывает, как открыть учетную запись хранения с именем **mystorage0207**. Виртуальная машина находится в группу ресурсов с именем **mystorage0207rg**.
+Ресурсы Azure упорядочены по службам Azure и группам ресурсов. В следующих процедурах показано, как открыть учетную запись хранения с именем **mystorage0207**. Виртуальная машина находится в группе ресурсов с именем **mystorage0207rg**.
 
-Открытие ресурса типом службы:
-
-1. Войдите на [портале Azure](https://portal.azure.com).
-2. В области слева выберите службу Azure. В этом случае **учетные записи хранения**.  Если вы не видите список служб, выберите **все службы**, а затем выберите тип службы.
-
-    ![Откройте ресурс azure на портале](./media/manage-resources-portal/manage-azure-resources-portal-open-service.png)
-
-3. Выберите ресурс, который требуется открыть.
-
-    ![Откройте ресурс azure на портале](./media/manage-resources-portal/manage-azure-resources-portal-open-resource.png)
-
-    Учетная запись хранения выглядит так:
-
-    ![Откройте ресурс azure на портале](./media/manage-resources-portal/manage-azure-resources-portal-open-resource-storage.png)
-
-Чтобы открыть группу ресурсов, ресурсов:
+Чтобы открыть ресурс по типу службы, выполните следующие действия.
 
 1. Войдите на [портале Azure](https://portal.azure.com).
-2. В левой области выберите **групп ресурсов** Чтобы получить список ресурсов в группе.
-3. Выберите ресурс, который требуется открыть. 
+2. В левой области выберите службу Azure. В этом случае это **учетные записи хранения**.  Если служба не отображается в списке, выберите **все службы**, а затем выберите тип службы.
+
+    ![Открытие ресурса Azure на портале](./media/manage-resources-portal/manage-azure-resources-portal-open-service.png)
+
+3. Выберите ресурс, который необходимо открыть.
+
+    ![Открытие ресурса Azure на портале](./media/manage-resources-portal/manage-azure-resources-portal-open-resource.png)
+
+    Учетная запись хранения выглядит следующим образом:
+
+    ![Открытие ресурса Azure на портале](./media/manage-resources-portal/manage-azure-resources-portal-open-resource-storage.png)
+
+Чтобы открыть ресурс по группе ресурсов, выполните следующие действия.
+
+1. Войдите на [портале Azure](https://portal.azure.com).
+2. В области слева выберите **группы ресурсов** , чтобы получить список ресурсов в группе.
+3. Выберите ресурс, который необходимо открыть. 
 
 ## <a name="manage-resources"></a>Управление ресурсами
 
@@ -61,59 +61,59 @@ ms.locfileid: "67205604"
 
 ![Управление ресурсами Azure](./media/manage-resources-portal/manage-azure-resources-portal-manage-resource.png)
 
-На снимке экрана показаны параметры управления для виртуальной машины Azure. Можно выполнять операции, такие как запуск, перезапуск и остановка виртуальной машины.
+На снимке экрана показаны параметры управления для виртуальной машины Azure. Вы можете выполнять такие операции, как запуск, перезапуск и остановка виртуальной машины.
 
 ## <a name="delete-resources"></a>Удаление ресурсов.
 
-1. Откройте ресурс на портале. Действия, см. в разделе [открывать ресурсы](#open-resources).
-2. Нажмите кнопку **Удалить**. На следующем рисунке показан параметры управления для виртуальной машины.
+1. Откройте ресурс на портале. Инструкции см. в разделе [Открытие ресурсов](#open-resources).
+2. Нажмите кнопку **Удалить**. На следующем снимке экрана показаны параметры управления для виртуальной машины.
 
-    ![Удаление ресурсов azure](./media/manage-resources-portal/manage-azure-resources-portal-delete-resource.png)
-3. Введите имя ресурса, чтобы подтвердить удаление, а затем выберите **удалить**.
+    ![Удаление ресурса Azure](./media/manage-resources-portal/manage-azure-resources-portal-delete-resource.png)
+3. Введите имя ресурса, чтобы подтвердить удаление, а затем выберите **Удалить**.
 
-Дополнительные сведения о как упорядочивает удаление ресурсов в Azure Resource Manager, см. в разделе [удаление группы ресурсов Azure Resource Manager](./resource-group-delete.md).
+Дополнительные сведения о том, как Azure Resource Manager упорядочивают удаление ресурсов, см. в разделе [Azure Resource Manager удаление группы ресурсов](./resource-group-delete.md).
 
 ## <a name="move-resources"></a>Перемещение ресурсов
 
-1. Откройте ресурс на портале. Действия, см. в разделе [открывать ресурсы](#open-resources).
-2. Выберите **Переместить**. На следующем рисунке показан параметры управления для учетной записи хранения.
+1. Откройте ресурс на портале. Инструкции см. в разделе [Открытие ресурсов](#open-resources).
+2. Выберите **Переместить**. На следующем снимке экрана показаны параметры управления для учетной записи хранения.
 
-    ![Перемещение ресурсов azure](./media/manage-resources-portal/manage-azure-resources-portal-move-resource.png)
-3. Выберите **переместить в другую группу ресурсов** или **Moeve в другую подписку** зависит от ваших потребностей.
+    ![перемещение ресурса Azure](./media/manage-resources-portal/manage-azure-resources-portal-move-resource.png)
+3. Выберите **переместить в другую группу ресурсов** или **Перейти к другой подписке** в зависимости от ваших потребностей.
 
 Дополнительные сведения см. в статье [Перемещение ресурсов в новую группу ресурсов или подписку](resource-group-move-resources.md).
 
 ## <a name="lock-resources"></a>Блокировка ресурсов
 
-Блокировка запрещает другим пользователям в организации случайно удалить или изменить критически важные ресурсы, такие как подписки Azure, группу ресурсов или ресурс. 
+Блокировка запрещает другим пользователям в организации случайно удалить или изменить критически важные ресурсы, такие как подписка Azure, Группа ресурсов или ресурс. 
 
-1. Откройте ресурс на портале. Действия, см. в разделе [открывать ресурсы](#open-resources).
-2. Выберите **блокирует**. На следующем рисунке показан параметры управления для учетной записи хранения.
+1. Откройте ресурс на портале. Инструкции см. в разделе [Открытие ресурсов](#open-resources).
+2. Выберите **блокировки**. На следующем снимке экрана показаны параметры управления для учетной записи хранения.
 
-    ![ресурс блокировки в azure](./media/manage-resources-portal/manage-azure-resources-portal-lock-resource.png)
-3. Выберите **добавить**, а затем укажите свойства блокировки.
+    ![Блокировка ресурса Azure](./media/manage-resources-portal/manage-azure-resources-portal-lock-resource.png)
+3. Выберите **Добавить**, а затем укажите свойства блокировки.
 
 Дополнительные сведения см. в статье [Блокировка ресурсов с помощью диспетчера ресурсов Azure](resource-group-lock-resources.md).
 
 ## <a name="tag-resources"></a>Добавление тегов к ресурсам
 
-Добавление тегов позволяет логически Упорядочить группу ресурсов и ресурсы. 
+Теги позволяют логически упорядочивать группы ресурсов и ресурсы. 
 
-1. Откройте ресурс на портале. Действия, см. в разделе [открывать ресурсы](#open-resources).
-2. Нажмите **Теги**. На следующем рисунке показан параметры управления для учетной записи хранения.
+1. Откройте ресурс на портале. Инструкции см. в разделе [Открытие ресурсов](#open-resources).
+2. Нажмите **Теги**. На следующем снимке экрана показаны параметры управления для учетной записи хранения.
 
-    ![тег azure ресурсов](./media/manage-resources-portal/manage-azure-resources-portal-tag-resource.png)
-3. Укажите свойства тега, а затем выберите **Сохранить**.
+    ![Тег ресурса Azure](./media/manage-resources-portal/manage-azure-resources-portal-tag-resource.png)
+3. Укажите свойства тега и нажмите кнопку **сохранить**.
 
-Сведения см. в разделе [использование тегов для организации ресурсов в Azure](./resource-group-using-tags.md#portal).
+Дополнительные сведения см. [в статье Использование тегов для Организации ресурсов Azure](./resource-group-using-tags.md#portal).
 
 ## <a name="monitor-resources"></a>Мониторинг ресурсов
 
-Когда вы откроете ресурс, появится по умолчанию диаграммы и таблицы по отслеживать этот тип ресурса. На следующем рисунке показаны графики для виртуальной машины:
+При открытии ресурса на портале представлены диаграммы и таблицы по умолчанию для мониторинга этого типа ресурсов. На следующем снимке экрана показаны графы для виртуальной машины.
 
-![ресурсов azure Monitor](./media/manage-resources-portal/manage-azure-resources-portal-monitor-resource.png)
+![мониторинг ресурса Azure](./media/manage-resources-portal/manage-azure-resources-portal-monitor-resource.png)
 
-Можно выбрать значок булавки в правом верхнем углу диаграммы, чтобы закрепить диаграммы на панели мониторинга. Чтобы узнать о том, как работать с панелями мониторинга, ознакомьтесь с разделом [Создание панелей мониторинга и предоставление общего доступа к ним на портале Azure](../azure-portal/azure-portal-dashboards.md).
+Вы можете выбрать значок закрепления в правом верхнем углу графики, чтобы закрепить граф на панели мониторинга. Чтобы узнать о том, как работать с панелями мониторинга, ознакомьтесь с разделом [Создание панелей мониторинга и предоставление общего доступа к ним на портале Azure](../azure-portal/azure-portal-dashboards.md).
 
 ## <a name="manage-access-to-resources"></a>Управление доступом к ресурсам
 
@@ -121,7 +121,7 @@ ms.locfileid: "67205604"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Чтобы узнать, Azure Resource Manager, см. в разделе [обзоре Azure Resource Manager](./resource-group-overview.md).
-- Чтобы узнать синтаксис шаблона Resource Manager, см. в разделе [описание структуры и синтаксиса шаблонов Azure Resource Manager](./resource-group-authoring-templates.md).
-- Чтобы научиться разрабатывать шаблоны, см. в разделе [пошаговые учебники](/azure/azure-resource-manager/).
-- Чтобы просмотреть схемы шаблонов Azure Resource Manager, см. в разделе [Справочник по шаблонам](/azure/templates/).
+- Сведения о Azure Resource Manager см. в разделе [Общие сведения о Azure Resource Manager](./resource-group-overview.md).
+- Сведения о синтаксисе шаблона диспетчер ресурсов см. в разделе [Общие сведения о структуре и синтаксисе шаблонов Azure Resource Manager](./resource-group-authoring-templates.md).
+- Дополнительные сведения о разработке шаблонов см. в пошаговых [руководствах](/azure/azure-resource-manager/).
+- Сведения о том, как просмотреть схемы шаблонов Azure Resource Manager, см. в разделе [Справочник по шаблонам](/azure/templates/).

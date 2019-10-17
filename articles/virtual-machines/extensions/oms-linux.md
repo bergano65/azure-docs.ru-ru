@@ -14,16 +14,16 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 08/06/2019
 ms.author: akjosh
-ms.openlocfilehash: 95b630342ac2b4bc9cf51f3aa3d8563c4962ce11
-ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
+ms.openlocfilehash: 75f659f9559703cedccef0d8e726b5c8c5bb49be
+ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71168938"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72435838"
 ---
 # <a name="azure-monitor-virtual-machine-extension-for-linux"></a>Расширение виртуальной машины Azure Monitor для Linux
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Краткое описание
 
 Журналы Azure Monitor предоставляют возможности мониторинга, предупреждений и исправления оповещений в облачных и локальных ресурсах. Расширение виртуальной машины агента Log Analytics для Linux предоставляет и поддерживает корпорация Майкрософт. Это расширение устанавливает агент Log Analytics на виртуальных машинах Azure и регистрирует виртуальные машины в существующей рабочей области Log Analytics. В этом документе описаны поддерживаемые платформы, конфигурации и варианты развертывания для Azure Monitor расширения виртуальной машины для Linux.
 
@@ -32,7 +32,7 @@ ms.locfileid: "71168938"
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../../includes/azure-monitor-log-analytics-rebrand.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 ### <a name="operating-system"></a>Операционная система
 
@@ -103,11 +103,11 @@ ms.locfileid: "71168938"
 
 ### <a name="property-values"></a>Значения свойств
 
-| Название | Значение и пример |
+| Name | Значение и пример |
 | ---- | ---- |
-| apiVersion | 2018-06-01 |
+| версия_API | 2018-06-01 |
 | publisher | Microsoft.EnterpriseCloud.Monitoring |
-| type | OmsAgentForLinux |
+| Тип | OmsAgentForLinux |
 | typeHandlerVersion | 1.7 |
 | workspaceID (пример) | 6f680a37-00c6-41c7-a93f-1437e3462574 |
 | workspaceKey (пример) | z4bU3p1/GrnWpQkky4gdabWXAhbWSTz70hm4m2Xt92XI+rSRgE8qVvRhsGo9TXffbrTahyrwv35W0pOqQAU7uQ== |
@@ -171,7 +171,7 @@ ms.locfileid: "71168938"
 
 ## <a name="azure-cli-deployment"></a>Развертывание с помощью Azure CLI
 
-Azure CLI можно использовать для развертывания расширения виртуальной машины агента Log Analytics на существующей виртуальной машине. Замените *workspaceId* и *workspaceKey* идентификатором и ключом своей рабочей области Log Analytics. 
+Azure CLI можно использовать для развертывания расширения виртуальной машины агента Log Analytics на существующей виртуальной машине. Замените значение *миворкспацекэй* , приведенное ниже, на ключ рабочей области, а значение *MYWORKSPACEID* — на идентификатор рабочей области. Эти значения можно найти в рабочей области Log Analytics в портал Azure в разделе *Дополнительные параметры*. 
 
 ```azurecli
 az vm extension set \
@@ -179,8 +179,8 @@ az vm extension set \
   --vm-name myVM \
   --name OmsAgentForLinux \
   --publisher Microsoft.EnterpriseCloud.Monitoring \
-  --version 1.10.1 --protected-settings '{"workspaceKey":"omskey"}' \
-  --settings '{"workspaceId":"omsid"}'
+  --version 1.10.1 --protected-settings '{"workspaceKey":"myWorkspaceKey"}' \
+  --settings '{"workspaceId":"myWorkspaceId"}'
 ```
 
 ## <a name="troubleshoot-and-support"></a>Устранение неполадок и поддержка

@@ -1,6 +1,6 @@
 ---
-title: 'Справочник по API Azure монитор состояния v2: Включить модуль инструментирования | Документация Майкрософт'
-description: Справочник по API монитор состояния v2. Enable-Инструментатионенгине. Отслеживайте производительность веб-сайта без повторного развертывания веб-сайта. Работает с веб-приложениями ASP.NET, размещенными локально, в виртуальных машинах или в Azure.
+title: 'Справочник по API агента Azure Application Insights: включение модуля инструментирования | Документация Майкрософт'
+description: Справочник по API агента Application Insights. Enable-Инструментатионенгине. Отслеживайте производительность веб-сайта без повторного развертывания веб-сайта. Работает с веб-приложениями ASP.NET, размещенными локально, в виртуальных машинах или в Azure.
 services: application-insights
 documentationcenter: .net
 author: TimothyMothra
@@ -12,14 +12,14 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: tilee
-ms.openlocfilehash: 3c0f4e015d3e01e86daaf101c15e16857540a520
-ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
+ms.openlocfilehash: 9958121c38b96dc9cfa4dda2812fa9ce2b18d785
+ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71033142"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72388287"
 ---
-# <a name="status-monitor-v2-api-enable-instrumentationengine"></a>API монитор состояния v2: Enable-Инструментатионенгине
+# <a name="application-insights-agent-api-enable-instrumentationengine"></a>API агента Application Insights: enable-Инструментатионенгине
 
 В этой статье описывается командлет, который является членом [модуля PowerShell AZ. аппликатионмонитор](https://www.powershellgallery.com/packages/Az.ApplicationMonitor/).
 
@@ -56,7 +56,7 @@ PS C:\> Enable-InstrumentationEngine
 ### <a name="-verbose"></a>-Verbose
 **Общий параметр.** Используйте этот параметр для вывода подробных журналов.
 
-## <a name="output"></a>Вывод
+## <a name="output"></a>Выходные данные
 
 
 #### <a name="example-output-from-successfully-enabling-the-instrumentation-engine"></a>Пример выходных данных для успешного включения модуля инструментирования
@@ -66,7 +66,7 @@ Configuring IIS Environment for instrumentation engine...
 Configuring registry for instrumentation engine...
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
   Просмотр телеметрии:
  - [Изучите метрики](../../azure-monitor/app/metrics-explorer.md) для мониторинга производительности и использования.
@@ -79,7 +79,7 @@ Configuring registry for instrumentation engine...
 - [Добавьте данные телеметрии веб-клиента](../../azure-monitor/app/javascript.md) , чтобы просмотреть исключения из кода веб-страницы и включить вызовы трассировки.
 - [Добавьте в код пакет SDK для Application Insights](../../azure-monitor/app/asp-net.md) , чтобы можно было вставить вызовы трассировки и журнала.
  
- Дополнительные возможности монитор состояния версии 2:
- - Воспользуйтесь нашим руководством по [устранению неполадок](status-monitor-v2-troubleshoot.md) монитор состояния v2.
+ Другие действия с агентом Application Insights:
+ - Используйте наше справочное по для [устранения неполадок](status-monitor-v2-troubleshoot.md) агента Application Insights.
  - [Получите конфигурацию](status-monitor-v2-api-get-config.md) , чтобы убедиться, что параметры записаны правильно.
  - [Получение состояния](status-monitor-v2-api-get-status.md) для проверки мониторинга.

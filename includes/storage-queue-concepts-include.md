@@ -4,12 +4,13 @@ ms.service: storage
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: tamram
-ms.openlocfilehash: 935a6201e24e97deaa0a1a65e499310f74a49e2d
-ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
+ms.custom: seo-python-october2019
+ms.openlocfilehash: 92f638666d9ac832ee5e6a7d4dccf9a9e669f908
+ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71059039"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72428004"
 ---
 ## <a name="what-is-queue-storage"></a>Что такое хранилище очередей?
 
@@ -19,7 +20,7 @@ ms.locfileid: "71059039"
 
 Служба очередей Azure содержит следующие компоненты:
 
-![Queue1](./media/storage-queue-concepts-include/queue1.png)
+![Компоненты служба очередей Azure](./media/storage-queue-concepts-include/azure-queue-service-components.png)
 
 * **Формат URL-адреса**. К очереди можно обратиться, используя следующий формат URL-адреса:   
     http://`<storage account>`.queue.core.windows.net/`<queue>` 
@@ -28,7 +29,7 @@ ms.locfileid: "71059039"
   
     `http://myaccount.queue.core.windows.net/images-to-download`
 
-* **Учетная запись хранения:** Весь доступ к хранилищу Azure осуществляется с помощью учетной записи хранения. Сведения об емкости учетной записи хранения см. в статье [Целевые показатели масштабируемости и производительности службы хранилища Azure](../articles/storage/common/storage-scalability-targets.md).
+* **Учетная запись хранения**. Весь доступ к хранилищу Azure осуществляется с помощью учетной записи хранения. Сведения об емкости учетной записи хранения см. в статье [Целевые показатели масштабируемости и производительности службы хранилища Azure](../articles/storage/common/storage-scalability-targets.md).
 * **Очередь**. Очередь содержит набор сообщений. Все сообщения должны находиться в очереди. Обратите внимание: имя очереди должно содержать только строчные символы. Дополнительные сведения см. в статье о [присвоении имен очередям и метаданным](https://msdn.microsoft.com/library/azure/dd179349.aspx).
-* **Сообщение**. Сообщение в любом формате размером до 64 КБ. Сообщение может оставаться в очереди не более 7 дней.
+* **Сообщение.** Сообщение в любом формате размером до 64 КБ. Сообщение может оставаться в очереди не более 7 дней.
 

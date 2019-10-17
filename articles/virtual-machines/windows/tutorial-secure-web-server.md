@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 02/09/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 8742700f472f5cedcf5de307f1b151634303a0be
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: bf4c21616da0b27fb253bbbd24a6bf4e9acd0bf3
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70101642"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72300060"
 ---
 # <a name="tutorial-secure-a-web-server-on-a-windows-virtual-machine-in-azure-with-ssl-certificates-stored-in-key-vault"></a>Руководство по Защита веб-сервера на виртуальной машине Windows в Azure с помощью SSL-сертификатов, хранимых в Key Vault
 
@@ -32,7 +32,6 @@ ms.locfileid: "70101642"
 > * Создание виртуальной машины и установка веб-сервера IIS
 > * Внедрение сертификата в виртуальную машину и настройка IIS с помощью SSL-привязки
 
-[!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
 ## <a name="launch-azure-cloud-shell"></a>Запуск Azure Cloud Shell
 

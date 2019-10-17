@@ -10,15 +10,15 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 04/22/2019
+ms.date: 10/16/2019
 ms.author: saghorpa
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 705dfb0b62327d9675fe9bf3e5860b1396e2fab9
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 4384d29811d29f06422802abba5d3eb1ea5737e9
+ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70101310"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72430076"
 ---
 # <a name="backup-and-restore"></a>Резервное копирование и восстановление
 
@@ -67,7 +67,7 @@ SAP HANA в Azure (крупные экземпляры) поддерживает
 - Отдельный моментальный снимок тома /hana/logbackups.
 - Раздел операционной системы.
 
-Чтобы получить последние скрипты и документацию моментальных снимков, см. [GitHub](https://github.com/Azure/hana-large-instances-self-service-scripts/tree/master/snapshot_tools_v4.1). При скачивании пакета скрипта моментальных снимков из [GitHub](https://github.com/Azure/hana-large-instances-self-service-scripts/tree/master/snapshot_tools_v4.1)вы получаете три файла. Один из файлов приведен в формате PDF для предоставляемой функциональности. После загрузки набора средств следуйте инструкциям в разделе "получение снимков".
+Чтобы получить последние скрипты и документацию моментальных снимков, см. [GitHub](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/latest/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20Guide.md). При скачивании пакета скрипта моментальных снимков из [GitHub](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/latest/release.md)вы получаете три файла. Один из файлов приведен в формате PDF для предоставляемой функциональности. После загрузки набора средств следуйте инструкциям в разделе "получение снимков".
 
 ## <a name="storage-snapshot-considerations"></a>Факторы, которые необходимо учитывать при создании моментальных снимков хранилища
 
@@ -116,75 +116,75 @@ SAP HANA в Azure (крупные экземпляры) поставляется
 1. При необходимости создайте учетную запись пользователя резервного копирования SAP HANA на главном узле для каждого выполняемого экземпляра SAP HANA.
 1. Установите на всех серверах решения "Крупные экземпляры SAP HANA" клиент SAP HANA HDB.
 1. На первом сервере решения "Крупные экземпляры SAP HANA" каждого региона создайте открытый ключ, используемый для доступа к базовой инфраструктуре хранилища, отвечающей за создание моментальных снимков.
-1. Скопируйте сценарии и файл конфигурации из [этого расположения GitHub](https://github.com/Azure/hana-large-instances-self-service-scripts/tree/master/snapshot_tools_v4.1) в расположение **hdbsql** установленного экземпляра SAP HANA.
+1. Скопируйте сценарии и файл конфигурации из [этого расположения GitHub](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/latest/release.md) в расположение **hdbsql** установленного экземпляра SAP HANA.
 1. Измените файл *HANABackupDetails.txt* в соответствии с определенной спецификацией клиента.
 
-Последние сценарии создания моментальных снимков и документацию доступны на сайте [GitHub](https://github.com/Azure/hana-large-instances-self-service-scripts/tree/master/snapshot_tools_v4.1). Шаги, перечисленные выше, см. [в статье Microsoft snapshot Tools for SAP HANA в Azure](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/snapshot_tools_v4.1/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20v4.1.pdf).
+Последние сценарии создания моментальных снимков и документацию доступны на сайте [GitHub](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/latest/release.md). Шаги, перечисленные выше, см. [в статье Microsoft snapshot Tools for SAP HANA в Azure](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/latest/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20Guide.md).
 
 ### <a name="consideration-for-mcod-scenarios"></a>Рекомендации для сценариев MCOD
-Если вы запускаете [сценарий MCOD](https://launchpad.support.sap.com/#/notes/1681092) с несколькими экземплярами SAP HANA в одной единице крупных экземпляров Hana, у вас есть отдельные тома хранилища, подготовленные для каждого из экземпляров SAP HANA. Дополнительные сведения о MDC и других вопросах см. в разделе "важные вещи, которые следует запомнить" статьи [Microsoft snapshot Tools for SAP HANA в Azure](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/snapshot_tools_v4.1/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20v4.1.pdf).
+Если вы запускаете [сценарий MCOD](https://launchpad.support.sap.com/#/notes/1681092) с несколькими экземплярами SAP HANA в одной единице крупных экземпляров Hana, у вас есть отдельные тома хранилища, подготовленные для каждого из экземпляров SAP HANA. Дополнительные сведения о MDC и других вопросах см. в разделе "важные вещи, которые следует запомнить" статьи [Microsoft snapshot Tools for SAP HANA в Azure](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/latest/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20Guide.md).
  
 
 ### <a name="step-1-install-the-sap-hana-hdb-client"></a>Шаг 1. Установка клиента SAP HANA HDB
 
-Операционная система Linux, установленная на SAP HANA в Azure (крупные экземпляры), включает папки и скрипты, необходимые для запуска SAP HANA моментальных снимков хранилища для резервного копирования и аварийного восстановления. Проверьте наличие последних выпусков на сайте [GitHub](https://github.com/Azure/hana-large-instances-self-service-scripts/tree/master/snapshot_tools_v4.1). Последняя окончательная версия скриптов — 4,1. В рамках основного номера версии различные сценарии могут иметь разные вспомогательные версии.
+Операционная система Linux, установленная на SAP HANA в Azure (крупные экземпляры), включает папки и скрипты, необходимые для запуска SAP HANA моментальных снимков хранилища для резервного копирования и аварийного восстановления. Проверьте наличие последних выпусков на сайте [GitHub](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/latest/release.md). 
 
 Вы несете ответственность за установку SAP HANA клиента HDB на единицах крупных экземпляров HANA во время установки SAP HANA.
 
-### <a name="step-2-change-the-etcsshssh_config"></a>Шаг 2. Изменение конфигурации /etc/ssh/ssh\_config
+### <a name="step-2-change-the-etcsshssh_config"></a>Шаг 2. Изменение файла /etc/ssh/ssh\_config
 
-Этот шаг описан в разделе "Включение связи с хранилищем" в [средствах моментальных снимков Майкрософт для SAP HANA в Azure](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/snapshot_tools_v4.1/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20v4.1.pdf).
+Этот шаг описан в разделе "Включение связи с хранилищем" в [средствах моментальных снимков Майкрософт для SAP HANA в Azure](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/latest/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20Guide.md).
 
 
-### <a name="step-3-create-a-public-key"></a>Шаг 3. Создание открытого ключа
+### <a name="step-3-create-a-public-key"></a>Этап 3. Создание открытого ключа
 
 Чтобы разрешить доступ к интерфейсам моментальных снимков хранилища вашего клиента крупных экземпляров HANA, установите процедуру входа с помощью открытого ключа. 
 
 На первом SAP HANA сервере Azure (крупные экземпляры) в клиенте создайте открытый ключ для доступа к инфраструктуре хранилища. При использовании открытого ключа пароль не требуется для входа в интерфейсы моментальных снимков хранилища. Также не требуется сохранять учетные данные с открытым ключом. 
 
-Сведения о создании открытого ключа см. в разделе "Включение связи с хранилищем" в [средствах моментальных снимков Майкрософт для SAP HANA в Azure](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/snapshot_tools_v4.1/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20v4.1.pdf).
+Сведения о создании открытого ключа см. в разделе "Включение связи с хранилищем" в [средствах моментальных снимков Майкрософт для SAP HANA в Azure](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/latest/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20Guide.md).
 
 
-### <a name="step-4-create-an-sap-hana-user-account"></a>Шаг 4. Создание учетной записи пользователя SAP HANA
+### <a name="step-4-create-an-sap-hana-user-account"></a>Этап 4. Создание учетной записи пользователя SAP HANA
 
-Чтобы начать создание моментальных снимков SAP HANA, создайте учетную запись пользователя в SAP HANA, которую могут использовать скрипты моментальных снимков хранилища. Для этих целей создайте в SAP HANA Studio учетную запись пользователя SAP HANA. Пользователь должен быть создан в СИСТЕМДБ, а *не* в базе данных sid для MDC. В среде с одним контейнером пользователь создается в базе данных клиента. Эта учетная запись должна иметь права **администратора резервного копирования** и доступа к каталогу. 
+Чтобы начать создание моментальных снимков SAP HANA, создайте учетную запись пользователя в SAP HANA, которую могут использовать скрипты моментальных снимков хранилища. Для этих целей создайте в SAP HANA Studio учетную запись пользователя SAP HANA. Пользователь должен быть создан в СИСТЕМДБ, а *не* в базе данных sid для MDC. В среде с одним контейнером пользователь создается в базе данных клиента. Эта учетная запись должна иметь права **администратора резервного копирования** и доступа к **каталогу** . 
 
-Сведения о настройке и использовании учетной записи пользователя см. в разделе "Включение связи с SAP HANA" в [GitHub](https://github.com/Azure/hana-large-instances-self-service-scripts/tree/master/snapshot_tools_v4.1).
+Сведения о настройке и использовании учетной записи пользователя см. в разделе "Включение связи с SAP HANA" в [GitHub](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/latest/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20Guide.md).
 
 
-### <a name="step-5-authorize-the-sap-hana-user-account"></a>Шаг 5. Авторизация учетной записи пользователя SAP HANA
+### <a name="step-5-authorize-the-sap-hana-user-account"></a>Этап 5. Авторизация учетной записи пользователя SAP HANA
 
-На этом шаге вы разрешаете учетную запись SAP HANA пользователя, созданную таким образом, чтобы скриптам не нужно было отправлять пароли во время выполнения. Команда `hdbuserstore` SAP HANA позволяет создать SAP HANAный ключ пользователя. Ключ хранится на одном или нескольких узлах SAP HANA. и предоставляет пользователю доступ к SAP HANA (при этом в процессе написания сценария не нужно заботиться об управлении паролями). Этот процесс написания сценариев описывается далее.
+На этом шаге вы разрешаете учетную запись SAP HANA пользователя, созданную таким образом, чтобы скриптам не нужно было отправлять пароли во время выполнения. Команда SAP HANA `hdbuserstore` включает создание ключа пользователя SAP HANA. Ключ хранится на одном или нескольких узлах SAP HANA. и предоставляет пользователю доступ к SAP HANA (при этом в процессе написания сценария не нужно заботиться об управлении паролями). Этот процесс написания сценариев описывается далее.
 
 >[!IMPORTANT]
 >Выполните эти команды конфигурации с тем же контекстом пользователя, в котором выполняются команды моментальных снимков. В противном случае команды моментального снимка будут работать неправильно.
 
 
-### <a name="step-6-get-the-snapshot-scripts-configure-the-snapshots-and-test-the-configuration-and-connectivity"></a>Шаг 6. Получение сценариев создания моментальных снимков, настройка моментальных снимков, тестирование конфигурации и возможностей подключения
+### <a name="step-6-get-the-snapshot-scripts-configure-the-snapshots-and-test-the-configuration-and-connectivity"></a>Шаг 6. Получение сценариев создания моментальных снимков, настройка моментальных снимков, тестирование конфигурации и возможностей подключения
 
-Скачайте последнюю версию сценариев на [GitHub](https://github.com/Azure/hana-large-instances-self-service-scripts/tree/master/snapshot_tools_v4.1). Способ установки сценариев изменился с выпуском 4,1 сценариев. Дополнительные сведения см. в разделе "Включение связи с SAP HANA" в [средствах создания моментальных снимков Майкрософт для SAP HANA в Azure](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/snapshot_tools_v4.1/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20v4.1.pdf).
+Скачайте последнюю версию сценариев на [GitHub](https://github.com/Azure/hana-large-instances-self-service-scripts/tree/master/snapshot_tools_v4.1). Способ установки сценариев изменился с выпуском 4,1 сценариев. Дополнительные сведения см. в разделе "Включение связи с SAP HANA" в [средствах создания моментальных снимков Майкрософт для SAP HANA в Azure](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/latest/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20Guide.md).
 
-Точную последовательность команд см. в разделе «Простая установка средств создания моментальных снимков (по умолчанию)» в [средствах создания моментальных снимков Майкрософт для SAP HANA в Azure](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/snapshot_tools_v4.1/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20v4.1.pdf). Рекомендуется использовать установку по умолчанию. 
+Точную последовательность команд см. в разделе «Простая установка средств создания моментальных снимков (по умолчанию)» в [средствах создания моментальных снимков Майкрософт для SAP HANA в Azure](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/latest/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20Guide.md). Рекомендуется использовать установку по умолчанию. 
 
-Обновление с версии 3. x до 4,1 см. в разделе "Обновление существующей установки" статьи [Microsoft snapshot Tools for SAP HANA в Azure](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/snapshot_tools_v4.1/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20v4.1.pdf). Сведения об удалении набора средств 4,1 см. в разделе "Удаление средств создания моментальных снимков" раздела [Microsoft snapshot Tools for SAP HANA в Azure](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/snapshot_tools_v4.1/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20v4.1.pdf).
+Обновление с версии 3. x до 4,1 см. в разделе "Обновление существующей установки" статьи [Microsoft snapshot Tools for SAP HANA в Azure](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/latest/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20Guide.md). Сведения об удалении набора средств 4,1 см. в разделе "Удаление средств создания моментальных снимков" раздела [Microsoft snapshot Tools for SAP HANA в Azure](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/latest/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20Guide.md).
 
-Не забудьте выполнить действия, описанные в разделе "Завершение установки средств моментальных снимков" раздела [Microsoft snapshot Tools for SAP HANA в Azure](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/snapshot_tools_v4.1/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20v4.1.pdf).
+Не забудьте выполнить действия, описанные в разделе "Завершение установки средств моментальных снимков" раздела [Microsoft snapshot Tools for SAP HANA в Azure](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/latest/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20Guide.md).
 
-Назначение различных сценариев и файлов по мере их установки описывается в разделе "что такое средства создания моментальных снимков?". в [Microsoft snapshot Tools for SAP HANA в Azure](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/snapshot_tools_v4.1/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20v4.1.pdf).
+Назначение различных сценариев и файлов по мере их установки описывается в разделе "что такое средства создания моментальных снимков?". в [Microsoft snapshot Tools for SAP HANA в Azure](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/latest/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20Guide.md).
 
-Перед настройкой средств создания моментальных снимков убедитесь, что правильно настроены расположения и параметры для резервного копирования HANA. Дополнительные сведения см. в разделе "Конфигурация SAP HANA" в [средствах создания моментальных снимков Майкрософт для SAP HANA в Azure](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/snapshot_tools_v4.1/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20v4.1.pdf).
+Перед настройкой средств создания моментальных снимков убедитесь, что правильно настроены расположения и параметры для резервного копирования HANA. Дополнительные сведения см. в разделе "Конфигурация SAP HANA" в [средствах создания моментальных снимков Майкрософт для SAP HANA в Azure](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/latest/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20Guide.md).
 
-Конфигурация набора средств моментальных снимков описана в разделе "config file-HANABackupCustomerDetails. txt" в [средствах создания моментальных снимков Майкрософт для SAP HANA в Azure](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/snapshot_tools_v4.1/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20v4.1.pdf).
+Конфигурация набора средств моментальных снимков описана в разделе "config file-HANABackupCustomerDetails. txt" в [средствах создания моментальных снимков Майкрософт для SAP HANA в Azure](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/latest/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20Guide.md).
 
 #### <a name="test-connectivity-with-sap-hana"></a>Проверка подключения с помощью SAP HANA
 
 Поместив все данные конфигурации в файл *HANABackupCustomerDetails.txt*, проверьте правильность конфигурации в отношении данных экземпляра HANA. Используйте сценарий `testHANAConnection`, который не зависит от конфигурации развертывания или масштабирования SAP HANA.
 
-Дополнительные сведения см. в разделе "Проверка подключения с помощью SAP HANA-Тессанаконнектион" в [средствах создания моментальных снимков Майкрософт для SAP HANA в Azure](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/snapshot_tools_v4.1/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20v4.1.pdf).
+Дополнительные сведения см. в разделе "Проверка подключения с помощью SAP HANA-Тессанаконнектион" в [средствах создания моментальных снимков Майкрософт для SAP HANA в Azure](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/latest/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20Guide.md).
 
 #### <a name="test-storage-connectivity"></a>Проверка подключения к хранилищу
 
-Следующий шаг теста — проверка подключения к хранилищу на основе данных, помещаемых в файл конфигурации *HANABackupCustomerDetails. txt* . Затем запустите тестовый моментальный снимок. Перед выполнением `azure_hana_backup` команды необходимо выполнить этот тест. Последовательность команд для этого теста приведена в разделе "Проверка подключения с помощью Storage-Тестсторажеснапшотконнектион" в [средствах создания моментальных снимков Майкрософт для SAP HANA в Azure](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/snapshot_tools_v4.1/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20v4.1.pdf).
+Следующий шаг теста — проверка подключения к хранилищу на основе данных, помещаемых в файл конфигурации *HANABackupCustomerDetails. txt* . Затем запустите тестовый моментальный снимок. Перед выполнением команды `azure_hana_backup` необходимо выполнить этот тест. Последовательность команд для этого теста приведена в разделе "Проверка подключения с помощью Storage-Тестсторажеснапшотконнектион" в [средствах создания моментальных снимков Майкрософт для SAP HANA в Azure](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/latest/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20Guide.md).
 
 После успешного входа в интерфейсы виртуальной машины хранилища этот сценарий перейдет к этапу 2 и создаст тестовый моментальный снимок. Выходные данные показаны здесь для горизонтальной конфигурации с тремя узлами SAP HANA.
 
@@ -195,9 +195,9 @@ SAP HANA в Azure (крупные экземпляры) поставляется
 
 После завершения подготовительных действий можно приступить к настройке и планированию фактических моментальных снимков хранилища. Сценарий, выполнение которого следует запланировать, работает с конфигурациями увеличения масштаба и развертывания SAP HANA. Для периодического и регулярного выполнения сценария резервного копирования запланируйте его с помощью служебной программы Cron. 
 
-Точный синтаксис и функциональность команды см. в разделе "выполнение моментального снимка Backup-azure_hana_backup" в [средствах создания моментальных снимков Майкрософт для SAP HANA в Azure](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/snapshot_tools_v4.1/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20v4.1.pdf). 
+Точный синтаксис и функциональность команды см. в разделе "выполнение моментального снимка Backup-azure_hana_backup" в [средствах создания моментальных снимков Майкрософт для SAP HANA в Azure](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/latest/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20Guide.md). 
 
-При запуске скрипт `azure_hana_backup` создает моментальный снимок хранилища на следующих трех этапах:
+При запуске скрипта `azure_hana_backup` создает моментальный снимок хранилища на следующих трех этапах:
 
 1. Он запускает SAP HANAный моментальный снимок.
 1. Он запускает моментальный снимок хранилища.
@@ -281,16 +281,16 @@ SAP HANA регулярно записывает данные на том /hana/
 ![Создание файловой резервной копии для формирования единой записи о резервной копии](./media/hana-overview-high-availability-disaster-recovery/image6-make-backup.png)
 
 
-После выполнения первого успешного создания моментальных снимков хранилища удалите тестовый моментальный снимок, который выполнялся на шаге 6. Дополнительные сведения см. в разделе "Удаление тестовых моментальных снимков — Ремоветестсторажеснапшот" в [средствах создания моментальных снимков Майкрософт для SAP HANA в Azure](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/snapshot_tools_v4.1/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20v4.1.pdf). 
+После выполнения первого успешного создания моментальных снимков хранилища удалите тестовый моментальный снимок, который выполнялся на шаге 6. Дополнительные сведения см. в разделе "Удаление тестовых моментальных снимков — Ремоветестсторажеснапшот" в [средствах создания моментальных снимков Майкрософт для SAP HANA в Azure](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/latest/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20Guide.md). 
 
 
 ### <a name="monitor-the-number-and-size-of-snapshots-on-the-disk-volume"></a>Отслеживание количества и размера моментальных снимков на томе диска
 
-Количество моментальных снимков и занимаемое ими пространство на определенном томе хранилища можно отслеживать. Команда `ls` не возвращает сведения о каталоге или файлах моментальных снимков. Команда `du` Linux OS отображает сведения об этих моментальных снимках хранилища, так как они хранятся на одних и тех же томах. Используйте команду со следующими параметрами:
+Количество моментальных снимков и занимаемое ими пространство на определенном томе хранилища можно отслеживать. Команда `ls` не возвращает сведения о каталоге или файлах моментальных снимков. Команда Linux OS `du` отображает сведения об этих моментальных снимках хранилища, поскольку они хранятся на одних и тех же томах. Используйте команду со следующими параметрами:
 
-- `du –sh .snapshot`. Этот параметр возвращает общее число моментальных снимков в каталоге моментальных снимков.
-- `du –sh --max-depth=1`. Этот параметр выводит список всех моментальных снимков, сохраненных в папке **.snapshot**, и размер каждого моментального снимка.
-- `du –hc`. Этот параметр возвращает общий размер всех моментальных снимков.
+- `du –sh .snapshot` — возвращает общее число моментальных снимков в каталоге моментальных снимков.
+- `du –sh --max-depth=1` — выводит список всех моментальных снимков, сохраненных в папке **.snapshot**, и размер каждого моментального снимка.
+- `du –hc` — возвращает общий размер всех моментальных снимков.
 
 Используйте эти команды, чтобы убедиться, что созданные и сохраненные моментальные снимки не потребляют все хранилище на томах.
 
@@ -298,7 +298,7 @@ SAP HANA регулярно записывает данные на том /hana/
 >Моментальные снимки загрузочного LUN не отображаются с предыдущими командами.
 
 ### <a name="get-details-of-snapshots"></a>Получение сведений о моментальных снимках
-Чтобы получить дополнительные сведения о моментальных снимках, используйте `azure_hana_snapshot_details`скрипт. Этот скрипт можно запустить в любом расположении, если в расположении аварийного восстановления имеется активный сервер. Этот сценарий предоставляет следующие выходные данные с разбивкой по томам, содержащим моментальные снимки: 
+Чтобы получить дополнительные сведения о моментальных снимках, используйте скрипт `azure_hana_snapshot_details`. Этот скрипт можно запустить в любом расположении, если в расположении аварийного восстановления имеется активный сервер. Этот сценарий предоставляет следующие выходные данные с разбивкой по томам, содержащим моментальные снимки: 
    * общий размер моментальных снимков на томе;
    * Для каждого снимка на этом томе указываются следующие сведения: 
       - имя моментального снимка; 
@@ -307,7 +307,7 @@ SAP HANA регулярно записывает данные на том /hana/
       - частота создания снимка;
       - идентификатор резервного копирования HANA, связанный с этим моментальным снимком (если применимо).
 
-Синтаксис команды и выходных данных см. в разделе "List snapshots-azure_hana_snapshot_details" в [средствах создания моментальных снимков Майкрософт для SAP HANA в Azure](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/snapshot_tools_v4.1/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20v4.1.pdf). 
+Синтаксис команды и выходных данных см. в разделе "List snapshots-azure_hana_snapshot_details" в [средствах создания моментальных снимков Майкрософт для SAP HANA в Azure](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/latest/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20Guide.md). 
 
 
 
@@ -336,7 +336,7 @@ SAP HANA регулярно записывает данные на том /hana/
 
 <!-- hana, logs and boot are no spelling errors as Acrolinx indicates, but terms of parameter values -->
 
-Дополнительные сведения о скрипте см. в разделе "Удаление моментального снимка-azure_hana_snapshot_delete" в [средствах создания моментальных снимков Майкрософт для SAP HANA в Azure](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/snapshot_tools_v4.1/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20v4.1.pdf).
+Дополнительные сведения о скрипте см. в разделе "Удаление моментального снимка-azure_hana_snapshot_delete" в [средствах создания моментальных снимков Майкрософт для SAP HANA в Azure](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/latest/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20Guide.md).
 
 Запустите сценарий от имени **привилегированного**пользователя.
 
@@ -363,7 +363,7 @@ SAP HANA регулярно записывает данные на том /hana/
 
 Прежде чем отправлять запрос, следует учесть некоторые моменты, После этого SAP HANA в группе Azure может выполнить запрос и предоставить восстановленные тома. после чего вы сможете восстановить базу данных HANA на основе моментальных снимков.
 
-Сведения о возможностях получения моментального снимка, восстановленного с помощью нового набора инструментов, см. в разделе "восстановление моментального снимка" [руководства по восстановлению SAP HANA в Azure из моментального снимка хранилища](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/guides/Manual%20recovery%20of%20snapshot%20with%20HANA%20Studio.pdf).
+Сведения о возможностях получения моментального снимка, восстановленного с помощью нового набора инструментов, см. в разделе "восстановление моментального снимка" [руководства по восстановлению SAP HANA в Azure из моментального снимка хранилища](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/latest/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20Guide.md).
 
 Чтобы подготовиться к запросу, выполните следующие действия.
 
@@ -379,9 +379,9 @@ SAP HANA регулярно записывает данные на том /hana/
 
 1. Откройте запрос в службу поддержки Azure и включите в него инструкции по восстановлению определенного моментального снимка:
 
-   - Во время восстановления: SAP HANA в службе Azure может попросить посетить конференц-связь, чтобы координировать, проверить и подтвердить восстановление правильного моментального снимка хранилища. 
+   - Во время восстановления: SAP HANA в службе Azure может попросить посетить конференц-связь для координации, проверки и подтверждения восстановления правильного моментального снимка хранилища. 
 
-   - После восстановления: SAP HANA службы Azure уведомляет вас о восстановлении моментального снимка хранилища.
+   - После восстановления SAP HANA службы Azure уведомляет вас о восстановлении моментального снимка хранилища.
 
 1. Когда процесс восстановления завершится, подключите все тома данных.
 
@@ -389,17 +389,17 @@ SAP HANA регулярно записывает данные на том /hana/
 
 
 
-Другой способ получения, например SAP HANA файлов данных, восстановленных из моментального снимка хранилища, описан в шаге 7 [руководства по восстановлению вручную для SAP HANA в Azure из моментального снимка хранилища](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/guides/Manual%20recovery%20of%20snapshot%20with%20HANA%20Studio.pdf).
+Другой способ получения, например SAP HANA файлов данных, восстановленных из моментального снимка хранилища, описан в шаге 7 [руководства по восстановлению вручную для SAP HANA в Azure из моментального снимка хранилища](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/latest/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20Guide.md).
 
-Сведения о восстановлении из резервной копии моментальных снимков см. в [руководстве по восстановлению SAP HANA в Azure из моментального снимка хранилища](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/guides/Manual%20recovery%20of%20snapshot%20with%20HANA%20Studio.pdf). 
+Сведения о восстановлении из резервной копии моментальных снимков см. в [руководстве по восстановлению SAP HANA в Azure из моментального снимка хранилища](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/latest/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20Guide.md). 
 
 >[!Note]
 >Если ваш моментальный снимок был восстановлен с помощью Microsoft Operations, шаг 7 выполнять не нужно.
 
 
 ### <a name="recover-to-another-point-in-time"></a>Восстановление до другой точки во времени
-Чтобы выполнить восстановление до определенной точки во времени, см. раздел "восстановление базы данных до следующего момента времени" раздела [руководство по восстановлению вручную для SAP HANA в Azure из моментального снимка хранилища](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/guides/Manual%20recovery%20of%20snapshot%20with%20HANA%20Studio.pdf). 
+Чтобы выполнить восстановление до определенной точки во времени, см. раздел "восстановление базы данных до следующего момента времени" раздела [руководство по восстановлению вручную для SAP HANA в Azure из моментального снимка хранилища](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/latest/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20Guide.md). 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - См. раздел [принципы аварийного восстановления и подготовка](hana-concept-preparation.md).

@@ -9,12 +9,12 @@ ms.author: robreed
 manager: carmonm
 ms.topic: conceptual
 ms.date: 08/08/2018
-ms.openlocfilehash: 09ba4bc9e5ac496a7d1d65ff145d56818e53116e
-ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
+ms.openlocfilehash: b44bcf7edeaad07fbe0b3093ba3c7100cb0c24c4
+ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72243339"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72432065"
 ---
 # <a name="configure-servers-to-a-desired-state-and-manage-drift"></a>Настройка требуемого состояния серверов и управление смещением
 
@@ -23,18 +23,18 @@ ms.locfileid: "72243339"
 > [!div class="checklist"]
 > - Подключение виртуальной машины для управления с помощью DSC службы автоматизации Azure.
 > - Передача конфигурации в службу автоматизации Azure.
-> - Компиляция конфигурации в конфигурации узла.
-> - Назначение конфигурации узла управляемому узлу.
+> - Компиляция конфигурации в конфигурации узла
+> - Назначение конфигурации узла управляемому узлу
 > - Проверка состояния соответствия управляемого узла
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для работы с этим учебником требуется:
 
 - Учетная запись службы автоматизации Azure. Указания по созданию учетной записи запуска от имени пользователя для службы автоматизации Azure см. в статье [Проверка подлинности модулей Runbook в Azure с помощью учетной записи запуска от имени](automation-sec-configure-azure-runas-account.md).
 - Виртуальная машина Azure Resource Manager (неклассическая) под управлением Windows Server 2008 R2 или более поздней версии. Инструкции по созданию виртуальной машины см. в статье [Создание первой виртуальной машины Windows на портале Azure](../virtual-machines/virtual-machines-windows-hero-tutorial.md).
 - Azure PowerShell 3.6.0 или более поздней версии. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable AzureRM`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps).
-- Знакомство с платформой Desired State Configuration (DSC) Дополнительные сведения о DSC см. в статье [Общие сведения о службе настройки требуемого состояния Windows PowerShell](/powershell/scripting/dsc/overview/overviews).
+- Знакомство с платформой Desired State Configuration (DSC) Дополнительные сведения о DSC см. в статье [Общие сведения о службе настройки требуемого состояния Windows PowerShell](/powershell/scripting/dsc/overview/overview).
 
 ## <a name="log-in-to-azure"></a>Вход в Azure
 
@@ -170,7 +170,7 @@ $reports[0]
 > Это не влияет на конфигурацию, которая в настоящее время применяется к узлу.
 > Чтобы удалить текущую конфигурацию, используйте [PowerShell](https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/remove-dscconfigurationdocument?view=powershell-5.1) или удалите локальный файл конфигурации (это единственный вариант для узлов Linux).
 
-### <a name="azure-portal"></a>Портал Azure
+### <a name="azure-portal"></a>портала Azure
 
 Из службы автоматизации Azure щелкните **Конфигурация состояния (DSC)** в содержании.
 Затем щелкните **узлы** , чтобы просмотреть список узлов, зарегистрированных в службе.
@@ -181,7 +181,7 @@ $reports[0]
 
 Чтобы отменить регистрацию узла в службе настройки состояния службы автоматизации Azure с помощью PowerShell, следуйте указаниям в документации командлета [Unregister-азаутоматиондскноде](https://docs.microsoft.com/powershell/module/az.automation/unregister-azautomationdscnode?view=azps-2.0.0).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Чтобы приступить к работе со службой "Настройка состояния службы автоматизации Azure", см. сведения в [этой статье](automation-dsc-getting-started.md).
 - Дополнительные сведения о подключении узлов см. в статье [Подключение компьютеров для управления с помощью Azure Automation DSC](automation-dsc-onboarding.md).

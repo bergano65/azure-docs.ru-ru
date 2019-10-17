@@ -1,6 +1,6 @@
 ---
-title: 'Справочник по API Azure монитор состояния v2: Включить мониторинг | Документация Майкрософт'
-description: Справочник по API монитор состояния v2. Enable-Аппликатионинсигхтсмониторинг. Отслеживайте производительность веб-сайта без повторного развертывания веб-сайта. Работает с веб-приложениями ASP.NET, размещенными локально, в виртуальных машинах или в Azure.
+title: 'Справочник по API агента Azure Application Insights: Включение мониторинга | Документация Майкрософт'
+description: Справочник по API агента Application Insights. Enable-Аппликатионинсигхтсмониторинг. Отслеживайте производительность веб-сайта без повторного развертывания веб-сайта. Работает с веб-приложениями ASP.NET, размещенными локально, в виртуальных машинах или в Azure.
 services: application-insights
 documentationcenter: .net
 author: TimothyMothra
@@ -12,14 +12,14 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: tilee
-ms.openlocfilehash: 8742316697e6d6c8178bb02c8e7288499c655b6b
-ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
+ms.openlocfilehash: 2a310a83677bffc8843fdb8979ec272f197a8a39
+ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71033128"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72389891"
 ---
-# <a name="status-monitor-v2-api-enable-applicationinsightsmonitoring"></a>API монитор состояния v2: Enable-Аппликатионинсигхтсмониторинг
+# <a name="application-insights-agent-api-enable-applicationinsightsmonitoring"></a>API агента Application Insights: enable-Аппликатионинсигхтсмониторинг
 
 В этой статье описывается командлет, который является членом [модуля PowerShell AZ. аппликатионмонитор](https://www.powershellgallery.com/packages/Az.ApplicationMonitor/).
 
@@ -53,11 +53,11 @@ PS C:\> Enable-ApplicationInsightsMonitoring -InstrumentationKey xxxxxxxx-xxxx-x
 
 ### <a name="example-with-an-instrumentation-key-map"></a>Пример с картой ключа инструментирования
 В данном примере:
-- `MachineFilter`соответствует текущему компьютеру с помощью `'.*'` подстановочного знака.
-- `AppFilter='WebAppExclude'`предоставляет ключ `null` инструментирования. Указанное приложение не будет инструментировано.
-- `AppFilter='WebAppOne'`Присваивает указанному приложению уникальный ключ инструментирования.
-- `AppFilter='WebAppTwo'`Присваивает указанному приложению уникальный ключ инструментирования.
-- Наконец, `AppFilter` также `'.*'` использует подстановочный знак для сопоставления всех веб-приложений, которые не соответствуют предыдущим правилам, и назначения ключа инструментирования по умолчанию.
+- `MachineFilter` соответствует текущему компьютеру с помощью подстановочного знака `'.*'`.
+- `AppFilter='WebAppExclude'` предоставляет ключ инструментирования `null`. Указанное приложение не будет инструментировано.
+- `AppFilter='WebAppOne'` назначает заданному приложению уникальный ключ инструментирования.
+- `AppFilter='WebAppTwo'` назначает заданному приложению уникальный ключ инструментирования.
+- Наконец, `AppFilter` также использует шаблон `'.*'`, чтобы сопоставить все веб-приложения, которые не соответствуют предыдущим правилам, и назначить ключ инструментирования по умолчанию.
 - Для удобочитаемости добавляются пробелы.
 
 ```powershell
@@ -77,12 +77,12 @@ PS C:\> Enable-ApplicationInsightsMonitoring -InstrumentationKeyMap
 
 ### <a name="-instrumentationkeymap"></a>-Инструментатионкэймап
 **Обязательный параметр.** Этот параметр используется для предоставления нескольких ключей инструментирования и сопоставления ключей инструментирования, используемых каждым приложением.
-Можно создать один скрипт установки для нескольких компьютеров, установив `MachineFilter`.
+Можно создать один скрипт установки для нескольких компьютеров, установив значение `MachineFilter`.
 
 > [!IMPORTANT]
 > Приложения будут соответствовать правилам в том порядке, в котором предоставляются правила. Поэтому необходимо сначала указать наиболее конкретные правила, а также наиболее общие правила.
 
-#### <a name="schema"></a>Схема
+#### <a name="schema"></a>SCHEMA (Схема)
 `@(@{MachineFilter='.*';AppFilter='.*';InstrumentationSettings=@{InstrumentationKey='xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'}})`
 
 - **Мачинефилтер** — это обязательное C# регулярное выражение имени компьютера или виртуальной машины.
@@ -115,7 +115,7 @@ PS C:\> Enable-ApplicationInsightsMonitoring -InstrumentationKeyMap
 ### <a name="-whatif"></a>-WhatIf 
 **Общий параметр.** Используйте этот переключатель для проверки и проверки входных параметров без фактического включения мониторинга.
 
-## <a name="output"></a>Вывод
+## <a name="output"></a>Выходные данные
 
 
 #### <a name="example-output-from-a-successful-enablement"></a>Пример выходных данных успешного включения
@@ -151,7 +151,7 @@ Updating app pool permissions...
 Successfully enabled Application Insights Status Monitor
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
   Просмотр телеметрии:
  - [Изучите метрики](../../azure-monitor/app/metrics-explorer.md) для мониторинга производительности и использования.
@@ -164,7 +164,7 @@ Successfully enabled Application Insights Status Monitor
 - [Добавьте данные телеметрии веб-клиента](../../azure-monitor/app/javascript.md) , чтобы просмотреть исключения из кода веб-страницы и включить вызовы трассировки.
 - [Добавьте в код пакет SDK для Application Insights](../../azure-monitor/app/asp-net.md) , чтобы можно было вставить вызовы трассировки и журнала.
  
- Дополнительные возможности монитор состояния версии 2:
- - Воспользуйтесь нашим руководством по [устранению неполадок](status-monitor-v2-troubleshoot.md) монитор состояния v2.
+ Другие действия с агентом Application Insights:
+ - Используйте наше справочное по для [устранения неполадок](status-monitor-v2-troubleshoot.md) агента Application Insights.
  - [Получите конфигурацию](status-monitor-v2-api-get-config.md) , чтобы убедиться, что параметры записаны правильно.
  - [Получение состояния](status-monitor-v2-api-get-status.md) для проверки мониторинга.

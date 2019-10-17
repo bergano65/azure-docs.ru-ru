@@ -16,12 +16,12 @@ ms.date: 10/07/2019
 ms.author: ajburnle
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 89cdab09e3ae03ddea6259eda657908f900f982e
-ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
+ms.openlocfilehash: 6d44a4265c3729bff3d983395a37a6cb64a463d4
+ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72169849"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72389119"
 ---
 # <a name="delegation-and-roles-in-azure-ad-entitlement-management-preview"></a>Делегирование и роли в управлении назначениями Azure AD (Предварительная версия)
 
@@ -70,12 +70,12 @@ ms.locfileid: "72169849"
 
 После делегирования отдел маркетинга может иметь роли, аналогичные приведенным в следующей таблице.
 
-| Пользовательская | Должность | Роль Azure AD | Роль управления назначениями |
+| Пользователь | Должность | Роль Azure AD | Роль управления назначениями |
 | --- | --- | --- | --- |
 | Hana | ИТ – администратор | глобальный администратор или администратор пользователей. |  |
-| мамта | Менеджер по маркетингу | Пользовательская | Создатель каталога и владелец каталога |
-| Владимир | Ведущий маркетинг | Пользовательская | Владелец каталога |
-| Джессика | Менеджер по маркетингу проекта | Пользовательская | Доступ к диспетчеру пакетов |
+| мамта | Менеджер по маркетингу | Пользователь | Создатель каталога и владелец каталога |
+| Владимир | Ведущий маркетинг | Пользователь | Владелец каталога |
+| Джессика | Менеджер по маркетингу проекта | Пользователь | Доступ к диспетчеру пакетов |
 
 ## <a name="entitlement-management-roles"></a>Роли управления назначениями
 
@@ -89,7 +89,7 @@ ms.locfileid: "72169849"
 
 Кроме того, назначенный утверждающий и запрашивающий пакет Access также имеют права, хотя они не являются ролями.
 
-| Справа | Описание |
+| Right | Описание |
 | --- | --- |
 | Утверждающий | Авторизация политикой для утверждения или запрета запросов на доступ к пакетам, однако они не могут изменять определения пакетов доступа. |
 | Запрашивающей стороны | Авторизация с помощью политики пакета доступа для запроса этого пакета доступа. |
@@ -107,15 +107,15 @@ ms.locfileid: "72169849"
 | [Делегирование в Диспетчер пакетов Access](entitlement-management-delegate-managers.md) | :heavy_check_mark: |  | :heavy_check_mark: |  |
 | [Удаление диспетчера пакетов Access](entitlement-management-delegate-managers.md#remove-an-access-package-manager) | :heavy_check_mark: |  | :heavy_check_mark: |  |
 | [Создание нового пакета Access в каталоге](entitlement-management-access-package-create.md) | :heavy_check_mark: |  | :heavy_check_mark:  | :heavy_check_mark:  |
-| [Управление ролями ресурсов в пакете Access](entitlement-management-access-package-edit.md) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |
-| [Создание и изменение политик](entitlement-management-access-package-edit.md#add-a-new-policy) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |
-| [Напрямую назначить пользователя пакету Access](entitlement-management-access-package-edit.md#directly-assign-a-user) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |
-| [Просмотр пользователей, которым назначен доступ к пакету Access](entitlement-management-access-package-edit.md#view-who-has-an-assignment) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |
-| [Просмотр запросов пакета доступа](entitlement-management-access-package-edit.md#view-requests) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |
-| [Просмотр ошибок доставки запроса](entitlement-management-access-package-edit.md#view-a-requests-delivery-errors) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |
-| [Отмена ожидающего запроса](entitlement-management-access-package-edit.md#cancel-a-pending-request) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |
+| [Изменение ролей ресурсов в пакете Access](entitlement-management-access-package-resources.md) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |
+| [Создание и изменение политик](entitlement-management-access-package-request-policy.md) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |
+| [Напрямую назначить пользователя пакету Access](entitlement-management-access-package-assignments.md#directly-assign-a-user) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |
+| [Просмотр пользователей, которым назначен доступ к пакету Access](entitlement-management-access-package-assignments.md#view-who-has-an-assignment) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |
+| [Просмотр запросов пакета доступа](entitlement-management-access-package-requests.md#view-requests) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |
+| [Просмотр ошибок доставки запроса](entitlement-management-access-package-requests.md#view-a-requests-delivery-errors) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |
+| [Отмена ожидающего запроса](entitlement-management-access-package-requests.md#cancel-a-pending-request) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |
 | [Скрыть пакет Access](entitlement-management-access-package-edit.md#change-the-hidden-setting) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |
-| [Удаление пакета Access](entitlement-management-access-package-edit.md#delete) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |
+| [Удаление пакета Access](entitlement-management-access-package-edit.md#delete-an-access-package) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |
 
 ## <a name="required-roles-to-add-resources-to-a-catalog"></a>Роли, необходимые для добавления ресурсов в каталог
 
@@ -125,19 +125,19 @@ ms.locfileid: "72169849"
 
 | Роль каталога Azure AD | Роль управления назначениями | Можно добавить группу безопасности | Можно добавить группу Office 365 | Можно добавить приложение | Можно добавить сайт SharePoint Online |
 | --- | :---: | :---: | :---: | :---: | :---: |
-| [Глобальный администратор](../users-groups-roles/directory-assign-admin-roles.md) | Недоступно |  :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Администратор пользователей](../users-groups-roles/directory-assign-admin-roles.md) | Недоступно |  :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |  |
+| [Глобальный администратор](../users-groups-roles/directory-assign-admin-roles.md) | Н/Д |  :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| [Администратор пользователей](../users-groups-roles/directory-assign-admin-roles.md) | Н/Д |  :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |  |
 | [Администратор Intune](../users-groups-roles/directory-assign-admin-roles.md) | Владелец каталога | :heavy_check_mark: | :heavy_check_mark: |  |  |
 | [Администратор Exchange](../users-groups-roles/directory-assign-admin-roles.md) | Владелец каталога |  | :heavy_check_mark: |  |  |
 | [Администратор служб Team Services](../users-groups-roles/directory-assign-admin-roles.md) | Владелец каталога |  | :heavy_check_mark: |  |  |
 | [Администратор SharePoint](../users-groups-roles/directory-assign-admin-roles.md) | Владелец каталога |  | :heavy_check_mark: |  | :heavy_check_mark: |
 | [администратор приложения](../users-groups-roles/directory-assign-admin-roles.md); | Владелец каталога |  |  | :heavy_check_mark: |  |
 | [администратор облачных приложений](../users-groups-roles/directory-assign-admin-roles.md). | Владелец каталога |  |  | :heavy_check_mark: |  |
-| Пользовательская | Владелец каталога | Только если владелец группы | Только если владелец группы | Только если владелец приложения |  |
+| Пользователь | Владелец каталога | Только если владелец группы | Только если владелец группы | Только если владелец приложения |  |
 
 Чтобы определить минимально привилегированную роль для задачи, можно также ссылаться на [роли администратора по задаче администрирования в Azure Active Directory](../users-groups-roles/roles-delegate-by-task.md#entitlement-management).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Делегирование управления доступом к авторам каталогов](entitlement-management-delegate-catalog.md)
 - [Создание каталога ресурсов и управление им](entitlement-management-catalog-create.md)

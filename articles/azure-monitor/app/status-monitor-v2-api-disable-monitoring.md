@@ -1,6 +1,6 @@
 ---
-title: 'Справочник по API Azure монитор состояния v2: Отключить мониторинг | Документация Майкрософт'
-description: Справочник по API монитор состояния v2. Disable-Аппликатионинсигхтсмониторинг. Отслеживайте производительность веб-сайта без повторного развертывания веб-сайта. Работает с веб-приложениями ASP.NET, размещенными локально, в виртуальных машинах или в Azure.
+title: 'Справочник по API агента Application Insights Azure: отключение мониторинга | Документация Майкрософт'
+description: Справочник по API агента Application Insights. Disable-Аппликатионинсигхтсмониторинг. Отслеживайте производительность веб-сайта без повторного развертывания веб-сайта. Работает с веб-приложениями ASP.NET, размещенными локально, в виртуальных машинах или в Azure.
 services: application-insights
 documentationcenter: .net
 author: TimothyMothra
@@ -12,14 +12,14 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: tilee
-ms.openlocfilehash: af105a6a819ced475f490d3c99fc1e63d8eee5c8
-ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
+ms.openlocfilehash: d305e664c68af34027510a4e27d293bb24abc021
+ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71203434"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72389896"
 ---
-# <a name="status-monitor-v2-api-disable-applicationinsightsmonitoring"></a>API монитор состояния v2: Disable-Аппликатионинсигхтсмониторинг
+# <a name="application-insights-agent-api-disable-applicationinsightsmonitoring"></a>API агента Application Insights: Disable-Аппликатионинсигхтсмониторинг
 
 В этой статье описывается командлет, который является членом [модуля PowerShell AZ. аппликатионмонитор](https://www.powershellgallery.com/packages/Az.ApplicationMonitor/).
 
@@ -42,7 +42,7 @@ PS C:\> Disable-ApplicationInsightsMonitoring
 ### <a name="-verbose"></a>-Verbose
 **Общий параметр.** Используйте этот параметр для просмотра подробных журналов.
 
-## <a name="output"></a>Output
+## <a name="output"></a>Выходные данные
 
 
 #### <a name="example-output-from-successfully-disabling-monitoring"></a>Пример выходных данных для успешного отключения мониторинга
@@ -69,7 +69,7 @@ Successfully disabled Application Insights Status Monitor
 ```
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
- Дополнительные возможности монитор состояния версии 2:
- - Воспользуйтесь нашим руководством по [устранению неполадок](status-monitor-v2-troubleshoot.md) монитор состояния v2.
+ Другие действия с агентом Application Insights:
+ - Используйте наше справочное по для [устранения неполадок](status-monitor-v2-troubleshoot.md) агента Application Insights.

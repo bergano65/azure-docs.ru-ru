@@ -1,17 +1,17 @@
 ---
-title: Создание сопоставления потока данных Фабрики данных Azure
+title: Создание потока данных сопоставления фабрики данных Azure
 description: Создание потока данных сопоставления фабрики данных Azure
 author: kromerm
 ms.author: makromer
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 02/12/2019
-ms.openlocfilehash: d8ebc026add9dfd85d7cbe312a8cfffd3e365f82
-ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
+ms.openlocfilehash: 31528c0ac7796aafbde74a3814d971138ec4ba2e
+ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72026880"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72387248"
 ---
 # <a name="create-azure-data-factory-data-flow"></a>Создание потока данных Фабрики данных Azure
 
@@ -21,15 +21,15 @@ ms.locfileid: "72026880"
 
 Начните с создания новой фабрики данных v2 на основе портал Azure. После создания новой фабрики щелкните плитку "Author & Monitor" (Создание и мониторинг), чтобы запустить пользовательский интерфейс Фабрики данных.
 
-![Варианты потока данных](media/data-flow/v2portal.png "создание потока данных")
+![Параметры потока данных](media/data-flow/v2portal.png "Создание потока данных")
 
 После входа в пользовательский интерфейс Фабрики данных, вы можете использовать примеры потоков данных. Примеры доступны в коллекции шаблонов ADF. В ADF создайте "Конвейер из шаблона", а в коллекции шаблонов выберите категорию "Поток данных".
 
-![Варианты потока данных](media/data-flow/template.png "создание потока данных")
+![Параметры потока данных](media/data-flow/template.png "Создание потока данных")
 
 Появится запрос на ввод учетных данных хранилища BLOB-объектов Azure.
 
-![Варианты потока данных](media/data-flow/template2.png "создание потока данных 2")
+![Параметры потока данных](media/data-flow/template2.png "Создание потока данных 2")
 
 [Данные, используемые для этих примеров можно найти здесь](https://github.com/kromerm/adfdataflowdocs/tree/master/sampledata). Загрузите примеры данных и сохраните файлы в своих учетных записях хранилища BLOB-объектов Azure, чтобы вы могли выполнить примеры.
 
@@ -37,8 +37,8 @@ ms.locfileid: "72026880"
 
 Используйте кнопку Создать ресурс "плюс" в пользовательском интерфейсе ADF для создания потоков данных.
 
-![Варианты потока данных](media/data-flow/newresource.png "Новый ресурс")
+![Параметры потока данных](media/data-flow/newresource.png "Новый ресурс")
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Начните создавать преобразование данных с помощью [преобразования «источник](data-flow-source.md)».

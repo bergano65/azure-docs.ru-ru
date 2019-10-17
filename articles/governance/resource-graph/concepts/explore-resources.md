@@ -3,17 +3,17 @@ title: Просмотр ресурсов Azure
 description: Узнайте, как использовать язык запросов Graph, чтобы исследовать ресурсы и узнать, как они подключены.
 author: DCtheGeek
 ms.author: dacoulte
-ms.date: 08/22/2019
+ms.date: 10/18/2019
 ms.topic: conceptual
 ms.service: resource-graph
-ms.openlocfilehash: e6a43db764a3dbc001e132ef5e321f20aa36041f
-ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
+ms.openlocfilehash: b92975e3fe73fb1c882bdfc4338fd8e169728e8b
+ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71981271"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72387636"
 ---
-# <a name="explore-your-azure-resources-with-resource-graph"></a>Изучение ресурсов Azure с помощью Resource Graph
+# <a name="explore-your-azure-resources-with-resource-graph"></a>Изучение ресурсов Azure с помощью графика ресурсов
 
 График ресурсов Azure дает возможность обнаруживать и изучать ресурсы Azure быстро и в любом масштабе. Это средство, при разработке которого ставилась цель обеспечить быстрый отклик, отлично подходит для анализа среды и характеристик ваших ресурсов Azure.
 
@@ -26,16 +26,17 @@ ms.locfileid: "71981271"
 Давайте начнем с простого запроса для получения отдельной виртуальной машины из среды и рассмотрим возвращенные свойства.
 
 ```kusto
-where type =~ 'Microsoft.Compute/virtualMachines'
+Resources
+| where type =~ 'Microsoft.Compute/virtualMachines'
 | limit 1
 ```
 
 ```azurecli-interactive
-az graph query -q "where type =~ 'Microsoft.Compute/virtualMachines' | limit 1"
+az graph query -q "Resources | where type =~ 'Microsoft.Compute/virtualMachines' | limit 1"
 ```
 
 ```azurepowershell-interactive
-Search-AzGraph -Query "where type =~ 'Microsoft.Compute/virtualMachines' | limit 1" | ConvertTo-Json -Depth 100
+Search-AzGraph -Query "Resources | where type =~ 'Microsoft.Compute/virtualMachines' | limit 1" | ConvertTo-Json -Depth 100
 ```
 
 > [!NOTE]
@@ -113,16 +114,17 @@ Search-AzGraph -Query "where type =~ 'Microsoft.Compute/virtualMachines' | limit
 С учетом того, что мы узнали о ресурсе виртуальной машины, давайте используем свойство **location**, чтобы подсчитать все виртуальные машины по расположениям. Изменим запрос, убрав предельное значение и суммировав количество машин по расположениям.
 
 ```kusto
-where type =~ 'Microsoft.Compute/virtualMachines'
+Resources
+| where type =~ 'Microsoft.Compute/virtualMachines'
 | summarize count() by location
 ```
 
 ```azurecli-interactive
-az graph query -q "where type =~ 'Microsoft.Compute/virtualMachines' | summarize count() by location"
+az graph query -q "Resources | where type =~ 'Microsoft.Compute/virtualMachines' | summarize count() by location"
 ```
 
 ```azurepowershell-interactive
-Search-AzGraph -Query "where type =~ 'Microsoft.Compute/virtualMachines' | summarize count() by location"
+Search-AzGraph -Query "Resources | where type =~ 'Microsoft.Compute/virtualMachines' | summarize count() by location"
 ```
 
 Результаты в формате JSON имеют структуру, аналогичную представленной ниже.
@@ -151,16 +153,17 @@ Search-AzGraph -Query "where type =~ 'Microsoft.Compute/virtualMachines' | summa
 Давайте вернемся к исходным свойствам виртуальных машин и попробуем найти все виртуальные машины, имеющие размер SKU **Standard_B2s**. Если посмотреть на возвращенный результат в формате JSON, можно увидеть, что он хранится в **properties.hardwareprofile.vmsize**. Мы изменим запрос так, чтобы он нашел все виртуальные машины соответствующего размера и вернул для каждой из них только имя и регион.
 
 ```kusto
-where type =~ 'Microsoft.Compute/virtualMachines' and properties.hardwareProfile.vmSize == 'Standard_B2s'
+Resources
+| where type =~ 'Microsoft.Compute/virtualMachines' and properties.hardwareProfile.vmSize == 'Standard_B2s'
 | project name, resourceGroup"
 ```
 
 ```azurecli-interactive
-az graph query -q "where type =~ 'Microsoft.Compute/virtualMachines' and properties.hardwareProfile.vmSize == 'Standard_B2s' | project name, resourceGroup"
+az graph query -q "Resources | where type =~ 'Microsoft.Compute/virtualMachines' and properties.hardwareProfile.vmSize == 'Standard_B2s' | project name, resourceGroup"
 ```
 
 ```azurepowershell-interactive
-Search-AzGraph -Query "where type =~ 'Microsoft.Compute/virtualMachines' and properties.hardwareProfile.vmSize == 'Standard_B2s' | project name, resourceGroup"
+Search-AzGraph -Query "Resources | where type =~ 'Microsoft.Compute/virtualMachines' and properties.hardwareProfile.vmSize == 'Standard_B2s' | project name, resourceGroup"
 ```
 
 ### <a name="virtual-machines-connected-to-premium-managed-disks"></a>Виртуальные машины, подключенные к управляемым дискам (цен. категория "Премиум")
@@ -168,7 +171,8 @@ Search-AzGraph -Query "where type =~ 'Microsoft.Compute/virtualMachines' and pro
 Если нам нужно получить сведения об управляемых дисках (цен. категория "Премиум"), подключенных к виртуальным машинам размера **Standard_B2s**, мы можем расширить запрос, чтобы получить идентификаторы ресурсов этих дисков.
 
 ```kusto
-where type =~ 'Microsoft.Compute/virtualmachines' and properties.hardwareProfile.vmSize == 'Standard_B2s'
+Resources
+| where type =~ 'Microsoft.Compute/virtualmachines' and properties.hardwareProfile.vmSize == 'Standard_B2s'
 | extend disk = properties.storageProfile.osDisk.managedDisk
 | where disk.storageAccountType == 'Premium_LRS'
 | project disk.id
@@ -178,11 +182,11 @@ where type =~ 'Microsoft.Compute/virtualmachines' and properties.hardwareProfile
 > Еще один способ получить номер SKU — воспользоваться свойством **Microsoft.Compute/virtualMachines/sku.name** из раздела **aliases**. См. примеры для [отображения псевдонимов](../samples/starter.md#show-aliases) и [отображения различных значений псевдонимов](../samples/starter.md#distinct-alias-values) .
 
 ```azurecli-interactive
-az graph query -q "where type =~ 'Microsoft.Compute/virtualmachines' and properties.hardwareProfile.vmSize == 'Standard_B2s' | extend disk = properties.storageProfile.osDisk.managedDisk | where disk.storageAccountType == 'Premium_LRS' | project disk.id"
+az graph query -q "Resources | where type =~ 'Microsoft.Compute/virtualmachines' and properties.hardwareProfile.vmSize == 'Standard_B2s' | extend disk = properties.storageProfile.osDisk.managedDisk | where disk.storageAccountType == 'Premium_LRS' | project disk.id"
 ```
 
 ```azurepowershell-interactive
-  Search-AzGraph -Query "where type =~ 'Microsoft.Compute/virtualmachines' and properties.hardwareProfile.vmSize == 'Standard_B2s' | extend disk = properties.storageProfile.osDisk.managedDisk | where disk.storageAccountType == 'Premium_LRS' | project disk.id"
+Search-AzGraph -Query "Resources | where type =~ 'Microsoft.Compute/virtualmachines' and properties.hardwareProfile.vmSize == 'Standard_B2s' | extend disk = properties.storageProfile.osDisk.managedDisk | where disk.storageAccountType == 'Premium_LRS' | project disk.id"
 ```
 
 Результатом будет список идентификаторов дисков.
@@ -202,7 +206,8 @@ az graph query -q "where type =~ 'Microsoft.Compute/virtualmachines' and propert
 ```
 
 ```kusto
-where type =~ 'Microsoft.Compute/disks' and id == '/subscriptions/<subscriptionId>/resourceGroups/MyResourceGroup/providers/Microsoft.Compute/disks/ContosoVM1_OsDisk_1_9676b7e1b3c44e2cb672338ebe6f5166'
+Resources
+| where type =~ 'Microsoft.Compute/disks' and id == '/subscriptions/<subscriptionId>/resourceGroups/MyResourceGroup/providers/Microsoft.Compute/disks/ContosoVM1_OsDisk_1_9676b7e1b3c44e2cb672338ebe6f5166'
 ```
 
 Прежде чем выполнять запрос, давайте ответим на вопрос, как мы узнали, что свойство **type** теперь должно иметь значение **Microsoft.Compute/disks**.
@@ -212,11 +217,11 @@ where type =~ 'Microsoft.Compute/disks' and id == '/subscriptions/<subscriptionI
 > Чтобы этот пример можно было выполнить, необходимо заменить значение в поле идентификатора результатом из своей среды.
 
 ```azurecli-interactive
-az graph query -q "where type =~ 'Microsoft.Compute/disks' and id == '/subscriptions/<subscriptionId>/resourceGroups/MyResourceGroup/providers/Microsoft.Compute/disks/ContosoVM1_OsDisk_1_9676b7e1b3c44e2cb672338ebe6f5166'"
+az graph query -q "Resources | where type =~ 'Microsoft.Compute/disks' and id == '/subscriptions/<subscriptionId>/resourceGroups/MyResourceGroup/providers/Microsoft.Compute/disks/ContosoVM1_OsDisk_1_9676b7e1b3c44e2cb672338ebe6f5166'"
 ```
 
 ```azurepowershell-interactive
-Search-AzGraph -Query "where type =~ 'Microsoft.Compute/disks' and id == '/subscriptions/<subscriptionId>/resourceGroups/MyResourceGroup/providers/Microsoft.Compute/disks/ContosoVM1_OsDisk_1_9676b7e1b3c44e2cb672338ebe6f5166'"
+Search-AzGraph -Query "Resources | where type =~ 'Microsoft.Compute/disks' and id == '/subscriptions/<subscriptionId>/resourceGroups/MyResourceGroup/providers/Microsoft.Compute/disks/ContosoVM1_OsDisk_1_9676b7e1b3c44e2cb672338ebe6f5166'"
 ```
 
 Результаты в формате JSON имеют структуру, аналогичную представленной ниже.
@@ -259,7 +264,7 @@ Search-AzGraph -Query "where type =~ 'Microsoft.Compute/disks' and id == '/subsc
 
 ```azurecli-interactive
 # Use Resource Graph to get all NICs and store in the 'nics.txt' file
-az graph query -q "where type =~ 'Microsoft.Compute/virtualMachines' | project nic = tostring(properties['networkProfile']['networkInterfaces'][0]['id']) | where isnotempty(nic) | distinct nic | limit 20" --output table | tail -n +3 > nics.txt
+az graph query -q "Resources | where type =~ 'Microsoft.Compute/virtualMachines' | project nic = tostring(properties['networkProfile']['networkInterfaces'][0]['id']) | where isnotempty(nic) | distinct nic | limit 20" --output table | tail -n +3 > nics.txt
 
 # Review the output of the query stored in 'nics.txt'
 cat nics.txt
@@ -267,7 +272,7 @@ cat nics.txt
 
 ```azurepowershell-interactive
 # Use Resource Graph to get all NICs and store in the $nics variable
-$nics = Search-AzGraph -Query "where type =~ 'Microsoft.Compute/virtualMachines' | project nic = tostring(properties['networkProfile']['networkInterfaces'][0]['id']) | where isnotempty(nic) | distinct nic | limit 20"
+$nics = Search-AzGraph -Query "Resources | where type =~ 'Microsoft.Compute/virtualMachines' | project nic = tostring(properties['networkProfile']['networkInterfaces'][0]['id']) | where isnotempty(nic) | distinct nic | limit 20"
 
 # Review the output of the query stored in the variable
 $nics.nic
@@ -277,7 +282,7 @@ $nics.nic
 
 ```azurecli-interactive
 # Use Resource Graph with the 'nics.txt' file to get all related public IP addresses and store in 'publicIp.txt' file
-az graph query -q="where type =~ 'Microsoft.Network/networkInterfaces' | where id in ('$(awk -vORS="','" '{print $0}' nics.txt | sed 's/,$//')') | project publicIp = tostring(properties['ipConfigurations'][0]['properties']['publicIPAddress']['id']) | where isnotempty(publicIp) | distinct publicIp" --output table | tail -n +3 > ips.txt
+az graph query -q="Resources | where type =~ 'Microsoft.Network/networkInterfaces' | where id in ('$(awk -vORS="','" '{print $0}' nics.txt | sed 's/,$//')') | project publicIp = tostring(properties['ipConfigurations'][0]['properties']['publicIPAddress']['id']) | where isnotempty(publicIp) | distinct publicIp" --output table | tail -n +3 > ips.txt
 
 # Review the output of the query stored in 'ips.txt'
 cat ips.txt
@@ -285,7 +290,7 @@ cat ips.txt
 
 ```azurepowershell-interactive
 # Use Resource Graph  with the $nics variable to get all related public IP addresses and store in $ips variable
-$ips = Search-AzGraph -Query "where type =~ 'Microsoft.Network/networkInterfaces' | where id in ('$($nics.nic -join "','")') | project publicIp = tostring(properties['ipConfigurations'][0]['properties']['publicIPAddress']['id']) | where isnotempty(publicIp) | distinct publicIp"
+$ips = Search-AzGraph -Query "Resources | where type =~ 'Microsoft.Network/networkInterfaces' | where id in ('$($nics.nic -join "','")') | project publicIp = tostring(properties['ipConfigurations'][0]['properties']['publicIPAddress']['id']) | where isnotempty(publicIp) | distinct publicIp"
 
 # Review the output of the query stored in the variable
 $ips.publicIp
@@ -295,16 +300,18 @@ $ips.publicIp
 
 ```azurecli-interactive
 # Use Resource Graph with the 'ips.txt' file to get the IP address of the public IP address resources
-az graph query -q="where type =~ 'Microsoft.Network/publicIPAddresses' | where id in ('$(awk -vORS="','" '{print $0}' ips.txt | sed 's/,$//')') | project ip = tostring(properties['ipAddress']) | where isnotempty(ip) | distinct ip" --output table
+az graph query -q="Resources | where type =~ 'Microsoft.Network/publicIPAddresses' | where id in ('$(awk -vORS="','" '{print $0}' ips.txt | sed 's/,$//')') | project ip = tostring(properties['ipAddress']) | where isnotempty(ip) | distinct ip" --output table
 ```
 
 ```azurepowershell-interactive
 # Use Resource Graph with the $ips variable to get the IP address of the public IP address resources
-Search-AzGraph -Query "where type =~ 'Microsoft.Network/publicIPAddresses' | where id in ('$($ips.publicIp -join "','")') | project ip = tostring(properties['ipAddress']) | where isnotempty(ip) | distinct ip"
+Search-AzGraph -Query "Resources | where type =~ 'Microsoft.Network/publicIPAddresses' | where id in ('$($ips.publicIp -join "','")') | project ip = tostring(properties['ipAddress']) | where isnotempty(ip) | distinct ip"
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+Чтобы узнать, как выполнить эти действия в одном запросе с помощью оператора `join`, ознакомьтесь со статьей [список виртуальных машин со своим сетевым интерфейсом и примером общедоступного IP-адреса](../samples/advanced.md#join-vmpip) .
 
-- Дополнительные сведения о [языке запросов](query-language.md)
+## <a name="next-steps"></a>Дальнейшие действия
+
+- Узнайте больше о [языке запросов](query-language.md).
 - См. описание используемого языка в разделе [Запросы для начинающих](../samples/starter.md)
 - См. описание расширенных вариантов использования в разделе [Расширенные запросы](../samples/advanced.md)

@@ -8,16 +8,16 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 6edbd21eaf6f0a6f4f07263e006cc31fb1529511
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: 7b5017cdeade14e53778b58154456412507c5ce8
+ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69877838"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72430707"
 ---
-# <a name="what-is-vmware-solution-on-azure-by-cloudsimple"></a>Что такое решение VMware в Azure с помощью Клаудсимпле
+# <a name="what-is-azure-vmware-solution-by-cloudsimple"></a>Что такое решение VMware для Azure от Клаудсимпле
 
-**Решение VMware в Azure с помощью клаудсимпле** — это полностью управляемая служба, которая позволяет запускать платформу VMware в Azure. Это решение включает vSphere, vCenter, vSAN, НСКС-T и соответствующие инструменты. Среда VMware работает изначально в инфраструктуре исходного состояния Azure в облачных расположениях Azure. Служба включает все функции, необходимые для эффективного и безопасного использования платформ VMware.
+**Решение VMware для Azure от клаудсимпле** — это полностью управляемая служба, которая позволяет запускать платформу VMware в Azure. Это решение включает vSphere, vCenter, vSAN, НСКС-T и соответствующие инструменты. Среда VMware работает изначально в инфраструктуре исходного состояния Azure в облачных расположениях Azure. Служба включает все функции, необходимые для эффективного и безопасного использования платформ VMware.
 
 ![Обзор решения VMware в Azure с помощью Клаудсимпле](media/azure-vmware-solution-by-cloudsimple.png)
 
@@ -37,10 +37,10 @@ ms.locfileid: "69877838"
 ## <a name="benefits"></a>Преимущества
 
 * **Непрерывность эксплуатации**. Клаудсимпле предлагает собственный доступ к платформам VMware. Архитектура Клаудсимпле совместима с существующими:
-    * Приложения
-    * Операции
+    * приложениям
+    * Operations
     * Безопасность
-    * Архивация
+    * Backup
     * Аварийное восстановление
     * Аудит
     * Средства обеспечения соответствия
@@ -63,7 +63,7 @@ ms.locfileid: "69877838"
 
 ![Сценарии](media/cloudsimple-scenarios.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Создание службы Клаудсимпле](quickstart-create-cloudsimple-service.md)
 * [Создание частного облака](quickstart-create-private-cloud.md)

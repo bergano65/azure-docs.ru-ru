@@ -2,18 +2,18 @@
 title: Руководство. Структурированная потоковая передача данных Apache Spark с Apache Kafka в Azure HDInsight
 description: Узнайте об использовании потоковой передачи Apache Spark для двунаправленного обмена данными с Apache Kafka. В этом руководстве показано, как выполнить потоковую передачу данных, используя записную книжку Jupyter из Spark в HDInsight.
 author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive,seodec18
 ms.topic: tutorial
-ms.date: 05/22/2019
-ms.author: hrasheed
-ms.openlocfilehash: bcf1b967cf8eeab7aae4b720683785309689858e
-ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
+ms.date: 10/08/2019
+ms.openlocfilehash: db2174451f01ef38dc69e4e14561175203e075c3
+ms.sourcegitcommit: b4665f444dcafccd74415fb6cc3d3b65746a1a31
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71204231"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72264259"
 ---
 # <a name="tutorial-use-apache-spark-structured-streaming-with-apache-kafka-on-hdinsight"></a>Руководство. Использование структурированной потоковой передачи Apache Spark с Apache Kafka в HDInsight
 
@@ -41,8 +41,8 @@ ms.locfileid: "71204231"
 
 > [!IMPORTANT]  
 > Чтобы выполнить действия, описанные в этом документе, необходимо иметь группу ресурсов Azure, которая содержит кластеры Spark и Kafka в HDInsight. Оба этих кластера находятся в виртуальной сети Azure, что позволяет кластеру Spark напрямую обмениваться данными с кластером Kafka.
-> 
-> Для удобства в этом документе есть ссылка на шаблон, с помощью которого можно создать все необходимые ресурсы Azure. 
+>
+> Для удобства в этом документе есть ссылка на шаблон, с помощью которого можно создать все необходимые ресурсы Azure.
 >
 > Дополнительные сведения об использовании HDInsight в виртуальной сети см. в статье о[планирование виртуальной сети для Azure HDInsight](hdinsight-plan-virtual-network-deployment.md).
 
@@ -94,7 +94,7 @@ kafkaStreamDF.select(from_json(col("value").cast("string"), schema) as "trip")
 | `write` | `writeStream` |
 | `save` | `start` |
 
-Операция потоковой передачи также использует `awaitTermination(30000)`, что останавливает потоковую передачу спустя 30 000 мс. 
+Операция потоковой передачи также использует `awaitTermination(30000)`, что останавливает потоковую передачу спустя 30 000 мс.
 
 Чтобы использовать структурированную потоковую передачу с помощью Kafka, ваш проект должен иметь зависимость в пакете `org.apache.spark : spark-sql-kafka-0-10_2.11`. Версия этого пакета должна соответствовать версии Spark в HDInsight. Для Spark версии 2.2.0 (доступна в HDInsight 3.6) можно найти сведения о зависимости для разных типов проекта по адресу [https://search.maven.org/#artifactdetails%7Corg.apache.spark%7Cspark-sql-kafka-0-10_2.11%7C2.2.0%7Cjar](https://search.maven.org/#artifactdetails%7Corg.apache.spark%7Cspark-sql-kafka-0-10_2.11%7C2.2.0%7Cjar).
 
@@ -112,7 +112,7 @@ kafkaStreamDF.select(from_json(col("value").cast("string"), schema) as "trip")
 
 ## <a name="create-the-clusters"></a>Создание кластеров
 
-Apache Kafka в HDInsight не предоставляет доступ к брокерам Kafka через общедоступный сегмент Интернета. Все ресурсы, которые использует Kafka, должны находиться в одной виртуальной сети Azure. В рамках этого руководства кластеры Kafka и Spark расположены в одной и той же виртуальной сети Azure. 
+Apache Kafka в HDInsight не предоставляет доступ к брокерам Kafka через общедоступный сегмент Интернета. Все ресурсы, которые использует Kafka, должны находиться в одной виртуальной сети Azure. В рамках этого руководства кластеры Kafka и Spark расположены в одной и той же виртуальной сети Azure.
 
 На следующей схеме показано, как происходит обмен данными между Spark и Kafka:
 
@@ -151,12 +151,12 @@ Apache Kafka в HDInsight не предоставляет доступ к бро
     | Пароль для входа в кластер | Пароль администратора кластеров. |
     | Имя пользователя SSH | Пользователь SSH, который создается для кластеров. |
     | Пароль SSH | Пароль пользователя SSH. |
-   
+
     ![Снимок экрана с настроенным шаблоном](./media/hdinsight-apache-kafka-spark-structured-streaming/spark-kafka-template.png)
 
 3. Прочтите **условия использования** и установите флажок **Я принимаю указанные выше условия**.
 
-4. Установите флажок **Закрепить на панели мониторинга** и нажмите кнопку **Приобрести**. 
+4. Щелкните **Приобрести**.
 
 > [!NOTE]  
 > Создание кластеров может занять до 20 минут.
@@ -184,11 +184,11 @@ Apache Kafka в HDInsight не предоставляет доступ к бро
 
 3. Выберите **New > Spark** (Создать > Spark), чтобы создать записную книжку.
 
-4. Загрузите пакеты, используемые Notebook, указав следующие сведения в ячейке Notebook. Выполните команду, нажав клавиши **CTRL+ВВОД**.
+4. При потоковой передаче данных Spark использует микропакеты, то есть данные передаются в пакетах, после чего такие пакеты обрабатываются исполнителями. Если время ожидания простоя исполнителя меньше времени, затрачиваемого на обработку пакета, исполнители будут постоянно добавляться и удаляться. Если время ожидания простоя исполнителя превышает длительность передачи пакета, такой исполнитель не будет удаляться. Поэтому **мы рекомендуем отключить динамическое распределение, задав для параметра spark.dynamicAllocation.enabled значение False, при запуске приложений с потоковой передачей данных**.
 
-При потоковой передаче данных Spark использует микропакеты, то есть данные передаются в пакетах, после чего такие пакеты обрабатываются исполнителями. Если время ожидания простоя исполнителя меньше времени, затрачиваемого на обработку пакета, исполнители будут постоянно добавляться и удаляться. Если время ожидания простоя исполнителя превышает длительность передачи пакета, такой исполнитель не будет удаляться. Поэтому **мы рекомендуем отключить динамическое распределение, задав для параметра spark.dynamicAllocation.enabled значение False, при запуске приложений с потоковой передачей данных**.
+    Загрузите пакеты, используемые Notebook, указав следующие сведения в ячейке Notebook. Выполните команду, нажав клавиши **CTRL+ВВОД**.
 
-    ```
+    ```configuration
     %%configure -f
     {
         "conf": {
@@ -216,10 +216,10 @@ Apache Kafka в HDInsight не предоставляет доступ к бро
     // Load the data from the New York City Taxi data REST API for 2016 Green Taxi Trip Data
     val url="https://data.cityofnewyork.us/resource/pqfs-mqru.json"
     val result = scala.io.Source.fromURL(url).mkString
-    
+
     // Create a dataframe from the JSON data
     val taxiDF = spark.read.json(Seq(result).toDS)
-    
+
     // Display the dataframe containing trip data
     taxiDF.show()
     ```
@@ -230,7 +230,7 @@ Apache Kafka в HDInsight не предоставляет доступ к бро
     // The Kafka broker hosts and topic used to write to Kafka
     val kafkaBrokers="YOUR_KAFKA_BROKER_HOSTS"
     val kafkaTopic="tripdata"
-    
+
     println("Finished setting Kafka broker and topic configuration.")
     ```
 
@@ -250,7 +250,7 @@ Apache Kafka в HDInsight не предоставляет доступ к бро
     import org.apache.spark.sql._
     import org.apache.spark.sql.types._
     import org.apache.spark.sql.functions._
-    
+
     // Define a schema for the data
     val schema = (new StructType).add("dropoff_latitude", StringType).add("dropoff_longitude", StringType).add("extra", StringType).add("fare_amount", StringType).add("improvement_surcharge", StringType).add("lpep_dropoff_datetime", StringType).add("lpep_pickup_datetime", StringType).add("mta_tax", StringType).add("passenger_count", StringType).add("payment_type", StringType).add("pickup_latitude", StringType).add("pickup_longitude", StringType).add("ratecodeid", StringType).add("store_and_fwd_flag", StringType).add("tip_amount", StringType).add("tolls_amount", StringType).add("total_amount", StringType).add("trip_distance", StringType).add("trip_type", StringType).add("vendorid", StringType)
     // Reproduced here for readability
@@ -275,7 +275,7 @@ Apache Kafka в HDInsight не предоставляет доступ к бро
     //   .add("trip_distance", StringType)
     //   .add("trip_type", StringType)
     //   .add("vendorid", StringType)
-    
+
     println("Schema declared")
     ```
 
@@ -284,10 +284,10 @@ Apache Kafka в HDInsight не предоставляет доступ к бро
     ```scala
     // Read a batch from Kafka
     val kafkaDF = spark.read.format("kafka").option("kafka.bootstrap.servers", kafkaBrokers).option("subscribe", kafkaTopic).option("startingOffsets", "earliest").load()
-    
+
     // Select data and write to file
     val query = kafkaDF.select(from_json(col("value").cast("string"), schema) as "trip").write.format("parquet").option("path","/example/batchtripdata").option("checkpointLocation", "/batchcheckpoint").save()
-    
+
     println("Wrote data to file")
     ```
 
@@ -303,7 +303,7 @@ Apache Kafka в HDInsight не предоставляет доступ к бро
     ```scala
     // Stream from Kafka
     val kafkaStreamDF = spark.readStream.format("kafka").option("kafka.bootstrap.servers", kafkaBrokers).option("subscribe", kafkaTopic).option("startingOffsets", "earliest").load()
-    
+
     // Select data from the stream and write to file
     kafkaStreamDF.select(from_json(col("value").cast("string"), schema) as "trip").writeStream.format("parquet").option("path","/example/streamingtripdata").option("checkpointLocation", "/streamcheckpoint").start.awaitTermination(30000)
     println("Wrote data to file")
@@ -328,7 +328,7 @@ Apache Kafka в HDInsight не предоставляет доступ к бро
 
 > [!WARNING]  
 > Начисление оплаты начинается после создания кластера HDInsight и прекращается только после его удаления. Кластеры оплачиваются поминутно, поэтому всегда следует удалять кластер, когда он больше не нужен.
-> 
+>
 > При удалении кластера Kafka в HDInsight удаляются все данные, хранящиеся в Kafka.
 
 ## <a name="next-steps"></a>Дополнительная информация

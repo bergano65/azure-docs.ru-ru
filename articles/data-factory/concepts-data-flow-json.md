@@ -7,12 +7,12 @@ ms.review: djpmsft
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 08/30/2019
-ms.openlocfilehash: 605564ed541c23a9060879706fb25f91e97a8eac
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
-ms.translationtype: HT
+ms.openlocfilehash: fe412e9e682fb55f1664c546e6b6c5a347527adb
+ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72326524"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72387349"
 ---
 # <a name="mapping-data-flow-json-handling"></a>Обработка потока данных с сопоставлением JSON
 
@@ -24,11 +24,11 @@ ms.locfileid: "72326524"
 
 На боковой панели выходная схема наведите указатель мыши на столбец и щелкните значок плюса. Выберите **Добавить подстолбец** , чтобы сделать столбец сложным типом.
 
-![Добавить]подстолбец(media/data-flow/addsubcolumn.png "Добавить") подстолбец
+![Добавить подстолбец](media/data-flow/addsubcolumn.png "Добавить подстолбец")
 
 Таким же образом можно добавлять дополнительные столбцы и подстолбцы. Для каждого несложного поля выражение можно добавить в редакторе выражений справа.
 
-Сложный ![столбец](media/data-flow/complexcolumn.png "Complex")
+![Сложный столбец](media/data-flow/complexcolumn.png "Сложный столбец")
 
 ### <a name="entering-the-json-structure-manually"></a>Ввод структуры JSON вручную
 
@@ -86,7 +86,7 @@ ms.locfileid: "72326524"
 
 Использование набора данных JSON в качестве источника в потоке данных позволяет задать пять дополнительных параметров. Эти параметры можно найти в разделе **Параметры JSON** на вкладке **Параметры источника** .  
 
-![](media/data-flow/json-settings.png "Параметры JSON") параметров JSON
+![Параметры JSON](media/data-flow/json-settings.png "Параметры JSON")
 
 ### <a name="default"></a>значение по умолчанию
 

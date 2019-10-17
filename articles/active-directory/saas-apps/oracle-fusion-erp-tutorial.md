@@ -13,15 +13,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 08/13/2019
+ms.date: 09/10/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7ba929ab13864664a823ba969ecb472812d946a9
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: 5cd7ea1a20eb82d030e9bdabe76ff7d14a619d1e
+ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68989544"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72373094"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-oracle-fusion-erp"></a>Руководство по Интеграции единого входа Azure Active Directory с Oracle Fusion ERP
 
@@ -87,7 +87,7 @@ ms.locfileid: "68989544"
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.login.em2.oraclecloud.com:443/oam/fed`.
 
     > [!NOTE]
-    > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [группу поддержки клиентов Oracle Fusion ERP](mailto:jinshu.peethambaran@oracle.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [группу поддержки клиентов Oracle Fusion ERP](https://www.oracle.com/applications/erp/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите элемент **XML метаданных федерации** и нажмите кнопку **Скачать**, чтобы скачать сертификат и сохранить его на компьютере.
 
@@ -129,11 +129,11 @@ ms.locfileid: "68989544"
 
 ## <a name="configure-oracle-fusion-erp-sso"></a>Настройка единого входа в Oracle Fusion ERP
 
-Чтобы настроить единый вход на стороне **Oracle Fusion ERP**, нужно отправить скачанный файл **XML метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, в [группу поддержки Oracle Fusion ERP](mailto:jinshu.peethambaran@oracle.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **Oracle Fusion ERP**, нужно отправить скачанный файл **XML метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, в [группу поддержки Oracle Fusion ERP](https://www.oracle.com/applications/erp/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-oracle-fusion-erp-test-user"></a>Создание тестового пользователя в Oracle Fusion ERP
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Oracle Fusion ERP. Обратитесь в [группу поддержки Oracle Fusion ERP](mailto:jinshu.peethambaran@oracle.com), чтобы добавить пользователей на платформу Oracle Fusion ERP. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении Oracle Fusion ERP. Обратитесь в [группу поддержки Oracle Fusion ERP](https://www.oracle.com/applications/erp/), чтобы добавить пользователей на платформу Oracle Fusion ERP. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ## <a name="test-sso"></a>Проверка единого входа 
 

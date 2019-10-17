@@ -3,15 +3,15 @@ title: Устранение распространенных ошибок
 description: Узнайте, как устранять проблемы с запросом ресурсов Azure с помощью графа ресурсов Azure.
 author: DCtheGeek
 ms.author: dacoulte
-ms.date: 08/21/2019
+ms.date: 10/18/2019
 ms.topic: troubleshooting
 ms.service: resource-graph
-ms.openlocfilehash: abf6d22f2010db9bff97c7a93354c1cf8e1e1644
-ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
+ms.openlocfilehash: 030fe26a0aa8fc4ed855fb7744e576366f4fd2e2
+ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71976607"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72389701"
 ---
 # <a name="troubleshoot-errors-using-azure-resource-graph"></a>Устранение ошибок с помощью графа ресурсов Azure
 
@@ -23,9 +23,9 @@ ms.locfileid: "71976607"
 
 ## <a name="general-errors"></a>Общие ошибки
 
-### <a name="toomanysubscription"></a>Сценарий. Слишком много подписок
+### <a name="toomanysubscription"></a>Сценарий: слишком много подписок
 
-#### <a name="issue"></a>Проблемы
+#### <a name="issue"></a>Проблема
 
 Клиенты, у которых есть доступ к более чем 1000 подпискам, включая межклиентские подписки с помощью [Azure лигхсаусе](../../../lighthouse/overview.md), не могут получать данные по всем подпискам в одном вызове к графу ресурсов Azure.
 
@@ -39,7 +39,7 @@ Azure CLI и PowerShell пересылают только первые 1000 по
 
 ```azurepowershell-interactive
 # Replace this query with your own
-$query = 'project type'
+$query = 'Resources | project type'
 
 # Fetch the full array of subscription IDs
 $subscriptions = Get-AzSubscription
@@ -60,9 +60,9 @@ foreach ($batch in $subscriptionsBatch){ $response += Search-AzGraph -Query $que
 $response
 ```
 
-### <a name="rest-contenttype"></a>Сценарий. Неподдерживаемый заголовок содержимого типа Content-Type
+### <a name="rest-contenttype"></a>Сценарий: неподдерживаемый заголовок RESTFUL типа содержимого
 
-#### <a name="issue"></a>Проблемы
+#### <a name="issue"></a>Проблема
 
 Клиенты запрашивают граф ресурсов Azure REST API получить возвращенный ответ _500_ (внутренняя ошибка сервера).
 
@@ -73,9 +73,10 @@ $response
 #### <a name="resolution"></a>Разрешение
 
 Убедитесь, что средство или агент, которые вы используете для запроса графа ресурсов Azure, имеют заголовок REST API `Content-Type`, настроенный для **Application/JSON**.
-### <a name="rest-403"></a>Сценарий. Нет разрешения на чтение для всех подписок в списке
 
-#### <a name="issue"></a>Проблемы
+### <a name="rest-403"></a>Сценарий: нет разрешения на чтение для всех подписок в списке
+
+#### <a name="issue"></a>Проблема
 
 Клиенты, которые явно передают список подписок с помощью запроса графа ресурсов Azure, получают ответ _403_ (запрещено).
 
@@ -87,7 +88,7 @@ $response
 
 Включите по крайней мере одну подписку в список подписок, чтобы у клиента, выполняющего запрос, был по крайней мере доступ для чтения. Дополнительные сведения см. [в статье разрешения в графе ресурсов Azure](../overview.md#permissions-in-azure-resource-graph).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 

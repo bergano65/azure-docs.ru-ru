@@ -8,22 +8,25 @@ ms.date: 09/17/2019
 ms.subservice: queues
 ms.topic: conceptual
 ms.reviewer: cbrooks
-ms.openlocfilehash: 18333d3da0bb444ea236a4fbda4d6b72d7647053
-ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
+ms.custom: seo-javascript-october2019
+ms.openlocfilehash: 242ba7dbe4bfcc003899e95e76dc57d809dbc95a
+ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71059066"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72428009"
 ---
 # <a name="how-to-use-azure-queue-storage-from-python"></a>Использование хранилища очередей Azure из Python
 
 [!INCLUDE [storage-selector-queue-include](../../../includes/storage-selector-queue-include.md)]
 
+В этой статье описываются распространенные сценарии использования службы хранилища очередей Azure. В число рассматриваемых сценариев входят Вставка, просмотр, получение и удаление сообщений очереди, а также создание и удаление очередей.
+
 [!INCLUDE [storage-try-azure-tools-queues](../../../includes/storage-try-azure-tools-queues.md)]
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Краткое описание
 
-В этом руководстве показано, как реализовать типичные сценарии с использованием службы хранилища очередей Azure. Примеры написаны на Python, и в них используется [пакет SDK для службы хранилища Microsoft Azure для Python]. В число рассматриваемых сценариев входят Вставка, просмотр, получение и удаление сообщений очереди, а также создание и удаление очередей. Дополнительные сведения об очередях см. в разделе [дальнейшие действия](#next-steps) .
+Примеры в этой статье написаны на языке Python и используют [Пакет SDK для службы хранилища Microsoft Azure для Python]. Дополнительные сведения об очередях см. в разделе [Дальнейшие действия](#next-steps).
 
 [!INCLUDE [storage-queue-concepts-include](../../../includes/storage-queue-concepts-include.md)]
 
@@ -42,19 +45,19 @@ pip install azure-storage-queue
 ```
 
 > [!NOTE]
-> Если вы обновляете пакет SDK службы хранилища Azure для Python версии 0.36 или более ранней, удалите старый пакет SDK с помощью `pip uninstall azure-storage`, прежде чем устанавливать последнюю версию пакета.
+> Если вы обновляете пакет SDK службы хранилища Azure для Python версии 0.36 или более ранней, удалите старый пакет SDK с помощью `pip uninstall azure-storage`, прежде чем устанавливать последнюю версию пакета.
 
 Другие методы установки см. в статье [Пакет SDK службы хранилища Azure для Python](https://github.com/Azure/azure-storage-python/).
 
 ## <a name="view-the-sample-application"></a>Просмотр примера приложения
 
-Для просмотра и запуска примера приложения, который показывает, как использовать Python с очередями Azure, см. раздел [Служба хранилища Azure. Начало работы с очередями Azure в Python](https://github.com/Azure-Samples/storage-queue-python-getting-started). 
+Чтобы просмотреть и запустить пример приложения, демонстрирующий использование Python с очередями Azure, см. статью Служба [хранилища Azure: Начало работы с очередями Azure в Python](https://github.com/Azure-Samples/storage-queue-python-getting-started). 
 
-Чтобы запустить пример приложения, убедитесь, что установили оба пакета: `azure-storage-queue` и `azure-storage-common`.
+Чтобы запустить пример приложения, убедитесь, что установили оба пакета `azure-storage-queue` и `azure-storage-common`.
 
-## <a name="create-a-queue"></a>Создать очередь
+## <a name="create-a-queue"></a>Создание очереди
 
-Объект [QueueService](/python/api/azure-storage-queue/azure.storage.queue.queueservice.queueservice) позволяет работать с очередями. Следующий код создает `QueueService` объект. Добавьте следующий код в начало любого файла Python, из которого планируется получать доступ к хранилищу Azure программным способом:
+Объект [QueueService](/python/api/azure-storage-queue/azure.storage.queue.queueservice.queueservice) позволяет работать с очередями. Следующий код создает объект `QueueService`. Добавьте следующий код в начало любого файла Python, из которого планируется получать доступ к хранилищу Azure программным способом:
 
 ```python
 from azure.storage.queue import QueueService
@@ -96,7 +99,7 @@ for message in messages:
 
 ## <a name="dequeue-messages"></a>Вывод сообщений из очереди
 
-Ваш код удаляет сообщение из очереди в два этапа. При вызове [get_messages](/python/api/azure-storage-queue/azure.storage.queue.queueservice.queueservice#get-messages-queue-name--num-messages-none--visibility-timeout-none--timeout-none-)вы получаете следующее сообщение в очереди по умолчанию. Сообщение, возвращаемое методом `get_messages`, становится невидимым для другого кода, считывающего сообщения из этой очереди. По умолчанию это сообщение остается невидимым в течение 30 секунд. Чтобы завершить удаление сообщения из очереди, необходимо также вызвать метод [delete_message](/python/api/azure-storage-queue/azure.storage.queue.queueservice.queueservice#delete-message-queue-name--message-id--pop-receipt--timeout-none-). Этот двухэтапный процесс удаления сообщения позволяет удостовериться, что если коду не удастся обработать сообщение из-за сбоя оборудования или программного обеспечения, другой экземпляр кода сможет получить то же сообщение и повторить попытку. Код вызывается `delete_message` сразу после обработки сообщения.
+Ваш код удаляет сообщение из очереди в два этапа. При вызове [get_messages](/python/api/azure-storage-queue/azure.storage.queue.queueservice.queueservice#get-messages-queue-name--num-messages-none--visibility-timeout-none--timeout-none-)вы получаете следующее сообщение в очереди по умолчанию. Сообщение, возвращаемое методом `get_messages`, становится невидимым для другого кода, считывающего сообщения из этой очереди. По умолчанию это сообщение остается невидимым в течение 30 секунд. Чтобы завершить удаление сообщения из очереди, необходимо также вызвать метод [delete_message](/python/api/azure-storage-queue/azure.storage.queue.queueservice.queueservice#delete-message-queue-name--message-id--pop-receipt--timeout-none-). Этот двухэтапный процесс удаления сообщения позволяет удостовериться, что если коду не удастся обработать сообщение из-за сбоя оборудования или программного обеспечения, другой экземпляр кода сможет получить то же сообщение и повторить попытку. Код вызывает `delete_message` сразу после обработки сообщения.
 
 ```python
 messages = queue_service.get_messages('taskqueue')
@@ -105,7 +108,7 @@ for message in messages:
     queue_service.delete_message('taskqueue', message.id, message.pop_receipt)
 ```
 
-Способ извлечения сообщения из очереди можно настроить двумя способами. Во-первых, можно получить пакет сообщений (до 32 сообщений). Во-вторых, можно задать более длительное или короткое время ожидания видимости, чтобы предоставить коду больше или меньше времени на полную обработку каждого сообщения. В следующем примере кода `get_messages` метод используется для получения 16 сообщений в одном вызове. Затем он обрабатывает каждое сообщение с помощью цикла for. Он также задает время ожидания невидимости 5 минут для каждого сообщения.
+Способ извлечения сообщения из очереди можно настроить двумя способами. Во-первых, можно получить пакет сообщений (до 32 сообщений). Во-вторых, можно задать более длительное или короткое время ожидания видимости, чтобы предоставить коду больше или меньше времени на полную обработку каждого сообщения. В следующем примере кода используется метод `get_messages` для получения 16 сообщений в одном вызове. Затем он обрабатывает каждое сообщение с помощью цикла for. Он также задает время ожидания невидимости 5 минут для каждого сообщения.
 
 ```python
 messages = queue_service.get_messages(
@@ -128,7 +131,7 @@ for message in messages:
 
 ## <a name="get-the-queue-length"></a>Получение длины очереди
 
-Вы можете узнать приблизительное количество сообщений в очереди. Метод [get_queue_metadata](/python/api/azure-storage-queue/azure.storage.queue.queueservice.queueservice#get-queue-metadata-queue-name--timeout-none-) запрашивает у службы очередей получение метаданных об очереди, а также `approximate_message_count`. В результате число указывается лишь приблизительно, так как сообщения могут добавляться или удаляться после ответа службы очередей на ваш запрос.
+Вы можете узнать приблизительное количество сообщений в очереди. Метод [get_queue_metadata](/python/api/azure-storage-queue/azure.storage.queue.queueservice.queueservice#get-queue-metadata-queue-name--timeout-none-) запрашивает у службы очередей получение метаданных об очереди и `approximate_message_count`. В результате число указывается лишь приблизительно, так как сообщения могут добавляться или удаляться после ответа службы очередей на ваш запрос.
 
 ```python
 metadata = queue_service.get_queue_metadata('taskqueue')
@@ -143,7 +146,7 @@ count = metadata.approximate_message_count
 queue_service.delete_queue('taskqueue')
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали основные сведения о хранилище очередей, воспользуйтесь следующими ссылками для получения дополнительных сведений.
 
@@ -152,4 +155,4 @@ queue_service.delete_queue('taskqueue')
 * [API-интерфейс REST служб хранилища Azure](https://msdn.microsoft.com/library/azure/dd179355)
 
 [Azure Storage Team Blog]: https://blogs.msdn.com/b/windowsazurestorage/
-[пакет SDK для службы хранилища Microsoft Azure для Python]: https://github.com/Azure/azure-storage-python
+[Пакет SDK для службы хранилища Microsoft Azure для Python]: https://github.com/Azure/azure-storage-python

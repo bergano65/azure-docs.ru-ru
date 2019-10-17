@@ -6,12 +6,12 @@ ms.author: makromer
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 01/30/2019
-ms.openlocfilehash: 8b488a079b2da1bcf0dd064025ed251a1dc25213
-ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
-ms.translationtype: MT
+ms.openlocfilehash: 6048a6d30d37b9d2b46c3105c5f8eac0a9ca41c0
+ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72029387"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72387840"
 ---
 # <a name="mapping-data-flow-exists-transformation"></a>Преобразование "поток данных сопоставления существует"
 
@@ -19,7 +19,7 @@ ms.locfileid: "72029387"
 
 Существующее преобразование является преобразованием фильтрации строк, которое останавливает или пропускает строки через поток данных. Существующее преобразование похоже на ```SQL WHERE EXISTS``` и ```SQL WHERE NOT EXISTS```. После преобразования EXISTS в результирующих строках из потока данных будут либо включены все строки, в которых значения столбцов из источника 1 существуют в источнике 2, либо не существуют в источнике 2.
 
-![Exists settings](Существующие параметры)(media/data-flow/exists.png "exists 1")
+![Параметры EXISTS](media/data-flow/exists.png "Существует 1")
 
 Чтобы выполнить сравнение значений для потока данных между 1 и 2 потоками существующего преобразования, необходимо выбрать второй источник.
 
@@ -31,10 +31,10 @@ ms.locfileid: "72029387"
 
 ## <a name="custom-expression"></a>Пользовательское выражение
 
-Пользовательские ![пользовательские параметры](media/data-flow/exists1.png "существуют")
+![Пользовательские параметры существуют](media/data-flow/exists1.png "существует настраиваемый")
 
 Вместо этого можно щелкнуть "пользовательское выражение", чтобы создать выражение в свободной форме в качестве условия "существует" или "не существует". Установка этого флажка позволит ввести собственное выражение в качестве условия.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Аналогичные преобразования: [Поиск](data-flow-lookup.md) и [соединение](data-flow-join.md).
