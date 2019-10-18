@@ -11,14 +11,14 @@ ms.service: virtual-machines-linux
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
 ms.topic: article
-ms.date: 10/11/2019
+ms.date: 10/16/2019
 ms.author: lahugh
-ms.openlocfilehash: 3c6a054229ab7a16fb48dff5ec2e8681c3c5345e
-ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
-ms.translationtype: MT
+ms.openlocfilehash: 6f787760c1224172982e0818d8592ce0d36b5e2c
+ms.sourcegitcommit: f29fec8ec945921cc3a89a6e7086127cc1bc1759
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2019
-ms.locfileid: "72299498"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72527291"
 ---
 # <a name="support-for-generation-2-vms-preview-on-azure"></a>Поддержка виртуальных машин поколения 2 (Предварительная версия) в Azure
 
@@ -51,18 +51,22 @@ ms.locfileid: "72299498"
 * [Серия ND](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-gpu#nd-series)
 * [Серия NVv3](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-gpu#nvv3-series--1)
 
+
+>[!NOTE]
+>Использование образов виртуальных машин поколения 2 для серии Mv2 — общедоступная версия, так как серия Mv2 работает исключительно с образами виртуальных машин поколения 2. Образы виртуальных машин поколения 1 не работают с Mv2 Series. 
+
 ## <a name="generation-2-vm-images-in-azure-marketplace"></a>Образы виртуальных машин поколения 2 в Azure Marketplace
 
 Виртуальные машины поколения 2 поддерживают следующие образы Marketplace:
 
 * Windows Server 2019 Datacenter
 * Windows Server 2016 Datacenter
-* Windows Server 2012 R2 Datacenter
-* Windows Server 2012 Datacenter
+* Windows Server 2012 R2 Datacenter;
+* Windows Server 2012 Datacenter;
 * SUSE Linux Enterprise Server 15 с пакетом обновления 1
 * SUSE Linux Enterprise Server 12 SP4
 
-## <a name="on-premises-vs-azure-generation-2-vms"></a>Локальная среда и Виртуальные машины Azure поколения 2
+## <a name="on-premises-vs-azure-generation-2-vms"></a>Локальная среда и виртуальные машины поколения 2 для Azure
 
 В настоящее время Azure не поддерживает некоторые функции, поддерживаемые локальными Hyper-V для виртуальных машин поколения 2.
 
@@ -82,16 +86,16 @@ ms.locfileid: "72299498"
 |---------|--------------|--------------|
 | Загрузка             | PCAT         | UEFI |
 | Контроллеры дисков | IDE          | SCSI |
-| Размеры виртуальной машины         | Все размеры виртуальных машин | Только виртуальные машины, поддерживающие хранилище класса Premium |
+| Размеры ВМ         | Все размеры виртуальных машин | Только виртуальные машины, поддерживающие хранилище класса Premium |
 
 ### <a name="generation-1-vs-generation-2-capabilities"></a>Возможности поколения 1 и поколения 2
 
-| Функция | Поколение 1 | Поколение 2 |
+| Возможность | Поколение 1 | Поколение 2 |
 |------------|--------------|--------------|
 | Диск ОС > 2 ТБ                    | :x:                | :heavy_check_mark: |
 | Пользовательский диск, образ или ОС замены         | :heavy_check_mark: | :heavy_check_mark: |
 | Поддержка масштабируемого набора виртуальных машин | :heavy_check_mark: | :heavy_check_mark: |
-| Azure Site Recovery               | :heavy_check_mark: | :x:                |
+| Восстановление сайтов Azure               | :heavy_check_mark: | :x:                |
 | Резервное копирование и восстановление                    | :heavy_check_mark: | :heavy_check_mark: |
 | Коллекция общих образов              | :heavy_check_mark: | :heavy_check_mark: |
 | Шифрование дисков Azure             | :heavy_check_mark: | :x:                |
@@ -102,15 +106,15 @@ ms.locfileid: "72299498"
 
 В портал Azure или Azure CLI можно создать виртуальные машины поколения 2 из образа Marketplace, который поддерживает загрузку UEFI.
 
-#### <a name="azure-portal"></a>Портал Azure
+#### <a name="azure-portal"></a>портала Azure
 
 Образы поколения 2 для Windows и SLES включены в одно и то же предложение сервера в качестве образов Gen1. Это означает, что с точки зрения потока вы выбрали предложение и номер SKU на портале для виртуальной машины. Если SKU поддерживает образы поколения 1 и 2, можно выбрать создание виртуальной машины поколения 2 на вкладке *Дополнительно* в последовательности создания виртуальной машины.
 
 В настоящее время образы поколения 1 и поколения 2 поддерживаются следующими SKU:
 
 * Windows Server 2012
-* Windows Server 2012 R2
-* Windows Server 2016
+* Windows Server 2012 R2
+* Windows Server 2016
 * Windows Server 2019
 
 При выборе SKU Windows Server в качестве предложения на вкладке **Дополнительно** можно создать виртуальную машину **поколения 1** (BIOS) или **Gen 2** (UEFI). Если вы выбрали **Gen 2**, убедитесь, что размер виртуальной машины, выбранный на вкладке " **основы** ", [поддерживается для виртуальных машин поколения 2](#generation-2-vm-sizes).
@@ -152,7 +156,7 @@ Get-AzVMImageSku -Location westus2 -PublisherName MicrosoftWindowsServer -Offer 
 * **Есть ли разница в ценах между виртуальными машинами поколения 1 и 2?**  
     Нет.
 
-* @no__t 0I имеют VHD-файл из локальной виртуальной машины поколения 2. Можно ли использовать этот VHD-файл для создания виртуальной машины поколения 2 в Azure? **
+* **У меня есть VHD-файл из локальной виртуальной машины поколения 2. Можно ли использовать этот VHD-файл для создания виртуальной машины поколения 2 в Azure?**
   Да, вы можете перенести VHD-файл версии 2 в Azure и использовать его для создания виртуальной машины поколения 2. Для этого выполните следующие действия.
     1. Отправьте VHD-файл в учетную запись хранения в том же регионе, где вы хотите создать виртуальную машину.
     1. Создайте управляемый диск из VHD-файла. Задайте для свойства создания Hyper-V значение v2. Следующие команды PowerShell задают свойство создания Hyper-V при создании управляемого диска.
@@ -192,6 +196,6 @@ Get-AzVMImageSku -Location westus2 -PublisherName MicrosoftWindowsServer -Offer 
 * **Можно ли перенести виртуальную машину из поколения 1 в поколение 2?**  
     Нет, вы не сможете изменить создание виртуальной машины после ее создания. Если необходимо переключиться между поколениями виртуальных машин, создайте новую виртуальную машину другого поколения.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о [виртуальных машинах версии 2 в Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/plan/should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v).
