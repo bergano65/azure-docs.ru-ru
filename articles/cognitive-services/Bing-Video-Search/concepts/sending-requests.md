@@ -1,7 +1,7 @@
 ---
 title: Отправка поисковых запросов в API Bing для поиска видео
 titleSuffix: Azure Cognitive Services
-description: Сведения об отправке поисковых запросов в API Bing для поиска видео.
+description: Сведения об отправке поисковых запросов в API Поиска видео Bing.
 services: cognitive-services
 author: aahi
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: bing-video-search
 ms.topic: conceptual
 ms.date: 06/27/2019
 ms.author: aahill
-ms.openlocfilehash: ba2036c58ae54cc665623e63129ecea6c530b27d
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 96f92f0dc1e9e0c6c409fe17680fc57412e2b7d3
+ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68878986"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72512518"
 ---
 # <a name="sending-search-requests-to-the-bing-video-search-api"></a>Отправка поисковых запросов в API Bing для поиска видео
 
@@ -23,7 +23,7 @@ ms.locfileid: "68878986"
 
 [!INCLUDE [cognitive-services-bing-video-search-signup-requirements](../../../../includes/cognitive-services-bing-video-search-signup-requirements.md)]
 
-## <a name="suggest-search-terms-with-the-bing-autosuggest-api"></a>Предложение условий поиска с помощью API автозаполнения Bing
+## <a name="suggest-search-terms-with-the-bing-autosuggest-api"></a>Предложение условий поиска с помощью API Автозаполнения Bing
 
 Если вы предоставили окно поиска, в котором пользователь вводит свой поисковый запрос, используйте [API автозаполнения Bing](../../bing-autosuggest/get-suggested-search-terms.md), чтобы оптимизировать работу. API возвращает предложенные строки запроса на основе частичного поиска, как пользовательские типы.
 
@@ -57,7 +57,7 @@ https://api.cognitive.microsoft.com/bing/v7.0/videos/search
 
 ## <a name="example-search-request"></a>Пример поискового запроса
 
-Ниже показан поисковый запрос, который включает в себя все рекомендуемые параметры и заголовки запроса. Если вы впервые вызовете любой из API-интерфейсов Bing, не включайте заголовок идентификатора клиента. Включите идентификатор клиента, только если вы ранее вызывали API Bing, а Bing возвратил идентификатор клиента для комбинации пользователей и устройств. 
+Ниже показан поисковый запрос, который включает в себя все рекомендуемые параметры и заголовки запроса. Если вы впервые вызовете любой из интерфейсов API Bing, не включайте заголовок идентификатора клиента. Идентификатор клиента следует включать, только если вы ранее вызывали API Bing, а Bing вернул идентификатор клиента для определенной комбинации пользователей и устройств. 
   
 ```  
 GET https://api.cognitive.microsoft.com/bing/v7.0/videos/search?q=sailing+dinghies&mkt=en-us HTTP/1.1  
@@ -145,7 +145,7 @@ BingAPIs-Market: en-US
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Проверьте, как работает API. Перейдите на страницу [консоли тестирования API для поиска видео](https://dev.cognitive.microsoft.com/docs/services/56b43f3ccf5ff8098cef3809/operations/58113fe5e31dac0a1ce6b0a8). 
 

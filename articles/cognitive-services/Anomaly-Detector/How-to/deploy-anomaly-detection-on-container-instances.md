@@ -1,5 +1,5 @@
 ---
-title: Запуск экземпляров контейнеров Azure
+title: Запуск контейнера детекторов аномалий в службе "экземпляры контейнеров Azure"
 titleSuffix: Azure Cognitive Services
 description: Разверните контейнер детектора аномалий в экземпляре контейнера Azure и протестируйте его в веб-браузере.
 services: cognitive-services
@@ -10,16 +10,16 @@ ms.subservice: anomaly-detector
 ms.topic: conceptual
 ms.date: 7/5/2019
 ms.author: dapine
-ms.openlocfilehash: cdcf701c6356303c84d3f79ee4230271f64ace78
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 52d2e3ed59a7ad71177f34909e37ce885d603297
+ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68854233"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72515271"
 ---
 # <a name="deploy-an-anomaly-detector-container-to-azure-container-instances"></a>Развертывание контейнера детекторов аномалий в службе "экземпляры контейнеров Azure"
 
-Узнайте, как развернуть контейнер детектора Cognitive Services [аномалии](../anomaly-detector-container-howto.md) в службе " [экземпляры контейнеров](https://docs.microsoft.com/azure/container-instances/)Azure". Эта процедура демонстрирует создание ресурса детектора аномалий. Затем мы обсудим извлечение связанного образа контейнера. Наконец, мы выделим возможность выполнить согласование двух из браузера. Использование контейнеров может повлечь за собой внимание разработчиков от управления инфраструктурой до того, чтобы сосредоточиться на разработке приложений.
+Узнайте, как развернуть контейнер [детектора Cognitive Services аномалии](../anomaly-detector-container-howto.md) в службе " [экземпляры контейнеров](https://docs.microsoft.com/azure/container-instances/)Azure". Эта процедура демонстрирует создание ресурса детектора аномалий. Затем мы обсудим извлечение связанного образа контейнера. Наконец, мы выделим возможность выполнить согласование двух из браузера. Использование контейнеров может повлечь за собой внимание разработчиков от управления инфраструктурой до того, чтобы сосредоточиться на разработке приложений.
 
 [!INCLUDE [Prerequisites](../../containers/includes/container-preview-prerequisites.md)]
 
@@ -35,7 +35,7 @@ ms.locfileid: "68854233"
 
 [!INCLUDE [API documentation](../../../../includes/cognitive-services-containers-api-documentation.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Проверьте раздел [Установка и запуск контейнеров](../anomaly-detector-container-configuration.md) , чтобы получить образ контейнера и запустить контейнер.
 * Ознакомьтесь со статьей о [конфигурации контейнеров](../anomaly-detector-container-configuration.md).

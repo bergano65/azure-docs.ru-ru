@@ -1,7 +1,7 @@
 ---
-title: Запустите экземпляры контейнеров Azure
+title: Запуск контейнера лиц в службе "экземпляры контейнеров Azure"
 titleSuffix: Azure Cognitive Services
-description: Развертывание контейнера лиц в экземпляре контейнера Azure и протестировать его в веб-браузере.
+description: Разверните контейнер Face в экземпляре контейнера Azure и протестируйте его в веб-браузере.
 services: cognitive-services
 author: IEvangelist
 manager: nitinme
@@ -10,16 +10,16 @@ ms.subservice: face-api
 ms.topic: conceptual
 ms.date: 7/5/2019
 ms.author: dapine
-ms.openlocfilehash: e67846b6b304b5425f7e8334eb3a4499a029d5ab
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 2a596ea1f6f6405078d0e031de00212995342a19
+ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67711596"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72516807"
 ---
-# <a name="deploy-the-face-container-to-azure-container-instances"></a>Развертывание контейнера лиц в экземпляры контейнеров Azure
+# <a name="deploy-the-face-container-to-azure-container-instances"></a>Развертывание контейнера "лицо" в службе "экземпляры контейнеров Azure"
 
-Дополнительные сведения о развертывании Cognitive Services [лиц](../face-how-to-install-containers.md) контейнера в Azure [экземпляры контейнеров](https://docs.microsoft.com/azure/container-instances/). Эта процедура демонстрирует создание ресурса Azure лиц. Затем мы обсудим, получение образа связанного контейнера. Наконец рассматривается возможность выполнять оркестрацию двух из браузера. С помощью контейнеров можно сместить внимание разработчиков от управления инфраструктурой, чтобы вместо этого сосредоточиться на разработке приложений.
+Узнайте, как развернуть контейнер Cognitive Services [Face](../face-how-to-install-containers.md) в службе " [экземпляры контейнеров](https://docs.microsoft.com/azure/container-instances/)Azure". Эта процедура демонстрирует создание ресурса лица Azure. Затем мы обсудим извлечение связанного образа контейнера. Наконец, мы выделим возможность выполнить согласование двух из браузера. Использование контейнеров может повлечь за собой внимание разработчиков от управления инфраструктурой до того, чтобы сосредоточиться на разработке приложений.
 
 [!INCLUDE [Prerequisites](../../containers/includes/container-preview-prerequisites.md)]
 

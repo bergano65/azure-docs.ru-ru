@@ -1,7 +1,7 @@
 ---
-title: Запустите экземпляры контейнеров Azure
+title: Запуск Компьютерное зрение контейнера в службе "экземпляры контейнеров Azure"
 titleSuffix: Azure Cognitive Services
-description: Развертывание контейнера компьютерного зрения в экземпляре контейнера Azure и протестировать его в веб-браузере.
+description: Разверните контейнер Компьютерное зрение в экземпляре контейнера Azure и протестируйте его в веб-браузере.
 services: cognitive-services
 author: IEvangelist
 manager: nitinme
@@ -10,16 +10,16 @@ ms.subservice: computer-vision
 ms.topic: conceptual
 ms.date: 7/5/2019
 ms.author: dapine
-ms.openlocfilehash: 859147d23ea78abac2da4a4c2f1fa26a8d976d02
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 2de879d271ab001e62725424ea72e0604176efb4
+ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67711618"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72516872"
 ---
-# <a name="deploy-the-computer-vision-container-to-azure-container-instances"></a>Развертывание контейнера компьютерного зрения в экземпляры контейнеров Azure
+# <a name="deploy-the-computer-vision-container-to-azure-container-instances"></a>Развертывание контейнера Компьютерное зрение в службе "экземпляры контейнеров Azure"
 
-Дополнительные сведения о развертывании Cognitive Services [компьютерного](computer-vision-how-to-install-containers.md) контейнера в Azure [экземпляры контейнеров](https://docs.microsoft.com/azure/container-instances/). Эта процедура демонстрирует создание компьютерного ресурса. Затем мы обсудим, получение образа связанного контейнера. Наконец рассматривается возможность выполнять оркестрацию двух из браузера. С помощью контейнеров можно сместить внимание разработчиков от управления инфраструктурой, чтобы вместо этого сосредоточиться на разработке приложений.
+Узнайте, как развернуть контейнер [Компьютерное зрение](computer-vision-how-to-install-containers.md) Cognitive Services в службе " [экземпляры контейнеров](https://docs.microsoft.com/azure/container-instances/)Azure". Эта процедура демонстрирует создание Компьютерное зрение ресурса. Затем мы обсудим извлечение связанного образа контейнера. Наконец, мы выделим возможность выполнить согласование двух из браузера. Использование контейнеров может повлечь за собой внимание разработчиков от управления инфраструктурой до того, чтобы сосредоточиться на разработке приложений.
 
 [!INCLUDE [Prerequisites](../containers/includes/container-preview-prerequisites.md)]
 

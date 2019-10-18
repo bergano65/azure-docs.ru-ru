@@ -10,13 +10,13 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: erhopf
-ms.custom: seodec18
-ms.openlocfilehash: 41d12013ec7eaa4e2aae59e1b366cc511a41f749
-ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
+ms.custom: seodec18, seo-javascript-october2019
+ms.openlocfilehash: eb4478a435fbfc899055a60e13b318be771652f7
+ms.sourcegitcommit: f29fec8ec945921cc3a89a6e7086127cc1bc1759
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69535113"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72527589"
 ---
 # <a name="try-speech-services-for-free"></a>Бесплатная пробная подписка на службу "Речь"
 
@@ -26,7 +26,7 @@ ms.locfileid: "69535113"
 
 И, наконец, Службы речи включают бесплатную категорию для небольших объемов данных, подходящую для разработки приложений. Вы можете продолжать пользоваться бесплатной подпиской даже после истечения срока действия кредита на службу.
 
-## <a name="free-trial"></a>Бесплатная пробная версия
+## <a name="free-trial"></a>Бесплатное пробное использование
 
 30-дневная бесплатная версия дает доступ к ценовой категории "Стандартный" в течение ограниченного времени.
 
@@ -36,15 +36,15 @@ ms.locfileid: "69535113"
 
 1. Выберите вкладку **API распознавания речи**.
 
-   ![Вкладка Speech services (Службы речи)](media/index/try-speech-api-free-trial1.png)
+   ![API распознавания речи — вкладка "службы речи"](media/index/cognitive-services-speech-api-tab.png)
 
 1. В разделе " **речевые службы**" выберите **получить ключ API**.
 
-   ![Ключ API](media/index/try-speech-api-free-trial2.png)
+   ![API распознавания речи — получение ключа API](media/index/speech-api-get-api-key.png)
 
 1. Примите условия и выберите языковой стандарт в раскрывающемся меню.
 
-   ![Примите условия](media/index/try-speech-api-free-trial3.png)
+   ![API распознавания речи — согласиться с условиями](media/index/speech-api-agree-to-terms.png)
 
 1. Войдите в учетную запись Майкрософт, Facebook, LinkedIn или GitHub.
 
@@ -73,17 +73,17 @@ ms.locfileid: "69535113"
 
 1. В верхней левой части портала выберите **Создать ресурс**.
 
-    ![Создать ресурс](media/index/try-speech-api-create-speech1.png)
+    ![API распознавания речи — создание ресурса](media/index/speech-api-create-resource.png)
 
 1. В окне **Создать** найдите **Речь**.
 
 1. В результатах поиска щелкните **Речь**.
 
-    ![Выбор речи](media/index/try-speech-api-create-speech2.png)
+    ![API распознавания речи — выбор речи](media/index/speech-api-select-speech.png)
 
 1. В разделе **Речь** нажмите кнопку **Создать**.
 
-    ![Нажмите кнопку "Создать".](media/index/try-speech-api-create-speech3.png)
+    ![API распознавания речи — кнопка "создать"](media/index/speech-api-create-button.png)
 
 1. В разделе **Создать**, введите следующее.
 
@@ -95,11 +95,11 @@ ms.locfileid: "69535113"
    * Чтобы получать удобный доступ к подписке в будущем, установите флажок **Закрепить на панели мониторинга**.
    * Нажмите кнопку **Создать**.
 
-     ![Нажмите кнопку "Создать".](media/index/try-speech-api-create-speech4.png)
+     ![API распознавания речи — выберите Создать.](media/index/speech-api-select-create.png)
 
      Создание и развертывание нового ресурса службы речи может занять некоторое время. Выберите **Быстрый запуск**, чтобы просмотреть сведения о новом ресурсе.
 
-     ![Панель быстрого запуска](media/index/try-speech-api-create-speech5.png)
+     ![API распознавания речи. развертывание ресурса](media/index/speech-api-deploy-resource.png)
 
 1. В разделе **Краткое руководство**щелкните ссылку **ключи** в разделе Шаг 1, чтобы отобразить ключи подписки. Каждая подписка имеет два ключа. В приложении можно использовать любой. Нажмите кнопку рядом с каждым ключом, чтобы скопировать его в буфер обмена для вставки в код.
 
@@ -118,7 +118,7 @@ ms.locfileid: "69535113"
 
 Ключи, созданные для региона, допустимы только в нем. Попытка использовать их в других регионах приведет к ошибкам проверки подлинности.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Выполните одно из 10-минутных руководств или ознакомьтесь с примерами пакета SDK.
 

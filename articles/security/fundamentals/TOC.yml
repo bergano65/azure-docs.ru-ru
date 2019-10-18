@@ -49,16 +49,6 @@
             - name: Общие сведения о шифровании дисков Azure
               displayName: 'BitLocker, bek'
               href: 'https://docs.microsoft.com/azure/security/azure-security-disk-encryption-overview'
-            - name: Краткие руководства
-              items:
-                - name: "Шифрование виртуальной машины Linux с помощью Azure\_CLI"
-                  href: 'https://docs.microsoft.com/azure/security/azure-disk-encryption-linux-cli-quickstart'
-                - name: Шифрование виртуальной машины Linux с помощью Azure PowerShell
-                  href: 'https://docs.microsoft.com/azure/security/azure-disk-encryption-linux-powershell-quickstart'
-                - name: "Шифрование виртуальной машины Windows с помощью Azure\_CLI"
-                  href: 'https://docs.microsoft.com/azure/security/azure-disk-encryption-windows-cli-quickstart'
-                - name: Шифрование виртуальной машины Windows с помощью Azure PowerShell
-                  href: 'https://docs.microsoft.com/azure/security/azure-disk-encryption-windows-powershell-quickstart'
             - name: Шифрование дисков Azure
               items:
                 - name: Предварительные требования для шифрования дисков
@@ -151,8 +141,6 @@
           href: network-best-practices.md
         - name: Защита от атак DDoS
           href: ddos-best-practices.md
-        - name: Безопасность границ
-          href: network-best-practices.md
 - name: Приложение
   items:
     - name: PaaS
@@ -185,9 +173,6 @@
   items:
     - name: Аудит и ведение журнала
       items:
-        - name: Управление безопасностью
-          displayName: 'vulnerability, incident, virus,'
-          href: 'https://docs.microsoft.com/azure/security-center/security-center-intro?toc=/azure/security/toc.json&bc=/azure/security/breadcrumb/toc.json'
         - name: Безопасность удаленного управления
           href: management.md
         - name: Интеграция журналов Azure
@@ -199,9 +184,6 @@
             - name: Интеграция журналов аудита Azure AD
               displayName: active directory
               href: azure-log-integration-ad.md
-            - name: Интеграция оповещений Центра безопасности
-              displayName: splunk
-              href: 'https://docs.microsoft.com/azure/security-center/security-center-export-data-to-siem?toc=/azure/security/toc.json&bc=/azure/security/breadcrumb/toc.json'
             - name: Интеграция журналов из Key Vault
               displayName: keyvault
               href: azure-log-integration-keyvault-eventhub.md

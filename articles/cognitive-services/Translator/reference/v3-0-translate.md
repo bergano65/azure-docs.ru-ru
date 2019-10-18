@@ -8,16 +8,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: reference
-ms.date: 02/01/2019
+ms.date: 10/16/2019
 ms.author: swmachan
-ms.openlocfilehash: bc03e10e40e90845c8e1a3dd064c4f50fafeac00
-ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
+ms.openlocfilehash: 24f27dfde34413d1ac98f795eddc07103d3cbf3c
+ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2019
-ms.locfileid: "72299827"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72515259"
 ---
-# <a name="translator-text-api-30-translate"></a>API перевода текстов 3.0: Перевод
+# <a name="translator-text-api-30-translate"></a>API перевода текстов 3.0: Translate
 
 Этот интерфейс позволяет переводить текст.
 
@@ -42,10 +42,10 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
   </tr>
   <tr>
     <td>from</td>
-    <td><em>Необязательный параметр.</em><br/>Определяет язык оригинального текста. Чтобы просмотреть, какие языки доступны для перевода, выполните поиск <a href="./v3-0-languages.md">поддерживаемых языков</a>, используя область <code>translation</code>. Если параметр <code>from</code> не указан, исходный язык определяется автоматически. <br/><br/>При использовании функции <a href="https://docs.microsoft.com/azure/cognitive-services/translator/dynamic-dictionary">динамического словаря</a> необходимо использовать параметр <code>from</code> вместо автоматического обнаружения.</td>
+    <td><em>Необязательный параметр.</em><br/>Определяет язык вводимого текста. Чтобы просмотреть, какие языки доступны для перевода, выполните поиск <a href="./v3-0-languages.md">поддерживаемых языков</a>, используя область <code>translation</code>. Если параметр <code>from</code> не указан, исходный язык определяется автоматически. <br/><br/>При использовании функции <a href="https://docs.microsoft.com/azure/cognitive-services/translator/dynamic-dictionary">динамического словаря</a> необходимо использовать параметр <code>from</code>, а не автоматическое обнаружение.</td>
   </tr>
   <tr>
-    <td>to</td>
+    <td>значение</td>
     <td><em>Обязательный параметр.</em><br/>Определяет язык выходного текста. Целевой язык должен быть одним из <a href="./v3-0-languages.md">поддерживаемых языков</a>, включенных в область <code>translation</code>. Например, используйте параметр <code>to=de</code>, чтобы перевести на немецкий.<br/>Вы можете одновременно переводить на различные языки, использовав этот параметр в строке запроса несколько раз. Например, используйте параметр <code>to=de&to=it</code>, чтобы перевести на немецкий и итальянский.</td>
   </tr>
   <tr>
@@ -102,7 +102,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
   </tr>
   <tr>
     <td>Content-Type</td>
-    <td><em>Обязательный заголовок запроса</em>.<br/>Указывает тип содержимого для полезных данных. Возможные значения: <code>application/json</code>.</td>
+    <td><em>Обязательный заголовок запроса</em>.<br/>Указывает тип содержимого для полезных данных.<br/> Принятое значение — <code>application/json; charset=UTF-8</code>.</td>
   </tr>
   <tr>
     <td>Content-Length</td>
@@ -110,7 +110,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
   </tr>
   <tr>
     <td>X-ClientTraceId</td>
-    <td><em>Необязательный</em>.<br/>Созданный клиентом идентификатор GUID, позволяющий уникально идентифицировать запрос. Этот заголовок можно опустить, если в строке запроса указан идентификатор трассировки в параметре с именем <code>ClientTraceId</code>.</td>
+    <td><em>Необязательно</em>.<br/>Созданный клиентом идентификатор GUID, позволяющий уникально идентифицировать запрос. Этот заголовок можно опустить, если в строке запроса указан идентификатор трассировки в параметре с именем <code>ClientTraceId</code>.</td>
   </tr>
 </table> 
 
@@ -131,41 +131,41 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
 
 ## <a name="response-body"></a>Тело ответа
 
-Успешный ответ возвращается в формате массива JSON с одним результатом для каждой строки входного массива. Объект результата содержит следующие свойства.
+Успешный ответ возвращается в формиате массива JSON с одним результатом для каждой строки входного массива. Объект результатов содержит следующие свойства.
 
-  * `detectedLanguage`. объект, описывающий распознанный язык с помощью следующих свойств:
+  * `detectedLanguage` — объект, описывающий распознанный язык с помощью следующих свойств:
 
-      * `language`. строка, которая представляет код обнаруженного языка.
+      * `language` — строку, которая представляет код обнаруженного языка.
 
-      * `score`. значение с плавающей запятой, обозначающее достоверность результата. Может принимать ноль или единицу, где низкая оценка обозначает низкую достоверность.
+      * `score` — значение с плавающей запятой, обозначающее достоверность результата. Может принимать значения от нуля до единицы, где низкая оценка обозначает низкую достоверность.
 
     Свойство `detectedLanguage` присутствует в объекте результатов только при запросе автоматического распознавания языка.
 
-  * `translations`. массив результатов перевода. Размер массива совпадает с количеством языков, указанных с помощью параметра запроса `to`. Каждый элемент массива содержит:
+  * `translations` — массив результатов перевода. Размер массива совпадает с количеством языков, указанных с помощью параметра запроса `to`. Каждый элемент массива содержит:
 
-    * `to`. строка, которая содержит код целевого языка.
+    * `to` — строка, которая содержит код целевого языка.
 
-    * `text`. строка с текстом перевода.
+    * `text` — строка с текстом перевода.
 
-    * `transliteration`. объект, который возвращает переведенный текст в скрипте, указанном в параметре `toScript`.
+    * `transliteration` — объект, который возвращает переведенный текст в сценарии, указанном в параметре `toScript`.
 
-      * `script`. строка, которая указывает целевой скрипт.   
+      * `script` — строка, которая указывает целевой сценарий.   
 
-      * `text`. строка, которая возвращает целевой текст в целевом скрипте.
+      * `text` — строка, которая возвращает целевой текст в целевом сценарии.
 
     Если не выполняется транслитерация, объект `transliteration` не включается.
 
-    * `alignment`. объект с одним свойством строки `proj`, который сопоставляет оригинальный текст с переведенным. Сведения о выравнивании предоставляются, только когда параметр запроса `includeAlignment` имеет значение `true`. Сведения о выравнивании возвращаются в виде строкового значения в следующем формате: `[[SourceTextStartIndex]:[SourceTextEndIndex]–[TgtTextStartIndex]:[TgtTextEndIndex]]`.  Двоеточие разделяет начальный и конечный индексы, дефис — языки, а пробел — слова. Одно слово может соответствовать нулю, одному или нескольким словам другого языка. При этом сопоставленные слова могут не располагаться рядом. Если сведения о выравнивании недоступны, элемент Alignment будет пустым. Примеры и ограничения см. в разделе [Получение сведений о выравнивании](#obtain-alignment-information).
+    * `alignment` — объект с одним свойством строки `proj`, который преобразовывает оригинальный текст в переведенный. Сведения о выравнивании предоставляются, только когда параметр запроса `includeAlignment` имеет значение `true`. Сведения о выравнивании возвращаются в виде строкового значения в следующем формате: `[[SourceTextStartIndex]:[SourceTextEndIndex]–[TgtTextStartIndex]:[TgtTextEndIndex]]`.  Двоеточие разделяет начальный и конечный индексы, дефис — языки, а пробел — слова. Одно слово может соответствовать нулю, одному или нескольким словам другого языка. При этом сопоставленные слова могут не располагаться рядом. Если сведения о выравнивании недоступны, элемент Alignment будет пустым. Примеры и ограничения см. в разделе [Получение сведений о выравнивании](#obtain-alignment-information).
 
-    * `sentLen`. объект, возвращающий границы предложения в оригинальном и переведенном текстах.
+    * `sentLen` — объект, возвращающий границы предложения в оригинальном и переведенном текстах.
 
-      * `srcSentLen`. массив целых чисел, представляющих значения длины предложений в оригинальном тексте. Длина массива соответствует количеству предложений, а значения — длине каждого предложения.
+      * `srcSentLen` — массив целых чисел, представляющих значения длины предложений в оригинальном тексте. Длина массива соответствует количеству предложений, а значения — длине каждого предложения.
 
-      * `transSentLen`.  массив целых чисел, представляющих значения длины предложений в переведенном тексте. Длина массива соответствует количеству предложений, а значения — длине каждого предложения.
+      * `transSentLen` — массив целых чисел, представляющих значения длины предложений в переведенном тексте. Длина массива соответствует количеству предложений, а значения — длине каждого предложения.
 
     Границы предложения включены только тогда, когда параметр запроса `includeSentenceLength` имеет значение `true`.
 
-  * `sourceText`. объект с одним свойством строки `text`, который возвращает оригинальный текст в скрипте по умолчанию исходного языка. `sourceText` свойство присутствует только в том случае, если входные данные выражаются в сценарии, который не является обычным для этого языка. Например, если входные данные были на арабском языке, но написаны латинским алфавитом, тогда параметр `sourceText.text` вернет текст на арабском языке, преобразованным в арабский сценарий.
+  * `sourceText` — объект с одним свойством строки `text`, который возвращает оригинальный текст в сценарии по умолчанию исходного языка. `sourceText` свойство присутствует только в том случае, если входные данные выражаются в сценарии, который не является обычным для этого языка. Например, если входные данные были на арабском языке, но написаны латинским алфавитом, тогда параметр `sourceText.text` вернет текст на арабском языке, преобразованным в арабский сценарий.
 
 Примеры ответов JSON приведены в [этом разделе](#examples).
 
@@ -234,7 +234,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
 В этом примере показано, как перевести одно предложение с английского языка на упрощенный китайский.
 
 ```curl
-curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=zh-Hans" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json" -d "[{'Text':'Hello, what is your name?'}]"
+curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=zh-Hans" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json; charset=UTF-8" -d "[{'Text':'Hello, what is your name?'}]"
 ```
 
 Текст ответа:
@@ -256,7 +256,7 @@ curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-versio
 В этом примере показано, как перевести одно предложение с английского языка на упрощенный китайский. В запросе не указан язык ввода. Вместо этого используется автоматическое определение исходного языка.
 
 ```curl
-curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=zh-Hans" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json" -d "[{'Text':'Hello, what is your name?'}]"
+curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=zh-Hans" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json; charset=UTF-8" -d "[{'Text':'Hello, what is your name?'}]"
 ```
 
 Текст ответа:
@@ -278,7 +278,7 @@ curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-versio
 Давайте расширим предыдущий пример, добавив метод транслитерации. В следующем запросе используется китайский текст, написанный латинским алфавитом.
 
 ```curl
-curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=zh-Hans&toScript=Latn" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json" -d "[{'Text':'Hello, what is your name?'}]"
+curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=zh-Hans&toScript=Latn" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json; charset=UTF-8" -d "[{'Text':'Hello, what is your name?'}]"
 ```
 
 Текст ответа:
@@ -305,7 +305,7 @@ curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-versio
 Одновременный перевод нескольких строк — это просто вопрос задания массива строк в тексте запроса.
 
 ```curl
-curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=zh-Hans" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json" -d "[{'Text':'Hello, what is your name?'}, {'Text':'I am fine, thank you.'}]"
+curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=zh-Hans" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json; charset=UTF-8" -d "[{'Text':'Hello, what is your name?'}, {'Text':'I am fine, thank you.'}]"
 ```
 
 Текст ответа:
@@ -330,7 +330,7 @@ curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-versio
 В этом примере показано, как перевести одинаковый оригинальный текст на несколько языков в одном запросе.
 
 ```curl
-curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=zh-Hans&to=de" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json" -d "[{'Text':'Hello, what is your name?'}]"
+curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=zh-Hans&to=de" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json; charset=UTF-8" -d "[{'Text':'Hello, what is your name?'}]"
 ```
 
 Текст ответа:
@@ -354,19 +354,19 @@ curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-versio
 
 <table width="100%">
   <th width="20%">ProfanityAction</th>
-  <th>Action</th>
+  <th>Действия</th>
   <tr>
     <td><code>NoAction</code></td>
     <td>Это поведение по умолчанию. Ненормативная лексика оригинального текста сохранится в переводе.<br/><br/>
     <strong>Пример исходного текста (японский).</strong> 彼はジャッカスです。<br/>
-    <strong>Пример перевода (на английский)</strong>: Он — придурок.
+    <strong>Пример перевода (на русский).</strong> Он — придурок.
     </td>
   </tr>
   <tr>
     <td><code>Deleted</code></td>
     <td>Оскорбительные слова будут удалены из выходных данных без замены.<br/><br/>
     <strong>Пример исходного текста (японский).</strong> 彼はジャッカスです。<br/>
-    <strong>Пример перевода (на английский)</strong>: Он — .
+    <strong>Пример перевода (на русский)</strong>: Он —.
     </td>
   </tr>
   <tr>
@@ -374,17 +374,17 @@ curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-versio
     <td>Нецензурную лексику в выходных данных заменяют маркеры. Маркер зависит от параметра <code>ProfanityMarker</code>.<br/><br/>
 Если установлен параметр <code>ProfanityMarker=Asterisk</code>, нецензурную лексику заменяют символы <code>***</code>:<br/>
     <strong>Пример исходного текста (японский).</strong> 彼はジャッカスです。<br/>
-    <strong>Пример перевода (на английский)</strong>: He is a \*\*\*.<br/><br/>
+    <strong>Пример перевода (на русский)</strong>: Он – \*\*\*.<br/><br/>
 Если установлен параметр <code>ProfanityMarker=Tag</code>, нецензурная лексика выделяется XML-тегами &lt;profanity&gt; и &lt;/profanity/&gt;:<br/>
     <strong>Пример исходного текста (японский).</strong> 彼はジャッカスです。<br/>
-    <strong>Пример перевода (на английский)</strong>: He is a &lt;profanity&gt;jackass&lt;/profanity&gt;.
+    <strong>Пример перевода (на русский).</strong>Он – &lt;profanity&gt;придурок&lt;/profanity&gt;.
   </tr>
 </table> 
 
-Пример:
+Пример.
 
 ```curl
-curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=de&profanityAction=Marked" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json" -d "[{'Text':'This is a freaking good idea.'}]"
+curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=de&profanityAction=Marked" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json; charset=UTF-8" -d "[{'Text':'This is a freaking good idea.'}]"
 ```
 Возвращаемые данные:
 
@@ -401,7 +401,7 @@ curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-versio
 Сравнение:
 
 ```curl
-curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=de&profanityAction=Marked&profanityMarker=Tag" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json" -d "[{'Text':'This is a freaking good idea.'}]"
+curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=de&profanityAction=Marked&profanityMarker=Tag" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json; charset=UTF-8" -d "[{'Text':'This is a freaking good idea.'}]"
 ```
 
 Последний запрос возвращает:
@@ -428,7 +428,7 @@ curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-versio
 Пример запроса приведен ниже.
 
 ```curl
-curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=zh-Hans&textType=html" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json" -d "[{'Text':'<div class=\"notranslate\">This will not be translated.</div><div>This will be translated.</div>'}]"
+curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=zh-Hans&textType=html" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json; charset=UTF-8" -d "[{'Text':'<div class=\"notranslate\">This will not be translated.</div><div>This will be translated.</div>'}]"
 ```
 
 Ответ:
@@ -448,7 +448,7 @@ curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-versio
 Чтобы получить сведения о выравнивании, укажите параметр `includeAlignment=true` в строке запроса.
 
 ```curl
-curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=fr&includeAlignment=true" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json" -d "[{'Text':'The answer lies in machine translation.'}]"
+curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=fr&includeAlignment=true" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json; charset=UTF-8" -d "[{'Text':'The answer lies in machine translation.'}]"
 ```
 
 Ответ:
@@ -484,7 +484,7 @@ curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-versio
 Чтобы получать сведения о длине предложения в исходном тексте и переводе, укажите параметр `includeSentenceLength=true` в строке запроса.
 
 ```curl
-curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=fr&includeSentenceLength=true" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json" -d "[{'Text':'The answer lies in machine translation. The best machine translation technology cannot always provide translations tailored to a site or users like a human. Simply copy and paste a code snippet anywhere.'}]"
+curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=fr&includeSentenceLength=true" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json; charset=UTF-8" -d "[{'Text':'The answer lies in machine translation. The best machine translation technology cannot always provide translations tailored to a site or users like a human. Simply copy and paste a code snippet anywhere.'}]"
 ```
 
 Ответ:
@@ -516,7 +516,7 @@ curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-versio
 Например, рассмотрим следующее русское предложение: "Слово "словоматик" — это словарная запись". Чтобы сохранить при переводе слово _словоматик_, необходимо отправить запрос:
 
 ```
-curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=de" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json" -d "[{'Text':'The word <mstrans:dictionary translation=\"wordomatic\">word or phrase</mstrans:dictionary> is a dictionary entry.'}]"
+curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=de" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json; charset=UTF-8" -d "[{'Text':'The word <mstrans:dictionary translation=\"wordomatic\">word or phrase</mstrans:dictionary> is a dictionary entry.'}]"
 ```
 
 Результат:

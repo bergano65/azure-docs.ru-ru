@@ -8,14 +8,6 @@
 - name: Краткие руководства
   expanded: true
   items:
-    - name: "REST\_API"
-      items:
-        - name: 'Использование C#'
-          href: quickstarts/detect-data-anomalies-csharp.md
-        - name: Использование Java
-          href: quickstarts/detect-data-anomalies-java.md
-        - name: Использование Python
-          href: quickstarts/detect-data-anomalies-python.md
     - name: Клиентская библиотека
       items:
         - name: 'Использование C#'
@@ -24,7 +16,15 @@
           href: quickstarts/detect-data-anomalies-python-sdk.md
         - name: Использование Node.js
           href: quickstarts/detect-data-anomalies-nodejs-sdk.md
-- name: Учебники
+    - name: REST API
+      items:
+        - name: 'Использование C#'
+          href: quickstarts/detect-data-anomalies-csharp.md
+        - name: Использование Java
+          href: quickstarts/detect-data-anomalies-java.md
+        - name: Использование Python
+          href: quickstarts/detect-data-anomalies-python.md
+- name: Руководства
   items:
     - name: "Визуализация аномалий в пакетном режиме с помощью Power\_BI"
       href: tutorials/batch-anomaly-detection-powerbi.md

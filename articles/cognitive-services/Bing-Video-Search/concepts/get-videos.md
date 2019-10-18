@@ -1,5 +1,5 @@
 ---
-title: Отправка поисковых запросов в API Bing для поиска видео
+title: Поиск видео с помощью API Bing для поиска видео
 titleSuffix: Azure Cognitive Services
 description: Сведения об отправке поисковых запросов в API Поиска видео Bing.
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.subservice: bing-video-search
 ms.topic: conceptual
 ms.date: 06/24/2019
 ms.author: aahi
-ms.openlocfilehash: b565ad8be1d8529d3650ec36fe7c4d61f6c5dc8f
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: e3314efe0ea0367eb852fd17aadece17026ff4bb
+ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68879087"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72512421"
 ---
 # <a name="search-for-videos-with-the-bing-video-search-api"></a>Поиск видео с помощью API Поиска видео Bing
 
@@ -37,7 +37,7 @@ Host: api.cognitive.microsoft.com
 
 Все запросы должны быть выполнены на сервере.
 
-Если вы впервые вызовете любой из интерфейсов API Bing, не включайте заголовок идентификатора клиента. Включите идентификатор клиента, только если вы ранее вызывали API Bing, а Bing возвратил идентификатор клиента для комбинации пользователей и устройств.
+Если вы впервые вызовете любой из интерфейсов API Bing, не включайте заголовок идентификатора клиента. Идентификатор клиента следует включать, только если вы ранее вызывали API Bing, а Bing вернул идентификатор клиента для определенной комбинации пользователей и устройств.
 
 Чтобы получить видео с определенного домена, используйте оператор запроса [site:](https://msdn.microsoft.com/library/ff795613.aspx).
 
@@ -144,7 +144,7 @@ Host: api.cognitive.microsoft.com
 
 ## <a name="expanding-the-query"></a>Расширение запроса
 
-Если Bing может расширить запрос, чтобы сузить исходный поисковый запрос, объект [Videos](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#videos) будет содержать поле `queryExpansions`. Например, если запрос был *Cleaning Gutters*, расширенные запросы могут иметь вид: Gutter Cleaning **Tools**, Cleaning Gutters **From the Ground**, Gutter Cleaning **Machine**, and **Easy** Gutter Cleaning.
+Если Bing может расширить запрос, чтобы сузить исходный поисковый запрос, объект [Videos](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#videos) будет содержать поле `queryExpansions`. Например, если запрос был *очистка водостоков*, расширенные запросы могут быть такими: **средства** для очистки водостоков, очистка водостоков **с земли**, **машина** для очистки водостоков и **легкая** очистка водостока.
 
 В следующем примере показаны расширенные запросы для *очистки водостоков*.
 
