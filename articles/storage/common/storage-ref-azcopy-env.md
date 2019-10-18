@@ -4,16 +4,16 @@ description: В этой статье содержатся справочные 
 author: normesta
 ms.service: storage
 ms.topic: reference
-ms.date: 08/26/2019
+ms.date: 10/16/2019
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
-ms.openlocfilehash: 15e72493190e1bc56e779c22695bc51bd05da940
-ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
+ms.openlocfilehash: e7ceff4df320aa1fbc3aa6e601c61f6407fd762e
+ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70195780"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72514751"
 ---
 # <a name="azcopy-env"></a>azcopy env
 
@@ -30,18 +30,18 @@ azcopy env [flags]
 
 ## <a name="options"></a>Параметры
 
-|Параметр|Описание|
+|Вариант|Описание|
 |--|--|
 |-h, --help|Отображает содержимое справки для команды env. |
 |--показывать с учетом|Отображает конфиденциальные и секретные переменные среды.|
 
 ## <a name="options-inherited-from-parent-commands"></a>Параметры, унаследованные от родительских команд
 
-|Параметр|Описание|
+|Вариант|Описание|
 |---|---|
 |--Cap-Мбит/с UInt32|Скорость передачи с прописными буквами в мегабит в секунду. Посекундная пропускная способность может немного отличаться от ограничения. Если этот параметр имеет значение 0 или пропущен, пропускная способность не ограничена.|
 |--строка выходного типа|Формат вывода команды. Среди вариантов: Text, JSON. Значение по умолчанию — "Text".|
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>Дополнительные материалы
 
 - [azcopy](storage-ref-azcopy.md)

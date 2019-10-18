@@ -16,12 +16,12 @@ ms.date: 09/15/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 394137a1b7901a3272e36f6a6d74944b87f30082
-ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
+ms.openlocfilehash: 76337c471a4032f879bee8382b2d958f6600671e
+ms.sourcegitcommit: f29fec8ec945921cc3a89a6e7086127cc1bc1759
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71056489"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72527068"
 ---
 # <a name="daemon-app-that-calls-web-apis---code-configuration"></a>Управляющее приложение, вызывающее веб-API — конфигурация кода
 
@@ -35,15 +35,15 @@ ms.locfileid: "71056489"
   ------------ | ----------
   ![MSAL.NET](media/sample-v2-code/logo_NET.png) <br/> MSAL.NET  | Для создания управляющего приложения поддерживаются платформы .NET Framework и платформы .NET Core (не UWP, Xamarin. iOS и Xamarin. Android, так как эти платформы используются для создания общедоступных клиентских приложений).
   ![Python](media/sample-v2-code/logo_python.png) <br/> MSAL. Языке | Выполняется разработка — в общедоступной предварительной версии
-  ![Java](media/sample-v2-code/logo_java.png) <br/> MSAL. Java | Выполняется разработка — в общедоступной предварительной версии
+  ![Java:](media/sample-v2-code/logo_java.png) <br/> MSAL. Java | Выполняется разработка — в общедоступной предварительной версии
 
 ## <a name="configuration-of-the-authority"></a>Настройка центра
 
-Учитывая, что управляющие приложения не используют делегированные разрешения, но разрешения приложений, их *поддерживаемый тип учетной записи* не могут быть *учетными записями в любом каталоге Организации и личных учетных записях Майкрософт (например, Skype, Xbox, Outlook.com)* . В действительности нет прав администратора клиента для предоставления согласия на приложение управляющей программы для личных учетных записей Майкрософт. Вам потребуется выбрать учетные *записи в моей организации* или *учетных записях в любой организации*.
+Учитывая, что управляющие приложения не используют делегированные разрешения, но разрешения приложений, их *поддерживаемый тип учетной записи* не могут быть *учетными записями в любом каталоге Организации и личных учетных записях Майкрософт (например, Skype, Xbox, Outlook.com)* . В действительности нет прав администратора клиента для предоставления согласия на приложение управляющей программы для личных учетных записей Майкрософт. Вам потребуется выбрать *учетные записи в моей организации* или *учетных записях в любой организации*.
 
 Поэтому центр, указанный в конфигурации приложения, должен быть клиентом-ED (указав идентификатор клиента или доменное имя, связанное с вашей организацией).
 
-Если вы являетесь независимым поставщиком программного обеспечения и хотите предоставить средство с несколькими клиентами, `organizations`вы можете использовать. Но помните, что вы также должны объяснить своим заказчикам, как предоставить согласие администратора. Дополнительные сведения см. [в статье запрос согласия для всего клиента](v2-permissions-and-consent.md#requesting-consent-for-an-entire-tenant) . Кроме того, сейчас существует ограничение в MSAL: `organizations` допустимо только в том случае, если учетные данные клиента являются секретом приложения (а не сертификатом).
+Если вы являетесь независимым поставщиком программного обеспечения и хотите предоставить многоклиентское средство, можно использовать `organizations`. Но помните, что вы также должны объяснить своим заказчикам, как предоставить согласие администратора. Дополнительные сведения см. [в статье запрос согласия для всего клиента](v2-permissions-and-consent.md#requesting-consent-for-an-entire-tenant) . Кроме того, сейчас существует ограничение в MSAL: `organizations` разрешено, только если учетные данные клиента являются секретом приложения (а не сертификатом).
 
 ## <a name="application-configuration-and-instantiation"></a>Настройка и создание приложений
 
@@ -52,7 +52,7 @@ ms.locfileid: "71056489"
 > [!IMPORTANT]
 > Даже если приложение является консольным приложением, выполняемым в качестве службы, если это управляющее приложение, оно должно быть конфиденциальным клиентским приложением.
 
-### <a name="configuration-file"></a>файл конфигурации
+### <a name="configuration-file"></a>Файл конфигурации
 
 Файл конфигурации определяет:
 
@@ -103,7 +103,7 @@ ms.locfileid: "71056489"
 
 # <a name="javatabjava"></a>[Java](#tab/java)
 
-Ниже приведен класс, используемый в примерах разработки msal4j для настройки образцов. [TestData](https://github.com/AzureAD/microsoft-authentication-library-for-java/blob/dev/src/samples/public-client/TestData.java).
+Ниже приведен класс, используемый в примерах разработки msal4j для настройки примеров: [TestData](https://github.com/AzureAD/microsoft-authentication-library-for-java/blob/dev/src/samples/public-client/TestData.java).
 
 ```Java
 public class TestData {
@@ -126,14 +126,14 @@ public class TestData {
 - Добавление, ссылка или импорт пакета MSAL (в зависимости от языка)
 - Затем конструкция различается в зависимости от того, используются ли клиентские секреты или сертификаты (или как расширенный сценарий, подписанные утверждения).
 
-Управляющее приложение будет представлено`IConfidentialClientApplication`
+Управляющее приложение будет представлено `IConfidentialClientApplication`
 
 #### <a name="reference-the-package"></a>Ссылка на пакет
 
 # <a name="nettabdotnet"></a>[.NET](#tab/dotnet)
 
 Добавьте пакет NuGet [Microsoft. идентитиклиент](https://www.nuget.org/packages/Microsoft.Identity.Client) в приложение.
-В MSAL.NET конфиденциальное клиентское приложение представлено `IConfidentialClientApplication` интерфейсом.
+В MSAL.NET конфиденциальное клиентское приложение представлено интерфейсом `IConfidentialClientApplication`.
 Использование пространства имен MSAL.NET в исходном коде
 
 ```CSharp
@@ -243,7 +243,7 @@ ConfidentialClientApplication app = ConfidentialClientApplication.builder(
         .build();
 ```
 
-или диспетчер конфигурации служб
+или
 
 ```Java
 PrivateKey key = getPrivateKey(); /* RSA private key to sign the assertion */
@@ -269,7 +269,7 @@ MSAL.NET имеет два метода для предоставления по
 - `.WithClientAssertion()`
 - `.WithClientClaims()`
 
-При использовании `WithClientAssertion`необходимо предоставить подписанный JWT. Этот расширенный сценарий подробно описан в [утверждениях клиента](msal-net-client-assertions.md) .
+При использовании `WithClientAssertion` необходимо предоставить подписанный JWT. Этот расширенный сценарий подробно описан в [утверждениях клиента](msal-net-client-assertions.md) .
 
 ```CSharp
 string signedClientAssertion = ComputeAssertion();
@@ -278,7 +278,7 @@ app = ConfidentialClientApplicationBuilder.Create(config.ClientId)
                                           .Build();
 ```
 
-При использовании `WithClientClaims`MSAL.NET вычислит собой подписанное утверждение, содержащее утверждения, ожидаемые Azure AD, и дополнительные клиентские утверждения, которые требуется отправить.
+При использовании `WithClientClaims` MSAL.NET вычислит собой подписанное утверждение, содержащее утверждения, ожидаемые Azure AD, а также дополнительные клиентские утверждения, которые требуется отправить.
 Ниже приведен фрагмент кода для этого:
 
 ```CSharp
@@ -295,7 +295,7 @@ app = ConfidentialClientApplicationBuilder.Create(config.ClientId)
 
 # <a name="pythontabpython"></a>[Python](#tab/python)
 
-В MSAL Python можно предоставить клиентские заявки с помощью утверждений, которые будут подписаны этим `ConfidentialClientApplication`закрытым ключом.
+В MSAL Python можно предоставить клиентские заявки с помощью утверждений, которые будут подписаны закрытым ключом этого `ConfidentialClientApplication`.
 
 ```Python
 config = json.load(open(sys.argv[1]))
@@ -319,7 +319,21 @@ msal4j находится в общедоступной предваритель
 
 ---
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
+
+# <a name="nettabdotnet"></a>[.NET](#tab/dotnet)
 
 > [!div class="nextstepaction"]
-> [Приложение управляющей программы — получение маркеров для приложения](./scenario-daemon-acquire-token.md)
+> [Приложение управляющей программы — получение маркеров для приложения](https://docs.microsoft.com/azure/active-directory/develop/scenario-daemon-acquire-token?tabs=dotnet)
+
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+> [!div class="nextstepaction"]
+> [Приложение управляющей программы — получение маркеров для приложения](https://docs.microsoft.com/azure/active-directory/develop/scenario-daemon-acquire-token?tabs=python)
+
+# <a name="javatabjava"></a>[Java](#tab/java)
+
+> [!div class="nextstepaction"]
+> [Приложение управляющей программы — получение маркеров для приложения](https://docs.microsoft.com/azure/active-directory/develop/scenario-daemon-acquire-token?tabs=java)
+
+---

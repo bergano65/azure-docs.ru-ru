@@ -1,17 +1,17 @@
 ---
-title: Создание групп ресурсов и ресурсов в подписке — шаблон Azure Resource Manager
+title: Развертывание уровня подписки — шаблон Azure Resource Manager
 description: В этой статье описывается создание группы ресурсов в шаблоне Azure Resource Manager. Здесь также показано, как развернуть ресурсы в области подписки Azure.
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 10/07/2019
 ms.author: tomfitz
-ms.openlocfilehash: 913014a9b7e24345cd21979ba20ea1a1a938d022
-ms.sourcegitcommit: be344deef6b37661e2c496f75a6cf14f805d7381
+ms.openlocfilehash: d8b1be1d79ae0426d73c45408dd3c4f4f4660afb
+ms.sourcegitcommit: 6eecb9a71f8d69851bc962e2751971fccf29557f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72001600"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72532191"
 ---
 # <a name="create-resource-groups-and-resources-at-the-subscription-level"></a>Создание групп ресурсов и ресурсов на уровне подписки
 
@@ -32,7 +32,7 @@ ms.locfileid: "72001600"
 * [roleAssignments](/azure/templates/microsoft.authorization/roleassignments)
 * [roleDefinitions](/azure/templates/microsoft.authorization/roledefinitions)
 
-### <a name="schema"></a>Схема
+### <a name="schema"></a>SCHEMA (Схема)
 
 Схема, используемая для развертываний на уровне подписки, отличается от схемы развертываний группы ресурсов.
 
@@ -153,7 +153,7 @@ New-AzDeployment `
 }
 ```
 
-Дополнительные сведения см. в статьях [Развертывание нескольких экземпляров ресурса или свойства в шаблонах Azure Resource Manager](./resource-group-create-multiple.md) и [Руководство. Создание нескольких экземпляров ресурса с помощью шаблонов Resource Manager](./resource-manager-tutorial-create-multiple-instances.md).
+Сведения о итерации ресурсов см. [в разделе Развертывание нескольких экземпляров ресурса или свойства в Azure Resource Manager Templates](./resource-group-create-multiple.md)и [учебник. Создание нескольких экземпляров ресурсов с помощью шаблонов диспетчер ресурсов](./resource-manager-tutorial-create-multiple-instances.md).
 
 ## <a name="resource-group-and-resources"></a>Группа ресурсов и ресурсы
 
@@ -224,9 +224,9 @@ New-AzDeployment `
 }
 ```
 
-## <a name="create-policies"></a>Создать политики
+## <a name="create-policies"></a>Создайте политики.
 
-### <a name="assign-policy"></a>Назначить политику
+### <a name="assign-policy"></a>Назначение политики
 
 В следующем примере подписке присваивается имеющееся определение политики. Предоставьте параметры в качестве объекта, если политика принимает их. Используйте пустой объект по умолчанию, если политика не принимает параметры.
 
@@ -355,7 +355,7 @@ New-AzDeployment `
   -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/policydefineandassign.json
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о назначении ролей см. в статье [Управление доступом к ресурсам Azure с помощью RBAC и шаблонов Azure Resource Manager](../role-based-access-control/role-assignments-template.md).
 * Пример развертывания параметров рабочей области для центра безопасности Azure см. в разделе о [deployASCwithWorkspaceSettings.json](https://github.com/krnese/AzureDeploy/blob/master/ARM/deployments/deployASCwithWorkspaceSettings.json).

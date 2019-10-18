@@ -9,12 +9,12 @@ services: search
 ms.service: search
 ms.devlang: ''
 ms.topic: conceptual
-ms.openlocfilehash: f72067637f9db84a432562ea5502861355426469
-ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
+ms.openlocfilehash: d30c4532c43c5df568cf32a1025b796b3be9ee8e
+ms.sourcegitcommit: 6eecb9a71f8d69851bc962e2751971fccf29557f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70186572"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72533618"
 ---
 # <a name="how-to-schedule-indexers-for-azure-search"></a>Как планировать индексаторы для поиска Azure
 Индексатор обычно выполняется один раз сразу после создания. Его можно запустить повторно по запросу с помощью портала, REST API или пакета SDK для .NET. Можно также настроить периодический запуск индексатора по расписанию.
@@ -48,9 +48,9 @@ ms.locfileid: "70186572"
 
 <a name="portal"></a>
 
-## <a name="define-a-schedule-in-the-portal"></a>Определение расписания на портале
+## <a name="schedule-in-the-portal"></a>Расписание на портале
 
-Мастер импорта данных на портале позволяет определить расписание для индексатора во время создания. По умолчанию параметр расписанияимеет значение ежечасно, а это означает, что индексатор выполняется один раз после его создания и снова запускается каждый час.
+Мастер импорта данных на портале позволяет определить расписание для индексатора во время создания. По умолчанию параметр расписания имеет значение **ежечасно**, а это означает, что индексатор выполняется один раз после его создания и снова запускается каждый час.
 
 Можно изменить параметр расписания на **один раз** , если вы не хотите, чтобы индексатор автоматически выполнялся или **ежедневно** запускался раз в день. Задайте значение **Custom** , если хотите указать другой интервал или определенное время начала.
 
@@ -64,7 +64,7 @@ ms.locfileid: "70186572"
 
 <a name="restApi"></a>
 
-## <a name="define-a-schedule-using-the-rest-api"></a>Определение расписания с помощью REST API
+## <a name="schedule-using-rest-apis"></a>Расписание с использованием API-интерфейсов RESTFUL
 
 Расписание для индексатора можно определить с помощью REST API. Для этого включите свойство **Schedule** при создании или обновлении индексатора. В приведенном ниже примере показан запрос на размещение для обновления существующего индексатора.
 
@@ -78,7 +78,7 @@ ms.locfileid: "70186572"
         "schedule" : { "interval" : "PT10M", "startTime" : "2015-01-01T00:00:00Z" }
     }
 
-Параметр **interval** обязателен. Он указывает время между двумя последовательными запусками индексатора. Наименьшее допустимое значение — 5 минут, наибольшее — один день. Значение должно быть отформатировано как значение dayTimeDuration XSD (ограниченное подмножество значения [продолжительности ISO 8601](https://www.w3.org/TR/xmlschema11-2/#dayTimeDuration) ). Используется следующий шаблон: `P(nD)(T(nH)(nM))`. Примеры: `PT15M` для каждых 15 минут, `PT2H` для каждых 2 часов.
+Параметр **interval** обязателен. Он указывает время между двумя последовательными запусками индексатора. Наименьший допустимый интервал — 5 минут, наибольший — один день. Значение должно быть отформатировано как значение dayTimeDuration XSD (ограниченное подмножество значения [продолжительности ISO 8601](https://www.w3.org/TR/xmlschema11-2/#dayTimeDuration) ). Используется следующий шаблон: `P(nD)(T(nH)(nM))`. Примеры: `PT15M` для каждых 15 минут, `PT2H` для каждых 2 часов.
 
 Необязательный параметр **StartTime** указывает, когда должно начаться выполнение по расписанию. Если опустить этот параметр, используется текущее время в формате UTC. Это время может быть раньше, в этом случае первое выполнение планируется так, как если бы индексатор выполнялся непрерывно с момента исходного времени **начала**.
 
@@ -86,7 +86,7 @@ ms.locfileid: "70186572"
 
 <a name="dotNetSdk"></a>
 
-## <a name="define-a-schedule-using-the-net-sdk"></a>Определение расписания с помощью пакета SDK для .NET
+## <a name="schedule-using-the-net-sdk"></a>Расписание с помощью пакета SDK для .NET
 
 Расписание для индексатора можно определить с помощью пакета SDK .NET для службы поиска Azure. Для этого включите свойство **Schedule** при создании или обновлении индексатора.
 
@@ -110,7 +110,7 @@ ms.locfileid: "70186572"
 
 Расписание определяется с помощью класса [индексингсчедуле](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.indexingschedule?view=azure-dotnet) . Для конструктора **индексингсчедуле** требуется параметр **Interval** , заданный с помощью объекта **TimeSpan** . Наименьшее допустимое значение интервала — 5 минут, а максимальное — 24 часа. Второй параметр **StartTime** , указанный в качестве объекта **DateTimeOffset** , является необязательным.
 
-Пакет SDK для .NET позволяет управлять операциями индексатора с помощью класса [SearchServiceClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.searchserviceclient) и его свойства [индексаторов](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.searchserviceclient.indexers), которые реализуют методы из интерфейса **IIndexersOperations** . 
+Пакет SDK для .NET позволяет управлять операциями индексатора с помощью класса [SearchServiceClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.searchserviceclient) и его свойства [индексаторов](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.searchserviceclient.indexers) , которые реализуют методы из интерфейса **ииндексерсоператионс** . 
 
 Индексатор можно запустить по запросу в любое время с помощью одного из методов [Run](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.indexersoperationsextensions.run), [RunAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.indexersoperationsextensions.runasync)или [рунвисхттпмессажесасинк](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.iindexersoperations.runwithhttpmessagesasync) .
 

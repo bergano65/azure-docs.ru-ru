@@ -4,18 +4,18 @@ description: В этой статье содержатся справочные 
 author: normesta
 ms.service: storage
 ms.topic: reference
-ms.date: 08/26/2019
+ms.date: 10/16/2019
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
-ms.openlocfilehash: 8c40241c49917c6db6663f346aed0ec5d3b96be7
-ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
+ms.openlocfilehash: b7348e3790166e1a1aecab422e571b8f2fc7cd5f
+ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70195949"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72513516"
 ---
-# <a name="azcopy-list"></a>Список azcopy
+# <a name="azcopy-list"></a>azcopy list
 
 Выводит список сущностей в заданном ресурсе.
 
@@ -35,7 +35,7 @@ azcopy list [containerURL]
 
 ## <a name="options"></a>Параметры
 
-|Параметр|Описание|
+|Вариант|Описание|
 |--|--|
 |-h, --help|Отображение содержимого справки для команды List.|
 |--Machine-доступное для чтения|Выводит список размеров файлов в байтах.|
@@ -44,11 +44,11 @@ azcopy list [containerURL]
 
 ## <a name="options-inherited-from-parent-commands"></a>Параметры, унаследованные от родительских команд
 
-|Параметр|Описание|
+|Вариант|Описание|
 |---|---|
 |--Cap-Мбит/с UInt32|Скорость передачи с прописными буквами в мегабит в секунду. Посекундная пропускная способность может немного отличаться от ограничения. Если этот параметр имеет значение 0 или пропущен, пропускная способность не ограничена.|
 |--строка выходного типа|Формат вывода команды. Среди вариантов: Text, JSON. Значение по умолчанию — "Text".|
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>Дополнительные материалы
 
 - [azcopy](storage-ref-azcopy.md)

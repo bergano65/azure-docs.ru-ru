@@ -1,5 +1,5 @@
 ---
-title: 'Azure AD Connect выполняет следующие функции: Настройка разрешений учетной записи соединителя AD DS | Документация Майкрософт'
+title: Azure AD Connect. Настройка разрешений учетной записи соединителя AD DS | Документация Майкрософт
 description: В этом документе описаны способы настройки учетной записи соединителя AD DS с помощью нового модуля ADSyncConfig PowerShell
 services: active-directory
 author: billmath
@@ -11,21 +11,21 @@ ms.date: 04/29/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ff151ff8e14b5cf9602d4e7e2e9c6cb2118a8a65
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: eeb80c3a94e63a886e4a16c0b8fa445b2a8a34e4
+ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64918503"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72515820"
 ---
-# <a name="azure-ad-connectconfigure-ad-ds-connector-account-permissions"></a>Azure AD Connect выполняет следующие функции: Настройка разрешений учетной записи соединителя AD DS 
+# <a name="azure-ad-connectconfigure-ad-ds-connector-account-permissions"></a>Azure AD Connect. Настройка разрешений учетной записи соединителя AD DS 
 
 Модуль PowerShell [ADSyncConfig.psm1](reference-connect-adsyncconfig.md) был представлен в сборке 1.1.880.0 (выпущенной в августе 2018 года). Эта сборка включает в себя коллекцию командлетов, которые помогут вам настроить правильные разрешения Active Directory для развертывания соединителя Azure AD. 
 
-## <a name="overview"></a>Обзор 
+## <a name="overview"></a>Краткое описание 
 Чтобы настроить разрешения Active Directory для учетной записи соединителя AD DS, можно использовать следующие командлеты PowerShell. Их можно использовать для каждой функции, какую вы включаете в Azure AD Connect. Чтобы избежать проблем, следует заранее подготовлять разрешения Active Directory каждый раз, когда вы хотите установить Azure AD Connect, используя личный домен для подключения к вашему лесу. Модуль ADSyncConfig также можно использовать для настройки разрешений после развертывания Azure AD Connect.
 
-![Общие сведения об учетной записи ad ds](media/how-to-connect-configure-ad-ds-connector-account/configure1.png)
+![Обзор учетной записи AD DS](media/how-to-connect-configure-ad-ds-connector-account/configure1.png)
 
 Для экспресс установки Azure AD Connect в Active Directory автоматически создается учетная запись (с именем MSOL_nnnnnnnnnn) с необходимыми разрешениями, поэтому необходимости использовать модуль ADSyncConfig в этом случае нет. Кроме тех случаев, когда вы заблокировали наследование разрешений в подразделениях или в определенных объектах Active Directory, которые вы хотите синхронизировать с Azure AD. 
  
@@ -34,12 +34,12 @@ ms.locfileid: "64918503"
 
 | Компонент | Разрешения |
 | --- | --- |
-| функция ms-DS-ConsistencyGuid |Разрешения на запись для атрибута ms-DS-ConsistencyGuid см. в статье [Azure AD Connect: принципы проектирования](plan-connect-design-concepts.md#using-ms-ds-consistencyguid-as-sourceanchor). | 
+| функция ms-DS-ConsistencyGuid |Разрешения на чтение и запись для атрибута ms-DS-ConsistencyGuid задокументированы в статье [Основные понятия проектирования — использование MS-DS-ConsistencyGuid в качестве sourceAnchor](plan-connect-design-concepts.md#using-ms-ds-consistencyguid-as-sourceanchor). | 
 | Синхронизация хэша паролей |<li>Репликация изменений каталога</li>  <li>Репликация всех изменений каталога |
-| Гибридное развертывание Exchange |Запишите разрешения в атрибуты, описанные в статье [Гибридная обратная запись Exchange](reference-connect-sync-attributes-synchronized.md#exchange-hybrid-writeback) для пользователей, групп и контактов. |
-| Общедоступная папка почты Exchange |Разрешения на чтение для атрибутов, описанных в статье [Службы синхронизации Azure AD Connect: атрибуты, синхронизируемые с Azure Active Directory](reference-connect-sync-attributes-synchronized.md#exchange-mail-public-folder), для общедоступных папок. | 
-| Компонент обратной записи паролей |Запишите разрешения в атрибуты, описанные в статье [Приступая к работе с компонентами управления паролями](../authentication/howto-sspr-writeback.md) для пользователей. |
-| Обратная запись устройств |Запишите разрешение на объекты и контейнеры устройства, описаны в [обратной записи устройств](how-to-connect-device-writeback.md). |
+| Гибридное развертывание Exchange |Разрешения на чтение и запись для атрибутов, описанных в [гибридной обратной записи Exchange](reference-connect-sync-attributes-synchronized.md#exchange-hybrid-writeback) для пользователей, групп и контактов. |
+| Общедоступные почтовые папки Exchange |Разрешения на чтение для атрибутов, описанных в статье [Службы синхронизации Azure AD Connect: атрибуты, синхронизируемые с Azure Active Directory](reference-connect-sync-attributes-synchronized.md#exchange-mail-public-folder), для общедоступных папок. | 
+| Компонент обратной записи паролей |Разрешения на чтение и запись для атрибутов, описанных в статье [Приступая к работе с управлением паролями](../authentication/howto-sspr-writeback.md) для пользователей. |
+| Обратная запись устройств |Разрешения на чтение и запись объектов и контейнеров устройств, задокументированных в [обратной записи устройств](how-to-connect-device-writeback.md). |
 | Обратная запись групп |Чтение, создание, обновление и удаление объектов групп для синхронизированных **групп Office 365**.  Дополнительные сведения см. в разделе [Обратная запись групп](how-to-connect-preview.md#group-writeback).|
 
 ## <a name="using-the-adsyncconfig-powershell-module"></a>Использование модуля ADSyncConfig PowerShell 
@@ -81,7 +81,7 @@ Set-ADSyncPasswordHashSyncPermissions -ADConnectorAccountName <ADAccountName> -A
 Set-ADSyncPasswordHashSyncPermissions -ADConnectorAccountDN <ADAccountDN>
 ```
 
-Не забудьте заменить `<ADAccountName>`, `<ADDomainName>` и `<ADAccountDN>` с соответствующими значениями для вашей среды.
+Обязательно замените `<ADAccountName>`, `<ADDomainName>` и `<ADAccountDN>` соответствующими значениями для вашей среды.
 
 Если вы не хотите изменить разрешения на контейнере AdminSDHolder, используйте параметр `-SkipAdminSdHolders`. 
 
@@ -110,7 +110,7 @@ Get-ADSyncObjectsWithInheritanceDisabled -SearchBase '<DistinguishedName>' -Obje
 ```
  
 ### <a name="view-ad-ds-permissions-of-an-object"></a>Просмотр разрешений AD DS объекта 
-Чтобы просмотреть список разрешений, сейчас задано на объекта Active Directory, предоставляя его DistinguishedName, можно использовать следующий командлет: 
+Приведенный ниже командлет можно использовать для просмотра списка разрешений, установленных в данный момент для объекта Active Directory, указав его DistinguishedName: 
 
 ``` powershell
 Show-ADSyncADObjectPermissions -ADobjectDN '<DistinguishedName>' 
@@ -136,7 +136,7 @@ Set-ADSyncBasicReadPermissions -ADConnectorAccountDN <String> [-ADobjectDN <Stri
 Этот командлет задаст следующие разрешения: 
  
 
-|type |Name |Доступ |Применяется к| 
+|Тип |Name |Access |Применяется к| 
 |-----|-----|-----|-----|
 |Allow |Учетная запись соединителя AD DS |Чтение всех свойств |Дочерние объекты устройств| 
 |Allow |Учетная запись соединителя AD DS|Чтение всех свойств |Дочерние объекты InetOrgPerson| 
@@ -162,7 +162,7 @@ Set-ADSyncMsDsConsistencyGuidPermissions -ADConnectorAccountDN <String> [-ADobje
 
 Этот командлет задаст следующие разрешения: 
 
-|type |Name |Доступ |Применяется к|
+|Тип |Name |Access |Применяется к|
 |-----|-----|-----|-----| 
 |Allow|Учетная запись соединителя AD DS|Свойство чтения/записи|Дочерние объекты пользователя|
 
@@ -182,7 +182,7 @@ Set-ADSyncPasswordHashSyncPermissions -ADConnectorAccountDN <String> [<CommonPar
 
 Этот командлет задаст следующие разрешения: 
 
-|type |Name |Доступ |Применяется к|
+|Тип |Name |Access |Применяется к|
 |-----|-----|-----|-----| 
 |Allow |Учетная запись соединителя AD DS |Репликация изменений каталога |Только в этом объекте (корневой домен)| 
 |Allow |Учетная запись соединителя AD DS |Репликация всех изменений каталога |Только в этом объекте (корневой домен)| 
@@ -202,7 +202,7 @@ Set-ADSyncPasswordWritebackPermissions -ADConnectorAccountDN <String> [-ADobject
 ```
 Этот командлет задаст следующие разрешения: 
 
-|type |Name |Доступ |Применяется к|
+|Тип |Name |Access |Применяется к|
 |-----|-----|-----|-----| 
 |Allow |Учетная запись соединителя AD DS |Сброс пароля |Дочерние объекты пользователя| 
 |Allow |Учетная запись соединителя AD DS |Запись свойства lockoutTime |Дочерние объекты пользователя| 
@@ -222,7 +222,7 @@ Set-ADSyncUnifiedGroupWritebackPermissions -ADConnectorAccountDN <String> [-ADob
  
 Этот командлет задаст следующие разрешения: 
 
-|type |Name |Доступ |Применяется к|
+|Тип |Name |Access |Применяется к|
 |-----|-----|-----|-----| 
 |Allow |Учетная запись соединителя AD DS |Универсальное чтение/запись |Все атрибуты группы типов объектов и дочерних объектов| 
 |Allow |Учетная запись соединителя AD DS |Создать/удалить дочерний объект |Все атрибуты группы типов объектов и дочерних объектов| 
@@ -245,7 +245,7 @@ Set-ADSyncExchangeHybridPermissions -ADConnectorAccountDN <String> [-ADobjectDN 
 Этот командлет задаст следующие разрешения:  
  
 
-|type |ИМЯ |Доступ |Применяется к|
+|Тип |Name |Access |Применяется к|
 |-----|-----|-----|-----| 
 |Allow |Учетная запись соединителя AD DS |Чтение/запись всех свойств |Дочерние объекты пользователя| 
 |Allow |Учетная запись соединителя AD DS |Чтение/запись всех свойств |Дочерние объекты InetOrgPerson| 
@@ -267,7 +267,7 @@ Set-ADSyncExchangeMailPublicFolderPermissions -ADConnectorAccountDN <String> [-A
 ```
 Этот командлет задаст следующие разрешения: 
 
-|type |Name |Доступ |Применяется к|
+|Тип |Name |Access |Применяется к|
 |-----|-----|-----|-----| 
 |Allow |Учетная запись соединителя AD DS |Чтение всех свойств |Дочерние объекты PublicFolder| 
 
@@ -292,7 +292,7 @@ Set-ADSyncRestrictedPermissions -ADConnectorAccountDN'CN=ADConnectorAccount,CN=U
 
 Этот командлет задаст следующие разрешения: 
 
-|type |Name |Доступ |Применяется к|
+|Тип |Name |Access |Применяется к|
 |-----|-----|-----|-----| 
 |Allow |SYSTEM |Полный доступ |этому объекту 
 |Allow |Администраторы предприятия |Полный доступ |этому объекту 
@@ -306,7 +306,7 @@ Set-ADSyncRestrictedPermissions -ADConnectorAccountDN'CN=ADConnectorAccount,CN=U
 |Allow |Прошедшие проверку пользователи |Разрешения на чтение |этому объекту 
 
 ## <a name="next-steps"></a>Следующие шаги
-- [Azure AD Connect: учетные записи и разрешения](reference-connect-accounts-permissions.md)
+- [Azure AD Connect: учетные записи и разрешения](reference-connect-accounts-permissions.md)
 - [Приступая к работе с Azure AD Connect с использованием стандартных параметров](how-to-connect-install-express.md)
 - [Выборочная установка Azure AD Connect](how-to-connect-install-custom.md)
 - [Справочник по ADSyncConfig](reference-connect-adsyncconfig.md)

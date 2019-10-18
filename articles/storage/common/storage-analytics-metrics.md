@@ -8,12 +8,12 @@ ms.date: 03/11/2019
 ms.author: normesta
 ms.reviewer: fryu
 ms.subservice: common
-ms.openlocfilehash: ca831fe66a0ce6a2dbfafc54a761b86473067b10
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 897ae1fa474de8726ed0caa1def162a00e142dbe
+ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68846885"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72514782"
 ---
 # <a name="azure-storage-analytics-metrics-classic"></a>Метрики аналитики службы хранилища Azure (классическая модель)
 
@@ -42,8 +42,8 @@ ms.locfileid: "68846885"
  Данные о емкости записываются ежедневно для службы BLOB-объектов учетной записи хранения, и при этом записываются две сущности таблицы. Одна сущность содержит статистику пользовательских данных, а другая — статистику для контейнера больших двоичных объектов `$logs` , используемого аналитикой хранилища. Таблица *$MetricsCapacityBlob* содержит следующую статистику:  
 
 - **Capacity**. Объем хранилища, используемый службой BLOB-объектов учетной записи хранения, в байтах.  
-- **ContainerCount**. Число контейнеров больших двоичных объектов в службе BLOB-объектов учетной записи хранения.  
-- **ObjectCount**. Количество зафиксированных и незафиксированных блоков или страничных BLOB-объектов в службе больших двоичных объектов учетной записи хранения.  
+- **ContainerCount**. Количество контейнеров BLOB-объектов в службе BLOB-объектов учетной записи хранения.  
+- **ObjectCount**. Количество зафиксированных и незафиксированных блочных или страничных больших двоичных объектов в службе BLOB-объектов учетной записи хранения.  
 
   Дополнительную информацию о метриках емкости см. в разделе [Схема таблицы для метрик аналитики хранилища](/rest/api/storageservices/storage-analytics-metrics-table-schema).  
 
@@ -74,45 +74,42 @@ ms.locfileid: "68846885"
 
 Сейчас [портал Azure](https://portal.azure.com) не позволяет настраивать минутные метрики в учетной записи хранения. Их необходимо включить с помощью PowerShell или программно.
 
-> [!NOTE]
->  Обратите внимание, что в настоящее время портал Azure не позволяет настраивать минуты в учетной записи хранения. Необходимо включить метрики по минутам с помощью PowerShell или программно.
-
 ## <a name="enable-storage-metrics-using-powershell"></a>Включение метрик хранилища с помощью PowerShell  
-Вы можете использовать PowerShell на локальном компьютере, чтобы настроить метрики хранилища в учетной записи хранения с помощью командлета Azure PowerShell **Get-AzureStorageServiceMetricsProperty** для получения текущих параметров, а также командлета **. Set-AzureStorageServiceMetricsProperty** , чтобы изменить текущие параметры.  
+Вы можете использовать PowerShell на локальном компьютере, чтобы настроить метрики хранилища в учетной записи хранения с помощью командлета Azure PowerShell **Get-азсторажесервицеметрикспроперти** для получения текущих параметров, а также командлета **. Set-Азсторажесервицеметрикспроперти** , чтобы изменить текущие параметры.  
 
 Командлеты, позволяющие управлять метриками хранилища, имеют следующие параметры.  
 
 * **ServiceType**, возможное значение — **большой двоичный объект**, **очередь**, **Таблица**и **файл**.
 * **Возможными значениями metricstype**, возможные значения: **час** и **минута**.  
 * **Возможными значениями metricslevel**, возможные значения:
-* **Нет** — Отключает мониторинг.
-* **Служба**: Собирает метрики, такие как входящий/исходящий трафик, доступность, задержка и процент успешных операций, агрегированных для служб BLOB-объектов, очередей, таблиц и файлов.
-* **ServiceAndApi**: Помимо метрик службы, собирает один и тот же набор метрик для каждой операции хранилища в API службы хранилища Azure.
+* **Нет**: Отключает мониторинг.
+* **Служба**: собирает метрики, такие как входящий/исходящий трафик, доступность, задержка и процент успешных операций, которые обрабатываются для служб BLOB-объектов, очередей, таблиц и файлов.
+* **ServiceAndApi**. в дополнение к метрикам службы собирает один и тот же набор метрик для каждой операции хранилища в API службы хранилища Azure.
 
 Например, следующая команда переключается по минутным метрикам для службы BLOB-объектов в учетной записи хранения с периодом хранения, равным пяти дням: 
 
 > [!NOTE]
-> Эта команда предполагает, что вы вошли в подписку Azure с помощью `Connect-AzAccount` команды.
+> Эта команда предполагает, что вы вошли в подписку Azure с помощью команды `Connect-AzAccount`.
 
-```  
+```powershell
 $storageAccount = Get-AzStorageAccount -ResourceGroupName "<resource-group-name>" -AccountName "<storage-account-name>"
 
-Set-AzureStorageServiceMetricsProperty -MetricsType Minute -ServiceType Blob -MetricsLevel ServiceAndApi  -RetentionDays 5 -Context $storageAccount.Context
+Set-AzStorageServiceMetricsProperty -MetricsType Minute -ServiceType Blob -MetricsLevel ServiceAndApi  -RetentionDays 5 -Context $storageAccount.Context
 ```  
 
-* Замените значение `<resource-group-name>` заполнителя именем группы ресурсов.
-
+* Замените значение заполнителя `<resource-group-name>` именем группы ресурсов.
+        
 * Замените значение заполнителя `<storage-account-name>` именем вашей учетной записи хранения.
 
 
 
 Следующая команда получает текущий уровень часовых метрик и длительность периода хранения в днях для службы BLOB-объектов в учетной записи хранения по умолчанию:  
 
-```  
-Get-AzureStorageServiceMetricsProperty -MetricsType Hour -ServiceType Blob -Context $storagecontext.Context
+```powershell
+Get-AzStorageServiceMetricsProperty -MetricsType Hour -ServiceType Blob -Context $storagecontext.Context
 ```  
 
-Дополнительные сведения о настройке командлетов Azure PowerShell для работы с подпиской Azure и о выборе учетной записи хранения по умолчанию см. в статье с [общими сведениями об Azure PowerShell](https://azure.microsoft.com/documentation/articles/install-configure-powershell/).  
+Дополнительные сведения о настройке командлетов Azure PowerShell для работы с подпиской Azure и о выборе учетной записи хранения по умолчанию см. в разделе [Установка и настройка Azure PowerShell](https://azure.microsoft.com/documentation/articles/install-configure-powershell/).  
 
 ## <a name="enable-storage-metrics-programmatically"></a>Программное включение метрик хранилища  
 Кроме использования портал Azure или командлетов Azure PowerShell для управления метриками хранилища можно также использовать один из интерфейсов API службы хранилища Azure. Например, при использовании языка .NET можно использовать клиентскую библиотеку хранилища.  
@@ -151,17 +148,17 @@ queueClient.SetServiceProperties(serviceProperties);
 |**Метрики**|**Имена таблиц**|**Примечания**|  
 |Часовые метрики|$MetricsHourPrimaryTransactionsBlob<br /><br /> $MetricsHourPrimaryTransactionsTable<br /><br /> $MetricsHourPrimaryTransactionsQueue<br /><br /> $MetricsHourPrimaryTransactionsFile|В версиях до 2013-08-15 эти таблицы назывались:<br /><br /> $MetricsTransactionsBlob<br /><br /> $MetricsTransactionsTable<br /><br /> $MetricsTransactionsQueue<br /><br /> Метрики для службы файлов доступны начиная с версии 2015-04-05.|  
 |Минутные метрики|$MetricsMinutePrimaryTransactionsBlob<br /><br /> $MetricsMinutePrimaryTransactionsTable<br /><br /> $MetricsMinutePrimaryTransactionsQueue<br /><br /> $MetricsMinutePrimaryTransactionsFile|Можно включить только с помощью PowerShell или программно.<br /><br /> Метрики для службы файлов доступны начиная с версии 2015-04-05.|  
-|Производительность|$MetricsCapacityBlob|Только служба BLOB-объектов.|  
+|Ориентированное на объем|$MetricsCapacityBlob|Только служба BLOB-объектов.|  
 
 Подробные сведения о схемах для этих таблиц см. в разделе [Схема таблицы метрик аналитики хранилища](/rest/api/storageservices/storage-analytics-metrics-table-schema). В примере строк ниже отражена только часть доступных столбцов, однако он иллюстрирует некоторые важные возможности сохранения метрик с помощью метрик хранилища:  
 
 ||||||||||||  
 |-|-|-|-|-|-|-|-|-|-|-|  
 |**PartitionKey**|**RowKey**|**Timestamp**|**TotalRequests**|**TotalBillableRequests**|**TotalIngress**|**TotalEgress**|**Доступность**|**AverageE2ELatency**|**AverageServerLatency**|**PercentSuccess**|  
-|20140522T1100|user;All|2014-05-22T11:01:16.7650250Z|7|7|4003|46801|100|104.4286|6.857143|100|  
-|20140522T1100|user;QueryEntities|2014-05-22T11:01:16.7640250Z|5|5|2694|45951|100|143.8|7.8|100|  
-|20140522T1100|user;QueryEntity|2014-05-22T11:01:16.7650250Z|1|1|538|633|100|3|3|100|  
-|20140522T1100|user;UpdateEntity|2014-05-22T11:01:16.7650250Z|1|1|771|217|100|9|6|100|  
+|20140522T1100|user;All|2014 — 05-22T11:01:16.7650250 Z|7|7|4003|46801|100|104.4286|6.857143|100|  
+|20140522T1100|user;QueryEntities|2014 — 05-22T11:01:16.7640250 Z|5|5|2694|45951|100|143.8|7.8|100|  
+|20140522T1100|user;QueryEntity|2014 — 05-22T11:01:16.7650250 Z|1|1|538|633|100|3|3|100|  
+|20140522T1100|user;UpdateEntity|2014 — 05-22T11:01:16.7650250 Z|1|1|771|217|100|9|6|100|  
 
 В этом примере данных минутной метрики для ключа раздела используется время с минутным разрешением. Ключ строки определяет тип данных, которые хранятся в строке, и состоит из двух фрагментов данных — типа доступа и типа запроса:  
 
@@ -234,7 +231,7 @@ private static string MetricsString(MetricsEntity entity, OperationContext opCon
 -   Если в течение каждого часа служба использует каждый API в службе, тогда примерно 12KB данных хранятся каждый час в таблицах транзакций метрик, если включена только сводка на уровне службы.  
 -   В таблице емкости для больших двоичных объектов каждый день добавляются две строки, при условии, что вы выбрали журналы. Это подразумевает, что каждый день размер этой таблицы увеличивается до примерно 300 байт.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Мониторинг учетной записи хранения](https://www.windowsazure.com/manage/services/storage/how-to-monitor-a-storage-account/)   
 * [Схема таблицы метрик аналитики хранилища](/rest/api/storageservices/storage-analytics-metrics-table-schema)   
 * [Операции с протоколированием и сообщения о состоянии аналитик хранилища](/rest/api/storageservices/storage-analytics-logged-operations-and-status-messages)   

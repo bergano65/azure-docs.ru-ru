@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/24/2019
 ms.author: memildin
-ms.openlocfilehash: b6de3a520150a95316371c4454fd2537f2beab5d
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.openlocfilehash: 275598aa50c252512348f4a04543e1beaf538626
+ms.sourcegitcommit: f29fec8ec945921cc3a89a6e7086127cc1bc1759
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72331143"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72529486"
 ---
 # <a name="supported-features-available-in-azure-security-center"></a>Поддерживаемые функции, доступные в центре безопасности Azure
 
@@ -96,14 +96,14 @@ ms.locfileid: "72331143"
 |MySQL*|✔| ✔|
 |CosmosDB|X| ✔|
 |Хранилище BLOB-объектов|✔| ✔|
-|Учетная запись хранения|✔| Нет данных|
+|Учетная запись хранения|✔| X|
 |Служба приложений|✔| ✔|
 |Функция|✔| X|
 |Облачная служба|✔| X|
-|Виртуальная сеть|✔| Нет данных|
-|Подсеть|✔| Нет данных|
-|Сетевая карта|✔| Нет данных|
-|Группа безопасности сети (NSG)|✔| Нет данных|
+|Виртуальная сеть|✔| X|
+|Подсеть|✔| X|
+|Сетевая карта|✔| X|
+|Группа безопасности сети (NSG)|✔| X|
 |Subscription|✔ * *| ✔|
 |Учетная запись Пакетной службы|✔| X|
 |Учетная запись Service Fabric|✔| X|
@@ -114,14 +114,14 @@ ms.locfileid: "72331143"
 |Stream Analytics|✔| X|
 |Пространство имен концентратора событий|✔| X|
 |Логические приложения|✔| X|
-|Redis|✔| Нет данных|
+|Redis|✔| X|
 |Аналитика озера данных|✔| X|
 |Data Lake Storage|✔| X|
 |Key Vault;|✔| X|
 
 \* В настоящее время эти возможности поддерживаются в общедоступной предварительной версии.
 
-рекомендации \* @ no__t-1 Azure Active Directory (Azure AD) доступны только для стандартных подписок.
+рекомендации по \* \* Azure Active Directory (Azure AD) доступны только для стандартных подписок.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

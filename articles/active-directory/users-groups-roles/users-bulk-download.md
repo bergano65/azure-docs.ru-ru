@@ -13,12 +13,12 @@ ms.workload: identity
 ms.custom: it-pro
 ms.reviewer: jeffsta
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c59a0b40065be1554e79186227cd2e90d68e7222
-ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
+ms.openlocfilehash: fd0829afca05058892d3a0ceeb50c9955d792dc3
+ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72174195"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72517060"
 ---
 # <a name="download-a-list-of-users-preview-in-azure-active-directory-portal"></a>Скачайте список пользователей (Предварительная версия) на портале Azure Active Directory
 
@@ -31,10 +31,42 @@ Azure Active Directory (Azure AD) поддерживает операции мн
 ## <a name="to-download-a-list-of-users"></a>Загрузка списка пользователей
 
 1. [Войдите в организацию Azure AD](https://aad.portal.azure.com) с помощью учетной записи администратора пользователя в Организации.
-1. В Azure AD выберите **пользователи** > **скачать пользователей**.
+1. В Azure AD выберите **пользователи**  > **скачать пользователей**.
 1. На странице **скачать пользователей** выберите **начать** , чтобы получить CSV-файл со списком свойств профиля пользователя. При наличии ошибок можно загрузить и просмотреть файл результатов на странице результатов групповой операции. Файл содержит причину каждой ошибки.
 
    ![Выберите, куда нужно загрузить список пользователей.](./media/users-bulk-download/bulk-download.png)
+
+   В файле загрузки будет содержаться отфильтрованный список пользователей.
+
+   Будут добавлены следующие атрибуты пользователя: 
+
+   - userPrincipalName
+   - displayName
+   - surname
+   - mail
+   - givenName
+   - objectId
+   - userType
+   - jobTitle
+   - department
+   - manager
+   - AccountEnabled
+   - usageLocation
+   - streetAddress
+   - state
+   - country
+   - physicalDeliveryOfficeName
+   - city
+   - postalCode
+   - TelephoneNumber
+   - mobile
+   - аусентикатионфоненумбер
+   - аусентикатионалтернативефоненумбер
+   - аусентикатионемаил
+   - алтернатимаиладдресс
+   - Возрастная группа
+   - консентпровидедформинор
+   - легалажеграупклассификатион
 
 ## <a name="check-status"></a>Проверка состояния
 
@@ -46,7 +78,7 @@ Azure Active Directory (Azure AD) поддерживает операции мн
 
 Каждое групповое действие по созданию списка пользователей может выполняться в течение одного часа. Это позволяет создавать и скачивать список по крайней мере 500 000 пользователей.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Групповое добавление пользователей](users-bulk-add.md)
 - [Групповое удаление пользователей](users-bulk-delete.md)

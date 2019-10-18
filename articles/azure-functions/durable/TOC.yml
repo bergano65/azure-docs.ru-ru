@@ -1,5 +1,5 @@
 - name: Документация по расширению "Устойчивые функции"
-  href: durable-functions-overview.md
+  href: index.yml
 - name: Обзор
   items:
     - name: Сведения о решении "Функции Azure"
@@ -34,7 +34,7 @@
 - name: Примеры
   items:
     - name: Примеры кода
-      href: 'https://azure.microsoft.com/en-us/resources/samples/?service=functions&sort=0&term=durable+'
+      href: /samples/browse/?products=azure-functions&term=durable
     - name: Azure CLI
       href: ../functions-cli-samples.md
 - name: Основные понятия
@@ -81,6 +81,8 @@
       href: durable-functions-bindings.md
     - name: API HTTP
       href: durable-functions-http-api.md
+    - name: API расширения "Устойчивые функции"
+      href: /dotnet/api/microsoft.azure.webjobs.extensions.durabletask?view=azure-dotnet-preview
 - name: Руководства
   items:
     - name: Разработка

@@ -4,18 +4,18 @@ description: В этой статье содержатся справочные 
 author: normesta
 ms.service: storage
 ms.topic: reference
-ms.date: 08/26/2019
+ms.date: 10/16/2019
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
-ms.openlocfilehash: bd5469691f8d859bfcbca7479cdcb2e468a94e26
-ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
+ms.openlocfilehash: 2422b16eb89ef6f1a6a1eb703d88f0ff2b76422e
+ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70195845"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72514732"
 ---
-# <a name="azcopy-jobs"></a>задания azcopy
+# <a name="azcopy-jobs"></a>azcopy jobs
 
 Подкоманды, связанные с управлением заданиями.
 
@@ -27,18 +27,18 @@ azcopy jobs show [jobID]
 
 ## <a name="options"></a>Параметры
 
-|Параметр|Описание|
+|Вариант|Описание|
 |--|--|
 |-h, --help|Отображение содержимого справки для команды задания.|
 
 ## <a name="options-inherited-from-parent-commands"></a>Параметры, унаследованные от родительских команд
 
-|Параметр|Описание|
+|Вариант|Описание|
 |---|---|
 |--Cap-Мбит/с UInt32|Скорость передачи с прописными буквами в мегабит в секунду. Посекундная пропускная способность может немного отличаться от ограничения. Если этот параметр имеет значение 0 или пропущен, пропускная способность не ограничена.|
 |--строка выходного типа|Формат вывода команды. Среди вариантов: Text, JSON. Значение по умолчанию — "Text".|
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>Дополнительные материалы
 
 - [azcopy](storage-ref-azcopy.md)
 - [список заданий azcopy](storage-ref-azcopy-jobs-list.md)

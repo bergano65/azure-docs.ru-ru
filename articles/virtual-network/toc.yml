@@ -35,20 +35,6 @@
       href: policy-samples.md
 - name: Основные понятия
   items:
-    - name: Шлюз NAT
-      items:
-        - name: Обзор
-          items:
-            - name: Сведения о шлюзе NAT
-              href: nat-service-overview.md
-        - name: Краткие руководства
-          items:
-            - name: "Создание Шлюза NAT\_— Azure CLI"
-              href: quickstart-create-nat-gateway-cli.md
-        - name: Учебники
-          items:
-            - name: "Создание и проверка Шлюза NAT\_— Azure CLI"
-              href: tutorial-create-validate-nat-gateway-cli.md
     - name: Группы безопасности
       href: security-overview.md
     - name: Маршрутизация
@@ -75,6 +61,8 @@
       href: public-ip-address-prefix.md
     - name: IPv6 для виртуальной сети Azure
       href: ipv6-overview.md
+    - name: Префикс общедоступного IP версии 6
+      href: ipv6-public-ip-address-prefix.md
     - name: Защита от атак DDoS
       href: ddos-protection-overview.md
     - name: Взаимодействие компонентов при подключении к серверной части
@@ -248,6 +236,8 @@
           items:
             - name: Подсети
               href: virtual-network-manage-subnet.md
+            - name: Делегирование подсети
+              href: manage-subnet-delegation.md
             - name: Пиринг
               href: virtual-network-manage-peering.md
             - name: Защита от атак DDoS
@@ -271,6 +261,8 @@
           href: virtual-network-public-ip-address.md
         - name: Префикс общедоступного IP-адреса
           href: manage-public-ip-address-prefix.md
+        - name: Префикс общедоступного IP версии 6
+          href: ipv6-reserve-public-ip-address-prefix.md
     - name: Перемещение между регионами
       items:
         - name: "Группы безопасности сети\_— портал"

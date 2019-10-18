@@ -1,17 +1,17 @@
 ---
-title: Включение и запрос JIT-доступа для управляемых приложений Azure
+title: Запрос JIT-доступа — управляемые приложения Azure
 description: Описывает, как издатели управляемых приложений Azure запрашивают JIT-доступ к управляемому приложению.
 author: MSEvanhi
 ms.service: managed-applications
 ms.topic: conceptual
 ms.date: 06/03/2019
 ms.author: evanhi
-ms.openlocfilehash: 0d595d4c96e9f87f1c8eece5d47bf4c8cdd58d7c
-ms.sourcegitcommit: 5ded08785546f4a687c2f76b2b871bbe802e7dae
+ms.openlocfilehash: fdd1dcf5ab6b58a91534a465a8c92c10de0d2097
+ms.sourcegitcommit: f29fec8ec945921cc3a89a6e7086127cc1bc1759
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69574986"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72528953"
 ---
 # <a name="enable-and-request-just-in-time-access-for-azure-managed-applications"></a>Включение и запрос JIT-доступа для управляемых приложений Azure
 
@@ -81,7 +81,7 @@ JIT-доступ позволяет запрашивать повышенный 
 
 Вы добавили в пользовательский интерфейс шаг JIT-конфигурации и включили JIT-доступ в предложении Marketplace. Когда клиенты развертывают управляемое приложение, они могут [включить JIT-доступ для своего экземпляра](approve-just-in-time-access.md#enable-during-deployment).
 
-## <a name="request-access"></a>Запросить доступ
+## <a name="request-access"></a>Запрос доступа
 
 При необходимости доступа к управляемым ресурсам потребителя вы отправляете запрос на определенную роль, время и длительность. Затем потребитель должен утвердить запрос.
 
@@ -105,12 +105,12 @@ JIT-доступ позволяет запрашивать повышенный 
 
 1. Чтобы просмотреть состояние всех JIT-запросов для управляемого приложения, выберите **JIT-доступ** и **журнал запросов**.
 
-   ![Просмотр состояния](./media/request-just-in-time-access/view-status.png)
+   ![Просмотреть сведения о состоянии](./media/request-just-in-time-access/view-status.png)
 
 ## <a name="known-issues"></a>Известные проблемы
 
 ИДЕНТИФИКАТОР субъекта учетной записи, запрашивающей JIT-доступ, должен явно включаться в определение управляемого приложения. Учетная запись не может быть включена только через группу, указанную в пакете. Это ограничение будет исправлено в следующем выпуске.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о утверждении запросов на JIT-доступ см. в статье утверждение JIT-доступа [в управляемых приложениях Azure](approve-just-in-time-access.md).

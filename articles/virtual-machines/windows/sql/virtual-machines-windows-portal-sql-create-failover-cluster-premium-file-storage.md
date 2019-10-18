@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 10/09/2019
 ms.author: mathoma
-ms.openlocfilehash: 39f04005776f3b451ad7c64c76f9aa5d8c4a7768
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.openlocfilehash: b281344084cb558ab490e9e3c24774311ede7866
+ms.sourcegitcommit: f29fec8ec945921cc3a89a6e7086127cc1bc1759
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72330087"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72529432"
 ---
 # <a name="configure-sql-server-failover-cluster-instance-with-premium-file-share-on-azure-virtual-machines"></a>Настройка SQL Server экземпляра отказоустойчивого кластера с общей папкой Premium на виртуальных машинах Azure
 
@@ -45,7 +45,7 @@ ms.locfileid: "72330087"
 - [группы ресурсов Azure](../../../azure-resource-manager/manage-resource-groups-portal.md).
 
 > [!IMPORTANT]
-> На данный момент SQL Server экземпляры отказоустойчивого кластера на виртуальных машинах Azure поддерживаются только в режиме [упрощенного](virtual-machines-windows-sql-register-with-resource-provider.md#register-with-sql-vm-resource-provider) управления [расширением агента IaaS SQL Server](virtual-machines-windows-sql-server-agent-extension.md). Удалите полное расширение с виртуальных машин, участвующих в отказоустойчивом кластере, а затем зарегистрируйте их с помощью поставщика ресурсов виртуальной машины SQL в режиме `lightweight`. Полное расширение поддерживает такие функции, как автоматическое резервное копирование, установка исправлений и Управление порталом. Эти функции не будут работать для виртуальных машин SQL после переустановки агента в режиме упрощенного управления.
+> На данный момент SQL Server экземпляры отказоустойчивого кластера на виртуальных машинах Azure поддерживаются только в режиме [упрощенного](virtual-machines-windows-sql-register-with-resource-provider.md#register-with-sql-vm-resource-provider) управления [расширением агента IaaS SQL Server](virtual-machines-windows-sql-server-agent-extension.md). Чтобы перейти с полного режима расширения на облегченный, удалите ресурс "виртуальная машина SQL" для виртуальных машин корреспиндинг, а затем зарегистрируйте их с помощью поставщика ресурсов виртуальной машины SQL в режиме `lightweight`. При удалении ресурса "виртуальная машина SQL" с помощью портал Azure обязательно отмените выбор фактической виртуальной машины. Полное расширение поддерживает такие функции, как автоматическое резервное копирование, установка исправлений и Управление порталом. Эти функции не будут работать для виртуальных машин SQL после переустановки агента в режиме упрощенного управления.
 
 ### <a name="workload-consideration"></a>Вопрос рабочей нагрузки
 
@@ -344,8 +344,7 @@ New-Cluster -Name <FailoverCluster-Name> -Node ("<node1>","<node2>") –StaticAd
    См. следующий рисунок.
 
    ![CreateLoadBalancer](./media/virtual-machines-windows-portal-sql-create-failover-cluster/30-load-balancer-create.png)
-
-   ![CreateLoadBalancer](./media/virtual-machines-windows-portal-sql-create-failover-cluster/30-load-balancer-create.png)
+   
 
 ### <a name="configure-the-load-balancer-backend-pool"></a>Настройка серверного пула балансировщика нагрузки
 

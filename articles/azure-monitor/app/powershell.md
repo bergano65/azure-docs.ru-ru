@@ -1,6 +1,6 @@
 ---
 title: Автоматизация Azure Application Insights с помощью PowerShell | Документация Майкрософт
-description: Автоматизация создания ресурсов, оповещений и тестов доступности в PowerShell с помощью шаблона Azure Resource Manager.
+description: Автоматизируйте создание ресурсов, оповещений и тестов доступности в PowerShell и управление ими с помощью шаблона Azure Resource Manager.
 services: application-insights
 documentationcenter: ''
 author: mrbullwinkle
@@ -10,22 +10,22 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 06/04/2019
+ms.date: 10/10/2019
 ms.author: mbullwin
-ms.openlocfilehash: b4f3d2eba70be39b23e86ebde3c71dfc7c19a374
-ms.sourcegitcommit: f2d9d5133ec616857fb5adfb223df01ff0c96d0a
-ms.translationtype: MT
+ms.openlocfilehash: 7ac5d933406af10307ba3312a8f609bfde2413fc
+ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71936709"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72514385"
 ---
-#  <a name="create-application-insights-resources-using-powershell"></a>Создание ресурсов Application Insights с помощью PowerShell
+#  <a name="manage-application-insights-resources-using-powershell"></a>Управление ресурсами Application Insights с помощью PowerShell
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 В этой статье показано, как автоматизировать создание и обновление ресурсов [Application Insights](../../azure-monitor/app/app-insights-overview.md) с помощью управления ресурсами Azure. Эту функцию можно использовать, например, в процессе сборки. Наряду с базовым ресурсом Application Insights можно создавать [веб-тесты доступности](../../azure-monitor/app/monitor-web-app-availability.md) и другие ресурсы Azure, а также настраивать [оповещения](../../azure-monitor/app/alerts.md) и [схему цен](pricing.md).
 
-Ключ к созданию этих ресурсов — шаблоны JSON для [диспетчера ресурсов Azure](../../azure-resource-manager/manage-resources-powershell.md). Порядок действий выглядит следующим образом: загрузить JSON-определения существующих ресурсов, параметризовать определенные значения как имена и выполнить шаблон, когда возникнет необходимость в создании нового ресурса. Несколько ресурсов можно объединить, чтобы создавать их одновременно, например, объединить монитор приложений с тестами доступности, оповещениями и хранилищем для непрерывного экспорта. С параметризацией некоторых значений связаны определенные тонкости, которые мы рассмотрим позднее.
+Ключ к созданию этих ресурсов — шаблоны JSON для [диспетчера ресурсов Azure](../../azure-resource-manager/manage-resources-powershell.md). Основная процедура: Скачайте определения JSON для существующих ресурсов. Параметризация определенных значений, таких как имена; а затем запустите шаблон каждый раз, когда нужно создать новый ресурс. Несколько ресурсов можно объединить, чтобы создавать их одновременно, например, объединить монитор приложений с тестами доступности, оповещениями и хранилищем для непрерывного экспорта. С параметризацией некоторых значений связаны определенные тонкости, которые мы рассмотрим позднее.
 
 ## <a name="one-time-setup"></a>Однократная настройка
 Если вы ранее не использовали PowerShell для подписки Azure:
@@ -35,7 +35,30 @@ ms.locfileid: "71936709"
 1. Установите [установщик веб-платформы Майкрософт (версии 5 или более поздней)](https://www.microsoft.com/web/downloads/platform.aspx).
 2. Используйте его для установки Microsoft Azure PowerShell.
 
-## <a name="create-an-azure-resource-manager-template"></a>Создание шаблона Azure Resource Manager
+Помимо использования шаблонов диспетчер ресурсов, существует обширный набор [командлетов PowerShell Application Insights](https://docs.microsoft.com/powershell/module/az.applicationinsights), которые упрощают настройку Application Insights ресурсов программным путем. К возможностям, включенным в командлетах, относятся:
+
+* Создание и удаление ресурсов Application Insights
+* Получение списков ресурсов Application Insights и их свойств
+* Создание непрерывного экспорта и управление им
+* Создание ключей приложений и управление ими
+* Установка ежедневного ограничения
+* Настройка плана ценообразования
+
+## <a name="create-application-insights-resources-using-a-powershell-cmdlet"></a>Создание ресурсов Application Insights с помощью командлета PowerShell
+
+Вот как можно создать новый ресурс Application Insights в центре обработки данных восточной части США с помощью командлета [New-азаппликатионинсигхтс](https://docs.microsoft.com/powershell/module/az.applicationinsights/New-AzApplicationInsights) :
+
+```PS
+New-AzApplicationInsights -ResourceGroupName <resource group> -Name <resource name> -location eastus
+```
+
+
+## <a name="create-application-insights-resources-using-a-resource-manager-template"></a>Создание ресурсов Application Insights с помощью шаблона диспетчер ресурсов
+
+Вот как можно создать новый ресурс Application Insights с помощью шаблона диспетчер ресурсов.
+
+### <a name="create-the-azure-resource-manager-template"></a>Создание шаблона Azure Resource Manager
+
 Создайте новый файл JSON — в данном примере назовем его `template1.json` . Скопируйте в него следующее содержимое:
 
 ```JSON
@@ -160,7 +183,7 @@ ms.locfileid: "71936709"
                 ],
                 "properties": {
                     "CurrentBillingFeatures": "[variables('pricePlan')]",
-                    "retentionInDays": "[variables('retentionInDays')]",
+                    "retentionInDays": "[parameters('retentionInDays')]",
                     "DataVolumeCap": {
                         "Cap": "[parameters('dailyQuota')]",
                         "WarningThreshold": "[parameters('warningThreshold')]",
@@ -172,16 +195,13 @@ ms.locfileid: "71936709"
     }
 ```
 
+### <a name="use-the-resource-manager-template-to-create-a-new-application-insights-resource"></a>Создание нового Application Insights ресурса с помощью шаблона диспетчер ресурсов
 
-
-## <a name="create-application-insights-resources"></a>Создание ресурсов Application Insights
-1. В PowerShell войдите в Azure:
-   
-    `Connect-AzAccount`
-2. Выполните следующую команду:
+1. В PowerShell Войдите в Azure с помощью `$Connect-AzAccount`
+2. Задайте для контекста подписку с `Set-AzContext "<subscription ID>"`
+2. Запустите новое развертывание для создания нового Application Insights ресурса:
    
     ```PS
-   
         New-AzResourceGroupDeployment -ResourceGroupName Fabrikam `
                -TemplateFile .\template1.json `
                -appName myNewApp
@@ -194,41 +214,95 @@ ms.locfileid: "71936709"
 
 Можно добавить другие параметры. Их описание доступно в разделе параметров шаблона.
 
-## <a name="to-get-the-instrumentation-key"></a>Получение ключа инструментирования
+## <a name="get-the-instrumentation-key"></a>Получение ключа инструментирования
+
 После создания ресурса приложения вам понадобится ключ инструментирования. 
 
+1. `$Connect-AzAccount`
+2. `Set-AzContext "<subscription ID>"`
+3. `$resource = Get-AzResource -Name "<resource name>" -ResourceType "Microsoft.Insights/components"`
+4. `$details = Get-AzResource -ResourceId $resource.ResourceId`
+5. `$details.Properties.InstrumentationKey`
+
+Чтобы просмотреть список других свойств Application Insightsного ресурса, используйте:
+
 ```PS
-    $resource = Find-AzResource -ResourceNameEquals "<YOUR APP NAME>" -ResourceType "Microsoft.Insights/components"
-    $details = Get-AzResource -ResourceId $resource.ResourceId
-    $ikey = $details.Properties.InstrumentationKey
+Get-AzApplicationInsights -ResourceGroupName Fabrikam -Name FabrikamProd | Format-List
 ```
 
+Дополнительные свойства можно получить с помощью командлетов:
+* `Set-AzApplicationInsightsDailyCap`
+* `Set-AzApplicationInsightsPricingPlan`
+* `Get-AzApplicationInsightsApiKey`
+* `Get-AzApplicationInsightsContinuousExport`
 
-<a id="price"></a>
-## <a name="set-the-price-plan"></a>Настройка тарифного плана
+Дополнительные сведения о параметрах этих командлетов см. в [подробной документации](https://docs.microsoft.com/powershell/module/az.applicationinsights) .  
 
-Вы можете настроить [тарифный план](pricing.md).
+## <a name="set-the-data-retention"></a>Задание срока хранения данных 
 
-Для создания ресурса приложения с тарифным планом "Корпоративный" с помощью приведенного выше шаблона, выполните следующую команду:
+Чтобы получить текущий срок хранения данных для Application Insights ресурса, можно использовать средство OSS [ARMClient](https://github.com/projectkudu/ARMClient).  (Дополнительные сведения о ARMClient из статей по [Дэвид эббо](http://blog.davidebbo.com/2015/01/azure-resource-manager-client.html) и [Даниэль бовбес](https://blog.bowbyes.co.nz/2016/11/02/using-armclient-to-directly-access-azure-arm-rest-apis-and-list-arm-policy-details/).)  Ниже приведен пример использования `ARMClient` для получения текущего хранения:
 
 ```PS
-        New-AzResourceGroupDeployment -ResourceGroupName Fabrikam `
+armclient GET /subscriptions/00000000-0000-0000-0000-00000000000/resourceGroups/MyResourceGroupName/providers/microsoft.insights/components/MyResourceName?api-version=2018-05-01-preview
+```
+
+Чтобы задать период удержания, команда будет похожа на команду.
+
+```PS
+armclient PUT /subscriptions/00000000-0000-0000-0000-00000000000/resourceGroups/MyResourceGroupName/providers/microsoft.insights/components/MyResourceName?api-version=2018-05-01-preview "{location: 'eastus', properties: {'retentionInDays': 365}}"
+```
+
+Чтобы задать срок хранения данных 365 дней с помощью приведенного выше шаблона, выполните:
+
+```PS
+        New-AzResourceGroupDeployment -ResourceGroupName "<resource group>" `
                -TemplateFile .\template1.json `
-               -priceCode 2 `
-               -appName myNewApp
+               -retentionInDays 365 `
+               -appName myApp
+```
+
+## <a name="set-the-daily-cap"></a>Установка ежедневного ограничения
+
+Чтобы получить свойства ежедневного ограничения, используйте командлет [Set-азаппликатионинсигхтсприЦингплан](https://docs.microsoft.com/powershell/module/az.applicationinsights/Set-AzApplicationInsightsPricingPlan) : 
+
+```PS
+Set-AzApplicationInsightsDailyCap -ResourceGroupName <resource group> -Name <resource name> | Format-List
+```
+
+Чтобы задать свойства ежедневного ограничения, используйте тот же командлет. Например, чтобы установить ограничение в 300 ГБ/день, 
+
+```PS
+Set-AzApplicationInsightsDailyCap -ResourceGroupName <resource group> -Name <resource name> -DailyCapGB 300
+```
+
+<a id="price"></a>
+## <a name="set-the-pricing-plan"></a>Настройка плана ценообразования 
+
+Чтобы получить текущий план ценообразования, используйте командлет [Set-азаппликатионинсигхтсприЦингплан](https://docs.microsoft.com/powershell/module/az.applicationinsights/Set-AzApplicationInsightsPricingPlan) : 
+
+```PS
+Set-AzApplicationInsightsPricingPlan -ResourceGroupName <resource group> -Name <resource name> | Format-List
+```
+
+Чтобы задать тарифный план, используйте тот же командлет с указанным `-PricingPlan`:  
+
+```PS
+Set-AzApplicationInsightsPricingPlan -ResourceGroupName <resource group> -Name <resource name> -PricingPlan Basic
+```
+
+Вы также можете задать тарифный план для существующего ресурса Application Insights, используя приведенный выше шаблон диспетчер ресурсов, опустив ресурс Microsoft. Insights/Components и узел `dependsOn` из ресурса выставления счетов. Например, чтобы задать для него план за ГБ (ранее назывался базовым планом), выполните:
+
+```PS
+        New-AzResourceGroupDeployment -ResourceGroupName "<resource group>" `
+               -TemplateFile .\template1.json `
+               -priceCode 1 `
+               -appName myApp
 ```
 
 |priceCode|План|
 |---|---|
-|1|Стандартная|
-|2|Enterprise|
-
-* Если вы хотите использовать только тарифный план по умолчанию "Базовый", то можете не указывать в шаблоне ресурс CurrentBillingFeatures.
-* Если вы хотите изменить ценовой план после создания ресурса компонента, можно использовать шаблон, пропускающий ресурс microsoft.insights/components. Кроме того, опустите узел `dependsOn` из ресурса выставления счетов. 
-
-Чтобы проверить обновленный ценовой план, просмотрите страницу **Usage and estimated costs** (Данные об использовании и предполагаемые расходы) в браузере. **Обновите окно браузера**, чтобы убедиться, что отображается последнее состояние.
-
-
+|1|За ГБ (прежнее название — базовый план)|
+|2|На узел (прежнее название — план "Корпоративный")|
 
 ## <a name="add-a-metric-alert"></a>Добавление оповещения метрики
 
@@ -424,7 +498,7 @@ ms.locfileid: "71936709"
    * `InstrumentationKey`
    * `CreationDate`
    * `TenantId`
-4. Откройте разделы webtests и alertrules и скопируйте JSON для отдельных элементов в шаблон. (Не копируйте содержимое узлов webtests или alertrules, перейдите в элементы под ними.)
+4. Откройте разделы `webtests` и `alertrules` и скопируйте JSON для отдельных элементов в шаблон. (Не копируйте из `webtests` или `alertrules` узлов: перейдите к элементам, расположенным под ними.)
    
     С каждым веб-тестом связано правило оповещения, поэтому скопировать необходимо оба элемента.
    
@@ -449,7 +523,7 @@ ms.locfileid: "71936709"
 | `"myTestName-myAppName-subsId"` |`"[variables('alertRuleName')]"` |
 | `"myAppName"` |`"[parameters('appName')]"` |
 | `"myappname"` (строчная) |`"[toLower(parameters('appName'))]"` |
-| `"<WebTest Name=\"myWebTest\" ...`<br/>`Url=\"http://fabrikam.com/home\" ...>"` |`[concat('<WebTest Name=\"',` <br/> `parameters('webTestName'),` <br/> `'\" ... Url=\"', parameters('Url'),` <br/> `'\"...>')]"`<br/>Удалите GUID и идентификатор. |
+| `"<WebTest Name=\"myWebTest\" ...`<br/>`Url=\"http://fabrikam.com/home\" ...>"` |`[concat('<WebTest Name=\"',` <br/> `parameters('webTestName'),` <br/> `'\" ... Url=\"', parameters('Url'),` <br/> `'\"...>')]"`|
 
 ### <a name="set-dependencies-between-the-resources"></a>Установка зависимостей между ресурсами
 Служба Azure должна настраивать ресурсы в строгом порядке. Чтобы одна процедура настройки не начиналась прежде, чем завершится предыдущая, добавьте строки зависимости:
@@ -463,7 +537,7 @@ ms.locfileid: "71936709"
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Другие статьи об автоматизации:
 
 * [Создание ресурса Application Insights](powershell-script-create-resource.md) — быстрый метод без использования шаблона.

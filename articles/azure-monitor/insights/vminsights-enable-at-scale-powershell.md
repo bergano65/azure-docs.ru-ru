@@ -11,14 +11,14 @@ ms.service: azure-monitor
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 07/09/2019
+ms.date: 10/14/2019
 ms.author: magoedte
-ms.openlocfilehash: 1025041ae69f2048a6c5396aaebb50b5fa884f86
-ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
-ms.translationtype: MT
+ms.openlocfilehash: 78fe9eec757274e4262857ac0441af61c47a992b
+ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68444170"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72515540"
 ---
 # <a name="enable-azure-monitor-for-vms-preview-using-azure-powershell-or-resource-manager-templates"></a>Включение Azure Monitor для виртуальных машин (Предварительная версия) с помощью шаблонов Azure PowerShell или диспетчер ресурсов
 
@@ -36,7 +36,8 @@ ms.locfileid: "68444170"
 * вручную, как описано в статье [Источники данных о производительности Windows и Linux в Log Analytics](../../azure-monitor/platform/data-sources-performance-counters.md);
 * Путем скачивания и запуска скрипта PowerShell, доступного из [коллекции Azure PowerShell](https://www.powershellgallery.com/packages/Enable-VMInsightsPerfCounters/1.1)
 
-### <a name="install-the-servicemap-and-infrastructureinsights-solutions"></a>Установите решения ServiceMap и InfrastructureInsights.
+### <a name="install-the-servicemap-solution"></a>Установка решения ServiceMap
+
 В этом методе используется шаблон JSON, который задает конфигурацию для включения компонентов решения в рабочей области Log Analytics.
 
 Если вы не умеете развертывать ресурсы с помощью шаблона, см. следующие материалы:
@@ -84,24 +85,6 @@ ms.locfileid: "68444170"
                             "product": "[Concat('OMSGallery/', 'ServiceMap')]",
                             "promotionCode": ""
                         }
-                    },
-                    {
-                        "apiVersion": "2015-11-01-preview",
-                        "location": "[parameters('WorkspaceLocation')]",
-                        "name": "[concat('InfrastructureInsights', '(', parameters('WorkspaceName'),')')]",
-                        "type": "Microsoft.OperationsManagement/solutions",
-                        "dependsOn": [
-                            "[concat('Microsoft.OperationalInsights/workspaces/', parameters('WorkspaceName'))]"
-                        ],
-                        "properties": {
-                            "workspaceResourceId": "[resourceId('Microsoft.OperationalInsights/workspaces/', parameters('WorkspaceName'))]"
-                        },
-                        "plan": {
-                            "name": "[concat('InfrastructureInsights', '(', parameters('WorkspaceName'),')')]",
-                            "publisher": "Microsoft",
-                            "product": "[Concat('OMSGallery/', 'InfrastructureInsights')]",
-                            "promotionCode": ""
-                        }
                     }
                 ]
             }
@@ -142,6 +125,7 @@ ms.locfileid: "68444170"
         ```
 
 ## <a name="enable-with-azure-resource-manager-templates"></a>Включение с помощью шаблонов Azure Resource Manager
+
 Мы создали пример Azure Resource Manager шаблоны для адаптации виртуальных машин и масштабируемых наборов виртуальных машин. Эти шаблоны включают сценарии, которые можно использовать для включения наблюдения за существующим ресурсом и создания нового ресурса с включенным наблюдением.
 
 >[!NOTE]
@@ -163,7 +147,7 @@ ms.locfileid: "68444170"
 - Шаблон **неввмонбоардинг** создает виртуальную машину и позволяет Azure Monitor для виртуальных машин отслеживать ее.
 - Шаблон **ексистингвмссонбоардинг** позволяет Azure Monitor для виртуальных машин, если масштабируемый набор виртуальных машин уже существует.
 - Шаблон **неввмссонбоардинг** создает масштабируемые наборы виртуальных машин и позволяет Azure Monitor для виртуальных машин отслеживать их.
-- Шаблон **конфигуреворксапце** настраивает рабочую область log Analytics для поддержки Azure Monitor для виртуальных машин, включая решения и коллекцию счетчиков производительности операционных систем Linux и Windows.
+- Шаблон **конфигуреворкспаце** настраивает рабочую область log Analytics для поддержки Azure Monitor для виртуальных машин, включая решения и коллекцию счетчиков производительности операционных систем Linux и Windows.
 
 >[!NOTE]
 >Если масштабируемые наборы виртуальных машин уже присутствовали и для политики обновления задано значение **вручную**, Azure Monitor для виртуальных машин не будут включены для экземпляров по умолчанию после запуска шаблона Azure Resource Manager **ексистингвмссонбоардинг** . Экземпляры необходимо обновить вручную.
@@ -180,6 +164,7 @@ New-AzResourceGroupDeployment -Name OnboardCluster -ResourceGroupName <ResourceG
 ```powershell
 provisioningState       : Succeeded
 ```
+
 ### <a name="deploy-by-using-the-azure-cli"></a>Развертывание с помощью Azure CLI
 
 Следующий шаг включает мониторинг с помощью Azure CLI.
@@ -206,7 +191,7 @@ provisioningState       : Succeeded
 
 Для каждой виртуальной машины или масштабируемого набора виртуальных машин в сценарии проверяется, установлено ли расширение виртуальной машины. Если расширение виртуальной машины не установлено, сценарий попытается переустановить его. Если расширение виртуальной машины установлено, в сценарии устанавливается расширение виртуальной машины для агента Log Analytics и Dependency Agent.
 
-Убедитесь, что используется модуль Azure PowerShell AZ Version 1.0.0 или более поздней версии с `Enable-AzureRM` включенными псевдонимами совместимости. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps). При использовании PowerShell на локальном компьютере также нужно запустить `Connect-AzAccount`, чтобы создать подключение к Azure.
+Убедитесь, что используется модуль Azure PowerShell AZ Version 1.0.0 или более поздней версии с включенными псевдонимами совместимости `Enable-AzureRM`. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps). При использовании PowerShell на локальном компьютере также нужно запустить `Connect-AzAccount`, чтобы создать подключение к Azure.
 
 Чтобы получить список сведений об аргументах сценария и пример использования, выполните команду `Get-Help`.
 
@@ -359,11 +344,10 @@ Not running - start VM to configure: (0)
 Failed: (0)
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда наблюдение включено для виртуальных машин, эти сведения доступны для анализа с Azure Monitor для виртуальных машин.
  
-- Чтобы узнать, как использовать функцию работоспособности, см. статью [просмотр Azure Monitor для виртуальных машин работоспособности](vminsights-health.md). 
 - Для просмотра обнаруженных зависимостей приложений см. статью о [просмотре схемы Azure Monitor для виртуальных машин](vminsights-maps.md). 
+
 - Чтобы определить узкие места и общее использование с производительностью виртуальной машины, см. статью [Просмотр производительности виртуальной машины Azure](vminsights-performance.md). 
-- Для просмотра обнаруженных зависимостей приложений см. статью о [просмотре схемы Azure Monitor для виртуальных машин](vminsights-maps.md).

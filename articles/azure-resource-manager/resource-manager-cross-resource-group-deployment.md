@@ -1,17 +1,17 @@
 ---
-title: Развертывание ресурсов Azure в нескольких подписках и группах ресурсов | Документация Майкрософт
+title: Развертывание ресурсов Azure с перекрестной подпиской & группы ресурсов
 description: Сведения о развертывании ресурсов в нескольких подписках и группах ресурсов Azure.
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 06/02/2018
 ms.author: tomfitz
-ms.openlocfilehash: 33b0a998206b68f1807f5bfa3c3f39164798842c
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: c90096043f54eb8db5834fbe83ed1d6ae710d371
+ms.sourcegitcommit: f29fec8ec945921cc3a89a6e7086127cc1bc1759
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67205475"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72528326"
 ---
 # <a name="deploy-azure-resources-to-more-than-one-subscription-or-resource-group"></a>Развертывание ресурсов Azure в нескольких подписках или группах ресурсов
 
@@ -253,7 +253,7 @@ New-AzResourceGroupDeployment `
                                              }
 ```
 
-### <a name="azure-cli"></a>Инфраструктура CLI Azure
+### <a name="azure-cli"></a>Azure CLI
 
 Чтобы развернуть две учетные записи хранения в двух группах ресурсов в **одной подписке** с помощью Azure CLI, используйте следующий код:
 

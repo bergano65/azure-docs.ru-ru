@@ -4,18 +4,18 @@ description: В этой статье содержатся справочные 
 author: normesta
 ms.service: storage
 ms.topic: reference
-ms.date: 08/26/2019
+ms.date: 10/16/2019
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
-ms.openlocfilehash: 9afcd8de1af42424649dd8e44fc07f7bfd881257
-ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
+ms.openlocfilehash: ebed5c8dbe5001e9beab17bdbff41610277143b2
+ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70195715"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72514691"
 ---
-# <a name="azcopy-make"></a>azcopy
+# <a name="azcopy-make"></a>azcopy make
 
 Создает контейнер или общую папку.
 
@@ -35,18 +35,18 @@ azcopy make "https://[account-name].[blob,file,dfs].core.windows.net/[top-level-
 
 ## <a name="options"></a>Параметры
 
-|Параметр|Описание|
+|Вариант|Описание|
 |--|--|
 |-h, --help|Отображение содержимого справки для команды make. |
 |--UInt32 с квотой в ГБ|Указывает максимальный размер общей папки в гигабайтах (гиб), 0 означает, что квота файловой службы по умолчанию принимается.|
 
 ## <a name="options-inherited-from-parent-commands"></a>Параметры, унаследованные от родительских команд
 
-|Параметр|Описание|
+|Вариант|Описание|
 |---|---|
 |--Cap-Мбит/с UInt32|Скорость передачи с прописными буквами в мегабит в секунду. Посекундная пропускная способность может немного отличаться от ограничения. Если этот параметр имеет значение 0 или пропущен, пропускная способность не ограничена.|
 |--строка выходного типа|Формат вывода команды. Среди вариантов: Text, JSON. Значение по умолчанию — "Text".|
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>Дополнительные материалы
 
 - [azcopy](storage-ref-azcopy.md)

@@ -1,17 +1,17 @@
 ---
-title: Экспорт шаблона Azure Resource Manager с помощью портал Azure
+title: Экспорт шаблона диспетчер ресурсов портал Azure
 description: Используйте портал Azure, чтобы экспортировать шаблон Azure Resource Manager из ресурсов в подписке.
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 10/11/2019
 ms.author: tomfitz
-ms.openlocfilehash: 6b37b61bea63ec626bfd709a40f177f43d1dfe03
-ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
+ms.openlocfilehash: 0605e24590fa2d702a1385429a7808a7e1226809
+ms.sourcegitcommit: 6eecb9a71f8d69851bc962e2751971fccf29557f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2019
-ms.locfileid: "72300358"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72532343"
 ---
 # <a name="single-and-multi-resource-export-to-a-template-in-azure-portal"></a>Экспорт одного и нескольких ресурсов в шаблон в портал Azure
 
@@ -59,7 +59,7 @@ ms.locfileid: "72300358"
    ![Экспорт всех ресурсов](./media/export-template-portal/select-all-resources.png)
 
     На снимке экрана выбрана только учетная запись хранения.
-1. Выберите **Экспорт шаблона**.
+1. Выберите **Экспортировать шаблон**.
 
 1. Экспортированный шаблон отображается и доступен для скачивания и развертывания.
 
@@ -110,7 +110,7 @@ ms.locfileid: "72300358"
 
    ![Выбор шаблона](./media/export-template-portal/show-template-from-history.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как экспортировать шаблоны с помощью [Azure CLI](manage-resource-groups-cli.md#export-resource-groups-to-templates), [Azure PowerShell](manage-resource-groups-powershell.md#export-resource-groups-to-templates)или [REST API](/rest/api/resources/resourcegroups/exporttemplate).
 - Сведения о синтаксисе шаблона диспетчер ресурсов см. в разделе [Общие сведения о структуре и синтаксисе шаблонов Azure Resource Manager](./resource-group-authoring-templates.md).

@@ -9,10 +9,10 @@ ms.date: 07/31/2019
 ms.author: bwren
 ms.subservice: ''
 ms.openlocfilehash: f65e3c4f9582fcc5c28412d44e513fa6bcb9e870
-ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
+ms.sourcegitcommit: 6eecb9a71f8d69851bc962e2751971fccf29557f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/17/2019
 ms.locfileid: "71262340"
 ---
 # <a name="create-diagnostic-setting-in-azure-using-a-resource-manager-template"></a>Создание параметра диагностики в Azure с помощью шаблона диспетчер ресурсов
@@ -59,7 +59,7 @@ ms.locfileid: "71262340"
 ```
 
 ### <a name="resources"></a>Ресурсы
-В массиве ресурсов ресурса, для которого необходимо создать параметр диагностики, добавьте ресурс типа `[resource namespace]/providers/diagnosticSettings`. Раздел Properties соответствует формату, описанному в разделе [параметры диагностики — создание или обновление](https://docs.microsoft.com/rest/api/monitor/diagnosticsettings/createorupdate). Добавьте свойство для сбора метрик ресурсов в те же места назначения, если [ресурс поддерживает метрики.](metrics-supported.md) `metrics`
+В массиве ресурсов ресурса, для которого необходимо создать параметр диагностики, добавьте ресурс типа `[resource namespace]/providers/diagnosticSettings`. Раздел Properties соответствует формату, описанному в разделе [параметры диагностики — создание или обновление](https://docs.microsoft.com/rest/api/monitor/diagnosticsettings/createorupdate). Добавьте свойство `metrics` для сбора метрик ресурсов в те же места назначения, если [ресурс поддерживает метрики](metrics-supported.md).
    
 ```json
 "resources": [
@@ -237,6 +237,6 @@ ms.locfileid: "71262340"
 ```
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте больше о [журналах платформы в Azure](platform-logs-overview.md).
 * Сведения о [параметрах диагностики](diagnostic-settings.md).

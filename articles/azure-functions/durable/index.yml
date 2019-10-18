@@ -1,0 +1,110 @@
+### YamlMime:Landing
+title: Документация по расширению "Устойчивые функции Azure"
+summary: Устойчивые функции — это расширение Функций Azure, которое позволяет писать функции с отслеживанием состояния в беcсерверной вычислительной среде.
+metadata:
+  title: Документация по расширению "Устойчивые функции Azure"
+  description: Устойчивые функции — это расширение Функций Azure, которое позволяет писать функции с отслеживанием состояния в беcсерверной вычислительной среде.
+  ms.service: azure-functions
+  ms.topic: landing-page
+  author: ggailey777
+  ms.author: azfundocs
+  ms.date: 10/04/2019
+  ms.openlocfilehash: f0f47c8d997a3d02ad3bae1bc4634f4c7ad2155c
+  ms.sourcegitcommit: f29fec8ec945921cc3a89a6e7086127cc1bc1759
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 10/17/2019
+  ms.locfileid: "72529692"
+landingContent:
+- title: Сведения о расширении "Устойчивые функции"
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое Устойчивые функции?
+      url: durable-functions-overview.md
+    - text: Сравнение вариантов бессерверных вычислений
+      url: ../functions-compare-logic-apps-ms-flow-webjobs.md
+  - linkListType: concept
+    links:
+    - text: Типы устойчивых функций
+      url: durable-functions-types-features-overview.md
+  - linkListType: video
+    links:
+    - text: Устранение препятствий для использования бессерверных вычислений
+      url: https://azure.microsoft.com/resources/videos/break-through-the-serverless-barriers-with-durable-functions/
+- title: Начало работы
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Создание устойчивых функций (C#)
+      url: durable-functions-create-first-csharp.md
+    - text: Создание первой функции (JavaScript)
+      url: quickstart-js-vscode.md
+  - linkListType: learn
+    links:
+    - text: Создание длительно выполняемого бессерверного рабочего процесса
+      url: /learn/modules/create-long-running-serverless-workflow-with-durable-functions/
+  - linkListType: video
+    links:
+    - text: Просмотрите видео о том, как начать работу
+      url: https://azure.microsoft.com/resources/videos/azure-friday-durable-functions-in-azure-functions/
+- title: Основные понятия
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Взаимодействия
+      url: durable-functions-orchestrations.md
+    - text: Сущности с отслеживанием состояния
+      url: durable-functions-entities.md
+    - text: Функции HTTP
+      url: durable-functions-http-features.md
+    - text: Центры задач
+      url: durable-functions-task-hubs.md
+    - text: Управление версиями
+      url: durable-functions-versioning.md
+  - linkListType: video
+    links:
+    - text: Бессерверные сущности, оркестрации и функции с отслеживанием состояния
+      url: https://channel9.msdn.com/Events/dotnetConf/NET-Conf-2019/B206
+- title: Шаблоны приложений
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Цепочка функций
+      url: durable-functions-sequence.md
+    - text: Асинхронные API-интерфейсы HTTP
+      url: durable-functions-create-first-csharp.md
+    - text: Развертывание/вход
+      url: durable-functions-cloud-backup.md
+    - text: Мониторы
+      url: durable-functions-monitor.md
+    - text: Участие пользователя
+      url: durable-functions-phone-verification.md
+    - text: Агрегатор
+      url: durable-functions-entities.md
+- title: Производительность и мониторинг
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Диагностика
+      url: durable-functions-diagnostics.md
+  - linkListType: concept
+    links:
+    - text: Мониторинг функций
+      url: ../functions-monitoring.md
+    - text: Рекомендации по работе с сетями
+      url: ../functions-networking-options.md
+- title: Примеры
+  linkLists:
+  - linkListType: download
+    links:
+    - text: Примеры устойчивых функций
+      url: /samples/browse/?products=azure-functions&term=durable
+    - text: Azure Serverless Community Library
+      url: https://www.serverlesslibrary.net/
+    - text: Шаблоны Azure Resource Manager
+      url: https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Web&term=functions
+  - linkListType: how-to-guide
+    links:
+    - text: Примеры для Azure CLI
+      url: ../functions-cli-samples.md

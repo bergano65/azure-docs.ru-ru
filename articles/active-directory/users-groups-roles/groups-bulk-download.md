@@ -13,24 +13,21 @@ ms.workload: identity
 ms.custom: it-pro
 ms.reviewer: jeffsta
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 76aafa978732b3f4bae82f8ad3c09e67caf297ae
-ms.sourcegitcommit: b03516d245c90bca8ffac59eb1db522a098fb5e4
+ms.openlocfilehash: 4b08e807e179270b63ca81d3777c230c3e129c3a
+ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71146287"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72517150"
 ---
 # <a name="bulk-download-a-list-of-groups-preview-in-azure-active-directory"></a>Выполнить пакетную загрузку списка групп (Предварительная версия) в Azure Active Directory
 
 С помощью портала Azure Active Directory (Azure AD) можно выполнить пакетную загрузку списка всех групп в Организации в файл значений с разделителями-запятыми (CSV).
 
-> [!NOTE]
-> Групповые операции Azure AD — это общедоступная Предварительная версия Azure AD. они доступны с любым платным планом лицензирования Azure AD. Дополнительные сведения об условиях использования предварительной версии см. в разделе Дополнительные [условия использования для Microsoft Azure предварительного просмотра](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
-
 ## <a name="to-download-a-list-of-groups"></a>Загрузка списка групп
 
 1. Войдите в [портал Azure](https://portal.azure.com) с помощью учетной записи администратора в Организации.
-1. В Azure AD выберите **группы** > **скачать группы**.
+1. В Azure AD выберите **группы**  > **скачать группы**.
 1. На странице **загрузки групп** выберите **начать** , чтобы получить CSV-файл со списком ваших групп.
 
    ![Команда скачать группы находится на странице все группы.](./media/groups-bulk-download/bulk-download.png)
@@ -45,7 +42,7 @@ ms.locfileid: "71146287"
 
 Каждое групповое действие по скачиванию списка групп может выполняться в течение одного часа. Это позволяет скачать список по крайней мере 300 000 групп.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Групповое удаление членов группы](groups-bulk-remove-members.md)
 - [Скачать членов группы](groups-bulk-download-members.md)

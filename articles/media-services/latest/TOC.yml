@@ -56,14 +56,18 @@
         - name: Активы
           href: assets-concept.md
           displayName: 'name, naming, file name'
-    - name: Кодирование
+    - name: Обработка файлов
+      items:
+        - name: Преобразования и задания
+          href: transforms-jobs-concept.md
+          displayName: 'preset, schema'
+        - name: Коды ошибок
+          href: job-error-codes.md
+    - name: Кодирование содержимого
       items:
         - name: Обзор
           href: encoding-concept.md
           displayName: 'encoding, presets, jobs, adaptive, bitrate'
-        - name: Преобразования и задания
-          href: transforms-jobs-concept.md
-          displayName: 'preset, schema'
         - name: Форматы кодировщика ценовой категории "Стандартный"
           displayName: 'containers, codecs'
           href: media-encoder-standard-formats.md
@@ -71,9 +75,7 @@
           href: autogen-bitrate-ladder.md
         - name: Кодирование с учетом содержимого
           href: cae-experimental.md
-        - name: Коды ошибок задания
-          href: job-error-codes.md
-    - name: Аналитика мультимедиа
+    - name: Анализ содержимого (Индексатор видео)
       items:
         - name: Обзор
           href: analyzing-video-audio-files-concept.md
