@@ -1,19 +1,18 @@
 ---
 title: Примеры для быстрого запуска Azure Monitor с помощью PowerShell
 description: Используйте PowerShell для доступа к функциям Azure Monitor, например автоматическому масштабированию, оповещениям, объектам webhook и поиску в журналах действий.
-author: rboucher
-services: azure-monitor
 ms.service: azure-monitor
-ms.topic: conceptual
-ms.date: 2/14/2018
-ms.author: robb
 ms.subservice: ''
-ms.openlocfilehash: 886eb8578e004eba3b6fabc1deb42db0fb7fac70
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.topic: conceptual
+author: rboucher
+ms.author: robb
+ms.date: 2/14/2018
+ms.openlocfilehash: d1aa4b4e2d72f10ca73616bc7e69b0d02f13a501
+ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71350246"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72551852"
 ---
 # <a name="azure-monitor-powershell-quick-start-samples"></a>Примеры для быстрого запуска Azure Monitor с помощью PowerShell
 В этой статье показаны примеры команд PowerShell, с помощью которых можно быстро получить доступ к функциям Azure Monitor.
@@ -152,15 +151,15 @@ Get-AzAlertRule -ResourceGroup montest -TargetResourceId /subscriptions/s1/resou
 
 | Параметр | value |
 | --- | --- |
-| Название |simpletestdiskwrite |
-| Расположение этого правила генерации оповещений |East US |
+| Name |simpletestdiskwrite |
+| Расположение этого правила генерации оповещений |Восточная часть США |
 | ResourceGroup |montest |
 | TargetResourceId |/subscriptions/s1/resourceGroups/montest/providers/Microsoft.Compute/virtualMachines/testconfig |
-| MetricName созданного оповещения |\PhysicalDisk(_Total)\Disk Writes/sec. See the `Get-MetricDefinitions` cmdlet about how to retrieve the exact metric names |
+| MetricName созданного оповещения |\PhysicalDisk(_Total)\Disk Writes/sec. Точные имена метрик можно получить с помощью командлета `Get-MetricDefinitions`. |
 | operator |GreaterThan |
 | Пороговое значение (число/с для этой метрики) |1 |
 | WindowSize (в формате чч:мм:сс) |00:05:00 |
-| агрегатор (статистические данные о метрике — в этом случае при использовании среднего значения) |Average |
+| агрегатор (статистические данные о метрике — в этом случае при использовании среднего значения) |Среднее |
 | пользовательские сообщения электронной почты (строковый массив) |'foo@example.com','bar@example.com' |
 | отправка сообщений электронной почты владельцам, участникам и читателям |-SendToServiceOwners |
 
@@ -229,7 +228,7 @@ Set-AzActivityLogAlert -Location 'Global' -Name 'alert on VM create' -ResourceGr
 
 1. Создадим правила.
 2. Создадим профили для сопоставления с созданными ранее правилами.
-3. Необязательно: Создадим уведомления для автомасштабирования, настроив свойства веб-перехватчика и электронного адреса.
+3. (Необязательно.) Создадим уведомления для автомасштабирования, настроив свойства веб-перехватчика и электронного адреса.
 4. Создадим параметры автомасштабирования с именем целевого ресурса, сопоставив профили и уведомления, созданные на предыдущих шагах.
 
 В следующих примерах показано, как создать параметр автомасштабирования для масштабируемого набора виртуальных машин для операционной системы Windows, основанный на метрике использования ЦП.

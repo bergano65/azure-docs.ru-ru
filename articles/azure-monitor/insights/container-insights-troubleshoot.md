@@ -1,24 +1,18 @@
 ---
 title: Устранение неполадок с Azure Monitor для контейнеров | Документация Майкрософт
 description: В этой статье описывается, как устранить неполадки и проблемы с Azure Monitor для контейнеров.
-services: azure-monitor
-documentationcenter: ''
-author: mgoedtel
-manager: carmonm
-editor: ''
-ms.assetid: ''
 ms.service: azure-monitor
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 03/27/2018
+ms.subservice: ''
+ms.topic: conceptual
+author: mgoedtel
 ms.author: magoedte
-ms.openlocfilehash: b6c245142eea12bcec5ed642ec9bd91a58e10eb0
-ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
+ms.date: 03/27/2018
+ms.openlocfilehash: ec75f607f707405d6a5bea98deb784f4306c04f1
+ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68813766"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72555370"
 ---
 # <a name="troubleshooting-azure-monitor-for-containers"></a>Устранение неполадок с Azure Monitor для контейнеров
 
@@ -80,7 +74,7 @@ ms.locfileid: "68813766"
 
 4. Проверьте журналы агента. При развертывании контейнерного агента он выполняет быструю проверку, используя команды OMI, и отображает версию агента и поставщика. 
 
-5. Чтобы убедиться, что агент успешно развернут, выполните команду:`kubectl logs omsagent-484hw --namespace=kube-system`
+5. Чтобы убедиться, что агент успешно развернут, выполните команду: `kubectl logs omsagent-484hw --namespace=kube-system`
 
     Должно отобразиться состояние, как в примере ниже.
 
@@ -109,14 +103,14 @@ ms.locfileid: "68813766"
 
 В следующей таблице перечислены известные ошибки, которые могут возникнуть при использовании Azure Monitor для контейнеров.
 
-| Сообщения об ошибках  | Action |  
+| Сообщения об ошибках  | Действия |  
 | ---- | --- |  
 | Сообщение об ошибке `No data for selected filters`  | Потребуется некоторое время, чтобы установить мониторинг потока данных для только что созданных кластеров. Чтобы данные отображались в кластере, подождите не менее 10 – 15 минут. |   
 | Сообщение об ошибке `Error retrieving data` | В то время как кластер службы Azure Kubenetes настраивается для мониторинга работоспособности и производительности, устанавливается соединение между кластером и рабочей областью Azure Log Analytics. Рабочая область Log Analytics используется для хранения всех данных мониторинга для кластера. Эта ошибка может возникать, если Рабочая область Log Analytics удалена. Проверьте, удалена ли Рабочая область и если она была, необходимо снова включить мониторинг кластера с Azure Monitor для контейнеров и указать существующую или создать новую рабочую область. Для повторного включения необходимо [Отключить](container-insights-optout.md) мониторинг кластера и снова [включить](container-insights-enable-new-cluster.md) Azure Monitor для контейнеров. |  
-| `Error retrieving data` после добавления Azure Monitor для контейнеров с помощью az aks cli | При включении мониторинга `az aks cli`с помощью Azure Monitor могут быть неправильно развернуты для контейнеров. Проверьте, развернуто ли решение. Чтобы сделать это, перейдите в рабочую область Log Analytics и проверьте, доступно ли решение, выбрав на панели в левой части окна **Решения**. Чтобы устранить эту проблему, необходимо повторно развернуть решение, следуя инструкциям в статье [Подключение Azure Monitor для контейнеров](container-insights-onboard.md). |  
+| `Error retrieving data` после добавления Azure Monitor для контейнеров с помощью az aks cli | При включении мониторинга с помощью `az aks cli` Azure Monitor для контейнеров могут быть неправильно развернуты. Проверьте, развернуто ли решение. Чтобы сделать это, перейдите в рабочую область Log Analytics и проверьте, доступно ли решение, выбрав на панели в левой части окна **Решения**. Чтобы устранить эту проблему, необходимо повторно развернуть решение, следуя инструкциям в статье [Подключение Azure Monitor для контейнеров](container-insights-onboard.md). |  
 
 Чтобы помочь диагностировать данную проблему, [здесь](https://github.com/Microsoft/OMS-docker/tree/ci_feature_prod/Troubleshoot#troubleshooting-script) предоставлен сценарий устранения неполадок.  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Если включен мониторинг для сбора метрик работоспособности узлов и групп pod кластера AKS, эти метрики будут доступными на портале Azure. Сведения об использовании Azure Monitor для контейнеров см. в руководстве по [просмотру данных работоспособности службы Azure Kubernetes](container-insights-analyze.md).
+Если включен мониторинг для сбора метрик работоспособности узлов и контейнеров pod кластера AKS, эти метрики доступны на портале Azure. Сведения об использовании Azure Monitor для контейнеров см. в руководстве по [просмотру данных работоспособности службы Azure Kubernetes](container-insights-analyze.md).

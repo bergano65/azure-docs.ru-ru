@@ -1,24 +1,18 @@
 ---
 title: Представление журналов контейнеров в реальном времени в Azure Monitor | Документация Майкрософт
 description: В этой статье описывается представление журналов контейнеров (stdout/stderr) и событий в режиме реального времени без использования kubectl с Azure Monitor для контейнеров.
-services: azure-monitor
-documentationcenter: ''
-author: mgoedtel
-manager: carmonm
-editor: ''
-ms.assetid: ''
 ms.service: azure-monitor
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 07/12/2019
+ms.subservice: ''
+ms.topic: conceptual
+author: mgoedtel
 ms.author: magoedte
-ms.openlocfilehash: d947b44177e9aa5777d759286d982e974e378497
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.date: 07/12/2019
+ms.openlocfilehash: 25cfe10ec192f874d050bca22ce1b85c2d1afbb4
+ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72389792"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72554090"
 ---
 # <a name="how-to-view-logs-and-events-in-real-time-preview"></a>Просмотр журналов и событий в режиме реального времени (Предварительная версия)
 Azure Monitor для контейнеров включает в себя функцию, которая в настоящее время находится на этапе предварительной версии, которая предоставляет интерактивное представление журналов контейнеров Azure Kubernetes Service (stdout/stderr) и событий без необходимости выполнять команды kubectl. При выборе любого из этих параметров Новая панель отображается под таблицей данных о производительности на **узлах**, **контроллерах**и в представлении **контейнеров** . Он показывает ведение журнала и события, созданные модулем контейнеров, для дальнейшей помощи в устранении неполадок в режиме реального времени.

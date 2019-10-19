@@ -1,24 +1,18 @@
 ---
 title: Запрос журналов из Azure Monitor для контейнеров | Документация Майкрософт
 description: Azure Monitor для контейнеров собирает метрики и данные журнала. в этой статье описываются записи и примеры запросов.
-services: azure-monitor
-documentationcenter: ''
-author: mgoedtel
-manager: carmonm
-editor: tysonn
-ms.assetid: ''
 ms.service: azure-monitor
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 07/12/2019
+ms.subservice: ''
+ms.topic: conceptual
+author: mgoedtel
 ms.author: magoedte
-ms.openlocfilehash: ae8dd4cccb6795faa02e6705404644f6ccc24864
-ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
+ms.date: 07/12/2019
+ms.openlocfilehash: c3a034776b32db57f70ddee960c1cd5fc96b170b
+ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71948050"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72555408"
 ---
 # <a name="how-to-query-logs-from-azure-monitor-for-containers"></a>Запрос журналов из Azure Monitor для контейнеров
 
@@ -42,7 +36,7 @@ Azure Monitor для контейнеров собирает метрики пр
 | Метрики производительности контейнеров кластера Kubernetes | Perf &#124; where ObjectName == “K8SContainer” | CounterName &#40; Кпурекуестнанокорес, Меморирекуестбитес, Кпулимитнанокорес, Мемориворкингсетбитес, RestartTimeEpoch, CpuUsageNanoCores, memoryRssBytes&#41;, CounterValue, timegenerated, CounterPath, sourcesystem имеет значение | 
 | Пользовательские метрики |`InsightsMetrics` | Компьютер, имя, пространство имен, источник, Sourcesystem имеет значение, теги<sup>1</sup>, timegenerated, тип, ва, _ResourceId | 
 
-<sup>1</sup> свойство *Tags* представляет [несколько измерений](../platform/data-platform-metrics.md#multi-dimensional-metrics) для соответствующей метрики. Дополнительные сведения о метриках, собираемых и хранимых в таблице `InsightsMetrics`, а также описание свойств записи см. в разделе [инсигхтсметрикс Overview](https://github.com/microsoft/OMS-docker/blob/vishwa/june19agentrel/docs/InsightsMetrics.md).
+<sup>1</sup> свойство *Tags* представляет [несколько измерений](../platform/data-platform-metrics.md#multi-dimensional-metrics) для соответствующей метрики. Дополнительные сведения о метриках, собираемых и хранимых в `InsightsMetrics` таблице, а также описание свойств записи см. в разделе [инсигхтсметрикс Overview](https://github.com/microsoft/OMS-docker/blob/vishwa/june19agentrel/docs/InsightsMetrics.md).
 
 >[!NOTE]
 >В настоящее время поддержка Prometheus является функцией в общедоступной предварительной версии.
@@ -62,7 +56,7 @@ Azure Monitor для контейнеров собирает метрики пр
 
 При создании запросов часто бывает полезно начать с одного-двух примеров, внося затем в них изменения в соответствии со своими требованиями. Можно поэкспериментировать с приведенными ниже примерами запросов, чтобы научиться создавать более сложные запросы.
 
-| query | Описание | 
+| Запрос | Описание | 
 |-------|-------------|
 | ContainerInventory<br> &#124; project Computer, Name, Image, ImageTag, ContainerState, CreatedTime, StartedTime, FinishedTime<br> &#124; render table | Вывод всех сведений о жизненном цикле контейнера| 
 | KubeEvents_CL<br> &#124; where not(isempty(Namespace_s))<br> &#124; sort by TimeGenerated desc<br> &#124; render table | События Kubernetes|
@@ -103,6 +97,6 @@ operationData
 
 ![Регистрация результатов запроса для тома приема данных](./media/container-insights-log-search/log-query-example-prometheus-metrics.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Azure Monitor для контейнеров не включает предопределенный набор предупреждений. Ознакомьтесь с разработкой [оповещений о производительности с помощью Azure Monitor для контейнеров](container-insights-alerts.md) , чтобы узнать, как создавать Рекомендуемые оповещения для высокой загрузки ЦП и памяти для поддержки DevOps или рабочих процессов и процедур. 

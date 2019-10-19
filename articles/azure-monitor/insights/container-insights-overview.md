@@ -1,24 +1,18 @@
 ---
 title: Общие сведения об Azure Monitor для контейнеров | Документация Майкрософт
 description: В этой статье описывается служба "Azure Monitor для контейнеров", которая контролирует решение аналитики для контейнеров AKS и значение, которое она поставляет, путем мониторинга работоспособности ваших кластеров и экземпляров контейнеров AKS в Azure.
-services: azure-monitor
-documentationcenter: ''
-author: mgoedtel
-manager: carmonm
-editor: ''
-ms.assetid: ''
 ms.service: azure-monitor
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 08/02/2019
+ms.subservice: ''
+ms.topic: conceptual
+author: mgoedtel
 ms.author: magoedte
-ms.openlocfilehash: e1fca1532352c4955f478df70f818ee3151053c1
-ms.sourcegitcommit: d060947aae93728169b035fd54beef044dbe9480
+ms.date: 08/02/2019
+ms.openlocfilehash: 8a6a9862679508971edd23b2d4220446c2692d72
+ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68742202"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72555376"
 ---
 # <a name="azure-monitor-for-containers-overview"></a>Обзор службы "Azure Monitor для контейнеров"
 
@@ -58,6 +52,6 @@ Azure Monitor для контейнеров — это комплексный п
 
 Если вы заинтересованы в мониторинге и управлении узлами контейнеров DOCKER и Windows, запущенными за пределами AKS для просмотра конфигурации, аудита и использования ресурсов, см. раздел [решение для мониторинга контейнеров](../../azure-monitor/insights/containers.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы начать мониторинг кластера AKS, ознакомьтесь со сведениями о том, [как включить Azure Monitor для контейнеров](container-insights-onboard.md) , чтобы понять требования и доступные методы для включения мониторинга.  

@@ -1,24 +1,18 @@
 ---
 title: Как управлять агентом Azure Monitor для контейнеров | Документация Майкрософт
 description: В этой статье описывается управление наиболее распространенными задачами обслуживания с помощью контейнерного агента Log Analytics, используемого решением "Azure Monitor для контейнеров".
-services: azure-monitor
-documentationcenter: ''
-author: mgoedtel
-manager: carmonm
-editor: ''
-ms.assetid: ''
 ms.service: azure-monitor
+ms.subservice: ''
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 12/06/2018
+author: mgoedtel
 ms.author: magoedte
-ms.openlocfilehash: e1d47be159d4721aed4b055a51acf675688b855e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 12/06/2018
+ms.openlocfilehash: bfedd7989e71bcb8cf58cef7ad7122749350ae26
+ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65071797"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72554051"
 ---
 # <a name="how-to-manage-the-azure-monitor-for-containers-agent"></a>Как управлять агентом Azure Monitor для контейнеров
 Решение "Azure Monitor для контейнеров" использует контейнерную версию агента Log Analytics для Linux. После первоначального развертывания агента есть некоторые рутинные или необязательные задачи, которые нужно будет выполнить в течение его жизненного цикла. В этой статье подробно описывается, как вручную обновить агент и отключить коллекцию переменных среды для определенного контейнера. 
@@ -35,7 +29,7 @@ ms.locfileid: "65071797"
 >Пока вы выполняете обслуживание, узлы в кластере не переадресовывают собранные данные, а представления производительности не будут отображать данные в период между удалением агента и установкой новой версии. 
 >
 
-Чтобы установить новую версию агента, выполните действия, описанные в [включить мониторинг с помощью Azure CLI](container-insights-enable-new-cluster.md#enable-using-azure-cli), чтобы завершить этот процесс.  
+Чтобы установить новую версию агента, выполните действия, описанные в разделе [Включение мониторинга с помощью Azure CLI](container-insights-enable-new-cluster.md#enable-using-azure-cli), чтобы завершить этот процесс.  
 
 После включения мониторинга может пройти около 15 минут, прежде чем вы сможете просмотреть обновленные метрики работоспособности кластера. Чтобы проверить, успешно ли обновлен агент, выполните эту команду: `kubectl logs omsagent-484hw --namespace=kube-system`.
 

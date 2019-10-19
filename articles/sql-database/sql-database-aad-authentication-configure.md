@@ -1,6 +1,6 @@
 ---
 title: Настройка аутентификации Azure Active Directory для SQL | Документация Майкрософт
-description: Сведения о подключении к Базе данных SQL, управляемому экземпляру и хранилищу данных SQL с использованием аутентификации Azure Active Directory после настройки Azure AD.
+description: Узнайте, как подключиться к базе данных SQL, управляемому экземпляру и хранилищу данных SQL с помощью Azure Active Directory проверки подлинности после настройки Azure AD.
 services: sql-database
 ms.service: sql-database
 ms.subservice: security
@@ -10,17 +10,17 @@ ms.topic: conceptual
 author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto, carlrab
-ms.date: 03/12/2019
-ms.openlocfilehash: 11e3a9931d424433f2e3fd1f64e2e95a5835b65c
-ms.sourcegitcommit: 4d177e6d273bba8af03a00e8bb9fe51a447196d0
+ms.date: 10/16/2019
+ms.openlocfilehash: 82409bbe2f40e42a8331cd801649b93987a923d2
+ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71960470"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72550706"
 ---
 # <a name="configure-and-manage-azure-active-directory-authentication-with-sql"></a>Настройка и администрирование аутентификации Azure Active Directory с помощью SQL
 
-В этой статье объясняется, как создать и заполнить каталог Azure AD, а затем использовать Azure AD с [Базой данных SQL Azure](sql-database-technical-overview.md), [Управляемым экземпляром](sql-database-managed-instance.md) и [Хранилищем данных SQL Azure](../sql-data-warehouse/sql-data-warehouse-overview-what-is.md). Обзор см. в статье [Подключение к базе данных SQL или хранилищу данных SQL c использованием проверки подлинности Azure Active Directory](sql-database-aad-authentication.md).
+В этой статье показано, как создать и заполнить Azure AD, а затем использовать Azure AD с [базой данных SQL](sql-database-technical-overview.md)Azure, [управляемым экземпляром](sql-database-managed-instance.md)и [хранилищем данных SQL](../sql-data-warehouse/sql-data-warehouse-overview-what-is.md). Обзор см. в статье [Подключение к базе данных SQL или хранилищу данных SQL c использованием проверки подлинности Azure Active Directory](sql-database-aad-authentication.md).
 
 > [!NOTE]
 > Эта статья относится к Azure SQL Server, а также к базам данных SQL и хранилища данных SQL, создаваемым на сервере SQL Azure. Для простоты база данных SQL используется как для базы данных SQL, так и для хранилища данных SQL.
@@ -42,7 +42,7 @@ ms.locfileid: "71960470"
 1. Свяжите свою подписку Azure с Azure Active Directory, сделав каталог доверенным для подписки Azure, в которой размещена база данных. Дополнительные сведения см. в статье о [связи между подписками Azure и Azure AD](../active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md).
 2. Используйте переключатель каталогов на портале Azure, чтобы перейти к подписке, связанной с предметной областью.
 
-   **Дополнительная информация.** Между каждой подпиской Azure и экземпляром Azure AD установлено отношение доверия. Это означает, что она доверяет каталогу проверять подлинность пользователей, служб и устройств. Несколько подписок могут доверять одному и тому же каталогу, но одна конкретная подписка доверяет только одному каталогу. Данное отношение доверия, которое подписка имеет с каталогом, отличается от отношения, которую подписка имеет со всеми другими ресурсами в Azure (веб-сайтами, базами данных и т. д.), которые больше похожи на дочерние ресурсы подписки. Если срок действия подписки истекает, доступ к другим ресурсам, связанным с этой подпиской, также прекращается. Однако каталог останется в Azure, вы можете связать другую подписку с этим каталогом и продолжать управлять пользователями каталога. Дополнительные сведения о ресурсах см. в статье, посвященной [доступу к ресурсам в Azure](../active-directory/active-directory-b2b-admin-add-users.md). Дополнительные сведения об этих отношениях доверия см. в статье о [связывании подписки Azure с Azure Active Directory или добавлении ее в службу](../active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md).
+   **Дополнительные сведения.** Каждая подписка Azure связана отношением доверия с экземпляром Azure AD. Это означает, что она доверяет каталогу проверять подлинность пользователей, служб и устройств. Несколько подписок могут доверять одному и тому же каталогу, но одна конкретная подписка доверяет только одному каталогу. Данное отношение доверия, которое подписка имеет с каталогом, отличается от отношения, которую подписка имеет со всеми другими ресурсами в Azure (веб-сайтами, базами данных и т. д.), которые больше похожи на дочерние ресурсы подписки. Если срок действия подписки истекает, доступ к другим ресурсам, связанным с этой подпиской, также прекращается. Однако каталог останется в Azure, вы можете связать другую подписку с этим каталогом и продолжать управлять пользователями каталога. Дополнительные сведения о ресурсах см. в статье, посвященной [доступу к ресурсам в Azure](../active-directory/active-directory-b2b-admin-add-users.md). Дополнительные сведения об этих отношениях доверия см. в статье о [связывании подписки Azure с Azure Active Directory или добавлении ее в службу](../active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md).
 
 ## <a name="create-an-azure-ad-administrator-for-azure-sql-server"></a>Создание администратора Azure AD для сервера Azure SQL Server
 
@@ -53,18 +53,18 @@ ms.locfileid: "71960470"
 > [!NOTE]
 > Пользователи без учетной записи Azure AD (включая учетную запись администратора Azure SQL Server) не могут создавать пользователей на основе Azure AD, так как у них нет разрешения на проверку предложенных пользователей базы данных с помощью Azure AD.
 
-## <a name="provision-an-azure-active-directory-administrator-for-your-managed-instance"></a>Подготовка администратора Azure Active Directory для управляемого экземпляра
+## <a name="provision-an-azure-active-directory-administrator-for-your-managed-instance"></a>Предоставление администратора Azure Active Directory для управляемого экземпляра
 
 > [!IMPORTANT]
-> Выполните следующие действия, только если вы подготавливаете управляемый экземпляр. Эта операция может выполняться только глобальным администратором или администратором компании в Azure AD. Ниже описывается процесс предоставления разрешений пользователям, имеющим разные привилегии в каталоге.
+> Выполните следующие действия, только если вы подготавливаете управляемый экземпляр. Эта операция может выполняться только глобально/администратором или администратором привилегированных ролей в Azure AD. Ниже описывается процесс предоставления разрешений пользователям, имеющим разные привилегии в каталоге.
 
-Управляемому экземпляру требуются разрешения на чтение Azure AD для успешного выполнения задач, таких как аутентификация пользователей посредством членства в группе безопасности или создание пользователей. Для этого необходимо предоставить для управляемого экземпляра разрешения на чтение Azure AD. Существуют два способа сделать это: с помощью портала и PowerShell. Ниже описываются оба способа.
+Управляемому экземпляру требуются разрешения на чтение Azure AD для успешного выполнения таких задач, как проверка подлинности пользователей с помощью членства в группе безопасности или создание новых пользователей. Чтобы это работало, необходимо предоставить управляемому экземпляру разрешения на чтение Azure AD. Существуют два способа сделать это: с помощью портала и PowerShell. Ниже описываются оба способа.
 
 1. В правом верхнем углу портала Azure щелкните имя подключения, чтобы открыть список доступных каталогов Active Directory.
 2. Выберите нужный экземпляр Active Directory в качестве Azure AD по умолчанию.
 
-   С помощью этого шага можно связать подписку Active Directory с управляемым экземпляром, чтобы одна и та же подписка использовалась для Azure AD и управляемого экземпляра.
-3. Перейдите к службе "Управляемый экземпляр Базы данных SQL" и выберите управляемый экземпляр, который вы хотите использовать для интеграции с Azure AD.
+   Этот шаг связывает подписку, связанную с Active Directory, с управляемым экземпляром, убедившись, что одна и та же подписка используется как для Azure AD, так и для управляемого экземпляра.
+3. Перейдите к управляемому экземпляру и выберите тот, который вы хотите использовать для интеграции Azure AD.
 
    ![aad](./media/sql-database-aad-authentication/aad.png)
 
@@ -73,8 +73,8 @@ ms.locfileid: "71960470"
     ![Предоставление разрешений на портале](./media/sql-database-aad-authentication/grant-permissions.png)
 
     ```powershell
-    # Gives Azure Active Directory read permission to a Service Principal representing the Managed Instance.
-    # Can be executed only by a "Company Administrator" or "Global Administrator" type of user.
+    # Gives Azure Active Directory read permission to a Service Principal representing the managed instance.
+    # Can be executed only by a "Company Administrator", "Global Administrator", or "Privileged Role Administrator" type of user.
 
     $aadTenant = "<YourTenantId>" # Enter your tenant ID
     $managedInstanceName = "MyManagedInstance"
@@ -128,7 +128,7 @@ ms.locfileid: "71960470"
 
 5. После успешного завершения операции в правом верхнем углу появится следующее уведомление.
 
-    ![success](./media/sql-database-aad-authentication/success.png)
+    ![Успешное завершение](./media/sql-database-aad-authentication/success.png)
 
 6. Теперь вы можете выбрать администратора Azure AD для управляемого экземпляра. Для этого на странице "Администратор Active Directory" щелкните **Задать администратора**.
 
@@ -142,14 +142,62 @@ ms.locfileid: "71960470"
 
 8. В верхней части страницы "Администратор Active Directory" нажмите кнопку **Сохранить**.
 
-    ![сохранить](./media/sql-database-aad-authentication/save.png)
+    ![Сохранить](./media/sql-database-aad-authentication/save.png)
 
     Изменение администратора может занять несколько минут. После этого новый администратор появится в поле "Администратор Active Directory".
 
-После подготовки администратора Azure AD для Управляемого экземпляра вы сможете создавать имена для субъектов сервера (имен для входа) Azure AD (**общедоступная предварительная версия**) с синтаксисом <a href="/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current">CREATE LOGIN</a>. Дополнительные сведения см. в разделе [с обзором Управляемых экземпляров](sql-database-managed-instance.md#azure-active-directory-integration).
+После подготовки администратора Azure AD для управляемого экземпляра можно приступить к созданию участников сервера Azure AD (имен входа) (**общедоступная Предварительная версия**) с помощью синтаксиса <a href="/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current">CREATE LOGIN</a> . Дополнительные сведения см. в разделе [Общие сведения об управляемом экземпляре](sql-database-managed-instance.md#azure-active-directory-integration).
 
 > [!TIP]
 > Чтобы потом удалить учетную запись администратора, в верхней части страницы "Администратор Active Directory" щелкните **Удалить администратора**, а затем нажмите кнопку **Сохранить**.
+
+### <a name="powershell-for-sql-managed-instance"></a>PowerShell для управляемого экземпляра SQL
+
+Чтобы выполнять командлеты PowerShell, необходимо установить и запустить Azure PowerShell. Дополнительные сведения можно узнать в статье [Установка и настройка Azure PowerShell](/powershell/azure/overview). Чтобы подготовить администратора Azure AD, выполните следующие команды Azure PowerShell.
+
+- Connect-AzAccount
+- SELECT-Азсубскриптион
+
+Командлеты, используемые для инициализации и управления администратором Azure AD для управляемого экземпляра SQL:
+
+| Имя командлета | Описание |
+| --- | --- |
+| [Set-Азсклинстанцеактиведиректорядминистратор](/powershell/module/az.sql/set-azsqlinstanceactivedirectoryadministrator) |Подготовка администратора Azure AD для управляемого экземпляра SQL в текущей подписке. (Должно быть из текущей подписки)|
+| [Remove-Азсклинстанцеактиведиректорядминистратор](/powershell/module/az.sql/remove-azsqlinstanceactivedirectoryadministrator) |Удаляет администратора Azure AD для управляемого экземпляра SQL в текущей подписке. |
+| [Get-Азсклинстанцеактиведиректорядминистратор](/powershell/module/az.sql/get-azsqlinstanceactivedirectoryadministrator) |Возвращает сведения о администраторе Azure AD для управляемого экземпляра SQL в текущей подписке.|
+
+### <a name="powershell-examples-for-managed-instance"></a>Примеры PowerShell для управляемого экземпляра
+
+Следующая команда получает сведения об администраторе Azure AD для управляемого экземпляра с именем ManagedInstance01, связанного с группой ресурсов с именем ResourceGroup01.
+
+```powershell
+Get-AzSqlInstanceActiveDirectoryAdministrator -ResourceGroupName "ResourceGroup01" -InstanceName "ManagedInstance01"
+```
+
+Следующая команда подготавливает группу администраторов Azure AD с именем DBA для управляемого экземпляра с именем ManagedInstance01. Этот сервер связан с группой ресурсов ResourceGroup01.
+
+```powershell
+Set-AzSqlInstanceActiveDirectoryAdministrator -ResourceGroupName "ResourceGroup01" -InstanceName "ManagedInstance01" -DisplayName "DBAs" -ObjectId "40b79501-b343-44ed-9ce7-da4c8cc7353b"
+```
+
+Следующая команда удаляет администратора Azure AD для управляемого экземпляра с именем ManagedInstanceName01, связанного с группой ресурсов ResourceGroup01.
+
+```powershell
+Remove-AzSqlInstanceActiveDirectoryAdministrator -ResourceGroupName "ResourceGroup01" -InstanceName "ManagedInstanceName01" -Confirm -PassThru
+```
+
+### <a name="cli-for-sql-managed-instance"></a>CLI для управляемого экземпляра SQL
+
+Вы также можете подготавливать экземпляр администратора Azure AD для управляемого экземпляра SQL, вызвав следующие команды интерфейса командной строки:
+
+| Команда | Описание |
+| --- | --- |
+|[AZ SQL MI AD — создание администратора](https://docs.microsoft.com/cli/azure/sql/mi/ad-admin#az-sql-mi-ad-admin-create) |Подготавливает администратора Azure Active Directory для управляемого экземпляра SQL. (Должно быть из текущей подписки) |
+|[AZ SQL MI AD — администратор удаление](https://docs.microsoft.com/cli/azure/sql/mi/ad-admin#az-sql-mi-ad-admin-delete) |Удаляет Azure Active Directory администратора для управляемого экземпляра SQL. |
+|[AZ SQL MI AD — список администраторов](https://docs.microsoft.com/cli/azure/sql/mi/ad-admin#az-sql-mi-ad-admin-list) |Возвращает сведения о администраторе Azure Active Directory, настроенном в настоящее время для управляемого экземпляра SQL. |
+|[AZ SQL MI AD — обновление администратора](https://docs.microsoft.com/cli/azure/sql/mi/ad-admin#az-sql-mi-ad-admin-update) |Обновляет Active Directory администратора для управляемого экземпляра SQL. |
+
+Дополнительные сведения о командах CLI см. в разделе [AZ SQL MI](https://docs.microsoft.com/cli/azure/sql/mi). 
 
 ## <a name="provision-an-azure-active-directory-administrator-for-your-azure-sql-database-server"></a>Подготовка администратора Azure Active Directory для сервера Базы данных SQL Azure
 
@@ -172,7 +220,7 @@ ms.locfileid: "71960470"
 3. На странице **SQL Server** выберите **Администратор Active Directory**.
 4. На странице **Администратор Active Directory** щелкните **Задать администратора**.  ![выберите Active Directory](./media/sql-database-aad-authentication/select-active-directory.png)  
 
-5. На странице **Добавление администратора** найдите пользователя, выберите пользователя (или группу), чтобы назначить его администратором, и щелкните **Выбрать**. На странице "Администратор Active Directory" отобразятся все участники и группы Active Directory. Пользователей или группы, которые выделены серым цветом, нельзя выбрать; они не поддерживаются ролью администратора Azure AD. (Список поддерживаемых администраторов см. в разделе о **функциях и ограничениях Azure AD** статьи [Использование аутентификации Azure Active Directory для аутентификации с помощью базы данных SQL или хранилища данных SQL](sql-database-aad-authentication.md).) Управление доступом на основе ролей (RBAC) применяется только к порталу и не распространяется на SQL Server.
+5. На странице **Добавление администратора** найдите пользователя, выберите пользователя (или группу), чтобы назначить его администратором, и щелкните **Выбрать**. На странице "Администратор Active Directory" отобразятся все участники и группы Active Directory. Пользователей или группы, которые выделены серым цветом, нельзя выбрать; они не поддерживаются ролью администратора Azure AD. (См. список поддерживаемых администраторов в разделе **функции и ограничения Azure AD** в статье [Использование Azure Active Directory проверки подлинности для проверки подлинности с помощью базы данных SQL или хранилища данных SQL](sql-database-aad-authentication.md).) Управление доступом на основе ролей (RBAC) применяется только к порталу и не распространяется на SQL Server.
     ![выбор администратора](./media/sql-database-aad-authentication/select-admin.png)  
 
 6. В верхней части страницы **Администратор Active Directory** нажмите кнопку **Сохранить**.
@@ -185,22 +233,24 @@ ms.locfileid: "71960470"
 
 Чтобы потом удалить учетную запись администратора, в верхней части страницы **Администратор Active Directory** щелкните **Удалить администратора**, а затем нажмите кнопку **Сохранить**.
 
-### <a name="powershell"></a>PowerShell
+### <a name="powershell-for-azure-sql-database-and-azure-sql-data-warehouse"></a>PowerShell для базы данных SQL Azure и хранилища данных SQL Azure
 
 Чтобы выполнять командлеты PowerShell, необходимо установить и запустить Azure PowerShell. Дополнительные сведения можно узнать в статье [Установка и настройка Azure PowerShell](/powershell/azure/overview). Чтобы подготовить администратора Azure AD, выполните следующие команды Azure PowerShell.
 
 - Connect-AzAccount
 - SELECT-Азсубскриптион
 
-Командлеты, используемые для подготовки администратора Azure AD и управления им:
+Командлеты, используемые для инициализации и управления администратором Azure AD для базы данных SQL Azure и хранилища данных SQL Azure:
 
 | Имя командлета | Описание |
 | --- | --- |
-| [Set-AzSqlServerActiveDirectoryAdministrator](/powershell/module/az.sql/set-azsqlserveractivedirectoryadministrator) |Выполняет подготовку учетной записи администратора Azure Active Directory для сервера Azure SQL Server или хранилища данных SQL Azure. (должен входить в текущую подписку). |
-| [Remove-AzSqlServerActiveDirectoryAdministrator](/powershell/module/az.sql/remove-azsqlserveractivedirectoryadministrator) |Удаляет учетную запись администратора Azure Active Directory для сервера Azure SQL Server или хранилища данных SQL Azure. |
+| [Set-Азсклсерверактиведиректорядминистратор](/powershell/module/az.sql/set-azsqlserveractivedirectoryadministrator) |Выполняет подготовку учетной записи администратора Azure Active Directory для сервера Azure SQL Server или хранилища данных SQL Azure. (Должно быть из текущей подписки) |
+| [Remove-Азсклсерверактиведиректорядминистратор](/powershell/module/az.sql/remove-azsqlserveractivedirectoryadministrator) |Удаляет учетную запись администратора Azure Active Directory для сервера Azure SQL Server или хранилища данных SQL Azure. |
 | [Get-Азсклсерверактиведиректорядминистратор](/powershell/module/az.sql/get-azsqlserveractivedirectoryadministrator) |Возвращает сведения о текущем администраторе Azure Active Directory, настроенном для сервера Azure SQL Server или хранилища данных SQL Azure. |
 
-Чтобы получить дополнительные сведения о каждой из этих команд, используйте команду PowerShell get-help, например ``get-help Set-AzSqlServerActiveDirectoryAdministrator``.
+Чтобы просмотреть дополнительные сведения о каждой из этих команд, используйте команду PowerShell Get-Help. Пример: ``get-help Set-AzSqlServerActiveDirectoryAdministrator``.
+
+### <a name="powershell-examples-for-azure-sql-database-and-azure-sql-data-warehouse"></a>Примеры PowerShell для базы данных SQL Azure и хранилища данных SQL Azure
 
 Приведенный ниже скрипт выполняет подготовку группы администраторов Azure AD с именем **DBA_Group** (идентификатор объекта `40b79501-b343-44ed-9ce7-da4c8cc7353f`) для сервера **demo_server** в группе ресурсов с именем **Group-23**.
 
@@ -236,20 +286,21 @@ Get-AzSqlServerActiveDirectoryAdministrator -ResourceGroupName "Group-23" -Serve
 Remove-AzSqlServerActiveDirectoryAdministrator -ResourceGroupName "Group-23" -ServerName "demo_server"
 ```
 
-Кроме того, можно подготовить администратора Azure Active Directory с помощью интерфейсов REST API. Дополнительные сведения см. в справочнике по REST API управления службами и статье [Operations for Azure SQL Databases](https://docs.microsoft.com/rest/api/sql/) (Операции для Базы данных SQL Azure).
+> [!NOTE]
+> Кроме того, можно подготовить администратора Azure Active Directory с помощью интерфейсов REST API. Дополнительные сведения см. в справочнике по REST API управления службами и статье [Operations for Azure SQL Databases](https://docs.microsoft.com/rest/api/sql/) (Операции для Базы данных SQL Azure).
 
-### <a name="cli"></a>CLI  
+### <a name="cli-for-azure-sql-database-and-azure-sql-data-warehouse"></a>Интерфейс командной строки для базы данных SQL Azure и хранилища данных SQL Azure
 
 Можно также подготовить администратора Azure AD с помощью следующих команд CLI:
 
-| Command | Описание |
+| Команда | Описание |
 | --- | --- |
-|[az sql server ad-admin create](https://docs.microsoft.com/cli/azure/sql/server/ad-admin#az-sql-server-ad-admin-create) |Выполняет подготовку учетной записи администратора Azure Active Directory для сервера Azure SQL Server или хранилища данных SQL Azure. (должен входить в текущую подписку). |
+|[az sql server ad-admin create](https://docs.microsoft.com/cli/azure/sql/server/ad-admin#az-sql-server-ad-admin-create) |Выполняет подготовку учетной записи администратора Azure Active Directory для сервера Azure SQL Server или хранилища данных SQL Azure. (Должно быть из текущей подписки) |
 |[az sql server ad-admin delete](https://docs.microsoft.com/cli/azure/sql/server/ad-admin#az-sql-server-ad-admin-delete) |Удаляет учетную запись администратора Azure Active Directory для сервера Azure SQL Server или хранилища данных SQL Azure. |
 |[az sql server ad-admin list](https://docs.microsoft.com/cli/azure/sql/server/ad-admin#az-sql-server-ad-admin-list) |Возвращает сведения о текущем администраторе Azure Active Directory, настроенном для сервера Azure SQL Server или хранилища данных SQL Azure. |
 |[az sql server ad-admin update](https://docs.microsoft.com/cli/azure/sql/server/ad-admin#az-sql-server-ad-admin-update) |Обновляет учетную запись администратора Active Directory для сервера SQL Server Azure или хранилища данных SQL Azure. |
 
-Дополнительные сведения о командах CLI см. в статье [SQL Server - az sql server](https://docs.microsoft.com/cli/azure/sql/server).  
+Дополнительные сведения о командах интерфейса командной строки см. в разделе [AZ SQL Server](https://docs.microsoft.com/cli/azure/sql/server).
 
 ## <a name="configure-your-client-computers"></a>Настройка клиентских компьютеров
 
@@ -268,7 +319,7 @@ Remove-AzSqlServerActiveDirectoryAdministrator -ResourceGroupName "Group-23" -Se
 ## <a name="create-contained-database-users-in-your-database-mapped-to-azure-ad-identities"></a>Создание пользователей автономной базы данных в базе данных, сопоставленной с удостоверениями Azure AD
 
 >[!IMPORTANT]
->Управляемый экземпляр теперь поддерживает субъекты сервера (имена для входа) Azure AD (**общедоступная предварительная версии**), благодаря чему вы можете создавать имена для входа для пользователей, групп или приложений Azure AD. Субъекты сервера (имена для входа) Azure AD предоставляют возможность выполнить проверку подлинности в Управляемом экземпляре без необходимости создания пользователей базы данных в качестве пользователей автономной базы данных. Дополнительные сведения см. в разделе [с обзором Управляемых экземпляров](sql-database-managed-instance.md#azure-active-directory-integration). Сведения о синтаксисе для создания субъектов сервера (имен для входа) Azure AD см. в статье <a href="/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current">CREATE LOGIN (Transact-SQL)</a>.
+>Управляемый экземпляр теперь поддерживает субъекты сервера Azure AD (имена для входа) (**общедоступная Предварительная версия**), что позволяет создавать имена входа из пользователей, групп или приложений Azure AD. Участники сервера Azure AD (имена входа) предоставляют возможность проверки подлинности в управляемом экземпляре, не требуя создания пользователей базы данных в качестве пользователя автономной базы данных. Дополнительные сведения см. в разделе [Общие сведения об управляемом экземпляре](sql-database-managed-instance.md#azure-active-directory-integration). Сведения о синтаксисе для создания субъектов сервера (имен для входа) Azure AD см. в статье <a href="/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current">CREATE LOGIN (Transact-SQL)</a>.
 
 Для проверки подлинности Azure Active Directory необходимо, чтобы пользователи базы данных создавались как пользователи автономной базы данных. Пользователь автономной базы данных на основе удостоверения Azure AD —это пользователь, у которого нет имени для входа в базу данных master и который сопоставляется с удостоверением в каталоге Azure AD, связанном с базой данных. Удостоверение Azure AD может быть учетной записью отдельного пользователя или группы. Дополнительные сведения о пользователях автономной базы данных см. в статье [Пользователи автономной базы данных — создание переносимой базы данных](https://msdn.microsoft.com/library/ff929188.aspx).
 
@@ -285,7 +336,7 @@ CREATE USER <Azure_AD_principal_name> FROM EXTERNAL PROVIDER;
 
 Значением параметра *Azure_AD_principal_name* может быть имя участника-пользователя Azure AD или отображаемое имя группы Azure AD.
 
-**Примеры** Создание пользователя автономной базы данных, представляющего собой пользователя федеративного или управляемого домена Azure AD:
+**Примеры.** Создание пользователя автономной базы данных, представляющего собой пользователя федеративного или управляемого домена Azure AD:
 
 ```sql
 CREATE USER [bob@contoso.com] FROM EXTERNAL PROVIDER;
@@ -347,14 +398,14 @@ CREATE USER [appName] FROM EXTERNAL PROVIDER;
 
     ![Выбор имени базы данных][13]
 
-## <a name="active-directory-password-authentication"></a>Проверка подлинности с помощью пароля Active Directory
+## <a name="active-directory-password-authentication"></a>Проверка пароля Active Directory
 
 Используйте этот метод при подключении с помощью имени участника Azure AD, в котором используется управляемый домен Azure AD. Его также можно использовать для федеративных учетных записей без доступа к домену, например при удаленной работе.
 
 Используйте этот способ для проверки подлинности в базе данных или хранилище данных SQL с Azure AD для собственных федеративных пользователей Azure AD. Собственные пользователи являются единственным исключением, созданным в Azure AD, для которых производится проверка подлинности с помощью имени и пароля, в то время как федеративный пользователь является пользователем Windows, чей домен объединен с Azure AD. Второй способ (использование пользователя и пароля) можно использовать, когда пользователю необходимо войти с учетными данными Windows, но локальный компьютер не присоединен к домену (при использовании, например, удаленного доступа). В этом случае пользователь Windows может указать учетную запись и пароль домена и пройти проверку подлинности в базе данных или хранилище данных SQL с помощью федеративных учетных данных.
 
 1. Запустите Management Studio или Data Tools и в диалоговом окне **Подключение к серверу** (или **Подключиться к ядру СУБД**) в поле **Проверка подлинности** выберите **Active Directory — пароль**.
-2. В поле **имя пользователя** введите имя пользователя Azure Active Directory в формате **username\@domain.com**. Именем пользователя должна быть учетная запись из Azure Active Directory или учетная запись из федерации домена с Azure Active Directory.
+2. В поле **имя пользователя** введите имя пользователя Azure Active Directory в формате **имя пользователя \@domain. com**. Именем пользователя должна быть учетная запись из Azure Active Directory или учетная запись из федерации домена с Azure Active Directory.
 3. В поле **Пароль** введите пароль пользователя для учетной записи Azure Active Directory или учетной записи федеративного домена.
 
     ![Выбор проверки пароля Active Directory][12]
@@ -396,7 +447,7 @@ conn.Open();
 
 Этот метод проверки подлинности позволяет службам среднего уровня подключаться к базе данных SQL Azure или хранилищу данных SQL Azure путем получения маркера из Azure Active Directory (AAD). Он используется для реализации сложных сценариев, включая проверку подлинности на основе сертификатов. Для работы с проверкой подлинности маркера Azure AD необходимо выполнить четыре основных шага.
 
-1. Зарегистрируйте приложение в Azure Active Directory и получите идентификатор клиента для кода.
+1. Зарегистрируйте приложение в Azure Active Directory и получите идентификатор клиента для своего кода.
 2. Создайте пользователя базы данных, представляющего приложение. (Выполнено ранее на шаге 6.)
 3. Создайте сертификат на клиентском компьютере, на котором выполняется приложение.
 4. Добавьте сертификат в качестве ключа для вашего приложения.
@@ -417,14 +468,14 @@ conn.Open();
 Ниже приведены инструкции для подключения с помощью sqlcmd версии 13.1, доступной в [Центре загрузки](https://go.microsoft.com/fwlink/?LinkID=825643).
 
 > [!NOTE]
-> `sqlcmd` с командой `-G` не работает с системными удостоверениями и требует входа участника-пользователя.
+> `sqlcmd` с командой `-G` не работает с удостоверениями системы и требует входа субъекта-пользователя.
 
 ```cmd
 sqlcmd -S Target_DB_or_DW.testsrv.database.windows.net  -G  
 sqlcmd -S Target_DB_or_DW.testsrv.database.windows.net -U bob@contoso.com -P MyAADPassword -G -l 30
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Общие сведения о доступе к базе данных SQL и управлении ею см. в статье [Контроль доступа к базе данных SQL Azure](sql-database-control-access.md).
 - Общие сведения об именах для входа, пользователях и ролях базы данных в базе данных SQL см. в статье [Предоставление доступа к базе данных и управление им](sql-database-manage-logins.md).

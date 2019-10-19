@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 10/15/2019
 ms.author: raynew
-ms.openlocfilehash: 843cac8c7a5e6c80b7663df2a48079dd307b7d5a
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: f0b66806138311508725d377b59b83c1b1365674
+ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72383514"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72553547"
 ---
 # <a name="support-matrix-for-replicating-azure-vms-from-one-region-to-another"></a>Матрица поддержки репликации виртуальных машин Azure из одного региона в другой
 
@@ -102,8 +102,8 @@ Windows 7 (x64) с пакетом обновления 1 (SP1) — назад | 
 
 **Операционная система** | **Дополнительные сведения**
 --- | ---
-Red Hat Enterprise Linux | 6.7, 6.8, 6.9, 6.10, 7.0, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6  
-CentOS | 6.5, 6.6, 6.7, 6.8, 6.9, 6.10, 7.0, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6
+Red Hat Enterprise Linux | 6,7, 6,8, 6,9, 6,10, 7,0, 7,1, 7,2, 7,3, 7,4, 7,5, 7,6, 7,7 
+CentOS | 6,5, 6,6, 6,7, 6,8, 6,9, 6,10, 7,0, 7,1, 7,2, 7,3, 7,4, 7,5, 7,6, 7,7
 Сервер Ubuntu 14.04 LTS | [Поддерживаемые версии ядра](#supported-ubuntu-kernel-versions-for-azure-virtual-machines)
 Сервер Ubuntu 16.04 LTS | [Поддерживаемая версия ядра](#supported-ubuntu-kernel-versions-for-azure-virtual-machines)<br/><br/> Серверы Ubuntu, использующие проверку подлинности на основе пароля и вход, а также пакет Cloud-init для настройки облачных виртуальных машин, могут иметь возможность входа на основе пароля, отключенной при отработке отказа (в зависимости от конфигурации поддержкой). Вход на основе пароля можно снова включить на виртуальной машине, переустановив пароль в меню "Поддержка > Устранение неполадок >" (для виртуальной машины, для которой выполнена отработка отказа в портал Azure.
 Debian 7 | [Поддерживаемые версии ядра](#supported-debian-kernel-versions-for-azure-virtual-machines)

@@ -1,20 +1,18 @@
 ---
 title: Отслеживание служб и приложений Azure с помощью Grafana
 description: Маршрутизация данных Azure Monitor и Application Insights для просмотра в Grafana.
-services: azure-monitor
-keywords: ''
+ms.service: azure-monitor
+ms.subservice: ''
+ms.topic: conceptual
 author: rboucher
 ms.author: robb
 ms.date: 11/06/2017
-ms.topic: conceptual
-ms.service: azure-monitor
-ms.subservice: ''
-ms.openlocfilehash: b9a9d0a16a31d06d0d4edc1b6f0617a5771b179e
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: f5464710d5c7908eeec5dd917bfeff4756ff4e80
+ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69872842"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72552101"
 ---
 # <a name="monitor-your-azure-services-in-grafana"></a>Мониторинг служб Azure в Grafana
 Теперь можно отслеживать службы Azure и приложения из [Grafana](https://grafana.com/) с помощью [подключаемого модуля источника данных Azure Monitor](https://grafana.com/plugins/grafana-azure-monitor-datasource). Подключаемый модуль собирает данные производительности приложения, собранные Azure Monitor, включая различные журналы и метрики. Затем эти данные можно отобразить на панели мониторинга Grafana.
@@ -109,7 +107,7 @@ ms.locfileid: "69872842"
     ![Пример двух диаграмм Grafana](media/grafana-plugin/grafana6.png)
 
 
-## <a name="optional-monitor-your-custom-metrics-in-the-same-grafana-server"></a>Дополнительно Мониторинг настраиваемых метрик на том же сервере Grafana
+## <a name="optional-monitor-your-custom-metrics-in-the-same-grafana-server"></a>Мониторинг настраиваемых метрик на том же сервере Grafana (необязательно)
 
 Можно также установить Telegraf и InfluxDB, чтобы собирать и представлять на графике настраиваемые метрики и метрики на основе агента в одном экземпляре Grafana. Есть множество подключаемых модулей источников данных, с помощью которых можно объединить эти метрики на панели мониторинга.
 
@@ -162,6 +160,6 @@ Usage
 1. В меню слева на портале Azure щелкните **Группы ресурсов**, а затем выберите **Grafana**.
 2. На странице группы ресурсов щелкните **Удалить**, в текстовом поле введите **Grafana** и выберите **Удалить**.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Обзор метрик в Microsoft Azure](data-platform.md)
 

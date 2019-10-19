@@ -1,24 +1,18 @@
 ---
 title: Представления в решениях по управлению | Документация Майкрософт
 description: 'Как правило, решения по управлению включают одно или несколько представлений для визуализации данных.  В этой статье описывается, как экспортировать представление, созданное в конструкторе представлений, и добавить его в решение для управления. '
-services: monitoring
-documentationcenter: ''
-author: bwren
-manager: jwhit
-editor: tysonn
-ms.assetid: 570b278c-2d47-4e5a-9828-7f01f31ddf8c
 ms.service: azure-monitor
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 01/16/2018
+ms.subservice: ''
+ms.topic: conceptual
+author: bwren
 ms.author: bwren
-ms.openlocfilehash: cefb83d5336bb99fd09001b5ea369a0b8fc4b942
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.date: 01/16/2018
+ms.openlocfilehash: 473d10bbec6ca056554f7223800a32e9ca93578e
+ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60596634"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72553896"
 ---
 # <a name="views-in-management-solutions-preview"></a>Представления в решениях по управлению (предварительная версия)
 > [!NOTE]
@@ -35,7 +29,7 @@ ms.locfileid: "60596634"
 ## <a name="prerequisites"></a>Технические условия
 В этой статье предполагается, что вы уже знаете, как [создать решение для управления](solutions-creating.md) и структуру файла решения.
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Краткое описание
 Чтобы добавить представление в решение для управления, создайте для него **ресурс** в [файле решения](solutions-creating.md).  JSON, описывающий подробную конфигурацию представления, как правило, сложный. Обычный разработчик решений не сможет создать его вручную.  Самый распространенный способ — создать представление с помощью [конструктора представлений](../../azure-monitor/platform/view-designer.md), экспортировать его и добавить его подробную конфигурацию в решение.
 
 Ниже приведены основные действия по добавлению представления в решение.  Каждое из этих действий подробно описано в следующих разделах.
@@ -96,7 +90,7 @@ ms.locfileid: "60596634"
 | Версия рабочей области | Версия API | Запрос |
 |:---|:---|:---|
 | v1 (прежняя версия)   | 2015-11-01-preview | Устаревший формат.<br> Пример: Type=Event EventLevelName = Error  |
-| v2 (обновленная версия) | 2015-11-01-preview | Устаревший формат.  Преобразовывается в обновленный формат при установке.<br> Пример: Type=Event EventLevelName = Error<br>Преобразовывается в Event &#124; where EventLevelName == "Error"  |
+| v2 (обновленная версия) | 2015-11-01-preview | Устаревший формат.  Преобразовывается в обновленный формат при установке.<br> Пример: Type=Event EventLevelName = Error<br>Преобразовывается в: Event &#124; where EventLevelName == "Error"  |
 | v2 (обновленная версия) | 2017-03-03-preview | Обновленный формат. <br>Пример: Event &#124; where EventLevelName == "Error"  |
 
 

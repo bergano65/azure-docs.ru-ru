@@ -1,18 +1,18 @@
 ---
 title: Прекращается поддержка API классической модели развертывания для метрик и автомасштабирования в Azure Monitor
 description: Прекращается поддержка классических API метрик и автомасштабирования, именуемых также моделью развертывания RDFE или Azure Service Management (ASM)
-author: rboucher
-services: azure-monitor
 ms.service: azure-monitor
+ms.subservice: ''
 ms.topic: conceptual
-ms.date: 11/19/2018
+author: rboucher
 ms.author: robb
-ms.openlocfilehash: ce54b63aa7831ed40a8592d536c43fc83fdc5567
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 11/19/2018
+ms.openlocfilehash: 7a93419ee84e6a50ce07cefa941a8df9f85b7b6e
+ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60709989"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72552196"
 ---
 # <a name="azure-monitor-retirement-of-classic-deployment-model-apis-for-metrics-and-autoscale"></a>Прекращается поддержка API классической модели развертывания для метрик и автомасштабирования в Azure Monitor
 
@@ -61,7 +61,7 @@ ms.locfileid: "60709989"
 - поддержка измерений;
 - унифицированная 1-минутная степень детализации метрик для служб; 
 - усовершенствованные запросы;
-- увеличение периода хранения данных (93 дня для метрик по сравнению с 30 днями). 
+- более высокий срок хранения данных (93 дней метрик по сравнению с 30 днями) 
 
 Как и другие службы в Azure, API для Azure Monitor на основе Resource Manager обеспечивают лучшую производительность, масштабируемость и надежность. 
 
@@ -75,11 +75,11 @@ ms.locfileid: "60709989"
 
 Вызовы классических API, перечисленных ранее, завершатся ошибкой. Будут возвращаться сообщения об ошибках примерно следующего вида:
 
-Для автомасштабирования: *Этот API не рекомендуется. Используйте портал Azure, пакет SDK для Azure Monitor, PowerShell, интерфейс командной строки или шаблоны Resource Manager для управления параметрами автомасштабирования*".  
+Для автомасштабирования: *Этот API является устаревшим. Используйте шаблоны портал Azure, Azure Monitor SDK, PowerShell, интерфейса командной строки или диспетчер ресурсов для управления параметрами автомасштабирования*.  
 
-Для метрик: *Этот API не рекомендуется. Используйте портал Azure, пакет SDK для Azure Monitor, PowerShell или интерфейс командной строки для запрашивания метрик*".
+Для метрик: *Этот API является устаревшим. Используйте портал Azure, Azure Monitor SDK, PowerShell, CLI для запроса метрик*.
 
-## <a name="email-notifications"></a>Уведомления по почте
+## <a name="email-notifications"></a>Уведомления по электронной почте
 
 Было отправлено уведомление о прекращении поддержки на электронные адреса для следующих ролей учетной записи: 
 

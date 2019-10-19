@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/08/2019
-ms.openlocfilehash: 8ba50e5b55e31c6542e81879068bf231918ce1b0
-ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
+ms.openlocfilehash: 1ec241e261a7710b7a5b92d88f147ce8d148602b
+ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72244893"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72554040"
 ---
 # <a name="monitoring-azure-resources-with-azure-monitor"></a>Мониторинг ресурсов Azure с помощью Azure Monitor
 При наличии критически важных приложений и бизнес-процессов, использующих ресурсы Azure, необходимо отслеживать эти ресурсы на предмет их доступности, производительности и работы. В этой статье описываются данные мониторинга, созданные ресурсами Azure, а также способы использования функций Azure Monitor для анализа и оповещения об этих данных.
@@ -52,7 +52,7 @@ Azure Monitor — это полная служба мониторинга сте
 ## <a name="monitoring-data"></a>Данные мониторинга
 Ресурсы в Azure создают [журналы](../platform/data-platform-logs.md) и [метрики](../platform/data-platform-metrics.md) , показанные на следующей схеме. Ознакомьтесь с документацией по каждому из служб Azure, чтобы получить конкретные данные, которые они создают, а также любые дополнительные решения или аналитические сведения, которые они предоставляют.
 
-![Обзор](media/monitor-azure-resource/logs-metrics.png)
+![Краткое описание](media/monitor-azure-resource/logs-metrics.png)
 
 
 
@@ -92,7 +92,7 @@ Azure Monitor — это полная служба мониторинга сте
 - Основные сведения об использовании обозревателя метрик см. в статье [Приступая к работе с Azure обозреватель метрик](../platform/metrics-getting-started.md) .
 - Дополнительные возможности обозревателя метрик, такие как использование нескольких метрик и применение фильтров и разбиение, см. в статье [Расширенные возможности обозреватель метрик Azure](../platform/metrics-charts.md) .
 
-![metrics](media/monitor-azure-resource/metrics.png)
+![Метрики](media/monitor-azure-resource/metrics.png)
 
 
 ## <a name="analyzing-logs"></a>анализ журналов;
@@ -119,7 +119,7 @@ Azure Monitor — это полная служба мониторинга сте
 ![Журналы](media/monitor-azure-resource/logs.png)
 
 
-## <a name="alerts"></a>Предупреждения
+## <a name="alerts"></a>Оповещения
 [Оповещения](../platform/alerts-overview.md) заблаговременно уведомляют Вас и потенциально принимают меры при обнаружении важных условий в данных мониторинга. Вы создаете правило генерации оповещений, определяющее целевой объект для предупреждения, условия создания предупреждения и действия, которые необходимо выполнить в ответе.
 
 Для различных типов правил генерации оповещений используются различные виды данных мониторинга.
@@ -140,8 +140,8 @@ Azure Monitor — это полная служба мониторинга сте
 
 - Ознакомьтесь с документацией по мониторингу для каждой службы, чтобы определить, есть ли доступные сведения или решения.
 
-![Аналитика](media/monitor-azure-resource/insights.png)
+![Аналитические сведения](media/monitor-azure-resource/insights.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Подробные сведения о журналах ресурсов для различных служб Azure см. в статье [Поддерживаемые службы, схемы и категории для журналов диагностики Azure](../platform/diagnostic-logs-schema.md) .  

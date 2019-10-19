@@ -1,24 +1,18 @@
 ---
 title: Что такое Azure Monitor для виртуальных машин (предварительная версия)? | Документация Майкрософт
 description: Azure Monitor для виртуальных машин — это функция Azure Monitor, объединяющая работоспособность и мониторинг производительности операционной системы виртуальной машины Azure, а также автоматически обнаруживающая компоненты приложений и зависимости от других ресурсов и сопоставляющая взаимодействие между ними. В статье представлены общие сведения.
-services: azure-monitor
-documentationcenter: ''
-author: mgoedtel
-manager: carmonm
-editor: tysonn
-ms.assetid: ''
 ms.service: azure-monitor
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 10/15/2019
+ms.subservice: ''
+ms.topic: conceptual
+author: mgoedtel
 ms.author: magoedte
-ms.openlocfilehash: 3569247ad560f985c041eeb11a7d274e15bfeb4c
-ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
-ms.translationtype: HT
+ms.date: 10/15/2019
+ms.openlocfilehash: 2364218a9ccbde1cbfc276e3354cb93e42e5ce0b
+ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/17/2019
-ms.locfileid: "72515377"
+ms.locfileid: "72553753"
 ---
 # <a name="what-is-azure-monitor-for-vms-preview"></a>Что такое Azure Monitor для виртуальных машин (предварительная версия)?
 

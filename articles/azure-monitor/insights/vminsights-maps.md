@@ -1,24 +1,18 @@
 ---
 title: Просмотр зависимостей приложения с помощью Azure Monitor для виртуальных машин (предварительная версия) | Документация Майкрософт
 description: Map — это функция Azure Monitor для виртуальных машин. Он автоматически обнаруживает компоненты приложений в системах Windows и Linux и сопоставляет взаимодействие между службами. В этой статье приводятся сведения о том, как использовать функцию Map в различных сценариях.
-services: azure-monitor
-documentationcenter: ''
-author: mgoedtel
-manager: carmonm
-editor: tysonn
-ms.assetid: ''
 ms.service: azure-monitor
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 10/15/2019
+ms.subservice: ''
+ms.topic: conceptual
+author: mgoedtel
 ms.author: magoedte
-ms.openlocfilehash: 456ed0a48db015d3c95827942a576e6916095131
-ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
-ms.translationtype: HT
+ms.date: 10/15/2019
+ms.openlocfilehash: f886ce4ed1b9396cf90bf98626e0cfd2424b2eac
+ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/17/2019
-ms.locfileid: "72515444"
+ms.locfileid: "72553780"
 ---
 # <a name="use-the-map-feature-of-azure-monitor-for-vms-preview-to-understand-application-components"></a>Использование функции Map в Azure Monitor для виртуальных машин (Предварительная версия) для понимания компонентов приложения
 В Azure Monitor для виртуальных машин можно просматривать обнаруженные компоненты приложения на виртуальных машинах Windows и Linux, работающих в Azure или в среде. Наблюдать за виртуальными машинами можно двумя способами. Просмотрите карту непосредственно из виртуальной машины или просмотрите карту из Azure Monitor, чтобы просмотреть компоненты по группам виртуальных машин. Эта статья поможет вам понять эти два метода просмотра и использовать функцию Map. 

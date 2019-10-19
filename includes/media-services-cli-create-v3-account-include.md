@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 05/01/2019
 ms.author: juliako
 ms.custom: include file
-ms.openlocfilehash: feec6a695ad867d26d32904d020648b029f9da35
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: da27f818bf368108568287f1ed1bbdae4c3902d4
+ms.sourcegitcommit: f29fec8ec945921cc3a89a6e7086127cc1bc1759
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185377"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72560549"
 ---
 ## <a name="create-a-media-services-account"></a>Создание учетной записи служб мультимедиа
 
@@ -23,13 +23,13 @@ ms.locfileid: "67185377"
 
 Чтобы создать группу ресурсов, выполните указанную ниже команду. Группа ресурсов Azure — это логический контейнер, в котором происходит развертывание ресурсов, таких как учетные записи Служб мультимедиа Azure и связанные с ними учетные записи хранения, а также управление ими.
 
-Можно заменить `amsResourceGroup` значением.
+Вы можете заменить `amsResourceGroup` своим значением.
 
 ```azurecli
 az group create --name amsResourceGroup --location westus2
 ```
 
-### <a name="create-a-storage-account"></a>Создание учетной записи хранения
+### <a name="create-a-storage-account"></a>Создание учетной записи хранилища
 
 При создании учетной записи Служб мультимедиа необходимо предоставить имя ресурса учетной записи хранения Azure. Указанная учетная запись хранения присоединена к учетной записи Служб мультимедиа. Дополнительные сведения об использовании учетных записей хранения в Службах мультимедиа см. в [этой статье](../articles/media-services/latest/storage-account-concept.md).
 
@@ -37,7 +37,7 @@ az group create --name amsResourceGroup --location westus2
 
 В этом примере мы создадим учетную запись общего назначения версии 2 c LRS категории "Стандартный". Если вы хотите поэкспериментировать с учетными записями хранения, используйте `--sku Standard_LRS`. Тем не менее при выборе номера SKU для рабочей среды следует рассмотреть `--sku Standard_RAGRS`, который предоставляет географическую репликацию для обеспечения непрерывности бизнес-процессов. Дополнительные сведения см. в статье об [учетных записях хранения](https://docs.microsoft.com/cli/azure/storage/account?view=azure-cli-latest).
  
-Следующая команда создает учетную запись хранения, которая будет связана с учетной записью Служб мультимедиа. В приведенном ниже скрипте `storageaccountforams` можно заменить своим значением. `amsResourceGroup` должно соответствовать значению, которое вы присвоили для группы ресурсов на предыдущем шаге. Имя учетной записи хранения должен иметь длину меньше 24.
+Следующая команда создает учетную запись хранения, которая будет связана с учетной записью Служб мультимедиа. В приведенном ниже скрипте `storageaccountforams` можно заменить своим значением. `amsResourceGroup` должны совпадать со значением, которое вы присвоили группе ресурсов на предыдущем шаге. Длина имени учетной записи хранения должна быть меньше 24.
 
 ```azurecli
 az storage account create --name storageaccountforams \  
@@ -53,6 +53,6 @@ az storage account create --name storageaccountforams \
 
 ```azurecli
 az ams account create --name amsaccount \
-  -l westus2 \
-  -g amsResourceGroup --storage-account storageaccountforams
+   -g amsResourceGroup --storage-account storageaccountforams \
+   -l westus2 
 ```

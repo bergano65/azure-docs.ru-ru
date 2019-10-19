@@ -1,19 +1,18 @@
 ---
 title: Настройка диагностики Azure для отправки данных в Application Insights
 description: Обновление открытой конфигурации диагностики Azure для отправки данных в Application Insights.
-services: azure-monitor
-author: rboucher
 ms.service: azure-monitor
-ms.topic: conceptual
-ms.date: 03/19/2016
-ms.author: robb
 ms.subservice: diagnostic-extension
-ms.openlocfilehash: f7e21b805c64522005dce3e7d04aa158e1c21032
-ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
+ms.topic: conceptual
+author: rboucher
+ms.author: robb
+ms.date: 03/19/2016
+ms.openlocfilehash: 5328d2be4b8bf733041c39fe029ae2d02ecc3a6e
+ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "60396144"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72552041"
 ---
 # <a name="send-cloud-service-virtual-machine-or-service-fabric-diagnostic-data-to-application-insights"></a>Отправка в Application Insights диагностических данных облачной службы, виртуальной машины или Service Fabric
 Облачные службы, виртуальные машины, масштабируемые наборы виртуальных машин и Service Fabric используют расширение системы диагностики Azure для сбора данных.  Система диагностики Azure отправляет данные в таблицы службы хранилища Azure.  Тем не менее эти данные можно также полностью или частично передавать в другие расположения, используя расширение системы диагностики Azure 1.5 или более поздней версии.
@@ -67,11 +66,11 @@ ms.locfileid: "60396144"
 - Элемент **Channels** содержит один или несколько элементов **Channel**.
     - Атрибут *name* однозначно ссылается на этот канал.
     - Атрибут *Loglevel* позволяет указать уровень ведения журнала для канала. Доступны следующие уровни ведения журнала (от наиболее к наименее информативным):
-        - Verbose
+        - Подробная информация
         - Информация
         - Предупреждение
-        - Error
-        - Critical
+        - Ошибка
+        - Критический
 
 Канал действует как фильтр и позволяет выбрать конкретные уровни ведения журнала для отправки в приемник. Например, можно собирать подробные журналы и отправлять их в хранилище, а в приемник отправлять только журнал ошибок.
 
@@ -216,6 +215,6 @@ ms.locfileid: "60396144"
 
 ## <a name="next-steps"></a>Следующие шаги
 * Узнайте, как [просматривать данные диагностики Azure](https://docs.microsoft.com/azure/application-insights/app-insights-cloudservices) в Application Insights.
-* Используйте [PowerShell](../../cloud-services/cloud-services-diagnostics-powershell.md), чтобы включить расширение диагностики Azure для вашего приложения.
+* Используйте [PowerShell](../../cloud-services/cloud-services-diagnostics-powershell.md) , чтобы включить расширение диагностики Azure для вашего приложения.
 * Используйте [Visual Studio](/visualstudio/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines) , чтобы включить расширение диагностики Azure для вашего приложения.
 

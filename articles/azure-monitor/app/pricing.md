@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.reviewer: mbullwin
 ms.date: 10/03/2019
 ms.author: dalek
-ms.openlocfilehash: 55ff134bfa76634250b7495120432d7310b07c06
-ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
+ms.openlocfilehash: 4674dede5912dc1dc64bd0e092e28461f30bebcd
+ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72431875"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72554225"
 ---
 # <a name="manage-usage-and-costs-for-application-insights"></a>Управление использованием и затратами для Application Insights
 
@@ -170,7 +170,7 @@ systemEvents
 
 ![Настройка ограничения ежедневного объема данных телеметрии](./media/pricing/pricing-005.png)
 
-Кроме того, удержание можно [настроить программно с помощью PowerShell](powershell.md) с параметром `retentionInDays`. Кроме того, если задать срок хранения данных 30 дней, можно немедленно запустить немедленную очистку старых данных с помощью параметра `immediatePurgeDataOn30Days`, который может быть полезен для сценариев, связанных с соответствием. Эта функция очистки доступна только через Azure Resource Manager и должна использоваться с крайней осторожностью. 
+Кроме того, удержание можно [настроить программно с помощью PowerShell](powershell.md#set-the-data-retention) с параметром `retentionInDays`. Кроме того, если задать срок хранения данных 30 дней, можно немедленно запустить немедленную очистку старых данных с помощью параметра `immediatePurgeDataOn30Days`, который может быть полезен для сценариев, связанных с соответствием. Эта функция очистки доступна только через Azure Resource Manager и должна использоваться с крайней осторожностью. 
 
 Когда выставление счетов начинается дольше, чем за декабрь 2019, срок хранения данных, превышающих 90 дней, будет взиматься по той же ставке, что и в течение срока хранения данных Azure Log Analytics. Дополнительные сведения см. на [странице цен на Azure Monitor](https://azure.microsoft.com/pricing/details/monitor/). Следите за ходом хранения переменных, [проголосуя по этому предложению](https://feedback.azure.com/forums/357324-azure-monitor-application-insights/suggestions/17454031). 
 

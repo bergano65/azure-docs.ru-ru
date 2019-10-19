@@ -1,30 +1,29 @@
 ---
 title: Как интегрировать общую схему предупреждений с Logic Apps
 description: Узнайте, как создать приложение логики, использующее общую схему оповещений для обработки всех ваших оповещений.
-author: ananthradhakrishnan
-services: azure-monitor
 ms.service: azure-monitor
-ms.topic: conceptual
-ms.date: 05/27/2019
-ms.author: robb
 ms.subservice: alerts
-ms.openlocfilehash: 569b97ecc24306741c3323ce5bc526f88645c1dd
-ms.sourcegitcommit: 6fe40d080bd1561286093b488609590ba355c261
+ms.topic: conceptual
+author: ananthradhakrishnan
+ms.author: robb
+ms.date: 05/27/2019
+ms.openlocfilehash: 50a6067d271ad824f17df1ece36c3dd919c7b55b
+ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71702946"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72555653"
 ---
 # <a name="how-to-integrate-the-common-alert-schema-with-logic-apps"></a>Как интегрировать общую схему предупреждений с Logic Apps
 
 В этой статье показано, как создать приложение логики, использующее общую схему оповещений для обработки всех ваших оповещений.
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Краткое описание
 
 [Общая схема предупреждений](https://aka.ms/commonAlertSchemaDocs) предоставляет стандартизованную и расширяемую схему JSON для всех различных типов оповещений. Общая схема предупреждений наиболее полезна при программном использовании — через веб-перехватчики, модули Runbook и приложения логики. В этой статье мы продемонстрируем, как можно создать одно приложение логики для обработки всех ваших оповещений. Те же принципы могут применяться и к другим программным методам. Приложение логики, описываемое в этой статье, создает четко определенные переменные для [полей "важный"](alerts-common-schema-definitions.md#essentials), а также описывает способ обработки логики определенного [типа оповещений](alerts-common-schema-definitions.md#alert-context) .
 
 
-## <a name="prerequisites"></a>Предварительные требования 
+## <a name="prerequisites"></a>Технические условия 
 
 В этой статье предполагается, что читатель знаком с 
 * Настройка правил оповещений ([Метрика](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-metric), [Журнал](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-log), [Журнал действий](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log))
@@ -37,11 +36,11 @@ ms.locfileid: "71702946"
 
 1.  Выберите триггер **При получении HTTP-запроса**.
 
-    ![Триггеры приложения логики](media/action-groups-logic-app/logic-app-triggers.png "Триггеры приложения логики")
+    ![Триггеры приложения логики](media/action-groups-logic-app/logic-app-triggers.png "Триггеры приложений логики")
 
 1.  Выберите **Изменить**, чтобы изменить триггер HTTP-запроса.
 
-    ![Триггеры HTTP-запроса](media/action-groups-logic-app/http-request-trigger-shape.png "Триггеры HTTP-запроса")
+    ![Триггеры HTTP-запросов](media/action-groups-logic-app/http-request-trigger-shape.png "Триггеры HTTP-запросов")
 
 
 1.  Скопируйте и вставьте следующую схему:
@@ -139,7 +138,7 @@ ms.locfileid: "71702946"
     
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные [сведения о группах действий](../../azure-monitor/platform/action-groups.md).
 * Дополнительные [сведения о схеме общих предупреждений](https://aka.ms/commonAlertSchemaDocs).

@@ -1,24 +1,18 @@
 ---
 title: Мониторинг кластера службы Azure Kubernetes Service (AKS) | Документация Майкрософт
 description: Узнайте, как включить мониторинг кластера Azure Kubernetes Service (AKS) с Azure Monitor для контейнеров, уже развернутых в вашей подписке.
-services: azure-monitor
-documentationcenter: ''
-author: mgoedtel
-manager: carmonm
-editor: ''
-ms.assetid: ''
 ms.service: azure-monitor
+ms.subservice: ''
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 09/12/2019
+author: mgoedtel
 ms.author: magoedte
-ms.openlocfilehash: 0153d39e1307458baa920d8e9107c8931242014e
-ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
+ms.date: 09/12/2019
+ms.openlocfilehash: e9837aaf538648fe24a762f83a2e855f432df2a5
+ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70996272"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72555459"
 ---
 # <a name="enable-monitoring-of-azure-kubernetes-service-aks-cluster-already-deployed"></a>Включение мониторинга уже развернутого кластера Azure Kubernetes Service (AKS)
 
@@ -26,10 +20,10 @@ ms.locfileid: "70996272"
 
 Вы можете включить мониторинг кластера AKS, который уже развернут, с помощью одного из поддерживаемых методов:
 
-* Azure CLI
+* Azure CLI
 * Terraform
 * [Из Azure Monitor](#enable-from-azure-monitor-in-the-portal) или [непосредственно из кластера AKS](#enable-directly-from-aks-cluster-in-the-portal) в портал Azure 
-* С [предоставленным шаблоном Azure Resource Manager](#enable-using-an-azure-resource-manager-template) с помощью командлета `New-AzResourceGroupDeployment` Azure PowerShell или с помощью Azure CLI. 
+* С [предоставленным шаблоном Azure Resource Manager](#enable-using-an-azure-resource-manager-template) с помощью командлета Azure PowerShell `New-AzResourceGroupDeployment` или с Azure CLI. 
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
@@ -51,7 +45,7 @@ provisioningState       : Succeeded
 
 ### <a name="integrate-with-an-existing-workspace"></a>Интеграция с существующей рабочей областью
 
-Если вы предпочитаете интегрировать с существующей рабочей областью, выполните следующие действия, чтобы сначала указать полный идентификатор ресурса log Analytics рабочей области, необходимой для `--workspace-resource-id` параметра, а затем выполнить команду, чтобы включить надстройку мониторинга для Указанная Рабочая область.  
+Если вы предпочитаете интегрировать с существующей рабочей областью, выполните следующие действия, чтобы сначала указать полный идентификатор ресурса Log Analytics рабочей области, необходимый для параметра `--workspace-resource-id`, а затем выполнить команду, чтобы включить надстройку мониторинга для Указанная Рабочая область.  
 
 1. Перечислите все подписки, к которым у вас есть доступ, с помощью следующей команды:
 
@@ -83,7 +77,7 @@ provisioningState       : Succeeded
 
     В выходных данных найдите имя рабочей области, а затем скопируйте полный идентификатор ресурса этой Log Analytics рабочей области под **идентификатором**поля.
  
-4. Выполните следующую команду, чтобы включить надстройку мониторинга, заменив значение `--workspace-resource-id` параметра. Строковое значение должно быть заключено в двойные кавычки:
+4. Выполните следующую команду, чтобы включить надстройку мониторинга, заменив значение параметра `--workspace-resource-id`. Строковое значение должно быть заключено в двойные кавычки:
 
     ```azurecli
     az aks enable-addons -a monitoring -n ExistingManagedCluster -g ExistingManagedClusterRG --workspace-resource-id  “/subscriptions/<SubscriptionId>/resourceGroups/<ResourceGroupName>/providers/Microsoft.OperationalInsights/workspaces/<WorkspaceName>”
@@ -166,7 +160,7 @@ provisioningState       : Succeeded
 * группу ресурсов, в которой развернут кластер;
 
 >[!NOTE]
->Развертывание шаблона должно проходить в той же группе ресурсов, что и у кластера.
+>Развертывание шаблона должно проходить в той же группе ресурсов, что и кластер.
 >
 
 Перед включением мониторинга с помощью Azure PowerShell или CLI необходимо создать рабочую область Log Analytics. Для создания рабочей области можно использовать [Azure Resource Manager](../../azure-monitor/platform/template-workspace-configuration.md), [PowerShell](../scripts/powershell-sample-create-workspace.md?toc=%2fpowershell%2fmodule%2ftoc.json) или [портал Azure](../../azure-monitor/learn/quick-create-workspace.md).
@@ -373,7 +367,7 @@ az aks show -g <resourceGroupofAKSCluster> -n <nameofAksCluster>
   }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Если при попытке подключить решение у вас возникли проблемы, ознакомьтесь с [руководством по устранению неполадок](container-insights-troubleshoot.md).
 

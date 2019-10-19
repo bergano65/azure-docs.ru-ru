@@ -14,18 +14,18 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 2/23/2018
 ms.author: atsenthi
-ms.openlocfilehash: 726d04cdfbc21c21a52945f11d3b5097978c5d1d
-ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
+ms.openlocfilehash: d9d135136efea72017399b5888bc6591582ffe67
+ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72168836"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72553556"
 ---
 # <a name="docker-compose-deployment-support-in-azure-service-fabric-preview"></a>Поддержка развертывания Docker Compose в Azure Service Fabric (предварительная версия)
 
 Средство Docker использует файл [docker-compose.yml](https://docs.docker.com/compose) для определения приложений с несколькими контейнерами. Чтобы пользователи могли ознакомиться с инструментом Docker, который позволяет организовать существующие приложения-контейнеры в Azure Service Fabric, мы изначально добавили в платформу предварительную версию поддержки развертывания Docker Compose. Платформа Service Fabric может принять файлы `docker-compose.yml` версии 3 и более поздней. 
 
-Так как эта поддержка доступна в режиме предварительной версии, поддерживается только подмножество директив Compose. Например, обновления приложений не поддерживаются. Но вы всегда можете вместо обновления приложений удалить и развернуть их.
+Так как эта поддержка доступна в режиме предварительной версии, поддерживается только подмножество директив Compose.
 
 Для использования этой предварительной версии создайте кластер со средой выполнения Service Fabric версии 5.7 (или более новой) с помощью портала Azure и соответствующего пакета SDK. 
 
@@ -161,7 +161,7 @@ sfctl compose upgrade-status --deployment-name TestContainerApp
 
 Хотя эта модель обеспечивает гибкость, мы также планируем поддерживать более простую модель развертывания на основе экземпляра, в которой типы будут извлекаться из файла манифеста. В этой модели каждое приложение получает собственный независимый манифест. Мы предварительно рассматриваем это действие, добавляя поддержку docker-compose.yml, в котором используется формат развертывания на основе экземпляра.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Ознакомьтесь со статьей [Моделирование приложения в структуре службы](service-fabric-application-model.md).
 * [Azure Service Fabric command line](service-fabric-cli.md) (Интерфейс командной строки Azure Service Fabric)

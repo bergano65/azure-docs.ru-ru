@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 09/25/2018
 ms.author: cynthn
-ms.openlocfilehash: be3ccfd0c562763d0968398ddb042dc5f07dbdcf
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 6382a39e67805eb9bddb356a7b76205a82f3f7c2
+ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70101564"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72553465"
 ---
 # <a name="upload-a-generalized-vhd-and-use-it-to-create-new-vms-in-azure"></a>Отправка универсального диска VHD и создание виртуальных машин с его помощью в Azure
 
@@ -56,67 +56,14 @@ ms.locfileid: "70101564"
 6. После выполнения всех необходимых действий Sysprep завершает работу виртуальной машины. Не перезапускайте виртуальную машину.
 
 
-## <a name="get-a-storage-account"></a>Получение учетной записи хранения
-
-Вам необходима учетная запись хранения Azure для хранения переданного образа виртуальной машины. Можно использовать существующую учетную запись хранения или создать новую. 
-
-Если для создания управляемого диска для виртуальной машины будет использоваться виртуальный жесткий диск, то расположение учетной записи хранения должно совпадать с расположением, в котором будет создаваться виртуальная машина.
-
-Чтобы отобразить список доступных учетных записей хранения, введите:
-
-```azurepowershell
-Get-AzStorageAccount | Format-Table
-```
-
 ## <a name="upload-the-vhd-to-your-storage-account"></a>Передача виртуального жесткого диска в учетную запись хранения
 
-Используйте командлет [Add-AzVhd](https://docs.microsoft.com/powershell/module/az.compute/add-azvhd), чтобы передать VHD в контейнер в учетной записи хранения. В этом примере файл *myVHD.vhd* передается из расположения *C:\Users\Public\Documents\Virtual hard disks\\* в учетную запись хранения *mystorageaccount*, входящую в группу ресурсов *myResourceGroup*. Файл будет помещен в контейнер с именем *mycontainer*; новое имя файла — *myUploadedVHD.vhd*.
-
-```powershell
-$rgName = "myResourceGroup"
-$urlOfUploadedImageVhd = "https://mystorageaccount.blob.core.windows.net/mycontainer/myUploadedVHD.vhd"
-Add-AzVhd -ResourceGroupName $rgName -Destination $urlOfUploadedImageVhd `
-    -LocalFilePath "C:\Users\Public\Documents\Virtual hard disks\myVHD.vhd"
-```
-
-
-В случае успешного выполнения отобразится ответ, который выглядит следующим образом.
-
-```powershell
-MD5 hash is being calculated for the file C:\Users\Public\Documents\Virtual hard disks\myVHD.vhd.
-MD5 hash calculation is completed.
-Elapsed time for the operation: 00:03:35
-Creating new page blob of size 53687091712...
-Elapsed time for upload: 01:12:49
-
-LocalFilePath           DestinationUri
--------------           --------------
-C:\Users\Public\Doc...  https://mystorageaccount.blob.core.windows.net/mycontainer/myUploadedVHD.vhd
-```
-
-В зависимости от сетевого подключения и размера VHD-файла выполнение этой команды может занять некоторое время.
-
-### <a name="other-options-for-uploading-a-vhd"></a>Другие возможности загрузки виртуального жесткого диска
- 
-Вы также можете передать виртуальный жесткий диск в учетную запись хранения с помощью одного из следующих инструментов:
-
-- [AzCopy](https://aka.ms/downloadazcopy)
-- [API копирования BLOB-объекта хранилища Azure](https://msdn.microsoft.com/library/azure/dd894037.aspx)
-- [Обозреватель хранилищ Azure для передачи больших двоичных объектов](https://azurestorageexplorer.codeplex.com/)
-- [Справочник по API REST служб хранилища импорта и экспорта](https://msdn.microsoft.com/library/dn529096.aspx)
--   Мы рекомендуем использовать службу импорта и экспорта, если предполагаемое время передачи больше 7 дней. Чтобы оценить предполагаемое время передачи на основе размера данных и средства передачи, используйте компонент [DataTransferSpeedCalculator](https://github.com/Azure-Samples/storage-dotnet-import-export-job-management/blob/master/DataTransferSpeedCalculator.html). 
-    Импорт и экспорт можно использовать для копирования в учетную запись хранения класса Standard. Необходимо осуществить копирование из учетной записи хранения (цен. категория "Стандартный") в учетную запись хранения (цен. категория "Премиум") с помощью схожего с AzCopy инструмента.
-
-> [!IMPORTANT]
-> Если для отправки виртуального жесткого диска в Azure вы используете службу AzCopy, перед запуском сценария убедитесь, что задано значение [ **/BlobType:page**](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-blobs#upload-a-file). Если в качестве места назначения выступает большой двоичный объект и этот параметр не указан, то по умолчанию AzCopy создает блочный BLOB-объект.
-> 
-> 
-
+Теперь виртуальный жесткий диск можно передать прямо в управляемый диск. Инструкции см. в статье [Отправка виртуального жесткого диска в Azure с помощью Azure PowerShell](disks-upload-vhd-to-managed-disk-powershell.md).
 
 
 ## <a name="create-a-managed-image-from-the-uploaded-vhd"></a>Создание управляемого образа на основе переданного виртуального жесткого диска 
 
-Создайте управляемый образ с помощью универсального виртуального жесткого диска ОС. Подставьте собственные значения.
+Создание управляемого образа на основе обобщенного управляемого диска ОС. Подставьте собственные значения.
 
 
 Сначала задайте некоторые параметры.
@@ -163,7 +110,7 @@ New-AzVm `
 ```
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Войдите на свою новую виртуальную машину. Дополнительные сведения см. в статье [Как подключиться к виртуальной машине Azure под управлением Windows и войти на нее](connect-logon.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). 
 

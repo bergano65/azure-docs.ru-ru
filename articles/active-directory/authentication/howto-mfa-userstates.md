@@ -5,18 +5,18 @@ services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/11/2019
+ms.date: 10/15/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c0c941ec5010b6f9c35e81fdbcacd2093724eb21
-ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
+ms.openlocfilehash: 3ee1d282506b537ed29592ca9008c88a53220d7d
+ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70162349"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72554835"
 ---
 # <a name="how-to-require-two-step-verification-for-a-user"></a>Включение двухфакторной проверки подлинности пользователя
 
@@ -31,11 +31,11 @@ ms.locfileid: "70162349"
 
 Включается политикой условного доступа. это наиболее гибкий способ включить двухфакторную проверку подлинности для пользователей. Включение использования политики условного доступа работает только для Azure MFA в облаке и является функцией Azure AD уровня "Премиум". Дополнительные сведения об этом методе можно найти в статье [Приступая к работе с многофакторной идентификацией Azure в облаке](howto-mfa-getstarted.md).
 
-Включить с помощью защиты идентификации Azure AD. Этот метод использует политику рисков защиты идентификации Azure AD, чтобы требовать двухфакторную проверку подлинности только на основе риска входа для всех облачных приложений. Этот метод требует лицензирования Azure Active Directory P2. Дополнительные сведения об этом методе см. в статье [Защита идентификации Azure Active Directory](../identity-protection/howto-sign-in-risk-policy.md).
+Включение с помощью службы "Защита идентификации Azure AD". Этот метод использует политику риска защиты идентификации Azure AD, чтобы требовать двухфакторную проверку подлинности только на основе риска входа для всех облачных приложений. Этот метод требует лицензирования Azure Active Directory P2. Дополнительные сведения об этом методе см. в статье [Защита идентификации Azure Active Directory](../identity-protection/howto-sign-in-risk-policy.md).
 
 > [!Note]
-> Дополнительные сведения о лицензиях и ценах можно найти на страницах цен для [Azure AD](https://azure.microsoft.com/pricing/details/active-directory/
-) и [Многофакторной идентификации](https://azure.microsoft.com/pricing/details/multi-factor-authentication/).
+> Дополнительные сведения о лицензиях и ценах можно найти на страницах цен на [Azure AD](https://azure.microsoft.com/pricing/details/active-directory/
+) и службу [Многофакторная идентификация](https://azure.microsoft.com/pricing/details/multi-factor-authentication/).
 
 ## <a name="enable-azure-mfa-by-changing-user-state"></a>Включение Azure MFA путем изменения состояния пользователя
 
@@ -43,9 +43,9 @@ ms.locfileid: "70162349"
 
 | Status | Описание | Затронутые приложения, не использующие браузер | Затронутые приложения, использующие браузер | Затронутая современная аутентификация |
 |:---:|:---:|:---:|:--:|:--:|
-| отключено |Состояние по умолчанию для нового пользователя, не зарегистрированного в Azure MFA. |Нет |Нет |Нет |
-| Enabled |Пользователь указан в Azure MFA, но не зарегистрирован. Ему будет предложено зарегистрироваться при следующем входе в систему. |Нет.  Они будут продолжать работать, пока не завершится регистрация. | Да. После окончания сеанса требуется регистрация в Azure MFA.| Да. После окончания срока действия маркера доступа требуется регистрация в Azure MFA. |
-| Принудительно включено |Пользователь указан и зарегистрирован для использования Azure MFA. |Да. Для приложений нужны пароли приложений. |Да. Аутентификация в Azure MFA требуется при входе в систему. | Да. Аутентификация в Azure MFA требуется при входе в систему. |
+| Отключено |Состояние по умолчанию для нового пользователя, не зарегистрированного в Azure MFA. |Нет |Нет |Нет |
+| Включено |Пользователь указан в Azure MFA, но не зарегистрирован. Ему будет предложено зарегистрироваться при следующем входе в систему. |Нет.  Они будут продолжать работать, пока не завершится регистрация. | Да. После окончания сеанса требуется регистрация в Azure MFA.| Да. После окончания срока действия маркера доступа требуется регистрация в Azure MFA. |
+| Принудительно |Пользователь указан и зарегистрирован для использования Azure MFA. |Да. Для приложений нужны пароли приложений. |Да. Аутентификация в Azure MFA требуется при входе в систему. | Да. Аутентификация в Azure MFA требуется при входе в систему. |
 
 Состояние пользователя отражает, указал ли администратор его в Azure MFA и завершил ли пользователь процесс регистрации.
 
@@ -66,10 +66,10 @@ ms.locfileid: "70162349"
 
 1. Выполните шаги выше, чтобы перейти на страницу **пользователей** MFA.
 2. Найдите пользователя, для которого требуется включить Azure MFA. Возможно, потребуется изменить представление в верхней части страницы.
-   ![Выберите пользователя, состояние которого нужно изменить, на вкладке "Пользователи".](./media/howto-mfa-userstates/enable1.png)
+   ![Select пользователю изменить состояние с на вкладке Пользователи ](./media/howto-mfa-userstates/enable1.png)
 3. Установите флажок рядом с именем пользователя.
 4. Справа, в разделе **быстрых действий**, щелкните **Включить** или **Отключить**.
-   ![Включить выбранного пользователя, щелкнув включить в меню быстрых действий.](./media/howto-mfa-userstates/user1.png)
+   ![Enable выбранного пользователя, щелкнув включить в меню быстрых действий ](./media/howto-mfa-userstates/user1.png)
 
    > [!TIP]
    > Пользователи с состоянием *Включено* автоматически перейдут в состояние *Enforced* (Принудительно) при регистрации в службе Azure MFA. Не изменяйте состояние пользователя вручную на *Enforced* (Принудительно).
@@ -82,9 +82,9 @@ ms.locfileid: "70162349"
 
 Чтобы изменить состояние пользователя с помощью [Azure AD PowerShell](/powershell/azure/overview), измените `$st.State`. Существуют три возможных состояния:
 
-* Enabled
-* Принудительно включено
-* отключено  
+* Включено
+* Принудительно
+* Отключено  
 
 Не переводите пользователей непосредственно в состояние *Применено*. Если сделать это, приложения, не использующие браузер, перестанут работать, так как пользователь не прошел регистрацию в Azure MFA и не получил [пароль приложения](howto-mfa-mfasettings.md#app-passwords).
 
@@ -170,35 +170,12 @@ function Set-MfaState {
     }
 }
 
-# Wrapper to disable MFA with the option to keep the MFA methods (to avoid having to proof-up again later)
-function Disable-Mfa {
-
-    [CmdletBinding()]
-    param(
-        [Parameter(ValueFromPipeline=$True)]
-        $User,
-        [switch] $KeepMethods
-    )
-
-    Process {
-
-        Write-Verbose ("Disabling MFA for user '{0}'" -f $User.UserPrincipalName)
-        $User | Set-MfaState -State Disabled
-
-        if ($KeepMethods) {
-            # Restore the MFA methods which got cleared when disabling MFA
-            Set-MsolUser -ObjectId $User.ObjectId `
-                         -StrongAuthenticationMethods $User.StrongAuthenticationMethods
-        }
-    }
-}
-
-# Disable MFA for all users, keeping their MFA methods intact
-Get-MsolUser -All | Disable-MFA -KeepMethods
+# Disable MFA for all users
+Get-MsolUser -All | Set-MfaState -State Disabled
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Почему пользователю было предложено или не предложено выполнить MFA? Ознакомьтесь с разделом [Отчет по действиям входа Azure AD](howto-mfa-reporting.md#azure-ad-sign-ins-report).
-* Чтобы настроить дополнительные параметры, например надежные IP-адреса, пользовательские голосовые сообщения и предупреждения о мошенничестве, см. статью [Настройка параметров Многофакторной идентификации Azure](howto-mfa-mfasettings.md).
+* Чтобы настроить дополнительные параметры, например, надежные IP-адреса, пользовательские голосовые сообщения и предупреждения о мошенничестве, прочитайте статью [Настройка параметров Многофакторной идентификации Azure](howto-mfa-mfasettings.md).
 * Сведения об управлении пользовательскими параметрами Многофакторной идентификации Azure можно найти в статье [Управление параметрами пользователей с помощью Многофакторной идентификации Azure в облаке](howto-mfa-userdevicesettings.md).

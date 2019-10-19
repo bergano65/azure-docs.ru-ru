@@ -1,24 +1,18 @@
 ---
 title: Определение решений мониторинга в Azure Monitor | Документация Майкрософт
 description: Определение решений мониторинга позволяет ограничить решения мониторинга определенным набором агентов.  В этой статье описывается, как создать конфигурацию области и применить ее к решению.
-services: monitoring
-documentationcenter: ''
-author: bwren
-manager: carmonm
-editor: tysonn
-ms.assetid: 1f054a4e-6243-4a66-a62a-0031adb750d8
 ms.service: azure-monitor
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 04/27/2017
+ms.subservice: ''
+ms.topic: conceptual
+author: bwren
 ms.author: bwren
-ms.openlocfilehash: 4082847e1871fc03713471b0c043dddb80f91b0d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 04/27/2017
+ms.openlocfilehash: 04b47cb6079d9213c1a20425f62286f1b2aa778b
+ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62110350"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72555313"
 ---
 # <a name="targeting-monitoring-solutions-in-azure-monitor-preview"></a>Определение решений мониторинга в Azure Monitor (предварительная версия)
 Когда вы добавляете решение для мониторинга в подписку, оно по умолчанию автоматически развертывается на всех агентах Windows и Linux, подключенных к рабочей области Log Analytics.  Вам может потребоваться выполнить управление затратами и ограничить объем данных, собираемых для решения, ограничив его конкретным набором агентов.  В этой статье описывается, как использовать **нацеливание решений**. Это функция, которая позволяет применить к решениям область действия.
@@ -49,7 +43,7 @@ ms.locfileid: "62110350"
  6. Нажмите кнопку **ОК**, чтобы создать конфигурацию области. 
 
 
-### <a name="3-apply-the-scope-configuration-to-a-solution"></a>3. Применение конфигурации области к решению
+### <a name="3-apply-the-scope-configuration-to-a-solution"></a>3. Примените конфигурацию области к решению.
 После создания конфигурации области можно применить ее к одному или нескольким решениям.  Обратите внимание, что одна конфигурация области может использоваться с несколькими решениями, но каждое решение может использовать только одну конфигурацию области.
 
 Примените конфигурацию области, выполнив действия в следующем порядке.  

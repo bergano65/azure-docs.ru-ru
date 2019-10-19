@@ -1,24 +1,18 @@
 ---
 title: Интеграция Azure Monitor для виртуальных машин с System Center Operations Manager | Документация Майкрософт
 description: Azure Monitor для виртуальных машин автоматически обнаруживает компоненты приложений в системах Windows и Linux и сопоставляет взаимодействие между службами. В этой статье рассматривается использование функции Map для автоматического создания схем распределенного приложения в Operations Manager.
-services: azure-monitor
-documentationcenter: ''
-author: mgoedtel
-manager: carmonm
-editor: tysonn
-ms.assetid: e8614a5a-9cf8-4c81-8931-896d358ad2cb
 ms.service: azure-monitor
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 07/12/2019
+ms.subservice: ''
+ms.topic: conceptual
+author: mgoedtel
 ms.author: magoedte
-ms.openlocfilehash: b16505eb2c12819532b8675472cf0e6f4177f7bf
-ms.sourcegitcommit: bafb70af41ad1326adf3b7f8db50493e20a64926
+ms.date: 07/12/2019
+ms.openlocfilehash: 3523756e89506e90407090db105fdced5853d9d9
+ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68489719"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72553973"
 ---
 # <a name="system-center-operations-manager-integration-with-azure-monitor-for-vms-map-feature"></a>Интеграция System Center Operations Manager с функцией Map Azure Monitor для виртуальных машин
 
@@ -27,7 +21,7 @@ ms.locfileid: "68489719"
 >[!NOTE]
 >Если вы уже развернули Сопоставление служб, вы можете просматривать карты в Azure Monitor для виртуальных машин, включая дополнительные функции для мониторинга работоспособности и производительности виртуальных машин. Функция Map Azure Monitor для виртуальных машин предназначена для замены автономного Сопоставление службного решения. Дополнительные сведения см. в разделе [Общие сведения об Azure Monitor для виртуальных машин](vminsights-overview.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Группа управления System Center Operations Manager (2012 R2 или более поздней версии).
 * Log Analytics рабочей области, настроенной для поддержки Azure Monitor для виртуальных машин.
@@ -78,7 +72,7 @@ ms.locfileid: "68489719"
 
      ![Настройка Operations Manager: группа](media/service-map-scom/scom-config-group.png)
 
-6. Необязательно: Выберите пул ресурсов "все серверы управления" для взаимодействия с Log Analytics, а затем нажмите кнопку " **Добавить рабочую область**".
+6. Необязательно. Выберите пул ресурсов "все серверы управления" для взаимодействия с Log Analytics, а затем нажмите кнопку " **Добавить рабочую область**".
 
     ![Настройка Operations Manager: пул ресурсов](media/service-map-scom/scom-config-pool.png)
 
@@ -94,20 +88,20 @@ ms.locfileid: "68489719"
 
 Папка "Сопоставление служб" имеет четыре узла:
 
-* **Активные оповещения:** Список всех активных оповещений о связи между Operations Manager и Azure Monitor.  
+* **Активные предупреждения**: содержит список всех активных оповещений о связи между Operations Manager и Azure Monitor.  
 
   >[!NOTE]
   >Эти предупреждения не Log Analytics предупреждения, синхронизированные с Operations Manager, они создаются в группе управления на основе рабочих процессов, определенных в пакете управления Сопоставление служб.
 
-* **Серверы**: Список наблюдаемых серверов, настроенных для синхронизации из функции карт Azure Monitor для виртуальных машин.
+* **Серверы**: выводит список наблюдаемых серверов, для которых настроена синхронизация Azure Monitor для виртуальных машин функции карт.
 
     ![Operations Manager: область "Серверы"](media/service-map-scom/scom-monitoring-servers.png)
 
-* **Machine Group Dependency Views** (Представления зависимостей групп компьютеров): Список всех групп компьютеров, синхронизированных с помощью функции Map. Вы можете щелкнуть любую группу, чтобы просмотреть распределенные диаграммы приложения.
+* **Представления зависимостей группы компьютеров**: перечисляет все группы компьютеров, синхронизированные из функции Map. Вы можете щелкнуть любую группу, чтобы просмотреть распределенные диаграммы приложения.
 
     ![Схема распределенного приложения Operations Manager](media/service-map-scom/scom-group-dad.png)
 
-* **Server Dependency Views** (Представления зависимости серверов): Список всех серверов, синхронизированных с помощью функции Map. Вы можете щелкнуть любой сервер, чтобы просмотреть его схему распределенного приложения.
+* **Представления зависимостей сервера**: перечисляет все серверы, синхронизированные из функции Map. Вы можете щелкнуть любой сервер, чтобы просмотреть его схему распределенного приложения.
 
     ![Схема распределенного приложения Operations Manager](media/service-map-scom/scom-dad.png)
 
@@ -129,9 +123,9 @@ ms.locfileid: "68489719"
 ![Operations Manager: окно свойств переопределений](media/service-map-scom/scom-overrides.png)
 
 * **Enabled**: позволяет включить или отключить автоматическое обновление.
-* **IntervalMinutes**: Указывает время между обновлениями. Значение по умолчанию — один час. Если вы хотите чаще синхронизировать карты, это значение можно изменить.
-* **TimeoutSeconds**: Указывает период времени до истечения времени ожидания запроса.
-* **TimeWindowMinutes**: Задает временное окно для запроса данных. Значение по умолчанию — 60 минут, что является максимальным допустимым интервалом.
+* **Интервалминутес**: указывает время между обновлениями. Значение по умолчанию — один час. Если вы хотите чаще синхронизировать карты, это значение можно изменить.
+* **TimeoutSeconds**: указывает продолжительность времени до истечения времени ожидания запроса.
+* **TimeWindowMinutes**: указывает временное окно для запроса данных. Значение по умолчанию — 60 минут, что является максимальным допустимым интервалом.
 
 ## <a name="known-issues-and-limitations"></a>Известные проблемы и ограничения
 
@@ -149,5 +143,5 @@ ms.locfileid: "68489719"
 * [Использование интерфейса командной строки Azure для создания субъекта-службы и доступа к ресурсам](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-authenticate-service-principal-cli)
 * [Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal)
 
-### <a name="feedback"></a>Отзывы
+### <a name="feedback"></a>Обратная связь
 У вас есть отзывы о интеграции с функцией Azure Monitor для виртуальных машин Map или этой документации? Посетите [страницу пользовательских мнений](https://feedback.azure.com/forums/267889-log-analytics/category/184492-service-map), где можно предложить функции или проголосовать за существующие предложения.

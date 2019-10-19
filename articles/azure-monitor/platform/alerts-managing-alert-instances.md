@@ -1,19 +1,18 @@
 ---
 title: Управление экземплярами предупреждений в Azure Monitor
 description: Управление экземплярами оповещений в Azure
-author: anantr
-services: monitoring
 ms.service: azure-monitor
-ms.topic: conceptual
-ms.date: 09/24/2018
-ms.author: robb
 ms.subservice: alerts
-ms.openlocfilehash: 91a770b522011f3955ae0956e289886eb204cf47
-ms.sourcegitcommit: 6fe40d080bd1561286093b488609590ba355c261
+ms.topic: conceptual
+author: anantr
+ms.author: robb
+ms.date: 09/24/2018
+ms.openlocfilehash: 955ed75f8253798e6970c02b0abf5794298ae6da
+ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71702914"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72555639"
 ---
 # <a name="manage-alert-instances-with-unified-alerts"></a>Управление экземплярами предупреждений с помощью Объединенных предупреждений
 Используя [Объединенные оповещения](https://aka.ms/azure-alerts-overview) в Azure Monitor, вы можете просматривать все различные типы оповещений в Azure. Это охватывает несколько подписок в одной области. В этой статье показано, как просмотреть экземпляры оповещений и найти конкретные экземпляры оповещений для устранения неполадок.
@@ -25,8 +24,8 @@ ms.locfileid: "71702914"
 
 Страницу оповещения можно открыть одним из следующих способов.
 
-   + В [портал Azure](https://portal.azure.com/)выберите **монитор** > **оповещения**.  
-     ![Снимок экрана: оповещения монитора](media/alerts-managing-alert-instances/monitoring-alerts-managing-alert-instances-toc.jpg)
+   + В [портал Azure](https://portal.azure.com/)выберите **мониторинг**  > **предупреждения**.  
+     ![Screenshot предупреждений монитора ](media/alerts-managing-alert-instances/monitoring-alerts-managing-alert-instances-toc.jpg)
   
    + Используйте контекст определенного ресурса. Откройте ресурс, перейдите в раздел " **мониторинг** " и выберите **оповещения**. Целевая страница предварительно отфильтрована для оповещений о конкретном ресурсе.
    
@@ -39,7 +38,7 @@ ms.locfileid: "71702914"
 ## <a name="find-alert-instances"></a>Поиск экземпляров предупреждений
 
 На странице **Сводка по оповещениям** представлены общие сведения обо всех экземплярах оповещений в Azure. Представление сводки можно изменить, выбрав **несколько подписок** (максимум 5) или фильтрацию по **группам ресурсов**, конкретным **ресурсам**или **диапазонам времени**. Чтобы перейти к представлению списка для оповещений, выберите пункт **всего предупреждений**или любой из делений уровня серьезности.     
-   ![Снимок экрана со страницей сводки предупреждений](media/alerts-managing-alert-instances/alerts-summary.jpg)
+   ![Screenshot страницы сводки оповещений ](media/alerts-managing-alert-instances/alerts-summary.jpg)
  
 На странице **все предупреждения** перечислены все экземпляры оповещений в Azure. На портале с уведомлением об оповещениях можно использовать фильтры, чтобы сократить их количество для этого конкретного экземпляра оповещения.
 
@@ -54,5 +53,5 @@ ms.locfileid: "71702914"
    >  Если вы приступили к странице, выбрав любую из диапазонов серьезности, список будет предварительно отфильтрован для этого уровня серьезности.
  
 При выборе любого экземпляра предупреждения открывается страница **сведения о предупреждении** , где можно просмотреть дополнительные сведения об этом конкретном экземпляре предупреждения.   
-   ![Снимок экрана со страницей сведений о предупреждении](media/alerts-managing-alert-instances/alert-details.jpg)  
+   ![Screenshot страницы сведений о предупреждении ](media/alerts-managing-alert-instances/alert-details.jpg)  
 

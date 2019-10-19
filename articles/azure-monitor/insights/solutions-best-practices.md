@@ -1,24 +1,18 @@
 ---
 title: Рекомендации по работе с решениями по управлению в Azure | Документация Майкрософт
 description: ''
-services: operations-management-suite
-documentationcenter: ''
-author: bwren
-manager: carmonm
-editor: tysonn
-ms.assetid: 1915e204-ba7e-431b-9718-9eb6b4213ad8
 ms.service: azure-monitor
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 04/27/2017
+ms.subservice: ''
+ms.topic: conceptual
+author: bwren
 ms.author: bwren
-ms.openlocfilehash: a4f982f6265d1c8cab2ae666b9d6e2e33beb5064
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.date: 04/27/2017
+ms.openlocfilehash: 28ae01fe28b1b2d6af95567e529c7c9ae17920e4
+ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67672920"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72553934"
 ---
 # <a name="best-practices-for-creating-management-solutions-in-azure-preview"></a>Рекомендации по созданию решений по управлению в Azure (предварительная версия)
 > [!NOTE]
@@ -33,7 +27,7 @@ ms.locfileid: "67672920"
 - Добавьте также сообщение о [проверке потока данных](../../azure-monitor/platform/view-designer-tiles.md) во все представления своего решения, где требуется сообщить пользователю об источниках данных, которые должны быть настроены для сбора необходимых данных.  Это сообщение отображается в элементе представления, если необходимые данные не найдены.
 
 
-## <a name="runbooks"></a>Модули Runbook
+## <a name="runbooks"></a>Модули runbook
 - Добавьте [расписание автоматизации](../../automation/automation-schedules.md) для каждого модуля Runbook в решении, которое должно выполняться по расписанию.
 - Включите в решение [модуль IngestionAPI](https://www.powershellgallery.com/packages/OMSIngestionAPI/1.5), который будет использоваться модулями Runbook при записи данных в репозиторий Log Analytics.  Настройте в решении [ссылку](solutions-solution-file.md#solution-resource) на этот ресурс, чтобы он сохранялся в случае удаления решения.  Это позволит нескольким решениям совместно использовать модуль.
 - Используйте [переменные автоматизации](../../automation/automation-schedules.md), чтобы задать в решении значения, которые пользователи затем смогут изменить.  Даже если в соответствии с настройками решение содержит переменную, то это значение можно изменить.
@@ -43,12 +37,12 @@ ms.locfileid: "67672920"
 - Добавьте также сообщение о [проверке потока данных](../../azure-monitor/platform/view-designer-tiles.md) во все представления своего решения, где требуется сообщить пользователю об источниках данных, которые должны быть настроены для сбора необходимых данных.
 - Настройте решение таким образом, чтобы оно [содержало](solutions-solution-file.md#solution-resource) представление. В этом случае оно будет удаляться при удалении решения.
 
-## <a name="alerts"></a>Предупреждения
+## <a name="alerts"></a>Оповещения
 - Определите список получателей как параметр в файле решения, что позволит пользователю указать значения при установке решения.
 - Настройте в решении [ссылку](solutions-solution-file.md#solution-resource) на правила оповещения, чтобы пользователи могли изменить свою конфигурацию.  Им может потребоваться внести изменения, например изменить список получателей или пороговое значение для оповещения, а также отключить правило оповещения. 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Ознакомьтесь с базовым процессом [разработки и создания решения по управлению](solutions-creating.md).
 * Узнайте, как [создать файл решения](solutions-solution-file.md).
 * [Добавьте сохраненные поиски и оповещения](solutions-resources-searches-alerts.md) в решение для управления.

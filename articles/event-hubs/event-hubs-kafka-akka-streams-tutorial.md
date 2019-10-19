@@ -3,7 +3,7 @@ title: Использование Akka Streams для Apache Kafka с Центр
 description: Эта статья содержит сведения о том, как подключить Akka Streams к Центрам событий Azure с поддержкой Apache Kafka.
 services: event-hubs
 documentationcenter: ''
-author: basilhariri
+author: ShubhaVijayasarathy
 manager: timlt
 editor: ''
 ms.assetid: ''
@@ -12,13 +12,13 @@ ms.devlang: na
 ms.topic: article
 ms.custom: seodec18
 ms.date: 12/06/2018
-ms.author: bahariri
-ms.openlocfilehash: 32d710464cf61f998e18af28887561cefd2b1b3f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: shvija
+ms.openlocfilehash: ba81ce88bcdf039d020dcd945e45a11cf603c114
+ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60821554"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72555756"
 ---
 # <a name="using-akka-streams-with-event-hubs-for-apache-kafka"></a>Использование Akka Streams с Центрами событий для Apache Kafka
 В этом руководстве показано, как выполнять подключение Akka Streams к концентраторам событий с поддержкой Kafka без необходимости менять клиенты протоколов или запускать собственные кластеры. Центры событий Azure для платформы Kafka поддерживают [Apache Kafka 1.0.](https://kafka.apache.org/10/documentation.html)
@@ -44,7 +44,7 @@ ms.locfileid: "60821554"
     * Обязательно настройте переменную среды JAVA_HOME так, чтобы она указывала на папку, в которой установлен пакет JDK.
 * [Скачайте](https://maven.apache.org/download.cgi) и [установите](https://maven.apache.org/install.html) двоичный архив Maven.
     * В Ubuntu выполните команду `apt-get install maven`, чтобы установить Maven.
-* [Git](https://www.git-scm.com/downloads)
+* [Git.](https://www.git-scm.com/downloads)
     * В Ubuntu выполните команду `sudo apt-get install git`, чтобы установить Git.
 
 ## <a name="create-an-event-hubs-namespace"></a>Создание пространства имен в Центрах событий
@@ -155,7 +155,7 @@ mvn exec:java -Dexec.mainClass="AkkaTestConsumer"
 - [Создание концентраторов событий с поддержкой Kafka](event-hubs-create-kafka-enabled.md)
 - [Потоковая передача данных в Центры событий из приложений Kafka](event-hubs-quickstart-kafka-enabled-event-hubs.md)
 - [Использование Apache Kafka MirrorMaker с Центрами событий](event-hubs-kafka-mirror-maker-tutorial.md)
-- [Подключение приложения Apache Spark с помощью Центров событий Azure с поддержкой Kafka](event-hubs-kafka-spark-tutorial.md)
+- [Connect your Apache Spark application with Kafka-enabled Azure Event Hubs](event-hubs-kafka-spark-tutorial.md) (Подключение приложения Apache Spark к Центрам событий Azure с поддержкой Kafka)
 - [Использование Apache Flink с Центрами событий Azure для Apache Kafka](event-hubs-kafka-flink-tutorial.md)
 - [Статья об интеграции Kafka Connect в Центре событий с поддержкой Kafka](event-hubs-kafka-connect-tutorial.md)
-- [Примеры в GitHub](https://github.com/Azure/azure-event-hubs-for-kafka)
+- [Migrating to Azure Event Hubs for Apache Kafka Ecosystems](https://github.com/Azure/azure-event-hubs-for-kafka) (Переход в Центры событий Azure для экосистем Apache Kafka)

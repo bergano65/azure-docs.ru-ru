@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.custom: seodec18
-ms.openlocfilehash: 780e639ad6e1ee721820749da2df9ea6efa07bd6
-ms.sourcegitcommit: f272ba8ecdbc126d22a596863d49e55bc7b22d37
+ms.openlocfilehash: b97db5fcebeea67cc593a4d2c1fd677a55ad8559
+ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72273721"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72550176"
 ---
 # <a name="plan-your-azure-time-series-insights-preview-environment"></a>Запланируйте среду службы"Аналитика временных рядов Azure (предварительная версия)"
 
@@ -54,7 +54,7 @@ ms.locfileid: "72273721"
 Чтобы создать новую среду службы "Аналитика временных рядов", выберите идентификатор временных рядов. Это действует как логический раздел для ваших данных. Как уже говорилось, убедитесь в том, что у вас есть готовые идентификаторы временных рядов.
 
 > [!IMPORTANT]
-> Идентификаторы временных рядов являются *неизменным*  и *не могут быть изменены позже*. Перед окончательным выбором и первым использованием проверьте каждый их них.
+> Идентификаторы временных рядов *нельзя изменить позже*. Перед окончательным выбором и первым использованием проверьте каждый их них.
 
 Можно выбрать до трех ключей, чтобы уникальным образом отличать ресурсы. Дополнительные сведения см. в статьях [Best practices for choosing a Time Series ID](./time-series-insights-update-how-to-id.md) (Рекомендации при выборе идентификатора временного ряда) и [Storage and ingress](./time-series-insights-update-storage-ingress.md) (Хранение и доступ к данным в службе "Аналитика временных рядов Azure (предварительная версия)").
 
@@ -86,7 +86,7 @@ ms.locfileid: "72273721"
 
 [!INCLUDE [business-disaster-recover](../../includes/time-series-insights-business-recovery.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь с [помощником по Azure](../advisor/advisor-overview.md) , чтобы спланировать параметры конфигурации бизнес-восстановления.
 

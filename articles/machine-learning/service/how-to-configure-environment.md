@@ -11,12 +11,12 @@ ms.reviewer: larryfr
 ms.topic: conceptual
 ms.date: 07/31/2019
 ms.custom: seodec18
-ms.openlocfilehash: c513a7fe4df14ee21f4b26993a5eddb93bb90eac
-ms.sourcegitcommit: 6eecb9a71f8d69851bc962e2751971fccf29557f
+ms.openlocfilehash: dca032cceb4f1561d7ee8b35de502f8f5259cfe8
+ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/17/2019
-ms.locfileid: "72533311"
+ms.locfileid: "72553634"
 ---
 # <a name="configure-a-development-environment-for-azure-machine-learning"></a>Настройка среды разработки для Машинного обучения Azure
 
@@ -315,6 +315,8 @@ Azure Databricks — это среда на основе Apache Spark в обл�
 
 ### <a name="install-the-correct-sdk-into-a-databricks-library"></a>Установка правильного пакета SDK в библиотеке кирпичей
 После запуска кластера [Создайте библиотеку](https://docs.databricks.com/user-guide/libraries.html#create-a-library) , чтобы присоединить соответствующий пакет SDK машинное обучение Azure к кластеру.
+
+1. Щелкните правой кнопкой мыши текущую папку рабочей области, в которой нужно сохранить библиотеку. Выберите **создать** **библиотеку** > .
 
 1. Выберите **только один** вариант (другие установки пакета SDK не поддерживаются).
 

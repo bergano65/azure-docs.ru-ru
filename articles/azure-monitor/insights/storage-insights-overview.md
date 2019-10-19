@@ -1,24 +1,18 @@
 ---
 title: Мониторинг служб хранилища Azure с помощью Azure Monitor для хранилища (Предварительная версия) | Документация Майкрософт
 description: В этой статье описывается Azure Monitor для функции хранения, которая предоставляет администраторам хранилища быстрое понимание проблем с производительностью и использованием учетных записей хранения Azure.
-services: azure-monitor
-documentationcenter: ''
-author: mgoedtel
-manager: carmonm
-editor: tysonn
-ms.assetid: ''
 ms.service: azure-monitor
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 08/15/2019
+ms.subservice: ''
+ms.topic: conceptual
+author: mgoedtel
 ms.author: magoedte
-ms.openlocfilehash: 1ab49d17ebf10a1ae0277768ddbd1878195d835d
-ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
+ms.date: 08/15/2019
+ms.openlocfilehash: e5738b9f7cca03898d3bb5c593004bb316aa0b23
+ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71212761"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72553876"
 ---
 # <a name="monitoring-your-storage-service-with-azure-monitor-for-storage-preview"></a>Мониторинг службы хранилища с помощью Azure Monitor для хранилища (Предварительная версия)
 
@@ -233,7 +227,7 @@ Azure Monitor для хранилища (Предварительная верс
 
 7. Выберите команду **Сохранить как** на панели команд, чтобы сохранить копию книги с вашими настройками, а затем нажмите кнопку **Готово к редактированию** , чтобы вернуться в режим чтения.
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Устранение неисправностей
 
 Этот раздел поможет вам в диагностике и устранении неполадок некоторых распространенных проблем, которые могут возникнуть при использовании Azure Monitor для хранения (Предварительная версия). Чтобы найти информацию о конкретной проблеме, просмотрите список ниже.
 
@@ -241,7 +235,7 @@ Azure Monitor для хранилища (Предварительная верс
 
 Чтобы помочь в устранении проблем, связанных с хранилищем, которые можно определить с помощью Azure Monitor для хранилища (Предварительная версия), см. [руководство по устранению неполадок](../../storage/common/storage-monitoring-diagnosing-troubleshooting.md#troubleshooting-guidance)службы хранилища Azure.  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Настройте [оповещения метрик](../platform/alerts-metric.md) и [уведомления о работоспособности службы](../../service-health/alerts-activity-log-service-notifications.md) , чтобы настроить автоматическое оповещение для облегчения обнаружения проблем.
 

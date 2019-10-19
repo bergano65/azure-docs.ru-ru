@@ -2,7 +2,6 @@
 title: Создание виртуальной машины Windows с помощью специализированного VHD в Azure | Документация Майкрософт
 description: Создание новой виртуальной машины Windows на основе подключенного специализированного управляемого диска операционной системы с использованием модели развертывания с помощью Resource Manager.
 services: virtual-machines-windows
-documentationcenter: ''
 author: cynthn
 manager: gwallace
 editor: ''
@@ -12,14 +11,14 @@ ms.service: virtual-machines-windows
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-windows
 ms.topic: article
-ms.date: 10/10/2018
+ms.date: 10/10/2019
 ms.author: cynthn
-ms.openlocfilehash: 6adeae69a4ef9e6f2d77588f8071498fd25beb3e
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: be773779b25a32a5904012ae31950b18c33341dc
+ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72390607"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72553430"
 ---
 # <a name="create-a-windows-vm-from-a-specialized-disk-by-using-powershell"></a>Создание виртуальной машины Windows из специализированного диска с помощью PowerShell
 
@@ -63,100 +62,15 @@ $osDisk = Get-AzDisk `
   * Убедитесь, что виртуальная машина настроена на получение IP-адреса и параметров DNS от DHCP-сервера. Таким образом, сервер будет получать IP-адрес в виртуальной сети при запуске. 
 
 
-### <a name="get-the-storage-account"></a>Получение учетной записи хранения
-Вам понадобится учетная запись хранения Azure для хранения переданного VHD. Можно использовать существующую учетную запись хранения или создать новую. 
+### <a name="upload-the-vhd"></a>Отправка виртуального жесткого диска
 
-Отобразите список доступных учетных записей хранения.
-
-```powershell
-Get-AzStorageAccount
-```
-
-Для использования существующей учетной записи хранения перейдите к разделу [Передача виртуального жесткого диска в учетную запись хранения](#upload-the-vhd-to-your-storage-account).
-
-Создайте учетную запись хранения.
-
-1. Необходимо указать имя группы ресурсов, в которой будет создана учетная запись хранения. Для получения списка групп ресурсов в подписке используйте командлет Get-AzResourceGroup.
-   
-    ```powershell
-    Get-AzResourceGroup
-    ```
-
-    Создайте группу ресурсов с именем *myResourceGroup* в регионе *Западная часть США*.
-
-    ```powershell
-    New-AzResourceGroup `
-       -Name myResourceGroup `
-       -Location "West US"
-    ```
-
-2. С помощью командлета [New-AzStorageAccount](https://docs.microsoft.com/powershell/module/az.storage/new-azstorageaccount) создайте в новой группе ресурсов учетную запись хранения с именем *mystorageaccount*.
-   
-    ```powershell
-    New-AzStorageAccount `
-       -ResourceGroupName myResourceGroup `
-       -Name mystorageaccount `
-       -Location "West US" `
-       -SkuName "Standard_LRS" `
-       -Kind "Storage"
-    ```
-
-### <a name="upload-the-vhd-to-your-storage-account"></a>Передача виртуального жесткого диска в учетную запись хранения 
-Используйте командлет [Add-AzVhd](https://docs.microsoft.com/powershell/module/az.compute/add-azvhd), чтобы передать VHD в контейнер в учетной записи хранения. В этом примере файл *myVHD.vhd* передается из расположения "C:\Users\Public\Documents\Virtual hard disks\" в учетную запись хранения *mystorageaccount*, входящую в группу ресурсов *myResourceGroup*. Файл будет помещен в контейнер с именем *mycontainer*; новое имя файла — *myUploadedVHD.vhd*.
-
-```powershell
-$resourceGroupName = "myResourceGroup"
-$urlOfUploadedVhd = "https://mystorageaccount.blob.core.windows.net/mycontainer/myUploadedVHD.vhd"
-Add-AzVhd -ResourceGroupName $resourceGroupName `
-   -Destination $urlOfUploadedVhd `
-   -LocalFilePath "C:\Users\Public\Documents\Virtual hard disks\myVHD.vhd"
-```
-
-
-В случае успешного выполнения команд отобразится ответ, который выглядит следующим образом.
-
-```powershell
-MD5 hash is being calculated for the file C:\Users\Public\Documents\Virtual hard disks\myVHD.vhd.
-MD5 hash calculation is completed.
-Elapsed time for the operation: 00:03:35
-Creating new page blob of size 53687091712...
-Elapsed time for upload: 01:12:49
-
-LocalFilePath           DestinationUri
--------------           --------------
-C:\Users\Public\Doc...  https://mystorageaccount.blob.core.windows.net/mycontainer/myUploadedVHD.vhd
-```
-
-В зависимости от сетевого подключения и размера VHD-файла выполнение этой команды может занять некоторое время.
-
-### <a name="create-a-managed-disk-from-the-vhd"></a>Создание управляемого диска из VHD
-
-Создайте управляемый диск на основе специализированного виртуального жесткого диска в своей учетной записи хранения с помощью командлета [New-AzDisk](https://docs.microsoft.com/powershell/module/az.compute/new-azdisk). В этом примере используется имя диска *myOSDisk1*. Этот диск переносится в хранилище *Standard_LRS* и использует *https://storageaccount.blob.core.windows.net/vhdcontainer/osdisk.vhd* в качестве универсального кода ресурса (URI) исходного VHD.
-
-Создайте группу ресурсов для новой виртуальной машины.
-
-```powershell
-$destinationResourceGroup = 'myDestinationResourceGroup'
-New-AzResourceGroup -Location $location `
-   -Name $destinationResourceGroup
-```
-
-Создайте новый диск ОС из загруженного VHD. 
-
-```powershell
-$sourceUri = 'https://storageaccount.blob.core.windows.net/vhdcontainer/osdisk.vhd'
-$osDiskName = 'myOsDisk'
-$osDisk = New-AzDisk -DiskName $osDiskName -Disk `
-    (New-AzDiskConfig -AccountType Standard_LRS  `
-    -Location $location -CreateOption Import `
-    -SourceUri $sourceUri) `
-    -ResourceGroupName $destinationResourceGroup
-```
+Теперь виртуальный жесткий диск можно передать прямо в управляемый диск. Инструкции см. в статье [Отправка виртуального жесткого диска в Azure с помощью Azure PowerShell](disks-upload-vhd-to-managed-disk-powershell.md).
 
 ## <a name="option-3-copy-an-existing-azure-vm"></a>Вариант 3. Копирование существующей виртуальной машины Azure
 
 Вы можете создать копию виртуальной машины, использующую управляемые диски. Для этого создайте моментальный снимок виртуальной машины, а затем с его помощью создайте новый управляемый диск и новую виртуальную машину.
 
+Если вы хотите скопировать существующую виртуальную машину в другой регион, вы можете использовать azcopy, чтобы [создать копию диска в другом регионе](disks-upload-vhd-to-managed-disk-powershell.md#copy-a-managed-disk). 
 
 ### <a name="take-a-snapshot-of-the-os-disk"></a>Создание моментального снимка диска операционной системы
 

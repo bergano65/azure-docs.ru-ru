@@ -1,19 +1,18 @@
 ---
 title: Пошаговое руководство по REST API Azure Monitor
 description: Эта статья содержит сведения об аутентификации запросов и использовании REST API Azure Monitor для получения доступных определений и значений метрик.
-author: rboucher
-services: azure-monitor
 ms.service: azure-monitor
-ms.topic: conceptual
-ms.date: 03/19/2018
-ms.author: robb
 ms.subservice: ''
-ms.openlocfilehash: bbc5aaf02f4ab4388e816faaf8df536770f3302a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.topic: conceptual
+author: rboucher
+ms.author: robb
+ms.date: 03/19/2018
+ms.openlocfilehash: 68c90f6c763fe7cd634aee886c5c8c6b8153253e
+ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65205628"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72551832"
 ---
 # <a name="azure-monitoring-rest-api-walkthrough"></a>Пошаговое руководство по REST API Azure Monitor
 
@@ -88,7 +87,7 @@ $authHeader = @{
 2. получение значений метрик.
 
 > [!NOTE]
-> Дополнительные сведения о проверке подлинности с помощью Azure REST API, обратитесь к [Справочник по API REST Azure](https://docs.microsoft.com/rest/api/azure/).
+> Дополнительные сведения о проверке подлинности в Azure REST API см. в [справочнике по azure REST API](https://docs.microsoft.com/rest/api/azure/).
 >
 >
 
@@ -96,9 +95,9 @@ $authHeader = @{
 
 [REST API определений метрик Azure Monitor](https://docs.microsoft.com/rest/api/monitor/metricdefinitions). Используется для доступа к списку метрик, которые доступны для службы.
 
-**Метод:** GET
+**Метод**: GET
 
-**URI запроса**: https:\/\/management.azure.com/subscriptions/ *{subscriptionId}* /resourceGroups/ *{resourceGroupName}* /providers/ *{Пространство_имен_поставщиков_ресурсов}* / *{resourceType}* / *{resourceName}* /providers/microsoft.insights/metricDefinitions?api-version= *{} apiVersion}*
+**URI запроса**: https: \/ \/management. Azure.com/Subscriptions/ *{SubscriptionId}* /resourceGroups/ *{resourceGroupName}* /providers/ *{resourceProviderNamespace}* / *{ResourceType}* / *{resourceName}* /providers/Microsoft.Insights/metricDefinitions? API-Version = *{apiVersion}*
 
 Например, запрос на получение определений метрик для учетной записи хранения Azure будет выглядеть следующим образом:
 
@@ -240,9 +239,9 @@ Invoke-RestMethod -Uri $request `
 >
 >
 
-**Метод:** GET
+**Метод**: GET
 
-**URI запроса**: https\://management.azure.com/subscriptions/ *{ИД_ПОДПИСКИ}* /resourceGroups/ *{resource-group-name}* /providers/ *{} Resource-provider-namespace}* / *{тип_ресурса}* / *{resource-name}* /providers/microsoft.insights/metrics? metricnames = *{метрика}* & timespan = *{время_начала/время_окончания}* & $filter = *{фильтр}* & resultType = метаданных & api-version = *{Версия_api}*
+**URI запроса**: HTTPS \://Management.Azure.com/Subscriptions/ *{Subscription-ID}* /resourceGroups/ *{имя ресурса-группы*}/providers/ *{ресурс-поставщик-пространство имен}* / *{Resource-Type}* / *{Resource-Name}* /providers/Microsoft.Insights/Metrics? metricnames = *{метрика}* & TimeSpan = *{starttime/EndTime}* & $Filter = *{Filter}* & resultType = метаданные & API-Version = *{ apiVersion}*
 
 Например, чтобы получить список значений измерений, которые были созданы для параметра "API Name dimension" (Измерение имени API) метрики "Транзакции", где измерение GeoType = "Primary" в течение указанного интервала времени, используйте следующий запрос:
 
@@ -313,7 +312,7 @@ Invoke-RestMethod -Uri $request `
 >
 >
 
-**Метод:** GET
+**Метод**: GET
 
 **URI запроса**: https://management.azure.com/subscriptions/ *{ИД_подписки}* /resourceGroups/ *{имя_группы_ресурсов}* /providers/ *{пространство_имен_поставщиков_ресурсов}* / *{тип_ресурса}* / *{имя_ресурса}* /providers/microsoft.insights/metrics?metricnames= *{метрика}* &timespan= *{время_начала/время_окончания}* &$filter= *{фильтр}* &interval= *{интервал_времени}* &aggregation= *{агрегирование}* &api-version= *{версия_API}*
 
@@ -392,9 +391,9 @@ Invoke-RestMethod -Uri $request `
 
 [REST API определений метрик Azure Monitor](https://msdn.microsoft.com/library/mt743621.aspx). Используется для доступа к списку метрик, которые доступны для службы.
 
-**Метод:** GET
+**Метод**: GET
 
-**URI запроса**: https:\/\/management.azure.com/subscriptions/ *{subscriptionId}* /resourceGroups/ *{resourceGroupName}* /providers/ *{Пространство_имен_поставщиков_ресурсов}* / *{resourceType}* / *{resourceName}* /providers/microsoft.insights/metricDefinitions?api-version= *{} apiVersion}*
+**URI запроса**: https: \/ \/management. Azure.com/Subscriptions/ *{SubscriptionId}* /resourceGroups/ *{resourceGroupName}* /providers/ *{resourceProviderNamespace}* / *{ResourceType}* / *{resourceName}* /providers/Microsoft.Insights/metricDefinitions? API-Version = *{apiVersion}*
 
 Например, чтобы получить определения метрик для приложения логики Azure, запрос будет выглядеть следующим образом:
 
@@ -465,7 +464,7 @@ Invoke-RestMethod -Uri $request `
 >
 >
 
-**Метод:** GET
+**Метод**: GET
 
 **URI запроса**: https://management.azure.com/subscriptions/ *{ИД_подписки}* /resourceGroups/ *{имя_группы_ресурсов}* /providers/ *{пространство_имен_поставщиков_ресурсов}* / *{тип_ресурса}* / *{имя_ресурса}* /providers/microsoft.insights/metrics?$filter= *{фильтр}* &api-version= *{версия_API}*
 
@@ -621,7 +620,7 @@ armclient GET /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups
 
 ![Azure Resource Explorer](./media/rest-api-walkthrough/azure_resource_explorer.png)
 
-### <a name="azure-portal"></a>Портал Azure
+### <a name="azure-portal"></a>портала Azure
 
 Идентификатор ресурса можно также получить на портале Azure. Для этого перейдите к нужному ресурсу и выберите "Свойства". Идентификатор ресурса отображается в разделе "Свойства", как показано на следующем снимке экрана:
 
@@ -655,9 +654,9 @@ PlanId         :
 Version        : 08586982649483762729
 ```
 
-### <a name="azure-cli"></a>Инфраструктура CLI Azure
+### <a name="azure-cli"></a>Azure CLI
 
-Чтобы получить идентификатор ресурса для учетной записи хранения Azure, с помощью Azure CLI, выполните `az storage account show` команды, как показано в следующем примере:
+Чтобы получить идентификатор ресурса для учетной записи хранения Azure с помощью Azure CLI, выполните команду `az storage account show`, как показано в следующем примере:
 
 ```
 az storage account show -g azmon-rest-api-walkthrough -n contosotweets2017

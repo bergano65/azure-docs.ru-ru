@@ -1,19 +1,18 @@
 ---
 title: Управление смарт-группами
 description: Управление смарт-группами, созданными на основе экземпляров оповещений
-author: anantr
-services: monitoring
 ms.service: azure-monitor
-ms.topic: conceptual
-ms.date: 09/24/2018
-ms.author: robb
 ms.subservice: alerts
-ms.openlocfilehash: 42b4bd7427191bcec531ff883efa0d3297a9fd1f
-ms.sourcegitcommit: 6fe40d080bd1561286093b488609590ba355c261
+ms.topic: conceptual
+author: anantr
+ms.author: robb
+ms.date: 09/24/2018
+ms.openlocfilehash: cf972c350a5bcad31dfae5bf393ef968ed1ba209
+ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71702847"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72552403"
 ---
 # <a name="manage-smart-groups"></a>Управление смарт-группами
 [Смарт-группы](https://aka.ms/smart-groups) используют алгоритмы машинного обучения, чтобы объединять оповещения в группы на основе их совместного появления или подобия. Это позволяет управлять оповещениями не по отдельности, а на уровне всей смарт-группы. Из этой статьи вы узнаете, как работать со смарт-группами в Azure Monitor.
@@ -21,10 +20,10 @@ ms.locfileid: "71702847"
      1. Щелкните **Смарт-группы** на странице **Сводка по оповещениям**.    
     ![Мониторинг](./media/alerts-managing-smart-groups/sg-alerts-summary.jpg)
      2. Щелкните Alerts by Smart Groups (Оповещения по смарт-группам) на странице "Все оповещения".   
-     ![Отслеживание](./media/alerts-managing-smart-groups/sg-all-alerts.jpg)
+     ![Мониторинг](./media/alerts-managing-smart-groups/sg-all-alerts.jpg)
 2.  Отобразится список всех смарт-групп, созданных из экземпляров оповещений. Теперь вместо работы с индивидуальными оповещениями можно оперировать их смарт-группами.   
-![Отслеживание](./media/alerts-managing-smart-groups/sg-list.jpg)
+![Мониторинг](./media/alerts-managing-smart-groups/sg-list.jpg)
 3.  При щелчке смарт-группы откроется страница со сведениями о ней, такими как критерий группировки, а также списком всех оповещений в группе. Такое объединение позволяет сконцентрироваться на отдельных группах оповещений, а не работать со множеством индивидуальных оповещений.   
-![Отслеживание](./media/alerts-managing-smart-groups/sg-details.jpg)
+![Мониторинг](./media/alerts-managing-smart-groups/sg-details.jpg)
 
 

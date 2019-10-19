@@ -1,24 +1,18 @@
 ---
 title: Общие сведения о включении Azure Monitor для виртуальных машин (Предварительная версия) | Документация Майкрософт
 description: Узнайте, как развертывать и настраивать Azure Monitor для виртуальных машин. Ознакомьтесь с требованиями к системе.
-services: azure-monitor
-documentationcenter: ''
-author: mgoedtel
-manager: carmonm
-editor: ''
-ms.assetid: ''
 ms.service: azure-monitor
+ms.subservice: ''
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 09/24/2019
+author: mgoedtel
 ms.author: magoedte
-ms.openlocfilehash: 477343e188bece55f72a59debbab8c9a3f3e2905
-ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
+ms.date: 09/24/2019
+ms.openlocfilehash: 9d132faf0b4d1de232e2b7e6e5ab6730978e27a8
+ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71264999"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72555220"
 ---
 # <a name="enable-azure-monitor-for-vms-preview-overview"></a>Общие сведения о включении Azure Monitor для виртуальных машин (Предварительная версия)
 
@@ -31,20 +25,20 @@ ms.locfileid: "71264999"
 * Включите две или несколько виртуальных машин или масштабируемых наборов виртуальных машин Azure в определенной подписке или группе ресурсов с помощью PowerShell.
 * Включите Azure Monitor для виртуальных машин для мониторинга виртуальных машин или физических компьютеров, размещенных в корпоративной сети или в другой облачной среде.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Прежде чем начинать работу, убедитесь, что вы понимаете сведения, содержащиеся в следующих разделах. 
 
 >[!NOTE]
 >Следующие сведения, описанные в этом разделе, также применимы к [решению сопоставление служб](service-map.md).  
 
-### <a name="log-analytics"></a>Log Analytics
+### <a name="log-analytics"></a>Анализ журналов
 
 Azure Monitor для виртуальных машин поддерживает рабочую область Log Analytics в следующих регионах:
 
 - Центрально-западная часть США
 - Западная часть США 2<sup>1</sup>
-- East US
+- Восточная часть США
 - Восток США 2<sup>1</sup>
 - Центральная Канада
 - Южная часть Соединенного Королевства
@@ -83,14 +77,14 @@ Azure Monitor для виртуальных машин поддерживает 
 
 В следующей таблице перечислены операционные системы Windows и Linux, поддерживаемые Azure Monitor для виртуальных машин. Далее в этом разделе вы найдете полный список, в котором подробно описывается основной и дополнительный выпуск ОС Linux и поддерживаемые версии ядра.
 
-|Версия ОС |Производительность |Карты |Здоровье |
+|Версия ОС |Ориентированное на производительность |Maps |Здравоохранение |
 |-----------|------------|-----|-------|
-|Windows Server 2019 | X | X | X |
+|Windows Server 2019 | X | X | X |
 |Windows Server 2016 1803 | X | X | X |
-|Windows Server 2016 | X | X | X |
-|Windows Server 2012 R2 | X | X | X |
+|Windows Server 2016 | X | X | X |
+|Windows Server 2012 R2 | X | X | X |
 |Windows Server 2012 | X | X | |
-|Windows Server 2008 R2 | X | X|  |
+|Windows Server 2008 R2 | X | X|  |
 |Windows 10 1803 | X | X | |
 |Windows 8.1 | X | X | |
 |Windows 8 | X | X | |
@@ -141,7 +135,7 @@ Azure Monitor для виртуальных машин поддерживает 
 
 | Версия ОС | Версия ядра |
 |:--|:--|
-| 18,04 | 5,0 (включает ядро, настроенное Azure)<br>4,18 *<br>4,15* |
+| 18,04 | 5,0 (включает ядро, настроенное Azure)<br>4,18 *<br>4.15* |
 | 16.04.3 | 4,15. * |
 | 16.04 | 4.13.\*<br>4.11.\*<br>4.10.\*<br>4.8.\*<br>4.4.\* |
 
@@ -174,13 +168,13 @@ Azure Monitor для виртуальных машин поддерживает 
 
 | Подключенный источник | Поддерживается | Описание |
 |:--|:--|:--|
-| Агенты Windows | Да | Вместе с [агентом log Analytics для Windows](../../azure-monitor/platform/log-analytics-agent.md)агентам Windows требуется агент зависимостей. Дополнительные сведения см. в разделе [Поддерживаемые операционные системы](#supported-operating-systems). |
-| Агенты Linux | Да | Вместе с [агентом log Analytics для Linux](../../azure-monitor/platform/log-analytics-agent.md)агентам Linux требуется агент зависимостей. Дополнительные сведения см. в разделе [Поддерживаемые операционные системы](#supported-operating-systems). |
+| Агенты Windows | ДА | Вместе с [агентом log Analytics для Windows](../../azure-monitor/platform/log-analytics-agent.md)агентам Windows требуется агент зависимостей. Дополнительные сведения см. в разделе [Поддерживаемые операционные системы](#supported-operating-systems). |
+| Агенты Linux | ДА | Вместе с [агентом log Analytics для Linux](../../azure-monitor/platform/log-analytics-agent.md)агентам Linux требуется агент зависимостей. Дополнительные сведения см. в разделе [Поддерживаемые операционные системы](#supported-operating-systems). |
 | Группа управления System Center Operations Manager | Нет | |
 
 Вы можете скачать агент зависимостей из следующих расположений:
 
-| Файл | OS | Version | SHA-256 |
+| Файлы | ОС | Версия | SHA-256 |
 |:--|:--|:--|:--|
 | [InstallDependencyAgent-Windows.exe](https://aka.ms/dependencyagentwindows) | Windows | 9.9.2 | 6DFF19B9690E42CA190E3B69137C77904B657FA02895033EAA4C3A6A41DA5C6A |
 | [InstallDependencyAgent-Linux64.bin](https://aka.ms/dependencyagentlinux) | Linux | 9.9.1 | 1CB447EF30FC042FE7499A686638F3F9B4F449692FB9D80096820F8024BE4D7C |
@@ -200,7 +194,7 @@ Azure Monitor для виртуальных машин поддерживает 
 | Одна ВИРТУАЛЬная машина Azure или масштабируемый набор виртуальных машин | [Включение из виртуальной машины](vminsights-enable-single-vm.md) | Вы можете включить одну виртуальную машину Azure, выбрав **Insights (Предварительная версия)** непосредственно из виртуальной машины или масштабируемого набора виртуальных машин. |
 | Несколько виртуальных машин Azure или масштабируемых наборов виртуальных машин | [Включить с помощью политики Azure](vminsights-enable-at-scale-policy.md) | Вы можете включить несколько виртуальных машин Azure, используя политику Azure и доступные определения политик. |
 | Несколько виртуальных машин Azure или масштабируемых наборов виртуальных машин | [Включение с помощью Azure PowerShell или шаблонов Azure Resource Manager](vminsights-enable-at-scale-powershell.md) | Вы можете включить несколько виртуальных машин Azure или масштабируемых наборов виртуальных машин в указанной подписке или группе ресурсов с помощью шаблонов Azure PowerShell или Azure Resource Manager. |
-| Гибридное облачное решение | [Включить для гибридной среды](vminsights-enable-hybrid-cloud.md) | Можно выполнить развертывание на виртуальных машинах или физических компьютерах, размещенных в вашем центре обработки данных или в других облачных средах. |
+| Гибридное облачное хранилище | [Включить для гибридной среды](vminsights-enable-hybrid-cloud.md) | Можно выполнить развертывание на виртуальных машинах или физических компьютерах, размещенных в вашем центре обработки данных или в других облачных средах. |
 
 ## <a name="performance-counters-enabled"></a>Включение счетчиков производительности 
 
@@ -212,8 +206,8 @@ Azure Monitor для виртуальных машин настраивает Lo
 |------------|-------------|
 |Логический диск |Процент свободного места |
 |Логический диск |Среднее время чтения с диска (с) |
-|Логический диск |Среднее время обращения к диску (с) |
-|Логический диск |Среднее время записи на диск (с) |
+|Логический диск |Среднее время обращения к диску (сек.) |
+|Логический диск |Среднее время записи на диск (сек.) |
 |Логический диск |Байт в секунду для диска |
 |Логический диск |Скорость чтения с диска (байт/с) |
 |Логический диск |Операций чтения с диска в секунду |
@@ -221,7 +215,7 @@ Azure Monitor для виртуальных машин настраивает Lo
 |Логический диск |Скорость записи на диск (байт/с) |
 |Логический диск |Операций записи на диск в секунду |
 |Логический диск |Свободно мегабайт |
-|Память |Доступная память в МБ |
+|Память |Доступный объем в МБ |
 |Сетевой адаптер |Полученных байтов/с |
 |Сетевой адаптер |Отправленных байтов/с |
 |Процессор |% загруженности процессора |
@@ -239,15 +233,15 @@ Azure Monitor для виртуальных машин настраивает Lo
 |Логический диск |Свободно мегабайт |
 |Логический диск |Скорость обмена с логическим диском (байт/с) |
 |Память |Доступный объем памяти в МБ |
-|Сеть |Всего получено байт |
-|Сеть |Всего передано байт |
+|Network |Всего получено байт |
+|Network |Всего передано байт |
 |Процессор |% загруженности процессора |
 
 ## <a name="management-packs"></a>Пакеты управления
 
 Если Azure Monitor для виртуальных машин включена и настроена с Log Analytics рабочей областью, пакет управления перенаправляется на все компьютеры Windows, передающие данные в эту рабочую область. Если [Группа управления System Center Operations Manager интегрирована](../../azure-monitor/platform/om-agents.md) с рабочей областью log Analytics, пакет управления сопоставление служб развертывается из группы управления на компьютерах Windows, отправляющих отчеты в группу управления.  
 
-Пакет управления называется *Microsoft. IntelligencePacks. ApplicationDependencyMonitor*. Его запись в `%Programfiles%\Microsoft Monitoring Agent\Agent\Health Service State\Management Packs\` папку. Источником данных, который использует пакет управления, является `%Program files%\Microsoft Monitoring Agent\Agent\Health Service State\Resources\<AutoGeneratedID>\Microsoft.EnterpriseManagement.Advisor.ApplicationDependencyMonitorDataSource.dll`.
+Пакет управления называется *Microsoft. IntelligencePacks. ApplicationDependencyMonitor*. Он записывается в `%Programfiles%\Microsoft Monitoring Agent\Agent\Health Service State\Management Packs\` папку. Источник данных, используемый пакетом управления, `%Program files%\Microsoft Monitoring Agent\Agent\Health Service State\Resources\<AutoGeneratedID>\Microsoft.EnterpriseManagement.Advisor.ApplicationDependencyMonitorDataSource.dll`.
 
 ## <a name="diagnostic-and-usage-data"></a>Данные диагностики и использования
 
@@ -261,6 +255,6 @@ Azure Monitor для виртуальных машин настраивает Lo
 
 Теперь, когда вы включили мониторинг для виртуальной машины, данные мониторинга доступны для анализа в Azure Monitor для виртуальных машин.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы узнать, как использовать функцию работоспособности, см. статью о [просмотре сведений о работоспособности Azure Monitor для виртуальных машин](vminsights-health.md). Для просмотра обнаруженных зависимостей приложений см. статью о [просмотре схемы Azure Monitor для виртуальных машин](vminsights-maps.md).

@@ -1,22 +1,22 @@
 ---
 title: Создание концентратора событий с поддержкой Apache Kafka. Центры событий Azure | Документация Майкрософт
-description: Эта статья содержит пошаговое руководство по созданию Apache Kafka с поддержкой пространства имен концентраторов событий Azure с помощью портала Azure.
+description: В этой статье представлено пошаговое руководство по созданию Apache Kafka с включенным пространством имен концентраторов событий Azure с помощью портал Azure.
 services: event-hubs
 documentationcenter: .net
-author: basilhariri
+author: ShubhaVijayasarathy
 manager: timlt
 ms.service: event-hubs
 ms.devlang: dotnet
 ms.topic: article
 ms.custom: seodec18
 ms.date: 12/06/2018
-ms.author: bahariri
-ms.openlocfilehash: 125da95349fce0e75b44b5619baba28d34a74be1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: shvija
+ms.openlocfilehash: 9ce0f74ec6d4e536bfb3fe827ae6f8ae143b640e
+ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60822480"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72555797"
 ---
 # <a name="create-apache-kafka-enabled-event-hubs"></a>Создание Центров событий с поддержкой Apache Kafka
 
@@ -38,7 +38,7 @@ ms.locfileid: "60822480"
     
     ![Поиск Центров событий на портале](./media/event-hubs-create-kafka-enabled/event-hubs-create-event-hubs.png)
  
-3. Укажите уникальное имя и включите Kafka в пространстве имен. Нажмите кнопку **Создать**.
+3. Укажите уникальное имя и включите Kafka в пространстве имен. Щелкните **Create**(Создать).
     
     ![Создание пространства имен](./media/event-hubs-create-kafka-enabled/create-kafka-namespace.jpg)
  

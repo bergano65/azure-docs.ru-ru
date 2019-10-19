@@ -17,12 +17,12 @@ ms.author: twhitney
 ms.reviewer: saeeda
 ms.custom: aaddev, identityplatformtop40
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a53de919960902fcc89a53293f31a07baa88cf32
-ms.sourcegitcommit: 263a69b70949099457620037c988dc590d7c7854
+ms.openlocfilehash: bec22381d1961c47ce257666177b5faf918cea56
+ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71268550"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72554412"
 ---
 # <a name="overview-of-microsoft-authentication-library-msal"></a>Обзор библиотеки аутентификации Майкрософт (MSAL)
 Библиотека аутентификации Майкрософт (MSAL) позволяет разработчикам получать [маркеры](developer-glossary.md#security-token) из конечной точки платформы удостоверений Майкрософт, чтобы получить доступ к защищенным веб-API. Это могут быть веб-API Microsoft Graph, другие API Майкрософт, сторонние веб-API или ваши собственные веб-API. MSAL доступна для .NET, JavaScript, Android и iOS. Она поддерживает множество различных архитектур и платформ приложений.
@@ -56,9 +56,9 @@ MSAL можно использовать во многих сценариях п
 | --- | --- | 
 | [MSAL для .NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet)| Платформа .NET Framework, .NET Core, Xamarin Android, Xamarin iOS, универсальная платформа Windows|
 | [MSAL.js](https://github.com/AzureAD/microsoft-authentication-library-for-js)| Платформы JavaScript/TypeScript, такие как AngularJS, Ember.js или Durandal.js|
-| [MSAL для Android (предварительная версия)](https://github.com/AzureAD/microsoft-authentication-library-for-android)|Android|
+| [MSAL для Android](https://github.com/AzureAD/microsoft-authentication-library-for-android)|Android|
 | [MSAL для iOS и macOS](https://github.com/AzureAD/microsoft-authentication-library-for-objc)|iOS и macOS|
-| [Предварительная версия MSAL4J](https://github.com/AzureAD/microsoft-authentication-library-for-java)|Java|
+| [Предварительная версия MSAL4J](https://github.com/AzureAD/microsoft-authentication-library-for-java)|Java:|
 
 ## <a name="differences-between-adal-and-msal"></a>Различия между ADAL и MSAL
 

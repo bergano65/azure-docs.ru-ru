@@ -1,31 +1,25 @@
 ---
 title: Как остановить мониторинг кластера Службы Azure Kubernetes | Документация Майкрософт
 description: В этой статье описывается, как остановить мониторинг кластера Azure AKS с помощью Azure Monitor для контейнеров.
-services: azure-monitor
-documentationcenter: ''
-author: mgoedtel
-manager: carmonm
-editor: ''
-ms.assetid: ''
 ms.service: azure-monitor
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 08/19/2019
+ms.subservice: ''
+ms.topic: conceptual
+author: mgoedtel
 ms.author: magoedte
-ms.openlocfilehash: 376259686d1668d62cc79f340e2161ef11be5e12
-ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
+ms.date: 08/19/2019
+ms.openlocfilehash: 508bfa9cf7bff0084e7f0644ee5e053e683cb9cf
+ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69624372"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72554104"
 ---
 # <a name="how-to-stop-monitoring-your-azure-kubernetes-service-aks-with-azure-monitor-for-containers"></a>Как остановить мониторинг кластера Службы Azure Kubernetes (AKS) с помощью Azure Monitor для контейнеров
 
 Если после включения мониторинга вашего кластера AKS вы решите, что больше не хотите его отслеживать, вы можете остановить мониторинг. В этой статье показано, как это сделать с помощью Azure CLI или предоставленных шаблонов Azure Resource Manager.  
 
 
-## <a name="azure-cli"></a>Azure CLI
+## <a name="azure-cli"></a>Azure CLI
 
 Используйте команду [​az aks disable-addons](https://docs.microsoft.com/cli/azure/aks?view=azure-cli-latest#az-aks-disable-addons), чтобы отключить Azure Monitor для контейнеров. Команда удаляет агент из узлов кластера, не удаляет решение или данные, которые уже собраны и хранятся в ресурсе Azure Monitor.  
 

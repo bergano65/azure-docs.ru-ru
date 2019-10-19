@@ -1,22 +1,19 @@
 ---
 title: Аналитические сведения о группе ресурсов в Azure Monitor | Документация Майкрософт
 description: Сведения о работоспособности и производительности распределенных приложений и служб на уровне группы ресурсов с использованием Azure Monitor.
-services: azure-monitor
-author: NumberByColors
-manager: carmonm
 ms.service: azure-monitor
-ms.workload: tbd
-ms.tgt_pltfrm: ibiza
+ms.subservice: ''
 ms.topic: conceptual
+author: NumberByColors
+ms.author: daviste
 ms.date: 09/19/2018
 ms.reviewer: mbullwin
-ms.author: daviste
-ms.openlocfilehash: d5c07e0d4aca8bda42ea9f78a1475ea7bb5861f0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: fba94a5e723bfbc2719b3b4cf5cd130eda382276
+ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62119427"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72553990"
 ---
 # <a name="monitor-resource-groups-with-azure-monitor-preview"></a>Мониторинг групп ресурсов с помощью Azure Monitor (предварительная версия)
 
@@ -109,7 +106,7 @@ ms.locfileid: "62119427"
 
  ![Снимок экрана, отображающий представление производительности на основе метрик Azure](./media/resource-group-insights/0012-performance-metrics.png)
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Устранение неисправностей
 
 ### <a name="enabling-access-to-alerts"></a>Предоставление доступа к оповещениям
 

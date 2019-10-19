@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 10/15/2019
 ms.author: raynew
-ms.openlocfilehash: 75b2c08ab02ef41ee4d196d8f81c633aeb46a14e
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: 7d46773ce45cb3ef8b70d3c6074b9f1c771e9e24
+ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72390055"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72554639"
 ---
 # <a name="support-matrix-for-disaster-recovery--of-vmware-vms-and-physical-servers-to-azure"></a>Таблица поддержки аварийного восстановления виртуальных машин VMware и физических серверов в Azure
 
@@ -76,8 +76,8 @@ Windows Server 2008 с пакетом обновления 2 (SP2) или бол
 Windows 10, Windows 8.1, Windows 8 | Поддерживается.
 Windows 7 с пакетом обновления 1 (SP1) 64-bit | Поддерживается из [накопительного пакета обновления 36](https://support.microsoft.com/help/4503156) (версия 9,22 службы Mobility Service), начиная с версии. </br></br> Начиная с версии 9.30. x. x (ожидаемый выпуск, начиная с ноября 2019) агента службы Mobility Service, требуется [Обновление стека обслуживания (SSU)](https://support.microsoft.com/help/4490628) и [Обновление SHA-2](https://support.microsoft.com/help/4474419) , установленные на компьютерах с Windows 7 с пакетом обновления 1 (SP1).  SHA-1 не поддерживается с 2019 сентября, а если подпись кода SHA-2 не включена, расширение агента не будет устанавливаться и обновляться должным образом. Дополнительные сведения об [обновлении и требованиях SHA-2](https://aka.ms/SHA-2KB).
 Linux | Поддерживается только 64-разрядная система. 32-разрядная система не поддерживается.<br/><br/>На каждом сервере Linux должны быть установлены [компоненты Linux Integration Services (LIS)](https://www.microsoft.com/download/details.aspx?id=55106) . После тестовой отработки отказа или отработки отказа необходимо загрузить сервер в Azure. Если компоненты LIS отсутствуют, перед включением репликации для виртуальных машин в Azure необходимо установить [компоненты](https://www.microsoft.com/download/details.aspx?id=55106) . <br/><br/> Site Recovery координирует отработку отказа для запуска серверов Linux в Azure. Но поставщики Linux могут поддерживать только те версии дистрибутивов, срок поддержки которых еще не окончился.<br/><br/> Поддерживаются только дистрибутивы Linux на основе номенклатурных ядер, которые являются частью выпуска или обновления дополнительной версии.<br/><br/> Обновление защищенных виртуальных машин с основной версией дистрибутивов Linux не поддерживается. Для обновления отключите репликацию, обновите операционную систему и включите репликацию снова.<br/><br/> Дополнительные [сведения](https://support.microsoft.com/help/2941892/support-for-linux-and-open-source-technology-in-azure) о поддержке Linux и технологии с открытым кодом в Azure.
-Linux Red Hat Enterprise | 5,2 5.11 @ no__t-0<br/> 6,1 в функцию 6.10 @ no__t-0<br/> от 7,0 до 7,6<br/> <br/> На серверах с Red Hat Enterprise Linux 5.2-5.11 & 6.1-6.10 не установлены [компоненты Linux Integration Services (LIS)](https://www.microsoft.com/download/details.aspx?id=55106) . Прежде чем включать репликацию для загрузки компьютеров в Azure, обязательно установите [компоненты](https://www.microsoft.com/download/details.aspx?id=55106) .
-Linux: CentOS | 5,2 5.11 @ no__t-0<br/> 6,1 в функцию 6.10 @ no__t-0<br/> от 7,0 до 7,6<br/> <br/> На серверах с CentOS 5.2 — 5.11 & 6.1-6.10 не установлены [компоненты Integration Services Linux (LIS)](https://www.microsoft.com/download/details.aspx?id=55106) . Прежде чем включать репликацию для загрузки компьютеров в Azure, обязательно установите [компоненты](https://www.microsoft.com/download/details.aspx?id=55106) .
+Linux Red Hat Enterprise | 5,2 5,11 </b><br/> 6,1 6,10 </b><br/> от 7,0 до 7,7<br/> <br/> На серверах с Red Hat Enterprise Linux 5.2-5.11 & 6.1-6.10 не установлены [компоненты Linux Integration Services (LIS)](https://www.microsoft.com/download/details.aspx?id=55106) . Прежде чем включать репликацию для загрузки компьютеров в Azure, обязательно установите [компоненты](https://www.microsoft.com/download/details.aspx?id=55106) .
+Linux: CentOS | 5,2 5,11 </b><br/> 6,1 6,10 </b><br/> от 7,0 до 7,7<br/> <br/> На серверах с CentOS 5.2 — 5.11 & 6.1-6.10 не установлены [компоненты Integration Services Linux (LIS)](https://www.microsoft.com/download/details.aspx?id=55106) . Прежде чем включать репликацию для загрузки компьютеров в Azure, обязательно установите [компоненты](https://www.microsoft.com/download/details.aspx?id=55106) .
 Ubuntu | Ubuntu 14,04 LTS Server [(Обзор поддерживаемых версий ядра)](#ubuntu-kernel-versions)<br/><br/>Ubuntu 16,04 LTS Server [(Обзор поддерживаемых версий ядра)](#ubuntu-kernel-versions)
 Debian | Debian 7/Debian 8 [(Обзор поддерживаемых версий ядра)](#debian-kernel-versions)
 SUSE Linux | SUSE Linux Enterprise Server 12 SP1, SP2, SP3, SP4 [(Обзор поддерживаемых версий ядра)](#suse-linux-enterprise-server-12-supported-kernel-versions)<br/> SUSE Linux Enterprise Server 11 с пакетом обновления 3 или SUSE Linux Enterprise Server 11 с пакетом обновления 4<br/> Обновление реплицированных компьютеров с SUSE Linux Enterprise Server 11 SP3 на SP4 не поддерживается. Чтобы выполнить обновление, отключите репликацию и снова включите ее после обновления.

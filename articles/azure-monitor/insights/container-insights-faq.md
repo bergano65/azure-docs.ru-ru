@@ -1,21 +1,18 @@
 ---
 title: 'Azure Monitor для контейнеров: вопросы и ответы | Документация Майкрософт'
 description: Решение Azure Monitor для контейнеров отслеживает состояние работоспособности кластера AKS и Экземпляров контейнеров в Azure. В этой статье приведены ответы на распространенные вопросы.
-services: azure-monitor
-author: mgoedtel
-manager: carmonm
-editor: tysonn
 ms.service: azure-monitor
-ms.topic: article
-ms.workload: infrastructure-services
-ms.date: 08/14/2019
+ms.subservice: ''
+ms.topic: conceptual
+author: mgoedtel
 ms.author: magoedte
-ms.openlocfilehash: f8d763f8bb228a0d4d83a3776f818d59939b942d
-ms.sourcegitcommit: a6888fba33fc20cc6a850e436f8f1d300d03771f
+ms.date: 08/14/2019
+ms.openlocfilehash: bda64dd555f1970b70878d827f6be1dab3f1e2d5
+ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69559077"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72555429"
 ---
 # <a name="azure-monitor-for-containers-frequently-asked-questions"></a>Azure Monitor для контейнеров: вопросы и ответы
 
@@ -75,7 +72,7 @@ LogEntry : ({“Hello": "This example has multiple lines:","Docker/Moby": "will 
 
 ## <a name="how-do-i-resolve-azure-ad-errors-when-i-enable-live-logs"></a>Разделы справки устранить ошибки Azure AD при включении Live Logs? 
 
-Вы можете получать следующую ошибку: **URL-адрес ответа, указанный в запросе, не совпадает с URL-адреса ответа, настроенного для приложения:\>"< идентификатор приложения"** . Решение для решения этой проблемы можно найти в статье [Просмотр журналов контейнеров в реальном времени с помощью Azure Monitor для контейнеров](container-insights-live-logs.md#configure-aks-with-azure-active-directory). 
+Может появиться следующее сообщение об ошибке: **URL-адрес ответа, указанный в запросе, не совпадает с URL-адреса ответа, настроенного для приложения: "< приложение с идентификатором \>"** . Решение для решения этой проблемы можно найти в статье [Просмотр журналов контейнеров в реальном времени с помощью Azure Monitor для контейнеров](container-insights-live-logs.md#configure-aks-with-azure-active-directory). 
 
 ## <a name="why-cant-i-upgrade-cluster-after-onboarding"></a>Почему не удается обновить кластер после адаптации?
 
@@ -84,12 +81,12 @@ LogEntry : ({“Hello": "This example has multiple lines:","Docker/Moby": "will 
 ## <a name="which-ports-and-domains-do-i-need-to-openwhitelist-for-the-agent"></a>Какие порты и домены нужно открыть или список разрешений для агента?
 - *. ods.opinsights.azure.com 443
 - *. oms.opinsights.azure.com 443
-- *.blob.core.windows.net      443
+- *. blob.core.windows.net 443
 - dc.services.visualstudio.com 443
 - *. microsoftonline.com 443
 - *. monitoring.azure.com 443
 - login.microsoftonline.com 443
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы получить представление о требованиях и доступных методах для мониторинга и начать мониторинг кластера AKS, просмотрите [How to onboard the Azure Monitor for containers](container-insights-onboard.md) (Как подключить Azure Monitor для контейнеров). 

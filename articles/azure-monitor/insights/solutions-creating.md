@@ -1,25 +1,19 @@
 ---
 title: Создание решения по управлению в Azure | Документация Майкрософт
 description: Решения по управлению включают в себя упакованные сценарии управления в Azure, которые клиенты могут добавить в свою рабочую область Log Analytics.  В этой статье описано, как создавать решения для управления, которые можно использовать в своей среде или предоставлять другим пользователям.
-services: monitoring
-documentationcenter: ''
-author: bwren
-manager: carmonm
-editor: tysonn
-ms.assetid: 1915e204-ba7e-431b-9718-9eb6b4213ad8
 ms.service: azure-monitor
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 03/20/2017
+ms.subservice: ''
+ms.topic: conceptual
+author: bwren
 ms.author: bwren
+ms.date: 03/20/2017
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: ef1af4d3d27bc098341a4de716e293557baa946a
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 97472a65af6eb2c5c2da93d93f38450cc021f680
+ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60595810"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72555289"
 ---
 # <a name="design-and-build-a-management-solution-in-azure-preview"></a>Проектирование и сборка решения по управлению в Azure (предварительная версия)
 > [!NOTE]
@@ -34,7 +28,7 @@ ms.locfileid: "60595810"
 Основная стратегия заключается в том, что решение по управлению запускается при создании отдельных компонентов в среде Azure.  Если все компоненты работают правильно, вы можете упаковать их в [файл решения по управлению]( solutions-solution-file.md). 
 
 
-## <a name="design-your-solution"></a>Разработка решения
+## <a name="design-your-solution"></a>Создайте свое решение
 Самый распространенный шаблон для решения по управлению показан на следующей схеме.  Разные компоненты этого шаблона описываются ниже.
 
 ![Обзор решения для управления](media/solutions-creating/solution-overview.png)

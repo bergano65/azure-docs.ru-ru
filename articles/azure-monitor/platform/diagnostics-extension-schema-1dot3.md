@@ -1,29 +1,27 @@
 ---
 title: 'Схема конфигурации расширения для Системы диагностики Azure: версия 1.3 и новее'
 description: Схема версии 1.3 и более поздние версии для системы диагностики Azure поставляются в составе пакета SDK 2.4 и более поздней версии для Microsoft Azure.
-services: azure-monitor
-author: rboucher
 ms.service: azure-monitor
-ms.devlang: dotnet
-ms.topic: reference
-ms.date: 09/20/2018
-ms.author: robb
 ms.subservice: diagnostic-extension
-ms.openlocfilehash: e303fe5ca1869249d57373aab9c60a5f92b7ea9c
-ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
+ms.topic: reference
+author: rboucher
+ms.author: robb
+ms.date: 09/20/2018
+ms.openlocfilehash: 1d378571a02f30c223338eef5c7d142ed02ff4c8
+ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70735101"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72555550"
 ---
 # <a name="azure-diagnostics-13-and-later-configuration-schema"></a>Схема конфигурации системы диагностики Azure версии 1.3 и более поздней
 > [!NOTE]
 > Расширение системы диагностики Azure — это компонент, который используется для сбора данных счетчиков производительности и других статистических данных из:
 > - Виртуальные машины Azure
 > - Масштабируемые наборы виртуальных машин
-> - Платформа Service Fabric
+> - Service Fabric
 > - Облачные службы
-> - группы сетевой безопасности;
+> - Группы безопасности сети
 >
 > Данная страница применяется только в том случае, если вы используете одну из этих служб.
 
@@ -418,7 +416,7 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 
 |Дочерние элементы|Описание|  
 |--------------------|-----------------|  
-|**PublicConfig**|Обязательный элемент. Ознакомьтесь с описанием в другом разделе на этой странице.|  
+|**PublicConfig**|Обязательный параметр. Ознакомьтесь с описанием в другом разделе на этой странице.|  
 |**PrivateConfig**|Необязательный элемент. Ознакомьтесь с описанием в другом разделе на этой странице.|  
 |**IsEnabled**|Логическое значение. Ознакомьтесь с описанием в другом разделе на этой странице.|  
 
@@ -429,21 +427,21 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 
 |Дочерние элементы|Описание|  
 |--------------------|-----------------|  
-|**WadCfg**|Обязательный элемент. Ознакомьтесь с описанием в другом разделе на этой странице.|  
+|**WadCfg**|Обязательный параметр. Ознакомьтесь с описанием в другом разделе на этой странице.|  
 |**StorageAccount**|Имя учетной записи хранения Azure для хранения данных. Может также быть указан как параметр при выполнении командлета Set-AzureServiceDiagnosticsExtension.|  
 |**StorageType**|Может быть *таблицей*, *большим двоичным объектом* или *TableAndBlob*. Таблица — это значение по умолчанию. При выборе TableAndBlob диагностические данные записываются дважды (по одному разу на каждый тип).|  
 |**LocalResourceDirectory**|Каталог на виртуальной машине, в котором Monitoring Agent хранит данные событий. Если этот параметр не задан, используется каталог по умолчанию:<br /><br /> для рабочей роли или веб-роли: `C:\Resources\<guid>\directory\<guid>.<RoleName.DiagnosticStore\`<br /><br /> для виртуальной машины: `C:\WindowsAzure\Logs\Plugins\Microsoft.Azure.Diagnostics.IaaSDiagnostics\<WADVersion>\WAD<WADVersion>`<br /><br /> Ниже перечислены обязательные атрибуты.<br /><br /> - **path**: каталог в системе для использования системой диагностики Azure.<br /><br /> - **expandEnvironment**: позволяет раскрыть переменные среды в пути.|  
 
 ## <a name="wadcfg-element"></a>Элемент WadCFG  
- *Дерево: корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG*
+ *Дерево: корневой элемент — DiagnosticsConfiguration — PublicConfig, WadCFG*
 
  Позволяет определить и настроить сбор данных телеметрии.  
 
 
 ## <a name="diagnosticmonitorconfiguration-element"></a>Элемент DiagnosticMonitorConfiguration
- *Дерево: корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG — DiagnosticMonitorConfiguration*
+ *Дерево: корневой элемент — DiagnosticsConfiguration — PublicConfig, WadCFG, DiagnosticMonitorConfiguration*
 
- Обязательное значение
+ Обязательно для заполнения
 
 |Атрибуты|Описание|  
 |----------------|-----------------|  
@@ -480,7 +478,7 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 
 |Дочерние элементы|Описание|  
 |--------------------|-----------------|  
-|**CrashDumpConfiguration**|Обязательный элемент. Определяет значения конфигурации для каждого процесса.<br /><br /> Следующий атрибут также является обязательным:<br /><br /> **processName**: имя процесса, для которого системе диагностики Azure нужно собирать аварийные дампы.|  
+|**CrashDumpConfiguration**|Обязательный параметр. Определяет значения конфигурации для каждого процесса.<br /><br /> Следующий атрибут также является обязательным:<br /><br /> **processName**: имя процесса, для которого системе диагностики Azure нужно собирать аварийные дампы.|  
 
 ## <a name="directories-element"></a>Элемент Directories
  *Дерево: корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG — DiagnosticMonitorConfiguration — Directories*
@@ -505,7 +503,7 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 
 |Дочерние элементы|Описание|  
 |--------------------|-----------------|  
-|**DirectoryConfiguration**|Обязательный элемент. Обязательный атрибут:<br /><br /> **containerName**: имя контейнера больших двоичных объектов в вашей учетной записи хранения Azure, используемого для хранения файлов журнала.|  
+|**DirectoryConfiguration**|Обязательный параметр. Обязательный атрибут:<br /><br /> **containerName**: имя контейнера больших двоичных объектов в вашей учетной записи хранения Azure, используемого для хранения файлов журнала.|  
 
 
 
@@ -543,7 +541,7 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 |Дочерние элементы|Описание|  
 |--------------------|-----------------|  
 |**DefaultEvents**|Необязательный атрибут:<br/><br/> **eventDestination**: имя таблицы для хранения событий.|  
-|**Event**|Обязательный атрибут:<br /><br /> **id**: идентификатор события.<br /><br /> Необязательный атрибут:<br /><br /> **eventDestination**: имя таблицы для хранения событий.|  
+|**Событие**|Обязательный атрибут:<br /><br /> **id**: идентификатор события.<br /><br /> Необязательный атрибут:<br /><br /> **eventDestination**: имя таблицы для хранения событий.|  
 
 
 
@@ -553,7 +551,7 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 |Дочерние элементы|Описание|  
 |--------------------|-----------------|  
 |**DefaultEvents**|Необязательный атрибут:<br /><br /> **eventDestination**: имя таблицы для хранения событий.|  
-|**Event**|Обязательный атрибут:<br /><br /> **id**: идентификатор события.<br /><br /> Необязательный атрибут:<br /><br /> **eventDestination**: имя таблицы для хранения событий.|  
+|**Событие**|Обязательный атрибут:<br /><br /> **id**: идентификатор события.<br /><br /> Необязательный атрибут:<br /><br /> **eventDestination**: имя таблицы для хранения событий.|  
 
 
 
@@ -581,7 +579,7 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 
 |Дочерний элемент|Описание|  
 |-------------------|-----------------|  
-|**PerformanceCounterConfiguration**|Ниже приведены обязательные атрибуты.<br /><br /> - **counterSpecifier** — имя счетчика производительности. Например, `\Processor(_Total)\% Processor Time`. Чтобы получить список счетчиков производительности на узле, выполните команду `typeperf`.<br /><br /> - **sampleRate**: частота выборки для счетчика.<br /><br /> Необязательный атрибут:<br /><br /> **unit**: единица измерения счетчика.|
+|**PerformanceCounterConfiguration**|Ниже приведены обязательные атрибуты.<br /><br /> - **counterSpecifier** — имя счетчика производительности. Пример: `\Processor(_Total)\% Processor Time`. Чтобы получить список счетчиков производительности на узле, выполните команду `typeperf`.<br /><br /> - **sampleRate**: частота выборки для счетчика.<br /><br /> Необязательный атрибут:<br /><br /> **unit**: единица измерения счетчика.|
 |**Приемники** | Добавлено в версии 1.5. Необязательный элемент. Указывает расположение приемника для отправки диагностических данных. Например, Azure Monitor или Центры событий.|    
 
 
@@ -596,19 +594,19 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 
 |Дочерний элемент|Описание|  
 |-------------------|-----------------|  
-|**DataSource**|Собираемые журналы событий Windows. Обязательный атрибут:<br /><br /> **name** — запрос XPath, описывающий собираемые события Windows. Пример:<br /><br /> `Application!*[System[(Level <=3)]], System!*[System[(Level <=3)]], System!*[System[Provider[@Name='Microsoft Antimalware']]], Security!*[System[(Level <= 3)]`<br /><br /> Для сбора всех событий укажите "*".|  
+|**DataSource**|Собираемые журналы событий Windows. Обязательный атрибут:<br /><br /> **name** — запрос XPath, описывающий собираемые события Windows. Пример.<br /><br /> `Application!*[System[(Level <=3)]], System!*[System[(Level <=3)]], System!*[System[Provider[@Name='Microsoft Antimalware']]], Security!*[System[(Level <= 3)]`<br /><br /> Для сбора всех событий укажите "*".|  
 
 
 
 
 ## <a name="logs-element"></a>Элемент Logs  
- *Дерево: корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG — DiagnosticMonitorConfiguration — Logs*
+ *Дерево:корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG — DiagnosticMonitorConfiguration — Logs*
 
  Используется в версиях 1.0 и 1.1. Отсутствует в версии 1.2. Снова добавлен в версии 1.3.  
 
  Определяет конфигурацию буфера для базовых журналов Azure.  
 
-|Атрибут|Type|Описание|  
+|Атрибут|Тип|Описание|  
 |---------------|----------|-----------------|  
 |**bufferQuotaInMB**|**unsignedInt**|Необязательный элемент. Указывает максимальный объем хранилища файловой системы, который доступен для указанных данных.<br /><br /> Значение по умолчанию — 0.|  
 |**scheduledTransferLogLevelFilter**|**string**|Необязательный элемент. Указывает минимальный уровень серьезности для передаваемых записей журнала. Значение по умолчанию — **Undefined**, при котором передаются все журналы. Другие возможные значения (в порядке убывания информативности): **Verbose**, **Information**, **Warning**, **Error** и **Critical**.|  
@@ -642,12 +640,12 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 
 |Атрибут|Тип|Описание|  
 |---------------|----------|-----------------|  
-|**name**|строка|Строка, определяющая имя приемника.|  
+|**name**|string|Строка, определяющая имя приемника.|  
 
-|Элемент|Type|Описание|  
+|Элемент|Тип|Описание|  
 |-------------|----------|-----------------|  
-|**Application Insights**|строка|Используется только при отправке данных в Application Insights. Содержит ключ инструментирования для активной учетной записи Application Insights, к которой у вас есть доступ.|  
-|**Channels**|строка|Указывается для каждой дополнительной фильтрации, используемой при потоковой передаче.|  
+|**Application Insights**|string|Используется только при отправке данных в Application Insights. Содержит ключ инструментирования для активной учетной записи Application Insights, к которой у вас есть доступ.|  
+|**Channels**|string|Указывается для каждой дополнительной фильтрации, используемой при потоковой передаче.|  
 
 ## <a name="channels-element"></a>Элемент Channels  
  *Дерево: корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG — SinksConfig — Sink — Channels*
@@ -658,7 +656,7 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 
 |Элемент|Тип|Описание|  
 |-------------|----------|-----------------|  
-|**Channel**|строка|Ознакомьтесь с описанием в другом разделе на этой странице.|  
+|**Channel**|string|Ознакомьтесь с описанием в другом разделе на этой странице.|  
 
 ## <a name="channel-element"></a>Элемент Channel
  *Дерево: корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG — SinksConfig — Sink — Channels — Channel*
@@ -678,13 +676,13 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 
  Добавлен в версии 1.3.  
 
- Необязательный  
+ Необязательно  
 
  Хранит частные сведения об учетной записи хранения (имя, ключ и конечную точку). Эта информация отправляется на виртуальную машину, но извлечь ее из виртуальной машины невозможно.  
 
 |Дочерние элементы|Описание|  
 |--------------------|-----------------|  
-|**StorageAccount**|Используемая учетная запись хранения. Ниже приведены обязательные атрибуты.<br /><br /> - **name**: имя учетной записи хранения.<br /><br /> - **key**: ключ учетной записи хранения.<br /><br /> - **endpoint**: конечная точка для доступа к учетной записи хранения. <br /><br /> -**sasToken** (добавлен в версии 1.8.1): вы можете указать маркер SAS вместо ключа учетной записи хранения в закрытой конфигурации. Если он указан, ключ учетной записи хранения не учитывается. <br />Требования к маркеру SAS: <br />Поддерживает только маркер SAS учетной записи. <br />Требуемые типы служб: - *b*, *t*. <br /> Требуемые разрешения: - *a*, *c*, *u*, *w*. <br /> Требуемые типы ресурсов: - *c*, *o*. <br /> Поддерживает только протокол HTTPS. <br /> Время начала и окончания срока действия должно быть допустимым.|  
+|**StorageAccount**|Используемая учетная запись хранения. Ниже приведены обязательные атрибуты.<br /><br /> - **name**: имя учетной записи хранения.<br /><br /> - **key**: ключ учетной записи хранения.<br /><br /> - **endpoint**: конечная точка для доступа к учетной записи хранения. <br /><br /> -**sasToken** (Добавлено 1.8.1) — можно указать маркер SAS вместо ключа учетной записи хранения в частной конфигурации. Если этот параметр указан, ключ учетной записи хранения игнорируется. <br />Требования к маркеру SAS: <br />Поддерживает только маркер SAS учетной записи. <br />Требуемые типы служб: - *b*, *t*. <br /> Требуемые разрешения: - *a*, *c*, *u*, *w*. <br /> Требуемые типы ресурсов: - *c*, *o*. <br /> Поддерживает только протокол HTTPS. <br /> Время начала и окончания срока действия должно быть допустимым.|  
 
 
 ## <a name="isenabled-element"></a>Элемент IsEnabled  
