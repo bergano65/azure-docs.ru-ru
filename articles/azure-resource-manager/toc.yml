@@ -170,6 +170,7 @@
       items:
         - name: Проект Visual Studio с конвейерами
           href: vs-resource-groups-project-devops-pipelines.md
+          displayName: DevOps
     - name: Экспорт шаблона
       href: export-template-portal.md
     - name: Move (Переместить)
