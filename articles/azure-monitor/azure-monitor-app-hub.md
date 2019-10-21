@@ -3,19 +3,18 @@ layout: HubPage
 hide_bc: false
 title: Документация по Azure Monitor Application Insights. Руководства и справочник по API | Документация Майкрософт
 description: Azure Monitor Application Insights обеспечивает глубокий мониторинг производительности приложений на уровне кода.
-services: application-insights
-author: mrbullwinkle
-manager: carmonm
 ms.service: application-insights
-ms.topic: landing-page
-ms.date: 01/15/2019
+ms.subservice: ''
+ms.topic: hub-page
+author: mrbullwinkle
 ms.author: mbullwin
-ms.openlocfilehash: 6f35bf82e1c3275772bc9f5ccdcaceed024bd7d9
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.date: 01/15/2019
+ms.openlocfilehash: 254cd4e67c0c64ba9b21133e957ae2cacfefe7a7
+ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68967791"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72596820"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -64,7 +63,7 @@ ms.locfileid: "68967791"
                                             <div class="cardPadding">
                                                 <div class="card">
                                                     <div class="cardText">
-                                                        <h3>Новые возможности</h3>
+                                                        <h3>Что нового?</h3>
                                                         <p>
                                                             <a href="./app/azure-vm-vmss-apps.md">Мониторинг без кода для ВИРТУАЛЬНЫХ машин Azure и приложений масштабируемых наборов виртуальной машины Azure</a><br>
                                                             <a href="./app/kubernetes.md">Мониторинг приложений Kubernetes</a><br>
@@ -106,11 +105,11 @@ ms.locfileid: "68967791"
                                                             <a href="./app/proactive-potential-memory-leak.md">Обнаружение утечек памяти (предварительная версия)</a><br>
                                                             <a href="./app/proactive-low-utilization-cloud-resources.md">Малая загрузка ЦП в облачных ресурсах (предварительная версия)</a><br>
                                                             <a href="./app/proactive-application-security-detection-pack.md">Пакет обнаружения угроз безопасности приложений (предварительная версия)</a><br>
-                                                            <a href="./app/proactive-cloud-services.md">Облачные службы Azure</a><br>
+                                                            <a href="./app/proactive-cloud-services.md">Oблачныe службы Azure</a><br>
                                                             <a href="./app/proactive-arm-config.md">Управление правилами интеллектуального обнаружения Application Insights с помощью шаблонов Azure Resource Manager</a>
                                                         </p>
                                                         <br><br>
-                                                        <h3>Ссылка</h3>
+                                                        <h3>Справочные материалы</h3>
                                                         <p>
                                                             <a href="./app/auto-collect-dependencies.md">Автоматический сбор зависимостей</a><br>
                                                             <a href="./app/correlation.md">Корреляция данных телеметрии</a><br>
@@ -129,7 +128,7 @@ ms.locfileid: "68967791"
                                                     <div class="cardText">
                                                         <h3>Приложения Java</h3>
                                                         <p>
-                                                            <a href="./app/java-get-started.md">Приступая к работе с Application Insights в веб-проекте Java</a><br>
+                                                            <a href="./app/java-get-started.md">Мониторинг служб и приложений Node.js с помощью Application Insights</a><br>
                                                             <a href="https://docs.microsoft.com/java/azure/spring-framework/configure-spring-boot-java-applicationinsights?view=azure-java-stable">Настройка Application Insights в инициализаторе Spring Boot</a><br>
                                                             <a href="./app/micrometer-java.md">Как использовать Micrometer с пакетом SDK Azure Application Insights для Java</a><br>
                                                             <a href="./app/java-filter-telemetry.md">Фильтрация данных телеметрии</a><br>
@@ -143,7 +142,7 @@ ms.locfileid: "68967791"
                                                         <br><br>
                                                         <h3>Приложения .NET</h3>
                                                         <p>
-                                                            <a href="./app/asp-net.md">Настройка Application Insights для веб-сайта ASP.NET</a><br>
+                                                            <a href="./app/asp-net.md">Мониторинг служб и приложений Node.js с помощью Application Insights</a><br>
                                                             <a href="./app/monitor-performance-live-website-now.md">Монитор состояния</a><br>
                                                             <a href="./app/azure-web-apps.md">Мониторинг производительности Службы приложений Azure</a><br>
                                                             <a href="./app/azure-vm-vmss-apps.md">Мониторинг приложений масштабируемого набора виртуальной машины и виртуальных машин</a><br>
@@ -153,7 +152,7 @@ ms.locfileid: "68967791"
                                                         <br><br>
                                                           <h3>Приложения .NET Core</h3>
                                                         <p>
-                                                            <a href="./app/asp-net-core.md">Application Insights для ASP.NET Core</a><br>
+                                                            <a href="./app/asp-net-core.md">Мониторинг служб и приложений Node.js с помощью Application Insights</a><br>
                                                             <a href="./app/profiler-aspnetcore-linux.md">Профилирование веб-приложений ASP.NET Core в Azure для Linux с помощью Application Insights Profiler</a><br>
                                                             <a href="./app/api-custom-events-metrics.md">Пользовательские события и метрики</a><br>
                                                             <a href="https://github.com/Microsoft/ApplicationInsights-aspnetcore">Репозиторий GitHub пакета SDK для .NET Core с открытым кодом</a>
@@ -168,7 +167,7 @@ ms.locfileid: "68967791"
                                                         <br><br>
                                                         <h3>Мониторинг на стороне клиента или браузера</h3>
                                                         <p>
-                                                            <a href="./app/javascript.md">Application Insights для веб-страниц</a><br>
+                                                            <a href="./app/javascript.md">Мониторинг служб и приложений Node.js с помощью Application Insights</a><br>
                                                             <a href="./app/api-custom-events-metrics.md">Пользовательские события и метрики</a><br>
                                                             <a href="https://github.com/Microsoft/ApplicationInsights-JS">Репозиторий GitHub пакета SDK для JavaScript с открытым кодом</a><br>
                                                         </p>

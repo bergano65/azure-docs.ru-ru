@@ -7,12 +7,12 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 10/07/2019
-ms.openlocfilehash: 5d69e29c83bcbe433b800d6877ba1c7440eceedc
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: e92471bd467557f3ac8eb0404d672355ccab8449
+ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72387986"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72597128"
 ---
 # <a name="monitor-data-flows"></a>Мониторинг потоков данных
 
@@ -47,6 +47,11 @@ ms.locfileid: "72387986"
   * Вычисляемый. столбец используется для условной обработки или в выражении в потоке данных, но не наземный его в приемнике
   * Derived: столбец — это новый столбец, созданный в последовательности, т. е. он отсутствует в источнике.
   * Сопоставлено: столбец получен из источника, и вы сопоставляете его с полем приемника
+  * Состояние потока данных: текущее состояние выполнения
+  * Время запуска кластера: время, необходимое для получения вычислительной среды с JIT-компилятором Spark для выполнения потока данных
+  * Число преобразований: количество шагов преобразования, выполняемых в потоке
+  
+![Мониторинг потока данных аЦит](media/data-flow/monitornew.png "Новый мониторинг потока данных")  
   
 ## <a name="monitor-icons"></a>Значки мониторинга
 

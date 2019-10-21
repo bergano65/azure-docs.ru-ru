@@ -11,10 +11,10 @@ ms.workload: infrastructure-services
 ms.date: 06/28/2019
 ms.author: rambala
 ms.openlocfilehash: 4984b30daf6170873cad9472bfed2d879af57efe
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
+ms.lasthandoff: 10/18/2019
 ms.locfileid: "67466644"
 ---
 # <a name="designing-for-high-availability-with-expressroute"></a>Проектирование для обеспечения высокого уровня доступности с помощью ExpressRoute
@@ -80,16 +80,16 @@ ExpressRoute обеспечивает высокий уровень доступ
 
 ExpressRoute поддерживает БФД через частный пиринг. БФД сокращает время обнаружения сбоя по сети уровня 2 между Microsoft Enterprise (MSEE) и соседями BGP на локальной стороне от 3 минут (по умолчанию) до секунды. Время быстрого обнаружения сбоев помогает хастенинг восстановление после сбоя. Дополнительные сведения см. в разделе [Настройка бфд через ExpressRoute][BFD].
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье мы рассмотрели разработку для обеспечения высокого уровня доступности подключения канала ExpressRoute. Пиринг канала ExpressRoute закрепляется в географическом расположении и поэтому может повлиять на выполнение катастрофического сбоя, влияющего на все расположение. 
 
 Рекомендации по проектированию для создания геоизбыточного сетевого подключения к магистрали Майкрософт, которые могут выдерживать катастрофические сбои, которые влияют на весь регион, см. [в разделе Разработка для аварийного восстановления с помощью частного пиринга ExpressRoute][DR].
 
 <!--Image References-->
-[1]: ./media/designing-for-high-availability-with-expressroute/exr-reco.png "Рекомендуемый способ подключения с помощью ExpressRoute"
-[2]: ./media/designing-for-high-availability-with-expressroute/suboptimal-lastmile-connectivity.png "Неоптимальная Последняя миля с подключением"
-[3]: ./media/designing-for-high-availability-with-expressroute/nat-options.png "Параметры NAT"
+[1]: ./media/designing-for-high-availability-with-expressroute/exr-reco.png "рекомендуемый способ подключения с помощью ExpressRoute"
+[2]: ./media/designing-for-high-availability-with-expressroute/suboptimal-lastmile-connectivity.png "неоптимальное подключение в последнюю очередь"
+[3]: ./media/designing-for-high-availability-with-expressroute/nat-options.png "варианта NAT"
 
 
 <!--Link References-->

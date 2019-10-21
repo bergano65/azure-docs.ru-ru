@@ -1,6 +1,6 @@
 ---
-title: Настройка политики экспорта для тома NFS, использующих службу файлов Azure NetApp | Документация Майкрософт
-description: Описывается, как настроить политику экспорта для управления доступом на том NFS, использующих службу файлов Azure NetApp
+title: Настройка политики экспорта для тома NFS с помощью Azure NetApp Files | Документация Майкрософт
+description: Описание настройки политики экспорта для управления доступом к тому NFS с помощью Azure NetApp Files
 services: azure-netapp-files
 documentationcenter: ''
 author: b-juche
@@ -12,22 +12,22 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 03/20/2019
+ms.date: 10/18/2019
 ms.author: b-juche
-ms.openlocfilehash: 8cda5921a1aec86d28beabbd9cea5b07a203a0e8
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d323bd0b9684cfe4930d8c779a6728fcfd3836fb
+ms.sourcegitcommit: 9a4296c56beca63430fcc8f92e453b2ab068cc62
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61086171"
+ms.lasthandoff: 10/20/2019
+ms.locfileid: "72674929"
 ---
 # <a name="configure-export-policy-for-an-nfs-volume"></a>Настройка политики экспорта для тома NFS
 
-При необходимости можно настроить политику экспорта для управления доступом к тому Azure NetApp Files. Экспорт политики поддерживается только для тома NFS. 
+При необходимости можно настроить политику экспорта для управления доступом к тому Azure NetApp Files. Azure NetApp Files политика экспорта поддерживает только тома NFS.  Поддерживаются NFSv3 и NFSv4. 
 
 ## <a name="steps"></a>Действия 
 
-1.  Нажмите колонку **Создать политику экспорта** в колонке "Управление томом". 
+1.  Нажмите кнопку **Экспорт политики** в области навигации Azure NetApp Files. 
 
 2.  Чтобы создать правило политики экспорта, заполните следующие поля.   
     *  **Индекс**   
@@ -39,15 +39,11 @@ ms.locfileid: "61086171"
         * IPv4-адрес, например `10.1.12.24` 
         * IPv4-адрес и маска подсети, выраженная количеством бит, например `10.1.12.10/4`
 
-    * **Access**  
+    * **Доступ**  
         Выберите одно из следующих типов доступа.  
         * Нет доступа 
         * Чтение и запись
         * Только чтение
-
-    * **Протоколы**   
-        Укажите протокол, используемый для экспорта политики.   
-        В настоящее время политики экспорта NetApp службы файлов Azure поддерживает только NFSv3.
 
     ![Экспортировать политику](../media/azure-netapp-files/azure-netapp-files-export-policy.png) 
 

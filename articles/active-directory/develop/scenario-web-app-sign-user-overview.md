@@ -15,54 +15,54 @@ ms.date: 09/17/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1f9b6d4ce4048b31f17b50184f90aed4d2a8ba81
-ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
+ms.openlocfilehash: 68d47d4233aec62ec5f1955e52025b0d55221af8
+ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71086570"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72596720"
 ---
-# <a name="scenario-web-app-that-signs-in-users"></a>Сценарий. Веб-приложение, которое поддерживает вход пользователей
+# <a name="scenario-web-app-that-signs-in-users"></a>Сценарий: веб-приложение, которое входит в систему пользователей
 
 Узнайте все, что нужно для создания веб-приложения, которое входит в состав пользователей платформы Microsoft Identity.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 [!INCLUDE [Pre-requisites](../../../includes/active-directory-develop-scenarios-prerequisites.md)]
 
-## <a name="getting-started"></a>Приступая к работе
+## <a name="getting-started"></a>Начало работы
 
 # <a name="aspnet-coretabaspnetcore"></a>[ASP.NET Core](#tab/aspnetcore)
 
 Если вы хотите создать первые переносимые (ASP.NET Core) веб-приложения, которые входят в систему пользователей, следуйте указаниям в этом кратком руководстве:
 
 > [!div class="nextstepaction"]
-> [Краткое руководство ASP.NET Core веб-приложение, которое входит в систему пользователей](quickstart-v2-aspnet-core-webapp.md)
+> [Краткое руководство. ASP.NET Core веб-приложение, которое входит в систему пользователей](quickstart-v2-aspnet-core-webapp.md)
 
 # <a name="aspnettabaspnet"></a>[ASP.NET](#tab/aspnet)
 
 f вы хотите понять, как добавить вход в устаревшее веб-приложение ASP.NET. Ознакомьтесь со следующим руководством:
 
 > [!div class="nextstepaction"]
-> [Краткое руководство Веб-приложение ASP.NET, которое входит в систему пользователей](quickstart-v2-aspnet-webapp.md)
+> [Краткое руководство. веб-приложение ASP.NET, которое входит в систему пользователей](quickstart-v2-aspnet-webapp.md)
 
 # <a name="javatabjava"></a>[Java](#tab/java)
 
 Если вы являетесь разработчиком Java, ознакомьтесь со следующим кратким руководством:
 
 > [!div class="nextstepaction"]
-> [Краткое руководство Добавление входа с помощью Microsoft в веб-приложение Java](quickstart-v2-java-webapp.md)
+> [Краткое руководство. Добавление входа с помощью Microsoft в веб-приложение Java](quickstart-v2-java-webapp.md)
 
 # <a name="pythontabpython"></a>[Python](#tab/python)
 
 Если вы разрабатываете на Python, попробуйте:
 
 > [!div class="nextstepaction"]
-> [Краткое руководство Добавление входа с помощью Microsoft в веб-приложение Python](quickstart-v2-python-webapp.md)
+> [Краткое руководство. Добавление входа с помощью Microsoft в веб-приложение Python](quickstart-v2-python-webapp.md)
 
 ---
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Краткое описание
 
 Вы добавляете проверку подлинности в веб-приложение, чтобы он мог выполнять вход пользователей. Добавление проверки подлинности позволяет веб-приложению обращаться к ограниченным сведениям о профиле, и, например, можно настроить взаимодействие с пользователями. Веб-приложения проверяют подлинность пользователя в веб-браузере. В этом сценарии веб-приложение направляет браузер пользователя для выполнения входа в Azure AD. Azure AD возвращает ответ входа через браузер пользователя, который содержит утверждения о пользователе в маркере безопасности. При входе в систему пользователи используют стандартный протокол [Open ID Connect](./v2-protocols-oidc.md) , упрощенный с помощью [библиотек](scenario-web-app-sign-user-app-configuration.md#libraries-used-to-protect-web-apps)по промежуточного слоя.
 
@@ -79,7 +79,26 @@ f вы хотите понять, как добавить вход в устар
 - В коде для вашего приложения необходимо предоставить центр, в котором веб-приложение делегирует вход. Может потребоваться настроить проверку маркера (в частности, в сценариях ISV).
 - Веб-приложения поддерживают любые типы учетных записей. Дополнительные сведения см. в разделе [Поддерживаемые типы учетных записей](v2-supported-account-types.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
+
+# <a name="aspnet-coretabaspnetcore"></a>[ASP.NET Core](#tab/aspnetcore)
 
 > [!div class="nextstepaction"]
-> [Интеграция приложений с Azure Active Directory](scenario-web-app-sign-user-app-registration.md)
+> [Интеграция приложений с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/scenario-web-app-sign-user-app-registration?tabs=aspnetcore?tabs=aspnetcore)
+
+# <a name="aspnettabaspnet"></a>[ASP.NET](#tab/aspnet)
+
+> [!div class="nextstepaction"]
+> [Интеграция приложений с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/scenario-web-app-sign-user-app-registration?tabs=aspnet)
+
+# <a name="javatabjava"></a>[Java](#tab/java)
+
+> [!div class="nextstepaction"]
+> [Интеграция приложений с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/scenario-web-app-sign-user-app-registration?tabs=java)
+
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+> [!div class="nextstepaction"]
+> [Интеграция приложений с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/scenario-web-app-sign-user-app-registration?tabs=python)
+
+---

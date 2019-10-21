@@ -9,14 +9,14 @@ manager: cshankar
 ms.reviewer: v-mamcge, jasonh, kfile
 ms.topic: conceptual
 ms.workload: big-data
-ms.date: 10/03/2019
+ms.date: 10/18/2019
 ms.custom: seodec18
-ms.openlocfilehash: cad57e3e7e52ec291819110bab9d8d79f51e5a2f
-ms.sourcegitcommit: 7868d1c40f6feb1abcafbffcddca952438a3472d
+ms.openlocfilehash: e862cd604263c5125259344baf2e990ad56a3291
+ms.sourcegitcommit: 9a4296c56beca63430fcc8f92e453b2ab068cc62
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71958155"
+ms.lasthandoff: 10/20/2019
+ms.locfileid: "72675832"
 ---
 # <a name="share-a-custom-view-using-a-parameterized-url"></a>Предоставление общего доступа к пользовательскому представлению с помощью параметризованного URL-адреса
 
@@ -34,7 +34,7 @@ ms.locfileid: "71958155"
 
 Пример параметра идентификатора среды: `?environmentId=10000000-0000-0000-0000-100000000108`.
 
-## <a name="time"></a>Time
+## <a name="time"></a>Время
 
 С помощью параметризованного URL-адреса можно указать абсолютное или относительное значение времени.
 
@@ -60,7 +60,7 @@ ms.locfileid: "71958155"
 * `10800000` (последние 3 часа)
 * `21600000` (последние 6 часов)
 * `43200000` (последние 12 часов)
-* `86400000` (последние 24 часа)
+* `86400000` (за последние 24 часа)
 * `604800000` (за последние 7 дней)
 * `2592000000` (последние 30 часов)
 
@@ -76,9 +76,9 @@ ms.locfileid: "71958155"
 | **предикат** | `\<string>` | предложение *where* для фильтрации на стороне сервера. |
 | **усесум** | `true` | Необязательный параметр, который задает использование функции Sum для меры. </br>  Обратите внимание, что если выбрана мера `Events`, то счетчик будет выбран по умолчанию.  </br>  Если `Events` не выбран, по умолчанию выбирается Average. |
 
-* Пара "ключ-значение" `multiChartStack=<true/false>` позволяет включать в диаграмму стек.
-* Пара "ключ — значение" `multiChartSameScale=<true/false>` обеспечивает одинаковое масштабирование по оси Y в пределах необязательного параметра.  
-* @No__t-0 позволяет настроить ползунок интервала, чтобы обеспечить более детализированное или более гладкое, более обобщенное представление диаграммы.  
+* @No__t_0 пара "ключ-значение" позволяет включать в диаграмму стек.
+* @No__t_0 пара "ключ-значение" обеспечивает одинаковую шкалу по оси Y в пределах необязательного параметра.  
+* @No__t_0 позволяет настроить ползунок интервала, чтобы обеспечить более детализированное или более гладкое, более обобщенное представление диаграммы.  
 * Параметр `timezoneOffset=<integer>` позволяет задать часовой пояс для просматриваемой диаграммы в качестве смещения в формате UTC.
 
 | Пары | Описание |
@@ -114,13 +114,13 @@ https://insights.timeseries.azure.com/samples?environmentId=10000000-0000-0000-0
 
 Приведенный выше URL-адрес описывает и создает представление обозревателя "аналитика временных рядов".
 
-[Условия обозревателя 1Time серии Insights для @no__t](media/parameterized-url/url1.png)](media/parameterized-url/url1.png#lightbox)
+[Условия обозревателя ![Time Series Insights](media/parameterized-url/url1.png)](media/parameterized-url/url1.png#lightbox)
 
 Полное представление (включая диаграмму):
 
-[представление @no__t 1Chart](media/parameterized-url/url2.png)](media/parameterized-url/url2.png#lightbox)
+[представление ![Chart](media/parameterized-url/url2.png)](media/parameterized-url/url2.png#lightbox)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, как [запрашивать данные C#с помощью ](time-series-insights-query-data-csharp.md).
 

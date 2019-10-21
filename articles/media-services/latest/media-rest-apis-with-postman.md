@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/11/2019
 ms.author: juliako
-ms.openlocfilehash: d25596884acdb356779eafa4348240239855ce37
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.openlocfilehash: c402381534087f1e8cdab711bd1b2a34c78417f4
+ms.sourcegitcommit: 9a4296c56beca63430fcc8f92e453b2ab068cc62
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70308450"
+ms.lasthandoff: 10/20/2019
+ms.locfileid: "72675722"
 ---
 # <a name="configure-postman-for-media-services-rest-api-calls"></a>Настройка Postman для вызовов REST API служб мультимедиа
 
@@ -26,13 +26,13 @@ ms.locfileid: "70308450"
 
 Перед началом разработки ознакомьтесь [с разработкой с помощью API-интерфейсов служб мультимедиа v3](media-services-apis-overview.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - [Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md). Обязательно запомните имя группы ресурсов и имя учетной записи Служб мультимедиа. 
 - Получите информацию, необходимую для [доступа к API-интерфейсам](access-api-cli-how-to.md).
 - Установите клиент REST [Postman](https://www.getpostman.com/) для выполнения REST API, как показано в некоторых руководствах по REST AMS. 
 
-    Мы используем **Postman**, но подойдет любое средство REST. Другие варианты включают: **Visual Studio Code** с подключаемым модулем REST или **Telerik Fiddler**. 
+    Мы используем **Postman**, но подойдет любое средство REST. Другие варианты включают **Visual Studio Code** с подключаемым модулем REST или **Telerik Fiddler**. 
 
 > [!IMPORTANT]
 > Проверьте [соглашения об именовании](media-services-apis-overview.md#naming-conventions).
@@ -47,11 +47,9 @@ ms.locfileid: "70308450"
 
 ## <a name="configure-postman"></a>Настройка Postman
 
-В этом разделе описано, как выполнить настройку Postman.
-
 ### <a name="configure-the-environment"></a>Настройка среды 
 
-1. Откройте **Postman**.
+1. Откройте приложение **POST** .
 2. В правой части экрана выберите параметр **Управление средой**.
 
     ![Управление средой](./media/develop-with-postman/postman-import-env.png)
@@ -80,7 +78,7 @@ ms.locfileid: "70308450"
 
 Прежде чем вы сможете работать с ресурсами AMS версии 3, вам нужно получить и задать маркер Azure AD для аутентификации субъекта-службы.
 
-1. В левом окне Postman выберите "Шаг 1. Получить маркер проверки подлинности AAD".
+1. В левом окне поступающего приложения выберите "шаг 1. получение токена проверки подлинности AAD".
 2. Затем выберите Get Azure AD Token for Service Principal Authentication (Получение маркера безопасности Azure AD для аутентификации субъекта-службы).
 3. Нажмите кнопку **Отправить**.
 
@@ -94,13 +92,13 @@ ms.locfileid: "70308450"
 
     ![Получение маркера AAD](./media/develop-with-postman/postman-get-aad-auth-token.png)
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>Дополнительные материалы
 
 - [Передача файлов в учетную запись Служб мультимедиа с помощью REST](upload-files-rest-how-to.md)
 - [Создание фильтров с помощью REST API Служб мультимедиа](filters-dynamic-manifest-rest-howto.md)
 - [REST API на основе Azure Resource Manager](https://github.com/Azure-Samples/media-services-v3-arm-templates)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Потоковая передача файлов с помощью REST](stream-files-tutorial-with-rest.md)  
-- [Учебник. Кодирование удаленного файла на основе URL-адреса и потоковой передачи видео с помощью REST](stream-files-tutorial-with-rest.md)
+- [Учебник. кодирование удаленного файла на основе URL-адреса и поток видео — остальное](stream-files-tutorial-with-rest.md)

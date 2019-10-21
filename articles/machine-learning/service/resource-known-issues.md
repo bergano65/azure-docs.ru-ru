@@ -11,16 +11,22 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 08/09/2019
 ms.custom: seodec18
-ms.openlocfilehash: b69eda59c9c8032510df036d3aa0d160105fbc16
-ms.sourcegitcommit: 6eecb9a71f8d69851bc962e2751971fccf29557f
+ms.openlocfilehash: a3ba28960327f1e0a56b1ac838b2cb90ab6ac72a
+ms.sourcegitcommit: 9a4296c56beca63430fcc8f92e453b2ab068cc62
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72533172"
+ms.lasthandoff: 10/20/2019
+ms.locfileid: "72675645"
 ---
 # <a name="known-issues-and-troubleshooting-azure-machine-learning"></a>Известные проблемы и устранение неполадок Машинное обучение Azure
 
 Эта статья поможет вам найти и исправить ошибки или сбои, возникшие при использовании Машинное обучение Azure.
+
+## <a name="upcoming-sr-iov-upgrade-to-ncv3-machines-in-amlcompute"></a>Предстоящие обновления SR-IOV до NCv3 машин в Амлкомпуте
+
+Azure COMPUTE будет обновлять номера SKU NCv3, начиная с ранних ноября, для поддержки всех реализаций и версий MPI и команд RDMA для виртуальных машин, оснащенных InfiniBand. Для этого потребуется короткий простой. [Дополнительные сведения об обновлении SR-IOV](https://azure.microsoft.com/updates/sriov-availability-on-ncv3-virtual-machines-sku).
+
+В качестве клиента управляемого предложения для вычислений Машинное обучение Azure (Амлкомпуте) в настоящее время вносить изменения не требуется. В зависимости от [расписания обновления](https://azure.microsoft.com/updates/sr-iov-availability-schedule-on-ncv3-virtual-machines-sku) необходимо спланировать небольшой перерыв в работе. Служба принимает ответственность за обновление образов виртуальных машин на узлах кластера и автоматическое масштабирование кластера. После завершения обновления вы сможете использовать все остальные MPI-дисЦибутионс (например, Опенмпи с Pytorch), помимо более высокой пропускной способности InfiniBand, низкой задержки и более высокой производительности распределенных приложений.
 
 ## <a name="visual-interface-issues"></a>Проблемы с визуальным интерфейсом
 

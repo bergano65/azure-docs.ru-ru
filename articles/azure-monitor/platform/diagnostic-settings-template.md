@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 07/31/2019
 ms.author: bwren
 ms.subservice: ''
-ms.openlocfilehash: f65e3c4f9582fcc5c28412d44e513fa6bcb9e870
-ms.sourcegitcommit: 6eecb9a71f8d69851bc962e2751971fccf29557f
+ms.openlocfilehash: 303682a9d7b3c3fe8ba6c8dd6fe2a44741bcafce
+ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "71262340"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72597288"
 ---
 # <a name="create-diagnostic-setting-in-azure-using-a-resource-manager-template"></a>Создание параметра диагностики в Azure с помощью шаблона диспетчер ресурсов
 [Журналы платформы](platform-logs-overview.md) в Azure предоставляют подробные сведения о диагностике и аудите для ресурсов Azure и платформы Azure, от которых они зависят. В этой статье приводятся сведения об использовании [шаблона Azure Resource Manager](../../azure-resource-manager/resource-group-authoring-templates.md) для настройки параметров диагностики для получения журналов платформы в разные места назначения. Это позволяет автоматически начать сбор журналов платформы при создании ресурса.
@@ -53,7 +53,7 @@ ms.locfileid: "71262340"
 "workspaceId":{
   "type": "string",
   "metadata": {
-    "description": "Azure Resource ID of the Log Analytics workspace for the Log Analytics workspace to which logs will be sent."
+    "description": "Azure Resource ID of the Log Analytics workspace to which logs will be sent."
   }
 }
 ```

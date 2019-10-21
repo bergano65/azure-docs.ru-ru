@@ -16,12 +16,12 @@ ms.date: 09/15/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ef28520edd8500be0da52996e6484a0407fb03c8
-ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
+ms.openlocfilehash: 605614265d033647bfcf22bb99d45c89f275298b
+ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71056446"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72596385"
 ---
 # <a name="daemon-app-that-calls-web-apis---acquire-a-token"></a>Управляющее приложение, вызывающее веб-API — получение маркера
 
@@ -62,11 +62,11 @@ final static String GRAPH_DEFAULT_SCOPE = "https://graph.microsoft.com/.default"
 
 > [!IMPORTANT]
 > Для MSAL с запросом маркера доступа для ресурса, принимающего маркер доступа v 1.0, Azure AD анализирует нужную аудиторию из запрошенной области, принимая все перед последней косой чертой и используя ее в качестве идентификатора ресурса.
-> Таким образом, если, как и **https://database.windows.net** в Azure SQL (), ресурс ожидает, что аудитория заканчивается косой чертой `https://database.windows.net/` (для Azure SQL:), необходимо запросить область `https://database.windows.net//.default` (Обратите внимание на двойную косую черту). См. также раздел MSAL.NET Issue [#747](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/747): Конечная косая черта ресурса не указана, что привело к сбою проверки подлинности SQL.
+> Поэтому, если, например, Azure SQL ( **https://database.windows.net** ), ресурс ожидает, что аудитория заканчивается косой чертой (для Azure SQL: `https://database.windows.net/` ), необходимо запросить область `https://database.windows.net//.default` (Обратите внимание на двойную косую черту). См. также MSAL.NET проблема [#747](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/747): пропущена Конечная косая черта URL-адреса ресурса, что привело к сбою проверки подлинности SQL.
 
 ## <a name="acquiretokenforclient-api"></a>API Аккуиретокенфорклиент
 
-Чтобы получить маркер для приложения, вы будете использовать `AcquireTokenForClient` или эквивалент в зависимости от платформ.
+Чтобы получить маркер для приложения, используйте `AcquireTokenForClient` или эквивалент в зависимости от платформ.
 
 # <a name="nettabdotnet"></a>[.NET](#tab/dotnet)
 
@@ -152,7 +152,7 @@ future.join();
 
 Если вы еще не создали библиотеку для выбранного языка, вы можете использовать протокол напрямую:
 
-#### <a name="first-case-access-token-request-with-a-shared-secret"></a>Первый вариант. Запрос маркера доступа с помощью общего секрета
+#### <a name="first-case-access-token-request-with-a-shared-secret"></a>Первый сценарий: запрос маркера доступа с помощью общего секрета
 
 ```Text
 POST /{tenant}/oauth2/v2.0/token HTTP/1.1           //Line breaks for clarity
@@ -165,7 +165,7 @@ client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
 &grant_type=client_credentials
 ```
 
-#### <a name="second-case-access-token-request-with-a-certificate"></a>Второй вариант. Запрос маркера доступа с помощью сертификата
+#### <a name="second-case-access-token-request-with-a-certificate"></a>Второй сценарий: запрос маркера доступа с помощью сертификата
 
 ```Text
 POST /{tenant}/oauth2/v2.0/token HTTP/1.1               // Line breaks for clarity
@@ -179,17 +179,17 @@ scope=https%3A%2F%2Fgraph.microsoft.com%2F.default
 &grant_type=client_credentials
 ```
 
-Дополнительные сведения см. в документации по протоколу: [Платформа удостоверений Майкрософт и поток учетных данных клиента OAuth 2,0](v2-oauth2-client-creds-grant-flow.md).
+Дополнительные сведения см. в документации по протоколу: [платформа удостоверений Майкрософт и поток учетных данных клиента OAuth 2,0](v2-oauth2-client-creds-grant-flow.md).
 
 ## <a name="application-token-cache"></a>Кэш маркеров приложений
 
-В MSAL.NET использует `AcquireTokenForClient` **кэш маркеров приложений** (все остальные методы аккуиретокенкскс, использующие кэш пользовательских маркеров `AcquireTokenSilent` ), `AcquireTokenForClient` не вызывают метод, так как `AcquireTokenSilent` использует кэш **пользовательских** маркеров. `AcquireTokenForClient`проверяет сам кэш маркера **приложения** и обновляет его.
+В MSAL.NET, `AcquireTokenForClient` использует **кэш маркеров приложений** (все остальные методы аккуиретокенкскс используют кэш пользовательских маркеров), не вызывайте `AcquireTokenSilent` перед вызовом `AcquireTokenForClient`, так как `AcquireTokenSilent` использует кэш маркеров **пользователя** . `AcquireTokenForClient` проверяет сам кэш маркера **приложения** и обновляет его.
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Устранение неисправностей
 
 ### <a name="did-you-use-the-resourcedefault-scope"></a>Вы использовали область ресурсов/. по умолчанию?
 
-Если появляется сообщение об ошибке, сообщающее, что вы использовали недопустимую область, то, вероятно `resource/.default` , вы не использовали эту область.
+Если появляется сообщение об ошибке, сообщающее, что вы использовали недопустимую область, то, вероятно, вы не использовали область `resource/.default`.
 
 ### <a name="did-you-forget-to-provide-admin-consent-daemon-apps-need-it"></a>Вы забыли предоставить согласие администратора? Требуются приложения управляющей программы!
 
@@ -210,7 +210,21 @@ Content: {
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
+
+# <a name="nettabdotnet"></a>[.NET](#tab/dotnet)
 
 > [!div class="nextstepaction"]
-> [Управляющая программа — вызов веб-API](scenario-daemon-call-api.md)
+> [Управляющая программа — вызов веб-API](https://docs.microsoft.com/azure/active-directory/develop/scenario-daemon-call-api?tabs=dotnet)
+
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+> [!div class="nextstepaction"]
+> [Управляющая программа — вызов веб-API](https://docs.microsoft.com/azure/active-directory/develop/scenario-daemon-call-api?tabs=python)
+
+# <a name="javatabjava"></a>[Java](#tab/java)
+
+> [!div class="nextstepaction"]
+> [Управляющая программа — вызов веб-API](https://docs.microsoft.com/azure/active-directory/develop/scenario-daemon-call-api?tabs=java)
+
+---

@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/20/2019
 ms.author: juliako
-ms.openlocfilehash: 329c7191482787f25cfddfd8c4d70074df9a7c1f
-ms.sourcegitcommit: a19f4b35a0123256e76f2789cd5083921ac73daf
+ms.openlocfilehash: 2b8553c4c4b27e70eb5e4aeff447da9526c4ed1e
+ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71719967"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72598292"
 ---
 # <a name="migrate-from-media-indexer-and-media-indexer-2-to-video-indexer"></a>Миграция из индексатора мультимедиа и индексатора мультимедиа 2 в индексатор видео
 
@@ -37,12 +37,12 @@ ms.locfileid: "71719967"
 
 |Если требуется  |а затем — |
 |---|---|
-|решение, которое предоставляет возможность записи речи в текст для любого формата файлов мультимедиа в форматах файлов скрытых субтитров: ВТТ, SRT или TTML<br/>а также дополнительные сведения о звуках, такие как ключевые слова, темы для событий, акустические события, диаризатиони докладчика, извлечение и перевод сущностей.| Обновите приложения для использования возможностей индексатора видео Azure с помощью индексатора видео версии 2 REST API или предустановки анализатора звука для служб мультимедиа Azure v3.|
+|решение, которое предоставляет возможность подзаписи речи в текст для любого формата файлов мультимедиа в форматах файлов скрытых субтитров: ВТТ, SRT или TTML<br/>а также дополнительные сведения о звуках, такие как ключевые слова, темы для событий, акустические события, диаризатиони докладчика, извлечение и перевод сущностей.| Обновите приложения для использования возможностей индексатора видео Azure с помощью индексатора видео версии 2 REST API или предустановки анализатора звука для служб мультимедиа Azure v3.|
 |возможности преобразования речи в текст| Используйте API распознавания речи Cognitive Services напрямую.|  
 
 ## <a name="getting-started-with-video-indexer"></a>Приступая к работе с индексатором видео
 
-В следующем разделе приведены ссылки на соответствующие вопросы. [Как начать работу с индексатором видео?](https://docs.microsoft.com/azure/media-services/video-indexer/video-indexer-overview#how-can-i-get-started-with-video-indexer) 
+В следующем разделе приведены ссылки на соответствующие вопросы: [как начать работу с индексатором видео?](https://docs.microsoft.com/azure/media-services/video-indexer/video-indexer-overview#how-can-i-get-started-with-video-indexer) 
 
 ## <a name="getting-started-with-media-services-v3-apis"></a>Начало работы с API-интерфейсами служб мультимедиа v3
 
@@ -50,13 +50,13 @@ API служб мультимедиа Azure v3 позволяет извлека
 
 **AudioAnalyzerPreset** позволяет извлекать множество звуковых аналитических сведений из аудио- или видеофайла. Выходные данные включают файл ВТТ или TTML для записи звука и JSON-файл (со всеми дополнительными сведениями о Audio Insights). В данные аудио Insights входят ключевые слова, индексирование докладчика и анализ тональности речи. Аудиоанализерпресет также поддерживает определение языка для конкретных языков. Подробные сведения см. в разделе [преобразования](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#audioanalyzerpreset).
 
-### <a name="get-started"></a>Начало работы
+### <a name="get-started"></a>Начать
 
 Чтобы начать работу, ознакомьтесь со статьей:
 
 * [Руководство](../latest/analyze-videos-tutorial-with-api.md)
-* Примеры Аудиоанализерпресет: Пакет SDK для [Java](https://github.com/Azure-Samples/media-services-v3-java/tree/master/AudioAnalytics/AudioAnalyzer) или [пакет SDK для .NET](https://github.com/Azure-Samples/media-services-v3-dotnet/tree/master/AudioAnalytics/AudioAnalyzer)
-* Примеры Видеоанализерпресет: Пакет SDK для [Java](https://github.com/Azure-Samples/media-services-v3-java/tree/master/VideoAnalytics/VideoAnalyzer) или [пакет SDK для .NET](https://github.com/Azure-Samples/media-services-v3-dotnet/tree/master/VideoAnalytics/VideoAnalyzer)
+* Примеры Аудиоанализерпресет: [пакет SDK для Java](https://github.com/Azure-Samples/media-services-v3-java/tree/master/AudioAnalytics/AudioAnalyzer) или [пакет SDK для .NET](https://github.com/Azure-Samples/media-services-v3-dotnet/tree/master/AudioAnalytics/AudioAnalyzer)
+* Примеры Видеоанализерпресет: [пакет SDK для Java](https://github.com/Azure-Samples/media-services-v3-java/tree/master/VideoAnalytics/VideoAnalyzer) или [пакет SDK для .NET](https://github.com/Azure-Samples/media-services-v3-dotnet/tree/master/VideoAnalytics/VideoAnalyzer)
 
 ## <a name="getting-started-with-cognitive-services-speech-services"></a>Начало работы с Cognitive Services голосовыми службами
 
@@ -77,11 +77,11 @@ API служб мультимедиа Azure v3 позволяет извлека
 * Файлы большого двоичного объекта индексирования аудио (AIB) больше не будут поддерживаться. Эта функция была специально предназначена для технологии индексатора 1 и больше не предлагается.  
 * Cognitive Services службы речи не поддерживают извлечение ключевых слов. Однако индексатор видео и службы мультимедиа v3 Аудиоанализерпресет оба предлагают более надежный набор ключевых слов в формате JSON. 
 
-## <a name="contact-us"></a>Наши координаты 
+## <a name="need-help"></a>Нужна помощь?
 
-Если у вас возникли вопросы по поводу устаревания Azure Media Indexer 1 и Azure Media Indexer 2 или перехода на другие службы, обратитесь к нам черезamshelp@microsoft.com 
+Вы можете отправить запрос в службу поддержки, перейдя к [новому запросу в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest) .
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Устаревшие компоненты](legacy-components.md)
 * [Страница цен](https://azure.microsoft.com/pricing/details/media-services/#encoding)

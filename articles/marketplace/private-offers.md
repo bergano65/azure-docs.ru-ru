@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.topic: article
 ms.date: 11/1/2018
 ms.author: pabutler
-ms.openlocfilehash: 3d97fd167f0f946239d4de24bb180796ebb498d3
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.openlocfilehash: cd61a30ccc9de08c3f0950d811d0d10ec5cd842a
+ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70885873"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72598375"
 ---
 # <a name="private-offers"></a>Частные предложения
 
@@ -50,6 +50,9 @@ ms.locfileid: "70885873"
 
 Частные предложения будут также отображаться в результатах поиска. Просто найдите индикатор событий "Частный".
 
-## <a name="next-steps"></a>Следующие шаги
+>[!Note]
+>Частные предложения не поддерживаются для подписок, созданных через торгового посредника по программе поставщика облачных решений (CSP).
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы приступить к работе с частными предложениями, выполните действия, описанные в руководстве по [закрытию SKU и планов](./cloud-partner-portal-orig/cloud-partner-portal-azure-private-skus.md) .

@@ -3,19 +3,18 @@ layout: HubPage
 hide_bc: false
 title: Документация по данным журнала Azure Monitor | Документация Майкрософт
 description: Azure Monitor может собирать данные различных источников в виде данных журнала и хранить их для корреляции и анализа, используя свой язык запросов.
-services: azure-monitor
-author: mgoedtel
-manager: carmonm
 ms.service: azure-monitor
+ms.subservice: ''
 ms.topic: hub-page
-ms.date: 01/29/2019
+author: mgoedtel
 ms.author: magoedte
-ms.openlocfilehash: ced88f973ff26f7c8990c1c80bf8532949ef9ae8
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.date: 01/29/2019
+ms.openlocfilehash: 407e18008c947f95204ea073db31b5f2279a5a4c
+ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60640112"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72597321"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -133,7 +132,7 @@ ms.locfileid: "60640112"
                                                                     </div>
                                                                 </div>
                                                     <div class="cardText">
-                                                        <h3>Анализ данных</h3>
+                                                        <h3>Анализируйте данные</h3>
                                                         <p>
                                                             <a href="/azure/azure-monitor/log-query/get-started-queries">Начало работы с запросами в Log Analytics</a><br/>
                                                             <a href="/azure/azure-monitor/log-query/search-queries">Поисковые запросы в Log Analytics</a><br/>
@@ -142,10 +141,10 @@ ms.locfileid: "60640112"
                                                             <a href="/azure/azure-monitor/log-query/cross-workspace-query">Выполнение поиска по журналам нескольких ресурсов в Log Analytics</a><br/>
                                                         </p>
                                                         <br>
-                                                        <h3>реагирование на инциденты.</h3>
+                                                        <h3>Реакция на инциденты.</h3>
                                                         <p>
                                                             <a href="/azure/azure-monitor/platform/alerts-overview">Обзор оповещений в Microsoft Azure</a><br/>
-                                                            <a href="/azure/azure-monitor/platform/autoscale-overview">Autoscale</a><br/>
+                                                            <a href="/azure/azure-monitor/platform/autoscale-overview">Автомасштабирование</a><br/>
                                                             <a href="/azure/azure-monitor/platform/alerts-unified-log">Оповещения журнала в Azure Monitor</a><br/>
                                                             <a href="/azure/azure-monitor/platform/alerts-activity-log">Создание, просмотр и управление оповещениями журнала действий с помощью Azure Monitor</a><br/>
                                                             <a href="/azure/azure-monitor/platform/action-groups">Создание групп действий и управление ими на портале Azure</a><br/>

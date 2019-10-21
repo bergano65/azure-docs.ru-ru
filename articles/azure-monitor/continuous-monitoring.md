@@ -1,23 +1,18 @@
 ---
 title: Непрерывный мониторинг с помощью Azure Monitor | Документация Майкрософт
 description: Описывает конкретные шаги для использования Azure Monitor, чтобы включить непрерывный мониторинг во всех ваших рабочих процессах.
-author: bwren
-manager: carmonm
-editor: ''
-services: azure-monitor
-documentationcenter: azure-monitor
 ms.service: azure-monitor
-ms.workload: na
-ms.tgt_pltfrm: na
+ms.subservice: ''
 ms.topic: conceptual
-ms.date: 10/12/2018
+author: bwren
 ms.author: bwren
-ms.openlocfilehash: f101a8885d9bf67e8bd589d7cf932b0d35cdfe32
-ms.sourcegitcommit: 86d49daccdab383331fc4072b2b761876b73510e
+ms.date: 10/12/2018
+ms.openlocfilehash: 88934d469ddcca50d7dfc3f35b18ab332d4bd172
+ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70744498"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72596801"
 ---
 # <a name="continuous-monitoring-with-azure-monitor"></a>Непрерывный мониторинг с помощью Azure Monitor
 
@@ -64,7 +59,7 @@ ms.locfileid: "70744498"
 
 - Используйте [Azure Pipelines](/azure/devops/pipelines) для реализации непрерывного развертывания и автоматизации всего процесса от фиксации кода до производства на основе ваших тестов CI/CD.
 - Используйте [Quality Gates](/azure/devops/pipelines/release/approvals/gates), чтобы интегрировать мониторинг в предварительное развертывание или после развертывания. Это гарантирует, что вы соответствуете ключевым показателям работоспособности или производительности (КПЭ) по мере того, как ваши приложения переходят от разработки к производству, и любые различия в инфраструктуре или масштабах инфраструктуры не оказывают негативного влияния на ваши ключевые показатели эффективности.
-- [Поддерживайте отдельные экземпляры мониторинга](../azure-monitor/app/separate-resources.md) между различными средами развертывания, такими как Dev, Test, Canary и Prod. Это гарантирует, что собранные данные актуальны для всех связанных приложений и инфраструктуры. Если вам необходимо сопоставить данные в разных средах, вы можете использовать [мультиресурсные диаграммы в обозревателе метрик](../azure-monitor/platform/metrics-charts.md) или создать [междуресурсные запросы в Azure Monitor](log-query/cross-workspace-query.md).
+- [Сохраняйте отдельные экземпляры мониторинга](../azure-monitor/app/separate-resources.md) между различными средами развертывания, такими как dev, Test, ранний и произ. Это гарантирует, что собранные данные важны для связанных приложений и инфраструктуры. Если вам необходимо сопоставить данные в разных средах, вы можете использовать [мультиресурсные диаграммы в обозревателе метрик](../azure-monitor/platform/metrics-charts.md) или создать [междуресурсные запросы в Azure Monitor](log-query/cross-workspace-query.md).
 
 
 ## <a name="create-actionable-alerts-with-actions"></a>Создайте функциональные оповещения с действиями
@@ -89,7 +84,7 @@ ms.locfileid: "70744498"
 - Используйте [анализ влияния](../azure-monitor/app/usage-impact.md), чтобы расставить приоритеты, на каких сферах сосредоточиться для достижения важных ключевых показателей эффективности.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о различных компонентах см. в статье [Общие сведения о службе Azure Monitor](overview.md).
 - [Добавьте постоянный мониторинг](../azure-monitor/app/continuous-monitoring.md) к конвейеру выпуска.

@@ -4,14 +4,14 @@ description: В этой статье описывается настройка 
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: conceptual
-ms.date: 06/12/2019
+ms.date: 10/17/2019
 ms.author: tomfitz
-ms.openlocfilehash: ae896fa0820fbd25ed3f2d29c89fbcd56e7fd6f5
-ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
+ms.openlocfilehash: 9306ff8787a4e2b873cb11458a4cf9a10589bf6b
+ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69982448"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72597515"
 ---
 # <a name="integrate-resource-manager-templates-with-azure-pipelines"></a>Интеграция шаблонов диспетчер ресурсов с Azure Pipelines
 
@@ -39,7 +39,7 @@ Visual Studio предоставляет проект группы ресурс�
 
 ## <a name="create-pipeline"></a>Создание конвейера
 
-1. Если вы ранее не добавили конвейер, необходимо создать новый конвейер. В Организации Azure DevOps выберите конвейеры и **Новый конвейер**.
+1. Если вы ранее не добавили конвейер, необходимо создать новый конвейер. В Организации Azure DevOps выберите **конвейеры** и **Новый конвейер**.
 
    ![Добавить новый конвейер](./media/vs-resource-groups-project-devops-pipelines/new-pipeline.png)
 
@@ -71,25 +71,25 @@ steps:
   inputs:
     azureSubscription: 'demo-deploy-sp'
     ScriptPath: 'AzureResourceGroupDemo/Deploy-AzureResourceGroup.ps1'
-    ScriptArguments: -ResourceGroupName 'demogroup' -ResourceGroupLocation 'centralus' 
+    ScriptArguments: -ResourceGroupName 'demogroup' -ResourceGroupLocation 'centralus'
     azurePowerShellVersion: LatestVersion
 ```
 
-Если для `AzurePowerShell@3`задачи задано значение, конвейер использует команды из модуля AzureRM для проверки подлинности подключения. По умолчанию скрипт PowerShell в проекте Visual Studio использует модуль AzureRM. Если вы обновили скрипт для использования [модуля AZ](/powershell/azure/new-azureps-module-az), задайте для `AzurePowerShell@4`задачи значение.
+Если для задачи задано значение `AzurePowerShell@3`, конвейер использует команды из модуля AzureRM для проверки подлинности подключения. По умолчанию скрипт PowerShell в проекте Visual Studio использует модуль AzureRM. Если вы обновили скрипт для использования [модуля AZ](/powershell/azure/new-azureps-module-az), задайте для задачи значение `AzurePowerShell@4`.
 
 ```yaml
 steps:
 - task: AzurePowerShell@4
 ```
 
-Для `azureSubscription`укажите имя созданного подключения к службе.
+Для `azureSubscription` укажите имя созданного подключения к службе.
 
 ```yaml
 inputs:
     azureSubscription: '<your-connection-name>'
 ```
 
-Для `scriptPath`укажите относительный путь от файла конвейера к скрипту. Чтобы увидеть путь, можно просмотреть репозиторий.
+Для `scriptPath` укажите относительный путь от файла конвейера к скрипту. Чтобы увидеть путь, можно просмотреть репозиторий.
 
 ```yaml
 ScriptPath: '<your-relative-path>/<script-file-name>.ps1'
@@ -139,7 +139,7 @@ ScriptArguments: -ResourceGroupName '<resource-group-name>' -ResourceGroupLocati
 
 ## <a name="copy-and-deploy-tasks"></a>Задачи копирования и развертывания
 
-В этом разделе показано, как настроить непрерывное развертывание с помощью двух задач для размещения артефактов и развертывания шаблона. 
+В этом разделе показано, как настроить непрерывное развертывание с помощью двух задач для размещения артефактов и развертывания шаблона.
 
 В следующем YAML показана [задача копирования файлов Azure](/azure/devops/pipelines/tasks/deploy/azure-file-copy?view=azure-devops).
 
@@ -157,13 +157,13 @@ ScriptArguments: -ResourceGroupName '<resource-group-name>' -ResourceGroupLocati
     sasTokenTimeOutInMinutes: '240'
 ```
 
-Существует несколько частей этой задачи для пересмотра вашей среды. `SourcePath` Указывает расположение артефактов относительно файла конвейера. В этом примере файлы находятся в папке с `AzureResourceGroup1` именем проекта.
+Существует несколько частей этой задачи для пересмотра вашей среды. @No__t_0 указывает расположение артефактов относительно файла конвейера. В этом примере файлы находятся в папке с именем `AzureResourceGroup1`, которая была именем проекта.
 
 ```yaml
 SourcePath: '<path-to-artifacts>'
 ```
 
-Для `azureSubscription`укажите имя созданного подключения к службе.
+Для `azureSubscription` укажите имя созданного подключения к службе.
 
 ```yaml
 azureSubscription: '<your-connection-name>'
@@ -176,35 +176,45 @@ storage: '<your-storage-account-name>'
 ContainerName: '<container-name>'
 ```
 
-В следующем YAML показана [задача развертывания группы ресурсов Azure](/azure/devops/pipelines/tasks/deploy/azure-resource-group-deployment?view=azure-devops):
+В следующем YAML показана [задача развертывания шаблона Azure Resource Manager](https://github.com/microsoft/azure-pipelines-tasks/blob/master/Tasks/AzureResourceManagerTemplateDeploymentV3/README.md).
 
 ```yaml
 - task: AzureResourceGroupDeployment@2
   displayName: 'Deploy template'
   inputs:
-    azureSubscription: 'demo-deploy-sp'
+    deploymentScope: 'Resource Group'
+    ConnectedServiceName: 'demo-deploy-sp'
+    subscriptionName: '01234567-89AB-CDEF-0123-4567890ABCDEF'
+    action: 'Create Or Update Resource Group'
     resourceGroupName: 'demogroup'
-    location: 'centralus'
+    location: 'Central US'
     templateLocation: 'URL of the file'
     csmFileLink: '$(artifactsLocation)WebSite.json$(artifactsLocationSasToken)'
     csmParametersFileLink: '$(artifactsLocation)WebSite.parameters.json$(artifactsLocationSasToken)'
     overrideParameters: '-_artifactsLocation $(artifactsLocation) -_artifactsLocationSasToken "$(artifactsLocationSasToken)"'
+    deploymentMode: 'Incremental'
 ```
 
-Существует несколько частей этой задачи для пересмотра вашей среды. Для `azureSubscription`укажите имя созданного подключения к службе.
+Существует несколько частей этой задачи для пересмотра вашей среды.
 
-```yaml
-azureSubscription: '<your-connection-name>'
-```
+- `deploymentScope`. Выберите область развертывания в области Параметры: `Management Group`, `Subscription` и `Resource Group`. Используйте **группу ресурсов** в этом пошаговом руководстве. Дополнительные сведения об областях см. в разделе [области развертывания](./resource-group-template-deploy-rest.md#deployment-scope).
 
-Для `resourceGroupName` и`location`укажите имя и расположение группы ресурсов, в которую требуется выполнить развертывание. Задача создает группу ресурсов, если она не существует.
+- `ConnectedServiceName`. Укажите имя созданного подключения к службе.
 
-```yaml
-resourceGroupName: '<resource-group-name>'
-location: '<location>'
-```
+    ```yaml
+    ConnectedServiceName: '<your-connection-name>'
+    ```
 
-Задача развертывания ссылается на шаблон с именем `WebSite.json` и файл параметров с именем веб_узел. parameters. JSON. Используйте имена шаблонов и файлов параметров.
+- `subscriptionName`: укажите идентификатор целевой подписки. Это свойство применяется только к области развертывания группы ресурсов и обзор развертывания подписки.
+
+- `resourceGroupName` и `location`: укажите имя и расположение группы ресурсов, в которую требуется выполнить развертывание. Задача создает группу ресурсов, если она не существует.
+
+    ```yaml
+    resourceGroupName: '<resource-group-name>'
+    location: '<location>'
+    ```
+
+Задача развертывания ссылается на шаблон с именем `WebSite.json` и файл параметров с именем Веб_узел. parameters. JSON. Используйте имена шаблонов и файлов параметров.
 
 Теперь, когда вы понимаете, как создавать задачи, давайте проверим действия по изменению конвейера.
 
@@ -226,16 +236,20 @@ location: '<location>'
        outputStorageUri: 'artifactsLocation'
        outputStorageContainerSasToken: 'artifactsLocationSasToken'
        sasTokenTimeOutInMinutes: '240'
-   - task: AzureResourceGroupDeployment@2
-     displayName: 'Deploy template'
-     inputs:
-       azureSubscription: 'demo-deploy-sp'
-       resourceGroupName: demogroup
-       location: 'centralus'
-       templateLocation: 'URL of the file'
-       csmFileLink: '$(artifactsLocation)WebSite.json$(artifactsLocationSasToken)'
-       csmParametersFileLink: '$(artifactsLocation)WebSite.parameters.json$(artifactsLocationSasToken)'
-       overrideParameters: '-_artifactsLocation $(artifactsLocation) -_artifactsLocationSasToken "$(artifactsLocationSasToken)"'
+    - task: AzureResourceGroupDeployment@2
+      displayName: 'Deploy template'
+      inputs:
+        deploymentScope: 'Resource Group'
+        ConnectedServiceName: 'demo-deploy-sp'
+        subscriptionName: '01234567-89AB-CDEF-0123-4567890ABCDEF'
+        action: 'Create Or Update Resource Group'
+        resourceGroupName: 'demogroup'
+        location: 'Central US'
+        templateLocation: 'URL of the file'
+        csmFileLink: '$(artifactsLocation)WebSite.json$(artifactsLocationSasToken)'
+        csmParametersFileLink: '$(artifactsLocation)WebSite.parameters.json$(artifactsLocationSasToken)'
+        overrideParameters: '-_artifactsLocation $(artifactsLocation) -_artifactsLocationSasToken "$(artifactsLocationSasToken)"'
+        deploymentMode: 'Incremental'
    ```
 
 1. Щелкните **Сохранить**.
@@ -248,6 +262,6 @@ location: '<location>'
 
 Вы можете выбрать выполняющийся в данный момент конвейер для просмотра сведений о задачах. По завершении вы увидите результаты для каждого шага.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Пошаговый процесс использования Azure pipelines с шаблонами диспетчер ресурсов см. в разделе [учебник. Непрерывная интеграция шаблонов Azure Resource Manager с Azure Pipelines](resource-manager-tutorial-use-azure-pipelines.md).
+Пошаговый процесс использования Azure Pipelines с шаблонами диспетчер ресурсов см. в разделе [учебник. Непрерывная интеграция шаблонов Azure Resource Manager с Azure pipelines](resource-manager-tutorial-use-azure-pipelines.md).

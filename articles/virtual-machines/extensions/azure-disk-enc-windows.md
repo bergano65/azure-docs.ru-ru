@@ -13,38 +13,32 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 06/12/2018
 ms.author: ejarvi
-ms.openlocfilehash: 11394f692765cc1df5db0eb5c0dd06425026505d
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 00891122015bb3e6adb500b6f6c30fa031161b92
+ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70092645"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72598000"
 ---
 # <a name="azure-disk-encryption-for-windows-microsoftazuresecurityazurediskencryption"></a>Шифрование дисков Azure для Windows (Microsoft.Azure.Security.AzureDiskEncryption)
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Краткое описание
 
 При шифровании дисков Azure используется Bitlocker для полного шифрования диска на виртуальных машинах Azure под управлением Windows.  Шифрование дисков Azure интегрировано в Azure Key Vault, что позволяет управлять секретами и ключами шифрования дисков в подписке Key Vault. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
-См. полный список [необходимых компонентов для шифрования дисков Azure](
-../../security/azure-security-disk-encryption-prerequisites.md).
+Полный список необходимых компонентов см. в разделах [Шифрование дисков Azure для виртуальных машин Linux](../linux/disk-encryption-overview.md), в частности следующие разделы:
 
-### <a name="operating-system"></a>Операционная система
-
-Список текущих поддерживаемых версий Windows см. в разделе с описанием [необходимых компонентов для шифрования дисков Azure](../../security/azure-security-disk-encryption-prerequisites.md).
-
-### <a name="internet-connectivity"></a>Подключение к Интернету
-
-При шифровании дисков Azure требуется подключение к Интернету для доступа к Active Directory, хранилищу Key Vault, хранения и конечным точкам управления пакетами.  Список параметров безопасности сети см. в разделе с описанием [необходимых компонентов для шифрования дисков Azure](
-../../security/azure-security-disk-encryption-prerequisites.md).
+- [Шифрование дисков Azure для виртуальных машин Linux](../windows/disk-encryption-overview.md#supported-vms-and-operating-systems)
+- [Требования к сети](../windows/disk-encryption-overview.md#networking-requirements)
+- [Требования к групповая политика](../windows/disk-encryption-overview.md#group-policy-requirements)
 
 ## <a name="extension-schemata"></a>Schemata расширения
 
 Существует два Schemata для шифрования дисков Azure: v 1.1, более новая, Рекомендуемая схема, которая не использует свойства Azure Active Directory (AAD) и v 0,1, более старая схема, для которой требуются свойства AAD. Необходимо использовать версию схемы, соответствующую используемому расширению: schema v 1.1 для расширения AzureDiskEncryption версии 1,1, схема v 0,1 для расширения AzureDiskEncryption версии 0,1.
 
-### <a name="schema-v11-no-aad-recommended"></a>Схема v 1.1: Нет AAD (рекомендуется)
+### <a name="schema-v11-no-aad-recommended"></a>Схема v 1.1: нет AAD (рекомендуется)
 
 Рекомендуется использовать схему версии 1.1 и не требует Azure Active Directory свойств.
 
@@ -75,7 +69,7 @@ ms.locfileid: "70092645"
 
 ### <a name="schema-v01-with-aad"></a>Схема v 0,1: с AAD 
 
-Для схемы 0,1 требуется `aadClientID` значение `aadClientSecret` и `AADClientCertificate`.
+Схема 0,1 требует `aadClientID` и либо `aadClientSecret`, либо `AADClientCertificate`.
 
 С помощью `aadClientSecret`:
 
@@ -140,23 +134,23 @@ ms.locfileid: "70092645"
 
 ### <a name="property-values"></a>Значения свойств
 
-| Название | Значение и пример | Тип данных |
+| Name | Значение и пример | Тип данных |
 | ---- | ---- | ---- |
-| apiVersion | 2015-06-15 | date |
+| версия_API | 2015-06-15 | date |
 | publisher | Microsoft.Azure.Security | string |
-| type | AzureDiskEncryptionForLinux | string |
-| typeHandlerVersion | 0.1, 1.1 | int |
+| Тип | AzureDiskEncryptionForLinux | string |
+| typeHandlerVersion | 0,1, 1,1 | int |
 | (схема 0,1) аадклиентид | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | GUID | 
-| (схема 0,1) AADClientSecret | password | string |
+| (схема 0,1) AADClientSecret | пароль | string |
 | (схема 0,1) аадклиентцертификате | thumbprint | string |
 | DiskFormatQuery | {"dev_path":"","name":"","file_system":""} | Словарь JSON |
 | EncryptionOperation | EnableEncryption, EnableEncryptionFormatAll | string | 
 | KeyEncryptionAlgorithm | 'RSA-OAEP', 'RSA-OAEP-256', 'RSA1_5' | string |
-| KeyEncryptionKeyURL | url | string |
-| KeyVaultURL | url | string |
-| (необязательно) Passphrase | password | string | 
+| KeyEncryptionKeyURL | URL-адрес | string |
+| KeyVaultURL | URL-адрес | string |
+| используемых Кодов | пароль | string | 
 | SequenceVersion | uniqueidentifier | string |
-| VolumeType | OS, Data, All | string |
+| VolumeType | ОС, данные, все | string |
 
 ## <a name="template-deployment"></a>Развертывание шаблона
 Пример шаблона развертывания см. в руководстве по [созданию зашифрованной виртуальной машины Windows из образа коллекции](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-create-new-vm-gallery-image).
@@ -175,5 +169,5 @@ ms.locfileid: "70092645"
 
 Если в любой момент при изучении этой статьи вам потребуется дополнительная помощь, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/community/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните "Получить поддержку". Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 См. дополнительные сведения о [расширениях и компонентах виртуальных машин Windows](features-windows.md).

@@ -11,15 +11,15 @@ ms.service: azure-monitor
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 10/01/2019
+ms.date: 10/17/2019
 ms.author: magoedte
 ms.subservice: ''
-ms.openlocfilehash: 5b6ec913226f44a47bfa5c734e0c20ef3a87ca67
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.openlocfilehash: 1480418a70166887e7327452d407f78c2c992378
+ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72329426"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72597303"
 ---
 # <a name="manage-usage-and-costs-with-azure-monitor-logs"></a>Управление использованием и затратами с помощью журналов Azure Monitor
 
@@ -268,7 +268,7 @@ union withsource = tt *
 
 ```kusto
 Usage | where TimeGenerated > startofday(ago(31d))| where IsBillable == true
-| summarize TotalVolumeGB = sum(Quantity) / 1024 by bin(TimeGenerated, 1d), Solution| render barchart
+| summarize TotalVolumeGB = sum(Quantity) / 1000. by bin(TimeGenerated, 1d), Solution| render barchart
 ```
 
 Обратите внимание, что предложение "where IsBillable = true" отсеивает выбранные типы данных из определенных решений, для которых не взимается плата за прием данных. 
@@ -278,7 +278,7 @@ Usage | where TimeGenerated > startofday(ago(31d))| where IsBillable == true
 ```kusto
 Usage | where TimeGenerated > startofday(ago(31d))| where IsBillable == true
 | where DataType == "W3CIISLog"
-| summarize TotalVolumeGB = sum(Quantity) / 1024 by bin(TimeGenerated, 1d), Solution| render barchart
+| summarize TotalVolumeGB = sum(Quantity) / 1000. by bin(TimeGenerated, 1d), Solution| render barchart
 ```
 
 ### <a name="data-volume-by-computer"></a>Объем данных по компьютерам
@@ -322,7 +322,7 @@ union withsource = tt *
 | summarize Bytes=sum(_BilledSize) by _ResourceId | sort by Bytes nulls last
 ```
 
-Для данных из узлов, размещенных в Azure, можно получить **Размер** оплачиваемых событий, принимаемых __для каждой подписки Azure__, проанализируйте свойство `_ResourceId` следующим образом:
+Для данных из узлов, размещенных в Azure, можно получить **Размер** оплачиваемых событий, принимаемых __для каждой подписки Azure__. Проанализируйте свойство `_ResourceId` следующим образом:
 
 ```kusto
 union withsource = tt * 
@@ -428,7 +428,7 @@ union
 ```kusto
 union withsource = $table Usage 
 | where QuantityUnit == "MBytes" and iff(isnotnull(toint(IsBillable)), IsBillable == true, IsBillable == "true") == true 
-| extend Type = $table | summarize DataGB = sum((Quantity / 1024)) by Type 
+| extend Type = $table | summarize DataGB = sum((Quantity / 1000.)) by Type 
 | where DataGB > 100
 ```
 
@@ -438,7 +438,7 @@ union withsource = $table Usage
 union withsource = $table Usage 
 | where QuantityUnit == "MBytes" and iff(isnotnull(toint(IsBillable)), IsBillable == true, IsBillable == "true") == true 
 | extend Type = $table 
-| summarize EstimatedGB = sum(((Quantity * 8) / 1024)) by Type 
+| summarize EstimatedGB = sum(((Quantity * 8) / 1000.)) by Type 
 | where EstimatedGB > 100
 ```
 
@@ -451,7 +451,7 @@ union withsource = $table Usage
 - Для параметра **Определение условия оповещения** укажите вашу рабочую область Log Analytics в качестве целевого ресурса.
 - Для **критериев оповещения** укажите следующее:
    - для **названия сигнала** выберите значение **Пользовательский поиск по журналам**;
-   - **поисковому запросу** — `union withsource = $table Usage | where QuantityUnit == "MBytes" and iff(isnotnull(toint(IsBillable)), IsBillable == true, IsBillable == "true") == true | extend Type = $table | summarize DataGB = sum((Quantity / 1024)) by Type | where DataGB > 100`;
+   - **поисковому запросу** — `union withsource = $table Usage | where QuantityUnit == "MBytes" and iff(isnotnull(toint(IsBillable)), IsBillable == true, IsBillable == "true") == true | extend Type = $table | summarize DataGB = sum((Quantity / 1000.)) by Type | where DataGB > 100`;
    - **логика оповещений** должна быть **основана на** *числе результатов*, а значение **условия** должно быть *больше* **порогового значения** *0*;
    - укажите **период времени** *1440* минут, а для **частоты оповещений** задайте каждые *60* минут, так как данные об использовании обновляются раз в час.
 - В разделе **Определение сведений об оповещении** задайте такие значения:
@@ -465,7 +465,7 @@ union withsource = $table Usage
 - Для параметра **Определение условия оповещения** укажите вашу рабочую область Log Analytics в качестве целевого ресурса.
 - Для **критериев оповещения** укажите следующее:
    - для **названия сигнала** выберите значение **Пользовательский поиск по журналам**;
-   - **поисковому запросу** — `union withsource = $table Usage | where QuantityUnit == "MBytes" and iff(isnotnull(toint(IsBillable)), IsBillable == true, IsBillable == "true") == true | extend Type = $table | summarize EstimatedGB = sum(((Quantity * 8) / 1024)) by Type | where EstimatedGB > 100`;
+   - **поисковому запросу** — `union withsource = $table Usage | where QuantityUnit == "MBytes" and iff(isnotnull(toint(IsBillable)), IsBillable == true, IsBillable == "true") == true | extend Type = $table | summarize EstimatedGB = sum(((Quantity * 8) / 1000.)) by Type | where EstimatedGB > 100`;
    - **логика оповещений** должна быть **основана на** *числе результатов*, а значение **условия** должно быть *больше* **порогового значения** *0*;
    - укажите **период времени** *180* минут, а для **частоты оповещений** задайте каждые *60* минут, так как данные об использовании обновляются один раз в час.
 - В разделе **Определение сведений об оповещении** задайте такие значения:

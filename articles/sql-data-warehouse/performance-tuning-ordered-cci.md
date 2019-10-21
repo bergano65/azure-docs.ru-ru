@@ -10,12 +10,12 @@ ms.subservice: development
 ms.date: 09/05/2019
 ms.author: xiaoyul
 ms.reviewer: nibruno; jrasnick
-ms.openlocfilehash: 0acdf1496151df57d4097ce5bc71d782dc465873
-ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
-ms.translationtype: HT
+ms.openlocfilehash: 37d8f17e825daa3a1c160509b1a38f8c70256d1c
+ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72554551"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72595369"
 ---
 # <a name="performance-tuning-with-ordered-clustered-columnstore-index"></a>Настройка производительности с упорядоченным кластеризованным индексом columnstore  
 
@@ -125,10 +125,6 @@ OPTION (MAXDOP 1);
 4.  Выполните инструкцию ALTER INDEX < Ordered_CCI_Index > ON < Table_B > Rebuild PARTITION = < Partition_ID > в таблице B, чтобы перестроить включенный в нее раздел.  
 5.  Повторите шаги 3 и 4 для каждой секции в Table_A.
 6.  После переключения всех секций с Table_A на Table_B и их перестроения, удаления Table_A и переименования Table_B в Table_A. 
-
->[!NOTE]
->При предварительном просмотре упорядоченного кластеризованного индекса columnstore (CCI) в хранилище данных SQL Azure могут быть созданы дублирующиеся данные, если упорядоченный CCI создается или перестраивается посредством создания КЛАСТЕРИЗОВАНного индекса COLUMNSTORE в секционированной таблице. Потери данных не существует. В ближайшее время будет доступно исправление этой проблемы. В качестве обходного решения пользователи могут создать упорядоченный CCI на секционированной таблице с помощью команды CTAS.
-
 
 ## <a name="examples"></a>Примеры
 

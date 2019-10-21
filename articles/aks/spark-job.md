@@ -6,21 +6,21 @@ author: lenadroid
 manager: jeconnoc
 ms.service: container-service
 ms.topic: article
-ms.date: 03/15/2018
+ms.date: 10/18/2019
 ms.author: alehall
 ms.custom: mvc
-ms.openlocfilehash: 647cb0573922bb53232dbce3f3a7a2557553d47d
-ms.sourcegitcommit: b4665f444dcafccd74415fb6cc3d3b65746a1a31
+ms.openlocfilehash: c4fca9b8f4c8a01124074396985b1ec3f1c896c6
+ms.sourcegitcommit: 9a4296c56beca63430fcc8f92e453b2ab068cc62
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72263899"
+ms.lasthandoff: 10/20/2019
+ms.locfileid: "72675152"
 ---
 # <a name="running-apache-spark-jobs-on-aks"></a>Запуск заданий Apache Spark в AKS
 
 [Apache Spark][apache-spark] — это быстрый механизм для обработки больших данных. Начиная с [выпуска Spark 2.3.0][spark-latest-release], Apache Spark поддерживает собственную интеграцию с кластерами Kubernetes. Служба Azure Kubernetes (AKS) — это управляемая среда Kubernetes, выполняющаяся в Azure. В этом документе описывается подготовка и запуск заданий Apache Spark в кластере Службы Azure Kubernetes (AKS).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы выполнить действия, описанные в этой статье, необходимо следующее:
 
@@ -33,7 +33,7 @@ ms.locfileid: "72263899"
 
 ## <a name="create-an-aks-cluster"></a>Создание кластера AKS
 
-Spark используется для крупномасштабной обработки данных и требует, чтобы узлы Kubernetes соответствовали требованиям к ресурсам Spark. Минимальный рекомендуемый размер для узлов службы Azure Kubernetes (AKS) — `Standard_D3_v2`.
+Spark используется для крупномасштабной обработки данных и требует, чтобы узлы Kubernetes соответствовали требованиям к ресурсам Spark. Минимальный рекомендуемый размер для узлов Службы Azure Kubernetes (AKS) — `Standard_D3_v2`.
 
 Если вам нужен кластер AKS, соответствующий этой минимальной рекомендации, выполните следующие команды.
 
@@ -43,10 +43,16 @@ Spark используется для крупномасштабной обра�
 az group create --name mySparkCluster --location eastus
 ```
 
-Создайте кластер AKS с узлами размера `Standard_D3_v2`.
+Создайте субъект-службу для кластера. После создания для следующей команды потребуется идентификатор и пароль субъекта-службы.
 
 ```azurecli
-az aks create --resource-group mySparkCluster --name mySparkCluster --node-vm-size Standard_D3_v2
+az ad sp create-for-rbac --name SparkSP
+```
+
+Создайте кластер AKS с узлами, имеющими размер `Standard_D3_v2`, и значения appId и Password, передаваемые в качестве параметров субъекта-службы и секрета клиента.
+
+```azurecli
+az aks create --resource-group mySparkCluster --name mySparkCluster --node-vm-size Standard_D3_v2 --generate-ssh-keys --service-principal <APPID> --client-secret <PASSWORD>
 ```
 
 Подключитесь к кластеру AKS.
@@ -64,7 +70,7 @@ az aks get-credentials --resource-group mySparkCluster --name mySparkCluster
 Клонируйте репозиторий проектов Spark в свою систему разработки.
 
 ```bash
-git clone -b branch-2.3 https://github.com/apache/spark
+git clone -b branch-2.4 https://github.com/apache/spark
 ```
 
 Перейдите в каталог клонированного репозитория и сохраните путь к источнику Spark в переменной.
@@ -136,7 +142,7 @@ cd sparkpi
 
 ```bash
 touch project/assembly.sbt
-echo 'addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.14.6")' >> project/assembly.sbt
+echo 'addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.14.10")' >> project/assembly.sbt
 ```
 
 Выполните эти команды, чтобы скопировать пример кода в только что созданный проект и добавить все необходимые зависимости.
@@ -151,7 +157,7 @@ cat <<EOT >> build.sbt
 libraryDependencies += "org.apache.spark" %% "spark-sql" % "2.3.0" % "provided"
 EOT
 
-sed -ie 's/scalaVersion.*/scalaVersion := "2.11.11",/' build.sbt
+sed -ie 's/scalaVersion.*/scalaVersion := "2.11.11"/' build.sbt
 sed -ie 's/name.*/name := "SparkPi",/' build.sbt
 ```
 
@@ -214,6 +220,13 @@ kubectl proxy
 cd $sparkdir
 ```
 
+Создайте учетную запись службы, имеющую достаточные разрешения для запуска задания.
+
+```bash
+kubectl create serviceaccount spark
+kubectl create clusterrolebinding spark-role --clusterrole=edit --serviceaccount=default:spark --namespace=default
+```
+
 Отправьте задание с помощью `spark-submit`.
 
 ```bash
@@ -223,6 +236,7 @@ cd $sparkdir
   --name spark-pi \
   --class org.apache.spark.examples.SparkPi \
   --conf spark.executor.instances=3 \
+  --conf spark.kubernetes.authenticate.driver.serviceAccountName=spark \
   --conf spark.kubernetes.container.image=$REGISTRY_NAME/spark:$REGISTRY_TAG \
   $jarUrl
 ```
@@ -315,7 +329,7 @@ ENTRYPOINT [ "/opt/entrypoint.sh" ]
 > [!WARNING]
 > Из [документации по][spark-docs]Spark: "Планировщик Kubernetes в настоящее время экспериментальен. В будущих версиях возможны изменения в поведении конфигурации, образов контейнеров и точек входа".
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в документации по Spark.
 

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/29/2019
 ms.author: memildin
-ms.openlocfilehash: 1d13db922ae84e4032304a8865ba6fcdafa65748
-ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
+ms.openlocfilehash: bdb0322083f842922359f0c91da77f5df81613cb
+ms.sourcegitcommit: 9a4296c56beca63430fcc8f92e453b2ab068cc62
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71201638"
+ms.lasthandoff: 10/20/2019
+ms.locfileid: "72675814"
 ---
 # <a name="supported-platforms"></a>Поддерживаемые платформы 
 
@@ -41,15 +41,15 @@ ms.locfileid: "71201638"
 
 ### Операционные системы Windows Server<a name="os-windows"></a>
 
-* Windows Server 2019
-* Windows Server 2016
-* Windows Server 2012 R2
-* Windows Server 2012
-* Windows Server 2008 R2
-* Windows Server 2008
-
-> [!NOTE]
-> Интеграция с Microsoft Defender ATP поддерживает только Windows Server 2012 R2 и Windows Server 2016.
+[!div class="mx-tableFixed"]
+|ОС|Поддерживается центром безопасности Azure|Поддержка интеграции с ATP в защитнике Майкрософт|
+|---|---|---|
+|Windows Server 2019|✔|X|
+|Windows Server 2016|✔|✔|
+|Windows Server 2012 R2|✔|✔|
+|Windows Server 2012|✔|✔|
+|Windows Server 2008 R2|✔|✔|
+|Windows Server 2008|✔|✔|
 
 Дополнительные сведения о поддерживаемых функциях для операционных систем Windows, перечисленных выше, см. в разделе [Поддерживаемые функции виртуальных машин и серверов](security-center-services.md##vm-server-features).
 
@@ -92,32 +92,32 @@ ms.locfileid: "71201638"
 * SQL
 * PostGreSQL
 * MySQL
-* Cosmos DB
+* Cosmos DB;
 * Учетная запись хранения
 * Служба приложений
 * Функция
 * Облачная служба
-* Вирт. сеть
-* Subnet
-* NIC
-* Группа безопасности сети
-* Учетная запись пакетной службы
+* Виртуальная сеть
+* Подсеть
+* Сетевая карта
+* Группа безопасности сети (NSG)
+* Учетная запись Пакетной службы
 * Учетная запись Service Fabric
-* Учетная запись автоматизации
-* Балансировщик нагрузки
-* Найти
+* Учетная запись службы автоматизации
+* Подсистема балансировки нагрузки
+* служба поиска.
 * Пространство имен служебной шины
 * Stream Analytics
 * Пространство имен концентратора событий
-* Приложения логики
+* Логические приложения
 * Redis
-* Data Lake Analytics
-* Data Lake Store
-* Хранилище ключей
+* Аналитика озера данных
+* Data Lake Storage
+* Key Vault;
 
 Дополнительные сведения о поддерживаемых функциях для приведенного выше списка ресурсов PaaS см. в разделе [службы PaaS поддерживаемые функции](security-center-services.md#paas-services).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как [Центр безопасности собирает данные и агент log Analytics](security-center-enable-data-collection.md).
 - Узнайте [, как центр безопасности управляет и защищает данные](security-center-data-security.md).

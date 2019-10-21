@@ -1,29 +1,24 @@
 ---
 title: Ограничения службы Azure Monitor | Документация Майкрософт
 description: Список ограничений в разных областях Azure Monitor.
-author: bwren
-manager: carmonm
-editor: tysonn
-services: azure-monitor
-documentationcenter: azure-monitor
 ms.service: azure-monitor
+ms.subservice: ''
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 06/10/2019
+author: bwren
 ms.author: bwren
-ms.openlocfilehash: 0386700c238c213fd9cde3ca1b49e5e598d05bfd
-ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
+ms.date: 06/10/2019
+ms.openlocfilehash: 37401a8eb2a8da82cef4854ab41e40b81ba429fa
+ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68405660"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72597276"
 ---
 # <a name="azure-monitor-service-limits"></a>Ограничения службы Azure Monitor
 
 В этой статье перечислены ограничения в разных областях Azure Monitor.
 
-## <a name="alerts"></a>Предупреждения
+## <a name="alerts"></a>Оповещения
 
 [!INCLUDE [monitoring-limits](../../includes/azure-monitor-limits-alerts.md)]
 

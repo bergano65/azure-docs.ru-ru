@@ -9,12 +9,12 @@ ms.author: estfan
 ms.reviewer: klam, LADocs
 ms.topic: conceptual
 ms.date: 07/26/2019
-ms.openlocfilehash: 9cb86d65c84f9a315541172f5d0efa77eee3e7ed
-ms.sourcegitcommit: f29fec8ec945921cc3a89a6e7086127cc1bc1759
+ms.openlocfilehash: d6530eb95dc26b9abe4bb27146b16eb2952e9f9b
+ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72529312"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72595674"
 ---
 # <a name="connect-to-azure-virtual-networks-from-azure-logic-apps-by-using-an-integration-service-environment-ise"></a>Подключение к виртуальным сетям Azure из Azure Logic Apps с помощью среды службы интеграции (ISE)
 
@@ -49,6 +49,8 @@ ms.locfileid: "72529312"
   * Ваша виртуальная сеть должна иметь четыре *пустые* подсети для создания и развертывания ресурсов в интегрированной среде сценариев. Вы можете создать эти подсети заранее или дождаться создания интегрированной среды сценариев, где вы сможете создавать подсети одновременно. Дополнительные сведения о [требованиях к подсети](#create-subnet).
 
   * Имена подсетей должны начинаться с буквы или знака подчеркивания и не могут использовать следующие символы: `<`, `>`, `%`, `&`, `\\`, `?`, `/`. 
+  
+  * Если вы хотите развернуть ISE с помощью шаблона Azure Resource Manager, сначала убедитесь, что одна пустая подсеть делегирована в Microsoft. Logic/Интегратионсервицеенвиронмент. Это делегирование не требуется выполнять при развертывании с помощью портал Azure.
 
   * Убедитесь, что ваша виртуальная сеть [предоставляет доступ к этим портам](#ports) , чтобы интегрированная среда сценариев работала правильно и оставалась доступной.
 

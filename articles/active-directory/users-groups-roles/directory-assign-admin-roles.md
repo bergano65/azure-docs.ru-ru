@@ -9,17 +9,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: article
-ms.date: 09/20/2019
+ms.date: 10/18/2019
 ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6f6e1ab2c2b02ab4279e95840135bdc87710cd66
-ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
-ms.translationtype: HT
+ms.openlocfilehash: 56e5fb986431ec47a34b81491bc61b4c38a24e31
+ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72551658"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72592889"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Разрешения роли администратора в Azure Active Directory
 
@@ -224,12 +224,14 @@ ms.locfileid: "72551658"
 > [!NOTE]
 > У глобальной роли читателя есть несколько ограничений прямо сейчас.
 >
->* Центр администрирования SharePoint — центр администрирования SharePoint не поддерживает роль глобального читателя. Вы не увидите "SharePoint" в левой области в разделе "центры администрирования" в [Microsoft 365 центре администрирования](https://admin.microsoft.com/Adminportal/Home#/homepage), и вы получите отказ в доступе при попытке перейти по адресу *https://{имя Организации Azure AD}-admin.SharePoint.com*.
+>* Центр администрирования SharePoint — центр администрирования SharePoint не поддерживает роль глобального читателя. Вы не увидите "SharePoint" в левой области в разделе "центры администрирования" в [Microsoft 365 центре администрирования](https://admin.microsoft.com/Adminportal/Home#/homepage).
+>* [Центр администрирования onedrive](https://admin.onedrive.com/) — центр администрирования onedrive не поддерживает роль глобального читателя.
 >* [Портал Azure AD](https://portal.azure.com/#blade/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/AllApps/menuId/) . Глобальный считыватель не может прочитать режим подготовки для корпоративного приложения.
 >* [Центр администрирования M365](https://admin.microsoft.com/Adminportal/Home#/homepage) — глобальный модуль чтения не может читать запросы на хранилище клиентов. **На левой** панели центра администрирования M365 не находится вкладка " **запросы к защищенному хранилищем для клиентов** ".
 >* [M365 Security Center](https://security.microsoft.com/homepage) -Global Reader не может читать метки чувствительности и хранения. На левой панели центра безопасности M365 не найдены **метки конфиденциальности**, **метки хранения**и **аналитика меток** .
 >* [Центр администрирования групп](https://admin.teams.microsoft.com) — глобальный модуль чтения не может читать **жизненный цикл групп**, **аналитические отчеты &** , **Управление устройствами с IP-телефонами** и **Каталог приложений**.
 >* [Privileged Access Management (PAM)](https://docs.microsoft.com/en-us/office365/securitycompliance/privileged-access-management-overview) не поддерживает роль глобального читателя.
+>* [Azure Information Protection](https://docs.microsoft.com/azure/information-protection/what-is-information-protection) -Global Reader поддерживается только для [централизованной отчетности](https://docs.microsoft.com/azure/information-protection/reports-aip) , и если клиент не находится на [единой платформе меток](https://docs.microsoft.com/azure/information-protection/faqs#how-can-i-determine-if-my-tenant-is-on-the-unified-labeling-platform).
 >
 > В настоящее время эти функции находятся в разработке.
 >

@@ -10,15 +10,15 @@ ms.service: active-directory
 ms.topic: conceptual
 ms.workload: identity
 ms.subservice: pim
-ms.date: 04/09/2019
+ms.date: 10/18/2019
 ms.author: curtand
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2b7fc3508f7f672e277577f92218ff1860b676cb
-ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
-ms.translationtype: HT
+ms.openlocfilehash: f54382d652c3fc59b8ff462d41ec8c0fbdbe8498
+ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72559480"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72596693"
 ---
 # <a name="troubleshoot-a-problem-with-privileged-identity-management"></a>Устранение неполадок с управление привилегированными пользователями
 
@@ -28,7 +28,7 @@ ms.locfileid: "72559480"
 
 ### <a name="problem"></a>Проблема
 
-Ошибка авторизации возникает при попытке предоставить пользователю право на роль администратора Azure AD, и вы не можете получить доступ к ресурсам Azure в управление привилегированными пользователями. Не удается получить доступ к ресурсам Azure в управление привилегированными пользователями, даже если вы являетесь глобальным администратором и владельцем подписки.
+Как активный владелец или администратор доступа пользователей для ресурса Azure вы можете увидеть ресурс в управление привилегированными пользователями но не можете выполнять какие-либо действия, такие как создание подходящего назначения или Просмотр списка назначений ролей из ресурса. Обзорная страница. Любое из этих действий приводит к ошибке авторизации.
 
 ### <a name="cause"></a>Причина:
 

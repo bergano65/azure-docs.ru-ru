@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 02/02/2019
+ms.date: 10/17/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 984284fa185d4d8454b1689a62ca9e08c342e33b
-ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
+ms.openlocfilehash: 2fec017f80758dbcf2a155c3535b9a3e028e4bd9
+ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70195119"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72592701"
 ---
 # <a name="elevate-access-to-manage-all-azure-subscriptions-and-management-groups"></a>Повышение прав доступа для управления всеми подписками Azure и группами управления
 
@@ -65,6 +65,9 @@ Azure AD и ресурсы Azure защищены независимо друг 
 
    Если для переключателя задать значение **Нет**, роль администратора доступа пользователей в Azure RBAC будет удалена из вашей учетной записи. Вы больше не сможете назначать роли во всех подписках и группах управления Azure, связанных с данным каталогом Azure AD. Вы сможете просматривать (и управлять ими) только подписки и группы управления Azure, к которым вам был предоставлен доступ.
 
+    > [!NOTE]
+    > Если вы используете [Azure AD privileged Identity Management (PIM)](../active-directory/privileged-identity-management/pim-configure.md), отключение назначения ролей не приводит к изменению этого переключателя на **нет**. Чтобы обеспечить минимальный привилегированный доступ, рекомендуется установить этот переключатель в положение **нет** , прежде чем отключить назначение ролей.
+    
 1. Нажмите кнопку **Сохранить**, чтобы сохранить настройки.
 
    Этот параметр не является глобальным свойством и применяется только к текущему выполнившему вход пользователю. Вы не можете повысить права доступа для всех членов роли глобального администратора.
@@ -120,7 +123,7 @@ CanDelegate        : False
       -RoleDefinitionName "User Access Administrator" -Scope "/"
     ```
 
-## <a name="rest-api"></a>REST API
+## <a name="rest-api"></a>REST API
 
 ### <a name="elevate-access-for-a-global-administrator"></a>Повышение прав доступа глобального администратора
 
@@ -261,7 +264,7 @@ CanDelegate        : False
       DELETE https://management.azure.com/providers/Microsoft.Authorization/roleAssignments/e7dd75bc-06f6-4e71-9014-ee96a929d099?api-version=2015-07-01
       ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Сведения о различных ролях в Azure](rbac-and-directory-admin-roles.md)
 - [Управление доступом к ресурсам Azure с помощью RBAC и REST API](role-assignments-rest.md)

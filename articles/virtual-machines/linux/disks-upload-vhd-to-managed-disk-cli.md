@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: virtual-machines-linux
 ms.tgt_pltfrm: linux
 ms.subservice: disks
-ms.openlocfilehash: d16e37849ce8ba043fdb1fddb13df2abe8732cda
-ms.sourcegitcommit: a19f4b35a0123256e76f2789cd5083921ac73daf
+ms.openlocfilehash: dfcf9ea61a1f0fb5fd2d3b613c2449480753b3a1
+ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71717175"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72595095"
 ---
 # <a name="upload-a-vhd-to-azure-using-azure-cli"></a>Отправка виртуального жесткого диска в Azure с помощью Azure CLI
 
@@ -24,12 +24,12 @@ ms.locfileid: "71717175"
 
 В настоящее время прямая отправка поддерживается для дисков уровня "Стандартный", "Стандартный SSD" и "Премиум", управляемых на SSD. Она пока не поддерживается для Ultra SSDs.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - Скачайте последнюю [версию AzCopy V10](../../storage/common/storage-use-azcopy-v10.md#download-and-install-azcopy).
 - [Установка Azure CLI](/cli/azure/install-azure-cli).
 - VHD-файл, хранящийся локально
-- Если планируется передать виртуальный жесткий диск из in-PEM: Виртуальный жесткий диск, [подготовленный для Azure](../windows/prepare-for-upload-vhd-image.md)и сохраненный локально.
+- Если вы собираетесь передать виртуальный жесткий диск из in-PEM: VHD, [подготовленный для Azure](../windows/prepare-for-upload-vhd-image.md), который хранится локально.
 - Или управляемый диск в Azure, если планируется выполнить действие копирования.
 
 ## <a name="create-an-empty-managed-disk"></a>Создание пустого управляемого диска
@@ -41,9 +41,9 @@ ms.locfileid: "71717175"
 - Реадтауплоад. Это означает, что диск готов к получению отправки, но [подпись безопасного доступа](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1) (SAS) не была создана.
 - Активеуплоад. Это означает, что диск готов к получению отправки, и создан SAS.
 
-Хотя в одном из этих состояний плата за управляемый диск будет взиматься по [стандартному тарифу на HDD](https://azure.microsoft.com/pricing/details/managed-disks/), независимо от фактического типа диска. Например, P10 будет оплачиваться как S10. Это справедливо до тех пор `revoke-access` , пока на управляемом диске не будет вызван, что необходимо для подключения диска к виртуальной машине.
+Хотя в одном из этих состояний плата за управляемый диск будет взиматься по [стандартному тарифу на HDD](https://azure.microsoft.com/pricing/details/managed-disks/), независимо от фактического типа диска. Например, P10 будет оплачиваться как S10. Это справедливо до тех пор, пока на управляемом диске не будет вызван `revoke-access`, что необходимо для подключения диска к виртуальной машине.
 
-Перед созданием пустого стандартного жесткого диска для отправки необходимо указать размер файла виртуального жесткого диска, который требуется передать, в байтах. Чтобы получить это значение, можно использовать `wc -c <yourFileName>.vhd` или `ls -al <yourFileName>.vhd`. Это значение используется при указании параметра **--upload-size-bytes** .
+Перед созданием пустого стандартного жесткого диска для отправки необходимо указать размер файла виртуального жесткого диска, который требуется передать, в байтах. Чтобы получить это значение, можно использовать либо `wc -c <yourFileName>.vhd`, либо `ls -al <yourFileName>.vhd`. Это значение используется при указании параметра **--upload-size-bytes** .
 
 Создайте пустой жесткий диск "Стандартный" для отправки, указав оба параметра **—-for-upload** и **--upload-size-bytes** в командлете [создания диска](/cli/azure/disk#az-disk-create) .
 
@@ -81,7 +81,7 @@ az disk grant-access -n mydiskname -g resourcegroupname --access-level Write --d
 AzCopy.exe copy "c:\somewhere\mydisk.vhd" "sas-URI" --blob-type PageBlob
 ```
 
-Если срок действия SAS истекает во время передачи и вы еще `revoke-access` не позвонили, можно получить новый SAS, чтобы продолжить передачу с `grant-access`помощью, и снова.
+Если срок действия SAS истекает во время передачи и вы еще не вызывали `revoke-access`, можно получить новый SAS, чтобы продолжить передачу с помощью `grant-access`.
 
 После завершения передачи вам больше не нужно писать какие-либо данные на диск, отозвать SAS. Отзыв SAS изменит состояние управляемого диска и позволит подключить диск к виртуальной машине.
 
@@ -98,7 +98,7 @@ az disk revoke-access -n mydiskname -g resourcegroupname
 > [!IMPORTANT]
 > При предоставлении размера диска в байтах управляемого диска из Azure необходимо добавить смещение 512. Это обусловлено тем, что при возврате диска в Azure нижний колонтитул опускается. Если этого не сделать, копирование завершится ошибкой. Следующий сценарий уже выполняет это.
 
-Замените `<sourceResourceGroupHere>`, `<sourceDiskNameHere>`, `<targetDiskNameHere>`, `<targetResourceGroupHere>` и `<yourTargetLocationHere>` (например, значение расположения было бы uswest2) на значения, а затем выполните следующий сценарий, чтобы скопировать управляемый диск.
+Замените `<sourceResourceGroupHere>`, `<sourceDiskNameHere>`, `<targetDiskNameHere>`, `<targetResourceGroupHere>` и `<yourTargetLocationHere>` (например, значение расположения uswest2) значениями, а затем выполните следующий сценарий, чтобы скопировать управляемый диск.
 
 ```bash
 sourceDiskName = <sourceDiskNameHere>
@@ -109,11 +109,11 @@ targetLocale = <yourTargetLocationHere>
 
 sourceDiskSizeBytes= $(az disk show -g $sourceRG -n $sourceDiskName --query '[uniqueId]' -o tsv)
 
-az disk create -n $targetRG -n $targetDiskName -l $targetLocale --for-upload --upload-size-bytes $(($sourceDiskSizeBytes+512)) --sku standard_lrs
+az disk create -g $targetRG -n $targetDiskName -l $targetLocale --for-upload --upload-size-bytes $(($sourceDiskSizeBytes+512)) --sku standard_lrs
 
 targetSASURI = $(az disk grant-access -n $targetDiskName -g $targetRG  --access-level Write --duration-in-seconds 86400 -o tsv)
 
-sourceSASURI=$(az disk grant-access -n <sourceDiskNameHere> -g $sourceRG --duration-in-seconds 86400 --query [acessSas] -o tsv)
+sourceSASURI=$(az disk grant-access -n $sourceDiskName -g $sourceRG --duration-in-seconds 86400 --query [accessSas] -o tsv)
 
 .\azcopy copy $sourceSASURI $targetSASURI --blob-type PageBlob
 
@@ -122,8 +122,8 @@ az disk revoke-access -n $sourceDiskName -g $sourceRG
 az disk revoke-access -n $targetDiskName -g $targetRG
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После успешной отправки виртуального жесткого диска на управляемый диск можно подключить его к виртуальной машине и начать использовать.
 
-Чтобы узнать, как подключить диск к виртуальной машине, см. нашу статью по теме: [Добавьте диск в виртуальную машину Linux](add-disk.md).
+Сведения о подключении диска к виртуальной машине см. в статье о [добавлении диска к виртуальной машине Linux](add-disk.md).

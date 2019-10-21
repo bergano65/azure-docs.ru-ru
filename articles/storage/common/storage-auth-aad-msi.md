@@ -5,131 +5,121 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 07/18/2019
+ms.date: 10/17/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: bed661873b195694c2fd9b30b1d98a3ecf1fc8a4
-ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
+ms.openlocfilehash: 833aa7dcce5c429b3005a378e93e2177df1eb0d4
+ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2019
-ms.locfileid: "71671108"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72595180"
 ---
 # <a name="authorize-access-to-blobs-and-queues-with-azure-active-directory-and-managed-identities-for-azure-resources"></a>Авторизация доступа к BLOB-объектам и очередям с Azure Active Directory и управляемыми удостоверениями для ресурсов Azure
 
 Хранилище BLOB-объектов и очередей поддерживают проверку подлинности Azure Active Directory (Azure AD) с использованием [управляемых удостоверений для ресурсов Azure](../../active-directory/managed-identities-azure-resources/overview.md). Управляемые удостоверения для ресурсов Azure могут авторизовать доступ к данным большого двоичного объекта и очереди с помощью учетных данных Azure AD из приложений, работающих на виртуальных машинах Azure, приложений-функций, масштабируемых наборов виртуальных машин и других служб. Используя управляемые удостоверения для ресурсов Azure вместе с проверкой подлинности Azure AD, можно избежать хранения учетных данных в приложениях, выполняемых в облаке.  
 
-В этой статье показано, как авторизовать доступ к данным большого двоичного объекта или очереди с помощью управляемого удостоверения из виртуальной машины Azure.
+В этой статье показано, как авторизовать доступ к данным большого двоичного объекта или очереди с виртуальной машины Azure с помощью управляемых удостоверений для ресурсов Azure. В нем также описывается тестирование кода в среде разработки.
 
 ## <a name="enable-managed-identities-on-a-vm"></a>Включение управляемых удостоверений на виртуальной машине
 
 Прежде чем использовать управляемые удостоверения для ресурсов Azure для авторизации доступа к BLOB-объектам и очередям из виртуальной машины, сначала необходимо включить управляемые удостоверения для ресурсов Azure на виртуальной машине. Сведения о включении управляемых удостоверений для ресурсов Azure см. в одной из следующих статей.
 
-- [портал Azure](https://docs.microsoft.com/azure/active-directory/managed-service-identity/qs-configure-portal-windows-vm)
+- [Портал Azure](https://docs.microsoft.com/azure/active-directory/managed-service-identity/qs-configure-portal-windows-vm)
 - [Azure PowerShell](../../active-directory/managed-identities-azure-resources/qs-configure-powershell-windows-vm.md)
-- [Интерфейс командной строки Azure](../../active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm.md)
+- [Azure CLI](../../active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm.md)
 - [Шаблон Azure Resource Manager](../../active-directory/managed-identities-azure-resources/qs-configure-template-windows-vm.md)
 - [Клиентские библиотеки Azure Resource Manager](../../active-directory/managed-identities-azure-resources/qs-configure-sdk-windows-vm.md)
 
-## <a name="grant-permissions-to-an-azure-ad-managed-identity"></a>Предоставление разрешений управляемому удостоверению Azure AD
+Дополнительные сведения об управляемых удостоверениях см. в статье [управляемые удостоверения для ресурсов Azure](../../active-directory/managed-identities-azure-resources/overview.md).
 
-Чтобы авторизовать запрос к большому двоичному объекту или служба очередей из управляемого удостоверения в приложении службы хранилища Azure, сначала настройте параметры управления доступом на основе ролей (RBAC) для этого управляемого удостоверения. Служба хранилища Azure определяет роли RBAC, охватывающие разрешения для данных BLOB-объектов и очередей. Когда роль RBAC назначается управляемому удостоверению, управляемому удостоверению предоставляются разрешения на доступ к данным большого двоичного объекта или очереди в соответствующей области.
+## <a name="authenticate-with-the-azure-identity-library-preview"></a>Проверка подлинности с помощью библиотеки удостоверений Azure (Предварительная версия)
 
-Дополнительные сведения о назначении ролей RBAC см. в одной из следующих статей:
+Клиентская библиотека удостоверений Azure для .NET (Предварительная версия) проверяет подлинность субъекта безопасности. Когда код выполняется в Azure, участник безопасности является управляемым удостоверением для ресурсов Azure.
 
-- [Предоставление доступа к BLOB-объектам Azure и создание очереди данных с использованием RBAC на портале Azure](storage-auth-aad-rbac-portal.md)
-- [Предоставление доступа к BLOB-объектам Azure и создание очереди данных с использованием RBAC с помощью Azure CLI](storage-auth-aad-rbac-cli.md)
-- [Предоставление доступа к BLOB-объектам Azure и создание очереди данных с использованием RBAC с помощью Powershell](storage-auth-aad-rbac-powershell.md)
+Если код выполняется в среде разработки, проверка подлинности может выполняться автоматически, или в зависимости от используемых инструментов может потребоваться вход в браузер. Microsoft Visual Studio поддерживает единый вход (SSO), чтобы активная учетная запись пользователя Azure AD автоматически использовалась для проверки подлинности. Дополнительные сведения об единого входа см. [в статье единый вход в приложения](../../active-directory/manage-apps/what-is-single-sign-on.md).
 
-## <a name="azure-storage-resource-id"></a>Идентификатор ресурса хранилища Azure
+Другие средства разработки могут предложить вам войти в систему через веб-браузер. Можно также использовать субъект-службу для проверки подлинности из среды разработки. Дополнительные сведения см. [в статье Создание удостоверения для приложения Azure на портале](../../active-directory/develop/howto-create-service-principal-portal.md).
 
-[!INCLUDE [storage-resource-id-include](../../../includes/storage-resource-id-include.md)]
+После проверки подлинности клиентская библиотека удостоверений Azure получает учетные данные маркера. Затем эти учетные данные маркера инкапсулируются в объекте клиента службы, который вы создадите для выполнения операций с хранилищем Azure. Библиотека полностью обрабатывает это, получая соответствующие учетные данные маркера.
 
-## <a name="net-code-example-create-a-block-blob"></a>Пример кода .NET. Создание блочного BLOB-объекта
+Дополнительные сведения о клиентской библиотеке удостоверений Azure см. в статье [Клиентская библиотека удостоверений Azure для .NET](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/identity/Azure.Identity).
 
-В примере кода показано, как получить маркер OAuth 2,0 из Azure AD и использовать его для авторизации запроса на создание блочного BLOB-объекта. Чтобы получить этот пример, сначала выполните действия, описанные в предыдущих разделах.
+## <a name="assign-rbac-roles-for-access-to-data"></a>Назначение ролей RBAC для доступа к данным
 
-[!INCLUDE [storage-app-auth-lib-include](../../../includes/storage-app-auth-lib-include.md)]
+Когда субъект безопасности Azure AD пытается получить доступ к данным большого двоичного объекта или очереди, этот субъект безопасности должен иметь разрешения для ресурса. Независимо от того, является ли участник безопасности управляемым удостоверением в Azure или учетной записью пользователя Azure AD, выполняющего код в среде разработки, участнику безопасности должна быть назначена роль RBAC, которая предоставляет доступ к данным большого двоичного объекта или очереди в службе хранилища Azure. Сведения о назначении разрешений через RBAC см. в разделе **назначение РОЛЕЙ RBAC для прав доступа** в статье [авторизация доступа к BLOB-объектам и очередям Azure с помощью Azure Active Directory](../common/storage-auth-aad.md#assign-rbac-roles-for-access-rights).
 
-### <a name="add-the-callback-method"></a>Добавление метода обратного вызова
+## <a name="install-the-preview-packages"></a>Установка предварительных версий пакетов
 
-Метод обратного вызова проверяет срок действия маркера и при необходимости обновляет его.
+В примерах, приведенных в этой статье, используется последняя Предварительная версия клиентской библиотеки службы хранилища Azure для хранилища BLOB-объектов. Чтобы установить предварительную версию пакета, выполните следующую команду в консоли диспетчера пакетов NuGet:
+
+```powershell
+Install-Package Azure.Storage.Blobs -IncludePrerelease
+```
+
+В примерах в этой статье также используется последняя Предварительная версия [клиентской библиотеки удостоверений Azure для .NET](https://www.nuget.org/packages/Azure.Identity/) для аутентификации с помощью учетных данных Azure AD. Чтобы установить предварительную версию пакета, выполните следующую команду в консоли диспетчера пакетов NuGet:
+
+```powershell
+Install-Package Azure.Identity -IncludePrerelease
+```
+
+## <a name="net-code-example-create-a-block-blob"></a>Пример кода .NET: создание блочного BLOB-объекта
+
+Добавьте в код следующие директивы `using`, чтобы использовать предварительные версии клиентских библиотек Azure Identity и Azure Storage.
 
 ```csharp
-private static async Task<NewTokenAndFrequency> TokenRenewerAsync(Object state, CancellationToken cancellationToken)
+using System;
+using System.IO;
+using System.Threading.Tasks;
+using Azure.Identity;
+using Azure.Storage;
+using Azure.Storage.Sas;
+using Azure.Storage.Blobs;
+using Azure.Storage.Blobs.Models;
+```
+
+Чтобы получить учетные данные маркера, которые ваш код может использовать для авторизации запросов в службе хранилища Azure, создайте экземпляр класса [дефаултазурекредентиал](/dotnet/api/azure.identity.defaultazurecredential) . В следующем примере кода показано, как получить учетные данные маркера, прошедшего проверку подлинности, и использовать его для создания объекта клиента службы, а затем использовать клиент службы для отправки нового большого двоичного объекта:
+
+```csharp
+async static Task CreateBlockBlobAsync(string accountName, string containerName, string blobName)
 {
-    // Specify the resource ID for requesting Azure AD tokens for Azure Storage.
-    // Note that you can also specify the root URI for your storage account as the resource ID.
-    const string StorageResource = "https://storage.azure.com/";  
+    // Construct the blob container endpoint from the arguments.
+    string containerEndpoint = string.Format("https://{0}.blob.core.windows.net/{1}",
+                                                accountName,
+                                                containerName);
 
-    // Use the same token provider to request a new token.
-    var authResult = await ((AzureServiceTokenProvider)state).GetAuthenticationResultAsync(StorageResource);
+    // Get a credential and create a client object for the blob container.
+    BlobContainerClient containerClient = new BlobContainerClient(new Uri(containerEndpoint),
+                                                                    new DefaultAzureCredential());
 
-    // Renew the token 5 minutes before it expires.
-    var next = (authResult.ExpiresOn - DateTimeOffset.UtcNow) - TimeSpan.FromMinutes(5);
-    if (next.Ticks < 0)
+    try
     {
-        next = default(TimeSpan);
-        Console.WriteLine("Renewing token...");
-    }
+        // Create the container if it does not exist.
+        await containerClient.CreateIfNotExistsAsync();
 
-    // Return the new token and the next refresh time.
-    return new NewTokenAndFrequency(authResult.AccessToken, next);
+        // Upload text to a new block blob.
+        string blobContents = "This is a block blob.";
+        byte[] byteArray = Encoding.ASCII.GetBytes(blobContents);
+
+        using (MemoryStream stream = new MemoryStream(byteArray))
+        {
+            await containerClient.UploadBlobAsync(blobName, stream);
+        }
+    }
+    catch (StorageRequestFailedException e)
+    {
+        Console.WriteLine(e.Message);
+        Console.ReadLine();
+        throw;
+    }
 }
 ```
-
-### <a name="get-a-token-and-create-a-block-blob"></a>Получение маркера и создание блочного BLOB-объекта
-
-Библиотека проверки подлинности приложений предоставляет класс **AzureServiceTokenProvider** . Экземпляр этого класса можно передать обратному вызову, который получает маркер и затем обновляет маркер до истечения срока его действия.
-
-Следующий пример получает маркер и использует его для создания нового большого двоичного объекта, а затем использует тот же токен для чтения большого двоичного объекта.
-
-```csharp
-const string blobName = "https://storagesamples.blob.core.windows.net/sample-container/blob1.txt";
-
-// Get the initial access token and the interval at which to refresh it.
-AzureServiceTokenProvider azureServiceTokenProvider = new AzureServiceTokenProvider();
-var tokenAndFrequency = await TokenRenewerAsync(azureServiceTokenProvider,CancellationToken.None);
-
-// Create storage credentials using the initial token, and connect the callback function
-// to renew the token just before it expires
-TokenCredential tokenCredential = new TokenCredential(tokenAndFrequency.Token,
-                                                        TokenRenewerAsync,
-                                                        azureServiceTokenProvider,
-                                                        tokenAndFrequency.Frequency.Value);
-
-StorageCredentials storageCredentials = new StorageCredentials(tokenCredential);
-
-// Create a blob using the storage credentials.
-CloudBlockBlob blob = new CloudBlockBlob(new Uri(blobName),
-                                            storageCredentials);
-
-// Upload text to the blob.
-await blob.UploadTextAsync(string.Format("This is a blob named {0}", blob.Name));
-
-// Continue to make requests against Azure Storage.
-// The token is automatically refreshed as needed in the background.
-do
-{
-    // Read blob contents
-    Console.WriteLine("Time accessed: {0} Blob Content: {1}",
-                        DateTimeOffset.UtcNow,
-                        await blob.DownloadTextAsync());
-
-    // Sleep for ten seconds, then read the contents of the blob again.
-    Thread.Sleep(TimeSpan.FromSeconds(10));
-} while (true);
-```
-
-Дополнительные сведения о библиотеке проверки подлинности приложений см. [в статье Проверка подлинности между службами для Azure Key Vault с помощью .NET](../../key-vault/service-to-service-authentication.md).
-
-Дополнительные сведения о получении маркера доступа см. в статье [Использование управляемых удостоверений для ресурсов Azure на виртуальной машине Azure для получения маркера доступа](../../active-directory/managed-identities-azure-resources/how-to-use-vm-token.md).
 
 > [!NOTE]
 > Для авторизации запросов к данным большого двоичного объекта или очереди с помощью Azure AD необходимо использовать протокол HTTPS для этих запросов.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о ролях RBAC для службы хранилища Azure см. в статье [Управление правами доступа к данным хранилища с помощью RBAC](storage-auth-aad-rbac.md).
 - Чтобы узнать об авторизации доступа к контейнерам и очередям из приложений службы хранилища, ознакомьтесь с разделом [Authenticate with Azure Active Directory from an Azure Storage application (Preview)](storage-auth-aad-app.md) (Аутентификация с помощью Azure Active Directory из приложения службы хранилища Azure (предварительная версия)).

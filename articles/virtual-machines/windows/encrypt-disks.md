@@ -14,15 +14,15 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 10/30/2018
 ms.author: cynthn
-ms.openlocfilehash: bee4b108d2747e8c386abe41dc61b5b19aecf4f5
-ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
+ms.openlocfilehash: 87777d3a6abfeaeac74fd69126cc3e71e11be825
+ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71828687"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72597856"
 ---
 # <a name="encrypt-virtual-disks-on-a-windows-vm"></a>Шифрование виртуальных дисков на виртуальной машине Windows
-Для улучшения уровня безопасности и соответствия требованиям виртуальной машины содержание виртуальных дисков в Azure можно зашифровать. Диски, зашифрованные с использованием криптографических ключей, защищенных в Azure Key Vault. Вы будете управлять этими криптографическими ключами и проводить аудит их использования. В этой статье описывается, как с помощью Azure PowerShell шифровать диски на виртуальной машине Windows. Вы также можете [зашифровать виртуальную машину Linux с помощью Azure CLI](../linux/disk-encryption-overview.md).
+Для улучшения уровня безопасности и соответствия требованиям виртуальной машины содержание виртуальных дисков в Azure можно зашифровать. Диски, зашифрованные с использованием криптографических ключей, защищенных в Azure Key Vault. Вы будете управлять этими криптографическими ключами и проводить аудит их использования. В этой статье описывается, как с помощью Azure PowerShell шифровать диски на виртуальной машине Windows. Вы также можете [шифровать виртуальные машины Linux](../linux/disk-encryption-overview.md).
 
 [!INCLUDE [updated-for-az.md](../../../includes/updated-for-az.md)]
 
@@ -94,7 +94,7 @@ Add-AzKeyVaultKey -VaultName $keyVaultName `
     -Destination "Software"
 ```
 
-## <a name="create-a-virtual-machine"></a>Создать виртуальную машину
+## <a name="create-a-virtual-machine"></a>Создание виртуальной машины
 Чтобы проверить процесс шифрования, создайте виртуальную машину с помощью командлета [New-AzVm](https://docs.microsoft.com/powershell/module/az.compute/new-azvm). В следующем примере создается виртуальная машина *myVM* с использованием образа *Windows Server 2016 Datacenter*. Когда появится запрос на ввод учетных данных, введите имя пользователя и пароль, которые будут использоваться для виртуальной машины.
 
 ```azurepowershell-interactive
@@ -144,6 +144,6 @@ OsVolumeEncryptionSettings : Microsoft.Azure.Management.Compute.Models.DiskEncry
 ProgressMessage            : OsVolume: Encrypted, DataVolumes: Encrypted
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения об управлении Azure Key Vault см. в статье [Настройка хранилища ключей для виртуальных машин в Azure Resource Manager](key-vault-setup.md).
-* Дополнительные сведения о шифровании дисков, а именно о подготовке зашифрованной настраиваемой виртуальной машины к передаче в Azure, см. в статье [Дисковое шифрование Azure для виртуальных машин IaaS под управлением Windows и Linux](../../security/azure-security-disk-encryption.md).
+* Дополнительные сведения о шифровании дисков, а именно о подготовке зашифрованной настраиваемой виртуальной машины к передаче в Azure, см. в статье [Дисковое шифрование Azure для виртуальных машин IaaS под управлением Windows и Linux](../../security/fundamentals/encryption-overview.md).
