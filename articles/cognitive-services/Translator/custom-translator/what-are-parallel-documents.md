@@ -9,12 +9,12 @@ ms.subservice: translator-text
 ms.date: 02/21/2019
 ms.author: swmachan
 ms.topic: conceptual
-ms.openlocfilehash: fb54df2e1eb89d30e62ae80355635356343994ee
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: d7c38a44e3111a319e4146b3c9b71a22b0d31bfd
+ms.sourcegitcommit: 9a4296c56beca63430fcc8f92e453b2ab068cc62
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68595447"
+ms.lasthandoff: 10/20/2019
+ms.locfileid: "72675464"
 ---
 # <a name="what-are-parallel-documents"></a>Что такое параллельные документы
 
@@ -23,7 +23,7 @@ ms.locfileid: "68595447"
 
 ## <a name="requirements"></a>Требования
 
-Для обучения системы потребуется не менее 10 000 уникальных параллельных предложений. Рекомендуется постоянно добавлять больше параллельного содержимого и переобучать систему, чтобы улучшить качество системы перевода.
+Для обучения системы потребуется как минимум 10 000 уникальных согласованных параллельных предложений. Это ограничение является защитой, чтобы гарантировать, что параллельные предложения содержат достаточно уникальный словарь для успешного обучения модели перевода. Рекомендуется постоянно добавлять дополнительное параллельное содержимое и переучить, чтобы улучшить качество системы перевода. См. статью [Выравнивание предложений](https://docs.microsoft.com/azure/cognitive-services/translator/custom-translator/sentence-alignment).
 
 Корпорация Майкрософт требует, чтобы документы, передаваемые в Custom Translator, не нарушали авторские права или интеллектуальную собственность третьих лиц. Дополнительные сведения см. в статье [об условиях использования](https://azure.microsoft.com/support/legal/cognitive-services-terms/).
 Передача документа с помощью портала не изменяет права на интеллектуальную собственность в самом документе.
@@ -44,6 +44,6 @@ ms.locfileid: "68595447"
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения об использовании [словаря](what-is-dictionary.md) в Custom Translator.
