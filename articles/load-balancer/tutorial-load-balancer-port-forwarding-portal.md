@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 02/26/2019
 ms.author: allensu
 ms.custom: seodec18
-ms.openlocfilehash: ee4ed818364d04f03caedc8b876ea29c41cb59b7
-ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
+ms.openlocfilehash: aa4837ec1fd8ef19eb6d0c77f946ef358becd542
+ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68273449"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72428224"
 ---
 # <a name="tutorial-configure-port-forwarding-in-azure-load-balancer-using-the-portal"></a>Руководство. Настройка перенаправления портов в Azure Load Balancer с помощью портала
 
@@ -50,7 +50,7 @@ ms.locfileid: "68273449"
     | Параметр                 | Значение                                              |
     | ---                     | ---                                                |
     | Subscription               | Выберите свою подписку.    |    
-    | Resource group         | Выберите **Создать** и введите *MyResourceGroupLB* в текстовом поле.|
+    | группа ресурсов.         | Выберите **Создать** и введите *MyResourceGroupLB* в текстовом поле.|
     | ИМЯ                   | *myLoadBalancer*                                   |
     | Регион         | Выберите **Западная Европа**.                                        |
     | type          | Щелкните **Общедоступный**.                                        |
@@ -235,6 +235,7 @@ ms.locfileid: "68273449"
    - **Имя**. Введите *MyNATRuleVM1*.
    - **Порт**. Введите *4221*.
    - **Целевая виртуальная машина**. Выберите **MyVM1** в раскрывающемся списке.
+   - **IP-конфигурация сети**. Выберите **ipconfig1** в раскрывающемся списке.
    - **Сопоставление портов**. Выберите **Пользовательский**.
    - **Целевой порт**. Введите *3389*.
    

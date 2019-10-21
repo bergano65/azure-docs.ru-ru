@@ -83,6 +83,8 @@
           href: azure-pim-resource-rbac.md
         - name: Применение пользовательских ролей
           href: pim-resource-roles-custom-role-policy.md
+    - name: Устранение неполадок с PIM
+      href: pim-troubleshoot.md
     - name: Проверки доступа
       items:
         - name: Роли Azure AD

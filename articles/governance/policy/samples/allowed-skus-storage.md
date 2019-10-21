@@ -1,17 +1,17 @@
 ---
-title: 'Пример: допустимые номера SKU для учетных записей хранения и виртуальных машин'
+title: 'Пример: допустимые SKU учетных записей хранения и виртуальных машин'
 description: В этом примере определения политики требуется, чтобы учетные записи хранения и виртуальные машины использовали утвержденные номера SKU.
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: sample
 ms.date: 01/23/2019
 ms.author: dacoulte
-ms.openlocfilehash: e84462a930ffad202def1da1e2c923371dde9d58
-ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
+ms.openlocfilehash: bfa6fd7bf812da352e074c0ed4df855043a27971
+ms.sourcegitcommit: 1c2659ab26619658799442a6e7604f3c66307a89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71980607"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72255858"
 ---
 # <a name="sample---allowed-skus-for-storage-accounts-and-virtual-machines"></a>Пример: допустимые номера SKU для учетных записей хранения и виртуальных машин
 

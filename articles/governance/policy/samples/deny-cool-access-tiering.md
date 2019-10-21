@@ -1,17 +1,17 @@
 ---
-title: 'Пример: запрет на распределение по холодным уровням доступа для учетных записей хранения'
+title: 'Пример: запрет на распределение по холодным уровням доступа для учетной записи хранения'
 description: В этом примере определения политики налагается запрет на распределение по холодным уровням доступа для учетных записей хранения больших двоичных объектов.
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: sample
 ms.date: 01/23/2019
 ms.author: dacoulte
-ms.openlocfilehash: 21ee0e62e300b5807e3a38a0834c3365ab123dad
-ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
+ms.openlocfilehash: a686126d0f164df2df224ced2e16f03a0a9bb283
+ms.sourcegitcommit: 1c2659ab26619658799442a6e7604f3c66307a89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71977237"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72255797"
 ---
 # <a name="sample---deny-cool-access-tiering-for-storage-accounts"></a>Пример: запрет на распределение по холодным уровням доступа для учетных записей хранения
 

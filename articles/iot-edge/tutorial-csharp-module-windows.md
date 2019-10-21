@@ -9,12 +9,12 @@ ms.date: 04/23/2019
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: c872b10d7819fb95d614664ed32831f410349760
-ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
+ms.openlocfilehash: 32bd0438afa63212222acb84c0194bbc1f4816ce
+ms.sourcegitcommit: e0a1a9e4a5c92d57deb168580e8aa1306bd94723
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71122911"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72286687"
 ---
 # <a name="tutorial-develop-a-c-iot-edge-module-for-windows-devices"></a>Руководство по Разработка модулей IoT Edge на языке C# для устройств Windows
 
@@ -36,7 +36,7 @@ ms.locfileid: "71122911"
 
 В этом руководстве показано, как выполнить разработку модуля на языке **C#** с помощью **Visual Studio 2019** и его развертывание на **устройстве Windows**. Если вы разрабатываете модули для устройств Linux, обратитесь к этому руководству [по разработке модуля IoT Edge на языке C# для устройств Linux](tutorial-csharp-module.md). 
 
-В следующей таблице перечислены возможные варианты для разработки и развертывания модулей C для устройств с Windows: 
+В следующей таблице перечислены возможные варианты для разработки и развертывания модулей C# для устройств с Windows: 
 
 | C# | Visual Studio Code | Visual Studio 2017 или 2019 | 
 | -- | ------------------ | ------------------ |

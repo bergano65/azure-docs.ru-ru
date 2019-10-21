@@ -1,5 +1,5 @@
 ---
-title: Отправка push-уведомлений в приложения Android с помощью Центров уведомлений Azure и Google Cloud Messaging | Документация Майкрософт
+title: Отправка push-уведомлений в Android с помощью Центров уведомлений Azure и Google Cloud Messaging | Документация Майкрософт
 description: Из этого руководства вы узнаете, как использовать центры уведомлений Azure и Google Firebase Cloud Messaging для отправки push-уведомлений на устройства Android.
 services: notification-hubs
 documentationcenter: android
@@ -18,12 +18,12 @@ ms.date: 01/04/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
-ms.openlocfilehash: 36af79b90722041ddb16bb90a73175a8635531fd
-ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
+ms.openlocfilehash: c938b6174226ef9ea1104c5e95968d6122e922cf
+ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71212357"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72386324"
 ---
 # <a name="tutorial-push-notifications-to-android-devices-by-using-azure-notification-hubs-and-google-cloud-messaging-deprecated"></a>Руководство по отправке push-уведомлений на устройства Android с помощью Центров уведомлений Azure и Google Cloud Messaging (не рекомендуется к использованию)
 

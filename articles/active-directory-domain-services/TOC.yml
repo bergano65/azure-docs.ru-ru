@@ -65,6 +65,8 @@
           href: notifications.md
         - name: Удаление управляемого домена
           href: delete-aadds.md
+        - name: Миграция из классического развертывания (предварительная версия)
+          href: migrate-from-classic-vnet.md
     - name: Защита в Azure AD DS
       items:
         - name: Защита управляемого домена

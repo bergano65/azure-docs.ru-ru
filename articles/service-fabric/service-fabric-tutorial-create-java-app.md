@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 09/01/2018
 ms.author: suhuruli
 ms.custom: mvc, seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: b3210b97fe6fb0cd16499d5c33538c8e2babe612
-ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
+ms.openlocfilehash: 5e9b94f0c67b4b4630d554f4dde22502c90e777c
+ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71173609"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72376374"
 ---
 # <a name="tutorial-create-an-application-with-a-java-api-front-end-service-and-a-stateful-back-end-service-on-azure-service-fabric"></a>Руководство по Создание приложения с интерфейсной службой API Java и серверной службой с отслеживанием состояния в Azure Service Fabric
 
@@ -228,7 +228,7 @@ protected List<ServiceInstanceListener> createServiceInstanceListeners() {
 
 ### <a name="add-the-httpcommunicationlistenerjava-file"></a>Добавление файла HTTPCommunicationListener.java
 
-Прослушиватель для обмена данными HTTP действует в качестве контроллера, который настраивает сервер HTTP и предоставляет API, определяющий действия голосования. Щелкните правой кнопкой мыши пакет *statelessservice* в папке *VotingWeb/src/statelessservice*, а затем последовательно выберите **Новый****Файл**.  Назовите файл *HttpCommunicationListener.java* и щелкните **Готово**.
+Прослушиватель для обмена данными HTTP действует в качестве контроллера, который настраивает сервер HTTP и предоставляет API, определяющий действия голосования. Щелкните правой кнопкой мыши пакет *statelessservice* в папке *VotingWeb/src/statelessservice*, а затем последовательно выберите **Создать** > **Файл**.  Назовите файл *HttpCommunicationListener.java* и щелкните **Готово**.
 
 Замените содержимое файла следующим образом, а затем сохраните изменения.  Затем на этапе обновления файл HttpCommunicationListener.java будет изменен для преобразования для просмотра, чтения и записи данных голосования, полученных из серверной службы.  Теперь прослушиватель просто возвращает статические HTML для приложения для голосования.
 

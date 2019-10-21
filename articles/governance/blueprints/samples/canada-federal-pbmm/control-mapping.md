@@ -1,17 +1,17 @@
 ---
-title: Пример — схема Canada Federal PBMM — сопоставление элементов управления
-description: Сопоставление элементов управления с определениями Политики Azure на примере схемы Canada Federal PBMM.
+title: Пример схемы Canada Federal PBMM — сопоставление элементов управления
+description: Сопоставление элементов управления на примерах схемы Canada Federal PBMM. Каждый элемент управления сопоставляется с одной или несколькими политиками Azure, которые помогают выполнять оценку.
 author: DCtheGeek
 ms.author: dacoulte
 ms.date: 09/04/2019
 ms.topic: sample
 ms.service: blueprints
-ms.openlocfilehash: 8fae03acf33d80502869e2f8d19aa619d72f038c
-ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
+ms.openlocfilehash: b16ad4fd08776312d318067b4bc84f79b9797e70
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71981660"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72299162"
 ---
 # <a name="control-mapping-of-the-canada-federal-pbmm-blueprint-sample"></a>Сопоставление элементов управления на примере схемы Canada Federal PBMM
 

@@ -1,5 +1,5 @@
 ---
-title: Запуск веб-приложения Python (Django) с подключением к PostgreSQL на платформе Linux в Службе приложений Azure | Документация Майкрософт
+title: Руководство по Запуск веб-приложения Python (Django) с подключением к PostgreSQL в Linux в Службе приложений Azure
 description: Узнайте, как запустить управляемое данными веб-приложение Python (Django) в Azure с подключением к базе данных PostgreSQL.
 services: app-service\web
 documentationcenter: python
@@ -11,19 +11,22 @@ ms.devlang: python
 ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: cephalin
-ms.custom: seodec18
-ms.openlocfilehash: 1fc322cf7e425e35751369ab8daf1ef1809d5f07
-ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
+ms.custom:
+- mvc
+- seodec18
+- seo-python-october2019
+ms.openlocfilehash: 34dbce2a6da2395bbc627a30d464a9817dfe76fe
+ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71203263"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72439429"
 ---
-# <a name="build-a-python-django-web-app-with-postgresql-in-azure-app-service"></a>Создание веб-приложения Python (Django) с помощью PostgreSQL в Службе приложений Azure
+# <a name="tutorial-build-a-python-django-web-app-with-postgresql-in-azure-app-service"></a>Руководство по Создание веб-приложения Python (Django) с помощью PostgreSQL в Службе приложений Azure
 
 [Служба приложений на платформе Linux](app-service-linux-intro.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости. Это руководство демонстрирует создание управляемого данными веб-приложения Python (Django), используя в качестве серверной части базу данных PostgreSQL. После выполнения всех действий у вас будет приложение Django, работающее в Azure в Linux.
 
-![Веб-приложение Python Django в Службе приложений Azure в Linux](./media/tutorial-python-postgresql-app/django-admin-azure.png)
+![Запуск веб-приложения Python Django в Службе приложений Azure в Linux](./media/tutorial-python-postgresql-app/run-python-django-app-in-azure.png)
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 
@@ -144,7 +147,7 @@ Quit the server with CONTROL-C.
 
 Перейдите к `http://localhost:8000/admin` и войдите с именем администратора, который был создан на предыдущем шаге. Щелкните **Добавить** возле поля **Вопросы** и создайте вопрос опроса с несколькими вариантами.
 
-![Приложение Python Django, выполняемое в локальной среде](./media/tutorial-python-postgresql-app/django-admin-local.png)
+![Запуск приложения Python (Django) в службах приложений локально](./media/tutorial-python-postgresql-app/run-python-django-app-locally.png)
 
 Перейдите к `http://localhost:8000`, и отобразится вопрос опроса.
 
@@ -273,7 +276,7 @@ python manage.py runserver
 
 Перейдите к `http://localhost:8000/admin`, и выполните вход с данными созданного администратора, и создайте вопрос опроса, как это делали ранее.
 
-![Приложение Python Django, выполняемое в локальной среде](./media/tutorial-python-postgresql-app/django-admin-local.png)
+![Запуск приложения Python (Django) в службах приложений локально](./media/tutorial-python-postgresql-app/run-python-django-app-locally.png)
 
 Перейдите к `http://localhost:8000`, и отобразится вопрос опроса. Теперь приложение записывает данные в базу данных на портале Azure.
 
@@ -388,7 +391,7 @@ http://<app-name>.azurewebsites.net
 
 Перейдите к `<app-name>.azurewebsites.net` и войдите с тем же именем созданного администратора. При желании попробуйте создать некоторые дополнительные вопросы опроса.
 
-![Приложение Python Django, выполняемое в локальной среде](./media/tutorial-python-postgresql-app/django-admin-azure.png)
+![Запуск приложения Python (Django) в службах приложений в Azure](./media/tutorial-python-postgresql-app/run-python-django-app-in-azure.png)
 
 **Поздравляем!** Вы запустили веб-приложение Python (Django) в Службе приложений Azure для Linux.
 
@@ -402,11 +405,11 @@ http://<app-name>.azurewebsites.net
 
 В меню слева выберите **Службы приложений** и щелкните имя своего приложения Azure.
 
-![Переход к приложению Azure на портале](./media/tutorial-python-postgresql-app/app-resource.png)
+![Переход к приложению Python (Django) на портале Azure](./media/tutorial-python-postgresql-app/navigate-to-django-app-in-app-services-in-the-azure-portal.png)
 
 По умолчанию на портале отображается страница **Обзор** приложения. Здесь вы можете наблюдать за работой приложения. Вы также можете выполнять базовые задачи управления: обзор, завершение, запуск, перезагрузку и удаление. На вкладках в левой части страницы отображаются различные страницы конфигурации, которые можно открыть.
 
-![Страница службы приложений на портале Azure](./media/tutorial-python-postgresql-app/app-mgmt.png)
+![Управление приложением Python (Django) на странице "Обзор" на портале Azure](./media/tutorial-python-postgresql-app/manage-django-app-in-app-services-in-the-azure-portal.png)
 
 [!INCLUDE [cli-samples-clean-up](../../../includes/cli-samples-clean-up.md)]
 

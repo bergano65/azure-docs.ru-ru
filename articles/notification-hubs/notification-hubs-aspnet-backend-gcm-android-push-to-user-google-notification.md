@@ -1,5 +1,5 @@
 ---
-title: Отправка push-уведомлений определенным пользователям приложений Android с помощью службы "Центры уведомлений Azure" | Документация Майкрософт
+title: Отправка push-уведомлений определенным приложениям Android с помощью Центров уведомлений Azure | Документация Майкрософт
 description: Узнайте, как использовать службу "Центры уведомлений Azure" для отправки push-уведомлений определенным пользователям.
 documentationcenter: android
 services: notification-hubs
@@ -17,12 +17,12 @@ ms.date: 01/04/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
-ms.openlocfilehash: 1b867d571e97209c4385c1f23b49fe5a03ab94d5
-ms.sourcegitcommit: 3fa4384af35c64f6674f40e0d4128e1274083487
+ms.openlocfilehash: c5c9ec26c9387cd9ae129002697210c2b342ab9b
+ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71212081"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72385888"
 ---
 # <a name="tutorial-push-notification-to-specific-android-application-users-by-using-azure-notification-hubs-and-google-cloud-messaging-deprecated"></a>Руководство по отправке push-уведомлений конкретным пользователям приложений Android с помощью Центров уведомлений Azure и Google Cloud Messaging (не рекомендуется к использованию)
 

@@ -8,12 +8,12 @@ ms.service: azure-databricks
 ms.custom: mvc
 ms.topic: tutorial
 ms.date: 06/20/2019
-ms.openlocfilehash: 172921dcb082f511d16394b7693f40edf8394821
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: 228b0fff7231af811206d5c477b63ed70706939b
+ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68826050"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72329775"
 ---
 # <a name="tutorial-extract-transform-and-load-data-by-using-azure-databricks"></a>Руководство по Извлечение, преобразование и загрузка данных с помощью Azure Databricks
 
@@ -49,7 +49,7 @@ ms.locfileid: "68826050"
 
 * Создайте хранилище данных SQL Azure, создайте правило брандмауэра на уровне сервера и подключитесь к серверу с правами администратора. См. [Краткое руководство. Создание хранилища данных SQL Azure на портале Azure и отправка запросов к этому хранилищу данных](../sql-data-warehouse/create-data-warehouse-portal.md).
 
-* Создайте главный ключ базы данных для хранилища данных SQL Azure. Ознакомьтесь со статьей о [создании главного ключа базы данных](https://docs.microsoft.com/sql/relational-databases/security/encryption/create-a-database-master-key).
+* Создайте главный ключ для хранилища данных SQL Azure. Ознакомьтесь со статьей о [создании главного ключа базы данных](https://docs.microsoft.com/sql/relational-databases/security/encryption/create-a-database-master-key).
 
 * Создайте учетную запись хранилища BLOB-объектов Azure, содержащую контейнер. Также получите ключ для доступа к учетной записи хранения. См. [Краткое руководство. Передача, скачивание и составление списка больших двоичных объектов с помощью портала Azure](../storage/blobs/storage-quickstart-blobs-portal.md).
 
@@ -98,8 +98,8 @@ ms.locfileid: "68826050"
     |Свойство  |ОПИСАНИЕ  |
     |---------|---------|
     |**Имя рабочей области**     | Укажите имя рабочей области Databricks.        |
-    |**Подписка**     | Выберите подписку Azure в раскрывающемся списке.        |
-    |**Группа ресурсов**     | Укажите, следует ли создать новую группу ресурсов или использовать имеющуюся. Группа ресурсов — это контейнер, содержащий связанные ресурсы для решения Azure. Дополнительные сведения см. в [обзоре группы ресурсов Azure](../azure-resource-manager/resource-group-overview.md). |
+    |**подписка**     | Выберите подписку Azure в раскрывающемся списке.        |
+    |**группа ресурсов**     | Укажите, следует ли создать новую группу ресурсов или использовать имеющуюся. Группа ресурсов — это контейнер, содержащий связанные ресурсы для решения Azure. Дополнительные сведения см. в [обзоре группы ресурсов Azure](../azure-resource-manager/resource-group-overview.md). |
     |**Местоположение.**     | Выберите **Западная часть США 2**.  Другие доступные регионы см. в статье о [доступности служб Azure по регионам](https://azure.microsoft.com/regions/services/).      |
     |**Ценовая категория**     |  Выберите **Стандартная**.     |
 

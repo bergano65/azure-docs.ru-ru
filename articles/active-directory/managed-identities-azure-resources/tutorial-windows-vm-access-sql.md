@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 11/07/2018
+ms.date: 10/16/2019
 ms.author: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b6d5452f23e830ca7a9ffe5ca5ed3d4aa12fb717
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: a11c5489c97e1050e525c0b83c160c1360119b60
+ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66236047"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72433177"
 ---
 # <a name="tutorial-use-a-windows-vm-system-assigned-managed-identity-to-access-azure-sql"></a>Руководство. Использование назначаемого системой управляемого удостоверения на виртуальной машине Windows для доступа к SQL Azure
 
@@ -103,7 +103,7 @@ ms.locfileid: "66236047"
 
 В SQL Azure реализована поддержка аутентификации Azure AD, поэтому поддерживается непосредственный прием маркеров доступа, полученных с использованием управляемого удостоверения. Для создания подключения к SQL используется метод на основе **маркера доступа**. Он реализуется как часть интеграции SQL Azure с Azure AD и отличается от указания учетных данных в строке подключения.
 
-Ниже приведен пример кода .NET для установки подключения к SQL с помощью маркера доступа. Этот код должен выполняться на виртуальной машине, чтобы получить доступ к конечной точке назначаемого системой управляемого удостоверения виртуальной машины. Для использования метода с маркером доступа необходима платформа **.NET Framework 4.6** или более поздней версии. Замените значения AZURE-SQL-SERVERNAME и DATABASE соответствующим образом. Обратите внимание на то, что идентификатор ресурса для SQL Azure — `https://database.windows.net/`.
+Ниже приведен пример кода .NET для установки подключения к SQL с помощью маркера доступа. Этот код должен выполняться на виртуальной машине, чтобы получить доступ к конечной точке назначаемого системой управляемого удостоверения виртуальной машины. Для использования метода с маркером доступа требуется **.NET Framework 4.6** или более поздней версии либо **.NET Core 2.2** или более поздней версии. Замените значения AZURE-SQL-SERVERNAME и DATABASE соответствующим образом. Обратите внимание на то, что идентификатор ресурса для SQL Azure — `https://database.windows.net/`.
 
 ```csharp
 using System.Net;
@@ -198,4 +198,4 @@ if (accessToken != null) {
 Из этого руководства вы узнали, как создать назначаемое системой управляемое удостоверение и получить доступ к экземпляру Azure SQL Server. Дополнительные сведения о сервере Azure SQL Server см. здесь:
 
 > [!div class="nextstepaction"]
-> [Функции службы базы данных SQL Azure](/azure/sql-database/sql-database-technical-overview)
+> [Служба "База данных SQL Azure"](/azure/sql-database/sql-database-technical-overview)

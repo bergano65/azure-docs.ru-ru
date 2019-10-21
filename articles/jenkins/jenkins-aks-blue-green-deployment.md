@@ -1,5 +1,5 @@
 ---
-title: Развертывание в службе Azure Kubernetes (AKS) с помощью Jenkins и сине-зеленого шаблона развертывания
+title: Развертывание в службе Azure Kubernetes с помощью Jenkins и сине-зеленого шаблона развертывания
 description: Сведения о развертывании в службе Azure Kubernetes (AKS) с использованием Jenkins и сине-зеленого шаблона развертывания.
 ms.service: jenkins
 keywords: jenkins, azure, devops, kubernetes, k8s, aks, blue green deployment, continuous delivery, cd
@@ -7,13 +7,13 @@ author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
-ms.date: 10/11/2018
-ms.openlocfilehash: 93f2ac284931ba664e0965e537e515c824e6f7a6
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.date: 10/09/2019
+ms.openlocfilehash: de9088333f69a22246fe5873d6e09ddb7ba3044a
+ms.sourcegitcommit: 961468fa0cfe650dc1bec87e032e648486f67651
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58092299"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72249405"
 ---
 # <a name="deploy-to-azure-kubernetes-service-aks-by-using-jenkins-and-the-bluegreen-deployment-pattern"></a>Развертывание в службе Azure Kubernetes (AKS) с помощью Jenkins и сине-зеленого шаблона развертывания
 
@@ -147,7 +147,7 @@ ms.locfileid: "58092299"
     kubectl apply -f  test-endpoint-green.yml
     ```
 
-1. Обновление DNS-имени для общедоступной и тестовой конечных точек. При создании кластера Kubernetes также создается [дополнительная группа ресурсов](https://github.com/Azure/AKS/issues/3) по такому шаблону: **MC_&lt;имя_вашей_группы_ресурсов>_&lt;имя_кластера_kubernetes>_&lt;ваше_расположение>**.
+1. Обновление DNS-имени для общедоступной и тестовой конечных точек. При создании кластера Kubernetes также создается [дополнительная группа ресурсов](https://github.com/Azure/AKS/issues/3) по такому шаблону: **MC_&lt;имя_вашей_группы_ресурсов> _&lt;имя_кластера_kubernetes>_ &lt;ваше_расположение>** .
 
     Найдите общедоступные IP-адреса в группе ресурсов.
 

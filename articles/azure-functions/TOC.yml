@@ -75,9 +75,9 @@
       href: functions-cli-samples.md
 - name: Основные понятия
   items:
-    - name: Сравнение версий 1.x и 2.x
+    - name: Сравнение версий среды выполнения
       href: functions-versions.md
-      displayName: 'migrate, migration'
+      displayName: 'migrate, migration, v3'
     - name: План "Премиум"
       href: functions-premium-plan.md
     - name: Развернутые приложения

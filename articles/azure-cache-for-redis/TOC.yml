@@ -39,6 +39,8 @@
           href: cache-best-practices.md
         - name: Архитектура Azure. Рекомендации по кэшированию
           href: 'https://docs.microsoft.com/azure/architecture/best-practices/caching?toc=%2Fazure%2Fredis-cache%2Ftoc.json'
+    - name: Описание отработки отказа и исправления
+      href: cache-failover.md
 - name: Руководства
   items:
     - name: План

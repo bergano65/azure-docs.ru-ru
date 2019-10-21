@@ -1,6 +1,6 @@
 ---
 title: Пример сценария Azure CLI. Получение ресурсов из управляемой группы ресурсов и изменение размера виртуальных машин | Документация Майкрософт
-description: Пример сценария Azure CLI. Получение ресурсов из управляемой группы ресурсов и изменение размера виртуальных машин
+description: Здесь представлен пример скрипта Azure CLI, с помощью которого можно получить управляемую группу ресурсов в управляемом приложении Azure. Скрипт позволяет изменять размеры виртуальных машин.
 services: managed-applications
 documentationcenter: na
 author: tfitzmac
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/25/2017
 ms.author: tomfitz
-ms.openlocfilehash: bbf03a0d53769c93a8aab304d3128ae0cc875a8f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 7218e2fd033614b5e9f77cca34a5db82e3571094
+ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61365900"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72330148"
 ---
 # <a name="get-resources-in-a-managed-resource-group-and-resize-vms-with-azure-cli"></a>Получение ресурсов из управляемой группы ресурсов и изменение размера виртуальных машин с помощью Azure CLI
 

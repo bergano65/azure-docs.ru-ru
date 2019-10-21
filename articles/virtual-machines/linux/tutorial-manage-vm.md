@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 03/23/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 1df278c67c8f84648d2fc7ab3818656cfb9de74a
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 11c12058229a2eadfdc3834d311c085c2365b17d
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70100699"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72300792"
 ---
 # <a name="tutorial-create-and-manage-linux-vms-with-the-azure-cli"></a>Руководство по Создание виртуальных машин Linux и управление ими с помощью Azure CLI
 
@@ -33,7 +33,7 @@ ms.locfileid: "70100699"
 > * Изменение размера виртуальной машины
 > * Просмотр виртуальной машины и оценка ее состояния
 
-[!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
+При работе с этим руководством используется интерфейс командной строки (CLI) в [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview), который всегда обновлен до последней версии. Чтобы открыть Cloud Shell, выберите **Попробовать** в верхнем углу любого блока кода.
 
 Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.0.30 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
 

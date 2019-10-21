@@ -1,5 +1,5 @@
 ---
-title: 'Учебник: доступ к хранилищу BLOB-объектов Azure из Azure Databricks с помощью Azure Key Vault'
+title: Получение доступа к хранилищу BLOB-объектов из Azure Databricks с использованием хранилища ключей
 description: В этом учебнике описано, как получить доступ к хранилищу BLOB-объектов Azure из Azure Databricks, используя секреты, хранящиеся в хранилище ключей.
 author: mamccrea
 ms.author: mamccrea
@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: azure-databricks
 ms.topic: tutorial
 ms.date: 07/19/2019
-ms.openlocfilehash: 45c5be8b203daf21697f3cb6dad4ecadb6449339
-ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
+ms.openlocfilehash: 1e44a1f1be6dcadac937d641e00c99994af0c651
+ms.sourcegitcommit: f272ba8ecdbc126d22a596863d49e55bc7b22d37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68976514"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72274090"
 ---
 # <a name="tutorial-access-azure-blob-storage-from-azure-databricks-using-azure-key-vault"></a>Руководство по Доступ к хранилищу BLOB-объектов Azure из Azure Databricks с помощью Azure Key Vault
 
@@ -78,7 +78,7 @@ ms.locfileid: "68976514"
    |--------|-----------|
    |ИМЯ|Укажите уникальное имя для хранилища ключей.|
    |Subscription|Выберите подписку.|
-   |Resource group|Выберите группу ресурсов или создайте новую.|
+   |группа ресурсов.|Выберите группу ресурсов или создайте новую.|
    |Location|Выберите расположение.|
 
    ![Свойства хранилища ключей Azure](./media/store-secrets-azure-key-vault/create-key-vault-properties.png)
@@ -115,7 +115,7 @@ ms.locfileid: "68976514"
    |---------|---------|
    |имя рабочей области.     | Укажите имя рабочей области Databricks.        |
    |Subscription     | Выберите подписку Azure в раскрывающемся списке.        |
-   |Resource group     | Выберите группу ресурсов, которая содержит нужное хранилище ключей. |
+   |группа ресурсов.     | Выберите группу ресурсов, которая содержит нужное хранилище ключей. |
    |Location     | Предназначено для выбора расположения, идентичного тому, где находится Azure Key Vault. Другие доступные регионы см. в статье о [доступности служб Azure по регионам](https://azure.microsoft.com/regions/services/).        |
    |Ценовая категория     |  Вы можете выбрать уровень **Стандартный** или **Премиум**. Дополнительные сведения об этих ценовых категориях см. на [странице цен на Databricks](https://azure.microsoft.com/pricing/details/databricks/).       |
 

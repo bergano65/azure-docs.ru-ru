@@ -8,12 +8,12 @@ manager: jeconnoc
 ms.topic: tutorial
 ms.service: container-service
 ms.date: 05/14/2019
-ms.openlocfilehash: 4c186787af08a565dc100dfbd79d166688d89d8f
-ms.sourcegitcommit: fe50db9c686d14eec75819f52a8e8d30d8ea725b
+ms.openlocfilehash: 01319de8fd72875ca35bb7a869a6eaedee62f2a7
+ms.sourcegitcommit: e0a1a9e4a5c92d57deb168580e8aa1306bd94723
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69013438"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72285520"
 ---
 # <a name="tutorial-create-an-azure-red-hat-openshift-cluster"></a>Руководство по Создание кластера Azure Red Hat OpenShift
 
@@ -126,6 +126,9 @@ VNET_ID=$(az network vnet show -n {VNET name} -g {VNET resource group} --query i
 ### <a name="create-the-cluster"></a>Создание кластера
 
 Теперь можно создать новый кластер. Далее будет создан кластер в указанном клиенте Azure AD, указан объект приложения Azure AD и секрет для использования в качестве субъекта безопасности, а также группа безопасности, содержащая участников, у которых есть доступ администратора к кластеру.
+
+> [!IMPORTANT]
+> Перед созданием кластера проверьте, правильно ли вы добавили соответствующие разрешения для приложения Azure AD, как [описано здесь](howto-aad-app-configuration.md#add-api-permissions).
 
 Если вы **не выполняете** пиринг кластера к виртуальной сети, используйте следующую команду:
 

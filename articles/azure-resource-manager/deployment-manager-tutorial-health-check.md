@@ -5,15 +5,15 @@ services: azure-resource-manager
 documentationcenter: ''
 author: mumian
 ms.service: azure-resource-manager
-ms.date: 05/31/2019
+ms.date: 10/09/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 17e27fcbd0e31c8602869be3d884888fe4fe7db0
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: b381c4be5d0c56e14ccd01657542ef3bff2f8894
+ms.sourcegitcommit: e0a1a9e4a5c92d57deb168580e8aa1306bd94723
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70095820"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72285686"
 ---
 # <a name="tutorial-use-health-check-in-azure-deployment-manager-public-preview"></a>Руководство по использованию проверки работоспособности в диспетчере развертывания Azure (общедоступная предварительная версия)
 
@@ -38,8 +38,8 @@ ms.locfileid: "70095820"
 
 Дополнительные ресурсы:
 
-- [Справочник по REST API диспетчера развертывания Azure](https://docs.microsoft.com/rest/api/deploymentmanager/).
-- [Пример диспетчера развертывания Azure](https://github.com/Azure-Samples/adm-quickstart).
+* [Справочник по REST API диспетчера развертывания Azure](https://docs.microsoft.com/rest/api/deploymentmanager/).
+* [Пример диспетчера развертывания Azure](https://github.com/Azure-Samples/adm-quickstart).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
@@ -48,30 +48,30 @@ ms.locfileid: "70095820"
 Для работы с этой статьей необходимо иметь следующее.
 
 * Завершите работу с руководством по [использованию диспетчера развертывания Azure с шаблонами Resource Manager](./deployment-manager-tutorial.md).
-* Скачайте [шаблоны и артефакты](https://armtutorials.blob.core.windows.net/admtutorial/ADMTutorial.zip), используемые в этом руководстве.
 
-## <a name="create-a-health-check-service-simulator"></a>Создание симулятора службы проверки работоспособности
+## <a name="install-the-artifacts"></a>Установка артефактов
+
+Скачайте [шаблоны и артефакты](https://github.com/Azure/azure-docs-json-samples/raw/master/tutorial-adm/ADMTutorial.zip) и распакуйте их локально, если вы еще это не сделали. Затем запустите сценарий PowerShell, указанный в разделе о [подготовке артефактов](./deployment-manager-tutorial.md#prepare-the-artifacts). Сценарий создает группу ресурсов, контейнер хранилища, контейнер больших двоичных объектов, передает скачанные файлы, а затем создает маркер SAS.
+
+Создайте копию URL-адреса с маркером SAS. Этот URL-адрес необходим для заполнения полей в двух файлах параметров: файле параметров топологии и файле параметров развертывания.
+
+Откройте файл CreateADMServiceTopology.Parameters.json и обновите значения **projectName** и **artifactSourceSASLocation**.
+
+Откройте файл CreateADMRollout.Parameters.json и обновите значения **projectName** и **artifactSourceSASLocation**.
+
+## <a name="create-a-health-check-service-simulator"></a>Создание симулятора службы проверки работоспособности.
 
 В рабочей среде обычно используется один или несколько поставщиков мониторинга. Чтобы максимально упростить интеграцию функций работоспособности, корпорация Майкрософт сотрудничает с некоторыми ведущими компаниями по мониторингу работоспособности служб, чтобы предоставить вам простое решение для копирования и вставки, позволяющее интегрировать проверки работоспособности с вашими развертываниями. Список этих компаний см. в разделе [Поставщики мониторинга работоспособности](./deployment-manager-health-check.md#health-monitoring-providers). В рамках этого руководства вы создадите [функцию Azure](/azure/azure-functions/) для имитации службы мониторинга работоспособности. Эта функция принимает код состояния и возвращает тот же код. В шаблоне диспетчера развертывания Azure используется код состояния, чтобы определить способ выполнения развертывания.
 
 Следующие два файла используются для развертывания функции Azure. Не нужно скачивать эти файлы для работы с этим руководством.
 
-* Шаблон Resource Manager, который находится по адресу [https://armtutorials.blob.core.windows.net/admtutorial/deploy_hc_azure_function.json](https://armtutorials.blob.core.windows.net/admtutorial/deploy_hc_azure_function.json). Вы развернете этот шаблон, чтобы создать функцию Azure.
-* ZIP-файл исходного кода функции Azure, который находится по адресу [https://armtutorials.blob.core.windows.net/admtutorial/ADMHCFunction0417.zip](https://armtutorials.blob.core.windows.net/admtutorial/ADMHCFunction0417.zip). Этот ZIP-файл вызывается шаблоном Resource Manager.
+* Шаблон Resource Manager, который находится по адресу [https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/tutorial-adm/deploy_hc_azure_function.json](https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/tutorial-adm/deploy_hc_azure_function.json). Вы развернете этот шаблон, чтобы создать функцию Azure.
+* ZIP-файл исходного кода функции Azure, который находится по адресу [https://github.com/Azure/azure-docs-json-samples/raw/master/tutorial-adm/ADMHCFunction0417.zip](https://github.com/Azure/azure-docs-json-samples/raw/master/tutorial-adm/ADMHCFunction0417.zip). Этот ZIP-файл вызывается шаблоном Resource Manager.
 
 Чтобы развернуть функцию Azure, выберите **Попробовать**, чтобы открыть Azure Cloud Shell, а затем вставьте следующий скрипт в окно оболочки.  Чтобы вставить код, щелкните окно оболочки правой кнопкой мыши, а затем выберите **Вставить**.
 
-> [!IMPORTANT]
-> Параметр **projectName** в скрипте PowerShell используется, чтобы создавать имена для служб Azure, которые будут развернуты в этом руководстве. Различные службы Azure имеют различные требования к именам. Чтобы убедиться, что развертывание прошло успешно, выберите имя длиной не более 12 символов, состоящее только со строчных букв и цифр.
-> Сохраните копию имени проекта. Во время работы с этим руководством вы используете то же значение projectName.
-
-```azurepowershell-interactive
-$projectName = Read-Host -Prompt "Enter a project name that is used to generate Azure resource names"
-$location = Read-Host -Prompt "Enter the location (i.e. centralus)"
-$resourceGroupName = "${projectName}rg"
-
-New-AzResourceGroup -Name $resourceGroupName -Location $location
-New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateUri "https://armtutorials.blob.core.windows.net/admtutorial/deploy_hc_azure_function.json" -projectName $projectName
+```azurepowershell
+New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateUri "https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/tutorial-adm/deploy_hc_azure_function.json" -projectName $projectName
 ```
 
 Чтобы проверить функцию Azure, выполните следующее.
@@ -107,9 +107,9 @@ New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateUri
 
 ## <a name="revise-the-rollout-template"></a>Изменение шаблона выпуска
 
-В этом разделе описано, как включить шаг проверки работоспособности в шаблон выпуска. Для завершения работы с этим руководством не нужно создавать собственный файл CreateADMRollout.json. К измененному шаблону выпуска предоставляется общий доступ в учетной записи хранения, которая используется в последующих разделах.
+В этом разделе описано, как включить шаг проверки работоспособности в шаблон выпуска.
 
-1. Откройте файл **CreateADMRollout.json**. Этот JSON-файл является частью загрузки.  См. раздел [Предварительные требования](#prerequisites).
+1. Откройте файл **CreateADMRollout.json**, созданный при работе с учебником [Руководство. Использование диспетчера развертывания Azure с шаблонами Resource Manager (предварительная версия)](./deployment-manager-tutorial.md). Этот JSON-файл является частью загрузки.  См. раздел [Предварительные требования](#prerequisites).
 1. Добавьте еще два параметра:
 
     ```json
@@ -231,28 +231,16 @@ New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateUri
 
     ![Шаблон проверки работоспособности диспетчера развертывания Azure](./media/deployment-manager-tutorial-health-check/azure-deployment-manager-hc-rollout-template.png)
 
-## <a name="deploy-the-topology"></a>Развертывание топологии
+## <a name="deploy-the-topology"></a>Развертывание топологии.
 
-Чтобы упростить работу с руководством, шаблон топологии и артефакты опубликованы в следующих общих расположениях, поэтому вам не нужно подготавливать собственную копию. Если вы хотите использовать собственную, следуйте указаниям в статье [Руководство. Использование диспетчера развертывания Azure с шаблонами Resource Manager (закрытая предварительная версия)](./deployment-manager-tutorial.md).
+Выполните следующий сценарий PowerShell, чтобы развернуть топологию. Вам нужны те же файлы **CreateADMServiceTopology.json** и **CreateADMServiceTopology.Parameters.json**, которые вы использовали при работе с учебником [Руководство. Использование диспетчера развертывания Azure с шаблонами Resource Manager (предварительная версия)](./deployment-manager-tutorial.md).
 
-* Шаблон топологии: https:\//armtutorials.blob.core.windows.net/admtutorial/ADMTemplates/CreateADMServiceTopology.json
-* Хранилище артефактов: https:\//armtutorials.blob.core.windows.net/admtutorial/ArtifactStore
-
-Чтобы развернуть топологию, выберите **Попробовать** для открытия Cloud Shell, а затем вставьте скрипт PowerShell.
-
-```azurepowershell-interactive
-$projectName = Read-Host -Prompt "Enter the same project name used earlier in this tutorial"
-$location = Read-Host -Prompt "Enter the location (i.e. centralus)"
-$resourceGroupName = "${projectName}rg"
-$artifactLocation = "https://armtutorials.blob.core.windows.net/admtutorial/ArtifactStore?st=2019-05-06T03%3A57%3A31Z&se=2020-05-07T03%3A57%3A00Z&sp=rl&sv=2018-03-28&sr=c&sig=gOh%2Bkhi693rmdxiZFQ9xbKZMU1kbLJDqXw7EP4TaGlI%3D" | ConvertTo-SecureString -AsPlainText -Force
-
+```azurepowershell
 # Create the service topology
 New-AzResourceGroupDeployment `
     -ResourceGroupName $resourceGroupName `
-    -TemplateUri "https://armtutorials.blob.core.windows.net/admtutorial/ADMTemplatesHC/CreateADMServiceTopology.json" `
-    -namePrefix $projectName `
-    -azureResourceLocation $location `
-    -artifactSourceSASLocation $artifactLocation
+    -TemplateFile "$filePath\ADMTemplates\CreateADMServiceTopology.json" `
+    -TemplateParameterFile "$filePath\ADMTemplates\CreateADMServiceTopology.Parameters.json"
 ```
 
 Убедитесь, что топология службы и выделенные ресурсы были успешно созданы с использованием портала Azure:
@@ -263,32 +251,18 @@ New-AzResourceGroupDeployment `
 
 ## <a name="deploy-the-rollout-with-the-unhealthy-status"></a>Развертывание выпуска с неработоспособным состоянием
 
-Чтобы упростить работу с руководством, измененный шаблон выпуска опубликован в следующих общих расположениях, поэтому вам не нужно подготавливать собственную копию. Если вы хотите использовать собственную, следуйте указаниям в статье [Руководство. Использование диспетчера развертывания Azure с шаблонами Resource Manager (закрытая предварительная версия)](./deployment-manager-tutorial.md).
-
-* Шаблон топологии: https:\//armtutorials.blob.core.windows.net/admtutorial/ADMTemplatesHC/CreateADMRollout.json
-* Хранилище артефактов: https:\//armtutorials.blob.core.windows.net/admtutorial/ArtifactStore
-
-Используйте URL-адрес неработоспособного состояния, созданный в разделе [Создание симулятора службы проверки работоспособности](#create-a-health-check-service-simulator). Для параметра **managedIdentityID** см. сведения в разделе [Создание управляемого удостоверения, назначаемого пользователем](./deployment-manager-tutorial.md#create-the-user-assigned-managed-identity).
+Используйте URL-адрес неработоспособного состояния, созданный в разделе [Создание симулятора службы проверки работоспособности](#create-a-health-check-service-simulator). Вам нужен исправленный файл **CreateADMServiceTopology.json** и тот же файл **CreateADMServiceTopology.Parameters.json**, которые вы использовали при работе с учебником [Руководство. Использование диспетчера развертывания Azure с шаблонами Resource Manager (предварительная версия)](./deployment-manager-tutorial.md).
 
 ```azurepowershell-interactive
-$projectName = Read-Host -Prompt "Enter the same project name used earlier in this tutorial"
-$location = Read-Host -Prompt "Enter the location (i.e. centralus)"
-$managedIdentityID = Read-Host -Prompt "Enter a user-assigned managed identity"
 $healthCheckUrl = Read-Host -Prompt "Enter the health check Azure function URL"
 $healthCheckAuthAPIKey = $healthCheckUrl.Substring($healthCheckUrl.IndexOf("?code=")+6, $healthCheckUrl.Length-$healthCheckUrl.IndexOf("?code=")-6)
 $healthCheckUrl = $healthCheckUrl.Substring(0, $healthCheckUrl.IndexOf("?"))
 
-$resourceGroupName = "${projectName}rg"
-$artifactLocation = "https://armtutorials.blob.core.windows.net/admtutorial/ArtifactStore?st=2019-05-06T03%3A57%3A31Z&se=2020-05-07T03%3A57%3A00Z&sp=rl&sv=2018-03-28&sr=c&sig=gOh%2Bkhi693rmdxiZFQ9xbKZMU1kbLJDqXw7EP4TaGlI%3D" | ConvertTo-SecureString -AsPlainText -Force
-
 # Create the rollout
 New-AzResourceGroupDeployment `
     -ResourceGroupName $resourceGroupName `
-    -TemplateUri "https://armtutorials.blob.core.windows.net/admtutorial/ADMTemplatesHC/CreateADMRollout.json" `
-    -namePrefix $projectName `
-    -azureResourceLocation $location `
-    -artifactSourceSASLocation $artifactLocation `
-    -managedIdentityID $managedIdentityID `
+    -TemplateFile "$filePath\ADMTemplates\CreateADMRollout.json" `
+    -TemplateParameterFile "$filePath\ADMTemplates\CreateADMRollout.Parameters.json" `
     -healthCheckUrl $healthCheckUrl `
     -healthCheckAuthAPIKey $healthCheckAuthAPIKey
 ```
@@ -388,9 +362,9 @@ Tags                    :
 1. На портале Azure в меню слева выберите **Группа ресурсов**.
 2. Используйте поле **Фильтровать по имени**, чтобы сузить группы ресурсов, созданные в этом руководстве. Их должно быть от 3 до 4:
 
-    * **&lt;namePrefix>rg**: содержит ресурсы диспетчера развертывания.
-    * **&lt;namePrefix>ServiceWUSrg**: содержит ресурсы, определенные в ServiceWUS.
-    * **&lt;namePrefix>ServiceEUSrg**: содержит ресурсы, определенные в ServiceEUS.
+    * **&lt;projectName>rg**: содержит ресурсы диспетчера развертывания.
+    * **&lt;projectName>ServiceWUSrg**: содержит ресурсы, определенные в ServiceWUS.
+    * **&lt;projectName>ServiceEUSrg**: содержит ресурсы, определенные в ServiceEUS.
     * Группа ресурсов для определяемого пользователем управляемого удостоверения.
 3. Выберите имя группы ресурсов.
 4. В главном меню выберите **Удалить группу ресурсов**.

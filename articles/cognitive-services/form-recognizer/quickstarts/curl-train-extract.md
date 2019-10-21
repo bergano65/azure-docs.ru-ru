@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: quickstart
 ms.date: 07/03/2019
 ms.author: pafarley
-ms.openlocfilehash: b889be6f881894b2666ed47304f6b61e7c776474
-ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
+ms.openlocfilehash: 0b357a36afc44ceac8ed2c951e0f25901be9d93d
+ms.sourcegitcommit: b4665f444dcafccd74415fb6cc3d3b65746a1a31
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71073704"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72264367"
 ---
 # <a name="quickstart-train-a-form-recognizer-model-and-extract-form-data-by-using-the-rest-api-with-curl"></a>Краткое руководство. Обучение модели Распознавателя документов и извлечение данных форм с помощью REST API и cURL
 
@@ -26,7 +26,7 @@ ms.locfileid: "71073704"
 Для работы с этим кратким руководством требуется следующее:
 - Доступ к предварительной версии Распознавателя документов с ограниченным доступом. Чтобы получить доступ к предварительной версии, заполните и отправьте [форму запроса на доступ к Распознавателю документов](https://aka.ms/FormRecognizerRequestAccess).
 - Установленная программа [cURL](https://curl.haxx.se/windows/).
-- Минимум пять документов одного типа. Вы будете использовать эти данные для обучения модели. Для работы с этим кратким руководством вы можете использовать [пример набора данных](https://go.microsoft.com/fwlink/?linkid=2090451). Передайте данные в корневой каталог контейнера хранилища BLOB-объектов учетной записи хранения Azure.
+- Минимум пять документов одного типа. Вы будете использовать эти данные для обучения модели. Для работы с этим кратким руководством вы можете использовать [пример набора данных](https://go.microsoft.com/fwlink/?linkid=2090451). Передайте файлы для обучения в корневой каталог контейнера хранилища BLOB-объектов в учетной записи хранения Azure.
 
 ## <a name="create-a-form-recognizer-resource"></a>Создание ресурса Распознавателя документов
 
@@ -95,7 +95,7 @@ curl -X POST "https://<Endpoint>/formrecognizer/v1.0-preview/custom/train" -H "C
 
 1. Замените `<Endpoint>` конечной точкой, которую вы получили из своего ключа подписки Распознавателя документов (см. ресурс Распознавателя документов на вкладке **Обзор**).
 1. Замените `<modelID>` идентификатором модели, полученным в предыдущем разделе.
-1. Замените `<path to your form>` путем к файлу формы (например, C:\temp\file.pdf).
+1. Замените `<path to your form>` путем к файлу формы (например, C:\temp\file.pdf). При работе с этим кратким руководством можно использовать файлы в папке **Test** из [примера набора данных](https://go.microsoft.com/fwlink/?linkid=2090451).
 1. Замените `<file type>` типом файла Поддерживаемые типы: `application/pdf`, `image/jpeg`, `image/png`.
 1. Замените `<subscription key>` ключом своей подписки.
 

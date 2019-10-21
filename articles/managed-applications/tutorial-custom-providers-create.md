@@ -1,17 +1,17 @@
 ---
 title: Создание и использование настраиваемого поставщика
-description: Из этого руководства вы узнаете, как создать и использовать настраиваемого поставщика.
+description: В этом руководстве показано, как создать и использовать настраиваемого поставщика Azure. Используйте настраиваемые поставщики для изменения рабочих процессов в Azure.
 author: jjbfour
 ms.service: managed-applications
 ms.topic: tutorial
 ms.date: 06/19/2019
 ms.author: jobreen
-ms.openlocfilehash: 053cf9fca03bf58cf10c313ae2569ce1918a46b9
-ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
+ms.openlocfilehash: 6217e9007f20cb365aff0837f58f1a6074a3e6ce
+ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71172907"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72330059"
 ---
 # <a name="create-and-use-a-custom-provider"></a>Создание и использование настраиваемого поставщика
 

@@ -1,5 +1,5 @@
 ---
-title: Отправка push-уведомлений в приложения Xamarin.iOS с помощью Центров уведомлений Azure | Документация Майкрософт
+title: Отправка push-уведомлений в Xamarin.iOS с помощью Центров уведомлений Azure | Документация Майкрософт
 description: Из этого руководства вы узнаете, как использовать Центры уведомлений Azure для отправки push-уведомлений в приложение Xamarin.iOS.
 services: notification-hubs
 keywords: push-уведомления для IOS, push-сообщения, push-уведомления, push-сообщение
@@ -18,14 +18,14 @@ ms.date: 05/23/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 05/23/2019
-ms.openlocfilehash: 7427421719b44839e766234194640817ea686e3c
-ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
+ms.openlocfilehash: 38a4924cd6bee2f6e2860320d51cfb61aa6fe1bb
+ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71213577"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72387687"
 ---
-# <a name="tutorial-push-notifications-to-xamarinios-apps-using-azure-notification-hubs"></a>Руководство по Отправка push-уведомлений в приложения Xamarin.iOS с помощью Центров уведомлений Azure
+# <a name="tutorial-send-push-notifications-to-xamarinios-apps-using-azure-notification-hubs"></a>Руководство по Отправка push-уведомлений в приложения Xamarin.iOS с помощью Центров уведомлений Azure
 
 [!INCLUDE [notification-hubs-selector-get-started](../../includes/notification-hubs-selector-get-started.md)]
 

@@ -1,6 +1,6 @@
 ---
 title: Устранение неполадок развертываний в Resource Manager | Документация Майкрософт
-description: Узнайте, как контролировать и устранять неполадки развертываний в Resource Manager.
+description: Узнайте, как контролировать развертывания шаблонов Azure Resource Manager и устранять неполадки, связанные с ними. Узнайте также, как использовать журналы действий и журнал развертывания.
 services: azure-resource-manager
 documentationcenter: ''
 author: mumian
@@ -13,12 +13,12 @@ ms.devlang: na
 ms.date: 01/15/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: c889c3123160680d96889227d6964ff197dc41cc
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 4ad32ed83d731a26b6bb72fca230d00d5465c45a
+ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60388664"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72390210"
 ---
 # <a name="tutorial-troubleshoot-resource-manager-template-deployments"></a>Руководство по Устранение неполадок развертывания шаблонов Resource Manager
 

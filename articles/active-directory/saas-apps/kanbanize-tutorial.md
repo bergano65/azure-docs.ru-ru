@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Kanbanize | Документация Майкрософт
+title: Руководство по Интеграция единого входа Azure Active Directory с Kanbanize | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Kanbanize.
 services: active-directory
 documentationCenter: na
@@ -13,17 +13,17 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 08/07/2019
+ms.date: 10/09/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 69103ea0e6088b4a823df34ebd982c67e2502cb3
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 7c5a3a096c5a44f681d23587837ae31fd1af33b2
+ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68879484"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72373228"
 ---
-# <a name="tutorial-integrate-kanbanize-with-azure-active-directory"></a>Руководство по Интеграция Kanbanize с Azure Active Directory
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-kanbanize"></a>Руководство по Интеграция единого входа Azure Active Directory с Kanbanize
 
 В этом руководстве описано, как интегрировать Kanbanize с Azure Active Directory (Azure AD). Интеграция Kanbanize с Azure AD обеспечивает следующие возможности:
 
@@ -58,20 +58,20 @@ ms.locfileid: "68879484"
 1. В разделе **Добавление из коллекции** в поле поиска введите **Kanbanize**.
 1. Выберите **Kanbanize** в области результатов и добавьте это приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
-## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
+## <a name="configure-and-test-azure-ad-single-sign-on-for-kanbanize"></a>Настройка и проверка единого входа Azure AD для Kanbanize
 
 Настройте и проверьте единый вход Azure AD в Kanbanize с помощью тестового пользователя **B.Simon**. Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Kanbanize.
 
 Чтобы настроить и проверить единый вход Azure AD в Kanbanize, выполните действия из следующих стандартных блоков:
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-sso)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Настройка единого входа в Kanbanize](#configure-kanbanize-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
-3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
-5. **[Создание тестового пользователя приложения Kanbanize](#create-kanbanize-test-user)** требуется для того, чтобы в Kanbanize существовал пользователь B.Simon, связанный с одноименным пользователем в Azure AD.
-6. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+    1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
+    1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
+1. **[Настройка единого входа в Kanbanize](#configure-kanbanize-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+    1. **[Создание тестового пользователя приложения Kanbanize](#create-kanbanize-test-user)** требуется для того, чтобы в Kanbanize существовал пользователь B.Simon, связанный с одноименным пользователем в Azure AD.
+1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
 
-### <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
+## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
 Выполните следующие действия, чтобы включить единый вход Azure AD на портале Azure.
 
@@ -83,7 +83,7 @@ ms.locfileid: "68879484"
 
 1. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** введите значения следующих полей.
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<subdomain>.kanbanize.com/`.
+     a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<subdomain>.kanbanize.com/`.
 
     б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<subdomain>.kanbanize.com/saml/acs`.
 
@@ -109,47 +109,6 @@ ms.locfileid: "68879484"
 1. Требуемые URL-адреса можно скопировать из раздела **Настройка Kanbanize**.
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
-
-### <a name="configure-kanbanize-sso"></a>Настройка единого входа в Kanbanize
-
-1. В другом окне браузера войдите в приложение Kanbanize с правами администратора безопасности.
-
-2. В правом верхнем углу страницы нажмите логотип **Параметры**.
-
-    ![Параметры Kanbanize](./media/kanbanize-tutorial/tutorial-kanbanize-set.png)
-
-3. На странице панели администрирования в меню в левой части щелкните **Интеграции**, а затем включите **Единый вход**.
-
-    ![Интеграции Kanbanize](./media/kanbanize-tutorial/tutorial-kanbanize-admin.png)
-
-4. В разделе "Интеграция" щелкните **Настроить**, чтобы открыть страницу **Интеграция единого входа**.
-
-    ![Настройка Kanbanize](./media/kanbanize-tutorial/tutorial-kanbanize-config.png)
-
-5. На странице **Интеграция единого входа** в разделе **Настройки** выполните следующие действия.
-
-    ![Интеграции Kanbanize](./media/kanbanize-tutorial/tutorial-kanbanize-save.png)
-
-    a. В текстовом поле **Idp Entity ID** (Идентификатор сущности поставщика удостоверений) вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
-
-    b. В текстовом поле **Idp Login Endpoint** (Конечная точка входа поставщика удостоверений) вставьте значение **URL-адреса входа**, скопированное на портале Azure.
-
-    c. В текстовом поле **Idp Logout Endpoint** (Конечная точка выхода поставщика удостоверений) вставьте значение **URL-адреса выхода**, скопированное на портале Azure.
-
-    d. В поле **Attribute name for Email** (Имя атрибута для электронной почты) введите это значение: `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
-
-    д. В поле **Attribute name for First Name** (Имя атрибута для имени) введите это значение: `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`.
-
-    Е. В поле **Attribute name for Last Name** (Имя атрибута для фамилии) введите это значение: `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname`.
-
-    > [!Note]
-    > Эти значения можно получить путем объединения значений пространства имен и имени соответствующего атрибута из раздела атрибутов пользователя на портале Azure.
-
-    ж. В Блокноте откройте скачанный с портала Azure сертификат в кодировке base-64, скопируйте его содержимое (без начального и конечного маркеров), а затем вставьте его в поле **X.509 Certificate** (Сертификат X.509).
-
-    h. Установите флажок **Enable login with both SSO and Kanbanize** (Включить вход с помощью службы единого входа и Kanbanize).
-
-    i. Нажмите кнопку **Сохранить параметры**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -181,11 +140,60 @@ ms.locfileid: "68879484"
 1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
 1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
+## <a name="configure-kanbanize-sso"></a>Настройка единого входа в Kanbanize
+
+1. Чтобы автоматизировать настройку в Kanbanize, необходимо установить **расширение браузера My Apps Secure Sign-in browser extension**, нажав кнопку **Установить расширение**.
+
+    ![Расширение "Мои приложения"](common/install-myappssecure-extension.png)
+
+2. Чтобы перейти к приложению Kanbanize после добавления расширения в браузер, щелкните **Настройка Kanbanize**. После этого укажите учетные данные администратора для входа в Kanbanize. Расширение браузера автоматически настроит приложение и автоматизирует шаги 3–7.
+
+    ![Настройка конфигурации](common/setup-sso.png)
+
+3. Если необходимо вручную настроить Kanbanize, откройте новое окно веб-браузера, зайдите на сайт компании Kanbanize с правами администратора и выполните следующие действия:
+
+4. В правом верхнем углу страницы нажмите логотип **Параметры**.
+
+    ![Параметры Kanbanize](./media/kanbanize-tutorial/tutorial-kanbanize-set.png)
+
+5. На странице панели администрирования в меню в левой части щелкните **Интеграции**, а затем включите **Единый вход**.
+
+    ![Интеграции Kanbanize](./media/kanbanize-tutorial/tutorial-kanbanize-admin.png)
+
+6. В разделе "Интеграция" щелкните **Настроить**, чтобы открыть страницу **Интеграция единого входа**.
+
+    ![Настройка Kanbanize](./media/kanbanize-tutorial/tutorial-kanbanize-config.png)
+
+7. На странице **Интеграция единого входа** в разделе **Настройки** выполните следующие действия.
+
+    ![Интеграции Kanbanize](./media/kanbanize-tutorial/tutorial-kanbanize-save.png)
+
+    a. В текстовом поле **Idp Entity ID** (Идентификатор сущности поставщика удостоверений) вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
+
+    b. В текстовом поле **Idp Login Endpoint** (Конечная точка входа поставщика удостоверений) вставьте значение **URL-адреса входа**, скопированное на портале Azure.
+
+    c. В текстовом поле **Idp Logout Endpoint** (Конечная точка выхода поставщика удостоверений) вставьте значение **URL-адреса выхода**, скопированное на портале Azure.
+
+    d. В поле **Attribute name for Email** (Имя атрибута для электронной почты) введите это значение: `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
+
+    д. В поле **Attribute name for First Name** (Имя атрибута для имени) введите это значение: `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`.
+
+    Е. В поле **Attribute name for Last Name** (Имя атрибута для фамилии) введите это значение: `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname`.
+
+    > [!Note]
+    > Эти значения можно получить путем объединения значений пространства имен и имени соответствующего атрибута из раздела атрибутов пользователя на портале Azure.
+
+    ж. В Блокноте откройте скачанный с портала Azure сертификат в кодировке base-64, скопируйте его содержимое (без начального и конечного маркеров), а затем вставьте его в поле **X.509 Certificate** (Сертификат X.509).
+
+    h. Установите флажок **Enable login with both SSO and Kanbanize** (Включить вход с помощью службы единого входа и Kanbanize).
+
+    i. Нажмите кнопку **Сохранить параметры**.
+
 ### <a name="create-kanbanize-test-user"></a>Создание тестового пользователя Kanbanize
 
-Выполнив инструкции из этого раздела, вы создадите в Kanbanize пользователя Britta Simon. Приложение Kanbanize поддерживает JIT-подготовку пользователей, которая включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Если пользователь еще не существует в Kanbanize, он создается после аутентификации. Чтобы создать учетную запись пользователя вручную, обратитесь в [службу поддержки клиентов Kanbanize](mailto:support@ms.kanbanize.com).
+В этом разделе описано, как в приложении Kanbanize создать пользователя с именем B.Simon. Приложение Kanbanize поддерживает JIT-подготовку пользователей, которая включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Если пользователь еще не существует в Kanbanize, он создается после аутентификации. Чтобы создать учетную запись пользователя вручную, обратитесь в [службу поддержки клиентов Kanbanize](mailto:support@ms.kanbanize.com).
 
-### <a name="test-sso"></a>Проверка единого входа
+## <a name="test-sso"></a>Проверка единого входа 
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
@@ -198,4 +206,6 @@ ms.locfileid: "68879484"
 - [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+
+- [Попробуйте использовать Kanbanize с Azure AD](https://aad.portal.azure.com/)
 

@@ -248,6 +248,16 @@
               href: storage-blob-containers-list.md
             - name: Управление свойствами и метаданными (.NET)
               href: storage-blob-container-properties-metadata.md
+        - name: Создание больших двоичных объектов (BLOB-объектов) и управление ими
+          items:
+            - name: Отображение списка больших двоичных объектов (.NET)
+              href: storage-blobs-list.md
+            - name: Управление свойствами и метаданными больших двоичных объектов (.NET)
+              href: storage-blob-properties-metadata.md
+            - name: Копирование большого двоичного объекта (.NET)
+              href: storage-blob-copy.md
+            - name: Создание моментальных снимков больших двоичных объектов и управление ими (.NET)
+              href: storage-blob-snapshots.md
         - name: Защищенные данные большого двоичного объекта
           items:
             - name: Авторизация доступа к данным больших двоичных объектов

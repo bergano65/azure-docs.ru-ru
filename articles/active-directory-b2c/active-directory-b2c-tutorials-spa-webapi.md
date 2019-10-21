@@ -10,12 +10,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: 60fe9569b0e6e92ae161271439ecbf1b04788ed4
-ms.sourcegitcommit: 8bae7afb0011a98e82cbd76c50bc9f08be9ebe06
+ms.openlocfilehash: 9ac95896e67338437325e8290a96b8e42b2fa3a7
+ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71694582"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72374252"
 ---
 # <a name="tutorial-grant-access-to-an-aspnet-core-web-api-from-a-single-page-application-using-azure-active-directory-b2c"></a>Руководство по Предоставление доступа к веб-API ASP.NET Core из одностраничного приложения с помощью Azure Active Directory B2C
 
@@ -70,7 +70,7 @@ git clone https://github.com/Azure-Samples/active-directory-b2c-dotnetcore-webap
 
 ### <a name="configure-the-web-api"></a>Настройка веб-API
 
-1. Откройте файл *B2C-WebApi/ **appsettings.json*** в Visual Studio или Visual Studio Code.
+1. Откройте файл <em>B2C-WebApi/**appsettings.json**</em> в Visual Studio или Visual Studio Code.
 1. Измените блок `AzureAdB2C`, чтобы он отражал имя клиента, идентификатор приложения веб-API, имя политики входа или регистрации, а также определенные ранее области. Блок должен выглядеть следующим образом (с соответствующими значениями `Tenant` и `ClientId`):
 
     ```json

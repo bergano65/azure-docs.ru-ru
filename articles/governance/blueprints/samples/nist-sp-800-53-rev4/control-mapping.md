@@ -1,17 +1,17 @@
 ---
-title: Образец — схема "NIST SP 800-53 R4" — сопоставление элементов управления
-description: Сопоставление элементов управления в рамках образца схемы "NIST SP 800-53 R4" для Политики Azure.
+title: Пример схемы NIST SP 800-53 R4 — сопоставление элементов управления
+description: Сопоставление элементов управления на примере схемы NIST SP 800-53 R4. Каждый элемент управления сопоставляется с одной или несколькими политиками Azure, которые помогают выполнять оценку.
 author: DCtheGeek
 ms.author: dacoulte
 ms.date: 06/24/2019
 ms.topic: sample
 ms.service: blueprints
-ms.openlocfilehash: c4d8cd7996e45aafca37e68974d6250578ba9502
-ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
+ms.openlocfilehash: 1fab1ebee03f48434fd0fb8ccb1bf1be708370e5
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71980954"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72299070"
 ---
 # <a name="control-mapping-of-the-nist-sp-800-53-r4-blueprint-sample"></a>Сопоставление элементов управления для образца схемы "NIST SP 800-53 R4"
 

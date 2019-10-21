@@ -5,15 +5,15 @@ services: azure-resource-manager
 documentationcenter: ''
 author: mumian
 ms.service: azure-resource-manager
-ms.date: 05/23/2019
+ms.date: 10/10/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 97d9aa1ed9440011fdaab3aa8eb9d3942b5a8acf
-ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
+ms.openlocfilehash: 3f10093b1d3087e87279258d04d86fc3d47ba313
+ms.sourcegitcommit: e0a1a9e4a5c92d57deb168580e8aa1306bd94723
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72170360"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72285885"
 ---
 # <a name="tutorial-use-azure-deployment-manager-with-resource-manager-templates-public-preview"></a>Руководство по использованию диспетчера развертывания Azure с шаблонами Resource Manager (общедоступная предварительная версия)
 
@@ -61,8 +61,6 @@ ms.locfileid: "72170360"
     ```powershell
     Install-Module -Name Az.DeploymentManager
     ```
-
-* [Обозреватель службы хранилища Microsoft Azure](https://azure.microsoft.com/features/storage-explorer/). Обозреватель службы хранилища не требуется, но он упрощает работу.
 
 ## <a name="understand-the-scenario"></a>Ознакомление со сценарием
 
@@ -135,16 +133,55 @@ ms.locfileid: "72170360"
 
 Артефакты шаблонов используются шаблоном топологии службы, а двоичные артефакты используются шаблоном развертывания. Как шаблон топологии, так и шаблон развертывания определяют ресурс Azure источника артефакта, который используется для указания диспетчеру ресурсов на шаблон и двоичные артефакты, применяемые в развертывании. Чтобы упростить руководство, одна учетная запись хранения используется для хранения как артефактов шаблона, так и двоичных артефактов. Оба источника артефакта указывают на одну и ту же учетную запись хранения.
 
-1. Создайте учетную запись хранения Azure. Для инструкций см. [Краткое руководство. Передача, скачивание и составление списка больших двоичных объектов с помощью портала Azure](../storage/blobs/storage-quickstart-blobs-portal.md).
-2. Создайте контейнер больших двоичных объектов в учетной записи хранения
-3. Скопируйте две папки (двоичные файлы и шаблоны) и их содержимое в контейнер больших двоичных объектов. [Обозреватель службы хранилища Microsoft Azure](https://go.microsoft.com/fwlink/?LinkId=708343&clcid=0x409) поддерживает функцию перетаскивания.
-4. Получите местоположение SAS контейнера, используя следующие инструкции:
+Выполните следующий сценарий PowerShell, чтобы создать группу ресурсов, контейнер хранилища, контейнер больших двоичных объектов, отправить скачанные файлы, а затем создать маркер SAS.
 
-    1. В Обозревателе службы хранилища Azure перейдите к контейнеру больших двоичных объектов.
-    2. Щелкните правой кнопкой мыши нужный контейнер больших двоичных объектов и в левой области выберите команду **Get Shared Access Signature**(Получить подписанный URL-адрес).
-    3. Настройте **время начала** и **время окончания срока действия**.
-    4. Нажмите кнопку **Создать**.
-    5. Скопируйте URL-адрес. Этот URL-адрес необходим для заполнения полей в двух файлах параметров: [файле параметров топологии](#topology-parameters-file) и [файле параметров развертывания](#rollout-parameters-file).
+> [!IMPORTANT]
+> Параметр **projectName** в скрипте PowerShell используется, чтобы создавать имена для служб Azure, которые будут развернуты в этом руководстве. Различные службы Azure имеют различные требования к именам. Чтобы убедиться, что развертывание прошло успешно, выберите имя длиной не более 12 символов, состоящее только со строчных букв и цифр.
+> Сохраните копию имени проекта. Во время работы с этим руководством вы используете то же значение projectName.
+
+```azurepowershell
+$projectName = Read-Host -Prompt "Enter a project name that is used to generate Azure resource names"
+$location = Read-Host -Prompt "Enter the location (i.e. centralus)"
+$filePath = Read-Host -Prompt "Enter the folder that contains the downloaded files"
+
+
+$resourceGroupName = "${projectName}rg"
+$storageAccountName = "${projectName}store"
+$containerName = "admfiles"
+$filePathArtifacts = "${filePath}\ArtifactStore"
+
+New-AzResourceGroup -Name $resourceGroupName -Location $location
+
+$storageAccount = New-AzStorageAccount -ResourceGroupName $resourceGroupName `
+  -Name $storageAccountName `
+  -Location $location `
+  -SkuName Standard_RAGRS `
+  -Kind StorageV2
+
+$storageContext = $storageAccount.Context
+
+$storageContainer = New-AzStorageContainer -Name $containerName -Context $storageContext -Permission Off
+
+
+$filesToUpload = Get-ChildItem $filePathArtifacts -Recurse -File
+
+foreach ($x in $filesToUpload) {
+    $targetPath = ($x.fullname.Substring($filePathArtifacts.Length + 1)).Replace("\", "/")
+
+    Write-Verbose "Uploading $("\" + $x.fullname.Substring($filePathArtifacts.Length + 1)) to $($storageContainer.CloudBlobContainer.Uri.AbsoluteUri + "/" + $targetPath)"
+    Set-AzStorageBlobContent -File $x.fullname -Container $storageContainer.Name -Blob $targetPath -Context $storageContext | Out-Null
+}
+
+$token = New-AzStorageContainerSASToken -name $containerName -Context $storageContext -Permission rl -ExpiryTime (Get-date).AddMonths(1)  -Protocol HttpsOrHttp
+
+$url = $storageAccount.PrimaryEndpoints.Blob + $containerName + $token
+
+Write-Host $url
+```
+
+Создайте копию URL-адреса с маркером SAS. Этот URL-адрес необходим для заполнения полей в двух файлах параметров: файле параметров топологии и файле параметров развертывания.
+
+Откройте контейнер на портале Azure и убедитесь, что отправлены как **двоичные файлы**, так и папки **шаблонов** и файлы.
 
 ## <a name="create-the-user-assigned-managed-identity"></a>Создание управляемого удостоверения, назначаемого пользователем
 
@@ -176,9 +213,7 @@ ms.locfileid: "72170360"
 
 Этот шаблон содержит следующие параметры:
 
-![Руководство по использованию диспетчера развертывания Azure: параметры топологии шаблона](./media/deployment-manager-tutorial/azure-deployment-manager-tutorial-topology-template-parameters.png)
-
-* **namePrefix**. Этот префикс используется для создания имен ресурсов диспетчера развертывания. Например, если использовать префикс jdoe, имя топологии службы будет **jdoe**ServiceTopology.  Имена ресурсов определены в разделе переменных этого шаблона.
+* **projectName**. Это имя используется для создания имен ресурсов диспетчера развертывания. Например, если использовать jdoe, имя топологии службы будет **jdoe**ServiceTopology.  Имена ресурсов определены в разделе переменных этого шаблона.
 * **azureResourcelocation**. Чтобы упростить работу с руководством, все ресурсы совместно используют это расположение, если не указано иное. В настоящее время ресурсы диспетчера развертывания Azure могут создаваться в регионе **Центральная часть США** или **Восточная часть США 2**.
 * **artifactSourceSASLocation**. Универсальный код ресурса (URI) SAS для контейнера больших двоичных объектов, где файлы параметров и шаблона модулей службы хранятся для развертывания.  Подробнее см. в разделе [Подготовка артефактов](#prepare-the-artifacts).
 * **templateArtifactRoot**. Путь смещения из контейнера больших двоичных объектов, где хранятся шаблоны и параметры. Значение по умолчанию — **templates/1.0.0.0**. Не изменяйте это значение, если вы не хотите изменять структуру папок, как описано в разделе [Подготовка артефактов](#prepare-the-artifacts). В этом руководстве используются относительные пути.  Полный путь формируется путем сцепления **artifactSourceSASLocation**, **templateArtifactRoot** и **templateArtifactSourceRelativePath** (или **parametersArtifactSourceRelativePath**).
@@ -215,14 +250,13 @@ ms.locfileid: "72170360"
 1. Откройте **\ADMTemplates\CreateADMServiceTopology.Parameters** в Visual Studio Code или любом текстовом редакторе.
 2. Укажите значения параметров.
 
-    * **namePrefix**. Введите строку из 4–5 символов. Этот префикс используется для создания уникальных имен ресурсов Аzure.
+    * **projectName**. Введите строку из 4–5 символов. Это имя используется для создания уникальных имен ресурсов Azure.
     * **azureResourceLocation**. Если вы не знакомы с расположениями Azure, используйте **centralus** в этом руководстве.
     * **artifactSourceSASLocation**. Введите URI SAS в корневой каталог (контейнер больших двоичных объектов), где хранятся файлы параметров и шаблон модулей службы для развертывания.  Подробнее см. в разделе [Подготовка артефактов](#prepare-the-artifacts).
     * **templateArtifactRoot**. Если вы не изменяли структуру папок артефактов, используйте **templates/1.0.0.0** в этом руководстве.
-    * **targetScriptionID**. Введите идентификатор подписки Azure.
 
 > [!IMPORTANT]
-> Шаблон топологии и шаблон развертывания совместно используют некоторые общие параметры. Они должны иметь общие параметры. Это такие параметры: **namePrefix**, **azureResourceLocation** и **артефактSourceSASLocation** (оба источника артефактов используют одну и ту же учетную запись хранения в этом руководстве).
+> Шаблон топологии и шаблон развертывания совместно используют некоторые общие параметры. Они должны иметь общие параметры. Это такие параметры: **projectName**, **azureResourceLocation** и **artifactSourceSASLocation** (оба источника артефактов используют одну и ту же учетную запись хранения в этом учебнике).
 
 ## <a name="create-the-rollout-template"></a>Создание шаблона развертывания
 
@@ -234,7 +268,7 @@ ms.locfileid: "72170360"
 
 ![Руководство по использованию диспетчера развертывания Azure: параметры шаблона выпуска](./media/deployment-manager-tutorial/azure-deployment-manager-tutorial-rollout-template-parameters.png)
 
-* **namePrefix**. Этот префикс используется для создания имен ресурсов диспетчера развертывания. Например, если использовать префикс jdoe, имя развертывания будет **jdoe**Rollout.  Имена определены в разделе переменных этого шаблона.
+* **projectName**. Это имя используется для создания имен ресурсов диспетчера развертывания. Например, если использовать jdoe, имя развертывания будет **jdoe**Rollout.  Имена определены в разделе переменных этого шаблона.
 * **azureResourcelocation**. Чтобы упростить работу с руководством, все ресурсы диспетчера совместно используют это расположение, если не указано иное. В настоящее время ресурсы диспетчера развертывания Azure могут создаваться в регионе **Центральная часть США** или **Восточная часть США 2**.
 * **artifactSourceSASLocation**. URI SAS для контейнера больших двоичных объектов, где файлы параметров и шаблона модулей службы хранятся для развертывания.  Подробнее см. в разделе [Подготовка артефактов](#prepare-the-artifacts).
 * **binaryArtifactRoot**.  Значение по умолчанию — **binaries/1.0.0.0**. Не изменяйте это значение, если вы не хотите изменять структуру папок, как описано в разделе [Подготовка артефактов](#prepare-the-artifacts). В этом руководстве используются относительные пути.  Полный путь формируется путем сцепления **artifactSourceSASLocation**, **binaryArtifactRoot** и **deployPackageUri**, указанных в файле CreateWebApplicationParameters.json.  Подробнее см. в разделе [Подготовка артефактов](#prepare-the-artifacts).
@@ -276,7 +310,7 @@ ms.locfileid: "72170360"
 1. Откройте **\ADMTemplates\CreateADMRollout.Parameters** в Visual Studio Code или любом текстовом редакторе.
 2. Укажите значения параметров.
 
-    * **namePrefix**. Введите строку из 4–5 символов. Этот префикс используется для создания уникальных имен ресурсов Аzure.
+    * **projectName**. Введите строку из 4–5 символов. Это имя используется для создания уникальных имен ресурсов Azure.
     * **azureResourceLocation**. В настоящее время ресурсы диспетчера развертывания Azure могут создаваться в регионе **Центральная часть США** или **Восточная часть США 2**.
     * **artifactSourceSASLocation**. Введите URI SAS в корневой каталог (контейнер больших двоичных объектов), где хранятся файлы параметров и шаблон модулей службы для развертывания.  Подробнее см. в разделе [Подготовка артефактов](#prepare-the-artifacts).
     * **binaryArtifactRoot**. Если вы не изменяли структуру папок артефактов, используйте **binaries/1.0.0.0** в этом руководстве.
@@ -287,7 +321,7 @@ ms.locfileid: "72170360"
         ```
 
 > [!IMPORTANT]
-> Шаблон топологии и шаблон развертывания совместно используют некоторые общие параметры. Они должны иметь общие параметры. Это такие параметры: **namePrefix**, **azureResourceLocation** и **артефактSourceSASLocation** (оба источника артефактов используют одну и ту же учетную запись хранения в этом руководстве).
+> Шаблон топологии и шаблон развертывания совместно используют некоторые общие параметры. Они должны иметь общие параметры. Это такие параметры: **projectName**, **azureResourceLocation** и **artifactSourceSASLocation** (оба источника артефактов используют одну и ту же учетную запись хранения в этом учебнике).
 
 ## <a name="deploy-the-templates"></a>Развертывание шаблонов.
 
@@ -296,19 +330,14 @@ Azure PowerShell можно использовать для развертыва
 1. Запустите сценарий для развертывания топологии службы.
 
     ```azurepowershell
-    $resourceGroupName = "<Enter a Resource Group Name>"
-    $location = "Central US"
-    $filePath = "<Enter the File Path to the Downloaded Tutorial Files>"
-
-    # Create a resource group
-    New-AzResourceGroup -Name $resourceGroupName -Location "$location"
-
     # Create the service topology
     New-AzResourceGroupDeployment `
         -ResourceGroupName $resourceGroupName `
         -TemplateFile "$filePath\ADMTemplates\CreateADMServiceTopology.json" `
         -TemplateParameterFile "$filePath\ADMTemplates\CreateADMServiceTopology.Parameters.json"
     ```
+
+    Если вы запускаете этот сценарий из сеанса PowerShell, отличного от того, в котором вы запускали сценарий [Подготовка артефактов](#prepare-the-artifacts), вам необходимо сначала заполнить переменные, которые включают **$resourceGroupName** и **$filePath**.
 
     > [!NOTE]
     > `New-AzResourceGroupDeployment` выполняет асинхронный вызов. Сообщение об успешном выполнении означает только то, что развертывание начато успешно. Для проверки развертывания см. шаг 2 и 4 этой процедуры.
@@ -333,7 +362,7 @@ Azure PowerShell можно использовать для развертыва
 
     ```azurepowershell
     # Get the rollout status
-    $rolloutname = "<Enter the Rollout Name>" # "adm0925Rollout" is the rollout name used in this tutorial
+    $rolloutname = "${projectName}Rollout" # "adm0925Rollout" is the rollout name used in this tutorial
     Get-AzDeploymentManagerRollout `
         -ResourceGroupName $resourceGroupName `
         -Name $rolloutName `
@@ -424,9 +453,9 @@ Azure PowerShell можно использовать для развертыва
 1. На портале Azure в меню слева выберите **Группа ресурсов**.
 2. Используйте поле **Фильтровать по имени**, чтобы сузить группы ресурсов, созданные в этом руководстве. Их должно быть от 3 до 4:
 
-    * **&lt;namePrefix>rg**: содержит ресурсы диспетчера развертывания.
-    * **&lt;namePrefix>ServiceWUSrg**: содержит ресурсы, определенные в ServiceWUS.
-    * **&lt;namePrefix>ServiceEUSrg**: содержит ресурсы, определенные в ServiceEUS.
+    * **&lt;projectName>rg**: содержит ресурсы диспетчера развертывания.
+    * **&lt;projectName>ServiceWUSrg**: содержит ресурсы, определенные в ServiceWUS.
+    * **&lt;projectName>ServiceEUSrg**: содержит ресурсы, определенные в ServiceEUS.
     * Группа ресурсов для определяемого пользователем управляемого удостоверения.
 3. Выберите имя группы ресурсов.
 4. В главном меню выберите **Удалить группу ресурсов**.

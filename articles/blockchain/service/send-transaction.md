@@ -1,19 +1,19 @@
 ---
-title: Используйте Visual Studio Code для создания, сборки и развертывания смарт-контрактов с помощью службы "Блокчейн Azure"
+title: Использование Visual Studio Code для службы "Блокчейн Azure"
 description: Руководство по использованию комплекта SDK Блокчейн Azure для расширения Ethereum в Visual Studio Code для создания, сборки и развертывания смарт-контракта в службе Azure Блокчейн.
 services: azure-blockchain
 author: PatAltimore
 ms.author: patricka
-ms.date: 09/10/2019
+ms.date: 10/14/2019
 ms.topic: tutorial
 ms.service: azure-blockchain
 ms.reviewer: chrisseg
-ms.openlocfilehash: 96fe4d77efdd1fda309d7da021bcc208edd2dfe9
-ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
+ms.openlocfilehash: 13a5993a14e386dc7d24c7464610bbf1ace4b9cb
+ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70935000"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72329239"
 ---
 # <a name="tutorial-usevisual-studio-code-to-create-buildanddeploysmartcontracts"></a>Руководство по Создание и развертывание смарт-контрактов с помощью Visual Studio Code
 

@@ -32,6 +32,8 @@
       items:
         - name: Назначение прав доступа к данным
           href: assign-access-acm-data.md
+        - name: Выполнение распространенных задач с помощью анализа затрат
+          href: cost-analysis-common-uses.md
         - name: Использование оповещений о затратах
           href: cost-mgt-alerts-monitor-usage-spending.md
         - name: Установка и настройка интеграции AWS

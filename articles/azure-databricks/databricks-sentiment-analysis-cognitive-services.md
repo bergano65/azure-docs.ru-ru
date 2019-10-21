@@ -1,5 +1,5 @@
 ---
-title: Руководство по Анализ тональности сообщений при потоковой передаче данных с использованием Azure Databricks
+title: Использование Azure Databricks для анализа тональности
 description: Сведения об анализе тональности данных потоковой передачи практически в реальном времени с использованием Azure Databricks с Центрами событий и API Cognitive Services.
 services: azure-databricks
 author: lenadroid
@@ -9,12 +9,12 @@ ms.service: azure-databricks
 ms.custom: mvc
 ms.topic: tutorial
 ms.date: 07/29/2019
-ms.openlocfilehash: 9718a6e394c7628cdf7bb62b2dafea2f3d59a3ca
-ms.sourcegitcommit: 3fa4384af35c64f6674f40e0d4128e1274083487
+ms.openlocfilehash: 1d8b3aad3104f07f8f6499c88f00328c95047816
+ms.sourcegitcommit: f272ba8ecdbc126d22a596863d49e55bc7b22d37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "68619566"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72274219"
 ---
 # <a name="tutorial-sentiment-analysis-on-streaming-data-using-azure-databricks"></a>Руководство по оценке тональности сообщений при потоковой передаче данных с использованием Azure Databricks
 

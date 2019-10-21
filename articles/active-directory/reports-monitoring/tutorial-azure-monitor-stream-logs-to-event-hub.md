@@ -17,12 +17,12 @@ ms.date: 04/18/2019
 ms.author: chadam
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5ecbd0cfed262b928e6a821406e80f5a4456c6c9
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: 93dd7b13ca9e1a3f078994e76610c45447cfa41c
+ms.sourcegitcommit: b4665f444dcafccd74415fb6cc3d3b65746a1a31
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68988069"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72264089"
 ---
 # <a name="tutorial-stream-azure-active-directory-logs-to-an-azure-event-hub"></a>Руководство по Потоковая передача журналов Azure Active Directory в концентратор событий Azure
 
@@ -41,7 +41,7 @@ ms.locfileid: "68988069"
 
 1. Войдите на [портале Azure](https://portal.azure.com). 
 
-2. Щелкните **Azure Active Directory** > **Действие** > **Журналы аудита**. 
+2. Щелкните **Azure Active Directory** > **Мониторинг** > **Журналы аудита**. 
 
 3. Выберите **Параметры экспорта**.  
     

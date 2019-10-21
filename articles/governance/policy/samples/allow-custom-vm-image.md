@@ -1,17 +1,17 @@
 ---
-title: 'Пример: разрешение использования пользовательского образа виртуальной машины из группы ресурсов'
+title: 'Пример: разрешение применения пользовательского образа виртуальной машины из группы ресурсов'
 description: В этом примере определения политики необходимо, чтобы пользовательские образы поступали из утвержденной группы ресурсов.
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: sample
 ms.date: 01/23/2019
 ms.author: dacoulte
-ms.openlocfilehash: c109f870736274f82bf4e165f890d49237c22cbc
-ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
+ms.openlocfilehash: eba5a576212317bd2cb92856bc1065e9e5a89c8c
+ms.sourcegitcommit: 1c2659ab26619658799442a6e7604f3c66307a89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71977820"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72255832"
 ---
 # <a name="sample---allow-custom-vm-image-from-a-resource-group"></a>Пример: разрешение использования пользовательского образа виртуальной машины из группы ресурсов
 
