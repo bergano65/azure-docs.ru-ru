@@ -1,24 +1,21 @@
 ---
 title: Создание первой функции на платформе Linux в Azure
-description: Сведения о создании первой функции, выполняемой на платформе Linux в Azure, с помощью Azure CLI и Azure Functions Core Tools.
-services: functions
-keywords: ''
+description: Из этой статьи вы узнаете, как создать функцию, выполняемую на платформе Linux в Azure, с помощью средств командной строки, Azure Functions Core Tools и Azure CLI.
 author: ggailey777
 ms.author: glenga
 ms.date: 03/12/2019
 ms.topic: quickstart
 ms.service: azure-functions
 ms.custom: mvc, fasttrack-edit
-ms.devlang: javascript
-manager: jeconnoc
-ms.openlocfilehash: 40a2d3ab4ec358b5b2d0105703cdc25cdb777c29
-ms.sourcegitcommit: 39d95a11d5937364ca0b01d8ba099752c4128827
+manager: gwallace
+ms.openlocfilehash: 34f4dc4b36f4efd75c5a7cd14b3214886955a403
+ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69562969"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72329676"
 ---
-# <a name="create-your-first-function-hosted-on-linux-using-core-tools-and-the-azure-cli"></a>Создание функции, выполняемой в Linux, с помощью основных инструментов и Azure CLI
+# <a name="quickstart-create-your-first-function-hosted-on-linux-using-command-line-tools"></a>Краткое руководство. Создание функции, выполняемой в Linux, с помощью инструментов командной строки
 
 Решение "Функции Azure" позволяет выполнять код в [бессерверной](https://azure.com/serverless) среде Linux без необходимости создавать виртуальную машину или публиковать веб-приложение. Для функций, выполняемых в Linux, необходима [среда выполнения Функций 2.x](functions-versions.md). Бессерверные функции выполняются в [Плане потребления](functions-scale.md#consumption-plan).
 
@@ -30,7 +27,7 @@ ms.locfileid: "69562969"
 
 Перед выполнением этого примера вам понадобится следующее:
 
-- установить [Azure Functions Core Tools](./functions-run-local.md#v2) 2.6.666 или последующей версии;
++ установить [Azure Functions Core Tools](./functions-run-local.md#v2) 2.6.666 или последующей версии;
 
 + Установка [Azure CLI]( /cli/azure/install-azure-cli). В этой статье требуется Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Можно также использовать [Azure Cloud Shell](https://shell.azure.com/bash).
 

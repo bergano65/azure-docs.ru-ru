@@ -9,10 +9,10 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 03/04/2019
 ms.openlocfilehash: 26634e2fe23e0a23540638c4559af6e11eccbe72
-ms.sourcegitcommit: a19bee057c57cd2c2cd23126ac862bd8f89f50f5
+ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/23/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "71180731"
 ---
 # <a name="use-apache-zeppelin-notebooks-with-apache-spark-cluster-on-azure-hdinsight"></a>Использование записных книжек Apache Zeppelin с кластером Apache Spark в Azure HDInsight
@@ -23,7 +23,7 @@ ms.locfileid: "71180731"
 
 * Подписка Azure. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 * Кластер Apache Spark в HDInsight. Инструкции см. в статье [Начало работы. Создание кластера Apache Spark в HDInsight на платформе Linux и выполнение интерактивных запросов с помощью SQL Spark](apache-spark-jupyter-spark-sql.md).
-* Схема URI для основного хранилища кластеров. Это можно сделать `wasb://` для хранилища BLOB-объектов `abfs://` Azure, для `adl://` Azure Data Lake Storage 2-го поколения или для Azure Data Lake Storage 1-го поколения. Если для хранилища BLOB-объектов включено безопасное перемещение, URI будет иметь `wasbs://`значение.  Дополнительные сведения см. также [в статье требование безопасной пересылки в службе хранилища Azure](../../storage/common/storage-require-secure-transfer.md) .
+* Схема URI для основного хранилища кластеров. Это будет `wasb://` для хранилища BLOB-объектов Azure, `abfs://` для Azure Data Lake Storage 2-го поколения или `adl://` для Azure Data Lake Storage 1-го поколения. Если для хранилища BLOB-объектов включено безопасное перемещение, URI будет `wasbs://`.  Дополнительные сведения см. также [в статье требование безопасной пересылки в службе хранилища Azure](../../storage/common/storage-require-secure-transfer.md) .
 
 ## <a name="launch-an-apache-zeppelin-notebook"></a>Запуск записной книжки Apache Zeppelin
 
@@ -34,17 +34,17 @@ ms.locfileid: "71180731"
    >
    > `https://CLUSTERNAME.azurehdinsight.net/zeppelin`
 
-2. Создайте новую записную книжку. На панели заголовка перейдите к **записной книжке** > **создать новое примечание**.
+2. Создайте новую записную книжку. На панели заголовка перейдите к **записной книжке**  > **создать новую заметку**.
 
-    ![Создание записной книжки Zeppelin](./media/apache-spark-zeppelin-notebook/hdinsight-create-zeppelin-notebook.png "Создание записной книжки Zeppelin")
+    ![Создание записной книжки Zeppelin](./media/apache-spark-zeppelin-notebook/hdinsight-create-zeppelin-notebook.png "Создание новой записной книжки Zeppelin")
 
     Введите имя записной книжки, а затем выберите **создать заметку**.
 
 3. Убедитесь, что в заголовке записной книжки отображается состояние подключено. Оно обозначается зеленой точкой в правом верхнем углу.
 
-    ![Состояния записной книжки Zeppelin](./media/apache-spark-zeppelin-notebook/hdinsight-zeppelin-connected.png "Состояния записной книжки Zeppelin")
+    ![Состояние записной книжки Zeppelin](./media/apache-spark-zeppelin-notebook/hdinsight-zeppelin-connected.png "Состояния записной книжки Zeppelin")
 
-4. Загрузите демонстрационные данные во временную таблицу. При создании кластера Spark в HDInsight файл `hvac.csv`образца данных копируется в связанную учетную запись хранения в разделе. `\HdiSamples\SensorSampleData\hvac`
+4. Загрузите демонстрационные данные во временную таблицу. При создании кластера Spark в HDInsight файл образца данных, `hvac.csv`, копируется в связанную учетную запись хранения в разделе `\HdiSamples\SensorSampleData\hvac`.
 
     В пустой абзац, созданный по умолчанию в новой записной книжке, вставьте следующий фрагмент кода.
 
@@ -74,14 +74,14 @@ ms.locfileid: "71180731"
 
     Нажмите клавиши **SHIFT+ВВОД** или кнопку **воспроизведения** для абзаца, чтобы выполнить фрагмент кода. Состояние, которое отображается в правом верхнем углу абзаца, должно изменяться в следующей последовательности: READY (ГОТОВО), PENDING (ОЖИДАЕТ), RUNNING (ВЫПОЛНЯЕТСЯ) и FINISHED (ЗАВЕРШЕНО). Выходные данные отображаются в нижней части того же абзаца. Снимок экрана выглядит следующим образом:
 
-    ![Создание временной таблицы из необработанных данных](./media/apache-spark-zeppelin-notebook/hdinsight-zeppelin-load-data.png "Создание временной таблицы из необработанных данных")
+    ![Создание временной таблицы на основе необработанных данных](./media/apache-spark-zeppelin-notebook/hdinsight-zeppelin-load-data.png "Создание временной таблицы из необработанных данных")
 
     Можно указать заголовок для каждого абзаца. В правом углу абзаца выберите значок **параметров** (спроккет), а затем щелкните **отобразить заголовок**.  
 
     > [!NOTE]  
     > Интерпретатор %spark2 не поддерживается в блокнотах Zeppelin во всех версиях HDInsight, а интерпретатор %sh не поддерживается в HDInsight версии 4.0 и выше.
 
-5. Теперь можно выполнять инструкции Spark SQL для `hvac` таблицы. Вставьте следующий запрос в новый абзац. Запрос извлекает идентификатор здания и разницу между целевой и фактической температурами для каждого здания в указанный день. Нажмите **SHIFT + ВВОД**.
+5. Теперь можно выполнять инструкции Spark SQL в таблице `hvac`. Вставьте следующий запрос в новый абзац. Запрос извлекает идентификатор здания и разницу между целевой и фактической температурами для каждого здания в указанный день. Нажмите **SHIFT + ВВОД**.
 
     ```sql
     %sql
@@ -94,7 +94,7 @@ ms.locfileid: "71180731"
 
     ![Выполнение инструкции Spark SQL с помощью notebook1](./media/apache-spark-zeppelin-notebook/hdinsight-zeppelin-spark-query-1.png "Выполнение инструкции Spark SQL с помощью notebook1")
 
-7. Можно также запустить инструкции Spark SQL с помощью переменных в запросе. В следующем фрагменте кода показано, как определить переменную `Temp`в запросе с возможными значениями, с которыми необходимо выполнить запрос. При первом выполнении запроса раскрывающийся список автоматически заполняется значениями, указанными для переменной.
+7. Можно также запустить инструкции Spark SQL с помощью переменных в запросе. В следующем фрагменте кода показано, как определить переменную `Temp` в запросе с возможными значениями, с которыми необходимо выполнить запрос. При первом выполнении запроса раскрывающийся список автоматически заполняется значениями, указанными для переменной.
 
     ```sql
     %sql  
@@ -105,8 +105,8 @@ ms.locfileid: "71180731"
 
 8. Щелкните значок **линейчатой диаграммы** , чтобы изменить отображение.  Затем выберите **Параметры** и внесите следующие изменения:
 
-   * **Группы**  Добавьте **таржеттемп**.  
-   * **Данные** 1. Удалить **дату**.  2. Добавьте **temp_diff**.  3.  Измените агрегатор с **Sum** на **AVG**.  
+   * **Группы:**  Добавьте **таржеттемп**.  
+   * **Значения:** одного. Удалить **дату**.  2. Добавьте **temp_diff**.  3.  Измените агрегатор с **Sum** на **AVG**.  
 
      Выходные данные показаны на снимке экрана ниже.
 
@@ -114,7 +114,7 @@ ms.locfileid: "71180731"
 
 9. Перезапустите интерпретатор Livy, чтобы выйти из приложения. Для этого откройте параметры интерпретатора, выбрав имя вошедшего в систему пользователя в правом верхнем углу, а затем выберите **интерпретатор**.  
 
-    ![Запуск интерпретатора](./media/apache-spark-zeppelin-notebook/zeppelin-launch-interpreter.png "Выходные данные Hive")
+    ![Запустить интерпретатор](./media/apache-spark-zeppelin-notebook/zeppelin-launch-interpreter.png "Выходные данные Hive")
 
 10. Прокрутите до **Livy**и выберите **перезапустить**.  В командной строке нажмите кнопку **ОК** .
 
@@ -127,13 +127,13 @@ ms.locfileid: "71180731"
 
 1. Откройте параметры интерпретатора. В правом верхнем углу выберите имя пользователя, выполнившего вход, а затем выберите **интерпретатор**.
 
-    ![Запуск интерпретатора](./media/apache-spark-zeppelin-notebook/zeppelin-launch-interpreter.png "Выходные данные Hive")
+    ![Запустить интерпретатор](./media/apache-spark-zeppelin-notebook/zeppelin-launch-interpreter.png "Выходные данные Hive")
 
 2. Прокрутите до **Livy**, а затем выберите **изменить**.
 
     ![Изменение интерпретатора запуска1](./media/apache-spark-zeppelin-notebook/zeppelin-use-external-package-1.png "Изменение интерпретатора запуска1")
 
-3. Добавьте новый раздел с именем `livy.spark.jars.packages`и задайте его значение в формате. `group:id:version` Если вы хотите использовать пакет [spark-csv](https://search.maven.org/#artifactdetails%7Ccom.databricks%7Cspark-csv_2.10%7C1.4.0%7Cjar), для ключа необходимо задать значение `com.databricks:spark-csv_2.10:1.4.0`.
+3. Добавьте новый раздел с именем `livy.spark.jars.packages` и задайте его значение в формате `group:id:version`. Если вы хотите использовать пакет [spark-csv](https://search.maven.org/#artifactdetails%7Ccom.databricks%7Cspark-csv_2.10%7C1.4.0%7Cjar), для ключа необходимо задать значение `com.databricks:spark-csv_2.10:1.4.0`.
 
     ![Изменение интерпретатора Settings2](./media/apache-spark-zeppelin-notebook/zeppelin-use-external-package-2.png "Изменение интерпретатора Settings2")
 
@@ -141,20 +141,20 @@ ms.locfileid: "71180731"
 
 4. Вот как можно получить значение указанного выше ключа.
    
-    1\. Найдите пакет в репозитории Maven. В этой статье мы использовали [Spark-CSV](https://search.maven.org/#artifactdetails%7Ccom.databricks%7Cspark-csv_2.10%7C1.4.0%7Cjar).
+    а) Найдите пакет в репозитории Maven. В этой статье мы использовали [Spark-CSV](https://search.maven.org/#artifactdetails%7Ccom.databricks%7Cspark-csv_2.10%7C1.4.0%7Cjar).
    
-    2\. В репозитории найдите значения для параметров **GroupId**, **ArtifactId** и **Version**.
+    б) В репозитории найдите значения для параметров **GroupId**, **ArtifactId** и **Version**.
    
-    ![Использование внешних пакетов с записными книжками Jupyter](./media/apache-spark-zeppelin-notebook/use-external-packages-with-jupyter.png "Использование внешних пакетов с записными книжками Jupyter")
+    ![Использование внешних пакетов с записной книжкой Jupyter](./media/apache-spark-zeppelin-notebook/use-external-packages-with-jupyter.png "Использование внешних пакетов с записной книжкой Jupyter")
    
-    В. Объедините три значения, разделив их двоеточием ( **:** ).
+    в) Объедините три значения, разделив их двоеточием ( **:** ).
    
         com.databricks:spark-csv_2.10:1.4.0
 
 ## <a name="where-are-the-zeppelin-notebooks-saved"></a>Место сохранения записных книжек Zeppelin
 Записные книжки Zeppelin сохраняются на головных узлах кластера. Поэтому при удалении кластера записные книжки также будут удалены. Если вы хотите сохранить записные книжки для последующего использования в других кластерах, необходимо экспортировать их после выполнения заданий. Чтобы экспортировать записную книжку, выберите значок **экспорта** , как показано на рисунке ниже.
 
-![Скачивание записной книжки](./media/apache-spark-zeppelin-notebook/zeppelin-download-notebook.png "Скачивание записной книжки")
+![Скачать записную книжку](./media/apache-spark-zeppelin-notebook/zeppelin-download-notebook.png "Скачать записную книжку")
 
 Это действие сохраняет записную книжку в формате JSON в расположение для скачивания.
 
@@ -165,7 +165,7 @@ ms.locfileid: "71180731"
 
 1. Перезапустите интерпретатор Livy из записной книжки Zeppelin. Для этого откройте параметры интерпретатора, выбрав имя вошедшего в систему пользователя в правом верхнем углу, а затем выберите **интерпретатор**.
 
-    ![Запуск интерпретатора](./media/apache-spark-zeppelin-notebook/zeppelin-launch-interpreter.png "Выходные данные Hive")
+    ![Запустить интерпретатор](./media/apache-spark-zeppelin-notebook/zeppelin-launch-interpreter.png "Выходные данные Hive")
 
 2. Прокрутите до **Livy**, а затем выберите **перезапустить**.
 
@@ -174,13 +174,13 @@ ms.locfileid: "71180731"
 3. Запустите ячейку кода из имеющейся записной книжки Zeppelin. При этом в кластере HDInsight будет создан сеанс Livy.
 
 ## <a name="seealso"></a>Дополнительные материалы
-* [Apache Spark в Azure HDInsight](apache-spark-overview.md)
+* [Обзор: Apache Spark в Azure HDInsight](apache-spark-overview.md)
 
 ### <a name="scenarios"></a>Сценарии
-* [Руководство. Анализ данных Apache Spark с использованием Power BI в HDInsight](apache-spark-use-bi-tools.md)
-* [Использование Apache Spark MLlib для Создание приложения машинного обучения Apache Spark в HDInsight](apache-spark-ipython-notebook-machine-learning.md)
-* [Использование Apache Spark MLlib для создания приложения машинного обучения и анализа набора данных](apache-spark-machine-learning-mllib-ipython.md)
-* [Анализ журналов веб-сайтов с помощью Apache Spark в HDInsight](apache-spark-custom-library-website-log-analysis.md)
+* [Использование Apache Spark со средствами бизнес-аналитики. Выполнение интерактивного анализа данных с использованием Spark в HDInsight с помощью средств бизнес-аналитики](apache-spark-use-bi-tools.md)
+* [Apache Spark и Машинное обучение. Анализ температуры в здании на основе данных системы кондиционирования с помощью Spark в HDInsight](apache-spark-ipython-notebook-machine-learning.md)
+* [Apache Spark и Машинное обучение. Прогнозирование результатов проверки пищевых продуктов с помощью Spark в HDInsight](apache-spark-machine-learning-mllib-ipython.md)
+* [Анализ журнала веб-сайта с помощью Spark в HDInsight](apache-spark-custom-library-website-log-analysis.md)
 
 ### <a name="create-and-run-applications"></a>Создание и запуск приложений
 * [Создание автономного приложения с использованием Scala](apache-spark-create-standalone-application.md)
@@ -188,7 +188,7 @@ ms.locfileid: "71180731"
 
 ### <a name="tools-and-extensions"></a>Средства и расширения
 * [Использование подключаемого модуля средств HDInsight для IntelliJ IDEA для создания и отправки приложений Apache Spark Scala](apache-spark-intellij-tool-plugin.md)
-* [Удаленная отладка приложений Apache Spark с помощью подключаемого модуля средств HDInsight для IntelliJ IDEA](apache-spark-intellij-tool-plugin-debug-jobs-remotely.md)
+* [Удаленная отладка приложений Apache Spark в HDInsight через VPN с помощью Azure Toolkit for IntelliJ](apache-spark-intellij-tool-plugin-debug-jobs-remotely.md)
 * [Ядра для записной книжки Jupyter в кластерах Apache Spark в Azure HDInsight](apache-spark-jupyter-notebook-kernels.md)
 * [Использование внешних пакетов с записными книжками Jupyter](apache-spark-jupyter-notebook-use-external-packages.md)
 * [Установка записной книжки Jupyter на компьютере и ее подключение к кластеру Apache Spark в Azure HDInsight (предварительная версия)](apache-spark-jupyter-notebook-install-locally.md)

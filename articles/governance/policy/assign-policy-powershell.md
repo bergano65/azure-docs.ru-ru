@@ -1,17 +1,17 @@
 ---
-title: Создание политики для ресурсов, несоответствующих требованиям, с помощью Azure PowerShell
+title: Создание политики для аудита ресурсов с помощью PowerShell
 description: Создание назначения в службе "Политика Azure", позволяющего определить ресурсы, которые не соответствуют требованиям, с помощью Azure PowerShell.
 author: DCtheGeek
 ms.author: dacoulte
 ms.date: 03/11/2019
 ms.topic: quickstart
 ms.service: azure-policy
-ms.openlocfilehash: 7e86436b1b87ab4eec3a971ec19e7dc0ffb106b3
-ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
+ms.openlocfilehash: 55b7d8509fcf681438b377aa43f5f8aa9bac158d
+ms.sourcegitcommit: 1c2659ab26619658799442a6e7604f3c66307a89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71978120"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72255917"
 ---
 # <a name="quickstart-create-a-policy-assignment-to-identify-non-compliant-resources-using-azure-powershell"></a>Краткое руководство. Создание назначения политики для идентификации ресурсов, не соответствующих требованиям, с помощью Azure PowerShell
 

@@ -2,18 +2,17 @@
 title: Руководство. Добавление образца модели для сервера Azure Analysis Services | Документация Майкрософт
 description: Это руководство содержит сведения о том, как добавить образец модели в службах Azure Analysis Services.
 author: minewiskan
-manager: kfile
 ms.service: azure-analysis-services
 ms.topic: tutorial
-ms.date: 03/13/2019
+ms.date: 10/16/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 32c46f0a488d775275b3a367aa2913f034569041
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: c6679e8075afd2f25e4baf73c79c35907ded4e2b
+ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57903935"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72512871"
 ---
 # <a name="tutorial-add-a-sample-model-from-the-portal"></a>Руководство. Добавление образца модели с портала
 
@@ -44,7 +43,7 @@ ms.locfileid: "57903935"
 
     ![Создание образца модели](./media/analysis-services-create-sample-model/aas-create-sample-new-model.png)
 
-2. В разделе **Новая модель** > **Choose a datasource** (Выбор источника данных) установите флажок **Пример данных**, а затем нажмите кнопку **Добавить**.
+2. В разделе **Новая модель** > **Выбор источника данных** установите флажок **Пример данных**, а затем нажмите кнопку **Добавить**.
 
     ![Выбор примеров данных](./media/analysis-services-create-sample-model/aas-create-sample-data.png)
 

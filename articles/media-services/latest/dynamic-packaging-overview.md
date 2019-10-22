@@ -11,14 +11,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: overview
-ms.date: 09/10/2019
+ms.date: 10/03/2019
 ms.author: juliako
-ms.openlocfilehash: 152a767ad1aa2494579f15dd8051c6bc1f718a92
-ms.sourcegitcommit: d70c74e11fa95f70077620b4613bb35d9bf78484
+ms.openlocfilehash: af6542757e75d7d6226c2470adf3c2b51d60875a
+ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70910257"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72383533"
 ---
 # <a name="dynamic-packaging"></a>Динамическая упаковка
 
@@ -236,11 +236,30 @@ QualityLevels(128041)/Manifest(aac_eng_2_128041_2_1,format=m3u8-aapl)
 
 ### <a name="signaling-audio-description-tracks"></a>Сигнальные звуковые описания дорожек
 
-Клиент может добавлять заметки в звуковую дорожку в качестве звукового описания в манифесте. Для этого нужно добавить параметры accessibility и role в ISM-файл. Службы мультимедиа будут распознавать звуковое описание, если аудиодорожка имеет параметр accessibility со значением description и параметр role со значением alternate. Если Службы мультимедиа обнаруживают звуковое описание в ISM-файле, сведения о звуковом описании передаются клиенту манифеста как атрибуты `Accessibility="description"` и `Role="alternate"` в элемент `StreamIndex`.
+Вы можете добавить в видео дорожку речевого сопровождения, чтобы помочь слабовидящим клиентам следить за видеозаписью, слушая повествование. Вам необходимо добавлять заметки к звуковой дорожке в качестве звукового описания в манифесте. Для этого добавьте в файл .ism. параметры "специальные возможности" и "роль". Вы должны правильно задать эти параметры, чтобы звуковая дорожка передавалась в качестве звукового описания. Например, добавьте в файл .ism `<param name="accessibility" value="description" />` и `<param name="role" value="alternate"` для определенной звуковой дорожки. 
 
-Если в ISM-файле установлена комбинация accessibility = description и role = alternate, то манифест DASH и манифест Smooth содержат значения, заданные в параметрах accessibility и role. Клиент обязан установить эти два значения правильно и пометить звуковую дорожку как звуковое описание. Согласно спецификации DASH, accessibility = description и role = alternate вместе означают, что аудиодорожка является звуковым описанием.
+Дополнительные сведения см. в примере [Как добавить сигналы к описанию звуковой дорожки](signal-descriptive-audio-howto.md).
 
-Для HLS версии 7 и выше (`format=m3u8-cmaf`) список воспроизведения содержит `CHARACTERISTICS="public.accessibility.describes-video"` только в том случае, если в ISM-файле установлена комбинация accessibility = description и role = alternate. 
+#### <a name="smooth-streaming-manifest"></a>Манифест Smooth Streaming
+
+При воспроизведении потоковой передачи Smooth Streaming для этой звуковой дорожки манифест будет содержать значения в атрибутах `Accessibility` и `Role`. Например, `Role="alternate" Accessibility="description"` будет добавлен в элемент `StreamIndex`, чтобы указать, что это звуковое описание.
+
+#### <a name="dash-manifest"></a>Манифест DASH
+
+Чтобы сигнализировать о звуковом описании, для манифеста DASH будут добавлены следующие два элемента:
+
+```xml
+<Accessibility schemeIdUri="urn:mpeg:dash:role:2011" value="description"/>
+<Role schemeIdUri="urn:mpeg:dash:role:2011" value="alternate"/>
+```
+
+#### <a name="hls-playlist"></a>Список воспроизведения HLS
+
+Для HLS версии 7 и выше `(format=m3u8-cmaf)` при получении сигнала для дорожки звукового описания список воспроизведения будет содержать `AUTOSELECT=YES,CHARACTERISTICS="public.accessibility.describes-video"`.
+
+#### <a name="example"></a>Пример
+
+Дополнительные сведения см. в разделе [Как сигнализировать об описании звуковых дорожек](signal-descriptive-audio-howto.md).
 
 ## <a name="dynamic-manifest"></a>Динамический манифест
 

@@ -9,14 +9,14 @@ ms.topic: quickstart
 ms.service: azure-functions
 ms.custom: mvc
 manager: gwallace
-ms.openlocfilehash: 82fbaa35d8d06cdb1999a76a36fb4a1dade017e9
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.openlocfilehash: 1d0c6edf250e49fe966388253617181ed2b3dff1
+ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70883891"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72329652"
 ---
-# <a name="create-your-first-function-from-the-command-line"></a>Создание первой функции из командной строки
+# <a name="quickstart-create-your-first-function-from-the-command-line-using-azure-cli"></a>Краткое руководство. Создание первой функции из командной строки с помощью Azure CLI
 
 В этом кратком руководстве рассматривается создание первой функции из командной строки или терминала. Используйте Azure CLI для создания приложения-функции, которое является [независимой от сервера](https://azure.microsoft.com/solutions/serverless/) инфраструктурой, где размещается ваша функция. Проект кода функции создается из шаблона с помощью [основных инструментов службы "Функции Azure"](functions-run-local.md), которые также используются для развертывания проекта приложения-функции в Azure.
 
@@ -28,7 +28,7 @@ ms.locfileid: "70883891"
 
 + установить [Azure Functions Core Tools](./functions-run-local.md#v2) версии 2.6.666 или более поздней;
 
-+ Установка [Azure CLI]( /cli/azure/install-azure-cli). В этой статье требуется Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Можно также использовать [Azure Cloud Shell](https://shell.azure.com/bash).
++ Установка [Azure CLI](/cli/azure/install-azure-cli). В этой статье требуется Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Можно также использовать [Azure Cloud Shell](https://shell.azure.com/bash).
 
 + Активная подписка Azure.
 

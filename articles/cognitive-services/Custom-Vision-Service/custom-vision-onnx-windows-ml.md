@@ -10,12 +10,12 @@ ms.subservice: custom-vision
 ms.topic: tutorial
 ms.date: 07/03/2019
 ms.author: larryfr
-ms.openlocfilehash: 65956ab9fa182794b4cb9ac1fc1800198f2dcdaa
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 025779edd1400c65d10788def17529e84349d582
+ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68561108"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72515745"
 ---
 # <a name="tutorial-use-an-onnx-model-from-custom-vision-with-windows-ml-preview"></a>Руководство по Использование модели ONNX из Пользовательской службы визуального распознавания с Windows ML (предварительная версия)
 
@@ -31,9 +31,9 @@ ms.locfileid: "68561108"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Windows 10 сборки 17738 или более поздней версии.
+* Windows 10, версия 1809 или более поздняя.
 
-* Windows SDK для сборки 17738 или более поздней версии.
+* Windows SDK для сборки 17763 или более поздней версии.
 
 * Visual Studio 2017 версии 15.7 или более поздней с включенной рабочей нагрузкой __Разработка приложений для универсальной платформы Windows__;
 
@@ -45,7 +45,7 @@ ms.locfileid: "68561108"
 
 ## <a name="get-the-example-code"></a>Получение примера кода
 
-Пример приложения доступен по адресу: [https://github.com/Azure-Samples/cognitive-services-onnx12-customvision-sample/](https://github.com/Azure-Samples/cognitive-services-onnx12-customvision-sample/).
+Пример приложения доступен по адресу: [https://github.com/Azure-Samples/cognitive-services-onnx-customvision-sample](https://github.com/Azure-Samples/cognitive-services-onnx-customvision-sample).
 
 ## <a name="run-the-example"></a>Выполнение примера
 
@@ -59,7 +59,7 @@ ms.locfileid: "68561108"
 
 1. [Создайте и обучите](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/getting-started-build-a-classifier) классификатор с помощью Пользовательской службы визуального распознавания. Чтобы экспортировать модель, выберите __компактную__ категорию, например **General (compact)** (Общее (компактная)). Чтобы экспортировать существующий классификатор, преобразуйте категорию в компактную, выбрав значок шестеренки в правом верхнем углу. В разделе __Settings__ (Параметры) выберите компактную модель, а затем сохраните и обучите свой проект.  
 
-1. [Экспортируйте модель](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/export-your-model), перейдя на вкладку Performance (Производительность). Выберите итерацию, обученную с использованием компактной области, чтобы отобразилась кнопка Export (Экспорт). Выберите *Export* (Экспорт), *ONNX*, *ONNX1.2* и *Export* (Экспорт). Когда файл будет готов, нажмите кнопку *Download* (Скачать).
+1. [Экспортируйте модель](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/export-your-model), перейдя на вкладку Performance (Производительность). Выберите итерацию, обученную с использованием компактной области, чтобы отобразилась кнопка Export (Экспорт). Выберите *Export* (Экспорт), *ONNX* и *Export* (Экспорт). Когда файл будет готов, нажмите кнопку *Download* (Скачать).
 
 1. Перенесите файл ONNX в папку __Assets__ (Ресурсы) своего проекта. 
 

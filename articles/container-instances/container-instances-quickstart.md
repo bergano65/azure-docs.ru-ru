@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Развертывание контейнера Docker в службе "Экземпляры контейнеров Azure". CLI
+title: Краткое руководство. Развертывание контейнера Docker в службе "Экземпляры контейнеров Azure" с помощью Azure CLI
 description: В этом кратком руководстве описано, как быстро развернуть контейнерное веб-приложение, выполняющееся в изолированном экземпляре контейнера Azure с помощью Azure CLI
 services: container-instances
 author: dlepow
@@ -8,13 +8,16 @@ ms.service: container-instances
 ms.topic: quickstart
 ms.date: 03/21/2019
 ms.author: danlep
-ms.custom: seodec18, mvc
-ms.openlocfilehash: b344e5fefdef6cd25dcafc0577b9fbbd7f0e398d
-ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
+ms.custom:
+- seo-python-october2019
+- seodec18
+- mvc
+ms.openlocfilehash: 65c067792499017a7e00fdbb6199e591981683f8
+ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70050627"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72429191"
 ---
 # <a name="quickstart-deploy-a-container-instance-in-azure-using-the-azure-cli"></a>Краткое руководство. Развертывание экземпляра контейнера в Azure с помощью Azure CLI
 
@@ -22,7 +25,7 @@ ms.locfileid: "70050627"
 
 Пользуясь этим кратким руководством, вы развернете изолированный контейнер Docker и сделаете его приложение доступным по полному доменному имени (FQDN) с помощью Azure CLI. Через несколько секунд после выполнения единой команды развертывания вы можете перейти к приложению, которое выполняется в контейнере.
 
-![Приложение, развернутое в службе "Экземпляры контейнеров Azure" (просмотр в браузере)][aci-app-browser]
+![Просмотр приложения, развернутого в службе "Экземпляры контейнеров Azure", в браузере][aci-app-browser]
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure][azure-account], прежде чем начинать работу.
 
@@ -69,7 +72,7 @@ aci-demo.eastus.azurecontainer.io  Succeeded
 
 Когда `ProvisioningState` контейнера перейдет в состояние **успешного запуска**, перейдите к нему в браузере, указав полное доменное имя. Если появится примерно такая веб-страница, поздравляем! Вы успешно развернули приложение, выполняющееся в контейнере Docker в Azure.
 
-![Снимок экрана браузера: приложение, выполняющееся в экземпляре контейнера Azure][aci-app-browser]
+![Просмотр приложения, развернутого в службе "Экземпляры контейнеров Azure", в браузере][aci-app-browser]
 
 Если сначала приложение не отображается, может потребоваться подождать несколько секунд, пока DNS распространится, а затем попробуйте обновить страницу в браузере.
 
@@ -155,7 +158,7 @@ az group delete --name myResourceGroup
 Сведения о том, как проверить параметры запуска контейнеров в системе оркестрации Azure, см. в кратких руководствах по [Службе Azure Kubernetes (AKS)][container-service].
 
 <!-- IMAGES -->
-[aci-app-browser]: ./media/container-instances-quickstart/aci-app-browser.png
+[aci-app-browser]: ./media/container-instances-quickstart/view-an-application-running-in-an-azure-container-instance.png
 
 <!-- LINKS - External -->
 [app-github-repo]: https://github.com/Azure-Samples/aci-helloworld.git

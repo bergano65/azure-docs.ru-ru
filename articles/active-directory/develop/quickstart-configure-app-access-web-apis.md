@@ -16,12 +16,12 @@ ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: lenalepa, aragra, sureshja
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 937fca5698378a8c877b4a981557f87d06170e9a
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 5100af99046a03345230ed0468071766aae1c77b
+ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68879348"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72389609"
 ---
 # <a name="quickstart-configure-a-client-application-to-access-web-apis"></a>Краткое руководство. Настройка клиентского приложения для доступа к веб-API
 
@@ -80,8 +80,9 @@ ms.locfileid: "68879348"
 
 1. Чтобы выбрать из предлагаемых URI перенаправления для общедоступных клиентов (мобильные устройства, компьютеры), сделайте следующее:
     1. Найдите раздел о предлагаемых **URI перенаправления для общедоступных клиентов (мобильные устройства, компьютеры)** .
-    1. Выберите соответствующий URI перенаправления для приложения с помощью флажков.
+    1. Выберите соответствующий URI перенаправления для приложения с помощью флажков. Вы также можете ввести пользовательский URI перенаправления. Если вы не уверены, что использовать, ознакомьтесь с документацией по библиотеке.
 
+Существуют определенные ограничения, которые применяются для URI перенаправления. Дополнительные сведения см. в статье [Redirect URI/reply URL restrictions and limitations](https://docs.microsoft.com/azure/active-directory/develop/reply-url) (Ограничения для универсального кода ресурса (URI) перенаправления и URL-адреса ответа).
 > [!NOTE]
 > Ознакомьтесь с новым интерфейсом для настройки **проверки подлинности**, который позволяет указать для приложения параметры по критериям целевой платформы и (или) устройства.
 >

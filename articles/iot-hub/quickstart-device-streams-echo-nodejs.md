@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 03/14/2019
 ms.author: robinsh
-ms.openlocfilehash: e85f2ea849aca9deeb92da7d7b2381d6c2b1b725
-ms.sourcegitcommit: b7b0d9f25418b78e1ae562c525e7d7412fcc7ba0
+ms.openlocfilehash: c7257ec35f9a53f84edebd5e15b7144c49daf682
+ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/08/2019
-ms.locfileid: "70802442"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72514953"
 ---
 # <a name="quickstart-communicate-to-a-device-application-in-nodejs-via-iot-hub-device-streams-preview"></a>Краткое руководство. Взаимодействие с приложением устройства в Node.js с помощью потоков устройств Центра Интернета вещей (предварительная версия)
 
@@ -58,7 +58,7 @@ Node.js, предназначенный для нескольких платфо
 node --version
 ```
 
-Выполните следующую команду, чтобы добавить расширение Интернета вещей Microsoft Azure для Azure CLI в экземпляр Cloud Shell. Расширение Интернета вещей добавляет в Azure CLI специальные команды Центра Интернета вещей, IoT Edge и службы подготовки устройств Интернета вещей (DPS).
+Выполните следующую команду, чтобы добавить расширение Интернета вещей Microsoft Azure для Azure CLI в экземпляр Cloud Shell. Расширение Интернета вещей добавляет в Azure CLI команды Центра Интернета вещей, IoT Edge и службы подготовки устройств Интернета вещей (DPS).
 
 ```azurecli-interactive
 az extension add --name azure-cli-iot-ext
@@ -82,10 +82,10 @@ az extension add --name azure-cli-iot-ext
 
    **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
 
-   **MyDevice**. Это имя, присвоенное зарегистрированному устройству. Используйте имя MyDevice, как показано в примере. Если вы выбрали другое имя для устройства, используйте его при работе с этим руководством и обновите имя устройства в примерах приложений перед их запуском.
+   **MyDevice**. Это имя регистрируемого устройства. Рекомендуется использовать **MyDevice**, как показано ниже. Если вы выбрали другое имя для устройства, используйте его при работе с этим руководством и обновите имя устройства в примерах приложений перед их запуском.
 
     ```azurecli-interactive
-    az iot hub device-identity create --hub-name YourIoTHubName --device-id MyDevice
+    az iot hub device-identity create --hub-name {YourIoTHubName} --device-id MyDevice
     ```
 
 2. Чтобы разрешить внутреннему приложению подключаться к Центру Интернета вещей и получать сообщения, вам необходима *строка подключения к службе*. Следующая команда извлекает строку подключения службы для Центра Интернета вещей:
@@ -93,10 +93,10 @@ az extension add --name azure-cli-iot-ext
     **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
 
     ```azurecli-interactive
-    az iot hub show-connection-string --policy-name service --name YourIoTHubName
+    az iot hub show-connection-string --policy-name service --name {YourIoTHubName} --output table
     ```
 
-    Запомните или запишите возвращаемое значение, которое выглядит следующим образом:
+    Запишите возвращенную строку подключения к службе для последующего использования в этом кратком руководстве. Это должно выглядеть следующим образом:
 
    `"HostName={YourIoTHubName}.azure-devices.net;SharedAccessKeyName=service;SharedAccessKey={YourSharedAccessKey}"`
 
@@ -106,7 +106,7 @@ az extension add --name azure-cli-iot-ext
 
 ### <a name="run-the-device-side-application"></a>Запуск приложения на стороне устройства
 
-Как упоминалось ранее, пакет SDK для Node.js Центра Интернета вещей поддерживает только потоки устройств на стороне службы. Для приложения на стороне устройства используйте сопутствующую программу устройства, которая доступна в одном из этих кратких руководств:
+Как упоминалось ранее, пакет SDK для Node.js Центра Интернета вещей поддерживает только потоки устройств на стороне службы. Для приложения на стороне устройства используйте одну из сопутствующих программ устройства, которая доступна в этих кратких руководствах:
 
    * [Обмен данными с приложениями устройств в C с помощью потоков устройств Центра Интернета вещей](./quickstart-device-streams-echo-c.md)
 
@@ -116,21 +116,21 @@ az extension add --name azure-cli-iot-ext
 
 ### <a name="run-the-service-side-application"></a>Запуск приложения на стороне службы
 
-Если приложение на стороне устройства запущено, выполните следующие действия, чтобы запустить приложение на стороне службы в Node.js.
+Если приложение на стороне устройства запущено, выполните следующие действия в окне терминала на локальном компьютере, чтобы запустить приложение на стороне службы в Node.js.
 
 * Укажите свои учетные данные службы и идентификатор устройства в качестве переменных среды.
  
    ```cmd/sh
    # In Linux
-   export IOTHUB_CONNECTION_STRING="<provide_your_service_connection_string>"
+   export IOTHUB_CONNECTION_STRING="{ServiceConnectionString}"
    export STREAMING_TARGET_DEVICE="MyDevice"
 
    # In Windows
-   SET IOTHUB_CONNECTION_STRING=<provide_your_service_connection_string>
+   SET IOTHUB_CONNECTION_STRING={ServiceConnectionString}
    SET STREAMING_TARGET_DEVICE=MyDevice
    ```
   
-   Измените имя `MyDevice` на идентификатор выбранного вами устройства.
+   Измените заполнитель ServiceConnectionString, чтобы он соответствовал строке подключения к службе, и **MyDevice**, чтобы он соответствовал коду устройства, если вы указали другое имя.
 
 * Перейдите к папке `Quickstarts/device-streams-service` в распакованной папке проекта и запустите образец, используя узел.
 

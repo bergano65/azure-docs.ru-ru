@@ -10,18 +10,18 @@ ms.devlang: java
 ms.topic: quickstart
 ms.custom: mvc, seo-java-august2019, seo-java-september2019
 ms.date: 06/21/2019
-ms.openlocfilehash: f59a3409d508c63f232294d8d66ade5669815b3c
-ms.sourcegitcommit: 15e3bfbde9d0d7ad00b5d186867ec933c60cebe6
+ms.openlocfilehash: eee8a3b17a23d34610951db8b881397a0649b53a
+ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71843354"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72516738"
 ---
 # <a name="quickstart-control-a-device-connected-to-an-azure-iot-hub-with-java"></a>Краткое руководство. Управление подключенным к центру Интернета вещей устройством с использованием Java
 
 [!INCLUDE [iot-hub-quickstarts-2-selector](../../includes/iot-hub-quickstarts-2-selector.md)]
 
-В этом кратком руководстве для управления имитированным устройством, подключенным к Центру Интернета вещей с помощью приложения Java, используется *прямой метод*. Этот метод позволяет удаленно изменить поведение подключенного к Центру Интернета вещей устройства. Центр Интернета вещей — это служба Azure, которая позволяет получать большие объемы данных телеметрии с устройств Центра Интернета вещей в облаке и управлять устройствами из облака. 
+Центр Интернета вещей — это служба Azure, которая позволяет управлять устройствами Интернета вещей из облака и принимать большие объемы телеметрии с устройств в облако для хранения или обработки. В этом кратком руководстве для управления имитированным устройством, подключенным к Центру Интернета вещей с помощью приложения Java, используется *прямой метод*. Этот метод позволяет удаленно изменить поведение подключенного к Центру Интернета вещей устройства. 
 
 В этом кратком руководстве используется два предварительно созданных приложения Java:
 
@@ -77,11 +77,11 @@ az extension add --name azure-cli-iot-ext
 
    **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
 
-   **MyJavaDevice**. Имя регистрируемого устройства. Используйте **MyJavaDevice**, как показано ниже. Если вы выбрали другое имя для устройства, используйте его при работе с этим руководством и обновите имя устройства в примерах приложений перед их запуском.
+   **MyJavaDevice**. Это имя регистрируемого устройства. Рекомендуется использовать **MyJavaDevice**, как показано ниже. Если вы выбрали другое имя для устройства, используйте его при работе с этим руководством и обновите имя устройства в примерах приложений перед их запуском.
 
     ```azurecli-interactive
     az iot hub device-identity create \
-      --hub-name YourIoTHubName --device-id MyJavaDevice
+      --hub-name {YourIoTHubName} --device-id MyJavaDevice
     ```
 
 2. Выполните следующую команду в Azure Cloud Shell, чтобы получить _строку подключения_ зарегистрированного устройства:
@@ -90,7 +90,7 @@ az extension add --name azure-cli-iot-ext
 
     ```azurecli-interactive
     az iot hub device-identity show-connection-string \
-      --hub-name YourIoTHubName \
+      --hub-name {YourIoTHubName} \
       --device-id MyJavaDevice \
       --output table
     ```
@@ -108,14 +108,14 @@ az extension add --name azure-cli-iot-ext
 **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
 
 ```azurecli-interactive
-az iot hub show-connection-string --name YourIoTHubName --policy-name service --output table
+az iot hub show-connection-string --policy-name service --name {YourIoTHubName} --output table
 ```
 
 Запишите строку подключения к службе, которая выглядит так:
 
 `HostName={YourIoTHubName}.azure-devices.net;SharedAccessKeyName=service;SharedAccessKey={YourSharedAccessKey}`
 
-Это значение понадобится позже в рамках этого краткого руководства. Строка подключения к службе отличается от строки подключения к устройству.
+Это значение понадобится позже в рамках этого краткого руководства. Строка подключения к службе отличается от строки подключения к устройству из предыдущего шага.
 
 ## <a name="listen-for-direct-method-calls"></a>Ожидание передачи данных при вызове прямого метода
 

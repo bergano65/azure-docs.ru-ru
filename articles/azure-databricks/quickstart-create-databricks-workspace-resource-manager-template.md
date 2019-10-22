@@ -1,5 +1,5 @@
 ---
-title: 'Краткое руководство. Запуск задания Spark в Azure Databricks с использованием шаблона Resource Manager '
+title: Создание рабочей области Azure Databricks с помощью Azure Resource Manager
 description: В этом кратком руководстве объясняется, как с помощью шаблона Azure Resource Manager создать рабочую область Azure Databricks и кластер Apache Spark, а затем запустить задание Spark.
 services: azure-databricks
 ms.service: azure-databricks
@@ -10,12 +10,12 @@ ms.workload: big-data
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 07/12/2019
-ms.openlocfilehash: 8d4cfb2be687f258255379d93fd60028dcd2eb2c
-ms.sourcegitcommit: 3fa4384af35c64f6674f40e0d4128e1274083487
+ms.openlocfilehash: 5f22c9e7b7f040a0e6b957cbc184720918ce9222
+ms.sourcegitcommit: f272ba8ecdbc126d22a596863d49e55bc7b22d37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "68932597"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72274159"
 ---
 # <a name="quickstart-run-a-spark-job-on-azure-databricks-using-the-azure-resource-manager-template"></a>Краткое руководство. Запуск задания Spark в Azure Databricks с помощью шаблона Azure Resource Manager
 

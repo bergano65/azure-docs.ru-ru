@@ -8,13 +8,13 @@ ms.subservice: cosmosdb-mongo
 ms.devlang: nodejs
 ms.topic: quickstart
 ms.date: 05/21/2019
-ms.custom: seo-javascript-september2019
-ms.openlocfilehash: 7fd74e31b0527b256f6bb9f17029a02aaf41568b
-ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
+ms.custom: seo-javascript-september2019, seo-javascript-october2019
+ms.openlocfilehash: b9cadbf35680953058bd38d7db26a6e6c684836b
+ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70931802"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72327291"
 ---
 # <a name="quickstart-migrate-an-existing-mongodb-nodejs-web-app-to-azure-cosmos-db"></a>Краткое руководство. Перенос имеющегося веб-приложения MongoDB на Node.js в Azure Cosmos DB 
 
@@ -27,9 +27,9 @@ ms.locfileid: "70931802"
 > * [Golang](create-mongodb-golang.md)
 >  
 
-Azure Cosmos DB — это глобально распределенная многомодельная служба базы данных Майкрософт. Вы можете быстро создавать и запрашивать документы, пары "ключ-значение" и графовые базы данных, используя преимущества глобального распределения и горизонтального масштабирования Cosmos DB. 
+В этом кратком руководстве описывается, как использовать имеющееся приложение MongoDB, написанное на Node.js, а также как подключить его к базе данных Azure Cosmos, поддерживающей клиента MongoDB. Другими словами, приложению понятно, что данные хранятся в базе данных Cosmos.
 
-В этом кратком руководстве описывается, как использовать имеющееся приложение MongoDB, написанное на Node.js, а также как подключить его к базе данных Cosmos, поддерживающей клиента MongoDB. Другими словами, приложению понятно, что данные хранятся в базе данных Cosmos.
+Azure Cosmos DB — это глобально распределенная многомодельная служба базы данных Майкрософт. Вы можете быстро создавать и запрашивать документы, пары "ключ-значение" и графовые базы данных, используя преимущества глобального распределения и горизонтального масштабирования Cosmos DB.
 
 В итоге вы получите приложение MEAN (MongoDB, Express, AngularJS и Node.js), выполняющееся в [Cosmos DB](https://azure.microsoft.com/services/cosmos-db/). 
 

@@ -1,5 +1,5 @@
 ---
-title: Создание приложения Python в Службе приложений Azure в Linux | Документация Майкрософт
+title: Краткое руководство. Создание приложения Python в Службе приложений Azure в Linux
 description: Быстрое развертывание первого приложения Hello World на Python в Службе приложений Azure на платформе Linux.
 services: app-service\web
 documentationcenter: ''
@@ -13,20 +13,21 @@ ms.tgt_pltfrm: na
 ms.topic: quickstart
 ms.date: 08/23/2019
 ms.author: cephalin
+ms.custom: seo-python-october2019
 experimental: true
 experiment_id: 1e304dc9-5add-4b
-ms.openlocfilehash: 253e2e5015c2cb7a71386b88b4d86ac6bff6a0fe
-ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
+ms.openlocfilehash: e8ca84f233b3e6202a4647d15e07b36c2b8f1128
+ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72242463"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72433096"
 ---
-# <a name="create-a-python-app-in-azure-app-service-on-linux"></a>Создание приложения Python в Службе приложений Azure в Linux
+# <a name="quickstart-create-a-python-app-in-azure-app-service-on-linux"></a>Краткое руководство. Создание приложения Python в Службе приложений Azure в Linux
 
-В этом кратком руководстве вы развернете простое приложение Python в [Службе приложений на платформе Linux](app-service-linux-intro.md), которая предоставляет высокомасштабируемую веб-службу размещения с самостоятельной установкой исправлений. В руководстве используется интерфейс командной строки Azure ([Azure CLI](/cli/azure/install-azure-cli)) в интерактивной браузерной оболочке Azure Cloud Shell. Поэтому все инструкции можно выполнять на компьютере Mac, Linux или Windows.
+В этой статье вы развернете простое приложение Python в [Службе приложений в Linux](app-service-linux-intro.md), которая предоставляет высокомасштабируемую веб-службу размещения с самостоятельной установкой исправлений. В руководстве используется интерфейс командной строки Azure ([Azure CLI](/cli/azure/install-azure-cli)) в интерактивной браузерной оболочке Azure Cloud Shell. Поэтому все инструкции можно выполнять на компьютере Mac, Linux или Windows.
 
-![Пример приложения, выполняющегося в Azure](media/quickstart-python/hello-world-in-browser.png)
+![Запуск примера приложения Python в Службе приложений в Azure](./media/quickstart-python/run-hello-world-sample-python-app-in-browser.png)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -71,7 +72,7 @@ flask run
 
 На странице отобразится сообщение **Hello World!** из примера приложения.
 
-![Пример приложения, выполняющегося локально](media/quickstart-python/hello-world-in-browser.png)
+![Локальный запуск примера приложения Python](./media/quickstart-python/run-hello-world-sample-python-app-in-browser.png)
 
 В окне терминала нажмите клавиши **CTRL+C**, чтобы выйти из веб-сервера.
 
@@ -154,7 +155,7 @@ http://<app-name>.azurewebsites.net
 
 Пример кода Python выполняется в Службе приложений в Linux со встроенным образом.
 
-![Пример приложения, выполняющегося в Azure](media/quickstart-python/hello-world-in-browser.png)
+![Запуск примера приложения Python в Azure](./media/quickstart-python/run-hello-world-sample-python-app-in-browser.png)
 
 **Поздравляем!** Вы развернули свое первое приложение Python в службе приложений в Linux.
 
@@ -162,7 +163,7 @@ http://<app-name>.azurewebsites.net
 
 В Cloud Shell введите `code application.py`, чтобы открыть текстовый редактор Cloud Shell.
 
-![Code application.py](media/quickstart-python/code-applicationpy.png)
+![Открытие файла application.py в редакторе Cloud Shell](./media/quickstart-python/open-application-py-in-the-cloud-shell-editor.png)
 
  Внесите небольшое изменение в текст вызова метода `return`:
 
@@ -180,7 +181,7 @@ az webapp up -n <app-name> -l <location-name>
 
 После завершения развертывания перейдите в окно браузера, открытое на шаге **перехода в приложение**, и обновите страницу.
 
-![Обновленный пример приложения, выполняющегося в Azure](media/quickstart-python/hello-azure-in-browser.png)
+![Запуск обновленного примера приложения Python в Azure](./media/quickstart-python/run-updated-hello-world-sample-python-app-in-browser.png)
 
 ## <a name="manage-your-new-azure-app"></a>Управление новым приложением Azure
 
@@ -188,11 +189,11 @@ az webapp up -n <app-name> -l <location-name>
 
 В меню слева выберите **Службы приложений**, а затем щелкните имя своего приложения Azure.
 
-![Переход к приложению Azure на портале](./media/quickstart-python/app-service-list.png)
+![Переход к приложению Python в Службе приложений на портале Azure](./media/quickstart-python/navigate-to-app-in-app-services-in-the-azure-portal.png)
 
 Отобразится страница обзора вашего приложения. Вы можете выполнять базовые задачи управления: обзор, завершение, запуск, перезагрузку и удаление.
 
-![Страница службы приложений на портале Azure](media/quickstart-python/app-service-detail.png)
+![Управление приложением Python на странице "Обзор" на портале Azure](./media/quickstart-python/manage-an-app-in-app-services-in-the-azure-portal.png)
 
 В меню слева доступно несколько страниц для настройки приложения. 
 

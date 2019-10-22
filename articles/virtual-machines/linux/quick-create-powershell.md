@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 10/17/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 1d69cb80b105c85640420575f709d8a47629eea0
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 88d028f48b75238e2123d939a832e3fa70fc0056
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70082291"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72300880"
 ---
 # <a name="quickstart-create-a-linux-virtual-machine-in-azure-with-powershell"></a>Краткое руководство. Создание виртуальной машины Linux в Azure с помощью PowerShell
 
@@ -210,7 +210,7 @@ sudo apt-get -y install nginx
 
 Страницу приветствия NGINX по умолчанию можно просмотреть в любом веб-браузере. Введите общедоступный IP-адрес виртуальной машины в качестве веб-адреса. Общедоступный IP-адрес можно найти на странице общих сведений о виртуальной машине. Также он является частью строки подключения SSH, использованной ранее.
 
-![Сайт NGINX по умолчанию](./media/quick-create-cli/nginx.png)
+![Страница приветствия NGINX по умолчанию](./media/quick-create-cli/nginix-welcome-page.png)
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

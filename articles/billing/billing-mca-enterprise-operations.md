@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/01/2019
 ms.author: banders
-ms.openlocfilehash: b6d1de1ee24ce9ca67d3bd8fa514ec9ea7a5c771
-ms.sourcegitcommit: d4c9821b31f5a12ab4cc60036fde00e7d8dc4421
+ms.openlocfilehash: ca0f83628edeef9e55ebc81798d0229791b80a7a
+ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71709546"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72375510"
 ---
 # <a name="complete-enterprise-agreement-tasks-in-your-billing-account-for-a-microsoft-customer-agreement"></a>Выполнение задач для Соглашения Enterprise в учетной записи выставления счетов для Клиентского соглашения Майкрософт
 
@@ -27,7 +27,7 @@ ms.locfileid: "71709546"
 
 На следующей схеме показано, как организовано выставление счетов в новой учетной записи выставления счетов.
 
-![Изображение ea-mca-post-transition-hierarchy](./media/billing-mca-setup-account/mca-post-transition-hierarchy.png)
+![Изображение ea-mca-post-transition-hierarchy](./media/mca-setup-account/mca-post-transition-hierarchy.png)
 
 | Соглашение Enterprise   | Клиентское соглашение Майкрософт    |
 |------------------------|--------------------------------------------------------|
@@ -72,9 +72,9 @@ ms.locfileid: "71709546"
 
 Для каждого профиля выставления счетов в учетной записи выставления счетов ежемесячно создается счет. Для каждого из этих счетов вы можете скачать CSV-файл с данными об использовании и расходах, прайс-лист и налоговые документы (если применимо). Вы также можете скачать CSV-файл использования и расходов в Azure с расходами за текущий месяц.
 
-Сведения о том, как скачать файл использования и расходов в Azure для Клиентского соглашения Майкрософт, см. [здесь](billing-download-azure-daily-usage.md#download-usage-for-your-microsoft-customer-agreement).
+Сведения о том, как скачать файл использования и расходов в Azure для Клиентского соглашения Майкрософт, см. [здесь](billing-download-azure-daily-usage.md).
 
-Сведения о том, как скачать прайс-лист для Клиентского соглашения Майкрософт, см. [здесь](billing-ea-pricing.md#microsoft-customer-agreement-pricing).
+Сведения о том, как скачать прайс-лист для Клиентского соглашения Майкрософт, см. [здесь](billing-ea-pricing.md).
 
 Сведения о том, как скачать налоговые документы для Клиентского соглашения Майкрософт, см. [здесь](billing-mca-download-tax-document.md#view-and-download-tax-documents).
 
@@ -90,7 +90,7 @@ ms.locfileid: "71709546"
 
 ### <a name="create-a-new-account"></a>Создание учетной записи
 
-Присвойте пользователям роли создателей подписки Azure в разделах счета, чтобы предоставить им разрешение на создание подписки Azure, что аналогично учетным записям в соглашении о регистрации для Соглашения Enterprise. Подробнее о предоставлении другим разрешений на создание подписок Azure см. [здесь](billing-mca-create-subscription.md#give-others-permission).
+Присвойте пользователям роли создателей подписки Azure в разделах счета, чтобы предоставить им разрешение на создание подписки Azure, что аналогично учетным записям в соглашении о регистрации для Соглашения Enterprise. Подробные сведения о назначении ролей см. в разделе [Управление ролями выставления счетов на портале Azure](billing-understand-mca-roles.md#manage-billing-roles-in-the-azure-portal).
 
 ## <a name="changes-for-department-administrators"></a>Изменения для администраторов отдела
 
@@ -116,7 +116,7 @@ ms.locfileid: "71709546"
 
 ### <a name="create-a-new-account-in-your-department"></a>Создание новой учетной записи для отдела
 
-Присвойте пользователям роли создателей подписки Azure для раздела счета, который был создан для вашего отдела. Подробнее о предоставлении другим разрешений на создание подписок Azure см. [здесь](billing-mca-create-subscription.md#give-others-permission).
+Присвойте пользователям роли создателей подписки Azure для раздела счета, который был создан для вашего отдела. Подробные сведения о назначении ролей см. в разделе [Управление ролями выставления счетов на портале Azure](billing-understand-mca-roles.md#manage-billing-roles-in-the-azure-portal).
 
 ### <a name="view-charges-for-accounts-in-your-departments"></a>Просмотр расходов для учетных записей в отделах
 

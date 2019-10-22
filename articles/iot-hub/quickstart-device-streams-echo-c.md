@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 08/20/2019
 ms.author: robinsh
-ms.openlocfilehash: a5c4ffde886735e096c4c4a96a648c997d1e7dec
-ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
+ms.openlocfilehash: 7187bc7a42971a86b31d663f0a3754a061a2421a
+ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70050174"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72515053"
 ---
 # <a name="quickstart-communicate-to-a-device-application-in-c-via-iot-hub-device-streams-preview"></a>Краткое руководство. Взаимодействие с приложением устройства в C с помощью потоков устройств Центра Интернета вещей (предварительная версия)
 
@@ -122,10 +122,10 @@ ms.locfileid: "70050174"
 
    > [!NOTE]
    > * Замените заполнитель *YourIoTHubName* именем созданного центра Интернета вещей.
-   > * Используйте имя *MyDevice*, как показано в примере. Это имя, присвоенное зарегистрированному устройству. Если вы выбрали другое имя для устройства, используйте его при работе с этой статьей и обновите имя устройства в примерах приложений перед их запуском.
+   > * Для имени регистрируемого устройства рекомендуется использовать имя *MyDevice*, как показано в примере. Если вы выбрали другое имя для устройства, используйте его при работе с этой статьей и обновите имя устройства в примерах приложений перед их запуском.
 
     ```azurecli-interactive
-    az iot hub device-identity create --hub-name YourIoTHubName --device-id MyDevice
+    az iot hub device-identity create --hub-name {YourIoTHubName} --device-id MyDevice
     ```
 
 1. Выполните следующую команду в Azure Cloud Shell, чтобы получить *строку подключения* зарегистрированного устройства.
@@ -134,10 +134,10 @@ ms.locfileid: "70050174"
    > Замените заполнитель *YourIoTHubName* именем созданного центра Интернета вещей.
 
     ```azurecli-interactive
-    az iot hub device-identity show-connection-string --hub-name YourIoTHubName --device-id MyDevice --output table
+    az iot hub device-identity show-connection-string --hub-name {YourIoTHubName} --device-id MyDevice --output table
     ```
 
-    Запишите строку подключения устройства для последующего использования в этом кратком руководстве. Это должно выглядеть следующим образом:
+    Запишите возвращенную строку подключения к устройству для последующего использования в этом кратком руководстве. Это должно выглядеть следующим образом:
 
    `HostName={YourIoTHubName}.azure-devices.net;DeviceId=MyDevice;SharedAccessKey={YourSharedAccessKey}`
 
@@ -149,14 +149,14 @@ ms.locfileid: "70050174"
 
 Для запуска приложения на стороне устройства выполните следующие шаги:
 
-1. Предоставьте учетные данные устройства, отредактировав исходный файл *iothub_client_c2d_streaming_sample.c* в папке *iothub_client/samples/iothub_client_c2d_streaming_sample*, и укажите строку подключения устройства.
+1. Укажите учетные данные устройства, отредактировав исходный файл **iothub_client_c2d_streaming_sample.c** в папке `iothub_client/samples/iothub_client_c2d_streaming_sample` и добавив строку подключения к устройству.
 
    ```C
    /* Paste in your iothub connection string  */
-   static const char* connectionString = "[device connection string]";
+   static const char* connectionString = "{DeviceConnectionString}";
    ```
 
-1. Скомпилируйте код, как показано:
+1. Скомпилируйте код, выполнив следующие команды:
 
    ```bash
    # In Linux
@@ -186,7 +186,7 @@ ms.locfileid: "70050174"
 
 ### <a name="run-the-service-side-application"></a>Запуск приложения на стороне службы
 
-Как упоминалось ранее, пакет SDK для C центра Интернета вещей поддерживает потоки устройств только на стороне устройства. Чтобы скомпилировать и запустить приложение на стороне службы, выполните инструкции, приведенные в одном из следующих кратких руководств.
+Как упоминалось ранее, пакет SDK для C центра Интернета вещей поддерживает потоки устройств только на стороне устройства. Чтобы скомпилировать и запустить сопутствующее приложение на стороне службы, выполните инструкции, приведенные в одном из следующих кратких руководств.
 
 * [Взаимодействие с приложениями устройств в C# с помощью потоков устройств Центра Интернета вещей (предварительная версия)](./quickstart-device-streams-echo-csharp.md)
 

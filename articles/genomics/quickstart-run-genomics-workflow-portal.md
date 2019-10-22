@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Запуск рабочего процесса в Microsoft Genomics
+title: Краткое руководство. Запуск рабочего процесса
 description: В этом кратком руководстве объясняется, как загрузить входные данные в хранилище BLOB-объектов и запустить рабочий процесс в службе Microsoft Genomics.
 services: genomics
 author: grhuynh
@@ -8,12 +8,12 @@ ms.author: grhuynh
 ms.service: genomics
 ms.topic: quickstart
 ms.date: 01/11/2019
-ms.openlocfilehash: b2d68f878aed5ce400214b6bdf6e1c0d713043bb
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: e7c90cc0ce85f2a90cc2ddc2cd086fd2626f4d96
+ms.sourcegitcommit: 961468fa0cfe650dc1bec87e032e648486f67651
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67670748"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72248535"
 ---
 # <a name="quickstart-run-a-workflow-through-the-microsoft-genomics-service"></a>Краткое руководство. Запуск рабочего процесса в службе Microsoft Genomics
 
@@ -38,10 +38,10 @@ ms.locfileid: "67670748"
 
  |**Параметр**          |  **Рекомендуемое значение**  | **Описание поля** |
  |:-------------       |:-------------         |:----------            |
- |Подписка         | Имя вашей подписки|Это единица выставления счетов для служб Azure. Дополнительные сведения см. на странице [подписок](https://account.azure.com/Subscriptions) |      
- |Группа ресурсов       | MyResourceGroup       |  Группы ресурсов позволяют объединить несколько ресурсов Azure (учетная запись хранения, учетная запись Genomics и т. д.) в одну группу для простоты управления. Дополнительные сведения см. в разделе [Группы ресурсов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview#resource-groups). Допустимые имена групп ресурсов см. в статье [Соглашения об именовании](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions). |
+ |Subscription         | Имя вашей подписки|Это единица выставления счетов для служб Azure. Дополнительные сведения см. на странице [подписок](https://account.azure.com/Subscriptions) |      
+ |группа ресурсов.       | MyResourceGroup       |  Группы ресурсов позволяют объединить несколько ресурсов Azure (учетная запись хранения, учетная запись Genomics и т. д.) в одну группу для простоты управления. Дополнительные сведения см. в разделе [Группы ресурсов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview#resource-groups). Допустимые имена групп ресурсов см. в статье [Соглашения об именовании](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions). |
  |Имя учетной записи         | MyGenomicsAccount     |Выберите уникальный идентификатор учетной записи. Допустимые имена см. в статье [Соглашения об именовании](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions). |
- |Расположение                   | Западный регион США 2                    |    Служба доступна в таких регионах: западная часть США 2, Западная Европа и Юго-Восточная Азия. |
+ |Location                   | Западный регион США 2                    |    Служба доступна в таких регионах: западная часть США 2, Западная Европа и Юго-Восточная Азия. |
 
 
 
@@ -112,15 +112,15 @@ msgen list -f “<full path where you saved the config file>”
 
 ![Колонка создания учетной записи хранения](./media/quickstart-run-genomics-workflow-portal/genomics-storage-create-blade.png "Storage account create blade")
 
-Настройте учетную запись хранения, указав следующую информацию, как показано на предыдущем рисунке. Используйте стандартные параметры для учетной записи хранения. Укажите только, что она не является учетной записью общего назначения, а предназначена для хранилища BLOB-объектов. В хранилище BLOB-объектов операции скачивания или отправки могут выполняться в 2–5 раз быстрее.  Рекомендуется модель развертывания по умолчанию (Resource Manager).  
+Настройте учетную запись хранения, указав следующую информацию, как показано на предыдущем рисунке. Используйте стандартные параметры для учетной записи хранения. Укажите только, что она не является учетной записью общего назначения, а предназначена для хранилища BLOB-объектов. В хранилище BLOB-объектов операции скачивания или отправки могут выполняться в 2–5 раз быстрее.  Рекомендуется модель развертывания по умолчанию (Azure Resource Manager).  
 
 
  |**Параметр**          |  **Рекомендуемое значение**  | **Описание поля** |
  |:-------------------------       |:-------------         |:----------            |
- |Подписка         | Ваша подписка Azure. |Дополнительные сведения о подписках см. [здесь](https://account.azure.com/Subscriptions). |      
- |Группа ресурсов       | MyResourceGroup       |  Можно выбрать группу ресурсов, к которой относится учетная запись Genomics. Допустимые имена групп ресурсов см. в статье [Соглашения об именовании](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions). |
+ |Subscription         | Ваша подписка Azure. |Дополнительные сведения о подписках см. [здесь](https://account.azure.com/Subscriptions). |      
+ |группа ресурсов.       | MyResourceGroup       |  Можно выбрать группу ресурсов, к которой относится учетная запись Genomics. Допустимые имена групп ресурсов см. в статье [Соглашения об именовании](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions). |
  |Имя учетной записи хранения         | MyStorageAccount     |Выберите уникальный идентификатор учетной записи. Допустимые имена см. в статье [Соглашения об именовании](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions). |
- |Расположение                  | Западный регион США 2                  | Используйте то же расположение, что и для учетной записи Genomics, для сокращения расходов на исходящие данные и уменьшения задержки при передаче данных.  | 
+ |Location                  | Западный регион США 2                  | Используйте то же расположение, что и для учетной записи Genomics, для сокращения расходов на исходящие данные и уменьшения задержки при передаче данных.  | 
  |Производительность                  | Стандартная                   | По умолчанию используется уровень "Стандартный". Дополнительные сведения об учетных записях хранения уровня "Стандартный" и "Премиум" см. в статье [Введение в хранилище Microsoft Azure](https://docs.microsoft.com/azure/storage/common/storage-introduction).    |
  |Тип учетной записи       | Хранилище BLOB-объектов       |  В хранилище BLOB-объектов операции скачивания или отправки могут выполняться в 2–5 раз быстрее, чем в хранилище общего назначения. |
  |Репликация                  | Локально избыточное хранилище                  | Локально избыточное хранилище реплицирует ваши данные в центр данных в регионе, в котором создана учетная запись хранения. Дополнительные сведения см. в статье о [репликации службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-redundancy).    |
@@ -139,7 +139,7 @@ msgen list -f “<full path where you saved the config file>”
 [https://msgensampledata.blob.core.windows.net/small/chr21_2.fq.gz](https://msgensampledata.blob.core.windows.net/small/chr21_2.fq.gz)
 
 
-Создайте в своей учетной записи хранения один контейнер больших двоичных объектов для входных данных и еще один — для выходных данных.  Передайте входные данные в контейнер больших двоичных объектов. Для этого можно использовать различные инструменты, например [Обозреватель службы хранилища Microsoft Azure](https://azure.microsoft.com/features/storage-explorer/), [blobporter](https://github.com/Azure/blobporter) или [AzCopy](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy?toc=%2fazure%2fstorage%2fblobs%2ftoc.json). 
+Создайте в своей учетной записи хранения один контейнер больших двоичных объектов для входных данных и еще один — для выходных данных.  Передайте входные данные в контейнер больших двоичных объектов. Для этого можно использовать различные инструменты, например [Обозреватель службы хранилища Microsoft Azure](https://azure.microsoft.com/features/storage-explorer/), [BlobPorter](https://github.com/Azure/blobporter) или [AzCopy](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy?toc=%2fazure%2fstorage%2fblobs%2ftoc.json). 
 
 
 

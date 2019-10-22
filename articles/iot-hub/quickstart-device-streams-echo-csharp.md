@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 03/14/2019
 ms.author: robinsh
-ms.openlocfilehash: de581362371e28523c99f961dfdb5c2009901343
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 85905f97500848be0e17da7d8a65209878713fc2
+ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67446105"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72516530"
 ---
 # <a name="quickstart-communicate-to-a-device-application-in-c-via-iot-hub-device-streams-preview"></a>Краткое руководство. Обмен данными с приложением устройства с помощью C# и потоков устройств Центра Интернета вещей (предварительная версия)
 
@@ -34,7 +34,7 @@ ms.locfileid: "67446105"
   * Центральный регион США
   * Центральная часть США (EUAP)
 
-* Два примера приложений, запускаемые в рамках этого краткого руководства, написаны на языке C#. На компьютере, на котором ведется разработка, необходимо установить пакет SDK для .NET Core версии 2.1.0 или более поздней.
+* Два примера приложений, запускаемые в рамках этого краткого руководства, написаны на языке C#. На компьютере, на котором ведется разработка, необходимо установить пакет SDK для .NET Core версии 2.1.0 или более поздней.
   * Скачайте [пакет SDK для .NET Core с поддержкой нескольких платформ](https://www.microsoft.com/net/download/all).
   * Проверьте текущую версию C# на компьютере, на котором ведется разработка, используя следующую команду:
 
@@ -62,10 +62,10 @@ ms.locfileid: "67446105"
 
    > [!NOTE]
    > * Замените заполнитель *YourIoTHubName* именем созданного центра Интернета вещей.
-   > * Используйте имя *MyDevice*, как показано в примере. Это имя, присвоенное зарегистрированному устройству. Если вы выбрали другое имя для устройства, используйте его при работе с этой статьей и обновите имя устройства в примерах приложений перед их запуском.
+   > * Для имени регистрируемого устройства рекомендуется использовать имя *MyDevice*, как показано в примере. Если вы выбрали другое имя для устройства, используйте его при работе с этой статьей и обновите имя устройства в примерах приложений перед их запуском.
 
     ```azurecli-interactive
-    az iot hub device-identity create --hub-name YourIoTHubName --device-id MyDevice
+    az iot hub device-identity create --hub-name {YourIoTHubName} --device-id MyDevice
     ```
 
 1. Выполните следующую команду в Azure Cloud Shell, чтобы получить *строку подключения* зарегистрированного устройства.
@@ -74,10 +74,10 @@ ms.locfileid: "67446105"
    > Замените заполнитель *YourIoTHubName* именем созданного центра Интернета вещей.
 
     ```azurecli-interactive
-    az iot hub device-identity show-connection-string --hub-name YourIoTHubName --device-id MyDevice --output table
+    az iot hub device-identity show-connection-string --hub-name {YourIoTHubName} --device-id MyDevice --output table
     ```
 
-    Запишите строку подключения устройства для последующего использования в этом кратком руководстве. Это должно выглядеть следующим образом:
+    Запишите возвращенную строку подключения к устройству для последующего использования в этом кратком руководстве. Это должно выглядеть следующим образом:
 
    `HostName={YourIoTHubName}.azure-devices.net;DeviceId=MyDevice;SharedAccessKey={YourSharedAccessKey}`
 
@@ -87,10 +87,10 @@ ms.locfileid: "67446105"
    > Замените заполнитель *YourIoTHubName* именем созданного центра Интернета вещей.
 
     ```azurecli-interactive
-    az iot hub show-connection-string --policy-name service --name YourIoTHubName
+    az iot hub show-connection-string --policy-name service --name {YourIoTHubName} --output table
     ```
 
-    Запишите возвращаемое значение. Оно вам понадобится для последующего использования в этом кратком руководстве. Это должно выглядеть следующим образом:
+    Запишите возвращенную строку подключения к службе для последующего использования в этом кратком руководстве. Это должно выглядеть следующим образом:
 
    `"HostName={YourIoTHubName}.azure-devices.net;SharedAccessKeyName=service;SharedAccessKey={YourSharedAccessKey}"`
 
@@ -100,14 +100,14 @@ ms.locfileid: "67446105"
 
 ### <a name="run-the-service-side-application"></a>Запуск приложения на стороне службы
 
-Перейдите к вложенной папке *iot-hub/Quickstarts/device-streams-echo/service* распакованного проекта. Держите следующие сведения под рукой:
+В окне терминала на локальном компьютере перейдите к каталогу `iot-hub/Quickstarts/device-streams-echo/service` в распакованной папке проекта. Держите следующие сведения под рукой:
 
 | Имя параметра | Значение параметра |
 |----------------|-----------------|
-| `ServiceConnectionString` | Предоставляет строку подключения к службе центра Интернета вещей. |
-| `DeviceId` | Предоставляет идентификатор устройства, созданного ранее, например *MyDevice*. |
+| `ServiceConnectionString` | Строка подключения к службе центра Интернета вещей. |
+| `MyDevice` | Идентификатор устройства, созданного ранее. |
 
-Скомпилируйте и запустите код, как показано:
+Выполните компиляцию и запуск кода с помощью следующих команд:
 
 ```
 cd ./iot-hub/Quickstarts/device-streams-echo/service/
@@ -117,24 +117,25 @@ dotnet build
 
 # Run the application
 # In Linux or macOS
-dotnet run "<ServiceConnectionString>" "<MyDevice>"
+dotnet run "{ServiceConnectionString}" "MyDevice"
 
 # In Windows
-dotnet run <ServiceConnectionString> <MyDevice>
+dotnet run {ServiceConnectionString} MyDevice
 ```
+Приложение будет ожидать, пока приложение устройства станет доступным.
 
 > [!NOTE]
 > Происходит превышение времени ожидания, если приложения на стороне устройства не отвечает вовремя.
 
 ### <a name="run-the-device-side-application"></a>Запуск приложения на стороне устройства
 
-Перейдите к вложенной папке *iot-hub/Quickstarts/device-streams-echo/device* в распакованном проекте. Держите следующие сведения под рукой:
+В другом окне терминала на локальном компьютере перейдите к каталогу `iot-hub/Quickstarts/device-streams-echo/device` в распакованной папке проекта. Держите следующие сведения под рукой:
 
 | Имя параметра | Значение параметра |
 |----------------|-----------------|
-| `DeviceConnectionString` | Предоставляет строку подключения к устройства к Центру Интернета вещей. |
+| `DeviceConnectionString` | Строка подключения к устройству Центра Интернета вещей. |
 
-Скомпилируйте и запустите код, как показано:
+Выполните компиляцию и запуск кода с помощью следующих команд:
 
 ```
 cd ./iot-hub/Quickstarts/device-streams-echo/device/
@@ -144,10 +145,10 @@ dotnet build
 
 # Run the application
 # In Linux or macOS
-dotnet run "<DeviceConnectionString>"
+dotnet run "{DeviceConnectionString}"
 
 # In Windows
-dotnet run <DeviceConnectionString>
+dotnet run {DeviceConnectionString}
 ```
 
 В конце последнего шага приложение на стороне службы инициирует поток на ваше устройство. После установления потока приложение отправляет строковый буфер в службу через поток. В этом примере приложение на стороне службы просто возвращает те же данные устройству, демонстрируя успешную двустороннюю связь между двумя приложениями.

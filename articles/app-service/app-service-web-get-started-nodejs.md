@@ -11,192 +11,194 @@ ms.service: app-service-web
 ms.workload: web
 ms.tgt_pltfrm: na
 ms.topic: quickstart
-ms.date: 02/15/2019
+ms.date: 09/30/2019
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: d03b209902d3ab0bcdb247b1deefdd70d01905cb
-ms.sourcegitcommit: 71db032bd5680c9287a7867b923bf6471ba8f6be
+experimental: false
+experiment_id: a231f2b4-2625-4d
+ms.openlocfilehash: 380e587fc8c921b395d63d1dbca10e2f5fb1b9ba
+ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71018493"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72433203"
 ---
-# <a name="create-a-nodejs-web-app-in-azure"></a>Создание веб-приложений Node.js в Azure
+# <a name="create-a-nodejs-web-app-in-azure"></a>Создание веб-приложений Node.js в Azure 
 
-> [!NOTE]
-> В этой статье мы развернем приложение в службе приложений на платформе Windows. Чтобы развернуть приложение .NET Core в службе приложений на платформе _Linux_, см. статью [Создание веб-приложения Node.js в службе приложений Azure на платформе Linux](./containers/quickstart-nodejs.md).
->
-
-[Служба приложений Azure](overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости.  В этом кратком руководстве объясняется, как развертывать приложения Node.js в Службе приложений Azure. С помощью [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli) вы можете создавать веб-приложения, в которых можно развертывать примеры кода Node.js с использованием ZipDeploy.
-
-![Пример приложения, выполняющегося в Azure](media/app-service-web-get-started-nodejs-poc/hello-world-in-browser.png)
-
-Выполните приведенные здесь инструкции с помощью компьютера Mac, Windows или Linux. После установки необходимых компонентов для выполнения этих шагов потребуется около пяти минут.   
-
-[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
+Служба приложений Azure — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости. В этом кратком руководстве объясняется, как развертывать приложения Node.js в Службе приложений Azure.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим кратким руководством сделайте следующее:
+Если у вас нет учетной записи Azure [, зарегистрируйтесь сегодня](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=vscode-tutorial-app-service-extension&mktingSource=vscode-tutorial-app-service-extension) и получите бесплатную учетную запись с кредитами Azure на сумму $200, которые позволят проверить любое сочетание служб.
 
-* <a href="https://nodejs.org/" target="_blank">установите Node.j и NPM</a>.
+Вам нужно установить [Visual Studio Code](https://code.visualstudio.com/), а также [Node.js и npm](https://nodejs.org/en/download), диспетчер пакетов для Node.js.
 
-## <a name="download-the-sample"></a>Скачивание примера приложения
+Кроме того, потребуется [расширение Службы приложений Azure](vscode:extension/ms-azuretools.vscode-azureappservice), которое позволяет создавать, администрировать и развертывать веб-приложения Linux в Azure в режиме PaaS (платформа как услуга).
 
-Скачайте пример проекта Node.js с [https://github.com/Azure-Samples/nodejs-docs-hello-world/archive/master.zip](https://github.com/Azure-Samples/nodejs-docs-hello-world/archive/master.zip) и извлеките ZIP-архив.
+### <a name="sign-in"></a>Вход
 
-Откройте файл _index.js_ и найдите следующую строку:
+После установки расширения войдите в учетную запись Azure. На панели действий выберите логотип Azure, чтобы отобразить обозреватель **СЛУЖБА ПРИЛОЖЕНИЙ AZURE**. Выберите **Войти в Azure...** и следуйте инструкциям.
 
-```javascript
-const port = process.env.PORT || 1337;
+![Вход в Azure](containers/media/quickstart-nodejs/sign-in.png)
+
+### <a name="troubleshooting"></a>Устранение неполадок
+
+Если отображается сообщение об ошибке **"Не удается найти подписку с именем [идентификатор подписки]"** , возможно вы находитесь за прокси-сервером и не можете связаться с API Azure. Укажите в переменных среды `HTTP_PROXY` и `HTTPS_PROXY` параметры прокси-сервера, используя команду терминала `export`.
+
+```sh
+export HTTPS_PROXY=https://username:password@proxy:8080
+export HTTP_PROXY=http://username:password@proxy:8080
 ```
 
-Служба приложений заполняет переменную среды **process.env.PORT**. Используйте ее в своем приложении, чтобы задать коду порт для прослушивания.
+Если настройка переменных среды не устранит проблему, свяжитесь с нами, нажав кнопку **I ran into an issue** (У меня есть проблема) ниже.
 
-В окне терминала перейдите в **корневой каталог** примера проекта Node.js (каталог, содержащий _index.js_).
+### <a name="prerequisite-check"></a>Проверка предварительных условий
 
-## <a name="run-the-app-locally"></a>Локальный запуск приложения
+Прежде чем продолжить, проверьте наличие и правильность настройки всех обязательных компонентов.
 
-Запустите приложение локально, чтобы увидеть, как оно будет выглядеть после развертывания в Azure. Откройте окно терминала и выполните скрипт `npm start`, чтобы запустить встроенный HTTP-сервер Node.js.
+В VS Code должна отображаться следующая информация: адрес электронной почты Azure в строке состояния и подписка в обозревателе **Службы приложений Azure**.
+
+> [!div class="nextstepaction"]
+> [У меня есть проблема](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-azure-app-service&step=getting-started)
+
+## <a name="create-your-nodejs-application"></a>Создание приложения Node.js
+
+Теперь создайте приложение Node. js, которое можно развернуть в облаке. В этом кратком руководстве используется генератор приложений для быстрого создания шаблона приложения с помощью терминала.
+
+> [!TIP]
+> Если вы уже завершили работу с [учебником по Node.js](https://code.visualstudio.com/docs/nodejs/nodejs-tutorial), можно сразу перейти к разделу о [развертывании в Azure](#deploy-to-azure).
+
+### <a name="scaffold-a-new-application-with-the-express-generator"></a>Подготовка нового приложения с помощью генератора Express
+
+[Express](https://www.expressjs.com) — это популярная платформа для создания и запуска приложений Node. js. Вы можете создать новое приложение Express с помощью средства [Генератор Express](https://expressjs.com/en/starter/generator.html). Генератор Express поставляется как модуль npm, и его можно непосредственно запустить (без установки) с помощью программы командной строки npm `npx`.
+
+```bash
+npx express-generator myExpressApp --view pug --git
+```
+
+Параметры `--view pug --git` сообщают генератору, что он должен использовать обработчик шаблонов [pug](https://pugjs.org/api/getting-started.html) (ранее известный под именем `jade`) и создать файл с именем `.gitignore`.
+
+Чтобы установить все зависимости приложения, перейдите в новую папку и выполните команду `npm install`.
+
+```bash
+cd myExpressApp
+npm install
+```
+
+### <a name="run-the-application"></a>Выполнение приложения
+
+Теперь убедитесь, что приложение успешно выполняется. Запустите приложение из терминала с помощью команды `npm start`, чтобы начать работу сервера.
 
 ```bash
 npm start
 ```
 
-Откройте веб-браузер и перейдите к примеру приложения по адресу `http://localhost:1337`.
+Теперь откройте в браузере страницу [http://localhost:3000](http://localhost:3000), которая должна выглядеть примерно так:
 
-На странице отобразится сообщение **Hello World** из примера приложения.
+![Выполнение приложения Express](containers/media/quickstart-nodejs/express.png)
 
-![Пример приложения, выполняющегося локально](media/app-service-web-get-started-nodejs-poc/localhost-hello-world-in-browser.png)
+> [!div class="nextstepaction"]
+> [У меня есть проблема](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-azure-app-service&step=create-app)
 
-В окне терминала нажмите клавиши **CTRL+C**, чтобы выйти из веб-сервера.
+## <a name="deploy-to-azure"></a>Развертывание в Azure
 
-> [!NOTE]
-> В Службе приложений Azure приложение запускается в IIS с помощью [iisnode](https://github.com/Azure/iisnode). Чтобы разрешить приложению запускаться с помощью iisnode, корневой каталог приложения должен содержать файл web.config. Файл доступен для чтения в IIS. Связанные параметры iisnode описаны в [репозитории GitHub iisnode](https://github.com/Azure/iisnode/blob/master/src/samples/configuration/web.config).
+В этом разделе вы развернете приложение Node.js с помощью VS Code и расширения Службы приложений Azure. В этом кратком руководстве используется самая простая модель развертывания: приложение в сжатом виде развертывается как веб-приложение Azure на платформе Linux.
 
-## <a name="create-a-project-zip-file"></a>Создание ZIP-файла проекта
+### <a name="deploy-using-azure-app-service"></a>Развертывание с помощью Службы приложений Azure
 
-Убедитесь, что вы по-прежнему находитесь в **корневом каталоге** примера проекта (каталог, содержащий _index.js_). Создайте ZIP-архив всего содержимого проекта. При выполнении следующей команды в окне терминала используется инструмент по умолчанию:
-
-```
-# Bash
-zip -r myAppFiles.zip .
-
-# PowerShell
-Compress-Archive -Path * -DestinationPath myAppFiles.zip
-```
-
-В дальнейшем вы отправите этот ZIP-файл в Azure и развернете его в службе приложений.
-
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
-
-[!INCLUDE [Create resource group](../../includes/app-service-web-create-resource-group-scus.md)] 
-
-[!INCLUDE [Create app service plan](../../includes/app-service-web-create-app-service-plan-scus.md)] 
-
-## <a name="create-a-web-app"></a>Создание веб-приложения
-
-В Cloud Shell создайте веб-приложение в рамках плана службы приложений `myAppServicePlan` с помощью команды [`az webapp create`](/cli/azure/webapp?view=azure-cli-latest#az-webapp-create). 
-
-В следующем примере замените `<app_name>`глобальным уникальным именем приложения (допустимые символы: `a-z`, `0-9` и `-`).
-
-```azurecli-interactive
-# Bash and Powershell
-az webapp create --resource-group myResourceGroup --plan myAppServicePlan --name <app_name>
-```
-
-Когда веб-приложение будет создано, в Azure CLI отобразится примерно следующее:
-
-```json
-{
-  "availabilityState": "Normal",
-  "clientAffinityEnabled": true,
-  "clientCertEnabled": false,
-  "cloningInfo": null,
-  "containerSize": 0,
-  "dailyMemoryTimeQuota": 0,
-  "defaultHostName": "<app_name>.azurewebsites.net",
-  "enabled": true,
-  < JSON data removed for brevity. >
-}
-```
-
-### <a name="set-nodejs-runtime"></a>Настройка среды выполнения Node.js
-
-Задайте для среды выполнения Node.js значение 10.14.1. Список всех поддерживаемых сред выполнения можно получить с помощью команды [`az webapp list-runtimes`](/cli/azure/webapp?view=azure-cli-latest#az-webapp-list-runtimes).
-
-```azurecli-interactive
-# Bash and Powershell
-az webapp config appsettings set --resource-group myResourceGroup --name <app_name> --settings WEBSITE_NODE_DEFAULT_VERSION=10.14.1
-```
-
-Перейдите к только что созданному веб-приложению. Замените `<app_name>` уникальным именем приложения.
+Сначала откройте папку приложения в VS Code.
 
 ```bash
-http://<app_name>.azurewebsites.net
+code .
 ```
 
-Новое веб-приложение должно выглядеть так:
+В обозревателе **Служба приложений Azure** щелкните значок с направленной вверх синей стрелкой, чтобы развернуть приложение в Azure.
 
-![Пустая страница веб-приложения](media/app-service-web-get-started-nodejs-poc/app-service-web-service-created.png)
+![Развертывание в виде веб-приложения](containers/media/quickstart-nodejs/deploy.png)
 
-[!INCLUDE [Deploy ZIP file](../../includes/app-service-web-deploy-zip.md)]
+> [!TIP]
+> Также развертывание можно выполнить из **Палитры команд** (Ctrl+Shift+P), введя строку "Deploy to Web App" (развернуть в веб-приложение) и выполнив команду Службы приложений Azure **Azure App Service: Deploy to Web App** (Служба приложений Azure. Развертывание в виде веб-приложения).
 
-## <a name="browse-to-the-app"></a>Переход в приложение
+1. Выберите каталог `myExpressApp`, который у вас уже открыт.
 
-Перейдите в развертываемое приложение с помощью веб-браузера.
+1. Выберите вариант создания на основе операционной системы, на которую требуется развернуть:
 
-```
-http://<app_name>.azurewebsites.net
-```
+    - Linux: Щелкните **Create new Web App** (Создать веб-приложение).
+    - Windows: Выберите **Создать веб-приложение...Расширенный**.
 
-Пример кода Node.js выполняется в веб-приложении службы приложений Azure.
+1. Введите глобально уникальное имя веб-приложения и нажмите клавишу ВВОД. В имени приложения допускаются символы 'a-z', '0-9' и '-'.
 
-![Пример приложения, выполняющегося в Azure](media/app-service-web-get-started-nodejs-poc/hello-world-in-browser.png)
+1. Если вы намерены использовать Linux, выберите версию Node.js при появлении соответствующего запроса. Рекомендуется использовать версию **LTS**.
 
-**Поздравляем!** Вы развернули свое первое приложение Node.js в службе приложений.
+1. Если вы намерены использовать Windows с помощью параметра *Расширенный**, следуйте дополнительным запросам:
+    1. Выберите **Создать новую группу запросов**, затем введите имя для группы ресурсов.
+    1. Выберите **Windows** в поле операционной системы.
+    1. Выберите существующий план службы приложений или создайте новый. Ценовую категорию можно выбрать при создании нового плана.
+    1. Выберите **Пропустить** при появлении запроса о Application Insights.
+    1. Выберите регион, расположенный рядом с вами или рядом с ресурсами, к которым вы хотите получить доступ.
 
-## <a name="update-and-redeploy-the-code"></a>Обновление и повторное развертывание кода
+1. После ответа на все запросы, на канале уведомлений отображаются ресурсы Azure, созданные для вашего приложения.
 
-В текстовом редакторе в приложении Node.js откройте файл `index.js` и измените текст в вызове `response.end`:
+1. Щелкните **Да**, когда появится запрос на обновление конфигурации, чтобы выполнить `npm install` на целевом сервере. Затем приложение развертывается.
 
-```javascript
-response.end("Hello Azure!");
-```
+    ![Настроенное развертывание](containers/media/quickstart-nodejs/server-build.png)
 
-В окне локального терминала перейдите в **корневой каталог** приложения (каталог, содержащий _index.js_) и создайте ZIP-файл для обновленного проекта.
+1. При запуске развертывания вам будет предложено обновить рабочую область, чтобы последующие развертывания автоматически нацеливались на то же веб-приложение Службы приложений. Выберите **Да**, чтобы все изменения правильно применялись к приложению.
 
-```azurecli-interactive
-# Bash
-zip -r myUpdatedAppFiles.zip .
+    ![Настроенное развертывание](containers/media/quickstart-nodejs/save-configuration.png)
 
-# PowerShell
-Compress-Archive -Path * -DestinationPath myUpdatedAppFiles.zip
-```
+> [!TIP]
+> Убедитесь, что приложение прослушивает порт, указанный в переменной среды PORT: `process.env.PORT`.
 
-Разверните новый ZIP-файл в Службе приложений в соответствии с инструкциями из раздела о [развертывании ZIP-файла](#deploy-zip-file).
+### <a name="browse-the-app-in-azure"></a>Просмотр приложения в Azure
 
-Перейдите в окно браузера, открытое на шаге **перехода в приложение**, и обновите страницу.
+По завершении развертывания щелкните **Обзор веб-сайта** в диалоговом окне с предложением просмотреть только что развернутое веб-приложение.
 
-![Обновленный пример приложения, выполняющегося в Azure](media/app-service-web-get-started-nodejs-poc/hello-azure-in-browser.png)
+### <a name="troubleshooting"></a>Устранение неполадок
 
-## <a name="manage-your-new-azure-app"></a>Управление новым приложением Azure
+Если отображается сообщение об ошибке **Вы не имеете разрешения на просмотр этого каталога пли страницы.** , значит приложение не может нормально запуститься. Перейдите к следующему разделу и проверьте выходные данные журнала, чтобы найти и исправить ошибку. Если устранить ее не удается, свяжитесь с нами, нажав кнопку **I ran into an issue** (У меня есть проблема) ниже. Мы всегда рады помочь.
 
-Перейдите на <a href="https://portal.azure.com" target="_blank">портал Azure</a> для управления созданным веб-приложением.
+> [!div class="nextstepaction"]
+> [У меня есть проблема](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-azure-app-service&step=deploy-app)
 
-В меню слева щелкните **Службы приложений**, а затем — имя своего приложения Azure.
+### <a name="update-the-app"></a>Обновление приложения
 
-![Переход к приложению Azure на портале](./media/app-service-web-get-started-nodejs-poc/nodejs-docs-hello-world-app-service-list.png)
+Вы можете развернуть изменения в это приложение, повторив тот же процесс и выбрав существующее приложение вместо создания нового.
 
-Отобразится страница обзора вашего веб-приложения. Вы можете выполнять базовые задачи управления: обзор, завершение, запуск, перезагрузку и удаление. 
+## <a name="viewing-logs"></a>Просмотр журналов
 
-![Страница службы приложений на портале Azure](media/app-service-web-get-started-nodejs-poc/nodejs-docs-hello-world-app-service-detail.png)
+В этом разделе вы узнаете, как просматривать журналы (или последние записи журнала) работающего приложения Службы приложений. Все вызовы `console.log` в этом приложении отображаются в окне выходных данных в Visual Studio Code.
 
-В меню слева доступно несколько страниц для настройки приложения. 
+Найдите приложение в обозревателе **Службы приложений Azure**, щелкните его правой кнопкой мыши и выберите действие **Просмотреть журналы потоковой передачи**.
 
-[!INCLUDE [cli-samples-clean-up](../../includes/cli-samples-clean-up.md)]
+В запросе подтвердите намерение включить ведение журнала и перезапустить приложение. После перезапуска приложения откроется окно выходных данных VS Code, подключенное к потоку журнала.
+
+![Просмотр журналов потоковой передачи](containers/media/quickstart-nodejs/view-logs.png)
+
+![Включение ведения журнала и перезапуск](containers/media/quickstart-nodejs/enable-restart.png)
+
+Через несколько секунд появится сообщение о том, что вы подключены к службе потоковой передачи журналов. Обновите страницу несколько раз, чтобы отобразить больше действий.
+
+    ```bash
+    2019-09-20 20:37:39.574 INFO  - Initiating warmup request to container msdocs-vscode-node_2_00ac292a for site msdocs-vscode-node
+    2019-09-20 20:37:55.011 INFO  - Waiting for response to warmup request for container msdocs-vscode-node_2_00ac292a. Elapsed time = 15.4373071 sec
+    2019-09-20 20:38:08.233 INFO  - Container msdocs-vscode-node_2_00ac292a for site msdocs-vscode-node initialized successfully and is ready to serve requests.
+    2019-09-20T20:38:21  Startup Request, url: /Default.cshtml, method: GET, type: request, pid: 61,1,7, SCM_SKIP_SSL_VALIDATION: 0, SCM_BIN_PATH: /opt/Kudu/bin, ScmType: None
+    ```
+
+> [!div class="nextstepaction"]
+> [У меня есть проблема](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-azure-app-service&step=tailing-logs)
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-> [!div class="nextstepaction"]
-> [Node.js с MongoDB](app-service-web-tutorial-nodejs-mongodb-app.md)
+Поздравляем, вы успешно завершили работу с этим руководством!
+
+Теперь ознакомьтесь с другими расширениями Azure.
+
+* [База данных Cosmos](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb)
+* [Функции Azure](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions)
+* [Инструменты Docker](https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker)
+* [Средства интерфейса командной строки Azure](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azurecli)
+* [Средства Azure Resource Manager](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools)
+
+Вы можете установить их все сразу в составе [пакета расширений для узла Azure](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-node-azure-pack).

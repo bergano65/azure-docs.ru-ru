@@ -11,12 +11,12 @@ ms.workload: big-data
 ms.topic: overview
 ms.date: 09/23/2019
 ms.custom: seodec18
-ms.openlocfilehash: e4a57c6d4a9034d9145058e9137759c2cea19aa6
-ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
+ms.openlocfilehash: da81d5603eb26ae3b209bbbc01a8d6fc31e1ba3a
+ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71978669"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72381990"
 ---
 # <a name="what-is-azure-time-series-insights-preview"></a>Что собой представляет предварительная версия службы "Аналитика временных рядов Azure"?
 
@@ -45,7 +45,7 @@ ms.locfileid: "71978669"
 
 На следующем рисунке показан типичный поток данных Интернета вещей.
 
-  ![Поток данных Интернета вещей][1]
+  [![Поток данных Интернета вещей](media/v2-update-overview/overview-one.png)](media/v2-update-overview/overview-one.png#lightbox)
 
 ## <a name="azure-time-series-insights-for-industrial-iot"></a>Служба "Аналитика временных рядов Azure" для промышленного Интернета вещей
 
@@ -70,7 +70,7 @@ ms.locfileid: "71978669"
 
 На этой высокоуровневой диаграмме потока данных показаны обновления.
 
-  ![Ключевые возможности][2]
+  [![Ключевые возможности](media/v2-update-overview/overview-two.png)](media/v2-update-overview/overview-two.png#lightbox)
 
 После добавления этих ключевых возможностей промышленного Интернета вещей Аналитика временных рядов предоставляет ряд приведенных ниже преимуществ.
 
@@ -94,7 +94,3 @@ ms.locfileid: "71978669"
 
 > [!div class="nextstepaction"]
 > [Примеры использования предварительной версии службы "Аналитика временных рядов Azure"](./time-series-insights-update-use-cases.md)
-
-<!-- Images -->
-[1]: media/v2-update-overview/overview-one.png
-[2]: media/v2-update-overview/overview-two.png

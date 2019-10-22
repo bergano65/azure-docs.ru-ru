@@ -8,12 +8,13 @@ ms.devlang: python
 ms.topic: quickstart
 ms.date: 04/10/2018
 ms.author: sngun
-ms.openlocfilehash: 358f55594037f4a468d31265f4e65a6ec4d7ef28
-ms.sourcegitcommit: 80dff35a6ded18fa15bba633bf5b768aa2284fa8
+ms.custom: seo-python-october2019
+ms.openlocfilehash: d4cfba26192eb097d06f82e18acb41c1f9640e66
+ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70020136"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72437354"
 ---
 # <a name="quickstart-build-a-table-api-app-with-python-and-azure-cosmos-db"></a>Краткое руководство. Создание приложения API таблиц с помощью Python и Azure Cosmos DB
 
@@ -84,7 +85,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 1. На [портале Azure](https://portal.azure.com/) выберите **Строка подключения**. 
 
-    ![Просмотр и копирование строки подключения на панели "Строка подключения"](./media/create-table-python/connection-string.png)
+    ![Просмотр и копирование строки подключения в параметрах "Строка подключения"](./media/create-table-python/view-and-copy-connection-string-in-connection-string-settings.png)
 
 2. Скопируйте имя учетной записи с помощью кнопки копирования справа.
 
@@ -94,7 +95,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 5. Вставьте скопированный первичный ключ как значение параметра STORAGE_ACCOUNT_KEY в строке 20.
 
-3. Сохраните файл config.py.
+6. Сохраните файл config.py.
 
 ## <a name="run-the-app"></a>Запуск приложения
 

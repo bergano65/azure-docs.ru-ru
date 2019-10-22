@@ -17,12 +17,12 @@ ms.author: twhitney
 ms.reviewer: jmprieur, saeeda
 ms.custom: aaddev, identityplatformtop40
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bdb1ae92b17bef281e3b82a8c1a21344fa37f0da
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.openlocfilehash: dce3fea1427632f37d826b79016e3aa3e22dad5f
+ms.sourcegitcommit: b4665f444dcafccd74415fb6cc3d3b65746a1a31
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71345535"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72264169"
 ---
 # <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-an-ios-or-macos-app"></a>Краткое руководство. Вход пользователей и вызов Microsoft API Graph из приложения iOS или macOS
 
@@ -266,7 +266,7 @@ self.applicationContext!.acquireTokenSilent(with: silentParams) { (result, error
 > |Описание ||
 > |---------|---------|
 > | `scopes` | Содержит запрашиваемые области (то есть `[ "user.read" ]` для Microsoft Graph или `[ "<Application ID URL>/scope" ]` для пользовательских веб-API (`api://<Application ID>/access_as_user`)). |
-> | `account` | Учетная запись, для которой запрашивается токен. В этот кратком руководстве рассматривается приложение с одной учетной записью. Если вы хотите создать приложение с несколькими учетными записями, нужно определить логику, которая будет использоваться в учетной записи для запросов токенов `applicationContext.account(forHomeAccountId: self.homeAccountId)`. |
+> | `account` | Учетная запись, для которой запрашивается токен. В этом кратком руководстве рассматривается приложение с одной учетной записью. Если вы хотите создать приложение с несколькими учетными записями, нужно определить логику для выбора учетной записи, которая будет использоваться для запросов токенов, с помощью `applicationContext.account(forHomeAccountId: self.homeAccountId)`. |
 
 ## <a name="next-steps"></a>Дополнительная информация
 

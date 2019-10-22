@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Запуск задания Spark в Azure Databricks с помощью портала Azure
+title: Запуск задания Spark в Azure Databricks с помощью портала Azure
 description: Это краткое руководство содержит сведения об использовании портала Azure для создания рабочей области Azure Databricks и кластера Apache Spark и запуска задания Spark.
 services: azure-databricks
 ms.service: azure-databricks
@@ -10,12 +10,12 @@ ms.workload: big-data
 ms.topic: quickstart
 ms.date: 05/08/2019
 ms.custom: mvc
-ms.openlocfilehash: 3570325880b4c8d8eb311f00477262126a2b18ad
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 21a3e8541441e6139c1c84138870b3ffaf3cacc1
+ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68932562"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72515804"
 ---
 # <a name="quickstart-run-a-spark-job-on-azure-databricks-using-the-azure-portal"></a>Краткое руководство. Запуск задания Spark в Azure Databricks с помощью портала Azure
 
@@ -39,27 +39,28 @@ ms.locfileid: "68932562"
 
 1. На портале Azure выберите **Создать ресурс** > **Analytics** > **Azure Databricks**.
 
-    ![Databricks на портале Azure](./media/quickstart-create-databricks-workspace-portal/azure-databricks-on-portal.png "Databricks on Azure portal")
+    ![Databricks на портале Azure](./media/quickstart-create-databricks-workspace-portal/azure-databricks-on-portal.png "Databricks на портале Azure")
 
 2. В разделе **службы Azure Databricks** укажите значения для создания рабочей области Databricks.
 
-    ![Создание рабочей области Azure Databricks](./media/quickstart-create-databricks-workspace-portal/create-databricks-workspace.png "Create an Azure Databricks workspace")
+    ![Создайте рабочую область Azure Databricks](./media/quickstart-create-databricks-workspace-portal/create-databricks-workspace.png "Создание рабочей области Azure Databricks").
 
     Укажите следующие значения.
     
     |Свойство  |ОПИСАНИЕ  |
     |---------|---------|
     |**Имя рабочей области**     | Укажите имя рабочей области Databricks.        |
-    |**Подписка**     | Выберите подписку Azure в раскрывающемся списке.        |
-    |**Группа ресурсов**     | Укажите, следует ли создать новую группу ресурсов или использовать имеющуюся. Группа ресурсов — это контейнер, содержащий связанные ресурсы для решения Azure. Дополнительные сведения см. в [обзоре группы ресурсов Azure](../azure-resource-manager/resource-group-overview.md). |
+    |**подписка**     | Выберите подписку Azure в раскрывающемся списке.        |
+    |**группа ресурсов**     | Укажите, следует ли создать новую группу ресурсов или использовать имеющуюся. Группа ресурсов — это контейнер, содержащий связанные ресурсы для решения Azure. Дополнительные сведения см. в [обзоре группы ресурсов Azure](../azure-resource-manager/resource-group-overview.md). |
     |**Местоположение.**     | Выберите **Западная часть США 2**. Другие доступные регионы см. в статье о [доступности служб Azure по регионам](https://azure.microsoft.com/regions/services/).        |
     |**Ценовая категория**     |  Вы можете выбрать уровень **Стандартный** или **Премиум** или воспользоваться **бесплатной пробной версией**. Дополнительные сведения об этих ценовых категориях см. на [странице цен на Databricks](https://azure.microsoft.com/pricing/details/databricks/).       |
+    |**Виртуальная сеть**     |  Осуществите развертывание рабочей области Azure Databricks в своей виртуальной сети. Дополнительные сведения см. в статье [Deploy Azure Databricks in your Azure Virtual Network (VNet Injection)](/azure/databricks/administration-guide/cloud-configurations/azure/vnet-inject) (Развертывание Azure Databricks в виртуальной сети Azure (внедрение виртуальной сети)).        |
 
-    Выберите **Закрепить на панели мониторинга** и щелкните **Создать**.
+    Нажмите кнопку **Создать**.
 
 4. Создание рабочей области займет несколько минут. Во время создания рабочей области состояние развертывания можно просмотреть в области **Уведомления**.
 
-    ![Плитка развертывания Databricks](./media/quickstart-create-databricks-workspace-portal/databricks-deployment-tile.png "Databricks deployment tile")
+    ![Плитка развертывания Databricks](./media/quickstart-create-databricks-workspace-portal/databricks-deployment-tile.png "Плитка развертывания Databricks")
 
 ## <a name="create-a-spark-cluster-in-databricks"></a>Создание кластера Spark в Databricks
 
@@ -70,16 +71,16 @@ ms.locfileid: "68932562"
 
 2. Вы будете перенаправлены на портал Azure Databricks. На портале выберите **Создать кластер**.
 
-    ![Databricks в Azure](./media/quickstart-create-databricks-workspace-portal/databricks-on-azure.png "Databricks on Azure")
+    ![Databricks в Azure](./media/quickstart-create-databricks-workspace-portal/databricks-on-azure.png "Databricks в Azure")
 
 3. На странице **создания кластера** укажите значения для создания кластера.
 
-    ![Создание кластера Databricks Spark в Azure](./media/quickstart-create-databricks-workspace-portal/create-databricks-spark-cluster.png "Create Databricks Spark cluster on Azure")
+    ![Создание кластера Databricks Spark в Azure](./media/quickstart-create-databricks-workspace-portal/create-databricks-spark-cluster.png "Создание кластера Databricks Spark в Azure")
 
     Для всех остальных параметров, кроме следующих, примите значения по умолчанию:
 
    * Введите имя кластера.
-   * В рамках этой статьи создайте кластер со средой выполнения **5.2**.
+   * В рамках этой статьи создайте кластер со средой выполнения **5.3**.
    * Убедитесь, что установлен флажок **Terminate after \_\_ minutes of activity** (Завершить через \_\_ минут бездействия). Укажите длительность (в минутах) для завершения работы кластера, если тот не используется.
     
      Выберите **Create cluster** (Создать кластер). После запуска кластера можно вложить записные книжки в кластер и запустить задания Spark.
@@ -92,11 +93,11 @@ ms.locfileid: "68932562"
 
 1. В области слева выберите **Azure Databricks**. Со списка **Общие задачи** выберите **Новая записная книжка**.
 
-    ![Создание записной книжки в Databricks](./media/quickstart-create-databricks-workspace-portal/databricks-create-notebook.png "Create notebook in Databricks")
+    ![Создание записной книжки в Databricks](./media/quickstart-create-databricks-workspace-portal/databricks-create-notebook.png "Создание записной книжки в Databricks")
 
 2. В диалоговом окне **создания записной книжки** введите имя, выберите **Python** в качестве языка, а затем выберите созданный ранее кластер Spark.
 
-    ![Создание записной книжки в Databricks](./media/quickstart-create-databricks-workspace-portal/databricks-notebook-details.png "Create notebook in Databricks")
+    ![Создание записной книжки в Databricks](./media/quickstart-create-databricks-workspace-portal/databricks-notebook-details.png "Создание записной книжки в Databricks")
 
     Нажмите кнопку **Создать**.
 
@@ -136,15 +137,15 @@ ms.locfileid: "68932562"
 
 5. Отобразятся табличные данные, как показано на следующем снимке экрана (показаны только некоторые столбцы).
 
-    ![Образец данных](./media/quickstart-create-databricks-workspace-portal/databricks-sample-csv-data.png "Sample JSON data")
+    ![Пример данных](./media/quickstart-create-databricks-workspace-portal/databricks-sample-csv-data.png "Пример данных JSON")
 
 6. Теперь вы создадите визуальное представление этих данных, чтобы продемонстрировать сколько связанных с безопасностью событий зарегистрировано с помощью приложения Citizens Connect и City Worker по сравнению с другими источниками. В нижней части выходных табличных данных щелкните значок **линейчатой диаграммы**, а затем — **параметры построения**.
 
-    ![Создание линейчатой диаграммы](./media/quickstart-create-databricks-workspace-portal/create-plots-databricks-notebook.png "Create bar chart")
+    ![Создание линейчатой диаграммы](./media/quickstart-create-databricks-workspace-portal/create-plots-databricks-notebook.png "Создание линейчатой диаграммы")
 
 8. В разделе **настроек построения** перетащите значения, как показано на снимке экрана.
 
-    ![Настройка круговой диаграммы](./media/quickstart-create-databricks-workspace-portal/databricks-notebook-customize-plot.png "Customize bar chart")
+    ![Настройка круговой диаграммы](./media/quickstart-create-databricks-workspace-portal/databricks-notebook-customize-plot.png "Настройка линейчатой диаграммы")
 
    * Для параметра **Ключи** задайте значение **source**.
    * Для параметра **Значения** задайте значение **<\id>** .
@@ -157,7 +158,7 @@ ms.locfileid: "68932562"
 
 Когда вы выполните задачи в статье, можно будет завершить работу кластера. Для этого в рабочей области Azure Databricks на панели слева выберите **Кластеры**. Для кластера, работу которого необходимо завершить, переместите указатель мыши на многоточие в столбце **Actions** (Действия) и выберите значок **Завершить**.
 
-![Завершение работы кластера Databricks](./media/quickstart-create-databricks-workspace-portal/terminate-databricks-cluster.png "Stop a Databricks cluster")
+![Остановка кластера Databricks](./media/quickstart-create-databricks-workspace-portal/terminate-databricks-cluster.png "Остановка кластера Databricks")
 
 Если не завершить работу кластера вручную, она завершится автоматически, если во время создания кластера вы установили флажок **Terminate after \_\_ minutes of inactivity** (Завершать работу после \_\_ мин бездействия). В этом случае работа кластера автоматически завершается, если он был неактивным в течение определенного времени.
 

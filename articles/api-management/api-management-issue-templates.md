@@ -14,14 +14,14 @@ ms.topic: article
 ms.date: 01/09/2017
 ms.author: apimpm
 ms.openlocfilehash: 93681062b325756f720f6fe8280ee6b874fea284
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70072260"
 ---
 # <a name="issue-templates-in-azure-api-management"></a>Шаблоны проблем в службе управления API Azure
-Служба управления API Azure позволяет настраивать содержимое страниц портала разработчика с помощью набора шаблонов. С помощью этих шаблонов вы можете гибко настраивать содержимое страниц, используя синтаксис [DotLiquid](http://dotliquidmarkup.org/), любой удобный текстовый редактор, например [DotLiquid для разработчиков](https://github.com/dotliquid/dotliquid/wiki/DotLiquid-for-Designers), и предоставленный набор локализованных [строковых ресурсов](api-management-template-resources.md#strings), [ресурсов глифов](api-management-template-resources.md#glyphs), а также [элементов управления страницы](api-management-page-controls.md).  
+Служба управления API Azure позволяет настраивать содержимое страниц портала разработчика с помощью набора шаблонов. С помощью синтаксиса [DotLiquid](http://dotliquidmarkup.org/), выбранного редактора, например [DotLiquid для разработчиков](https://github.com/dotliquid/dotliquid/wiki/DotLiquid-for-Designers), и указанного набора локализованных [строковых ресурсов](api-management-template-resources.md#strings), [ресурсов глифов](api-management-template-resources.md#glyphs), а также [элементов управления на странице](api-management-page-controls.md) можно гибко настраивать содержимое страниц по своему усмотрению с использованием этих шаблонов.  
   
  С помощью шаблонов в этом разделе вы сможете настроить содержимое страниц проблем на портале разработчика.  
   
@@ -35,7 +35,7 @@ ms.locfileid: "70072260"
 ##  <a name="IssueList"></a> Список проблем  
  Шаблон **списка проблем** позволяет настроить текст страницы со списком проблем на портале разработчика.  
   
- ![Список проблем на портале разработчика](./media/api-management-issue-templates/APIM-Issue-List-Developer-Portal.png "список проблем на портале разработчика APIM")  
+ ![Портал разработчика списка проблем](./media/api-management-issue-templates/APIM-Issue-List-Developer-Portal.png "Портал разработчика списка проблем APIM")  
   
 ### <a name="default-template"></a>Шаблон по умолчанию  
   
@@ -89,20 +89,20 @@ ms.locfileid: "70072260"
 </div>
 ```
   
-### <a name="controls"></a>Элементы управления  
+### <a name="controls"></a>Управление  
  В шаблоне `Issue list` можно использовать следующие [элементы управления страницы](api-management-page-controls.md).  
   
 -   [paging-control](api-management-page-controls.md#paging-control)  
   
 ### <a name="data-model"></a>Модель данных  
   
-|Свойство|type|Описание|  
+|Свойство|Тип|Описание|  
 |--------------|----------|-----------------|  
 |`Issues`|Коллекция сущностей [проблем](api-management-template-data-model-reference.md#Issue).|Проблемы, которые отображаются для текущего пользователя.|  
 |`Paging`|Сущность [разбиения по страницам](api-management-template-data-model-reference.md#Paging).|Сведения о разбиении по страницам для коллекции приложений.|  
-|`IsAuthenticated`|boolean|Указывает, выполнил ли текущий пользователь вход на портал разработчика.|  
-|`CanReportIssues`|boolean|Указывает, имеет ли текущий пользователь разрешения на сообщение о проблеме.|  
-|`Search`|строка|Это свойство является устаревшим и не должно использоваться.|  
+|`IsAuthenticated`|Логическое|Указывает, выполнил ли текущий пользователь вход на портал разработчика.|  
+|`CanReportIssues`|Логическое|Указывает, имеет ли текущий пользователь разрешения на сообщение о проблеме.|  
+|`Search`|string|Это свойство является устаревшим и не должно использоваться.|  
   
 ### <a name="sample-template-data"></a>Пример данных шаблона  
   
@@ -135,5 +135,5 @@ ms.locfileid: "70072260"
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о работе с шаблонами см. в статье [Настройка портала разработчика в службе управления API Azure с помощью шаблонов](api-management-developer-portal-templates.md).

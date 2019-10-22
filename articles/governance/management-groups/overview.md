@@ -1,5 +1,5 @@
 ---
-title: Упорядочивание ресурсов с помощью групп управления Azure — Azure Governance
+title: Упорядочивание ресурсов с помощью групп управления (Система управления Azure)
 description: Сведения о группах управления и способах их использования, а также о том, как работают разрешения.
 author: rthorn17
 ms.assetid: 482191ac-147e-4eb6-9655-c40c13846672
@@ -7,12 +7,12 @@ ms.service: governance
 ms.date: 04/22/2019
 ms.author: rithorn
 ms.topic: overview
-ms.openlocfilehash: dba6334815f0c86a800b38ad09487f719857f993
-ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
+ms.openlocfilehash: aa4c5a7bfe7333c02fe79612b828df5680b83b26
+ms.sourcegitcommit: 1c2659ab26619658799442a6e7604f3c66307a89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340648"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72254730"
 ---
 # <a name="organize-your-resources-with-azure-management-groups"></a>Упорядочивание ресурсов с помощью групп управления Azure
 

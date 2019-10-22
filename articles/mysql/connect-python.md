@@ -1,22 +1,24 @@
 ---
-title: Подключение к Базе данных Azure для MySQL с помощью Python
+title: Краткое руководство. Подключение к Базе данных Azure для MySQL с помощью Python
 description: В этом кратком руководстве представлены примеры кода Python, которые можно использовать для подключения к базе данных Azure для MySQL и запроса данных из нее.
 author: ajlam
 ms.author: andrela
 ms.service: mysql
-ms.custom: mvc
+ms.custom: seo-python-october2019
 ms.devlang: python
 ms.topic: quickstart
 ms.date: 08/08/2019
-ms.openlocfilehash: 0940d307d78236fea1a232c1e7c60a296ba46c62
-ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
+ms.openlocfilehash: 9f9d432bc2f7d70396bca5d140f1a66a75fd7231
+ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70195157"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72434311"
 ---
-# <a name="azure-database-for-mysql-use-python-to-connect-and-query-data"></a>База данных Azure для MySQL: подключение и запрос данных с помощью Python
-Это краткое руководство демонстрирует, как использовать [Python](https://python.org) для подключения к базе данных Azure для MySQL. Здесь используются инструкции SQL для запроса, вставки, обновления и удаления данных в базе данных из платформ Windows, Mac OS и Ubuntu Linux. В этой статье предполагается, что у вас уже есть опыт разработки на языке Python и вы только начали работу с базой данных Azure для MySQL.
+# <a name="quickstart-use-python-to-connect-and-query-data-with-azure-database-for-mysql"></a>Краткое руководство. Использование Python для подключения к данным и отправки запросов к ним с помощью Базы данных Azure для MySQL
+В этой статье показано, как использовать [Python](https://python.org) для подключения к Базе данных Azure для MySQL. Здесь используются инструкции SQL для запроса, вставки, обновления и удаления данных в базе данных из платформ Windows, Mac OS и Ubuntu Linux. 
+
+В этой статье предполагается, что у вас уже есть опыт разработки на языке Python и вы только начали работу с базой данных Azure для MySQL.
 
 ## <a name="prerequisites"></a>Предварительные требования
 В качестве отправной точки в этом кратком руководстве используются ресурсы, созданные в соответствии со следующими материалами:
@@ -66,7 +68,7 @@ ms.locfileid: "70195157"
 2. В меню слева на портале Azure выберите **Все ресурсы** и выполните поиск по имени созданного сервера (например, **mydemoserver**).
 3. Выберите имя сервера.
 4. Запишите **имя сервера** и **имя для входа администратора сервера** с панели сервера **Обзор**. Если вы забыли свой пароль, можно также сбросить пароль с помощью этой панели.
- ![Имя сервера базы данных Azure для MySQL](./media/connect-python/1_server-overview-name-login.png)
+ ![Имя сервера базы данных Azure для MySQL](./media/connect-python/azure-database-for-mysql-server-overview-name-login.png)
 
 ## <a name="run-python-code"></a>Выполнение кода Python
 - Вставьте код в текстовый файл и сохраните файл в папку проекта с расширением файла PY, например C:\pythonmysql\createtable.py или /home/username/pythonmysql/createtable.py.

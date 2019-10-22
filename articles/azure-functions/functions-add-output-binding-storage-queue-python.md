@@ -1,26 +1,22 @@
 ---
 title: Добавление привязки очереди службы хранилища Azure к функции Python
-description: Сведения о добавлении выходной привязки очереди службы хранилища Azure к функции Python с помощью Azure CLI и Azure Functions Core Tools.
-services: functions
-keywords: ''
+description: Узнайте, как добавлять выходные привязки очереди службы хранилища Azure к функции Python.
 author: ggailey777
 ms.author: glenga
-ms.date: 04/24/2019
+ms.date: 10/02/2019
 ms.topic: quickstart
 ms.service: azure-functions
-ms.custom: mvc
-ms.devlang: python
-manager: jeconnoc
-ms.openlocfilehash: 92ee9b0a8a0906bca31d7dcb1730c3464d0d6cbc
-ms.sourcegitcommit: 15e3bfbde9d0d7ad00b5d186867ec933c60cebe6
+manager: gwallace
+ms.openlocfilehash: 2307a296453247a5deee082aadb474f3641cce88
+ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71839181"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72329734"
 ---
 # <a name="add-an-azure-storage-queue-binding-to-your-python-function"></a>Добавление привязки очереди службы хранилища Azure к функции Python
 
-Функции Azure позволяют выполнять подключение служб Azure и других ресурсов к функциям без необходимости написания кода для интеграции. Эти *привязки*, которые представляют как входные, так и выходные данные, объявляются в определении функции. Данные привязок предоставляются функции в качестве параметров. *Триггер* является специальным типом входных привязок. Хотя функция обладает только одним триггером, она может состоять из нескольких входных и выходных привязок. Дополнительные сведения см. в статье [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md).
+[!INCLUDE [functions-add-storage-binding-intro](../../includes/functions-add-storage-binding-intro.md)]
 
 В этой статье приведены сведения об интеграции функции, которая была создана в [предыдущей статье](functions-create-first-function-python.md), с помощью очереди службы хранилища Azure. Выходная привязка, которая была добавлена в эту функцию, записывает в сообщение очереди данные HTTP-запроса.
 
@@ -34,7 +30,7 @@ ms.locfileid: "71839181"
 
 ## <a name="download-the-function-app-settings"></a>Загрузка параметров приложения-функции
 
-[!INCLUDE [functions-app-settings-download-local-cli](../../includes/functions-app-settings-download-local-cli.md)]
+[!INCLUDE [functions-app-settings-download-cli](../../includes/functions-app-settings-download-local-cli.md)]
 
 ## <a name="enable-extension-bundles"></a>Включение пакетов расширений
 
@@ -63,7 +59,7 @@ func host start
 ```
 
 > [!NOTE]  
-> Из-за того что в предыдущем кратком руководстве в файле host.json вы включили пакеты расширений, во время запуска для вас были загружены и установлены [расширения привязки службы хранилища](functions-bindings-storage-blob.md#packages---functions-2x) вместе с расширениями привязок Майкрософт.
+> Так как пакеты расширений включены в файл host.json, во время запуска вместе с другими расширениями привязки Майкрософт было также загружено и установлено [расширение привязки службы хранилища](functions-bindings-storage-blob.md#packages---functions-2x).
 
 Скопируйте URL-адрес функции `HttpTrigger` из выходных данных среды выполнения и вставьте его в адресную строку браузера. Добавьте строку запроса `?name=<yourname>` в этот URL-адрес и выполните запрос. В веб-браузере должен появиться ответ, который соответствует ответу из предыдущей статьи.
 
@@ -71,17 +67,17 @@ func host start
 
 Затем Azure CLI следует использовать для просмотра новой очереди и проверки добавленного сообщения. Кроме того, очередь можно просматривать с помощью [Обозревателя службы хранилища Microsoft Azure][Azure Storage Explorer] или на [портале Azure](https://portal.azure.com).
 
-### <a name="set-the-storage-account-connection"></a>Установка подключения к учетной записи хранилища
-
 [!INCLUDE [functions-storage-account-set-cli](../../includes/functions-storage-account-set-cli.md)]
-
-### <a name="query-the-storage-queue"></a>Запрос в очередь хранилища
 
 [!INCLUDE [functions-query-storage-cli](../../includes/functions-query-storage-cli.md)]
 
-Теперь пора выполнить повторную публикацию обновленного приложения-функции в Azure.
+### <a name="redeploy-the-project"></a>Повторное развертывание проекта 
 
-[!INCLUDE [functions-publish-project](../../includes/functions-publish-project.md)]
+Чтобы обновить опубликованное приложение, используйте команду [`func azure functionapp publish`](functions-run-local.md#project-file-deployment) Core Tools для развертывания кода проекта в Azure. В этом примере следует заменить `<APP_NAME>` именем приложения.
+
+```command
+func azure functionapp publish <APP_NAME> --build remote
+```
 
 Чтобы проверить развернутую функцию, вы можете снова использовать cURL в веб-браузере. Как и раньше, добавьте строку запроса `&name=<yourname>` к URL-адресу, как показано в следующем примере.
 
@@ -89,7 +85,7 @@ func host start
 curl https://myfunctionapp.azurewebsites.net/api/httptrigger?code=cCr8sAxfBiow548FBDLS1....&name=<yourname>
 ```
 
-Чтобы убедиться, что выходная привязка снова создает новое сообщение в очереди, вы можете [проверить сообщение очереди службы хранилища](#query-the-storage-queue).
+Чтобы убедиться, что выходная привязка снова создает новое сообщение в очереди, как и ожидалось, можно [проверить сообщение очереди службы хранилища](#query-the-storage-queue).
 
 [!INCLUDE [functions-cleanup-resources](../../includes/functions-cleanup-resources.md)]
 

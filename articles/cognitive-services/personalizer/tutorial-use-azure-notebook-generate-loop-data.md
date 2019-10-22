@@ -10,12 +10,12 @@ ms.subservice: personalizer
 ms.topic: tutorial
 ms.date: 10/04/2019
 ms.author: diberry
-ms.openlocfilehash: b724e54eb2d9e61bd576ab8a094489bbed6db20d
-ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
+ms.openlocfilehash: 7c0dc40ee2d748b1f48c3254a3e3a6e197069c08
+ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2019
-ms.locfileid: "71975221"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72515170"
 ---
 # <a name="tutorial-use-personalizer-in-azure-notebook"></a>Руководство по Использование Персонализатора в Azure Notebook
 
@@ -122,7 +122,7 @@ personalization_base_url = "https://<your-resource-name>.cognitiveservices.azure
 resource_key = "<your-resource-key>"
 ```
 
-### <a name="print-current-data-and-time"></a>Вывод текущих значений даты и времени
+### <a name="print-current-date-and-time"></a>Вывод текущей даты и времени
 Эта функция используется для фиксации времен начала, завершения итерационной функции и каждой итерации.
 
 Эти ячейки не имеют выходных данных. Эта функция выводит текущую дату и время при вызове.

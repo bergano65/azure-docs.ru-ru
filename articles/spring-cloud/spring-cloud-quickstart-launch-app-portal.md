@@ -9,12 +9,12 @@ ms.service: spring-cloud
 ms.topic: quickstart
 ms.date: 10/04/2019
 ms.author: v-vasuke
-ms.openlocfilehash: 74a47bc5fc6dbcadef5e1a0da88eb93056334703
-ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
+ms.openlocfilehash: 59770bccec57220560eeb5a5204e574ce172fc80
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72244877"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72296482"
 ---
 # <a name="quickstart-launch-an-azure-spring-cloud-application-using-the-azure-portal"></a>Краткое руководство. Запуск приложения Azure Spring Cloud с помощью портала Azure
 
@@ -57,9 +57,11 @@ az extension add -y --source https://azureclitemp.blob.core.windows.net/spring-c
 
 ## <a name="provision-a-service-instance-on-the-azure-portal"></a>Подготовка экземпляра службы к работе на портале Azure
 
-1. Откройте в браузере [портал Azure](https://portal.azure.com/?microsoft_azure_marketplace_ItemHideKey=AppPlatformExtension) и войдите в свою учетную запись.
+1. В веб-браузере откройте [эту ссылку на Azure Spring Cloud на портале Azure](https://ms.portal.azure.com/?microsoft_azure_marketplace_ItemHideKey=AppPlatformExtension#blade/Microsoft_Azure_Marketplace/MarketplaceOffersBlade/selectedMenuItemId/home/searchQuery/Azure%20Spring%20Cloud).
 
-1. Найдите решение **Azure Spring Cloud** и выберите его, чтобы открыть страницу обзора. Чтобы начать, нажмите кнопку **Создать**.
+    ![Снимок экрана, где отображается окно портала ASC](media/spring-cloud-quickstart-launch-app-portal/goto-portal.png)
+
+1. Выберите **Spring Cloud для Azure**, чтобы перейти на страницу обзора. Чтобы начать, нажмите кнопку **Создать**.
 
 1. Заполните форму, принимая во внимание следующие рекомендации:
     - Имя службы: Укажите имя экземпляра службы.  Его длина должна быть от 4 до 32 знаков. Имя может содержать только строчные буквы, цифры и дефисы.  Первым символом в имени службы должна быть буква, а последним — буква или цифра.
@@ -74,6 +76,8 @@ az extension add -y --source https://azureclitemp.blob.core.windows.net/spring-c
 1. Перейдите на страницу **Обзор** службы и выберите **Config Server** (Сервер конфигурации).
 
 1. В разделе **Репозиторий по умолчанию** задайте для параметра **URI** значение https://github.com/Azure-Samples/piggymetrics, для параметра **Метки** значение config и щелкните **Применить**, чтобы сохранить изменения.
+
+    ![Снимок экрана, где отображается окно портала ASC](media/spring-cloud-quickstart-launch-app-portal/portal-config.png)
 
 ## <a name="build-and-deploy-microservice-applications"></a>Создание и развертывание приложений микрослужб
 
@@ -130,10 +134,15 @@ az extension add -y --source https://azureclitemp.blob.core.windows.net/spring-c
 
 ## <a name="assign-a-public-endpoint-to-gateway"></a>Назначение общедоступной конечной точки шлюзу
 
-1. Откройте страницу **Панель мониторинга приложения**.
-2. Выберите приложение `gateway`, чтобы отобразить страницу **Сведения о приложении**.
-3. Выберите **Назначить домен**, чтобы назначить общедоступную конечную точку шлюзу. Для этого может потребоваться несколько минут. 
-4. Введите назначенный общедоступный IP-адрес в браузере, чтобы просмотреть работающее приложение.
+1. В меню слева откройте вкладку **Приложения**.
+2. Выберите приложение `gateway`, чтобы отобразить страницу **Обзор**.
+3. Выберите **Назначить домен**, чтобы назначить общедоступную конечную точку шлюзу. Для этого может потребоваться несколько минут.
+
+    ![Снимок экрана, где отображается окно портала ASC](media/spring-cloud-quickstart-launch-app-portal/portal-endpoint.png)
+
+1. Введите назначенную общедоступную конечную точку (помеченный **URL-адрес**) в браузере, чтобы просмотреть работающее приложение.
+
+    ![Снимок экрана, где отображается окно портала ASC](media/spring-cloud-quickstart-launch-app-portal/sample-app.png)
 
 
 ## <a name="next-steps"></a>Дополнительная информация

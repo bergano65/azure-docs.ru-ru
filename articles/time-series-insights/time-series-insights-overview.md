@@ -9,20 +9,20 @@ manager: cshankar
 ms.reviewer: v-mamcge, jasonh, kfile
 ms.workload: big-data
 ms.topic: overview
-ms.date: 09/24/2019
+ms.date: 10/10/2019
 ms.custom: seodec18
-ms.openlocfilehash: 0c832e272029dc110e156ef89deb908fec02f1b2
-ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
+ms.openlocfilehash: 62a4b08eae1b21536b6dfb47c3d9d3470e59ef0b
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71981202"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72298894"
 ---
 # <a name="what-is-azure-time-series-insights"></a>Что собой представляет служба "Аналитика временных рядов Azure"
 
 Аналитика временных рядов Azure позволяет сохранять, визуализировать и запрашивать большие объемы данных временных рядов, например, созданных устройствами Интернета вещей. Если вам нужно хранить, контролировать, визуализировать и запрашивать данные временных рядов в облаке, служба "Аналитика временных рядов" — идеальный вариант. 
 
-![Блок-схема службы "Аналитика временных рядов"](media/overview/time-series-insights-flowchart.png)
+[![Блок-схема службы "Аналитика временных рядов"](media/overview/time-series-insights-flowchart.png)](media/overview/time-series-insights-flowchart.png#lightbox)
 
 У службы "Аналитика временных рядов" имеются четыре основные задачи.
 

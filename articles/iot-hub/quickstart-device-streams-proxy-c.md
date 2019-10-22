@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 03/14/2019
 ms.author: robinsh
-ms.openlocfilehash: 23a005ebb16f4786c7dde9ec5b2a7ae7c5685cb8
-ms.sourcegitcommit: b49431b29a53efaa5b82f9be0f8a714f668c38ab
+ms.openlocfilehash: 4474a36c2b87a618a9f755d2f42e330e837568f4
+ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68377239"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72516494"
 ---
 # <a name="quickstart-enable-ssh-and-rdp-over-an-iot-hub-device-stream-by-using-a-c-proxy-application-preview"></a>Краткое руководство. Подключение по протоколу SSH и RDP через поток устройств центра Интернета вещей с помощью прокси-приложения C (предварительная версия)
 
@@ -28,7 +28,7 @@ ms.locfileid: "68377239"
 
 ## <a name="how-it-works"></a>Принцип работы
 
-На рисунке, приведенном ниже, показано, как программы локального прокси-сервера устройств и служб обеспечивают сквозное подключение между клиентом SSH и процессами управляющей программы SSH. На этапе предварительной версии пакет SDK для C поддерживает только потоки устройств на стороне устройства. В результате это краткое руководство охватывает инструкции по запуску только приложения прокси-устройства на стороне службы. Необходимо пройти одно из следующих кратких руководств по службам:
+На рисунке, приведенном ниже, показано, как программы локального прокси-сервера устройств и служб обеспечивают сквозное подключение между клиентом SSH и процессами управляющей программы SSH. На этапе предварительной версии пакет SDK для C поддерживает только потоки устройств на стороне устройства. В результате это краткое руководство охватывает инструкции по запуску только приложения прокси-устройства на стороне службы. Чтобы скомпилировать и запустить сопутствующее приложение на стороне службы, выполните инструкции, приведенные в одном из следующих кратких руководств.
 
 * [SSH/RDP через потоки устройств Центра Интернета вещей с помощью прокси-приложения на C#](./quickstart-device-streams-proxy-csharp.md)
 * [SSH/RDP через потоки устройств Центра Интернета вещей с помощью прокси-приложения на NodeJS](./quickstart-device-streams-proxy-nodejs.md)
@@ -124,10 +124,10 @@ ms.locfileid: "68377239"
 
    > [!NOTE]
    > * Замените заполнитель *YourIoTHubName* именем созданного центра Интернета вещей.
-   > * Используйте имя *MyDevice*, как показано в примере. Это имя, присвоенное зарегистрированному устройству. Если вы выбрали другое имя для устройства, используйте его при работе с этой статьей и обновите имя устройства в примерах приложений перед их запуском.
+   > * Для имени регистрируемого устройства рекомендуется использовать имя *MyDevice*, как показано в примере. Если вы выбрали другое имя для устройства, используйте его при работе с этой статьей и обновите имя устройства в примерах приложений перед их запуском.
 
     ```azurecli-interactive
-    az iot hub device-identity create --hub-name YourIoTHubName --device-id MyDevice
+    az iot hub device-identity create --hub-name {YourIoTHubName} --device-id MyDevice
     ```
 
 1. Выполните следующие команды в Cloud Shell, чтобы получить *строку подключения* зарегистрированного устройства.
@@ -136,10 +136,10 @@ ms.locfileid: "68377239"
    > Замените заполнитель *YourIoTHubName* именем созданного центра Интернета вещей.
 
     ```azurecli-interactive
-    az iot hub device-identity show-connection-string --hub-name YourIoTHubName --device-id MyDevice --output table
+    az iot hub device-identity show-connection-string --hub-name {YourIoTHubName} --device-id MyDevice --output table
     ```
 
-    Запишите строку подключения устройства для последующего использования в этом кратком руководстве. Это должно выглядеть следующим образом:
+    Запишите возвращенную строку подключения к устройству для последующего использования в этом кратком руководстве. Это должно выглядеть следующим образом:
 
    `HostName={YourIoTHubName}.azure-devices.net;DeviceId=MyDevice;SharedAccessKey={YourSharedAccessKey}`
 
@@ -149,12 +149,12 @@ ms.locfileid: "68377239"
 
 ### <a name="run-the-device-local-proxy-application"></a>Запуск приложения локального прокси-сервера устройства
 
-1. Отредактируйте исходный файл *iothub_client_c2d_streaming_proxy_sample.c* в папке *iothub_client/samples/iothub_client_c2d_streaming_proxy_sample*, укажите строку подключения устройства, IP-адрес и имя узла целевого устройства, а также порт 22 SSH.
+1. Отредактируйте исходный файл **iothub_client_c2d_streaming_proxy_sample.c** в папке `iothub_client/samples/iothub_client_c2d_streaming_proxy_sample` и укажите строку подключения к устройству, IP-адрес или имя узла целевого устройства, а также порт SSH 22.
 
    ```C
-   /* Paste in your iothub connection string  */
-   static const char* connectionString = "[Connection string of IoT Hub]";
-   static const char* localHost = "[IP/Host of your target machine]"; // Address of the local server to connect to.
+   /* Paste in your device connection string  */
+   static const char* connectionString = "{DeviceConnectionString}";
+   static const char* localHost = "{IP/Host of your target machine}"; // Address of the local server to connect to.
    static const size_t localPort = 22; // Port of the local server to connect to.
    ```
 
@@ -198,7 +198,7 @@ ms.locfileid: "68377239"
 После запуска локальных прокси-серверов устройств и служб используйте клиентскую программу SSH и подключитесь к локальному прокси-серверу службы через порт 2222 (вместо подключения напрямую через управляющую программу SSH).
 
 ```cmd/sh
-ssh <username>@localhost -p 2222
+ssh {username}@localhost -p 2222
 ```
 
 На этом этапе в окне входа в SSH можно ввести учетные данные.

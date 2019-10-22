@@ -1,26 +1,26 @@
 ---
-title: Использование Python для создания запросов к базе данных SQL Azure | Документация Майкрософт
+title: Краткое руководство. Использование Python для создания запросов к Базе данных SQL Azure
 description: В этой статье показано, как использовать Python для создания программы, которая подключается к базе данных SQL Azure, и создавать к ней запросы с помощью инструкций Transact-SQL.
 services: sql-database
 ms.service: sql-database
 ms.subservice: development
-ms.custom: ''
+ms.custom: seo-python-october2019
 ms.devlang: python
 ms.topic: quickstart
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 03/25/2019
-ms.openlocfilehash: 659f6333d16f84cc35be45c45b7a7119e53fd0d0
-ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
+ms.openlocfilehash: 32861fa8f8756c4e8d30c055582789d41a92fe7c
+ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70764287"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72331855"
 ---
 # <a name="quickstart-use-python-to-query-an-azure-sql-database"></a>Краткое руководство. Использование Python для создания запросов к базе данных SQL Azure
 
- В этом кратком руководстве показано, как использовать [Python](https://python.org) для подключения к базе данных SQL Azure, а затем с помощью инструкций Transact-SQL выполнить запрос данных. Дополнительные сведения о пакете SDK см. в [справочной документации](https://docs.microsoft.com/python/api/overview/azure/sql). См. также [репозиторий pyodbc](https://github.com/mkleehammer/pyodbc/wiki/) на GitHub и [пример pyodbc](https://github.com/mkleehammer/pyodbc/wiki/Getting-started).
+ В этой статье показано, как использовать [Python](https://python.org) для подключения к базе данных SQL Azure, а затем с помощью инструкций Transact-SQL выполнить запрос данных. Дополнительные сведения о пакете SDK см. в [справочной документации](https://docs.microsoft.com/python/api/overview/azure/sql). См. также [репозиторий pyodbc](https://github.com/mkleehammer/pyodbc/wiki/) на GitHub и [пример pyodbc](https://github.com/mkleehammer/pyodbc/wiki/Getting-started).
 
 ## <a name="prerequisites"></a>Предварительные требования
 

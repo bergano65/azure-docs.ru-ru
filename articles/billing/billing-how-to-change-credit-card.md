@@ -11,12 +11,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 07/22/2019
 ms.author: banders
-ms.openlocfilehash: f89f9a08feb2ea2bcb7a9e8180002557df1d2b56
-ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
+ms.openlocfilehash: e652237e6faa705aa3ea09e7cf80c4eb692acc98
+ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71300310"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72375587"
 ---
 # <a name="add-update-or-remove-a-credit-card-for-azure"></a>Добавление, обновление или удаление кредитной карты для Azure
 
@@ -131,7 +131,7 @@ ms.locfileid: "71300310"
 1. Выберите существующую карту или добавьте новую.
 
 ## <a name="troubleshooting"></a>Устранение неполадок
-Если при добавлении или изменении данных кредитной карты возникают ошибки, запустите браузер в конфиденциальном режиме.
+Мы не поддерживаем виртуальные или предоплатные карты. Если при добавлении или изменении данных действительной кредитной карты возникают ошибки, запустите браузер в конфиденциальном режиме.
 
 ## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 В следующих разделах вы получите ответы на часто задаваемые вопросы об изменении данных вашей кредитной карты.

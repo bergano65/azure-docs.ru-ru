@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство по созданию приложения Python, в котором используется кэш Redis для Azure | Документация Майкрософт
+title: Краткое руководство. Создание приложения Python, в котором используется кэш Azure для Redis
 description: Из этого краткого руководства вы узнаете, как создать приложение Python, в котором используется кэша Redis для Azure.
 services: cache
 documentationcenter: ''
@@ -14,17 +14,19 @@ ms.tgt_pltfrm: cache
 ms.workload: tbd
 ms.date: 05/11/2018
 ms.author: yegu
-ms.custom: mvc
-ms.openlocfilehash: fcb5d74305375c9883f2d601a2ab7d2d9a50b9cb
-ms.sourcegitcommit: 86d49daccdab383331fc4072b2b761876b73510e
+ms.custom:
+- mvc
+- seo-python-october2019
+ms.openlocfilehash: 5367896c931bf7c5f52b0874d49ede2fc78614ab
+ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70743935"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72435526"
 ---
-# <a name="quickstart-use-azure-cache-for-redis-with-python"></a>Краткое руководство. Использование кэша Redis для Azure с приложениями Python
+# <a name="quickstart-create-a-python-app-that-uses-azure-cache-for-redis"></a>Краткое руководство. Создание приложения Python, в котором используется кэш Azure для Redis
 
-Из этого краткого руководства вы узнаете, как реализовать кэш Azure для Redis в приложении Python для обеспечения доступа к защищенному выделенному кэшу, к которому может обращаться любое приложение в Azure.
+Из этой статьи вы узнаете, как реализовать кэш Azure для Redis в приложении Python для обеспечения доступа к защищенному выделенному кэшу, к которому может обращаться любое приложение в Azure.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -46,7 +48,7 @@ ms.locfileid: "70743935"
     pip3 install redis
 ```
 
-![Установка redis-py](./media/cache-python-get-started/cache-python-install-redis-py.png)
+![Установка интерфейса Python redis-py для кэша Redis для Azure](./media/cache-python-get-started/cache-python-install-redis-py.png)
 
 
 ## <a name="read-and-write-to-the-cache"></a>Операции чтения и записи в кэше
@@ -98,7 +100,7 @@ for c in result:
 
 Выполните скрипт с помощью Python.
 
-![Выполненный тест Python](./media/cache-python-get-started/cache-python-completed.png)
+![Выполнение скрипта Python для проверки доступа к кэшу в кэше Azure для Redis](./media/cache-python-get-started/cache-python-completed.png)
 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
@@ -115,7 +117,7 @@ for c in result:
 
 Введите имя группы ресурсов в текстовое поле **Фильтровать по имени…** . В инструкциях в этой статье использовалась группа ресурсов с именем *TestResources*. В своей группе ресурсов в списке результатов выберите **...** , а затем **Удалить группу ресурсов**.
 
-![Удаление](./media/cache-web-app-howto/cache-delete-resource-group.png)
+![Удаление группы ресурсов, созданной для краткого руководства, для кэша Azure для Redis](./media/cache-web-app-howto/delete-your-resource-group-for-azure-cache-for-redis.png)
 
 Подтвердите операцию удаления группы ресурсов. Введите имя группы ресурсов, которую необходимо удалить, и нажмите **Удалить**.
 

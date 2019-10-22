@@ -3,8 +3,8 @@ title: Краткое руководство по использованию с�
 description: Краткое руководство по использованию службы конфигурации приложений Azure с .NET Framework
 services: azure-app-configuration
 documentationcenter: ''
-author: yegu-ms
-manager: balans
+author: lisaguthrie
+manager: maiye
 editor: ''
 ms.assetid: ''
 ms.service: azure-app-configuration
@@ -12,14 +12,14 @@ ms.devlang: csharp
 ms.topic: quickstart
 ms.tgt_pltfrm: .NET
 ms.workload: tbd
-ms.date: 02/24/2019
-ms.author: yegu
-ms.openlocfilehash: 8aa8c8132220965d55097c4fed8ba1b2e9501301
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.date: 10/09/2019
+ms.author: lcozzens
+ms.openlocfilehash: 17b2e7272d499ce99d40d2ee52de1c7a5a1d0d04
+ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68326529"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72329796"
 ---
 # <a name="quickstart-create-a-net-framework-app-with-azure-app-configuration"></a>Краткое руководство. Создание приложения на .NET Framework с помощью службы конфигурации приложений Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "68326529"
 
 - Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 - [Visual Studio 2019](https://visualstudio.microsoft.com/vs)
-- [.NET Framework 4.7.1](https://dotnet.microsoft.com/download)
+- [.NET Framework 4.7.2](https://dotnet.microsoft.com/download)
 
 ## <a name="create-an-app-configuration-store"></a>Создание хранилища конфигураций приложений
 
@@ -47,7 +47,9 @@ ms.locfileid: "68326529"
 
 1. Запустите Visual Studio и выберите **Файл** > **Создать** > **Проект**.
 
-2. В разделе **Создание проекта** выберите **Установлено** > **Visual C#**  > **Классическое приложение для Windows**. Выберите **Консольное приложение (.NET Framework)** и введите имя для проекта. Выберите **.NET Framework 4.7.1** или более поздней версии, а затем нажмите кнопку **ОК**.
+1. В разделе **Создание проекта** с помощью фильтра найдите тип проекта **Консоль** и щелкните **Консольное приложение (.NET Framework)** . Щелкните **Далее**.
+
+1. В окне **Настроить новый проект** введите имя проекта. В разделе **Платформа** выберите **.NET Framework 4.7.1** или более поздней версии. Нажмите кнопку **Создать**.
 
 ## <a name="connect-to-an-app-configuration-store"></a>Подключение к хранилищу конфигураций приложений
 
@@ -56,9 +58,10 @@ ms.locfileid: "68326529"
     ```
     Microsoft.Configuration.ConfigurationBuilders.AzureAppConfiguration 1.0.0 preview or later
     Microsoft.Configuration.ConfigurationBuilders.Environment 2.0.0 preview or later
+    System.Configuration.ConfigurationManager version 4.6.0 or later
     ```
 
-2. Обновите файл проекта *App.config*:
+1. Обновите файл проекта *App.config*:
 
     ```xml
     <configSections>
@@ -80,12 +83,12 @@ ms.locfileid: "68326529"
 
    Строка подключения к хранилищу конфигураций приложений считывается из переменной среды `ConnectionString`. Добавьте построитель конфигураций `Environment` перед `MyConfigStore` в свойстве `configBuilders` раздела `appSettings`.
 
-3. Откройте файл *Program.cs* и обновите метод `Main` для использования службы "Конфигурация приложений", вызвав метод `ConfigurationManager`.
+1. Откройте файл *Program.cs* и обновите метод `Main` для использования службы "Конфигурация приложений", вызвав метод `ConfigurationManager`.
 
     ```csharp
     static void Main(string[] args)
     {
-        string message = ConfigurationManager.AppSettings["TestApp:Settings:Message"];
+        string message = System.Configuration.ConfigurationManager.AppSettings["TestApp:Settings:Message"];
 
         Console.WriteLine(message);
     }
@@ -101,7 +104,7 @@ ms.locfileid: "68326529"
 
         $Env:ConnectionString = "connection-string-of-your-app-configuration-store"
 
-2. Перезапустите Visual Studio, чтобы изменение вступило в силу. Нажмите клавиши CTRL+F5, чтобы скомпилировать и запустить консольное приложение.
+1. Перезапустите Visual Studio, чтобы изменение вступило в силу. Нажмите клавиши CTRL+F5, чтобы скомпилировать и запустить консольное приложение.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

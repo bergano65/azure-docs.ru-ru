@@ -14,14 +14,14 @@ ms.tgt_pltfrm: na
 ms.topic: quickstart
 ms.date: 07/09/2018
 ms.author: mlearned
-ms.custom: mvc, seo-javascript-september2019
+ms.custom: mvc, seo-javascript-september2019, seo-javascript-october2019
 monikerRange: vsts
-ms.openlocfilehash: 9fc276626d2a863f7f2e53cd7312ab8b3be513dd
-ms.sourcegitcommit: 80da36d4df7991628fd5a3df4b3aa92d55cc5ade
+ms.openlocfilehash: 11edeb35119e2c598fd83fd89c65ba4dc4679650
+ms.sourcegitcommit: 1c2659ab26619658799442a6e7604f3c66307a89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71815769"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72256107"
 ---
 #  <a name="quickstart-create-a-cicd-pipeline-in-azure-pipelines-for-nodejs-with-azure-devops-projects"></a>Краткое руководство. Создание конвейера CI/CD в Azure Pipelines для Node.js с помощью Azure DevOps Projects
 
@@ -37,7 +37,7 @@ DevOps Projects позволяет создать конвейер CI/CD в Azur
 
 1. Выберите **Создать ресурс** в области слева и выполните поиск по запросу **DevOps Projects**. 
 
-    ![Начало конфигурации непрерывной поставки](_img/azure-devops-project-nodejs/fullbrowser.png)
+    ![Создание ресурса настройки непрерывной поставки](_img/azure-devops-project-nodejs/create-azure-resource.png)
 
 ## <a name="select-a-sample-application-and-azure-service"></a>Выбор примера приложения и службы Azure
 
@@ -60,7 +60,7 @@ DevOps Projects позволяет создать конвейер CI/CD в Azur
      
 3. Выберите **Обзор**, чтобы просмотреть выполняющееся приложение.
 
-    ![Представление панели мониторинга](_img/azure-devops-project-nodejs/dashboardnopreview.png) 
+    ![Представление панели мониторинга для конвейера CI/CD](_img/azure-devops-project-nodejs/devops-projects-dashboard.png) 
     
 DevOps Projects автоматически настраивает сборку непрерывной интеграции и триггер выпуска.  Теперь вы готовы к совместной работе над приложением Node.js с использованием процесса CI/CD, который позволяет автоматически развернуть последние результаты работы на веб-сайте.
 

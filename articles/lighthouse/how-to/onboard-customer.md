@@ -1,5 +1,5 @@
 ---
-title: Azure Lighthouse — подключение клиента к системе делегированного управления ресурсами Azure
+title: Подключение клиента к системе делегированного управления ресурсами Azure
 description: Узнайте, как подключить клиента к системе делегированного управления ресурсами Azure, предоставив доступ к ресурсам и возможность управления ими через собственный клиент.
 author: JnHs
 ms.author: jenhayes
@@ -7,12 +7,12 @@ ms.service: lighthouse
 ms.date: 09/30/2019
 ms.topic: overview
 manager: carmonm
-ms.openlocfilehash: f1d01a4b6b4e42261542cc64516a2e1c2bef56c0
-ms.sourcegitcommit: 7868d1c40f6feb1abcafbffcddca952438a3472d
+ms.openlocfilehash: e16747d74df7db0fb2ca2d4e0f07247258a980d7
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71958728"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72299751"
 ---
 # <a name="onboard-a-customer-to-azure-delegated-resource-management"></a>Подключение клиента к системе делегированного управления ресурсами Azure
 
@@ -188,7 +188,7 @@ az role definition list --name "<roleName>" | grep name
     }
 }
 ```
-Последняя авторизация в приведенном выше примере добавляет параметр **principalId** с ролью "Администратор доступа пользователя" (18d7d88d-d35e-4fb5-a5c3-7773c20a72d9). При назначении этой роли вы должны включить свойство **delegatedRoleDefinitionIds** и одну или несколько встроенных ролей. Пользователь, созданный в этой авторизации, сможет назначать управляемым удостоверениям эти встроенные роли. Обратите внимание, что к этому пользователю не будут применяться никакие другие разрешения, обычно связанные с ролью администратора доступа пользователей.
+Последняя авторизация в приведенном выше примере добавляет параметр **principalId** с ролью "Администратор доступа пользователя" (18d7d88d-d35e-4fb5-a5c3-7773c20a72d9). При назначении этой роли вы должны включить свойство **delegatedRoleDefinitionIds** и одну или несколько встроенных ролей. Пользователь, созданный в этой авторизации, сможет назначать [управляемым удостоверениям](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) эти встроенные роли. Обратите внимание, что к этому пользователю не будут применяться никакие другие разрешения, обычно связанные с ролью администратора доступа пользователей.
 
 ## <a name="deploy-the-azure-resource-manager-templates"></a>Развертывание шаблонов Azure Resource Manager
 

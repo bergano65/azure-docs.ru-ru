@@ -12,20 +12,20 @@ ms.topic: conceptual
 ms.date: 10/01/2019
 ms.author: banders
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 43986ce57b8d320beeae748d3b848cf9ef38744d
-ms.sourcegitcommit: a19f4b35a0123256e76f2789cd5083921ac73daf
+ms.openlocfilehash: 2803f8d659726ac95bcefa6191a816ed2b2dcb2d
+ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71718730"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72375418"
 ---
 # <a name="understand-your-azure-external-services-charges"></a>Основная информация о расходах на внешние службы в Azure
 Внешние службы публикуются сторонними поставщиками программного обеспечения в Azure Marketplace. Например, SendGrid — это внешняя служба, которую можно приобрести в Azure, но которая не опубликована корпорацией Майкрософт. Некоторые продукты Майкрософт также продаются через Azure Marketplace.
 
 ## <a name="how-external-services-are-billed"></a>Как выставляются счета за внешние службы
 
-- Если у вас есть [Клиентское соглашение Майкрософт](#check-access), то ваши службы сторонних поставщиков будут оплачиваться вместе с остальными службами Azure.
-- Если у вас нет Клиентского соглашения Майкрософт, счета за внешние службы оплачиваются отдельно от служб Azure.
+- Если у вас есть Клиентское соглашение Майкрософт (MCA) или Соглашение с партнером Майкрософт (MPA), то ваши службы сторонних поставщиков будут оплачиваться вместе с остальными службами Azure. [Проверьте тип учетной записи выставления счетов](#check-billing-account-type), чтобы понять, есть ли у вас доступ к MCA или MPA.
+- Если у вас нет MCA или MPA, счета за внешние службы оплачиваются отдельно от служб Azure.
 - У каждой внешней службы своя модель выставления счетов. Некоторые службы оплачиваются по мере использования, в то время как для других установлена фиксированная ежемесячная оплата.
 - Для оплаты внешних служб невозможно использовать бесплатные кредитные средства. Если вы используете подписку Azure, которая включает в себя [бесплатные деньги на счете](https://azure.microsoft.com/pricing/spending-limits/), то ими невозможно оплачивать счета за внешние службы. При подготовке новой внешней службы или ресурса отображается предупреждение.
 
@@ -48,11 +48,11 @@ You can view a list of the external services that are on each subscription withi
 
     ![View external services billing history](./media/billing-understand-your-azure-marketplace-charges/billing-overview-blade.png) -->
 
-## <a name="view-and-download-invoices"></a>Просмотр и скачивание счетов
+## <a name="view-and-download-invoices-for-external-services"></a>Просмотр и скачивание счетов для внешних служб
 
-Если у вас есть [Клиентское соглашение Майкрософт](#check-access), ваши расходы на сторонних поставщиков будут включены в счет, вместе с расходами за Azure. Узнайте, как [просмотреть и скачать свой счет Azure](billing-download-azure-invoice.md) из портала Azure, чтобы узнать о ваших расходах на сторонних поставщиков.
+Если у вас есть Клиентское соглашение Майкрософт (MCA) или Соглашение с партнером Майкрософт (MPA), то ваши службы сторонних поставщиков будут оплачиваться вместе с остальными службами Azure. [Проверьте тип учетной записи выставления счетов](#check-billing-account-type), чтобы понять, есть ли у вас доступ к MCA или MPA. Ознакомьтесь, как [просмотреть и скачать счета на портале Azure](billing-download-azure-invoice.md), чтобы узнать о ваших расходах на сторонних поставщиков.
 
-Если у вас нет Клиентского соглашения Майкрософт, вы получите отдельный счет на оплату услуг сторонних поставщиков. Вы можете просмотреть и скачать счета для Azure Marketplace из портала Azure, выполнив следующие действия:
+Если у вас нет MCA или MPA, вы получите отдельный счет на оплату услуг сторонних поставщиков. Вы можете просмотреть и скачать счета для Azure Marketplace из портала Azure, выполнив следующие действия:
 
 1. Войдите на [портале Azure](https://portal.azure.com).
 1. Выполните поиск по фразе **Управление затратами + выставление счетов**.
@@ -108,8 +108,8 @@ You can view a list of the external services that are on each subscription withi
     ![Удаление ресурса](./media/billing-understand-your-azure-marketplace-charges/delete-resource.PNG)
 1. Нажмите кнопку **Delete**(Удалить).
 
-## <a name="check-access"></a>Проверка доступа
-[!INCLUDE [billing-check-mca](../../includes/billing-check-mca.md)]
+## <a name="check-billing-account-type"></a>Проверка типа учетной записи выставления счетов
+[!INCLUDE [billing-check-account-type](../../includes/billing-check-mca.md)]
 
 ## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 

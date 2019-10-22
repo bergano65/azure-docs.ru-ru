@@ -14,13 +14,13 @@ ms.tgt_pltfrm: cache
 ms.workload: tbd
 ms.date: 05/21/2018
 ms.author: yegu
-ms.custom: mvc, seo-javascript-september2019
-ms.openlocfilehash: f46a4771f1db5e4040cb23b1a9236c91699b6ad5
-ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
+ms.custom: mvc, seo-javascript-september2019, seo-javascript-october2019
+ms.openlocfilehash: bd31cf066b7844eeae02c24cb39ece686630b5ff
+ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71057865"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72329854"
 ---
 # <a name="quickstart-use-azure-cache-for-redis-with-nodejs"></a>Краткое руководство. Использование кэша Azure для Redis с Node.js
 
@@ -113,7 +113,7 @@ node redistest.js
 
 В приведенном ниже примере видно, что ключ `Message` ранее содержал кэшированное значение, установленное через консоль Redis на портале Azure. Приложение обновило кэшированное значение. Кроме того, оно выполнило команды `PING` и `CLIENT LIST`.
 
-![Готовое приложение с кэшем](./media/cache-nodejs-get-started/cache-app-complete.png)
+![Готовое приложение с кэшем Redis](./media/cache-nodejs-get-started/redis-cache-app-complete.png)
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -129,7 +129,7 @@ node redistest.js
 
 Введите имя группы ресурсов в текстовое поле **Фильтровать по имени**. В инструкциях в этой статье использовалась группа ресурсов с именем *TestResources*. В своей группе ресурсов в списке результатов выберите **...** , а затем **Удалить группу ресурсов**.
 
-![Удаление](./media/cache-nodejs-get-started/cache-delete-resource-group.png)
+![Удаление группы ресурсов Azure](./media/cache-nodejs-get-started/redis-cache-delete-resource-group.png)
 
 Подтвердите операцию удаления группы ресурсов. Введите имя группы ресурсов, которую необходимо удалить, и нажмите **Удалить**.
 

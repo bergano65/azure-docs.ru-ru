@@ -12,14 +12,14 @@ ms.devlang: csharp
 ms.topic: quickstart
 ms.tgt_pltfrm: ASP.NET Core
 ms.workload: tbd
-ms.date: 02/24/2019
+ms.date: 10/11/2019
 ms.author: yegu
-ms.openlocfilehash: a2764c8e634fd8d827cba9fa7ec9cb61cc6c40af
-ms.sourcegitcommit: f9e81b39693206b824e40d7657d0466246aadd6e
+ms.openlocfilehash: 4e08192788329e7a835ddb0b6b3f1aa01b2c73e1
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72035301"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72299934"
 ---
 # <a name="quickstart-create-an-aspnet-core-app-with-azure-app-configuration"></a>Краткое руководство. Создание приложения ASP.NET Core с помощью службы "Конфигурация приложений Azure"
 
@@ -53,7 +53,9 @@ ms.locfileid: "72035301"
 
 2. В новой папке выполните следующую команду, чтобы создать проект веб-приложения MVC для ASP.NET Core:
 
+    ```CLI
         dotnet new mvc --no-https
+    ```
 
 ## <a name="add-secret-manager"></a>Добавление диспетчера секретов
 
@@ -83,19 +85,23 @@ ms.locfileid: "72035301"
 
 1. Добавьте ссылку на пакет NuGet `Microsoft.Azure.AppConfiguration.AspNetCore`, выполнив следующую команду:
 
+    ```CLI
         dotnet add package Microsoft.Azure.AppConfiguration.AspNetCore --version 2.0.0-preview-010060003-1250
-
+    ```
 2. Выполните следующую команду, чтобы восстановить пакеты проекта:
 
+    ```CLI
         dotnet restore
-
+    ```
 3. Добавьте секрет с именем *ConnectionStrings:AppConfig* в диспетчер секретов.
 
     Этот секрет содержит строку подключения для получения доступа к хранилищу конфигураций приложений. Замените значение в следующей команде строкой подключения для вашего хранилища конфигураций приложений.
 
     Эта команда должна выполняться в том же каталоге, что и файл *CSPROJ*.
 
+    ```CLI
         dotnet user-secrets set ConnectionStrings:AppConfig <your_connection_string>
+    ```
 
     > [!IMPORTANT]
     > Некоторые оболочки усекают строки подключения, которые не заключены в кавычки. Убедитесь, что вывод команды `dotnet user-secrets` отображает полную строку подключения. В противном случае повторно выполните команду, заключив строку подключения в кавычки.
@@ -111,6 +117,11 @@ ms.locfileid: "72035301"
     ```
 
 5. Обновите метод `CreateWebHostBuilder`, чтобы использовать службу "Конфигурация приложений", путем вызова метода `config.AddAzureAppConfiguration()`.
+    
+    > [!IMPORTANT]
+    > `CreateHostBuilder` заменяет `CreateWebHostBuilder` в .NET Core 3.0.  Выберите правильный синтаксис в зависимости от среды.
+
+    ### <a name="update-createwebhostbuilder-for-net-core-2x"></a>Обновите `CreateWebHostBuilder` для .NET Core 2.x
 
     ```csharp
     public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
@@ -123,9 +134,23 @@ ms.locfileid: "72035301"
             .UseStartup<Startup>();
     ```
 
+    ### <a name="update-createhostbuilder-for-net-core-3x"></a>Обновите `CreateHostBuilder` для .NET Core 3.x
+
+    ```csharp
+    public static IHostBuilder CreateHostBuilder(string[] args) =>
+        Host.CreateDefaultBuilder(args)
+        .ConfigureWebHostDefaults(webBuilder =>
+        webBuilder.ConfigureAppConfiguration((hostingContext, config) =>
+        {
+            var settings = config.Build();
+            config.AddAzureAppConfiguration(settings["ConnectionStrings:AppConfig"]);
+        })
+        .UseStartup<Startup>());
+    ```
+
 6. Откройте файл *Index.cshtml* в каталоге "Представления > Главная" и замените его содержимое следующим кодом.
 
-    ```html
+    ```HTML
     @using Microsoft.Extensions.Configuration
     @inject IConfiguration Configuration
 
@@ -144,7 +169,7 @@ ms.locfileid: "72035301"
 
 7. Откройте файл *_Layout.cshtml* в каталоге "Представления > Общие" и замените его содержимое следующим кодом.
 
-    ```html
+    ```HTML
     <!DOCTYPE html>
     <html>
     <head>
@@ -173,11 +198,15 @@ ms.locfileid: "72035301"
 
 1. Чтобы создать приложение с помощью .NET Core CLI, выполните следующую команду в оболочке командной строки:
 
-        dotnet build
+    ```CLI
+       dotnet build
+    ```
 
 2. Когда создание завершится, запустите веб-приложение локально с помощью следующей команды:
 
+    ```CLI
         dotnet run
+    ```
 
 3. Откройте окно браузера и перейдите по адресу `http://localhost:5000`, который является URL-адресом по умолчанию для веб-приложения, размещенного локально.
 

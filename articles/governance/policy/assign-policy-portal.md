@@ -1,17 +1,17 @@
 ---
-title: Создание политики для несоответствующих требованиям ресурсов
+title: Создание политики для аудита ресурсов с помощью портала (Политика Azure)
 description: В этой статье рассматриваются действия, позволяющие создать определение политики для выявления ресурсов, не соответствующих требованиям.
 author: DCtheGeek
 ms.author: dacoulte
 ms.date: 12/06/2018
 ms.topic: quickstart
 ms.service: azure-policy
-ms.openlocfilehash: 5bbacb83e4275a513c53094c40508c3f13136658
-ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
+ms.openlocfilehash: 6433c5f90b56489e92ec76aab5c9a0d0c6aeb508
+ms.sourcegitcommit: 1c2659ab26619658799442a6e7604f3c66307a89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71981508"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72254824"
 ---
 # <a name="quickstart-create-a-policy-assignment-to-identify-non-compliant-resources"></a>Краткое руководство. Создание назначения политики для идентификации ресурсов, не соответствующих требованиям
 

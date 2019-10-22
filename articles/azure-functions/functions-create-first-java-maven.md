@@ -1,30 +1,28 @@
 ---
-title: Использование Java и Maven для публикации функции — Функции Azure
-description: Создание и публикация в Azure с Java и Maven простой функции, активируемой с помощью HTTP.
-services: functions
-documentationcenter: na
+title: Использование Java и Maven для публикации функции в Azure
+description: В этой статье описывается создание и публикация в Azure функции Java, активируемой с помощью HTTP-запросов, с помощью Maven.
 author: rloutlaw
-manager: justhe
-keywords: функции azure, функции, обработка событий, вычисления, независимая архитектура
+manager: gwallace
 ms.service: azure-functions
 ms.topic: quickstart
-ms.devlang: java
 ms.date: 08/10/2018
-ms.author: routlaw
-ms.reviewer: glenga
+ms.author: glenga
 ms.custom: mvc, devcenter, seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: 5447fdcfa86c35b7c5cf079ae8446c30785e893f
-ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
+ms.openlocfilehash: 5c51e445aaa27f3f83627ccf0da8fb80e01f156c
+ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71299399"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72329529"
 ---
-# <a name="quickstart-use-java-to-create-and-publish-a-function-to-azure-functions"></a>Краткое руководство. Создание и публикация функции в Функциях Azure с помощью Java
+# <a name="quickstart-use-java-and-maven-to-create-and-publish-a-function-to-azure"></a>Краткое руководство. Создание и публикация функции в Azure с помощью Java и Maven
 
-В этой статье показано, как создать и опубликовать функцию Java в службе "Функции Azure" с помощью средства командной строки Maven. После выполнения действий, описанных в этой статье, код функции будет выполняться в Azure в [Плане потребления](functions-scale.md#consumption-plan) и может запускаться с помощью HTTP-запроса.
+В этой статье описано, как создать и опубликовать функцию Java в службе "Функции Azure" с помощью средства командной строки Maven. После завершения этого руководства код функции будет выполняться в Azure в [бессерверном плане потребления](functions-scale.md#consumption-plan) с активацией по HTTP-запросу.
 
-[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
+<!--
+> [!NOTE] 
+> You can also create a Kotlin-based Azure Functions project by using the azure-functions-kotlin-archetype instead. Visit the [GitHub repository](https://github.com/microsoft/azure-maven-archetypes/tree/develop/azure-functions-kotlin-archetype) for more information.
+-->
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -32,8 +30,12 @@ ms.locfileid: "71299399"
 
 - [Java Developer Kit (JDK)](https://aka.ms/azure-jdks) версии 8.
 - [Apache Maven](https://maven.apache.org) 3.0 или более поздней версии.
-- [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure)
+- [Интерфейс командной строки Azure]
 - [Azure Functions Core Tools](./functions-run-local.md#v2) 2.6.666 или более поздней версии.
+- Подписка Azure.
+
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
+
 
 > [!IMPORTANT]
 > Переменной среде JAVA_HOME необходимо присвоить расположение установки JDK, чтобы завершить выполнение заданий этого краткого руководства.
@@ -67,170 +69,124 @@ mvn archetype:generate ^
     "-DarchetypeArtifactId=azure-functions-archetype"
 ```
 
-Maven запросит значения, необходимые для завершения создания проекта. Дополнительную информацию о значениях _groupId_, _artifactId_ и о _версии_ см. по ссылке [соглашения об именовании Maven](https://maven.apache.org/guides/mini/guide-naming-conventions.html). Значение _appName_ должно быть уникальным в Azure, поэтому Maven создает имя приложения на основе ранее заданного по умолчанию _artifactId_. Значение _ackageName_ определяет пакет Java для создаваемого кода функции.
+Maven запрашивает значения, которые позволят завершить создание проекта развертывания. Предоставьте следующие значения в ответ на соответствующие запросы:
 
-Идентификаторы `com.fabrikam.functions` и `fabrikam-functions` ниже используются в качестве примера и для понимания дальнейших шагов в этом кратком руководстве. Рекомендуется ввести собственные значения для Maven на этом шаге.
+| Значение | ОПИСАНИЕ |
+| ----- | ----------- |
+| **groupId** | Это значение уникально идентифицирует проект среди всех остальных. Оно должно соответствовать [правилам именования пакетов](https://docs.oracle.com/javase/specs/jls/se6/html/packages.html#7.7) для Java. В примерах, приведенных в этом кратком руководстве, используется `com.fabrikam.functions`. |
+| **artifactId** | Это значение содержит имя JAR-файла, без номера версии. В примерах, приведенных в этом кратком руководстве, используется `fabrikam-functions`. |
+| **version** | Выберите значение по умолчанию `1.0-SNAPSHOT`. |
+| **package** | Это значение определяет пакет Java для создаваемого кода функции. Используйте значение по умолчанию. В примерах, приведенных в этом кратком руководстве, используется `com.fabrikam.functions`. |
+| **appName** | Глобально уникальное имя для нового приложения-функции в Azure. Сохраните значение по умолчанию, которое составляется из значения _artifactId_ и случайного числа. Запишите это значение, так как оно потребуется позднее. |
+| **appRegion** | Выберите ближайший [регион](https://azure.microsoft.com/regions/) или регион рядом с другими службами, к которому получают доступ ваши функции. Значение по умолчанию — `westus`. Чтобы получить список всех регионов, выполните такую команду [Интерфейс командной строки Azure]:<br/>`az account list-locations --query '[].{Name:name}' -o tsv` |
+| **resourceGroup** | Имя для новой [группы ресурсов](../azure-resource-manager/resource-group-overview.md), в которой создается приложение-функция. Укажите значение `myResourceGroup`, которое используется в примерах, приведенных в этом кратком руководстве. Имя группы ресурсов должно быть уникальным в пределах подписки Azure.|
 
-```Output
-Define value for property 'groupId' (should match expression '[A-Za-z0-9_\-\.]+'): com.fabrikam.functions
-Define value for property 'artifactId' (should match expression '[A-Za-z0-9_\-\.]+'): fabrikam-functions
-Define value for property 'version' 1.0-SNAPSHOT : 
-Define value for property 'package': com.fabrikam.functions
-Define value for property 'appName' fabrikam-functions-20170927220323382:
-Define value for property 'appRegion' westus: :
-Define value for property 'resourceGroup' java-functions-group: :
-Confirm properties configuration: Y
-```
+Введите `Y` или нажмите клавишу ВВОД для подтверждения.
 
-Maven создает файлы проекта в новой папке с именем _artifactId_, в этом примере — `fabrikam-functions`. Созданный в проекте и готовый для запуска код — это функция [активации HTTP](/azure/azure-functions/functions-bindings-http-webhook), возвращающая текст запроса. Замените *src/main/java/com/fabrikam/functions/Function.java* следующим кодом: 
+Maven создаст файлы проекта в новой папке с именем _artifactId_, то есть `fabrikam-functions` в нашем примере. 
 
-```java
-package com.fabrikam.functions;
-
-import java.util.*;
-import com.microsoft.azure.functions.annotation.*;
-import com.microsoft.azure.functions.*;
-
-public class Function {
-    /**
-     * This function listens at endpoint "/api/HttpTrigger-Java". Two ways to invoke it using "curl" command in bash:
-     * 1. curl -d "HTTP Body" {your host}/api/HttpTrigger-Java
-     * 2. curl {your host}/api/HttpTrigger-Java?name=HTTP%20Query
-     */
-    @FunctionName("HttpTrigger-Java")
-    public HttpResponseMessage run(
-            @HttpTrigger(name = "req", methods = { HttpMethod.GET, HttpMethod.POST }, authLevel = AuthorizationLevel.FUNCTION) HttpRequestMessage<Optional<String>> request,
-            final ExecutionContext context) {
-        context.getLogger().info("Java HTTP trigger processed a request.");
-
-        // Parse query parameter
-        String query = request.getQueryParameters().get("name");
-        String name = request.getBody().orElse(query);
-
-        if (name == null) {
-            return request.createResponseBuilder(HttpStatus.BAD_REQUEST).body("Please pass a name on the query string or in the request body").build();
-        } else {
-            return request.createResponseBuilder(HttpStatus.OK).body("Hello, " + name).build();
-        }
-    }
-}
-
-```
-
-## <a name="enable-extension-bundles"></a>Включение пакетов расширений
-
-[!INCLUDE [functions-extension-bundles](../../includes/functions-extension-bundles.md)]
+Откройте в текстовом редакторе новый файл Function.java из папки *src/main/java* и изучите созданный код. Этот код содержит [активируемую по HTTP-запросу](functions-bindings-http-webhook.md) функцию, которая возвращает текст запроса. 
 
 ## <a name="run-the-function-locally"></a>Локальное выполнение функции
 
-Измените каталог на только что созданную папку проекта (в которой находятся файлы host.json и pom.xml), после чего создайте и запустите функцию с помощью Maven.
+Выполните следующую команду, которая назначает созданную папку проекта текущим каталогом, компилирует и запускает проект функции:
 
-```CMD
+```console
 cd fabrikam-function
 mvn clean package 
 mvn azure-functions:run
 ```
 
-> [!NOTE]
-> При возникновении исключения `javax.xml.bind.JAXBException` с Java 9 инструкции по его устранению см. на [GitHub](https://github.com/jOOQ/jOOQ/issues/6477).
-
-Вы увидите эти выходные данные, если функция выполняется локально на компьютере и готова отвечать на запросы HTTP:
+При локальном выполнении проекта вы увидите следующие выходные данные Azure Functions Core Tools:
 
 ```Output
-Listening on http://localhost:7071
-Hit CTRL-C to exit...
+...
+
+Now listening on: http://0.0.0.0:7071
+Application started. Press Ctrl+C to shut down.
 
 Http Functions:
 
-   hello: http://localhost:7071/api/HttpTrigger-Java
+    HttpTrigger-Java: [GET,POST] http://localhost:7071/api/HttpTrigger-Java
+...
 ```
 
-Вызовите функцию из командной строки, используя curl в новом окне терминала:
+Вызовите функцию из командной строки, запустив cURL в новом окне терминала:
 
 ```CMD
-curl -w "\n" http://localhost:7071/api/HttpTrigger-Java -d LocalFunction
-```
-
-```Output
-Hello LocalFunction!
-```
-
-Используйте `Ctrl-C` в терминале, чтобы остановить код функции.
-
-## <a name="deploy-the-function-to-azure"></a>Развертывание функции для Azure
-
-В процессе развертывания для Функций Azure используются данные учетной записи из Azure CLI. Прежде чем продолжить, [войдите с помощью Azure CLI](/cli/azure/authenticate-azure-cli?view=azure-cli-latest).
-
-```azurecli
-az login
-```
-
-Разверните свой код в новом приложении-функции, используя целевой объект Maven `azure-functions:deploy`. При этом включается режим [Развертывание ZIP-файлов с запуском из пакета](functions-deployment-technologies.md#zip-deploy).
-
-> [!NOTE]
-> При использовании Visual Studio Code для развертывания приложения-функции необходимо выбрать платную подписку, иначе появится сообщение об ошибке. Подписка отображается в левой области интегрированной среды разработки.
-
-```azurecli
-mvn azure-functions:deploy
-```
-
-После завершения развертывания появится URL-адрес, который можно использовать для доступа к приложению-функции Azure:
-
-```output
-[INFO] Successfully deployed Function App with package.
-[INFO] Deleting deployment package from Azure Storage...
-[INFO] Successfully deleted deployment package fabrikam-function-20170920120101928.20170920143621915.zip
-[INFO] Successfully deployed Function App at https://fabrikam-function-20170920120101928.azurewebsites.net
-[INFO] ------------------------------------------------------------------------
-```
-
-Проверьте приложение-функцию, работающее в Azure, используя `cURL`. Необходимо изменить URL-адрес из примера ниже, чтобы он соответствовал развернутому URL-адресу приложения-функции из предыдущего шага.
-
-> [!NOTE]
-> Убедитесь, что **права доступа** настроены на `Anonymous`. Когда вы выбираете уровень по умолчанию `Function`, вы должны указывать [функциональную клавишу](../azure-functions/functions-bindings-http-webhook.md#authorization-keys) в запросах на доступ к конечной точке вашей функции.
-
-```azurecli
-curl -w "\n" https://fabrikam-function-20170920120101928.azurewebsites.net/api/HttpTrigger-Java -d AzureFunctions
+curl -w "\n" http://localhost:7071/api/HttpTrigger-Java --data AzureFunctions
 ```
 
 ```Output
 Hello AzureFunctions!
 ```
+[Ключ функции](functions-bindings-http-webhook.md#authorization-keys) при локальном выполнении не требуется. Используйте `Ctrl+C` в терминале, чтобы остановить код функции.
 
-## <a name="make-changes-and-redeploy"></a>Внесение изменений и повторное развертывание
+## <a name="deploy-the-function-to-azure"></a>Развертывание функции для Azure
 
-Измените исходный файл `src/main.../Function.java` в созданном проекте, чтобы изменить текст, возвращаемый приложением-функцией. Измените эту строку:
+Приложение-функция и связанные ресурсы создаются в Azure при первом развертывании приложения-функции. Перед развертыванием выполните команду [az login](/cli/azure/authenticate-azure-cli) в Azure CLI, чтобы войти в подписку Azure. 
 
-```java
-return request.createResponseBuilder(HttpStatus.OK).body("Hello, " + name).build();
+```azurecli
+az login
 ```
 
-Вместо нее укажите следующую:
+> [!TIP]
+> Если ваша учетная запись имеет доступ к нескольким подпискам, задайте подписку по умолчанию для текущего сеанса с помощью команды [az account set](/cli/azure/account#az-account-set). 
 
-```java
-return request.createResponseBuilder(HttpStatus.OK).body("Hi, " + name).build();
+Используйте следующую команду Maven, чтобы развернуть проект в виде нового приложения-функции. 
+
+```azurecli
+mvn azure-functions:deploy
 ```
 
-Сохраните изменения. Выполните команду mvn clean package и повторное развертывание, запустив `azure-functions:deploy` в окне терминала, как и в прошлый раз. Приложение-функция и этот запрос обновятся:
+Этот целевой объект Maven `azure-functions:deploy` создает в Azure такие ресурсы:
 
-```bash
-curl -w '\n' -d AzureFunctionsTest https://fabrikam-functions-20170920120101928.azurewebsites.net/api/HttpTrigger-Java
++ группа ресурсов; Ей присваивается имя, которое вы указали в параметре _resourceGroup_.
++ учетная запись хранения; Требуется для Функций Azure. Это имя создается случайным образом на основе требований к именованию учетных записей хранения.
++ План Службы приложений. Бессерверное размещение для приложения-функции в регионе, который указан в параметре _appRegion_. Это имя создается случайным образом.
++ Приложение-функция. Приложение-функция представляет собой минимальную единицу развертывания и выполнения для ваших функций. Ему присваивается имя из параметра _appName_, к которому добавляется случайное число. 
+
+Развертывание также упаковывает файлы проекта и развертывает их в новом приложении-функции [из ZIP-файла](functions-deployment-technologies.md#zip-deploy) с включенным режимом выполнения из пакета.
+
+После завершения развертывания вы увидите URL-адрес, который можно использовать для доступа к конечным точкам приложения-функции. Так как опубликованный нами триггер HTTP использует `authLevel = AuthorizationLevel.FUNCTION`, вам нужно получить ключ функции для вызова конечной точки функции по протоколу HTTP. Ключ функции проще всего получить на [портал Azure].
+
+## <a name="get-the-http-trigger-url"></a>Получение URL-адреса триггера HTTP
+
+<!--- We can updates this to remove portal dependency after the Maven archetype returns the full URLs with keys on publish (https://github.com/microsoft/azure-maven-plugins/issues/571). -->
+
+Вы можете получить URL-адрес для активации функции (вместе с ключом функции) на портале Azure. 
+
+1. Перейдите на [портал Azure], войдите в систему, введите _имя приложения-функции_ в поле **Поиск** в верхней части страницы и нажмите клавишу ВВОД.
+ 
+1. В приложении-функции разверните **Функции (только для чтения)** , выберите созданную функцию и нажмите  **</> Получить URL-адрес функции** в правом верхнем углу. 
+
+    ![Копирование URL-адреса функции с портала Azure](./media/functions-create-java-maven/get-function-url-portal.png)
+
+1. Выберите вариант **по умолчанию (функциональная клавиша)** и нажмите **Копировать**. 
+
+Теперь скопированный URL-адрес можно использовать для доступа к функции.
+
+## <a name="verify-the-function-in-azure"></a>Проверка функции в Azure
+
+Чтобы проверить работу приложения-функции в Azure с помощью `cURL`, замените URL из приведенного ниже примера реальным URL-адресом, который вы скопировали с портала.
+
+```azurecli
+curl -w "\n" https://fabrikam-functions-20190929094703749.azurewebsites.net/api/HttpTrigger-Java?code=zYRohsTwBlZ68YF.... --data AzureFunctions
 ```
 
-Появятся обновленные выходные данные:
+Это действие отправляет запрос POST в конечную точку функции с добавлением `AzureFunctions` в текст запроса. Вы увидите следующий ответ:
 
 ```Output
-Hi, AzureFunctionsTest
+Hello AzureFunctions!
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Вы создали функцию-приложение Java с помощью простого триггера HTTP и развернули его в Функциях Azure.
+Итак, вы создали проект с функцией Java, активируемой по HTTP-запросу, запустили ее на своем локальном компьютере и развернули в Azure. Теперь расширьте свою функцию путем...
 
-- Дополнительные сведения о разработке функции Java см. в статье [Azure Functions Java developer guide](functions-reference-java.md) (Руководство разработчика Java для Функций Azure).
-- Добавьте в проект дополнительные функции с помощью различных триггеров целевого объекта Maven`azure-functions:add`.
-- Создавайте и отлаживайте функции локально с помощью [Visual Studio Code](https://code.visualstudio.com/docs/java/java-azurefunctions), [IntelliJ](functions-create-maven-intellij.md) и [Eclipse](functions-create-maven-eclipse.md). 
-- Отлаживайте функции, развернутые в Azure, с помощью Visual Studio Code. Инструкции см. в документации Visual Studio Code по [бессерверным приложениям Java](https://code.visualstudio.com/docs/java/java-serverless#_remote-debug-functions-running-in-the-cloud).
+> [!div class="nextstepaction"]
+> [Добавления выходной привязки очереди службы хранилища Azure](functions-add-output-binding-storage-queue-java.md)
 
-> [!NOTE] 
-> Вы также можете создать проект Функций Azure на основе Kotlin, используя azure-functions-kotlin-archetype. Дополнительные сведения см. в [этом репозитории](https://github.com/microsoft/azure-maven-archetypes/tree/develop/azure-functions-kotlin-archetype) на сайте GitHub.
+
+[Интерфейс командной строки Azure]: /cli/azure
+[портал Azure]: https://portal.azure.com

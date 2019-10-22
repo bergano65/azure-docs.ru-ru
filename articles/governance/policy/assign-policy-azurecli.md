@@ -1,17 +1,17 @@
 ---
-title: Создание политики для несоответствующих требованиям ресурсов с помощью Azure CLI
+title: Создание политики для аудита ресурсов с помощью Azure CLI
 description: Создание назначения в службе "Политика Azure", позволяющего определить ресурсы, которые не соответствуют требованиям, с помощью Azure CLI.
 author: DCtheGeek
 ms.author: dacoulte
 ms.date: 01/23/2019
 ms.topic: quickstart
 ms.service: azure-policy
-ms.openlocfilehash: 06b35bc9a0222247df5b4ab5c513df504cd45cac
-ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
+ms.openlocfilehash: a7e65e304039c266f92f8068b796323197058cc1
+ms.sourcegitcommit: 1c2659ab26619658799442a6e7604f3c66307a89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71980859"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72255944"
 ---
 # <a name="quickstart-create-a-policy-assignment-to-identify-non-compliant-resources-with-azure-cli"></a>Краткое руководство. Создание назначения политики для идентификации ресурсов, не соответствующих требованиям, с помощью Azure CLI
 

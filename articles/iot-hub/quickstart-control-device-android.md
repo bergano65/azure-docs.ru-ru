@@ -10,18 +10,18 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 06/21/2019
 ms.author: wesmc
-ms.openlocfilehash: d125328d903b419aa81c54ffecf1f549d4cb4fe2
-ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
+ms.openlocfilehash: d607608167e1287c7df35157ccb9870f40f22943
+ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2019
-ms.locfileid: "67330784"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72516709"
 ---
 # <a name="quickstart-control-a-device-connected-to-an-iot-hub-android"></a>Краткое руководство. Управление подключенным к Центру Интернета вещей устройством Android
 
 [!INCLUDE [iot-hub-quickstarts-2-selector](../../includes/iot-hub-quickstarts-2-selector.md)]
 
-Центр Интернета вещей — это служба Azure, которая позволяет получать большие объемы данных телеметрии с устройств Центра Интернета вещей в облаке и управлять устройствами из облака. В этом кратком руководстве управление имитированным устройством, подключенным к Центру Интернета вещей, осуществляется с помощью *прямого метода*. Этот метод позволяет удаленно изменить поведение подключенного к Центру Интернета вещей устройства.
+Центр Интернета вещей — это служба Azure, которая позволяет управлять устройствами Интернета вещей из облака и принимать большие объемы телеметрии с устройств в облако для хранения или обработки. В этом кратком руководстве управление имитированным устройством, подключенным к Центру Интернета вещей, осуществляется с помощью *прямого метода*. Этот метод позволяет удаленно изменить поведение подключенного к Центру Интернета вещей устройства.
 
 В этом кратком руководстве используется два предварительно созданных приложения Java:
 
@@ -63,11 +63,11 @@ ms.locfileid: "67330784"
 
    **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
 
-   **MyAndroidDevice**. Это значение содержит имя, присвоенное зарегистрированному устройству. Используйте имя MyAndroidDevice, как показано ниже. Если вы выбрали другое имя для устройства, используйте его при работе с этим руководством и обновите имя устройства в примерах приложений перед их запуском.
+   **MyAndroidDevice**. Это имя регистрируемого устройства. Рекомендуется использовать **MyAndroidDevice**, как показано ниже. Если вы выбрали другое имя для устройства, используйте его при работе с этим руководством и обновите имя устройства в примерах приложений перед их запуском.
 
     ```azurecli-interactive
     az iot hub device-identity create \
-      --hub-name YourIoTHubName --device-id MyAndroidDevice
+      --hub-name {YourIoTHubName} --device-id MyAndroidDevice
     ```
 
 2. Выполните следующую команду в Azure Cloud Shell, чтобы получить _строку подключения_ зарегистрированного устройства:
@@ -76,7 +76,7 @@ ms.locfileid: "67330784"
 
     ```azurecli-interactive
     az iot hub device-identity show-connection-string \
-      --hub-name YourIoTHubName \
+      --hub-name {YourIoTHubName} \
       --device-id MyAndroidDevice \
       --output table
     ```
@@ -94,14 +94,14 @@ ms.locfileid: "67330784"
 **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
 
 ```azurecli-interactive
-az iot hub show-connection-string --name YourIoTHubName --policy-name service --output table
+az iot hub show-connection-string --policy-name service --name {YourIoTHubName} --output table
 ```
 
 Запишите строку подключения к службе, которая выглядит так:
 
 `HostName={YourIoTHubName}.azure-devices.net;SharedAccessKeyName=service;SharedAccessKey={YourSharedAccessKey}`
 
-Это значение понадобится позже в рамках этого краткого руководства. Строка подключения к службе отличается от строки подключения к устройству.
+Это значение понадобится позже в рамках этого краткого руководства. Строка подключения к службе отличается от строки подключения к устройству из предыдущего шага.
 
 ## <a name="listen-for-direct-method-calls"></a>Ожидание передачи данных при вызове прямого метода
 
@@ -111,7 +111,7 @@ az iot hub show-connection-string --name YourIoTHubName --policy-name service --
 
         \azure-iot-samples-java\iot-hub\Samples\device\AndroidSample
 
-2. В Android Studio откройте *gradle.properties* для примера проекта и замените заполнитель **Device_Connection_String** строкой подключения к устройству, которую вы записали ранее.
+2. В Android Studio откройте *gradle.properties* для примера проекта и замените заполнитель **Device_Connection_String** строкой подключения устройства, которую вы записали ранее.
 
     ```
     DeviceConnectionString=HostName={YourIoTHubName}.azure-devices.net;DeviceId=MyAndroidDevice;SharedAccessKey={YourSharedAccessKey}
@@ -142,14 +142,14 @@ az iot hub show-connection-string --name YourIoTHubName --policy-name service --
    **YourIoTHubName**. Замените этот заполнитель именем вашего Центра Интернета вещей.
 
     ```azurecli-interactive
-    az iot hub monitor-events --hub-name YourIoTHubName --output table
+    az iot hub monitor-events --hub-name {YourIoTHubName} --output table
     ```
 
     На следующем снимке экрана показан пример выходных данных, когда центр Интернета вещей получает данные телеметрии, отправленные устройством Android:
 
       ![Чтение сообщений устройства с помощью Azure CLI](media/quickstart-control-device-android/read-data.png)
 
-По умолчанию приложение телеметрии отправляет данные телеметрии с устройства Android каждые 5 секунд. В рамках следующего раздела вы вызовете прямой метод, чтобы изменить интервал телеметрии для устройства Android, подключенного к Интернету вещей.
+По умолчанию приложение телеметрии отправляет данные телеметрии с устройства Android каждые пять секунд. В рамках следующего раздела вы вызовете прямой метод, чтобы изменить интервал телеметрии для устройства Android, подключенного к Интернету вещей.
 
 ## <a name="call-the-direct-method"></a>Вызов прямого метода
 
@@ -157,13 +157,13 @@ az iot hub show-connection-string --name YourIoTHubName --policy-name service --
 
 Запустите это приложение на отдельном физическом устройстве Android или в эмуляторе Android.
 
-Внутреннее приложение-служба Центра Интернета вещей обычно выполняется в облаке. Это позволяет сократить риски, связанные с конфиденциальными данными строки подключения, которая используется для управлениям всеми устройствами в Центре Интернета вещей. В этом примере в качестве такого приложения мы используем приложение Android (только для демонстрации). В других языковых версиях этого руководства предоставляются другие примеры, которые больше соответствуют внутреннему приложению-службе.
+Внутреннее приложение-служба Центра Интернета вещей обычно выполняется в облаке. Это позволяет сократить риски, связанные с конфиденциальными данными строки подключения, которая используется для управлениям всеми устройствами в Центре Интернета вещей. В этом примере в качестве такого приложения мы используем приложение Android (только для демонстрации). В других языковых версиях этого краткого руководства предоставляются примеры, которые больше соответствуют обычному внутреннему приложению-службе.
 
 1. В Android Studio откройте пример проекта Android со службой, полученный из GitHub. Проект находится в указанном ниже каталоге копии клонированного или скачанного репозитория [azure-iot-sample-java](https://github.com/Azure-Samples/azure-iot-samples-java).
 
         \azure-iot-samples-java\iot-hub\Samples\service\AndroidSample
 
-2. В Android Studio откройте *gradle.properties* для примера проекта и замените значение свойства **ConnectionString** записанной ранее строкой подключения к службе, а значение свойства **DeviceId** идентификатором зарегистрированного устройства Android.
+2. В Android Studio откройте файл *gradle.properties* для примера проекта. Замените значение свойства **ConnectionString** записанной ранее строкой подключения к службе, а значение свойства **DeviceId** идентификатором зарегистрированного устройства Android.
 
     ```
     ConnectionString=HostName={YourIoTHubName}.azure-devices.net;SharedAccessKeyName=service;SharedAccessKey={YourSharedAccessKey}

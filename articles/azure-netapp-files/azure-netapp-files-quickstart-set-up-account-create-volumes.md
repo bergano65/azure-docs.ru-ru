@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: quickstart
-ms.date: 9/11/2019
+ms.date: 10/12/2019
 ms.author: b-juche
-ms.openlocfilehash: d7bc07ddce605838cf7aa966c6c94b85dad6b58c
-ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
+ms.openlocfilehash: d3035572e629bc11207cc473b51e3edb4f6a5a13
+ms.sourcegitcommit: bd4198a3f2a028f0ce0a63e5f479242f6a98cc04
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71212215"
+ms.lasthandoff: 10/14/2019
+ms.locfileid: "72302831"
 ---
 # <a name="quickstart-set-up-azure-netapp-files-and-create-an-nfs-volume"></a>Краткое руководство. Настройка Azure NetApp Files и создание тома NFS 
 
@@ -242,7 +242,7 @@ ms.locfileid: "71212215"
        * Введите имя виртуальной сети **myvnet1**.
        * Укажите диапазон адресов для параметра, например 10.7.0.0/16.
        * Введите имя подсети **myANFsubnet**.
-       * Укажите диапазон адресов подсети, например 10.7.0.0/24. Обратите внимание на то, что невозможно использовать выделенную подсеть совместно с другими ресурсами.
+       * Укажите диапазон адресов подсети, например 10.7.0.0/24. Невозможно использовать выделенную подсеть совместно с другими ресурсами.
        * Для делегирования подсети выберите **Microsoft.NetApp/volumes**.
        * Нажмите кнопку **ОК**, чтобы создать виртуальную сеть.
    5. В разделе "Подсеть" выберите созданную виртуальную сеть (**myvnet1**) в качестве делегируемой подсети.
@@ -251,11 +251,16 @@ ms.locfileid: "71212215"
 
       ![Окно создания виртуальной сети](../media/azure-netapp-files/azure-netapp-files-create-virtual-network-window.png)  
 
-4. Нажмите кнопку **Протокол**, а затем для типа протокола тома выберите **NFS**.   
+4. Щелкните **Протокол**, а затем выполните приведенные ниже действия. 
+    * Выберите **NFS** в качестве типа протокола тома.  
+    * Укажите путь к файлу (**myfilepath1**), который будет использоваться для создания пути экспорта для этого тома.  
+    * Выберите версию NFS (**NFSv3** или **NFSv4.1**) для тома.  
+      Сведения о версиях NFS см. в разделах [Сonsiderations](azure-netapp-files-create-volumes.md#considerations) (Рекомендации) и [Best practice](azure-netapp-files-create-volumes.md#best-practice) (Лучшая методика). 
+      
+> [!IMPORTANT] 
+> Для доступа к функции NFS версии 4.1 требуется внесение в список разрешений.  Чтобы запросить внесение в список разрешений, отправьте запрос по адресу <anffeedback@microsoft.com>. 
 
-    Укажите путь к файлу (**myfilepath1**), который будет использоваться для создания пути экспорта для этого тома. 
-
-    ![Чтобы сразу же начать работу, выберите протокол NFS](../media/azure-netapp-files/azure-netapp-files-quickstart-protocol-nfs.png)
+  ![Чтобы сразу же начать работу, выберите протокол NFS](../media/azure-netapp-files/azure-netapp-files-quickstart-protocol-nfs.png)
 
 5. Щелкните **Review + create** (Просмотреть и создать).
 

@@ -1,18 +1,18 @@
 ---
-title: Интерфейсы управления для различных клиентов с Azure Lighthouse
+title: Интерфейсы управления для различных клиентов
 description: Делегированное управление ресурсами Azure предоставляет интерфейсы управления для различных клиентов.
 author: JnHs
 ms.service: lighthouse
 ms.author: jenhayes
-ms.date: 09/25/2019
+ms.date: 10/11/2019
 ms.topic: overview
 manager: carmonm
-ms.openlocfilehash: 17a32d50e2e0330218ff51b849cb4f3aeadb3d13
-ms.sourcegitcommit: 0486aba120c284157dfebbdaf6e23e038c8a5a15
+ms.openlocfilehash: 0c6fed9cd83f18df0fe0a77d57a76c60cd570c21
+ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71309654"
+ms.lasthandoff: 10/13/2019
+ms.locfileid: "72301000"
 ---
 # <a name="cross-tenant-management-experiences"></a>Интерфейсы управления для различных клиентов
 
@@ -58,6 +58,7 @@ ms.locfileid: "71309654"
 - Просмотр оповещений для делегированных подписок на портале Azure или программным способом через вызовы REST API с возможностью просмотра оповещений во всех подписках.
 - Просмотр сведений журнала действий для делегированных подписок.
 - Анализ журналов: запрос данных из удаленных рабочих областей для клиентов в нескольких клиентах.
+- Создание оповещений в арендаторах клиентов, которые инициируют автоматизацию (например, Runbook службы автоматизации Azure или Функции Azure) в арендаторе поставщика службы через веб-перехватчики.
 
 [Политика Azure](https://docs.microsoft.com/azure/governance/policy/).
 
@@ -65,7 +66,7 @@ ms.locfileid: "71309654"
 - Создание и изменение определений политики в делегированной подписке.
 - Назначение пользовательских определений политики в делегированной подписке.
 - Клиенты видят политики, созданные поставщиком услуг, наряду с политиками, которые они создали сами.
-- Возможность исправить назначения deployIfNotExists в пользовательских клиентах, если пользователь настроил управляемые удостоверения и свойство *roleDefinitionIds* для этого назначения политики.
+- Может [исправлять ошибки deployIfNotExists или изменят назначения в арендаторе клиента](../how-to/deploy-policy-remediation.md).
 
 [Azure Resource Graph](https://docs.microsoft.com/azure/governance/resource-graph/).
 

@@ -10,18 +10,18 @@ ms.devlang: nodejs
 ms.topic: quickstart
 ms.custom: mvc, seo-javascript-september2019
 ms.date: 06/21/2019
-ms.openlocfilehash: 107b3401d23ea853a16722544385d72432cff308
-ms.sourcegitcommit: 15e3bfbde9d0d7ad00b5d186867ec933c60cebe6
+ms.openlocfilehash: db049064c35fbe6b940d39f97decc0281983cc0f
+ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71841322"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72515067"
 ---
 # <a name="quickstart-use-nodejs-to-control-a-device-connected-to-an-azure-iot-hub"></a>Краткое руководство. Управление подключенным к центру Интернета вещей устройством с использованием Node.js
 
 [!INCLUDE [iot-hub-quickstarts-2-selector](../../includes/iot-hub-quickstarts-2-selector.md)]
 
-Центр Интернета вещей — это служба Azure, которая позволяет получать большие объемы данных телеметрии с устройств Центра Интернета вещей в облаке и управлять устройствами из облака. В этом кратком руководстве управление имитированным устройством, подключенным к Центру Интернета вещей, осуществляется с помощью *прямого метода*. Этот метод позволяет удаленно изменить поведение подключенного к Центру Интернета вещей устройства.
+Центр Интернета вещей — это служба Azure, которая позволяет управлять устройствами Интернета вещей из облака и принимать большие объемы телеметрии с устройств в облако для хранения или обработки. В этом кратком руководстве управление имитированным устройством, подключенным к Центру Интернета вещей, осуществляется с помощью *прямого метода*. Этот метод позволяет удаленно изменить поведение подключенного к Центру Интернета вещей устройства.
 
 В этом кратком руководстве используется два предварительно созданных приложения Node.js:
 
@@ -69,11 +69,11 @@ az extension add --name azure-cli-iot-ext
 
    **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
 
-   **MyNodeDevice**. Имя регистрируемого устройства. Используйте **MyNodeDevice**, как показано ниже. Если вы выбрали другое имя для устройства, используйте его при работе с этим руководством и обновите имя устройства в примерах приложений перед их запуском.
+   **MyNodeDevice**. Это имя регистрируемого устройства. Рекомендуется использовать **MyNodeDevice**, как показано ниже. Если вы выбрали другое имя для устройства, используйте его при работе с этим руководством и обновите имя устройства в примерах приложений перед их запуском.
 
     ```azurecli-interactive
     az iot hub device-identity create \
-      --hub-name YourIoTHubName --device-id MyNodeDevice
+      --hub-name {YourIoTHubName} --device-id MyNodeDevice
     ```
 
 2. Выполните следующую команду в Azure Cloud Shell, чтобы получить _строку подключения_ зарегистрированного устройства:
@@ -82,7 +82,7 @@ az extension add --name azure-cli-iot-ext
 
     ```azurecli-interactive
     az iot hub device-identity show-connection-string \
-      --hub-name YourIoTHubName \
+      --hub-name {YourIoTHubName} \
       --device-id MyNodeDevice \
       --output table
     ```
@@ -99,14 +99,15 @@ az extension add --name azure-cli-iot-ext
 
     ```azurecli-interactive
     az iot hub show-connection-string \
-      --name YourIoTHubName --policy-name service --output table
+      --policy-name service --name {YourIoTHubName} --output table
+
     ```
 
     Запишите строку подключения к службе, которая выглядит так:
 
    `HostName={YourIoTHubName}.azure-devices.net;SharedAccessKeyName=service;SharedAccessKey={YourSharedAccessKey}`
 
-    Это значение понадобится позже в рамках этого краткого руководства. Строка подключения к службе отличается от строки подключения к устройству.
+    Это значение понадобится позже в рамках этого краткого руководства. Строка подключения к службе отличается от строки подключения к устройству из предыдущего шага.
 
 ## <a name="listen-for-direct-method-calls"></a>Ожидание передачи данных при вызове прямого метода
 

@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 03/14/2019
 ms.author: robinsh
-ms.openlocfilehash: ab6c381e779ddc19211f183b9bc80e586f58e804
-ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
+ms.openlocfilehash: 90fb3fe732889f3ba3965210cd8a681a0487f78e
+ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71261407"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72514991"
 ---
 # <a name="quickstart-enable-ssh-and-rdp-over-an-iot-hub-device-stream-by-using-a-c-proxy-application-preview"></a>Краткое руководство. Подключение по протоколу SSH и RDP через поток устройств центра Интернета вещей с помощью прокси-приложения C# (предварительная версия)
 
@@ -54,7 +54,7 @@ ms.locfileid: "71261407"
   * Центральный регион США
   * Центральная часть США (EUAP)
 
-* Два примера приложений, запускаемые в рамках этого краткого руководства, написаны на языке C#. На компьютере, на котором ведется разработка, необходимо установить пакет SDK для .NET Core версии 2.1.0 или более поздней.
+* Два примера приложений, запускаемые в рамках этого краткого руководства, написаны на языке C#. На компьютере, на котором ведется разработка, необходимо установить пакет SDK для .NET Core версии 2.1.0 или более поздней.
 
   Пакет SDK для .NET Core, предназначенный для нескольких платформ, можно скачать из [раздела, посвященного .NET](https://www.microsoft.com/net/download/all).
 
@@ -86,10 +86,10 @@ ms.locfileid: "71261407"
 
    > [!NOTE]
    > * Замените заполнитель *YourIoTHubName* именем созданного центра Интернета вещей.
-   > * Используйте имя *MyDevice*, как показано в примере. Это имя, присвоенное зарегистрированному устройству. Если вы выбрали другое имя для устройства, используйте его при работе с этой статьей и обновите имя устройства в примерах приложений перед их запуском.
+   > * Для имени регистрируемого устройства рекомендуется использовать имя *MyDevice*, как показано в примере. Если вы выбрали другое имя для устройства, используйте его при работе с этой статьей и обновите имя устройства в примерах приложений перед их запуском.
 
     ```azurecli-interactive
-    az iot hub device-identity create --hub-name YourIoTHubName --device-id MyDevice
+    az iot hub device-identity create --hub-name {YourIoTHubName} --device-id MyDevice
     ```
 
 1. Выполните следующие команды в Cloud Shell, чтобы получить *строку подключения* зарегистрированного устройства.
@@ -98,10 +98,10 @@ ms.locfileid: "71261407"
    > Замените заполнитель *YourIoTHubName* именем созданного центра Интернета вещей.
 
     ```azurecli-interactive
-    az iot hub device-identity show-connection-string --hub-name YourIoTHubName --device-id MyDevice --output table
+    az iot hub device-identity show-connection-string --hub-name {YourIoTHubName} --device-id MyDevice --output table
     ```
 
-    Запишите строку подключения устройства для последующего использования в этом кратком руководстве. Это должно выглядеть следующим образом:
+    Запишите возвращенную строку подключения к устройству для последующего использования в этом кратком руководстве. Это должно выглядеть следующим образом:
 
    `HostName={YourIoTHubName}.azure-devices.net;DeviceId=MyDevice;SharedAccessKey={YourSharedAccessKey}`
 
@@ -111,10 +111,10 @@ ms.locfileid: "71261407"
    > Замените заполнитель *YourIoTHubName* именем созданного центра Интернета вещей.
 
     ```azurecli-interactive
-    az iot hub show-connection-string --policy-name service --name YourIoTHubName
+    az iot hub show-connection-string --policy-name service --name {YourIoTHubName} --output table
     ```
 
-    Запишите возвращаемое значение. Оно вам понадобится для последующего использования в этом кратком руководстве. Это должно выглядеть следующим образом:
+    Запишите возвращенную строку подключения к службе для последующего использования в этом кратком руководстве. Это должно выглядеть следующим образом:
 
    `"HostName={YourIoTHubName}.azure-devices.net;SharedAccessKeyName=service;SharedAccessKey={YourSharedAccessKey}"`
 
@@ -124,15 +124,15 @@ ms.locfileid: "71261407"
 
 ### <a name="run-the-device-local-proxy-application"></a>Запуск приложения локального прокси-сервера устройства
 
-Перейдите к каталогу *device-streams-proxy/device* в распакованном проекте. Держите следующие сведения под рукой:
+В окне терминала на локальном компьютере перейдите к каталогу `device-streams-proxy/device` в распакованной папке проекта. Держите следующие сведения под рукой:
 
 | Имя аргумента | Значение аргумента |
 |----------------|-----------------|
-| `deviceConnectionString` | Строка подключения созданного ранее устройства. |
+| `DeviceConnectionString` | Строка подключения к устройству, созданная ранее. |
 | `targetServiceHostName` | IP-адрес, который прослушивается сервером SSH. Адрес был бы `localhost`, если бы это был тот же IP-адрес, на котором работает приложение локального прокси-сервера устройства. |
 | `targetServicePort` | Порт, используемый протоколом приложения (для SSH по умолчанию это будет порт 22).  |
 
-Скомпилируйте и запустите код, как показано:
+Выполните компиляцию и запуск кода с помощью следующих команд:
 
 ```
 cd ./iot-hub/Quickstarts/device-streams-proxy/device/
@@ -142,23 +142,23 @@ dotnet build
 
 # Run the application
 # In Linux or macOS
-dotnet run $deviceConnectionString localhost 22
+dotnet run ${DeviceConnectionString} localhost 22
 
 # In Windows
-dotnet run %deviceConnectionString% localhost 22
+dotnet run {DeviceConnectionString} localhost 22
 ```
 
 ### <a name="run-the-service-local-proxy-application"></a>Запуск приложения локального прокси-сервера службы
 
-Перейдите к `device-streams-proxy/service` в распакованной папке проекта. Вам понадобятся следующие сведения.
+В другом окне терминала на локальном компьютере перейдите к `device-streams-proxy/service` в распакованной папке проекта. Держите следующие сведения под рукой:
 
 | Имя параметра | Значение параметра |
 |----------------|-----------------|
-| `iotHubConnectionString` | Строка подключения к службе Центра Интернета вещей. |
-| `deviceId` | Идентификатор устройства, созданного ранее. |
+| `ServiceConnectionString` | Строка подключения к службе Центра Интернета вещей. |
+| `MyDevice` | Идентификатор устройства, созданного ранее. |
 | `localPortNumber` | Локальный порт, к которому будет подключаться клиент SSH. В этом примере мы используем порт 2222, но его можно задать с помощью любых других произвольных чисел. |
 
-Скомпилируйте и запустите код, как показано:
+Выполните компиляцию и запуск кода с помощью следующих команд:
 
 ```
 cd ./iot-hub/Quickstarts/device-streams-proxy/service/
@@ -168,10 +168,10 @@ dotnet build
 
 # Run the application
 # In Linux or macOS
-dotnet run $serviceConnectionString MyDevice 2222
+dotnet run ${ServiceConnectionString} MyDevice 2222
 
 # In Windows
-dotnet run %serviceConnectionString% MyDevice 2222
+dotnet run {ServiceConnectionString} MyDevice 2222
 ```
 
 ### <a name="run-the-ssh-client"></a>Запуск клиента SSH
@@ -179,7 +179,7 @@ dotnet run %serviceConnectionString% MyDevice 2222
 Теперь с помощью приложения клиента SSH подключитесь к приложению локального прокси-сервера службы на порте 2222 (вместо подключения напрямую через управляющую программу SSH).
 
 ```
-ssh <username>@localhost -p 2222
+ssh {username}@localhost -p 2222
 ```
 
 На этом этапе в окне входа в SSH можно ввести учетные данные.
@@ -198,42 +198,42 @@ ssh <username>@localhost -p 2222
 
 ## <a name="rdp-to-a-device-via-device-streams"></a>RDP-подключение к устройству через потоки устройств
 
-Настройка RDP очень похожа на настройку SSH (описанную выше). Вместо этого используйте IP-адрес назначения RDP и порт 3389, а также клиент RDP (вместо клиента SSH).
+Настройка RDP похожа на настройку SSH (описанную выше). Вместо этого используйте IP-адрес назначения RDP и порт 3389, а также клиент RDP (вместо клиента SSH).
 
 ### <a name="run-the-device-local-proxy-application-rdp"></a>Запуск приложения локального прокси-сервера устройства (RDP)
 
-Перейдите к каталогу *device-streams-proxy/device* в распакованном проекте. Держите следующие сведения под рукой:
+В окне терминала на локальном компьютере перейдите к каталогу `device-streams-proxy/device` в распакованной папке проекта. Держите следующие сведения под рукой:
 
 | Имя аргумента | Значение аргумента |
 |----------------|-----------------|
-| `DeviceConnectionString` | Строка подключения созданного ранее устройства. |
+| `DeviceConnectionString` | Строка подключения к устройству, созданная ранее. |
 | `targetServiceHostName` | Имя узла или IP-адрес, на котором работает сервер RDP. Адрес был бы `localhost`, если бы это был тот же IP-адрес, на котором работает приложение локального прокси-сервера устройства. |
 | `targetServicePort` | Порт, используемый протоколом приложения (для RDP по умолчанию это будет порт 3389).  |
 
-Скомпилируйте и запустите код, как показано:
+Выполните компиляцию и запуск кода с помощью следующих команд:
 
 ```
 cd ./iot-hub/Quickstarts/device-streams-proxy/device
 
 # Run the application
 # In Linux or macOS
-dotnet run $DeviceConnectionString localhost 3389
+dotnet run ${DeviceConnectionString} localhost 3389
 
 # In Windows
-dotnet run %DeviceConnectionString% localhost 3389
+dotnet run {DeviceConnectionString} localhost 3389
 ```
 
 ### <a name="run-the-service-local-proxy-application-rdp"></a>Запуск приложения локального прокси-сервера службы (RDP)
 
-Перейдите к `device-streams-proxy/service` в распакованной папке проекта. Вам понадобятся следующие сведения.
+В другом окне терминала на локальном компьютере перейдите к `device-streams-proxy/service` в распакованной папке проекта. Держите следующие сведения под рукой:
 
 | Имя параметра | Значение параметра |
 |----------------|-----------------|
-| `iotHubConnectionString` | Строка подключения к службе Центра Интернета вещей. |
-| `deviceId` | Идентификатор устройства, созданного ранее. |
+| `ServiceConnectionString` | Строка подключения к службе Центра Интернета вещей. |
+| `MyDevice` | Идентификатор устройства, созданного ранее. |
 | `localPortNumber` | Локальный порт, к которому будет подключаться клиент SSH. В этом примере мы используем порт 2222, но его можно заменить другими произвольными числами. |
 
-Скомпилируйте и запустите код, как показано:
+Выполните компиляцию и запуск кода с помощью следующих команд:
 
 ```
 cd ./iot-hub/Quickstarts/device-streams-proxy/service/
@@ -243,10 +243,10 @@ dotnet build
 
 # Run the application
 # In Linux or macOS
-dotnet run $serviceConnectionString MyDevice 2222
+dotnet run ${ServiceConnectionString} MyDevice 2222
 
 # In Windows
-dotnet run %serviceConnectionString% MyDevice 2222
+dotnet run {ServiceConnectionString} MyDevice 2222
 ```
 
 ### <a name="run-rdp-client"></a>Запуск клиента RDP

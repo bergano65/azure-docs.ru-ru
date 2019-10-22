@@ -10,18 +10,18 @@ ms.devlang: python
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 06/21/2019
-ms.openlocfilehash: 6a3be3733c5041576d5db49256056ac4f0c03a7f
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.openlocfilehash: 13652b287da94adff5bdf2235900734e5908c56f
+ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "71003018"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72516655"
 ---
 # <a name="quickstart-control-a-device-connected-to-an-iot-hub-python"></a>Краткое руководство. Управление подключенным к Центру Интернета вещей устройством (Python)
 
 [!INCLUDE [iot-hub-quickstarts-2-selector](../../includes/iot-hub-quickstarts-2-selector.md)]
 
-Центр Интернета вещей — это служба Azure, которая позволяет получать большие объемы данных телеметрии с устройств Центра Интернета вещей в облаке и управлять устройствами из облака. В этом кратком руководстве управление имитированным устройством, подключенным к Центру Интернета вещей, осуществляется с помощью *прямого метода*. Этот метод позволяет удаленно изменить поведение подключенного к Центру Интернета вещей устройства.
+Центр Интернета вещей — это служба Azure, которая позволяет управлять устройствами Интернета вещей из облака и принимать большие объемы телеметрии с устройств в облако для хранения или обработки. В этом кратком руководстве управление имитированным устройством, подключенным к Центру Интернета вещей, осуществляется с помощью *прямого метода*. Этот метод позволяет удаленно изменить поведение подключенного к Центру Интернета вещей устройства.
 
 В этом кратком руководстве используется два предварительно созданных приложения Python:
 
@@ -59,10 +59,10 @@ az extension add --name azure-cli-iot-ext
 
     **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
 
-    **MyPythonDevice**. Это имя, присвоенное зарегистрированному устройству. Используйте MyPythonDevice, как показано ниже. Если вы выбрали другое имя для устройства, используйте его при работе с этим руководством и обновите имя устройства в примерах приложений перед их запуском.
+    **MyPythonDevice**. Это имя регистрируемого устройства. Рекомендуется использовать **MyPythonDevice**, как показано ниже. Если вы выбрали другое имя для устройства, используйте его при работе с этим руководством и обновите имя устройства в примерах приложений перед их запуском.
 
     ```azurecli-interactive
-    az iot hub device-identity create --hub-name YourIoTHubName --device-id MyPythonDevice
+    az iot hub device-identity create --hub-name {YourIoTHubName} --device-id MyPythonDevice
     ```
 
 2. Выполните следующую команду в Azure Cloud Shell, чтобы получить _строку подключения_ зарегистрированного устройства:
@@ -70,7 +70,7 @@ az extension add --name azure-cli-iot-ext
     **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
 
     ```azurecli-interactive
-    az iot hub device-identity show-connection-string --hub-name YourIoTHubName --device-id MyPythonDevice --output table
+    az iot hub device-identity show-connection-string --hub-name {YourIoTHubName} --device-id MyPythonDevice --output table
     ```
 
     Запишите строку подключения устройства, которая выглядит так:
@@ -85,8 +85,8 @@ az extension add --name azure-cli-iot-ext
 
     ```azurecli-interactive
     az iot hub show-connection-string \
-      --name YourIoTHubName \
       --policy-name service \
+      --name {YourIoTHubName} \
       --output table
     ```
 
@@ -94,7 +94,7 @@ az extension add --name azure-cli-iot-ext
 
    `HostName={YourIoTHubName}.azure-devices.net;SharedAccessKeyName=service;SharedAccessKey={YourSharedAccessKey}`
 
-    Это значение понадобится позже в рамках этого краткого руководства. Строка подключения к службе отличается от строки подключения к устройству.
+    Это значение понадобится позже в рамках этого краткого руководства. Строка подключения к службе отличается от строки подключения к устройству из предыдущего шага.
 
 ## <a name="listen-for-direct-method-calls"></a>Ожидание передачи данных при вызове прямого метода
 
