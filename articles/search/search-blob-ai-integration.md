@@ -1,5 +1,5 @@
 ---
-title: Использование искусственного интеллекта для понимания данных больших двоичных объектов
+title: Использование искусственного интеллекта для понимания данных хранилища BLOB-объектов
 titleSuffix: Azure Search
 description: Добавление семантического, естественного языка обработки и анализа изображений в большие двоичные объекты Azure с помощью конвейера обогащения искусственного интеллекта в службе поиска Azure.
 manager: nitinme
@@ -8,14 +8,14 @@ ms.author: heidist
 ms.service: search
 ms.topic: conceptual
 ms.date: 10/09/2019
-ms.openlocfilehash: f7e264be9a02514972f9c9702adec8fa55a157bd
-ms.sourcegitcommit: f29fec8ec945921cc3a89a6e7086127cc1bc1759
+ms.openlocfilehash: 1a8840aca71daacc08cf85b178668e42ff9f796c
+ms.sourcegitcommit: 1bd2207c69a0c45076848a094292735faa012d22
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72529379"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72678421"
 ---
-# <a name="use-ai-to-understand-blob-data"></a>Использование искусственного интеллекта для понимания данных больших двоичных объектов
+# <a name="use-ai-to-understand-blob-storage-data"></a>Использование искусственного интеллекта для понимания данных хранилища BLOB-объектов
 
 Данные в хранилище BLOB-объектов Azure часто являются разнообразным неструктурированным содержимым, например изображениями, длинными текстовыми файлами, документами PDF и Office. Используя возможности искусственного интеллекта в службе поиска Azure, вы можете понять и извлечь ценные сведения из больших двоичных объектов различными способами. Примеры применения ИСКУССТВЕНного хранилища к содержимому BLOB-объектов:
 
@@ -112,7 +112,8 @@ For example, given a large blob of unstructured text, a sample order of operatio
 
 Расширить возможности искусственного интеллекта, чтобы максимально эффективно использовать данные в службе хранилища Azure, в том числе объединять Cognitive Services различными способами, а также создавать пользовательские навыки для случаев, когда для сценария нет существующей службы. Дополнительные сведения см. по ссылкам ниже.
 
-> [!div class="nextstepaction"]
-> [Обзор обогащения искусственного интеллекта](cognitive-search-concept-intro.md) 
-> [создание набора навыков](cognitive-search-defining-skillset.md)
-> [узлов карт в дереве заметки](cognitive-search-output-field-mapping.md)
++ [Отправка, скачивание и вывод списка больших двоичных объектов с помощью портал Azure (хранилище BLOB-объектов Azure)](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal)
++ [Настройка индексатора BLOB-объектов (Поиск Azure)](search-howto-indexing-azure-blob-storage.md) 
++ [Общие сведения об обогащении искусственного интеллекта (Поиск Azure)](cognitive-search-concept-intro.md) 
++ [Создание набора навыков (Поиск Azure)](cognitive-search-defining-skillset.md)
++ [Отображение узлов в дереве заметок (Поиск Azure)](cognitive-search-output-field-mapping.md)

@@ -1,23 +1,18 @@
 ---
 title: Создание ресурса Azure Application Insights | Документация Майкрософт
 description: Вручную настройте мониторинг Application Insights для нового работающего приложения.
-services: application-insights
-documentationcenter: ''
-author: mrbullwinkle
-manager: carmonm
-ms.assetid: 878b007e-161c-4e36-8ab2-3d7047d8a92d
-ms.service: application-insights
-ms.workload: tbd
-ms.tgt_pltfrm: ibiza
+ms.service: azure-monitor
+ms.subservice: application-insights
 ms.topic: conceptual
-ms.date: 08/16/2019
+author: mrbullwinkle
 ms.author: mbullwin
-ms.openlocfilehash: ae9c885b342664baf90f9c2b5702a092c9d838df
-ms.sourcegitcommit: 39d95a11d5937364ca0b01d8ba099752c4128827
+ms.date: 08/16/2019
+ms.openlocfilehash: be68c70a105737f232741f02994da87c0c628bd7
+ms.sourcegitcommit: 1bd2207c69a0c45076848a094292735faa012d22
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69562836"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72677503"
 ---
 # <a name="create-an-application-insights-resource"></a>Создание ресурса Application Insights
 
@@ -33,11 +28,11 @@ ms.locfileid: "69562836"
 
 ![Щелкните знак "+" в левом верхнем углу. Выберите Средства для разработчиков, за которым следует Application Insights](./media/create-new-resource/new-app-insights.png)
 
-   | Настройки        |  Значение           | Описание  |
+   | Настройки        |  Value           | Описание  |
    | ------------- |:-------------|:-----|
-   | **Name**      | Глобально уникальное значение | Имя, идентифицирующее отслеживаемое приложение. |
+   | **Имя**      | Глобально уникальное значение | Имя, идентифицирующее отслеживаемое приложение. |
    | **Группа ресурсов**     | myResourceGroup      | Имя новой или существующей группы ресурсов для размещения данных App Insights. |
-   | **Location** | East US | Выберите расположение рядом с вами или рядом с ним, где размещено ваше приложение. |
+   | **Расположение** | Восточная часть США | Выберите расположение рядом с вами или рядом с ним, где размещено ваше приложение. |
 
 Введите соответствующие значения в обязательные поля, а затем выберите **проверить и создать**.
 
@@ -108,7 +103,7 @@ TenantId           : {subid}
  az extension add -n application-insights
 ```
 
-Если не выполнить `az extension add` команду, появится сообщение об ошибке, в котором будет указано следующее:`az : ERROR: az monitor: 'app-insights' is not in the 'az monitor' command group. See 'az monitor --help'.`
+Если не выполнить команду `az extension add`, появится сообщение об ошибке, в котором будет указано следующее: `az : ERROR: az monitor: 'app-insights' is not in the 'az monitor' command group. See 'az monitor --help'.`
 
 Теперь можно выполнить следующие действия, чтобы создать ресурс Application Insights:
 
@@ -157,7 +152,7 @@ az monitor app-insights component create --app demoApp --location eastus --kind 
 
 Полный Azure CLI документации по этой команде и сведения о получении ключа инструментирования см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure/ext/application-insights/monitor/app-insights/component?view=azure-cli-latest#ext-application-insights-az-monitor-app-insights-component-create).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Поиск по журналу диагностики](../../azure-monitor/app/diagnostic-search.md)
 * [Изучение метрик](../../azure-monitor/app/metrics-explorer.md)
 * [Написание запросов аналитики](../../azure-monitor/app/analytics.md)

@@ -1,23 +1,19 @@
 ---
 title: Корреляция данных телеметрии Azure Application Insights | Документация Майкрософт
 description: Корреляция данных телеметрии Application Insights
-services: application-insights
-documentationcenter: .net
-author: lgayhardt
-manager: carmonm
-ms.service: application-insights
-ms.workload: TBD
-ms.tgt_pltfrm: ibiza
+ms.service: azure-monitor
+ms.subservice: application-insights
 ms.topic: conceptual
+author: lgayhardt
+ms.author: lagayhar
 ms.date: 06/07/2019
 ms.reviewer: sergkanz
-ms.author: lagayhar
-ms.openlocfilehash: fe52fe51b347b232e03bad943906413b90c853c0
-ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
+ms.openlocfilehash: aa683e90a328e9525fa7d0a78981aa107818188a
+ms.sourcegitcommit: 1bd2207c69a0c45076848a094292735faa012d22
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71338170"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72678187"
 ---
 # <a name="telemetry-correlation-in-application-insights"></a>Корреляция данных телеметрии в Application Insights
 
@@ -51,11 +47,11 @@ Application Insights определяет [модель данных](../../azur
 
 Обратите внимание, что в результатах все элементы телеметрии используют корневой `operation_Id`. При вызове AJAX, осуществляемом со страницы, телеметрии зависимостей присваивается личный идентификатор `qJSXU`, а в качестве `operation_ParentId` используется идентификатор pageView. Запрос сервера затем использует идентификатор Ajax как `operation_ParentId`.
 
-| itemType   | name                      | id           | operation_ParentId | operation_Id |
+| itemType   | name                      | ИД           | operation_ParentId | operation_Id |
 |------------|---------------------------|--------------|--------------------|--------------|
 | pageView   | Stock page                |              | STYz               | STYz         |
-| зависимость | GET /Home/Stock           | qJSXU        | STYz               | STYz         |
-| request    | GET Home/Stock            | KqKwlrSt9PA= | qJSXU              | STYz         |
+| dependency | GET /Home/Stock           | qJSXU        | STYz               | STYz         |
+| запрос    | GET Home/Stock            | KqKwlrSt9PA= | qJSXU              | STYz         |
 | dependency | GET /api/stock/value      | bBrf2L7mm2g= | KqKwlrSt9PA=       | STYz         |
 
 Когда к внешней службе осуществлен вызов `GET /api/stock/value`, необходимо узнать идентификатор этого сервера, поэтому можно соответствующим образом задать поле `dependency.target`. Если внешняя служба не поддерживает мониторинг, то в качестве имени узла службы задается `target` (например, `stock-prices-api.com`). Однако если для идентификации службы возвращается предопределенный заголовок HTTP, то `target` содержит удостоверение службы, которое позволяет Application Insights создать распределенную трассировку, запросив телеметрию из этой службы.
@@ -64,26 +60,26 @@ Application Insights определяет [модель данных](../../azur
 
 Мы переходим к [контексту трассировки W3C](https://w3c.github.io/trace-context/) , который определяет:
 
-- `traceparent`. Содержит глобальный уникальный идентификатор операции и уникальный идентификатор вызова.
-- `tracestate`. Содержит специфический контекст трассировки системы.
+- `traceparent`: содержит глобальный уникальный идентификатор операции и уникальный идентификатор вызова.
+- `tracestate`: переносит контекст, зависящий от системы трассировки.
 
 Последние версии Application Insights SDK поддерживают протокол контекстной трассировки, но вам может потребоваться согласие на это (он будет поддерживать обратную совместимость со старым протоколом корреляции, поддерживаемым пакетами SDK для ApplicationInsights).
 
 [Http-протокол корреляции с ИД запроса](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.DiagnosticSource/src/HttpCorrelationProtocol.md) имеет значение по пути устаревания. Этот протокол определяет два заголовка:
 
-- `Request-Id`. Содержит глобальный уникальный идентификатор вызова.
-- `Correlation-Context`. Содержит коллекцию пар "имя — значение" свойств распределенной трассировки.
+- `Request-Id`: содержит глобальный уникальный идентификатор вызова.
+- `Correlation-Context`: содержит коллекцию пар "имя-значение" для свойств распределенной трассировки.
 
 Application Insights также определяет [расширение](https://github.com/lmolkova/correlation/blob/master/http_protocol_proposal_v2.md) для протокола HTTP корреляции. Она использует пары "имя — значение" `Request-Context` для распространения коллекции свойств, используемых непосредственным вызывающим или вызываемым. Пакет SDK для Application Insights использует этот заголовок, чтобы задать значения полей `dependency.target` и `request.source`.
 
 ### <a name="enable-w3c-distributed-tracing-support-for-classic-aspnet-apps"></a>Включение поддержки распределенной трассировки W3C для классических приложений ASP.NET
  
   > [!NOTE]
-  > Не требуется никакой конфигурации, начиная с `Microsoft.ApplicationInsights.Web` и `Microsoft.ApplicationInsights.DependencyCollector` 
+  > Не требуется настройка, начиная с `Microsoft.ApplicationInsights.Web` и `Microsoft.ApplicationInsights.DependencyCollector` 
 
 W3C Trace — поддержка контекста выполняется в обратном порядке, а корреляция должна работать с приложениями, оснащенными предыдущими версиями пакета SDK (без поддержки W3C). 
 
-Если по каким-либо причинам вы хотите использовать устаревший протокол `Request-Id`, вы можете *Отключить* трассировку контекста со следующей конфигурацией.
+Если по какой-либо причине вы хотите использовать устаревший протокол `Request-Id`, вы можете *Отключить* трассировку контекста со следующей конфигурацией.
 
 ```csharp
   Activity.DefaultIdFormat = ActivityIdFormat.Hierarchical;
@@ -96,7 +92,7 @@ W3C Trace — поддержка контекста выполняется в о
 
 - В разделе `RequestTrackingTelemetryModule` добавьте элемент `EnableW3CHeadersExtraction` со значением `true`.
 - В разделе `DependencyTrackingTelemetryModule` добавьте элемент `EnableW3CHeadersInjection` со значением `true`.
-- Добавьте `W3COperationCorrelationTelemetryInitializer` в `TelemetryInitializers` аналогично 
+- Добавьте `W3COperationCorrelationTelemetryInitializer` в `TelemetryInitializers`, аналогичном 
 
 ```xml
 <TelemetryInitializers>
@@ -112,7 +108,7 @@ W3C Trace — поддержка контекста выполняется в о
  
 W3C Trace — поддержка контекста выполняется в обратном порядке, а корреляция должна работать с приложениями, оснащенными предыдущими версиями пакета SDK (без поддержки W3C). 
 
-Если по каким-либо причинам вы хотите использовать устаревший протокол `Request-Id`, вы можете *Отключить* трассировку контекста со следующей конфигурацией.
+Если по какой-либо причине вы хотите использовать устаревший протокол `Request-Id`, вы можете *Отключить* трассировку контекста со следующей конфигурацией.
 
 ```csharp
   Activity.DefaultIdFormat = ActivityIdFormat.Hierarchical;
@@ -172,7 +168,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ### <a name="enable-w3c-distributed-tracing-support-for-web-apps"></a>Включить поддержку распределенной трассировки W3C для веб-приложений
 
-Эта функция находится в `Microsoft.ApplicationInsights.JavaScript`. Она отключена по умолчанию. Чтобы включить его, используйте конфигурацию `distributedTracingMode`. AI_AND_W3C предоставляется для обеспечения обратной совместимости с любыми устаревшими Application Insights инструментированными службами:
+Эта функция находится в `Microsoft.ApplicationInsights.JavaScript`. Она отключена по умолчанию. Чтобы включить его, используйте `distributedTracingMode` config. AI_AND_W3C предоставляется для обеспечения обратной совместимости с любыми устаревшими Application Insights инструментированными службами:
 
 - **Установка NPM (пропуск при использовании программы установки фрагмента кода)**
 
@@ -280,12 +276,12 @@ ASP.NET Core 2.0 поддерживает извлечение заголовк
   telemetryClient.getContext().getCloud().setRole("My Component Name");
   ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Напишите [пользовательскую телеметрию](../../azure-monitor/app/api-custom-events-metrics.md).
 - Дополнительные сценарии корреляции в ASP.NET Core и ASP.NET см. в статье [Track Custom Operations](custom-operations-tracking.md) .
 - Узнайте об [установке свойства cloud_RoleName](../../azure-monitor/app/app-map.md#set-cloud-role-name) для других пакетов SDK.
 - Подключите все компоненты своей микрослужбы с помощью Application Insights. Ознакомьтесь со сведениями о [поддерживаемых платформах](../../azure-monitor/app/platforms.md).
 - В [этой статье](../../azure-monitor/app/data-model.md) представлена модель данных для Application Insights.
-- Вы можете узнать, как [расширять и фильтровать данные телеметрии](../../azure-monitor/app/api-filtering-sampling.md).
+- Узнайте, как [расширять и фильтровать данные телеметрии](../../azure-monitor/app/api-filtering-sampling.md).
 - Просмотрите [справочник по конфигурации в Application Insights](configuration-with-applicationinsights-config.md).

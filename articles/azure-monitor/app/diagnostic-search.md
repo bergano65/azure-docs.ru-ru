@@ -1,23 +1,18 @@
 ---
 title: Поиск в Azure Application Insights | Документация Майкрософт
 description: Поиск и фильтрация необработанных данных телеметрии, отправляемых веб-приложением.
-services: application-insights
-documentationcenter: ''
-author: mrbullwinkle
-manager: carmonm
-ms.assetid: 2a437555-8043-45ec-937a-225c9bf0066b
-ms.service: application-insights
-ms.workload: tbd
-ms.tgt_pltfrm: ibiza
+ms.service: azure-monitor
+ms.subservice: application-insights
 ms.topic: conceptual
-ms.date: 07/30/2019
+author: mrbullwinkle
 ms.author: mbullwin
-ms.openlocfilehash: d08fd2ac6db63eee01c0653d2dbb1623fb1b51ed
-ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
+ms.date: 07/30/2019
+ms.openlocfilehash: 77cd0a8d0c1a93e7dc1db931e987a172d31978ef
+ms.sourcegitcommit: 1bd2207c69a0c45076848a094292735faa012d22
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68705420"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72678081"
 ---
 # <a name="using-search-in-application-insights"></a>Поиск в Application Insights
 
@@ -101,14 +96,14 @@ ms.locfileid: "68705420"
 
 Выполните поиск по полным словам, а не по подстрокам. Специальные символы заключайте в кавычки.
 
-| Строковое | *Не* найдено | Найдено |
+| Строка | *Не* найдено | Найдено |
 | --- | --- | --- |
 | HomeController.About |`home`<br/>`controller`<br/>`out` | `homecontroller`<br/>`about`<br/>`"homecontroller.about"`|
 |США|`Uni`<br/>`ted`|`united`<br/>`states`<br/>`united AND states`<br/>`"united states"`
 
 Вот доступные поисковые выражения:
 
-| Пример запроса | Эффект |
+| Пример запроса | Результат |
 | --- | --- |
 | `apple` |Поиск всех событий в диапазоне времени, поля которых включают слово "apple". |
 | `apple AND banana` <br/>`apple banana` |Поиск событий, содержащих оба слова. Используйте "AND" заглавными буквами, а не "and". <br/>Короткая форма. |
@@ -121,7 +116,7 @@ ms.locfileid: "68705420"
 
 [Дополнительная информация о выборке](../../azure-monitor/app/sampling.md).
 
-## <a name="create-work-item"></a>Создать рабочий элемент
+## <a name="create-work-item"></a>Создание рабочего элемента
 
 В GitHub или Azure DevOps можно создать ошибку и указать в ней сведения из любого элемента телеметрии.
 

@@ -1,6 +1,6 @@
 ---
-title: Подключение к виртуальным сетям Azure из Azure Logic Apps через среду службы интеграции (ISE)
-description: Создайте среду службы интеграции (ISE), чтобы приложения логики и учетные записи интеграции могли получать доступ к виртуальным сетям Azure, оставаясь при этом частными и изолированными от общедоступной ("глобальной") среды Azure
+title: Подключение к виртуальным сетям Azure с помощью интегрированной среды сценариев (ISE) Azure Logic Apps
+description: Создание среды службы интеграции (ISE), которая может получать доступ к виртуальным сетям Azure (виртуальных сетей) из Azure Logic Apps
 services: logic-apps
 ms.service: logic-apps
 ms.suite: integration
@@ -9,12 +9,12 @@ ms.author: estfan
 ms.reviewer: klam, LADocs
 ms.topic: conceptual
 ms.date: 07/26/2019
-ms.openlocfilehash: d6530eb95dc26b9abe4bb27146b16eb2952e9f9b
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.openlocfilehash: 4c4eb5a6cb7527bcb3eb21beebb8063b0bd021d3
+ms.sourcegitcommit: d37991ce965b3ee3c4c7f685871f8bae5b56adfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72595674"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72680474"
 ---
 # <a name="connect-to-azure-virtual-networks-from-azure-logic-apps-by-using-an-integration-service-environment-ise"></a>Подключение к виртуальным сетям Azure из Azure Logic Apps с помощью среды службы интеграции (ISE)
 

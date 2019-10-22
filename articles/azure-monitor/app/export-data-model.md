@@ -1,23 +1,18 @@
 ---
 title: Модель данных Azure Application Insights | Документация Майкрософт
 description: Описание свойств, экспортируемых с помощью непрерывного экспорта в формате JSON и используемых в качестве фильтров.
-services: application-insights
-documentationcenter: ''
-author: mrbullwinkle
-manager: carmonm
-ms.assetid: cabad41c-0518-4669-887f-3087aef865ea
-ms.service: application-insights
-ms.workload: tbd
-ms.tgt_pltfrm: ibiza
+ms.service: azure-monitor
+ms.subservice: application-insights
 ms.topic: conceptual
-ms.date: 01/08/2019
+author: mrbullwinkle
 ms.author: mbullwin
-ms.openlocfilehash: 4f8fd0b317c17f142664d22291c23442dd49f970
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.date: 01/08/2019
+ms.openlocfilehash: 8f84e3179a6f949e4a322a2218736fc9ebe60442
+ms.sourcegitcommit: 1bd2207c69a0c45076848a094292735faa012d22
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67053294"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72677909"
 ---
 # <a name="application-insights-export-data-model"></a>Экспорт модели данных Application Insights
 В этой таблице перечислены свойства телеметрии, отправляемой из различных пакетов SDK для [Application Insights](../../azure-monitor/app/app-insights-overview.md) на портал.
@@ -111,16 +106,16 @@ ms.locfileid: "67053294"
     }
   }
 
-## <a name="context"></a>Context
+## <a name="context"></a>Контекст
 Для каждого типа данных телеметрии приведен пример с разделом контекста. Не все эти поля передаются со всеми точками данных.
 
-| Путь | type | Примечания |
+| Путь | Тип | Заметки |
 | --- | --- | --- |
 | context.custom.dimensions [0] |объект [ ] |Набор пар "ключ — значение", заданный параметром пользовательских свойств. Максимальная длина ключа — 100, максимальная длина значения —1024. Более 100 уникальных значений. Свойства можно использовать для поиска, но не для сегментации. Максимальное количество — 200 ключей на ключ ikey. |
 | context.custom.metrics [0] |объект [ ] |Набор пар "ключ — значение", заданный параметром пользовательских измерений и метриками TrackMetric. Максимальная длина ключа — 100. Значения могут быть числовыми. |
 | context.data.eventTime |string |Формат UTC. |
 | context.data.isSynthetic |Логическое |Запрос поступает от программы-робота или веб-теста. |
-| context.data.samplingRate |номер |Процентная доля данных телеметрии, созданных с помощью пакета SDK, отправленного на портал. Диапазон 0,0–100,0. |
+| context.data.samplingRate |number |Процентная доля данных телеметрии, созданных с помощью пакета SDK, отправленного на портал. Диапазон 0,0–100,0. |
 | context.device |object |Устройство клиента |
 | context.device.browser |string |IE, Chrome… |
 | context.device.browserVersion |string |Chrome 48.0… |
@@ -158,10 +153,10 @@ ms.locfileid: "67053294"
 | internal.data.documentVersion |string | |
 | internal.data.id |string | Уникальный идентификатор, присваиваемый при передаче элемента в Application Insights |
 
-## <a name="events"></a>События
+## <a name="events"></a>Мероприятия
 Пользовательские события, создаваемые элементом [TrackEvent()](../../azure-monitor/app/api-custom-events-metrics.md#trackevent).
 
-| Путь | type | Примечания |
+| Путь | Тип | Заметки |
 | --- | --- | --- |
 | event [0] count |целое число |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Например, 4 = &gt; 25 %. |
 | event [0] name |string |Имя события.  Максимальная длина: 250 |
@@ -172,7 +167,7 @@ ms.locfileid: "67053294"
 ## <a name="exceptions"></a>Исключения
 Отправляются сведения об [исключениях](../../azure-monitor/app/asp-net-exceptions.md) на сервере и в браузере.
 
-| Путь | type | Примечания |
+| Путь | Тип | Заметки |
 | --- | --- | --- |
 | basicException [0] assembly |string | |
 | basicException [0] count |целое число |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Например, 4 = &gt; 25 %. |
@@ -201,7 +196,7 @@ ms.locfileid: "67053294"
 ## <a name="trace-messages"></a>Сообщения трассировки
 Отправитель: [TrackTrace](../../azure-monitor/app/api-custom-events-metrics.md#tracktrace) и [адаптеры ведения журналов](../../azure-monitor/app/asp-net-trace-logs.md).
 
-| Путь | type | Примечания |
+| Путь | Тип | Заметки |
 | --- | --- | --- |
 | message [0] loggerName |string | |
 | message [0] parameters |string | |
@@ -211,14 +206,14 @@ ms.locfileid: "67053294"
 ## <a name="remote-dependency"></a>Удаленная зависимость
 Отправитель: TrackDependency. Используется для создания отчетов о производительности и использовании [вызовов к зависимостям](../../azure-monitor/app/asp-net-dependencies.md) на сервере, а также вызовов AJAX в браузере.
 
-| Путь | type | Примечания |
+| Путь | Тип | Заметки |
 | --- | --- | --- |
 | remoteDependency [0] async |Логическое | |
 | remoteDependency [0] baseName |string | |
 | remoteDependency [0] commandName |string |Например, home/index |
 | remoteDependency [0] count |целое число |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Например, 4 = &gt; 25 %. |
 | remoteDependency [0] dependencyTypeName |string |HTTP, SQL, … |
-| remoteDependency [0] durationMetric.value |номер |Время от вызова до завершения отклика зависимостью. |
+| remoteDependency [0] durationMetric.value |number |Время от вызова до завершения отклика зависимостью. |
 | remoteDependency [0] id |string | |
 | remoteDependency [0] name |string |URL-адрес. Максимальная длина: 250 |
 | remoteDependency [0] resultCode |string |Из зависимости HTTP. |
@@ -229,13 +224,13 @@ ms.locfileid: "67053294"
 | remoteDependency [0] urlData.hashTag |string | |
 | remoteDependency [0] urlData.host |string |Максимальная длина: 200 |
 
-## <a name="requests"></a>Requests
+## <a name="requests"></a>Requests (Запросы)
 Отправитель: [TrackRequest](../../azure-monitor/app/api-custom-events-metrics.md#trackrequest). Используется стандартными модулями для создания отчетов о времени отклика сервера (измеряется на сервере).
 
-| Путь | type | Примечания |
+| Путь | Тип | Заметки |
 | --- | --- | --- |
-| request [0] count |целое число |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Пример: 4 =&gt; 25%. |
-| request [0] durationMetric.value |номер |Время от поступления запроса до отклика. 1e7 = 1 с. |
+| request [0] count |целое число |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Например: 4 =&gt; 25 %. |
+| request [0] durationMetric.value |number |Время от поступления запроса до отклика. 1e7 = 1 с. |
 | request [0] id |string |Идентификатор операции |
 | request [0] name |string |GET или POST + базовый URL-адрес.  Максимальная длина: 250 |
 | request [0] responseCode |целое число |HTTP-отклик, отправленный клиенту. |
@@ -250,7 +245,7 @@ ms.locfileid: "67053294"
 
 Контекстные значения показывают версию клиентской ОС и версию браузера.
 
-| Путь | type | Примечания |
+| Путь | Тип | Заметки |
 | --- | --- | --- |
 | clientPerformance [0] clientProcess.value |целое число |Время от завершения получения HTML до отображения страницы. |
 | clientPerformance [0] name |string | |
@@ -267,9 +262,9 @@ ms.locfileid: "67053294"
 ## <a name="page-views"></a>Просмотры страницы
 Отправитель: trackPageView() или [stopTrackPage](../../azure-monitor/app/api-custom-events-metrics.md#page-views)
 
-| Путь | type | Примечания |
+| Путь | Тип | Заметки |
 | --- | --- | --- |
-| view [0] count |целое число |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Например, 4 =&gt; 25 %. |
+| view [0] count |целое число |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Например, 4 = &gt; 25 %. |
 | view [0] durationMetric.value |целое число |При необходимости значение можно указать в методе trackPageView() или с помощью метода start/stopTrackPage(). Не совпадает со значениями clientPerformance. |
 | view [0] name |string |Заголовок страницы.  Максимальная длина: 250 |
 | view [0] url |string | |
@@ -280,15 +275,15 @@ ms.locfileid: "67053294"
 ## <a name="availability"></a>Доступность
 Это свойство создает отчеты о [веб-тестах на доступность](../../azure-monitor/app/monitor-web-app-availability.md).
 
-| Путь | type | Примечания |
+| Путь | Тип | Заметки |
 | --- | --- | --- |
-| availability [0] availabilityMetric.name |string |Доступность |
-| availability [0] availabilityMetric.value |номер |1,0 или 0,0. |
+| availability [0] availabilityMetric.name |string |availability |
+| availability [0] availabilityMetric.value |number |1,0 или 0,0. |
 | availability [0] count |целое число |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Например, 4 = &gt; 25 %. |
 | availability [0] dataSizeMetric.name |string | |
 | availability [0] dataSizeMetric.value |целое число | |
 | availability [0] durationMetric.name |string | |
-| availability [0] durationMetric.value |номер |Продолжительность теста. 1e7 = 1 с. |
+| availability [0] durationMetric.value |number |Продолжительность теста. 1e7 = 1 с. |
 | availability [0] message |string |Диагностика сбоя. |
 | availability [0] result |string |Успех или сбой. |
 | availability [0] runLocation |string |Географический объект-источник HTTP-запроса. |
@@ -296,12 +291,12 @@ ms.locfileid: "67053294"
 | availability [0] testRunId |string | |
 | availability [0] testTimestamp |string | |
 
-## <a name="metrics"></a>metrics
+## <a name="metrics"></a>Метрики
 Создатель: TrackMetric().
 
 Значение метрики можно найти в context.custom.metrics[0].
 
-Пример:
+Пример.
 
     {
      "metric": [ ],
@@ -327,7 +322,7 @@ ms.locfileid: "67053294"
     }
 
 ## <a name="about-metric-values"></a>О значениях метрик
-Значения метрик (как в отчетах, так и в других элементах) сообщаются в рамках стандартной структуры объекта. Пример:
+Значения метрик (как в отчетах, так и в других элементах) сообщаются в рамках стандартной структуры объекта. Пример.
 
       "durationMetric": {
         "name": "contoso.org",
@@ -351,7 +346,7 @@ ms.locfileid: "67053294"
 ### <a name="durations"></a>Длительность
 За исключением оговоренных случаев, показатели длительности представлены в десятых долях микросекунды, то есть 10 000 000,0 — это 1 с.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>Дополнительные материалы
 * [Application Insights](../../azure-monitor/app/app-insights-overview.md)
 * [Непрерывный экспорт](export-telemetry.md)
 * [Примеры кода](export-telemetry.md#code-samples)

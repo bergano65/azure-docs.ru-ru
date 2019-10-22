@@ -1,23 +1,18 @@
 ---
 title: Фильтрация и предварительная обработка в пакете SDK для Azure Application Insights | Документация Майкрософт
 description: Из этой статьи вы узнаете, как создать обработчики и инициализаторы телеметрии для того, чтобы пакет SDK мог выполнять фильтрацию, и как добавлять свойства к данным перед отправкой данных телеметрии на портал Application Insights.
-services: application-insights
-documentationcenter: ''
-author: mrbullwinkle
-manager: carmonm
-ms.assetid: 38a9e454-43d5-4dba-a0f0-bd7cd75fb97b
-ms.service: application-insights
-ms.workload: tbd
-ms.tgt_pltfrm: ibiza
+ms.service: azure-monitor
+ms.subservice: application-insights
 ms.topic: conceptual
-ms.date: 11/23/2016
+author: mrbullwinkle
 ms.author: mbullwin
-ms.openlocfilehash: cae035927217a7e2677cf6ebfcce1b53782e4c01
-ms.sourcegitcommit: 961468fa0cfe650dc1bec87e032e648486f67651
+ms.date: 11/23/2016
+ms.openlocfilehash: 1e02e227180bb0082dd87ab8f5d2fe64e19b60f2
+ms.sourcegitcommit: 1bd2207c69a0c45076848a094292735faa012d22
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72248741"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72677807"
 ---
 # <a name="filtering-and-preprocessing-telemetry-in-the-application-insights-sdk"></a>Фильтрация и предварительная обработка данных телеметрии в пакете SDK для Application Insights
 
@@ -30,7 +25,7 @@ ms.locfileid: "72248741"
 
 Перед началом работы:
 
-* Установите соответствующий пакет SDK для своего приложения: [ASP.NET](asp-net.md), [ASP.NET Core](asp-net-core.md), [не HTTP/Worker для .NET, .NET Core](worker-service.md)или [Java](../../azure-monitor/app/java-get-started.md).
+* Установите соответствующий пакет SDK для приложения: [ASP.NET](asp-net.md), [ASP.NET Core](asp-net-core.md), [не HTTP/Worker для .NET, .NET Core](worker-service.md)или [Java](../../azure-monitor/app/java-get-started.md).
 
 <a name="filtering"></a>
 
@@ -105,7 +100,7 @@ ms.locfileid: "72248741"
 > Будьте внимательны и задайте имя типа и имена свойств в файле конфигурации, совпадающие с именами классов и свойств в коде. Если файл конфигурации ссылается на несуществующий тип или свойство, пакет SDK может не суметь отправить данные телеметрии без уведомления.
 >
 
-**Другой способ** — инициализировать фильтр в коде. В подходящем классе инициализации — например, AppStart в `Global.asax.cs` — вставьте свой процессор в цепочку:
+**Другой способ** — инициализировать фильтр в коде. В подходящем классе инициализации — например, AppStart в `Global.asax.cs` вставьте свой процессор в цепочку:
 
 ```csharp
 var builder = TelemetryConfiguration.Active.DefaultTelemetrySink.TelemetryProcessorChainBuilder;
@@ -122,9 +117,9 @@ builder.Build();
 **Приложения ASP.NET Core и рабочих служб**
 
 > [!NOTE]
-> Добавление процессора с помощью `ApplicationInsights.config` или `TelemetryConfiguration.Active` недопустимо для ASP.NET Core приложений или при использовании пакета SDK Microsoft. ApplicationInsights. Воркерсервице.
+> Добавление процессора с помощью `ApplicationInsights.config` или использование `TelemetryConfiguration.Active` недопустимо для ASP.NET Core приложений или при использовании пакета SDK Microsoft. ApplicationInsights. Воркерсервице.
 
-Для приложений, написанных с помощью [ASP.NET Core](asp-net-core.md#adding-telemetry-processors) или [воркерсервице](worker-service.md#adding-telemetry-processors), Добавление нового `TelemetryProcessor` выполняется с помощью метода расширения `AddApplicationInsightsTelemetryProcessor` в `IServiceCollection`, как показано ниже. Этот метод вызывается в методе `ConfigureServices` класса `Startup.cs`.
+Для приложений, написанных с помощью [ASP.NET Core](asp-net-core.md#adding-telemetry-processors) или [воркерсервице](worker-service.md#adding-telemetry-processors), Добавление нового `TelemetryProcessor` выполняется с помощью метода расширения `AddApplicationInsightsTelemetryProcessor` для `IServiceCollection`, как показано ниже. Этот метод вызывается в методе `ConfigureServices` класса `Startup.cs`.
 
 ```csharp
     public void ConfigureServices(IServiceCollection services)
@@ -209,7 +204,7 @@ public void Process(ITelemetry item)
 
 Например, Application Insights для сбора данных телеметрии о HTTP-запросах. По умолчанию любой запрос с кодом ответа > = 400 он помечает как неудавшийся. Если вам нужно, чтобы значение 400 считалось успешным, задайте инициализатор телеметрии, в котором можно настроить свойство Success.
 
-Если задан инициализатор телеметрии, он вызывается всякий раз, когда вызывается любой метод Track*(). К ним относятся методы `Track()`, вызываемые стандартными модулями телеметрии. Обычно эти модули не задают свойство, которое уже задал инициализатор. Инициализаторы телеметрии вызываются перед вызовом обработчиков данных телеметрии. Поэтому все расширения, реализованные инициализаторами, видимы для процессоров.
+Если задан инициализатор телеметрии, он вызывается всякий раз, когда вызывается любой метод Track*(). К ним относятся `Track()` методы, вызываемые стандартными модулями телеметрии. Обычно эти модули не задают свойство, которое уже задал инициализатор. Инициализаторы телеметрии вызываются перед вызовом обработчиков данных телеметрии. Поэтому все расширения, реализованные инициализаторами, видимы для процессоров.
 
 **Определение инициализатора**
 
@@ -252,7 +247,7 @@ namespace MvcWebRole.Telemetry
 }
 ```
 
-приложения @no__t 0ASP.NET: Загрузите инициализатор @ no__t-0
+**Приложения ASP.NET: Загрузка инициализатора**
 
 В ApplicationInsights.config.:
 
@@ -278,10 +273,10 @@ protected void Application_Start()
 
 [Дополнительную информацию см. здесь.](https://github.com/Microsoft/ApplicationInsights-Home/tree/master/Samples/AzureEmailService/MvcWebRole)
 
-**ASP.NET ядро/приложения рабочей службы: Загрузите инициализатор @ no__t-0
+**ASP.NET Core и приложения рабочей службы: Загрузите инициализатор**
 
 > [!NOTE]
-> Добавление инициализатора с помощью `ApplicationInsights.config` или `TelemetryConfiguration.Active` недопустимо для ASP.NET Core приложений или при использовании пакета SDK Microsoft. ApplicationInsights. Воркерсервице.
+> Добавление инициализатора с помощью `ApplicationInsights.config` или с помощью `TelemetryConfiguration.Active` недопустимо для ASP.NET Core приложений или при использовании пакета SDK Microsoft. ApplicationInsights. Воркерсервице.
 
 Для приложений, написанных с помощью [ASP.NET Core](asp-net-core.md#adding-telemetryinitializers) или [воркерсервице](worker-service.md#adding-telemetryinitializers), Добавление нового `TelemetryInitializer` выполняется путем добавления его в контейнер внедрения зависимостей, как показано ниже. Это делается в методе `Startup.ConfigureServices`.
 
@@ -408,7 +403,7 @@ public void Initialize(ITelemetry telemetry)
 * Убедитесь, что полное имя типа и имя сборки указаны правильно.
 * Убедитесь, что файл applicationinsights.config находится в выходном каталоге и содержит все последние изменения.
 
-## <a name="reference-docs"></a>Справочная документация
+## <a name="reference-docs"></a>Справочные документы
 
 * [Обзор API](../../azure-monitor/app/api-custom-events-metrics.md)
 * [Справочник по ASP.NET](https://msdn.microsoft.com/library/dn817570.aspx)

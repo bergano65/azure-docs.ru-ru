@@ -1,5 +1,5 @@
 ---
-title: Перемещение ресурсов приложения логики между подписками, группами ресурсов или регионами — Azure Logic Apps
+title: Перемещение приложений логики между подписками, группами ресурсов или регионами — Azure Logic Apps
 description: Миграция приложений логики или учетных записей интеграции в другие подписки Azure, группы ресурсов или расположения (регионы)
 services: logic-apps
 ms.service: logic-apps
@@ -9,14 +9,14 @@ ms.author: estfan
 ms.reviewer: klam, LADocs
 ms.topic: conceptual
 ms.date: 07/31/2019
-ms.openlocfilehash: e7c201004be6c4d39f482cc288824cba74e302cb
-ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
+ms.openlocfilehash: 8c3bad32943b83cbfe4c96087f3fef1c51f64bb1
+ms.sourcegitcommit: d37991ce965b3ee3c4c7f685871f8bae5b56adfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68737502"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72679114"
 ---
-# <a name="migrate-logic-app-resources-to-other-azure-subscriptions-resource-groups-or-regions"></a>Перенос ресурсов приложения логики в другие подписки Azure, группы ресурсов или регионы
+# <a name="move-logic-app-resources-to-other-azure-subscriptions-resource-groups-or-regions"></a>Перемещение ресурсов приложения логики в другие подписки Azure, группы ресурсов или регионы
 
 Чтобы переместить приложение логики или связанные ресурсы в другую подписку Azure, группу ресурсов или регион, можно выполнить различные способы выполнения таких задач, как портал Azure, Azure PowerShell, Azure CLI и REST API. Прежде чем перемещать ресурсы, ознакомьтесь со следующими соображениями. 
 
@@ -26,7 +26,7 @@ ms.locfileid: "68737502"
 
 * При перемещении ресурсов Azure создает новые идентификаторы ресурсов. Убедитесь, что вместо этого вы используете новые идентификаторы, и обновите все сценарии или средства, связанные с перемещенными ресурсами. После перемещения приложений логики между подписками, группами ресурсов или регионами необходимо заново создать или повторно авторизовать любые подключения на основе OAuth.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Та же подписка Azure, которая использовалась для создания приложения логики или учетной записи интеграции, которую вы хотите переместить.
 
@@ -82,7 +82,7 @@ ms.locfileid: "68737502"
 
 Дополнительные сведения о шаблонах развертывания для приложений логики см. в следующих разделах:
 
-* [Apache Автоматизация развертывания для Azure Logic Apps с помощью шаблонов Azure Resource Manager](../logic-apps/logic-apps-azure-resource-manager-templates-overview.md)
+* [Обзор: Автоматизация развертывания для Azure Logic Apps с помощью шаблонов Azure Resource Manager](../logic-apps/logic-apps-azure-resource-manager-templates-overview.md)
 * [Поиск, открытие и скачивание приложения логики из портал Azure в Visual Studio](../logic-apps/manage-logic-apps-with-visual-studio.md)
 * [Создание шаблонов Azure Resource Manager для Azure Logic Apps](../logic-apps/logic-apps-create-azure-resource-manager-templates.md)
 * [Развертывание шаблонов Azure Resource Manager для Azure Logic Apps](../logic-apps/logic-apps-deploy-azure-resource-manager-templates.md)
@@ -107,6 +107,6 @@ ms.locfileid: "68737502"
 
 1. Откройте и измените шаблон, чтобы параметризовать необходимые значения для развертывания.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Перемещение ресурсов Azure в новые группы ресурсов или подписки](../azure-resource-manager/resource-group-move-resources.md)

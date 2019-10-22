@@ -1,22 +1,18 @@
 ---
 title: Создание и запуск пользовательских тестов доступности с помощью функций Azure
 description: В этом документе рассматривается создание функции Azure с TrackAvailability (), которая будет выполняться периодически в соответствии с конфигурацией, заданной в функции TimerTrigger. Результаты этого теста будут отправлены в ресурс Application Insights, где вы сможете запрашивать данные о результатах доступности и получать оповещения о них. Настроенные тесты позволяют создавать более сложные тесты доступности, чем возможно с помощью пользовательского интерфейса портала, мониторинга приложения в виртуальной сети Azure, изменения адреса конечной точки или создания теста доступности, если он недоступен в вашем регионе.
-services: application-insights
-documentationcenter: ''
-author: morgangrobin
-manager: carmonm
-ms.service: application-insights
-ms.workload: tbd
-ms.tgt_pltfrm: ibiza
+ms.service: azure-monitor
+ms.subservice: application-insights
 ms.topic: conceptual
-ms.date: 10/11/2019
+author: morgangrobin
 ms.author: mogrobin
-ms.openlocfilehash: 38a83169a7d1ffa03416f5947ada703bcba5017a
-ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
+ms.date: 10/11/2019
+ms.openlocfilehash: a2b29f2c24a3244cdc800d882e7c2ed8f943eabe
+ms.sourcegitcommit: 1bd2207c69a0c45076848a094292735faa012d22
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2019
-ms.locfileid: "72301377"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72677585"
 ---
 # <a name="create-and-run-custom-availability-tests-using-azure-functions"></a>Создание и запуск пользовательских тестов доступности с помощью функций Azure
 
@@ -222,7 +218,7 @@ private static async Task AvailabilityTestRun(string name, string location, stri
 
 ![Зависимости](media/availability-azure-functions/dependencies.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Схема сопоставления приложений](../../azure-monitor/app/app-map.md)
 - [Диагностика транзакций](../../azure-monitor/app/transaction-diagnostics.md)

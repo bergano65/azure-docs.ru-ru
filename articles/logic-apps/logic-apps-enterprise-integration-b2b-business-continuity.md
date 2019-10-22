@@ -1,6 +1,6 @@
 ---
-title: Аварийное восстановление учетной записи интеграции B2B в Logic Apps | Документация Майкрософт
-description: Подготовка к межрегиональному аварийному восстановлению в Azure Logic Apps
+title: Аварийное восстановление для учетных записей интеграции — Azure Logic Apps
+description: Настройка аварийного восстановления в разных регионах для учетных записей интеграции в Azure Logic Apps
 services: logic-apps
 ms.service: logic-apps
 ms.suite: integration
@@ -8,21 +8,20 @@ author: divyaswarnkar
 ms.author: divswa
 ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
-ms.assetid: cf44af18-1fe5-41d5-9e06-cc57a968207c
 ms.date: 04/10/2017
-ms.openlocfilehash: ac29ef7f0599cc41924ba1a5a00e46b0292e7e9b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 321bfb673bab748176d75db7bcf21d76ddf0c819
+ms.sourcegitcommit: d37991ce965b3ee3c4c7f685871f8bae5b56adfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65967745"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72680398"
 ---
-# <a name="cross-region-disaster-recovery-for-b2b-integration-accounts-in-azure-logic-apps"></a>Межрегиональное аварийное восстановление учетных записей интеграции B2B в Azure Logic Apps
+# <a name="set-up-cross-region-disaster-recovery-for-integration-accounts-in-azure-logic-apps"></a>Настройка аварийного восстановления в разных регионах для учетных записей интеграции в Azure Logic Apps
 
 Рабочие нагрузки B2B включают денежные транзакции, например заказы и счета. Для компаний в случае аварии чрезвычайно важно быстро восстановить систему для соответствия Соглашениям об уровне обслуживания корпоративного уровня по договоренности с партнерами. В этой статье описывается создание плана обеспечения непрерывности бизнес-процессов для рабочих нагрузок B2B. 
 
 * Готовность к аварийному восстановлению 
-* Отработка отказа в дополнительный регион во время аварии 
+* отработка отказа в дополнительный регион во время аварии; 
 * Восстановление размещения в основной регион после аварийного восстановления
 
 ## <a name="disaster-recovery-readiness"></a>Готовность к аварийному восстановлению  

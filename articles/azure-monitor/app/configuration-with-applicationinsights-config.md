@@ -1,31 +1,26 @@
 ---
 title: Справочник по файлу ApplicationInsights.config в Azure | Документация Майкрософт
 description: Включение или отключение модулей сбора данных и добавление счетчиков производительности, а также других параметров.
-services: application-insights
-documentationcenter: ''
-author: mrbullwinkle
-manager: carmonm
-ms.assetid: 6e397752-c086-46e9-8648-a1196e8078c2
-ms.service: application-insights
-ms.workload: tbd
-ms.tgt_pltfrm: ibiza
+ms.service: azure-monitor
+ms.subservice: application-insights
 ms.topic: conceptual
+author: mrbullwinkle
+ms.author: mbullwin
 ms.date: 05/22/2019
 ms.reviewer: olegan
-ms.author: mbullwin
-ms.openlocfilehash: 02ad74e5b1f8b86a0072b413db2a572f8ed92781
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 94ae9035c1657c1ce20c40234ddca95ae30d9edd
+ms.sourcegitcommit: 1bd2207c69a0c45076848a094292735faa012d22
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68932149"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72677533"
 ---
 # <a name="configuring-the-application-insights-sdk-with-applicationinsightsconfig-or-xml"></a>Настройка пакета SDK для Application Insights с использованием файла ApplicationInsights.config или ApplicationInsights.xml
 Пакет SDK .NET Application Insights состоит из нескольких пакетов NuGet. [Основной пакет](https://www.nuget.org/packages/Microsoft.ApplicationInsights) предоставляет API для отправки телеметрии в Application Insights. [Дополнительные пакеты](https://www.nuget.org/packages?q=Microsoft.ApplicationInsights) предоставляют *модули* и *инициализаторы* телеметрии для автоматического отслеживания телеметрии вашего приложения и его контекста. Настроив файл конфигурации, можно включить или отключить модули телеметрии и инициализаторы, а также задать параметры для некоторых из них.
 
 Имя файла конфигурации – `ApplicationInsights.config` или `ApplicationInsights.xml` в зависимости от типа приложения. Он автоматически добавляется в проект при [установке большинства версий пакета SDK][start]. По умолчанию при использовании автоматизированного интерфейса проектов шаблонов Visual Studio, поддерживающих **добавление > телеметрия Application Insights**, файл ApplicationInsights. config создается в корневой папке проекта, а при его выполнении копируется в папка bin. Он также добавляется в веб-приложение с [Монитор состояния на сервере IIS][redfield]. Файл конфигурации не учитывается, если используется [расширение для веб-сайта](azure-web-apps.md) или [расширения Azure для виртуальной машины Azure и масштабируемого набора виртуальных машин](azure-vm-vmss-apps.md) .
 
-Нет эквивалентного файла для управления пакетом [SDK на веб-странице][client].
+Нет эквивалентного файла для управления [пакетом SDK на веб-странице][client].
 
 В этом документе описываются разделы файла конфигурации и то, как они управляют компонентами пакета SDK. Кроме того, в нем содержатся сведения о пакетах NuGet, загружающих эти компоненты.
 
@@ -54,7 +49,7 @@ ms.locfileid: "68932149"
 * [Microsoft.ApplicationInsights.PerfCounterCollector](https://www.nuget.org/packages/Microsoft.ApplicationInsights.PerfCounterCollector) .
 
 ### <a name="application-insights-diagnostics-telemetry"></a>Телеметрия диагностики Application Insights
-`DiagnosticsTelemetryModule` информирует об ошибках в самом коде инструментирования Application Insights, например, если код не может получить доступ к счетчикам производительности или `ITelemetryInitializer` вызывает исключение. Данные телеметрии трассировки, отслеживаемые этим модулем, отображаются в [поиске][diagnostic]по диагностике.
+`DiagnosticsTelemetryModule` информирует об ошибках в самом коде инструментирования Application Insights, например, если код не может получить доступ к счетчикам производительности или `ITelemetryInitializer` вызывает исключение. Данные телеметрии трассировки, отслеживаемые этим модулем, отображаются в [поиске по диагностике][diagnostic].
 
 ```
 * `Microsoft.ApplicationInsights.Extensibility.Implementation.Tracing.DiagnosticsTelemetryModule`
@@ -103,8 +98,8 @@ ms.locfileid: "68932149"
 ## <a name="telemetry-channel"></a>Канал телеметрии
 [Канал телеметрии](telemetry-channels.md) управляет буферизацией и передачей данных телеметрии в службу Application Insights.
 
-* `Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.ServerTelemetryChannel`— Это канал по умолчанию для веб-приложений. Он помещает данные в память и использует механизмы повтора и хранилище локального диска для более надежной доставки телеметрии.
-* `Microsoft.ApplicationInsights.InMemoryChannel`— Это упрощенный канал телеметрии, который используется, если другие каналы не настроены. 
+* `Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.ServerTelemetryChannel` является каналом по умолчанию для веб-приложений. Он помещает данные в память и использует механизмы повтора и хранилище локального диска для более надежной доставки телеметрии.
+* `Microsoft.ApplicationInsights.InMemoryChannel` — это упрощенный канал телеметрии, который используется, если другие каналы не настроены. 
 
 ## <a name="telemetry-initializers-aspnet"></a>Инициализаторы телеметрии (ASP.NET)
 Инициализаторы телеметрии устанавливают свойства контекста, которые отправляются вместе с каждым элементом телеметрии.
@@ -133,7 +128,7 @@ ms.locfileid: "68932149"
 
     `<Filters>` задает идентификационные свойства запросов.
 * `UserTelemetryInitializer` обновляет свойства `Id` и `AcquisitionDate` контекста `User` для всех элементов телеметрии со значениями, извлеченными из файла cookie `ai_user`, созданного кодом JavaScript инструментирования Application Insights, который выполняется в браузере пользователя.
-* `WebTestTelemetryInitializer`Задает идентификатор пользователя, идентификатор сеанса и свойства искусственного источника для HTTP-запросов, поступающих из [тестов доступности](../../azure-monitor/app/monitor-web-app-availability.md).
+* `WebTestTelemetryInitializer` задает свойства идентификатора пользователя, идентификатора сеанса и искусственного источника для HTTP-запросов, поступающих из [тестов доступности](../../azure-monitor/app/monitor-web-app-availability.md).
   `<Filters>` задает идентификационные свойства запросов.
 
 Для приложений .NET, работающих в Service Fabric, можно добавить пакет NuGet `Microsoft.ApplicationInsights.ServiceFabric`. Данный пакет содержит компонент `FabricTelemetryInitializer`, который добавляет свойства Service Fabric в элементы телеметрии. Дополнительные сведения см. на [странице GitHub](https://github.com/Microsoft/ApplicationInsights-ServiceFabric/blob/master/README.md), посвященной свойствам, добавляемым пакетом NuGet.
@@ -161,7 +156,7 @@ ms.locfileid: "68932149"
 [Дополнительная информация о выборке](../../azure-monitor/app/sampling.md).
 
 #### <a name="fixed-rate-sampling-telemetry-processor-from-200-beta1"></a>Обработчик данных телеметрии с фиксированной частотой (из 2.0.0-beta1)
-Кроме того, существует стандартный [обработчик данных телеметрии](../../azure-monitor/app/api-filtering-sampling.md) с выборкой (от 2.0.1):
+Кроме того, существует стандартный [обработчик данных телеметрии с выборкой](../../azure-monitor/app/api-filtering-sampling.md) (от 2.0.1):
 
 ```XML
 
@@ -184,9 +179,9 @@ ms.locfileid: "68932149"
 #### <a name="maxtelemetrybuffercapacity"></a>MaxTelemetryBufferCapacity
 Этот параметр определяет количество элементов телеметрии, которые могут храниться в хранилище в памяти пакета SDK. По достижении этого количества происходит очистка буфера телеметрии, то есть элементы телеметрии отправляются на сервер Application Insights.
 
-* Минимум: 1
-* Максимум: 1000
-* По умолчанию: 500
+* Мин. значение: 1.
+* Макс. значение: 1000.
+* Значение по умолчанию: 500.
 
 ```
 
@@ -202,9 +197,9 @@ ms.locfileid: "68932149"
 #### <a name="flushintervalinseconds"></a>FlushIntervalInSeconds
 Этот параметр определяет, как часто следует очищать (отправлять в Application Insights) данные, хранящиеся в хранилище в памяти.
 
-* Минимум: 1
-* Максимум: 300
-* По умолчанию: 5
+* Мин. значение: 1.
+* Макс. значение: 300.
+* Значение по умолчанию: 5.
 
 ```
 
@@ -220,9 +215,9 @@ ms.locfileid: "68932149"
 #### <a name="maxtransmissionstoragecapacityinmb"></a>MaxTransmissionStorageCapacityInMB
 Этот параметр определяет максимальный размер пространства (в МБ), выделенного для постоянного хранилища на локальном диске. Это хранилище используется для хранения элементов телеметрии, которые не удалось передать в конечную точку Application Insights. Если хранилище будет заполнено, новые элементы телеметрии будут отклонены.
 
-* Минимум: 1
-* Максимум: 100
-* По умолчанию: 10
+* Мин. значение: 1.
+* Макс. значение: 100.
+* Значение по умолчанию: 10.
 
 ```
 
@@ -376,7 +371,7 @@ TelemetryConfiguration.Active.ApplicationIdProvider = new DictionaryApplicationI
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные [сведения об API][api].
 
 <!--Link references-->

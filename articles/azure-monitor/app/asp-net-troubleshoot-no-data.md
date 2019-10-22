@@ -1,23 +1,18 @@
 ---
 title: Устранение неполадок, связанных с тем, что в Application Insights для .NET не отображаются данные
 description: Не отображаются данные в Azure Application Insights? Попробуйте здесь.
-services: application-insights
-documentationcenter: .net
-author: mrbullwinkle
-manager: carmonm
-ms.assetid: e231569f-1b38-48f8-a744-6329f41d91d3
-ms.service: application-insights
-ms.workload: mobile
-ms.tgt_pltfrm: ibiza
+ms.service: azure-monitor
+ms.subservice: application-insights
 ms.topic: conceptual
-ms.date: 07/23/2018
+author: mrbullwinkle
 ms.author: mbullwin
-ms.openlocfilehash: b4bfd984f1e169cb1044002118f9534c4efc9bd8
-ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
+ms.date: 07/23/2018
+ms.openlocfilehash: 0bb32486ea3fcfd37337b18b02f4f432effa8f75
+ms.sourcegitcommit: 1bd2207c69a0c45076848a094292735faa012d22
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71169571"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72678330"
 ---
 # <a name="troubleshooting-no-data---application-insights-for-net"></a>Устранение неполадок, связанных с тем, что в Application Insights для .NET не отображаются данные
 ## <a name="some-of-my-telemetry-is-missing"></a>Некоторая телеметрия отсутствует
@@ -34,7 +29,7 @@ ms.locfileid: "71169571"
 
 *Я столкнулся с потерей данных в консольном приложении или в веб-приложении, когда приложение собирается закончить работу.*
 
-* Канал пакета SDK хранит данные телеметрии в буфере и отправляет их в пакетах. Если приложение завершает работу, может потребоваться явно вызвать метод [flush ()](api-custom-events-metrics.md#flushing-data). Поведение зависит от фактического используемого [канала.](telemetry-channels.md#built-in-telemetry-channels) `Flush()`
+* Канал пакета SDK хранит данные телеметрии в буфере и отправляет их в пакетах. Если приложение завершает работу, может потребоваться явно вызвать метод [flush ()](api-custom-events-metrics.md#flushing-data). Поведение `Flush()` зависит от фактического используемого [канала](telemetry-channels.md#built-in-telemetry-channels) .
 
 ## <a name="no-data-from-my-server"></a>Нет данных с моего сервера
 *На моем веб-сервере установлено приложение, но данные телеметрии сервера не отображаются. На компьютере разработки все работало хорошо.*
@@ -42,7 +37,7 @@ ms.locfileid: "71169571"
 * Возможно, проблема в брандмауэре. [Установите исключения брандмауэра для отправки данных Application Insights](../../azure-monitor/app/ip-addresses.md).
 * На сервере IIS могут отсутствовать некоторые предварительные условия: расширяемость .NET 4.5 и ASP.NET 4.5.
 
-*На моем веб-сервере [установлен монитор состояния](../../azure-monitor/app/monitor-performance-live-website-now.md) для мониторинга существующих приложений. Я не вижу никаких результатов.*
+*Я [установил монитор состояния](../../azure-monitor/app/monitor-performance-live-website-now.md) на моем веб-сервере для мониторинга существующих приложений. Результаты не отображаются.*
 
 * См. раздел [Устранение неполадок](../../azure-monitor/app/monitor-performance-live-website-now.md#troubleshoot).
 
@@ -102,9 +97,9 @@ ms.locfileid: "71169571"
 При вводе учетных данных Майкрософт, которые вы в последний раз использовали в стандартном браузере, отсутствует доступ к [ресурсу, который был создан при добавлении Application Insights в это приложение](../../azure-monitor/app/asp-net.md). Есть две вероятные причины:
 
 * Возможно, у вас не одна учетная запись Майкрософт, а несколько — например, рабочая и личная. В последний раз вы использовали в браузере по умолчанию не ту учетную запись, с помощью которой [добавляли Application Insights в проект](../../azure-monitor/app/asp-net.md).
-  * Исправление: щелкните свое имя в верхней правой части окна браузера и выполните выход. Затем войдите с учетной записью, необходимой для доступа. Затем на панели навигации слева щелкните Application Insights и выберите приложение.
+  * Исправление. Щелкните свое имя в правом верхнем углу окна браузера и выйдите из него. Затем войдите в систему, используя учетную запись с доступом. Затем на панели навигации слева щелкните Application Insights и выберите приложение.
 * Кто-то другой добавил Application Insights в проект и забыл предоставить вам [доступ к группе ресурсов](../../azure-monitor/app/resources-roles-access-control.md) , в которой он был создан.
-  * Исправление: если этот пользователь указал учетную запись организации, возможно, он добавил вас в группу или предоставил вам индивидуальный доступ к группе ресурсов.
+  * Исправление: если этот пользователь использовал рабочую или учебную учетную запись, возможно, он добавил вас в группу или предоставил вам индивидуальный доступ к группе ресурсов.
 
 ## <a name="asset-not-found-on-opening-application-insights-from-visual-studio"></a>При открытии Application Insights из Visual Studio возникает ошибка "Ресурс-контейнер не найден"
 *При выборе команды меню "Открыть Application Insights" выполняется переход на портал Azure, но при этом появляется сообщение об ошибке "Ресурс-контейнер не найден".*
@@ -122,7 +117,7 @@ ms.locfileid: "71169571"
 * Откройте ресурс напрямую. Войдите на [портал Azure](https://portal.azure.com), выберите пункт Application Insights на панели навигации слева и выберите приложение.
 
 ## <a name="where-do-i-find-my-telemetry"></a>Где найти мои данные телеметрии
-*После входа на [портал Microsoft Azure](https://portal.azure.com) я вижу панель мониторинга на домашней странице Azure. Итак, где найти мои данные Application Insights?*
+*Я вошел в [портал Microsoft Azure](https://portal.azure.com), и я ищу панель мониторинга домашней панели Azure. Итак, где найти данные Application Insights?*
 
 * На панели навигации слева щелкните Application Insights и выберите имя приложения. Если проекты не отображаются, [добавьте или настройте Application Insights в своем веб-проекте](../../azure-monitor/app/asp-net.md).  
   Вы увидите несколько сводных диаграмм. Щелкните любую из них, чтобы увидеть более подробные данные.
@@ -163,11 +158,11 @@ ms.locfileid: "71169571"
 * Проверьте, что вы фактически скопировали все библиотеки DLL Microsoft. ApplicationInsights на сервер вместе с Microsoft.Diagnostics.Instrumentation.Extensions.Intercept.dll
 * В брандмауэре может потребоваться [открыть некоторые порты TCP](../../azure-monitor/app/ip-addresses.md).
 * Если для отправки из корпоративной сети необходимо использовать прокси-сервер, установите значение [defaultProxy](https://msdn.microsoft.com/library/aa903360.aspx) в файле Web.config.
-* Для Windows Server 2008. Убедитесь, что установлены следующие обновления: [KB2468871](https://support.microsoft.com/kb/2468871), [KB2533523](https://support.microsoft.com/kb/2533523), [KB2600217](https://support.microsoft.com/kb/2600217).
+* Для Windows Server 2008. Убедитесь в том, что установлены следующие обновления: [KB2468871](https://support.microsoft.com/kb/2468871), [KB2533523](https://support.microsoft.com/kb/2533523), [KB2600217](https://support.microsoft.com/kb/2600217).
 
 ## <a name="i-used-to-see-data-but-it-has-stopped"></a>Ранее видимые данные перестали отображаться
 * Проверьте [блог состояний](https://blogs.msdn.com/b/applicationinsights-status/).
-* Вы достигли месячной квоты точек данных? Чтобы выяснить это, последовательно выберите «Параметры», «Квота и расценки». Если вы достигли квоты, вы можете изменить свой тарифный план или заплатить за дополнительную емкость. См. [таблицу цен](https://azure.microsoft.com/pricing/details/application-insights/).
+* Вы достигли месячной квоты точек данных? Чтобы узнать, откройте параметры, квоту и цены. Если это так, вы можете обновить план или заплатить за дополнительную емкость. См. [таблицу цен](https://azure.microsoft.com/pricing/details/application-insights/).
 
 ## <a name="i-dont-see-all-the-data-im-expecting"></a>Не отображаются все данные, которые ожидалось увидеть
 Если ваше приложение отправляет большие объемы данных, а вы используете Application Insights SDK для ASP.NET версии 2.0.0-beta3 или более поздней, может сработать функция [адаптивной выборки](../../azure-monitor/app/sampling.md) и будет отправлена только часть данных телеметрии.

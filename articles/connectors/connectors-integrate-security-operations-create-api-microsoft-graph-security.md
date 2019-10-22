@@ -1,6 +1,6 @@
 ---
-title: Интеграция операций обеспечения безопасности с Microsoft Graph Security — Azure Logic Apps
-description: Улучшите возможности защиты, обнаружения угроз вашего приложения и реагирования на них, управляя операциями безопасности с помощью приложений Microsoft Graph Security и Azure Logic Apps
+title: Интеграция и управление операциями безопасности — Azure Logic Apps & Microsoft Graph безопасность
+description: Улучшите защиту от угроз, обнаружение и реагирование на приложения с помощью Microsoft Graph & безопасности Azure Logic Apps
 services: logic-apps
 ms.service: logic-apps
 ms.suite: integration
@@ -10,12 +10,12 @@ ms.reviewer: klam, estfan, LADocs
 ms.topic: article
 ms.date: 01/30/2019
 tags: connectors
-ms.openlocfilehash: 24963a35bc3e54b2d140bf4ed1d169b213bd9b2a
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 845f57d84f49bdd964cc6f61790faff093f59466
+ms.sourcegitcommit: d37991ce965b3ee3c4c7f685871f8bae5b56adfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60448058"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72679100"
 ---
 # <a name="improve-threat-protection-by-integrating-security-operations-with-microsoft-graph-security--azure-logic-apps"></a>Улучшение защиты от угроз путем интеграции операций обеспечения безопасности с Microsoft Graph Security — Azure Logic Apps
 
@@ -36,7 +36,7 @@ ms.locfileid: "60448058"
 
 * Чтобы использовать соединитель Microsoft Graph Security, необходимо *явно предоставить* согласие администратора клиента Azure Active Directory (AD), которое является частью [требований проверки подлинности Microsoft Graph Security](https://aka.ms/graphsecurityauth). Для этого согласия требуется идентификатор и имя приложения соединителя Microsoft Graph Security, которые также можно найти на портале [Azure](https://portal.azure.com).
 
-   | Свойство | Значение |
+   | Свойство | Value |
    |----------|-------|
    | **Имя приложения** | `MicrosoftGraphSecurityConnector` |
    | **Идентификатор приложения** | `c4829704-0edc-4c3d-a347-7c4a67586f3c` |
@@ -87,7 +87,7 @@ ms.locfileid: "60448058"
 
 Дополнительные сведения о запросах, которые можно использовать с этим соединителем, см. в справочной документации по [оповещениям Microsoft Graph Security](https://docs.microsoft.com/graph/api/alert-list). Чтобы улучшить взаимодействие с этим соединителем, узнайте больше об [оповещениях свойств схемы](https://docs.microsoft.com/graph/api/resources/alert), поддерживаемых соединителем.
 
-| Действие | Описание |
+| Действия | Описание |
 |--------|-------------|
 | **Получение оповещений** | Фильтрация оповещений на основе одного или нескольких свойств [оповещений](https://docs.microsoft.com/graph/api/resources/alert), например: <p>`Provider eq 'Azure Security Center' or 'Palo Alto Networks'` | 
 | **Получение оповещения по идентификатору** | Получение определенного оповещения на основе идентификатора. | 
@@ -101,7 +101,7 @@ Microsoft Graph поддерживает [*подписки*](https://docs.micro
 
 `security/alerts?$filter=status eq 'New'`
 
-| Действие | Описание |
+| Действия | Описание |
 |--------|-------------|
 | **Создание подписок** | [Создайте подписку](https://docs.microsoft.com/graph/api/subscription-post-subscriptions), уведомляющую о любых изменениях. В этой подписке можно отфильтровать определенные типы оповещений. Например, можно создать подписку, уведомляющую об оповещениях с высокой степенью серьезности. |
 | **Получение активных подписок** | [Получает активные подписки](https://docs.microsoft.com/graph/api/subscription-list). | 

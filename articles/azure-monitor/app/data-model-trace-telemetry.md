@@ -1,33 +1,29 @@
 ---
 title: Модель данных телеметрии Azure Application Insights — телеметрия трассировки | Документы Майкрософт
 description: Модель данных Application Insights для телеметрии трассировки
-services: application-insights
-documentationcenter: .net
-author: mrbullwinkle
-manager: carmonm
-ms.service: application-insights
-ms.workload: TBD
-ms.tgt_pltfrm: ibiza
+ms.service: azure-monitor
+ms.subservice: application-insights
 ms.topic: conceptual
+author: mrbullwinkle
+ms.author: mbullwin
 ms.date: 04/25/2017
 ms.reviewer: sergkanz
-ms.author: mbullwin
-ms.openlocfilehash: df85aafc81b199610c02f0faecb06e804fda24bb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 855a93d8a6350c625fe0820fae83644aec3459ed
+ms.sourcegitcommit: 1bd2207c69a0c45076848a094292735faa012d22
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60899295"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72678112"
 ---
-# <a name="trace-telemetry-application-insights-data-model"></a>Телеметрия трассировки. Модель данных Application Insights
+# <a name="trace-telemetry-application-insights-data-model"></a>Телеметрия трассировки: модель данных Application Insights
 
 Телеметрия трассировки (в [Application Insights](../../azure-monitor/app/app-insights-overview.md)) представляет инструкции трассировки стиля `printf`, доступные для текстового поиска. `Log4Net`, `NLog` и другие записи файла журнала на основе текста преобразуются в экземпляры этого типа. Трассировка не имеет измерений в качестве расширения.
 
-## <a name="message"></a>`Message`
+## <a name="message"></a>Сообщение
 
 Сообщение трассировки.
 
-Максимальная длина 32 768 знаков
+Максимальная длина: 32 768 символов
 
 ## <a name="severity-level"></a>Уровень серьезности
 

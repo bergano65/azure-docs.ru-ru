@@ -1,23 +1,18 @@
 ---
 title: Экспорт в Power BI из Azure Application Insights | Документация Майкрософт
 description: Аналитические запросы можно просматривать в Power BI.
-services: application-insights
-documentationcenter: ''
-author: mrbullwinkle
-manager: carmonm
-ms.assetid: 7f13ea66-09dc-450f-b8f9-f40fdad239f2
-ms.service: application-insights
-ms.workload: tbd
-ms.tgt_pltfrm: ibiza
+ms.service: azure-monitor
+ms.subservice: application-insights
 ms.topic: conceptual
-ms.date: 08/10/2018
+author: mrbullwinkle
 ms.author: mbullwin
-ms.openlocfilehash: a57393918992019844e2ff4ccc13d671f0b90ed5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 08/10/2018
+ms.openlocfilehash: 04848f763fe8246f8e10f563169c04ea37b0ed37
+ms.sourcegitcommit: 1bd2207c69a0c45076848a094292735faa012d22
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60900399"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72677315"
 ---
 # <a name="feed-power-bi-from-application-insights"></a>Использование данных Application Insights в Power BI
 [Power BI](https://www.powerbi.com/) — это набор бизнес-инструментов для анализа данных и обмена сведениями. На каждом устройстве доступны панели мониторинга с широкими возможностями. Вы можете объединять данные из различных источников, в том числе аналитические запросы из [ Application Insights](../../azure-monitor/app/app-insights-overview.md).
@@ -86,7 +81,7 @@ ms.locfileid: "60900399"
 
    ![Снимок экрана Power BI Desktop, на котором выделен измененный заголовок](./media/export-power-bi/changetitle.png)
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Устранение неисправностей
 
 Могут возникнуть ошибки, относящиеся к учетным данным или размеру набора данных. Ниже приведены сведения о том, что нужно делать в случае возникновения таких ошибок.
 
@@ -105,8 +100,8 @@ ms.locfileid: "60900399"
 
 1. Создайте [ключ API](https://dev.applicationinsights.io/documentation/Authorization/API-key-and-App-ID).
 2. Обновите сценарий Power BI на языке M, экспортированный из Analytics, заменив URL-адрес Azure Resource Manager интерфейсом API Application Insights.
-   * Замените **https:\//management.azure.com/subscriptions/...**
-   * **https:\//api.applicationinsights.io/beta/apps/...**
+   * Заменить **https: \//Management.Azure.com/Subscriptions/...**
+   * с, **https: \//API.applicationinsights.IO/Beta/Apps/...**
 3. Наконец, измените учетные данные на базовые и используйте свой ключ API.
 
 **Существующий сценарий**

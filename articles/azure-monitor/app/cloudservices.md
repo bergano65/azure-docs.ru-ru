@@ -1,31 +1,25 @@
 ---
 title: Использование Application Insights для облачных служб Azure | Документация Майкрософт
 description: Эффективное отслеживание веб-ролей и рабочих ролей с помощью Application Insights
-services: application-insights
-documentationcenter: ''
-keywords: WAD2AI, система диагностики Azure
-author: mrbullwinkle
-manager: carmonm
-ms.assetid: 5c7a5b34-329e-42b7-9330-9dcbb9ff1f88
-ms.service: application-insights
-ms.tgt_pltfrm: ibiza
+ms.service: azure-monitor
+ms.subservice: application-insights
 ms.topic: conceptual
-ms.workload: tbd
-ms.date: 09/05/2018
+author: mrbullwinkle
 ms.author: mbullwin
-ms.openlocfilehash: 9325d2dd6c897f4c8dacb3dcf3a382f9f0e856a8
-ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
+ms.date: 09/05/2018
+ms.openlocfilehash: d77bbe355b3f6a2666f46246d1d12cfb2e43e559
+ms.sourcegitcommit: 1bd2207c69a0c45076848a094292735faa012d22
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70933012"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72677577"
 ---
 # <a name="application-insights-for-azure-cloud-services"></a>Использование Application Insights для облачных служб Azure
 [Application Insights][start] можете отслеживать [приложения облачных служб Azure](https://azure.microsoft.com/services/cloud-services/) на предмет доступности, производительности, сбоев и использования, объединяя данные из Application Insights SDK с [система диагностики Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/azure-diagnostics) данными из облачных служб. Благодаря получаемым данным о производительности и эффективности работы приложения на практике вы можете принимать осознанные решения о направлении разработки в каждом жизненном цикле.
 
 ![Панель мониторинга с общими сведениями](./media/cloudservices/overview-graphs.png)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Для этого потребуются следующие компоненты.
 
 * Подписка [Azure](https://azure.com). Войдите с помощью учетной записи Майкрософт для Windows, XBox Live или других облачных служб Майкрософт. 
@@ -80,7 +74,7 @@ ms.locfileid: "70933012"
 
 Если вы решили создать отдельный ресурс для каждой роли и, возможно, отдельный набор для каждой конфигурации сборки, проще это сделать на портале Application Insights. Если создается много ресурсов, можно [автоматизировать этот процесс](../../azure-monitor/app/powershell.md).
 
-1. В [портал Azure][portal]выберите **новые** > **службы** > для разработчиков**Application Insights**.  
+1. В [портал Azure][portal]выберите **создать**  > **службы разработчиков**  > **Application Insights**.  
 
     ![Панель Application Insights](./media/cloudservices/01-new.png)
 
@@ -113,22 +107,22 @@ ms.locfileid: "70933012"
 
 1. Чтобы настроить **рабочие ролей**, сделайте следующее: 
 
-    1\. Щелкните проект правой кнопкой мыши и выберите **Управление пакетами Nuget**.
+    а) Щелкните проект правой кнопкой мыши и выберите **Управление пакетами Nuget**.
 
-    2\. Добавьте [Application Insights для Windows Servers](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WindowsServer/).
+    б) Добавьте [Application Insights для Windows Servers](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WindowsServer/).
 
     ![Поиск Application Insights](./media/cloudservices/04-ai-nuget.png)
 
 1. Чтобы настроить пакет SDK для отправки данных в ресурс Application Insights, сделайте следующее:
 
-    1\. В соответствующей функции запуска задайте ключ инструментирования, указанный в параметре конфигурации из файла *.cscfg*.
+    а) В соответствующей функции запуска задайте ключ инструментирования, указанный в параметре конфигурации из файла *.cscfg*.
  
     ```csharp
    
      TelemetryConfiguration.Active.InstrumentationKey = RoleEnvironment.GetConfigurationSettingValue("APPINSIGHTS_INSTRUMENTATIONKEY");
     ```
    
-    2\. Повторите предыдущий шаг (a) для каждой роли в приложении. См. указанные ниже примеры.
+    б) Повторите предыдущий шаг (a) для каждой роли в приложении. См. указанные ниже примеры.
    
     * [Веб-роль](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/MvcWebRole/Global.asax.cs#L27)
     * [Рабочая роль](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/WorkerRoleA/WorkerRoleA.cs#L232)
@@ -142,7 +136,7 @@ ms.locfileid: "70933012"
 
 Этот шаг необходим только в том случае, если требуется захватить полные SQL-запросы на .NET Framework. 
 
-1. В `\*.csdef` меню файл добавьте [задачу запуска](https://docs.microsoft.com/azure/cloud-services/cloud-services-startup-tasks) для каждой роли, аналогичной 
+1. В `\*.csdef` файле добавьте [задачу запуска](https://docs.microsoft.com/azure/cloud-services/cloud-services-startup-tasks) для каждой роли, аналогичной 
 
     ```xml
     <Startup>
@@ -157,7 +151,7 @@ ms.locfileid: "70933012"
     </Startup>
     ```
     
-2. Скачайте [инсталлажент. bat](https://github.com/microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/WorkerRoleA/AppInsightsAgent/InstallAgent.bat) и [инсталлажент. ps1](https://github.com/microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/WorkerRoleA/AppInsightsAgent/InstallAgent.ps1), вставьте `AppInsightsAgent` их в папку в каждом проекте роли. Не забудьте скопировать их в выходной каталог с помощью свойств файла Visual Studio или скриптов сборки.
+2. Скачайте [инсталлажент. bat](https://github.com/microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/WorkerRoleA/AppInsightsAgent/InstallAgent.bat) и [инсталлажент. ps1](https://github.com/microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/WorkerRoleA/AppInsightsAgent/InstallAgent.ps1), вставьте их в папку `AppInsightsAgent` в каждом проекте роли. Не забудьте скопировать их в выходной каталог с помощью свойств файла Visual Studio или скриптов сборки.
 
 3. Добавьте переменные среды для всех рабочих ролей: 
 
@@ -230,12 +224,12 @@ ms.locfileid: "70933012"
 ## <a name="performance-counters"></a>Счетчики производительности
 По умолчанию собираются приведенные ниже счетчики.
 
-* \Process(??APP_WIN32_PROC??)\% Загруженность процессора
+* \Process (?? APP_WIN32_PROC??) \% процессорного времени
 * \Память\доступные байты
 * \.NET CLR Exceptions(??APP_CLR_PROC??)\# Исключений в секунду
 * \Process(??APP_WIN32_PROC??)\Байт исключительного пользования
 * \Process(??APP_WIN32_PROC??)\I/O — обмен данными, байт в секунду
-* \Процессор (_общий объем ресурсов)\% загруженности процессора
+* \Processor(_Total)\% Загруженность процессора
 
 Эти счетчики также собираются для веб-ролей.
 
@@ -281,7 +275,7 @@ ms.locfileid: "70933012"
 
 > [!VIDEO https://channel9.msdn.com/events/Connect/2016/100/player]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Настройка системы диагностики Azure для отправки данных в Application Insights](../../azure-monitor/platform/diagnostics-extension-to-application-insights.md)
 * [Создание ресурсов Application Insights с помощью PowerShell](../../azure-monitor/app/powershell.md)
 * [Настройка Application Insights для веб-приложения Azure с помощью PowerShell](../../azure-monitor/app/powershell-azure-diagnostics.md)

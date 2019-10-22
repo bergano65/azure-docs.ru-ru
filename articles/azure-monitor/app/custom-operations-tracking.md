@@ -1,23 +1,19 @@
 ---
 title: Отслеживание пользовательских операций с помощью пакета SDK Azure Application Insights для .NET | Документы Майкрософт
 description: Отслеживание пользовательских операций с помощью пакета SDK .NET Azure Application Insights
-services: application-insights
-documentationcenter: .net
-author: mrbullwinkle
-manager: carmonm
-ms.service: application-insights
-ms.workload: TBD
-ms.tgt_pltfrm: ibiza
+ms.service: azure-monitor
+ms.subservice: application-insights
 ms.topic: conceptual
+author: mrbullwinkle
+ms.author: mbullwin
 ms.date: 06/30/2017
 ms.reviewer: sergkanz
-ms.author: mbullwin
-ms.openlocfilehash: d966ff3bc00d5190ebc163d4f4bfa35ba73d21ab
-ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
+ms.openlocfilehash: f05c8724fe87888c93230b4ca77a7a82fe9357c2
+ms.sourcegitcommit: 1bd2207c69a0c45076848a094292735faa012d22
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71087678"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72677467"
 ---
 # <a name="track-custom-operations-with-application-insights-net-sdk"></a>Отслеживание пользовательских операций с помощью пакета SDK Application Insights для .NET
 
@@ -31,7 +27,7 @@ ms.locfileid: "71087678"
 - Application Insights для веб-приложений (выполнение ASP.NET) версии 2.4 или более поздней версии;
 - Application Insights для ASP.NET Core версии 2.1 или более поздней версии.
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Краткое описание
 Операция — это логический элемент работы, выполняемый приложением. У нее есть имя, время запуска, длительность, результат и контекст выполнения, такой как имя пользователя, свойства и результат. Если операция A была инициирована операцией B, то операция B является родительской для A. У операции может быть только одна родительская операция, но множество дочерних операций. Дополнительные сведения об операциях и корреляции телеметрии см. в разделе [Корреляция данных телеметрии в Application Insights](correlation.md).
 
 В пакете SDK Application Insights для .NET операция описывается абстрактным классом [OperationTelemetry](https://github.com/Microsoft/ApplicationInsights-dotnet/blob/develop/src/Microsoft.ApplicationInsights/Extensibility/Implementation/OperationTelemetry.cs) и его потомками [RequestTelemetry](https://github.com/Microsoft/ApplicationInsights-dotnet/blob/develop/src/Microsoft.ApplicationInsights/DataContracts/RequestTelemetry.cs) и [DependencyTelemetry](https://github.com/Microsoft/ApplicationInsights-dotnet/blob/develop/src/Microsoft.ApplicationInsights/DataContracts/DependencyTelemetry.cs).
@@ -132,7 +128,7 @@ public class ApplicationInsightsMiddleware : OwinMiddleware
 
 ### <a name="service-bus-queue"></a>Очередь служебной шины
 Application Insights отслеживает вызовы обмена сообщениями в службе "Служебная шина" с новым [клиентом службы "Служебная шина Microsoft Azure" для .NET](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus/) версии 3.0.0 и выше.
-Если вы используете [шаблон обработчика сообщений](/dotnet/api/microsoft.azure.servicebus.queueclient.registermessagehandler) для обработки, больше ничего делать не нужно: все вызовы служебной шины, выполненные вашей службой, автоматически отслеживаются и связываются с другими элементами телеметрии. Если вы обрабатываете сообщения вручную, см. статью о [трассировке клиента служебной шины с помощью Microsoft Application Insights](../../service-bus-messaging/service-bus-end-to-end-tracing.md).
+При использовании [шаблона обработчика сообщений](/dotnet/api/microsoft.azure.servicebus.queueclient.registermessagehandler) для обработки отправленных сообщений все вызовы служебной шины, сделанные вашей службой, автоматически отслеживаются и связываются с другими элементами телеметрии. Если вы обрабатываете сообщения вручную, см. статью о [трассировке клиента служебной шины с помощью Microsoft Application Insights](../../service-bus-messaging/service-bus-end-to-end-tracing.md).
 
 Если вы используете пакет [WindowsAzure.ServiceBus](https://www.nuget.org/packages/WindowsAzure.ServiceBus/), продолжайте читать эту статью. Следующие примеры демонстрируют, как отслеживать (и коррелировать) вызовы в служебную шину, если очередь служебной шины использует протокол AMQP и Application Insights не отслеживает операции очереди автоматически.
 Идентификаторы корреляции передаются в свойствах сообщения.
@@ -221,9 +217,9 @@ public async Task Process(BrokeredMessage message)
 #### <a name="enqueue"></a>Постановка в очередь
 Так как очереди службы хранилища Azure поддерживают API HTTP, все операции с очередью автоматически отслеживаются Application Insights. Во многих случаях этого инструментария должно быть достаточно. Однако для сопоставления трассировок на стороне потребителя с трассировками производителя необходимо передать некоторый контекст корреляции, точно так же, как мы сделали это для протокола HTTP для корреляции. 
 
-В этом примере показано, как отслеживать операцию `Enqueue`. Можно выполнить следующие действия:
+В этом примере показано, как отслеживать операцию `Enqueue`. Вы сможете:
 
- - **Сопоставить повторные попытки (если таковые имеются)** : все они имеют одну общую родительскую операцию `Enqueue`. В противном случае они отслеживаются как дочерние элементы входящего запроса. В случае нескольких логических запросов к очереди может оказаться затруднительным определить, какой вызов совершался повторно.
+ - **Сопоставить повторные попытки (если таковые имеются)** : все они имеют одну общую родительскую операцию, `Enqueue`. В противном случае они отслеживаются как дочерние элементы входящего запроса. В случае нескольких логических запросов к очереди может оказаться затруднительным определить, какой вызов совершался повторно.
  - **Сопоставить журналы службы хранилища Azure (при необходимости)** : они сопоставляются с данными телеметрии Application Insights.
 
 Операция `Enqueue` является дочерним элементом родительской операции (например, входящего HTTP-запроса). Вызовов зависимости HTTP является дочерним элементом операции `Enqueue` и внучатым элементом входящего запроса.
@@ -354,13 +350,13 @@ public async Task Process(MessagePayload message)
 
 ### <a name="dependency-types"></a>Типы зависимостей
 
-Application Insights использует тип зависимости для пользовательского интерфейса настроить. Для очередей он распознает следующие `DependencyTelemetry` типы, улучшающие [возможности диагностики транзакций](/azure/azure-monitor/app/transaction-diagnostics):
-- `Azure queue`для очередей службы хранилища Azure
-- `Azure Event Hubs`для концентраторов событий Azure
-- `Azure Service Bus`для служебной шины Azure
+Application Insights использует тип зависимости для пользовательского интерфейса настроить. Для очередей он распознает следующие типы `DependencyTelemetry` что улучшает [процесс диагностики транзакций](/azure/azure-monitor/app/transaction-diagnostics):
+- `Azure queue` для очередей службы хранилища Azure
+- `Azure Event Hubs` для концентраторов событий Azure
+- `Azure Service Bus` для служебной шины Azure
 
-### <a name="batch-processing"></a>Пакетная обработка
-Некоторые очереди поддерживают вывод из очереди нескольких сообщений с помощью одного запроса. Обработка таких сообщений предположительно является независимой и относится к разным логическим операциям. Невозможно сопоставить `Dequeue` операцию с определенным сообщением, которое обрабатывается.
+### <a name="batch-processing"></a>пакетной обработки.
+Некоторые очереди поддерживают вывод из очереди нескольких сообщений с помощью одного запроса. Обработка таких сообщений предположительно является независимой и относится к разным логическим операциям. Невозможно сопоставить операцию `Dequeue` с определенным обрабатываемым сообщением.
 
 Обработка каждого сообщения должна выполняться в собственном асинхронном потоке управления. Дополнительные сведения см. в разделе [Отслеживание исходящих зависимостей](#outgoing-dependencies-tracking).
 
@@ -477,13 +473,13 @@ public async Task RunAllTasks()
 ```
 
 ## <a name="applicationinsights-operations-vs-systemdiagnosticsactivity"></a>Операции ApplicationInsights и System. Diagnostics. Activity
-`System.Diagnostics.Activity`представляет распределенный контекст трассировки и используется платформами и библиотеками для создания и распространения контекста внутри и вне процесса и корреляции элементов телеметрии. Действие совместно с `System.Diagnostics.DiagnosticSource` — механизм уведомления между платформой или библиотекой для уведомления о интересных событиях (входящие или исходящие запросы, исключения и т. д.).
+`System.Diagnostics.Activity` представляет распределенный контекст трассировки и используется платформами и библиотеками для создания и распространения контекста внутри и за пределами процесса и корреляции элементов телеметрии. Действие работает вместе с `System.Diagnostics.DiagnosticSource` — механизм уведомления между платформой или библиотекой для уведомления о интересных событиях (входящие или исходящие запросы, исключения и т. д.).
 
-Действия являются привилегированными гражданами в Application Insights и автоматическая зависимость и сбор запросов в значительной степени полагаются `DiagnosticSource` на них вместе с событиями. При создании действия в приложении это не приведет к созданию Application Insights телеметрии. Application Insights необходимо получить события DiagnosticSource и выяснить имена и полезные данные событий для преобразования действия в телеметрию.
+Действия являются привилегированными гражданами в Application Insights, а автоматическая зависимость и сбор запросов основываются на них вместе с событиями `DiagnosticSource`. При создании действия в приложении это не приведет к созданию Application Insights телеметрии. Application Insights необходимо получить события DiagnosticSource и выяснить имена и полезные данные событий для преобразования действия в телеметрию.
 
-Каждая операция Application Insights (запрос или зависимость) включает `Activity` в себя `StartOperation` — когда вызывается, она создает действие под. `StartOperation`является рекомендуемым способом отслеживать телеметрии запроса или зависимости вручную и гарантировать, что все согласовано.
+Каждая операция Application Insights (запрос или зависимость) включает `Activity` — при вызове `StartOperation` он создает действие под. `StartOperation` является рекомендуемым способом отслеживать телеметрии запроса или зависимости вручную и гарантировать, что все согласовано.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Изучите основы [корреляции данных телеметрии](correlation.md) в Application Insights.
 - Узнайте, как коррелированные данные заключаются в [диагностике транзакций](../../azure-monitor/app/transaction-diagnostics.md) и [схеме приложений](../../azure-monitor/app/app-map.md).

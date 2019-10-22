@@ -1,24 +1,19 @@
 ---
 title: Схема сопоставления приложений в Azure Application Insights | Документация Майкрософт
 description: Мониторинг топологий сложных приложений с помощью схемы приложения
-services: application-insights
-documentationcenter: ''
-author: mrbullwinkle
-manager: carmonm
-ms.assetid: 3bf37fe9-70d7-4229-98d6-4f624d256c36
-ms.service: application-insights
-ms.workload: tbd
-ms.tgt_pltfrm: ibiza
+ms.service: azure-monitor
+ms.subservice: application-insights
 ms.topic: conceptual
+author: mrbullwinkle
+ms.author: mbullwin
 ms.date: 03/15/2019
 ms.reviewer: sdash
-ms.author: mbullwin
-ms.openlocfilehash: f895aa9aa4bc66c32f10d290b7ee708345be8c9b
-ms.sourcegitcommit: 909ca340773b7b6db87d3fb60d1978136d2a96b0
+ms.openlocfilehash: 49efad50b988da263a715c1aba9d53ad4b4a7121
+ms.sourcegitcommit: 1bd2207c69a0c45076848a094292735faa012d22
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70983767"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72678387"
 ---
 # <a name="application-map-triage-distributed-applications"></a>Схема приложений: рассмотрение распределенных приложений
 
@@ -58,7 +53,7 @@ ms.locfileid: "70983767"
 
 ![Снимок экрана с интерфейсом анализа сбоев](media/app-map/failures.png)
 
-### <a name="investigate-performance"></a>Анализ работы
+### <a name="investigate-performance"></a>Исследование производительности
 
 Чтобы устранить неполадки с производительностью, нажмите кнопку **Анализ работы**.
 
@@ -66,7 +61,7 @@ ms.locfileid: "70983767"
 
 ![Снимок экрана с интерфейсом анализа производительности](media/app-map/performance.png)
 
-### <a name="go-to-details"></a>Перейти к сведениям
+### <a name="go-to-details"></a>Переход к сведениям
 
 Выберите **Перейти к сведениям** , чтобы изучить сквозную транзакцию, которая может предлагать представления на уровне стека вызовов.
 
@@ -82,7 +77,7 @@ ms.locfileid: "70983767"
 
 ![Снимок экрана с интерфейсом службы Analytics](media/app-map/analytics.png)
 
-### <a name="alerts"></a>Предупреждения
+### <a name="alerts"></a>Оповещения
 
 Чтобы просмотреть активные оповещения и основные правила, которые их активируют, щелкните **Оповещения**.
 
@@ -119,7 +114,7 @@ namespace CustomInitializer.Telemetry
 }
 ```
 
-**ASP.NET приложения: Загрузить инициализатор в активную Телеметриконфигуратион**
+**Приложения ASP.NET: Загрузка инициализатора в активную Телеметриконфигуратион**
 
 В файле ApplicationInsights. config:
 
@@ -147,11 +142,11 @@ namespace CustomInitializer.Telemetry
 ```
 
 > [!NOTE]
-> Добавление инициализатора `ApplicationInsights.config` с помощью `TelemetryConfiguration.Active` или using недопустимо для приложений ASP.NET Core. 
+> Добавление инициализатора с помощью `ApplicationInsights.config` или `TelemetryConfiguration.Active` недопустимо для приложений ASP.NET Core. 
 
-**ASP.NET Core приложения: Загрузить инициализатор в Телеметриконфигуратион**
+**ASP.NET Core приложения: Загрузка инициализатора в Телеметриконфигуратион**
 
-Для [ASP.NET Core](asp-net-core.md#adding-telemetryinitializers) приложений Добавление нового `TelemetryInitializer` выполняется путем добавления его в контейнер внедрения зависимостей, как показано ниже. Это делается в `ConfigureServices` методе `Startup.cs` класса.
+Для [ASP.NET Core](asp-net-core.md#adding-telemetryinitializers) приложений добавление нового `TelemetryInitializer` выполняется путем его добавления в контейнер внедрения зависимостей, как показано ниже. Это делается в методе `ConfigureServices` класса `Startup.cs`.
 
 ```csharp
  using Microsoft.ApplicationInsights.Extensibility;
@@ -183,7 +178,7 @@ appInsights.defaultClient.addTelemetryProcessor(envelope => {
 });
 ```
 
-### <a name="java"></a>Java
+### <a name="java"></a>Java:
 
 Если вы используете Spring Boot с начальным набором Application Insights Spring Boot, все, что необходимо изменить, — задать пользовательское имя приложения в файле application.properties.
 
@@ -210,7 +205,7 @@ appInsights.addTelemetryInitializer((envelope) => {
 
 ![Снимок экрана со схемой приложения](media/app-map/cloud-rolename.png)
 
-В схеме приложения выше каждое из имен в зеленом окне является значениями имени облачной роли для различных аспектов этого конкретного распределенного приложения. Итак, для этого приложения его роли состоят из `Authentication`: `acmefrontend`, `Inventory Management`,, `Payment Processing Worker Role`а. 
+В схеме приложения выше каждое из имен в зеленом окне является значениями имени облачной роли для различных аспектов этого конкретного распределенного приложения. Итак, для этого приложения его роли состоят из: `Authentication`, `acmefrontend`, `Inventory Management`, `Payment Processing Worker Role`. 
 
 В случае этого приложения каждое из этих имен облачных ролей также представляет отдельный уникальный Application Insights ресурс с собственными ключами инструментирования. Поскольку владелец этого приложения имеет доступ к каждому из четырех разнородных Application Insightsных ресурсов, схема приложения может объединить карту базовых связей.
 
@@ -230,13 +225,13 @@ appInsights.addTelemetryInitializer((envelope) => {
 
 Сценарий, в котором может потребоваться переопределить значение для экземпляра облачной роли, может быть в том случае, если приложение выполняется в контейнерной среде, в котором только знание отдельного сервера может оказаться недостаточно для определения конкретной проблемы.
 
-Дополнительные сведения о том, как переопределить свойство имени роли облака с помощью инициализаторов телеметрии, см [. в разделе Добавление свойств: разделе](api-filtering-sampling.md#add-properties-itelemetryinitializer).
+Дополнительные сведения о том, как переопределить свойство имени облачной роли с помощью инициализаторов телеметрии, см. в разделе [Добавление свойств: ITelemetryInitializer](api-filtering-sampling.md#add-properties-itelemetryinitializer).
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Устранение неисправностей
 
 Если схема приложений не работает должным образом, попробуйте сделать следующее:
 
-### <a name="general"></a>Общее
+### <a name="general"></a>Общие сведения
 
 1. Убедитесь, что вы используете официально поддерживаемый пакет SDK. Неподдерживаемые пакеты SDK и пакеты SDK сообщества могут не поддерживать корреляцию.
 
@@ -270,7 +265,7 @@ appInsights.addTelemetryInitializer((envelope) => {
 
 ![Изображение MapLink-1](./media/app-map/14-updated.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о работе корреляции в Application Insights см. в [статье корреляция телеметрии](https://docs.microsoft.com/azure/application-insights/application-insights-correlation).
 * Средство [диагностики сквозных транзакций](transaction-diagnostics.md) сопоставляет данные телеметрии на стороне сервера от всех Application Insights отслеживаемых компонентов в едином представлении.

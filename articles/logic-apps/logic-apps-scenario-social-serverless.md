@@ -1,5 +1,5 @@
 ---
-title: Сценарий создания панели мониторинга сведений о клиентах с использованием беcсерверных средств в службах Azure | Документация Майкрософт
+title: Создание панели мониторинга Customer Insights — Azure Logic Apps
 description: Управление отзывами от клиентов, данными социальных сетей и многим другим путем создания панели мониторинга клиента с помощью Azure Logic Apps и Функций Azure
 services: logic-apps
 ms.service: logic-apps
@@ -7,17 +7,16 @@ ms.suite: integration
 author: jeffhollan
 ms.author: jehollan
 ms.reviewer: estfan, LADocs
-ms.assetid: d565873c-6b1b-4057-9250-cf81a96180ae
 ms.topic: article
 ms.date: 03/15/2018
-ms.openlocfilehash: b8ba341252679a07e50f9b276f7f485b08a6acba
-ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
+ms.openlocfilehash: c9c5cf9c56f2e22faa973c983c6fd81733119daa
+ms.sourcegitcommit: d37991ce965b3ee3c4c7f685871f8bae5b56adfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70164864"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72680109"
 ---
-# <a name="create-streaming-customer-insights-dashboard-with-azure-logic-apps-and-azure-functions"></a>Создание панели мониторинга потоковой передачи сведений о клиентах с помощью Функций Azure и Azure Logic Apps
+# <a name="create-a-streaming-customer-insights-dashboard-with-azure-logic-apps-and-azure-functions"></a>Создание панели мониторинга потоковой передачи сведений о клиентах с помощью Функций Azure и Azure Logic Apps.
 
 Azure предлагает средства [Бессерверные приложения в Azure](https://azure.microsoft.com/solutions/serverless/) для быстрого создания и размещения приложений в облаке, не задумываясь об инфраструктуре. В этом руководстве мы создадим панель мониторинга, которая будет запускаться при получении отзывов от клиентов, анализировать отзывы с помощью машинного обучения и публиковать аналитику в источник, например Power BI или Azure Data Lake.
 
@@ -34,7 +33,7 @@ Azure Logic Apps представляет беcсерверный обработ
 
    Если вы не знакомы с приложениями логики, перейдите к [краткому руководству по его созданию на портале Azure](../logic-apps/quickstart-create-first-logic-app-workflow.md) или [в Visual Studio](../logic-apps/quickstart-create-logic-apps-with-visual-studio.md).
 
-2. В конструкторе приложений логики найдите и добавьте триггер Twitter, в котором есть действие: **When a new tweet is posted**
+2. В конструкторе приложений логики найдите и добавьте триггер Twitter, в котором есть действие **When a new tweet is posted** (При публикации нового твита).
 
 3. Настройте триггер для прослушивания твитов по ключевому слову или хэштегу.
 
@@ -110,7 +109,7 @@ Azure Logic Apps представляет беcсерверный обработ
 
 Пример шаблона развертывания с функцией Azure можно найти в [репозитории шаблонов быстрого запуска Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/101-function-app-create-dynamic).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Распространенные сценарии, примеры, учебники и пошаговые руководства для Azure Logic Apps](logic-apps-examples-and-scenarios.md)
 

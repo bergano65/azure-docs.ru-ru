@@ -1,6 +1,6 @@
 ---
-title: Отправка и получение сообщений с помощью служебной шины Azure — Azure Logic Apps
-description: Настройка корпоративной облачной системы обмена сообщениями с помощью служебной шины Azure и Azure Logic Apps
+title: Обмен сообщениями с помощью служебной шины Azure — Azure Logic Apps
+description: Отправка и получение сообщений с помощью служебной шины Azure в Azure Logic Apps
 services: logic-apps
 ms.service: logic-apps
 ms.suite: integration
@@ -9,16 +9,15 @@ ms.author: estfan
 ms.reviewer: klam, LADocs
 ms.topic: conceptual
 ms.date: 09/19/2019
-ms.assetid: d6d14f5f-2126-4e33-808e-41de08e6721f
 tags: connectors
-ms.openlocfilehash: f2034686e4a8de5e1ccc246f49337a6600bf441f
-ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
+ms.openlocfilehash: 0cf5486e77e69f83973f7e62669e5ab45d1c94a2
+ms.sourcegitcommit: d37991ce965b3ee3c4c7f685871f8bae5b56adfa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71120860"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72679198"
 ---
-# <a name="exchange-messages-in-the-cloud-by-using-azure-logic-apps-with-azure-service-bus"></a>Обмен сообщениями в облаке с помощью Azure Logic Apps с служебной шиной Azure
+# <a name="exchange-messages-in-the-cloud-by-using-azure-logic-apps-and-azure-service-bus"></a>Обмен сообщениями в облаке с помощью Azure Logic Apps и служебной шины Azure
 
 С помощью [Azure Logic Apps](../logic-apps/logic-apps-overview.md) и соединителя [служебной шины Azure](../service-bus-messaging/service-bus-messaging-overview.md) можно создавать автоматизированные задачи и рабочие процессы, которые перемещают данные, такие как заказы на продажу и покупку, журналы и перемещения запасов по приложениям для вашей организации. Соединитель не только отслеживает, отправляет сообщения и управляет ими, но также выполняет действия с очередями, сеансами, разделами, подписками и т. д., например:
 
@@ -33,7 +32,7 @@ ms.locfileid: "71120860"
 
 [!INCLUDE [Warning about creating infinite loops](../../includes/connectors-infinite-loops.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
@@ -118,7 +117,7 @@ ms.locfileid: "71120860"
 
 1. На шаге, где нужно добавить действие, выберите **новый шаг**.
 
-   Или, чтобы добавить действие между шагами, наведите указатель мыши на стрелку между этими шагами. Выберите отображаемый знак плюса ( **+** ) и щелкните **Добавить действие**.
+   Или, чтобы добавить действие между шагами, наведите указатель мыши на стрелку между этими шагами. Выберите отображаемый знак «плюс» ( **+** ) и щелкните **Добавить действие**.
 
 1. В разделе **Выбор действия**в поле поиска введите "служебная шина Azure" в качестве фильтра. В списке действия выберите нужное действие. 
 
@@ -160,6 +159,6 @@ ms.locfileid: "71120860"
 
 Соединитель служебной шины может сэкономить до 1 500 уникальных сеансов за раз из служебной шины в кэш соединителя. Если число сеансов превышает это ограничение, старые сеансы удаляются из кэша. Другие технические сведения о триггерах, действиях и ограничениях, описанных в описании OpenAPIа (ранее — Swagger) соединителя, см. на [странице справочника](/connectors/servicebus/)по соединителю.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. дополнительные сведения о других [соединителях Logic Apps](../connectors/apis-list.md).

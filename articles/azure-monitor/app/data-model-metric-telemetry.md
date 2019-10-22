@@ -1,25 +1,21 @@
 ---
 title: Модель данных телеметрии Azure Application Insights — телеметрия метрик | Документы Майкрософт
 description: Модель данных Application Insights для телеметрии метрик
-services: application-insights
-documentationcenter: .net
-author: mrbullwinkle
-manager: carmonm
-ms.service: application-insights
-ms.workload: TBD
-ms.tgt_pltfrm: ibiza
+ms.service: azure-monitor
+ms.subservice: application-insights
 ms.topic: conceptual
+author: mrbullwinkle
+ms.author: mbullwin
 ms.date: 04/25/2017
 ms.reviewer: sergkanz
-ms.author: mbullwin
-ms.openlocfilehash: 0973c86d055ff4ebbe7e5a3c4a2ca4e3dcabc6a0
-ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
+ms.openlocfilehash: 816fa37ea052b18dab80bcc0d5c1528cd3d9a014
+ms.sourcegitcommit: 1bd2207c69a0c45076848a094292735faa012d22
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "60900466"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72678134"
 ---
-# <a name="metric-telemetry-application-insights-data-model"></a>Телеметрия метрик. Модель данных Application Insights
+# <a name="metric-telemetry-application-insights-data-model"></a>Телеметрия метрик: модель данных Application Insights
 
 [Application Insights](../../azure-monitor/app/app-insights-overview.md) поддерживает два типа телеметрии метрик — отдельное измерение и предварительно вычисленная метрика. Отдельное измерение содержит только имя и значение. Предварительно вычисленная метрика указывает минимальное и максимальное значение метрики в интервале статистической обработки, а также его стандартное отклонение.
 
@@ -41,15 +37,15 @@ ms.locfileid: "60900466"
 | `\ASP.NET Applications(??APP_W3SVC_PROC??)\Request Execution Time`   | Ведется работа... | [requestExecutionTime](https://dev.applicationinsights.io/apiexplorer/metrics?appId=DEMO_APP&apiKey=DEMO_KEY&metricId=performanceCounters%2FrequestExecutionTime) | Среднее время выполнения запросов
 | `\ASP.NET Applications(??APP_W3SVC_PROC??)\Requests In Application Queue` | Ведется работа... | [requestsInQueue](https://dev.applicationinsights.io/apiexplorer/metrics?appId=DEMO_APP&apiKey=DEMO_KEY&metricId=performanceCounters%2FrequestsInQueue) | Количество запросов в очереди, ожидающих обработки
 
-## <a name="name"></a>Название
+## <a name="name"></a>Name
 
 Имя метрики, которое нужно отобразить на портале Application Insights и в пользовательском интерфейсе. 
 
-## <a name="value"></a>Значение
+## <a name="value"></a>Value
 
 Отдельное значение для измерения. Сумма отдельных измерений для агрегата.
 
-## <a name="count"></a>Count
+## <a name="count"></a>Количество
 
 Вес вычисленной метрики. Не следует задавать для измерения.
 
@@ -57,7 +53,7 @@ ms.locfileid: "60900466"
 
 Минимальное значение вычисленной метрики. Не следует задавать для измерения.
 
-## <a name="max"></a>Max
+## <a name="max"></a>Максимальное количество
 
 Максимальное значение вычисленной метрики. Не следует задавать для измерения.
 
@@ -71,7 +67,7 @@ ms.locfileid: "60900466"
 
 [!INCLUDE [application-insights-data-model-properties](../../../includes/application-insights-data-model-properties.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Вы можете узнать, как использовать [API Application Insights для пользовательских событий и метрик](../../azure-monitor/app/api-custom-events-metrics.md#trackmetric).
 - В [этой статье](data-model.md) представлены типы данных и модель данных для Application Insights.

@@ -1,21 +1,19 @@
 ---
 title: Распределенная трассировка в Azure Application Insights | Документация Майкрософт
 description: Предоставление сведений о поддержке корпорацией Майкрософт распределенной трассировки через локальный сервер пересылки и партнерство в проекте OpenCensus
-services: application-insights
-keywords: ''
+ms.service: azure-monitor
+ms.subservice: application-insights
+ms.topic: conceptual
 author: nikmd23
 ms.author: nimolnar
-ms.reviewer: mbullwin
 ms.date: 09/17/2018
-ms.service: application-insights
-ms.topic: conceptual
-manager: carmonm
-ms.openlocfilehash: 7bc04748f2a5b8caa8f589140dd46f0650b7b390
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.reviewer: mbullwin
+ms.openlocfilehash: 0b51617966ad85037ad29f3e5005a17f66602e01
+ms.sourcegitcommit: 1bd2207c69a0c45076848a094292735faa012d22
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60898854"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72677125"
 ---
 # <a name="what-is-distributed-tracing"></a>Что такое распределенная трассировка?
 

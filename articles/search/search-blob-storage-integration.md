@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: search
 ms.topic: conceptual
 ms.date: 10/09/2019
-ms.openlocfilehash: db54c7886f5256dab41325cd12f1b893be732d72
-ms.sourcegitcommit: f29fec8ec945921cc3a89a6e7086127cc1bc1759
+ms.openlocfilehash: 6d8ad27766e85568cc759af84cc586476ad3ef9a
+ms.sourcegitcommit: 1bd2207c69a0c45076848a094292735faa012d22
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72529045"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72678442"
 ---
 # <a name="add-full-text-search-to-azure-blob-data-using-azure-search"></a>Добавление полнотекстового поиска в данные большого двоичного объекта Azure с помощью службы поиска Azure
 
@@ -70,5 +70,5 @@ ms.locfileid: "72529045"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-> [!div class="nextstepaction"]
-> [Настройка индексатора больших двоичных объектов](search-howto-indexing-azure-blob-storage.md) 
++ [Отправка, скачивание и вывод списка больших двоичных объектов с помощью портал Azure (хранилище BLOB-объектов Azure)](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal)
++ [Настройка индексатора BLOB-объектов (Поиск Azure)](search-howto-indexing-azure-blob-storage.md) 

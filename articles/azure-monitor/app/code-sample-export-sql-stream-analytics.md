@@ -1,26 +1,21 @@
 ---
 title: Экспорт в SQL из Azure Application Insights | Документация Майкрософт
 description: Осуществляйте непрерывный экспорт данных Application Insights в SQL с использованием Stream Analytics.
-services: application-insights
-documentationcenter: ''
-author: mrbullwinkle
-manager: carmonm
-ms.assetid: 48903032-2c99-4987-9948-d6e4559b4a63
-ms.service: application-insights
-ms.workload: tbd
-ms.tgt_pltfrm: ibiza
+ms.service: azure-monitor
+ms.subservice: application-insights
 ms.topic: conceptual
-ms.date: 09/11/2017
+author: mrbullwinkle
 ms.author: mbullwin
-ms.openlocfilehash: eecd2a50607fa42562a9ae6a7fb950a253655a45
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 09/11/2017
+ms.openlocfilehash: 41efcbc7b70395302858638a9f44f3cbba27bf9a
+ms.sourcegitcommit: 1bd2207c69a0c45076848a094292735faa012d22
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65872702"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72678264"
 ---
 # <a name="walkthrough-export-to-sql-from-application-insights-using-stream-analytics"></a>Пошаговое руководство. Экспорт в SQL из Application Insights с использованием Stream Analytics
-В этой статье показано, как переместить данные телеметрии из [Azure Application Insights][start] в базу данных SQL Azure, используя [непрерывный экспорт][export] и [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/). 
+В этой статье показано, как переместить данные телеметрии из [azure Application Insights][start] в базу данных SQL Azure с помощью [непрерывного экспорта][export] и [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/). 
 
 Непрерывный экспорт позволяет переместить данные телеметрии в службу хранилища Azure в формате JSON. Мы выполним анализ объектов JSON, используя Azure Stream Analytics, и создадим строки в таблице базы данных.
 
@@ -31,7 +26,7 @@ ms.locfileid: "65872702"
 В этом примере мы используем данные просмотров страницы, но этот же шаблон можно легко использовать и для других типов данных, таких как пользовательские события и исключения. 
 
 ## <a name="add-application-insights-to-your-application"></a>Добавление Application Insights в приложение
-Чтобы начать работу:
+Чтобы приступить к работе, сделайте следующее:
 
 1. [Настройте Application Insights для веб-страниц](../../azure-monitor/app/javascript.md). 
    
@@ -73,7 +68,7 @@ ms.locfileid: "65872702"
 1. Пусть данные накопятся. Предоставьте пользователям возможность поработать с приложением на протяжении некоторого времени. После получения данных телеметрии в [обозревателе метрик](../../azure-monitor/app/metrics-explorer.md) отобразятся статистические диаграммы, а в разделе [поиска по журналу диагностики](../../azure-monitor/app/diagnostic-search.md) — отдельные события. 
    
     Данные также будут экспортированы в хранилище. 
-2. Проверьте экспортированные данные на портале (щелкните **Обзор**, выберите учетную запись хранения и щелкните **Контейнеры**) или в Visual Studio. В Visual Studio откройте меню **"Вид" или "Обозреватель облака"** и выберите элемент "Azure" или "Хранилище". Если эти пункты меню не отображаются, установите пакет SDK для Azure. Откройте диалоговое окно "Новый проект" и выберите Visual C# / Cloud / Get Microsoft Azure SDK for .NET. (Visual C# / Облако / Получить пакет Microsoft Azure SDK для .NET.)
+2. Проверьте экспортированные данные на портале (щелкните **Обзор**, выберите учетную запись хранения и щелкните **Контейнеры**) или в Visual Studio. В Visual Studio откройте меню **"Вид" или "Обозреватель облака"** и выберите элемент "Azure" или "Хранилище". (Если этой команды нет в меню, установите пакет SDK Azure: откройте диалоговое окно "Создание проекта", разверните узел "Visual C#/облако" и выберите "Получить Microsoft Azure SDK для .NET".)
    
     ![В Visual Studio откройте "Обозреватель сервера", "Azure", "Хранилище".](./media/code-sample-export-sql-stream-analytics/087-explorer.png)
    
@@ -82,7 +77,7 @@ ms.locfileid: "65872702"
 События записываются в JSON-файлы больших двоичных объектов. Каждый файл может содержать одно или несколько событий. Поэтому нам нужна возможность считывать данные событий и отфильтровывать необходимые поля. С данными можно выполнять любые действия, но сейчас мы будем использовать Stream Analytics для перемещения данных в базу данных SQL. Это облегчит выполнение многих любопытных запросов.
 
 ## <a name="create-an-azure-sql-database"></a>Создание базы данных SQL Azure
-В своей подписке на [портале Azure][portal] создайте базу данных (и сервер, если у вас его еще нет), куда будут записываться данные.
+После повторного запуска из подписки в [портал Azure][portal]создайте базу данных (и новый сервер, если у вас ее еще нет), в которую будут записываться данные.
 
 !["Создать", "Данные", SQL.](./media/code-sample-export-sql-stream-analytics/090-sql.png)
 
