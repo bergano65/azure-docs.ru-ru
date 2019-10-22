@@ -103,6 +103,8 @@
                   href: virtual-network-ipv4-ipv6-dual-stack-cli.md
                 - name: Шаблон Resource Manager
                   href: ipv6-configure-template-json.md
+            - name: Обновление «на месте»
+              href: ipv6-add-to-existing-vnet-powershell.md
             - name: Общедоступная версия Load Balancer (цен. категория "Стандартный")
               items:
                 - name: Azure PowerShell

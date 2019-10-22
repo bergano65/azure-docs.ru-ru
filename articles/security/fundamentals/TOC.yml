@@ -121,15 +121,8 @@
           href: paas-applications-using-storage.md
         - name: Рекомендации по базам данных для PaaS
           href: paas-applications-using-sql.md
-    - name: Интернет вещей
-      href: iot-overview.md
     - name: Безопасность Azure Service Fabric
-      href: service-fabric-overview.md
-      items:
-        - name: Рекомендации
-          href: service-fabric-best-practices.md
-        - name: Контрольный список по безопасности
-          href: service-fabric-checklist.md
+      href: service-fabric-best-practices.md
 - name: 'Мониторинг, аудит и операции'
   href: management-monitoring-overview.md
   items:
