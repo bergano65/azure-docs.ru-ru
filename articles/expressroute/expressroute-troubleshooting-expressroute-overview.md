@@ -1,5 +1,5 @@
 ---
-title: Проверка подключения. Руководство по устранению неполадок ExpressRoute в Azure | Документация Майкрософт
+title: 'Проверка подключения. Руководство по устранению неполадок ExpressRoute: Azure | Документация Майкрософт'
 description: В этой статье содержатся инструкции по устранению неполадок и проверке сквозного подключения канала ExpressRoute.
 services: expressroute
 author: rambk
@@ -9,16 +9,16 @@ ms.date: 09/26/2017
 ms.author: rambala
 ms.custom: seodec18
 ms.openlocfilehash: 026900e3dcbf7c20750bb8e17e44ba64897c9a30
-ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
+ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "71123445"
 ---
 # <a name="verifying-expressroute-connectivity"></a>Проверка подключения ExpressRoute
 Изучив сведения в этой статье, вы узнаете, как проверить и устранить неполадки с подключением ExpressRoute. Подключение ExpressRoute, расширяющее локальную сеть в Microsoft Cloud посредством частного подключения, которое обеспечивает поставщик услуг подключения, включает в себя следующие три различные сетевые зоны:
 
--   Сеть клиента
+-   клиентскую сеть;
 -   сеть поставщика;
 -   центр обработки данных Майкрософт.
 
@@ -31,7 +31,7 @@ ms.locfileid: "71123445"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Краткое описание
 На следующей схеме показано логическое подключение между клиентской сетью и сетью Майкрософт через ExpressRoute.
 [![1]][1]
 
@@ -40,10 +40,10 @@ ms.locfileid: "71123445"
 В зависимости от модели подключения ExpressRoute (совместное размещение Cloud Exchange, Ethernet-подключение типа "точка — точка" или подключение типа "любой к любому" (IPVPN)) точки сети 3 и 4 могут быть коммутаторами (устройства уровня 2). Ниже приведены представленные на схеме ключевые точки сети.
 
 1.  Клиентское вычислительное устройство (например, сервер или компьютер).
-2.  CE. Клиентские пограничные маршрутизаторы. 
-3.  PE (подключенные к CE). Пограничные маршрутизаторы (коммутаторы) поставщика услуг связи, подключенные к клиентским пограничным маршрутизаторам. В этом документе называются PE-CE.
-4.  PE (подключенные к MSEE). Пограничные маршрутизаторы (коммутаторы) поставщика услуг связи, подключенные к MSEE. В этом документе называются PE-MSEE.
-5.  MSEE. Маршрутизаторы Microsoft Enterprise Edge (MSEE) ExpressRoute.
+2.  Клиентские пограничные маршрутизаторы (CE). 
+3.  Пограничные маршрутизаторы (коммутаторы) поставщика услуг связи, подключенные к клиентским пограничным маршрутизаторам (PE, подключенные к CE). В этом документе называются PE-CE.
+4.  Пограничные маршрутизаторы (коммутаторы) поставщика услуг связи, подключенные к MSEE. В этом документе называются PE-MSEE.
+5.  Маршрутизаторы MSEE ExpressRoute.
 6.  Шлюз виртуальной сети
 7.  Вычислительное устройство в виртуальной сети Azure
 
@@ -76,7 +76,7 @@ ms.locfileid: "71123445"
 ### <a name="verification-via-the-azure-portal"></a>Проверка на портале Azure
 На портале Azure можно проверить состояние канала ExpressRoute, выбрав ![2][2] в боковом меню слева, а затем выбрав канал ExpressRoute. Выберите канал ExpressRoute в разделе "Все ресурсы", после чего откроется колонка канала ExpressRoute. В разделе ![3][3] этой колонки перечислены основные компоненты ExpressRoute, как показано на следующем снимке экрана:
 
-![4][4]    
+![4..][4]    
 
 Параметр *Состояние цепи* в разделе основных сведений об ExpressRoute указывает состояние канала на стороне Майкрософт. Параметр *Состояние поставщика* указывает, был ли канал *подготовлен* на стороне поставщика услуг. 
 
@@ -157,7 +157,7 @@ ms.locfileid: "71123445"
     Sku                              : Standard
     Status                           : Enabled
 
-Чтобы подтвердить работоспособность канала ExpressRoute, обратите особое внимание на следующие поля: ServiceProviderProvisioningState : Provisioned Status                           : Enabled
+Чтобы подтвердить работоспособность канала ExpressRoute, обратите особое внимание на следующие поля: ServiceProviderProvisioningState: Provisioned; Status: Enabled.
 
 > [!NOTE]
 > Если *состояние* не включено, обратитесь в [Служба поддержки Майкрософт][Support]. Если параметр *ServiceProviderProvisioningState* имеет значение Not Provisioned, обратитесь к поставщику услуг связи.
@@ -165,7 +165,7 @@ ms.locfileid: "71123445"
 >
 
 ## <a name="validate-peering-configuration"></a>Проверка настройки пиринга
-Когда поставщик услуг завершит подготовку канала, можно создать конфигурацию маршрутизации через канал ExpressRoute между маршрутизаторами MSEE-PR (4) и MSEE (5). Для каждого канала ExpressRoute можно включить один, два или три контекста маршрутизации: Частный пиринг Azure (трафик к частным виртуальным сетям в Azure), общедоступный пиринг Azure (трафик к общедоступным IP-адресам в Azure) и пиринг Майкрософт (трафик к Office 365). Дополнительные сведения о создании и изменении конфигурации маршрутизации см. в статье [Создание и изменение маршрутизации для канала ExpressRoute][CreatePeering].
+Когда поставщик услуг завершит подготовку канала, можно создать конфигурацию маршрутизации через канал ExpressRoute между маршрутизаторами MSEE-PR (4) и MSEE (5). Каждый канал ExpressRoute может иметь один, два или три контекста маршрутизации: частный пиринг Azure (трафик к частным виртуальным сетям в Azure), общедоступный пиринг Azure (трафик к общедоступным IP-адресам в Azure) и пиринг Майкрософт (трафик к Office 365). Дополнительные сведения о создании и изменении конфигурации маршрутизации см. в статье [Создание и изменение маршрутизации для канала ExpressRoute][CreatePeering].
 
 ### <a name="verification-via-the-azure-portal"></a>Проверка на портале Azure
 
@@ -387,8 +387,8 @@ ms.locfileid: "71123445"
 
 <!--Image References-->
 [1]: ./media/expressroute-troubleshooting-expressroute-overview/expressroute-logical-diagram.png "Логическое подключение ExpressRoute"
-[2]: ./media/expressroute-troubleshooting-expressroute-overview/portal-all-resources.png "Значок Все ресурсы"
-[3]: ./media/expressroute-troubleshooting-expressroute-overview/portal-overview.png "Значок Обзор"
+[2]: ./media/expressroute-troubleshooting-expressroute-overview/portal-all-resources.png "Значок "Все ресурсы""
+[3]: ./media/expressroute-troubleshooting-expressroute-overview/portal-overview.png "Значок "Обзор""
 [4]: ./media/expressroute-troubleshooting-expressroute-overview/portal-circuit-status.png "Снимок экран раздела с основными сведениями об ExpressRoute"
 [5]: ./media/expressroute-troubleshooting-expressroute-overview/portal-private-peering.png "Снимок экран раздела с основными сведениями об ExpressRoute"
 

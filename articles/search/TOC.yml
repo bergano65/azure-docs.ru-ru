@@ -237,6 +237,8 @@
               href: cognitive-search-custom-skill-interface.md
             - name: "Пример\_— Функции Azure"
               href: cognitive-search-create-custom-skill-example.md
+            - name: "Примеры\_— навыки Power"
+              href: 'https://aka.ms/powerskills'
             - name: "Пример\_— контейнеры"
               href: 'https://go.microsoft.com/fwlink/?linkid=2089500'
         - name: Советы по устранению неполадок

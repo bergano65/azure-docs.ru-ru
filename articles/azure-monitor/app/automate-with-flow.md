@@ -1,22 +1,18 @@
 ---
 title: Автоматизация процессов Azure Application Insights с помощью Microsoft Flow
 description: Узнайте, как можно использовать Microsoft Flow для быстрой автоматизации повторяющихся процессов с помощью соединителя Application Insights.
-services: application-insights
-documentationcenter: ''
-author: mrbullwinkle
-manager: carmonm
-ms.service: application-insights
-ms.workload: tbd
-ms.tgt_pltfrm: ibiza
+ms.service: azure-monitor
+ms.subservice: application-insights
 ms.topic: conceptual
-ms.date: 08/29/2019
+author: mrbullwinkle
 ms.author: mbullwin
-ms.openlocfilehash: 541d5b70ee56d62831f0947e64b9522e17a07dd9
-ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
+ms.date: 08/29/2019
+ms.openlocfilehash: ff0896498c0270b8eb43b762228916985f924def
+ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70194955"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72678325"
 ---
 # <a name="automate-azure-application-insights-processes-with-the-connector-for-microsoft-flow"></a>Автоматизация процессов Azure Application Insights с помощью соединителя для Microsoft Flow
 
@@ -32,31 +28,31 @@ ms.locfileid: "70194955"
 
 В этом руководстве вы узнаете, как создать последовательность, использующую алгоритм автокластера аналитики для группирования атрибутов в данных для веб-приложения. Отправка результатов по электронной почте — это лишь один из примеров того, как можно совместно использовать Microsoft Flow и Application Insights Analytics.
 
-### <a name="step-1-create-a-flow"></a>Шаг 1. Создание потока
+### <a name="step-1-create-a-flow"></a>Шаг 1. Создание потока
 
 1. Войдите в службу [Microsoft Flow](https://flow.microsoft.com) и выберите **Мои потоки**.
 2. Щелкните **создать** **, затем — по расписанию — с пустого**поля.
 
     ![Создать новый поток из пустого расписания](./media/automate-with-flow/1-create.png)
 
-### <a name="step-2-create-a-trigger-for-your-flow"></a>Шаг 2. Создание триггера для потока
+### <a name="step-2-create-a-trigger-for-your-flow"></a>Шаг 2. Создание триггера для потока
 
 1. Во всплывающем окне **Создайте запланированный поток**, заполните Имя последовательности и частоту выполнения последовательности.
 
     ![Настройка повторения расписания с вводом частоты и интервала](./media/automate-with-flow/2-schedule.png)
 
-1. Нажмите кнопку **Создать**.
+1. Щелкните **Create**(Создать).
 
-### <a name="step-3-add-an-application-insights-action"></a>Шаг 3. Добавление действия Application Insights
+### <a name="step-3-add-an-application-insights-action"></a>Шаг 3. Добавление действия Application Insights
 
 1. Выполните поиск по запросу **Application Insights**.
 2. Щелкните **Azure Application Insights — визуализировать аналитический запрос**.
 
-    ![Выберите действие: Запрос аналитики Application Insights визуализации Azure](./media/automate-with-flow/3-visualize.png)
+    ![Выберите действие: Azure Application Insights визуализировать аналитический запрос](./media/automate-with-flow/3-visualize.png)
 
 3. Выберите **Новый шаг**.
 
-### <a name="step-4-connect-to-an-application-insights-resource"></a>Шаг 4. Подключение к ресурсу Application Insights
+### <a name="step-4-connect-to-an-application-insights-resource"></a>Шаг 4. Подключение к ресурсу Application Insights
 
 Чтобы выполнить этот шаг, необходим идентификатор приложения и ключ API для ресурса. Их можно получить на портале Azure, как показано ниже.
 
@@ -70,9 +66,9 @@ ms.locfileid: "70194955"
 
 Если окно подключения не отображается сразу же, а вместо ввода запроса, нажмите кнопку с многоточием в правом верхнем углу окна. Затем выберите "Мои подключения" или используйте существующее.
 
-Нажмите кнопку **Создать**.
+Щелкните **Create**(Создать).
 
-### <a name="step-5-specify-the-analytics-query-and-chart-type"></a>Шаг 5. Указание запроса Analytics и типа диаграммы
+### <a name="step-5-specify-the-analytics-query-and-chart-type"></a>Шаг 5. Указание запроса Analytics и типа диаграммы
 В этом примере выбираются невыполненные запросы за последний день. Они сопоставляются с исключениями, которые возникли в рамках операции. Analytics сопоставляет их на основе идентификатора operation_Id. Затем запрос разделяет результаты с помощью алгоритма автоматической кластеризации.
 
 При создании собственных запросов убедитесь, что они работают должным образом в Analytics, прежде чем добавить их в поток.
@@ -92,7 +88,7 @@ ms.locfileid: "70194955"
     
     ![Окно настройки запроса Analytics](./media/automate-with-flow/5-query.png)
 
-### <a name="step-6-configure-the-flow-to-send-email"></a>Шаг 6. Настройка потока для отправки электронной почты
+### <a name="step-6-configure-the-flow-to-send-email"></a>Шаг 6. Настройка потока для отправки электронной почты
 
 1. Выполните поиск по запросу **Office 365 Outlook**.
 2. Щелкните **Office 365 Outlook – Send an email** (Office 365 Outlook — отправка сообщения электронной почты).
@@ -101,29 +97,29 @@ ms.locfileid: "70194955"
 
 1. В окне **Отправить сообщение электронной почты** :
 
-   1\. Введите адрес электронной почты получателя.
+   а) Введите адрес электронной почты получателя.
 
-   2\. Введите тему сообщения.
+   б) Введите тему сообщения.
 
-   В. Щелкните в любом месте в поле **Текст**, затем в открывшемся справа меню динамического содержимого выберите **Текст**.
+   в) Щелкните в любом месте в поле **Текст**, затем в открывшемся справа меню динамического содержимого выберите **Текст**.
 
-   Д. Выберите пункт " **отобразить дополнительные параметры** ".
+   д) Выберите пункт " **отобразить дополнительные параметры** ".
 
 1. В меню динамического содержимого:
 
-    1\. Выберите **Имя вложения**.
+    а) Выберите **Имя вложения**.
 
-    2\. Выберите **Содержимое вложения**.
+    б) Выберите **Содержимое вложения**.
     
-    В. В поле **Является HTML** выберите значение **Да**.
+    в) В поле **Является HTML** выберите значение **Да**.
 
     ![Конфигурация Office 365 Outlook](./media/automate-with-flow/7-email.png)
 
 ### <a name="step-7-save-and-test-your-flow"></a>Шаг 7. Сохранение и тестирование потока
 
-Нажмите кнопку **Сохранить**.
+В нижней части страницы нажмите кнопку **Save**.
 
-Вы можете подождать, пока триггер запустит это действие, или щелкнуть ![ **тест** значка](./media/automate-with-flow/testicon.png) теста колба в верхней части страницы.
+Можно подождать, пока триггер запустит это действие, или щелкнуть значок теста ![beaker ](./media/automate-with-flow/testicon.png) **тест** в верхней части.
 
 После выбора **теста**:
 
@@ -134,7 +130,7 @@ ms.locfileid: "70194955"
 
 ![Пример электронного сообщения](./media/automate-with-flow/flow9.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте больше о создании [запросов Analytics](../../azure-monitor/log-query/get-started-queries.md).
 - Дополнительные сведения о [Microsoft Flow](https://ms.flow.microsoft.com).

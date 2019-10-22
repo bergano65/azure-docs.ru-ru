@@ -13,12 +13,12 @@ ms.workload: identity
 ms.date: 09/20/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: b4eebf7dac4d388411f570b1546c96e3b82b2a98
-ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
+ms.openlocfilehash: 5f57ea658df0569c4e69e476513863abe6940471
+ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71950066"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72692907"
 ---
 # <a name="manage-access-to-azure-resources-using-rbac-and-azure-resource-manager-templates"></a>Управление доступом к ресурсам Azure с помощью RBAC и шаблонов Azure Resource Manager
 
@@ -160,7 +160,7 @@ az deployment create --location centralus --template-file rbac-test.json --param
 ```
 
 > [!NOTE]
-> Этот шаблон не идемпотентными, если только значение `roleNameGuid` не указано в качестве параметра для каждого развертывания шаблона. Если `roleNameGuid` не указано, по умолчанию создается новый идентификатор GUID для каждого развертывания, и последующие развертывания завершатся ошибкой `Conflict: RoleAssignmentExists`.
+> Этот шаблон не идемпотентными, если в качестве параметра для каждого развертывания шаблона не указано одно и то же `roleNameGuid` значение. Если `roleNameGuid` не указано, по умолчанию создается новый идентификатор GUID для каждого развертывания, и последующие развертывания завершатся ошибкой `Conflict: RoleAssignmentExists`.
 
 ## <a name="create-a-role-assignment-at-a-resource-scope"></a>Создание назначения роли в области действия ресурса
 
@@ -232,7 +232,7 @@ az deployment create --location centralus --template-file rbac-test.json --param
         {
             "type": "Microsoft.Storage/storageAccounts/providers/roleAssignments",
             "apiVersion": "2018-09-01-preview",
-            "name": "[concat(variables('storageName'), '/Microsoft.Authorization/', guid(uniqueString(parameters('storageName'))))]",
+            "name": "[concat(variables('storageName'), '/Microsoft.Authorization/', guid(uniqueString(variables('storageName'))))]",
             "dependsOn": [
                 "[variables('storageName')]"
             ],
@@ -327,9 +327,9 @@ az group deployment create --resource-group ExampleGroup2 --template-file rbac-t
 
 ![Назначение ролей для нового субъекта-службы управляемого удостоверения](./media/role-assignments-template/role-assignment-template-msi.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Краткое руководство Создание и развертывание шаблонов Azure Resource Manager с помощью портала Azure](../azure-resource-manager/resource-manager-quickstart-create-templates-use-the-portal.md)
+- [Краткое руководство по созданию и развертыванию шаблонов Azure Resource Manager с помощью портала Azure](../azure-resource-manager/resource-manager-quickstart-create-templates-use-the-portal.md)
 - [Описание структуры и синтаксиса шаблонов Azure Resource Manager](../azure-resource-manager/resource-group-authoring-templates.md)
 - [Создание групп ресурсов и ресурсов на уровне подписки](../azure-resource-manager/deploy-to-subscription.md)
-- [Шаблоны быстрого запуска Azure](https://azure.microsoft.com/resources/templates/?term=rbac)
+- [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/?term=rbac)

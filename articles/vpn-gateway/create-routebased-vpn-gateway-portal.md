@@ -1,5 +1,5 @@
 ---
-title: Создание VPN-шлюза на основе маршрутов. портал Azure | Документация Майкрософт
+title: Создание VPN-шлюза на основе маршрутов (портал Azure) | Документация Майкрософт
 description: Создание VPN-шлюза на основе маршрутов с помощью портала Azure
 services: vpn-gateway
 author: cherylmc
@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 09/24/2019
 ms.author: cherylmc
 ms.openlocfilehash: 3ab662a4f06b2d73ab0dab52f562398fee23686c
-ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
+ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "71266517"
 ---
 # <a name="create-a-route-based-vpn-gateway-using-the-azure-portal"></a>Создание VPN-шлюза на основе маршрутов с помощью портала Azure
@@ -41,15 +41,15 @@ ms.locfileid: "71266517"
 
 1. После создания шлюза перейдите к сети VNet1 с помощью портала. На странице "Обзор" VPN-шлюз отобразится как подключенное устройство.
 
-   ![Подключенные устройства](./media/create-routebased-vpn-gateway-portal/view-connected-devices.png "Connected devices")
+   ![Подключенные устройства](./media/create-routebased-vpn-gateway-portal/view-connected-devices.png "Подключенные устройства")
 
 2. В списке устройств щелкните **VNet1GW**, чтобы получить дополнительные сведения.
 
-   ![Просмотр VPN-шлюза](./media/create-routebased-vpn-gateway-portal/view-gateway.png "View VPN gateway")
+   ![Просмотр VPN-шлюза](./media/create-routebased-vpn-gateway-portal/view-gateway.png "Просмотр VPN-шлюза")
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Создав шлюз, можно создать подключение между вашей и другой виртуальной сетью. Или же можно создать подключение между виртуальной сетью и локальным расположением.
+Когда завершится создание шлюза, вы можете создать подключение между этой виртуальной сетью и другой виртуальной сетью. Также можно создать подключение между виртуальной сетью и локальным расположением.
 
 > [!div class="nextstepaction"]
 > [Создание подключения "сеть — сеть"](vpn-gateway-howto-site-to-site-resource-manager-portal.md)<br><br>

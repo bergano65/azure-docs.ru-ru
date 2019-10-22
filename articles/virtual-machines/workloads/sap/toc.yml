@@ -102,6 +102,8 @@
           href: sap-hana-high-availability-rhel.md
         - name: Устранение неполадок с горизонтальным масштабированием SAP HANA и Pacemaker в SLES
           href: hana-vm-troubleshoot-scale-out-ha-on-sles.md
+        - name: Горизонтальное масштабирование SAP HANA с использованием резервного узла и Azure NetApp Files в SLES
+          href: sap-hana-scale-out-standby-netapp-files-suse.md
     - name: Общие сведения о резервном копировании SAP HANA
       href: sap-hana-backup-guide.md
     - name: Резервное копирование SAP HANA на уровне файлов

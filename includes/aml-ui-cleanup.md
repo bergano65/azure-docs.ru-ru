@@ -7,17 +7,16 @@ ms.custom: include file
 ms.topic: include
 author: sgilley
 ms.author: sgilley
-ms.date: 05/06/2019
-ms.openlocfilehash: 623e993dfbe6bbb3297fa6470865ab1a04f55b37
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.date: 10/16/2019
+ms.openlocfilehash: 0071b0df2c2e173eced1722372f88b1de2708afa
+ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185704"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72692376"
 ---
 >[!IMPORTANT]
 >Созданные ресурсы можно использовать в качестве необходимых компонентов для других руководств и статей с практическими рекомендациями по Службе машинного обучения Azure.
-
 
 ### <a name="delete-everything"></a>Удаление всех ресурсов
 
@@ -49,6 +48,6 @@ ms.locfileid: "67185704"
 
 ### <a name="delete-individual-assets"></a>Удаление отдельных ресурсов
 
-В визуальном интерфейсе, в котором вы создали эксперимент, удалите отдельные ресурсы, выбрав их и нажав кнопку **Удалить**.
+В визуальном интерфейсе, в котором вы создали эксперимент, удалите отдельные ресурсы, выбрав их и нажав кнопку **Удалить**. Можно отменить регистрацию наборов данных в рабочей области. Для этого выберите каждый набор данных и щелкните **Отменить регистрацию**.
 
-![Удаление экспериментов](./media/aml-ui-cleanup/delete-experiment.png)
+![Удаление ресурсов](./media/aml-ui-cleanup/delete-asset.png)

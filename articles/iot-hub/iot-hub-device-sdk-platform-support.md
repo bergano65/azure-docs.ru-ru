@@ -7,12 +7,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 10/08/2019
 ms.author: robinsh
-ms.openlocfilehash: 030ea87018e1a2d438e3e4d728af76e429efda08
-ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
+ms.openlocfilehash: ac5817675d3cfc97a8732ee2e10ec7b9246b12a5
+ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72169019"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72693333"
 ---
 # <a name="azure-iot-device-sdks-platform-support"></a>Поддержка платформ SDK для устройств Azure IoT
 
@@ -44,7 +44,7 @@ ms.locfileid: "72169019"
 
 [Пакет SDK для устройства C центра Интернета вещей Azure](https://github.com/Azure/azure-iot-sdk-c) тестируется в и поддерживает следующие конфигурации.
 
-| OS                  | Библиотека TLS                  | Дополнительные требования                                                                     |
+| ОС                  | Библиотека TLS                  | Дополнительные требования                                                                     |
 |---------------------|------------------------------|---------------------------------------------------------------------------------------------|
 | Linux               | OpenSSL, Волфссл или Беарссл | Протоколы Berkeley</br></br>Интерфейс переносимой операционной системы (POSIX)                       |
 | iOS 12,2            | OpenSSL или native OSX        | XCode, имитируемый в OSX 10.13.4                                                               |
@@ -52,39 +52,43 @@ ms.locfileid: "72169019"
 | Mbed OS 5,4         | Mbed TLS 2                   | [Комплект разработчика IoT MXChip](https://microsoft.github.io/azure-iot-developer-kit/)                  |
 | ОС Azure Sphere     | волфссл                      | [Azure Sphere MT3620](https://azure.microsoft.com/en-us/services/azure-sphere/get-started/) |
 
-### <a name="python-sdk"></a>Пакет SDK для Python
+### <a name="python-sdk"></a>Пакет Python SDK
 
 [Пакет SDK для устройств Python центра Интернета вещей Azure](https://github.com/Azure/azure-iot-sdk-python) тестируется в и поддерживает следующие конфигурации.
 
-| OS                  | Компилятор                       |
-|---------------------|--------------------------------|
-| Linux               | Python 2,7, 3,4, 3,5, 3,6, 3,7 |
-| MacOS High Sierra   | Python 2,7, 3,4, 3,5, 3,6, 3,7 |
-| Семейство Windows 10   | Python 2,7, 3,4, 3,5, 3,6, 3,7 |
+| ОС                  | Компилятор                          |
+|---------------------|-----------------------------------|
+| Linux               | Python 2,7 *, 3,4*, 3,5 *, 3,6, 3,7 |
+| MacOS High Sierra   | Python 2,7 *, 3,4*, 3,5 *, 3,6, 3,7 |
+| Семейство Windows 10   | Python 2,7 *, 3,4*, 3,5 *, 3,6, 3,7 |
 
-### <a name="net-sdk"></a>Пакет SDK для .NET
+\* Только Python версии 3.5.3 или более поздней поддерживают асинхронные API-интерфейсы, рекомендуется использовать 3,7 или более поздней версии.
+
+### <a name="net-sdk"></a>SDK .NET
 
 [Пакет SDK для устройства .NET (C#) для центра Интернета вещей Azure](https://github.com/Azure/azure-iot-sdk-csharp) тестируется в и поддерживает следующие конфигурации.
 
-| OS                                   | Стандартная                                                   |
+| ОС                                   | Стандарт                                                   |
 |--------------------------------------|------------------------------------------------------------|
 | Linux                                | .NET Core 2.1                                              |
 | SKU для настольных компьютеров и серверов Windows 10   | .NET Core 2,1, .NET Framework 4.5.1 или .NET Framework 4,7 |
 
-### <a name="nodejs-sdk"></a>Пакет SDK для Node.js
+Пакет SDK для .NET также можно использовать с Windows IoT Core с [агентом устройства Azure](https://github.com/ms-iot/azure-client-tools/blob/master/docs/device-agent/device-agent.md) или [с пользовательским служба NTService, который может использовать RPC для взаимодействия с приложениями UWP](https://docs.microsoft.com/samples/microsoft/windows-iotcore-samples/ntservice-rpc/).
+
+### <a name="nodejs-sdk"></a>Node.js SDK
 
 [Пакет SDK для устройств Node. js для центра Интернета вещей Azure](https://github.com/Azure/azure-iot-sdk-node) тестируется в и поддерживает следующие конфигурации.
 
-| OS                  | Версия узла    |
+| ОС                  | Версия узла    |
 |---------------------|-----------------|
 | Linux               | LTS и текущий |
 | Семейство Windows 10   | LTS и текущий |
 
-### <a name="java-sdk"></a>Пакет SDK для Java
+### <a name="java-sdk"></a>Пакет Java SDK
 
 [Пакет SDK для устройства Java центра Интернета вещей Azure](https://github.com/Azure/azure-iot-sdk-java) тестируется в и поддерживает следующие конфигурации.
 
-| OS                     | Версия Java |
+| ОС                     | Версия Java |
 |------------------------|--------------|
 | API 28 для Android         | Java 8       |
 | Linux x64             | Java 8       |
@@ -94,7 +98,7 @@ ms.locfileid: "72169019"
 
 Корпорация Майкрософт работает с различными партнерами, предоставляющими наборы средств разработки для нескольких архитектур микропроцессора. Эти партнеры перестроили пакет SDK для Azure IoT C на свою платформу. Партнеры создают и поддерживают уровень абстракции платформы (PAL) пакета SDK. Корпорация Майкрософт работает с этими партнерами для предоставления расширенной поддержки.
 
-| Партнер             | Устройства                            | Ссылка                     | Поддержка |
+| Partner             | Устройства                            | Ссылка                     | Поддержка |
 |---------------------|------------------------------------|--------------------------|---------|
 | Espressif           | ESP32 <br/> ESP8266                              | [ESP-azure](https://github.com/espressif/esp-azure)                | [GitHub](https://github.com/espressif/esp-azure)  
 | Qualcomm            | Модем Qualcomm MDM9206 LTE IoT     | [Qualcomm LTE для пакета SDK IoT](https://developer.qualcomm.com/software/lte-iot-sdk) | [Форум](https://developer.qualcomm.com/forums/software/lte-iot-sdk)   |
@@ -137,7 +141,7 @@ ms.locfileid: "72169019"
 
 **Запросы функций** . запросы к функциям Интернета вещей Azure отправляются с помощью [веб-страницы пользователя](https://feedback.azure.com/forums/321918-azure-iot)продукта.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Пакеты SDK для устройств и служб](iot-hub-devguide-sdks.md)
 * [Руководство по переносу](https://github.com/Azure/azure-c-shared-utility/blob/master/devdoc/porting_guide.md)

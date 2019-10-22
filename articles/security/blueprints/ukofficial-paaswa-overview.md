@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 07/13/2018
 ms.author: jomolesk
 ms.openlocfilehash: 1f6eeea85a348bb8e88a387fa0fc6bed55e41a5e
-ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
+ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "71262787"
 ---
 # <a name="azure-security-and-compliance-blueprint-paas-web-application-hosting-for-uk-official-workloads"></a>Схема безопасности и соответствия требованиям Azure. Размещение веб-приложения PaaS для рабочих нагрузок UK OFFICIAL
@@ -21,7 +21,7 @@ ms.locfileid: "71262787"
 
 Схемы Azure Blueprint содержат документацию и шаблоны автоматизации, позволяющие развертывать облачную архитектуру. Они предоставляют решения для сценариев, включающих требования к аккредитации и (или) соответствию. Схемы Azure Blueprint представляют собой набор рекомендаций и шаблонов автоматизации, которые позволяют клиентам Microsoft Azure быстрее достигать бизнес-целей. Это обеспечивается благодаря созданию базовой архитектуры, поддерживающей любое расширение в соответствии новыми требованиями.
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Краткое описание
 
 Настоящая схема соответствия и безопасности Azure предоставляет руководство и скрипты автоматизации. Они позволяют развернуть архитектуру размещаемых веб-приложений Microsoft Azure в формате [PaaS (платформа как услуга)](https://azure.microsoft.com/overview/what-is-paas/), которая поддерживает рабочие нагрузки категории [UK OFFICIAL](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/715778/May-2018_Government-Security-Classifications-2.pdf). Эта категория безопасности включает почти всю информацию, создаваемую и обрабатываемую в секторе общественных служб. Сюда входят стандартные бизнес-операции и службы, потеря или кража сведений о которых либо же их публикация в СМИ могут иметь разрушительные последствия. Типичный профиль угроз для категории UK OFFICIAL почти совпадает с тем, который характерен для частных компаний, предоставляющих ценные данные и услуги. UK OFFICIAL используется с учетом необходимости защищать данные и службы правительства Соединенного Королевства от угроз и (или) компрометации со стороны злоумышленников с ограниченными возможностями и ресурсами. В частности, к числу таких злоумышленников можно отнести хактивистов, группы давления по отдельным вопросам, журналистские расследования, компетентных индивидуальных хакеров и значительную часть уголовных преступников и групп.
 
@@ -39,36 +39,36 @@ ms.locfileid: "71262787"
 
 Эта схема предоставляет базовую архитектуру. Наши клиенты могут использовать эту схему в качестве основы для рабочих нагрузок категории OFFICIAL и развивать на ней шаблоны и ресурсы в соответствии с конкретными требованиями. Схема опирается на принципы, изложенные в [схеме трехуровневого веб-приложения IaaS для UK OFFICIAL](https://aka.ms/ukofficial-iaaswa), и позволяет предложить нашим клиентам варианты реализации [IaaS (инфраструктура как услуга)](https://azure.microsoft.com/overview/what-is-iaas/) и PaaS для размещения рабочих нагрузок веб-служб.
 
-Чтобы развернуть эту схему, необходима подписка Azure. Если у вас нет подписки Azure, вы можете быстро и легко зарегистрироваться, перейдя на страницу "Начало работы с Azure". Инструкции по развертыванию см. [здесь](https://aka.ms/ukofficial-paaswa-repo/).
+Чтобы развернуть эту схему, необходима подписка Azure. Если у вас нет подписки Azure, вы можете быстро и легко зарегистрироваться, перейдя на страницу "Приступая к работе с Azure". Инструкции по развертыванию см. [здесь](https://aka.ms/ukofficial-paaswa-repo/).
 
 ## <a name="architecture-and-components"></a>Архитектура и компоненты
 
 Эта схема обеспечивает размещение веб-приложения в облачной среде Azure, которая поддерживает рабочие нагрузки категории UK OFFICIAL. Эта архитектура предоставляет безопасную среду на основе возможностей и служб платформы Azure. В этой среде развертываются два веб-приложения Службы приложений (одно для граждан, другое для официальных представителей) и дополнительный уровень приложений API, позволяющий обслуживать общедоступный веб-интерфейс. Также развертывается База данных SQL Azure как управляемое реляционное хранилище данных для приложения. Все данные, которыми обмениваются эти компоненты, а также данные, поступающие к ним извне платформы, шифруются с помощью TLS 1.2 для гарантии конфиденциальности данных при передаче, а аутентификация доступа организуется с помощью Azure Active Directory.
 
-![Схема эталонной архитектуры размещения веб-приложения PaaS для UK OFFICIAL](images/ukofficial-paaswa-architecture.png?raw=true "PaaS Web Application Hosting for UK OFFICIAL Workloads reference architecture diagram")
+![Схема архитектуры для размещения веб-приложений PaaS для официальных рабочих нагрузок в Великобритании](images/ukofficial-paaswa-architecture.png?raw=true "Схема архитектуры для размещения веб-приложений PaaS для официальных рабочих нагрузок в Великобритании")
 
 Кроме того, в рамках архитектуры развертываются безопасное хранилище, средства мониторинга и ведения журнала, унифицированного управления безопасностью и расширенной защиты от угроз, чтобы гарантировать клиентам все необходимые возможности для защиты и контроля среды для размещения решений.
 
 Это решение использует следующие службы Azure. Подробные сведения об архитектуре развертывания см. в [этом разделе](#deployment-architecture).
 
 - Azure Active Directory
-- Служба приложений
+- App Service
 - Веб-приложение
-- Приложение API
+- API App
 - Azure DNS
 - Key Vault
 - Azure Monitor (журналы)
 - Application Insights
-- Azure Resource Manager
+- Диспетчер ресурсов Azure
 - Центр безопасности Azure
-- База данных SQL Azure
+- Базы данных SQL Azure
 - Служба хранилища Azure
 
 ## <a name="deployment-architecture"></a>Архитектура развертывания
 
 В следующем разделе подробно описываются компоненты развертывания и реализации.
 
-### <a name="security"></a>Группа безопасности
+### <a name="security"></a>Безопасность
 
 #### <a name="identity-and-authentication"></a>Идентификация и аутентификация
 
@@ -78,7 +78,7 @@ ms.locfileid: "71262787"
 
 - [Azure Active Directory (Azure AD)](https://azure.microsoft.com/services/active-directory/) — это мультитенантный облачный каталог и служба управления удостоверениями корпорации Майкрософт. Все пользователи решения создаются в Azure Active Directory, включая пользователей, обращающихся к базе данных SQL.
 - Аутентификация в веб-приложении для операторов и доступ к администрированию ресурсов Azure выполняются через Azure AD. Дополнительные сведения см. в статье [Интеграция приложений с Azure Active Directory](../../active-directory/develop/quickstart-v1-integrate-apps-with-azure-ad.md).
-- Azure AD используется при шифровании столбцов базы данных для аутентификации приложения в Базе данных SQL Azure. Дополнительные сведения см. в статье [Always Encrypted: Always Encrypted: Protect sensitive data and store encryption keys in Azure Key Vault](https://docs.microsoft.com/azure/sql-database/sql-database-always-encrypted-azure-key-vault) (Always Encrypted: защита конфиденциальных данных и хранение ключей шифрования в Azure Key Vault).
+- Azure AD используется при шифровании столбцов базы данных для аутентификации приложения в Базе данных SQL Azure. Дополнительные сведения см. в статье [Always Encrypted: защита конфиденциальных данных в Базе данных SQL и хранение ключей шифрования в хранилище ключей Azure](https://docs.microsoft.com/azure/sql-database/sql-database-always-encrypted-azure-key-vault).
 - Веб-приложение для граждан предоставляется в свободном доступе. Для поддержки создания учетных записей и аутентификации через Active Directory и (или) социальные сети в качестве поставщиков удостоверений предоставляется возможность интеграции с [Azure Active Directory B2C](https://azure.microsoft.com/services/active-directory-b2c/).
 - Служба [Защита идентификации Azure Active Directory](../../active-directory/identity-protection/overview.md) выявляет потенциальные уязвимости и рискованные учетные записи, предоставляет рекомендации по повышению уровня безопасности для удостоверений вашей организации, настраивает автоматическое реагирование на обнаруженные подозрительные действия, связанные с удостоверениями вашей организации, исследует подозрительные инциденты и предпринимает соответствующие действия для их устранения.
 - [Контроль доступа на основе ролей (RBAC) Azure](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal) обеспечивает точное управление доступом для Azure. Доступ к подписке ограничен администратором подписки, а доступ к Azure Key Vault разрешен только тем пользователям, которым необходим доступ к управлению ключами.
@@ -110,14 +110,14 @@ ms.locfileid: "71262787"
 Этот шаблон предназначен для развертывания следующих функций службы приложений:
 
 - план службы приложений уровня [Стандартный](https://docs.microsoft.com/azure/app-service/overview-hosting-plans);
-- Несколько [слотов развертывания](https://docs.microsoft.com/azure/app-service/deploy-staging-slots) службы приложений: Dev (разработка), Preview (предварительный просмотр), QA (контроль качества), UAT (приемочное тестирование) и, конечно же, слот по умолчанию Production (рабочая среда);
+- Несколько [слотов развертывания](https://docs.microsoft.com/azure/app-service/deploy-staging-slots)службы приложений: Dev (Предварительная версия), QA, UAT и Production (основной слот по умолчанию).
 - [управляемые удостоверения для ресурсов Azure](https://docs.microsoft.com/azure/app-service/overview-managed-identity) для подключения к [Azure Key Vault](https://azure.microsoft.com/services/key-vault/) (также может использоваться для предоставления доступа к [Базе данных SQL Azure](https://azure.microsoft.com/services/sql-database/)); 
 - интеграция с [Azure Application Insights](../../azure-monitor/app/azure-web-apps.md) для мониторинга производительности;
 - [Журналы диагностики](../../azure-monitor/platform/resource-logs-overview.md) 
 - [оповещения метрик](../../azure-monitor/app/alerts.md); 
 - [Приложения API Azure](https://azure.microsoft.com/services/app-service/api/) 
 
-#### <a name="azure-sql-database"></a>База данных SQL Azure
+#### <a name="azure-sql-database"></a>Базы данных SQL Azure
 
 База данных SQL — это реляционная база данных общего назначения (управляемая служба) в Microsoft Azure, которая поддерживает такие структуры, как реляционные данные, JSON, пространственные данные и XML. База данных SQL предоставляет отдельные управляемые базы данных SQL, управляемые базы данных SQL в [эластичном пуле](https://docs.microsoft.com/azure/sql-database/sql-database-elastic-pool) и [управляемые экземпляры](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance) базы данных SQL (в общедоступной предварительной версии). Она обеспечивает [динамически масштабируемую производительность](../../sql-database/sql-database-purchase-models.md) и предоставляет определенные возможности, например [индексы columnstore](https://docs.microsoft.com/sql/relational-databases/indexes/columnstore-indexes-overview) для экстремального аналитического анализа и отчетности и [выполняющуюся в памяти OLTP](https://docs.microsoft.com/azure/sql-database/sql-database-in-memory) для экстремальной обработки транзакций. Майкрософт быстро и эффективно обрабатывает исправления и обновления базы кода SQL, а также упрощает обслуживание базовой инфраструктуры.
 
@@ -156,7 +156,7 @@ ms.locfileid: "71262787"
 
 ### <a name="secrets-management"></a>Управление секретами
 
-#### <a name="azure-key-vault"></a>Хранилище Azure Key Vault
+#### <a name="azure-key-vault"></a>Azure Key Vault.
 
 [Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-overview) используется для защиты ключей и секретов приложений, чтобы предотвратить доступ к ним посторонних лиц. Оно не предназначено для использования в качестве хранилища паролей пользователей. Оно позволяет создать несколько безопасных контейнеров, называемых хранилищами. Эти хранилища поддерживают аппаратные модули безопасности (HSM). Хранилища позволяют уменьшить вероятность случайной потери информации о безопасности путем централизации хранения секретов приложений. Хранилища Key Vault также контролируют и регистрируют доступ к чему-либо, что хранится в них. Azure Key Vault может обрабатывать запросы и обновлять сертификаты протокола TLS, предоставляя функции, необходимые для надежного решения по управлению жизненным циклом сертификата.
 
@@ -199,9 +199,9 @@ ms.locfileid: "71262787"
 
 ## <a name="threat-model"></a>Модель рисков
 
-Схему потока данных для этой эталонной архитектуры можно [скачать](https://aka.ms/ukofficial-paaswa-tm) или просмотреть ниже. Используя эту модель, клиенты могут выявить зоны потенциального риска в инфраструктуре системы при внесении изменений.
+Схему потока данных для этой эталонной архитектуры можно [скачать](https://aka.ms/ukofficial-paaswa-tm) или просмотреть ниже. Используя эту модель, клиенты могут найти зоны потенциального риска в инфраструктуре системы при внесении изменений.
 
-![Размещение веб-приложений PaaS для модели угроз рабочих нагрузок UK OFFICIAL](images/ukofficial-paaswa-threat-model.png?raw=true "PaaS Web Application Hosting for UK OFFICIAL Workloads threat model")
+![Модель угроз размещения веб-приложений PaaS для официальных рабочих нагрузок в Великобритании](images/ukofficial-paaswa-threat-model.png?raw=true "Модель угроз размещения веб-приложений PaaS для официальных рабочих нагрузок в Великобритании")
 
 ## <a name="ncsc-cloud-security-principles-compliance-documentation"></a>Документация по соответствию принципам облачной безопасности NCSC
 
@@ -229,11 +229,11 @@ ms.locfileid: "71262787"
 Были предложены три подхода к развертыванию. Простой "экспресс-метод" [Azure CLI 2](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) подходит для быстрого создания тестовой среды; параметризованный метод [Azure CLI 2](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) дает больше возможностей для настройки сред для рабочей нагрузки; развертывание через портал Azure позволяет оператору настроить параметры развертывания на портале Azure. 
 
 1.  Клонируйте или скачайте [этот](https://aka.ms/ukofficial-paaswa-repo) репозиторий GitHub на локальную рабочую станцию.
-2.  Изучите [описание метода 1: Azure CLI 2 (экспресс-метод)](https://aka.ms/ukofficial-paaswa-repo/#method-1-azure-cli-2-express-version) и выполните приведенные там команды.
-3.  Изучите [описание метода 1a: Azure CLI 2 (настройка развертывания с помощью аргументов сценария)](https://aka.ms/ukofficial-paaswa-repo/#method-1a-azure-cli-2-configuring-the-deployment-via-script-arguments) и выполните приведенные там команды.
-4.  Изучите [описание метода 2: процесс развертывания с помощью портала Azure](https://aka.ms/ukofficial-paaswa-repo/#method-2-azure-portal-deployment-process) и выполните перечисленные там действия.
+2.  Изучите [описание метода 1: Azure CLI 2 (экспресс-метод)](https://aka.ms/ukofficial-paaswa-repo/#method-1-azure-cli-2-express-version) и выполните приведенные там команды.
+3.  Изучите [описание метода 1a: Azure CLI 2 (настройка развертывания с помощью аргументов скрипта)](https://aka.ms/ukofficial-paaswa-repo/#method-1a-azure-cli-2-configuring-the-deployment-via-script-arguments) и выполните приведенные там команды.
+4.  Проверка [метода 2. портал Azure процесса развертывания](https://aka.ms/ukofficial-paaswa-repo/#method-2-azure-portal-deployment-process) и выполнения приведенных команд
 
-## <a name="guidance-and-recommendations"></a>Инструкции и рекомендации
+## <a name="guidance-and-recommendations"></a>Руководство и рекомендации
 
 ### <a name="api-management"></a>Управление API
 

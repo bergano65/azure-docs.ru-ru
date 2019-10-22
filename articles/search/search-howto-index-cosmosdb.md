@@ -11,10 +11,10 @@ ms.devlang: rest-api
 ms.topic: conceptual
 ms.custom: seodec2018
 ms.openlocfilehash: 802a4e9c6191d33051eb075543691845595bc9c3
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "69656696"
 ---
 # <a name="how-to-index-cosmos-db-using-an-azure-search-indexer"></a>Индексирование Cosmos DB с помощью индексатора службы поиска Azure
@@ -35,7 +35,7 @@ ms.locfileid: "69656696"
 * [API MongoDB (Предварительная версия)](https://docs.microsoft.com/azure/cosmos-db/mongodb-introduction)
 
 > [!Note]
-> Пользовательские голоса имеют существующие элементы для поддержки дополнительных API. Вы можете выполнить голосование за API-интерфейсы Cosmos, которые вы хотели бы увидеть в службе поиска Azure: [API таблиц](https://feedback.azure.com/forums/263029-azure-search/suggestions/32759746-azure-search-should-be-able-to-index-cosmos-db-tab), [API Graph](https://feedback.azure.com/forums/263029-azure-search/suggestions/13285011-add-graph-databases-to-your-data-sources-eg-neo4), [API Apache Cassandra](https://feedback.azure.com/forums/263029-azure-search/suggestions/32857525-indexer-crawler-for-apache-cassandra-api-in-azu).
+> Пользовательские голоса имеют существующие элементы для поддержки дополнительных API. Вы можете выполнить голосование за API-интерфейсы Cosmos, которые вы хотели бы увидеть в службе поиска Azure: [API таблиц](https://feedback.azure.com/forums/263029-azure-search/suggestions/32759746-azure-search-should-be-able-to-index-cosmos-db-tab), [API Graph](https://feedback.azure.com/forums/263029-azure-search/suggestions/13285011-add-graph-databases-to-your-data-sources-eg-neo4) [API Apache Cassandra](https://feedback.azure.com/forums/263029-azure-search/suggestions/32857525-indexer-crawler-for-apache-cassandra-api-in-azu).
 >
 
 <a name="cosmos-indexer-portal"></a>
@@ -50,13 +50,13 @@ ms.locfileid: "69656696"
 
 У вас должна быть учетная запись Cosmos, база данных Cosmos Azure, сопоставленная с API SQL или API MongoDB, а также контейнер документов JSON. 
 
-Убедитесь, что база данных Cosmos DB содержит данные. [Мастер импорта данных](search-import-data-portal.md) считывает метаданные и выполняет выборку данных для определения схемы индекса, но также загружает данные из Cosmos DB. Если данные отсутствуют, работа мастера завершается с ошибкой "ошибка обнаружения схемы индекса из источника данных: Не удалось построить индекс прототипа, так как источник данных "емптиколлектион" не вернул данные ".
+Убедитесь, что база данных Cosmos DB содержит данные. [Мастер импорта данных](search-import-data-portal.md) считывает метаданные и выполняет выборку данных для определения схемы индекса, но также загружает данные из Cosmos DB. Если данные отсутствуют, работа мастера завершается с ошибкой "ошибка при обнаружении схемы индекса из источника данных: не удалось построить индекс прототипа, так как DataSource ' емптиколлектион ' не вернул данные".
 
 ### <a name="2---start-import-data-wizard"></a>2\. Запуск мастера импорта данных
 
 [Запустить мастер](search-import-data-portal.md) можно на панели команд на странице службы поиска Azure или щелкнув **Добавить поиск Azure** в разделе **Параметры** в левой области навигации вашей учетной записи хранения.
 
-   ![Команда импорта данных на портале](./media/search-import-data-portal/import-data-cmd2.png "Запуск мастера импорта данных")
+   ![Команда "Импорт данных" на портале](./media/search-import-data-portal/import-data-cmd2.png "Запуск мастера импорта данных")
 
 ### <a name="3---set-the-data-source"></a>3\. Настройка источника данных
 
@@ -67,7 +67,7 @@ ms.locfileid: "69656696"
 
 + **Name** — это имя объекта источника данных. После создания вы можете выбрать его для других рабочих нагрузок.
 
-+ **Cosmos DB учетная запись** должна быть основной или вторичной строкой подключения от Cosmos DB `AccountEndpoint` с помощью `AccountKey`и. Учетная запись определяет, будут ли данные приведены как API SQL или API Mongo DB.
++ **Cosmos DB учетная запись** должна быть основной или вторичной строкой подключения от Cosmos DB с `AccountEndpoint` и `AccountKey`. Учетная запись определяет, будут ли данные приведены как API SQL или API Mongo DB.
 
 + **База данных** — это существующая база данных из учетной записи. 
 
@@ -124,12 +124,12 @@ ms.locfileid: "69656696"
 
 Вы можете использовать REST API для индексации Azure Cosmos DB данных, следуя рабочему процессу из трех частей, общим для всех индексаторов в службе поиска Azure: создание источника данных, создание индекса и создание индексатора. Извлечение данных из хранилища Cosmos происходит при отправке запроса на создание индексатора. После завершения этого запроса у вас будет индекс с запросом. 
 
-При оценке MongoDB необходимо использовать оставшуюся `api-version=2019-05-06-Preview` для создания источника данных.
+При оценке MongoDB необходимо использовать `api-version=2019-05-06-Preview` RESTFUL для создания источника данных.
 
 В учетной записи Cosmos DB вы можете указать, должна ли коллекция автоматически индексировать все документы. По умолчанию все документы автоматически индексируются, но вы можете отключить эту функцию. При выключенном индексировании документы могут быть доступны только через собственные ссылки или запросы, использующие идентификатор документа. Для службы "Поиск Azure" требуется включить автоматическое индексирование Cosmos DB в коллекции, которую эта служба будет индексировать. 
 
 > [!WARNING]
-> Azure Cosmos DB — это база данных DocumentDB нового поколения. Ранее с API версии **2017-11-11** можно было использовать `documentdb` синтаксис. Это означало, что можно указать тип источника данных в `cosmosdb` виде `documentdb`или. Начиная с API версии **2019-05-06** , API-интерфейсы и портал службы поиска Azure поддерживают `cosmosdb` только синтаксис, описанный в этой статье. Это означает, что тип источника данных должен `cosmosdb` иметь значение, если вы хотите подключиться к конечной точке Cosmos DB.
+> Azure Cosmos DB — это база данных DocumentDB нового поколения. Ранее с API версии **2017-11-11** можно было использовать синтаксис `documentdb`. Это означало, что можно указать тип источника данных `cosmosdb` или `documentdb`. Начиная с API версии **2019-05-06** , API и портал службы поиска Azure поддерживают только синтаксис `cosmosdb`, как описано в этой статье. Это означает, что тип источника данных должен `cosmosdb`, если вы хотите подключиться к конечной точке Cosmos DB.
 
 ### <a name="1---assemble-inputs-for-the-request"></a>1\. формирование входных данных для запроса
 
@@ -176,10 +176,10 @@ ms.locfileid: "69656696"
 
 | Поле   | Описание |
 |---------|-------------|
-| **name** | Обязательный элемент. Выберите любое имя, представляющее объект источника данных. |
-|**type**| Обязательный элемент. Этот параметр должен содержать значение `cosmosdb`. |
-|**credentials** | Обязательный элемент. Должна быть Cosmos DB строкой подключения.<br/>Для коллекций SQL строки подключения имеют следующий формат:`AccountEndpoint=<Cosmos DB endpoint url>;AccountKey=<Cosmos DB auth key>;Database=<Cosmos DB database id>`<br/>Для MongoDB Collections добавьте **типа API = MongoDB** в строку подключения:<br/>`AccountEndpoint=<Cosmos DB endpoint url>;AccountKey=<Cosmos DB auth key>;Database=<Cosmos DB database id>;ApiKind=MongoDb`<br/>Не рекомендуется указывать номера портов в URL-адресе конечной точки. Если вы укажете номер порта, служба поиска Azure не сможет индексировать базу данных Azure Cosmos DB.|
-| **container** | Содержит следующие элементы: <br/>**name**. Обязательный элемент. Укажите идентификатор коллекции баз данных для индексирования.<br/>**query**. Необязательный элемент. Можно указать запрос на сведение произвольного документа JSON в неструктурированную схему, индексируемую поиском Azure.<br/>Для коллекций MongoDB запросы не поддерживаются. |
+| **name** | Обязательный параметр. Выберите любое имя, представляющее объект источника данных. |
+|**type**| Обязательный параметр. Этот параметр должен содержать значение `cosmosdb`. |
+|**credentials** | Обязательный параметр. Должна быть Cosmos DB строкой подключения.<br/>Для коллекций SQL строки подключения имеют следующий формат: `AccountEndpoint=<Cosmos DB endpoint url>;AccountKey=<Cosmos DB auth key>;Database=<Cosmos DB database id>`<br/>Для MongoDB Collections добавьте **типа API = MongoDB** в строку подключения:<br/>`AccountEndpoint=<Cosmos DB endpoint url>;AccountKey=<Cosmos DB auth key>;Database=<Cosmos DB database id>;ApiKind=MongoDb`<br/>Не рекомендуется указывать номера портов в URL-адресе конечной точки. Если вы укажете номер порта, служба поиска Azure не сможет индексировать базу данных Azure Cosmos DB.|
+| **container** | Содержит следующие элементы: <br/>**name**: обязательное поле. Укажите идентификатор коллекции баз данных для индексирования.<br/>**query**: необязательное поле. Можно указать запрос на сведение произвольного документа JSON в неструктурированную схему, индексируемую поиском Azure.<br/>Для коллекций MongoDB запросы не поддерживаются. |
 | **датачанжедетектионполици** | (рекомендуется). Ознакомьтесь с разделом [Индексация измененных документов](#DataChangeDetectionPolicy).|
 |**датаделетиондетектионполици** | Необязательный элемент. Ознакомьтесь с разделом [удаленных документов](#DataDeletionDetectionPolicy).|
 
@@ -258,10 +258,10 @@ ms.locfileid: "69656696"
 | Bool |Edm.Boolean, Edm.String |
 | Числа, которые выглядят как целые числа |Edm.Int32, Edm.Int64, Edm.String |
 | Числа, которые выглядят как числа с плавающей запятой |Edm.Double, Edm.String |
-| Строковое |Edm.String |
+| Строка |Edm.String |
 | Массивы типов-примитивов, например [a, b, c] |Collection(Edm.String) |
 | Строки, которые выглядят как даты |Edm.DateTimeOffset, Edm.String |
-| Объекты GeoJSON, например { "type": "Point", "coordinates": [long, lat] } |Edm.GeographyPoint |
+| Геообъекты JSON, например { "тип": "Точка", "координаты": [ долгота, широта ] } |Edm.GeographyPoint |
 | Другие объекты JSON |Н/Д |
 
 ### <a name="4---configure-and-run-the-indexer"></a>4\. Настройка и запуск индексатора

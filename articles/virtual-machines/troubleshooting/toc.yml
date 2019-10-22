@@ -127,12 +127,18 @@
   href: storage-resource-deletion-errors.md
 - name: Ошибки при удалении ресурсов классического хранилища
   href: storage-classic-cannot-delete-storage-account-container-vhd.md
-- name: Непредвиденные перезагрузки виртуальных машин с подключенными VHD
-  href: unexpected-reboots-attached-vhds.md
-- name: Проблемы с активацией Windows
-  href: troubleshoot-activation-problems.md
-- name: Проблема с активацией при принудительном туннелировании
-  href: custom-routes-enable-kms-activation.md
+- name: Устранение неполадок с перезапуском виртуальных машин
+  items:
+    - name: Непредвиденные перезагрузки виртуальных машин с подключенными VHD
+      href: unexpected-reboots-attached-vhds.md
+    - name: Общие сведения о перезагрузке системы
+      href: understand-vm-reboot.md
+- name: Активация Windows
+  items:
+    - name: Проблемы с активацией Windows
+      href: troubleshoot-activation-problems.md
+    - name: Проблема с активацией при принудительном туннелировании
+      href: custom-routes-enable-kms-activation.md
 - name: Ошибки доступа к приложению
   href: troubleshoot-app-connection.md
 - name: Новые развертывания виртуальных машин
@@ -188,8 +194,6 @@
   href: troubleshooting-throttling-errors.md
 - name: Использование вложенной виртуализации
   href: troubleshoot-vm-by-use-nested-virtualization.md
-- name: Общие сведения о перезагрузке системы
-  href: understand-vm-reboot.md
 - name: Средства удаленного устранения неполадок
   href: remote-tools-troubleshoot-azure-vm-issues.md
 - name: Восстановление виртуальной машины

@@ -1,5 +1,5 @@
 ---
-title: 'Пример: Создание пользовательского навыка для поиска с помощью API Bing для поиска сущностей-Azure'
+title: Пример. Создание пользовательского навыка для поиска с помощью API Bing для поиска сущностей-Azure
 description: Демонстрируется использование службы Поиск сущностей Bing в пользовательском навыке, сопоставленном с помощью конвейера индексирования поиска в службе поиска Azure.
 manager: nitinme
 author: luiscabrer
@@ -8,18 +8,18 @@ ms.service: search
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: luisca
-ms.openlocfilehash: d76a250cc3554b086501899376cb411346a4251c
-ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
+ms.openlocfilehash: ab2f9e8859fba0c906e181727aab923254e9b620
+ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71266335"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72692202"
 ---
-# <a name="example-create-a-custom-skill-using-the-bing-entity-search-api"></a>Пример: Создание пользовательского навыка с помощью API Bing для поиска сущностей
+# <a name="example-create-a-custom-skill-using-the-bing-entity-search-api"></a>Пример. Создание пользовательского навыка с помощью API Bing для поиска сущностей
 
 В этом примере вы узнаете, как создать пользовательский навык веб-API. Этот навык будет принимать местоположения, общедоступные рисунки и организации и возвращать их описания. В примере используется [функция Azure](https://azure.microsoft.com/services/functions/) для заключения [API Bing для поиска сущностей](https://azure.microsoft.com/services/cognitive-services/bing-entity-search-api/) , чтобы она реализовала пользовательский интерфейс квалификации.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 + Ознакомьтесь со статьей о [пользовательском интерфейсе навыков](cognitive-search-custom-skill-interface.md) , если вы не знакомы с интерфейсом ввода-вывода, который должен быть реализован в пользовательском навыке.
 
@@ -311,11 +311,11 @@ namespace SampleSkills
 }
 ```
 
-Обязательно введите собственное значение *ключа* в `key` константе на основе ключа, полученного при регистрации в API Bing для поиска сущностей.
+Обязательно введите собственное значение *ключа* в `key`ную константу на основе ключа, полученного при регистрации в API Bing для поиска сущностей.
 
-Этот пример включает в себя весь необходимый код в одном файле для удобства. В [репозитории Power Skills](https://github.com/Azure-Samples/azure-search-power-skills/tree/master/Text/BingEntitySearch)можно найти немного более структурированную версию этого же навыка.
+Этот пример включает в себя весь необходимый код в одном файле для удобства. Можно найти немного более структурированную версию того же навыка, а также другие примеры пользовательских навыков в [репозитории Power Skills](https://aka.ms/entity-search-power-skill).
 
-Конечно, файл можно переименовать с `Function1.cs` на. `BingEntitySearch.cs`
+Конечно, вы можете переименовать файл с `Function1.cs` на `BingEntitySearch.cs`.
 
 ## <a name="test-the-function-from-visual-studio"></a>Тестирование функции из Visual Studio
 
@@ -325,7 +325,7 @@ namespace SampleSkills
 POST https://localhost:7071/api/EntitySearch
 ```
 
-### <a name="request-body"></a>Текст запроса
+### <a name="request-body"></a>Тело запроса
 ```json
 {
     "values": [
@@ -347,7 +347,7 @@ POST https://localhost:7071/api/EntitySearch
 }
 ```
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 Вы должны увидеть отклик, аналогичный следующему примеру:
 
 ```json
@@ -383,7 +383,7 @@ POST https://localhost:7071/api/EntitySearch
 
 1. После завершения развертывания обратите внимание на URL-адрес сайта. Это адрес приложения-функции в Azure. 
 
-1. В [портал Azure](https://portal.azure.com)перейдите к группе ресурсов и найдите `EntitySearch` опубликованную функцию. В разделе **Управление** должны отображаться ключи узла. Выберите значок **копирования** для ключа узла *по умолчанию*.  
+1. В [портал Azure](https://portal.azure.com)перейдите к группе ресурсов и найдите опубликованную функцию `EntitySearch`. В разделе **Управление** должны отображаться ключи узла. Выберите значок **копирования** для ключа узла *по умолчанию*.  
 
 ## <a name="test-the-function-in-azure"></a>Тестирование функции в Azure
 
@@ -393,7 +393,7 @@ POST https://localhost:7071/api/EntitySearch
 POST https://[your-entity-search-app-name].azurewebsites.net/api/EntitySearch?code=[enter default host key here]
 ```
 
-### <a name="request-body"></a>Тело запроса
+### <a name="request-body"></a>Текст запроса
 ```json
 {
     "values": [
@@ -475,10 +475,11 @@ POST https://[your-entity-search-app-name].azurewebsites.net/api/EntitySearch?co
 },
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Поздравляем! Вы создали первый пользовательский обогащенный элемент. Теперь вы можете использовать ту же схему для добавления пользовательских функций. 
 
++ [Power Skills: репозиторий пользовательских навыков](https://aka.ms/powerskills)
 + [Добавление пользовательского навыка в конвейер когнитивного поиска](cognitive-search-custom-skill-interface.md)
-+ [Определение набора навыков](cognitive-search-defining-skillset.md)
-+ [Создание набора навыков (REST)](https://docs.microsoft.com/rest/api/searchservice/create-skillset)
++ [How to define a skillset](cognitive-search-defining-skillset.md) (Определение набора навыков)
++ [Create Skillset](https://docs.microsoft.com/rest/api/searchservice/create-skillset) (Создание набора навыков)
 + [Сопоставление обогащенных полей](cognitive-search-output-field-mapping.md)

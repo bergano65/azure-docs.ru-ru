@@ -1,5 +1,5 @@
 ---
-title: 'Создать модель Python: Справочник по модулям'
+title: 'Создание модели Python: Справочник по модулям'
 titleSuffix: Azure Machine Learning service
 description: Узнайте, как использовать модель создания модели Python в Машинное обучение Azure Service для создания пользовательского модуля моделирования или обработки данных.
 services: machine-learning
@@ -9,12 +9,12 @@ ms.topic: reference
 author: xiaoharper
 ms.author: zhanxia
 ms.date: 05/06/2019
-ms.openlocfilehash: c6d7aabd41e9d0e872926adbbcb2d18332cb7d5e
-ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+ms.openlocfilehash: 2a035644dc0d3d533aa052217c89968a5692230b
+ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70128920"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72693894"
 ---
 # <a name="create-python-model"></a>Создание модели Python
 
@@ -33,7 +33,7 @@ ms.locfileid: "70128920"
 Для использования этого модуля необходимы промежуточные или квалифицированные знания о Python. Модуль поддерживает использование любых сведений, включенных в пакеты Python, уже установленные в Машинное обучение Azure. См. список предварительно установленных пакетов Python в разделе [выполнение скрипта Python](execute-python-script.md).
   
 
-В этой статье показано, как использовать **модель создания Python** с простым экспериментом. Ниже приведен график эксперимента.
+В этой статье показано, как использовать **модель создания Python** с простым конвейером. Ниже приведен граф конвейера.
 
 ![Create-Python-Model](./media/module/aml-create-python-model.png)
 

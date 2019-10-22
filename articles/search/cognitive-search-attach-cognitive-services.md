@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 05/20/2019
 ms.author: luisca
 ms.openlocfilehash: 113286f829b628d4740fbba34e7279741a934aef
-ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
+ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "71265931"
 ---
 # <a name="attach-a-cognitive-services-resource-with-a-skillset-in-azure-search"></a>Подключение ресурса Cognitive Services с набором навыков в службе "Поиск Azure" 
@@ -28,7 +28,7 @@ ms.locfileid: "71265931"
 
 ## <a name="same-region-requirement"></a>Требования к одному региону
 
-Нам требуется, чтобы служба поиска Azure и Cognitive Services Azure существовали в одном регионе. В противном случае это сообщение будет получено во время выполнения:`"Provided key is not a valid CognitiveServices type key for the region of your search service."` 
+Нам требуется, чтобы служба поиска Azure и Cognitive Services Azure существовали в одном регионе. В противном случае это сообщение будет получено во время выполнения: `"Provided key is not a valid CognitiveServices type key for the region of your search service."` 
 
 Перемещение службы между регионами невозможно. При возникновении этой ошибки необходимо создать новый ресурс Cognitive Services в том же регионе, что и поиск Azure.
 
@@ -51,7 +51,7 @@ ms.locfileid: "71265931"
 
    ![Развернутый раздел Cognitive Services присоединения](./media/cognitive-search-attach-cognitive-services/attach1.png "Развернутый раздел Cognitive Services присоединения")
 
-1. Перейдите к следующему шагу, **добавьте дополнения**. Описание навыков, доступных на портале, см. в [разделе Шаг 2. Добавьте в быстрый](cognitive-search-quickstart-blob.md#create-the-enrichment-pipeline) Поиск краткие навыки.
+1. Перейдите к следующему шагу, **добавьте дополнения**. Описание навыков, доступных на портале, см. в разделе [Шаг 2. Добавление](cognitive-search-quickstart-blob.md#create-the-enrichment-pipeline) в краткое руководство поисковых навыков.
 
 ## <a name="use-billable-resources"></a>Использование ресурсов, которые подлежат оплате
 
@@ -63,7 +63,7 @@ ms.locfileid: "71265931"
 
 1. Разверните узел **присоединить Cognitive Services** , а затем выберите **создать новый Cognitive Services ресурс**. Откроется новая вкладка, в которой можно будет создать ресурс:
 
-   ![Создание ресурса Cognitive Services](./media/cognitive-search-attach-cognitive-services/cog-services-create.png "Создание ресурса Cognitive Services")
+   ![Создание Cognitive Services ресурса](./media/cognitive-search-attach-cognitive-services/cog-services-create.png "Создание ресурса Cognitive Services")
 
 1. В списке **Расположение** выберите регион, в котором находится служба поиска Azure. Обязательно используйте этот регион для повышения производительности. Использование этого региона также аннулирует исходящие расходы на пропускную способность в регионах.
 
@@ -81,7 +81,7 @@ ms.locfileid: "71265931"
 
    ![Выберите ресурс Cognitive Services](./media/cognitive-search-attach-cognitive-services/attach2.png "Выберите ресурс Cognitive Services")
 
-1. Разверните раздел **Add обогащения (Добавление дополнений** ), чтобы выбрать конкретные навыки, которые необходимо выполнить с данными. Выполните остальные шаги мастера. Описание навыков, доступных на портале, см. в [разделе Шаг 2. Добавьте в быстрый](cognitive-search-quickstart-blob.md#create-the-enrichment-pipeline) Поиск краткие навыки.
+1. Разверните раздел **Add обогащения (Добавление дополнений** ), чтобы выбрать конкретные навыки, которые необходимо выполнить с данными. Выполните остальные шаги мастера. Описание навыков, доступных на портале, см. в разделе [Шаг 2. Добавление](cognitive-search-quickstart-blob.md#create-the-enrichment-pipeline) в краткое руководство поисковых навыков.
 
 ## <a name="attach-an-existing-skillset-to-a-cognitive-services-resource"></a>Присоединение ресурса Cognitive Services с существующим набором навыков
 
@@ -89,11 +89,11 @@ ms.locfileid: "71265931"
 
 1. На странице **Обзор службы** выберите **навыков**:
 
-   ![Вкладка наборов навыков](./media/cognitive-search-attach-cognitive-services/attach-existing1.png "Вкладка наборов навыков")
+   ![Вкладка навыков](./media/cognitive-search-attach-cognitive-services/attach-existing1.png "Вкладка навыков")
 
 1. Выберите имя набора навыков, а затем выберите существующий ресурс или создайте новый. Для подтверждения изменений нажмите кнопку **OK**.
 
-   ![Список набора навыков ресурса](./media/cognitive-search-attach-cognitive-services/attach-existing2.png "Список набора навыков ресурса")
+   ![Список ресурсов набора навыков](./media/cognitive-search-attach-cognitive-services/attach-existing2.png "Список ресурсов набора навыков")
 
    Помните, что параметр **Free (ограниченные дополнения)** ограничивает доступ к 20 документам ежедневно, и вы можете использовать **Создание нового Cognitive Services ресурса** для предоставления нового оплачиваемого ресурса. Создав новый ресурс, щелкните **Обновить**, чтобы обновить список ресурсов Cognitive Services, и выберите ресурс.
 
@@ -101,7 +101,7 @@ ms.locfileid: "71265931"
 
 При определении набора навыков программным способом добавьте раздел `cognitiveServices` к набору навыков. В этом разделе включите ключ ресурса Cognitive Services, который необходимо связать с набором навыков. Помните, что ресурс должен находиться в том же регионе, что и ресурс поиска Azure. Также включите `@odata.type` и присвойте ему значение `#Microsoft.Azure.Search.CognitiveServicesByKey`.
 
-Этот шаблон приведен в примере ниже. Обратите `cognitiveServices` внимание на раздел в конце определения.
+Этот шаблон приведен в примере ниже. Обратите внимание на раздел `cognitiveServices` в конце определения.
 
 ```http
 PUT https://[servicename].search.windows.net/skillsets/[skillset name]?api-version=2019-05-06
@@ -137,7 +137,7 @@ Content-Type: application/json
 }
 ```
 
-## <a name="example-estimate-costs"></a>Пример: Расчет стоимости
+## <a name="example-estimate-costs"></a>Пример. Оценка затрат
 
 Чтобы оценить затраты, связанные с использованием индексированного поиска, начните с понимания того, как выглядит средний документ, чтобы можно было выполнить несколько цифр. Например, вы можете приблизительно:
 
@@ -158,8 +158,8 @@ Content-Type: application/json
 
 Поместив все вместе, вы платите примерно $57,00, чтобы принять 1 000 PDF-документов этого типа с описанным набором навыков.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 + [Цены на "Поиск Azure"](https://azure.microsoft.com/pricing/details/search/)
-+ [Определение набора навыков](cognitive-search-defining-skillset.md)
-+ [Создание набора навыков (REST)](https://docs.microsoft.com/rest/api/searchservice/create-skillset)
++ [How to define a skillset](cognitive-search-defining-skillset.md) (Определение набора навыков)
++ [Create Skillset](https://docs.microsoft.com/rest/api/searchservice/create-skillset) (Создание набора навыков)
 + [Сопоставление обогащенных полей](cognitive-search-output-field-mapping.md)
