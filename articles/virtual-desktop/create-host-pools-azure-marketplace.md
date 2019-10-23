@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: tutorial
 ms.date: 08/30/2019
 ms.author: helohr
-ms.openlocfilehash: c0b93529872de774e1a6e915ef8254c5c0e0a1a9
-ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
+ms.openlocfilehash: f5b40e59a4ed2393e3b9912f8e4caa06ee267428
+ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71676708"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72757522"
 ---
 # <a name="tutorial-create-a-host-pool-by-using-the-azure-marketplace"></a>Руководство по Создание пула узлов с использованием Azure Marketplace
 
@@ -73,7 +73,7 @@ Add-RdsAccount -DeploymentUrl "https://rdbroker.wvd.microsoft.com"
 В колонке **Параметры виртуальной машины** сделайте следующее:
 
 >[!NOTE]
-> Если вы присоединяете виртуальные машины к среде доменных служб Active Directory (Azure AD DS), убедитесь, что пользователь, который присоединяется к домену, также является участником [группы администраторов AAD DC](../active-directory-domain-services/tutorial-create-instance.md#configure-an-administrative-group).
+> Если вы присоединяете виртуальные машины к среде доменных служб Active Directory (Azure AD DS), убедитесь, что пользователь, который присоединяется к домену, также является участником [группы администраторов AAD DC](../active-directory-domain-services/tutorial-create-instance-advanced.md#configure-an-administrative-group).
 
 1. Выберите **Источник образа** и введите соответствующую информацию о том, как его искать и хранить. Если вы решили не использовать управляемые диски, выберите учетную запись хранения, содержащую VHD-файл.
 2. Введите имя участника-пользователя и пароль для учетной записи домена, с использованием которой виртуальные машины будут присоединены к домену Active Directory. Эти же имя пользователя и пароль будут созданы на виртуальных машинах в качестве локальной учетной записи. Позже вы сможете сбросить эти локальные учетные записи.
