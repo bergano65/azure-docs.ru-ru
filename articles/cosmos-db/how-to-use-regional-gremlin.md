@@ -1,18 +1,18 @@
 ---
 title: Региональные конечные точки для графовой базы данных Azure Cosmos DB
 description: Узнайте, как подключиться к ближайшей конечной точке графовой базы данных для приложения.
-author: olignat
+author: luisbosquez
+ms.author: lbosq
 ms.service: cosmos-db
 ms.subservice: cosmosdb-graph
 ms.topic: overview
 ms.date: 09/09/2019
-ms.author: olignat
-ms.openlocfilehash: a7db86c120fd633dd70fbb5733383c98a25e2cde
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.openlocfilehash: 6bce69889910296f5ff28090e62cfe27c0640d95
+ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70886866"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72755037"
 ---
 # <a name="regional-endpoints-for-azure-cosmos-db-graph-account"></a>Региональные конечные точки для графовой учетной записи Azure Cosmos DB
 Графовая база данных Azure Cosmos DB [глобально распределена](distribute-data-globally.md), поэтому приложения могут использовать несколько конечных точек для чтения. В приложениях, которым необходим доступ на запись в нескольких расположениях, нужно включить возможность использования [нескольких источников](how-to-multi-master.md).

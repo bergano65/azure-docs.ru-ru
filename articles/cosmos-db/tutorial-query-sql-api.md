@@ -1,19 +1,19 @@
 ---
 title: Как выполнять запросы с помощью SQL в базе данных Azure Cosmos DB
 description: Сведения о выполнении запросы с помощью SQL в базе данных Azure Cosmos DB
-author: rimman
-ms.author: rimman
+author: markjbrown
+ms.author: mjbrown
 ms.service: cosmos-db
 ms.custom: tutorial-develop, mvc
 ms.topic: tutorial
 ms.date: 05/21/2019
 ms.reviewer: sngun
-ms.openlocfilehash: 7e57abcc3df17dadd2e607895a8de011761ed68c
-ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
+ms.openlocfilehash: ffebdb0a46fdae981ca73a4569344365459dd7b8
+ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70932793"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72756822"
 ---
 # <a name="tutorial-query-azure-cosmos-db-by-using-the-sql-api"></a>Руководство по Выполнение запросов в Azure Cosmos DB с использованием API SQL
 
@@ -65,7 +65,7 @@ ms.locfileid: "70932793"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-В этом руководстве предполагается, что у вас есть учетная запись и коллекция базы данных Azure Cosmos DB. У вас их нет? Выполните задачи [5-минутного краткого руководства](create-mongodb-nodejs.md).
+В этом руководстве предполагается, что у вас есть учетная запись и коллекция базы данных Azure Cosmos DB. У вас их нет? Выполните задачи [5-минутного краткого руководства](create-cosmosdb-resources-portal.md).
 
 ## <a name="example-query-1"></a>Пример запроса 1
 

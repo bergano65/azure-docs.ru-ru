@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/01/2019
 ms.author: banders
-ms.openlocfilehash: 3ff1a119ed87c8bffff227679bec41bc653c0c42
-ms.sourcegitcommit: a19f4b35a0123256e76f2789cd5083921ac73daf
+ms.openlocfilehash: 47668169841cc2b180995808349487cefed02391
+ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71718773"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72754305"
 ---
 # <a name="review-enterprise-enrollment-billing-using-rest-apis"></a>Проверка данных для выставления счетов по регистрации учетных записей корпоративных пользователей с помощью REST API
 
@@ -78,7 +78,7 @@ Authorization: Bearer
 }
 ```  
 
-Этот пример приведен в сокращенном виде. Полное описание каждого поля ответа и обработки ошибок см. в разделе [Usage Details - List By Billing Account](/rest/api/consumption/usagedetails/list#billingaccountusagedetailslist) (Подробные сведения об использовании, список учетной записи выставления счетов).
+Этот пример приведен в сокращенном виде. Полное описание каждого поля ответа и обработки ошибок см. в разделе [Usage Details - List By Billing Account](/rest/api/consumption/usagedetails/list#billingaccountusagedetailslist-legacy) (Подробные сведения об использовании, список учетной записи выставления счетов).
 
 ## <a name="department-billing"></a>Выставление счетов в отделе 
 
@@ -134,7 +134,7 @@ Authorization: Bearer
 }
 ```  
 
-Этот пример приведен в сокращенном виде. Полное описание каждого поля ответа и обработки ошибок см. в разделе [Usage Details - List By Department](/rest/api/consumption/usagedetails/list#departmentusagedetailslist) (Подробные сведения об использовании, список для отдела).
+Этот пример приведен в сокращенном виде. Полное описание каждого поля ответа и обработки ошибок см. в разделе [Usage Details - List By Department](/rest/api/consumption/usagedetails/list#departmentusagedetailslist-legacy) (Подробные сведения об использовании, список для отдела).
 
 ## <a name="enrollment-account-billing"></a>Выставление счетов учетной записи регистрации
 
@@ -187,7 +187,7 @@ Authorization: Bearer
 }
 ``` 
 
-Этот пример приведен в сокращенном виде. Полное описание каждого поля ответа и обработки ошибок см. в разделе [Usage Details - List By Enrollment Account](/rest/api/consumption/usagedetails/list#enrollmentaccountusagedetailslist) (Подробные сведения об использовании, список для учетной записи регистрации).
+Этот пример приведен в сокращенном виде. Полное описание каждого поля ответа и обработки ошибок см. в разделе [Usage Details - List By Enrollment Account](/rest/api/consumption/usagedetails/list#enrollmentaccountusagedetailslist-legacy) (Подробные сведения об использовании, список для учетной записи регистрации).
 
 ## <a name="next-steps"></a>Дополнительная информация 
 - Ознакомьтесь со статьей [Обзор API-интерфейсов отчетов для корпоративных клиентов](https://docs.microsoft.com/azure/billing/billing-enterprise-api)

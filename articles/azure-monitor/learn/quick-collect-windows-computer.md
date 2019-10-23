@@ -13,13 +13,13 @@ ms.tgt_pltfrm: na
 ms.topic: quickstart
 ms.date: 08/22/2019
 ms.author: magoedte
-ms.custom: mvc
-ms.openlocfilehash: 50059711df195c13ee44061ee4844f0192e0e10d
-ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
+ms.custom: mvc, seo-javascript-october2019
+ms.openlocfilehash: 1b8888c2c8aaedce181d19c015206323ccf2b0ba
+ms.sourcegitcommit: 1bd2207c69a0c45076848a094292735faa012d22
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69992098"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72677222"
 ---
 # <a name="collect-data-from-a-windows-computer-in-a-hybrid-environment-with-azure-monitor"></a>Сбор данных с компьютера Windows в гибридной среде с помощью Azure Monitor
 
@@ -37,7 +37,7 @@ ms.locfileid: "69992098"
 
 1. На портале Azure щелкните **Все службы**. В списке ресурсов введите **Log Analytics**. Как только вы начнете вводить символы, список отфильтруется соответствующим образом. Выберите **Рабочие области Log Analytics**.
 
-    ![Портал Azure](media/quick-collect-azurevm/azure-portal-01.png)<br>  
+    ![Портал Azure](media/quick-collect-azurevm/azure-portal-log-analytics-workspaces.png)<br>  
 
 2. Выберите **Создать** и задайте следующие параметры:
 
@@ -47,7 +47,7 @@ ms.locfileid: "69992098"
    * Выберите **Расположение**, в котором развернуты виртуальные машины.  Дополнительные сведения о доступности службы Log Analytics в регионах см. в [этой статье](https://azure.microsoft.com/regions/services/).
    * При создании рабочей области в новой подписке, созданной после 2 апреля 2018 г., будет автоматически использоваться тарифный план *За ГБ*, и выбор ценовой категории будет недоступен.  При создании рабочей области в существующей подписке, созданной до 2 апреля, или в подписке, которая была привязана к существующей регистрации EA, выберите нужную ценовую категорию.  Дополнительные сведения о конкретной ценовой категории см. в статье [Цены на Log Analytics](https://azure.microsoft.com/pricing/details/log-analytics/).
   
-        ![Колонка создания ресурса Log Analytics](media/quick-collect-azurevm/create-loganalytics-workspace-02.png) 
+        ![Колонка создания ресурса Log Analytics](media/quick-collect-azurevm/create-log-analytics-workspace-azure-portal.png) 
 
 3. Завершив ввод обязательных сведений на панели **Рабочая область Log Analytics**, щелкните **OK**.  
 
@@ -64,7 +64,7 @@ ms.locfileid: "69992098"
 
 3. Выберите **Дополнительные параметры**.
 
-    ![Дополнительные параметры Log Analytics](media/quick-collect-azurevm/log-analytics-advanced-settings-01.png)
+    ![Дополнительные параметры Log Analytics](media/quick-collect-azurevm/log-analytics-advanced-settings-azure-portal.png)
   
 4. Выберите **Подключенные источники**, а затем выберите **Серверы с Windows**.
 
@@ -109,7 +109,7 @@ Azure Monitor может собирать события указанного в
 
 2. Выберите **Дополнительные параметры**.
 
-    ![Дополнительные параметры Log Analytics](media/quick-collect-azurevm/log-analytics-advanced-settings-01.png)
+    ![Дополнительные параметры Log Analytics](media/quick-collect-azurevm/log-analytics-advanced-settings-azure-portal.png)
  
 3. Выберите **Данные**, а затем — **Журналы событий Windows**.  
 

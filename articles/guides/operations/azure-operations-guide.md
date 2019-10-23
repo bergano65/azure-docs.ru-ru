@@ -8,12 +8,12 @@ ms.service: azure
 ms.topic: overview
 ms.workload: infrastructure
 ms.date: 08/24/2018
-ms.openlocfilehash: b225052daa61932f3b8b868789cfb3c204eca88f
-ms.sourcegitcommit: 0c906f8624ff1434eb3d3a8c5e9e358fcbc1d13b
+ms.openlocfilehash: 9b23e3b69b4970e765ea1cd5af690cf074bad774
+ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69543423"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72693451"
 ---
 # <a name="get-started-for-azure-it-operators"></a>Начало работы для ИТ-операторов Azure
 
@@ -461,7 +461,6 @@ Resource Manager также предлагает возможности разв
 ### <a name="hybrid-virtual-networks"></a>Гибридные виртуальные сети
 
 Локальную сеть можно подключить к виртуальной сети Azure с помощью ExpressRoute или VPN-подключения типа "сеть-сеть". В этой конфигурации виртуальная сеть Azure по сути является облачным расширением локальной сети.
-![Гибридная виртуальная сеть с использованием VPN](https://docs.microsoft.com/azure/architecture/reference-architectures/_images/blueprints/hybrid-network-vpn.png)
 
 Так как виртуальная сеть Azure подключается к локальной сети, распределенная виртуальная сеть должна использовать уникальную часть адресного пространства, используемого в организации. Подобно тому, как разным помещениям организации назначаются разные IP-подсети, так и Azure становится еще одним расположением в сети.
 Существует несколько вариантов развертывания виртуальной сети.

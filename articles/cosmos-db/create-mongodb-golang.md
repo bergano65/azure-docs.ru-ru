@@ -1,18 +1,18 @@
 ---
 title: Создание консольного приложения с помощью API для MongoDB (Azure Cosmos DB) и пакета SDK Golang
 description: В этой статье представлен пример кода Golang, который можно использовать для подключения и выполнения запросов c помощью API Azure Cosmos DB для MongoDB.
-author: rimman
+author: markjbrown
+ms.author: mjbrown
 ms.service: cosmos-db
 ms.subservice: cosmosdb-mongo
 ms.topic: quickstart
 ms.date: 12/26/2018
-ms.author: rimman
-ms.openlocfilehash: 5b60ac28cd8f65d464e659f328872524be59b3ed
-ms.sourcegitcommit: 7723b13601429fe8ce101395b7e47831043b970b
+ms.openlocfilehash: e16b9b7e591fcc089d74794c98ddfc951cbdced9
+ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56586886"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72755112"
 ---
 # <a name="quickstart-build-a-console-app-using-azure-cosmos-dbs-api-for-mongodb-and-golang-sdk"></a>Краткое руководство. Создание консольного приложения с помощью API для MongoDB (Azure Cosmos DB) и пакета SDK Golang
 
@@ -129,9 +129,9 @@ defer session.Close()
 session.SetSafe(&mgo.Safe{})
 ```
 
-Метод **mgo.Dial()** используется, когда отсутствует подключение SSL. Для подключения SSL требуется метод **mgo.DialWithInfo()**.
+Метод **mgo.Dial()** используется, когда отсутствует подключение SSL. Для подключения SSL требуется метод **mgo.DialWithInfo()** .
 
-Для создания объекта сеанса используется экземпляр объекта **DialWIthInfo{}**. После установки сеанса можно получить доступ к коллекции, используя следующий фрагмент кода:
+Для создания объекта сеанса используется экземпляр объекта **DialWIthInfo{}** . После установки сеанса можно получить доступ к коллекции, используя следующий фрагмент кода:
 
 ```go
 collection := session.DB("database").C("package")
