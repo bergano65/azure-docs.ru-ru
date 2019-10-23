@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 09/09/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 1533ceebcda15c45a71c04580c35432de4125ccd
-ms.sourcegitcommit: 909ca340773b7b6db87d3fb60d1978136d2a96b0
+ms.openlocfilehash: 4a1952f5ece4c021834fb98f8a09f1a2738e6469
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70984983"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72789393"
 ---
 # <a name="migrate-amazon-web-services-aws-vms-to-azure"></a>Перенос виртуальных машин Amazon Web Services (AWS) в Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "70984983"
 
 
 > [!NOTE]
-    > Теперь вы можете использовать службу "Миграция Azure" для переноса экземпляров AWS в Azure. [Узнайте больше](../migrate/tutorial-migrate-physical-virtual-machines.md).
+> Теперь вы можете использовать службу "Миграция Azure" для переноса экземпляров AWS в Azure. [Узнайте больше](../migrate/tutorial-migrate-physical-virtual-machines.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 - Убедитесь, что виртуальные машины, которые нужно перенести, работают под управлением поддерживаемой версии ОС. К таким версиям относятся: 
