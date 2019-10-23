@@ -9,8 +9,10 @@
 - name: Учебники
   expanded: true
   items:
-    - name: Создание управляемого домена
+    - name: Создание простого управляемого домена
       href: tutorial-create-instance.md
+    - name: Настройка виртуальной сети для приложений
+      href: tutorial-configure-networking.md
     - name: Присоединение виртуальной машины Windows Server к домену
       href: join-windows-vm.md
     - name: Установка средств управления
@@ -19,6 +21,8 @@
       href: tutorial-configure-ldaps.md
     - name: Настройка синхронизации хэша паролей
       href: tutorial-configure-password-hash-sync.md
+    - name: Создание управляемого домена с расширенными возможностями
+      href: tutorial-create-instance-advanced.md
 - name: Примеры
   items:
     - name: Создание управляемого домена с помощью Azure PowerShell

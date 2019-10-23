@@ -28,19 +28,17 @@
     - name: Примеры использования кэша Redis для Azure
       href: cache-redis-samples.md
     - name: Azure PowerShell
-      href: cache-howto-manage-redis-cache-powershell.md
+      href: cache-how-to-manage-redis-cache-powershell.md
     - name: Azure CLI
       href: cli-samples.md
 - name: Основные понятия
   items:
     - name: Рекомендации
-      items:
-        - name: Рекомендации по использованию кэша Redis для Azure
-          href: cache-best-practices.md
-        - name: Архитектура Azure. Рекомендации по кэшированию
-          href: 'https://docs.microsoft.com/azure/architecture/best-practices/caching?toc=%2Fazure%2Fredis-cache%2Ftoc.json'
-    - name: Описание отработки отказа и исправления
+      href: cache-best-practices.md
+    - name: Отработка отказа и установка исправлений
       href: cache-failover.md
+    - name: Рекомендации по архитектуре для кэширования
+      href: 'https://docs.microsoft.com/azure/architecture/best-practices/caching?toc=%2Fazure%2Fredis-cache%2Ftoc.json'
 - name: Руководства
   items:
     - name: План
@@ -58,19 +56,25 @@
     - name: Автоматизация
       items:
         - name: Развертывание и управление с помощью Azure PowerShell
-          href: cache-howto-manage-redis-cache-powershell.md
+          href: cache-how-to-manage-redis-cache-powershell.md
         - name: Развертывание и управление с помощью Azure CLI
           href: cli-samples.md
         - name: Подготовка кэша Redis для Azure к работе
           href: cache-redis-cache-arm-provision.md
         - name: Подготовка веб-приложения к работе с помощью кэша Redis для Azure
           href: cache-web-app-arm-with-redis-cache-provision.md
-    - name: Интеграция с ASP.NET
+    - name: Интеграция с приложением
       items:
-        - name: Поставщик состояния сеанса
-          href: cache-aspnet-session-state-provider.md
-        - name: Поставщик кэша вывода
-          href: cache-aspnet-output-cache-provider.md
+        - name: ASP.NET
+          items:
+            - name: Использование поставщика состояний сеанса
+              href: cache-aspnet-session-state-provider.md
+            - name: Использование поставщика кэша вывода
+              href: cache-aspnet-output-cache-provider.md
+        - name: Java Spring
+          items:
+            - name: Использование приложения Spring Boot Initializer
+              href: cache-java-spring-boot-initializer-with-redis-cache.md
     - name: Управление
       items:
         - name: Настройка на портале Azure
@@ -85,24 +89,28 @@
           href: 'cache-administration.md#schedule-updates'
         - name: Настройка доступа redis cli.exe
           href: cache-how-to-redis-cli-tool.md
-    - name: Мониторинг и устранение неполадок
+    - name: Мониторинг
       items:
         - name: Мониторинг на портале Azure
           href: cache-how-to-monitor.md
-        - name: Устранение неполадок с кэшем
-          href: cache-how-to-troubleshoot.md
         - name: Установка оповещений для исключений
           href: 'cache-how-to-monitor.md#operations-and-alerts'
+    - name: Диагностирование и устранение неполадок
+      items:
+        - name: Устранение неполадок сервера Redis
+          href: cache-how-to-troubleshoot-server.md
+        - name: Устранение неполадок клиента Redis
+          href: cache-how-to-troubleshoot-client.md
+        - name: Устранение ошибок времени ожидания
+          href: cache-how-to-troubleshoot-timeouts.md
+        - name: Устранение неполадок с потерей данных
+          href: cache-how-to-troubleshoot-data-loss.md
     - name: Масштабирование
       items:
         - name: Обновление до другого размера и уровня
           href: cache-how-to-scale.md
-        - name: Использование кластера Redis для свертывания и развертывания
+        - name: Использование кластера Redis для горизонтального масштабирования
           href: cache-how-to-premium-clustering.md
-    - name: Интеграция со Spring Boot
-      items:
-        - name: Использование начального приложения Spring Boot с кэшем Redis для Azure
-          href: cache-java-spring-boot-initializer-with-redis-cache.md
 - name: Справочные материалы
   items:
     - name: Примеры кода

@@ -64,9 +64,9 @@
           href: virtual-machines-windows-ps-sql-create.md
     - name: Регистрация в поставщике ресурсов
       href: virtual-machines-windows-sql-register-with-resource-provider.md
-    - name: Изменение модели лицензирования для виртуальной машины SQL
+    - name: Изменение модели лицензирования
       href: virtual-machines-windows-sql-ahb.md
-    - name: Изменение выпуска SQL Server
+    - name: Изменение выпуска
       href: virtual-machines-windows-sql-change-edition.md
     - name: Миграция
       items:
@@ -102,8 +102,8 @@
           items:
             - name: Использование Локальных дисковых пространств
               href: virtual-machines-windows-portal-sql-create-failover-cluster.md
-            - name: Использование с общей папкой (цен. категория "Премиум")
-              href: virtual-machines-windows-portal-sql-create-failover-cluster-premium-file-storage.md
+            - name: Использование общей папки (цен. категория "Премиум")
+              href: virtual-machines-windows-portal-sql-create-failover-cluster-premium-file-share.md
 - name: Справочные материалы
   items:
     - name: Azure PowerShell
