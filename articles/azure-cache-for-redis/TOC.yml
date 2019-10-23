@@ -98,13 +98,13 @@
     - name: Диагностирование и устранение неполадок
       items:
         - name: Устранение неполадок сервера Redis
-          href: cache-how-to-troubleshoot-server.md
+          href: cache-troubleshoot-server.md
         - name: Устранение неполадок клиента Redis
-          href: cache-how-to-troubleshoot-client.md
+          href: cache-troubleshoot-client.md
         - name: Устранение ошибок времени ожидания
-          href: cache-how-to-troubleshoot-timeouts.md
+          href: cache-troubleshoot-timeouts.md
         - name: Устранение неполадок с потерей данных
-          href: cache-how-to-troubleshoot-data-loss.md
+          href: cache-troubleshoot-data-loss.md
     - name: Масштабирование
       items:
         - name: Обновление до другого размера и уровня

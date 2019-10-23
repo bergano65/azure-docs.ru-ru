@@ -3,10 +3,6 @@
 - name: Архитектура и разработка
   href: overview.md
   expanded: false
-  items: null
-- name: Архитектура и разработка
-  href: overview.md
-  expanded: false
   items:
     - name: Разделение ответственности в облаке
       href: shared-responsibility.md
@@ -232,16 +228,12 @@
   href: 'https://azure.microsoft.com/resources/whitepapers/search/?term=security&type=WhitePaperResource'
 - name: Службы безопасности Azure
   href: services-technologies.md
-- name: Технические обзоры
-  href: overviews.md
 - name: Рекомендации
   href: best-practices-and-patterns.md
 - name: Ресурсы
   items:
     - name: Встроенные средства управления безопасностью
       href: security-controls.md
-    - name: Программа специалистов MVP по вопросам обеспечения безопасности в Azure
-      href: mvp.md
     - name: Консультация по кибербезопасности
       href: cyber-services.md
     - name: 'Регистрация поданного в службу поддержки запроса о событии, которое связано с безопасностью'
