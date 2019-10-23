@@ -4,14 +4,14 @@ description: Узнайте, как с помощью встроенной по�
 ms.service: cosmos-db
 ms.topic: overview
 ms.date: 09/26/2019
-author: rimman
-ms.author: rimman
-ms.openlocfilehash: 952dd084bccd67a0a8833002d73d3aaf1d5dfb25
-ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
+author: markjbrown
+ms.author: mjbrown
+ms.openlocfilehash: 45f70d9a9d2cb450cab1242a080077c771218ba2
+ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71338626"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72754839"
 ---
 # <a name="built-in-operational-analytics-in-azure-cosmos-db-with-apache-spark"></a>Встроенная операционная аналитика в Azure Cosmos DB с использованием Apache Spark
 
