@@ -1,22 +1,22 @@
 ---
 title: Подключение приложения MongoDB к Azure Cosmos DB
 description: Узнайте, как подключить приложение MongoDB к Azure Cosmos DB.
-author: rimman
+author: markjbrown
+ms.author: mjbrown
 ms.service: cosmos-db
 ms.subservice: cosmosdb-mongo
 ms.topic: conceptual
 ms.date: 05/21/2019
-ms.author: rimman
 ms.reviewer: sngun
-ms.openlocfilehash: dabce19d60a380b47d3583dedb5c11303f416ce7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 30b37b86bbe0e91887932423fa1884d8bd49333c
+ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65978722"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72757004"
 ---
 # <a name="connect-a-mongodb-application-to-azure-cosmos-db"></a>Подключение приложения MongoDB к Azure Cosmos DB
-Здесь содержатся сведения о подключении приложения MongoDB к Azure Cosmos DB с помощью строки подключения MongoDB. Затем можно использовать базу данных Azure Cosmos как данные хранилища для своего приложения MongoDB. 
+Здесь содержатся сведения о подключении приложения MongoDB к Azure Cosmos DB с помощью строки подключения MongoDB. Затем можно использовать базу данных Azure Cosmos в качестве хранилища данных для приложения MongoDB. 
 
 В этом руководстве описаны два способа получения строки подключения.
 
@@ -51,14 +51,14 @@ ms.locfileid: "65978722"
 >
 >
 
-Azure Cosmos DB поддерживает стандартный формат URI для строки подключения MongoDB, налагая пару дополнительных условий. Для учетных записей Azure Cosmos DB требуется использовать проверку подлинности и безопасный обмен данными через SSL. В этом случае строка подключения имеет следующий вид:
+Azure Cosmos DB поддерживает стандартный формат универсального кода ресурса для строки подключения MongoDB, налагая пару дополнительных условий. Для учетных записей Azure Cosmos DB требуется использовать проверку подлинности и безопасный обмен данными через SSL. В этом случае строка подключения имеет следующий вид:
 
     mongodb://username:password@host:port/[database]?ssl=true
 
 Значения для этой строки можно найти в колонке **Строка подключения**, как показано выше:
 
-* Имя пользователя (обязательно): имя учетной записи Cosmos DB.
-* Пароль (обязательно): пароль учетной записи Cosmos.
+* Имя пользователя (обязательно): Cosmos учетной записи.
+* Password (обязательно): пароль учетной записи Cosmos.
 * Узел (обязательно): полное доменное имя учетной записи Cosmos.
 * Порт (обязательно): 10255.
 * База данных (необязательно): база данных, используемая для подключения. Если база данных не указана, база данных по умолчанию — test.

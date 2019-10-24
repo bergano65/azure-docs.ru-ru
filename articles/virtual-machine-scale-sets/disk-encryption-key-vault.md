@@ -7,12 +7,12 @@ author: msmbaldwin
 ms.author: mbaldwin
 ms.date: 10/10/2019
 ms.custom: seodec18
-ms.openlocfilehash: e4f6dc068969efd3f66e6808531594ed4063347f
-ms.sourcegitcommit: f29fec8ec945921cc3a89a6e7086127cc1bc1759
+ms.openlocfilehash: 0252fff84307577ab307e591948e16dc30c38f66
+ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72530879"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72749993"
 ---
 # <a name="creating-and-configuring-a-key-vault-for-azure-disk-encryption"></a>Создание и Настройка хранилища ключей для шифрования дисков Azure
 
@@ -31,8 +31,6 @@ ms.locfileid: "72530879"
 ## <a name="install-tools-and-connect-to-azure"></a>Установка средств и подключение к Azure
 
 Действия, описанные в этой статье, можно выполнить с помощью [Azure CLI](/cli/azure/), [модуля Azure PowerShell AZ](/powershell/azure/overview)или [портал Azure](https://portal.azure.com).
-
-Доступ к порталу возможен через браузер, Azure CLI и Azure PowerShell требуется локальная установка.
 
 ### <a name="connect-to-your-azure-account"></a>Подключение к учетной записи Azure
 

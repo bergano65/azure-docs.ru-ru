@@ -8,10 +8,10 @@ author: cithomas
 ms.author: cithomas
 ms.date: 09/20/2019
 ms.openlocfilehash: 0762819239e8fd71a015f317776a94280806db53
-ms.sourcegitcommit: 1bd2207c69a0c45076848a094292735faa012d22
+ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
+ms.lasthandoff: 10/22/2019
 ms.locfileid: "72677155"
 ---
 # <a name="eventcounters-introduction"></a>Введение в Евенткаунтерс
@@ -98,7 +98,7 @@ Application Insights поддерживает сбор `EventCounters` с его
 Чтобы просмотреть метрики Евенткаунтер в [обозревателе метрик](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-charts), выберите Application Insights ресурс и укажите метрики на основе журнала в качестве пространства имен метрик. Затем Евенткаунтер метрики отображаются в категории PerformanceCounter.
 
 > [!div class="mx-imgBorder"]
-> ![Event счетчики, полученные в Application Insights ](./media/event-counters/metrics-explorer-counter-list.png)
+> ![счетчики событий, о которых сообщается в Application Insights](./media/event-counters/metrics-explorer-counter-list.png)
 
 ## <a name="event-counters-in-analytics"></a>Счетчики событий в аналитике
 
@@ -111,7 +111,7 @@ performanceCounters | summarize avg(value) by name
 ```
 
 > [!div class="mx-imgBorder"]
-> ![Event счетчики, полученные в Application Insights ](./media/event-counters/analytics-event-counters.png)
+> ![счетчики событий, о которых сообщается в Application Insights](./media/event-counters/analytics-event-counters.png)
 
 Чтобы получить диаграмму определенного счетчика (например: `ThreadPool Completed Work Item Count`) за последний период, выполните следующий запрос.
 
@@ -123,7 +123,7 @@ performanceCounters
 | render timechart
 ```
 > [!div class="mx-imgBorder"]
-> ![Chat одного счетчика в Application Insights ](./media/event-counters/analytics-completeditems-counters.png)
+> ![разговора одного счетчика в Application Insights](./media/event-counters/analytics-completeditems-counters.png)
 
 Как и другие данные телеметрии, данные **performanceCounters** также содержат столбец `cloud_RoleInstance`, который определяет экземпляр сервера, на котором выполняется приложение. Приведенный выше запрос показывает значение счетчика для каждого экземпляра и может использоваться для сравнения производительности различных экземпляров сервера.
 

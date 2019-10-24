@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.reviewer: sgilley
 ms.date: 04/19/2019
 ms.custom: seodec18
-ms.openlocfilehash: 73887c39ebcee2efc4a31925f4aacfffb3c53ca7
-ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
+ms.openlocfilehash: 087e1cd84aa182a0aae1bef6ba3dd38f369d5189
+ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71828053"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72755956"
 ---
 # <a name="train-models-with-azure-machine-learning-using-estimator"></a>Обучение моделей с помощью оценщика Машинного обучения Azure
 
@@ -59,12 +59,12 @@ sk_est = Estimator(source_directory='./my-sklearn-proj',
 Параметр | Описание
 --|--
 `source_directory`| Локальный каталог, который содержит весь код, необходимый для задания обучения. Эта папка копируется с локального компьютера на удаленное вычисление.
-`script_params`| Словарь, указывающий аргументы командной строки для передачи в сценарий `entry_script`обучения в `<command-line argument, value>` виде пар. Чтобы задать флаг verbose в `script_params`, используйте. `<command-line argument, "">`
+`script_params`| Словарь, указывающий аргументы командной строки для передачи в сценарий обучения `entry_script`в виде пар `<command-line argument, value>`. Чтобы задать флаг verbose в `script_params`, используйте `<command-line argument, "">`.
 `compute_target`| Удаленный целевой объект вычислений, на котором будет выполняться скрипт обучения. В нашем случае это кластер Вычислительной среды Машинного обучения Azure ([AmlCompute](how-to-set-up-training-targets.md#amlcompute)). (Примечание. Несмотря на то, что кластер Амлкомпуте является часто используемым целевым объектом, можно также выбрать другие типы целевых объектов вычислений, например виртуальные машины Azure или даже локальный компьютер.)
 `entry_script`| Путь к файлу (относительно `source_directory`) сценария обучения, который будет выполняться на удаленном вычислительном ресурсе. Этот файл и все дополнительные файлы, от которых он зависит, должны находиться в этой папке.
 `conda_packages`| Необходимый для сценария обучения список пакетов Python, которые нужно установить с помощью conda.  
 
-Конструктор имеет другой параметр с именем `pip_packages` , который используется для всех необходимых пакетов PIP.
+Конструктор имеет другой параметр с именем `pip_packages`, который используется для любых требуемых пакетов PIP.
 
 Теперь, когда вы создали объект `Estimator`, можно выполнить задание обучения в удаленной вычислительной среде посредством вызова функции `submit` в объекте `experiment` [Эксперимента](concept-azure-machine-learning-architecture.md#experiments). 
 
@@ -108,7 +108,7 @@ estimator = Estimator(source_directory='./my-keras-proj',
 
 В приведенном выше коде показаны следующие новые параметры конструктора `Estimator`:
 
-Параметр | Описание | Значение по умолчанию
+Параметр | Описание | значение по умолчанию
 --|--|--
 `custom_docker_image`| Имя используемого образа. Можно предоставлять только те образы, которые доступны в публичных хранилищах Docker (в данном случае в центре Docker). Чтобы выбрать образ из частного репозитория Docker, используйте параметр конструктора `environment_definition`. [Ознакомьтесь с примером ниже](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training-with-deep-learning/how-to-use-estimator/how-to-use-estimator.ipynb). | `None`
 `node_count`| Количество узлов, которые будут использоваться для задания обучения. | `1`
@@ -124,7 +124,7 @@ print(run.get_portal_url())
 
 ## <a name="github-tracking-and-integration"></a>Отслеживание и интеграция GitHub
 
-При запуске обучающего запуска, в котором исходный каталог является локальным репозиторием Git, сведения о репозитории хранятся в журнале выполнения. Например, текущий идентификатор фиксации для репозитория регистрируется как часть журнала.
+При запуске обучающего запуска, в котором исходный каталог является локальным репозиторием Git, сведения о репозитории хранятся в журнале выполнения. Дополнительные сведения см. в статье [Интеграция Git для машинное обучение Azure](concept-train-model-git-integration.md).
 
 ## <a name="examples"></a>Примеры
 Для записной книжки, в которой показаны основные сведения о шаблоне средства оценки, см.:
@@ -138,7 +138,7 @@ print(run.get_portal_url())
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-for-examples.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Отслеживание метрик выполнения во время обучения](how-to-track-experiments.md)
 * [Обучение моделей PyTorch](how-to-train-pytorch.md)

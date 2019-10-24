@@ -3,23 +3,23 @@ title: Создание проверок видео с помощью .NET в Co
 titleSuffix: Azure Cognitive Services
 description: 'В этой статье содержатся сведения и примеры кода, которые помогут вам быстро приступить к работе по созданию проверок видео с помощью пакета SDK Content Moderator для C#. Вы научитесь выполнять такие задачи:'
 services: cognitive-services
-author: sanjeev3
+author: PatrickFarley
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
 ms.topic: conceptual
 ms.date: 03/19/2019
-ms.author: sajagtap
-ms.openlocfilehash: 5a0d462f08e88ae4d26e1c684cfaf772910d2220
-ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
+ms.author: pafarley
+ms.openlocfilehash: ca5322aa78a4fd3018d961a5d31c618cf10bf156
+ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72242853"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72757155"
 ---
 # <a name="create-video-reviews-using-net"></a>Создание проверок видео с помощью .NET
 
-В этой статье содержатся сведения и примеры кода, которые помогут вам быстро приступить к работе с [пакетом SDK Content Moderator для C#](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/). Вы научитесь выполнять такие задачи:
+В этой статье содержатся сведения и примеры кода, которые помогут вам быстро приступить к работе с [пакетом SDK Content Moderator для .NET](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/). Вы научитесь выполнять такие задачи:
 
 - создание проверки видео для модераторов-пользователей;
 - добавление кадров в проверку;
@@ -27,7 +27,7 @@ ms.locfileid: "72242853"
 - получение состояния и сведений о проверке;
 - публикация проверки.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - Войдите или создайте учетную запись на сайте [средства проверки](https://contentmoderator.cognitive.microsoft.com/) Content Moderator.
 - В этой статье предполагается, что вы уже [модерировали видео (ознакомьтесь с кратким руководством)](video-moderation-api.md) и у вас есть данные ответа. Они требуются для создания проверок по кадрам для модераторов-пользователей.
@@ -61,11 +61,11 @@ ms.locfileid: "72242853"
 
 ## <a name="create-your-visual-studio-project"></a>Создание проекта Visual Studio
 
-1. Добавьте новый проект **Консольное приложение (.NET Framework)** в свое решение.
+1. Добавьте в свое решение новый проект **Консольное приложение (.NET Framework)** .
 
 1. Назовите проект **VideoReviews**.
 
-1. Выберите этот проект в качестве единственного запускаемого проекта для решения.
+1. Выберите этот проект единственным запускаемым проектом для решения.
 
 ### <a name="install-required-packages"></a>Установка необходимых пакетов
 
@@ -76,7 +76,7 @@ ms.locfileid: "72242853"
 - Microsoft.Rest.ClientRuntime.Azure
 - Newtonsoft.Json.
 
-### <a name="update-the-programs-using-statements"></a>Обновление инструкций using в программе
+### <a name="update-the-programs-using-statements"></a>Обновление инструкций using программы
 
 Измените инструкции using в программе следующим образом.
 
@@ -165,7 +165,7 @@ public static ContentModeratorClient NewClient()
 **CreateVideoReviews** принимает следующие обязательные параметры.
 1. Строка, обозначающая тип MIME, которая должна иметь значение "application/json". 
 1. Имя команды Content Moderator.
-1. Объект **IList @ no__t-1CreateVideoReviewsBodyItem >** . Каждый объект **CreateVideoReviewsBodyItem** представляет отдельную проверку видео. В этом кратком руководстве проверки создаются по одной.
+1. Объект **IList \<CreateVideoReviewsBodyItem >** . Каждый объект **CreateVideoReviewsBodyItem** представляет отдельную проверку видео. В этом кратком руководстве проверки создаются по одной.
 
 **CreateVideoReviewsBodyItem** имеет несколько свойств. Необходимо задать по меньшей мере следующие свойства.
 - **Content**. URL-адрес видео для проверки.
@@ -173,7 +173,7 @@ public static ContentModeratorClient NewClient()
 - **Status**. Укажите здесь значение "Unpublished" (Неопубликованное). Если значение не задано, по умолчанию используется значение "Pending" (Ожидание), что означает, что проверка видео уже опубликована и ожидает пользовательской проверки. После публикации проверки видео вы не сможете добавить в нее видеокадры, расшифровку или результат модерации расшифровки.
 
 > [!NOTE]
-> **Креатевидеоревиевс** возвращает IList @ no__t-1STRING >. Каждая из этих строк содержит идентификатор проверки видео. Эти идентификаторы являются глобально уникальными и их значения не совпадают со значениями свойства **ContentId**. 
+> **Креатевидеоревиевс** возвращает > IList \<string. Каждая из этих строк содержит идентификатор проверки видео. Эти идентификаторы являются глобально уникальными и их значения не совпадают со значениями свойства **ContentId**. 
 
 Добавьте следующее определение метода в пространство имен VideoReviews в классе Program.
 
@@ -213,7 +213,7 @@ private static string CreateReview(ContentModeratorClient client, string id, str
 > [!NOTE]
 > Для ключа службы Content Moderator установлен лимит числа запросов в секунду (RPS). Если его превысить, пакет SDK породит исключение с кодом ошибки 429.
 >
-> Ключ уровня "Бесплатный" предусматривает ограничение в один RPS.
+> Ключ бесплатного уровня предусматривает ограничение в один RPS.
 
 ## <a name="add-video-frames-to-the-video-review"></a>Добавление кадров в проверку видео
 
@@ -223,18 +223,18 @@ private static string CreateReview(ContentModeratorClient client, string id, str
 1. Строка, обозначающая тип MIME, которая должна иметь значение "application/json".
 1. Имя команды Content Moderator.
 1. Идентификатор проверки видео, полученный от **CreateVideoReviews**.
-1. Объект **IList @ no__t-1VideoFrameBodyItem >** . Каждый объект **VideoFrameBodyItem** представляет видеокадр.
+1. Объект **IList\<видеофрамебодитем >** . Каждый объект **VideoFrameBodyItem** представляет видеокадр.
 
 **VideoFrameBodyItem** имеет следующие свойства.
 - **Timestamp**. Строка время создания видеокадра в видео (в секундах).
 - **FrameImage**. URL-адрес видеокадра.
-- **Metadata** > IList @ no__t-0VideoFrameBodyItemMetadataItem. **VideoFrameBodyItemMetadataItem** представляет собой просто пару "ключ-значение". Допустимые ключи перечислены ниже.
+- **Metadata** > Видеофрамебодитемметадатаитем IList\<. **VideoFrameBodyItemMetadataItem** представляет собой просто пару "ключ-значение". Допустимые ключи перечислены ниже.
 - **reviewRecommended**. Имеет значение true, если рекомендуется пользовательская проверка видеокадра.
 - **adultScore**. Имеет значение от 0 до 1, которое оценивает серьезность содержимого для взрослых в видеокадре.
 - **a**. Имеет значение true, если в видео есть содержимое для взрослых.
 - **racyScore**. Имеет значение от 0 до 1, которое оценивает серьезность непристойного содержимого в видеокадре.
 - **r**. Имеет значение true, если в видеокадре есть непристойное содержимое.
-- **ReviewerResultTags**. > IList @ no__t-0VideoFrameBodyItemReviewerResultTagsItem. **VideoFrameBodyItemReviewerResultTagsItem** представляет собой просто пару "ключ-значение". Приложение может использовать эти теги для упорядочивания видеокадров.
+- **ReviewerResultTags**. > Видеофрамебодитемревиеверресулттагситем IList\<. **VideoFrameBodyItemReviewerResultTagsItem** представляет собой просто пару "ключ-значение". Приложение может использовать эти теги для упорядочивания видеокадров.
 
 > [!NOTE]
 > В этом кратком руководство создаются случайные значения свойств **adultScore** и **racyScore**. В рабочем приложении эти значения будут получены [службой модерации видео](video-moderation-api.md), развернутой в качестве службы мультимедиа Azure.
@@ -553,7 +553,7 @@ Press any key to close the application.
 
 ![Проверка видео модераторами-пользователями](images/ams-video-review.PNG)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Получите [пакет SDK Content Moderator для .NET](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/) и [решение для Visual Studio](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/ContentModerator). Они вам понадобятся для работы с этим и другими руководствами по Content Moderator для .NET.
 

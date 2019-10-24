@@ -1,18 +1,18 @@
 ---
 title: Как использовать канал изменений Azure Cosmos DB с Функциями Azure
 description: Использование канала изменений Azure Cosmos DB с Функциями Azure
-author: rimman
+author: markjbrown
+ms.author: mjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 07/23/2019
-ms.author: rimman
 ms.reviewer: sngun
-ms.openlocfilehash: 2ec38659b0bafa8836ac787ac36b662970141843
-ms.sourcegitcommit: 961468fa0cfe650dc1bec87e032e648486f67651
+ms.openlocfilehash: 95fec1ef57c1d70ea484de9ad49b3410ed8594a4
+ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72249088"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72757054"
 ---
 # <a name="serverless-event-based-architectures-with-azure-cosmos-db-and-azure-functions"></a>Бессерверные архитектуры на основе событий с Azure Cosmos DB и функциями Azure
 
@@ -29,8 +29,8 @@ ms.locfileid: "72249088"
 
 Чтобы реализовать поток на основе событий без сервера, вам потребуется:
 
-* **Отслеживаемый контейнер**: Отслеживаемый контейнер — это отслеживаемый контейнер Cosmos Azure, в котором хранятся данные, из которых создается веб-канал изменений. Любые операции вставки, обновления отслеживаемого контейнера отражаются в веб-канале изменений контейнера.
-* **Контейнер аренды**: Контейнер аренды сохраняет состояние в нескольких динамических экземплярах функций Azure без сервера и включает динамическое масштабирование. Этот контейнер аренды можно вручную или автоматически создать с помощью триггера функций Azure для Cosmos DB. Чтобы автоматически создать контейнер аренды, установите флаг *креателеасеколлектионифнотексистс* в [конфигурации](../azure-functions/functions-bindings-cosmosdb-v2.md#trigger---configuration). Секционированные контейнеры аренды должны иметь определение ключа секции `/id`.
+* **Отслеживаемый контейнер**. отслеживаемый контейнер — это контейнер Cosmos Azure, который отслеживается, и в нем хранятся данные, из которых создается веб-канал изменений. Любые операции вставки, обновления отслеживаемого контейнера отражаются в веб-канале изменений контейнера.
+* **Контейнер аренды**. контейнер аренды сохраняет состояние в нескольких динамических экземплярах функций Azure без сервера и включает динамическое масштабирование. Этот контейнер аренды можно вручную или автоматически создать с помощью триггера функций Azure для Cosmos DB. Чтобы автоматически создать контейнер аренды, установите флаг *креателеасеколлектионифнотексистс* в [конфигурации](../azure-functions/functions-bindings-cosmosdb-v2.md#trigger---configuration). Секционированные контейнеры аренды должны иметь `/id`ное определение ключа секции.
 
 ## <a name="create-your-azure-functions-trigger-for-cosmos-db"></a>Создание триггера функций Azure для Cosmos DB
 
@@ -46,12 +46,12 @@ ms.locfileid: "72249088"
 
 Если вы хотите протестировать сценарии в реальном времени в облаке, вы можете [попробовать Cosmos DB бесплатно](https://azure.microsoft.com/try/cosmosdb/) без какой-либо кредитной карты или подписки Azure.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь вы можете продолжить изучение веб-канала изменений в следующих статьях:
 
 * [Работа с поддержкой веб-канала изменений в Azure Cosmos DB](change-feed.md)
-* [Reading Azure Cosmos DB change feed](read-change-feed.md) (Чтение веб-канала изменений Azure Cosmos DB)
+* [Чтение канала изменений Azure Cosmos DB](read-change-feed.md)
 * [Using the Azure Cosmos DB change feed processor library](change-feed-processor.md) (Использование библиотеки обработчика канала изменений Azure Cosmos DB)
 * [Using the Azure Cosmos DB change feed processor library](change-feed-processor.md) (Использование библиотеки обработчика канала изменений Azure Cosmos DB)
 * [Обработка данных бессерверных баз данных с помощью Azure Cosmos DB и Функций Azure](serverless-computing-database.md)

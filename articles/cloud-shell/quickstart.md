@@ -1,25 +1,21 @@
 ---
-title: Краткое руководство по Azure Cloud Shell | Документация Майкрософт
-description: Краткое руководство по Azure Cloud Shell
-services: ''
-documentationcenter: ''
+title: Краткое руководство по Azure Cloud Shell-bash
+description: Узнайте, как использовать командную строку Bash в браузере с Azure Cloud Shell.
 author: maertendMSFT
 manager: timlt
 tags: azure-resource-manager
-ms.assetid: ''
 ms.service: azure
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
-ms.devlang: na
 ms.topic: article
 ms.date: 03/12/2018
 ms.author: damaerte
-ms.openlocfilehash: 8151013f263c6cf2f90e89fa1c3b0b3025f2ea38
-ms.sourcegitcommit: d060947aae93728169b035fd54beef044dbe9480
+ms.openlocfilehash: 574841b3a89385a3b8bf048d5ed36f40fac99a83
+ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68741988"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72757398"
 ---
 # <a name="quickstart-for-bash-in-azure-cloud-shell"></a>Краткое руководство по Bash в Azure Cloud Shell
 
@@ -56,13 +52,13 @@ az account set --subscription 'my-subscription-name'
 > [!TIP]
 > Подписка будет сохранена для последующих сеансов в файле `/home/<user>/.azure/azureProfile.json`.
 
-### <a name="create-a-resource-group"></a>Создать группу ресурсов
+### <a name="create-a-resource-group"></a>Создание группы ресурсов
 Создайте группу ресурсов в западной части США с именем MyRG:
 ```azurecli-interactive
 az group create --location westus --name MyRG
 ```
 
-### <a name="create-a-linux-vm"></a>Создание виртуальной машины Linux
+### <a name="create-a-linux-vm"></a>Создание ВМ Linux
 Создайте виртуальную машину Ubuntu в новой группе ресурсов. Azure CLI создаст ключи SSH и настроит с их помощью виртуальную машину. <br>
 
 ```azurecli-interactive
@@ -98,7 +94,7 @@ az vm create -n myVM -g MyRG --image UbuntuLTS --generate-ssh-keys
    az group delete -n MyRG
    ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [Дополнительные сведения о сохранении файлов для Bash в Cloud Shell.](persisting-shell-storage.md) <br>
 [Справочник команд Azure CLI](https://docs.microsoft.com/cli/azure/) <br>
 [Общие сведения о службе файлов Azure](../storage/files/storage-files-introduction.md) <br>

@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: seodec18
 ms.date: 10/02/2019
-ms.openlocfilehash: 5989aca2b577621c31fe486877ea006cb25d47b5
-ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
+ms.openlocfilehash: 448b2674aa6021107d138bc0d91f1bda399eb4a6
+ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72030345"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72755899"
 ---
 # <a name="enterprise-security-package-configurations-with-azure-active-directory-domain-services-in-hdinsight"></a>Корпоративный пакет безопасности конфигураций с помощью доменных служб Azure Active Directory в HDInsight
 
@@ -70,7 +70,7 @@ New-SelfSignedCertificate -Subject contoso100.onmicrosoft.com `
 ## <a name="networking-considerations"></a>Рекомендации по работе с сетями
 
 > [!NOTE]  
-> Azure AD — DS необходимо развернуть в виртуальной сети на основе Azure Resource Manager. Azure AD-DS не поддерживает классические виртуальные сети. Дополнительные сведения см. в разделе [Включение доменных служб Azure Active Directory с помощью портала Azure](../../active-directory-domain-services/tutorial-create-instance.md#create-and-configure-the-virtual-network).
+> Azure AD — DS необходимо развернуть в виртуальной сети на основе Azure Resource Manager. Azure AD-DS не поддерживает классические виртуальные сети. Дополнительные сведения см. в разделе [Включение доменных служб Azure Active Directory с помощью портала Azure](../../active-directory-domain-services/tutorial-create-instance-advanced.md#create-and-configure-the-virtual-network).
 
 После включения доменных служб Azure AD локальный сервер службы доменных имен (DNS) будет запущен на виртуальных машинах AD. Настройте виртуальную сеть Azure AD DS, чтобы использовать эти настраиваемые DNS-серверы. Чтобы найти нужные IP-адреса, выберите **Свойства** в категории **управления** и просмотрите IP-адреса, появившиеся в списке под параметром **IP-адрес в виртуальной сети**.
 
@@ -82,7 +82,7 @@ New-SelfSignedCertificate -Subject contoso100.onmicrosoft.com `
 
 Проще разместить экземпляр Azure AD-DS и кластер HDInsight в одной и той же виртуальной сети Azure. Если вы планируете использовать разные виртуальные сети, необходимо их сверять, чтобы контроллер домена был виден в HDI виртуальных машин. Дополнительные сведения см. в статье [Пиринг между виртуальными сетями](../../virtual-network/virtual-network-peering-overview.md). 
 
-После установки пиринговой связи между виртуальными сетями настройте виртуальную сеть HDInsight, чтобы использовать настраиваемый DNS-сервер, и введите частные IP-адреса Azure AD DS в качестве адресов DNS-сервера. Если обе виртуальные сети используют одни DNS-серверы, настраиваемое доменное имя разрешится к правильному IP-адресу и будет доступно в HDInsight. Например, если доменное имя — `contoso.com`, после выполнения этого шага `ping contoso.com` должен разрешаться в правильный IP-адрес Azure AD-DS.
+После установки пиринговой связи между виртуальными сетями настройте виртуальную сеть HDInsight, чтобы использовать настраиваемый DNS-сервер, и введите частные IP-адреса Azure AD DS в качестве адресов DNS-сервера. Если обе виртуальные сети используют одни DNS-серверы, настраиваемое доменное имя разрешится к правильному IP-адресу и будет доступно в HDInsight. Например, если имя домена `contoso.com` после выполнения этого шага, `ping contoso.com` следует разрешить в IP-адрес Azure AD-DS.
 
 ![Настройка пользовательских DNS-серверов для пиринговой виртуальной сети](./media/apache-domain-joined-configure-using-azure-adds/hdinsight-aadds-peered-vnet-configuration.png)
 
@@ -106,17 +106,17 @@ New-SelfSignedCertificate -Subject contoso100.onmicrosoft.com `
 
 При создании кластера HDInsight с корпоративным пакетом безопасности необходимо указать следующие параметры.
 
-- **Администратор кластера**. Выберите администратора кластера в синхронизированных службах Azure AD DS. Эта учетная запись домена должна быть синхронизирована и доступна в Azure AD-DS.
+- **Администратор кластера**: выберите администратора кластера в синхронизированных службах Azure AD-DS. Эта учетная запись домена должна быть синхронизирована и доступна в Azure AD-DS.
 
-- **Группы доступа к кластеру**. Группы безопасности, пользователей которых нужно синхронизировать и предоставить им доступ к кластеру, должны быть доступны в Azure AD-DS. Например, группа HiveUsers. Дополнительные сведения см. в статье [Создание группы и добавление в нее пользователей в Azure Active Directory](../../active-directory/fundamentals/active-directory-groups-create-azure-portal.md).
+- **Группы доступа к кластеру**. Группы безопасности, пользователей которых нужно синхронизировать и предоставить доступ к кластеру, должны быть доступны в Azure AD-DS. Например, группа HiveUsers. Дополнительные сведения см. в статье [Создание группы и добавление в нее пользователей в Azure Active Directory](../../active-directory/fundamentals/active-directory-groups-create-azure-portal.md).
 
-- **URL-адрес LDAPS**. Например, `ldaps://contoso.com:636`.
+- **URL-адрес LDAPS**. пример `ldaps://contoso.com:636`.
 
 Созданное управляемое удостоверение можно выбрать из раскрывающегося списка назначаемых пользователем управляемых удостоверений при создании нового кластера.
 
 ![Управляемое удостоверение Azure HDInsight ESP домен Active Directory Services](./media/apache-domain-joined-configure-using-azure-adds/azure-portal-cluster-security-networking-identity.png).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения о настройке политик Hive и выполнении запросов Hive см. в статье [Настройка политик Apache Hive в HDInsight с Корпоративным пакетом безопасности](apache-domain-joined-run-hive.md).
 * Сведения о подключении к кластерам HDInsight с корпоративным пакетом безопасности с использованием SSH см. в разделе [Проверка подлинности при использовании присоединенного к домену кластера HDInsight](../hdinsight-hadoop-linux-use-ssh-unix.md#domainjoined).

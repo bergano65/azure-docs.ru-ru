@@ -1,5 +1,5 @@
 ---
-title: Защита доменных служб Azure AD | Документация Майкрософт "
+title: Защита доменных служб Azure AD | Документация Майкрософт
 description: Узнайте, как отключить слабые шифры, старые протоколы и синхронизацию хэша паролей NTLM для управляемого домена доменных служб Azure Active Directory.
 services: active-directory-ds
 author: iainfoulds
@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 09/09/2019
 ms.author: iainfou
-ms.openlocfilehash: db086c56c9f16f4691efaade03571bf8a36c6444
-ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
+ms.openlocfilehash: 6d60663e345f297246a423e1b4e7a4fb45f352a5
+ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70842628"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72754337"
 ---
 # <a name="disable-weak-ciphers-and-password-hash-synchronization-to-secure-an-azure-ad-domain-services-managed-domain"></a>Отключение слабых шифров и синхронизации хэшей паролей для защиты управляемого домена доменных служб Azure AD
 
@@ -24,7 +24,7 @@ ms.locfileid: "70842628"
 
 В этой статье показано, как отключить шифры NTLM v1 и TLS V1 и отключить синхронизацию хэша паролей NTLM.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для работы с этой статьей вам потребуются следующие ресурсы:
 
@@ -32,7 +32,7 @@ ms.locfileid: "70842628"
     * Если у вас еще нет подписки Azure, создайте [учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * Связанный с вашей подпиской клиент Azure Active Directory, синхронизированный с локальным или облачным каталогом.
     * Если потребуется, [создайте клиент Azure Active Directory][create-azure-ad-tenant] или [свяжите подписку Azure со своей учетной записью][associate-azure-ad-tenant].
-* Управляемый домен доменных служб Azure Active Directory, включенный и настроенный в клиенте Azure AD.
+* Управляемый домен доменных служб Azure Active Directory, включенный и настроенный в клиенте AAD.
     * Если потребуется, [создайте и настройте экземпляр доменных служб Azure Active Directory][create-azure-ad-ds-instance].
 * Установите и настройте Azure PowerShell.
     * При необходимости выполните инструкции по [установке модуля Azure PowerShell и подключитесь к подписке Azure](/powershell/azure/install-az-ps).
@@ -75,7 +75,7 @@ Set-AzResource -Id $DomainServicesResource.ResourceId -Properties $securitySetti
 
 Применение параметров безопасности к управляемому домену Azure AD DS займет несколько секунд.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о процессе синхронизации см. в статье [как синхронизировать объекты и учетные данные в управляемом домене Azure AD DS][synchronization].
 
