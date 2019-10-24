@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: aamalvea
 ms.author: aamalvea
 ms.reviewer: jrasnik, carlrab
-manager: craigg
 ms.date: 02/26/2019
-ms.openlocfilehash: 4757236d179e4d6ceb626f58f12cfe48799eed7a
-ms.sourcegitcommit: 470041c681719df2d4ee9b81c9be6104befffcea
+ms.openlocfilehash: 1c2720d61c7b4ea918a3d0c1ff7f41984ea42c69
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67854362"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68566905"
 ---
 # <a name="use-resource-health-to-troubleshoot-connectivity-for-azure-sql-database"></a>Устранение неполадок подключения к базе данных SQL Azure с помощью службы "Работоспособность ресурсов Azure"
 
@@ -33,29 +32,29 @@ ms.locfileid: "67854362"
 
 ## <a name="health-states"></a>Состояния работоспособности
 
-### <a name="available"></a>Доступна
+### <a name="available"></a>Доступно
 
 Состояние **Доступно** означает, что служба "Работоспособность ресурсов Azure" не обнаружила неудачные операции входа из-за системных ошибок в ресурсе SQL.
 
-![Доступна](./media/sql-database-resource-health/sql-resource-health-available.jpg)
+![Доступно](./media/sql-database-resource-health/sql-resource-health-available.jpg)
 
-### <a name="degraded"></a>Деградация
+### <a name="degraded"></a>Понижено
 
 Состояние **Деградация** означает, что служба "Работоспособность ресурсов Azure" обнаружила большую часть успешных и некоторые неудачные операции входа. Это скорее всего временные ошибки входа. Чтобы уменьшить влияние проблем с подключением, вызванных временными ошибками входа, реализуйте в коде [логику повторных подключений](./sql-database-connectivity-issues.md#retry-logic-for-transient-errors).
 
-![Деградация](./media/sql-database-resource-health/sql-resource-health-degraded.jpg)
+![Понижено](./media/sql-database-resource-health/sql-resource-health-degraded.jpg)
 
-### <a name="unavailable"></a>Рекомендации недоступны
+### <a name="unavailable"></a>Недоступно
 
 Состояние **Недоступно** означает, что служба "Работоспособность ресурсов Azure" обнаружила согласованные неудачные операции входа в ресурс SQL. Если ресурс остается в этом состоянии в течение длительного времени, обратитесь в службу поддержки.
 
-![Рекомендации недоступны](./media/sql-database-resource-health/sql-resource-health-unavailable.jpg)
+![Недоступно](./media/sql-database-resource-health/sql-resource-health-unavailable.jpg)
 
-### <a name="unknown"></a>Unknown
+### <a name="unknown"></a>Неизвестный
 
 Состояние работоспособности **Неизвестно** указывает на то, что служба работоспособности ресурсов не получала сведений об этом ресурсе более 10 минут. Несмотря на то что это значение не указывает состояние ресурса определенно, оно является важной точкой данных в процессе устранения неполадок. Если ресурс работает должным образом, через несколько минут его состояние изменится на "Доступно". При возникновении проблем с ресурсом состояние работоспособности "Неизвестно" может означать, что на ресурс влияет какое-то событие на платформе.
 
-![Unknown](./media/sql-database-resource-health/sql-resource-health-unknown.jpg)
+![Неизвестный](./media/sql-database-resource-health/sql-resource-health-unknown.jpg)
 
 ## <a name="historical-information"></a>Накопленные сведения
 
@@ -65,7 +64,7 @@ ms.locfileid: "67854362"
 
 Если в Базе данных SQL происходит простой, будет выполняться анализ, чтобы определить его причину. Если это возможно, причина простоя сообщается в разделе журнала работоспособности службы "Работоспособность ресурсов Azure". Причины простоя обычно публикуются через 30 минут после события.
 
-#### <a name="planned-maintenance"></a>Плановое техническое обслуживание
+#### <a name="planned-maintenance"></a>Плановое обслуживание
 
 Инфраструктура Azure периодически выполняет плановое обслуживание — обновляет компоненты оборудования или программного обеспечения в центре обработки данных. Во время обслуживания базы данных SQL может завершить некоторые имеющиеся подключения и отклонить новые. Сбои при входе, возникшие во время планового обслуживания, обычно являются временными и [логика повторных подключений](./sql-database-connectivity-issues.md#retry-logic-for-transient-errors) помогает снизить их влияние. Если сбои при входе продолжают возникать, обратитесь в службу поддержки.
 

@@ -4,16 +4,16 @@ description: Узнайте, как создать шлюз приложений
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
-ms.topic: tutorial
-ms.date: 5/20/2019
+ms.topic: article
+ms.date: 07/31/2019
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: caf82fdab8a841e5c49616a40216a788d877a81b
-ms.sourcegitcommit: 837dfd2c84a810c75b009d5813ecb67237aaf6b8
-ms.translationtype: HT
+ms.openlocfilehash: eceb380112002ef951d6d5e74998d944da01bd7a
+ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67501969"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68688231"
 ---
 # <a name="create-an-application-gateway-that-hosts-multiple-web-sites-using-the-azure-cli"></a>Создание шлюза приложений, на котором размещено несколько веб-сайтов, с помощью Azure CLI
 
@@ -37,9 +37,9 @@ ms.locfileid: "67501969"
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать CLI локально, для выполнения инструкций в этом руководстве вам понадобится Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
+Если вы решили установить и использовать CLI локально, для работы с этой статьей требуется Azure CLI версии 2.0.4 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
 
-## <a name="create-a-resource-group"></a>Создание группы ресурсов
+## <a name="create-a-resource-group"></a>Создать группу ресурсов
 
 Группа ресурсов — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими. Создайте группу ресурсов, используя команду [az group create](/cli/azure/group).
 
@@ -70,7 +70,9 @@ az network vnet subnet create \
 
 az network public-ip create \
   --resource-group myResourceGroupAG \
-  --name myAGPublicIPAddress
+  --name myAGPublicIPAddress \
+  --allocation-method Static \
+  --sku Standard
 ```
 
 ## <a name="create-the-application-gateway"></a>Создание шлюза приложений
@@ -85,7 +87,7 @@ az network application-gateway create \
   --vnet-name myVNet \
   --subnet myAGsubnet \
   --capacity 2 \
-  --sku Standard_Medium \
+  --sku Standard_v2 \
   --http-settings-cookie-based-affinity Disabled \
   --frontend-port 80 \
   --http-settings-port 80 \
@@ -140,9 +142,9 @@ az network application-gateway http-listener create \
 
 ### <a name="add-routing-rules"></a>Добавление правил маршрутизации
 
-Правила обрабатываются в том порядке, в котором они указаны, а трафик направляется через первое подходящее правило, независимо от точности. Например, если для одного порта имеется правило с базовым прослушивателем и правило с многосайтовым прослушивателем, для обеспечения правильной работы правило с многосайтовым прослушивателем должно быть указано перед правилом с базовым прослушивателем. 
+Правила обрабатываются в том порядке, в котором они перечислены. Трафик направляется с использованием первого правила, которое соответствует независимым условиям. Например, если для одного порта имеется правило с базовым прослушивателем и правило с многосайтовым прослушивателем, для обеспечения правильной работы правило с многосайтовым прослушивателем должно быть указано перед правилом с базовым прослушивателем. 
 
-В этом примере создаются два новых правила и удаляется правило по умолчанию, которое было сгенерировано при создании шлюза приложений. Вы можете добавить правило с помощью команды [az network application-gateway rule create](/cli/azure/network/application-gateway/rule#az-network-application-gateway-rule-create).
+В этом примере создаются два новых правила и удаляется правило по умолчанию, созданное при развертывании шлюза приложений. Вы можете добавить правило с помощью команды [az network application-gateway rule create](/cli/azure/network/application-gateway/rule#az-network-application-gateway-rule-create).
 
 ```azurecli-interactive
 az network application-gateway rule create \
@@ -229,7 +231,7 @@ az network public-ip show \
   --output tsv
 ```
 
-Использовать записи A не рекомендуется, так как виртуальный IP-адрес может измениться после перезапуска шлюза приложений.
+Использование записей A не рекомендуется, так как виртуальный IP-адрес может измениться при перезапуске шлюза приложений.
 
 ## <a name="test-the-application-gateway"></a>Тестирование шлюза приложений
 
@@ -246,9 +248,9 @@ az network public-ip show \
 При необходимости вы можете удалить группу ресурсов, шлюз приложений и все связанные ресурсы.
 
 ```azurecli-interactive
-az group delete --name myResourceGroupAG --location eastus
+az group delete --name myResourceGroupAG
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
-* [Создание шлюза приложений с правилами маршрутизации на основе URL-путей](./tutorial-url-route-cli.md)
+[Создание шлюза приложений с правилами маршрутизации на основе URL-путей](./tutorial-url-route-cli.md)

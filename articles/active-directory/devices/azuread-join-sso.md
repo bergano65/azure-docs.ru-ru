@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 64e190e3e70459846b50e1f68158b0a5c458a216
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 14e7a4389c192dde8d086a69a35114f3b8b33e96
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67482055"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68562180"
 ---
 # <a name="how-sso-to-on-premises-resources-works-on-azure-ad-joined-devices"></a>Как единый вход для локальных ресурсов работает на подключенных к Azure AD устройствах
 
@@ -24,7 +24,7 @@ ms.locfileid: "67482055"
 
 В этой статье описано, как это работает.
 
-## <a name="how-it-works"></a>Принцип работы 
+## <a name="how-it-works"></a>Как это работает 
 
 Благодаря тому, что вам нужно будет запомнить только одно имя пользователя и пароль, единый вход упрощает доступ к ресурсам и повышает безопасность среды. Пользователи с устройствами, присоединенными к AAD, уже могут использовать единый вход для доступа к облачным приложениям в вашей среде. Если ваша среда включает AAD и локальный экземпляр AD, вам может быть удобно использовать единый вход с локальными бизнес-приложениями, файловыми ресурсами и принтерами.  
 
@@ -51,7 +51,7 @@ ms.locfileid: "67482055"
 - получать доступ к UNC-пути на рядовом сервере AD;
 - получать доступ к веб-серверу, входящему в AD, на котором настроена встроенная система безопасности Windows. 
 
-Если вы хотите управлять локальной службой AD с устройства Windows, установите [средства удаленного администрирования сервера для Windows 10](https://www.microsoft.com/en-us/download/details.aspx?id=45520).
+Если вы хотите управлять локальной службой AD с устройства Windows, установите [средства удаленного администрирования сервера для Windows 10](https://www.microsoft.com/download/details.aspx?id=45520).
 
 Вы можете применить следующее:
 
@@ -66,6 +66,6 @@ ms.locfileid: "67482055"
 
 Вы не сможете совместно с другими пользователями работать с файлами на устройстве, присоединенном к AAD.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения см. в статье [Что такое управление устройствами в Azure Active Directory](overview.md). 

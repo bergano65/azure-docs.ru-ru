@@ -8,12 +8,12 @@ ms.service: container-instances
 ms.topic: article
 ms.date: 04/15/2019
 ms.author: danlep
-ms.openlocfilehash: 99440e22eb736522a25c2ee56bb07ef1d9967e66
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: 40d946db48a65452d2da529098c07d0d0c60d472
+ms.sourcegitcommit: 08d3a5827065d04a2dc62371e605d4d89cf6564f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68325665"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68619664"
 ---
 # <a name="set-the-command-line-in-a-container-instance-to-override-the-default-command-line-operation"></a>Установка командной строки в экземпляре контейнера для переопределения операции командной строки по умолчанию
 
@@ -23,7 +23,7 @@ ms.locfileid: "68325665"
 
 ## <a name="command-line-guidelines"></a>Рекомендации по использованию командной строки
 
-* По умолчанию командная строка указывает *один процесс, который запускается без оболочки* в контейнере. Например, Командная строка может выполнять сценарий Python или исполняемый файл. 
+* По умолчанию командная строка указывает *один процесс, который запускается без оболочки* в контейнере. Например, Командная строка может выполнять сценарий Python или исполняемый файл. В процессе можно указать дополнительные параметры или аргументы.
 
 * Чтобы выполнить несколько команд, запустите командную строку, задав среду оболочки, которая поддерживается в операционной системе контейнера. Примеры:
 
@@ -57,7 +57,7 @@ ms.locfileid: "68325665"
 
 ### <a name="examples"></a>Примеры
 
-|    |  Инфраструктура CLI Azure   | Портал | Шаблон | 
+|    |  Azure CLI   | Портал | Шаблон | 
 | ---- | ---- | --- | --- |
 | Одна команда | `--command-line "python myscript.py arg1 arg2"` | **Переопределение команды**:`python, myscript.py, arg1, arg2` | `"command": ["python", "myscript.py", "arg1", "arg2"]` |
 | Несколько команд | `--command-line "/bin/bash -c 'mkdir test; touch test/myfile; tail -f /dev/null'"` |**Переопределение команды**:`/bin/bash, -c, mkdir test; touch test/myfile; tail -f /dev/null` | `"command": ["/bin/bash", "-c", "mkdir test; touch test/myfile; tail -f /dev/null"]` |
@@ -66,7 +66,7 @@ ms.locfileid: "68325665"
 
 В качестве примера измените поведение образа контейнера [Microsoft/ACI-WordCount][aci-wordcount] , который анализирует текст в *Гамлет* Шекспир для поиска наиболее часто встречающихся слов. Вместо анализа *Гамлет*можно задать командную строку, которая указывает на другой источник текста.
 
-Для просмотра выходных данных команды [Microsoft/ACI-WordCount][aci-wordcount] container when it analyzes the default text, run it with the following [az container create][az-container-create] . Не указана Командная строка запуска, поэтому выполняется команда контейнера по умолчанию. Для иллюстрации в этом примере задаются [переменные среды](container-instances-environment-variables.md) для поиска первых 3 слов, которые имеют длину не менее пяти букв:
+Чтобы просмотреть выходные данные контейнера [Microsoft/ACI-WordCount][aci-wordcount] при анализе текста по умолчанию, запустите его, выполнив следующую команду [AZ Container Create][az-container-create] . Не указана Командная строка запуска, поэтому выполняется команда контейнера по умолчанию. Для иллюстрации в этом примере задаются [переменные среды](container-instances-environment-variables.md) для поиска первых 3 слов, которые имеют длину не менее пяти букв:
 
 ```azurecli-interactive
 az container create \
@@ -77,7 +77,7 @@ az container create \
     --restart-policy OnFailure
 ```
 
-Когда состояние контейнера будет отображаться как *завершенное* (для просмотра выходных данных используйте команду [AZ Container Показать][az-container-show] to check state), display the log with [az container logs][az-container-logs] .
+Когда состояние контейнера будет отображаться как *завершенное* (используйте команду [AZ Container Показать][az-container-show] для проверки состояния), отобразите журнал с помощью команды [AZ Container Logs][az-container-logs] , чтобы просмотреть выходные данные.
 
 ```azurecli-interactive
 az container logs --resource-group myResourceGroup --name mycontainer1

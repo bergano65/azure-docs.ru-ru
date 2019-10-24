@@ -3,7 +3,7 @@ title: Обновление кластера Azure Service Fabric | Докуме
 description: Узнайте, как обновлять версию или конфигурацию кластера Azure Service Fabric.  В этой статье описывается настройка режима обновления кластера, обновление сертификатов, добавление портов приложений, применение исправлений для ОС и то, чего можно ожидать при выполнении обновления
 services: service-fabric
 documentationcenter: .net
-author: aljo-microsoft
+author: athinanthny
 manager: chackdan
 editor: ''
 ms.assetid: 15190ace-31ed-491f-a54b-b5ff61e718db
@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/12/2018
-ms.author: aljo
-ms.openlocfilehash: 8fa461d8c3a70d4b0d2d9973a840ffc7d1ff6470
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: atsenthi
+ms.openlocfilehash: 2c8465a3aba4a21efaa20a118807d739dd501b09
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65472766"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68599781"
 ---
 # <a name="upgrading-and-updating-an-azure-service-fabric-cluster"></a>Обновление кластера Azure Service Fabric
 
@@ -102,7 +102,7 @@ Service Fabric использует [сертификаты сервера X.509
 Приложение для управления исправлениями — это приложение Service Fabric, которое позволяет автоматизировать установку исправлений операционной системы в кластере Service Fabric и избегать простоев. [Приложение для управления исправлениями для Windows](service-fabric-patch-orchestration-application.md) можно развернуть в кластере, чтобы установить исправления контролируемым образом без простоев служб.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Узнайте, как настроить некоторые [параметры Service Fabric для кластера](service-fabric-cluster-fabric-settings.md)
 * Ознакомьтесь с концепцией [масштабирования кластера](service-fabric-cluster-scale-up-down.md)
 * Узнайте об [обновлениях приложений](service-fabric-application-upgrade.md)

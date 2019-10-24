@@ -4,16 +4,16 @@ description: В этой статье вы узнаете, как маршрут
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
-ms.topic: tutorial
-ms.date: 5/20/2019
+ms.topic: article
+ms.date: 08/01/2019
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: c0954d1010a6cf5ef6f8edab1470588df9fba559
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
-ms.translationtype: HT
+ms.openlocfilehash: b6bc0b00579bdef0a358f756b8cf2b6034aca017
+ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65955546"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68688179"
 ---
 # <a name="route-web-traffic-based-on-the-url-using-the-azure-cli"></a>Маршрутизация веб-трафика на основе URL-адресов с помощью Azure CLI
 
@@ -39,7 +39,7 @@ ms.locfileid: "65955546"
 
 Если вы решили установить и использовать интерфейс командной строки локально, для работы с этой статьей вам понадобится Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
 
-## <a name="create-a-resource-group"></a>Создание группы ресурсов
+## <a name="create-a-resource-group"></a>Создать группу ресурсов
 
 Группа ресурсов — это логический контейнер, в котором выполняется развертывание ресурсов Azure и управление ими. Создайте группу ресурсов с помощью команды `az group create`.
 
@@ -70,12 +70,14 @@ az network vnet subnet create \
 
 az network public-ip create \
   --resource-group myResourceGroupAG \
-  --name myAGPublicIPAddress
+  --name myAGPublicIPAddress \
+  --allocation-method Static \
+  --sku Standard
 ```
 
 ## <a name="create-the-app-gateway-with-a-url-map"></a>Создание шлюза приложений путем сопоставления URL-адресов
 
-Используйте команду `az network application-gateway create` для создания шлюза приложений с именем *myAppGateway*. При создании шлюза приложений с помощью Azure CLI укажите такие сведения о конфигурации, как емкость, номер SKU и параметры HTTP. Шлюз приложений назначается подсети *myAGSubnet* и адресу *myAGPublicIPAddress*, созданным ранее.
+Используйте команду `az network application-gateway create` для создания шлюза приложений с именем *myAppGateway*. При создании шлюза приложений с помощью Azure CLI укажите такие сведения о конфигурации, как емкость, номер SKU и параметры HTTP. Шлюз приложений назначается *myAGSubnet* и *myAGPublicIPAddress*.
 
 ```azurecli-interactive
 az network application-gateway create \
@@ -85,7 +87,7 @@ az network application-gateway create \
   --vnet-name myVNet \
   --subnet myAGsubnet \
   --capacity 2 \
-  --sku Standard_Medium \
+  --sku Standard_v2 \
   --http-settings-cookie-based-affinity Disabled \
   --frontend-port 80 \
   --http-settings-port 80 \
@@ -96,7 +98,7 @@ az network application-gateway create \
  Создание шлюза приложений может занять несколько минут. Когда шлюз приложений будет создан, вы увидите такие новые функции:
 
 
-|Функция  |ОПИСАНИЕ  |
+|Компонент  |Описание  |
 |---------|---------|
 |appGatewayBackendPool     |Для шлюза приложений необходимо наличие по крайней мере одного внутреннего пула адресов.|
 |appGatewayBackendHttpSettings     |Указывает, что для обмена данными используются порт 80 и протокол HTTP.|
@@ -180,7 +182,7 @@ az network application-gateway rule create \
   --address-pool appGatewayBackendPool
 ```
 
-## <a name="create-vm-scale-sets"></a>Создание масштабируемых наборов виртуальных машин
+## <a name="create-virtual-machine-scale-sets"></a>Создание масштабируемых наборов виртуальных машин
 
 В рамках этой статьи вы создадите три масштабируемых набора виртуальных машин, которые поддерживают три созданных внутренних пула. Вы создадите масштабируемые наборы с именами *myvmss1*, *myvmss2* и *myvmss3*. Каждый масштабируемый набор содержит два экземпляра виртуальной машины, на которых устанавливаются службы NGINX.
 
@@ -246,11 +248,11 @@ az network public-ip show \
 
 ![Тестирование базового URL-адреса в шлюзе приложений](./media/tutorial-url-route-cli/application-gateway-nginx.png)
 
-Измените URL-адрес на http://&lt;ip-address&gt;:8080/images/test.html, указав вместо заполнителя &lt;ip-address&gt; фактический IP-адрес. Результат должен быть примерно таким:
+Измените URL-адрес на&lt;http://IP-&gt;Address: 8080/Images/Test.HTML, &lt;Замените IP-&gt;адрес на IP, и вы увидите нечто вроде следующего:
 
 ![Тестирование URL-адреса изображений в шлюзе приложений](./media/tutorial-url-route-cli/application-gateway-nginx-images.png)
 
-Измените URL-адрес на http://&lt;ip-address&gt;:8080/video/test.html. Подставьте вместо &lt;ip-address&gt; свой IP-адрес. Результат должен быть примерно таким:
+Измените URL-адрес на&lt;http://IP-&gt;Address: 8080/Video/Test.HTML, &lt;Замените IP-&gt;адрес на IP, и вы увидите нечто вроде приведенного в следующем примере.
 
 ![Тестирование URL-адреса видео в шлюзе приложений](./media/tutorial-url-route-cli/application-gateway-nginx-video.png)
 
@@ -259,9 +261,9 @@ az network public-ip show \
 При необходимости вы можете удалить группу ресурсов, шлюз приложений и все связанные ресурсы.
 
 ```azurecli-interactive
-az group delete --name myResourceGroupAG --location eastus
+az group delete --name myResourceGroupAG
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
-* [Создание шлюза приложений с перенаправлением на основе URL-пути](./tutorial-url-redirect-cli.md)
+[Создание шлюза приложений с перенаправлением на основе URL-пути](./tutorial-url-redirect-cli.md)

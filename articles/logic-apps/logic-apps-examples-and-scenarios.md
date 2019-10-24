@@ -1,5 +1,5 @@
 ---
-title: Примеры и распространенные сценарии для Azure Logic Apps | Документация Майкрософт
+title: Примеры & распространенных сценариев Azure Logic Apps
 description: Примеры, сценарии, обычные и пошаговые руководства для Azure Logic Apps.
 services: logic-apps
 ms.service: logic-apps
@@ -9,19 +9,19 @@ ms.author: estfan
 ms.reviewer: klam, LADocs
 ms.topic: article
 ms.assetid: e06311bc-29eb-49df-9273-1f05bbb2395c
-ms.date: 01/31/2018
-ms.openlocfilehash: 95eca4c7f3e8170f6559799fc4c706e95df70e9e
-ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
+ms.date: 07/31/2019
+ms.openlocfilehash: 000de22105615c3f6aa015b07e13bf8a47955b52
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68385519"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68706787"
 ---
 # <a name="common-scenarios-examples-tutorials-and-walkthroughs-for-azure-logic-apps"></a>Распространенные сценарии, примеры, учебники и пошаговые руководства для Azure Logic Apps
 
 [Azure Logic Apps](../logic-apps/logic-apps-overview.md) помогает управлять и интегрировать различные службы, предоставляя [сотни готовых соединителей](../connectors/apis-list.md), от локальных SQL Server или SAP до Azure Cognitive Services. Служба Logic Apps работает без серверов, поэтому вам не нужно заботиться об экземплярах и масштабировании. Достаточно определить рабочий процесс с триггером и действия для него. Базовая платформа обеспечивает масштабирование, доступность и производительность. Служба Logic Apps наиболее полезна в тех случаях, когда нужно координировать несколько действий в нескольких системах.
 
-Ниже представлены распространенные примеры и сценарии, которые познакомят вас с методами применения и возможностями [Azure Logic Apps](../logic-apps/logic-apps-overview.md).
+Ниже приведены распространенные примеры и сценарии, которые помогут узнать больше о многих шаблонах и возможностях, поддерживаемых Azure Logic Apps.
 
 ## <a name="popular-starting-points-for-logic-app-workflows"></a>Часто используемые отправные точки для рабочих процессов приложений логики
 
@@ -33,23 +33,31 @@ ms.locfileid: "68385519"
 
 Ниже приведено несколько распространенных примеров триггеров:
 
-* Опрашивающие триггеры: 
+* Опрашивающие триггеры:
 
-  * [Триггер **Расписание — повторение**](../connectors/connectors-native-recurrence.md) позволяет настроить начальную дату и время, а также частоту повторений для вызовов приложения логики. 
-  Например, вы можете выбрать дни недели и время суток для запуска приложения логики.
+  * [Триггер **повторения** ](../connectors/connectors-native-recurrence.md) позволяет задать дату и время начала, а также повторение для срабатывания приложения логики. Например, вы можете выбрать дни недели и время суток для запуска приложения логики. Дополнительные сведения см. в следующих статьях:
 
-  * Триггер "При получении сообщения электронной почты" позволяет приложению логики проверять входящие сообщения электронной почты в любой почтовой службе, которую поддерживает служба Logic Apps, в том числе [Office 365 Outlook](../connectors/connectors-create-api-office365-outlook.md), [Gmail](https://docs.microsoft.com/connectors/gmail/), [Outlook.com](https://docs.microsoft.com/connectors/outlook/) и т. д.
+    * [Планирование и выполнение повторяющихся автоматизированных задач, процессов и рабочих процессов с помощью Azure Logic Apps](../logic-apps/concepts-schedule-automated-recurring-tasks-workflows.md)
+    * [Учебник. Проверка трафика по расписанию с Azure Logic Apps](../logic-apps/tutorial-build-schedule-recurring-logic-app-workflow.md)
+
+  * Триггер "При получении сообщения электронной почты" позволяет приложению логики проверять входящие сообщения электронной почты в любой почтовой службе, которую поддерживает служба Logic Apps, в том числе [Office 365 Outlook](../connectors/connectors-create-api-office365-outlook.md), [Gmail](https://docs.microsoft.com/connectors/gmail/), [Outlook.com](https://docs.microsoft.com/connectors/outlook/) и т. д. Дополнительные сведения см. в следующих статьях: 
+
+    * [Учебник. Управление запросами списка рассылки с помощью Azure Logic Apps](../logic-apps/tutorial-process-mailing-list-subscriptions-workflow.md)
+    * [Учебник. Автоматизация обработки сообщений электронной почты и вложений с помощью Azure Logic Apps](../logic-apps/tutorial-process-email-attachments-workflow.md)
 
   * [Триггер **HTTP**](../connectors/connectors-native-http.md) позволяет приложению логики проверять указанную конечную точку службы, обращаясь к ней по протоколу HTTP.
   
 * Извещающие триггеры:
 
-  * [Триггер **Запрос/ответ — запрос**](../connectors/connectors-native-reqres.md) позволяет приложению логики получать HTTP-запросы и определенным образом отвечать на них в режиме реального времени.
+  * Триггер [ **запроса** ](../connectors/connectors-native-reqres.md) позволяет приложению логики принимать HTTP-запросы и реагировать в реальном времени на события определенным образом.
 
-  * [Триггер **Веб-перехватчик HTTP**](../connectors/connectors-native-webhook.md) подписывается на конечную точку службы, регистрируя в ней свой *URL-адрес обратного вызова*. 
-  В этом сценарии служба сама уведомляет триггер о том, что произошло указанное событие, то есть триггер может не опрашивать службу.
+  * [Триггер **Веб-перехватчик HTTP**](../connectors/connectors-native-webhook.md) подписывается на конечную точку службы, регистрируя в ней свой *URL-адрес обратного вызова*. В этом сценарии служба сама уведомляет триггер о том, что произошло указанное событие, то есть триггер может не опрашивать службу.
 
-Триггер срабатывает, когда получает уведомление о новых данных или определенном событии, создает новый экземпляр рабочего процесса для приложения логики и выполняет действия в этом рабочем процессе. Вам будут доступны все данные триггера на любом этапе рабочего процесса. Например, триггер может срабатывать при появлении нового твита и передавать содержимое этого твита в экземпляр приложения логики. 
+Триггер срабатывает, когда получает уведомление о новых данных или определенном событии, создает новый экземпляр рабочего процесса для приложения логики и выполняет действия в этом рабочем процессе. Вам будут доступны все данные триггера на любом этапе рабочего процесса. Например, триггер может срабатывать при появлении нового твита и передавать содержимое этого твита в экземпляр приложения логики. Чтобы приступить к работе с Azure Logic Apps, воспользуйтесь следующими разделами краткого руководства:
+
+* [Краткое руководство Создайте первый автоматизированный рабочий процесс с Azure Logic Apps в портал Azure](../logic-apps/quickstart-create-first-logic-app-workflow.md)
+* [Краткое руководство Создание автоматических задач, процессов и рабочих процессов с помощью Azure Logic Apps в Visual Studio](../logic-apps/quickstart-create-logic-apps-with-visual-studio.md)
+* [Краткое руководство Создание автоматизированных рабочих процессов приложения логики и управление ими с помощью Visual Studio Code](../logic-apps/quickstart-create-logic-apps-visual-studio-code.md)
 
 ## <a name="respond-to-triggers-and-extend-actions"></a>Реагирование на триггеры и расширение действий
 
@@ -81,6 +89,10 @@ ms.locfileid: "68385519"
 * [Создание и развертывание приложений логики в Visual Studio](../logic-apps/quickstart-create-logic-apps-with-visual-studio.md)
 * [Включение мониторинга, ведения журнала и оповещений для существующих приложений логики](../logic-apps/logic-apps-monitor-your-logic-apps.md)
 * [Автоматизация развертывания приложений логики](../logic-apps/logic-apps-azure-resource-manager-templates-overview.md)
+* [Пример. Подключение к очередям служебной шины Azure из Azure Logic Apps и развертывание с помощью Azure Pipelines в Azure DevOps](https://docs.microsoft.com/samples/azure-samples/azure-logic-apps-deployment-samples/connect-to-azure-service-bus-queues-from-azure-logic-apps-and-deploy-with-azure-devops-pipelines/)
+* [Пример. Подключение к учетным записям хранения Azure из Azure Logic Apps и развертывание с помощью Azure Pipelines в Azure DevOps](https://docs.microsoft.com/samples/azure-samples/azure-logic-apps-deployment-samples/connect-to-azure-storage-accounts-from-azure-logic-apps-and-deploy-with-azure-devops-pipelines/)
+* [Пример. Настройка действия приложения-функции для Azure Logic Apps и развертывание с помощью Azure Pipelines в Azure DevOps](https://docs.microsoft.com/samples/azure-samples/azure-logic-apps-deployment-samples/set-up-an-azure-function-app-action-for-azure-logic-apps-and-deploy-with-azure-devops-pipelines/)
+* [Пример. Подключение к учетной записи интеграции из Azure Logic Apps и развертывание с помощью Azure Pipelines в Azure DevOps](https://docs.microsoft.com/samples/azure-samples/azure-logic-apps-deployment-samples/connect-to-an-integration-account-from-azure-logic-apps-and-deploy-by-using-azure-devops-pipelines/)
 
 ## <a name="content-types-conversions-and-transformations-within-a-run"></a>Типы содержимого и их преобразование во время выполнения
 
@@ -112,6 +124,5 @@ ms.locfileid: "68385519"
 
 ## <a name="next-steps"></a>Следующие шаги
 
-* [Создание определений рабочих процессов для приложений логики с помощью JSON](../logic-apps/logic-apps-author-definitions.md)
-* [Обработка ошибок и исключений в приложениях логики](../logic-apps/logic-apps-exception-handling.md)
-* [Отправка комментариев, вопросов, отзывов или предложений по улучшению Azure Logic Apps](https://feedback.azure.com/forums/287593-logic-apps)
+* Дополнительные сведения о [соединителях для Logic Apps](../connectors/apis-list.md)
+* Узнайте о [сценариях интеграции B2B Enterprise с Azure Logic Apps](../logic-apps/logic-apps-enterprise-integration-overview.md)

@@ -10,12 +10,13 @@ ms.subservice: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: nitinme
-ms.openlocfilehash: 3d9e2498a23ad49eb014cb0f81c819f3f63eef5c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ROBOTS: NOINDEX
+ms.openlocfilehash: cba12b6c09c1bdbf4e8f7841676a609c34109d93
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66387796"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68707340"
 ---
 # <a name="introduction-to-entities"></a>Основные сведения о сущностях
 
@@ -31,7 +32,7 @@ ms.locfileid: "66387796"
 
     npm run tutorial-general
 
-## <a name="details"></a>Сведения
+## <a name="details"></a>Подробнее
 
 Сущности захватывают частички информации, которая необходима боту для выполнения задачи, извлекая эту информацию из высказываний пользователя или получая ее из назначений в пользовательском коде. В самих сущностях также можно ограничить доступность действия. Для этого сущность необходимо явно объявить как обязательную или запрещенную.
 
@@ -40,7 +41,7 @@ ms.locfileid: "66387796"
 
 В этом руководстве будут рассмотрены пользовательские сущности. Предварительно обученные, многозначные, отрицаемые и программные сущности рассматриваются в других руководствах.
 
-## <a name="steps"></a>Действия
+## <a name="steps"></a>Шаги
 
 ### <a name="create-the-model"></a>Создание модели
 
@@ -93,7 +94,7 @@ ms.locfileid: "66387796"
 
 ![](../media/tutorial3_entities.PNG)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Ожидаемые сущности](./05-expected-entity.md)

@@ -10,12 +10,13 @@ ms.subservice: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: nitinme
-ms.openlocfilehash: eeed0718a1feb170dbbaa783ec0a840c7829c02e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ROBOTS: NOINDEX
+ms.openlocfilehash: 656d028082d56b8f094e83363e5189b163581c53
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66390018"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68703947"
 ---
 # <a name="how-to-use-session-callbacks-with-a-conversation-learner-model"></a>Использование обратных вызовов сеансов в приложении Conversation Learner
 
@@ -30,7 +31,7 @@ ms.locfileid: "66390018"
 
     npm run tutorial-session-callbacks
 
-## <a name="details"></a>Сведения
+## <a name="details"></a>Подробнее
 В этом руководстве объясняется концепция сеанса, правила обработки сеансов по умолчанию и переопределение этих правил.
 
 В Conversation Learner сеанс представляет собой одно непрерывное интерактивное взаимодействие с ботом. Сеансы могут иметь несколько изменений хода диалога и программным образом завершаются, если прошло более тридцати минут.  Информация об изменении допустимой по умолчанию длительности времени ожидания в сеансе приводится на странице справки об ограничениях.
@@ -103,7 +104,7 @@ ms.locfileid: "66390018"
 9. Нажмите кнопку OK.
 10. Нажмите кнопку Done Testing (Тестирование завершено).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Вызовы API](./14-api-calls.md)

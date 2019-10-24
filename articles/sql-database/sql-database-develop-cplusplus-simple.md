@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
-manager: craigg
 ms.date: 12/12/2018
-ms.openlocfilehash: 00a3904bd78f3bb76266c726af28582770b23921
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c06a16071b1e22e7aa788ff5f15ce8afbf17da04
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60724092"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68568933"
 ---
 # <a name="connect-to-sql-database-using-c-and-c"></a>Подключение к базе данных SQL с помощью C и C++
 
@@ -128,11 +127,11 @@ ms.locfileid: "60724092"
 * [образец ODBC C++ Windows](https://github.com/Microsoft/VCSamples/tree/master/VC2015Samples/ODBC%20database%20sample%20%28windows%29) — загрузите образец ODBC C++ Windows для подключения к Azure SQL;
 * [образец ODBC C++ Linux](https://github.com/Microsoft/VCSamples/tree/master/VC2015Samples/ODBC%20database%20sample%20%28linux%29) — загрузите образец ODBC C++ Linux для подключения к Azure SQL.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Ознакомьтесь с разделом [Общие сведения о разработке базы данных SQL](sql-database-develop-overview.md)
 * См. дополнительные сведения в [справочнике по API ODBC](https://docs.microsoft.com/sql/odbc/reference/syntax/odbc-api-reference/)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
-* [Шаблоны разработки для мультитенантных приложений SaaS с использованием базы данных Azure SQL](sql-database-design-patterns-multi-tenancy-saas-applications.md)
+* [Шаблоны разработки для мультитенантных приложений SaaS с использованием Базы данных Azure SQL](sql-database-design-patterns-multi-tenancy-saas-applications.md)
 * Вы можете изучить все [возможности Базы данных SQL](https://azure.microsoft.com/services/sql-database/)
 
