@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/11/2017
 ms.author: yegu
-ms.openlocfilehash: 495fc031150d04f253279606baebb5d64d52bce7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 21c93cac8b4126a46e4c3dc396db9857f6b62de9
+ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66132914"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72755435"
 ---
 # <a name="how-to-scale-azure-cache-for-redis"></a>Масштабирование кэша Azure для Redis
 Кэш Azure для Redis предлагается во множестве различных вариантов, отличающихся между собой размером и функциями. После создания кэша можно масштабировать его размер и ценовые категории при изменении требований приложения. В этой статье показано, как масштабировать кэш на портале Azure и с помощью инструментов, таких как Azure PowerShell и Azure CLI.
@@ -43,7 +43,7 @@ ms.locfileid: "66132914"
 
 Выберите нужную ценовую категорию в колонке **Выберите ценовую категорию** и нажмите кнопку **Выбрать**.
 
-![Ценовая категория][redis-cache-pricing-tier-blade]
+![Уровень цен][redis-cache-pricing-tier-blade]
 
 
 Вы можете выполнить масштабирование до другой ценовой категории со следующими ограничениями.
@@ -76,7 +76,7 @@ ms.locfileid: "66132914"
 
     Set-AzRedisCache -ResourceGroupName myGroup -Name myCache -Size 2.5GB
 
-Дополнительные сведения о масштабировании с помощью PowerShell см. в разделе [Масштабирование кэша Azure для Redis с помощью PowerShell](cache-howto-manage-redis-cache-powershell.md#scale).
+Дополнительные сведения о масштабировании с помощью PowerShell см. в разделе [Масштабирование кэша Azure для Redis с помощью PowerShell](cache-how-to-manage-redis-cache-powershell.md#scale).
 
 ### <a name="scale-using-azure-cli"></a>Масштабирование с помощью интерфейса командной строки Azure
 Чтобы масштабировать экземпляры кэша Azure для Redis с помощью Azure CLI, вызовите команду `azure rediscache set` и передайте ей нужные изменения конфигурации, в том числе новый размер, SKU или размер кластера, в зависимости от требуемой операции масштабирования.
@@ -126,7 +126,7 @@ ms.locfileid: "66132914"
 * Ценовую категорию кэша **Базовый** нельзя изменить сразу на уровень **Премиум**. Сначала перейдите с категории **Базовый** на категорию **Стандартный**, а затем — с категории **Стандартный** на категорию **Премиум**.
 * Если при создании вашего кэша категории **Премиум** была включена кластеризация, вы можете [изменить размер кластера](cache-how-to-premium-clustering.md#cluster-size). Если кэш создан без кластеризации, ее можно будет настроить позже.
   
-  Дополнительные сведения см. в статье [Настройка кластеризации для кэша Azure для Redis категории "Премиум"](cache-how-to-premium-clustering.md).
+  Дополнительные сведения см. в статье [How to configure clustering for a Premium Azure Cache for Redis](cache-how-to-premium-clustering.md) (Настройка кластеризации для кэша Azure для Redis категории "Премиум").
 
 ### <a name="after-scaling-do-i-have-to-change-my-cache-name-or-access-keys"></a>Нужно ли менять имя кэша и ключи доступа после масштабирования?
 Нет, имя кэша и ключи не изменяются во время операции масштабирования.

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: 4fd213a6550d045fe4bea280449ed228ba9eda35
-ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
+ms.openlocfilehash: c764460fb65287dab0031b27291d2f332cec3b3d
+ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72550275"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72756554"
 ---
 # <a name="use-the-azure-maps-map-control"></a>Использование элемента управления картой Azure Maps
 
@@ -44,6 +44,12 @@ ms.locfileid: "72550275"
     <link rel="stylesheet" href="node_modules/azure-maps-control/dist/atlas.min.css" type="text/css"> 
     <script src="node_modules/azure-maps-control/dist/atlas.min.js"></script>
     ```
+
+    >[!Note]
+    > Определения typescript можно импортировать в приложение, добавив:
+    > ```Javascript
+    > import * as atlas from 'azure-maps-control';
+    > ```
 
 3. Чтобы отобразить карту так, чтобы она занимала основную область страницы, добавьте следующий элемент `<style>` к элементу `<head>`.
 
@@ -102,6 +108,8 @@ ms.locfileid: "72550275"
     </script>
     ```
 
+    Список примеров, демонстрирующих интеграцию Azure Active Directory (AAD) с Azure Maps, можно найти [здесь](https://github.com/Azure-Samples/Azure-Maps-AzureAD-Samples). 
+    
     Дополнительные сведения см. в статье [Проверка подлинности с помощью Azure Maps](azure-maps-authentication.md) документа.
 
 6. При необходимости возможно добавление следующих элементов метатега в заголовок вашей страницы.
@@ -222,3 +230,8 @@ map = new atlas.Map('myMap', {
 
 > [!div class="nextstepaction"]
 > [Примеры кода](https://docs.microsoft.com/samples/browse/?products=azure-maps)
+
+Список примеров, демонстрирующих интеграцию Azure Active Directory (AAD) с Azure Maps, см. в следующих статьях:
+
+> [!div class="nextstepaction"]
+> [Примеры проверки подлинности AAD](https://github.com/Azure-Samples/Azure-Maps-AzureAD-Samples)

@@ -10,12 +10,13 @@ ms.topic: conceptual
 ms.date: 08/08/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 477b4e51c49a558aed0e5623a3821fa9b8d9eabd
-ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
+ms.custom: fasttrack-edit
+ms.openlocfilehash: 0c2e368b9c12d8ab673e5b8808632501de448b9a
+ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69622365"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72755768"
 ---
 # <a name="set-up-sign-in-for-a-specific-azure-active-directory-organization-in-azure-active-directory-b2c"></a>Настройка входа для определенной организации Azure Active Directory в Azure Active Directory B2C
 
@@ -29,7 +30,7 @@ ms.locfileid: "69622365"
 2. Убедитесь, что вы используете каталог, содержащий клиент Azure AD. В верхнем меню выберите фильтр **каталог и подписка** и выберите каталог, содержащий ваш клиент Azure AD. Это не тот же клиент, что и Azure AD B2C клиент.
 3. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Регистрация приложений**.
 4. Выберите **Новая регистрация**.
-5. Введите имя приложения. Например, `Azure AD B2C App`.
+5. Введите имя приложения. Пример: `Azure AD B2C App`.
 6. Примите выбранные **учетные записи в этом каталоге организации только** для этого приложения.
 7. В качестве **URI перенаправления**оставьте значение **Web**и введите следующий URL-адрес в строчных буквах, где `your-B2C-tenant-name` заменяется именем клиента Azure AD B2C. Например, `https://fabrikam.b2clogin.com/fabrikam.onmicrosoft.com/oauth2/authresp`:
 
@@ -41,7 +42,7 @@ ms.locfileid: "69622365"
 
 8. Щелкните **Зарегистрировать**. Скопируйте **идентификатор приложения (клиента)** , который будет использоваться позже.
 9. Выберите **сертификаты & секреты** в меню приложение, а затем выберите **новый секрет клиента**.
-10. Введите имя секрета клиента. Например, `Azure AD B2C App Secret`.
+10. Введите имя секрета клиента. Пример: `Azure AD B2C App Secret`.
 11. Выберите срок действия. Для этого приложения Примите выбор **в течение 1 года**.
 12. Выберите **Добавить** и скопируйте значение нового секрета клиента, который будет использоваться позже.
 
@@ -51,13 +52,15 @@ ms.locfileid: "69622365"
 1. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
 1. Выберите **поставщики удостоверений**, а затем выберите **Новый поставщик OpenID Connect Connect**.
 1. Введите **Имя**. Например, введите *Azure AD Contoso*.
-1. В поле **URL-адрес метаданных**введите следующий URL `your-AD-tenant-domain` -адрес, заменяющий доменное имя вашего клиента Azure AD:
+1. В поле **URL-адрес метаданных**введите следующий URL-адрес, заменяющий `your-AD-tenant-domain` именем домена клиента Azure AD:
 
     ```
     https://login.microsoftonline.com/your-AD-tenant-domain/.well-known/openid-configuration
     ```
 
-    Например, `https://login.microsoftonline.com/contoso.onmicrosoft.com/.well-known/openid-configuration`.
+    Пример: `https://login.microsoftonline.com/contoso.onmicrosoft.com/.well-known/openid-configuration`.
+
+    **Не** используйте конечную точку МЕТАДАННЫХ Azure AD версии 2.0, например `https://login.microsoftonline.com/contoso.onmicrosoft.com/v2.0/.well-known/openid-configuration`. Это приведет к ошибке, похожей на `AADB2C: A claim with id 'UserId' was not found, which is required by ClaimsTransformation 'CreateAlternativeSecurityId' with id 'CreateAlternativeSecurityId' in policy 'B2C_1_SignUpOrIn' of tenant 'contoso.onmicrosoft.com'` при попытке входа.
 
 1. В поле **идентификатор клиента**введите ранее записанный идентификатор приложения.
 1. В поле **секрет клиента**введите секрет клиента, который вы записали ранее.

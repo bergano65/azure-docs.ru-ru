@@ -1,19 +1,19 @@
 ---
 title: Работа с учетными записями Azure Cosmos DB
 description: В этой статье описывается, как создать и использовать учетные записи Azure Cosmos DB.
-author: rimman
+author: markjbrown
+ms.author: mjbrown
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 07/23/2019
-ms.author: rimman
 ms.reviewer: sngun
-ms.openlocfilehash: 833d8533ff3289693e1744db2d77d4bed6a9ea69
-ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
+ms.openlocfilehash: 57b2cffbf8085e6d393765190a6dfc2dead51625
+ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69616996"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72757088"
 ---
 # <a name="work-with-azure-cosmos-account"></a>Работа с учетной записью Azure Cosmos
 
@@ -31,7 +31,7 @@ Azure Cosmos DB — это полностью управляемая платф�
 
 ![Иерархия учетной записи Azure Cosmos](./media/account-overview/hierarchy.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как управлять учетной записью Azure Cosmos и другими концепциями:
 

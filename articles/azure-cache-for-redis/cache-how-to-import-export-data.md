@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/31/2017
 ms.author: yegu
-ms.openlocfilehash: dfa8b47ced70386efa1daa44af318f1da55f49e1
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: fda366f631e392379bd52b4bba728d0373f3e75e
+ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60542345"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72756667"
 ---
 # <a name="import-and-export-data-in-azure-cache-for-redis"></a>Импорт и экспорт данных в кэше Azure для Redis
 Функция импорта и экспорта является операцией управления данными в кэше Azure для Redis, которая позволяет импортировать данные в кэш и экспортировать их оттуда путем импорта и экспорта моментального снимка базы данных кэша Azure для Redis (RDB) из кэша категории "Премиум" в большой двоичный объект в учетной записи службы хранилища Azure. 
@@ -36,7 +36,7 @@ ms.locfileid: "60542345"
 >
 >
 
-## <a name="import"></a>Импортировать
+## <a name="import"></a>Импорт
 Импорт можно использовать для переноса RDB-файлов, совместимых с Redis, с сервера Redis, запущенного в любом облаке или любой среде, включая Redis в Linux, Windows, или у любого поставщика облачных служб, такого как Amazon Web Services или другого. Импорт данных позволяет легко создать кэш, предварительно заполненный данными. Во время импорта кэш Azure для Redis загружает RDB-файлы из службы хранилища Azure в память, а затем вставляет в кэш ключи.
 
 > [!NOTE]
@@ -46,16 +46,16 @@ ms.locfileid: "60542345"
 
 1. Чтобы импортировать один или несколько экспортированных больших двоичных объектов кэша, [перейдите к кэшу](cache-configure.md#configure-azure-cache-for-redis-settings) на портале Azure и нажмите кнопку **Импорт данных** в **меню ресурсов**.
 
-    ![Импорт данных][cache-import-data]
+    ![Импорт данных](./media/cache-how-to-import-export-data/cache-import-data.png)
 2. Щелкните **Выберите BLOB-объекты** и выберите учетную запись хранения, содержащую данные для импорта.
 
-    ![Выбор учетной записи хранения][cache-import-choose-storage-account]
+    ![Выбор учетной записи хранения](./media/cache-how-to-import-export-data/cache-import-choose-storage-account.png)
 3. Щелкните контейнер, содержащий данные для импорта.
 
-    ![Выберите контейнер][cache-import-choose-container]
+    ![Выберите контейнер](./media/cache-how-to-import-export-data/cache-import-choose-container.png)
 4. Выберите один или несколько BLOB-объектов для импорта, щелкнув область слева от имени BLOB-объекта и выбрав пункт **Выбрать**.
 
-    ![Выберите BLOB-объекты][cache-import-choose-blobs]
+    ![Выберите BLOB-объекты](./media/cache-how-to-import-export-data/cache-import-choose-blobs.png)
 5. Щелкните **Импорт** для начала процесса импорта.
 
    > [!IMPORTANT]
@@ -63,36 +63,35 @@ ms.locfileid: "60542345"
    >
    >
 
-    ![Импортировать][cache-import-blobs]
+    ![Импорт](./media/cache-how-to-import-export-data/cache-import-blobs.png)
 
     Ход выполнения операции импорта можно отслеживать, выбирая уведомления на портале Azure или просматривая события в [журнале аудита](../azure-resource-manager/resource-group-audit.md).
 
-    ![Ход выполнения импорта][cache-import-data-import-complete]
+    ![Ход выполнения импорта](./media/cache-how-to-import-export-data/cache-import-data-import-complete.png)
 
 ## <a name="export"></a>Экспортировать
 Экспорт позволяет экспортировать данные, хранящиеся в кэше Azure для Redis, в RDB-файлы, совместимые с Redis. Эту функцию можно использовать для перемещения данных из одного экземпляра кэша Azure для Redis в другой или на другой сервер Redis. Во время экспорта на виртуальной машине, где размещается экземпляр сервера кэша Azure для Redis, создается временный файл, который отправляется в заданную учетную запись хранения. После успешного или неудачного завершения операции экспорта этот временный файл удаляется.
 
 1. Чтобы экспортировать текущее содержимое кэша в хранилище, [перейдите к кэшу](cache-configure.md#configure-azure-cache-for-redis-settings) на портале Azure и нажмите кнопку **Экспорт данных** в **меню ресурсов**.
 
-    ![Выберите контейнер хранилища][cache-export-data-choose-storage-container]
+    ![Выберите контейнер хранилища](./media/cache-how-to-import-export-data/cache-export-data-choose-storage-container.png)
 2. Щелкните **Выберите контейнер хранилища** и выберите требуемую учетную запись хранения. Эта учетная запись хранения должна относиться к той же подписке и тому же региону, что ваш кэш.
 
    > [!IMPORTANT]
-   > Функция экспорта работает со страничными BLOB-объектами, которые поддерживаются как классическими учетными записями хранения, так и учетными записями хранения Resource Manager, но пока не поддерживаются учетными записями хранения BLOB-объектов. Дополнительные сведения см. в статье [Общие сведения об учетной записи хранения Azure](../storage/common/storage-account-overview.md).
-   >
+   > Функция экспорта работает со страничными BLOB-объектами, которые поддерживаются как классическими учетными записями хранения, так и учетными записями хранения Resource Manager, но пока не поддерживаются учетными записями хранения BLOB-объектов. Дополнительные сведения см. в статье [Общие сведения об учетной записи хранения](../storage/common/storage-account-overview.md).
    >
 
-    ![Учетная запись хранения][cache-export-data-choose-account]
+    ![Учетная запись хранения](./media/cache-how-to-import-export-data/cache-export-data-choose-account.png)
 3. Выберите нужный контейнер BLOB-объектов и нажмите кнопку **Выбрать**. Чтобы использовать новый контейнер, щелкните **Добавить контейнер** и выберите его из списка.
 
-    ![Выберите контейнер хранилища][cache-export-data-container]
+    ![Выберите контейнер хранилища](./media/cache-how-to-import-export-data/cache-export-data-container.png)
 4. Введите значение **Префикс имени BLOB-объекта** и нажмите кнопку **Экспорт** для запуска процедуры экспорта. Префикс имени BLOB-объекта добавляется к именам файлов, создаваемых этой операцией экспорта.
 
-    ![Экспортировать][cache-export-data]
+    ![Экспортировать](./media/cache-how-to-import-export-data/cache-export-data.png)
 
     Ход выполнения операции экспорта можно отслеживать, выбирая уведомления на портале Azure или просматривая события в [журнале аудита](../azure-resource-manager/resource-group-audit.md).
 
-    ![Экспорт данных завершен][cache-export-data-export-complete]
+    ![Экспорт данных завершен](./media/cache-how-to-import-export-data/cache-export-data-export-complete.png)
 
     Во время экспорта кэши остаются доступными для использования.
 
@@ -146,7 +145,7 @@ ms.locfileid: "60542345"
 Функция импорта и экспорта позволяет перенести данные в кэш Azure для Redis или экспортировать их оттуда. Она не осуществляет настройку резервного копирования использует для восстановления механизм сохраняемости Redis.
 
 ### <a name="can-i-automate-importexport-using-powershell-cli-or-other-management-clients"></a>Можно ли автоматизировать функцию импорта/экспорта с помощью PowerShell, интерфейса командной строки или других клиентов управления?
-Да, инструкции для PowerShell см. в разделах [Импорт кэша Azure для Redis](cache-howto-manage-redis-cache-powershell.md#to-import-an-azure-cache-for-redis) и [Экспорт кэша Azure для Redis](cache-howto-manage-redis-cache-powershell.md#to-export-an-azure-cache-for-redis).
+Да, инструкции для PowerShell см. в разделах [Импорт кэша Azure для Redis](cache-how-to-manage-redis-cache-powershell.md#to-import-an-azure-cache-for-redis) и [Экспорт кэша Azure для Redis](cache-how-to-manage-redis-cache-powershell.md#to-export-an-azure-cache-for-redis).
 
 ### <a name="i-received-a-timeout-error-during-my-importexport-operation-what-does-it-mean"></a>Во время операции импорта/экспорта возникла ошибка времени ожидания. Что это означает?
 Если перед запуском операции вы находитесь в колонке **Импорт данных** или **Экспорт данных** дольше 15 минут, то появится сообщение об ошибке следующего вида:
@@ -156,23 +155,9 @@ ms.locfileid: "60542345"
 Чтобы устранить эту проблему, запустите операцию импорта или экспорта до истечения 15 минут.
 
 ### <a name="i-got-an-error-when-exporting-my-data-to-azure-blob-storage-what-happened"></a>При экспорте данных в хранилище BLOB-объектов возникает ошибка. Что произошло?
-Функция экспорта работает только с RDB-файлами, сохраненными в виде страничных BLOB-объектов. Другие типы BLOB-объектов пока не поддерживаются, включая учетные записи хранилища BLOB-объектов с "горячим" и "холодным" уровнями. Дополнительные сведения см. в статье [Общие сведения об учетной записи хранения Azure](../storage/common/storage-account-overview.md).
+Функция экспорта работает только с RDB-файлами, сохраненными в виде страничных BLOB-объектов. Другие типы BLOB-объектов пока не поддерживаются, включая учетные записи хранилища BLOB-объектов с "горячим" и "холодным" уровнями. Дополнительные сведения см. в статье [Общие сведения об учетной записи хранения](../storage/common/storage-account-overview.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Узнайте, как использовать расширенные функции кэша.
 
-* [Общие сведения о кэше Azure для Redis уровня "Премиум"](cache-premium-tier-intro.md)    
-
-<!-- IMAGES -->
-[cache-settings-import-export-menu]: ./media/cache-how-to-import-export-data/cache-settings-import-export-menu.png
-[cache-export-data-choose-account]: ./media/cache-how-to-import-export-data/cache-export-data-choose-account.png
-[cache-export-data-choose-storage-container]: ./media/cache-how-to-import-export-data/cache-export-data-choose-storage-container.png
-[cache-export-data-container]: ./media/cache-how-to-import-export-data/cache-export-data-container.png
-[cache-export-data-export-complete]: ./media/cache-how-to-import-export-data/cache-export-data-export-complete.png
-[cache-export-data]: ./media/cache-how-to-import-export-data/cache-export-data.png
-[cache-import-data]: ./media/cache-how-to-import-export-data/cache-import-data.png
-[cache-import-choose-storage-account]: ./media/cache-how-to-import-export-data/cache-import-choose-storage-account.png
-[cache-import-choose-container]: ./media/cache-how-to-import-export-data/cache-import-choose-container.png
-[cache-import-choose-blobs]: ./media/cache-how-to-import-export-data/cache-import-choose-blobs.png
-[cache-import-blobs]: ./media/cache-how-to-import-export-data/cache-import-blobs.png
-[cache-import-data-import-complete]: ./media/cache-how-to-import-export-data/cache-import-data-import-complete.png
+* [Общие сведения о кэше Azure для Redis уровня "Премиум"](cache-premium-tier-intro.md)

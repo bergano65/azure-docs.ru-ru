@@ -1,18 +1,18 @@
 ---
 title: Шифрование неактивных данных в Azure Cosmos DB
 description: Узнайте, как Azure Cosmos DB обеспечивает шифрование неактивных данных и как реализовать его.
-author: rimman
+author: markjbrown
+ms.author: sngun
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/23/2019
-ms.author: sngun
 ms.custom: seodec18
-ms.openlocfilehash: f406f008e2c377b39deb8d151855ce7315616701
-ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
+ms.openlocfilehash: a9e89336973b0b13544c5bc0bccec41652c6952e
+ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69616859"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72755104"
 ---
 # <a name="data-encryption-in-azure-cosmos-db"></a>Шифрование данных в Azure Cosmos DB 
 
@@ -36,7 +36,7 @@ ms.locfileid: "69616859"
 
 ## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 
-### <a name="q-how-much-more-does-azure-storage-cost-if-storage-service-encryption-is-enabled"></a>Вопрос. Насколько дороже обходится служба хранилища Azure с включенной функцией "Шифрование службы хранилища"?
+### <a name="q-how-much-more-does-azure-storage-cost-if-storage-service-encryption-is-enabled"></a>Вопрос. Насколько дороже обходится служба хранилища Azure с включенным шифрованием службы хранилища?
 Ответ. Дополнительные затраты не требуются.
 
 ### <a name="q-who-manages-the-encryption-keys"></a>Вопрос. Кто управляет ключами шифрования?
@@ -54,10 +54,10 @@ ms.locfileid: "69616859"
 ### <a name="q-does-encryption-affect-the-performance-latency-and-throughput-slas"></a>Вопрос. Влияет ли шифрование на пропускную способность и задержку производительности, определенные соглашениями об уровне обслуживания?
 Ответ. Нет, не влияет, так как шифрование при хранении включено для всех имеющихся или новых учетных записей. Дополнительные сведения об актуальных гарантиях см. на странице [соглашения об уровне обслуживания для Cosmos DB](https://azure.microsoft.com/support/legal/sla/cosmos-db).
 
-### <a name="q-does-the-local-emulator-support-encryption-at-rest"></a>Вопрос. Поддерживает ли локальный эмулятор шифрование неактивных данных?
+### <a name="q-does-the-local-emulator-support-encryption-at-rest"></a>Вопрос. Поддерживает ли локальный эмулятор шифрование при хранении?
 Ответ. Эмулятор — это изолированное средство разработки и тестирования, которое не использует службы управления ключами, применяемые управляемой службой Cosmos DB. Мы советуем включить BitLocker на дисках, где хранятся конфиденциальные тестовые данные эмулятора. [Эмулятор поддерживает изменение каталога данных по умолчанию](local-emulator.md), а также использование известного расположения.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Общие сведения о Cosmos DB безопасности и последних улучшениях см. в статье [безопасность базы данных Azure Cosmos](database-security.md).
 Дополнительные сведения о сертификатах Майкрософт см. в [центре управления безопасностью Azure](https://azure.microsoft.com/support/trust-center/).

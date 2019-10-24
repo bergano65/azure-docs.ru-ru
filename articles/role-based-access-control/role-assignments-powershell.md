@@ -14,12 +14,12 @@ ms.workload: identity
 ms.date: 09/11/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 4eaf59200295a25498d3c8b84196e73a703b055d
-ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
-ms.translationtype: MT
+ms.openlocfilehash: 5a6ed66efa0f73f957c3acb048136a5328f9c264
+ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70995252"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72750171"
 ---
 # <a name="manage-access-to-azure-resources-using-rbac-and-azure-powershell"></a>Управление доступом к ресурсам Azure с помощью RBAC и Azure PowerShell
 
@@ -27,7 +27,7 @@ ms.locfileid: "70995252"
 
 [!INCLUDE [az-powershell-update](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для управления доступом необходим один из следующих инструментов:
 
@@ -239,7 +239,7 @@ PS C:\> Get-AzRoleAssignment -Scope /providers/Microsoft.Management/managementGr
 Get-AzRoleAssignment -IncludeClassicAdministrators
 ```
 
-## <a name="grant-access"></a>Разрешить доступ
+## <a name="grant-access"></a>Предоставление доступа
 
 При использовании RBAC, чтобы предоставить доступ, нужно создать назначение ролей.
 
@@ -310,7 +310,7 @@ CanDelegate        : False
 New-AzRoleAssignment -ObjectId <object_id> -RoleDefinitionId <role_id> -ResourceGroupName <resource_group_name>
 ```
 
-В следующем примере роль *alain@example.com* [участника виртуальной машины](built-in-roles.md#virtual-machine-contributor) назначается пользователю в области группы ресурсов *Pharma-Sales* . Чтобы получить уникальный идентификатор роли, можно использовать [Get-азроледефинитион](/powershell/module/az.resources/get-azroledefinition) или ознакомиться со [встроенными ролями для ресурсов Azure](built-in-roles.md).
+В следующем примере роль [участника виртуальной машины](built-in-roles.md#virtual-machine-contributor) назначается *alain@example.com* пользователю в области группы ресурсов *Pharma-Sales* . Чтобы получить уникальный идентификатор роли, можно использовать [Get-азроледефинитион](/powershell/module/az.resources/get-azroledefinition) или ознакомиться со [встроенными ролями для ресурсов Azure](built-in-roles.md).
 
 ```Example
 PS C:\> New-AzRoleAssignment -ObjectId 44444444-4444-4444-4444-444444444444 -RoleDefinitionId 9980e02c-c2be-4d73-94e8-173b1dc7cf3c -Scope /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/pharma-sales
@@ -401,11 +401,11 @@ ObjectType         : User
 CanDelegate        : False
 ```
 
-## <a name="remove-access"></a>Remove access
+## <a name="remove-access"></a>Запрет доступа
 
 Для удаления доступа в RBAC нужно удалить назначение ролей с помощью командлета [Remove-AzRoleAssignment](/powershell/module/az.resources/remove-azroleassignment).
 
-В следующем примере удаляется назначение роли *участника виртуальной машины* из пользователя *(Alain\@example.com* в группе ресурсов *Pharma-Sales* .
+В следующем примере удаляется назначение роли *участника виртуальной машины* из пользователя *(Alain \@example. com* в группе ресурсов *Pharma-Sales* .
 
 ```Example
 PS C:\> Remove-AzRoleAssignment -SignInName alain@example.com -RoleDefinitionName "Virtual Machine Contributor" -ResourceGroupName pharma-sales
@@ -423,10 +423,10 @@ Remove-AzRoleAssignment -ObjectId <object_id> -RoleDefinitionName <role_name> -S
 Remove-AzRoleAssignment -ObjectId <object_id> -RoleDefinitionName <role_name> -Scope /providers/Microsoft.Management/managementGroups/<group_id>
 ```
 
-Если появляется сообщение об ошибке: "Предоставленные сведения не сопоставляются с назначением ролей", убедитесь, что также указаны `-Scope` параметры или. `-ResourceGroupName` Дополнительные сведения см. в статье [Устранение неполадок RBAC для ресурсов Azure](troubleshooting.md#role-assignments-without-a-security-principal).
+При появление сообщения об ошибке "предоставленные сведения не сопоставлены с назначением ролей" убедитесь, что также заданы параметры `-Scope` или `-ResourceGroupName`. Дополнительные сведения см. в статье [Устранение неполадок RBAC для ресурсов Azure](troubleshooting.md#role-assignments-with-unknown-security-principal).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Учебник. Предоставление доступа группе к ресурсам Azure с помощью RBAC и Azure PowerShell](tutorial-role-assignments-group-powershell.md)
-- [Учебник. Создание пользовательской роли для ресурсов Azure с помощью Azure PowerShell](tutorial-custom-role-powershell.md)
+- [Руководство. Предоставление группе доступа к ресурсам Azure с помощью RBAC и Azure PowerShell](tutorial-role-assignments-group-powershell.md)
+- [Руководство. Создание настраиваемой роли для ресурсов Azure с помощью Azure PowerShell](tutorial-custom-role-powershell.md)
 - [Управление ресурсами с помощью Azure PowerShell](../azure-resource-manager/manage-resources-powershell.md)

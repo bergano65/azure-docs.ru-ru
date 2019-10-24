@@ -14,30 +14,30 @@ ms.tgt_pltfrm: cache
 ms.workload: tbd
 ms.date: 07/05/2017
 ms.author: yegu
-ms.openlocfilehash: bb7b9a41523ab1b1addbf37cb7b463f12a72a814
-ms.sourcegitcommit: b4665f444dcafccd74415fb6cc3d3b65746a1a31
+ms.openlocfilehash: afb48c18f9690e77a5478956e1147acf850290ab
+ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72263662"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72756617"
 ---
 # <a name="how-to-administer-azure-cache-for-redis"></a>Администрирование кэша Redis для Azure
 В этом разделе описывается выполнение задач администрирования, таких как [перезагрузка](#reboot) и [планирование обновлений](#schedule-updates) для экземпляров кэша Redis для Azure.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="reboot"></a>Перезагрузка
+## <a name="reboot"></a>Reboot
 Колонка **Перезагрузка** позволяет перезагрузить один или несколько узлов кэша. Функция перезагрузки дает возможность протестировать приложение на устойчивость в случае сбоя узла кэша.
 
-![Перезагрузка](./media/cache-administration/redis-cache-administration-reboot.png)
+![Reboot](./media/cache-administration/redis-cache-administration-reboot.png)
 
 Выберите узлы, которые нужно перезагрузить, и щелкните **Перезагрузить**.
 
-![Перезагрузка](./media/cache-administration/redis-cache-reboot.png)
+![Reboot](./media/cache-administration/redis-cache-reboot.png)
 
 Если у вас кэш уровня "Премиум" с включенной кластеризацией, то вы можете выбрать сегменты кэша для перезагрузки.
 
-![Перезагрузка](./media/cache-administration/redis-cache-reboot-cluster.png)
+![Reboot](./media/cache-administration/redis-cache-reboot-cluster.png)
 
 Чтобы перезагрузить один или несколько узлов кэша, выберите необходимые узлы и нажмите кнопку **Перезагрузить**. Если у вас кэш уровня "Премиум" с включенной кластеризацией, то выберите сегменты, требующие перезагрузки, и нажмите кнопку **Перезагрузить**. Через несколько минут выбранные узлы перезагружаются, а еще через несколько минут — возобновляют работу.
 
@@ -71,16 +71,16 @@ ms.locfileid: "72263662"
 Если перезагрузить только один из узлов, то, как правило, данные не теряются, но это все же может произойти. Например, если перезагрузить главный узел в то время, когда выполняется запись в кэш, то данные кэша будут потеряны. Данные также могут быть утеряны, если вы перезагрузите один узел, а другой узел случайно выйдет из строя в то же время. Дополнительные сведения о возможных причинах потери данных см. в статье [What happened to my data in Redis?](https://gist.github.com/JonCole/b6354d92a2d51c141490f10142884ea4#file-whathappenedtomydatainredis-md) (Что произошло с моими данными в Redis?).
 
 ### <a name="can-i-reboot-my-cache-using-powershell-cli-or-other-management-tools"></a>Можно ли перезагрузить кэш с помощью PowerShell, интерфейса командной строки или других средств управления?
-Да, инструкции по использованию PowerShell см. в разделе, посвященном [перезагрузке кэша Redis для Azure](cache-howto-manage-redis-cache-powershell.md#to-reboot-an-azure-cache-for-redis).
+Да, инструкции по использованию PowerShell см. в разделе, посвященном [перезагрузке кэша Redis для Azure](cache-how-to-manage-redis-cache-powershell.md#to-reboot-an-azure-cache-for-redis).
 
-## <a name="schedule-updates"></a>Планирование обновлений
+## <a name="schedule-updates"></a>запланировать обновления
 Колонка **обновления в расписании** позволяет указать период обслуживания для экземпляра кэша. Если задан период обслуживания, то любые обновления сервера Redis выполняются в этот период. 
 
 > [!NOTE] 
 > Данный период обслуживания относится только к обновлениям сервера Redis, а не ко всем обновлениям Azure или операционной системы виртуальных машин, на которых размещен кэш.
 >
 
-![Планирование обновлений](./media/cache-administration/redis-schedule-updates.png)
+![запланировать обновления](./media/cache-administration/redis-schedule-updates.png)
 
 Чтобы задать период обслуживания, отметьте необходимые дни и укажите, когда будет начинаться период обслуживания в каждый из дней, а затем нажмите кнопку **ОК**. Обратите внимание, что время периода обслуживания указывается в формате UTC. 
 
@@ -105,6 +105,6 @@ ms.locfileid: "72263662"
 * [New-AzRedisCacheScheduleEntry](/powershell/module/az.rediscache/new-azrediscachescheduleentry);
 * [Remove-AzRedisCachePatchSchedule](/powershell/module/az.rediscache/remove-azrediscachepatchschedule).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте больше о возможностях [кэша Redis для Azure ценовой категории "Премиум"](cache-premium-tier-intro.md).
 
