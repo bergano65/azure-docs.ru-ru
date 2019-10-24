@@ -1,17 +1,17 @@
 ---
 title: Оптимизация затрат на операции чтения и записи в Azure Cosmos DB
 description: В этой статье описано, как сократить расходы на Azure Cosmos DB, связанные с выполнением операций чтения и записи данных.
-author: rimman
+author: markjbrown
+ms.author: mjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/21/2019
-ms.author: rimman
-ms.openlocfilehash: 13ce5ee8b0e2a5d9cc84ea1a408ebba152b46050
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 934853b80c6e6377923df4c2b5cce7b7d7d57d7c
+ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65967407"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72754930"
 ---
 # <a name="optimize-reads-and-writes-cost-in-azure-cosmos-db"></a>Оптимизация затрат на выполнения операций чтения и записи в Azure Cosmos DB
 
@@ -48,11 +48,11 @@ Azure Cosmos DB гарантирует прогнозируемую произв
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Теперь вы можете перейти к подробным сведениям об оптимизации затрат в Azure Cosmos DB, которые представлены в следующих статьях.
+Теперь вы можете перейти к изучению оптимизации затрат в Azure Cosmos DB в следующих статьях:
 
-* Дополнительные сведения [об оптимизации для разработки и тестирования](optimize-dev-test.md).
-* Дополнительные сведения о [расшифровке счета Azure Cosmos DB](understand-your-bill.md)
-* Дополнительные сведения об [оптимизации расходов на пропускную способность](optimize-cost-throughput.md)
-* Дополнительные сведения [об оптимизации расходов на хранилище](optimize-cost-storage.md).
-* Дополнительные сведения [об оптимизации расходов на запросы](optimize-cost-queries.md).
+* [Оптимизация для разработки и тестирования в Azure Cosmos DB](optimize-dev-test.md)
+* Дополнительные сведения о [расшифровке счета за использование Azure Cosmos DB](understand-your-bill.md).
+* [Optimizing throughput cost in Azure Cosmos DB](optimize-cost-throughput.md) (Оптимизация затрат на пропускную способность в Azure Cosmos DB)
+* Дополнительные сведения об [оптимизации затрат на хранилище](optimize-cost-storage.md).
+* Дополнительные сведения об [оптимизации затрат на запросы](optimize-cost-queries.md).
 * Дополнительные сведения об [оптимизации затрат на учетные записи Azure Cosmos с поддержкой нескольких регионов](optimize-cost-regions.md).

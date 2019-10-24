@@ -3,39 +3,39 @@ title: Основные понятия проверок, рабочих проц
 titleSuffix: Azure Cognitive Services
 description: Сведения о проверках, рабочих процессах и заданиях
 services: cognitive-services
-author: sanjeev3
+author: PatrickFarley
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
 ms.topic: conceptual
 ms.date: 03/14/2019
-ms.author: sajagtap
-ms.openlocfilehash: a77b93c46c9989181cf4473e8b908571a3df2f20
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.author: pafarley
+ms.openlocfilehash: 0050e2b687b6001514d1ae80c269b1a0499efbea
+ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68565548"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72757293"
 ---
 # <a name="content-moderation-reviews-workflows-and-jobs"></a>Обзоры, рабочие процессы и задания для контроля содержимого
 
 Content Moderator сочетает ролевую поддержку с возможностями "от человека", чтобы создать оптимальный процесс контроля для реальных сценариев. Это делается с помощью облачного [средства проверки](https://contentmoderator.cognitive.microsoft.com). В этом руководство вы узнаете об основных понятиях средства проверки: обзоры, рабочие процессы и задания.
 
-## <a name="reviews"></a>Отзывы
+## <a name="reviews"></a>Проверки
 
 В ходе проверки содержимое загружается в средство проверки и отображается на вкладке " **Проверка** ". Отсюда пользователи могут изменять примененные Теги и применять собственные пользовательские теги. Когда пользователь отправляет отзыв, результаты отправляются в указанную конечную точку обратного вызова, а содержимое удаляется с сайта.
 
 ![Открыть веб-сайт средства проверки в браузере на вкладке "Проверка"](./Review-Tool-user-Guide/images/image-workflow-review.png)
 
-Дополнительные сведения о том, как это сделать, см. в разделе Руководство по ознакомлению с [руководством](./review-tool-user-guide/review-moderated-images.md) по [REST API](./try-review-api-review.md) .
+Дополнительные сведения о том, как это сделать, см. в разделе [руководство по ознакомлению с руководством](./review-tool-user-guide/review-moderated-images.md) по [REST API](./try-review-api-review.md) .
 
-## <a name="workflows"></a>Workflows
+## <a name="workflows"></a>Рабочие процессы
 
 Рабочий процесс — это настроенный в облаке настраиваемый фильтр содержимого. Рабочие процессы могут подключаться к различным службам для фильтрации содержимого различными способами, а затем предпринимать соответствующие действия. С помощью соединителя Content Moderator рабочий процесс может автоматически применять теги контроля и создавать рецензии с помощью отправленного содержимого.
 
 ### <a name="view-workflows"></a>Просмотр рабочих процессов
 
-Чтобы просмотреть существующие рабочие процессы, перейдите к [средству проверки](https://contentmoderator.cognitive.microsoft.com/) и выберите **Параметры** > **рабочие процессы**.
+Чтобы просмотреть существующие рабочие процессы, перейдите к [средству проверки](https://contentmoderator.cognitive.microsoft.com/) и выберите **Параметры**  > **рабочие процессы**.
 
 ![Рабочий процесс по умолчанию](images/default-workflow-listed.PNG)
 
@@ -64,7 +64,7 @@ Content Moderator сочетает ролевую поддержку с возм
 }
 ```
 
-Чтобы приступить к созданию и использованию рабочих процессов, см. [Руководство](./review-tool-user-guide/workflows.md) по [REST API](./try-review-api-workflow.md) , чтобы узнать, как это сделать программным способом.
+[Чтобы](./review-tool-user-guide/workflows.md) приступить к созданию и использованию рабочих процессов, см. руководство по [REST API](./try-review-api-workflow.md) , чтобы узнать, как это сделать программным способом.
 
 ## <a name="jobs"></a>Задания
 
@@ -72,7 +72,7 @@ Content Moderator сочетает ролевую поддержку с возм
 
 Чтобы приступить к работе с заданиями, ознакомьтесь с [руководством по REST API](./try-review-api-job.md) .
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Проверьте в работе [консоль API заданий](try-review-api-job.md) и примеры кода для REST API. Также изучите [краткое руководство по работе с заданиями с помощью .NET](moderation-jobs-quickstart-dotnet.md), если вы уже знакомы с Visual Studio и C#. 
 * Чтобы использовать проверки, начните работу с [консолью API проверки](try-review-api-review.md) и воспользуйтесь примерами кода для REST API. Затем изучите [краткое руководство по работе с проверками с помощью .NET](moderation-reviews-quickstart-dotnet.md).

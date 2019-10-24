@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/17/2018
 ms.author: spelluru
-ms.openlocfilehash: 5d7665cbfdf855e194f61910f0c8ee2bce5469b1
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 1555eb4e48a0cf43a38aa811e20ffbbed8ee87a9
+ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60311734"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72755815"
 ---
 # <a name="add-a-git-repository-to-store-custom-artifacts-and-resource-manager-templates"></a>Добавление репозитория Git для хранения пользовательских артефактов и шаблонов Resource Manager
 
@@ -30,7 +30,7 @@ ms.locfileid: "60311734"
 При создании виртуальной машины можно сохранить шаблон Resource Manager, при необходимости настроить его, а затем использовать для создания дополнительных виртуальных машин. Нужно создать собственный частный репозиторий для хранения настраиваемых шаблонов Resource Manager.  
 
 * Сведения о создании репозитория GitHub см. в [этой статье](https://help.github.com/categories/bootcamp/).
-* Узнайте, как создать проект Azure DevOps Services с репозиторием Git, см. в разделе [подключение к службам Azure DevOps](https://www.visualstudio.com/get-started/setup/connect-to-visual-studio-online).
+* Чтобы узнать, как создать проект Azure DevOps Services с репозиторием Git, см. раздел [Подключение к Azure DevOps Services](https://www.visualstudio.com/get-started/setup/connect-to-visual-studio-online).
 
 Вот как может выглядеть содержащий артефакты репозиторий в GitHub:  
 
@@ -65,7 +65,7 @@ ms.locfileid: "60311734"
    1. Введите **описание** маркера.
    2. В списке **Срок действия истекает через** выберите **180 дней**.
    3. В списке **Учетные записи** выберите **Все доступные учетные записи**.
-   4. Выберите **Все области**.
+   4. Выберите параметр **только чтение** .
    5. Щелкните **Создать маркер**.
 9. Новый маркер появится в списке **Личные маркеры доступа**. Выберите **Скопировать маркер**и сохраните значение маркера, так как оно вам потребуется позднее.
 10. Перейдите к разделу [Подключение лаборатории к репозиторию](#connect-your-lab-to-the-repository).

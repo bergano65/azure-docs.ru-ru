@@ -1,17 +1,17 @@
 ---
 title: Оптимизация затрат на хранение в Azure Cosmos DB
 description: В этой статье описывается управление затратами на хранение данных в Azure Cosmos DB
-author: rimman
+author: markjbrown
+ms.author: mjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/21/2019
-ms.author: rimman
-ms.openlocfilehash: 2955df266bcf164ce4a155acc5209679eff0ce8a
-ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
+ms.openlocfilehash: 1508adda761fcba7ba70df3bb212d3eb4e32f242
+ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69615006"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72754942"
 ---
 # <a name="optimize-storage-cost-in-azure-cosmos-db"></a>Оптимизация затрат на хранение в Azure Cosmos DB
 
@@ -50,14 +50,14 @@ ResourceResponse<DocumentCollection> collectionInfo = await client.ReadDocumentC
 Console.WriteLine("Item size quota: {0}, usage: {1}", collectionInfo.DocumentQuota, collectionInfo.DocumentUsage);
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Теперь вы можете перейти к подробным сведениям об оптимизации затрат в Azure Cosmos DB, которые представлены в следующих статьях.
+Теперь вы можете перейти к изучению оптимизации затрат в Azure Cosmos DB в следующих статьях:
 
-* Дополнительные сведения [об оптимизации для разработки и тестирования](optimize-dev-test.md).
-* Дополнительные сведения о [расшифровке счета Azure Cosmos DB](understand-your-bill.md)
-* Дополнительные сведения об [оптимизации расходов на пропускную способность](optimize-cost-throughput.md).
-* Дополнительные сведения об [оптимизации затрат на операции чтения и записи](optimize-cost-reads-writes.md).
+* [Оптимизация для разработки и тестирования в Azure Cosmos DB](optimize-dev-test.md)
+* Дополнительные сведения о [расшифровке счета за использование Azure Cosmos DB](understand-your-bill.md).
+* [Optimizing throughput cost in Azure Cosmos DB](optimize-cost-throughput.md) (Оптимизация затрат на пропускную способность в Azure Cosmos DB)
+* Дополнительные сведения об [оптимизации расходов на операции чтения и записи](optimize-cost-reads-writes.md)
 * Дополнительные сведения об [оптимизации затрат на запросы](optimize-cost-queries.md).
 * Дополнительные сведения об [оптимизации затрат на учетные записи Azure Cosmos с поддержкой нескольких регионов](optimize-cost-regions.md).
 

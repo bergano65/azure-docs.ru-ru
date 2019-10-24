@@ -3,19 +3,19 @@ title: Проверка текста с помощью списка пользо
 titleSuffix: Azure Cognitive Services
 description: Узнайте, как модерировать текст с помощью настраиваемых списков терминов, используя пакет SDK Azure Content Moderator для C#.
 services: cognitive-services
-author: sanjeev3
+author: PatrickFarley
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
 ms.topic: conceptual
 ms.date: 07/03/2019
-ms.author: sajagtap
-ms.openlocfilehash: d1c2f8b06d333be23f25a2d150c23269bf84cd2e
-ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
+ms.author: pafarley
+ms.openlocfilehash: 272063c3fcc77c76536dbd007b1ab0132a565e61
+ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72242832"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72757264"
 ---
 # <a name="check-text-against-a-custom-term-list-in-c"></a>Проверка текста с помощью списка пользовательских терминов на C#
 
@@ -40,9 +40,9 @@ ms.locfileid: "72242832"
 
 ## <a name="create-your-visual-studio-project"></a>Создание проекта Visual Studio
 
-1. Добавьте новый проект **Консольное приложение (.NET Framework)** в свое решение.
+1. Добавьте в свое решение новый проект **Консольное приложение (.NET Framework)** .
 
-1. Присвойте проекту имя **TermLists**. Выберите этот проект в качестве единственного запускаемого проекта для решения.
+1. Присвойте проекту имя **TermLists**. Выберите этот проект единственным запускаемым проектом для решения.
 
 ### <a name="install-required-packages"></a>Установка необходимых пакетов
 
@@ -53,7 +53,7 @@ ms.locfileid: "72242832"
 - Microsoft.Rest.ClientRuntime.Azure
 - Newtonsoft.Json.
 
-### <a name="update-the-programs-using-statements"></a>Обновление инструкций using в программе
+### <a name="update-the-programs-using-statements"></a>Обновление инструкций using программы
 
 Добавьте следующие операторы `using`.
 
@@ -69,7 +69,7 @@ using System.Threading;
 
 ### <a name="create-the-content-moderator-client"></a>Создание клиента Content Moderator
 
-Добавьте следующий фрагмент кода, чтобы создать клиент Content Moderator для своей подписки.
+Чтобы создать для своей подписки клиент Content Moderator, добавьте следующий фрагмент кода.
 
 > [!IMPORTANT]
 > Укажите в полях **AzureRegion** и **CMSubscriptionKey** значения идентификатора региона и ключа подписки соответственно.
@@ -274,7 +274,7 @@ static void RefreshSearchIndex (ContentModeratorClient client, string list_id)
 - Тип MIME: "text/html", "text/xml", "text/markdown" или "text/plain".
 - Текст для проверки.
 - Логическое значение. Задайте для этого поля значение **true**, чтобы выполнить автозамену в тексте перед проверкой.
-- Логическое значение. Задайте для этого поля значение **true**, чтобы распознавать в тексте личные сведения.
+- Логическое значение. Задайте для этого поля **значение true** , чтобы определить персональные данные в тексте.
 - Идентификатор списка терминов.
 
 Дополнительные сведения см. в [справочнике по API](https://westus2.dev.cognitive.microsoft.com/docs/services/57cf753a3f9b070c105bd2c1/operations/57cf753a3f9b070868a1f66f).
@@ -446,6 +446,6 @@ Deleting term list with ID 252.
 Press ENTER to close the application.
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Получите [пакет SDK Content Moderator для .NET](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/) и [решение Visual Studio](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/ContentModerator) для выполнения инструкций из этого и других кратких руководств по Content Moderator для .NET и приступите к интеграции.

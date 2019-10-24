@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.reviewer: mbullwin
 ms.date: 10/03/2019
 ms.author: dalek
-ms.openlocfilehash: 4674dede5912dc1dc64bd0e092e28461f30bebcd
-ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
-ms.translationtype: MT
+ms.openlocfilehash: f9d92f03b1f55ad9d1f1e272886095ae48033266
+ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72554225"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72750394"
 ---
 # <a name="manage-usage-and-costs-for-application-insights"></a>Управление использованием и затратами для Application Insights
 
@@ -45,7 +45,7 @@ Application Insights предназначен для получения всех
 
 При [адаптивной выборки](https://docs.microsoft.com/azure/azure-monitor/app/sampling#adaptive-sampling-in-your-aspnetaspnet-core-web-applications)пакета SDK для ASP.NET объем данных корректируется автоматически, чтобы он оставался в пределах заданного максимального уровня трафика для мониторинга Application Insights по умолчанию. Если приложение создает небольшой объем данных телеметрии, например при отладке или из-за низкого уровня использования, то элементы не будут удаляться процессором выборки, если том находится ниже настроенных событий в секунду. Для приложения большого объема с пороговым значением по умолчанию 5 событий в секунду Адаптивная выборка будет ограничивать число ежедневных событий до 432 000. При стандартном среднем размере событий, равном 1 КБ, это соответствует 13,4 ГБ данных телеметрии за 31-дневный месяц на каждом узле, где размещается ваше приложение (поскольку выборка выполняется локально для каждого узла). 
 
-Для пакетов SDK, которые не поддерживают адаптивную выборку, можно использовать [выборку](https://docs.microsoft.com/azure/azure-monitor/app/sampling#ingestion-sampling) , которая выбирается при получении данных Application Insights в зависимости от процента данных для удержания или с [фиксированной частотой для ASP.NET, ASP.NET Core и Java. ](https://docs.microsoft.com/azure/azure-monitor/app/sampling#fixed-rate-sampling-for-aspnet-aspnet-core-and-java-websites)веб-сайты для уменьшения трафика, отправляемого с веб-сервера и веб-браузеров
+Для пакетов SDK, которые не поддерживают адаптивную выборку, можно использовать [выборку](https://docs.microsoft.com/azure/azure-monitor/app/sampling#ingestion-sampling) , которая выбирается при получении данных Application Insights в зависимости от процента данных для удержания или с [фиксированной частотой для ASP.NET, ASP.NET Core и Java. ](https://docs.microsoft.com/azure/azure-monitor/app/sampling#fixed-rate-sampling-for-aspnet-aspnet-core-java-websites-and-python-applications)веб-сайты для уменьшения трафика, отправляемого с веб-сервера и веб-браузеров
 
 ### <a name="learn-from-what-similar-customers-collect"></a>Узнайте, какие аналогичные клиенты собираются
 
@@ -164,7 +164,7 @@ systemEvents
 
 ## <a name="change-the-data-retention-period"></a>Изменение срока хранения данных
 
-Срок хранения по умолчанию для ресурсов Application Insights составляет 90 дней. Для каждого Application Insightsного ресурса можно выбрать разные периоды хранения. Полный набор доступных периодов хранения составляет 30, 60, 90, 120, 180, 270, 365, 550 или 730 дней. 
+Срок хранения по умолчанию для ресурсов Application Insights составляет 90 дней. Для каждого ресурса Application Insights можно выбрать отдельный период хранения. Полный набор доступных периодов хранения составляет 30, 60, 90, 120, 180, 270, 365, 550 или 730 дней. 
 
 Чтобы изменить период удержания, в ресурсе Application Insights перейдите на страницу **использование и предполагаемые затраты** и выберите параметр **хранения данных** :
 

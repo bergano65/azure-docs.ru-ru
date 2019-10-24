@@ -1,5 +1,5 @@
 ---
-title: Доменные службы Azure Active Directory. Развертывание AD Application Proxy Azure | Документация Майкрософт
+title: Развертывание AD Application Proxy Azure для доменных служб Azure AD | Документация Майкрософт
 description: Использование прокси приложения Azure AD в управляемых доменах доменных служб Azure Active Directory
 services: active-directory-ds
 documentationcenter: ''
@@ -15,17 +15,17 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/14/2019
 ms.author: iainfou
-ms.openlocfilehash: 21693926bae681cf15d31dca06344dfa5d865e3b
-ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
+ms.openlocfilehash: 80c3b2120a617e5c4c0f8de252b9436753fea011
+ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69613013"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72754404"
 ---
 # <a name="deploy-azure-ad-application-proxy-on-an-azure-ad-domain-services-managed-domain"></a>Развертывание прокси приложения Azure AD в управляемых доменах доменных служб Azure AD
 Прокси приложения Azure Active Directory помогает организовать удаленную работу сотрудников, публикуя локальные приложения для доступа через Интернет. С помощью доменных служб Azure AD теперь можно переносить устаревшие локальные приложения в службы инфраструктуры Azure. Затем эти приложения можно опубликовать с помощью прокси приложения Azure AD, чтобы обеспечить безопасный удаленный доступ для пользователей в вашей организации.
 
-Если вы еще не знакомы с Azure Active Directory Application Proxy AD, узнайте, что это за компонент, из статьи [Как обеспечить безопасный удаленный доступ к локальным приложениям](../active-directory/manage-apps/application-proxy.md).
+Если вы еще не знакомы с прокси приложения Azure AD, узнайте, [как обеспечить безопасный удаленный доступ к локальным приложениям](../active-directory/manage-apps/application-proxy.md).
 
 [!INCLUDE [active-directory-ds-prerequisites.md](../../includes/active-directory-ds-prerequisites.md)]
 
@@ -93,9 +93,9 @@ ms.locfileid: "69613013"
 ## <a name="next-steps"></a>Следующие шаги
 После этого прокси приложения Azure AD настроен и интегрирован в управляемый домен доменных служб Azure AD.
 
-* **Перенос приложений на виртуальные машины Azure.** Приложения можно перенести с локальных серверов на виртуальные машины Azure, которые присоединены к управляемому домену, по методике lift-and-shift. Это позволяет избавиться от затрат на поддержание инфраструктуры локальных серверов.
+* **Перенос приложений в виртуальные машины Azure.** Приложения можно перенести из локальных серверов в виртуальные машины Azure, которые присоединены к управляемому домену. Это позволяет избавиться от затрат на поддержание инфраструктуры локальных серверов.
 
-* **Публикация приложений с помощью прокси приложения Azure Active Directory Application Proxy**. Опубликуйте приложения, работающие на виртуальных машинах Azure, с помощью Azure Active Directory Application Proxy. Дополнительные сведения см. в статье [Публикация приложений с помощью прокси приложения Azure AD](../active-directory/manage-apps/application-proxy-publish-azure-portal.md).
+* **Публикация приложений с помощью прокси приложения Azure AD.** Публикация приложений, работающих в виртуальных машинах Azure, с использованием прокси приложения Azure AD. Дополнительные сведения см. в статье [Публикация приложений с помощью прокси приложения Azure AD](../active-directory/manage-apps/application-proxy-publish-azure-portal.md).
 
 
 ## <a name="deployment-note---publish-iwa-integrated-windows-authentication-applications-using-azure-ad-application-proxy"></a>Примечание к развертыванию. Публикация приложений интегрированной проверки подлинности Windows с использованием прокси приложения Azure AD
@@ -125,7 +125,7 @@ Set-ADComputer contoso-resource.contoso.com -PrincipalsAllowedToDelegateToAccoun
 При развертывании нескольких соединителей прокси приложения в управляемом домене необходимо настроить ограниченное делегирование Kerberos на основе ресурсов для каждого такого экземпляра соединителя.
 
 
-## <a name="related-content"></a>См. также
+## <a name="related-content"></a>Похожий контент
 * [Приступая к работе с доменными службами Azure AD](tutorial-create-instance.md)
 * [Настройка ограниченного делегирования Kerberos в управляемом домене](deploy-kcd.md)
 * [(Обзор ограниченного делегирования Kerberos)](https://technet.microsoft.com/library/jj553400.aspx)

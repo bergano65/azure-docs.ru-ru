@@ -4,28 +4,28 @@ description: Сведения о просмотре журнала аудита 
 services: active-directory
 documentationcenter: ''
 author: curtand
-manager: mtillman
+manager: daveba
 editor: ''
 ms.assetid: ''
 ms.service: active-directory
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: pim
 ms.date: 04/09/2019
 ms.author: curtand
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 40e1ed018f66d4f5eefd02d587504cf64969f47b
-ms.sourcegitcommit: 95b180c92673507ccaa06f5d4afe9568b38a92fb
+ms.openlocfilehash: 0c9a58fb6cd8591f571b4e65c3ab88cc59e38cda
+ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/08/2019
-ms.locfileid: "70804053"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72756333"
 ---
-# <a name="view-activity-and-audit-history-for-azure-resource-roles-in-pim"></a>Просмотр журнала аудита и действий для ролей ресурсов Azure в PIM
+# <a name="view-activity-and-audit-history-for-azure-resource-roles-in-privileged-identity-management"></a>Просмотр журнала активности и аудита для ролей ресурсов Azure в управление привилегированными пользователями
 
-С помощью Privileged Identity Management (PIM) Azure Active Directory (Azure AD) вы можете просмотреть журнал действий, активации и аудита для ролей ресурсов Azure в своей организации. Включая подписки, группы ресурсов и даже виртуальные машины. Для всех ресурсов на портале Azure, которые используют функцию управления доступом на основе ролей Azure (RBAC), доступны все преимущества безопасности и управления жизненным циклом в PIM.
+С помощью Privileged Identity Management (PIM) Azure Active Directory (Azure AD) вы можете просмотреть журнал действий, активации и аудита для ролей ресурсов Azure в своей организации. Включая подписки, группы ресурсов и даже виртуальные машины. Любой ресурс в портал Azure, который использует функции управления доступом на основе ролей (RBAC) Azure, может использовать возможности управления безопасностью и жизненным циклом в управление привилегированными пользователями.
 
 ## <a name="view-activity-and-activations"></a>Просмотр действий и активаций
 
@@ -51,7 +51,7 @@ ms.locfileid: "70804053"
 
 ## <a name="export-role-assignments-with-children"></a>Экспорт назначений ролей с дочерними элементами
 
-Для соответствия требованиям вам может потребоваться указать полный список назначений ролей для аудиторов. PIM позволяет запрашивать назначения ролей конкретного ресурса, в том числе всех его дочерних ресурсов. Ранее у администраторов возникали трудности при получении полного списка назначений ролей для подписки, и им нужно было экспортировать назначения ролей для каждого конкретного ресурса. С помощью PIM можно запрашивать все активные и допустимые назначения ролей в подписке, включая назначения ролей для всех ресурсов и групп ресурсов.
+Для соответствия требованиям вам может потребоваться указать полный список назначений ролей для аудиторов. Управление привилегированными пользователями позволяет запрашивать назначения ролей в определенном ресурсе, который включает назначения ролей для всех дочерних ресурсов. Ранее для администраторов возникали трудности при получении полного списка назначения ролей для подписки, и им было необходимо экспортировать назначения ролей для каждого конкретного ресурса. С помощью управление привилегированными пользователями можно запросить все активные и доступные назначения ролей в подписке, включая назначения ролей для всех групп ресурсов и ресурсов.
 
 1. Откройте страницу **Azure AD Privileged Identity Management**.
 
@@ -67,7 +67,7 @@ ms.locfileid: "70804053"
 
 1. Щелкните **Export all members** (Экспортировать всех участников), чтобы экспортировать все назначения ролей в CSV-файле.
 
-    ![Экспортированные назначения ролей в CSV-файлах для просмотра в Excel](media/azure-pim-resource-rbac/export-csv.png)
+    ![Экспортированные назначения ролей в CSV-файле как отображаемые в Excel](media/azure-pim-resource-rbac/export-csv.png)
 
 ## <a name="view-resource-audit-history"></a>Просмотр журнала аудита ресурсов
 
@@ -109,8 +109,8 @@ ms.locfileid: "70804053"
 
     ![Список аудита для текущего пользователя](media/azure-pim-resource-rbac/my-audit-time.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Назначение ролей ресурсам Azure в PIM](pim-resource-roles-assign-roles.md)
-- [Подтверждение или отклонение запросов для ролей ресурсов Azure в PIM](pim-resource-roles-approval-workflow.md)
-- [Просмотр журнала аудита для ролей Azure AD в PIM](pim-how-to-use-audit-log.md)
+- [Назначение ролей ресурсов Azure в управление привилегированными пользователями](pim-resource-roles-assign-roles.md)
+- [Утверждение или отклонение запросов ролей ресурсов Azure в управление привилегированными пользователями](pim-resource-roles-approval-workflow.md)
+- [Просмотр журнала аудита для ролей Azure AD в управление привилегированными пользователями](pim-how-to-use-audit-log.md)

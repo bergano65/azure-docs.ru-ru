@@ -1,17 +1,17 @@
 ---
 title: Доступ к каналу изменений в Azure Cosmos DB
 description: В этой статье описываются различные варианты, с помощью которых можно получать доступ к каналу изменений и читать его в Azure Cosmos DB.
-author: rimman
+author: markjbrown
+ms.author: mjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 07/23/2019
-ms.author: rimman
-ms.openlocfilehash: 3d52ba1abc22aae6121ea6a36f943851dfcca7a0
-ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
+ms.openlocfilehash: 3d30c9f946f97f06c1a3ba1cd2e77e1ab151a572
+ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68467669"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72754885"
 ---
 # <a name="reading-azure-cosmos-db-change-feed"></a>Чтение канала изменений Azure Cosmos DB
 
@@ -31,12 +31,12 @@ ms.locfileid: "68467669"
 
 ## <a name="using-the-azure-cosmos-db-sql-api-sdk"></a>Использование пакета SDK для API SQL Azure Cosmos DB
 
-С помощью пакета SDK вы получаете низкоуровневый контроль над каналом изменений. Вы можете управлять контрольной точкой, обращаться к ключу определенной логической секции и т. д. Если у вас несколько читателей, можно использовать `ChangeFeedOptions`, чтобы распределить нагрузку чтения среди разных потоков или разных клиентов. 
+С помощью пакета SDK вы получаете низкоуровневый контроль над каналом изменений. Вы можете управлять контрольной точкой, обращаться к конкретному ключу логической секции и т. д. Если у вас несколько читателей, можно использовать `ChangeFeedOptions` для распределения нагрузки чтения в разные потоки или разные клиенты. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы можете продолжить знакомство с каналом изменений, перейдя к следующим статьям:
 
 * [Работа с поддержкой веб-канала изменений в Azure Cosmos DB](change-feed.md)
-* [Как использовать канал изменений Azure Cosmos DB с Функциями Azure](change-feed-functions.md)
+* [How to use Azure Cosmos DB change feed with Azure Functions](change-feed-functions.md) (Использование канала изменений Azure Cosmos DB с Функциями Azure)
 * [Using the Azure Cosmos DB change feed processor library](change-feed-processor.md) (Использование библиотеки обработчика канала изменений Azure Cosmos DB)

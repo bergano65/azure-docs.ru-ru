@@ -3,15 +3,15 @@ title: Основные сведения о языке запросов
 description: Описывает таблицы графа ресурсов и доступные типы данных, операторы и функции Kusto, которые можно использовать с графом ресурсов Azure.
 author: DCtheGeek
 ms.author: dacoulte
-ms.date: 10/18/2019
+ms.date: 10/21/2019
 ms.topic: conceptual
 ms.service: resource-graph
-ms.openlocfilehash: 6189920cb03a6cf388f0b5d232c6ce97ae4f3f82
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: 80b33212afa7fed3f87b241d5cf69b43be66574d
+ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72389762"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72755913"
 ---
 # <a name="understanding-the-azure-resource-graph-query-language"></a>Общие сведения о языке запросов графика ресурсов Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "72389762"
 |Таблицы графов ресурсов |Описание |
 |---|---|
 |Ресурсы |Таблица по умолчанию, если в запросе не определено значение None. Большинство диспетчер ресурсов типов и свойств ресурсов. |
-|ресаурцеконтаинерс |Включает подписку (`Microsoft.Resources/subscriptions`) и типы ресурсов и данные группы ресурсов (`Microsoft.Resources/subscriptions/resourcegroups`). |
+|ресаурцеконтаинерс |Включает подписку (в предварительной версии — `Microsoft.Resources/subscriptions`) и типы ресурсов и данные группы ресурсов (`Microsoft.Resources/subscriptions/resourcegroups`). |
 |алертсманажементресаурцес |Включает ресурсы, _связанные_ с `Microsoft.AlertsManagement`. |
 |секуритиресаурцес |Включает ресурсы, _связанные_ с `Microsoft.Security`. |
 
@@ -47,12 +47,12 @@ Resources
 | limit 1
 ```
 
-Следующий запрос демонстрирует более сложное использование `join`. Запрос ограничивает соединяемую таблицу ресурсами подписки и с `project`, чтобы включить только исходное поле _SubscriptionId_ и поле _имени_ , переименованное в _подимя_. Переименование поля позволяет избежать `join`, добавляя его как _name1_ , так как поле уже существует в _ресурсах_. Исходная таблица фильтруется с `where`, а следующая `project` включает столбцы из обеих таблиц. Результатом запроса является одно хранилище ключей, отображающее тип, имя хранилища ключей и имя подписки, в которой он находится.
+Следующий запрос демонстрирует более сложное использование `join`. Запрос ограничивает объединенную таблицу до ресурсов подписки, а `project` включает только исходное поле _subscriptionId_ и поле _name_, переименованное в _SubName_. Переименование поля позволяет избежать `join`, добавляя его как _name1_ , так как поле уже существует в _ресурсах_. Исходная таблица фильтруется с `where`, а следующая `project` включает столбцы из обеих таблиц. Результатом запроса является одно хранилище ключей, отображающее тип, имя хранилища ключей и имя подписки, в которой оно находится.
 
 ```kusto
 Resources
-| join (ResourceContainers | where type=='microsoft.resources/subscriptions' | project SubName=name, subscriptionId) on subscriptionId
 | where type == 'microsoft.keyvault/vaults'
+| join (ResourceContainers | where type=='microsoft.resources/subscriptions' | project SubName=name, subscriptionId) on subscriptionId
 | project type, name, SubName
 | limit 1
 ```
@@ -75,7 +75,7 @@ Resources
 |[extend](/azure/kusto/query/extendoperator) |[Подсчет виртуальных машин по типу ОС](../samples/starter.md#count-os) | |
 |[join](/azure/kusto/query/joinoperator) |[Хранилище ключей с именем подписки](../samples/advanced.md#join) |Поддерживаемые флаги соединений: [иннеруникуе](/azure/kusto/query/joinoperator#default-join-flavor), [inner](/azure/kusto/query/joinoperator#inner-join), [leftouter](/azure/kusto/query/joinoperator#left-outer-join). Ограничение в 3 `join` в одном запросе. Пользовательские стратегии подключения, такие как широковещательное соединение, не допускаются. Может использоваться в одной таблице или между таблицами _Resources_ и _ресаурцеконтаинерс_ . |
 |[limit](/azure/kusto/query/limitoperator) |[Вывод списка общедоступных IP-адресов](../samples/starter.md#list-publicip) |Синоним `take` |
-|[MV — развернуть](/azure/kusto/query/mvexpandoperator) |[Вывод списка Cosmos DB с конкретными расположениями записи](../samples/advanced.md#mvexpand-cosmosdb) |_Ровлимит_ максимум 400 |
+|[MV — развернуть](/azure/kusto/query/mvexpandoperator) |[Список Cosmos DB с конкретным указанием расположений записи](../samples/advanced.md#mvexpand-cosmosdb) |_Ровлимит_ максимум 400 |
 |[порядок](/azure/kusto/query/orderoperator) |[Вывод списка ресурсов, отсортированных по имени](../samples/starter.md#list-resources) |Синоним `sort` |
 |[project](/azure/kusto/query/projectoperator) |[Вывод списка ресурсов, отсортированных по имени](../samples/starter.md#list-resources) | |
 |[project-away](/azure/kusto/query/projectawayoperator) |[Удаление столбцов из результатов](../samples/advanced.md#remove-column) | |
@@ -83,14 +83,14 @@ Resources
 |[summarize](/azure/kusto/query/summarizeoperator) |[Подсчет ресурсов Azure](../samples/starter.md#count-resources) |Только первая страница |
 |[take](/azure/kusto/query/takeoperator) |[Вывод списка общедоступных IP-адресов](../samples/starter.md#list-publicip) |Синоним `limit` |
 |[В начало](/azure/kusto/query/topoperator) |[Отображение первых пяти виртуальных машин по имени и типу ОС](../samples/starter.md#show-sorted) | |
-|[union](/azure/kusto/query/unionoperator) |[Объединение результатов из двух запросов в один результат](../samples/advanced.md#unionresults) |Допустимая одна таблица: _T_ `| union` \[ @ no__t-3 `inner` @ no__t-5 @ no__t-6 @ no__t-7 \[ @ no__t-9_ColumnName_1 _Table_. Ограничение в 3 `union` в одном запросе. Нечеткое разрешение одноранговых таблиц `union` не разрешено. Может использоваться в одной таблице или между таблицами _Resources_ и _ресаурцеконтаинерс_ . |
+|[union](/azure/kusto/query/unionoperator) |[Объединение результатов из двух запросов в один результат](../samples/advanced.md#unionresults) |Допускается использование одной таблицы: _T_ `| union` \[ `kind=` `inner` \| `outer` \] \[ `withsource=`_ColumnName_ 1 _Table_. Ограничение в 3 `union` в одном запросе. Нечеткое разрешение одноранговых таблиц `union` не разрешено. Может использоваться в одной таблице или между таблицами _Resources_ и _ресаурцеконтаинерс_ . |
 |[where](/azure/kusto/query/whereoperator) |[Отображение ресурсов, которые содержат хранилище](../samples/starter.md#show-storage) | |
 
 ## <a name="escape-characters"></a>Escape-символы
 
 Некоторые имена свойств, например те, которые включают `.` или `$`, должны быть заключены в запрос или экранированы в запросе, либо имя свойства интерпретируется неправильно и не предоставляет ожидаемые результаты.
 
-- `.` — заключите имя свойства в следующее: `['propertyname.withaperiod']`
+- `.` заключайте имя свойства следующим образом: `['propertyname.withaperiod']`
   
   Пример запроса, который заключает в оболочку свойство _OData. Type_:
 
@@ -100,7 +100,7 @@ Resources
 
 - `$` — escape-последовательность символа в имени свойства. Используемый escape-символ зависит от графа ресурсов оболочки, из которого выполняется.
 
-  - **bash** -  @ no__t-2
+  - **bash**  -  `\`
 
     Пример запроса, который обходит свойство _\$type_ в Bash:
 

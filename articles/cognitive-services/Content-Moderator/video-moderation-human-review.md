@@ -3,19 +3,19 @@ title: Модерация видео с помощью пользователь�
 titleSuffix: Azure Cognitive Services
 description: Использование машинной модерации видео и инструментов пользовательской проверки для модерации неуместного содержимого.
 services: cognitive-services
-author: sanjeev3
+author: PatrickFarley
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
 ms.topic: conceptual
 ms.date: 04/30/2019
-ms.author: sajagtap
-ms.openlocfilehash: 69075f6b36a0be7cd4d0dd4453ea9cdfc08d77dc
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.author: pafarley
+ms.openlocfilehash: a4e7b079367a4b4dec1d2b3d6c0afde1d8276766
+ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68561161"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72754169"
 ---
 # <a name="video-moderation-with-human-review"></a>Модерация видео с помощью пользовательских проверок
 
@@ -100,7 +100,7 @@ ms.locfileid: "68561161"
 
 ![Представление расшифровки инструмента проверки видео](images/video-review-transcript-view.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Приступите к работе с помощью [краткого руководства по модерации видео](video-moderation-api.md).
 - Узнайте, как создать [проверки видео](video-reviews-quickstart-dotnet.md) на основе прошедших модерацию выходных данных для рецензентов-пользователей.

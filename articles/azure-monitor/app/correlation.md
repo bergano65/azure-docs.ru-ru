@@ -8,12 +8,12 @@ author: lgayhardt
 ms.author: lagayhar
 ms.date: 06/07/2019
 ms.reviewer: sergkanz
-ms.openlocfilehash: aa683e90a328e9525fa7d0a78981aa107818188a
-ms.sourcegitcommit: 1bd2207c69a0c45076848a094292735faa012d22
+ms.openlocfilehash: df93405940c02affa224fba2d2e6f07ce5278b15
+ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72678187"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72755374"
 ---
 # <a name="telemetry-correlation-in-application-insights"></a>Корреляция данных телеметрии в Application Insights
 
@@ -214,6 +214,82 @@ public void ConfigureServices(IServiceCollection services)
 Дополнительные сведения см. в статье [Модель данных телеметрии Application Insights](../../azure-monitor/app/data-model.md). 
 
 Определения основных понятий OpenTracing см. в [спецификации](https://github.com/opentracing/specification/blob/master/specification.md) и [semantic_conventions](https://github.com/opentracing/specification/blob/master/semantic_conventions.md).
+
+## <a name="telemetry-correlation-in-opencensus-python"></a>Корреляция телеметрии в Опенценсус Python
+
+Опенценсус Python соответствует спецификациям модели данных `OpenTracing`, описанным выше. Она также поддерживает [контекст трассировки W3C](https://w3c.github.io/trace-context/) , не требуя каких-либо настроек.
+
+### <a name="incoming-request-correlation"></a>Корреляция входящих запросов
+
+Опенценсус Python сопоставляет заголовки контекста трассировки W3C из входящих запросов с диапазонами, которые создаются из самих запросов. Опенценсус сделает это автоматически с помощью интеграции для популярных платформ веб-приложений, таких как `flask`, `django` и `pyramid`. Заголовки контекста трассировки W3C просто должны быть заполнены [правильным форматом](https://www.w3.org/TR/trace-context/#trace-context-http-headers-format)и отправлены с запросом. Ниже приведен пример `flask` приложении, демонстрирующим это.
+
+```python
+from flask import Flask
+from opencensus.ext.azure.trace_exporter import AzureExporter
+from opencensus.ext.flask.flask_middleware import FlaskMiddleware
+from opencensus.trace.samplers import ProbabilitySampler
+
+app = Flask(__name__)
+middleware = FlaskMiddleware(
+    app,
+    exporter=AzureExporter(),
+    sampler=ProbabilitySampler(rate=1.0),
+)
+
+@app.route('/')
+def hello():
+    return 'Hello World!'
+
+if __name__ == '__main__':
+    app.run(host='localhost', port=8080, threaded=True)
+```
+
+При этом запускается пример `flask` приложения на локальном компьютере, который прослушивает `8080` порта. Чтобы сопоставить контекст трассировки, мы отправим запрос к конечной точке. В этом примере можно использовать команду `curl`.
+```
+curl --header "traceparent: 00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01" localhost:8080
+```
+При просмотре [формата заголовка контекста трассировки](https://www.w3.org/TR/trace-context/#trace-context-http-headers-format)мы получаем следующие сведения: `version`: `00` 
+ `trace-id`: `4bf92f3577b34da6a3ce929d0e0e4736` 
+ `parent-id/span-id`: `00f067aa0ba902b7` 
+ 0: 1
+
+Если взглянуть на запись запроса, отправленную в Azure Monitor, можно увидеть поля, заполненные данными заголовка трассировки.
+
+![Снимок экрана телеметрии запросов в журналах (аналитика) с полями заголовка трассировки, выделенными в красном прямоугольнике](./media/opencensus-python/0011-correlation.png)
+
+Поле `id` имеет формат `<trace-id>.<span-id>`, где `trace-id` берется из заголовка трассировки, который был передан в запросе, а `span-id` — в виде массива 8 байт для этого диапазона. 
+
+Поле `operation_ParentId` имеет формат `<trace-id>.<parent-id>`, где `trace-id` и `parent-id` взяты из заголовка трассировки, переданного в запросе.
+
+### <a name="logs-correlation"></a>Регистрация корреляции
+
+Опенценсус Python позволяет выполнять корреляцию журналов путем дополнения записей журнала с ИДЕНТИФИКАТОРом трассировки, ИДЕНТИФИКАТОРом диапазона и флагом выборки. Для этого необходимо установить [интеграцию с ведением журнала](https://pypi.org/project/opencensus-ext-logging/)опенценсус. Следующие атрибуты будут добавлены в `LogRecord`s Python: `traceId`, `spanId` и `traceSampled`. Обратите внимание, что это вступает в силу только для средств ведения журнала, созданных после интеграции.
+Ниже приведен пример приложения, которое демонстрирует это.
+
+```python
+import logging
+
+from opencensus.trace import config_integration
+from opencensus.trace.samplers import AlwaysOnSampler
+from opencensus.trace.tracer import Tracer
+
+config_integration.trace_integrations(['logging'])
+logging.basicConfig(format='%(asctime)s traceId=%(traceId)s spanId=%(spanId)s %(message)s')
+tracer = Tracer(sampler=AlwaysOnSampler())
+
+logger = logging.getLogger(__name__)
+logger.warning('Before the span')
+with tracer.span(name='hello'):
+    logger.warning('In the span')
+logger.warning('After the span')
+```
+При выполнении этого кода в консоли выводится следующее:
+```
+2019-10-17 11:25:59,382 traceId=c54cb1d4bbbec5864bf0917c64aeacdc spanId=0000000000000000 Before the span
+2019-10-17 11:25:59,384 traceId=c54cb1d4bbbec5864bf0917c64aeacdc spanId=70da28f5a4831014 In the span
+2019-10-17 11:25:59,385 traceId=c54cb1d4bbbec5864bf0917c64aeacdc spanId=0000000000000000 After the span
+```
+Обратите внимание на то, что существует Спанид для сообщения журнала, находящихся в пределах диапазона. это тот же Спанид, который принадлежит диапазону с именем `hello`.
 
 ## <a name="telemetry-correlation-in-net"></a>Корреляция данных телеметрии в .NET
 

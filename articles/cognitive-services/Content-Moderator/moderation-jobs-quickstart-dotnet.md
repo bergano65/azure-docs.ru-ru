@@ -3,19 +3,19 @@ title: Использование заданий контроля использ
 titleSuffix: Azure Cognitive Services
 description: Используйте пакет SDK для Content Moderator .NET, чтобы инициировать сквозные задания содержимого для образа или текстового содержимого в Content Moderator Azure.
 services: cognitive-services
-author: sanjeev3
+author: PatrickFarley
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
 ms.topic: conceptual
 ms.date: 03/18/2019
-ms.author: sajagtap
-ms.openlocfilehash: bc20af10e2e5b2ceb26c1cc891a8f69eb44e5740
-ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
+ms.author: pafarley
+ms.openlocfilehash: c6925b979e5a93a2d73c2d6e8ac48f62714a5cd0
+ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72242890"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72757326"
 ---
 # <a name="define-and-use-moderation-jobs-net"></a>Определение и использование заданий по созадачам (.NET)
 
@@ -26,7 +26,7 @@ ms.locfileid: "72242890"
 - отслеживание и получение окончательного состояния проверки;
 - Отправка результатов проверки в URL-адрес обратного вызова
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - Войдите или создайте учетную запись на сайте [средства проверки](https://contentmoderator.cognitive.microsoft.com/) Content Moderator.
 
@@ -47,11 +47,11 @@ ms.locfileid: "72242890"
 
 ## <a name="create-your-visual-studio-project"></a>Создание проекта Visual Studio
 
-1. Добавьте новый проект **Консольное приложение (.NET Framework)** в свое решение.
+1. Добавьте в свое решение новый проект **Консольное приложение (.NET Framework)** .
 
    В примере кода назовите проект **CreateReviews**.
 
-1. Выберите этот проект в качестве единственного запускаемого проекта для решения.
+1. Выберите этот проект единственным запускаемым проектом для решения.
 
 ### <a name="install-required-packages"></a>Установка необходимых пакетов
 
@@ -77,7 +77,7 @@ using System.Threading;
 
 ### <a name="create-the-content-moderator-client"></a>Создание клиента Content Moderator
 
-Добавьте следующий фрагмент кода, чтобы создать клиент Content Moderator для своей подписки.
+Чтобы создать для своей подписки клиент Content Moderator, добавьте следующий фрагмент кода.
 
 > [!IMPORTANT]
 > Укажите в полях **AzureRegion** и **CMSubscriptionKey** значения идентификатора региона и ключа подписки соответственно.
@@ -242,7 +242,7 @@ using (TextWriter writer = new StreamWriter(OutputFile, false))
 > [!NOTE]
 > Ключ службы Content Moderator предусматривает ограничение частоты запросов в секунду (RPS). Если превысить ограничение, пакет SDK порождает исключение с кодом ошибки 429.
 >
-> Ключ уровня "Бесплатный" предусматривает ограничение в один RPS.
+> Ключ бесплатного уровня предусматривает ограничение в один RPS.
 
 ## <a name="run-the-program-and-review-the-output"></a>Запуск программы и просмотр выходных данных
 
@@ -321,6 +321,6 @@ Get review details.
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Получите [пакет SDK Content Moderator для .NET](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/) и [решение Visual Studio](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/ContentModerator) для выполнения инструкций из этого и других кратких руководств по Content Moderator для .NET и приступите к интеграции.
