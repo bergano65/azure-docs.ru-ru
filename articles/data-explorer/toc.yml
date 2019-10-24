@@ -15,6 +15,12 @@
       href: web-query-data.md
 - name: Учебники
   items:
+    - name: Программный прием больших двоичных объектов E2E
+      items:
+        - name: 'C#'
+          href: end-to-end-csharp.md
+        - name: Python
+          href: end-to-end-python.md
     - name: Прием данных без использования кода
       href: ingest-data-no-code.md
     - name: Визуализация данных в Power BI

@@ -1,9 +1,9 @@
 ### YamlMime:Landing
-title: Документация по Службам лабораторий Azure
-summary: Узнайте, как использовать Службы лабораторий Azure, чтобы быстро настроить лабораторию для разработки, тестирования, хакатона или аудитории для своей команды разработчиков или учащихся, в облаке.
+title: Документация по Azure DevTest Labs
+summary: Узнайте, как с помощью Azure DevTest Labs быстро настроить лабораторию для разработки, тестирования, хакатона или аудитории для своей команды разработчиков или учащихся в облаке.
 metadata:
-  title: Документация по Службам лабораторий Azure
-  description: Узнайте, как использовать Службы лабораторий Azure, чтобы быстро настроить лабораторию для разработки, тестирования, хакатона или аудитории для своей команды разработчиков или учащихся, в облаке.
+  title: Документация по Azure DevTest Labs
+  description: Узнайте, как с помощью Azure DevTest Labs быстро настроить лабораторию для разработки, тестирования, хакатона или аудитории для своей команды разработчиков или учащихся в облаке.
   services: lab-services
   ms.service: lab-services
   ms.subservice: 
@@ -12,75 +12,59 @@ metadata:
   author: spelluru
   ms.author: spelluru
   ms.date: 09/26/2019
-  ms.openlocfilehash: 63a5b41fba026cc52cdcc599bfdd38e1e27ad42d
-  ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
+  ms.openlocfilehash: 1cfb86a37068d4cd928081446e6bf9ad381bbd86
+  ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 09/27/2019
-  ms.locfileid: "71326978"
+  ms.lasthandoff: 10/23/2019
+  ms.locfileid: "72790949"
 landingContent:
-- title: Общий обзор
+- title: Начало работы
   linkLists:
   - linkListType: overview
     links:
-    - text: Сведения о службах лабораторий
+    - text: О DevTest Labs
+      url: devtest-lab-overview.md
+    - text: Сведения о DevTest Labs и Службах лабораторий
       url: lab-services-overview.md
-    - text: О DevTest Labs
-      url: devtest-lab-overview.md
-    - text: О лабораториях для аудитории
-      url: ./classroom-labs/classroom-labs-overview.md
-- title: DevTest Labs
-  linkLists:
-  - linkListType: overview
-    links:
-    - text: О DevTest Labs
-      url: devtest-lab-overview.md
-  - linkListType: tutorial
-    links:
-    - text: Настройка лаборатории
-      url: tutorial-create-custom-lab.md
-    - text: Доступ к лаборатории
-      url: tutorial-use-custom-lab.md
   - linkListType: concept
     links:
     - text: Основные понятия DevTest Labs
       url: devtest-lab-concepts.md
     - text: Популярные сценарии
       url: devtest-lab-guidance-get-started.md
+  - linkListType: tutorial
+    links:
+    - text: Настройка лаборатории
+      url: tutorial-create-custom-lab.md
+    - text: Доступ к лаборатории
+      url: tutorial-use-custom-lab.md
+- title: Артефакты
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Добавление артефакта на виртуальную машину
+      url: add-artifact-vm.md
+    - text: Создание настраиваемых артефактов
+      url: devtest-lab-artifact-author.md
+    - text: Указание обязательных артефактов
+      url: devtest-lab-mandatory-artifacts.md
+    - text: Устранение неполадок при сбоях артефактов
+      url: devtest-lab-troubleshoot-artifact-failure.md
+- title: средами;
+  linkLists:
   - linkListType: how-to-guide
     links:
     - text: Настройка и использование общих сред
       url: devtest-lab-configure-use-public-environments.md
-    - text: Создание и использование собственной среды
+    - text: Создание среды
       url: devtest-lab-create-environment-from-arm.md
-    - text: Создание пользовательского образа
-      url: devtest-lab-create-custom-image-from-vm-using-portal.md
-    - text: Управление формулами
-      url: devtest-lab-manage-formulas.md
-    - text: Добавление артефактов к виртуальной машине
-      url: add-artifact-vm.md
-- title: Лаборатории для аудитории
-  linkLists:
-  - linkListType: overview
-    links:
-    - text: О лабораториях для аудитории
-      url: ./classroom-labs/classroom-labs-overview.md
-  - linkListType: tutorial
-    links:
-    - text: Настройка учетной записи лаборатории
-      url: ./classroom-labs/tutorial-setup-lab-account.md
-    - text: Настройка лаборатории для аудитории
-      url: ./classroom-labs/tutorial-setup-classroom-lab.md
-    - text: Доступ к лаборатории для аудитории
-      url: ./classroom-labs/tutorial-connect-virtual-machine-classroom-lab.md
-    - text: Отслеживание использования лаборатории для аудитории
-      url: ./classroom-labs/tutorial-track-usage.md
-  - linkListType: concept
-    links:
-    - text: Основные понятия, используемые при работе с лабораториями для аудитории
-      url: ./classroom-labs/classroom-labs-concepts.md
-    - text: Использование лабораторий для проведения учебных занятий
-      url: ./classroom-labs/classroom-labs-scenarios.md
+    - text: Использование служб платформы как услуги
+      url: use-paas-services.md
+    - text: Подключение к виртуальной сети лаборатории
+      url: connect-environment-lab-virtual-network.md
+    - text: Устранение сбоев среды
+      url: troubleshoot-vm-environment-creation-failures.md
 - title: Ознакомьтесь со справочными материалами
   linkLists:
   - linkListType: reference
@@ -91,3 +75,15 @@ landingContent:
       url: /powershell/module/az.devtestlabs/#devtest_labs
     - text: REST
       url: /rest/api/dtl
+- title: Шаблоны
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Сравнение пользовательского образа и Формула
+      url: devtest-lab-comparing-vm-base-image-types.md
+  - linkListType: how-to-guide
+    links:
+    - text: Создание пользовательского образа из виртуальной машины
+      url: devtest-lab-create-custom-image-from-vm-using-portal.md
+    - text: Управление формулами
+      url: devtest-lab-manage-formulas.md

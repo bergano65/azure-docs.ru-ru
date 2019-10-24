@@ -1,0 +1,48 @@
+- name: Создание реальных мобильных приложений с помощью служб Майкрософт
+  href: index.md
+- name: Этапы создания мобильных приложений
+  items:
+    - name: Обзор
+      href: stages-overview.md
+    - name: Выбор платформы для разработки мобильных приложений
+      href: front-end-development-platform.md
+    - name: Планирование и проектирование мобильного приложения с помощью серверных служб
+      items:
+        - name: Аутентификация
+          href: authentication.md
+        - name: Хранилище данных
+          href: data-storage.md
+        - name: Бессерверные вычисления
+          href: serverless-compute.md
+        - name: Хранилище Azure
+          href: azure-storage.md
+        - name: 'Приложения, работающие в режиме реального времени'
+          href: real-time.md
+    - name: Система управления версиями
+      href: code-hosting-services.md
+    - name: DevOps
+      items:
+        - name: Что такое DevOps
+          href: devops.md
+        - name: Непрерывная сборка и интеграция
+          href: continuous-integration.md
+        - name: Тестирование на реальных устройствах
+          href: test.md
+        - name: Непрерывная доставка
+          href: continuous-delivery.md
+    - name: Анализ использования и поведения пользователей
+      href: analytics.md
+    - name: Создание отчетов о сбоях в режиме реального времени
+      href: diagnostics.md
+    - name: Push-уведомления
+      href: push-notifications.md
+- name: Дополнительные службы
+  items:
+    - name: Azure Cognitive Services
+      href: cognitive-services.md
+    - name: Azure Maps
+      href: azure-maps.md
+    - name: Azure CDN
+      href: azure-cdn.md
+    - name: Поиск Azure
+      href: azure-search.md

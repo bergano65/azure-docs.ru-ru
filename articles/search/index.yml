@@ -1,8 +1,8 @@
 ### YamlMime:Landing
-title: Документация по Поиску Azure
+title: Документация по Когнитивному поиску Azure
 summary: Находите частное разнородное содержимое с возможностью обогащения ИИ, если содержимое не структурировано или недоступно для поиска в необработанном виде.
 metadata:
-  title: Документация по Поиску Azure
+  title: Документация по Когнитивному поиску Azure
   description: Находите частное разнородное содержимое с возможностью обогащения ИИ, если содержимое не структурировано или недоступно для поиска в необработанном виде.
   services: search
   ms.service: service
@@ -11,26 +11,26 @@ metadata:
   author: HeidiSteen
   ms.author: heidist
   ms.date: 09/20/2019
-  ms.openlocfilehash: 5521f784704fe4d97ed30de0ec5367b9b4bb4f5f
-  ms.sourcegitcommit: f29fec8ec945921cc3a89a6e7086127cc1bc1759
+  ms.openlocfilehash: 5bf7ec2b629fc765ef5c6393b042b608a48ec804
+  ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 10/17/2019
-  ms.locfileid: "72529447"
+  ms.lasthandoff: 10/23/2019
+  ms.locfileid: "72790060"
 landingContent:
-- title: Сведения о службе "Поиск Azure"
+- title: Сведения о Когнитивном поиске
   linkLists:
   - linkListType: overview
     links:
-    - text: Что такое Поиск Azure?
+    - text: Что собой представляет Когнитивный поиск Azure?
       url: search-what-is-azure-search.md
   - linkListType: architecture
     links:
-    - text: Как работает полнотекстовый поиск в службе поиска Azure
+    - text: Как работает полнотекстовый поиск в Когнитивном поиске
       url: search-lucene-query-architecture.md
   - linkListType: video
     links:
-    - text: Общие сведения о Поиске Azure (01:27)
+    - text: Что собой представляет Когнитивный поиск (1 мин 27 с)
       url: https://channel9.msdn.com/Blogs/Azure/What-is-Azure-Search/player
 - title: Начало работы
   linkLists:
@@ -42,9 +42,13 @@ landingContent:
       url: search-get-started-portal.md
     - text: Создание конвейера обогащения
       url: cognitive-search-quickstart-blob.md
+  - linkListType: tutorial
+    links:
+    - text: Создание приложения
+      url: tutorial-csharp-create-first-app.md
   - linkListType: learn
     links:
-    - text: Общие сведения о Поиске Azure
+    - text: Общие сведения о Когнитивном поиске Azure
       url: https://docs.microsoft.com/learn/modules/intro-to-azure-search/
 - title: Использование c хранилищем BLOB-объектов
   linkLists:
@@ -72,10 +76,6 @@ landingContent:
       url: search-indexer-overview.md
   - linkListType: how-to-guide
     links:
-    - text: Индексирование из хранилища BLOB-объектов
-      url: search-howto-indexing-azure-blob-storage.md
-    - text: Индексация больших двоичных объектов JSON
-      url: search-howto-index-json-blobs.md
     - text: Индексирование из Базы данных SQL Azure
       url: search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md
     - text: Индексирование из Azure Cosmos DB
@@ -90,7 +90,7 @@ landingContent:
   linkLists:
   - linkListType: concept
     links:
-    - text: Что такое когнитивный поиск?
+    - text: Конвейер обогащения данных с помощью средств ИИ
       url: cognitive-search-concept-intro.md
     - text: Наборы навыков
       url: cognitive-search-defining-skillset.md
@@ -108,7 +108,7 @@ landingContent:
       url: knowledge-store-create-portal.md
   - linkListType: reference
     links:
-    - text: Предопределенные навыки
+    - text: Встроенные навыки
       url: cognitive-search-predefined-skills.md
 - title: Обращение к данным
   linkLists:

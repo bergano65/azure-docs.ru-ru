@@ -1,20 +1,24 @@
-- name: Документация по Поиску Azure
+- name: Документация по Когнитивному поиску Azure
   href: index.yml
 - name: Обзор
-  items:
-    - name: Что такое Поиск Azure?
-      href: search-what-is-azure-search.md
-- name: Краткие руководства
   expanded: true
+  items:
+    - name: Что собой представляет Когнитивный поиск Azure?
+      href: search-what-is-azure-search.md
+    - name: Новые возможности
+      href: whats-new.md
+- name: Краткие руководства
   items:
     - name: Создание службы
       href: search-create-service-portal.md
     - name: Портал
       items:
-        - name: Создание и использование индекса
+        - name: Создание индекса поиска
           href: search-get-started-portal.md
-        - name: Расширение возможностей с помощью Когнитивного поиска (ИИ)
+        - name: Создание набора навыков когнитивного поиска
           href: cognitive-search-quickstart-blob.md
+        - name: Создание хранилища знаний
+          href: knowledge-store-create-portal.md
     - name: 'C#'
       href: search-get-started-dotnet.md
     - name: Java
@@ -79,7 +83,7 @@
   items:
     - name: Полнотекстовый поиск
       href: search-lucene-query-architecture.md
-    - name: Когнитивный поиск
+    - name: Обогащение данных с помощью средств ИИ
       href: cognitive-search-concept-intro.md
     - name: Наборы навыков
       href: cognitive-search-working-with-skillsets.md
@@ -87,7 +91,9 @@
       href: knowledge-store-concept-intro.md
     - name: Проекции
       href: knowledge-store-projection-overview.md
-- name: Практические руководства
+    - name: Добавочное индексирование
+      href: cognitive-search-incremental-indexing-conceptual.md
+- name: Руководства
   items:
     - name: Планирование
       items:
@@ -209,6 +215,8 @@
           href: search-howto-schedule-indexers.md
         - name: Сопоставление полей
           href: search-indexer-field-mappings.md
+        - name: Добавочное индексирование
+          href: search-howto-incremental-index.md
         - name: Подключение к Управляемому экземпляру SQL
           href: search-howto-connecting-azure-sql-mi-to-azure-search-using-indexers.md
         - name: Подключение к виртуальным машинам SQL Server
@@ -247,8 +255,6 @@
           href: cognitive-search-resources-documentation.md
         - name: Хранилище знаний (предварительная версия)
           items:
-            - name: Создание хранилища знаний на портале Azure
-              href: knowledge-store-create-portal.md
             - name: Создание с помощью REST и Postman
               href: knowledge-store-create-rest.md
             - name: Просмотр данных с помощью Обозревателя службы хранилища

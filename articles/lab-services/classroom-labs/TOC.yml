@@ -1,0 +1,92 @@
+- name: Документация по Службам лабораторий
+  href: index.yml
+- name: Переход к документации по DevTest Labs
+  href: ../devtest-lab-overview.md
+- name: Обзор
+  items:
+    - name: О лабораториях для аудитории
+      href: classroom-labs-overview.md
+    - name: Сведения о Службах лабораторий и DevTest Labs
+      href: ../lab-services-overview.md?toc=%2fazure%2flab-services%2fclassroom-labs%2ftoc.json
+- name: Учебники
+  items:
+    - name: Настройка учетной записи лаборатории
+      href: tutorial-setup-lab-account.md
+    - name: Настройка лаборатории для аудитории
+      href: tutorial-setup-classroom-lab.md
+    - name: Доступ к лаборатории для аудитории
+      href: tutorial-connect-virtual-machine-classroom-lab.md
+    - name: Отслеживание использования лаборатории для аудитории
+      href: tutorial-track-usage.md
+- name: Основные понятия
+  items:
+    - name: 'Основные понятия, используемые при работе с лабораториями для аудитории'
+      href: classroom-labs-concepts.md
+    - name: Сценарии
+      items:
+        - name: Использование лабораторий для проведения учебных занятий
+          href: classroom-labs-scenarios.md
+- name: Руководства
+  items:
+    - name: "Лаборатории для аудитории\_— типы классов"
+      items:
+        - name: Общие сведения о типах классов
+          href: class-types.md
+        - name: Глубокое обучение при обработке естественного языка
+          href: class-type-deep-learning-natural-processing.md
+        - name: Создание скриптов оболочки в Linux
+          href: class-type-shell-scripting-linux.md
+        - name: Этичный взлом
+          href: class-type-ethical-hacking.md
+    - name: Создание и настройка учетных записей лаборатории (владелец учетной записи лаборатории)
+      items:
+        - name: Создание и администрирование учетных записей лаборатории
+          href: how-to-manage-lab-accounts.md
+        - name: Настройка учетных записей лаборатории
+          href: how-to-configure-lab-accounts.md
+        - name: Подключение лабораторий к пиринговой виртуальной сети
+          href: how-to-connect-peer-virtual-network.md
+        - name: Подключение и отключение коллекции общих образов
+          href: how-to-attach-detach-shared-image-gallery.md
+    - name: Создание и настройка лаборатории для аудитории (инструктор)
+      items:
+        - name: Создание и администрирование лабораторий для аудитории
+          href: how-to-manage-classroom-labs.md
+        - name: Настройка и публикация шаблонов
+          href: how-to-create-manage-template.md
+        - name: Настройка и администрирование пула виртуальных машин
+          href: how-to-set-virtual-machine-passwords.md
+        - name: Создание и администрирование пользователей лаборатории
+          href: how-to-configure-student-usage.md
+        - name: Создание расписаний и управление ими
+          href: how-to-create-schedules.md
+        - name: Использование коллекции общих образов
+          href: how-to-use-shared-image-gallery.md
+        - name: Включение соединения с удаленным рабочим столом для Linux
+          href: how-to-enable-remote-desktop-linux.md
+        - name: Включение вложенной виртуализации в шаблоне виртуальной машины
+          href: how-to-enable-nested-virtualization-template-vm.md
+        - name: Создание среды с несколькими виртуальными машинами в шаблоне виртуальной машины
+          href: how-to-enable-multi-vm-environment.md
+    - name: Подключение к виртуальным машинам в лабораториях для аудитории (учащийся)
+      items:
+        - name: Доступ к лабораториям для аудитории
+          href: how-to-use-classroom-lab.md
+        - name: Использование подключения с удаленным рабочим столом для виртуальных машин Linux
+          href: how-to-use-remote-desktop-linux-student.md
+        - name: Установка или сброс паролей для виртуальных машин
+          href: how-to-set-virtual-machine-passwords-student.md
+- name: Справочные материалы
+  items:
+    - name: REST API
+      href: 'https://docs.microsoft.com/rest/api/labservices/'
+- name: Ресурсы
+  items:
+    - name: Обновления Azure
+      href: 'https://azure.microsoft.com/updates/?product=lab-services'
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/lab-services/'
+    - name: Stack Overflow
+      href: 'https://stackoverflow.com/questions/tagged/azure-lab-services'
+    - name: Часто задаваемые вопросы
+      href: classroom-labs-faq.md

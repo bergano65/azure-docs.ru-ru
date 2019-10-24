@@ -719,6 +719,8 @@
           href: sql-database-managed-instance-aad-security-tutorial.md
         - name: Добавление управляемого экземпляра в группу отработки отказа
           href: sql-database-managed-instance-failover-group-tutorial.md
+        - name: Перенос локальных пользователей и групп
+          href: tutorial-managed-instance-azure-active-directory-migration.md
     - name: Основные понятия
       items:
         - name: Справочник по API управления

@@ -1,359 +1,265 @@
-- name: Документация по службам лабораторий
+- name: Документация по DevTest Labs
   href: index.yml
+- name: Переход к документации по Службам лабораторий
+  href: classroom-labs/classroom-labs-overview.md
 - name: Обзор
   items:
-    - name: Сведения о службах лабораторий
-      href: lab-services-overview.md
-    - name: О лабораториях для аудитории
-      href: classroom-labs/classroom-labs-overview.md
     - name: О DevTest Labs
       href: devtest-lab-overview.md
-- name: Руководства
+    - name: Azure DevTest Labs и Службы лабораторий
+      href: lab-services-overview.md
+- name: Учебники
   items:
-    - name: Лаборатории для аудитории
-      items:
-        - name: 1. Настройка учетной записи лаборатории
-          href: classroom-labs/tutorial-setup-lab-account.md
-        - name: 2. Настройка лаборатории для аудитории
-          href: classroom-labs/tutorial-setup-classroom-lab.md
-        - name: 3. Доступ к лаборатории для аудитории
-          href: classroom-labs/tutorial-connect-virtual-machine-classroom-lab.md
-        - name: 4. Отслеживание использования лаборатории для аудитории
-          href: classroom-labs/tutorial-track-usage.md
-    - name: DevTest Labs
-      items:
-        - name: 1. Настройка лаборатории
-          href: tutorial-create-custom-lab.md
-        - name: 2. Доступ к лаборатории
-          href: tutorial-use-custom-lab.md
+    - name: 1. Настройка лаборатории
+      href: tutorial-create-custom-lab.md
+    - name: 2. Доступ к лаборатории
+      href: tutorial-use-custom-lab.md
 - name: Примеры
   items:
-    - name: DevTest Labs
-      items:
-        - name: Шаблоны Resource Manager
-          href: 'https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/QuickStartTemplates'
-        - name: Azure PowerShell
-          href: samples-powershell.md
-        - name: Azure PowerShell. Модуль Az.DevTestLabs2
-          href: 'https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/Modules/Library'
-        - name: Инфраструктура CLI Azure
-          href: samples-cli.md
+    - name: Шаблоны Resource Manager
+      href: 'https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/QuickStartTemplates'
+    - name: Azure PowerShell
+      href: samples-powershell.md
+    - name: Azure PowerShell. Модуль Az.DevTestLabs2
+      href: 'https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/Modules/Library'
+    - name: Инфраструктура CLI Azure
+      href: samples-cli.md
 - name: Основные понятия
   items:
-    - name: Лаборатории для аудитории
+    - name: Основные понятия DevTest Labs
+      href: devtest-lab-concepts.md
+    - name: Рекомендации по разработке распределенной и совместной разработки
+      href: best-practices-distributive-collaborative-development-environment.md
+    - name: Интеграция с Azure DevOps
+      href: devtest-lab-dev-ops.md
+    - name: Сценарии
       items:
-        - name: 'Основные понятия, используемые при работе с лабораториями для аудитории'
-          href: classroom-labs/classroom-labs-concepts.md
-        - name: Сценарии
-          items:
-            - name: Использование лабораторий для проведения учебных занятий
-              href: classroom-labs/classroom-labs-scenarios.md
-    - name: DevTest Labs
-      items:
-        - name: Основные понятия DevTest Labs
-          href: devtest-lab-concepts.md
-        - name: Рекомендации по разработке распределенной и совместной разработки
-          href: best-practices-distributive-collaborative-development-environment.md
-        - name: Интеграция с Azure DevOps
-          href: devtest-lab-dev-ops.md
-        - name: Сценарии
-          items:
-            - name: Распространенные сценарии использования DevTest Labs
-              href: devtest-lab-guidance-get-started.md
-            - name: Использование лабораторий для разработчиков
-              href: devtest-lab-developer-lab.md
-            - name: Использование лабораторий для тестовых сред
-              href: devtest-lab-test-env.md
-            - name: Использование лабораторий для обучения
-              href: devtest-lab-training-lab.md
-            - name: Сценарии использования запрашиваемых виртуальных машин
-              href: devtest-lab-use-claim-capabilities.md
+        - name: Распространенные сценарии использования DevTest Labs
+          href: devtest-lab-guidance-get-started.md
+        - name: Использование лабораторий для разработчиков
+          href: devtest-lab-developer-lab.md
+        - name: Использование лабораторий для тестовых сред
+          href: devtest-lab-test-env.md
+        - name: Использование лабораторий для обучения
+          href: devtest-lab-training-lab.md
+        - name: Сценарии использования запрашиваемых виртуальных машин
+          href: devtest-lab-use-claim-capabilities.md
 - name: Руководства
   items:
-    - name: "Лаборатории для аудитории\_— типы классов"
+    - name: Настройка лаборатории
       items:
-        - name: Общие сведения о типах классов
-          href: classroom-labs/class-types.md
-        - name: Глубокое обучение при обработке естественного языка
-          href: classroom-labs/class-type-deep-learning-natural-processing.md
-        - name: Создание скриптов оболочки в Linux
-          href: classroom-labs/class-type-shell-scripting-linux.md
-        - name: Этичный взлом
-          href: classroom-labs/class-type-ethical-hacking.md
-    - name: Лаборатории для аудитории
+        - name: Создание лаборатории
+          href: devtest-lab-create-lab.md
+        - name: Создание или изменение лабораторий с помощью шаблона Resource Manager
+          href: devtest-lab-use-arm-and-powershell-for-lab-resources.md
+        - name: Определение группы ресурсов для виртуальных машин лаборатории
+          href: resource-group-control.md
+        - name: Добавление сведений о поддержке в лабораторию
+          href: devtest-lab-internal-support-message.md
+        - name: Определение политик и расписаний
+          href: devtest-lab-set-lab-policy.md
+        - name: Настройка лаборатории для использования шлюза удаленных рабочих столов
+          href: configure-lab-remote-desktop-gateway.md
+        - name: Публикация объявлений в лаборатории
+          href: devtest-lab-announcements.md
+        - name: Включение на виртуальных машинах подключения через браузер
+          href: enable-browser-connection-lab-virtual-machines.md
+        - name: Настройка управления затратами
+          href: devtest-lab-configure-cost-management.md
+        - name: Отправка уведомлений об автоматическом завершении работы
+          href: devtest-lab-auto-shutdown.md
+        - name: Масштабирование лаборатории
+          href: devtest-lab-scale-lab.md
+        - name: Управление резервными копиями виртуальной машины
+          items:
+            - name: Настройка образов Azure Marketplace
+              href: devtest-lab-configure-marketplace-images.md
+            - name: Активация лицензированных образов
+              href: devtest-lab-enable-licensed-images.md
+            - name: Настройка коллекции общих образов
+              href: configure-shared-image-gallery.md
+        - name: Настройка тегов
+          href: devtest-lab-add-tag.md
+        - name: Настройка управления доступом
+          items:
+            - name: Добавление владельцев и пользователей лаборатории
+              href: devtest-lab-add-devtest-user.md
+            - name: Настройка разрешений с помощью пользовательских ролей
+              href: devtest-lab-grant-user-permissions-to-specific-lab-policies.md
+            - name: Автоматизация добавления пользователей лаборатории
+              href: automate-add-lab-user.md
+        - name: Управление виртуальными сетями
+          items:
+            - name: Настройка виртуальных сетей
+              href: devtest-lab-configure-vnet.md
+            - name: Выбор варианта IP-конфигурации
+              href: devtest-lab-shared-ip.md
+        - name: Удаление лаборатории или виртуальной машины в лаборатории
+          href: devtest-lab-delete-lab-vm.md
+        - name: Экспорт и удаление персональных данных
+          href: personal-data-delete-export.md
+    - name: Использование виртуальных машин в лаборатории
       items:
-        - name: Создание и настройка учетных записей лаборатории (владелец учетной записи лаборатории)
-          items:
-            - name: Создание и администрирование учетных записей лаборатории
-              href: classroom-labs/how-to-manage-lab-accounts.md
-            - name: Настройка учетных записей лаборатории
-              href: classroom-labs/how-to-configure-lab-accounts.md
-            - name: Подключение лабораторий к пиринговой виртуальной сети
-              href: classroom-labs/how-to-connect-peer-virtual-network.md
-            - name: Подключение и отключение коллекции общих образов
-              href: classroom-labs/how-to-attach-detach-shared-image-gallery.md
-        - name: Создание и настройка лаборатории для аудитории (инструктор)
-          items:
-            - name: Создание и администрирование лабораторий для аудитории
-              href: classroom-labs/how-to-manage-classroom-labs.md
-            - name: Настройка и публикация шаблонов
-              href: classroom-labs/how-to-create-manage-template.md
-            - name: Настройка и администрирование пула виртуальных машин
-              href: classroom-labs/how-to-set-virtual-machine-passwords.md
-            - name: Создание и администрирование пользователей лаборатории
-              href: classroom-labs/how-to-configure-student-usage.md
-            - name: Создание расписаний и управление ими
-              href: classroom-labs/how-to-create-schedules.md
-            - name: Использование коллекции общих образов
-              href: classroom-labs/how-to-use-shared-image-gallery.md
-            - name: Включение соединения с удаленным рабочим столом для Linux
-              href: classroom-labs/how-to-enable-remote-desktop-linux.md
-            - name: Включение вложенной виртуализации в шаблоне виртуальной машины
-              href: classroom-labs/how-to-enable-nested-virtualization-template-vm.md
-            - name: Создание среды с несколькими виртуальными машинами в шаблоне виртуальной машины
-              href: classroom-labs/how-to-enable-multi-vm-environment.md
-        - name: Подключение к виртуальным машинам в лабораториях для аудитории (учащийся)
-          items:
-            - name: Доступ к лабораториям для аудитории
-              href: classroom-labs/how-to-use-classroom-lab.md
-            - name: Использование подключения с удаленным рабочим столом для виртуальных машин Linux
-              href: classroom-labs/how-to-use-remote-desktop-linux-student.md
-            - name: Установка или сброс паролей для виртуальных машин
-              href: classroom-labs/how-to-set-virtual-machine-passwords-student.md
-    - name: DevTest Labs
+        - name: "Создание виртуальной машины\_— портал Azure"
+          href: devtest-lab-add-vm.md
+        - name: Создание виртуальной машины с помощью Azure PowerShell
+          href: devtest-lab-vm-powershell.md
+        - name: "Создание виртуальной машины с помощью Azure\_CLI"
+          href: devtest-lab-vmcli.md
+        - name: Создание виртуальной машины с помощью шаблона Resource Manager
+          href: devtest-lab-use-resource-manager-template.md
+        - name: Создание виртуальной машины с помощью образа из общедоступной коллекции образов
+          href: add-vm-use-shared-image.md
+        - name: Подключение к виртуальной машине через браузер
+          href: connect-virtual-machine-through-browser.md
+        - name: Запуск или остановка работы виртуальной машины с помощью PowerShell либо CLI
+          href: use-command-line-start-stop-virtual-machines.md
+        - name: Перезапуск виртуальной машины
+          href: devtest-lab-restart-vm.md
+        - name: Изменение размера виртуальной машины
+          href: devtest-lab-resize-vm.md
+        - name: Повторное развертывание виртуальной машины
+          href: devtest-lab-redeploy-vm.md
+        - name: Настройка автозавершения работы виртуальной машины
+          href: devtest-lab-auto-shutdown-vm.md
+        - name: Создание запрашиваемых виртуальных машин и управление ими
+          href: devtest-lab-add-claimable-vm.md
+        - name: Настройка секретов
+          href: devtest-lab-store-secrets-in-key-vault.md
+        - name: Присоединение и отключение дисков данных
+          href: devtest-lab-attach-detach-data-disk.md
+        - name: Запуск виртуальных машин с помощью модулей runbook службы автоматизации
+          href: start-machines-use-automation-runbooks.md
+        - name: Импорт виртуальных машин между лабораториями
+          href: import-virtual-machines-from-another-lab.md
+    - name: Использование сред в лаборатории
       items:
-        - name: Настройка лаборатории
+        - name: Создание среды
+          href: devtest-lab-create-environment-from-arm.md
+        - name: Использование служб платформы как услуги (PaaS)
+          href: use-paas-services.md
+        - name: Общедоступные среды
           items:
-            - name: Создание лаборатории
-              href: devtest-lab-create-lab.md
-            - name: Создание или изменение лабораторий с помощью шаблона Resource Manager
-              href: devtest-lab-use-arm-and-powershell-for-lab-resources.md
-            - name: Определение группы ресурсов для виртуальных машин лаборатории
-              href: resource-group-control.md
-            - name: Добавление сведений о поддержке в лабораторию
-              href: devtest-lab-internal-support-message.md
-            - name: Определение политик и расписаний
-              href: devtest-lab-set-lab-policy.md
-            - name: Настройка лаборатории для использования шлюза удаленных рабочих столов
-              href: configure-lab-remote-desktop-gateway.md
-            - name: Публикация объявлений в лаборатории
-              href: devtest-lab-announcements.md
-            - name: Включение на виртуальных машинах подключения через браузер
-              href: enable-browser-connection-lab-virtual-machines.md
-            - name: Настройка управления затратами
-              href: devtest-lab-configure-cost-management.md
-            - name: Отправка уведомлений об автоматическом завершении работы
-              href: devtest-lab-auto-shutdown.md
-            - name: Масштабирование лаборатории
-              href: devtest-lab-scale-lab.md
-            - name: Управление резервными копиями виртуальной машины
-              items:
-                - name: Настройка образов Azure Marketplace
-                  href: devtest-lab-configure-marketplace-images.md
-                - name: Активация лицензированных образов
-                  href: devtest-lab-enable-licensed-images.md
-                - name: Настройка коллекции общих образов
-                  href: configure-shared-image-gallery.md
-            - name: Настройка тегов
-              href: devtest-lab-add-tag.md
-            - name: Настройка управления доступом
-              items:
-                - name: Добавление владельцев и пользователей лаборатории
-                  href: devtest-lab-add-devtest-user.md
-                - name: Настройка разрешений с помощью пользовательских ролей
-                  href: devtest-lab-grant-user-permissions-to-specific-lab-policies.md
-                - name: Автоматизация добавления пользователей лаборатории
-                  href: automate-add-lab-user.md
-            - name: Управление виртуальными сетями
-              items:
-                - name: Настройка виртуальных сетей
-                  href: devtest-lab-configure-vnet.md
-                - name: Выбор варианта IP-конфигурации
-                  href: devtest-lab-shared-ip.md
-            - name: Удаление лаборатории или виртуальной машины в лаборатории
-              href: devtest-lab-delete-lab-vm.md
-            - name: Экспорт и удаление персональных данных
-              href: personal-data-delete-export.md
-        - name: Использование виртуальных машин в лаборатории
+            - name: Настройка и использование общих сред
+              href: devtest-lab-configure-use-public-environments.md
+            - name: Создание среды с кластером Service Fabric
+              href: create-environment-service-fabric-cluster.md
+        - name: Подключение среды к виртуальной сети в лаборатории
+          href: connect-environment-lab-virtual-network.md
+        - name: Настройка тестовых сред с вложенными шаблонами
+          href: deploy-nested-template-environments.md
+        - name: Использование управляемых удостоверений Azure для развертывания сред
+          href: use-managed-identities-environments.md
+    - name: Управление шаблонами для повторного использования
+      items:
+        - name: Пользовательские образы и формулы
+          href: devtest-lab-comparing-vm-base-image-types.md
+        - name: Управление шаблонами среды
           items:
-            - name: "Создание виртуальной машины\_— портал Azure"
-              href: devtest-lab-add-vm.md
-            - name: Создание виртуальной машины с помощью Azure PowerShell
-              href: devtest-lab-vm-powershell.md
-            - name: "Создание виртуальной машины с помощью Azure\_CLI"
-              href: devtest-lab-vmcli.md
-            - name: Создание виртуальной машины с помощью шаблона Resource Manager
-              href: devtest-lab-use-resource-manager-template.md
-            - name: Создание виртуальной машины с помощью образа из общедоступной коллекции образов
-              href: add-vm-use-shared-image.md
-            - name: Подключение к виртуальной машине через браузер
-              href: connect-virtual-machine-through-browser.md
-            - name: Запуск или остановка работы виртуальной машины с помощью PowerShell либо CLI
-              href: use-command-line-start-stop-virtual-machines.md
-            - name: Перезапуск виртуальной машины
-              href: devtest-lab-restart-vm.md
-            - name: Изменение размера виртуальной машины
-              href: devtest-lab-resize-vm.md
-            - name: Повторное развертывание виртуальной машины
-              href: devtest-lab-redeploy-vm.md
-            - name: Настройка автозавершения работы виртуальной машины
-              href: devtest-lab-auto-shutdown-vm.md
-            - name: Создание запрашиваемых виртуальных машин и управление ими
-              href: devtest-lab-add-claimable-vm.md
-            - name: Настройка секретов
-              href: devtest-lab-store-secrets-in-key-vault.md
-            - name: Присоединение и отключение дисков данных
-              href: devtest-lab-attach-detach-data-disk.md
-            - name: Запуск виртуальных машин с помощью модулей runbook службы автоматизации
-              href: start-machines-use-automation-runbooks.md
-            - name: Импорт виртуальных машин между лабораториями
-              href: import-virtual-machines-from-another-lab.md
-        - name: Использование сред в лаборатории
+            - name: Добавление репозитория Git для артефактов и шаблонов
+              href: devtest-lab-add-artifact-repo.md
+        - name: Управление пользовательскими образами
           items:
-            - name: Создание среды
-              href: devtest-lab-create-environment-from-arm.md
-            - name: Использование служб платформы как услуги (PaaS)
-              href: use-paas-services.md
-            - name: Общедоступные среды
-              items:
-                - name: Настройка и использование общих сред
-                  href: devtest-lab-configure-use-public-environments.md
-                - name: Создание среды с кластером Service Fabric
-                  href: create-environment-service-fabric-cluster.md
-            - name: Подключение среды к виртуальной сети в лаборатории
-              href: connect-environment-lab-virtual-network.md
-            - name: Настройка тестовых сред с вложенными шаблонами
-              href: deploy-nested-template-environments.md
-            - name: Использование управляемых удостоверений Azure для развертывания сред
-              href: use-managed-identities-environments.md
-        - name: Управление шаблонами для повторного использования
+            - name: Создание пользовательского образа из виртуальной машины
+              href: devtest-lab-create-custom-image-from-vm-using-portal.md
+            - name: Создание пользовательского образа виртуального жесткого диска с помощью портала Azure
+              href: devtest-lab-create-template.md
+            - name: Создание пользовательского образа виртуального жесткого диска с помощью PowerShell
+              href: devtest-lab-create-custom-image-from-vhd-using-powershell.md
+            - name: Передача VHD-файла с помощью AzCopy
+              href: devtest-lab-upload-vhd-using-azcopy.md
+            - name: Передача VHD-файла с помощью PowerShell
+              href: devtest-lab-upload-vhd-using-powershell.md
+            - name: Передача VHD-файла с помощью обозревателя хранилищ
+              href: devtest-lab-upload-vhd-using-storage-explorer.md
+        - name: Управление формулами
+          href: devtest-lab-manage-formulas.md
+        - name: Создание фабрики образов
+          href: image-factory-create.md
           items:
-            - name: Пользовательские образы и формулы
-              href: devtest-lab-comparing-vm-base-image-types.md
-            - name: Управление шаблонами среды
-              items:
-                - name: Добавление репозитория Git для артефактов и шаблонов
-                  href: devtest-lab-add-artifact-repo.md
-            - name: Управление пользовательскими образами
-              items:
-                - name: Создание пользовательского образа из виртуальной машины
-                  href: devtest-lab-create-custom-image-from-vm-using-portal.md
-                - name: Создание пользовательского образа виртуального жесткого диска с помощью портала Azure
-                  href: devtest-lab-create-template.md
-                - name: Создание пользовательского образа виртуального жесткого диска с помощью PowerShell
-                  href: devtest-lab-create-custom-image-from-vhd-using-powershell.md
-                - name: Передача VHD-файла с помощью AzCopy
-                  href: devtest-lab-upload-vhd-using-azcopy.md
-                - name: Передача VHD-файла с помощью PowerShell
-                  href: devtest-lab-upload-vhd-using-powershell.md
-                - name: Передача VHD-файла с помощью обозревателя хранилищ
-                  href: devtest-lab-upload-vhd-using-storage-explorer.md
-            - name: Управление формулами
-              href: devtest-lab-manage-formulas.md
-            - name: Создание фабрики образов
-              href: image-factory-create.md
-              items:
-                - name: Запуск фабрики образов из Azure DevOps
-                  href: image-factory-set-up-devops-lab.md
-                - name: Сохранение пользовательских образов и их распространение в несколько лабораторий
-                  href: image-factory-save-distribute-custom-images.md
-                - name: Установка политики хранения и выполнение сценариев очистки
-                  href: image-factory-set-retention-policy-cleanup.md
-        - name: Управление артефактами
+            - name: Запуск фабрики образов из Azure DevOps
+              href: image-factory-set-up-devops-lab.md
+            - name: Сохранение пользовательских образов и их распространение в несколько лабораторий
+              href: image-factory-save-distribute-custom-images.md
+            - name: Установка политики хранения и выполнение сценариев очистки
+              href: image-factory-set-retention-policy-cleanup.md
+    - name: Управление артефактами
+      items:
+        - name: Добавление артефактов к виртуальной машине
+          href: add-artifact-vm.md
+        - name: Создание настраиваемых артефактов
+          href: devtest-lab-artifact-author.md
+        - name: Добавление репозитория артефактов в лабораторию
+          href: add-artifact-repository.md
+        - name: Указание обязательных артефактов
+          href: devtest-lab-mandatory-artifacts.md
+    - name: Интеграция с помощью CI/CD
+      items:
+        - name: Интеграция лабораторий в конвейер CI/CD в Azure Pipelines
+          href: devtest-lab-integrate-ci-cd.md
+        - name: Интеграция сред в конвейер CI/CD в Azure Pipelines
+          href: integrate-environments-devops-pipeline.md
+        - name: Использование DevTest Labs в конвейерах сборки и выпуска в Azure Pipelines
+          href: use-devtest-labs-build-release-pipelines.md
+    - name: Расширение возможностей DevTest Labs
+      items:
+        - name: Использование Функций Azure для расширения возможностей DevTest Labs
+          href: extend-devtest-labs-azure-functions.md
+    - name: Отчеты об использовании лабораторий
+      href: report-usage-across-multiple-labs-subscriptions.md
+    - name: Использование DevTest Labs на предприятии
+      items:
+        - name: DevTest Labs в масштабе предприятия
+          href: devtest-lab-guidance-prescriptive-adoption.md
+        - name: Эталонная архитектура
+          href: devtest-lab-reference-architecture.md
+        - name: Подтверждение концепции
+          href: deliver-proof-concept.md
+        - name: Увеличение масштаба развертывания DevTest Labs
+          href: devtest-lab-guidance-scale.md
+        - name: Планирование внедрения DevTest Labs
+          href: devtest-lab-guidance-orchestrate-implementation.md
+        - name: Управление инфраструктурой DevTest Labs
           items:
-            - name: Добавление артефактов к виртуальной машине
-              href: add-artifact-vm.md
-            - name: Создание настраиваемых артефактов
-              href: devtest-lab-artifact-author.md
-            - name: Добавление репозитория артефактов в лабораторию
-              href: add-artifact-repository.md
-            - name: Указание обязательных артефактов
-              href: devtest-lab-mandatory-artifacts.md
-        - name: Интеграция с помощью CI/CD
-          items:
-            - name: Интеграция лабораторий в конвейер CI/CD в Azure Pipelines
-              href: devtest-lab-integrate-ci-cd.md
-            - name: Интеграция сред в конвейер CI/CD в Azure Pipelines
-              href: integrate-environments-devops-pipeline.md
-            - name: Использование DevTest Labs в конвейерах сборки и выпуска в Azure Pipelines
-              href: use-devtest-labs-build-release-pipelines.md
-        - name: Расширение возможностей DevTest Labs
-          items:
-            - name: Использование Функций Azure для расширения возможностей DevTest Labs
-              href: extend-devtest-labs-azure-functions.md
-        - name: Отчеты об использовании лабораторий
-          href: report-usage-across-multiple-labs-subscriptions.md
-        - name: Использование DevTest Labs на предприятии
-          items:
-            - name: DevTest Labs в масштабе предприятия
-              href: devtest-lab-guidance-prescriptive-adoption.md
-            - name: Эталонная архитектура
-              href: devtest-lab-reference-architecture.md
-            - name: Подтверждение концепции
-              href: deliver-proof-concept.md
-            - name: Увеличение масштаба развертывания DevTest Labs
-              href: devtest-lab-guidance-scale.md
-            - name: Планирование внедрения DevTest Labs
-              href: devtest-lab-guidance-orchestrate-implementation.md
-            - name: Управление инфраструктурой DevTest Labs
-              items:
-                - name: Ресурсы
-                  href: devtest-lab-guidance-governance-resources.md
-                - name: Затраты и стоимость владения
-                  href: devtest-lab-guidance-governance-cost-ownership.md
-                - name: Политика и соответствие требованиям
-                  href: devtest-lab-guidance-governance-policy-compliance.md
-                - name: Перенос и интеграция приложения
-                  href: devtest-lab-guidance-governance-application-migration-integration.md
-        - name: Тестирование приложения в Azure
-          href: test-app-azure.md
-        - name: Устранение неполадок
-          items:
-            - name: Устранение неполадок при сбоях создания виртуальных машин и сред
-              href: troubleshoot-vm-environment-creation-failures.md
-            - name: Устранение неполадок при сбоях артефактов
-              href: devtest-lab-troubleshoot-artifact-failure.md
+            - name: Ресурсы
+              href: devtest-lab-guidance-governance-resources.md
+            - name: Затраты и стоимость владения
+              href: devtest-lab-guidance-governance-cost-ownership.md
+            - name: Политика и соответствие требованиям
+              href: devtest-lab-guidance-governance-policy-compliance.md
+            - name: Перенос и интеграция приложения
+              href: devtest-lab-guidance-governance-application-migration-integration.md
+    - name: Тестирование приложения в Azure
+      href: test-app-azure.md
+    - name: Устранение неполадок
+      items:
+        - name: Устранение неполадок при сбоях создания виртуальных машин и сред
+          href: troubleshoot-vm-environment-creation-failures.md
+        - name: Устранение неполадок при сбоях артефактов
+          href: devtest-lab-troubleshoot-artifact-failure.md
 - name: Справочные материалы
   items:
-    - name: Лаборатории для аудитории
-      items:
-        - name: REST API
-          href: 'https://docs.microsoft.com/rest/api/labservices/'
-    - name: DevTest Labs
-      items:
-        - name: CLI
-          href: /cli/azure/lab
-        - name: PowerShell
-          href: /powershell/module/az.devtestlabs
-        - name: PowerShell. Пример модуля Az.DevTestLabs2
-          href: 'https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/Modules/Library'
-        - name: REST API
-          href: 'https://docs.microsoft.com/rest/api/dtl/'
-        - name: Шаблон Resource Manager
-          href: /azure/templates/microsoft.devtestlab/allversions
+    - name: CLI
+      href: /cli/azure/lab
+    - name: PowerShell
+      href: /powershell/module/az.devtestlabs
+    - name: PowerShell. Пример модуля Az.DevTestLabs2
+      href: 'https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/Modules/Library'
+    - name: REST API
+      href: 'https://docs.microsoft.com/rest/api/dtl/'
+    - name: Шаблон Resource Manager
+      href: /azure/templates/microsoft.devtestlab/allversions
 - name: Ресурсы
   items:
-    - name: Лаборатории для аудитории
-      items:
-        - name: Обновления Azure
-          href: 'https://azure.microsoft.com/updates/?product=lab-services'
-        - name: Цены
-          href: 'https://azure.microsoft.com/pricing/details/lab-services/'
-        - name: Stack Overflow
-          href: 'https://stackoverflow.com/questions/tagged/azure-lab-services'
-        - name: Часто задаваемые вопросы
-          href: classroom-labs/classroom-labs-faq.md
-    - name: DevTest Labs
-      items:
-        - name: Обновления Azure
-          href: 'https://azure.microsoft.com/updates/?product=devtest-lab'
-        - name: Цены
-          href: 'https://azure.microsoft.com/pricing/details/devtest-lab/'
-        - name: Форум MSDN
-          href: 'https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureDevTestLabs'
-        - name: Stack Overflow
-          href: 'https://stackoverflow.com/questions/tagged/azure-devtest-labs'
-        - name: Видео
-          href: 'https://azure.microsoft.com/resources/videos/index/?services=devtest-lab'
-        - name: Часто задаваемые вопросы
-          href: devtest-lab-faq.md
+    - name: Обновления Azure
+      href: 'https://azure.microsoft.com/updates/?product=devtest-lab'
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/devtest-lab/'
+    - name: Форум MSDN
+      href: 'https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureDevTestLabs'
+    - name: Stack Overflow
+      href: 'https://stackoverflow.com/questions/tagged/azure-devtest-labs'
+    - name: Видео
+      href: 'https://azure.microsoft.com/resources/videos/index/?services=devtest-lab'
+    - name: Часто задаваемые вопросы
+      href: devtest-lab-faq.md

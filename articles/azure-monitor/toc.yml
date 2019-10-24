@@ -639,6 +639,8 @@
                   href: insights/vminsights-workbooks.md
                 - name: Анализ данных с помощью запросов к журналу
                   href: insights/vminsights-log-search.md
+                - name: Обновление агента зависимостей
+                  href: insights/vminsights-dependency-agent-maintenance.md
                 - name: Отключение мониторинга
                   href: insights/vminsights-optout.md
             - name: Решение "Емкость и производительность"

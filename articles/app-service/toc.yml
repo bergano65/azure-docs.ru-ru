@@ -123,6 +123,8 @@
               href: deploy-continuous-deployment.md
             - name: Развертывание из локального репозитория Git
               href: deploy-local-git.md
+            - name: Развертывание с помощью действий GitHub
+              href: deploy-github-actions.md
             - name: Развертывание с помощью шаблона
               href: deploy-complex-application-predictably.md
         - name: Настройка учетных данных развертывания
