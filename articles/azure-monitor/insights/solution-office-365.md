@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 08/13/2019
-ms.openlocfilehash: 032d52961b4867cad94d06802adb0a1f3eb00f5f
-ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
+ms.openlocfilehash: 84af0484ed9fb792bef6bbbe9c53395b569acb3c
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72553951"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72793868"
 ---
 # <a name="office-365-management-solution-in-azure-preview"></a>Решение по управлению Office 365 в Azure (предварительная версия)
 
@@ -69,7 +69,10 @@ ms.locfileid: "72553951"
 
 - имя пользователя: адрес электронной почты учетной записи администратора;
 - идентификатор клиента: уникальный идентификатор подписки Office 365;
-- идентификатор клиента 2: 16-значная строка, представляющая клиента Office 365;
+
+Во время создания и настройки приложения Office 365 в Azure Active Directory необходимо собрать следующие сведения.
+
+- Идентификатор приложения (клиент): 16-символьная строка, представляющая клиент Office 365.
 - секрет клиента: зашифрованная строка, необходимая для аутентификации.
 
 ### <a name="create-an-office-365-application-in-azure-active-directory"></a>Создание приложения Office 365 в Azure Active Directory
@@ -87,6 +90,9 @@ ms.locfileid: "72553951"
 1. Щелкните **Регистрация** и проверьте сведения о приложении.
 
     ![Зарегистрированное приложение](media/solution-office-365/registered-app.png)
+
+1. Сохраните идентификатор приложения (клиента) вместе с остальной информацией, собранной ранее.
+
 
 ### <a name="configure-application-for-office-365"></a>Настройка приложения для Office 365
 
@@ -117,7 +123,7 @@ ms.locfileid: "72553951"
     ![Ключи](media/solution-office-365/secret.png)
  
 1. Для нового ключа введите **описание** и **срок действия**.
-1. Нажмите кнопку **Добавить** , а затем скопируйте созданное **значение** .
+1. Нажмите кнопку **Добавить** , а затем сохраните **значение** , созданное в качестве секрета клиента вместе с остальной информацией, собранной ранее.
 
     ![Ключи](media/solution-office-365/keys.png)
 
@@ -188,7 +194,12 @@ ms.locfileid: "72553951"
     
     ![Согласие администратора](media/solution-office-365/admin-consent.png)
 
+> [!NOTE]
+> Возможно, вы будете перенаправлены на несуществующую страницу. Считать его успешным.
+
 ### <a name="subscribe-to-log-analytics-workspace"></a>Подписка на рабочую область Log Analytics
+
+Последним шагом является подписка приложения на рабочую область Log Analytics. Этот шаг можно выполнить с помощью сценария PowerShell.
 
 Последним шагом является подписка приложения на рабочую область Log Analytics. Этот шаг можно выполнить с помощью сценария PowerShell.
 
@@ -236,18 +247,20 @@ ms.locfileid: "72553951"
                     $authority = "https://login.windows.net/$adTenant";
                     $ARMResource ="https://management.azure.com/";break} 
                     }
-    
+
     Function RESTAPI-Auth { 
-    
-    $global:SubscriptionID = $Subscription.SubscriptionId
+    $global:SubscriptionID = $Subscription.Subscription.Id
     # Set Resource URI to Azure Service Management API
-    $resourceAppIdURIARM=$ARMResource;
+    $resourceAppIdURIARM=$ARMResource
     # Authenticate and Acquire Token 
     # Create Authentication Context tied to Azure AD Tenant
     $authContext = New-Object "Microsoft.IdentityModel.Clients.ActiveDirectory.AuthenticationContext" -ArgumentList $authority
     # Acquire token
-    $global:authResultARM = $authContext.AcquireToken($resourceAppIdURIARM, $clientId, $redirectUri, "Auto")
-    $authHeader = $global:authResultARM.CreateAuthorizationHeader()
+    $platformParameters = New-Object "Microsoft.IdentityModel.Clients.ActiveDirectory.PlatformParameters" -ArgumentList "Auto"
+    $global:authResultARM = $authContext.AcquireTokenAsync($resourceAppIdURIARM, $clientId, $redirectUri, $platformParameters)
+    $global:authResultARM.Wait()
+    $authHeader = $global:authResultARM.Result.CreateAuthorizationHeader()
+
     $authHeader
     }
     
@@ -271,7 +284,7 @@ ms.locfileid: "72553951"
     
     Function Connection-API
     {
-    $authHeader = $global:authResultARM.CreateAuthorizationHeader()
+    $authHeader = $global:authResultARM.Result.CreateAuthorizationHeader()
     $ResourceName = "https://manage.office.com"
     $SubscriptionId   =  $Subscription[0].Subscription.Id
     
@@ -315,7 +328,7 @@ ms.locfileid: "72553951"
     Function Office-Subscribe-Call{
     try{
     #----------------------------------------------------------------------------------------------------------------------------------------------
-    $authHeader = $global:authResultARM.CreateAuthorizationHeader()
+    $authHeader = $global:authResultARM.Result.CreateAuthorizationHeader()
     $SubscriptionId   =  $Subscription[0].Subscription.Id
     $OfficeAPIUrl = $ARMResource + 'subscriptions/' + $SubscriptionId + '/resourceGroups/' + $ResourceGroupName + '/providers/Microsoft.OperationalInsights/workspaces/' + $WorkspaceName + '/datasources/office365datasources_' + $SubscriptionId + $OfficeTennantId + '?api-version=2015-11-01-preview'
     
