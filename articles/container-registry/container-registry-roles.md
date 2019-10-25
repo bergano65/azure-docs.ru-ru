@@ -8,12 +8,12 @@ ms.service: container-registry
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: danlep
-ms.openlocfilehash: 793dbf056201a3315a9b77dfebbb9331a8ed7db1
-ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
+ms.openlocfilehash: 69104cdaeb4abfc15e2ac4209e1ddbc610656c13
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68310597"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72793987"
 ---
 # <a name="azure-container-registry-roles-and-permissions"></a>Роли и разрешения реестра контейнеров Azure
 
@@ -21,9 +21,9 @@ ms.locfileid: "68310597"
 
 | Роль или разрешение       | [Доступ к Resource Manager](#access-resource-manager) | [Создание и удаление реестра](#create-and-delete-registry) | [Отправка образа](#push-image) | [Получение образа](#pull-image) | [Удаление данных изображения](#delete-image-data) | [Изменение политик](#change-policies) |   [Подписывание образов](#sign-images)  |
 | ---------| --------- | --------- | --------- | --------- | --------- | --------- | --------- |
-| Владелец | X | X | X | X | X | X |  |  
-| Участник | X | X | X |  X | X | X |  |  
-| Читатель | X |  |  |  |  |  |  |
+| Владелец. | X | X | X | X | X | X |  |  
+| участник; | X | X | X |  X | X | X |  |  
+| Читатель | X |  |  | X |  |  |  |
 | AcrPush |  |  | X | X | |  |  |  
 | AcrPull |  |  |  | X |  |  |  |  
 | акрделете |  |  |  |  | X |  |  |
@@ -73,7 +73,7 @@ ms.locfileid: "68310597"
 
 Возможность подписывания образов обычно назначается автоматизированному процессу, который использует субъект-службу. Это разрешение обычно объединяется с разрешением на [отправку образа](#push-image), чтобы разрешить отправку доверенного образа в реестр. Дополнительные сведения см. в разделе [Доверие содержимому в реестре контейнеров Azure](container-registry-content-trust.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Ознакомьтесь с дополнительными сведениями о назначении ролей RBAC для удостоверений Azure с помощью [портала Azure](../role-based-access-control/role-assignments-portal.md), [Azure CLI](../role-based-access-control/role-assignments-cli.md) или других средств Azure.
 

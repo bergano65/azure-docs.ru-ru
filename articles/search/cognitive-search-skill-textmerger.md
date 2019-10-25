@@ -1,22 +1,21 @@
 ---
-title: 'Навык когнитивного поиска: объединение текста (служба "Поиск Azure")'
-description: Объедините текст из коллекции полей в одно консолидированное поле. Используйте этот когнитивный навык в конвейере обогащения службы "Поиск Azure".
-services: search
+title: Когнитивный навык объединения текста
+titleSuffix: Azure Cognitive Search
+description: Объедините текст из коллекции полей в одно консолидированное поле. Используйте этот опытный навык в конвейере обогащения искусственного интеллекта в Azure Когнитивный поиск.
 manager: nitinme
 author: luiscabrer
-ms.service: search
-ms.workload: search
-ms.topic: conceptual
-ms.date: 05/02/2019
 ms.author: luisca
-ms.openlocfilehash: 1e88fcc13d97d92cf9b35616ecb7d71c2d24db1f
-ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
+ms.service: cognitive-search
+ms.topic: conceptual
+ms.date: 11/04/2019
+ms.openlocfilehash: c44f37c37bff2ddeb0fbba83d170054bf21129a6
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71265260"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72791838"
 ---
-#    <a name="text-merge-cognitive-skill"></a>Когнитивный навык объединения текста
+#   <a name="text-merge-cognitive-skill"></a>Когнитивный навык объединения текста
 
 Когнитивный навык **объединения текста** объединяет текст из коллекции полей в одном поле. 
 
@@ -55,7 +54,7 @@ Microsoft.Skills.Text.MergeSkill
 }
 ```
 
-##  <a name="sample-output"></a>Пример полученных результатов
+##  <a name="sample-output"></a>Пример выходных данных
 В этом примере показаны выходные данные предыдущего ввода, при условии, что *insertPreTag* имеет значение `" "`, а *insertPostTag* — `""`. 
 
 ```json
@@ -141,8 +140,8 @@ Microsoft.Skills.Text.MergeSkill
 }
 ```
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>Дополнительные материалы
 
-+ [Предопределенные навыки](cognitive-search-predefined-skills.md)
-+ [Определение набора навыков](cognitive-search-defining-skillset.md)
++ [Встроенные навыки](cognitive-search-predefined-skills.md)
++ [How to define a skillset](cognitive-search-defining-skillset.md) (Определение набора навыков)
 + [Создание индексатора (REST)](https://docs.microsoft.com/rest/api/searchservice/create-indexer)

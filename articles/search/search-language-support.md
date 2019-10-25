@@ -1,25 +1,25 @@
 ---
-title: Многоязычная индексация поисковых запросов (не английских) в службе "Поиск Azure"
-description: Служба поиска Azure поддерживает 56 языков — для этого используются языковые анализаторы Lucene и технология Майкрософт для обработки естественных языков.
-author: yahnoosh
+title: Многоязыковая индексация для поисковых запросов, отличных от английского
+titleSuffix: Azure Cognitive Search
+description: Azure Когнитивный поиск поддерживает языки 56, используя анализаторы языка из Lucene и технологии обработки естественного языка от корпорации Майкрософт.
 manager: nitinme
-services: search
-ms.service: search
-ms.topic: conceptual
-ms.date: 08/08/2019
+author: yahnoosh
 ms.author: jlembicz
-ms.openlocfilehash: 9d2e6418eb925f0d113b7e9a91463951ca52031a
-ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
+ms.service: cognitive-search
+ms.topic: conceptual
+ms.date: 11/04/2019
+ms.openlocfilehash: ca2bc66c755da2011cc7016f37b194caa6200d9a
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70186558"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72793596"
 ---
-# <a name="how-to-create-an-index-for-multiple-languages-in-azure-search"></a>Создание индекса для нескольких языков в службе поиска Azure
+# <a name="how-to-create-an-index-for-multiple-languages-in-azure-cognitive-search"></a>Создание индекса для нескольких языков в Azure Когнитивный поиск
 
 Индексы могут включать поля, содержащие содержимое из нескольких языков, например, создание отдельных полей для строк, зависящих от языка. Для получения наилучших результатов при индексировании и выполнении запросов назначьте анализатор языка, предоставляющий соответствующие лингвистические правила. 
 
-Поиск Azure предлагает широкий выбор языковых анализаторов из Lucene и Microsoft, которые могут быть назначены отдельным полям с помощью свойства анализатора. Можно также указать анализатор языка на портале, как описано в этой статье.
+Azure Когнитивный поиск предлагает широкий выбор языковых анализаторов из Lucene и Microsoft, которые могут быть назначены отдельным полям с помощью свойства анализатора. Можно также указать анализатор языка на портале, как описано в этой статье.
 
 ## <a name="add-analyzers-to-fields"></a>Добавление анализаторов в поля
 
@@ -34,7 +34,7 @@ ms.locfileid: "70186558"
 
 ![Назначение анализаторов языка во время определения поля](media/search-language-support/select-analyzer.png "Назначение анализаторов языка во время определения поля")
 
-По умолчанию все поля, поддерживающие поиск, используют [стандартный анализатор Lucene](https://lucene.apache.org/core/6_6_1/core/org/apache/lucene/analysis/standard/StandardAnalyzer.html) , который не зависит от языка. Полный список поддерживаемых анализаторов см. в статье [Добавление языковых анализаторов в индекс службы поиска Azure](index-add-language-analyzers.md).
+По умолчанию все поля, поддерживающие поиск, используют [стандартный анализатор Lucene](https://lucene.apache.org/core/6_6_1/core/org/apache/lucene/analysis/standard/StandardAnalyzer.html) , который не зависит от языка. Полный список поддерживаемых анализаторов см. в статье [Добавление языковых анализаторов в индекс Azure когнитивный Поиск](index-add-language-analyzers.md).
 
 На портале анализаторы предназначены для использования "как есть". Если требуется настройка или определенная конфигурация фильтров и маркеров, необходимо [создать пользовательский анализатор](index-add-custom-analyzers.md) в коде. Портал не поддерживает выбор и настройку пользовательских анализаторов.
 
@@ -63,6 +63,6 @@ ms.locfileid: "70186558"
 
 `https://[service name].search.windows.net/indexes/[index name]/docs?search=Microsoft&scoringProfile=englishFirst&api-version=2019-05-06`
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Если вы являетесь разработчиком .NET, обратите внимание, что вы можете настроить языковые анализаторы с помощью [пакета SDK .NET для службы поиска Azure](https://www.nuget.org/packages/Microsoft.Azure.Search) и свойства [анализатора](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.analyzer?view=azure-dotnet) . 
+Если вы являетесь разработчиком .NET, обратите внимание, что вы можете настроить языковые анализаторы с помощью [пакета SDK Azure когнитивный Поиск .NET](https://www.nuget.org/packages/Microsoft.Azure.Search) и свойства [анализатора](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.analyzer?view=azure-dotnet) . 

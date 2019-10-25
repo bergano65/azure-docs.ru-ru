@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: rboucher
 ms.author: robb
 ms.date: 01/28/2018
-ms.openlocfilehash: e79d9be6b893184bd615fbc569893e53a2c72861
-ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
+ms.openlocfilehash: 9796b41d0df091bc6eb23ba525a79da278e00bbd
+ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72555607"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72802303"
 ---
 # <a name="overview-of-alerts-in-microsoft-azure"></a>Обзор оповещений в Microsoft Azure 
 
@@ -184,9 +184,9 @@ ms.locfileid: "72555607"
 
 Для создания предупреждений, созданных для подписки, может потребоваться программный запрос. Это может быть создание пользовательских представлений за пределами портал Azure или анализ оповещений для выявления закономерностей и тенденций.
 
-Вы можете запросить оповещения, созданные для ваших подписок, с помощью [Управление оповещениями REST API](https://aka.ms/alert-management-api) или [REST API Граф ресурсов Azure для оповещений](https://docs.microsoft.com/rest/api/azureresourcegraph/resources/resources).
+Вы можете запросить предупреждения, созданные для ваших подписок, с помощью [Управление оповещениями REST API](https://aka.ms/alert-management-api) или с помощью [графа ресурсов Azure REST API для оповещений](https://docs.microsoft.com/rest/api/azureresourcegraph/resourcegraph(2018-09-01-preview)/resources/resources)).
 
-[Граф ресурсов Azure REST API для оповещений](https://docs.microsoft.com/rest/api/azureresourcegraph/resources/resources) позволяет запрашивать экземпляры предупреждений в масштабе. Это рекомендуется, если необходимо управлять предупреждениями, созданными для нескольких подписок. 
+[Граф ресурсов Azure REST API для оповещений](https://docs.microsoft.com/rest/api/azureresourcegraph/resourcegraph(2018-09-01-preview)/resources/resources)) позволяет запрашивать экземпляры оповещений в масштабе. Это рекомендуется, если необходимо управлять предупреждениями, созданными для нескольких подписок. 
 
 Следующий пример запроса к API возвращает количество предупреждений в одной подписке:
 

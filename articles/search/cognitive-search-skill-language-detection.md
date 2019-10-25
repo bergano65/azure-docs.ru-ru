@@ -1,20 +1,19 @@
 ---
-title: 'Навык когнитивного поиска: распознавание языка (служба "Поиск Azure")'
-description: Анализирует неструктурированный текст и для каждой записи возвращает идентификатор языка с оценкой, указывающей степень анализа в конвейере обогащения службы "Поиск Azure".
-services: search
+title: Когнитивный навык распознавания языка
+titleSuffix: Azure Cognitive Search
+description: Вычисляет неструктурированный текст и для каждой записи возвращает идентификатор языка с показателем, указывающим стойкость анализа в конвейере обогащения искусственного интеллекта в Azure Когнитивный поиск.
 manager: nitinme
 author: luiscabrer
-ms.service: search
-ms.workload: search
-ms.topic: conceptual
-ms.date: 05/02/2019
 ms.author: luisca
-ms.openlocfilehash: fe21477865b5bbad65f5e4639e8df253f12dc1b6
-ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
+ms.service: cognitive-search
+ms.topic: conceptual
+ms.date: 11/04/2019
+ms.openlocfilehash: e3ec9ea9cfbae314297c5b59f6a07bcebaef6a5c
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71265424"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72791955"
 ---
 #   <a name="language-detection-cognitive-skill"></a>Когнитивный навык распознавания языка
 
@@ -25,16 +24,16 @@ ms.locfileid: "71265424"
 Определение языка использует библиотеки обработки естественного языка Bing, что превышает число [поддерживаемых языков и регионов](https://docs.microsoft.com/azure/cognitive-services/text-analytics/language-support) , перечисленных для анализ текста. Точный список языков не публикуется, но включает в себя все широко знакомые языки, а также варианты, диалекты и некоторые региональные и культурные языки. Если содержимое представлено на менее часто используемом языке, можно [попробовать распознавание языка API](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c7) , чтобы узнать, возвращает ли он код. Для языков, которые не удалась распознать, возвращается ответ `unknown`.
 
 > [!NOTE]
-> По мере расширения области путем увеличения частоты обработки и добавления большего количества документов или дополнительных алгоритмов ИИ, вам нужно будет [присоединить оплачиваемый ресурс Cognitive Services](cognitive-search-attach-cognitive-services.md). Плата взимается при вызове API в Cognitive Services и извлечении изображений при открытии документов в службе "Поиск Azure". За извлечение текста из документов плата не взимается.
+> По мере расширения области путем увеличения частоты обработки и добавления большего количества документов или дополнительных алгоритмов ИИ, вам нужно будет [присоединить оплачиваемый ресурс Cognitive Services](cognitive-search-attach-cognitive-services.md). Расходы начисляются при вызове API в Cognitive Services, а также для извлечения изображений в рамках этапа взлома документов в Azure Когнитивный поиск. За извлечение текста из документов плата не взимается.
 >
-> Плата за выполнение встроенных навыков взимается в рамках существующей [модели оплаты Cognitive Services по мере использования](https://azure.microsoft.com/pricing/details/cognitive-services/). Плата за извлечение изображений указана на [странице с ценами на Поиск Azure](https://go.microsoft.com/fwlink/?linkid=2042400).
+> Плата за выполнение встроенных навыков взимается в рамках существующей [модели оплаты Cognitive Services по мере использования](https://azure.microsoft.com/pricing/details/cognitive-services/). Цены на извлечение изображений описаны на [странице цен на когнитивный Поиск Azure](https://go.microsoft.com/fwlink/?linkid=2042400).
 
 
 ## <a name="odatatype"></a>@odata.type  
 Microsoft.Skills.Text.LanguageDetectionSkill
 
 ## <a name="data-limits"></a>Ограничения данных
-Максимальный размер записи должен составлять 50 000 символов, [`String.Length`](https://docs.microsoft.com/dotnet/api/system.string.length)измеряемый. Если вам нужно разбить данные перед отправкой в тональный анализатор, можно воспользоваться [навыком разделения текста](cognitive-search-skill-textsplit.md).
+Максимальный размер записи должен составлять 50 000 символов, измеряемый [`String.Length`](https://docs.microsoft.com/dotnet/api/system.string.length). Если вам нужно разбить данные перед отправкой в тональный анализатор, можно воспользоваться [навыком разделения текста](cognitive-search-skill-textsplit.md).
 
 ## <a name="skill-inputs"></a>Входные данные навыков
 
@@ -42,7 +41,7 @@ Microsoft.Skills.Text.LanguageDetectionSkill
 
 | Входные данные     | Описание |
 |--------------------|-------------|
-| text | Анализируемый текст.|
+| текст | Анализируемый текст.|
 
 ## <a name="skill-outputs"></a>Выходные данные навыка
 
@@ -104,7 +103,7 @@ Microsoft.Skills.Text.LanguageDetectionSkill
 ```
 
 
-##  <a name="sample-output"></a>Пример полученных результатов
+##  <a name="sample-output"></a>Пример выходных данных
 
 ```json
 {
@@ -135,7 +134,7 @@ Microsoft.Skills.Text.LanguageDetectionSkill
 ## <a name="error-cases"></a>Варианты ошибок
 Если текст написан на неподдерживаемом языке, возникает ошибка и идентификатор языка не возвращается.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>Дополнительные материалы
 
-+ [Предопределенные навыки](cognitive-search-predefined-skills.md)
-+ [Определение набора навыков](cognitive-search-defining-skillset.md)
++ [Встроенные навыки](cognitive-search-predefined-skills.md)
++ [How to define a skillset](cognitive-search-defining-skillset.md) (Определение набора навыков)

@@ -1,20 +1,19 @@
 ---
-title: 'Навык когнитивного поиска: извлечение ключевой фразы (в службе "Поиск Azure")'
-description: Оценивает неструктурированный текст и для каждой записи возвращает список ключевых фраз в конвейере обогащения службы "Поиск Azure".
-services: search
+title: Когнитивный навык извлечения ключевой фразы
+titleSuffix: Azure Cognitive Search
+description: Вычисляет неструктурированный текст и для каждой записи возвращает список ключевых фраз в конвейере обогащения искусственного интеллекта в Azure Когнитивный поиск.
 manager: nitinme
 author: luiscabrer
-ms.service: search
-ms.workload: search
-ms.topic: conceptual
-ms.date: 09/18/2019
 ms.author: luisca
-ms.openlocfilehash: ffaa2afbfa12770168cb5a92b7022addc039f0fb
-ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
+ms.service: cognitive-search
+ms.topic: conceptual
+ms.date: 11/04/2019
+ms.openlocfilehash: ccdd25d82af2b4893260af18dac818816d9e4579
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71265780"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72791977"
 ---
 #   <a name="key-phrase-extraction-cognitive-skill"></a>Когнитивный навык извлечения ключевой фразы
 
@@ -23,16 +22,16 @@ ms.locfileid: "71265780"
 Эта возможность полезна, если необходимо быстро определить основные тезисы в записи. Например, для данного входного текста "Еда была вкусной и были замечательные сотрудники", служба вернет "еда" и "замечательные сотрудники".
 
 > [!NOTE]
-> По мере расширения области путем увеличения частоты обработки и добавления большего количества документов или дополнительных алгоритмов ИИ, вам нужно будет [присоединить оплачиваемый ресурс Cognitive Services](cognitive-search-attach-cognitive-services.md). Плата взимается при вызове API в Cognitive Services и извлечении изображений при открытии документов в службе "Поиск Azure". За извлечение текста из документов плата не взимается.
+> По мере расширения области путем увеличения частоты обработки и добавления большего количества документов или дополнительных алгоритмов ИИ, вам нужно будет [присоединить оплачиваемый ресурс Cognitive Services](cognitive-search-attach-cognitive-services.md). Расходы начисляются при вызове API в Cognitive Services, а также для извлечения изображений в рамках этапа взлома документов в Azure Когнитивный поиск. За извлечение текста из документов плата не взимается.
 >
-> Плата за выполнение встроенных навыков взимается в рамках существующей [модели оплаты Cognitive Services по мере использования](https://azure.microsoft.com/pricing/details/cognitive-services/). Плата за извлечение изображений указана на [странице с ценами на Поиск Azure](https://go.microsoft.com/fwlink/?linkid=2042400).
+> Плата за выполнение встроенных навыков взимается в рамках существующей [модели оплаты Cognitive Services по мере использования](https://azure.microsoft.com/pricing/details/cognitive-services/). Цены на извлечение изображений описаны на [странице цен на когнитивный Поиск Azure](https://go.microsoft.com/fwlink/?linkid=2042400).
 
 
 ## <a name="odatatype"></a>@odata.type  
 Microsoft.Skills.Text.KeyPhraseExtractionSkill 
 
 ## <a name="data-limits"></a>Ограничения данных
-Максимальный размер записи должен составлять 50 000 символов, [`String.Length`](https://docs.microsoft.com/dotnet/api/system.string.length)измеряемый. Если вам нужно разбить данные перед отправкой для извлечения ключевой фразы, можно воспользоваться [навыком разделения текста](cognitive-search-skill-textsplit.md).
+Максимальный размер записи должен составлять 50 000 символов, измеряемый [`String.Length`](https://docs.microsoft.com/dotnet/api/system.string.length). Если вам нужно разбить данные перед отправкой для извлечения ключевой фразы, можно воспользоваться [навыком разделения текста](cognitive-search-skill-textsplit.md).
 
 ## <a name="skill-parameters"></a>Параметры навыков
 
@@ -47,7 +46,7 @@ Microsoft.Skills.Text.KeyPhraseExtractionSkill
 
 | Входные данные     | Описание |
 |--------------------|-------------|
-| text | Анализируемый текст.|
+| текст | Анализируемый текст.|
 | languageCode  |  Строка, указывающая язык записей. Если этот параметр не указан, для анализа записей будет использоваться код языка по умолчанию. <br/>Ознакомьтесь с [полным списком поддерживаемых языков](https://docs.microsoft.com/azure/cognitive-services/text-analytics/text-analytics-supported-languages).|
 
 ##  <a name="sample-definition"></a>Пример определения
@@ -91,7 +90,7 @@ Microsoft.Skills.Text.KeyPhraseExtractionSkill
 ```
 
 
-##  <a name="sample-output"></a>Пример полученных результатов
+##  <a name="sample-output"></a>Пример выходных данных
 
 ```json
 {
@@ -121,7 +120,7 @@ Microsoft.Skills.Text.KeyPhraseExtractionSkill
 Если текст пуст, появится предупреждение.
 Если текст больше 50 000 знаков, будут проанализированы только первые 50 000 знаков и появится предупреждение.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>Дополнительные материалы
 
-+ [Предопределенные навыки](cognitive-search-predefined-skills.md)
-+ [Определение набора навыков](cognitive-search-defining-skillset.md)
++ [Встроенные навыки](cognitive-search-predefined-skills.md)
++ [How to define a skillset](cognitive-search-defining-skillset.md) (Определение набора навыков)

@@ -1,25 +1,20 @@
 ---
-title: Краткое руководство по Azure Cloud Shell | Документация Майкрософт
-description: Краткое руководство по Azure Cloud Shell
-services: Azure
-documentationcenter: ''
+title: Краткое руководство по Azure Cloud Shell-PowerShell
+description: Узнайте, как использовать PowerShell в браузере с Azure Cloud Shell.
 author: maertendmsft
-manager: timlt
+ms.author: damaerte
 tags: azure-resource-manager
-ms.assetid: ''
 ms.service: azure
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
-ms.devlang: na
 ms.topic: article
 ms.date: 10/18/2018
-ms.author: damaerte
-ms.openlocfilehash: f1184f9f3a4cf827f0afef9bca8a72308c371d76
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 72261989b7cee9d2251eb18b36431ec807b0e874
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "71224552"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72791599"
 ---
 # <a name="quickstart-for-powershell-in-azure-cloud-shell"></a>Краткое руководство по использованию PowerShell в Azure Cloud Shell
 
@@ -27,8 +22,6 @@ ms.locfileid: "71224552"
 
 > [!NOTE]
 > Также вы можете ознакомиться с кратким руководством по использованию [Bash в Azure Cloud Shell](quickstart.md).
-
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="start-cloud-shell"></a>Запуск Cloud Shell
 
@@ -268,7 +261,7 @@ mywebapp3       Running  MyResourceGroup3   {mywebapp3.azurewebsites.net...   So
 
 ### <a name="using-ssh"></a>Использование SSH
 
-Следуйте [инструкциям](https://docs.microsoft.com/azure/virtual-machines/linux/quick-create-powershell) , чтобы создать новую конфигурацию виртуальной машины с помощью командлетов Azure PowerShell.
+Следуйте инструкциям [, чтобы создать](https://docs.microsoft.com/azure/virtual-machines/linux/quick-create-powershell) новую конфигурацию виртуальной машины с помощью командлетов Azure PowerShell.
 Прежде чем вызвать `New-AzVM` для запуска развертывания, добавьте открытый ключ SSH в конфигурацию виртуальной машины.
 Новая виртуальная машина будет содержать открытый ключ в расположении `~\.ssh\authorized_keys`. Это позволит запускать на виртуальной машине сеансы SSH без учетных данных.
 
@@ -297,7 +290,7 @@ ssh azureuser@MyVM.Domain.Com
 
 ## <a name="install-custom-modules"></a>Установка пользовательских модулей
 
-Можно запустить `Install-Module` , чтобы установить модули из [коллекция PowerShell][gallery].
+Вы можете запустить `Install-Module`, чтобы установить модули из [коллекция PowerShell][gallery].
 
 ## <a name="get-help"></a>Get-Help
 

@@ -1,13 +1,13 @@
 ---
-title: Добавление анализаторов языка в службе "Поиск Azure"
-description: Многоязычный лексический анализ текста для запросов и индексов не на английском языке в службе "Поиск Azure".
-ms.date: 02/14/2019
-services: search
-ms.service: search
-ms.topic: conceptual
+title: Добавление анализаторов языка к строковым полям в индексе
+titleSuffix: Azure Cognitive Search
+description: Многоязычный лексический анализ текста для запросов и индексов, отличных от английского, в Azure Когнитивный поиск.
+manager: nitinme
 author: Yahnoosh
 ms.author: jlembicz
-manager: nitinme
+ms.service: cognitive-search
+ms.topic: conceptual
+ms.date: 11/04/2019
 translation.priority.mt:
 - de-de
 - es-es
@@ -19,18 +19,18 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: e54fa449e0ed7f3208d9924b69946c6598a00444
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.openlocfilehash: f5833da5b15c893499b0d786972eff61c7391137
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69648810"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72790144"
 ---
-# <a name="add-language-analyzers-to-an-azure-search-index"></a>Добавление анализатора языка в индекс Поиска Azure
+# <a name="add-language-analyzers-to-an-azure-cognitive-search-index"></a>Добавление анализаторов языка в индекс Azure Когнитивный поиск
 
 *Анализатор языка* является отдельным типом [анализатора текста](search-analyzers.md), которая выполняет лексический анализ с использованием лингвистических правил целевого языка. Каждое поле, поддерживающее поиск, обладает свойством **анализатора**. Если ваш индекс содержит переведенные строки, например отдельные поля для английского и китайского текста, вы можете указать анализаторы языка для каждого поля, что позволит получить доступ к богатым лингвистическим возможностям этих анализаторов.  
 
-Служба "Поиск Azure" поддерживает 35 анализаторов на базе технологии Lucene и 50 анализаторов на базе собственной технологии Майкрософт для обработки естественных языков, которая используется в приложениях Office и поисковой системе Bing.
+Azure Когнитивный поиск поддерживает анализаторы 35, которые поддерживаются Lucene, и анализаторы 50 с помощью собственной технологии обработки естественного языка Майкрософт, используемой в Office и Bing.
 
 ## <a name="comparing-analyzers"></a>Сравнение анализаторов
 
@@ -52,7 +52,7 @@ ms.locfileid: "69648810"
 
 Используйте параметр запроса **searchFields**, чтобы указать поля для других языков, в которых будет выполнен запрос. Вы можете ознакомиться с примерами запросов, в которых используется свойство анализатора, в разделе [Поиск документов](https://docs.microsoft.com/rest/api/searchservice/search-documents). 
 
-Дополнительные сведения о свойствах индекса см. в статье [Create Index &#40;Azure Search Service REST API&#41;](https://docs.microsoft.com/rest/api/searchservice/create-index) (Создание индекса (REST API Службы поиска Azure)). Дополнительные сведения об анализе в службе "Поиск Azure" см. в статье [Анализаторы для обработки текста в службе "Поиск Azure"](https://docs.microsoft.com/azure/search/search-analyzers).
+Дополнительные сведения о свойствах индекса см. в статье [Создание индекса &#40;Azure&#41;когнитивный Поиск REST API](https://docs.microsoft.com/rest/api/searchservice/create-index). Дополнительные сведения об анализе в Azure Когнитивный поиск см. в статье [Анализаторы в azure когнитивный Поиск](https://docs.microsoft.com/azure/search/search-analyzers).
 
 <a name="language-analyzer-list"></a>
 
@@ -120,8 +120,9 @@ ms.locfileid: "69648810"
 
  Все анализаторы, у которых в названии есть идентификатор **Lucene**, работают на базе [анализаторов языка Apache Lucene](https://lucene.apache.org/core/6_6_1/core/overview-summary.html ).
 
-## <a name="see-also"></a>См. также  
- [Create Index &#40;Azure Search Service REST API&#41;](https://docs.microsoft.com/rest/api/searchservice/create-index) (Создание индекса (REST API Службы поиска Azure))  
- [AnalyzerName Class](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.analyzername) (Класс AnalyzerName)  
- [Video: module 7 of Azure Search MVA presentation](https://channel9.msdn.com/Series/Adding-Microsoft-Azure-Search-to-Your-Websites-and-Apps/07) (Видео. 7 модуль презентации MVA, посвященной службе "Поиск Azure").  
+## <a name="see-also"></a>Дополнительные материалы  
+
++ [Создание индекса &#40;REST API когнитивный Поиск Azure&#41;](https://docs.microsoft.com/rest/api/searchservice/create-index)  
+
++ [AnalyzerName Class](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.analyzername) (Класс AnalyzerName)  
 

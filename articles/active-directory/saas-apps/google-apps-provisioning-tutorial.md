@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 03/27/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0187d17f8210800aef1c68def0614ce26913e09a
-ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
+ms.openlocfilehash: 54b158528a67dfe77f33f41f3bb4b4570eb4c508
+ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72555066"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72802203"
 ---
 # <a name="tutorial-configure-g-suite-for-automatic-user-provisioning"></a>Руководство по настройке G Suite для автоматической подготовки пользователей
 
@@ -32,7 +32,7 @@ ms.locfileid: "72555066"
 > [!NOTE]
 > Соединитель G Suite был недавно обновлен в 2019 октября. В соединитель G Suite внесены следующие изменения:
 - Добавлена поддержка дополнительных атрибутов пользователей и групп G Suite. 
-- Обновлены имена целевых атрибутов G Suite в соответствии с определенным [здесь]().
+- Обновлены имена целевых атрибутов G Suite в соответствии с определенным [здесь](/azure/active-directory/manage-apps/customize-application-attributes).
 - Обновлены сопоставления атрибутов по умолчанию.
 
 ## <a name="prerequisites"></a>Технические условия

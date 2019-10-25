@@ -15,25 +15,25 @@ ms.topic: article
 ms.custom: seodec18
 ms.date: 12/06/2018
 ms.author: shvija
-ms.openlocfilehash: 75a96127c48186befc48b2240f78e49cd5914239
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: eaa461dd0c4ef6bd9ed0ae4379a710ee100929d2
+ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60343433"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72800194"
 ---
 # <a name="receive-events-from-event-hubs-using-apache-storm"></a>Получение событий из Центров событий с помощью Apache Storm
 
 [Apache Storm](https://storm.incubator.apache.org) — это распределенная система вычислений в реальном времени, упрощающая надежную обработку неограниченных потоков данных. В этом разделе показано использование spout Storm Центров событий Azure для приема событий из Центров событий. С помощью Apache Storm можно разделить события между несколькими процессами, размещенными в разных узлах. Интеграция Центров событий с помощью Storm упрощает использование событий путем прозрачного определения контрольных точек в ходе выполнения с помощью установки Storm Zookeeper, управляя постоянными контрольными точками и одновременно облегчает получение от Центров событий.
 
-Дополнительные сведения о шаблонах получения данных в Центры событий см. в статье [Общие сведения о Центрах событий][Event Hubs overview].
+Дополнительные сведения о шаблонах получения концентраторов событий см. в [обзоре концентраторов событий][Event Hubs overview].
 
 ## <a name="prerequisites"></a>Технические условия
-Прежде чем приступить к краткому руководству, **создать пространство имен концентраторов событий и концентратора событий**. Используйте [портала Azure](https://portal.azure.com) создать пространство имен типа концентраторов событий и получение учетных данных управления, необходимых приложению для взаимодействия с концентратором событий. Чтобы создать пространство имен и концентратор событий, выполните инструкции из [этой статьи](event-hubs-create.md). 
+Прежде чем начать с краткого руководства, **Создайте пространство имен концентраторов событий и концентратор событий**. Используйте [портал Azure](https://portal.azure.com) для создания пространства имен типа концентраторов событий и получения учетных данных управления, необходимых приложению для взаимодействия с концентратором событий. Чтобы создать пространство имен и концентратор событий, выполните инструкции из [этой статьи](event-hubs-create.md). 
 
 ## <a name="create-project-and-add-code"></a>Создание проекта и добавление кода
 
-В данном руководстве используется установка программы [HDInsight Storm][HDInsight Storm], которая поставляется вместе с уже доступным Spout Центров событий.
+В данном учебнике используется установка программы [HDInsight Storm][HDInsight Storm] , которая поставляется вместе с уже доступным Spout в Центрах событий.
 
 1. Следуя процедурам, приведенным в разделе [HDInsight Storm — начало работы](../hdinsight/storm/apache-storm-overview.md) , создайте новый кластер HDInsight и подключитесь к нему через удаленный рабочий стол.
 2. Скопируйте файл `%STORM_HOME%\examples\eventhubspout\eventhubs-storm-spout-0.9-jar-with-dependencies.jar` в локальную среду разработки. Он содержит пакет events-storm-spout.
@@ -245,14 +245,14 @@ ms.locfileid: "60343433"
 ## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о Центрах событий см. в следующих источниках:
 
-* [Общие сведения о Центрах событий Azure][Event Hubs overview].
+* [Общие сведения о Центрах событий][Event Hubs overview]
 * [Создание концентратора событий](event-hubs-create.md)
-* [Часто задаваемые вопросы о Центрах событий](event-hubs-faq.md)
+* [Часто задаваемые вопросы о концентраторах событий](event-hubs-faq.md)
 
 <!-- Links -->
 [Event Hubs overview]: event-hubs-what-is-event-hubs.md
 [HDInsight Storm]: ../hdinsight/storm/apache-storm-overview.md
-[примере использования HDInsight Storm с концентратором событий]: https://azure.microsoft.com/resources/samples/hdinsight-java-storm-eventhub/
+[примере использования HDInsight Storm с концентратором событий]: https://github.com/Azure-Samples/hdinsight-java-storm-eventhub
 
 <!-- Images -->
 

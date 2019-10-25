@@ -1,5 +1,6 @@
 ---
-title: Создание экземпляра конфиденциального клиентского приложения с параметрами (Библиотека проверки подлинности Microsoft для .NET) | Службы
+title: Создание экземпляра конфиденциального клиентского приложения с параметрами (Библиотека проверки подлинности Microsoft для .NET)
+titleSuffix: Microsoft identity platform
 description: Узнайте, как создать конфиденциальное клиентское приложение с параметрами конфигурации с помощью библиотеки проверки подлинности Microsoft для .NET (MSAL.NET).
 services: active-directory
 documentationcenter: dev-center-name
@@ -17,16 +18,16 @@ ms.author: twhitney
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 47a05959311b7f62f88a7b474b907982e005b98b
-ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
+ms.openlocfilehash: e382a8d0b5d6f08eafc5621d0e7591111a5e286b
+ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69532627"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72802817"
 ---
 # <a name="instantiate-a-confidential-client-application-with-configuration-options-using-msalnet"></a>Создание экземпляра конфиденциального клиентского приложения с параметрами конфигурации с помощью MSAL.NET
 
-В этой статье описывается создание экземпляра конфиденциального [клиентского приложения](msal-client-applications.md) с помощью библиотеки проверки подлинности Майкрософт для .net (MSAL.NET).  Экземпляр приложения создается с параметрами конфигурации, определенными в файле параметров.
+В этой статье описывается создание экземпляра [конфиденциального клиентского приложения](msal-client-applications.md) с помощью библиотеки проверки подлинности Майкрософт для .net (MSAL.NET).  Экземпляр приложения создается с параметрами конфигурации, определенными в файле параметров.
 
 Перед инициализацией приложения необходимо сначала [зарегистрировать](quickstart-register-app.md) его, чтобы приложение можно было интегрировать с платформой Microsoft Identity. После регистрации может потребоваться следующая информация (которую можно найти в портал Azure):
 
@@ -64,7 +65,7 @@ ms.locfileid: "69532627"
 
 Начиная с версии MSAL.NET v3. x, можно настроить конфиденциальное клиентское приложение в файле конфигурации.
 
-В классе, где требуется настроить и создать экземпляр приложения, необходимо объявить `ConfidentialClientApplicationOptions` объект.  Свяжите конфигурацию, считанную из источника (включая файл appconfig. JSON), с экземпляром параметров приложения с помощью `IConfigurationRoot.Bind()` метода из [пакета NuGet Microsoft. Extensions. Configuration. BINDER](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Binder):
+В классе, где требуется настроить и создать экземпляр приложения, необходимо объявить объект `ConfidentialClientApplicationOptions`.  Свяжите конфигурацию, считанную из источника (включая файл appconfig. JSON), с экземпляром параметров приложения, используя метод `IConfigurationRoot.Bind()` из [пакета NuGet Microsoft. Extensions. Configuration. BINDER](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Binder):
 
 ```csharp
 using Microsoft.Identity.Client;
@@ -74,7 +75,7 @@ _applicationOptions = new ConfidentialClientApplicationOptions();
 configuration.Bind("AzureAD", _applicationOptions);
 ```
 
-Это позволяет привязать содержимое раздела "AzureAD" файла *appSettings. JSON* к соответствующим свойствам `ConfidentialClientApplicationOptions` объекта.  Затем создайте `ConfidentialClientApplication` объект:
+Это позволяет привязать содержимое раздела "AzureAD" файла *appSettings. JSON* к соответствующим свойствам объекта `ConfidentialClientApplicationOptions`.  Затем создайте объект `ConfidentialClientApplication`:
 
 ```csharp
 IConfidentialClientApplication app;

@@ -1,23 +1,23 @@
 ---
-title: Устранение распространенных неполадок с индексатором поиска в службе "Поиск Azure"
-description: Сведения об устранении распространенных неполадок с индексаторами в службе "Поиск Azure", в том числе проблем с подключением к источнику данных, брандмауэром или отсутствующими документами.
-author: mgottein
+title: Устранение распространенных проблем с индексатором поиска
+titleSuffix: Azure Cognitive Search
+description: Устранение ошибок и распространенных проблем с индексаторами в Когнитивный поиск Azure, включая подключение к источнику данных, брандмауэр и отсутствующие документы.
 manager: nitinme
-services: search
-ms.service: search
-ms.topic: conceptual
-ms.date: 05/02/2019
+author: mgottein
 ms.author: magottei
-ms.openlocfilehash: 4692be287e9b38cf116107d2e7c1043f23a6b34b
-ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
+ms.service: cognitive-search
+ms.topic: conceptual
+ms.date: 11/04/2019
+ms.openlocfilehash: c5a16d957f1e0414f92d0cc03442d88d438e4c92
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69640592"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72793632"
 ---
-# <a name="troubleshooting-common-indexer-issues-in-azure-search"></a>Устранение распространенных неполадок с индексатором в Поиске Azure
+# <a name="troubleshooting-common-indexer-issues-in-azure-cognitive-search"></a>Устранение распространенных проблем с индексатором в Azure Когнитивный поиск
 
-Индексаторы могут встречать много разных проблем при индексировании данных в Поиск Azure. Эти проблемы можно разделить на несколько основных категорий:
+Индексаторы могут выполнять ряд проблем при индексировании данных в Azure Когнитивный поиск. Эти проблемы можно разделить на несколько основных категорий:
 
 * [подключение к источнику данных](#data-source-connection-errors);
 * [обработка документов](#document-processing-errors);
@@ -29,7 +29,7 @@ ms.locfileid: "69640592"
 
 #### <a name="storage-account-firewall"></a>Брандмауэр учетной записи хранения
 
-Служба хранилища Azure предоставляет брандмауэр с возможностью настройки. По умолчанию брандмауэр отключен и не мешает Поиску Azure подключаться к учетной записи хранения.
+Служба хранилища Azure предоставляет брандмауэр с возможностью настройки. По умолчанию брандмауэр отключен, поэтому Azure Когнитивный поиск может подключиться к вашей учетной записи хранения.
 
 Включение брандмауэра нельзя связать с одним конкретным сообщением об ошибке. Обычно связанные с брандмауэром ошибки выглядят как `The remote server returned an error: (403) Forbidden`.
 
@@ -37,19 +37,19 @@ ms.locfileid: "69640592"
 
 Если у индексатора нет присоединенного набора навыков, вы _можете_ попытаться [Добавить исключение](https://docs.microsoft.com/azure/storage/common/storage-network-security#managing-ip-network-rules) для IP-адресов службы поиска. Однако этот сценарий не поддерживается и не гарантирует работу.
 
-IP-адрес службы поиска можно узнать с помощью команды ping по полному доменному имени`<your-search-service-name>.search.windows.net`().
+IP-адрес службы поиска можно узнать с помощью команды ping по полному доменному имени (`<your-search-service-name>.search.windows.net`).
 
-### <a name="cosmos-db"></a>Cosmos DB
+### <a name="cosmos-db"></a>База данных Cosmos
 
 #### <a name="indexing-isnt-enabled"></a>Индексирование не включено
 
-Поиск Azure имеет неявную зависимость от индексирования Cosmos DB. Если вы отключите автоматическое индексирование в Cosmos DB, Поиск Azure сообщит об успешном выполнении операции, но не сможет индексировать содержимое контейнера. Процессы проверки параметров и включения индексирования описаны в статье [Управление индексированием в Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/how-to-manage-indexing-policy#use-the-azure-portal).
+Когнитивный поиск Azure имеет неявную зависимость от Cosmos DB индексирования. Если вы отключаете автоматическое индексирование в Cosmos DB, Azure Когнитивный поиск возвращает состояние "успешно", но не может индексировать содержимое контейнера. Процессы проверки параметров и включения индексирования описаны в статье [Управление индексированием в Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/how-to-manage-indexing-policy#use-the-azure-portal).
 
 ## <a name="document-processing-errors"></a>Ошибки обработки документов
 
 ### <a name="unprocessable-or-unsupported-documents"></a>Необрабатываемые или неподдерживаемые документы
 
-Индексатор больших двоичных объектов [перечисляет форматы, которые поддерживаются явным образом](search-howto-indexing-azure-blob-storage.md#supported-document-formats). Иногда в контейнере хранилища BLOB-объектов могут встретиться неподдерживаемые документы. Также могут встречаться другие проблемы с этими документами. Чтобы индексатор не прекращал работу в таких случаях, [измените параметры конфигурации](search-howto-indexing-azure-blob-storage.md#dealing-with-errors):
+Индексатор больших двоичных объектов [перечисляет форматы, которые поддерживаются явным образом](search-howto-indexing-azure-blob-storage.md#SupportedFormats). Иногда в контейнере хранилища BLOB-объектов могут встретиться неподдерживаемые документы. Также могут встречаться другие проблемы с этими документами. Чтобы индексатор не прекращал работу в таких случаях, [измените параметры конфигурации](search-howto-indexing-azure-blob-storage.md#DealingWithErrors):
 
 ```
 PUT https://[service name].search.windows.net/indexers/[indexer name]?api-version=2019-05-06
@@ -89,5 +89,5 @@ api-key: [admin key]
 * Документ еще не был проиндексирован. Проверьте на портале, был ли индексатор успешно выполнен.
 * Нужный документ обновился уже после выполнения индексатора. Если индексатор выполняется по [расписанию](https://docs.microsoft.com/rest/api/searchservice/create-indexer#indexer-schedule), он через некоторое время будет выполнен снова и учтет нужный документ.
 * Нужный документ исключается условиями [запроса](https://docs.microsoft.com/rest/api/searchservice/create-data-source#request-body-syntax), который указан для этого источника данных. Индексаторы не могут индексировать документы, не являющихся частью источника данных.
-* [Сопоставления полей](https://docs.microsoft.com/rest/api/searchservice/create-indexer#fieldmappings) или «воменяющий» [Поиск](https://docs.microsoft.com/azure/search/cognitive-search-concept-intro) изменили документ, и он будет отличаться от предполагаемого.
+* [Сопоставления полей](https://docs.microsoft.com/rest/api/searchservice/create-indexer#fieldmappings) или [обогащение искусственного интеллекта](https://docs.microsoft.com/azure/search/cognitive-search-concept-intro) изменили документ, и он будет отличаться от предполагаемого.
 * Используйте [API поиска документа](https://docs.microsoft.com/rest/api/searchservice/lookup-document), чтобы найти нужный документ.

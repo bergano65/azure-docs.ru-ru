@@ -1,22 +1,22 @@
 ---
-title: Управление большими наборами разделов в Сетке событий Azure с использованием доменов событий
+title: Публикация событий с помощью доменов событий с помощью службы "Сетка событий Azure"
 description: Сведения об управлении большими наборами разделов в Сетке событий Azure и публикация событий в этих разделах с помощью доменов событий.
 services: event-grid
 author: banisadr
 ms.service: event-grid
 ms.author: babanisa
 ms.topic: conceptual
-ms.date: 07/11/2019
-ms.openlocfilehash: 9d7cef35ef6d1138b037f7c520f21bee86567aa8
-ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
+ms.date: 10/22/2019
+ms.openlocfilehash: 1d07227249806b7d54523af66817a170c19354ee
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70842578"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72786559"
 ---
 # <a name="manage-topics-and-publish-events-using-event-domains"></a>Управление разделами и публикация событий с помощью доменов событий
 
-В этой статье показано, как:
+В этой статье показано, как сделать следующее:
 
 * создать домен в Сетке событий;
 * подписаться на разделы службы "Сетка событий";
@@ -35,7 +35,7 @@ ms.locfileid: "70842578"
 
 Чтобы управлять большими наборами разделов, создайте домен событий.
 
-# <a name="azure-clitabazurecli"></a>[Интерфейс командной строки Azure](#tab/azurecli)
+# <a name="azure-clitabazurecli"></a>[Azure CLI](#tab/azurecli)
 
 ```azurecli-interactive
 # If you haven't already installed the extension, do it now.
@@ -86,7 +86,7 @@ New-AzureRmEventGridDomain `
 
 Сетка событий имеет две встроенные роли, которые можно использовать для назначения определенным пользователям доступа к различным разделам в пределах домена. Это роль `EventGrid EventSubscription Contributor (Preview)`, которая позволяет создавать и удалять подписки, и роль `EventGrid EventSubscription Reader (Preview)`, которая позволяет только перечислять подписки на события.
 
-# <a name="azure-clitabazurecli"></a>[Интерфейс командной строки Azure](#tab/azurecli)
+# <a name="azure-clitabazurecli"></a>[Azure CLI](#tab/azurecli)
 Следующая команда интерфейса командной строки Azure ограничивает `alice@contoso.com` созданием и удалением подписок на события только в разделе `demotopic1`:
 
 ```azurecli-interactive
@@ -117,7 +117,7 @@ New-AzureRmRoleAssignment `
 
 Как правило, пользователь, которому вы предоставили доступ в предыдущем разделе, создаст подписку. Для упрощения этой статьи создайте подписку. 
 
-# <a name="azure-clitabazurecli"></a>[Интерфейс командной строки Azure](#tab/azurecli)
+# <a name="azure-clitabazurecli"></a>[Azure CLI](#tab/azurecli)
 
 ```azurecli-interactive
 az eventgrid event-subscription create \
@@ -175,7 +175,7 @@ New-AzureRmEventGridSubscription `
 }]
 ```
 
-# <a name="azure-clitabazurecli"></a>[Интерфейс командной строки Azure](#tab/azurecli)
+# <a name="azure-clitabazurecli"></a>[Azure CLI](#tab/azurecli)
 Чтобы получить конечную точку домена с помощью Azure CLI, выполните следующую команду:
 
 ```azurecli-interactive
@@ -212,6 +212,6 @@ Get-AzureRmEventGridDomainKey `
 
 Затем используйте предпочтительный метод создания запроса HTTP POST для публикации событий в домен Сетки событий.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Общие понятия, касающиеся доменов событий, и сведения об их эффективности см. в [этой статье](event-domains.md).

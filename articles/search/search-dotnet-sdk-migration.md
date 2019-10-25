@@ -1,23 +1,22 @@
 ---
-title: Обновление до пакета SDK .NET для службы "Поиск Azure" версии 3
+title: Обновление до пакета SDK .NET для поиска Azure версии 3
+titleSuffix: Azure Cognitive Search
 description: Перенос кода в пакет SDK .NET для службы "Поиск Azure" версии 3 с предыдущих версий. Узнайте о новых возможностях и необходимых изменениях кода.
-author: brjohnstmsft
 manager: nitinme
-services: search
-ms.service: search
+author: brjohnstmsft
+ms.author: brjohnst
+ms.service: cognitive-search
 ms.devlang: dotnet
 ms.topic: conceptual
-ms.date: 05/02/2019
-ms.author: brjohnst
-ms.custom: seodec2018
-ms.openlocfilehash: cab0da93bbea117c216969faf2f1e194e16d675f
-ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
+ms.date: 11/04/2019
+ms.openlocfilehash: fcad05749892e3a652e110a7e351450bffaca6f2
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70183216"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72792983"
 ---
-# <a name="upgrading-to-the-azure-search-net-sdk-version-3"></a>Обновление пакета SDK службы поиска Azure для .NET до версии 3
+# <a name="upgrade-to-azure-search-net-sdk-version-3"></a>Обновление до пакета SDK .NET для поиска Azure версии 3
 
 <!--- DETAILS in the word doc
 cosmosdb

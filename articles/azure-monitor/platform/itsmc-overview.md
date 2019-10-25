@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 05/24/2018
 ms.author: v-jysur
-ms.openlocfilehash: eb9d803bcc9667c26acecbfd098a3022b7421478
-ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
+ms.openlocfilehash: 6ae1792d9ef3f07ef7258451be79b587692a1694
+ms.sourcegitcommit: ec2b75b1fc667c4e893686dbd8e119e7c757333a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72177650"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72809445"
 ---
 # <a name="connect-azure-to-itsm-tools-using-it-service-management-connector"></a>Подключение Azure к инструментам ITSM с помощью соединителя управления ИТ-услугами
 
@@ -64,7 +64,7 @@ ms.locfileid: "72177650"
 3. В разделе **Рабочая область OMS** выберите рабочую область Azure Log Analytics, где нужно установить решение.
    >[!NOTE]
    > * В рамках текущего перехода от Microsoft Operations Management Suite (OMS) к Azure Monitor рабочие области OMS теперь называются рабочими областями Log Analytics.
-   > * Соединитель ITSM можно установить только в Log Analytics рабочих областях в следующих регионах: Восточная часть США, Западная Европа, Юго-Восточная Азия, Юго-Восточная Австралия, Западная Центральная часть США, Восточная Япония, Южная Канада, Северная Индия, Центральная Америка.
+   > * Соединитель ITSM можно установить только в Log Analytics рабочих областях в следующих регионах: Восточная часть США, Западная Европа, Юго-Восточная Азия, Юго-Восточная Австралия, Юго-Центральный регион США, Восточная Япония, Южная Великобритания и Центральная Индия, Центральная Канада.
 
 4. В разделе **Параметры рабочей области OMS** выберите группу ресурсов, в которой вы хотите создать решение.
 
@@ -72,7 +72,7 @@ ms.locfileid: "72177650"
    >[!NOTE]
    >В рамках текущего перехода от Microsoft Operations Management Suite (OMS) к Azure Monitor рабочие области OMS теперь называются рабочими областями Log Analytics.
 
-5. Нажмите кнопку **Создать**.
+5. Щелкните **Create**(Создать).
 
 Когда ресурс решения будет развернут, вверху окна справа появится уведомление.
 
@@ -131,13 +131,13 @@ ms.locfileid: "72177650"
     ![Сведения о группах действий](media/itsmc-overview/action-groups-details.png)
 
 4. В списке действий выберите **ITSM** из раскрывающегося меню **Тип действия**. Укажите **имя** действия и щелкните **Изменить сведения**.
-5. Выберите **подписку**, в которой расположена рабочая область Log Analytics. Выберите имя **подключения** (имя соединителя ITSM), за которым следует имя рабочей области. Например, MyITSMMConnector(MyWorkspace).
+5. Выберите **подписку**, в которой расположена рабочая область Log Analytics. Выберите имя **подключения** (имя соединителя ITSM), за которым следует имя рабочей области. Например, "Митсммконнектор (MyWorkspace)".
 
     ![Сведения о действиях ITSM](media/itsmc-overview/itsm-action-details.png)
 
 6. Выберите тип **рабочего элемента** из раскрывающегося меню.
    Выберите имеющийся шаблон или заполните поля, требуемые для продукта ITSM.
-7. Нажмите кнопку **ОК**.
+7. Последовательно выберите **ОК**.
 
 При создании или изменении правила генерации оповещений Azure используйте группу действий, в которой есть действие ITSM. При активации оповещения в инструменте ITSM будет создан или обновлен рабочий элемент.
 
@@ -164,10 +164,10 @@ ms.locfileid: "72177650"
 
 ![Снимок экрана с Log Analytics](media/itsmc-overview/itsmc-overview-integrated-solutions.png)
 
-Дополнительные сведения: [Схема услуги](../../azure-monitor/insights/service-map.md)
+Дополнительные сведения см. в статье [Использование решения схемы услуги в Operations Management Suite](../../azure-monitor/insights/service-map.md).
 
 
-## <a name="additional-information"></a>Дополнительная информация
+## <a name="additional-information"></a>Дополнительные сведения
 
 ### <a name="data-synced-from-itsm-product"></a>Данные, синхронизированные из продукта ITSM
 Инциденты и запросы на изменение синхронизируются из продукта ITSM с рабочей областью Log Analytics на основе конфигурации подключения.
@@ -178,34 +178,34 @@ ms.locfileid: "72177650"
 >
 > В зависимости от типа рабочего элемента, импортированного в Log Analytics, **ServiceDesk_CL** содержит указанные ниже поля.
 
-**Рабочий элемент:** **Инциденты**  
+**Рабочий элемент:** **инциденты**  
 ServiceDeskWorkItemType_s="Incident"
 
 **Поля**
 
 - ServiceDeskConnectionName;
 - "Идентификатор службы поддержки";
-- State
+- Состояние
 - "Срочность";
 - Влияние
-- Priority
+- Приоритет
 - Escalation (Эскалация);
 - "Кем создано";
 - "Кем разрешено";
 - Closed By (Кем закрыто);
-- Source
+- Источник
 - Кому назначено
-- Category
-- Заголовок
+- Категория
+- Название
 - Описание
 - "Дата создания";
 - Closed Date (Дата закрытия);
 - Resolved Date (Дата разрешения);
 - "Дата последнего изменения";
-- Computer
+- Компьютер
 
 
-**Рабочий элемент:** **Запросы на изменение**
+**Рабочий элемент:** **запросы на изменение**
 
 ServiceDeskWorkItemType_s="ChangeRequest"
 
@@ -214,16 +214,16 @@ ServiceDeskWorkItemType_s="ChangeRequest"
 - "Идентификатор службы поддержки";
 - "Кем создано";
 - Closed By (Кем закрыто);
-- Source
+- Источник
 - Кому назначено
-- Заголовок
-- Type
-- Category
+- Название
+- Тип
+- Категория
 - Состояние
 - Escalation (Эскалация);
 - Conflict Status (Состояние конфликта);
 - "Срочность";
-- Priority
+- Приоритет
 - "Риск";
 - Влияние
 - Кому назначено
@@ -236,44 +236,44 @@ ServiceDeskWorkItemType_s="ChangeRequest"
 - Work Start Date (Дата начала работы);
 - Work End Date (Дата окончания работы);
 - Описание
-- Computer
+- Компьютер
 
 ## <a name="output-data-for-a-servicenow-incident"></a>Выходные данные инцидента ServiceNow
 
 | Поле Log Analytics | Поле ServiceNow |
 |:--- |:--- |
-| ServiceDeskId_s| Number |
-| IncidentState_s | State |
+| ServiceDeskId_s| NUMBER |
+| IncidentState_s | Состояние |
 | Urgency_s |"Срочность"; |
 | Impact_s |Влияние|
-| Priority_s | Priority |
+| Priority_s | Приоритет |
 | CreatedBy_s | Opened by (Кем открыто) |
 | ResolvedBy_s | "Кем разрешено"|
 | ClosedBy_s  | Closed By (Кем закрыто) |
 | Source_s| Contact type (Тип контакта) |
 | AssignedTo_s | Кому назначено  |
-| Category_s | Category |
+| Category_s | Категория |
 | Title_s|  Краткое описание |
-| Description_s|  Примечания |
+| Description_s|  Заметки |
 | CreatedDate_t|  Opened (Открыто) |
 | ClosedDate_t| closed|
 | ResolvedDate_t|"Разрешено"|
-| Computer  | Элемент конфигурации |
+| Компьютер  | Элемент конфигурации |
 
 ## <a name="output-data-for-a-servicenow-change-request"></a>Выходные данные запроса на изменение ServiceNow
 
-| Log Analytics | Поле ServiceNow |
+| Анализ журналов | Поле ServiceNow |
 |:--- |:--- |
-| ServiceDeskId_s| Number |
+| ServiceDeskId_s| NUMBER |
 | CreatedBy_s | "Кем запрошено" |
 | ClosedBy_s | Closed By (Кем закрыто) |
 | AssignedTo_s | Кому назначено  |
 | Title_s|  Краткое описание |
-| Type_s|  Type |
-| Category_s|  Category |
-| CRState_s|  State|
+| Type_s|  Тип |
+| Category_s|  Категория |
+| CRState_s|  Состояние|
 | Urgency_s|  "Срочность"; |
-| Priority_s| Priority|
+| Priority_s| Приоритет|
 | Risk_s| "Риск";|
 | Impact_s| Влияние|
 | RequestedDate_t  | Requested by date |
@@ -283,7 +283,7 @@ ServiceDeskWorkItemType_s="ChangeRequest"
 | WorkStartDate_t  | Actual start date (Фактическая дата начала) |
 | WorkEndDate_t | Actual end date (Фактическая дата окончания)|
 | Description_s | Описание |
-| Computer  | Элемент конфигурации |
+| Компьютер  | Элемент конфигурации |
 
 
 ## <a name="troubleshoot-itsm-connections"></a>Устранение неполадок с подключениями ITSM
@@ -296,7 +296,7 @@ ServiceDeskWorkItemType_s="ChangeRequest"
 
 2. Если данные из ServiceNow не синхронизируются с Log Analytics, убедитесь, что экземпляр ServiceNow не находится в спящем режиме. Иногда экземпляры разработки ServiceNow переходят в спящий режим при длительном периоде простоя. В противном случае сообщите о проблеме.
 3. Если поступают оповещения Log Analytics, но рабочие элементы не создаются в продукте ITSM либо элементы конфигурации не создаются или не связываются с рабочими элементами или же вам нужны другие сведения общего характера, просмотрите следующие компоненты:
-   -  ITSMC: решение показывает сводные данные о подключениях, рабочих элементах, компьютерах и т. д. Щелкните плитку **Состояние соединителя**, чтобы с помощью соответствующего запроса перейти на страницу **Поиск по журналу**. Чтобы получить дополнительные сведения, просмотрите записи журнала, где для параметра ERROR задано значение LogType_S.
+   -  ITSMC. в решении отображается сводка по подключениям, рабочим элементам, компьютерам и т. д. Щелкните плитку **состояние соединителя**, чтобы перейти к **поиску по журналам** в соответствующем запросе. Чтобы получить дополнительные сведения, просмотрите записи журнала, где для параметра ERROR задано значение LogType_S.
    - Страница **Поиск по журналу**: просмотрите сведения об ошибках и другие соответствующие сведения непосредственно с помощью запроса `*`ServiceDeskLog_CL`*`.
 
 ## <a name="troubleshoot-service-manager-web-app-deployment"></a>Устранение неполадок развертывания веб-приложения Service Manager
@@ -305,9 +305,9 @@ ServiceDeskWorkItemType_s="ChangeRequest"
 3.  Если вам не удается создать пространство имен ретранслятора шины обслуживания, убедитесь, в подписке зарегистрирован требуемый поставщик ресурсов. Если он не зарегистрирован, создайте пространство имен ретранслятора служебной шины на портале Azure вручную. Его также можно создать на портале Azure во время создания [гибридного подключения](../../azure-monitor/platform/itsmc-connections.md#configure-the-hybrid-connection).
 
 
-## <a name="contact-us"></a>Свяжитесь с нами
+## <a name="contact-us"></a>Связаться с нами
 
 Свяжитесь с нами по адресу [omsitsmfeedback@microsoft.com](mailto:omsitsmfeedback@microsoft.com), чтобы оставить отзывы или запросы касательно соединителя управления ИТ-службами.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [Подключение продуктов и служб ITSM с помощью соединителя управления ИТ-службами (предварительная версия)](../../azure-monitor/platform/itsmc-connections.md)

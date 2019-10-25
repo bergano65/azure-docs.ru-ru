@@ -1,5 +1,6 @@
 ---
-title: Библиотека проверки подлинности Microsoft (MSAL) для iOS & macOS | Службы
+title: Библиотека проверки подлинности Microsoft (MSAL) для iOS & macOS
+titleSuffix: Microsoft identity platform
 description: Описание различий использования библиотеки проверки подлинности Майкрософт (MSAL) между iOS и macOS.
 services: active-directory
 documentationcenter: dev-center-name
@@ -17,14 +18,14 @@ ms.author: twhitney
 ms.reviewer: ''
 ms.custom: aaddev, identityplatformtop40
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: beb6e55e83412535f29284db48fb37fd514b35d4
-ms.sourcegitcommit: 263a69b70949099457620037c988dc590d7c7854
+ms.openlocfilehash: 090f4eaea292c7122db2427ce8730df815506fc0
+ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71269016"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72803143"
 ---
-# <a name="microsoft-authentication-library-for-ios-and-macos-differences"></a>Различия в библиотеке проверки подлинности Microsoft для iOS и macOS
+# <a name="microsoft-authentication-library-for-ios-and-macos-differences"></a>Отличия библиотеки проверки подлинности Майкрософт для iOS и macOS
 
 В этой статье объясняются различия в функциональных возможностях библиотеки проверки подлинности Майкрософт (MSAL) для iOS и macOS.
 
@@ -37,7 +38,7 @@ MSAL для macOS — это подмножество функций, досту
 
 MSAL для macOS не поддерживает:
 
-- различные типы браузеров, `ASWebAuthenticationSession`такие `SFAuthenticationSession`как `SFSafariViewController`,,.
+- различные типы браузеров, такие как `ASWebAuthenticationSession`, `SFAuthenticationSession`, `SFSafariViewController`.
 - Проверка подлинности через посредника через Microsoft Authenticator приложение не поддерживается для macOS.
 
 Совместное использование цепочки ключей между приложениями одного издателя более ограничено в macOS 10,14 и более ранних версиях. Используйте [списки управления доступом](https://developer.apple.com/documentation/security/keychain_services/access_control_lists?language=objc) , чтобы указать пути к приложениям, которые должны совместно использовать цепочку ключей. Пользователь может видеть дополнительные запросы цепочки ключей.

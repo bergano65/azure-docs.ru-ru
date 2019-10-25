@@ -1,6 +1,7 @@
 ---
-title: Защищенные веб-API - перемещения в рабочую среду | Azure
-description: Узнайте, как создать защищенный веб-API (перемещение в рабочую среду).
+title: Защищенный веб-API — переместить в рабочую среду
+titleSuffix: Microsoft identity platform
+description: Узнайте, как создать защищенный веб-API (переместить в рабочую среду).
 services: active-directory
 documentationcenter: dev-center-name
 author: jmprieur
@@ -15,30 +16,30 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8e78cb712501b86f98d3459cac6280d0484f41a1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: deb5a04f23268edc112c38c993b190827fa65061
+ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65833111"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72802508"
 ---
-# <a name="protected-web-api---move-to-production"></a>Защищенный веб-API - перемещения в рабочую среду
+# <a name="protected-web-api---move-to-production"></a>Защищенный веб-API — переместить в рабочую среду
 
-Теперь, когда вы знаете, как защитить веб-API, вот как можно переместить его в рабочую среду.
+Теперь, когда вы узнали, как защитить веб-API, вы можете переместить его в рабочую среду.
 
 [!INCLUDE [Move to production common steps](../../../includes/active-directory-develop-scenarios-production.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Узнайте, как вызывать подчиненных API-интерфейсы:
+Узнайте, как вызывать нисходящие API:
 
 > [!div class="nextstepaction"]
-> [Сценарий: веб-API вызывает подчиненных API](scenario-web-api-call-api-overview.md)
+> [Сценарий. веб-API вызывает нисходящие API](scenario-web-api-call-api-overview.md)
 
-Дополнительные сведения с примерами и:
+Дополнительные сведения см. в руководствах и образцах:
 
 > [!div class="nextstepaction"]
-> [Веб-ASP.NET Core, учебник по API](https://github.com/Azure-Samples/active-directory-dotnet-native-aspnetcore-v2)
+> [Учебник по ASP.NET Core веб-API](https://github.com/Azure-Samples/active-directory-dotnet-native-aspnetcore-v2)
 
 > [!div class="nextstepaction"]
 > [Пример веб-API ASP.NET](https://github.com/azureadquickstarts/appmodelv2-nativeclient-dotnet)

@@ -1,5 +1,6 @@
 ---
 title: Как и для чего приложения добавляются в Azure Active Directory
+titleSuffix: Microsoft identity platform
 description: Что означает добавление приложения в Azure AD и каким образом это осуществляется?
 services: active-directory
 documentationcenter: ''
@@ -18,12 +19,12 @@ ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: elisol, lenalepa
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6bb3ef2a86c523d7cda5bc7da5d83ec4ac741abf
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: ebf6b9a07e775c76188dcebece011b01e90fbcf5
+ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68835392"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72803450"
 ---
 # <a name="how-and-why-applications-are-added-to-azure-ad"></a>Как и почему приложения добавляются в Azure AD
 
@@ -34,7 +35,7 @@ ms.locfileid: "68835392"
 ## <a name="what-are-application-objects-and-where-do-they-come-from"></a>Что такое объекты приложений и откуда они берутся?
 Вы можете управлять [объектами приложения](app-objects-and-service-principals.md#application-object) на портале Azure в разделе [Регистрации приложений](https://aka.ms/appregistrations). Объекты приложений описывают приложение для Azure AD и могут считаться определением приложения, так как предоставляют службе сведения о том, как выдавать маркеры безопасности для приложения в соответствии с его параметрами. Объект приложения будет существовать только в своем домашнем каталоге, даже если это мультитенантное приложение, поддерживающее субъекты-службы в других каталогах. В объекте приложения могут содержаться любые из следующих сведений (а также дополнительные сведения, не упомянутые здесь):
 * имя, логотип и издатель;
-* URI-коды перенаправления
+* URI перенаправления
 * секретные ключи (симметричные и/или асимметричные ключи, применяемые для проверки подлинности приложения);
 * зависимости API (OAuth);
 * опубликованные API-интерфейсы, ресурсы, области (OAuth);

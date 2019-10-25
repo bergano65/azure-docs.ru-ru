@@ -1,29 +1,28 @@
 ---
-title: Управление одновременными операциями записи в ресурсы службы "Поиск Azure"
-description: Узнайте, как использовать оптимистическую блокировку во избежание конфликтов в процессе обновления или удаления индексов, индексаторов и источников данных Поиска Azure.
-author: HeidiSteen
+title: Управление параллельными операциями записи в ресурсы
+titleSuffix: Azure Cognitive Search
+description: Используйте оптимистичный параллелизм, чтобы избежать конфликтов середины воздуха при обновлениях или удалениях в Azure Когнитивный поиск индексы, индексаторы и источники данных.
 manager: nitinme
-services: search
-ms.service: search
-ms.topic: conceptual
-ms.date: 07/21/2017
+author: HeidiSteen
 ms.author: heidist
-ms.custom: seodec2018
-ms.openlocfilehash: 67f2dad016d3958dc10ba87e785d31694a1c94f5
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.service: cognitive-search
+ms.topic: conceptual
+ms.date: 11/04/2019
+ms.openlocfilehash: edfb2fe5cc37a00335ca7b5be851a88825b03eb1
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69656723"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72792215"
 ---
-# <a name="how-to-manage-concurrency-in-azure-search"></a>Управление параллелизмом в Поиске Azure
+# <a name="how-to-manage-concurrency-in-azure-cognitive-search"></a>Управление параллелизмом в Azure Когнитивный поиск
 
-При управлении ресурсами Поиска Azure, такими как индексы и источники данных, важно выполнить обновление ресурсов безопасно, особенно если доступ к ним осуществляется параллельно разными компонентами приложения. Если два клиента одновременно обновляют ресурс, не координируя свои действия, то могут возникать состояния гонки. Во избежание таких ситуаций Поиск Azure предлагает *модель оптимистической блокировки*. При этом в отношении ресурса нет никаких блокировок. Для каждого ресурса существует тег ETag, который определяет версию ресурса. Это позволяет создавать запросы, избегая случайных перезаписей.
+При управлении ресурсами Когнитивный поиск Azure, такими как индексы и источники данных, важно безопасно обновлять ресурсы, особенно если доступ к ресурсам осуществляется параллельно разными компонентами приложения. Если два клиента одновременно обновляют ресурс, не координируя свои действия, то могут возникать состояния гонки. Чтобы избежать этого, Azure Когнитивный поиск предлагает *модель оптимистичного параллелизма*. При этом в отношении ресурса нет никаких блокировок. Для каждого ресурса существует тег ETag, который определяет версию ресурса. Это позволяет создавать запросы, избегая случайных перезаписей.
 
 > [!Tip]
-> Концептуальный код в [примере решения C#](https://github.com/Azure-Samples/search-dotnet-getting-started/tree/master/DotNetETagsExplainer) объясняет, как работает функция управления параллелизмом в Поиске Azure. Код создает условия, которые вызывают управление параллелизмом. Большинству разработчиков, скорее всего, достаточно будет прочитать [приведенный ниже фрагмент кода](#samplecode), но если вы хотите выполнить его, то измените файл appsettings.json, добавив имя службы и ключ API администратора. URL-адрес службы — `http://myservice.search.windows.net`, а имя службы — `myservice`.
+> Концептуальный код в [примере C# решения](https://github.com/Azure-Samples/search-dotnet-getting-started/tree/master/DotNetETagsExplainer) объясняет, как работает управление параллелизмом в Azure когнитивный Поиск. Код создает условия, которые вызывают управление параллелизмом. Большинству разработчиков, скорее всего, достаточно будет прочитать [приведенный ниже фрагмент кода](#samplecode), но если вы хотите выполнить его, то измените файл appsettings.json, добавив имя службы и ключ API администратора. URL-адрес службы — `http://myservice.search.windows.net`, а имя службы — `myservice`.
 
-## <a name="how-it-works"></a>Как это работает
+## <a name="how-it-works"></a>Принципы работы
 
 Оптимистическая блокировка реализуется за счет проверки условий доступа в вызовах API при записи в индексы, индексаторы, источники данных и ресурсы synonymMap.
 
@@ -51,7 +50,7 @@ ms.locfileid: "69656723"
     class Program
     {
         // This sample shows how ETags work by performing conditional updates and deletes
-        // on an Azure Search index.
+        // on an Azure Cognitive Search index.
         static void Main(string[] args)
         {
             IConfigurationBuilder builder = new ConfigurationBuilder().AddJsonFile("appsettings.json");
@@ -62,14 +61,14 @@ ms.locfileid: "69656723"
             Console.WriteLine("Deleting index...\n");
             DeleteTestIndexIfExists(serviceClient);
 
-            // Every top-level resource in Azure Search has an associated ETag that keeps track of which version
+            // Every top-level resource in Azure Cognitive Search has an associated ETag that keeps track of which version
             // of the resource you're working on. When you first create a resource such as an index, its ETag is
             // empty.
             Index index = DefineTestIndex();
             Console.WriteLine(
                 $"Test index hasn't been created yet, so its ETag should be blank. ETag: '{index.ETag}'");
 
-            // Once the resource exists in Azure Search, its ETag will be populated. Make sure to use the object
+            // Once the resource exists in Azure Cognitive Search, its ETag will be populated. Make sure to use the object
             // returned by the SearchServiceClient! Otherwise, you will still have the old object with the
             // blank ETag.
             Console.WriteLine("Creating index...\n");
@@ -129,9 +128,9 @@ ms.locfileid: "69656723"
             serviceClient.Indexes.Delete("test", accessCondition: AccessCondition.GenerateIfExistsCondition());
 
             // This is slightly better than using the Exists method since it makes only one round trip to
-            // Azure Search instead of potentially two. It also avoids an extra Delete request in cases where
+            // Azure Cognitive Search instead of potentially two. It also avoids an extra Delete request in cases where
             // the resource is deleted concurrently, but this doesn't matter much since resource deletion in
-            // Azure Search is idempotent.
+            // Azure Cognitive Search is idempotent.
 
             // And we're done! Bye!
             Console.WriteLine("Complete.  Press any key to end application...\n");
@@ -170,7 +169,7 @@ ms.locfileid: "69656723"
 
 Конструктивный шаблон для реализации оптимистической блокировки должен включать в себя цикл повторных попыток проверки условия доступа, тест для условия доступа и, при необходимости, должен получать обновленный ресурс перед попыткой повторного применения изменений.
 
-В этом фрагменте кода показано добавление synonymMap в индекс, который уже существует. Этот код относится к [примеру синонима C# для поиска Azure](search-synonyms-tutorial-sdk.md).
+В этом фрагменте кода показано добавление synonymMap в индекс, который уже существует. Этот код из [примера синонима C# для Azure когнитивный Поиск](search-synonyms-tutorial-sdk.md).
 
 Этот фрагмент получает индекс "hotels", проверяет версию объекта при операции обновления, порождает исключение, если условие не выполняется, а затем совершает повторную попытку операции (до трех раз), начиная с извлечения индекса с сервера, чтобы получить последнюю версию.
 
@@ -206,7 +205,7 @@ ms.locfileid: "69656723"
         }
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Просмотрите [пример кода C# для синонимов](https://github.com/Azure-Samples/search-dotnet-getting-started/tree/master/DotNetHowToSynonyms), чтобы получить дополнительные сведения о безопасном обновлении существующего индекса.
 
@@ -215,7 +214,7 @@ ms.locfileid: "69656723"
 + [Пример REST API на портале GitHub](https://github.com/Azure-Samples/search-rest-api-getting-started)
 + [Пример пакета SDK для .NET на портале GitHub](https://github.com/Azure-Samples/search-dotnet-getting-started) Это решение включает в себя проект DotNetEtagsExplainer, который содержит код, представленный в этой статье.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>Дополнительные материалы
 
 [Common HTTP request and response headers used in Azure Search (Распространенные заголовки запросов и ответов HTTP в службе "Поиск Azure")](https://docs.microsoft.com/rest/api/searchservice/common-http-request-and-response-headers-used-in-azure-search)
 [HTTP status codes (Azure Search) (Коды состояния HTTP в службе "Поиск Azure")](https://docs.microsoft.com/rest/api/searchservice/http-status-codes)

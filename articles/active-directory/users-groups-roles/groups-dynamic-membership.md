@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bb9b3a4add951079ab918d3ac02ca5e38eff6161
-ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
+ms.openlocfilehash: 4a8823a9b354ca4ae9ecab0eeac265b486116bec
+ms.sourcegitcommit: ec2b75b1fc667c4e893686dbd8e119e7c757333a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72241170"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72808970"
 ---
 # <a name="dynamic-membership-rules-for-groups-in-azure-active-directory"></a>Правила динамического членства в группах для Azure Active Directory
 
@@ -69,8 +69,8 @@ user.department -eq "Sales"
 Правило членства, которое автоматически добавляет в группу пользователей или устройства, представляет собой выражение с двоичным результатом, то есть оно возвращает значение true или false. Простейшее правило состоит из трех частей:
 
 - Свойство
-- Operator
-- Значение
+- operator
+- Value
 
 Чтобы избежать синтаксических ошибок, следует соблюдать определенный порядок частей в этом выражении.
 
@@ -78,22 +78,22 @@ user.department -eq "Sales"
 
 Существует три типа свойств, которые можно использовать для создания правил членства.
 
-- Логическое
-- Строка,
+- Логический
+- Строка
 - Коллекция строк
 
 Ниже приведены свойства пользователя, которые можно использовать для создания одного выражения.
 
 ### <a name="properties-of-type-boolean"></a>Свойства логического типа
 
-| Свойства | Допустимые значения | Использование |
+| properties | Допустимые значения | Использование |
 | --- | --- | --- |
 | AccountEnabled |true, false |user.accountEnabled -eq true |
 | dirSyncEnabled |true, false |user.dirSyncEnabled -eq true |
 
 ### <a name="properties-of-type-string"></a>Свойства строкового типа
 
-| Свойства | Допустимые значения | Использование |
+| properties | Допустимые значения | Использование |
 | --- | --- | --- |
 | city |Любое строковое значение или *null*. |(user.city -eq "value") |
 | country |Любое строковое значение или *null*. |(user.country -eq "value") |
@@ -124,7 +124,7 @@ user.department -eq "Sales"
 
 ### <a name="properties-of-type-string-collection"></a>Свойства типа коллекции строк
 
-| Свойства | Допустимые значения | Использование |
+| properties | Допустимые значения | Использование |
 | --- | --- | --- |
 | otherMails |Любое строковое значение. |(user.otherMails -contains "alias@domain") |
 | proxyAddresses |SMTP: alias@domain, smtp: alias@domain |(user.proxyAddresses -contains "SMTP: alias@domain") |
@@ -135,7 +135,7 @@ user.department -eq "Sales"
 
 В следующей таблице перечислены все поддерживаемые операторы и их синтаксис для одного выражения. Все операторы можно использовать с дефисом в качестве префикса или без него.
 
-| Operator | Синтаксис |
+| operator | Синтаксис |
 | --- | --- |
 | Не равно |-ne |
 | Равно |-eq |
@@ -145,7 +145,7 @@ user.department -eq "Sales"
 | Содержит |-contains |
 | Не соответствует |-notMatch |
 | Соответствует |-match |
-| In | -in |
+| В | -in |
 | Не входит | -notIn |
 
 ### <a name="using-the--in-and--notin-operators"></a>Использование операторов -in и -notIn
@@ -160,7 +160,7 @@ user.department -eq "Sales"
 
 
 ### <a name="using-the--match-operator"></a>Используйте оператор -match 
-Оператор **-match** используется для сопоставления с любым регулярным выражением. Примеры:
+Оператор **-match** используется для сопоставления с любым регулярным выражением. Примеры.
 
 ```
 user.displayName -match "Da.*"   
@@ -249,7 +249,7 @@ Da, Dav, David имеют значение true, aDa имеет значение
 
 Многозначные свойства являются коллекциями объектов того же типа. Их можно использовать для создания правил членства с помощью логических операторов -any и (или) -all.
 
-| Свойства | Значения | Использование |
+| properties | Значения | Использование |
 | --- | --- | --- |
 | assignedPlans | Каждый объект в коллекции предоставляет следующие строковые параметры: capabilityStatus, service, servicePlanId |user.assignedPlans -any (assignedPlan.servicePlanId -eq "efb87545-963c-4e0d-99df-69c6916d9eb0" -and assignedPlan.capabilityStatus -eq "Enabled") |
 | proxyAddresses| SMTP: alias@domain, smtp: alias@domain | (user.proxyAddresses -any (\_ -contains "contoso")) |
@@ -379,14 +379,16 @@ user.extension_c272a57b722d4eb29bfe327874ae79cb_OfficeNumber -eq "123"
  enrollmentProfileName | Профиль регистрации устройств Apple, регистрация устройств — идентификаторы корпоративных устройств (Android-киоск) или имя профиля Windows автопилота. | (device.enrollmentProfileName -eq "DEP iPhones")
  isRooted | true, false | (device.isRooted -eq true)
  managementType | MDM (для мобильных устройств).<br>PC (для компьютеров, управляемых агентом Intune PC). | (device.managementType -eq "MDM")
+ organizationalUnit | допустимое локальное организационное подразделение (OU) | (Device. organizationalUnit — содержит "портативный компьютер")
  deviceId | Допустимый идентификатор устройства Azure AD. | (device.deviceId -eq "d4fe7726-5966-431c-b3b8-cddc8fdb717d")
  objectId | Допустимый идентификатор объекта Azure AD. |  (device.objectId -eq 76ad43c9-32c5-45e8-a272-7b58b58f596d")
+ девицефисикалидс | любое строковое значение, используемое автопилотом, например все устройства автопилота, OrderID или PurchaseOrderID  | (Device. Девицефисикалидс-Any _-содержит "[Зтдид]") (Device. Девицефисикалидс-Any _-EQ "[OrderID]: 179887111881") (Device. Девицефисикалидс-Any _-EQ "[PurchaseOrderId]: 76222342342")
  systemLabels | Любая строка, соответствующая свойству устройства Intune, для добавления тегов устройств в Modern Workplace. | (Device. Системлабелс — содержит "M365Managed")
 
 > [!Note]  
 > При создании динамических групп для устройств необходимо указать для атрибута deviceOwnership значение Company (Организация). В Intune этому значению соответствует тип владения устройством Corporate (Корпоративное). Дополнительные сведения см. в разделе [OwnerTypes](https://docs.microsoft.com/intune/reports-ref-devices#ownertypes). 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В следующих статьях содержатся дополнительные сведения о группах в Azure Active Directory.
 

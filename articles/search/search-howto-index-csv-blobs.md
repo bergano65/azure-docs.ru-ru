@@ -1,41 +1,40 @@
 ---
-title: Индексирование больших двоичных объектов в формате CSV с помощью индексатора в службе "Поиск Azure"
-description: Узнайте, как сканировать большие двоичные объекты в формате CSV в хранилище BLOB-объектов Azure для полнотекстового поиска с помощью индекса службы "Поиск Azure". Индексаторы автоматизируют прием данных из выбранных источников, таких как хранилище BLOB-объектов Azure.
-ms.date: 05/02/2019
-author: mgottein
+title: Индексирование больших двоичных объектов CSV с помощью индексатора BLOB-объектов Когнитивный поиск Azure
+titleSuffix: Azure Cognitive Search
+description: Сканирование больших двоичных объектов CSV в хранилище BLOB-объектов Azure для полнотекстового поиска с помощью индекса Azure Когнитивный поиск. Индексаторы автоматизируют прием данных из выбранных источников, таких как хранилище BLOB-объектов Azure.
 manager: nitinme
+author: mgottein
 ms.author: magottei
-services: search
-ms.service: search
 ms.devlang: rest-api
+ms.service: cognitive-search
 ms.topic: conceptual
-ms.custom: seodec2018
-ms.openlocfilehash: b135fd1a0758567a7b504996bf442a913741fe59
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.date: 11/04/2019
+ms.openlocfilehash: 18d0eb704deba80bf83b5cae0a598f47181700f7
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69656757"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72793780"
 ---
-# <a name="indexing-csv-blobs-with-azure-search-blob-indexer"></a>Индексирование BLOB-объектов в формате CSV с помощью индексатора BLOB-объектов службы поиска Azure
+# <a name="how-to-index-csv-blobs-using-a-blob-indexer-in-azure-cognitive-search"></a>Как индексировать большие двоичные объекты CSV с помощью индексатора BLOB-объектов в Azure Когнитивный поиск 
 
 > [!Note]
 > режим синтаксического анализа delimitedText находится в режиме предварительной версии и не предназначен для использования в рабочей среде. Эта функция предоставляется в [версии REST API 2019-05-06-Preview](search-api-preview.md). Поддержка пакета SDK для .NET пока не реализована.
 >
 
-По умолчанию [индексатор BLOB-объектов службы поиска Azure](search-howto-indexing-azure-blob-storage.md) анализирует текстовые BLOB-объекты (с разделителями) как один блок текста. Однако в больших двоичных объектах, содержащих CSV-данные, часто возникает необходимость обрабатывать каждую строку объекта как отдельный документ. Например, учитывая следующий разделительный текст, вы можете проанализировать его в двух документах, каждый из которых содержит поля "id", "datePublished" и "tags": 
+По умолчанию [индексатор BLOB-объектов когнитивный Поиск Azure](search-howto-indexing-azure-blob-storage.md) анализирует текстовые большие двоичные объекты с разделителями как единый фрагмент текста. Однако в больших двоичных объектах, содержащих CSV-данные, часто возникает необходимость обрабатывать каждую строку объекта как отдельный документ. Например, учитывая следующий разделительный текст, вы можете проанализировать его в двух документах, каждый из которых содержит поля "id", "datePublished" и "tags": 
 
     id, datePublished, tags
     1, 2016-01-12, "azure-search,azure,cloud" 
     2, 2016-07-07, "cloud,mobile" 
 
-Из этой статьи вы узнаете, как анализировать большие двоичные объекты CSV с помощью большого двоичного объекта `delimitedText` поиска Azure, индексерби задание режима анализа. 
+В этой статье вы узнаете, как проанализировать большие двоичные объекты CSV с помощью Когнитивный поиск большого двоичного объекта Azure индексерби, установив режим разбора `delimitedText`. 
 
 > [!NOTE]
-> Следуйте рекомендациям по настройке индексатора в индексировании " [один ко многим](search-howto-index-one-to-many-blobs.md) ", чтобы вывести несколько документов поиска из одного большого двоичного объекта Azure.
+> Следуйте рекомендациям по настройке индексатора в [индексировании "один ко многим](search-howto-index-one-to-many-blobs.md) ", чтобы вывести несколько документов поиска из одного большого двоичного объекта Azure.
 
 ## <a name="setting-up-csv-indexing"></a>Настройка индексирования CSV
-Чтобы индексировать большие двоичные объекты CSV, создайте или обновите определение индексатора с `delimitedText` помощью режима анализа для запроса на [Создание индексатора](https://docs.microsoft.com/rest/api/searchservice/create-indexer) :
+Чтобы индексировать большие двоичные объекты CSV, создайте или обновите определение индексатора с помощью `delimitedText` режима синтаксического анализа для запроса на [Создание индексатора](https://docs.microsoft.com/rest/api/searchservice/create-indexer) :
 
     {
       "name" : "my-csv-indexer",
@@ -48,7 +47,7 @@ ms.locfileid: "69656757"
 
     "parameters" : { "configuration" : { "parsingMode" : "delimitedText", "delimitedTextHeaders" : "id,datePublished,tags" } } 
 
-Можно настроить символ разделителя с помощью параметра конфигурации `delimitedTextDelimiter`. Пример:
+Можно настроить символ разделителя с помощью параметра конфигурации `delimitedTextDelimiter`. Пример.
 
     "parameters" : { "configuration" : { "parsingMode" : "delimitedText", "delimitedTextDelimiter" : "|" } }
 
@@ -56,7 +55,7 @@ ms.locfileid: "69656757"
 > Сейчас поддерживается только кодирование UTF-8. Если требуется поддержка других кодировок, проголосуйте за них на сайте [UserVoice](https://feedback.azure.com/forums/263029-azure-search).
 
 > [!IMPORTANT]
-> Когда вы используете режим анализа текста с разделителями, служба поиска Azure предполагает, что все BLOB-объекты в источнике данных являются CSV-объектами. Если необходима поддержка как CSV-объектов, так и других больших двоичных объектов в одном источнике данных, проголосуйте на [нашем сайте UserVoice](https://feedback.azure.com/forums/263029-azure-search).
+> При использовании режима синтаксического анализа текста с разделителями в Azure Когнитивный поиск предполагается, что все большие двоичные объекты в источнике данных будут иметь формат CSV. Если необходима поддержка как CSV-объектов, так и других больших двоичных объектов в одном источнике данных, проголосуйте на [нашем сайте UserVoice](https://feedback.azure.com/forums/263029-azure-search).
 > 
 > 
 
@@ -89,6 +88,6 @@ ms.locfileid: "69656757"
       "parameters" : { "configuration" : { "parsingMode" : "delimitedText", "delimitedTextHeaders" : "id,datePublished,tags" } }
     }
 
-## <a name="help-us-make-azure-search-better"></a>Помогите нам усовершенствовать службу поиска Azure
+## <a name="help-us-make-azure-cognitive-search-better"></a>Помогите нам сделать Azure Когнитивный поиск лучше
 Если вам нужна какая-либо функция или у вас есть идеи, которые можно было бы реализовать, сообщите об этом на [сайте UserVoice](https://feedback.azure.com/forums/263029-azure-search/).
 

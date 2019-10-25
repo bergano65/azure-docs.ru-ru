@@ -1,5 +1,6 @@
 ---
-title: Как запросить настраиваемые утверждения с помощью MSAL для iOS и macOS | Платформа Microsoft Identity
+title: Как запросить настраиваемые утверждения с помощью MSAL для iOS и macOS
+titleSuffix: Microsoft identity platform
 description: Узнайте, как запросить настраиваемые утверждения.
 services: active-directory
 documentationcenter: ''
@@ -17,28 +18,28 @@ ms.author: twhitney
 ms.reviewer: ''
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a6e09d58742bffd74f07f79b3ec55c1e81533632
-ms.sourcegitcommit: 263a69b70949099457620037c988dc590d7c7854
+ms.openlocfilehash: 6c34da9e8faa8c2c2e24e7f00569e2b7c8af674f
+ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71268990"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72802597"
 ---
-# <a name="how-to-request-custom-claims-using-msal-for-ios-and-macos"></a>Практическое руководство. Запрос пользовательских утверждений с помощью MSAL для iOS и macOS
+# <a name="how-to-request-custom-claims-using-msal-for-ios-and-macos"></a>Как запросить настраиваемые утверждения с помощью MSAL для iOS и macOS
 
 OpenID Connect Connect позволяет при необходимости запросить возврат индивидуальных утверждений из конечной точки UserInfo и/или в маркере идентификации. Запрос утверждений представлен в виде объекта JSON, содержащего список запрошенных утверждений. Дополнительные сведения см. в разделе [OpenID Connect Connect Core 1,0](https://openid.net/specs/openid-connect-core-1_0-final.html#ClaimsParameter) .
 
-Библиотека проверки подлинности Microsoft (MSAL) для iOS и macOS позволяет запрашивать определенные утверждения как в интерактивном, так и в автоматическом режиме получения маркеров. Это делается с помощью `claimsRequest` параметра.
+Библиотека проверки подлинности Microsoft (MSAL) для iOS и macOS позволяет запрашивать определенные утверждения как в интерактивном, так и в автоматическом режиме получения маркеров. Это делается с помощью параметра `claimsRequest`.
 
-Существует несколько сценариев, в которых это необходимо. Пример:
+Существует несколько сценариев, в которых это необходимо. Пример.
 
 - Запрос утверждений за пределами стандартного набора для вашего приложения.
 - Запрос определенных сочетаний стандартных заявок, которые не могут быть указаны с помощью областей для приложения. Например, если маркер доступа отклоняется из-за отсутствия утверждений, приложение может запросить недостающие утверждения с помощью MSAL.
 
 > [!NOTE]
-> MSAL обходит кэш маркера доступа всякий раз, когда указан запрос на утверждение. Важно предоставлять `claimsRequest` параметр только в том случае, если требуются дополнительные утверждения (в отличие от того, что всегда `claimsRequest` предоставляет один и тот же параметр в каждом вызове API MSAL).
+> MSAL обходит кэш маркера доступа всякий раз, когда указан запрос на утверждение. Важно указывать параметр `claimsRequest` только в том случае, если требуются дополнительные утверждения (в отличие от того, что всегда предоставляет один и тот же параметр `claimsRequest` в каждом вызове API MSAL).
 
-`claimsRequest`можно указать в `MSALSilentTokenParameters` и `MSALInteractiveTokenParameters`:
+`claimsRequest` можно указать в `MSALSilentTokenParameters` и `MSALInteractiveTokenParameters`:
 
 ```objc
 /*!
@@ -54,7 +55,7 @@ OpenID Connect Connect позволяет при необходимости за
 
 @end
 ```
-`MSALClaimsRequest`можно сформировать из NSString представления запроса на утверждение JSON. 
+`MSALClaimsRequest` можно сформировать из NSString представления запроса на утверждение JSON. 
 
 Objective-C.
 
@@ -63,7 +64,7 @@ NSError *claimsError = nil;
 MSALClaimsRequest *request = [[MSALClaimsRequest alloc] initWithJsonString:@"{\"id_token\":{\"auth_time\":{\"essential\":true},\"acr\":{\"values\":[\"urn:mace:incommon:iap:silver\"]}}}" error:&claimsError];
 ```
 
-SWIFT
+Swift:
 
 ```swift
 var requestError: NSError? = nil
@@ -85,7 +86,7 @@ individualClaimRequest.additionalInfo.value = @"myvalue";
 [request requestClaim:individualClaimRequest forTarget:MSALClaimsRequestTargetIdToken error:&claimsError];
 ```
 
-SWIFT
+Swift:
 
 ```swift
 let individualClaimRequest = MSALIndividualClaimRequest(name: "custom-claim")
@@ -103,7 +104,7 @@ do {
 
 
 
-`MSALClaimsRequest`следует задать в параметрах токена и предоставить одному из API-интерфейсов получения маркера MSAL:
+`MSALClaimsRequest` следует задать в параметрах токена и предоставить одному из API-интерфейсов получения маркеров MSAL:
 
 Objective-C.
 
@@ -118,7 +119,7 @@ parameters.claimsRequest = request;
 [application acquireTokenWithParameters:parameters completionBlock:completionBlock];
 ```
 
-SWIFT
+Swift:
 
 ```swift
 let application: MSALPublicClientApplication!
@@ -133,6 +134,6 @@ application.acquireToken(with: parameters) { (result: MSALResult?, error: Error?
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о [потоках проверки подлинности и сценариях приложений](authentication-flows-app-scenarios.md)
+Дополнительные сведения см. в [Потоки проверки подлинности и сценарии приложений](authentication-flows-app-scenarios.md)

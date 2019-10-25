@@ -10,26 +10,26 @@ ms.service: active-directory
 ms.topic: conceptual
 ms.workload: identity
 ms.subservice: pim
-ms.date: 04/27/2019
+ms.date: 10/22/2019
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2069f0161ea2600a62ab123206d0ebe3c00642c3
-ms.sourcegitcommit: 95b180c92673507ccaa06f5d4afe9568b38a92fb
+ms.openlocfilehash: 72d9f0c7df12bd6746cd5cf0336e7bd58b6cc88d
+ms.sourcegitcommit: ec2b75b1fc667c4e893686dbd8e119e7c757333a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/08/2019
-ms.locfileid: "70804366"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72809036"
 ---
-# <a name="create-an-access-review-of-azure-ad-roles-in-pim"></a>Создание проверки доступа для ролей Azure AD в PIM
+# <a name="create-an-access-review-of-azure-ad-roles-in-privileged-identity-management"></a>Создание проверки доступа для ролей Azure AD в управление привилегированными пользователями
 
-Доступ к привилегированным ролям Azure AD для сотрудников изменяется с течением времени. Чтобы снизить риск, связанный с устаревшими назначениями ролей, следует регулярно проверять доступ. Вы можете использовать Azure Active Directory (Azure AD) управление привилегированными пользователями (PIM) для создания проверок доступа для привилегированных ролей Azure AD. Также можно настроить автоматические проверки доступа, которые выполняются автоматически.
+Требования к пользователям для получения доступа к привилегированным Azure Active Directory (Azure AD) могут меняться со временем. Чтобы снизить риск, связанный с устаревшими назначениями ролей, следует регулярно проверять доступ. Вы можете использовать Azure AD Privileged Identity Management (PIM) для создания проверок доступа для привилегированных ролей Azure AD. Также можно настроить автоматические проверки доступа, которые выполняются автоматически.
 
 В этой статье описывается, как создать одну или несколько проверок доступа для привилегированных ролей Azure AD.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
-- [Администратор привилегированных ролей](../users-groups-roles/directory-assign-admin-roles.md#privileged-role-administrator)
+[Администратор привилегированных ролей](../users-groups-roles/directory-assign-admin-roles.md#privileged-role-administrator)
 
 ## <a name="open-access-reviews"></a>Открытие проверок доступа
 
@@ -37,19 +37,17 @@ ms.locfileid: "70804366"
 
 1. Откройте страницу **Azure AD Privileged Identity Management**.
 
-1. В меню слева щелкните **роли Azure AD** , а затем щелкните проверки **доступа**.
+1. В меню слева выберите **роли Azure AD** , а затем щелкните проверки **доступа**.
 
-1. В разделе Управление щелкните **Проверка доступа**.
+1. В разделе Управление выберите **Проверка доступа**.
 
     ![Роли Azure AD — список проверок доступа, отображающий состояние всех проверок](./media/pim-how-to-start-security-review/access-reviews.png)
 
-
 [!INCLUDE [Privileged Identity Management access reviews](../../../includes/active-directory-privileged-identity-management-access-reviews.md)]
-
 
 ## <a name="start-the-access-review"></a>Запуск проверки доступа
 
-Завершив настройку параметров для проверки доступа, щелкните **Запустить**. Проверка доступа будет отображаться в списке с индикатором состояния.
+После указания параметров для проверки доступа нажмите кнопку **запустить**. Проверка доступа будет отображаться в списке с индикатором состояния.
 
 ![Список проверок доступа, отображающий состояние запущенных просмотров](./media/pim-how-to-start-security-review/access-reviews-list.png)
 
@@ -67,7 +65,7 @@ ms.locfileid: "70804366"
 
 В зависимости от сделанного выбора в **параметрах завершения**, автоматическое применение будет выполняться после даты окончания проверки или при ручной отмене проверки. Состояние проверки будет изменено с **завершено** на промежуточные состояния, такие как **применение** и, наконец, к **примененному**состоянию. Вы должны видеть запрещенных пользователей (если они есть), которые удаляются из ролей через несколько минут.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Проверка доступа к ролям Azure AD](pim-how-to-perform-security-review.md)
 - [Выполнение проверки доступа для ролей Azure AD](pim-how-to-complete-review.md)

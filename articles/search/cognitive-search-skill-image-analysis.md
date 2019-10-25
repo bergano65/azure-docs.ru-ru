@@ -1,29 +1,28 @@
 ---
-title: 'Навык когнитивного поиска: анализ изображений (служба "Поиск Azure")'
-description: Извлечение семантического текста посредством анализа изображений с помощью когнитивного навыка ImageAnalysis в конвейере обогащения в службе "Поиск Azure".
-services: search
+title: Когнитивный навык анализа изображений
+titleSuffix: Azure Cognitive Search
+description: Извлеките семантический текст с помощью анализа изображений, используя свой анализ изображений в конвейере обогащения искусственного интеллекта в Azure Когнитивный поиск.
 manager: nitinme
 author: luiscabrer
-ms.service: search
-ms.workload: search
-ms.topic: conceptual
-ms.date: 08/28/2019
 ms.author: luisca
-ms.openlocfilehash: 69e798601dc53ffb666aa9dcddd68980256fa3fc
-ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
+ms.service: cognitive-search
+ms.topic: conceptual
+ms.date: 11/04/2019
+ms.openlocfilehash: 04114d00f3905675a1794a3875e650661febc832
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71265455"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72791990"
 ---
-#   <a name="image-analysis-cognitive-skill"></a>Когнитивный навык анализа изображений
+# <a name="image-analysis-cognitive-skill"></a>Когнитивный навык анализа изображений
 
 Навык **анализа изображений** извлекает полноценный набор визуальных компонентов на основе содержимого изображения. Например, можно создать заголовок из изображения, сформировать теги, а также определить знаменитостей и ориентиры. Этот навык использует модели машинного обучения, предоставляемые [API компьютерного зрения](https://docs.microsoft.com/azure/cognitive-services/computer-vision/home) в Cognitive Services. 
 
 > [!NOTE]
-> Небольшие тома (20 транзакций) можно бесплатно исполнить в службе поиска Azure, но для больших рабочих нагрузок требуется [присоединить оплачиваемый Cognitive Services ресурс](cognitive-search-attach-cognitive-services.md). Плата взимается при вызове API в Cognitive Services и извлечении изображений при открытии документов в службе "Поиск Azure". За извлечение текста из документов плата не взимается.
+> Небольшие тома (20 транзакций) можно бесплатно исполнить в Azure Когнитивный поиск, но для больших рабочих нагрузок требуется [присоединить оплачиваемый Cognitive Services ресурс](cognitive-search-attach-cognitive-services.md). Расходы начисляются при вызове API в Cognitive Services, а также для извлечения изображений в рамках этапа взлома документов в Azure Когнитивный поиск. За извлечение текста из документов плата не взимается.
 >
-> Плата за выполнение встроенных навыков взимается в рамках существующей [модели оплаты Cognitive Services по мере использования](https://azure.microsoft.com/pricing/details/cognitive-services/). Плата за извлечение изображений указана на [странице с ценами на Поиск Azure](https://go.microsoft.com/fwlink/?linkid=2042400).
+> Плата за выполнение встроенных навыков взимается в рамках существующей [модели оплаты Cognitive Services по мере использования](https://azure.microsoft.com/pricing/details/cognitive-services/). Цены на извлечение изображений описаны на [странице цен на когнитивный Поиск Azure](https://go.microsoft.com/fwlink/?linkid=2042400).
 
 
 ## <a name="odatatype"></a>@odata.type  
@@ -37,7 +36,7 @@ Microsoft.Skills.Vision.ImageAnalysisSkill
 |--------------------|-------------|
 | defaultLanguageCode   |  Строка, указывающая язык для возврата данных. Служба возвращает результаты распознавания на указанном языке. Если этот параметр не задан, используется значение по умолчанию "en". <br/><br/>Поддерживаемые языки: <br/>*en* — английский (по умолчанию) <br/> *zh* — китайский (упрощенное письмо)|
 |visualFeatures |   Массив строк, указывающих возвращаемые типы визуальных компонентов. Допустимые типы визуальных компонентов:  <ul><li> *категории* — классификация содержимого изображения в соответствии с классификацией, определенной в документации по Cognitive Services [компьютерное зрение](https://docs.microsoft.com/azure/cognitive-services/computer-vision/category-taxonomy). </li><li> *tags* — помечает изображение подробным списком слов, связанных с содержимым изображения.</li><li>*Описание* — описание содержимого образа с помощью полного предложения на английском языке.</li><li>*грани* — определяет наличие лиц. При их наличии задает координаты, возраст и пол.</li><li>    *imageType* — определяет, является ли изображение картинкой или графиком.</li><li>  *Цвет* — определяет цвет диакритических знаков, главный цвет и то, является ли изображение черным & белом.</li><li>для *взрослых* — определяет, является ли изображение порнографической (см. Нагота или половое действие). Кроме того, обнаруживаются материалы непристойного содержания.</li></ul> Имена визуальных компонентов зависят от регистра.|
-| details   | Массив строк, указывающих возвращаемые сведения о домене. Допустимые типы визуальных компонентов: <ul><li>*знаменитостей* — определяет знаменитостей, если он обнаружен в образе.</li><li>*ориентиры* — определяет ориентиры, если они обнаружены в изображении. </li></ul> |
+| сведения   | Массив строк, указывающих возвращаемые сведения о домене. Допустимые типы визуальных компонентов: <ul><li>*знаменитостей* — определяет знаменитостей, если он обнаружен в образе.</li><li>*ориентиры* — определяет ориентиры, если они обнаружены в изображении. </li></ul> |
 
 ## <a name="skill-inputs"></a>Входные данные навыков
 
@@ -350,7 +349,7 @@ Microsoft.Skills.Vision.ImageAnalysisSkill
 }
 ```
 
-##  <a name="sample-output"></a>Пример полученных результатов
+##  <a name="sample-output"></a>Пример выходных данных
 
 ```json
 {
@@ -503,7 +502,7 @@ Microsoft.Skills.Vision.ImageAnalysisSkill
 | NotSupportedImage | Неподдерживаемое изображение, например детская порнография. |
 | InvalidDetails | Неподдерживаемая доменная модель. |
 
-Если возникает ошибка `"One or more skills are invalid. Details: Error in skill #<num>: Outputs are not supported by skill: Landmarks"`, аналогичная, проверьте путь. Знаменитостей и ориентиры являются свойствами в `detail`.
+Если возникает ошибка, аналогичная `"One or more skills are invalid. Details: Error in skill #<num>: Outputs are not supported by skill: Landmarks"`, проверьте путь. Знаменитостей и ориентиры являются свойствами в разделе `detail`.
 
 ```json
 "categories":[  
@@ -519,8 +518,8 @@ Microsoft.Skills.Vision.ImageAnalysisSkill
             ]
 ```
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>Дополнительные материалы
 
-+ [Предопределенные навыки](cognitive-search-predefined-skills.md)
-+ [Определение набора навыков](cognitive-search-defining-skillset.md)
++ [Встроенные навыки](cognitive-search-predefined-skills.md)
++ [How to define a skillset](cognitive-search-defining-skillset.md) (Определение набора навыков)
 + [Создание индексатора (REST)](https://docs.microsoft.com/rest/api/searchservice/create-indexer)

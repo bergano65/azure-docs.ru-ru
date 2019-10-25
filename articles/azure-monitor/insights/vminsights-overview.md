@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: mgoedtel
 ms.author: magoedte
 ms.date: 10/15/2019
-ms.openlocfilehash: 2364218a9ccbde1cbfc276e3354cb93e42e5ce0b
-ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
+ms.openlocfilehash: c6135f3ab90a2002c3cf0c8d26211d66d0c637e8
+ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72553753"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72802406"
 ---
 # <a name="what-is-azure-monitor-for-vms-preview"></a>Что такое Azure Monitor для виртуальных машин (предварительная версия)?
 
@@ -33,7 +33,8 @@ Azure Monitor для виртуальных машин отслеживает в
 - Сопоставление
 
 >[!NOTE]
->Недавно мы [объявили об изменениях](https://azure.microsoft.com/updates/upcoming-changes-for-azure-monitor-for-vms-as-we-prepare-for-ga) , внесенных в функцию работоспособности, на основе отзывов наших клиентов, полученных от общедоступной предварительной версии. Учитывая количество изменений, которые мы будем вносить, мы перейдем к предложению функции работоспособности для новых клиентов. Существующие клиенты могут продолжать использовать функцию работоспособности. Дополнительные сведения см. в статье [часто задаваемые вопросы о доступности](vminsights-ga-release-faq.md).  
+>Недавно мы [объявили об изменениях](https://azure.microsoft.com/updates/updates-to-azure-monitor-for-virtual-machines-preview-before-general-availability-release/
+) , внесенных в функцию работоспособности, на основе отзывов наших клиентов, полученных от общедоступной предварительной версии. Учитывая количество изменений, которые мы будем вносить, мы перейдем к предложению функции работоспособности для новых клиентов. Существующие клиенты могут продолжать использовать функцию работоспособности. Дополнительные сведения см. в статье [часто задаваемые вопросы о доступности](vminsights-ga-release-faq.md).  
 
 Интеграция с журналами Azure Monitor обеспечивает мощную агрегацию и фильтрацию и позволяет проводить анализ тенденций данных с течением времени. Такой комплексный мониторинг рабочей нагрузки не может осуществляться только c помощью Azure Monitor или Сопоставления служб.  
 

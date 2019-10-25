@@ -1,5 +1,6 @@
 ---
-title: Создание удостоверения для приложения Azure на портале | Документация Майкрософт
+title: Создание удостоверения для приложения Azure на портале
+titleSuffix: Microsoft identity platform
 description: Описывается создание нового приложения Azure Active Directory и субъекта-службы, которые можно использовать в сочетании с контролем доступа на основе ролей в Azure Resource Manager для управления доступом к ресурсам.
 services: active-directory
 documentationcenter: na
@@ -16,12 +17,12 @@ ms.author: ryanwi
 ms.reviewer: tomfitz
 ms.custom: aaddev, seoapril2019, identityplatformtop40
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a9f8163a3695260234107ad41cc7be125adc9091
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.openlocfilehash: d60c1a01f3a4ca3a191ddb322def7d86a316c58f
+ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72324702"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72803331"
 ---
 # <a name="how-to-use-the-portal-to-create-an-azure-ad-application-and-service-principal-that-can-access-resources"></a>Практическое руководство. Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала
 
@@ -126,7 +127,7 @@ $cert=New-SelfSignedCertificate -Subject "CN=DaemonConsoleCert" -CertStoreLocati
 1. В [портал Azure](https://portal.azure.com)перейдите к своему хранилищу ключей и выберите **политики доступа**.  
 1. Выберите **Добавить политику доступа**, а затем выберите разрешения ключа, секрета и сертификата, которые вы хотите предоставить приложению.  Выберите ранее созданный субъект-службу.
 1. Выберите **Добавить** , чтобы добавить политику доступа, а затем нажмите кнопку **сохранить** , чтобы зафиксировать изменения.
-    ![Add политика доступа @ no__t-1
+    ![добавить политику доступа](./media/howto-create-service-principal-portal/add-access-policy.png)
 
 ## <a name="required-permissions"></a>Необходимые разрешения
 

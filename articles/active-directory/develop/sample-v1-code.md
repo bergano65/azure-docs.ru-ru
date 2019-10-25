@@ -18,12 +18,12 @@ ms.author: ryanwi
 ms.reviewer: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 41ff9bce6135936a4b23096fb18efecf7be1e1e2
-ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
+ms.openlocfilehash: a71eaebcc6345d6550d6ddd38350fe709706d740
+ms.sourcegitcommit: ec2b75b1fc667c4e893686dbd8e119e7c757333a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72374115"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72809294"
 ---
 # <a name="azure-active-directory-code-samples-v10-endpoint"></a>Примеры кода Azure Active Directory (конечная точка версии 1.0)
 
@@ -81,7 +81,7 @@ ms.locfileid: "72374115"
 
 Клиентское приложение | платформа | Поток или предоставление | Вызывает Microsoft Graph | Вызывает веб-API ASP.NET или ASP.NET Core 2.x
 ------------------ | -------- | ---------- | -------------------- | -------------------------
-Классическое приложение (WPF)           | ![На этом изображении показан .NETC# /Logo](media/sample-v2-code/logo_NET.png)  | Интерактивный режим | Часть [dotnet-native-multitarget](https://github.com/azure-samples/active-directory-dotnet-native-multitarget) | [Dotnet-native-desktop](https://github.com/Azure-Samples/active-directory-dotnet-native-desktop) </p> [dotnet-native-aspnetcore](https://azure.microsoft.com/resources/samples/active-directory-dotnet-native-aspnetcore/)</p> [dotnet-webapi-manual-jwt-validation](https://github.com/azure-samples/active-directory-dotnet-webapi-manual-jwt-validation)
+Классическое приложение (WPF)           | ![На этом изображении показан .NETC# /Logo](media/sample-v2-code/logo_NET.png)  | Интерактивный режим | Часть [dotnet-native-multitarget](https://github.com/azure-samples/active-directory-dotnet-native-multitarget) | [Dotnet-native-desktop](https://github.com/Azure-Samples/active-directory-dotnet-native-desktop) </p> [dotnet-native-aspnetcore](https://github.com/Azure-Samples/active-directory-dotnet-native-aspnetcore/)</p> [dotnet-webapi-manual-jwt-validation](https://github.com/azure-samples/active-directory-dotnet-webapi-manual-jwt-validation)
 Мобильное приложение (UWP)            | .![На этом рисунке показано .NET/C#/УВП](media/sample-v2-code/logo_Windows.png)   | Интерактивный режим | [dotnet-native-uwp-wam](https://github.com/azure-samples/active-directory-dotnet-native-uwp-wam) </p> В этом примере используется [WAM](/windows/uwp/security/web-account-manager), а не [ADAL.NET](https://aka.ms/adalnet)|  [dotnet-windows-store](https://github.com/Azure-Samples/active-directory-dotnet-windows-store) (приложение UWP, использующее ADAL.NET для обращения к веб-API одного клиента) </p> [dotnet-webapi-multitenant-windows-store](https://github.com/Azure-Samples/active-directory-dotnet-webapi-multitenant-windows-store) (приложение UWP, использующее ADAL.NET для обращения к веб-API нескольких клиентов)|
 Мобильное приложение (Android, iOS, UWP)   | ![На этом рисунке показано .NET/C# (Xamarin)](media/sample-v2-code/logo_xamarin.png) | Интерактивный режим | [dotnet-native-multitarget](https://github.com/azure-samples/active-directory-dotnet-native-multitarget) |
 Мобильное приложение (Android)           | ![На этом рисунке показан логотип Android](media/sample-v2-code/logo_Android.png) | Интерактивный режим |   [android](https://github.com/Azure-Samples/active-directory-android) |

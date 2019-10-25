@@ -6,12 +6,12 @@ ms.author: dacoulte
 ms.date: 10/18/2019
 ms.topic: conceptual
 ms.service: resource-graph
-ms.openlocfilehash: c78f2e37fa29fa1cdcb9acc6a4600688750b6d74
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: bcc272a8189ebb175f546f6a50c2c117a7975216
+ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72387595"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72800188"
 ---
 # <a name="working-with-large-azure-resource-data-sets"></a>Работа с большими наборами данных ресурса Azure
 
@@ -36,7 +36,7 @@ az graph query -q "Resources | project name | order by name asc" --first 200 --o
 Search-AzGraph -Query "Resources | project name | order by name asc" -First 200
 ```
 
-В [REST API](/rest/api/azureresourcegraph/resources/resources) элемент управления является **$top** и частью **QueryRequestOptions**.
+В [REST API](/rest/api/azureresourcegraph/resourcegraph(2018-09-01-preview)/resources/resources) элемент управления является **$top** и частью **QueryRequestOptions**.
 
 Элемент управления, который является _наиболее строгим_, победит. Например, если ваш запрос использует операторы **top** или **limit** и приводит к большему количеству записей, чем **First**, максимальное количество возвращаемых записей будет равно **First**. Аналогичным образом, если **top** или **limit** меньше, чем **First**, возвращенный набор записей будет меньшим значением, настроенным с помощью **top** или **limit**.
 
@@ -59,11 +59,11 @@ az graph query -q "Resources | project name | order by name asc" --skip 10 --out
 Search-AzGraph -Query "Resources | project name | order by name asc" -Skip 10
 ```
 
-В [REST API](/rest/api/azureresourcegraph/resources/resources) элемент управления является **$skip** и частью **QueryRequestOptions**.
+В [REST API](/rest/api/azureresourcegraph/resourcegraph(2018-09-01-preview)/resources/resources) элемент управления является **$skip** и частью **QueryRequestOptions**.
 
 ## <a name="paging-results"></a>Разбиение результатов по страницам
 
-Если необходимо разбить результирующий набор на небольшие наборы записей для обработки или так как результирующий набор превысит максимально допустимое значение _1000_ возвращаемых записей, используйте разбиение по страницам. [REST API](/rest/api/azureresourcegraph/resources/resources) **QueryResponse** предоставляет значения, указывающие, что набор результатов разбит на **resultTruncated** и **$skipToken**.
+Если необходимо разбить результирующий набор на небольшие наборы записей для обработки или так как результирующий набор превысит максимально допустимое значение _1000_ возвращаемых записей, используйте разбиение по страницам. [REST API](/rest/api/azureresourcegraph/resourcegraph(2018-09-01-preview)/resources/resources) **QueryResponse** предоставляет значения, указывающие, что набор результатов разбит на **resultTruncated** и **$skipToken**.
 **resultTruncated** является логическим значением, которое оповещает потребителя, если существуют дополнительные записи, которые не возвращаются в ответе. Это условие также можно определить, когда свойство **count** меньше, чем свойство **totalRecords**. **totalRecords** определяет, сколько записей соответствует запросу.
 
 Когда свойство **resultTruncated** равно **true**, свойство **$skipToken** задается в ответе. Это значение используется с теми же значениями запроса и подписки для получения следующего набора записей, который соответствует запросу.
@@ -81,7 +81,7 @@ Search-AzGraph -Query "Resources | project id, name | order by id asc" -First 10
 > [!IMPORTANT]
 > Запрос должен **проецировать** поле **id**, чтобы сработала нумерация страниц. Если он отсутствует в запросе, ответ не будет содержать **$skipToken**.
 
-Пример см. в разделе [Запрос следующей страницы](/rest/api/azureresourcegraph/resources/resources#next-page-query) в документации REST API.
+Пример см. в разделе [Запрос следующей страницы](/rest/api/azureresourcegraph/resourcegraph(2018-09-01-preview)/resources/resources#next-page-query) в документации REST API.
 
 ## <a name="formatting-results"></a>Форматирование результатов
 

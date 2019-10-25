@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 06/04/2019
 ms.author: dacurwin
 ms.assetid: 01169af5-7eb0-4cb0-bbdb-c58ac71bf48b
-ms.openlocfilehash: 2d460688392ae017c0d87ce60fa980701e5d47d3
-ms.sourcegitcommit: f29fec8ec945921cc3a89a6e7086127cc1bc1759
+ms.openlocfilehash: 2b951c6660143b1bd2f6502a5441aec3ba8d71e1
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72528191"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72792841"
 ---
 # <a name="monitor-at-scale-by-using-azure-monitor"></a>Мониторинг в масштабе с помощью Azure Monitor
 
@@ -29,7 +29,7 @@ Azure Backup предоставляет [встроенные возможнос
 ## <a name="using-log-analytics-workspace"></a>Использование рабочей области Log Analytics
 
 > [!NOTE]
-> Данные из резервных копий виртуальных машин Azure, агент Azure Backup, Data Protection Manager System Center, резервное копирование SQL в виртуальных машинах Azure и резервные копии файлов Azure создаются в рабочей области Log Analytics с помощью параметров диагностики.
+> Данные из резервных копий виртуальных машин Azure, агент Azure Backup, Data Protection Manager System Center, резервное копирование SQL в виртуальных машинах Azure и резервные копии файлов Azure создаются в рабочей области Log Analytics с помощью параметров диагностики. Поддержка Microsoft Azure Backup Server (MABS) будет добавлена в ближайшее время
 
 Для мониторинга и отчета в масштабе требуются возможности двух служб Azure. *Параметры диагностики* отправляют данные из нескольких Azure Resource Manager ресурсов в другой ресурс. *Log Analytics* создает настраиваемые оповещения, в которых можно использовать группы действий для определения других каналов уведомлений.
 

@@ -1,5 +1,5 @@
 ---
-title: Практическое руководство настройте обратную запись паролей для Azure AD SSPR — Azure Active Directory
+title: Как настроить обратную запись паролей для Azure AD SSPR Azure Active Directory
 description: Использование Azure AD и Azure AD Connect для обратной записи паролей в локальный каталог.
 services: active-directory
 ms.service: active-directory
@@ -11,14 +11,14 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 17a2661883dd069e8cb719672f6b92442f1a8a0a
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 71a16ad3c571086a73a2aae192fb2d00bce4d5f9
+ms.sourcegitcommit: ec2b75b1fc667c4e893686dbd8e119e7c757333a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60357518"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72808156"
 ---
-# <a name="how-to-configure-password-writeback"></a>Практическое руководство. Настройка компонента обратной записи паролей
+# <a name="how-to-configure-password-writeback"></a>Сведения о настройке компонента обратной записи паролей
 
 В инструкциях ниже предполагается, что вы уже настроили Azure AD Connect в своей среде с помощью параметров [Экспресс](../hybrid/how-to-connect-install-express.md) или [Пользовательский](../hybrid/how-to-connect-install-custom.md).
 
@@ -35,9 +35,9 @@ ms.locfileid: "60357518"
 Действия по устранению неполадок, связанных с компонентом обратной записи паролей, описаны в разделе [Устранение неполадок с обратной записью паролей](active-directory-passwords-troubleshoot.md#troubleshoot-password-writeback) соответствующей статьи.
 
 > [!WARNING]
-> Компонент обратной записи паролей перестанет работать для клиентов, которые используют Azure AD Connect версии 1.0.8641.0 и выше, когда [поддержка службы контроля доступа Azure (ACS) будет прекращена, 7 ноября 2018 года](../develop/active-directory-acs-migration.md). Версии Azure AD Connect 1.0.8641.0 и выше больше не будут допускать использование функции обратной записи паролей, так как они зависят от ACS.
+> Компонент обратной записи паролей перестанет работать для клиентов, которые используют Azure AD Connect версии 1.0.8641.0 и выше, если [использование службы контроля доступа Azure было прекращено 7 ноября 2018 года](../develop/active-directory-acs-migration.md). Версии Azure AD Connect 1.0.8641.0 и выше больше не будут допускать использование функции обратной записи паролей, так как они зависят от ACS.
 >
-> Чтобы избежать перебоев в работе службы, обновите предыдущую версию Azure AD Connect до более новой. Для этого ознакомьтесь со статьей [Azure AD Connect: обновление до последней версии](../hybrid/how-to-upgrade-previous-version.md).
+> Чтобы избежать перебоев в работе службы, обновите предыдущую версию Azure AD Connect до более новой, для этого см. статью [Azure AD Connect: обновление до последней версии](../hybrid/how-to-upgrade-previous-version.md)
 >
 
 ## <a name="licensing-requirements-for-password-writeback"></a>Требования к лицензированию для обратной записи паролей
@@ -47,19 +47,19 @@ ms.locfileid: "60357518"
 Чтобы использовать компонент обратной записи паролей, клиенту должна быть назначена одна из приведенных ниже лицензий:
 
 * Azure AD Premium P1
-* Azure AD Premium P2
+* Azure AD Premium P2
 * Enterprise Mobility + Security E3 или A3;
 * Enterprise Mobility + Security E5 или A5;
 * Microsoft 365 E3 или A3;
 * Microsoft 365 E5 или A5;
-* Microsoft 365 F1
-* Microsoft 365 бизнес
+* Microsoft 365 F1;
+* Microsoft 365 бизнес;
 
 > [!WARNING]
 > Автономные планы лицензирования Office 365 *не поддерживают функции самостоятельного сброса пароля, изменения пароля или разблокировки при помощи локальной обратной записи*. Для работы этих функций требуется один из указанных выше планов.
 >
 
-## <a name="active-directory-permissions"></a>Разрешения Active Directory
+## <a name="active-directory-permissions-and-on-premises-password-complexity-policies"></a>Active Directory разрешениями и локальными политиками сложности паролей 
 
 Для учетной записи, указанной в служебной программе Azure AD Connect, должны быть заданы следующие элементы, чтобы можно было использовать SSPR:
 
@@ -98,6 +98,8 @@ ms.locfileid: "60357518"
     * **Write lockoutTime** (Запись времени блокировки);
     * **Write pwdLastSet** (Запись времени последней установки пароля).
 9. Щелкните **Применить** и "ОК", чтобы применить изменения, а затем закройте все открытые диалоговые окна.
+
+Так как источник полномочий локальным, политики сложности паролей применяются к тому же подключенному источнику данных. Убедитесь, что вы изменили существующие групповые политики для "минимальная длина пароля". Для групповой политики не должно быть задано значение 1. Это означает, что пароль должен быть не менее одного дня, прежде чем его можно будет обновить. Необходимо убедиться, что для него задано значение 0. Эти параметры можно найти в `gpmc.msc` разделе **Конфигурация компьютера > политики > параметры Windows > параметры безопасности > политики учетных записей**. Запустите `gpupdate /force`, чтобы убедиться, что изменение вступает в силу. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -14,18 +14,16 @@ ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
 ms.reviewer: anilmur
-ms.openlocfilehash: 9ec8e2df8befa28fc023edb30889f177b60939f9
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: 87cd7c63939331190530a46071a6b4c40480562f
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "69015041"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72792586"
 ---
 # <a name="media-encoder-premium-workflow-formats-and-codecs"></a>Форматы и кодеки рабочего процесса Premium Media Encoder
 
 > [!NOTE]
-> Вопросы о кодировщике ценовой категории "Премиум" направляйте по адресу mepd@microsoft.com.
-> 
 > Обработчик мультимедиа расширенного рабочего процесса кодировщика мультимедиа, рассматриваемый в этом разделе, недоступен в Китае. 
 
 Этот документ содержит список форматов входных и выходных файлов, а также список кодеков, которые поддерживает общедоступная предварительная версия **расширенного рабочего процесса кодировщика мультимедиа** .
@@ -100,8 +98,6 @@ ms.locfileid: "69015041"
 * Создание эскизов JPEG
 * HEVC (H.265; 8 и 10 бит, профиль Main и Main 10)
 
-  Поддержка HDR 10 доступна в определенных сценариях. Для получения дополнительной информации свяжитесь с нами: mepd@microsoft.com
-
 
 ### <a name="output-audio-codecs"></a>Выходные аудиокодеки
 
@@ -141,11 +137,14 @@ ms.locfileid: "69015041"
 
 Если входящее видео не содержит скрытых субтитров, выходящий ресурс по-прежнему будет содержать пустой файл TTML. 
 
+## <a name="need-help"></a>Нужна помощь?
+
+Вы можете отправить запрос в службу поддержки, перейдя к [новому запросу в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest) .
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Отправить отзыв
 
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 

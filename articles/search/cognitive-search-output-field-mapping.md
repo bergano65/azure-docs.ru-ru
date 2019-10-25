@@ -1,21 +1,21 @@
 ---
-title: Сопоставление обогащенных полей входных данных, поддерживающих когнитивный поиск, с полями выходных данных в службе "Поиск Azure"
-description: Извлечение и обогащение полей источников данных, а также сопоставление их с полями выходных данных в индекс поиска Azure.
+title: Сопоставьте AI-поля ввода с полями вывода
+titleSuffix: Azure Cognitive Search
+description: Извлеките и дополните поля исходных данных и сопоставьте их с полями вывода в индексе Azure Когнитивный поиск.
 manager: nitinme
 author: luiscabrer
-services: search
-ms.service: search
-ms.topic: conceptual
-ms.date: 05/02/2019
 ms.author: luisca
-ms.openlocfilehash: 4ceb8e6290e3e7f4fb552db13c97558db1c8c97e
-ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
+ms.service: cognitive-search
+ms.topic: conceptual
+ms.date: 11/04/2019
+ms.openlocfilehash: 77f378f4e0c4a8e4827523e244f7b18c2a9ba336
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71265504"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72792109"
 ---
-# <a name="how-to-map-enriched-fields-to-a-searchable-index"></a>Сопоставление обогащенных полей с индексом, поддерживающим поиск
+# <a name="how-to-map-ai-enriched-fields-to-a-searchable-index"></a>Как сопоставлять ИСКУССТВЕНные поля с индексом с возможностью поиска
 
 В этой статье вы узнаете, как сопоставлять обогащенные поля входных данных с полями выходных данных в индексе, поддерживающем поиск. После [определения набора навыков](cognitive-search-defining-skillset.md) вы должны сопоставить поля выходных данных любого навыка, который напрямую вносит значения в заданное поле в ваш индекс поиска. Сопоставление полей является обязательным этапом для перемещения содержимого из обогащенных документов в индекс.
 
@@ -69,7 +69,7 @@ Content-Type: application/json
 ```
  ["Microsoft is a company in Seattle","LinkedIn's office is in San Francisco"]
 ```
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 После сопоставления обогащенных полей с полями, поддерживающими поиск, для каждого поля, поддерживающего поиск, можно задать атрибуты поля [в качестве части определения индекса](search-what-is-an-index.md).
 
-Дополнительные сведения о сопоставлении полей см. в статье [Сопоставление полей в индексаторах Поиска Azure](search-indexer-field-mappings.md).
+Дополнительные сведения о сопоставлении полей см. [в разделе сопоставления полей в Azure когнитивный Поиск индексаторы](search-indexer-field-mappings.md).

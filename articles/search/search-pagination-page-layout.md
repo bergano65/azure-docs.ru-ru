@@ -1,31 +1,29 @@
 ---
-title: Как работать с результатами поиска в службе "Поиск Azure"
-description: Структурируйте и сортируйте результаты поиска, получайте число документов и добавляйте навигацию содержимого к результатам поиска в службе "Поиск Azure".
-author: HeidiSteen
+title: Работа с результатами поиска
+titleSuffix: Azure Cognitive Search
+description: Структурирование и сортировка результатов поиска, получение числа документов и Навигация по содержимому в результатах поиска в Azure Когнитивный поиск.
 manager: nitinme
-services: search
-ms.service: search
-ms.devlang: ''
-ms.topic: conceptual
-ms.date: 06/13/2019
+author: HeidiSteen
 ms.author: heidist
-ms.custom: seodec2018
-ms.openlocfilehash: 9fa2baf64dbb35d85c55635d7522075d61bfc17d
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.service: cognitive-search
+ms.topic: conceptual
+ms.date: 11/04/2019
+ms.openlocfilehash: 31af550d4f499b4b4440a27037dc210bfdf0cb6f
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69647710"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72793453"
 ---
-# <a name="how-to-work-with-search-results-in-azure-search"></a>Как работать с результатами поиска в службе "Поиск Azure"
-В данной статье приводятся рекомендации по реализации стандартных элементов страницы результатов поиска, например, общего подсчета, извлечения документа, порядка сортировки и навигации. Связанные со страницей параметры, добавляющие данные или информацию к результатам поиска, задаются в запросах [поиска в документе](https://docs.microsoft.com/rest/api/searchservice/Search-Documents), отправляемых службе "Поиск Azure". 
+# <a name="how-to-work-with-search-results-in-azure-cognitive-search"></a>Работа с результатами поиска в Azure Когнитивный поиск
+В данной статье приводятся рекомендации по реализации стандартных элементов страницы результатов поиска, например, общего подсчета, извлечения документа, порядка сортировки и навигации. Параметры, связанные со страницей, которые вносят данные или сведения в результаты поиска, задаются с помощью запросов [документов поиска](https://docs.microsoft.com/rest/api/searchservice/Search-Documents) , отправленных в службу когнитивный Поиск Azure. 
 
 В REST API запросы включают команду GET, путь и параметры запроса, уведомляющие службу о том, что запрашивается и как сформировать ответ. В пакете SDK для .NET эквивалентным API является [класс DocumentSearchResult](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.documentsearchresult-1).
 
-В некоторых примерах кода предусмотрен пользовательский веб-интерфейс, который можно найти здесь: [демонстрационное приложение New York City Jobs](https://azjobsdemo.azurewebsites.net/) и [CognitiveSearchFrontEnd](https://github.com/LuisCabrer/CognitiveSearchFrontEnd).
+В несколько примеров кода входит интерфейс веб-интерфейса, который можно найти здесь: [New Москва — демонстрационное приложение](https://azjobsdemo.azurewebsites.net/) и [когнитивесеарчфронтенд](https://github.com/LuisCabrer/CognitiveSearchFrontEnd).
 
 > [!NOTE]
-> Допустимый запрос содержит несколько элементов, например URL-адрес службы и путь, HTTP-команду, `api-version` и т. д. Для краткости в примерах указывается только синтаксис, касающийся разбивки на страницы. Дополнительные сведения о синтаксисе запросов см. в статье [Azure служба поиска RESTful](https://docs.microsoft.com/rest/api/searchservice).
+> Допустимый запрос содержит несколько элементов, например URL-адрес службы и путь, HTTP-команду, `api-version` и т. д. Для краткости в примерах указывается только синтаксис, касающийся разбивки на страницы. Дополнительные сведения о синтаксисе запросов см. в статье [Azure когнитивный Поиск API-интерфейсы RESTful](https://docs.microsoft.com/rest/api/searchservice).
 >
 
 ## <a name="total-hits-and-page-counts"></a>Общее количество совпадений и страниц
@@ -34,7 +32,7 @@ ms.locfileid: "69647710"
 
 ![][1]
 
-В поиске Azure используйте параметры `$count`, `$top` и `$skip` для вывода этих значений. В следующем примере показан пример запроса на общее число попаданий в индексе с именем "Online-Catalog", `@odata.count`возвращенный как:
+В Когнитивный поиск Azure для возврата этих значений используются параметры `$count`, `$top`и `$skip`. В следующем примере показан пример запроса на общее число попаданий в индексе с именем "Online-Catalog", возвращаемый как `@odata.count`:
 
     GET /indexes/online-catalog/docs?$count=true
 
@@ -56,7 +54,7 @@ ms.locfileid: "69647710"
 
  ![][2]
 
-В службе поиска Azure можно использовать `$select` и [запрос API поиска](https://docs.microsoft.com/rest/api/searchservice/search-documents) для реализации этого интерфейса.
+В Когнитивный поиск Azure для реализации этого интерфейса можно использовать `$select` и [запрос API поиска](https://docs.microsoft.com/rest/api/searchservice/search-documents) .
 
 Чтобы получить подмножество полей для мозаичного макета:
 
@@ -74,7 +72,7 @@ ms.locfileid: "69647710"
 
  ![][3]
 
-В службе "Поиск Azure" сортировка основывается на выражении `$orderby` для всех полей, которые индексируются как `"Sortable": true.`. Предложение `$orderby` является выражением OData. Дополнительные сведения о синтаксисе см. в статье [Синтаксис выражений OData для предложений фильтрации и упорядочивания в службе "Поиск Azure"](query-odata-filter-orderby-syntax.md).
+В Когнитивный поиск Azure сортировка основана на `$orderby` выражении для всех полей, индексируемых как `"Sortable": true.` предложение `$orderby` является выражением OData. Дополнительные сведения о синтаксисе см. в статье [Синтаксис выражений OData для предложений фильтрации и упорядочивания в службе "Поиск Azure"](query-odata-filter-orderby-syntax.md).
 
 Соответствие тесно связано с профилями оценки. Можно использовать оценки по умолчанию, зависящие от анализа текста и статистики для расстановки всех результатов по критерию выбора, при этом более высокая оценка дается документам с большим количеством или более точными совпадениями с условием поиска.
 
@@ -92,24 +90,24 @@ ms.locfileid: "69647710"
 
 ## <a name="faceted-navigation"></a>Фасетная навигация
 
-Навигация поиска обычно находится на странице результатов, часто сбоку или вверху страницы. В Поиске Azure фасетная навигация обеспечивает самостоятельный поиск на основе предварительно заданных фильтров. Дополнительные сведения см. в статье [Как реализовать фасетную навигацию в службе поиска Azure](search-faceted-navigation.md).
+Навигация поиска обычно находится на странице результатов, часто сбоку или вверху страницы. В Когнитивный поиск Azure область навигации с аспектами обеспечивает самостоятельный поиск на основе предопределенных фильтров. Дополнительные сведения см. [в разделе Навигация с аспектами в когнитивный Поиск Azure](search-faceted-navigation.md) .
 
 ## <a name="filters-at-the-page-level"></a>Фильтры на уровне страницы
 
-Если структура решения включала выделенные страницы поиска для конкретных типов содержимого (например, Интернет-приложение розничной торговли, в котором есть подразделения, перечисленные в верхней части страницы), можно вставить [выражение фильтра](search-filters.md) вместе с событием OnClick, чтобы Откройте страницу в предварительно отфильтрованном состоянии.
+Если структура решения включала выделенные страницы поиска для конкретных типов содержимого (например, Интернет-приложение розничной торговли, в котором есть подразделения, перечисленные в верхней части страницы), можно вставить [выражение фильтра](search-filters.md) вместе с событием **OnClick** , чтобы Откройте страницу в предварительно отфильтрованном состоянии.
 
 Можно отправлять фильтр с выражением поиска или без него. Например, следующий запрос осуществляет фильтрацию по имени бренда, выводя только те документы, которые соответствуют ему.
 
     GET /indexes/online-catalog/docs?$filter=brandname eq 'Microsoft' and category eq 'Games'
 
-Дополнительные сведения о выражениях `$filter` см. в статье [Search Documents (Azure Search Service REST API)](https://docs.microsoft.com/rest/api/searchservice/Search-Documents) (Поиск документов (REST API службы поиска Azure)).
+Дополнительные сведения о выражениях `$filter` см. в разделе [Поиск документов (Azure КОГНИТИВНЫЙ Поиск API)](https://docs.microsoft.com/rest/api/searchservice/Search-Documents) .
 
 ## <a name="see-also"></a>См. также
 
-- [REST API службы поиска Azure](https://docs.microsoft.com/rest/api/searchservice)
+- [REST API Когнитивный поиск Azure](https://docs.microsoft.com/rest/api/searchservice)
 - [Операции с индексами](https://docs.microsoft.com/rest/api/searchservice/Index-operations)
 - [Операции с документом.](https://docs.microsoft.com/rest/api/searchservice/Document-operations)
-- [Фасетная навигация в службе поиска Azure](search-faceted-navigation.md)
+- [Навигация с аспектами в Azure Когнитивный поиск](search-faceted-navigation.md)
 
 <!--Image references-->
 [1]: ./media/search-pagination-page-layout/Pages-1-Viewing1ofNResults.PNG

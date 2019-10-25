@@ -1,24 +1,23 @@
 ---
-title: Фильтры ограничения результатов поиска в индексе (служба "Поиск Azure")
-description: Фильтрация по удостоверениям безопасности, языку, географическому расположению или числовым значениям для уменьшения результатов поиска в запросах в службе "Поиск Azure", размещенной облачной службе поиска в Microsoft Azure.
-author: HeidiSteen
+title: Фильтры для определения области результатов поиска в индексе
+titleSuffix: Azure Cognitive Search
+description: Фильтрация по идентификатору безопасности пользователя, языку, географическому расположению или числовым значениям для сокращения результатов поиска по запросам в Когнитивный поиск Azure, размещенной облачной службе поиска на Microsoft Azure.
 manager: nitinme
-services: search
-ms.service: search
-ms.topic: conceptual
-ms.date: 06/13/2019
+author: HeidiSteen
 ms.author: heidist
-ms.custom: seodec2018
-ms.openlocfilehash: 49af6f1f535df098aa45cccd7e2d629ff6ccef50
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.service: cognitive-search
+ms.topic: conceptual
+ms.date: 11/04/2019
+ms.openlocfilehash: 7dd289005e91323010cfa2a0298c351b3e757d1d
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69649846"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72792864"
 ---
-# <a name="filters-in-azure-search"></a>Фильтры в службе "Поиск Azure" 
+# <a name="filters-in-azure-cognitive-search"></a>Фильтры в Когнитивный поиск Azure 
 
-*Фильтр* предоставляет критерии для выбора документов, используемых в запросе службы "Поиск Azure". Неотфильтрованные результаты поиска содержат все документы в индексе. Фильтр ограничивает поисковой запрос подмножеством документов. Например, фильтр может ограничивать полнотекстовый поиск продуктами определенного бренда, цвета или ценового диапазона, превышающего определенное пороговое значение.
+*Фильтр* содержит критерии выбора документов, используемых в запросе Azure когнитивный Поиск. Неотфильтрованные результаты поиска содержат все документы в индексе. Фильтр ограничивает поисковой запрос подмножеством документов. Например, фильтр может ограничивать полнотекстовый поиск продуктами определенного бренда, цвета или ценового диапазона, превышающего определенное пороговое значение.
 
 Некоторые поисковые запросы устанавливают требования к фильтрам как часть реализации, но вы можете использовать фильтры, когда требуется ограничить поиск с помощью критериев *на основе значений* (поиск с ограничением поиска по типу продукта "книги" для категории "не фантастика", издательства Simon & Schuster).
 
@@ -63,7 +62,7 @@ ms.locfileid: "69649846"
 
 ## <a name="defining-filters"></a>Определение фильтров
 
-Фильтры представляют собой выражения OData, сформулированные с использованием [подмножества синтаксиса OData V4, поддерживаемого в службе "Поиск Azure"](https://docs.microsoft.com/rest/api/searchservice/odata-expression-syntax-for-azure-search). 
+Фильтры — это выражения OData, сформулированные с помощью [подмножества синтаксиса OData версии 4, поддерживаемого в когнитивный Поиск Azure](https://docs.microsoft.com/rest/api/searchservice/odata-expression-syntax-for-azure-search). 
 
 Можно указать один фильтр для каждой операции **поиска** , но сам фильтр может включать несколько полей, несколько условий, а при использовании функции **Match** — несколько выражений полнотекстового поиска. В выражении фильтра из нескольких частей можно указать предикаты в любом порядке (в соответствии с правилами приоритета операторов). Попытка поставить предикаты в определенной последовательности не даст значительного прироста производительности.
 
@@ -111,7 +110,7 @@ POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-ve
    search=hotels ocean$filter=(baseRate ge 60 and baseRate lt 300) and city eq 'Los Angeles'
    ```
 
-+ Составные запросы, разделенные с помощью логического оператора or, каждый со своими критериями фильтра (например, beagles в категории dog или siamese в категории cat). Выражения, Объединенные с `or` , оцениваются по отдельности с объединением документов, соответствующих каждому выражению, отправляемому обратно в ответе. Этот шаблон использования достигается с помощью `search.ismatchscoring` функции. Можно также использовать версию `search.ismatch`без оценки.
++ Составные запросы, разделенные с помощью логического оператора or, каждый со своими критериями фильтра (например, beagles в категории dog или siamese в категории cat). Выражения, Объединенные с `or`, оцениваются по отдельности с объединением документов, соответствующих каждому выражению, отправляемому обратно в ответе. Этот шаблон использования достигается с помощью функции `search.ismatchscoring`. Можно также использовать версию без оценки `search.ismatch`.
 
    ```
    # Match on hostels rated higher than 4 OR 5-star motels.
@@ -121,7 +120,7 @@ POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-ve
    $filter=search.ismatchscoring('luxury | high-end', 'description') or category eq 'Luxury'
    ```
 
-  Можно также объединить `search.ismatchscoring` полнотекстовый поиск с фильтрами `or`, используя `and` вместо, но `search` это функционально эквивалентно использованию параметров и `$filter` в запросе поиска. Например, следующие два запроса дают одинаковый результат:
+  Можно также объединить полнотекстовый поиск с помощью `search.ismatchscoring` с фильтрами `and` вместо `or`, но это функционально эквивалентно использованию параметров `search` и `$filter` в запросе поиска. Например, следующие два запроса дают одинаковый результат:
 
   ```
   $filter=search.ismatchscoring('pool') and rating ge 4
@@ -137,9 +136,9 @@ POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-ve
 
 ## <a name="field-requirements-for-filtering"></a>Требования к полям для фильтрации
 
-В REST API фильтрация по умолчанию включена для простых полей. Фильтруемые поля увеличивают размер индекса. Не забудьте установить `"filterable": false` для полей, которые вы не планируете фактически использовать в фильтре. Дополнительные сведения о параметрах для определения полей см. в статье [Create Index (Azure Search Service REST API)](https://docs.microsoft.com/rest/api/searchservice/create-index) (Создание индекса (REST API службы "Поиск Azure")).
+В REST API фильтрация по умолчанию включена *для* простых полей. Фильтруемые поля увеличивают размер индекса. Не забудьте установить `"filterable": false` для полей, которые вы не планируете фактически использовать в фильтре. Дополнительные сведения о параметрах для определения полей см. в статье [Create Index (Azure Search Service REST API)](https://docs.microsoft.com/rest/api/searchservice/create-index) (Создание индекса (REST API службы "Поиск Azure")).
 
-В пакете SDK для .NET фильтруемые поля *отключены* по умолчанию. Можно сделать фильтр для поля, задав для `true`свойства- [фильтра](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.field.isfilterable?view=azure-dotnet) соответствующего объекта [поля](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.field?view=azure-dotnet) значение. Это также можно сделать декларативно с помощью атрибута с [фильтрацией](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.isfilterableattribute). В приведенном ниже примере атрибут задается для `BaseRate` свойства класса Model, который сопоставляется с определением индекса.
+В пакете SDK для .NET фильтруемые поля *отключены* по умолчанию. Можно сделать фильтр для поля, задав для свойства с [фильтром](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.field.isfilterable?view=azure-dotnet) для соответствующего объекта [поля](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.field?view=azure-dotnet) значение `true`. Это также можно сделать декларативно с помощью атрибута с [фильтрацией](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.isfilterableattribute). В приведенном ниже примере атрибут задается в свойстве `BaseRate` класса Model, который сопоставляется с определением индекса.
 
 ```csharp
     [IsFilterable, IsSortable, IsFacetable]
@@ -148,13 +147,13 @@ POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-ve
 
 ### <a name="making-an-existing-field-filterable"></a>Обеспечение фильтрации существующего поля
 
-Нельзя изменить существующие поля, чтобы сделать их фильтруемыми. Вместо этого необходимо добавить новое поле или перестроить индекс. Дополнительные сведения о перестроении индекса или повторном заполнении полей см. [в разделе перестроение индекса службы поиска Azure](search-howto-reindex.md).
+Нельзя изменить существующие поля, чтобы сделать их фильтруемыми. Вместо этого необходимо добавить новое поле или перестроить индекс. Дополнительные сведения о перестроении индекса или повторном заполнении полей см. [в статье перестроение индекса Azure когнитивный Поиск](search-howto-reindex.md).
 
 ## <a name="text-filter-fundamentals"></a>Принципы работы текстовых фильтров
 
 Текстовые фильтры соответствуют строковым полям строк литералов, которые вы задаюте в фильтре. В отличие от полнотекстового поиска, для текстовых фильтров не существует лексического анализа или разбиения слов, поэтому сравнения предназначены только для точных совпадений. Например, предположим, что поле *f* содержит "Sunny Day", `$filter=f eq 'Sunny'` не соответствует, но `$filter=f eq 'sunny day'` будет. 
 
-Текстовые строки учитывают регистр. Отсутствует нижний регистр слов с прописными буквами: `$filter=f eq 'Sunny day'` не находит "Sunny Day".
+Текстовые строки учитывают регистр. Отсутствует нижний регистр слов в верхнем регистре: `$filter=f eq 'Sunny day'` не будет искать "Sunny Day".
 
 ### <a name="approaches-for-filtering-on-text"></a>Подходы к фильтрации по тексту
 
@@ -170,7 +169,7 @@ POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-ve
 
 Документы, содержащие числовые поля (цена, размер, SKU, идентификатор), предоставляют эти значения в результатах поиска, если поле отмечено `retrievable`. Суть в том, что полнотекстовый поиск не применим к числовым типам полей.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сначала попробуйте использовать **обозреватель поиска** на портале, чтобы отправить запросы с параметрами **$filter**. [Пример индекса выборки недвижимости](search-get-started-portal.md) предоставляет полезные результаты для следующих отфильтрованных запросов при их вставке в строку поиска:
 
@@ -197,9 +196,9 @@ search=John Leclerc&$count=true&$select=source,city,postCode,baths,beds&$filter=
 
 Дополнительные примеры можно найти в разделе [Примеры OData](https://docs.microsoft.com/azure/search/search-query-odata-filter#examples).
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>Дополнительные материалы
 
-+ [Как работает полнотекстовый поиск в службе поиска Azure](search-lucene-query-architecture.md)
++ [Как работает полнотекстовый поиск в Azure Когнитивный поиск](search-lucene-query-architecture.md)
 + [Search Documents (Azure Search Service REST API)](https://docs.microsoft.com/rest/api/searchservice/search-documents) (Поиск по документам (REST API службы поиска Azure))
 + [Синтаксис простых запросов](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search)
 + [Синтаксис запросов Lucene](https://docs.microsoft.com/rest/api/searchservice/lucene-query-syntax-in-azure-search)

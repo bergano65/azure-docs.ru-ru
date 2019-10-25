@@ -5,14 +5,14 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 10/15/2019
+ms.date: 10/22/2019
 ms.author: raynew
-ms.openlocfilehash: 179676ae2a7d68bc0263f897ffededcf8b7a01f4
-ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
+ms.openlocfilehash: de9fd8c7cd9470a7ccc9136d1eac91fe373fe03c
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72693388"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72787306"
 ---
 # <a name="support-matrix-for-disaster-recovery--of-vmware-vms-and-physical-servers-to-azure"></a>Таблица поддержки аварийного восстановления виртуальных машин VMware и физических серверов в Azure
 
@@ -50,7 +50,7 @@ ms.locfileid: "72693388"
 Число дисков | 3 диска<br/><br/> В состав дисков входят: диск ОС, диск кэша сервера обработки, диск хранения (для восстановления размещения).
 Свободное место на диске | 600 ГБ пространства для кэша сервера обработки.
 Свободное место на диске | 600 ГБ пространства для диска хранения.
-Операционная система  | Windows Server 2012 R2 или Windows Server 2016 с возможностями рабочего стола |
+Операционная система  | Windows Server 2012 R2 или Windows Server 2016 с возможностями рабочего стола <br/><br> Если вы планируете использовать встроенный главный целевой сервер для восстановления размещения, убедитесь, что версия ОС совпадает с версией реплицированных элементов или выше нее.|
 Язык операционной системы | Английский (en-us)
 [PowerCLI](https://my.vmware.com/web/vmware/details?productId=491&downloadGroup=PCLI600R1) | Не требуется для сервера конфигурации [9,14](https://support.microsoft.com/help/4091311/update-rollup-23-for-azure-site-recovery) или более поздней версии. 
 Роли Windows Server | Не включайте службы домен Active Directory; Службы IIS (IIS) или Hyper-V. 

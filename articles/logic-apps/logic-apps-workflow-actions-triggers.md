@@ -9,12 +9,12 @@ ms.reviewer: klam, LADocs
 ms.suite: integration
 ms.topic: reference
 ms.date: 06/19/2019
-ms.openlocfilehash: 9bee329953a1f39720b054ed90e1d56c6743862e
-ms.sourcegitcommit: d37991ce965b3ee3c4c7f685871f8bae5b56adfa
+ms.openlocfilehash: a6789f409e26d1310d9e583ac2934e0bae462b21
+ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72679880"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72799432"
 ---
 # <a name="schema-reference-guide-for-trigger-and-action-types-in-azure-logic-apps"></a>Справочник по схемам для типов триггеров и действий в Azure Logic Apps
 
@@ -273,19 +273,21 @@ ms.locfileid: "72679880"
 
 ### <a name="http-trigger"></a>Триггер HTTP
 
-Этот триггер проверяет или опрашивает указанную конечную точку, основываясь на определенном расписании повторов. Ответ конечной точки определяет, выполняется ли рабочий процесс.
+Этот триггер отправляет запрос в указанную конечную точку HTTP или HTTPS на основе указанного расписания повторения. Затем триггер проверяет ответ, чтобы определить, выполняется ли рабочий процесс.
 
 ```json
 "HTTP": {
    "type": "Http",
    "inputs": {
       "method": "<method-type>",
-      "uri": "<endpoint-URL>",
+      "uri": "<HTTP-or-HTTPS-endpoint-URL>",
       "headers": { "<header-content>" },
+      "queries": "<query-parameters>",
       "body": "<body-content>",
-      "authentication": { "<authentication-method>" },
-      "retryPolicy": { "<retry-behavior>" },
-      "queries": "<query-parameters>"
+      "authentication": { "<authentication-type-and-property-values>" },
+      "retryPolicy": {
+         "type": "<retry-behavior>"
+      }
    },
    "recurrence": {
       "frequency": "<time-unit>",
@@ -303,27 +305,27 @@ ms.locfileid: "72679880"
 
 *Обязательный*
 
-| Value | Тип | Описание | 
-|-------|------|-------------| 
-| <*method-type*> | Строка | Метод HTTP для опроса указанной конечной точки: GET, PUT, POST, PATCH или DELETE | 
-| <*endpoint-URL*> | Строка | URL-адрес HTTP или HTTPS конечной точки для опроса <p>Максимальный размер строки: 2 КБ. | 
-| <*time-unit*> | Строка | Единица времени, которая описывает, как часто срабатывает триггер: "секунда", "минута", "час", "день", "неделя" или "месяц" | 
-| <*number-of-time-units*> | Целое число | Значение, указывающее, как часто триггер срабатывает на основе частоты, т.е. количество единиц времени, которое необходимо выждать, прежде чем триггер сработает снова <p>Ниже приведены минимальный и максимальный интервалы. <p>— Месяц: 1–16 месяцев; </br>— День: 1–500 дней; </br>— Час: 1–12 000 часов; </br>— Минута: 1–72 000 минут; </br>- Second: 1–9 999 999 секунд.<p>Например, если интервал равен 6, а значение частоты — Month, то повтор будет происходить каждые 6 месяцев. | 
-|||| 
+| Свойство | Value | Тип | Описание |
+|----------|-------|------|-------------|
+| `method` | <*method-type*> | Строка | Метод, используемый для отправки исходящего запроса: "GET", "Where", "POST", "PATCH" или "DELETE" |
+| `uri` | <*HTTP-or-HTTPS-endpoint-URL*> | Строка | URL-адрес конечной точки HTTP или HTTPS, по которому нужно отправить исходящий запрос. Максимальный размер строки: 2 КБ. <p>Для службы или ресурса Azure этот синтаксис URI включает идентификатор ресурса и путь к ресурсу, к которому требуется получить доступ. |
+| `frequency` | <*time-unit*> | Строка | Единица времени, которая описывает, как часто срабатывает триггер: "секунда", "минута", "час", "день", "неделя" или "месяц" |
+| `interval` | <*number-of-time-units*> | Целое число | Значение, указывающее, как часто триггер срабатывает на основе частоты, т.е. количество единиц времени, которое необходимо выждать, прежде чем триггер сработает снова <p>Ниже приведены минимальный и максимальный интервалы. <p>— Месяц: 1–16 месяцев; </br>— День: 1–500 дней; </br>— Час: 1–12 000 часов; </br>— Минута: 1–72 000 минут; </br>- Second: 1–9 999 999 секунд.<p>Например, если интервал равен 6, а значение частоты — Month, то повтор будет происходить каждые 6 месяцев. |
+|||||
 
 *Необязательно.*
 
-| Value | Тип | Описание | 
-|-------|------|-------------| 
-| <*header-content*> | Объект JSON | Заголовки для отправки с запросом <p>Например, чтобы задать язык и тип запроса: <p>`"headers": { "Accept-Language": "en-us", "Content-Type": "application/json" }` |
-| <*body-content*> | Строка | Содержимое сообщения для отправки в качестве полезных данных с запросом | 
-| <*authentication-method*> | Объект JSON | Метод, используемый запросом для проверки подлинности. Дополнительные сведения см. в статье [Исходящая проверка подлинности планировщика](../scheduler/scheduler-outbound-authentication.md). Помимо планировщика поддерживается свойство `authority`. По умолчанию его значение равно `https://login.windows.net`, если не указано другое. Также можно использовать другое значение, например `https://login.windows\-ppe.net`. |
-| <*retry-behavior*> | Объект JSON | Настраивает режим повтора для прерывистых сбоев, которые имеют код состояния 408, 429 и 5XX, и для любых исключений при подключении. Дополнительные сведения см. в разделе [Политики повтора](../logic-apps/logic-apps-exception-handling.md#retry-policies). |  
- <*query-parameters*> | Объект JSON | Все параметры запроса для включения с помощью запроса <p>Например, объект `"queries": { "api-version": "2018-01-01" }` добавляет `?api-version=2018-01-01` к запросу. | 
-| <*max-runs*> | Целое число | По умолчанию экземпляры рабочих процессов выполняются одновременно или параллельно с [ограничением по умолчанию](../logic-apps/logic-apps-limits-and-config.md#looping-debatching-limits). Чтобы изменить это ограничение, задав новое значение <*count*>, см. раздел [Изменение параллелизма триггера](#change-trigger-concurrency). | 
-| <*max-runs-queue*> | Целое число | Если рабочий процесс уже выполняет максимальное число экземпляров, которое можно изменить в зависимости от свойства `runtimeConfiguration.concurrency.runs`, все новые запуски помещаются в эту очередь вплоть до [ограничения по умолчанию](../logic-apps/logic-apps-limits-and-config.md#looping-debatching-limits). Чтобы изменить предел по умолчанию, см. раздел [Изменение предела ожидающих запусков](#change-waiting-runs). | 
-| <*operation-option*> | Строка | Поведение по умолчанию можно изменить, задав свойство `operationOptions`. Дополнительные сведения см. в разделе [Варианты операций](#operation-options). | 
-|||| 
+| Свойство | Value | Тип | Описание |
+|----------|-------|------|-------------|
+| `headers` | <*header-content*> | Объект JSON | Все заголовки, которые необходимо включить в запрос <p>Пример задания языка и типа. <p>`"headers": { "Accept-Language": "en-us", "Content-Type": "application/json" }` |
+| `queries` | <*query-parameters*> | Объект JSON | Любые параметры запроса, которые необходимо использовать в запросе <p>Например, объект `"queries": { "api-version": "2018-01-01" }` добавляет `?api-version=2018-01-01` к запросу. |
+| `body` | <*body-content*> | Объект JSON | Содержимое сообщения для отправки в качестве полезных данных с запросом |
+| `authentication` | <*проверки подлинности — значения типа и свойства*> | Объект JSON | Модель проверки подлинности, которую запрос использует для проверки подлинности исходящих запросов. Дополнительные сведения см. [в разделе Добавление проверки подлинности для исходящих вызовов](../logic-apps/logic-apps-securing-a-logic-app.md#add-authentication-outbound). Помимо планировщика поддерживается свойство `authority`. Если параметр не указан, по умолчанию используется значение `https://management.azure.com/`, но можно использовать другое значение. |
+| `retryPolicy` > `type` | <*retry-behavior*> | Объект JSON | Настраивает режим повтора для прерывистых сбоев, которые имеют код состояния 408, 429 и 5XX, и для любых исключений при подключении. Дополнительные сведения см. в разделе [Политики повтора](../logic-apps/logic-apps-exception-handling.md#retry-policies). |
+| `runs` | <*max-runs*> | Целое число | По умолчанию экземпляры рабочих процессов выполняются одновременно или параллельно с [ограничением по умолчанию](../logic-apps/logic-apps-limits-and-config.md#looping-debatching-limits). Чтобы изменить это ограничение, задав новое значение <*count*>, см. раздел [Изменение параллелизма триггера](#change-trigger-concurrency). |
+| `maximumWaitingRuns` | <*max-runs-queue*> | Целое число | Если рабочий процесс уже выполняет максимальное число экземпляров, которое можно изменить в зависимости от свойства `runtimeConfiguration.concurrency.runs`, все новые запуски помещаются в эту очередь вплоть до [ограничения по умолчанию](../logic-apps/logic-apps-limits-and-config.md#looping-debatching-limits). Чтобы изменить предел по умолчанию, см. раздел [Изменение предела ожидающих запусков](#change-waiting-runs). |
+| `operationOptions` | <*operation-option*> | Строка | Поведение по умолчанию можно изменить, задав свойство `operationOptions`. Дополнительные сведения см. в разделе [Варианты операций](#operation-options). |
+|||||
 
 *Outputs*
 
@@ -374,7 +376,7 @@ ms.locfileid: "72679880"
          "uri": "<endpoint-subscribe-URL>",
          "headers": { "<header-content>" },
          "body": "<body-content>",
-         "authentication": { "<authentication-method>" },
+         "authentication": { "<authentication-type>" },
          "retryPolicy": { "<retry-behavior>" }
          },
       },
@@ -383,7 +385,7 @@ ms.locfileid: "72679880"
          "url": "<endpoint-unsubscribe-URL>",
          "headers": { "<header-content>" },
          "body": "<body-content>",
-         "authentication": { "<authentication-method>" }
+         "authentication": { "<authentication-type>" }
       }
    },
    "runTimeConfiguration": {
@@ -413,7 +415,7 @@ ms.locfileid: "72679880"
 | <*method-type*> | Строка | Метод HTTP, используемый для запроса отмены: GET, PUT, POST, PATCH или DELETE | 
 | <*endpoint-unsubscribe-URL*> | Строка | URL-адрес конечной точки для отправки запроса на отмену | 
 | <*body-content*> | Строка | Любое содержимое сообщения для отправки в запросе на подписку или отмену | 
-| <*authentication-method*> | Объект JSON | Метод, используемый запросом для проверки подлинности. Дополнительные сведения см. в статье [Исходящая проверка подлинности планировщика](../scheduler/scheduler-outbound-authentication.md). |
+| <*проверки подлинности*> | Объект JSON | Модель проверки подлинности, которую запрос использует для проверки подлинности исходящих запросов. Дополнительные сведения см. [в разделе Добавление проверки подлинности для исходящих вызовов](../logic-apps/logic-apps-securing-a-logic-app.md#add-authentication-outbound). |
 | <*retry-behavior*> | Объект JSON | Настраивает режим повтора для прерывистых сбоев, которые имеют код состояния 408, 429 и 5XX, и для любых исключений при подключении. Дополнительные сведения см. в разделе [Политики повтора](../logic-apps/logic-apps-exception-handling.md#retry-policies). | 
 | <*max-runs*> | Целое число | По умолчанию экземпляры рабочих процессов выполняются одновременно или параллельно с [ограничением по умолчанию](../logic-apps/logic-apps-limits-and-config.md#looping-debatching-limits). Чтобы изменить это ограничение, задав новое значение <*count*>, см. раздел [Изменение параллелизма триггера](#change-trigger-concurrency). | 
 | <*max-runs-queue*> | Целое число | Если рабочий процесс уже выполняет максимальное число экземпляров, которое можно изменить в зависимости от свойства `runtimeConfiguration.concurrency.runs`, все новые запуски помещаются в эту очередь вплоть до [ограничения по умолчанию](../logic-apps/logic-apps-limits-and-config.md#looping-debatching-limits). Чтобы изменить предел по умолчанию, см. раздел [Изменение предела ожидающих запусков](#change-waiting-runs). | 
@@ -950,7 +952,7 @@ Azure Logic Apps предоставляет различные типы дейс
          "uri": "<api-subscribe-URL>",
          "headers": { "<header-content>" },
          "body": "<body-content>",
-         "authentication": { "<authentication-method>" },
+         "authentication": { "<authentication-type>" },
          "retryPolicy": "<retry-behavior>",
          "queries": { "<query-parameters>" },
          "<other-action-specific-input-properties>"
@@ -960,7 +962,7 @@ Azure Logic Apps предоставляет различные типы дейс
          "uri": "<api-unsubscribe-URL>",
          "headers": { "<header-content>" },
          "body": "<body-content>",
-         "authentication": { "<authentication-method>" },
+         "authentication": { "<authentication-type>" },
          "<other-action-specific-properties>"
       },
    },
@@ -986,7 +988,7 @@ Azure Logic Apps предоставляет различные типы дейс
 | <*api-unsubscribe-URL*> | Строка | Универсальный код ресурса (URI), используемый для отмены подписки на API | 
 | <*header-content*> | Объект JSON | Все заголовки для отправки в запрос <p>Например, чтобы задать язык и тип запроса: <p>`"headers": { "Accept-Language": "en-us", "Content-Type": "application/json" }` |
 | <*body-content*> | Объект JSON | Любое содержимое сообщения для отправки в запросе | 
-| <*authentication-method*> | Объект JSON | Метод, используемый запросом для проверки подлинности. Дополнительные сведения см. в статье [Исходящая проверка подлинности планировщика](../scheduler/scheduler-outbound-authentication.md). |
+| <*проверки подлинности*> | Объект JSON | Модель проверки подлинности, которую запрос использует для проверки подлинности исходящих запросов. Дополнительные сведения см. [в разделе Добавление проверки подлинности для исходящих вызовов](../logic-apps/logic-apps-securing-a-logic-app.md#add-authentication-outbound). |
 | <*retry-behavior*> | Объект JSON | Настраивает режим повтора для прерывистых сбоев, которые имеют код состояния 408, 429 и 5XX, и для любых исключений при подключении. Дополнительные сведения см. в разделе [Политики повтора](../logic-apps/logic-apps-exception-handling.md#retry-policies). | 
 | <*query-parameters*> | Объект JSON | Все параметры запроса для включения в вызов API <p>Например, объект `"queries": { "api-version": "2018-01-01" }` добавляет `?api-version=2018-01-01` к вызову. | 
 | <*other-action-specific-input-properties*> | Объект JSON | Все входные свойства, которые применяются к указанному действию | 
@@ -1105,9 +1107,9 @@ Azure Logic Apps предоставляет различные типы дейс
 
 *Пример 2*
 
-Это действие запускает код в приложении логики, которое активируется при поступлении нового электронного письма в учетную запись Office 365 Outlook. Приложение логики также использует действие отправить утверждение по электронной почте, которое пересылает содержимое из полученного электронного письма вместе с запросом на утверждение. 
+Это действие запускает код в приложении логики, которое активируется при поступлении нового электронного письма в учетную запись Office 365 Outlook. Приложение логики также использует действие отправить утверждение по электронной почте, которое пересылает содержимое из полученного электронного письма вместе с запросом на утверждение.
 
-Код извлекает адреса электронной почты из свойства `Body` триггера и возвращает эти адреса электронной почты вместе со значением свойства `SelectedOption` из действия утверждения. Действие явным образом включает действие отправить утверждение по электронной почте в качестве зависимости в атрибут `explicitDependencies`  >  `actions`.
+Код извлекает адреса электронной почты из свойства `Body` триггера и возвращает адреса вместе со значением свойства `SelectedOption` из действия утверждения. Действие явным образом включает действие отправить утверждение по электронной почте в качестве зависимости в атрибут `explicitDependencies`  >  `actions`.
 
 ```json
 "Execute_JavaScript_Code": {
@@ -1206,14 +1208,21 @@ Azure Logic Apps предоставляет различные типы дейс
 
 ### <a name="http-action"></a>Действие HTTP
 
-Это действие отсылает запрос на указанную конечную точку и проверяет ответ, чтобы определить, следует ли запускать рабочий процесс. 
+Это действие отправляет запрос в указанную конечную точку HTTP или HTTPS и проверяет ответ, чтобы определить, выполняется ли рабочий процесс.
 
 ```json
 "HTTP": {
    "type": "Http",
    "inputs": {
       "method": "<method-type>",
-      "uri": "<HTTP-or-HTTPS-endpoint-URL>"
+      "uri": "<HTTP-or-HTTPS-endpoint-URL>",
+      "headers": { "<header-content>" },
+      "queries": { "<query-parameters>" },
+      "body": "<body-content>",
+      "authentication": { "<authentication-type-and-property-values>" },
+      "retryPolicy": {
+         "type": "<retry-behavior>"
+      },
    },
    "runAfter": {}
 }
@@ -1221,23 +1230,24 @@ Azure Logic Apps предоставляет различные типы дейс
 
 *Обязательный*
 
-| Value | Тип | Описание | 
-|-------|------|-------------| 
-| <*method-type*> | Строка | Метод для отправки запроса: GET, PUT, POST, PATCH или DELETE | 
-| <*HTTP-or-HTTPS-endpoint-URL*> | Строка | Конечная точка HTTP или HTTPS для вызова. Максимальный размер строки: 2 КБ. | 
-|||| 
+| Свойство | Value | Тип | Описание |
+|----------|-------|------|-------------|
+| `method` | <*method-type*> | Строка | Метод, используемый для отправки исходящего запроса: "GET", "Where", "POST", "PATCH" или "DELETE" |
+| `uri` | <*HTTP-or-HTTPS-endpoint-URL*> | Строка | URL-адрес конечной точки HTTP или HTTPS, по которому нужно отправить исходящий запрос. Максимальный размер строки: 2 КБ. <p>Для службы или ресурса Azure этот синтаксис URI включает идентификатор ресурса и путь к ресурсу, к которому требуется получить доступ. |
+|||||
 
 *Необязательно.*
 
-| Value | Тип | Описание | 
-|-------|------|-------------| 
-| <*header-content*> | Объект JSON | Все заголовки для отправки с запросом <p>Пример задания языка и типа. <p>`"headers": { "Accept-Language": "en-us", "Content-Type": "application/json" }` |
-| <*body-content*> | Объект JSON | Любое содержимое сообщения для отправки в запросе | 
-| <*retry-behavior*> | Объект JSON | Настраивает режим повтора для прерывистых сбоев, которые имеют код состояния 408, 429 и 5XX, и для любых исключений при подключении. Дополнительные сведения см. в разделе [Политики повтора](../logic-apps/logic-apps-exception-handling.md#retry-policies). | 
-| <*query-parameters*> | Объект JSON | Все параметры запроса для включения с помощью запроса <p>Например, объект `"queries": { "api-version": "2018-01-01" }` добавляет `?api-version=2018-01-01` к вызову. | 
-| <*other-action-specific-input-properties*> | Объект JSON | Все входные свойства, которые применяются к указанному действию | 
-| <*other-action-specific-properties*> | Объект JSON | Все другие свойства, которые применяются к указанному действию | 
-|||| 
+| Свойство | Value | Тип | Описание |
+|----------|-------|------|-------------|
+| `headers` | <*header-content*> | Объект JSON | Все заголовки, которые необходимо включить в запрос <p>Пример задания языка и типа. <p>`"headers": { "Accept-Language": "en-us", "Content-Type": "application/json" }` |
+| `queries` | <*query-parameters*> | Объект JSON | Любые параметры запроса, которые необходимо использовать в запросе <p>Например, объект `"queries": { "api-version": "2018-01-01" }` добавляет `?api-version=2018-01-01` к вызову. |
+| `body` | <*body-content*> | Объект JSON | Содержимое сообщения для отправки в качестве полезных данных с запросом |
+| `authentication` | <*проверки подлинности — значения типа и свойства*> | Объект JSON | Модель проверки подлинности, которую запрос использует для проверки подлинности исходящих запросов. Дополнительные сведения см. [в разделе Добавление проверки подлинности для исходящих вызовов](../logic-apps/logic-apps-securing-a-logic-app.md#add-authentication-outbound). Помимо планировщика поддерживается свойство `authority`. Если параметр не указан, по умолчанию используется значение `https://management.azure.com/`, но можно использовать другое значение. |
+| `retryPolicy` > `type` | <*retry-behavior*> | Объект JSON | Настраивает режим повтора для прерывистых сбоев, которые имеют код состояния 408, 429 и 5XX, и для любых исключений при подключении. Дополнительные сведения см. в разделе [Политики повтора](../logic-apps/logic-apps-exception-handling.md#retry-policies). |
+| <*other-action-specific-input-properties*> | <*входных свойств*> | Объект JSON | Все входные свойства, которые применяются к указанному действию |
+| <*other-action-specific-properties*> | <*свойство> значение* | Объект JSON | Все другие свойства, которые применяются к указанному действию |
+|||||
 
 *Пример*
 
@@ -2665,134 +2675,11 @@ ID,Product_Name
 }
 ```
 
-<a name="connector-authentication"></a>
+<a name="authenticate-triggers-actions"></a>
 
-## <a name="authenticate-http-triggers-and-actions"></a>Аутентификация триггеров и действий HTTP
+## <a name="authenticate-triggers-and-actions"></a>Проверка подлинности триггеров и действий
 
-Конечные точки HTTP поддерживают разные типы проверки подлинности. Вы можете настроить проверку подлинности для следующих триггеров и действий HTTP:
-
-* [HTTP](../connectors/connectors-native-http.md)
-* [HTTP + Swagger](../connectors/connectors-native-http-swagger.md)
-* [webhook HTTP](../connectors/connectors-native-webhook.md).
-
-Ниже приведены типы проверки подлинности, которые можно настроить.
-
-* [Обычная аутентификация](#basic-authentication)
-* [Аутентификация на основе сертификата клиента](#client-certificate-authentication)
-* [Аутентификация Azure Active Directory (Azure AD) OAuth](#azure-active-directory-oauth-authentication)
-
-> [!IMPORTANT]
-> Защитите всю конфиденциальную информацию, которую обрабатывает определение рабочего процесса приложения логики. Используйте защищенные параметры и кодируйте данные при необходимости. Дополнительные сведения об использовании и защите параметров см. в статье о [защите приложения логики](../logic-apps/logic-apps-securing-a-logic-app.md#secure-action-parameters).
-
-<a name="basic-authentication"></a>
-
-### <a name="basic-authentication"></a>Обычная аутентификация
-
-Для [обычной аутентификации](../active-directory-b2c/active-directory-b2c-custom-rest-api-netfw-secure-basic.md) с помощью Azure Active Directory определение триггера или действия может включать объект JSON `authentication`, в котором есть свойства, указанные в следующей таблице. Чтобы получить доступ к значениям параметра во время выполнения, можно использовать выражение `@parameters('parameterName')`, предоставляемое [языком определения рабочего процесса](https://aka.ms/logicappsdocs). 
-
-| Свойство | Обязательно для заполнения | Value | Описание | 
-|----------|----------|-------|-------------| 
-| **type** | ДА | "Basic" | Здесь используется тип проверки подлинности Basic. | 
-| **username** | ДА | "@parameters('userNameParam')" | Имя пользователя для аутентификации доступа к целевой конечной точке службы |
-| **password** | ДА | "@parameters('passwordParam')" | Пароль для аутентификации доступа к целевой конечной точке службы |
-||||| 
-
-В этом примере определения действия HTTP в разделе `authentication` указана аутентификация `Basic`. Дополнительные сведения об использовании и защите параметров см. в статье о [защите приложения логики](../logic-apps/logic-apps-securing-a-logic-app.md#secure-action-parameters).
-
-```json
-"HTTP": {
-   "type": "Http",
-   "inputs": {
-      "method": "GET",
-      "uri": "https://www.microsoft.com",
-      "authentication": {
-         "type": "Basic",
-         "username": "@parameters('userNameParam')",
-         "password": "@parameters('passwordParam')"
-      }
-  },
-  "runAfter": {}
-}
-```
-
-> [!IMPORTANT]
-> Защитите всю конфиденциальную информацию, которую обрабатывает определение рабочего процесса приложения логики. Используйте защищенные параметры и кодируйте данные при необходимости. Дополнительные сведения о защите параметров см. в статье о [защите приложения логики](../logic-apps/logic-apps-securing-a-logic-app.md#secure-action-parameters).
-
-<a name="client-certificate-authentication"></a>
-
-### <a name="client-certificate-authentication"></a>Проверка подлинности на основе сертификата клиента
-
-Для [аутентификации на основе сертификата](../active-directory/authentication/active-directory-certificate-based-authentication-get-started.md) с помощью Azure Active Directory определение триггера или действия может включать объект JSON `authentication`, в котором есть свойства, указанные в следующей таблице. Чтобы получить доступ к значениям параметра во время выполнения, можно использовать выражение `@parameters('parameterName')`, предоставляемое [языком определения рабочего процесса](https://aka.ms/logicappsdocs). Дополнительные сведения об ограничениях на количество сертификатов клиента, которые вы можете использовать, см. в статье [Ограничения и сведения о конфигурации для Azure Logic Apps](../logic-apps/logic-apps-limits-and-config.md).
-
-| Свойство | Обязательно для заполнения | Value | Описание |
-|----------|----------|-------|-------------|
-| **type** | ДА | "ClientCertificate" | Тип аутентификации, используемый для сертификатов клиента Secure Sockets Layer (SSL). Хотя самозаверяющие сертификаты поддерживаются, они не допускаются для SSL. |
-| **pfx** | ДА | "@parameters('pfxParam') | Содержимое файла обмена личной информацией (PFX-файла) с кодировкой base64. |
-| **password** | ДА | "@parameters('passwordParam')" | Пароль для доступа к PFX-файлу |
-||||| 
-
-В этом примере определения действия HTTP в разделе `authentication` указана аутентификация `ClientCertificate`. Дополнительные сведения об использовании и защите параметров см. в статье о [защите приложения логики](../logic-apps/logic-apps-securing-a-logic-app.md#secure-action-parameters).
-
-```json
-"HTTP": {
-   "type": "Http",
-   "inputs": {
-      "method": "GET",
-      "uri": "https://www.microsoft.com",
-      "authentication": {
-         "type": "ClientCertificate",
-         "pfx": "@parameters('pfxParam')",
-         "password": "@parameters('passwordParam')"
-      }
-   },
-   "runAfter": {}
-}
-```
-
-> [!IMPORTANT]
-> Защитите всю конфиденциальную информацию, которую обрабатывает определение рабочего процесса приложения логики. Используйте защищенные параметры и кодируйте данные при необходимости. Дополнительные сведения о защите параметров см. в статье о [защите приложения логики](../logic-apps/logic-apps-securing-a-logic-app.md#secure-action-parameters).
-
-<a name="azure-active-directory-oauth-authentication"></a>
-
-### <a name="azure-active-directory-ad-oauth-authentication"></a>Проверка подлинности Azure Active Directory (AD) OAuth
-
-Для [аутентификации Azure AD OAuth](../active-directory/develop/authentication-scenarios.md) определение триггера или действия может включать объект JSON `authentication`, в котором есть свойства, указанные в следующей таблице. Чтобы получить доступ к значениям параметра во время выполнения, можно использовать выражение `@parameters('parameterName')`, предоставляемое [языком определения рабочего процесса](https://aka.ms/logicappsdocs).
-
-| Свойство | Обязательно для заполнения | Value | Описание |
-|----------|----------|-------|-------------|
-| **type** | ДА | `ActiveDirectoryOAuth` | Используемый тип проверки подлинности (ActiveDirectoryOAuth) для Azure Active Directory OAuth. |
-| **authority** | Нет | <*URL-адрес для поставщика токена*> | URL-адрес центра, предоставляющего токен проверки подлинности. |
-| **tenant** | ДА | <*ИД клиента*> | Идентификатор клиента Azure Active Directory. |
-| **audience** | ДА | <*ресурс для авторизации*> | Ресурс, который нужно использовать для авторизации, например `https://management.core.windows.net/`. |
-| **clientId** | ДА | <*ИД клиента*> | Идентификатор клиента для приложения, запрашивающего авторизацию. |
-| **credentialType** | ДА | Certificate или Secret | Тип учетных данных, который клиент использует для запроса авторизации. Это свойство и значение не отображаются в вашем базовом определении, но определяют требуемые параметры для типа учетных данных. |
-| **pfx** | Да, только для учетных данных типа Certificate. | "@parameters('pfxParam') | Содержимое файла обмена личной информацией (PFX-файла) с кодировкой base64. |
-| **password** | Да, только для учетных данных типа Certificate. | "@parameters('passwordParam')" | Пароль для доступа к PFX-файлу |
-| **secret** | Да, только для учетных данных типа Secret. | "@parameters('secretParam')" | Секрет клиента для запроса на авторизацию |
-|||||
-
-В этом примере определения действия HTTP в разделе `authentication` указана аутентификация `ActiveDirectoryOAuth` и тип учетных данных Secret. Дополнительные сведения об использовании и защите параметров см. в статье о [защите приложения логики](../logic-apps/logic-apps-securing-a-logic-app.md#secure-action-parameters).
-
-```json
-"HTTP": {
-   "type": "Http",
-   "inputs": {
-      "method": "GET",
-      "uri": "https://www.microsoft.com",
-      "authentication": {
-         "type": "ActiveDirectoryOAuth",
-         "tenant": "72f988bf-86f1-41af-91ab-2d7cd011db47",
-         "audience": "https://management.core.windows.net/",
-         "clientId": "34750e0b-72d1-4e4f-bbbe-664f6d04d411",
-         "secret": "@parameters('secretParam')"
-     }
-   },
-   "runAfter": {}
-}
-```
-
-> [!IMPORTANT]
-> Защитите всю конфиденциальную информацию, которую обрабатывает определение рабочего процесса приложения логики. Используйте защищенные параметры и кодируйте данные при необходимости. Дополнительные сведения о защите параметров см. в статье о [защите приложения логики](../logic-apps/logic-apps-securing-a-logic-app.md#secure-action-parameters).
+Конечные точки HTTP и HTTPS поддерживают различные виды проверки подлинности. В зависимости от триггера или действия, которые используются для выполнения исходящих вызовов или запросов на доступ к этим конечным точкам, можно выбрать из разных диапазонов типов проверки подлинности. Дополнительные сведения см. [в разделе Добавление проверки подлинности для исходящих вызовов](../logic-apps/logic-apps-securing-a-logic-app.md#add-authentication-outbound).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

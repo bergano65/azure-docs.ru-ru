@@ -1,5 +1,6 @@
 ---
-title: Учетные данные сертификата в Azure AD | Документация Майкрософт
+title: Учетные данные сертификата в Azure AD
+titleSuffix: Microsoft identity platform
 description: В этой статье рассматривается регистрация и использование учетных данных сертификата для аутентификации приложения.
 services: active-directory
 documentationcenter: .net
@@ -18,12 +19,12 @@ ms.author: ryanwi
 ms.reviewer: nacanuma, jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0aa63a8f06b71455b7f00d2ce5842f0da851789b
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: 1184d210f5b7ea25b9f73cbd70b5f960402126a1
+ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68835473"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72803535"
 ---
 # <a name="certificate-credentials-for-application-authentication"></a>Учетные данные сертификата для аутентификации приложения
 
@@ -34,7 +35,7 @@ Azure Active Directory (Azure AD) позволяет приложению исп
 ## <a name="assertion-format"></a>Формат утверждения
 Чтобы вычислить утверждение, можно использовать одну из множества библиотек [JSON Web Token](https://jwt.ms/) на удобном для вас языке. Маркер содержит следующие сведения:
 
-### <a name="header"></a>Header
+### <a name="header"></a>Заголовок
 
 | Параметр |  Комментарий |
 | --- | --- |
@@ -46,12 +47,12 @@ Azure Active Directory (Azure AD) позволяет приложению исп
 
 | Параметр |  Примечания |
 | --- | --- |
-| `aud` | Audience: Должно быть **https://login.microsoftonline.com/*tenant_Id*/oauth2/token** |
+| `aud` | Аудитория: должно быть значение **https://login.microsoftonline.com/*tenant_Id*/oauth2/token** |
 | `exp` | Срок действия: дата, когда истекает срок действия маркера. Время представлено как количество секунд с 1 января 1970 года (1970-01-01T0:0:0Z) в формате UTC до истечения срока действия маркера.|
 | `iss` | Издатель: параметр должен иметь значение client_id (идентификатор приложения службы клиента) |
 | `jti` | GUID: идентификатор JWT |
 | `nbf` | Не ранее: дата, до которой маркер не может использоваться. Время представлено как количество секунд с 1 января 1970 года (1970-01-01T0:0:0Z) в формате UTC до времени выдачи маркера. |
-| `sub` | Субъект: параметр должен иметь значение client_id (идентификатор приложения службы клиента, как и `iss`) |
+| `sub` | Субъект: параметр должен иметь значение client_id (идентификатор приложения службы клиента), как и `iss` |
 
 ### <a name="signature"></a>Подпись
 
@@ -100,7 +101,7 @@ Gh95kHCOEGq5E_ArMBbDXhwKR577scxYaoJ1P{a lot of characters here}KKJDEg"
 При регистрации приложения Azure для клиентского приложения сделайте следующее.
 1. Выберите **Сертификаты и секреты**. 
 2. Щелкните **отправить сертификат** и выберите файл сертификата для отправки.
-3. Нажмите кнопку **Добавить**.
+3. Щелкните **Добавить**.
   После отправки сертификата отображаются отпечаток, Дата начала и срок действия. 
 
 ### <a name="updating-the-application-manifest"></a>Обновление манифеста приложения

@@ -10,12 +10,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 03/25/2019
 ms.author: cshoe
-ms.openlocfilehash: 9155df315a5afb9a0fa7722c955333a47a73085a
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.openlocfilehash: 250d470e2450820f57720e0e1a6d274291cf162c
+ms.sourcegitcommit: ec2b75b1fc667c4e893686dbd8e119e7c757333a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72596853"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72809631"
 ---
 # <a name="strategies-for-testing-your-code-in-azure-functions"></a>Методика тестирования кода с помощью Функций Azure
 
@@ -309,7 +309,8 @@ module.exports = {
     IsPastDue: false
 };
 ```
-Этот модуль реализует свойство `IsPastDue`, чтобы установить его как ложный экземпляр таймера.
+
+Этот модуль реализует свойство `IsPastDue`, чтобы установить его как ложный экземпляр таймера. Такие конфигурации таймера, как выражения НКРОНТАБ, не требуются здесь, так как тестовая программа просто вызывает функцию напрямую для проверки результата.
 
 Затем используйте расширение Функций VS Code, чтобы [создать новую Функцию JavaScript HTTP](/azure/javascript/tutorial-vscode-serverless-node-01), и присвойте ей имя *HttpTrigger*. Создав функцию, добавьте новый файл в той же папке с именем **index.test.js** и приведенный ниже код.
 

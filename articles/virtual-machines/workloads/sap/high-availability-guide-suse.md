@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 04/30/2019
 ms.author: sedusch
-ms.openlocfilehash: 71c1d1eb91654ea169330715be6bcf2b94207a27
-ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
+ms.openlocfilehash: 569ac844a971970c22f5cc0a511545020fe802c5
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71099046"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72791683"
 ---
 # <a name="high-availability-for-sap-netweaver-on-azure-vms-on-suse-linux-enterprise-server-for-sap-applications"></a>Руководство по обеспечению высокого уровня доступности виртуальных машин Azure для SAP NetWeaver на SUSE Linux Enterprise Server для приложений SAP
 
@@ -53,7 +53,7 @@ ms.locfileid: "71099046"
 [nfs-ha]:high-availability-guide-suse-nfs.md
 
 В этой статье описывается развертывание виртуальных машин, их настройка, установка платформы кластера, а также установка высокодоступной системы SAP NetWeaver 7.50.
-В примерах конфигурации, командах установки и т. д. Используется экземпляр ASCS номер 00, экземпляр ERS номер 02 и идентификатор системы SAP NW1. Имена ресурсов (например, виртуальных машин, виртуальных сетей) в примере предполагают, что для создания ресурсов использовался сопоставленный [шаблон][template-converged] с СИСТЕМным идентификатором SAP NW1.
+В примерах конфигураций, команд установки и т. д. Используется экземпляр ASCS номер 00, номер экземпляра ERS 02 и идентификатор системы SAP NW1. Имена ресурсов (например, виртуальных машин, виртуальных сетей) в примере предполагают, что для создания ресурсов использовался сопоставленный [шаблон][template-converged] с СИСТЕМным идентификатором SAP NW1.
 
 Сначала прочитайте следующие примечания и документы SAP:
 
@@ -78,7 +78,7 @@ ms.locfileid: "71099046"
 * [Лучшие рекомендации по использованию SUSE SAP][suse-ha-guide] В руководствах содержатся все необходимые сведения для настройки системной репликации NetWeaver HA и SAP HANA в локальной среде. Придерживайтесь этих общих рекомендаций. Они содержат намного более подробные сведения.
 * [Заметки о выпуске расширения высокой доступности SUSE 12 SP3][suse-ha-12sp3-relnotes]
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Краткое описание
 
 Чтобы добиться высокого уровня доступности, SAP NetWeaver необходим NFS-сервер. NFS-сервер настраивается в отдельном кластере и может использоваться несколькими системами SAP.
 
@@ -95,9 +95,9 @@ NFS-сервер, SAP NetWeaver ASCS, SAP NetWeaver SCS, SAP NetWeaver ERS и б
   * IP-адрес 10.0.0.7
 * Конфигурация серверной части:
   * подключена к основным сетевым интерфейсам всех виртуальных машин, которые должны быть частью кластера (A)SCS/ERS.
-* Порт пробы
+* Порт пробы:
   * порт 620<strong>&lt;nr&gt;</strong>.
-* Загрузить 
+* Загрузка 
 * правила балансировки
   * 32<strong>&lt;nr&gt;</strong> TCP;
   * 36<strong>&lt;nr&gt;</strong> TCP;
@@ -113,7 +113,7 @@ NFS-сервер, SAP NetWeaver ASCS, SAP NetWeaver SCS, SAP NetWeaver ERS и б
   * IP-адрес 10.0.0.8
 * Конфигурация серверной части:
   * подключена к основным сетевым интерфейсам всех виртуальных машин, которые должны быть частью кластера (A)SCS/ERS.
-* Порт пробы
+* Порт пробы:
   * Порт 621<strong>&lt;nr&gt;</strong>.
 * Правила балансировки нагрузки
   * 32<strong>&lt;nr&gt;</strong> TCP;
@@ -134,7 +134,7 @@ SAP NetWeaver требует общее хранилище для каталог
 
 В Azure Marketplace доступен образ для SUSE Linux Enterprise Server для приложения SAP 12, который можно использовать для развертывания новых виртуальных машин. Образ Marketplace содержит агент ресурса для SAP NetWeaver.
 
-Все необходимые ресурсы можно развернуть с помощью шаблонов быстрого запуска с сайта GitHub. Шаблон развертывает виртуальные машины, подсистему балансировки нагрузки, группу доступности и т. д. Выполните следующее, чтобы развернуть шаблон.
+Все необходимые ресурсы можно развернуть с помощью шаблонов быстрого запуска с сайта GitHub. Шаблон развертывает виртуальные машины, подсистему балансировки нагрузки, группу доступности и т. д. Чтобы развернуть шаблон, выполните следующие действия.
 
 1. Откройте [шаблон с несколькими идентификаторами безопасности ASCS/SCS][template-multisid-xscs] или объединенный [шаблон][template-converged] на портал Azure. 
    Шаблон ASCS/SCS создает только правила балансировки нагрузки для экземпляров SAP NetWeaver ASCS/SCS и ERS (только для Linux), тогда как Объединенный шаблон также создает правила балансировки нагрузки для базы данных (например Microsoft SQL Server или SAP HANA). Если вы планируете установить систему на основе SAP NetWeaver, а также хотите установить базу данных на тех же компьютерах, используйте Объединенный [шаблон][template-converged].
@@ -163,7 +163,7 @@ SAP NetWeaver требует общее хранилище для каталог
 Сначала необходимо создать виртуальные машины для этого кластера NFS. После этого следует создать подсистему балансировки нагрузки и использовать виртуальные машины во внутренних пулах.
 
 1. Создание группы ресурсов
-1. Создать виртуальную сеть
+1. Создайте виртуальную сеть
 1. Создание группы доступности.  
    Настройка максимального числа доменов обновления.
 1. Создание виртуальной машины 1.  
@@ -362,6 +362,10 @@ SAP NetWeaver требует общее хранилище для каталог
 
 1. **[1]** Создайте виртуальный IP-адрес и проверку работоспособности для экземпляра ASCS.
 
+   > [!IMPORTANT]
+   > Последние случаи тестирования, в которых неткат перестает отвечать на запросы из-за невыполненной работы и ограничения на обработку только одного соединения. Ресурс неткат прекращает прослушивание запросов балансировщика нагрузки Azure, и плавающий IP-адрес становится недоступным.  
+   > Для существующих кластеров Pacemaker рекомендуется заменить неткат на Сокат, следуя инструкциям в разделе [усиление подсистемы балансировки нагрузки Azure](https://www.suse.com/support/kb/doc/?id=7024128). Обратите внимание, что изменение потребует краткого времени простоя.  
+
    <pre><code>sudo crm node standby <b>nw1-cl-1</b>
    
    sudo crm configure primitive fs_<b>NW1</b>_ASCS Filesystem device='<b>nw1-nfs</b>:/<b>NW1</b>/ASCS' directory='/usr/sap/<b>NW1</b>/ASCS<b>00</b>' fstype='nfs4' \
@@ -374,7 +378,7 @@ SAP NetWeaver требует общее хранилище для каталог
      op monitor interval=10 timeout=20
    
    sudo crm configure primitive nc_<b>NW1</b>_ASCS anything \
-     params binfile="/usr/bin/nc" cmdline_options="-l -k 620<b>00</b>" \
+     params binfile="/usr/bin/socat" cmdline_options="-U TCP-LISTEN:620<b>00</b>,backlog=10,fork,reuseaddr /dev/null" \
      op monitor timeout=20s interval=10 depth=0
    
    sudo crm configure group g-<b>NW1</b>_ASCS fs_<b>NW1</b>_ASCS nc_<b>NW1</b>_ASCS vip_<b>NW1</b>_ASCS \
@@ -427,10 +431,10 @@ SAP NetWeaver требует общее хранилище для каталог
      op monitor interval=10 timeout=20
    
    sudo crm configure primitive nc_<b>NW1</b>_ERS anything \
-    params binfile="/usr/bin/nc" cmdline_options="-l -k 621<b>02</b>" \
+    params binfile="/usr/bin/socat" cmdline_options="-U TCP-LISTEN:621<b>02</b>,backlog=10,fork,reuseaddr /dev/null" \
     op monitor timeout=20s interval=10 depth=0
    
-   # WARNING: Resources nc_NW1_ASCS,nc_NW1_ERS violate uniqueness for parameter "binfile": "/usr/bin/nc"
+   # WARNING: Resources nc_NW1_ASCS,nc_NW1_ERS violate uniqueness for parameter "binfile": "/usr/bin/socat"
    # Do you still want to commit (y/n)? y
    
    sudo crm configure group g-<b>NW1</b>_ERS fs_<b>NW1</b>_ERS nc_<b>NW1</b>_ERS vip_<b>NW1</b>_ERS
@@ -767,7 +771,7 @@ SAP NetWeaver требует общее хранилище для каталог
 
 1. Проверка HAGetFailoverConfig, HACheckConfig и HACheckFailoverConfig
 
-   Выполните следующие команды \<SID_SAP>adm на узле, где в настоящий момент выполняется экземпляр ASCS. Если выполнение команд завершается сбоем "Сбой: Недостаточно памяти", возможно, это связано с тире в имени вашего узла. Это известная проблема, и SUSE устранит ее в пакете sap-suse-cluster-connector.
+   Выполните следующие команды \<SID_SAP>adm на узле, где в настоящий момент выполняется экземпляр ASCS. Если команды завершаются с ошибкой "Недостаточно памяти", возможно, это связано со знаками тире в имени вашего узла. Это известная проблема, и SUSE устранит ее в пакете sap-suse-cluster-connector.
 
    <pre><code>nw1-cl-0:nw1adm 54> sapcontrol -nr <b>00</b> -function HAGetFailoverConfig
    
@@ -1196,7 +1200,7 @@ SAP NetWeaver требует общее хранилище для каталог
         rsc_sap_NW1_ERS02  (ocf::heartbeat:SAPInstance):   Started nw1-cl-0
    </code></pre>
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Планирование и реализация виртуальных машин Azure для SAP][planning-guide]
 * [Развертывание виртуальных машин Azure для SAP][deployment-guide]

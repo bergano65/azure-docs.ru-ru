@@ -1,5 +1,6 @@
 ---
-title: Замечания по Xamarin iOS (Библиотека проверки подлинности Microsoft для .NET) | Службы
+title: Замечания по Xamarin iOS (Библиотека проверки подлинности Microsoft для .NET)
+titleSuffix: Microsoft identity platform
 description: Ознакомьтесь с конкретными соображениями при использовании Xamarin iOS с библиотекой проверки подлинности Майкрософт для .NET (MSAL.NET).
 services: active-directory
 documentationcenter: dev-center-name
@@ -17,18 +18,18 @@ ms.author: twhitney
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 054033c0fc9f1138ef9ecf7eaceca626f6f53423
-ms.sourcegitcommit: 23389df08a9f4cab1f3bb0f474c0e5ba31923f12
+ms.openlocfilehash: 64524960e584907b1e761a36f8ceb1461a7771c7
+ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70872846"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72802605"
 ---
 # <a name="xamarin-ios-specific-considerations-with-msalnet"></a>Вопросы, связанные с Xamarin iOS, с MSAL.NET
 В Xamarin iOS существует несколько аспектов, которые необходимо учитывать при использовании MSAL.NET.
 
 - [Известные проблемы с iOS 12 и аутентификацией](#known-issues-with-ios-12-and-authentication)
-- [Переопределите и реализуйте `OpenUrl` функцию в`AppDelegate`](#implement-openurl)
+- [Переопределите и реализуйте функцию `OpenUrl` в `AppDelegate`](#implement-openurl)
 - [Включение групп ключей цепочки](#enable-keychain-access)
 - [Включить общий доступ к кэшу маркеров](#enable-token-cache-sharing-across-ios-applications)
 - [Включение доступа к цепочке ключей](#enable-keychain-access)
@@ -42,7 +43,7 @@ ms.locfileid: "70872846"
 
 ## <a name="implement-openurl"></a>Реализация OpenUrl
 
-Сначала необходимо переопределить `OpenUrl` метод `FormsApplicationDelegate` производного класса и вызвать `AuthenticationContinuationHelper.SetAuthenticationContinuationEventArgs`метод.
+Сначала необходимо переопределить метод `OpenUrl` производного класса `FormsApplicationDelegate` и вызвать `AuthenticationContinuationHelper.SetAuthenticationContinuationEventArgs`.
 
 ```CSharp
 public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
@@ -57,9 +58,9 @@ public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
 ### <a name="enable-keychain-access"></a>Включение доступа к цепочке ключей
 
 Чтобы включить доступ к цепочке ключей, приложение должно иметь группу доступа к цепочке ключей.
-Вы можете задать группу доступа к цепочке ключей с `WithIosKeychainSecurityGroup()` помощью API при создании приложения, как показано ниже:
+Вы можете задать группу доступа к цепочке ключей с помощью `WithIosKeychainSecurityGroup()` API при создании приложения, как показано ниже.
 
-Чтобы включить единый вход, необходимо присвоить `PublicClientApplication.iOSKeychainSecurityGroup` свойству одно и то же значение во всех приложениях.
+Чтобы включить единый вход, необходимо присвоить свойству `PublicClientApplication.iOSKeychainSecurityGroup` одно и то же значение во всех приложениях.
 
 Примером этого является использование MSAL v3. x:
 ```csharp
@@ -71,7 +72,7 @@ var builder = PublicClientApplicationBuilder
 
 Права. plist должны быть обновлены, чтобы выглядеть так, как в следующем фрагменте XML:
 
-Это изменение является *дополнением* к включению доступа к цепочке ключей в `Entitlements.plist` файле с помощью любой из следующих групп доступа:
+Это изменение добавляется *в дополнение* к включению доступа к цепочке ключей в файле `Entitlements.plist` с помощью любой из следующих групп доступа:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -102,15 +103,15 @@ PublicClientApplication.iOSKeychainSecurityGroup = "com.microsoft.msalrocks";
 
 Чтобы включить этот общий доступ к кэшу, необходимо установить параметр с помощью метода "Висиоскэйчаинсекуритиграуп ()", чтобы задать для группы доступа к цепочке ключей одинаковое значение во всех приложениях, совместно использующих тот же кэш, как показано в примере выше.
 
-Ранее было сказано, что MSAL добавила $ (AppIdentifierPrefix) при каждом использовании `WithIosKeychainSecurityGroup()` API. Это связано с тем, что AppIdentifierPrefix или «идентификатор команды» используются, чтобы обеспечить совместное использование доступа к цепочке ключей только для приложений, созданных одним издателем.
+Ранее было сказано, что MSAL добавила $ (AppIdentifierPrefix) при каждом использовании API `WithIosKeychainSecurityGroup()`. Это связано с тем, что AppIdentifierPrefix или «идентификатор команды» используются, чтобы обеспечить совместное использование доступа к цепочке ключей только для приложений, созданных одним издателем.
 
 > [!NOTE]
-> **`KeychainSecurityGroup` Свойство является устаревшим.**
+> **Свойство `KeychainSecurityGroup` является устаревшим.**
 > 
-> Ранее в MSAL 2. x разработчики были вынуждены включать префикс теамид при использовании `KeychainSecurityGroup` свойства.
+> Ранее в MSAL 2. x разработчики были вынуждены включать префикс Теамид при использовании свойства `KeychainSecurityGroup`.
 >
->  В MSAL 2.7. x при использовании нового `iOSKeychainSecurityGroup` свойства MSAL будет разрешать префикс теамид во время выполнения. При использовании этого свойства значение не должно содержать префикс Теамид.
->  Используйте новое `iOSKeychainSecurityGroup` свойство, которое не требует предоставления теамид, так как предыдущее `KeychainSecurityGroup` свойство устарело.
+>  В MSAL 2.7. x при использовании нового свойства `iOSKeychainSecurityGroup` MSAL будет разрешать префикс Теамид во время выполнения. При использовании этого свойства значение не должно содержать префикс Теамид.
+>  Используйте новое свойство `iOSKeychainSecurityGroup`, не требующее предоставления Теамид, так как предыдущее свойство `KeychainSecurityGroup` устарело.
 
 ### <a name="use-microsoft-authenticator"></a>Использование Microsoft Authenticator
 
@@ -126,7 +127,7 @@ PublicClientApplication.iOSKeychainSecurityGroup = "com.microsoft.msalrocks";
 
 Дополнительные сведения см. в абзаце с описанием особенностей [iOS](https://github.com/azure-samples/active-directory-xamarin-native-v2#ios-specific-considerations) в следующем примере файла readme.md:
 
-Пример | Платформа | Описание
+Пример | платформа | Описание
 ------ | -------- | -----------
 [https://github.com/Azure-Samples/active-directory-xamarin-native-v2](https://github.com/azure-samples/active-directory-xamarin-native-v2) | Xamarin iOS, Android, UWP; | Простое приложение Xamarin Forms, демонстрирующие использование MSAL для проверки подлинности MSA и Azure AD через конечную точку Azure AD версии 2.0, а также доступа к Microsoft Graph с полученным маркером.
 

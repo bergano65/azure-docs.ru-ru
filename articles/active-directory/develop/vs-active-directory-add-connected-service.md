@@ -1,5 +1,5 @@
 ---
-title: Добавление Azure Active Directory с помощью подключенных служб в Visual Studio
+title: Добавление Azure Active Directory с помощью Подключенные службы в Visual Studio | Службы
 description: Добавление Azure Active Directory с помощью диалогового окна "Добавление подключенных служб" в Visual Studio
 author: ghogen
 manager: jillfra
@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 03/12/2018
 ms.author: ghogen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6c02821a41faa976f8f35984ecf48f425239e6fd
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.openlocfilehash: 04c8b6bfeaabfa20b9b9b884584d40de7f09e9ac
+ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70881178"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72802469"
 ---
 # <a name="adding-an-azure-active-directory-by-using-connected-services-in-visual-studio"></a>Добавление Azure Active Directory с помощью подключенных служб в Visual Studio
 
@@ -27,7 +27,7 @@ Azure Active Directory (Azure AD) позволяет обеспечить еди
 
 Сейчас подключенная служба Active Directory не поддерживает приложения ASP.NET Core.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - Учетная запись Azure. Если у вас ее нет, [зарегистрируйтесь для работы с бесплатной пробной версией](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F) или [активируйте преимущества для подписчиков Visual Studio](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F).
 - **Visual Studio 2015** или более поздней версии. [Скачайте Visual Studio прямо сейчас](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs).
@@ -46,7 +46,7 @@ Azure Active Directory (Azure AD) позволяет обеспечить еди
 
     ![Страница "Введение"](./media/vs-azure-active-directory/configure-azure-ad-wizard-1.png)
 
-1. На странице **Единый вход** выберите домен из раскрывающегося списка **Домены**. Этот список содержит все домены, доступные для учетных записей, перечисленных в диалоговом окне параметров учетной записи в Visual Studio (**Файл > Параметры учетной записи...** ). Если вы не нашли искомый домен, введите имя домена, например `mydomain.onmicrosoft.com`, вручную. Вы можете создать новое приложение Azure Active Directory или использовать параметры уже существующего приложения Azure Active Directory. По завершении нажмите кнопку **Далее**.
+1. На странице **Единый вход** выберите домен из раскрывающегося списка **Домены**. Список содержит все домены, доступные для учетных записей, перечисленных в диалоговом окне "Параметры учетной записи" Visual Studio (**Параметры учетной записи > файлов...** ). В качестве альтернативы можно ввести имя домена, если вы не нашли искомый домен, например `mydomain.onmicrosoft.com`. Вы можете создать новое приложение Azure Active Directory или использовать параметры уже существующего приложения Azure Active Directory. По завершении нажмите кнопку **Далее**.
 
     ![Страница "Единый вход"](./media/vs-azure-active-directory/configure-azure-ad-wizard-2.png)
 
@@ -72,7 +72,7 @@ Azure Active Directory (Azure AD) позволяет обеспечить еди
 - [Что произошло с моим проектом .NET MVC?](vs-active-directory-dotnet-what-happened.md)
 - [Что произошло с моим проектом веб-API?](vs-active-directory-webapi-what-happened.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Сценарии аутентификации в Azure Active Directory](authentication-scenarios.md)
+- [Сценарии аутентификации в Azure Active Directory](authentication-scenarios.md).
 - [Добавление возможности входа в веб-приложение ASP.NET с помощью учетной записи Майкрософт](quickstart-v1-aspnet-webapp.md)

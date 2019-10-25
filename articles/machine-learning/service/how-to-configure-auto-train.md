@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 07/10/2019
 ms.custom: seodec18
-ms.openlocfilehash: 04753ca4c9b14d7ccc265cfcf971b3fd63c861ae
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: 11cd90da1b1ca85893dbdad2ced191326af51238
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72384155"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72793887"
 ---
 # <a name="configure-automated-ml-experiments-in-python"></a>Настройка автоматизированных экспериментов машинного обучения в Python
 
@@ -56,8 +56,9 @@ ms.locfileid: "72384155"
 [Xgboost](https://xgboost.readthedocs.io/en/latest/parameter.html)|[Xgboost](https://xgboost.readthedocs.io/en/latest/parameter.html)| [Xgboost](https://xgboost.readthedocs.io/en/latest/parameter.html)
 [Классификатор DNN](https://www.tensorflow.org/api_docs/python/tf/estimator/DNNClassifier)|[DNNная регрессия](https://www.tensorflow.org/api_docs/python/tf/estimator/DNNRegressor) | [DNNная регрессия](https://www.tensorflow.org/api_docs/python/tf/estimator/DNNRegressor)|
 [DNNй Линейный классификатор](https://www.tensorflow.org/api_docs/python/tf/estimator/LinearClassifier)|[Линейная регрессия](https://www.tensorflow.org/api_docs/python/tf/estimator/LinearRegressor)|[Линейная регрессия](https://www.tensorflow.org/api_docs/python/tf/estimator/LinearRegressor)
-[Упрощенный алгоритм Байеса](https://scikit-learn.org/stable/modules/naive_bayes.html#bernoulli-naive-bayes)|
-[Стохастический градиентный спуск (SGD)](https://scikit-learn.org/stable/modules/sgd.html#sgd)|
+[Упрощенный алгоритм Байеса](https://scikit-learn.org/stable/modules/naive_bayes.html#bernoulli-naive-bayes)||[Auto-ARIMA](https://www.alkaline-ml.com/pmdarima/modules/generated/pmdarima.arima.auto_arima.html#pmdarima.arima.auto_arima)
+[Стохастический градиентный спуск (SGD)](https://scikit-learn.org/stable/modules/sgd.html#sgd)||[профет](https://facebook.github.io/prophet/docs/quick_start.html)
+|||форекастткн
 
 Используйте параметр `task` в конструкторе `AutoMLConfig`, чтобы указать тип эксперимента.
 
@@ -70,28 +71,24 @@ automl_config = AutoMLConfig(task = "classification")
 
 ## <a name="data-source-and-format"></a>Источник данных и формат
 
-Автоматическое машинное обучение поддерживает данные, находящиеся на локальном компьютере или в облаке в хранилище BLOB-объектов Azure. Данные можно считывать в кадр данных Pandas или Машинное обучение Azure. В следующих примерах кода показано, как хранить данные в этих форматах. Дополнительные [сведения о дататсетс](https://github.com/MicrosoftDocs/azure-docs-pr/pull/how-to-create-register-datasets.md).
+Автоматическое машинное обучение поддерживает данные, находящиеся на локальном компьютере или в облаке в хранилище BLOB-объектов Azure. Данные можно считывать в **кадр данных Pandas** или в **машинное обучение Azure табулардатасет**.  Дополнительные [сведения о дататсетс](https://github.com/MicrosoftDocs/azure-docs-pr/pull/how-to-create-register-datasets.md).
+
+Требования к данным для обучения:
+- Данные должны быть в табличной форме.
+- Прогнозируемое значение целевого столбца должно находиться в данных.
+
+В следующих примерах кода показано, как хранить данные в этих форматах.
 
 * табулардатасет
+  ```python
+  from azureml.core.dataset import Dataset
+  
+  tabular_dataset = Dataset.Tabular.from_delimited_files("https://automldemods.blob.core.windows.net/datasets/PlayaEvents2016,_1.6MB,_3.4k-rows.cleaned.2.tsv")
+  train_dataset, test_dataset = tabular_dataset.random_split(percentage = 0.1, seed = 42)
+  label = "Label"
+  ```
+
 * Кадр данных Pandas
-
->[!Important]
-> Требования к данным для обучения:
->* Данные должны быть в табличной форме.
->* Значение, которое необходимо спрогнозировать (целевой столбец), должно присутствовать в данных.
-
-Примеры.
-
-* табулардатасет
-```python
-    from azureml.core.dataset import Dataset
-
-    tabular_dataset = Dataset.Tabular.from_delimited_files("https://automldemods.blob.core.windows.net/datasets/PlayaEvents2016,_1.6MB,_3.4k-rows.cleaned.2.tsv")
-    train_dataset, test_dataset = tabular_dataset.random_split(percentage = 0.1, seed = 42)
-    label = "Label"
-```
-
-*   Кадр данных Pandas
 
     ```python
     import pandas as pd
@@ -109,7 +106,7 @@ automl_config = AutoMLConfig(task = "classification")
 * простое перемещение данных из статических файлов или источников URL-адресов в рабочую область
 * предоставление доступа к данным в сценариях обучения при работе в облачных ресурсах
 
-См. Пример использования класса @no__t- [1 для подключения](how-to-train-with-datasets.md#option-2--mount-files-to-a-remote-compute-target) данных к целевому объекту вычислений.
+См. Пример использования класса [`Dataset` для подключения](how-to-train-with-datasets.md#option-2--mount-files-to-a-remote-compute-target) данных к целевому объекту вычислений.
 
 ## <a name="train-and-validation-data"></a>Обучение и проверка данных
 
@@ -243,7 +240,7 @@ automl_config = AutoMLConfig(task = 'forecasting',
 Существует несколько аргументов по умолчанию, которые можно указать как `kwargs` в объекте `AutoMLConfig`, чтобы изменить поведение ансамблей стека по умолчанию.
 
 * `stack_meta_learner_type`: мета-учебник — это модель, обученная на выходе отдельных моделей разнородных. Для задач классификации по умолчанию используются `LogisticRegression` (или `LogisticRegressionCV`, если перекрестная проверка включена) и `ElasticNet` для задач регрессии и прогнозирования (или `ElasticNetCV`, если включена перекрестная проверка). Этот параметр может быть одной из следующих строк: `LogisticRegression`, `LogisticRegressionCV`, `LightGBMClassifier`, `ElasticNet`, `ElasticNetCV`, `LightGBMRegressor` или `LinearRegression`.
-* `stack_meta_learner_train_percentage`: определяет долю обучающего набора (при выборе типа обучения и проверки) для резервирования для обучения мета-знания. По умолчанию имеет значение `0.2`.
+* `stack_meta_learner_train_percentage`: определяет пропорцию обучающего набора (при выборе типа обучения и проверки) для зарезервированного для обучения мета-знания. По умолчанию имеет значение `0.2`.
 * `stack_meta_learner_kwargs`: необязательные параметры для передачи в инициализатор мета-знания. Эти параметры и типы параметров отражаются на основе соответствующего конструктора модели и пересылаются конструктору модели.
 
 В следующем коде показан пример указания пользовательского поведения ансамблей в объекте `AutoMLConfig`.
@@ -272,7 +269,7 @@ automl_classifier = AutoMLConfig(
         )
 ```
 
-Обучение ансамблей включено по умолчанию, но его можно отключить с помощью логических параметров `enable_voting_ensemble` и `enable_stack_ensemble`.
+Обучение ансамблей включено по умолчанию, но его можно отключить с помощью `enable_voting_ensemble` и `enable_stack_ensemble` логических параметров.
 
 ```python
 automl_classifier = AutoMLConfig(
@@ -318,7 +315,7 @@ run = experiment.submit(automl_config, show_output=True)
 1. Без критериев. Если параметры выхода не определены, эксперимент будет продолжен до тех пор, пока не будет выполнен дальнейший переход к основной метрике.
 1. Число итераций: вы определяете число итераций для запуска эксперимента. При необходимости можно добавить `iteration_timeout_minutes`, чтобы определить предельное время в минутах для каждой итерации.
 1. Выход по истечении определенного времени: использование `experiment_timeout_minutes` в параметрах позволяет определить продолжительность выполнения эксперимента в минутах.
-1. Выход после достижения оценки: использование `experiment_exit_score` приведет к завершению эксперимента после достижения первичного показателя метрики.
+1. Выйти после достижения оценки: использование `experiment_exit_score` приведет к завершению эксперимента после достижения основного показателя метрики.
 
 ### <a name="explore-model-metrics"></a>Изучение метрик модели
 
@@ -350,7 +347,7 @@ best_run, fitted_model = automl_run.get_output()
 
 Используйте эти два API на первом шаге модели, чтобы понять больше.  См. [Этот пример записной книжки](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/automated-machine-learning/forecasting-energy-demand).
 
-+ API 1: `get_engineered_feature_names()` возвращает список имен сконструированных функций.
++ API 1: `get_engineered_feature_names()` возвращает список имен инженерных функций.
 
   Использование:
   ```python
@@ -531,7 +528,7 @@ LogisticRegression
 automl_run.get_portal_url()
 ```
 
-Диаграмму важности функций можно визуализировать в рабочей области в портал Azure или на [целевой странице рабочей области (Предварительная версия)](https://ml.azure.com). Диаграмма также отображается при использовании мини-приложения [Jupyter](https://docs.microsoft.com/python/api/azureml-widgets/azureml.widgets?view=azure-ml-py) "@no__t 0" в записной книжке. Дополнительные сведения о диаграммах см. в статье сведения об [автоматических результатах машинного обучения](how-to-understand-automated-ml.md).
+Диаграмму важности функций можно визуализировать в рабочей области в портал Azure или на [целевой странице рабочей области (Предварительная версия)](https://ml.azure.com). Диаграмма также отображается при использовании мини-приложения `RunDetails` [Jupyter](https://docs.microsoft.com/python/api/azureml-widgets/azureml.widgets?view=azure-ml-py) в записной книжке. Дополнительные сведения о диаграммах см. в статье сведения об [автоматических результатах машинного обучения](how-to-understand-automated-ml.md).
 
 ```Python
 from azureml.widgets import RunDetails

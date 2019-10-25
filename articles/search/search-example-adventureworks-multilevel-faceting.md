@@ -1,27 +1,27 @@
 ---
-title: Пример. многоуровневые аспекты — Поиск Azure
+title: Пример. многоуровневые аспекты
+titleSuffix: Azure Cognitive Search
 description: Узнайте, как создавать фасетные структуры для многоуровневых таксономий, создавая вложенную структуру переходов, которую можно добавить на страницы приложения.
 author: HeidiSteen
 manager: nitinme
-services: search
-ms.service: search
+ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: heidist
-ms.openlocfilehash: 9a56bba55f9b3a59126168bc2bbbd50927c3fc78
-ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
+ms.openlocfilehash: 8672fa0911d1a031205bb3340fa0c03ab9492a28
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70274083"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72792941"
 ---
-# <a name="example-multi-level-facets-in-azure-search"></a>Пример. многоуровневые аспекты в службе поиска Azure
+# <a name="example-multi-level-facets-in-azure-cognitive-search"></a>Пример. многоуровневые аспекты в Azure Когнитивный поиск
 
-Схемы Поиска Azure явным образом не поддерживают категории многоуровневых таксономий, но их можно приблизительно реализовать, управляя содержимым до индексирования, а затем специальным образом обрабатывая результаты. 
+Схемы Когнитивный поиск Azure не поддерживают в явном виде многоуровневые категории таксономий, но их можно приблизительно оценить, управляя содержимым до индексирования, а затем применяя к результатам специальную обработку. 
 
 ## <a name="start-with-the-data"></a>Начало работы с данными
 
-Пример в этой статье основан на предыдущем примере, [модели базы данных инвентаризации AdventureWorks](search-example-adventureworks-modeling.md), чтобы продемонстрировать многоуровневую фасетизацию в Поиске Azure.
+Пример, приведенный в этой статье, основан на предыдущем примере, [моделирует базу данных инвентаризации AdventureWorks](search-example-adventureworks-modeling.md), чтобы продемонстрировать многоуровневые аспекты в Azure когнитивный Поиск.
 
 В базе данных AdventureWorks используется простая двухуровневая таксономия со связью "родитель — потомок". Ввиду фиксированной длины таксономии этой структуры для группирования таксономии можно использовать простой SQL-запрос соединения.
 
@@ -39,7 +39,7 @@ LEFT JOIN
 
 ## <a name="indexing-to-a-collection-field"></a>Индексирование поля Collection
 
-В индексе, содержащем эту структуру, создайте поле **Collection(Edm.String)** в схеме Поиска Azure для хранения этих данных. Это поле должно содержать атрибуты searchable, filterable, facetable и retrievable.
+В индексе, содержащем эту структуру, создайте поле **Collection (EDM. String)** в схеме когнитивный Поиск Azure для хранения этих данных, убедившись, что атрибуты поля включают доступные для поиска, фильтруемые, многогранные и доступные для извлечения данные.
 
 Теперь при индексировании содержимого, которое ссылается на определенную категорию таксономии, отправляйте таксономию как массив, содержащий текст с каждого уровня таксономии. Например, для сущности с `ProductCategoryId = 5 (Mountain Bikes)` отправьте поле как `[ "Bikes", "Bikes|Mountain Bikes"]`.
 
@@ -99,4 +99,4 @@ categories.count = sum;
 
 ## <a name="see-also"></a>Дополнительные материалы
 
-[Пример. Моделирование базы данных инвентаризации AdventureWorks для поиска Azure](search-example-adventureworks-modeling.md)
+[Пример. Моделирование базы данных инвентаризации AdventureWorks для Azure Когнитивный поиск](search-example-adventureworks-modeling.md)

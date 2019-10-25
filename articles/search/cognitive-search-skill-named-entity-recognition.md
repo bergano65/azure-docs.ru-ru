@@ -1,20 +1,19 @@
 ---
-title: 'Навык когнитивного поиска: распознавание именованной сущности (служба "Поиск Azure") | Документация Майкрософт'
-description: Извлеките именованные сущности пользователя, расположения и организации из текста в конвейере когнитивного поиска службы "Поиск Azure".
-services: search
+title: Когнитивный навык распознавания именованных сущностей
+titleSuffix: Azure Cognitive Search
+description: Извлеките именованные сущности для пользователя, расположения и организации из текста в конвейере обогащения искусственного интеллекта в Azure Когнитивный поиск.
 manager: nitinme
 author: luiscabrer
-ms.service: search
-ms.workload: search
-ms.topic: conceptual
-ms.date: 05/02/2019
 ms.author: luisca
-ms.openlocfilehash: b152d5a48d49e78818602e7f66574937bebce2ac
-ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
+ms.service: cognitive-search
+ms.topic: conceptual
+ms.date: 11/04/2019
+ms.openlocfilehash: 127155e492b556ce1ce02b67cf0b0846b99ebcd4
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71265767"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72791938"
 ---
 #    <a name="named-entity-recognition-cognitive-skill"></a>Когнитивный навык распознавания именованных сущностей
 
@@ -24,16 +23,16 @@ ms.locfileid: "71265767"
 > Теперь уровень навыка распознавания сущностей больше не будет заменен на [Microsoft. Skills. Text. ентитирекогнитионскилл](cognitive-search-skill-entity-recognition.md). Поддержка остановлена 15 февраля 2019, а API был удален из продукта с 2 мая 2019 г. Следуйте рекомендациям в [нерекомендуемых навыках поиска](cognitive-search-skill-deprecated.md) , чтобы перейти на поддерживаемый навык.
 
 > [!NOTE]
-> По мере расширения области путем увеличения частоты обработки и добавления большего количества документов или дополнительных алгоритмов ИИ, вам нужно будет [присоединить оплачиваемый ресурс Cognitive Services](cognitive-search-attach-cognitive-services.md). Плата взимается при вызове API в Cognitive Services и извлечении изображений при открытии документов в службе "Поиск Azure". За извлечение текста из документов плата не взимается.
+> По мере расширения области путем увеличения частоты обработки и добавления большего количества документов или дополнительных алгоритмов ИИ, вам нужно будет [присоединить оплачиваемый ресурс Cognitive Services](cognitive-search-attach-cognitive-services.md). Расходы начисляются при вызове API в Cognitive Services, а также для извлечения изображений в рамках этапа взлома документов в Azure Когнитивный поиск. За извлечение текста из документов плата не взимается.
 >
-> Плата за выполнение встроенных навыков взимается в рамках существующей [модели оплаты Cognitive Services по мере использования](https://azure.microsoft.com/pricing/details/cognitive-services/). Плата за извлечение изображений указана на [странице с ценами на Поиск Azure](https://go.microsoft.com/fwlink/?linkid=2042400).
+> Плата за выполнение встроенных навыков взимается в рамках существующей [модели оплаты Cognitive Services по мере использования](https://azure.microsoft.com/pricing/details/cognitive-services/). Цены на извлечение изображений описаны на [странице цен на когнитивный Поиск Azure](https://go.microsoft.com/fwlink/?linkid=2042400).
 
 
 ## <a name="odatatype"></a>@odata.type  
 Microsoft.Skills.Text.NamedEntityRecognitionSkill
 
 ## <a name="data-limits"></a>Ограничения данных
-Максимальный размер записи должен составлять 50 000 символов, [`String.Length`](https://docs.microsoft.com/dotnet/api/system.string.length)измеряемый. Если вам нужно разбить данные перед отправкой для извлечения ключевой фразы, можно воспользоваться [навыком разделения текста](cognitive-search-skill-textsplit.md).
+Максимальный размер записи должен составлять 50 000 символов, измеряемый [`String.Length`](https://docs.microsoft.com/dotnet/api/system.string.length). Если вам нужно разбить данные перед отправкой для извлечения ключевой фразы, можно воспользоваться [навыком разделения текста](cognitive-search-skill-textsplit.md).
 
 ## <a name="skill-parameters"></a>Параметры навыков
 
@@ -41,7 +40,7 @@ Microsoft.Skills.Text.NamedEntityRecognitionSkill
 
 | Имя параметра     | Описание |
 |--------------------|-------------|
-| categories    | Массив категорий, который следует извлекать.  Возможные типы категорий: `"Person"`, `"Location"`, `"Organization"`. Если категория не указана, возвращаются все типы.|
+| Категории    | Массив категорий, который следует извлекать.  Возможные типы категорий: `"Person"`, `"Location"`, `"Organization"`. Если категория не указана, возвращаются все типы.|
 |defaultLanguageCode |  Код языка вводимого текста. Поддерживается следующие языки: `de, en, es, fr, it`.|
 | minimumPrecision  | Число от 0 до 1. Если точность меньше этого значения, сущность не возвращается. Значение по умолчанию — 0.|
 
@@ -50,14 +49,14 @@ Microsoft.Skills.Text.NamedEntityRecognitionSkill
 | Ввод имени      | Описание                   |
 |---------------|-------------------------------|
 | languageCode  | Необязательный элемент. Значение по умолчанию — `"en"`.  |
-| text          | Текст для анализа.          |
+| текст          | Текст для анализа.          |
 
 ## <a name="skill-outputs"></a>Выходные данные навыка
 
 | Имя вывода     | Описание                   |
 |---------------|-------------------------------|
 | Люди      | Массив строк, где каждая строка представляет имя человека. |
-| locations  | Массив строк, где каждая строка представляет расположение. |
+| Расположения  | Массив строк, где каждая строка представляет расположение. |
 | organizations  | Массив строк, где каждая строка представляет организацию. |
 | Сущности | Массив сложных типов. Каждый сложный тип включает следующие поля: <ul><li>категория (`"person"`, `"organization"` или `"location"`);</li> <li>значение (фактическое имя объекта);</li><li>смещение (расположение, где оно было найдено в тексте);</li><li>достоверность (значение от 0 до 1, которое представляет достоверность того, что значение является фактическим объектом).</li></ul> |
 
@@ -99,7 +98,7 @@ Microsoft.Skills.Text.NamedEntityRecognitionSkill
 }
 ```
 
-##  <a name="sample-output"></a>Пример полученных результатов
+##  <a name="sample-output"></a>Пример выходных данных
 
 ```json
 {
@@ -154,8 +153,8 @@ Microsoft.Skills.Text.NamedEntityRecognitionSkill
 ## <a name="error-cases"></a>Варианты ошибок
 Если код языка для документа не поддерживается, возвращается ошибка и сущности не извлекаются.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>Дополнительные материалы
 
-+ [Предопределенные навыки](cognitive-search-predefined-skills.md)
-+ [Определение набора навыков](cognitive-search-defining-skillset.md)
++ [Встроенные навыки](cognitive-search-predefined-skills.md)
++ [How to define a skillset](cognitive-search-defining-skillset.md) (Определение набора навыков)
 + [Навык распознавания сущностей](cognitive-search-skill-entity-recognition.md)

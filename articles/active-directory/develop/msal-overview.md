@@ -1,5 +1,6 @@
 ---
-title: Сведения о библиотеке аутентификации Майкрософт (MSAL) | Azure
+title: Сведения о библиотеке проверки подлинности Microsoft (MSAL)
+titleSuffix: Microsoft identity platform
 description: Библиотека аутентификации Майкрософт (MSAL) позволяет разработчикам приложений получать токены для вызова защищенных веб-API. Это могут быть веб-API Microsoft Graph, другие API Майкрософт, сторонние веб-API или ваши собственные веб-API. MSAL поддерживает несколько архитектур и платформ приложений.
 services: active-directory
 documentationcenter: dev-center-name
@@ -17,12 +18,12 @@ ms.author: twhitney
 ms.reviewer: saeeda
 ms.custom: aaddev, identityplatformtop40
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bec22381d1961c47ce257666177b5faf918cea56
-ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
+ms.openlocfilehash: e9d3cf20e7e950aed01c6a0dc5a4ea95a81f815d
+ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72554412"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72802577"
 ---
 # <a name="overview-of-microsoft-authentication-library-msal"></a>Обзор библиотеки аутентификации Майкрософт (MSAL)
 Библиотека аутентификации Майкрософт (MSAL) позволяет разработчикам получать [маркеры](developer-glossary.md#security-token) из конечной точки платформы удостоверений Майкрософт, чтобы получить доступ к защищенным веб-API. Это могут быть веб-API Microsoft Graph, другие API Майкрософт, сторонние веб-API или ваши собственные веб-API. MSAL доступна для .NET, JavaScript, Android и iOS. Она поддерживает множество различных архитектур и платформ приложений.

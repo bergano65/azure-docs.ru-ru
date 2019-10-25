@@ -1,5 +1,6 @@
 ---
-title: Потоки проверки подлинности (Библиотека проверки подлинности Майкрософт) | Службы
+title: Потоки проверки подлинности (Библиотека проверки подлинности Майкрософт)
+titleSuffix: Microsoft identity platform
 description: Сведения о потоках проверки подлинности и предоставлении разрешений, используемых библиотекой проверки подлинности Майкрософт (MSAL).
 services: active-directory
 documentationcenter: dev-center-name
@@ -17,12 +18,12 @@ ms.author: twhitney
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d41e011fd58c20cbe6d2dc8d9029e645f8851bd9
-ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
+ms.openlocfilehash: ea47981fedf7f002dbbd94a0f10d92759d166694
+ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72513028"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72803313"
 ---
 # <a name="authentication-flows"></a>Потоки проверки подлинности
 

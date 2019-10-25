@@ -1,5 +1,6 @@
 ---
-title: Настройка MSAL для iOS и macOS для использования разных поставщиков удостоверений | Платформа Microsoft Identity
+title: Настройка MSAL для iOS и macOS для использования разных поставщиков удостоверений
+titleSuffix: Microsoft identity platform
 description: Узнайте, как использовать различные центры, такие как B2C, облака независимых и гостевые пользователи, с MSAL для iOS и macOS.
 services: active-directory
 documentationcenter: ''
@@ -17,20 +18,20 @@ ms.author: twhitney
 ms.reviewer: ''
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 114e67e2dca7ba304cb92b21a894e045cbe0c9e9
-ms.sourcegitcommit: 263a69b70949099457620037c988dc590d7c7854
+ms.openlocfilehash: 2ae1c1a6c151d0bfae1b608ccefdfeaaaa74b608
+ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71269094"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72803828"
 ---
-# <a name="how-to-configure-msal-for-ios-and-macos-to-use-different-identity-providers"></a>Практическое руководство. Настройка MSAL для iOS и macOS для использования разных поставщиков удостоверений
+# <a name="how-to-configure-msal-for-ios-and-macos-to-use-different-identity-providers"></a>Как настроить MSAL для iOS и macOS для использования разных поставщиков удостоверений
 
 В этой статье показано, как настроить приложение библиотеки проверки подлинности Майкрософт для iOS и macOS (MSAL) для различных центров, таких как Azure Active Directory (Azure AD), "бизнес-потребитель" (B2C), независимых Clouds и Guest Users.  В этой статье вы обычно можете представить себе полномочия в качестве поставщика удостоверений.
 
 ## <a name="default-authority-configuration"></a>Конфигурация центра по умолчанию
 
-`MSALPublicClientApplication`настроен с URL-адресом `https://login.microsoftonline.com/common`центра по умолчанию, который подходит для большинства сценариев Azure Active Directory (AAD). Если вы не реализуете сложные сценарии, такие как национальные облака или работа с B2C, вам не нужно изменять их.
+`MSALPublicClientApplication` настроен с URL-адресом центра по умолчанию `https://login.microsoftonline.com/common`, который подходит для большинства сценариев Azure Active Directory (AAD). Если вы не реализуете сложные сценарии, такие как национальные облака или работа с B2C, вам не нужно изменять их.
 
 > [!NOTE]
 > Современная проверка подлинности с службы федерации Active Directory (AD FS) в качестве поставщика удостоверений (ADFS) не поддерживается (Дополнительные сведения см. в разделе [ADFS для разработчиков](https://docs.microsoft.com/windows-server/identity/ad-fs/overview/ad-fs-scenarios-for-developers) ). Службы ADFS поддерживаются через Федерацию.
@@ -41,9 +42,9 @@ ms.locfileid: "71269094"
 
 ### <a name="b2c"></a>B2C
 
-Для работы с B2C для [библиотеки проверки подлинности Майкрософт (MSAL)](reference-v2-libraries.md) требуется другая конфигурация центра. MSAL распознает один формат URL-адреса центра сертификации как B2C сам по себе. Формат распознанного центра B2C — `https://<host>/tfp/<tenant>/<policy>`, например. `https://login.microsoftonline.com/tfp/contoso.onmicrosoft.com/B2C_1_SignInPolicy` Тем не менее можно также использовать любые другие поддерживаемые URL-адреса центра B2C, объявляя полномочия как B2C Authority явным образом.
+Для работы с B2C для [библиотеки проверки подлинности Майкрософт (MSAL)](reference-v2-libraries.md) требуется другая конфигурация центра. MSAL распознает один формат URL-адреса центра сертификации как B2C сам по себе. Распознанный формат центра B2C `https://<host>/tfp/<tenant>/<policy>`, например `https://login.microsoftonline.com/tfp/contoso.onmicrosoft.com/B2C_1_SignInPolicy`. Тем не менее можно также использовать любые другие поддерживаемые URL-адреса центра B2C, объявляя полномочия как B2C Authority явным образом.
 
-Для поддержки произвольного формата URL-адреса для `MSALB2CAuthority` B2C можно задать произвольный URL-адрес, например:
+Для поддержки произвольного формата URL-адреса для B2C `MSALB2CAuthority` можно задать произвольный URL-адрес, например:
 
 Objective-C
 ```objc
@@ -51,7 +52,7 @@ NSURL *authorityURL = [NSURL URLWithString:@"arbitrary URL"];
 MSALB2CAuthority *b2cAuthority = [[MSALB2CAuthority alloc] initWithURL:authorityURL
                                                                      error:&b2cAuthorityError];
 ```
-Код SWIFT
+Swift
 ```swift
 guard let authorityURL = URL(string: "arbitrary URL") else {
     // Handle error
@@ -72,7 +73,7 @@ MSALPublicClientApplicationConfig *b2cApplicationConfig = [[MSALPublicClientAppl
                                                                authority:b2cAuthority];
 b2cApplicationConfig.knownAuthorities = @[b2cAuthority];
 ```
-Код SWIFT
+Swift
 ```swift
 let b2cApplicationConfig = MSALPublicClientApplicationConfig(clientId: "your-client-id", redirectUri: "your-redirect-uri", authority: b2cAuthority)
 b2cApplicationConfig.knownAuthorities = [b2cAuthority]
@@ -80,7 +81,7 @@ b2cApplicationConfig.knownAuthorities = [b2cAuthority]
 
 Когда приложение запрашивает новую политику, необходимо изменить URL-адрес центра, так как URL-адрес центра отличается для каждой политики. 
 
-Чтобы настроить `@property MSALAuthority *authority` приложение B2C, задайте `MSALB2CAuthority` экземпляр в `MSALPublicClientApplicationConfig` перед созданием `MSALPublicClientApplication`, например:
+Чтобы настроить приложение B2C, задайте `@property MSALAuthority *authority` с экземпляром `MSALB2CAuthority` в `MSALPublicClientApplicationConfig` перед созданием `MSALPublicClientApplication`, например:
 
 Objective-C
 ```ObjC
@@ -111,7 +112,7 @@ Objective-C
         return;
     }
 ```
-Код SWIFT
+Swift
 ```swift
 do{
     // Create B2C authority URL
@@ -161,7 +162,7 @@ Objective-C
         return;
     }
 ```
-Код SWIFT
+Swift
 ```swift
 do{
     guard let authorityURL = URL(string: "https://login.microsoftonline.de/common") else {
@@ -184,7 +185,7 @@ do{
 
 Если URL-адрес центра имеет значение `"login.microsoftonline.com/common"`, пользователь будет входить в его домашний клиент. Однако некоторым приложениям может потребоваться подписать пользователя в другом клиенте, и некоторые приложения работают только с одним клиентом.
 
-Чтобы подписать пользователя в определенном клиенте, настройте `MSALPublicClientApplication` с помощью определенного центра. Пример:
+Чтобы подписать пользователя в определенном клиенте, настройте `MSALPublicClientApplication` с помощью определенного центра. Пример.
 
 `https://login.microsoftonline.com/469fdeb4-d4fd-4fde-991e-308a78e4bea4`
 
@@ -215,7 +216,7 @@ Objective-C
         return;
     }
 ```
-Код SWIFT
+Swift
 ```swift
 do{
     guard let authorityURL = URL(string: "https://login.microsoftonline.com/469fdeb4-d4fd-4fde-991e-308a78e4bea4") else {
@@ -236,20 +237,20 @@ do{
 
 ### <a name="msalauthority"></a>мсалаусорити
 
-`MSALAuthority` Класс является базовым абстрактным классом для классов центра MSAL. Не пытайтесь создать экземпляр с помощью `alloc` или. `new` Вместо этого либо создайте один из его подклассов напрямую (`MSALAADAuthority`, `MSALB2CAuthority`), либо используйте метод `authorityWithURL:error:` фабрики для создания подклассов с помощью URL-адреса центра.
+Класс `MSALAuthority` является базовым абстрактным классом для классов центра MSAL. Не пытайтесь создать экземпляр с помощью `alloc` или `new`. Вместо этого либо создайте один из его подклассов напрямую (`MSALAADAuthority`, `MSALB2CAuthority`), либо используйте метод Factory `authorityWithURL:error:` для создания подклассов с помощью URL-адреса центра.
 
-Чтобы получить нормализованный URL-адрес центра, используйте свойство.`url` Дополнительные параметры и компоненты пути или фрагменты, не являющиеся частью полномочий, не будут находиться в возвращенном нормализованном URL-адресе центра.
+Чтобы получить нормализованный URL-адрес центра, используйте свойство `url`. Дополнительные параметры и компоненты пути или фрагменты, не являющиеся частью полномочий, не будут находиться в возвращенном нормализованном URL-адресе центра.
 
-Ниже приведены подклассы `MSALAuthority` , которые можно создать в зависимости от используемого центра.
+Ниже приведены подклассы `MSALAuthority`, которые можно создавать в зависимости от используемого центра.
 
 ### <a name="msalaadauthority"></a>мсалаадаусорити
 
-`MSALAADAuthority`представляет центр AAD. URL-адрес центра сертификации должен иметь следующий формат, где `<port>` является необязательным:`https://<host>:<port>/<tenant>`
+`MSALAADAuthority` представляет центр AAD. URL-адрес центра сертификации должен иметь следующий формат, где `<port>` является необязательным: `https://<host>:<port>/<tenant>`
 
 ### <a name="msalb2cauthority"></a>MSALB2CAuthority
 
-`MSALB2CAuthority`представляет центр B2C. По умолчанию URL-адрес центра B2C должен иметь следующий формат, где `<port>` является необязательным:. `https://<host>:<port>/tfp/<tenant>/<policy>` Однако MSAL также поддерживает другие произвольные форматы центра B2C.
+`MSALB2CAuthority` представляет центр B2C. По умолчанию URL-адрес центра B2C должен иметь следующий формат, где `<port>` является необязательным: `https://<host>:<port>/tfp/<tenant>/<policy>`. Однако MSAL также поддерживает другие произвольные форматы центра B2C.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о [потоках проверки подлинности и сценариях приложений](authentication-flows-app-scenarios.md)
+Дополнительные сведения см. в [Потоки проверки подлинности и сценарии приложений](authentication-flows-app-scenarios.md)

@@ -8,16 +8,16 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 04/14/2019
 ms.author: ramamill
-ms.openlocfilehash: 075f86b24e2915d9689db8097889a830bade74c5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: bf1ff4dfba105b6c90ab949217453e1db82d109d
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60723432"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72791776"
 ---
 # <a name="set-up-the-source-environment-for-vmware-to-azure-replication"></a>Настройка исходного окружения для репликации из VMware в Azure
 
-В этой статье описано, как настроить исходное локальное окружение для репликации виртуальных машин VMware в Azure. В ней указаны шаги для выбора сценария репликации, настройки локального компьютера в качестве сервера конфигурации Azure Site Recovery и автоматического обнаружения локальных виртуальных машин. 
+В этой статье описано, как настроить исходное локальное окружение для репликации виртуальных машин VMware в Azure. Эта статья содержит инструкции по выбору сценария репликации, настройке локального компьютера в качестве сервера конфигурации Site Recovery и автоматическому обнаружению локальных виртуальных машин.
 
 ## <a name="prerequisites"></a>Технические условия
 
@@ -40,8 +40,8 @@ ms.locfileid: "60723432"
 Вы можете настроить сервер конфигурации в качестве локальной виртуальной машины VMware с помощью шаблона Open Virtualization Application (OVA). Ознакомьтесь с [дополнительными сведениями](concepts-vmware-to-azure-architecture.md) о компонентах, которые будут установлены на виртуальной машине VMware.
 
 1. Изучите дополнительные сведения о [необходимых компонентах](vmware-azure-deploy-configuration-server.md#prerequisites) для развертывания сервера конфигурации.
-2. [Проверьте значения емкости](vmware-azure-deploy-configuration-server.md#capacity-planning) для развертывания.
-3. [Скачайте](vmware-azure-deploy-configuration-server.md#download-the-template) и [импортируйте](vmware-azure-deploy-configuration-server.md#import-the-template-in-vmware) шаблон OVA для настройки локальной виртуальной машины VMware, работающей на сервере конфигурации. Лицензии, с помощью шаблона — это лицензия на пробное использование и действителен в течение 180 дней. После этого периода, пользователь должен активировать windows с помощью приобретенных лицензий.
+2. [Проверьте значения емкости](vmware-azure-deploy-configuration-server.md#sizing-and-capacity-requirements) для развертывания.
+3. [Скачайте](vmware-azure-deploy-configuration-server.md#download-the-template) и [импортируйте](vmware-azure-deploy-configuration-server.md#import-the-template-in-vmware) шаблон OVA для настройки локальной виртуальной машины VMware, работающей на сервере конфигурации. Лицензия, предоставленная с помощью шаблона, является лицензией оценки и действительна в течение 180 дней. Разместите этот период, клиент должен активировать Windows с приобретенной лицензией.
 4. Включите виртуальную машину VMware и [зарегистрируйте ее](vmware-azure-deploy-configuration-server.md#register-the-configuration-server-with-azure-site-recovery-services) в хранилище служб восстановления.
 
 ## <a name="azure-site-recovery-folder-exclusions-from-antivirus-program"></a>Исключение папок Azure Site Recovery из антивирусной программы
@@ -69,7 +69,7 @@ ms.locfileid: "60723432"
   - C:\ProgramData\ASRSetupLogs.
   - C:\ProgramData\LogUploadServiceLogs.
   - C:\inetpub.
-  - Каталог установки сервера ASR. Пример: E:\Program Files (x86) \Microsoft Azure Site Recovery.
+  - Каталог установки Site Recovery Server. Например, это может быть E:\Program Files (x86) \Microsoft Azure Site Recovery.
 
 ### <a name="if-antivirus-software-is-active-on-scale-out-process-servermaster-target"></a>Антивирусное программное обеспечение работает на горизонтально масштабируемом сервере процессов или главном целевом объекте
 
@@ -81,7 +81,7 @@ ms.locfileid: "60723432"
 4. C:\ProgramData\ASRSetupLogs.
 5. C:\ProgramData\LogUploadServiceLogs.
 6. C:\ProgramData\Microsoft Azure Site Recovery.
-7. Каталог установки сервера ASR с балансировкой нагрузки, например C:\Program Files (x86)\Microsoft Azure Site Recovery
+7. Azure Site Recovery каталог установки сервера обработки с балансировкой нагрузки, например: C:\Program Files (x86) \Microsoft Azure Site Recovery
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

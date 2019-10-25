@@ -1,22 +1,22 @@
 ---
-title: Сценарии PowerShell, использующие AZ. Search, Поиск Azure
-description: Создание и Настройка службы поиска Azure с помощью PowerShell. Вы можете масштабировать службу, управлять администрированием и запросом ключей API, а также запрашивать системные сведения.
-author: HeidiSteen
+title: Сценарии PowerShell с помощью команды AZ. Search
+titleSuffix: Azure Cognitive Search
+description: Создание и Настройка службы Когнитивный поиск Azure с помощью PowerShell. Вы можете масштабировать службу по мере увеличения или уменьшения масштаба, управлять ключами API администрирования и запросов, а также запрашивать сведения о системе.
 manager: nitinme
-services: search
-ms.service: search
+author: HeidiSteen
+ms.author: heidist
+ms.service: cognitive-search
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 03/28/2019
-ms.author: heidist
-ms.openlocfilehash: d56ddcd48f6a1907bed865d391e1d4e64da2999d
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.date: 11/04/2019
+ms.openlocfilehash: efc61f7dc8e9d2caa53c4cbd7d932af9e1a206d1
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72331238"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72793540"
 ---
-# <a name="manage-your-azure-search-service-with-powershell"></a>Управление службой поиска Azure с помощью PowerShell
+# <a name="manage-your-azure-cognitive-search-service-with-powershell"></a>Управление службой Когнитивный поиск Azure с помощью PowerShell
 > [!div class="op_single_selector"]
 > * [Microsoft Azure](search-manage.md)
 > * [PowerShell](search-manage-powershell.md)
@@ -24,7 +24,7 @@ ms.locfileid: "72331238"
 > * [ПАКЕТ SDK .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.management.search)
 > * [Python](https://pypi.python.org/pypi/azure-mgmt-search/0.1.0)> 
 
-Вы можете запускать командлеты и скрипты PowerShell в Windows, Linux или в [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview) для создания и настройки службы поиска Azure. Модуль **AZ. Search** расширяет Azure PowerShell] с полным контролем четности для [API-интерфейсов службы поиска Azure](https://docs.microsoft.com/rest/api/searchmanagement). С помощью Azure PowerShell и **AZ. Search**можно выполнять следующие задачи:
+Вы можете запускать командлеты и скрипты PowerShell в Windows, Linux или в [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview) для создания и настройки когнитивный Поиск Azure. Модуль **AZ. Search** расширяет Azure PowerShell] с полным контролем четности для [API-интерфейсов службы Azure когнитивный Поиск Management](https://docs.microsoft.com/rest/api/searchmanagement). С помощью Azure PowerShell и **AZ. Search**можно выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * [Список всех служб поиска в подписке](#list-search-services)
@@ -92,7 +92,7 @@ Select-AzSubscription -SubscriptionName ContosoSubscription
 
 <a name="list-search-services"></a>
 
-## <a name="list-all-azure-search-services-in-your-subscription"></a>Вывод списка всех служб поиска Azure в подписке
+## <a name="list-all-azure-cognitive-search-services-in-your-subscription"></a>Вывод списка всех служб Когнитивный поиск Azure в вашей подписке
 
 Следующие команды относятся к [**AZ. Resources**](https://docs.microsoft.com/powershell/module/az.resources/?view=azps-1.4.0#resources)и возвращают сведения о существующих ресурсах и службах, уже подготовленных в вашей подписке. Если вы не уверены, сколько служб поиска уже создано, эти команды возвращают эту информацию, экономя на портале.
 
@@ -201,7 +201,7 @@ Tags
 
 Как вы можете ожидать, при повторном создании ключей без обновления клиентского кода запросы, использующие старый ключ, завершатся ошибкой. Повторное создание всех новых ключей не приводит к окончательной блокировке вашей службы, и вы по-прежнему можете обращаться к службе через портал. После повторного создания первичного и вторичного ключей можно обновить код клиента, чтобы использовать новые ключи, и операции будут возобновлены соответствующим образом.
 
-Значения ключей API создаются службой. Вы не можете предоставить настраиваемый ключ для использования службой поиска Azure. Точно так же не существует определяемого пользователем имени для ключей API администратора. Ссылки на ключ являются фиксированными строками: `primary` или `secondary`. 
+Значения ключей API создаются службой. Вы не можете предоставить настраиваемый ключ для Azure Когнитивный поиск. Точно так же не существует определяемого пользователем имени для ключей API администратора. Ссылки на ключ являются фиксированными строками: `primary` или `secondary`. 
 
 ```azurepowershell-interactive
 New-AzSearchAdminKey -ResourceGroupName <resource-group-name> -ServiceName <search-service-name> -KeyKind Primary
@@ -217,9 +217,9 @@ Primary                    Secondary
 
 ## <a name="create-or-delete-query-keys"></a>Создание или удаление ключей запроса
 
-[**New-азсеарчкуерикэй**](https://docs.microsoft.com/powershell/module/az.search/new-azsearchquerykey?view=azps-1.4.0) используется для создания [ключей API](search-security-api-keys.md) запросов для доступа только для чтения из клиентских приложений к индексу поиска Azure. Ключи запроса используются для проверки подлинности определенного индекса с целью получения результатов поиска. Ключи запроса не предоставляют доступ только для чтения к другим элементам службы, таким как индекс, источник данных или индексатор.
+[**New-азсеарчкуерикэй**](https://docs.microsoft.com/powershell/module/az.search/new-azsearchquerykey?view=azps-1.4.0) используется для создания [ключей API](search-security-api-keys.md) запросов для доступа только для чтения из клиентских приложений к индексу Azure когнитивный Поиск. Ключи запроса используются для проверки подлинности определенного индекса с целью получения результатов поиска. Ключи запроса не предоставляют доступ только для чтения к другим элементам службы, таким как индекс, источник данных или индексатор.
 
-Вы не можете предоставить ключ для использования службой поиска Azure. Ключи API создаются службой.
+Вы не можете предоставить ключ для использования Когнитивный поиск Azure. Ключи API создаются службой.
 
 ```azurepowershell-interactive
 New-AzSearchQueryKey -ResourceGroupName <resource-group-name> -ServiceName <search-service-name> -Name <query-key-name> 
@@ -257,7 +257,7 @@ Id                : /subscriptions/65a1016d-0f67-45d2-b838-b8f373d6d52e/resource
 
 Создайте [индекс](search-what-is-an-index.md), [запросите индекс](search-query-overview.md) с помощью портала, API-интерфейсов и пакета SDK для .NET.
 
-* [Создание индекса службы "Поиск Azure" на портале Azure](search-create-index-portal.md)
+* [Создание индекса Azure Когнитивный поиск в портал Azure](search-create-index-portal.md)
 * [Настройка индексатора для загрузки данных из других служб](search-indexer-overview.md)
-* [Отправка запросов в индекс службы "Поиск Azure" с использованием обозревателя поиска на портале Azure](search-explorer.md)
-* [Как использовать Поиск Azure в приложении .NET](search-howto-dotnet-sdk.md)
+* [Запрос индекса Когнитивный поиск Azure с помощью обозревателя поиска в портал Azure](search-explorer.md)
+* [Использование Когнитивный поиск Azure в .NET](search-howto-dotnet-sdk.md)

@@ -1,26 +1,23 @@
 ---
-title: Предварительная версия REST API для поиска Azure 2019-05-06-Preview — Поиск Azure
-description: Azure Служба поиска REST API версии 2019-05-06-Preview включает экспериментальные функции, такие как хранилище знаний и управляемые клиентом ключи шифрования.
-services: search
-author: HeidiSteen
+title: REST API версии 2019-05-06-Preview
+titleSuffix: Azure Cognitive Search
+description: Azure Когнитивный поиск Service REST API версии 2019-05-06-Preview включает экспериментальные функции, такие как хранилище знаний и управляемые клиентом ключи шифрования.
 manager: nitinme
-ms.service: search
-ms.devlang: rest-api
+author: brjohnstmsft
+ms.author: brjohnst
+ms.service: cognitive-search
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: search
-ms.date: 05/02/2019
-ms.author: heidist
-ms.custom: seodec2018
-ms.openlocfilehash: 7fa280742556b7bc42d2c7fb30c880f836eef62b
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.date: 11/04/2019
+ms.openlocfilehash: a4daaac6abababcedb5d6dd7eb2122ef29846ef4
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69649980"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72792535"
 ---
-# <a name="azure-search-service-rest-api-version-2019-05-06-preview"></a>Azure Служба поиска API для других версий — версия 2019-05-06-Preview
-В этой статье описывается версия `api-version=2019-05-06-Preview` REST API службы "Поиск Azure", предлагающая экспериментальные функции, которые пока недоступны вообще.
+# <a name="azure-cognitive-search-service-rest-api-version-2019-05-06-preview"></a>API-интерфейс службы Когнитивный поиск Azure для других версий — Предварительная версия 2019-05-06
+
+В этой статье описывается `api-version=2019-05-06-Preview`ная версия REST API службы поиска, предлагающая экспериментальные функции, которые еще не доступны.
 
 > [!NOTE]
 > Функции предварительной версии доступны для тестирования и экспериментов с целью получения отзывов и могут изменяться. Мы не рекомендуем использовать предварительные версии API в рабочих приложениях.
@@ -49,11 +46,11 @@ ms.locfileid: "69649980"
 
     GET https://[service name].search.windows.net/indexes/[index name]/docs?search=*&api-version=2019-05-06-Preview
 
-Существуют различные версии службы поиска Azure. Дополнительные сведения см. в разделе [Версии API](search-api-versions.md).
+Служба Когнитивный поиск Azure доступна в нескольких версиях. Дополнительные сведения см. в разделе [Версии API](search-api-versions.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Ознакомьтесь с справочной документацией по Azure Служба поиска REST API. Если вы столкнулись с проблемами, попросите помощь по [StackOverflow](https://stackoverflow.com/) или [обратитесь в службу поддержки](https://azure.microsoft.com/support/community/?product=search).
+Ознакомьтесь с справочной документацией по поиску REST API. Если вы столкнулись с проблемами, попросите помощь по [StackOverflow](https://stackoverflow.com/) или [обратитесь в службу поддержки](https://azure.microsoft.com/support/community/?product=search).
 
 > [!div class="nextstepaction"]
 > [Справочник по службе поиска REST API](https://docs.microsoft.com/rest/api/searchservice/)

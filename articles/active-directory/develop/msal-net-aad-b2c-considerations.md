@@ -1,5 +1,6 @@
 ---
-title: Azure AD B2C (Библиотека проверки подлинности Microsoft для .NET) | Службы
+title: Azure AD B2C (Библиотека проверки подлинности Microsoft для .NET)
+titleSuffix: Microsoft identity platform
 description: Ознакомьтесь с конкретными соображениями при использовании Azure AD B2C с библиотекой проверки подлинности Майкрософт для .NET (MSAL.NET).
 services: active-directory
 documentationcenter: dev-center-name
@@ -17,30 +18,30 @@ ms.author: twhitney
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7444ecfd7a59224d0f08390385c508e4ecc40ddd
-ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
+ms.openlocfilehash: 1a30f792a74ffc3aa983d84d902fa736a3f9b015
+ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69532713"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72802954"
 ---
 # <a name="use-msalnet-to-sign-in-users-with-social-identities"></a>Использование MSAL.NET для входа пользователей с удостоверениями социальных сетей
 
 MSAL.NET можно использовать для входа пользователей с удостоверениями социальных сетей с помощью [Azure Active Directory B2C (Azure AD B2C)](https://aka.ms/aadb2c). Azure AD B2C построены на основе понятия политик. В MSAL.NET указание политики преобразуется в предоставление центра.
 
 - При создании экземпляра общедоступного клиентского приложения необходимо указать политику в центре сертификации.
-- Если необходимо применить политику, необходимо вызвать переопределение `AcquireTokenInteractive` , `authority` содержащее параметр.
+- Если необходимо применить политику, необходимо вызвать переопределение `AcquireTokenInteractive`, содержащее параметр `authority`.
 
 Эта страница предназначена для MSAL 3. x. Если вы заинтересованы в MSAL 2. x, см. раздел [Azure AD B2C особенности в MSAL 2. x](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/AAD-B2C-Specifics-MSAL-2.x).
 
 ## <a name="authority-for-a-azure-ad-b2c-tenant-and-policy"></a>Центр для клиента Azure AD B2C и политики
 
-Используемый `https://login.microsoftonline.com/tfp/{tenant}/{policyName}` центр:
+Используемый центр `https://login.microsoftonline.com/tfp/{tenant}/{policyName}`, где:
 
-- `tenant`имя клиента Azure AD B2C. 
-- `policyName`имя применяемой политики (например, "b2c_1_susi" для входа и регистрации).
+- `tenant` — имя клиента Azure AD B2C. 
+- `policyName` имя применяемой политики (например, "b2c_1_susi" для входа и регистрации).
 
-Текущим руководством Azure AD B2C является использование `b2clogin.com` в качестве центра. Например, `$"https://{your-tenant-name}.b2clogin.com/tfp/{your-tenant-ID}/{policyname}"`. Дополнительные сведения см. в этой [документации](/azure/active-directory-b2c/b2clogin).
+Текущим руководством Azure AD B2C является использование `b2clogin.com` в качестве центра. Пример: `$"https://{your-tenant-name}.b2clogin.com/tfp/{your-tenant-ID}/{policyname}"`. Дополнительные сведения см. в этой [документации](/azure/active-directory-b2c/b2clogin).
 
 ## <a name="instantiating-the-application"></a>Создание экземпляра приложения
 
@@ -77,8 +78,8 @@ AuthenticationResult ar = await application .AcquireToken(scopes, parentWindow)
 
 на:
 
-- `policy`Одна из предыдущих строк (например `PolicySignUpSignIn`,).
-- `GetAccountByPolicy(IEnumerable<IAccount>, string)`метод, который находит учетную запись для заданной политики. Пример:
+- `policy` быть одной из предыдущих строк (например, `PolicySignUpSignIn`).
+- `GetAccountByPolicy(IEnumerable<IAccount>, string)` — это метод, который находит учетную запись для данной политики. Пример.
 
   ```csharp
   private IAccount GetAccountByPolicy(IEnumerable<IAccount> accounts, string policy)
@@ -97,7 +98,7 @@ AuthenticationResult ar = await application .AcquireToken(scopes, parentWindow)
 
 ## <a name="special-case-of-editprofile-and-resetpassword-policies"></a>Особый случай политик Едитпрофиле и Ресетпассворд
 
-Если вы хотите предоставить пользователям возможности для входа в систему с помощью удостоверения социальных сетей, а затем изменить профиль, к которому вы хотите применить политику Azure AD B2C Едитпрофиле. Это можно сделать, вызвав `AcquireTokenInteractive` с конкретными полномочиями для этой политики и выполнив команду `Prompt.NoPrompt` , чтобы не отображать диалоговое окно выбора учетной записи (так как пользователь уже вошел в систему).
+Если вы хотите предоставить пользователям возможности для входа в систему с помощью удостоверения социальных сетей, а затем изменить профиль, к которому вы хотите применить политику Azure AD B2C Едитпрофиле. Это можно сделать, вызвав `AcquireTokenInteractive` с конкретными полномочиями для этой политики и выполнив команду `Prompt.NoPrompt`, чтобы не отображать диалоговое окно выбора учетной записи (так как пользователь уже вошел в систему).
 
 ```csharp
 private async void EditProfileButton_Click(object sender, RoutedEventArgs e)
@@ -131,7 +132,7 @@ private async void EditProfileButton_Click(object sender, RoutedEventArgs e)
 ### <a name="configure-the-ropc-flow-in-azure-ad-b2c"></a>Настройка потока РОПК в Azure AD B2C
 В клиенте Azure AD B2C создайте новый поток пользователя и выберите **Вход с помощью ропк**. Это позволит включить политику РОПК для клиента. Дополнительные сведения см. [в разделе Настройка потока учетных данных для пароля владельца ресурса](/azure/active-directory-b2c/configure-ropc) .
 
-`IPublicClientApplication`содержит метод:
+`IPublicClientApplication` содержит метод:
 ```csharp
 AcquireTokenByUsernamePassword(
             IEnumerable<string> scopes,
@@ -152,7 +153,7 @@ AcquireTokenByUsernamePassword(
 
 ## <a name="google-auth-and-embedded-webview"></a>Google auth и Embedded WebView
 
-Если вы являетесь Azure AD B2C разработчиком, использующим Google в качестве поставщика удостоверений, мы переносимся к использованию системного браузера, так как Google не разрешает [проверку подлинности из внедренных](https://developers.googleblog.com/2016/08/modernizing-oauth-interactions-in-native-apps.html)веб-представлений. В настоящее время — это доверенный центр для Google. `login.microsoftonline.com` Использование этого центра будет работать с внедренными WebView. Однако использование `b2clogin.com` не является доверенным центром использования Google, поэтому пользователи не смогут пройти проверку подлинности.
+Если вы являетесь Azure AD B2C разработчиком, использующим Google в качестве поставщика удостоверений, мы переносимся к использованию системного браузера, так как Google не разрешает [проверку подлинности из внедренных](https://developers.googleblog.com/2016/08/modernizing-oauth-interactions-in-native-apps.html)веб-представлений. В настоящее время `login.microsoftonline.com` является доверенным центром Google. Использование этого центра будет работать с внедренными WebView. Однако использование `b2clogin.com` не является доверенным центром Google, поэтому пользователи не смогут пройти проверку подлинности.
 
 Мы предложим вам обновление вики-сайта и эту [ошибку](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/688) в случае изменения.
 
@@ -161,7 +162,7 @@ AcquireTokenByUsernamePassword(
 ### <a name="known-issue-with-azure-ad-b2c"></a>Известная ошибка Azure AD B2C
 
 MSAL.Net поддерживает [кэш маркеров](/dotnet/api/microsoft.identity.client.tokencache?view=azure-dotnet). Ключ кэширования маркера основан на утверждениях, возвращенных поставщиком удостоверений. В настоящее время MSAL.Net требуется два утверждения для создания ключа кэша маркера:  
-- `tid`Это идентификатор клиента Azure AD; 
+- `tid`, который является ИДЕНТИФИКАТОРом клиента Azure AD, и 
 - `preferred_username` 
 
 Оба эти утверждения отсутствуют во многих Azure AD B2C сценариях. 
@@ -174,15 +175,15 @@ MSAL.Net поддерживает [кэш маркеров](/dotnet/api/microsof
 
 Предлагаемый обходной путь заключается в использовании [кэширования политикой](#acquire-a-token-to-apply-a-policy) .
 
-Кроме того, можно использовать `tid` утверждение, если вы используете [пользовательские политики B2C](https://aka.ms/ief), так как оно предоставляет возможность возврата дополнительных утверждений приложению. Дополнительные сведения о [преобразовании утверждений](/azure/active-directory-b2c/claims-transformation-technical-profile)
+Кроме того, можно использовать утверждение `tid`, если вы используете [пользовательские политики B2C](https://aka.ms/ief), так как оно предоставляет возможность возврата дополнительных утверждений приложению. Дополнительные сведения о [преобразовании утверждений](/azure/active-directory-b2c/claims-transformation-technical-profile)
 
 #### <a name="mitigation-for-missing-from-the-token-response"></a>Устранение рисков "отсутствует в ответе маркера"
 Один из вариантов — использовать утверждение Name в качестве предпочтительного имени пользователя. Этот процесс упоминается в этом [документе B2C doc](../../active-directory-b2c/active-directory-b2c-reference-policies.md) -> "в столбце" Заявка на возврат "выберите утверждения, которые должны возвращаться в маркерах авторизации, отправляемых обратно в приложение после успешного редактирования профиля. Например, выберите отображаемое имя, почтовый индекс.
 
-## <a name="next-steps"></a>Следующие шаги 
+## <a name="next-steps"></a>Дальнейшие действия 
 
 Дополнительные сведения о получении маркеров в интерактивном режиме с помощью MSAL.NET для Azure AD B2C приложений приведены в следующем примере.
 
-| Пример | Платформа | Описание|
+| Пример | платформа | Описание|
 |------ | -------- | -----------|
 |[Active-Directory-B2C-Xamarin-Native](https://github.com/Azure-Samples/active-directory-b2c-xamarin-native) | Xamarin iOS, Xamarin Android, UWP | Простое приложение Xamarin Forms, демонстрирующие использование MSAL.NET для проверки подлинности пользователей с помощью Azure AD B2C, а также доступа к веб-API с результирующими маркерами.|

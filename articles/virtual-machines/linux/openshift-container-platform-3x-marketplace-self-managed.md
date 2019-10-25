@@ -14,16 +14,16 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 10/14/2019
 ms.author: haroldw
-ms.openlocfilehash: 721d4dae2c05c252b863b7cea2589deca8404602
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: d5028ff6378fec5939aee3218071fe6f4eb1e843
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72392700"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72791616"
 ---
 # <a name="configure-prerequisites"></a>Настройка необходимых компонентов
 
-Прежде чем использовать предложение Marketplace для развертывания самостоятельно управляемого кластера OpenShift контейнеров 3,11 в Azure, необходимо настроить несколько предварительных требований.  Инструкции по созданию ключа SSH (без парольной фразы), хранилища ключей Azure, секрета хранилища ключей и субъекта-службы см. в статье [Предварительные требования OpenShift](https://docs.microsoft.com/azure/virtual-machines/linux/openshift-prerequisites) .
+Прежде чем использовать предложение Marketplace для развертывания самостоятельно управляемого кластера OpenShift контейнеров 3,11 в Azure, необходимо настроить несколько предварительных требований.  Инструкции по созданию ключа SSH (без парольной фразы), хранилища ключей Azure, секрета хранилища ключей и субъекта-службы см. в статье [Предварительные требования OpenShift](https://docs.microsoft.com/azure/virtual-machines/linux/openshift-container-platform-3x-prerequisites) .
 
  
 ## <a name="deploy-using-the-marketplace-offer"></a>Развертывание с помощью предложения Marketplace

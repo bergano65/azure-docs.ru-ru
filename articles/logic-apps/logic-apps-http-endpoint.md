@@ -12,12 +12,12 @@ ms.assetid: 73ba2a70-03e9-4982-bfc8-ebfaad798bc2
 ms.topic: article
 ms.custom: H1Hack27Feb2017
 ms.date: 03/31/2017
-ms.openlocfilehash: eb8451272ecb5bc7b9a7c670545170cd74621883
-ms.sourcegitcommit: d37991ce965b3ee3c4c7f685871f8bae5b56adfa
+ms.openlocfilehash: 6e5a8eda3891b3b356e0cbd7b6d2e22e4a70c278
+ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72680311"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72799725"
 ---
 # <a name="call-trigger-or-nest-logic-apps-by-using-http-endpoints-in-azure-logic-apps"></a>Вызов, активация или вложение приложений логики с помощью конечных точек HTTP в Azure Logic Apps
 
@@ -32,7 +32,7 @@ ms.locfileid: "72680311"
 * [webhook HTTP](../connectors/connectors-native-webhook.md).
 
    > [!NOTE]
-   > В этих примерах используется триггер **запроса**. Но все принципы также применимы для других типов триггеров, поэтому вы можете использовать любой из перечисленных триггеров HTTP.
+   > Хотя в этих примерах используется триггер **запроса** , можно использовать любой из перечисленных триггеров на основе запросов, а все принципы, идентично применяемые к другим типам триггеров.
 
 ## <a name="set-up-an-http-endpoint-for-your-logic-app"></a>Настройка конечной точки HTTP для приложения логики
 
@@ -40,22 +40,21 @@ ms.locfileid: "72680311"
 
 1. Войдите на [портале Azure](https://portal.azure.com "портала Azure"). В вашем приложении логики откройте конструктор приложений логики.
 
-2. Добавьте триггер, который позволяет приложению логики получать входящие запросы. Например, добавьте триггер **Request** в приложение логики.
+1. Добавьте триггер, который позволяет приложению логики получать входящие запросы. Например, добавьте триггер **Request** в приложение логики.
 
-3.  В разделе **Схема JSON текста запроса** вы можете при необходимости ввести схему JSON для полезных данных, которые должен получить триггер.
+1. В разделе **Схема JSON текста запроса** вы можете при необходимости ввести схему JSON для полезных данных, которые должен получить триггер.
 
-    Конструктор использует эту схему для создания токенов, с помощью которых приложение логики получает, анализирует и передает данные от триггера через рабочий процесс. 
-    Дополнительные сведения о [токенах, созданных из схем JSON](#generated-tokens).
+   Конструктор использует эту схему для создания токенов, с помощью которых приложение логики получает, анализирует и передает данные от триггера через рабочий процесс. Дополнительные сведения о [маркерах, созданных из схем JSON](#generated-tokens).
 
-    В этом примере введите схему, показанную в конструкторе:
+   В этом примере введите эту схему, как показано в конструкторе:
 
-    ```json
-    {
+   ```json
+   {
       "type": "object",
       "properties": {
-        "address": {
-          "type": "string"
-        }
+         "address": {
+            "type": "string"
+         }
       },
       "required": [
         "address"
@@ -63,52 +62,50 @@ ms.locfileid: "72680311"
     }
     ```
 
-    ![Добавление действия Request][1]
+   ![Добавление действия Request](./media/logic-apps-http-endpoint/manualtrigger.png)
 
-    > [!TIP]
-    > 
-    > Вы можете создать схему для примера полезных данных JSON с помощью такого инструмента, как [jsonschema.net](https://jsonschema.net/), или с помощью триггера **запроса**, выбрав **Использовать пример полезной нагрузки, чтобы создать схему**. 
-    > Введите образец полезных данных и выберите **Готово**.
+   > [!TIP]
+   >
+   > Вы можете создать схему для примера полезных данных JSON из средства, например [jsonschema.NET](https://jsonschema.net/) , или в триггере **запроса** , выбрав **использовать образец полезных данных для создания схемы**. Введите образец полезных данных и выберите **Готово**.
 
-    Например, образец полезных данных
+   Например, образец полезных данных
 
-    ```json
-    {
-       "address": "21 2nd Street, New York, New York"
-    }
-    ```
+   ```json
+   {
+      "address": "21 2nd Street, New York, New York"
+   }
+   ```
 
-    создает эту схему:
+   Создает эту схему:
 
-    ```json
-    {
-       "type": "object",
-       "properties": {
-          "address": {
-             "type": "string" 
-          }
-       }
-    }
-    ```
+   ```json
+   {
+      "type": "object",
+      "properties": {
+         "address": {
+            "type": "string"
+         }
+      }
+   }
+   ```
 
-4.  Сохраните приложение логики. В поле **HTTP POST на этот URL-адрес** необходимо указать созданный URL-адрес обратного вызова:
+1. Сохраните приложение логики. В поле **HTTP POST на этот URL-адрес** необходимо указать созданный URL-адрес обратного вызова:
 
-    ![Созданный URL-адрес обратного вызова для конечной точки](./media/logic-apps-http-endpoint/generated-endpoint-url.png)
+   ![Созданный URL-адрес обратного вызова для конечной точки](./media/logic-apps-http-endpoint/generated-endpoint-url.png)
 
-    Этот URL-адрес содержит ключ подписанного URL-адреса в параметрах запроса, используемого для проверки подлинности. 
-    Вы также можете получить URL-адрес конечной точки HTTP из колонки обзора приложения логики на портале Azure. В разделе **Журнал триггеров** выберите триггер:
+   Этот URL-адрес содержит ключ подписанного URL-адреса в параметрах запроса, используемого для проверки подлинности. Вы также можете получить URL-адрес конечной точки HTTP из колонки обзора приложения логики на портале Azure. В разделе **Журнал триггеров** выберите триггер:
 
-    ![Получение URL-адреса конечной точки HTTP на портале Azure][2]
+   ![Получение URL-адреса конечной точки HTTP на портале Azure](./media/logic-apps-http-endpoint/manualtriggerurl.png)
 
-    URL-адрес также можно получить, выполнив этот вызов:
+   URL-адрес также можно получить, выполнив этот вызов:
 
-    ```
-    POST https://management.azure.com/{logic-app-resourceID}/triggers/{myendpointtrigger}/listCallbackURL?api-version=2016-06-01
+    ```http
+    POST https://management.azure.com/{logic-app-resource-ID}/triggers/{myendpointtrigger}/listCallbackURL?api-version=2016-06-01
     ```
 
 ## <a name="change-the-http-method-for-your-trigger"></a>Изменение метода HTTP для триггера
 
-По умолчанию триггер **запроса** ожидает запрос HTTP POST, но вы можете воспользоваться другим методом HTTP. 
+По умолчанию триггер **запроса** ожидает запрос HTTP POST, но вы можете воспользоваться другим методом HTTP.
 
 > [!NOTE]
 > Вы можете указать только один тип метода.
@@ -117,10 +114,10 @@ ms.locfileid: "72680311"
 
 2. Откройте список **Метод**. В этом примере выберите **GET**, чтобы вы могли позже проверить URL-адрес конечной точки HTTP.
 
-    > [!NOTE]
-    > Вы можете выбрать любой другой метод HTTP или указать пользовательский метод для своего приложения логики.
+   > [!NOTE]
+   > Вы можете выбрать любой другой метод HTTP или указать пользовательский метод для своего приложения логики.
 
-    ![Изменение метода HTTP](./media/logic-apps-http-endpoint/change-method.png)
+   ![Изменение метода HTTP](./media/logic-apps-http-endpoint/change-method.png)
 
 ## <a name="accept-parameters-through-your-http-endpoint-url"></a>Принятие параметров через URL-адрес конечной точки HTTP
 
@@ -130,37 +127,36 @@ ms.locfileid: "72680311"
 
 2. В разделе **Метод** укажите метод HTTP, который будет использовать запрос. В этом примере выберите метод **GET**, чтобы проверить свой URL-адрес конечной точки HTTP.
 
-      > [!NOTE]
-      > Когда вы указываете относительный путь для своего триггера, вы должны явно указать для триггера метод HTTP.
+   > [!NOTE]
+   > Когда вы указываете относительный путь для своего триггера, вы должны явно указать для триггера метод HTTP.
 
 3. В поле **Относительный путь** укажите относительный путь для параметра, который ваш URL-адрес должен принять, например `customers/{customerID}`.
 
-    ![Указание метода HTTP и относительного пути для параметра](./media/logic-apps-http-endpoint/relativeurl.png)
+   ![Указание метода HTTP и относительного пути для параметра](./media/logic-apps-http-endpoint/relativeurl.png)
 
 4. Чтобы использовать параметр, добавьте действие **Ответ** для приложения логики. (Для вашего триггера выберите **Новый шаг** > **Добавить действие** > **Ответ**.) 
 
 5. В **тексте** ответа добавьте токен для параметра, который вы указали в относительном пути триггера.
 
-    Например, чтобы вернуть `Hello {customerID}`, добавьте в **текст** ответа `Hello {customerID token}`. 
-    Появится список динамического содержимого с токеном `customerID`, который нужно выбрать.
+   Например, чтобы вернуть `Hello {customerID}`, добавьте в **текст** ответа `Hello {customerID token}`. Появится список динамического содержимого с токеном `customerID`, который нужно выбрать.
 
-    ![Добавление параметра в текст ответа](./media/logic-apps-http-endpoint/relativeurlresponse.png)
+   ![Добавление параметра в текст ответа](./media/logic-apps-http-endpoint/relativeurlresponse.png)
 
-    Поле **текста** должно выглядеть, как в следующем примере:
+   Поле **текста** должно выглядеть, как в следующем примере:
 
-    ![Поле текста ответа с параметром](./media/logic-apps-http-endpoint/relative-url-with-parameter.png)
+   ![Поле текста ответа с параметром](./media/logic-apps-http-endpoint/relative-url-with-parameter.png)
 
 6. Сохраните приложение логики. 
 
     URL-адрес конечной точки HTTP теперь включает относительный путь, например: 
 
-    https&#58;//prod-00.southcentralus.logic.azure.com/workflows/f90cb66c52ea4e9cabe0abf4e197deff/triggers/manual/paths/invoke/customers/{customerID}...
+    ```http
+    https://prod-00.southcentralus.logic.azure.com/workflows/{logic-app-resource-ID}/triggers/manual/paths/invoke/customers/{customerID}...
+    ```
 
 7. Для проверки конечной точки HTTP скопируйте и вставьте обновленный URL-адрес в другом окне браузера, но замените `{customerID}` на `123456` и нажмите клавишу ВВОД.
 
-    Браузер должен вывести следующий текст: 
-
-    `Hello 123456`
+   В браузере должен отображаться следующий текст: `Hello 123456`
 
 <a name="generated-tokens"></a>
 
@@ -215,16 +211,16 @@ ms.locfileid: "72680311"
 
 ```json
 {
-    "headers": {
-        "content-type" : "application/json"
-    },
-    "body": {
-        "myProperty" : "property value"
-    }
+   "headers": {
+      "content-type" : "application/json"
+   },
+   "body": {
+      "myProperty" : "property value"
+   }
 }
 ```
 
-Для доступа к свойству `body` можно использовать сокращенный вариант `@triggerBody()`. 
+Для доступа к свойству `body` можно использовать сокращенный вариант `@triggerBody()`.
 
 ## <a name="respond-to-requests"></a>Ответ на запросы
 
@@ -237,7 +233,7 @@ ms.locfileid: "72680311"
 
 Вы можете включить несколько заголовков и любой тип содержимого в тексте ответа. В примере ответа заголовок указывает, что ответ имеет тип содержимого `application/json`, а текст содержит `title` и `name`, на основе обновленной ранее схемы JSON для триггера **запроса**.
 
-![Действие ответа HTTP][3]
+![Действие ответа HTTP](./media/logic-apps-http-endpoint/response.png)
 
 У ответов есть следующие свойства:
 
@@ -251,18 +247,18 @@ ms.locfileid: "72680311"
 
 ``` json
 "Response": {
+   "type": "Response",
    "inputs": {
       "body": {
          "title": "@{triggerBody()?['title']}",
          "name": "@{triggerBody()?['name']}"
       },
       "headers": {
-           "content-type": "application/json"
+         "content-type": "application/json"
       },
       "statusCode": 200
    },
-   "runAfter": {},
-   "type": "Response"
+   "runAfter": {}
 }
 ```
 
@@ -283,11 +279,11 @@ ms.locfileid: "72680311"
 
 #### <a name="q-can-i-configure-http-endpoints-further"></a>Вопрос. Могу ли я дополнительно настроить конечные точки HTTP?
 
-Ответ. Да, конечные точки HTTP поддерживают расширенную конфигурацию через [**управление API**](../api-management/api-management-key-concepts.md). Эта служба также предлагает вам возможность согласованно управлять всеми своими API, включая приложения логики, настраивать имена домена, использовать дополнительные методы проверки подлинности и т. д. В частности она предоставляет следующие возможности:
+Ответ. Да, конечные точки HTTP поддерживают более сложную конфигурацию с помощью службы [управления API Azure](../api-management/api-management-key-concepts.md). Эта служба также предлагает вам возможность согласованно управлять всеми своими API, включая приложения логики, настраивать имена домена, использовать дополнительные методы проверки подлинности и т. д. В частности она предоставляет следующие возможности:
 
-* [Изменение метода запроса](https://docs.microsoft.com/azure/api-management/api-management-advanced-policies#SetRequestMethod)
-* [Изменение сегментов URL-адреса запроса](https://docs.microsoft.com/azure/api-management/api-management-transformation-policies#RewriteURL)
-* Настройка доменов управления API в [портал Azure](https://portal.azure.com/ "портала Azure")
+* [Изменение метода запроса](../api-management/api-management-advanced-policies.md#SetRequestMethod)
+* [Изменение сегментов URL-адреса запроса](../api-management/api-management-transformation-policies.md#RewriteURL)
+* Настройка доменов управления API в [портал Azure](https://portal.azure.com/)
 * настройка политики для проверки базовой проверки подлинности.
 
 #### <a name="q-what-changed-when-the-schema-migrated-from-the-december-1-2014-preview"></a>Вопрос. Что изменилось после миграции схемы с предварительной версии от 1 декабря 2014 года?
@@ -304,17 +300,7 @@ ms.locfileid: "72680311"
 | Ссылка на текст входящего ответа через `@triggerOutputs().body.Content` |Используйте для ссылки `@triggerOutputs().body` |
 | **Отправка HTTP-ответа** для прослушивателя HTTP. |Щелкните **Ответить на запрос HTTP** (приложение API не требуется) |
 
-## <a name="get-help"></a>Получение справки
-
-Чтобы задать вопросы, помочь другим пользователям и узнать, что делают другие пользователи, посетите [форум по Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
-
-Чтобы улучшить Azure Logic Apps и соединители, голосуйте за идеи или предлагайте собственные на [сайте обратной связи Azure Logic Apps](https://aka.ms/logicapps-wish).
-
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Создание определений приложений логики](./logic-apps-author-definitions.md)
-* [Обработка ошибок и исключений](./logic-apps-exception-handling.md)
-
-[1]: ./media/logic-apps-http-endpoint/manualtrigger.png
-[2]: ./media/logic-apps-http-endpoint/manualtriggerurl.png
-[3]: ./media/logic-apps-http-endpoint/response.png
+* [Создание определений приложений логики](logic-apps-author-definitions.md)
+* [Обработка ошибок и исключений](logic-apps-exception-handling.md)

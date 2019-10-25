@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 09/20/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 7c4aeef07d34159e01f188effae77926895e2857
-ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
+ms.openlocfilehash: 6f3f0e0b8b5098784359e7703c4a165654ff9894
+ms.sourcegitcommit: ec2b75b1fc667c4e893686dbd8e119e7c757333a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2019
-ms.locfileid: "71179188"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72808192"
 ---
 # <a name="create-a-simple-query-in-azure-search"></a>Создание простого запроса в службе поиска Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "71179188"
 
 В следующих примерах используется индекс поиска вакансий в Нью-Йорке, состоящий из вакансий, доступных на основе набора данных, полученных в рамках инициативы [City of New York OpenData](https://nycopendata.socrata.com/). Эти данные не являются текущими или завершенными. Индекс размещен в службе песочницы корпорации Майкрософт. Это означает, что для использования этих запросов подписка Azure или служба поиска Azure не требуется.
 
-Вам потребуется Postman или аналогичный инструмент для отправки HTTP-запроса GET. Дополнительные сведения см. в [кратком руководстве Изучите службу поиска Azure REST API](search-get-started-postman.md)используя POST.
+Вам потребуется Postman или аналогичный инструмент для отправки HTTP-запроса GET. Дополнительные сведения см. в разделе [Краткое руководство. изучение службы поиска Azure REST API помощью процедуры POST](search-get-started-postman.md).
 
 ### <a name="set-the-request-header"></a>Настройка заголовка запроса
 
@@ -73,7 +73,7 @@ URL-адрес содержит следующие элементы.
 
 Для интерактивных запросов не нужно указывать дополнительные параметры: простой синтаксис используется по умолчанию. В коде, если вы ранее вызывали **queryType=full** для применения полного синтаксиса запросов, можно вернуть значение по умолчанию, **queryType=simple**.
 
-## <a name="example-1-field-scoped-query"></a>Пример 1 Запрос по полям
+## <a name="example-1-field-scoped-query"></a>Пример 1. Запрос по полю
 
 Первый пример не связан с синтаксическим анализатором, но мы начали с него, чтобы представить первое фундаментальное понятие запроса: автономность. В этом примере задается область выполнения запроса и для ответа определяется всего несколько конкретных полей. Знать, как структурировать читаемый ответ JSON, важно, если используется инструмент Postman или обозреватель поиска. 
 
@@ -103,7 +103,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-
 
 Вы могли заметить оценку поиска в ответе. Универсальная оценка 1 отображается, если приоритет не указан, потому что выполнен поиск не всего текста или не указано условие. Для нулевого поиска без критериев строки возвращаются в произвольном порядке. Когда вы добавите условие поиска, вы увидите, как оценки поиска превратятся в понятные значения.
 
-## <a name="example-2-look-up-by-id"></a>Пример 2 Поиск по идентификатору
+## <a name="example-2-look-up-by-id"></a>Пример 2. Поиск по идентификатору
 
 Это немного нетипичный пример. Однако при оценке поведения при поиске может потребоваться проверить все содержимое конкретного документа, чтобы понять, почему он был включен в результаты или исключен из них. Чтобы вернуть весь документ, используйте [операцию поиска](https://docs.microsoft.com/rest/api/searchservice/lookup-document) для передачи идентификатора документа.
 
@@ -119,7 +119,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-
 https://azs-playground.search.windows.net/indexes/nycjobs/docs/9E1E3AF9-0660-4E00-AF51-9B654925A2D5?api-version=2019-05-06&$count=true&search=*
 ```
 
-## <a name="example-3-filter-queries"></a>Пример 3 Фильтрация запросов
+## <a name="example-3-filter-queries"></a>Пример 3. Фильтрация запросов
 
 [Синтаксис фильтра](https://docs.microsoft.com/azure/search/search-query-odata-filter) — это выражение OData, которое можно использовать с параметром **search** или само по себе. Автономный фильтр без параметра поиска полезен, когда выражение фильтра может полностью определить интересующие документы. Без строки запроса не выполняется лексический или лингвистический анализ (все оценки имеют значение 1), нет оценки и рейтинга. Обратите внимание, что строка поиска пуста.
 
@@ -128,7 +128,7 @@ POST /indexes/nycjobs/docs/search?api-version=2019-05-06
     {
       "search": "",
       "filter": "salary_frequency eq 'Annual' and salary_range_from gt 90000",
-      "select": "select=job_id, business_title, agency, salary_range_from",
+      "select": "job_id, business_title, agency, salary_range_from",
       "count": "true"
     }
 ```
@@ -151,7 +151,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-
 
 Дополнительные сведения о функции см. в [описании search.ismatch в разделе с примерами фильтров](https://docs.microsoft.com/azure/search/search-query-odata-full-text-search-functions#examples).
 
-## <a name="example-4-range-filters"></a>Пример 4. Фильтры диапазонов
+## <a name="example-4-range-filters"></a>Пример 4. Фильтры диапазонов
 
 Фильтрация диапазона поддерживается с помощью выражения **`$filter`** для любого типа данных. В следующих примерах выполняется поиск по числовым и строковым полям. 
 
@@ -198,7 +198,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-
 > [!NOTE]
 > В приложениях поиска часто используется фасетная навигация на основе диапазонов значений. Дополнительные сведения и примеры создания фильтров для структур фасетной навигации см. в разделе ["Фильтрация по диапазону значений" в статье *Как реализовать фасетную навигацию в службе поиска Azure*](search-faceted-navigation.md#filter-based-on-a-range).
 
-## <a name="example-5-geo-search"></a>Пример 5. Геопространственный поиск
+## <a name="example-5-geo-search"></a>Пример 5. Геопространственный поиск
 
 Индекс выборки включает в себя поле geo_location с координатами широты и долготы. В этом примере используется [функция geo.distance](https://docs.microsoft.com/azure/search/search-query-odata-geo-spatial-functions#examples), которая фильтрует документы в пределах окружности начальной точки до произвольного расстояния (в километрах), которое вы предоставляете. Вы можете отрегулировать последнее значение в запросе (4), чтобы уменьшить или увеличить площадь поверхности запроса.
 
@@ -221,7 +221,7 @@ POST /indexes/nycjobs/docs/search?api-version=2019-05-06
 https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-05-06&$count=true&search=&$select=job_id, business_title, work_location&$filter=geo.distance(geo_location, geography'POINT(-74.11734 40.634384)') le 4
 ```
 
-## <a name="example-6-search-precision"></a>Пример 6. Точность поиска
+## <a name="example-6-search-precision"></a>Пример 6. Точность поиска
 
 Запросы терминов позволяют искать одиночные термины или наборы терминов, которые оцениваются независимо друг от друга. Запросы фраз заключаются кавычки и проверяются как буквальная строка. Точностью соответствия управляют операторы и параметр searchMode.
 
@@ -243,7 +243,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-
 https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-05-06&$count=true&search="fire department"
 ```
 
-## <a name="example-7-booleans-with-searchmode"></a>Пример 7. Логические операторы с параметром searchMode
+## <a name="example-7-booleans-with-searchmode"></a>Пример 7. Логические операторы с параметром searchMode
 
 Простой синтаксис поддерживает логические операторы в виде знаков (`+, -, |`). Параметр searchMode задает компромисс между точностью и полнотой результатов. `searchMode=any` позволяет отдать предпочтение полноте (в результирующий набор добавляется любой документ, соответствующий любому заданному условию), а `searchMode=all` позволяет отдать предпочтение точности (все условия должны быть выполнены). По умолчанию используется `searchMode=any`, что может порождать неожиданные результаты, если вы формируете запрос с несколькими операторами и получаете больше результатов, а не сокращаете их число до более точных. Это особенно верно для оператора NOT, когда результаты включают в себя все документы, которые "не содержат" конкретный термин.
 
@@ -262,7 +262,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-
 ```
   ![режим поиска "все"](media/search-query-simple-examples/searchmodeall.png)
 
-## <a name="example-8-structuring-results"></a>Пример 8. Структурирование результатов
+## <a name="example-8-structuring-results"></a>Пример 8. Структурирование результатов
 
 Несколько параметров управляют тем, какие поля добавляются в результаты поиска, числом документов, возвращаемых в каждом пакете, и порядком сортировки. В этом примере используются некоторые из предыдущих примеров, но результаты ограничиваются конкретными полями с помощью оператора **$select** и условия буквального поиска. Результат содержит 82 совпадения. 
 
@@ -287,7 +287,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-
 https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-05-06&$count=true&$select=job_id,agency,business_title,civil_service_title,work_location,job_description&search="fire department"&$orderby=civil_service_title&$top=5&$skip=5
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Попробуйте указать запросы в коде. Чтобы узнать о том, как настроить поисковые запросы для .NET и REST API, используя простой синтаксис по умолчанию, воспользуйтесь приведенными ссылками.
 
 * [Отправка запросов в индекс службы поиска Azure с помощью пакета SDK для .NET](search-query-dotnet.md)

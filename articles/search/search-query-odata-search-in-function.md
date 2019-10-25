@@ -1,13 +1,13 @@
 ---
-title: Справочник по функциям search.in OData — Поиск Azure
-description: Функция search.in OData в запросах поиска Azure.
-ms.date: 06/13/2019
-services: search
-ms.service: search
-ms.topic: conceptual
+title: Справочник по функциям search.in OData
+titleSuffix: Azure Cognitive Search
+description: Функция search.in OData в запросах Когнитивный поиск Azure.
+manager: nitinme
 author: brjohnstmsft
 ms.author: brjohnst
-manager: nitinme
+ms.service: cognitive-search
+ms.topic: conceptual
+ms.date: 11/04/2019
 translation.priority.mt:
 - de-de
 - es-es
@@ -19,32 +19,32 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 8bac0205fa2de8378abaa4d9e8ba8e05ea69192e
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.openlocfilehash: f641e50554e720d273735fd20032e60444cb198a
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69647940"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72793278"
 ---
-# <a name="odata-searchin-function-in-azure-search"></a>Функция `search.in` OData в службе поиска Azure
+# <a name="odata-searchin-function-in-azure-cognitive-search"></a>Функция `search.in` OData в Azure Когнитивный поиск
 
-Распространенным сценарием в [выражениях фильтра OData](query-odata-filter-orderby-syntax.md) является проверка того, что одно поле в каждом документе равно одному из множества возможных значений. Например, некоторые приложения реализуют [фильтрацию безопасности](search-security-trimming-for-azure-search.md) , проверяя поле, содержащее один или несколько идентификаторов субъектов, по списку идентификаторов субъектов, представляющих пользователя, выполняющего запрос. Один из способов написать запрос, подобный этому, заключается в [`eq`](search-query-odata-comparison-operators.md) использовании [`or`](search-query-odata-logical-operators.md) операторов и:
+Распространенным сценарием в [выражениях фильтра OData](query-odata-filter-orderby-syntax.md) является проверка того, что одно поле в каждом документе равно одному из множества возможных значений. Например, некоторые приложения реализуют [фильтрацию безопасности](search-security-trimming-for-azure-search.md) , проверяя поле, содержащее один или несколько идентификаторов субъектов, по списку идентификаторов субъектов, представляющих пользователя, выполняющего запрос. Один из способов написать запрос, подобный этому, заключается в использовании операторов [`eq`](search-query-odata-comparison-operators.md) и [`or`](search-query-odata-logical-operators.md) .
 
     group_ids/any(g: g eq '123' or g eq '456' or g eq '789')
 
-Однако существует более короткий способ записи, с помощью `search.in` функции:
+Однако существует более короткий способ записи, используя функцию `search.in`:
 
     group_ids/any(g: search.in(g, '123, 456, 789'))
 
 > [!IMPORTANT]
-> Помимо более короткого и простого чтения, использование `search.in` также обеспечивает [преимущества производительности](#bkmk_performance) и предотвращает определенные [ограничения на размер фильтров](search-query-odata-filter.md#bkmk_limits) , если в фильтре содержится сотни или даже тысячи значений. По этой причине мы настоятельно рекомендуем использовать `search.in` вместо более сложного отсоединения выражений равенства.
+> Кроме того, использование `search.in` предоставляет [преимущества для повышения производительности](#bkmk_performance) и позволяет избежать определенных [ограничений на размер фильтров](search-query-odata-filter.md#bkmk_limits) при наличии сотен или даже тысяч значений для включения в фильтр. По этой причине мы настоятельно рекомендуем использовать `search.in` вместо более сложной дизъюнкции выражений равенства.
 
 > [!NOTE]
-> В версии 4,01 стандарта OData недавно появился [ `in` оператор](https://docs.oasis-open.org/odata/odata/v4.01/cs01/part2-url-conventions/odata-v4.01-cs01-part2-url-conventions.html#_Toc505773230), `search.in` подобный поведению функции в службе поиска Azure. Однако поиск Azure не поддерживает этот оператор, поэтому вместо него необходимо использовать `search.in` функцию.
+> В версии 4,01 стандарта OData недавно появился [оператор`in`](https://docs.oasis-open.org/odata/odata/v4.01/cs01/part2-url-conventions/odata-v4.01-cs01-part2-url-conventions.html#_Toc505773230), поведение которого аналогично функции `search.in` в Azure когнитивный Поиск. Однако Когнитивный поиск Azure не поддерживает этот оператор, поэтому вместо него необходимо использовать функцию `search.in`.
 
 ## <a name="syntax"></a>Синтаксис
 
-Следующая EBNF ([Расширенная форма Backus-Наура](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)) определяет грамматику `search.in` функции:
+Следующая EBNF ([Расширенная форма Backus-Наура](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)) определяет грамматику функции `search.in`:
 
 <!-- Upload this EBNF using https://bottlecaps.de/rr/ui to create a downloadable railroad diagram. -->
 
@@ -56,14 +56,14 @@ search_in_call ::=
 Доступна также интерактивная схема синтаксиса:
 
 > [!div class="nextstepaction"]
-> [Схема синтаксиса OData для поиска Azure](https://azuresearch.github.io/odata-syntax-diagram/#search_in_call)
+> [Схема синтаксиса OData для Когнитивный поиск Azure](https://azuresearch.github.io/odata-syntax-diagram/#search_in_call)
 
 > [!NOTE]
-> Полный EBNF см. в [справочнике по синтаксису выражений OData для поиска Azure](search-query-odata-syntax-reference.md) .
+> Полный EBNF см. в [справочнике по синтаксису выражений OData для Azure когнитивный Поиск](search-query-odata-syntax-reference.md) .
 
-`search.in` Функция проверяет, равен ли заданное строковое поле или переменная диапазона одному из заданных списков значений. Равенство между переменной и каждым значением в списке определяется с учетом регистра так же, как и для `eq` оператора. Следовательно, выражение, подобное `search.in(myfield, 'a, b, c')`, эквивалентно выражению `myfield eq 'a' or myfield eq 'b' or myfield eq 'c'`, за исключением того, что функция `search.in` выполняется намного быстрее.
+Функция `search.in` проверяет, равен ли заданное строковое поле или переменная диапазона одному из заданных списков значений. Равенство между переменной и каждым значением в списке определяется с учетом регистра так же, как и для оператора `eq`. Следовательно, выражение, подобное `search.in(myfield, 'a, b, c')`, эквивалентно выражению `myfield eq 'a' or myfield eq 'b' or myfield eq 'c'`, за исключением того, что функция `search.in` выполняется намного быстрее.
 
-Существует две перегрузки `search.in` функции:
+Существует две перегрузки функции `search.in`:
 
 - `search.in(variable, valueList)`
 - `search.in(variable, valueList, delimiters)`
@@ -72,15 +72,15 @@ search_in_call ::=
 
 | Имя параметра | Тип | Описание |
 | --- | --- | --- |
-| `variable` | `Edm.String` | Ссылка на строковое поле (или переменная диапазона для поля коллекции строк в случае, когда `search.in` используется `any` в выражении или `all` ). |
-| `valueList` | `Edm.String` | Строка, содержащая список значений с разделителями для сопоставления `variable` с параметром. `delimiters` Если параметр не указан, разделителями по умолчанию являются пробел и запятая. |
-| `delimiters` | `Edm.String` | Строка, в которой каждый символ обрабатывается как разделитель при синтаксическом анализе `valueList` параметра. Значение этого параметра `' ,'` по умолчанию означает, что все значения с пробелами и (или) запятыми между ними будут разделены. Если необходимо использовать разделители, отличные от пробелов и запятых, так как эти символы содержат значения, можно указать альтернативные разделители, например `'|'` в этом параметре. |
+| `variable` | `Edm.String` | Ссылка на строковое поле (или переменная диапазона для поля коллекции строк в случае, когда `search.in` используется в выражении `any` или `all`). |
+| `valueList` | `Edm.String` | Строка, содержащая список значений с разделителями для сопоставления с параметром `variable`. Если параметр `delimiters` не указан, разделителями по умолчанию являются пробел и запятая. |
+| `delimiters` | `Edm.String` | Строка, в которой каждый символ обрабатывается как разделитель при синтаксическом анализе параметра `valueList`. Значение этого параметра по умолчанию — `' ,'` что означает, что все значения с пробелами и/или запятыми между ними будут разделены. Если необходимо использовать разделители, отличные от пробелов и запятых, так как эти символы содержат значения, можно указать альтернативные разделители, такие как `'|'` в этом параметре. |
 
 <a name="bkmk_performance"></a>
 
-### <a name="performance-of-searchin"></a>Производительность`search.in`
+### <a name="performance-of-searchin"></a>Производительность `search.in`
 
-При использовании `search.in` время отклика будет менее секунды, если второй параметр содержит список из сотен или тысяч значений. Нет явного ограничения на количество элементов `search.in`, которые можно передать, хотя по-прежнему ограничивается максимальным размером запроса. Однако задержка растет по мере увеличения количества значений.
+При использовании `search.in` время отклика будет менее секунды, если второй параметр содержит список из сотен или тысяч значений. Нет явного ограничения на количество элементов, которые можно передать `search.in`, хотя по-прежнему ограничивается максимальным размером запроса. Однако задержка растет по мере увеличения количества значений.
 
 ## <a name="examples"></a>Примеры
 
@@ -104,9 +104,9 @@ search_in_call ::=
 
     Tags/all(tag: not search.in(tag, 'motel, cabin'))
 
-## <a name="next-steps"></a>Следующие шаги  
+## <a name="next-steps"></a>Дальнейшие действия  
 
-- [Фильтры в службе "Поиск Azure"](search-filters.md)
-- [Общие сведения о языке выражений OData для поиска Azure](query-odata-filter-orderby-syntax.md)
-- [Справочник по синтаксису выражений OData для поиска Azure](search-query-odata-syntax-reference.md)
-- [Search Documents (Azure Search Service REST API)](https://docs.microsoft.com/rest/api/searchservice/Search-Documents) (Поиск по документам (REST API службы "Поиск Azure"))
+- [Фильтры в Когнитивный поиск Azure](search-filters.md)
+- [Общие сведения о языке выражений OData для Azure Когнитивный поиск](query-odata-filter-orderby-syntax.md)
+- [Справочник по синтаксису выражений OData для Azure Когнитивный поиск](search-query-odata-syntax-reference.md)
+- [Поиск документов &#40;Когнитивный поиск Azure REST API&#41;](https://docs.microsoft.com/rest/api/searchservice/Search-Documents)

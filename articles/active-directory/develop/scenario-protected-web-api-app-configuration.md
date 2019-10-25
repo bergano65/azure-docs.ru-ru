@@ -1,5 +1,6 @@
 ---
-title: Защищенный веб-API — конфигурация кода приложения | Службы
+title: Защищенный веб-API — конфигурация кода приложения
+titleSuffix: Microsoft identity platform
 description: Узнайте, как создать защищенный веб-API и настроить код приложения.
 services: active-directory
 documentationcenter: dev-center-name
@@ -16,20 +17,20 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9fdc30df1f932a35702b01d7146017c4ca82c91a
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 49dc3b0542e3f5e24c556ed78c20b16c3a6f1796
+ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68562315"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72803702"
 ---
-# <a name="protected-web-api-code-configuration"></a>Защищенный веб-API: Конфигурация кода
+# <a name="protected-web-api-code-configuration"></a>Защищенный веб-API: конфигурация кода
 
 Чтобы настроить код для защищенного веб-API, необходимо понять, что определяет интерфейсы API как защищенные, как настроить токен носителя и как проверить маркер.
 
 ## <a name="what-defines-aspnetaspnet-core-apis-as-protected"></a>Что определяет API-интерфейсы ASP.NET/ASP.NET Core как защищенные?
 
-Как и веб-приложения, веб-API ASP.NET/ASP.NET Core являются защищенными, так как их действия контроллера начинаются с `[Authorize]` атрибута. Поэтому действия контроллера можно вызывать только в том случае, если API вызывается с удостоверением, которому разрешено.
+Как и веб-приложения, веб-API ASP.NET/ASP.NET Core являются защищенными, так как их действия контроллера начинаются с атрибута `[Authorize]`. Поэтому действия контроллера можно вызывать только в том случае, если API вызывается с удостоверением, которому разрешено.
 
 Учитывайте следующие вопросы.
 
@@ -91,7 +92,7 @@ HttpResponseMessage response = await _httpClient.GetAsync(apiUri);
 
 ### <a name="code-initialization"></a>Инициализация кода
 
-При вызове приложения в действии контроллера, которое содержит `[Authorize]` атрибут, ASP.NET/ASP.NET Core просматривает токен носителя в заголовке авторизации вызывающего запроса и извлекает маркер доступа. Затем маркер пересылается по промежуточного слоя JwtBearer, который вызывает расширения Microsoft IdentityModel для .NET.
+При вызове приложения в действии контроллера, которое содержит атрибут `[Authorize]`, ASP.NET/ASP.NET Core просматривает маркер носителя в заголовке авторизации вызывающего запроса и извлекает маркер доступа. Затем маркер пересылается по промежуточного слоя JwtBearer, который вызывает расширения Microsoft IdentityModel для .NET.
 
 В ASP.NET Core это по промежуточного слоя инициализируется в файле Startup.cs:
 
@@ -129,7 +130,7 @@ services.Configure<JwtBearerOptions>(AzureADDefaults.JwtBearerAuthenticationSche
 
 ## <a name="token-validation"></a>Проверка маркеров
 
-По промежуточного слоя JwtBearer (например, по промежуточного слоя OpenID Connect Connect в веб `TokenValidationParameters` -приложениях) направляется на проверку маркера. Маркер расшифровывается (при необходимости), извлекаются утверждения и проверяется подпись. По промежуточного слоя затем проверяет маркер, проверяя эти данные:
+По промежуточного слоя JwtBearer (например, по промежуточного слоя OpenID Connect Connect в веб-приложениях) направляется `TokenValidationParameters` для проверки маркера. Маркер расшифровывается (при необходимости), извлекаются утверждения и проверяется подпись. По промежуточного слоя затем проверяет маркер, проверяя эти данные:
 
 - Он предназначен для веб-API (аудитории).
 - Она была выдана для приложения, которому разрешено вызывать веб-API (подпрограмму).
@@ -141,7 +142,7 @@ services.Configure<JwtBearerOptions>(AzureADDefaults.JwtBearerAuthenticationSche
 
 ### <a name="validators"></a>Проверяющие элементы управления
 
-Шаги проверки фиксируются в средствах проверки, которые находятся в библиотеке [Microsoft IdentityModel Extensions для .NET](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet) с открытым исходным кодом, в одном исходном файле: [Microsoft. IdentityModel. Tokens/проверяющие элементы управления. CS](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/blob/master/src/Microsoft.IdentityModel.Tokens/Validators.cs).
+Шаги проверки фиксируются в средствах проверки, которые находятся в библиотеке [Microsoft IdentityModel Extensions для .NET](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet) с открытым исходным кодом, в одном исходном файле: [Microsoft. IdentityModel. Tokens/проверяющие. CS](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/blob/master/src/Microsoft.IdentityModel.Tokens/Validators.cs).
 
 В этой таблице описаны проверяющие элементы управления.
 
@@ -150,13 +151,13 @@ services.Configure<JwtBearerOptions>(AzureADDefaults.JwtBearerAuthenticationSche
 | `ValidateAudience` | Гарантирует, что маркер предназначен для приложения, которое проверяет маркер (для меня). |
 | `ValidateIssuer` | Гарантирует, что маркер был выдан доверенной службой STS (от доверенного лица). |
 | `ValidateIssuerSigningKey` | Гарантирует, что приложение, проверяющее маркер, доверяет ключу, который использовался для подписания маркера. (Особый случай, когда ключ внедряется в маркер. Обычно не требуется.) |
-| `ValidateLifetime` | Гарантирует, что маркер все еще (или уже) является допустимым. Проверяющий элемент управления проверяет, находится ли время существования `expires` маркера (`notbefore` и утверждений) в диапазоне. |
+| `ValidateLifetime` | Гарантирует, что маркер все еще (или уже) является допустимым. Проверяющий элемент управления проверяет, находится ли время существования маркера (`notbefore` и `expires` утверждений) в диапазоне. |
 | `ValidateSignature` | Гарантирует, что маркер не был изменен. |
 | `ValidateTokenReplay` | Гарантирует, что маркер не воспроизводится. (Особый случай для некоторых OneTime использования протоколов.) |
 
-Все проверяющие элементы управления связаны со свойствами `TokenValidationParameters` класса, которые самостоятельно инициализируются из конфигурации ASP.NET/ASP.NET Core. В большинстве случаев изменять параметры не требуется. Существует одно исключение для приложений, которые не являются отдельными клиентами. (То есть веб-приложения, которые принимают пользователей из любой организации или из личных учетных записей Майкрософт.) В этом случае издатель должен быть проверен.
+Все проверяющие элементы управления связаны со свойствами класса `TokenValidationParameters`, которые самостоятельно инициализируются из конфигурации ядра ASP.NET/ASP.NET. В большинстве случаев изменять параметры не требуется. Существует одно исключение для приложений, которые не являются отдельными клиентами. (То есть веб-приложения, которые принимают пользователей из любой организации или из личных учетных записей Майкрософт.) В этом случае издатель должен быть проверен.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Проверка областей и ролей приложений в коде](scenario-protected-web-api-verification-scope-app-roles.md)

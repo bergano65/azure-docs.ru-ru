@@ -1,26 +1,25 @@
 ---
-title: Использование средства обозревателя поиска для запроса данных в портал Azure — Поиск Azure
-description: Обозреватель поиска встроен в портал Azure, что полезно для изучения содержимого и проверки запросов в службе поиска Azure. Введите строки для поиска терминов или фраз или полные выражения поиска с расширенным синтаксисом.
+title: Использование средства обозревателя поиска для запроса данных в портал Azure
+titleSuffix: Azure Cognitive Search
+description: Обозреватель поиска встроен в портал Azure, что полезно для изучения содержимого и проверки запросов в Когнитивный поиск Azure. Введите строки для поиска терминов или фраз или полные выражения поиска с расширенным синтаксисом.
 manager: nitinme
 author: HeidiSteen
-services: search
-ms.service: search
-ms.topic: conceptual
-ms.date: 09/20/2019
 ms.author: heidist
-ms.custom: seodec2018
-ms.openlocfilehash: fe66787ea82a8f97470199e99faadb72b85c83b2
-ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
+ms.service: cognitive-search
+ms.topic: conceptual
+ms.date: 11/04/2019
+ms.openlocfilehash: 0bb50bd50c58b85f1d5de100c34d00d114a9ed77
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2019
-ms.locfileid: "71178134"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72792963"
 ---
-# <a name="use-search-explorer-in-the-azure-portal-for-querying-documents-in-azure-search"></a>Использование обозревателя поиска в портал Azure для запроса документов в службе поиска Azure 
+# <a name="use-search-explorer-in-the-azure-portal-for-querying-documents-in-azure-cognitive-search"></a>Использование обозревателя поиска в портал Azure для запросов к документам в Azure Когнитивный поиск 
 
-В этой статье показано, как отправлять запросы в существующий индекс службы "Поиск Azure" с помощью **обозревателя поиска** на портале Azure. Можно запустить обозреватель поиска с панели команд для отправки простых или полных выражений запросов Lucene в любой существующий индекс в службе. 
+В этой статье показано, как выполнить запрос к существующему индексу Когнитивный поиск Azure с помощью **обозревателя поиска** в портал Azure. Можно запустить обозреватель поиска с панели команд для отправки простых или полных выражений запросов Lucene в любой существующий индекс в службе. 
 
-   ![Команда "Проводник поиска" на портале](./media/search-explorer/search-explorer-cmd2.png "Команда \"Проводник поиска\" на портале")
+   ![Команда обозревателя поиска на портале](./media/search-explorer/search-explorer-cmd2.png "Команда обозревателя поиска на портале")
 
 ## <a name="basic-search-strings"></a>Обычный поиск по строкам
 
@@ -38,11 +37,11 @@ ms.locfileid: "71178134"
 
    **Результаты**
    
-   ![Пример запроса с пустыми условиями](./media/search-explorer/search-explorer-example-empty.png "Пример поиска с неполными или пустыми условиями")
+   ![Пустой пример запроса](./media/search-explorer/search-explorer-example-empty.png "Неполный или пустой пример запроса")
 
 ### <a name="example-2---free-text-search"></a>Пример 2. Поиск произвольного текста
 
-Запросы в свободной форме, содержащие или не содержащие операторы, удобны для имитации пользовательских запросов, отправляемых из настраиваемого приложения в Поиск Azure. Обратите внимание на то, что когда вы указываете термины запроса или выражения, вступает в действие рейтинг поиска. В следующем примере показан поиск произвольного текста.
+Запросы в свободной форме с операторами или без них полезны для моделирования пользовательских запросов, отправленных из пользовательского приложения в Azure Когнитивный поиск. Обратите внимание на то, что когда вы указываете термины запроса или выражения, вступает в действие рейтинг поиска. В следующем примере показан поиск произвольного текста.
 
    ```Input
    Seattle apartment "Lake Washington" miele OR thermador appliance
@@ -52,7 +51,7 @@ ms.locfileid: "71178134"
 
    С помощью клавиш CTRL-F можно искать определенные условия в результатах поиска.
 
-   ![Пример запроса поиска произвольного текста](./media/search-explorer/search-explorer-example-freetext.png "Пример запроса поиска произвольного текста")
+   ![Пример запроса с произвольным текстом](./media/search-explorer/search-explorer-example-freetext.png "Пример запроса с произвольным текстом")
 
 ### <a name="example-3---count-of-matching-documents"></a>Пример 3. Количество соответствующих документов 
 
@@ -63,7 +62,7 @@ ms.locfileid: "71178134"
    ```
    **Результаты**
 
-   ![Пример с числом документов](./media/search-explorer/search-explorer-example-count.png "Количество соответствующих документов в индексе")
+   ![Пример числа документов](./media/search-explorer/search-explorer-example-count.png "Число соответствующих документов в индексе")
 
 ### <a name="example-4---restrict-fields-in-search-results"></a>Пример 4. Ограничение полей в результатах поиска
 
@@ -75,11 +74,11 @@ ms.locfileid: "71178134"
 
    **Результаты**
 
-   ![Пример с ограничением полей](./media/search-explorer/search-explorer-example-selectfield.png "Ограничение полей в результатах поиска")
+   ![Пример полей Limit](./media/search-explorer/search-explorer-example-selectfield.png "Ограничение полей в результатах поиска")
 
 ### <a name="example-5---return-next-batch-of-results"></a>Пример 5. Возвращение следующего пакета результатов
 
-Поиск Azure возвращает первые 50 совпадений в соответствии с рейтингом поиска. Чтобы получить следующий набор соответствующих документов, добавьте в запрос **$top=100,&$skip=50**. Это позволит увеличить результирующий набор до 100 документов (значение по умолчанию — 50, максимальное значение — 1000), пропустив первые 50 документов. Как вы помните, чтобы получить ранжированные результаты, необходимо указать критерии поиска, например термин запроса или выражение. Обратите внимание на то, что рейтинг поиска уменьшается по мере углубления в результаты поиска.
+Когнитивный поиск Azure возвращает первые 50 совпадений на основе рейтинга поиска. Чтобы получить следующий набор соответствующих документов, добавьте в запрос **$top=100,&$skip=50**. Это позволит увеличить результирующий набор до 100 документов (значение по умолчанию — 50, максимальное значение — 1000), пропустив первые 50 документов. Как вы помните, чтобы получить ранжированные результаты, необходимо указать критерии поиска, например термин запроса или выражение. Обратите внимание на то, что рейтинг поиска уменьшается по мере углубления в результаты поиска.
 
    ```Input
    search=seattle condo&$select=listingId,beds,baths,description,street,city,price&$count=true&$top=100&$skip=50
@@ -87,7 +86,7 @@ ms.locfileid: "71178134"
 
    **Результаты**
 
-   ![Пакетные результаты поиска](./media/search-explorer/search-explorer-example-topskip.png "Возвращение следующего пакета результатов поиска")
+   ![Результаты пакетного поиска](./media/search-explorer/search-explorer-example-topskip.png "Возврат следующего пакета результатов поиска")
 
 ## <a name="filter-expressions-greater-than-less-than-equal-to"></a>Выражения фильтра (больше, меньше, равно)
 
@@ -99,7 +98,7 @@ ms.locfileid: "71178134"
    
    **Результаты**
 
-   ![Выражение фильтра](./media/search-explorer/search-explorer-example-filter.png "Фильтрация по условию")
+   ![Критерий фильтра](./media/search-explorer/search-explorer-example-filter.png "Фильтровать по критерию")
 
 ## <a name="order-by-expressions"></a>Выражения OrderBy
 
@@ -123,17 +122,17 @@ ms.locfileid: "71178134"
 
 2. На странице "Обзор службы" щелкните **Проводник поиска**.
 
-   ![Команда "Проводник поиска" на портале](./media/search-explorer/search-explorer-cmd2.png "Команда \"Проводник поиска\" на портале")
+   ![Команда обозревателя поиска на портале](./media/search-explorer/search-explorer-cmd2.png "Команда обозревателя поиска на портале")
 
 3. Выберите индекс для запроса.
 
-   ![Выбор индекса для запроса](./media/search-explorer/search-explorer-changeindex-se2.png "Выбор индекса")
+   ![Выберите индекс для запроса](./media/search-explorer/search-explorer-changeindex-se2.png "Выбор индекса")
 
 4. При необходимости задайте версию API. По умолчанию выбрана текущая общедоступная версия API, но вы можете выбрать предварительную или одну из предыдущих версий API, если синтаксис, который вы хотите использовать, предназначен для конкретной версии.
 
 5. Выбрав индекс и версию API, введите условия поиска или полные выражения запросов в строке поиска, после чего нажмите кнопку **Найти** для выполнения запроса.
 
-   ![Ввод условий поиска и нажатие кнопки "Найти"](./media/search-explorer/search-explorer-query-string-example.png "Ввод условий поиска и нажатие кнопки \"Найти\"")
+   ![Введите условия поиска и нажмите кнопку "Поиск"](./media/search-explorer/search-explorer-query-string-example.png "Введите условия поиска и нажмите кнопку "Поиск"")
 
 Советы по поиску в **проводнике поиска**.
 
@@ -143,14 +142,14 @@ ms.locfileid: "71178134"
 
 + Запросы в свободной форме, аналогичные вводимым в коммерческом веб-браузере, можно использовать для тестирования взаимодействия с пользователем. Например, при использовании встроенного примера индекса недвижимости, можно ввести "Seattle apartments lake washington", а затем с помощью клавиш CTRL-F искать условия в результатах поиска. 
 
-+ Синтаксис выражений запросов и фильтров должен поддерживаться Поиском Azure. По умолчанию используется [простой синтаксис](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search), но при необходимости можно использовать [полный запрос Lucene](https://docs.microsoft.com/rest/api/searchservice/lucene-query-syntax-in-azure-search), чтобы создавать более эффективные запросы. Для [выражений фильтров](https://docs.microsoft.com/rest/api/searchservice/odata-expression-syntax-for-azure-search) используется синтаксис OData.
++ Выражения запросов и фильтров должны быть сформулированы в синтаксисе, поддерживаемом Когнитивный поиск Azure. По умолчанию используется [простой синтаксис](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search), но при необходимости можно использовать [полный запрос Lucene](https://docs.microsoft.com/rest/api/searchservice/lucene-query-syntax-in-azure-search), чтобы создавать более эффективные запросы. Для [выражений фильтров](https://docs.microsoft.com/rest/api/searchservice/odata-expression-syntax-for-azure-search) используется синтаксис OData.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о синтаксисе запросов и примеры см. в следующих ресурсах.
 
- + [Простой синтаксис запросов](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search) 
+ + [Синтаксис простых запросов](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search) 
  + [Синтаксис запросов Lucene](https://docs.microsoft.com/rest/api/searchservice/lucene-query-syntax-in-azure-search) 
  + [Примеры запросов Lucene](search-query-lucene-examples.md) 
  + [OData Expression Syntax for Azure Search](https://docs.microsoft.com/rest/api/searchservice/odata-expression-syntax-for-azure-search) (Синтаксис выражений OData для службы поиска Azure) 

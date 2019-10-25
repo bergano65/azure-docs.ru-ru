@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: d20fc0cee6bce1389649e6287170b1963e799ccf
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ca5de657ad45f53cff0cb01d5fe9cc412baf4533
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61463923"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72792302"
 ---
 # <a name="advanced-encoding-with-media-encoder-premium-workflow"></a>Дополнительное кодирование с помощью рабочего процесса Premium кодировщика мультимедиа
 > [!NOTE]
@@ -26,9 +26,7 @@ ms.locfileid: "61463923"
 >
 >
 
-Вопросы о кодировщике ценовой категории "Премиум" направляйте по адресу mepd@microsoft.com.
-
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Краткое описание
 Службы мультимедиа Microsoft Azure представляют обработчик мультимедиа **Media Encoder Premium Workflow**. Данный обработчик предоставляет расширенные возможности кодирования для рабочих процессов уровня premium по требованию.
 
 В следующих разделах приводятся подробные сведения o **расширенном рабочем процессе кодировщика мультимедиа**:
@@ -231,10 +229,12 @@ namespace MediaEncoderPremiumWorkflowSample
 }
 ```
 
-Вопросы о кодировщике ценовой категории "Премиум" направляйте по адресу mepd@microsoft.com.
+## <a name="need-help"></a>Нужна помощь?
+
+Вы можете отправить запрос в службу поддержки, перейдя к [новому запросу в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest) .
 
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Отправить отзыв
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]

@@ -7,13 +7,13 @@ manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 10/03/2019
-ms.openlocfilehash: 88a66506b5102a4efaeefe1c7033b337dff9889a
-ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
+ms.date: 10/22/2019
+ms.openlocfilehash: 97bcb4e6fad9c766f2ad059469e75ffd5ab8ec8c
+ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71949248"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72800230"
 ---
 # <a name="public-preview-service-limits"></a>Ограничения в общедоступной предварительной версии службы
 
@@ -70,8 +70,9 @@ ms.locfileid: "71949248"
 
 В следующих ограничениях задано максимальное общее количество сообщений, отправляемых устройствами в экземпляр Azure Digital Twins.
 
-- До 100 сообщений в секунду.
+- 100 сообщений в секунду на всех устройствах
+-   25 сообщений в секунду на устройство
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомиться с примером Azure Digital Twins на практике можно в статье [Краткое руководство. Поиск свободных помещений с помощью Azure Digital Twins](./quickstart-view-occupancy-dotnet.md).

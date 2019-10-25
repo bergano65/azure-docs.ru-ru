@@ -1,20 +1,19 @@
 ---
-title: Навык поиска с переводом текста — Поиск Azure
-description: Вычисляет текст и для каждой записи возвращает текст, переведенный на указанный целевой язык в конвейере обогащения службы поиска Azure.
-services: search
+title: Неприятный навык преобразования текста
+titleSuffix: Azure Cognitive Search
+description: Вычисляет текст и для каждой записи возвращает текст, переведенный на указанный целевой язык в конвейере обогащения AI в Azure Когнитивный поиск.
 manager: nitinme
 author: careyjmac
-ms.service: search
-ms.workload: search
-ms.topic: conceptual
-ms.date: 06/25/2019
 ms.author: chalton
-ms.openlocfilehash: ddfb35cbfcfbc262f3eff0de67f5cedfc31ea27e
-ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
+ms.service: cognitive-search
+ms.topic: conceptual
+ms.date: 11/04/2019
+ms.openlocfilehash: c2405fe67b39e016e64efb1b36cc551a00a338fc
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71265709"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72791858"
 ---
 #   <a name="text-translation-cognitive-skill"></a>Неприятный навык преобразования текста
 
@@ -22,18 +21,18 @@ ms.locfileid: "71265709"
 
 Эта возможность полезна, если вы ожидаете, что документы могут находиться не на одном языке. в этом случае можно нормализовать текст на один язык перед индексированием для поиска путем его перевода.  Он также полезен для вариантов использования при локализации, где может потребоваться использовать копии одного и того же текста на нескольких языках.
 
-[API перевода текстов v 3.0](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference) — это нерегиональная служба, которая означает, что ваши данные не всегда находятся в том же регионе, что и поиск Azure или подключенный Cognitive Services ресурс.
+[API перевода текстов v 3.0](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference) — это нерегиональная служба, которая означает, что ваши данные не всегда находятся в том же регионе, что и когнитивный Поиск Azure или подключенный Cognitive Services ресурс.
 
 > [!NOTE]
-> По мере расширения области путем увеличения частоты обработки и добавления большего количества документов или дополнительных алгоритмов ИИ, вам нужно будет [присоединить оплачиваемый ресурс Cognitive Services](cognitive-search-attach-cognitive-services.md). Плата взимается при вызове API в Cognitive Services и извлечении изображений при открытии документов в службе "Поиск Azure". За извлечение текста из документов плата не взимается.
+> По мере расширения области путем увеличения частоты обработки и добавления большего количества документов или дополнительных алгоритмов ИИ, вам нужно будет [присоединить оплачиваемый ресурс Cognitive Services](cognitive-search-attach-cognitive-services.md). Расходы начисляются при вызове API в Cognitive Services, а также для извлечения изображений в рамках этапа взлома документов в Azure Когнитивный поиск. За извлечение текста из документов плата не взимается.
 >
-> Плата за выполнение встроенных навыков взимается в рамках существующей [модели оплаты Cognitive Services по мере использования](https://azure.microsoft.com/pricing/details/cognitive-services/). Плата за извлечение изображений указана на [странице с ценами на Поиск Azure](https://go.microsoft.com/fwlink/?linkid=2042400).
+> Плата за выполнение встроенных навыков взимается в рамках существующей [модели оплаты Cognitive Services по мере использования](https://azure.microsoft.com/pricing/details/cognitive-services/). Цены на извлечение изображений описаны на [странице цен на когнитивный Поиск Azure](https://go.microsoft.com/fwlink/?linkid=2042400).
 
 ## <a name="odatatype"></a>@odata.type  
 Microsoft. Skills. Text. Транслатионскилл
 
 ## <a name="data-limits"></a>Ограничения данных
-Максимальный размер записи должен составлять 50 000 символов, [`String.Length`](https://docs.microsoft.com/dotnet/api/system.string.length)измеряемый. Если необходимо разбить данные перед отправкой в навык перевода текста, рассмотрите возможность использования уровня " [разделение текста](cognitive-search-skill-textsplit.md)".
+Максимальный размер записи должен составлять 50 000 символов, измеряемый [`String.Length`](https://docs.microsoft.com/dotnet/api/system.string.length). Если необходимо разбить данные перед отправкой в навык перевода текста, рассмотрите возможность использования уровня " [разделение текста](cognitive-search-skill-textsplit.md)".
 
 ## <a name="skill-parameters"></a>Параметры навыков
 
@@ -49,7 +48,7 @@ Microsoft. Skills. Text. Транслатионскилл
 
 | Ввод имени     | Описание |
 |--------------------|-------------|
-| text | Текст для перевода.|
+| текст | Текст для перевода.|
 | толангуажекоде    | Строка, указывающая язык, в который должен быть преобразован текст. Если этот вход не указан, Дефаулттолангуажекоде будет использоваться для преобразования текста. <br/>Ознакомьтесь с [полным списком поддерживаемых языков](https://docs.microsoft.com/azure/cognitive-services/translator/language-support).|
 | фромлангуажекоде  | Строка, указывающая текущий язык текста. Если этот параметр не указан, Дефаултфромлангуажекоде (или автоматическое определение языка, если Дефаултфромлангуажекоде не предоставлен) будет использоваться для преобразования текста. <br/>Ознакомьтесь с [полным списком поддерживаемых языков](https://docs.microsoft.com/azure/cognitive-services/translator/language-support).|
 
@@ -116,7 +115,7 @@ Microsoft. Skills. Text. Транслатионскилл
 ```
 
 
-##  <a name="sample-output"></a>Пример полученных результатов
+##  <a name="sample-output"></a>Пример выходных данных
 
 ```json
 {
@@ -149,7 +148,7 @@ Microsoft. Skills. Text. Транслатионскилл
 Если текст пуст, появится предупреждение.
 Если длина текста превышает 50 000 символов, будут переведены только первые 50 000 символов, и будет выдано предупреждение.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>Дополнительные материалы
 
-+ [Предопределенные навыки](cognitive-search-predefined-skills.md)
-+ [Определение набора навыков](cognitive-search-defining-skillset.md)
++ [Встроенные навыки](cognitive-search-predefined-skills.md)
++ [How to define a skillset](cognitive-search-defining-skillset.md) (Определение набора навыков)

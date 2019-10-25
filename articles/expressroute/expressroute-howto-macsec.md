@@ -5,14 +5,14 @@ services: expressroute
 author: cherylmc
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 10/09/2019
+ms.date: 10/22/2019
 ms.author: cherylmc
-ms.openlocfilehash: eeaa709b88ca795d906fe3688301b4cd7d8c726e
-ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
+ms.openlocfilehash: 39cf6b2d0f6d8ea3e894e46a9294a671780225d0
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72244132"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72793848"
 ---
 # <a name="configure-macsec-on-expressroute-direct-ports"></a>Настройка Максек для прямого порта ExpressRoute
 
@@ -97,10 +97,10 @@ ms.locfileid: "72244132"
     $erDirect = Get-AzExpressRoutePort -ResourceGroupName "your_resource_group" -Name "your_direct_port_name"
     $erDirect.Links[0]. MacSecConfig.CknSecretIdentifier = $MacSecCKNSecret.Id
     $erDirect.Links[0]. MacSecConfig.CakSecretIdentifier = $MacSecCAKSecret.Id
-    $erDirect.Links[0]. MacSecConfig.Cipher = "gcm-aes-128"
+    $erDirect.Links[0]. MacSecConfig.Cipher = "GcmAes256"
     $erDirect.Links[1]. MacSecConfig.CknSecretIdentifier = $MacSecCKNSecret.Id
     $erDirect.Links[1]. MacSecConfig.CakSecretIdentifier = $MacSecCAKSecret.Id
-    $erDirect.Links[1]. MacSecConfig.Cipher = "gcm-aes-128"
+    $erDirect.Links[1]. MacSecConfig.Cipher = "GcmAes256"
     $erDirect.identity = $erIdentity
     Set-AzExpressRoutePort -ExpressRoutePort $erDirect
     ```
@@ -134,7 +134,7 @@ Set-AzExpressRoutePort -ExpressRoutePort $erDirect
 ### <a name="test-connectivity"></a>Проверка подключения
 После настройки Максек (включая обновление ключа Максек) на портах с прямым подключением ExpressRoute [Проверьте](expressroute-troubleshooting-expressroute-overview.md) , работают ли сеансы BGP для каналов. Если у вас еще нет канала, создайте его сначала и настройте частный пиринг Azure или пиринг Майкрософт. Если Максек настроен неправильно, в том числе несовпадение ключей Максек, между сетевыми устройствами и сетевыми устройствами Майкрософт, разрешение ARP не будет отображаться на уровне 2 и на компьютере с установленным BGP на уровне 3. Если все настроено правильно, вы должны увидеть маршруты BGP, объявляемые правильно в обоих направлениях, и поток данных приложения в соответствии с ExpressRoute.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 1. [Создание канала ExpressRoute в ExpressRoute Direct](expressroute-howto-erdirect.md)
 2. [Подключение виртуальной сети к каналу ExpressRoute](expressroute-howto-linkvnet-arm.md).
 3. [Проверка подключения ExpressRoute](expressroute-troubleshooting-expressroute-overview.md).

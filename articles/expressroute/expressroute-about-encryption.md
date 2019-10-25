@@ -5,14 +5,14 @@ services: expressroute
 author: cherylmc
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 10/09/2019
+ms.date: 10/22/2019
 ms.author: cherylmc
-ms.openlocfilehash: 650e45ca9092b9c81b2127eb995a0297745410a4
-ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
+ms.openlocfilehash: b452fccf2ae0915592420bdda3a47fef43eba9a8
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72244136"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72788691"
 ---
 # <a name="expressroute-encryption"></a>Шифрование ExpressRoute
  
@@ -31,7 +31,7 @@ ExpressRoute поддерживает пару технологий шифров
 ### <a name="will-enabling-macsec-on-expressroute-direct-degrade-network-performance"></a>Включает ли Максек в ExpressRoute прямую производительность сети?
 Шифрование и расшифровка Максек происходят в оборудовании на используемых маршрутизаторах. На наши стороны не влияет на производительность. Тем не менее следует обратиться к поставщику сети для устройств, которые вы используете, и узнать, не имеет ли Максек производительность.
 ### <a name="which-cipher-suites-are-supported-for-encryption"></a>какие комплекты шифров поддерживаются для шифрования?
-Мы поддерживаем AES128 (GCM – AES – 128) и AES256 (GCM – AES – 256).
+Мы поддерживаем AES128 и AES256.
 
 ## <a name="end-to-end-encryption-by-ipsec-faq"></a>Полное шифрование по протоколу IPsec: вопросы и ответы
 Протокол IPsec является [стандартом IETF](https://tools.ietf.org/html/rfc6071). Он шифрует данные на уровне протокола Интернета (IP) или уровня сети 3. Протокол IPsec можно использовать для шифрования сквозного подключения между локальной сетью и виртуальной сетью в Azure. См. другие вопросы и ответы ниже.
@@ -44,7 +44,7 @@ ExpressRoute поддерживает пару технологий шифров
 ### <a name="what-is-the-throughput-i-will-get-after-enabling-ipsec-on-my-expressroute-connection"></a>Какова пропускная способность, которую я получаю после включения IPsec для подключения ExpressRoute?
 Если используется VPN-шлюз Azure, проверьте [номера производительности здесь](../vpn-gateway/vpn-gateway-about-vpngateways.md). Если используется сторонний VPN-шлюз, обратитесь к поставщику за номерами производительности.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о конфигурации Максек см. в разделе [Configure максек](expressroute-howto-macsec.md) .
 
 Дополнительные сведения о конфигурации IPsec см. в разделе [Настройка IPSec](site-to-site-vpn-over-microsoft-peering.md) .

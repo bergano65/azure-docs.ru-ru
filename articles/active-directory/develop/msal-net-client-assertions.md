@@ -1,5 +1,6 @@
 ---
-title: Утверждения клиента в библиотеке проверки подлинности Microsoft для .NET | Службы
+title: Утверждения клиента в библиотеке проверки подлинности Майкрософт для .NET
+titleSuffix: Microsoft identity platform
 description: Сведения о поддержке подписанных утверждений клиентов для конфиденциальных клиентских приложений в библиотеке проверки подлинности Майкрософт для .NET (MSAL.NET).
 services: active-directory
 documentationcenter: dev-center-name
@@ -17,12 +18,12 @@ ms.author: jmprieur
 ms.reviewer: ''
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e1ea75499334f3f6eb2f5d3c15526067fcef4eb8
-ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
+ms.openlocfilehash: fcf11ac8dc39dcb1d70b932dbe870687f5446a52
+ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68442505"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72802852"
 ---
 # <a name="confidential-client-assertions"></a>Конфиденциальные утверждения клиентов
 Чтобы доказать свою личность, конфиденциальные клиентские приложения обмениваются секретом с Azure AD. Секрет может быть следующим:
@@ -50,7 +51,7 @@ app = ConfidentialClientApplicationBuilder.Create(config.ClientId)
 
 Утверждения, ожидаемые Azure AD:
 
-Тип утверждения | Значение | Описание
+Тип утверждения | Value | Описание
 ---------- | ---------- | ----------
 aud | https://login.microsoftonline.com/{tenantId}/v2.0 | Утверждение "AUD" (аудитория) определяет получателей, для которых предназначено JWT (здесь Azure AD), см. [RFC 7519, раздел 4.1.3]
 exp | Четверг Июн 27 2019 15:04:17 GMT + 0200 (Романское время (лето)) | Утверждение "exp" (время окончания срока действия) указывает время окончания срока действия или время, после которого маркер JWT НЕ ДОЛЖЕН приниматься в обработку. См. [RFC 7519, раздел 4.1.4]
@@ -135,7 +136,7 @@ string GetAssertion()
 
 ### <a name="withclientclaims"></a>висклиентклаимс
 
-`WithClientClaims(X509Certificate2 certificate, IDictionary<string, string> claimsToSign, bool mergeWithDefaultClaims = true)`по умолчанию будет создаваться подписанное утверждение, содержащее утверждения, ожидаемые Azure AD, и дополнительные клиентские утверждения, которые требуется отправить. Ниже приведен фрагмент кода для этого.
+`WithClientClaims(X509Certificate2 certificate, IDictionary<string, string> claimsToSign, bool mergeWithDefaultClaims = true)` по умолчанию будет создавать подписанное утверждение, содержащее утверждения, ожидаемые Azure AD, и дополнительные клиентские утверждения, которые требуется отправить. Ниже приведен фрагмент кода для этого.
 
 ```CSharp
 string ipAddress = "192.168.1.2";
@@ -150,4 +151,4 @@ app = ConfidentialClientApplicationBuilder.Create(config.ClientId)
 
 Если одно из утверждений в словаре, которое вы передали, совпадает с одним из обязательных утверждений, учитывается значение дополнительного утверждения. Он переопределит утверждения, вычисленные с помощью MSAL.NET.
 
-Если вы хотите предоставить собственные утверждения, включая обязательные утверждения, ожидаемые Azure AD, передайте `false` `mergeWithDefaultClaims` параметр.
+Если вы хотите предоставить собственные утверждения, включая обязательные утверждения, ожидаемые Azure AD, передайте `false` для параметра `mergeWithDefaultClaims`.

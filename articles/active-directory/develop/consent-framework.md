@@ -1,5 +1,6 @@
 ---
 title: Платформа предоставления согласия Azure Active Directory
+titleSuffix: Microsoft identity platform
 description: Сведения о платформе предоставления согласия Azure Active Directory и о том, как с ее помощью легко разрабатывать мультитенантные веб-приложения и собственные клиентские приложения.
 services: active-directory
 documentationcenter: ''
@@ -17,12 +18,12 @@ ms.author: ryanwi
 ms.reviewer: zachowd, lenalepa, jesakowi
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7b9d272c8a01eeed58278a6e7f0cec147b01a10e
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: af5b60901e57392aaea504f96572801a878d707c
+ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67482940"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72803857"
 ---
 # <a name="azure-active-directory-consent-framework"></a>Платформа предоставления согласия Azure Active Directory
 
@@ -50,7 +51,7 @@ ms.locfileid: "67482940"
 
 1. После входа Azure AD определяет, требуется ли отобразить этому пользователю страницу согласия. Принятие этого решения основано на том, дал ли этот пользователь (или администратор его организации) свое согласие для приложения. Если согласие еще не было дано, Azure AD запрашивает у пользователя согласие и отображает необходимые для этого разрешения. В диалоговом окне согласия отображается тот же набор разрешений, который совпадает с набором **Делегированные разрешения** на портале Azure.
 
-    ![Пример разрешений, отображаемых в диалоговом окне согласия](./media/quickstart-v1-integrate-apps-with-azure-ad/consent.png)
+    ![Показывает пример разрешений, отображаемых в диалоговом окне согласия.](./media/quickstart-v1-integrate-apps-with-azure-ad/consent.png)
 
 1. После того как пользователь дает свое согласие, в ваше приложение возвращается код авторизации, который используется для получения токена доступа и токена обновления. Дополнительные сведения об этом потоке см. в статье о [типе приложения веб-API](web-api.md).
 
@@ -58,8 +59,8 @@ ms.locfileid: "67482940"
 
     **Предоставление согласия на делегированные разрешения приложения**
 
-   1. Перейдите к **разрешения API** странице вашего приложения
-   1. Щелкните **предоставления согласия администратора** кнопки.
+   1. Перейдите на страницу **разрешений API** для своего приложения.
+   1. Нажмите кнопку **предоставить согласие администратора** .
 
       ![Предоставление разрешений, на которые требуется явное согласие администратора](./media/consent-framework/grant-consent.png)
 

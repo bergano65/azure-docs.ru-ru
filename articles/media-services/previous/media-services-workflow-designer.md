@@ -15,15 +15,15 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: anilmur
 ms.reviewer: juliako;johndeu
-ms.openlocfilehash: c5aa7af1ca6f4fe0768add47d2037d797e4ef99b
-ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
+ms.openlocfilehash: 4dceb558532305c6d2e84563e25ab05508423090
+ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69613242"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72801953"
 ---
-# <a name="create-advanced-encoding-workflows-with-workflow-designer"></a>Создание рабочих процессов расширенной кодировки с помощью конструктора рабочих процессов  
-## <a name="overview"></a>Обзор
+# <a name="create-advanced-encoding-workflows-with-workflow-designer"></a>Создание рабочих процессов расширенного кодирования с помощью конструктора рабочих процессов  
+## <a name="overview"></a>Краткое описание
 **Конструктор рабочих процессов** — это классическое средство Windows, которое используется для разработки и создания настраиваемых рабочих процессов шифрования с использованием **рабочего процесса Media Encoder Premium**.
 Возможности конструктора рабочих процессов позволяют проектировать и создавать сложные рабочие процессы, которые будут выполняться в **Media Encoder Premium**.  
 
@@ -79,15 +79,17 @@ ms.locfileid: "69613242"
 > 
 > 
 
+## <a name="need-help"></a>Нужна помощь?
+
+Вы можете отправить запрос в службу поддержки, перейдя к [новому запросу в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest) .
+
 ## <a name="next-step"></a>Дальнейшие действия
 Просмотрите схемы обучения работе со службами мультимедиа.
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Оставить отзыв
+## <a name="provide-feedback"></a>Отправить отзыв
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
-
-Если вам необходима поддержка или ответы на вопросы по созданию пользовательских рабочих процессов в конструкторе, обращайтесь по следующему адресу электронной почты: mepd@microsoft.com. При написании электронной почты используйте английский язык.
 
 ## <a name="see-also"></a>См. также
 [Учебные видеоматериалы по расширенному рабочему процессу кодировщика служб мультимедиа Azure](http://johndeutscher.com/2015/07/06/azure-premium-encoder-workflow-designer-training-videos/)

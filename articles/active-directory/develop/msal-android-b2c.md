@@ -1,5 +1,6 @@
 ---
-title: Azure AD B2C (Библиотека проверки подлинности Microsoft для Android) | Службы
+title: Azure AD B2C (Библиотека проверки подлинности Microsoft для Android)
+titleSuffix: Microsoft identity platform
 description: Ознакомьтесь с конкретными соображениями при использовании Azure AD B2C с библиотекой проверки подлинности Майкрософт для Android (MSAL. Android
 services: active-directory
 documentationcenter: dev-center-name
@@ -17,12 +18,12 @@ ms.author: brianmel
 ms.reviewer: rapong
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c55356b19c8150c76858efb4edc593406c1722a4
-ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
+ms.openlocfilehash: 8b5061f1ab341e5872dfa82c9f5c5b133ae40bdf
+ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71679741"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72803238"
 ---
 # <a name="use-msal-for-android-with-b2c"></a>Использование MSAL для Android с B2C
 
@@ -58,7 +59,7 @@ ms.locfileid: "71679741"
 }
 ```
 
-@No__t-0 необходимо зарегистрировать в конфигурации приложения, а также в `AndroidManifest.xml` для поддержки перенаправления во время [потока предоставления кода авторизации](https://docs.microsoft.com/en-us/azure/active-directory-b2c/active-directory-b2c-reference-oauth-code).
+`redirect_uri` должны быть зарегистрированы в конфигурации приложения, а также в `AndroidManifest.xml` для поддержки перенаправления во время [потока предоставления кода авторизации](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-reference-oauth-code).
 
 ## <a name="initialize-ipublicclientapplication"></a>Инициализация Ипубликклиентаппликатион
 
@@ -116,7 +117,7 @@ pca.acquireToken(parameters);
 
 ## <a name="silently-renew-a-token"></a>Автоматическое продление срока действия токена
 
-Чтобы получить маркер в автоматическом режиме с помощью MSAL, создайте экземпляр `AcquireTokenSilentParameters` и укажите его в методе `acquireTokenSilentAsync`. В отличие от метода `acquireToken`, для получения маркера в автоматическом режиме необходимо указать `authority`.
+Чтобы получить маркер в автоматическом режиме с помощью MSAL, создайте экземпляр `AcquireTokenSilentParameters` и предоставьте его методу `acquireTokenSilentAsync`. В отличие от метода `acquireToken`, для получения маркера в автоматическом режиме необходимо указать `authority`.
 
 ```java
 IMultilpeAccountPublicClientApplication pca = ...; // Initialization not shown
@@ -143,7 +144,7 @@ pca.acquireTokenSilentAsync(parameters);
 
 ## <a name="specify-a-policy"></a>Укажите политику
 
-Поскольку политики в B2C представлены в виде отдельных центров, вызов политики, отличной от значения по умолчанию, достигается путем указания предложения `fromAuthority` при создании параметров `acquireToken` или `acquireTokenSilent`.  Пример:
+Так как политики в B2C представляются в виде отдельных центров, вызов политики, отличной от значения по умолчанию, достигается путем указания предложения `fromAuthority` при создании параметров `acquireToken` или `acquireTokenSilent`.  Пример.
 
 ```java
 AcquireTokenParameters parameters = new AcquireTokenParameters.Builder()
@@ -161,7 +162,7 @@ AcquireTokenParameters parameters = new AcquireTokenParameters.Builder()
 
 Вместо этого код ошибки `AADB2C90118` возвращается в приложение. Приложение должно справиться с этим кодом ошибки, запустив конкретный поток пользователя, который сбрасывает пароль.
 
-Чтобы перехватить код ошибки сброса пароля, в `AuthenticationCallback` можно использовать следующую реализацию:
+Чтобы перехватить код ошибки сброса пароля, в `AuthenticationCallback`можно использовать следующую реализацию:
 
 ```java
 new AuthenticationCallback() {
@@ -189,7 +190,7 @@ new AuthenticationCallback() {
 
 ## <a name="use-iauthenticationresult"></a>Использование Иаусентикатионресулт
 
-Успешное получение маркера приводит к получению объекта `IAuthenticationResult`. Он содержит маркер доступа, пользовательские утверждения и метаданные.
+Успешный получение маркера приводит к `IAuthenticationResult`ному объекту. Он содержит маркер доступа, пользовательские утверждения и метаданные.
 
 ### <a name="get-the-access-token-and-related-properties"></a>Получение маркера доступа и связанных свойств
 
@@ -219,7 +220,7 @@ String id = account.getId();
 // Get the IdToken Claims
 //
 // For more information about B2C token claims, see reference documentation
-// https://docs.microsoft.com/en-us/azure/active-directory-b2c/active-directory-b2c-reference-tokens
+// https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-reference-tokens
 Map<String, ?> claims = account.getClaims();
 
 // Get the 'preferred_username' claim through a convenience function
@@ -237,10 +238,10 @@ String tenantId = account.getTenantId();
 
 B2C рассматривает каждую политику как отдельный центр. Поэтому маркеры доступа, маркеры обновления и маркеры идентификации, возвращаемые из каждой политики, не взаимозаменяемы. Это означает, что каждая политика возвращает отдельный объект `IAccount`, маркеры которого нельзя использовать для вызова других политик.
 
-Каждая политика добавляет `IAccount` в кэш для каждого пользователя. Если пользователь входит в приложение и вызывает две политики, у них будет два @no__t-нулей. Чтобы удалить этого пользователя из кэша, необходимо вызвать `removeAccount()` для каждой политики.
+Каждая политика добавляет `IAccount` в кэш для каждого пользователя. Если пользователь входит в приложение и вызывает две политики, у них будет два `IAccount`. Чтобы удалить этого пользователя из кэша, необходимо вызвать `removeAccount()` для каждой политики.
 
-При обновлении маркеров для политики с `acquireTokenSilent` укажите ту же `IAccount`, которая была возвращена предыдущими вызовами политики, в `AcquireTokenSilentParameters`. Предоставление учетной записи, возвращаемой другой политикой, приведет к ошибке.
+При обновлении маркеров для политики с `acquireTokenSilent`укажите те же `IAccount`, которые были возвращены предыдущими вызовами политики для `AcquireTokenSilentParameters`. Предоставление учетной записи, возвращаемой другой политикой, приведет к ошибке.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Azure Active Directory B2C (Azure AD B2C) о том [, что Azure Active Directory B2C?](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-overview)

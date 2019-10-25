@@ -9,12 +9,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 02/20/2016
 ms.author: gwallace
-ms.openlocfilehash: e3e34ff9b5ce1c3a7b45468d22faddddf0c9a913
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: b8d195fba934ceae98af383b96a8c0d9a9b88c5f
+ms.sourcegitcommit: ec2b75b1fc667c4e893686dbd8e119e7c757333a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68359150"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72808091"
 ---
 # <a name="trace-the-flow-of-a-cloud-services-application-with-azure-diagnostics"></a>Трассировка потока в приложении облачных служб с помощью системы диагностики Azure
 Трассировка — это мониторинг выполнения запущенного приложения. Сведения об ошибках и выполнении приложений можно записывать в журналы, текстовые файлы или на устройства для последующего анализа с помощью классов [System.Diagnostics.Trace](/dotnet/api/system.diagnostics.trace), [System.Diagnostics.Debug](/dotnet/api/system.diagnostics.debug) и [System.Diagnostics.TraceSource](/dotnet/api/system.diagnostics.tracesource). Дополнительные сведения о трассировке см. в статье [Tracing and Instrumenting Applications](/dotnet/framework/debug-trace-profile/tracing-and-instrumenting-applications) (Трассировка и инструментирование приложений).
@@ -22,9 +22,9 @@ ms.locfileid: "68359150"
 ## <a name="use-trace-statements-and-trace-switches"></a>Использование трассировочных операторов и переключателей
 Чтобы реализовать трассировку в приложении облачных служб, добавьте класс [DiagnosticMonitorTraceListener](/previous-versions/azure/reference/ee758610(v=azure.100)) в конфигурацию приложения и вызовите метод System.Diagnostics.Trace или System.Diagnostics.Debug в коде приложения. Используйте файл конфигурации *app.config* для рабочих ролей и *web.config* для веб-ролей. Во время создания размещенной службы с помощью шаблона Visual Studio система диагностики Azure автоматически добавляется в проект. При этом класс DiagnosticMonitorTraceListener включается в соответствующий файл конфигурации для добавляемых ролей.
 
-Сведения о размещении инструкций трассировки см. [в разделе как Добавление операторов трассировки в код](/dotnet/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code)приложения.
+Дополнительные сведения о размещении трассировочных операторов см. в статье [How to: Add Trace Statements to Application Code](/dotnet/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code) (Добавление трассировочных операторов в код приложения).
 
-Процессом и масштабом трассировки можно управлять. Для этого добавьте в код [переключатели трассировки](/dotnet/framework/debug-trace-profile/trace-switches). Так вы сможете отслеживать состояние приложения в рабочей среде. Это особенно важно в бизнес-приложениях, которые используют различные компоненты, выполняющиеся на нескольких компьютерах. Дополнительные сведения см. в разделе [Практическое руководство. Настройка переключателей](/dotnet/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches)трассировки.
+Процессом и масштабом трассировки можно управлять. Для этого добавьте в код [переключатели трассировки](/dotnet/framework/debug-trace-profile/trace-switches). Так вы сможете отслеживать состояние приложения в рабочей среде. Это особенно важно в бизнес-приложениях, которые используют различные компоненты, выполняющиеся на нескольких компьютерах. Дополнительные сведения см. в статье [How to: Configure Trace Switches](/dotnet/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches) (Настройка переключателей трассировки).
 
 ## <a name="configure-the-trace-listener-in-an-azure-application"></a>Настройка прослушивателя трассировки в приложении Azure
 Использование элементов Trace, Debug и TraceSource предполагает настройку прослушивателей для сбора и записи отправляемых сообщений. Прослушиватели собирают, хранят и перенаправляют сообщения трассировки. Они направляют выходные данные трассировки в соответствующий целевой объект, например журнал, окно или текстовый файл. Система диагностики Azure использует класс [DiagnosticMonitorTraceListener](/previous-versions/azure/reference/ee758610(v=azure.100)) .
@@ -64,11 +64,11 @@ ms.locfileid: "68359150"
 Добавив прослушиватель, вы можете добавить в код трассировочные операторы.
 
 ### <a name="to-add-trace-statement-to-your-code"></a>Добавление трассировочного оператора в код
-1. Откройте исходный файл приложения. Например, \<файл roleName >. cs для рабочей роли или веб-роли.
-2. Добавьте следующий оператор using, если он еще не добавлен:
+1. Откройте исходный файл приложения. Например, файл \<RoleName >. cs для рабочей роли или веб-роли.
+2. Добавьте следующую директиву using, если она еще не добавлена:
     ```
         using System.Diagnostics;
     ```
-3. Добавьте трассировочные операторы, чтобы записывать сведения о состоянии приложения. Вывод оператора трассировки можно форматировать разными способами. Дополнительные сведения см. в разделе [Практическое руководство. Добавление операторов трассировки в код](/dotnet/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code)приложения.
+3. Добавьте трассировочные операторы, чтобы записывать сведения о состоянии приложения. Вывод оператора трассировки можно форматировать разными способами. Дополнительные сведения об этом см. в статье [How to: Add Trace Statements to Application Code](/dotnet/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code) (Добавление трассировочных операторов в код приложения).
 4. Сохраните исходный файл.
 

@@ -1,24 +1,23 @@
 ---
-title: 'Навык когнитивного поиска: распознавание текста — служба "Поиск Azure"'
-description: Сведения об извлечении текста из файлов изображений путем распознавания текста (OCR) в конвейере обогащения службы "Поиск Azure".
-services: search
+title: Когнитивный навык распознавания текста
+titleSuffix: Azure Cognitive Search
+description: Извлеките текст из файлов изображений с помощью оптического распознавания символов (OCR) в конвейере обогащения в Azure Когнитивный поиск.
 manager: nitinme
 author: luiscabrer
-ms.service: search
-ms.workload: search
-ms.topic: conceptual
-ms.date: 05/02/2019
 ms.author: luisca
-ms.openlocfilehash: da1ca218f7a3d33e6ceb08b3f8d0f632b8b752b7
-ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
+ms.service: cognitive-search
+ms.topic: conceptual
+ms.date: 11/04/2019
+ms.openlocfilehash: bdb510113a8d65ac04b54e77158f46d03cccd9de
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71265332"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72791927"
 ---
 # <a name="ocr-cognitive-skill"></a>Когнитивный навык распознавания текста
 
-Навык оптического распознавания символов (OCR) распознает печатный и рукописный текст в файлах изображений. Этот навык использует модели машинного обучения, предоставляемые [API компьютерного зрения](https://docs.microsoft.com/azure/cognitive-services/computer-vision/home) в Cognitive Services. Навык **OCR** сопоставляет следующие функциональные возможности службы.
+Уровень опыта **распознавания текста (OCR)** распознает печатный и рукописный текст в файлах изображений. Этот навык использует модели машинного обучения, предоставляемые [API компьютерного зрения](https://docs.microsoft.com/azure/cognitive-services/computer-vision/home) в Cognitive Services. Навык **OCR** сопоставляет следующие функциональные возможности службы.
 
 + API [OCR](../cognitive-services/computer-vision/concept-recognizing-text.md#ocr-optical-character-recognition-api) используется для языков, отличных от английского. 
 + Для английского языка используется новый API [Read](../cognitive-services/computer-vision/concept-recognizing-text.md#read-api) .
@@ -33,9 +32,9 @@ ms.locfileid: "71265332"
 + . -
 
 > [!NOTE]
-> По мере расширения области путем увеличения частоты обработки и добавления большего количества документов или дополнительных алгоритмов ИИ, вам нужно будет [присоединить оплачиваемый ресурс Cognitive Services](cognitive-search-attach-cognitive-services.md). Плата взимается при вызове API в Cognitive Services и извлечении изображений при открытии документов в службе "Поиск Azure". За извлечение текста из документов плата не взимается.
+> По мере расширения области путем увеличения частоты обработки и добавления большего количества документов или дополнительных алгоритмов ИИ, вам нужно будет [присоединить оплачиваемый ресурс Cognitive Services](cognitive-search-attach-cognitive-services.md). Расходы начисляются при вызове API в Cognitive Services, а также для извлечения изображений в рамках этапа взлома документов в Azure Когнитивный поиск. За извлечение текста из документов плата не взимается.
 >
-> Плата за выполнение встроенных навыков взимается в рамках существующей [модели оплаты Cognitive Services по мере использования](https://azure.microsoft.com/pricing/details/cognitive-services/). Плата за извлечение изображений указана на [странице с ценами на Поиск Azure](https://go.microsoft.com/fwlink/?linkid=2042400).
+> Плата за выполнение встроенных навыков взимается в рамках существующей [модели оплаты Cognitive Services по мере использования](https://azure.microsoft.com/pricing/details/cognitive-services/). Цены на извлечение изображений описаны на [странице цен на когнитивный Поиск Azure](https://go.microsoft.com/fwlink/?linkid=2042400).
 
 
 ## <a name="skill-parameters"></a>Параметры навыков
@@ -60,7 +59,7 @@ ms.locfileid: "71265332"
 ## <a name="skill-outputs"></a>Выходные данные навыка
 | Имя вывода     | Описание                   |
 |---------------|-------------------------------|
-| text          | Обычный текст, извлеченный из изображения.   |
+| текст          | Обычный текст, извлеченный из изображения.   |
 | layoutText    | Сложный тип, описывающий извлеченный текст и расположение, где найден указанный текст.|
 
 
@@ -135,7 +134,7 @@ ms.locfileid: "71265332"
 }
 ```
 
-## <a name="sample-merging-text-extracted-from-embedded-images-with-the-content-of-the-document"></a>Пример: Слияние текста, извлеченного из внедренных изображений с содержимым документа.
+## <a name="sample-merging-text-extracted-from-embedded-images-with-the-content-of-the-document"></a>Пример. Слияние текста, извлеченного из внедренных изображений с содержимым документа.
 
 Распространенным вариантом использования текстового слияния является возможность объединить текстовое представление изображений (текст из навыка OCR или заголовок изображения) с полем содержимого документа.
 
@@ -205,8 +204,8 @@ ms.locfileid: "71265332"
 }
 ```
 
-## <a name="see-also"></a>См. также
-+ [Предопределенные навыки](cognitive-search-predefined-skills.md)
+## <a name="see-also"></a>Дополнительные материалы
++ [Встроенные навыки](cognitive-search-predefined-skills.md)
 + [Text Merge cognitive skill](cognitive-search-skill-textmerger.md) (Когнитивный навык слияния текста)
-+ [Определение набора навыков](cognitive-search-defining-skillset.md)
++ [How to define a skillset](cognitive-search-defining-skillset.md) (Определение набора навыков)
 + [Создание индексатора (REST)](https://docs.microsoft.com/rest/api/searchservice/create-indexer)

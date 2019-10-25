@@ -1,5 +1,6 @@
 ---
-title: Настройка домена издателя приложения | Службы
+title: Настройка домена издателя приложения
+titleSuffix: Microsoft identity platform
 description: Узнайте, как настроить домен издателя приложения, чтобы пользователи могли узнать, куда отправляются данные.
 services: active-directory
 documentationcenter: dev-center-name
@@ -17,14 +18,14 @@ ms.author: ryanwi
 ms.reviewer: lenalepa, sureshja, zachowd
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 28021c0b8512ca12ead92b0b78541fce690b1f80
-ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
+ms.openlocfilehash: 26ef28be328e01f8edcf898f123db55f262f286c
+ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71257936"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72803343"
 ---
-# <a name="how-to-configure-an-applications-publisher-domain-preview"></a>Практическое руководство. Настройка домена издателя приложения (Предварительная версия)
+# <a name="how-to-configure-an-applications-publisher-domain-preview"></a>Как настроить домен издателя приложения (Предварительная версия)
 
 Домен издателя приложения отображается для пользователей в [запросе согласия приложения](application-consent-experience.md) , чтобы пользователи могли понять, куда отправляются данные. Приложения с несколькими клиентами, зарегистрированные после 21 мая, 2019, у которых нет домена издателя, не отображаются как **непроверенные**. Приложения с несколькими клиентами — это приложения, которые поддерживают учетные записи за пределами единого каталога организации. Например, поддерживаются все учетные записи Azure AD или поддерживаются все учетные записи Azure AD и личные учетные записи Майкрософт.
 
@@ -69,7 +70,7 @@ ms.locfileid: "71257936"
    - Выберите **настроить домен** , если вы еще не настроили домен.
    - Выберите **обновить домен** , если домен уже настроен.
 
-Если приложение зарегистрировано в клиенте, вы увидите две вкладки для выбора: **Выберите проверенный домен** и **Проверьте новый домен**.
+Если приложение зарегистрировано в клиенте, вы увидите две вкладки для выбора: **выберите проверенный домен** и **Проверьте новый домен**.
 
 Если приложение не зарегистрировано в клиенте, вы увидите только параметр проверки нового домена для приложения.
 
@@ -98,7 +99,7 @@ ms.locfileid: "71257936"
 - Если у клиента есть проверенные домены, выберите один из доменов в раскрывающемся списке **выберите проверенный домен** .
 
 >[!Note]
-> Ожидался ожидаемый заголовок Content-Type, который должен быть возвращен `application/json`. Вы можете получить сообщение об ошибке, как упоминалось ниже, если вы используете что-нибудь вроде`application/json; charset=utf-8` 
+> Ожидаемый заголовок Content-Type, который должен возвращаться, — это `application/json`. Вы можете получить сообщение об ошибке, как упоминалось ниже, если вы используете что-нибудь вроде `application/json; charset=utf-8` 
 > 
 >``` "Verification of publisher domain failed. Error getting JSON file from https:///.well-known/microsoft-identity-association. The server returned an unexpected content type header value. " ```
 >

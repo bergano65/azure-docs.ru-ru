@@ -1,5 +1,6 @@
 ---
-title: Добавление ролей приложения в приложение, зарегистрированное в Azure Active Directory, и их получение в токене
+title: Добавление ролей приложения в зарегистрированное Azure Active Directory приложении и получение их в токене
+titleSuffix: Microsoft identity platform
 description: Сведения о добавлении ролей приложения в приложение, зарегистрированное в Azure Active Directory, назначении ролей для пользователей и групп и их получение в утверждении `roles` в токене.
 services: active-directory
 documentationcenter: ''
@@ -17,14 +18,14 @@ ms.author: kkrishna
 ms.reviewer: ''
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 24e933399454942f4ee50440cffd791599679074
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 87660c6ef8266d3ebfbad1b7a8a7cb98b936e9c6
+ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66299149"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72803361"
 ---
-# <a name="how-to-add-app-roles-in-your-application-and-receive-them-in-the-token"></a>Практическое руководство: Добавление ролей приложения в приложение, зарегистрированное в Azure Active Directory, и их получение в токене
+# <a name="how-to-add-app-roles-in-your-application-and-receive-them-in-the-token"></a>Практическое руководство. Добавление ролей приложения в приложение, зарегистрированное в Azure Active Directory, и их получение в токене
 
 Управление доступом на основе ролей (RBAC) — это популярный механизм для принудительного применения авторизации в приложениях. При использовании RBAC администратор предоставляет разрешения ролям, а не отдельным пользователям или группам. Затем администратор может назначить роли для различных пользователей и групп, чтобы контролировать доступ к соответствующему содержимому и функциональным возможностям.
 
@@ -51,9 +52,9 @@ ms.locfileid: "66299149"
 1. Измените манифест приложения. Для этого найдите параметр `appRoles` и добавьте все имеющиеся роли приложения.
 
      > [!NOTE]
-     > Каждое определение роли приложения в этом манифесте должен иметь другой допустимый GUID для `id` свойство. 
+     > Каждое определение роли приложения в этом манифесте должно иметь другой допустимый идентификатор GUID для свойства `id`. 
      > 
-     > `value` Свойства определения роли каждого приложения, строки, которые используются в коде приложения должно полностью совпадать. `value` Свойство не может содержать пробелы. В этом случае вы получите ошибку при сохранении манифеста.
+     > Свойство `value` каждого определения роли приложения должно точно соответствовать строкам, используемым в коде приложения. Свойство `value` не может содержать пробелы. Если это так, при сохранении манифеста появится сообщение об ошибке.
      
 1. Сохраните манифест.
 
@@ -82,7 +83,7 @@ ms.locfileid: "66299149"
 ```
 
 > [!NOTE]
->`displayName` Не может содержать пробелы.
+>`displayName` не может содержать пробелы.
 
 Вы можете определить роли приложения, чтобы выбрать `users`, `applications` или обе эти роли. Если они доступны для `applications`, роли приложения отображаются как разрешения приложения в колонке **Необходимые разрешения**. В следующем примере показана роль приложения, предназначенная для `Application`.
 
@@ -103,7 +104,7 @@ ms.locfileid: "66299149"
 "availableToOtherTenants": false,
 ```
 
-Число ролей, определенных влияет на ограничения, которые содержит манифест приложения. Они подробно обсуждаются подробно на [манифеста ограничения](https://docs.microsoft.com/azure/active-directory/develop/reference-app-manifest#manifest-limits) страницы.
+Число определенных ролей влияет на пределы манифеста приложения. Они подробно описаны на странице [ограничения манифеста](https://docs.microsoft.com/azure/active-directory/develop/reference-app-manifest#manifest-limits) .
 
 ### <a name="assign-users-and-groups-to-roles"></a>Назначение ролей для пользователей и групп
 
@@ -129,7 +130,7 @@ ms.locfileid: "66299149"
 
 ## <a name="more-information"></a>Дополнительные сведения
 
-- [Authorization in a web app using Azure AD application roles &amp; role claims (Sample)](https://azure.microsoft.com/resources/samples/active-directory-dotnet-webapp-roleclaims/) (Авторизация в веб-приложении с помощью ролей приложения и утверждений ролей в Azure AD (пример))
+- [Authorization in a web app using Azure AD application roles &amp; role claims (Sample)](https://github.com/Azure-Samples/active-directory-dotnet-webapp-roleclaims) (Авторизация в веб-приложении с помощью ролей приложения и утверждений ролей в Azure AD (пример))
 - [August 9: Using application roles and security groups in your apps (Video)](https://www.youtube.com/watch?v=V8VUPixLSiM) (9 августа. Использование ролей приложения и групп безопасности в приложениях (видео))
 - [Azure Active Directory, now with Group Claims and Application Roles](https://cloudblogs.microsoft.com/enterprisemobility/2014/12/18/azure-active-directory-now-with-group-claims-and-application-roles) (Azure Active Directory с утверждениями групп и ролями приложения)
 - [Манифест приложения Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/reference-app-manifest)

@@ -1,10 +1,9 @@
 ---
-title: Использование AMQP 1,0 с API службы сообщений Java и служебной шиной Azure
+title: Использование AMQP с API службы сообщений Java & служебной шины Azure
 description: Как использовать службу сообщений Java (JMS) со Служебной шиной Azure и Расширенным протоколом управления очередью сообщений (AMQP) 1.0.
 services: service-bus-messaging
 documentationcenter: java
 author: axisc
-manager: timlt
 editor: spelluru
 ms.assetid: be766f42-6fd1-410c-b275-8c400c811519
 ms.service: service-bus-messaging
@@ -12,15 +11,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: Java
 ms.topic: article
-ms.date: 03/05/2019
+ms.date: 10/22/2019
 ms.author: aschhab
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: 9dff2cc11b71f314de81fd99ed3b72c6337d977f
-ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
+ms.openlocfilehash: f1a679deca8ee33bb4801eb1d1023684a37d0f59
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70967980"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72793163"
 ---
 # <a name="use-the-java-message-service-jms-with-azure-service-bus-and-amqp-10"></a>Использование службы сообщений Java (JMS) с служебной шиной Azure и AMQP 1,0
 В этой статье объясняется, как использовать функции обмена сообщениями служебной шины Azure (очереди и разделы публикации и подписки) из приложений Java с помощью популярного стандарта API службы сообщений Java (JMS). Есть [сопутствующая статья](service-bus-amqp-dotnet.md) , в которой объясняется, как сделать то же самое с помощью API .NET служебной шины Azure. Эти два руководства можно использовать совместно для изучения обмена сообщениями между различными платформами с помощью AMQP 1.0.
@@ -342,7 +341,7 @@ MODIFIED_FAILED = 4; -> Abandon() which increases delivery count
 MODIFIED_FAILED_UNDELIVERABLE = 5; -> Defer()
 ```
 
-## <a name="jms-topics-vs-service-bus-topics"></a>Статьи о JMS и Разделы служебной шины
+## <a name="jms-topics-vs-service-bus-topics"></a>Статьи о JMS и разделы служебной шины
 Использование разделов и подписок служебной шины Azure с помощью API-интерфейса службы сообщений Java (JMS) предоставляет базовые возможности отправки и получения. Это удобный вариант при переносе приложений от других брокеров сообщений с помощью API-интерфейсов, совместимых с JMS, даже если разделы служебной шины отличаются от подразделов JMS и требует нескольких корректировок. 
 
 Разделы служебной шины Azure направляют сообщения в именованные, общие и устойчивые подписки, управляемые через интерфейс управления ресурсами Azure, средства командной строки Azure или с помощью портал Azure. Каждая подписка позволяет использовать до 2000 правил выбора, каждое из которых может иметь условие фильтра, а для фильтров SQL — также действие преобразования метаданных. Каждое условие фильтра соответствует входному сообщению, которое должно быть скопировано в подписку техж.  
@@ -377,12 +376,12 @@ MODIFIED_FAILED_UNDELIVERABLE = 5; -> Defer()
 | createTemporaryQueue        | создать очередь с помощью API управления или инструментов,или портала с *AutoDeleteOnIdle*, установленным на срок действия |
 | рецеивеноваит               | Используйте метод Receive (), предоставленный пакетом SDK служебной шины, и укажите очень низкое или нулевое время ожидания. |
 
-## <a name="summary"></a>Сводка
+## <a name="summary"></a>Резюме
 В этом практическом руководстве показано использование функций обмена сообщениями, выполняемых посредством служебной шины (очередей и разделов публикации/подписки), из Java с использованием популярного JMS API и протокола AMQP 1.0.
 
 Протокол AMQP 1.0 Service Bus можно также использовать из других языков, в числе которых .NET, C, Python и PHP. Компоненты, созданные с помощью этих языков, могут надежно и точно обмениваться сообщениями, используя AMQP 1.0 в Service Bus.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Поддержка AMQP 1.0 в служебной шине](service-bus-amqp-overview.md)
 * [Как использовать AMQP 1.0 с API .NET служебной шины](service-bus-dotnet-advanced-message-queuing.md)
 * [Руководство разработчика AMQP 1.0 для служебной шины](service-bus-amqp-dotnet.md)

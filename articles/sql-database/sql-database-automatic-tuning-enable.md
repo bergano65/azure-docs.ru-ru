@@ -11,12 +11,12 @@ author: danimir
 ms.author: danil
 ms.reviewer: jrasnik, carlrab
 ms.date: 01/25/2019
-ms.openlocfilehash: 67a05d065cba8286c837487e21fc2f5be54e2c0b
-ms.sourcegitcommit: a7a9d7f366adab2cfca13c8d9cbcf5b40d57e63a
+ms.openlocfilehash: c9339b5c7c35378fb85daeae19a6daa01d54f350
+ms.sourcegitcommit: ec2b75b1fc667c4e893686dbd8e119e7c757333a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71162345"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72809647"
 ---
 # <a name="enable-automatic-tuning-to-monitor-queries-and-improve-workload-performance"></a>Включение автоматической настройки для отслеживания запросов и повышения производительности рабочей нагрузки
 
@@ -48,7 +48,7 @@ ms.locfileid: "71162345"
 
 Параметры автоматической настройки на сервере применяются ко всем базам данных на сервере. По умолчанию все базы данных наследуют конфигурацию из родительского сервера, но ее можно переопределить, а также указать отдельно для каждой базы данных.
 
-### <a name="rest-api"></a>REST API
+### <a name="rest-api"></a>REST API
 
 Дополнительные сведения о включении автоматической настройки на сервере с помощью REST API см. в разделе, посвященном [методам HTTP UPDATE и GET для автонастройки SQL Server](https://docs.microsoft.com/rest/api/sql/serverautomatictuning).
 
@@ -104,11 +104,17 @@ ALTER DATABASE current SET AUTOMATIC_TUNING (FORCE_LAST_GOOD_PLAN = ON, CREATE_I
 
 Автоматическая настройка контролирует все действия, которые она выполняет в базе данных, и в некоторых случаях может определить, что автоматическая настройка в базе данных работает не должным образом. В этом случае параметр настройки будет отключен системой. В большинстве случаев это происходит потому, что хранилище запросов отключено или доступно только для чтения в определенной базе данных.
 
+## <a name="permissions"></a>Разрешения
+
+Для использования функции автоматической настройки в Azure необходимо использовать встроенные роли RBAC в Azure. Использование только проверки подлинности SQL не будет достаточным для использования этой функции из портал Azure.
+
+Чтобы использовать автоматическую настройку, минимально необходимым разрешением для предоставления пользователю является встроенная роль [участника базы данных SQL](../role-based-access-control/built-in-roles.md#sql-db-contributor) в Azure. Вы также можете использовать более высокие роли прав доступа, такие как SQL Server участник, участник и владелец.
+
 ## <a name="configure-automatic-tuning-e-mail-notifications"></a>Настройка уведомлений по электронной почте об автоматической настройке
 
-Ознакомьтесь с руководством [Уведомления по электронной почте об автоматической настройке](sql-database-automatic-tuning-email-notifications.md).
+См. раздел Guide по [автоматической настройке уведомлений по электронной почте](sql-database-automatic-tuning-email-notifications.md) .
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения об автоматической настройке и о том, как она повышает производительность, см. в [этой статье](sql-database-automatic-tuning.md).
 * Общие сведения о рекомендациях по производительности базы данных SQL Azure см. в статье [Помощник по работе с базами данных SQL](sql-database-advisor.md).
