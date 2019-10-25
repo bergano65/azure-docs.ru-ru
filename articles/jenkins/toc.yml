@@ -55,7 +55,7 @@
           maintainContext: true
 - name: Инструкции
   items:
-    - name: Использование подключаемого модуля Службы приложений Azure
+    - name: Использование подключаемого модуля Службы приложений
       href: deploy-jenkins-app-service-plugin.md
 - name: Примеры
   items:

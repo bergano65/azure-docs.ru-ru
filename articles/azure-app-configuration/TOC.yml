@@ -25,6 +25,8 @@
       items:
         - name: ASP.NET Core
           href: quickstart-feature-flag-aspnet-core.md
+        - name: .NET Framework
+          href: quickstart-feature-flag-dotnet.md
         - name: Java Spring
           href: quickstart-feature-flag-spring-boot.md
 - name: Учебники
@@ -33,6 +35,8 @@
       href: enable-dynamic-configuration-aspnet-core.md
     - name: Включение динамической конфигурации в приложении .NET Core
       href: enable-dynamic-configuration-dotnet-core.md
+    - name: Включение динамической конфигурации в .NET Framework
+      href: enable-dynamic-configuration-dotnet.md
     - name: Использование флагов компонентов в приложении .NET Core
       href: use-feature-flags-dotnet-core.md
     - name: Использование флагов компонентов в приложении Spring Boot

@@ -17,6 +17,11 @@
     - name: Выполнение первого запроса с помощью PowerShell
       displayName: 'module, docker, Az.ResourceGraph'
       href: first-query-powershell.md
+- name: Учебники
+  items:
+    - name: Создание запроса и предоставление общего доступа к нему на портале Azure
+      displayName: 'query, portal'
+      href: ./tutorials/create-share-query.md
 - name: Примеры
   items:
     - name: Запросы для начинающих

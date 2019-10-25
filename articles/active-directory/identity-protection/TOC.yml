@@ -3,65 +3,49 @@
 - name: Обзор
   items:
     - name: "Сведения о службе \"Защита идентификации Azure\_AD\""
-      href: overview.md
-- name: Краткие руководства
-  items:
-    - name: Блокировка доступа при обнаружении риска безопасности сеанса
-      href: quickstart-sign-in-risk-policy.md
+      href: overview-identity-protection.md
 - name: Основные понятия
   expanded: false
   items:
-    - name: Сведения об уязвимостях
-      href: vulnerabilities.md
-    - name: Сведения об уведомлениях
-      href: notifications.md
-    - name: Сведения о вариантах входа в систему
-      href: flows.md
+    - name: Общие сведения о безопасности
+      href: concept-identity-protection-security-overview.md
+    - name: Сведения о рисках
+      href: concept-identity-protection-risks.md
+    - name: Политики Защиты идентификации
+      href: concept-identity-protection-policies.md
+    - name: Сведения о процессе входа в систему
+      href: concept-identity-protection-user-experience.md
     - name: Защита идентификации и пользователи B2B
       href: concept-identity-protection-b2b.md
 - name: Руководства
   expanded: true
   items:
-    - name: Защита идентификации
+    - name: Настройка уведомлений
+      href: howto-identity-protection-configure-notifications.md
+    - name: Настройки политики
       items:
-        - name: "Включение Защиты идентификации Azure\_AD"
-          href: enable.md
         - name: Настройка политики регистрации многофакторной идентификации
-          href: howto-mfa-policy.md
-        - name: Настройка политики минимизации рисков при входе
-          href: howto-sign-in-risk-policy.md
-        - name: Настройка политики минимизации рисков для пользователей
-          href: howto-user-risk-policy.md
-        - name: Закрытие обнаруженных активных событий риска
-          href: howto-close-active-risk-events.md
-        - name: Разблокировка пользователей
-          href: howto-unblock-user.md
-        - name: Моделирование обнаружения рисков
-          href: playbook.md
-        - name: Часто задаваемые вопросы
-          href: faqs.md
-    - name: Защита идентификации (обновление)
-      items:
-        - name: Обзор
-          href: overview-v2.md
-        - name: Общие сведения о безопасности
-          href: security-overview.md
-        - name: Анализ риска
-          href: howto-investigate-risk.md
-        - name: Отзыв об обнаружении событий риска
-          href: howto-provide-risk-event-feedback.md
+          href: howto-identity-protection-configure-mfa-policy.md
         - name: Настройка политик риска
-          href: howto-configure-risk-policies.md
-        - name: Часто задаваемые вопросы и известные проблемы
-          href: known-issues.md
+          href: howto-identity-protection-configure-risk-policies.md
+    - name: Моделирование обнаружения рисков
+      href: howto-identity-protection-simulate-risk.md
+    - name: Исследование и исправление
+      items:
+        - name: Анализ риска
+          href: howto-identity-protection-investigate-risk.md
+        - name: Устранение обнаруженных рисков и разблокировка пользователя
+          href: howto-identity-protection-remediate-unblock.md
+        - name: Использование API Microsoft Graph
+          href: howto-identity-protection-graph-api.md
+    - name: Отзыв об обнаружении событий риска
+      href: howto-identity-protection-risk-feedback.md
+    - name: Часто задаваемые вопросы
+      href: troubleshooting-identity-protection-faq.md
 - name: Справочные материалы
   items:
-    - name: Использование API Microsoft Graph
-      href: graph-get-started.md
-    - name: Обнаружение рисков
-      href: risk-events-reference.md
     - name: Глоссарий
-      href: glossary.md
+      href: reference-identity-protection-glossary.md
 - name: Ресурсы
   items:
     - name: Форум отзывов и предложений по Azure

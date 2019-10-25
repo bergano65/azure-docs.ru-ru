@@ -89,6 +89,8 @@
           href: 'cache-administration.md#schedule-updates'
         - name: Настройка доступа redis cli.exe
           href: cache-how-to-redis-cli-tool.md
+        - name: Нерекомендуемое использование TLS 1.0 и 1.1
+          href: cache-deprecate-tls-10-11.md
     - name: Мониторинг
       items:
         - name: Мониторинг на портале Azure
