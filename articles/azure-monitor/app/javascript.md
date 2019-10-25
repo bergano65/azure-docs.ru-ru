@@ -1,23 +1,18 @@
 ---
 title: Azure Application Insights и веб-приложения JavaScript | Документация Майкрософт
 description: Получайте данные о количестве просмотров страницы и количестве сеансов, данные веб-клиента и отслеживайте закономерности использования. Выявляйте исключения и проблемы с производительностью на веб-страницах JavaScript.
-services: application-insights
-documentationcenter: ''
-author: mrbullwinkle
-manager: carmonm
-ms.assetid: 3b710d09-6ab4-4004-b26a-4fa840039500
-ms.service: application-insights
-ms.workload: tbd
-ms.tgt_pltfrm: ibiza
+ms.service: azure-monitor
+ms.subservice: application-insights
 ms.topic: conceptual
-ms.date: 09/20/2019
+author: mrbullwinkle
 ms.author: mbullwin
-ms.openlocfilehash: b49206c677e2f1b20c154ae0c9e358e8b2b0bbd8
-ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
+ms.date: 09/20/2019
+ms.openlocfilehash: 17765910b379bd4212d171cce6643de561db23ad
+ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72430198"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72819376"
 ---
 # <a name="application-insights-for-web-pages"></a>Application Insights для веб-страниц
 
@@ -178,7 +173,7 @@ appInsights.trackTrace({message: 'this message will not be sent'}); // Not sent
 
 ### <a name="analytics"></a>Analytics 
 
-Чтобы запросить данные телеметрии, собранные с помощью пакета SDK для JavaScript, нажмите кнопку **Просмотр в журналах (аналитика)** . Добавив в `client_Type == "Browser"` инструкцию `where`, вы увидите только данные из пакета SDK для JavaScript, и все телеметрии на стороне сервера, собранные другими пакетами SDK, будут исключены.
+Чтобы запросить данные телеметрии, собранные с помощью пакета SDK для JavaScript, нажмите кнопку **Просмотр в журналах (аналитика)** . Добавив `where`ную инструкцию `client_Type == "Browser"`, вы увидите только данные из пакета SDK для JavaScript, и все телеметрии на стороне сервера, собранные другими пакетами SDK, будут исключены.
  
 ```kusto
 // average pageView duration by name
@@ -219,7 +214,7 @@ npm i --save @microsoft/applicationinsights-web-basic
 Критические изменения в версии пакета SDK v2:
 - Чтобы обеспечить лучшую сигнатуры API, некоторые вызовы API, такие как trackPageView, были обновлены. Работа в IE8 или более ранних версиях браузера не поддерживается.
 - В связи с обновлением схемы данных в конверте телеметрии изменились имя и структура поля.
-- Перемещен `context.operation` в `context.telemetryTrace`. Некоторые поля были также изменены (`operation.id` @ no__t-1 @ no__t-2)
+- Перемещен `context.operation` в `context.telemetryTrace`. Некоторые поля были также изменены (`operation.id` --> `telemetryTrace.traceID`)
   - Если вы хотите вручную обновить текущий идентификатор pageview (например, в приложениях SPA), это можно сделать с помощью `appInsights.properties.context.telemetryTrace.traceID = Util.newId()`.
 
 Если вы используете текущий пакет SDK Application Insights (1.0.20) и хотите узнать, работает ли новый пакет SDK в среде выполнения, обновите URL-адрес в зависимости от текущего сценария загрузки пакета SDK.

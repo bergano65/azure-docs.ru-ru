@@ -1,23 +1,18 @@
 ---
 title: Интеллектуальное обнаружение чрезмерного увеличения числа исключений в Azure Application Insights | Документация Майкрософт
 description: Мониторинг исключений приложений с помощью Azure Application Insights для обнаружения необычных шаблонов в их количестве.
-services: application-insights
-documentationcenter: ''
-author: mrbullwinkle
-manager: carmonm
-ms.assetid: ea2a28ed-4cd9-4006-bd5a-d4c76f4ec20b
-ms.service: application-insights
-ms.workload: tbd
-ms.tgt_pltfrm: ibiza
+ms.service: azure-monitor
+ms.subservice: application-insights
 ms.topic: conceptual
-ms.date: 12/08/2017
+author: mrbullwinkle
 ms.author: mbullwin
-ms.openlocfilehash: a6e7e8e01ccb623a3ff340c318c9c238c919cb38
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 12/08/2017
+ms.openlocfilehash: fa7669b78caabb95b08200e83ed18ea982ce9ac9
+ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61298590"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72820600"
 ---
 # <a name="abnormal-rise-in-exception-volume-preview"></a>Чрезмерное увеличение числа исключений (предварительная версия)
 

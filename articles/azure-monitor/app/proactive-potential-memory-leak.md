@@ -1,29 +1,24 @@
 ---
 title: Смарт-обнаружение — потенциальные утечки памяти, обнаруживаемые Azure Application Insights| Документация Майкрософт
 description: Мониторинг приложений с помощью Azure Application Insights для выявления потенциальных проблем с утечками памяти.
-services: application-insights
-documentationcenter: ''
-author: mrbullwinkle
-manager: carmonm
-ms.assetid: ea2a28ed-4cd9-4006-bd5a-d4c76f4ec20b
-ms.service: application-insights
-ms.workload: tbd
-ms.tgt_pltfrm: ibiza
+ms.service: azure-monitor
+ms.subservice: application-insights
 ms.topic: conceptual
-ms.date: 12/12/2017
+author: mrbullwinkle
 ms.author: mbullwin
-ms.openlocfilehash: e430b1e976ac26f7320b28d50dd39923066cfa41
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.date: 12/12/2017
+ms.openlocfilehash: f07da754c6c9e0ad0541db12740c1d80f7f884fd
+ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60306349"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72818806"
 ---
 # <a name="memory-leak-detection-preview"></a>Обнаружение утечек памяти (предварительная версия)
 
 Application Insights автоматически анализирует потребление памяти каждого процесса в приложении и предупреждает о потенциальных утечках памяти или увеличении объема используемой памяти.
 
-Для этого компонента не требуется особая настройка — только [настройка счетчиков производительности](https://docs.microsoft.com/azure/application-insights/app-insights-performance-counters) для приложения. Компонент активируется, когда приложение генерирует достаточно данных телеметрии со счетчиков производительности памяти (например, байты исключительного пользования).
+Для этого компонента не требуется особая настройка — только [настройка счетчиков производительности](https://docs.microsoft.com/azure/application-insights/app-insights-performance-counters). Компонент активируется, когда приложение генерирует достаточно данных телеметрии со счетчиков производительности памяти (например, байты исключительного пользования).
 
 ## <a name="when-would-i-get-this-type-of-smart-detection-notification"></a>Когда я буду получать уведомления интеллектуального обнаружения такого типа?
 Обычно уведомление поступает после согласованного увеличения объема используемой памяти в течение длительного времени в рамках одного или нескольких процессов на одном или нескольких компьютерах, которые являются частью приложения. Для определения повышенного использования памяти, соответствующего утечке памяти, используются алгоритмы машинного обучения.

@@ -1,20 +1,19 @@
 ---
 title: Интеллектуальное обнаружение в Azure Application Insights — предстоящие изменения для получателей уведомлений по умолчанию | Документация Майкрософт
 description: Мониторинг трассировок приложений с помощью Azure Application Insights для обнаружения необычных шаблонов в данных телеметрии трассировок.
-services: application-insights
-author: harelbr
-manager: carmonm
-ms.service: application-insights
+ms.service: azure-monitor
+ms.subservice: application-insights
 ms.topic: conceptual
-ms.reviewer: mbullwin
-ms.date: 03/13/2019
+author: harelbr
 ms.author: harelbr
-ms.openlocfilehash: f984a34be1c5d5fdd18a00812107318df8f5d9bf
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 03/13/2019
+ms.reviewer: mbullwin
+ms.openlocfilehash: fa1f98b5a9ee592a4c702e87e365eff7941194d4
+ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61299007"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72820623"
 ---
 # <a name="smart-detection-e-mail-notification-change"></a>Изменение уведомлений по электронной почте для службы интеллектуального обнаружения
 
@@ -22,7 +21,7 @@ ms.locfileid: "61299007"
 
 ## <a name="what-is-changing"></a>Что изменяется?
 
-Сейчас уведомления по электронной почте от службы интеллектуального обнаружения по умолчанию отправляются пользователям с такими ролями: _Владелец подписки_, _Участник подписки_ и _Читатель подписки_. Эти роли часто назначаются пользователям, которые не принимают активное участие в мониторинге и которым не нужно получать такие уведомления. Чтобы улучшить вашу работу, мы меняем параметры отправки уведомлений, и теперь по умолчанию они будут отправляться только пользователям с ролями [Читатель данных мониторинга](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#monitoring-reader) и [Участник мониторинга](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#monitoring-contributor).
+Сейчас уведомления по электронной почте от службы интеллектуального обнаружения по умолчанию отправляются пользователям с такими ролями: _Владелец подписки_, _Участник подписки_ и _Читатель подписки_. Эти роли часто назначаются пользователям, которые не принимают активного участия в мониторинге и которым не нужно получать такие уведомления. Чтобы улучшить вашу работу, мы меняем параметры отправки уведомлений, и теперь по умолчанию они будут отправляться только пользователям с ролями [Читатель данных мониторинга](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#monitoring-reader) и [Участник мониторинга](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#monitoring-contributor).
 
 ## <a name="scope-of-this-change"></a>Область применения этого изменения
 
@@ -34,7 +33,7 @@ ms.locfileid: "61299007"
 
 ## <a name="how-to-prepare-for-this-change"></a>Как подготовиться к этому изменению?
 
-Чтобы обеспечить отправку уведомлений по электронной почте от интеллектуального обнаружения для соответствующих пользователей, эти пользователи должны быть назначены [Monitoring Reader](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#monitoring-reader) или [Monitoring Contributor](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#monitoring-contributor) ролей подписки.
+Чтобы убедиться, что уведомления по электронной почте от интеллектуального обнаружения отправляются соответствующим пользователям, эти пользователи должны быть назначены роли " [читатель мониторинга](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#monitoring-reader) " или " [наблюдение за участником](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#monitoring-contributor) подписки".
 
 Чтобы назначить пользователям роль читателя данных мониторинга или участника мониторинга на портале Azure, выполните действия, описанные в статье [Управление доступом с помощью RBAC и портала Azure](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal#add-a-role-assignment). Обязательно выберите вариант _Читатель данных мониторинга_ или _Участник мониторинга_ в качестве роли, назначаемой пользователю.
 

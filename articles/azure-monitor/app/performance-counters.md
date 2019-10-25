@@ -1,23 +1,18 @@
 ---
 title: Счетчики производительности в Application Insights | Документация Майкрософт
 description: Мониторинг системных и пользовательских счетчиков производительности .NET в Application Insights.
-services: application-insights
-documentationcenter: ''
-author: mrbullwinkle
-manager: carmonm
-ms.assetid: 5b816f4c-a77a-4674-ae36-802ee3a2f56d
-ms.service: application-insights
-ms.workload: tbd
-ms.tgt_pltfrm: ibiza
+ms.service: azure-monitor
+ms.subservice: application-insights
 ms.topic: conceptual
-ms.date: 12/13/2018
+author: mrbullwinkle
 ms.author: mbullwin
-ms.openlocfilehash: fa4e45416e83d933cd21fe482bcead14bfbcae22
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.date: 12/13/2018
+ms.openlocfilehash: 229216ee873ade9418574141017aaf88235ba9e4
+ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71349923"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72820698"
 ---
 # <a name="system-performance-counters-in-application-insights"></a>Системные счетчики производительности в Application Insights
 
@@ -30,16 +25,16 @@ ms.locfileid: "71349923"
 ![Счетчики производительности, отображаемые в Application Insights](./media/performance-counters/performance-counters.png)
 
 Текущие счетчики по умолчанию, настроенные для сбора для веб-приложений ASP.NET/ASP.NET Core,:
-- % Process @ no__t — время 0Processor
-- % Process @ no__t-0Processorное время нормализовано
-- Память @ no__t-0Available байт
+- % Процесса\\время процессора
+- % Процесса\\время нормализации процессора
+- Память\\доступных байт
 - Запросов ASP.NET в секунду
 - Вызвано исключений CLR .NET/с
 - ASP.NET Аппликатионсрекуест время выполнения
-- Процесс @ no__t-0Private байт
-- Процесс @ no__t — 0IO данных, байт/с
-- ASP.NET Applications @ no__t-0Requests в очереди приложений
-- Процессор (_Total) \\% загруженности процессора
+- Количество байтов исключительного\\процесса
+- Количество операций ввода-вывода данных процесса\\байт/с
+- ASP.NET приложения\\запросы в очереди приложений
+- Процессор (_Total)\\% загруженности процессора
 
 ## <a name="add-counters"></a>Добавление счетчиков
 
@@ -151,11 +146,11 @@ using Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector;
 Поддержка счетчиков производительности в ASP.NET Core ограничена:
 
 * Версии [пакета SDK](https://nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore) 2.4.1 и более поздних версий собираются счетчики производительности, если приложение выполняется в веб-приложениях Azure (Windows).
-* Версии пакета SDK 2.7.1 и более поздних версий собираются счетчики производительности, если приложение `NETSTANDARD2.0` выполняется в Windows и целевые или более поздние версии.
+* Версии пакета SDK 2.7.1 и более поздних версий собираются счетчики производительности, если приложение выполняется в Windows и нацелены `NETSTANDARD2.0` или более поздней версии.
 * Для приложений, предназначенных для .NET Framework, все версии пакетов SDK поддерживают счетчики производительности.
 * Версии пакета SDK 2.8.0 и более поздней поддерживают счетчик ЦП/памяти в Linux. В Linux не поддерживается никакой другой счетчик. Рекомендуемый способ получения системных счетчиков в Linux (и других средах, отличных от Windows) — с помощью [евенткаунтерс](eventcounters.md)
 
-## <a name="alerts"></a>Предупреждения
+## <a name="alerts"></a>Оповещения
 Как и для других метрик, вы можете [установить оповещение](../../azure-monitor/app/alerts.md), которое предупредит о выходе показаний счетчика производительности за установленные пределы. Откройте колонку "Оповещения" и щелкните "Добавить оповещение".
 
 ## <a name="next"></a>Дальнейшие действия

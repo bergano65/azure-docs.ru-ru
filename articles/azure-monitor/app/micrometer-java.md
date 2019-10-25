@@ -1,23 +1,18 @@
 ---
 title: Как использовать Micrometer с пакетом SDK Azure Application Insights для Java | Документация Майкрософт
 description: 'Поэтапное руководство по использованию Micrometer в приложениях Spring Boot и других приложениях для Application Insights. '
-services: application-insights
-documentationcenter: java
-author: lgayhardt
-manager: carmonm
-ms.assetid: 051d4285-f38a-45d8-ad8a-45c3be828d91
-ms.service: application-insights
-ms.workload: tbd
-ms.tgt_pltfrm: ibiza
+ms.service: azure-monitor
+ms.subservice: application-insights
 ms.topic: conceptual
-ms.date: 11/01/2018
+author: lgayhardt
 ms.author: lagayhar
-ms.openlocfilehash: 5bef5a6037c6eb29d0dc48e313958e2d243904eb
-ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
+ms.date: 11/01/2018
+ms.openlocfilehash: 267665c97f683740c05ae6602a416225c79aa44c
+ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71299574"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72819312"
 ---
 # <a name="how-to-use-micrometer-with-azure-application-insights-java-sdk"></a>Как использовать Micrometer с пакетом SDK Azure Application Insights для Java
 Мониторинг приложений Micrometer измеряет метрики для кода приложения на основе виртуальной машины Java и позволяет экспортировать данные в предпочитаемые системы мониторинга. В этой статье вы узнаете, как использовать Micrometer с Application Insights для приложений Spring Boot и других приложений.
@@ -29,7 +24,7 @@ ms.locfileid: "71299574"
 * [Micrometer Spring Legacy](https://micrometer.io/docs/ref/spring/1.5) 1.1.0 или более поздней версии (возвращение кода автонастройки на платформе Spring к более ранней версии).
 * [Ресурс ApplicationInsights](../../azure-monitor/app/create-new-resource.md )
 
-Шаги
+Действия
 
 1. Обновите файл pom.xml приложения Spring Boot и включите в него следующие зависимости:
 
@@ -144,7 +139,7 @@ ms.locfileid: "71299574"
         </dependency>
      ```
 
-2. Разместить `ApplicationInsights.xml` файл в папке ресурсов:
+2. Помещаете файл `ApplicationInsights.xml` в папку Resources:
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -275,7 +270,7 @@ ms.locfileid: "71299574"
     New GuavaCacheMetrics().bind(registry);
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о Микрометер см. в официальной [документации микрометер](https://micrometer.io/docs).
 * Дополнительные сведения о пружины в Azure см. в официальной [пружине в документации по Azure](https://docs.microsoft.com/java/azure/spring-framework/?view=azure-java-stable).

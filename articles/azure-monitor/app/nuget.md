@@ -1,21 +1,18 @@
 ---
 title: Автоматический сбор зависимостей в Azure Application Insights | Документация Майкрософт
 description: Автоматический сбор и визуализация зависимостей Application Insights
-services: application-insights
-author: mrbullwinkle
-manager: carmonm
-ms.service: application-insights
-ms.workload: TBD
-ms.tgt_pltfrm: ibiza
+ms.service: azure-monitor
+ms.subservice: application-insights
 ms.topic: reference
-ms.date: 10/16/2018
+author: mrbullwinkle
 ms.author: mbullwin
-ms.openlocfilehash: 3ad2f4788a765366066023724772f5432d0d56eb
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.date: 10/16/2018
+ms.openlocfilehash: 1d3259c32de7f937d4e5ac8e21c8cab60b9cc635
+ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60699211"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72819172"
 ---
 # <a name="application-insights-nuget-packages"></a>Пакеты NuGet для Application Insights
 
@@ -43,6 +40,22 @@ ms.locfileid: "60699211"
 | Microsoft.ApplicationInsights.PerfCounterCollector | 2.8.0 | Сборщик счетчиков производительности Application Insights позволяет отправлять данные, собранные счетчиками производительности, в Application Insights. | [Загрузить пакет](https://www.nuget.org/packages/Microsoft.ApplicationInsights.PerfCounterCollector/) |
 | Microsoft.ApplicationInsights.WindowsServer; | 2.8.0 | Пакет NuGet Application Insights для Windows Server предоставляет автоматический сбор телеметрии Application Insights для приложений .NET. Этот пакет может использоваться как зависимый для пакетов платформы Application Insights или как изолированный для приложений .NET, которые не охватываются пакетами, соответствующими платформе (например, для рабочих ролей .NET). | [Загрузить пакет](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WindowsServer/)  |
 | Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel | 2.8.0 | Предоставляет канал телеметрии для пакета SDK Application Insights для Windows Server, который сохранит телеметрию в автономных сценариях. | [Загрузить пакет](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel/) |
+
+## <a name="common-packages-for-python-using-opencensus"></a>Общие пакеты для Python с использованием Опенценсус
+| Имя пакета | Стабильная версия | Описание | Download (Скачать) |
+|-------------------------------|-----------------------|------------|----|
+| опенценсус-ext — Azure | 1.0.0 | Application Insights для приложений Python в разделе Azure Monitor через Опенценсус. | [Загрузить пакет](https://pypi.org/project/opencensus-ext-azure/) |
+| опенценсус-ext-Django | 0.7.2 | Этот пакет обеспечивает интеграцию с библиотекой [Django](https://pypi.org/project/django/) Python. | [Загрузить пакет](https://pypi.org/project/opencensus-ext-django/) |
+| опенценсус-ext-Flask | 0.7.3 | Этот пакет обеспечивает интеграцию с библиотекой [Flask](https://pypi.org/project/flask/) Python. | [Загрузить пакет](https://pypi.org/project/opencensus-ext-flask/) |
+| опенценсус-ext-хттплиб | 0.7.2 | Этот пакет обеспечивает интеграцию с библиотекой языка Python [http. Client](https://docs.python.org/3/library/http.client.html) для Python3 и [хттплиб](https://docs.python.org/2/library/httplib.html) для python2. | [Загрузить пакет](https://pypi.org/project/opencensus-ext-httplib/) |
+| опенценсус-ext-Logging | 0.1.0 | Этот пакет дополняет записи журнала данными трассировки. | [Загрузить пакет](https://pypi.org/project/opencensus-ext-logging/) |
+| опенценсус-ext-MySQL | 0.1.2 | Этот пакет обеспечивает интеграцию с библиотекой [соединителя Python MySQL](https://pypi.org/project/mysql-connector/) . | [Загрузить пакет](https://pypi.org/project/opencensus-ext-mysql/) |
+| опенценсус-ext-PostgreSQL | 0.1.2 | Этот пакет обеспечивает интеграцию с библиотекой [Psycopg2](https://pypi.org/project/psycopg2/) Python. | [Загрузить пакет](https://pypi.org/project/opencensus-ext-postgresql/) |
+| опенценсус-ext-пимонго | 0.7.1 | Этот пакет обеспечивает интеграцию с библиотекой [Пимонго](https://pypi.org/project/pymongo/) Python. | [Загрузить пакет](https://pypi.org/project/opencensus-ext-pymongo/) |
+| опенценсус-ext-пимискл | 0.1.2 | Этот пакет обеспечивает интеграцию с библиотекой [Пимискл](https://pypi.org/project/PyMySQL/) Python. | [Загрузить пакет](https://pypi.org/project/opencensus-ext-pymysql/) |
+| опенценсус-ext-пирамида | 0.7.1 | Этот пакет обеспечивает интеграцию с библиотекой Python [пирамид](https://pypi.org/project/pyramid/) . | [Загрузить пакет](https://pypi.org/project/opencensus-ext-pyramid/) |
+| опенценсус-ext-запросы | 0.7.2 | Этот пакет обеспечивает интеграцию с библиотекой [запросов](https://pypi.org/project/requests/) Python. | [Загрузить пакет](https://pypi.org/project/opencensus-ext-requests/) |
+| опенценсус-ext-склалчеми | 0.1.2 | Этот пакет обеспечивает интеграцию с библиотекой [Склалчеми](https://pypi.org/project/SQLAlchemy/) Python. | [Загрузить пакет](https://pypi.org/project/opencensus-ext-sqlalchemy/) |
 
 ## <a name="listenerscollectorsappenders"></a>Прослушиватели, сборщики, аппендеры
 
@@ -76,7 +89,7 @@ ms.locfileid: "60699211"
 
 | Имя пакета | Стабильная версия | Описание | Download (Скачать) |
 |-------------------------------|-----------------------|------------|----|
-| Microsoft.ApplicationInsights.AzureWebSites | 2.6.5 | Это расширение обеспечивает мониторинг Application Insights в службе приложений Azure. Пакет SDK версии 2.6.1. Указания: добавьте параметры приложения APPINSIGHTS_INSTRUMENTATIONKEY с ikey и перезапустите веб-приложение, чтобы изменения вступили в силу.| [Загрузить пакет](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AzureWebSites/) |
+| Microsoft.ApplicationInsights.AzureWebSites | 2.6.5 | Это расширение обеспечивает мониторинг Application Insights в службе приложений Azure. Пакет SDK версии 2.6.1. Указания: добавьте параметры приложения "APPINSIGHTS_INSTRUMENTATIONKEY" с ikey и перезапустите веб-приложение, чтобы изменения вступили в силу.| [Загрузить пакет](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AzureWebSites/) |
 | Microsoft.ApplicationInsights.Injector | 2.6.7 | Этот пакет содержит файлы, необходимые для внедрения Application Insights без написания кода. | [Загрузить пакет](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Injector/) |
 
 ## <a name="next-steps"></a>Дальнейшие действия

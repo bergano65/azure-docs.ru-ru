@@ -1,29 +1,25 @@
 ---
 title: Профилирование запущенных приложений Azure Service Fabric с помощью Application Insights | Документация Майкрософт
 description: Включение Profiler для приложения Service Fabric
-services: application-insights
-documentationcenter: ''
-author: cweining
-manager: carmonm
-ms.service: application-insights
-ms.workload: tbd
-ms.tgt_pltfrm: ibiza
+ms.service: azure-monitor
+ms.subservice: application-insights
 ms.topic: conceptual
-ms.reviewer: mbullwin
-ms.date: 08/06/2018
+author: cweining
 ms.author: cweining
-ms.openlocfilehash: 5c01c2721a29bf142ee0ba53c9bc29ec66a7278f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 08/06/2018
+ms.reviewer: mbullwin
+ms.openlocfilehash: a7a64be3c73ea82c6bf3d905772f3278f9bda5df
+ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64727910"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72818479"
 ---
 # <a name="profile-live-azure-service-fabric-applications-with-application-insights"></a>Профилирование запущенных приложений Azure Service Fabric с помощью Application Insights
 
 Вы можете развернуть Application Insights Profiler для следующих служб:
-* [службе приложений Azure](profiler.md?toc=/azure/azure-monitor/toc.json)
-* [Облачные службы Azure](profiler-cloudservice.md?toc=/azure/azure-monitor/toc.json)
+* [Служба приложений Azure](profiler.md?toc=/azure/azure-monitor/toc.json)
+* [Oблачныe службы Azure](profiler-cloudservice.md?toc=/azure/azure-monitor/toc.json)
 * [Виртуальные машины Azure](profiler-vm.md?toc=/azure/azure-monitor/toc.json)
 
 ## <a name="set-up-the-environment-deployment-definition"></a>Настройка определения развертывания среды
@@ -32,7 +28,7 @@ Application Insights Profiler поставляется в комплекте с 
 
 Чтобы настроить среду, выполните следующие действия.
 
-1. Profiler поддерживает .NET Framework и.Net Core. Если вы используете .NET Framework, убедитесь, что вы используете [.NET Framework 4.6.1](https://docs.microsoft.com/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed) или более поздней версии. Достаточно убедиться, что разверните ОС `Windows Server 2012 R2` или более поздней версии. Profiler поддерживает .NET Core 2.1 и более новых приложений.
+1. Profiler поддерживает .NET Framework и .Net Core. Если вы используете .NET Framework, убедитесь, что вы используете [.NET Framework 4.6.1](https://docs.microsoft.com/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed) или более поздней версии. Достаточно подтвердить, что развернутая ОС `Windows Server 2012 R2` или более поздней версии. Profiler поддерживает приложения .NET Core 2,1 и более поздние версии.
 
 1. Найдите расширение [системы диагностики Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/azure-diagnostics) в файле шаблона развертывания.
 
@@ -55,7 +51,7 @@ Application Insights Profiler поставляется в комплекте с 
   Если все параметры верны, при установке расширения системы диагностики Azure будет установлен и включен Application Insights Profiler. 
 
 1. Добавьте Application Insights в приложение Service Fabric.  
-  Для Profiler для сбора профили для ваших запросов приложения должны быть Отслеживание операций с помощью Application Insights. API без отслеживания состояния, см. в инструкциях по [отслеживание запросов для профилирования](profiler-trackrequests.md?toc=/azure/azure-monitor/toc.json). Дополнительные сведения об отслеживании пользовательских операций в другие виды приложений см. в разделе [отслеживания пользовательских операций с помощью пакета SDK .NET Application Insights](custom-operations-tracking.md?toc=/azure/azure-monitor/toc.json).
+  Чтобы профилировщик составил профили для запросов, приложение должно отслеживать операции с Application Insights. Для API без отслеживания состояния можно ознакомиться с инструкциями по [отслеживанию запросов профилирования](profiler-trackrequests.md?toc=/azure/azure-monitor/toc.json). Дополнительные сведения об отслеживании пользовательских операций в других видах приложений см. в разделе [Отслеживание настраиваемых операций с помощью пакета SDK для .net Application Insights](custom-operations-tracking.md?toc=/azure/azure-monitor/toc.json).
 
 1. Разверните приложение заново.
 
