@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: librown
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 89b52f356b112cff51105ed44c79788ee4542c6e
-ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
+ms.openlocfilehash: ac59dbed0ba2766f3367e19c5fddeed52e250a5b
+ms.sourcegitcommit: 7efb2a638153c22c93a5053c3c6db8b15d072949
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72430517"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72880157"
 ---
 # <a name="passwordless-authentication-options"></a>Параметры проверки подлинности, не имеющие пароля
 
@@ -76,6 +76,7 @@ Windows Hello для бизнеса идеально подходит для и�
 | БЫЛИ | [https://www.hidglobal.com/contact-us](https://www.hidglobal.com/contact-us) |
 | енсурити | [https://www.ensurity.com/contact](https://www.ensurity.com/contact) |
 | евбм | [https://www.ewbm.com/page/sub1_5](https://www.ewbm.com/page/sub1_5) |
+| аусентренд | [https://authentrend.com/about-us/#pg-35-3](https://authentrend.com/about-us/#pg-35-3) |
 
 Если вы являетесь поставщиком и хотите получить устройство в этом списке, обратитесь в [Fido2Request@Microsoft.com](mailto:Fido2Request@Microsoft.com).
 

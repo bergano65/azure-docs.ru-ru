@@ -7,12 +7,12 @@ ms.author: v-chjen
 ms.service: marketplace
 ms.topic: conceptual
 ms.date: 10/04/2019
-ms.openlocfilehash: 9376493cdd1a8a9790f4de8ee3769acf8dca5ade
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.openlocfilehash: 16b75a98a5a42c9acf6d9a68330cbf8e005f7179
+ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72595572"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72819798"
 ---
 # <a name="create-a-new-dynamics-365-business-central-offer"></a>Создание нового предложения Dynamics 365 Business Central
 
@@ -101,7 +101,7 @@ ms.locfileid: "72595572"
 
 ### <a name="industry"></a>Отрасль
 
-При необходимости можно выбрать до двух отраслей, чтобы упростить категоризацию вашего предложения в Marketplace. Если ваше предложение не относится к отрасли, оставьте этот раздел пустым. Обязательно вызовите, как ваше предложение поддерживает выбранные отрасли в описании предложения. 
+[!INCLUDE [Industry Taxonomy](./includes/industry-taxonomy.md)]
 
 ### <a name="app-version"></a>версия приложения.
 
@@ -300,7 +300,7 @@ ms.locfileid: "72595572"
 
 - **URL-адрес экземпляра** (обязательно). URL-адрес, по которому клиент начнет свой тестовый диск. Обычно это URL-адрес экземпляра Dynamics 365 с установленными образцами данных (например, https://testdrive.crm.dynamics.com).
 
-- **URL-адрес Web API экземпляра** (обязательный): получите URL-адрес Web API для экземпляра Dynamics 365, войдя в учетную запись Microsoft 365 и перейдя к **параметрам** \&gt; @No__t_4gt **настройки** ; **Ресурсы для разработчиков** \&gt; **Экземпляр веб-API экземпляра (URL-адрес корня службы)** , скопируйте URL-адрес, приведенный здесь (например, https://testdrive.crm.dynamics.com/api/data/v9.0).
+- **URL-адрес Web API экземпляра** (обязательный): получите URL-адрес Web API для экземпляра Dynamics 365, войдя в учетную запись Microsoft 365 и перейдя к **параметрам** \&gt; **Настройка** \&gt; **Ресурсы для разработчиков** \&gt; **Экземпляр веб-API экземпляра (URL-адрес корня службы)** , скопируйте URL-адрес, приведенный здесь (например, https://testdrive.crm.dynamics.com/api/data/v9.0).
 
 - **Имя роли** (обязательно). Укажите имя роли безопасности, определенное на пользовательском тестовом диске Dynamics 365, которое будет назначено пользователю во время тестового диска (например, Test-Drive-Role).
 

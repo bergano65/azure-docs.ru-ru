@@ -1,5 +1,5 @@
 ---
-title: Использование книг Azure Monitor для Azure Active Directory отчетов | Документация Майкрософт
+title: Azure Monitor книги для отчетов | Документация Майкрософт
 description: Узнайте, как использовать книги Azure Monitor для Azure Active Directory отчетов.
 services: active-directory
 author: cawrites
@@ -14,12 +14,12 @@ ms.subservice: report-monitor
 ms.date: 04/18/2019
 ms.author: chadam
 ms.reviewer: dhanyahk
-ms.openlocfilehash: 9bea8da4f0d694be3a39a8f5dfaca8e54ce2773d
-ms.sourcegitcommit: 1c2659ab26619658799442a6e7604f3c66307a89
+ms.openlocfilehash: 5e498dcb39f62fc870bc7efa989b91caeac0dedc
+ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72255659"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72819713"
 ---
 # <a name="how-to-use-azure-monitor-workbooks-for-azure-active-directory-reports"></a>Использование книг Azure Monitor для Azure Active Directory отчетов
 
@@ -41,7 +41,7 @@ ms.locfileid: "72255659"
  
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для использования рабочих книг монитора необходимо следующее:
 
@@ -90,7 +90,7 @@ ms.locfileid: "72255659"
 
 - Все входы
 
-- Success
+- Успешно
 
 - Ожидающее действие пользователя
 
@@ -127,7 +127,7 @@ ms.locfileid: "72255659"
 
 - Все входы
 
-- Success
+- Успешно
 
 
 Можно отфильтровать каждую тенденцию по следующим категориям:
@@ -188,7 +188,7 @@ ms.locfileid: "72255659"
 
 - Требовать заявление о конфиденциальности
 
-- Другие
+- Прочее
 
 
 Можно отфильтровать каждую тенденцию по следующим категориям:
@@ -224,7 +224,7 @@ ms.locfileid: "72255659"
 
 - Все входы
 
-- Success
+- Успешно
 
 - Ожидающее действие
 
@@ -257,6 +257,6 @@ ms.locfileid: "72255659"
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Создание интерактивных отчетов с помощью Monitoring книги](https://docs.microsoft.com/azure/azure-monitor/app/usage-workbooks).

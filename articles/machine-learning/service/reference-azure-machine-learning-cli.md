@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.reviewer: jmartens
 ms.author: jordane
 author: jpe316
-ms.date: 08/20/2019
+ms.date: 10/22/2019
 ms.custom: seodec18
-ms.openlocfilehash: 85ebcc36d32b86ec2640ce7ce02190deaab19d6b
-ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
+ms.openlocfilehash: 597cc4e03257b544187fc2bc131974954b64c84b
+ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70997080"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72819867"
 ---
 # <a name="use-the-cli-extension-for-azure-machine-learning"></a>Использование расширения CLI для Машинное обучение Azure
 
@@ -30,9 +30,9 @@ CLI для Машинного обучения Azure является расши
 
 Интерфейс командной строки не является заменой пакета SDK для Машинного обучения Azure. Это дополнительный инструмент, оптимизированный для обработки строго параметризованных задач, которые прекрасно подходят для автоматизации.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
-* Для использования интерфейса командной строки необходима подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию машинное обучение Azure](https://aka.ms/AMLFree) уже сегодня.
+* Для использования интерфейса командной строки необходима подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) уже сегодня.
 
 * [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest).
 
@@ -40,7 +40,7 @@ CLI для Машинного обучения Azure является расши
 
 Найдите [полную справочную документацию по расширению Azure-CLI-ml Azure CLI](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/?view=azure-cli-latest).
 
-## <a name="install-the-extension"></a>Установить расширение
+## <a name="install-the-extension"></a>Установка расширения
 
 Чтобы установить расширение интерфейса командной строки Машинного обучения, выполните следующую команду:
 
@@ -100,7 +100,7 @@ az extension remove -n azure-cli-ml
     az ml folder attach -w myworkspace -g myresourcegroup
     ```
 
-    Эта команда создает `.azureml` подкаталог, содержащий примеры файлов среды runconfig и conda. Он также содержит `config.json` файл, который используется для взаимодействия с рабочей областью машинное обучение Azure.
+    Эта команда создает `.azureml` подкаталог, содержащий примеры файлов среды runconfig и conda. Он также содержит файл `config.json`, который используется для взаимодействия с рабочей областью Машинное обучение Azure.
 
     Дополнительные сведения см. в разделе [AZ ML Folder Attach](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/folder?view=azure-cli-latest#ext-azure-cli-ml-az-ml-folder-attach).
 
@@ -138,18 +138,18 @@ az extension remove -n azure-cli-ml
 
 ## <a id="experiments"></a>Запуск экспериментов
 
-* Запустите выполнение эксперимента. При использовании этой команды укажите имя файла runconfig (текст до \*. runconfig, если вы ищете файловую систему) в параметре-c.
+* Запустите выполнение эксперимента. При использовании этой команды укажите имя файла runconfig (текст перед \*. runconfig, если вы ищете файловую систему) в параметре-c.
 
     ```azurecli-interactive
     az ml run submit-script -c sklearn -e testexperiment train.py
     ```
 
     > [!TIP]
-    > `az ml folder attach` Команда`.azureml` создает подкаталог, который содержит два примера файлов runconfig. 
+    > Команда `az ml folder attach` создает подкаталог `.azureml`, который содержит два примера файлов runconfig. 
     >
     > При наличии скрипта Python, который создает объект конфигурации запуска программно, можно использовать [RunConfig. Save ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.runconfiguration?view=azure-ml-py#save-path-none--name-none--separate-environment-yaml-false-) , чтобы сохранить его как файл RunConfig.
     >
-    > Дополнительные примеры файлов runconfig см. в [https://github.com/MicrosoftDocs/pipelines-azureml/tree/master/.azureml](https://github.com/MicrosoftDocs/pipelines-azureml/tree/master/.azureml)разделе.
+    > Дополнительные примеры файлов runconfig см. в разделе [https://github.com/MicrosoftDocs/pipelines-azureml/tree/master/.azureml](https://github.com/MicrosoftDocs/pipelines-azureml/tree/master/.azureml).
 
     Дополнительные сведения см. в разделе [AZ ML Run Submit-Script](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/run?view=azure-cli-latest#ext-azure-cli-ml-az-ml-run-submit-script).
 
@@ -196,6 +196,40 @@ az extension remove -n azure-cli-ml
     ```
 
     Дополнительные сведения см. в статье [AZ ML Environment download](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/environment?view=azure-cli-latest#ext-azure-cli-ml-az-ml-environment-download).
+
+## <a name="ml-pipeline-management"></a>Управление конвейером ML
+
+Следующие команды демонстрируют работу с конвейерами машинного обучения.
+
++ Создайте конвейер машинного обучения.
+
+    ```azurecli-interactive
+    az ml pipeline create -n mypipeline -y mypipeline.yml
+    ```
+
+    Дополнительные сведения см. в разделе о [создании конвейера AZ ML](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/pipeline?view=azure-cli-latest#ext-azure-cli-ml-az-ml-pipeline-create).
+
+    Дополнительные сведения о файле конвейера YAML см. [в разделе Определение конвейеров машинного обучения в YAML](reference-pipeline-yaml.md).
+
++ Запуск конвейера:
+
+    ```azurecli-interactive
+    az ml run submit-pipeline -n myexperiment -y mypipeline.yml
+    ```
+
+    Дополнительные сведения см. в разделе [AZ ML Run Submit-конвейер](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/run?view=azure-cli-latest#ext-azure-cli-ml-az-ml-run-submit-pipeline).
+
+    Дополнительные сведения о файле конвейера YAML см. [в разделе Определение конвейеров машинного обучения в YAML](reference-pipeline-yaml.md).
+
++ Запланируйте конвейер:
+
+    ```azurecli-interactive
+    az ml pipeline create-schedule -n myschedule -e myexpereiment -i mypipelineid -y myschedule.yml
+    ```
+
+    Дополнительные сведения см. в статье [AZ ML Pipeline Create-Schedule](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/pipeline?view=azure-cli-latest#ext-azure-cli-ml-az-ml-pipeline-create-schedule).
+
+    Дополнительные сведения о YAML файле расписания конвейера см. [в разделе Определение конвейеров машинного обучения в YAML](reference-pipeline-yaml.md#schedules).
 
 ## <a name="model-registration-profiling-deployment"></a>Регистрация модели, профилирование, развертывание
 
@@ -249,7 +283,7 @@ az extension remove -n azure-cli-ml
 
 [!INCLUDE [deploymentconfig](../../../includes/machine-learning-service-aks-deploy-config.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Справочник по командам для машинное обучение расширения CLI](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml?view=azure-cli-latest).
 

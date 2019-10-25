@@ -8,19 +8,19 @@ ms.topic: article
 ms.date: 05/17/2018
 ms.author: alkohli
 ms.subservice: common
-ms.openlocfilehash: 225164fe00f70839446f8b74155cd3959f745a49
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 222c893f06d9adf77f8a8124af18bc03c5d20bdf
+ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61478051"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72821444"
 ---
 # <a name="view-the-status-of-azure-importexport-jobs"></a>Просмотр состояния заданий службы "Импорт и экспорт Azure"
 
 Это статье описывается, как просмотреть состояние дисков и заданий службы "Импорт и экспорт Azure". Служба "Импорт и экспорт Azure" используется для безопасной передачи больших объемов данных в большие двоичные объекты Azure и службу файлов Azure. Эта служба также используется для экспорта данных из хранилища BLOB-объектов Azure.  
 
 ## <a name="view-job-and-drive-status"></a>Просмотр состояния заданий и дисков
-Состояние задания импорта или экспорта можно отслеживать на портале Azure. Щелкните вкладку **Импорт и экспорт**. На странице появится список заданий.
+Состояние задания импорта или экспорта можно отслеживать на портале Azure. Перейдите на вкладку **Импорт и экспорт** . На странице появится список заданий.
 
 ![Просмотр состояния задания](./media/storage-import-export-service/jobstate.png)
 
@@ -60,7 +60,7 @@ ms.locfileid: "61478051"
 
 В следующей таблице описаны состояния сбоя диска и действия для каждого состояния.
 
-| Состояние диска | Событие | Решение и дальнейшие действия |
+| Состояние диска | Мероприятие | Решение и дальнейшие действия |
 |:--- |:--- |:--- |
 | NeverReceived | Диск, помеченный как **NeverReceived** (так как он не был получен при отправке задания), прибывает в другой посылке. | Рабочая группа переведет этот диск в состояние **Received**. |
 | Н/Д | Диск, не входящий ни в одно задание, прибывает в центр обработки данных в рамках другого задания. | Этот диск будет помечен как лишний и будет возвращен по завершении задания, связанного с исходным пакетом. |
@@ -80,4 +80,4 @@ ms.locfileid: "61478051"
 
 * [Настройка инструмента WAImportExport](storage-import-export-tool-how-to.md)
 * [Передача данных с помощью служебной программы командной строки AzCopy](storage-use-azcopy.md)
-* [Пример REST API службы импорта и экспорта Azure](https://azure.microsoft.com/documentation/samples/storage-dotnet-import-export-job-management/)
+* [Пример REST API службы импорта и экспорта Azure](https://github.com/Azure-Samples/storage-dotnet-import-export-job-management/)

@@ -1,23 +1,19 @@
 ---
 title: Локальный сервер пересылки для распределенной трассировки Azure Application Insights Опенценсус (Предварительная версия) | Документация Майкрософт
 description: Пересылка распределенных трассировок и диапазонов OpenCensus из таких языков, как Python и Go, в Azure Application Insights
-services: application-insights
-documentationcenter: ''
-author: mrbullwinkle
-manager: carmonm
-ms.service: application-insights
-ms.workload: tbd
-ms.tgt_pltfrm: ibiza
+ms.service: azure-monitor
+ms.subservice: application-insights
 ms.topic: conceptual
+author: mrbullwinkle
+ms.author: mbullwin
 ms.date: 09/18/2018
 ms.reviewer: nimolnar
-ms.author: mbullwin
-ms.openlocfilehash: aa64755b636005f4ed8ea5c074ffaada51fb8dd9
-ms.sourcegitcommit: e72073911f7635cdae6b75066b0a88ce00b9053b
+ms.openlocfilehash: b0d0bc4d711b05dd2206b7437f1f4c7b3444a0c6
+ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68348149"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72819198"
 ---
 # <a name="local-forwarder-preview"></a>Локальный сервер пересылки (Предварительная версия)
 
@@ -181,6 +177,6 @@ host.Stop();
 
 Если файл конфигурации не указан (что является настройкой по умолчанию), локальный сервер пересылки будет использовать конфигурацию по умолчанию, которую можно найти [здесь](https://github.com/Microsoft/ApplicationInsights-LocalForwarder/blob/master/src/Common/NLog.config).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Open Census](https://opencensus.io/)

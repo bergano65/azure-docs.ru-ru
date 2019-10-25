@@ -1,24 +1,19 @@
 ---
 title: Live Metrics Stream с пользовательскими метриками и диагностика в Azure Application Insights | Документы Майкрософт
 description: Мониторинг веб-приложения в реальном времени с помощью пользовательских метрик и диагностика проблем с помощью динамического веб-канала сбоев, трассировок и событий.
-services: application-insights
-documentationcenter: ''
-author: mrbullwinkle
-manager: carmonm
-ms.assetid: 1f471176-38f3-40b3-bc6d-3f47d0cbaaa2
-ms.service: application-insights
-ms.workload: tbd
-ms.tgt_pltfrm: ibiza
+ms.service: azure-monitor
+ms.subservice: application-insights
 ms.topic: conceptual
+author: mrbullwinkle
+ms.author: mbullwin
 ms.date: 04/22/2019
 ms.reviewer: sdash
-ms.author: mbullwin
-ms.openlocfilehash: 4e1d83d99f6df9407e24e2ae57af70f68858092d
-ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
+ms.openlocfilehash: d85688d297eb0df00e71f388b2a3350eabe5f6d5
+ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70012755"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72817195"
 ---
 # <a name="live-metrics-stream-monitor--diagnose-with-1-second-latency"></a>Live Metrics Stream: мониторинг и диагностика с задержкой в 1 секунду
 
@@ -38,7 +33,7 @@ ms.locfileid: "70012755"
 
 В настоящее время динамические метрики поддерживаются для ASP.NET, ASP.NET Core, функций Azure, Java и приложений Node. js.
 
-## <a name="get-started"></a>Начало работы
+## <a name="get-started"></a>Начать
 
 1. Если вы еще не [установили Application Insights в своем веб-приложении](../../azure-monitor/azure-monitor-app-hub.md), сделайте это сейчас.
 2. В дополнение к стандартным пакетам Application Insights пакет [Microsoft.ApplicationInsights.PerfCounterCollector](https://www.nuget.org/packages/Microsoft.ApplicationInsights.PerfCounterCollector/) также требуется, чтобы включить Live Metrics Stream.
@@ -52,9 +47,9 @@ ms.locfileid: "70012755"
 
 ### <a name="nodejs"></a>Node.js
 
-Чтобы использовать динамические метрики с Node. js, необходимо обновить пакет SDK до версии 1,30 или более поздней. По умолчанию динамические метрики отключены в пакете SDK для Node. js. Чтобы включить динамические метрики, `setSendLiveMetrics(true)` добавьте их в [методы конфигурации](https://github.com/Microsoft/ApplicationInsights-node.js#configuration) при инициализации пакета SDK.
+Чтобы использовать динамические метрики с Node. js, необходимо обновить пакет SDK до версии 1,30 или более поздней. По умолчанию динамические метрики отключены в пакете SDK для Node. js. Чтобы включить динамические метрики, добавьте `setSendLiveMetrics(true)` в [методы конфигурации](https://github.com/Microsoft/ApplicationInsights-node.js#configuration) при инициализации пакета SDK.
 
-### <a name="no-data-check-your-server-firewall"></a>Данные отсутствуют? Проверьте брандмауэр сервера
+### <a name="no-data-check-your-server-firewall"></a>Нет данных? Проверьте брандмауэр сервера
 
 Убедитесь в том, что [исходящие порты для Live Metrics Stream](../../azure-monitor/app/ip-addresses.md#outgoing-ports) открыты в брандмауэре ваших серверов. 
 
@@ -65,7 +60,7 @@ ms.locfileid: "70012755"
 |Задержка|Данные отображаются в течение одной секунды|Агрегирование выполняется в течение нескольких минут|
 |Нет сохранения|Данные сохраняются, только пока они отображаются на диаграмме, а затем удаляются.|[Данные сохраняются 90 дней](../../azure-monitor/app/data-retention-privacy.md#how-long-is-the-data-kept)|
 |По запросу|Данные передаются, пока открыта служба Live Metrics|Данные отправляются, когда пакет SDK установлен и включен|
-|Бесплатный|Плата за данные Live Stream не взимается|Действуют [расценки](../../azure-monitor/app/pricing.md)
+|Бесплатные|Плата за данные Live Stream не взимается|Действуют [расценки](../../azure-monitor/app/pricing.md)
 |Выборка|Передаются все выбранные метрики и счетчики. Производится выборка сбоев и трассировок стека. TelemetryProcessors не применяются.|Может производиться [выборка](../../azure-monitor/app/api-filtering-sampling.md) событий.|
 |Канал управления|В пакет SDK отправляются управляющие сигналы фильтрации. Мы советуем защитить этот канал.|Взаимодействие является односторонним (в сторону портала)|
 
@@ -94,7 +89,7 @@ ms.locfileid: "70012755"
 
 ![Пользовательский динамический веб-канал](./media/live-stream/live-stream-events.png)
 
-Примечание. Сейчас для критериев на основе сообщений об исключениях используйте сообщение о внешнем исключении. В предыдущем примере, чтобы отфильтровать неопасные исключения с сообщением о внутреннем исключении (после разделителя "<--") "Клиент отключен", использовался критерий "Message not-contains "Error reading request content"" (Сообщение не содержит "Ошибка при чтении содержимого запроса").
+Примечание. В настоящее время для критериев на основе сообщений об исключениях используйте сообщение о внешнем исключении. В предыдущем примере, чтобы отфильтровать неопасные исключения с сообщением о внутреннем исключении (после разделителя "<--") "Клиент отключен", использовался критерий "Message not-contains "Error reading request content"" (Сообщение не содержит "Ошибка при чтении содержимого запроса").
 
 Просмотрите сведения об элементе динамического веб-канала, щелкнув его. Можно приостановить веб-канал, щелкнув **Приостановить**, прокрутив вниз или щелкнув элемент. Работа динамического веб-канала возобновится, когда вы прокрутите его обратно до начала или щелкните счетчик элементов, собранных во время приостановки.
 
@@ -198,13 +193,13 @@ services.ConfigureTelemetryModule<QuickPulseTelemetryModule> ((module, o) => mod
 >Настоятельно рекомендуется установить аутентифицированный канал перед вводом в критерии фильтра потенциально конфиденциальной информации, например идентификатора клиента.
 >
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Устранение неисправностей
 
-Данные отсутствуют? Если приложение находится в защищенной сети, Live Metrics Stream использует не такие IP-адреса, как в телеметрии Application Insights. Убедитесь, что [эти IP-адреса](../../azure-monitor/app/ip-addresses.md) открыты в брандмауэре.
+Нет данных? Если приложение находится в защищенной сети: Live Metrics Stream использует IP-адреса, отличающиеся IP-адресов другой телеметрии Application Insights. Убедитесь, что [эти IP-адреса](../../azure-monitor/app/ip-addresses.md) открыты в брандмауэре.
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Отслеживание использования Application Insights.](../../azure-monitor/app/usage-overview.md)
 * [Использование диагностического поиска](../../azure-monitor/app/diagnostic-search.md)
 * [Профилировщик](../../azure-monitor/app/profiler.md)

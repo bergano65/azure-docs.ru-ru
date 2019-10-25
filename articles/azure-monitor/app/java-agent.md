@@ -1,31 +1,26 @@
 ---
 title: Мониторинг производительности веб-приложений Java в Azure Application Insights | Документация Майкрософт
 description: Расширенный мониторинг производительности и использования веб-сайта Java с помощью Application Insights.
-services: application-insights
-documentationcenter: java
-author: mrbullwinkle
-manager: carmonm
-ms.assetid: 84017a48-1cb3-40c8-aab1-ff68d65e2128
-ms.service: application-insights
-ms.workload: tbd
-ms.tgt_pltfrm: ibiza
+ms.service: azure-monitor
+ms.subservice: application-insights
 ms.topic: conceptual
-ms.date: 01/10/2019
+author: mrbullwinkle
 ms.author: mbullwin
-ms.openlocfilehash: ff9d4bb98a79c379fda2c1a0a0ab9d5e0ec212ce
-ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
+ms.date: 01/10/2019
+ms.openlocfilehash: 181a1f253157fe112d42753d6f824a327457a2fa
+ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71338089"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72819416"
 ---
 # <a name="monitor-dependencies-caught-exceptions-and-method-execution-times-in-java-web-apps"></a>Мониторинг зависимостей, перехваченных исключений и времени выполнения методов в веб-приложениях Java
 
 
 Если вы выполнили [Инструментирование веб-приложения Java с Application Insights][java], вы можете использовать агент Java для получения более подробных сведений, не внося изменения в код:
 
-* **Зависимости** — данные о вызовах других компонентов в вашем приложении, включая:
-  * **Исходящие вызовы HTTP** , выполненные через Apache HttpClient, `java.net.HttpURLConnection` OkHttp и, фиксируются.
+* **Зависимости** — данные о вызовах других компонентов в вашем приложении, включая:
+  * Регистрируются **исходящие HTTP-вызовы** через Apache HttpClient, OkHttp и `java.net.HttpURLConnection`.
   * **Вызовы Redis** , выполненные через клиент Jedis, фиксируются.
   * **Запросы JDBC** — для MySQL и PostgreSQL, если вызов занимает больше 10 секунд, агент сообщает о плане запроса.
 
@@ -34,9 +29,9 @@ ms.locfileid: "71338089"
   * **Log4j2**
   * **Logback**
 
-* **Более эффективное именование операций:** (используется для агрегирования запросов на портале)
-  * **Пружинный** на `@RequestMapping`основе.
-  * **JAX-RS** -на основе `@Path`. 
+* **Улучшенное именование операций:** (используется для агрегирования запросов на портале)
+  * **Пружина** на основе `@RequestMapping`.
+  * **JAX-RS** — на основе `@Path`. 
 
 Чтобы использовать агент для Java, его необходимо установить на сервере. Веб-приложения должны быть инструментированы с помощью [пакета SDK для Application Insights Java][java]. 
 
@@ -93,12 +88,12 @@ ms.locfileid: "71338089"
 * Выберите элементы "Параметры > Параметры приложения".
 * В разделе "Параметры приложения" добавьте новую пару "ключ — значение":
 
-Раздел: `JAVA_OPTS`Значений`-javaagent:D:/home/site/wwwroot/applicationinsights-agent-2.5.0.jar`
+Ключ: `JAVA_OPTS` значение: `-javaagent:D:/home/site/wwwroot/applicationinsights-agent-2.5.0.jar`
 
-Для получения последней версии агента Java ознакомьтесь с выпусками [здесь.](https://github.com/Microsoft/ApplicationInsights-Java/releases
-) 
+Для получения последней версии агента Java ознакомьтесь с выпусками [здесь](https://github.com/Microsoft/ApplicationInsights-Java/releases
+). 
 
-Агент должен быть упакован в проект в виде ресурса таким образом, чтобы он закончится в папке D:/Home, site/wwwroot/. Чтобы убедиться, что агент находится в нужном каталоге службы приложений, перейдите в **меню средства** > разработки**Дополнительные инструменты** > **консоль отладки** и проверьте содержимое каталога сайта.    
+Агент должен быть упакован в проект в виде ресурса таким образом, чтобы он закончится в папке D:/Home, site/wwwroot/. Вы можете убедиться, что агент находится в нужном каталоге службы приложений, перейдя к **средствам разработки** > **дополнительные инструменты** > **консоль отладки** и проверив содержимое каталога сайта.    
 
 * Сохраните параметры и перезапустите приложение. (Эти действия применимы только к службам приложений, работающим в Windows.)
 
@@ -131,8 +126,8 @@ ms.locfileid: "71338089"
 
 [Дополнительные сведения о диагностировании проблем зависимостей](../../azure-monitor/app/asp-net-dependencies.md#diagnosis).
 
-## <a name="questions-problems"></a>Вопросы? Проблемы?
-* Данные отсутствуют? [Настройте исключения брандмауэра](../../azure-monitor/app/ip-addresses.md)
+## <a name="questions-problems"></a>Есть вопросы? Проблемы?
+* Нет данных? [Настройка исключений брандмауэра](../../azure-monitor/app/ip-addresses.md)
 * [Устранение неполадок Java](java-troubleshoot.md)
 
 <!--Link references-->

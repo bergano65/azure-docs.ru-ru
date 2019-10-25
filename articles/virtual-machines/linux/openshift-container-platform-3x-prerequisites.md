@@ -12,14 +12,14 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 10/14/2019
+ms.date: 10/23/2019
 ms.author: haroldw
-ms.openlocfilehash: 591cc7a4b84f75536446abbcbe32a69a122ddf5a
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: 0b7eaaf68c1b0907b6d687b823ef71a7c9bd0102
+ms.sourcegitcommit: 7efb2a638153c22c93a5053c3c6db8b15d072949
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72392674"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72882404"
 ---
 # <a name="common-prerequisites-for-deploying-openshift-container-platform-311-in-azure"></a>Общие предварительные требования для развертывания платформы контейнеров OpenShift 3,11 в Azure
 
@@ -113,14 +113,16 @@ az group create -l eastus -n openshiftrg
 Создайте субъект-службу:
 
 ```azurecli
-scope=`az group show --name openshiftrg --query id`
-az ad sp create-for-rbac --name openshiftsp \
-      --role Contributor --password {Strong Password} \
-      --scopes $scope \
+az group show --name openshiftrg --query id
 ```
-Если вы используете Windows, выполните ```az group show --name openshiftrg --query id``` и используйте полученные выходные данные вместо $scope.
+Сохраните выходные данные команды и используйте вместо $scope в следующей команде.
 
-Запишите свойство appId, возвращенное из команды:
+```azurecli
+az ad sp create-for-rbac --name openshiftsp \
+      --role Contributor --scopes $scope \
+```
+
+Запишите свойство appId и пароль, возвращаемые командой:
 ```json
 {
   "appId": "11111111-abcd-1234-efgh-111111111111",
@@ -131,7 +133,7 @@ az ad sp create-for-rbac --name openshiftsp \
 }
 ```
  > [!WARNING] 
- > Обязательно создайте надежный пароль. Следуйте руководству по [правилам и ограничениям для паролей Azure AD](/azure/active-directory/active-directory-passwords-policy).
+ > Не забудьте записать защищенный пароль, так как этот пароль будет невозможно получить снова.
 
 Дополнительные сведения о субъектах-службах см. в статье [Создание субъекта-службы Azure с помощью Azure CLI](https://docs.microsoft.com/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest).
 

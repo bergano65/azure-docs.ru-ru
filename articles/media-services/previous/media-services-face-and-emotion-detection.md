@@ -15,15 +15,19 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
 ms.reviewer: milanga
-ms.openlocfilehash: 3ae2e49b812e7a9515cef81b328ceb87e1a7f017
-ms.sourcegitcommit: a8b638322d494739f7463db4f0ea465496c689c6
+ms.openlocfilehash: 6fa2495ee580bb8e74a0d026533fa90f20743510
+ms.sourcegitcommit: 7efb2a638153c22c93a5053c3c6db8b15d072949
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "69015459"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72881763"
 ---
 # <a name="detect-face-and-emotion-with-azure-media-analytics"></a>Обнаружение лиц и определение эмоций с помощью медиа-аналитики Azure
-## <a name="overview"></a>Обзор
+
+> [!IMPORTANT]
+> Ознакомьтесь с [планами выбытия](media-services-analytics-overview.md#retirement-plans) некоторых процессоров мультимедиа.
+
+## <a name="overview"></a>Краткое описание
 Обработчик мультимедиа (MP) **Azure Media Face Detector (детектор лиц мультимедиа Azure)** позволяет подсчитывать и отслеживать движения и даже определять заинтересованность и реакции людей с помощью выражений лиц. В этой службе реализованы две функции: 
 
 * **Обнаружение лиц**
@@ -43,7 +47,7 @@ ms.locfileid: "69015459"
 В этой статье приводятся сведения об обработчике **Azure Media Face Detector** и демонстрируется его использование с пакетом SDK служб мультимедиа для .NET.
 
 ## <a name="face-detector-input-files"></a>Входные файлы детектора лиц
-Видеофайлы. В настоящее время поддерживаются следующие форматы: MP4, MOV и WMV.
+Видеофайлы. Сейчас поддерживаются следующие форматы: MP4, MOV и WMV.
 
 ## <a name="face-detector-output-files"></a>Выходные файлы детектора лиц
 API обнаружения и отслеживания лиц обеспечивает высокую точность обнаружения и отслеживания лиц с возможностью определения до 64 человеческих лиц на видео. Лица в анфас позволяют получить лучшие результаты, тогда как значения по лицам в профиль или небольшим лицам (не более 24 x 24 пикселей) могут быть неточными.
@@ -153,7 +157,7 @@ API обнаружения и отслеживания лиц обеспечив
 #### <a name="attribute-descriptions"></a>Описания атрибутов
 | Имя атрибута | Описание |
 | --- | --- |
-| Mode |Faces: только определение лиц.<br/>PerFaceEmotion: эмоции возвращаются отдельно для каждого определения лиц.<br/>AggregateEmotion: возвращаются средние значения эмоций для всех лиц в кадре. |
+| Mode |Faces: только обнаружение лиц.<br/>PerFaceEmotion: эмоции возвращаются отдельно для каждого обнаружения лиц.<br/>AggregateEmotion. Возвращаются средние значения эмоций для всех лиц в кадре. |
 | AggregateEmotionWindowMs |Используется, если выбран режим AggregateEmotion. Указывает длину видео для получения каждого совокупного результата в миллисекундах. |
 | AggregateEmotionIntervalMs |Используется, если выбран режим AggregateEmotion. Указывает частоту для получения совокупных результатов. |
 
@@ -517,7 +521,7 @@ namespace FaceDetection
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Оставить отзыв
+## <a name="provide-feedback"></a>Отправить отзыв
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="related-links"></a>Связанные ссылки

@@ -1,5 +1,5 @@
 ---
-title: Интеграция журналов Azure Active Directory с ArcSight с помощью Azure Monitor | Документация Майкрософт
+title: Интеграция журналов с ArcSight с помощью Azure Monitor | Документация Майкрософт
 description: Узнайте, как интегрировать журналы Azure Active Directory с ArcSight с помощью Azure Monitor
 services: active-directory
 documentationcenter: ''
@@ -17,12 +17,12 @@ ms.date: 04/19/2019
 ms.author: chadam
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8d202cb0cc2d073326a5bcc8fb0d540c232afa98
-ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
+ms.openlocfilehash: 037240e6006b5e0625bf8fb75492d8e458899a8e
+ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72240894"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72820895"
 ---
 # <a name="integrate-azure-active-directory-logs-with-arcsight-using-azure-monitor"></a>Интеграция журналов Azure Active Directory с ArcSight с помощью Azure Monitor
 
@@ -30,7 +30,7 @@ ms.locfileid: "72240894"
 
 В этой статье вы узнаете, как перенаправлять журналы Azure AD в ArcSight с помощью Azure Monitor. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для использования этой функции необходимо иметь следующее.
 * Концентратор событий Azure, содержащий журналы действий Azure AD. Узнайте, как [настроить потоковую передачу журналов действий в концентратор событий](quickstart-azure-monitor-stream-logs-to-event-hub.md). 
@@ -57,6 +57,6 @@ ms.locfileid: "72240894"
 
 5. В руководстве по настройке также объясняется, как настроить свойства соединителя в Azure, а также обновить и удалить соединитель. Кроме того, имеется раздел о производительности, в котором говорится о переходе к [плану потребления Azure](https://azure.microsoft.com/pricing/details/functions) и настройке ArcSight Load Balancer, если объем нагрузки событий больше, чем тот, с которым может справиться Syslog NG Daemon SmartConnector.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Руководство по настройке ArcSight SmartConnector для концентратора событий Azure Monitor](https://community.softwaregrp.com/dcvta86296/attachments/dcvta86296/connector-documentation/1232/2/Microsoft%20Azure%20Monitor%20Event%20Hub.pdf)

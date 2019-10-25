@@ -1,22 +1,18 @@
 ---
 title: Фильтрация данных телеметрии Azure Application Insights в веб-приложении Java | Документация Майкрософт
 description: Уменьшите трафик телеметрии с помощью фильтрации событий, которые не нужно отслеживать.
-services: application-insights
-documentationcenter: ''
-author: mrbullwinkle
-manager: carmonm
-ms.service: application-insights
-ms.workload: tbd
-ms.tgt_pltfrm: ibiza
+ms.service: azure-monitor
+ms.subservice: application-insights
 ms.topic: conceptual
-ms.date: 3/14/2019
+author: mrbullwinkle
 ms.author: mbullwin
-ms.openlocfilehash: 9cf939b241da01be55c1b2ba5f00a5131ab94c06
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.date: 3/14/2019
+ms.openlocfilehash: de2a7c73b87254a6fd2e6c5dc942a9c93d28c2d4
+ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67061156"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72819364"
 ---
 # <a name="filter-telemetry-in-your-java-web-app"></a>Фильтрация данных телеметрии в веб-приложении Java
 
@@ -196,7 +192,7 @@ ms.locfileid: "67061156"
 
 ## <a name="custom-filters"></a>Настраиваемые фильтры
 
-### <a name="1-code-your-filter"></a>1. Программирование фильтра
+### <a name="1-code-your-filter"></a>1. закодировать фильтр
 
 В коде создайте класс, реализующий `TelemetryProcessor`.
 
@@ -235,7 +231,7 @@ ms.locfileid: "67061156"
 ```
 
 
-### <a name="2-invoke-your-filter-in-the-configuration-file"></a>2. Вызов фильтра в файле конфигурации
+### <a name="2-invoke-your-filter-in-the-configuration-file"></a>2. вызовите фильтр в файле конфигурации.
 
 В файле ApplicationInsights.xml:
 
@@ -254,9 +250,9 @@ ms.locfileid: "67061156"
 
 ```
 
-### <a name="3-invoke-your-filter-java-spring"></a>3. Вызов фильтра (Java Spring)
+### <a name="3-invoke-your-filter-java-spring"></a>3. вызов фильтра (пружина Java)
 
-Для приложений на основе Spring framework обработчики пользовательских данных телеметрии должны быть зарегистрированы как bean в классе главного приложения. Они вновь будут autowired при запуске приложения.
+Для приложений, использующих пружинную платформу, пользовательские обработчики данных телеметрии должны быть зарегистрированы в основном классе приложения как Bean. После запуска приложения они будут передаваться по сети.
 
 ```Java
 @Bean
@@ -265,10 +261,10 @@ public TelemetryProcessor successFilter() {
 }
 ```
 
-Вам потребуется создать собственные параметры фильтра в `application.properties` и использующие инфраструктуру реализованное конфигурации Spring Boot для передачи параметров в пользовательский фильтр. 
+Вам потребуется создать собственные параметры фильтра в `application.properties` и использовать внешнюю инфраструктуру конфигурации с пружинной загрузкой для передачи этих параметров в пользовательский фильтр. 
 
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Устранение неисправностей
 
 *Мой фильтр не работает.*
 

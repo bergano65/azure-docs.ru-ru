@@ -1,23 +1,18 @@
 ---
 title: Изучение журналов трассировки Java в Azure Application Insights | Документация Майкрософт
 description: Поиск данных трассировки Log4J или Logback в Application Insights
-services: application-insights
-documentationcenter: java
-author: mrbullwinkle
-manager: carmonm
-ms.assetid: fc0a9e2f-3beb-4f47-a9fe-3f86cd29d97a
-ms.service: application-insights
-ms.workload: tbd
-ms.tgt_pltfrm: ibiza
+ms.service: azure-monitor
+ms.subservice: application-insights
 ms.topic: conceptual
-ms.date: 05/18/2019
+author: mrbullwinkle
 ms.author: mbullwin
-ms.openlocfilehash: 99a18125fa5ce07a46fcc1af554fd03746ebf110
-ms.sourcegitcommit: d773b5743cb54b8cbcfa5c5e4d21d5b45a58b081
+ms.date: 05/18/2019
+ms.openlocfilehash: 23e3116a0cc3283191d00079e0926dc206e677f0
+ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72038152"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72819338"
 ---
 # <a name="explore-java-trace-logs-in-application-insights"></a>Просмотр журналов трассировки Java в Application Insights
 Если вы используете Logback или Log4J (версия 1.2 или 2.0) для трассировки, можно настроить автоматическую пересылку журналов в Application Insights, где вы сможете их изучить.
@@ -121,7 +116,7 @@ ms.locfileid: "72038152"
 #### <a name="otherwise-"></a>В противном случае...
 Следуйте указаниям, чтобы вручную установить пакет SDK Application Insights для Java, скачайте JAR-файл (после перехода на страницу центра Maven щелкните ссылку JAR в разделе загрузок) для соответствующего аппендера и добавьте скачанный JAR-файл аппендера в проект.
 
-| Средство ведения журнала | Загрузить | Библиотека |
+| Средство ведения журнала | Download (Скачать) | Библиотека |
 | --- | --- | --- |
 | Logback |[JAR-файл аппендера Logback](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22applicationinsights-logging-logback%22) |applicationinsights-logging-logback |
 | Log4J версии 2.0 |[JAR-файл аппендера Log4J версии 2](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22applicationinsights-logging-log4j2%22) |applicationinsights-logging-log4j2 |
@@ -183,7 +178,7 @@ ms.locfileid: "72038152"
 
 ![На портале Application Insights откройте колонку "Поиск".](./media/java-trace-logs/01-diagnostics.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [Поиск по журналу диагностики][diagnostic]
 
 <!--Link references-->

@@ -1,23 +1,18 @@
 ---
 title: Просмотр данных HockeyApp в Azure Application Insights | Документация Майкрософт
 description: Анализ использования и производительности приложения Azure с помощью Application Insights.
-services: application-insights
-documentationcenter: windows
-author: mrbullwinkle
-manager: carmonm
-ms.assetid: 97783cc6-67d6-465f-9926-cb9821f4176e
-ms.service: application-insights
-ms.workload: tbd
-ms.tgt_pltfrm: ibiza
+ms.service: azure-monitor
+ms.subservice: application-insights
 ms.topic: conceptual
-ms.date: 03/30/2017
+author: mrbullwinkle
 ms.author: mbullwin
-ms.openlocfilehash: 79adfbfde25903bfe92c94507071c9d0fe303ef1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 03/30/2017
+ms.openlocfilehash: b14cd38a1db6804a00883ded0b38511fa46c3a52
+ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60898753"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72819582"
 ---
 # <a name="exploring-hockeyapp-data-in-application-insights"></a>Просмотр данных HockeyApp в Application Insights
 
@@ -55,10 +50,10 @@ ms.locfileid: "60898753"
 
 Рассмотрим подробнее каждый из этих доступных компонентов.
 
-## <a name="analytics"></a>Аналитика
-Аналитика — мощный инструмент для нерегламентированных запросов данных, что позволяет диагностировать и анализировать данные телеметрии, а также быстро находить основные причины и характерные.
+## <a name="analytics"></a>Analytics
+Аналитика — это мощный инструмент для нерегламентированных запросов к данным, позволяющий диагностировать и анализировать данные телеметрии и быстро обнаруживать основные причины и закономерности.
 
-![Аналитика](./media/hockeyapp-bridge-app/05.png)
+![Analytics](./media/hockeyapp-bridge-app/05.png)
 
 * [Знакомство с аналитикой в Application Insights](../../azure-monitor/log-query/get-started-portal.md)
 

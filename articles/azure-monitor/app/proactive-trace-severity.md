@@ -1,23 +1,18 @@
 ---
 title: Интеллектуальное обнаружение ухудшения соотношения серьезности трассировок в Azure Application Insights | Документация Майкрософт
 description: Мониторинг трассировок приложений с помощью Azure Application Insights для обнаружения необычных шаблонов в данных телеметрии трассировок.
-services: application-insights
-documentationcenter: ''
-author: mrbullwinkle
-manager: carmonm
-ms.assetid: ea2a28ed-4cd9-4006-bd5a-d4c76f4ec20b
-ms.service: application-insights
-ms.workload: tbd
-ms.tgt_pltfrm: ibiza
+ms.service: azure-monitor
+ms.subservice: application-insights
 ms.topic: conceptual
-ms.date: 11/27/2017
+author: mrbullwinkle
 ms.author: mbullwin
-ms.openlocfilehash: 10b909fd5239546047aa4696a1f6a68a703778c0
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.date: 11/27/2017
+ms.openlocfilehash: 83c1296beabaaae78289a653c6b30f6665f725c2
+ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60306400"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72820530"
 ---
 # <a name="degradation-in-trace-severity-ratio-preview"></a>Ухудшение соотношения серьезности трассировок (предварительная версия)
 
@@ -26,7 +21,7 @@ ms.locfileid: "60306400"
 Для этой функции требуется не специальная настройка. Нужно только настроить ведение журнала трассировки для приложения (узнайте, как настроить прослушиватель журнала трассировки для [.NET](https://docs.microsoft.com/azure/application-insights/app-insights-asp-net-trace-logs) или [Java](https://docs.microsoft.com/azure/application-insights/app-insights-java-trace-logs)). Он работает, когда приложение создает достаточно данных телеметрии исключений.
 
 ## <a name="when-would-i-get-this-type-of-smart-detection-notification"></a>Когда я буду получать уведомления интеллектуального обнаружения такого типа?
-Вы получаете этот тип уведомления, если соотношение между «хорошими» трассировками (трассировки в журнале с уровнем *Info* или *Verbose*) и «плохими» трассировками (трассировки в журнале с уровнем *предупреждение*, *Ошибка*, или *Неустранимая ошибка*) приводит к снижению в определенный день, по сравнению с базовыми показателями, вычисленными за предыдущую неделю.
+Этот тип уведомления может быть получен, если отношение между "хорошей" трассировкой (трассировка, регистрируемая с уровнем *info* или *verbose*) и «плохие» трассировки (трассировка, регистрируемая с уровнем *предупреждения*, *ошибки*или *Неустранимая*), ухудшается в определенный день по сравнению с базовыми показателями, вычисленными за предыдущие семь дней.
 
 ## <a name="does-my-app-definitely-have-a-problem"></a>В работе моего приложения обязательно существует проблема?
 Уведомление не означает, что в работе приложения возникла проблема. Хотя ухудшение соотношения между "хорошими" и "плохими" трассировками может указывать на проблему приложения, это изменение может оказаться безопасным. Например, причиной увеличения может быть новый поток в приложении, выдающий больше "плохих" трассировок, чем существующие потоки.

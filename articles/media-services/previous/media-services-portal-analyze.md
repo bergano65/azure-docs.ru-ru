@@ -14,27 +14,26 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
-ms.openlocfilehash: d3917f65d8be08d6355013393f6c6675ea6c7fc5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 26a951ffaf0253371ffe69c6df798120f0464082
+ms.sourcegitcommit: 7efb2a638153c22c93a5053c3c6db8b15d072949
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61131817"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72881897"
 ---
 # <a name="analyze-your-media-using-the-azure-portal"></a>Анализ данных мультимедиа с помощью портала Azure 
-> [!NOTE]
-> Для работы с этим учебником требуется учетная запись Azure. Дополнительные сведения см. в разделе [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/). 
-> 
-> 
 
-## <a name="overview"></a>Обзор
+> [!IMPORTANT]
+> Ознакомьтесь с [планами выбытия](media-services-analytics-overview.md#retirement-plans) некоторых процессоров мультимедиа.
+
+## <a name="overview"></a>Краткое описание
 Медиааналитика служб мультимедиа Azure — это набор речевых и визуальных компонентов корпоративного уровня, соответствующий нормам безопасности и доступный по всему миру. Используя медиааналитику для анализа видеофайлов, компании и организации могут получать ценную информацию для принятия решений. Подробные сведения об аналитике служб мультимедиа Azure см. в [этой статье](media-services-analytics-overview.md). 
 
 В этой статье рассматриваются способы обработки мультимедиа с помощью мультимедийных данных служб медиааналитики на портале Azure. Обработчики мультимедийных данных служб медиааналитики создают файлы в формате MP4 или JSON. Если обработчик мультимедиа создает файл в формате MP4, такой файл можно скачать постепенно. Если обработчик мультимедиа создает файл в формате JSON, такой файл можно скачать из хранилища BLOB-объектов. 
 
 ## <a name="choose-an-asset-that-you-want-to-analyze"></a>Выбор ресурса-контейнера для анализа
 1. Выберите учетную запись служб мультимедиа Azure на [портале Azure](https://portal.azure.com/).
-2. В окне **Параметры** выберите элемент **Ресурсы**.  
+2. В окне **Параметры** выберите **Ресурсы**.  
    
     ![Анализ видео](./media/media-services-portal-analyze/media-services-portal-analyze001.png)
 3. Выберите ресурс, который хотите проанализировать и нажмите кнопку **Анализ**.
@@ -45,7 +44,7 @@ ms.locfileid: "61131817"
     В остальной части статьи объясняется, зачем и как использовать каждый обработчик. 
 5. Щелкните **Создать** для запуска задания.
 
-## <a name="azure-media-indexer"></a>Azure Media Indexer
+## <a name="azure-media-indexer"></a>Индексатор мультимедийных данных Azure
 Обработчик мультимедиа **индексатор службы мультимедиа Azure** позволяет сделать мультимедийные файлы и контент доступными для поиска, а также создавать дорожки для субтитров. В этом разделе подробно описываются некоторые сведения о параметрах, которые можно указать для обработчика мультимедиа.
 
 ![Анализ видео](./media/media-services-portal-analyze/media-services-portal-analyze003.png)
@@ -74,7 +73,7 @@ ms.locfileid: "61131817"
 ### <a name="output-file"></a>Выходной файл
 Понятное имя, идентифицирующее выводимый контент. 
 
-### <a name="speed"></a>Speed
+### <a name="speed"></a>Скорость
 Укажите скорость входного видео. Результатом является стабилизированное и замедленное представление входного видео.
 
 ### <a name="job-name"></a>Имя задания
@@ -136,10 +135,10 @@ ms.locfileid: "61131817"
 
 ![Модерация видео](./media/media-services-portal-analyze/media-services-portal-analyze-content-moderator.PNG)
 
-### <a name="version"></a>Version 
+### <a name="version"></a>Версия 
 Используйте версию 2.0.
 
-### <a name="mode"></a>Режим
+### <a name="mode"></a>Mode
 Версия 2.0 игнорирует параметр `Mode`.
 
 ## <a name="next-steps"></a>Дальнейшие действия
@@ -147,5 +146,5 @@ ms.locfileid: "61131817"
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Отправить отзыв
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]

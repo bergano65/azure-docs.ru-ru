@@ -1,65 +1,61 @@
 ---
-title: Производительности и нагрузочного тестирования с помощью Azure Application Insights | Документация Майкрософт
+title: Производительность и нагрузочное тестирование с помощью Azure Application Insights | Документация Майкрософт
 description: Настройка производительности и нагрузочных тестов с помощью Azure Application Insights
-services: application-insights
-author: mrbullwinkle
-manager: carmonm
-ms.assetid: 46dc13b4-eb2e-4142-a21c-94a156f760ee
-ms.service: application-insights
-ms.workload: tbd
-ms.tgt_pltfrm: ibiza
+ms.service: azure-monitor
+ms.subservice: application-insights
 ms.topic: conceptual
+author: mrbullwinkle
+ms.author: mbullwin
 ms.date: 06/19/2019
 ms.reviewer: sdash
-ms.author: mbullwin
-ms.openlocfilehash: 55d743e32f6db0828317d3764a97bcb35b104dad
-ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
+ms.openlocfilehash: 9c86b69239bed1a15c754ce28232b97e8439942b
+ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67304888"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72819107"
 ---
 # <a name="performance-testing"></a>Тестирование производительности
 
 > [!NOTE]
-> Облачные службы нагрузочного тестирования является устаревшим. Дополнительные сведения об устаревании, доступность службы и альтернативных служб можно найти [здесь](https://docs.microsoft.com/azure/devops/test/load-test/overview?view=azure-devops).
+> Облачная служба нагрузочного тестирования устарела. Дополнительные сведения об устаревании, доступности службы и альтернативных службах можно найти [здесь](https://docs.microsoft.com/azure/devops/test/load-test/overview?view=azure-devops).
 
-Application Insights позволяет создавать нагрузочные тесты для веб-сайтов. Как и [тесты доступности](monitor-web-app-availability.md), можно отправить либо базовые запросы или [многошаговые запросы](availability-multistep.md) из Azure агентов по всему миру тестирования. Тесты производительности дает вам возможность имитировать до 20 000 одновременных пользователей до 60 минут.
+Application Insights позволяет создавать нагрузочные тесты для веб-сайтов. Как и [тесты доступности](monitor-web-app-availability.md), вы можете отправить как базовые запросы, так и [многоэтапные запросы](availability-multistep.md) от агентов тестирования Azure по всему миру. Тесты производительности позволяют имитировать до 20 000 одновременных пользователей в течение 60 минут.
 
 ## <a name="create-an-application-insights-resource"></a>Создание ресурса Application Insights
 
-Чтобы создать тест производительности, сначала необходимо создать ресурс Application Insights. Если вы уже создали ресурс перейдите к следующему разделу.
+Чтобы создать тест производительности, сначала необходимо создать ресурс Application Insights. Если вы уже создали ресурс, перейдите к следующему разделу.
 
-На портале Azure выберите **создать ресурс** > **средств разработчика** > **Application Insights** и создайте Application Insights. ресурс.
+На портал Azure выберите **создать ресурс** > **средства для разработчиков** > **Application Insights** и создайте ресурс Application Insights.
 
-## <a name="configure-performance-testing"></a>Настроить тестирование производительности
+## <a name="configure-performance-testing"></a>Настройка тестирования производительности
 
-Если это первое Создание выберите тест производительности **задать организации** и выбрать организацию DevOps в Azure в качестве источника для тестов производительности.
+Если вы впервые создаете тест производительности, выберите **задать организацию** и выберите организацию Azure DevOps в качестве источника для тестов производительности.
 
-В разделе **Настройка**, перейдите в меню **тестирования производительности** и нажмите кнопку **New** для создания теста.
+В разделе **Настройка**перейдите к разделу **Тестирование производительности** и нажмите кнопку **создать** , чтобы создать тест.
 
 ![Укажите хотя бы URL-адрес своего веб-сайта](./media/performance-testing/new-performance-test.png)
 
-Для создания базовых показателей производительности теста, выберите тип теста **ручного теста** и заполните нужные параметры для теста.
+Чтобы создать базовый тест производительности, выберите тип теста **ручной тест** и Заполните нужные параметры теста.
 
-|Параметр| Макс.
+|Параметр| Максимальное значение
 |----------|------------|
 | Пользовательская нагрузка | 20 000 |
 | Длительность (в минутах)  | 60 |  
 
-После создания теста щелкните **выполнение теста**.
+После создания теста щелкните **запустить тест**.
 
-После завершения теста вы увидите результаты, подобные результаты ниже:
+После завершения теста отобразятся результаты, аналогичные приведенным ниже.
 
-![Результаты теста](./media/performance-testing/test-results.png)
+![результаты теста](./media/performance-testing/test-results.png)
 
 ## <a name="configure-visual-studio-web-test"></a>Настройка веб-теста Visual Studio
 
-Application Insights, возможности тестирования расширенные тесты производительности создаются на основе Visual Studio производительности и нагрузочных тестовых проектов.
+Application Insights расширенные возможности тестирования производительности построены на основе проектов производительности и нагрузочных тестов Visual Studio.
 
 ![Visual Studio ](./media/performance-testing/visual-studio-test.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Многошаговые веб-тесты](availability-multistep.md)
-* [URL-адрес проверок связи](monitor-web-app-availability.md)
+* [Проверки связи URL-адреса](monitor-web-app-availability.md)

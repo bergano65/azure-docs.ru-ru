@@ -6,33 +6,33 @@ author: IEvangelist
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 7/5/2019
+ms.date: 10/23/2019
 ms.author: dapine
-ms.openlocfilehash: 52d8e1355558b197b193a50c7cde571799541268
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: ecb172aec37fdab21bed8373ac7484dc52a54829
+ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67717176"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72822029"
 ---
-## <a name="create-a-luis-resource"></a>Создать ресурс LUIS
+## <a name="create-a-luis-resource"></a>Создание ресурса LUIS
 
 1. Войдите на [портал Azure](https://portal.azure.com).
-1. Нажмите кнопку [создать **Language Understanding**](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesLUIS)
+1. Нажмите кнопку [создать **Language Understanding** ](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesLUISAllInOne)
 1. Введите все необходимые параметры:
 
-    |Параметр|Значение|
+    |Параметр|Value|
     |--|--|
-    |Имя|Желаемое имя (2-64 символов)|
-    |Подписка|Выберите соответствующую подписку|
-    |Местоположение|Выберите любое расположение рядом и доступность|
-    |Ценовая категория|`F0` -Минимальный ценовой категории|
-    |Группа ресурсов|Выберите группу доступных ресурсов|
+    |Name|Требуемое имя (2-64 символов)|
+    |Subscription|Выберите подходящую подписку|
+    |Location|Выберите все расположенные поблизости и доступные расположения|
+    |Уровень цен|`F0` — минимальная ценовая категория|
+    |Группа ресурсов|Выберите доступную группу ресурсов|
 
-1. Нажмите кнопку **создать** и ожидания ресурсов должен быть создан. После его создания, перейдите на страницу ресурсов
-1. Сбор настроен `endpoint` и ключ API:
+1. Щелкните **создать** и дождитесь создания ресурса. После создания перейдите на страницу ресурсов.
+1. Собирайте настроенные `endpoint` и ключ API:
 
-    |Вкладка ресурсов на портале|Параметр|Значение|
+    |Вкладка ресурсов на портале|Параметр|Value|
     |--|--|--|
-    |**Обзор**|Конечная точка|Копирование конечной точки. Выглядит `https://luis.cognitiveservices.azure.com/luis/v2.0`|
-    |**Ключи**|Ключ API|Скопируйте 1 из двух ключей. Это строка 32 буквенно-цифровых символов без пробелов и дефисов, `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`.|
+    |**Обзор**|Конечная точка|Скопируйте конечную точку. Он выглядит так же, как `https://luis.cognitiveservices.azure.com/luis/v2.0`|
+    |**Ключи**|Ключ API|Скопируйте 1 из двух ключей. Это строка, состоящая из 32 буквенно-цифровых символов без пробелов или дефисов `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`.|

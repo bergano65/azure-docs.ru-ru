@@ -1,23 +1,18 @@
 ---
 title: Панель мониторинга общих сведений об Azure Application Insights | Документация Майкрософт
 description: Мониторинг приложений с помощью Azure Application Insights и функции "Панель мониторинга общих сведений".
-services: application-insights
-documentationcenter: ''
-author: mrbullwinkle
-manager: carmonm
-ms.assetid: ea2a28ed-4cd9-4006-bd5a-d4c76f4ec20b
-ms.service: application-insights
-ms.workload: tbd
-ms.tgt_pltfrm: ibiza
+ms.service: azure-monitor
+ms.subservice: application-insights
 ms.topic: conceptual
-ms.date: 06/03/2019
+author: mrbullwinkle
 ms.author: mbullwin
-ms.openlocfilehash: d1823779f8a8070149811e2349fc9f4281072d38
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 06/03/2019
+ms.openlocfilehash: 218ae158512326bcad8efd6c598f68d296fe9370
+ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66497151"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72819155"
 ---
 # <a name="application-insights-overview-dashboard"></a>Обзорная панель мониторинга Application Insights
 
@@ -60,9 +55,9 @@ Application Insights всегда предоставляло сводную па
 
 ![Кнопка "Обзор"](./media/overview-dashboard/app-insights-overview-dashboard-07.png)
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Устранение неисправностей
 
-При выборе **Настройка параметров плитки** и задайте заданного интервала времени, превышающий 31 день, панели мониторинга не будут отображаться за пределами 31 день, даже с срок хранения данных по умолчанию 90 дней. В настоящее время нет решения для этого поведения.
+Если выбрать **параметр настроить параметры плитки** и задать настраиваемый диапазон времени, превышающий 31 день, на панели мониторинга не будут отображаться данные за 31 день, даже если срок хранения данных по умолчанию 90 дней. В настоящее время обходной путь для этого поведения отсутствует.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

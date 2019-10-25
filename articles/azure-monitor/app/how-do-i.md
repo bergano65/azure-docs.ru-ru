@@ -1,25 +1,20 @@
 ---
 title: Выполнение заданий в Azure Application Insights | Документация Майкрософт
 description: Вопросы и ответы об Application Insights
-services: application-insights
-documentationcenter: ''
-author: mrbullwinkle
-manager: carmonm
-ms.assetid: 48b2b644-92e4-44c3-bc14-068f1bbedd22
-ms.service: application-insights
-ms.workload: tbd
-ms.tgt_pltfrm: ibiza
+ms.service: azure-monitor
+ms.subservice: application-insights
 ms.topic: conceptual
-ms.date: 04/04/2017
+author: mrbullwinkle
 ms.author: mbullwin
-ms.openlocfilehash: 9f80edf18a531d6c2850658ddef9c7007edb350f
-ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
+ms.date: 04/04/2017
+ms.openlocfilehash: 28881403e4938376cc1912227bdff51aa5f069cf
+ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67795512"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72817367"
 ---
-# <a name="how-do-i--in-application-insights"></a>Как работать с Application Insights
+# <a name="how-do-i--in-application-insights"></a>Разделы справки по Application Insights
 ## <a name="get-an-email-when-"></a>Получать уведомление по электронной почте, если...
 ### <a name="email-if-my-site-goes-down"></a>Уведомлять меня по электронной почте, если сайт выходит из строя
 Настройте [веб-тест доступности](../../azure-monitor/app/monitor-web-app-availability.md).
@@ -82,14 +77,14 @@ ms.locfileid: "67795512"
 
 ## <a name="separate-telemetry-from-different-versions"></a>Разделение телеметрии разных версий
 
-* Несколько ролей в приложении. Используйте единый ресурс Application Insights и выполните фильтрацию по [cloud_Rolename](../../azure-monitor/app/app-map.md).
-* Отдельные этапы разработки, тестирования и выпуска версий. Используйте разные ресурсы Application Insights. Получите ключи инструментирования из файла web.config. [Подробнее](../../azure-monitor/app/separate-resources.md)
-* Отчеты о версиях сборки. Добавьте свойство с помощью инициализатора телеметрии. [Подробнее](../../azure-monitor/app/separate-resources.md)
+* Несколько ролей в приложении: используйте один ресурс Application Insights и выполните фильтрацию по [cloud_Rolename](../../azure-monitor/app/app-map.md).
+* Отдельные стадии разработки, тестирования и выпуска версий. Используйте различные ресурсы Application Insights. Выберите ключи инструментирования из файла Web. config. Дополнительные [сведения](../../azure-monitor/app/separate-resources.md)
+* Отчеты о версиях сборки. Добавьте свойство с помощью инициализатора телеметрии. [Дополнительные сведения](../../azure-monitor/app/separate-resources.md)
 
 ## <a name="monitor-backend-servers-and-desktop-apps"></a>Мониторинг внутренних серверов и классических приложений
 [Используйте модуль пакета SDK для Windows Server](../../azure-monitor/app/windows-desktop.md).
 
-## <a name="visualize-data"></a>Визуализируйте данные
+## <a name="visualize-data"></a>Визуализация данных
 #### <a name="dashboard-with-metrics-from-multiple-apps"></a>Панель мониторинга с метрикой для нескольких приложений
 * В [обозревателе метрик](../../azure-monitor/app/metrics-explorer.md)настройте диаграмму и сохраните ее в списке избранного. Закрепите ее на панели мониторинга Azure.
 
@@ -103,7 +98,7 @@ ms.locfileid: "67795512"
 <a name="search-specific-users"></a>
 
 ### <a name="filter-out-anonymous-or-authenticated-users"></a>Отфильтровывание анонимных или прошедших проверку подлинности пользователей
-Если пользователь вошел в систему, можно установить [идентификатор пользователя, прошедшего проверку подлинности](../../azure-monitor/app/api-custom-events-metrics.md#authenticated-users). (Это не происходит автоматически.)
+Если пользователи входят в систему, можно задать [идентификатор пользователя, прошедшего проверку подлинности](../../azure-monitor/app/api-custom-events-metrics.md#authenticated-users). (Это не происходит автоматически.)
 
 Затем можно:
 
@@ -137,7 +132,7 @@ ms.locfileid: "67795512"
 ## <a name="disable-telemetry"></a>Отключение данных телеметрии
 Чтобы **динамически остановить и запустить** сбор и передачу данных телеметрии с сервера:
 
-### <a name="aspnet-classic-applications"></a>Приложения ASP.NET Classic
+### <a name="aspnet-classic-applications"></a>Классические приложения ASP.NET
 
 ```csharp
     using  Microsoft.ApplicationInsights.Extensibility;
@@ -146,16 +141,16 @@ ms.locfileid: "67795512"
 ```
 
 ### <a name="other-applications"></a>Другие приложения
-Не рекомендуется использовать `TelemetryConfiguration.Active` одноэлементный экземпляр консоли или приложения ASP.NET Core.
-Если вы создали `TelemetryConfiguration` экземпляр себя – набор `DisableTelemetry` для `true`.
+Не рекомендуется использовать `TelemetryConfiguration.Active` Singleton в консольных и ASP.NET Core приложениях.
+Если вы создали `TelemetryConfiguration` экземпляр самостоятельно, задайте для `DisableTelemetry` значение `true`.
 
-Для приложений ASP.NET Core могут получить доступ к `TelemetryConfiguration` экземпляра с помощью [внедрения зависимостей ASP.NET Core](/aspnet/core/fundamentals/dependency-injection/). Дополнительные сведения в [ApplicationInsights для приложений ASP.NET Core](../../azure-monitor/app/asp-net-core.md) статьи.
+Для ASP.NET Core приложений вы можете получить доступ к экземпляру `TelemetryConfiguration`, используя [внедрение зависимостей ASP.NET Core](/aspnet/core/fundamentals/dependency-injection/). Дополнительные сведения см. в статье [ApplicationInsights for ASP.NET Core Applications](../../azure-monitor/app/asp-net-core.md) .
 
-## <a name="disable-selected-standard-collectors"></a>Отключить выбранные стандартные сборщики
-Вы можете отключить стандартные сборщики (например, счетчики производительности, HTTP-запросы или зависимости)
+## <a name="disable-selected-standard-collectors"></a>Отключить выбранные стандартные собирающие
+Можно отключить стандартные собирающие (например, счетчики производительности, HTTP-запросы или зависимости).
 
-* **Приложения ASP.NET** , удалите или закомментируйте соответствующие строки в [ApplicationInsights.config](../../azure-monitor/app/configuration-with-applicationinsights-config.md)
-* **Приложения ASP.NET Core** -выполните в параметры конфигурации модулей телеметрии [ApplicationInsights ASP.NET Core](../../azure-monitor/app/asp-net-core.md#configuring-or-removing-default-telemetrymodules)
+* **ASP.NET приложения** — удалите соответствующие строки в [файле ApplicationInsights. config](../../azure-monitor/app/configuration-with-applicationinsights-config.md) или закомментируйте их.
+* **ASP.NET Core приложения** — используйте параметры конфигурации модулей телеметрии в [ApplicationInsights ASP.NET Core](../../azure-monitor/app/asp-net-core.md#configuring-or-removing-default-telemetrymodules)
 
 ## <a name="view-system-performance-counters"></a>Просмотр счетчиков производительности системы
 В показатели метрики, которые можно отображать в обозревателе метрики, входит набор системных счетчиков производительности. В готовой колонке **Серверы** отображается несколько таких счетчиков.

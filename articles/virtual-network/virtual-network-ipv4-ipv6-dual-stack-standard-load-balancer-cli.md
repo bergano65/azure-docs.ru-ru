@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/15/2019
 ms.author: kumud
-ms.openlocfilehash: f67494b229a14b66b593950903184e54e4a8ab8c
-ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
+ms.openlocfilehash: d0968ddedb36ab7fb4ee515ef1d20a177d4d59fe
+ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70013702"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72820989"
 ---
 # <a name="deploy-an-ipv6-dual-stack-application-in-azure-virtual-network---cli-preview"></a>Развертывание приложения с двумя стеками IPv6 в виртуальной сети Azure с помощью интерфейса командной строки (Предварительная версия)
 
@@ -33,8 +33,8 @@ ms.locfileid: "70013702"
 
 Если вы решили установить и использовать Azure CLI локально, в этом кратком руководстве необходимо использовать Azure CLI версии 2.0.49 или более поздней. Выполните команду `az --version`, чтобы узнать установленную версию. Сведения об установке или обновлении Azure CLI см. в [этой статье](/cli/azure/install-azure-cli).
 
-## <a name="prerequisites"></a>Предварительные требования
-Чтобы использовать функцию IPv6 для виртуальной сети Azure, необходимо настроить подписку с помощью Azure PowerShell следующим образом.
+## <a name="prerequisites"></a>Технические условия
+Чтобы использовать функцию IPv6 для виртуальной сети Azure, необходимо настроить подписку с помощью Azure CLI следующим образом.
 
 ```azurecli
 az feature register --name AllowIPv6VirtualNetwork --namespace Microsoft.Network
@@ -51,9 +51,9 @@ az feature show --name AllowIPv6CAOnStandardLB --namespace Microsoft.Network
 ```azurelci
 az provider register --namespace Microsoft.Network
 ```
-## <a name="create-a-resource-group"></a>Создать группу ресурсов
+## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Прежде чем можно будет создать виртуальную сеть с двумя стеками, необходимо создать группу ресурсов с помощью команды [AZ Group Create](/cli/azure/group). В следующем примере создается группа ресурсов с именем *миргдуалстакк* в расположении *eastus* :
+Прежде чем можно будет создать виртуальную сеть с двумя стеками, необходимо создать группу ресурсов с помощью команды [AZ Group Create](/cli/azure/group). В следующем примере создается группа ресурсов с именем *DsResourceGroup01* в расположении *eastus* :
 
 ```azurecli
 az group create \
@@ -62,7 +62,7 @@ az group create \
 ```
 
 ## <a name="create-ipv4-and-ipv6-public-ip-addresses-for-load-balancer"></a>Создание общедоступных IP-адресов IPv4 и IPv6 для балансировщика нагрузки
-Для доступа к конечным точкам IPv4 и IPv6 в Интернете требуются общедоступные IP-адреса IPv4 и IPv6 для балансировщика нагрузки. Создайте общедоступный IP-адрес с помощью команды [az network public-ip create](/cli/azure/network/public-ip). В следующем примере создается общедоступный IP-адрес IPv4 и IPv6 с именем *dsPublicIP_v4* и *dsPublicIP_v6* в группе ресурсов *миргдуалстакк* :
+Для доступа к конечным точкам IPv4 и IPv6 в Интернете требуются общедоступные IP-адреса IPv4 и IPv6 для балансировщика нагрузки. Создайте общедоступный IP-адрес с помощью команды [az network public-ip create](/cli/azure/network/public-ip). В следующем примере создается общедоступный IP-адрес IPv4 и IPv6 с именем *dsPublicIP_v4* и *dsPublicIP_v6* в группе ресурсов *DsResourceGroup01* :
 
 ```azurecli
 # Create an IPV4 IP address
@@ -182,7 +182,7 @@ az network lb rule create \
 
 ## <a name="create-network-resources"></a>Создание сетевых ресурсов
 Перед развертыванием некоторых виртуальных машин необходимо создать вспомогательные сетевые ресурсы — группы доступности, группу безопасности сети, виртуальную сеть и виртуальные сетевые карты. 
-### <a name="create-an-availability-set"></a>Создать группу доступности
+### <a name="create-an-availability-set"></a>Создание группы доступности
 Чтобы повысить доступность приложения, разместите виртуальные машины в группе доступности.
 
 Создайте группу доступности с помощью команды [az vm availability-set create](https://docs.microsoft.com/cli/azure/vm/availability-set?view=azure-cli-latest). В следующем примере создается группа доступности с именем *дсавсет*:
@@ -266,7 +266,7 @@ az network nsg rule create \
 ```
 
 
-### <a name="create-a-virtual-network"></a>Создать виртуальную сеть
+### <a name="create-a-virtual-network"></a>Создание виртуальной сети
 
 Создайте виртуальную сеть с помощью команды [az network vnet create](https://docs.microsoft.com/cli/azure/network/vnet?view=azure-cli-latest#az-network-vnet-create). В следующем примере создается виртуальная сеть с именем *дсвнет* с подсетями *dsSubNET_v4* и *dsSubNET_v6*:
 
@@ -382,9 +382,9 @@ az vm create \
 Вы можете удалить ставшие ненужными группу ресурсов, виртуальную машину и все связанные с ней ресурсы, выполнив команду [az group delete](/cli/azure/group#az-group-delete).
 
 ```azurecli
- az group delete --name DsRG1
+ az group delete --name DsResourceGroup01
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы создали Load Balancer (цен. категория "Стандартный") с двойной интерфейсной IP-конфигурацией (IPv4 и IPv6). Вы также создали две виртуальные машины, которые включали сетевые карты с двумя IP-конфигурациями (IPV4 + IPv6), которые были добавлены в пул внутренних подсистем подсистемы балансировки нагрузки. Дополнительные сведения о поддержке IPv6 в виртуальных сетях Azure см. в статье [что такое IPv6 для виртуальной сети Azure?](ipv6-overview.md)

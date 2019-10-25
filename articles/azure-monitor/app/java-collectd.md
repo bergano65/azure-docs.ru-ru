@@ -1,30 +1,25 @@
 ---
 title: Мониторинг производительности веб-приложения Java в Linux в среде Azure | Документация Майкрософт
 description: Расширенный мониторинг производительности приложений на веб-сайте Java с подключаемым модулем CollectD для Application Insights.
-services: application-insights
-documentationcenter: java
-author: mrbullwinkle
-manager: carmonm
-ms.assetid: 40c68f45-197a-4624-bf89-541eb7323002
-ms.service: application-insights
-ms.workload: tbd
-ms.tgt_pltfrm: ibiza
+ms.service: azure-monitor
+ms.subservice: application-insights
 ms.topic: conceptual
-ms.date: 03/14/2019
+author: mrbullwinkle
 ms.author: mbullwin
-ms.openlocfilehash: c6e947dfed3169f346f43ab08225056815e8b487
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.date: 03/14/2019
+ms.openlocfilehash: 6c74684ac45a040be154a1e6406c1e7a5e0dd253
+ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67061195"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72817153"
 ---
-# <a name="collectd-linux-performance-metrics-in-application-insights"></a>Средство collectd: метрики производительности Linux в Application Insights
+# <a name="collectd-linux-performance-metrics-in-application-insights"></a>collectd: метрики производительности Linux в Application Insights
 
 
 Для работы с метриками производительности Linux в [Application Insights](../../azure-monitor/app/app-insights-overview.md) установите инструмент [collectd](https://collectd.org/) вместе с его подключаемым модулем Application Insights. Это решение с открытым исходным кодом собирает разнообразные данные системной и сетевой статистики.
 
-Обычно collectd используется, если вы уже [инструментировали веб-службу Java с помощью Application Insights][java]. Это средство предоставляет больше данных, помогая вам повысить производительность приложения или диагностировать неполадки. 
+Обычно вы будете использовать собранные, если вы уже выполнили [Инструментирование веб-службы Java с Application Insights][java]. Это средство предоставляет больше данных, помогая вам повысить производительность приложения или диагностировать неполадки. 
 
 ## <a name="get-your-instrumentation-key"></a>Получение ключа инструментирования
 На [портале Microsoft Azure](https://portal.azure.com) откройте ресурс [Application Insights](../../azure-monitor/app/app-insights-overview.md), в котором требуется отобразить данные. (Либо [создайте новый ресурс](../../azure-monitor/app/create-new-resource.md ).)
@@ -91,7 +86,7 @@ ms.locfileid: "67061195"
 Перезапустите collectd в соответствии с его [документацией](https://collectd.org/wiki/index.php/First_steps).
 
 ## <a name="view-the-data-in-application-insights"></a>Просмотр данных в Application Insights
-В ресурсе Application Insights откройте [метрик и добавьте диаграммы][metrics], выбрав нужные метрики, которые вы хотите увидеть в пользовательской категории.
+В ресурсе Application Insights откройте раздел [метрики и добавьте диаграммы][metrics], выбрав метрики, которые нужно просмотреть из пользовательской категории.
 
 По умолчанию метрики со всех хост-компьютеров, которые их поставляют, объединяются. Чтобы просмотреть метрики по хостам, в колонке сведений о диаграмме включите группировку и выберите группировку по параметру CollectD-Host.
 
@@ -113,7 +108,7 @@ ms.locfileid: "67061195"
 ## <a name="problems"></a>Проблемы?
 *Данные не отображаются в портале*
 
-* Откройте [Поиск][diagnostic] и проверьте поступление необработанных событий. Иногда они появляются в обозревателе метрик не сразу.
+* Откройте [Поиск][diagnostic] , чтобы узнать, получены ли необработанные события. Иногда они появляются в обозревателе метрик не сразу.
 * Вам может понадобиться [указать исключения брандмауэра для исходящих данных](../../azure-monitor/app/ip-addresses.md)
 * Включите трассировку в подключаемом модуле Application Insights. Добавьте в `<Plugin ApplicationInsightsWriter>`следующую строку:
   * `SDKLogger true`
@@ -124,7 +119,7 @@ ms.locfileid: "67061195"
 
 Подключаемый модуль записи для Application Insights несовместим с некоторыми подключаемыми модулями чтения. Некоторые подключаемые модули иногда отправляют сообщение "не число", когда подключаемый модуль Application Insights ожидает число с плавающей запятой.
 
-Симптом. В журнале collectd содержатся ошибки, в которых есть текст "AI: ... SyntaxError: Unexpected token N" (Непредвиденный токен N).
+Симптом. в собранном журнале отображаются ошибки, включающие "AI:... SyntaxError: непредвиденная лексема N ".
 
 Обходное решение. Исключите данные, собранные подключаемым модулем записи, с которым связана проблема. 
 

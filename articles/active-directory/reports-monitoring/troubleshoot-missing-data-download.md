@@ -1,5 +1,5 @@
 ---
-title: 'Устранение неполадок: отсутствие данных в скачанных журналах действий Azure Active Directory | Документация Майкрософт'
+title: 'Устранение неполадок: отсутствующие данные в скачанных журналах действий | Документация Майкрософт'
 description: В этой статье описаны способы устранения неполадок, связанных с отсутствием данных в скачанных журналах действий.
 services: active-directory
 documentationcenter: ''
@@ -17,16 +17,16 @@ ms.date: 11/13/2018
 ms.author: chadam
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f120c1b86efe94f4ff6316e6116b9049582b07e9
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: db96bd99a25ca7803dbdfe412e2cddbbcb57c0e4
+ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68987983"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72817522"
 ---
 # <a name="i-cant-find-all-the-data-in-the-azure-active-directory-activity-logs-i-downloaded"></a>Я не могу найти данные в скачанных журналах действий Azure Active Directory
 
-## <a name="symptoms"></a>Проблемы
+## <a name="symptoms"></a>Симптомы
 
 В скачанных журналах действий (аудита или входа) нет всех записей за выбранный период времени. Почему? 
 
@@ -40,7 +40,7 @@ ms.locfileid: "68987983"
 
 Вы можете в любой момент использовать [интерфейсы API отчетов Azure AD](concept-reporting-api.md), чтобы извлечь до миллиона записей.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Вопросы и ответы об отчетах Azure Active Directory](reports-faq.md)
 

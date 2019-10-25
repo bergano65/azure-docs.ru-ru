@@ -1,5 +1,5 @@
 ---
-title: Анализ журналов действий Azure Active Directory с помощью журналов Azure Monitor | Документация Майкрософт
+title: Анализ журналов действий с помощью Azure Monitor журналов | Документация Майкрософт
 description: Узнайте, как анализировать журналы действий Azure Active Directory с помощью журналов Azure Monitor
 services: active-directory
 documentationcenter: ''
@@ -17,12 +17,12 @@ ms.date: 04/18/2019
 ms.author: chadam
 ms.reviewer: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1670c93f83ecd6f5bd557d24ec754998a225db0c
-ms.sourcegitcommit: 1c2659ab26619658799442a6e7604f3c66307a89
+ms.openlocfilehash: 52ab1bd445f8af0bf58dcb6b1176904aa073877a
+ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72255628"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72820967"
 ---
 # <a name="analyze-azure-ad-activity-logs-with-azure-monitor-logs"></a>Анализ журналов действий Azure AD с помощью журналов Azure Monitor
 
@@ -32,11 +32,11 @@ ms.locfileid: "72255628"
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../../includes/azure-monitor-log-analytics-rebrand.md)]
 
-## <a name="prerequisites"></a>Предварительные требования 
+## <a name="prerequisites"></a>Технические условия 
 
 Для работы вам потребуется следующее:
 
-* Рабочая область Log Analytics в подписке Azure. Узнайте, [как создать рабочую область Log Analytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-quick-create-workspace).
+* рабочая область Log Analytics в подписке Azure. Узнайте, [как создать рабочую область Log Analytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-quick-create-workspace).
 * Сначала настройте передачу [журналов действий Azure AD в рабочую область Log Analytics](howto-integrate-activity-logs-with-log-analytics.md).
 *  [Доступ](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/manage-access#manage-access-using-workspace-permissions) к рабочей области log Analytics
 * Следующие роли в Azure Active Directory (при обращении к Log Analytics через портал Azure Active Directory)
@@ -105,13 +105,13 @@ AuditLogs
 Вы также можете загрузить готовые представления анализа журналов для журналов действий Azure AD. Представления содержат несколько отчетов, касающихся общих сценариев, связанных с событиями аудита и регистрации. Вы также можете создать оповещение о любых данных, представленных в отчетах, выполнив действия, описанные в предыдущем разделе.
 
 * **Azure AD Account Provisioning Events** (События подготовки учетных записей Azure AD). В этом представлении отображаются отчеты, связанные с аудитом действий подготовки, в том числе количество новых подготовленных пользователей и сбоев при подготовке, число обновленных пользователей и сбоев обновления, а также число отозванных пользователей и соответствующих сбоев.    
-* **Sign-ins Events** (События входа в систему). В этом представлении отображаются наиболее важные отчеты, связанные с мониторингом действий входа в систему, например, число входов по приложениям, пользователям, устройствам, а также сводное представление для отслеживания числа входов со временем.
+* **Sign-ins Events** (События входа в систему). В этом представлении отображаются наиболее важные отчеты, связанные с мониторингом действий входа в систему, например число входов по приложениям, пользователям, устройствам, а также сводное представление для отслеживания числа входов со временем.
 * **Users Performing Consent** (Пользователи, дающие согласие). В этом представлении отображаются отчеты, связанные с согласием пользователя, в том числе число согласий, предоставленных пользователем, число входов в систему пользователей, предоставивших согласие, а также число входов в систему всех приложений с доступом по согласию. 
 
 См. сведения об [установке и использовании предоставлений анализа журналов для журналов действий Azure AD](howto-install-use-log-analytics-views.md). 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Начало работы с запросами журналов Azure Monitor](https://docs.microsoft.com/azure/log-analytics/query-language/get-started-queries)
 * [Создание групп действий и управление ими на портале Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-action-groups)

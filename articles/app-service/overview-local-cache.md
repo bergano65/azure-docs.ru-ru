@@ -16,12 +16,12 @@ ms.workload: na
 ms.date: 03/04/2016
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: bfb66789df3236c096ea00bcc83ddc435e87f047
-ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
+ms.openlocfilehash: 4dffa7dcafe4aabe3e8dcb56d4f5084d0c6ef821
+ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71097660"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72819668"
 ---
 # <a name="azure-app-service-local-cache-overview"></a>Общие сведения о локальном кэше службы приложений Azure
 
@@ -58,8 +58,8 @@ ms.locfileid: "71097660"
 ## <a name="enable-local-cache-in-app-service"></a>Включение локального кэша в службе приложений
 Локальный кэш настраивается с помощью нескольких зарезервированных параметров приложения. Эти параметры приложения можно настроить следующими способами.
 
-* [портал Azure](#Configure-Local-Cache-Portal)
-* [Диспетчер ресурсов Azure](#Configure-Local-Cache-ARM)
+* [Портал Azure](#Configure-Local-Cache-Portal)
+* [Azure Resource Manager](#Configure-Local-Cache-ARM)
 
 ### <a name="configure-local-cache-by-using-the-azure-portal"></a>Настройка локального кэша на портале Azure
 <a name="Configure-Local-Cache-Portal"></a>
@@ -93,7 +93,7 @@ ms.locfileid: "71097660"
 ```
 
 ## <a name="change-the-size-setting-in-local-cache"></a>Изменение размера локального кэша
-По умолчанию размер локального кэша равен **300 МБ**. Он включает папки /site и /siteextensions, которые копируются из хранилища содержимого, а также любые другие локально созданные журналы и папки данных. Чтобы увеличить это ограничение, используйте параметр приложения `WEBSITE_LOCAL_CACHE_SIZEINMB`. Размер кэша для каждого приложения можно увеличить до **2 ГБ** (2000 МБ).
+По умолчанию локальный кэш имеет размер **1 ГБ**. Он включает папки /site и /siteextensions, которые копируются из хранилища содержимого, а также любые другие локально созданные журналы и папки данных. Чтобы увеличить это ограничение, используйте параметр приложения `WEBSITE_LOCAL_CACHE_SIZEINMB`. Размер кэша для каждого приложения можно увеличить до **2 ГБ** (2000 МБ).
 
 ## <a name="best-practices-for-using-app-service-local-cache"></a>Рекомендации по использованию локального кэша службы приложений
 Мы рекомендуем использовать локальный кэш в сочетании с функцией [промежуточных сред](../app-service/deploy-staging-slots.md) .
@@ -105,6 +105,7 @@ ms.locfileid: "71097660"
 * Прикрепленные параметры имеют имена и привязаны к слоту. Поэтому при переключении между промежуточным и рабочим слотами промежуточный слот наследует параметры локального кэша приложения. Через несколько минут новый рабочий слот будет запущен с локальным кэшем и будет разогрет после переключения. После завершения переключения слотов рабочий слот будет работать с локальным кэшем.
 
 ## <a name="frequently-asked-questions-faq"></a>Часто задаваемые вопросы
+
 ### <a name="how-can-i-tell-if-local-cache-applies-to-my-app"></a>Можно ли использовать локальный кэш с моим приложением?
 Да, если приложению требуется высокопроизводительное надежное хранилище содержимого, а также если это веб-приложение не сохраняет в хранилище важные данные во время работы, а его общий размер не превышает 2 ГБ. Чтобы узнать общий размер папок /site и /siteextensions, используйте расширение сайта Azure Web Apps Disk Usage.
 

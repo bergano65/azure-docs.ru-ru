@@ -1,24 +1,19 @@
 ---
 title: 'Application Insights: языки, платформы и интеграции | Документация Майкрософт'
 description: Языки, платформы и интеграции, доступные для Application Insights
-services: application-insights
-documentationcenter: ''
-author: mrbullwinkle
-manager: carmonm
-ms.assetid: 974db106-54ff-4318-9f8b-f7b3a869e536
-ms.service: application-insights
-ms.workload: tbd
-ms.tgt_pltfrm: ibiza
+ms.service: azure-monitor
+ms.subservice: application-insights
 ms.topic: conceptual
+author: mrbullwinkle
+ms.author: mbullwin
 ms.date: 07/18/2019
 ms.reviewer: olegan
-ms.author: mbullwin
-ms.openlocfilehash: ab573d1d9ca9d9db39135ea76e555bb0720d7b68
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 35d1cf37e1df0b2714505833d40163775e3d090c
+ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68878772"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72819035"
 ---
 # <a name="supported-languages"></a>Поддерживаемые языки
 
@@ -54,7 +49,7 @@ ms.locfileid: "68878772"
 
 ## <a name="export-and-data-analysis"></a>Экспорт и анализ данных
 * [Power BI](https://blogs.msdn.com/b/powerbi/archive/2015/11/04/explore-your-application-insights-data-with-power-bi.aspx)
-* [Stream Analytics](../../azure-monitor/app/export-power-bi.md)
+* [Анализ потока](../../azure-monitor/app/export-power-bi.md)
 
 ## <a name="unsupported-sdks"></a>Неподдерживаемые пакеты SDK
 Мы осведомлены о существовании нескольких других пакетов SDK, поддерживаемых сообществом. Однако Azure Monitor обеспечивает поддержку только при использовании поддерживаемых пакетов SDK, перечисленных на этой странице. Мы постоянно оцениваем возможности, чтобы расширить нашу поддержку для других языков, поэтому на странице [объявления GitHub](https://github.com/microsoft/ApplicationInsights-Announcements/issues) вы получите последние новости пакета SDK. 

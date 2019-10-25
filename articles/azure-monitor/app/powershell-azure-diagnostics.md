@@ -1,22 +1,18 @@
 ---
 title: Настройка Application Insights в Azure с помощью PowerShell | Документация Майкрософт
 description: Автоматизируйте настройку система диагностики Azure для передачи данных по конвейеру в Application Insights.
-services: application-insights
-author: mrbullwinkle
-manager: carmonm
-ms.assetid: 4ac803a8-f424-4c0c-b18f-4b9c189a64a5
-ms.service: application-insights
-ms.workload: tbd
-ms.tgt_pltfrm: ibiza
+ms.service: azure-monitor
+ms.subservice: application-insights
 ms.topic: conceptual
-ms.date: 08/06/2019
+author: mrbullwinkle
 ms.author: mbullwin
-ms.openlocfilehash: 0c963e4cd7befffe69fef159542eabd29059e3d9
-ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
+ms.date: 08/06/2019
+ms.openlocfilehash: 0e1fd048b855473c1d7978e2a908c45360a1ed2a
+ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70035194"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72819019"
 ---
 # <a name="using-powershell-to-set-up-application-insights-for-azure-cloud-services"></a>Настройка Application Insights для облачных служб Azure с помощью PowerShell
 
@@ -46,7 +42,7 @@ ms.locfileid: "70035194"
 * `myWebAppName` — идентификатор веб-приложения.
 
 ## <a name="enable-diagnostics-extension-as-part-of-deploying-a-cloud-service"></a>Включение расширения диагностики как части развертывания облачной службы
-Параметр `ExtensionConfiguration` командлета `New-AzureDeployment` принимает массив значений для конфигурации диагностики. Их можно создать с помощью командлета `New-AzureServiceDiagnosticsExtensionConfig` . Пример:
+Параметр `ExtensionConfiguration` командлета `New-AzureDeployment` принимает массив значений для конфигурации диагностики. Их можно создать с помощью командлета `New-AzureServiceDiagnosticsExtensionConfig` . Пример.
 
 ```ps
 
@@ -133,7 +129,7 @@ ms.locfileid: "70035194"
 ```
 
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>Дополнительные материалы
 * [Мониторинг приложений облачных служб Azure с помощью Application Insights](../../azure-monitor/app/cloudservices.md)
 * [Отправка данных системы диагностики Azure в Application Insights](../../azure-monitor/platform/diagnostics-extension-to-application-insights.md)
 * [Use PowerShell to set alerts in Application Insights](powershell-alerts.md)

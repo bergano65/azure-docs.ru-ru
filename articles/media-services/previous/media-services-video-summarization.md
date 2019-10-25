@@ -15,15 +15,19 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
 ms.reviewer: milanga
-ms.openlocfilehash: e7a99ffdd42c02e5a18dc14c4774b428232b8293
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: a546df73f316b4eb6c215a6f52d68f87ad09c1a2
+ms.sourcegitcommit: 7efb2a638153c22c93a5053c3c6db8b15d072949
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "69015986"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72881692"
 ---
 # <a name="use-azure-media-video-thumbnails-to-create-a-video-summarization"></a>Использование Azure Media Video Thumbnail для формирования сводных данных видео  
-## <a name="overview"></a>Обзор
+
+> [!IMPORTANT]
+> Ознакомьтесь с [планами выбытия](media-services-analytics-overview.md#retirement-plans) некоторых процессоров мультимедиа.
+
+## <a name="overview"></a>Краткое описание
 Обработчик мультимедиа **Azure Media Video Thumbnail** позволяет создавать сводку видео, которая предоставляет пользователям предварительный просмотр сводки длинного видео. Например, пользователи хотят просмотреть короткую "сводку видео", когда они наводят указатель мыши на эскиз. Настроив параметры **Azure Media Video Thumbnail** в предустановке конфигурации, вы можете использовать технологию обнаружения и объединения кадров обработчика мультимедиа для создания описательного миниклипа.  
 
 Сейчас обработчик мультимедиа **Azure Media Video Thumbnail** доступен в предварительной версии.
@@ -56,8 +60,8 @@ ms.locfileid: "69015986"
 
 | Параметр | Описание |
 | --- | --- |
-| outputAudio |Указывает, есть ли в итоговом видео аудио. <br/>Допустимые значения: Значение True или False. Значение по умолчанию — True. |
-| fadeInFadeOut |Указывает, используются ли плавные переходы при перемещении отдельных эскизов.  <br/>Допустимые значения: Значение True или False.  Значение по умолчанию — True. |
+| outputAudio |Указывает, есть ли в итоговом видео аудио. <br/>Допустимые значения: True или False. Значение по умолчанию — True. |
+| fadeInFadeOut |Указывает, используются ли плавные переходы при перемещении отдельных эскизов.  <br/>Допустимые значения: True или False.  Значение по умолчанию — True. |
 | maxMotionThumbnailDurationInSecs |Целое число, указывающее продолжительность видео, полученного в результате.  По умолчанию зависит от продолжительности исходного видео. |
 
 Следующая таблица содержит продолжительность по умолчанию, когда параметр **maxMotionThumbnailInSecs** не используется.
@@ -282,7 +286,7 @@ ms.locfileid: "69015986"
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Оставить отзыв
+## <a name="provide-feedback"></a>Отправить отзыв
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="related-links"></a>Связанные ссылки

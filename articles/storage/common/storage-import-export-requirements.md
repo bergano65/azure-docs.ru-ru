@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 08/12/2019
 ms.author: alkohli
 ms.subservice: common
-ms.openlocfilehash: 448d416ce4915aeae048639f6021197ed8c1d334
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: b6dffb46d8c0fd7201079de3e8509ece516d2f8f
+ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68967868"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72821396"
 ---
 # <a name="azure-importexport-system-requirements"></a>Требования к системе для импорта и экспорта Azure
 
@@ -24,14 +24,14 @@ ms.locfileid: "68967868"
 При подготовке жестких дисков с использованием инструмента WAImportExport поддерживаются следующие **64-разрядные ОС с возможностью шифрования диска BitLocker**.
 
 
-|Платформа |Version |
+|платформа |Версия |
 |---------|---------|
-|Windows     | Windows 7 Корпоративная, Windows 7 Максимальная <br> Windows 8 Pro, Windows 8 Корпоративная, Windows 8.1 Pro, Windows 8.1 Корпоративная <br> Windows 10        |
-|Windows Server     |Windows Server 2008 R2 <br> Windows Server 2012, Windows Server 2012 R2         |
+|Windows     | Windows 7 Корпоративная, Windows 7 Максимальная <br> Windows 8 Pro, Windows 8 Корпоративная, Windows 8.1 Pro, Windows 8.1 Корпоративная <br> Windows 10        |
+|Windows Server     |Windows Server 2008 R2 <br> Windows Server 2012, Windows Server 2012 R2         |
 
 ## <a name="other-required-software-for-windows-client"></a>Другое необходимое программное обеспечение для клиента Windows
 
-|Платформа |Version |
+|платформа |Версия |
 |---------|---------|
 |.NET Framework    | 4.5.1       |
 | BitLocker        |  _          |
@@ -57,10 +57,10 @@ ms.locfileid: "68967868"
 Ниже представлен список типов хранилищ, поддерживаемых службой импорта и экспорта Azure.
 
 
-|Задание  |Служба хранения |Поддерживается  |Не поддерживается  |
+|задание  |Служба хранилища |Поддерживается  |Не поддерживается  |
 |---------|---------|---------|---------|
-|Импортировать     |  Хранилище BLOB-объектов Azure <br><br> Хранилище файлов Azure       | Поддерживаются блочные и страничные BLOB-объекты <br><br> Поддерживаются файлы          |
-|Экспорт     |   Хранилище BLOB-объектов Azure       | Поддерживаются блочные, страничные и добавочные BLOB-объекты         | Служба файлов Azure не поддерживается
+|Импорт     |  Хранилище BLOB-объектов Azure <br><br> Хранилище файлов Azure       | Поддерживаются блочные и страничные BLOB-объекты <br><br> Поддерживаются файлы          |
+|Экспортировать     |   Хранилище BLOB-объектов Azure       | Поддерживаются блочные, страничные и добавочные BLOB-объекты         | Служба файлов Azure не поддерживается
 
 
 ## <a name="supported-hardware"></a>Поддерживаемое оборудование 
@@ -72,7 +72,7 @@ ms.locfileid: "68967868"
 Ниже представлен список поддерживаемых дисков для использования со службой импорта и экспорта Azure.
 
 
-|Тип диска  |Size  |Поддерживается |
+|Тип диска  |Размер  |Поддерживается |
 |---------|---------|---------|
 |SSD    |   2,5"      |SATA III          | 
 |HDD     |  2,5"<br>3,5"       |SATA II, SATA III         |
@@ -91,9 +91,9 @@ ms.locfileid: "68967868"
 Во время подготовки жестких дисков и копирования данных с помощью инструмента WAImportExport можно использовать внешние адаптеры USB. Большинство стандартных адаптеров USB 3.0 или более поздних версий должны работать. 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Настройка инструмента WAImportExport](storage-import-export-tool-how-to.md)
 * [Приступая к работе со служебной программой командной строки AzCopy](storage-use-azcopy.md)
-* [Пример REST API службы импорта и экспорта Azure](https://azure.microsoft.com/documentation/samples/storage-dotnet-import-export-job-management/)
+* [Пример REST API службы импорта и экспорта Azure](https://github.com/Azure-Samples/storage-dotnet-import-export-job-management/)
 

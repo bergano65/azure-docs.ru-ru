@@ -1,23 +1,18 @@
 ---
 title: Настройка оповещений в Application Insights с помощью PowerShell | Документация Майкрософт
 description: Автоматизация настройки Application Insights для получения сообщений электронной почты об изменениях метрик.
-services: application-insights
-documentationcenter: ''
-author: mrbullwinkle
-manager: carmonm
-ms.assetid: 05d6a9e0-77a2-4a35-9052-a7768d23a196
-ms.service: application-insights
-ms.workload: tbd
-ms.tgt_pltfrm: ibiza
+ms.service: azure-monitor
+ms.subservice: application-insights
 ms.topic: conceptual
-ms.date: 10/31/2016
+author: mrbullwinkle
 ms.author: mbullwin
-ms.openlocfilehash: 5dfbc6fa18b5d1b5b3058db14eb1232be27a0c40
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 10/31/2016
+ms.openlocfilehash: 0771079eb338c2f22cb0b1f31c48b0b9f80a3ff5
+ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66130981"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72819088"
 ---
 # <a name="use-powershell-to-set-alerts-in-application-insights"></a>Настройка оповещений в Application Insights с помощью PowerShell
 
@@ -98,7 +93,7 @@ GUID — это идентификатор подписки (не ключ ин�
 Это же правило можно использовать для метрики, передаваемой с помощью [параметра измерения](../../azure-monitor/app/api-custom-events-metrics.md#properties) другого вызова отслеживания, например TrackEvent или trackPageView.
 
 ## <a name="metric-names"></a>Имена метрик
-| Название метрики | Имя экрана | Описание |
+| Имя метрики | Имя экрана | Описание |
 | --- | --- | --- |
 | `basicExceptionBrowser.count` |Исключения браузера |Число необработанных исключений в браузере. |
 | `basicExceptionServer.count` |Исключения сервера |Число необработанных исключений приложения |
@@ -127,15 +122,15 @@ GUID — это идентификатор подписки (не ключ ин�
 
 | Группа метрик | Модуль сборщика |
 | --- | --- |
-| basicExceptionBrowser,<br/>clientPerformance,<br/>view |[Browser JavaScript](../../azure-monitor/app/javascript.md) |
+| basicExceptionBrowser,<br/>clientPerformance,<br/>показать |[Browser JavaScript](../../azure-monitor/app/javascript.md) |
 | performanceCounter |[Производительность](../../azure-monitor/app/configuration-with-applicationinsights-config.md) |
-| remoteDependencyFailed |[Dependency](../../azure-monitor/app/configuration-with-applicationinsights-config.md) |
+| remoteDependencyFailed |[Зависимость](../../azure-monitor/app/configuration-with-applicationinsights-config.md) |
 | request,<br/>requestFailed |[Server request](../../azure-monitor/app/configuration-with-applicationinsights-config.md) |
 
 ## <a name="webhooks"></a>Веб-перехватчики
 Вы можете [автоматизировать реагирование на оповещения](../../azure-monitor/platform/alerts-webhooks.md). При возникновении оповещения Azure будет вызывать выбранный вами веб-адрес.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>Дополнительные материалы
 * [Сценарий настройки Application Insights](powershell-script-create-resource.md)
 * [Создание ресурсов Application Insights и веб-тестов на основе шаблонов](powershell.md)
 * [Автоматизация связывания Диагностики Microsoft Azure с Application Insights](powershell-azure-diagnostics.md)

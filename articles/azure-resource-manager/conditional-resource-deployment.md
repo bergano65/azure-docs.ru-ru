@@ -6,16 +6,16 @@ ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 09/03/2019
 ms.author: tomfitz
-ms.openlocfilehash: 88f8b6a8dcce0e498a7b81b8741072bcf4cfcad8
-ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
+ms.openlocfilehash: b6d707fc4bbc5fa57ffb0c809d7f70efebef99e9
+ms.sourcegitcommit: 7efb2a638153c22c93a5053c3c6db8b15d072949
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70259513"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72881666"
 ---
 # <a name="conditional-deployment-in-resource-manager-templates"></a>Условное развертывание в шаблонах диспетчер ресурсов
 
-Иногда при необходимости можно развернуть ресурс в шаблоне. Используйте элемент `condition` , чтобы указать, развернут ли ресурс. Этот элемент возвращает значение True или False. Если значение true, ресурс создан. Если значение false, ресурс не создан. Значение может применяться только ко всему ресурсу.
+Иногда при необходимости можно развернуть ресурс в шаблоне. Используйте элемент `condition`, чтобы указать, развернут ли ресурс. Этот элемент возвращает значение True или False. Если значение true, ресурс создан. Если значение false, ресурс не создан. Значение может применяться только ко всему ресурсу.
 
 ## <a name="new-or-existing-resource"></a>Новый или существующий ресурс
 
@@ -82,7 +82,11 @@ ms.locfileid: "70259513"
 
 Используйте функцию [If](resource-group-template-functions-logical.md#if) , чтобы убедиться, что функция вычисляется только для условий при развертывании ресурса. См. [функцию if](resource-group-template-functions-logical.md#if) для примера шаблона, который использует оператор If и ссылку с условно развернутым ресурсом.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="condition-with-complete-mode"></a>Условие с полным режимом
+
+Если вы развертываете шаблон с [полным режимом](deployment-modes.md) , а ресурс не развернут, так как условие принимает значение false, результат зависит от того, какая REST API версия используется для развертывания шаблона. Если вы используете более раннюю версию, чем 2019-05-10, ресурс **не удаляется**. В 2019-05-10 или более поздней версии ресурс **удаляется**. Последние версии Azure PowerShell и Azure CLI удаляют ресурс, если условие имеет значение false.
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные рекомендации по созданию шаблонов см. в статье [Рекомендации по работе с шаблонами Azure Resource Manager](template-best-practices.md).
 * Сведения о создании нескольких экземпляров ресурса см. [в разделе ресурс, свойство или итерация переменной в шаблонах Azure Resource Manager](resource-group-create-multiple.md).
