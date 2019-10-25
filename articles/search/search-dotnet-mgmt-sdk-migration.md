@@ -1,22 +1,22 @@
 ---
-title: Обновление пакета SDK управления .NET для службы "Поиск Azure" до версии 2
+title: Обновление до пакета SDK управления .NET для службы поиска Azure версии 2
+titleSuffix: Azure Cognitive Search
 description: Сведения об обновлении пакета SDK управления .NET для службы "Поиск Azure" до версии 2. Сведения о новых возможностях и необходимых изменениях кода.
-author: brjohnstmsft
 manager: nitinme
+author: brjohnstmsft
 ms.author: brjohnst
-services: search
-ms.service: search
+ms.service: cognitive-search
 ms.devlang: dotnet
 ms.topic: conceptual
-ms.date: 05/02/2019
-ms.openlocfilehash: 2a59cff7f5313b0ac5a060d698950a4c82160f67
-ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
+ms.date: 11/04/2019
+ms.openlocfilehash: b81060bc3d8409a9ccb74ba85c85e6f779650ffd
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70182249"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72792419"
 ---
-# <a name="upgrading-to-the-azure-search-net-management-sdk-version"></a>Обновление до версии пакета SDK для службы поиска Azure для .NET 
+# <a name="upgrading-versions-of-the-azure-search-net-management-sdk"></a>Обновление версий пакета SDK для службы поиска Azure для .NET
 
 > [!Important]
 > Это содержимое все еще находится в стадии разработки. Версия 3,0 пакета SDK для .NET для управления поиском Azure доступна в NuGet. Мы работаем над обновлением этого руководства по миграции, чтобы объяснить, как выполнить обновление до новой версии. 

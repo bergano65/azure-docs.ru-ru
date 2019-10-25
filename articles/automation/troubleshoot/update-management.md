@@ -8,12 +8,12 @@ ms.date: 05/31/2019
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: 952bcb85484e885d45876de1e4cf3326db0a146a
-ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
-ms.translationtype: HT
+ms.openlocfilehash: 2aebcf05cbc818997943ed3bab19fb1fd8a83592
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72693390"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72786062"
 ---
 # <a name="troubleshooting-issues-with-update-management"></a>Устранение неполадок c помощью управления обновлениями
 
@@ -163,7 +163,7 @@ New-AzureRmAutomationSoftwareUpdateConfiguration  -ResourceGroupName $rg -Automa
 
 ### <a name="resolution"></a>Разрешение
 
-Изучите разделы реестра, перечисленные в разделе [настройка Автоматическое обновление, изменив реестр](/windows/deployment/update/waas-wu-settings#configuring-automatic-updates-by-editing-the-rej7uijui7jgistry) и [разделы реестра, используемые для управления перезагрузкой](/windows/deployment/update/waas-restart#registry-keys-used-to-manage-restart) , чтобы убедиться, что компьютеры настроены должным образом.
+Изучите разделы реестра, перечисленные в разделе [настройка Автоматическое обновление, изменив реестр](/windows/deployment/update/waas-wu-settings#configuring-automatic-updates-by-editing-the-registry) и [разделы реестра, используемые для управления перезагрузкой](/windows/deployment/update/waas-restart#registry-keys-used-to-manage-restart) , чтобы убедиться, что компьютеры настроены должным образом.
 
 ## <a name="failed-to-start"></a>Сценарий: на компьютере отображается сообщение "не удалось запустить" в развертывании обновлений
 
@@ -334,7 +334,7 @@ Unable to Register Machine for Patch Management, Registration Failed with Except
 > [!NOTE]
 > Документация по [устранению неполадок центр обновления Windows](https://support.microsoft.com/help/4027322/windows-update-troubleshooter) указывает на то, что она предназначена для использования на клиентах Windows, но она также работает в Windows Server.
 
-## <a name="scenario-update-run-returns-failed-status"></a>Сценарий: запуск обновления возвращает состояние "сбой"
+## <a name="scenario-update-run-returns-failed-status-linux"></a>Сценарий: запуск обновления возвращает состояние "сбой" (Linux)
 
 ### <a name="issue"></a>Проблема
 
@@ -367,7 +367,7 @@ Unable to Register Machine for Patch Management, Registration Failed with Except
 ### <a name="machines-dont-install-updates"></a>Компьютеры не устанавливают обновления
 
 * Попробуйте выполнить обновление непосредственно на компьютере. Если компьютеру не удается применить обновления, просмотрите [список потенциальных ошибок в разделе Руководство по устранению неполадок](https://docs.microsoft.com/azure/automation/troubleshoot/update-management#hresult).
-* Если обновления выполняются локально, попробуйте удалить и переустановить агент на компьютере, следуя указаниям в статье [Удаление виртуальной машины из Управление обновлениями](https://docs.microsoft.com/azure/automation/automation-update-management#remove-a-vm-from-update-management).
+* Если обновления выполняются локально, попробуйте удалить и переустановить агент на компьютере, следуя указаниям в статье [Удаление виртуальной машины из Управление обновлениями](https://docs.microsoft.com/azure/automation/automation-onboard-solutions-from-browse#clean-up-resources).
 
 ### <a name="i-know-updates-are-available-but-they-dont-show-as-available-on-my-machines"></a>Я знал, что доступны обновления, но они не отображаются как доступные на моих компьютерах
 

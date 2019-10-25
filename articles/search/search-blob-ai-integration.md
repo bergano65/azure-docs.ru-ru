@@ -5,15 +5,15 @@ description: Добавление семантического, естестве
 manager: nitinme
 author: HeidiSteen
 ms.author: heidist
-ms.service: search
+ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 10/09/2019
-ms.openlocfilehash: 1a8840aca71daacc08cf85b178668e42ff9f796c
-ms.sourcegitcommit: 1bd2207c69a0c45076848a094292735faa012d22
+ms.openlocfilehash: 5f65667ac8ffacdd12e57ae0d46e25c586624a31
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72678421"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72792472"
 ---
 # <a name="use-ai-to-understand-blob-storage-data"></a>Использование искусственного интеллекта для понимания данных хранилища BLOB-объектов
 
@@ -68,7 +68,7 @@ ms.locfileid: "72678421"
 
 В службе поиска Azure *навыки* — это отдельные компоненты обработки AI, которые можно использовать автономно или в сочетании с другими навыками. 
 
-+ Встроенные навыки поддерживаются Cognitive Services, с анализом изображений на основе Компьютерное зрение и обработки естественного языка на основе Анализ текста. Полный список встроенных навыков можно просмотреть в области [предопределенных навыков для обогащения содержимого](cognitive-search-predefined-skills.md).
++ Встроенные навыки поддерживаются Cognitive Services, с анализом изображений на основе Компьютерное зрение и обработки естественного языка на основе Анализ текста. Полный список см. в разделе [встроенные навыки для обогащения содержимого](cognitive-search-predefined-skills.md).
 
 + Пользовательские навыки — это пользовательский код, заключенный в [Определение интерфейса](cognitive-search-custom-skill-interface.md) , который обеспечивает интеграцию в конвейер. В клиентских решениях рекомендуется использовать и то, и другое, с пользовательскими навыками, предоставляющими модули искусственного интеллекта с открытым исходным кодом или сторонними производителями.
 

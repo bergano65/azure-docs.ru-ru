@@ -1,22 +1,21 @@
 ---
-title: 'Навык когнитивного поиска: разделение текста (служба "Поиск Azure")'
-description: Разделение текста на блоки или страницы текста в зависимости от длины в конвейере обогащения службы "Поиск Azure".
-services: search
+title: Когнитивный навык разделения текста
+titleSuffix: Azure Cognitive Search
+description: Разбейте текст на фрагменты или страницы текста на основе длины в конвейере обогащения искусственного интеллекта в Azure Когнитивный поиск.
 manager: nitinme
 author: luiscabrer
-ms.service: search
-ms.workload: search
-ms.topic: conceptual
-ms.date: 05/02/2019
 ms.author: luisca
-ms.openlocfilehash: a6e46970b6c0fc91c464207049d2dedaaee1afdd
-ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
+ms.service: cognitive-search
+ms.topic: conceptual
+ms.date: 11/04/2019
+ms.openlocfilehash: 2172ac30cd5b4251933e5012affdb41a0202a344
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71265670"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72784851"
 ---
-#   <a name="text-split-cognitive-skill"></a>Когнитивный навык разделения текста
+# <a name="text-split-cognitive-skill"></a>Когнитивный навык разделения текста
 
 Навык **Разделение текста** разделяет текст на блоки текста. Можете указать, хотите ли вы разбить текст на предложения или на страницы определенной длины. Этот навык особенно полезен при наличии требований к максимальной длине текста в последующих навыках. 
 
@@ -41,7 +40,7 @@ Microsoft.Skills.Text.SplitSkill
 
 | Имя параметра       | Описание      |
 |----------------------|------------------|
-| text  | Текст, который будет разбит на подстроки. |
+| текст  | Текст, который будет разбит на подстроки. |
 | languageCode  | (Необязательно.) Код языка документа.  |
 
 ## <a name="skill-outputs"></a>Выходные данные навыка 
@@ -131,7 +130,7 @@ Microsoft.Skills.Text.SplitSkill
 ## <a name="error-cases"></a>Варианты ошибок
 Если язык не поддерживается, создается предупреждение и текст разделяется на границах символов.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>Дополнительные материалы
 
-+ [Предопределенные навыки](cognitive-search-predefined-skills.md)
-+ [Определение набора навыков](cognitive-search-defining-skillset.md)
++ [Встроенные навыки](cognitive-search-predefined-skills.md)
++ [How to define a skillset](cognitive-search-defining-skillset.md) (Определение набора навыков)

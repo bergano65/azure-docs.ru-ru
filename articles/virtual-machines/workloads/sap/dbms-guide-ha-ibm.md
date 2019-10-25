@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 04/10/2019
 ms.author: juergent
-ms.openlocfilehash: 7ca6f1bda2dff9a8a9e54cb9d9ce5fd2d34c7245
-ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
+ms.openlocfilehash: e7de3e8026b15342c06eff9718242c08d33a53a4
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72428072"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72783778"
 ---
 [1928533]: https://launchpad.support.sap.com/#/notes/1928533
 [2015553]: https://launchpad.support.sap.com/#/notes/2015553
@@ -341,11 +341,15 @@ Execute command as db2&lt;sid&gt; db2pd -hadr -db &lt;SID&gt;
 - **[2]** : применимо только к узлу 2
 
 **[A]** необходимые условия для настройки Pacemaker:
-1. Завершите работу обоих серверов баз данных с помощью пользовательской DB2 @ no__t-0sid > с db2stop.
-1. Измените среду оболочки для DB2 @ no__t-0sid > User на */бин/КШ*. Рекомендуется использовать средство YaST. 
+1. Завершите работу обоих серверов баз данных с помощью >\<SID пользователя DB2 с помощью db2stop.
+1. Измените среду оболочки для DB2\<SID > пользователя на */бин/КШ*. Рекомендуется использовать средство YaST. 
 
 
 ### <a name="pacemaker-configuration"></a>Конфигурация Pacemaker
+
+> [!IMPORTANT]
+> Последние случаи тестирования, в которых неткат перестает отвечать на запросы из-за невыполненной работы и ограничения на обработку только одного соединения. Ресурс неткат прекращает прослушивание запросов балансировщика нагрузки Azure, и плавающий IP-адрес становится недоступным.  
+> Для существующих кластеров Pacemaker рекомендуется заменить неткат на Сокат, следуя инструкциям в разделе [усиление подсистемы балансировки нагрузки Azure](https://www.suse.com/support/kb/doc/?id=7024128). Обратите внимание, что изменение потребует краткого времени простоя.  
 
 **[1]** конфигурация Pacemaker для IBM DB2 HADR:
 <pre><code># Put Pacemaker into maintenance mode
@@ -371,7 +375,7 @@ sudo crm configure primitive rsc_ip_db2ptr_<b>PTR</b> IPaddr2 \
 
 # Configure probe port for Azure load Balancer
 sudo crm configure primitive rsc_nc_db2ptr_<b>PTR</b> anything \
-        params binfile="/usr/bin/nc" cmdline_options="-l -k <b>62500</b>" \
+        params binfile="/usr/bin/socat" cmdline_options="-U TCP-LISTEN:<b>62500</b>,backlog=10,fork,reuseaddr /dev/null" \
         op monitor timeout="20s" interval="10" depth="0"
 
 sudo crm configure group g_ip_db2ptr_<b>PTR</b> rsc_ip_db2ptr_<b>PTR</b> rsc_nc_db2ptr_<b>PTR</b>
@@ -474,12 +478,12 @@ sudo crm configure property maintenance-mode=false</pre></code>
 ### <a name="make-changes-to-sap-profiles-to-use-virtual-ip-for-connection"></a>Внесение изменений в профили SAP для использования виртуального IP-адреса для подключения
 Чтобы подключиться к основному экземпляру конфигурации HADR, уровень приложений SAP должен использовать виртуальный IP-адрес, определенный и настроенный для Azure Load Balancer. Требуются следующие изменения:
 
-/сапмнт/@no__t 0SID >/профиле/дефаулт. PFL
+/сапмнт/\<SID >/профиле/дефаулт. PFL
 <pre><code>SAPDBHOST = db-virt-hostname
 j2ee/dbhost = db-virt-hostname
 </code></pre>
 
-/сапмнт/@no__t 0SID >/Global/DB6/db2cli.ini
+/сапмнт/\<SID >/Global/DB6/db2cli.ini
 <pre><code>Hostname=db-virt-hostname
 </code></pre>
 
@@ -558,7 +562,7 @@ stonith-sbd     (stonith:external/sbd): Started azibmdb02
 > Перед началом теста убедитесь в том, что:
 > * Pacemaker не имеет невыполненных действий (состояние CRM).
 > * Отсутствуют ограничения расположения (оставшиеся тесты миграции)
-> * Синхронизация IBM DB2 HADR работает. Обратитесь к пользователю DB2 @ no__t-0sid > <pre><code>db2pd -hadr -db \<DBSID></code></pre>
+> * Синхронизация IBM DB2 HADR работает. Обратитесь к пользователю DB2\<SID > <pre><code>db2pd -hadr -db \<DBSID></code></pre>
 
 
 Перенесите узел, на котором выполняется первичная база данных DB2, выполнив следующую команду:
@@ -592,7 +596,7 @@ stonith-sbd     (stonith:external/sbd): Started azibmdb02
 crm resource clear msl_<b>Db2_db2ptr_PTR</b>
 </code></pre>
 
-- **миграция ресурсов crm \<res_name > @no__t-> 2host:** Создает ограничения расположения и может вызвать проблемы с перенаправление
+- **миграция ресурсов crm \<res_name > \<узла >:** Создает ограничения расположения и может вызвать проблемы с перенаправление
 - **ресурс CRM clear \<res_name >** : Очистка ограничений расположения
 - **Очистка ресурсов crm \<res_name >** : очищает все ошибки ресурса.
 
@@ -767,7 +771,7 @@ stonith-sbd     (stonith:external/sbd): Started azibmdb01
      Masters: [ azibmdb01 ]
      Slaves: [ azibmdb02 ]</code></pre>
 
-Как пользователь DB2 @ no__t-0sid > выполнить команду db2stop Force:
+Как пользователь DB2\<SID > выполнить команду db2stop Force:
 <pre><code>azibmdb01:~ # su - db2ptr
 azibmdb01:db2ptr> db2stop force</code></pre>
 

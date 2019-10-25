@@ -1,23 +1,22 @@
 ---
-title: Обновление до пакета SDK .NET версии 1.1 для службы "Поиск Azure"
+title: Обновление до пакета SDK .NET для поиска Azure версии 1,1
+titleSuffix: Azure Cognitive Search
 description: Перенос кода в пакет SDK .NET для службы "Поиск Azure" версии 1.1 с предыдущих версий API. Сведения о новых возможностях и необходимых изменениях кода.
-author: brjohnstmsft
 manager: nitinme
-services: search
-ms.service: search
+author: brjohnstmsft
+ms.author: brjohnst
+ms.service: cognitive-search
 ms.devlang: dotnet
 ms.topic: conceptual
-ms.date: 01/15/2018
-ms.author: brjohnst
-ms.custom: seodec2018
-ms.openlocfilehash: 8227e1b372af1eee43db59da2cfad165d67be9ae
-ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
+ms.date: 11/04/2019
+ms.openlocfilehash: 159aaa8424c3d7a711b587464b80696929f02186
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70183272"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72792386"
 ---
-# <a name="upgrading-to-the-azure-search-net-sdk-version-11"></a>Обновление пакета SDK службы поиска Azure для .NET до версии 1.1
+# <a name="upgrade-to-azure-search-net-sdk-version-11"></a>Обновление до пакета SDK .NET для поиска Azure версии 1,1
 
 Если вы используете версию 1.0.2-preview [пакета SDK .NET для службы поиска Azure](https://aka.ms/search-sdk) или более раннюю версию, то эта статья поможет вам обновить приложение для использования версии 1.1.
 
@@ -101,14 +100,14 @@ ms.locfileid: "70183272"
 
 Например, операция "Получить статистику индекса" в более старых версиях пакета SDK предоставляла эти подписи:
 
-В `IIndexOperations`добавьте:
+В `IIndexOperations` добавьте:
 
     // Asynchronous operation with all parameters
     Task<IndexGetStatisticsResponse> GetStatisticsAsync(
         string indexName,
         CancellationToken cancellationToken);
 
-В `IndexOperationsExtensions`добавьте:
+В `IndexOperationsExtensions` добавьте:
 
     // Asynchronous operation with only required parameters
     public static Task<IndexGetStatisticsResponse> GetStatisticsAsync(
@@ -122,7 +121,7 @@ ms.locfileid: "70183272"
 
 Подписи метода для той же операции в версии 1.1 выглядят следующим образом.
 
-В `IIndexesOperations`добавьте:
+В `IIndexesOperations` добавьте:
 
     // Asynchronous operation with lower-level HTTP features exposed
     Task<AzureOperationResponse<IndexGetStatisticsResult>> GetStatisticsWithHttpMessagesAsync(
@@ -131,7 +130,7 @@ ms.locfileid: "70183272"
         Dictionary<string, List<string>> customHeaders = null,
         CancellationToken cancellationToken = default(CancellationToken));
 
-В `IndexesOperationsExtensions`добавьте:
+В `IndexesOperationsExtensions` добавьте:
 
     // Simplified asynchronous operation
     public static Task<IndexGetStatisticsResult> GetStatisticsAsync(
@@ -174,7 +173,7 @@ ms.locfileid: "70183272"
         };
 
 ### <a name="model-class-changes"></a>Изменение классов модели
-Из-за изменений подписи, описанных в разделе [Изменение метода операции](#OperationMethodChanges), многие классы в пространстве имен `Microsoft.Azure.Search.Models` были переименованы или удалены. Пример:
+Из-за изменений подписи, описанных в разделе [Изменение метода операции](#OperationMethodChanges), многие классы в пространстве имен `Microsoft.Azure.Search.Models` были переименованы или удалены. Пример.
 
 * `IndexDefinitionResponse` был заменен на `AzureOperationResponse<Index>`.
 * `DocumentSearchResponse` был переименован в `DocumentSearchResult`.
@@ -345,9 +344,9 @@ ms.locfileid: "70183272"
 
 и вы устанавливаете для `IntValue` значение 0, это значение теперь правильно сериализуется как 0 по сети и сохраняется как 0 в индексе. Циклы обработки также работают ожидаемым образом.
 
-При таком подходе следует учитывать одну возможную проблему. При использовании типа модели с ненулевым свойством необходимо **гарантировать**, что документы в индексе не будут содержать значение NULL для соответствующего поля. Ни пакет SDK, ни API REST поиска Azure не поможет вам это обеспечить.
+Существует одна потенциальная проблема, которую следует учитывать при таком подходе: при использовании типа модели со свойством, не допускающим значения NULL, необходимо **гарантировать** , что документы в индексе не будут содержать значение NULL для соответствующего поля. Ни пакет SDK, ни API REST поиска Azure не поможет вам это обеспечить.
 
-Это не просто гипотетическое соображение. Представьте себе ситуацию, когда вы добавляете новое поле в имеющийся индекс с типом `Edm.Int32`. После обновления определения индекса все документы будут иметь значение null для этого нового поля (поскольку все типы допускают значение NULL в службе поиска Azure). Если затем для этого поля вы используете класс модели со свойством `int`, не допускающим нулевое значение, при попытке получения документов вы получите `JsonSerializationException` следующим образом:
+Это не просто гипотетическое соображение. Представьте себе ситуацию, когда вы добавляете новое поле в существующий индекс с типом `Edm.Int32`. После обновления определения индекса все документы будут иметь значение null для этого нового поля (поскольку все типы допускают значение NULL в службе поиска Azure). Если затем для этого поля вы используете класс модели со свойством `int`, не допускающим нулевое значение, при попытке получения документов вы получите `JsonSerializationException` следующим образом:
 
     Error converting value {null} to type 'System.Int32'. Path 'IntValue'.
 

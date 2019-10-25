@@ -1,19 +1,19 @@
 ---
-title: Пример. Создание пользовательского навыка для поиска с помощью API Bing для поиска сущностей-Azure
-description: Демонстрируется использование службы Поиск сущностей Bing в пользовательском навыке, сопоставленном с помощью конвейера индексирования поиска в службе поиска Azure.
+title: Пример. Создание собственного пользовательского навыка с помощью API Bing для поиска сущностей
+titleSuffix: Azure Cognitive Search
+description: Демонстрируется использование службы Поиск сущностей Bing в пользовательском навыке, сопоставленном с ИСКУССТВЕНным конвейером индексирования в Azure Когнитивный поиск.
 manager: nitinme
 author: luiscabrer
-services: search
-ms.service: search
-ms.topic: conceptual
-ms.date: 05/02/2019
 ms.author: luisca
-ms.openlocfilehash: ab2f9e8859fba0c906e181727aab923254e9b620
-ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
+ms.service: cognitive-search
+ms.topic: conceptual
+ms.date: 11/04/2019
+ms.openlocfilehash: a9ab828daa009f7204abb1c64291d937a1f0dba2
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72692202"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72784935"
 ---
 # <a name="example-create-a-custom-skill-using-the-bing-entity-search-api"></a>Пример. Создание пользовательского навыка с помощью API Bing для поиска сущностей
 
@@ -69,7 +69,7 @@ namespace SampleSkills
 {
     /// <summary>
     /// Sample custom skill that wraps the Bing entity search API to connect it with a 
-    /// cognitive search pipeline.
+    /// AI enrichment pipeline.
     /// </summary>
     public static class BingEntitySearch
     {
