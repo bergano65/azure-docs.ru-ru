@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 07/01/2019
 ms.author: dobett
 ms.custom: include file
-ms.openlocfilehash: 9523bfeba0ff45a8046cc8ac2c6384e1154875d4
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: 2ae663ffb06b2d323144814170e1f10a00d790c6
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69875471"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72930261"
 ---
 > [!NOTE]
-> Сейчас вы просматриваете исходную версию документации по IoT Central. Обновленную документацию по _предварительным версиям функций_ см. в [этой статье об IoT Central](../articles/iot-central/overview-iot-central-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json).
+> Сейчас вы просматриваете исходную версию документации по IoT Central. Обновленную документацию по _предварительным версиям функций_ см. в [этой статье об IoT Central](../articles/iot-central/core/overview-iot-central-pnp.md?toc=/azure/iot-central/core-pnp/toc.json&bc=/azure/iot-central/core-pnp/breadcrumb/toc.json).
