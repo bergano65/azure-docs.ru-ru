@@ -13,43 +13,36 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 99f31c5928273973a9089ae9ef1fd184cdb78bbb
-ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
+ms.openlocfilehash: 7ebffbc1c451404d93383a483eecdd4a25acf6b6
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69033314"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72928617"
 ---
 # <a name="application-registration-subtypes-and-permissions-in-azure-active-directory"></a>Подтипы регистрации приложений и разрешения в Azure Active Directory
 
 Эта статья содержит доступные в настоящее время разрешения регистрации приложений для пользовательских определений ролей в Azure Active Directory (Azure AD).
 
-## <a name="single-tenant-v-multi-tenant-permissions"></a>Один клиент v. разрешения для нескольких клиентов
+## <a name="permissions-for-managing-single-directory-applications"></a>Разрешения для управления приложениями с одним каталогом
 
-Пользовательские разрешения роли отличаются для приложений с одним клиентом и несколькими клиентами. Приложения с одним клиентом доступны только пользователям в Организации Azure AD, в которой зарегистрировано приложение. Приложения с несколькими клиентами доступны для всех организаций Azure AD. Приложения с одним клиентом определяются как имеющие **Поддерживаемые типы учетных** записей "учетные записи только в этом каталоге организации". В API Graph для приложений с одним клиентом свойство Сигнинаудиенце имеет значение "Азуреадмйорг".
+При выборе разрешений для настраиваемой роли вы можете предоставить доступ для управления только приложениями с одним каталогом. Приложения с одним каталогом доступны только пользователям в Организации Azure AD, в которой зарегистрировано приложение. Приложения с одним каталогом определяются как имеющие **Поддерживаемые типы учетных** записей "учетные записи только в этом каталоге организации". В API Graph для приложений с одним каталогом свойство Сигнинаудиенце имеет значение "Азуреадмйорг".
 
-## <a name="application-registration-subtypes-and-permissions"></a>Подтипы и разрешения регистрации приложений
+Чтобы предоставить доступ для управления только приложениями с одним каталогом, используйте приведенные ниже разрешения с подтипом **Applications. myOrganization**. Например, Microsoft. Directory/Applications. myOrganization/Basic/Update.
 
 В [обзоре пользовательских ролей](roles-custom-overview.md) приведены пояснения о том, что означают общие условия, разрешения и набор свойств. Следующие сведения относятся к регистрации приложений.
-
-### <a name="subtypes"></a>Подтипы
-
-Существует только один подтип приложения для регистрации — Applications. myOrganization. Например, Microsoft. Directory/Applications. myOrganization/Basic/Update. Этот подтип задается на странице **проверки** подлинности для конкретной регистрации приложения и соответствует присвоению свойству сигнинаудиенце значения "азуреадмйорг" с помощью API Graph или PowerShell. Подтипы ограничивают разрешения для регистрации приложений, которые помечены как доступные только для учетных записей в вашей организации (приложения с одним клиентом).
-
-Ограниченное разрешение можно использовать для предоставления разрешений на чтение или управление только внутренним приложениям без предоставления разрешений на чтение или управление для приложений, доступных учетным записям в других организациях.
-
-Существуют приложения. myOrganization версии всех разрешений на чтение и обновление, а также разрешение DELETE. В настоящее время не существует версии приложения. myOrganization. Стандартные разрешения (например, Microsoft. Directory/Applications/Basic/Update) предоставляют разрешения на чтение или управление для всех типов регистрации приложений.
-
-![Объявление приложения с одним клиентом или приложения с несколькими клиентами](./media/roles-custom-available-permissions/supported-account-types.png)
-
-Сведения о следующих разрешениях для предварительной версии пользовательских ролей перечислены в списке [Доступные разрешения пользовательской роли в Azure Active Directory](roles-custom-available-permissions.md).
 
 ### <a name="create-and-delete"></a>Создание и удаление
 
 Существует два разрешения, позволяющие предоставить возможность создания регистраций приложений, в каждой из которых используется другое поведение.
 
-- **Microsoft. Directory/Applications/креатеасовнер**: Назначение этого разрешения приводит к добавлению создателя в качестве первого владельца созданной регистрации приложения, а созданная регистрация приложения будет считаться для квоты на создание объектов создателя 250.
-- **Microsoft. Directory/аппликатионполиЦиес/создать**: Назначение этого разрешения приводит к добавлению создателя в качестве первого владельца созданной регистрации приложения, а созданная регистрация приложения не будет учитываться в квоте на создание объектов создателя 250. Внимательно используйте это разрешение, так как ничто не мешает ему создавать регистрации приложений до тех пор, пока не будет достигнута квота на уровне каталога. Если назначены оба разрешения, приоритет имеет это разрешение.
+#### <a name="microsoftdirectoryapplicationscreateasowner"></a>Microsoft. Directory/Applications/Креатеасовнер
+
+Назначение этого разрешения приводит к добавлению создателя в качестве первого владельца созданной регистрации приложения, а созданная регистрация приложения будет считаться для квоты на создание объектов создателя 250.
+
+#### <a name="microsoftdirectoryapplicationscreate"></a>Microsoft. Directory/Applications/CREATE
+
+Назначение этого разрешения приводит к добавлению создателя в качестве первого владельца созданной регистрации приложения, а созданная регистрация приложения не будет учитываться в квоте на создание объектов создателя 250. Внимательно используйте это разрешение, так как ничто не мешает ему создавать регистрации приложений до тех пор, пока не будет достигнута квота на уровне каталога. Если назначены оба разрешения, приоритет имеет это разрешение.
 
 Если назначены оба разрешения, разрешение/CREATE будет иметь приоритет. Хотя разрешение/Креатеасовнер не добавляет его в качестве первого владельца автоматически, владельцы могут быть указаны во время создания регистрации приложения при использовании API Graph или командлетов PowerShell.
 
@@ -59,7 +52,7 @@ ms.locfileid: "69033314"
 
 Существует два разрешения для предоставления возможности удалять регистрации приложений:
 
-#### <a name="microsoftdirectoryapplicationsdelete"></a>microsoft.directory/applications/delete
+#### <a name="microsoftdirectoryapplicationsdelete"></a>Microsoft. Directory/Applications/Delete
 
 Предоставляет возможность удалять регистрации приложений независимо от подтипа. то есть приложения с одним клиентом и несколькими клиентами.
 
@@ -78,19 +71,11 @@ ms.locfileid: "69033314"
 
 #### <a name="microsoftdirectoryapplicationsallpropertiesread"></a>Microsoft. Directory/Applications/Аллпропертиес/Read
 
-Возможность чтения всех свойств приложений с одним клиентом и несколькими клиентами за пределами конфиденциальных свойств, таких как учетные данные.
+Возможность чтения всех свойств приложений с одним клиентом и несколькими клиентами за пределами свойств, которые не могут быть считаны в любой ситуации, например учетные данные.
 
 #### <a name="microsoftdirectoryapplicationsmyorganizationallpropertiesread"></a>Microsoft. Directory/Applications. myOrganization/Аллпропертиес/Read
 
 Предоставляет те же разрешения, что и Microsoft. Directory/Applications/Аллпропертиес/Read, но только для приложений с одним клиентом.
-
-#### <a name="microsoftdirectoryapplicationsstandardread-grants-access-to-all-fields-on-the-application-registration-branding-page"></a>Microsoft. Directory/Applications/Standard/Read: Предоставление доступа ко всем полям на странице фирменной символики регистрации приложения
-
-![Это разрешение предоставляет доступ к странице фирменной символики регистрации приложения](./media/roles-custom-available-permissions/app-registration-branding.png)
-
-#### <a name="microsoftdirectoryapplicationsmyorganizationstandardread"></a>Microsoft. Directory/Applications. myOrganization/Standard/Read
-
-Предоставляет те же разрешения, что и Microsoft. Directory/Applications/Standard/Read, но только для приложений с одним клиентом.
 
 #### <a name="microsoftdirectoryapplicationsownersread"></a>Microsoft. Directory/Applications/Owners/Read
 
@@ -98,46 +83,19 @@ ms.locfileid: "69033314"
 
 ![Эти разрешения предоставляют доступ к странице владельцы регистрации приложений.](./media/roles-custom-available-permissions/app-registration-owners.png)
 
-Предоставляет доступ к следующим свойствам сущности приложения:
+#### <a name="microsoftdirectoryapplicationsstandardread"></a>Microsoft. Directory/Applications/Standard/Read
 
-- алловактасфораллклиентс
-- алловпасссраугхусерс
-- AppAddress
-- аппбрандинжелементс
-- аппкатегори
-- аппкреатеддатетиме
-- Папка
-- AppId
-- аппинформатионалурл
-- аппликатионтаг
-- AppLogoUrl
-- аппметадата
-- аппоптионс
-- бинарекстенсионаттрибуте
-- булеанекстенсионаттрибуте
-- каунтриесблоккедформинорс
-- CreatedOnBehalfOf
-- датетимикстенсионаттрибуте
-- DisplayName
-- екстенсионаттрибутедефинитион
-- интежерекстенсионаттрибуте
-- KnownClientApplications
-- ларжеинтежерекстенсионаттрибуте
-- легалажеграупруле
-- локализедаппбрандинжелементс
-- маинлого
-- мсааппид
-- ресаурцеаппликатионсет
-- сервицедисковерендпоинт
-- стринжекстенсионаттрибуте
-- трустедцертификатесубжект
-- WebApi
-- WebApp
-- WwwHomepage
+Предоставляет доступ для чтения стандартных свойств регистрации приложения. К ним относятся свойства на страницах регистрации приложений.
 
-### <a name="update"></a>Обновление
+#### <a name="microsoftdirectoryapplicationsmyorganizationstandardread"></a>Microsoft. Directory/Applications. myOrganization/Standard/Read
+
+Предоставляет те же разрешения, что и Microsoft. Directory/Applications/Standard/Read, но только для приложений с одним клиентом.
+
+### <a name="update"></a>Обновить
 
 #### <a name="microsoftdirectoryapplicationsallpropertiesupdate"></a>Microsoft. Directory/Applications/Аллпропертиес/Update
+
+Возможность обновления всех свойств в приложениях с одним каталогом и несколькими каталогами.
 
 #### <a name="microsoftdirectoryapplicationsmyorganizationallpropertiesupdate"></a>Microsoft. Directory/Applications. myOrganization/Аллпропертиес/Update
 
@@ -145,14 +103,9 @@ ms.locfileid: "69033314"
 
 #### <a name="microsoftdirectoryapplicationsaudienceupdate"></a>Microsoft. Directory, приложения, аудитория и обновление
 
-Предоставляет доступ ко всем полям на странице проверки подлинности регистрации приложения:
+Возможность обновления свойства поддерживаемого типа учетной записи (Сигнинаудиенце) в приложениях с одним каталогом и несколькими каталогами.
 
-![Это разрешение предоставляет доступ к странице проверки подлинности регистрации приложения](./media/roles-custom-available-permissions/supported-account-types.png)
-
-Предоставляет доступ к следующим свойствам ресурса приложения:
-
-- AvailableToOtherTenants
-- сигнинаудиенце
+![Это разрешение предоставляет доступ к свойству типа учетной записи, поддерживаемой регистрацией приложения на странице проверки подлинности](./media/roles-custom-available-permissions/supported-account-types.png)
 
 #### <a name="microsoftdirectoryapplicationsmyorganizationaudienceupdate"></a>Microsoft. Directory/Applications. myOrganization/аудитория/обновление
 
@@ -164,20 +117,6 @@ ms.locfileid: "69033314"
 
 ![Предоставление доступа к проверке подлинности регистрации приложений, но не поддерживаемых типов учетных записей](./media/roles-custom-available-permissions/supported-account-types.png)
 
- Предоставляет доступ к следующим свойствам ресурса приложения:
-
-- AcceptMappedClaims
-- акцесстокенакцептедверсион
-- AddIns
-- GroupMembershipClaims
-- исдевицеонляуссуппортед
-- OAuth2LegacyUrlPathMatching
-- оаусоидкреспонсеполицибитмап
-- OptionalClaims
-- оргрестриктионс
-- PublicClient
-- усекустомтокенсигнингкэй
-
 #### <a name="microsoftdirectoryapplicationsmyorganizationauthenticationupdate"></a>Microsoft. Directory/Applications. myOrganization, проверка подлинности или обновление
 
 Предоставляет те же разрешения, что и Microsoft. каталог/приложения, проверка подлинности или обновление, но только для приложений с одним клиентом.
@@ -187,42 +126,6 @@ ms.locfileid: "69033314"
 Возможность обновления свойств имени, логотипа, URL-адреса домашней страницы, URL-адреса условия службы и заявления о конфиденциальности в приложениях с одним клиентом и несколькими клиентами. Предоставляет доступ ко всем полям на странице фирменной символики регистрации приложения:
 
 ![Это разрешение предоставляет доступ к странице фирменной символики регистрации приложения](./media/roles-custom-available-permissions/app-registration-branding.png)
-
-Предоставляет доступ к следующим свойствам ресурса приложения:
-
-- алловактасфораллклиентс
-- алловпасссраугхусерс
-- AppAddress
-- аппбрандинжелементс
-- аппкатегори
-- Папка
-- AppId
-- аппинформатионалурл
-- аппликатионтаг
-- AppLogoUrl
-- аппметадата
-- аппоптионс
-- бинарекстенсионаттрибуте
-- булеанекстенсионаттрибуте
-- каунтриесблоккедформинорс
-- CreatedOnBehalfOf
-- датетимикстенсионаттрибуте
-- DisplayName
-- екстенсионаттрибутедефинитион
-- интежерекстенсионаттрибуте
-- KnownClientApplications
-- ларжеинтежерекстенсионаттрибуте
-- легалажеграупруле
-- локализедаппбрандинжелементс
-- маинлого
-- мсааппид
-- ресаурцеаппликатионсет
-- сервицедисковерендпоинт
-- стринжекстенсионаттрибуте
-- трустедцертификатесубжект
-- WebApi
-- WebApp
-- WwwHomepage
 
 #### <a name="microsoftdirectoryapplicationsmyorganizationbasicupdate"></a>Microsoft. Directory/Applications. myOrganization/Basic/Update
 
@@ -234,13 +137,6 @@ ms.locfileid: "69033314"
 
 ![Это разрешение предоставляет доступ к сертификатам регистрации приложений & секретной странице](./media/roles-custom-available-permissions/app-registration-secrets.png)
 
-Предоставляет доступ к следующим свойствам ресурса приложения:
-- AsymmetricKey
-- енкриптедсекреткэй
-- кэйдескриптион
-- шаредкэйреференце
-- токененкриптионкэйид
-
 #### <a name="microsoftdirectoryapplicationsmyorganizationcredentialsupdate"></a>Microsoft. Directory/Applications. myOrganization/учетные данные/обновление
 
 Предоставляет те же разрешения, что и Microsoft. Directory/Applications/Credentials/Update, но только для приложений с одним каталогом.
@@ -250,9 +146,6 @@ ms.locfileid: "69033314"
 Возможность обновления свойства Owner в одном клиенте и нескольких клиентах. Предоставляет доступ ко всем полям на странице владельцы регистрации приложения:
 
 ![Эти разрешения предоставляют доступ к странице владельцы регистрации приложений.](./media/roles-custom-available-permissions/app-registration-owners.png)
-
-Предоставляет доступ к следующим свойствам ресурса приложения:
-- Владельцы
 
 #### <a name="microsoftdirectoryapplicationsmyorganizationownersupdate"></a>Microsoft. Directory/Applications. myOrganization/Owners/Update
 
@@ -266,14 +159,6 @@ ms.locfileid: "69033314"
 
 ![Эти разрешения предоставляют доступ к странице API для регистрации приложения.](./media/roles-custom-available-permissions/app-registration-expose-api.png)
 
-Предоставляет доступ к следующим свойствам ресурса приложения:
-
-- AppIdentifierUri
-- Права
-- преаусоризедаппликатионс
-- RecordConsentConditions
-- RequiredResourceAccess
-
 #### <a name="microsoftdirectoryapplicationsmyorganizationpermissionsupdate"></a>Microsoft. Directory/Applications. myOrganization/разрешения/обновление
 
 Предоставляет те же разрешения, что и Microsoft. Directory/Applications/Permissions/Update, но только для приложений с одним клиентом.
@@ -282,7 +167,7 @@ ms.locfileid: "69033314"
 
 [!INCLUDE [License requirement for using custom roles in Azure AD](../../../includes/active-directory-p1-license.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Создание настраиваемых ролей с помощью [портал Azure, Azure AD PowerShell и API Graph](roles-create-custom.md)
 - [Просмотр назначений для пользовательской роли](roles-view-assignments.md)

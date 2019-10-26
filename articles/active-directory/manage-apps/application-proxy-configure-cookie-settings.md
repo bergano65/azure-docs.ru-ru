@@ -12,12 +12,12 @@ ms.date: 01/16/2019
 ms.author: mimart
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d2e7f1bb54ce316a10eca0d020519779b0536c9e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ca5f1b41e345caafdc465872c948be76c31d55e8
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65825746"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72928875"
 ---
 # <a name="cookie-settings-for-accessing-on-premises-applications-in-azure-active-directory"></a>Параметры файлов cookie для доступа к локальным приложениям в Azure Active Directory
 
@@ -33,6 +33,18 @@ Azure Active Directory (Azure AD) имеет файлы cookie доступа и
 | Использование безопасного файла cookie | **Нет** | **Да**. Позволяет прокси приложения включить флаг безопасности в заголовки ответа HTTP. Защищенный файл cookie повышает безопасность передачи по защищенному каналу TLS, такому как HTTPS. Это предотвращает несанкционированное отслеживание файлов cookie сторонними лицами из-за передачи файла cookie в виде обычного текста. | Выберите **Да**, чтобы получить дополнительные преимущества безопасности.|
 | Использование постоянных файлов cookie | **Нет** | **Да**. Позволяет прокси приложения настроить действие файлов cookie доступа после закрытия веб-браузера. Сохраняемость длится до окончания срока действия маркера доступа, или пока пользователь вручную не удалит постоянные файлы cookie. | Выберите **Нет** из-за угрозы безопасности, связанной с сохранением аутентификации пользователей.<br></br><br></br>Мы рекомендуем использовать **Да** только для более старых приложений, которые не могут совместно использовать файлы cookie между процессами. Мы советуем обновить приложение, чтобы совместно использовать файлы cookie между процессами, а не применять постоянные файлы cookie. Например, вам могут потребоваться постоянные файлы cookie, чтобы разрешить открывать документы Office в представлении проводника с сайта SharePoint. Без постоянных файлов cookie эта операция может завершиться ошибкой, если в браузере, процессе проводника и процессе Office общий доступ к файлам cookie не предоставляется. |
 
+## <a name="samesite-cookies"></a>Файлы cookie SameSite
+Начиная с версии [Chrome 80](https://support.google.com/chrome/a/answer/7679408?hl=en) и в конечном итоге в браузерах, использующих [Chromium](https://blog.chromium.org/2019/10/developers-get-ready-for-new.html), файлы cookie, не указывающие атрибут [SameSite](https://web.dev/samesite-cookies-explained) , будут рассматриваться так, как если бы они были заданы как **SameSite = нестрогие**. Атрибут SameSite объявляет, как файлы cookie должны быть ограничены контекстом одного узла. Если задано значение "нестрогий", файл cookie будет отправляться только в запросы на один сайт или навигацию верхнего уровня. Однако прокси приложения требует, чтобы эти файлы cookie сохранялись в контексте стороннего разработчика, чтобы пользователи могли правильно войти в систему во время сеанса. Из-за этого мы обновляем файлы cookie для доступа и сеанса прокси приложения, чтобы избежать негативного воздействия этого изменения. К этим обновлениям относятся:
+
+* Установка значения **None**для атрибута **SameSite** . Это позволяет использовать прокси приложения для правильной отправки файлов cookie в контексте стороннего разработчика.
+* Установка параметра **использовать защищенный файл cookie** для использования по умолчанию **Yes** . Chrome также требует, чтобы файлы cookie указали флаг Secure или были отклонены. Это изменение будет применено ко всем существующим приложениям, опубликованным через прокси приложения. Обратите внимание, что файлы cookie для доступа к прокси приложения всегда были настроены на безопасность и передаются только по протоколу HTTPS. Это изменение будет применено только к файлам cookie сеанса.
+
+Эти изменения в файлах cookie прокси приложения будут выдвигаться в течение следующих нескольких недель до даты выпуска Chrome 80.
+
+Кроме того, если серверное приложение имеет файлы cookie, которые должны быть доступны в контексте стороннего разработчика, необходимо явно указать, изменив приложение на использование SameSite = None для этих файлов cookie. Прокси приложения преобразует заголовок Set-cookie в его URL-адреса и будет учитывать параметры этих файлов cookie, заданные приложением серверной части.
+
+
+
 ## <a name="set-the-cookie-settings---azure-portal"></a>Установка параметров файлов cookie — портал Azure
 Чтобы задать параметры файла cookie с помощью портала Azure:
 
@@ -43,7 +55,7 @@ Azure Active Directory (Azure AD) имеет файлы cookie доступа и
 5. В разделе **Дополнительные параметры** установите параметр файла cookie как **Да** или **Нет**.
 6. Щелкните **Сохранить**, чтобы применить изменения. 
 
-## <a name="view-current-cookie-settings---powershell"></a>Просмотреть текущие параметры файла cookie - PowerShell
+## <a name="view-current-cookie-settings---powershell"></a>Просмотр текущих параметров файлов cookie — PowerShell
 
 Чтобы просмотреть текущие параметры файлов cookie для приложения, используйте следующую команду PowerShell:  
 
@@ -51,18 +63,18 @@ Azure Active Directory (Azure AD) имеет файлы cookie доступа и
 Get-AzureADApplicationProxyApplication -ObjectId <ObjectId> | fl * 
 ```
 
-## <a name="set-cookie-settings---powershell"></a>Задайте параметры файлов cookie — PowerShell
+## <a name="set-cookie-settings---powershell"></a>Настройка параметров файлов cookie — PowerShell
 
-В следующих командах PowerShell ```<ObjectId>``` — это идентификатор приложения. 
+В следующих командах PowerShell ```<ObjectId>``` является ObjectId приложения. 
 
-**Файл Cookie только для HTTP** 
+**Файл cookie только для HTTP** 
 
 ```powershell
 Set-AzureADApplicationProxyApplication -ObjectId <ObjectId> -IsHttpOnlyCookieEnabled $true 
 Set-AzureADApplicationProxyApplication -ObjectId <ObjectId> -IsHttpOnlyCookieEnabled $false 
 ```
 
-**Безопасного файла Cookie**
+**Защита файлов cookie**
 
 ```powershell
 Set-AzureADApplicationProxyApplication -ObjectId <ObjectId> -IsSecureCookieEnabled $true 

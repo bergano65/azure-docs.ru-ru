@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 04/17/2019
 ms.author: mlearned
-ms.openlocfilehash: 3c9e5185bfcaf99765ec29874cea407fe55bfb17
-ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
+ms.openlocfilehash: 131a71e27bba1c37b6d50b718b8eac788109a59f
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71058328"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72933766"
 ---
 # <a name="preview---secure-your-cluster-using-pod-security-policies-in-azure-kubernetes-service-aks"></a>Предварительная версия — защита кластера с помощью политик безопасности Pod в службе Kubernetes Azure (AKS)
 
@@ -106,10 +106,10 @@ NAME         PRIV    CAPS   SELINUX    RUNASUSER          FSGROUP     SUPGROUP  
 privileged   true    *      RunAsAny   RunAsAny           RunAsAny    RunAsAny    false            *     configMap,emptyDir,projected,secret,downwardAPI,persistentVolumeClaim
 ```
 
-Политика безопасности " *привилегированный* модуль" применяется к любому пользователю, прошедшему проверку подлинности в кластере AKS. Это назначение управляется Клустерролес и Клустерролебиндингс. Используйте команду [kubectl Get клустерролебиндингс][kubectl-get] и выполните поиск по *умолчанию: привилегированная:* :
+Политика безопасности " *привилегированный* модуль" применяется к любому пользователю, прошедшему проверку подлинности в кластере AKS. Это назначение управляется Клустерролес и Клустерролебиндингс. Используйте команду [kubectl Get клустерролебиндингс][kubectl-get] и выполните поиск по *умолчанию: privileged:* Binding:
 
 ```console
-kubectl get clusterrolebindings default:priviledged -o yaml
+kubectl get clusterrolebindings default:privileged -o yaml
 ```
 
 Как показано в следующем сжатом выводе, параметр *PSP: Restricted* клустерроле назначается любой *системе: прошедшим проверку подлинности* пользователям. Эта возможность обеспечивает базовый уровень ограничений без определения собственных политик.
@@ -119,12 +119,12 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
   [...]
-  name: default:priviledged
+  name: default:privileged
   [...]
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: psp:priviledged
+  name: psp:privileged
 subjects:
 - apiGroup: rbac.authorization.k8s.io
   kind: Group
@@ -135,7 +135,7 @@ subjects:
 
 ## <a name="create-a-test-user-in-an-aks-cluster"></a>Создание тестового пользователя в кластере AKS
 
-По умолчанию при использовании команды [AZ AKS Get-Credential][az-aks-get-credentials] учетные данные *администратора* кластера AKS `kubectl` добавляются в конфигурацию. Пользователь с правами администратора обходит принудительное применение политик безопасности Pod. При использовании интеграции Azure Active Directory для кластеров AKS можно выполнить вход с использованием учетных данных пользователя без прав администратора, чтобы увидеть применение политик в действии. В этой статье мы создадим тестовую учетную запись пользователя в кластере AKS, который можно использовать.
+По умолчанию при использовании команды [AZ AKS Get-Credential][az-aks-get-credentials] учетные данные *администратора* кластера AKS добавляются в конфигурацию `kubectl`. Пользователь с правами администратора обходит принудительное применение политик безопасности Pod. При использовании интеграции Azure Active Directory для кластеров AKS можно выполнить вход с использованием учетных данных пользователя без прав администратора, чтобы увидеть применение политик в действии. В этой статье мы создадим тестовую учетную запись пользователя в кластере AKS, который можно использовать.
 
 Создайте пример пространства имен с именем *PSP-AKS* для тестовых ресурсов с помощью команды [kubectl Create Namespace][kubectl-create] . Затем создайте учетную запись службы с именем *"неадминистративный пользователь* " с помощью команды [kubectl Create учетная запись службы][kubectl-create] :
 
@@ -156,7 +156,7 @@ kubectl create rolebinding \
 
 ### <a name="create-alias-commands-for-admin-and-non-admin-user"></a>Создание псевдонимов для администратора и пользователя без прав администратора
 
-Чтобы выделить разницу между обычным пользователем администратора при использовании `kubectl` и пользователь, не являющийся администратором, созданный на предыдущих шагах, создайте два псевдонима командной строки:
+Чтобы выделить разницу между обычным пользователем администратора при использовании `kubectl` и пользователя, не являющегося администратором, созданного на предыдущих шагах, создайте два псевдонима командной строки:
 
 * Псевдоним **kubectl-Admin** предназначен для обычного пользователя администратора и ограничивается пространством имен *PSP-AKS* .
 * Псевдоним **kubectl-нонадминусер** предназначен для пользователя, который не является *администратором* , созданным на предыдущем шаге, и ограничивается пространством имен *PSP-AKS* .
@@ -170,7 +170,7 @@ alias kubectl-nonadminuser='kubectl --as=system:serviceaccount:psp-aks:nonadmin-
 
 ## <a name="test-the-creation-of-a-privileged-pod"></a>Тестирование создания привилегированного Pod
 
-Давайте сначала проверим, что происходит при планировании Pod с помощью контекста `privileged: true`безопасности. Этот контекст безопасности повышает привилегии Pod. В предыдущем разделе, в котором были показаны политики безопасности AKS Pod по умолчанию, политика *ограничения* должна отклонить этот запрос.
+Давайте сначала проверим, что происходит при планировании Pod с контекстом безопасности `privileged: true`. Этот контекст безопасности повышает привилегии Pod. В предыдущем разделе, в котором были показаны политики безопасности AKS Pod по умолчанию, политика *ограничения* должна отклонить этот запрос.
 
 Создайте файл с именем `nginx-privileged.yaml` и вставьте следующий манифест YAML:
 
@@ -226,7 +226,7 @@ spec:
 kubectl-nonadminuser apply -f nginx-unprivileged.yaml
 ```
 
-Планировщик Kubernetes принимает запрос Pod. Однако если взглянуть на состояние Pod с помощью `kubectl get pods`, возникает ошибка:
+Планировщик Kubernetes принимает запрос Pod. Однако при просмотре состояния Pod с помощью `kubectl get pods`возникает ошибка:
 
 ```console
 $ kubectl-nonadminuser get pods
@@ -445,7 +445,7 @@ kubectl apply -f psp-deny-privileged-clusterrolebinding.yaml
 
 ## <a name="test-the-creation-of-an-unprivileged-pod-again"></a>Повторное тестирование создания непривилегированного модуля Pod
 
-Применяя пользовательскую политику безопасности Pod и привязку учетной записи пользователя для использования политики, давайте попробуем снова создать непривилегированный модуль. Используйте тот же `nginx-privileged.yaml` манифест для создания Pod с помощью команды [kubectl Apply][kubectl-apply] :
+Применяя пользовательскую политику безопасности Pod и привязку учетной записи пользователя для использования политики, давайте попробуем снова создать непривилегированный модуль. Используйте тот же манифест `nginx-privileged.yaml` для создания Pod с помощью команды [kubectl Apply][kubectl-apply] :
 
 ```console
 kubectl-nonadminuser apply -f nginx-unprivileged.yaml
@@ -498,7 +498,7 @@ kubectl delete -f psp-deny-privileged.yaml
 kubectl delete namespace psp-aks
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье показано, как создать политику безопасности Pod, чтобы предотвратить использование привилегированного доступа. Существует множество функций, которые может применять политика, например тип тома или пользователя запуска от имени. Дополнительные сведения о доступных параметрах см. в [справочнике по политикам безопасности Kubernetes Pod][kubernetes-policy-reference].
 

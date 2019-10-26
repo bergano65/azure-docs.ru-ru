@@ -9,12 +9,12 @@ ms.devlang: c
 ms.topic: conceptual
 ms.date: 11/29/2018
 ms.author: isacabe
-ms.openlocfilehash: 3551d088c1d02715bf9ace09d7eb0048bc10111e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 542a0780c0525ee7ceddfd36c3a4f7c348d0574f
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65473481"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72930878"
 ---
 # <a name="connect-an-iot-devkit-device-to-the-remote-monitoring-solution-accelerator"></a>Подключение устройства IoT DevKit к акселератору решения для удаленного мониторинга
 
@@ -36,7 +36,7 @@ ms.locfileid: "65473481"
 
 1. Убедитесь, что плата IoT DevKit не подключена к компьютеру. Сначала запустите VS Code, а затем подключите плату DevKit к компьютеру.
 
-1. Щелкните `F1`, чтобы открыть палитру команд, затем введите и выберите **Azure IoT Device Workbench. Открыть примеры...** Затем выберите **IoT DevKit** в качестве платы.
+1. Щелкните `F1`, чтобы открыть палитру команд, введите и выберите **Azure IOT Device Workbench: Open examples...** . Затем выберите **IOT DevKit** в качестве доски.
 
 1. Найдите **Удаленный мониторинг** и нажмите **Открыть пример**. Откроется новое окно VS Code с содержимым папки проекта.
 
@@ -55,7 +55,7 @@ ms.locfileid: "65473481"
 
     ![Режим настройки IoT DevKit](media/iot-accelerators-arduino-iot-devkit-az3166-devkit-remote-monitoringv2/devkit-configuration-mode.png)
 
-1. Нажмите клавишу **F1**, чтобы открыть палитру команд, затем введите и выберите **Azure IoT Device Workbench. Настройка параметров устройства… > Настройка строки подключения к устройству**.
+1. Нажмите клавишу **F1** , чтобы открыть палитру команд, введите и выберите **Azure IOT Device Workbench: Настройка параметров устройства... Строка подключения устройства настройки >** .
 
 1. Вставьте скопированную ранее строку подключения и нажмите клавишу **ввод**, чтобы настроить устройство.
 
@@ -63,11 +63,11 @@ ms.locfileid: "65473481"
 
 Чтобы скомпилировать и передать код устройства, выполните следующее.
 
-1. Нажмите `F1`, чтобы открыть палитру команд, затем введите и выберите **Azure IoT Device Workbench. Отправка кода устройства**.
+1. Нажмите `F1`, чтобы открыть палитру команд, введите и выберите **Azure IOT Device Workbench: отправить код устройства**:
 
 1. VS Code скомпилирует код и передаст его на устройство DevKit.
 
-    ![IoT Workbench. Устройство - > Отправлено](media/iot-accelerators-arduino-iot-devkit-az3166-devkit-remote-monitoringv2/iot-workbench-device-uploaded.png)
+    ![IoT Workbench: Устройство - > Загружено](media/iot-accelerators-arduino-iot-devkit-az3166-devkit-remote-monitoringv2/iot-workbench-device-uploaded.png)
 
 1. Устройство DevKit перезагрузится и выполнит загруженный код.
 
@@ -79,7 +79,7 @@ ms.locfileid: "65473481"
 
 При запуске примера приложения устройство DevKit отправляет по Wi-Fi данные телеметрии со своих датчиков в акселератор решений. Чтобы просмотреть эти данные телеметрии, выполните следующее.
 
-1. Перейдите к панели мониторинга решения и щелкните **Device Explorer**.
+1. Перейдите на панель мониторинга решения и щелкните **Device Explorer**.
 
 1. Щелкните имя нужного устройства DevKit. На вкладке справа вы увидите данные телеметрии, поступающие из DevKit, в режиме реального времени.
 
@@ -87,7 +87,7 @@ ms.locfileid: "65473481"
 
 ### <a name="control-the-devkit-device"></a>Управление устройством DevKit
 
-Акселератор решения для удаленного мониторинга позволяет дистанционно управлять устройством. Пример кода реализует три метода, которые можно увидеть в **метод** разделе при выборе устройства в **Device Explorer** страницы:
+Акселератор решения для удаленного мониторинга позволяет дистанционно управлять устройством. В примере кода реализованы три метода, которые можно увидеть в разделе **метод** при выборе устройства на **Device Explorer** странице:
 
 ![Методы IoT DevKit](media/iot-accelerators-arduino-iot-devkit-az3166-devkit-remote-monitoringv2/azure-iot-suite-methods.png)
 
@@ -130,4 +130,4 @@ ms.locfileid: "65473481"
 
 * [Обзор акселераторов решений для Интернета вещей Azure](https://docs.microsoft.com/azure/iot-accelerators/)
 * [Настройка пользовательского интерфейса](iot-accelerators-remote-monitoring-customize.md)
-* [Подключение IoT DevKit к приложению Azure IoT Central](../iot-central/howto-connect-devkit.md)
+* [Подключение IoT DevKit к приложению Azure IoT Central](../iot-central/core/howto-connect-devkit.md)

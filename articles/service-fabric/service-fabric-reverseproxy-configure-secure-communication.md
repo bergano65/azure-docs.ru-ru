@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: required
 ms.date: 08/10/2017
 ms.author: kavyako
-ms.openlocfilehash: d8a11a3289037602535d1b5727d041e376012bd8
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e915e689f09ba7f5c92958ebf8531aa67eef4493
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60837850"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72933958"
 ---
 # <a name="connect-to-a-secure-service-with-the-reverse-proxy"></a>Подключение к защищенной службе с помощью обратного прокси-сервера
 
@@ -35,14 +35,14 @@ ms.locfileid: "60837850"
 Службы могут реализовать логику для проверки сертификата, представленного обратным прокси-сервером. Службы могут указывать сведения о принятом сертификате клиента как параметры конфигурации в пакете конфигурации. Их можно считывать во время выполнения и использовать для проверки сертификата, представленного обратным прокси-сервером. Сведения о добавлении параметров конфигурации см. в статье [Управление параметрами приложения](service-fabric-manage-multiple-environment-app-configuration.md). 
 
 ### <a name="reverse-proxy-verifying-the-services-identity-via-the-certificate-presented-by-the-service"></a>Проверка обратным прокси-сервером удостоверения службы с помощью сертификата, предоставленного службой
-Обратный прокси-сервер поддерживает следующие политики для выполнения проверки сертификата сервера сертификатов, представленных служб: None, ServiceCommonNameAndIssuer и ServiceCertificateThumbprints.
+Для выполнения проверки сертификатов, представленных службами, обратный прокси-сервер поддерживает следующие политики: None, ServiceCommonNameAndIssuer и ServiceCertificateThumbprints.
 Чтобы выбрать политику для обратного прокси-сервера, задайте свойство **ApplicationCertificateValidationPolicy** в разделе **ApplicationGateway/Http** в [fabricSettings](service-fabric-cluster-fabric-settings.md).
 
 В следующем разделе приведены сведения о конфигурации для каждого из этих вариантов.
 
 ### <a name="service-certificate-validation-options"></a>Параметры проверки сертификата службы 
 
-- **Нет**. Обратный прокси-сервер пропускает проверку сертификат службы и устанавливает безопасное подключение. Это поведение по умолчанию.
+- **None**: обратный прокси-сервер пропускает проверку сертификата службы, подключаемой через прокси-сервер, и устанавливает безопасное подключение. Это поведение по умолчанию.
 Задайте для свойства **ApplicationCertificateValidationPolicy** значение **None** в разделе [**ApplicationGateway/Http**](./service-fabric-cluster-fabric-settings.md#applicationgatewayhttp).
 
    ```json
@@ -63,7 +63,7 @@ ms.locfileid: "60837850"
    }
    ```
 
-- **ServiceCommonNameAndIssuer**: Обратный прокси-сервер проверяет, что сертификат, представленный службой, на основе общее имя сертификата и отпечатка непосредственного издателя: Укажите **ApplicationCertificateValidationPolicy** со значением **ServiceCommonNameAndIssuer** в [ **ApplicationGateway/Http** ](./service-fabric-cluster-fabric-settings.md#applicationgatewayhttp) раздел.
+- **ServiceCommonNameAndIssuer**: обратный прокси-сервер проверяет сертификат, представленный службой, на основании общего имени сертификата и отпечатка непосредственного издателя. Задайте для свойства **ApplicationCertificateValidationPolicy** значение **ServiceCommonNameAndIssuer** в разделе [**ApplicationGateway/Http**](./service-fabric-cluster-fabric-settings.md#applicationgatewayhttp).
 
    ```json
    {
@@ -110,7 +110,7 @@ ms.locfileid: "60837850"
    }
    ```
 
-- **ServiceCertificateThumbprints**: Обратный прокси-сервер проверяет сертификат службы на основе отпечатка. Вы можете перейти в этот вариант, если служб настроены самозаверяющие подписью сертификаты: Укажите **ApplicationCertificateValidationPolicy** со значением **ServiceCertificateThumbprints** в [ **ApplicationGateway/Http** ](./service-fabric-cluster-fabric-settings.md#applicationgatewayhttp) раздел.
+- **ServiceCertificateThumbprints**: обратный прокси-сервер будет проверять сертификат службы на основе отпечатка. Вы можете выбрать этот вариант, если для служб настроены самозаверяющие сертификаты: задайте для свойства **ApplicationCertificateValidationPolicy** значение **ServiceCertificateThumbprints** в разделе [**ApplicationGateway/Http**](./service-fabric-cluster-fabric-settings.md#applicationgatewayhttp).
 
    ```json
    {
@@ -196,7 +196,7 @@ Service Fabric поддерживает настройку нескольких 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Установка и настройка обратного прокси-сервера в кластере](service-fabric-reverseproxy-setup.md)
-* Примеры шаблонов Azure Resource Manager для настройки разных параметров проверки сертификата службы для защищенного обратного прокси-сервера см. в разделе [Configure reverse proxy to connect to secure services](https://github.com/ChackDan/Service-Fabric/tree/master/ARM%20Templates/ReverseProxySecureSample#configure-reverse-proxy-to-connect-to-secure-services).
+* Сведения о [подключении к защищенным службам см. в статье Настройка обратных прокси-серверов](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/Reverse-Proxy-Sample#configure-reverse-proxy-to-connect-to-secure-services)
 * Пример обмена данными по протоколу HTTP между службами представлен в [примере проекта на сайте GitHub](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started).
 * [Удаленное взаимодействие службы с Reliable Services](service-fabric-reliable-services-communication-remoting.md)
 * [Начало работы со службами веб-API Microsoft Azure Service Fabric с саморазмещением OWIN](service-fabric-reliable-services-communication-webapi.md)

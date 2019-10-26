@@ -6,12 +6,12 @@ ms.author: stbaron
 ms.topic: conceptual
 ms.service: service-health
 ms.date: 9/4/2018
-ms.openlocfilehash: 7ccd84042d11b586d524d4eb76eba03111e0b3c5
-ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
+ms.openlocfilehash: 0948edec05b97dd604393218e3eeb3302548af82
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71099010"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72933556"
 ---
 # <a name="configure-resource-health-alerts-using-resource-manager-templates"></a>Настройка оповещений о работоспособности ресурсов с помощью шаблонов Resource Manager
 
@@ -24,14 +24,14 @@ ms.locfileid: "71099010"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы следовать инструкциям на этой странице, необходимо заранее сделать следующее:
 
 1. Необходимо установить [модуль Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-Az-ps)
 2. [Создать или повторно использовать группу действий](../azure-monitor/platform/action-groups.md), настроенную на уведомление.
 
-## <a name="instructions"></a>Инструкция
+## <a name="instructions"></a>Указания
 1. С помощью PowerShell войдите в Azure с помощью учетной записи и выберите нужную подписку.
 
         Login-AzAccount
@@ -143,7 +143,7 @@ ms.locfileid: "71099010"
 
 Службу "Работоспособность ресурсов" можно настроить для мониторинга событий в трех различных областях:
 
- * уровень подписки;
+ * Уровень подписки
  * уровень группы ресурсов;
  * уровень ресурса.
 
@@ -198,7 +198,7 @@ ms.locfileid: "71099010"
 Здесь мы используем оболочку `anyOf`, чтобы оповещение о работоспособности ресурса сопоставлялось с одним из указанных условий и отправлялись оповещения, предназначенные для определенных типов ресурсов.
 
 ### <a name="adjusting-the-resource-health-events-that-alert-you"></a>Корректировка событий службы "Работоспособность ресурсов", о которых поступают оповещения
-Когда в ресурсах происходит событие работоспособности, они могут проходить через ряд шагов, представляющих состояния событий работоспособности: `Active`, `InProgress`, `Updated` и `Resolved`.
+Когда в ресурсах происходит событие работоспособности, они могут проходить через ряд шагов, представляющих состояния событий работоспособности: `Active`, `In Progress`, `Updated` и `Resolved`.
 
 Вам может требоваться уведомление только в том случае, если ресурс становится неработоспособным. В этом случае нужно настроить срабатывание оповещения, только когда `status` имеет значение `Active`. Однако, если вы хотите получать уведомления и на других этапах, эти сведения можно добавить следующим образом:
 
@@ -214,7 +214,7 @@ ms.locfileid: "71099010"
                 },
                 {
                     "field": "status",
-                    "equals": "InProgress"
+                    "equals": "In Progress"
                 },
                 {
                     "field": "status",
@@ -409,7 +409,7 @@ ms.locfileid: "71099010"
                                 },
                                 {
                                     "field": "status",
-                                    "equals": "InProgress",
+                                    "equals": "In Progress",
                                     "containsAny": null
                                 },
                                 {
@@ -436,7 +436,7 @@ ms.locfileid: "71099010"
 
 Тем не менее вам лучше знать, какие конфигурации эффективны для вас, поэтому используйте инструменты, приведенные в этой документации, чтобы настроить свою собственную конфигурацию.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительная информация о службе "Работоспособность ресурсов".
 -  [Обзор службы "Работоспособность ресурсов Azure"](Resource-health-overview.md)

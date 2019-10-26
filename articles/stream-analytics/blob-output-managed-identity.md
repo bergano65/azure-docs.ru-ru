@@ -1,17 +1,17 @@
 ---
-title: Использование управляемого удостоверения для проверки подлинности задания Azure Stream Analytics в выходных данных хранилища BLOB-объектов Azure (Предварительная версия)
+title: Проверка подлинности выходных данных BLOB-объекта с помощью управляемого Azure Stream Analytics
 description: В этой статье описывается, как использовать управляемые удостоверения для проверки подлинности задания Azure Stream Analytics в выходных данных хранилища BLOB-объектов Azure.
 author: cedarbaum
 ms.author: sacedarb
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 07/12/2019
-ms.openlocfilehash: 2bde1e8556fb1255e27595630e061f6b80870ce1
-ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
+ms.openlocfilehash: 4215dc85da6d507b08f23cf248044ea807fe5319
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68278698"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72935134"
 ---
 # <a name="use-managed-identity-to-authenticate-your-azure-stream-analytics-job-to-azure-blob-storage-output-preview"></a>Использование управляемого удостоверения для проверки подлинности задания Azure Stream Analytics в выходных данных хранилища BLOB-объектов Azure (Предварительная версия)
 
@@ -21,11 +21,11 @@ ms.locfileid: "68278698"
 
 ## <a name="create-the-stream-analytics-job-using-the-azure-portal"></a>Создание задания Stream Analytics с помощью портал Azure
 
-1. Создайте новое Stream Analytics задание или откройте существующее задание в портал Azure. В строке меню, расположенной в левой части экрана, выберите управляемое **удостоверение** , расположенное в разделе **Настройка**. Убедитесь, что выбран параметр "использовать управляемое системой удостоверение", а затем нажмите кнопку **сохранить** в нижней части экрана.
+1. Создайте новое Stream Analytics задание или откройте существующее задание в портал Azure. В строке меню, расположенной в левой части экрана, выберите **управляемое удостоверение** , расположенное в разделе **Настройка**. Убедитесь, что выбран параметр "использовать управляемое системой удостоверение", а затем нажмите кнопку **сохранить** в нижней части экрана.
 
    ![Настройка управляемого удостоверения Stream Analytics](./media/stream-analytics-managed-identities-blob-output-preview/stream-analytics-enable-managed-identity.png)
 
-2. В окне Выходные свойства приемника выходных данных хранилища BLOB-объектов Azure выберите раскрывающийся список режим проверки подлинности и щелкните **управляемое удостоверение**. Дополнительные сведения о других выходных свойствах см. в разделе сведения о [выходных данных из Azure Stream Analytics](./stream-analytics-define-outputs.md). По завершении нажмите кнопку **Сохранить**.
+2. В окне Выходные свойства приемника выходных данных хранилища BLOB-объектов Azure выберите раскрывающийся список режим проверки подлинности и щелкните **управляемое удостоверение**. Дополнительные сведения о других выходных свойствах см. в разделе сведения о [выходных данных из Azure Stream Analytics](./stream-analytics-define-outputs.md). Закончив, нажмите кнопку **Сохранить**.
 
    ![Настройка выходных данных хранилища BLOB-объектов Azure](./media/stream-analytics-managed-identities-blob-output-preview/stream-analytics-blob-output-blade.png)
 
@@ -235,7 +235,7 @@ ms.locfileid: "68278698"
 
 4. [Пользователь, которому назначено удостоверение](../active-directory/managed-identities-azure-resources/overview.md) , не поддерживается. Это означает, что пользователь не может ввести собственный субъект-службу, который будет использоваться их Stream Analyticsным заданием. Субъект-служба необходимо создавать с помощью Azure Stream Analytics.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Описание выходных данных из Azure Stream Analytics](./stream-analytics-define-outputs.md)
 * [Azure Stream Analytics секционирование выходных данных пользовательского BLOB-объекта](./stream-analytics-custom-path-patterns-blob-storage-output.md)

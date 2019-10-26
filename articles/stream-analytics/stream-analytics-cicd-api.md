@@ -1,5 +1,5 @@
 ---
-title: Реализация CI/CD для Azure Stream Analytics на IoT Edge с использованием REST API
+title: Использование интерфейсов API RESTFUL для непрерывной интеграции и воспроизведения Azure Stream Analytics на IoT Edge
 description: Сведения о реализации конвейера непрерывной интеграции и развертывании для Azure Stream Analytics с использованием REST API.
 services: stream-analytics
 author: mamccrea
@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/04/2018
-ms.openlocfilehash: 40beb620e037061b189762a51e3c29d0fd251b27
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 94f124a1b2571a685de9da7f37b2ed50a2860da7
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61362082"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72925654"
 ---
 # <a name="implement-cicd-for-stream-analytics-on-iot-edge-using-apis"></a>Реализация CI/CD для Stream Analytics на IoT Edge с использованием API
 
@@ -58,7 +58,7 @@ echo $response
 
 |Метод|Request URL (URL-адрес запроса)|
 |------|-----------|
-|PUT|https://management.azure.com/subscriptions/{**идентификатор_подписки**}/resourcegroups/{**имя_группы_ресурсов**}/providers/Microsoft.StreamAnalytics/streamingjobs/{**имя_задания**}?api-version=2017-04-01-preview|
+|ОТПРАВКА|https://management.azure.com/subscriptions/{**идентификатор_подписки**}/resourcegroups/{**имя_группы_ресурсов**}/providers/Microsoft.StreamAnalytics/streamingjobs/{**имя_задания**}?api-version=2017-04-01-preview|
  
 Пример использования команды **curl**:
 
@@ -145,7 +145,7 @@ curl -u { <username:password> }  -H "Content-Type: application/json" -X { <metho
 
 |Метод|Request URL (URL-адрес запроса)|
 |------|-----------|
-|POST|https://management.azure.com/subscriptions/{**идентификатор_подписки**}/resourceGroups/{**имя_группы_ресурсов**}/providers/Microsoft.StreamAnalytics/streamingjobs/{**имя_задания**}/publishedgepackage?api-version=2017-04-01-preview|
+|ПУБЛИКАЦИЯ|https://management.azure.com/subscriptions/{**идентификатор_подписки**}/resourceGroups/{**имя_группы_ресурсов**}/providers/Microsoft.StreamAnalytics/streamingjobs/{**имя_задания**}/publishedgepackage?api-version=2017-04-01-preview|
 
 Эта асинхронная операция возвращает состояние 202 до того, как задание будет успешно опубликовано. Заголовок ответа расположения содержит универсальный код ресурса (URI), который используется для получения состояния процесса. Во время выполнения процесса вызов универсального кода ресурса (URI) в заголовке расположения возвращает состояние 202. После того как процесс завершится, универсальный код ресурса (URI) возвращает состояние 200. 
 
