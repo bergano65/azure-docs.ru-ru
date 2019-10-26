@@ -1,29 +1,23 @@
 ---
 title: Объединения в запросах журнала Azure Monitor | Документация Майкрософт
 description: Эта статья содержит урок по использованию объединений в запросах журнала Azure Monitor.
-services: log-analytics
-documentationcenter: ''
-author: bwren
-manager: carmonm
-editor: ''
-ms.assetid: ''
-ms.service: log-analytics
-ms.workload: na
-ms.tgt_pltfrm: na
+ms.service: azure-monitor
+ms.subservice: logs
 ms.topic: conceptual
-ms.date: 08/16/2018
+author: bwren
 ms.author: bwren
-ms.openlocfilehash: 2ea5b4e3af6591e6e25a863998baa7cecb3e29e8
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.date: 08/16/2018
+ms.openlocfilehash: 526c359367271c69ccd461e4421c3223b00fbc36
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60520126"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72900286"
 ---
 # <a name="joins-in-azure-monitor-log-queries"></a>Объединения в запросах журнала Azure Monitor
 
 > [!NOTE]
-> Следует выполнить [приступить к работе с Azure Monitor Log Analytics](get-started-portal.md) и [запросов к журналу Azure Monitor](get-started-queries.md) перед завершением этого занятия.
+> Перед выполнением этого занятия необходимо завершить [работу с Azure Monitor log Analytics](get-started-portal.md) и [Azure Monitor запросов к журналу](get-started-queries.md) .
 
 [!INCLUDE [log-analytics-demo-environment](../../../includes/log-analytics-demo-environment.md)]
 

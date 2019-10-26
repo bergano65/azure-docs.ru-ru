@@ -1,30 +1,25 @@
 ---
 title: Анализ удержания пользователей веб-приложений с помощью Azure Application Insights | Документы Майкрософт
 description: Сколько пользователей вернулось к использованию вашего приложения?
-services: application-insights
-documentationcenter: ''
-author: NumberByColors
-manager: carmonm
-ms.service: application-insights
-ms.workload: tbd
-ms.tgt_pltfrm: ibiza
+ms.service: azure-monitor
+ms.subservice: application-insights
 ms.topic: conceptual
-ms.date: 05/03/2017
-ms.pm_owner: daviste;NumberByColors
-ms.reviewer: mbullwin
+author: NumberByColors
 ms.author: daviste
-ms.openlocfilehash: bda79520dd86cc14161f6f22cd24feb2e35849ab
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.date: 05/03/2017
+ms.reviewer: mbullwin
+ms.openlocfilehash: 5f5f6235354adc565815ac2eab0a1c774267102d
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60372640"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72899418"
 ---
 # <a name="user-retention-analysis-for-web-applications-with-application-insights"></a>Анализ удержания пользователей веб-приложений с помощью Application Insights
 
 Компонент "Удержание" в [Azure Application Insights](../../azure-monitor/app/app-insights-overview.md) помогает анализировать, сколько пользователей вернулось в ваше приложение и как часто они выполняют определенные задачи или достигают цели. Например, если вы разместили игровой сайт, то можете сравнить число пользователей, которые вернулись на сайт после проигрыша, и число пользователей, которые вернулись после победы в игре. Эти сведения помогут улучшить взаимодействие с пользователем и свою бизнес-стратегию.
 
-## <a name="get-started"></a>Начало работы
+## <a name="get-started"></a>Начать
 
 Если вы еще не видите данных в инструменте "Удержание" на портале Application Insights, [узнайте, как приступить к работе с инструментами для данных об использовании](usage-overview.md).
 

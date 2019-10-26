@@ -1,28 +1,22 @@
 ---
 title: выражение Resource () в Azure Monitor запросе журнала | Документация Майкрософт
 description: Выражение ресурса используется в Azure Monitor запросе к журналу на основе ресурсов для получения данных из нескольких ресурсов.
-services: log-analytics
-documentationcenter: ''
-author: bwren
-manager: carmonm
-editor: ''
-ms.assetid: ''
-ms.service: log-analytics
-ms.workload: na
-ms.tgt_pltfrm: na
+ms.service: azure-monitor
+ms.subservice: logs
 ms.topic: article
-ms.date: 09/10/2018
+author: bwren
 ms.author: bwren
-ms.openlocfilehash: deca6e7ef1c231a82a73067971d86a6e9cdd0599
-ms.sourcegitcommit: 80da36d4df7991628fd5a3df4b3aa92d55cc5ade
-ms.translationtype: MT
+ms.date: 09/10/2018
+ms.openlocfilehash: 4787dc8a8cc06e0ad0be88597dab3481284fb58b
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71817414"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72900215"
 ---
 # <a name="resource-expression-in-azure-monitor-log-query"></a>выражение Resource () в Azure Monitor запросе журнала
 
-Выражение `resource` используется в запросе Azure Monitor, [ограниченном ресурсом](scope.md#query-scope) , для получения данных из других ресурсов. 
+`resource` выражение используется в Azure Monitorном запросе к [ресурсу](scope.md#query-scope) для получения данных из других ресурсов. 
 
 
 ## <a name="syntax"></a>Синтаксис
@@ -31,15 +25,15 @@ ms.locfileid: "71817414"
 
 ## <a name="arguments"></a>Аргументы
 
-- *Идентификатор:* Идентификатор ресурса.
+- *Идентификатор*: идентификатор ресурса.
 
 | Идентификатор | Описание | Пример
 |:---|:---|:---|
-| Resource | Включает данные для ресурса. | ресурс ("/субскриптионс/кскскскскскскс-кскскскс-кскскскс-кскскскс-кскскскскскскскскскскскс/ресаурцесграупс/миресаурцеграуп/провидерс/Микрософт.компуте/виртуалмачинес/мивм") |
+| Ресурс | Включает данные для ресурса. | ресурс ("/субскриптионс/кскскскскскскс-кскскскс-кскскскс-кскскскс-кскскскскскскскскскскскс/ресаурцесграупс/миресаурцеграуп/провидерс/Микрософт.компуте/виртуалмачинес/мивм") |
 | Группа ресурсов или подписка | Включает данные для ресурса и всех содержащихся в нем ресурсов.  | ресурс ("/субскриптионс/кскскскскскскс-кскскскс-кскскскс-кскскскс-кскскскскскскскскскскскс/ресаурцесграупс/миресаурцеграуп") |
 
 
-## <a name="notes"></a>Примечания
+## <a name="notes"></a>Заметки
 
 * Необходимо иметь доступ на чтение к ресурсу.
 
@@ -54,7 +48,7 @@ union (Heartbeat),(resource("/subscriptions/xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/
 ```
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о области запроса см. [в разделе Область запроса журнала и временной диапазон в Azure Monitor log Analytics](scope.md) .
 - Ознакомьтесь с полной документацией по [языку запросов Kusto](/azure/kusto/query/).

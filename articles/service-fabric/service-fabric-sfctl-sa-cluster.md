@@ -3,29 +3,30 @@ title: Интерфейс командной строки Azure Service Fabric. 
 description: Описание команд автономного кластера sfctl интерфейса командной строки Azure Service Fabric.
 services: service-fabric
 documentationcenter: na
-author: Christina-Kang
+author: jeffj6123
 manager: chackdan
 editor: ''
 ms.assetid: ''
 ms.service: service-fabric
+ms.devlang: cli
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: multiple
-ms.date: 12/06/2018
-ms.author: bikang
-ms.openlocfilehash: 902ebab5dc12d7649edd0ed6e594e663e5332ce3
-ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
+ms.date: 9/17/2019
+ms.author: jejarry
+ms.openlocfilehash: ecdd288d7cb320b91ab4c69697d334f8d9459e62
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69035241"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72901016"
 ---
 # <a name="sfctl-sa-cluster"></a>Кластер sfctl sa-cluster
 Управление автономными кластерами Service Fabric.
 
 ## <a name="commands"></a>Команды
 
-|Command|Описание|
+|Команда|Описание|
 | --- | --- |
 | config | Получение конфигурации автономного кластера Service Fabric. |
 | config-upgrade | Запуск обновления конфигурации автономного кластера Service Fabric. |
@@ -41,7 +42,7 @@ ms.locfileid: "69035241"
 |Аргумент|Описание|
 | --- | --- |
 | --configuration-api-version [обязательный параметр] | Версия API конфигурации json автономного кластера. |
-| --timeout -t | Время ожидания сервера в секундах.  Значение по умолчанию\: 60. |
+| --timeout -t | Время ожидания сервера для выполнения операции в секундах. Это время ожидания указывает период времени, в течение которого клиент желает ожидать завершения запрошенной операции. Значение по умолчанию для этого параметра — 60 секунд.  Значение по умолчанию\: 60. |
 
 ### <a name="global-arguments"></a>Глобальные аргументы
 
@@ -50,7 +51,7 @@ ms.locfileid: "69035241"
 | --debug | Увеличение уровня детализации ведения журнала для отображения всех журналов отладки. |
 | --help -h | Отображение этого справочного сообщения и выход. |
 | --output -o | Формат выходных данных.  Допустимые значения\: json, jsonc, table, tsv.  Значение по умолчанию\: json. |
-| --query | Строка запроса JMESPath. Дополнительные сведения и примеры см. на веб-сайте http\://jmespath.org/. |
+| --query | Строка запроса JMESPath. Дополнительные сведения см. на сайте http\://jmespath.org. |
 | --verbose | Повышение уровня детализации ведения журнала. Используйте параметр --debug, чтобы получить полные журналы отладки. |
 
 ## <a name="sfctl-sa-cluster-config-upgrade"></a>sfctl sa-cluster config-upgrade
@@ -68,7 +69,7 @@ ms.locfileid: "69035241"
 | --health-check-retry | Продолжительность времени между попытками выполнить проверку работоспособности, если приложение или кластер неработоспособны.  Значение по умолчанию\: PT0H0M0S. |
 | --health-check-stable | Период времени, в течение которого приложение или кластер должен оставаться работоспособным, прежде чем процесс обновления перейдет к следующему домену обновления.  Значение по умолчанию\: PT0H0M0S. <br><br> Сначала он интерпретируется как строка, представляющая длительность ISO 8601. В случае неудачи он интерпретируется как число, представляющее общее количество миллисекунд. |
 | --health-check-wait | Продолжительность ожидания после завершения обновления домена до начала процесса проверки работоспособности.  Значение по умолчанию\: PT0H0M0S. |
-| --timeout -t | Время ожидания сервера в секундах.  Значение по умолчанию\: 60. |
+| --timeout -t | Значение по умолчанию\: 60. |
 | --unhealthy-applications | Максимально допустимый процент работоспособных приложений во время обновления. Допустимые значения — это целые значения от нуля до 100. |
 | --unhealthy-nodes | Максимально допустимый процент работоспособных узлов во время обновления. Допустимые значения — это целые значения от нуля до 100. |
 | --upgrade-domain-delta-unhealthy-nodes | Максимальный процент разностной оценки ухудшения производительности доменов обновления, допускаемый во время обновления. Допустимые значения — это целые значения от нуля до 100. |
@@ -82,16 +83,15 @@ ms.locfileid: "69035241"
 | --debug | Увеличение уровня детализации ведения журнала для отображения всех журналов отладки. |
 | --help -h | Отображение этого справочного сообщения и выход. |
 | --output -o | Формат выходных данных.  Допустимые значения\: json, jsonc, table, tsv.  Значение по умолчанию\: json. |
-| --query | Строка запроса JMESPath. Дополнительные сведения и примеры см. на веб-сайте http\://jmespath.org/. |
+| --query | Строка запроса JMESPath. Дополнительные сведения см. на сайте http\://jmespath.org. |
 | --verbose | Повышение уровня детализации ведения журнала. Используйте параметр --debug, чтобы получить полные журналы отладки. |
 
 ### <a name="examples"></a>Примеры
 
 Запуск обновления конфигурации кластера
-
-```
-sfctl sa-cluster config-upgrade --cluster-config <YOUR CLUSTER CONFIG> --application-health-
-policies "{"fabric:/System":{"ConsiderWarningAsError":true}}"
+``` 
+sfctl sa-cluster config-upgrade --cluster-config <YOUR CLUSTER CONFIG> --application-health-    
+policies "{"fabric:/System":{"ConsiderWarningAsError":true}}"   
 ```
 
 ## <a name="sfctl-sa-cluster-upgrade-status"></a>sfctl sa-cluster upgrade-status
@@ -103,7 +103,7 @@ policies "{"fabric:/System":{"ConsiderWarningAsError":true}}"
 
 |Аргумент|Описание|
 | --- | --- |
-| --timeout -t | Время ожидания сервера в секундах.  Значение по умолчанию\: 60. |
+| --timeout -t | Время ожидания сервера для выполнения операции в секундах. Это время ожидания указывает период времени, в течение которого клиент желает ожидать завершения запрошенной операции. Значение по умолчанию для этого параметра — 60 секунд.  Значение по умолчанию\: 60. |
 
 ### <a name="global-arguments"></a>Глобальные аргументы
 
@@ -112,10 +112,10 @@ policies "{"fabric:/System":{"ConsiderWarningAsError":true}}"
 | --debug | Увеличение уровня детализации ведения журнала для отображения всех журналов отладки. |
 | --help -h | Отображение этого справочного сообщения и выход. |
 | --output -o | Формат выходных данных.  Допустимые значения\: json, jsonc, table, tsv.  Значение по умолчанию\: json. |
-| --query | Строка запроса JMESPath. Дополнительные сведения и примеры см. на веб-сайте http\://jmespath.org/. |
+| --query | Строка запроса JMESPath. Дополнительные сведения см. на сайте http\://jmespath.org. |
 | --verbose | Повышение уровня детализации ведения журнала. Используйте параметр --debug, чтобы получить полные журналы отладки. |
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Настройте](service-fabric-cli.md) интерфейс командной строки Service Fabric.
 - Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](/azure/service-fabric/scripts/sfctl-upgrade-application).

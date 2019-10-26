@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 06/12/2018
 ms.author: ejarvi
-ms.openlocfilehash: 00891122015bb3e6adb500b6f6c30fa031161b92
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.openlocfilehash: 056bd1293e0593a7fb7f9909cfd85043577686c4
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72598000"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72901334"
 ---
 # <a name="azure-disk-encryption-for-windows-microsoftazuresecurityazurediskencryption"></a>Шифрование дисков Azure для Windows (Microsoft.Azure.Security.AzureDiskEncryption)
 
@@ -36,11 +36,11 @@ ms.locfileid: "72598000"
 
 ## <a name="extension-schemata"></a>Schemata расширения
 
-Существует два Schemata для шифрования дисков Azure: v 1.1, более новая, Рекомендуемая схема, которая не использует свойства Azure Active Directory (AAD) и v 0,1, более старая схема, для которой требуются свойства AAD. Необходимо использовать версию схемы, соответствующую используемому расширению: schema v 1.1 для расширения AzureDiskEncryption версии 1,1, схема v 0,1 для расширения AzureDiskEncryption версии 0,1.
+Существует два Schemata для расширения Windows AzureDiskEncryption: v 2.2, более новая, Рекомендуемая схема, которая не использует свойства Azure Active Directory (AAD) и v 1.1, более старая схема, для которой требуются свойства AAD. Необходимо использовать версию схемы, соответствующую используемому расширению: schema v 2.2 для расширения AzureDiskEncryption версии 2,2, Schema v 1.1 для расширения AzureDiskEncryption версии 1,1.
 
-### <a name="schema-v11-no-aad-recommended"></a>Схема v 1.1: нет AAD (рекомендуется)
+### <a name="schema-v22-no-aad-recommended"></a>Схема v 2.2: нет AAD (рекомендуется)
 
-Рекомендуется использовать схему версии 1.1 и не требует Azure Active Directory свойств.
+Схема v 2.2 рекомендуется для всех новых виртуальных машин и не требует Azure Active Directory свойств.
 
 ```json
 {
@@ -67,9 +67,9 @@ ms.locfileid: "72598000"
 ```
 
 
-### <a name="schema-v01-with-aad"></a>Схема v 0,1: с AAD 
+### <a name="schema-v11-with-aad"></a>Схема v 1.1: с AAD 
 
-Схема 0,1 требует `aadClientID` и либо `aadClientSecret`, либо `AADClientCertificate`.
+Схема 1,1 требует `aadClientID` и либо `aadClientSecret`, либо `AADClientCertificate` и не рекомендуется для новых виртуальных машин.
 
 С помощью `aadClientSecret`:
 
@@ -139,10 +139,10 @@ ms.locfileid: "72598000"
 | версия_API | 2015-06-15 | date |
 | publisher | Microsoft.Azure.Security | string |
 | Тип | AzureDiskEncryptionForLinux | string |
-| typeHandlerVersion | 0,1, 1,1 | int |
-| (схема 0,1) аадклиентид | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | GUID | 
-| (схема 0,1) AADClientSecret | пароль | string |
-| (схема 0,1) аадклиентцертификате | thumbprint | string |
+| typeHandlerVersion | 1,1, 2,2 | string |
+| (схема 1,1) аадклиентид | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | GUID | 
+| (схема 1,1) AADClientSecret | пароль | string |
+| (схема 1,1) аадклиентцертификате | thumbprint | string |
 | DiskFormatQuery | {"dev_path":"","name":"","file_system":""} | Словарь JSON |
 | EncryptionOperation | EnableEncryption, EnableEncryptionFormatAll | string | 
 | KeyEncryptionAlgorithm | 'RSA-OAEP', 'RSA-OAEP-256', 'RSA1_5' | string |

@@ -1,24 +1,18 @@
 ---
 title: Расширенное агрегирование в запросах журнала Azure Monitor | Документация Майкрософт
 description: В этой статье описываются некоторые более расширенные параметры агрегирования, доступные для запросов журнала Azure Monitor.
-services: log-analytics
-documentationcenter: ''
-author: bwren
-manager: carmonm
-editor: ''
-ms.assetid: ''
-ms.service: log-analytics
-ms.workload: na
-ms.tgt_pltfrm: na
+ms.service: azure-monitor
+ms.subservice: logs
 ms.topic: conceptual
-ms.date: 08/16/2018
+author: bwren
 ms.author: bwren
-ms.openlocfilehash: 56e87da0353a41504035a070d4c10bab0dda2279
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.date: 08/16/2018
+ms.openlocfilehash: f34e71c4e15e3bb09676e366313e90a7261439e5
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60551759"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72900441"
 ---
 # <a name="advanced-aggregations-in-azure-monitor-log-queries"></a>Расширенное агрегирование в запросах журнала Azure Monitor
 
@@ -39,7 +33,7 @@ Event
 | summarize makelist(EventID) by Computer
 ```
 
-|Computer|list_EventID|
+|Компьютер|list_EventID|
 |---|---|
 | computer1 | [704,701,1501,1500,1085,704,704,701] |
 | computer2 | [326,105,302,301,300,102] |
@@ -56,7 +50,7 @@ Event
 | summarize makeset(EventID) by Computer
 ```
 
-|Computer|list_EventID|
+|Компьютер|list_EventID|
 |---|---|
 | computer1 | [704,701,1501,1500,1085] |
 | computer2 | [326,105,302,301,300,102] |
@@ -73,7 +67,7 @@ Heartbeat
 | project Computer, Solutions
 ```
 
-| Computer | Решения | 
+| Компьютер | Решения | 
 |--------------|----------------------|
 | computer1 | "security", "updates", "changeTracking" |
 | computer2 | "security", "updates" |
@@ -89,7 +83,7 @@ Heartbeat
 | mvexpand Solutions
 ```
 
-| Computer | Решения | 
+| Компьютер | Решения | 
 |--------------|----------------------|
 | computer1 | "security" |
 | computer1 | "updates" |
@@ -120,7 +114,7 @@ Heartbeat
 | ... | ... |
 
 ## <a name="handling-missing-bins"></a>Обработка отсутствующих ячеек
-`mvexpand` полезно применять, если требуется заполнить значения по умолчанию для отсутствующих ячеек. Предположим, что вам нужно определить время доступности определенного компьютера с помощью анализа пульса. Также вы хотите просмотреть источник пульса, который находится в столбце _категории_. Как правило, мы используем простой оператор суммирования следующим образом:
+Полезным приложением `mvexpand` является необходимость заполнения значений по умолчанию в для отсутствующих ячеек. Например, предположим, что вы ищете время бесперебойной работы определенной машины, изучая его пульс. Также вы хотите просмотреть источник пульса, который находится в столбце _категории_. Как правило, мы используем простой оператор суммирования следующим образом:
 
 ```Kusto
 Heartbeat

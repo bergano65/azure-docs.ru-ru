@@ -1,24 +1,18 @@
 ---
 title: Работа со значениями даты и времени в запросах журнала Azure Monitor | Документация Майкрософт
 description: В этой статье описывается работа с данными даты и времени в запросах журнала Azure Monitor.
-services: log-analytics
-documentationcenter: ''
-author: bwren
-manager: carmonm
-editor: ''
-ms.assetid: ''
-ms.service: log-analytics
-ms.workload: na
-ms.tgt_pltfrm: na
+ms.service: azure-monitor
+ms.subservice: logs
 ms.topic: conceptual
-ms.date: 08/16/2018
+author: bwren
 ms.author: bwren
-ms.openlocfilehash: 402511ba3c45e8bd12cb7f92ecd54f6084c8ada2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 08/16/2018
+ms.openlocfilehash: 6ff095d674a11d95ed4fd2d008c3e664dd595fef
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62112363"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72894215"
 ---
 # <a name="working-with-date-time-values-in-azure-monitor-log-queries"></a>Работа со значениями даты и времени в запросах журнала Azure Monitor
 
@@ -38,9 +32,9 @@ ms.locfileid: "62112363"
 |сокращение   | единица времени    |
 |:---|:---|
 |d           | day          |
-|h           | hour         |
-|m           | минута       |
-|s           | секунда       |
+|ч           | ч.         |
+|мин           | минута       |
+|с           | секунда       |
 |ms          | миллисекунда  |
 |микросекунда | микросекунда  |
 |галочка        | наносекунда   |
@@ -91,7 +85,7 @@ Event
 | extend timeAgo = now() - TimeGenerated 
 ```
 
-В столбце `timeAgo` содержатся следующие значения: "00:09:31.5118992", т. е. дата и время в формате hh:mm:ss.fffffff. Если вы хотите форматировать эти значения в `numver` минут с времени начала, укажите timeAgo/1m.
+Столбец `timeAgo` содержит такие значения: "00:09:31.5118992", то есть они форматируются как чч: мм: СС. fffffff. Если вы хотите форматировать эти значения в `numver` минут с времени начала, укажите timeAgo/1m.
 
 ```Kusto
 Event
@@ -134,7 +128,7 @@ Event
 
 Вы получите следующие результаты:
 
-|timestamp|count_|
+|Timestamp|count_|
 |--|--|
 |2018-07-28T00:00:00.000|7,136|
 |2018-07-29T00:00:00.000|12,315|

@@ -1,36 +1,30 @@
 ---
 title: Запросы к журналу Azure Monitor | Документация Майкрософт
 description: Ссылки на ресурсы для обучения написанию запросов к журналу в Azure Monitor.
-services: log-analytics
-documentationcenter: ''
-author: bwren
-manager: carmonm
-editor: ''
-ms.assetid: ''
-ms.service: log-analytics
-ms.workload: na
-ms.tgt_pltfrm: na
+ms.service: azure-monitor
+ms.subservice: logs
 ms.topic: conceptual
-ms.date: 01/11/2019
+author: bwren
 ms.author: bwren
-ms.openlocfilehash: 6fae245e4d72f7f6f7809d85da17023deb1518e5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 01/11/2019
+ms.openlocfilehash: 7c6530416f0eb6b822b6f5f3eb53f59aeae05d53
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65560853"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72894350"
 ---
 # <a name="azure-monitor-log-queries"></a>Запросы к журналу в Azure Monitor
 Журналы Azure Monitor построены на базе Azure Data Explorer, поэтому для работы с журналом Azure Monitor используется такой же язык запросов Kusto. См. дополнительные сведения обо всех возможностях языка в [документации по языку запросов Kusto](/azure/kusto/query) — основном источнике информации по созданию запросов к журналам в Azure Monitor. Эта страница содержит ссылки на другие ресурсы с информацией о создании запросов и описание отличий в разных вариантах реализации языка запросов для Azure Monitor.
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../../includes/azure-monitor-log-analytics-rebrand.md)]
 
-## <a name="getting-started"></a>Приступая к работе
+## <a name="getting-started"></a>Начало работы
 
-- [Начало работы с Azure Monitor Log Analytics](get-started-portal.md) — это занятие для написания запросов и работа с результатами на портале Azure.
+- [Начало работы с Azure Monitor log Analytics](get-started-portal.md) — это занятие для написания запросов и работы с результатами в портал Azure.
 - Статья о [начале работы с запросами к журналам в Azure Monitor](get-started-queries.md) — это руководство по созданию запросов с использованием данных журнала Azure Monitor.
 
-## <a name="concepts"></a>Основные понятия
+## <a name="concepts"></a>Концепции
 - В статье об [анализе данных журналов в Azure Monitor](../../azure-monitor/log-query/log-query-overview.md) кратко описаны запросы к журналам и структура данных в журналах Azure Monitor.
 - В статье о [просмотре и анализе данных журналов в Azure Monitor](../../azure-monitor/log-query/portals.md) описаны порталы, на которых создаются и выполняются запросы к журналам.
 

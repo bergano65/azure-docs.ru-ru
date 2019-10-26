@@ -3,33 +3,34 @@ title: Интерфейс командной строки Azure Service Fabric 
 description: Сведения о командах sfctl mesh secret интерфейса командной строки Service Fabric.
 services: service-fabric
 documentationcenter: na
-author: Christina-Kang
+author: jeffj6123
 manager: chackdan
 editor: ''
 ms.assetid: ''
 ms.service: service-fabric
+ms.devlang: cli
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: multiple
-ms.date: 12/06/2018
-ms.author: bikang
-ms.openlocfilehash: 5e58e6a401cc166c176dc465d58ba9e8a8ed83b0
-ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
+ms.date: 9/17/2019
+ms.author: jejarry
+ms.openlocfilehash: 706f3250236bf7cab591530c1cefba8e503225fe
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69035967"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72901201"
 ---
 # <a name="sfctl-mesh-secret"></a>sfctl mesh secret
-Здесь приведены сведения о получении и удалении ресурсов mesh secret.
+Получение и удаление ресурсов mesh secret.
 
 ## <a name="commands"></a>Команды
 
-|Command|Описание|
+|Команда|Описание|
 | --- | --- |
-| delete | Удаляет ресурс секрета. |
+| удалить | Удаляет ресурс секрета. |
 | list | Составляет список всех ресурсов секрета. |
-| show | Предоставляет ресурс секрета с заданным именем. |
+| показать | Предоставляет ресурс секрета с заданным именем. |
 
 ## <a name="sfctl-mesh-secret-delete"></a>sfctl mesh secret delete
 Удаляет ресурс секрета.
@@ -40,7 +41,7 @@ ms.locfileid: "69035967"
 
 |Аргумент|Описание|
 | --- | --- |
-| --name -n [обязательный параметр] | Имя секрета. |
+| --name -n [обязательный параметр] | Имя ресурса секрета. |
 
 ### <a name="global-arguments"></a>Глобальные аргументы
 
@@ -49,7 +50,7 @@ ms.locfileid: "69035967"
 | --debug | Увеличение уровня детализации ведения журнала для отображения всех журналов отладки. |
 | --help -h | Отображение этого справочного сообщения и выход. |
 | --output -o | Формат выходных данных.  Допустимые значения\: json, jsonc, table, tsv.  Значение по умолчанию\: json. |
-| --query | Строка запроса JMESPath. Дополнительные сведения и примеры см. на веб-сайте http\://jmespath.org/. |
+| --query | Строка запроса JMESPath. Дополнительные сведения см. на сайте http\://jmespath.org. |
 | --verbose | Повышение уровня детализации ведения журнала. Используйте параметр --debug, чтобы получить полные журналы отладки. |
 
 ## <a name="sfctl-mesh-secret-list"></a>sfctl mesh secret list
@@ -64,7 +65,7 @@ ms.locfileid: "69035967"
 | --debug | Увеличение уровня детализации ведения журнала для отображения всех журналов отладки. |
 | --help -h | Отображение этого справочного сообщения и выход. |
 | --output -o | Формат выходных данных.  Допустимые значения\: json, jsonc, table, tsv.  Значение по умолчанию\: json. |
-| --query | Строка запроса JMESPath. Дополнительные сведения и примеры см. на веб-сайте http\://jmespath.org/. |
+| --query | Строка запроса JMESPath. Дополнительные сведения см. на сайте http\://jmespath.org. |
 | --verbose | Повышение уровня детализации ведения журнала. Используйте параметр --debug, чтобы получить полные журналы отладки. |
 
 ## <a name="sfctl-mesh-secret-show"></a>sfctl mesh secret show
@@ -76,7 +77,7 @@ ms.locfileid: "69035967"
 
 |Аргумент|Описание|
 | --- | --- |
-| --name -n [обязательный параметр] | Имя секрета. |
+| --name -n [обязательный параметр] | Имя ресурса секрета. |
 
 ### <a name="global-arguments"></a>Глобальные аргументы
 
@@ -85,10 +86,10 @@ ms.locfileid: "69035967"
 | --debug | Увеличение уровня детализации ведения журнала для отображения всех журналов отладки. |
 | --help -h | Отображение этого справочного сообщения и выход. |
 | --output -o | Формат выходных данных.  Допустимые значения\: json, jsonc, table, tsv.  Значение по умолчанию\: json. |
-| --query | Строка запроса JMESPath. Дополнительные сведения и примеры см. на веб-сайте http\://jmespath.org/. |
+| --query | Строка запроса JMESPath. Дополнительные сведения см. на сайте http\://jmespath.org. |
 | --verbose | Повышение уровня детализации ведения журнала. Используйте параметр --debug, чтобы получить полные журналы отладки. |
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Настройте](service-fabric-cli.md) интерфейс командной строки Service Fabric.
 - Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](/azure/service-fabric/scripts/sfctl-upgrade-application).

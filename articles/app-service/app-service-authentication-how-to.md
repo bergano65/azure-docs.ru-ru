@@ -10,15 +10,15 @@ ms.service: app-service
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 09/02/2019
+ms.date: 10/24/2019
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 105728bdab9c70bb807f38e4a09d5be863694c16
-ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
+ms.openlocfilehash: f453a0276a3448273964a589112e21ca5665c2d2
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70231974"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72900139"
 ---
 # <a name="advanced-usage-of-authentication-and-authorization-in-azure-app-service"></a>Расширенное использование проверки подлинности и авторизации в Службе приложений Azure
 
@@ -26,8 +26,8 @@ ms.locfileid: "70231974"
 
 Чтобы быстро приступить к работе, ознакомьтесь с одним из следующих руководств:
 
-* [Руководство. Сквозная проверка подлинности и авторизации в Службе приложений Azure](app-service-web-tutorial-auth-aad.md) (Windows)
-* [Руководство. Сквозная аутентификация и авторизация в Службе приложений Azure в Linux](containers/tutorial-auth-aad.md)
+* [Руководство по сквозной проверке подлинности и авторизации в службе приложений Azure (Windows)](app-service-web-tutorial-auth-aad.md)
+* [Руководство по сквозной проверке подлинности и авторизации в службе приложений Azure (Linux)](containers/tutorial-auth-aad.md)
 * [Настройка приложения для использования имени входа Azure Active Directory](configure-authentication-provider-aad.md)
 * [Настройка приложения для использования имени входа Facebook](configure-authentication-provider-facebook.md)
 * [Настройка приложения для использования имени входа Google](configure-authentication-provider-google.md)
@@ -42,7 +42,7 @@ ms.locfileid: "70231974"
 
 В раскрывающемся списке **Action to take when request is not authenticated** (Предпринимаемое действие, если проверка подлинности для запроса не выполнена) выберите **Разрешить анонимные запросы (нет действия)** .
 
-На странице входа, на панели навигации или в любом другом расположении приложения добавьте ссылку входа для каждого включенного поставщика (`/.auth/login/<provider>`). Пример:
+На странице входа, на панели навигации или в любом другом расположении приложения добавьте ссылку входа для каждого включенного поставщика (`/.auth/login/<provider>`). Пример.
 
 ```HTML
 <a href="/.auth/login/aad">Log in with Azure AD</a>
@@ -64,7 +64,7 @@ ms.locfileid: "70231974"
 
 При входе с помощью клиента приложение входит в систему поставщика вручную, а затем отправляет токен проверки подлинности службе приложений для проверки (см. [Поток проверки подлинности](overview-authentication-authorization.md#authentication-flow)). Эта проверка сама по себе не предоставляет вам доступ к требуемым ресурсам приложения, но успешная проверка даст вам токен сеанса, который вы можете использовать для доступа к ресурсам приложений. 
 
-Чтобы проверить токен поставщика, для приложения службы приложений сначала нужно настроить требуемый поставщик. Получив токен проверки подлинности у своего поставщика, во время выполнения отправьте токен по адресу `/.auth/login/<provider>` для проверки. Пример: 
+Чтобы проверить токен поставщика, для приложения службы приложений сначала нужно настроить требуемый поставщик. Получив токен проверки подлинности у своего поставщика, во время выполнения отправьте токен по адресу `/.auth/login/<provider>` для проверки. Пример. 
 
 ```
 POST https://<appname>.azurewebsites.net/.auth/login/aad HTTP/1.1
@@ -95,7 +95,7 @@ Content-Type: application/json
 }
 ```
 
-Получив этот токен сеанса, вы можете получить доступ к защищенным ресурсам приложений, добавив заголовок `X-ZUMO-AUTH` к HTTP-запросам. Пример: 
+Получив этот токен сеанса, вы можете получить доступ к защищенным ресурсам приложений, добавив заголовок `X-ZUMO-AUTH` к HTTP-запросам. Пример. 
 
 ```
 GET https://<appname>.azurewebsites.net/api/products/1
@@ -116,7 +116,7 @@ X-ZUMO-AUTH: <authenticationToken_value>
 <a href="/.auth/logout">Sign out</a>
 ```
 
-После успешного выхода клиент по умолчанию перенаправляется на URL-адрес `/.auth/logout/done`. Можно изменить страницу перенаправления после выхода, добавив параметр запроса `post_logout_redirect_uri`. Пример:
+После успешного выхода клиент по умолчанию перенаправляется на URL-адрес `/.auth/logout/done`. Можно изменить страницу перенаправления после выхода, добавив параметр запроса `post_logout_redirect_uri`. Пример.
 
 ```
 GET /.auth/logout?post_logout_redirect_uri=/index.html
@@ -153,7 +153,7 @@ az webapp config appsettings set --name <app_name> --resource-group <group_name>
 * X-MS-CLIENT-PRINCIPAL-NAME
 * X-MS-CLIENT-PRINCIPAL-ID
 
-Сведения из этих заголовков можно получить с помощью кода, написанного на любом языке или в любой платформе. Для приложений ASP.NET 4.6 автоматически настраивается класс **ClaimsPrincipal** с соответствующими значениями.
+Сведения из этих заголовков можно получить с помощью кода, написанного на любом языке или в любой платформе. Для приложений ASP.NET 4.6 автоматически настраивается класс **ClaimsPrincipal** с соответствующими значениями. Однако ASP.NET Core не предоставляет по промежуточного слоя для проверки подлинности, которое интегрируется с утверждениями пользователя службы приложений. Обходной путь см. в разделе [максимерауиллер. Azure. AppService. еасяус](https://github.com/MaximRouiller/MaximeRouiller.Azure.AppService.EasyAuth).
 
 В приложении можно также получить дополнительные сведения о пользователе, прошедшем проверку подлинности, путем вызова `/.auth/me`. Пакеты SDK для серверной части мобильных приложений предоставляют вспомогательные методы для работы с этими данными  Дополнительные сведения см. Дополнительные сведения см. в разделах [Практическое руководство. Использование утверждений аутентификации для таблиц](../app-service-mobile/app-service-mobile-node-backend-how-to-use-server-sdk.md#howto-tables-getidentity) и [Практическое руководство. Получение сведений о пользователе, прошедшем проверку подлинности](../app-service-mobile/app-service-mobile-dotnet-backend-how-to-use-server-sdk.md#user-info).
 
@@ -182,8 +182,8 @@ az webapp config appsettings set --name <app_name> --resource-group <group_name>
 - **Google**. Добавьте параметр строки запроса `access_type=offline` к вызову API `/.auth/login/google`. Если используется пакет SDK для мобильных служб, можно добавить параметр к одной из перегрузок `LogicAsync` (см. в разделе о [токенах обновления Google](https://developers.google.com/identity/protocols/OpenIDConnect#refresh-tokens)).
 - **Facebook**. Не предоставляет токены обновления. Срок действия токенов с долгим временем существования истекает через 60 дней (см. раздел об [истечении и продлении срока действия токенов доступа Facebook](https://developers.facebook.com/docs/facebook-login/access-tokens/expiration-and-extension)).
 - **Twitter**. Срок действия токенов доступа не истекает (см. раздел о [часто задаваемых вопросах о Twitter OAuth](https://developer.twitter.com/en/docs/basics/authentication/FAQ)).
-- **Учетная запись Майкрософт**. [Настраивая параметры аутентификации учетной записи Майкрософт](configure-authentication-provider-microsoft.md), выберите область `wl.offline_access`.
-- **Azure Active Directory**. На сайте [https://resources.azure.com](https://resources.azure.com) сделайте следующее:
+- **Учетная запись Майкрософт**. [Настраивая параметры проверки подлинности учетной записи Майкрософт](configure-authentication-provider-microsoft.md), выберите область `wl.offline_access`.
+- **Azure Active Directory**. В [https://resources.azure.com](https://resources.azure.com) сделайте следующее:
     1. В верхней части страницы выберите **Read/Write** (Чтение и запись).
     2. В левой части браузера перейдите к **subscriptions** >  **_\<имя\_подписки_**  > **resourceGroups** >  **_\<имя\_группы\_ресурсов>_**  > **providers** > **Microsoft.Web** > **sites** >  **_\<имя\_приложения>_**  > **config** > **authsettings**. 
     3. Нажмите кнопку **Изменить**.
@@ -197,7 +197,7 @@ az webapp config appsettings set --name <app_name> --resource-group <group_name>
 
 После настройки поставщика можно [найти токен обновления и срок действия для токена доступа](#retrieve-tokens-in-app-code) в хранилище токенов. 
 
-Чтобы обновить маркер доступа в любое время, просто вызовите `/.auth/refresh` его на любом языке. В следующем фрагменте кода jQuery используется для обновления токенов доступа из клиента JavaScript.
+Чтобы обновить маркер доступа в любое время, просто вызовите `/.auth/refresh` на любом языке. В следующем фрагменте кода jQuery используется для обновления токенов доступа из клиента JavaScript.
 
 ```JavaScript
 function refreshTokens() {
@@ -230,7 +230,7 @@ az webapp auth update --resource-group <group_name> --name <app_name> --token-re
 
 ## <a name="limit-the-domain-of-sign-in-accounts"></a>Ограничение домена учетных записей для входа
 
-Учетные записи Майкрософт и Azure Active Directory позволяют выполнять вход из нескольких доменов. Например, учетная запись Майкрософт позволяет выполнять вход с помощью учетных записей _outlook.com_, _live.com_ и _hotmail.com_. Azure AD позволяет любому числу пользовательских доменов для учетных записей входа. Тем не менее, вам может потребоваться ускорить работу пользователей с собственной фирменной страницей входа в Azure AD (например, `contoso.com`). Чтобы предложить доменное имя учетных записей входа, выполните следующие действия.
+Учетные записи Майкрософт и Azure Active Directory позволяют выполнять вход из нескольких доменов. Например, учетная запись Майкрософт позволяет выполнять вход с помощью учетных записей _outlook.com_, _live.com_ и _hotmail.com_. Azure AD позволяет любому числу пользовательских доменов для учетных записей входа. Тем не менее, вам может потребоваться ускорить работу пользователей с вашей собственной фирменной страницей входа в Azure AD (например, `contoso.com`). Чтобы предложить доменное имя учетных записей входа, выполните следующие действия.
 
 В разделе [https://resources.azure.com](https://resources.azure.com) перейдите к **subscriptions** >  **_\< имя\_ подписки_**  > **resourceGroups** >  **_\< имя\_ группы\_ ресурсов>_**  > **providers** > **Microsoft.Web** > **sites** >  **_\< имя\_ приложения>_**  > **config** > **authsettings**. 
 
@@ -243,7 +243,7 @@ az webapp auth update --resource-group <group_name> --name <app_name> --token-re
 Этот параметр добавляет `domain_hint` параметр строки запроса к URL-адресу перенаправления имени входа. 
 
 > [!IMPORTANT]
-> Клиент может удалить `domain_hint` параметр после получения URL-адреса перенаправления, а затем войти в другой домен. Поэтому хотя эта функция удобна, она не является функцией безопасности.
+> Клиент может удалить параметр `domain_hint` после получения URL-адреса перенаправления, а затем войти в другой домен. Поэтому хотя эта функция удобна, она не является функцией безопасности.
 >
 
 ## <a name="authorize-or-deny-users"></a>Авторизовать или запретить пользователей
@@ -260,9 +260,9 @@ az webapp auth update --resource-group <group_name> --name <app_name> --token-re
 
 1. Перейдите на страницу `https://<app-name>.scm.azurewebsites.net/DebugConsole`.
 
-1. В обозревателе браузера файлов службы приложений перейдите на *сайт Site/wwwroot*. Если файл *Web. config* не существует, создайте его, выбрав **+**  > " **создать**". 
+1. В обозревателе браузера файлов службы приложений перейдите на *сайт Site/wwwroot*. Если файл *Web. config* не существует, создайте его, выбрав **+**  > **New File**. 
 
-1. Выберите карандаш для *файла Web. config* , чтобы изменить его. Добавьте следующий код конфигурации и нажмите кнопку **сохранить**. Если *файл Web. config* уже существует, просто добавьте `<authorization>` элемент со всеми элементами. Добавьте учетные записи, которые требуется разрешить, `<allow>` в элементе.
+1. Выберите карандаш для *файла Web. config* , чтобы изменить его. Добавьте следующий код конфигурации и нажмите кнопку **сохранить**. Если *файл Web. config* уже существует, просто добавьте элемент `<authorization>` со всеми элементами. Добавьте учетные записи, которые вы хотите разрешить, в элемент `<allow>`.
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -278,7 +278,7 @@ az webapp auth update --resource-group <group_name> --name <app_name> --token-re
 
 ### <a name="identity-provider-level"></a>Уровень поставщика удостоверений
 
-Поставщик удостоверений может предоставить некоторую проверку подлинности с помощью ключа. Пример:
+Поставщик удостоверений может предоставить некоторую проверку подлинности с помощью ключа. Пример.
 
 - Для [службы приложений Azure](configure-authentication-provider-aad.md)вы можете [управлять доступом на уровне предприятия](../active-directory/manage-apps/what-is-access-management.md) непосредственно в Azure AD. Инструкции см. [в разделе Удаление доступа пользователя к приложению](../active-directory/manage-apps/methods-for-removing-user-access.md).
 - Для [Google](configure-authentication-provider-google.md), проектов Google API, входящих в [организацию](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy#organizations) , можно настроить разрешение доступа только для пользователей в вашей организации (см. [страницу поддержки **OAuth 2,0** в Google](https://support.google.com/cloud/answer/6158849?hl=en)).
@@ -287,8 +287,8 @@ az webapp auth update --resource-group <group_name> --name <app_name> --token-re
 
 Если любой из других уровней не обеспечивает необходимую авторизацию или если ваша платформа или поставщик удостоверений не поддерживается, необходимо написать пользовательский код для авторизации пользователей на основе [утверждений пользователей](#access-user-claims).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Руководство. Сквозная проверка подлинности и авторизации в Службе приложений Azure (Windows)](app-service-web-tutorial-auth-aad.md)
-> [Руководство. Сквозная аутентификация и авторизация в Службе приложений Azure в Linux](containers/tutorial-auth-aad.md)
+> [Руководство по сквозной проверке подлинности и авторизации в службе приложений Azure (Windows)](app-service-web-tutorial-auth-aad.md)
+> [Руководство по сквозной проверке подлинности и авторизации в службе приложений Azure (Linux)](containers/tutorial-auth-aad.md)

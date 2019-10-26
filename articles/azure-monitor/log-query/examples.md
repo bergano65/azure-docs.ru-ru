@@ -1,31 +1,25 @@
 ---
 title: Примеры запросов журнала Azure Monitor | Документация Майкрософт
 description: Примеры запросов журнала в Azure Monitor, выполненных с помощью языка запросов Kusto.
-services: log-analytics
-documentationcenter: ''
-author: bwren
-manager: carmonm
-editor: ''
-ms.assetid: ''
-ms.service: log-analytics
-ms.workload: na
-ms.tgt_pltfrm: na
+ms.service: azure-monitor
+ms.subservice: logs
 ms.topic: article
-ms.date: 10/01/2019
+author: bwren
 ms.author: bwren
-ms.openlocfilehash: 7cdd471e6618e83483f6cc304f284a1669f3b67b
-ms.sourcegitcommit: a19f4b35a0123256e76f2789cd5083921ac73daf
-ms.translationtype: MT
+ms.date: 10/01/2019
+ms.openlocfilehash: 2ded97e427c8ecf4584ee486408de14a26f014eb
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71718917"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72900369"
 ---
 # <a name="azure-monitor-log-query-examples"></a>Примеры запроса журнала Azure Monitor
 Эта статья содержит несколько примеров [запросов](log-query-overview.md), составленных на основе [языка запросов Kusto](/azure/kusto/query/) для получения разных типов данных журнала из Azure Monitor. Для консолидации и анализа данных используются разные методы, и на основе этих примеров вы сможете определить, какие стратегии лучше всего подойдут под ваши конкретные требования.  
 
 Дополнительные сведения о ключевых словах, используемых в этих примерах, можно получить в [справочнике по языку Kusto](https://docs.microsoft.com/azure/kusto/query/). Изучите [эту статью](get-started-queries.md) по созданию запросов, если вы еще не работали с Azure Monitor.
 
-## <a name="events"></a>События
+## <a name="events"></a>Мероприятия
 
 ### <a name="search-application-level-events-described-as-cryptographic"></a>Поиск событий шифрования на уровне приложения
 Этот пример выполняет поиск записей в таблице **Events** (События), у которых **EventLog** имеет значение _Application_ (Приложение), а **RenderedDescription** содержит значение _cryptographic_ (шифрование). В поиск включаются записи за последние 24 часа.
@@ -158,7 +152,7 @@ AzureDiagnostics
 | summarize arg_max(TimeGenerated, *) by Category
 ```
 
-## <a name="network-monitoring"></a>Мониторинг сети
+## <a name="network-monitoring"></a>Мониторинг сетей.
 
 ### <a name="computers-with-unhealthy-latency"></a>Компьютеры с ненормальной задержкой
 Этот пример создает список уникальных компьютеров, демонстрирующих ненормальную задержку.
@@ -170,7 +164,7 @@ NetworkMonitoring
 | distinct Computer
 ```
 
-## <a name="performance"></a>Производительность
+## <a name="performance"></a>Ориентированное на производительность
 
 ### <a name="join-computer-perf-records-to-correlate-memory-and-cpu"></a>Объединение записей производительности компьютеров для сопоставления данных о памяти и ЦП
 Этот пример сопоставляет записи **perf** для определенного компьютера и создает две временные диаграммы: по средней загрузке ЦП и максимальному объему памяти.
@@ -436,7 +430,7 @@ Update
 ```
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о языке можно получить в [справочнике по языку Kusto](/azure/kusto/query).
 - Ознакомьтесь со статьей [Начало работы с запросами журнала Azure Monitor](get-started-queries.md).

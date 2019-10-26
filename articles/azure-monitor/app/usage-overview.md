@@ -1,22 +1,18 @@
 ---
 title: Анализ использования с помощью Azure Application Insights | Документация Майкрософт
 description: Получение сведений о пользователях и их действиях с веб-приложением.
-services: application-insights
-documentationcenter: ''
-author: mrbullwinkle
-manager: carmonm
-ms.service: application-insights
-ms.workload: tbd
-ms.tgt_pltfrm: ibiza
+ms.service: azure-monitor
+ms.subservice: application-insights
 ms.topic: conceptual
-ms.date: 09/19/2019
+author: mrbullwinkle
 ms.author: mbullwin
-ms.openlocfilehash: 77aa39ae68800128409beb17ce3eb636ddcf28d1
-ms.sourcegitcommit: 2ed6e731ffc614f1691f1578ed26a67de46ed9c2
+ms.date: 09/19/2019
+ms.openlocfilehash: 7131cf1902cc92fed66ae4db59449700973c6913
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71128967"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72899431"
 ---
 # <a name="usage-analysis-with-application-insights"></a>Анализ использования с помощью Application Insights
 
@@ -26,11 +22,11 @@ ms.locfileid: "71128967"
 
 Максимальное удобство работы достигается путем установки Application Insights как в серверном коде приложения, так и на веб-страницах. Клиентские и серверные компоненты приложения отправляют данные телеметрии на портал Azure для анализа.
 
-1. **Серверный код.** Установите соответствующий модуль для своего приложения [ASP.NET](../../azure-monitor/app/asp-net.md), [Azure](../../azure-monitor/app/app-insights-overview.md), [Java](../../azure-monitor/app/java-get-started.md), [Node.js](../../azure-monitor/app/nodejs.md) или приложения [иного типа](../../azure-monitor/app/platforms.md).
+1. **Серверный код:** установите соответствующий модуль для своего приложения [ASP.NET](../../azure-monitor/app/asp-net.md), [Azure](../../azure-monitor/app/app-insights-overview.md), [Java](../../azure-monitor/app/java-get-started.md), [Node.js](../../azure-monitor/app/nodejs.md) или приложения [иного типа](../../azure-monitor/app/platforms.md).
 
-    * *Не хотите устанавливать серверный код? Просто [создайте ресурс Azure Application Insights](../../azure-monitor/app/create-new-resource.md ).*
+    * *Не хотите устанавливать серверный код? Просто [Создайте ресурс Azure Application Insights](../../azure-monitor/app/create-new-resource.md ).*
 
-2. **Код веб-страницы.** Добавьте следующий скрипт на веб-страницу перед закрывающим тегом ``</head>``. Замените ключ инструментирования на подходящее значение для ресурса Application Insights.
+2. **Код веб-страницы:** Добавьте следующий скрипт на веб-страницу перед закрывающим ``</head>``. Замените ключ инструментирования на подходящее значение для ресурса Application Insights.
     
     ```html
     <script type="text/javascript">
@@ -44,9 +40,9 @@ ms.locfileid: "71128967"
 
     Дополнительные сведения о дополнительных конфигурациях для мониторинга веб-сайтов см. в [справочной статье по пакету SDK для JavaScript](https://docs.microsoft.com/azure/azure-monitor/app/javascript).
 
-3. **Код мобильного приложения.** Используйте пакет SDK для Центра приложений, чтобы собирать события из приложения, а затем отправлять копии этих событий в Application Insights для анализа, следуя инструкциям в [этом руководстве](../../azure-monitor/learn/mobile-center-quickstart.md).
+3. **Код мобильного приложения.** Используйте пакет SDK для App Center, чтобы собирать события из приложения, а затем отправлять копии этих событий в Application Insights для анализа, следуя инструкциям в [этом руководстве](../../azure-monitor/learn/mobile-center-quickstart.md).
 
-4. **Получение данных телеметрии.** Запустите проект в режиме отладки на несколько минут, а затем просмотрите результаты в колонке "Обзор" в Application Insights.
+4. **Получение данных телеметрии:** запустите проект в режиме отладки на несколько минут, а затем просмотрите результаты в колонке "Обзор" в Application Insights.
 
     Опубликуйте ваше приложение для отслеживания его производительности и узнайте, что делают с ним пользователи.
 
@@ -77,7 +73,7 @@ ms.locfileid: "71128967"
 - Сформируйте гипотезу на основе данных реальных пользователей. 
 - Определите, является ли период удержания проблемой для вашего продукта. 
 
-![Удержание](./media/usage-overview/retention.png) 
+![Хранение](./media/usage-overview/retention.png) 
 
 Помимо прочего, элементы управления периодом удержания позволяют определить конкретные события и диапазон времени для вычисления периода удержания. График в середине дает визуальное представление об общем проценте удержания за указанный диапазон времени. График внизу отображает период удержания отдельных пользователей за заданный период времени. Такой уровень детализации позволяет лучше понять, что ваши пользователи делают и что может повлиять на возвращение пользователей.  
 
@@ -159,9 +155,9 @@ ms.locfileid: "71128967"
 **ASP.NET Core приложения**
 
 > [!NOTE]
-> Добавление инициализатора `ApplicationInsights.config` с помощью `TelemetryConfiguration.Active` или using недопустимо для приложений ASP.NET Core. 
+> Добавление инициализатора с помощью `ApplicationInsights.config` или `TelemetryConfiguration.Active` недопустимо для приложений ASP.NET Core. 
 
-Для [ASP.NET Core](asp-net-core.md#adding-telemetryinitializers) приложений Добавление нового `TelemetryInitializer` выполняется путем добавления его в контейнер внедрения зависимостей, как показано ниже. Это делается в `ConfigureServices` методе `Startup.cs` класса.
+Для [ASP.NET Core](asp-net-core.md#adding-telemetryinitializers) приложений добавление нового `TelemetryInitializer` выполняется путем его добавления в контейнер внедрения зависимостей, как показано ниже. Это делается в методе `ConfigureServices` класса `Startup.cs`.
 
 ```csharp
  using Microsoft.ApplicationInsights.Extensibility;
@@ -174,7 +170,7 @@ ms.locfileid: "71128967"
 
 Все новые клиенты телеметрии автоматически добавляют указанное значение свойства. Отдельные события телеметрии могут переопределять значения по умолчанию.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
    - [Пользователи, сеансы, события](usage-segmentation.md)
    - [Воронки](usage-funnels.md)
    - [Сохранение](usage-retention.md)

@@ -1,24 +1,18 @@
 ---
 title: Решения мониторинга в Azure Monitor | Документация Майкрософт
 description: Решения мониторинга в Azure Monitor — это коллекция правил логики, визуализации и получения данных, которые предоставляют метрики, связанные с определенной проблемной областью.  Эта статья содержит сведения об установке и использовании решений мониторинга.
-services: log-analytics
-documentationcenter: ''
-author: bwren
-manager: carmonm
-editor: ''
-ms.assetid: f029dd6d-58ae-42c5-ad27-e6cc92352b3b
-ms.service: log-analytics
-ms.workload: na
-ms.tgt_pltfrm: na
+ms.service: azure-monitor
+ms.subservice: logs
 ms.topic: article
-ms.date: 08/13/2019
+author: bwren
 ms.author: bwren
-ms.openlocfilehash: 6932f9f302bf1816842d78a662f01ebaafed8686
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
-ms.translationtype: MT
+ms.date: 08/13/2019
+ms.openlocfilehash: 4006a3c66da9cb98db16b72da0b5fb7059affe22
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68989200"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72900663"
 ---
 # <a name="monitoring-solutions-in-azure-monitor"></a>Решения мониторинга в Azure Monitor
 Решения мониторинга используют службы Azure, чтобы получить дополнительные сведения о работе конкретного приложения или службы. Эта статья содержит краткий обзор решений мониторинга в Azure и подробные сведения об их использовании и установке.
@@ -41,7 +35,7 @@ ms.locfileid: "68989200"
 1. Используйте раскрывающиеся списки в верхней части экрана, чтобы менять рабочую область и диапазон времени, используемые для плиток.
 1. Щелкните плитку решения, чтобы открыть его представление с подробным анализом собранных данных.
 
-![Обзор](media/solutions/overview.png)
+![Краткое описание](media/solutions/overview.png)
 
 Решения мониторинга могут содержать несколько типов ресурсов Azure, и все ресурсы в составе решения можно просмотреть точно так же, как любой другой ресурс. Например, все включенные в решение запросы по журналам представлены в списке **Запросы решения** в [обозревателе запросов](../log-query/get-started-portal.md#load-queries). Эти запросы вы можете использовать при выполнении динамического анализа с помощью [запросов по журналам](../log-query/log-query-overview.md).
 
@@ -109,7 +103,7 @@ ms.locfileid: "68989200"
 Чтобы удалить установленное решение, найдите его в [списке установленных решений](#list-installed-monitoring-solutions). Щелкните имя решения, чтобы открыть страницу сводки, и выберите **Удалить**.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Получите список решений мониторинга от корпорации Майкрософт [здесь](solutions-inventory.md).
 * Узнайте из статьи [Анализ данных Log Analytics в Azure Monitor](../log-query/log-query-overview.md), как создавать запросы для анализа данных, собранных решением для мониторинга.
 

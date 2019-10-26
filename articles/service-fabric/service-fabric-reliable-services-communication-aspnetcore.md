@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: required
 ms.date: 10/12/2018
 ms.author: vturecek
-ms.openlocfilehash: 39e6273382133493a77321deed2baec4718bc912
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: b2a1b1426af3e72756a7a85a173ef4a2a5671b02
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72383664"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72900196"
 ---
 # <a name="aspnet-core-in-azure-service-fabric-reliable-services"></a>ASP.NET Core в Azure Service Fabric Reliable Services
 
@@ -340,6 +340,9 @@ new KestrelCommunicationListener(serviceContext, (url, listener) => ...
 
 В этой конфигурации `KestrelCommunicationListener` автоматически выберет неиспользуемый порт из диапазона портов приложения.
 
+Для HTTPS должна быть настроена конечная точка с протоколом HTTPS без порта, указанного в файле ServiceManifest. XML, и передайте имя конечной точки в конструктор Кестрелкоммуникатионлистенер.
+
+
 ## <a name="service-fabric-configuration-provider"></a>Поставщик конфигурации Service Fabric
 Конфигурация приложения в ASP.NET Core основана на парах "ключ-значение", установленной поставщиком конфигурации. Прочитайте [конфигурацию в ASP.NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/configuration/) , чтобы получить дополнительные сведения о поддержке общей конфигурации ASP.NET Core.
 
@@ -513,7 +516,7 @@ Kestrel — предлагаемый веб-сервер для интерфей
 
 |  |  | **Примечания** |
 | --- | --- | --- |
-| Веб-сервер | Kestrel | @No__t-0 не предназначен для использования службами с отслеживанием состояния, в которых реплики совместно используют главный процесс. |
+| Веб-сервер | Kestrel | `HttpSysCommunicationListener` не предназначен для использования службами с отслеживанием состояния, в которых реплики совместно используют главный процесс. |
 | Конфигурация порта | динамическое назначение | Несколько реплик службы с отслеживанием состояния могут совместно использовать хост-процесс или операционную систему узла и, таким же, потребуются уникальные порты. |
 | ServiceFabricIntegrationOptions | UseUniqueServiceUrl | При динамическом назначении порта этот параметр предотвращает ошибочную идентификацию, описанную ранее. |
 

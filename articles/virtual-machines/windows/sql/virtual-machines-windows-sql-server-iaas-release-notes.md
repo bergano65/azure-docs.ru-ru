@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 08/01/2019
-ms.openlocfilehash: 599dd2b44f934bb864acfa9ffe8d03fa0e8bb850
-ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
+ms.openlocfilehash: 2f89b57257088b0b647fd5f0159a58c2ac03bda7
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72757466"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72897258"
 ---
 # <a name="documentation-changes-for-sql-server-on-azure-virtual-machines"></a>Изменения документации для SQL Server на виртуальных машинах Azure
 
@@ -28,6 +28,7 @@ Azure позволяет развернуть виртуальную машин�
 
 | изменения | Сведения |
 | --- | --- |
+| **Регистрация небольшого поставщика ресурсов** | Теперь вы можете выполнять [полное регистрацию](virtual-machines-windows-sql-bulk-register-with-resource-provider.md) виртуальных машин SQL с помощью поставщика ресурсов. | 
 | **Конфигурация хранилища, оптимизированного для производительности** | Теперь можно [полностью настроить конфигурацию хранилища](virtual-machines-windows-sql-server-storage-configuration.md#new-vms) при создании новой SQL Server виртуальной машины. |
 | **Файловый ресурс Premium для FCI** | Теперь можно создать экземпляр отказоустойчивого кластера с помощью [общего файлового ресурса](virtual-machines-windows-portal-sql-create-failover-cluster-premium-file-share.md) уровня "Премиум" вместо исходного метода [Локальные дисковые пространства](virtual-machines-windows-portal-sql-create-failover-cluster.md). 
 | &nbsp; | &nbsp; |

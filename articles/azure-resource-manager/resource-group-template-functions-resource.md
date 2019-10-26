@@ -4,43 +4,125 @@ description: Описывает функции, используемые в ша
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: conceptual
-ms.date: 09/04/2019
+ms.date: 10/24/2019
 ms.author: tomfitz
-ms.openlocfilehash: 7e13e2bed4e881d12737d8e0df0ff0ba2bb2bca9
-ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
+ms.openlocfilehash: cf791bd262849cd93a155a19ade8f8fc377f8da6
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71827474"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72894194"
 ---
 # <a name="resource-functions-for-azure-resource-manager-templates"></a>Функции для работы с ресурсами в шаблонах Azure Resource Manager
 
 Диспетчер ресурсов предоставляет следующие функции для получения значений ресурсов:
 
+* [екстенсионресаурцеид](#extensionresourceid)
 * [list*](#list)
 * [providers](#providers)
 * [reference](#reference)
 * [resourceGroup](#resourcegroup)
 * [resourceId](#resourceid)
 * [subscription](#subscription)
+* [субскриптионресаурцеид](#subscriptionresourceid)
+* [тенантресаурцеид](#tenantresourceid)
 
 Получение значений параметров, переменных или текущего развертывания описано в разделе [Функции для параметров развертывания](resource-group-template-functions-deployment.md).
+
+## <a name="extensionresourceid"></a>екстенсионресаурцеид
+
+```json
+extensionResourceId(resourceId, resourceType, resourceName1, [resourceName2], ...)
+```
+
+Возвращает идентификатор ресурса для [ресурса расширения](extension-resource-types.md), который является типом ресурса, который применяется к другому ресурсу для добавления к его возможностям.
+
+### <a name="parameters"></a>Параметры
+
+| Параметр | Обязательно для заполнения | Тип | Описание |
+|:--- |:--- |:--- |:--- |
+| ResourceId |ДА |string |Идентификатор ресурса для ресурса, к которому применяется ресурс расширения. |
+| тип_ресурса |ДА |string |Тип ресурса, включая пространство имен поставщика ресурсов. |
+| имя_ресурса1 |ДА |string |Имя ресурса. |
+| имя_ресурса2 |Нет |string |Сегмент имени следующего ресурса, если это необходимо. |
+
+Продолжайте добавлять имена ресурсов в качестве параметров, если тип ресурса включает больше сегментов.
+
+### <a name="return-value"></a>Возвращаемое значение
+
+Базовый формат идентификатора ресурса, возвращаемого этой функцией:
+
+```json
+{scope}/providers/{extensionResourceProviderNamespace}/{extensionResourceType}/{extensionResourceName}
+```
+
+Сегмент области зависит от расширяемого ресурса.
+
+Когда ресурс расширения применяется к **ресурсу**, идентификатор ресурса возвращается в следующем формате:
+
+```json
+/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{baseResourceProviderNamespace}/{baseResourceType}/{baseResourceName}/providers/{extensionResourceProviderNamespace}/{extensionResourceType}/{extensionResourceName}
+```
+
+Когда ресурс расширения будет применен к **группе ресурсов**, формат будет следующим:
+
+```json
+/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{extensionResourceProviderNamespace}/{extensionResourceType}/{extensionResourceName}
+```
+
+Когда к **подписке**применяется ресурс расширения, формат имеет вид:
+
+```json
+/subscriptions/{subscriptionId}/providers/{extensionResourceProviderNamespace}/{extensionResourceType}/{extensionResourceName}
+```
+
+Если ресурс расширения применяется к **группе управления**, то используется формат:
+
+```json
+/providers/Microsoft.Management/managementGroups/{managementGroupName}/providers/{extensionResourceProviderNamespace}/{extensionResourceType}/{extensionResourceName}
+```
+
+### <a name="extensionresourceid-example"></a>Пример Екстенсионресаурцеид
+
+В следующем примере возвращается идентификатор ресурса для блокировки группы ресурсов.
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "lockName":{
+            "type": "string"
+        }
+    },
+    "variables": {},
+    "resources": [],
+    "outputs": {
+        "lockResourceId": {
+            "type": "string",
+            "value": "[extensionResourceId(resourceGroup().Id , 'Microsoft.Authorization/locks', parameters('lockName'))]"
+        }
+    }
+}
+```
 
 <a id="listkeys" />
 <a id="list" />
 
 ## <a name="list"></a>list*
 
-`list{Value}(resourceName or resourceIdentifier, apiVersion, functionValues)`
+```json
+list{Value}(resourceName or resourceIdentifier, apiVersion, functionValues)
+```
 
 Синтаксис для этой функции зависит от имени из списка операций. Каждая реализация возвращает значения для типа ресурса, который поддерживает операцию list. Имя операции должно начинаться с `list`. Наиболее распространенными вариантами применения являются `listKeys` и `listSecrets`. 
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательное значение | Type | Описание |
+| Параметр | Обязательно для заполнения | Тип | Описание |
 |:--- |:--- |:--- |:--- |
-| имя_ресурса или идентификатор_ресурса |Да |строка |Уникальный идентификатор ресурса. |
-| версия_API |Да |строка |Версия API для состояния среды выполнения ресурса. Как правило, указывается в формате **гггг-мм-дд**. |
+| имя_ресурса или идентификатор_ресурса |ДА |string |Уникальный идентификатор ресурса. |
+| версия_API |ДА |string |Версия API для состояния среды выполнения ресурса. Как правило, указывается в формате **гггг-мм-дд**. |
 | functionValues |Нет |object | Объект, содержащий значения для функции. Предоставляйте этот объект только для функций, которые поддерживают прием объекта с параметрами, например **listAccountSas** в учетной записи хранения. В этой статье показан пример передачи значения функции. | 
 
 ### <a name="valid-uses"></a>Допустимые варианты использования
@@ -262,16 +344,18 @@ ms.locfileid: "71827474"
 
 ## <a name="providers"></a>providers
 
-`providers(providerNamespace, [resourceType])`
+```json
+providers(providerNamespace, [resourceType])
+```
 
 Возвращает сведения о поставщике ресурсов и поддерживаемых типах ресурсов. Если тип ресурса не указан, функция возвращает все типы, поддерживаемые для поставщика ресурсов.
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательное значение | Type | Описание |
+| Параметр | Обязательно для заполнения | Тип | Описание |
 |:--- |:--- |:--- |:--- |
-| пространство_имен_поставщика |Да |строка |Пространство имен поставщика. |
-| resourceType |Нет |строка |Тип ресурса в указанном пространстве имен. |
+| пространство_имен_поставщика |ДА |string |Пространство имен поставщика. |
+| тип_ресурса |Нет |string |Тип ресурса в указанном пространстве имен. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -337,17 +421,19 @@ ms.locfileid: "71827474"
 
 ## <a name="reference"></a>reference
 
-`reference(resourceName or resourceIdentifier, [apiVersion], ['Full'])`
+```json
+reference(resourceName or resourceIdentifier, [apiVersion], ['Full'])
+```
 
 Возвращает объект, представляющий состояние среды выполнения ресурса.
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательное значение | Type | Описание |
+| Параметр | Обязательно для заполнения | Тип | Описание |
 |:--- |:--- |:--- |:--- |
-| имя_ресурса или идентификатор_ресурса |Да |строка |Имя или уникальный идентификатор ресурса. При указании ссылки на ресурс в текущем шаблоне укажите в качестве параметра только имя ресурса. При ссылке на ранее развернутый ресурс укажите идентификатор ресурса. |
-| apiVersion |Нет |строка |Версия API для указанного ресурса. Если ресурс не предоставляется в рамках того же шаблона, необходимо включить этот параметр. Как правило, указывается в формате **гггг-мм-дд**. Допустимые версии API для ресурса см. в разделе [Справочник по шаблонам](/azure/templates/). |
-| Full |Нет |строка |Значение, указывающее, следует ли возвращать полный объект ресурса. Если вы не укажете `'Full'`, возвращается только объект свойств ресурса. Полный объект включает такие значения, как идентификатор ресурса и расположение. |
+| имя_ресурса или идентификатор_ресурса |ДА |string |Имя или уникальный идентификатор ресурса. При указании ссылки на ресурс в текущем шаблоне укажите в качестве параметра только имя ресурса. При ссылке на ранее развернутый ресурс укажите идентификатор ресурса. |
+| версия_API |Нет |string |Версия API для указанного ресурса. Если ресурс не предоставляется в рамках того же шаблона, необходимо включить этот параметр. Как правило, указывается в формате **гггг-мм-дд**. Допустимые версии API для ресурса см. в разделе [Справочник по шаблонам](/azure/templates/). |
+| Full |Нет |string |Значение, указывающее, следует ли возвращать полный объект ресурса. Если вы не укажете `'Full'`, возвращается только объект свойств ресурса. Полный объект включает такие значения, как идентификатор ресурса и расположение. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -398,11 +484,11 @@ ms.locfileid: "71827474"
 
 ### <a name="valid-uses"></a>Допустимые варианты использования
 
-Эталонную функцию можно использовать только в свойствах определения ресурса и в разделе выходных данных шаблона или развертывания. При использовании с [итерацией свойства](resource-group-create-multiple.md#property-iteration)можно использовать функцию Reference для `input` , так как выражение назначается свойству ресурса. Его нельзя использовать с `count` , так как счетчик должен быть определен до разрешения функции Reference.
+Эталонную функцию можно использовать только в свойствах определения ресурса и в разделе выходных данных шаблона или развертывания. При использовании с [итерацией свойства](resource-group-create-multiple.md#property-iteration)можно использовать функцию reference для `input`, так как выражение назначается свойству ресурса. Его нельзя использовать с `count`, так как счетчик должен быть определен до разрешения функции Reference.
 
 Нельзя использовать функцию Reference в выходных данных [вложенного шаблона](resource-group-linked-templates.md#nested-template) для возврата ресурса, развернутого во вложенном шаблоне. Вместо этого используйте [связанный шаблон](resource-group-linked-templates.md#external-template).
 
-При использовании функции **Reference** в ресурсе, который условно развернут, функция вычисляется, даже если ресурс не развернут.  Если ссылочная функция ссылается на несуществующий ресурс, возникает ошибка. Используйте функцию **If** , чтобы убедиться, что функция вычисляется только при развертывании ресурса. См. [функцию if](resource-group-template-functions-logical.md#if) для примера шаблона, который использует оператор If и ссылку с условно развернутым ресурсом.
+При использовании функции **Reference** в ресурсе, который условно развернут, функция вычисляется, даже если ресурс не развернут.  Если **Ссылочная** функция ссылается на несуществующий ресурс, возникает ошибка. Используйте функцию **If** , чтобы убедиться, что функция вычисляется только при развертывании ресурса. См. [функцию if](resource-group-template-functions-logical.md#if) для примера шаблона, который использует оператор If и ссылку с условно развернутым ресурсом.
 
 ### <a name="implicit-dependency"></a>Неявная зависимость
 
@@ -432,7 +518,7 @@ ms.locfileid: "71827474"
 
 **{Resource-Provider-Namespace}/{Парент-ресаурце-типе}/{Парент-ресаурце-наме} [/{Чилд-ресаурце-типе}/{Чилд-ресаурце-наме}]**
 
-Пример:
+Пример.
 
 `Microsoft.Compute/virtualMachines/myVM/extensions/myExt` — правильно, `Microsoft.Compute/virtualMachines/extensions/myVM/myExt` — неправильно.
 
@@ -558,7 +644,9 @@ ms.locfileid: "71827474"
 
 ## <a name="resourcegroup"></a>resourceGroup
 
-`resourceGroup()`
+```json
+resourceGroup()
+```
 
 Возвращает объект, который представляет текущую группу ресурсов. 
 
@@ -635,30 +723,39 @@ ms.locfileid: "71827474"
 }
 ```
 
-## <a name="resourceid"></a>resourceId
+## <a name="resourceid"></a>ResourceId
 
-`resourceId([subscriptionId], [resourceGroupName], resourceType, resourceName1, [resourceName2], ...)`
+```json
+resourceId([subscriptionId], [resourceGroupName], resourceType, resourceName1, [resourceName2], ...)
+```
 
 Возвращает уникальный идентификатор ресурса. Используйте эту функцию в том случае, когда имя ресурса является неоднозначным или не было предоставлено в пределах того же шаблона. 
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательное значение | Type | Описание |
+| Параметр | Обязательно для заполнения | Тип | Описание |
 |:--- |:--- |:--- |:--- |
 | subscriptionId |Нет |строка (в формате GUID) |Значение по умолчанию — текущая подписка. Укажите это значение, если нужно получить ресурс из другой подписки. |
-| resourceGroupName |Нет |строка |Значение по умолчанию — текущая группа ресурсов. Укажите это значение, если нужно получить ресурс из другой группы ресурсов. |
-| resourceType |Да |строка |Тип ресурса, включая пространство имен поставщика ресурсов. |
-| имя_ресурса1 |Да |строка |Имя ресурса. |
-| имя_ресурса2 |Нет |строка |Сегмент имени следующего ресурса, если это необходимо. |
+| имя_группы_ресурсов |Нет |string |Значение по умолчанию — текущая группа ресурсов. Укажите это значение, если нужно получить ресурс из другой группы ресурсов. |
+| тип_ресурса |ДА |string |Тип ресурса, включая пространство имен поставщика ресурсов. |
+| имя_ресурса1 |ДА |string |Имя ресурса. |
+| имя_ресурса2 |Нет |string |Сегмент имени следующего ресурса, если это необходимо. |
 
 Продолжайте добавлять имена ресурсов в качестве параметров, если тип ресурса включает больше сегментов.
 
 ### <a name="return-value"></a>Возвращаемое значение
 
-Идентификатор возвращается в следующем формате:
+Идентификатор ресурса возвращается в следующем формате:
 
-**/субскриптионс/{субскриптионид}/ресаурцеграупс/{ресаурцеграупнаме}/провидерс/{ресаурцепровидернамеспаце}/{ресаурцетипе}/{ресаурценаме}**
+```json
+/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+```
 
+Чтобы получить идентификатор в других форматах, см.:
+
+* [екстенсионресаурцеид](#extensionresourceid)
+* [субскриптионресаурцеид](#subscriptionresourceid)
+* [тенантресаурцеид](#tenantresourceid)
 
 ### <a name="remarks"></a>Примечания
 
@@ -686,14 +783,6 @@ ms.locfileid: "71827474"
 
 ```json
 "[resourceId('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx', 'otherResourceGroup', 'Microsoft.Storage/storageAccounts','examplestorage')]"
-```
-
-При использовании с [развертыванием на уровне подписки](deploy-to-subscription.md) функция `resourceId()` может извлечь только идентификаторы ресурсов, развернутых на этом уровне. Например, вы можете получить идентификатор определения политики или роли, но не идентификатор учетной записи хранения. Для развертываний в группе ресурсов все происходит наоборот. Вы не можете получить идентификаторы ресурсов, развернутых на уровне подписки.
-
-Чтобы получить идентификатор ресурса на уровне подписки при развертывании в области подписки, выполните команду ниже:
-
-```json
-"[resourceId('Microsoft.Authorization/policyDefinitions', 'locationpolicy')]"
 ```
 
 Эта функция часто необходима при использовании учетной записи хранения или виртуальной сети в альтернативной группе ресурсов. В следующем примере показано, как ресурс из внешней группы ресурсов можно легко использовать:
@@ -772,16 +861,18 @@ ms.locfileid: "71827474"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Название | Type | Значение |
+| Name | Тип | Value |
 | ---- | ---- | ----- |
-| sameRGOutput | Строка, | /subscriptions/{ИД_текущей_подписки}/resourceGroups/examplegroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
-| differentRGOutput | Строка, | /subscriptions/{ИД_текущей_подписки}/resourceGroups/otherResourceGroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
-| differentSubOutput | Строка, | /subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/otherResourceGroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
-| nestedResourceOutput | Строка, | /subscriptions/{ИД_текущей_подписки}/resourceGroups/examplegroup/providers/Microsoft.SQL/servers/serverName/databases/databaseName |
+| sameRGOutput | Строка | /subscriptions/{ИД_текущей_подписки}/resourceGroups/examplegroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
+| differentRGOutput | Строка | /subscriptions/{ИД_текущей_подписки}/resourceGroups/otherResourceGroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
+| differentSubOutput | Строка | /subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/otherResourceGroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
+| nestedResourceOutput | Строка | /subscriptions/{ИД_текущей_подписки}/resourceGroups/examplegroup/providers/Microsoft.SQL/servers/serverName/databases/databaseName |
 
 ## <a name="subscription"></a>subscription
 
-`subscription()`
+```json
+subscription()
+```
 
 Возвращает сведения о подписке для текущего развертывания. 
 
@@ -816,7 +907,121 @@ ms.locfileid: "71827474"
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="subscriptionresourceid"></a>субскриптионресаурцеид
+
+```json
+subscriptionResourceId([subscriptionId], resourceType, resourceName1, [resourceName2], ...)
+```
+
+Возвращает уникальный идентификатор ресурса, развернутого на уровне подписки.
+
+### <a name="parameters"></a>Параметры
+
+| Параметр | Обязательно для заполнения | Тип | Описание |
+|:--- |:--- |:--- |:--- |
+| subscriptionId |Нет |строка (в формате GUID) |Значение по умолчанию — текущая подписка. Укажите это значение, если нужно получить ресурс из другой подписки. |
+| тип_ресурса |ДА |string |Тип ресурса, включая пространство имен поставщика ресурсов. |
+| имя_ресурса1 |ДА |string |Имя ресурса. |
+| имя_ресурса2 |Нет |string |Сегмент имени следующего ресурса, если это необходимо. |
+
+Продолжайте добавлять имена ресурсов в качестве параметров, если тип ресурса включает больше сегментов.
+
+### <a name="return-value"></a>Возвращаемое значение
+
+Идентификатор возвращается в следующем формате:
+
+```json
+/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+```
+
+### <a name="remarks"></a>Примечания
+
+Эта функция используется для получения идентификатора ресурса для ресурсов, которые [развертываются в подписке](deploy-to-subscription.md) , а не в группе ресурсов. Возвращенный идентификатор отличается от значения, возвращаемого функцией [resourceId](#resourceid) , не включая значение группы ресурсов.
+
+### <a name="subscriptionresourceid-example"></a>Пример Субскриптионресаурцеид
+
+Следующий шаблон назначает встроенную роль. Его можно развернуть либо в группе ресурсов, либо в подписке. Для получения идентификатора ресурса для встроенных ролей используется функция Субскриптионресаурцеид.
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "principalId": {
+            "type": "string",
+            "metadata": {
+                "description": "The principal to assign the role to"
+            }
+        },
+        "builtInRoleType": {
+            "type": "string",
+            "allowedValues": [
+                "Owner",
+                "Contributor",
+                "Reader"
+            ],
+            "metadata": {
+                "description": "Built-in role to assign"
+            }
+        },
+        "roleNameGuid": {
+            "type": "string",
+            "defaultValue": "[newGuid()]",
+            "metadata": {
+                "description": "A new GUID used to identify the role assignment"
+            }
+        }
+    },
+    "variables": {
+        "Owner": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '8e3af657-a8ff-443c-a75c-2fe8c4bcb635')]",
+        "Contributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b24988ac-6180-42a0-ab88-20f7382dd24c')]",
+        "Reader": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'acdd72a7-3385-48ef-bd42-f606fba81ae7')]"
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Authorization/roleAssignments",
+            "apiVersion": "2018-09-01-preview",
+            "name": "[parameters('roleNameGuid')]",
+            "properties": {
+                "roleDefinitionId": "[variables(parameters('builtInRoleType'))]",
+                "principalId": "[parameters('principalId')]"
+            }
+        }
+    ]
+}
+```
+
+## <a name="tenantresourceid"></a>тенантресаурцеид
+
+```json
+tenantResourceId(resourceType, resourceName1, [resourceName2], ...)
+```
+
+Возвращает уникальный идентификатор ресурса, развернутого на уровне клиента.
+
+### <a name="parameters"></a>Параметры
+
+| Параметр | Обязательно для заполнения | Тип | Описание |
+|:--- |:--- |:--- |:--- |
+| тип_ресурса |ДА |string |Тип ресурса, включая пространство имен поставщика ресурсов. |
+| имя_ресурса1 |ДА |string |Имя ресурса. |
+| имя_ресурса2 |Нет |string |Сегмент имени следующего ресурса, если это необходимо. |
+
+Продолжайте добавлять имена ресурсов в качестве параметров, если тип ресурса включает больше сегментов.
+
+### <a name="return-value"></a>Возвращаемое значение
+
+Идентификатор возвращается в следующем формате:
+
+```json
+/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+```
+
+### <a name="remarks"></a>Примечания
+
+Эта функция используется для получения идентификатора ресурса для ресурса, развернутого в клиенте. Возвращенный идентификатор отличается от значений, возвращаемых другими функциями ИДЕНТИФИКАТОРов ресурсов, не включая значения группы ресурсов или подписки.
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Описание разделов в шаблоне Azure Resource Manager см. в статье [Создание шаблонов Azure Resource Manager](resource-group-authoring-templates.md).
 * Инструкции по объединению нескольких шаблонов см. в статье [Использование связанных шаблонов в Azure Resource Manager](resource-group-linked-templates.md).

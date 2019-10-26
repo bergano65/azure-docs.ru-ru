@@ -14,12 +14,12 @@ ms.workload: iaas-sql-server
 ms.date: 08/05/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 05cd68c7be005a5b148b7d3e691c46a0d067b0c0
-ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
+ms.openlocfilehash: aac20034fb4a528e48d5b383f39205a952878539
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71262871"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72900695"
 ---
 # <a name="change-the-license-model-for-a-sql-server-virtual-machine-in-azure"></a>Изменение модели лицензирования для SQL Server виртуальной машины в Azure
 В этой статье описывается, как изменить модель лицензии для SQL Server виртуальной машины в Azure с помощью нового поставщика ресурсов виртуальной машины SQL ( **Microsoft. склвиртуалмачине**).
@@ -31,7 +31,7 @@ ms.locfileid: "71262871"
 
 Преимущество гибридного использования Azure позволяет использовать лицензии SQL Server с Software Assurance ("квалифицированная лицензия") на виртуальных машинах Azure. С Преимущество гибридного использования Azure клиенты не наставляются с оплатой за использование лицензии на SQL Server на виртуальной машине. Но они по-прежнему должны платить за стоимость базового облачного вычислений (то есть базового тарифа), хранилища и резервных копий. Кроме того, они должны платить за ввод-вывод, связанный с использованием служб (как применимо).
 
-В соответствии с условиями продукта Майкрософт: "Клиенты должны указать, что они используют базу данных SQL Azure (Управляемый экземпляр, Эластичный пул и отдельная база данных), фабрику данных Azure, SQL Server Integration Services или SQL Server виртуальные машины в Преимущество гибридного использования Azure для SQL Server при настройке рабочие нагрузки в Azure ".
+В соответствии с условиями продукта Майкрософт: "клиенты должны указать, что они используют базу данных SQL Azure (Управляемый экземпляр, Эластичный пул и отдельная база данных), фабрику данных Azure, SQL Server Integration Services или виртуальные машины SQL Server в Azure. Преимущество гибридного использования для SQL Server при настройке рабочих нагрузок в Azure ".
 
 Чтобы указать использование Преимущество гибридного использования Azure для SQL Server на виртуальной машине Azure и обеспечить соответствие, у вас есть три варианта:
 
@@ -41,7 +41,7 @@ ms.locfileid: "71262871"
 
 Тип лицензии SQL Server задается при подготовке виртуальной машины. Его можно изменить в любое время. Переключение между моделями лицензий не приводит к простою, не перезапускает виртуальную машину, не добавляет дополнительных затрат и вступает в силу немедленно. На самом деле, активация Преимущество гибридного использования Azure *сокращает* затраты.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для использования поставщика ресурсов виртуальной машины SQL требуется расширение IaaS SQL Server. Таким образом, вам потребуется следующее:
 - [Подписка Azure](https://azure.microsoft.com/free/).
@@ -51,7 +51,7 @@ ms.locfileid: "71262871"
 
 ## <a name="change-the-license-for-vms-already-registered-with-the-resource-provider"></a>Изменение лицензии для виртуальных машин, уже зарегистрированных в поставщике ресурсов 
 
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+# <a name="portaltabazure-portal"></a>[Microsoft Azure](#tab/azure-portal)
 
 [!INCLUDE [windows-virtual-machines-sql-use-new-management-blade](../../../../includes/windows-virtual-machines-sql-new-resource.md)]
 
@@ -65,7 +65,7 @@ ms.locfileid: "71262871"
 ![Преимущество гибридного использования Azure на портале](media/virtual-machines-windows-sql-ahb/ahb-in-portal.png)
 
 
-# <a name="azure-clitabazure-cli"></a>[Интерфейс командной строки Azure](#tab/azure-cli)
+# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Для изменения модели лицензии можно использовать Azure CLI.  
 
@@ -149,12 +149,12 @@ $SqlVm | Set-AzResource -Force
 
 ## <a name="known-errors"></a>Известные ошибки
 
-### <a name="the-resource-microsoftsqlvirtualmachinesqlvirtualmachinesresource-group-under-resource-group-resource-group-was-not-found"></a>Ресурс "Microsoft. склвиртуалмачине/склвиртуалмачинес/\<Resource-Group >" в группе ресурсов "\<Resource-Group >" не найден.
+### <a name="the-resource-microsoftsqlvirtualmachinesqlvirtualmachinesresource-group-under-resource-group-resource-group-was-not-found"></a>Ресурс "Microsoft. Склвиртуалмачине/Склвиртуалмачинес/\<Resource-Group >" в группе ресурсов "\<ресурс-группа >" не найден.
 Эта ошибка возникает при попытке изменить модель лицензии на SQL Server виртуальной машине, которая не зарегистрирована в поставщике ресурсов виртуальной машины SQL:
 
 `The Resource 'Microsoft.SqlVirtualMachine/SqlVirtualMachines/\<resource-group>' under resource group '\<resource-group>' was not found. The property 'sqlServerLicenseType' cannot be found on this object. Verify that the property exists and can be set.`
 
-Вам потребуется зарегистрировать поставщик ресурсов в [подписке](virtual-machines-windows-sql-register-with-resource-provider.md#register-the-sql-vm-resource-provider-with-a-subscription), а затем [зарегистрировать SQL Server виртуальную машину с помощью поставщика ресурсов](virtual-machines-windows-sql-register-with-resource-provider.md). 
+Вам потребуется зарегистрировать подписку в поставщике ресурсов, а затем [зарегистрировать SQL Server виртуальную машину с помощью поставщика ресурсов](virtual-machines-windows-sql-register-with-resource-provider.md). 
 
 ### <a name="cannot-validate-argument-on-parameter-sku"></a>Не удается проверить аргумент в параметре "Sku"
 Эта ошибка может возникать при попытке изменить модель лицензии SQL Server виртуальной машины с помощью Azure PowerShell версий, более поздних, чем 4,0:
@@ -176,7 +176,7 @@ $SqlVm | Set-AzResource -Force
   Get-Module -ListAvailable -Name Azure -Refresh
   ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в следующих статьях: 
 

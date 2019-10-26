@@ -2,18 +2,18 @@
 title: Начало работы с интерфейсом командной строки Azure Service Fabric
 description: Сведения об использовании интерфейса командной строки Azure Service Fabric. Узнайте, как подключиться к кластеру и как управлять приложениями.
 services: service-fabric
-author: Christina-Kang
+author: jeffj6123
 manager: chackdan
 ms.service: service-fabric
 ms.topic: conceptual
-ms.date: 12/06/2018
-ms.author: bikang
-ms.openlocfilehash: d5b6f183a59e3f47aa5867b5e09e06541a6a67db
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 9/17/2019
+ms.author: jejarry
+ms.openlocfilehash: e0146504bd06a3c56de8113cc59c9eedd375d06f
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60803243"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72901368"
 ---
 # <a name="azure-service-fabric-cli"></a>Интерфейс командной строки Azure Service Fabric
 
@@ -33,11 +33,12 @@ ms.locfileid: "60803243"
 
 | Версия интерфейса командной строки   | Поддерживаемая версия среды выполнения |
 |---------------|---------------------------|
-| Последняя (~7)  | Последняя (~6.4)            |
+| Последняя (~ = 8)  | Последняя (~ = 6,5)            |
+| 7.1.0         | 6.4                       |
 | 6.0.0         | 6.3                       |
 | 5.0.0         | 6.2                       |
 | 4.0.0         | 6.1                       |
-| 3.0.0         | 6.0                       |
+| 3.0.0         | 6,0                       |
 | 1.1.0         | 5.6, 5.7                  |
 
 При необходимости можно указать целевую версию интерфейса командной строки для установки, добавив к команде `pip install` суффикс `==<version>`. Например, для версии 1.1.0 синтаксис будет выглядеть следующим образом:
@@ -127,7 +128,7 @@ sudo pip3 install sfctl
 Чтобы протестировать установку, выполните действия из раздела **Подсистема Ubuntu и Windows для Linux**.
 
 <a name = "cli-mac"></a>
-### <a name="macos"></a>MacOS
+### <a name="macos"></a>macOS
 
 Для MacOS мы рекомендуем использовать [диспетчер пакетов HomeBrew](https://brew.sh). Если диспетчер HomeBrew еще не установлен, установите его, выполнив следующую команду:
 

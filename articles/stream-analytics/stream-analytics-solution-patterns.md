@@ -1,18 +1,18 @@
 ---
 title: Шаблоны решений Azure Stream Analytics
-description: Узнайте о различных стандартных шаблонах решений для Azure Stream Analytics.
+description: Узнайте о стандартных шаблонах решений для Azure Stream Analytics, таких как панели мониторинга, сообщения о событиях, хранилища данных, улучшение эталонных данных и мониторинг.
 author: zhongc
 ms.author: zhongc
 ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 06/21/2019
-ms.openlocfilehash: cbc9ffe9510cf0888e8d8b62ea112b6517117eed
-ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
+ms.openlocfilehash: 2d936a538a54edce9e3f13ea7865d57b8243c4a5
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70173042"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72901676"
 ---
 # <a name="azure-stream-analytics-solution-patterns"></a>Шаблоны решений Azure Stream Analytics
 
@@ -183,7 +183,7 @@ SQL не является хранилищем данных с высокой п
 
 Ключом является проектирование системы в шаблонах с композицией, поэтому каждая подсистема может быть построена, протестирована, обновлена и восстановлена независимо друг от друга.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь вы узнали о различных шаблонах решений, использующих Azure Stream Analytics. Теперь вы можете вникнуть в детали и создать свое первое задание Stream Analytics:
 

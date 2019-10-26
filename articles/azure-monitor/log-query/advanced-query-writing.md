@@ -1,29 +1,23 @@
 ---
-title: Дополнительные запросы в Azure Monitor | Документация Майкрософт
+title: Расширенные запросы в Azure Monitor | Документация Майкрософт
 description: В этой статье содержатся сведения об использовании портала аналитики для записи запросов в Azure Monitor.
-services: log-analytics
-documentationcenter: ''
-author: bwren
-manager: carmonm
-editor: ''
-ms.assetid: ''
-ms.service: log-analytics
-ms.workload: na
-ms.tgt_pltfrm: na
+ms.service: azure-monitor
+ms.subservice: logs
 ms.topic: conceptual
-ms.date: 11/15/2018
+author: bwren
 ms.author: bwren
-ms.openlocfilehash: 65713ed9c2d0635e776a7a7e5f205b6d55438ed4
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.date: 11/15/2018
+ms.openlocfilehash: 8895224bef037c8c3f8b28a6085359837478d924
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60589593"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72894504"
 ---
 # <a name="writing-advanced-queries-in-azure-monitor"></a>Составление расширенных запросов в Azure Monitor
 
 > [!NOTE]
-> Следует выполнить [приступить к работе с Azure Monitor Log Analytics](get-started-portal.md) и [начало работы с запросами](get-started-queries.md) перед завершением этого занятия.
+> Перед выполнением этого занятия необходимо завершить [работу с Azure Monitor log Analytics](get-started-portal.md) и [приступить к работе с запросами](get-started-queries.md) .
 
 [!INCLUDE [log-analytics-demo-environment](../../../includes/log-analytics-demo-environment.md)]
 
@@ -76,7 +70,7 @@ Event
 ```
 
 ## <a name="print"></a>Оператор print
-`print` возвращает таблицу с одним столбцом и одной строкой, содержащей результаты вычисления. Это часто используется в случаях, когда необходимо простых вычислений. Например, чтобы найти текущее время в формате PST и добавить столбец с временем в формате EST.
+`print` возвращает таблицу с одним столбцом и одной строкой, содержащей результаты вычисления. Это часто используется в случаях, когда требуется простое вычисление. Например, чтобы найти текущее время в формате PST и добавить столбец с временем в формате EST.
 
 ```Kusto
 print nowPst = now()-8h

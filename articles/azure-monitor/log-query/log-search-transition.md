@@ -1,23 +1,18 @@
 ---
 title: Просмотр и анализ данных в Azure Log Analytics | Документация Майкрософт
 description: Помощь для пользователей, переходящих с поиска по журналам Log Analytics на использование запросов журналов Azure Monitor.
-services: log-analytics
-documentationcenter: ''
-author: bwren
-manager: carmonm
-editor: ''
-ms.service: log-analytics
-ms.workload: na
-ms.tgt_pltfrm: na
+ms.service: azure-monitor
+ms.subservice: logs
 ms.topic: conceptual
-ms.date: 01/16/2019
+author: bwren
 ms.author: bwren
-ms.openlocfilehash: dc3a754bd1a9f689f4b24b9ee2c1e4cbc0611684
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.date: 01/16/2019
+ms.openlocfilehash: b738d532cb458506ca50a07dea11687040f99e02
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60519901"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72900329"
 ---
 # <a name="transition-from-log-analytics-log-search-to-azure-monitor-logs"></a>Переход с поиска по журналам Log Analytics на анализ журналов Azure Monitor
 Поиск по журналам в Log Analytics недавно был заменен новым интерфейсом для анализа журналов Azure Monitor. Страница поиска по журналам по-прежнему доступна через пункт меню **Журналы (классические)** на странице **Рабочие области Log Analytics** портала Azure, но она будет удалена 15 февраля 2019 г. В этой статье описываются различия между двумя интерфейсами, чтобы помочь вам перейти с поиска по журналам. 

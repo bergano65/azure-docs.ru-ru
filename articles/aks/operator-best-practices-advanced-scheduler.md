@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 11/26/2018
 ms.author: mlearned
-ms.openlocfilehash: a31f839b4bad79a52f5cab386d17e3084314784b
-ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
+ms.openlocfilehash: f260e019ffa6eb89e8a2c1e17d2bf239e74290c2
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72026106"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72900107"
 ---
 # <a name="best-practices-for-advanced-scheduler-features-in-azure-kubernetes-service-aks"></a>Рекомендации по расширенным возможностям планировщика в службе Azure Kubernetes (AKS)
 
@@ -179,9 +179,9 @@ spec:
 | веб-приложение-1   | веб-приложение-2   | веб-приложение-3   |
 | кэш-1    | кэш-2    | кэш-3    |
 
-Это пример более сложного развертывания, чем в случае использования селекторов узла или подобия узлов. Такое развертывание позволяет управлять тем, как Kubernetes назначает модули pod на узлы, и логически изолировать ресурсы. Полный пример этого веб-приложения с примером использования кэша Azure для Redis см. в разделе Совместное [Размещение модулей Pod на одном узле][k8s-pod-affinity].
+Это пример более сложного развертывания, чем в случае использования селекторов узла или подобия узлов. Такое развертывание позволяет управлять тем, как Kubernetes назначает модули pod на узлы, и логически изолировать ресурсы. Полный пример этого веб-приложения с примером использования кэша Azure для Redis см. в разделе [совместное размещение модулей Pod на одном узле][k8s-pod-affinity].
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Эта статья посвящена расширенным возможностям планировщика Kubernetes. Дополнительную информацию об операциях кластера в AKS см. в рекомендациях на такие темы:
 

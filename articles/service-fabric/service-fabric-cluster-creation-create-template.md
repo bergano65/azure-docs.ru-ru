@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 08/16/2018
 ms.author: atsenthi
-ms.openlocfilehash: 9030a1d9d0b1e3f9b84f6636b0d3d758ab4cfa3b
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: 4a2fe8238a1ac6f668450aca4e2fd6d2b4ba04a5
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68599988"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72901546"
 ---
 # <a name="create-a-service-fabric-cluster-resource-manager-template"></a>Создание шаблона Resource Manager для кластера Service Fabric
 
@@ -40,7 +40,7 @@ ms.locfileid: "68599988"
 > [!NOTE]
 > Для национальных облаков (Azure для государственных организаций, Azure для Китая и Azure для Германии) также необходимо добавить в шаблон следующие параметры `fabricSettings`: `AADLoginEndpoint`, `AADTokenEndpointFormat` и `AADCertEndpointFormat`.
 
-## <a name="add-certificates"></a>Добавить сертификаты
+## <a name="add-certificates"></a>Добавление сертификатов
 Сертификаты добавляются в шаблон Resource Manager кластера с помощью ссылок на хранилище ключей, которое содержит ключи сертификата. Добавьте эти параметры и значения хранилища ключей в файл параметров шаблона Resource Manager (*azuredeploy.parameters.json*).
 
 ### <a name="add-all-certificates-to-the-virtual-machine-scale-set-osprofile"></a>Добавление всех сертификатов в osProfile набора масштабирования виртуальных машин
@@ -146,7 +146,7 @@ ms.locfileid: "68599988"
 Добавьте конфигурации Azure AD в шаблон Resource Manager кластера с помощью ссылок на хранилище ключей, которое содержит ключи сертификата. Добавьте эти параметры и значения Azure AD в файл параметров шаблона Resource Manager (*azuredeploy.parameters.json*). 
 
 > [!NOTE]
-> Перед созданием кластера необходимо создать клиенты и пользователей Azure AD.  Дополнительные сведения см.в статье [Set up Azure Active Directory for client authentication](service-fabric-cluster-creation-setup-aad.md) (Настройка Azure AD для проверки подлинности клиентов).
+> В Linux клиенты и пользователи Azure AD должны быть созданы перед созданием кластера.  Дополнительные сведения см.в статье [Set up Azure Active Directory for client authentication](service-fabric-cluster-creation-setup-aad.md) (Настройка Azure AD для проверки подлинности клиентов).
 
 ```json
 {
@@ -258,7 +258,7 @@ Test-AzResourceGroupDeployment -ResourceGroupName "myresourcegroup" -TemplateFil
 
 ![Сопоставление зависимостей Resource Manager][cluster-security-arm-dependency-map]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда кластер обладает шаблоном, можно [развернуть его в Azure](service-fabric-cluster-creation-via-arm.md).  Перед развертыванием рабочего кластера необходимо ознакомиться со статьей [Контрольный список готовности рабочей среды](service-fabric-production-readiness-checklist.md).
 
 Дополнительные сведения о синтаксисе и свойствах JSON для ресурсов, развертываемых в этой статье:

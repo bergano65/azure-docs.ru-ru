@@ -1,26 +1,20 @@
 ---
 title: Отладка приложений с помощью Azure Application Insights в Visual Studio |Документы Майкрософт
 description: Анализ производительности веб-приложения и диагностика во время отладки и в рабочей среде.
-services: application-insights
-documentationcenter: .net
-author: NumberByColors
-manager: carmonm
-ms.assetid: 2059802b-1131-477e-a7b4-5f70fb53f974
-ms.service: application-insights
-ms.custom: vs-azure
-ms.workload: azure-vs
-ms.tgt_pltfrm: ibiza
+ms.service: azure-monitor
+ms.subservice: application-insights
 ms.topic: conceptual
-ms.date: 07/07/2017
-ms.pm_owner: daviste;NumberByColors
-ms.reviewer: mbullwin
+author: NumberByColors
 ms.author: daviste
-ms.openlocfilehash: 1b2f429129c0bb9098f4f5029cb07ce06bc5db13
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 07/07/2017
+ms.reviewer: mbullwin
+ms.custom: vs-azure
+ms.openlocfilehash: 32596b058918d3a8859dc356f8f0b1223b7f755a
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66255120"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72899275"
 ---
 # <a name="debug-your-applications-with-azure-application-insights-in-visual-studio"></a>Отладка приложений с помощью Azure Application Insights в Visual Studio
 В Visual Studio 2015 и более поздних версиях можно анализировать производительность веб-приложения ASP.NET и диагностировать проблемы во время отладки и в рабочей среде с помощью телеметрии из [Azure Application Insights](../../azure-monitor/app/app-insights-overview.md).
@@ -77,14 +71,14 @@ ms.locfileid: "66255120"
 
 [Телеметрия Application Insights в Visual Studio CodeLens](../../azure-monitor/app/visual-studio-codelens.md)
 
-## <a name="trends"></a>Тренды
+## <a name="trends"></a>Тенденции
 Тренды — это средство для визуализации того, как изменяется поведение приложения со временем. 
 
 Нажмите кнопку **Обзор трендов телеметрии** на панели инструментов Application Insights или в окне поиска Application Insights. Выберите один из пяти стандартных запросов, чтобы приступить к работе. Анализировать разные наборы данных можно на основе типов данных телеметрии, диапазонов времени и других свойств. 
 
 Чтобы найти аномалии в данных, выберите один из вариантов аномалий в раскрывающемся списке "Тип представления". Параметры фильтрации в нижней части окна позволяют легко находить конкретные подмножества данных телеметрии.
 
-![Тренды](./media/visual-studio/51.png)
+![Тенденции](./media/visual-studio/51.png)
 
 [Дополнительные сведения о тенденциях](../../azure-monitor/app/visual-studio-trends.md)
 
@@ -98,7 +92,7 @@ ms.locfileid: "66255120"
 * *Сначала мы полностью настроили Application Insights для отправки данных телеметрии на портал. Но теперь нужно, чтобы данные телеметрии отображались только в Visual Studio.*
   
   * В параметрах окна поиска можно включить поиск локальной диагностики, который будет выполняться, даже если ваше приложение отправляет данные телеметрии на портал.
-  * Чтобы остановить отправку данных телеметрии на портал, закомментируйте строку `<instrumentationkey>...` в файле ApplicationInsights.config. Когда данные телеметрии будут готовы к отправке на портал, раскомментируйте ее.
+  * Чтобы отключить отправку данных телеметрии на портал, закомментируйте строку `<instrumentationkey>...` из ApplicationInsights. config. Когда вы будете готовы отправить данные телеметрии на портал, раскомментируйте его.
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

@@ -14,23 +14,25 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 6/28/2019
 ms.author: atsenthi
-ms.openlocfilehash: 6c195357c4a037534307571a53589b2ae861d88b
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.openlocfilehash: 77814d04daca0ebb649ffa2e8ff46becddec4f0f
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "67486020"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72901503"
 ---
 # <a name="set-up-azure-active-directory-for-client-authentication"></a>Настройка Azure Active Directory для проверки подлинности клиента
 
-Для кластеров, работающих в Azure, рекомендуется использовать Azure Active Directory (Azure AD), чтобы обеспечить безопасность доступа к конечным точкам управления.  В этой статье описывается, как настроить Azure AD для проверки подлинности клиентов для кластера Service Fabric и что нужно сделать перед [созданием кластера](service-fabric-cluster-creation-via-arm.md).  Azure AD позволяет организациям (известным как клиенты) управлять доступом пользователей к приложениям. Приложения можно разделить на две группы: те, в которых есть пользовательский веб-интерфейс входа в систему, и те, в которых вход выполняется с помощью собственного клиентского приложения. 
+Для кластеров, работающих в Azure, рекомендуется использовать Azure Active Directory (Azure AD), чтобы обеспечить безопасность доступа к конечным точкам управления. В этой статье описывается, как настроить проверку подлинности клиентов для Service Fabric кластера в Azure AD.
 
-Кластеры Service Fabric предлагают несколько точек входа для управления функциями кластеров, включая веб-интерфейс [Service Fabric Explorer][service-fabric-visualizing-your-cluster] и [Visual Studio][service-fabric-manage-application-in-visual-studio]. В итоге вы создаете два приложения Azure AD для управления доступом к кластеру: одно веб-приложение и одно собственное приложение.  Создав приложения, сопоставьте пользователей с ролями, разрешающими доступ только для чтения и администрирования.
+В этой статье термин "приложение" будет использоваться для обращения к [Azure Active Directoryным приложениям](../active-directory/develop/developer-glossary.md#client-application), а не Service Fabricным приложениям. При необходимости это различие будет установлено. Azure AD позволяет организациям (известным как клиенты) управлять доступом пользователей к приложениям.
+
+Кластеры Service Fabric предлагают несколько точек входа для управления функциями кластеров, включая веб-интерфейс [Service Fabric Explorer][service-fabric-visualizing-your-cluster] и [Visual Studio][service-fabric-manage-application-in-visual-studio]. В результате вы создадите два приложения Azure AD для управления доступом к кластеру: одно веб-приложение и одно собственное приложение. После создания приложений вы назначите пользователям роли "только для чтения" и "Администраторы".
 
 > [!NOTE]
-> Перед созданием кластера необходимо выполнить следующие действия. Поскольку в сценариях предварительно заданы имена кластеров и конечные точки, эти имена нужно выбрать заблаговременно, при этом они должны отличаться от созданных ранее имен.
+> В Linux перед созданием кластера необходимо выполнить следующие действия. В Windows вы также можете [настроить аутентификацию Azure AD для существующего кластера](https://github.com/Azure/Service-Fabric-Troubleshooting-Guides/blob/master/Security/Configure%20Azure%20Active%20Directory%20Authentication%20for%20Existing%20Cluster.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Технические условия
 В этой статье предполагается, что клиент уже создан. Если это не так, обратитесь к статье [Краткое руководство. Настройка среды разработки][active-directory-howto-tenant].
 
 Чтобы упростить некоторые шаги по настройке Azure AD с кластером Service Fabric, мы создали набор сценариев Windows PowerShell.
@@ -42,7 +44,7 @@ ms.locfileid: "67486020"
 
 Мы будем использовать эти сценарии для создания двух приложений Azure AD для управления доступом к кластеру: одно веб-приложение и одно собственное приложение. Создав приложения для представления кластера, вы создадите пользователей для [ролей, поддерживаемых Service Fabric](service-fabric-cluster-security-roles.md): только для чтения и для администратора.
 
-Запустите `SetupApplications.ps1` и укажите идентификатор клиента, имя кластера и URL-адрес ответа веб-приложения в качестве параметров.  Укажите также имена пользователей и пароли для пользователей. Пример:
+Запустите `SetupApplications.ps1` и укажите идентификатор клиента, имя кластера и URL-адрес ответа веб-приложения в качестве параметров.  Укажите также имена пользователей и пароли для пользователей. Пример.
 
 ```powershell
 $Configobj = .\SetupApplications.ps1 -TenantId '0e3d2646-78b3-4711-b8be-74a381d9890c' -ClusterName 'mysftestcluster' -WebApplicationReplyUrl 'https://mysftestcluster.eastus.cloudapp.azure.com:19080/Explorer/index.html' -AddResourceAccess
@@ -57,7 +59,7 @@ $Configobj = .\SetupApplications.ps1 -TenantId '0e3d2646-78b3-4711-b8be-74a381d9
 
 Значение *ClusterName* используется в качестве префикса для приложений Azure AD, создаваемых сценарием. Точное совпадение с именем реального кластера не требуется. Оно предназначено только для упрощения сопоставления артефактов Azure AD с кластером Service Fabric, с которым они используются.
 
-*WebApplicationReplyUrl* является конечной точкой по умолчанию, которую Azure AD возвращает пользователям после завершения ими входа. Эту конечную точку следует назначить конечной точкой Service Fabric Explorer для кластера, по умолчанию это:
+*WebApplicationReplyUrl* является конечной точкой по умолчанию, которую Azure AD возвращает пользователям после завершения ими входа. Задайте эту конечную точку в качестве конечной точки Service Fabric Explorer кластера. Если вы создаете приложения Azure AD для представления существующего кластера, убедитесь, что этот URL-адрес соответствует конечной точке существующего кластера. Если вы создаете приложения для нового кластера, спланируйте конечную точку кластера и убедитесь, что не используете конечную точку существующего кластера. По умолчанию конечной точкой Service Fabric Explorer является:
 
 https://&lt;cluster_domain&gt;:19080/Explorer
 
@@ -66,7 +68,7 @@ https://&lt;cluster_domain&gt;:19080/Explorer
    * *имя_кластера*\_Кластер
    * *имя_кластера*\_Клиент
 
-Этот сценарий выводит код JSON для шаблона Azure Resource Manager, который вы будете использовать в следующем разделе для [создания кластера](service-fabric-cluster-creation-create-template.md#add-azure-ad-configuration-to-use-azure-ad-for-client-access). Рекомендуем пока не закрывать окно PowerShell.
+Сценарий печатает JSON, необходимый для шаблона Azure Resource Manager, при [создании кластера с поддержкой AAD](service-fabric-cluster-creation-create-template.md#add-azure-ad-configuration-to-use-azure-ad-for-client-access), поэтому рекомендуется открыть окно PowerShell.
 
 ```json
 "azureActiveDirectory": {
@@ -91,16 +93,16 @@ https://&lt;cluster_domain&gt;:19080/Explorer
 #### <a name="solution"></a>Решение
 Следуйте инструкциям по настройке Azure AD и назначению ролей пользователей. Кроме того, рекомендуется включить параметр "Для доступа к приложению требуется назначение пользователей", как делает сценарий `SetupApplications.ps1`.
 
-### <a name="connection-with-powershell-fails-with-an-error-the-specified-credentials-are-invalid"></a>Подключение с помощью PowerShell завершается с ошибкой: "Указаны недопустимые учетные данные"
+### <a name="connection-with-powershell-fails-with-an-error-the-specified-credentials-are-invalid"></a>Подключение с помощью PowerShell завершается ошибкой: "Указанные учетные данные недействительны".
 #### <a name="problem"></a>Проблема
-После успешного входа в Azure AD при использовании PowerShell для подключения к кластеру с помощью режима безопасности AzureActiveDirectory подключение завершается с ошибкой: "Указанные учетные данные недействительны".
+После успешного входа в Azure AD при использовании PowerShell для подключения к кластеру с помощью режима безопасности AzureActiveDirectory возникла ошибка, подключение завершается с ошибкой: "Указанные учетные данные недействительны".
 
 #### <a name="solution"></a>Решение
 Решение этой проблемы такое же, как и в предыдущем случае.
 
 ### <a name="service-fabric-explorer-returns-a-failure-when-you-sign-in-aadsts50011"></a>Service Fabric Explorer при входе возвращает ошибку "AADSTS50011"
 #### <a name="problem"></a>Проблема
-При попытке входа в Azure AD в Service Fabric Explorer страница возвращает ошибку: "AADSTS50011: адрес ответа &lt;URL-адрес&gt; не совпадает с настроенными адресами ответа приложения: &lt;GUID&gt;".
+При попытке входа на страницу Azure AD в Service Fabric Explorer выдается ошибка: "AADSTS50011: адрес ответа &lt;URL-адрес&gt; не совпадает с адресами ответа, настроенными для приложения: &lt;guid&gt;".
 
 ![Несовпадение адреса ответа в Service Fabric Explorer][sfx-reply-address-not-match]
 
@@ -125,9 +127,9 @@ Connect-ServiceFabricCluster -ConnectionEndpoint <endpoint> -KeepAliveIntervalIn
 Да. Не забудьте добавить URL-адрес Service Fabric Explorer в (веб-)приложение кластера. В противном случае — Service Fabric Explorer не работает.
 
 ### <a name="why-do-i-still-need-a-server-certificate-while-azure-ad-is-enabled"></a>Почему мне все еще нужен сертификат сервера при включенном Azure AD?
-FabricClient и FabricGateway выполняют взаимную аутентификацию. Во время аутентификации Azure AD интеграция Azure AD предоставляет удостоверение клиента серверу и для аутентификации сервера используется сертификат сервера. Дополнительные сведения о Service Fabric сертификатах см. в разделе [сертификаты X. 509 и Service Fabric][x509-certificates-and-service-fabric].
+FabricClient и FabricGateway выполняют взаимную аутентификацию. Во время проверки подлинности Azure AD интеграция Azure AD предоставляет серверу удостоверение клиента, а сертификат сервера используется клиентом для проверки подлинности сервера. Дополнительные сведения о Service Fabric сертификатах см. в разделе [сертификаты X. 509 и Service Fabric][x509-certificates-and-service-fabric].
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 После настройки приложений Azure Active Directory и ролей для пользователей [настройте и разверните кластер](service-fabric-cluster-creation-via-arm.md).
 
 

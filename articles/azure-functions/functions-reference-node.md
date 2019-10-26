@@ -12,12 +12,12 @@ ms.devlang: nodejs
 ms.topic: reference
 ms.date: 02/24/2019
 ms.author: glenga
-ms.openlocfilehash: 86bacbe22ce23fc4b0355374d81a96310e59178a
-ms.sourcegitcommit: 1c2659ab26619658799442a6e7604f3c66307a89
+ms.openlocfilehash: fbecb1d02c2d262487683cb493db2d5a8f0d1c3e
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72255015"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72898941"
 ---
 # <a name="azure-functions-javascript-developer-guide"></a>Руководство разработчика JavaScript для Функций Azure
 
@@ -52,7 +52,7 @@ FunctionsProject
 
 В корневой папке проекта существует общий файл [host.json](functions-host-json.md), который может использоваться для настройки приложения-функции. У каждой функции есть папка с собственным файлом кода (JS) и файлом конфигурации привязки (function.json). Имя родительского каталога файла `function.json` всегда является именем этой функции.
 
-Расширения привязки, необходимые в [версии 2.x](functions-versions.md) среды выполнения функций, определены в файле `extensions.csproj` с фактическими файлами библиотеки в папке `bin`. При локальной разработке необходимо [зарегистрировать расширения привязки](./functions-bindings-register.md#extension-bundles). При разработке функций на портале Azure эта регистрация выполняется автоматически.
+Расширения привязки, необходимые в [версии 2.x](functions-versions.md) среды выполнения Функций, определены в файле `extensions.csproj` с фактическими файлами библиотеки в папке `bin`. При локальной разработке необходимо [зарегистрировать расширения привязки](./functions-bindings-register.md#extension-bundles). При разработке функций на портале Azure эта регистрация выполняется автоматически.
 
 ## <a name="exporting-a-function"></a>Экспорт функции
 
@@ -60,7 +60,7 @@ FunctionsProject
 
 По умолчанию среда выполнения Функций ищет функцию в файле `index.js`, где `index.js` использует тот же родительский каталог, что и соответствующий файл `function.json`. В стандартном случае экспортированная функция должна быть единственным экземпляром экспорта из соответствующего файла (экспорта с именем `run` или `index`). Чтобы настроить расположение файла и имя экспорта функции, ознакомьтесь с разделом ниже о [настройке точки входа функции](functions-reference-node.md#configure-function-entry-point).
 
-Экспортированной функции передается число аргументов при выполнении. Первый аргумент, который она всегда принимает, — это объект `context`. Если функция является синхронной (не возвращает обещание), необходимо передать объект `context`, так как для правильного использования требуется вызов `context.done`.
+Экспортированной функции передается число аргументов при выполнении. Первый аргумент, который она всегда принимает, — это объект `context`. Если функция является синхронной (не возвращает обещание), необходимо передать `context` объект, так как для правильного использования требуется вызов `context.done`.
 
 ```javascript
 // You should include context, other arguments are optional
@@ -110,7 +110,7 @@ module.exports = async function (context, req) {
 
 ### <a name="inputs"></a>Входные данные
 Входные данные в Функциях Azure делятся на две категории: входные данные от триггера и дополнительные входные данных. Привязки триггера и другие привязки для ввода (привязки `direction === "in"`) могут считываться функцией тремя способами.
- - **_[Рекомендуется.]_ Как параметры, передаваемые функции.** Они передаются в функцию в том же порядке, в каком они определены в файле *function.json*. Свойство `name`, определенное в *Function. JSON* , не обязано совпадать с именем параметра, хотя это должно быть.
+ - **_[Рекомендуется.]_ Как параметры, передаваемые функции.** Они передаются в функцию в том же порядке, в каком они определены в файле *function.json*. Свойство `name`, определенное в *Function. JSON* , не обязано совпадать с именем параметра, хотя оно должно.
  
    ```javascript
    module.exports = async function(context, myTrigger, myInput, myOtherInput) { ... };
@@ -204,7 +204,7 @@ module.exports = function(ctx) {
 context.bindings
 ```
 
-Возвращает именованный объект, используемый для чтения или назначения данных привязки. Доступ к данным входных и триггеров можно получить, читая свойства `context.bindings`. Данные выходной привязки могут быть назначены путем добавления данных в `context.bindings`.
+Возвращает именованный объект, используемый для чтения или назначения данных привязки. Доступ к данным входных и триггеров можно получить, читая свойства `context.bindings`. Данные выходной привязки могут быть назначены путем добавления данных в `context.bindings`
 
 Например, следующие определения привязки в function.json позволяют вам получить доступ к содержимому очереди из `context.bindings.myInput` и назначить выходные данные очереди, используя `context.bindings.myOutput`.
 
@@ -370,7 +370,7 @@ context.log('Request Headers = ', JSON.stringify(req.headers));
 | _body_    | Объект, содержащий текст ответа.         |
 | _headers_ | Объект, содержащий заголовок ответа.             |
 | _isRaw_   | Указывает, что форматирование пропускается для ответа.    |
-| _status_  | Код состояния HTTP ответа.                     |
+| _состояние_  | Код состояния HTTP ответа.                     |
 
 ### <a name="accessing-the-request-and-response"></a>Доступ к запросу и ответу 
 
@@ -399,7 +399,7 @@ context.log('Request Headers = ', JSON.stringify(req.headers));
     ```
 + **_[Только ответ.]_ Путем вызова `context.res.send(body?: any)`.** HTTP-ответ создается с входными данными `body` в качестве текста ответа. `context.done()` вызывается неявным образом.
 
-+ **_[Только ответ.]_ Путем вызова `context.done()`.** Специальный тип привязки HTTP возвращает ответ, который передается в метод `context.done()`. Следующая привязка вывода HTTP определяет параметр вывода `$return`:
++ **_[Только ответ.]_ Путем вызова `context.done()`.** Специальный тип привязки HTTP возвращает ответ, который передается методу `context.done()`. Следующая привязка вывода HTTP определяет параметр вывода `$return`:
 
     ```json
     {
@@ -465,7 +465,7 @@ module.exports = function(context) {
 
 ## <a name="environment-variables"></a>Переменные среды
 
-В Функциях [параметры приложения](functions-app-settings.md), такие как строки подключения службы, доступны в виде переменных среды во время выполнения. Вы можете получить доступ к этим параметрам, используя `process.env`, как показано здесь во втором и третьем вызовах `context.log()`, где заносить переменные среды `AzureWebJobsStorage` и `WEBSITE_SITE_NAME`:
+В Функциях [параметры приложения](functions-app-settings.md), такие как строки подключения службы, доступны в виде переменных среды во время выполнения. Вы можете получить доступ к этим параметрам с помощью `process.env`, как показано здесь во втором и третьем вызовах `context.log()`, где мы заносим в журнал переменные среды `AzureWebJobsStorage` и `WEBSITE_SITE_NAME`:
 
 ```javascript
 module.exports = async function (context, myTimer) {
@@ -553,26 +553,26 @@ module.exports = myObj;
 
 При запуске с параметром `--inspect` процесс Node. js прослушивает клиент отладки на указанном порту. В функциях Azure 2. x можно указать аргументы для передачи в процесс Node. js, который выполняет код, добавив переменную среды или параметр приложения `languageWorkers:node:arguments = <args>`. 
 
-Чтобы выполнить отладку локально, добавьте `"languageWorkers:node:arguments": "--inspect=5858"` в `Values` в файле [Local. Settings. JSON](https://docs.microsoft.com/azure/azure-functions/functions-run-local#local-settings-file) и Подключите отладчик к порту 5858.
+Чтобы выполнить отладку локально, добавьте `"languageWorkers:node:arguments": "--inspect=5858"` в разделе `Values` в файле [Local. Settings. JSON](https://docs.microsoft.com/azure/azure-functions/functions-run-local#local-settings-file) и Подключите отладчик к порту 5858.
 
 При отладке с помощью VS Code параметр `--inspect` автоматически добавляется с использованием значения `port` в файле Launch. JSON проекта.
 
-В версии 1. x установка `languageWorkers:node:arguments` не будет работать. Порт отладки можно выбрать с параметром [`--nodeDebugPort`](https://docs.microsoft.com/azure/azure-functions/functions-run-local#start) в Azure functions Core Tools.
+В версии 1. x установка `languageWorkers:node:arguments` не будет работать. Порт отладки можно выбрать с помощью параметра [`--nodeDebugPort`](https://docs.microsoft.com/azure/azure-functions/functions-run-local#start) в Azure functions Core Tools.
 
 ## <a name="typescript"></a>TypeScript
 
-Если вы используете версию 2. x среды выполнения функций, [функции Azure для Visual Studio Code](functions-create-first-function-vs-code.md) и [Azure functions Core Tools](functions-run-local.md) позволяют создавать приложения-функции с помощью шаблона, поддерживающего проекты приложения-функции TypeScript. Шаблон создает файлы проектов `package.json` и `tsconfig.json`, которые облегчают возможность пересчета, запуска и публикации функций JavaScript из кода TypeScript с помощью этих средств.
+Если вы используете версию 2. x среды выполнения функций, [функции Azure для Visual Studio Code](functions-create-first-function-vs-code.md) и [Azure functions Core Tools](functions-run-local.md) позволяют создавать приложения-функции с помощью шаблона, поддерживающего проекты приложения-функции TypeScript. Шаблон создает `package.json` и `tsconfig.json` файлы проекта, которые облегчают возможность пересчета, выполнения и публикации функций JavaScript из кода TypeScript с помощью этих средств.
 
 Созданный файл `.funcignore` используется для указания, какие файлы исключаются при публикации проекта в Azure.  
 
-Файлы TypeScript (. TS) преобразуются в файлы JavaScript (JS) в выходной каталог `dist`. Шаблоны TypeScript используют [параметр `scriptFile`](#using-scriptfile) в `function.json`, чтобы указать расположение соответствующего файла JS в папке `dist`. Расположение выходных данных задается шаблоном с помощью параметра `outDir` в файле `tsconfig.json`. Если изменить этот параметр или имя папки, среда выполнения не сможет найти код для выполнения.
+Файлы TypeScript (. TS) преобразуются в файлы JavaScript (JS) в `dist` выходном каталоге. Шаблоны TypeScript используют [параметр`scriptFile`](#using-scriptfile) в `function.json`, чтобы указать расположение соответствующего JS файла в папке `dist`. Расположение выходных данных задается шаблоном с помощью параметра `outDir` в файле `tsconfig.json`. Если изменить этот параметр или имя папки, среда выполнения не сможет найти код для выполнения.
 
 > [!NOTE]
 > Экспериментальная поддержка TypeScript существует версии 1. x среды выполнения функций. Экспериментальная версия преобразует файлы TypeScript в файлы JavaScript при вызове функции. В версии 2. x эта экспериментальная поддержка была заменена управляемым средством методом, который выполняет транспилирования до инициализации узла и во время процесса развертывания.
 
 Способ, которым локально разрабатывается и развертывается в проекте TypeScript, зависит от вашего средства разработки.
 
-### <a name="visual-studio-code"></a>Visual Studio Code
+### <a name="visual-studio-code"></a>Код Visual Studio
 
 [Функция Azure для расширения Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) позволяет разрабатывать функции с помощью TypeScript. Основные средства являются обязательным требованием к расширению функций Azure.
 
@@ -596,7 +596,7 @@ module.exports = myObj;
 
 #### <a name="run-local"></a>Запустить локально
 
-Чтобы запустить код приложения-функции локально с помощью основных средств, используйте следующие команды вместо `func host start`: 
+Чтобы запустить код приложения функции локально с помощью основных средств, используйте следующие команды вместо `func host start`. 
 
 ```command
 npm install
@@ -621,7 +621,7 @@ npm run build:production
 func azure functionapp publish <APP_NAME>
 ```
 
-В этой команде замените `<APP_NAME>` на имя приложения-функции.
+В этой команде замените `<APP_NAME>` именем приложения функции.
 
 ## <a name="considerations-for-javascript-functions"></a>Рекомендации для функций JavaScript
 
@@ -639,13 +639,13 @@ func azure functionapp publish <APP_NAME>
 
 При использовании зависящего от службы клиента в приложении "функции Azure" не создавайте новый клиент при каждом вызове функции. Вместо этого создайте в глобальной области один статический клиент. Дополнительные сведения см. [в статье Управление подключениями в функциях Azure](manage-connections.md).
 
-### <a name="use-async-and-await"></a>Используйте `async` и `await`
+### <a name="use-async-and-await"></a>Использование `async` и `await`
 
 При написании функций Azure в JavaScript следует писать код, используя ключевые слова `async` и `await`. Написание кода с помощью `async` и `await` вместо обратных вызовов или `.then` и `.catch` с помощью обещания помогает избежать двух распространенных проблем:
  - Создание неперехваченных исключений, которые приводили [к сбою процесса Node. js](https://nodejs.org/api/process.html#process_warning_using_uncaughtexception_correctly), потенциально влияя на выполнение других функций.
  - Непредвиденное поведение, например отсутствующие журналы из context. log, вызванные асинхронными вызовами, которые не ожидаются должным образом.
 
-В приведенном ниже примере асинхронный метод `fs.readFile` вызывается с функцией обратного вызова с ошибками в качестве второго параметра. Этот код вызывает обе проблемы, упомянутые выше. Исключение, которое не было явно перехвачено в правильной области, завершило работу со сбоем всего процесса (#1 проблемы). Вызов `context.done()` за пределами области функции обратного вызова означает, что вызов функции может завершиться до того, как файл будет прочитан (вы#2). В этом примере вызов `context.done()` слишком раннего результата в отсутствие записей журнала, начиная с `Data from file:`.
+В приведенном ниже примере асинхронный метод `fs.readFile` вызывается с функцией обратного вызова с ошибками в качестве второго параметра. Этот код вызывает обе проблемы, упомянутые выше. Исключение, которое не было явно перехвачено в правильной области, завершило работу со сбоем всего процесса (#1 проблемы). Вызов `context.done()` вне области действия функции обратного вызова означает, что вызов функции может завершиться до того, как файл будет прочитан (вы#2). В этом примере вызов `context.done()` слишком ранних результатов в отсутствие записей журнала, начинающихся с `Data from file:`.
 
 ```javascript
 // NOT RECOMMENDED PATTERN
@@ -666,9 +666,9 @@ module.exports = function (context) {
 }
 ```
 
-Использование ключевых слов `async` и `await` позволяет избежать обеих этих ошибок. Используйте служебную функцию Node. js [`util.promisify`](https://nodejs.org/api/util.html#util_util_promisify_original) , чтобы включить функции в стиле обратного вызова с ошибками в ожидающие функции.
+Использование ключевых слов `async` и `await` помогает избежать обеих этих ошибок. Используйте функцию служебной программы Node. js, [`util.promisify`](https://nodejs.org/api/util.html#util_util_promisify_original) , чтобы включить функции в стиле обратного вызова с ошибками в ожидающие функции.
 
-В приведенном ниже примере все необработанные исключения, вызванные во время выполнения функции, не вызывают ошибку при отдельном вызове, вызвавшем исключение. Ключевое слово `await` означает, что шаги, следующие `readFileAsync`, выполняются только после завершения `readFile`. При использовании `async` и `await` также не требуется вызывать обратный вызов `context.done()`.
+В приведенном ниже примере все необработанные исключения, вызванные во время выполнения функции, не вызывают ошибку при отдельном вызове, вызвавшем исключение. Ключевое слово `await` означает, что шаги, следующие `readFileAsync`, выполняются только после завершения `readFile`. При использовании `async` и `await`вам также не нужно вызывать обратный вызов `context.done()`.
 
 ```javascript
 // Recommended pattern
@@ -677,8 +677,9 @@ const util = require('util');
 const readFileAsync = util.promisify(fs.readFile);
 
 module.exports = async function (context) {
+    let data;
     try {
-        const data = await readFileAsync('./hello.txt');
+        data = await readFileAsync('./hello.txt');
     } catch (err) {
         context.log.error('ERROR', err);
         // This rethrown exception will be handled by the Functions Runtime and will only fail the individual invocation
@@ -688,12 +689,12 @@ module.exports = async function (context) {
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Для получения дополнительных сведений см. следующие ресурсы:
 
 + [Рекомендации по функциям Azure](functions-best-practices.md)
 + [Справочник разработчика по функциям Azure](functions-reference.md)
-+ [Azure Functions triggers and bindings (Триггеры и привязки в Функциях Azure)](functions-triggers-bindings.md)
++ [Триггеры и привязки в функциях Azure](functions-triggers-bindings.md)
 
 [' Func Azure functionapp Publish ']: functions-run-local.md#project-file-deployment

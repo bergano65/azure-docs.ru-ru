@@ -7,12 +7,12 @@ ms.service: virtual-machines-windows
 ms.topic: article
 ms.date: 09/23/2018
 ms.author: mbaldwin
-ms.openlocfilehash: 53daa634374c10d48c42f5985459db7e068f293d
-ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
+ms.openlocfilehash: 43c4b363f223c61bac3d3f7dbd272519a0cd014d
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2019
-ms.locfileid: "72301897"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72899046"
 ---
 # <a name="key-vault-virtual-machine-extension-for-windows"></a>Расширение виртуальной машины Key Vault для Windows
 
@@ -23,7 +23,7 @@ ms.locfileid: "72301897"
 Расширение Key Vault VM поддерживает следующие версии Windows:
 
 - Windows Server 2019
-- Windows Server 2016
+- Windows Server 2016
 - Windows Server 2012
 
 ## <a name="extension-schema"></a>Схема расширения
@@ -61,21 +61,21 @@ ms.locfileid: "72301897"
 > [!NOTE]
 > Наблюдаемые URL-адреса сертификатов должны иметь форму `https://myVaultName.vault.azure.net/secrets/myCertName`.
 > 
-> Это обусловлено тем, что путь `/secrets` возвращает полный сертификат, включая закрытый ключ, а путь `/certificates` — нет. Дополнительные сведения о сертификатах можно найти здесь: [Сертификаты Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates#key-vault-certificates)
+> Это связано с тем, что `/secrets` путь возвращает полный сертификат, включая закрытый ключ, а `/certificates` путь — нет. Дополнительные сведения о сертификатах можно найти здесь: [Key Vault Certificates](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates#key-vault-certificates) .
 
 ### <a name="property-values"></a>Значения свойств
 
-| ИМЯ | Значение и пример | Тип данных |
+| Name | Значение и пример | Тип данных |
 | ---- | ---- | ---- |
-| apiVersion | 2019-07-01 | date |
-| publisher | Microsoft.Azure.KeyVault.Edp | строка |
-| type | KeyVaultForWindows | строка |
+| версия_API | 2019-07-01 | date |
+| publisher | Microsoft.Azure.KeyVault.Edp | string |
+| Тип | KeyVaultForWindows | string |
 | typeHandlerVersion | 1.0 | int |
 | pollingIntervalInS | 3600 | int |
-| certificateStoreName | MY | строка |
-| линконреневал | false | boolean |
-| certificateStoreLocation  | LocalMachine | строка |
-| рекуирединитиалсинк | true | boolean |
+| certificateStoreName | MY | string |
+| линконреневал | false | Логическое |
+| certificateStoreLocation  | LocalMachine | string |
+| рекуирединитиалсинк | true | Логическое |
 | observedCertificates  | ["https://myvault.vault.azure.net/secrets/mycertificate"] | массив строк
 
 
@@ -83,7 +83,7 @@ ms.locfileid: "72301897"
 
 Расширения виртуальной машины Azure можно развернуть с помощью шаблонов Azure Resource Manager. Шаблоны идеально подходят для развертывания одной или нескольких виртуальных машин, требующих обновления сертификатов, выполняемого после развертывания. Расширение можно развернуть на отдельных виртуальных машинах или в масштабируемых наборах виртуальных машин. Для обоих типов шаблонов используются общие схема и конфигурация. 
 
-Конфигурация JSON для расширения виртуальной машины должна быть вложена в фрагмент ресурса виртуальной машины шаблона, в частности `"resources": []` для шаблона виртуальной машины, а в случае масштабируемого набора виртуальных машин — с помощью объекта `"virtualMachineProfile":"extensionProfile":{"extensions" :[]`.
+Конфигурация JSON для расширения виртуальной машины должна быть вложена в фрагмент ресурса виртуальной машины шаблона, в частности `"resources": []` объект для шаблона виртуальной машины и в случае масштабируемого набора виртуальных машин в разделе `"virtualMachineProfile":"extensionProfile":{"extensions" :[]` объект.
 
 ```json
     {
@@ -168,7 +168,7 @@ Azure CLI можно использовать для развертывания 
          az vm extension set -n "KeyVaultForWindows" `
          --publisher Microsoft.Azure.KeyVault `
          -g "<resourcegroup>" `
-         --vm-name "<vmName>" `
+         --vmss-name "<vmName>" `
          --settings '{\"secretsManagementSettings\": { \"pollingIntervalInS\": \"<pollingInterval>\", \"certificateStoreName\": \"<certStoreName>\", \"certificateStoreLocation\": \"<certStoreLoc>\", \"observedCertificates\": [\ <observedCerts>\"] }}'
     ```
 
@@ -179,7 +179,7 @@ Azure CLI можно использовать для развертывания 
         az vmss extension set -n "KeyVaultForWindows" `
          --publisher Microsoft.Azure.KeyVault `
          -g "<resourcegroup>" `
-         --vm-name "<vmName>" `
+         --vmss-name "<vmName>" `
          --settings '{\"secretsManagementSettings\": { \"pollingIntervalInS\": \"<pollingInterval>\", \"certificateStoreName\": \"<certStoreName>\", \"certificateStoreLocation\": \"<certStoreLoc>\", \"observedCertificates\": [\ <observedCerts>\"] }}'
     ```
 
@@ -200,7 +200,7 @@ Azure CLI можно использовать для развертывания 
 Get-AzVMExtension -VMName <vmName> -ResourceGroupname <resource group name>
 ```
 
-## <a name="azure-cli"></a>Инфраструктура CLI Azure
+## <a name="azure-cli"></a>Azure CLI
 ```azurecli
  az vm get-instance-view --resource-group <resource group name> --name  <vmName> --query "instanceView.extensions"
 ```

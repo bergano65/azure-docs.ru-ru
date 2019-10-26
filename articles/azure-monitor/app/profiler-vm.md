@@ -1,37 +1,33 @@
 ---
 title: Профилирование веб-приложений, работающих на виртуальной машине Azure, с использованием Application Insights Profiler | Документация Майкрософт
 description: Профилируйте веб-приложения на виртуальной машине Azure с использованием Application Insights Profiler.
-services: application-insights
-documentationcenter: ''
-author: cweining
-manager: carmonm
-ms.service: application-insights
-ms.workload: tbd
-ms.tgt_pltfrm: ibiza
+ms.service: azure-monitor
+ms.subservice: application-insights
 ms.topic: conceptual
-ms.reviewer: mbullwin
-ms.date: 08/06/2018
+author: cweining
 ms.author: cweining
-ms.openlocfilehash: ab30351bfff9c5bbf070a1e8a54a4919e4d2231a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 08/06/2018
+ms.reviewer: mbullwin
+ms.openlocfilehash: 44f45c53a12c7ac73c3de3f2734f024cb9bc6dd5
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66226271"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72900000"
 ---
 # <a name="profile-web-apps-running-on-an-azure-virtual-machine-or-a-virtual-machine-scale-set-by-using-application-insights-profiler"></a>Профилирование веб-приложений, работающих на виртуальной машине Azure или в масштабируемом наборе виртуальных машин, с использованием Application Insights Profiler
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 Вы можете развернуть Azure Application Insights Profiler для таких служб:
-* [службе приложений Azure](../../azure-monitor/app/profiler.md?toc=/azure/azure-monitor/toc.json)
-* [Облачные службы Azure](profiler-cloudservice.md?toc=/azure/azure-monitor/toc.json)
+* [Служба приложений Azure](../../azure-monitor/app/profiler.md?toc=/azure/azure-monitor/toc.json)
+* [Oблачныe службы Azure](profiler-cloudservice.md?toc=/azure/azure-monitor/toc.json)
 * [Azure Service Fabric](profiler-vm.md?toc=/azure/azure-monitor/toc.json)
 
 ## <a name="deploy-profiler-on-a-virtual-machine-or-a-virtual-machine-scale-set"></a>Развертывание Profiler на виртуальной машине или в масштабируемом наборе виртуальных машин
 В этой статье показано, как запустить Application Insights Profiler на виртуальной машине Azure или в масштабируемом наборе виртуальных машин Azure. Profiler поставляется с расширением системы диагностики Azure для виртуальных машин. Настройте расширение для выполнения Profiler и встройте пакет SDK для Application Insights в приложение.
 
-1. Добавьте пакет SDK Application Insights для вашей [приложение ASP.NET](https://docs.microsoft.com/azure/application-insights/app-insights-asp-net).
+1. Добавьте пакет SDK для Application Insights в [приложение ASP.NET](https://docs.microsoft.com/azure/application-insights/app-insights-asp-net).
 
    Чтобы просмотреть профили запросов, необходимо отправить телеметрию запроса в Application Insights.
 
@@ -60,7 +56,7 @@ ms.locfileid: "66226271"
 
    Чтобы применить изменения, обычно нужно полностью развернуть шаблон или опубликовать его в облачных службах с помощью командлетов PowerShell или Visual Studio.  
 
-   Следующие команды PowerShell, альтернативный подход для существующих виртуальных машин, которые затрагивают только расширение системы диагностики Azure. Добавьте файл конфигурации, который возвращается с помощью команды Get-AzVMDiagnosticsExtension ProfilerSink упомянутых ранее. Затем передается команде Set-AzVMDiagnosticsExtension обновленный файл конфигурации.
+   Следующие команды PowerShell являются альтернативным способом для существующих виртуальных машин, которые касаются только расширения система диагностики Azure. Добавьте упомянутый выше Профилерсинк в файл config, возвращаемый командой Get-Азвмдиагностиксекстенсион. Затем передайте обновленную конфигурацию в команду Set-Азвмдиагностиксекстенсион.
 
     ```powershell
     $ConfigFilePath = [IO.Path]::GetTempFileName()
@@ -73,12 +69,12 @@ ms.locfileid: "66226271"
 
 1. Если нужное приложение выполняется с помощью [IIS](https://www.microsoft.com/web/downloads/platform.aspx), необходимо включить компонент Windows `IIS Http Tracing`.
 
-   a. Установите удаленный доступ к среде, а затем используйте окно [Добавить функции Windows]( https://docs.microsoft.com/iis/configuration/system.webserver/tracing/) или выполните следующую команду в PowerShell (с правами администратора):  
+   а) Установите удаленный доступ к среде, а затем используйте окно [Добавить функции Windows]( https://docs.microsoft.com/iis/configuration/system.webserver/tracing/) или выполните следующую команду в PowerShell (с правами администратора):  
 
     ```powershell
     Enable-WindowsOptionalFeature -FeatureName IIS-HttpTracing -Online -All
     ```  
-   2\. Если не удается установить удаленный доступ, можно использовать [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli), чтобы выполнить следующую команду:  
+   б) Если не удается установить удаленный доступ, можно использовать [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli), чтобы выполнить следующую команду:  
 
     ```powershell
     az vm run-command invoke -g MyResourceGroupName -n MyVirtualMachineName --command-id RunPowerShellScript --scripts "Enable-WindowsOptionalFeature -FeatureName IIS-HttpTracing -Online -All"
@@ -86,24 +82,24 @@ ms.locfileid: "66226271"
 
 1. Разверните приложение.
 
-## <a name="set-profiler-sink-using-azure-resource-explorer"></a>Набор Profiler приемника с помощью обозревателя ресурсов Azure
-У нас еще нет можно задать в приемник Application Insights Profiler на портале. Вместо использования powershell, как описано выше, можно использовать обозреватель ресурсов Azure для задания в приемник. Но Обратите внимание, если вы развертываете виртуальную Машину, приемник будут потеряны. Необходимо обновить файл конфигурации, используемого при развертывании виртуальной Машины, чтобы сохранить задание.
+## <a name="set-profiler-sink-using-azure-resource-explorer"></a>Настройка приемника профилировщика с помощью обозреватель ресурсов Azure
+У нас еще нет способа задать приемник Application Insights Profiler на портале. Вместо использования PowerShell, как описано выше, для установки приемника можно использовать обозреватель ресурсов Azure. Но обратите внимание, что при повторном развертывании виртуальной машины приемник будет потерян. Чтобы сохранить этот параметр, необходимо обновить конфигурацию, используемую при развертывании виртуальной машины.
 
-1. Проверьте установку расширения системы диагностики Windows Azure, просмотрев расширения, установленные для виртуальной машины.  
+1. Убедитесь, что расширение система диагностики Azure Windows установлено, просмотрев расширения, установленные для виртуальной машины.  
 
-    ![Проверьте, установлены ли расширение WAD][wadextension]
+    ![Проверьте, установлено ли расширение WAD][wadextension]
 
-1. Найдите нужное расширение системы диагностики виртуальной Машины для виртуальной Машины. Разверните вашей группе ресурсов, Microsoft.Compute virtualMachines, имя виртуальной машины и расширения.  
+1. Найдите расширение диагностики виртуальных машин для виртуальной машины. Разверните группу ресурсов, Microsoft. COMPUTE virtualMachines, имя виртуальной машины и расширения.  
 
-    ![Перейдите к конфигурации WAD в обозревателе ресурсов Azure][azureresourceexplorer]
+    ![Перейдите к WAD config в обозреватель ресурсов Azure][azureresourceexplorer]
 
-1. Добавление приемника Application Insights Profiler в SinksConfig узел в разделе WadCfg. Если у вас нет раздела SinksConfig, может потребоваться добавить его. Не забудьте указать правильный ключ инструментирования Application Insights в параметрах. Нужно будет переключить режим обозревателей на чтение и запись в правом верхнем углу и нажмите синюю кнопку «Изменить».
+1. Добавьте приемник Application Insights Profiler в узел SinksConfig в разделе WadCfg. Если у вас еще нет раздела SinksConfig, может потребоваться добавить его. Не забудьте указать правильные Application Insights iKey в параметрах. Необходимо переключить режим проводника на чтение и запись в правом верхнем углу и нажать синюю кнопку "Изменить".
 
     ![Добавление приемника Application Insights Profiler][resourceexplorersinksconfig]
 
-1. После завершения редактирования файла конфигурации, нажмите клавишу «Put». При успешном выполнении put Зеленый флажок отображается по центру экрана.
+1. Завершив редактирование конфигурации, нажмите кнопку "вставить". Если помещение прошло успешно, в середине экрана появится зеленая галочка.
 
-    ![Отправить запрос put для применения изменений][resourceexplorerput]
+    ![Отправить запрос на добавление изменений][resourceexplorerput]
 
 
 

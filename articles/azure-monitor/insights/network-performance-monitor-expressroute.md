@@ -1,24 +1,18 @@
 ---
 title: Монитор производительности сети в Azure Log Analytics | Документация Майкрософт
 description: Функция монитора ExpressRoute в Мониторе производительности сети позволяет отслеживать сквозное подключение и производительность передачи данных между вашими филиалами и Azure через Azure ExpressRoute.
-services: log-analytics
-documentationcenter: ''
-author: abshamsft
-manager: carmonm
-editor: ''
-ms.assetid: 5b9c9c83-3435-488c-b4f6-7653003ae18a
-ms.service: log-analytics
-ms.workload: na
-ms.tgt_pltfrm: na
+ms.service: azure-monitor
+ms.subservice: logs
 ms.topic: conceptual
-ms.date: 11/27/2018
+author: abshamsft
 ms.author: absha
-ms.openlocfilehash: 7f9c0d905a7b2bc81063e59229d78a1200894d47
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 11/27/2018
+ms.openlocfilehash: 5383402816eddba4c631c240585723b7c7119cef
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65963722"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72898896"
 ---
 # <a name="expressroute-monitor"></a>Мониторинг ExpressRoute
 
@@ -30,7 +24,7 @@ ms.locfileid: "65963722"
 
 ![Мониторинг ExpressRoute](media/network-performance-monitor-expressroute/expressroute-intro.png)
 
-## <a name="configuration"></a>Параметр Configuration 
+## <a name="configuration"></a>Настройка 
 Чтобы открыть конфигурацию Монитора производительности сети, откройте решение [Монитор производительности сети](network-performance-monitor.md) и нажмите кнопку **Настройка**.
 
 ### <a name="configure-network-security-group-rules"></a>Настройка правил группы безопасности сети 
@@ -64,7 +58,7 @@ ms.locfileid: "65963722"
 3. Если вы хотите создать события работоспособности для этого подключения, установите флажок **Включить мониторинг работоспособности для этого пиринга**. 
 4. Выберите условия мониторинга. Вы можете задать настраиваемые пороговые значения для создания событий работоспособности. Каждый раз, когда значение условия превышает выбранное пороговое значение для пирингового подключения, создается событие работоспособности. 
 5. Щелкните **Добавить агенты**, чтобы выбрать агенты мониторинга, которые будут использоваться для мониторинга этого пирингового подключения. Обязательно добавьте агенты на обоих концах подключения. Необходимо добавить по крайней мере один агент в виртуальную сеть, подключенную к этому пирингу. Кроме того, необходим по крайней мере один локальный агент, подключенный к этому пирингу. 
-6. Чтобы сохранить конфигурацию, нажмите кнопку **Сохранить**. 
+6. Нажмите кнопку **Сохранить**, чтобы сохранить конфигурацию. 
 
    ![Настройка мониторинга ExpressRoute](media/network-performance-monitor-expressroute/expressroute-configure-discovery.png)
 
@@ -110,13 +104,13 @@ ms.locfileid: "65963722"
 
 ![Подключения виртуальных сетей ExpressRoute](media/network-performance-monitor-expressroute/expressroute-vnet.png)
  
-## <a name="diagnostics"></a>Диагностика 
+## <a name="diagnostics"></a>Диагностика: 
 
 Монитор производительности сети помогает диагностировать проблемы с подключением к нескольким каналам. Ниже перечислены некоторые из возможных проблем.
 
 В **LogAnalytics** можно просмотреть коды уведомлений и настроить для них оповещения. На странице **диагностики** в Мониторе производительности сети можно найти описание каждого отправленного сообщения диагностики.
 
-| Код уведомления (журналы) | ОПИСАНИЕ |
+| Код уведомления (журналы) | Описание |
 | --- | --- |
 | 5501 | Не удается обойти вторичное подключение цепи ExpressRoute. |
 | 5502 | Не удается обойти первичное подключение цепи ExpressRoute. |

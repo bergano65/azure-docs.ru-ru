@@ -1,23 +1,19 @@
 ---
 title: Диагностика транзакций Azure Application Insights | Документация Майкрософт
 description: Сведения о полной диагностике транзакций в Application Insights.
-services: application-insights
-documentationcenter: .net
-author: mrbullwinkle
-manager: carmonm
-ms.service: application-insights
-ms.workload: TBD
-ms.tgt_pltfrm: ibiza
+ms.service: azure-monitor
+ms.subservice: application-insights
 ms.topic: conceptual
+author: mrbullwinkle
+ms.author: mbullwin
 ms.date: 01/19/2018
 ms.reviewer: sdash
-ms.author: mbullwin
-ms.openlocfilehash: c6c44525018e2115f1df8ed2d3f15432b95490c6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1ed3713fe4a6c9403be13f444d0409af459a1e70
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60783712"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72899567"
 ---
 # <a name="unified-cross-component-transaction-diagnostics"></a>Единый интерфейс диагностики транзакций между компонентами
 
@@ -74,13 +70,13 @@ ms.locfileid: "60783712"
 
 [Application Insights Profiler](../../azure-monitor/app/profiler.md) и [Snapshot Debugger](snapshot-debugger.md) упрощают диагностику проблем производительности и ошибок на уровне кода. Эти средства позволяют легко просматривать трассировки профилировщика и моментальные снимки из любого компонента.
 
-Если не удалось получить Profiler работает, обратитесь в службу **serviceprofilerhelp\@microsoft.com**
+Если вы не смогли получить доступ к профилировщику, обратитесь в **сервицепрофилерхелп\@Microsoft.com** .
 
-Если не удалось получить рабочий отладчик моментальных снимков, обратитесь в службу **snapshothelp\@microsoft.com**
+Если вам не удалось получить Snapshot Debugger, обратитесь в **снапшоселп\@Microsoft.com** .
 
 ![Интеграция профилировщика](media/transaction-diagnostics/profilerTraces.png)
 
-## <a name="faq"></a>Часто задаваемые вопросы
+## <a name="faq"></a>Вопросы и ответы
 
 *На диаграмме отображается один компонент, а остальные показаны как внешние зависимости без каких-либо сведений о том, что с ними случилось.*
 
@@ -92,7 +88,7 @@ ms.locfileid: "60783712"
 
 Если вы имеете доступ и компоненты инструментированы с помощью последних версий пакетов SDK Application Insights, сообщите об этом через канал обратной связи в верхнем правом углу.
 
-*Строки зависимостей повторяются. Так и должно быть?*
+*Я вижу дубликаты строк для зависимостей. Ожидается ли это?*
 
 Сейчас исходящий вызов зависимости отображается отдельно от входящего запроса. Как правило, эти два вызова выглядят одинаково. Единственное различие заключается в значении длительности, которое зависит от кругового пути в сети. Разницу между ними можно определить по значку и стилю линий длительности. Если такое представление данных слишком трудное, отправьте нам свой отзыв!
 

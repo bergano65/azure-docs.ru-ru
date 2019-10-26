@@ -1,24 +1,18 @@
 ---
 title: Оптимизация среды Active Directory с помощью Azure Monitor | Документация Майкрософт
 description: Решение проверки работоспособности Active Directory можно использовать для регулярной оценки риска и состояния среды.
-services: log-analytics
-documentationcenter: ''
-author: mgoedtel
-manager: carmonm
-editor: ''
-ms.assetid: 81eb41b8-eb62-4eb2-9f7b-fde5c89c9b47
-ms.service: log-analytics
-ms.workload: na
-ms.tgt_pltfrm: na
+ms.service: azure-monitor
+ms.subservice: logs
 ms.topic: conceptual
-ms.date: 09/10/2019
+author: mgoedtel
 ms.author: magoedte
-ms.openlocfilehash: a0ffe7b8726ee78ca81751687bebd3c435365576
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.date: 09/10/2019
+ms.openlocfilehash: bdc84a9213bd98981040775d3fec90f45edac54f
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70883084"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72899202"
 ---
 # <a name="optimize-your-active-directory-environment-with-the-active-directory-health-check-solution-in-azure-monitor"></a>Оптимизация среды Active Directory с помощью решения проверки работоспособности Active Directory в Azure Monitor
 
@@ -40,7 +34,7 @@ ms.locfileid: "70883084"
 
 ![Изображение панели мониторинга "Проверка работоспособности AD"](./media/ad-assessment/ad-healthcheck-dashboard-01.png)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Для решения Active Directory проверки работоспособности требуется поддерживаемая версия .NET Framework 4.5.2 или более поздней версии на каждом компьютере, где установлен агент Log Analytics для Windows (также называемый Microsoft Monitoring Agent (MMA)).  Агент используется System Center 2016-Operations Manager, Operations Manager 2012 R2 и Azure Monitor.
 * Решение поддерживает контроллеры домена под управлением Windows Server 2008 и 2008 R2, Windows Server 2012 и 2012 R2, а также Windows Server 2016.
@@ -69,7 +63,7 @@ ms.locfileid: "70883084"
 - Журнал событий
 - Интерфейс ADSI
 - Windows PowerShell
-- данные файлов;
+- Данные файлов
 - Инструментарий управления Windows (WMI)
 - API инструмента DCDIAG
 - API службы репликации файлов (NTFRS)
@@ -103,7 +97,7 @@ ms.locfileid: "70883084"
 
 ### <a name="should-you-aim-to-score-100-in-every-focus-area"></a>Следует ли стремиться к показателю 100 % в каждой приоритетной области?
 
-Не обязательно. В основу предлагаемых рекомендаций положены знания и опыт, приобретенные специалистами Майкрософт в результате многочисленных посещений клиентов. Однако не существует двух одинаковых серверных инфраструктур, и конкретные рекомендации могут быть применимы к вам в большей или меньшей степени. Например, некоторые рекомендации по обеспечению безопасности могут быть менее значимыми, если виртуальные машины в организации не подключены к Интернету. Некоторые рекомендации о доступности могут иметь менее важное значение для служб, которые обеспечивают сбор низкоприоритетных данных. Проблемы, которые важны для зрелой организации, могут быть не так важны для начинающей компании. Можно определить приоритетные области и затем отследить изменение оценок с течением времени.
+Необязательно. В основу предлагаемых рекомендаций положены знания и опыт, приобретенные специалистами Майкрософт в результате многочисленных посещений клиентов. Однако не существует двух одинаковых серверных инфраструктур, и конкретные рекомендации могут быть применимы к вам в большей или меньшей степени. Например, некоторые рекомендации по обеспечению безопасности могут быть менее значимыми, если виртуальные машины в организации не подключены к Интернету. Некоторые рекомендации о доступности могут иметь менее важное значение для служб, которые обеспечивают сбор низкоприоритетных данных. Проблемы, которые важны для зрелой организации, могут быть не так важны для начинающей компании. Можно определить приоритетные области и затем отследить изменение оценок с течением времени.
 
 В каждой рекомендации указано, почему она важна. Их следует использовать, чтобы определить целесообразность реализации рекомендации с учетом характера ИТ-служб и бизнес-потребностей организации.
 
@@ -169,7 +163,7 @@ ADAssessmentRecommendation | where RecommendationResult == "Failed" | sort by Co
     ADAssessmentRecommendation | where RecommendationResult == "Ignored" | sort by Computer asc | project Computer, RecommendationId, Recommendation
     ```
 
-2. Если вы решите позже просмотреть игнорируемые рекомендации, удалите все файлы IgnoreRecommendations.txt или RecommendationIDs можно удалить из них.
+2. Если вы решите позже просмотреть игнорируемые рекомендации, удалите все файлы IgnoreRecommendations.txt или RecommendationIDs из них.
 
 ## <a name="ad-health-check-solutions-faq"></a>Вопросы и ответы по решению "Проверка работоспособности AD"
 
@@ -179,7 +173,7 @@ ADAssessmentRecommendation | where RecommendationResult == "Failed" | sort by Co
 
 *Можно ли настроить частоту проверки работоспособности?*
 
-* На данный момент нет.
+* Пока нет.
 
 *Если добавлено решение проверки работоспособности, а затем обнаружен другой сервер, будет ли он проверяться?*
 
@@ -199,7 +193,7 @@ ADAssessmentRecommendation | where RecommendationResult == "Failed" | sort by Co
 
 *Можно ли настроить время сбора данных?*
 
-* На данный момент нет.
+* Пока нет.
 
 *Почему отображаются только первые 10 рекомендаций?*
 
@@ -209,6 +203,6 @@ ADAssessmentRecommendation | where RecommendationResult == "Failed" | sort by Co
 
 * Да. См. раздел [Игнорирование рекомендаций](#ignore-recommendations) выше в этой статье.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы научиться анализировать подробные данные и рекомендации для проверки работоспособности AD, см. статью [Анализ данных Log Analytics в Azure Monitor](../log-query/log-query-overview.md).

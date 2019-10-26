@@ -1,62 +1,58 @@
 ---
-title: Включить отладчик моментальных снимков для приложений .NET в службе приложений Azure | Документация Майкрософт
-description: Включить отладчик моментальных снимков для приложений .NET в службе приложений Azure
-services: application-insights
-documentationcenter: ''
-author: brahmnes
-manager: carmonm
-ms.service: application-insights
-ms.workload: tbd
-ms.tgt_pltfrm: ibiza
+title: Включение Snapshot Debugger для приложений .NET в службе приложений Azure | Документация Майкрософт
+description: Включение Snapshot Debugger для приложений .NET в службе приложений Azure
+ms.service: azure-monitor
+ms.subservice: application-insights
 ms.topic: conceptual
-ms.reviewer: mbullwin
-ms.date: 03/07/2019
+author: brahmnes
 ms.author: bfung
-ms.openlocfilehash: 3e8ce3c2eff7b1f7184bb37f141e62563d4fe714
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.date: 03/07/2019
+ms.reviewer: mbullwin
+ms.openlocfilehash: 0f6eb6376075337edd7656e4bc83b5b7fddde479
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67612684"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72899892"
 ---
-# <a name="enable-snapshot-debugger-for-net-apps-in-azure-app-service"></a>Включить отладчик моментальных снимков для приложений .NET в службе приложений Azure
+# <a name="enable-snapshot-debugger-for-net-apps-in-azure-app-service"></a>Включение Snapshot Debugger для приложений .NET в службе приложений Azure
 
-Отладчик моментальных снимков в настоящее время работает для приложений ASP.NET и ASP.NET Core, запущенных в службе приложений Azure в планы обслуживания Windows.
+Snapshot Debugger в настоящее время работает для приложений ASP.NET и ASP.NET Core, работающих в службе приложений Azure в планах служб Windows.
 
-## <a id="installation"></a> Включение Snapshot Debugger
-Чтобы включить отладчик моментальных снимков для приложения, следуйте приведенным ниже инструкциям. Если вы используете другой тип службы Azure, ниже приведены инструкции по включению отладчик моментальных снимков на других поддерживаемых платформах.
-* [Облачные службы Azure](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json)
-* [Службы Azure Service Fabric](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json)
+## <a id="installation"></a>Включить Snapshot Debugger
+Чтобы включить Snapshot Debugger для приложения, следуйте приведенным ниже инструкциям. Если вы используете другой тип службы Azure, ниже приведены инструкции по включению Snapshot Debugger на других поддерживаемых платформах:
+* [Oблачныe службы Azure](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json)
+* [Службы Service Fabric Azure](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json)
 * [Профилирование веб-приложений, работающих на виртуальной машине Azure или в масштабируемом наборе виртуальных машин, с помощью Application Insights Profiler](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json)
-* [Локальных виртуальных или физических компьютеров](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json)
+* [Локальные виртуальные или физические компьютеры](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json)
 
-Если вы используете предварительную версию .NET Core, следуйте инструкциям для [включить отладчик моментальных снимков для других сред](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json) сначала для включения [Microsoft.ApplicationInsights.SnapshotCollector](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector) NuGet упаковать с приложением и следуйте дальнейшим инструкциям ниже. 
+Если вы используете предварительную версию .NET Core, следуйте инструкциям по [включению snapshot Debugger для других сред](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json) , прежде чем добавить пакет NuGet [Microsoft. ApplicationInsights. SnapshotCollector](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector) в приложение. а затем выполните остальные инструкции ниже. 
 
-Application Insights Snapshot Debugger предварительно устанавливается как часть среды выполнения службы приложений, но вам необходимо включить его на моментальные снимки get для приложения службы приложений. После развертывания приложения, даже если включить пакет SDK Application Insights в исходном коде, выполните следующие действия, чтобы включить отладчик моментальных снимков.
+Application Insights Snapshot Debugger предустановлена в составе среды выполнения служб приложений, но ее необходимо включить, чтобы получить моментальные снимки для приложения службы приложений. После развертывания приложения, даже если вы включили в исходный код пакет SDK для Application Insights, выполните следующие действия, чтобы включить отладчик моментальных снимков.
 
 1. Перейдите к панели **служб приложений** на портале Azure.
 2. Выберите **Параметры > Application Insights**.
 
    ![Включение Application Insights на портале служб приложений](./media/snapshot-debugger/applicationinsights-appservices.png)
 
-3. Следуйте инструкциям на панели, чтобы создать ресурс Application Insights или выбрать имеющийся ресурс для отслеживания приложения. Также убедитесь, что оба переключателя для отладчика моментальных снимков, **на**.
+3. Следуйте инструкциям на панели, чтобы создать ресурс Application Insights или выбрать имеющийся ресурс для отслеживания приложения. Также убедитесь, что оба параметра для Snapshot Debugger **включены.**
 
    ![Добавление расширения сайта Application Insights][Enablement UI]
 
-4. Отладчик моментальных снимков включен с помощью параметра приложения службы приложений.
+4. Snapshot Debugger теперь включена с помощью параметра приложения служб приложений.
 
-    ![Параметр приложения для отладчика моментальных снимков][snapshot-debugger-app-setting]
+    ![Параметр приложения для Snapshot Debugger][snapshot-debugger-app-setting]
 
-## <a name="disable-snapshot-debugger"></a>Отключить отладчик моментальных снимков
+## <a name="disable-snapshot-debugger"></a>Отключить Snapshot Debugger
 
-Выполните те же действия, что и для **Включение Snapshot Debugger**, но переключиться оба переключателя для отладчика моментальных снимков для **Off**.
-Мы рекомендуем использовать отладчик моментальных снимков, которые включены для всех приложений, для упрощения диагностики исключений приложений.
+Выполните те же действия, что и для параметра **Enable snapshot Debugger**, но установите оба переключателя для snapshot Debugger в значение **Off**.
+Рекомендуется включить Snapshot Debugger для всех приложений, чтобы упростить диагностику исключений приложений.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Создайте трафик для приложения, которое может вызвать исключение. Подождите 10 – 15 минут для моментальных снимков, который должны отправляться экземпляра Application Insights.
-- См. в разделе [моментальные снимки](snapshot-debugger.md?toc=/azure/azure-monitor/toc.json#view-snapshots-in-the-portal) на портале Azure.
-- Устранении неполадок отладчик моментальных снимков, см. в разделе [Устранение неполадок Snapshot Debugger](snapshot-debugger-troubleshoot.md?toc=/azure/azure-monitor/toc.json).
+- Создание трафика для приложения, которое может вызвать исключение. Затем подождите 10 – 15 минут, чтобы моментальные снимки отправлялись на экземпляр Application Insights.
+- См. раздел [моментальные снимки](snapshot-debugger.md?toc=/azure/azure-monitor/toc.json#view-snapshots-in-the-portal) в портал Azure.
+- Справку по устранению неполадок Snapshot Debugger см. в разделе [snapshot Debugger устранение неполадок](snapshot-debugger-troubleshoot.md?toc=/azure/azure-monitor/toc.json).
 
 [Enablement UI]: ./media/snapshot-debugger/enablement-ui.png
 [snapshot-debugger-app-setting]:./media/snapshot-debugger/snapshot-debugger-app-setting.png

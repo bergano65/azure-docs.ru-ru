@@ -1,24 +1,18 @@
 ---
 title: Монитор производительности сети в Azure Log Analytics | Документация Майкрософт
 description: С помощью монитора подключений службы в Мониторе производительности сети вы можете отслеживать сетевые подключения к любой конечной точке с открытым TCP-портом.
-services: log-analytics
-documentationcenter: ''
-author: abshamsft
-manager: carmonm
-editor: ''
-ms.assetid: 5b9c9c83-3435-488c-b4f6-7653003ae18a
-ms.service: log-analytics
-ms.workload: na
-ms.tgt_pltfrm: na
+ms.service: azure-monitor
+ms.subservice: logs
 ms.topic: conceptual
-ms.date: 02/20/2018
+author: abshamsft
 ms.author: absha
-ms.openlocfilehash: c5285ac95a2f5813949f22aae3849fd7f55b1ada
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.date: 02/20/2018
+ms.openlocfilehash: dd02dad6d0f5b42181ad0bb27201384a6336ed6e
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67052088"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72898820"
 ---
 # <a name="service-connectivity-monitor"></a>Монитор подключений службы
 
@@ -36,7 +30,7 @@ ms.locfileid: "67052088"
 ![Монитор подключений службы](media/network-performance-monitor-service-endpoint/service-endpoint-intro.png)
 
 
-## <a name="configuration"></a>Параметр Configuration 
+## <a name="configuration"></a>Настройка 
 Чтобы открыть конфигурацию Монитора производительности сети, откройте решение [Монитор производительности сети](network-performance-monitor.md) и нажмите кнопку **Настройка**.
 
 ![Настройка Монитора производительности сети](media/network-performance-monitor-service-endpoint/npm-configure-button.png)
@@ -59,24 +53,24 @@ netsh advfirewall firewall add rule name="NPMDICMPV6TimeExceeded" protocol="icmp
 Начните создавать тесты для отслеживания сетевых подключений к конечным точкам службы.
 
 1. Перейдите на вкладку **Монитор подключений службы**.
-2. Нажмите кнопку **Добавить тест** и введите имя и описание теста. Можно создать максимальное 450 тестов в рабочей области. 
+2. Нажмите кнопку **Добавить тест** и введите имя и описание теста. На рабочую область можно создать не более 450 тестов. 
 3. Выберите тип теста.<br>
 
     * Выберите **Веб**, чтобы отслеживать подключение к службе, которая отвечает на запросы HTTP(S), например outlook.office365.com или bing.com.<br>
     * Выберите **Сеть**, чтобы отслеживать подключение к службе, которая отвечает на запрос TCP, но не отвечает на запросы HTTP(S), например SQL Server, FTP-сервер или SSH-порт. 
-    * Пример: Чтобы создать веб-теста в учетную запись хранилища BLOB-объектов, выберите **Web** и введите в качестве целевого объекта *yourstorageaccount*. blob.core.windows.net. Аналогичным образом можно создавать тесты для других хранилище таблиц, хранилище очередей и файлов Azure с использованием [эту ссылку.](https://docs.microsoft.com/azure/storage/common/storage-account-overview#storage-account-endpoints)
+    * Например, чтобы создать веб-тест для учетной записи хранения BLOB-объектов, выберите **Web** и введите Target в качестве *йоурсторажеаккаунт*. BLOB.Core.Windows.NET. Аналогичным образом можно создавать тесты для хранилища таблиц, очередей и файлов Azure с помощью [этой ссылки.](https://docs.microsoft.com/azure/storage/common/storage-account-overview#storage-account-endpoints)
 4. Если вы не хотите выполнять такие измерения сети, как задержки сети, потери пакетов, а также обнаружение топологии, снимите флажок **Проведите измерения сети**. Оставьте этот флажок установленным, чтобы получить максимальные преимущества от возможности. 
 5. В поле **Цель** введите URL-адрес, полное доменное имя или IP-адрес, сетевое подключение к которому необходимо отслеживать.
 6. В поле **Номер порта** введите номер порта целевой службы. 
 7. В поле **Периодичность проведения тестирования** введите значение частоты выполнения тестов. 
-8. Выберите узлы, из которых требуется отслеживать сетевые подключения к службе. Убедитесь, что число агентов, добавлении в тест менее 150. Любой агент можно проверить максимальное 150 конечных точек и агентов.
+8. Выберите узлы, из которых требуется отслеживать сетевые подключения к службе. Убедитесь, что число агентов, добавляемых для каждого теста, меньше 150. Любой агент может проверить максимальное 150 конечных точек и агентов.
 
     >[!NOTE]
     > Для узлов под управлением сервера Windows эта возможность подразумевает выполнение измерений производительности сети с помощью запросов по протоколу TCP. Для узлов под управлением клиента Windows эта возможность подразумевает выполнение измерений производительности сети с помощью запросов по протоколу ICMP. В некоторых случаях целевое приложение блокирует входящие запросы на основе ICMP, когда узлы основаны на клиенте Windows. Решение не может выполнить измерение сети. В таких случаях рекомендуется использовать узлы под управлением Windows Server. 
 
 9. Если не нужно создавать события работоспособности для выбранных элементов, снимите флажок **Enable Health Monitoring in the targets covered by this test** (Включить мониторинг работоспособности в целевых объектах, на которые распространяется этот тест). 
 10. Выберите условия мониторинга. Вы можете задать настраиваемые пороговые значения для создания событий работоспособности. Каждый раз, когда значение условия превышает выбранное пороговое значение для выбранной пары сетей или подсетей, создается событие работоспособности. 
-11. Чтобы сохранить конфигурацию, нажмите кнопку **Сохранить**. 
+11. Нажмите кнопку **Сохранить**, чтобы сохранить конфигурацию. 
 
     ![Конфигурации тестов для монитора подключений службы](media/network-performance-monitor-service-endpoint/service-endpoint-configuration.png)
 
@@ -108,7 +102,7 @@ netsh advfirewall firewall add rule name="NPMDICMPV6TimeExceeded" protocol="icmp
 
 ![Тесты монитора подключений службы](media/network-performance-monitor-service-endpoint/service-endpoint-topology.png)
 
-## <a name="diagnostics"></a>Диагностика 
+## <a name="diagnostics"></a>Диагностика: 
 
 Если вы заметили неисправность, сделайте следующее.
 
@@ -128,16 +122,16 @@ netsh advfirewall firewall add rule name="NPMDICMPV6TimeExceeded" protocol="icmp
 
 * Если приложение работает медленно, определите причину ухудшения производительности приложения (сеть или проблема в конечной точке поставщика приложения).
 
-## <a name="gcc-office-urls-for-us-government-customers"></a>URL-адреса Office GCC для государственных организаций США
-Для региона Виргиния для государственных организаций США только URL-адреса министерства обороны США — встроенные NPM. Клиенты, использующие GCC URL-адреса необходимо создать настраиваемые тесты и добавьте каждый URL-адрес, по отдельности.
+## <a name="gcc-office-urls-for-us-government-customers"></a>URL-адреса GCC Office для клиентов правительства США
+Для государственных организаций США Виргиния только URL-адреса с DOD — это встроенные NPM. Клиентам, использующим URL-адреса GCC, необходимо создать пользовательские тесты и добавить каждый URL-адрес по отдельности.
 
 | Поле | GCC |
 |:---   |:--- |
-| Портал Office 365 и общий | portal.apps.mil |
-| Проверка подлинности Office 365 и удостоверения | * login.microsoftonline.us <br> * api.login.microsoftonline.com <br> * clientconfig.microsoftonline-p.net <br> * login.microsoftonline.com <br> * login.microsoftonline-p.com <br> * login.windows.net <br> * loginex.microsoftonline.com <br> * Имя входа — us.microsoftonline.com <br> * nexus.microsoftonline-p.com <br> * mscrl.microsoft.com <br> * secure.aadcdn.microsoftonline-p.com |
-| Office Online | * adminwebservice.gov.us.microsoftonline.com <br>  * adminwebservice-s1-bn1a.microsoftonline.com <br> * adminwebservice-s1-dm2a.microsoftonline.com <br> * becws.gov.us.microsoftonline.com <br> * provisioningapi.gov.us.microsoftonline.com <br> * officehome.msocdn.us <br> * prod.msocdn.us <br> * portal.office365.us <br> * webshell.suite.office365.us <br> * www .office365.us <br> * activation.sls.microsoft.com <br> * crl.microsoft.com <br> * go.microsoft.com <br> * insertmedia.bing.office.net <br> * ocsa.officeapps.live.com <br> * ocsredir.officeapps.live.com <br> * ocws.officeapps.live.com <br> * office15client.microsoft.com <br>* officecdn.microsoft.com <br> * officecdn.microsoft.com.edgesuite.net <br> * officepreviewredir.microsoft.com <br> * officeredir.microsoft.com <br> * ols.officeapps.live.com  <br> * r.office.microsoft.com <br> * cdn.odc.officeapps.live.com <br> * odc.officeapps.live.com <br> * officeclient.microsoft.com |
+| Портал Office 365 и общий доступ | portal.apps.mil |
+| Проверка подлинности и удостоверение Office 365 | * login.microsoftonline.us <br> * api.login.microsoftonline.com <br> * clientconfig.microsoftonline-p.net <br> * login.microsoftonline.com <br> * login.microsoftonline-p.com <br> * login.windows.net <br> * loginex.microsoftonline.com <br> * login-us.microsoftonline.com <br> * nexus.microsoftonline-p.com <br> * mscrl.microsoft.com <br> * secure.aadcdn.microsoftonline-p.com |
+| Office Online | * adminwebservice.gov.us.microsoftonline.com <br>  * adminwebservice-s1-bn1a.microsoftonline.com <br> * adminwebservice-s1-dm2a.microsoftonline.com <br> * becws.gov.us.microsoftonline.com <br> * provisioningapi.gov.us.microsoftonline.com <br> * officehome.msocdn.us <br> * prod.msocdn.us <br> * portal.office365.us <br> * webshell.suite.office365.us <br> * www. office365.us <br> * activation.sls.microsoft.com <br> * crl.microsoft.com <br> * go.microsoft.com <br> * insertmedia.bing.office.net <br> * ocsa.officeapps.live.com <br> * ocsredir.officeapps.live.com <br> * ocws.officeapps.live.com <br> * office15client.microsoft.com <br>* officecdn.microsoft.com <br> * officecdn.microsoft.com.edgesuite.net <br> * officepreviewredir.microsoft.com <br> * officeredir.microsoft.com <br> * ols.officeapps.live.com  <br> * r.office.microsoft.com <br> * cdn.odc.officeapps.live.com <br> * odc.officeapps.live.com <br> * officeclient.microsoft.com |
 | Exchange Online | * outlook.office365.us <br> * attachments.office365-net.us <br> * autodiscover-s.office365.us <br> * manage.office365.us <br> * scc.office365.us |
-| Microsoft Teams | gov.teams.microsoft.us | 
+| MS Teams | gov.teams.microsoft.us | 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 [Выполните поиск по журналам](../../azure-monitor/log-query/log-query-overview.md), чтобы просмотреть подробные записи данных о производительности сети.

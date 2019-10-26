@@ -1,33 +1,27 @@
 ---
-title: Емкость и производительность решения в Azure Monitor | Документация Майкрософт
-description: Используйте решение емкости и производительности в мониторе позволяет оценить ресурсы серверов Hyper-V.
-services: log-analytics
-documentationcenter: ''
-author: mgoedtel
-manager: carmonm
-editor: ''
-ms.assetid: 51617a6f-ffdd-4ed2-8b74-1257149ce3d4
-ms.service: log-analytics
-ms.workload: na
-ms.tgt_pltfrm: na
+title: Емкость и производительность решение в Azure Monitor | Документация Майкрософт
+description: Используйте решение Емкость и производительность в мониторе, чтобы получить представление о емкости серверов Hyper-V.
+ms.service: azure-monitor
+ms.subservice: logs
 ms.topic: conceptual
-ms.date: 07/13/2017
+author: mgoedtel
 ms.author: magoedte
-ms.openlocfilehash: fcf71bf144b559c4867303988d4c1f08b7aa5605
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 07/13/2017
+ms.openlocfilehash: 8b130b800b53afadc40e0c9b9a2b730f24da396e
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62101920"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72899061"
 ---
-# <a name="plan-hyper-v-virtual-machine-capacity-with-the-capacity-and-performance-solution-deprecated"></a>Планирование ресурсов виртуальной машины Hyper-V с помощью решения емкости и производительности (устаревшая версия)
+# <a name="plan-hyper-v-virtual-machine-capacity-with-the-capacity-and-performance-solution-deprecated"></a>Планирование емкости виртуальных машин Hyper-V с помощью решения Емкость и производительность (не рекомендуется)
 
 ![Символ "Емкость и производительность"](./media/capacity-performance/capacity-solution.png)
 
 > [!NOTE]
 > Решение "Емкость и производительность" отмечено как нерекомендуемое.  Пользователи, установившие его, могут продолжать работать с ним, но решение "Емкость и производительность" нельзя добавить в новые рабочие области.
 
-Можно использовать решение емкости и производительности в мониторе позволяет оценить ресурсы серверов Hyper-V. Это решение предоставляет подробные сведения о среде Hyper-V, отображая данные о совокупном использовании (ресурсов ЦП, памяти и дисков) узлов и виртуальных машин, запущенных на этих узлах Hyper-V. Кроме того, оно собирает метрики ЦП, памяти и дисков на всех узлах и их виртуальных машинах.
+Вы можете использовать решение Емкость и производительность в мониторе, чтобы получить представление о емкости серверов Hyper-V. Это решение предоставляет подробные сведения о среде Hyper-V, отображая данные о совокупном использовании (ресурсов ЦП, памяти и дисков) узлов и виртуальных машин, запущенных на этих узлах Hyper-V. Кроме того, оно собирает метрики ЦП, памяти и дисков на всех узлах и их виртуальных машинах.
 
 Это решение:
 
@@ -48,9 +42,9 @@ ms.locfileid: "62101920"
 
 | Подключенный источник | Поддержка | Описание |
 |---|---|---|
-| [Агенты Windows](../../azure-monitor/platform/agent-windows.md) | Да | Решение собирает сведения о емкости и производительности из агентов Windows. |
+| [Агенты Windows](../../azure-monitor/platform/agent-windows.md) | ДА | Решение собирает сведения о емкости и производительности из агентов Windows. |
 | [Агенты Linux](../../azure-monitor/learn/quick-collect-linux-computer.md) | Нет    | Решение не собирает сведения о емкости и производительности из прямых агентов Linux.|
-| [Группы управления SCOM](../../azure-monitor/platform/om-agents.md) | Да |Решение собирает сведения о емкости и производительности из агентов в подключенной группе управления SCOM. Прямое подключение агента SCOM к Log Analytics не требуется.|
+| [Группы управления SCOM](../../azure-monitor/platform/om-agents.md) | ДА |Решение собирает сведения о емкости и производительности из агентов в подключенной группе управления SCOM. Прямое подключение агента SCOM к Log Analytics не требуется.|
 | [Учетная запись хранения Azure](../../azure-monitor/platform/collect-azure-metrics-logs.md) | Нет | Служба хранилища Azure не содержит сведения о емкости и производительности.|
 
 ## <a name="prerequisites"></a>Технические условия
@@ -58,7 +52,7 @@ ms.locfileid: "62101920"
 - Агенты Windows или Operations Manager должны быть установлены на узлах Hyper-V под управлением Windows Server 2012 (или более поздней версии), а не на виртуальных машинах.
 
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Настройка
 
 Чтобы добавить решение "Емкость и производительность" в рабочую область, сделайте следующее:
 

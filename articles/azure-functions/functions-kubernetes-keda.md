@@ -10,16 +10,16 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 05/06/2019
 ms.author: jehollan
-ms.openlocfilehash: b581d7c9b5876813e36ebbf41be713b44dd97735
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 8e07032f84ead4bb003176af84cb4c731819ffa4
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70096096"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72900068"
 ---
 # <a name="azure-functions-on-kubernetes-with-keda"></a>Функции Azure в Kubernetes с Кеда
 
-Среда выполнения функций Azure обеспечивает гибкость при размещении, где и как вам нужно.  [Кеда](https://github.com/kedacore/kore) (Автоматическое масштабирование, управляемое событиями на основе Kubernetes), легко с помощью среды выполнения функций Azure и инструментария для обеспечения масштабирования на основе событий в Kubernetes.
+Среда выполнения функций Azure обеспечивает гибкость при размещении, где и как вам нужно.  [Кеда](https://github.com/kedacore/kore) (автоматическое масштабирование, управляемое событиями на основе Kubernetes) легко с помощью среды выполнения функций Azure и инструментария для обеспечения масштабирования на основе событий в Kubernetes.
 
 ## <a name="how-kubernetes-based-functions-work"></a>Принципы работы функций на основе Kubernetes
 
@@ -33,7 +33,7 @@ ms.locfileid: "70096096"
 
 ### <a name="installing-with-the-azure-functions-core-tools"></a>Установка с помощью Azure Functions Core Tools
 
-По умолчанию основные инструменты устанавливают компоненты Кеда и Осирис, которые поддерживают масштабирование на основе событий и HTTP соответственно.  В текущем контексте `kubectl` используется выполняемая установка.
+По умолчанию основные инструменты устанавливают компоненты Кеда и Осирис, которые поддерживают масштабирование на основе событий и HTTP соответственно.  При установке используется `kubectl`, выполняющийся в текущем контексте.
 
 Установите Кеда в кластере, выполнив следующую команду установки:
 
@@ -51,17 +51,24 @@ func init --docker-only
 
 Чтобы создать образ и развернуть функции в Kubernetes, выполните следующую команду:
 
+> [!NOTE]
+> Основные инструменты будут использовать DOCKER CLI для создания и публикации образа. Убедитесь, что DOCKER уже установлен и подключен к вашей учетной записи с помощью `docker login`.
+
 ```cli
 func kubernetes deploy --name <name-of-function-deployment> --registry <container-registry-username>
 ```
 
 > Замените `<name-of-function-deployment>` на имя приложения-функции.
 
-При этом создается ресурс `Deployment` Kubernetes `ScaledObject` , ресурс и `Secrets` `local.settings.json` , который включает переменные среды, импортированные из файла.
+При этом создается ресурс `Deployment` Kubernetes, ресурс `ScaledObject` и `Secrets`, который включает переменные среды, импортированные из файла `local.settings.json`.
+
+### <a name="deploying-a-function-app-from-a-private-registry"></a>Развертывание приложения-функции из частного реестра
+
+Приведенный выше поток работает и для закрытых реестров.  Если вы извлекаете образ контейнера из частного реестра, включите флаг `--pull-secret`, который ссылается на секрет Kubernetes, содержащий частные учетные данные реестра при запуске `func kubernetes deploy`.
 
 ## <a name="removing-a-function-app-from-kubernetes"></a>Удаление приложения-функции из Kubernetes
 
-После развертывания можно удалить функцию, удалив связанную `Deployment`, `ScaledObject` `Secrets` созданную.
+После развертывания можно удалить функцию, удалив связанную `Deployment`, `ScaledObject`, созданную `Secrets`.
 
 ```cli
 kubectl delete deploy <name-of-function-deployment>

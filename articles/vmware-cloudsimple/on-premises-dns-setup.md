@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 52f86f85ec303d23a78fd942276bfe46d0f12832
-ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
+ms.openlocfilehash: f00e7663c4ed2211927f5c8d1c131d85bc6c96dd
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72030410"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72900900"
 ---
 # <a name="configure-dns-for-name-resolution-for-private-cloud-vcenter-access-from-on-premises-workstations"></a>Настройка DNS для разрешения имен для доступа к службе v-Center для частного облака с локальных рабочих станций
 
@@ -80,7 +80,7 @@ zone “cloudsimple.io”
 
 Сервер условной пересылки перенаправляет все запросы разрешения DNS-имен на указанный серверу. При такой настройке любой запрос к *. cloudsimple.io перенаправляется на DNS-серверы, расположенные в частном облаке. В следующих примерах показано, как настроить серверы пересылки на различных типах DNS-серверов.
 
-### <a name="create-a-conditional-forwarded-on-a-bind-dns-server"></a>Создание условной пересылки на DNS-сервере привязки
+### <a name="create-a-conditional-forwarder-on-a-bind-dns-server"></a>Создание сервера условной пересылки на DNS-сервере привязки
 
 Конкретный файл и параметры для настройки могут зависеть от конкретной настройки DNS.
 

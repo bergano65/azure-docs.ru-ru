@@ -1,24 +1,18 @@
 ---
 title: Начало работы с запросами журнала в Azure Monitor | Документация Майкрософт
 description: В этой статье содержится руководство по началу работы по написанию запросов журнала в Azure Monitor.
-services: log-analytics
-documentationcenter: ''
-author: bwren
-manager: carmonm
-editor: ''
-ms.assetid: ''
-ms.service: log-analytics
-ms.workload: na
-ms.tgt_pltfrm: na
+ms.service: azure-monitor
+ms.subservice: logs
 ms.topic: conceptual
-ms.date: 05/09/2019
+author: bwren
 ms.author: bwren
-ms.openlocfilehash: 6eb066e04cfa561a4fa443b8c8f9582e286a4d7b
-ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
-ms.translationtype: MT
+ms.date: 05/09/2019
+ms.openlocfilehash: d9116ba1b43959402223e0cbd1e4f729e053b9b6
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71076762"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72894299"
 ---
 # <a name="get-started-with-log-queries-in-azure-monitor"></a>Начало работы с запросами журналов в Azure Monitor
 
@@ -35,7 +29,7 @@ ms.locfileid: "71076762"
 - Общие сведения о структуре запроса
 - сортировать результаты запроса;
 - фильтровать результаты запроса;
-- указывать диапазон времени;
+- Указание диапазона времени
 - выбирать поля для включения в результаты;
 - определять и использовать настраиваемые поля;
 - вычислять и группировать результаты.
@@ -112,7 +106,7 @@ SecurityEvent
 
 При написании условий фильтра вы можете использовать следующие выражения:
 
-| Выражение | Описание | Пример |
+| Expression | Описание | Пример |
 |:---|:---|:---|
 | == | Проверка на равенство<br>(с учетом регистра) | `Level == 8` |
 | =~ | Проверка на равенство<br>(без учета регистра) | `EventSourceName =~ "microsoft-windows-security-auditing"` |
@@ -142,7 +136,7 @@ SecurityEvent
 ### <a name="time-picker"></a>Средство выбора времени
 Рядом с кнопкой запуска находится элемент выбора времени, указывающий, что мы запрашиваем только записи за последние 24 часа. Этот диапазон времени по умолчанию применяется ко всем запросам. Чтобы получить только записи за последний час, выберите _последний час_ и повторно запустите запрос.
 
-![Выбор времени](media/get-started-queries/timepicker.png)
+![Средство выбора времени](media/get-started-queries/timepicker.png)
 
 
 ### <a name="time-filter-in-query"></a>Фильтр времени в запросе
@@ -244,6 +238,6 @@ Perf
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Дополнительные сведения о написании запросов поиска](search-queries.md)

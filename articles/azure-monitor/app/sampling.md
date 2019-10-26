@@ -1,24 +1,19 @@
 ---
 title: Выборка данных телеметрии в Azure Application Insights | Документация Майкрософт
 description: Как управлять объемом данных телеметрии.
-services: application-insights
-documentationcenter: windows
-author: cijothomas
-manager: carmonm
-ms.assetid: 015ab744-d514-42c0-8553-8410eef00368
-ms.service: application-insights
-ms.workload: tbd
-ms.tgt_pltfrm: ibiza
+ms.service: azure-monitor
+ms.subservice: application-insights
 ms.topic: conceptual
+author: cijothomas
+ms.author: cithomas
 ms.date: 03/14/2019
 ms.reviewer: vitalyg
-ms.author: cithomas
-ms.openlocfilehash: 83243ba7df48db5cd7757a464f0818ef69c4559e
-ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
+ms.openlocfilehash: 82c0855e3ea3b6a89c1b20569971b0dc6b3d449c
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72372563"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72899865"
 ---
 # <a name="sampling-in-application-insights"></a>Выборка в Application Insights
 
@@ -33,7 +28,7 @@ ms.locfileid: "72372563"
 * Адаптивная выборка включена по умолчанию во всех последних версиях ASP.NET и ASP.NET Core пакетах средств разработки программного обеспечения (SDK).
 * Выборку можно также задать вручную. Это можно настроить на портале на *странице использование и предполагаемые затраты*в пакете SDK ASP.NET в файле ApplicationInsights. config в пакете SDK ASP.NET Core с помощью кода или пакета SDK для Java в файле ApplicationInsights. XML.
 * Если вы зарегистрируете пользовательские события и хотите убедиться, что набор событий сохраняется или удаляется вместе, события должны иметь одинаковое значение с идентификатором.
-* Делитель выборки *n* указывается в каждой записи в свойстве `itemCount`, которая при поиске отображается как число запросов или счетчик событий. выборка @no__t 0when не находится в операции.
+* Делитель выборки *n* указывается в каждой записи в свойстве `itemCount`, которая при поиске отображается как число запросов или счетчик событий. `itemCount==1`, если выборка не находится в операции.
 * При написании запросов аналитики необходимо [учитывать выборку](../../azure-monitor/log-query/aggregations.md). В частности, вместо простого подсчета записей следует использовать функцию `summarize sum(itemCount)`.
 
 ## <a name="types-of-sampling"></a>Типы выборки
@@ -381,7 +376,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, Telemetr
 ## <a name="sampling-for-web-pages-with-javascript"></a>Включение выборки для веб-страниц с помощью JavaScript
 Вы можете настроить выборку с фиксированной частотой для веб-страниц с любого сервера. 
 
-При [настройке веб-страниц для Application Insights](../../azure-monitor/app/javascript.md) измените фрагмент JavaScript, скачанный с портала Application Insights. (В приложениях ASP.NET фрагмент обычно находится в _Layout. cshtml.)  Перед ключом инструментирования вставьте строку, например `samplingPercentage: 10,`:
+При [настройке веб-страниц для Application Insights](../../azure-monitor/app/javascript.md) измените фрагмент JavaScript, скачанный с портала Application Insights. (В приложениях ASP.NET фрагмент обычно находится в _Layout. cshtml.)  Вставьте строку, например `samplingPercentage: 10,`, перед ключом инструментирования:
 
     <script>
     var appInsights= ... 

@@ -1,24 +1,18 @@
 ---
 title: Агрегирование в запросах к журналам Azure Monitor | Документация Майкрософт
 description: Здесь описаны функции агрегирования в запросах к журналам Azure Monitor, предоставляющие эффективные способы анализа данных.
-services: log-analytics
-documentationcenter: ''
-author: bwren
-manager: carmonm
-editor: ''
-ms.assetid: ''
-ms.service: log-analytics
-ms.workload: na
-ms.tgt_pltfrm: na
+ms.service: azure-monitor
+ms.subservice: logs
 ms.topic: conceptual
-ms.date: 08/16/2018
+author: bwren
 ms.author: bwren
-ms.openlocfilehash: fd8e886a78d0689ca60d8ea7c4d16639c81d5733
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 08/16/2018
+ms.openlocfilehash: 86b84e76b4716c1fddda23a6d52c65c0700c5663
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65602729"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72900417"
 ---
 # <a name="aggregations-in-azure-monitor-log-queries"></a>Агрегирование в запросах к журналам Azure Monitor
 
@@ -79,7 +73,7 @@ Heartbeat
 ```
 
 ### <a name="evaluating-subgroups"></a>Оценка подгрупп
-Чтобы выполнить подсчет или другие агрегирования с подгруппами в данных, используйте ключевое слово `by`. Например, для подсчета числа уникальных компьютеров Linux, которые отправляли пакеты пульса в каждой страны или региона:
+Чтобы выполнить подсчет или другие агрегирования с подгруппами в данных, используйте ключевое слово `by`. Например, чтобы подсчитать количество уникальных компьютеров Linux, которые отправляли пульсы в каждой стране или регионе, сделайте следующее:
 
 ```Kusto
 Heartbeat 
@@ -92,11 +86,11 @@ Heartbeat
 |США    | 19                  |
 |Канада           | 3                   |
 |Ирландия          | 0                   |
-|Соединенное королевство   | 0                   |
+|Соединенное Королевство   | 0                   |
 |Нидерланды      | 2                   |
 
 
-Чтобы проанализировать меньшие подгруппы данных, добавьте имена дополнительных столбцов в раздел `by`. Например может потребоваться количество уникальных компьютеров из каждой страны или региона на OSType:
+Чтобы проанализировать меньшие подгруппы данных, добавьте имена дополнительных столбцов в раздел `by`. Например, может потребоваться подсчитать различные компьютеры из каждой страны или региона на OSType:
 
 ```Kusto
 Heartbeat 

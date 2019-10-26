@@ -1,24 +1,18 @@
 ---
 title: Различия в языках запросов журнала Azure Monitor | Документация Майкрософт
 description: Справочная информация о языке запросов Kusto, используемого в Azure Monitor. Статья включает дополнительные элементы, относящиеся к Azure Monitor, а также элементы, которые не поддерживаются в запросах журнала Azure Monitor.
-services: log-analytics
-documentationcenter: ''
-author: bwren
-manager: carmonm
-editor: ''
-ms.assetid: ''
-ms.service: log-analytics
-ms.workload: na
-ms.tgt_pltfrm: na
+ms.service: azure-monitor
+ms.subservice: logs
 ms.topic: article
-ms.date: 08/13/2019
+author: bwren
 ms.author: bwren
-ms.openlocfilehash: 9892b8884d901033a80fae4168f25da97edb5a68
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
-ms.translationtype: MT
+ms.date: 08/13/2019
+ms.openlocfilehash: 6d3c2daafc9116d23d837e86e60ca628bbe34647
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68990183"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72900386"
 ---
 # <a name="azure-monitor-log-query-language-differences"></a>Различия в языках запросов журнала Azure Monitor
 
@@ -31,7 +25,7 @@ ms.locfileid: "68990183"
 
 ### <a name="statements-not-supported-in-azure-monitor"></a>Инструкции, которые не поддерживаются в Azure Monitor:
 
-* [Alias](/azure/kusto/query/aliasstatement)
+* [псевдоним](/azure/kusto/query/aliasstatement);
 * [параметры запроса](/azure/kusto/query/queryparametersstatement).
 
 ### <a name="functions-not-supported-in-azure-monitor"></a>Функции, которые не поддерживаются в Azure Monitor:
@@ -62,7 +56,7 @@ ms.locfileid: "68990183"
 * [app()](app-expression.md);
 * [workspace()](workspace-expression.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Получите ссылки на различные [ресурсы для написания запросов журнала Azure Monitor](query-language.md).
 - Ознакомьтесь с полной [справочной документацией по языку запросов Kusto](/azure/kusto/query/).

@@ -1,29 +1,23 @@
 ---
 title: Работа со строками в запросах журнала Azure Monitor | Документация Майкрософт
-description: В этой статье содержится руководство по с помощью Azure Monitor Log Analytics на портале Azure для запроса и анализа данных журнала в Azure Monitor.
-services: log-analytics
-documentationcenter: ''
-author: bwren
-manager: carmonm
-editor: ''
-ms.assetid: ''
-ms.service: log-analytics
-ms.workload: na
-ms.tgt_pltfrm: na
+description: В этой статье содержится руководство по использованию Azure Monitor Log Analytics в портал Azure для запроса и анализа данных журнала в Azure Monitor.
+ms.service: azure-monitor
+ms.subservice: logs
 ms.topic: conceptual
-ms.date: 08/16/2018
+author: bwren
 ms.author: bwren
-ms.openlocfilehash: 718b12c8a66d66a75796f88ef31b5f0f62abbbc4
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.date: 08/16/2018
+ms.openlocfilehash: 82ac27e10a74dc99adb7615d604502e696aa9edb
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60519673"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72894320"
 ---
 # <a name="working-with-json-and-data-structures-in-azure-monitor-log-queries"></a>Работа с JSON и структурой данных в запросах журнала Azure Monitor
 
 > [!NOTE]
-> Следует выполнить [приступить к работе с Azure Monitor Log Analytics](get-started-portal.md) и [Приступая к работе с Azure Monitor запросов к журналу](get-started-queries.md) перед завершением этого занятия.
+> Перед выполнением этого занятия необходимо завершить [работу с Azure Monitor log Analytics](get-started-portal.md) и [начать работу с Azure Monitor запросами к журналу](get-started-queries.md) .
 
 [!INCLUDE [log-analytics-demo-environment](../../../includes/log-analytics-demo-environment.md)]
 

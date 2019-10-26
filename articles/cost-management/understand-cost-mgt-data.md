@@ -5,23 +5,23 @@ services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 10/14/2019
+ms.date: 10/23/2019
 ms.topic: conceptual
 ms.service: cost-management
 manager: micflan
 ms.custom: ''
-ms.openlocfilehash: 6870297eea194b89a84a89e1e8ef8decf5c1788e
-ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
+ms.openlocfilehash: 0b93f898924d73636c31826b6b63a228f75fc8ba
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72374529"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72900166"
 ---
 # <a name="understand-cost-management-data"></a>Интерпретация данных службы "Управление затратами"
 
 Эта статья поможет вам лучше понять данные о стоимости и использовании Azure, которые входят в службу "Управление затратами Azure". В нем объясняется, как часто выполняется обработка, сбор, отображение и закрытие данных. Плата за использование Azure будет выставляться ежемесячно. Хотя циклы выставления счетов — это ежемесячные периоды, даты начала и окончания цикла зависят от типа подписки. Частота получения данных об использовании в службе "Управление затратами" зависит от различных факторов, например время, необходимое для обработки данных, и как часто службы Azure отправляют данные о потреблении в систему выставления счетов.
 
-Управление затратами включает в себя использование и покупку, включая резервирование и предложения сторонних поставщиков для учетных записей Соглашение Enterprise (EA). Учетные записи Microsoft Customer Agreement (MCA) и отдельные подписки с оплатой по мере использования включают только использование из Azure и служб Marketplace. Поддержка и другие затраты не учитываются. Затраты оцениваются до тех пор, пока не будет сформирован счет и не будут учитываться кредиты.
+Управление затратами включает в себя использование и покупку, включая резервирование и предложения сторонних поставщиков для учетных записей Соглашение Enterprise (EA). Учетные записи соглашения клиента Майкрософт и отдельные подписки с оплатой по мере использования включают только использование из Azure и служб Marketplace. Поддержка и другие затраты не учитываются. Затраты оцениваются до тех пор, пока не будет сформирован счет и не будут учитываться кредиты.
 
 ## <a name="supported-microsoft-azure-offers"></a>Поддерживаемые предложения Microsoft Azure
 
@@ -32,9 +32,9 @@ ms.locfileid: "72374529"
 | **Azure для государственных организаций** | Azure для государственных организаций                                                         | EnterpriseAgreement_2014-09-01 | MS-AZR-USGOV-0017P | Май 2014<sup>1</sup> |
 | **Соглашение Enterprise (EA)** | Разработка и тестирование Enterprise                                                        | MSDNDevTest_2014-09-01 | MS-AZR-0148P | Май 2014<sup>1</sup> |
 | **Соглашение Enterprise (EA)** | [Microsoft Azure Enterprise](https://azure.microsoft.com/offers/enterprise-agreement-support-upgrade) | EnterpriseAgreement_2014-09-01 | MS-AZR-0017P | Май 2014<sup>1</sup> |
-| **Соглашение клиента Майкрософт** | [План Microsoft Azure](https://azure.microsoft.com/offers/ms-azr-0017g) | EnterpriseAgreement_2014-09-01 | Н/Д | 2019 марта,<sup>3</sup> |
-| **Соглашение клиента Майкрософт** | [План Microsoft Azure для разработки и тестирования](https://azure.microsoft.com/offers/ms-azr-0148g) | MSDNDevTest_2014-09-01 | Н/Д | 2019 марта,<sup>3</sup> |
-| **Соглашение для партнеров Майкрософт** | План Microsoft Azure | CSP_2015-05-01, CSP_MG_2017-12-01, CSPDEVTEST_2018-05-01 | Н/Д | Октябрь 2019 г. |
+| **Клиентское соглашение Майкрософт** | [План Microsoft Azure](https://azure.microsoft.com/offers/ms-azr-0017g) | EnterpriseAgreement_2014-09-01 | Н/Д | 2019 марта,<sup>3</sup> |
+| **Клиентское соглашение Майкрософт** | [План Microsoft Azure для разработки и тестирования](https://azure.microsoft.com/offers/ms-azr-0148g) | MSDNDevTest_2014-09-01 | Н/Д | 2019 марта,<sup>3</sup> |
+| **Соглашение клиента Майкрософт, поддерживаемое партнерами** | План Microsoft Azure | CSP_2015-05-01, CSP_MG_2017-12-01 и CSPDEVTEST_2018-05-01<br><br>Идентификатор квоты повторно используется для соглашения клиента Майкрософт и устаревших подписок CSP. В настоящее время поддерживаются только подписки на соглашение с клиентами Майкрософт. | Н/Д | Октябрь 2019 г. |
 | **Microsoft Developer Network (MSDN)** | [MSDN Platforms](https://azure.microsoft.com/offers/ms-azr-0062p)<sup>4</sup> | MSDN_2014-09-01 | MS-AZR-0062P | 2 октября, 2018<sup>2</sup> |
 | **Оплата по мере использования** | [Оплата по мере использования](https://azure.microsoft.com/offers/ms-azr-0003p)                  | PayAsYouGo_2014-09-01 | MS-AZR-0003P | 2 октября, 2018<sup>2</sup> |
 | **Оплата по мере использования** | [Разработка и тестирование с оплатой по мере использования](https://azure.microsoft.com/offers/ms-azr-0023p)         | MSDNDevTest_2014-09-01 | MS-AZR-0023P | 2 октября, 2018<sup>2</sup> |

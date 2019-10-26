@@ -1,25 +1,20 @@
 ---
 title: Вопросы и ответы об Azure Application Insights | Документы Майкрософт
 description: Вопросы и ответы об Application Insights.
-services: application-insights
-documentationcenter: .net
-author: mrbullwinkle
-manager: carmonm
-ms.assetid: 0e3b103c-6e2a-4634-9e8c-8b85cf5e9c84
-ms.service: application-insights
-ms.workload: mobile
-ms.tgt_pltfrm: ibiza
+ms.service: azure-monitor
+ms.subservice: application-insights
 ms.topic: conceptual
-ms.date: 09/16/2019
+author: mrbullwinkle
 ms.author: mbullwin
-ms.openlocfilehash: 94e994a3dc1cd9d5d5d0b7acb5aed4783d881915
-ms.sourcegitcommit: 4f3f502447ca8ea9b932b8b7402ce557f21ebe5a
+ms.date: 09/16/2019
+ms.openlocfilehash: 55a096cd4971664e55bb2cfd17f9f8927d7c32f5
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71802293"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72899526"
 ---
-# <a name="application-insights-frequently-asked-questions"></a>Application Insights. Часто задаваемые вопросы
+# <a name="application-insights-frequently-asked-questions"></a>Application Insights: вопросы и ответы
 
 ## <a name="configuration-problems"></a>Проблемы с конфигурацией
 *У меня не получается настроить компоненты, о которых идет речь в таких статьях:*
@@ -27,7 +22,7 @@ ms.locfileid: "71802293"
 * [Troubleshooting no data - Application Insights for .NET](asp-net-troubleshoot-no-data.md)
 * [раздел "Устранение неполадок"](monitor-performance-live-website-now.md#troubleshoot)
 * [Настройка системы диагностики Azure для входа в Application Insights](../../azure-monitor/platform/diagnostics-extension-to-application-insights.md)
-* [Веб-приложение Java](java-troubleshoot.md)
+* [Устранение неполадок, а также вопросы и ответы по Application Insights для Java;](java-troubleshoot.md)
 
 *Я не получаю данные с моего сервера*
 
@@ -84,7 +79,7 @@ ms.locfileid: "71802293"
 
   * Web.config
   * packages.config
-* (Только для новых проектов. при [добавлении Application Insights в существующий проект][start]это необходимо сделать вручную.) Вставляет фрагменты кода в код клиента и сервера для их инициализации с идентификатором ресурса Application Insights. Например, в приложении MVC код вставляется в файл главной страницы Views/Shared/_Layout.cshtml.
+* (Только для новых проектов. при [добавлении Application Insights в существующий проект][start]это необходимо сделать вручную.) Вставляет фрагменты кода в клиент и серверный код, чтобы инициализировать их с помощью идентификатора ресурса Application Insights. Например, в приложении MVC код вставляется в файл главной страницы Views/Shared/_Layout.cshtml.
 
 ## <a name="how-do-i-upgrade-from-older-sdk-versions"></a>Как обновить предыдущие версии пакета SDK?
 Информацию для пакета SDK, соответствующего типу вашего приложения, см. в статье с [заметками о выпуске](release-notes.md).
@@ -148,7 +143,7 @@ ms.locfileid: "71802293"
 
 
 ## <a name="data"></a>Как долго данные хранятся на портале? Защищены ли они?
-Ознакомьтесь с хранением [и конфиденциальностью данных][data].
+Ознакомьтесь с [хранением и конфиденциальностью данных][data].
 
 ## <a name="could-personal-data-be-sent-in-the-telemetry"></a>Могут ли персональные данные отправляться с данными телеметрии?
 
@@ -198,8 +193,8 @@ ms.locfileid: "71802293"
 | Телеметрия зависимостей |[Установить монитор состояний Application Insights на сервере](monitor-performance-live-website-now.md) |Выявить проблемы с базами данных или другими внешними компонентами |
 | Получение данных трассировки стека из исключений |[Вставить вызовы TrackException в код](asp-net-exceptions.md) (некоторые выводятся автоматически) |Обнаружить и диагностировать исключения |
 | Поиск по трассировкам журнала |[Добавить адаптер ведения журнала](asp-net-trace-logs.md) |Выявить исключения, проблемы производительности |
-| Основная информация об использовании клиента: просмотр страниц, сеансы и т. д. |[Инициализатор JavaScript на веб-страницах](javascript.md) |Аналитика использования |
-| Настраиваемые метрики клиента |[Трассировка вызовов на веб-страницах](api-custom-events-metrics.md) |Расширить возможности для пользователя |
+| Основная информация об использовании клиента: просмотр страниц, сеансы и т. д. |[Инициализатор JavaScript на веб-страницах](javascript.md) |Анализ использования |
+| Настраиваемые метрики клиента |[Трассировка вызовов на веб-страницах](api-custom-events-metrics.md) |Расширение возможностей пользователей |
 | Настраиваемые метрики сервера |[Отслеживание вызовов на сервере](api-custom-events-metrics.md) |Бизнес-аналитика |
 
 ## <a name="why-are-the-counts-in-search-and-metrics-charts-unequal"></a>Почему счетчики в результатах поиска и на диаграммах метрик не совпадают?
@@ -213,7 +208,7 @@ ms.locfileid: "71802293"
 ```
 
 
-## <a name="automation"></a>Автоматизация
+## <a name="automation"></a>Служба автоматизации
 
 ### <a name="configuring-application-insights"></a>Настройка Application Insights
 

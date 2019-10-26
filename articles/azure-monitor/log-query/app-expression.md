@@ -1,24 +1,18 @@
 ---
 title: Выражение app() в запросах журнала Azure Monitor | Документация Майкрософт
-description: Приложение выражение используется в запросе журнала Azure Monitor для получения данных из приложения Application Insights в той же группе ресурсов, другую группу ресурсов или другую подписку.
-services: log-analytics
-documentationcenter: ''
-author: bwren
-manager: carmonm
-editor: ''
-ms.assetid: ''
-ms.service: log-analytics
-ms.workload: na
-ms.tgt_pltfrm: na
+description: Выражение приложения используется в Azure Monitor запросе журнала для получения данных из определенного приложения Application Insights в той же группе ресурсов, в другой группе ресурсов или в другой подписке.
+ms.service: azure-monitor
+ms.subservice: logs
 ms.topic: article
-ms.date: 01/25/2019
+author: bwren
 ms.author: bwren
-ms.openlocfilehash: a1a605bc733597430f64dceeb6c485db0abf657b
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
-ms.translationtype: MT
+ms.date: 01/25/2019
+ms.openlocfilehash: fd6bfd40eadfc09008c992d263b065d7b41ffa1f
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60589249"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72894474"
 ---
 # <a name="app-expression-in-azure-monitor-query"></a>Выражение app() в запросах Azure Monitor
 
@@ -33,7 +27,7 @@ ms.locfileid: "60589249"
 
 ## <a name="arguments"></a>Аргументы
 
-- *Идентификатор:* идентифицирует приложение с помощью одного из форматов, представленных в таблице ниже.
+- *Идентификатор* идентифицирует приложение с помощью одного форматов, представленных в таблице ниже.
 
 | Идентификатор | Описание | Пример
 |:---|:---|:---|
@@ -43,7 +37,7 @@ ms.locfileid: "60589249"
 | Идентификатор ресурса Azure | Идентификатор ресурса Azure |app("/subscriptions/7293b69-db12-44fc-9a66-9c2005c3051d/resourcegroups/Fabrikam/providers/microsoft.insights/components/fabrikamapp") |
 
 
-## <a name="notes"></a>Примечания
+## <a name="notes"></a>Заметки
 
 * У вас должен быть доступ на чтение приложения.
 * Для идентификации приложения по имени его имя должно быть уникальным во всех доступных подписках. Если у вас есть несколько приложений с таким именем, запрос не будет выполнен из-за неоднозначности. В этом случае необходимо воспользоваться другим идентификатором.

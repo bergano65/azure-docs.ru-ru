@@ -1,5 +1,5 @@
 ---
-title: Использование пользовательских ролей для ресурсов Azure в PIM-Azure Active Directory | Документация Майкрософт
+title: Использование пользовательских ролей для ресурсов Azure в управление привилегированными пользователями-Azure Active Directory | Документация Майкрософт
 description: Узнайте, как использовать настраиваемые роли ресурсов Azure в Azure AD Privileged Identity Management (PIM).
 services: active-directory
 documentationcenter: ''
@@ -11,23 +11,23 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: pim
-ms.date: 03/30/2018
+ms.date: 10/23/2019
 ms.author: curtand
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1d36514c97cf1f45ee0a435d3b716019d2762e5a
-ms.sourcegitcommit: 95b180c92673507ccaa06f5d4afe9568b38a92fb
+ms.openlocfilehash: 8e940dd0e4c653ed4921a9e8f245aab34107ba95
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/08/2019
-ms.locfileid: "70804178"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72895716"
 ---
-# <a name="use-custom-roles-for-azure-resources-in-pim"></a>Применение настраиваемых ролей ресурсов Azure в PIM
+# <a name="use-custom-roles-for-azure-resources-in-privileged-identity-management"></a>Использование пользовательских ролей для ресурсов Azure в управление привилегированными пользователями
 
-Вам может потребоваться применить параметры Azure Active Directory (Azure AD) управление привилегированными пользователями (PIM) к некоторым членам роли, обеспечивая более широкие автономность для других пользователей. Предположим, ваша компания привлекла нескольких консультантов для помощи в разработке приложения, которое будет выполняться в подписке Azure.
+Вам может потребоваться применить параметры управление привилегированными пользователями (PIM) к некоторым пользователям привилегированной роли в Организации Azure Active Directory (Azure AD), обеспечивая более широкие автономность для других пользователей. Рассмотрим пример сценария, в котором ваша организация нанимает несколько контрактов, чтобы помочь в разработке приложения, которое будет выполняться в подписке Azure.
 
 Вам как администратору ресурсов было бы удобно, чтобы сотрудники получали доступ без обязательных подтверждений. Тем не менее, все они должны получать подтверждение при запросе на доступ к ресурсам организации.
 
-Выполните описанную в следующем разделе процедуру, чтобы настроить целевые параметры PIM для ролей ресурсов Azure.
+Выполните действия, описанные в следующем разделе, чтобы настроить целевые параметры управление привилегированными пользователями для ролей ресурсов Azure.
 
 ## <a name="create-the-custom-role"></a>Создание настраиваемой роли
 
@@ -40,15 +40,15 @@ ms.locfileid: "70804178"
 
 ## <a name="apply-pim-settings"></a>Применение параметров PIM
 
-После создания роли клиенте на портале Azure перейдите на панель **Управление привилегированными пользователями — ресурсы Azure**. Выберите ресурс, к которому применяется роль.
+После создания роли в вашей организации Azure AD перейдите на страницу **Управление привилегированными пользователями (ресурсы Azure)** в портал Azure. Выберите ресурс, к которому применяется роль.
 
 ![Панель "Управление привилегированными пользователями — ресурсы Azure"](media/pim-resource-roles-custom-role-policy/aadpim-manage-azure-resource-some-there.png)
 
-[Настройте параметры PIM](pim-resource-roles-configure-role-settings.md) для выбранных участников этой роли.
+[Настройте параметры роли Управление привилегированными пользователями](pim-resource-roles-configure-role-settings.md) , которые должны применяться к этим членам роли.
 
 Наконец, [назначьте роли](pim-resource-roles-assign-roles.md) определенной группе участников, для которых вы хотите применить настроенные параметры.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Настройка параметров роли ресурсов Azure в PIM](pim-resource-roles-configure-role-settings.md)
+- [Настройка параметров роли ресурсов Azure в управление привилегированными пользователями](pim-resource-roles-configure-role-settings.md)
 - [Пользовательские роли в Azure](../../role-based-access-control/custom-roles.md)

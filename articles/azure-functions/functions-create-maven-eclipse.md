@@ -12,12 +12,12 @@ ms.devlang: java
 ms.date: 07/01/2018
 ms.author: jehollan
 ms.custom: mvc, devcenter
-ms.openlocfilehash: b2f5567e037c65d7650b3f95a2ee81b93ac987b7
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 114d1298ec72dc0be23786664bf066fcbb7413f0
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70085871"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72900143"
 ---
 # <a name="create-your-first-function-with-java-and-eclipse"></a>Создание первой функции с помощью Java и Eclipse 
 
@@ -34,7 +34,7 @@ ms.locfileid: "70085871"
 -  [Java Developer Kit (JDK)](https://www.azul.com/downloads/zulu/) версии 8.
 -  [Apache Maven](https://maven.apache.org) 3.0 или более поздней версии.
 -  [Eclipse](https://www.eclipse.org/downloads/packages/) с поддержкой Java и Maven.
--  [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure)
+-  [Azure CLI](https://docs.microsoft.com/cli/azure)
 
 > [!IMPORTANT] 
 > Переменной среде JAVA_HOME необходимо присвоить расположение установки JDK, чтобы завершить выполнение заданий этого краткого руководства.
@@ -43,15 +43,15 @@ ms.locfileid: "70085871"
 
 ## <a name="create-a-functions-project"></a>Создание проекта Функций Azure
 
-1. В Eclipse откройте меню **файл** и выберите **создать&gt; -Maven проект**. 
+1. В Eclipse откройте меню **файл** и выберите **создать-&gt; проект Maven**. 
 1. Примите значения по умолчанию в диалоговом окне **New Maven Project** (Новый проект Maven) и щелкните **Next** (Далее).
 1. Выберите **Add Archetype** (Добавить архетип) и добавьте записи для [azure-functions-archetype](https://mvnrepository.com/artifact/com.microsoft.azure/azure-functions-archetype).
     - Идентификатор группы архетипа: com.microsoft.azure.
     - Идентификатор артефакта архетипа: azure-functions-archetype.
-    - Версия: Используйте последнюю версию **1,22** из [центрального репозитория](https://mvnrepository.com/artifact/com.microsoft.azure/azure-functions-archetype)
-    ![Eclipse Maven CREATE](media/functions-create-first-java-eclipse/functions-create-eclipse.png)  
-1. Нажмите кнопку **ОК** , а затем нажмите кнопку **Далее** , чтобы ввести значения, аналогичные следующему снимку (используйте другое AppName, отличное от **Fabrikam-Function-20170920120101928**), и, наконец, **завершите работу**.
-    ![Eclipse Maven Create2](media/functions-create-first-java-eclipse/functions-create-eclipse2.png)  
+    - Версия: используйте последнюю версию **1,22** из [центрального репозитория](https://mvnrepository.com/artifact/com.microsoft.azure/azure-functions-archetype)
+    ![Eclipse Maven Create](media/functions-create-first-java-eclipse/functions-create-eclipse.png)  
+1. Нажмите кнопку **ОК** , а затем кнопку **Далее**.  Обязательно заполните значения для всех полей, включая `resourceGroup`, `appName`и `appRegion` (используйте другое appName, кроме **Fabrikam-Function-20170920120101928**) и в конечном итоге **завершите работу**.
+    ![Create2 Maven Eclipse](media/functions-create-first-java-eclipse/functions-create-eclipse2.png)  
 
 Maven создает файлы проекта в новой папке с именем _artifactId_. Созданный код проекта представляет собой простую функцию[активации HTTP](/azure/azure-functions/functions-bindings-http-webhook), которая возвращает текст HTTP-запроса.
 
@@ -96,7 +96,7 @@ az login
 [INFO] ------------------------------------------------------------------------
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о разработке функции Java см. в статье [Azure Functions Java developer guide](functions-reference-java.md) (Руководство разработчика Java для Функций Azure).
 - Добавьте в проект дополнительные функции с помощью различных триггеров целевого объекта Maven`azure-functions:add`.

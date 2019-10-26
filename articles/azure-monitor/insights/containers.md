@@ -1,24 +1,18 @@
 ---
 title: Решение мониторинга контейнеров в Azure Monitor | Документация Майкрософт
 description: Решение для мониторинга контейнеров в Azure Monitor помогает просматривать узлы контейнеров DOCKER и Windows и управлять ими в одном расположении.
-services: log-analytics
-documentationcenter: ''
-author: mgoedtel
-manager: carmonm
-editor: ''
-ms.assetid: e1e4b52b-92d5-4bfa-8a09-ff8c6b5a9f78
-ms.service: log-analytics
-ms.workload: na
-ms.tgt_pltfrm: na
+ms.service: azure-monitor
+ms.subservice: logs
 ms.topic: conceptual
-ms.date: 07/22/2019
+author: mgoedtel
 ms.author: magoedte
-ms.openlocfilehash: 5f48b1b1c8568c4f60d012797634b844a276b1bb
-ms.sourcegitcommit: acffa72239413c62662febd4e39ebcb6c6c0dd00
+ms.date: 07/22/2019
+ms.openlocfilehash: b71818d5d840a0466b5ff6f271df117043341f7b
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68951960"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72899109"
 ---
 # <a name="container-monitoring-solution-in-azure-monitor"></a>Решение для мониторинга контейнеров в Azure Monitor
 
@@ -32,8 +26,8 @@ ms.locfileid: "68951960"
 
 - Docker Swarm
 - DC/OS
-- Kubernetes
-- Платформа Service Fabric
+- kubernetes
+- Service Fabric
 - Red Hat OpenShift.
 
 Если вы развернули контейнеры в [Azure Service Fabric](../../service-fabric/service-fabric-overview.md), рекомендуется включить [решение Service Fabric](../../service-fabric/service-fabric-diagnostics-oms-setup.md) и это решение, включив мониторинг событий кластера. Перед включением решения Service Fabric ознакомьтесь [с разрешениями Service Fabric](../../service-fabric/service-fabric-diagnostics-event-analysis-oms.md) , чтобы понять, что оно предоставляет и как его использовать.
@@ -52,15 +46,15 @@ ms.locfileid: "68951960"
 
 В следующей таблице показано, как система управления DOCKER и отслеживание операционной системы поддерживают инвентаризацию контейнеров, производительность и журналы с Azure Monitor.   
 
-| | ACS | Linux | Windows | Контейнер<br>Учет | Изображение<br>Учет | Узел<br>Список | Контейнер<br>Производительность | Контейнер<br>Событие | Событие<br>Журнал | Контейнер<br>Журнал |
+| | ACS | Linux | Windows | Контейнер<br>Список | Образ —<br>Список | Узел<br>Список | Контейнер<br>Ориентированное на производительность | Контейнер<br>Мероприятие | Мероприятие<br>Журнал | Контейнер<br>Журнал |
 |-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
-| Kubernetes | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; |
+| kubernetes | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; |
 | Mesosphere<br>DC/OS | &#8226; | &#8226; | | &#8226; | &#8226; | &#8226; | &#8226;| &#8226; | &#8226; | &#8226; |
 | Docker<br>Swarm | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | | &#8226; |
 | Служба<br>Fabric | | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; |
 | Red Hat Open<br>Shift | | &#8226; | | &#8226; | &#8226;| &#8226; | &#8226; | &#8226; | | &#8226; |
 | Windows Server<br>(изолированный) | | | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | | &#8226; |
-| Linux Server<br>(изолированный) | | &#8226; | | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | | &#8226; |
+| Сервер Linux<br>(изолированный) | | &#8226; | | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | | &#8226; |
 
 ### <a name="docker-versions-supported-on-linux"></a>Версии Docker, поддерживаемые в Linux
 
@@ -87,7 +81,7 @@ ms.locfileid: "68951960"
 
 ### <a name="supported-windows-operating-system"></a>Поддерживаемая операционная система Windows
 
-- Windows Server 2016
+- Windows Server 2016
 - Юбилейный выпуск Windows 10 (профессиональный или корпоративный)
 
 ### <a name="docker-versions-supported-on-windows"></a>Версии Docker, поддерживаемые в Windows
@@ -557,7 +551,7 @@ Start-Service docker
 Метки, добавленные в типы данных *PodLabel* — это ваши метки. Например, приведенные в таблице метки PodLabel. Таким образом, `PodLabel_deployment_s`, `PodLabel_deploymentconfig_s`, `PodLabel_docker_registry_s` будут отличаться в наборе данных вашей среды и должны выглядеть примерно так: `PodLabel_yourlabel_s`.
 
 ## <a name="monitor-containers"></a>Мониторинг контейнеров
-После включения решения в портал Azure на плитке контейнеры отображаются сводные сведения о узлах контейнеров и контейнерах, запущенных на узлах.
+После включения решения в портал Azure на плитке **контейнеры** отображаются сводные сведения о узлах контейнеров и контейнерах, запущенных на узлах.
 
 ![Плитка "Контейнеры"](./media/containers/containers-title.png)
 
@@ -645,6 +639,6 @@ Log Analytics добавляет к контейнеру пометку **Сбо
 
 Создав запрос, который вы считаете полезным, сохраните его, щелкнув **Избранное** в верхней части страницы поиска по журналам. Позднее вы сможете легко открыть его на странице **Моя панель мониторинга**.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Журналы запросов](../log-query/log-query-overview.md) для просмотра подробных записей данных контейнера.

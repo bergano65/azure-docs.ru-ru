@@ -1,24 +1,18 @@
 ---
 title: Создание диаграмм и схем из запросов журнала Azure Monitor | Документация Майкрософт
 description: В статье описаны различные визуализации в Azure Monitor для разных способов отображения данных журнала.
-services: log-analytics
-documentationcenter: ''
-author: bwren
-manager: carmonm
-editor: ''
-ms.assetid: ''
-ms.service: log-analytics
-ms.workload: na
-ms.tgt_pltfrm: na
+ms.service: azure-monitor
+ms.subservice: logs
 ms.topic: conceptual
-ms.date: 08/16/2018
+author: bwren
 ms.author: bwren
-ms.openlocfilehash: 07d0866bd697587da170a00e8077a57035989d32
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.date: 08/16/2018
+ms.openlocfilehash: 34975a1752467c61ea5b329210473eee266c98d1
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60594000"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72900399"
 ---
 # <a name="creating-charts-and-diagrams-from-azure-monitor-log-queries"></a>Создание диаграмм и схем из запросов журнала Azure Monitor
 
@@ -40,7 +34,7 @@ Heartbeat
 
 По умолчанию результаты отображаются в виде таблицы:
 
-![Таблица](media/charts/table-display.png)
+![Таблицы](media/charts/table-display.png)
 
 Чтобы получить более полное представление, выберите **Диаграмма** и выберите параметр **Круговая**, чтобы отображать результаты:
 
