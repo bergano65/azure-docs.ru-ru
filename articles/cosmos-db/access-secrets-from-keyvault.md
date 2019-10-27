@@ -1,20 +1,20 @@
 ---
 title: Хранение ключей Azure Cosmos DB и получение доступа к ним в Key Vault
 description: Хранение строк подключения, ключей и конечных точек Azure Cosmos DB, а также получение доступа к ним в Azure Key Vault.
-author: rimman
+author: markjbrown
+ms.author: mjbrown
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 05/23/2019
-ms.author: rimman
 ms.reviewer: sngun
-ms.openlocfilehash: 157ccd284c25cb5c7275aa942823ade2a40795cc
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 55e6bbc338c1ac6f9ef935b4a3a05c32f2b5e9f5
+ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66239856"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72755223"
 ---
 # <a name="secure-azure-cosmos-keys-using-azure-key-vault"></a>Защита ключей Azure Cosmos с помощью Azure Key Vault 
 
@@ -22,13 +22,13 @@ ms.locfileid: "66239856"
 
 Чтобы сохранить ключи доступа Azure Cosmos DB в Key Vault и читать их оттуда, требуются следующие шаги:
 
-* создать хранилище ключей;  
+* Создание хранилища ключей  
 * добавление ключей доступа Azure Cosmos DB в Key Vault;  
-* создание веб-приложения Azure;  
+* Создание веб-приложения Azure  
 * Регистрация приложения и предоставление ему разрешений на чтение из Key Vault  
 
 
-## <a name="create-a-key-vault"></a>создать хранилище ключей;
+## <a name="create-a-key-vault"></a>Создание хранилища ключей
 
 1. Вход на [портал Azure](https://portal.azure.com/).  
 2. Выберите **Создать ресурс > Безопасность > Key Vault**.  
@@ -81,7 +81,7 @@ ms.locfileid: "66239856"
 
 2. Откройте **политики доступа**, выберите **+ Добавить**, найдите развернутое веб-приложение, выберите разрешения и нажмите кнопку **ОК**.  
 
-   ![Добавить политику доступа](./media/access-secrets-from-keyvault/add-access-policy.png)
+   ![Добавление политики доступа](./media/access-secrets-from-keyvault/add-access-policy.png)
 
 Теперь, запустив приложение, вы сможете прочитать секрет из Key Vault.
 

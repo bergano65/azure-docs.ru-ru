@@ -3,19 +3,19 @@ title: Анализ содержимого видео для выявления 
 titleSuffix: Azure Cognitive Services
 description: Как анализировать содержимое видео на наличие различных нежелательных материалов с помощью пакета SDK Content Moderator для .NET
 services: cognitive-services
-author: sanjeev3
+author: PatrickFarley
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
 ms.topic: conceptual
 ms.date: 01/10/2019
-ms.author: sajagtap
-ms.openlocfilehash: 1742db702a899d47110177532f5e85e74a59d91c
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.author: pafarley
+ms.openlocfilehash: 71858755fe31823d4d7ef8623b915db851530116
+ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68564315"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72755235"
 ---
 # <a name="analyze-video-content-for-objectionable-material-in-c"></a>Анализ содержимого видео для выявления нежелательного содержимого в C#
 
@@ -23,8 +23,8 @@ ms.locfileid: "68564315"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу. 
 
-## <a name="prerequisites"></a>предварительные требования
-- Любой выпуск [Visual Studio 2015 или 2017](https://www.visualstudio.com/downloads/).
+## <a name="prerequisites"></a>Технические условия
+- Любой выпуск [Visual Studio 2015 или 2017](https://www.visualstudio.com/downloads/)
 
 ## <a name="set-up-azure-resources"></a>Настройка ресурсов Azure
 
@@ -56,7 +56,7 @@ ms.locfileid: "68564315"
 
 1. В Visual Studio создайте проект **Консольное приложение (.NET Framework)** и назовите его **VideoModeration**. 
 1. При наличии других проектов в решении выберите этот в качестве единого запускаемого проекта.
-1. Получите необходимые пакеты NuGet. Щелкните проект правой кнопкой мыши в обозревателе решений и выберите **Управление пакетами NuGet**, затем найдите и установите следующие пакеты:
+1. Получите необходимые пакеты NuGet. Щелкните правой кнопкой мыши проект в обозревателе решений и выберите **Управление пакетами NuGet**, затем найдите и установите следующие пакеты:
     - windowsazure.mediaservices;
     - windowsazure.mediaservices.extensions.
 
@@ -64,9 +64,9 @@ ms.locfileid: "68564315"
 
 Затем скопируйте и вставьте код из этого руководства в проект, чтобы реализовать основной сценарий модерации содержимого.
 
-### <a name="update-the-programs-using-statements"></a>Обновление инструкций using в программе
+### <a name="update-the-programs-using-statements"></a>Обновление инструкций using программы
 
-Добавьте следующие инструкции `using` в начало файла _Program.cs_.
+Добавьте следующие операторы `using` в начало файла _Program.cs_.
 
 ```csharp
 using System;
@@ -120,7 +120,7 @@ private static readonly string CONTENT_MODERATOR_PRESET_FILE = "preset.json";
 
 Если вы хотите использовать локальный видеофайл (простейший случай), добавьте его в проект и введите его путь как значение `INPUT_FILE` (относительные пути относятся к каталогу выполнения).
 
-Вам также необходимо создать файл _preset.json_ в текущем каталоге и использовать его для указания номера версии. Пример:
+Вам также необходимо создать файл _preset.json_ в текущем каталоге и использовать его для указания номера версии. Пример.
 
 ```JSON
 {
@@ -372,7 +372,7 @@ static void StateChanged(object sender, JobStateChangedEventArgs e)
 > - `adultScore` обозначает потенциальное наличие и прогнозируемую оценку содержимого, которое в определенных обстоятельствах может считаться порнографическим или предназначенным только для взрослых.
 > - `racyScore` обозначает потенциальное наличие и прогнозируемую оценку содержимого, которое в определенных обстоятельствах может считаться сексуально окрашенными или не предназначенным для детей.
 > - Оценки `adultScore` и `racyScore` принимают значения от 0 до 1. Чем выше оценка, тем более подходящей модель считает соответствующую категорию. Эта предварительная версия использует статистическую модель прогнозирования, а не оценки, кодированные вручную. Корпорация Майкрософт рекомендует протестировать ее на своих данных, чтобы проверить применимость анализа по каждой категории.
-> - `reviewRecommended` принимает значения true или false в зависимости от внутренних порогов оценки. Клиенты могут на выбор использовать значения по умолчанию или настраивать собственные пороги в соответствии с действующими политиками.
+> - `reviewRecommended` принимает значения true или false в зависимости от внутренних порогов оценки. Клиенты могут выбрать, будут ли они использовать значения по умолчанию или настраивать собственные пороги в соответствии с действующими политиками содержимого.
 
 ```json
 {
@@ -426,7 +426,7 @@ static void StateChanged(object sender, JobStateChangedEventArgs e)
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как создавать [обзоры видео](video-reviews-quickstart-dotnet.md) на основе выходных данных модерации.
 
@@ -434,4 +434,4 @@ static void StateChanged(object sender, JobStateChangedEventArgs e)
 
 Ознакомьтесь с подробным руководством по созданию [полного решения для модерации видео и расшифровки](video-transcript-moderation-review-tutorial-dotnet.md).
 
-[Скачайте решение Visual Studio](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/ContentModerator) для работы с этим и другими краткими руководствами по Content Moderator для .NET.
+[Скачайте решение Visual Studio](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/ContentModerator) для работы с этим и другими краткими руководствами по Content Moderator для .NET .
