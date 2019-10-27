@@ -16,12 +16,12 @@ ms.date: 09/03/2019
 ms.author: ajburnle
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a467856550bf2deaab931b3fe2f54b7986f12f8a
-ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
+ms.openlocfilehash: 136a9994415b42c456ebdb0caa8ed6edcc7b4534
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72430297"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72934374"
 ---
 # <a name="what-is-azure-ad-entitlement-management-preview"></a>Что собой представляет управление правами Azure AD? (предварительная версия)
 
@@ -121,6 +121,7 @@ ms.locfileid: "72430297"
 | Тип ресурса | Тип ресурса, включающий группы, приложения и сайты SharePoint Online. |
 | роль ресурса | Коллекция разрешений, связанных с ресурсом. |
 | Каталог ресурсов | Каталог, содержащий один или несколько ресурсов для совместного использования. |
+| подключенная Организация | Внешний каталог или домен Azure AD, с которым связана связь. |
 | Назначенные пользователи | Назначение пакета доступа пользователю, чтобы у пользователя были все роли ресурсов этого пакета доступа. |
 | enable | Процесс предоставления доступа к пакету Access пользователям для запроса. |
 

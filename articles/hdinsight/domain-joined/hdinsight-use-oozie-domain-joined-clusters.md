@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive,seodec18
 ms.topic: conceptual
 ms.date: 02/15/2019
-ms.openlocfilehash: 99f8c2b40445fe282800d096353bee1c7a934ebe
-ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
+ms.openlocfilehash: b644d293afd429bdc68fba66c119eb7146d0daf0
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70918131"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72935461"
 ---
 # <a name="run-apache-oozie-in-hdinsight-hadoop-clusters-with-enterprise-security-package"></a>Запуск Apache Oozie в кластерах Hadoop HDInsight с Корпоративным пакетом безопасности
 
@@ -25,7 +25,7 @@ Apache Oozie — это система рабочих процессов и ко
 
 Вы также можете использовать Oozie для планирования системных заданий, например Java-программ и сценариев оболочки.
 
-## <a name="prerequisite"></a>Предварительное требование
+## <a name="prerequisite"></a>Необходимое условие
 
 - Кластер Azure HDInsight Hadoop с Корпоративным пакетом безопасности (ESP). Ознакомьтесь со статьей [Настройка кластера HDInsight с корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory](./apache-domain-joined-configure-using-azure-adds.md).
 
@@ -61,9 +61,9 @@ Apache Oozie — это система рабочих процессов и ко
    tar -xvf oozie-examples.tar.gz
    hdfs dfs -put examples /user/<DomainUser>/
    ```
-   Замените `DomainUser` именем пользователя домена. 
-   Замените `DomainUserPath` путем к домашнему каталогу для пользователя домена. 
-   Замените `ClusterVersion` версией платформы данных Hortonworks (HDP), используемой вашим кластером.
+   Замените `DomainUser` именем пользователя домена.
+   Замените `DomainUserPath` путем к домашнему каталогу для пользователя домена.
+   Замените `ClusterVersion` версией платформы данных кластера.
 
 2. Для создания и открытия файла выполните следующий запрос:
    ```bash
@@ -329,6 +329,6 @@ Apache Oozie — это система рабочих процессов и ко
 
 2. Следовать инструкциям в [веб-интерфейсе Oozie](../hdinsight-use-oozie-linux-mac.md), чтобы включить туннелирование SSH для граничного узла и получить доступ к пользовательскому веб-интерфейсу.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Использование Oozie с Hadoop для определения и запуска рабочих процессов в Azure HDInsight под управлением Linux](../hdinsight-use-oozie-linux-mac.md).
 * [Проверка подлинности при использовании присоединенного к домену кластера HDInsight](../hdinsight-hadoop-linux-use-ssh-unix.md#domainjoined).

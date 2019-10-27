@@ -1,24 +1,18 @@
 ---
 title: Выражение workspace() в запросе журнала Azure Monitor | Документация Майкрософт
 description: Выражение workspace используется в запросе журнала Azure Monitor для получения данных из определенной рабочей области в той же или другой группе ресурсов или в другой подписке.
-services: log-analytics
-documentationcenter: ''
+ms.service: azure-monitor
+ms.subservice: logs
+ms.topic: conceptual
 author: bwren
-manager: carmonm
-editor: ''
-ms.assetid: ''
-ms.service: log-analytics
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.date: 09/10/2018
 ms.author: bwren
-ms.openlocfilehash: b4bc652d54150b72cc64898464b3511a860bf011
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 09/10/2018
+ms.openlocfilehash: f26b9534fbf95cc301ae782d47ab7030988fa469
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60785682"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72932853"
 ---
 # <a name="workspace-expression-in-azure-monitor-log-query"></a>Выражение workspace() в запросе журнала Azure Monitor
 
@@ -31,17 +25,17 @@ ms.locfileid: "60785682"
 
 ## <a name="arguments"></a>Аргументы
 
-- *Идентификатор:* определяет рабочую область с помощью одного из форматов в следующей таблице.
+- *Идентификатор*: определяет рабочую область с помощью одного из форматов в следующей таблице.
 
 | Идентификатор | Описание | Пример
 |:---|:---|:---|
 | Имя ресурса | Понятное имя рабочей области (имя компонента). | workspace("contosoretail") |
 | Полное имя | Полное имя рабочей области в формате: subscriptionName/resourceGroup/componentName. | workspace('Contoso/ContosoResource/ContosoWorkspace') |
 | ИД | Идентификатор GUID рабочей области. | workspace("b438b3f6-912a-46d5-9db1-b42069242ab4") |
-| Идентификатор ресурса Azure | Идентификатор ресурса Azure. | workspace("/subscriptions/e4227-645-44e-9c67-3b84b5982/resourcegroups/ContosoAzureHQ/providers/Microsoft.OperationalInsights/workspaces/contosoretail") |
+| Идентификатор ресурса Azure | Идентификатор ресурса Azure | workspace("/subscriptions/e4227-645-44e-9c67-3b84b5982/resourcegroups/ContosoAzureHQ/providers/Microsoft.OperationalInsights/workspaces/contosoretail") |
 
 
-## <a name="notes"></a>Примечания
+## <a name="notes"></a>Заметки
 
 * У вас должен быть доступ на чтение к рабочей области.
 * Связанное выражение — `app`. Оно позволяет выполнять запросы к приложениям Application Insights.
@@ -71,6 +65,6 @@ union
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- См. в разделе [выражение приложения](app-expression.md) для ссылки на приложение Application Insights.
+- См. [выражение приложения](app-expression.md) для ссылки на приложение Application Insights.
 - Подробнее о хранении данных Azure Monitor см. в статье [Анализ данных Log Analytics в Azure Monitor](log-query-overview.md).
 - Ознакомьтесь с полной документацией по [языку запросов Kusto](/azure/kusto/query/).

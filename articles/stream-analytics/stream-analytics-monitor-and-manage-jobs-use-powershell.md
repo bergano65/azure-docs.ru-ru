@@ -9,12 +9,12 @@ ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 03/28/2017
-ms.openlocfilehash: cdc09973a192924c5b9a81cd4ed49b9f36fc0eb1
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.openlocfilehash: 57dee438dca81d46d2bdfda0c7f255f32f203d60
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "67612299"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72925126"
 ---
 # <a name="monitor-and-manage-stream-analytics-jobs-with-azure-powershell-cmdlets"></a>Отслеживание заданий Stream Analytics и управление ими с помощью командлетов Azure PowerShell
 Узнайте, как отслеживать ресурсы Stream Analytics и управлять ими с помощью командлетов Azure PowerShell и сценариев PowerShell, выполняющих базовые задания Stream Analytics.
@@ -60,7 +60,7 @@ New-AzResourceGroup -Name <YOUR RESOURCE GROUP NAME> -Location <LOCATION>
 Следующие командлеты Azure PowerShell можно использовать для отслеживания заданий Azure Stream Analytics и управления ими. Обратите внимание, что Azure PowerShell имеет различные версии. 
 **В приведенных примерах первая команда приведена для Azure PowerShell 0.9.8, вторая — для Azure PowerShell 1.0.** Команды Azure PowerShell 1,0 всегда будут иметь значение "AZ" в команде.
 
-### <a name="get-azurestreamanalyticsjob--get-azstreamanalyticsjob"></a>Get-AzureStreamAnalyticsJob | Get-AzStreamAnalyticsJob
+### <a name="get-azurestreamanalyticsjob--get-azstreamanalyticsjob"></a>Get-Азурестреаманалитиксжоб | Get-Азстреаманалитиксжоб
 Выводит список всех заданий Stream Analytics, определенных в подписке Azure или указанной группе ресурсов, или показывает сведения о конкретном задании в группе ресурсов.
 
 **Пример 1**
@@ -181,7 +181,7 @@ Get-AzStreamAnalyticsOutput -ResourceGroupName StreamAnalytics-Default-Central-U
 
 Эта команда PowerShell возвращает сведения о выходных данных Output, определенных в задании StreamingJob.
 
-### <a name="get-azurestreamanalyticsquota--get-azstreamanalyticsquota"></a>Get-AzureStreamAnalyticsQuota | Get-AzStreamAnalyticsQuota
+### <a name="get-azurestreamanalyticsquota--get-azstreamanalyticsquota"></a>Get-Азурестреаманалитикскуота | Get-Азстреаманалитикскуота
 Возвращает сведения о квоте единиц потоковой передачи в указанном регионе.
 
 **Пример 1**
@@ -467,7 +467,7 @@ Remove-AzStreamAnalyticsOutput -ResourceGroupName StreamAnalytics-Default-Centra
 
 Эта команда PowerShell удаляет выходные данные Output в задании StreamingJob.  
 
-### <a name="start-azurestreamanalyticsjob--start-azstreamanalyticsjob"></a>Start-AzureStreamAnalyticsJob | Start-AzStreamAnalyticsJob
+### <a name="start-azurestreamanalyticsjob--start-azstreamanalyticsjob"></a>Start-Азурестреаманалитиксжоб | Start-Азстреаманалитиксжоб
 Асинхронно развертывает и запускает задание Stream Analytics в Microsoft Azure.
 
 **Пример 1**
@@ -486,7 +486,7 @@ Start-AzStreamAnalyticsJob -ResourceGroupName StreamAnalytics-Default-Central-US
 
 Это команда PowerShell запускает задание StreamingJob с пользовательским временем запуска выходных данных «12 декабря 2012 г., 12:12:12 UTC».
 
-### <a name="stop-azurestreamanalyticsjob--stop-azstreamanalyticsjob"></a>Stop-AzureStreamAnalyticsJob | Stop-AzStreamAnalyticsJob
+### <a name="stop-azurestreamanalyticsjob--stop-azstreamanalyticsjob"></a>Останавливает-Азурестреаманалитиксжоб | Азстреаманалитиксжоб
 Асинхронно останавливает задание Stream Analytics в Microsoft Azure и освобождает используемые ресурсы. Определение задания и метаданные остаются доступны в подписке через портал Azure и интерфейсы API управления, поэтому задание всегда можно изменить и перезапустить. Вы не платите за задание в состоянии "Остановлено".
 
 **Пример 1**
@@ -543,7 +543,7 @@ Test-AzStreamAnalyticsOutput -ResourceGroupName StreamAnalytics-Default-Central-
 
 Эта команда PowerShell проверяет состояние подключения выходных данных Output в StreamingJob.  
 
-## <a name="get-support"></a>Поддержка
+## <a name="get-support"></a>Получение поддержки
 За дополнительной помощью обращайтесь на наш [форум Azure Stream Analytics](https://social.msdn.microsoft.com/Forums/azure/home?forum=AzureStreamAnalytics). 
 
 ## <a name="next-steps"></a>Дальнейшие действия

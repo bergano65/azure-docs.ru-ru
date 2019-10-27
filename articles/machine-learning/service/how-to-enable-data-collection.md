@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.reviewer: jmartens
 ms.author: marthalc
 author: marthalc
-ms.date: 07/15/2019
+ms.date: 10/15/2019
 ms.custom: seodec18
-ms.openlocfilehash: 109db23976f6332b24bcfa565812bd9491062691
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.openlocfilehash: 25017e6ea0be5d4320832298cdadbec7ec5a05cc
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72330735"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72929368"
 ---
 # <a name="collect-data-for-models-in-production"></a>Сбор данных для моделей в рабочей среде
 
@@ -47,9 +47,12 @@ ms.locfileid: "72330735"
 Для пути к выходным данным в BLOB-объекте используется следующий синтаксис:
 
 ```
-/modeldata/<subscriptionid>/<resourcegroup>/<workspace>/<webservice>/<model>/<version>/<identifier>/<year>/<month>/<day>/data.csv
+/modeldata/<subscriptionid>/<resourcegroup>/<workspace>/<webservice>/<model>/<version>/<designation>/<year>/<month>/<day>/data.csv
 # example: /modeldata/1a2b3c4d-5e6f-7g8h-9i10-j11k12l13m14/myresourcegrp/myWorkspace/aks-w-collv9/best_model/10/inputs/2018/12/31/data.csv
 ```
+
+>[!Note]
+> В версиях пакета SDK до `0.1.0a16` аргумент `designation` был назван `identifier`. Если код был разработан с использованием более ранней версии, необходимо соответствующим образом обновить.
 
 ## <a name="prerequisites"></a>Технические условия
 
@@ -80,8 +83,8 @@ ms.locfileid: "72330735"
 
     ```python
     global inputs_dc, prediction_dc
-    inputs_dc = ModelDataCollector("best_model", identifier="inputs", feature_names=["feat1", "feat2", "feat3". "feat4", "feat5", "feat6"])
-    prediction_dc = ModelDataCollector("best_model", identifier="predictions", feature_names=["prediction1", "prediction2"])
+    inputs_dc = ModelDataCollector("best_model", designation="inputs", feature_names=["feat1", "feat2", "feat3". "feat4", "feat5", "feat6"])
+    prediction_dc = ModelDataCollector("best_model", designation="predictions", feature_names=["prediction1", "prediction2"])
     ```
 
     Параметр *CorrelationId* является необязательным, и если он не требуется для модели, указывать его не нужно. Указание идентификатора корреляции упрощает сопоставление с другими данными. (К ним относятся LoanNumber, CustomerId и т. д.)
@@ -170,7 +173,7 @@ ms.locfileid: "72330735"
 1. Используйте для пути к выходным данным в большом двоичном объекте следующий синтаксис:
 
 ```
-/modeldata/<subscriptionid>/<resourcegroup>/<workspace>/<webservice>/<model>/<version>/<identifier>/<year>/<month>/<day>/data.csv
+/modeldata/<subscriptionid>/<resourcegroup>/<workspace>/<webservice>/<model>/<version>/<designation>/<year>/<month>/<day>/data.csv
 # example: /modeldata/1a2b3c4d-5e6f-7g8h-9i10-j11k12l13m14/myresourcegrp/myWorkspace/aks-w-collv9/best_model/10/inputs/2018/12/31/data.csv
 ```
 
@@ -190,7 +193,7 @@ ms.locfileid: "72330735"
 
     [![Навигатор в Power BI](media/how-to-enable-data-collection/pbiNavigator.png)](./media/how-to-enable-data-collection/pbiNavigator.png#lightbox)
 
-1. В редакторе запросов щелкните в столбце "Имя" и добавьте учетную запись хранения 1. Введите путь к модели в фильтре. Примечание. Если вы хотите искать только файлы за определенный год или месяц, просто разверните путь фильтра. Например, взгляните на данные за март: /modeldata/ИД_подписки>/имя_группы_ресурсов>/имя_раочей_области>/имя_веб-службы>/имя_модели>/версия_модели>/идентификатор>/год>/3.
+1. В редакторе запросов щелкните в столбце "Имя" и добавьте учетную запись хранения 1. Введите путь к модели в фильтре. Примечание. Если вы хотите искать только файлы за определенный год или месяц, просто разверните путь фильтра. Например, просто взгляните на данные в марте:/моделдата/субскриптионид >/ресаурцеграупнаме >/воркспаценаме >/вебсервиценаме >/моделнаме >/modelversion >/designation >/Year >/3
 
 1. Отфильтруйте по **имени** для отображения нужных данных. Если вы сохранили **прогнозы** и **входные данные**, необходимо создать запрос для каждого из них.
 

@@ -1,29 +1,23 @@
 ---
 title: Подключение Configuration Manager к Azure Monitor | Документация Майкрософт
 description: В этой статье описаны действия по подключению Configuration Manager к рабочей области в Azure Monitor и запуску анализа данных.
-services: log-analytics
-documentationcenter: ''
-author: mgoedtel
-manager: carmonm
-editor: ''
-ms.assetid: f2298bd7-18d7-4371-b24a-7f9f15f06d66
-ms.service: log-analytics
-ms.workload: na
-ms.tgt_pltfrm: na
+ms.service: azure-monitor
+ms.subservice: logs
 ms.topic: conceptual
-ms.date: 08/28/2019
+author: MGoedtel
 ms.author: magoedte
-ms.openlocfilehash: b4e6cc32b1d4392c63b7b236ab0df297849224c8
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.date: 08/28/2019
+ms.openlocfilehash: fee6f09ba8e290ae6599f07d4ed831fb89427f76
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70141110"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72932641"
 ---
 # <a name="connect-configuration-manager-to-azure-monitor"></a>Подключение Configuration Manager к Azure Monitor
 Вы можете подключить среду System Center Configuration Manager, чтобы Azure Monitor синхронизировать данные коллекции устройств и ссылаться на эти коллекции в Azure Monitor и службе автоматизации Azure.  
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Azure Monitor поддерживает System Center Configuration Manager Current Branch, версии 1606 и выше.
 
@@ -127,7 +121,7 @@ Azure Monitor поддерживает System Center Configuration Manager Curre
 
 Если срок действия пароля или секретного ключа клиента истекает или он теряется, необходимо вручную обновить свойства подключения Log Analytics.
 
-1. В рабочей области **администрирование** Configuration Manager выберите облачные **службы** , а затем выберите **соединитель OMS** , чтобы открыть страницу **свойств подключения OMS** .
+1. В рабочей области **администрирование** Configuration Manager выберите **облачные службы** , а затем выберите **соединитель OMS** , чтобы открыть страницу **свойств подключения OMS** .
 2. На этой странице щелкните **Azure Active Directory**, чтобы просмотреть сведения о **клиенте**, **идентификаторе клиента** и **сроке действия секретного ключа клиента**. **Проверьте** **секретный ключ клиента**, если срок его действия истек.
 
 ## <a name="import-collections"></a>Импорт коллекций
@@ -136,7 +130,7 @@ Azure Monitor поддерживает System Center Configuration Manager Curre
 
 После завершения начальной настройки для импорта коллекций устройств из иерархии сведения о коллекции извлекаются каждые 3 часа для сохранения текущего членства. Это можно отключить в любое время.
 
-1. На портале Azure щелкните **Все службы** в нижнем левом углу. В списке ресурсов введите **Log Analytics**. Как только вы начнете вводить символы, список отфильтруется соответствующим образом. Выберите **Рабочие области Log Analytics**.
+1. На портале Azure щелкните **Все службы** в нижнем левом углу. В списке ресурсов введите **Log Analytics**. Как только вы начнете вводить символы, список отфильтруется соответствующим образом. Выберите рабочие области **Log Analytics**.
 2. Из списка рабочих областей Log Analytics выберите ту, в которой зарегистрировано приложение Configuration Manager.  
 3. Выберите **Дополнительные параметры**.
 4. Выберите **Группы компьютеров**, а затем щелкните **SCCM**.  
@@ -152,8 +146,8 @@ Azure Monitor поддерживает System Center Configuration Manager Curre
 
 ![Вкладка "SCCM" на вкладке "Группы компьютеров"](./media/collect-sccm/sccm-computer-groups02.png)
 
-Если щелкнуть один из них, откроется редактор запросов журнала, отображающий все импортированные группы или все компьютеры, принадлежащие к каждой группе. С помощью [поиска](../../azure-monitor/log-query/log-query-overview.md)по журналам можно более глубоко выполнить анализ данных членства в коллекции.
+Если щелкнуть один из них, откроется редактор запросов журнала, отображающий все импортированные группы или все компьютеры, принадлежащие к каждой группе. С помощью [поиска по журналам](../../azure-monitor/log-query/log-query-overview.md)можно более глубоко выполнить анализ данных членства в коллекции.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Воспользуйтесь [поиском по журналам](../../azure-monitor/log-query/log-query-overview.md) для просмотра подробных сведений о данных Configuration Manager.

@@ -16,12 +16,12 @@ ms.date: 10/15/2019
 ms.author: ajburnle
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 419970985b9531ffab348491730aaf6c00e143b1
-ms.sourcegitcommit: f29fec8ec945921cc3a89a6e7086127cc1bc1759
+ms.openlocfilehash: d3794f409b2cdc11373dc330099e5ff93d65a2a1
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72527096"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72934388"
 ---
 # <a name="govern-access-for-external-users-in-azure-ad-entitlement-management-preview"></a>Управление доступом для внешних пользователей в управлении назначениями Azure AD (Предварительная версия)
 
@@ -50,11 +50,13 @@ ms.locfileid: "72527096"
 
 ![Схема, показывающая жизненный цикл внешних пользователей](./media/entitlement-management-external-users/external-users-lifecycle.png)
 
+1. Вы [добавляете подключенную организацию](entitlement-management-organization.md) для каталога или домена Azure AD, с которым вы хотите сотрудничать.
+
 1. Вы создаете в каталоге пакет Access, содержащий политику [для пользователей, которых нет в вашем каталоге](entitlement-management-access-package-create.md#for-users-not-in-your-directory).
 
 1. Вы отправляете [ссылку на портал доступа](entitlement-management-access-package-settings.md) к контакту во внешней организации, которую они могут предоставить своим пользователям для запроса пакета Access.
 
-1. Внешний пользователь (**запрашивающий A** в этом примере) использует ссылку на портал My Access для [запроса доступа](entitlement-management-request-access.md) к пакету Access.
+1. Внешний пользователь (**запрашивающий A** в этом примере) использует ссылку на портал My Access для [запроса доступа](entitlement-management-request-access.md) к пакету Access. Способ входа пользователя зависит от типа проверки подлинности каталога или домена, определенного в подключенной Организации.
 
 1. Утверждающий [утверждает запрос](entitlement-management-request-approve.md) (или запрос утверждается в автоматическом виде).
 
@@ -116,6 +118,6 @@ ms.locfileid: "72527096"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
+- [Добавление подключенной Организации](entitlement-management-organization.md)
 - [Для пользователей, не наличныхся в вашем каталоге](entitlement-management-access-package-request-policy.md#for-users-not-in-your-directory)
 - [Создание каталога ресурсов и управление им](entitlement-management-catalog-create.md)
-- [Делегирование и роли](entitlement-management-delegate.md)

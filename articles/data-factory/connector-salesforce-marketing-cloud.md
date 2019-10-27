@@ -1,5 +1,5 @@
 ---
-title: Копирование данных из Salesforce Marketing Cloud с помощью фабрики данных Azure (предварительная версия) | Документы Майкрософт
+title: Копирование данных из Salesforce Marketing Cloud с помощью Фабрики данных Azure | Документация Майкрософт
 description: Узнайте, как копировать данные из Salesforce Marketing Cloud на поддерживаемые приемники хранилища данных с помощью действия копирования в конвейере фабрики данных Azure.
 services: data-factory
 documentationcenter: ''
@@ -10,21 +10,18 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 08/01/2019
+ms.date: 10/25/2019
 ms.author: jingwang
-ms.openlocfilehash: ddac58129d964f39770e4f8fb37b39625c690603
-ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
+ms.openlocfilehash: 93d875fa67e9954268cec26f7413b6a4a4131f9c
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71089647"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72931028"
 ---
-# <a name="copy-data-from-salesforce-marketing-cloud-using-azure-data-factory-preview"></a>Копирование данных из Salesforce Marketing Cloud с помощью фабрики данных Azure (предварительная версия)
+# <a name="copy-data-from-salesforce-marketing-cloud-using-azure-data-factory"></a>Копирование данных из Salesforce Marketing Cloud с помощью Фабрики данных Azure
 
 В этой статье описывается, как с помощью действия копирования в фабрике данных Azure копировать данные из базы данных Salesforce Marketing Cloud. Это продолжение [статьи об обзоре действия копирования](copy-activity-overview.md), в которой представлены общие сведения о действии копирования.
-
-> [!IMPORTANT]
-> Сейчас этот соединитель доступен в режиме предварительной версии. Попробуйте поработать с ним и оставьте свой отзыв. Если вы хотите использовать в своем решении зависимость от соединителей в предварительной версии, обратитесь в службу [поддержки Azure](https://azure.microsoft.com/support/).
 
 ## <a name="supported-capabilities"></a>Поддерживаемые возможности
 
@@ -40,7 +37,7 @@ ms.locfileid: "71089647"
 >[!NOTE]
 >Этот соединитель не поддерживает извлечение пользовательских объектов или пользовательские модули обработки данных.
 
-## <a name="getting-started"></a>Приступая к работе
+## <a name="getting-started"></a>Начало работы
 
 Вы можете создать конвейер с помощью операции копирования, используя пакет SDK для .NET, пакет SDK для Python, Azure PowerShell, API REST или шаблон Azure Resource Manager. Пошаговые инструкции по созданию конвейера с действием копирования см. в [руководстве по действию копирования](quickstart-create-data-factory-dot-net.md).
 
@@ -52,9 +49,9 @@ ms.locfileid: "71089647"
 
 | Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Для свойства type необходимо задать значение **SalesforceMarketingCloud**. | Да |
-| clientId | Идентификатор клиента, связанного с приложением Salesforce Marketing Cloud.  | Да |
-| clientSecret | Секрет клиента, связанного с приложением Salesforce Marketing Cloud. Вы можете обозначить это поле как SecureString, чтобы безопасно хранить его в ADF, или сохранить пароль в Azure Key Vault и разрешить действию копирования ADF передавать его оттуда при копировании данных. Дополнительные сведения см. в статье [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
+| Тип | Для свойства type нужно задать значение **Salesforce Marketing Cloud**. | ДА |
+| clientid | Идентификатор клиента, связанного с приложением Salesforce Marketing Cloud.  | ДА |
+| clientSecret | Секрет клиента, связанного с приложением Salesforce Marketing Cloud. Вы можете обозначить это поле как SecureString, чтобы безопасно хранить его в ADF, или сохранить пароль в Azure Key Vault и разрешить действию копирования ADF передавать его оттуда при копировании данных. Дополнительные сведения см. в статье [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md). | ДА |
 | useEncryptedEndpoints | Указывает, шифруются ли конечные точки источника данных с помощью протокола HTTPS. По умолчанию используется значение true.  | Нет |
 | useHostVerification | Указывает, следует ли требовать, чтобы имя узла в сертификате сервера совпадало с именем узла сервера при подключении по протоколу SSL. По умолчанию используется значение true.  | Нет |
 | usePeerVerification | Указывает, следует ли проверять удостоверение сервера при подключении по протоколу SSL. По умолчанию используется значение true.  | Нет |
@@ -89,7 +86,7 @@ ms.locfileid: "71089647"
 
 | Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Свойство type для набора данных должно иметь значение **SalesforceMarketingCloudObject**. | Да |
+| Тип | Свойство Type набора данных должно иметь значение **салесфорцемаркетингклаудобжект** . | ДА |
 | tableName | Имя таблицы. | Нет (если свойство query указано в источнике действия) |
 
 **Пример**
@@ -119,7 +116,7 @@ ms.locfileid: "71089647"
 
 | Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Свойство type источника действия копирования должно иметь значение **SalesforceMarketingCloudSource**. | Да |
+| Тип | Свойство type источника действия копирования должно иметь значение **SalesforceMarketingCloudSource**. | ДА |
 | query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM MyTable"`. | Нет (если для набора данных задано свойство tableName) |
 
 **Пример.**
@@ -158,5 +155,5 @@ ms.locfileid: "71089647"
 
 Чтобы получить сведения о свойствах, проверьте [действие поиска](control-flow-lookup-activity.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

@@ -1,24 +1,18 @@
 ---
 title: Простой журнал в Azure Monitor (Предварительная версия) | Документация Майкрософт
 description: Простой журнал позволяет создавать простые запросы в Azure Monitor без взаимодействия с ККл.
-services: log-analytics
-documentationcenter: ''
-author: bwren
-manager: carmonm
-editor: ''
-ms.assetid: ''
-ms.service: log-analytics
-ms.workload: na
-ms.tgt_pltfrm: na
+ms.service: azure-monitor
+ms.subservice: logs
 ms.topic: conceptual
-ms.date: 09/12/2019
+author: bwren
 ms.author: bwren
-ms.openlocfilehash: 323267dd47735ca54b84e47e6a55d1f2d14a0b06
-ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
+ms.date: 09/12/2019
+ms.openlocfilehash: 0b8b23d5d355614bf74b1b22c6a8443b9a2f9391
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71262174"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72932986"
 ---
 # <a name="simple-logs-experience-in-azure-monitor-preview"></a>Простой журнал в Azure Monitor (Предварительная версия)
 Azure Monitor предоставляет [широкие возможности](get-started-portal.md) для создания [запросов журналов](log-query-overview.md) с помощью языка ККЛ. Вы можете не требовать полной мощности ККЛ хотя и предпочесть упрощенный интерфейс для основных требований к запросам. Простая процедура работы с журналами позволяет создавать простые запросы без непосредственного взаимодействия с ККл. Можно также использовать простые журналы в качестве средства обучения для ККЛ, так как требуется более сложные запросы.
@@ -27,7 +21,7 @@ Azure Monitor предоставляет [широкие возможности]
 > В настоящее время простые журналы реализуются только для Cosmos DB и хранилищ ключей. Поделитесь своим опытом с корпорацией Майкрософт с помощью [голоса пользователя](https://feedback.azure.com/forums/913690-azure-monitor) , чтобы помочь нам определить, будет ли мы расширять и освобождать эту функцию.
 
 
-## <a name="scope"></a>`Scope`
+## <a name="scope"></a>Область действия
 При работе с простыми журналами извлекаются данные из таблицы *AzureDiagnostics*, *азуреметрикс*и *AzureActivity* для выбранного ресурса. 
 
 ## <a name="using-simple-logs"></a>Использование простых журналов
@@ -51,7 +45,7 @@ Azure Monitor предоставляет [широкие возможности]
 ![Изменить ККЛ](media/simple-logs/edit-kql.png)
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Завершите [работу с руководством по использованию log Analytics в портал Azure](get-started-portal.md).
 - Заполните учебник по [написанию запросов к журналам](get-started-portal.md).

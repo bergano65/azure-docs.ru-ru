@@ -1,24 +1,18 @@
 ---
 title: Управление агентом Azure Log Analytics | Документация Майкрософт
 description: В этой статье описываются различные задачи управления, которые обычно выполняются в течение жизненного цикла Log Analytics агента Windows или Linux, развернутого на компьютере.
-services: log-analytics
-documentationcenter: ''
-author: mgoedtel
-manager: carmonm
-editor: ''
-ms.assetid: ''
-ms.service: log-analytics
-ms.workload: na
-ms.tgt_pltfrm: na
+ms.service: azure-monitor
+ms.subservice: logs
 ms.topic: conceptual
-ms.date: 06/14/2019
+author: MGoedtel
 ms.author: magoedte
-ms.openlocfilehash: 0c128aaf8102b3072b6a63c80ea860ceefbf5124
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.date: 06/14/2019
+ms.openlocfilehash: 8dec91a3987aed978bb088d1aeab48a6fd0f9fb4
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "67146292"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72932787"
 ---
 # <a name="managing-and-maintaining-the-log-analytics-agent-for-windows-and-linux"></a>Обслуживание агента Log Analytics для Windows и Linux и управление им
 
@@ -30,19 +24,19 @@ ms.locfileid: "67146292"
 
 | Среда | Метод установки | Метод обновления |
 |--------|----------|-------------|
-| Azure VM | Расширение виртуальной машины агента Log Analytics для Windows и Linux | Агент автоматически обновляется по умолчанию, если не настроен шаблон Azure Resource Manager для отказаться от установки свойства *autoUpgradeMinorVersion* в **значение false**. |
+| Виртуальная машина Azure | Расширение виртуальной машины агента Log Analytics для Windows и Linux | Агент автоматически обновляется по умолчанию, если не настроен шаблон Azure Resource Manager для отказаться от установки свойства *autoUpgradeMinorVersion* в **значение false**. |
 | Пользовательские образы виртуальных машин Azure | Ручная установка агента Log Analytics для Windows и Linux | Обновление виртуальных машин до последней версии агента необходимо выполнить из командной строки, в которой выполняется пакет установщика Windows или самораспаковывающийся и устанавливаемый комплект сценариев оболочки для Linux.|
 | Виртуальные машины, не относящиеся к Azure | Ручная установка агента Log Analytics для Windows и Linux | Обновление виртуальных машин до последней версии агента необходимо выполнить из командной строки, в которой выполняется пакет установщика Windows или самораспаковывающийся и устанавливаемый комплект сценариев оболочки для Linux. |
 
 ### <a name="upgrade-windows-agent"></a>Обновление агента Windows 
 
-Чтобы обновить агент на виртуальной машине Windows до последней версии, не установленной с помощью расширения log Analytics VM, запустите из командной строки, скрипта или другого решения по автоматизации или с помощью программы установки ммасетуп-\<Platform\>. msi. Удается.  
+Чтобы обновить агент на виртуальной машине Windows до последней версии, не установленной с помощью расширения Log Analytics VM, запустите из командной строки, скрипта или другого решения по автоматизации или с помощью мастера установки Ммасетуп-\<Platform\>. msi.  
 
 Последнюю версию агента Windows можно скачать из рабочей области Log Analytics, выполнив следующие действия.
 
 1. Войдите на [портале Azure](https://portal.azure.com).
 
-2. На портале Azure щелкните **Все службы**. В списке ресурсов введите **Log Analytics**. Как только вы начнете вводить символы, список отфильтруется соответствующим образом. Выберите **Рабочие области Log Analytics**.
+2. На портале Azure щелкните **Все службы**. В списке ресурсов введите **Log Analytics**. Как только вы начнете вводить символы, список отфильтруется соответствующим образом. Выберите рабочие области **Log Analytics**.
 
 3. В списке рабочих областей Log Analytics выберите рабочую область.
 
@@ -58,7 +52,7 @@ ms.locfileid: "67146292"
 
 1. Войдите в систему компьютера, используя учетную запись с правами администратора.
 
-2. Выполните **ммасетуп-\<Platform\>. exe** , чтобы запустить мастер установки.
+2. Выполните **ммасетуп-\<platform\>. exe** , чтобы запустить мастер установки.
 
 3. На первой странице мастера установки нажмите кнопку **Далее**.
 
@@ -298,7 +292,7 @@ $healthServiceSettings.SetProxyInfo($ProxyDomainName, $ProxyUserName, $cred.GetN
 
 3. Перезапустите сервер OMI: `sudo /opt/omi/bin/service_control restart`.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь [с разрешениями по устранению неполадок агента Linux в](agent-linux-troubleshoot.md) случае возникновения проблем при установке агента Linux или управлении им.
 

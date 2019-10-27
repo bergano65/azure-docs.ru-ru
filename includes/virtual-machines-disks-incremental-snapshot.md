@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 09/23/2019
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: ee8a711a867f8abdc831b0d1d9d0b504b1104955
-ms.sourcegitcommit: 0486aba120c284157dfebbdaf6e23e038c8a5a15
+ms.openlocfilehash: 72e94b864b15d5c4872ebf6ba9f0d1a00a0e92b0
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71310123"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72924850"
 ---
 # <a name="creating-an-incremental-snapshot-preview-for-managed-disks"></a>Создание добавочного моментального снимка (Предварительная версия) для управляемых дисков
 
@@ -23,11 +23,11 @@ ms.locfileid: "71310123"
 
 Добавочные моментальные снимки также предлагают функцию разностного копирования, которая уникально доступна для управляемых дисков. Они позволяют получать изменения между двумя добавочными моментальными снимками тех же управляемых дисков на уровне блоков. Эту возможность можно использовать для уменьшения объема данных при копировании моментальных снимков между регионами.
 
-Если вы еще не зарегистрировались для использования предварительной версии и хотите начать использовать добавочные моментальные снимки, напишите нам AzureDisks@microsoft.com по адресу, чтобы получить доступ к общедоступной предварительной версии.
+Если вы еще не зарегистрировались для использования предварительной версии и хотите начать использовать добавочные моментальные снимки, напишите нам по адресу AzureDisks@microsoft.com, чтобы получить доступ к общедоступной предварительной версии.
 
 ## <a name="restrictions"></a>Ограничения
 
-- Добавочные моментальные снимки в настоящее время доступны только в западной центральной части США.
+- Добавочные моментальные снимки в настоящее время доступны только в западной центральной части США и Северной Европе.
 - В настоящее время добавочные моментальные снимки не могут быть созданы после изменения размера диска.
 - В настоящее время добавочные моментальные снимки нельзя перемещать между подписками.
 - В настоящее время вы можете создавать URI SAS только для пяти моментальных снимков определенного семейства моментальных снимков в любой конкретный момент времени.
@@ -45,9 +45,9 @@ Install-Module -Name Az -AllowClobber -Scope CurrentUser
 
 После установки войдите в сеанс PowerShell с помощью `az login`.
 
-Чтобы создать добавочный моментальный снимок с Azure PowerShell, настройте конфигурацию с помощью командлета [New-азснапшотконфиг](https://docs.microsoft.com/en-us/powershell/module/az.compute/new-azsnapshotconfig?view=azps-2.7.0) с `-Incremental` параметром, а затем передайте эту переменную в `-Snapshot` командлет [New-азснапшот](https://docs.microsoft.com/en-us/powershell/module/az.compute/new-azsnapshot?view=azps-2.7.0) с помощью параметра.
+Чтобы создать добавочный моментальный снимок с Azure PowerShell, задайте конфигурацию с помощью командлета [New-азснапшотконфиг](https://docs.microsoft.com/en-us/powershell/module/az.compute/new-azsnapshotconfig?view=azps-2.7.0) с параметром `-Incremental`, а затем передайте эту переменную в командлет [New-азснапшот](https://docs.microsoft.com/en-us/powershell/module/az.compute/new-azsnapshot?view=azps-2.7.0) с помощью параметра `-Snapshot`.
 
-Замените `<yourDiskNameHere>`, `<yourResourceGroupNameHere>` и`<yourDesiredSnapShotNameHere>` значениями, чтобы создать добавочный моментальный снимок, можно использовать следующий скрипт:
+Замените `<yourDiskNameHere>`, `<yourResourceGroupNameHere>`и `<yourDesiredSnapShotNameHere>` своими значениями, чтобы создать добавочный моментальный снимок, можно использовать следующий скрипт:
 
 ```PowerShell
 # Get the disk that you need to backup by creating an incremental snapshot
@@ -58,9 +58,9 @@ $snapshotConfig=New-AzSnapshotConfig -SourceUri $yourDisk.Id -Location $yourDisk
 New-AzSnapshot -ResourceGroupName <yourResourceGroupNameHere> -SnapshotName <yourDesiredSnapshotNameHere> -Snapshot $snapshotConfig 
 ```
 
-Можно выявление добавочных моментальных снимков с того же диска `SourceResourceId` со `SourceUniqueId` свойствами и моментальными снимками. `SourceResourceId`Azure Resource Manager идентификатор ресурса родительского диска. `SourceUniqueId`значение, унаследованное от `UniqueId` свойства диска. Если вы удалили диск, а затем создаете новый диск с тем же именем, значение `UniqueId` свойства изменится.
+Можно выявление добавочных моментальных снимков с того же диска с `SourceResourceId` и `SourceUniqueId` свойствами моментальных снимков. `SourceResourceId` — это Azure Resource Manager идентификатор ресурса родительского диска. `SourceUniqueId` — это значение, унаследованное от свойства `UniqueId` диска. Если вы удалили диск, а затем создаете новый диск с тем же именем, значение свойства `UniqueId` изменится.
 
-Для создания списка `SourceResourceId` всех `SourceUniqueId` моментальных снимков, связанных с определенным диском, можно использовать и. Замените `<yourResourceGroupNameHere>` на свое значение, а затем можно использовать следующий пример для создания списка существующих добавочных моментальных снимков:
+Для создания списка всех моментальных снимков, связанных с определенным диском, можно использовать `SourceResourceId` и `SourceUniqueId`. Замените `<yourResourceGroupNameHere>` своим значением, а затем можно использовать следующий пример для создания списка существующих добавочных моментальных снимков:
 
 ```PowerShell
 $snapshots = Get-AzSnapshot -ResourceGroupName <yourResourceGroupNameHere>
@@ -86,9 +86,9 @@ $incrementalSnapshots
 Invoke-WebRequest -Uri https://aka.ms/installazurecliwindows -OutFile .\AzureCLI.msi; Start-Process msiexec.exe -Wait -ArgumentList '/I AzureCLI.msi /quiet'
 ```
 
-Чтобы создать добавочный моментальный снимок, используйте команду [AZ snapshot Create](https://docs.microsoft.com/cli/azure/snapshot?view=azure-cli-latest#az-snapshot-create) с `--incremental` параметром.
+Чтобы создать добавочный моментальный снимок, используйте команду [AZ snapshot Create](https://docs.microsoft.com/cli/azure/snapshot?view=azure-cli-latest#az-snapshot-create) с параметром `--incremental`.
 
-В следующем примере создается добавочный моментальный снимок `<yourDesiredSnapShotNameHere>`, `<yourResourceGroupNameHere>`заменяются `<exampleLocation>` `<exampleDiskName>`,, и с собственными значениями, а затем выполняется пример:
+В следующем примере создается добавочный моментальный снимок, заменяются `<yourDesiredSnapShotNameHere>`, `<yourResourceGroupNameHere>`,`<exampleDiskName>`и `<exampleLocation>` с собственными значениями, а затем выполняется пример:
 
 ```bash
 sourceResourceId=$(az disk show -g <yourResourceGroupNameHere> -n <exampleDiskName> --query '[id]' -o tsv)
@@ -100,13 +100,13 @@ az snapshot create -g <yourResourceGroupNameHere> \
 --incremental
 ```
 
-Можно выявление добавочных моментальных снимков с того же диска `SourceResourceId` со `SourceUniqueId` свойствами и моментальными снимками. `SourceResourceId`Azure Resource Manager идентификатор ресурса родительского диска. `SourceUniqueId`значение, унаследованное от `UniqueId` свойства диска. Если вы удалили диск, а затем создаете новый диск с тем же именем, значение `UniqueId` свойства изменится.
+Можно выявление добавочных моментальных снимков с того же диска с `SourceResourceId` и `SourceUniqueId` свойствами моментальных снимков. `SourceResourceId` — это Azure Resource Manager идентификатор ресурса родительского диска. `SourceUniqueId` — это значение, унаследованное от свойства `UniqueId` диска. Если вы удалили диск, а затем создаете новый диск с тем же именем, значение свойства `UniqueId` изменится.
 
-Для создания списка `SourceResourceId` всех `SourceUniqueId` моментальных снимков, связанных с определенным диском, можно использовать и. В следующем примере будут перечислены все добавочные моментальные снимки, связанные с конкретным диском, но они требуют установки.
+Для создания списка всех моментальных снимков, связанных с определенным диском, можно использовать `SourceResourceId` и `SourceUniqueId`. В следующем примере будут перечислены все добавочные моментальные снимки, связанные с конкретным диском, но они требуют установки.
 
 В этом примере для запроса данных используется JQ. Чтобы запустить пример, необходимо [установить JQ](https://stedolan.github.io/jq/download/).
 
-Замените `<yourResourceGroupNameHere>` и`<exampleDiskName>` значениями, затем можно использовать следующий пример для создания списка существующих добавочных моментальных снимков, если вы также установили JQ:
+Замените `<yourResourceGroupNameHere>` и `<exampleDiskName>` значениями, затем можно использовать следующий пример, чтобы получить список существующих добавочных моментальных снимков, если вы также установили JQ:
 
 ```bash
 sourceUniqueId=$(az disk show -g <yourResourceGroupNameHere> -n <exampleDiskName> --query '[uniqueId]' -o tsv)
@@ -154,6 +154,6 @@ az snapshot list -g <yourResourceGroupNameHere> -o json \
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Если вы еще не зарегистрировались для использования предварительной версии и хотите начать использовать добавочные моментальные снимки, напишите нам AzureDisks@microsoft.com по адресу, чтобы получить доступ к общедоступной предварительной версии.
+Если вы еще не зарегистрировались для использования предварительной версии и хотите начать использовать добавочные моментальные снимки, напишите нам по адресу AzureDisks@microsoft.com, чтобы получить доступ к общедоступной предварительной версии.

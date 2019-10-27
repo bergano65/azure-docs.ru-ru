@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/16/2018
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: 5c501e6c2bc1a30273682352a68565ccc897ff50
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: cc0539462fad0a73d5fc7eb75d2078e513df4e5d
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68699206"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72926536"
 ---
 # <a name="troubleshoot-azure-files-problems-in-linux"></a>Устранение неполадок службы файлов Azure в Linux
 
@@ -31,13 +31,13 @@ ms.locfileid: "68699206"
 |   | SMB 2.1 <br>(подключение на виртуальных машинах в том же регионе Azure) | SMB 3.0 <br>(подключение из локальной среды и между регионами) |
 | --- | :---: | :---: |
 | Сервер Ubuntu | 14.04 или более поздней версии | 16.04 или выше |
-| RHEL | 7 или выше | 7.5+ |
-| CentOS | 7 или выше |  7.5+ |
-| Debian | 8+ |   |
-| openSUSE | 13.2 или выше | 42.3+ |
+| RHEL | 7 или выше | 7.5 или выше |
+| CentOS | 7 или выше |  7.5 или выше |
+| Debian | 8 или выше |   |
+| openSUSE | 13.2 или выше | 42.3 или выше |
 | SUSE Linux Enterprise Server | 12 | 12 SP3 или выше |
 
-- На клиенте не установлены служебные программы CIFS (cfs-utils).
+- Программы CIFS (CIFS-utils) не установлены на клиенте.
 - На клиенте не установлена минимальная необходимая версия SMB или CIFS 2.1.
 - На клиенте не поддерживается шифрование SMB 3.0. В приведенной выше таблице представлен список дистрибутивов Linux, поддерживающих подключение из локальной среды и между регионами с помощью шифрования. В других дистрибутивах нужно использовать ядро 4.11 или более поздней версии.
 - Вы пытаетесь подключиться к учетной записи хранения через TCP-порт 445, который не поддерживается.
@@ -54,9 +54,9 @@ ms.locfileid: "68699206"
 * Собирает диагностические трассировки.
 
 <a id="mounterror13"></a>
-## <a name="mount-error13-permission-denied-when-you-mount-an-azure-file-share"></a>"Ошибка подключения(13). Отказ в разрешении" при подключении общего файлового ресурса Azure
+## <a name="mount-error13-permission-denied-when-you-mount-an-azure-file-share"></a>"Ошибка подключения (13): отказано в разрешении" при подключении файлового ресурса Azure
 
-### <a name="cause-1-unencrypted-communication-channel"></a>Причина 1. Незашифрованный коммуникационный канал
+### <a name="cause-1-unencrypted-communication-channel"></a>Причина 1: незашифрованный коммуникационный канал
 
 Из соображений безопасности, если коммуникационный канал не зашифрован, а попытка подключения осуществляется не из того же центра обработки данных, в котором находятся файловые ресурсы Azure, то подключение к ним Azure будет заблокировано. Незашифрованные подключения в одном центре обработки данных также могут быть заблокированы, если в учетной записи хранения включен параметр [Требуется безопасное перемещение](https://docs.microsoft.com/azure/storage/common/storage-require-secure-transfer). Шифрование коммуникационного канала выполняется, только если клиентская ОС пользователя поддерживает шифрование SMB.
 
@@ -67,7 +67,7 @@ ms.locfileid: "68699206"
 1. Подключитесь из клиента, поддерживающего шифрование SMB, или из виртуальной машины, размещенной в том же центре обработки данных, что и учетная запись хранения Azure, используемая для файлового ресурса Azure.
 2. Убедитесь, что параметр [Требуется безопасное перемещение](https://docs.microsoft.com/azure/storage/common/storage-require-secure-transfer) отключен в учетной записи хранения, если клиент не поддерживает шифрование SMB.
 
-### <a name="cause-2-virtual-network-or-firewall-rules-are-enabled-on-the-storage-account"></a>Причина 2. Правила виртуальной сети или брандмауэра включены для учетной записи хранения 
+### <a name="cause-2-virtual-network-or-firewall-rules-are-enabled-on-the-storage-account"></a>Причина 2. в учетной записи хранения включены виртуальная сеть или правила брандмауэра. 
 
 Если для учетной записи хранения настроены правила виртуальной сети и брандмауэра, доступ сетевого трафика будет запрещен, если IP-адрес клиента или виртуальная сеть не разрешают доступ.
 
@@ -80,7 +80,7 @@ ms.locfileid: "68699206"
 
 Работая в Linux, вы получаете сообщение об ошибке, которое имеет следующий вид.
 
-**\<имя файла > [Разрешение отклонено] превышена квота диска**
+**\<имя файла > [отказано в разрешении] превышена квота диска**
 
 ### <a name="cause"></a>Причина:
 
@@ -107,18 +107,18 @@ ms.locfileid: "68699206"
     - Используйте [AZCopy](../common/storage-use-azcopy.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json) для передачи данных между двумя файловыми ресурсами.
     - Использование CP или DD с параллельным использованием может повысить скорость копирования, количество потоков зависит от варианта использования и рабочей нагрузки. В следующих примерах используется шесть: 
     - Пример CP (CP будет использовать размер блока по умолчанию файловой системы в качестве размера блока): `find * -type f | parallel --will-cite -j 6 cp {} /mntpremium/ &`.
-    - Пример DD (Эта команда явно устанавливает размер блока в 1 MiB):`find * -type f | parallel --will-cite-j 6 dd if={} of=/mnt/share/{} bs=1M`
+    - Пример DD (Эта команда явно устанавливает размер блока в 1 MiB): `find * -type f | parallel --will-cite-j 6 dd if={} of=/mnt/share/{} bs=1M`
     - Средства сторонних разработчиков с открытым кодом, например:
         - [GNU Parallel](https://www.gnu.org/software/parallel/).
         - [Фпарт](https://github.com/martymac/fpart) — сортирует файлы и упаковывает их в разделы.
         - [Фпсинк](https://github.com/martymac/fpart/blob/master/tools/fpsync) — использует фпарт и средство копирования для создания нескольких экземпляров для переноса данных из SRC_DIR в dst_url.
         - [Многопоточные](https://github.com/pkolano/mutil) CP и md5sum, основанные на GNU кореутилс.
-- Если задать размер файла заранее, вместо того, чтобы каждый раз писать расширенную запись, помогает повысить скорость копирования в сценариях, где известен размер файла. Если нужно избежать необходимости расширения операций записи, можно задать размер целевого файла с помощью `truncate - size <size><file>` команды. После этого `dd if=<source> of=<target> bs=1M conv=notrunc`команда скопирует исходный файл без необходимости повторного обновления размера целевого файла. Например, можно задать размер целевого файла для каждого копируемого файла (предположим, что общая папка подключена в/МНТ/шаре):
+- Если задать размер файла заранее, вместо того, чтобы каждый раз писать расширенную запись, помогает повысить скорость копирования в сценариях, где известен размер файла. Если нужно избежать необходимости расширения операций записи, можно задать размер целевого файла с помощью команды `truncate - size <size><file>`. После этого команда `dd if=<source> of=<target> bs=1M conv=notrunc`скопирует исходный файл без необходимости повторного обновления размера целевого файла. Например, можно задать размер целевого файла для каждого копируемого файла (предположим, что общая папка подключена в/МНТ/шаре):
     - `$ for i in `` find * -type f``; do truncate --size ``stat -c%s $i`` /mnt/share/$i; done`
-    - а затем копировать файлы без расширения записи параллельно:`$find * -type f | parallel -j6 dd if={} of =/mnt/share/{} bs=1M conv=notrunc`
+    - а затем копировать файлы без расширения записи параллельно: `$find * -type f | parallel -j6 dd if={} of =/mnt/share/{} bs=1M conv=notrunc`
 
 <a id="error115"></a>
-## <a name="mount-error115-operation-now-in-progress-when-you-mount-azure-files-by-using-smb-30"></a>"Ошибка подключения(115). Операция выполняется" при подключении службы файлов Azure с помощью SMB 3.0
+## <a name="mount-error115-operation-now-in-progress-when-you-mount-azure-files-by-using-smb-30"></a>Отображается ошибка "Mount error(115): Operation now in progress" (Ошибка подключения (115). Идет выполнение операции) при подключении службы файлов Azure с помощью SMB 3.0
 
 ### <a name="cause"></a>Причина:
 
@@ -138,13 +138,13 @@ ms.locfileid: "68699206"
 Сбой авторизации  
 Нет доступа
 
-### <a name="cause-1-your-user-account-does-not-have-access-to-the-storage-account"></a>Причина 1. Учетная запись пользователя не имеет доступа к учетной записи хранения
+### <a name="cause-1-your-user-account-does-not-have-access-to-the-storage-account"></a>Причина 1. у вашей учетной записи пользователя нет доступа к учетной записи хранения
 
 ### <a name="solution-for-cause-1"></a>Решение для причины 1
 
 Перейдите в учетную запись хранения, в которой размещается общий файловый ресурс Azure, щелкните **Управление доступом (IAM)** и убедитесь, что учетная запись пользователя имеет доступ к учетной записи хранения. Подробнее см. в статье [Защита учетной записи хранения с помощью управления доступом на основе ролей (RBAC)](https://docs.microsoft.com/azure/storage/common/storage-security-guide#how-to-secure-your-storage-account-with-role-based-access-control-rbac).
 
-### <a name="cause-2-virtual-network-or-firewall-rules-are-enabled-on-the-storage-account"></a>Причина 2. Правила виртуальной сети или брандмауэра включены для учетной записи хранения
+### <a name="cause-2-virtual-network-or-firewall-rules-are-enabled-on-the-storage-account"></a>Причина 2. в учетной записи хранения включены виртуальная сеть или правила брандмауэра.
 
 ### <a name="solution-for-cause-2"></a>Решение для причины 2
 
@@ -170,7 +170,7 @@ ms.locfileid: "68699206"
 <a id="slowperformance"></a>
 ## <a name="slow-performance-on-an-azure-file-share-mounted-on-a-linux-vm"></a>Низкая производительность файлового ресурса Azure, подключенного к виртуальной машине Linux
 
-### <a name="cause-1-caching"></a>Причина 1. Кэширование
+### <a name="cause-1-caching"></a>Причина 1. кэширование
 
 Одной из возможных причин снижения производительности может быть отключенное кэширование. Кэширование может быть полезно при многократном обращении к файлу, в противном случае это может быть дополнительной нагрузкой. Проверьте, используется ли кэш перед его отключением.
 
@@ -192,9 +192,9 @@ ms.locfileid: "68699206"
 
 Если параметр **cache=strict** или **serverino** отсутствует, отключите и повторно подключите службу файлов Azure, выполнив команду mount из [этой статьи](../storage-how-to-use-files-linux.md). Затем еще раз проверьте наличие правильных параметров в записи **/etc/fstab**.
 
-### <a name="cause-2-throttling"></a>Причина 2. Регулирование
+### <a name="cause-2-throttling"></a>Причина 2: регулирование
 
-Возможно, вы испытываете регулирование и ваши запросы отправляются в очередь. Это можно проверить, используя метрики службы [хранилища Azure в Azure Monitor](../common/storage-metrics-in-azure-monitor.md).
+Возможно, вы испытываете регулирование и ваши запросы отправляются в очередь. Это можно проверить, используя [метрики службы хранилища Azure в Azure Monitor](../common/storage-metrics-in-azure-monitor.md).
 
 ### <a name="solution-for-cause-2"></a>Решение для причины 2
 
@@ -218,11 +218,11 @@ ms.locfileid: "68699206"
 - `Su [storage account name]`
 - `Cp -p filename.txt /share`
 
-## <a name="ls-cannot-access-ltpathgt-inputoutput-error"></a>ls: cannot access '&lt;path&gt;': Input/output error (ls: невозможно получить доступ к "путь".Ошибка ввода-вывода)
+## <a name="ls-cannot-access-ltpathgt-inputoutput-error"></a>ls: не удается получить доступ к "&lt;path&gt;": ошибка ввода-вывода
 
 Если вы попытаетесь перечислить файлы в общем файловом ресурсе Azure с помощью команды ls, команда зависнет. Вы увидите следующую ошибку:
 
-**ls: cannot access'&lt;path&gt;': Input/output error** (ls: невозможно получить доступ к "путь".Ошибка ввода-вывода)
+**ls: не удается получить доступ к "&lt;path&gt;": ошибка ввода-вывода**
 
 
 ### <a name="solution"></a>Решение
@@ -233,7 +233,7 @@ ms.locfileid: "68699206"
 - 4.12.11+;
 - любая версия не ниже 4.13.
 
-## <a name="cannot-create-symbolic-links---ln-failed-to-create-symbolic-link-t-operation-not-supported"></a>Не удается создать символьные ссылки — ln: failed to create symbolic link 't': Operation not supported (ln: не удалось создать символьную ссылку "t". Операция не поддерживается)
+## <a name="cannot-create-symbolic-links---ln-failed-to-create-symbolic-link-t-operation-not-supported"></a>Не удается создать символьные ссылки — ln: failed to create symbolic link 't': Operation not supported (ln: не удалось создать символьную ссылку "t". Операция не поддерживается)
 
 ### <a name="cause"></a>Причина:
 По умолчанию при подключении файловых ресурсов Azure в Linux с помощью CIFS не поддерживается использование символьных ссылок (symlink). Ошибка будет выглядеть примерно так:
@@ -261,7 +261,7 @@ sudo mount -t cifs //<storage-account-name>.file.core.windows.net/<share-name> <
 [!INCLUDE [storage-files-condition-headers](../../../includes/storage-files-condition-headers.md)]
 
 <a id="error112"></a>
-## <a name="mount-error112-host-is-down-because-of-a-reconnection-time-out"></a>"Ошибка подключения(112). Узел не работает" из-за истечения времени ожидания повторного подключения
+## <a name="mount-error112-host-is-down-because-of-a-reconnection-time-out"></a>Отображается сообщение "Mount error(112): Host is down" (Ошибка подключения (112). Узел не работает) из-за истечения времени ожидания повторного подключения
 
 Ошибка подключения (112) возникает в клиенте Linux, если он бездействует в течение длительного времени. Когда клиент долгое время бездействует, он отключается, и время ожидания его подключения истекает.  
 
@@ -279,7 +279,7 @@ sudo mount -t cifs //<storage-account-name>.file.core.windows.net/<share-name> <
 - [Исправление повторного подключения к неотложенному сеансу переподключения mb3 через продолжительное время после повторного подключения сокета](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/fs/cifs?id=4fcd1813e6404dd4420c7d12fb483f9320f0bf93)
 - [Вызов службы echo сразу же после повторного подключения сокета](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=b8c600120fc87d53642476f48c8055b38d6e14c7)
 - [CIFS: устранение возможного повреждения содержимого памяти во время повторного подключения](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=53e0e11efe9289535b060a51d4cf37c25e0d0f2b)
-- [CIFS: устранение возможной двойной блокировки мьютекса во время повторного подключения — для ядра v4.9 и более поздних версий](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=96a988ffeb90dba33a71c3826086fe67c897a183)
+- [CIFS: устранение возможной двойной блокировки мьютекса во время повторного подключения — для ядра v4.9 и более поздних версий](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=96a988ffeb90dba33a71c3826086fe67c897a183)
 
 Тем не менее эти изменения могут быть перенесены еще не во все дистрибутивы Linux. Это и другие исправления проблем с повторным подключением можно найти в списке [минимальных рекомендуемых версии с соответствующими возможностями подключения (SMB версий 2.1 и 3.0)](storage-how-to-use-files-linux.md#minimum-recommended-versions-with-corresponding-mount-capabilities-smb-version-21-vs-smb-version-30) в руководстве по [использованию Файлов Azure в Linux](storage-how-to-use-files-linux.md). Это исправление можно получить, выполнив обновление до одной из этих рекомендуемых версий ядра.
 

@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 05/06/2019
 ms.author: mlearned
-ms.openlocfilehash: 6c7cf82381dfb895fdaa0f130e33b2dc9a6e7403
-ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
+ms.openlocfilehash: 350e553563aa152c61c922727fb87937bedd14b5
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72169756"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72928498"
 ---
 # <a name="secure-traffic-between-pods-using-network-policies-in-azure-kubernetes-service-aks"></a>Защита трафика между контейнерами pod с использованием политик сети в Службе Azure Kubernetes (AKS)
 
@@ -52,7 +52,7 @@ Azure предоставляет два способа реализации се
 
 ### <a name="differences-between-azure-and-calico-policies-and-their-capabilities"></a>Различия между политиками Azure и Калико и их возможностями
 
-| Функция                               | Azure                      | калико                      |
+| Возможность                               | Azure                      | калико                      |
 |------------------------------------------|----------------------------|-----------------------------|
 | Поддерживаемые платформы                      | Linux                      | Linux                       |
 | Поддерживаемые параметры сети             | Azure CNI                  | Azure CNI и кубенет       |
@@ -69,7 +69,11 @@ Azure предоставляет два способа реализации се
 * разрешение трафика на основе меток pod;
 * разрешение трафика на основе пространства имен.
 
-Сначала создадим кластер AKS, который поддерживает сетевую политику. Компонент политики сети можно включить только при создании кластера. Вы не можете включить политику сети в существующем кластере AKS.
+Сначала создадим кластер AKS, который поддерживает сетевую политику. 
+
+> [!IMPORTANT]
+>
+> Компонент политики сети можно включить только при создании кластера. Вы не можете включить политику сети в существующем кластере AKS.
 
 Чтобы использовать политику сети Azure, необходимо использовать [подключаемый модуль Azure CNI][azure-cni] и определить собственную виртуальную сеть и подсети. Дополнительные сведения о планировании требуемых диапазонов подсетей см. в разделе [Настройка расширенной сети][use-advanced-networking]. Калико сетевую политику можно использовать с тем же подключаемым модулем Azure CNI или с подключаемым модулем Кубенет CNI.
 
@@ -449,7 +453,7 @@ kubectl delete namespace production
 kubectl delete namespace development
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о сетевых ресурсах см. [в разделе Основные понятия сети для приложений в службе Azure Kubernetes Service (AKS)][concepts-network].
 

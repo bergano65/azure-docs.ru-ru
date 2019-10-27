@@ -3,20 +3,20 @@ title: Создание и использование целевых объек�
 titleSuffix: Azure Machine Learning
 description: Настройте среды обучения (целевые объекты вычислений) для обучения моделей машинного обучения. Вы можете с легкостью переключаться между средами обучения. Начните обучение на локальном компьютере. Если вам потребуется увеличить масштаб, переключитесь на облачный целевой объект вычислений.
 services: machine-learning
-author: heatherbshapiro
-ms.author: hshapiro
+author: rastala
+ms.author: roastala
 ms.reviewer: sgilley
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 06/12/2019
 ms.custom: seodec18
-ms.openlocfilehash: 95ded3c184836ac58a0f97d1bf30dd2e3c123ccb
-ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
+ms.openlocfilehash: 46a212719846eddc7d21f3aeb0815dfbf4119e15
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72755970"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72935365"
 ---
 # <a name="set-up-and-use-compute-targets-for-model-training"></a>Настройка и использование целевых объектов вычислений для обучения модели 
 
@@ -295,7 +295,7 @@ myvm = ComputeTarget(workspace=ws, name='my-vm-name')
  
 1. В разделе __Приложения__ выберите __Вычисления__.
 
-    [Вкладка "вычисление ![View"](./media/how-to-set-up-training-targets/azure-machine-learning-service-workspace.png)](./media/how-to-set-up-training-targets/azure-machine-learning-service-workspace-expanded.png)
+    [Вкладка "![" представления "вычисление"](./media/how-to-set-up-training-targets/azure-machine-learning-service-workspace.png)](./media/how-to-set-up-training-targets/azure-machine-learning-service-workspace-expanded.png)
 
 ### <a id="portal-create"></a>Создание целевого объекта вычислений
 

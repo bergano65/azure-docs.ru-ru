@@ -13,15 +13,15 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 10/21/2019
+ms.date: 10/25/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 9b857ea5380fb13f8c8b1ff30b9dd9d8b6c723c2
-ms.sourcegitcommit: ec2b75b1fc667c4e893686dbd8e119e7c757333a
+ms.openlocfilehash: 639b73c95d5a2cceef24044a5247a401f50da860
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72809684"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72934935"
 ---
 # <a name="use-azure-to-host-and-run-sap-workload-scenarios"></a>Использование Azure для размещения и запуска сценариев рабочей нагрузки SAP
 
@@ -120,6 +120,7 @@ ms.locfileid: "72809684"
 
 
 ## <a name="change-log"></a>Журнал изменений
+- 10/25/2019: изменения в [SAP HANA конфигурации хранилища виртуальных машин Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-vm-operations-storage) и [SAP HANA масштабирование с помощью резервного узла на виртуальных машинах Azure с Azure NetApp Files на SUSE Linux Enterprise Server](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-scale-out-standby-netapp-files-suse) для уточнения протокола NFS для тома/Hana/Shared
 - 10/22/2019: изменение [высокого уровня доступности SAP NetWeaver на виртуальных машинах Azure на SUSE Linux Enterprise Server для приложений SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse), [Высокая доступность для SAP NetWeaver на виртуальных машинах Azure на SUSE Linux Enterprise Server с Azure NETAPP Files для приложений SAP ](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-netapp-files), [Высокая доступность для NFS на виртуальных машинах Azure на SUSE Linux Enterprise Server](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-nfs), [Настройка Pacemaker на SUSE Linux Enterprise Server в Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-pacemaker), [высокий уровень доступности IBM DB2 LUW на виртуальных машинах Azure на SUSE Linux Enterprise Server с Pacemaker](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms-guide-ha-ibm), и [высокий уровень доступности SAP HANA на виртуальных машинах Azure на SUSE Linux Enterprise Server](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-high-availability) для защиты от обнаружения балансировщика нагрузки Azure
 - Изменение раздела использовании и заголовка в [SAP HANA конфигурациях хранилища виртуальных машин Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-vm-operations-storage)
 - 10/21/2019. выпуск [SAP HANA горизонтального развертывания с резервным узлом на виртуальных машинах Azure с Azure NetApp Files на SLES](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-scale-out-standby-netapp-files-suse)

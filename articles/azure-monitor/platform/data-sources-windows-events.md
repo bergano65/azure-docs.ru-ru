@@ -1,24 +1,18 @@
 ---
 title: Сбор и анализ журналов событий Windows в Azure Monitor | Документация Майкрософт
 description: Описывается, как с помощью Azure Monitor настроить сбор журналов событий Windows и сведений о создаваемых ими записях.
-services: log-analytics
-documentationcenter: ''
-author: bwren
-manager: carmonm
-editor: tysonn
-ms.assetid: ee52f564-995b-450f-a6ba-0d7b1dac3f32
-ms.service: log-analytics
+ms.service: azure-monitor
+ms.subservice: logs
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 11/28/2018
+author: bwren
 ms.author: bwren
-ms.openlocfilehash: cc81a8d8023d0724f4ecb71c157e8f575aa9edc8
-ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
+ms.date: 11/28/2018
+ms.openlocfilehash: dd8f1e0e79f85c5d91966bcba13052f297422e67
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69997471"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72932404"
 ---
 # <a name="windows-event-log-data-sources-in-azure-monitor"></a>Источники данных для журнала событий Windows в Azure Monitor
 Журналы событий Windows — это один из самых распространенных [источников данных](agent-data-sources.md), используемый для сбора данных агентами Windows, так как он применяется большинством приложений для записи сведений.  События можно собирать из стандартных журналов, таких как журналы системы и приложений, а также указывать пользовательские журналы приложений, которые необходимо отслеживать.
@@ -57,25 +51,25 @@ Azure Monitor собирает события только из журналов
 | EventLevelName |Степень серьезности события в текстовом формате. |
 | EventLog |Имя журнала событий, из которого было получено событие. |
 | ParameterXml |Значения параметров события в формате XML. |
-| ManagementGroupName |Имя группы управления для агентов System Center Operations Manager.  Для других агентов это значение равно`AOI-<workspace ID>` |
+| ManagementGroupName |Имя группы управления для агентов System Center Operations Manager.  Для других агентов это значение `AOI-<workspace ID>` |
 | RenderedDescription |Описание события со значениями параметров. |
-| Source |Источник события. |
+| Источник |Источник события. |
 | SourceSystem |Тип агента, из которого было получено событие. <br> OpsManager — агент Windows, подключенный напрямую или управляемый с помощью Operations Manager. <br> Linux — все агенты Linux  <br> AzureStorage – диагностика Azure |
 | TimeGenerated |Дата и время создания события в Windows. |
-| Имя пользователя: |Имя пользователя учетной записи, который зафиксировал событие. |
+| UserName |Имя пользователя учетной записи, который зафиксировал событие. |
 
 ## <a name="log-queries-with-windows-events"></a>Запросы журнала для получения событий Windows
 Ниже приведены различные примеры запросов журнала, которые извлекают записи о событиях Windows.
 
 | Запрос | Описание |
 |:---|:---|
-| событие |Все события Windows. |
+| Мероприятие |Все события Windows. |
 | Event &#124; where EventLevelName == "error" |Все события Windows с указанием серьезности ошибки. |
 | Event &#124; summarize count() by Source |Число событий Windows по источникам. |
 | Event &#124; where EventLevelName == "error" &#124; summarize count() by Source |Число событий ошибок Windows по источникам. |
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Настройте службу Log Analytics для сбора других [источников данных](agent-data-sources.md) для анализа.
 * Узнайте больше о [запросах журнала](../log-query/log-query-overview.md), которые можно применять для анализа данных, собираемых из источников данных и решений.  
 * Настройте [коллекцию счетчиков производительности](data-sources-performance-counters.md) из агентов Windows.

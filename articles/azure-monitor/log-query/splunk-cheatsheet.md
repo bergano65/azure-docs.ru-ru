@@ -1,24 +1,18 @@
 ---
 title: Запрос журнала Azure Monitor от Splunk | Документация Майкрософт
 description: Эта статья поможет пользователям, которые знакомы со Splunk, в изучении запросов журнала Azure Monitor.
-services: log-analytics
-documentationcenter: ''
-author: bwren
-manager: carmonm
-editor: ''
-ms.assetid: ''
-ms.service: log-analytics
-ms.workload: na
-ms.tgt_pltfrm: na
+ms.service: azure-monitor
+ms.subservice: logs
 ms.topic: conceptual
-ms.date: 08/21/2018
+author: bwren
 ms.author: bwren
-ms.openlocfilehash: 03a0d755cf6d099f07a7c6d853e1d747908eec05
-ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
+ms.date: 08/21/2018
+ms.openlocfilehash: e16bf152e739a6145bfabaf8546fa71199f8d732
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72177640"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72932947"
 ---
 # <a name="splunk-to-azure-monitor-log-query"></a>Запрос журнала в Splunk и Azure Monitor
 
@@ -32,15 +26,15 @@ ms.locfileid: "72177640"
  | --- | --- | --- | ---
  | Единица развертывания  | cluster |  cluster |  В Azure Monitor можно выполнять произвольные межкластерные запросы. В Splunk — нет. |
  | Кэши данных |  контейнеры  |  Политики кэширования и хранения |  Определяет период и уровень кэширования данных. Этот параметр напрямую влияет на производительность запросов и затраты на развертывание. |
- | Логическое разделение данных  |  index  |  database  |  Обеспечивает логическое разделение данных. В обеих реализациях можно объединять и соединять разделы. |
- | Структурированные метаданные событий | Н/Д | table |  Splunk не поддерживает концепцию языка поиска в метаданных событий. Журналы Azure Monitor поддерживают концепцию таблицы со столбцами. Каждый экземпляр события сопоставляется со строкой. |
+ | Логическое разделение данных  |  index  |  база данных  |  Обеспечивает логическое разделение данных. В обеих реализациях можно объединять и соединять разделы. |
+ | Структурированные метаданные событий | Н/Д | таблица |  Splunk не поддерживает концепцию языка поиска в метаданных событий. Журналы Azure Monitor поддерживают концепцию таблицы со столбцами. Каждый экземпляр события сопоставляется со строкой. |
  | Запись данных | event | строка |  Отличается только терминология. |
- | Атрибут записи данных | поле |  column |  В Azure Monitor это часть структуры таблицы. В Splunk каждое событие имеет собственный набор полей. |
+ | Атрибут записи данных | поле |  столбец |  В Azure Monitor это часть структуры таблицы. В Splunk каждое событие имеет собственный набор полей. |
  | Типы | тип данных |  тип данных |  Типы данных Azure Monitor более явные, так как они задаются в столбцах. Как в Splunk, так и в Log Analytics можно динамически работать с типами данных и находятся примерно одинаковые наборы типов данных, включая поддержку JSON. |
  | Запрос и поиск  | поиск | query |  Основные понятия в Azure Monitor и Splunk практически идентичны. |
  | Время приема событий | Системное время | ingestion_time() |  В Splunk каждое событие получает метку времени индексирования события. В Azure Monitor можно определить политику под названием ingestion_time, предоставляющую системный столбец, на который можно ссылаться с помощью функции ingestion_time(). |
 
-## <a name="functions"></a>Функции
+## <a name="functions"></a>Функции Azure
 
 В следующей таблице перечислены функции Azure Monitor, эквивалентные функциям Splunk.
 
@@ -59,7 +53,7 @@ ms.locfileid: "72177640"
 | regex | соответствует regex | В Splunk `regex` является оператором. В Azure Monitor это оператор отношения. |
 | searchmatch | == | В Splunk `searchmatch` позволяет выполнять поиск конкретных строк.
 | random | rand()<br>rand(n) | Функция Splunk возвращает число от 0 до 2<sup>31</sup>-1. Azure Monitor возвращает число от 0,0 до 1,0 или от 0 до n–1 (если указан параметр).
-| now | now() | (1)
+| сейчас | now() | (1)
 | relative_time | totimespan() | (1)<br>В Azure Monitor эквивалент relative_time(datetimeVal, offsetVal) из Splunk — это datetimeVal + totimespan(offsetVal).<br>Например, <code>search &#124; eval n=relative_time(now(), "-1d@d")</code> становится <code>...  &#124; extend myTime = now() - totimespan("1d")</code>.
 
 (1) В Splunk функция вызывается с помощью оператора `eval`. В Azure Monitor она используется как часть `extend` или `project`.<br>(2) В Splunk функция вызывается с помощью оператора `eval`. В Azure Monitor она может использоваться с оператором `where`.
@@ -72,7 +66,7 @@ ms.locfileid: "72177640"
 > [!NOTE]
 > В следующем примере поле Splunk _rule_ сопоставляется с таблицей в Azure Monitor, а метка времени по умолчанию в Splunk — со столбцом Log Analytics _ingestion_time()_ .
 
-### <a name="search"></a>Поиск
+### <a name="search"></a>служба поиска.
 В Splunk можно опустить ключевое слово `search` и указать строку без кавычек. В Azure Monitor каждый запрос должен начинаться с `find`, имя столбца должно быть строкой без кавычек, а значение подстановки — строкой в кавычках. 
 
 | |  | |
@@ -81,7 +75,7 @@ ms.locfileid: "72177640"
 | Azure Monitor | **find** | <code>find Session.Id=="c8894ffd-e684-43c9-9125-42adc25cd3fc" and ingestion_time()> ago(24h)</code> |
 | | |
 
-### <a name="filter"></a>Filter
+### <a name="filter"></a>Фильтр
 Запросы журнала в Azure Monitor начинаются с табличного результирующего набора с фильтром. В Splunk фильтрация является операцией по умолчанию в текущем индексе. В Splunk можно также использовать оператор `where`, но не рекомендуется.
 
 | |  | |
@@ -124,7 +118,7 @@ ms.locfileid: "72177640"
 | | |
 
 
-### <a name="rename"></a>Переименование 
+### <a name="rename"></a>Переименовать 
 Azure Monitor использует оператор `project-rename` для переименования поля. `project-rename` позволяет запросу использовать преимущества всех индексов, предварительно созданных для поля. Splunk имеет оператор `rename` для того, чтобы сделать то же самое.
 
 | |  | |
@@ -216,6 +210,6 @@ Azure Monitor использует оператор `project-rename` для пе
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Пройдите урок по [написанию запросов к журналу в Azure Monitor](get-started-queries.md).

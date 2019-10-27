@@ -1,24 +1,18 @@
 ---
 title: Защита данных Log Analytics | Документация Майкрософт
 description: Узнайте, как Log Analytics сохраняет вашу конфиденциальность и защищает данные.
-services: log-analytics
-documentationcenter: ''
-author: mgoedtel
-manager: carmonm
-editor: ''
-ms.assetid: a33bb05d-b310-4f2c-8f76-f627e600c8e7
-ms.service: log-analytics
-ms.workload: na
-ms.tgt_pltfrm: na
+ms.service: azure-monitor
+ms.subservice: logs
 ms.topic: conceptual
-ms.date: 03/04/2019
+author: MGoedtel
 ms.author: magoedte
-ms.openlocfilehash: 407aaf15808d1d1420fd1a3804651d29a407d4b3
-ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
+ms.date: 03/04/2019
+ms.openlocfilehash: 3ff69928f4d6aa1692cdb1d4fd7e846b3a6b7a5c
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68606675"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72932536"
 ---
 # <a name="log-analytics-data-security"></a>Защита данных Log Analytics
 В этом документе описываются функции Azure Log Analytics, компонента службы Azure Monitor, для дополнения информации о [центре управления безопасностью Azure](../../security/fundamentals/trust-center.md).  
@@ -31,14 +25,14 @@ ms.locfileid: "68606675"
 * Хранение данных
 * Физическая безопасность
 * Управление инцидентами
-* Соответствие
+* Соответствие требованиям
 * Соответствие сертификатам и стандартам безопасности
 
 Отправляйте свои вопросы, предложения и сообщения о неполадках, связанные с представленными ниже сведениями, включая наши политики защиты, в [службу поддержки Azure](https://azure.microsoft.com/support/options/).
 
 ## <a name="sending-data-securely-using-tls-12"></a>Безопасная отправка данных с помощью TLS 1.2 
 
-Чтобы обеспечить безопасность данных, передаваемых в Log Analytics, настоятельно рекомендуем настроить для агента использование протокола TLS как минимум версии 1.2. Более старые версии протоколов TLS/SSL оказались уязвимы. Хотя они все еще используются для обеспечения обратной совместимости, применять их **не рекомендуется**, так как представители отрасли стремятся как можно скорее отказаться от их поддержки. 
+Чтобы обеспечить безопасность данных, передаваемых в передаче в Log Analytics, мы настоятельно рекомендуем настроить агент на использование протокола TLS как минимум версии 1.2. Более старые версии протоколов TLS/SSL оказались уязвимы. Хотя они все еще используются для обеспечения обратной совместимости, применять их **не рекомендуется**, так как представители отрасли стремятся как можно скорее отказаться от их поддержки. 
 
 [Совет по стандартам безопасности PCI](https://www.pcisecuritystandards.org/) установил [крайний срок (30 июня 2018 года)](https://www.pcisecuritystandards.org/pdfs/PCI_SSC_Migrating_from_SSL_and_Early_TLS_Resource_Guide.pdf) для отказа от старых версий протоколов TLS и SSL и перехода на более безопасные протоколы. Как только Azure прекратит поддержку предыдущих версий, агенты, не поддерживающие протокол TLS версии минимум 1.2, не смогут отправлять данные в Log Analytics. 
 
@@ -67,7 +61,7 @@ ms.locfileid: "68606675"
 | --- | --- |
 | Capacity and Performance |Данные производительности и метаданные. |
 | Управление обновлениями |Метаданные и данные о состоянии. |
-| Управление журналами; |Пользовательские журналы событий, журналы событий Windows и журналы IIS. |
+| Управление журналом |Пользовательские журналы событий, журналы событий Windows и журналы IIS. |
 | Отслеживание изменений |Инвентаризация программного обеспечения, метаданные управляющей программы Linux и службы Windows, метаданные файлов Windows и Linux |
 | Оценка SQL и Active Directory. |Данные WMI, данные реестра, данные производительности и результаты динамического управления SQL Server. |
 
@@ -76,11 +70,11 @@ ms.locfileid: "68606675"
 | **Тип данных** | **Поля** |
 | --- | --- |
 | Оповещение |Alert Name, Alert Description, BaseManagedEntityId, Problem ID, IsMonitorAlert, RuleId, ResolutionState, Priority, Severity, Category, Owner, ResolvedBy, TimeRaised, TimeAdded, LastModified, LastModifiedBy, LastModifiedExceptRepeatCount, TimeResolved, TimeResolutionStateLastModified, TimeResolutionStateLastModifiedInDB, RepeatCount |
-| Конфигурация |CustomerID, AgentID, EntityID, ManagedTypeID, ManagedTypePropertyID, CurrentValue, ChangeDate |
-| Событие |EventId, EventOriginalID, BaseManagedEntityInternalId, RuleId, PublisherId, PublisherName, FullNumber, Number, Category, ChannelLevel, LoggingComputer, EventData, EventParameters, TimeGenerated, TimeAdded <br>**Примечание.** Log Analytics собирает данные событий с настраиваемыми полями при их записи в журнал событий Windows. |
+| Настройка |CustomerID, AgentID, EntityID, ManagedTypeID, ManagedTypePropertyID, CurrentValue, ChangeDate |
+| Мероприятие |EventId, EventOriginalID, BaseManagedEntityInternalId, RuleId, PublisherId, PublisherName, FullNumber, Number, Category, ChannelLevel, LoggingComputer, EventData, EventParameters, TimeGenerated, TimeAdded <br>**Примечание.** Log Analytics собирает данные событий с настраиваемыми полями при их записи в журнал событий Windows. |
 | Метаданные |BaseManagedEntityId, ObjectStatus, OrganizationalUnit, ActiveDirectoryObjectSid, PhysicalProcessors, NetworkName, IPAddress, ForestDNSName, NetbiosComputerName, VirtualMachineName, LastInventoryDate, HostServerNameIsVirtualMachine, IP Address, NetbiosDomainName, LogicalProcessors, DNSName, DisplayName, DomainDnsName, ActiveDirectorySite, PrincipalName, OffsetInMinuteFromGreenwichTime |
-| Производительность |ObjectName, CounterName, PerfmonInstanceName, PerformanceDataId, PerformanceSourceInternalID, SampleValue, TimeSampled, TimeAdded |
-| Область |StateChangeEventId, StateId, NewHealthState, OldHealthState, Context, TimeGenerated, TimeAdded, StateId2, BaseManagedEntityId, MonitorId, HealthState, LastModified, LastGreenAlertGenerated, DatabaseTimeModified |
+| Ориентированное на производительность |ObjectName, CounterName, PerfmonInstanceName, PerformanceDataId, PerformanceSourceInternalID, SampleValue, TimeSampled, TimeAdded |
+| Состояние |StateChangeEventId, StateId, NewHealthState, OldHealthState, Context, TimeGenerated, TimeAdded, StateId2, BaseManagedEntityId, MonitorId, HealthState, LastModified, LastGreenAlertGenerated, DatabaseTimeModified |
 
 ## <a name="physical-security"></a>Физическая безопасность
 Персонал корпорации Майкрософт управляет службой Log Analytics, а все действия записываются в журнал и доступны для аудита. Служба Log Analytics управляется в качестве службы Azure и соответствует всем нормативным требованиям Azure и требованиям безопасности. Вы можете просмотреть сведения о физической защите активов Azure на странице 18 [обзора безопасности Microsoft Azure](https://download.microsoft.com/download/6/0/2/6028B1AE-4AEE-46CE-9187-641DA97FC1EE/Windows%20Azure%20Security%20Overview%20v1.01.pdf). Права физического доступа к защищенным областям меняются в течение одного рабочего дня для каждого клиента, который перестает нести ответственность за службу Log Analytics, в том числе за передачу данных и завершение операций. Вы также можете ознакомиться с [глобальной физической инфраструктурой, используемой в центрах обработки данных Майкрософт](https://azure.microsoft.com/global-infrastructure/).
@@ -109,7 +103,7 @@ ms.locfileid: "68606675"
 
 Дополнительные сведения о том, как корпорация Майкрософт реагирует на угрозы безопасности, см. в статье [Microsoft Azure Security Response in the Cloud](https://gallery.technet.microsoft.com/Azure-Security-Response-in-dd18c678/file/150826/4/Microsoft%20Azure%20Security%20Response%20in%20the%20cloud.pdf) (Реагирование на нарушения безопасности в облаке Microsoft Azure).
 
-## <a name="compliance"></a>Соответствие
+## <a name="compliance"></a>Соответствие требованиям
 Программа информационной безопасности и стратегического управления группы разработки и обслуживания программного обеспечения Log Analytics отвечает бизнес-требованиям и придерживается правил и нормативных требований, описанных на страницах, касающихся [центра управления безопасностью Microsoft Azure](https://azure.microsoft.com/support/trust-center/) и [центра соответствия требованиям Майкрософт](https://www.microsoft.com/en-us/trustcenter/compliance/default.aspx). Там также описано, как Log Analytics устанавливает требования безопасности, определяет средства управления безопасностью, управляет рисками и отслеживает их. Мы ежегодно пересматриваем политики, стандарты, процедуры и рекомендации.
 
 Каждый участник команды разработки проходит официальное обучение тому, как обеспечивать безопасность приложений. На внутреннем уровне для разработки программного обеспечения используется система контроля версий. Каждый проект программного обеспечения защищен этой системой.
@@ -123,14 +117,14 @@ ms.locfileid: "68606675"
 ## <a name="certifications-and-attestations"></a>Сертификации и аттестации
 Azure Log Analytics соответствует следующим требованиям:
 
-* [ISO/IEC 27001](https://www.iso.org/iso/home/standards/management-standards/iso27001.htm);
+* [ISO/IEC 27001](https://www.iso.org/iso/home/standards/management-standards/iso27001.htm)
 * [ISO/IEC 27018:2014](https://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=61498)
 * [ISO 22301](https://azure.microsoft.com/blog/iso22301/)
 * [Стандарт безопасности данных индустрии платежных карт (PCI DSS)](https://www.microsoft.com/en-us/TrustCenter/Compliance/PCI), разработанный Советом по стандартам безопасности индустрии платежных карт;
 * [элементы управления организацией служб (SOC) 1 типа 1 и SOC 2 типа 1](https://www.microsoft.com/en-us/TrustCenter/Compliance/SOC1-and-2);
 * требования [HIPAA и HITECH](https://www.microsoft.com/en-us/TrustCenter/Compliance/hipaa) для компаний, заключивших Соглашение с бизнес-партнерами HIPAA.
 * Общие условия проектирования для Windows
-* Защищенные информационные системы Майкрософт
+* Защищенные информационные системы корпорации Майкрософт
 * как служба Azure, Log Analytics использует компоненты, которые отвечают нормативным требованиям Azure. Дополнительные сведения см. на странице [центра соответствия требованиям Майкрософт](https://www.microsoft.com/en-us/trustcenter/compliance/default.aspx).
 
 > [!NOTE]
@@ -143,7 +137,7 @@ Azure Log Analytics соответствует следующим требова
 
 ![Иллюстрация сбора и защиты данных в Log Analytics](./media/data-security/log-analytics-data-security-diagram.png)
 
-## <a name="1-sign-up-for-log-analytics-and-collect-data"></a>1. Регистрация в Log Analytics и сбор данных
+## <a name="1-sign-up-for-log-analytics-and-collect-data"></a>1. Подпишитесь на Log Analytics и собирайте данные.
 Чтобы организация отправила данные в Log Analytics, настройте агент Windows или Linux, выполняемый на виртуальных машинах Azure или на физических компьютерах в среде или другом поставщике облака.  При использовании Operations Manager из группы управления можно настроить агент Operations Manager. Пользователям (вам, другим индивидуальным пользователям или группе людей) необходимо создать одну или несколько рабочих областей Log Analytics и зарегистрировать агентов с помощью одной из следующих учетных записей:
 
 * [идентификатор организации;](../../active-directory/fundamentals/sign-up-organization.md)
@@ -157,7 +151,7 @@ Azure Log Analytics соответствует следующим требова
 
 Каждый тип агента собирает данные для Log Analytics. Тип собираемых данных зависит от типов используемых решений. Сведения о сборе данных см. в статье [Добавление решений Log Analytics из коллекции решений](../../azure-monitor/insights/solutions.md). Кроме того, подробные сведения о сборе доступны для большинства решений. Решением является набор заранее определенных представлений, запросов поиска в журналах, правил сбора данных и логики обработки. Для импорта решения Log Analytics могут использовать только администраторы. После импорта решение перемещается на серверы управления Operations Manager (если они используются), а затем — на любые выбранные агенты. После этого агенты собирают данные.
 
-## <a name="2-send-data-from-agents"></a>2. Отправка данных от агентов
+## <a name="2-send-data-from-agents"></a>2. Отправка данных из агентов
 Все агенты регистрируются с помощью ключа регистрации. После этого между агентом и службой Log Analytics устанавливается безопасное подключение с помощью проверки подлинности на основе сертификата и SSL с портом 443. Для создания и обслуживания ключей в Log Analytics используется секретное хранилище. Закрытые ключи меняются каждые 90 дней, хранятся в Azure и управляются с помощью операций Azure согласно строгим рекомендациям соответствия нормативам и требованиям.
 
 В Operations Manager группа управления, зарегистрированная в рабочей области Log Analytics, устанавливает безопасное подключение HTTPS с сервером управления Operations Manager.
@@ -178,7 +172,7 @@ Azure Log Analytics соответствует следующим требова
 ## <a name="4-use-log-analytics-to-access-the-data"></a>4. Использование Log Analytics для доступа к данным
 Чтобы получить доступ в рабочую область Log Analytics, войдите на портал Azure с помощью учетной записи организации или учетной записи Майкрософт, настроенной ранее. Весь трафик между порталом и Log Analytics в службе отправляется через защищенный канал HTTPS. При использовании портала идентификатор сеанса создается в клиенте пользователя (веб-браузер), а данные хранятся в локальном кэше до завершения сеанса. После завершения сеанса кэш удаляется. Файлы cookie со стороны клиента, не содержащие сведений, по которым можно установить личность, не удаляются автоматически. Файлы cookie сеанса помечены как HTTPOnly и защищены. По истечении предопределенного периода простоя сеанс работы с порталом Azure прерывается.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения по сбору данных с помощью Log Analytics для виртуальных машин Azure см. в [руководстве по виртуальным машинам Azure](../../azure-monitor/learn/quick-collect-azurevm.md).  
 
 *  Если вы хотите собирать данные с физических или виртуальных компьютеров Windows и Linux в своей среде, ознакомьтесь со статьей [Сбор данных с компьютеров Linux, размещенных в вашем окружении](../../azure-monitor/learn/quick-collect-linux-computer.md) и [Сбор данных с компьютеров Windows, размещенных в вашей среде](../../azure-monitor/learn/quick-collect-windows-computer.md).

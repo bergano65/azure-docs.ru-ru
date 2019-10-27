@@ -11,12 +11,12 @@ author: MayMSFT
 ms.reviewer: nibaccam
 ms.date: 08/2/2019
 ms.custom: seodec18
-ms.openlocfilehash: 3576f7cc0297ff1e9b10373ccc27b09e1a0ae8ae
-ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
+ms.openlocfilehash: 07c23d3b93c85e3409814ab0eb635a51344e2ab2
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72436694"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72929246"
 ---
 # <a name="access-data-in-azure-storage-services"></a>Доступ к данным в службах хранилища Azure
 
@@ -61,9 +61,9 @@ ms.locfileid: "72436694"
 
 В следующих примерах показано, как зарегистрировать контейнер больших двоичных объектов Azure или файловый ресурс Azure в качестве хранилища данных.
 
-+ Для **хранилища данных контейнера больших двоичных объектов Azure**используйте [`register_azure_blob-container()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.datastore(class)?view=azure-ml-py#register-azure-blob-container-workspace--datastore-name--container-name--account-name--sas-token-none--account-key-none--protocol-none--endpoint-none--overwrite-false--create-if-not-exists-false--skip-validation-false--blob-cache-timeout-none--grant-workspace-access-false--subscription-id-none--resource-group-none-) .
++ Для **хранилища данных контейнера больших двоичных объектов Azure**используйте [`register_azure_blob-container()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.datastore(class)?view=azure-ml-py#register-azure-blob-container-workspace--datastore-name--container-name--account-name--sas-token-none--account-key-none--protocol-none--endpoint-none--overwrite-false--create-if-not-exists-false--skip-validation-false--blob-cache-timeout-none--grant-workspace-access-false--subscription-id-none--resource-group-none-)
 
-    Следующий код создает и регистрирует хранилище данных `my_datastore` в рабочей области `ws`. Это хранилище данных обращается к контейнеру больших двоичных объектов Azure, `my_blob_container`, в учетной записи хранения Azure `my_storage_account`, используя указанный ключ учетной записи.
+    Следующий код создает и регистрирует хранилище данных, `my_datastore`, в рабочую область `ws`. Это хранилище данных обращается к контейнеру больших двоичных объектов Azure `my_blob_container`, в учетной записи хранения Azure `my_storage_account` с помощью предоставленного ключа учетной записи.
 
     ```Python
        datastore = Datastore.register_azure_blob_container(workspace=ws, 
@@ -73,10 +73,11 @@ ms.locfileid: "72436694"
                                                           account_key='your storage account key',
                                                           create_if_not_exists=True)
     ```
+    Если ваша учетная запись хранения находится в виртуальной сети, поддерживается только создание хранилища больших двоичных объектов Azure. Задайте для параметра `grant_workspace_access` значение `True`, чтобы предоставить рабочей области доступ к вашей учетной записи хранения.
 
 + Для **хранилища данных файлового ресурса Azure**используйте [`register_azure_file_share()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.datastore(class)?view=azure-ml-py#register-azure-file-share-workspace--datastore-name--file-share-name--account-name--sas-token-none--account-key-none--protocol-none--endpoint-none--overwrite-false--create-if-not-exists-false--skip-validation-false-). 
 
-    Следующий код создает и регистрирует хранилище данных `my_datastore` в рабочей области `ws`. Это хранилище данных получает доступ к файловому ресурсу Azure, `my_file_share`, в учетной записи хранения Azure `my_storage_account`, используя указанный ключ учетной записи.
+    Следующий код создает и регистрирует хранилище данных, `my_datastore`, в рабочую область `ws`. Это хранилище данных получает доступ к файловому ресурсу Azure, `my_file_share`, в учетной записи хранения Azure `my_storage_account` используя указанный ключ учетной записи.
 
     ```Python
        datastore = Datastore.register_azure_file_share(workspace=ws, 
@@ -126,7 +127,7 @@ for name, datastore in datastores.items():
     print(name, datastore.datastore_type)
 ```
 
-При создании рабочей области контейнер больших двоичных объектов Azure и файловый ресурс Azure регистрируются в рабочей области с именем `workspaceblobstore` и `workspacefilestore` соответственно. Они хранят сведения о подключении контейнера больших двоичных объектов и общей папки, подготовленной в учетной записи хранения, подключенной к рабочей области. @No__t-0 задается как хранилище данных по умолчанию.
+При создании рабочей области контейнер больших двоичных объектов Azure и файловый ресурс Azure регистрируются в рабочей области с именем `workspaceblobstore` и `workspacefilestore` соответственно. Они хранят сведения о подключении контейнера больших двоичных объектов и общей папки, подготовленной в учетной записи хранения, подключенной к рабочей области. `workspaceblobstore` задается в качестве хранилища данных по умолчанию.
 
 Чтобы получить хранилище данных рабочей области по умолчанию:
 
@@ -161,7 +162,7 @@ datastore.upload(src_dir='your source directory',
                  show_progress=True)
 ```
 
-Параметр `target_path` указывает расположение в общей папке (или контейнере больших двоичных объектов) для передачи. По умолчанию используется значение `None`: в этом случае данные отправляются в корневой каталог. При `overwrite=True` все существующие данные в `target_path` перезаписываются.
+Параметр `target_path` указывает расположение в общей папке (или контейнере больших двоичных объектов) для передачи. По умолчанию используется значение `None`: в этом случае данные отправляются в корневой каталог. При `overwrite=True` перезапись существующих данных на `target_path`.
 
 Или отправьте список отдельных файлов в хранилище данных с помощью метода `upload_files()`.
 
@@ -188,8 +189,8 @@ datastore.download(target_path='your target path',
 Одностороннюю|Метод|Описание|
 ----|-----|--------
 Подключение| [`as_mount()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.azure_storage_datastore.abstractazurestoragedatastore?view=azure-ml-py#as-mount--)| Используйте для подключения хранилища данных к целевому объекту вычислений.
-Download (Скачать)|[`as_download()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.azure_storage_datastore.abstractazurestoragedatastore?view=azure-ml-py#as-download-path-on-compute-none-)|Используйте для загрузки содержимого хранилища данных в расположение, заданное `path_on_compute`. <br><br> Этот процесс загрузки выполняется перед запуском.
-Отправка|[`as_upload()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.azure_storage_datastore.abstractazurestoragedatastore?view=azure-ml-py#as-upload-path-on-compute-none-)| Используйте для передачи файла из расположения, указанного `path_on_compute`, в хранилище данных. <br><br> Эта отправка происходит после выполнения.
+Download (Скачать)|[`as_download()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.azure_storage_datastore.abstractazurestoragedatastore?view=azure-ml-py#as-download-path-on-compute-none-)|Используйте для загрузки содержимого хранилища данных в расположение, указанное `path_on_compute`. <br><br> Этот процесс загрузки выполняется перед запуском.
+Отправка|[`as_upload()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.azure_storage_datastore.abstractazurestoragedatastore?view=azure-ml-py#as-upload-path-on-compute-none-)| Используйте для передачи файла из расположения, указанного параметром `path_on_compute`, в хранилище данных. <br><br> Эта отправка происходит после выполнения.
 
 Чтобы создать ссылку на определенную папку или файл в хранилище данных и сделать его доступным в целевом объекте вычислений, используйте метод хранилища данных [`path()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.azure_storage_datastore.abstractazurestoragedatastore?view=azure-ml-py#path-path-none--data-reference-name-none-) .
 
@@ -201,7 +202,7 @@ datastore.as_mount()
 datastore.path('./bar').as_download()
 ```
 > [!NOTE]
-> Любой указанный объект `datastore` или `datastore.path` разрешается в имя переменной среды в формате `"$AZUREML_DATAREFERENCE_XXXX"`, значение которого представляет путь подключения или загрузки в целевом вычислении. Путь к хранилищу данных в целевом вычислении может отличаться от пути выполнения для обучающего скрипта.
+> Любой указанный `datastore` или `datastore.path` объект разрешается в имя переменной среды в формате `"$AZUREML_DATAREFERENCE_XXXX"`, значение которого представляет путь подключения или загрузки в целевом вычислении. Путь к хранилищу данных в целевом вычислении может отличаться от пути выполнения для обучающего скрипта.
 
 ### <a name="examples"></a>Примеры 
 
@@ -243,16 +244,16 @@ est = Estimator(source_directory='your code directory',
 |Compute|[азуреблобдатасторе](https://docs.microsoft.com/python/api/azureml-core/azureml.data.azure_storage_datastore.azureblobdatastore?view=azure-ml-py)                                       |[азурефиледатасторе](https://docs.microsoft.com/python/api/azureml-core/azureml.data.azure_storage_datastore.azurefiledatastore?view=azure-ml-py)                                      |[азуредаталакедатасторе](https://docs.microsoft.com/python/api/azureml-core/azureml.data.azure_data_lake_datastore.azuredatalakedatastore?view=azure-ml-py) |[AzureDataLakeGen2Datastore](https://docs.microsoft.com/python/api/azureml-core/azureml.data.azure_data_lake_datastore.azuredatalakegen2datastore?view=azure-ml-py) [азурепостгресклдатасторе](https://docs.microsoft.com/python/api/azureml-core/azureml.data.azure_postgre_sql_datastore.azurepostgresqldatastore?view=azure-ml-py) [азуресклдатабаседатасторе](https://docs.microsoft.com/python/api/azureml-core/azureml.data.azure_sql_database_datastore.azuresqldatabasedatastore?view=azure-ml-py) |
 |--------------------------------|----------------------------------------------------------|----------------------------------------------------------|------------------------|----------------------------------------------------------------------------------------|
 | Местного уровня|[as_download ()](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-download-path-on-compute-none--overwrite-false-), [as_upload ()](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-upload-path-on-compute-none--overwrite-false-)|[as_download ()](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-download-path-on-compute-none--overwrite-false-), [as_upload ()](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-upload-path-on-compute-none--overwrite-false-)|Н/Д         |Н/Д                                                                         |
-| Вычислительная среда Машинного обучения Azure; |[as_mount ()](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-mount--), [as_download ()](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-download-path-on-compute-none--overwrite-false-), [as_upload ()](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-upload-path-on-compute-none--overwrite-false-), [ML @ no__t-4pipelines](concept-ml-pipelines.md)|[as_mount ()](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-mount--), [as_download ()](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-download-path-on-compute-none--overwrite-false-), [as_upload ()](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-upload-path-on-compute-none--overwrite-false-), [ML @ no__t-4pipelines](concept-ml-pipelines.md)|Н/Д         |Н/Д                                                                         |
+| Вычислительная среда Машинного обучения Azure; |[as_mount ()](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-mount--), [as_download ()](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-download-path-on-compute-none--overwrite-false-), [as_upload ()](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-upload-path-on-compute-none--overwrite-false-), [конвейеры ML&nbsp;](concept-ml-pipelines.md)|[as_mount ()](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-mount--), [as_download ()](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-download-path-on-compute-none--overwrite-false-), [as_upload ()](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-upload-path-on-compute-none--overwrite-false-), [конвейеры ML&nbsp;](concept-ml-pipelines.md)|Н/Д         |Н/Д                                                                         |
 | Виртуальные машины               |[as_download ()](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-download-path-on-compute-none--overwrite-false-), [as_upload ()](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-upload-path-on-compute-none--overwrite-false-)                           | [as_download ()](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-download-path-on-compute-none--overwrite-false-) [as_upload ()](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-upload-path-on-compute-none--overwrite-false-)                            |Н/Д         |Н/Д                                                                         |
 | HDInsight                      |[as_download ()](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-download-path-on-compute-none--overwrite-false-) [as_upload ()](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-upload-path-on-compute-none--overwrite-false-)                            | [as_download ()](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-download-path-on-compute-none--overwrite-false-) [as_upload ()](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-upload-path-on-compute-none--overwrite-false-)                            |Н/Д         |Н/Д                                                                         |
-| Передача данных                  |[ML @ no__t-1pipelines](concept-ml-pipelines.md)                                               |Н/Д                                           |[ML @ no__t-1pipelines](concept-ml-pipelines.md)            |[ML @ no__t-1pipelines](concept-ml-pipelines.md)                                                                            |
-| Databricks                     |[ML @ no__t-1pipelines](concept-ml-pipelines.md)                                              |Н/Д                                           |[ML @ no__t-1pipelines](concept-ml-pipelines.md)             |Н/Д                                                                         |
-| Пакетная служба Azure                    |[ML @ no__t-1pipelines](concept-ml-pipelines.md)                                               |Н/Д                                           |Н/Д         |Н/Д                                                                         |
-| Azure Data Lake Analytics       |Н/Д                                           |Н/Д                                           |[ML @ no__t-1pipelines](concept-ml-pipelines.md)             |Н/Д                                                                         |
+| Передача данных                  |[Конвейеры МАШИНного&nbsp;](concept-ml-pipelines.md)                                               |Н/Д                                           |[Конвейеры МАШИНного&nbsp;](concept-ml-pipelines.md)            |[Конвейеры МАШИНного&nbsp;](concept-ml-pipelines.md)                                                                            |
+| Databricks                     |[Конвейеры МАШИНного&nbsp;](concept-ml-pipelines.md)                                              |Н/Д                                           |[Конвейеры МАШИНного&nbsp;](concept-ml-pipelines.md)             |Н/Д                                                                         |
+| Пакетная служба Azure                    |[Конвейеры МАШИНного&nbsp;](concept-ml-pipelines.md)                                               |Н/Д                                           |Н/Д         |Н/Д                                                                         |
+| Azure Data Lake Analytics       |Н/Д                                           |Н/Д                                           |[Конвейеры МАШИНного&nbsp;](concept-ml-pipelines.md)             |Н/Д                                                                         |
 
 > [!NOTE]
-> Возможны ситуации, когда очень итеративные процессы обработки больших данных выполняются быстрее с использованием `as_download()` вместо `as_mount()`; Это можно проверить в эксперименте.
+> Возможны ситуации, в которых очень итеративные процессы обработки больших данных выполняются быстрее с использованием `as_download()` вместо `as_mount()`; Это можно проверить в эксперименте.
 
 ### <a name="accessing-source-code-during-training"></a>Доступ к исходному коду во время обучения
 

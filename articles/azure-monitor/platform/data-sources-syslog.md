@@ -1,24 +1,18 @@
 ---
 title: Сбор и анализ сообщений Syslog в Azure Monitor | Документация Майкрософт
 description: Системный журнал (Syslog) — это протокол ведения журнала событий, который обычно используется в Linux. В этой статье описано, как настроить коллекцию сообщений Syslog в Log Analytics, а также сведения о записях, создаваемых ими.
-services: log-analytics
-documentationcenter: ''
-author: mgoedtel
-manager: carmonm
-editor: tysonn
-ms.assetid: f1d5bde4-6b86-4b8e-b5c1-3ecbaba76198
-ms.service: log-analytics
+ms.service: azure-monitor
+ms.subservice: logs
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 03/22/2019
+author: MGoedtel
 ms.author: magoedte
-ms.openlocfilehash: dc3aa502dccdd4eb4e8bd1a82456656e5d389160
-ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
+ms.date: 03/22/2019
+ms.openlocfilehash: 5daa9e99ccf71da680dad00b06c4e53f6c8b4e81
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71327438"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72932413"
 ---
 # <a name="syslog-data-sources-in-azure-monitor"></a>Источники данных Syslog в Azure Monitor
 Системный журнал (Syslog) — это протокол ведения журнала событий, который обычно используется в Linux. Приложения отправляют сообщения, которые могут храниться на локальном компьютере или передаваться в сборщик системного журнала. При установке агента Log Analytics для Linux он настраивает локальную управляющую программу Syslog для пересылки сообщений в агент. Затем агент отправляет сообщение в Azure Monitor, где создается соответствующая запись.  
@@ -33,8 +27,8 @@ ms.locfileid: "71327438"
 С сборщиком syslog поддерживаются следующие возможности.
 
 * кернинг
-* Пользователь
-* почта
+* user
+* mail
 * daemon
 * auth
 * syslog
@@ -203,7 +197,7 @@ ms.locfileid: "71327438"
 
 | Свойство | Описание |
 |:--- |:--- |
-| Computer |Компьютер, с которого было получено событие. |
+| Компьютер |Компьютер, с которого было получено событие. |
 | Facility |Определяет часть системы, которая создала сообщение. |
 | HostIP |IP-адрес системы, отправившей сообщение. |
 | HostName |Имя системы, отправившей сообщение. |
@@ -215,14 +209,14 @@ ms.locfileid: "71327438"
 ## <a name="log-queries-with-syslog-records"></a>Запросы к журналу для получения записей системного журнала
 В следующей таблице представлены различные примеры запросов к журналу, извлекающих записи из системного журнала.
 
-| query | Описание |
+| Запрос | Описание |
 |:--- |:--- |
 | Системный журнал |Все записи системного журнала. |
 | Syslog &#124; where SeverityLevel == "error" |Все записи системного журнала с уровнем серьезности "ошибка". |
 | Syslog &#124; summarize AggregatedValue = count() by Computer |Число записей системного журнала по компьютеру. |
 | Syslog &#124; summarize AggregatedValue = count() by Facility |Число записей системного журнала по устройству. |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте больше о [запросах журнала](../../azure-monitor/log-query/log-query-overview.md), которые можно применять для анализа данных, собираемых из источников данных и решений.
 * Используйте [настраиваемые поля](../../azure-monitor/platform/custom-fields.md) для анализа данных из записей системного журнала в отдельных полях.
 * [Настройте агенты Linux](../../azure-monitor/learn/quick-collect-linux-computer.md) для сбора других типов данных.

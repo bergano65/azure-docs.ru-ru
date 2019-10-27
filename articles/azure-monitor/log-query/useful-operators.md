@@ -1,24 +1,18 @@
 ---
 title: Полезные операторы в запросах журнала Azure Monitor | Документация Майкрософт
 description: Общие функции для различных сценариев в запросах журнала Azure Monitor.
-services: log-analytics
-documentationcenter: ''
-author: bwren
-manager: carmonm
-editor: ''
-ms.assetid: ''
-ms.service: log-analytics
-ms.workload: na
-ms.tgt_pltfrm: na
+ms.service: azure-monitor
+ms.subservice: logs
 ms.topic: conceptual
-ms.date: 08/21/2018
+author: bwren
 ms.author: bwren
-ms.openlocfilehash: d11445c3f31f9aced6fdb9783575d10a026de1f0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 08/21/2018
+ms.openlocfilehash: 022a9f638b3a7d8ae4ebeff8062f258ada7a14f8
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61424144"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72932883"
 ---
 # <a name="useful-operators-in-azure-monitor-log-queries"></a>Полезные операторы в запросах журнала Azure Monitor
 

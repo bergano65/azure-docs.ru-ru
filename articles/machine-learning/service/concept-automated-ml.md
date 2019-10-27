@@ -11,12 +11,12 @@ author: nacharya1
 ms.author: nilesha
 ms.date: 06/20/2019
 ms.custom: seodec18
-ms.openlocfilehash: 895425232dabc78650b6ee7ed035048471084237
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: 999f554bf4a2b9ddda83ee6398950cefb11d32aa
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72793895"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72929335"
 ---
 # <a name="what-is-automated-machine-learning"></a>Что такое автоматическое машинное обучение?
 
@@ -95,9 +95,7 @@ ms.locfileid: "72793895"
 
 Также доступны дополнительные расширенные предварительные действия и добавление признаков, такие как отсутствующие значения добавления отсутствующих, Encoding и Transforms. [Узнайте больше о том, что входит в добавление признаков](how-to-create-portal-experiments.md#preprocess). Включить этот параметр с помощью:
 
-+ Портал Azure: установите флажок **Предварительная обработка** в **дополнительных параметрах** , [выполнив следующие действия](how-to-create-portal-experiments.md).
-
-+ Пакет SDK для Python: указание `"preprocess": True` для [класса`AutoMLConfig`](https://docs.microsoft.com/python/api/azureml-train-automl/azureml.train.automl.automlconfig?view=azure-ml-py).
++ Пакет SDK для Python: указание `"feauturization": auto' / 'off' / FeaturizationConfig` для [класса`AutoMLConfig`](https://docs.microsoft.com/python/api/azureml-train-automl/azureml.train.automl.automlconfig?view=azure-ml-py).
 
 
 ## <a name="time-series-forecasting"></a>Прогнозирование временных рядов

@@ -1,30 +1,24 @@
 ---
 title: Работа со строками в запросах журнала Azure Monitor | Документация Майкрософт
 description: Описано редактирование, сравнение, выполнение поиска и многие другие операции со строками в запросах журнала Azure Monitor.
-services: log-analytics
-documentationcenter: ''
-author: bwren
-manager: carmonm
-editor: ''
-ms.assetid: ''
-ms.service: log-analytics
-ms.workload: na
-ms.tgt_pltfrm: na
+ms.service: azure-monitor
+ms.subservice: logs
 ms.topic: conceptual
-ms.date: 08/16/2018
+author: bwren
 ms.author: bwren
-ms.openlocfilehash: 0dd61deb372822c5c564758d26d4c4a4938c1064
-ms.sourcegitcommit: d060947aae93728169b035fd54beef044dbe9480
+ms.date: 08/16/2018
+ms.openlocfilehash: 0d7bf025b414df819887192bb59f7fd8da64b5d9
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68741463"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72932934"
 ---
 # <a name="work-with-strings-in-azure-monitor-log-queries"></a>Работа со строками в запросах журнала Azure Monitor
 
 
 > [!NOTE]
-> Прежде чем приступить к работе с этим руководством, приступайте к [работе с Azure Monitor log Analytics](get-started-portal.md) и [начните работу с Azure Monitor запросами](get-started-queries.md) к журналу.
+> Прежде чем приступить к работе с этим руководством, приступайте к [работе с Azure Monitor log Analytics](get-started-portal.md) и [начните работу с Azure Monitor запросами к журналу](get-started-queries.md) .
 
 [!INCLUDE [log-analytics-demo-environment](../../../includes/log-analytics-demo-environment.md)]
 
@@ -34,7 +28,7 @@ ms.locfileid: "68741463"
 
 
 ## <a name="strings-and-escaping-them"></a>Строки и их экранирование
-Строковые значения заключаются в одинарные или двойные кавычки. Обратная\\косая черта () используется для экранирования символов до символа, следующего за ним, например \t для Tab, \" \n для новой строки и сам символ кавычки.
+Строковые значения заключаются в одинарные или двойные кавычки. Обратная косая черта (\\) используется для экранирования символов до символа, следующего за ним, например \t для Tab, \n для новой строки и \" сам символ кавычки.
 
 ```Kusto
 print "this is a 'string' literal in double \" quotes"
@@ -55,37 +49,37 @@ print @"C:\backslash\not\escaped\with @ prefix"
 
 operator       |Описание                         |С учетом регистра|Пример (при `true`)
 ---------------|------------------------------------|--------------|-----------------------
-`==`           |Равно                              |Да           |`"aBc" == "aBc"`
-`!=`           |Не равно                          |Да           |`"abc" != "ABC"`
+`==`           |Равно                              |ДА           |`"aBc" == "aBc"`
+`!=`           |Не равно                          |ДА           |`"abc" != "ABC"`
 `=~`           |Равно                              |Нет            |`"abc" =~ "ABC"`
 `!~`           |Не равно                          |Нет            |`"aBc" !~ "xyz"`
 `has`          |Правая часть представляет собой все слово в левой части |Нет|`"North America" has "america"`
 `!has`         |Правая часть не является всем словом в левой части       |Нет            |`"North America" !has "amer"` 
-`has_cs`       |Правая часть представляет собой все слово в левой части |Да|`"North America" has_cs "America"`
-`!has_cs`      |Правая часть не является всем словом в левой части       |Да            |`"North America" !has_cs "amer"` 
+`has_cs`       |Правая часть представляет собой все слово в левой части |ДА|`"North America" has_cs "America"`
+`!has_cs`      |Правая часть не является всем словом в левой части       |ДА            |`"North America" !has_cs "amer"` 
 `hasprefix`    |Правая часть представляет собой префикс слова в левой части         |Нет            |`"North America" hasprefix "ame"`
 `!hasprefix`   |Правая часть не является префиксом слова в левой части     |Нет            |`"North America" !hasprefix "mer"` 
-`hasprefix_cs`    |Правая часть представляет собой префикс слова в левой части         |Да            |`"North America" hasprefix_cs "Ame"`
-`!hasprefix_cs`   |Правая часть не является префиксом слова в левой части     |Да            |`"North America" !hasprefix_cs "CA"` 
+`hasprefix_cs`    |Правая часть представляет собой префикс слова в левой части         |ДА            |`"North America" hasprefix_cs "Ame"`
+`!hasprefix_cs`   |Правая часть не является префиксом слова в левой части     |ДА            |`"North America" !hasprefix_cs "CA"` 
 `hassuffix`    |Правая часть представляет собой суффикс слова в левой части         |Нет            |`"North America" hassuffix "ica"`
 `!hassuffix`   |Правая часть не является суффиксом слова в левой части     |Нет            |`"North America" !hassuffix "americ"`
-`hassuffix_cs`    |Правая часть представляет собой суффикс слова в левой части         |Да            |`"North America" hassuffix_cs "ica"`
-`!hassuffix_cs`   |Правая часть не является суффиксом слова в левой части     |Да            |`"North America" !hassuffix_cs "icA"`
+`hassuffix_cs`    |Правая часть представляет собой суффикс слова в левой части         |ДА            |`"North America" hassuffix_cs "ica"`
+`!hassuffix_cs`   |Правая часть не является суффиксом слова в левой части     |ДА            |`"North America" !hassuffix_cs "icA"`
 `contains`     |Правая часть является вхождением в левую часть  |Нет            |`"FabriKam" contains "BRik"`
 `!contains`    |Правая часть не входит в левую часть           |Нет            |`"Fabrikam" !contains "xyz"`
-`contains_cs`   |Правая часть является вхождением в левую часть  |Да           |`"FabriKam" contains_cs "Kam"`
-`!contains_cs`  |Правая часть не входит в левую часть           |Да           |`"Fabrikam" !contains_cs "Kam"`
+`contains_cs`   |Правая часть является вхождением в левую часть  |ДА           |`"FabriKam" contains_cs "Kam"`
+`!contains_cs`  |Правая часть не входит в левую часть           |ДА           |`"Fabrikam" !contains_cs "Kam"`
 `startswith`   |Правая часть является начальным вхождением в левую часть|Нет            |`"Fabrikam" startswith "fab"`
 `!startswith`  |Правая часть не является начальным вхождением в левую часть|Нет        |`"Fabrikam" !startswith "kam"`
-`startswith_cs`   |Правая часть является начальным вхождением в левую часть|Да            |`"Fabrikam" startswith_cs "Fab"`
-`!startswith_cs`  |Правая часть не является начальным вхождением в левую часть|Да        |`"Fabrikam" !startswith_cs "fab"`
+`startswith_cs`   |Правая часть является начальным вхождением в левую часть|ДА            |`"Fabrikam" startswith_cs "Fab"`
+`!startswith_cs`  |Правая часть не является начальным вхождением в левую часть|ДА        |`"Fabrikam" !startswith_cs "fab"`
 `endswith`     |Правая часть является конечным вхождением в левую часть|Нет             |`"Fabrikam" endswith "Kam"`
 `!endswith`    |Правая часть не является конечным вхождением в левую часть|Нет         |`"Fabrikam" !endswith "brik"`
-`endswith_cs`     |Правая часть является конечным вхождением в левую часть|Да             |`"Fabrikam" endswith "Kam"`
-`!endswith_cs`    |Правая часть не является конечным вхождением в левую часть|Да         |`"Fabrikam" !endswith "brik"`
-`matches regex`|Левая часть содержит соответствие для правой части        |Да           |`"Fabrikam" matches regex "b.*k"`
-`in`           |Соответствует одному из элементов       |Да           |`"abc" in ("123", "345", "abc")`
-`!in`          |Не соответствует одному из элементов   |Да           |`"bca" !in ("123", "345", "abc")`
+`endswith_cs`     |Правая часть является конечным вхождением в левую часть|ДА             |`"Fabrikam" endswith "Kam"`
+`!endswith_cs`    |Правая часть не является конечным вхождением в левую часть|ДА         |`"Fabrikam" !endswith "brik"`
+`matches regex`|Левая часть содержит соответствие для правой части        |ДА           |`"Fabrikam" matches regex "b.*k"`
+`in`           |Соответствует одному из элементов       |ДА           |`"abc" in ("123", "345", "abc")`
+`!in`          |Не соответствует одному из элементов   |ДА           |`"bca" !in ("123", "345", "abc")`
 
 
 ## <a name="countof"></a>countof
@@ -102,7 +96,7 @@ countof(text, search [, kind])
 - `search` — текстовая строка или регулярное выражение, которое проверяется на вхождение в text.
 - `kind` - _normal_ | _regex_ (по умолчанию: normal).
 
-### <a name="returns"></a>Возвращает
+### <a name="returns"></a>Результаты
 
 Количество совпадений для строки поиска в контейнере. Совпадения для текстовых строк могут перекрывать друг друга, при этом для регулярных выражений — не могут.
 
@@ -127,7 +121,7 @@ print countof("abcabc", "a.c", "regex");  // result: 2
 ```
 
 
-## <a name="extract"></a>извлечь
+## <a name="extract"></a>extract
 
 Получает соответствие регулярного выражения из указанной строки. При необходимости также преобразует извлеченную подстроку в указанный тип.
 
@@ -144,7 +138,7 @@ extract(regex, captureGroup, text [, typeLiteral])
 - `text` — строка для поиска.
 - `typeLiteral` — необязательный литерал типа (например, typeof(long)). Если указан, то извлеченная подстрока преобразуется в этот тип.
 
-### <a name="returns"></a>Возвращает
+### <a name="returns"></a>Результаты
 Возвращается подстрока, которая сравнивалась с указанной в группе записи captureGroup, при необходимости преобразованная в тип typeLiteral.
 Если соответствия нет или не удается выполнить преобразование типа, возвращается NULL.
 
@@ -264,9 +258,9 @@ SecurityEvent
 
 Можно получить следующие результаты:
 
-Действия                                        |заменена
+Действие                                        |заменена
 ------------------------------------------------|----------------------------------------------------------
-4663 — была предпринята попытка доступа к объекту.  |Идентификатор действия 4663: была предпринята попытка доступа к объекту.
+4663 — была предпринята попытка доступа к объекту.  |Идентификатор действия 4663 — была предпринята попытка доступа к объекту.
 
 
 ## <a name="split"></a>split
@@ -368,7 +362,7 @@ print toupper("hello"); // result: "HELLO"
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь с дополнительными руководствами по следующим ссылкам:
 * [Статистические функции в запросах Log Analytics](aggregations.md)
 * [Расширенные статистические функции в запросах Azure Log Analytics](advanced-aggregations.md)

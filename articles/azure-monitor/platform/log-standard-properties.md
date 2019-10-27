@@ -1,23 +1,18 @@
 ---
 title: Стандартные свойства в записях журнала Azure Monitor | Документация Майкрософт
 description: Описание свойств, общих для многих типов данных в журналах Azure Monitor.
-services: log-analytics
-documentationcenter: ''
+ms.service: azure-monitor
+ms.subservice: logs
+ms.topic: conceptual
 author: bwren
-manager: carmonm
-editor: ''
-ms.service: log-analytics
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.date: 07/18/2019
 ms.author: bwren
-ms.openlocfilehash: 0fe174f309656011a1d05762927e254ff210b1e7
-ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
+ms.date: 07/18/2019
+ms.openlocfilehash: d765422957392a5cdb170208b809c24bf5aec2a3
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71262009"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72932194"
 ---
 # <a name="standard-properties-in-azure-monitor-logs"></a>Стандартные свойства в журналах Azure Monitor
 Данные в журналах Azure Monitor [хранятся в виде набора записей в log Analytics рабочей области или в Application Insights приложении](../log-query/logs-structure.md), каждый из которых имеет определенный тип данных, имеющий уникальный набор свойств. Большинство типов данных имеют стандартные свойства, которые являются общими для нескольких типов. В этой статье описаны эти свойства и приведены примеры по их использованию в запросах.
@@ -51,8 +46,8 @@ exceptions
 | sort by timestamp asc 
 ```
 
-## <a name="_timereceived"></a>\_тимерецеивед
-Свойство тимерецеивед содержит дату и время получения записи Azure Monitor точкой приема в облаке Azure.  **\_** Это может быть полезно для выявления проблем задержки между источником данных и облаком. Примером может быть проблема с сетью, вызывающая задержку данных, отправляемых агентом. Дополнительные сведения см. [в разделе время приема данных журнала в Azure Monitor](data-ingestion-time.md) .
+## <a name="_timereceived"></a>\_Тимерецеивед
+Свойство **\_тимерецеивед** содержит дату и время получения записи Azure Monitor точкой приема в облаке Azure. Это может быть полезно для выявления проблем задержки между источником данных и облаком. Примером может быть проблема с сетью, вызывающая задержку данных, отправляемых агентом. Дополнительные сведения см. [в разделе время приема данных журнала в Azure Monitor](data-ingestion-time.md) .
 
 Следующий запрос возвращает среднюю задержку на час для записей событий агента. Сюда входит время от агента до облака и общее время, в течение которого запись будет доступна для запросов журнала.
 
@@ -78,7 +73,7 @@ search *
 
 ```
 ## <a name="_itemid"></a>\_ItemId
-Свойство ItemId содержит уникальный идентификатор записи.  **\_**
+Свойство **\_ItemId** содержит уникальный идентификатор записи.
 
 
 ## <a name="_resourceid"></a>\_ResourceId
@@ -211,7 +206,7 @@ union withsource = tt *
 | summarize count() by tt | sort by count_ nulls last 
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения см. в статье [Анализ данных журнала в Azure Monitor](../log-query/log-query-overview.md).
 - Изучите статью [Начало работы с запросами журналов Azure Monitor](../../azure-monitor/log-query/get-started-queries.md).

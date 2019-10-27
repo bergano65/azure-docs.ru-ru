@@ -1,24 +1,18 @@
 ---
 title: Сбор пользовательских данных JSON в Azure Monitor | Документация Майкрософт
 description: С помощью агента Log Analytics для Linux можно собирать данные из пользовательских источников данных JSON в службу Azure Monitor.  В качестве такого пользовательского источника данных может использоваться простой сценарий, возвращающий результат в формате JSON, например curl, или один из более чем 300 подключаемых модулей FluentD. В этой статье описано, как настроить такой сбор данных.
-services: log-analytics
-documentationcenter: ''
-author: mgoedtel
-manager: carmonm
-editor: tysonn
-ms.assetid: f1d5bde4-6b86-4b8e-b5c1-3ecbaba76198
-ms.service: log-analytics
+ms.service: azure-monitor
+ms.subservice: logs
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 11/28/2018
+author: MGoedtel
 ms.author: magoedte
-ms.openlocfilehash: 101719668fee155e84b7a767647a662ca845f0f2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 11/28/2018
+ms.openlocfilehash: c7628badb993c26b989c1fe610d2360ff466de39
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60804652"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72932477"
 ---
 # <a name="collecting-custom-json-data-sources-with-the-log-analytics-agent-for-linux-in-azure-monitor"></a>Сбор данных из пользовательских источников данных JSON с помощью агента Log Analytics для Linux в службу Azure Monitor
 [!INCLUDE [log-analytics-agent-note](../../../includes/log-analytics-agent-note.md)]
@@ -29,7 +23,7 @@ ms.locfileid: "60804652"
 > [!NOTE]
 > Для работы с пользовательскими источниками данных требуется агент Log Analytics для Linux версии 1.1.0-217 или более поздней.
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Настройка
 
 ### <a name="configure-input-plugin"></a>Настройка входного подключаемого модуля
 
@@ -86,7 +80,7 @@ ms.locfileid: "60804652"
 
     sudo /opt/microsoft/omsagent/bin/service_control restart 
 
-## <a name="output"></a>Выход
+## <a name="output"></a>Выходные данные
 Данные, собираемые в Azure Monitor, будут иметь тип записи `<FLUENTD_TAG>_CL`.
 
 Например, пользовательский тег `tag oms.api.tomcat` в Azure Monitor будет иметь тип записи `tomcat_CL`.  Для получения всех записей этого типа выполните следующий запрос журнала.

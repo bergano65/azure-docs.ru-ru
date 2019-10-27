@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 10/11/2019
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: 9767282b3dd764a45f25a14d62af70a13c80b0ac
-ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
+ms.openlocfilehash: 6e3b368d1f5615c34a49b155d288d3c37c28bc26
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2019
-ms.locfileid: "72300268"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72933139"
 ---
 # <a name="multi-protocol-access-on-azure-data-lake-storage-preview"></a>Доступ с несколькими протоколами на Azure Data Lake Storage (Предварительная версия)
 
@@ -35,7 +35,7 @@ ms.locfileid: "72300268"
 
 ## <a name="use-all-blob-storage-features"></a>Использовать все функции хранилища BLOB-объектов
 
-Функции хранилища BLOB-объектов, такие как [ведение журнала диагностики](../common/storage-analytics-logging.md), [уровни доступа](storage-blob-storage-tiers.md)и [политики управления жизненным циклом хранилища BLOB-объектов](storage-lifecycle-management-concepts.md) , теперь работают с учетными записями, имеющими иерархическое пространство имен. Таким образом, вы можете включить иерархические пространства имен в учетных записях хранения BLOB-объектов, не разрыва доступ к этим важным функциям. 
+Функции хранилища BLOB-объектов, такие как [ведение журнала диагностики](../common/storage-analytics-logging.md), [уровни доступа](storage-blob-storage-tiers.md)и [политики управления жизненным циклом хранилища BLOB-объектов](storage-lifecycle-management-concepts.md) , теперь работают с учетными записями, имеющими иерархическое пространство имен. Таким образом, можно включить иерархические пространства имен в учетных записях хранения BLOB-объектов без потери доступа к этим важным функциям. 
 
 > [!NOTE]
 > Чтобы просмотреть ограничения, см. статью [Известные проблемы](data-lake-storage-known-issues.md) .
@@ -48,7 +48,7 @@ API-интерфейсы больших двоичных объектов и API
 
 Существующие средства и приложения, использующие API больших двоичных объектов, получают эти преимущества автоматически. Разработчикам не придется изменять их. Data Lake Storage 2-го поколения постоянно применяет списки ACL уровня каталога и файлов независимо от протокола, используемого инструментами и приложениями для доступа к данным. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. [Известные проблемы](data-lake-storage-known-issues.md)
 

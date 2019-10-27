@@ -4,157 +4,157 @@ description: Список типов ресурсов Azure, подлежащи�
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: reference
-ms.date: 10/03/2019
+ms.date: 10/24/2019
 ms.author: tomfitz
-ms.openlocfilehash: 81096a4299ec190cb4299f1b8ea4f9c2533d37ad
-ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
+ms.openlocfilehash: ba594a2bc0f0cb50eb515a24255a3f9ad56a10a3
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71948028"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72931879"
 ---
 # <a name="move-operation-support-for-resources"></a>Поддержка операции перемещения для ресурсов
 В этой статье указано, поддерживается ли для тех или иных типов ресурсов Azure операция перемещения. В нем также содержатся сведения о специальных условиях, которые следует учитывать при перемещении ресурса.
 
 Переход к пространству имен поставщика ресурсов:
 > [!div class="op_single_selector"]
-> - [Microsoft.AAD](#microsoftaad)
+> - [Microsoft. AAD](#microsoftaad)
 > - [Microsoft. аадиам](#microsoftaadiam)
-> - [Microsoft.AlertsManagement](#microsoftalertsmanagement)
-> - [Microsoft.AnalysisServices](#microsoftanalysisservices)
+> - [Microsoft. Алертсманажемент](#microsoftalertsmanagement)
+> - [Microsoft. AnalysisServices](#microsoftanalysisservices)
 > - [Microsoft.ApiManagement](#microsoftapimanagement)
-> - [Microsoft.AppConfiguration](#microsoftappconfiguration)
+> - [Microsoft. Аппконфигуратион](#microsoftappconfiguration)
 > - [Microsoft. AppService](#microsoftappservice)
 > - [Microsoft.Authorization](#microsoftauthorization)
 > - [Microsoft.Automation](#microsoftautomation)
-> - [Microsoft.AzureActiveDirectory](#microsoftazureactivedirectory)
-> - [Microsoft.AzureData](#microsoftazuredata)
-> - [Microsoft.AzureStack](#microsoftazurestack)
-> - [Microsoft. Backup](#microsoftbackup)
-> - [Microsoft.Batch](#microsoftbatch)
+> - [Microsoft. AzureActiveDirectory](#microsoftazureactivedirectory)
+> - [Microsoft. Азуредата](#microsoftazuredata)
+> - [Microsoft. AzureStack](#microsoftazurestack)
+> - [Microsoft. Batch](#microsoftbatch)
 > - [Microsoft. BatchAI](#microsoftbatchai)
-> - [Microsoft.BingMaps](#microsoftbingmaps)
-> - [Microsoft.BizTalkServices](#microsoftbiztalkservices)
-> - [Microsoft.Blockchain](#microsoftblockchain)
-> - [Microsoft.Blueprint](#microsoftblueprint)
-> - [Microsoft.BotService](#microsoftbotservice)
+> - [Microsoft. BingMaps](#microsoftbingmaps)
+> - [Microsoft. Бизталксервицес](#microsoftbiztalkservices)
+> - [Microsoft. Блокчейн](#microsoftblockchain)
+> - [Microsoft. чертеж](#microsoftblueprint)
+> - [Microsoft. Ботсервице](#microsoftbotservice)
 > - [Microsoft.Cache](#microsoftcache)
 > - [Microsoft.Cdn](#microsoftcdn)
-> - [Microsoft.CertificateRegistration](#microsoftcertificateregistration)
-> - [Microsoft.ClassicCompute](#microsoftclassiccompute)
-> - [Microsoft.ClassicNetwork](#microsoftclassicnetwork)
-> - [Microsoft.ClassicStorage](#microsoftclassicstorage)
-> - [Microsoft.CognitiveServices](#microsoftcognitiveservices)
-> - [Microsoft.Compute](#microsoftcompute)
+> - [Microsoft. Цертификатерегистратион](#microsoftcertificateregistration)
+> - [Microsoft. ClassicCompute](#microsoftclassiccompute)
+> - [Microsoft. ClassicNetwork](#microsoftclassicnetwork)
+> - [Microsoft. Классикстораже](#microsoftclassicstorage)
+> - [Microsoft. CognitiveServices](#microsoftcognitiveservices)
+> - [Microsoft. COMPUTE](#microsoftcompute)
 > - [Microsoft. Container](#microsoftcontainer)
-> - [Microsoft.ContainerInstance](#microsoftcontainerinstance)
+> - [Microsoft. Контаинеринстанце](#microsoftcontainerinstance)
 > - [Microsoft.ContainerRegistry](#microsoftcontainerregistry)
 > - [Microsoft.ContainerService](#microsoftcontainerservice)
-> - [Microsoft.ContentModerator](#microsoftcontentmoderator)
-> - [Microsoft.CortanaAnalytics](#microsoftcortanaanalytics)
-> - [Microsoft.CostManagement](#microsoftcostmanagement)
-> - [Microsoft.CustomerInsights](#microsoftcustomerinsights)
-> - [Microsoft.DataBox](#microsoftdatabox)
-> - [Microsoft.DataBoxEdge](#microsoftdataboxedge)
-> - [Microsoft.Databricks](#microsoftdatabricks)
-> - [Microsoft.DataCatalog](#microsoftdatacatalog)
-> - [Microsoft.DataConnect](#microsoftdataconnect)
+> - [Microsoft. Контентмодератор](#microsoftcontentmoderator)
+> - [Microsoft. Кортанааналитикс](#microsoftcortanaanalytics)
+> - [Microsoft. Костманажемент](#microsoftcostmanagement)
+> - [Microsoft. Кустомеринсигхтс](#microsoftcustomerinsights)
+> - [Microsoft. Кустомпровидерс](#microsoftcustomproviders)
+> - [Microsoft. Датабокс](#microsoftdatabox)
+> - [Microsoft. Датабокседже](#microsoftdataboxedge)
+> - [Microsoft. кирпичы](#microsoftdatabricks)
+> - [Каталог Microsoft.](#microsoftdatacatalog)
+> - [Microsoft. соединение](#microsoftdataconnect)
 > - [Microsoft. Обмен](#microsoftdataexchange)
 > - [Microsoft.DataFactory](#microsoftdatafactory)
 > - [Microsoft. Data Lake](#microsoftdatalake)
 > - [Microsoft.DataLakeAnalytics](#microsoftdatalakeanalytics)
 > - [Microsoft.DataLakeStore](#microsoftdatalakestore)
-> - [Microsoft.DataMigration](#microsoftdatamigration)
-> - [Microsoft.DBforMariaDB](#microsoftdbformariadb)
-> - [Microsoft.DBforMySQL](#microsoftdbformysql)
-> - [Microsoft.DBforPostgreSQL](#microsoftdbforpostgresql)
-> - [Microsoft.DeploymentManager](#microsoftdeploymentmanager)
+> - [Microsoft. Перенос](#microsoftdatamigration)
+> - [Общая папка Microsoft.](#microsoftdatashare)
+> - [Microsoft. Дбформариадб](#microsoftdbformariadb)
+> - [Microsoft. Дбформискл](#microsoftdbformysql)
+> - [Microsoft. Дбфорпостгрескл](#microsoftdbforpostgresql)
+> - [Microsoft. Деплойментманажер](#microsoftdeploymentmanager)
 > - [Microsoft.Devices](#microsoftdevices)
-> - [Microsoft.DevSpaces](#microsoftdevspaces)
+> - [Microsoft. Девспацес](#microsoftdevspaces)
 > - [Microsoft.DevTestLab](#microsoftdevtestlab)
 > - [Microsoft.DocumentDB](#microsoftdocumentdb)
-> - [Microsoft.DomainRegistration](#microsoftdomainregistration)
-> - [Microsoft.EnterpriseKnowledgeGraph](#microsoftenterpriseknowledgegraph)
-> - [Microsoft.EventGrid](#microsofteventgrid)
+> - [Microsoft. Домаинрегистратион](#microsoftdomainregistration)
+> - [Microsoft. Ентерприсекновледжеграф](#microsoftenterpriseknowledgegraph)
+> - [Microsoft. EventGrid](#microsofteventgrid)
 > - [Microsoft.EventHub](#microsofteventhub)
-> - [Microsoft.Genomics](#microsoftgenomics)
-> - [Microsoft.HanaOnAzure](#microsofthanaonazure)
+> - [Microsoft. Genomics](#microsoftgenomics)
+> - [Microsoft. Ханаоназуре](#microsofthanaonazure)
 > - [Microsoft.HDInsight](#microsofthdinsight)
-> - [Microsoft.HealthcareApis](#microsofthealthcareapis)
-> - [Microsoft.HybridCompute](#microsofthybridcompute)
-> - [Microsoft.HybridData](#microsofthybriddata)
-> - [Microsoft.ImportExport](#microsoftimportexport)
+> - [Microsoft. Хеалскареапис](#microsofthealthcareapis)
+> - [Microsoft. Хибридкомпуте](#microsofthybridcompute)
+> - [Microsoft. Хибриддата](#microsofthybriddata)
+> - [Microsoft. ImportExport](#microsoftimportexport)
 > - [Microsoft. Insights](#microsoftinsights)
-> - [Microsoft.IoTCentral](#microsoftiotcentral)
-> - [Microsoft.IoTSpaces](#microsoftiotspaces)
+> - [Microsoft. Иотцентрал](#microsoftiotcentral)
+> - [Microsoft. Иотспацес](#microsoftiotspaces)
 > - [Microsoft.KeyVault](#microsoftkeyvault)
-> - [Microsoft.Kusto](#microsoftkusto)
-> - [Microsoft.LabServices](#microsoftlabservices)
+> - [Microsoft. Kusto](#microsoftkusto)
+> - [Microsoft. Лабсервицес](#microsoftlabservices)
 > - [Microsoft. Локатионбаседсервицес](#microsoftlocationbasedservices)
 > - [Microsoft. файл locationservices](#microsoftlocationservices)
 > - [Microsoft.Logic](#microsoftlogic)
-> - [Microsoft.MachineLearning](#microsoftmachinelearning)
+> - [Microsoft. MachineLearning](#microsoftmachinelearning)
 > - [Microsoft. Мачинелеарнингкомпуте](#microsoftmachinelearningcompute)
 > - [Microsoft. Мачинелеарнинжекспериментатион](#microsoftmachinelearningexperimentation)
 > - [Microsoft. Мачинелеарнингмоделманажемент](#microsoftmachinelearningmodelmanagement)
 > - [Microsoft. Мачинелеарнингоператионализатион](#microsoftmachinelearningoperationalization)
-> - [Microsoft.MachineLearningServices](#microsoftmachinelearningservices)
-> - [Microsoft.ManagedIdentity](#microsoftmanagedidentity)
-> - [Microsoft.Maps](#microsoftmaps)
-> - [Microsoft.MarketplaceApps](#microsoftmarketplaceapps)
+> - [Microsoft. Мачинелеарнингсервицес](#microsoftmachinelearningservices)
+> - [Microsoft. ManagedIdentity](#microsoftmanagedidentity)
+> - [Microsoft. Maps](#microsoftmaps)
+> - [Microsoft. Маркетплацеаппс](#microsoftmarketplaceapps)
 > - [Microsoft.Media](#microsoftmedia)
-> - [Microsoft.Microservices4Spring](#microsoftmicroservices4spring)
-> - [Microsoft.Migrate](#microsoftmigrate)
-> - [Microsoft.NetApp](#microsoftnetapp)
-> - [Microsoft.Network](#microsoftnetwork)
+> - [Microsoft. Microservices4Spring](#microsoftmicroservices4spring)
+> - [Microsoft. migrate](#microsoftmigrate)
+> - [Microsoft. NetApp](#microsoftnetapp)
+> - [Microsoft. Network](#microsoftnetwork)
 > - [Microsoft.NotificationHubs](#microsoftnotificationhubs)
-> - [Microsoft.OperationalInsights](#microsoftoperationalinsights)
-> - [Microsoft.OperationsManagement](#microsoftoperationsmanagement)
-> - [Microsoft.Peering](#microsoftpeering)
-> - [Microsoft.Portal](#microsoftportal)
+> - [Microsoft. OperationalInsights](#microsoftoperationalinsights)
+> - [Microsoft. OperationsManagement](#microsoftoperationsmanagement)
+> - [Microsoft. пиринг](#microsoftpeering)
+> - [Microsoft. Portal](#microsoftportal)
 > - [Microsoft. Порталсдк](#microsoftportalsdk)
-> - [Microsoft.PowerBI](#microsoftpowerbi)
-> - [Microsoft.PowerBIDedicated](#microsoftpowerbidedicated)
+> - [Microsoft. PowerBI](#microsoftpowerbi)
+> - [Microsoft. Повербидедикатед](#microsoftpowerbidedicated)
 > - [Microsoft. Прожектоксфорд](#microsoftprojectoxford)
 > - [Microsoft.RecoveryServices](#microsoftrecoveryservices)
-> - [Microsoft.Relay](#microsoftrelay)
-> - [Microsoft.ResourceGraph](#microsoftresourcegraph)
-> - [Microsoft.SaaS](#microsoftsaas)
+> - [Microsoft. Relay](#microsoftrelay)
+> - [Microsoft. Ресаурцеграф](#microsoftresourcegraph)
+> - [Microsoft. SaaS](#microsoftsaas)
 > - [Microsoft.Scheduler](#microsoftscheduler)
 > - [Microsoft.Search](#microsoftsearch)
 > - [Microsoft.Security](#microsoftsecurity)
 > - [Microsoft. Серверманажемент](#microsoftservermanagement)
 > - [Microsoft.ServiceBus](#microsoftservicebus)
 > - [Microsoft.ServiceFabric](#microsoftservicefabric)
-> - [Microsoft.ServiceFabricMesh](#microsoftservicefabricmesh)
-> - [Microsoft.SignalRService](#microsoftsignalrservice)
-> - [Microsoft.SiteRecovery](#microsoftsiterecovery)
-> - [Microsoft.Solutions](#microsoftsolutions)
+> - [Microsoft. Сервицефабрикмеш](#microsoftservicefabricmesh)
+> - [Microsoft. Сигналрсервице](#microsoftsignalrservice)
+> - [Microsoft. Solutions](#microsoftsolutions)
 > - [Microsoft.Sql](#microsoftsql)
-> - [Microsoft.SqlVirtualMachine](#microsoftsqlvirtualmachine)
+> - [Microsoft. Склвиртуалмачине](#microsoftsqlvirtualmachine)
 > - [Microsoft. SqlVM](#microsoftsqlvm)
 > - [Microsoft.Storage](#microsoftstorage)
-> - [Microsoft.StorageCache](#microsoftstoragecache)
-> - [Microsoft.StorageSync](#microsoftstoragesync)
-> - [Microsoft.StorageSyncDev](#microsoftstoragesyncdev)
-> - [Microsoft.StorageSyncInt](#microsoftstoragesyncint)
-> - [Microsoft.StorSimple](#microsoftstorsimple)
-> - [Microsoft.StreamAnalytics](#microsoftstreamanalytics)
+> - [Microsoft. Сторажекаче](#microsoftstoragecache)
+> - [Microsoft. StorageSync](#microsoftstoragesync)
+> - [Microsoft. Сторажесинкдев](#microsoftstoragesyncdev)
+> - [Microsoft. СторажесинЦинт](#microsoftstoragesyncint)
+> - [Microsoft. StorSimple](#microsoftstorsimple)
+> - [Microsoft. StreamAnalytics](#microsoftstreamanalytics)
 > - [Microsoft. Стреаманалитиксексплорер](#microsoftstreamanalyticsexplorer)
 > - [Microsoft. Терраформосс](#microsoftterraformoss)
-> - [Microsoft.TimeSeriesInsights](#microsofttimeseriesinsights)
+> - [Microsoft. TimeSeriesInsights](#microsofttimeseriesinsights)
 > - [Microsoft. Token](#microsofttoken)
 > - [Microsoft. Виртуалмачинеимажес](#microsoftvirtualmachineimages)
 > - [Microsoft. VisualStudio](#microsoftvisualstudio)
-> - [Microsoft.VMwareCloudSimple](#microsoftvmwarecloudsimple)
+> - [Microsoft. Вмвареклаудсимпле](#microsoftvmwarecloudsimple)
 > - [Microsoft.Web](#microsoftweb)
-> - [Microsoft.WindowsIoT](#microsoftwindowsiot)
+> - [Microsoft. Виндовсиот](#microsoftwindowsiot)
 > - [Microsoft. Виндовсвиртуалдесктоп](#microsoftwindowsvirtualdesktop)
 
 ## <a name="microsoftaad"></a>Microsoft.AAD
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | domainservices | Нет | Нет |
 > | DomainServices/репликасетс | Нет | Нет |
@@ -162,42 +162,42 @@ ms.locfileid: "71948028"
 ## <a name="microsoftaadiam"></a>microsoft.aadiam
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | tenants | Нет | Нет |
 
 ## <a name="microsoftalertsmanagement"></a>Microsoft.AlertsManagement
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | актионрулес | Да | Да |
+> | актионрулес | ДА | ДА |
 
 ## <a name="microsoftanalysisservices"></a>Microsoft.AnalysisServices
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | серверы | Да | Да |
+> | серверы | ДА | ДА |
 
 ## <a name="microsoftapimanagement"></a>Microsoft.ApiManagement
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | служба | Да | Да |
+> | Служба | ДА | ДА |
 
 ## <a name="microsoftappconfiguration"></a>Microsoft. Аппконфигуратион
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | конфигуратионсторес | Да | Да |
+> | конфигуратионсторес | ДА | ДА |
 
 ## <a name="microsoftappservice"></a>Microsoft.AppService
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | apiapps | Нет | Нет |
 > | appidentities | Нет | Нет |
@@ -209,18 +209,18 @@ ms.locfileid: "71948028"
 ## <a name="microsoftauthorization"></a>Microsoft.Authorization
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | policyassignments | Нет | Нет |
 
 ## <a name="microsoftautomation"></a>Microsoft.Automation
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | automationaccounts | Да | Да |
-> | automationaccounts и конфигурации | Да | Да |
-> | automationaccounts и модули Runbook | Да | Да |
+> | automationaccounts | ДА | ДА |
+> | automationaccounts и конфигурации | ДА | ДА |
+> | automationaccounts и модули Runbook | ДА | ДА |
 
 > [!IMPORTANT]
 > Модули Runbook должны находиться в той же группе ресурсов, что и учетная запись службы автоматизации.
@@ -228,90 +228,83 @@ ms.locfileid: "71948028"
 ## <a name="microsoftazureactivedirectory"></a>Microsoft.AzureActiveDirectory
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | b2cdirectories | Да | Да |
+> | b2cdirectories | ДА | ДА |
 
 ## <a name="microsoftazuredata"></a>Microsoft. Азуредата
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | склсерверрегистратионс | Нет | Нет |
 
 ## <a name="microsoftazurestack"></a>Microsoft.AzureStack
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | registrations | Да | Да |
-
-## <a name="microsoftbackup"></a>Microsoft.Backup
-
-> [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
-> | ------------- | ----------- | ---------- |
-> | backupvault | Нет | Нет |
+> | registrations | ДА | ДА |
 
 ## <a name="microsoftbatch"></a>Microsoft.Batch
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | batchaccounts | Да | Да |
+> | batchaccounts | ДА | ДА |
 
 ## <a name="microsoftbatchai"></a>Microsoft.BatchAI
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | clusters | Нет | Нет |
 > | fileservers | Нет | Нет |
-> | задания | Нет | Нет |
-> | рабочие области | Нет | Нет |
+> | jobs | Нет | Нет |
+> | workspaces | Нет | Нет |
 
 ## <a name="microsoftbingmaps"></a>Microsoft.BingMaps
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | mapapis | Нет | Нет |
 
 ## <a name="microsoftbiztalkservices"></a>Microsoft.BizTalkServices
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | biztalk | Да | Да |
+> | Biztalk | ДА | ДА |
 
 ## <a name="microsoftblockchain"></a>Microsoft.Blockchain
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | blockchainmembers | Да | Да |
+> | blockchainmembers | ДА | ДА |
 > | наблюдатели | Нет | Нет |
 
 ## <a name="microsoftblueprint"></a>Microsoft.Blueprint
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | blueprintassignments | Нет | Нет |
 
 ## <a name="microsoftbotservice"></a>Microsoft.BotService
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | botservices | Да | Да |
+> | botservices | ДА | ДА |
 
 ## <a name="microsoftcache"></a>Microsoft.Cache
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | redis | Да | Да |
+> | redis | ДА | ДА |
 
 > [!IMPORTANT]
 > Если для экземпляра кэша Azure для Redis настроена виртуальная сеть, экземпляр нельзя переместить в другую подписку. См. раздел [ограничения на перемещение в сети](./move-limitations/networking-move-limitations.md).
@@ -319,18 +312,18 @@ ms.locfileid: "71948028"
 ## <a name="microsoftcdn"></a>Microsoft.Cdn
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | кднвебаппликатионфиреваллполиЦиес | Нет | Нет |
-> | profiles | Да | Да |
-> | профили и конечные точки | Да | Да |
+> | профили | ДА | ДА |
+> | профили и конечные точки | ДА | ДА |
 
 ## <a name="microsoftcertificateregistration"></a>Microsoft.CertificateRegistration
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | certificateorders | Да | Да |
+> | certificateorders | ДА | ДА |
 
 > [!IMPORTANT]
 > См. [руководство по перемещению службы приложений](./move-limitations/app-service-move-limitations.md).
@@ -338,10 +331,10 @@ ms.locfileid: "71948028"
 ## <a name="microsoftclassiccompute"></a>Microsoft.ClassicCompute
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | domainnames | Да | Нет |
-> | virtualmachines | Да | Нет |
+> | domainnames | ДА | Нет |
+> | virtualmachines | ДА | Нет |
 
 > [!IMPORTANT]
 > См. [руководство по перемещению классической модели развертывания](./move-limitations/classic-model-move-limitations.md). Ресурсы классической модели развертывания можно перемещать между подписками с помощью операции, характерной для этого сценария.
@@ -349,7 +342,7 @@ ms.locfileid: "71948028"
 ## <a name="microsoftclassicnetwork"></a>Microsoft.ClassicNetwork
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | networksecuritygroups | Нет | Нет |
 > | reservedips | Нет | Нет |
@@ -361,9 +354,9 @@ ms.locfileid: "71948028"
 ## <a name="microsoftclassicstorage"></a>Microsoft.ClassicStorage
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | storageaccounts | Да | Нет |
+> | storageaccounts | ДА | Нет |
 
 > [!IMPORTANT]
 > См. [руководство по перемещению классической модели развертывания](./move-limitations/classic-model-move-limitations.md). Ресурсы классической модели развертывания можно перемещать между подписками с помощью операции, характерной для этого сценария.
@@ -371,32 +364,32 @@ ms.locfileid: "71948028"
 ## <a name="microsoftcognitiveservices"></a>Microsoft.CognitiveServices
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | учетные записи | Да | Да |
+> | accounts | ДА | ДА |
 
 ## <a name="microsoftcompute"></a>Microsoft.Compute;
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | availabilitysets | Да | Да |
+> | availabilitysets | ДА | ДА |
 > | дискенкриптионсетс | Нет | Нет |
-> | диски | Да | Да |
+> | disks | ДА | ДА |
 > | galleries | Нет | Нет |
 > | коллекции и изображения | Нет | Нет |
 > | коллекции, изображения и версии | Нет | Нет |
 > | хостграупс | Нет | Нет |
 > | хостграупс и узлы | Нет | Нет |
-> | образы | Да | Да |
+> | images | ДА | ДА |
 > | proximityplacementgroups | Нет | Нет |
 > | restorepointcollections | Нет | Нет |
 > | sharedvmimages | Нет | Нет |
 > | шаредвмимажес и версии | Нет | Нет |
-> | моментальные снимки | Да | Да |
-> | virtualmachines | Да | Да |
-> | virtualmachines и расширения | Да | Да |
-> | virtualmachinescalesets | Да | Да |
+> | snapshots | ДА | ДА |
+> | virtualmachines | ДА | ДА |
+> | virtualmachines и расширения | ДА | ДА |
+> | virtualmachinescalesets | ДА | ДА |
 
 > [!IMPORTANT]
 > См. [руководство по перемещению виртуальных машин](./move-limitations/virtual-machines-move-limitations.md).
@@ -404,32 +397,32 @@ ms.locfileid: "71948028"
 ## <a name="microsoftcontainer"></a>Microsoft.Container
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | containergroups | Нет | Нет |
 
 ## <a name="microsoftcontainerinstance"></a>Microsoft.ContainerInstance
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | containergroups | Нет | Нет |
 
 ## <a name="microsoftcontainerregistry"></a>Microsoft.ContainerRegistry
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | registries | Да | Да |
-> | реестры и буилдтаскс | Да | Да |
-> | реестры и репликации | Да | Да |
-> | реестры и задачи | Да | Да |
-> | реестры и веб-перехватчики | Да | Да |
+> | registries | ДА | ДА |
+> | реестры и буилдтаскс | ДА | ДА |
+> | реестры и репликации | ДА | ДА |
+> | реестры и задачи | ДА | ДА |
+> | реестры и веб-перехватчики | ДА | ДА |
 
 ## <a name="microsoftcontainerservice"></a>Microsoft.ContainerService
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | containerservices | Нет | Нет |
 > | managedclusters | Нет | Нет |
@@ -438,71 +431,78 @@ ms.locfileid: "71948028"
 ## <a name="microsoftcontentmoderator"></a>Microsoft.ContentModerator
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | приложения | Да | Да |
+> | приложений | ДА | ДА |
 
 ## <a name="microsoftcortanaanalytics"></a>Microsoft.CortanaAnalytics
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | учетные записи | Нет | Нет |
+> | accounts | Нет | Нет |
 
 ## <a name="microsoftcostmanagement"></a>Microsoft.CostManagement
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | соединители | Да | Да |
+> | соединители | ДА | ДА |
 
 ## <a name="microsoftcustomerinsights"></a>Microsoft.CustomerInsights
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | hubs | Да | Да |
+> | hubs | ДА | ДА |
+
+## <a name="microsoftcustomproviders"></a>Microsoft. Кустомпровидерс
+
+> [!div class="mx-tableFixed"]
+> | Тип ресурса | группа ресурсов. | Subscription |
+> | ------------- | ----------- | ---------- |
+> | ресаурцепровидерс | ДА | ДА |
 
 ## <a name="microsoftdatabox"></a>Microsoft.DataBox
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | задания | Нет | Нет |
+> | jobs | Нет | Нет |
 
 ## <a name="microsoftdataboxedge"></a>Microsoft.DataBoxEdge
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | databoxedgedevices | Нет | Нет |
 
 ## <a name="microsoftdatabricks"></a>Microsoft.Databricks
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | рабочие области | Нет | Нет |
+> | workspaces | Нет | Нет |
 
 ## <a name="microsoftdatacatalog"></a>Microsoft.DataCatalog
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | catalogs | Да | Да |
+> | catalogs | ДА | ДА |
 > | каталоги | Нет | Нет |
 
 ## <a name="microsoftdataconnect"></a>Microsoft.DataConnect
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | connectionmanagers | Нет | Нет |
 
 ## <a name="microsoftdataexchange"></a>Microsoft.DataExchange
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | Пакеты | Нет | Нет |
 > | Планы | Нет | Нет |
@@ -510,163 +510,170 @@ ms.locfileid: "71948028"
 ## <a name="microsoftdatafactory"></a>Microsoft.DataFactory
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | datafactories | Да | Да |
-> | factories | Да | Да |
+> | datafactories | ДА | ДА |
+> | factories | ДА | ДА |
 
 ## <a name="microsoftdatalake"></a>Microsoft.DataLake
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | datalakeaccounts | Нет | Нет |
 
 ## <a name="microsoftdatalakeanalytics"></a>Microsoft.DataLakeAnalytics
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | учетные записи | Да | Да |
+> | accounts | ДА | ДА |
 
 ## <a name="microsoftdatalakestore"></a>Microsoft.DataLakeStore
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | учетные записи | Да | Да |
+> | accounts | ДА | ДА |
 
 ## <a name="microsoftdatamigration"></a>Microsoft.DataMigration
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | services; | Нет | Нет |
 > | службы и проекты | Нет | Нет |
 > | slots | Нет | Нет |
 
+## <a name="microsoftdatashare"></a>Общая папка Microsoft.
+
+> [!div class="mx-tableFixed"]
+> | Тип ресурса | группа ресурсов. | Subscription |
+> | ------------- | ----------- | ---------- |
+> | accounts | Нет | Нет |
+
 ## <a name="microsoftdbformariadb"></a>Microsoft.DBforMariaDB
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | серверы | Да | Да |
+> | серверы | ДА | ДА |
 
 ## <a name="microsoftdbformysql"></a>Microsoft.DBforMySQL
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | серверы | Да | Да |
+> | серверы | ДА | ДА |
 
 ## <a name="microsoftdbforpostgresql"></a>Microsoft.DBforPostgreSQL
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | servergroups | Нет | Нет |
-> | серверы | Да | Да |
-> | serversv2 | Да | Да |
+> | серверы | ДА | ДА |
+> | serversv2 | ДА | ДА |
 
 ## <a name="microsoftdeploymentmanager"></a>Microsoft.DeploymentManager
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | artifactsources | Да | Да |
-> | rollouts | Да | Да |
-> | servicetopologies | Да | Да |
-> | сервицетопологиес и службы | Да | Да |
-> | сервицетопологиес/Services/сервицеунитс | Да | Да |
-> | steps | Да | Да |
+> | artifactsources | ДА | ДА |
+> | rollouts | ДА | ДА |
+> | servicetopologies | ДА | ДА |
+> | сервицетопологиес и службы | ДА | ДА |
+> | сервицетопологиес/Services/сервицеунитс | ДА | ДА |
+> | steps | ДА | ДА |
 
 ## <a name="microsoftdevices"></a>Microsoft.Devices
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | elasticpools | Нет | Нет |
 > | еластикпулс/иосубтенантс | Нет | Нет |
-> | iothubs | Да | Да |
-> | provisioningservices | Да | Да |
+> | iothubs | ДА | ДА |
+> | provisioningservices | ДА | ДА |
 
 ## <a name="microsoftdevspaces"></a>Microsoft.DevSpaces
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | controllers | Да | Да |
+> | controllers | ДА | ДА |
 
 ## <a name="microsoftdevtestlab"></a>Microsoft.DevTestLab
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | labcenters | Нет | Нет |
-> | labs | Да | Нет |
-> | лаборатории и среды | Да | Да |
-> | Labs и сервицеруннерс | Да | Да |
-> | Labs и virtualmachines | Да | Нет |
-> | schedules | Да | Да |
+> | labs | ДА | Нет |
+> | лаборатории и среды | ДА | ДА |
+> | Labs и сервицеруннерс | ДА | ДА |
+> | Labs и virtualmachines | ДА | Нет |
+> | schedules | ДА | ДА |
 
 ## <a name="microsoftdocumentdb"></a>Microsoft.DocumentDB
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | databaseaccounts | Да | Да |
+> | databaseaccounts | ДА | ДА |
 
 ## <a name="microsoftdomainregistration"></a>Microsoft.DomainRegistration
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | domains | Да | Да |
+> | domains | ДА | ДА |
 
 ## <a name="microsoftenterpriseknowledgegraph"></a>Microsoft. Ентерприсекновледжеграф
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | services; | Да | Да |
+> | services; | ДА | ДА |
 
 ## <a name="microsofteventgrid"></a>Microsoft.EventGrid
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | domains | Да | Да |
-> | topics | Да | Да |
+> | domains | ДА | ДА |
+> | topics | ДА | ДА |
 
 ## <a name="microsofteventhub"></a>Microsoft.EventHub
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | clusters | Да | Да |
-> | пространства имен | Да | Да |
+> | clusters | ДА | ДА |
+> | namespaces | ДА | ДА |
 
 ## <a name="microsoftgenomics"></a>Microsoft.Genomics
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | учетные записи | Нет | Нет |
+> | accounts | Нет | Нет |
 
 ## <a name="microsofthanaonazure"></a>Microsoft.HanaOnAzure
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | hanainstances | Нет | Нет |
-> | сапмониторс | Да | Да |
+> | сапмониторс | ДА | ДА |
 
 ## <a name="microsofthdinsight"></a>Microsoft.HDInsight
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | clusters | Да | Да |
+> | clusters | ДА | ДА |
 
 > [!IMPORTANT]
 > Кластеры HDInsight можно переместить в новую подписку или группу ресурсов. Однако перемещение между подписками недоступно для сетевых ресурсов, связанных с кластером HDInsight (таких как виртуальная сеть, сетевой адаптер или подсистема балансировки нагрузки). Также невозможно переместить в новую группу ресурсов сетевой адаптер, который подключен к виртуальной машине кластера.
@@ -676,49 +683,49 @@ ms.locfileid: "71948028"
 ## <a name="microsofthealthcareapis"></a>Microsoft. Хеалскареапис
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | services; | Да | Да |
+> | services; | ДА | ДА |
 
 ## <a name="microsofthybridcompute"></a>Microsoft. Хибридкомпуте
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | Компьютеры | Нет | Нет |
+> | виртуальных | Нет | Нет |
 
 ## <a name="microsofthybriddata"></a>Microsoft.HybridData
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | datamanagers | Да | Да |
+> | datamanagers | ДА | ДА |
 
 ## <a name="microsoftimportexport"></a>Microsoft.ImportExport
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | задания | Да | Да |
+> | jobs | ДА | ДА |
 
 ## <a name="microsoftinsights"></a>microsoft.insights
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | учетные записи | Нет | Нет |
-> | actiongroups | Да | Да |
+> | accounts | Нет | Нет |
+> | actiongroups | ДА | ДА |
 > | activitylogalerts | Нет | Нет |
-> | alertrules | Да | Да |
-> | autoscalesettings | Да | Да |
-> | components | Да | Да |
+> | alertrules | ДА | ДА |
+> | autoscalesettings | ДА | ДА |
+> | components | ДА | ДА |
 > | guestdiagnosticsettings | Нет | Нет |
 > | metricalerts | Нет | Нет |
 > | notificationgroups | Нет | Нет |
 > | notificationrules | Нет | Нет |
-> | scheduledqueryrules | Да | Да |
-> | webtests | Да | Да |
-> | книги | Да | Да |
+> | scheduledqueryrules | ДА | ДА |
+> | webtests | ДА | ДА |
+> | workbooks | ДА | ДА |
 
 > [!IMPORTANT]
 > Убедитесь, что перемещение в новую подписку не превышает [квоты подписки](../azure-subscription-service-limits.md#azure-monitor-limits).
@@ -726,25 +733,25 @@ ms.locfileid: "71948028"
 ## <a name="microsoftiotcentral"></a>Microsoft.IoTCentral
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | iotapps | Да | Да |
+> | iotapps | ДА | ДА |
 
 ## <a name="microsoftiotspaces"></a>Microsoft.IoTSpaces
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | checknameavailability | Да | Да |
-> | Граф | Да | Да |
+> | checknameavailability | ДА | ДА |
+> | graph | ДА | ДА |
 
 ## <a name="microsoftkeyvault"></a>Microsoft.KeyVault
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | hsmpools | Нет | Нет |
-> | vaults | Да | Да |
+> | vaults | ДА | ДА |
 
 > [!IMPORTANT]
 > Хранилища ключей, используемые для шифрования дисков, нельзя переместить в группу ресурсов в одной и той же подписке или в рамках подписок.
@@ -752,64 +759,64 @@ ms.locfileid: "71948028"
 ## <a name="microsoftkusto"></a>Microsoft.Kusto
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | clusters | Да | Да |
+> | clusters | ДА | ДА |
 
 ## <a name="microsoftlabservices"></a>Microsoft.LabServices
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | labaccounts | Нет | Нет |
 
 ## <a name="microsoftlocationbasedservices"></a>Microsoft.LocationBasedServices
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | учетные записи | Нет | Нет |
+> | accounts | Нет | Нет |
 
 ## <a name="microsoftlocationservices"></a>Microsoft.LocationServices
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | учетные записи | Нет | Нет |
+> | accounts | Нет | Нет |
 
 ## <a name="microsoftlogic"></a>Microsoft.Logic
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | hostingenvironments | Нет | Нет |
-> | integrationaccounts | Да | Да |
+> | integrationaccounts | ДА | ДА |
 > | integrationserviceenvironments | Нет | Нет |
 > | isolatedenvironments | Нет | Нет |
-> | workflows | Да | Да |
+> | workflows | ДА | ДА |
 
 ## <a name="microsoftmachinelearning"></a>Microsoft.MachineLearning
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | commitmentplans | Да | Да |
-> | webservices | Да | Нет |
-> | рабочие области | Да | Да |
+> | commitmentplans | ДА | ДА |
+> | webservices | ДА | Нет |
+> | workspaces | ДА | ДА |
 
 ## <a name="microsoftmachinelearningcompute"></a>Microsoft.MachineLearningCompute
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | operationalizationclusters | Да | Да |
+> | operationalizationclusters | ДА | ДА |
 
 ## <a name="microsoftmachinelearningexperimentation"></a>Microsoft.MachineLearningExperimentation
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | учетные записи | Нет | Нет |
+> | accounts | Нет | Нет |
 > | учетные записи и рабочие области | Нет | Нет |
 > | учетные записи, рабочие области и проекты | Нет | Нет |
 > | teamaccounts | Нет | Нет |
@@ -819,65 +826,65 @@ ms.locfileid: "71948028"
 ## <a name="microsoftmachinelearningmodelmanagement"></a>Microsoft.MachineLearningModelManagement
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | учетные записи | Нет | Нет |
+> | accounts | Нет | Нет |
 
 ## <a name="microsoftmachinelearningoperationalization"></a>Microsoft.MachineLearningOperationalization
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | hostingaccounts | Нет | Нет |
 
 ## <a name="microsoftmachinelearningservices"></a>Microsoft.MachineLearningServices
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | рабочие области | Нет | Нет |
+> | workspaces | Нет | Нет |
 
 ## <a name="microsoftmanagedidentity"></a>Microsoft.ManagedIdentity
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | userassignedidentities | Нет | Нет |
 
 ## <a name="microsoftmaps"></a>Microsoft.Maps
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | учетные записи | Да | Да |
+> | accounts | ДА | ДА |
 
 ## <a name="microsoftmarketplaceapps"></a>Microsoft.MarketplaceApps
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | classicdevservices | Нет | Нет |
 
 ## <a name="microsoftmedia"></a>Microsoft.Media
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | mediaservices | Да | Да |
-> | mediaservices/лививентс | Да | Да |
-> | mediaservices/streamingendpoint | Да | Да |
+> | mediaservices | ДА | ДА |
+> | mediaservices/лививентс | ДА | ДА |
+> | mediaservices/streamingendpoint | ДА | ДА |
 
 ## <a name="microsoftmicroservices4spring"></a>Microsoft. Microservices4Spring
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | аппклустерс | Нет | Нет |
 
 ## <a name="microsoftmigrate"></a>Microsoft.Migrate
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | assessmentprojects | Нет | Нет |
 > | migrateprojects | Нет | Нет |
@@ -886,7 +893,7 @@ ms.locfileid: "71948028"
 ## <a name="microsoftnetapp"></a>Microsoft.NetApp
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | netappaccounts | Нет | Нет |
 > | нетаппаккаунтс/капаЦитипулс | Нет | Нет |
@@ -897,54 +904,54 @@ ms.locfileid: "71948028"
 ## <a name="microsoftnetwork"></a>Microsoft.Network.
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | applicationgateways | Нет | Нет |
 > | аппликатионгатевайвебаппликатионфиреваллполиЦиес | Нет | Нет |
-> | applicationsecuritygroups | Да | Да |
-> | azurefirewalls | Да | Да |
+> | applicationsecuritygroups | ДА | ДА |
+> | azurefirewalls | ДА | ДА |
 > | bastionhosts | Нет | Нет |
-> | подключения | Да | Да |
-> | ddoscustompolicies | Да | Да |
+> | connections | ДА | ДА |
+> | ddoscustompolicies | ДА | ДА |
 > | ddosprotectionplans | Нет | Нет |
-> | dnszones | Да | Да |
+> | dnszones | ДА | ДА |
 > | expressroutecircuits | Нет | Нет |
 > | expressroutecrossconnections | Нет | Нет |
 > | expressroutegateways | Нет | Нет |
 > | expressrouteports | Нет | Нет |
-> | frontdoor | Нет | Нет |
+> | frontdoors | Нет | Нет |
 > | frontdoorwebapplicationfirewallpolicies | Нет | Нет |
 > | loadbalancers | Да — SKU "базовый"<br>SKU No-Standard | Да — SKU "базовый"<br>SKU No-Standard |
-> | localnetworkgateways | Да | Да |
-> | natgateways | Да | Да |
-> | networkintentpolicies | Да | Да |
-> | networkinterfaces | Да | Да |
+> | localnetworkgateways | ДА | ДА |
+> | natgateways | ДА | ДА |
+> | networkintentpolicies | ДА | ДА |
+> | networkinterfaces | ДА | ДА |
 > | networkprofiles | Нет | Нет |
-> | networksecuritygroups | Да | Да |
-> | networkwatchers | Да | Да |
-> | нетворкватчерс/коннектионмониторс | Да | Да |
-> | нетворкватчерс/lenses | Да | Да |
-> | нетворкватчерс/пингмешес | Да | Да |
+> | networksecuritygroups | ДА | ДА |
+> | networkwatchers | ДА | ДА |
+> | нетворкватчерс/коннектионмониторс | ДА | ДА |
+> | нетворкватчерс/lenses | ДА | ДА |
+> | нетворкватчерс/пингмешес | ДА | ДА |
 > | p2svpngateways | Нет | Нет |
-> | приватеднсзонес | Да | Да |
-> | приватеднсзонес/виртуалнетворклинкс | Да | Да |
+> | приватеднсзонес | ДА | ДА |
+> | приватеднсзонес/виртуалнетворклинкс | ДА | ДА |
 > | приватиндпоинтс | Нет | Нет |
 > | privatelinkservices | Нет | Нет |
 > | publicipaddresses | Да — SKU "базовый"<br>SKU No-Standard | Да — SKU "базовый"<br>SKU No-Standard |
-> | publicipprefixes | Да | Да |
+> | publicipprefixes | ДА | ДА |
 > | routefilters | Нет | Нет |
-> | routetables | Да | Да |
-> | securegateways | Да | Да |
-> | serviceendpointpolicies | Да | Да |
-> | trafficmanagerprofiles | Да | Да |
+> | routetables | ДА | ДА |
+> | securegateways | ДА | ДА |
+> | serviceendpointpolicies | ДА | ДА |
+> | trafficmanagerprofiles | ДА | ДА |
 > | virtualhubs | Нет | Нет |
-> | virtualnetworkgateways | Да | Да |
-> | virtualnetworks | Да | Да |
+> | virtualnetworkgateways | ДА | ДА |
+> | virtualnetworks | ДА | ДА |
 > | virtualnetworktaps | Нет | Нет |
 > | virtualwans | Нет | Нет |
 > | впнгатевайс (Виртуальная глобальная сеть) | Нет | Нет |
 > | впнситес (Виртуальная глобальная сеть) | Нет | Нет |
-> | webapplicationfirewallpolicies | Да | Да |
+> | webapplicationfirewallpolicies | ДА | ДА |
 
 > [!IMPORTANT]
 > См. [руководство по перемещению в сеть](./move-limitations/networking-move-limitations.md).
@@ -952,17 +959,17 @@ ms.locfileid: "71948028"
 ## <a name="microsoftnotificationhubs"></a>Microsoft.NotificationHubs
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | пространства имен | Да | Да |
-> | пространства имен/notificationhubs | Да | Да |
+> | namespaces | ДА | ДА |
+> | пространства имен/notificationhubs | ДА | ДА |
 
 ## <a name="microsoftoperationalinsights"></a>Microsoft.OperationalInsights
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | рабочие области | Да | Да |
+> | workspaces | ДА | ДА |
 
 > [!IMPORTANT]
 > Убедитесь, что перемещение в новую подписку не превышает [квоты подписки](../azure-subscription-service-limits.md#azure-monitor-limits).
@@ -970,60 +977,60 @@ ms.locfileid: "71948028"
 ## <a name="microsoftoperationsmanagement"></a>Microsoft.OperationsManagement
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | managementconfigurations | Да | Да |
-> | решения | Да | Да |
-> | просмотры | Да | Да |
+> | managementconfigurations | ДА | ДА |
+> | solutions | ДА | ДА |
+> | узел "Представления" | ДА | ДА |
 
 ## <a name="microsoftpeering"></a>Microsoft. пиринг
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | пиринги | Нет | Нет |
 
 ## <a name="microsoftportal"></a>Microsoft.Portal
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | dashboards | Да | Да |
+> | dashboards | ДА | ДА |
 
 ## <a name="microsoftportalsdk"></a>Microsoft.PortalSdk
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | rootresources | Нет | Нет |
 
 ## <a name="microsoftpowerbi"></a>Microsoft.PowerBI
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | workspacecollections | Да | Да |
+> | workspacecollections | ДА | ДА |
 
 ## <a name="microsoftpowerbidedicated"></a>Microsoft.PowerBIDedicated
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | capacities | Да | Да |
+> | capacities | ДА | ДА |
 
 ## <a name="microsoftprojectoxford"></a>Microsoft.ProjectOxford
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | учетные записи | Нет | Нет |
+> | accounts | Нет | Нет |
 
 ## <a name="microsoftrecoveryservices"></a>Microsoft.RecoveryServices
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | vaults | Да | Да |
+> | vaults | ДА | ДА |
 
 > [!IMPORTANT]
 > См. [руководство по перемещению служб восстановления](../backup/backup-azure-move-recovery-services-vault.md?toc=/azure/azure-resource-manager/toc.json).
@@ -1031,38 +1038,38 @@ ms.locfileid: "71948028"
 ## <a name="microsoftrelay"></a>Microsoft.Relay
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | пространства имен | Да | Да |
+> | namespaces | ДА | ДА |
 
 ## <a name="microsoftresourcegraph"></a>Microsoft.ResourceGraph
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | Запросы | Да | Да |
+> | запросы | ДА | ДА |
 
 ## <a name="microsoftsaas"></a>Microsoft.SaaS
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | приложения | Да | Нет |
+> | приложений | ДА | Нет |
 
 ## <a name="microsoftscheduler"></a>Microsoft.Scheduler
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | Потоки | Да | Да |
-> | jobcollections | Да | Да |
+> | flows | ДА | ДА |
+> | jobcollections | ДА | ДА |
 
 ## <a name="microsoftsearch"></a>Microsoft.Search
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | searchservices | Да | Да |
+> | searchservices | ДА | ДА |
 
 > [!IMPORTANT]
 > В одной операции невозможно переместить несколько ресурсов поиска в разных регионах. Переместите их в отдельных операциях.
@@ -1070,15 +1077,15 @@ ms.locfileid: "71948028"
 ## <a name="microsoftsecurity"></a>Microsoft.Security
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | иотсекуритисолутионс | Да | Да |
+> | иотсекуритисолутионс | ДА | ДА |
 > | плайбукконфигуратионс | Нет | Нет |
 
 ## <a name="microsoftservermanagement"></a>Microsoft.ServerManagement
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | gateways | Нет | Нет |
 > | Узлы | Нет | Нет |
@@ -1086,77 +1093,67 @@ ms.locfileid: "71948028"
 ## <a name="microsoftservicebus"></a>Microsoft.ServiceBus
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | пространства имен | Да | Да |
+> | namespaces | ДА | ДА |
 
 ## <a name="microsoftservicefabric"></a>Microsoft.ServiceFabric
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | приложения | Нет | Нет |
-> | clusters | Да | Да |
+> | приложений | Нет | Нет |
+> | clusters | ДА | ДА |
 > | кластеры и приложения | Нет | Нет |
 > | containergroups | Нет | Нет |
 > | containergroupsets | Нет | Нет |
 > | edgeclusters | Нет | Нет |
-> | Сети | Нет | Нет |
+> | networks | Нет | Нет |
 > | secretstores | Нет | Нет |
-> | тома | Нет | Нет |
+> | volumes. | Нет | Нет |
 
 ## <a name="microsoftservicefabricmesh"></a>Microsoft.ServiceFabricMesh
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | приложения | Да | Да |
+> | приложений | ДА | ДА |
 > | containergroups | Нет | Нет |
-> | gateways | Да | Да |
-> | Сети | Да | Да |
-> | секреты | Да | Да |
-> | тома | Да | Да |
+> | gateways | ДА | ДА |
+> | networks | ДА | ДА |
+> | секретные коды | ДА | ДА |
+> | volumes. | ДА | ДА |
 
 ## <a name="microsoftsignalrservice"></a>Microsoft.SignalRService
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | signalr | Да | Да |
-
-## <a name="microsoftsiterecovery"></a>Microsoft.SiteRecovery
-
-> [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
-> | ------------- | ----------- | ---------- |
-> | siterecoveryvault | Нет | Нет |
-
-> [!IMPORTANT]
-> См. [руководство по перемещению служб восстановления](../backup/backup-azure-move-recovery-services-vault.md?toc=/azure/azure-resource-manager/toc.json).
+> | signalr | ДА | ДА |
 
 ## <a name="microsoftsolutions"></a>Microsoft.Solutions
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | appliancedefinitions | Нет | Нет |
 > | appliances | Нет | Нет |
 > | applicationdefinitions | Нет | Нет |
-> | приложения | Нет | Нет |
+> | приложений | Нет | Нет |
 > | jitrequests | Нет | Нет |
 
 ## <a name="microsoftsql"></a>Microsoft.Sql
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | инстанцепулс | Нет | Нет |
 > | managedinstances | Нет | Нет |
 > | манажединстанцес и базы данных | Нет | Нет |
-> | серверы | Да | Да |
-> | серверы и базы данных | Да | Да |
-> | серверы и еластикпулс | Да | Да |
-> | virtualclusters | Да | Да |
+> | серверы | ДА | ДА |
+> | серверы и базы данных | ДА | ДА |
+> | серверы и еластикпулс | ДА | ДА |
+> | virtualclusters | ДА | ДА |
 
 > [!IMPORTANT]
 > База данных и сервер должны находиться в одной группе ресурсов. При перемещении сервера SQL Server все его базы данных также перемещаются. Такое поведение также характерно для баз данных SQL Azure и баз данных хранилища данных SQL Azure.
@@ -1164,66 +1161,66 @@ ms.locfileid: "71948028"
 ## <a name="microsoftsqlvirtualmachine"></a>Microsoft.SqlVirtualMachine
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | sqlvirtualmachinegroups | Да | Да |
-> | sqlvirtualmachines | Да | Да |
+> | sqlvirtualmachinegroups | ДА | ДА |
+> | sqlvirtualmachines | ДА | ДА |
 
 ## <a name="microsoftsqlvm"></a>Microsoft.SqlVM
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | dwvm | Нет | Нет |
 
 ## <a name="microsoftstorage"></a>Microsoft.Storage;
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | storageaccounts | Да | Да |
+> | storageaccounts | ДА | ДА |
 
 ## <a name="microsoftstoragecache"></a>Microsoft. Сторажекаче
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | кэширует | Нет | Нет |
 
 ## <a name="microsoftstoragesync"></a>Microsoft.StorageSync
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | storagesyncservices | Да | Да |
+> | storagesyncservices | ДА | ДА |
 
 ## <a name="microsoftstoragesyncdev"></a>Microsoft.StorageSyncDev
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | storagesyncservices | Нет | Нет |
 
 ## <a name="microsoftstoragesyncint"></a>Microsoft.StorageSyncInt
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | storagesyncservices | Нет | Нет |
 
 ## <a name="microsoftstorsimple"></a>Microsoft.StorSimple
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | managers | Нет | Нет |
 
 ## <a name="microsoftstreamanalytics"></a>Microsoft.StreamAnalytics
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | streamingjobs | Да | Да |
+> | streamingjobs | ДА | ДА |
 
 > [!IMPORTANT]
 > Невозможно переместить задания Stream Analytics в состоянии выполнения.
@@ -1231,7 +1228,7 @@ ms.locfileid: "71948028"
 ## <a name="microsoftstreamanalyticsexplorer"></a>Microsoft.StreamAnalyticsExplorer
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | environments | Нет | Нет |
 > | среды и классов EventSource | Нет | Нет |
@@ -1242,42 +1239,42 @@ ms.locfileid: "71948028"
 ## <a name="microsoftterraformoss"></a>Microsoft.TerraformOSS
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | providerregistrations | Нет | Нет |
-> | ресурсы | Нет | Нет |
+> | ресурсов | Нет | Нет |
 
 ## <a name="microsofttimeseriesinsights"></a>Microsoft.TimeSeriesInsights
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | environments | Да | Да |
-> | среды и классов EventSource | Да | Да |
-> | среды и референцедатасетс | Да | Да |
+> | environments | ДА | ДА |
+> | среды и классов EventSource | ДА | ДА |
+> | среды и референцедатасетс | ДА | ДА |
 
 ## <a name="microsofttoken"></a>Microsoft. Token
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | сохраняют | Нет | Нет |
 
 ## <a name="microsoftvirtualmachineimages"></a>Microsoft.VirtualMachineImages
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | imagetemplates | Нет | Нет |
 
 ## <a name="microsoftvisualstudio"></a>microsoft.visualstudio
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | учетная запись | Да | Да |
-> | Учетная запись или расширение | Да | Да |
-> | Учетная запись или проект | Да | Да |
+> | учетная запись | ДА | ДА |
+> | Учетная запись или расширение | ДА | ДА |
+> | Учетная запись или проект | ДА | ДА |
 
 > [!IMPORTANT]
 > Чтобы изменить подписку на Azure DevOps, см. статью [изменение подписки Azure, используемой для выставления счетов](/azure/devops/organizations/billing/change-azure-subscription?toc=/azure/azure-resource-manager/toc.json).
@@ -1285,26 +1282,26 @@ ms.locfileid: "71948028"
 ## <a name="microsoftvmwarecloudsimple"></a>Microsoft. Вмвареклаудсимпле
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | дедикатедклауднодес | Да | Да |
-> | дедикатедклаудсервицес | Да | Да |
-> | virtualmachines | Да | Да |
+> | дедикатедклауднодес | Нет | Нет |
+> | дедикатедклаудсервицес | Нет | Нет |
+> | virtualmachines | Нет | Нет |
 
 ## <a name="microsoftweb"></a>Microsoft.Web
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
-> | сертификаты | Нет | Да |
-> | connectiongateways | Да | Да |
-> | подключения | Да | Да |
-> | customapis | Да | Да |
+> | certificates | Нет | ДА |
+> | connectiongateways | ДА | ДА |
+> | connections | ДА | ДА |
+> | customapis | ДА | ДА |
 > | hostingenvironments | Нет | Нет |
-> | serverfarms | Да | Да |
-> | сайты | Да | Да |
-> | Sites/премиераддонс | Да | Да |
-> | сайты и слоты | Да | Да |
+> | serverfarms | ДА | ДА |
+> | sites | ДА | ДА |
+> | Sites/премиераддонс | ДА | ДА |
+> | сайты и слоты | ДА | ДА |
 
 > [!IMPORTANT]
 > См. [руководство по перемещению службы приложений](./move-limitations/app-service-move-limitations.md).
@@ -1312,24 +1309,24 @@ ms.locfileid: "71948028"
 ## <a name="microsoftwindowsiot"></a>Microsoft.WindowsIoT
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | deviceservices | Нет | Нет |
 
 ## <a name="microsoftwindowsvirtualdesktop"></a>Microsoft. Виндовсвиртуалдесктоп
 
 > [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
+> | Тип ресурса | группа ресурсов. | Subscription |
 > | ------------- | ----------- | ---------- |
 > | аппликатионграупс | Нет | Нет |
 > | хостпулс | Нет | Нет |
-> | рабочие области | Нет | Нет |
+> | workspaces | Нет | Нет |
 
 ## <a name="third-party-services"></a>Сторонние службы
 
 Сейчас для сторонних служб не поддерживается операция перемещения.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Команды для перемещения ресурсов см. в статье [Перемещение ресурсов в новую группу ресурсов или подписку](resource-group-move-resources.md).
 
 Чтобы получить данные, идентичные значению файла с разделителями-запятыми, необходимо скачать [move-support-resources.csv](https://github.com/tfitzmac/resource-capabilities/blob/master/move-support-resources.csv).

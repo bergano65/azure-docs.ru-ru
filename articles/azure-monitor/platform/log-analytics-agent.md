@@ -1,24 +1,18 @@
 ---
 title: Сбор данных журнала с помощью агента Azure Log Analytics | Документация Майкрософт
 description: В этой статье содержатся сведения о том, как собирать данные и наблюдать за компьютерами, размещенными в Azure, локальной или другой облачной среде, с помощью Log Analytics.
-services: log-analytics
-documentationcenter: ''
-author: mgoedtel
-manager: carmonm
-editor: ''
-ms.assetid: ''
-ms.service: log-analytics
-ms.workload: na
-ms.tgt_pltfrm: na
+ms.service: azure-monitor
+ms.subservice: logs
 ms.topic: conceptual
-ms.date: 10/07/2019
+author: MGoedtel
 ms.author: magoedte
-ms.openlocfilehash: 1eec8b79579a1c4d5c889b830706299ccc25e88b
-ms.sourcegitcommit: f9e81b39693206b824e40d7657d0466246aadd6e
+ms.date: 10/07/2019
+ms.openlocfilehash: 8070abad675acc69f5b1da232b60179078adbc57
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72035632"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72932240"
 ---
 # <a name="collect-log-data-with-the-log-analytics-agent"></a>Получение данных журнала с помощью агента Log Analytics
 
@@ -26,7 +20,7 @@ ms.locfileid: "72035632"
 
 В этой статье предоставлен подробный обзор требований к агенту, системе и сети, а также различных методов развертывания.
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Краткое описание
 
 ![Схема связей агента Log Analytics](./media/log-analytics-agent/log-analytics-agent-01.png)
 
@@ -110,12 +104,12 @@ ms.locfileid: "72035632"
 
 Ниже перечислены сведения о конфигурации прокси-сервера и брандмауэра, необходимые агентам Linux и Windows для взаимодействия с журналами Azure Monitor.  
 
-|Ресурс агента|порты; |Direction |Обход проверки HTTPS|
+|Ресурс агента|порты; |Направление |Обход проверки HTTPS|
 |------|---------|--------|--------|   
-|*.ods.opinsights.azure.com |Порт 443 |Исходящие|Да |  
-|*.oms.opinsights.azure.com |Порт 443 |Исходящие|Да |  
-|*.blob.core.windows.net |Порт 443 |Исходящие|Да |  
-|*.azure-automation.net |Порт 443 |Исходящие|Да |  
+|*.ods.opinsights.azure.com |Порт 443 |Исход.|ДА |  
+|*.oms.opinsights.azure.com |Порт 443 |Исход.|ДА |  
+|*.blob.core.windows.net |Порт 443 |Исход.|ДА |  
+|*.azure-automation.net |Порт 443 |Исход.|ДА |  
 
 Сведения о брандмауэре, необходимые для Azure для государственных организаций, см. в статье [Управление Azure](../../azure-government/documentation-government-services-monitoringandmanagement.md#azure-monitor-logs)для государственных организаций. 
 
@@ -132,11 +126,11 @@ ms.locfileid: "72035632"
 
 |Свойство| Описание |
 |--------|-------------|
-|Protocol | HTTPS |
+|Протокол | https |
 |user | Необязательное имя пользователя для аутентификации прокси-сервера |
-|password | Необязательный пароль для аутентификации прокси-сервера |
+|пароль | Необязательный пароль для аутентификации прокси-сервера |
 |proxyhost | Адрес или полное доменное имя прокси-сервера или шлюза Log Analytics |
-|port | Необязательный номер порта прокси-сервера или шлюза Log Analytics |
+|порт | Необязательный номер порта прокси-сервера или шлюза Log Analytics |
 
 Например: `https://user01:password@proxy01.contoso.com:30443`
 
@@ -147,14 +141,14 @@ ms.locfileid: "72035632"
 
 Подключение компьютеров в подписке Azure или гибридной среде напрямую с журналами Azure Monitor можно выполнить с помощью различных методов в зависимости от требований. В следующей таблице описан каждый метод. Эти данные помогут вам определить, какой из методов наиболее подходящий для вашей организации.
 
-|Source | Метод | Описание|
+|Источник | Метод | Описание|
 |-------|-------------|-------------|
-|Azure VM| Расширение виртуальной машины Log Analytics для [Windows](../../virtual-machines/extensions/oms-windows.md) или [Linux](../../virtual-machines/extensions/oms-linux.md) с использованием Azure CLI или шаблона Azure Resource Manager<br>- [вручную из портал Azure](../../azure-monitor/learn/quick-collect-azurevm.md?toc=/azure/azure-monitor/toc.json)<br>[Автоматическая подготовка центра безопасности Azure](../../security-center/security-center-enable-data-collection.md) - | — Расширение устанавливает агент Log Analytics на виртуальных машинах Azure и регистрирует их в существующей Azure Monitor рабочей области.<br>— Центр безопасности Azure может подготавливать агент Log Analytics на всех поддерживаемых виртуальных машинах Azure и всех новых, созданных, если включить его для отслеживания уязвимостей и угроз безопасности. Если этот флажок установлен, будет подготовлена любая новая или Существующая виртуальная машина без установленного агента.|
+|Виртуальная машина Azure| Расширение виртуальной машины Log Analytics для [Windows](../../virtual-machines/extensions/oms-windows.md) или [Linux](../../virtual-machines/extensions/oms-linux.md) с использованием Azure CLI или шаблона Azure Resource Manager<br>- [вручную из портал Azure](../../azure-monitor/learn/quick-collect-azurevm.md?toc=/azure/azure-monitor/toc.json)<br>- [автоматической подготовки центра безопасности Azure](../../security-center/security-center-enable-data-collection.md)| — Расширение устанавливает агент Log Analytics на виртуальных машинах Azure и регистрирует их в существующей Azure Monitor рабочей области.<br>— Центр безопасности Azure может подготавливать агент Log Analytics на всех поддерживаемых виртуальных машинах Azure и всех новых, созданных, если включить его для отслеживания уязвимостей и угроз безопасности. Если этот флажок установлен, будет подготовлена любая новая или Существующая виртуальная машина без установленного агента.|
 | Гибридные компьютеры Windows|- [Установка вручную](agent-windows.md)<br>- [DSC службы автоматизации Azure](agent-windows.md#install-the-agent-using-dsc-in-azure-automation)<br>- [Шаблон Resource Manager с Azure Stack](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/MicrosoftMonitoringAgent-ext-win) |Установка агента Microsoft Monitoring Agent из командной строки или автоматически, например с помощью DSC службы автоматизации Azure, [System Center Configuration Manager](https://docs.microsoft.com/sccm/apps/deploy-use/deploy-applications) или шаблона Azure Resource Manager, если Microsoft Azure Stack уже развернут в центре обработки данных.| 
 | Гибридные компьютеры Linux| [Установка вручную](../../azure-monitor/learn/quick-collect-linux-computer.md)|Установка агента для Linux путем вызова сценария-оболочки, размещенного в GitHub. | 
 | System Center Operations Manager|[Интеграция Operations Manager с Log Analytics](../../azure-monitor/platform/om-agents.md) | Настройте интеграцию между журналами Operations Manager и Azure Monitor, чтобы пересылать собранные данные с компьютеров Windows, отправляют отчеты в группу управления.|  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения об источниках данных, доступных для сбора данных из операционных систем Windows или Linux, см. в статье [Data sources in Log Analytics](../../azure-monitor/platform/agent-data-sources.md) (Источники данных в Log Analytics). 
 

@@ -1,24 +1,18 @@
 ---
-title: Создать конвейер данных с помощью API сборщика данных Azure Monitor | Документация Майкрософт
+title: Создание конвейера данных с помощью Azure Monitor API сборщика данных | Документация Майкрософт
 description: API сборщика данных HTTP в Azure Monitor можете использовать для добавления данных POST JSON в рабочую область Log Analytics из любого клиента, который может вызывать REST API. В статье содержится описание автоматической отправки данных, которые хранятся в файлах.
-services: log-analytics
-documentationcenter: ''
-author: mgoedtel
-manager: carmonm
-editor: ''
-ms.assetid: ''
-ms.service: log-analytics
-ms.workload: na
-ms.tgt_pltfrm: na
+ms.service: azure-monitor
+ms.subservice: logs
 ms.topic: conceptual
-ms.date: 08/09/2018
+author: MGoedtel
 ms.author: magoedte
-ms.openlocfilehash: 53457a044f5c69af7bf68561f24732e8f02219d8
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 08/09/2018
+ms.openlocfilehash: 8b739d86ec557ca8c7de7e0999c905b51d1d97a7
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65603233"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72932629"
 ---
 # <a name="create-a-data-pipeline-with-the-data-collector-api"></a>Создание конвейера данных с помощью API сборщика данных
 
@@ -27,7 +21,7 @@ ms.locfileid: "65603233"
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../../includes/azure-monitor-log-analytics-rebrand.md)]
 
 ## <a name="example-problem"></a>Пример проблемы
-В оставшейся части этой статьи будут рассмотрены данные просмотра страниц в Application Insights. В нашем гипотетической ситуации необходимо сопоставлять географические сведения, собранные по умолчанию с помощью пакета SDK Application Insights для пользовательских данных, содержащий заполнения каждой страны или региона в мире, с целью идентификации, где мы тратит наиболее маркетинговый бюджет. 
+В оставшейся части этой статьи будут рассмотрены данные просмотра страниц в Application Insights. В нашем гипотетическом сценарии мы хотим сопоставить сведения о географическом данных, собираемые по умолчанию пакетом SDK для Application Insights, с пользовательскими данными, содержащими заполнение каждой страны или региона в мире, с целью определения того, где должны быть затраты наиболее маркетинговые доллары. 
 
 Для этой цели используются такие публичные источники данных, как [World Population Prospects 2017](https://esa.un.org/unpd/wpp/) (Мировые демографические перспективы 2017). Данные будут выглядеть следующим образом.
 

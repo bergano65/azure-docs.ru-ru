@@ -1,20 +1,18 @@
 ---
 title: Справочник по файлу host.json для службы "Функции Azure" версии 2.x
 description: Справочная документация по файлу host.json для Функций Azure в среде выполнения версии V2.
-services: functions
 author: ggailey777
-manager: jeconnoc
-keywords: ''
+manager: gwallace
 ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/08/2018
 ms.author: glenga
-ms.openlocfilehash: 9eb68bb4accafa708d738ea40210980358f60f24
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.openlocfilehash: 2a61a2ba74ccdaa69b26cae65dd4f74a7b837ccf
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72596860"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72927449"
 ---
 # <a name="hostjson-reference-for-azure-functions-2x"></a>Справочник по файлу host.json для службы "Функции Azure" версии 2.x  
 
@@ -150,9 +148,7 @@ ms.locfileid: "72596860"
 ## <a name="functiontimeout"></a>functionTimeout
 
 Указывает время ожидания для всех функций. Он соответствует формату строки TimeSpan. В бессерверных планах потребления допускается диапазон от 1 секунды до 10 минут, а значение по умолчанию — 5 минут.  
-В выделенном плане (службе приложений) нет общего ограничения, и значение по умолчанию зависит от версии среды выполнения: 
-+ Версия 1. x: значение по умолчанию равно *null*, что означает отсутствие времени ожидания.   
-+ Версия 2. x: значение по умолчанию — 30 минут. Значение `-1` указывает на неограниченное выполнение.
+В выделенном плане (службе приложений) нет общего ограничения, а значение по умолчанию — 30 минут. Значение `-1` указывает на неограниченное выполнение.
 
 ```json
 {

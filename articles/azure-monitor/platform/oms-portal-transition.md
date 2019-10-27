@@ -1,23 +1,18 @@
 ---
 title: Перемещение портала OMS в Azure | Документация Майкрософт
 description: Портал OMS прекращает свою работу и все его функции перемещаются на портал Azure. Эта статья содержит подробные сведения об этом переходе.
-services: log-analytics
-documentationcenter: ''
-author: bwren
-manager: carmonm
-editor: ''
-ms.service: log-analytics
-ms.workload: na
-ms.tgt_pltfrm: na
+ms.service: azure-monitor
+ms.subservice: logs
 ms.topic: conceptual
-ms.date: 08/22/2019
+author: bwren
 ms.author: bwren
-ms.openlocfilehash: e8fd49781301406e0c35e1de57cea3040167c6c3
-ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
+ms.date: 08/22/2019
+ms.openlocfilehash: 170973d15b5f49021a0507bdd2fd6a2632777d48
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70915871"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72932153"
 ---
 # <a name="oms-portal-moving-to-azure"></a>Перемещение портала OMS в Azure
 
@@ -64,9 +59,9 @@ ms.locfileid: "70915871"
 
 | Разрешение на портале OMS | Роль в Azure |
 |:---|:---|
-| Только для чтения | Читатель Log Analytics |
-| Участник | участник Log Analytics. |
-| Администратор | Ответственный | 
+| ReadOnly | читатель Log Analytics; |
+| участник; | участник Log Analytics. |
+| Администратор | Владелец. | 
  
 
 ## <a name="new-workspaces"></a>Новые рабочие области
@@ -93,7 +88,7 @@ ms.locfileid: "70915871"
 
 Таким образом, Соединитель Application Insights устарела и удалена из Azure Marketplace вместе с порталом OMS в течение 30 марта 2019. Существующие соединения будут работать до 30 июня 2019 года. В связи с устареванием портала OMS на нем невозможно настроить или удалить существующие подключения. Эта можно будет выполнить с помощью REST API, который будет доступен с января 2019 г. Соответствующее уведомление будет опубликовано в [обновлениях Azure](https://azure.microsoft.com/updates/). 
 
-## <a name="azure-network-security-group-analytics"></a>Анализ группы безопасности сети Azure
+## <a name="azure-network-security-group-analytics"></a>Анализ групп безопасности сети Azure
 Решение [Аналитика групп безопасности сетей Azure](../insights/azure-networking-analytics.md#azure-network-security-group-analytics-solution-in-azure-monitor) будет заменено новой платформой [Аналитика трафика](https://azure.microsoft.com/blog/traffic-analytics-in-preview/), которая отображает действия пользователей и приложений в облачных сетях. Решение "Аналитика трафика" полезно для аудита сетевой активности вашей организации, защиты приложений и данных, оптимизации производительности рабочих нагрузок и обеспечения соответствия требованиям. 
 
 Это решение анализирует журналы потоков NSG и предоставляет следующие сведения:
@@ -110,5 +105,5 @@ ms.locfileid: "70915871"
 ## <a name="system-center-operations-manager"></a>System Center Operations Manager
 Если вы уже [подключили группу управления Operations Manager к Log Analytics](om-agents.md), работа этого решения не изменится. Чтобы настроить новые подключения, следуйте указаниям в записи блога о [настройке Operations Management Suite с помощью пакета управления Microsoft System Center Operations Manager](https://blogs.technet.microsoft.com/momteam/2018/07/25/microsoft-system-center-operations-manager-management-pack-to-configure-operations-management-suite/).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Просмотрите [вопросы и ответы о переходе от портала OMS на портал Azure для пользователей Log Analytics](oms-portal-faq.md).

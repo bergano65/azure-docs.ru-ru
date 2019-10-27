@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/13/2018
 ms.author: atsenthi
-ms.openlocfilehash: d84525e869d47fc609ee8aac7feb7feda36a5f23
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.openlocfilehash: 9c14afb22d95493deaf3552cb8c7392c3fc5a679
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68599951"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72934023"
 ---
 # <a name="add-or-remove-certificates-for-a-service-fabric-cluster-in-azure"></a>Добавление и удаление сертификатов для кластера Service Fabric в Azure
 Рекомендуется ознакомиться с тем, как Service Fabric использует сертификаты X.509, и просмотреть раздел [Сценарии защиты кластера Service Fabric](service-fabric-cluster-security.md). Необходимо понять, что такое сертификат кластера и для чего он используется, прежде чем продолжить.
@@ -53,13 +53,13 @@ Service Fabric позволяет указать в дополнение к се
 В этих инструкциях предполагается, что у вас есть опыт работы с Resource Manager, вы развернули хотя бы один кластер Service Fabric с помощью шаблона Resource Manager и у вас есть шаблон, который использовался для настройки этого кластера. Предполагается также, что вы уверенно используете JSON.
 
 > [!NOTE]
-> Если вам нужен пример шаблона и параметров, которые можно использовать в качестве образца или отправной точки, скачайте его из этого репозитория [git-repo](https://github.com/ChackDan/Service-Fabric/tree/master/ARM%20Templates/Cert%20Rollover%20Sample). 
+> Если вам нужен пример шаблона и параметров, которые можно использовать в качестве образца или отправной точки, скачайте его из этого репозитория [git-repo](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/Cert-Rollover-Sample). 
 > 
 > 
 
 ### <a name="edit-your-resource-manager-template"></a>Изменение шаблона Resource Manager
 
-Для удобства выполнения инструкций пример 5-VM-1-NodeTypes-Secure_Step2.JSON содержит все изменения, которые мы будем вносить. Этот пример доступен в репозитории [git-repo](https://github.com/ChackDan/Service-Fabric/tree/master/ARM%20Templates/Cert%20Rollover%20Sample).
+Для удобства выполнения инструкций пример 5-VM-1-NodeTypes-Secure_Step2.JSON содержит все изменения, которые мы будем вносить. Этот пример доступен в репозитории [git-repo](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/Cert-Rollover-Sample).
 
 **Обязательные шаги**
 
@@ -117,7 +117,7 @@ Service Fabric позволяет указать в дополнение к се
          }
     ``` 
 
-4. Внесите изменения во **все** определения ресурсов **Microsoft.Compute/virtualMachineScaleSets**. Для этого найдите определение ресурса Microsoft.Compute/virtualMachineScaleSets. Прокрутите до "издатель": "Microsoft. Azure. ServiceFabric" в разделе "virtualMachineProfile".
+4. Внесите изменения во **все** определения ресурсов **Microsoft.Compute/virtualMachineScaleSets**. Для этого найдите определение ресурса Microsoft.Compute/virtualMachineScaleSets. Перейдите к подразделу "publisher": "Microsoft.Azure.ServiceFabric" в разделе "virtualMachineProfile".
 
     В списке параметров издателя Service Fabric должно отображаться примерно следующее.
     
@@ -178,7 +178,7 @@ Service Fabric позволяет указать в дополнение к се
 > 
 
 ### <a name="edit-your-template-file-to-reflect-the-new-parameters-you-added-above"></a>Изменение файла шаблона с учетом новых параметров, добавленных выше
-Если далее вы будете использовать пример из репозитория [git-repo](https://github.com/ChackDan/Service-Fabric/tree/master/ARM%20Templates/Cert%20Rollover%20Sample), можете начать вносить изменения в пример 5-VM-1-NodeTypes-Secure_Step2.JSON. 
+Если далее вы будете использовать пример из репозитория [git-repo](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/Cert-Rollover-Sample), можете начать вносить изменения в пример 5-VM-1-NodeTypes-Secure_Step2.JSON. 
 
 Измените параметр File в шаблоне Resource Manager. Добавьте два новых параметра secCertificateThumbprint и secCertificateUrlValue. 
 
@@ -288,7 +288,7 @@ Get-ServiceFabricClusterHealth
 
 Чтобы дополнительный сертификат больше не использовался для обеспечения безопасности кластера, перейдите к разделу "Безопасность" и в контекстном меню соответствующего сертификата выберите параметр "Удалить".
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения об управлении кластерами доступны в следующих статьях.
 
 * [Обновление кластера Service Fabric](service-fabric-cluster-upgrade.md)

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: required
 ms.date: 11/13/2018
 ms.author: pepogors
-ms.openlocfilehash: 3fd1716fa7b9c32bb5b5e49598139b6a5e728692
-ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
+ms.openlocfilehash: a80eb1ba341a1b15da7ad59203a1d25284d03fd0
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72166581"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72933897"
 ---
 # <a name="set-up-and-configure-reverse-proxy-in-azure-service-fabric"></a>Установка и настройка обратного прокси-сервера в Azure Service Fabric
 Необязательный обратный прокси-сервер в службе Azure Service Fabric помогает микрослужбам, работающим в кластере Service Fabric, обнаруживать другие службы с конечными точками HTTP и обмениваться данными с этими службами. См. дополнительные сведения об [обратном прокси-сервере в Azure Service Fabric](service-fabric-reverseproxy.md). В этой статье показано, как установить и настроить обратный прокси-сервер в кластере. 
@@ -29,10 +29,10 @@ ms.locfileid: "72166581"
 
 Чтобы настроить обратный прокси-сервер при [создании кластера с помощью портала Azure](./service-fabric-cluster-creation-via-portal.md), сделайте следующее:
 
-1. На **шаге 2 (настройка кластера)** выберите для параметра **Конфигурация типа узла** значение **Включить обратный прокси-сервер**.
+1. На **шаге 2 (настройка кластера)** выберите для параметра **Конфигурация типа узла** значение **Включить обратный прокси-сервер**.
 
    ![Включение обратного прокси-сервера на портале](./media/service-fabric-reverseproxy-setup/enable-rp-portal.png)
-2. (Необязательно.) Для защиты обратного прокси-сервера можно настроить сертификат SSL. На **шаге 3 (безопасность)** в разделе **Настройка параметров безопасности кластера** выберите для параметра **Тип конфигурации** значение **Пользовательский**. Затем в разделе **SSL-сертификат обратного прокси-сервера** установите флажок **Включить SSL-сертификат для обратного прокси-сервера** и введите данные сертификата.
+2. (Необязательно.) Для защиты обратного прокси-сервера можно настроить сертификат SSL. На **шаге 3 (безопасность)** в разделе **Настройка параметров безопасности кластера** выберите для параметра **Тип конфигурации** значение **Пользовательский**. Затем в разделе **SSL-сертификат обратного прокси-сервера** установите флажок **Включить SSL-сертификат для обратного прокси-сервера** и введите данные сертификата.
 
    ![Настройка защищенного обратного прокси-сервера на портале](./media/service-fabric-reverseproxy-setup/configure-rp-certificate-portal.png)
 
@@ -44,7 +44,7 @@ ms.locfileid: "72166581"
 
 Для нового кластера вы можете [создать пользовательский шаблон Resource Manager](service-fabric-cluster-creation-via-arm.md) или использовать готовый пример шаблона. 
 
-Примеры шаблонов Resource Manager, которые помогут вам настроить защищенный обратный прокси-сервер для кластера Azure, см. на [GitHub](https://github.com/ChackDan/Service-Fabric/tree/master/ARM%20Templates/ReverseProxySecureSample). В руководстве по [настройке обратного прокси-сервера HTTPS в защищенном кластере](https://github.com/ChackDan/Service-Fabric/tree/master/ARM%20Templates/ReverseProxySecureSample/README.md#configure-https-reverse-proxy-in-a-secure-cluster) README-файла приведены примеры шаблонов и инструкции по настройке защищенного обратного прокси-сервера с сертификатом и обновлению сертификатов.
+Примеры шаблонов Resource Manager, которые помогут вам настроить защищенный обратный прокси-сервер для кластера Azure, см. на [GitHub](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/Reverse-Proxy-Sample). В руководстве по [настройке обратного прокси-сервера HTTPS в защищенном кластере](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/Reverse-Proxy-Sample/README.md#configure-https-reverse-proxy-in-a-secure-cluster) README-файла приведены примеры шаблонов и инструкции по настройке защищенного обратного прокси-сервера с сертификатом и обновлению сертификатов.
 
 Если кластер уже существует, вы можете экспортировать шаблон Resource Manager для группы кластерных ресурсов с помощью [портала Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-export-template), [PowerShell](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-export-template-powershell) или [Azure CLI](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-export-template-cli).
 
@@ -167,7 +167,7 @@ ms.locfileid: "72166581"
 
 Следующие шаги описывают настройки, позволяющие включить обратный прокси-сервер и, если потребуется, защитить его с помощью сертификата X.509. 
 
-1. Чтобы включить обратный прокси-сервер, установите значение **reverseProxyEndpointPort** в качестве типа узла в разделе **свойств** в конфигурации кластера. Приведенный ниже код JSON настраивает порт 19081 для конечной точки обратного прокси-сервера для узлов с типом NodeType0:
+1. Чтобы включить обратный прокси-сервер, задайте значение **reverseProxyEndpointPort** для типа узла в разделе **свойства** в конфигурации кластера. Следующий код JSON показывает, как задать порт конечной точки обратный прокси-сервера равным 19081 для узлов с типом "NodeType0":
 
    ```json
        "properties": {
@@ -335,6 +335,6 @@ ms.locfileid: "72166581"
 
 Несколько параметров структуры используются для создания защищенного подключения между обратным прокси-сервером и службами. Подробные сведения об этих параметрах см. [в статье подключение к безопасной службе с помощью обратных прокси-серверов](service-fabric-reverseproxy-configure-secure-communication.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Подключение к защищенной службе с помощью обратного прокси-сервера](service-fabric-reverseproxy-configure-secure-communication.md)
 * Параметры конфигурации обратного прокси-сервера описаны в статье [Настройка параметров кластера Service Fabric и политики обновления структур](service-fabric-cluster-fabric-settings.md#applicationgatewayhttp).

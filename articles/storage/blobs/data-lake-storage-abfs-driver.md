@@ -8,12 +8,12 @@ ms.reviewer: jamesbak
 ms.date: 12/06/2018
 ms.service: storage
 ms.subservice: data-lake-storage-gen2
-ms.openlocfilehash: 49567ae52b8ea706ebf7e093880e919cc8bbdbad
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
-ms.translationtype: HT
+ms.openlocfilehash: 370717e09e788faa56662c4c88e2e7c0de21eef7
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72901640"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72933155"
 ---
 # <a name="the-azure-blob-filesystem-driver-abfs-a-dedicated-azure-storage-driver-for-hadoop"></a>Драйвер файловой системы больших двоичных объектов Azure (ABFS): выделенный драйвер хранилища Azure для Hadoop
 
@@ -49,6 +49,9 @@ hdfs dfs -put flight_delays.csv abfs://fileanalysis@myanalytics.dfs.core.windows
 - **Общий ключ** позволяет пользователям получать доступ ко всем ресурсам в учетной записи. Ключ шифруется и сохраняется в конфигурации Hadoop.
 
 - **Токен носителя OAuth Azure Active Directory**. Токен носителя Azure AD приобретается и обновляется с помощью драйвера, используя либо идентификатор пользователя, либо настроенный субъект-службу. С помощью этой модели проверки подлинности доступ разрешен для каждого вызова, использующего идентификатор, который связан с предоставленным токеном и оценивается с помощью назначенного списка управления доступом POSIX (ACL).
+
+   > [!NOTE] 
+   > Azure Data Lake Storage 2-го поколения поддерживает только конечные точки Azure AD версии 1.0.
 
 ### <a name="configuration"></a>Настройка
 

@@ -1,24 +1,18 @@
 ---
 title: Собирайте и анализируйте журналы действий Azure в Log Analytics рабочей области | Документация Майкрософт
 description: Собирайте журналы действий Azure в журналах Azure Monitor и используйте решение мониторинга для анализа и поиска в журнале действий Azure во всех подписках Azure.
-services: log-analytics
-documentationcenter: ''
-author: bwren
-manager: carmonm
-editor: ''
-ms.assetid: dbac4c73-0058-4191-a906-e59aca8e2ee0
-ms.service: log-analytics
-ms.workload: na
-ms.tgt_pltfrm: na
+ms.service: azure-monitor
+ms.subservice: logs
 ms.topic: conceptual
-ms.date: 09/30/2019
+author: bwren
 ms.author: bwren
-ms.openlocfilehash: c9fdd0c530ca34305aa3a9197c3bb938d4fb9f1f
-ms.sourcegitcommit: f29fec8ec945921cc3a89a6e7086127cc1bc1759
+ms.date: 09/30/2019
+ms.openlocfilehash: 514dcf05eaa37bd338ef6359977b9a5508838459
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72528699"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72932862"
 ---
 # <a name="collect-and-analyze-azure-activity-logs-in-log-analytics-workspace-in-azure-monitor"></a>Собирайте и анализируйте журналы действий Azure в Log Analytics рабочей области в Azure Monitor
 [Журнал действий Azure](activity-logs-overview.md) позволяет получить представление о событиях уровня подписки, произошедших в подписке Azure. В этой статье описывается, как получить журнал действий в Log Analytics рабочей области и как использовать [решение для мониторинга](../insights/solutions.md)аналитика журнала действий, которое предоставляет запросы и представления журнала для анализа этих данных. 

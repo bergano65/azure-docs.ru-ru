@@ -1,24 +1,18 @@
 ---
 title: Сбор данных о производительности приложений Linux в Azure Monitor | Документация Майкрософт
 description: В этой статье приведены подробные сведения о том, как в агенте Log Analytics для Linux настроить сбор данных о производительности MySQL и HTTP-сервера Apache.
-services: log-analytics
-documentationcenter: ''
-author: mgoedtel
-manager: carmonm
-editor: tysonn
-ms.assetid: f1d5bde4-6b86-4b8e-b5c1-3ecbaba76198
-ms.service: log-analytics
+ms.service: azure-monitor
+ms.subservice: logs
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 05/04/2017
+author: MGoedtel
 ms.author: magoedte
-ms.openlocfilehash: ea74440a5c8a9a2584e742ec72ccf888b6bb5ad9
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.date: 05/04/2017
+ms.openlocfilehash: 60f09035f4aabcbd6348fb5608b812ca4b001b45
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60628920"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72932454"
 ---
 # <a name="collect-performance-counters-for-linux-applications-in-azure-monitor"></a>Сбор данных счетчиков производительности приложений Linux в Azure Monitor 
 [!INCLUDE [log-analytics-agent-note](../../../includes/log-analytics-agent-note.md)]
@@ -52,7 +46,7 @@ ms.locfileid: "60628920"
 |:--|:--|
 | Port | Представляет текущий порт, который прослушивает экземпляр MySQL. Порт 0 означает, что для экземпляра по умолчанию используются следующие свойства. |
 | адрес привязки;| Текущий адрес привязки MySQL. |
-| username| Пользователь MySQL, который используется мониторинга экземпляра сервера MySQL. |
+| Имя пользователя| Пользователь MySQL, который используется мониторинга экземпляра сервера MySQL. |
 | пароль в кодировке Base64.| Пароль пользователя, который используется для мониторинга MySQL, в кодировке Base64. |
 | Автоматическое обновление| Указывает, нужно ли повторно выполнять поиск изменений в файле my.cnf и перезаписывать файл проверки подлинности OMI MySQL при обновлении поставщика OMI MySQL. |
 
@@ -61,7 +55,7 @@ ms.locfileid: "60628920"
 
 В следующей таблице приведены примеры параметров экземпляра 
 
-| Описание | Файл |
+| Описание | Файлы |
 |:--|:--|
 | Экземпляр по умолчанию и экземпляр с портом 3308. | `0=127.0.0.1, myuser, cnBwdA==`<br>`3308=, ,`<br>`AutoUpdate=true` |
 | Экземпляр по умолчанию и экземпляр с портом 3308 и другими именем пользователя и паролем. | `0=127.0.0.1, myuser, cnBwdA==`<br>`3308=127.0.1.1, myuser2,cGluaGVhZA==`<br>`AutoUpdate=true` |

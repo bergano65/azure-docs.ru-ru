@@ -1,5 +1,5 @@
 ---
-title: Azure Cosmos DB — API, пакет SDK и ресурсы для SQL Java
+title: 'Azure Cosmos DB: API Java для SQL, ресурсы пакета SDK &'
 description: Сведения о пакете SDK и API-интерфейсе SQL Java, включая даты выхода и прекращения использования, а также изменения, внесенные в каждую версию пакета SDK SQL Java для Azure Cosmos DB.
 author: SnehaGunda
 ms.service: cosmos-db
@@ -8,14 +8,14 @@ ms.devlang: java
 ms.topic: reference
 ms.date: 03/13/2019
 ms.author: sngun
-ms.openlocfilehash: bf89d419bcd97c276df35701bc4fd808f599094a
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: eb8110c953787d1ebf7f01037808ee77db2eb8b4
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68637689"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72934159"
 ---
-# <a name="azure-cosmos-db-java-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: заметки о выпуске и материалы
+# <a name="azure-cosmos-db-java-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: заметки о выпуске и материалы по пакету SDK Java для API-интерфейса SQL
 > [!div class="op_single_selector"]
 > * [.NET](sql-api-sdk-dotnet.md)
 > * [Веб-канал изменений в .NET](sql-api-sdk-dotnet-changefeed.md)
@@ -37,11 +37,35 @@ ms.locfileid: "68637689"
 |**Скачивание пакета SDK**|[Maven](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.microsoft.azure%22%20AND%20a%3A%22azure-documentdb%22)|
 |**Документация по API**|[Справочная документация по API Java](/java/api/com.microsoft.azure.documentdb)|
 |**Участие в разработке пакета SDK**|[GitHub](https://github.com/Azure/azure-documentdb-java/)|
-|**Начало работы**|[Приступая к работе с пакетом SDK для Java](sql-api-java-get-started.md)|
+|**Приступая к работе с условным доступом**|[Приступая к работе с пакетом SDK для Java](sql-api-java-get-started.md)|
 |**Учебник по веб-приложениям**|[Руководство по ASP.NET MVC. Разработка веб-приложений в Azure Cosmos DB](sql-api-java-application.md)|
 |**Минимальная поддерживаемая среда выполнения**|[Пакет средств разработки Java (JDK) 7+](https://aka.ms/azure-jdks)|
 
 ## <a name="release-notes"></a>Заметки о выпуске
+
+### <a name="a-name244244"></a><a name="2.4.4"/>2.4.4
+* Обновление кэша диапазона ключей секционирования.
+
+### <a name="a-name242242"></a><a name="2.4.2"/>2.4.2
+* Обновление оптимизированного кэша коллекций.
+
+### <a name="a-name241241"></a><a name="2.4.1"/>2.4.1
+* Добавлена поддержка получения сообщения о внутреннем исключении из строки диагностики запроса.
+
+### <a name="a-name240240"></a><a name="2.4.0"/>2.4.0
+* В Партитионкэйдефинитион появился API версии.
+
+### <a name="a-name230230"></a><a name="2.3.0"/>2.3.0
+* Добавлена поддержка отдельных таймаутов в режиме прямого режима.
+
+### <a name="a-name223223"></a><a name="2.2.3"/>2.2.3
+* Использование сообщения об ошибке NULL из службы и создание исключения клиента документа.
+
+### <a name="a-name222222"></a><a name="2.2.2"/>2.2.2
+* Улучшение подключения к сокету, добавление Сокипаливе по умолчанию true.
+
+### <a name="a-name220220"></a><a name="2.2.0"/>2.2.0
+* Добавлена поддержка строк диагностики запросов.
 
 ### <a name="a-name213213"></a><a name="2.1.3"/>2.1.3
 * Исправлена ошибка в PartitionKey для хэша v2.
@@ -226,7 +250,7 @@ ms.locfileid: "68637689"
 
 <br/>
 
-| Version | Дата выпуска | Дата вывода |
+| Версия | Дата выпуска | Дата вывода |
 | --- | --- | --- |
 | [2.1.3](#2.1.3) |13 марта 2018 г. |--- |
 | [2.1.2](#2.1.2) |09 марта 2018 г. |--- |
@@ -236,13 +260,13 @@ ms.locfileid: "68637689"
 | [1.16.4](#1.16.4) |10 сентября 2018 г. |30 мая 2020 г. |
 | [1.16.3](#1.16.3) |9 сентября 2018 г. |30 мая 2020 г. |
 | [1.16.2](#1.16.2) |29 июня 2018 г. |30 мая 2020 г. |
-| [1.16.1](#1.16.1) |16 мая 2018 г. |30 мая 2020 г. |
+| [1.16.1](#1.16.1) |16 мая 2018 г. |30 мая 2020 г. |
 | [1.16.0](#1.16.0) |15 марта 2018 г. |30 мая 2020 г. |
 | [1.15.0](#1.15.0) |14 ноября 2017 г. |30 мая 2020 г. |
 | [1.14.0](#1.14.0) |28 октября 2017 г. |30 мая 2020 г. |
 | [1.13.0](#1.13.0) |25 августа 2017 г. |30 мая 2020 г. |
 | [1.12.0](#1.12.0) |11 июля 2017 г. |30 мая 2020 г. |
-| [1.11.0](#1.11.0) |10 мая 2017 г. |30 мая 2020 г. |
+| [1.11.0](#1.11.0) |10 мая 2017 года |30 мая 2020 г. |
 | [1.10.0](#1.10.0) |11 марта 2017 г. |30 мая 2020 г. |
 | [1.9.6](#1.9.6) |21 февраля 2017 г. |30 мая 2020 г. |
 | [1.9.5](#1.9.5) |31 января 2017 г. |30 мая 2020 г. |
@@ -271,9 +295,9 @@ ms.locfileid: "68637689"
 | 0.9.1-prelease |19 декабря 2014 г. |29 февраля 2016 г. |
 | 0.9.0-prelease |10 декабря 2014 г. |29 февраля 2016 г. |
 
-## <a name="faq"></a>Часто задаваемые вопросы
+## <a name="faq"></a>Вопросы и ответы
 [!INCLUDE [cosmos-db-sdk-faq](../../includes/cosmos-db-sdk-faq.md)]
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>Дополнительные материалы
 Дополнительные сведения о Cosmos DB см. на странице службы [Microsoft Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/).
 

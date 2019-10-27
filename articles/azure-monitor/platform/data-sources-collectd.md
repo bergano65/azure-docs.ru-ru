@@ -1,24 +1,18 @@
 ---
 title: Сбор данных CollectD в Azure Monitor| Документация Майкрософт
 description: CollectD — управляющая программа Linux с открытым исходным кодом, которая периодически собирает данные приложений и системные данные.  В этой статье приведены сведения о сборе данных CollectD в Azure Monitor.
-services: log-analytics
-documentationcenter: ''
-author: mgoedtel
-manager: carmonm
-editor: tysonn
-ms.assetid: f1d5bde4-6b86-4b8e-b5c1-3ecbaba76198
-ms.service: log-analytics
+ms.service: azure-monitor
+ms.subservice: logs
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 11/27/2018
+author: MGoedtel
 ms.author: magoedte
-ms.openlocfilehash: b1f02e01fef95bdd06930aa30479dd16d40675ce
-ms.sourcegitcommit: 80da36d4df7991628fd5a3df4b3aa92d55cc5ade
+ms.date: 11/27/2018
+ms.openlocfilehash: 4bf58a7e446cb13366a230a35c83e6bf0acaa09a
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71812568"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72932524"
 ---
 # <a name="collect-data-from-collectd-on-linux-agents-in-azure-monitor"></a>Сбор данных CollectD с помощью агентов Linux в Azure Monitor
 [CollectD](https://collectd.org/) — управляющая программа Linux с открытым исходным кодом, которая периодически собирает метрики производительности приложений и системные данные. К примерам таких приложений относятся виртуальная машина Java (JVM), сервер MySQL и Nginx. В этой статье приводятся сведения о сборе данных производительности CollectD в Azure Monitor.
@@ -77,7 +71,7 @@ ms.locfileid: "71812568"
 - Для сбора метрик CollectD необходим агент Log Analytics для Linux версии 1.1.0-217 или более поздней.
 
 
-## <a name="configuration"></a>Конфигурация
+## <a name="configuration"></a>Настройка
 Ниже приведены основные шаги по настройке сбора данных CollectD в Azure Monitor.
 
 1. Настройте отправку данных CollectD в агент Log Analytics для Linux с помощью подключаемого модуля write_http.  
@@ -114,15 +108,15 @@ ms.locfileid: "71812568"
 
 | Поле метрики CollectD | Поле Azure Monitor |
 |:--|:--|
-| `host` | Computer |
-| `plugin` | Отсутствуют |
+| `host` | Компьютер |
+| `plugin` | Нет |
 | `plugin_instance` | Имя экземпляра<br>Если **plugin_instance** имеет значение *null*, то InstanceName=" *_Total*" |
 | `type` | ObjectName |
 | `type_instance` | CounterName<br>Если **type_instance** имеет значение *null*, то CounterName=**blank** |
 | `dsnames[]` | CounterName |
-| `dstypes` | Отсутствуют |
+| `dstypes` | Нет |
 | `values[]` | CounterValue |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте больше о [запросах журнала](../log-query/log-query-overview.md), которые можно применять для анализа данных, собираемых из источников данных и решений. 
 * Используйте [настраиваемые поля](custom-fields.md) для анализа данных из записей системного журнала в отдельных полях.

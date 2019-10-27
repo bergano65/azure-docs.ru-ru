@@ -1,24 +1,18 @@
 ---
 title: Запросы поиска в журналах Azure Monitor | Документация Майкрософт
 description: В этой статье содержится руководство по началу работы с помощью поиска в запросах журнала Azure Monitor.
-services: log-analytics
-documentationcenter: ''
-author: bwren
-manager: carmonm
-editor: ''
-ms.assetid: ''
-ms.service: log-analytics
-ms.workload: na
-ms.tgt_pltfrm: na
+ms.service: azure-monitor
+ms.subservice: logs
 ms.topic: conceptual
-ms.date: 08/06/2018
+author: bwren
 ms.author: bwren
-ms.openlocfilehash: a0ceb5aa82b0d38ab5d2567689e3e131ba781ce9
-ms.sourcegitcommit: 1c2659ab26619658799442a6e7604f3c66307a89
+ms.date: 08/06/2018
+ms.openlocfilehash: d92cd42f0fceadee16035b605e8d25c6bc23bc67
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72255001"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72933000"
 ---
 # <a name="search-queries-in-azure-monitor-logs"></a>Запросы поиска в журналах Azure Monitor
 Запросы журнала в Azure Monitor могут начинаться с имени таблицы или команды search. В этом руководстве рассматриваются запросы на основе поиска. У каждого метода есть свои преимущества.
@@ -101,7 +95,7 @@ search in (Event) "corp*.com"
 > [!TIP]
 > Хотя `search *` можно использовать для получения каждого столбца из каждой таблицы, рекомендуется всегда ограничивать свои запросы определенными таблицами. Выполнение неограниченных запросов может занять время и вернуть слишком много результатов.
 
-## <a name="add-and--or-to-search-queries"></a>Добавление операторов *and* и *or* в поисковые запросы
+## <a name="add-and--or-to-search-queries"></a>Добавление операторов *and* и / *or* в поисковые запросы
 Используйте оператор **and** для поиска записей, которые содержат несколько терминов:
 
 ```Kusto
@@ -136,6 +130,6 @@ search in (Event) "win"
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Руководства [на веб-сайте о языке запросов Kusto](/azure/kusto/query/).

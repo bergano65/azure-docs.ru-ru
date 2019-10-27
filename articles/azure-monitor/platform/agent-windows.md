@@ -1,24 +1,18 @@
 ---
 title: Подключение компьютеров Windows к Azure Monitor | Документация Майкрософт
 description: В этой статье описывается подключение компьютеров Windows, размещенных в других облаках или локальных, к Azure Monitor с помощью агента Log Analytics для Windows.
-services: log-analytics
-documentationcenter: ''
-author: mgoedtel
-manager: carmonm
-editor: ''
-ms.assetid: ''
-ms.service: log-analytics
-ms.workload: na
-ms.tgt_pltfrm: na
+ms.service: azure-monitor
+ms.subservice: logs
 ms.topic: conceptual
-ms.date: 10/07/2019
+author: MGoedtel
 ms.author: magoedte
-ms.openlocfilehash: 6c8d25a9df49323866e99487ef6c648dede40ec4
-ms.sourcegitcommit: f9e81b39693206b824e40d7657d0466246aadd6e
+ms.date: 10/07/2019
+ms.openlocfilehash: abe114a989c4ec672d391a7fd7d83341d4c52638
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72033957"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72932775"
 ---
 # <a name="connect-windows-computers-to-azure-monitor"></a>Подключение компьютеров Windows к Azure Monitor
 
@@ -57,7 +51,7 @@ ms.locfileid: "72033957"
 >Если вы настраиваете виртуальную машину под управлением Windows Server 2008 с пакетом обновления 2 (SP2) x64 для использования TLS 1,2, сначала необходимо установить следующее [Обновление поддержки подписывания кода SHA-2](https://support.microsoft.com/help/4474419/sha-2-code-signing-support-update) перед выполнением описанных ниже действий. 
 >
 
-1. Найдите следующий подраздел реестра: **HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols**
+1. Найдите следующий подраздел реестра: **HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols**.
 2. Создайте подраздел в разделе **Protocols** for TLS 1,2 **хклм\систем\куррентконтролсет\контрол\секуритипровидерс\счаннел\протоколс\тлс 1,2**
 3. Создайте подраздел **Client** в созданном ранее подразделе версии протокола TLS 1.2. Например, **хклм\систем\куррентконтролсет\контрол\секуритипровидерс\счаннел\протоколс\тлс 1.2 \ Client**.
 4. Создайте следующие значения DWORD в разделе **хклм\систем\куррентконтролсет\контрол\секуритипровидерс\счаннел\протоколс\тлс 1.2 \ Client**:
@@ -99,7 +93,7 @@ ms.locfileid: "72033957"
 
 В следующей таблице описаны определенные параметры, поддерживаемые программой установки агента, а также при развертывании с помощью Automation DSC.
 
-|Параметры MMA                   |Примечания         |
+|Параметры MMA                   |Заметки         |
 |---------------------------------------|--------------|
 | NOAPM=1                               | Необязательный параметр. Установка агента без мониторинга производительности приложений .NET.|   
 |ADD_OPINSIGHTS_WORKSPACE               | 1 — настройка агента для передачи отчетов в рабочую область.                |
@@ -190,7 +184,7 @@ ms.locfileid: "72033957"
 
 По завершении установки агента вы можете проверить, успешно ли он подключен и отправляет ли он отчеты. Есть два способа.  
 
-На **панели управления** компьютера найдите элемент **Microsoft Monitoring Agent**.  Выберите его, а затем на вкладке **Azure Log Analytics** должно появиться следующее сообщение от агента: **The Microsoft Monitoring Agent has successfully connected to the Microsoft Operations Management Suite service** (Microsoft Monitoring Agent успешно подключен к службе Microsoft Operations Management Suite).<br><br> ![Состояние подключения MMA к Log Analytics](media/agent-windows/log-analytics-mma-laworkspace-status.png)
+На **панели управления** компьютера найдите элемент **Microsoft Monitoring Agent**.  Выберите его. На вкладке **Azure Log Analytics** агент должен отобразить следующее сообщение: **Microsoft Monitoring Agent успешно подключен к службе Microsoft Operations Management Suite.**<br><br> ![Состояние подключения MMA к Log Analytics](media/agent-windows/log-analytics-mma-laworkspace-status.png)
 
 Можно также выполнить простой запрос к журналу в портал Azure.  
 
@@ -206,7 +200,7 @@ ms.locfileid: "72033957"
 
 В возвращаемых результатах поиска должны отображаться записи пульса для компьютера, указывающие, что агент успешно подключен и отправляет отчеты в службу.   
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь с [управлением и обслуживанием агента log Analytics для Windows и Linux](agent-manage.md) , чтобы узнать о том, как перенастроить, обновить или удалить агент с виртуальной машины.
 

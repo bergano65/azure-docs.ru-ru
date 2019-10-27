@@ -3,16 +3,16 @@ title: Инвентаризация решений мониторинга в Azu
 description: Решения мониторинга в Azure Monitor — это коллекция правил логики, визуализации и получения данных, которые предоставляют метрики, связанные с определенной проблемной областью.  В этой статье представлен список решений по мониторингу, доступных в корпорации Майкрософт, а также сведения о методах и частоте сбора данных.
 ms.service: azure-monitor
 ms.subservice: logs
-ms.topic: article
+ms.topic: conceptual
 author: MGoedtel
 ms.author: bwren
 ms.date: 06/26/2018
-ms.openlocfilehash: 1f93ada1a6fb6b87c79a3713e80ebfefae9fe56f
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
-ms.translationtype: HT
+ms.openlocfilehash: 6012a74c00b64c818434ea1744d86c6cf67dd463
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72900637"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72931331"
 ---
 # <a name="inventory-and-data-collection-details-for-monitoring-solutions-in-azure"></a>Сведения об инвентаризации и сборе данных для решений мониторинга в Azure
 [Решения для мониторинга](solutions.md) используют службы в Azure для предоставления дополнительных сведений об операциях конкретного приложения или службы. Как правило, решения мониторинга собирают данные журналов, а также предоставляют запросы и представления для анализа собранных данных. В Azure Monitor вы можете добавить решения мониторинга для всех используемых приложений и служб. Обычно они предоставляются бесплатно, но сбор данных может повлечь определенную плату за использование ресурсов.

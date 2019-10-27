@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 09/09/2019
 ms.author: raynew
-ms.openlocfilehash: 9c3a19d44a4ac0fba37f4815b65b17c26d257dbc
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: 46d6cba1d702773639420a3bc5ac74b9c16ce706
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70813622"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72933812"
 ---
 # <a name="support-matrix-for-disaster-recovery-of-hyper-v-vms-to-a-secondary-site"></a>Матрица поддержки аварийного восстановления виртуальных машин Hyper-V на дополнительный сайт
 
@@ -21,14 +21,16 @@ ms.locfileid: "70813622"
 > [!NOTE]
 > Вы можете выполнить репликацию на дополнительный сайт, только если управление узлами Hyper-V осуществляется в облаках VMM.
 
-  
+> [!WARNING]
+> Обратите внимание, что поддержка ASR для использования конфигурации SCVMM скоро станет устаревшей, поэтому мы рекомендуем ознакомиться со сведениями об [устаревании](scvmm-site-recovery-deprecation.md) , прежде чем продолжать.
+
 
 ## <a name="host-servers"></a>Серверы узлов
 
-**Операционная система** | **Сведения**
+**Операционная система** | **Дополнительные сведения**
 --- | ---
-Windows Server 2012 R2 | На сервере должны быть установлены последние обновления.
-Windows Server 2016 |  Сейчас облака VMM 2016, сочетающие узлы Windows Server 2016 и 2012 R2, не поддерживаются.<br/><br/> Развернутые компоненты, обновленные с System Center 2012 R2 VMM 2012 R2 до System Center 2016, сейчас не поддерживаются.
+Windows Server 2012 R2 | На сервере должны быть установлены последние обновления.
+Windows Server 2016 |  Сейчас облака VMM 2016, сочетающие узлы Windows Server 2016 и 2012 R2, не поддерживаются.<br/><br/> Развернутые компоненты, обновленные с System Center 2012 R2 VMM 2012 R2 до System Center 2016, сейчас не поддерживаются.
 
 
 ## <a name="replicated-vm-support"></a>Поддержка реплицируемых виртуальных машин
@@ -37,8 +39,8 @@ Windows Server 2016 |  Сейчас облака VMM 2016, сочетающие
 
 **Версия Windows** | **Hyper-V (с VMM)**
 --- | ---
-Windows Server 2016 | Любая операционная система на виртуальной машине, [поддерживаемая Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/Supported-Windows-guest-operating-systems-for-Hyper-V-on-Windows) на базе Windows Server 2016 
-Windows Server 2012 R2 | Любая операционная система на виртуальной машине, [поддерживаемая Hyper-V](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn792027%28v%3dws.11%29) на базе Windows Server 2012 R2
+Windows Server 2016 | Любая операционная система на виртуальной машине, [поддерживаемая Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/Supported-Windows-guest-operating-systems-for-Hyper-V-on-Windows) на базе Windows Server 2016 
+Windows Server 2012 R2 | Любая операционная система на виртуальной машине, [поддерживаемая Hyper-V](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn792027%28v%3dws.11%29) на базе Windows Server 2012 R2
 
 ## <a name="linux-machine-storage"></a>Хранилище компьютера Linux
 
@@ -54,27 +56,27 @@ Windows Server 2012 R2 | Любая операционная система на
 
 **Конфигурация** | **Поддерживаются**  
 --- | --- 
-Узел — объединение сетевых адаптеров | Да 
-Узел — виртуальная локальная сеть | Да 
-Узел — IPv4 | Да 
+Узел — объединение сетевых адаптеров | ДА 
+Узел — виртуальная локальная сеть | ДА 
+Узел — IPv4 | ДА 
 Узел — IPv6 | Нет 
 Гостевая виртуальная машина — объединение сетевых адаптеров | Нет
-Гостевая виртуальная машина — IPv4 | Да
+Гостевая виртуальная машина — IPv4 | ДА
 Гостевая виртуальная машина — IPv6 | Нет
-Гостевая виртуальная машина (Windows или Linux) — статический IP-адрес | Да
-Гостевая виртуальная машина — несколько сетевых адаптеров | Да
+Гостевая виртуальная машина (Windows или Linux) — статический IP-адрес | ДА
+Гостевая виртуальная машина — несколько сетевых адаптеров | ДА
 
 
-## <a name="storage"></a>Служба хранилища
+## <a name="storage"></a>Storage
 
 ### <a name="host-storage"></a>Хранилище узла
 
 **Устройство или система хранения (узел)** | **Поддерживаются**
 --- | --- 
 NFS | Н/Д
-SMB 3.0 |  Да
-Сеть SAN (iSCSI) | Да
-Многопутевой (MPIO) | Да
+SMB 3.0 |  ДА
+Сеть SAN (iSCSI) | ДА
+Многопутевой (MPIO) | ДА
 
 ### <a name="guest-or-physical-server-storage"></a>Хранилища гостевого или физического сервера
 
@@ -82,19 +84,19 @@ SMB 3.0 |  Да
 --- | --- | 
 VMDK |  Н/Д
 VHD (VHDX) | Да (до 16 дисков)
-Виртуальная машина 2-го поколения | Да
+Виртуальная машина 2-го поколения | ДА
 Общий диск кластера | Нет
 Зашифрованный диск | Нет
 UEFI| Н/Д
 NFS | Нет
 SMB 3.0 | Нет
 RDM | Н/Д
-Диск > 1 ТБ | Да
-Том с чередующимся диском > 1 ТБ<br/><br/> Диспетчер логических томов | Да
-Дисковые пространства | Да
+Диск > 1 ТБ | ДА
+Том с чередующимся диском > 1 ТБ<br/><br/> Диспетчер логических томов | ДА
+Дисковые пространства | ДА
 "Горячее" добавление или удаление диска | Нет
-Исключение диска | Да
-Многопутевой (MPIO) | Да
+Исключение диска | ДА
+Многопутевой (MPIO) | ДА
 
 ## <a name="vaults"></a>Хранилища
 
@@ -113,7 +115,7 @@ RDM | Н/Д
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Репликация виртуальных машин Hyper-V из облаков VMM на вторичный сайт VMM](tutorial-vmm-to-vmm.md)
 
