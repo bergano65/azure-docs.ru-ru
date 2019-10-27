@@ -1,5 +1,5 @@
 ---
-title: 'Настройка пиринга для канала ExpressRoute: PowerShell: Azure | Документация Майкрософт'
+title: 'Настройка пиринга для канала — ExpressRoute: PowerShell: Azure | Документация Майкрософт'
 description: В этой статье описана процедура создания и подготовки частного пиринга, общедоступного пиринга и пиринга Microsoft для канала ExpressRoute, а также показано, как проверить состояние, обновить или удалить пиринги для канала.
 services: expressroute
 author: jaredr80
@@ -8,21 +8,21 @@ ms.topic: conceptual
 ms.date: 04/24/2019
 ms.author: jaredro
 ms.custom: seodec18
-ms.openlocfilehash: e2f38671910be2c7300f39fcbca32e8a1ccd9891
-ms.sourcegitcommit: 1289f956f897786090166982a8b66f708c9deea1
+ms.openlocfilehash: 3f2c768fe7998cc166e3102619e7183c96d1ccbb
+ms.sourcegitcommit: c4700ac4ddbb0ecc2f10a6119a4631b13c6f946a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "64716127"
+ms.lasthandoff: 10/27/2019
+ms.locfileid: "72965364"
 ---
 # <a name="create-and-modify-peering-for-an-expressroute-circuit-using-powershell"></a>Создание и изменение пиринга для канала ExpressRoute с помощью PowerShell
 
 В этой статье описано, как создать конфигурацию маршрутизации ExpressRoute и управлять ею в модели развертывания Azure Resource Manager, используя PowerShell. Вы также сможете проверить состояние, обновить, удалить и отозвать пиринги для канала ExpressRoute. Если вы хотите использовать для работы с каналом другой метод, выберите подходящую статью из списка ниже.
 
 > [!div class="op_single_selector"]
-> * [портал Azure](expressroute-howto-routing-portal-resource-manager.md)
+> * [Портал Azure](expressroute-howto-routing-portal-resource-manager.md)
 > * [PowerShell](expressroute-howto-routing-arm.md)
-> * [Интерфейс командной строки Azure](howto-routing-cli.md)
+> * [Azure CLI](howto-routing-cli.md)
 > * [Видео — частный пиринг](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-set-up-azure-private-peering-for-your-expressroute-circuit)
 > * [Видео — общедоступный пиринг](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-set-up-azure-public-peering-for-your-expressroute-circuit)
 > * [Видео — пиринг Майкрософт](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-set-up-microsoft-peering-for-your-expressroute-circuit)
@@ -42,7 +42,7 @@ ms.locfileid: "64716127"
 ## <a name="configuration-prerequisites"></a>Предварительные требования для настройки
 
 * Прежде чем приступать к настройке, обязательно изучите [предварительные требования](expressroute-prerequisites.md), [требования к маршрутизации](expressroute-routing.md) и [рабочие процессы](expressroute-workflows.md).
-* Вам потребуется активный канал ExpressRoute. Приступая к работе, [создайте канал ExpressRoute](expressroute-howto-circuit-arm.md) ; он должен быть затем включен на стороне поставщика услуг подключения. Для выполнения командлетов, описанных в статье, нужно подготовить и включить канал ExpressRoute.
+* Вам потребуется активный канал ExpressRoute. Приступая к работе, [создайте канал ExpressRoute](expressroute-howto-circuit-arm.md); он должен быть затем включен на стороне поставщика услуг подключения. Для выполнения командлетов, описанных в статье, нужно подготовить и включить канал ExpressRoute.
 
 ### <a name="working-with-azure-powershell"></a>Работа с Azure PowerShell
 
@@ -121,6 +121,13 @@ ms.locfileid: "64716127"
      * Клиент ASN: для объявления префиксов, не зарегистрированных с номером AS для пиринга, можно указать номер AS, с которым они зарегистрированы.
      * Хэш MD5, если вы решите его использовать.
 
+> [!IMPORTANT]
+> Корпорация Майкрософт проверяет, назначены ли вам указанные "объявленные общедоступные префиксы" и "одноранговый ASN" (или "клиент ASN") в реестре Интернет-маршрутизации. Если вы получаете общедоступные префиксы из другой сущности и если назначение не записано в реестре маршрутизации, автоматическая проверка не будет завершена и потребуется проверка вручную. Если автоматическая проверка не удалась, в выходных данных "Get-АзекспрессраутеЦиркуитпирингконфиг" будет отображаться "Адвертиседпубликпрефиксесстате" (требуется проверка) (см. раздел "получение сведений об пиринга Майкрософт" ниже). 
+> 
+> Если отображается сообщение "требуется проверка", собирайте документы, которые отображают открытые префиксы, для вашей организации назначается сущность, указанная в качестве владельца префиксов в реестре маршрутизации, и отправка этих документов для проверки вручную открыв запрос в службу поддержки, как показано ниже. 
+> 
+>
+
    Чтобы настроить пиринг Майкрософт для своего канала, воспользуйтесь следующим примером:
 
    ```azurepowershell-interactive
@@ -177,7 +184,7 @@ Set-AzExpressRouteCircuit -ExpressRouteCircuit $ckt
    Install-Module Az
    ```
 
-   Импортировать все Az.\* модули в рамках диапазона известных семантических версий.
+   Импортируйте все модули AZ.\* в пределах известного диапазона семантических версий.
 
    ```azurepowershell-interactive
    Import-Module Az
@@ -303,7 +310,7 @@ Set-AzExpressRouteCircuit -ExpressRouteCircuit $ckt
 Этот раздел поможет создать, получить, обновить и (или) удалить конфигурацию общедоступного пиринга Azure для канала ExpressRoute.
 
 > [!Note]
-> Общедоступный пиринг Azure является устаревшим для новых каналов. Дополнительные сведения см. в разделе [пиринга ExpressRoute](expressroute-circuit-peerings.md).
+> Общедоступный пиринг Azure устарел для новых каналов. Дополнительные сведения см. в разделе [пиринг ExpressRoute](expressroute-circuit-peerings.md).
 >
 
 ### <a name="to-create-azure-public-peering"></a>Создание общедоступного пиринга Azure
@@ -316,7 +323,7 @@ Set-AzExpressRouteCircuit -ExpressRouteCircuit $ckt
    Install-Module Az
    ```
 
-   Импортировать все Az.\* модули в рамках диапазона известных семантических версий.
+   Импортируйте все модули AZ.\* в пределах известного диапазона семантических версий.
 
    ```azurepowershell-interactive
    Import-Module Az

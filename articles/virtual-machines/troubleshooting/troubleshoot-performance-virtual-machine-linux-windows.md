@@ -1,5 +1,5 @@
 ---
-title: Устранение общей производительности для виртуальной машины Azure под управлением Linux или Windows
+title: Устранение неполадок производительности виртуальных машин Azure в Linux или Windows
 description: В этой статье описывается универсальная диагностика производительности виртуальных машин с помощью мониторинга и наблюдения за узкими места, а также возможное исправление проблем, которые могут возникнуть.
 services: virtual-machines-windows, azure-resource-manager
 documentationcenter: ''
@@ -13,14 +13,14 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 09/18/2019
 ms.author: v-miegge
-ms.openlocfilehash: 3fdac123ee7bda9d91d96940aebd6bddf4ea00f8
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: 50c0a670eb492aef01c3499bc2c8605917f4c7b8
+ms.sourcegitcommit: c4700ac4ddbb0ecc2f10a6119a4631b13c6f946a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72790819"
+ms.lasthandoff: 10/27/2019
+ms.locfileid: "72965472"
 ---
-# <a name="generic-performance-troubleshooting-for-azure-virtual-machine-running-linux-or-windows"></a>Устранение распространенных проблем с производительностью для виртуальной машины Azure под управлением Linux или Windows
+# <a name="troubleshoot-azure-virtual-machine-performance-on-linux-or-windows"></a>Устранение неполадок производительности виртуальных машин Azure в Linux или Windows
 
 В этой статье описывается универсальная диагностика производительности виртуальных машин с помощью мониторинга и наблюдения за узкими места, а также возможное исправление проблем, которые могут возникнуть. Помимо мониторинга, можно также использовать Perfinsights, которые предоставляют отчет с рекомендациями и основными узкими местами для операций ввода-вывода, ЦП и памяти. Perfinsights доступен для виртуальных машин [Windows](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/how-to-use-perfInsights) и [Linux](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/how-to-use-perfinsights-linux) в Azure.
 

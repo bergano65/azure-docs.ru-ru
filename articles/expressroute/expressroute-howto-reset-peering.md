@@ -1,19 +1,19 @@
 ---
-title: 'Сброс пиринга канала ExpressRoute:  Azure | Документация Майкрософт'
+title: 'Сброс пиринга цепи — ExpressRoute: Azure | Документация Майкрософт'
 description: Практическое руководство по отключению и включению пиринга канала ExpressRoute.
 services: expressroute
 author: charwen
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 08/15/2018
+ms.date: 10/25/2019
 ms.author: charwen
 ms.custom: seodec18
-ms.openlocfilehash: 8541362a16c7d12a0e3a4cf009ed9cd5faf9f1cd
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 841c68b43e7f31693863268c3a7b2bd544c5e7ae
+ms.sourcegitcommit: c4700ac4ddbb0ecc2f10a6119a4631b13c6f946a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60366306"
+ms.lasthandoff: 10/27/2019
+ms.locfileid: "72965346"
 ---
 # <a name="reset-expressroute-circuit-peerings"></a>Сброс пиринга канала ExpressRoute
 
@@ -21,7 +21,7 @@ ms.locfileid: "60366306"
 
 Существует несколько сценариев, в которых сброс пиринга для ExpressRoute может оказаться полезным.
 * Протестируйте проектирование и реализацию аварийного восстановления. Например, существует две цепи ExpressRoute. Пиринг в первой цепи можно отключить и принудительно перевести весь сетевой трафик на вторую цепь.
-* Включите обнаружение двунаправленной передачи (BFD) для частного пиринга Azure в цепи ExpressRoute. Если цепь ExpressRoute создается после 1 августа 2018 г., BFD будет включено по умолчанию. Если цепь была создана ранее приведенной даты, BFD включено не было. BFD можно включить путем отключения и повторного включения пиринга. Также необходимо обратить внимание на то, что BFD поддерживается только для частного пиринга Azure.
+* Включите обнаружение двунаправленной переадресации (БФД) в частном пиринга Azure или пиринга Майкрософт для канала ExpressRoute. БФД по умолчанию включен для частного пиринга Azure, если канал ExpressRoute создается после августа 1 2018 и пиринга Майкрософт, если канал ExpressRoute создается после 1 2019 октября. Если цепь была создана ранее приведенной даты, BFD включено не было. BFD можно включить путем отключения и повторного включения пиринга. 
 
 ### <a name="working-with-azure-powershell"></a>Работа с Azure PowerShell
 

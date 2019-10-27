@@ -1,5 +1,5 @@
 - name: Работоспособность служб Azure
-  href: index.md
+  href: index.yml
 - name: Обзор
   items:
     - name: Служба "Работоспособность служб Azure"

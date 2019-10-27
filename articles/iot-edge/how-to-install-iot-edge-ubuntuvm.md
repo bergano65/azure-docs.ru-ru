@@ -9,12 +9,12 @@ services: iot-edge
 ms.topic: conceptual
 ms.date: 07/09/2019
 ms.author: gregman
-ms.openlocfilehash: f4bab6ab837b746c6a569cc6de95a95023bf83f4
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: 0e5bec7d3e1ecd63541a319cd5a9151560ef4139
+ms.sourcegitcommit: c4700ac4ddbb0ecc2f10a6119a4631b13c6f946a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68986992"
+ms.lasthandoff: 10/27/2019
+ms.locfileid: "72964649"
 ---
 # <a name="run-azure-iot-edge-on-ubuntu-virtual-machines"></a>Запуск Azure IoT Edge на виртуальных машинах Ubuntu
 
@@ -33,7 +33,7 @@ ms.locfileid: "68986992"
     *   Если вы впервые тестируете виртуальную машину, проще использовать пароль и включить SSH в меню настройки общедоступного входящего порта. 
     *   При наличии ресурсоемкой рабочей нагрузки следует обновить размер виртуальной машины, добавив дополнительные ЦП и (или) память.
 4.  После развертывания виртуальной машины настройте ее подключение к Центру Интернета вещей:
-    1.  Скопируйте строку подключения с устройства IoT Edge, созданного в Центре Интернета вещей (выполните инструкции из руководства [Регистрация нового устройства Azure IoT Edge на портале Azure](how-to-register-device-portal.md), если вы не знаете, как это делать).
+    1.  Скопируйте строку подключения устройства с устройства IoT Edge, созданного в центре Интернета вещей (если вы не знакомы с этим процессом, вы можете воспользоваться [строкой подключения в портал Azure](how-to-register-device.md#retrieve-the-connection-string-in-the-azure-portal) процедуре.)
     1.  Выберите недавно созданный ресурс виртуальной машины на портале Azure и щелкните **Выполнить команду**.
     1.  Выберите параметр **RunShellScript**.
     1.  Выполните следующий сценарий в окне командной строки, указав свою строку подключения к устройству: `/etc/iotedge/configedge.sh “{device_connection_string}”`.
@@ -85,7 +85,7 @@ ms.locfileid: "68986992"
    az vm create --resource-group IoTEdgeResources --name EdgeVM --image microsoft_iot_edge:iot_edge_vm_ubuntu:ubuntu_1604_edgeruntimeonly:latest --admin-username azureuser --generate-ssh-keys
    ```
 
-1. Задайте строку подключения к устройству (выполните инструкции из руководства [Регистрация нового устройства Azure IoT Edge с помощью Azure CLI](how-to-register-device-cli.md), если вы не знаете, как это делать):
+1. Задайте строку подключения устройства (если вы не знакомы с этим процессом, можно следовать процедуре [получения строки подключения с помощью Azure CLI](how-to-register-device.md#retrieve-the-connection-string-with-the-azure-cli) процедуры):
 
    ```azurecli-interactive
    az vm run-command invoke -g IoTEdgeResources -n EdgeVM --command-id RunShellScript --script "/etc/iotedge/configedge.sh '{device_connection_string}'"
@@ -94,7 +94,7 @@ ms.locfileid: "68986992"
 Если после завершения установки вы хотите подключиться к этой виртуальной машине по протоколу SSH, укажите общедоступный IP-адрес в следующей команде: `ssh azureuser@{publicIpAddress}`.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда подготовлено устройство IoT Edge и установлена среда выполнения, вы можете [развернуть модули IoT Edge](how-to-deploy-modules-portal.md).
 

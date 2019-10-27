@@ -8,18 +8,18 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 10/09/2018
 ms.topic: conceptual
-ms.openlocfilehash: d34ac159a216c5c77214b4c8b799a233c3671235
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0a42763ff47cccfa506acbbbd95d20d41eb0827f
+ms.sourcegitcommit: c4700ac4ddbb0ecc2f10a6119a4631b13c6f946a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61447376"
+ms.lasthandoff: 10/27/2019
+ms.locfileid: "72965372"
 ---
 # <a name="add-an-iot-edge-device-to-your-remote-monitoring-solution-accelerator"></a>Добавление устройства IoT Edge в акселератор решения для удаленного мониторинга
 
 Чтобы добавить устройство [IoT Edge](../iot-edge/about-iot-edge.md) в акселератор решений, выполните два шага ниже:
 
-1. Добавить устройство Edge на **Device Explorer** страницы в удаленный мониторинг решения accelerator веб-интерфейса.
+1. Добавьте пограничное устройство на странице **Device Explorer** в веб-интерфейсе акселератора решений для удаленного мониторинга.
 1. Установите среду выполнения IoT Edge на устройстве Edge.
 
 ## <a name="add-the-iot-edge-device"></a>Добавление устройства IoT Edge
@@ -34,11 +34,11 @@ ms.locfileid: "61447376"
 
 Вы также можете зарегистрировать устройство IoT Edge непосредственно с помощью экземпляра Центра Интернета вещей в акселераторе решений. Вам потребуется имя центра Интернета вещей в акселераторе решений для работы с руководствами, указанными ниже:
 
-- [Регистрация нового устройства Azure IoT Edge на портале Azure](../iot-edge/how-to-register-device-portal.md)
-- [Регистрация нового устройства Azure IoT Edge с помощью Azure CLI](../iot-edge/how-to-register-device-cli.md)
-- [Регистрация нового устройства Azure IoT Edge с помощью Visual Studio Code](../iot-edge/how-to-register-device-vscode.md)
+- [Регистрация нового устройства Azure IoT Edge на портале Azure](../iot-edge/how-to-register-device.md#register-in-the-azure-portal)
+- [Регистрация нового устройства Azure IoT Edge с помощью Azure CLI](../iot-edge/how-to-register-device.md#register-with-the-azure-cli)
+- [Регистрация нового устройства Azure IoT Edge с помощью Visual Studio Code](../iot-edge/how-to-register-device.md#register-with-visual-studio-code)
 
-При регистрации устройства непосредственно с центром Интернета вещей в решение удаленного мониторинга, он отображается на **Device Explorer** страницы в веб-Интерфейсе.
+При регистрации устройства непосредственно в центре Интернета вещей в акселераторе решений для удаленного мониторинга оно отображается на странице **Device Explorer** в веб-интерфейсе.
 
 ## <a name="install-the-iot-edge-runtime"></a>Установка среды выполнения IoT Edge
 
