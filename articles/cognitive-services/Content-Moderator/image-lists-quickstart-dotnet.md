@@ -3,23 +3,23 @@ title: Проверка изображений с использованием �
 titleSuffix: Azure Cognitive Services
 description: Как модерировать изображения с использованием настраиваемых списков изображений посредством пакета SDK Content Moderator для C#.
 services: cognitive-services
-author: sanjeev3
+author: PatrickFarley
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
 ms.topic: conceptual
-ms.date: 07/03/2019
-ms.author: sajagtap
-ms.openlocfilehash: 63eb2285563bf83ac56beb03ff008a2bfa5daab6
-ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
+ms.date: 10/24/2019
+ms.author: pafarley
+ms.openlocfilehash: e650529f3adb998ce683354565acdeb3928b50c3
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72242903"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72931754"
 ---
 # <a name="moderate-with-custom-image-lists-in-c"></a>Модерация с помощью настраиваемых списков изображений на C#
 
-В этой статье содержатся сведения и примеры кода, которые помогут вам приступить к работе с [пакетом SDK Content Moderator для .NET](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/). Вы научитесь выполнять такие задачи:
+В этой статье содержатся сведения и примеры кода, которые помогут приступить к работе с пакетом [SDK Content Moderator для .NET](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/) в следующих целях:
 - создание настраиваемого списка изображений;
 - добавление и удаление изображений в списке;
 - получение идентификаторов всех изображений в списке;
@@ -42,11 +42,11 @@ ms.locfileid: "72242903"
 
 ## <a name="create-your-visual-studio-project"></a>Создание проекта Visual Studio
 
-1. Добавьте новый проект **Консольное приложение (.NET Framework)** в свое решение.
+1. Добавьте в свое решение новый проект **Консольное приложение (.NET Framework)** .
 
    В примере кода назовите проект **ImageLists**.
 
-1. Выберите этот проект в качестве единственного запускаемого проекта для решения.
+1. Выберите этот проект единственным запускаемым проектом для решения.
 
 ### <a name="install-required-packages"></a>Установка необходимых пакетов
 
@@ -56,7 +56,7 @@ ms.locfileid: "72242903"
 - Microsoft.Rest.ClientRuntime
 - Newtonsoft.Json.
 
-### <a name="update-the-programs-using-statements"></a>Обновление инструкций using в программе
+### <a name="update-the-programs-using-statements"></a>Обновление инструкций using программы
 
 Добавьте следующие операторы `using`:
 
@@ -72,10 +72,7 @@ using System.Threading;
 
 ### <a name="create-the-content-moderator-client"></a>Создание клиента Content Moderator
 
-Добавьте следующий фрагмент кода, чтобы создать клиент Content Moderator для своей подписки.
-
-> [!IMPORTANT]
-> Укажите в полях **AzureRegion** и **CMSubscriptionKey** значения идентификатора региона и ключа подписки соответственно.
+Чтобы создать для своей подписки клиент Content Moderator, добавьте следующий фрагмент кода. Обновите поля `AzureEndpoint` и `CMSubscriptionKey` значениями URL-адреса конечной точки и ключа подписки. Их можно найти на вкладке **Быстрый запуск** ресурса в портал Azure.
 
 ```csharp
 /// <summary>
@@ -87,16 +84,9 @@ using System.Threading;
 public static class Clients
 {
     /// <summary>
-    /// The region/location for your Content Moderator account, 
-    /// for example, westus.
+    /// The base URL for Content Moderator calls.
     /// </summary>
-    private static readonly string AzureRegion = "YOUR API REGION";
-
-    /// <summary>
-    /// The base URL fragment for Content Moderator calls.
-    /// </summary>
-    private static readonly string AzureBaseURL =
-        $"https://{AzureRegion}.api.cognitive.microsoft.com";
+    private static readonly string AzureEndpoint = "YOUR ENDPOINT URL";
 
     /// <summary>
     /// Your Content Moderator subscription key.
@@ -115,7 +105,7 @@ public static class Clients
         // Create and initialize an instance of the Content Moderator API wrapper.
         ContentModeratorClient client = new ContentModeratorClient(new ApiKeyServiceClientCredentials(CMSubscriptionKey));
 
-        client.Endpoint = AzureBaseURL;
+        client.Endpoint = AzureEndpoint;
         return client;
     }
 }
@@ -1088,6 +1078,6 @@ Response:
 []
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Получите [пакет SDK Content Moderator для .NET](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/) и [решение Visual Studio](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/ContentModerator) для выполнения инструкций из этого и других кратких руководств по Content Moderator для .NET и приступите к интеграции.

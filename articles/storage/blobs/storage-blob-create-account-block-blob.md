@@ -8,18 +8,81 @@ ms.topic: conceptual
 ms.date: 03/23/2019
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: 1df1d5180d951e7a720ec82c548438892a47a426
-ms.sourcegitcommit: 7efb2a638153c22c93a5053c3c6db8b15d072949
+ms.openlocfilehash: 98a9295363461864d3abbb11bbc22b8bd8d6fdfa
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72881862"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72933180"
 ---
 # <a name="create-a-blockblobstorage-account"></a>Создание учетной записи Блоккблобстораже
 
 Тип учетной записи Блоккблобстораже позволяет создавать блочные BLOB-объекты с характеристиками производительности Premium. Этот тип учетной записи хранения оптимизирован для рабочих нагрузок с высокими тарифами на транзакции или для которых требуется очень быстрое время доступа. В этой статье показано, как создать учетную запись Блоккблобстораже с помощью портал Azure, Azure CLI или Azure PowerShell.
 
 Дополнительные сведения об учетных записях Блоккблобстораже см. в статье [Обзор учетной записи хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-account-overview).
+
+## <a name="prerequisites"></a>Технические условия
+
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+
+# <a name="portaltabazure-portal"></a>[Microsoft Azure](#tab/azure-portal)
+
+Нет подходящих вариантов.
+
+# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+
+Для работы с этой статьей требуется модуль Azure PowerShell AZ Version 1.2.0 или более поздней версии. Чтобы узнать, какая версия используется сейчас, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить установку или обновление, см. статью [об установке модуля Azure PowerShell](/powershell/azure/install-Az-ps).
+
+# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+Вы можете войти в Azure и выполнить команды Azure CLI одним из двух способов:
+
+- Команды интерфейса командной строки можно выполнять в портал Azure в Azure Cloud Shell.
+- Вы можете установить интерфейс командной строки и выполнить команды CLI локально.
+
+### <a name="use-azure-cloud-shell"></a>Использование Azure Cloud Shell
+
+Azure Cloud Shell — это бесплатная оболочка Bash, которую можно запускать непосредственно на портале Azure. Azure CLI предварительно установлен и настроен для использования с вашей учетной записью. Нажмите кнопку **Cloud Shell** в меню в правой верхней части портал Azure:
+
+[![Cloud Shell](../common/media/storage-quickstart-create-account/cloud-shell-menu.png)](https://portal.azure.com)
+
+Кнопка запускает интерактивную оболочку, которую можно использовать для выполнения действий, описанных в этой статье.
+
+[![Снимок экрана с окном Azure Cloud Shell на портале](../common/media/storage-quickstart-create-account/cloud-shell.png)](https://portal.azure.com)
+
+### <a name="install-the-cli-locally"></a>Установка CLI локально
+
+Azure CLI также можно установить и применять локально. В этом руководстве требуется, чтобы вы выполняли Azure CLI версии 2.0.46 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli). 
+
+---
+
+## <a name="sign-in-to-azure"></a>Войдите в Azure
+
+# <a name="portaltabazure-portal"></a>[Microsoft Azure](#tab/azure-portal)
+
+Войдите на [портале Azure](https://portal.azure.com).
+
+# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+
+Чтобы выполнить проверку подлинности, войдите в подписку Azure с помощью команды `Connect-AzAccount` и следуйте инструкциям на экране.
+
+```powershell
+Connect-AzAccount
+```
+
+# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+Чтобы запустить Azure Cloud Shell, войдите в [портал Azure](https://portal.azure.com).
+
+Чтобы войти в локальную установку интерфейса командной строки, выполните команду [AZ login](/cli/azure/reference-index#az-login) :
+
+```cli
+az login
+```
+
+---
+
+## <a name="create-a-blockblobstorage-account"></a>Создание учетной записи Блоккблобстораже
 
 ## <a name="portaltabazure-portal"></a>[Microsoft Azure](#tab/azure-portal)
 Чтобы создать учетную запись Блоккблобстораже в портал Azure, выполните следующие действия.
@@ -118,6 +181,8 @@ ms.locfileid: "72881862"
     --kind "BlockBlobStorage" \
     --sku "Premium_LRS"
    ```
+
+---
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
