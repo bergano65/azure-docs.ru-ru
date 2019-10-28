@@ -4,18 +4,17 @@ summary: Узнайте, как использовать Terraform для над
 metadata:
   title: 'Документация по Terraform в Azure: руководства, примеры, справочные материалы и ресурсы'
   description: Узнайте, как использовать Terraform для надежной подготовки виртуальных машин и другой инфраструктуры в Azure к работе.
-  services: azure
   ms.service: terraform
-  ms.topic: landing-page
   author: TomArcherMsft
   ms.author: tarcher
-  ms.date: 09/20/2019
-  ms.openlocfilehash: 35391f886d473b91ab99d27bff64d64903ba0545
-  ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
+  ms.topic: landing-page
+  ms.date: 10/26/2019
+  ms.openlocfilehash: dbc4ed58b32312023b3248662357777d8567fff9
+  ms.sourcegitcommit: b1c94635078a53eb558d0eb276a5faca1020f835
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 09/20/2019
-  ms.locfileid: "71173533"
+  ms.lasthandoff: 10/27/2019
+  ms.locfileid: "72969500"
 landingContent:
 - title: Сведения о Terraform в Azure
   linkLists:
@@ -34,7 +33,7 @@ landingContent:
     - text: Установка и настройка Terraform
       url: /azure/virtual-machines/linux/terraform-install-configure?/azure/terraform/toc.json&bc=/azure/bread/toc.json
     - text: Создание конфигурации Terraform для Azure
-      url: terrafom-quickstart.md
+      url: terraform-create-configuration.md
     - text: Установка расширения Visual Studio Code для Terraform
       url: terraform-vscode-extension.md
     - text: Создание базового шаблона Terraform с использованием Yeoman
@@ -58,7 +57,7 @@ landingContent:
   - linkListType: tutorial
     links:
     - text: Создание виртуальной машины Terraform с поддержкой MSI
-      url: terraform-vm-msi.md
+      url: terraform-vm-managed-identities-for-azure-resources.md
     - text: Создание кластера виртуальных машин с помощью модулей Terraform
       url: terraform-create-vm-cluster-module.md
     - text: Создание кластера виртуальных машин с помощью Terraform и HCL

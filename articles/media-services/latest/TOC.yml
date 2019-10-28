@@ -5,6 +5,7 @@
     - name: Сведения о Службах мультимедиа
       href: media-services-overview.md
     - name: Новые возможности в Службах мультимедиа
+      displayName: release notes
       href: release-notes.md
 - name: Учебники
   expanded: true

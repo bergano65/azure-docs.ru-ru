@@ -251,6 +251,10 @@
           items:
             - name: Портал Azure
               href: howto-hyperscale-manage-firewall-using-portal.md
+        - name: Устранение неполадок
+          items:
+            - name: Устранение ошибок подключения
+              href: howto-hyperscale-troubleshoot-common-connection-issues.md
 - name: Справочные материалы
   items:
     - name: Azure CLI
