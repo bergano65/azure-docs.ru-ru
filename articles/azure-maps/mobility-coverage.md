@@ -135,7 +135,7 @@ Azure Maps [службы Mobility service](https://aka.ms/AzureMapsMobilityServi
 | Саудовская Аравия | Thuwal |
 | ЮАР | Кейптаун |
 | Тунис | Kairouan |
-| Объединенные Арабские Эмираты  | Абу-Даби, Дубаи |
+| ОАЭ  | Абу-Даби, Дубаи |
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
