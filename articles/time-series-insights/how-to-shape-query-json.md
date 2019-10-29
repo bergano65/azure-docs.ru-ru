@@ -2,19 +2,19 @@
 title: Рекомендации по формированию JSON в запросах службы "Аналитика временных рядов Azure" | Документация Майкрософт
 description: Сведения о том, как повысить эффективность запросов службы "Аналитика временных рядов Azure".
 services: time-series-insights
-author: ashannon7
+author: deepakpalled
+ms.author: dpalled
 manager: cshankar
 ms.service: time-series-insights
 ms.topic: article
 ms.date: 10/09/2019
-ms.author: dpalled
 ms.custom: seodec18
-ms.openlocfilehash: 4916397d05ad9d5fcae7624bf558eb7dc5be940f
-ms.sourcegitcommit: f272ba8ecdbc126d22a596863d49e55bc7b22d37
+ms.openlocfilehash: 09090354012d2cd3ba050ff9c94593947f27b006
+ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72274401"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72990278"
 ---
 # <a name="shape-json-to-maximize-query-performance"></a>Формирование JSON для повышения производительности запросов 
 
@@ -36,6 +36,9 @@ ms.locfileid: "72274401"
    - 600 свойств (столбцов) для сред S1;
    - 800 свойств (столбцов) для сред S2.
 
+> [!TIP]
+> Ознакомьтесь с [ограничениями и планированием](time-series-insights-update-plan.md) в предварительной версии службы "аналитика временных рядов Azure".
+
 Следующие рекомендации помогут обеспечить максимально возможную производительность запросов:
 
 1. Не используйте динамические свойства, такие как идентификатор тега, в качестве имени свойства. Эта команда использует Contribute для достижения максимального предела свойств.
@@ -51,7 +54,7 @@ ms.locfileid: "72274401"
 
 Примеры основаны на сценарии, в котором несколько устройств отправляют измерения или сигналы. Измерения или сигналы могут быть последовательностью потоков, давлением в ядре, температуре и влажности. В первом примере имеется несколько измерений по всем устройствам. Во втором примере имеется много устройств, и каждое устройство отправляет множество уникальных измерений.
 
-## <a name="scenario-one-only-a-few-measurements-exist"></a>Сценарий один: Существует только несколько измерений
+## <a name="scenario-one-only-a-few-measurements-exist"></a>Сценарий 1. существует только несколько измерений.
 
 > [!TIP]
 > Рекомендуется отсылать каждое измерение или сигнал как отдельное свойство или столбец.
@@ -94,16 +97,16 @@ ms.locfileid: "72274401"
 
    | deviceId | messageId | deviceLocation |
    | --- | --- | --- |
-   | FXXX | LINE\_DATA | EU |
-   | FYYY | LINE\_DATA | US |
+   | FXXX | LINE\_DATA | ЕС |
+   | FYYY | LINE\_DATA | США |
 
 * Таблица событий "аналитика временных рядов" после спрямления:
 
-   | deviceId | messageId | deviceLocation | timestamp | series.Flow Rate ft3/s | series.Engine Oil Pressure psi |
+   | deviceId | messageId | deviceLocation | Timestamp | series.Flow Rate ft3/s | series.Engine Oil Pressure psi |
    | --- | --- | --- | --- | --- | --- |
-   | FXXX | LINE\_DATA | EU | 2018-01-17T01:17:00Z | 1.0172575712203979 | 34.7 |
-   | FXXX | LINE\_DATA | EU | 2018-01-17T01:17:00Z | 2.445906400680542 | 49.2 |
-   | FYYY | LINE\_DATA | US | 2018-01-17T01:18:00Z | 0.58015072345733643 | 22.2 |
+   | FXXX | LINE\_DATA | ЕС | 2018-01-17T01:17:00Z | 1.0172575712203979 | 34.7 |
+   | FXXX | LINE\_DATA | ЕС | 2018-01-17T01:17:00Z | 2.445906400680542 | 49.2 |
+   | FYYY | LINE\_DATA | США | 2018-01-17T01:18:00Z | 0.58015072345733643 | 22.2 |
 
 > [!NOTE]
 > - Столбец **deviceId** служит заголовком столбца для различных устройств в парке автомобилей. Если значение **deviceId** имеет собственное имя свойства, общее число устройств будет ограничено до 595 (для сред S1) или 795 (для сред S2) с другими пятью столбцами.
@@ -112,7 +115,7 @@ ms.locfileid: "72274401"
 > - Используется два слоя вложенности, то есть максимальный объем вложенности, поддерживаемый службой "аналитика временных рядов". Критически важно избегать глубоко вложенных массивов.
 > - Меры отправляются в виде отдельных свойств в одном объекте, так как существует несколько мер. Здесь **series.Flow Rate psi** и **series.Engine Oil Pressure ft3/s** — уникальные столбцы.
 
-## <a name="scenario-two-several-measures-exist"></a>Сценарий 2: Существует несколько мер
+## <a name="scenario-two-several-measures-exist"></a>Сценарий 2. Существует несколько мер
 
 > [!TIP]
 > Рекомендуется отсылать измерения в виде кортежей "тип", "единица" и "значение".
@@ -162,23 +165,23 @@ ms.locfileid: "72274401"
 
 * Таблица ссылочных данных с ключевыми свойствами **deviceId** и **Series. tagId**:
 
-   | deviceId | series.tagId | messageId | deviceLocation | type | unit |
+   | deviceId | series.tagId | messageId | deviceLocation | Тип | unit |
    | --- | --- | --- | --- | --- | --- |
-   | FXXX | pumpRate | LINE\_DATA | EU | Скорость потока | ft3/s |
-   | FXXX | oilPressure | LINE\_DATA | EU | Давление масла в двигателе | psi |
-   | FYYY | pumpRate | LINE\_DATA | US | Скорость потока | ft3/s |
-   | FYYY | oilPressure | LINE\_DATA | US | Давление масла в двигателе | psi |
+   | FXXX | pumpRate | LINE\_DATA | ЕС | Скорость потока | ft3/s |
+   | FXXX | oilPressure | LINE\_DATA | ЕС | Давление масла в двигателе | psi |
+   | FYYY | pumpRate | LINE\_DATA | США | Скорость потока | ft3/s |
+   | FYYY | oilPressure | LINE\_DATA | США | Давление масла в двигателе | psi |
 
 * Таблица событий "аналитика временных рядов" после спрямления:
 
-   | deviceId | series.tagId | messageId | deviceLocation | type | unit | timestamp | series.value |
+   | deviceId | series.tagId | messageId | deviceLocation | Тип | unit | Timestamp | series.value |
    | --- | --- | --- | --- | --- | --- | --- | --- |
-   | FXXX | pumpRate | LINE\_DATA | EU | Скорость потока | ft3/s | 2018-01-17T01:17:00Z | 1.0172575712203979 | 
-   | FXXX | oilPressure | LINE\_DATA | EU | Давление масла в двигателе | psi | 2018-01-17T01:17:00Z | 34.7 |
-   | FXXX | pumpRate | LINE\_DATA | EU | Скорость потока | ft3/s | 2018-01-17T01:17:00Z | 2.445906400680542 | 
-   | FXXX | oilPressure | LINE\_DATA | EU | Давление масла в двигателе | psi | 2018-01-17T01:17:00Z | 49.2 |
-   | FYYY | pumpRate | LINE\_DATA | US | Скорость потока | ft3/s | 2018-01-17T01:18:00Z | 0.58015072345733643 |
-   | FYYY | oilPressure | LINE\_DATA | US | Давление масла в двигателе | psi | 2018-01-17T01:18:00Z | 22.2 |
+   | FXXX | pumpRate | LINE\_DATA | ЕС | Скорость потока | ft3/s | 2018-01-17T01:17:00Z | 1.0172575712203979 | 
+   | FXXX | oilPressure | LINE\_DATA | ЕС | Давление масла в двигателе | psi | 2018-01-17T01:17:00Z | 34.7 |
+   | FXXX | pumpRate | LINE\_DATA | ЕС | Скорость потока | ft3/s | 2018-01-17T01:17:00Z | 2.445906400680542 | 
+   | FXXX | oilPressure | LINE\_DATA | ЕС | Давление масла в двигателе | psi | 2018-01-17T01:17:00Z | 49.2 |
+   | FYYY | pumpRate | LINE\_DATA | США | Скорость потока | ft3/s | 2018-01-17T01:18:00Z | 0.58015072345733643 |
+   | FYYY | oilPressure | LINE\_DATA | США | Давление масла в двигателе | psi | 2018-01-17T01:18:00Z | 22.2 |
 
 > [!NOTE]
 > - Столбцы **deviceId** и **Series. tagId** служат заголовками столбцов для различных устройств и тегов на парке. Использование каждого из них в качестве собственного атрибута ограничивает запрос до 594 (для сред S1) или 794 (для сред S2) на общее количество устройств с шестью столбцами.
@@ -193,9 +196,9 @@ ms.locfileid: "72274401"
   - В первом примере несколько свойств имеют несколько значений, поэтому можно создать каждое отдельное свойство.
   - Во втором примере меры не указываются как отдельные свойства. Вместо этого они представляют собой массив значений или мер в общем свойстве ряда. Будет отправлен новый ключ **tagId** , создающий новый столбец **Series. tagId** в плоской таблице. Новый **тип** и **единица** свойств создаются с помощью ссылочных данных, поэтому ограничение свойства не достигается.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Узнайте больше об отправке [сообщений устройства центра Интернета вещей в облако](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messages-construct).
+- Узнайте больше об отправке [сообщений устройства центра Интернета вещей в облако](../iot-hub/iot-hub-devguide-messages-construct.md).
 
 - Ознакомьтесь с [синтаксисом запроса аналитики временных рядов Azure](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-syntax) , чтобы узнать больше о синтаксисе запроса для REST API доступа к данным службы "аналитика временных рядов".
 

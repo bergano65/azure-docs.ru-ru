@@ -5,15 +5,16 @@ ms.topic: include
 ms.custom: include file
 services: time-series-insights
 ms.service: time-series-insights
-author: kingdomofends
-ms.author: adgera
+author: deepakpalled
+ms.author: dpalled
+manager: cshankar
 ms.date: 09/24/2019
-ms.openlocfilehash: ccfbd16f4db770558f1bc0284860a5f8d9fb8b68
-ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
-ms.translationtype: HT
+ms.openlocfilehash: 7e67b9e1c611d14b78db53f8662fb4e1f493a8df
+ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71266948"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72990193"
 ---
 > [!IMPORTANT]
 > * С мая 2019 г. новая колонка **Azure Active Directory** > **Регистрация приложений** заменяет прежнюю колонку **Azure Active Directory** > **Регистрация приложений (прежняя версия)** .
@@ -50,7 +51,7 @@ ms.locfileid: "71266948"
 
    [![Создание секрета клиента](media/time-series-insights-aad-registration/active-directory-auth-blade.png)](media/time-series-insights-aad-registration/active-directory-auth-blade.png#lightbox)
 
-   Выберите команду **Сохранить**.
+   В нижней части страницы нажмите кнопку **Save**.
 
 1. Щелкните **Сертификаты и секреты** и **Создать секрет клиента**, чтобы создать пароль приложения, который клиент сможет использовать для подтверждения подлинности.
 

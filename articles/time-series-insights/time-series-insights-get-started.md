@@ -3,7 +3,7 @@ title: Создание среды Azure Time Series Insights | Документ
 description: В этой статье описывается создание новой среды "Аналитика временных рядов" с помощью портала Azure.
 ms.service: time-series-insights
 services: time-series-insights
-author: ashannon7
+author: deepakpalled
 ms.author: dpalled
 manager: cshankar
 ms.reviewer: v-mamcge, jasonh, kfile
@@ -11,12 +11,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 10/10/2019
 ms.custom: seodec18
-ms.openlocfilehash: 1956fd9eaaa537d7ffa992070fc5cffd567954ce
-ms.sourcegitcommit: f272ba8ecdbc126d22a596863d49e55bc7b22d37
+ms.openlocfilehash: 1b51931385eb7e2e0bf2a1baf5cc4c3379eab2df
+ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72274816"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72991232"
 ---
 # <a name="create-a-new-time-series-insights-environment-in-the-azure-portal"></a>Создание среды Time Series Insights на портале Azure
 
@@ -34,36 +34,36 @@ ms.locfileid: "72274816"
 
 1. Выберите категорию **Интернет вещей**, а затем — **Аналитика временных рядов**.
 
-   [![Создание среды "аналитика временных рядов" ](media/time-series-insights-get-started/1-new-tsi.png)](media/time-series-insights-get-started/1-new-tsi.png#lightbox)
+   [![создать среду "аналитика временных рядов](media/time-series-insights-get-started/1-new-tsi.png)](media/time-series-insights-get-started/1-new-tsi.png#lightbox)")
 
 1. На странице **Аналитика временных рядов** выберите **Создать**.
 
 1. Заполните обязательные параметры. В следующей таблице объясняется каждый параметр:
    
-   [@no__t 1Create. Группа ресурсов "аналитика временных рядов"](media/time-series-insights-get-started/2-create-tsi.png)](media/time-series-insights-get-started/2-create-tsi.png#lightbox)
+   [![создать группу ресурсов "аналитика временных рядов"](media/time-series-insights-get-started/2-create-tsi.png)](media/time-series-insights-get-started/2-create-tsi.png#lightbox)
    
-   Параметр|Предлагаемое значение|Описание
+   Параметр|Рекомендуемое значение|Описание
    ---|---|---
    Имя среды | Уникальное имя | Это имя представляет среду в [обозревателе временных рядов](https://insights.timeseries.azure.com).
    Subscription | Ваша подписка | Если у вас несколько подписок, лучше выбрать ту, которая содержит источник событий. Time Series Insights может автоматически определить ресурсы Центра Интернета вещей и концентратора событий Azure в одной подписке.
    группа ресурсов. | Создайте новую или используйте существующую | Группы ресурсов — это набор совместно используемых ресурсов Azure. Можно выбрать существующую группу ресурсов, например ту, которая содержит концентратор событий или центр Интернета вещей. Или же можно создать новую, если этот ресурс не связан с другими ресурсами.
    Location | Ближайший источник событий | Предпочтительно выбирать то же расположение центра обработки данных, которое содержит данные об источниках событий. Это позволит избежать дополнительных затрат на обеспечение пропускной способности между регионами и между зонами, а также дополнительной задержки при перемещении данных за пределы региона.
-   Ценовая категория | S1 | Выберите необходимую пропускную способность. Чтобы обеспечить наименьшие затраты и определить начальную производительность, выберите S1.
-   Capacity | 1 | Производительность — множитель, применяемый к скорости входящих данных, емкости хранилища и затратам, связанным с выбранным номером SKU.  Емкость среды можно изменить после ее создания. Чтобы обеспечить наименьшие затраты, выберите значение производительности 1. 
+   Уровень цен | S1 | Выберите необходимую пропускную способность. Чтобы обеспечить наименьшие затраты и определить начальную производительность, выберите S1.
+   Ориентированное на объем | 1 | Производительность — множитель, применяемый к скорости входящих данных, емкости хранилища и затратам, связанным с выбранным номером SKU.  Емкость среды можно изменить после ее создания. Чтобы обеспечить наименьшие затраты, выберите значение производительности 1. 
   
 1. Выберите **Создать**, чтобы начать процесс подготовки. Это может занять несколько минут.
 
 1. На панели инструментов щелкните символ **Уведомления** (значок колокольчика), чтобы отслеживать процесс развертывания.
 
-   [@no__t 1Watch уведомления](media/time-series-insights-get-started/3-notifications.png)](media/time-series-insights-get-started/3-notifications.png#lightbox)
+   [![просмотреть уведомления](media/time-series-insights-get-started/3-notifications.png)](media/time-series-insights-get-started/3-notifications.png#lightbox)
 
     После успешного развертывания можно выбрать функцию **Перейти к ресурсу**, чтобы настроить другие свойства, определить уровень защиты с помощью политики доступа к данным, добавить источники событий и выполнить другие действия.
 
 1. В разделе **Общие сведения о**ресурсе щелкните **значок закрепления** в правом верхнем углу, чтобы легко получить доступ к среде "аналитика временных рядов" в будущем.
 
-   [![Create закрепление временных рядов Insights на панели мониторинга](media/time-series-insights-get-started/4-pin-create.png)](media/time-series-insights-get-started/4-pin-create.png#lightbox)
+   [![создать в панели мониторинга закрепление "аналитика временных рядов"](media/time-series-insights-get-started/4-pin-create.png)](media/time-series-insights-get-started/4-pin-create.png#lightbox)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Определите политики доступа к данным](time-series-insights-data-access.md) для защиты среды.
 

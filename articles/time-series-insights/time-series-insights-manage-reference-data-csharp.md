@@ -3,27 +3,26 @@ title: Управление эталонными данными для сред�
 description: Из этой статьи вы узнаете, как управлять эталонными данными для среды службы "Аналитика временных рядов Azure", создав пользовательское приложение на C# (c-sharp) .NET.
 ms.service: time-series-insights
 services: time-series-insights
-author: ashannon7
+author: deepakpalled
 ms.author: dpalled
 manager: cshankar
-ms.reviewer: jasonh, kfile
 ms.devlang: csharp
 ms.workload: big-data
 ms.topic: conceptual
 ms.date: 10/03/2019
 ms.custom: seodec18
-ms.openlocfilehash: d4f206b63be38c902f93a084889e60184ce03e07
-ms.sourcegitcommit: 7868d1c40f6feb1abcafbffcddca952438a3472d
+ms.openlocfilehash: 4eb8a22ee56203fe84df6ee1cff779e3f3bdf491
+ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71958043"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72990044"
 ---
 # <a name="manage-ga-reference-data-for-an-azure-time-series-insights-environment-by-using-c"></a>Управление эталонными данными на основе общедоступной версии для среды службы "аналитика временных рядов Azure" с помощьюC#
 
 В этой статье описан пример проекта C#, который вы можете компилировать, чтобы управлять эталонными данными для среды службы "Аналитика временных рядов Azure".
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Перед компиляцией и запуском примера кода выполните следующие шаги.
 
@@ -36,7 +35,7 @@ ms.locfileid: "71958043"
 1. Измените пример кода, заменив константы, указанные в **#DUMMY#** в начале кода.
 
 > [!NOTE]
-> Просмотрите код в общедоступном коде в [https://github.com/Azure-Samples/Azure-Time-Series-Insights](https://github.com/Azure-Samples/Azure-Time-Series-Insights/tree/master/csharp-tsi-ga-sample).
+> Просмотрите пример кода на странице общедоступной версии [https://github.com/Azure-Samples/Azure-Time-Series-Insights](https://github.com/Azure-Samples/Azure-Time-Series-Insights/tree/master/csharp-tsi-ga-sample).
 
 ## <a name="project-dependencies"></a>Зависимости проекта
 
@@ -245,6 +244,6 @@ namespace TimeSeriesInsightsReferenceDataSampleApp
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Прочтите [API эталонных данных](https://docs.microsoft.com/rest/api/time-series-insights/ga-reference-data-api).

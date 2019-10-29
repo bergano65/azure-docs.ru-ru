@@ -1,5 +1,5 @@
 ---
-title: Устранение неполадок System Center Data Protection Manager с помощью Azure Backup
+title: Устранение неполадок System Center Data Protection Manager — Azure Backup
 description: Устранение неполадок при работе с System Center Data Protection Manager.
 ms.reviewer: kasinh
 author: dcurwin
@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 01/30/2019
 ms.author: dacurwin
-ms.openlocfilehash: 501e61d06b7724147d7224ae51bde5de736279b3
-ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
+ms.openlocfilehash: a348a11d35a8803bb0c01e1736e644847e2a07a1
+ms.sourcegitcommit: b1c94635078a53eb558d0eb276a5faca1020f835
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68689029"
+ms.lasthandoff: 10/27/2019
+ms.locfileid: "72968412"
 ---
 # <a name="troubleshoot-system-center-data-protection-manager"></a>Устранение неполадок при работе с System Center Data Protection Manager
 
@@ -21,10 +21,10 @@ ms.locfileid: "68689029"
 
 Последние заметки о выпуске System Center Data Protection Manager приведены в [документации по System Center](https://docs.microsoft.com/system-center/dpm/dpm-release-notes?view=sc-dpm-2016). Узнать больше о поддержке Data Protection Manager можно из [этой матрицы](https://docs.microsoft.com/system-center/dpm/dpm-protection-matrix?view=sc-dpm-2016).
 
-
-## <a name="error-replica-is-inconsistent"></a>Ошибка: Реплика не согласована
+## <a name="error-replica-is-inconsistent"></a>Ошибка: "Реплика не согласована"
 
 Реплика может быть несогласованной по следующим причинам.
+
 - Ошибка задания создания реплики.
 - Проблемы с журналом изменений.
 - Битовая карта фильтра уровня тома содержит ошибки.
@@ -33,6 +33,7 @@ ms.locfileid: "68689029"
 - Реплика действительно несогласованная.
 
 Чтобы устранить эту проблему, выполните описанные ниже действия.
+
 - Чтобы устранить несогласованное состояние, выполните проверку согласованности вручную или настройте ежедневную проверку согласованности по расписанию.
 - Убедитесь, что вы используете последнюю версию Microsoft Azure Backup Server и Data Protection Manager.
 - Убедитесь, что параметр **Automatic Consistency** (Автоматическая согласованность) включен.
@@ -42,9 +43,10 @@ ms.locfileid: "68689029"
 - Убедитесь, что диск работоспособен и содержит достаточно места для реплики.
 - Проверьте, нет ли выполняющихся параллельно аналогичных заданий резервного копирования.
 
-## <a name="error-online-recovery-point-creation-failed"></a>Ошибка: Сбой при создании точки восстановления в сети
+## <a name="error-online-recovery-point-creation-failed"></a>Ошибка: "Сбой при создании точки восстановления в сети"
 
 Чтобы устранить эту проблему, выполните описанные ниже действия.
+
 - Убедитесь, что вы используете самую последнюю версию агента Azure Backup.
 - Попробуйте вручную создать точку восстановления в области задач защиты.
 - Обязательно проверьте согласованность источника данных.
@@ -53,11 +55,12 @@ ms.locfileid: "68689029"
 - Убедитесь, что реплика существует.
 - Убедитесь, что реплика содержит достаточно места для создания журнала номеров последовательных обновлений (USN).
 
-## <a name="error-unable-to-configure-protection"></a>Ошибка: Не удалось настроить защиту
+## <a name="error-unable-to-configure-protection"></a>Ошибка: "Не удалось настроить защиту"
 
-Эта ошибка возникает, когда серверу Data Protection Manager не удается связаться с защищенным сервером. 
+Эта ошибка возникает, когда серверу Data Protection Manager не удается связаться с защищенным сервером.
 
 Чтобы устранить эту проблему, выполните описанные ниже действия.
+
 - Убедитесь, что вы используете самую последнюю версию агента Azure Backup.
 - Убедитесь в наличии подключения (по сети, через брандмауэр или прокси-сервер) между сервером Data Protection Manager и защищенным сервером.
 - Если вы защищаете сервер SQL Server, убедитесь, что свойство **Свойства имени для входа** > **NT AUTHORITY\SYSTEM** содержит включенный параметр **sysadmin**.
@@ -67,17 +70,20 @@ ms.locfileid: "68689029"
 Эта ошибка возникает во время восстановления данных сервера Data Protection Manager или Azure Backup Server. Файл учетных данных хранилища, который используется в процессе восстановления, не принадлежит хранилищу служб восстановления для Data Protection Manager или Azure Backup Server.
 
 Проблему можно устранить следующим способом.
+
 1. Скачайте файл учетных данных из хранилища служб восстановления, в котором зарегистрирован сервер Data Protection Manager или Azure Backup Server.
 2. Попробуйте зарегистрировать сервер в хранилище с помощью самого последнего скачанного файла учетных данных хранилища.
 
-## <a name="error-no-recoverable-data-or-selected-server-not-a-data-protection-manager-server"></a>Ошибка: "No recoverable data or selected server not a Data Protection Manager server" (Восстанавливаемые данные отсутствуют или выбранный сервер не является сервером Data Protection Manager)
+## <a name="error-no-recoverable-data-or-selected-server-not-a-data-protection-manager-server"></a>Ошибка: " No recoverable data or selected server not a Data Protection Manager server" (Восстанавливаемые данные отсутствуют или выбранный сервер не является сервером Data Protection Manager)
 
 Эта ошибка возникает последующим причинам.
+
 - В хранилище служб восстановления не зарегистрированы другие серверы Data Protection Manager или Azure Backup Server.
 - Серверы еще не передали метаданные.
 - Выбранный сервер не является сервером Data Protection Manager или Azure Backup Server.
 
 Если в хранилище служб восстановления зарегистрированы другие серверы Data Protection Manager или Azure Backup Server, устраните данную проблему следующим способом.
+
 1. Убедитесь, что установлена самая последняя версия агента Azure Backup.
 2. После этого подождите один день, прежде чем начать процесс восстановления. Задания резервного копирования, запланированные на ночь, передадут метаданные для всех защищенных резервных копий в облако. После этого данные резервных копий станут доступны для восстановления.
 
@@ -88,5 +94,5 @@ ms.locfileid: "68689029"
 > [!IMPORTANT]
 > Если вы забыли или потеряли парольную фразу для шифрования, другие методы восстановления данных отсутствуют. Единственной возможностью является повторное создание парольной фразы. Используйте новую парольную фразу для шифрования будущих данных резервных копий.
 >
-> При восстановлении данных всегда указывайте парольную фразу для шифрования, связанную с сервером Data Protection Manager или Azure Backup Server. 
+> При восстановлении данных всегда указывайте парольную фразу для шифрования, связанную с сервером Data Protection Manager или Azure Backup Server.
 >

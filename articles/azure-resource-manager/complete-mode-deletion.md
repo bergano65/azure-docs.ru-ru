@@ -4,14 +4,14 @@ description: Здесь показано, как происходит удале
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: conceptual
-ms.date: 10/03/2019
+ms.date: 10/27/2019
 ms.author: tomfitz
-ms.openlocfilehash: de1b5080e72f79626ca0c749efe4122721f14922
-ms.sourcegitcommit: f29fec8ec945921cc3a89a6e7086127cc1bc1759
+ms.openlocfilehash: 03e91e4be967e822d17144af848f51e73851b1e6
+ms.sourcegitcommit: b1c94635078a53eb558d0eb276a5faca1020f835
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72528584"
+ms.lasthandoff: 10/27/2019
+ms.locfileid: "72969178"
 ---
 # <a name="deletion-of-azure-resources-for-complete-mode-deployments"></a>Удаление ресурсов Azure для развертываний в полном режиме
 
@@ -61,7 +61,6 @@ ms.locfileid: "72528584"
 > - [Microsoft. Контаинеринстанце](#microsoftcontainerinstance)
 > - [Microsoft.ContainerRegistry](#microsoftcontainerregistry)
 > - [Microsoft.ContainerService](#microsoftcontainerservice)
-> - [Microsoft. Контентмодератор](#microsoftcontentmoderator)
 > - [Microsoft. Кортанааналитикс](#microsoftcortanaanalytics)
 > - [Microsoft. Костманажемент](#microsoftcostmanagement)
 > - [Microsoft. Кустомерлоккбокс](#microsoftcustomerlockbox)
@@ -277,6 +276,7 @@ ms.locfileid: "72528584"
 > | Псевдонимы | Нет |
 > | denyAssignments | Нет |
 > | elevateAccess | Нет |
+> | финдорфанролеассигнментс | Нет |
 > | locks | Нет |
 > | permissions | Нет |
 > | policyAssignments | Нет |
@@ -394,6 +394,7 @@ ms.locfileid: "72528584"
 > | Биллингаккаунтс/Креатебиллингролеассигнмент | Нет |
 > | Биллингаккаунтс/Креатеинвоицесектионоператионс | Нет |
 > | Биллингаккаунтс и клиенты | Нет |
+> | Биллингаккаунтс/Customers/Биллингпермиссионс | Нет |
 > | Биллингаккаунтс/Customers/Биллингсубскриптионс | Нет |
 > | Биллингаккаунтс/Customers/Инитиатетрансфер | Нет |
 > | Биллингаккаунтс, клиенты и политики | Нет |
@@ -451,6 +452,7 @@ ms.locfileid: "72528584"
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
 > | блоккчаинмемберс | ДА |
+> | кордамемберс | ДА |
 > | наблюдатели | ДА |
 
 ## <a name="microsoftblueprint"></a>Microsoft.Blueprint
@@ -641,6 +643,8 @@ ms.locfileid: "72528584"
 > | проксимитиплацементграупс | ДА |
 > | restorePointCollections | ДА |
 > | restorePointCollections/restorePoints | Нет |
+> | шаредвмекстенсионс | ДА |
+> | Шаредвмекстенсионс и версии | Нет |
 > | sharedVMImages | ДА |
 > | sharedVMImages/versions | Нет |
 > | snapshots | ДА |
@@ -700,6 +704,7 @@ ms.locfileid: "72528584"
 > | registries/buildTasks | ДА |
 > | registries/buildTasks/steps | Нет |
 > | registries/eventGridFilters | Нет |
+> | реестры и Женератекредентиалс | Нет |
 > | registries/getBuildSourceUploadUrl | Нет |
 > | registries/GetCredentials | Нет |
 > | registries/importImage | Нет |
@@ -710,7 +715,9 @@ ms.locfileid: "72528584"
 > | registries/runs | Нет |
 > | registries/runs/cancel | Нет |
 > | registries/scheduleRun | Нет |
+> | реестры и Скопемапс | Нет |
 > | registries/tasks | ДА |
+> | реестры и маркеры | Нет |
 > | registries/updatePolicies | Нет |
 > | registries/webhooks | ДА |
 > | registries/webhooks/getCallbackConfig | Нет |
@@ -724,14 +731,6 @@ ms.locfileid: "72528584"
 > | containerServices | ДА |
 > | managedClusters | ДА |
 > | опеншифтманажедклустерс | ДА |
-
-## <a name="microsoftcontentmoderator"></a>Microsoft.ContentModerator
-
-> [!div class="mx-tableFixed"]
-> | Тип ресурса | Удаление ресурсов в полном режиме |
-> | ------------- | ----------- |
-> | приложений | ДА |
-> | updateCommunicationPreference | Нет |
 
 ## <a name="microsoftcortanaanalytics"></a>Microsoft.CortanaAnalytics
 
@@ -821,8 +820,6 @@ ms.locfileid: "72528584"
 > | каталоги данных, источники данных и проверки | Нет |
 > | каталоги данных/DataSources/scans/DataSets | Нет |
 > | каталоги данных, источники данных, проверки и триггеры | Нет |
-> | каталоги и скантаржетс | Нет |
-> | каталоги данных/скантаржетс/DataSets | Нет |
 
 ## <a name="microsoftdatafactory"></a>Microsoft.DataFactory
 
@@ -887,6 +884,9 @@ ms.locfileid: "72528584"
 > | ------------- | ----------- |
 > | серверы | ДА |
 > | servers/advisors | Нет |
+> | серверы и Приватиндпоинтконнектионпроксиес | Нет |
+> | серверы и Приватиндпоинтконнектионс | Нет |
+> | серверы и Привателинкресаурцес | Нет |
 > | servers/queryTexts | Нет |
 > | servers/recoverableServers | Нет |
 > | servers/topQueryStatistics | Нет |
@@ -900,6 +900,9 @@ ms.locfileid: "72528584"
 > | ------------- | ----------- |
 > | серверы | ДА |
 > | servers/advisors | Нет |
+> | серверы и Приватиндпоинтконнектионпроксиес | Нет |
+> | серверы и Приватиндпоинтконнектионс | Нет |
+> | серверы и Привателинкресаурцес | Нет |
 > | servers/queryTexts | Нет |
 > | servers/recoverableServers | Нет |
 > | servers/topQueryStatistics | Нет |
@@ -914,6 +917,7 @@ ms.locfileid: "72528584"
 > | серверграупс | ДА |
 > | серверы | ДА |
 > | servers/advisors | Нет |
+> | servers/keys | Нет |
 > | серверы и Приватиндпоинтконнектионпроксиес | Нет |
 > | серверы и Приватиндпоинтконнектионс | Нет |
 > | серверы и Привателинкресаурцес | Нет |
@@ -943,6 +947,7 @@ ms.locfileid: "72528584"
 > | ------------- | ----------- |
 > | аппликатионграупс | ДА |
 > | аппликатионграупс и приложения | Нет |
+> | аппликатионграупс и настольные системы | Нет |
 > | аппликатионграупс/стартменуитемс | Нет |
 > | хостпулс | ДА |
 > | хостпулс/сессионхостс | Нет |
@@ -1088,6 +1093,7 @@ ms.locfileid: "72528584"
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
 > | аутоманажедвмконфигуратионпрофилес | ДА |
+> | конфигуратионпрофилеассигнментс | Нет |
 > | guestConfigurationAssignments | Нет |
 > | software | Нет |
 > | софтвареупдатепрофиле | Нет |
@@ -1129,6 +1135,7 @@ ms.locfileid: "72528584"
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
 > | виртуальных | ДА |
+> | Компьютеры и расширения | ДА |
 
 ## <a name="microsofthybriddata"></a>Microsoft.HybridData
 
@@ -1235,6 +1242,7 @@ ms.locfileid: "72528584"
 > | ------------- | ----------- |
 > | workspaces | ДА |
 > | workspaces/computes | Нет |
+> | рабочие области и Евентгридфилтерс | Нет |
 
 ## <a name="microsoftmanagedidentity"></a>Microsoft.ManagedIdentity
 
@@ -1322,6 +1330,7 @@ ms.locfileid: "72528584"
 > | mediaservices/liveEvents | ДА |
 > | mediaservices/liveEvents/liveOutputs | Нет |
 > | mediaservices/liveOutputOperations | Нет |
+> | mediaservices/Медиаграфс | Нет |
 > | mediaservices/streamingEndpointOperations | Нет |
 > | mediaservices/streamingEndpoints | ДА |
 > | mediaservices/streamingLocators | Нет |
@@ -1520,6 +1529,7 @@ ms.locfileid: "72528584"
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
 > | policyEvents | Нет |
+> | полициметадата | Нет |
 > | policyStates | Нет |
 > | policyTrackedResources | Нет |
 > | remediations | Нет |
@@ -1610,6 +1620,8 @@ ms.locfileid: "72528584"
 > | ------------- | ----------- |
 > | deployments | Нет |
 > | deployments/operations | Нет |
+> | deploymentScripts | ДА |
+> | deploymentScripts и журналы | Нет |
 > | links | Нет |
 > | notifyResourceJobs | Нет |
 > | providers | Нет |
@@ -1659,6 +1671,7 @@ ms.locfileid: "72528584"
 > | applicationWhitelistings | Нет |
 > | ассессментметадата | Нет |
 > | оценки | Нет |
+> | инструментах автоматизации Composer | ДА |
 > | AutoProvisioningSettings | Нет |
 > | Compliances | Нет |
 > | dataCollectionAgents | Нет |

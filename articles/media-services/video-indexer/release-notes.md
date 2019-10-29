@@ -10,14 +10,14 @@ ms.service: media-services
 ms.subservice: video-indexer
 ms.workload: na
 ms.topic: article
-ms.date: 09/26/2019
+ms.date: 10/27/2019
 ms.author: juliako
-ms.openlocfilehash: 4953160a30e45b9be1ff249b6cd1f74e01bb14f3
-ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
+ms.openlocfilehash: 0583c0093d240026e3ebcdad7b14494f07986ec2
+ms.sourcegitcommit: b1c94635078a53eb558d0eb276a5faca1020f835
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2019
-ms.locfileid: "71672655"
+ms.lasthandoff: 10/27/2019
+ms.locfileid: "72968719"
 ---
 # <a name="azure-media-services-video-indexer-release-notes"></a>Заметки о выпуске индексатора видео служб мультимедиа Azure
 
@@ -28,7 +28,13 @@ ms.locfileid: "71672655"
 * Исправления ошибок
 * Нерекомендуемые функции.
 
-## <a name="september-2019"></a>Сентябрь 2019 г.
+## <a name="october-2019"></a>Октябрь 2019 г.
+ 
+* Поиск анимированных символов в коллекции
+
+    Теперь при индексировании анимированных символов можно искать их в програнном мониторе учетной записи. Дополнительные сведения см. в разделе [Распознавание анимированных символов](animated-characters-recognition.md).
+
+## <a name="september-2019"></a>Сентябрь 2019 г.
  
 Несколько улучшений, объявленных на IBC 2019:
  
@@ -85,7 +91,7 @@ ms.locfileid: "71672655"
 
 Теперь проекты можно создавать на основе видео, индексированных на разных языках (только API).
 
-## <a name="july-2019"></a>2019 июля
+## <a name="july-2019"></a>Июль 2019 г.
 
 ### <a name="editor-as-a-widget"></a>Редактор как мини-приложение
 
@@ -129,6 +135,6 @@ ms.locfileid: "71672655"
 
 В дополнение к уже поддерживаемому формату субтитров (SRT, ВТТ и TTML), индексатор видео теперь поддерживает загрузку записи в форматах TXT и CSV.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Обзор](video-indexer-overview.md)

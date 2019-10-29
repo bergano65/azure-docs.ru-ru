@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.subservice: compliance
-ms.date: 04/19/2019
+ms.date: 10/26/2019
 ms.author: ajburnle
 ms.reviewer: mamkumar
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 86ab995327522ac5dead9b3f944e0760084aedce
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: e57a216efee39df0ad22712b281073a68600e0df
+ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72389088"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72990740"
 ---
 # <a name="request-access-to-an-access-package-in-azure-ad-entitlement-management-preview"></a>Запрос доступа к пакету Access в управлении назначением Azure AD (Предварительная версия)
 
@@ -58,12 +58,13 @@ ms.locfileid: "72389088"
 
 1. Найдите пакет Access в списке.  При необходимости можно выполнить поиск, введя строку поиска, а затем выбрав **имя**, **Каталог**или фильтр **ресурсов** .
 
-    ![Мой портал доступа — Поиск ресурсов](./media/entitlement-management-request-access/elm-myaccess-resource-search.png)
+    ![Мой портал доступа — Поиск ресурсов](./media/entitlement-management-request-access/my-access-resource-search.png)
+
 1. Установите флажок, чтобы выбрать пакет Access.
 
-    ![Портал "Мой доступ" с пакетами для доступа](./media/entitlement-management-shared/my-access-access-packages.png)
-
 1. Щелкните **Запросить доступ**, чтобы открыть панель "Запрос доступа".
+
+    ![Портал "Мой доступ" с пакетами для доступа](./media/entitlement-management-request-access/my-access-request-access-button.png)
 
 1. Если отображается поле " **Деловое обоснование** ", введите обоснование для доступа.
 
@@ -78,6 +79,12 @@ ms.locfileid: "72389088"
 1. Щелкните **журнал запросов** , чтобы просмотреть список ваших запросов и состояние.
 
     Если пакет доступа требует утверждения, запрос теперь находится в состоянии ожидания утверждения.
+
+### <a name="select-a-policy"></a>Выбор политики
+
+Если вы запрашиваете доступ к пакету Access с несколькими применяемыми политиками, вам может быть предложено выбрать политику. Например, диспетчер пакетов Access может настроить пакет Access с двумя политиками для двух групп внутренних сотрудников. Первая политика может разрешить доступ в течение 60 дней и требует утверждения. Вторая политика может разрешить доступ в течение 2 дней и не требует утверждения. Если вы столкнулись с этим сценарием, необходимо выбрать политику, которую вы хотите использовать.
+
+![Мой портал доступа — запрос доступа — несколько политик](./media/entitlement-management-request-access/my-access-multiple-policies.png)
 
 ## <a name="cancel-a-request"></a>Отмена запроса
 
@@ -94,12 +101,6 @@ ms.locfileid: "72389088"
     ![Мой портал доступа — запрос на отмену](./media/entitlement-management-request-access/my-access-cancel-request.png)
 
 1. Щелкните **журнал запросов** , чтобы подтвердить отмену запроса.
-
-## <a name="select-a-policy"></a>Выбор политики
-
-При запросе доступа к пакету Access, имеющему несколько политик, которые применяются, может быть предложено выбрать политику. Например, диспетчер пакетов Access может настроить пакет Access с двумя политиками для двух групп внутренних сотрудников. Первая политика может разрешить доступ в течение 60 дней и требует утверждения. Вторая политика может разрешить доступ в течение 2 дней и не требует утверждения. Если вы столкнулись с этим сценарием, необходимо выбрать политику, которую вы хотите использовать.
-
-**Предварительная роль:** Запрашивающей стороны
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

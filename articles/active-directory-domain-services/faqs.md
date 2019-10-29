@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 09/03/2019
 ms.author: iainfou
-ms.openlocfilehash: 4add98ae092359c6f070bfc93b69257894f44e48
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.openlocfilehash: e8e6eb9be65b038780fa6e21cf20f4c5dda27a31
+ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72596418"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72991458"
 ---
 # <a name="frequently-asked-questions-faqs"></a>Часто задаваемые вопросы (FAQ)
 
@@ -47,7 +47,7 @@ ms.locfileid: "72596418"
 Да. Доменные службы Azure AD можно включить в виртуальной сети Azure Resource Manager. Классические виртуальные сети Azure больше не поддерживаются при создании нового управляемого домена.
 
 ### <a name="can-i-migrate-my-existing-managed-domain-from-a-classic-virtual-network-to-a-resource-manager-virtual-network"></a>Можно ли перенести существующий управляемый домен из классической виртуальной сети в диспетчер ресурсовную виртуальную сеть?
-Да, эта функция доступна в предварительной версии. Дополнительные сведения см. в статье [миграция доменных служб Azure AD из классической модели виртуальной сети в диспетчер ресурсов (Предварительная версия)] [миграция из классической версии-vnet.md].
+Да, эта функция доступна в предварительной версии. Дополнительные сведения см. [в статье миграция доменных служб Azure AD из классической модели виртуальной сети в Диспетчер ресурсов (Предварительная версия)](migrate-from-classic-vnet.md).
 
 ### <a name="can-i-enable-azure-ad-domain-services-in-an-azure-csp-cloud-solution-provider-subscription"></a>Можно ли включить доменные службы Azure AD в подписку Azure CSP (поставщик облачных решений)?
 Да. Дополнительные сведения см. [в статье Включение доменных служб Azure AD в подписках Azure CSP](csp.md).

@@ -3,7 +3,7 @@ title: Диагностика и решение проблем в службе "
 description: В этой статье описываются способы диагностики, устранения неполадок и решения распространенных проблем, с которыми вы можете столкнуться в среде службы "Аналитика временных рядов Azure".
 ms.service: time-series-insights
 services: time-series-insights
-author: ashannon7
+author: deepakpalled
 ms.author: dpalled
 manager: cshankar
 ms.reviewer: v-mamcge, jasonh, kfile
@@ -11,12 +11,12 @@ ms.workload: big-data
 ms.topic: troubleshooting
 ms.date: 10/10/2019
 ms.custom: seodec18
-ms.openlocfilehash: 78a991fb310c635648513e6472543b9f5c01119d
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.openlocfilehash: 7c9dcdf43e819e20126f948fa08f4f8f476036ac
+ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72330880"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72991273"
 ---
 # <a name="diagnose-and-solve-issues-in-your-time-series-insights-environment"></a>Диагностика и устранение неполадок в среде "Аналитика временных рядов Azure"
 
@@ -40,11 +40,11 @@ ms.locfileid: "72330880"
 
 * Для Центра Интернета вещей в Центре Интернета вещей Azure необходимо указать ключ с разрешениями на **подключение службы**. Политики **iothubowner** или **service** будут работать, поскольку у них обеих есть разрешения **service connect**.
 
-   [разрешения на подключение к службе центра 1IoT @no__t](media/diagnose-and-solve-problems/iothub-serviceconnect-permissions.png)](media/diagnose-and-solve-problems/iothub-serviceconnect-permissions.png#lightbox)
+   [разрешения на подключение к службе центра Интернета вещей![](media/diagnose-and-solve-problems/iothub-serviceconnect-permissions.png)](media/diagnose-and-solve-problems/iothub-serviceconnect-permissions.png#lightbox)
 
 * Для концентратора событий в концентраторах событий Azure необходимо указать ключ с разрешением **listen**. Политики **read** или **manage** будут работать, поскольку у них обеих есть разрешение **listen**.
 
-   [@no__t — разрешения прослушивания центра 1Event](media/diagnose-and-solve-problems/eventhub-listen-permissions.png)](media/diagnose-and-solve-problems/eventhub-listen-permissions.png#lightbox)
+   [![разрешения на прослушивание концентратора событий](media/diagnose-and-solve-problems/eventhub-listen-permissions.png)](media/diagnose-and-solve-problems/eventhub-listen-permissions.png#lightbox)
 
 ### <a name="cause-c-the-consumer-group-provided-isnt-exclusive-to-time-series-insights"></a>Причина C. предоставленная группа потребителей не является монопольной для Time Series Insights
 
@@ -69,7 +69,7 @@ ms.locfileid: "72330880"
 
 На рисунке ниже показана среда "Аналитика временных рядов" с номером SKU S1 и емкостью 3. Она может принимать 3 миллиона событий в день.
 
-[![Environment SKU текущая емкость](media/diagnose-and-solve-problems/environment-sku-current-capacity.png)](media/diagnose-and-solve-problems/environment-sku-current-capacity.png#lightbox)
+[Текущая емкость SKU![ной среды](media/diagnose-and-solve-problems/environment-sku-current-capacity.png)](media/diagnose-and-solve-problems/environment-sku-current-capacity.png#lightbox)
 
 Например, предположим, что среда принимает сообщения из концентратора событий. ежедневная частота приема данных составляет около 67 000 сообщений. Такая скорость соответствует примерно 46 сообщениям каждую минуту. 
 

@@ -3,7 +3,7 @@ title: Хранение данных в среде службы "Аналити�
 description: В этой статье описываются две параметра, которые контролируют хранение данных в среде службы "Аналитика временных рядов Azure".
 ms.service: time-series-insights
 services: time-series-insights
-author: ashannon7
+author: deepakpalled
 ms.author: dpalled
 manager: cshankar
 ms.reviewer: jasonh, kfile
@@ -11,12 +11,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 10/03/2019
 ms.custom: seodec18
-ms.openlocfilehash: 2939e37c891a6ecc0421062493cab2e5d79223b5
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.openlocfilehash: 9dd771d44452ddc36913caf04f3c3a2d15ff1f08
+ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72330898"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72990124"
 ---
 # <a name="understand-data-retention-in-azure-time-series-insights"></a>Общие сведения о хранении данных в службе "аналитика временных рядов Azure"
 
@@ -88,7 +88,7 @@ ms.locfileid: "72330898"
 
 Для затронутых концентраторов событий можно настроить свойство **Хранение сообщений**, чтобы минимизировать потерю данных при остановке приема данных в службе "Аналитика временных рядов".
 
-[@no__t — хранение сообщений центра 1Event.](media/time-series-insights-contepts-retention/event-hub-retention.png)](media/time-series-insights-contepts-retention/event-hub-retention.png#lightbox)
+[![хранения сообщений концентратора событий.](media/time-series-insights-contepts-retention/event-hub-retention.png)](media/time-series-insights-contepts-retention/event-hub-retention.png#lightbox)
 
 Если в источнике событий (`timeStampPropertyName`) не настроено ни одного свойства, по умолчанию для аналитики временных рядов используется метка времени прибытия в концентраторе событий в качестве оси X. Если `timeStampPropertyName` настроена на что-то другое, среда ищет настроенную `timeStampPropertyName` в пакете данных при анализе событий.
 

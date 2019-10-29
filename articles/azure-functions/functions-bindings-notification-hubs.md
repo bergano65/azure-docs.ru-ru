@@ -10,12 +10,12 @@ ms.service: azure-functions
 ms.topic: reference
 ms.date: 11/21/2017
 ms.author: cshoe
-ms.openlocfilehash: 7538e47a1d0bed0c72ff5ed467c98828cc9c18ba
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: cde565fbafec7f1209d0c65d6f3ebc121f38e6f5
+ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70086646"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72991382"
 ---
 # <a name="notification-hubs-output-binding-for-azure-functions"></a>Выходная привязка Центра уведомлений для службы "Функции Azure"
 
@@ -248,14 +248,14 @@ public static async Task Run(string myQueueItem, IAsyncCollector<Notification> n
 
 Параметры конструктора атрибута и его свойства описаны в разделе [конфигурации](#configuration).
 
-## <a name="configuration"></a>Конфигурация
+## <a name="configuration"></a>Настройка
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `NotificationHub`:
 
 |свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
-|**type** |Н/Д| Для этого свойства следует задать значение notificationHub. |
-|**direction** |Н/Д| Для этого свойства необходимо задать значение out. | 
+|**type** |Н/Д| Нужно задать значение `notificationHub`. |
+|**direction** |Н/Д| Нужно задать значение `out`. | 
 |**name** |Н/Д| Имя переменной, используемой в коде функции для сообщения Центра уведомлений. |
 |**tagExpression** |**TagExpression** | Выражения тегов позволяют указать, что уведомления должны отправляться на устройства, зарегистрированные для получения уведомлений, соответствующих выражению тега.  Дополнительные сведения см. в статье [Маршрутизация и выражения тегов](../notification-hubs/notification-hubs-tags-segment-push-message.md). |
 |**hubName** | **HubName** | Имя ресурса Центра уведомлений на портале Azure. |
@@ -301,11 +301,11 @@ public static async Task Run(string myQueueItem, IAsyncCollector<Notification> n
 
 ## <a name="exceptions-and-return-codes"></a>Исключения и коды возврата
 
-| Привязка | Ссылка |
+| Привязка | Справочные материалы |
 |---|---|
 | Концентратор уведомлений | [Руководство по операциям](https://docs.microsoft.com/rest/api/notificationhubs/) |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md)

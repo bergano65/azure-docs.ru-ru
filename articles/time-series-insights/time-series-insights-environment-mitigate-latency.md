@@ -3,7 +3,7 @@ title: Как отслеживать и уменьшать регулирова�
 description: Эта статья описывает процессы мониторинга, диагностики и устранение проблем производительности в службе "Аналитика временных рядов Azure", которые могут привести к задержкам и регулированию.
 ms.service: time-series-insights
 services: time-series-insights
-author: ashannon7
+author: deepakpalled
 ms.author: dpalled
 manager: cshankar
 ms.reviewer: v-mamcge, jasonh, kfile
@@ -12,12 +12,12 @@ ms.workload: big-data
 ms.topic: troubleshooting
 ms.date: 10/10/2019
 ms.custom: seodec18
-ms.openlocfilehash: 389e1472e1e1fcbed6dd3b6c1d155199246d877f
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.openlocfilehash: 4e82cdf43f568b6415cb7cb00ce0244654559b7d
+ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72332983"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72990152"
 ---
 # <a name="monitor-and-mitigate-throttling-to-reduce-latency-in-azure-time-series-insights"></a>Отслеживание и уменьшение регулирования для сокращения задержек в службе "Аналитика временных рядов Azure"
 
@@ -44,15 +44,15 @@ ms.locfileid: "72332983"
 
 1. В портал Azure выберите **оповещения**.
 
-   [@no__t 1Alerts](media/environment-mitigate-latency/add-alerts.png)](media/environment-mitigate-latency/add-alerts.png#lightbox)
+   [Оповещения![](media/environment-mitigate-latency/add-alerts.png)](media/environment-mitigate-latency/add-alerts.png#lightbox)
 
 1. После этого отобразится панель **Создание правила** . Выберите **Добавить** в поле **условие**.
 
-   [предупреждение о @no__t 1Add](media/environment-mitigate-latency/alert-pane.png)](media/environment-mitigate-latency/alert-pane.png#lightbox)
+   [![добавить оповещение](media/environment-mitigate-latency/alert-pane.png)](media/environment-mitigate-latency/alert-pane.png#lightbox)
 
 1. Затем настройте точные условия для логики сигнала.
 
-   [логика сигнала ![Configure](media/environment-mitigate-latency/configure-alert-rule.png)](media/environment-mitigate-latency/configure-alert-rule.png#lightbox)
+   [![настроить логику сигнала](media/environment-mitigate-latency/configure-alert-rule.png)](media/environment-mitigate-latency/configure-alert-rule.png#lightbox)
 
    В нем можно настроить оповещения с помощью некоторых из следующих условий.
 
@@ -70,7 +70,7 @@ ms.locfileid: "72332983"
 
 1. После настройки требуемой логики сигнала Просмотрите выбранное правило генерации оповещений визуально.
 
-   [@no__t 1Ingress](media/environment-mitigate-latency/ingress.png)](media/environment-mitigate-latency/ingress.png#lightbox)
+   [![входящий трафик](media/environment-mitigate-latency/ingress.png)](media/environment-mitigate-latency/ingress.png#lightbox)
 
 ## <a name="throttling-and-ingress-management"></a>Регулирование и управление входящими сообщениями
 

@@ -3,7 +3,7 @@ title: Проверка подлинности и авторизация с по
 description: В этой статье описывается настройка аутентификации и авторизации для пользовательского приложения, которое вызывает API "Аналитика временных рядов Azure".
 ms.service: time-series-insights
 services: time-series-insights
-author: ashannon7
+author: deepakpalled
 ms.author: dpalled
 manager: cshankar
 ms.reviewer: v-mamcge, jasonh, kfile
@@ -12,12 +12,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 09/23/2019
 ms.custom: seodec18
-ms.openlocfilehash: e98c004b802711c83558bf4d7ec86c418679836b
-ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
+ms.openlocfilehash: 4fd68f770cbe48b15646ec41c0bf94be5e760a50
+ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71981154"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72990183"
 ---
 # <a name="authentication-and-authorization-for-azure-time-series-insights-api"></a>Проверка подлинности и авторизация для API Azure Time Series Insights
 
@@ -59,15 +59,15 @@ ms.locfileid: "71981154"
 
 1. Для среды "аналитика временных рядов" выберите **политики доступа к данным** и нажмите кнопку **Добавить**.
 
-   [![Add новая политика доступа к данным в среде Time Series Insights](media/authentication-and-authorization/time-series-insights-data-access-policies-add.png)](media/authentication-and-authorization/time-series-insights-data-access-policies-add.png#lightbox)
+   [![добавить новую политику доступа к данным в среду "аналитика временных рядов"](media/authentication-and-authorization/time-series-insights-data-access-policies-add.png)](media/authentication-and-authorization/time-series-insights-data-access-policies-add.png#lightbox)
 
 1. В диалоговом окне **Выбор пользователя** вставьте **имя приложения** или **идентификатор приложения** из раздела регистрация приложения Azure Active Directory.
 
-   [![Find приложение в диалоговом окне "Выбор пользователя"](media/authentication-and-authorization/time-series-insights-data-access-policies-select-user.png)](media/authentication-and-authorization/time-series-insights-data-access-policies-select-user.png#lightbox)
+   [![Поиск приложения в диалоговом окне "Выбор пользователя"](media/authentication-and-authorization/time-series-insights-data-access-policies-select-user.png)](media/authentication-and-authorization/time-series-insights-data-access-policies-select-user.png#lightbox)
 
 1. Выберите роль. Выберите **читатель** , чтобы запросить данные или **участника** для запроса данных и изменения ссылочных данных. Нажмите кнопку **ОК**.
 
-   [@no__t читатель или участник 1Pick в диалоговом окне Выбор роли пользователя](media/authentication-and-authorization/time-series-insights-data-access-policies-select-role.png)](media/authentication-and-authorization/time-series-insights-data-access-policies-select-role.png#lightbox)
+   [![Выбор читателя или участника в диалоговом окне "Выбор роли пользователя"](media/authentication-and-authorization/time-series-insights-data-access-policies-select-role.png)](media/authentication-and-authorization/time-series-insights-data-access-policies-select-role.png#lightbox)
 
 1. Сохраните политику, нажав **кнопку ОК**.
 
@@ -105,13 +105,13 @@ ms.locfileid: "71981154"
 
 В этом разделе описаны распространенные заголовки HTTP-запросов и параметры, используемые для выполнения запросов к интерфейсам API "аналитика временных рядов". Требования к конкретному API подробно описаны в [справочной документации "аналитика временных рядов" REST API](https://docs.microsoft.com/rest/api/time-series-insights/).
 
-### <a name="authentication"></a>Проверка подлинности
+### <a name="authentication"></a>Authentication
 
 Для выполнения запросов с проверкой подлинности к [API-интерфейсам "аналитика временных рядов](https://docs.microsoft.com/rest/api/time-series-insights/)" необходимо передать допустимый токен носителя OAuth 2,0 в [заголовок авторизации](/rest/api/apimanagement/2019-01-01/authorizationserver/createorupdate) с помощью клиента произвольного выбора (POST, JavaScript C#). 
 
 > [!IMPORTANT]
-> Маркер должен быть полностью выдан ресурсу `https://api.timeseries.azure.com/` (также известному как "аудитория" маркера).
-> * После этого ваша [Публикация](https://www.getpostman.com/) **аусурл** будет соответствовать следующим требованиям: `https://login.microsoftonline.com/microsoft.onmicrosoft.com/oauth2/authorize?resource=https://api.timeseries.azure.com/`.
+> Маркер должен быть полностью выдан ресурсу `https://api.timeseries.azure.com/` (также известной как "аудитория" маркера).
+> * После этого ваша [Публикация](https://www.getpostman.com/) **аусурл** будет соответствовать следующим требованиям: `https://login.microsoftonline.com/microsoft.onmicrosoft.com/oauth2/authorize?resource=https://api.timeseries.azure.com/`
 
 > [!TIP]
 > Ознакомьтесь с [примером визуализации клиентского пакета SDK](https://tsiclientsample.azurewebsites.net/) для службы "аналитика временных рядов Azure", чтобы узнать, как программным способом проверить подлинность с помощью API службы "аналитика временных рядов", используя [клиентский пакет SDK для JavaScript](https://github.com/microsoft/tsiclient/blob/master/docs/API.md) , а также диаграммы и графики.
@@ -120,19 +120,19 @@ ms.locfileid: "71981154"
 
 Обязательные заголовки запроса:
 
-- `Authorization` для проверки подлинности и авторизации, в заголовке авторизации должен быть передан допустимый токен носителя OAuth 2,0. Маркер должен быть полностью выдан ресурсу `https://api.timeseries.azure.com/` (также известному как "аудитория" маркера).
+- `Authorization` для проверки подлинности и авторизации, в заголовке авторизации должен быть передан допустимый токен носителя OAuth 2,0. Маркер должен быть полностью выдан ресурсу `https://api.timeseries.azure.com/` (также известной как "аудитория" маркера).
 
 Необязательные заголовки запроса:
 
-- `Content-type` — поддерживается только `application/json`.
+- поддерживается `application/json` только для `Content-type`.
 - `x-ms-client-request-id` — идентификатор запроса клиента. Служба записывает это значение. Позволяет службе выполнять трассировку операций между службами.
 - `x-ms-client-session-id` — идентификатор сеанса клиента. Служба записывает это значение. Позволяет службе выполнять трассировку группы связанных операций между службами.
 - `x-ms-client-application-name` — имя приложения, создавшего этот запрос. Служба записывает это значение.
 
 Заголовки ответа:
 
-- `Content-type` — поддерживается только `application/json`.
-- Идентификатор запроса, созданный @no__tом 0-сервером. Можно использовать для обращения в корпорацию Майкрософт, чтобы исследовать запрос.
+- поддерживается `application/json` только для `Content-type`.
+- Идентификатор запроса, созданный сервером `x-ms-request-id`. Можно использовать для обращения в корпорацию Майкрософт, чтобы исследовать запрос.
 
 ### <a name="http-parameters"></a>Параметры HTTP
 
@@ -143,9 +143,9 @@ ms.locfileid: "71981154"
 
 Необязательные параметры строки запроса URL-адреса:
 
-- `timeout=<timeout>` — время ожидания для выполнения запроса на стороне сервера. Применяется только к [событиям "получить среду](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api#get-environment-events-api) " и " [получить агрегаты среды](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api#get-environment-aggregates-api) ". Значение времени ожидания должно быть в формате длительности ISO 8601, например `"PT20S"` и должно находиться в диапазоне `1-30 s`. По умолчанию имеет значение `30 s`.
+- `timeout=<timeout>` — время ожидания на стороне сервера для выполнения запроса. Применяется только к [событиям "получить среду](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api#get-environment-events-api) " и " [получить агрегаты среды](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api#get-environment-aggregates-api) ". Значение времени ожидания должно быть в формате длительности ISO 8601, например `"PT20S"` и должно находиться в диапазоне `1-30 s`. По умолчанию имеет значение `30 s`.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Пример кода, который вызывает API-интерфейс "аналитика временных рядов", см. в разделе [запрос данных с помощью C# ](./time-series-insights-query-data-csharp.md).
 

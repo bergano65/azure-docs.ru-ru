@@ -1,5 +1,5 @@
 ---
-title: Резервное копирование и восстановление баз данных SQL на виртуальных машинах Azure с помощью PowerShell Azure Backup
+title: Резервное копирование базы данных SQL в виртуальной машине Azure & восстановление с помощью PowerShell — Azure Backup
 description: Резервное копирование и восстановление баз данных SQL на виртуальных машинах Azure с помощью Azure Backup и PowerShell.
 ms.reviewer: pullabhk
 author: dcurwin
@@ -10,14 +10,14 @@ ms.topic: conceptual
 ms.date: 03/15/2019
 ms.author: dacurwin
 ms.assetid: 57854626-91f9-4677-b6a2-5d12b6a866e1
-ms.openlocfilehash: 242eaf06b9cd0b3783a626ab13eb0cb92300652f
-ms.sourcegitcommit: 961468fa0cfe650dc1bec87e032e648486f67651
+ms.openlocfilehash: 229d960f7851b5fab8504b6c2a109bece6c7b31f
+ms.sourcegitcommit: b1c94635078a53eb558d0eb276a5faca1020f835
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72249058"
+ms.lasthandoff: 10/27/2019
+ms.locfileid: "72969091"
 ---
-# <a name="back-up-and-restore-sql-databases-in-azure--vms-with-powershell"></a>Резервное копирование и восстановление баз данных SQL на виртуальных машинах Azure с помощью PowerShell
+# <a name="back-up-and-restore-sql-databases-in-azure-vms-with-powershell"></a>Резервное копирование и восстановление баз данных SQL на виртуальных машинах Azure с помощью PowerShell
 
 В этой статье описывается, как использовать Azure PowerShell для резервного копирования и восстановления базы данных SQL в виртуальной машине Azure с помощью [Azure Backup](backup-overview.md) хранилища служб восстановления.
 
@@ -25,7 +25,7 @@ ms.locfileid: "72249058"
 
 > [!div class="checklist"]
 > * Настройте PowerShell и зарегистрируйте поставщик служб восстановления Azure.
-> * Создайте хранилище служб восстановления,
+> * Создайте хранилище служб восстановления.
 > * Настройте резервное копирование для базы данных SQL на виртуальной машине Azure.
 > * Запустите задание резервного копирования.
 > * Восстановите резервную копию базы данных SQL.
@@ -43,7 +43,7 @@ ms.locfileid: "72249058"
 
 ![Иерархия объектов служб восстановления](./media/backup-azure-vms-arm-automation/recovery-services-object-hierarchy.png)
 
-Ознакомьтесь со [справочником по командлету](/powershell/module/az.recoveryservices) **AZ. RecoveryServices** в библиотеке Azure.
+Ознакомьтесь со справочником по [командлету](/powershell/module/az.recoveryservices) **AZ. RecoveryServices** в библиотеке Azure.
 
 ### <a name="set-up-and-install"></a>Установка и установка
 
@@ -471,7 +471,7 @@ MSSQLSERVER/m... Backup               InProgress           3/18/2019 8:41:27 PM 
 
 ### <a name="change-policy-for-backup-items"></a>Изменение политики для элементов архивации
 
-Пользователь может изменить существующую политику или изменить политику резервного элемента с Policy1 на Policy2. Чтобы переключить политики для архивированного элемента, просто выберите соответствующую политику и элемент резервного копирования и используйте команду [Enable-азрековерисервицес](https://docs.microsoft.com/powershell/module/az.recoveryservices/Enable-AzRecoveryServicesBackupProtection?view=azps-1.5.0) с элементом Backup в качестве параметра.
+Пользователь может изменить существующую политику или изменить политику резервного элемента с Policy1 на Policy2. Чтобы переключить политики для архивированного элемента, извлеките соответствующую политику и элемент резервного копирования и используйте команду [Enable-азрековерисервицес](https://docs.microsoft.com/powershell/module/az.recoveryservices/Enable-AzRecoveryServicesBackupProtection?view=azps-1.5.0) с элементом Backup в качестве параметра.
 
 ````powershell
 $TargetPol1 = Get-AzRecoveryServicesBackupProtectionPolicy -Name <PolicyName>

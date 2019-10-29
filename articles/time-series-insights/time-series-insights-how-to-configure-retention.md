@@ -3,20 +3,19 @@ title: Как настроить период удержания в среде �
 description: В этом руководстве описано, как настроить период удержания в среде службы "Аналитика временных рядов Azure".
 ms.service: time-series-insights
 services: time-series-insights
-author: ashannon7
+author: deepakpalled
 ms.author: dpalled
 manager: cshankar
-ms.reviewer: jasonh, kfile
 ms.workload: big-data
 ms.topic: conceptual
 ms.date: 10/10/2019
 ms.custom: seodec18
-ms.openlocfilehash: bf6788bac7003bec0ccfc171d622cd9b28bf43e0
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.openlocfilehash: ff4d326af691ae27894dc94d7581ba68951f090e
+ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72330887"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72990055"
 ---
 # <a name="configuring-retention-in-time-series-insights"></a>Настройка периода удержания в службе "Аналитика временных рядов"
 
@@ -41,7 +40,7 @@ ms.locfileid: "72330887"
 
 1. В разделе **Параметры** выберите **Свойства**.
 
-    [Параметры @no__t 1Select, затем настройте](media/data-retention/1-configure-data-retention.png)](media/data-retention/1-configure-data-retention.png#lightbox)
+    [![выберите параметры, а затем настройте.](media/data-retention/1-configure-data-retention.png)](media/data-retention/1-configure-data-retention.png#lightbox)
 
 1. Выберите **время хранения данных (в днях)** для настройки периода удержания с помощью ползунка или введите число в текстовом поле.
 
@@ -49,7 +48,7 @@ ms.locfileid: "72330887"
 
 1. Перейдите к параметру **поведения при превышении размера хранилища**. Выберите поведение **очистки старых данных** или **остановки приема данных**.
 
-    [![Data retention — Accept и Save.](media/data-retention/2-accept-and-save.png)](media/data-retention/2-accept-and-save.png#lightbox)
+    [![хранение данных — примите и сохраните.](media/data-retention/2-accept-and-save.png)](media/data-retention/2-accept-and-save.png#lightbox)
 
 1. Примите флажок, указывающий, что вы проверили документацию и понимаете потенциальные риски потери данных. Нажмите кнопку **Сохранить**, чтобы сохранить изменения.
 

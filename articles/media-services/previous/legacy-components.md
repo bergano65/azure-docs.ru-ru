@@ -11,30 +11,37 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/26/2019
+ms.date: 10/27/2019
 ms.author: juliako
-ms.openlocfilehash: e4ff157f58a68c68f8610c6c473f5d69897650ad
-ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
+ms.openlocfilehash: 30e8fa51df42d202d77ecdbc6a31fe3c7aaac6f4
+ms.sourcegitcommit: b1c94635078a53eb558d0eb276a5faca1020f835
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71338413"
+ms.lasthandoff: 10/27/2019
+ms.locfileid: "72968623"
 ---
 # <a name="azure-media-services-legacy-components"></a>Устаревшие компоненты служб мультимедиа Azure
 
 Со временем были внесены устойчивые улучшения и усовершенствования компонентов службы мультимедиа. В результате некоторые устаревшие компоненты были удалены. Инструкции по переносу приложения из устаревшего компонента можно найти в текущем компоненте в следующих статьях.
 
-## <a name="legacy-components-and-migration-guidance"></a>Устаревшие компоненты и руководство по миграции
+## <a name="retirement-plans-of-legacy-components-and-migration-guidance"></a>Планы выбытия устаревших компонентов и руководство по миграции
 
 Мы сообщаем о прекращении использования *Windows Azure Media Encoder* (Ваме) и обработчиков мультимедиа *кодировщика мультимедиа Azure* (\ \ Media Encoder). Эти процессоры выпускают 30 ноября 2019.
 
 * [Миграция из кодировщика мультимедиа Windows Azure в Media Encoder Standard](migrate-windows-azure-media-encoder.md)
 * [Миграция из кодировщика мультимедиа Azure в Media Encoder Standard](migrate-azure-media-encoder.md)
 
-Мы также сообщаем о прекращении использования предварительной версии *Azure Media indexer v1* и *Azure Media indexer v2*. Процессор мультимедиа [Azure Media indexer v1](media-services-index-content.md) будет снят с 1 октября по 2020. [Процессоры мультимедиа[предварительной версии Azure Media indexer v2](media-services-process-content-with-indexer2.md) будут прекращены 1 января 2019.  [Индексатор видео служб мультимедиа Azure](https://docs.microsoft.com/azure/media-services/video-indexer/) заменяет эти устаревшие обработчики мультимедиа.
+Мы также сообщаем о прекращении использования следующих Аналитика мультимедиа обработчиков мультимедиа: 
 
-* [Выполните миграцию из Azure Media indexer v1 и Azure Media indexer v2 в индексатор видео служб мультимедиа Azure](migrate-indexer-v1-v2.md).
+|Имя обработчика мультимедиа|Дата вывода|Дополнительные замечания|
+|---|---|
+|[Azure Media Indexer 2](media-services-process-content-with-indexer2.md)| 1 января 2020 года|Этот обработчик мультимедиа будет заменен [индексатором видео служб мультимедиа Azure](https://docs.microsoft.com/azure/media-services/video-indexer/). Дополнительные сведения см. в статье [Миграция из Azure Media indexer 2 в индексатор видео служб мультимедиа Azure](migrate-indexer-v1-v2.md).|
+|[Azure Media Indexer](media-services-index-content.md)|1 октября 2020 г.|Этот обработчик мультимедиа будет заменен [индексатором видео служб мультимедиа Azure](https://docs.microsoft.com/azure/media-services/video-indexer/). Дополнительные сведения см. в статье [Миграция с Azure Media indexer в индексатор видео служб мультимедиа Azure](migrate-indexer-v1-v2.md) .
+|[Azure Media Face Detector](media-services-face-and-emotion-detection.md)|1 февраля 2020 г.|Этот обработчик Аналитика мультимедиа предварительной версии будет снят с учета и не будет перенесен в общедоступную версию. Мы будем оценивать свои сценарии и варианты использования с клиентами для будущих инвестиций.|
+|[Azure Media Motion Detector](media-services-motion-detection.md)|1 февраля 2020 г.|Этот обработчик Аналитика мультимедиа предварительной версии будет снят с учета и не будет перенесен в общедоступную версию. Мы будем оценивать свои сценарии и варианты использования с клиентами для будущих инвестиций.|
+|[РАСПОЗНАВАНИе мультимедиа Azure](media-services-video-optical-character-recognition.md)|1 февраля 2020 г.|Этот обработчик мультимедиа будет заменен [индексатором видео служб мультимедиа Azure](https://docs.microsoft.com/azure/media-services/video-indexer/) и [предустановленной мастером Video API служб мультимедиа версии 3](../latest/analyzing-video-audio-files-concept.md).|
+|[Azure Media Video Thumbnails](media-services-video-summarization.md)|1 февраля 2020 г.|Этот обработчик мультимедиа будет заменен [индексатором видео служб мультимедиа Azure](https://docs.microsoft.com/azure/media-services/video-indexer/) и [предустановленной мастером Video API служб мультимедиа версии 3](../latest/analyzing-video-audio-files-concept.md).|
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Руководство по миграции из версии 2 в версию 3 Служб мультимедиа](../latest/migrate-from-v2-to-v3.md)

@@ -7,56 +7,54 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 04/18/2018
-ms.openlocfilehash: 393087f4d5c5e7a52fd2dd10d20362a045a0075b
-ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
+ms.date: 10/25/2019
+ms.openlocfilehash: 1bcb433230af856e92c7e418fc81b35bea549ddf
+ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71122667"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72987980"
 ---
 # <a name="how-to-configure-apache-kafka-on-hdinsight-to-automatically-create-topics"></a>Настройка автоматического создания разделов в Apache Kafka в HDInsight
 
-По умолчанию в [Apache Kafka](https://kafka.apache.org/) в HDInsight автоматическое создание разделов отключено. Но вы можете включить автоматическое создание разделов для существующих кластеров с помощью [Apache Ambari](https://ambari.apache.org/). Также автоматическое создание разделов можно включить при создании нового кластера Kafka с помощью шаблона Azure Resource Manager.
+По умолчанию [Apache Kafka](https://kafka.apache.org/) в HDInsight не включает автоматическое создание разделов. Но вы можете включить автоматическое создание разделов для существующих кластеров с помощью [Apache Ambari](https://ambari.apache.org/). Также автоматическое создание разделов можно включить при создании нового кластера Kafka с помощью шаблона Azure Resource Manager.
 
 ## <a name="apache-ambari-web-ui"></a>Веб-интерфейс Apache Ambari
 
 Чтобы включить автоматическое создание разделов в существующем кластере через пользовательский веб-интерфейс Ambari, выполните следующие действия:
 
-1. На [портале Azure](https://portal.azure.com) выберите нужный кластер Kafka.
+1. В [портал Azure](https://portal.azure.com)выберите кластер Kafka.
 
-2. На странице __сведений о кластере__ выберите __Панель мониторинга кластера__.
+1. На **панели мониторинга кластера**выберите **Ambari Home**.
 
-    ![Изображение страницы портала с выбранной панелью мониторинга кластера](./media/apache-kafka-auto-create-topics/kafka-cluster-overview.png)
+    ![Изображение страницы портала с выбранной панелью мониторинга кластера](./media/apache-kafka-auto-create-topics/azure-portal-cluster-dashboard-ambari.png)
 
-3. Затем выберите __Панель мониторинга кластера HDInsight__. Когда появится запрос, пройдите проверку подлинности, используя учетные данные (администратора) входа для кластера.
+    Когда появится запрос, пройдите проверку подлинности, используя учетные данные (администратора) входа для кластера. Кроме того, можно подключиться к Амабри напрямую из `https://CLUSTERNAME.azurehdinsight.net/`, где `CLUSTERNAME` — имя кластера Kafka.
 
-    ![Изображение процесса ввода на панели мониторинга кластера HDInsight](./media/apache-kafka-auto-create-topics/hdinsight-cluster-dashboard.png)
-
-3. В списке в левой части страницы выберите службу Kafka.
+1. В списке в левой части страницы выберите службу Kafka.
 
     ![Вкладка списка служб Apache Ambari](./media/apache-kafka-auto-create-topics/hdinsight-service-list.png)
 
-4. Выберите "Конфигурации" в середине страницы.
+1. Выберите "Конфигурации" в середине страницы.
 
     ![Вкладка "конфигурации" службы Apache Ambari](./media/apache-kafka-auto-create-topics/hdinsight-service-config.png)
 
-5. В поле "Фильтр" введите значение параметра `auto.create`.
+1. В поле "Фильтр" введите значение параметра `auto.create`.
 
     ![Поле фильтра поиска Apache Ambari](./media/apache-kafka-auto-create-topics/hdinsight-filter-field.png)
 
     Будет отфильтрован список свойств и отобразится параметр `auto.create.topics.enable`.
 
-6. Измените значение параметра `auto.create.topics.enable` на `true` и выберите "Сохранить". Добавьте заметку и выберите "Сохранить" еще раз.
+1. Измените значение `auto.create.topics.enable` на `true`и нажмите кнопку **сохранить**. Добавьте заметку и выберите **Сохранить** еще раз.
 
     ![Изображение ввода значения для параметра auto.create.topics.enable](./media/apache-kafka-auto-create-topics/auto-create-topics-enable.png)
 
-7. Выберите службу Kafka и щелкните __Перезапустить__, а затем выберите __Restart all affected__ (Перезапустить все затронутые). Когда появится запрос, выберите __Conform Restart All__ (Подтвердить перезапуск всех).
+1. Выберите службу Kafka и щелкните __Перезапустить__, а затем выберите __Restart all affected__ (Перезапустить все затронутые). Когда появится запрос, выберите __Conform Restart All__ (Подтвердить перезапуск всех).
 
     ![Apache Ambari перезапускает все затронутые](./media/apache-kafka-auto-create-topics/restart-all-affected.png)
 
 > [!NOTE]  
-> Можно также задать значения Ambari с помощью REST API Ambari. Обычно этот метод сложнее, так как требуется несколько вызовов REST, чтобы получить текущую конфигурацию, изменить ее и т. д. Дополнительные сведения см. в документе [Управление кластерами HDInsight с помощью REST API Ambari](../hdinsight-hadoop-manage-ambari-rest-api.md).
+> Можно также задать значения Ambari с помощью REST API Ambari. Обычно это сложнее, так как необходимо сделать несколько вызовов RESTFUL для получения текущей конфигурации, изменить ее и т. д. Дополнительные сведения см. в статье [Управление кластерами HDInsight с помощью Apache Ambari REST API](../hdinsight-hadoop-manage-ambari-rest-api.md) документе.
 
 ## <a name="resource-manager-templates"></a>Шаблоны Resource Manager
 

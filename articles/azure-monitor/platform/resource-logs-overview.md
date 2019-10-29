@@ -7,12 +7,12 @@ ms.topic: reference
 author: rboucher
 ms.author: robb
 ms.date: 10/22/2019
-ms.openlocfilehash: e1bf6a55568671ddb8f6999356cc9be43ce6a728
-ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
+ms.openlocfilehash: b953f9b5e5fd8c853746caad3047986786bd1317
+ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72804031"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72989622"
 ---
 # <a name="azure-resource-logs-overview"></a>Общие сведения о журналах ресурсов Azure
 Журналы ресурсов Azure — это [журналы платформ](platform-logs-overview.md) , создаваемые ресурсами Azure, которые описывают их внутреннюю работу. Все журналы ресурсов совместно используют общую схему верхнего уровня с гибкостью для каждой службы, чтобы создавать уникальные свойства для собственных событий.
@@ -25,8 +25,8 @@ ms.locfileid: "72804031"
 
 | Место назначения | Сценарий |
 |:---|:---|:---|
-| [Рабочая область Log Analytics](resource-logs-collect-storage.md) | Анализируйте журналы с помощью других данных мониторинга и используйте Azure Monitor функции, такие как запросы журнала и оповещения журналов. |
-| [служба хранилища Azure](archive-diagnostic-logs.md) | Архивируйте журналы для аудита или резервного копирования. |
+| [Рабочая область Log Analytics](resource-logs-collect-workspace.md) | Анализируйте журналы с помощью других данных мониторинга и используйте Azure Monitor функции, такие как запросы журнала и оповещения журналов. |
+| [служба хранилища Azure](resource-logs-collect-storage.md) | Архивируйте журналы для аудита или резервного копирования. |
 | [Концентратор событий](resource-logs-stream-event-hubs.md) | Потоковая передача журналов в сторонние системы ведения журналов и телеметрии.  |
 
 ## <a name="compute-resources"></a>Вычислительные ресурсы

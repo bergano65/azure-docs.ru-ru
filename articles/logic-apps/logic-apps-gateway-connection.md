@@ -1,6 +1,6 @@
 ---
-title: Доступ к локальным источникам данных из Azure Logic Apps
-description: Подключение к локальным источникам данных из приложений логики с помощью создания локального шлюза данных
+title: Доступ к источникам данных в локальной среде Azure Logic Apps
+description: Подключение к локальным источникам данных из Azure Logic Apps путем создания локального ресурса шлюза данных Azure
 services: logic-apps
 ms.service: logic-apps
 ms.suite: integration
@@ -9,12 +9,12 @@ ms.author: estfan
 ms.reviewer: arthii, LADocs
 ms.topic: article
 ms.date: 10/18/2019
-ms.openlocfilehash: 4b333df740fbd4c2243ea3f166593ca0a6f4bbad
-ms.sourcegitcommit: 9a4296c56beca63430fcc8f92e453b2ab068cc62
+ms.openlocfilehash: 6a01999eff6accf1b8d7f56729d9dce77fbedb0a
+ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2019
-ms.locfileid: "72675677"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72988710"
 ---
 # <a name="connect-to-on-premises-data-sources-from-azure-logic-apps"></a>Подключение к локальным источникам данных из Azure Logic Apps
 
@@ -77,7 +77,7 @@ Azure Logic Apps поддерживает операции чтения и за�
 
 1. В разделе **локальные шлюзы данных**выберите **Добавить**.
 
-   ![Добавление шлюза данных](./media/logic-apps-gateway-connection/add-gateway.png)
+   ![Добавление нового ресурса Azure для шлюза данных](./media/logic-apps-gateway-connection/add-azure-data-gateway-resource.png)
 
 1. В разделе **Создание шлюза подключения**укажите эти сведения для ресурса шлюза. Когда все будет готово, выберите **Создать**.
 
@@ -92,7 +92,7 @@ Azure Logic Apps поддерживает операции чтения и за�
 
    Ниже приведен пример установки шлюза, расположенного в том же регионе, что и ресурс шлюза, и он связан с одной и той же учетной записью Azure:
 
-   ![Укажите сведения для создания ресурса шлюза данных](./media/logic-apps-gateway-connection/gateway-details.png)
+   ![Укажите сведения для создания ресурса шлюза данных](./media/logic-apps-gateway-connection/add-azure-data-gateway-information.png)
 
 <a name="connect-logic-app-gateway"></a>
 
@@ -155,7 +155,7 @@ Azure Logic Apps поддерживает операции чтения и за�
 
    Пример.
 
-   ![Удаление шлюза](./media/logic-apps-gateway-connection/gateway-delete.png)
+   ![Удаление ресурса шлюза в Azure](./media/logic-apps-gateway-connection/delete-on-premises-data-gateway-resource.png)
 
 <a name="faq"></a>
 

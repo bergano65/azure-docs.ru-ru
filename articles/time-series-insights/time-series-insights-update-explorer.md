@@ -1,21 +1,21 @@
 ---
 title: Визуализация данных с помощью обозревателя службы "Аналитика временных рядов Azure" (предварительная версия) | Документация Майкрософт
 description: В этой статье описаны функции и возможности, доступные в веб-приложении обозревателя службы "Аналитика временных рядов Azure" (предварительная версия).
-author: ashannon7
+author: deepakpalled
 ms.author: dpalled
-ms.workload: big-data
 manager: cshankar
+ms.workload: big-data
 ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
 ms.date: 10/07/2019
 ms.custom: seodec18
-ms.openlocfilehash: a1707740d673ea49a4b4494f5d2e6a5753982090
-ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
+ms.openlocfilehash: 3f6c03ace13b9b6cb1bda004799502e1f382051d
+ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72553412"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72989956"
 ---
 # <a name="visualize-data-in-the-explorer-preview"></a>Визуализация данных в обозревателе (предварительная версия)
 
@@ -35,7 +35,7 @@ ms.locfileid: "72553412"
 
 Обозреватель службы "Аналитика временных рядов Azure" (предварительная версия) состоит из следующих элементов:
 
-[Представление обозревателя ![The](media/v2-update-explorer/explorer-one.png)](media/v2-update-explorer/explorer-one.png#lightbox)
+[![представления обозревателя](media/v2-update-explorer/explorer-one.png)](media/v2-update-explorer/explorer-one.png#lightbox)
 
 - <a href="#environment-drop-down-list">Панель "среда</a>": отображает среды службы "аналитика временных рядов Azure".
 - <a href="#navigation-menu">Меню навигации</a>: используется для переключения между страницами **анализ** и **модель** .
@@ -51,13 +51,13 @@ ms.locfileid: "72553412"
 
 1. Щелкните стрелку раскрывающегося списка рядом с отображаемой средой.
 
-   [Панель управления ![The](media/v2-update-explorer/explorer-two.png)](media/v2-update-explorer/explorer-two.png#lightbox)
+   [![панели управления](media/v2-update-explorer/explorer-two.png)](media/v2-update-explorer/explorer-two.png#lightbox)
 
 1. Затем выберите нужную среду.
 
 ## <a name="navigation-menu"></a>Меню навигации
 
-  [меню навигации ![The](media/v2-update-explorer/explorer-three.png)](media/v2-update-explorer/explorer-three.png#lightbox)
+  [![меню навигации](media/v2-update-explorer/explorer-three.png)](media/v2-update-explorer/explorer-three.png#lightbox)
 
 Используйте меню навигации для выбора между двумя представлениями:
 
@@ -72,7 +72,7 @@ ms.locfileid: "72553412"
 
 Панель «Поиск модели» можно использовать для простого поиска и навигации по иерархии модели временных рядов, чтобы найти конкретные экземпляры временных рядов, которые нужно отобразить на диаграмме. После выбора экземпляров они добавляются как к текущей диаграмме, так и к данным.
 
-  [панель поиска ![The моделей](media/v2-update-explorer/explorer-four.png)](media/v2-update-explorer/explorer-four.png#lightbox)
+  [![панели «Поиск модели»](media/v2-update-explorer/explorer-four.png)](media/v2-update-explorer/explorer-four.png#lightbox)
 
 ### <a name="model-authoring"></a>Создание моделей
 
@@ -88,11 +88,11 @@ ms.locfileid: "72553412"
 
 В этом случае отображаются поля экземпляра и другие метаданные, связанные с выбранными экземплярами "аналитика временных рядов". Установив флажки справа, можно скрыть или отобразить определенные экземпляры из текущей диаграммы. Можно также удалить определенные элементы данных из текущих данных, выбрав красный элемент управления **Удаление** (корзина) в левой части элемента.
 
-  [хорошо ![The предварительный просмотр](media/v2-update-explorer/explorer-five.png)](media/v2-update-explorer/explorer-five.png#lightbox)
+  [![области просмотра](media/v2-update-explorer/explorer-five.png)](media/v2-update-explorer/explorer-five.png#lightbox)
 
 Чтобы изменить макет страницы « **анализ** диаграммы», щелкните значок многоточия в правом верхнем углу.
 
-  [параметры макета ![Telemetry](media/v2-update-explorer/explorer-six.png)](media/v2-update-explorer/explorer-six.png#lightbox)
+  [параметры макета телеметрии![](media/v2-update-explorer/explorer-six.png)](media/v2-update-explorer/explorer-six.png#lightbox)
 
 > [!NOTE]
 > Если вы видите следующее сообщение, у экземпляра не будет данных в течение выбранного интервала времени. Чтобы устранить эту проблему, увеличьте период времени или подтвердите, что экземпляр отправляет данные.
@@ -103,7 +103,7 @@ ms.locfileid: "72553412"
 
 Используя диаграмму, можно отобразить экземпляры "аналитика временных рядов" в виде строк. Панель управления среда, модель данных и временной диапазон можно свернуть, выбрав веб-элементы управления, чтобы увеличить диаграмму.
 
-  [Общие сведения о ![Preview диаграмме](media/v2-update-explorer/explorer-eight.png)](media/v2-update-explorer/explorer-eight.png#lightbox)
+  [Обзор диаграммы предварительной версии![](media/v2-update-explorer/explorer-eight.png)](media/v2-update-explorer/explorer-eight.png#lightbox)
 
 - **Выбранный диапазон дат**: определяет, какие элементы данных доступны для визуализации.
 
@@ -121,15 +121,15 @@ ms.locfileid: "72553412"
 
 Чтобы продолжить детализацию определенного среза данных, щелкните точку данных на текущем графе, а затем перетащите выбранную область в конечную точку по своему усмотрению. Щелкните правой кнопкой мыши серую выбранную область и выберите **масштаб**, как показано на следующем рисунке:
 
-  [![Preview масштаба диаграммы](media/v2-update-explorer/explorer-nine.png)](media/v2-update-explorer/explorer-nine.png#lightbox)
+  [масштаб предварительной версии диаграммы![](media/v2-update-explorer/explorer-nine.png)](media/v2-update-explorer/explorer-nine.png#lightbox)
 
 После выполнения действия **масштабирования** вы увидите выбранный набор данных. Выберите элемент управления "Формат оси y", чтобы пройти по трем представлениям по оси y для данных "аналитика временных рядов".
 
-  [![Preview оси y диаграммы](media/v2-update-explorer/explorer-ten.png)](media/v2-update-explorer/explorer-ten.png#lightbox)
+  [![ная Предварительная версия диаграммы оси y](media/v2-update-explorer/explorer-ten.png)](media/v2-update-explorer/explorer-ten.png#lightbox)
 
 Здесь можно увидеть пример общих осей Y:
 
-  [![Preview общие оси Y](media/v2-update-explorer/explorer-eleven.png)](media/v2-update-explorer/explorer-eleven.png#lightbox)
+  [![Просмотр общих осей Y](media/v2-update-explorer/explorer-eleven.png)](media/v2-update-explorer/explorer-eleven.png#lightbox)
 
 ## <a name="time-editor-panel"></a>Панель редактора времени
 
@@ -151,7 +151,7 @@ ms.locfileid: "72553412"
 
 1. **Диапазон дат для веб-элемента управления**: с помощью этого веб-элемента управления можно легко выбрать нужные вам диапазоны даты и времени. Также с его помощью можно переключаться между разными часовыми поясами. После внесения изменений для применения к текущей рабочей области нажмите кнопку **сохранить**.
 
-   [![To и из панели выбора](media/v2-update-explorer/explorer-thirteen.png)](media/v2-update-explorer/explorer-thirteen.png#lightbox)
+   [![на панель выбора и из нее](media/v2-update-explorer/explorer-thirteen.png)](media/v2-update-explorer/explorer-thirteen.png#lightbox)
 
 ## <a name="navigation-panel"></a>Панель навигации
 
@@ -159,15 +159,15 @@ ms.locfileid: "72553412"
 
 ### <a name="current-session-share-link-control"></a>Элемент управления ссылкой на общий доступ к текущему сеансу
 
-  [значок ![Share](media/v2-update-explorer/explorer-fifteen.png)](media/v2-update-explorer/explorer-fifteen.png#lightbox)
+  [значок общего доступа к![](media/v2-update-explorer/explorer-fifteen.png)](media/v2-update-explorer/explorer-fifteen.png#lightbox)
 
 Щелкните значок новый **общий ресурс** , чтобы поделиться ссылкой на URL-адрес с вашей командой.
 
-  [![Share URL-адрес экземпляра](media/v2-update-explorer/url-share.png)](media/v2-update-explorer/url-share.png#lightbox)
+  [![поделиться URL-адресом экземпляра](media/v2-update-explorer/url-share.png)](media/v2-update-explorer/url-share.png#lightbox)
 
 ### <a name="tenant-section"></a>Раздел клиента
 
-  [Выбор ![Tenant](media/v2-update-explorer/explorer-sixteen.png)](media/v2-update-explorer/explorer-sixteen.png#lightbox)
+  [Выбор клиента![](media/v2-update-explorer/explorer-sixteen.png)](media/v2-update-explorer/explorer-sixteen.png#lightbox)
 
 * Отображает текущие сведения об учетной записи для входа в службу "аналитика временных рядов".
 * Используйте его для переключения между доступными темами "аналитика временных рядов".
@@ -177,7 +177,7 @@ ms.locfileid: "72553412"
 
 Чтобы выбрать новую тему, выберите значок профиля, расположенный в правом верхнем углу. Затем выберите **изменить тему**.
 
-  [Выбор ![Theme](media/v2-update-explorer/theme-selection.png)](media/v2-update-explorer/theme-selection.png#lightbox)
+  [Выбор темы![](media/v2-update-explorer/theme-selection.png)](media/v2-update-explorer/theme-selection.png#lightbox)
 
 > [!TIP]
 > Выбрать язык также можно, выбрав значок профиля.
@@ -187,7 +187,7 @@ ms.locfileid: "72553412"
 * **Светло-тема**: тема по умолчанию, показанная в этом документе.
 * **Темная тема**: отображает обозреватель, как показано ниже:
 
-  [темная тема ![Selected](media/v2-update-explorer/explorer-seventeen.png)](media/v2-update-explorer/explorer-seventeen.png#lightbox)
+  [![выбранной темной темы](media/v2-update-explorer/explorer-seventeen.png)](media/v2-update-explorer/explorer-seventeen.png#lightbox)
 
 ## <a name="s1s2-environment-controls"></a>Элементы управления средой S1/S2
 
@@ -197,7 +197,7 @@ ms.locfileid: "72553412"
 
 Вместо иерархии отображается панель условия аналитики временных рядов, в которой можно определить запросы в среде. Используйте его для фильтрации данных на основе предиката.
 
-  [панель запросов ![Where](media/v2-update-explorer/explorer-eighteen.png)](media/v2-update-explorer/explorer-eighteen.png#lightbox)
+  [![, где панель запросов](media/v2-update-explorer/explorer-eighteen.png)](media/v2-update-explorer/explorer-eighteen.png#lightbox)
 
 Панель редактора условий службы "Аналитика временных рядов" (предварительная версия) принимает следующие параметры:
 
@@ -214,17 +214,17 @@ ms.locfileid: "72553412"
 
 ### <a name="examples-of-where-clauses"></a>Примеры предложений WHERE
 
-  [Примеры предложения ![Where](media/v2-update-explorer/explorer-nineteen.png)](media/v2-update-explorer/explorer-nineteen.png#lightbox)
+  [Примеры предложения WHERE![](media/v2-update-explorer/explorer-nineteen.png)](media/v2-update-explorer/explorer-nineteen.png#lightbox)
 
 **Мера**: раскрывающийся список, в котором отображаются все числовые столбцы (**Double**), которые можно использовать в качестве элементов для текущей диаграммы.
 
 **Разделить по**: в этом раскрывающемся списке отображаются все доступные столбцы категорий (строки) в модели, по которым можно группировать данные. Можно добавить до пяти условий для просмотра на одной оси x. Введите необходимые параметры, а затем нажмите кнопку **Добавить** , чтобы добавить новый термин.
 
-  [![Queried и отфильтрованное представление 1](media/v2-update-explorer/explorer-twenty.png)](media/v2-update-explorer/explorer-twenty.png#lightbox)
+  [1![запрошенное и отфильтрованное представление](media/v2-update-explorer/explorer-twenty.png)](media/v2-update-explorer/explorer-twenty.png#lightbox)
 
 Вы можете отображать и скрывать элементы на панели диаграммы, щелкнув значок видимого, как показано на следующем рисунке. Чтобы полностью удалить запросы, выберите красный **крестик**.
 
-  [![Queried и отфильтрованное представление 2](media/v2-update-explorer/explorer-twenty-one.png)](media/v2-update-explorer/explorer-twenty-one.png#lightbox)
+  [![представление запросов и отфильтрованных представлений 2](media/v2-update-explorer/explorer-twenty-one.png)](media/v2-update-explorer/explorer-twenty-one.png#lightbox)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

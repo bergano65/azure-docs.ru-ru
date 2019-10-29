@@ -3,21 +3,20 @@ title: Как масштабировать среду Azure Time Series Insights
 description: В этом руководстве описано масштабирование среды Azure Time Series Insights. Используйте портал Azure для добавления или вычитания ресурсов в ценовой категории SKU.
 ms.service: time-series-insights
 services: time-series-insights
-author: ashannon7
+author: deepakpalled
 ms.author: dpalled
 manager: cshankar
-ms.reviewer: v-mamcge, jasonh, kfile
 ms.devlang: csharp
 ms.workload: big-data
 ms.topic: conceptual
 ms.date: 10/10/2019
 ms.custom: seodec18
-ms.openlocfilehash: a899de22137decc1eb1578369a2751710c17abda
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.openlocfilehash: 3f03f5ed75c720c9b0daf30d721ef4d2aee9749c
+ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72332890"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72991160"
 ---
 # <a name="how-to-scale-your-time-series-insights-environment"></a>Как масштабировать среду Azure Time Series Insights
 
@@ -27,21 +26,9 @@ ms.locfileid: "72332890"
 
 Однако изменение ценовой категории SKU запрещено. Например, среду с ценовой категорией SKU S1 нельзя преобразовать в среду S2 или наоборот.
 
-## <a name="s1-sku-ingress-rates-and-capacities"></a>Скорость приема и емкость номера SKU S1
+## <a name="ga-limits"></a>Ограничения в общедоступной версии
 
-| Емкость номера SKU S1 | Скорость приема | Максимальная емкость хранилища
-| --- | --- | --- |
-| 1 | 1 ГБ (1 млн событий) | 30 ГБ в месяц (30 млн событий) |
-| 10 | 10 ГБ (10 млн событий) | 300 ГБ в месяц (300 млн событий) |
-
-## <a name="s2-sku-ingress-rates-and-capacities"></a>Скорость приема и емкость номера SKU S2
-
-| Емкость номера SKU S2 | Скорость приема | Максимальная емкость хранилища
-| --- | --- | --- |
-| 1 | 10 ГБ (10 млн событий) | 300 ГБ в месяц (300 млн событий) |
-| 10 | 100 ГБ (100 млн событий) | 3 ТБ в месяц (3 млрд событий) |
-
-Емкость масштабируется линейно, поэтому номер SKU S1 с емкостью 2 поддерживает скорость приема 2 ГБ (2 млн событий) в неделю и 60 ГБ (60 млн событий) в месяц.
+[!INCLUDE [Azure Time Series Insights GA limits](../../includes/time-series-insights-ga-limits.md)]
 
 ## <a name="change-the-capacity-of-your-environment"></a>Изменение емкости среды
 
@@ -49,11 +36,11 @@ ms.locfileid: "72332890"
 
 1. В меню среды службы "Аналитика временных рядов" выберите **Настроить**.
 
-   [@no__t -1configure. png](media/scale-your-environment/configure.png)](media/scale-your-environment/configure.png#lightbox)
+   [![configure. png](media/scale-your-environment/configure.png)](media/scale-your-environment/configure.png#lightbox)
 
 1. Настройте ползунок **емкости** соответственно требованиям скорости приема и емкости хранилища. Обратите внимание, что **скорость приема**, **емкость хранилища** и **оценочная стоимость** обновляются динамически, чтобы показать эффект изменения.
 
-   [@no__t 1Slider](media/scale-your-environment/slider.png)](media/scale-your-environment/slider.png#lightbox)
+   [Ползунок![](media/scale-your-environment/slider.png)](media/scale-your-environment/slider.png#lightbox)
 
    Кроме того, можно ввести число множителя емкости в текстовом поле справа от ползунка.
 

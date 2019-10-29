@@ -10,12 +10,12 @@ ms.subservice: video-indexer
 ms.topic: article
 ms.date: 09/01/2019
 ms.author: juliako
-ms.openlocfilehash: 983b66be6b51c9af5987e539ea1175a65c9269b3
-ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
+ms.openlocfilehash: f0dede42891069bb5d01ddc33f3797c20c5493d7
+ms.sourcegitcommit: b1c94635078a53eb558d0eb276a5faca1020f835
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70862048"
+ms.lasthandoff: 10/27/2019
+ms.locfileid: "72968742"
 ---
 # <a name="automatically-identify-and-transcribe-multi-language-content-preview"></a>Автоматическое обнаружение и транскрипция содержимого на нескольких языках (Предварительная версия)
 
@@ -39,7 +39,7 @@ ms.locfileid: "70862048"
 
 ## <a name="choosing-multilingual-identification-on-indexing-with-api"></a>Выбор многоязычной идентификации при индексировании с помощью API
 
-При индексировании видео или его повторном [индексировании](https://api-portal.videoindexer.ai/docs/services/operations/operations/Re-Index-Video?) с помощью API- `multi-language detection` интерфейса выберите параметр `sourceLanguage` в параметре.
+При индексировании видео или его повторном [индексировании](https://api-portal.videoindexer.ai/docs/services/operations/operations/Re-Index-Video?) с помощью API выберите параметр `multi-language detection` в параметре `sourceLanguage`.
 
 ### <a name="model-output"></a>Выходные данные модели
 
@@ -73,7 +73,7 @@ ms.locfileid: "70862048"
 },
 ```
 
-## <a name="guidelines-and-limitations"></a>Рекомендации и ограничения
+## <a name="guidelines-and-limitations"></a>Правила и ограничения
 
 * Набор поддерживаемых языков: Английский, французский, немецкий, испанский.
 * Поддержка многоязычного содержимого с поддержкой трех языков.
@@ -86,10 +86,9 @@ ms.locfileid: "70862048"
 * Создание и редактирование проекта сейчас недоступно для видеороликов на разных языках.
 * Пользовательские языковые модели недоступны при использовании многоязыкового обнаружения.
 * Добавление ключевых слов не поддерживается.
-* API обновления записи обновлений не поддерживается.
 * При экспорте файлов скрытых субтитров Указание языка не отображается.
+* API обновления для записи обновлений не поддерживает файлы на нескольких языках.
 
-
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Общие сведения об Индексаторе видео](video-indexer-overview.md)
