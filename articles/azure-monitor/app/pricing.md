@@ -6,14 +6,14 @@ ms.subservice: application-insights
 ms.topic: conceptual
 author: DaleKoetke
 ms.author: dalek
-ms.date: 10/03/2019
+ms.date: 10/28/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: 5d8c0420f680371ab63a2ddd09071769586a42ca
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: 4c56c8f98e536060ea18eb6b9d3a37179eebc89f
+ms.sourcegitcommit: 38251963cf3b8c9373929e071b50fd9049942b37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72900024"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73044350"
 ---
 # <a name="manage-usage-and-costs-for-application-insights"></a>Управление использованием и затратами для Application Insights
 
@@ -22,7 +22,7 @@ ms.locfileid: "72900024"
 
 Application Insights предназначен для получения всех необходимых сведений для наблюдения за доступностью, производительностью и использованием веб-приложений независимо от того, размещены ли они в Azure или локально. Application Insights поддерживает популярные языки и платформы, такие как .NET, Java и Node. js, и интегрируется с DevOps процессами и инструментами, такими как Azure DevOps, JIRA и PagerDuty. Важно понимать, что определяет затраты на мониторинг приложений. В этой статье мы рассмотрим, какие диски отслеживают затраты на мониторинг приложений и как можно заблаговременно отслеживать их и контролировать.
 
-Если у вас возникли вопросы о принципах формирования цен на Application Insights, вы можете задать их на нашем [форуме](https://social.msdn.microsoft.com/Forums/en-US/home?forum=ApplicationInsights&filter=alltypes&sort=lastpostdesc).
+Если у вас возникли вопросы о принципах формирования цен на Application Insights, вы можете задать их на нашем [форуме](https://social.msdn.microsoft.com/Forums/home?forum=ApplicationInsights&filter=alltypes&sort=lastpostdesc).
 
 ## <a name="pricing-model"></a>Модель ценообразования
 
@@ -34,17 +34,17 @@ Application Insights предназначен для получения всех
 
 Если вы еще не используете Application Insights, можно использовать [Калькулятор цен Azure Monitor](https://azure.microsoft.com/pricing/calculator/?service=monitor) , чтобы оценить стоимость использования Application Insights. Начните с ввода в поле поиска «Azure Monitor» и щелчком на полученном Azure Monitor плитке. Прокрутите страницу вниз до Azure Monitor и выберите Application Insights в раскрывающемся списке тип.  Здесь можно ввести количество ГБ данных, которые будут собраны в месяц, поэтому они дают вопрос о том, сколько данных будет Application Insights собираются мониторинг приложения. 
 
-Существует два подхода к решению этой задачи: использование мониторинга по умолчанию и адаптивной выборки, которая доступна в пакете SDK ASP.NET, или Оценка вероятного приема данных в зависимости от того, что появлялось другим подобным клиентам. 
+Существует два подхода к решению этой задачи: использование мониторинга по умолчанию и адаптивной выборки, которая доступна в пакете SDK ASP.NET, или Оценка вероятного приема данных в зависимости от того, что появлялось другим подобным клиентам.
 
 ### <a name="data-collection-when-using-sampling"></a>Сбор данных при использовании выборки
 
-При [адаптивной выборки](https://docs.microsoft.com/azure/azure-monitor/app/sampling#adaptive-sampling-in-your-aspnetaspnet-core-web-applications)пакета SDK для ASP.NET объем данных корректируется автоматически, чтобы он оставался в пределах заданного максимального уровня трафика для мониторинга Application Insights по умолчанию. Если приложение создает небольшой объем данных телеметрии, например при отладке или из-за низкого уровня использования, то элементы не будут удаляться процессором выборки, если том находится ниже настроенных событий в секунду. Для приложения большого объема с пороговым значением по умолчанию 5 событий в секунду Адаптивная выборка будет ограничивать число ежедневных событий до 432 000. При стандартном среднем размере событий, равном 1 КБ, это соответствует 13,4 ГБ данных телеметрии за 31-дневный месяц на каждом узле, где размещается ваше приложение (поскольку выборка выполняется локально для каждого узла). 
+При [адаптивной выборки](https://docs.microsoft.com/azure/azure-monitor/app/sampling#adaptive-sampling-in-your-aspnetaspnet-core-web-applications)пакета SDK для ASP.NET объем данных корректируется автоматически, чтобы он оставался в пределах заданного максимального уровня трафика для мониторинга Application Insights по умолчанию. Если приложение создает небольшой объем данных телеметрии, например при отладке или из-за низкого уровня использования, то элементы не будут удаляться процессором выборки, если том находится ниже настроенных событий в секунду. Для приложения большого объема с пороговым значением по умолчанию, равным пяти событиям в секунду, Адаптивная выборка будет ограничивать число ежедневных событий до 432 000. При стандартном среднем размере событий, равном 1 КБ, это соответствует 13,4 ГБ данных телеметрии за 31-дневный месяц на каждом узле, где размещается ваше приложение (поскольку выборка выполняется локально для каждого узла). 
 
-Для пакетов SDK, которые не поддерживают адаптивную выборку, можно использовать [выборку](https://docs.microsoft.com/azure/azure-monitor/app/sampling#ingestion-sampling) , которая выбирается при получении данных Application Insights в зависимости от процента данных для удержания или с [фиксированной частотой для ASP.NET, ASP.NET Core и Java. ](https://docs.microsoft.com/azure/azure-monitor/app/sampling#fixed-rate-sampling-for-aspnet-aspnet-core-java-websites-and-python-applications)веб-сайты для уменьшения трафика, отправляемого с веб-сервера и веб-браузеров
+Для пакетов SDK, которые не поддерживают адаптивную выборку, можно использовать [выборку приема](https://docs.microsoft.com/azure/azure-monitor/app/sampling#ingestion-sampling), которая выбирается при получении данных Application Insights на основе процента данных для удержания или с [фиксированной частотой для ASP.NET, ASP.NET Core и Java. ](https://docs.microsoft.com/azure/azure-monitor/app/sampling#fixed-rate-sampling-for-aspnet-aspnet-core-java-websites-and-python-applications)веб-сайты для уменьшения трафика, отправляемого с веб-сервера и веб-браузеров
 
 ### <a name="learn-from-what-similar-customers-collect"></a>Узнайте, какие аналогичные клиенты собираются
 
-В калькуляторе цен на мониторинг Azure для Application Insights, если вы включили функцию "Оценка объема данных на основе активности приложения", вы можете предоставить входные данные о приложении (количество запросов в месяц и просмотров страниц в месяц), если будет сбор данных телеметрии на стороне клиента), а затем калькулятор сообщит, как медиана и 90 процентиль объем собранных в ней приложений. Разумеется, эти приложения охватывают диапазон конфигураций Application Insights (например, некоторые из них имеют [выборку](../../azure-monitor/app/sampling.md)по умолчанию, некоторые из них не имеют выборки и т. д.), поэтому у вас по-прежнему есть элемент управления, позволяющий уменьшить объем данных, которые вы занимали гораздо меньше среднего уровня с помощью Но это отправная точка для понимания того, что видят другие похожие клиенты. 
+В калькуляторе цен на мониторинг Azure для Application Insights, если вы включили функцию "Оценка объема данных на основе активности приложения", вы можете предоставить входные данные о приложении (количество запросов в месяц и просмотров страниц в месяц), если будет сбор данных телеметрии на стороне клиента), а затем калькулятор сообщит, как медиана и 90 процентиль объем собранных в ней приложений. Эти приложения охватывают диапазон конфигураций Application Insights (например, некоторые из них имеют [выборку](../../azure-monitor/app/sampling.md)по умолчанию, некоторые из них не имеют выборки и т. д.), поэтому у вас по-прежнему есть элемент управления, позволяющий уменьшить объем данных, которые вы занимали гораздо меньше медианы, Но это отправная точка для понимания того, что видят другие похожие клиенты. 
 
 ## <a name="understand-your-usage-and-estimate-costs"></a>Сведения об использовании и оценке затрат
 
@@ -66,43 +66,66 @@ E. Настройка ежедневного ограничения объема
 
 ![В меню слева выберите "Выставление счетов".](./media/pricing/02-billing.png)
 
-## <a name="viewing-application-insights-usage-on-your-azure-bill"></a>Просмотр Application Insights использования в счете Azure 
+### <a name="using-data-volume-metrics"></a>Использование метрик объема данных
+<a id="understanding-ingested-data-volume"></a>
 
-Azure предоставляет большое количество полезных функций в центре [управления затратами Azure и центра выставления счетов](https://docs.microsoft.com/azure/cost-management/quick-acm-cost-analysis?toc=/azure/billing/TOC.json) . Например, функция "анализ затрат" позволяет просматривать расходы на ресурсы Azure. Добавление фильтра по типу ресурсов (в Microsoft. Insights/Components для Application Insights) позволит вам относить расходы.
+Чтобы получить дополнительные сведения о томах данных, выберите **метрики** для ресурса Application Insights и добавьте новую диаграмму. Для метрики диаграммы в разделе **метрики на основе журнала**выберите **том точек данных**. Щелкните **Apply расщепление (применить разделение**) и выберите Group By **телеметритем Type**(группировать по типу).
 
-Чтобы получить дополнительные сведения об использовании, скачайте сведения [об использовании с портала Azure](https://docs.microsoft.com/azure/billing/billing-download-azure-invoice-daily-usage-date#download-usage-in-azure-portal). В скачанной электронной таблице вы можете просмотреть сведения об использовании каждого ресурса Azure в день. В этой таблице Excel использование ресурсов Application Insights можно найти с помощью первой фильтрации в столбце "Категория счетчиков", чтобы отобразить "Application Insights" и "Log Analytics", а затем добавить фильтр для столбца "идентификатор экземпляра", который содержит Microsoft. Insights/Components.  Большая часть Application Insights используется на метрах с категорией счетчика Log Analytics, так как для всех Azure Monitor компонентов существует одна серверная часть журналов.  С категорией счетчиков Application Insights могут сообщаться только Application Insights ресурсы на устаревших ценовых категориях и многошаговых веб-тестах.  Использование отображается в столбце "потребленное количество", а единица для каждой записи отображается в столбце "единица измерения".  Дополнительные сведения помогут вам [разобраться с Microsoft Azureным счетом](https://docs.microsoft.com/azure/billing/billing-understand-your-bill). 
+![Использование метрик для просмотра объема данных](./media/pricing/10-billing.png)
 
-## <a name="understanding-ingested-data-volume"></a>Основные сведения о принимаемом томе данных
-
-Чтобы понять, сколько данных принимается в Application Insights, можно:
-
-1. Перейдите на панель **использование и оценочная стоимость** , чтобы просмотреть диаграмму ежедневного объема данных, как описано выше.
-2. В обозревателе метрик добавьте новую диаграмму. Для метрики диаграммы настройте параметр **Объем точки данных**. Включите параметр **Группировка** и выберите группировку по **типу данных**.
-3. Используйте таблицу `systemEvents`, как показано ниже. 
+### <a name="queries-to-understand-data-volume-details"></a>Запросы для понимания сведений о томе данных
 
 Например, можно использовать таблицу `systemEvents` для просмотра объема данных, полученного за последние 24 часа с помощью запроса:
 
 ```kusto
 systemEvents 
-| where timestamp >= ago(1d)
+| where timestamp >= ago(24h)
 | where type == "Billing" 
 | extend BillingTelemetryType = tostring(dimensions["BillingTelemetryType"])
 | extend BillingTelemetrySizeInBytes = todouble(measurements["BillingTelemetrySize"])
 | summarize sum(BillingTelemetrySizeInBytes)
 ```
 
-Чтобы увидеть диаграмму объема данных по типу данных за последние 30 дней, можно использовать:
+Чтобы просмотреть диаграмму объема данных (в байтах) по типу данных за последние 30 дней, можно использовать:
 
 ```kusto
 systemEvents 
-| where timestamp >= ago(30d)
+| where timestamp >= startofday(ago(30d))
 | where type == "Billing" 
 | extend BillingTelemetryType = tostring(dimensions["BillingTelemetryType"])
 | extend BillingTelemetrySizeInBytes = todouble(measurements["BillingTelemetrySize"])
 | summarize sum(BillingTelemetrySizeInBytes) by BillingTelemetryType, bin(timestamp, 1d) | render barchart  
 ```
 
-Этот запрос можно использовать в [предупреждении журнала Azure](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-unified-log) для настройки оповещений на томах данных. 
+Обратите внимание, что этот запрос можно использовать в [предупреждении журнала Azure](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-unified-log) для настройки оповещений на томах данных.  
+
+Чтобы узнать больше об изменениях данных телеметрии, давайте проверим число событий по типу с помощью запроса:
+
+```kusto
+systemEvents 
+| where timestamp >= startofday(ago(30d))
+| where type == "Billing" 
+| extend BillingTelemetryType = tostring(dimensions["BillingTelemetryType"])
+| summarize count() by BillingTelemetryType, bin(timestamp, 1d) | render barchart  
+```
+
+Если аналогичные изменения отображаются в количестве, как показано в объеме в байтах, то мы можем сосредоточиться на типах данных событий, которые показывают увеличение числа.  Например, если вы наблюдали, что число зависимостей увеличилось, Вот запрос, чтобы понять, какие операции отвечают за увеличение:
+
+```kusto
+dependencies 
+| where timestamp >= startofday(ago(30d))
+| summarize count() by operation_Name, bin(timestamp, 1d)  
+| render barchart  
+```
+
+
+## <a name="viewing-application-insights-usage-on-your-azure-bill"></a>Просмотр Application Insights использования в счете Azure 
+
+Azure предоставляет большое количество полезных функций в центре [управления затратами Azure и центра выставления счетов](https://docs.microsoft.com/azure/cost-management/quick-acm-cost-analysis?toc=/azure/billing/TOC.json) . Например, функция "анализ затрат" позволяет просматривать расходы на ресурсы Azure. Добавление фильтра по типу ресурсов (в Microsoft. Insights/Components для Application Insights) позволит вам относить расходы.
+
+Чтобы получить более полное представление об использовании, [Скачайте сведения об использовании из портал Azure](https://docs.microsoft.com/azure/billing/billing-download-azure-invoice-daily-usage-date#download-usage-in-azure-portal).
+В скачанной электронной таблице вы можете просмотреть сведения об использовании каждого ресурса Azure в день. В этой таблице Excel использование ресурсов Application Insights можно найти с помощью первой фильтрации в столбце "Категория счетчиков", чтобы отобразить "Application Insights" и "Log Analytics", а затем добавить фильтр для столбца "идентификатор экземпляра", который содержит Microsoft. Insights/Components.  Большая часть Application Insights используется на метрах с категорией счетчика Log Analytics, так как для всех Azure Monitor компонентов существует одна серверная часть журналов.  С категорией счетчиков Application Insights могут сообщаться только Application Insights ресурсы на устаревших ценовых категориях и многошаговых веб-тестах.  Использование отображается в столбце "потребленное количество", а единица для каждой записи отображается в столбце "единица измерения".  Дополнительные сведения помогут вам [разобраться с Microsoft Azureным счетом](https://docs.microsoft.com/azure/billing/billing-understand-your-bill). 
+
 
 ## <a name="managing-your-data-volume"></a>Управление томом данных 
 
@@ -244,7 +267,7 @@ systemEvents
   * В пакете SDK версии 2.2 и более новых версий пакет [SDK для Core](https://www.nuget.org/packages/Microsoft.ApplicationInsights/) и [веб-пакет SDK](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Web/) Application Insights считают узлами каждый узел приложения. Например, имя компьютера для физического сервера или виртуальной машины или имя экземпляра для облачных служб.  Единственное исключение — приложение, использующее только [.NET Core](https://dotnet.github.io/) и пакет SDK для Core Application Insights. В этом случае для всех узлов регистрируется только один узел, так как имя узла недоступно. 
   * В более ранних версиях пакета SDK [веб-пакет SDK](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Web/) ведет себя так же, как и в новых версиях, но пакет [SDK для Core](https://www.nuget.org/packages/Microsoft.ApplicationInsights/) учитывает только один узел, независимо от количества узлов приложения. 
   * Если приложение с помощью пакета SDK задает пользовательское значение для параметра **roleInstance** (Количество экземпляров роли), то по умолчанию это же значение будет использоваться и для определения количества узлов. 
-  * Если вы используете новую версию пакета SDK для приложения, которое запускается на клиентских компьютерах или мобильных устройствах, может возвращаться очень большое количество узлов (из-за большого числа клиентских компьютеров или мобильных устройств). 
+  * Если вы используете новую версию пакета SDK с приложением, которое выполняется на клиентских компьютерах или мобильных устройствах, число узлов может вернуть большое число (из-за большого количества клиентских компьютеров или мобильных устройств). 
 
 ## <a name="automation"></a>Служба автоматизации
 

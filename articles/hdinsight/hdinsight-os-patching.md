@@ -1,5 +1,5 @@
 ---
-title: Настройка расписания исправлений ОС для кластеров HDInsight под управлением Linux — Azure
+title: Настройка расписания обновления ОС для кластеров Azure HDInsight
 description: Узнайте, как настроить расписание обновления путем частичной замены ОС для кластеров HDInsight.
 author: hrasheed-msft
 ms.author: hrasheed
@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 07/01/2019
-ms.openlocfilehash: 06111ec35a127cf17fdcc77ff717de7a4bc7299f
-ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
+ms.openlocfilehash: d0a490fd3b23c96923af10db3c1f9ee9ea0dfad5
+ms.sourcegitcommit: 38251963cf3b8c9373929e071b50fd9049942b37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71076862"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73044885"
 ---
 # <a name="configure-the-os-patching-schedule-for-linux-based-hdinsight-clusters"></a>Настройка расписания исправлений ОС для кластеров HDInsight под управлением Linux 
 
@@ -35,11 +35,11 @@ ms.locfileid: "71076862"
 
 Для использования сценария требуются следующие сведения:
 
-- Расположение скрипта install-updates-Schedule-reboot: https://hdiconfigactions.blob.core.windows.net/linuxospatchingrebootconfigv02/install-updates-schedule-reboots.sh.
+- Расположение скрипта install-updates-Schedule-перезагрузок: https://hdiconfigactions.blob.core.windows.net/linuxospatchingrebootconfigv02/install-updates-schedule-reboots.sh.
     
    HDInsight использует этот универсальный код ресурса (URI) для поиска и запуска скрипта на всех виртуальных машинах в кластере. Этот сценарий предоставляет параметры для установки обновлений и перезапуска виртуальной машины.
   
-- Расписание — перезагрузка, расположение скрипта: https://hdiconfigactions.blob.core.windows.net/linuxospatchingrebootconfigv02/schedule-reboots.sh.
+- Расписание — перезагрузка скрипта: https://hdiconfigactions.blob.core.windows.net/linuxospatchingrebootconfigv02/schedule-reboots.sh.
     
    HDInsight использует этот универсальный код ресурса (URI) для поиска и запуска скрипта на всех виртуальных машинах в кластере. Этот сценарий перезапускает виртуальную машину.
   
@@ -62,7 +62,7 @@ ms.locfileid: "71076862"
 > Сценарий необходимо пометить как сохраненный после применения к существующему кластеру. В противном случае все новые узлы, созданные операциями масштабирования, будут использовать расписание обновления путем частичной замены ОС по умолчанию. Если применить сценарий как часть процесса создания кластера, он будет сохранен автоматически.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Конкретные действия по использованию действий скрипта см. в следующих разделах: [Настройка кластеров HDInsight под управлением Linux с помощью действия сценария](hdinsight-hadoop-customize-cluster-linux.md).
 

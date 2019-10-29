@@ -12,11 +12,7 @@
     - name: С помощью клиентского пакета SDK
       items:
         - name: С помощью пакета SDK для .NET
-          items:
-            - name: Анализ графического содержимого
-              href: image-moderation-quickstart-dotnet.md
-            - name: Анализ текстового содержимого
-              href: text-moderation-quickstart-dotnet.md
+          href: dotnet-sdk-quickstart.md
         - name: С помощью пакета SDK для Python
           href: python-sdk-quickstart.md
         - name: Использование пакета SDK для Java
@@ -67,10 +63,8 @@
       items:
         - name: Средство проверки (браузер)
           href: Review-Tool-User-Guide/Review-Moderated-Images.md
-        - name: "REST\_API"
+        - name: REST API
           href: try-review-api-review.md
-        - name: Пакет SDK для .NET
-          href: moderation-reviews-quickstart-dotnet.md
         - name: Проверки видео (.NET)
           href: video-reviews-quickstart-dotnet.md
         - name: Проверки расшифровок видео (.NET)

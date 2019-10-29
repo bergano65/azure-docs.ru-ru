@@ -15,12 +15,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5dd8858786d59563542c95d43d4e480ab1c11383
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 6ea0f9e07b476459824c8166781f549d788185ba
+ms.sourcegitcommit: d47a30e54c5c9e65255f7ef3f7194a07931c27df
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72933782"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73024788"
 ---
 # <a name="configure-the-expiration-policy-for-office-365-groups"></a>Настройка политики срока действия для групп Office 365
 
@@ -28,7 +28,7 @@ ms.locfileid: "72933782"
 
 После настройки срока действия той или иной группы происходит следующее:
 
-- Группы с действиями пользователей автоматически обновляются, как только приближается окончание срока действия (Предварительная версия)
+- Группы с действиями пользователей автоматически обновляются по истечении срока действия
 - Владельцы группы получают уведомления об обновлении группы, если эта группа не обновляется в автоматическом режиме.
 - Все группы, которые не были обновлены, удаляются.
 - Владельцы или администратор любой удаленной группы Office 365 могут восстановить ее в течение 30 дней.
@@ -40,7 +40,7 @@ ms.locfileid: "72933782"
 
 Сведения о том, как скачать и установить командлеты Azure AD PowerShell, см. на странице [Azure Active Directory PowerShell for Graph - Public Preview Release 2.0.0.137](https://www.powershellgallery.com/packages/AzureADPreview/2.0.0.137) (Azure Active Directory PowerShell для Graph: общедоступная предварительная версия 2.0.0.137).
 
-## <a name="activity-based-automatic-renewal-preview"></a>Автоматическое продление на основе действий (Предварительная версия)
+## <a name="activity-based-automatic-renewal"></a>Автоматическое продление на основе действий
 
 С помощью Azure AD Intelligence группы теперь автоматически обновляются в зависимости от того, были ли они использованы в Последнее использование. Эта функция устраняет потребность в ручных действиях владельцами групп, так как она основана на действиях пользователей в группах по Office 365, например Outlook, SharePoint, Teams или Yammer. Например, если владелец или член группы выполняет такие действия, как отправка документа в SharePoint, доступ к каналу команд или отправка сообщения электронной почты группе в Outlook, группа автоматически обновляется, и владелец не получает уведомлений о продлении.
 

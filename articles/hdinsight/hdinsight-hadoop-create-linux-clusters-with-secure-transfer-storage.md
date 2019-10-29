@@ -1,5 +1,5 @@
 ---
-title: Создание кластера Hadoop с помощью учетных записей хранения с безопасной передачей в Azure HDInsight
+title: Apache Hadoop & безопасное хранилище относительных данных в Azure HDInsight
 description: Узнайте, как создать кластеры HDInsight с помощью учетных записей хранения Azure с включенной безопасной передачей.
 author: hrasheed-msft
 ms.author: hrasheed
@@ -8,18 +8,18 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 07/24/2018
-ms.openlocfilehash: d182ca9f74f86922a4d8c94c9b3557f6111b7d53
-ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
+ms.openlocfilehash: b8a5d48e977009cf592f271760232a3b0138c8c5
+ms.sourcegitcommit: 38251963cf3b8c9373929e071b50fd9049942b37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71098762"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73044947"
 ---
 # <a name="create-apache-hadoop-cluster-with-secure-transfer-storage-accounts-in-azure-hdinsight"></a>Создание кластера Apache Hadoop с помощью учетных записей хранения с безопасной передачей в Azure HDInsight
 
 Функция [Secure transfer required](../storage/common/storage-require-secure-transfer.md) (Необходима безопасная передача) усиливает безопасность учетной записи хранения Azure путем принудительной передачи всех запросов к вашей учетной записи через безопасное подключение. Эта функция и схема wasbs поддерживаются только кластером HDInsight версии 3.6 или более новым.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Прежде чем приступать к этой статье, необходимо:
 
@@ -60,7 +60,7 @@ ms.locfileid: "71098762"
 - Создайте кластер с помощью [портала Azure](https://portal.azure.com) и укажите связанную учетную запись хранения.
 - Используйте действия скриптов для добавления дополнительных учетных записей хранения с включенной безопасной передачей в имеющийся кластер HDInsight. Дополнительные сведения см. в статье [Добавление дополнительных учетных записей хранения в HDInsight](hdinsight-hadoop-add-storage.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В этой статье вы узнали, как создать кластер HDInsight и включить безопасную пересылку учетных записей хранения.
 
 Дополнительные сведения об анализе данных с помощью HDInsight см. в следующих статьях:

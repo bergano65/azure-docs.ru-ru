@@ -9,14 +9,14 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: 6bff2210e77f7af98c1289b08159a89f42f2a3bd
-ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
+ms.openlocfilehash: 5b9011e2a95dc1bdb86311111123db3c994f3aee
+ms.sourcegitcommit: 38251963cf3b8c9373929e071b50fd9049942b37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71827611"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73044937"
 ---
-# <a name="azure-hdinsight-frequently-asked-questions"></a>Azure HDInsight: Часто задаваемые вопросы
+# <a name="azure-hdinsight-frequently-asked-questions"></a>Azure HDInsight: часто задаваемые вопросы
 
 В этой статье содержатся ответы на некоторые наиболее распространенные вопросы о том, как запустить [Azure HDInsight](https://azure.microsoft.com/services/hdinsight/).
 
@@ -44,7 +44,7 @@ ms.locfileid: "71827611"
 
 В этом разделе приведены общие ошибки и методы устранения проблем с емкостью.
 
-#### <a name="error-the-deployment-would-exceed-the-quota-of-800"></a>Ошибка: Развертывание превысит квоту "800"
+#### <a name="error-the-deployment-would-exceed-the-quota-of-800"></a>Ошибка: развертывание превысит квоту "800"
 
 В Azure предоставляется квота на 800 развертываний на группу ресурсов. Для каждой группы ресурсов, подписки, учетной записи или других областей применяются разные квоты. Например, для подписки может быть настроено ограничение числа ядер для региона. Если вы попытаетесь развернуть виртуальную машину с большим количеством ядер, чем разрешено, появится сообщение об ошибке, сообщающее о превышении квоты.
 
@@ -52,7 +52,7 @@ ms.locfileid: "71827611"
 
 Дополнительные сведения см. в статье [устранении ошибок, связанных с квотами ресурсов](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-quota-errors).
 
-#### <a name="error-the-maximum-node-exceeded-the-available-cores-in-this-region"></a>Ошибка: Максимальный узел превысил доступные ядра в этом регионе
+#### <a name="error-the-maximum-node-exceeded-the-available-cores-in-this-region"></a>Ошибка: максимальный размер узла превышает доступные ядра в этом регионе
 
 Для подписки может быть настроено ограничение числа ядер для региона. При попытке развернуть ресурс, имеющий больше ядер, чем разрешенный объем, появится сообщение об ошибке, сообщающее о превышении квоты.
 
@@ -65,7 +65,7 @@ ms.locfileid: "71827611"
 1. На вкладке **основы** на странице **новый запрос в службу поддержки** укажите следующие сведения.
    
    - **Тип проблемы:** Выберите **пределы службы и подписки (квоты)** .
-   - **Подписка**: Выберите подписку, которую необходимо изменить.
+   - **Подписка:** Выберите подписку, которую необходимо изменить.
    - **Тип квоты:** Выберите **HDInsight**.
 
 См. сведения о [создании запроса в службу поддержки для увеличения количества ядер](hdinsight-capacity-planning.md#quotas).
@@ -84,7 +84,7 @@ ms.locfileid: "71827611"
 
 - Скрипты во время или после создания. Скрипты вызываются с помощью [действия сценария](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux). это параметр конфигурации, который можно использовать из портал Azure, командлетов Hdinsight Windows PowerShell или пакета SDK для hdinsight .NET. Этот параметр конфигурации можно использовать из портал Azure, из командлетов HDInsight Windows PowerShell или пакета SDK для HDInsight .NET.
 
-- `sudo`или другие методы после инициализации кластера.
+- `sudo` или другие методы после инициализации кластера.
   
 - [Платформа приложений HDInsight](https://azure.microsoft.com/services/hdinsight/partner-ecosystem/) для установки приложений экосистемы.
 
@@ -114,7 +114,7 @@ ms.locfileid: "71827611"
 
 ### <a name="how-do-i-change-timezone-in-ambari"></a>Разделы справки изменить часовой пояс в Ambari?
 
-1. Откройте веб-интерфейс Ambari в https://CLUSTERNAME.azurehdinsight.net, где имя_кластера — это имя кластера.
+1. Откройте веб-интерфейс Ambari в https://CLUSTERNAME.azurehdinsight.net, где ИМЯ_КЛАСТЕРА — это имя кластера.
 2. В правом верхнем углу выберите Admin | Параметры. 
 
    ![Параметры Ambari](media/hdinsight-faq/ambari-settings.png)
@@ -127,15 +127,15 @@ ms.locfileid: "71827611"
 
 ### <a name="how-can-i-migrate-from-the-existing-metastore-to-azure-sql-server"></a>Как выполнить миграцию из существующей хранилище метаданных в Azure SQL Server? 
 
-Сведения о переходе с SQL Server на SQL Server Azure [см. в разделе Учебник. Миграция SQL Server в отдельную базу данных или базу данных в составе пула в базе](../dms/tutorial-sql-server-to-azure-sql.md)данных SQL Azure в автономном режиме с помощью DMS.
+Сведения о переходе с SQL Server на SQL Server Azure см. в разделе [учебник. миграция SQL Server в отдельную базу данных или базу данных в пуле в базе данных SQL Azure в автономном режиме с помощью DMS](../dms/tutorial-sql-server-to-azure-sql.md).
 
 ### <a name="is-the-hive-metastore-deleted-when-the-cluster-is-deleted"></a>Удаляется ли хранилище метаданных Hive при удалении кластера?
 
 Это зависит от типа хранилище метаданных, для которого настроен кластер.
 
-Для хранилище метаданных по умолчанию: Хранилище метаданных по умолчанию является частью жизненного цикла кластера. При удалении кластера соответствующее хранилище метаданных и метаданные также удаляются.
+Для хранилище метаданных по умолчанию: хранилище метаданных по умолчанию является частью жизненного цикла кластера. При удалении кластера соответствующее хранилище метаданных и метаданные также удаляются.
 
-Для пользовательского хранилище метаданных: Жизненный цикл хранилище метаданных не привязан к жизненному циклу кластера. Таким образом, можно создавать и удалять кластеры без потери метаданных. Метаданные, такие как схемы Hive, сохраняются даже после удаления и повторного создания кластера HDInsight.
+Для настраиваемого хранилище метаданных: жизненный цикл хранилище метаданных не привязан к жизненному циклу кластера. Таким образом, можно создавать и удалять кластеры без потери метаданных. Метаданные, такие как схемы Hive, сохраняются даже после удаления и повторного создания кластера HDInsight.
 
 Дополнительную информацию см. в статье [Использование внешних хранилищ метаданных в Azure HDInsight](hdinsight-use-external-metadata-stores.md).
 
@@ -177,9 +177,9 @@ ms.locfileid: "71827611"
 
 Да, можно развернуть дополнительную виртуальную машину в той же подсети, что и кластер HDInsight. Возможны следующие конфигурации:
 
-- Граничные узлы: Вы можете добавить в кластер другой пограничной узел, как описано в разделе [использование пустых граничных узлов в кластерах Apache Hadoop в HDInsight](hdinsight-apps-use-edge-node.md).
+- Граничные узлы. Вы можете добавить в кластер другой пограничной узел, как описано в разделе [использование пустых граничных узлов в кластерах Apache Hadoop в HDInsight](hdinsight-apps-use-edge-node.md).
 
-- Изолированные узлы:  Вы можете добавить автономную виртуальную машину в ту же подсеть и получить доступ к кластеру из этой виртуальной машины с помощью `https://<CLUSTERNAME>-int.azurehdinsight.net`закрытой конечной точки. Дополнительные сведения см. в разделе [Управление сетевым трафиком](hdinsight-plan-virtual-network-deployment.md#networktraffic).
+- Автономные узлы. Вы можете добавить автономную виртуальную машину в ту же подсеть и получить доступ к кластеру из этой виртуальной машины с помощью закрытой конечной точки `https://<CLUSTERNAME>-int.azurehdinsight.net`. Дополнительные сведения см. в разделе [Управление сетевым трафиком](hdinsight-plan-virtual-network-deployment.md#networktraffic).
 
 ### <a name="can-i-add-an-existing-hdinsight-cluster-to-another-virtual-network"></a>Можно ли добавить существующий кластер HDInsight в другую виртуальную сеть?
 
@@ -211,11 +211,11 @@ ktutil: q
 
 ### <a name="can-i-use-a-self-signed-certificate-in-an-aad-ds-secure-ldap-setup-and-provision-an-esp-cluster"></a>Можно ли использовать самозаверяющий сертификат в настройке защищенного протокола LDAP в AAD-DS и подготавливать кластер ESP?
 
-Рекомендуется использовать сертификат, выданный центром сертификации, но с помощью ESP также поддерживается самозаверяющий сертификат. Дополнительные сведения можно найти в разделе
+Рекомендуется использовать сертификат, выданный центром сертификации, но с помощью ESP также поддерживается самозаверяющий сертификат. Дополнительные сведения см. здесь:
 
 - [Включение доменных служб Azure Active Directory](domain-joined/apache-domain-joined-configure-using-azure-adds.md#enable-azure-ad-ds)
 
-- [Учебник. Настройка защищенного протокола LDAP для управляемого домена Azure Active Directory доменных служб](../active-directory-domain-services/tutorial-configure-ldaps.md)
+- [Руководство. Настройка защищенного протокола LDAP для управляемого домена доменных служб Azure Active Directory](../active-directory-domain-services/tutorial-configure-ldaps.md)
 
 ### <a name="how-can-i-pull-login-activity-shown-in-ranger"></a>Как можно извлечь действие входа в систему, показанное в Ranger?
 
@@ -239,7 +239,14 @@ ktutil: q
 
 Дополнительные сведения о настройке и выполнении задания cron см. в разделе [разделы справки Настройка задания cron](https://askubuntu.com/questions/2368/how-do-i-set-up-a-cron-job).
 
-## <a name="storage"></a>Служба хранилища
+### <a name="why-is-llap-available-on-spark-esp-clusters"></a>Почему LLAP доступен в кластерах Spark ESP?
+В кластерах ESP Spark LLAP включен по соображениям безопасности (например, Apache Ranger), а не производительности. Следует использовать виртуальные машины большего размера, чтобы обеспечить использование ресурсов LLAP (например, минимум D13V2). 
+
+### <a name="how-can-i-add-addional-aad-groups-after-creating-an-esp-cluster"></a>Как добавить группы AAD аддионал после создания кластера ESP?
+Это можно сделать двумя способами: 1. Вы можете повторно создать кластер и добавить дополнительную группу во время создания кластера. Если вы используете синхронизацию с заданной областью в AAD-DS, убедитесь, что Группа B включена в синхронизацию с заданной областью.
+2\. Добавьте группу в качестве вложенной подгруппы предыдущей группы, которая использовалась для создания кластера ESP. Например, если вы создали кластер ESP с группой `A`, позже можно будет добавить группу `B` как вложенную подгруппу `A` и через примерно один час синхронизация и доступность в кластере будут выполняться автоматически. 
+
+## <a name="storage"></a>Storage
 
 ### <a name="can-i-add-an-azure-data-lake-storage-gen2-to-an-existing-hdinsight-cluster-as-an-additional-storage-account"></a>Можно ли добавить Azure Data Lake Storage 2-го поколения в существующий кластер HDInsight в качестве дополнительной учетной записи хранения?
 
@@ -255,7 +262,7 @@ ktutil: q
 
 - [Использование PowerShell](../storage/scripts/storage-blobs-container-calculate-size-powershell.md)
 
-- Найти размер */user/hive/.Trash/* папка в кластере HDInsight с помощью следующей командной строки:
+- Найти размер */Усер/Хиве/. Корзина/* папка в кластере HDInsight с помощью следующей командной строки:
   
   `hdfs dfs -du -h /user/hive/.Trash/`
 
@@ -281,7 +288,7 @@ done
 
 В настоящее время для хранилища BLOB-объектов и Azure Data Lake Storage 1-го поколения или Gen2 не существует подключаемого модуля Ranger. Для кластеров ESP следует использовать Azure Data Lake Storage, так как по крайней мере можно задать разрешения точной детализации вручную на уровне файловой системы с помощью средств HDFS. Кроме того, при использовании Azure Data Lake Storage кластеры ESP будут выполнять некоторые действия по управлению доступом к файловой системе с помощью Azure Active Directory на уровне кластера. 
 
-Вы можете назначать политики доступа к данным для групп безопасности пользователей с помощью Обозреватель службы хранилища Azure. Дополнительные сведения можно найти в разделе
+Вы можете назначать политики доступа к данным для групп безопасности пользователей с помощью Обозреватель службы хранилища Azure. Дополнительные сведения см. здесь:
 
 - [Разделы справки задать разрешения для пользователей Azure AD на запрос данных в Data Lake Storage 2-го поколения с помощью Hive или других служб?](hdinsight-hadoop-use-data-lake-storage-gen2.md#how-do-i-set-permissions-for-azure-ad-users-to-query-data-in-data-lake-storage-gen2-by-using-hive-or-other-services)
 - [Установка разрешений на уровне файлов и каталогов в Azure Data Lake Storage 2-го поколения с помощью Обозревателя службы хранилища Azure](/azure/storage/blobs/data-lake-storage-how-to-set-permissions-storage-explorer)
@@ -304,20 +311,20 @@ done
 
 Сохраненные сценарии используются для настройки новых рабочих узлов, добавляемых в кластер с помощью операций масштабирования. Сохраненные сценарии не применяются к граничным узлам.
 
-## <a name="rest-api"></a>REST API
+## <a name="rest-api"></a>REST API
 
 ### <a name="what-are-the-rest-api-calls-to-pull-a-tez-query-view-from-the-cluster"></a>Какие REST API вызовы, чтобы извлечь представление запроса Tez из кластера?
 
 Для извлечения необходимой информации в формате JSON можно использовать следующие конечные точки RESTFUL. Для выполнения запросов используйте заголовки обычной проверки подлинности.
 
-- Tez представление запросов: *https: \/ @ no__t-2 @ no__t-3cluster name >. azurehdinsight. NET/WS/v1/Timeline/HIVE_QUERY_ID/*
-- Представление Tez DAG: *https: \/ @ no__t-2 @ no__t-3cluster name >. azurehdinsight. NET/WS/v1/Timeline/TEZ_DAG_ID/*
+- Tez представление запросов: *https:\//\<имя кластера >. azurehdinsight. NET/WS/v1/Timeline/HIVE_QUERY_ID/*
+- Tez DAG View: *https:\//\<имя кластера >. azurehdinsight. NET/WS/v1/Timeline/TEZ_DAG_ID/*
 
 ### <a name="how-do-i-retrieve-the-configuration-details-from-hdi-cluster-by-using-an-azure-active-directory-user"></a>Разделы справки получить сведения о конфигурации из кластера HDI с помощью Azure Active Directory пользователя?
 
 Чтобы согласовать маркеры проверки подлинности с пользователем AAD, пройдите через шлюз, используя следующий формат:
 
-* https://@no__t — 0.azurehdinsight.net/api/v1/clusters/testclusterdem/stack_versions/1/repository_versions/1 
+* https://`<cluster dnsname>`. azurehdinsight.net/api/v1/clusters/testclusterdem/stack_versions/1/repository_versions/1 
 
 ### <a name="how-do-i-use-ambari-restful-api-to-monitor-yarn-performance"></a>Разделы справки использовать API RESTful Ambari для мониторинга производительности YARN?
 

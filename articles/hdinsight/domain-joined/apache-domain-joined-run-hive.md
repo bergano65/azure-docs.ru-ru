@@ -1,5 +1,5 @@
 ---
-title: Настройка политик Hive в HDInsight с Корпоративным пакетом безопасности в Azure
+title: Политики Apache Hive в Apache Ranger — Azure HDInsight
 description: Сведения о настройке политик Apache Ranger для Hive в службе Azure HDInsight с Корпоративным пакетом безопасности.
 ms.service: hdinsight
 author: omidm1
@@ -8,17 +8,17 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: b0213fc1a96b38b615cbd8b7b6374a6716b9f840
-ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
+ms.openlocfilehash: e49e2d103fd9c91824c8e8a1603cddddf16366e1
+ms.sourcegitcommit: 38251963cf3b8c9373929e071b50fd9049942b37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70918185"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73044875"
 ---
 # <a name="configure-apache-hive-policies-in-hdinsight-with-enterprise-security-package"></a>Настройка политик Apache Hive в HDInsight с Корпоративным пакетом безопасности
 Узнайте, как настроить политики Apache Ranger для Apache Hive. В этой статье вы создадите две политики Ranger, чтобы ограничить доступ к таблице hivesampletable. Таблица hivesampletable поставляется с кластерами HDInsight. После настройки политик подключитесь к таблицам Hive в HDInsight с помощью Excel и драйвера ODBC.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 * Кластер HDInsight с Корпоративным пакетом безопасности. Ознакомьтесь со статьей [Настройка кластера HDInsight с корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory](apache-domain-joined-configure.md).
 * Рабочая станция с Office 2016, Office 2013 профессиональный плюс, Office 365 профессиональный плюс, Excel 2013 автономный или Office 2010 профессиональный плюс.
 
@@ -77,8 +77,8 @@ ms.locfileid: "70918185"
  | Свойство  |Описание |
  | --- | --- |
  | Имя источника данных | Присвойте имя источнику данных |
- | Узел | Введите &lt;имя_кластера_HDInsight>.azurehdinsight.net. Например, myHDICluster.azurehdinsight.net |
- | Порт | Используйте **443**. (Этот порт был изменен с 563 на 443.) |
+ | Хост | Введите &lt;имя_кластера_HDInsight>.azurehdinsight.net. Например, myHDICluster.azurehdinsight.net |
+ | Port | Используйте **443**. (Этот порт был изменен с 563 на 443.) |
  | База данных | Используйте **значение по умолчанию**. |
  | Тип сервера Hive | Выберите **Hive Server 2**. |
  | Механизм | Выберите **Служба Azure HDInsight**. |
@@ -99,9 +99,9 @@ ms.locfileid: "70918185"
 4. В источниках данных ODBC выберите имя источника данных, созданного на предыдущем шаге, и нажмите кнопку **Далее**.
 5. В мастере повторно введите пароль для кластера и нажмите кнопку **ОК**. Подождите открытие диалогового окна **Выбор базы данных и таблицы** . Это может занять несколько секунд.
 6. Выберите **hivesampletable**, а затем нажмите кнопку **Далее**.
-7. Нажмите кнопку **Готово**.
+7. Нажмите кнопку **Готово**
 8. В диалоговом окне **Импорт данных** можно изменить или указать запрос. Для этого щелкните **Свойства**. Это может занять несколько секунд.
-9. Выберите вкладку **Определение**. Текст команды:
+9. Перейдите на вкладку **Определение** . Текст команды:
 
        SELECT * FROM "HIVE"."default"."hivesampletable"
 
@@ -128,8 +128,8 @@ ms.locfileid: "70918185"
 
     После этого импортируются два столбца с данными.
 
-## <a name="next-steps"></a>Следующие шаги
-* Описание настройки кластера HDInsight с Корпоративным пакетом безопасности см. в статье [Настройка кластера HDInsight с Корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory](apache-domain-joined-configure.md).
+## <a name="next-steps"></a>Дальнейшие действия
+* Описание настройки кластера HDInsight с корпоративным пакетом безопасности см. в разделе [Настройка кластеров HDInsight с корпоративным пакетом безопасности](apache-domain-joined-configure.md).
 * Сведения об управлении кластером HDInsight с помощью ESP см. в статье [Управление кластерами HDInsight с помощью Корпоративного пакета безопасности](apache-domain-joined-manage.md).
 * Сведения о выполнении запросов Hive с помощью SSH в кластерах HDInsight с ESP см. в разделе [Проверка подлинности при использовании присоединенного к домену кластера HDInsight](../hdinsight-hadoop-linux-use-ssh-unix.md#domainjoined).
 * Сведения о подключении к Hive с помощью Hive JDBC см. в статье [Отправка запросов в Apache Hive с помощью драйвера JDBC в HDInsight](../hadoop/apache-hadoop-connect-hive-jdbc-driver.md).

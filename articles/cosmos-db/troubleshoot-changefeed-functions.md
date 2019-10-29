@@ -7,12 +7,12 @@ ms.date: 07/17/2019
 ms.author: maquaran
 ms.topic: troubleshooting
 ms.reviewer: sngun
-ms.openlocfilehash: 2f9d2cea7adaf2e46feb0417ea9631ce02478f80
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 7a9f726273dc3c5b336b22588d49704ffc2d8192
+ms.sourcegitcommit: 38251963cf3b8c9373929e071b50fd9049942b37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72934134"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73043373"
 ---
 # <a name="diagnose-and-troubleshoot-issues-when-using-azure-functions-trigger-for-cosmos-db"></a>Диагностика и устранение неполадок при использовании триггера функций Azure для Cosmos DB
 
@@ -103,6 +103,9 @@ ms.locfileid: "72934134"
 Эта ошибка возникает, если проект функций Azure (или любой проект, на который указывает ссылка) содержит ручную ссылку NuGet на Azure Cosmos DB SDK с версией, отличной от версии, предоставленной [Cosmos DB расширением функций Azure](./troubleshoot-changefeed-functions.md#dependencies).
 
 Чтобы обойти эту ситуацию, удалите добавленную ссылку NuGet вручную и разрешите ссылку на Azure Cosmos DB SDK с помощью пакета расширения "функции Azure Cosmos DB".
+
+### <a name="changing-azure-functions-polling-interval-for-the-detecting-changes"></a>Изменение интервала опроса функции Azure для обнаружения изменений
+Как упоминалось ранее для [# # # мои изменения занимают слишком много](./troubleshoot-changefeed-functions.md#my-changes-take-too-long-be-received)времени, функция Azure будет в спящем режиме на настраиваемое время (по умолчанию 5 секунд), прежде чем проверять наличие новых изменений (во избежание высокой степени потребления единиц запросов). Это время ожидания можно настроить с помощью параметра `FeedPollDelay/feedPollDelay` в [конфигурации](../azure-functions/functions-bindings-cosmosdb-v2.md#trigger---configuration) триггера (значение следует указать в миллисекундах).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
