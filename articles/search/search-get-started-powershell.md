@@ -1,22 +1,22 @@
 ---
-title: Краткое руководство. Создание индекса службы "Поиск Azure" в PowerShell с помощью REST API
-description: Описание процессов создания индекса, загрузки данных и выполнения запросов с помощью командлета Invoke-RestMethod PowerShell и REST API службы "Поиск Azure".
-ms.date: 09/10/2019
-author: heidisteen
+title: Краткое руководство. Создание индекса поиска в PowerShell с помощью REST API
+titleSuffix: Azure Cognitive Search
+description: Описание процессов создания индекса, загрузки данных и выполнения запросов с помощью командлета Invoke-RestMethod PowerShell и REST API службы "Когнитивный поиск Azure".
 manager: nitinme
+author: heidisteen
 ms.author: heidist
-services: search
-ms.service: search
-ms.devlang: rest-api
+ms.service: cognitive-search
 ms.topic: quickstart
-ms.openlocfilehash: ab82406fa151f5889a563d8154e02da921f1c4e6
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.devlang: rest-api
+ms.date: 11/04/2019
+ms.openlocfilehash: e9b2b8e8b3585bc747efb5b2916ddf1fe07d3645
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70881720"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72792251"
 ---
-# <a name="quickstart-create-an-azure-search-index-in-powershell-using-rest-apis"></a>Краткое руководство. Создание индекса службы "Поиск Azure" в PowerShell с помощью REST API
+# <a name="quickstart-create-an-azure-cognitive-search-index-in-powershell-using-rest-apis"></a>Краткое руководство. Создание индекса службы "Когнитивный поиск Azure" в PowerShell с помощью REST API
 > [!div class="op_single_selector"]
 > * [PowerShell (REST)](search-create-index-rest-api.md)
 > * [C#](search-create-index-dotnet.md)
@@ -25,7 +25,7 @@ ms.locfileid: "70881720"
 > * [Портал](search-create-index-portal.md)
 > 
 
-Эта статья поможет вам создать, загрузить и запросить индекс службы "Поиск Azure" с помощью PowerShell и [REST API службы "Поиск Azure"](https://docs.microsoft.com/rest/api/searchservice/). Здесь содержатся сведения о выполнении команд PowerShell в интерактивном режиме. Вы также можете [скачать и запустить сценарий PowerShell](https://github.com/Azure-Samples/azure-search-powershell-samples/tree/master/Quickstart), выполняющий те же операции.
+Эта статья поможет вам создать, загрузить и запросить индекс службы "Когнитивный поиск Azure" с помощью PowerShell и [REST API службы "Когнитивный поиск Azure"](https://docs.microsoft.com/rest/api/searchservice/). Здесь содержатся сведения о выполнении команд PowerShell в интерактивном режиме. Вы также можете [скачать и запустить сценарий PowerShell](https://github.com/Azure-Samples/azure-search-powershell-samples/tree/master/Quickstart), выполняющий те же операции.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -35,11 +35,11 @@ ms.locfileid: "70881720"
 
 + [Средство PowerShell 5.1 или более поздней версии](https://github.com/PowerShell/PowerShell), использующее [Invoke-RestMethod](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Utility/Invoke-RestMethod) для выполнения последовательных и интерактивных шагов.
 
-+ [Создайте службу "Поиск Azure"](search-create-service-portal.md) или [найдите имеющуюся службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) в рамках текущей подписки. Вы можете использовать бесплатную службу для выполнения инструкций, описанных в этом кратком руководстве. 
++ [Создайте службу "Когнитивный поиск Azure"](search-create-service-portal.md) или [найдите имеющуюся службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) в рамках текущей подписки. Вы можете использовать бесплатную службу для выполнения инструкций, описанных в этом кратком руководстве. 
 
 ## <a name="get-a-key-and-url"></a>Получение ключа и URL-адреса
 
-Вызовам REST требуется URL-адрес службы и ключ доступа при каждом запросе. Служба поиска создана с обоими элементами, поэтому если вы добавили службу "Поиск Azure" в подписку, выполните следующие действия для получения необходимых сведений:
+Вызовам REST требуется URL-адрес службы и ключ доступа при каждом запросе. Служба поиска создана с обоими элементами, поэтому если вы добавили службу "Когнитивный поиск Azure" в подписку, выполните следующие действия для получения необходимых сведений:
 
 1. [Войдите на портал Azure](https://portal.azure.com/) и на странице **обзора** службы поиска получите URL-адрес. Пример конечной точки может выглядеть так: `https://mydemo.search.windows.net`.
 
@@ -49,7 +49,7 @@ ms.locfileid: "70881720"
 
 Для выполнения любого запроса к службе требуется использование ключа API. Если есть действительный ключ, для каждого запроса устанавливаются отношения доверия между приложением, которое отправляет запрос, и службой, которая его обрабатывает.
 
-## <a name="connect-to-azure-search"></a>Подключение к Поиску Azure
+## <a name="connect-to-azure-cognitive-search"></a>Подключение к Когнитивному поиску Azure
 
 1. В PowerShell создайте объект **$headers** для хранения типа содержимого и ключа API. Замените ключ API администратора (YOUR-ADMIN-API-KEY) на ключ, который является допустимым для вашей службы поиска. Этот заголовок необходимо указать только один раз в течение сеанса, но он будет добавлен к каждому запросу. 
 
@@ -323,7 +323,7 @@ ms.locfileid: "70881720"
 
 1. Задайте в качестве конечной точки коллекцию документов *hotels-quickstart* и добавьте параметр **search** для передачи в строку запроса. 
   
-   Эта строка выполняет пустой поиск (search=*), возвращая неупорядоченный список (search score = 1.0) произвольных документов. По умолчанию служба "Поиск Azure" возвращает 50 лучших соответствий за раз. Как структурированный этот запрос возвращает структуру и значения документа. Добавьте **$count=true**, чтобы получить количество всех документов в результатах.
+   Эта строка выполняет пустой поиск (search=*), возвращая неупорядоченный список (search score = 1.0) произвольных документов. По умолчанию служба "Когнитивный поиск Azure" возвращает 50 лучших соответствий за раз. Как структурированный этот запрос возвращает структуру и значения документа. Добавьте **$count=true**, чтобы получить количество всех документов в результатах.
 
     ```powershell
     $url = 'https://<YOUR-SEARCH-SERVICE>.search.windows.net/indexes/hotels-quickstart/docs?api-version=2019-05-06&search=*&$count=true'
@@ -401,7 +401,7 @@ $url = 'https://<YOUR-SEARCH-SERVICE>.search.windows.net/indexes/hotels-quicksta
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В рамках этого краткого руководства вы использовали PowerShell для выполнения базового рабочего процесса создания содержимого в службе "Поиск Azure" и получения к нему доступа. Помня об этих концепциях, мы рекомендуем перейти к изучению более сложных сценариев, таких как индексирование из источников данных Azure.
+В рамках этого краткого руководства вы использовали PowerShell для выполнения базового рабочего процесса создания содержимого в службе "Когнитивный поиск Azure" и получения к нему доступа. Помня об этих концепциях, мы рекомендуем перейти к изучению более сложных сценариев, таких как индексирование из источников данных Azure.
 
 > [!div class="nextstepaction"]
-> [Руководство по использованию REST. Индексирование и поиск частично структурированных данных (больших двоичных объектов JSON) в службе "Поиск Azure"](search-semi-structured-data.md)
+> [Руководство по использованию REST. Индексирование и поиск частично структурированных данных (больших двоичных объектов JSON) в службе "Когнитивный поиск Azure"](search-semi-structured-data.md)

@@ -11,14 +11,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: overview
-ms.date: 10/03/2019
+ms.date: 10/17/2019
 ms.author: juliako
-ms.openlocfilehash: af6542757e75d7d6226c2470adf3c2b51d60875a
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: 35fd511f2383a09898bcd7e7a5227b750c36125a
+ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72383533"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72595518"
 ---
 # <a name="dynamic-packaging"></a>Динамическая упаковка
 
@@ -98,7 +98,7 @@ ms.locfileid: "72383533"
 Динамическая упаковка поддерживает MP4-файлы, которые содержат видео, закодированное с помощью [H.264](https://en.m.wikipedia.org/wiki/H.264/MPEG-4_AVC) (MPEG-4 AVC или AVC1) или [H.265](https://en.m.wikipedia.org/wiki/High_Efficiency_Video_Coding) (HEVC, hev1 или hvc1).
 
 > [!NOTE]
-> С динамической упаковкой было протестировано видео с разрешением до 4K и частотой до 60 кадров в секунду. [Кодировщик ценовой категории "Премиум"](https://docs.microsoft.com/azure/media-services/previous/media-services-encode-asset#media-encoder-premium-workflow) поддерживает кодирование в формат H.265 с помощью устаревших API версии 2. Если у вас есть вопросы по этой теме, свяжитесь с нами: amshelp@microsoft.com. 
+> С динамической упаковкой было протестировано видео с разрешением до 4K и частотой до 60 кадров в секунду. [Кодировщик ценовой категории "Премиум"](https://docs.microsoft.com/azure/media-services/previous/media-services-encode-asset#media-encoder-premium-workflow) поддерживает кодирование в формат H.265 с помощью устаревших API версии 2.
 
 ## <a name="a-idaudio-codecsaudio-codecs-supported-by-dynamic-packaging"></a><a id="audio-codecs"/>Аудиокодеки, поддерживаемые для динамической упаковки
 
@@ -124,7 +124,7 @@ ms.locfileid: "72383533"
 Динамическая упаковка не поддерживает файлы с аудиоданными в формате [Dolby Digital](https://en.wikipedia.org/wiki/Dolby_Digital) (AC3) (это устаревший кодек).
 
 > [!NOTE]
-> [Кодировщик ценовой категории "Премиум"](https://docs.microsoft.com/azure/media-services/previous/media-services-encode-asset#media-encoder-premium-workflow) поддерживает кодирование в формат Dolby Digital Plus с помощью устаревших API версии 2. Если у вас есть вопросы по этой теме, свяжитесь с нами: amshelp@microsoft.com. 
+> [Кодировщик ценовой категории "Премиум"](https://docs.microsoft.com/azure/media-services/previous/media-services-encode-asset#media-encoder-premium-workflow) поддерживает кодирование в формат Dolby Digital Plus с помощью устаревших API версии 2. 
 
 ## <a name="manifests"></a>Манифесты 
  
@@ -272,6 +272,10 @@ QualityLevels(128041)/Manifest(aac_eng_2_128041_2_1,format=m3u8-aapl)
 ## <a name="more-information"></a>Дополнительные сведения
 
 Прочитайте статью [сообщества Служб мультимедиа Azure](media-services-community.md), чтобы узнать, как задавать вопросы, оставлять отзывы и получать новости о Службах мультимедиа.
+
+## <a name="need-help"></a>Требуется помощь?
+
+Вы можете открыть запрос в службу поддержки, перейдя к разделу [нового запроса на техническую поддержку](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest)
 
 ## <a name="next-steps"></a>Дополнительная информация
 

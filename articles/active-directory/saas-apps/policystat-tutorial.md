@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
 ms.openlocfilehash: 327e470d60235e6bf400293e80e3aec5f6144ff4
-ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
+ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "68943443"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-policystat"></a>Руководство по Интеграция Azure Active Directory с PolicyStat
@@ -162,7 +162,7 @@ ms.locfileid: "68943443"
 
 2. Щелкните вкладку **Admin** (Администрирование), а затем щелкните **Single Sign-On Configuration** (Конфигурация единого входа) в левой области навигации.
    
-    ![Меню администратора](./media/policystat-tutorial/ic808633.png "Меню администратора")
+    ![Меню "Администратор"](./media/policystat-tutorial/ic808633.png "Меню «Администратор»")
 
 3. В разделе **Setup** (Настройка) установите флажок **Enable Single Sign-on Integration** (Включить интеграцию единого входа).
    

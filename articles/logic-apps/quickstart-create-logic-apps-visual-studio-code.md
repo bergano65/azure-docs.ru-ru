@@ -1,6 +1,6 @@
 ---
-title: Создание рабочих процессов и управление ими в Visual Studio Code. Azure Logic Apps
-description: Краткое руководство. Создание определений JSON приложения логики и управление ими в Visual Studio Code (VS Code)
+title: Автоматизация рабочих процессов с помощью Visual Studio Code — Azure Logic Apps
+description: Создание или редактирование приложения логики, лежащего в основе определений JSON, с помощью Visual Studio Code (VS Code)
 services: logic-apps
 ms.service: logic-apps
 ms.suite: integration
@@ -12,16 +12,16 @@ ms.reviewer: klam, deli, LADocs
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 10/05/2018
-ms.openlocfilehash: 34de50517580c84c78ee1f192daa908b3f262670
-ms.sourcegitcommit: f9e81b39693206b824e40d7657d0466246aadd6e
+ms.openlocfilehash: a1387ca4d94410bafb1b1024345b5e307e215e6f
+ms.sourcegitcommit: d37991ce965b3ee3c4c7f685871f8bae5b56adfa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72035517"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72679156"
 ---
-# <a name="quickstart-create-and-manage-logic-app-definitions-by-using-visual-studio-code"></a>Краткое руководство. Создание определений приложений логики и управление ими с помощью Visual Studio Code
+# <a name="quickstart-create-and-manage-logic-app-workflow-definitions-with-visual-studio-code"></a>Краткое руководство. Создание определений рабочих процессов приложений логики и управление ими с помощью Visual Studio Code
 
-С помощью [Azure Logic Apps](../logic-apps/logic-apps-overview.md) и Visual Studio Code можно создать приложения логики, которые автоматизируют задачи, рабочие процессы и процессы для интеграции приложений, данных, систем и служб по предприятиям и организациям, и управлять ими. В этом кратком руководстве показано, как создать и изменить определения рабочего процесса, работая со схемой определения рабочего процесса в нотации объектов JavaScript (JSON) через взаимодействие на основе кода. Вы также можете работать с приложениями логики, уже развернутыми в Azure.
+С помощью [Azure Logic Apps](../logic-apps/logic-apps-overview.md) и Visual Studio Code можно создать приложения логики, которые автоматизируют задачи, рабочие процессы и процессы для интеграции приложений, данных, систем и служб по предприятиям и организациям, и управлять ими. В этом кратком руководстве показано, как создать и изменить базовые определения рабочего процесса, которые используют нотацию объектов JavaScript (JSON) для приложений логики через взаимодействие на основе кода. Вы также можете работать с приложениями логики, уже развернутыми в Azure.
 
 Несмотря на то, что эти задачи можно выполнять на [портале Azure](https://portal.azure.com) и в Visual Studio, Visual Studio Code позволяет быстрее приступить к работе если вы уже знакомы с приложением логики и хотите работать непосредственно в коде. Например, также можно отключать, включать, удалять и обновлять уже созданные приложения логики. Кроме того, вы можете работать в приложениях логики и учетных записях интеграции на любой платформе разработки с поддержкой Visual Studio Code, например Linux, Windows и Mac.
 
@@ -33,7 +33,7 @@ ms.locfileid: "72035517"
 
 * Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
-* Базовые знания об [определениях рабочих процессов приложения логики](../logic-apps/logic-apps-workflow-definition-language.md) и их структуре, которая использует нотацию объектов JavaScript (JSON).
+* Базовые знания об [определениях рабочих процессов приложения логики](../logic-apps/logic-apps-workflow-definition-language.md) и их структуре, как описано для JSON.
 
   Если вы не знакомы с Logic Apps, попробуйте использовать это [краткое руководство](../logic-apps/quickstart-create-first-logic-app-workflow.md), где описывается создание первых приложений логики на портале Azure и которое посвящено основным понятиям.
 

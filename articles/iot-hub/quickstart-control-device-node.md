@@ -8,14 +8,14 @@ ms.service: iot-hub
 services: iot-hub
 ms.devlang: nodejs
 ms.topic: quickstart
-ms.custom: mvc, seo-javascript-september2019
+ms.custom: mvc, seo-javascript-september2019, seo-javascript-october2019
 ms.date: 06/21/2019
-ms.openlocfilehash: db049064c35fbe6b940d39f97decc0281983cc0f
-ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
+ms.openlocfilehash: ed3946c40d8e3eff665e4454b81f408c2033c09a
+ms.sourcegitcommit: f29fec8ec945921cc3a89a6e7086127cc1bc1759
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/17/2019
-ms.locfileid: "72515067"
+ms.locfileid: "72529617"
 ---
 # <a name="quickstart-use-nodejs-to-control-a-device-connected-to-an-azure-iot-hub"></a>Краткое руководство. Управление подключенным к центру Интернета вещей устройством с использованием Node.js
 
@@ -128,7 +128,7 @@ az extension add --name azure-cli-iot-ext
 
     На следующем снимке экрана показан пример выходных данных, когда приложение имитированного устройства отправляет данные телеметрии в Центр Интернета вещей:
 
-    ![Запуск виртуального устройства](./media/quickstart-control-device-node/SimulatedDevice-1.png)
+    ![Запуск виртуального устройства](./media/quickstart-control-device-node/simulated-device-telemetry-iot-hub.png)
 
 ## <a name="call-the-direct-method"></a>Вызов прямого метода
 
@@ -149,11 +149,11 @@ az extension add --name azure-cli-iot-ext
 
     На следующем снимке экрана показан пример выходных данных, когда приложение выполняет вызов прямого метода к устройству и получает подтверждение:
 
-    ![Запуск внутреннего приложения](./media/quickstart-control-device-node/BackEndApplication.png)
+    ![Выходные данные при выполнении приложением прямого вызова метода на устройство](./media/quickstart-control-device-node/direct-method-device-call.png)
 
     После запуска внутреннего приложения в окне консоли, в котором выполняется имитированное устройство, отобразится сообщение и изменится интервал, с которым это приложение отправляет сообщения:
 
-    ![Изменения в имитированном клиенте](./media/quickstart-control-device-node/SimulatedDevice-2.png)
+    ![Выходные данные при изменении в имитируемом клиенте](./media/quickstart-control-device-node/simulated-device-message-change.png)
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

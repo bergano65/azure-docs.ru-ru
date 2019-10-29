@@ -9,12 +9,12 @@ ms.service: azure-databricks
 ms.custom: mvc
 ms.topic: tutorial
 ms.date: 07/29/2019
-ms.openlocfilehash: 1d8b3aad3104f07f8f6499c88f00328c95047816
-ms.sourcegitcommit: f272ba8ecdbc126d22a596863d49e55bc7b22d37
+ms.openlocfilehash: 1a0d0426904ef5f9f49a627120ff2cc65f630861
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72274219"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72785947"
 ---
 # <a name="tutorial-sentiment-analysis-on-streaming-data-using-azure-databricks"></a>Руководство по оценке тональности сообщений при потоковой передаче данных с использованием Azure Databricks
 
@@ -24,7 +24,7 @@ ms.locfileid: "72274219"
 
 На следующем рисунке показан поток в приложении.
 
-![Azure Databricks с Центрами событий и Cognitive Services](./media/databricks-sentiment-analysis-cognitive-services/databricks-cognitive-services-tutorial.png "Azure Databricks with Event Hubs and Cognitive Services")
+![Azure Databricks с концентраторами событий и Cognitive Services](./media/databricks-sentiment-analysis-cognitive-services/databricks-cognitive-services-tutorial.png "Azure Databricks с концентраторами событий и Cognitive Services")
 
 В рамках этого руководства рассматриваются следующие задачи:
 
@@ -43,7 +43,7 @@ ms.locfileid: "72274219"
 
 > [!Note]
 > Инструкции из этого руководство нельзя выполнять с **бесплатной пробной версией подписки**.
-> Чтобы использовать бесплатную учетную запись для создания кластера Azure Databricks, перед созданием кластера перейдите в свой профиль и измените свою подписку на **оплату по мере использования**. Дополнительные сведения см. на странице [создания бесплатной учетной записи Azure](https://azure.microsoft.com/free/?WT.mc_id=sparkeventhubs-docs-alehall).
+> Если у вас есть бесплатная учетная запись, перейдите к профилю и измените подписку на подписку с **оплатой по мере использования**. Дополнительные сведения см. на странице [создания бесплатной учетной записи Azure](https://azure.microsoft.com/free/). Затем [удалите предельную сумму расходов](https://docs.microsoft.com/azure/billing/billing-spending-limit#remove-the-spending-limit-in-account-center) и [запросите увеличение квоты](https://docs.microsoft.com/azure/azure-supportability/resource-manager-core-quotas-request) на ЦП в своем регионе. При создании рабочей области Azure Databricks можно выбрать ценовую категорию **Пробная версия ("Премиум" — 14 дней бесплатно (DBU))** для предоставления рабочей области доступа к бесплатным DBU Azure Databricks уровня "Премиум" на 14 дней.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -65,11 +65,11 @@ ms.locfileid: "72274219"
 
 1. На портале Azure выберите **Создать ресурс** > **Данные и аналитика** > **Azure Databricks**.
 
-    ![Databricks на портале Azure](./media/databricks-sentiment-analysis-cognitive-services/azure-databricks-on-portal.png "Databricks on Azure portal")
+    ![Databricks на портале Azure](./media/databricks-sentiment-analysis-cognitive-services/azure-databricks-on-portal.png "Databricks на портале Azure")
 
 3. В разделе **службы Azure Databricks** укажите значения для создания рабочей области Databricks.
 
-    ![Создание рабочей области Azure Databricks](./media/databricks-sentiment-analysis-cognitive-services/create-databricks-workspace.png "Create an Azure Databricks workspace")
+    ![Создайте рабочую область Azure Databricks](./media/databricks-sentiment-analysis-cognitive-services/create-databricks-workspace.png "Создание рабочей области Azure Databricks").
 
     Укажите следующие значения.
 
@@ -85,7 +85,7 @@ ms.locfileid: "72274219"
 
 4. Создание учетной записи займет несколько минут. Во время создания учетной записи на портале с правой стороны отображается плитка **Submitting deployment for Azure Databricks** (Идет отправка развертывания для Databricks). Возможно, вам потребуется прокрутить панель мониторинга, чтобы увидеть эту плитку. В верхней части экрана также будет отображаться индикатор хода выполнения. Следить за выполнением можно с помощью любого из этих элементов.
 
-    ![Плитка развертывания Databricks](./media/databricks-sentiment-analysis-cognitive-services/databricks-deployment-tile.png "Databricks deployment tile")
+    ![Плитка развертывания Databricks](./media/databricks-sentiment-analysis-cognitive-services/databricks-deployment-tile.png "Плитка развертывания Databricks")
 
 ## <a name="create-a-spark-cluster-in-databricks"></a>Создание кластера Spark в Databricks
 
@@ -93,11 +93,11 @@ ms.locfileid: "72274219"
 
 2. Вы будете перенаправлены на портал Azure Databricks. На портале выберите **Кластер**.
 
-    ![Databricks в Azure](./media/databricks-sentiment-analysis-cognitive-services/databricks-on-azure.png "Databricks on Azure")
+    ![Databricks в Azure](./media/databricks-sentiment-analysis-cognitive-services/databricks-on-azure.png "Databricks в Azure")
 
 3. На странице **создания кластера** укажите значения для создания кластера.
 
-    ![Создание кластера Databricks Spark в Azure](./media/databricks-sentiment-analysis-cognitive-services/create-databricks-spark-cluster.png "Create Databricks Spark cluster on Azure")
+    ![Создание кластера Databricks Spark в Azure](./media/databricks-sentiment-analysis-cognitive-services/create-databricks-spark-cluster.png "Создание кластера Databricks Spark в Azure")
 
     Для всех остальных параметров, кроме следующих, примите значения по умолчанию:
 
@@ -115,17 +115,17 @@ ms.locfileid: "72274219"
 
 1. В веб-браузере перейдите на [Twitter For Developers](https://developer.twitter.com/en/apps) (Twitter для разработчиков) и выберите **Create an app** (Создать приложение). Может появиться сообщение о том, что требуется подать заявку на учетную запись разработчика Twitter. После того, как ваша заявка будет одобрена, вы должны увидеть подтверждающее сообщение электронной почты. Чтобы получить утверждения учетной записи разработчика, может потребоваться несколько дней.
 
-    ![Подтверждение учетной записи разработчика в Твиттере](./media/databricks-sentiment-analysis-cognitive-services/databricks-twitter-dev-confirmation.png "Twitter developer account confirmation")
+    ![Подтверждение учетной записи разработчика Twitter](./media/databricks-sentiment-analysis-cognitive-services/databricks-twitter-dev-confirmation.png "Подтверждение учетной записи разработчика Twitter")
 
 2. На странице **Create an application** (Создание приложения) укажите сведения для нового приложения, а затем выберите **Create your Twitter application** (Создать приложение Twitter).
 
-    ![Подробные сведения о приложении Twitter](./media/databricks-sentiment-analysis-cognitive-services/databricks-provide-twitter-app-details.png "Twitter application details")
+    ![Сведения о приложении Twitter](./media/databricks-sentiment-analysis-cognitive-services/databricks-provide-twitter-app-details.png "Сведения о приложении Twitter")
 
-    ![Подробные сведения о приложении Twitter](./media/databricks-sentiment-analysis-cognitive-services/databricks-provide-twitter-app-details-create.png "Twitter application details")
+    ![Сведения о приложении Twitter](./media/databricks-sentiment-analysis-cognitive-services/databricks-provide-twitter-app-details-create.png "Сведения о приложении Twitter")
 
 3. На странице приложения перейдите на вкладку **Keys and Tokens** (Ключи и маркеры) и скопируйте значения **ключа API потребителя** и **секретного ключа API потребителя**. Также выберите **Создать** в **маркере доступа и секрете маркера доступа**, чтобы сгенерировать маркеры доступа. Скопируйте значения **маркера доступа** и **секрета маркера доступа**.
 
-    ![Подробные сведения о приложении Twitter](./media/databricks-sentiment-analysis-cognitive-services/twitter-app-key-secret.png "Twitter application details")
+    ![Сведения о приложении Twitter](./media/databricks-sentiment-analysis-cognitive-services/twitter-app-key-secret.png "Сведения о приложении Twitter")
 
 Сохраните значения, полученные для приложения Twitter. Они понадобятся вам позже при работе с этим руководством.
 
@@ -135,24 +135,24 @@ ms.locfileid: "72274219"
 
 1. В рабочей области Azure Databricks выберите **Кластеры**, а затем — существующий кластер Spark. В меню кластера выберите **Библиотеки** и нажмите **Установить новую**.
 
-   ![Диалоговое окно добавления библиотеки](./media/databricks-sentiment-analysis-cognitive-services/databricks-add-library-locate-cluster.png "Add library locate cluster")
+   ![Диалоговое окно "Добавить библиотеку"](./media/databricks-sentiment-analysis-cognitive-services/databricks-add-library-locate-cluster.png "Добавление кластера для поиска библиотеки")
 
-   ![Диалоговое окно добавления библиотеки](./media/databricks-sentiment-analysis-cognitive-services/databricks-add-library-install-new.png "Add library install new")
+   ![Диалоговое окно "Добавить библиотеку"](./media/databricks-sentiment-analysis-cognitive-services/databricks-add-library-install-new.png "Добавление новой установки библиотеки")
 
 2. На странице новой библиотеки для параметра **Источник** выберите **Maven**. В поле **Coordinate** (Координата) щелкните **Search Packages** (Поиск пакетов), который требуется добавить. Ниже указаны координаты Maven для библиотек, используемых в рамках этого руководства.
 
    * Соединитель Центров событий Spark — `com.microsoft.azure:azure-eventhubs-spark_2.11:2.3.10`
    * API Twitter — `org.twitter4j:twitter4j-core:4.0.7`
 
-     ![Предоставление координат Maven](./media/databricks-sentiment-analysis-cognitive-services/databricks-add-library-search.png "Provide Maven coordinates")
+     ![Указание координат Maven](./media/databricks-sentiment-analysis-cognitive-services/databricks-add-library-search.png "Указание координат Maven")
 
-     ![Предоставление координат Maven](./media/databricks-sentiment-analysis-cognitive-services/databricks-add-library-search-dialogue.png "Search Maven coordinates")
+     ![Указание координат Maven](./media/databricks-sentiment-analysis-cognitive-services/databricks-add-library-search-dialogue.png "Поиск координат Maven")
 
 3. Щелкните **Установить**.
 
 4. В меню кластера убедитесь, что обе библиотеки установлены и подключены правильно.
 
-    ![Проверка библиотек](./media/databricks-sentiment-analysis-cognitive-services/databricks-add-library-check.png "Check libraries")
+    ![Проверка библиотек](./media/databricks-sentiment-analysis-cognitive-services/databricks-add-library-check.png "Проверка библиотек")
 
 6. Повторите эти действия для пакета Twitter `twitter4j-core:4.0.7`.
 
@@ -166,11 +166,11 @@ ms.locfileid: "72274219"
 
 3. В Azure Marketplace выберите **Искусственный интеллект и Cognitive Services** > **API анализа текста**.
 
-    ![Создание учетной записи Cognitive Services](./media/databricks-sentiment-analysis-cognitive-services/databricks-cognitive-services-text-api.png "Create Cognitive Services account")
+    ![Создание учетной записи Cognitive Services](./media/databricks-sentiment-analysis-cognitive-services/databricks-cognitive-services-text-api.png "Создание учетной записи Cognitive Services")
 
 4. В диалоговом окне **Создать** введите следующие значения.
 
-    ![Создание учетной записи Cognitive Services](./media/databricks-sentiment-analysis-cognitive-services/create-cognitive-services-account.png "Create Cognitive Services account")
+    ![Создание учетной записи Cognitive Services](./media/databricks-sentiment-analysis-cognitive-services/create-cognitive-services-account.png "Создание учетной записи Cognitive Services")
 
    - Введите имя учетной записи Cognitive Services.
    - Выберите подписку Azure, в рамках которой создается учетная запись.
@@ -182,13 +182,13 @@ ms.locfileid: "72274219"
 
 5. Создав учетную запись, выберите на вкладке **Обзор** раздел **Show access keys** (Показать ключи доступа).
 
-    ![Показать ключи доступа](./media/databricks-sentiment-analysis-cognitive-services/cognitive-services-get-access-keys.png "Show access keys")
+    ![Отображение ключей доступа](./media/databricks-sentiment-analysis-cognitive-services/cognitive-services-get-access-keys.png "Отображение ключей доступа")
 
     Кроме того, скопируйте часть URL-адреса конечной точки, как показано на снимке экрана. Этот URL-адрес понадобится для работы с руководством.
 
 6. В разделе **Управление ключами** нажмите значок копирования возле выбранного ключа.
 
-    ![Копирование ключей доступа](./media/databricks-sentiment-analysis-cognitive-services/cognitive-services-copy-access-keys.png "")
+    ![Копирование ключей доступа](./media/databricks-sentiment-analysis-cognitive-services/cognitive-services-copy-access-keys.png "Копирование ключей доступа")
 
 7. Сохраните значения URL-адреса конечной точки и ключа доступа, полученные на этом этапе. Они понадобятся в дальнейшем при работе с этим руководством.
 
@@ -201,11 +201,11 @@ ms.locfileid: "72274219"
 
 1. В левой области выберите **Рабочая область**. В раскрывающемся списке **Рабочая область** выберите **Создать**, а затем **Записная книжка**.
 
-    ![Создание записной книжки в Databricks](./media/databricks-sentiment-analysis-cognitive-services/databricks-create-notebook.png "Create notebook in Databricks")
+    ![Создание записной книжки в Databricks](./media/databricks-sentiment-analysis-cognitive-services/databricks-create-notebook.png "Создание записной книжки в Databricks")
 
 2. В диалоговом окне **Create Notebook** (Создание записной книжки) введите **SendTweetsToEventHub**, а затем выберите **Scala** в качестве языка и выберите созданный ранее кластер Spark.
 
-    ![Создание записной книжки в Databricks](./media/databricks-sentiment-analysis-cognitive-services/databricks-notebook-details.png "Create notebook in Databricks")
+    ![Создание записной книжки в Databricks](./media/databricks-sentiment-analysis-cognitive-services/databricks-notebook-details.png "Создание записной книжки в Databricks")
 
     Нажмите кнопку **Создать**.
 
@@ -620,7 +620,7 @@ streamingDataFrame.writeStream.outputMode("append").format("console").option("tr
 
 После выполнения заданий из этого руководства вы можете завершить работу кластера. Для этого в рабочей области Azure Databricks на левой панели выберите **Кластеры**. Для кластера, работу которого необходимо завершить, переместите указатель мыши на многоточие в столбце **Actions** (Действия) и выберите значок **Завершить**.
 
-![Завершение работы кластера Databricks](./media/databricks-sentiment-analysis-cognitive-services/terminate-databricks-cluster.png "Stop a Databricks cluster")
+![Остановка кластера Databricks](./media/databricks-sentiment-analysis-cognitive-services/terminate-databricks-cluster.png "Остановка кластера Databricks")
 
 Если не завершить работу кластера вручную, она завершится автоматически, если во время создания кластера вы установили флажок **Terminate after \_\_ minutes of inactivity** (Завершать работу после \_\_ мин бездействия). В этом случае работа кластера должна завершиться автоматически, если кластер был неактивным в течение определенного времени.
 

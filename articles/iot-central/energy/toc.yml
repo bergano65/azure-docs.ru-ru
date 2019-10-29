@@ -17,7 +17,9 @@
     - name: Архитектура приложения для мониторинга солнечной панели
       href: concept-iot-central-solar-panel-app.md
     - name: Возможность подключения
-      href: ../core/concepts-connectivity-pnp.md?toc=/azure/iot-central/energy/toc.json&bc=/azure/iot-central/energy/breadcrumb/toc.json
+      href: ../core/overview-iot-central-get-connected-pnp.md?toc=/azure/iot-central/energy/toc.json&bc=/azure/iot-central/energy/breadcrumb/toc.json
+    - name: Что представляют собой шаблоны приложений?
+      href: ../core/concepts-app-templates.md?toc=/azure/iot-central/energy/toc.json&bc=/azure/iot-central/energy/breadcrumb/toc.json
 - name: Руководства
   items:
     - name: Подключение устройств
@@ -50,8 +52,6 @@
           href: ../core/howto-export-data-pnp.md?toc=/azure/iot-central/energy/toc.json&bc=/azure/iot-central/energy/breadcrumb/toc.json
         - name: Создание настраиваемых правил
           href: ../core/howto-create-custom-rules.md?toc=/azure/iot-central/energy/toc.json&bc=/azure/iot-central/energy/breadcrumb/toc.json
-        - name: Создание пользовательских решений аналитики с помощью Databricks
-          href: ../core/howto-create-custom-analytics.md?toc=/azure/iot-central/energy/toc.json&bc=/azure/iot-central/energy/breadcrumb/toc.json
         - name: Создание пользовательских решений аналитики с помощью Databricks
           href: ../core/howto-create-custom-analytics.md?toc=/azure/iot-central/energy/toc.json&bc=/azure/iot-central/energy/breadcrumb/toc.json
     - name: Администрирование

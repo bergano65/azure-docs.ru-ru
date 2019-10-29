@@ -9,12 +9,12 @@ ms.service: azure-functions
 ms.custom: mvc
 ms.devlang: python
 manager: gwallace
-ms.openlocfilehash: 03b8e12d63ba84b4e20d7263f1c2ecb8d912936d
-ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
+ms.openlocfilehash: f2602e5a13f83090291656e7062c74c245bc6568
+ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71203142"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72693347"
 ---
 # <a name="create-an-http-triggered-function-in-azure"></a>Создание функции, активируемой HTTP, в Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "71203142"
 
 Перед началом работы вам следует:
 
-+ установить [Python 3.6.x](https://www.python.org/downloads/);
++ Установите [Python 3.6.8](https://www.python.org/downloads/). Эта версия Python проверяется с помощью функций. Версия 3.7 и более поздние пока не поддерживаются.
 
 + установить [Azure Functions Core Tools](./functions-run-local.md#v2) версии 2.7.1575 или более поздней;
 

@@ -14,16 +14,16 @@ ms.topic: sample
 ms.date: 11/28/2017
 ms.author: atsenthi
 ms.custom: mvc
-ms.openlocfilehash: 8e3187ba399ffa4d6c0ca863380205f7fbbfaae8
-ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
+ms.openlocfilehash: 44bb0e615453450c401949f0ce76f15cb82fab67
+ms.sourcegitcommit: d37991ce965b3ee3c4c7f685871f8bae5b56adfa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69036110"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72680540"
 ---
 # <a name="add-an-inbound-network-security-group-rule"></a>Добавление правило входящего трафика для группы безопасности сети
 
-Этот пример сценария создает правило группы безопасности сети, разрешающее входящий трафик для порта 8081.  Сценарий возвращает ресурс `Microsoft.Network/networkSecurityGroups`, в котором находится кластер, создает правило конфигурации безопасности сети и обновляет группу безопасности сети. Измените параметры, если это необходимо.
+Этот пример сценария создает правило группы безопасности сети, разрешающее входящий трафик для порта 8081.  Скрипт возвращает группу безопасности сети, создает правило конфигурации безопасности сети и обновляет группу безопасности сети. Измените параметры, если это необходимо.
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 

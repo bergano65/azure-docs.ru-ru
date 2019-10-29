@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 08/06/2019
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: a4774431b6a6e37ee9e175e161813936a71cdee9
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: 532c6a45351f872260ea9383adaacacd486b9d9a
+ms.sourcegitcommit: 6eecb9a71f8d69851bc962e2751971fccf29557f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68824708"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72532722"
 ---
 # <a name="build-an-aspnet-core-and-sql-database-app-in-azure-app-service-on-linux"></a>Создание веб-приложения ASP.NET Core с Базой данных SQL в Службе приложений Azure в Linux
 
@@ -49,7 +49,7 @@ ms.locfileid: "68824708"
 Для работы с этим руководством:
 
 * [установите Git](https://git-scm.com/);
-* [установите .NET Core](https://www.microsoft.com/net/core/).
+* [Установка пакета SDK для .NET Core версии 2.2](https://dotnet.microsoft.com/download/dotnet-core/2.2).
 
 ## <a name="create-local-net-core-app"></a>Создание локального приложения .NET Core
 
@@ -78,7 +78,7 @@ dotnet ef database update
 dotnet run
 ```
 
-Откройте браузер и перейдите по адресу `http://localhost:5000`. Щелкните ссылку **Создать**, чтобы создать несколько элементов _списка дел_ .
+Откройте браузер и перейдите по адресу `http://localhost:5000`. Щелкните ссылку **Создать**, чтобы создать несколько элементов _списка дел_.
 
 ![Успешное подключение к базе данных SQL](./media/tutorial-dotnetcore-sqldb-app/local-app-in-browser.png)
 
@@ -183,7 +183,7 @@ az webapp config connection-string set --resource-group myResourceGroup --name <
 
 ### <a name="configure-environment-variable"></a>Настройка переменной среды
 
-Затем задайте для параметра приложения `ASPNETCORE_ENVIRONMENT` значение _Production_ . Этот параметр позволяет определить, выполняется ли приложение в Azure, так как SQLite применяется для локальной среды разработки, а База данных SQL — для среды Azure.
+Затем задайте для параметра приложения `ASPNETCORE_ENVIRONMENT` значение _Production_. Этот параметр позволяет определить, выполняется ли приложение в Azure, так как SQLite применяется для локальной среды разработки, а База данных SQL — для среды Azure.
 
 В следующем примере настраивается параметр приложения `ASPNETCORE_ENVIRONMENT` в приложении Azure. Замените заполнитель *\<app-name>* .
 
@@ -302,7 +302,7 @@ dotnet ef database update
 
 Внесите некоторые изменения в код, чтобы использовалось свойство `Done`. Для простоты мы изменим только представления `Index` и `Create`, чтобы просмотреть свойство в действии.
 
-Откройте файл _Controllers\TodosController.cs_ .
+Откройте файл _Controllers\TodosController.cs_.
 
 Найдите метод `Create()` и добавьте `Done` в список свойств атрибута `Bind`. Когда все будет готово, сигнатура метода `Create()` должна выглядеть следующим образом:
 
@@ -310,7 +310,7 @@ dotnet ef database update
 public async Task<IActionResult> Create([Bind("ID,Description,CreatedDate,Done")] Todo todo)
 ```
 
-Откройте файл _Views\Todos\Create.cshtml_ .
+Откройте файл _Views\Todos\Create.cshtml_.
 
 В коде Razor вы должны увидеть элемент `<div class="form-group">` для `Description` и еще один элемент `<div class="form-group">` для `CreatedDate`. Сразу после этих двух элементов добавьте еще один элемент `<div class="form-group">` для `Done`:
 
@@ -324,7 +324,7 @@ public async Task<IActionResult> Create([Bind("ID,Description,CreatedDate,Done")
 </div>
 ```
 
-Откройте файл _Views\Todos\Index.cshtml_ .
+Откройте файл _Views\Todos\Index.cshtml_.
 
 Найдите пустой элемент `<th></th>`. Добавьте следующий код Razor над этим элементом:
 

@@ -1,5 +1,5 @@
 ---
-title: Интеграция Azure Key Vault в развертывание шаблона Azure Resource Manager | Документация Майкрософт
+title: Использование Azure Key Vault в шаблоне Resource Manager
 description: Узнайте, как использовать Azure Key Vault для передачи значений безопасного параметра во время развертывания шаблона Resource Manager
 services: azure-resource-manager
 documentationcenter: ''
@@ -14,12 +14,12 @@ ms.date: 05/23/2019
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: seodec18
-ms.openlocfilehash: b91a3488750795e8ee9df6602bb2b3df8a9b08ec
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 5dfc186e5d047de76e16ec145f5f0afe94b8d2f4
+ms.sourcegitcommit: 6eecb9a71f8d69851bc962e2751971fccf29557f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67436574"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72533597"
 ---
 # <a name="tutorial-integrate-azure-key-vault-in-your-resource-manager-template-deployment"></a>Руководство по интеграции Azure Key Vault в развертывание шаблона Resource Manager
 

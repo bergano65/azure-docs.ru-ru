@@ -5,15 +5,15 @@ author: normesta
 ms.service: storage
 ms.subservice: blobs
 ms.topic: tutorial
-ms.date: 12/31/2018
+ms.date: 10/22/2019
 ms.author: normesta
 ms.reviewer: dineshm
-ms.openlocfilehash: 4cc38b952e773002e0b5f6b2311187f8d3d46400
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: cd3db902d713910de5a8199df85089d62569f9d7
+ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68855391"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72757570"
 ---
 <!---Customer intent: I want to host files for a static website in Blob storage and access the website from an Azure endpoint.--->
 
@@ -30,6 +30,9 @@ ms.locfileid: "68855391"
 ## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [storage-quickstart-prereq-include](../../../includes/storage-quickstart-prereq-include.md)]
+
+> [!NOTE] 
+> Создайте учетную запись хранения общего назначения версии 2. Статические веб-сайты недоступны в учетной записи хранения другого типа.
 
 В этом руководстве используется бесплатное средство для программистов [Visual Studio Code](https://code.visualstudio.com/download), с помощью которого создается статический веб-сайт и развертывается в учетную запись службы хранилища Azure.
 

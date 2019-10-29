@@ -10,15 +10,15 @@ ms.service: azure-resource-manager
 ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.date: 06/12/2019
+ms.date: 10/15/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 462d9cd6d2a911e660221621ebde5829e928cf00
-ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
+ms.openlocfilehash: b176e97a546335f597d4cf424d7feb4f5fa0f775
+ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71122227"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72597218"
 ---
 # <a name="tutorial-continuous-integration-of-azure-resource-manager-templates-with-azure-pipelines"></a>Руководство по Непрерывная интеграция шаблонов Azure Resource Manager с Azure Pipelines
 
@@ -91,7 +91,7 @@ GitHub используется для хранения исходного ко�
 
     Замените **[YourAccountName]** именем своей учетной записи GitHub, а **[YourGitHubRepositoryName]** замените именем своего репозитория, которое вы создали при выполнении предыдущей процедуры.
 
-    На следующих снимках экрана продемонстрирован пример.
+    На следующем снимке экрана показан пример.
 
     ![Azure Resource Manager, Azure DevOps и Azure Pipelines создают GitHub Bash](./media/resource-manager-tutorial-use-azure-pipelines/azure-resource-manager-devops-pipelines-github-bash.png)
 
@@ -183,9 +183,11 @@ Azuredeploy.json был добавлен в локальный репозито�
 
     ```yaml
     steps:
-    - task: AzureResourceGroupDeployment@2
+    - task: AzureResourceManagerTemplateDeployment@3
       inputs:
-        azureSubscription: '[YourServiceConnectionName]'
+        deploymentScope: 'Resource Group'
+        ConnectedServiceName: '[EnterYourServiceConnectionName]'
+        subscriptionName: '[EnterTheTargetSubscriptionID]'
         action: 'Create Or Update Resource Group'
         resourceGroupName: '[EnterANewResourceGroupName]'
         location: 'Central US'
@@ -200,14 +202,16 @@ Azuredeploy.json был добавлен в локальный репозито�
 
     Выполните следующие изменения:
 
-    * **azureSubscription**: обновите значение с помощью подключения к службе, созданного при выполнении предыдущей процедуры;
+    * **deloymentScope**: выберите область развертывания из этих вариантов: `Management Group`, `Subscription` и `Resource Group`. Используйте **группу ресурсов** в этом учебнике. Дополнительные сведения об областях см. в разделе [Области развертывания](./resource-group-template-deploy-rest.md#deployment-scope).
+    * **ConnectedServiceName**: укажите имя подключения службы, созданное ранее.
+    * **SubscriptionName**:  укажите идентификатор целевой подписки.
     * **действие**: действие **Создание или изменение группы ресурсов** выполняет 2 действия: 1. создает группу ресурсов, если указано новое имя группы ресурсов; 2. развертывает указанный шаблон;
     * **resourceGroupName**: укажите имя новой группы ресурсов; Например, **AzureRmPipeline-rg**;
     * **расположение**: укажите расположение для группы ресурсов;
     * **templateLocation**: если указан **связанный артефакт**, задача ищет файл шаблона непосредственно из подключенного репозитория;
     * **csmFile** — это путь к файлу шаблона. Вам не нужно указывать файл параметров шаблона, потому что все параметры, определенные в шаблоне, имеют значения по умолчанию.
 
-    Подробнее о задаче см. в разделе [Задача развертывания группы ресурсов Azure](/azure/devops/pipelines/tasks/deploy/azure-resource-group-deployment)
+    Дополнительные сведения о задаче см. в статьях [Azure Resource Group Deployment task](/azure/devops/pipelines/tasks/deploy/azure-resource-group-deployment) (Задача развертывания группы ресурсов Azure) и [Azure Resource Manager template deployment task](https://github.com/microsoft/azure-pipelines-tasks/blob/master/Tasks/AzureResourceManagerTemplateDeploymentV3/README.md) (Задача развертывания шаблона Azure Resource Manager).
 1. Выберите **Сохранить и запустить**.
 1. Еще раз выберите **Сохранить и запустить**. Копия файла YAML сохраняется в подключенном хранилище. Вы можете увидеть файл YAML, перейдя в свой репозиторий.
 1. Убедитесь, что конвейер успешно выполнен.

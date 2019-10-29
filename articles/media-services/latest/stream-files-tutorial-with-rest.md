@@ -10,14 +10,14 @@ ms.service: media-services
 ms.workload: ''
 ms.topic: tutorial
 ms.custom: mvc
-ms.date: 04/22/2019
+ms.date: 10/21/2019
 ms.author: juliako
-ms.openlocfilehash: f9ca4b54db305a5c088b4dda27a6844c8439fa1a
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 3f065f77c6843b135554e61f5887655114571b08
+ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67055304"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72750246"
 ---
 # <a name="tutorial-encode-a-remote-file-based-on-url-and-stream-the-video---rest"></a>Руководство по Кодирование удаленного файла на основе URL-адреса и потоковой передачи видео с помощью REST
 
@@ -62,11 +62,9 @@ ms.locfileid: "67055304"
 
 ## <a name="configure-postman"></a>Настройка Postman
 
-В этом разделе описано, как выполнить настройку Postman.
-
 ### <a name="configure-the-environment"></a>Настройка среды 
 
-1. Откройте **Postman**.
+1. Откройте приложение**Postman**.
 2. В правой части экрана выберите параметр **Управление средой**.
 
     ![Управление средой](./media/develop-with-postman/postman-import-env.png)
@@ -96,18 +94,19 @@ ms.locfileid: "67055304"
 В этом разделе описано, как отправить запросы, относящиеся к кодированию и созданию URL-адресов, которые нужны для потоковой передачи файла. В частности, отправляются следующие запросы:
 
 1. получение маркера безопасности Azure AD для аутентификации субъекта-службы;
+1. Запуск конечной точки потоковой передачи
 2. Создание выходного ресурса
-3. Создание **преобразования**
-4. Создание **задания**
-5. Создание **указателя потоковой передачи**
-6. Получение списка путей для **указателя потоковой передачи**
+3. Создайте преобразование.
+4. Создание задания
+5. Создание указателя потоковой передачи
+6. Получение списка путей для указателя потоковой передачи
 
 > [!Note]
 >  В этом руководстве предполагается, что всем создаваемым ресурсам вы присваиваете уникальные имена.  
 
 ### <a name="get-azure-ad-token"></a>Получение маркера Azure AD 
 
-1. В левом окне Postman выберите "Шаг 1: Получить маркер проверки подлинности AAD".
+1. В левом окне приложения Postman выберите "Шаг 1. Получить маркер проверки подлинности AAD".
 2. Затем выберите Get Azure AD Token for Service Principal Authentication (Получение маркера безопасности Azure AD для аутентификации субъекта-службы).
 3. Нажмите кнопку **Отправить**.
 
@@ -121,11 +120,38 @@ ms.locfileid: "67055304"
 
     ![Получение маркера AAD](./media/develop-with-postman/postman-get-aad-auth-token.png)
 
+
+### <a name="start-a-streaming-endpoint"></a>Запуск конечной точки потоковой передачи
+
+Чтобы начать потоковую передачу видео, сначала вам потребуется запустить [конечную точку потоковой передачи](https://docs.microsoft.com/azure/media-services/latest/streaming-endpoint-concept), из которой предполагается транслировать видео.
+
+> [!NOTE]
+> Плата взимается, только когда конечная точка потоковой передачи используется.
+
+1. В левом окне приложения Postman выберите Streaming and Live (Потоковая передача и трансляция).
+2. Затем выберите Start StreamingEndpoint (Запустить StreamingEndpoint).
+3. Нажмите кнопку **Отправить**.
+
+    * Это действие отправляет следующую операцию **POST**:
+
+        ```
+        https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaservices/:accountName/streamingEndpoints/:streamingEndpointName/start?api-version={{api-version}}
+        ```
+    * Если запрос выполнен успешно, возвращается `Status: 202 Accepted`.
+
+        Это состояние означает, что запрос принят для обработки, но обработка не завершена. Вы можете запросить состояние операции на основе значения в заголовке ответа `Azure-AsyncOperation`.
+
+        Например, следующая операция GET возвращает состояние операции:
+        
+        `https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/<resourceGroupName>/providers/Microsoft.Media/mediaservices/<accountName>/streamingendpointoperations/1be71957-4edc-4f3c-a29d-5c2777136a2e?api-version=2018-07-01`
+
+        В статье [Track asynchronous Azure operations](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-async-operations) (Отслеживание асинхронных операций Azure) приведены подробные сведения о том, как отслеживать состояние асинхронных операций Azure с помощью значений, возвращаемых в ответе.
+
 ### <a name="create-an-output-asset"></a>Создание выходного ресурса
 
 Выходной [ресурс](https://docs.microsoft.com/rest/api/media/assets) сохраняет результаты задания кодирования. 
 
-1. В левом окне Postman выберите Assets (Ресурсы).
+1. В левом окне приложения Postman выберите "Активы".
 2. Затем выберите действие Create or update an Asset (Создать или обновить ресурс).
 3. Нажмите кнопку **Отправить**.
 
@@ -156,7 +182,7 @@ ms.locfileid: "67055304"
 > [!Note]
 > Перед созданием [преобразования](https://docs.microsoft.com/rest/api/media/transforms) с помощью метода **Get** убедитесь, что такое преобразование еще не существует. В этом руководстве предполагается, что всем создаваемым преобразованиям вы присваиваете уникальные имена.
 
-1. В левом окне Postman выберите Encoding and Analysis (Кодирование и анализ).
+1. В левом окне приложения Postman выберите Encoding and Analysis (Кодирование и анализ).
 2. Затем щелкните Create Transform (Создать преобразование).
 3. Нажмите кнопку **Отправить**.
 
@@ -191,7 +217,7 @@ ms.locfileid: "67055304"
 
 В этом примере входные данные задания основываются на URL-адресе HTTPS ("https:\//nimbuscdn-nimbuspm.streaming.mediaservices.windows.net/2b533311-b215-4409-80af-529c3e853622/").
 
-1. В левом окне Postman выберите Encoding and Analysis (Кодирование и анализ).
+1. В левом окне приложения Postman выберите Encoding and Analysis (Кодирование и анализ).
 2. Затем выберите действие Create or update an Job (Создать или обновить задание).
 3. Нажмите кнопку **Отправить**.
 
@@ -243,7 +269,7 @@ ms.locfileid: "67055304"
 
 У вашей учетной записи служб мультимедиа есть квота на количество входов в **политику потоковой передачи**. Вам не нужно создавать новую **политику потоковой передачи** для каждого **указателя потоковой передачи**.
 
-1. В левом окне Postman выберите Streaming Policies (Политики потоковой передачи).
+1. В левом окне приложения Postman выберите Streaming Policies (Политики потоковой передачи).
 2. Затем выберите Создать указатель потоковой передачи.
 3. Нажмите кнопку **Отправить**.
 
@@ -269,7 +295,7 @@ ms.locfileid: "67055304"
 
 Создав [указатель потоковой передачи](https://docs.microsoft.com/rest/api/media/streaminglocators), вы можете получить URL-адреса потоковой передачи.
 
-1. В левом окне Postman выберите Streaming Policies (Политики потоковой передачи).
+1. В левом окне приложения Postman выберите Streaming Policies (Политики потоковой передачи).
 2. Затем выберите List Paths (Отобразить список путей).
 3. Нажмите кнопку **Отправить**.
 

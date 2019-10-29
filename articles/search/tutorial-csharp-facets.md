@@ -1,24 +1,25 @@
 ---
-title: Учебник по C#. Использование аспектов для улучшения навигации в службе "Поиск Azure"
-description: Этот учебник основан на проекте "Разбиение результатов поиска на страницы (Поиск Azure)" для добавления аспектной (фасетной) навигации. Узнайте, как с помощью аспектов можно легко сузить поиск.
-services: search
-ms.service: search
-ms.topic: tutorial
-ms.author: v-pettur
+title: Учебник по C#. Использование аспектов для улучшения навигации
+titleSuffix: Azure Cognitive Search
+description: Этот учебник основан на проекте "Разбиение результатов поиска на страницы (Когнитивный поиск Azure)" для добавления аспектной (фасетной) навигации. Узнайте, как с помощью аспектов можно легко сузить поиск.
+manager: nitinme
 author: PeterTurcan
-ms.date: 06/20/2019
-ms.openlocfilehash: 62326ad3bc5f2d740ce744819df559bce8658eb7
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.author: v-pettur
+ms.service: cognitive-search
+ms.topic: tutorial
+ms.date: 11/04/2019
+ms.openlocfilehash: 9f0d716e9077b2d9702f26b1afe92d9e4faf4a77
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67443776"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72794078"
 ---
-# <a name="c-tutorial-use-facets-to-aid-navigation---azure-search"></a>Учебник C# по использованию аспектов для улучшения навигации в службе "Поиск Azure"
+# <a name="c-tutorial-use-facets-to-aid-navigation---azure-cognitive-search"></a>Руководство по C#. Использование аспектов для улучшения навигации в службе "Когнитивный поиск Azure"
 
 Аспекты используются для облегчения навигации, предоставляя пользователю набор ссылок для использования при поиске. Аспекты — это атрибуты данных (например, категория или особенность отеля в наших примерах данных).
 
-Этот учебник основан на проекте разбиения на страницы, который был создан в [учебнике C# по разбиению результатов поиска на страницы в службе "Поиск Azure"](tutorial-csharp-paging.md).
+Это руководство основано на проекте разбиения на страницы, который был создан в [руководстве по C# для Search results pagination — Azure Cognitive Search](tutorial-csharp-paging.md) (Учебник по C#. Разбиение результатов поиска на страницы — Когнитивный поиск Azure).
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 > [!div class="checklist"]
@@ -29,7 +30,7 @@ ms.locfileid: "67443776"
 
 Для работы с этим руководством вам потребуется следующее:
 
-Подготовьте и запустите проект, как описано в [учебнике C# по разбиению результатов поиска на страницы в службе "Поиск Azure"](tutorial-csharp-paging.md). Это может быть ваша собственная версия проекта либо версия, установленная с сайта GitHub: [Создание первого приложения](https://github.com/Azure-Samples/azure-search-dotnet-samples).
+Подготовьте и запустите проект, как описано в [учебнике C# по Search results pagination — Azure Cognitive Search](tutorial-csharp-paging.md) (Учебник по C#. Разбиение результатов поиска на страницы — Когнитивный поиск Azure). Это может быть ваша собственная версия проекта либо версия, установленная с сайта GitHub: [Создание первого приложения](https://github.com/Azure-Samples/azure-search-dotnet-samples).
 
 ## <a name="set-model-properties-as-isfacetable"></a>Пометка свойств модели как IsFacetable
 
@@ -559,4 +560,4 @@ ms.locfileid: "67443776"
 В следующем учебнике мы рассмотрим результаты бронирования. До этого момента результаты упорядочиваются просто — в том порядке, в котором они находятся в базе данных.
 
 > [!div class="nextstepaction"]
-> [Учебник C# по упорядочиванию результатов в службе "Поиск Azure"](tutorial-csharp-orders.md).
+> [Учебник C# по упорядочиванию результатов в службе "Когнитивный поиск Azure"](tutorial-csharp-orders.md)

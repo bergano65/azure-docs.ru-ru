@@ -10,15 +10,15 @@ ms.service: app-service-web
 ms.workload: web
 ms.tgt_pltfrm: na
 ms.topic: quickstart
-ms.date: 04/03/2019
+ms.date: 10/22/2019
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: f44c7a66b6d8fe7ed6ad114ea176c84351ac6493
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 6f9005b0e73e60bf479d0d3c059c301668f3b848
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70071520"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72787319"
 ---
 # <a name="migrate-an-aspnet-app-to-azure-app-service-using-a-windows-container-preview"></a>Перенос приложения ASP.NET в Службу приложений Azure с помощью контейнера Windows (предварительная версия)
 
@@ -90,6 +90,10 @@ RUN ${source:-obj/Docker/publish/InstallFont.ps1}
 
 Файл _InstallFont.ps1_ можно найти в проекте **CustomFontSample**. Это простой сценарий, который устанавливает шрифт. Более сложную версию этого сценария можно найти в [Центре сценариев](https://gallery.technet.microsoft.com/scriptcenter/fb742f92-e594-4d0c-8b79-27564c575133).
 
+> [!NOTE]
+> Чтобы локально проверить контейнер Windows, убедитесь, что на локальном компьютере запущен Docker.
+>
+
 ## <a name="publish-to-azure-container-registry"></a>Публикация в Реестре контейнеров Azure
 
 В [Реестре контейнеров Azure](https://docs.microsoft.com/azure/container-registry/) можно хранить образы для развертывания контейнеров. Можно настроить службу приложений для использования образов, размещенных в Реестре контейнеров Azure.
@@ -135,27 +139,34 @@ RUN ${source:-obj/Docker/publish/InstallFont.ps1}
 
 В меню слева выберите **Создать ресурс** > **Веб** > **Веб-приложение для контейнеров**.
 
-### <a name="configure-the-new-web-app"></a>Настройка нового веб-приложения
+### <a name="configure-app-basics"></a>Настройка основных сведений приложения
 
-В пользовательском интерфейсе создания настройте параметры в соответствии со следующей таблицей.
+На вкладке **Основные сведения** настройте параметры в соответствии со следующей таблицей, а затем щелкните **Next: Docker** (Далее: Docker).
 
 | Параметр  | Рекомендуемое значение | Дополнительные сведения |
 | ----------------- | ------------ | ----|
-|**Имя приложения**| Введите уникальное имя. | URL-адрес веб-приложения: `http://<app_name>.azurewebsites.net`, где `<app_name>` — имя приложения. |
-|**Группа ресурсов**| Щелкните **Использовать существующую** и введите **myResourceGroup**. |  |
-|**ОС**| Windows (предварительная версия) | |
+|**подписка**| Убедитесь, что отображается правильная подписка. |  |
+|**Группа ресурсов**| Выберите **Создать**, введите **myResourceGroup** и щелкните **ОК**. |  |
+|**Имя**| Введите уникальное имя. | URL-адрес веб-приложения: `http://<app-name>.azurewebsites.net`, где `<app-name>` — имя приложения. |
+|**Опубликовать**| Контейнер Docker | |
+|**Операционная система**| Windows | |
+|**Регион**| Западная Европа | |
+|**План Windows**| Выберите **Создать**, введите **myAppServicePlan** и щелкните **ОК**. | |
 
-### <a name="configure-app-service-plan"></a>Настройка плана службы приложений
+Вкладка **Основные сведения** должна выглядеть следующим образом:
 
-Щелкните **Расположение или план службы приложений** > **Создать**. Укажите имя нового плана, выберите для него расположение **Западная Европа** и нажмите кнопку **ОК**.
+![](media/app-service-web-tutorial-windows-containers-custom-fonts/configure-app-basics.png)
 
-![](media/app-service-web-tutorial-windows-containers-custom-fonts/configure-app-service-plan.png)
+### <a name="configure-windows-container"></a>Настройка контейнера Windows
 
-### <a name="configure-container"></a>Настройка контейнера
+На вкладке **Docker** настройте свой пользовательский контейнер Windows, как показано в следующей таблице, и выберите **Просмотр и создание**.
 
-Выберите **Настроить контейнер** > **Реестр контейнеров Azure**. Выберите реестр, образ и тег, созданные ранее при [публикации в Реестре контейнеров Azure](#publish-to-azure-container-registry), затем нажмите кнопку **ОК**.
-
-![](media/app-service-web-tutorial-windows-containers-custom-fonts/configure-app-container.png)
+| Параметр  | Рекомендуемое значение |
+| ----------------- | ------------ |
+|**Источник образа**| Реестр контейнеров Azure |
+|**Реестр**| Выберите [созданный ранее реестр](#publish-to-azure-container-registry). |
+|**Образ —**| customfontsample |
+|**Тег**| последняя |
 
 ### <a name="complete-app-creation"></a>Завершение создания приложения
 
@@ -183,9 +194,9 @@ RUN ${source:-obj/Docker/publish/InstallFont.ps1}
 
 ## <a name="see-container-start-up-logs"></a>Просмотр журналов запуска контейнера
 
-Загрузка контейнера Windows может занять некоторое время. Чтобы просмотреть ход выполнения, перейдите по следующему URL-адресу, указав вместо *\<app_name >* имя приложения.
+Загрузка контейнера Windows может занять некоторое время. Чтобы просмотреть ход выполнения, перейдите по следующему URL-адресу, заменив *\<app_name>* именем приложения.
 ```
-https://<app_name>.scm.azurewebsites.net/api/logstream
+https://<app-name>.scm.azurewebsites.net/api/logstream
 ```
 
 Потоковые журналы выглядят следующим образом:

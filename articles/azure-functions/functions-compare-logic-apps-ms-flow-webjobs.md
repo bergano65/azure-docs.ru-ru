@@ -11,12 +11,12 @@ ms.topic: overview
 ms.date: 04/09/2018
 ms.author: glenga
 ms.custom: mvc
-ms.openlocfilehash: 47e300bf242f02d458363b7d2ab7af8a4399b399
-ms.sourcegitcommit: 116bc6a75e501b7bba85e750b336f2af4ad29f5a
+ms.openlocfilehash: b131a6fd5bb39ee5ec672a8ffb75cb22087a38af
+ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71155044"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72597440"
 ---
 # <a name="what-are-microsoft-flow-logic-apps-functions-and-webjobs"></a>Что такое Microsoft Flow, Logic Apps, Функции и Веб-задания?
 
@@ -27,7 +27,9 @@ ms.locfileid: "71155044"
 * [Функции Azure](https://azure.microsoft.com/services/functions/)
 * [веб-задания службы приложений Azure](../app-service/webjobs-create.md)
 
-Все эти службы используются для настройки интеграции и автоматизации бизнес-процессов. Они позволяют определять входные данные, действия, условия и выходные данные. Каждую отдельную службу можно запускать по расписанию или активировать по запросу. Каждая служба обладает уникальными преимуществами, но в этой статье описываются их различия.
+Все эти службы используются для настройки интеграции и автоматизации бизнес-процессов. Они позволяют определять входные данные, действия, условия и выходные данные. Каждую отдельную службу можно запускать по расписанию или активировать по запросу. Каждая служба обладает уникальными преимуществами, но в этой статье описываются их различия. 
+
+Если вы ищете более общее сравнение функций Azure с другими вариантами служб вычислений Azure, см. статью [Criteria for choosing an Azure compute service](/azure/architecture/guide/technology-choices/compute-comparison) (Критерии выбора службы вычислений Azure) и [Choosing an Azure compute option for microservices](/azure/architecture/microservices/design/compute-options) (Выбор варианта службы вычислений Azure для микрослужб).
 
 ## <a name="compare-microsoft-flow-and-azure-logic-apps"></a>Сравнение Microsoft Flow и Azure Logic Apps
 

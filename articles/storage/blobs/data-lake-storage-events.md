@@ -9,10 +9,10 @@ ms.date: 08/20/2019
 ms.author: normesta
 ms.reviewer: sumameh
 ms.openlocfilehash: 03a07e70c967f92fe5dcc7c951aeea299b050405
-ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
+ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "71326994"
 ---
 # <a name="tutorial-implement-the-data-lake-capture-pattern-to-update-a-databricks-delta-table"></a>Руководство по Реализация шаблона сохранения озера данных для обновления таблицы Databricks Delta
@@ -55,7 +55,7 @@ ms.locfileid: "71326994"
 
 1. Откройте обозреватель службы хранилища Azure. Затем перейдите к учетной записи хранения и создайте в разделе **Контейнеры больших двоичных объектов** новый контейнер с именем **data**.
 
-   ![Папка данных](./media/data-lake-storage-events/data-container.png "data folder")
+   ![папка данных](./media/data-lake-storage-events/data-container.png "папка данных")
 
    Подробнее это описано в статье [Управление данными в учетной записи Azure Data Lake Storage 2-го поколения с помощью Обозревателя службы хранилища Azure](data-lake-storage-explorer.md).
 
@@ -88,11 +88,11 @@ ms.locfileid: "71326994"
 
 1. На портале Azure выберите **Создать ресурс** > **Analytics** > **Azure Databricks**.
 
-    ![Databricks на портале Azure](./media/data-lake-storage-quickstart-create-databricks-account/azure-databricks-on-portal.png "Databricks on Azure portal")
+    ![Databricks на портале Azure](./media/data-lake-storage-quickstart-create-databricks-account/azure-databricks-on-portal.png "Databricks на портале Azure")
 
 2. В разделе **службы Azure Databricks** укажите значения для создания рабочей области Databricks.
 
-    ![Создание рабочей области Azure Databricks](./media/data-lake-storage-events/new-databricks-service.png "Create an Azure Databricks workspace")
+    ![Создайте рабочую область Azure Databricks](./media/data-lake-storage-events/new-databricks-service.png "Создание рабочей области Azure Databricks").
 
     Создание рабочей области займет несколько минут. Чтобы отслеживать состояние операции, просмотрите индикатор выполнения вверху.
 
@@ -102,11 +102,11 @@ ms.locfileid: "71326994"
 
 2. Вы будете перенаправлены на портал Azure Databricks. На портале выберите **Новый** > **Кластер**.
 
-    ![Databricks в Azure](./media/data-lake-storage-events/databricks-on-azure.png "Databricks on Azure")
+    ![Databricks в Azure](./media/data-lake-storage-events/databricks-on-azure.png "Databricks в Azure")
 
 3. На странице **создания кластера** укажите значения для создания кластера.
 
-    ![Создание кластера Databricks Spark в Azure](./media/data-lake-storage-events/create-databricks-spark-cluster.png "Create Databricks Spark cluster on Azure")
+    ![Создание кластера Databricks Spark в Azure](./media/data-lake-storage-events/create-databricks-spark-cluster.png "Создание кластера Databricks Spark в Azure")
 
     Для всех остальных параметров, кроме следующих, примите значения по умолчанию:
 
@@ -121,11 +121,11 @@ ms.locfileid: "71326994"
 
 1. В левой области выберите **Рабочая область**. В раскрывающемся списке **Рабочая область** выберите **Создать** > **Notebook** (Записная книжка).
 
-    ![Создание записной книжки в Databricks](./media/data-lake-storage-quickstart-create-databricks-account/databricks-create-notebook.png "Create notebook in Databricks")
+    ![Создание записной книжки в Databricks](./media/data-lake-storage-quickstart-create-databricks-account/databricks-create-notebook.png "Создание записной книжки в Databricks")
 
 2. В диалоговом окне **создания записной книжки** введите имя записной книжки. Выберите **Python** в качестве языка, а затем выберите созданный ранее кластер Spark.
 
-    ![Создание записной книжки в Databricks](./media/data-lake-storage-events/new-databricks-notebook.png "Create notebook in Databricks")
+    ![Создание записной книжки в Databricks](./media/data-lake-storage-events/new-databricks-notebook.png "Создание записной книжки в Databricks")
 
     Нажмите кнопку **Создать**.
 
@@ -243,7 +243,7 @@ ms.locfileid: "71326994"
 
 3. Присвойте заданию имя и выберите книгу `upsert-order-data`.
 
-   ![Создание задания](./media/data-lake-storage-events/create-spark-job.png "Create a job")
+   ![Создание задания](./media/data-lake-storage-events/create-spark-job.png "создать задание;")
 
 ## <a name="create-an-azure-function"></a>Создание функции Azure
 
@@ -251,7 +251,7 @@ ms.locfileid: "71326994"
 
 1. В верхнем углу рабочей области Databricks Delta щелкните значок "Люди", а затем щелкните **Параметры пользователя**.
 
-   ![Управление учетной записью](./media/data-lake-storage-events/generate-token.png "Параметры пользователя")
+   ![Управление учетной записью](./media/data-lake-storage-events/generate-token.png "Параметры пользователей")
 
 2. Нажмите кнопку **Создать новый токен**, а затем кнопку **Создать**.
 
@@ -259,7 +259,7 @@ ms.locfileid: "71326994"
   
 3. Нажмите кнопку **Создать ресурс** в верхнем левом углу портала Azure, а затем выберите **Вычисления > Приложение-функция**.
 
-   ![Создание функции Azure](./media/data-lake-storage-events/function-app-create-flow.png "Create Azure function")
+   ![Создание функции Azure](./media/data-lake-storage-events/function-app-create-flow.png "Создание функции Azure")
 
 4. На странице **Создание** для приложения-функция выберите стек среды выполнения **.NET Core**, а также настройте экземпляр Application Insights.
 
@@ -271,7 +271,7 @@ ms.locfileid: "71326994"
 
 6. На странице **Параметры приложения** нажмите кнопку **Новый параметр приложения** поочередно для каждого параметра.
 
-   ![Добавление параметра конфигурации](./media/data-lake-storage-events/add-application-setting.png "Add configuration setting")
+   ![Добавление параметра конфигурации](./media/data-lake-storage-events/add-application-setting.png "Добавление параметра конфигурации")
 
    Добавьте следующие параметры:
 
@@ -282,7 +282,7 @@ ms.locfileid: "71326994"
    |**DBX_JOB_ID**|Уникальный идентификатор выполняемого задания. В нашем примере он имеет значение `1`.|
 7. На странице обзорных сведений для приложения-функции нажмите кнопку **Новая функция**.
 
-   ![Новая функция](./media/data-lake-storage-events/new-function.png "New function")
+   ![Новая функция](./media/data-lake-storage-events/new-function.png "Новая функция")
 
 8. Щелкните **Azure Event Grid Trigger** (Триггер Сетки событий Azure).
 
@@ -344,11 +344,11 @@ ms.locfileid: "71326994"
 
 1. На странице кода функции нажмите кнопку **Добавить подписку сетки событий**.
 
-   ![Новая подписка на события](./media/data-lake-storage-events/new-event-subscription.png "New event subscription")
+   ![Создание подписки на события](./media/data-lake-storage-events/new-event-subscription.png "Создание подписки на события")
 
 2. На странице **Создать подписку на события** присвойте подписке имя и выберите учетную запись хранения с помощью полей на этой странице.
 
-   ![Новая подписка на события](./media/data-lake-storage-events/new-event-subscription-2.png "New event subscription")
+   ![Создание подписки на события](./media/data-lake-storage-events/new-event-subscription-2.png "Создание подписки на события")
 
 3. В раскрывающемся списке **Filter to Event Types** (Фильтровать по типам событий) выберите события **Blob Created** (Создание BLOB-объекта) и **Blob Deleted** (Удаление BLOB-объекта), а затем нажмите кнопку **Создать**.
 
@@ -369,11 +369,11 @@ ms.locfileid: "71326994"
 
 4. Выберите задание, чтобы открыть его страницу.
 
-   ![Задание Spark](./media/data-lake-storage-events/spark-job.png "Spark job")
+   ![Задание Spark](./media/data-lake-storage-events/spark-job.png "Задание Spark")
 
    Когда задание будет выполнено, отобразится уведомление о завершении.
 
-   ![Задание выполнено успешно](./media/data-lake-storage-events/spark-job-completed.png "Successfully completed job")
+   ![Задание успешно выполнено](./media/data-lake-storage-events/spark-job-completed.png "Задание успешно выполнено")
 
 5. В новой ячейке книги выполните приведенный ниже запрос, чтобы просмотреть обновленную таблицу Databricks Delta.
 
@@ -383,7 +383,7 @@ ms.locfileid: "71326994"
 
    Возвращается таблица, которая содержит последнюю запись.
 
-   ![Последняя запись отображается в таблице](./media/data-lake-storage-events/final_query.png "Latest record appears in table")
+   ![Последняя запись отображается в таблице](./media/data-lake-storage-events/final_query.png "Последняя запись отображается в таблице")
 
 6. Чтобы обновить эту запись, создайте файл с именем `customer-order-update.csv`, вставьте в него приведенный ниже код и сохраните файл на локальном компьютере.
 

@@ -4,16 +4,16 @@ ms.service: data-factory
 ms.topic: include
 ms.date: 11/09/2018
 ms.author: jingwang
-ms.openlocfilehash: a2858ac73838b50c21a76db5860675171a306192
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 12c2f1bd2a3185d26eae02b5cd756392b5b87c16
+ms.sourcegitcommit: 6eecb9a71f8d69851bc962e2751971fccf29557f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185756"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72533289"
 ---
 ## <a name="create-a-self-hosted-integration-runtime"></a>Создание локальной среды выполнения интеграции
 
-В этом разделе вы создадите локальную среду выполнения интеграции и свяжете ее с локальным компьютером, на котором находится база данных SQL Server. Локальная среда выполнения интеграции — это компонент, который копирует данные из SQL Server на компьютере в хранилище BLOB-объектов Azure. 
+В этом разделе вы создадите локальную среду выполнения интеграции и свяжете ее с локальным компьютером, на котором находится база данных SQL Server. Локальная среда выполнения интеграции — это компонент, который копирует данные с SQL Server на компьютере в базу данных SQL Azure. 
 
 1. Создайте переменную для имени среды выполнения интеграции. Используйте уникальное имя и запишите его. Оно будет использоваться далее в этом руководстве. 
 
@@ -29,12 +29,12 @@ ms.locfileid: "67185756"
    Пример выходных данных:
 
    ```json
-    Id                : /subscriptions/<subscription ID>/resourceGroups/ADFTutorialResourceGroup/providers/Microsoft.DataFactory/factories/onpremdf0914/integrationruntimes/myonpremirsp0914
+    Name              : <Integration Runtime name>
     Type              : SelfHosted
-    ResourceGroupName : ADFTutorialResourceGroup
-    DataFactoryName   : onpremdf0914
-    Name              : myonpremirsp0914
-    Description       :
+    ResourceGroupName : <ResourceGroupName>
+    DataFactoryName   : <DataFactoryName>
+    Description       : 
+    Id                : /subscriptions/<subscription ID>/resourceGroups/<ResourceGroupName>/providers/Microsoft.DataFactory/factories/<DataFactoryName>/integrationruntimes/ADFTutorialIR
     ```
   
 3. Чтобы получить состояние созданной среды выполнения интеграции, выполните следующую команду. Убедитесь, что свойству **State** присвоено значение **NeedRegistration**. 
@@ -45,21 +45,25 @@ ms.locfileid: "67185756"
 
    Пример выходных данных:
 
-   ```json
-   Nodes                     : {}
-   CreateTime                : 9/14/2017 10:01:21 AM
-   InternalChannelEncryption :
-   Version                   :
+   ```json  
+   State                     : NeedRegistration
+   Version                   : 
+   CreateTime                : 9/24/2019 6:00:00 AM
+   AutoUpdate                : On
+   ScheduledUpdateDate       : 
+   UpdateDelayOffset         : 
+   LocalTimeZoneOffset       : 
+   InternalChannelEncryption : 
    Capabilities              : {}
-   ScheduledUpdateDate       :
-   UpdateDelayOffset         :
-   LocalTimeZoneOffset       :
-   AutoUpdate                :
-   ServiceUrls               : {eu.frontend.clouddatahub.net, *.servicebus.windows.net}
+   ServiceUrls               : {eu.frontend.clouddatahub.net}
+   Nodes                     : {}
+   Links                     : {}
+   Name                      : ADFTutorialIR
+   Type                      : SelfHosted
    ResourceGroupName         : <ResourceGroup name>
    DataFactoryName           : <DataFactory name>
-   Name                      : <Integration Runtime name>
-   State                     : NeedRegistration
+   Description               : 
+   Id                        : /subscriptions/<subscription ID>/resourceGroups/<ResourceGroup name>/providers/Microsoft.DataFactory/factories/<DataFactory name>/integrationruntimes/<Integration Runtime name>
    ```
 
 4. Чтобы получить ключи проверки подлинности для регистрации локальной среды выполнения интеграции в службе фабрики данных Azure в облаке, выполните следующую команду: 
@@ -72,8 +76,8 @@ ms.locfileid: "67185756"
 
    ```json
    {
-       "AuthKey1":  "IR@0000000000-0000-0000-0000-000000000000@xy0@xy@xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx=",
-       "AuthKey2":  "IR@0000000000-0000-0000-0000-000000000000@xy0@xy@yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy="
+    "AuthKey1": "IR@0000000000-0000-0000-0000-000000000000@xy0@xy@xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx=",
+    "AuthKey2":  "IR@0000000000-0000-0000-0000-000000000000@xy0@xy@yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy="
    }
    ```    
 
@@ -92,27 +96,17 @@ ms.locfileid: "67185756"
 
 6. На странице **Ready to install Microsoft Integration Runtime** (Все готово для установки Microsoft Integration Runtime) нажмите кнопку **Установить**.
 
-7. Если появится предупреждающее сообщение о настройке для компьютера, который не используется, о переходе в спящий режим или режим гибернации, нажмите кнопку **ОК**.
+7. На странице **Completed the Microsoft Integration Runtime Setup** (Мастер установки Microsoft Integration Runtime завершил работу) нажмите кнопку **Готово**.
 
-8. Если появится страница **Электропитание**, закройте ее и перейдите на страницу установки.
-
-9. На странице **Completed the Microsoft Integration Runtime Setup** (Мастер установки Microsoft Integration Runtime завершил работу) нажмите кнопку **Готово**.
-
-10. На странице **Регистрация Integration Runtime (Self-hosted)** вставьте ключ, созданный в предыдущем разделе, и выберите **Зарегистрировать**. 
+8. На странице **Регистрация Integration Runtime (Self-hosted)** вставьте ключ, созданный в предыдущем разделе, и выберите **Зарегистрировать**. 
 
     ![Регистрация среды выполнения интеграции](media/data-factory-create-install-integration-runtime/register-integration-runtime.png)
 
-11. Когда локальная среда выполнения интеграции будет успешно зарегистрирована, вы увидите следующее сообщение:
+9. На странице **Новый узел среды выполнения интеграции (с локальным размещением)** нажмите кнопку **Finish** (Завершить) 
+
+10. Когда локальная среда выполнения интеграции будет успешно зарегистрирована, вы увидите следующее сообщение:
 
     ![Успешно зарегистрирована](media/data-factory-create-install-integration-runtime/registered-successfully.png)
-
-12. На странице **Новый узел Integration Runtime (Self-hosted)** нажмите кнопку **Далее**. 
-
-    ![Страница "Новый узел Integration Runtime"](media/data-factory-create-install-integration-runtime/new-integration-runtime-node-page.png)
-
-13. На странице **Коммуникационный канал интрасети** нажмите кнопку **Пропустить**. Выберите сертификацию TLS/SSL для защиты внутриузловой передачи данных в среде выполнения интеграции с несколькими узлами. 
-
-    ![Страница "Коммуникационный канал интрасети"](media/data-factory-create-install-integration-runtime/intranet-communication-channel-page.png)
 
 14. На странице **Регистрация Integration Runtime (Self-hosted)** выберите **Запустить Configuration Manager**.
 
@@ -136,7 +130,7 @@ ms.locfileid: "67185756"
 
     Е. Введите имя пользователя.
 
-    ж. Введите пароль для этого имени пользователя,
+    ж. Введите пароль, связанный с именем пользователя.
 
     h. Нажмите кнопку **проверки**, чтобы убедиться, что эта среда выполнения интеграции может подключаться к серверу SQL Server. Если подключение установлено успешно, появится зеленый флажок. Если подключение не установлено, появится сообщение об ошибке. Исправьте ошибки и проверьте, может ли среда выполнения интеграции подключаться к SQL Server.    
 

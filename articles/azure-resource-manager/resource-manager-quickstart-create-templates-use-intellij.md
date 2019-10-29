@@ -1,5 +1,5 @@
 ---
-title: Создание и развертывание шаблона Azure Resource Manager с помощью IntelliJ IDEA | Документация Майкрософт
+title: Развертывание шаблона Azure Resource Manager с помощью IntelliJ IDEA
 description: Сведения о создании и развертывании первого шаблона Azure Resource Manager с помощью IntelliJ IDEA.
 services: azure-resource-manager
 documentationcenter: ''
@@ -13,12 +13,12 @@ ms.devlang: java
 ms.date: 08/01/2019
 ms.topic: quickstart
 ms.author: yucwan
-ms.openlocfilehash: d25a5720e3aaa8ad6306a72d2db8d3ca2e89861b
-ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
+ms.openlocfilehash: 137a87ad0314fad08f9af0eb567e1d31032ddcb9
+ms.sourcegitcommit: 6eecb9a71f8d69851bc962e2751971fccf29557f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72169448"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72533662"
 ---
 # <a name="quickstart-create-and-deploy-azure-resource-manager-templates-by-using-the-intellij-idea"></a>Краткое руководство. Создание и развертывание шаблонов Azure Resource Manager с помощью IntelliJ IDEA
 

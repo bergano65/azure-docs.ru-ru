@@ -13,15 +13,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 09/19/2019
+ms.date: 10/16/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 34ef0497b5cacb66ccf92079e740acd98a05021a
-ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
+ms.openlocfilehash: c0860411c95e48a16d75df4aeeedf3405a5b1835
+ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72026440"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72595023"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-cakehr"></a>Руководство по Интеграция единого входа Azure Active Directory с CakeHR
 
@@ -67,10 +67,10 @@ ms.locfileid: "72026440"
 Чтобы настроить и проверить единый вход Azure AD в CakeHR, выполните действия в следующих стандартных блоках:
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-sso)** необходима, чтобы пользователи могли использовать эту функцию.
-    1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
-    1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
+    * **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
+    * **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа в CakeHR](#configure-cakehr-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
-    1. **[Создание тестового пользователя приложения CakeHR](#create-cakehr-test-user)** требуется для того, чтобы в CakeHR существовал пользователь B.Simon, связанный с одноименным пользователем в Azure AD.
+    * **[Создание тестового пользователя приложения CakeHR](#create-cakehr-test-user)** требуется для того, чтобы в CakeHR существовал пользователь B.Simon, связанный с одноименным пользователем в Azure AD.
 1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
@@ -135,25 +135,33 @@ ms.locfileid: "72026440"
 
 ## <a name="configure-cakehr-sso"></a>Настройка единого входа в CakeHR
 
-1. Откройте новое окно веб-браузера и войдите на корпоративный сайт CakeHR с правами администратора.
+1. Для автоматизации настройки в CakeHR необходимо установить **расширение браузера My Apps Secure Sign-in**, щелкнув **Установить расширение**.
 
-2. В правом верхнем углу страницы щелкните **профиль** и выберите **Settings** (Параметры).
+    ![Расширение "Мои приложения"](common/install-myappssecure-extension.png)
+
+1. Чтобы перейти к приложению CakeHR после добавления расширения в браузер, щелкните **Настройка CakeHR**. После этого укажите учетные данные администратора для входа в CakeHR. Расширение браузера автоматически настроит приложение и автоматизирует шаги 3–5.
+
+    ![Настройка конфигурации](common/setup-sso.png)
+
+1. Если необходимо вручную настроить CakeHR, откройте новое окно веб-браузера, зайдите на сайт компании CakeHR в роли администратора и выполните следующие шаги:
+
+1. В правом верхнем углу страницы щелкните **профиль** и выберите **Settings** (Параметры).
 
     ![Настройка CakeHR](./media/cakehr-tutorial/config01.png)
 
-3. В левой части строки меню щелкните **INTEGRATIONS** > **SAML SSO** (Интеграции > Единый вход SAML) и выполните следующие действия:
+1. В левой части строки меню щелкните **INTEGRATIONS** > **SAML SSO** (Интеграции > Единый вход SAML) и выполните следующие действия:
 
-     ![Настройка CakeHR](./media/cakehr-tutorial/config02.png)
+    ![Настройка CakeHR](./media/cakehr-tutorial/config02.png)
 
-     a. В текстовое поле **Entity ID** (Идентификатор сущности) введите значение `cake.hr`.
+    a. В текстовое поле **Entity ID** (Идентификатор сущности) введите значение `cake.hr`.
 
-     b. В текстовое поле **Authentication URL** (URL-адрес аутентификации) вставьте **URL-адрес входа**, скопированный на портале Azure.
+    b. В текстовое поле **Authentication URL** (URL-адрес аутентификации) вставьте **URL-адрес входа**, скопированный на портале Azure.
 
-     c. В текстовое поле **Key fingerprint (SHA1 format)** (Отпечаток ключа в формате SHA1) вставьте значение **THUMBPRINT** (Отпечаток), скопированное на портале Azure.
+    c. В текстовое поле **Key fingerprint (SHA1 format)** (Отпечаток ключа в формате SHA1) вставьте значение **THUMBPRINT** (Отпечаток), скопированное на портале Azure.
 
-     d. Установите флажок **Enable Single Sign On** (Включить единый вход).
+    d. Установите флажок **Enable Single Sign On** (Включить единый вход).
 
-     д. Выберите команду **Сохранить**.
+    д. Выберите команду **Сохранить**.
 
 ### <a name="create-cakehr-test-user"></a>Создание тестового пользователя CakeHR
 
@@ -192,4 +200,3 @@ ms.locfileid: "72026440"
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
 - [Пробная работа в CakeHR с Azure AD](https://aad.portal.azure.com/)
-

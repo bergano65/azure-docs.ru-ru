@@ -13,15 +13,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 09/24/2019
+ms.date: 10/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fb47d60f609e63e5a17fd8abd3efe420ea7fd187
-ms.sourcegitcommit: b4665f444dcafccd74415fb6cc3d3b65746a1a31
+ms.openlocfilehash: 75f0669a474c24647e71eae8b5e0e0830b7c0bef
+ms.sourcegitcommit: 6eecb9a71f8d69851bc962e2751971fccf29557f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72264100"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72533097"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-check-point-cloudguard-dome9-arc"></a>Руководство по интеграции единого входа Azure Active Directory с Check Point CloudGuard Dome9 Arc
 
@@ -89,17 +89,25 @@ ms.locfileid: "72264100"
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://secure.dome9.com/sso/saml/<yourcompanyname>`.
 
-    > [!NOTE]
-    > Вам потребуется выбрать название вашей компании на портале администрирования dome9, что описывается далее в этом руководстве.
-
 1. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://secure.dome9.com/sso/saml/<yourcompanyname>`.
 
     > [!NOTE]
-    > Эти значения приведены для примера. Замените их фактическими значениями URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Check Point CloudGuard Dome9 Arc](mailto:Dome9@checkpoint.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Эти значения приведены для примера. Замените их фактическими значениями URL-адреса ответа и URL-адреса входа. Вы получите значение `<company name>` из раздела **Настройка единого входа в Check Point CloudGuard Dome9 Arc**, как описано далее в учебнике. Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-1. Приложение Check Point CloudGuard Dome9 Arc требует настройки ролей в Azure AD. Утверждение роли уже настроено, поэтому вам не нужно менять настройки, но нужно его создать в AAD по инструкциям из [этой статьи](https://docs.microsoft.com/azure/active-directory/develop/active-directory-enterprise-app-role-management).
+1. Приложение Check Point CloudGuard Dome9 Arc ожидает проверочные утверждения SAML в определенном формате, что требует добавить сопоставления настраиваемых атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию.
+
+    ![image](common/edit-attribute.png)
+
+1. В дополнение к описанному выше приложение Check Point CloudGuard Dome9 Arc ожидает несколько дополнительных атрибутов в ответе SAML, как показано ниже. Эти атрибуты также заранее заполнены, но вы можете изменить их в соответствии со своими требованиями.
+    
+    | ИМЯ |  Исходный атрибут|
+    | ---------------| --------------- |
+    | memberof | user.assignedroles |
+
+    >[!NOTE]
+    >Перейдите по [этой ссылке](https://docs.microsoft.com/en-us/azure/active-directory/saas-apps/apptio-tutorial), чтобы понять, как создать роли в Azure AD.
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите пункт **Сертификат (Base64)** и щелкните **Скачать**, чтобы скачать сертификат. Сохраните этот сертификат на компьютере.
 
@@ -163,7 +171,7 @@ ms.locfileid: "72264100"
 
     ![Конфигурация Check Point CloudGuard Dome9 Arc](./media/dome9arc-tutorial/configure3.png)
 
-    a. Введите название компании в текстовом поле **Account ID** (Идентификатор учетной записи). Это значение будет использоваться в качестве URL-адресе ответа, как упоминалось в разделе **Базовая конфигурация SAML** на портале Azure.
+    a. Введите название компании в текстовом поле **Account ID** (Идентификатор учетной записи). Это значение будет использоваться в URL-адресе **ответа** и **входа**, как упоминалось в разделе **Базовая конфигурация SAML** на портале Azure.
 
     b. В текстовое поле **Issuer** (Издатель) вставьте значение **Идентификатор Azure AD**, скопированное на портале Azure.
 
@@ -221,4 +229,3 @@ ms.locfileid: "72264100"
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
 - [Попробуйте использовать Check Point CloudGuard Dome9 Arc с Azure AD](https://aad.portal.azure.com/)
-

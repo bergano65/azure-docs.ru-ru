@@ -1,23 +1,22 @@
 ---
 title: Краткое руководство. Создание индекса службы "Поиск Azure" с помощью C# и пакета SDK .NET
-description: Описание процессов создания индекса, загрузки данных и выполнения запросов с помощью C# и пакета SDK .NET для службы "Поиск Azure".
-author: heidisteen
+titleSuffix: Azure Cognitive Search
+description: Описание процессов создания индекса, загрузки данных и выполнения запросов с помощью C# и пакета SDK .NET для службы "Когнитивный поиск Azure".
 manager: nitinme
+author: HeidiSteen
 ms.author: heidist
-tags: azure-portal
-services: search
-ms.service: search
+ms.service: cognitive-search
 ms.devlang: dotnet
 ms.topic: quickstart
-ms.date: 09/10/2019
-ms.openlocfilehash: bda9c29fe3af0bd7d9a6ec61dd5fe40a8e9cc339
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.date: 11/04/2019
+ms.openlocfilehash: cb52ebc4cfdb6f62e9e68bf007cadc20cd565fad
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70881583"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72792822"
 ---
-# <a name="quickstart-create-an-azure-search-index-in-c-using-the-net-sdk"></a>Краткое руководство. Создание индекса службы "Поиск Azure" с помощью C# и пакета SDK .NET
+# <a name="quickstart-create-an-azure-cognitive-search-index-in-c-using-the-net-sdk"></a>Краткое руководство. Создание индекса службы "Когнитивный поиск Azure" с помощью C# и пакета SDK .NET
 > [!div class="op_single_selector"]
 > * [C#](search-get-started-dotnet.md)
 > * [Портал](search-get-started-portal.md)
@@ -26,12 +25,12 @@ ms.locfileid: "70881583"
 > * [Postman](search-get-started-postman.md)
 >*
 
-Создание консольного приложения .NET Core на языке C#, которое создает, загружает и опрашивает индекс Поиска Azure, с помощью Visual Studio и [пакета SDK .NET для Поиска Azure](https://aka.ms/search-sdk). В статье описан поэтапный процесс создания предложения. Кроме того, можно [скачать и установить готовую версию приложения](https://github.com/Azure-Samples/azure-search-dotnet-samples/tree/master/Quickstart).
+Создание консольного приложения .NET Core на языке C#, которое создает, загружает и опрашивает индекс Когнитивного поиска Azure, с помощью Visual Studio и [пакета SDK .NET для Когнитивного поиска Azure](https://aka.ms/search-sdk). В статье описан поэтапный процесс создания предложения. Кроме того, можно [скачать и установить готовую версию приложения](https://github.com/Azure-Samples/azure-search-dotnet-samples/tree/master/Quickstart).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 > [!NOTE]
-> В демонстрационном коде этой статьи для простоты используются синхронные методы пакета SDK .NET для Поиска Azure. Но в приложениях для рабочей среды мы рекомендуем использовать асинхронные методы, чтобы обеспечить масштабируемость и высокую скорость отклика. Например, можно использовать `CreateAsync` и `DeleteAsync` вместо `Create` и `Delete`.
+> В демонстрационном коде этой статьи для простоты используются синхронные методы пакета SDK .NET для Когнитивного поиска Azure. Но в приложениях для рабочей среды мы рекомендуем использовать асинхронные методы, чтобы обеспечить масштабируемость и высокую скорость отклика. Например, можно использовать `CreateAsync` и `DeleteAsync` вместо `Create` и `Delete`.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -39,13 +38,13 @@ ms.locfileid: "70881583"
 
 + [Visual Studio](https://visualstudio.microsoft.com/downloads/) (любой выпуск). Пример кода и инструкции были протестированы с помощью бесплатного выпуска Community Edition.
 
-+ [Создайте службу "Поиск Azure"](search-create-service-portal.md) или [найдите имеющуюся службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) в рамках текущей подписки. Вы можете использовать бесплатную службу для выполнения инструкций, описанных в этом кратком руководстве.
++ [Создайте службу "Когнитивный поиск Azure"](search-create-service-portal.md) или [найдите имеющуюся службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) в рамках текущей подписки. Вы можете использовать бесплатную службу для выполнения инструкций, описанных в этом кратком руководстве.
 
 <a name="get-service-info"></a>
 
 ## <a name="get-a-key-and-url"></a>Получение ключа и URL-адреса
 
-Вызовы к службе требуют конечную точку URL-адреса и ключ доступа при каждом запросе. Служба поиска создана с обоими элементами, поэтому если вы добавили службу "Поиск Azure" в подписку, выполните следующие действия для получения необходимых сведений:
+Вызовы к службе требуют конечную точку URL-адреса и ключ доступа при каждом запросе. Служба поиска создана с обоими элементами, поэтому если вы добавили службу "Когнитивный поиск Azure" в подписку, выполните следующие действия для получения необходимых сведений:
 
 1. [Войдите на портал Azure](https://portal.azure.com/) и на странице **обзора** службы поиска получите URL-адрес. Пример конечной точки может выглядеть так: `https://mydemo.search.windows.net`.
 
@@ -63,7 +62,7 @@ ms.locfileid: "70881583"
 
 ### <a name="install-nuget-packages"></a>Установка пакетов Nuget
 
-[Пакет SDK .NET для Поиска Azure](https://aka.ms/search-sdk) состоит из нескольких клиентских библиотек, которые распространяются в формате пакетов NuGet.
+[Пакет SDK .NET для Когнитивного поиска Azure](https://aka.ms/search-sdk) состоит из нескольких клиентских библиотек, которые распространяются в формате пакетов NuGet.
 
 Для этого проекта примените версию 9 пакета NuGet `Microsoft.Azure.Search` и последнюю версию пакета NuGet `Microsoft.Extensions.Configuration.Json`.
 
@@ -78,7 +77,7 @@ ms.locfileid: "70881583"
 1. Повторите эти действия для `Microsoft.Extensions.Configuration.Json`, выбрав версию 2.2.0 или более позднюю.
 
 
-### <a name="add-azure-search-service-information"></a>Добавление сведений о службе "Поиск Azure"
+### <a name="add-azure-cognitive-search-service-information"></a>Добавление сведений о службе "Когнитивный поиск Azure"
 
 1. Щелкните правой кнопкой мыши проект в обозревателе решений и выберите **Добавить** > **Новый элемент...** . 
 
@@ -204,7 +203,7 @@ ms.locfileid: "70881583"
 
 1. Создайте в файле Program.cs экземпляр класса [`SearchServiceClient`](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.searchserviceclient?view=azure-dotnet) для подключения к службе с использованием значений, которые хранятся в файле конфигурации приложения (appsettings.json). 
 
-   `SearchServiceClient` содержит свойство [`Indexes`](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.searchserviceclient.indexes?view=azure-dotnet), которое предоставляет все методы для создания, перечисления, обновления или удаления индексов службы "Поиск Azure". 
+   `SearchServiceClient` содержит свойство [`Indexes`](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.searchserviceclient.indexes?view=azure-dotnet), которое предоставляет все методы для создания, перечисления, обновления или удаления индексов службы "Когнитивный поиск Azure". 
 
     ```csharp
     using System;
@@ -302,9 +301,9 @@ ms.locfileid: "70881583"
 
 ## <a name="2---load-documents"></a>2\. Загрузка документов
 
-Документы в Поиске Azure представляют собой структуры данных, которые служат входами и (или) выходами для запросов. Полученные из внешнего источника данных входные документы могут содержать строки базы данных, большие двоичные объекты из хранилища BLOB-объектов или сохраненные на диске документы JSON. В нашем примере мы выбрали самый простой путь, внедрив прямо в код документы JSON с информацией о четырех отелях. 
+Документы в службе "Когнитивный поиск Azure" представляют собой структуры данных, которые служат входами для индексирования и (или) выходами для запросов. Полученные из внешнего источника данных входные документы могут содержать строки базы данных, большие двоичные объекты из хранилища BLOB-объектов или сохраненные на диске документы JSON. В нашем примере мы выбрали самый простой путь, внедрив прямо в код документы JSON с информацией о четырех отелях. 
 
-При отправке документов следует использовать объект [`IndexBatch`](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.indexbatch?view=azure-dotnet). `IndexBatch` содержит коллекцию объектов [`IndexAction`](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.indexaction?view=azure-dotnet), каждый из которых содержит документ и свойство с описанием действия, которое должен выполнить Поиск Azure ([отправка, объединение, удаление и mergeOrUpload](search-what-is-data-import.md#indexing-actions)).
+При отправке документов следует использовать объект [`IndexBatch`](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.indexbatch?view=azure-dotnet). `IndexBatch` содержит коллекцию объектов [`IndexAction`](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.indexaction?view=azure-dotnet), каждый из которых содержит документ и свойство с описанием действия, которое должен выполнить Когнитивный поиск Azure ([отправка, объединение, удаление и mergeOrUpload](search-what-is-data-import.md#indexing-actions)).
 
 1. В файле Program.cs создайте массив документов и действий индексирования, а затем передайте этот массив в `IndexBatch`. Приведенные ниже документы соответствуют индексу hotel-quickstart, который определен в классах hotel и address.
 

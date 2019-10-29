@@ -8,12 +8,12 @@ ms.service: azure-databricks
 ms.custom: mvc
 ms.topic: tutorial
 ms.date: 06/20/2019
-ms.openlocfilehash: 228b0fff7231af811206d5c477b63ed70706939b
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.openlocfilehash: c2d7d7d97dce974ad8d72cc98f9ec6d3d554fb6d
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72329775"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72783986"
 ---
 # <a name="tutorial-extract-transform-and-load-data-by-using-azure-databricks"></a>Руководство по Извлечение, преобразование и загрузка данных с помощью Azure Databricks
 
@@ -41,7 +41,7 @@ ms.locfileid: "72329775"
 
 > [!Note]
 > Инструкции из этого руководство нельзя выполнять с **бесплатной пробной версией подписки**.
-> Если у вас есть бесплатная учетная запись, перейдите к профилю и измените подписку на подписку с **оплатой по мере использования**. Дополнительные сведения см. на странице [создания бесплатной учетной записи Azure](https://azure.microsoft.com/free/). Затем [удалите предельную сумму расходов](https://docs.microsoft.com/azure/billing/billing-spending-limit#remove-the-spending-limit-in-account-center) и [запросите увеличение квоты](https://docs.microsoft.com/azure/azure-supportability/resource-manager-core-quotas-request) на ЦП в своем регионе. При создании рабочей области Azure Databricks можно выбрать ценовую категорию **Пробная версия ("Премиум" — 14 дней бесплатно (DBU))** для предоставления рабочей области доступа к бесплатным DBU Azure Databricks уровня "Премиум" на 14 дней.
+> Если у вас есть бесплатная учетная запись, перейдите к профилю и измените подписку на подписку с **оплатой по мере использования**. Дополнительные сведения см. на странице [создания бесплатной учетной записи Azure](https://azure.microsoft.com/free/). Затем [удалите предельную сумму расходов](https://docs.microsoft.com/azure/billing/billing-spending-limit#why-you-might-want-to-remove-the-spending-limit) и [запросите увеличение квоты](https://docs.microsoft.com/azure/azure-supportability/resource-manager-core-quotas-request) на ЦП в своем регионе. При создании рабочей области Azure Databricks можно выбрать ценовую категорию **Пробная версия ("Премиум" — 14 дней бесплатно (DBU))** для предоставления рабочей области доступа к бесплатным DBU Azure Databricks уровня "Премиум" на 14 дней.
      
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -91,7 +91,7 @@ ms.locfileid: "72329775"
 
 1. На портале Azure выберите **Создать ресурс** > **Analytics** > **Azure Databricks**.
 
-    ![Databricks на портале Azure](./media/databricks-extract-load-sql-data-warehouse/azure-databricks-on-portal.png "Databricks on Azure portal")
+    ![Databricks на портале Azure](./media/databricks-extract-load-sql-data-warehouse/azure-databricks-on-portal.png "Databricks на портале Azure")
 
 2. В разделе **Служба Azure Databricks** укажите следующие значения, чтобы создать службу Databricks.
 
@@ -113,11 +113,11 @@ ms.locfileid: "72329775"
 
 2. Вы будете перенаправлены на портал Azure Databricks. На портале выберите **Кластер**.
 
-    ![Databricks в Azure](./media/databricks-extract-load-sql-data-warehouse/databricks-on-azure.png "Databricks on Azure")
+    ![Databricks в Azure](./media/databricks-extract-load-sql-data-warehouse/databricks-on-azure.png "Databricks в Azure")
 
 3. На странице **создания кластера** укажите значения для создания кластера.
 
-    ![Создание кластера Databricks Spark в Azure](./media/databricks-extract-load-sql-data-warehouse/create-databricks-spark-cluster.png "Create Databricks Spark cluster on Azure")
+    ![Создание кластера Databricks Spark в Azure](./media/databricks-extract-load-sql-data-warehouse/create-databricks-spark-cluster.png "Создание кластера Databricks Spark в Azure")
 
 4. Заполните значения в следующих полях, и примите значения по умолчанию для других полей.
 
@@ -139,7 +139,7 @@ ms.locfileid: "72329775"
 
 3. В диалоговом окне **создания записной книжки** введите имя записной книжки. Выберите **Scala** в качестве языка, а затем выберите созданный ранее кластер Spark.
 
-    ![Предоставление сведений для записной книжки в Databricks](./media/databricks-extract-load-sql-data-warehouse/databricks-notebook-details.png "Предоставление сведений для записной книжки в Databricks")
+    ![Указание сведений для записной книжки в Databricks](./media/databricks-extract-load-sql-data-warehouse/databricks-notebook-details.png "Указание сведений для записной книжки в Databricks")
 
 4. Нажмите кнопку **Создать**.
 
@@ -371,17 +371,17 @@ ms.locfileid: "72329775"
 
 6. Подключитесь к базе данных SQL и убедитесь, что вы видите базу данных **SampleTable**.
 
-   ![Проверка примера таблицы](./media/databricks-extract-load-sql-data-warehouse/verify-sample-table.png "Проверка примера таблицы")
+   ![Проверка образца таблицы](./media/databricks-extract-load-sql-data-warehouse/verify-sample-table.png "Проверка образца таблицы")
 
 7. Выполните запрос SELECT, чтобы проверить содержимое таблицы. В таблице должны быть те же данные, что и в кадре данных **renamedColumnsDF**.
 
-    ![Проверка содержимого примера таблицы](./media/databricks-extract-load-sql-data-warehouse/verify-sample-table-content.png "Проверка содержимого примера таблицы")
+    ![Проверка содержимого образца таблицы](./media/databricks-extract-load-sql-data-warehouse/verify-sample-table-content.png "Проверка содержимого образца таблицы")
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 После выполнения заданий из этого руководства вы можете завершить работу кластера. В рабочей области Azure Databricks в области слева выберите **Кластеры**. Для завершения работы кластера в разделе **Действия** наведите указатель мыши на многоточие (...) и выберите значок **Завершить**.
 
-![Завершение работы кластера Databricks](./media/databricks-extract-load-sql-data-warehouse/terminate-databricks-cluster.png "Stop a Databricks cluster")
+![Остановка кластера Databricks](./media/databricks-extract-load-sql-data-warehouse/terminate-databricks-cluster.png "Остановка кластера Databricks")
 
 Если не завершить работу кластера вручную, она завершится автоматически, если во время создания кластера вы установили флажок **Terminate after \_\_ minutes of inactivity** (Завершить через \_\_ минут бездействия). В этом случае работа кластера автоматически завершается, если он был неактивным в течение определенного времени.
 

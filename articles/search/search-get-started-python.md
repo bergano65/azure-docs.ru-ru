@@ -1,22 +1,23 @@
 ---
-title: Краткое руководство. Создание индекса службы "Поиск Azure" в Python с помощью интерфейсов REST API
-description: Описание процессов создания индекса, загрузки данных и выполнения запросов с помощью Python, Jupyter Notebook и REST API службы "Поиск Azure".
-ms.date: 09/10/2019
+title: Краткое руководство. Создание индекса поиска в Python с помощью интерфейсов REST API
+titleSuffix: Azure Cognitive Search
+description: Описание процессов создания индекса, загрузки данных и выполнения запросов с помощью Python, Jupyter Notebook и REST API службы "Когнитивный поиск Azure".
 author: heidisteen
 manager: nitinme
 ms.author: heidist
-services: search
-ms.service: search
-ms.devlang: rest-api
+ms.service: cognitive-search
 ms.topic: quickstart
-ms.openlocfilehash: 273cd690c56ef01b4fd38398aaef85570dd758a2
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.devlang: rest-api
+ms.date: 11/04/2019
+ms.openlocfilehash: c663fae47de1e161314aa3bf2fdb9966ae80d3c6
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70881552"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72792263"
 ---
-# <a name="quickstart-create-an-azure-search-index-in-python-using-jupyter-notebooks"></a>Краткое руководство. Создание индекса службы "Поиск Azure" в Python с помощью записных книжек Jupyter
+# <a name="quickstart-create-an-azure-cognitive-search-index-in-python-using-jupyter-notebooks"></a>Краткое руководство. Создание индекса службы "Когнитивный поиск Azure" в Python с помощью записных книжек Jupyter
+
 > [!div class="op_single_selector"]
 > * [Python (REST)](search-get-started-python.md)
 > * [PowerShell (REST)](search-create-index-rest-api.md)
@@ -25,7 +26,7 @@ ms.locfileid: "70881552"
 > * [Портал](search-create-index-portal.md)
 > 
 
-Создайте записную книжку Jupyter, которая создает, загружает и запрашивает индекс службы "Поиск Azure", с помощью Python и [REST API службы "Поиск Azure"](https://docs.microsoft.com/rest/api/searchservice/). В этой статье содержатся сведения о пошаговом создании записной книжки. Вы также можете [скачать и запустить готовую записную книжку Jupyter Python](https://github.com/Azure-Samples/azure-search-python-samples).
+Создайте записную книжку Jupyter, которая создает, загружает и запрашивает индекс службы "Когнитивный поиск Azure", с помощью Python и [REST API службы "Когнитивный поиск Azure"](https://docs.microsoft.com/rest/api/searchservice/). В этой статье содержатся сведения о пошаговом создании записной книжки. Вы также можете [скачать и запустить готовую записную книжку Jupyter Python](https://github.com/Azure-Samples/azure-search-python-samples).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -35,11 +36,11 @@ ms.locfileid: "70881552"
 
 + [Anaconda 3.x](https://www.anaconda.com/distribution/#download-section) с Python 3.x и записными книжками Jupyter Notebook.
 
-+ [Создайте службу "Поиск Azure"](search-create-service-portal.md) или [найдите имеющуюся службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) в рамках текущей подписки. Для выполнения инструкций, описанных в этом кратком руководстве, можно использовать уровень "Бесплатный". 
++ [Создайте службу "Когнитивный поиск Azure"](search-create-service-portal.md) или [найдите имеющуюся службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) в рамках текущей подписки. Для выполнения инструкций, описанных в этом кратком руководстве, можно использовать уровень "Бесплатный". 
 
 ## <a name="get-a-key-and-url"></a>Получение ключа и URL-адреса
 
-Вызовам REST требуется URL-адрес службы и ключ доступа при каждом запросе. Служба поиска создана с обоими элементами, поэтому если вы добавили службу "Поиск Azure" в подписку, выполните следующие действия для получения необходимых сведений:
+Вызовам REST требуется URL-адрес службы и ключ доступа при каждом запросе. Служба поиска создана с обоими элементами, поэтому если вы добавили службу "Когнитивный поиск Azure" в подписку, выполните следующие действия для получения необходимых сведений:
 
 1. [Войдите на портал Azure](https://portal.azure.com/) и на странице **обзора** службы поиска получите URL-адрес. Пример конечной точки может выглядеть так: `https://mydemo.search.windows.net`.
 
@@ -49,9 +50,9 @@ ms.locfileid: "70881552"
 
 Для выполнения любого запроса к службе требуется использование ключа API. Если есть действительный ключ, для каждого запроса устанавливаются отношения доверия между приложением, которое отправляет запрос, и службой, которая его обрабатывает.
 
-## <a name="connect-to-azure-search"></a>Подключение к Поиску Azure
+## <a name="connect-to-azure-cognitive-search"></a>Подключение к Когнитивному поиску Azure
 
-Для выполнения этой задачи запустите записную книжку Jupyter и проверьте, можете ли вы подключиться к службе "Поиск Azure". Для этого запросите список индексов из службы. В Windows с Anaconda3 для запуска записной книжки можно использовать Anaconda Navigator.
+Для выполнения этой задачи запустите записную книжку Jupyter и проверьте, можете ли вы подключиться к службе "Когнитивный поиск Azure". Для этого запросите список индексов из службы. В Windows с Anaconda3 для запуска записной книжки можно использовать Anaconda Navigator.
 
 1. Создайте записную книжку Python3.
 
@@ -85,7 +86,7 @@ ms.locfileid: "70881552"
 
 1. Выполните каждый шаг. Если индексы существуют, в ответе будет содержаться список имен индексов. На следующем снимке экрана служба уже содержит индексы azureblob-index и realestate-bs-sample.
 
-   ![Сценарий Python в записной книжке Jupyter с запросами HTTP к службе "Поиск Azure"](media/search-get-started-python/connect-azure-search.png "Сценарий Python в записной книжке Jupyter с запросами HTTP к службе \"Поиск Azure\"")
+   ![Скрипт Python в записной книжке Jupyter с HTTP-запросами к службе "Когнитивный поиск Azure"](media/search-get-started-python/connect-azure-search.png "Скрипт Python в записной книжке Jupyter с HTTP-запросами к службе "Когнитивный поиск Azure"")
 
    Пустая коллекция индексов возвращает следующий ответ: `{'@odata.context': 'https://mydemo.search.windows.net/$metadata#indexes(name)', 'value': []}`
 
@@ -251,7 +252,7 @@ ms.locfileid: "70881552"
 
 В рамках этого раздела мы покажем, как создать запрос в индекс с помощью [REST API поиска документов](https://docs.microsoft.com/rest/api/searchservice/search-documents).
 
-1. В ячейке укажите выражение запроса, который выполняет пустой поиск (search=*), возвращая неупорядоченный список (search score = 1.0) произвольных документов. По умолчанию служба "Поиск Azure" возвращает 50 лучших соответствий за раз. Как структурированный этот запрос возвращает структуру и значения документа. Добавьте $count=true, чтобы получить количество всех документов в результатах.
+1. В ячейке укажите выражение запроса, который выполняет пустой поиск (search=*), возвращая неупорядоченный список (search score = 1.0) произвольных документов. По умолчанию служба "Когнитивный поиск Azure" возвращает 50 лучших соответствий за раз. Как структурированный этот запрос возвращает структуру и значения документа. Добавьте $count=true, чтобы получить количество всех документов в результатах.
 
    ```python
    searchstring = '&search=*&$count=true'

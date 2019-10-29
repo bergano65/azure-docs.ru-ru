@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017,mvc,seodec18
 ms.topic: overview
 ms.date: 06/11/2019
-ms.openlocfilehash: f950d273e16dc7fc25f443fda58f9d6582085129
-ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
+ms.openlocfilehash: 1cea76bec3a1b8b698a604c0bac491ac0319a10e
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71076406"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72791177"
 ---
 # <a name="what-is-azure-hdinsight"></a>Сведения об Azure HDInsight
 
@@ -56,13 +56,13 @@ Azure HDInsight можно применять в различных сценар
 
 При помощи HDInsight вы можете выполнять интерактивные запросы структурированных и неструктурированных данных в любом формате и объемом в несколько петабайт. Также можно создавать модели и подключать их к средствам бизнес-аналитики. Дополнительные сведения см. в [этой истории клиента](https://customers.microsoft.com/story/milliman). 
 
-![Архитектура HDInsight: хранение данных](./hadoop/media/apache-hadoop-introduction/hdinsight-architecture-data-warehouse.png "Архитектура хранения данных HDInsight")
+![Архитектура HDInsight: Хранение данных](./hadoop/media/apache-hadoop-introduction/hdinsight-architecture-data-warehouse.png "Архитектура хранения данных HDInsight")
 
 ### <a name="internet-of-things-iot"></a>Интернет вещей.
 
 HDInsight можно использовать для обработки потоковых данных, получаемых в режиме реального времени с различных устройств. Чтобы узнать больше, прочтите [эту запись блога Azure, представляющую собой объявление о выходе общедоступной предварительной версии Apache Kafka в HDInsight с управляемыми дисками Azure](https://azure.microsoft.com/blog/announcing-public-preview-of-apache-kafka-on-hdinsight-with-azure-managed-disks/).
 
-![Архитектура HDInsight: Интернет вещей](./hadoop/media/apache-hadoop-introduction/hdinsight-architecture-iot.png "Архитектура Интернета вещей HDInsight") 
+![Архитектура HDInsight: Интернет вещей](./hadoop/media/apache-hadoop-introduction/hdinsight-architecture-iot.png "Архитектура HDInsight") 
 
 ### <a name="data-science"></a>Обработка и анализ данных
 
@@ -74,7 +74,7 @@ HDInsight можно использовать для обработки пото
 
 При помощи HDInsight вы можете расширить локальную инфраструктуру для работы с большими данными в Azure и использовать возможности расширенной аналитики, доступные в облаке.
 
-![Архитектура HDInsight: гибридная среда](./hadoop/media/apache-hadoop-introduction/hdinsight-architecture-hybrid.png "Гибридная архитектура HDInsight")
+![Архитектура HDInsight: гибридная модель](./hadoop/media/apache-hadoop-introduction/hdinsight-architecture-hybrid.png "Гибридная архитектура HDInsight")
 
 ## <a name="cluster-types-in-hdinsight"></a>Типы кластеров в HDInsight
 
@@ -86,7 +86,7 @@ HDInsight включает определенные типы кластеров 
 |[Apache Spark](https://spark.apache.org/)|Платформа параллельной обработки с открытым кодом, которая поддерживает обработку в памяти, чтобы повысить производительность приложений для анализа больших данных. Дополнительные сведения см. в обзоре по [Apache Spark в HDInsight](./spark/apache-spark-overview.md).|
 |[Apache HBase](https://hbase.apache.org/)|База данных NoSQL, созданная на основе Hadoop и обеспечивающая прямой доступ и строгую согласованность для больших объемов неструктурированных и частично структурированных данных (с потенциальным размером таблиц в миллиарды строк и миллионы столбцов). Дополнительные сведения см. в статье [Что такое HBase в HDInsight: база данных NoSQL, которая предоставляет возможности, схожие BigTable, для Hadoop](./hbase/apache-hbase-overview.md).|
 |[Службы машинного обучения](https://docs.microsoft.com/machine-learning-server/rebranding-microsoft-r-server)|Сервер для размещения параллельных и распределенных процессов на языке R и управления ими. Благодаря ему специалисты по обработке и анализу данных, статистики и программисты на R могут получать доступ к масштабируемым, распределенным методам аналитики в HDInsight по требованию. Дополнительные сведения см. в статье [Основные сведения об R Server и возможностях открытого кода R в HDInsight](./r-server/r-server-overview.md).|
-|[Apache Storm](https://storm.incubator.apache.org/)|Распределенная система для вычислений в реальном времени, позволяющая быстро обрабатывать потоки данных большого размера. Storm предлагается в качестве управляемого кластера в HDInsight. См. статью об [анализе данных, передаваемых датчиками в реальном времени, с помощью Storm и Hadoop](./storm/apache-storm-sensor-data-analysis.md).|
+|[Apache Storm](https://storm.incubator.apache.org/)|Распределенная система для вычислений в реальном времени, позволяющая быстро обрабатывать потоки данных большого размера. Storm предлагается в качестве управляемого кластера в HDInsight. См. статью об [анализе данных, передаваемых датчиками в реальном времени, с помощью Storm и Hadoop](/azure/hdinsight/storm/apache-storm-overview).|
 |[Apache Interactive Query](https://cwiki.apache.org/confluence/display/Hive/LLAP)|Кэширование в памяти для обеспечения интерактивных и ускоренных запросов Hive. См. инструкции по [использованию Interactive Query в HDInsight](./interactive-query/apache-interactive-query-get-started.md).|
 |[Apache Kafka](https://kafka.apache.org/)|Платформа с открытым исходным кодом, которая используется для создания конвейеров и приложений потоковой передачи данных. Kafka также предоставляет функциональные возможности очереди сообщений, с помощью которых можно публиковать потоки данных и подписываться на них. См. статью [Введение в Apache Kafka в HDInsight (предварительная версия)](./kafka/apache-kafka-introduction.md).|
 

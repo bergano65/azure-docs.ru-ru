@@ -14,23 +14,25 @@ ms.date: 11/13/2018
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 45c7f42d536880f2578c62c6c4866b21be1cc9dc
-ms.sourcegitcommit: 95b180c92673507ccaa06f5d4afe9568b38a92fb
+ms.openlocfilehash: 49d49f42e0d705981a5b4e41630b425fcb02e940
+ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/08/2019
-ms.locfileid: "70804556"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72756256"
 ---
-# <a name="microsoft-graph-apis-for-pim-preview"></a>API Microsoft Graph для PIM (предварительная версия)
+# <a name="microsoft-graph-apis-for-privileged-identity-management-preview"></a>API-интерфейсы Microsoft Graph для управления привилегированными пользователями (предварительная версия)
 
-Большинство задач, выполняемых в Azure Active Directory (Azure AD) Privileged Identity Management (PIM) на портале Azure, можно выполнять и с помощью [API-интерфейсов Microsoft Graph](https://developer.microsoft.com/graph/docs/concepts/overview). В этой статье описаны некоторые принципы, которые важно учесть при использовании API-интерфейсов Microsoft Graph для PIM. Дополнительные сведения об API-интерфейсах Microsoft Graph см. в [справочнике по Azure AD Privileged Identity Management API](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/privilegedidentitymanagement_root).
+Вы можете выполнить все задачи управления привилегированными пользователями с помощью [API-интерфейсов Microsoft Graph](https://developer.microsoft.com/graph/docs/concepts/overview) для Azure Active Directory. В этой статье описаны принципы, которые важно учесть при использовании API-интерфейсов Microsoft Graph для управления привилегированными пользователями.
+
+Дополнительные сведения об API-интерфейсах Microsoft Graph см. в [справочнике по Azure AD Privileged Identity Management API](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/privilegedidentitymanagement_root).
 
 > [!IMPORTANT]
 > API-интерфейсы бета-версии в Microsoft Graph доступны в предварительной версии и могут быть изменены. Использование этих API для приложений в рабочей среде не поддерживается.
 
 ## <a name="required-permissions"></a>Необходимые разрешения
 
-Чтобы вызвать API-интерфейсы Microsoft Graph для PIM, необходимо иметь **одно или несколько** следующих разрешений:
+Чтобы вызвать API-интерфейсы Microsoft Graph для управления привилегированными пользователями, необходимо иметь **одно или несколько** следующих разрешений:
 
 - `Directory.AccessAsUser.All`
 - `Directory.Read.All`
@@ -39,7 +41,7 @@ ms.locfileid: "70804556"
 
 ### <a name="set-permissions"></a>Установка разрешений
 
-Чтобы приложения могли вызывать API Microsoft Graph для PIM, они должны иметь необходимые разрешения. Самый простой способ указать необходимые разрешения — воспользоваться [платформой предоставления согласия Azure AD](../develop/consent-framework.md).
+Чтобы приложения могли вызывать API Microsoft Graph для управления привилегированными пользователями, они должны иметь необходимые разрешения. Самый простой способ указать необходимые разрешения — воспользоваться [платформой предоставления согласия Azure AD](../develop/consent-framework.md).
 
 ### <a name="set-permissions-in-graph-explorer"></a>Указание разрешений в песочнице Graph
 

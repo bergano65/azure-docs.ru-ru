@@ -1,5 +1,5 @@
 ---
-title: Создание нескольких экземпляров ресурса с помощью Azure Resource Manager | Документация Майкрософт
+title: Создание нескольких экземпляров ресурса с помощью Azure Resource Manager
 description: Узнайте, как создать шаблон Azure Resource Manager для создания нескольких экземпляров ресурса Azure.
 services: azure-resource-manager
 documentationcenter: ''
@@ -13,12 +13,12 @@ ms.devlang: na
 ms.date: 03/04/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: cf2559b280a1c43269c0cf45d77ee98dcd5ee5a8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: b1233ff4695a1f715801d78d70ea80ab84be2a36
+ms.sourcegitcommit: f29fec8ec945921cc3a89a6e7086127cc1bc1759
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60388800"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72528266"
 ---
 # <a name="tutorial-create-multiple-resource-instances-with-resource-manager-templates"></a>Руководство по Создание нескольких экземпляров ресурса с помощью шаблонов Resource Manager
 
@@ -64,7 +64,7 @@ ms.locfileid: "60388800"
 ![Создание нескольких экземпляров с помощью Azure Resource Manager](./media/resource-manager-tutorial-create-multiple-instances/resource-manager-template-create-multiple-instances.png)
 
 1. Добавьте элемент `copy` к определению ресурса учетной записи хранения. В элементе копирования укажите число итераций и переменную для этого цикла. Значение count должно быть положительным целым числом не больше 800.
-2. Функция `copyIndex()` возвращает текущую итерацию в цикле. Индекс используется в качестве префикса имени. `copyIndex()` отсчитывается, начиная с нуля. Чтобы сместить значение индекса, можно передать нужное значение в функцию copyIndex(). Например, *copyIndex(1)*.
+2. Функция `copyIndex()` возвращает текущую итерацию в цикле. Индекс используется в качестве префикса имени. `copyIndex()` отсчитывается, начиная с нуля. Чтобы сместить значение индекса, можно передать нужное значение в функцию copyIndex(). Например, *copyIndex(1)* .
 3. Удалите элемент **Переменные**, поскольку он больше не используется.
 4. Удалите элемент **Выходные данные**. Он больше не требуется.
 

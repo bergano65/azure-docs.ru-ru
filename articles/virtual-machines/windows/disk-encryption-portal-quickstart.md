@@ -6,12 +6,12 @@ ms.author: mbaldwin
 ms.service: security
 ms.topic: quickstart
 ms.date: 10/02/2019
-ms.openlocfilehash: 240c0e157d7fcd8b76ee7f42f4c780361df6281d
-ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
+ms.openlocfilehash: bde0c483eacec7fb8e076530bba594eb33a32a12
+ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72245774"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72553438"
 ---
 # <a name="quickstart-create-and-encrypt-a-windows-virtual-machine-with-the-azure-portal"></a>Краткое руководство. Создание и шифрование виртуальной машины Windows на портале Azure
 
@@ -77,7 +77,7 @@ ms.locfileid: "72245774"
 
 1. На экране шифрования в разделе **Disks to Encrypt** (Шифруемые диски) выберите **OS and data disks** (ОС и диски данных).
 1. В разделе **Encryption Settings** (Настройки шифрования) щелкните "Выберите хранилище ключей и ключ для шифрования".
-1. На боковой панели справа в качестве значения для параметра *Key vault** выберите имя хранилища ключей, созданное ранее, и щелкните **Выбрать**.
+1. На боковой панели справа в качестве значения для параметра **Хранилище ключей** выберите имя хранилища ключей, созданное ранее, и щелкните **Выбрать**.
 
     ![Выбор дисков и шифрования](../media/disk-encryption/portal-qs-encrypt-vm-screen.png)
 1. В верхней части экрана шифрования нажмите кнопку "Сохранить". После этого откроется всплывающее окно с предупреждением о том, что виртуальная машина будет перезагружена. Щелкните **Да**.

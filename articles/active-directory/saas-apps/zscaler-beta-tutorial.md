@@ -17,10 +17,10 @@ ms.date: 04/24/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 07b0f8112f724c857ffb46378f7aa7ef605b9bbb
-ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
+ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "68943291"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zscaler-beta"></a>Руководство по Интеграция Azure Active Directory с Zscaler Beta
@@ -220,7 +220,7 @@ ms.locfileid: "68943291"
 
 5. В разделе **Прокси-сервер** выполните следующие шаги: 
    
-    ![Раздел прокси-сервера](./media/zscaler-beta-tutorial/ic769494.png "Прокси-сервер")
+    ![Раздел "Прокси-сервер"](./media/zscaler-beta-tutorial/ic769494.png "Прокси-сервер")
 
     a. Установите флажок **Использовать прокси-сервер для локальных подключений...**
 

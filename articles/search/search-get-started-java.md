@@ -1,22 +1,22 @@
 ---
-title: Краткое руководство. Создание индекса службы "Поиск Azure" в Node.js с помощью интерфейсов REST API
-description: Описание процессов создания индекса, загрузки данных и выполнения запросов с помощью Java и REST API Поиска Azure.
+title: Краткое руководство. Создание индекса службы "Поиск Azure" в Java с помощью интерфейсов REST API
+titleSuffix: Azure Cognitive Search
+description: Описание процессов создания индекса, загрузки данных и выполнения запросов с помощью Java и REST API Когнитивного поиска Azure.
 manager: nitinme
 author: lisaleib
 ms.author: v-lilei
-ms.service: search
-ms.custom: seodec2018, seo-java-july2019, seo-java-august2019
 ms.devlang: java
+ms.service: cognitive-search
 ms.topic: quickstart
-ms.date: 09/10/2019
-ms.openlocfilehash: 3f424f03f72e288994b05c4559bd42e6429760a8
-ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
+ms.date: 11/04/2019
+ms.openlocfilehash: 9f30c30276db6daa0b4afdf3e6bdd8e617dedc52
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72166243"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72792812"
 ---
-# <a name="quickstart-create-an-azure-search-index-in-java-using-rest-apis"></a>Краткое руководство. Создание индекса службы "Поиск Azure" в Java с помощью интерфейсов REST API
+# <a name="quickstart-create-an-azure-cognitive-search-index-in-java-using-rest-apis"></a>Краткое руководство. Создание индекса службы "Когнитивный поиск Azure" в Java с помощью REST API
 > [!div class="op_single_selector"]
 > * [JavaScript](search-get-started-nodejs.md)
 > * [C#](search-get-started-dotnet.md)
@@ -26,7 +26,7 @@ ms.locfileid: "72166243"
 > * [Python](search-get-started-python.md)
 > * [Postman](search-get-started-postman.md)
 
-В статье приводятся пошаговые инструкции по созданию консольного приложения Java, которое создает, загружает и запрашивает индекс Поиска Azure с помощью [IntelliJ](https://www.jetbrains.com/idea/), [пакета SDK для Java 11](/java/azure/jdk/?view=azure-java-stable) и [REST API Поиска Azure](/rest/api/searchservice/). Кроме того, можно [скачать и установить готовую версию приложения](/samples/azure-samples/azure-search-java-samples/java-sample-quickstart/).
+В статье приводятся пошаговые инструкции по созданию консольного приложения Java, которое создает, загружает и запрашивает индекс Когнитивного поиска Azure с помощью [IntelliJ](https://www.jetbrains.com/idea/), [пакета SDK для Java 11](/java/azure/jdk/?view=azure-java-stable) и [REST API Когнитивного поиска Azure](/rest/api/searchservice/). Кроме того, можно [скачать и установить готовую версию приложения](/samples/azure-samples/azure-search-java-samples/java-sample-quickstart/).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -38,13 +38,13 @@ ms.locfileid: "72166243"
 
 + [Пакет SDK для Java 11](/java/azure/jdk/?view=azure-java-stable)
 
-+ [Создайте службу "Поиск Azure"](search-create-service-portal.md) или [найдите имеющуюся службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) в рамках текущей подписки. Вы можете использовать бесплатную службу для выполнения инструкций, описанных в этом кратком руководстве.
++ [Создайте службу "Когнитивный поиск Azure"](search-create-service-portal.md) или [найдите имеющуюся службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) в рамках текущей подписки. Вы можете использовать бесплатную службу для выполнения инструкций, описанных в этом кратком руководстве.
 
 <a name="get-service-info"></a>
 
 ## <a name="get-a-key-and-url"></a>Получение ключа и URL-адреса
 
-Вызовы к службе требуют конечную точку URL-адреса и ключ доступа при каждом запросе. Служба поиска создана с обоими элементами, поэтому если вы добавили службу "Поиск Azure" в подписку, выполните следующие действия для получения необходимых сведений:
+Вызовы к службе требуют конечную точку URL-адреса и ключ доступа при каждом запросе. Служба поиска создана с обоими элементами, поэтому если вы добавили службу "Когнитивный поиск Azure" в подписку, выполните следующие действия для получения необходимых сведений:
 
 1. [Войдите на портал Azure](https://portal.azure.com/) и на странице **обзора** службы поиска получите URL-адрес. Пример конечной точки может выглядеть так: `https://mydemo.search.windows.net`.
 
@@ -143,7 +143,7 @@ ms.locfileid: "72166243"
 
 1. Нажмите кнопку **ОК** , чтобы закрыть окно.
 
-### <a name="add-azure-search-service-information"></a>Добавление сведений о службе "Поиск Azure"
+### <a name="add-azure-cognitive-search-service-information"></a>Добавление сведений о службе "Когнитивный поиск Azure"
 
 1. В окне **Project** (Проект) разверните дерево источников, чтобы просмотреть содержимое папки `src` >  `main` >`resources` > `app`, и добавьте в нее файл `config.properties`. Для этого выберите папку `app`, нажмите сочетание клавиш ALT+INSERT, выберите вариант **File** (Файл) и введите имя файла.
 
@@ -259,7 +259,7 @@ ms.locfileid: "72166243"
 ### <a name="add-the-http-operations"></a>Добавление операций HTTP
 
 1. В папке `src` >  `main` > `java` > `service` добавьте класс `SearchServiceClient`. Для этого выберите папку `service`, нажмите сочетание клавиш ALT+INSERT, выберите вариант **Java Class** (Класс Java) и введите имя класса.
-1. Откройте класс `SearchServiceClient` и замените его содержимое следующим кодом. Этот код реализует операции HTTP, которые нужны для использования REST API Поиска Azure. Дополнительные методы для создания индекса, отправки документов и запроса индекса мы добавим позже.
+1. Откройте класс `SearchServiceClient` и замените его содержимое следующим кодом. Этот код реализует операции HTTP, которые нужны для использования REST API Когнитивного поиска Azure. Дополнительные методы для создания индекса, отправки документов и запроса индекса мы добавим позже.
 
     ```java
     package main.java.service;
@@ -512,9 +512,9 @@ ms.locfileid: "72166243"
 
     Этому индексу будет задано имя hotels-quickstart. Атрибуты в полях индекса определяют, как выполнять поиск индексированных данных в приложении. Например, атрибут `IsSearchable` нужно назначить каждому полю, которое должно включаться в полнотекстовый поиск. Дополнительные сведения см. в разделе о [коллекции полей и атрибутах поля](search-what-is-an-index.md#fields-collection).
     
-    Поле `Description` в этом индексе использует необязательное свойство `analyzer` для переопределения стандартного анализатора языка Lucene. Поле `Description_fr` использует анализатор Lucene для французского языка `fr.lucene`, так как в нем хранится текст на французском языке. Поле `Description` использует необязательный анализатор языка Майкрософт en.lucene. Дополнительные сведения см. в статье об [анализаторах для обработки текста в службе "Поиск Azure"](search-analyzers.md).
+    Поле `Description` в этом индексе использует необязательное свойство `analyzer` для переопределения стандартного анализатора языка Lucene. Поле `Description_fr` использует анализатор Lucene для французского языка `fr.lucene`, так как в нем хранится текст на французском языке. Поле `Description` использует необязательный анализатор языка Майкрософт en.lucene. Дополнительные сведения см. в статье об [анализаторах для обработки текста в службе "Когнитивный поиск Azure"](search-analyzers.md).
 
-1. Добавьте в класс `SearchServiceClient` приведенный далее код. Эти методы создают URL-адреса службы REST Поиска Azure, которые позволяют создавать и удалять индекс, а также определять его наличие. Эти методы также выполняют HTTP-запрос.
+1. Добавьте в класс `SearchServiceClient` приведенный далее код. Эти методы создают URL-адреса службы REST Когнитивного поиска Azure, которые позволяют создавать и удалять индекс, а также определять его наличие. Эти методы также выполняют HTTP-запрос.
 
     ```java
     public boolean indexExists() throws IOException, InterruptedException {
@@ -694,9 +694,9 @@ ms.locfileid: "72166243"
 
 После загрузки документов об отелях вы можете создать поисковые запросы для доступа к данным об отелях.
 
-1. Добавьте в класс `SearchServiceClient` приведенный далее код. Этот код создает URL-адреса службы REST Поиска Azure для поиска по индексированным данным и выводит результаты поиска.
+1. Добавьте в класс `SearchServiceClient` приведенный далее код. Этот код создает URL-адреса службы REST Когнитивного поиска Azure для поиска по индексированным данным и выводит результаты поиска.
 
-    Класс `SearchOptions` и метод `createSearchOptions` позволяют указать подмножество доступных параметров запроса REST API Поиска Azure. Дополнительные сведения о параметрах запроса REST API см. в статье о [поиске документов с помощью REST API Поиска Azure](/rest/api/searchservice/search-documents).
+    Класс `SearchOptions` и метод `createSearchOptions` позволяют указать подмножество доступных параметров запроса REST API Когнитивного поиска Azure. Дополнительные сведения о параметрах запроса REST API см. в статье о [поиске документов с помощью REST API Когнитивного поиска Azure](/rest/api/searchservice/search-documents).
 
     Метод `SearchPlus` создает URL-адрес поискового запроса, выполняет поисковый запрос и выводит результаты в консоль. 
 

@@ -10,12 +10,12 @@ ms.workload: big-data
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 07/12/2019
-ms.openlocfilehash: 5f22c9e7b7f040a0e6b957cbc184720918ce9222
-ms.sourcegitcommit: f272ba8ecdbc126d22a596863d49e55bc7b22d37
+ms.openlocfilehash: c55de6b437755f46df8d95a8ee461c0671a52cff
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72274159"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72791531"
 ---
 # <a name="quickstart-run-a-spark-job-on-azure-databricks-using-the-azure-resource-manager-template"></a>Краткое руководство. Запуск задания Spark в Azure Databricks с помощью шаблона Azure Resource Manager
 
@@ -31,7 +31,7 @@ ms.locfileid: "72274159"
 
 > [!Note]
 > Инструкции из этого руководство нельзя выполнять с **бесплатной пробной версией подписки**.
-> Если у вас есть бесплатная учетная запись, перейдите к профилю и измените подписку на подписку с **оплатой по мере использования**. Дополнительные сведения см. на странице [создания бесплатной учетной записи Azure](https://azure.microsoft.com/free/). Затем [удалите предельную сумму расходов](https://docs.microsoft.com/azure/billing/billing-spending-limit#remove-the-spending-limit-in-account-center) и [запросите увеличение квоты](https://docs.microsoft.com/azure/azure-supportability/resource-manager-core-quotas-request) на ЦП в своем регионе. При создании рабочей области Azure Databricks можно выбрать ценовую категорию **Пробная версия ("Премиум" — 14 дней бесплатно (DBU))** для предоставления рабочей области доступа к бесплатным DBU Azure Databricks уровня "Премиум" на 14 дней.
+> Если у вас есть бесплатная учетная запись, перейдите к профилю и измените подписку на подписку с **оплатой по мере использования**. Дополнительные сведения см. на странице [создания бесплатной учетной записи Azure](https://azure.microsoft.com/free/). Затем [удалите предельную сумму расходов](https://docs.microsoft.com/azure/billing/billing-spending-limit#why-you-might-want-to-remove-the-spending-limit) и [запросите увеличение квоты](https://docs.microsoft.com/azure/azure-supportability/resource-manager-core-quotas-request) на ЦП в своем регионе. При создании рабочей области Azure Databricks можно выбрать ценовую категорию **Пробная версия ("Премиум" — 14 дней бесплатно (DBU))** для предоставления рабочей области доступа к бесплатным DBU Azure Databricks уровня "Премиум" на 14 дней.
 
 ## <a name="create-an-azure-databricks-workspace"></a>Создание рабочей области Azure Databricks
 
@@ -43,7 +43,7 @@ ms.locfileid: "72274159"
 
 2. Укажите необходимые значения, чтобы создать рабочую область Azure Databricks.
 
-   ![Создание рабочей области Azure Databricks с помощью шаблона Azure Resource Manager](./media/quickstart-create-databricks-workspace-resource-manager-template/create-databricks-workspace-using-resource-manager-template.png "Create Azure Databricks workspace using an Azure Resource Manager template")
+   ![Создание рабочей области Azure Databricks с помощью шаблона Azure Resource Manager](./media/quickstart-create-databricks-workspace-resource-manager-template/create-databricks-workspace-using-resource-manager-template.png "Создание рабочей области Azure Databricks с помощью шаблона Azure Resource Manager")
 
    Укажите следующие значения.
 
@@ -59,7 +59,7 @@ ms.locfileid: "72274159"
 
 4. Создание рабочей области займет несколько минут. Во время создания рабочей области на портале с правой стороны отображается плитка **Идет отправка развертывания для Azure Databricks**. Возможно, вам потребуется прокрутить панель мониторинга, чтобы увидеть эту плитку. В верхней части экрана также будет отображаться индикатор хода выполнения. Следить за выполнением можно с помощью любого из этих элементов.
 
-   ![Плитка развертывания Databricks](./media/quickstart-create-databricks-workspace-resource-manager-template/databricks-deployment-tile.png "Databricks deployment tile")
+   ![Плитка развертывания Databricks](./media/quickstart-create-databricks-workspace-resource-manager-template/databricks-deployment-tile.png "Плитка развертывания Databricks")
 
 ## <a name="create-a-spark-cluster-in-databricks"></a>Создание кластера Spark в Databricks
 
@@ -67,11 +67,11 @@ ms.locfileid: "72274159"
 
 2. Вы будете перенаправлены на портал Azure Databricks. На портале выберите **Кластер**.
 
-   ![Databricks в Azure](./media/quickstart-create-databricks-workspace-resource-manager-template/databricks-on-azure.png "Databricks on Azure")
+   ![Databricks в Azure](./media/quickstart-create-databricks-workspace-resource-manager-template/databricks-on-azure.png "Databricks в Azure")
 
 3. На странице **создания кластера** укажите значения для создания кластера.
 
-   ![Создание кластера Databricks Spark в Azure](./media/quickstart-create-databricks-workspace-resource-manager-template/create-databricks-spark-cluster.png "Create Databricks Spark cluster on Azure")
+   ![Создание кластера Databricks Spark в Azure](./media/quickstart-create-databricks-workspace-resource-manager-template/create-databricks-spark-cluster.png "Создание кластера Databricks Spark в Azure")
 
    Для всех остальных параметров, кроме следующих, примите значения по умолчанию:
 
@@ -95,11 +95,11 @@ ms.locfileid: "72274159"
 
 1. В левой области щелкните **рабочую область**. В раскрывающемся списке **рабочей области** выберите **Создать**, а затем выберите **записную книжку**.
 
-   ![Создание записной книжки в Databricks](./media/quickstart-create-databricks-workspace-resource-manager-template/databricks-create-notebook.png "Create notebook in Databricks")
+   ![Создание записной книжки в Databricks](./media/quickstart-create-databricks-workspace-resource-manager-template/databricks-create-notebook.png "Создание записной книжки в Databricks")
 
 2. В диалоговом окне **создания записной книжки** введите имя, выберите **Scala** в качестве языка, а затем выберите созданный ранее кластер Spark.
 
-   ![Создание записной книжки в Databricks](./media/quickstart-create-databricks-workspace-resource-manager-template/databricks-notebook-details.png "Create notebook in Databricks")
+   ![Создание записной книжки в Databricks](./media/quickstart-create-databricks-workspace-resource-manager-template/databricks-notebook-details.png "Создание записной книжки в Databricks")
 
    Нажмите кнопку **Создать**.
 
@@ -153,17 +153,17 @@ ms.locfileid: "72274159"
 
 6. Отобразятся табличные данные, как показано на следующем снимке экрана (показаны только некоторые столбцы).
 
-   ![Пример данных JSON](./media/quickstart-create-databricks-workspace-resource-manager-template/databricks-sample-csv-data.png "Sample JSON data")
+   ![Пример данных JSON](./media/quickstart-create-databricks-workspace-resource-manager-template/databricks-sample-csv-data.png "Пример данных JSON")
 
    Среди прочего пример данных демонстрирует пол аудитории радиоканала (имя столбца **gender**), а также категорию подписки (бесплатная или платная) (имя столбца **level**).
 
 7. Теперь можно создать визуальное представление данных по каждому полу, а также по числу пользователей с бесплатными и платными учетными записями. В нижней части выходных табличных данных щелкните значок **линейчатой диаграммы**, а затем — **параметры построения**.
 
-   ![Создание линейчатой диаграммы](./media/quickstart-create-databricks-workspace-resource-manager-template/create-plots-databricks-notebook.png "Create bar chart")
+   ![Создание линейчатой диаграммы](./media/quickstart-create-databricks-workspace-resource-manager-template/create-plots-databricks-notebook.png "Создание линейчатой диаграммы")
 
 8. В разделе **настроек построения** перетащите значения, как показано на снимке экрана.
 
-   ![Настройка линейчатой диаграммы](./media/quickstart-create-databricks-workspace-resource-manager-template/databricks-notebook-customize-plot.png "Customize bar chart")
+   ![Настройка линейчатой диаграммы](./media/quickstart-create-databricks-workspace-resource-manager-template/databricks-notebook-customize-plot.png "Настройка линейчатой диаграммы")
 
    * Для параметра **Ключи** задайте значение **gender**.
    * Для параметра **Series groupings** (Группирование ряда) задайте значение **level**.
@@ -174,13 +174,13 @@ ms.locfileid: "72274159"
 
 9. Выходные данные отображают визуальное представление, как показано на следующем снимке экрана:
 
-   ![Настройка линейчатой диаграммы](./media/quickstart-create-databricks-workspace-resource-manager-template/databricks-sql-query-output-bar-chart.png "Customize bar chart")
+   ![Настройка линейчатой диаграммы](./media/quickstart-create-databricks-workspace-resource-manager-template/databricks-sql-query-output-bar-chart.png "Настройка линейчатой диаграммы")
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 Когда вы выполните задачи в статье, можно будет завершить работу кластера. Для этого в рабочей области Azure Databricks на панели слева выберите **Кластеры**. Для кластера, работу которого необходимо завершить, переместите указатель мыши на многоточие в столбце **Actions** (Действия) и выберите значок **Завершить**.
 
-![Завершение работы кластера Databricks](./media/quickstart-create-databricks-workspace-resource-manager-template/terminate-databricks-cluster.png "Stop a Databricks cluster")
+![Остановка кластера Databricks](./media/quickstart-create-databricks-workspace-resource-manager-template/terminate-databricks-cluster.png "Остановка кластера Databricks")
 
 Если не завершить работу кластера вручную, она завершится автоматически, если во время создания кластера вы установили флажок **Terminate after \_\_ minutes of inactivity** (Завершать работу после \_\_ мин бездействия). В этом случае работа кластера автоматически завершается, если он был неактивным в течение определенного времени.
 

@@ -13,13 +13,13 @@ ms.tgt_pltfrm: na
 ms.topic: quickstart
 ms.date: 08/22/2019
 ms.author: magoedte
-ms.custom: mvc, seo-javascript-september2019
-ms.openlocfilehash: 72f50754a28f0bbf5648ae64299d28ff13e2ec31
-ms.sourcegitcommit: 6fe40d080bd1561286093b488609590ba355c261
+ms.custom: mvc, seo-javascript-september2019, seo-javascript-october2019
+ms.openlocfilehash: 959f36107ab9f79d4e66cc23b0744f1dbb8b2690
+ms.sourcegitcommit: 1bd2207c69a0c45076848a094292735faa012d22
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71703054"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72677966"
 ---
 # <a name="quickstart-collect-data-from-a-linux-computer-in-a-hybrid-environment-with-azure-monitor"></a>Краткое руководство. Сбор данных с компьютера Linux в гибридной среде с помощью Azure Monitor
 
@@ -37,7 +37,7 @@ ms.locfileid: "71703054"
 
 1. На портале Azure щелкните **Все службы**. В списке ресурсов введите **Log Analytics**. Как только вы начнете вводить символы, список отфильтруется соответствующим образом. Выберите **Рабочие области Log Analytics**.
 
-    ![Портал Azure](media/quick-collect-azurevm/azure-portal-01.png)<br>  
+    ![Поиск рабочей области Log Analytics на портале Azure](media/quick-collect-azurevm/azure-portal-log-analytics-workspaces.png)<br>  
 
 2. Выберите **Создать** и задайте следующие параметры:
 
@@ -47,7 +47,7 @@ ms.locfileid: "71703054"
    * Выберите **Расположение**, в котором развернуты виртуальные машины.  Дополнительные сведения о доступности службы Log Analytics в регионах см. в [этой статье](https://azure.microsoft.com/regions/services/).
    * При создании рабочей области в новой подписке, созданной после 2 апреля 2018 г., будет автоматически использоваться тарифный план *За ГБ*, и выбор ценовой категории будет недоступен.  При создании рабочей области в существующей подписке, созданной до 2 апреля, или в подписке, которая была привязана к существующей регистрации EA, выберите нужную ценовую категорию.  Дополнительные сведения о конкретной ценовой категории см. в статье [Цены на Log Analytics](https://azure.microsoft.com/pricing/details/log-analytics/).
   
-        ![Колонка создания ресурса Log Analytics](media/quick-collect-azurevm/create-loganalytics-workspace-02.png) 
+        ![Создание рабочей области Log Analytics на портале Azure](media/quick-collect-azurevm/create-log-analytics-workspace-azure-portal.png) 
 
 3. Завершив ввод обязательных сведений на панели **Рабочая область Log Analytics**, щелкните **OK**.  
 
@@ -65,7 +65,7 @@ ms.locfileid: "71703054"
 
 3. Выберите **Дополнительные параметры**.
 
-    ![Дополнительные параметры Log Analytics](media/quick-collect-azurevm/log-analytics-advanced-settings-01.png) 
+    ![Меню дополнительных параметров Log Analytics на портале Azure](media/quick-collect-azurevm/log-analytics-advanced-settings-azure-portal.png) 
  
 4. Выберите **Подключенные источники**, а затем выберите **Серверы с Linux**.
 
@@ -129,7 +129,7 @@ Azure Monitor может собирать события из системног
 
 7. При первой настройке счетчиков производительности Linux для новой рабочей области Log Analytics вы можете быстро создать несколько распространенных счетчиков. Рядом с каждым счетчиком в списке есть флажок.
 
-    ![Выбраны стандартные счетчики производительности Windows](media/quick-collect-azurevm/linux-perfcounters-default.png)
+    ![Счетчики производительности Linux по умолчанию, выбранные в Azure Monitor](media/quick-collect-azurevm/linux-perfcounters-azure-monitor.png)
 
     Выберите **Применение конфигурации, указанной ниже, к моим машинам** и щелкните **Добавить выбранные счетчики производительности**. Они добавляются и устанавливаются с десятисекундным интервалом сбора.  
 

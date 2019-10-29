@@ -1,23 +1,24 @@
 ---
-title: Просмотр хранилища знаний с помощью Обозревателя службы хранилища — Azure Search
-description: Просматривайте и анализируйте хранилище знаний Поиск Azure с помощью Обозревателя службы хранилища портала Azure.
+title: Просмотр хранилища знаний с помощью Обозревателя службы хранилища
+titleSuffix: Azure Cognitive Search
+description: Просматривайте и анализируйте хранилище знаний Когнитивного поиска Azure с помощью Обозревателя службы хранилища портала Azure.
+manager: nitinme
 author: lisaleib
-services: search
-ms.service: search
-ms.topic: tutorial
-ms.date: 09/03/2019
 ms.author: v-lilei
-ms.openlocfilehash: 9ec93bcd2309bb47b24983260c35726ac24b5e95
-ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
+ms.service: cognitive-search
+ms.topic: tutorial
+ms.date: 11/04/2019
+ms.openlocfilehash: cfa85e61059e27cd39a9701a835a725e16e5bc0a
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71265604"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72789976"
 ---
 # <a name="view-a-knowledge-store-with-storage-explorer"></a>Просмотр хранилища знаний с помощью Обозревателя службы хранилища
 
 > [!Note]
-> Хранилище знаний предоставляется в предварительной версии и не предназначено для использования в рабочей среде. Этот компонент предоставляется в [REST API версии 2019-05-06-Preview](search-api-preview.md). Поддержка пакета SDK для .NET пока не реализована.
+> Хранилище знаний предоставляется в предварительной версии и не предназначено для использования в рабочей среде. Этот компонент предоставляется в [REST API службы "Когнитивный поиск Azure" версии 2019-05-06-Preview](search-api-preview.md). Поддержка пакета SDK для .NET пока не реализована.
 >
 В этой статье объясняется, как подключить и изучить хранилище знаний с помощью Обозревателя службы хранилища на портале Azure. Сведения о создании примера хранилища знаний, используемого в этом пошаговом руководстве, см. в разделе [Создание хранилища знаний на портале Azure](knowledge-store-create-portal.md).
 
@@ -45,7 +46,7 @@ ms.locfileid: "71265604"
 
 Чтобы выполнить запросы, щелкните **Запрос** на панели команд и введите условия.  
 
-   ![Запрос на таблицу в Обозревателе службы хранилища](media/knowledge-store-view-storage-explorer/storage-explorer-query-table.png "Запрос на таблицу в обозревателе службы хранилища")
+   ![Запрос таблицы в Обозревателе службы хранилища](media/knowledge-store-view-storage-explorer/storage-explorer-query-table.png "Запрос таблицы в Обозревателе службы хранилища")
 
 ## <a name="clean-up"></a>Очистка
 

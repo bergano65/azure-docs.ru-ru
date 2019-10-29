@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: tutorial
-ms.date: 10/01/2019
+ms.date: 10/12/2019
 ms.author: diberry
-ms.openlocfilehash: f0888b25258f6a7830df1195995159432b19907d
-ms.sourcegitcommit: 4f3f502447ca8ea9b932b8b7402ce557f21ebe5a
+ms.openlocfilehash: d13bce3c1cafd20b311aa882d3a32101c1833ba5
+ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71802824"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72555507"
 ---
 # <a name="tutorial-using-c-create-knowledge-base-then-answer-question"></a>Руководство. Создание базы знаний и получение ответа на вопрос с использованием C#
 
@@ -214,6 +214,13 @@ _Первичная конечная точка_ передается как з�
 Добавьте следующий метод, чтобы получить ответ на вопрос пользователя. 
 
 [!code-csharp[Get Answer](~/samples-qnamaker-csharp/documentation-samples/tutorials/create-publish-answer-knowledge-base/QnaMakerQuickstart/Program.cs?range=290-315 "Get Answer")]
+
+Если вы хотите ограничить ответ на вопросы, добавьте к тексту свойство `[rankerType](Learn more about [rankerType](../concepts/best-practices.md#choosing-ranker-type).
+)`, например: 
+
+```csharp
+request.Content = new StringContent("{question:'" + question + "', rankerType:'QuestionOnly'}", Encoding.UTF8, "application/json"); 
+```
 
 Этот вызов API возвращает ответ JSON: 
 

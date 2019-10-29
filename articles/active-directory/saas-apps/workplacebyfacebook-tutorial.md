@@ -13,15 +13,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 08/13/2019
+ms.date: 10/21/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fe02e9d6c3fa69e0ccd88057e10edb6ea1c6e0d0
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: 15e98bf83cedc22aa565ba0f98089e9f6f217728
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68986043"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72787615"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-workplace-by-facebook"></a>Руководство по интеграции единого входа Azure Active Directory с Workplace by Facebook
 
@@ -63,7 +63,6 @@ ms.locfileid: "68986043"
 1. В разделе **Добавление из коллекции** в поле поиска введите **Workplace by Facebook**.
 1. Выберите **Workplace by Facebook** в области результатов и добавьте это приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
-
 ## <a name="configure-and-test-azure-ad-sso-for-workplace-by-facebook"></a>Настройка и проверка единого входа Azure AD для Workplace by Facebook
 
 Настройте и проверьте единый вход Azure AD в Workplace by Facebook с помощью тестового пользователя **B. Simon**. Чтобы единый вход работал, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Workplace by Facebook.
@@ -71,10 +70,10 @@ ms.locfileid: "68986043"
 Чтобы настроить и проверить единый вход Azure AD в Workplace by Facebook, выполните действия в следующих стандартных блоках.
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-sso)** необходима, чтобы пользователи могли использовать эту функцию.
-    1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
-    1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
+    * **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
+    * **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 2. **[Настройка единого входа в Workplace by Facebook](#configure-workplace-by-facebook-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
-    1. **[Создание тестового пользователя Workplace by Facebook](#create-workplace-by-facebook-test-user)** требуется для того, чтобы в Workplace by Facebook существовал пользователь B. Simon, связанный с одноименным пользователем в Azure AD.
+    * **[Создание тестового пользователя Workplace by Facebook](#create-workplace-by-facebook-test-user)** требуется для того, чтобы в Workplace by Facebook существовал пользователь B. Simon, связанный с одноименным пользователем в Azure AD.
 3. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
@@ -96,11 +95,11 @@ ms.locfileid: "68986043"
     > [!NOTE] 
     > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Правильные значения для своего сообщества Workplace см. на странице аутентификации панели мониторинга компании Workplace.
 
-4. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите пункт **Сертификат (Base64)** и щелкните **Скачать**, чтобы скачать сертификат. Сохраните этот сертификат на компьютере.
+1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите пункт **Сертификат (Base64)** и щелкните **Скачать**, чтобы скачать сертификат. Сохраните этот сертификат на компьютере.
 
     ![Ссылка для скачивания сертификата](common/certificatebase64.png)
 
-6. Скопируйте требуемый URL-адрес в разделе **Настройка Workplace by Facebook**.
+1. Скопируйте требуемый URL-адрес в разделе **Настройка Workplace by Facebook**.
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
@@ -136,24 +135,36 @@ ms.locfileid: "68986043"
 
 ## <a name="configure-workplace-by-facebook-sso"></a>Настройка единого входа в Workplace by Facebook
 
-1. В другом окне веб-браузера войдите на свой корпоративный сайт Workplace by Facebook в качестве администратора.
-  
+1. Для автоматизации настройки в Workplace by Facebook необходимо установить **расширение браузера My Apps Secure Sign-in**, щелкнув **Установить расширение**.
+
+    ![Расширение "Мои приложения"](common/install-myappssecure-extension.png)
+
+1. Чтобы перейти к приложению Workplace by Facebook после добавления расширения в браузер, щелкните **Настройка Workplace by Facebook**. После этого укажите учетные данные администратора для входа в Workplace by Facebook. Расширение браузера автоматически настроит приложение и автоматизирует шаги 3–5.
+
+    ![Настройка конфигурации](common/setup-sso.png)
+
+1. Если вы хотите настроить Workplace by Facebook вручную, откройте новое окно веб-браузера, войдите на свой корпоративный сайт Workplace by Facebook в качестве администратора и выполните следующие действия:
+
     > [!NOTE]
     > В рамках процесса проверки подлинности SAML приложение Workplace может использовать строки запросов размером до 2,5 КБ для передачи параметров в Azure AD.
 
-2. На **панели администрирования** перейдите на вкладку **Security** (Безопасность).
+1. На панели навигации слева перейдите на вкладку **Безопасность** > **Проверка подлинности**.
 
     ![Панель администрирования](./media/workplacebyfacebook-tutorial/tutorial-workplace-by-facebook-configure01.png)
 
-3. На вкладке **Authentication** (Аутентификация) выберите **Single-Sign On (SSO)** (Единый вход (SSO)) и выполните следующие действия:
+    a. Установите флажок **Единый вход (SSO)** .
+    
+    b. Щелкните **+Add new SSO Provider** (+Добавить нового поставщика единого входа).
+
+1. На вкладке **Authentication** (Аутентификация) выберите **Single-Sign On (SSO)** (Единый вход (SSO)) и выполните следующие действия:
 
     ![Вкладка "Authentication" (Аутентификация)](./media/workplacebyfacebook-tutorial/tutorial-workplace-by-facebook-configure02.png)
 
-    a. В текстовое поле **SAML URL** (URL-адрес SAML) вставьте **URL-адрес SAML**, скопированный на портале Azure.
+    a. В поле **Name of the SSO Provider** (Имя поставщика единого входа) введите имя экземпляра единого входа, например Azureadsso.
 
-    b. В текстовое поле **SAML Issuer URL** (URI издателя SAML) вставьте **идентификатор Azure AD**, скопированный на портале Azure.
+    b. В текстовое поле **SAML URL** (URL-адрес SAML) вставьте **URL-адрес SAML**, скопированный на портале Azure.
 
-    c. В текстовое поле **SAML Logout Redirect** (Перенаправление для выхода SAML) вставьте значение **URL-адреса выхода**, скопированное на портале Azure (необязательно).
+    c. В текстовое поле **SAML Issuer URL** (URL-адрес издателя SAML) вставьте **идентификатор Azure AD**, скопированный на портале Azure.
 
     d. Откройте в Блокноте **сертификат в кодировке Base64**, скачанный с портала Azure, скопируйте его содержимое в буфер обмена и вставьте в текстовое поле **SAML Certificate** (Сертификат SAML).
 
@@ -169,7 +180,7 @@ ms.locfileid: "68986043"
 
     i. Теперь для аутентификации всех пользователей Workplace будет отображаться страница входа в Azure AD.
 
-4. **Перенаправление для выхода SAML (необязательно)**  -
+1. **Перенаправление для выхода SAML (необязательно)**  -
 
     При необходимости можно настроить URL-адрес выхода SAML, с помощью которого можно указать страницу выхода из Azure AD. После активации и настройки этого параметра пользователи больше не будут направляться на страницу выхода из Workplace. Вместо этого они будут переходить по URL-адресу, указанному в параметре перенаправления для выхода SAML.
 
@@ -230,4 +241,3 @@ ms.locfileid: "68986043"
 - [Руководство по настройке Google Apps для автоматической подготовки пользователей](workplacebyfacebook-provisioning-tutorial.md)
 
 - [Проверьте работу Workplace by Facebook с Azure Active Directory](https://aad.portal.azure.com)
-

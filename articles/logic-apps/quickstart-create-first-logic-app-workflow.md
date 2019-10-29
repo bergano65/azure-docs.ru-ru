@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство. Создание и автоматизация первого рабочего процесса в Azure Logic Apps
-description: Создание первого приложения логики для автоматизации задач, операций и рабочих процессов с помощью Azure Logic Apps. Создавайте приложения логики для решений интеграции системы и корпоративных приложений (EAI) для своих систем и облачных служб.
+title: Создание и автоматизация первого рабочего процесса в Azure Logic Apps
+description: 'Краткое руководство: создание первой автоматизированной задачи или рабочего процесса с помощью Azure Logic Apps для решений интеграции систем и корпоративных приложений (EAI)'
 services: logic-apps
 ms.service: logic-apps
 ms.suite: integration
@@ -11,12 +11,12 @@ ms.reviewer: klam, LADocs
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 08/20/2019
-ms.openlocfilehash: c85b3e3ced661eb36d9cb1eb0ae443a5ab21a913
-ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
+ms.openlocfilehash: 8886472b9840c27bcbceb70265379db1682673a9
+ms.sourcegitcommit: d37991ce965b3ee3c4c7f685871f8bae5b56adfa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72029439"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72679140"
 ---
 # <a name="quickstart-create-your-first-automated-workflow-with-azure-logic-apps---azure-portal"></a>Краткое руководство. Создание первого автоматизированного рабочего процесса с помощью Azure Logic Apps на портале Azure
 

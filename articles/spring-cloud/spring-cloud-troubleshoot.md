@@ -9,12 +9,12 @@ ms.service: spring-cloud
 ms.topic: quickstart
 ms.date: 10/07/2019
 ms.author: v-vasuke
-ms.openlocfilehash: ebb960085691206b096090813636ef56366e6536
-ms.sourcegitcommit: d773b5743cb54b8cbcfa5c5e4d21d5b45a58b081
+ms.openlocfilehash: ee51841046962a6896b4c16e651f85ff761a69fc
+ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72038363"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72592487"
 ---
 # <a name="troubleshooting-guide-for-common-problems"></a>Руководство по устранению распространенных проблем
 
@@ -146,6 +146,49 @@ ms.locfileid: "72038363"
 Вы также можете проверить журналы клиента _Service Registry_ в _службе Azure Log Analytics_. Дополнительные сведения см. в статье [Analyze logs and metrics with Diagnostic settings](diagnostic-services.md) (Анализ журналов и метрик с помощью параметров диагностики).
 
 Ознакомьтесь с [этой статьей по началу работы](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-portal) с _Azure Log Analytics_. Выполните запрос к журналам, используя [язык запросов Kusto](https://docs.microsoft.com/azure/kusto/query/).
+
+### <a name="i-want-to-inspect-my-applications-environment-variables"></a>Я хочу проверить переменные среды моего приложения
+
+Переменные среды информируют платформу Azure Spring Cloud, гарантируя, что Azure распознает, где и как настроить службы, составляющие приложение.  Проверка правильности переменных среды является необходимым первым шагом при устранении потенциальных проблем.  Для просмотра переменных среды можно использовать конечную точку Spring Boot Actuator.  
+
+> [!WARNING]
+> Эта процедура предоставляет переменные среды с помощью тестовой конечной точки.  Не продолжайте, если тестовая конечная точка является общедоступной или если приложению назначено доменное имя.
+
+1. Перейдите по этому URL-адресу: `https://<your application test endpoint>/actuator/health`.  
+    - Ответ, аналогичный `{"status":"UP"}`, указывает, что конечная точка включена.
+    - Если ответ отрицательный, включите следующую зависимость в `POM.xml`:
+
+        ```xml
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-actuator</artifactId>
+            </dependency>
+        ```
+
+1. Если конечная точка Spring Boot Actuator включена, перейдите на портал Azure и найдите страницу конфигурации приложения.  Добавьте переменную среды с именем `MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE' and the value `*`. 
+
+1. Перезапустите приложение.
+
+1. Перейдите к `https://<the test endpoint of your app>/actuator/env` и проверьте ответ.  Результат будет выглядеть так:
+
+    ```json
+    {
+        "activeProfiles": [],
+        "propertySources": {,
+            "name": "server.ports",
+            "properties": {
+                "local.server.port": {
+                    "value": 1025
+                }
+            }
+        }
+    }
+    ```
+
+Найдите дочерний узел с именем `systemEnvironment`.  Этот узел содержит переменные среды приложения.
+
+> [!IMPORTANT]
+> Не забудьте отменить раскрытие переменных среды перед тем, как сделать приложение общедоступным.  Перейдите на портал Azure, найдите страницу конфигурации приложения и удалите эту переменную среды: `MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE`.
 
 ### <a name="i-cannot-find-metrics-or-logs-for-my-application"></a>Не удается найти метрики или журналы для приложения
 

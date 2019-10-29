@@ -9,10 +9,10 @@ ms.custom: hdinsightactive,mvc
 ms.topic: tutorial
 ms.date: 05/24/2019
 ms.openlocfilehash: be21b809272a132ee6e63582036c36ad5dcdf4ad
-ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
+ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "71266199"
 ---
 # <a name="tutorial-process-tweets-using-azure-event-hubs-and-apache-spark-in-hdinsight"></a>Руководство по Обработка твитов с помощью Центров событий Azure и Apache Spark в HDInsight
@@ -74,7 +74,7 @@ ms.locfileid: "71266199"
 
 3. В разделе **ИНТЕРНЕТ ВЕЩЕЙ** выберите **Центры событий**. 
 
-    ![Создание концентратора событий для примера приложения потоковой передачи Spark](./media/apache-spark-eventhub-streaming/hdinsight-create-event-hub-for-spark-streaming.png "Создание концентратора событий для примера приложения потоковой передачи Spark")
+    ![Создание концентратора событий для примера потоковой передачи Spark](./media/apache-spark-eventhub-streaming/hdinsight-create-event-hub-for-spark-streaming.png "Создание концентратора событий для примера потоковой передачи Spark")
 
 4. Щелкните **+ Добавить**.
 
@@ -90,7 +90,7 @@ ms.locfileid: "71266199"
     |Включить автоматическое расширение (необязательно) |Автоматическое расширение автоматически масштабирует число единиц пропускной способности, которые назначены для пространства имен Центров событий, если объем трафика превышает его.  |
     |Автоматически увеличивать максимальное число единиц пропускной способности (необязательно)|Этот ползунок будет отображаться только в том случае, если вы установили флажок **Включить автоматическое расширение**.  |
 
-    ![Указание имени концентратора событий для примера приложения потоковой передачи Spark](./media/apache-spark-eventhub-streaming/hdinsight-provide-event-hub-name-for-spark-streaming.png "Указание имени концентратора событий для примера приложения потоковой передачи Spark")
+    ![Указание имени концентратора событий для примера потоковой передачи Spark](./media/apache-spark-eventhub-streaming/hdinsight-provide-event-hub-name-for-spark-streaming.png "Указание имени концентратора событий для примера потоковой передачи Spark")
 
 6. Выберите **Создать**, чтобы создать пространство имен.  Развертывание займет несколько минут.
 
@@ -112,7 +112,7 @@ ms.locfileid: "71266199"
 
     - **Хранение сообщений**: 1.   
    
-      ![Указание сведений о концентраторе событий для примера приложения потоковой передачи Spark](./media/apache-spark-eventhub-streaming/hdinsight-provide-event-hub-details-for-spark-streaming-example.png "Указание сведений о концентраторе событий для примера приложения потоковой передачи Spark")
+      ![Указание сведений о концентраторе событий для примера потоковой передачи Spark](./media/apache-spark-eventhub-streaming/hdinsight-provide-event-hub-details-for-spark-streaming-example.png "Указание сведений о концентраторе событий для примера потоковой передачи Spark")
 
 1. Нажмите кнопку **Создать**.  Развертывание завершится через несколько секунд, и вы вернетесь на страницу пространства имен Центров событий.
 
@@ -120,11 +120,11 @@ ms.locfileid: "71266199"
 
 1. Выберите **RootManageSharedAccessKey**.
     
-     ![Определение политик концентратора событий для примера приложения потоковой передачи Spark](./media/apache-spark-eventhub-streaming/hdinsight-set-event-hub-policies-for-spark-streaming-example.png "Определение политик концентратора событий для примера приложения потоковой передачи Spark")
+     ![Определение политик концентратора событий для примера потоковой передачи Spark](./media/apache-spark-eventhub-streaming/hdinsight-set-event-hub-policies-for-spark-streaming-example.png "Определение политик концентратора событий для примера потоковой передачи Spark")
 
 1. Сохраните значения **Первичный ключ** и **Строка подключения — первичный ключ**. Они понадобятся позже для работы с этим руководством.
 
-     ![Просмотр ключей политик концентратора событий для примера приложения потоковой передачи Spark](./media/apache-spark-eventhub-streaming/hdinsight-view-event-hub-policy-keys.png "Просмотр ключей политик концентратора событий для примера приложения потоковой передачи Spark")
+     ![Просмотр ключей политик концентратора событий для примера потоковой передачи Spark](./media/apache-spark-eventhub-streaming/hdinsight-view-event-hub-policy-keys.png "Просмотр ключей политик концентратора событий для примера потоковой передачи Spark")
 
 
 ## <a name="send-tweets-to-the-event-hub"></a>Отправка твитов в концентратор событий

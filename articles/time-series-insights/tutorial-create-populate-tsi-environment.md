@@ -5,16 +5,16 @@ services: time-series-insights
 author: ashannon7
 ms.service: time-series-insights
 ms.topic: tutorial
-ms.date: 10/02/2019
+ms.date: 10/16/2019
 ms.author: dpalled
 manager: cshankar
 ms.custom: seodec18
-ms.openlocfilehash: a6f2b2875ea58ff89d59f577f7cb27d97e07b28e
-ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
+ms.openlocfilehash: 518847db727c9d8c527d272f9122ef9850ca9135
+ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71981238"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72552997"
 ---
 # <a name="tutorial-create-an-azure-time-series-insights-environment"></a>Руководство по Создание среды службы "Аналитика временных рядов Azure"
 
@@ -55,7 +55,7 @@ ms.locfileid: "71981238"
 
 Сначала вам нужно создать решение для имитации устройств, которое будет создавать тестовые данные для заполнения среды Аналитики временных рядов.
 
-1. В отдельном окне или вкладке перейдите по адресу [azureiotsolutions.com](https://www.azureiotsolutions.com). Выполните вход с той же учетной записью подписки Azure и выберите акселератор решения **Имитация устройств**.
+1. В отдельном окне или вкладке перейдите по адресу [azureiotsolutions.com](https://www.azureiotsolutions.com). Выполните вход с той же учетной записью подписки Azure и выберите акселератор решения **Имитация устройств**. Щелкните **Попробовать сейчас**.
 
    [![Запуск акселератора "Имитация устройств"](media/tutorial-create-populate-tsi-environment/sa-main.png)](media/tutorial-create-populate-tsi-environment/sa-main.png#lightbox)
 
@@ -68,7 +68,7 @@ ms.locfileid: "71981238"
    **Варианты развертывания** | Выберите **Provision new IoT Hub** (Подготовить к работе новый Центр Интернета вещей), чтобы создать Центр Интернета вещей для этого учебника.
    **Расположение Azure** | Укажите тот же регион, который вы использовали в предыдущем разделе для создания среды Аналитики временных рядов.
 
-   По завершении щелкните **Создать решение**, чтобы подготовить ресурсы Azure для решения. Этот процесс может занять около 20 минут.
+   По завершении выберите параметр **Создать**, чтобы подготовить ресурсы решения Azure. Этот процесс может занять около 20 минут.
 
    [![Подготовка решения для имитации устройств](media/tutorial-create-populate-tsi-environment/sa-create-device-sim-solution.png)](media/tutorial-create-populate-tsi-environment/sa-create-device-sim-solution.png#lightbox)
 
@@ -104,13 +104,15 @@ ms.locfileid: "71981238"
    **Уровень** | Выберите необходимую пропускную способность. Выберите **S1**.
    **Производительность** | Производительность обозначает коэффициент, на который умножаются характеристики скорости для поступления данных и емкости хранилища выбранной категории SKU. Вы можете изменить емкость после создания. Выберите значение производительности **1**.
 
-   По завершении выберите **Отзыв и создание**, чтобы перейти к следующему шагу.
+   Когда завершите, выберите **Далее: источник события**, чтобы перейти к следующему шагу.
 
    [![Создание ресурса среды Аналитики временных рядов](media/tutorial-create-populate-tsi-environment/ap-create-resource-tsi-params.png)](media/tutorial-create-populate-tsi-environment/ap-create-resource-tsi-params.png#lightbox)
 
 1. Теперь подключите среду Аналитики временных рядов к Центру Интернета вещей, созданному акселератором решений. Задайте значение `Select existing` для параметра **Выберите концентратор**. Затем выберите Центр Интернета вещей, созданный акселератором решений, при настройке параметра **Имя Центра Интернета вещей**.
 
    [![Подключение среды Аналитики временных рядов к созданному Центру Интернета вещей](media/tutorial-create-populate-tsi-environment/ap-create-resource-iot-hub.png)](media/tutorial-create-populate-tsi-environment/ap-create-resource-iot-hub.png#lightbox)
+
+   Наконец, выберите **Просмотр + создание**.
 
 1. Используйте панель **Уведомления**, чтобы отслеживать выполнение развертывания. 
 
@@ -122,7 +124,7 @@ ms.locfileid: "71981238"
 
 Помимо Центра Интернета вещей создано веб-приложение Службы приложений Azure для формирования и передачи данных телеметрии от имитированных устройств.
 
-1. Вернитесь на [панель мониторинга акселератора решений](https://www.azureiotsolutions.com/Accelerators#dashboard). При необходимости войдите в систему с той же учетной записью Azure, которую вы использовали ранее в этом руководстве. Теперь можно нажать кнопку **Запустить** под решением "Имитация устройств".
+1. Вернитесь на [панель мониторинга акселератора решений](https://www.azureiotsolutions.com/Accelerators#dashboard). При необходимости войдите в систему с той же учетной записью Azure, которую вы использовали ранее в этом руководстве. Выберите свое "решение устройства", а затем **перейдите к акселератору решений**, чтобы запустить развернутое решение.
 
      [![Панель мониторинга акселераторов решений](media/tutorial-create-populate-tsi-environment/sa-create-device-sim-solution-dashboard.png)](media/tutorial-create-populate-tsi-environment/sa-create-device-sim-solution-dashboard.png#lightbox)
 

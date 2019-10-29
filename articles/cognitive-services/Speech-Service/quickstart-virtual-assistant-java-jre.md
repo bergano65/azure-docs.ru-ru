@@ -1,7 +1,7 @@
 ---
 title: Краткое руководство. Пользовательский виртуальный помощник по обработке голоса (предварительная версия), Java (Windows, Linux) — служба "Речь"
 titleSuffix: Azure Cognitive Services
-description: В этом кратком руководстве вы узнаете, как использовать пакет средств разработки программного обеспечения (SDK) для службы "Речь" в Cognitive Services в консольном приложении Java. Вы узнаете, как подключить клиентское приложение к ранее созданному боту Bot Framework, настроенному для использования канала "Речь Direct Line", и включить функцию виртуального помощника по обработке голоса.
+description: В этом кратком руководстве вы узнаете, как использовать пакет SDK для службы "Речь" в Cognitive Services в консольном приложении Java. Вы узнаете, как подключить клиентское приложение к ранее созданному боту Bot Framework, настроенному для использования канала "Речь Direct Line", и включить функцию виртуального помощника по обработке голоса.
 services: cognitive-services
 author: bidishac
 manager: nitinme
@@ -10,31 +10,31 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 07/05/2019
 ms.author: bidishac
-ms.openlocfilehash: c5a6042e4b181190849b3759325e4aab0c22413b
-ms.sourcegitcommit: 4f3f502447ca8ea9b932b8b7402ce557f21ebe5a
+ms.openlocfilehash: ca3d650f9a53f536a00f2a11aca37b2a61556129
+ms.sourcegitcommit: 9a4296c56beca63430fcc8f92e453b2ab068cc62
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71800032"
+ms.lasthandoff: 10/20/2019
+ms.locfileid: "72675532"
 ---
 # <a name="quickstart-create-a-voice-first-virtual-assistant-with-the-speech-sdk-java"></a>Краткое руководство. Создание виртуального помощника по обработке голоса с помощью пакета SDK для распознавания речи, Java
 
-Кроме того, доступны краткие руководства по [преобразованию речи в текст](quickstart-java-jre.md), [текста в речь](quickstart-text-to-speech-java-jre.md) и [переводу речи](quickstart-translate-speech-java-jre.md).
+Кроме того, доступны краткие руководства по [преобразованию речи в текст](quickstart-java-jre.md), [преобразованию текста в речь](quickstart-text-to-speech-java-jre.md) и [переводу речи](quickstart-translate-speech-java-jre.md).
 
-Из этой статьи вы узнаете, как создать консольное приложение Java с помощью [пакета SDK для службы "Речь" в Cognitive Services](speech-sdk.md). Приложение подключится к ранее созданному боту, настроенному на использование канала "Речь Direct Line", отправит голосовой запрос и вернет действие голосового ответа (если настроено). Приложение создается с помощью пакета SDK Maven службы "Речь" и Eclipse Java IDE для Windows, Ubuntu Linux или macOS. Оно работает в 64-разрядной среде выполнения Java 8 (JRE).
+Из этой статьи вы узнаете, как создать консольное приложение Java с помощью [пакета SDK для службы "Речь" в Azure Cognitive Services](speech-sdk.md). Приложение подключается к ранее созданному боту, настроенному на использование канала "Речь Direct Line", отправляет голосовой запрос и вернет действие голосового ответа (если настроено). Приложение создается с помощью пакета SDK Maven службы "Речь" и Eclipse Java IDE для Windows, Ubuntu Linux или macOS. Оно работает в 64-разрядной среде выполнения Java 8 (JRE).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим кратким руководством вам понадобится:
 
-* Операционная система: Windows (64-разрядная версия), Ubuntu Linux 16.04/18.04 (64-разрядная версия), а также macOS 10.13 или более поздней версии
-* [Eclipse Java IDE](https://www.eclipse.org/downloads/)
-* [Java 8](https://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) или [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
+* Операционная система: Windows (64-разрядная версия), Ubuntu Linux 16.04 или 18.04 (64-разрядная версия), а также macOS 10.13 или более поздней версии.
+* [Eclipse Java IDE](https://www.eclipse.org/downloads/).
+* [Java 8](https://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) или [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/index.html).
 * Ключ подписки Azure для служб "Речь". [Получите бесплатно](get-started.md) или создайте его на [портале Azure](https://portal.azure.com).
 * Предварительно настроенный бот, созданный с помощью Bot Framework версии 4.2 или более поздней. Для получения речевого ввода бот необходимо подписать на новый канал "Речь Direct Line".
 
     > [!NOTE]
-    > Служба "Речь Direct Line" (предварительная версия) сейчас доступна в ряде регионов служб распознавания речи. Ознакомьтесь со [списком поддерживаемых регионов для виртуальных помощников по обработке голоса](regions.md#Voice-first virtual assistants) и убедитесь, что ваши ресурсы развернуты в одном из этих регионов.
+    > Служба "Речь Direct Line" (предварительная версия) сейчас доступна в ряде регионов службы "Речь". Ознакомьтесь со [списком поддерживаемых регионов для виртуальных помощников по обработке голоса](regions.md#voice-first-virtual-assistants) и убедитесь, что ваши ресурсы развернуты в одном из этих регионов.
 
 Если вы используете Ubuntu 16.04 или 18.04, убедитесь, что перед запуском Eclipse у вас установлены следующие зависимости.
 
@@ -43,18 +43,18 @@ sudo apt-get update
 sudo apt-get install build-essential libssl1.0.0 libasound2 wget
 ```
 
-Если вы используете Windows (64-разрядная версия), убедитесь, что у вас установлен распространяемый компонент Microsoft Visual C++ для вашей платформы.
+Если вы используете Windows (64-разрядная версия), убедитесь, что у вас установлен Распространяемый компонент Microsoft Visual C++ для вашей платформы.
 * [Скачать распространяемый компонент Microsoft Visual C++ для Visual Studio 2017](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads)
 
 ## <a name="optional-get-started-fast"></a>Необязательно: Быстрое начало работы
 
-В этом кратком пошаговом руководстве описано, как создать простое клиентское приложение для подключения к боту с поддержкой речи. Если вы хотите сразу приступить к работе, полноценный, готовый к компиляции исходный код, используемый в этом кратком руководстве, доступен в [Примерах пакета SDK для распознавания речи](https://aka.ms/csspeech/samples) в папке `quickstart`.
+В этом кратком пошаговом руководстве описано, как создать простое клиентское приложение для подключения к боту с поддержкой речи. Если вы хотите сразу приступить к работе, полноценный, готовый к компиляции исходный код, используемый в этом кратком руководстве, доступен в [примерах пакета SDK для службы "Речь"](https://aka.ms/csspeech/samples) в папке `quickstart`.
 
 ## <a name="create-and-configure-project"></a>Создание и настройка проекта
 
 [!INCLUDE [](../../../includes/cognitive-services-speech-service-quickstart-java-create-proj.md)]
 
-Кроме того, для включения ведения журнала обновите файл **pom.xml**, чтобы добавить следующие зависимости.
+Кроме того, для включения ведения журнала обновите файл *pom.xml*, чтобы добавить следующие зависимости.
 
    ```xml
     <dependency>
@@ -68,11 +68,11 @@ sudo apt-get install build-essential libssl1.0.0 libasound2 wget
 
 1. Выберите **Файл** > **Создать** > **Класс**, чтобы добавить пустой класс в проект Java.
 
-1. В окне **New Java Class** (Новый класс Java) введите **speechsdk.quickstart** в поле **Пакет** и **Main** в поле **Имя**.
+1. В окне **New Java Class** (Новый класс Java) введите *speechsdk.quickstart* в поле **Пакет** и *Main* в поле **Имя**.
 
    ![Снимок экрана окна "Новый класс Java"](media/sdk/qs-java-jre-06-create-main-java.png)
 
-1. Откройте только что созданный класс **Main** и замените содержимое файла `Main.java` следующим начальным кодом.
+1. Откройте только что созданный класс `Main` и замените содержимое файла `Main.java` следующим начальным кодом.
 
     ```java
     package speechsdk.quickstart;
@@ -139,58 +139,58 @@ sudo apt-get install build-essential libssl1.0.0 libasound2 wget
     }
     ```
 
-1. В методе **main** сначала настройте `DialogServiceConfig` и используйте его для создания экземпляра `DialogServiceConnector`. Он будет подключаться к каналу "Речь Direct Line" для взаимодействия с ботом. Экземпляр `AudioConfig` также используется для указания источника звуковых входных данных. В этом примере микрофон по умолчанию используется с `AudioConfig.fromDefaultMicrophoneInput()`.
+1. В методе `main` сначала настройте `DialogServiceConfig` и используйте его для создания экземпляра `DialogServiceConnector`. Этот экземпляр подключается к каналу "Речь Direct Line" для взаимодействия с ботом. Экземпляр `AudioConfig` также используется для указания источника звуковых входных данных. В этом примере микрофон по умолчанию используется с `AudioConfig.fromDefaultMicrophoneInput()`.
 
-    * Замените строку `YourSubscriptionKey` своим ключом подписки, который вы можете получить [здесь](get-started.md).
+    * Замените строку `YourSubscriptionKey` своим ключом подписки, который вы можете получить на [этом веб-сайте](get-started.md).
     * Замените строку `YourServiceRegion` на [регион](regions.md), связанный с вашей подпиской.
     * Замените строку `YourChannelSecret` секретом канала "Речь Direct Line".
 
     > [!NOTE]
-    > Служба "Речь Direct Line" (предварительная версия) сейчас доступна в ряде регионов служб распознавания речи. Ознакомьтесь со [списком поддерживаемых регионов для виртуальных помощников по обработке голоса](regions.md#voice-first-virtual-assistants) и убедитесь, что ваши ресурсы развернуты в одном из этих регионов.
+    > Служба "Речь Direct Line" (предварительная версия) сейчас доступна в ряде регионов службы "Речь". Ознакомьтесь со [списком поддерживаемых регионов для виртуальных помощников по обработке голоса](regions.md#voice-first-virtual-assistants) и убедитесь, что ваши ресурсы развернуты в одном из этих регионов.
 
     ```java
     final String channelSecret = "YourChannelSecret"; // Your channel secret
     final String subscriptionKey = "YourSubscriptionKey"; // Your subscription key
-    final String region = "YourServiceRegion"; // Your speech subscription service region. Note: only a subset of regions are currently supported
+    final String region = "YourServiceRegion"; // Your speech subscription service region. Note: Only a subset of regions are currently supported.
     final DialogServiceConfig botConfig = DialogServiceConfig.fromBotSecret(channelSecret, subscriptionKey, region);
 
-    // Configure audio input from microphone.
+    // Configure audio input from a microphone.
     final AudioConfig audioConfig = AudioConfig.fromDefaultMicrophoneInput();
 
-    // Create a DialogServiceConnector instance
+    // Create a DialogServiceConnector instance.
     final DialogServiceConnector connector = new DialogServiceConnector(botConfig, audioConfig);
     ```
 
-1. `DialogServiceConnector` использует несколько событий, чтобы сообщать о работе бота, результатах распознавания речи и других данных. Далее добавьте эти прослушиватели событий.
+1. Соединитель `DialogServiceConnector` использует несколько событий, чтобы сообщать о работе бота, результатах распознавания речи и других данных. Далее добавьте эти прослушиватели событий.
 
     ```java
-    // Recognizing will provide the intermediate recognized text while an audio stream is being processed
+    // Recognizing will provide the intermediate recognized text while an audio stream is being processed.
     connector.recognizing.addEventListener((o, speechRecognitionResultEventArgs) -> {
         log.info("Recognizing speech event text: {}", speechRecognitionResultEventArgs.getResult().getText());
     });
 
-    // Recognized will provide the final recognized text once audio capture is completed
+    // Recognized will provide the final recognized text once audio capture is completed.
     connector.recognized.addEventListener((o, speechRecognitionResultEventArgs) -> {
         log.info("Recognized speech event reason text: {}", speechRecognitionResultEventArgs.getResult().getText());
     });
 
-    // SessionStarted will notify when audio begins flowing to the service for a turn
+    // SessionStarted will notify when audio begins flowing to the service for a turn.
     connector.sessionStarted.addEventListener((o, sessionEventArgs) -> {
         log.info("Session Started event id: {} ", sessionEventArgs.getSessionId());
     });
 
-    // SessionStopped will notify when a turn is complete and it's safe to begin listening again
+    // SessionStopped will notify when a turn is complete and it's safe to begin listening again.
     connector.sessionStopped.addEventListener((o, sessionEventArgs) -> {
         log.info("Session stopped event id: {}", sessionEventArgs.getSessionId());
     });
 
-    // Canceled will be signaled when a turn is aborted or experiences an error condition
+    // Canceled will be signaled when a turn is aborted or experiences an error condition.
     connector.canceled.addEventListener((o, canceledEventArgs) -> {
         log.info("Canceled event details: {}", canceledEventArgs.getErrorDetails());
         connector.disconnectAsync();
     });
 
-    // ActivityReceived is the main way your bot will communicate with the client and uses bot framework activities.
+    // ActivityReceived is the main way your bot will communicate with the client and uses Bot Framework activities.
     connector.activityReceived.addEventListener((o, activityEventArgs) -> {
         final String act = activityEventArgs.getActivity().serialize();
             log.info("Received activity {} audio", activityEventArgs.hasAudio() ? "with" : "without");
@@ -200,7 +200,7 @@ sudo apt-get install build-essential libssl1.0.0 libasound2 wget
         });
     ```
 
-1. Подключите `DialogServiceConnector` к каналу "Речь Direct Line", вызвав метод `connectAsync()`. Чтобы протестировать свой бот, вы можете вызвать метод `listenOnceAsync` для отправки звуковых входных данных со своего микрофона. Вы можете также использовать метод `sendActivityAsync` для отправки пользовательского действия в виде сериализованной строки. Эти пользовательские действия могут предоставить дополнительные данные, которые ваш бот будет использовать в разговоре.
+1. Подключите `DialogServiceConnector` к каналу "Речь Direct Line", вызвав метод `connectAsync()`. Чтобы протестировать свой бот, вы можете вызвать метод `listenOnceAsync` для отправки звуковых входных данных со своего микрофона. Вы можете также использовать метод `sendActivityAsync` для отправки пользовательского действия в виде сериализованной строки. Эти пользовательские действия могут предоставить дополнительные данные, которые ваш бот использует в разговоре.
 
     ```java
     connector.connectAsync();
@@ -213,11 +213,11 @@ sudo apt-get install build-essential libssl1.0.0 libasound2 wget
 
 1. Сохраните изменения в файле `Main`.
 
-1. Для поддержки воспроизведения ответа вы добавите дополнительный класс, который преобразует объект PullAudioOutputStream, возвращенный из API getAudio(), в InputStream для Java, чтобы упростить обработку. ActivityAudioStream — это специализированный класс, который будет обрабатывать аудиоотклик из канала "Речь Direct Line". Он предоставляет методы доступа для получения сведений о звуковом формате для обработки воспроизведения: Для этого выберите**File** (Файл) > **New** (Создать) > **Class** (Класс).
+1. Чтобы поддержать воспроизведение ответа, добавьте дополнительный класс, который преобразовывает объект PullAudioOutputStream, возвращенный из API getAudio(), в InputStream для Java, чтобы упростить обработку. `ActivityAudioStream` — это специализированный класс, который обрабатывает аудиоотклик из канала "Речь Direct Line". Он предоставляет методы доступа для получения сведений о звуковом формате для обработки воспроизведения. Для этого выберите**File** (Файл) > **New** (Создать) > **Class** (Класс).
 
-1. В окне **New Java Class** (Новый класс Java) введите **speechsdk.quickstart** в поле **Package** (Пакет) и **ActivityAudioStream** — в поле **Name** (Имя).
+1. В окне **New Java Class** (Новый класс Java) введите *speechsdk.quickstart* в поле **Пакет** и *ActivityAudioStream* — в поле **Имя**.
 
-1. Откройте только что созданный класс **ActivityAudioStream** и замените его приведенным ниже кодом.
+1. Откройте только что созданный класс `ActivityAudioStream` и замените его содержимое следующим кодом.
 
     ```java
     package com.speechsdk.quickstart;
@@ -230,11 +230,11 @@ sudo apt-get install build-essential libssl1.0.0 libasound2 wget
 
     public final class ActivityAudioStream extends InputStream {
         /**
-         * The number of samples played per second. (16 kHz)
+         * The number of samples played per second (16 kHz).
          */
         public static final long SAMPLE_RATE = 16000;
         /**
-         * The number of bits in each sample of a sound that has this format. (16 bits)
+         * The number of bits in each sample of a sound that has this format (16 bits).
          */
         public static final int BITS_PER_SECOND = 16;
         /**
@@ -294,7 +294,7 @@ sudo apt-get install build-essential libssl1.0.0 libasound2 wget
         }
 
         /**
-         * Reads up to a specified maximum number of bytes of data from the activity audio stream
+         * Reads up to a specified maximum number of bytes of data from the activity audio stream,
          * putting them into the given byte array.
          *
          * @param b the buffer into which the data is read
@@ -348,7 +348,7 @@ sudo apt-get install build-essential libssl1.0.0 libasound2 wget
         }
 
         /**
-         * Fetch the audio format for the ActivityAudioStream. The ActivityAudioFormat defines the sample rate, bits per sample and the # channels
+         * Fetch the audio format for the ActivityAudioStream. The ActivityAudioFormat defines the sample rate, bits per sample, and the # channels.
          *
          * @return instance of the ActivityAudioFormat associated with the stream
          */
@@ -361,7 +361,7 @@ sudo apt-get install build-essential libssl1.0.0 libasound2 wget
          * audio input stream without blocking.
          *
          * @return the number of bytes that can be read from this audio input stream without blocking.
-         * As this implementation does not buffer this will be defaulted to 0
+         * As this implementation does not buffer, this will be defaulted to 0
          */
         @Override
         public int available() {
@@ -444,7 +444,7 @@ sudo apt-get install build-essential libssl1.0.0 libasound2 wget
         }
 
         /**
-         * Enum defining the types of audio encoding supported by this stream
+         * Enum defining the types of audio encoding supported by this stream.
          */
         public enum AudioEncoding {
             PCM_SIGNED("PCM_SIGNED");
@@ -464,7 +464,8 @@ sudo apt-get install build-essential libssl1.0.0 libasound2 wget
 ## <a name="build-and-run-the-app"></a>Создание и запуск приложения
 
 Нажмите клавишу F11 или выберите **Запустить** > **Отладка**.
-На консоли отобразится сообщение Say something. В этот момент вы можете произнести фразу или предложение на английском языке, которое бот сможет распознать. Ваша речь будет передана боту через канал "Речь Direct Line", где она будет распознана и обработана ботом, а ответ будет возвращен в качестве действия. Если ваш бот в качестве ответа возвращает речь, аудио будет воспроизводиться с помощью класса `AudioPlayer`.
+В консоли появится сообщение Say something.
+В этот момент произнесите фразу или предложение на английском языке, которое бот может распознать. Ваша речь передается боту через канал "Речь Direct Line", где она распознается и обрабатывается ботом. Ответ возвратится в качестве действия. Если ваш бот в качестве ответа возвращает речь, аудио воспроизводится с помощью класса `AudioPlayer`.
 
 ![Снимок экрана выходных данных консоли после успешного распознавания](media/sdk/qs-java-jre-08-console-output.png)
 

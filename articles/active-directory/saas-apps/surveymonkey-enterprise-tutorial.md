@@ -13,15 +13,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 09/05/2019
+ms.date: 10/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ce7f40c300a86acd101d1b38cfef4b2af91c4085
-ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
+ms.openlocfilehash: 4238033f94fe8bfdc677c9eb623a2eab3cdf371c
+ms.sourcegitcommit: 6eecb9a71f8d69851bc962e2751971fccf29557f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70772675"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72532921"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-surveymonkey-enterprise"></a>Руководство по интеграции единого входа Azure Active Directory с SurveyMonkey Enterprise
 
@@ -45,6 +45,9 @@ ms.locfileid: "70772675"
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
 * SurveyMonkey Enterprise поддерживает единый вход, инициированный **IDP**
+
+> [!NOTE]
+> Идентификатор этого приложения — фиксированное строковое значение, поэтому в одном клиенте можно настроить только один экземпляр.
 
 ## <a name="adding-surveymonkey-enterprise-from-the-gallery"></a>Добавление SurveyMonkey Enterprise из коллекции
 
@@ -81,6 +84,18 @@ ms.locfileid: "70772675"
    ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
 1. В разделе **Базовая конфигурация SAML** приложение предварительно настроено и ему заданы требуемые URL-адреса. Пользователь должен сохранить конфигурацию, нажав кнопку **Сохранить**.
+
+1. Приложение SurveyMonkey Enterprise ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию.
+
+    ![image](common/edit-attribute.png)
+
+6. В дополнение к описанному выше приложение SurveyMonkey Enterprise ожидает несколько дополнительных атрибутов в ответе SAML, как показано ниже. Эти атрибуты также заранее заполнены, но вы можете изменить их в соответствии со своими требованиями.
+
+    | ИМЯ | Исходный атрибут|
+    | ---------------| --------------- |
+    | Email | user.mail |
+    | FirstName | user.givenname |
+    | LastName | user.surname |
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите элемент **XML метаданных федерации** и выберите **Скачать**, чтобы скачать сертификат и сохранить его на компьютере.
 
@@ -126,7 +141,7 @@ ms.locfileid: "70772675"
 
 ### <a name="create-surveymonkey-enterprise-test-user"></a>Создание тестового пользователя SurveyMonkey Enterprise
 
-В этом разделе описано, как создать пользователя B.Simon в приложении SurveyMonkey Enterprise. Обратитесь в  [группу поддержки SurveyMonkey Enterprise](mailto:support@selerix.com), чтобы добавить пользователей на платформу SurveyMonkey Enterprise. Перед использованием единого входа необходимо создать и активировать пользователей.
+Для приложения SurveyMonkey Enterprise не нужно создавать тестового пользователя. Учетные записи пользователей будут подготовлены, если пользователь решит создать учетную запись на основе утверждения SAML. Менеджер по работе с клиентами SurveyMonkey Enterprise предоставит шаги для завершения этого процесса после того, как метаданные Azure будут добавлены в конфигурацию SurveyMonkey Enterprise и будут готовы к проверке.
 
 ## <a name="test-sso"></a>Проверка единого входа 
 

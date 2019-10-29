@@ -10,12 +10,12 @@ ms.service: application-insights
 ms.custom: mvc, seo-javascript-september2019, seo-javascript-october2019
 ms.topic: quickstart
 manager: carmonm
-ms.openlocfilehash: 79bd0ce90c76f95ce12662e0d496b481382e805a
-ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
+ms.openlocfilehash: 84be9c2b1d8e28fb847e52bda36f9857bd28da28
+ms.sourcegitcommit: f29fec8ec945921cc3a89a6e7086127cc1bc1759
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72177685"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72528782"
 ---
 # <a name="quickstart-start-monitoring-your-nodejs-web-application-with-azure-application-insights"></a>Краткое руководство. Начало мониторинга веб-приложения Node.js с помощью Application Insights в Azure
 
@@ -43,7 +43,7 @@ ms.locfileid: "72177685"
 
 1. Последовательно выберите **Создать ресурс** > **Средства разработчика** > **Application Insights**.
 
-   ![Добавления ресурса Application Insights](./media/nodejs-quick-start/1createresourseappinsights.png)
+   ![Добавление ресурса Application Insights](./media/nodejs-quick-start/azure-app-insights-create-resource.png)
 
    > [!NOTE]
    >Если вы создаете ресурс Application Insights впервые, ознакомьтесь с дополнительными сведениями в статье [Create an Application Insights resource](https://docs.microsoft.com/azure/azure-monitor/app/create-new-resource) (Создание ресурса Application Insights).
@@ -62,7 +62,7 @@ ms.locfileid: "72177685"
 
 1. Выберите **Обзор** и скопируйте **ключ инструментирования** приложения.
 
-   ![Форма создания ресурса App Insights](./media/nodejs-quick-start/3key.png)
+   ![Просмотр ключа инструментирования Application Insights](./media/nodejs-quick-start/azure-app-insights-instrumentation-key.png)
 
 2. Добавьте в приложение пакет SDK Application Insights для Node.js. Из корневой папки приложения выполните следующий код:
 
@@ -86,19 +86,19 @@ ms.locfileid: "72177685"
 
 1. Теперь можно повторно открыть страницу **Обзор** Application Insights на портале Azure, где вы извлекли ключ иснтрументирования, для просмотра сведений о выполняющемся в данный момент приложении.
 
-   ![Меню "Обзор Application Insights"](./media/nodejs-quick-start/4overview.png)
+   ![Меню "Обзор Application Insights"](./media/nodejs-quick-start/azure-app-insights-overview-menu.png)
 
 2. Щелкните **схему приложений**, чтобы получить визуальный макет отношений зависимости между компонентами приложения. Каждый компонент показывает ключевой показатель эффективности, такие как производительность, сбои и оповещения.
 
-   ![Схема приложений](./media/nodejs-quick-start/5appmap.png)
+   ![Схема приложений Application Insights](./media/nodejs-quick-start/azure-app-insights-application-map.png)
 
-3. Щелкните значок **аналитики приложений**, ![значок схемы приложений](./media/nodejs-quick-start/006.png), **Просмотр в службе Analytics**.  Откроется окно **Application Insights Analytics** (Application Insights — аналитика), которое предоставляет полнофункциональный язык запросов для анализа всех данных, собранных Application Insights. В этом случае создается запрос, который преобразовывает число запросов для просмотра в виде диаграммы. Вы можете записывать собственные запросы для анализа других данных.
+3. Щелкните значок **аналитики приложений**, ![значок схемы приложений](./media/nodejs-quick-start/azure-app-insights-analytics-icon.png), **Просмотр в службе Analytics**.  Откроется окно **Application Insights Analytics** (Application Insights — аналитика), которое предоставляет полнофункциональный язык запросов для анализа всех данных, собранных Application Insights. В этом случае создается запрос, который преобразовывает число запросов для просмотра в виде диаграммы. Вы можете записывать собственные запросы для анализа других данных.
 
-   ![Граф аналитики запросов пользователей за период времени](./media/nodejs-quick-start/6analytics.png)
+   ![Аналитические графики Application Insights](./media/nodejs-quick-start/azure-app-insights-analytics-queries.png)
 
 4. Вернитесь к странице **Обзор** и изучите графики с КПЭ.  Эта панель мониторинга предоставляет статистические данные о работоспособности приложения, включая число входящих запросов, продолжительности этих запросов и возникающие ошибки.
 
-   ![Графы временной шкалы обзора работоспособности](./media/nodejs-quick-start/7kpidashboards.png)
+   ![Графы временной шкалы для обзора работоспособности Application Insights](./media/nodejs-quick-start/azure-app-insights-health-overview.png)
 
    Чтобы включить диаграмму **Время загрузки страницы** для заполнения данных **телеметрии на стороне клиента**, добавьте этот скрипт на каждую страницу, которую требуется отслеживать:
 
@@ -124,7 +124,7 @@ ms.locfileid: "72177685"
 
 5. В области слева выберите **Метрики**. Используйте обозреватель метрик для анализа работоспособности и использования ресурса. Щелкните **Добавить новую диаграмму**, чтобы создать дополнительные пользовательские представления, или **Изменение**, чтобы изменить имеющиеся типы диаграмм, высоту, цветовую палитру, группирования и метрики. Например, можно сделать диаграмму, на которой будет показано среднее время загрузки страницы браузера. Для этого в раскрывающемся списке метрик выберите "Время загрузки страницы браузера" и "Среднее" в столбце агрегирования. Дополнительные сведения об обозревателе метрик Azure см. в статье [Getting started with Azure Metrics Explorer](../../azure-monitor/platform/metrics-getting-started.md) (Начало работы с обозревателем метрик Azure).
 
-   ![Граф метрик сервера](./media/nodejs-quick-start/8metrics.png)
+   ![График метрик Application Insights Server](./media/nodejs-quick-start/azure-app-insights-server-metrics.png)
 
 Дополнительные сведения о мониторинге Node.js см. в статье [Мониторинг служб и приложений Node.js с помощью Application Insights](../../azure-monitor/app/nodejs.md).
 

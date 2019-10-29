@@ -17,10 +17,10 @@ ms.date: 08/29/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 28f3fca731c9ceb28f66ecd1c178e5c025f80ede
-ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
+ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70163546"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-envoy"></a>Руководство по интеграции единого входа Azure Active Directory с Envoy
@@ -152,7 +152,7 @@ ms.locfileid: "70163546"
 
 5. Нажмите **Компания**.
 
-    ![Организация](./media/envoy-tutorial/ic776783.png "Организация")
+    ![Company](./media/envoy-tutorial/ic776783.png "Компания")
 
 6. Нажмите кнопку **SAML**.
 
@@ -160,7 +160,7 @@ ms.locfileid: "70163546"
 
 7. В разделе конфигурации **Проверка подлинности SAML** выполните следующие действия.
 
-    ![Аутентификация SAML](./media/envoy-tutorial/ic776785.png "Аутентификация SAML")
+    ![Проверка подлинности SAML](./media/envoy-tutorial/ic776785.png "Проверка подлинности SAML").
     
     >[!NOTE]
     >Значение для идентификатора расположения штаб-квартиры автоматически создается приложением.

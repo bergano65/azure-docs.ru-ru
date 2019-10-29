@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: anomaly-detector
 ms.topic: quickstart
-ms.date: 08/01/2019
+ms.date: 10/15/2019
 ms.author: aahi
-ms.openlocfilehash: 28dbcde723e25577545cfd44fed9ef00249d8f30
-ms.sourcegitcommit: 8bae7afb0011a98e82cbd76c50bc9f08be9ebe06
+ms.openlocfilehash: 926d7043ea6f56c1ba6d13fd4586fc6f6d59cfa8
+ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71694905"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72554700"
 ---
 # <a name="quickstart-anomaly-detector-client-library-for-python"></a>Краткое руководство. Клиентская библиотека Детектора аномалий для Python
 
@@ -26,7 +26,7 @@ ms.locfileid: "71694905"
 * Обнаружение аномалий в наборе данных временного ряда с использованием пакетного запроса.
 * Обнаружение состояния аномалии последней точки данных во временном ряду.
 
-[Справочная документация по библиотеке](https://docs.microsoft.com/python/api/azure-cognitiveservices-anomalydetector/azure.cognitiveservices.anomalydetector?view=azure-python) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cognitiveservices/azure-cognitiveservices-anomalydetector) | [Пакет (PyPi)](https://pypi.org/project/azure-cognitiveservices-anomalydetector/) | [Примеры](https://github.com/Azure-Samples/anomalydetector)
+[Справочная документация по библиотеке](https://docs.microsoft.com/python/api/azure-cognitiveservices-anomalydetector/azure.cognitiveservices.anomalydetector?view=azure-python) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cognitiveservices/azure-cognitiveservices-anomalydetector) | [Пакет (PyPi)](https://pypi.org/project/azure-cognitiveservices-anomalydetector/) | [Примеры кода](https://github.com/Azure-Samples/anomalydetector)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -40,11 +40,9 @@ ms.locfileid: "71694905"
 
 [!INCLUDE [anomaly-detector-resource-creation](../../../../includes/cognitive-services-anomaly-detector-resource-cli.md)]
 
-После получения ключа из своего ресурса или пробной подписки [задайте переменную среды](../../cognitive-services-apis-create-account.md#configure-an-environment-variable-for-authentication) для ключа с именем `ANOMALY_DETECTOR_KEY`.
-
 ### <a name="create-a-new-python-application"></a>Создание приложения Python
 
- Создайте приложение Python в предпочитаемом редакторе или среде интегрированной разработки. Затем импортируйте приведенные ниже библиотеки.
+ Создайте файл Python и импортируйте следующие библиотеки.
 
 [!code-python[import declarations](~/samples-anomaly-detector/quickstarts/sdk/python-sdk-sample.py?name=imports)]
 
@@ -114,7 +112,7 @@ pip install --upgrade azure-cognitiveservices-anomalydetector
 
 ## <a name="run-the-application"></a>Выполнение приложения
 
-Запустите приложение в среде интегрированной разработки или в командной строке вместе с командой `python` и именем вашего файла.
+Запустите приложение, выполнив команду `python` и используя имя файла.
  
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

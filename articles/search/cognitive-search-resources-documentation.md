@@ -1,54 +1,54 @@
 ---
-title: Ресурсы документации по когнитивному поиску (служба "Поиск Azure")
-description: Аннотированный перечень статей, руководств, примеров и записей блога, связанных с рабочими нагрузками когнитивного поиска в службе "Поиск Azure".
-services: search
+title: Ссылки на документацию по обогащению данных с помощью ИИ
+titleSuffix: Azure Cognitive Search
+description: Аннотированный перечень статей, учебников, примеров и записей блога, связанных с рабочими нагрузками обогащения данных с помощью ИИ в службе "Когнитивный поиск Azure".
 manager: nitinme
 author: HeidiSteen
-ms.service: search
-ms.topic: conceptual
-ms.date: 05/02/2019
 ms.author: heidist
-ms.openlocfilehash: 7267f40a981b984ab945d956ff3552157267cd43
-ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
-ms.translationtype: MT
+ms.service: cognitive-search
+ms.topic: quickstart
+ms.date: 11/04/2019
+ms.openlocfilehash: 5fb1050fed2ab7318ad5b4ecafec7a96a9324575
+ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71265468"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72792054"
 ---
-# <a name="documentation-resources-for-cognitive-search-workloads"></a>Ресурсы документации для рабочих нагрузок когнитивного поиска
+# <a name="documentation-resources-for-ai-enrichment-in-azure-cognitive-search"></a>Ресурсы документации для обогащения данных с помощью ИИ в Когнитивном поиске Azure
 
-Вошедший в общедоступный Поиск — это новый слой обогащения в службе индексирования поиска Azure, который находит скрытые сведения в нетекстовых источниках и неотличающемся тексте, преобразуя ее в полнотекстовый Поисковый контент в службе поиска Azure.
+Обогащение данных с помощью ИИ — это информационная функция индексирования в службе "Когнитивный поиск Azure", которая находит скрытые сведения в нетекстовых источниках и неразделенном тексте, преобразуя их в текстовое содержимое с полными возможностями поиска в службе "Когнитивный поиск Azure".
 
-Далее представлена полная документация со статьями по когнитивному поиску.
+Далее представлена полная документация со статьями по обогащению данных с помощью ИИ.
 
-## <a name="getting-started"></a>Приступая к работе
-+ [What is cognitive search?](cognitive-search-concept-intro.md) (Что такое когнитивный поиск?)
-+ [Краткое руководство Создание конвейера когнитивного поиска с использованием навыков и примера данных](cognitive-search-quickstart-blob.md)
-+ [Руководство. Вызов API когнитивного поиска (предварительная версия)](cognitive-search-tutorial-blob.md)
-+ [Пример. Создание пользовательского навыка для Когнитивного поиска](cognitive-search-create-custom-skill-example.md)
+## <a name="getting-started"></a>Начало работы
++ [Общие сведения об обогащении ИИ в Когнитивном поиске Azure](cognitive-search-concept-intro.md)
++ [Краткое руководство по обогащению данных с помощью ИИ на портале](cognitive-search-quickstart-blob.md)
++ [Руководство. Обогащенное индексирование с помощью ИИ](cognitive-search-tutorial-blob.md)
++ [Пример. Создание пользовательского навыка для обогащения ИИ](cognitive-search-create-custom-skill-example.md)
 
 ## <a name="how-to-guidance"></a>Практические руководства
 + [Определение набора навыков](cognitive-search-defining-skillset.md)
 + [How to reference annotations in a skillset](cognitive-search-concept-annotations-syntax.md) (Создание ссылок на аннотации в наборе навыков когнитивного поиска)
 + [Сопоставление обогащенных полей с индексом, поддерживающим поиск](cognitive-search-output-field-mapping.md)
 + [How to process and extract information from images in cognitive search scenarios](cognitive-search-concept-image-scenarios.md) (Обработка и извлечение информации из изображений в сценариях когнитивного поиска)
-+ [How to rebuild an Azure Search index](search-howto-reindex.md) (Как перестроить индекс Поиска Azure)
++ [Как перестроить индекс службы "Когнитивный поиск Azure"](search-howto-reindex.md)
 + [How to add a custom skill to a cognitive search pipeline](cognitive-search-custom-skill-interface.md) (Добавление пользовательского навыка в конвейер когнитивного поиска)
 + [Советы по устранению неполадок](cognitive-search-concept-troubleshooting.md)
 
-## <a name="reference"></a>Ссылка
+## <a name="reference"></a>Справочные материалы
 
-+ [Предопределенные навыки](cognitive-search-predefined-skills.md)
-  + [Microsoft. Skills. Text. Кэйфрасикстрактионскилл](cognitive-search-skill-keyphrases.md)
++ [Встроенные навыки](cognitive-search-predefined-skills.md)
+  + [Microsoft.Skills.Text.KeyPhraseExtractionSkill](cognitive-search-skill-keyphrases.md)
   + [Microsoft.Skills.Text.LanguageDetectionSkill](cognitive-search-skill-language-detection.md)
   + [Microsoft.Skills.Text.EntityRecognitionSkill](cognitive-search-skill-entity-recognition.md)
   + [Microsoft.Skills.Text.MergeSkill](cognitive-search-skill-textmerger.md)
   + [Microsoft.Skills.Text.SplitSkill](cognitive-search-skill-textsplit.md)
   + [Microsoft.Skills.Text.SentimentSkill](cognitive-search-skill-sentiment.md)
-  + [Microsoft. Skills. Text. Транслатионскилл](cognitive-search-skill-text-translation.md)
+  + [Microsoft.Skills.Text.TranslationSkill](cognitive-search-skill-text-translation.md)
   + [Microsoft.Skills.Vision.ImageAnalysisSkill](cognitive-search-skill-image-analysis.md)
   + [Microsoft.Skills.Vision.OcrSkill](cognitive-search-skill-ocr.md)
-  + [Microsoft. Skills. util. Кондитионалскилл](cognitive-search-skill-conditional.md)
+  + [Microsoft.Skills.Util.ConditionalSkill](cognitive-search-skill-conditional.md)
   + [Microsoft.Skills.Util.ShaperSkill](cognitive-search-skill-shaper.md)
 
 + Пользовательские навыки
@@ -63,6 +63,6 @@ ms.locfileid: "71265468"
 
 ## <a name="see-also"></a>См. также
 
-+ [REST API службы "Поиск Azure"](https://docs.microsoft.com/rest/api/searchservice/)
-+ [Индексаторы в службе поиска Azure](search-indexer-overview.md)
-+ [Что такое поиск Azure?](search-what-is-azure-search.md)
++ [Azure Search Service REST](https://docs.microsoft.com/rest/api/searchservice/) (Руководство по REST Службы поиска Azure)
++ [Indexers in Azure Cognitive Search](search-indexer-overview.md) (Индексаторы в службе "Когнитивный поиск Azure")
++ [Что собой представляет Когнитивный поиск Azure?](search-what-is-azure-search.md)

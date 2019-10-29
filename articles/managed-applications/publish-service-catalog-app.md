@@ -1,5 +1,5 @@
 ---
-title: Создание и публикация управляемого приложения каталога услуг Azure | Документация Майкрософт
+title: Публикация управляемого приложения каталога услуг Azure
 description: Показано, как создать управляемое приложение Azure, предназначенное для членов вашей организации.
 services: managed-applications
 author: tfitzmac
@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.date: 10/04/2018
 ms.author: tomfitz
-ms.openlocfilehash: 1d28a9d330dd001e3fdc05e37f7bbcdd2db7ee6e
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 62d8de4f36ab110f7bd871c9de0e5d843516970c
+ms.sourcegitcommit: f29fec8ec945921cc3a89a6e7086127cc1bc1759
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "71224542"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72529013"
 ---
 # <a name="create-and-publish-a-managed-application-definition"></a>Создание и публикация определения управляемого приложения
 

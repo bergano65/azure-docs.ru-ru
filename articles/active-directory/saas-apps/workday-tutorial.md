@@ -17,10 +17,10 @@ ms.date: 08/20/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9fe63ba810724216b1b356896b621f1e5b021bbf
-ms.sourcegitcommit: a3a40ad60b8ecd8dbaf7f756091a419b1fe3208e
+ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "69891975"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-workday"></a>Руководство по интеграции единого входа Azure Active Directory с Workday
@@ -204,7 +204,7 @@ ms.locfileid: "69891975"
 
 6. В разделе **View x509 Public Key** (Просмотр открытого ключа x509) сделайте следующее.
 
-    ![Просмотр открытого ключа x509](./media/workday-tutorial/IC782930.png "Просмотр открытого ключа x509")
+    ![View x509 Public Key](./media/workday-tutorial/IC782930.png "View x509 Public Key")
 
     a. В текстовом поле **Name** (Имя) введите имя сертификата (например, *PPE\_SP*).
 
@@ -233,11 +233,11 @@ ms.locfileid: "69891975"
 
     c. Для параметра **Authentication Request Signature Method** (Метод подписи запроса аутентификации) выберите значение **SHA256**.
 
-    ![Метод подписи запроса аутентификации](./media/workday-tutorial/WorkdaySSOConfiguration.png "Метод подписи запроса аутентификации") 
+    ![Метод подписи запроса проверки подлинности](./media/workday-tutorial/WorkdaySSOConfiguration.png "Метод подписи запроса проверки подлинности") 
 
     d. Последовательно выберите **ОК**.
 
-    ![ОК](./media/workday-tutorial/IC782933.png "ОК")
+    ![ОК;](./media/workday-tutorial/IC782933.png "ОК")
 
     > [!NOTE]
     > Убедитесь, что единый вход установлен правильно. Если вы включите неправильные установки единого входа, то не сможете войти в приложение со своими учетными данными и вас заблокируют. В таком случае Workday предоставляет резервную копию url входа, с помощью которой пользователи могут войти, используя обычные имя пользователя и пароль, в таком формате:[Ваш URL Workday]/login.flex?redirect=n

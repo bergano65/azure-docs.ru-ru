@@ -17,10 +17,10 @@ ms.date: 07/19/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ad059e6047dd883c0a5aab0d714d999840050584
-ms.sourcegitcommit: ac29357a47cc05afdf0f84834de5277598f4d87c
+ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70213618"
 ---
 # <a name="tutorial-integrate-adaptive-insights-with-azure-active-directory"></a>Руководство по Интеграции Adaptive Insights с Azure Active Directory
@@ -108,7 +108,7 @@ ms.locfileid: "70213618"
 
 3. В разделе **Users and Roles** (Пользователи и роли) щелкните **SAML SSO Settings** (Параметры единого входа SAML).
 
-    ![Управление параметрами единого входа SAML](./media/adaptivesuite-tutorial/ic805645.png "Управление параметрами единого входа SAML")
+    ![Управление параметрами единого входа SAML](./media/adaptivesuite-tutorial/ic805645.png "Manage SAML SSO Settings")
 
 4. На странице **SAML SSO Settings** (Параметры единого входа SAML) выполните следующие действия.
 
@@ -182,11 +182,11 @@ ms.locfileid: "70213618"
 
 3. В разделе **Users and Roles** (Пользователи и роли) щелкните **Пользователи**.
 
-   ![Добавление пользователя](./media/adaptivesuite-tutorial/IC805648.png "Добавление пользователя")
+   ![Добавление пользователя](./media/adaptivesuite-tutorial/IC805648.png "Добавить пользователя")
 
 4. В разделе **New User** (Новый пользователь) выполните следующие действия.
 
-   ![Отправка](./media/adaptivesuite-tutorial/IC805649.png "Отправка")
+   ![Отправить](./media/adaptivesuite-tutorial/IC805649.png "Submit")
 
    a. Введите в текстовые поля **Name** (Имя), **Username** (Имя пользователя), **Email** (Адрес электронной почты) и **Password** (Пароль) соответствующие данные действующего пользователя Azure Active Directory, для которого выполняется подготовка.
 

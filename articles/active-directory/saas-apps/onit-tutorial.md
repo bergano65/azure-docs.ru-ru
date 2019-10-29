@@ -17,10 +17,10 @@ ms.date: 08/28/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e908cb76a57f027494230edc648b69da0730ac27
-ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
+ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70164242"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-onit"></a>Руководство по интеграции единого входа Azure Active Directory с Onit
@@ -173,7 +173,7 @@ ms.locfileid: "70164242"
 
 3. На диалоговой странице **Добавление пользователя** выполните следующие действия:
 
-    ![Добавление пользователя](./media/onit-tutorial/IC791181.png "Добавление пользователя")
+    ![Добавление пользователя](./media/onit-tutorial/IC791181.png "Добавить пользователя")
 
     a. Заполните текстовые поля **Name** (Имя) и **Email Address** (Адрес электронной почты) данными для действующей учетной записи Azure AD, которую вы хотите подготовить.
 

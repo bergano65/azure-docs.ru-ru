@@ -10,12 +10,12 @@ ms.subservice: anomaly-detector
 ms.topic: quickstart
 ms.date: 09/17/2019
 ms.author: aahi
-ms.openlocfilehash: 320c690eb873f760af89b7514893f14ecc209323
-ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
+ms.openlocfilehash: 1932ac571c94f9dc96240bdb63b44fe53c626f1f
+ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71106793"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72554735"
 ---
 # <a name="quickstart-anomaly-detector-client-library-for-nodejs"></a>Краткое руководство. Клиентская библиотека Детектора аномалий для Node.js
 
@@ -26,7 +26,7 @@ ms.locfileid: "71106793"
 * Обнаружение аномалий в наборе данных временного ряда с использованием пакетного запроса.
 * Обнаружение состояния аномалии последней точки данных во временном ряду.
 
-[Справочная документация](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-anomalydetector/?view=azure-node-latest) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/AnomalyDetector) | [Пакет (npm)](https://www.npmjs.com/package/@azure/cognitiveservices-anomalydetector) | [Примеры](https://github.com/Azure-Samples/anomalydetector)
+[Справочная документация](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-anomalydetector/?view=azure-node-latest) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/AnomalyDetector) | [Пакет (npm)](https://www.npmjs.com/package/@azure/cognitiveservices-anomalydetector) | [Примеры кода](https://github.com/Azure-Samples/anomalydetector)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -37,13 +37,8 @@ ms.locfileid: "71106793"
 
 ### <a name="create-an-anomaly-detector-azure-resource"></a>Создание ресурса Детектор аномалий Azure
 
-Ресурсами Azure, на которые вы подписаны, будет представлено семейство служб Azure Cognitive Services. Создайте ресурс для Детектора аномалий с помощью [портала Azure](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) или [интерфейса командной строки (CLI) Azure](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account-cli) на локальном компьютере. Также можно:
+[!INCLUDE [anomaly-detector-resource-creation](../../../../includes/cognitive-services-anomaly-detector-resource-cli.md)]
 
-* получить бесплатный [ключ пробной версии](https://azure.microsoft.com/try/cognitive-services/#decision) на 7 дней. (после регистрации он будет доступен на [веб-сайте Azure](https://azure.microsoft.com/try/cognitive-services/my-apis/));  
-* Просмотреть этот ресурс на [портале Azure](https://portal.azure.com/).
-
-После получения ключа из своего ресурса или пробной подписки [задайте переменную среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для ключа с именем `ANOMALY_DETECTOR_KEY`. Затем создайте его для конечной точки Azure с именем `ANOMALY_DETECTOR_ENDPOINT`.
- 
 ### <a name="create-a-new-nodejs-application"></a>создание приложения Node.js;
 
 В окне консоли (например, cmd, PowerShell или Bash) создайте новый каталог для приложения и перейдите в него. 
@@ -62,9 +57,9 @@ npm init
 
 [!code-javascript[Import statements](~/cognitive-services-quickstart-code/javascript/AnomalyDetector/anomaly_detector_quickstart.js?name=imports)]
 
-Создайте переменные конечной точки и ключа ресурса Azure. Если вы создали переменную среды после запуска приложения, для доступа к переменной следует закрыть и повторно открыть редактор, интегрированную среду разработки или оболочку, где эта переменная была запущена. Создайте другую переменную для примера файла данных, который будет скачан позже. Затем создайте объект ApiKeyCredentials, в котором будет содержаться ключ.
+Создайте переменные конечной точки и ключа ресурса Azure. Если вы создали переменную среды после запуска приложения, для доступа к переменной следует закрыть и повторно открыть редактор, интегрированную среду разработки или оболочку, где эта переменная была запущена. Создайте другую переменную для примера файла данных, который будет скачан позже, и пустой список для точек данных. Затем создайте объект `ApiKeyCredentials`, в котором будет содержаться ключ.
 
-[!code-javascript[Initial variables](~/cognitive-services-quickstart-code/javascript/AnomalyDetector/anomaly_detector_quickstart.js?name=vars)]
+[!code-javascript[Initial endpoint and key variables](~/cognitive-services-quickstart-code/javascript/AnomalyDetector/anomaly_detector_quickstart.js?name=vars)]
 
 ### <a name="install-the-client-library"></a>Установка клиентской библиотеки
 
@@ -94,9 +89,6 @@ npm install  @azure/cognitiveservices-anomalydetector ms-rest-azure csv-parse
 * [обнаружение состояния аномалии последней точки данных](#detect-the-anomaly-status-of-the-latest-data-point).
 
 ## <a name="authenticate-the-client"></a>Аутентификация клиента
-
-> [!NOTE]
-> В этом кратком руководстве предполагается, что вы уже [создали переменную среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для ключа Детектора аномалий с именем `ANOMALY_DETECTOR_KEY`.
 
 Создайте экземпляр объекта [AnomalyDetectorClient](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-anomalydetector/anomalydetectorclient?view=azure-node-latest) с конечной точкой и учетными данными.
 

@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.date: 07/29/2019
 ms.author: antchu
 ms.custom: mvc
-ms.openlocfilehash: abc7302ee59103a9cbab156b95a41b77eb95d474
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: e243fd2f5c4a90e45f424ce39a97913df2332b2b
+ms.sourcegitcommit: 1bd2207c69a0c45076848a094292735faa012d22
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68729161"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72677884"
 ---
 # <a name="tutorial-apply-machine-learning-models-in-azure-functions-with-python-and-tensorflow"></a>Руководство по Применение моделей машинного обучения в Функциях Azure с использованием Python и TensorFlow
 
@@ -179,7 +179,7 @@ copy ..\resources\predict.py classify
 Вспомогательная библиотека содержит некоторые зависимости, которые необходимо установить. Откройте в редакторе файл *start/requirements.txt* и добавьте в него следующие зависимости.
 
 ```txt
-tensorflow
+tensorflow==1.15
 Pillow
 requests
 ```

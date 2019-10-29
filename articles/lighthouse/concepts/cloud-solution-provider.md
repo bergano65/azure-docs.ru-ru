@@ -1,24 +1,27 @@
 ---
 title: Рекомендации по программе для поставщиков облачных решений
-description: При использовании делегированного управления ресурсами Azure важно учитывать безопасность и контроль доступа.
+description: Для партнеров CSP делегированное управление ресурсами Azure помогает улучшить безопасность и контроль за счет предоставления детализированных разрешений.
 author: JnHs
 ms.service: lighthouse
 ms.author: jenhayes
-ms.date: 08/22/2019
+ms.date: 10/17/2019
 ms.topic: overview
 manager: carmonm
-ms.openlocfilehash: 76df2942b176fd7d0e785213e44655ffd11da410
-ms.sourcegitcommit: e0a1a9e4a5c92d57deb168580e8aa1306bd94723
+ms.openlocfilehash: cdb9eaf0b1f1a6e7a136432586ad186308e4e3d3
+ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72286202"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72550293"
 ---
 # <a name="azure-lighthouse-and-the-cloud-solution-provider-program"></a>Azure Lighthouse и программа поставщиков облачных решений
 
 Если вы имеете статус [CSP (поставщика облачных решений)](https://docs.microsoft.com/partner-center/csp-overview), вам доступны подписки Azure, созданные для клиентов в программе CSP, с помощью функции [Администрирование от имени (AOBO)](https://channel9.msdn.com/Series/cspdev/Module-11-Admin-On-Behalf-Of-AOBO). Это позволяет непосредственно обслуживать и настраивать подписки клиентов, а также управлять ими.
 
 С помощью Azure Lighthouse вы можете использовать делегированное управление ресурсами в Azure вместе с AOBO. Это помогает улучшить безопасность и не допускать излишние попытки доступа с помощью более детализированных разрешений для пользователей. Кроме того, повышается эффективность и масштабируемость, так как пользователи могут работать с несколькими клиентскими подписками, используя одно имя входа в клиенте.
+
+> [!TIP]
+> Чтобы защитить ресурсы клиентов, обязательно ознакомьтесь с [рекомендациями по обеспечению безопасности](recommended-security-practices.md) и [требованиями к безопасности партнеров](https://docs.microsoft.com/partner-center/partner-security-requirements).
 
 ## <a name="administer-on-behalf-of-aobo"></a>Администрирование от имени (AOBO)
 

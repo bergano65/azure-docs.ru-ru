@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpfr
-ms.openlocfilehash: 91aae53ae81d2bc7cfda54cefa786e4b1a1aab67
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 9676d76f03b13ca93183e74790642e76b993b8b7
+ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72949668"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72987896"
 ---
 # <a name="use-device-groups-in-your-azure-iot-central-application-preview-features"></a>Использование групп устройств в приложении IoT Central Azure (Предварительная версия компонентов)
 
@@ -56,4 +56,4 @@ ms.locfileid: "72949668"
 Теперь, когда вы узнали, как использовать группы устройств в приложении IoT Central Azure, предлагаем следующий шаг:
 
 > [!div class="nextstepaction"]
-> [Создание правил телеметрии](howto-create-telemetry-rules-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json)
+> [Создание правил телеметрии](tutorial-create-telemetry-rules-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json)

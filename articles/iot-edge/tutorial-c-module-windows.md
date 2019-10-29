@@ -9,12 +9,12 @@ ms.date: 05/28/2019
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: b69000e251bb71bc08ea97b24a7422daf2cd89e4
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: fdd1aeea20160bb1a9f91de934bd9268a179648a
+ms.sourcegitcommit: f29fec8ec945921cc3a89a6e7086127cc1bc1759
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70813829"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72529227"
 ---
 # <a name="tutorial-develop-a-c-iot-edge-module-for-windows-devices"></a>Руководство по Разработка модулей IoT Edge на языке C для устройств с Windows
 
@@ -92,7 +92,7 @@ ms.locfileid: "70813829"
 
    ![Настройка целевого устройства, типа модуля и реестра контейнеров для проекта](./media/tutorial-c-module-windows/add-application-and-module.png)
 
-5. Нажмите кнопку **ОК**, чтобы применить изменения. 
+5. Нажмите кнопку **Добавить**, чтобы создать проект. 
 
 ### <a name="add-your-registry-credentials"></a>Добавление учетных данных реестра
 

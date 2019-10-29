@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 2/20/2019
 ms.author: erhopf
-ms.openlocfilehash: d6ee5f432321753b9a09749ccf45c9a5bda5300d
-ms.sourcegitcommit: 4f3f502447ca8ea9b932b8b7402ce557f21ebe5a
+ms.openlocfilehash: 89db2c9e1cac7337b0f3bcd9fdf733e8db410d02
+ms.sourcegitcommit: 9a4296c56beca63430fcc8f92e453b2ab068cc62
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71802477"
+ms.lasthandoff: 10/20/2019
+ms.locfileid: "72675523"
 ---
 1. Запустите Eclipse.
 
@@ -17,7 +17,7 @@ ms.locfileid: "71802477"
 
    ![Снимок экрана средства запуска Eclipse](../articles/cognitive-services/Speech-Service/media/sdk/qs-java-jre-01-create-new-eclipse-workspace.png)
 
-1. После этого отобразится главное окно интегрированной среды разработки Eclipse. Если отобразится экран приветствия, закройте его.
+1. После этого отобразится главное окно интегрированной среды разработки Eclipse. Если отобразится **экран приветствия**, закройте его.
 
 1. В строке меню Eclipse создайте новый проект, выбрав **Файл** > **Создать** > **Проект**.
 
@@ -25,7 +25,7 @@ ms.locfileid: "71802477"
 
    ![Снимок экрана диалогового окна нового проекта с выделенной строкой "Проект Java"](../articles/cognitive-services/Speech-Service/media/sdk/qs-java-jre-02-select-wizard.png)
 
-1. Запускается мастер создания проекта Java. В поле **Имя проекта** введите **quickstart** и в качестве среды выполнения выберите **JavaSE-1.8**. Выберите **Готово**.
+1. После этого запустится мастер **создания проектов Java**. В поле **Имя проекта** введите **quickstart** и в качестве среды выполнения выберите **JavaSE-1.8**. Выберите **Готово**.
 
    ![Снимок экрана с изображением мастера создания проекта Java](../articles/cognitive-services/Speech-Service/media/sdk/qs-java-jre-03-create-java-project.png)
 
@@ -35,18 +35,18 @@ ms.locfileid: "71802477"
 
    ![Снимок экрана обозревателя пакетов](../articles/cognitive-services/Speech-Service/media/sdk/qs-java-jre-04-convert-to-maven-project.png)
 
-1. Откроется окно **Create new POM** (Создать новый POM). В поле **Идентификатор группы** введите **com.microsoft.cognitiveservices.speech.samples**, а в поле **Идентификатор артефакта** — **quickstart**. Затем нажмите кнопку **Готово**.
+1. Откроется окно **Create new POM** (Создать новый POM). В поле **Идентификатор группы** введите *com.microsoft.cognitiveservices.speech.samples*, а в поле **Идентификатор артефакта** — *quickstart*. Затем нажмите кнопку **Готово**.
 
    ![Снимок экрана окна создания нового POM](../articles/cognitive-services/Speech-Service/media/sdk/qs-java-jre-05-configure-maven-pom.png)
 
-1. Откройте файл **pom.xml** и измените его.
+1. Откройте файл *pom.xml* и измените его.
 
    * В конце файла перед закрывающим тегом `</project>` создайте элемент `repositories` со ссылкой на репозиторий Maven для пакета SDK службы "Речь", как показано ниже.
 
-     [!code-xml[POM Repositories](~/samples-cognitive-services-speech-sdk/quickstart/java-jre/pom.xml#repositories)]
+     [!code-xml[POM repositories](~/samples-cognitive-services-speech-sdk/quickstart/java-jre/pom.xml#repositories)]
 
    * Кроме того, добавьте элемент `dependencies`, указав пакет SDK службы "Речь" версии 1.7.0 в виде зависимости:
 
-     [!code-xml[POM Dependencies](~/samples-cognitive-services-speech-sdk/quickstart/java-jre/pom.xml#dependencies)]
+     [!code-xml[POM dependencies](~/samples-cognitive-services-speech-sdk/quickstart/java-jre/pom.xml#dependencies)]
 
    * Сохраните изменения.

@@ -9,12 +9,12 @@ ms.subservice: content-moderator
 ms.topic: quickstart
 ms.date: 07/24/2019
 ms.author: pafarley
-ms.openlocfilehash: f3b9a7aefc5fc347c4d5114575388914ea8d6fee
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: 62407467e3c63b1752ee6816325f097ad9a1f09e
+ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68698538"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72755253"
 ---
 # <a name="quickstart-content-moderator-client-library-for-python"></a>Краткое руководство. Клиентская библиотека Content Moderator для Python
 
@@ -44,7 +44,7 @@ ms.locfileid: "68698538"
 * Получить бесплатный [ключ пробной версии](https://azure.microsoft.com/try/cognitive-services/#decision) на 7 дней. После регистрации он будет доступен на [веб-сайте Azure](https://azure.microsoft.com/try/cognitive-services/my-apis/).  
 * Просмотреть этот ресурс на [портале Azure](https://portal.azure.com/).
 
-После получения ключа из своего ресурса или пробной подписки [задайте переменную среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для ключа с именем `CONTENT_MODERATOR_SUBSCRIPTION_KEY`.
+После получения ключа из своего ресурса или пробной подписки [задайте переменные среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для ключа и URL-адреса конечной точки с именами `CONTENT_MODERATOR_SUBSCRIPTION_KEY` и `CONTENT_MODERATOR_ENDPOINT` соответственно.
  
 ### <a name="create-a-python-script"></a>Создание скрипта Python
 
@@ -52,12 +52,12 @@ ms.locfileid: "68698538"
 
 [!code-python[](~/cognitive-services-quickstart-code/python/ContentModerator/ContentModeratorQuickstart.py?name=snippet_imports)]
 
-Затем создайте переменные среды для расположения ресурса в Azure и ключей. 
+Затем создайте переменные среды для расположения конечной точки ресурса и ключа. 
 
 [!code-python[](~/cognitive-services-quickstart-code/python/ContentModerator/ContentModeratorQuickstart.py?name=snippet_vars)]
 
 > [!NOTE]
-> Если вы создали переменную среды после запуска приложения, для доступа к переменной следует закрыть и повторно открыть редактор, интегрированную среду разработки или оболочку, где эта переменная была запущена.
+> Если вы создали переменные среды после запуска приложения, для доступа к переменным следует закрыть и повторно открыть редактор, интегрированную среду разработки или оболочку, где эти переменные были запущены.
 
 ### <a name="install-the-client-library"></a>Установка клиентской библиотеки
 
@@ -92,7 +92,7 @@ pip install --upgrade azure-cognitiveservices-vision-contentmoderator
 ## <a name="authenticate-the-client"></a>Аутентификация клиента
 
 > [!NOTE]
-> В этом кратком руководстве предполагается, что вы уже [создали переменную среды](../cognitive-services-apis-create-account.md#configure-an-environment-variable-for-authentication) для ключа Content Moderator с именем `CONTENT_MODERATOR_SUBSCRIPTION_KEY`.
+> В этом кратком руководстве предполагается, что вы уже [создали переменные среды](../cognitive-services-apis-create-account.md#configure-an-environment-variable-for-authentication) для ключа Content Moderator и конечной точки.
 
 Создайте экземпляр клиента с конечной точкой и ключом. Создайте объект [CognitiveServicesCredentials](https://docs.microsoft.com/python/api/msrest/msrest.authentication.cognitiveservicescredentials?view=azure-python) с ключом и используйте его с конечной точкой, чтобы создать объект [ContentModeratorClient](https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-contentmoderator/azure.cognitiveservices.vision.contentmoderator.content_moderator_client.contentmoderatorclient?view=azure-python).
 
@@ -355,4 +355,4 @@ python quickstart-file.py
 >[Принципы модерации изображений](https://docs.microsoft.com/azure/cognitive-services/content-moderator/image-moderation-api)
 
 * [Что такое Azure Content Moderator?](./overview.md)
-* Исходный код для этого шаблона можно найти на портале [GitHub](https://github.com/Azure-Samples/cognitive-services-python-sdk-samples/tree/master/samples/vision).
+* Исходный код для этого шаблона можно найти на портале [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/python/ContentModerator/ContentModeratorQuickstart.py).

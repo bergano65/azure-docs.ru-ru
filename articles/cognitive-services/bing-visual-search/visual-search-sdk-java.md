@@ -10,10 +10,10 @@ ms.topic: quickstart
 ms.date: 09/30/2019
 ms.author: aahi
 ms.openlocfilehash: 7fb00fd3ce588aeeba4f315f191f6b82d6b75715
-ms.sourcegitcommit: 8bae7afb0011a98e82cbd76c50bc9f08be9ebe06
+ms.sourcegitcommit: 6eecb9a71f8d69851bc962e2751971fccf29557f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2019
+ms.lasthandoff: 10/17/2019
 ms.locfileid: "71695727"
 ---
 # <a name="quickstart-bing-visual-search-client-library-for-java"></a>Краткое руководство. Клиентская библиотека Визуального поиска Bing
@@ -136,7 +136,7 @@ dependencies {
 > В этом кратком руководстве предполагается, что вы уже [создали переменную среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для ключа Визуального поиска Bing, который называется `BING_SEARCH_V7_SUBSCRIPTION_KEY`.
 
 
-В основном методе обязательно используйте ключ подписки для создания экземпляра объекта BingVisualSearchAPI.
+В основном методе обязательно используйте ключ подписки для создания экземпляра [объекта BingVisualSearchAPI](https://docs.microsoft.com/java/api/com.microsoft.azure.cognitiveservices.search.visualsearch.bingvisualsearchapi?view=azure-java-stable).
 
 ```csharp
 BingVisualSearchAPI client = BingVisualSearchManager.authenticate(subscriptionKey);

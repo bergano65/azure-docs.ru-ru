@@ -13,9 +13,7 @@
     - name: Архитектура приложения для непрерывного мониторинга состояния пациентов
       href: concept-continuous-patient-monitoring-architecture.md
     - name: Возможность подключения
-      href: ../core/overview-iot-central-get-connected-pnp.md?toc=/azure/iot-central/healthcare/toc.json&bc=/azure/iot-central/healthcare/breadcrumb/toc.json
-    - name: Что представляют собой шаблоны приложений?
-      href: ../core/concepts-app-templates.md?toc=/azure/iot-central/healthcare/toc.json&bc=/azure/iot-central/healthcare/breadcrumb/toc.json
+      href: ../core/concepts-connectivity-pnp.md?toc=/azure/iot-central/healthcare/toc.json&bc=/azure/iot-central/healthcare/breadcrumb/toc.json
 - name: Руководства
   items:
     - name: Создание панель мониторинга для анализа данных о здоровье
@@ -50,6 +48,8 @@
           href: ../core/howto-export-data-pnp.md?toc=/azure/iot-central/healthcare/toc.json&bc=/azure/iot-central/healthcare/breadcrumb/toc.json
         - name: Создание настраиваемых правил
           href: ../core/howto-create-custom-rules.md?toc=/azure/iot-central/healthcare/toc.json&bc=/azure/iot-central/healthcare/breadcrumb/toc.json
+        - name: Создание пользовательских решений аналитики с помощью Databricks
+          href: ../core/howto-create-custom-analytics.md?toc=/azure/iot-central/healthcare/toc.json&bc=/azure/iot-central/healthcare/breadcrumb/toc.json
         - name: Создание пользовательских решений аналитики с помощью Databricks
           href: ../core/howto-create-custom-analytics.md?toc=/azure/iot-central/healthcare/toc.json&bc=/azure/iot-central/healthcare/breadcrumb/toc.json
     - name: Администрирование
