@@ -27,8 +27,10 @@
       href: stream-analytics-javascript-user-defined-functions.md
     - name: "4.\_Развертывание с использованием CI/CD в Azure Pipelines"
       href: stream-analytics-tools-visual-studio-cicd-vsts.md
-    - name: '5. Запуск определяемой пользователем функции C# в IoT Edge'
+    - name: '5. Выполнение определяемой пользователем функции C#'
       href: stream-analytics-edge-csharp-udf.md
+    - name: 6. Создание пользовательского десериализатора .NET
+      href: custom-deserializer.md
 - name: Примеры
   items:
     - name: Примеры кода
@@ -47,6 +49,8 @@
           href: stream-analytics-define-inputs.md
         - name: Входные эталонные данные
           href: stream-analytics-use-reference-data.md
+        - name: Создание пользовательских десериализаторов .NET
+          href: custom-deserializer-examples.md
     - name: Типы выходных данных для задания
       items:
         - name: Общие сведения о выходных данных
@@ -173,7 +177,7 @@
           href: stream-analytics-tools-for-visual-studio-edge-jobs.md
         - name: Настройка конвейера CI/CD
           href: stream-analytics-tools-for-visual-studio-cicd.md
-        - name: Создание определяемой пользователем функции .NET для Edge
+        - name: Создание определяемой пользователем функции .NET
           href: stream-analytics-edge-csharp-udf-methods.md
     - name: Visual Studio Code
       items:

@@ -1,0 +1,67 @@
+### YamlMime:Landing
+title: Документация по использованию Сетки событий в IoT Edge
+summary: Узнайте, как использовать Сетку событий в IoT Edge для реагирования на соответствующие события, создаваемые на пограничных устройствах практически в реальном времени.
+metadata:
+  title: Документация по использованию Сетки событий в IoT Edge
+  description: Узнайте, как использовать Сетку событий в IoT Edge для реагирования на соответствующие события, создаваемые на пограничных устройствах практически в реальном времени.
+  services: event-grid
+  ms.service: event-grid
+  ms.subservice: 
+  ms.topic: landing-page
+  ms.collection: collection
+  author: spelluru
+  ms.author: spelluru
+  ms.date: 10/12/2019
+  ms.openlocfilehash: 4b79d64240b96ed41b535f8dbcd1155d67e76282
+  ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 10/28/2019
+  ms.locfileid: "72991619"
+landingContent:
+- title: Сведения об использовании Сетки событий в IoT Edge
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Сведения о Сетке событий в IoT Edge
+      url: overview.md
+  - linkListType: concept
+    links:
+    - text: Основные понятия службы "Сетка событий"
+      url: concepts.md
+    - text: Схемы событий
+      url: event-schemas.md
+    - text: Пакетная обработка выходных данных
+      url: delivery-output-batching.md
+    - text: Расширенная фильтрация
+      url: advanced-filtering.md
+    - text: Доставка и повторные попытки доставки
+      url: delivery-retry.md
+- title: Сценарии
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Публикация событий и подписка на них локально
+      url: pub-sub-events-webhook-local.md
+    - text: Публикация событий и подписка на них локально
+      url: pub-sub-events-webhook-cloud.md
+    - text: Переадресация событий в Сетку событий Azure
+      url: forward-events-event-grid-cloud.md
+    - text: Переадресация событий в Сетку событий Azure
+      url: forward-events-event-grid-cloud.md
+    - text: Реагирование на события хранилища BLOB-объектов Azure локально
+      url: react-blob-storage-events-locally.md
+- title: Безопасность
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Безопасность и проверка подлинности
+      url: security-authentication.md
+  - linkListType: how-to-guide
+    links:
+    - text: Настройка аутентификации клиента
+      url: configure-client-auth.md
+    - text: Настройка аутентификации подписчика веб-перехватчика
+      url: configure-webhook-subscriber-auth.md
+    - text: Настройка аутентификации удостоверения
+      url: configure-identity-auth.md

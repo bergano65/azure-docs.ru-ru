@@ -23,6 +23,10 @@
               href: quickstarts/python-receipts.md
     - name: С помощью пакета SDK для .NET
       href: quickstarts/dotnet-sdk.md
+- name: Учебники
+  items:
+    - name: Использование Распознавателя документов с Logic Apps
+      href: tutorial-form-recognizer-with-logic-apps.md
 - name: Руководства
   items:
     - name: Создание набора данных для обучения

@@ -1,96 +1,114 @@
-### YamlMime:YamlDocument
-documentType: LandingData
-title: Документация по API Распознавания лиц
+### YamlMime:Landing
+title: Документация по API "Распознавание лиц"
+summary: Облачный API Распознавания лиц предоставляет разработчикам доступ к расширенным алгоритмам распознавания лиц. Алгоритмы Распознавания лиц от Майкрософт позволяют выполнять обнаружение атрибутов, определяемых по лицам, и распознавание лиц. Узнайте, как анализировать содержимое разными способами с помощью кратких руководств, примеров и других материалов.
 metadata:
-  title: 'Документация по API Распознавания лиц. Краткие руководства, учебные материалы и справочник по API. Azure Cognitive Services | Документация Майкрософт'
-  description: 'Узнайте, как использовать API Распознавания лиц для обнаружения и идентификации лиц на изображениях и возвращении сведений о них. В руководствах описано, как создавать приложения, использующие API.'
+  title: Документация по API "Распознавание лиц". Краткие руководства, учебные материалы и справочник по API. Azure Cognitive Services | Документация Майкрософт
+  description: Облачный API Распознавания лиц предоставляет разработчикам доступ к расширенным алгоритмам распознавания лиц. Алгоритмы Распознавания лиц от Майкрософт позволяют выполнять обнаружение атрибутов, определяемых по лицам, и распознавание лиц. Узнайте, как анализировать содержимое разными способами с помощью кратких руководств, примеров и других материалов.
   services: cognitive-services
-  author: PatrickFarley
-  manager: nitinme
   ms.service: cognitive-services
   ms.subservice: face-api
   ms.topic: landing-page
-  ms.date: 12/20/2018
-  ms.author: nitinme
-abstract:
-  description: 'Облачный API Распознавания лиц предоставляет разработчикам доступ к расширенным алгоритмам распознавания лиц. Алгоритмы Распознавания лиц от Майкрософт позволяют выполнять обнаружение атрибутов, определяемых по лицам, и распознавание лиц. Узнайте, как анализировать содержимое разными способами с помощью кратких руководств, примеров и других материалов.'
-sections:
-  - items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - href: /azure/cognitive-services/face/overview
-            html: <p>Дополнительные сведения об API Распознавания лиц.</p>
-            image:
-              src: ../media/index/i_overview.svg
-            title: Что собой представляет API Распознавания лиц
-          - href: /azure/cognitive-services/face/face-api-how-to-topics/howtodetectfacesinimage
-            html: '<p>Узнайте, как обнаруживать лица на изображении.</p>'
-            image:
-              src: ../media/index/i_tasks.svg
-            title: Обнаружение лиц на изображении
-          - href: /azure/cognitive-services/face/face-how-to-install-containers
-            html: '<p>Узнайте, как использовать API Распознавания лиц в контейнерах.</p>'
-            image:
-              src: ../media/index/i_tasks.svg
-            title: Использование API Распознавания лиц в контейнерах
-  - title: Пятиминутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: 'Анализ изображений, создание эскизов и извлечение текста из изображений с помощью:'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: media/index/logo_Csharp.svg
-            text: 'C#'
-            href: QuickStarts/CSharp
-          - image:
-              src: media/index/logo_java.svg
-            text: Java
-            href: QuickStarts/Java
-          - image:
-              src: media/index/logo_nodejs.svg
-            text: Node.js
-            href: QuickStarts/node
-          - image:
-              src: media/index/logo_python.svg
-            text: Python
-            href: QuickStarts/Python
-          - image:
-              src: media/index/logo_go.svg
-            text: Go
-            href: QuickStarts/Go
-  - title: Пошаговые инструкции
-    items:
-      - type: paragraph
-        text: 'Инструкции по разработке приложений с использованием API Распознавания лиц:'
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/azure/cognitive-services/Face/Tutorials/FaceAPIinCSharpTutorial">Обнаружение и выделение лиц на изображении в Windows</a></li>
-          - html: <a href="/azure/cognitive-services/Face/Tutorials/FaceAPIinJavaForAndroidTutorial">Обнаружение и выделение лиц на изображении в Android</a></li>
-  - title: Примеры
-    items:
-      - type: paragraph
-        text: 'Поиск примеров для API Распознавания лиц:'
-      - type: list
-        style: unordered
-        items:
-          - html: '<a href="https://azure.microsoft.com/resources/samples/?service=cognitive-services&term=Face&sort=Relevance">Примеры кода</a>'
-  - title: Справочные материалы
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: Программные интерфейсы
-            html: <p><a href="APIReference">API Распознавания лиц</a></p>
-          - title: Пакеты SDK
-            html: '<p><a href="https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/faceapi?view=azure-dotnet">.NET</a></p> <p><a href="https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/faceapi?view=azure-java-stable">Java</a></p> <p><a href="https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-face/?view=azure-python">Python</a></p> <p><a href="https://docs.microsoft.com/javascript/api/azure-cognitiveservices-face/?view=azure-node-latest">Node</a></p> <p><a href="https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.0/face">GO</a></p> <p><a href="https://github.com/Microsoft/Cognitive-Face-iOS">iOS</a></p>'
-          - title: PowerShell
-            html: '<p><a href="https://docs.microsoft.com/powershell/module/az.cognitiveservices/#cognitive_services">Azure PowerShell</a></p>'
-          - title: CLI
-            html: '<p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest">Azure CLI</a></p>'
+  author: PatrickFarley
+  ms.author: pafarley
+  ms.date: 10/24/2019
+  ms.openlocfilehash: e7dabc3104f925f602fe5806e04f9da7f438c310
+  ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 10/25/2019
+  ms.locfileid: "72935730"
+landingContent:
+- title: Сведения об API "Распознавание лиц"
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое API Распознавания лиц?
+      url: Overview.md
+- title: Распознавание лиц
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Определение лиц
+      url: concepts/face-detection.md
+  - linkListType: quickstart
+    links:
+    - text: С помощью пакета SDK для .NET
+      url: quickstarts/csharp-sdk.md
+    - text: С помощью пакета SDK для Python
+      url: quickstarts/python-sdk.md
+  - linkListType: how-to-guide
+    links:
+    - text: Указание модели определения лиц
+      url: Face-API-How-to-Topics/specify-detection-model.md
+- title: Распознавание лиц
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Распознавание лиц
+      url: concepts/face-recognition.md
+  - linkListType: quickstart
+    links:
+    - text: С помощью пакета SDK для .NET
+      url: quickstarts/csharp-sdk.md
+    - text: С помощью пакета SDK для Python
+      url: quickstarts/python-sdk.md
+  - linkListType: how-to-guide
+    links:
+    - text: Указание модели распознавания лиц
+      url: Face-API-How-to-Topics/specify-recognition-model.md
+- title: Использование прямоугольников для лиц
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Отображение данных о лицах в приложении WPF
+      url: Tutorials/FaceAPIinCSharpTutorial.md
+    - text: Отображение данных о лицах в приложении Android
+      url: Tutorials/FaceAPIinJavaForAndroidTutorial.md
+  - linkListType: how-to-guide
+    links:
+    - text: Использование атрибута HeadPose
+      url: Face-API-How-to-Topics/how-to-use-headpose.md
+- title: Использование контейнеров
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Установка и запуск контейнеров
+      url: face-how-to-install-containers.md
+  - linkListType: how-to-guide
+    links:
+    - text: Настройка контейнеров
+      url: face-resource-container-config.md
+  - linkListType: deploy
+    links:
+    - text: Использование экземпляров контейнеров
+      url: Face-API-How-to-Topics/deploy-face-container-on-container-instances.md
+- title: Справочные материалы
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: API "Распознавание лиц" версии 1.0
+      url: https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236
+    - text: Пакет SDK для .NET
+      url: https://docs.microsoft.com/en-us/dotnet/api/overview/azure/cognitiveservices/client/faceapi?view=azure-dotnet
+    - text: Пакет SDK для Python
+      url: https://docs.microsoft.com/en-us/python/api/azure-cognitiveservices-vision-face/?view=azure-python
+    - text: Пакет SDK для Java
+      url: https://docs.microsoft.com/en-us/java/api/overview/azure/cognitiveservices/client/faceapi?view=azure-java-stable
+    - text: Пакет SDK для Node.js
+      url: https://docs.microsoft.com/en-us/javascript/api/azure-cognitiveservices-face/?view=azure-node-latest
+    - text: Пакет SDK для GO
+      url: https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.0/face
+    - text: iOS SDK
+      url: https://github.com/Microsoft/Cognitive-Face-iOS
+    - text: Azure PowerShell
+      url: https://docs.microsoft.com/powershell/module/az.cognitiveservices/#cognitive_services
+    - text: Интерфейс командной строки Azure (CLI)
+      url: https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest
+- title: Справка и обратная связь
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: UserVoice
+      url: https://cognitive.uservoice.com/forums/430315-face-api
+    - text: Stack Overflow
+      url: https://stackoverflow.com/questions/tagged/microsoft-cognitive

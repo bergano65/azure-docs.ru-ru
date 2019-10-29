@@ -42,6 +42,8 @@
           items:
             - name: Делегирование управления создателям каталога
               href: entitlement-management-delegate-catalog.md
+            - name: Добавление подключенной организации
+              href: entitlement-management-organization.md
             - name: Управление доступом для внешних пользователей
               href: entitlement-management-external-users.md
             - name: Просмотр отчетов и журналов

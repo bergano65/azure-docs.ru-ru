@@ -1,0 +1,43 @@
+### YamlMime:Landing
+title: Документация по службе "Работоспособность служб Azure"
+summary: 'Служба "Работоспособность служб Azure" предоставляет набор индивидуальных инструкций и средств поддержки на случай текущих или возможных проблем со службами Azure. Эта служба состоит из таких компонентов: "Состояние Azure", служба "Работоспособность служб" и "Работоспособность ресурсов".'
+metadata:
+  title: Документация по службе "Работоспособность служб Azure"
+  description: Работоспособность служб Azure предоставляет индивидуальные инструкции и средства поддержки на случай проблем со службами Azure. Служба "Работоспособность служб Azure" может информировать о возникновении проблем и их масштабе, а также уведомлять вас после их устранения. Служба "Работоспособность служб Azure" также помогает подготовиться к запланированному техническому обслуживанию и изменениям, которые могут повлиять на доступность ваших ресурсов.
+  services: service-health
+  ms.service: service-health
+  ms.topic: landing-page
+  author: rboucher
+  ms.author: robb
+  ms.date: 10/08/2019
+  ms.openlocfilehash: 83380e57a5d67431fccf1d808b8c8f69eddc5962
+  ms.sourcegitcommit: c4700ac4ddbb0ecc2f10a6119a4631b13c6f946a
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 10/27/2019
+  ms.locfileid: "72966011"
+landingContent:
+- title: Сведения о службе "Работоспособность служб Azure"
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Работоспособность служб Azure
+      url: overview.md
+    - text: Состояние Azure
+      url: azure-status-overview.md
+    - text: Служба "Работоспособность служб"
+      url: service-health-overview.md
+    - text: Работоспособность ресурса
+      url: resource-health-overview.md
+  - linkListType: video
+    links:
+    - text: Просмотреть ознакомительное видео о службе "Работоспособность служб Azure"
+      url: https://www.microsoft.com/videoplayer/embed/RE2OgX6
+- title: Получение уведомлений
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Получение уведомлений, когда проблемы со службой Azure влияют на вашу работу
+      url: alerts-activity-log-service-notifications.md
+    - text: Получение уведомлений, когда ресурс Azure становится недоступен
+      url: resource-health-alert-arm-template-guide.md

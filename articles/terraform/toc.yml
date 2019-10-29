@@ -10,13 +10,19 @@
     - name: Установка и настройка Terraform
       href: /azure/virtual-machines/linux/terraform-install-configure
       maintainContext: true
-    - name: Создание приложения на базе нескольких служб
-      href: terrafom-quickstart.md
+    - name: Создание конфигурации Terraform
+      href: terraform-create-configuration.md
     - name: Создание виртуальной машины Linux
       href: /azure/virtual-machines/linux/terraform-create-complete-vm
       maintainContext: true
 - name: Учебники
   items:
+    - name: Установка и настройка
+      items:
+        - name: Хранение состояния Terraform в службе хранилища Azure
+          href: terraform-backend.md
+        - name: Настройка Azure Cloud Shell для Terraform
+          href: terraform-cloud-shell.md
     - name: Служба приложений
       items:
         - name: Слоты развертывания поставщика Azure и Terraform
@@ -29,8 +35,8 @@
           href: terraform-create-k8s-cluster-with-aks-applicationgateway-ingress.md
     - name: Инфраструктура
       items:
-        - name: Создание виртуальной машины Terraform с поддержкой MSI
-          href: terraform-vm-msi.md
+        - name: 'Создание виртуальной машины Terraform, на которой включены управляемые удостоверения для ресурсов Azure'
+          href: terraform-vm-managed-identities-for-azure-resources.md
         - name: Создание кластера виртуальных машин с помощью модулей Terraform
           href: terraform-create-vm-cluster-module.md
         - name: Создание кластера виртуальных машин с помощью Terraform и HCL
@@ -67,10 +73,6 @@
   items:
     - name: Шаблоны конфигурации
       href: 'https://github.com/terraform-providers/terraform-provider-azurerm/tree/master/examples'
-- name: Руководства
-  items:
-    - name: Хранение состояния в службе хранилища Azure
-      href: terraform-backend.md
 - name: Справочные материалы
   items:
     - name: Реестр модулей Azure

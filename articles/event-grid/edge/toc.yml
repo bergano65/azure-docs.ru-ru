@@ -1,0 +1,62 @@
+- name: Документация по Сетке событий в IoT Edge
+  href: index.yml
+- name: Документация по переходу на Сетку событий Azure
+  href: ../overview.md
+- name: Обзор
+  items:
+    - name: Сведения о Сетке событий в IoT Edge
+      href: overview.md
+- name: Учебники
+  items:
+    - name: Публикация событий и подписка на них локально
+      href: pub-sub-events-webhook-local.md
+    - name: Публикация событий и подписка на них в облаке
+      href: pub-sub-events-webhook-cloud.md
+    - name: Переадресация событий в Сетку событий Azure
+      href: forward-events-event-grid-cloud.md
+    - name: Переадресация событий в Сетку событий Azure
+      href: forward-events-iothub.md
+    - name: Реагирование на события хранилища BLOB-объектов локально
+      href: react-blob-storage-events-locally.md
+- name: Примеры
+  href: 'https://github.com/Azure/event-grid-iot-edge'
+- name: Основные понятия
+  items:
+    - name: Основные понятия службы "Сетка событий"
+      href: concepts.md
+    - name: Безопасность и проверка подлинности
+      href: security-authentication.md
+    - name: Схемы событий
+      href: event-schemas.md
+    - name: Доставка и повторные попытки доставки
+      href: delivery-retry.md
+    - name: Пакетная обработка выходных данных
+      href: delivery-output-batching.md
+    - name: Расширенная фильтрация
+      href: advanced-filtering.md
+- name: Руководства
+  items:
+    - name: Состояние сохранения
+      items:
+        - name: Linux
+          href: persist-state-linux.md
+        - name: Windows
+          href: persist-state-windows.md
+    - name: Настройка протоколов API
+      href: configure-api-protocol.md
+    - name: Настройка аутентификации клиента
+      href: configure-client-auth.md
+    - name: Настройка аутентификации подписчика веб-перехватчика
+      href: configure-webhook-subscriber-auth.md
+    - name: Настройка аутентификации удостоверения
+      href: configure-identity-auth.md
+    - name: Устранение неполадок
+      href: troubleshoot.md
+- name: Справочные материалы
+  items:
+    - name: REST API
+      href: api.md
+    - name: Настройка Сетки событий
+      href: configure-event-grid.md
+    - name: Схема конфигурации двойника модуля
+      href: twin-json.md

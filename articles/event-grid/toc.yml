@@ -1,5 +1,7 @@
-- name: Документация по службе "Сетка событий"
+- name: Документация по службе "Сетка событий Azure"
   href: index.yml
+- name: Документация по переходу на Сетку событий в IoT Edge
+  href: edge/pub-sub-events-webhook-local.md
 - name: Обзор
   items:
     - name: Что такое Сетка событий

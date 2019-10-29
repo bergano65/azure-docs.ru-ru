@@ -54,7 +54,7 @@
               href: virtual-machines-windows-sql-automated-patching.md
             - name: Настройка интеграции с Azure Key Vault
               href: virtual-machines-windows-ps-sql-keyvault.md
-- name: Практические руководства
+- name: Руководства
   items:
     - name: Создание виртуальной машины SQL
       items:
@@ -62,22 +62,31 @@
           href: virtual-machines-windows-portal-sql-server-provision.md
         - name: Использование Azure PowerShell
           href: virtual-machines-windows-ps-sql-create.md
-    - name: Регистрация в поставщике ресурсов
-      href: virtual-machines-windows-sql-register-with-resource-provider.md
-    - name: Изменение модели лицензирования
-      href: virtual-machines-windows-sql-ahb.md
-    - name: Изменение выпуска
-      href: virtual-machines-windows-sql-change-edition.md
+    - name: Регистрация через поставщика ресурсов виртуальной машины SQL
+      displayName: 'resource provider, registration'
+      items:
+        - name: Одиночная виртуальная машина
+          href: virtual-machines-windows-sql-register-with-resource-provider.md
+        - name: Массовая регистрация нескольких виртуальных машин
+          href: virtual-machines-windows-sql-bulk-register-with-resource-provider.md
+    - name: Управление
+      items:
+        - name: Модель лицензирования
+          displayName: 'ahb, ahub, payg, change, modify, update'
+          href: virtual-machines-windows-sql-ahb.md
+        - name: Выпуск
+          displayName: 'change, modify, update'
+          href: virtual-machines-windows-sql-change-edition.md
+        - name: Резервное копирование и восстановление с помощью службы хранилища Azure
+          href: virtual-machines-windows-use-storage-sql-server-backup-restore.md
     - name: Миграция
       items:
-        - name: Перенос базы данных SQL Server
+        - name: Перенос базы данных SQL Server на виртуальную машину
           href: virtual-machines-windows-migrate-sql.md
         - name: Перемещение виртуальной машины в другой регион
           href: virtual-machines-windows-sql-move-different-region.md
     - name: Настройка высокого уровня доступности
       items:
-        - name: Использование службы хранилища Azure для резервного копирования и восстановления
-          href: virtual-machines-windows-use-storage-sql-server-backup-restore.md
         - name: Группа доступности AlwaysOn
           items:
             - name: Использование CLI виртуальной машины SQL в Azure

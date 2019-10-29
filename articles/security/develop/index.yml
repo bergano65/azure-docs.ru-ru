@@ -1,60 +1,59 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Документация по безопасной разработке
+summary: Узнайте, как разрабатывать и развертывать безопасные приложения в Azure с помощью наших примеров приложений, рекомендаций и руководств.
 metadata:
-  document_id: null
   title: Документация по безопасной разработке в Microsoft Azure
-  meta.description: Learn how to develop secure apps on Azure.
+  description: Сведения о том, как разрабатывать защищенные приложения в Azure.
   services: security
-  author: TerryLanfear
-  manager: rkarlin
   ms.service: security
   ms.subservice: develop
-  ms.tgt_pltfrm: na
-  ms.devlang: na
   ms.topic: landing-page
-  ms.date: 09/30/2019
+  author: TerryLanfear
   ms.author: terrylan
-abstract:
-  description: 'Узнайте, как разрабатывать и развертывать безопасные приложения в Azure с помощью наших примеров приложений, рекомендаций и руководств.'
-sections:
-  - items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 2
-        items:
-          - href: /azure/security/develop/secure-dev-overview
-            html: <p>Разработка защищенного веб-приложения в Azure</p>
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_get-started.svg'
-            title: Начало работы
-          - href: 'https://docs.microsoft.com/learn/modules/top-5-security-items-to-consider'
-            html: <p>Пять основных факторов безопасности для веб-приложений</p>
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_learn-about.svg'
-            title: Развитие навыков с помощью Microsoft Learn
-  - title: Защита примеров приложений
-    items:
-      - type: list
-        style: unordered
-        className: spaced noBullet
-        items:
-          - html: <a href="/azure/security/develop/secure-web-app">Веб-приложение в контейнере Linux</a>
-          - html: <a href="/azure/security/develop/secure-aad-app">Использование веб-приложения с Azure Active Directory</a>
-          - html: <a href="/azure/security/develop/secure-pci-web-app">Индустрия платежных карточек</a>
-  - title: Основные понятия
-    items:
-      - type: list
-        style: unordered
-        className: spaced noBullet
-        items:
-          - html: <a href="/azure/security/develop/secure-dev-overview">Рекомендации по безопасной разработке</a>
-  - title: Ресурсы
-    items:
-      - type: list
-        style: unordered
-        className: spaced noBullet
-        items:
-          - html: <a href="/azure/security/develop/security-code-analysis-overview">Анализ кода безопасности Майкрософт</a>
-          - html: <a href="/azure/security/develop/threat-modeling-tool">Средство моделирования угроз</a>
+  manager: rkarlin
+  ms.date: 10/24/2019
+  ms.openlocfilehash: 53e59e7d5ef28d8cb09015b7de296b298af9c3f7
+  ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 10/25/2019
+  ms.locfileid: "72934068"
+landingContent:
+- title: Разработка защищенных примеров приложений
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Веб-приложение в контейнере Linux
+      url: secure-web-app.md
+    - text: Использование веб-приложения с Azure Active Directory
+      url: secure-aad-app.md
+    - text: Индустрия платежных карточек
+      url: secure-pci-web-app.md
+- title: Начало работы
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Рекомендации по безопасной разработке
+      url: secure-dev-overview.md
+    - text: Этап проектирования
+      url: secure-design.md
+    - text: Этап разработки
+      url: secure-develop.md
+    - text: Этап развертывания
+      url: secure-deploy.md
+- title: Добавление средств анализа в безопасную разработку
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Анализ кода безопасности
+      url: security-code-analysis-overview.md
+    - text: Моделирование угроз
+      url: threat-modeling-tool.md
+- title: Развивайте навыки
+  linkLists:
+  - linkListType: learn
+    links:
+    - text: Пять основных аспектов безопасности
+      url: https://docs.microsoft.com/learn/modules/top-5-security-items-to-consider
+    - text: Защита облачных приложений в Azure
+      url: https://docs.microsoft.com/learn/paths/secure-your-cloud-apps

@@ -36,7 +36,7 @@
           href: log-query/get-started-portal.md
         - name: Запросы журнала
           href: log-query/get-started-queries.md
-        - name: Визуализация данных журнала
+        - name: Панель мониторинга с данными журнала
           href: learn/tutorial-logs-dashboards.md
         - name: Создание оповещений о данных журнала
           href: learn/tutorial-response.md
@@ -50,7 +50,7 @@
           href: learn/tutorial-alert.md
         - name: Общие сведения о пользователях приложения
           href: learn/tutorial-users.md
-        - name: Создание пользовательских панелей мониторинга
+        - name: Панель мониторинга с данными приложения
           href: learn/tutorial-app-dashboards.md
     - name: Архивация данных журнала и метрики платформы
       href: learn/tutorial-archive-data.md
@@ -889,7 +889,11 @@
         - name: Workbooks
           href: app/usage-workbooks.md
         - name: Панели мониторинга
-          href: app/app-insights-dashboards.md
+          items:
+            - name: Панель мониторинга с использованием данных журнала
+              href: learn/tutorial-logs-dashboards.md
+            - name: Панель мониторинга с использованием данных приложения
+              href: learn/tutorial-app-dashboards.md
         - name: Отправка данных в Grafana
           href: platform/grafana-plugin.md
     - name: Оповещение
@@ -1098,10 +1102,8 @@
           href: platform/metrics-supported.md
         - name: Поддерживаемые метрики для новых оповещений
           href: platform/alerts-metric-near-real-time.md
-    - name: Журналы диагностики
-      items:
-        - name: 'Службы, категории и схемы для журналов диагностики'
-          href: platform/diagnostic-logs-schema.md
+    - name: 'Службы, категории и схемы для журналов ресурсов'
+      href: platform/diagnostic-logs-schema.md
     - name: Инфраструктура CLI Azure
       href: /cli/azure/monitor?view=azure-cli-latest
     - name: Использование Azure CLI с Application Insights (предварительная версия)
@@ -1110,9 +1112,11 @@
       href: app/azure-functions-supported-features.md
     - name: Azure PowerShell
       items:
+        - name: 'Оповещения, метрики, журнал действий, автомасштабирование'
+          href: /powershell/module/az.monitor
         - name: Application Insights
           href: /powershell/module/az.applicationinsights
-        - name: Журналы
+        - name: Log Analytics
           href: /powershell/module/az.operationalinsights
     - name: REST API
       items:

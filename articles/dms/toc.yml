@@ -53,8 +53,10 @@
       href: resource-scenario-status.md
     - name: Обзор предварительных требований
       href: pre-reqs.md
-    - name: Сетевые топологии для миграции в управляемый экземпляр Базы данных SQL
+    - name: Сетевые топологии для миграции в Управляемый экземпляр Базы данных SQL Azure
       href: resource-network-topologies.md
+    - name: Пользовательские роли для выполнения миграции с подключением к сети из SQL Server в Управляемый экземпляр Базы данных SQL Azure
+      href: resource-custom-roles-sql-db-managed-instance.md
     - name: Устранение неполадок и известные проблемы
       items:
         - name: Устранение неполадок с подключением базы данных-источника

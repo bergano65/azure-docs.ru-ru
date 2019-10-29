@@ -32,9 +32,13 @@
                   href: hpc-cache-ingest-manual.md
     - name: Подключение к кэшу
       href: hpc-cache-mount.md
+    - name: Управление кэшем
+      href: hpc-cache-manage.md
 - name: Ресурсы
   items:
     - name: Открытие запроса в службу поддержки
       href: hpc-cache-support-ticket.md
     - name: Восстановление после регионального сбоя
       href: hpc-region-recovery.md
+    - name: Использование Azure NetApp Files с Azure HPC Cache
+      href: hpc-cache-netapp.md

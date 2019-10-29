@@ -304,10 +304,14 @@
           href: resource-group-template-functions-resource.md
         - name: Строковые функции
           href: resource-group-template-functions-string.md
-    - name: Удаление ресурсов в полном режиме
-      href: complete-mode-deletion.md
-    - name: Ограничение количества экземпляров ресурса
-      href: resources-without-rg-limit.md
+    - name: Возможности ресурсов
+      items:
+        - name: Удаление ресурсов в полном режиме
+          href: complete-mode-deletion.md
+        - name: Типы ресурсов расширения
+          href: extension-resource-types.md
+        - name: Ограничение количества экземпляров ресурса
+          href: resources-without-rg-limit.md
     - name: Поставщики ресурсов по службам
       href: azure-services-resource-providers.md
     - name: "REST\_— Resource Manager"

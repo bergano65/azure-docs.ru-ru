@@ -1,0 +1,105 @@
+### YamlMime:Landing
+title: Документация по Azure IoT Central для розничной торговли
+summary: Узнайте, как создавать, настраивать и администрировать решения Интернета вещей для розничной торговли с помощью шаблонов приложений IoT Central.
+metadata:
+  title: Документация по Azure IoT Central для розничной торговли
+  description: Узнайте, как создавать, настраивать и администрировать решения Интернета вещей для розничной торговли с помощью шаблонов приложений IoT Central.
+  services: iot-central
+  ms.service: iot-central
+  ms.topic: landing-page
+  author: philmea
+  ms.author: philmea
+  ms.date: 10/25/2019
+  ms.openlocfilehash: 59372e07cb9e85e28b9762775f533bf93a5ee603
+  ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 10/25/2019
+  ms.locfileid: "72937565"
+landingContent:
+- title: Создание решений для розничной торговли
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Решения Azure IoT Central для розничной торговли
+      url: overview-iot-central-retail-pnp.md
+  - linkListType: tutorial
+    links:
+    - text: 1. Создание приложения для розничной торговли
+      url: tutorial-in-store-analytics-create-app-pnp.md
+    - text: 2. Настройка панели мониторинга оператора
+      url: tutorial-in-store-analytics-customize-dashboard-pnp.md
+    - text: 3. Экспорт данных и визуализация аналитических сведений
+      url: tutorial-in-store-analytics-export-data-visualize-insights-pnp.md
+    - text: Создание приложения для интеллектуального управления запасами
+      url: tutorial-iot-central-smart-inventory-management-pnp.md
+    - text: Создание приложения для интеллектуальной логистики
+      url: tutorial-iot-central-connected-logistics-pnp.md
+    - text: Создание приложения для цифрового центра дистрибуции
+      url: tutorial-iot-central-digital-distribution-center-pnp.md
+  - linkListType: how-to-guide
+    links:
+    - text: Подключение Rigado Cascade 500
+      url: ../core/howto-connect-rigado-cascade-500-pnp.md
+- title: Подключение
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Настройка шаблона устройства
+      url: ../core/howto-set-up-template-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
+    - text: Подключение устройства Plug and Play IoT
+      url: ../core/tutorial-add-device.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
+  - linkListType: how-to-guide
+    links:
+    - text: Подготовка и подключение MXChip IoT DevKit
+      url: ../core/howto-connect-devkit-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
+    - text: Подключение других облаков Интернета вещей
+      url: ../core/howto-build-iotc-device-bridge.md
+- title: Сохранение доступа
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Использование групп устройств
+      url: ../core/howto-use-device-groups-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
+  - linkListType: how-to-guide
+    links:
+    - text: Управление устройствами
+      url: ../core/howto-manage-devices-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
+    - text: Выполнение задания
+      url: ../core/howto-run-a-job.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
+    - text: Анализ данных устройства
+      url: ../core/howto-create-analytics.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
+- title: Преобразование
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Создание правила
+      url: ../core/quick-configure-rules-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
+    - text: Создание правил телеметрии
+      url: ../core/tutorial-create-telemetry-rules-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
+    - text: Экспорт в хранилище BLOB-объектов
+      url: ../core/howto-export-data-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
+  - linkListType: how-to-guide
+    links:
+    - text: Создание настраиваемых правил
+      url: ../core/howto-create-custom-rules.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
+    - text: Создание настраиваемой функции аналитики
+      url: ../core/howto-create-custom-analytics.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
+- title: Администрирование
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Управление приложением
+      url: ../core/howto-administer-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
+    - text: Управление пользователями и ролями
+      url: ../core/howto-manage-users-roles-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
+    - text: Просмотр счетов
+      url: ../core/howto-view-bill-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
+    - text: Настройка пользовательского интерфейса приложения
+      url: ../core/howto-customize-ui-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
+    - text: Настройка личных панелей мониторинга
+      url: ../core/howto-create-personal-dashboards.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
+    - text: Использование плиток панелей мониторинга
+      url: ../core/howto-add-tiles-to-your-dashboard.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
+    - text: Использование шаблонов приложений
+      url: ../core/howto-use-app-templates-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json

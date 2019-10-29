@@ -57,6 +57,8 @@
           href: ../common/storage-service-encryption.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
         - name: "Аутентификация Azure\_AD через SMB"
           href: storage-files-active-directory-overview.md
+        - name: Использование частных конечных точек Azure
+          href: ../common/storage-private-endpoints.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
         - name: Предложения для соответствия требованиям
           href: ../common/storage-compliance-offerings.md
     - name: Разработка

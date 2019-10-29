@@ -2,7 +2,7 @@
 title: Документация по Распознавателю документов
 summary: Распознаватель документов Azure — это служба когнитивных вычислений, использующая технологию машинного обучения для идентификации и извлечения пар "ключ — значение" и данных таблиц из документов-форм. Затем эта служба выводит структурированные данные, которые включают в себя связи в исходном файле. Неконтролируемое обучение позволяет модели ознакомится с макетом, связями между полями и записями без добавления метки данных вручную или трудоемкого программирования и обслуживания.
 metadata:
-  title: Документация по Распознавателю документов
+  title: Документация по Распознавателю документов. Краткие руководства, учебные материалы и справочник по API. Azure Cognitive Services | Документация Майкрософт
   description: Распознаватель документов Azure — это служба когнитивных вычислений, использующая технологию машинного обучения для идентификации и извлечения пар "ключ — значение" и данных таблиц из документов-форм. Затем эта служба выводит структурированные данные, которые включают в себя связи в исходном файле. Неконтролируемое обучение позволяет модели ознакомится с макетом, связями между полями и записями без добавления метки данных вручную или трудоемкого программирования и обслуживания.
   services: cognitive-services
   ms.service: cognitive-services
@@ -11,12 +11,12 @@ metadata:
   author: PatrickFarley
   ms.author: pafarley
   ms.date: 09/05/2019
-  ms.openlocfilehash: 0c450a79c0dbdd19732488af927c3c29df263a23
-  ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
+  ms.openlocfilehash: 3a3146c6a918916792a331c0dab74683db82a02d
+  ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 09/12/2019
-  ms.locfileid: "70931824"
+  ms.lasthandoff: 10/25/2019
+  ms.locfileid: "72931305"
 landingContent:
 - title: Сведения о Распознавателе документов
   linkLists:
@@ -76,3 +76,11 @@ landingContent:
       url: https://docs.microsoft.com/powershell/module/az.cognitiveservices/#cognitive_services
     - text: Интерфейс командной строки Azure (CLI)
       url: https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest#az-cognitiveservices-list
+- title: Справка и обратная связь
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: UserVoice
+      url: https://go.microsoft.com/fwlink/?linkid=2090535
+    - text: Stack Overflow
+      url: https://go.microsoft.com/fwlink/?linkid=2087186
