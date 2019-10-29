@@ -8,12 +8,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 05/06/2019
-ms.openlocfilehash: 6c7d94761e4c5d5087dc8ac4e10854989a18f0fc
-ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
-ms.translationtype: HT
+ms.openlocfilehash: f1452e56054948edffc6e9b3c98fa48d2589cb2a
+ms.sourcegitcommit: d47a30e54c5c9e65255f7ef3f7194a07931c27df
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72992110"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73024943"
 ---
 # <a name="use-net-deserializers-for-azure-stream-analytics-jobs"></a>Использование десериализаторов .NET для Azure Stream Analytics заданий
 
@@ -40,7 +40,7 @@ ms.locfileid: "72992110"
 
 1. T является классом или структурой.
 1. Все открытые поля в T являются либо
-    1. Один из [Long, DateTime, String, Double] или их эквиваленты, допускающие значение null.
+    1. Один из [SByte, Byte, Short, ushort, int, uint, Long, DateTime, String, float, Double] или их эквиваленты, допускающие значение null.
     1. Другая структура или класс, следующие за теми же правилами.
     1. Массив типа `T2`, который следует тем же правилам.
     1. IList`T2` где T2 соответствует тем же правилам.
@@ -226,12 +226,12 @@ namespace ExampleCustomCode.Serialization
 
 Эта функция доступна в следующих регионах:
 
-* Западная Европа
-* Восточная часть США
-* Северная Европа
-* Западная часть США
-* Восточная часть США 2
-* Центрально-западная часть США
+* Западная Центральная часть США (доступна)
+* Северная Европа (доступно)
+* Восточная часть США (доступно)
+* Западная часть США (развертывание вскоре)
+* Восточная часть США 2 (развертывание вскоре)
+* Западная Европа (развертывание вскоре)
 
 Вы можете [запросить поддержку](https://aka.ms/ccodereqregion) для дополнительных регионов.
 
@@ -244,10 +244,6 @@ namespace ExampleCustomCode.Serialization
 ### <a name="can-i-access-metadatapropertyvalue-from-my-inputs-similar-to-getmetadatapropertyvalue-function"></a>Можно ли получить доступ к Метадатапропертивалуе из входных данных, похожих на функцию Жетметадатапропертивалуе?
 
 Эта функция не поддерживается. Если вам нужна эта возможность, вы можете проголосовать за этот запрос на [UserVoice](https://feedback.azure.com/forums/270577-stream-analytics/suggestions/38779801-accessing-input-metadata-properties-in-custom-dese).
-
-### <a name="streamdeserializer-deserializes-a-stream-into-object-of-type-t-can-the-public-fields-in-t-be-any-supported-type-in-net"></a>Стреамдесериализер десериализует поток в объект типа T. Могут ли открытые поля в T иметь любой поддерживаемый тип в .NET?
-
-Поддержка всех поддерживаемых типов в .NET включена в план.
 
 ### <a name="can-i-share-my-deserializer-implementation-with-the-community-so-that-others-can-benefit"></a>Можно ли поделиться реализацией десериализатора с сообществом, чтобы другие пользователи могли воспользоваться преимуществами?
 

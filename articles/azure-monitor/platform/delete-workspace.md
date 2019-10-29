@@ -6,13 +6,13 @@ ms.subservice: logs
 ms.topic: conceptual
 author: MGoedtel
 ms.author: magoedte
-ms.date: 10/11/2019
-ms.openlocfilehash: f15e9c2a5980c8fb6d98f7bf9187b030e6910523
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.date: 10/28/2019
+ms.openlocfilehash: 709d63b2c764049a698bc538d9ec451b4e75feaa
+ms.sourcegitcommit: 38251963cf3b8c9373929e071b50fd9049942b37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72932375"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73044240"
 ---
 # <a name="delete-and-restore-azure-log-analytics-workspace"></a>Удаление и восстановление рабочей области Azure Log Analytics
 
@@ -54,12 +54,14 @@ ms.locfileid: "72932375"
 
 Если у вас есть разрешения участника для подписки и группы ресурсов, в которых Рабочая область была связана до операции обратимого удаления, ее можно восстановить в течение периода обратимого удаления, включая его данные, конфигурацию и подключенные агенты. После периода обратимого удаления Рабочая область не может быть восстановлена и назначена для постоянного удаления. Имена удаленных рабочих областей сохраняются во время периода обратимого удаления и не могут использоваться при попытке создать новую рабочую область.  
 
-Вы можете восстановить рабочую область, повторно создав рабочую область с помощью методов create в рабочей области [PowerShell](https://docs.microsoft.com/powershell/module/az.operationalinsights/New-AzOperationalInsightsWorkspace) или [REST API]( https://docs.microsoft.com/rest/api/loganalytics/workspaces/createorupdate) , если эти свойства заполнены сведениями об удаленной рабочей области, включая:
+Вы можете восстановить рабочую область, повторно создав ее с помощью следующих методов создания рабочей области: [PowerShell](https://docs.microsoft.com/powershell/module/az.operationalinsights/New-AzOperationalInsightsWorkspace) или [REST API]( https://docs.microsoft.com/rest/api/loganalytics/workspaces/createorupdate) , если следующие свойства заполнены сведениями об удаленной рабочей области:
 
 * Идентификатор подписки
 * Имя группы ресурсов
 * имя рабочей области.
 * Регион
+
+После завершения операции восстановления Рабочая область и все ее данные возвращаются обратно. Решения и связанные службы были окончательно удалены из рабочей области, когда они были удалены, и их следует перенастроить, чтобы перевести рабочую область в ранее настроенное состояние. Некоторые данные могут быть недоступны для запроса после восстановления рабочей области до тех пор, пока не будут повторно установлены связанные решения и их схемы не будут добавлены в рабочую область.
 
 > [!NOTE]
 > * Восстановление рабочей области не поддерживается в [портал Azure](https://portal.azure.com). 

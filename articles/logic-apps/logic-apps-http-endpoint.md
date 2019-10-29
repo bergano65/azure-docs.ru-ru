@@ -12,12 +12,12 @@ ms.assetid: 73ba2a70-03e9-4982-bfc8-ebfaad798bc2
 ms.topic: article
 ms.custom: H1Hack27Feb2017
 ms.date: 03/31/2017
-ms.openlocfilehash: 6e5a8eda3891b3b356e0cbd7b6d2e22e4a70c278
-ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
+ms.openlocfilehash: 4fc20c4b1314d953ea979192c81b2c264292d3af
+ms.sourcegitcommit: 38251963cf3b8c9373929e071b50fd9049942b37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72799725"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73041930"
 ---
 # <a name="call-trigger-or-nest-logic-apps-by-using-http-endpoints-in-azure-logic-apps"></a>Вызов, активация или вложение приложений логики с помощью конечных точек HTTP в Azure Logic Apps
 
@@ -62,7 +62,7 @@ ms.locfileid: "72799725"
     }
     ```
 
-   ![Добавление действия Request](./media/logic-apps-http-endpoint/manualtrigger.png)
+   ![Укажите схему JSON для действия запроса](./media/logic-apps-http-endpoint/manual-request-trigger-schema.png)
 
    > [!TIP]
    >
@@ -95,7 +95,7 @@ ms.locfileid: "72799725"
 
    Этот URL-адрес содержит ключ подписанного URL-адреса в параметрах запроса, используемого для проверки подлинности. Вы также можете получить URL-адрес конечной точки HTTP из колонки обзора приложения логики на портале Azure. В разделе **Журнал триггеров** выберите триггер:
 
-   ![Получение URL-адреса конечной точки HTTP на портале Azure](./media/logic-apps-http-endpoint/manualtriggerurl.png)
+   ![Получение URL-адреса конечной точки HTTP на портале Azure](./media/logic-apps-http-endpoint/find-manual-trigger-url.png)
 
    URL-адрес также можно получить, выполнив этот вызов:
 
@@ -117,7 +117,7 @@ ms.locfileid: "72799725"
    > [!NOTE]
    > Вы можете выбрать любой другой метод HTTP или указать пользовательский метод для своего приложения логики.
 
-   ![Изменение метода HTTP](./media/logic-apps-http-endpoint/change-method.png)
+   ![Выбор метода HTTP, используемого для запроса](./media/logic-apps-http-endpoint/select-method-request-trigger.png)
 
 ## <a name="accept-parameters-through-your-http-endpoint-url"></a>Принятие параметров через URL-адрес конечной точки HTTP
 
@@ -132,7 +132,7 @@ ms.locfileid: "72799725"
 
 3. В поле **Относительный путь** укажите относительный путь для параметра, который ваш URL-адрес должен принять, например `customers/{customerID}`.
 
-   ![Указание метода HTTP и относительного пути для параметра](./media/logic-apps-http-endpoint/relativeurl.png)
+   ![Указание метода HTTP и относительного пути для параметра](./media/logic-apps-http-endpoint/relative-path-url-value.png)
 
 4. Чтобы использовать параметр, добавьте действие **Ответ** для приложения логики. (Для вашего триггера выберите **Новый шаг** > **Добавить действие** > **Ответ**.) 
 
@@ -140,11 +140,11 @@ ms.locfileid: "72799725"
 
    Например, чтобы вернуть `Hello {customerID}`, добавьте в **текст** ответа `Hello {customerID token}`. Появится список динамического содержимого с токеном `customerID`, который нужно выбрать.
 
-   ![Добавление параметра в текст ответа](./media/logic-apps-http-endpoint/relativeurlresponse.png)
+   ![Добавление параметра в текст ответа](./media/logic-apps-http-endpoint/relative-url-with-parameter-token.png)
 
    Поле **текста** должно выглядеть, как в следующем примере:
 
-   ![Поле текста ответа с параметром](./media/logic-apps-http-endpoint/relative-url-with-parameter.png)
+   ![Пример текста ответа с параметром](./media/logic-apps-http-endpoint/relative-url-with-parameter.png)
 
 6. Сохраните приложение логики. 
 
@@ -194,7 +194,7 @@ ms.locfileid: "72799725"
 
 Вы можете вкладывать рабочие процессы в свое приложение логики путем добавления других приложений логики, которые могут принимать запросы. Чтобы включить приложения логики, добавьте действие **Azure Logic Apps — Выберите рабочий процесс Logic Apps** в свой триггер. Затем вы можете выбрать подходящие приложения логики.
 
-![Добавление другого приложения логики](./media/logic-apps-http-endpoint/choose-logic-apps-workflow.png)
+![Вложение приложения логики в текущее приложение логики](./media/logic-apps-http-endpoint/choose-logic-apps-workflow.png)
 
 ## <a name="call-or-trigger-logic-apps-through-http-endpoints"></a>Вызов или запуск приложений логики через конечные точки HTTP
 
@@ -233,7 +233,7 @@ ms.locfileid: "72799725"
 
 Вы можете включить несколько заголовков и любой тип содержимого в тексте ответа. В примере ответа заголовок указывает, что ответ имеет тип содержимого `application/json`, а текст содержит `title` и `name`, на основе обновленной ранее схемы JSON для триггера **запроса**.
 
-![Действие ответа HTTP](./media/logic-apps-http-endpoint/response.png)
+![Укажите содержимое ответа для действия ответа HTTP](./media/logic-apps-http-endpoint/content-for-response-action.png)
 
 У ответов есть следующие свойства:
 

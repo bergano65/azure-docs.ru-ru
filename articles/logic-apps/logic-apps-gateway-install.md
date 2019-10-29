@@ -9,12 +9,12 @@ ms.author: estfan
 ms.reviewer: arthii, LADocs
 ms.topic: article
 ms.date: 10/18/2019
-ms.openlocfilehash: 7533b391917175fd9dea395f58906a9f78a61488
-ms.sourcegitcommit: 9a4296c56beca63430fcc8f92e453b2ab068cc62
+ms.openlocfilehash: 6467937e2aca08e234cb136c5f610503627921fb
+ms.sourcegitcommit: 38251963cf3b8c9373929e071b50fd9049942b37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2019
-ms.locfileid: "72675692"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73042210"
 ---
 # <a name="install-on-premises-data-gateway-for-azure-logic-apps"></a>Установка локального шлюза данных для Azure Logic Apps
 
@@ -89,15 +89,15 @@ ms.locfileid: "72675692"
 
 1. После открытия установщика нажмите кнопку **Далее**.
 
-   ![Введение в установщик](./media/logic-apps-gateway-install/gateway-intro-screen.png)
+   ![Начальный экран для установщика шлюза](./media/logic-apps-gateway-install/gateway-intro-screen.png)
 
 1. Выберите **локальный шлюз данных (рекомендуется)** , который является стандартным режимом, и нажмите кнопку **Далее**.
 
-   ![Выбор режима шлюза](./media/logic-apps-gateway-install/select-gateway-mode.png)
+   ![Выбор режима выполнения для шлюза данных](./media/logic-apps-gateway-install/select-gateway-running-mode.png)
 
 1. Просмотрите минимальные требования, оставьте путь установки по умолчанию, примите условия использования и нажмите кнопку **установить**.
 
-   ![Проверка требований и принятие условий использования](./media/logic-apps-gateway-install/accept-terms.png)
+   ![Проверка требований и принятие условий использования](./media/logic-apps-gateway-install/review-and-accept-terms-of-use.png)
 
 1. После успешной установки шлюза укажите адрес электронной почты для учетной записи Azure, а затем выберите **Вход**, например:
 
@@ -107,7 +107,7 @@ ms.locfileid: "72675692"
 
 1. Выберите **зарегистрировать новый шлюз на этом компьютере**  > **Далее**. Этот шаг регистрирует установку шлюза в [облачной службе шлюза](#gateway-cloud-service).
 
-   ![Зарегистрировать шлюз](./media/logic-apps-gateway-install/register-gateway.png)
+   ![Регистрация шлюза на локальном компьютере](./media/logic-apps-gateway-install/register-gateway-local-computer.png)
 
 1. Для установки шлюза необходимо указать следующие сведения.
 
@@ -115,7 +115,7 @@ ms.locfileid: "72675692"
    * Ключ восстановления, который должен содержать по крайней мере восемь символов, которые вы хотите использовать.
    * Подтверждение ключа восстановления
 
-   ![Настойка шлюза](./media/logic-apps-gateway-install/set-up-gateway.png)
+   ![Укажите сведения для установки шлюза](./media/logic-apps-gateway-install/gateway-name-recovery-key.png)
 
    > [!IMPORTANT]
    > Сохраните и держите ключ восстановления в безопасном месте. Этот ключ необходим, если вам когда-либо нужно изменить расположение, переместить, восстановить или перехватить установку шлюза.
@@ -124,7 +124,7 @@ ms.locfileid: "72675692"
 
 1. Проверьте регион облачной службы шлюза и служебной [шины Azure](https://azure.microsoft.com/services/service-bus/) , которая используется для установки шлюза. По умолчанию этот регион совпадает с расположением клиента Azure AD для вашей учетной записи Azure.
 
-   ![Проверка региона](./media/logic-apps-gateway-install/check-region.png)
+   ![Подтвердите регион для службы шлюза и служебной шины](./media/logic-apps-gateway-install/confirm-gateway-region.png)
 
 1. Чтобы принять регион по умолчанию, щелкните **настроить**. Однако если область по умолчанию не является ближайшим к вам, можно изменить регион.
 
@@ -134,15 +134,15 @@ ms.locfileid: "72675692"
 
    1. Рядом с текущим регионом выберите **Изменить регион**.
 
-      ![Изменение региона](./media/logic-apps-gateway-install/change-region.png)
+      ![Изменение текущего региона шлюза](./media/logic-apps-gateway-install/change-gateway-service-region.png)
 
    1. На следующей странице откройте список **Выбор региона** , выберите нужный регион и нажмите кнопку **Готово**.
 
-      ![Выберите другой регион](./media/logic-apps-gateway-install/select-region-gateway-install.png)
+      ![Выберите другой регион для службы шлюза](./media/logic-apps-gateway-install/select-region-gateway-install.png)
 
 1. Проверьте сведения в окончательном окне подтверждения. В этом примере используется та же учетная запись для Logic Apps, Power BI, PowerApps и Microsoft Flow, поэтому шлюз доступен для всех этих служб. Когда будете готовы, нажмите кнопку **Закрыть**.
 
-   ![Завершение подключения шлюза](./media/logic-apps-gateway-install/finished-gateway-default-location.png)
+   ![Подтверждение сведений о шлюзе данных](./media/logic-apps-gateway-install/finished-gateway-default-location.png)
 
 1. Теперь [Создайте ресурс Azure для установки шлюза](../logic-apps/logic-apps-gateway-connection.md).
 
@@ -185,7 +185,7 @@ ms.locfileid: "72675692"
 
 1. Выберите из доступных кластеров и шлюзов и введите ключ восстановления для выбранного шлюза, например:
 
-   ![Выбор шлюза](./media/logic-apps-gateway-install/select-existing-gateway.png)
+   ![Выберите шлюз и укажите ключ восстановления.](./media/logic-apps-gateway-install/select-existing-gateway.png)
 
 1. Чтобы изменить регион, щелкните **изменить регион**и выберите новый регион.
 
@@ -270,9 +270,9 @@ ms.locfileid: "72675692"
 
 Дополнительные сведения см. в следующих статьях:
 
-* [Вопросы и ответы о локальном шлюзе данных](/data-integration/gateway/service-gateway-onprem-faq)
-* [Устранение неполадок локального шлюза данных](/data-integration/gateway/service-gateway-tshoot)
-* [Мониторинг и оптимизация производительности шлюза](/data-integration/gateway/service-gateway-performance)
+* [Вопросы и ответы о локальном шлюзе данных](https://docs.microsoft.com/data-integration/gateway/service-gateway-onprem-faq)
+* [Устранение неполадок локального шлюза данных](https://docs.microsoft.com/data-integration/gateway/service-gateway-tshoot)
+* [Мониторинг и оптимизация производительности шлюза](https://docs.microsoft.com/data-integration/gateway/service-gateway-performance)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

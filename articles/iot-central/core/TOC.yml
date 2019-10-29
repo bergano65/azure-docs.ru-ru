@@ -8,8 +8,6 @@
       href: overview-iot-options.md
     - name: Обзор пользовательского интерфейса
       href: overview-iot-central-tour.md
-    - name: Сохранение доступа
-      href: concepts-stay-connected.md
 - name: Краткие руководства
   expanded: true
   items:

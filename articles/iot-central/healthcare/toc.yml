@@ -13,7 +13,9 @@
     - name: Архитектура приложения для непрерывного мониторинга состояния пациентов
       href: concept-continuous-patient-monitoring-architecture.md
     - name: Возможность подключения
-      href: ../core/concepts-connectivity-pnp.md?toc=/azure/iot-central/healthcare/toc.json&bc=/azure/iot-central/healthcare/breadcrumb/toc.json
+      href: ../core/overview-iot-central-get-connected-pnp.md?toc=/azure/iot-central/healthcare/toc.json&bc=/azure/iot-central/healthcare/breadcrumb/toc.json
+    - name: Что представляют собой шаблоны приложений?
+      href: ../core/concepts-app-templates.md?toc=/azure/iot-central/healthcare/toc.json&bc=/azure/iot-central/healthcare/breadcrumb/toc.json
 - name: Руководства
   items:
     - name: Создание панель мониторинга для анализа данных о здоровье
@@ -48,8 +50,6 @@
           href: ../core/howto-export-data-pnp.md?toc=/azure/iot-central/healthcare/toc.json&bc=/azure/iot-central/healthcare/breadcrumb/toc.json
         - name: Создание настраиваемых правил
           href: ../core/howto-create-custom-rules.md?toc=/azure/iot-central/healthcare/toc.json&bc=/azure/iot-central/healthcare/breadcrumb/toc.json
-        - name: Создание пользовательских решений аналитики с помощью Databricks
-          href: ../core/howto-create-custom-analytics.md?toc=/azure/iot-central/healthcare/toc.json&bc=/azure/iot-central/healthcare/breadcrumb/toc.json
         - name: Создание пользовательских решений аналитики с помощью Databricks
           href: ../core/howto-create-custom-analytics.md?toc=/azure/iot-central/healthcare/toc.json&bc=/azure/iot-central/healthcare/breadcrumb/toc.json
     - name: Администрирование
@@ -110,8 +110,6 @@
       href: ../core/iot-central-customer-data-requests.md?toc=/azure/iot-central/healthcare/toc.json&bc=/azure/iot-central/healthcare/breadcrumb/toc.json
     - name: Поддерживаемые браузеры
       href: ../core/iot-central-supported-browsers.md?toc=/azure/iot-central/healthcare/toc.json&bc=/azure/iot-central/healthcare/breadcrumb/toc.json
-    - name: Справочная документация по API
-      href: 'https://go.microsoft.com/fwlink/?linkid=2109131'
     - name: Azure API для FHIR
       href: 'https://docs.microsoft.com/azure/healthcare-apis/'
     - name: Разработка безопасных решений для отрасли здравоохранения

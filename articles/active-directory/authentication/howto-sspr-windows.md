@@ -5,20 +5,20 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 07/17/2019
+ms.date: 10/28/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5ab46bd29aef2fab26c744e1e4c199f6c9a9fff1
-ms.sourcegitcommit: 770b060438122f090ab90d81e3ff2f023455213b
+ms.openlocfilehash: 0aa0480e95fa072b6fa87aea8debd3dafc8ebcab
+ms.sourcegitcommit: 38251963cf3b8c9373929e071b50fd9049942b37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68304201"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73042064"
 ---
-# <a name="how-to-enable-password-reset-from-the-windows-login-screen"></a>Практическое руководство. Включение сброса пароля с экрана входа в Windows
+# <a name="how-to-enable-password-reset-from-the-windows-login-screen"></a>Как включить сброс пароля с экрана входа в Windows
 
 Для компьютеров под Windows 7, 8, 8,1 и 10 можно разрешить пользователям сбрасывать свой пароль на экране входа в Windows. Пользователям больше не нужно искать устройство с веб-браузером для доступа к [порталу SSPR](https://aka.ms/sspr).
 
@@ -30,15 +30,14 @@ ms.locfileid: "68304201"
 - **Пользователи должны зарегистрироваться для SSPR перед использованием этой функции**
 - Требования к сетевому прокси
    - Устройства с Windows 10 
-       - Порт 443 `passwordreset.microsoftonline.com` — и`ajax.aspnetcdn.com`
+       - Порт 443 для `passwordreset.microsoftonline.com` и `ajax.aspnetcdn.com`
        - Устройства Windows 10 поддерживают только конфигурацию прокси-сервера на уровне компьютера
    - Устройства с Windows 7, 8 и 8,1
-       - Порт 443 —`passwordreset.microsoftonline.com`
+       - Порт 443 для `passwordreset.microsoftonline.com`
 
 ## <a name="general-limitations"></a>Общие ограничения
 
 - В настоящее время сброс пароля не поддерживается из удаленный рабочий стол или из расширенных сеансов Hyper-V.
-- Разблокировка учетной записи, уведомление мобильного приложения и код мобильного приложения не поддерживаются.
 - Эта функция не поддерживается для сетей с развернутым решением аутентификации 802.1X и заданным параметром "Выполнять непосредственно перед входом пользователя". Чтобы включить эту функцию для сетей с развернутыми решением аутентификации 802.1X, используйте аутентификацию компьютера.
 
 ## <a name="windows-10-password-reset"></a>Сброс пароля Windows 10
@@ -59,7 +58,7 @@ ms.locfileid: "68304201"
     - EnableLostMode, установленный на устройстве;
     - файл Explorer.exe, замененный на файл пользовательской оболочки.
 - Сочетание следующих трех параметров может привести к неработоспособности этой функции.
-    - Интерактивный вход в систему: Не требовать CTRL + ALT + DEL = Disabled
+    - Интерактивный вход: не требовать CTRL + ALT + DEL = Disabled
     - Дисаблелоккскринаппнотификатионс = 1 или включено
     - Исконтентделивериполициенфорцед = 1 или true 
 
@@ -102,7 +101,7 @@ ms.locfileid: "68304201"
 
 ![Пример сброса пароля Windows 7 в журнале аудита Azure AD](media/howto-sspr-windows/windows-7-sspr-azure-ad-audit-log.png)
 
-Когда пользователи сбрасывают пароль на экране входа на устройстве с Windows 10, создается временная учетная запись с низким уровнем привилегий с именем `defaultuser1` . Эта учетная запись используется для обеспечения безопасности процесса сброса пароля. Учетная запись имеет случайно сгенерированный пароль, который не отображается при входе в устройство и будет автоматически удален после сброса пользователем пароля. Может `defaultuser` существовать несколько профилей, но их можно спокойно игнорировать.
+Когда пользователи сбрасывают пароль на экране входа устройства Windows 10, создается временная учетная запись с низким уровнем прав, называемая `defaultuser1`. Эта учетная запись используется для обеспечения безопасности процесса сброса пароля. Учетная запись имеет случайно сгенерированный пароль, который не отображается при входе в устройство и будет автоматически удален после сброса пользователем пароля. Несколько профилей `defaultuser` могут существовать, но их можно спокойно игнорировать.
 
 ## <a name="windows-7-8-and-81-password-reset"></a>Сброс паролей Windows 7, 8 и 8,1
 
@@ -142,7 +141,7 @@ ms.locfileid: "68304201"
 `HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Authentication\Credential Providers\{86D2F0AC-2171-46CF-9998-4E33B3D7FD4F}`
 
 - Чтобы включить подробное ведение журнала, создайте `REG_DWORD: “EnableLogging”`и задайте для него значение 1.
-- Чтобы отключить подробное ведение журнала, измените `REG_DWORD: “EnableLogging”` значение на 0.
+- Чтобы отключить подробное ведение журнала, измените `REG_DWORD: “EnableLogging”` на 0.
 
 ## <a name="what-do-users-see"></a>Что видят пользователи?
 
@@ -154,7 +153,7 @@ ms.locfileid: "68304201"
 
 Инструкции по использованию этой функции пользователи могут найти в статье [Я не помню свой пароль Azure AD](../user-help/active-directory-passwords-update-your-own-password.md#reset-password-at-sign-in).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Планирование способов проверки подлинности](concept-authentication-methods.md)
 

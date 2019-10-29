@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 08/09/2019
 ms.custom: seodec18
-ms.openlocfilehash: 0dd0b8cf39da8039b3a59bf243284e0d5062bd78
-ms.sourcegitcommit: c4700ac4ddbb0ecc2f10a6119a4631b13c6f946a
+ms.openlocfilehash: 5edf4a4f53e6b4255970f86dd942795ad2e4cbe2
+ms.sourcegitcommit: d47a30e54c5c9e65255f7ef3f7194a07931c27df
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2019
-ms.locfileid: "72965594"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73025397"
 ---
 # <a name="known-issues-and-troubleshooting-azure-machine-learning"></a>Известные проблемы и устранение неполадок Машинное обучение Azure
 
@@ -150,6 +150,12 @@ displayHTML("<a href={} target='_blank'>Azure Portal: {}</a>".format(local_run.g
 * Добавьте `azure-dataprep` версии 1.1.8 или более поздней.
 * Добавьте `pyarrow` версии 0,11 или более поздней.
 
+## <a name="datasets"></a>Наборы данных
+
+Это известные проблемы для Машинное обучение Azure наборов данных.
+
++ **Не удалось считать файлы Parquet на Azure Data Lake Storage 2-го поколения** Чтение файлов Parquet из хранилищ данных Azure Data Lake Storage 2-го поколения не работает, если `azureml-dataprep==1.1.25` установлен. Он завершится ошибкой с `Cannot seek once reading started.`. Если вы видите эту ошибку, можно либо установить `azureml-dataprep<=1.1.24`, либо установить `azureml-dataprep>=1.1.26`.
+
 ## <a name="azure-portal"></a>портала Azure
 
 При переходе непосредственно к просмотру рабочей области с помощью ссылки для общего доступа из пакета SDK или на портале невозможно будет отобразить обычную страницу обзора со сведениями о подписке в расширении. Кроме того, вы не сможете переключиться на другую рабочую область. Если вам нужно просмотреть другую рабочую область, можно перейти непосредственно на [портал Azure](https://portal.azure.com) и выполнить поиск рабочей области по имени.
@@ -242,12 +248,12 @@ kubectl get secret/azuremlfessl -o yaml
 ### <a name="moduleerrors-no-module-named"></a>Модулиррорс (без модуля с именем)
 Если вы используете в Модулиррорс при отправке экспериментов в МАШИНном обучении Azure, это означает, что обучающий сценарий ожидает установки пакета, но он не добавляется. После предоставления имени пакета Azure ML установит пакет в среде, используемой для обучения. 
 
-Если для отправки экспериментов используются средства [оценки](https://docs.microsoft.com/en-us/azure/machine-learning/service/concept-azure-machine-learning-architecture#estimators) , можно указать имя пакета с помощью `pip_packages` или `conda_packages` параметр в средстве оценки на основе источника, для которого необходимо установить пакет. Можно также указать файл yml со всеми зависимостями, используя `conda_dependencies_file`или перечисляя все требования к PIP в TXT-файле, используя параметр `pip_requirements_file`.
+Если для отправки экспериментов используются средства [оценки](concept-azure-machine-learning-architecture.md#estimators) , можно указать имя пакета с помощью `pip_packages` или `conda_packages` параметр в средстве оценки на основе источника, для которого необходимо установить пакет. Можно также указать файл yml со всеми зависимостями, используя `conda_dependencies_file`или перечисляя все требования к PIP в TXT-файле, используя параметр `pip_requirements_file`.
 
 В МАШИНном обучении Azure также предусмотрены средства оценки для Tensorflow, PyTorch, Chain и SKLearn, связанные с платформой. Используя эти средства оценки, вы убедитесь, что зависимости платформы установлены от вашего имени в среде, используемой для обучения. Есть возможность указать дополнительные зависимости, как описано выше. 
  
  Образы DOCKER, поддерживаемые МАШИНным обучением Azure, и их содержимое можно просмотреть в [контейнерах AzureML](https://github.com/Azure/AzureML-Containers).
-Зависимости, зависящие от платформы, перечислены в соответствующей документации по платформе — [цепочке](https://docs.microsoft.com/en-us/python/api/azureml-train-core/azureml.train.dnn.chainer?view=azure-ml-py#remarks), [PyTorch](https://docs.microsoft.com/en-us/python/api/azureml-train-core/azureml.train.dnn.pytorch?view=azure-ml-py#remarks), [TensorFlow](https://docs.microsoft.com/en-us/python/api/azureml-train-core/azureml.train.dnn.tensorflow?view=azure-ml-py#remarks), [SKLearn](https://docs.microsoft.com/en-us/python/api/azureml-train-core/azureml.train.sklearn.sklearn?view=azure-ml-py#remarks).
+Зависимости, зависящие от платформы, перечислены в соответствующей документации по платформе — [цепочке](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.chainer?view=azure-ml-py#remarks), [PyTorch](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.pytorch?view=azure-ml-py#remarks), [TensorFlow](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.tensorflow?view=azure-ml-py#remarks), [SKLearn](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.sklearn.sklearn?view=azure-ml-py#remarks).
 
 >[Примечание.] Если вы считаете, что определенный пакет является достаточно распространенным для добавления в образы и среды машинного обучения Azure, повысьте вопрос GitHub в [контейнерах AzureML](https://github.com/Azure/AzureML-Containers). 
  

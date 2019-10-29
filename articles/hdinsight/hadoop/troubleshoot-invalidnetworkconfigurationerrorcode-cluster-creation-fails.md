@@ -1,5 +1,5 @@
 ---
-title: InvalidNetworkConfigurationErrorCode от создания кластера в Azure HDInsight
+title: Ошибка InvalidNetworkConfigurationErrorCode — Azure HDInsight
 description: Различные причины неудачного создания кластера с помощью InvalidNetworkConfigurationErrorCode в Azure HDInsight
 ms.service: hdinsight
 ms.topic: troubleshooting
@@ -7,22 +7,22 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.date: 08/05/2019
-ms.openlocfilehash: a6b207086325018deb63383a0775af8dfe195ac4
-ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
+ms.openlocfilehash: 5b8d031af9dbe6019d71e2a1caa3d3f25d4024ea
+ms.sourcegitcommit: 38251963cf3b8c9373929e071b50fd9049942b37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71091720"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73044465"
 ---
 # <a name="cluster-creation-fails-with-invalidnetworkconfigurationerrorcode-in-azure-hdinsight"></a>Сбой создания кластера с InvalidNetworkConfigurationErrorCode в Azure HDInsight
 
 В этой статье описываются действия по устранению неполадок и возможные способы решения проблем при взаимодействии с кластерами Azure HDInsight.
 
-Если отображается код `InvalidNetworkConfigurationErrorCode` ошибки с описанием "Конфигурация виртуальной сети несовместима с требованиями к HDInsight", обычно это указывает на проблему с [конфигурацией виртуальной сети](../hdinsight-plan-virtual-network-deployment.md) для кластера. В зависимости от оставшейся части описания ошибки следуйте приведенным ниже разделам, чтобы устранить проблему.
+Если отображается код ошибки `InvalidNetworkConfigurationErrorCode` с описанием "Конфигурация виртуальной сети несовместима с требованиями к HDInsight", обычно это указывает на проблему с [конфигурацией виртуальной сети](../hdinsight-plan-virtual-network-deployment.md) для кластера. В зависимости от оставшейся части описания ошибки следуйте приведенным ниже разделам, чтобы устранить проблему.
 
 ## <a name="hostname-resolution-failed"></a>"Сбой разрешения имени узла"
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 Описание ошибки содержит "сбой разрешения имени узла".
 
@@ -32,11 +32,11 @@ ms.locfileid: "71091720"
 
 ### <a name="resolution"></a>Разрешение
 
-1. Подключитесь по протоколу SSH к виртуальной машине, входящей в состав кластера, `hostname -f`и выполните команду. Это приведет к возврату полного доменного имени узла (которое называется `<host_fqdn>` приведенными ниже инструкциями).
+1. Подключитесь по протоколу SSH к виртуальной машине, входящей в состав кластера, и выполните команду `hostname -f`. Это приведет к возврату полного доменного имени узла (в приведенных ниже инструкциях это называется `<host_fqdn>`).
 
 1. Затем выполните команду `nslookup <host_fqdn>` (например, `nslookup hn1-hditest.5h6lujo4xvoe1kprq3azvzmwsd.hx.internal.cloudapp.net`). Если эта команда разрешает имя в IP-адрес, это означает, что DNS-сервер работает правильно. В этом случае создайте обращение в службу поддержки HDInsight, и мы оббудем исследование проблемы. В ваш вариант поддержки включите действия по устранению неполадок, которые вы выполнили. Это поможет нам быстрее устранить проблему.
 
-1. Если приведенная выше команда не возвращает IP-адрес, выполните `nslookup <host_fqdn> 168.63.129.16` команду (например, `nslookup hn1-hditest.5h6lujo4xvoe1kprq3azvzmwsd.hx.internal.cloudapp.net 168.63.129.16`). Если эта команда может разрешить IP-адрес, это означает, что DNS-сервер не перенаправляет запрос в DNS Azure или не является виртуальной машиной, входящей в ту же виртуальную сеть, что и кластер.
+1. Если приведенная выше команда не возвращает IP-адрес, запустите `nslookup <host_fqdn> 168.63.129.16` (например, `nslookup hn1-hditest.5h6lujo4xvoe1kprq3azvzmwsd.hx.internal.cloudapp.net 168.63.129.16`). Если эта команда может разрешить IP-адрес, это означает, что DNS-сервер не перенаправляет запрос в DNS Azure или не является виртуальной машиной, входящей в ту же виртуальную сеть, что и кластер.
 
 1. Если у вас нет виртуальной машины Azure, которая может использоваться в качестве пользовательского DNS-сервера в виртуальной сети кластера, необходимо сначала добавить это. Создайте виртуальную машину в виртуальной сети, которая будет настроена в качестве DNS-сервера пересылки.
 
@@ -48,7 +48,7 @@ ms.locfileid: "71091720"
 
 ## <a name="failed-to-connect-to-azure-storage-account"></a>"Не удалось подключиться к учетной записи хранения Azure"
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 Описание ошибки содержит сообщение "не удалось подключиться к учетной записи хранения Azure" или "не удалось подключиться к Azure SQL".
 
@@ -70,12 +70,12 @@ ms.locfileid: "71091720"
 
 ---
 
-### <a name="next-steps"></a>Следующие шаги
+### <a name="next-steps"></a>Дальнейшие действия
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 
 * Получите ответы от экспертов Azure через [службу поддержки сообщества Azure](https://azure.microsoft.com/support/community/).
 
-* Подключайтесь с помощью [@AzureSupport](https://twitter.com/azuresupport) официальной учетной записи Microsoft Azure для улучшения качества работы клиентов, подключив сообщество Azure к нужным ресурсам: ответы, поддержка и эксперты.
+* Подключайтесь с [@AzureSupport](https://twitter.com/azuresupport) — официальная учетная запись Microsoft Azure для улучшения качества обслуживания клиентов путем подключения сообщества Azure к нужным ресурсам: ответы, поддержка и эксперты.
 
 * Если вам нужна дополнительная помощь, можно отправить запрос в службу поддержки из [портал Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите пункт **Поддержка** в строке меню или откройте центр **справки и поддержки** . Дополнительные сведения см. [в](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request)этой службе. Доступ к управлению подписками и поддержкой выставления счетов включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется через один из [планов поддержки Azure](https://azure.microsoft.com/support/plans/).
