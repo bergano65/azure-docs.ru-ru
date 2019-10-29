@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpr
-ms.openlocfilehash: 79a04725c8289baa3008b229d5dc608357cde881
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 77137bcc708ee403571c4ca9fc0ee0333c068437
+ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72949603"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72990338"
 ---
 # <a name="create-a-new-device-template-version-preview-features"></a>Создать новую версию шаблона устройства (функции предварительной версии)
 
@@ -84,4 +84,4 @@ Azure IoT Central позволяет быстро разрабатывать п�
 Вы узнали, как использовать версии шаблона устройства в приложении Azure IoT Central, а значит вы готовы к следующему шагу.
 
 > [!div class="nextstepaction"]
-> [Создание правил телеметрии](howto-create-telemetry-rules-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json)
+> [Создание правил телеметрии](tutorial-create-telemetry-rules-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json)

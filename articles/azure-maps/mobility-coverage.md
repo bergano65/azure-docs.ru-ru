@@ -1,6 +1,6 @@
 ---
-title: Покрытие мобильности в "карты Azure" | Документация Майкрософт
-description: Подробнее о полноте мобильных устройств в Azure Maps
+title: Покрытие мобильности в Azure Maps | Документация Майкрософт
+description: Сведения о покрытии мобильными устройствами в Azure Maps
 author: walsehgal
 ms.author: v-musehg
 ms.date: 06/05/2019
@@ -8,149 +8,149 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 11ebaec75b1220f39fe059ea7825cdccafda2f5d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f5d214d58c1d2123acabda797b576e8ad961d3f2
+ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66735621"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72990801"
 ---
-# <a name="azure-maps-mobility-coverage"></a>Azure Maps Mobility покрытия
+# <a name="azure-maps-mobility-coverage"></a>Покрытие Azure Maps мобильности
 
-Azure Maps [службы Mobility service](https://aka.ms/AzureMapsMobilityService) позволяет создавать функциональные возможности для общественного, ресурс велосипедов и общего ресурса в то маршрутизации с помощью multimodal поездок параметры планирования. Для общественного, эта служба предлагает поиска близлежащих станции и "строки" а также предоставляет сведения, такие как запланированные, так и в режиме реального времени в общедоступных транзитной поступившие запросы, список останавливается и руководства по маршрута, а также подробные и Многорежимные пошаговые расписаниям и оповещения службы. Служба mobility service также возвращает в режиме реального времени и совместно использовать сведения о статических доступности автомобиля, транспортных средств и общих велосипеды и scooters.
+Azure Maps [Mobility Service](https://aka.ms/AzureMapsMobilityService) позволяет использовать функции для общедоступного транзитного, велосипедного и мотороллереного обмена данными с помощью вариантов планирования мультимодальныйной поездки. Для общедоступного транзита служба предлагает Поиск ближайших станций, остановок и линий и предоставляет сведения, такие как запланированные и общедоступные транзитные прибытия в реальном времени, список остановок и руководств по маршрутам, а также подробные и мультимодальный пошаговые маршруты и оповещения службы. Служба Mobility Service также возвращает сведения о доступности в режиме реального времени и статическую доступность для автомобилей и общих велосипедов и скутерс.
 
-Карты Azure имеет тот же уровень сведения и точность для всех городах и странах и регионах. Возможность вызова данных, передаваемых зависит от города и данных не может включать все параметры общественного и органы власти, обеспечивающие обслуживать города.
+Azure Maps не имеет одинакового уровня информации и точности для всех городов и стран и регионов. Возможность вызова транзитных данных зависит от города, и данные могут не включать все общие транзитные варианты и агентства, обслуживающие город.
 
-Ниже приведены данные о покрытии для службы Azure Maps Mobility service.
+В следующей таблице приведены сведения о покрытии для службы Azure Maps Mobility Service.
 
 
 | Знак | Значение |
 |--------|---------|
-| *      |Почти полное покрытие для страны или региона.|
+| *      |Почти полный охват страны или региона.|
 
-## <a name="americas"></a>Северная и Южная Америка
+## <a name="americas"></a>Америка
 
-| Страна или регион |  Город (Metro область) |
+| Страна или регион |  Город (область Metro) |
 |----------------|---------|
-| Аргентина       | <p>Bahía Blanca, Буэнос-Айрес, Оливию Caleta, Chivilcoy, Comodoro Rivadavia, Кордоба, Corrientes, использованием Общие, ла-Риоха, Mar del Plata, Мендоса, Miramar, Neuquén, Oberá, Olavarría, Paraná, Posadas, Rio Tercero, Rosario, Salta, Bariloche de Карлос San, Сан-Луис Педро по сети SAN, Санта-ФЕ, Tandil, Ushuaia, Виктория, María дверей</p>|
-| Барбадос       |  Барбадос * |
-| Бразилия         | <p>Повторно Angra dos, выпустила Anápolis, Apucarana, Aracaju, Araraquara, Araxa, Araçatuba, Bage, Barretos, Bauru, Белен, ни Horizonte, Blumenau, боа-Вишта, Бразилия, Caldas Novas, Гранде Campina, Campinas, ни Кампу, Кампу-Гранди, Caraguatatuba, Cascavel, Cataguases, E Leopoldina Região Catalão, Caxias сделать Sul, Chapecó, Cianorte, Conselheiro Lafaiete, Corumbá, Criciúma, крузейро сделать Sul, Cuiabá, Curitiba, Curitibanos, Curvelo, Diamantina, Divinópolis, Dourados, Estrela, Фернандо-де-Норонха, Florianópolis, Форталеза, Foz сделать Iguaçu, считается универсальным языком, Garanhuns, Goiania, Governador Valadares, Guarapuava, Imperatriz, Ipatinga, Irati, Itabira, Itabuna, Itajaí, Ituiutaba, Jaraguá сделать Sul, Пессоа Joao, Joinville, Norte Juazeiro, Juiz de Fora, Jundiaí, Lages, Londrina, Macapa, Macaé, Maceió e Mafra Рио-Негро, Манаус, Manhuacu, Maringá, Marília, Carmelo Монте, Montes Claros, Mossoró, Натал, Osorio, Ourinhos, Ouro Preto, Palmas, Paracatu, Parnaíba, Fundo Passo, Passos, Минас de Patos, Patrocínio, Pelotas, Piracicaba, Pocos de Caldas, Ponta Grossa, Порто-Алегре, Ferreira Порто, Seguro Порто, порту-Велью, Гранде Praia, Ресифи, Ribeirão Preto, Rio, Риу-Бранку, Rondonópolis, Salinas, Сальвадор, Санта-Круз сделать Sul, Мария Санта Rita Санта выполните Sapucaí Santarem, Сантос, Сан Gabriel сделать Oeste, Сан Joao del Rei , E Тирадентеса Regiao, Сан-Хосе сделать Rio Preto, Сан Mateus, Сан-Паулу, Sorocaba, Сан-Карлос, Сан-Франциско у Sul, Сан-Хосе dos Кампос, Сан Lourenço, Сан Luís, Taubaté, Telemaco Borba, Teofilo Otoni, Teresina, Толидо, Três Lagoas, Tucurui, Ubatuba, Uberaba, Uberlândia, Ubá, Uruguaiana, Varginha, Vicosa, Videira & Fraiburgo, Vitória, Vitória da Conquista, Volta Redonda, Votuporanga </p>|
-| Канада | Банф (AB), Брэндон (МБ), Калгари (AB), Comox Долина (BC), Cowichan Долина (BC), Эдмонтон (AB), Форт Иванов, Fredericton (NB), больше Sudbury (ON), больше Ванкувер (BC), Галифакс (NS), Камлупс (BC), Kelowna (BC), Kingston (ON), Лондон (ON), Moncton (NB), Монреаль (QC), Nanaimo (BC), Оттава (ON), Prince Джордж (BC), Город Québec (QC), образное определение Red (AB), Реджайна (SK), Rimouski (QC), Саскатун (SK), Sherbrooke (QC), Squamish (BC), Сент-Джонсе (NL), районе Саншайн-Кост, отсек Увлеклась (ON), Торонто (ON), Виктория (BC), Уистлере (BC ), Windsor (ON), Виннипег (МБ), Woodstock</p>|
-| Чили  | <p>Antofagasta, Arica, Aysén, Chillán, Concepción, Constitución, Copiapó, Curicó, Iquique, La Serena y Coquimbo, Linares, Лос-Анджелес (Чили), Лос-Лагос, пунта-Аренас, Rancagua, Сантьяго, Talca, Temuco, Valdivia, Вальпараисо, мар Viña del</p>|
-| Колумбия | <p>Барранкилья, Bogotá, Bucaramanga, Cali, Cartagena, Ibagué, Medellín, Pasto, Popayán, Санта Marta, Sincelejo, Valledupar</p>|  
-| Коста-Рика | Сан-Хосе|
-| Эквадор | Manta Куэнки Гуаякиль,|
-| Мексика | Aguascalientes, Мехико, Гвадалахара, Lion, Merida, Монтеррей, Пуэбла, Керетаро, Сан-Луис-Потоси|
+| Аргентина       | <p>Бахíа бланка, Буэнос Айрес, Калета Оливиа, Чивилкой, Комодоро Ривадавиа, Кордоба, Корриентес, General Pico, La-Риоха, Mar del плата, Мендоса, Мирамар, Неукуéн, Oberá, Olavarría, Paraná, Posadas, Рио Tercero, Rosario, Сальта, San Карлос de Bariloche, San Luis, Сан Педро, Санта Fe, Тандил, Ушуайя, Виктория, Вилла Марíа</p>|
+| Барбадос       |  Барбадос |
+| Бразилия         | <p>Ангра DOS реис, Анáполис, Апукарана, Аракажу, Араракуара, Аракса, Араçатуба, Баже, Барретос, Бауру, Белен, бело Horizonte, Blumenau, Boa Vista, Бразилиа, Caldas Novas, Campina Гранди, Campinas, Кампу-Belo, Кампу-Гранди, Caraguatatuba, Cascavel, Cataguases, Леополдина e Региãо, Каталãо, Каксиас Do Сул, Чапекó, Цианорте, Конселхеиро Лафаиете, Корумбá, КриЦиúма, Cruzeiro do Сул, Cuiabá, Curitiba, Curitibanos, Curvelo, Diamantina, Divinópolis, Dourados, Estrela, Фернандо de Норонха, Florianópolis, Форталеза, Фоз Do Игуаçу, языком, Гаранхунс, Гоианиа, Говернадор Валадарес, Гуарапуава, Императриз, Ипатинга, Ирати, Itabira, Itabuna, Itajaí, Ituiutaba, Jaraguá выполнять Сул, Joao Pessoa, Joinville, Juazeiro Do Норте, Juiz de проверены, Jundiaí, Lages, Londrina, Macapa, Macaé, Мацеиó, Мафра e Рио Негро, Манаус, Манхуаку, Марингá, Марíлиа, Монте-Кармело, Монтес Кларос, Моссорó, Натал, Осорио, Ourinhos, Ouro Preto, Palmas, Paracatu, Parnaíba, Passo Fundo, Passos, Patos de Минас, Patrocínio, Pelotas, Piracicaba, Poco De Caldas, Ponta Брутто, Порту Велью Алегре, Порту Велью Ферреира, Порту Велью Сегуро, Порту Велью Велью, ПРАИА Гранди, Ресифи, Рибеирãо Прето, Рио, Рио-Бранко, Рондонóполис, Салинас, Сальвадор, Санта Круз Do Сул, Санта Марии, Санта Rita Do сапукаí, Сантарем, Сантос, Сан Владимирская Do Оесте, Сан Joao del пов , Тирадентес e Региао, Санское письмо Do Рио Прето, Сан Матеус, Сан-Паулу, Сорокаба, Сан Карлос, Сан Франциско Do Сул, Сан Jose Dos Кампос, Сан Лауренçо, Сан Луíс, Таубатé, Телемако Борба, Теофило ОТОНИ, Teresina, блин, Três Lagoas, Tucurui, Ubatuba, Uberaba, Уберлâндиа, Убá, Уругуаиана, Варгинха, Викоса, Видеира & Фраибурго, Витóриа, Витóриа Da Конкуиста, Volta Redonda, Votuporanga </p>|
+| Канада | Банфф (AB), Брэндон (МБ), Калгари (AB), Комокс впадина (BC), Ковичан впадина (BC), Эдмонтон (AB), Форт St. Джон, Фредериктон (NetBIOS), более Судбури (ON), Vancouver (BC), Галифакс (NS), Камлупс (BC), Келовна (BC), Kingston) (ON), Лондон (вкл.), Монктон (NetBIOS), Монреаль (QC), Нанаимо (BC), Оттава (вкл.), Prince Георгия (BC), Квебек City (QC), Red Дир (AB), Реджайна (SK), Римауски (QC), Саскатун (SK), Шербруке (QC), Скуамиш (BC), Сент-Джон (NL), солнца побережье, Сундер Bay (вкл.), Торонто (вкл.), Виктория (BC), Whistler (BC ), Windsor (вкл.), Виннипег (МБ), Вудстокк</p>|
+| Чили  | <p>Антофагаста, Арика, Айсéн, Чиллáн, КонцепЦиóн, КонституЦиóн, Копиапó, Курикó, Икуикуе, La Серена y Coquimbo, Linares, Лос-Анджелес (Чили), Лос Лагос, Пунта, Rancagua, Сантьяго, Talca, Temuco, Valdivia, Вальпараисо, Viña Del Mar</p>|
+| Колумбия | <p>Барранкилья, Боготá, Букараманга, Кали, Картажена, Ибагуé, Меделлíн, Пасто, Попайáн, Санта марта, Синцележо, Валледупар</p>|  
+| Коста-Рика | Jose сети SAN|
+| Эквадор | Куенка, Гуаякиль, Манта|
+| Мексика | Агуаскалиентес, Мехико, Гвадалахара, Lion, Мерида, Монтеррей, Пуэбла, Керетаро, San Luis Потоси|
 | Никарагуа | Манагуа | 
-| Panamá | Panamá*| 
-| Перу | Cusco, Лима |
-| Пуэрто-Рико | Сан-Хуан |
-| Уругвай | Монтевидео, Punta del Este |
-| Соединенные Штаты Америки | <p>Олбани (штат Нью-ЙОРК), Альбукерке (НМ), Anchorage (AK), Neenah Appleton Oshkosh (рабочие Элементы), Asheville (NC), (OH) Афины, Атланте (GA), Остин (штат Техас), Bakersfield (ЦС), Baltimore), Bellevue (WA), район Berkshire (MA), Бирмингеме (п.), Блумингтон (IN), Буаз (ID), (Бостон MA), район Бреварда Боулдер (CO) (Флорида), Буффало (штат Нью-ЙОРК), крутой холм (MT), Мыса Cod), центр округа (АП), Шампейн Урбана (IL), Charleston (SC), Charleston (WV), Шарлотты (NC), Charlottesville (VA), Чаттануге (TN), Cheyenne (WY), (IL) Чикаго, Цинциннати (OH), Округа (en) (Флорида), Кливленде (OH), Coachella Долина (ЦС), Колорадо-Спрингс (CO), Колумбия (TN), Columbus (OH), праздник тела Христова (штат Техас), Dallas/д, стоит (штат Техас), Dayton (OH), Делавэр, Денвер (CO), Moines Des (IA), Детройт (MI), Дулуте (MN), Paso El (штат Техас), Евгений (OR ), Fairbanks (AK), Fargo (ND), Fayetteville (NC), Flagstaff (AZ), Flint (MI) Форт Коллинз (CO), Форт-Уэйн (IN), города Фресно (ЦС), Гейнсвиль (Флорида), Grand вилок (ND), Grand Rapids (MI), зеленый Bay (рабочие Элементы), Greensboro (NC), Greenville (SC), Gunnison (CO), дороги Hampton (VA ), Hanford (ЦС), Hartford (CT), Hernando района (Флорида), Гонолулу (HI), Хьюстон (штат Техас), Humboldt района (ЦС), Хантсвилл (п.), Индианаполис (IN), Итака (штат Нью-ЙОРК), Джексона (мс), Jackson (TN), Джэксонвилль - Район Сент-Джонс (Флорида), Город Джонсон (TN) Jonesboro (AR) Joplin (MO), Juneau (AK), Kalamazoo (MI), Канзас Город (MO), Kauai (HI), Ketchum (ID), Ноксвилл (TN), Lafayette (IN), Ланкастерском (АП), Lansing (MI), Лас-Вегасе (штат Невада), Лоуренс (KS), район Lee (Флорида), Lexington (ключом), Линкольн округа (или), младшей рок (AR), Лос-Анджелес ( ЦС), Луисвилл (ключом), Madison (рабочие Элементы), McAllen (штат Техас), Мемфисе (TN), Майами (Флорида), Milwaukee/Waukesha (рабочие Элементы), Миннеаполис св (MN), Missoula (MT), Modesto (США), Moline (IL), Округ Монро (АП), кривых Монтгомери (п.), Morgantown (WV), Нэшвилле (TN), Navajo страны), Новый не использовали (CT), Новый Орлеан (LA), НЬЮ Джерси), Ocala (Флорида), район Okaloosa (Флорида), Город Оклахома (ОК), Omaha (NE), Орландо (Флорида), Панама Город (Флорида), Pensacola (Флорида), Peoria (IL), Филадельфия (АП), Phoenix (AZ), Питтсбург (АП), Портленде (ME), Портленде (OR), Racine (рабочие Элементы), Роли (NC), Redding (ЦС), Reno & Tahoe Озера (штат Невада), Roanoke Долина (VA - Lynchburg), Рочестер (Нью-ЙОРК), роки Mountain национальный парк), мошеннических Долина (OR), Roseburg (OR), Roseville (ЦС), Сакраменто (ЦС), Salem (OR), Солт-Лейк-Сити (ИП), Сан-Антонио (Техас), Сан-Диего) ЦС), San Luis Obispo (ЦС), РФ (ЦС), Санта-ФЕ (НМ), Sarasota (Флорида), Savannah (GA), Seacoast регион (центр Уведомлений), Bellevue Сиэтл Tacoma (WA), но Bay область (ЦС), Город Sioux (IA), за использованные Sioux (SD), Sitka (AK), Spokane (WA), Спрингфилда (IL), Спрингфилда (запоминающих устройств), Джордж ST. (ИП), Сент-Луис (MO), Stockton (ЦС), Сиракьюс Utica (штат Нью-ЙОРК), Таллахасси (Флорида), Тампа St. Петербург (Флорида), Terre Haute (IN), Толидо (OH), Topeka (KS), Город перекрестной (MI), Tucson (AZ), Tulsa (ОК), вермонтской, Victorville (ЦС), район Volusia (Флорида), Waco (Техас), Вашингтон (DC), Waterbury (CT), Уичито (KS), Wilmington (NC), Yakima (WA), район York (АП), район Yuma (AZ)</p>|
-| \+ США Виргинские о-ва | Данные учреждений Виргинские о-ва * |
+| Панама | Панама| 
+| Перу | Куско, Кито |
+| Пуэрто-Рико | Сан – Сан |
+| Уругвай | Монтевидео, Пунта del есте |
+| Соединенные Штаты Америки | <p>Олбани (Нью-Йорк), Албукуеркуе (NM), Анчораже (AK), Апплетон-Ошкош-Нинах (WI), Ашевилле (NC), Афины (ах), Атланта (GA), Остин (TX), Бакерсфиелд (CA), Baltimore), Бельвью (WA), Беркшире (в), Блумингтон (ID), Бостон ( MA), Баулдер (CO) Бревард округ (FL), Москва (Нью-Йорк), Бутте (MT), зеленого,, штатный округ (PA), Чампаигн-Урбана (IL), Чарлестон (SC), Чарлестон (WV), Шарлотты, NC, Чарлоттесвилле (), Чаттануга (тн), Cheyenne (WY), Чикаго (IL), Cincinnati (ах), Округ цитрусовых (Флорида), Клевеланд (ах), Коачелла впадин (CA), Колорадо пружины (CO), Колумбия (тн), Коламбус (ах), совокупности Чристи (TX), Далласе/(TX), Дайтон (), Делавэр, Денвер (CO), DES Моинес (IA), Детройт (MI), Дулуте (MN), El Пасо (TX), Евгений (или ), Фаирбанкс (AK), Fargo (ND), Файеттевилле (NC), Флагстафф (AZ), Флинт (MI) Форт Коллинз (CO), Форт Уэйн (в), Фресно (CA), Гаинесвилле (FL), Общая вилка (ND), Общая Рапидс (MI), зеленый отсек (WI), Гринсборо (NC), Гринвилле (SC), Gunnison (CO), Hampton дорог (ва ), Энергетике (CA), Хартфорд (CT), округ Хернандо (FL), Хонолулу (HI), Хьюстоне (TX), Хумболдт округ (Калифорния), Хунтсвилле (AL), Индианаполис (IN), Исака (Нью), Jackson (МС), Jackson (тн), Джексонвилле-St. Иван (FL), Джонсон City (тн), Жонесборо (AR), Жоплин (MO), Juneau (AK), Каламазу (MI), Канзас Сити City (MO), Кауаи (HI), Кетчум (ID), Ноксвилл (тн), Лафайетте (IN), Ланкастерском (PA), Лансинг (MI), Лас-деньги (NV), Лоуренса (KS), Ивановый округ (FL), Lexington (KY), Линколн округ (или), маленький рок (AR), Лос-Анджелес ( CA), Луисвилл (KY), Madison (WI), Мкаллен (TX), Мемфис (тн), Майами (FL), Милвауки/Ваукеша (WI), Миннеаполисе-St. Пол (MN), Миссаула (MT), Модесто (USA), Молине (IL), округ Монро (КРИВЫХ МОНТГОМЕРИ), Моргантовн (тн), WV New не задан (CT), New Orleans (LA), Нью-NJ), Окала (FL), округ Окалуса (FL), Оклахома City (ОК), Омаха (NE), Орландо (Флорида), Панама City (FL), Пенсакола (FL), Пеориа (IL), Филадельфия (PA), Phoenix (AZ), Pittsburgh (PA), Портленде (ME), Портленде (или), РаЦине (WI), Ралеигх (NC), Реддинг (CA), Рено & Lake Tahoe (NV), Роаноке впадина (ва-Линчбург), Химках (Нью), Роки Mountain National парковки), мошеннические (или), Росебург (или), Росевилле (ЦС), Сакраменто (CA), Салем (или), соль Lake ( CA), Сан Luis Обиспо (CA), Санта Barbara (CA), Санта-Fe (NM), Сарасота (FL), саваннах (GA), Сеакоаст Region (NH), Сиэтл-Tacoma-Бельвью (штат Вашингтон), область "SF" (ЦС), Сиаукс City (IA), Сиаукс — это (SD), Ситка (AK), Spokane (WA), Спрингфилде (IL), Спрингфилде (масса) St. Георгия (UT), Сент--Луи (MO), Стокктон (CA), Сиракусе-Утика (Москва), Таллахасси (FL), городе Тампа-St. Санкт (FL), Терре ХАУТЕ (IN), блин (), Топека (KS), обходной город (MI), Туксон (AZ), Тулса (ОК), вермонтской, Викторвилле (CA), Волусиа округ (FL), Вако (TX), Вашингтон (округ Колумбия), Ватербури (CT), Вичита (KS), Вилмингтон (NC), округа Якима (Вашингтон), штат York (PA), округ Юма (AZ)</p>|
+| \+ Виргинские острова США | Виргинские острова США * |
 
 
 ## <a name="asia-pacific"></a>Азиатско-Тихоокеанский регион
 
-| Страна или регион |  Город (Metro область) |
+| Страна или регион |  Город (область Metro) |
 |--------|---------|
-| Австралия      | <p>Аделаида, Алиса Спрингс, Медведева, Брисбен, Bundaberg QLD, Burnie, Cairns, Канберра, Дарвин, Gladstone, Хобарт, Innisfail, Launceston, Mackay, магнитных остров, Maryborough Hervey отсек, Мельбурн, Новый Южный Уэльс, ПЕРТ, RockHampton, Юго-восточная часть Квинсленд, Сидней, Toowoomba, Townsville, Виктория, Warwick, Yeppoon</p> |
-| Китай | <p> Changchun, Changsha, Чэнду, Чунцин, Dalian, Datong, Dongguan, Hangzhou, Jiangyin, Jinan, "нанкин", Nantong, Ningbo, Pingdingshan, Qingdao, Shenyang, Suzhou, Tangshan, Tianjin, Weifang, Wuhan, Wuxi, Yantai, Yixing, Zhuhai, Шанхай, Пекин, Zhengzhou Guangzhou Shenzhen,</P>| 
-| Гонконг, САР | Гонконг (САР) *|
-| Специальный административный регион Макао | Макао (САР) *|
-| Индия | Ahmedabad, Bengaluru, Дели, Мумбаи, Mysuru|
-| Индонезия | Бандунге, Banyuwangi, Батам, сегодня каждый, Джакарта, Kediri, Malang, Palembang, Semarang, Surabaya, Surakarta, Йогикарта |
-| Япония | Wakkanai Префектура, Токио, Shizuoka, Префектура Yamanashi |
-| Малайзия | Бразильский, Penang Johar Bahru, Куала-Лумпур |
-| Новая Зеландия | Окленд, Крайстчерч, Dunedin, Queenstown, Timaru, Веллингтон|
+| Австралия      | <p>Аделаида, Мария пружины, БОВЕН, Брисбен, Бундаберг QLD, Бурние, Каирнс, Канберра, Дарвин, гладстоне, Хобарт, Иннисфаил, Лаунцестон, Mackay, ный остров, Марибораугх-Хервэй Bay, Мельбурн, Нью-, Перт, Роккхамптон, Юго-Восток Квинсленд, Сидней, Тувумба, Товнсвилле, Виктория, Варвикк, Еппун</p> |
+| Китай | <p> Чангчун, Чангша, Ченгду, Чунцин, Далиан, датонг, Донггуан, Хангзау, Жиангин, Жинан, нанжинг, Нантонг, Ningbo, Pingdingshan, Qingdao, Shenyang, Suzhou, Tangshan, Tianjin, Weifang, Wuhan, Wuxi, Yantai, Yixing, Zhuhai, Шанхай, Пекин, Гуангзау, Шензен, Зенгзау</P>| 
+| Гонконг, САР | Гонконг, САР *|
+| Макао (САР) | Макао (САР) *|
+| Индия | Ахмедабад, Бенгалуру, Нью Дели, Мумбаи, Мисуру|
+| Индонезия | Бандунге, Банюванги, Батам, Денпасар, Джакарта, Кедири, Маланг, Палембанг, Семаранг, Сурабайа, Суракарта, Йогикарта |
+| Япония | Шизуока растущему спросу, Токио, Вакканаи, яманаши растущему спросу |
+| Малайзия | Ипох, Жохар Бахру, Куала — Лумпур, Пенанг |
+| Новая Зеландия | Крайстчерч, Дунедин, Куинстовн, Тимару, Веллингтон|
 | Филиппины | Манила |
-| Сингапур | Сингапур * |
+| Сингапур | Сингапур |
 | Южная Корея | Пусан, Сеул |
-| Тайвань | Округа Чжанхуа Тайбэй | 
-| Таиланд | Бангкок, Chiang Mai | 
-| Вьетнам | Ханой, Хо Ши мин | 
+| Тайвань | Округ чангхуа, Тайбэй | 
+| Таиланд | Бангкок, Чианграй Mai | 
+| Вьетнам | Ханой, принес Хи Хо City | 
 
 
 ## <a name="europe"></a>Европа
 
-| Страна или регион |  Город (Metro область) |
+| Страна или регион |  Город (область Metro) |
 |----------------|---------|
-| Андорра        | Vella ла Андорра |
-| Афины         | Chios | 
+| Андорра        | Андорра ла Велла |
+| Афины         | чиос | 
 | Австрия        | Вена |
-| Беларусь        | Gomel, Grodno, Polotsk & Novopolotsk, Zhlobin, Vileyka, Maladziečna, Минск, Rechytsa | 
-| Бельгия        | Бельгия * |
-| Боливия        | Ла-Пас, Санта-Круз-де ла Sierra | 
-| Босния и Герцеговина | Сараево | 
-| Болгария       | <p>Balchik, Blagoevgrad, Burgas, Dobrich, Gabrovo, Haskovo, Kardzhali, Lovech, Nessebar, Pazardzhik, Pleven, Plovdiv, Ruse, Shumen, Sliven, старая Загора, Vratsa, Yambol, Varna, великое, София</P> |
-| Хорватия | Crikvenica, Дубровник, Rijeka, Slovanski Brod, Загреб | 
-| Кипр | Никосия Larnaca Limassol, | 
-| Чешская Республика | Brno, Jablonec, Karlovy различаются, Liberec Ostrava, Прага | 
-| Дания   | Дания * |
-| Эстония   | Эстония * |   
-| Финляндия   | Hämeenlinna, Хельсинки, Joensuu, Jyväskylä, Kajaani, Kouvola - Lappeenranta Kotka Kuopio, Mikkeli, Oulu, Seinäjoki, Tampere, Turku, Vaasa|
-| Франция    | <p>Amberieu-en-Bugey, Amiens, Angers, Annecy, Annonay, Arras, Aubenas, Bayonne, Besançon, Blois, Bordeaux, Boulogne sur об, Brest, Briançon, Канны, Châlons-en шампанское, Chartres, Clermont-Ferrand, Colmar, Dax, Dijon, Grenoble, Haguenau, ла Rochelle, Le Mans группы связанных элементов, Lille, Lorient, Lyon, компьютерах Mac, Марселе & Provence, Metz, Millau, мес-де Marsan, сертифицированные центры обслуживания, Mulhouse, Юлия Nantes, неплохо, Нормандии Nimes,., Nyons, Париж, Poitiers, Privas, Quimper, Rennes, Malo Санкт-Петербург, Санкт Étienne, Saint-Nazaire, Saintes, Sarrebourg, Sete, Strasbourg, Tarbes, Toulouse, Обзор</P> | 
+| Беларусь        | Гомел, Гродно, Полотск & Новополотск, Злобин, Вилэйка, Маладзиеčна, Минск, Речитса | 
+| Бельгия        | Отчете |
+| Боливия        | Ла Пас, Санта Круз de ла Сьерра | 
+| Босния и Герцеговина | Варшава | 
+| Болгария       | <p>Балчик, Благоевград, Бургас, Добрич, Габрово, Хасково, Кардзали, Ловеч, Нессебар, пазардзик, Pleven, Plovdiv, Ruse, Shumen, Sliven, Старая Загора, Vratsa, Yambol, Varna, великое, София</P> |
+| Хорватия | Криквеника, Дубровник, Рижека, Словански Брод, Скопье | 
+| Кипр | Ларнака, Лимассол, Никосия | 
+| Чехия | Брно, Жаблонек, Карлови Vary, Либерек, Острава, Прага | 
+| Дания   | Дания |
+| Эстония   | Эстонии |   
+| Финляндия   | Хäминлинна, Хельсинки, Жоенсуу, Живäскилä, Кажаани, Каувола-Котка, Куопио, Лаппинранта, Миккели, аулу, Seinäjoki, фальсификации, Turku, Vaasa|
+| Франция    | <p>Амбериеу-EN-Бужеи, Амиенс, Анжерс, Аннеци, Аннонай, Аррас, Аубенас, Байонне, Бесанçон, блоис, бордеаукс, Boulogne sur Mer, Brest, Briançon, Cannes, Châlons-en-Champagne, Chartres, Clermont-Ferrand, Colmar, DAX, Dijon, Grenoble, Haguenau, Ла Rochelle, Le Манс, линз, Лилле, Лориент, Лйон, Mac, Марселе & Провенце, Метз, Миллау, мес-de-Марсан, Монтпеллиер, Мулхаусе, Нэнси, Нантес, отлично, Нимес, Норманди, Nyons, Париж, Poitiers, Privas, Quimper, Rennes, Санкт Malo, Сен-Étienne, Сен-Nazaire, Саинтес, Сарребаург, сете, Страсбаург, Тарбес, Тулуз, обзоры</P> | 
 | \+ Французская Гвиана | Кайенна |
-| \+ Новая Каледония | Nouméa  |
-| Джорджия | Тбилиси | 
-| Германия | <p>Берлин, Бранденбурга, Bremen & Niedersachsen, Кельне, Eisenach, Франкфурт, Германия, Karlsruhe, Mainz, München - Titisee регион, Штутгартский, Мюнхен, регион Rhein Neckar Rhein Ruhr-Neustadt, Ulm</P> | 
-| Греция | <p>Афины, Arta, Amorgos, Chania, Corfu, Chios Kos, Heraklion, Ioannina, Kavala, Kalamata, Komotini, Kos, Larissa, Meganisi, Mykonos, Patra, Rethimno, Роудз, Santorini, Serres, Syros, Tinos, Thessaloniki, Veria, Volos, Xanthi </P> |
-| Венгрия | Budapest, Szeged, Székesfehérvár |
-| Исландия | Ísland - Исландия * | 
-| Ирландия | Ирландия * |   
-| Италия   | <p>Agrigento, Alessandria, Ancona, Bari, Bologna - Bologne, Cagliari - Sardinia, Campobasso, Catania e Messina, Cosenza, Crema, Cremona, Crotone, Cuneo, Firenze - Флоренция, Foggia, Genova - Genoa, Iglesias, ла Специя, Lecce, Matera, Naples Milano - Милан, Napoli- , Padova, Палермо, Parma, Perugia, Pescara, Pisa, Potenza, Roma - Рим, Siena e Grosseto, Siracusa - Сиракьюс, Taranto, Венеции Турин - Турин, Trento, Trieste, Udine, Venezia - </p> |
-| Латвия | Rīga |
-| Литва | Druskininkai, Kauno, Klaipėda, Panevėžys, Вильнюс |
-| Люксембург | Люксембург * |
+| \+ Новая Каледония | наумéа  |
+| Грузия | Тбилиси | 
+| Германия | <p>Берлин, Бранденбург, Бремен & Ниедерсачсен, Кологне, Еисенач, Франкфурт, Гамбург, Карлсрухе, Маинз, Мüнчен-Мюнхене, Рхеин-Неккар регион, Rhein-Ruhr Region, Stuttgart, Titisee-Neustadt, Ulm</P> | 
+| Греция | <p>Афины, арта, Аморгос, Чаниа, Корфу, Чиос Кос, Хераклион, Иоаннина, Кавала, Каламата, Комотини, Кос, Ларисса, Meganisi, Mykonos, Patra, Rethimno, Роудз, Санторини, Serres, Syros, Tinos, Thessaloniki, Veria, Volos, Xanthi </P> |
+| Венгрия | Будапешт, Сзежед, Сзéкесфехéрвáр |
+| Исландия | Íсланд-Исландия * | 
+| Ирландия | Ирландия |   
+| Италия   | <p>Агриженто, Алессандриа, Анкона, Бари, Бологна-Бологне, Каглиари-Сардиниа, Кампобассо, Катаниа e Messina, Cosenza, CREMA, Cremona, Crotone, Cuneo, Firenze-Флоренция, Foggia, Genova-Genoa, Iglesias, La Специя, Lecce, Matera, Milano-Милан, Napoli-Naples , Падова, Палермо, Парма, Перугиа, Пескара, Писа, Потенза, рома-Рим, Siena e Гроссето, Сиракуса-Сиракусе, Таранто, Торино-Турин, Trento, Trieste, Udine, Venezia-Venice, </p> |
+| Латвия | рīга |
+| Литва | Друскининкаи, Кауно, Клаипėда, Паневėžис, Вильнюс |
+| Люксембург | Люксембург |
 | Молдова | Кишинев |
-| Черногория | Podgorica |
-| Нидерланды | Нидерланды * |
-| Норвегия | Норвегия * | 
-| Польша | <p>Wrocław, Białystok, Bydgoszcz, Elbląg, Gorzow, Kętrzyna, Краков, Leszno, Lodz, Lublin, Mrągowo, Olsztyn, Poznań, Rzeszów, Sanok, Starachowice, Świonujście, Szczecin, Tricity, Варшава, Śląski Wodzisław, Wrocław, Zakopane</p> |
-| Португалия | Bragança, Coimbra, Funchal, Leiria, Lisboa, Portimao, Порто|
-| Республика Мальта | Мальта * | 
-| Румыния | <p>Alba Iulia, Arad, Bistrița, Brăila, Braşov, Бухарест, Buzau, Cluj Napoca, Constanța, Craiova, Deva, Focșani, Galati, Iaşi, Miercurea Ciuc, Oradea, Piatra Neamt, Pitești, Ploieşti, Reșița, Сату-Маре, Sibiu, Suceava, Targu Mures, Timisoara, Tulcea, Zalau</p> | 
-| Россия  | Rostov-on-Don, Волгоград, Екатеринбург, Казанский, Кировская, Краснодарская, Москва, Nalchik, Нижний Новгород, Новосибирск, Noyabrsk, Омск, разрешение, St-Петербург, Тверская, Томск |
-| Сербия  | Beograd, Kragujevac, Nis, Нови, Valjevo, Subotica | 
-| Словакия | Banská Bystrica, Братислава, Kosice, Presov, Prievidza, Trencin | 
-| Словения | Koper Любляна | 
-| Испания    | <p>Corunna, Alicante, Almería, Asturias, Avila, Badajoz, отсек из Cadiz, Барселона, Бильбао, Burgos, Caceres, Гибралтар de Кампу, Castellon de la Plana, Сеута, сьедад-Реал, Кордова, Куэнки, El Hierro, Ferrol, Canaria право передачи, Гранада, Huelva, Huesca, Ibiza, Jaén - Úbeda , Ла Palma, Lanzarote, Lleida, Logroño, Берг, Мадрид, Malaga, Майорка - Majorca, Мелилья, Menorca, Merida, Murcia, Palencia, Pamplona, Salamanca, Себастиан San, Santander, Compostela de Сантьяго, Segovia, Seville, Soria, Tarragona - Reus, Tenerife, Толидо, Валенсия, Valladolid, Vigo, Vitoria Gasteiz, Сарагоса - Saragossa</p> |
-| Швеция | Goteborg/Gothenburg/Jonkoping Мальмо kommun - Мальмо, Norrköping och Linköping, Стокгольм, Sundsvall |
-| Швейцария | Соглашение BASEL, Geneva, Yverdon-les-Bains, Цюрих | 
-| Турция | Adana Mersin, Ankara, Antalya, Balıkesir, Bilecik, Bolu, Bursa, Denizli, Duzce, Elazig, Eskisehir, Стамбул, Izmir Aydin, Kahramanmaras, Kayseri, Konya, Malatya, Muğla, Samsun, Şanlıurfa |    
-| Соединенное королевство | Восточная Англия, восточная часть Midlands, Лондон и юго-восточного, северо-восток, северо-запад, Северная Ирландия, Шотландии, юго-запад, Уэльс, Западная Midlands, Yorkshire |
-| Украина | Kharkiv, Zhytomyr, Киев, Lviv, Chernivtsi |
+| Черногория | подгорика |
+| Нидерланды | Нидерландский |
+| Норвегия | Норвегии | 
+| Польша | <p>Врокłав, Биаłисток, Бидгосзкз, Елблąг, Горзов, Кęтрзина, Краков, Лесзно, Лодз, Лублин, мрąгово, олсзтин, Poznań, Rzeszów, Sanok, Starachowice, Świonujście, Szczecin, Tricity, Варшава, Wodzisław Śląski, Wrocław, Zakopane</p> |
+| Португалия | Браганçа, Коимбра, Фунчал, Леириа, Лисбоа, Портимао, Порту Велью|
+| Мальта | Мальта | 
+| Румыния | <p>Алба Иулиа, Арад, Бистриțа, Брăила, Браşов, Бухарест, Бузау, Клуж Напока, Констанțа, Краиова, Дева, Фокșани, Galati, Iaşi, Miercurea Ciuc, Oradea, Piatra Neamt, Pitești, Ploieşti, Reșița, Сату Mare, Sibiu, Suceava, Targu Mures, Timisoara, Tulcea, Zalau</p> | 
+| Россия  | Ростовская-on-Дон, Волгоград, Екатеринбург, казан, Кировская, Краснодарский, Москва, Налчик, Нижегородская Новгородская, Новосибирск, Нойабрск, Омск, разрешение, Санкт-Петербург, Тверская, Томск |
+| Сербия  | Београд, Крагужевак, NIS, Нови SAD, Валжево, Суботика | 
+| Словакия | Банскá Бистрика, Братислава, Косице, пресов, Приевидза, ТренЦин | 
+| Словения | Копер, Любляна | 
+| Испания    | <p>Аликанте, Алмерíа, Астуриас, Авила, Бадажоз, Bay Кадиз, Барселоне, такие, Бургос, Кацерес, Кампу-de Гибралтар, Кастеллон De La Plan, Сеута, Циудад Real, Кордова, Куенка, El Хиерро, Ferrol, Gran Canaria, Granada, Huelva, Huesca, Ibiza, Jaén-Úbeda , Ла Палма, Ланзароте, Ллеида, Логроñо, Луго, Мадрид, Малага, Майорка-Мажорка, Мелилья, Менорка, Мерида, МурЦиа, ПаленЦиа, Памплона, Salamanca, San Себастиан, Santander, Сантьяго de Compostela, Segovia, Seville, Soria, Tarragona-Reus, Tenerife, блин, Валенсия, Валладолид, Виго, Виториа-Гастеиз, Сарагоса-Сарагосса</p> |
+| Швеция | Готеборг/Госенбург/Жонкопинг, Мальмо коммун-Мальмо, Норркöпинг оч Линкöпинг, Стокгольм, Сундсвалл |
+| Швейцария | Соглашения Basel, Geneva, Ивердон-Les-Баинс, Цюрих | 
+| Турция | Адана-Мерсин, Анкара, Анталя, Балıкесир, БилеЦик, Болу, Бурса, Денизли, Дузце, Елазиг, Ескисехир, Стамбул, Izmir-Aydin, Kahramanmaras, Kayseri, Konya, Malatya, Muğla, Samsun, Şanlıurfa |    
+| Соединенное Королевство | Восток Anglia, Восток Мидландс, Лондон и Юго-Восток, Северная Восток, северо-запад, Северная Ирландия, Шотландии, Южный запад, пере, Западная Мидландс, Йоркшире |
+| Украина | Кхаркив, Зитомир, Киев, Лвив, Чернивтси |
 
 
 ## <a name="middle-east-and-africa"></a>Ближний Восток и Африка
 
-| Страна или регион |  Город (Metro область) |
+| Страна или регион |  Город (область Metro) |
 |---------|---------|
-| Бахрейн | Бахрейн * |
-| Египет | Каир    |
-| Израиль| Израиль *  |
+| Бахрейн | Бахрейн |
+| Египет | Каиро    |
+| Израиль| Израиль  |
 | Кения | Найроби  | 
 | Мадагаскар | Антананариву |
-| Марокко | Касабланка, Khouribga, Tétouan|
-| Саудовская Аравия | Thuwal |
-| ЮАР | Кейптаун |
-| Тунис | Kairouan |
-| ОАЭ  | Абу-Даби, Дубаи |
+| Марокко | Касабланка, Кхаурибга, Тéтауан|
+| Саудовская Аравия | сувал |
+| Южно-Африканская республика | Кейптаун |
+| Тунис | каирауан |
+| Объединенные Арабские Эмираты  | Абу-Даби, Дубаи |
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о запросе данных, передаваемых с помощью службы Mobility Service:
+Узнайте, как запросить транзитные данные с помощью службы Mobility Service:
 
 > [!div class="nextstepaction"]
-> [Для запроса данных, передаваемых](how-to-request-transit-data.md)
+> [Запрос передачи данных](how-to-request-transit-data.md)
 
-Дополнительные сведения о запросе данных в реальном времени, использующие службу Mobility Service:
-
-> [!div class="nextstepaction"]
-> [Как запросить данные в реальном времени](how-to-request-real-time-data.md)
-
-Изучите документацию по API службы мобильности Azure Maps
+Узнайте, как запрашивать данные в режиме реального времени с помощью службы Mobility Service:
 
 > [!div class="nextstepaction"]
-> [Документация по API службы мобильности](https://aka.ms/AzureMapsMobilityService)
+> [Как запросить данные в режиме реального времени](how-to-request-real-time-data.md)
+
+Изучите документацию по API службы Mobility Service Azure Maps
+
+> [!div class="nextstepaction"]
+> [Документация по API службы Mobility Service](https://aka.ms/AzureMapsMobilityService)

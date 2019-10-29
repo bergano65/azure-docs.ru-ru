@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: philmea
-ms.openlocfilehash: a9d74d94e139427027f68b2c26675447ae6da18c
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 3dacea5c1d77bfead85e42ae312bfafbe70d8ca1
+ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72954881"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72990381"
 ---
 # <a name="azure-iot-central-architecture-preview-features"></a>Архитектура IoT Central Azure (Предварительная версия компонентов)
 
@@ -32,7 +32,7 @@ ms.locfileid: "72954881"
 
 В Azure IoT Central данные, которыми устройство может обмениваться с приложением, задаются в шаблоне устройства. Дополнительные сведения о шаблонах устройства см. в разделе об [управлении метаданными](#metadata-management).
 
-Дополнительные сведения о подключении устройств к приложению Azure IoT Central см. в [этой](concepts-connectivity-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json) статье.
+Дополнительные сведения о подключении устройств к приложению Azure IoT Central см. в [этой](overview-iot-central-get-connected-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json) статье.
 
 ## <a name="cloud-gateway"></a>Облачный шлюз
 
@@ -44,7 +44,7 @@ Azure IoT Central использует Центр Интернета вещей 
 
 Дополнительные сведения о Центре Интернета вещей Azure см. в [этой документации](https://docs.microsoft.com/azure/iot-hub/).
 
-Дополнительные сведения о подключении устройств в Azure IoT Central см. в [этой статье](concepts-connectivity-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json).
+Дополнительные сведения о подключении устройств в Azure IoT Central см. в [этой статье](overview-iot-central-get-connected-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json).
 
 ## <a name="data-stores"></a>Хранилища данных
 
@@ -110,4 +110,4 @@ Azure IoT Central использует хранилище временных р�
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Теперь, когда вы узнали об архитектуре IoT Central Azure, рекомендуем следующий шаг — узнать о [подключении устройств](concepts-connectivity-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json) в Azure IOT Central.
+Теперь, когда вы узнали об архитектуре IoT Central Azure, рекомендуем следующий шаг — узнать о [подключении устройств](overview-iot-central-get-connected-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json) в Azure IOT Central.

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/08/2019
 ms.author: mlottner
-ms.openlocfilehash: 009ae89327272ae4b9acd82eb415aad724d14988
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: e85738c344189486726b4e7b7f5a76ab03c0ffa9
+ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72934364"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72991430"
 ---
 # <a name="deploy-a-security-module-on-your-iot-edge-device"></a>Развертывание модуля безопасности на устройстве IoT Edge
 
@@ -168,9 +168,9 @@ ms.locfileid: "72934364"
    
    | Name | Эскиз |
    | --- | --- |
-   | азуреиотсекурити | mcr.microsoft.com/ascforiot/azureiotsecurity:1.0.0 |
+   | азуреиотсекурити | mcr.microsoft.com/ascforiot/azureiotsecurity:1.0.1 |
    | edgeHub | mcr.microsoft.com/azureiotedge-hub:1.0.8.3 |
-   | edgeAgent | mcr.microsoft.com/azureiotedge-agent:1.0 |
+   | edgeAgent | mcr.microsoft.com/azureiotedge-agent:1.0.1 |
    
    Если минимальный необходимый контейнер отсутствует, проверьте, соответствует ли манифест развертывания IoT Edge рекомендуемым параметрам. Дополнительные сведения см. в разделе [Развертывание модуля IOT Edge](#deployment-using-azure-portal).
 
