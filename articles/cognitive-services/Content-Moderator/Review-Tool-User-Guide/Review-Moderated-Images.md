@@ -10,12 +10,12 @@ ms.subservice: content-moderator
 ms.topic: conceptual
 ms.date: 03/15/2019
 ms.author: pafarley
-ms.openlocfilehash: 53d06f84172da0c4717cabe79f4f5152e73e9555
-ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
+ms.openlocfilehash: b02324923e3f004395105b8e04165390cb950fe7
+ms.sourcegitcommit: 38251963cf3b8c9373929e071b50fd9049942b37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72754262"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73044114"
 ---
 # <a name="create-human-reviews"></a>Создание пользовательских проверок
 
@@ -56,4 +56,4 @@ ms.locfileid: "72754262"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом разделе вы узнали, как настроить и использовать [проверки в средстве](https://contentmoderator.cognitive.microsoft.com)Content Moderatorных проверок. См. Руководство по [REST API](../try-review-api-review.md) или [пакет SDK для .NET](../moderation-reviews-quickstart-dotnet.md) , чтобы узнать, как программным способом создать рецензию.
+В этом разделе вы узнали, как настроить и использовать [проверки в средстве](https://contentmoderator.cognitive.microsoft.com)Content Moderatorных проверок. Дополнительные сведения о создании рецензий программными средствами см. в [руководстве по REST API](../try-review-api-review.md) или в разделе Краткое руководство по [пакету SDK для .NET](../dotnet-sdk-quickstart.md) .

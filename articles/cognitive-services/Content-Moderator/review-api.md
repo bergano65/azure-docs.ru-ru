@@ -10,12 +10,12 @@ ms.subservice: content-moderator
 ms.topic: conceptual
 ms.date: 03/14/2019
 ms.author: pafarley
-ms.openlocfilehash: 0050e2b687b6001514d1ae80c269b1a0499efbea
-ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
+ms.openlocfilehash: 917636c8ae339e06321c169979611f74276ca523
+ms.sourcegitcommit: 38251963cf3b8c9373929e071b50fd9049942b37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72757293"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73044007"
 ---
 # <a name="content-moderation-reviews-workflows-and-jobs"></a>Обзоры, рабочие процессы и задания для контроля содержимого
 
@@ -75,5 +75,5 @@ Content Moderator сочетает ролевую поддержку с возм
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Проверьте в работе [консоль API заданий](try-review-api-job.md) и примеры кода для REST API. Также изучите [краткое руководство по работе с заданиями с помощью .NET](moderation-jobs-quickstart-dotnet.md), если вы уже знакомы с Visual Studio и C#. 
-* Чтобы использовать проверки, начните работу с [консолью API проверки](try-review-api-review.md) и воспользуйтесь примерами кода для REST API. Затем изучите [краткое руководство по работе с проверками с помощью .NET](moderation-reviews-quickstart-dotnet.md).
+* Чтобы использовать проверки, начните работу с [консолью API проверки](try-review-api-review.md) и воспользуйтесь примерами кода для REST API. Затем см. раздел "обзоры" в [кратком руководстве по .NET](dotnet-sdk-quickstart.md).
 * Чтобы использовать проверки видео, изучите [краткое руководство по проверке видео](video-reviews-quickstart-dotnet.md) и узнайте, как [добавить расшифровки в проверку видео](video-transcript-reviews-quickstart-dotnet.md).

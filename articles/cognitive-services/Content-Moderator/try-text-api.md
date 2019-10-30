@@ -10,12 +10,12 @@ ms.service: cognitive-services
 ms.subservice: content-moderator
 ms.topic: conceptual
 ms.date: 05/29/2019
-ms.openlocfilehash: 7a7085eccf05fb65bf7b9036c738a1d17e91a433
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 467bf7fe26df2f826d6d44d42a9e30b98795232f
+ms.sourcegitcommit: 38251963cf3b8c9373929e071b50fd9049942b37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72935913"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73043935"
 ---
 # <a name="moderate-text-from-the-api-console"></a>Модерация текста с помощью консоли API
 
@@ -173,4 +173,4 @@ Also, 999-99-9999 looks like a social security number (SSN).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Используйте REST API в коде или начните с [краткого руководства по тексту .NET](text-moderation-quickstart-dotnet.md) для интеграции с приложением.
+Используйте REST API в коде или следуйте инструкциям в [кратком руководстве по пакету SDK для .NET](dotnet-sdk-quickstart.md) , чтобы интегрировать его с приложением.

@@ -1,5 +1,5 @@
 ---
-title: Подключение Excel к Apache Hadoop с помощью драйвера Hive ODBC в Azure HDInsight
+title: Excel & Apache Hadoop с драйвером ODBC — Azure HDInsight
 description: Узнайте, как установить и использовать драйвер Microsoft Hive ODBC для Excel, чтобы запрашивать данные в кластерах HDInsight из Microsoft Excel.
 keywords: hadoop excel, hive excel, hive odbc
 author: hrasheed-msft
@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 10/08/2019
-ms.openlocfilehash: 7451eaf56a2466bbb02fa879008b4a9787f6c2f5
-ms.sourcegitcommit: b4665f444dcafccd74415fb6cc3d3b65746a1a31
+ms.openlocfilehash: 9923817e90062bdc0e458208474c651c929f772d
+ms.sourcegitcommit: 38251963cf3b8c9373929e071b50fd9049942b37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72264621"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73044611"
 ---
 # <a name="connect-excel-to-apache-hadoop-in-azure-hdinsight-with-the-microsoft-hive-odbc-driver"></a>Подключение Excel к Apache Hadoop с помощью драйвера Microsoft Hive ODBC в Azure HDInsight
 
@@ -24,7 +24,7 @@ ms.locfileid: "72264621"
 
 Также можно подключить данные, связанные с кластером HDInsight и другими источниками данных, включая другие кластеры Hadoop (не HDInsight), из Excel с помощью надстройки Microsoft Power Query для Excel. Сведения об установке и использовании Power Query см. в статье [Подключение Excel к HDInsight с помощью Power Query](../hdinsight-connect-excel-power-query.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Перед началом работы с этой статьей необходимо иметь следующее:
 
@@ -41,7 +41,7 @@ ms.locfileid: "72264621"
 
 1. В Windows откройте "Пуск > Средства администрирования Windows > Источники данных ODBC" (32-разрядная или 64-разрядная версия).  В результате откроется окно **Администратор источников данных ODBC**.
 
-    ![Администратор источников данных ODBC](./media/apache-hadoop-connect-excel-hive-odbc-driver/simbahiveodbc-datasourceadmin1.png "Настройка DSN с помощью администратора источников данных ODBC")
+    ![Администратор источника данных ODBC](./media/apache-hadoop-connect-excel-hive-odbc-driver/simbahiveodbc-datasourceadmin1.png "Настройка имени DSN с помощью администратора источников данных ODBC")
 
 1. На вкладке **DSN пользователя** выберите **Добавить**, чтобы открыть окно **Создание нового источника данных**.
 
@@ -52,14 +52,14 @@ ms.locfileid: "72264621"
    | Свойство | Описание |
    | --- | --- |
    |  Имя источника данных |Присвойте имя источнику данных |
-   |  Узлы |Укажите `HDInsightClusterName.azurehdinsight.net`. Например: `myHDICluster.azurehdinsight.net` |
+   |  Узлы |Укажите `HDInsightClusterName.azurehdinsight.net`. Например `myHDICluster.azurehdinsight.net`. |
    |  Port |Используйте **443**. (Этот порт был изменен с 563 на 443.) |
    |  База данных |Используйте **значение по умолчанию**. |
    |  Механизм |Выберите **Windows Azure HDInsight Service**. |
    |  Имя пользователя |Введите имя пользователя HTTP кластера HDInsight. Имя пользователя по умолчанию — **admin**. |
    |  Пароль |Введите пароль пользователя кластера HDInsight. Установите флажок **Save Password (Encrypted)** (Сохранить пароль (зашифрованный)).|
 
-1. Необязательно: Выберите **Дополнительные параметры...**  
+1. Необязательно: выберите **Дополнительные параметры...**  
 
    | Параметр | Описание |
    | --- | --- |
@@ -67,7 +67,7 @@ ms.locfileid: "72264621"
    |  Строки, загружаемые для каждого блока |При получении большого объема записей включение этого параметра может обеспечить оптимальную производительность. |
    |  Длина столбца строки по умолчанию, длина столбца двоичного кода, масштаб столбца десятичных значений |Длина и точность типа данных может повлиять на способ выведения данных. Это приведет к возврату недопустимой информации из-за потери точности и (или) усечения. |
 
-    ![Дополнительные параметры конфигурации DSN](./media/apache-hadoop-connect-excel-hive-odbc-driver/hiveodbc-datasource-advancedoptions1.png "Дополнительные параметры конфигурации DSN")
+    ![Расширенные параметры конфигурации DSN](./media/apache-hadoop-connect-excel-hive-odbc-driver/hiveodbc-datasource-advancedoptions1.png "Расширенные параметры конфигурации DSN")
 
 1. Щелкните **Тест** для проверки источника данных. При правильной настройке источника данных в результатах теста отображается **Успешно!** .  
 
@@ -85,7 +85,7 @@ ms.locfileid: "72264621"
 
 2. На вкладке **Данные** перейдите к разделу **Получить данные** > **Из других источников** > **Из ODBC**, чтобы открыть окно **Из ODBC**.
 
-    ![Открытие мастера подключения к данным Excel](./media/apache-hadoop-connect-excel-hive-odbc-driver/simbahiveodbc-excel-dataconnection1.png "открыть мастер подключения к данным Excel")
+    ![Открытие мастера подключения к данным Excel](./media/apache-hadoop-connect-excel-hive-odbc-driver/simbahiveodbc-excel-dataconnection1.png "Открытие мастера подключения к данным Excel")
 
 3. В раскрывающемся списке выберите имя источника данных, созданное в последнем разделе, и нажмите кнопку **ОК**.
 
@@ -93,9 +93,9 @@ ms.locfileid: "72264621"
 
 5. В окне **Навигатор** перейдите к **HIVE** > **по умолчанию** > **hivesampletable**, а затем нажмите кнопку **Загрузить**. Для импорта данных в Excel потребуется несколько секунд.
 
-    ![Hdinsight Excel Hive ODBC навигатор](./media/apache-hadoop-connect-excel-hive-odbc-driver/hdinsight-hive-odbc-navigator.png "Hdinsight Excel Hive Microsoft Navigator")
+    ![Навигатор по ODBC для Hive в HDInsight Excel](./media/apache-hadoop-connect-excel-hive-odbc-driver/hdinsight-hive-odbc-navigator.png "Навигатор по ODBC для Hive в HDInsight Excel")
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В рамках этой статьи вы узнали, как получить данные из службы HDInsight в Excel с помощью драйвера Microsoft Hive ODBC. Аналогичным образом можно получать данные из службы HDInsight в базу данных SQL. Также можно передать данные в службу HDInsight. Дополнительные сведения см. на следующих ресурсах:
 

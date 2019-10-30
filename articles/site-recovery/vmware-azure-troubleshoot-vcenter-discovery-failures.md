@@ -1,18 +1,18 @@
 ---
-title: Устранение неполадок при восстановлении размещения в локальную инфраструктуру во время аварийного восстановления виртуальных машин VMware в Azure с помощью Azure Site Recovery | Документация Майкрософт
+title: Устранение неполадок при восстановлении размещения в локальной среде во время аварийного восстановления виртуальной машины VMware в Azure с помощью Azure Site Recovery
 description: В этой статье описываются способы устранения неполадок восстановления размещения и повторного включения защиты в процессе аварийного восстановления виртуальных машин VMware в Azure с помощью Azure Site Recovery.
-author: rayne-wiselman
-manager: carmonm
+author: mayurigupta13
+manager: rochakm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 02/19/2019
-ms.author: raynew
-ms.openlocfilehash: c27e72333618f73b67eec9b5c0c3a70239a1c0b3
-ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
+ms.date: 10/29/2019
+ms.author: mayg
+ms.openlocfilehash: e9213637f45a4761af60de9dfac7add6324f6b96
+ms.sourcegitcommit: 87efc325493b1cae546e4cc4b89d9a5e3df94d31
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2019
-ms.locfileid: "71970856"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73053853"
 ---
 # <a name="troubleshoot-vcenter-discovery-failures"></a>Устранять неполадок обнаружения vCenter
 
@@ -46,8 +46,8 @@ ms.locfileid: "71970856"
 
 При возникновении этой проблемы возникают следующие ситуации.
 
-- Сервер vCenter \<vCenter > недоступен по причине ошибки: The remote server returned an error: (503) сервер недоступен
-- Сервер vCenter \<vCenter > недоступен по причине ошибки: The remote server returned an error: Не удалось подключиться к удаленному серверу.
+- Сервер vCenter \<vCenter > недоступен из-за ошибки: удаленный сервер вернул ошибку: (503) сервер недоступен.
+- Сервер vCenter \<vCenter > недоступен из-за ошибки: удаленный сервер вернул ошибку: не удалось подключиться к удаленному серверу.
 - Не удалось подключиться к серверу vCenter/ESXi.
 
 Чтобы устранить проблему:
@@ -60,7 +60,7 @@ ms.locfileid: "71970856"
 
 1. Откройте IE в контексте пользователя системы с помощью средства PsExec.
     
-    psexec -s -i "%programfiles%\Internet Explorer\iexplore.exe"
+    PsExec-s-i "%Програмфилес%\интернет Explorer\iexplore.exe"
 
 2. Измените параметры прокси в Internet Explorer, чтобы обойти IP-адрес vCenter.
 3. Перезапустите службу тманссвк.
@@ -77,6 +77,6 @@ ms.locfileid: "71970856"
 
 4. Перезапустите службу поставщика DRA.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Управление сервером конфигурации для аварийного восстановления виртуальной машины VMware](https://docs.microsoft.com/azure/site-recovery/vmware-azure-manage-configuration-server#refresh-configuration-server) 

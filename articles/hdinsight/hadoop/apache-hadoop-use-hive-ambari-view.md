@@ -1,5 +1,5 @@
 ---
-title: Использование представлений Apache Ambari для работы с Hive в HDInsight (Apache Hadoop) — Azure
+title: Использование представления Hive Apache Ambari с Apache Hadoop в Azure HDInsight
 description: Узнайте, как использовать представление Hive в веб-браузере для отправки запросов Hive. Представление Hive — это компонент веб-интерфейса Ambari, поставляемого с кластером HDInsight на основе Linux.
 author: hrasheed-msft
 ms.reviewer: jasonh
@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 03/21/2019
 ms.author: hrasheed
-ms.openlocfilehash: da4d1ed7dec8b3b0bc61dd2959a868d03875039c
-ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
+ms.openlocfilehash: 5063be247b2ad51dc8888f8512f523ccf2b0174c
+ms.sourcegitcommit: 38251963cf3b8c9373929e071b50fd9049942b37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71077011"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73044810"
 ---
 # <a name="use-apache-ambari-hive-view-with-apache-hadoop-in-hdinsight"></a>Использование представления Hive Apache Ambari с Apache Hadoop в HDInsight
 
@@ -21,7 +21,7 @@ ms.locfileid: "71077011"
 
 Узнайте, как выполнять запросы Hive с использованием представления Hive Apache Ambari. Представление Hive позволяет создавать, оптимизировать и выполнять запросы Hive из веб-браузера.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Кластер Hadoop в HDInsight. Ознакомьтесь со статьей [Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](./apache-hadoop-linux-tutorial-get-started.md).
 * веб-браузера;
@@ -61,16 +61,16 @@ ms.locfileid: "71077011"
 
     Эти операторы выполняют следующие действия:
 
-   * `DROP TABLE`. удаляет таблицу и файл данных, если таблица уже существует.
+   * `DROP TABLE` — удаляет таблицу и файл данных, если таблица уже существует.
 
-   * `CREATE EXTERNAL TABLE`. создает "внешнюю" таблицу в Hive.
+   * `CREATE EXTERNAL TABLE` — создает "внешнюю" таблицу в Hive.
      Внешние таблицы хранят только определение таблицы в Hive. Данные остаются в исходном расположении.
 
-   * `ROW FORMAT`. показывает настройку форматирования данных. В данном случае поля всех журналов разделены пробелом.
+   * `ROW FORMAT` — показывает настройку форматирования данных. В данном случае поля всех журналов разделены пробелом.
 
-   * `STORED AS TEXTFILE LOCATION`. показывает место хранения данных и их формат (текст).
+   * `STORED AS TEXTFILE LOCATION` — показывает место хранения данных и их формат (текст).
 
-   * `SELECT`. выбирает подсчет количества строк, в которых столбец t4 содержит значение [ERROR].
+   * `SELECT` — выбирает подсчет количества строк, в которых столбец t4 содержит значение [ERROR].
 
    > [!IMPORTANT]  
    > Оставьте для параметра __База данных__ значение __по умолчанию__. В примерах в этом документе используется база данных по умолчанию, входящая в состав HDInsight.
@@ -150,7 +150,7 @@ add jar /myudfs.jar;
 create temporary function myawesomeudf as 'com.myudfs.Awesome';
 ```
 
-Затем вы можете использовать эту функцию в своем запросе. Например, `SELECT myawesomeudf(name) FROM people;`.
+Затем вы можете использовать эту функцию в своем запросе. Пример: `SELECT myawesomeudf(name) FROM people;`.
 
 Дополнительные сведения об использовании определяемых пользователем функций с Hive в HDInsight см. в следующих статьях:
 

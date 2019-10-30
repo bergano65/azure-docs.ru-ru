@@ -1,6 +1,6 @@
 ---
 title: Изучение данных на виртуальной машине сервера SQL Server — Процесс обработки и анализа данных группы
-description: Изучение данных и создание характеристик на виртуальной машине SQL Server в Azure
+description: Изучите и создайте данные и создавайте функции с помощью Python или SQL на SQL Server виртуальной машине в Azure.
 services: machine-learning
 author: marktab
 manager: cgronlun
@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 01/23/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: e407b26091ad559ab458f76d94e2460660ecd14f
-ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
+ms.openlocfilehash: 877c639c35378b173b6ec9c8697725e3b3c09290
+ms.sourcegitcommit: 87efc325493b1cae546e4cc4b89d9a5e3df94d31
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71036615"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73053616"
 ---
 # <a name="heading"></a>Обработка данных в виртуальной машине SQL Server на платформе Azure
 В этом документе описывается изучение данных и создание характеристик для данных, хранящихся в виртуальной машине SQL Server в Azure. Это можно сделать путем структурирования данных с помощью SQL или с использованием языка программирования, например Python.
@@ -53,7 +53,7 @@ ms.locfileid: "71036615"
    
     `select <column_name>, count(*) from <tablename> group by <column_name>`
 
-### <a name="sql-featuregen"></a>Создание характеристик
+### <a name="sql-featuregen"></a>Создание функций
 В этом разделе мы опишем способы создания характеристик с помощью SQL:  
 
 1. [Создание характеристик на основе количества](#sql-countfeature)
