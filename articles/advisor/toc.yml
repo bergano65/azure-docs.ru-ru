@@ -18,6 +18,8 @@
       href: advisor-performance-recommendations.md
     - name: Сокращение затрат на службы
       href: advisor-cost-recommendations.md
+    - name: Достижение максимальной эффективности операционных процессов
+      href: advisor-operational-excellence-recommendations.md
     - name: Настройка рекомендаций
       href: view-recommendations.md
     - name: Разрешения и блокировка действий

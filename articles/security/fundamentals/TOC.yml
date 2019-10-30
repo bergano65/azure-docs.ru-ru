@@ -1,5 +1,5 @@
 - name: Базовая документация
-  href: index.md
+  href: index.yml
 - name: Архитектура и разработка
   href: overview.md
   expanded: false
@@ -40,7 +40,8 @@
           href: data-encryption-best-practices.md
         - name: Шифрование неактивных данных
           href: encryption-atrest.md
-        - name: Шифрование дисков Azure для виртуальных машин и масштабируемых наборов виртуальных машин
+        - name: Шифрование дисков Azure для виртуальных машин
+          displayName: virtual machines and virtual machine scale sets
           href: azure-disk-encryption-vms-vmss.md
     - name: Руководство по обеспечению безопасности службы хранилища
       href: 'https://docs.microsoft.com/azure/storage/common/storage-security-guide?toc=/azure/security/toc.json&bc=/azure/security/breadcrumb/toc.json'

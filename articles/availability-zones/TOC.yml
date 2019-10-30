@@ -8,9 +8,9 @@
   items:
     - name: Обеспечение высокой доступности для приложений Azure
       href: 'https://docs.microsoft.com/azure/architecture/resiliency/high-availability-azure-applications'
-    - name: Документация по зонам доступности
+    - name: Документация по Зонам доступности
       items:
-        - name: Общие сведения о зонах доступности
+        - name: Общие сведения о Зонах доступности
           href: az-overview.md
         - name: Виртуальные машины
           items:
@@ -26,34 +26,34 @@
               href: '../virtual-machines/linux/add-disk.md#use-managed-disks'
             - name: Добавление управляемого диска в Зоны доступности с помощью PowerShell
               href: '../virtual-machines/windows/attach-disk-ps.md#add-an-empty-data-disk-to-a-virtual-machine'
-        - name: наборы для масштабирования виртуальных машин
+        - name: Масштабируемые наборы виртуальных машин
           items:
             - name: Создание масштабируемого набора в зоне доступности
               href: ../virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones.md
         - name: Load Balancer
           items:
-            - name: Что такое балансировщик нагрузки?
+            - name: Что такое Load Balancer?
               href: ../load-balancer/load-balancer-standard-overview.md
-            - name: Подсистема балансировки нагрузки уровня "Стандартный" и Зоны доступности
+            - name: Load Balancer (цен. категория "Стандартный") и Зоны доступности
               href: ../load-balancer/load-balancer-standard-availability-zones.md
-            - name: Создание избыточной в пределах зоны общедоступной службы Azure Load Balancer уровня "Стандартный"
+            - name: Создание избыточной в пределах зоны общедоступной службы Load Balancer (цен. категория "Стандартный")
               href: ../load-balancer/load-balancer-get-started-internet-az-portal.md
               items:
-                - name: Создание избыточной в пределах зоны общедоступной службы Azure Load Balancer уровня "Стандартный" (PowerShell)
+                - name: Создание избыточной в пределах зоны общедоступной службы Load Balancer (цен. категория "Стандартный") (PowerShell)
                   href: ../load-balancer/load-balancer-get-started-internet-az-powershell.md
-                - name: Создание избыточной в пределах зоны общедоступной службы Azure Load Balancer уровня "Стандартный" (CLI)
+                - name: Создание избыточной в пределах зоны общедоступной службы Load Balancer (цен. категория "Стандартный") (CLI)
                   href: ../load-balancer/load-balancer-get-started-internet-az-cli.md
-            - name: Создание зональной общедоступной службы Azure Load Balancer уровня "Стандартный"
+            - name: Создание зональной общедоступной службы Load Balancer (цен. категория "Стандартный")
               href: ../load-balancer/load-balancer-get-started-internet-availability-zones-zonal-portal.md
               items:
-                - name: Создание зональной общедоступной службы Azure Load Balancer уровня "Стандартный" (PowerShell)
+                - name: Создание зональной общедоступной службы Load Balancer (цен. категория "Стандартный") (PowerShell)
                   href: ../load-balancer/load-balancer-get-started-internet-availability-zones-zonal-powershell.md
-                - name: Создание зональной общедоступной службы Azure Load Balancer уровня "Стандартный" (CLI)
+                - name: Создание зональной общедоступной службы Load Balancer (цен. категория "Стандартный") (CLI)
                   href: ../load-balancer/load-balancer-get-started-internet-availability-zones-zonal-cli.md
-            - name: Балансировка нагрузки виртуальных машин в пределах зон доступности
+            - name: Распределение нагрузки виртуальных машин в пределах зон доступности
               href: ../load-balancer/load-balancer-standard-public-availability-zones-portal.md
               items:
-                - name: "Балансировка нагрузки виртуальных машин в пределах зон доступности с помощью Azure\_CLI"
+                - name: "Распределение нагрузки виртуальных машин в пределах зон доступности с помощью Azure\_CLI"
                   href: ../load-balancer/load-balancer-standard-public-zone-redundant-cli.md
         - name: Общедоступный IP-адрес
           href: '../virtual-network/virtual-network-public-ip-address.md#create-a-public-ip-address'
@@ -61,17 +61,17 @@
           items:
             - name: Использование зон доступности с Базой данных SQL
               href: '../sql-database/sql-database-high-availability.md#zone-redundant-configuration'
-        - name: Хранилище
+        - name: Служба хранилища
           items:
             - name: 'Хранилище, избыточное между зонами'
               href: ../storage/common/storage-redundancy-zrs.md
-        - name: Центры событий;
+        - name: Центры событий
           items:
             - name: Географическое аварийное восстановление в Центрах событий
               href: '../event-hubs/event-hubs-geo-dr.md#availability-zones-preview'
-        - name: Служебная шина Azure
+        - name: Служебная шина
           items:
-            - name: Географическое аварийное восстановление в Служебной шине
+            - name: Географическое аварийное восстановление в служебной шине
               href: '../service-bus-messaging/service-bus-geo-dr.md#availability-zones-preview'
         - name: VPN-шлюз
           items:
@@ -81,11 +81,15 @@
           items:
             - name: 'Создание шлюза виртуальной сети, избыточного между зонами'
               href: ../vpn-gateway/create-zone-redundant-vnet-gateway.md
+        - name: Удостоверение
+          items:
+            - name: Создание экземпляра доменных служб Azure Active Directory
+              href: ../active-directory-domain-services/tutorial-create-instance.md
 - name: Аварийное восстановление
   items:
     - name: Использование Azure Site Recovery
       href: 'https://docs.microsoft.com/azure/site-recovery/'
-- name: Служба архивации Azure
+- name: Azure Backup
   items:
     - name: Использование Azure Backup
       href: 'https://docs.microsoft.com/azure/backup/'

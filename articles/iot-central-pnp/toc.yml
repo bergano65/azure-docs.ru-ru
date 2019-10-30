@@ -8,8 +8,12 @@
       href: ../iot-central/core/overview-iot-options.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
     - name: Обзор пользовательского интерфейса
       href: ../iot-central/core/overview-iot-central-tour-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
+    - name: Подключение
+      href: ../iot-central/core/overview-iot-central-get-connected-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
+    - name: Сохранение доступа
+      href: ../iot-central/core/overview-iot-central-stay-connected-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
     - name: Преобразование
-      href: ../iot-central/core/overview-iot-central-transform.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
+      href: ../iot-central/core/overview-iot-central-transform-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
 - name: Краткие руководства
   expanded: true
   items:
@@ -23,14 +27,16 @@
       href: ../iot-central/core/quick-monitor-devices-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
 - name: Учебники
   items:
-    - name: Создание шаблона устройства Интернета вещей и управление им
-      href: ../iot-central/core/tutorial-define-iot-device-type-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
-    - name: Подключение устройства
-      href: ../iot-central/core/tutorial-connect-pnp-device-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
-    - name: "Создание шаблона устройства IoT\_Edge и управление им"
-      href: ../iot-central/core/tutorial-define-edge-device-type-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
-    - name: Подключение устройства Edge
-      href: ../iot-central/core/tutorial-add-edge-as-leaf-device.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
+    - name: Подключение
+      items:
+        - name: Создание шаблона устройства Интернета вещей и управление им
+          href: ../iot-central/core/tutorial-define-iot-device-type-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
+        - name: Подключение устройства
+          href: ../iot-central/core/tutorial-connect-pnp-device-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
+        - name: "Создание шаблона устройства IoT\_Edge и управление им"
+          href: ../iot-central/core/tutorial-define-edge-device-type-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
+        - name: "Подключение устройства IoT\_Edge"
+          href: ../iot-central/core/tutorial-add-edge-as-leaf-device.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
     - name: Преобразование
       items:
         - name: Создание правила
@@ -41,8 +47,8 @@
   items:
     - name: Архитектура
       href: ../iot-central/core/concepts-architecture-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
-    - name: Возможность подключения
-      href: ../iot-central/core/concepts-connectivity-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
+    - name: Что представляют собой шаблоны приложений?
+      href: ../iot-central/core/concepts-app-templates.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
 - name: Руководства
   items:
     - name: Подключение устройств

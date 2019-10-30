@@ -54,6 +54,8 @@
       href: ../azure-resource-manager/resource-manager-keyvault-parameter.md
     - name: Настройка смены ключей и аудита
       href: key-vault-key-rotation-log-monitoring.md
+    - name: Мониторинг событий Key Vault с помощью службы "Сетка событий"
+      href: event-grid-overview.md
 - name: Примеры
   items:
     - name: Примеры кода
@@ -74,6 +76,8 @@
           href: key-vault-security-controls.md
     - name: Обратимое удаление
       href: key-vault-ovw-soft-delete.md
+    - name: Мониторинг событий Key Vault
+      href: event-grid-overview.md
     - name: Регулирование
       href: key-vault-ovw-throttling.md
     - name: Конечные точки службы для виртуальной сети
@@ -104,6 +108,8 @@
           href: managed-identity.md
         - name: Использование политики управления доступом
           href: key-vault-group-permissions-for-apps.md
+    - name: Маршрутизация уведомлений о хранилище ключей с помощью службы "Сетка событий"
+      href: event-grid-tutorial.md
     - name: Ведение журнала Azure Key Vault
       href: key-vault-logging.md
     - name: Доступ за брандмауэрами

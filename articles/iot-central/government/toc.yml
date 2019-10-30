@@ -6,14 +6,12 @@
       href: overview-iot-central-government.md
 - name: Учебники
   items:
-    - name: "Аналитика магазина\_— оформление заказа"
-      items:
-        - name: Создание приложения для интеллектуального управления отходами
-          href: tutorial-connected-waste-management.md
-        - name: Создание приложения для мониторинга потребления воды
-          href: tutorial-water-consumption-monitoring.md
-        - name: Создание приложения для мониторинга качества воды
-          href: tutorial-water-quality-monitoring.md
+    - name: Создание приложения для интеллектуального управления отходами
+      href: tutorial-connected-waste-management.md
+    - name: Создание приложения для мониторинга потребления воды
+      href: tutorial-water-consumption-monitoring.md
+    - name: Создание приложения для мониторинга качества воды
+      href: tutorial-water-quality-monitoring.md
 - name: Основные понятия
   items:
     - name: Эталонная архитектура решения для интеллектуального мониторинга отходов
@@ -22,10 +20,10 @@
       href: concepts-waterconsumptionmonitoring-architecture.md
     - name: Эталонная архитектура решения для мониторинга качества воды
       href: concepts-waterqualitymonitoring-architecture.md
-    - name: Возможность подключения
-      href: ../core/concepts-connectivity-pnp.md?toc=/azure/iot-central/government/toc.json&bc=/azure/iot-central/government/breadcrumb/toc.json
 - name: Руководства
   items:
+    - name: Подключение приложения с помощью Dynamics 365 for Field Service
+      href: how-to-configure-connected-field-services.md
     - name: Подключение устройств
       items:
         - name: Подготовка и подключение MXChip IoT DevKit
@@ -56,8 +54,6 @@
           href: ../core/howto-export-data-pnp.md?toc=/azure/iot-central/government/toc.json&bc=/azure/iot-central/government/breadcrumb/toc.json
         - name: Создание настраиваемых правил
           href: ../core/howto-create-custom-rules.md?toc=/azure/iot-central/government/toc.json&bc=/azure/iot-central/government/breadcrumb/toc.json
-        - name: Создание пользовательских решений аналитики с помощью Databricks
-          href: ../core/howto-create-custom-analytics.md?toc=/azure/iot-central/government/toc.json&bc=/azure/iot-central/government/breadcrumb/toc.json
         - name: Создание пользовательских решений аналитики с помощью Databricks
           href: ../core/howto-create-custom-analytics.md?toc=/azure/iot-central/government/toc.json&bc=/azure/iot-central/government/breadcrumb/toc.json
     - name: Администрирование
@@ -114,8 +110,6 @@
           href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks'
 - name: Ресурсы
   items:
-    - name: Справочная документация по API
-      href: 'https://go.microsoft.com/fwlink/?linkid=2109131'
     - name: Запросы данных клиентов
       href: ../core/iot-central-customer-data-requests.md?toc=/azure/iot-central/government/toc.json&bc=/azure/iot-central/government/breadcrumb/toc.json
     - name: Поддерживаемые браузеры

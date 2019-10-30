@@ -148,6 +148,8 @@
               href: plan-migrate-adfs-password-hash-sync.md
             - name: Миграция из федерации в PTA
               href: plan-migrate-adfs-pass-through-authentication.md
+            - name: Аутентификация в облаке. Промежуточное развертывание (общедоступная предварительная версия)
+              href: how-to-connect-staged-rollout.md
         - name: Рекомендации по разработке архитектуры гибридной идентификации
           items:
             - name: Обзор рекомендаций по разработке архитектуры гибридной идентификации

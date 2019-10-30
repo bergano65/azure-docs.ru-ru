@@ -1,0 +1,103 @@
+### YamlMime:Landing
+title: Документация по основам безопасности в Azure
+summary: Узнайте, как защитить облачные решения в Azure, используя наши рекомендации и руководства.
+metadata:
+  title: Документация по основам безопасности в Azure
+  description: Узнайте, как защитить облачные решения в Azure.
+  services: security
+  ms.service: security
+  ms.subservice: fundamentals
+  ms.topic: landing-page
+  author: TerryLanfear
+  ms.author: terrylan
+  manager: rkarlin
+  ms.date: 10/28/2019
+  ms.openlocfilehash: 4744c6668de55b28725f1e1662f93030b5f61007
+  ms.sourcegitcommit: 87efc325493b1cae546e4cc4b89d9a5e3df94d31
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 10/29/2019
+  ms.locfileid: "73055917"
+landingContent:
+- title: Сведения о системе безопасности Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Введение в систему безопасности Azure
+      url: overview.md
+    - text: Технические возможности обеспечения безопасности
+      url: technical-capabilities.md
+  - linkListType: concept
+    links:
+    - text: Как корпорация Майкрософт обеспечивает безопасность инфраструктуры Azure
+      url: infrastructure.md
+- title: Начало работы
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Разделение ответственности в облаке
+      url: shared-responsibility.md
+    - text: Службы и технологии безопасности
+      url: services-technologies.md
+    - text: Встроенные средства управления безопасностью
+      url: security-controls.md
+- title: устранение рисков;
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Центр безопасности Azure
+      url: ../../security-center/security-center-intro.md
+  - linkListType: concept
+    links:
+    - text: Управление и мониторинг
+      url: management-monitoring-overview.md
+    - text: Расширенные возможности обнаружения угроз
+      url: threat-detection.md
+- title: Рекомендации по обеспечению безопасности облачных решений
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Безопасность сети
+      url: network-best-practices.md
+    - text: Рабочие нагрузки IaaS
+      url: iaas.md
+    - text: Управление удостоверениями и контроль доступа
+      url: identity-management-best-practices.md
+    - text: Безопасность базы данных
+      url: database-best-practices.md
+    - text: Развертывания PaaS
+      url: paas-deployments.md
+    - text: Шифрование и обеспечение защиты данных
+      url: data-encryption-best-practices.md
+    - text: Операционная безопасность
+      url: operational-best-practices.md
+- title: Защита ресурсов Azure
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Шифрование при хранении
+      url: encryption-atrest.md
+    - text: Защита данных
+      url: database-security-overview.md
+    - text: Безопасность сети
+      url: network-overview.md
+    - text: Защита виртуальных машин
+      url: virtual-machines-overview.md
+    - text: Безопасное управление удостоверениями
+      url: identity-management-overview.md
+  - linkListType: learn
+    links:
+    - text: Защита облачных приложений
+      url: https://docs.microsoft.com/learn/paths/secure-your-cloud-apps/
+- title: Развитие навыков обеспечения безопасности
+  linkLists:
+  - linkListType: learn
+    links:
+    - text: Реализация защиты сети
+      url: https://docs.microsoft.com/learn/paths/implement-network-security
+    - text: Управление удостоверениями и доступом
+      url: https://docs.microsoft.com/learn/paths/manage-identity-and-access
+    - text: Реализация безопасного управления ресурсами
+      url: https://docs.microsoft.com/learn/paths/implement-resource-mgmt-security
+    - text: Реализация безопасного размещения виртуальных машин
+      url: https://docs.microsoft.com/learn/paths/implement-host-security
