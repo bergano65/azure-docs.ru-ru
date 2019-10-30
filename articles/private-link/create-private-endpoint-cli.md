@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: article
 ms.date: 09/16/2019
 ms.author: kumud
-ms.openlocfilehash: 30394ba7b71d7dcb4233e5dca341dda47fd9ffa7
-ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
+ms.openlocfilehash: 477f7d4824d3165357228d200dca9e556a072744
+ms.sourcegitcommit: 87efc325493b1cae546e4cc4b89d9a5e3df94d31
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72376317"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73053511"
 ---
 # <a name="create-a-private-endpoint-using-azure-cli"></a>Создание частной конечной точки с помощью Azure CLI
 Частная конечная точка — это фундаментальный Стандартный блок для частной ссылки в Azure. Она позволяет ресурсам Azure, таким как виртуальные машины, обмениваться данными с частными ресурсами. В этом кратком руководстве вы узнаете, как создать виртуальную машину в виртуальной сети, сервере базы данных SQL с частной конечной точкой, использующей Azure CLI. Затем вы можете получить доступ к виртуальной машине и получить безопасный доступ к ресурсу частной ссылки (в этом примере это частный сервер базы данных SQL Azure). 
@@ -39,7 +39,7 @@ az network vnet create \
  --subnet-name mySubnet
 ```
 ## <a name="disable-subnet-private-endpoint-policies"></a>Отключить политики частной конечной точки подсети 
-Azure развертывает ресурсы в подсеть в виртуальной сети, поэтому необходимо создать или обновить подсеть, чтобы отключить политики сети частной конечной точки. Обновите конфигурацию подсети с именем *mySubnet* with [AZ Network vnet подсети Update](https://docs.microsoft.com/cli/azure/network/vnet/subnet?view=azure-cli-latest#az-network-vnet-subnet-update):
+Azure развертывает ресурсы в подсеть в виртуальной сети, поэтому необходимо создать или обновить подсеть, чтобы отключить политики сети частной конечной точки. Обновите конфигурацию подсети с именем *mySubnet* , выполнив [Обновление для подсети AZ Network vnet](https://docs.microsoft.com/cli/azure/network/vnet/subnet?view=azure-cli-latest#az-network-vnet-subnet-update):
 
 ```azurecli-interactive
 az network vnet subnet update \
@@ -49,7 +49,7 @@ az network vnet subnet update \
  --disable-private-endpoint-network-policies true
 ```
 ## <a name="create-the-vm"></a>Создание виртуальной машины 
-Создайте виртуальную машину с помощью команды AZ VM Create. При появлении запроса введите пароль, который будет использоваться в качестве учетных данных для входа для виртуальной машины. В этом примере создается виртуальная машина с именем *myVm*: 
+Создайте виртуальную машину с помощью команды AZ VM Create. При появлении запроса введите пароль, который будет использоваться в качестве учетных данных для входа для виртуальной машины. В этом примере создается виртуальная машина с именем *myVm*: 
 ```azurecli-interactive
 az vm create \
   --resource-group myResourceGroup \
@@ -81,7 +81,7 @@ az sql db create \
     --capacity 1 
 ```
 
-Обратите внимание, что идентификатор SQL Server похож на параметр @ no__t-0. на следующем шаге будет использоваться идентификатор SQL Server. 
+Обратите внимание, что идентификатор SQL Server похож на ```/subscriptions/subscriptionId/resourceGroups/myResourceGroup/providers/Microsoft.Sql/servers/myserver.``` вы будете использовать идентификатор SQL Server на следующем шаге. 
 
 ## <a name="create-the-private-endpoint"></a>Создание частной конечной точки 
 Создайте частную конечную точку для сервера базы данных SQL в виртуальной сети. 
@@ -148,8 +148,8 @@ az network private-dns record-set a add-record --record-set-name myserver --zone
 
 В этом разделе вы будете подключаться к серверу базы данных SQL из виртуальной машины с помощью частной конечной точки.
 
- 1. На удаленном рабочем столе  *myVm* откройте PowerShell.
- 2. Введите nslookup MyServer. Database. Windows. NET @ no__t-0. Вы получите примерно следующее сообщение: 
+ 1. В удаленный рабочий стол *myVM*откройте PowerShell.
+ 2. Введите nslookup myserver.database.windows.net  вы получите примерно следующее сообщение: 
 
 ```
       Server:  UnKnown 
@@ -165,7 +165,7 @@ az network private-dns record-set a add-record --record-set-name myserver --zone
  Пароль. Введите пароль, указанный во время создания.
  Запомнить пароль: выберите Да.
  
- 5. Выберите  **Подключение**.
+ 5. Нажмите кнопку **Подключиться**.
  6. Просмотр **баз данных** из левого меню.
  7. При необходимости Создание или запрос информации из *MyDatabase*
  8. Закройте подключение к удаленному рабочему столу *myVm*.

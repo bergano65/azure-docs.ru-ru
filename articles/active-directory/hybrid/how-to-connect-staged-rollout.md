@@ -10,12 +10,12 @@ ms.date: 10/28/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 254fa924ea2104e76a475c106f16f4672dd1eec1
-ms.sourcegitcommit: d47a30e54c5c9e65255f7ef3f7194a07931c27df
+ms.openlocfilehash: 9c8f4250d2df7703ad2960c2d68cd015cb6ec2bc
+ms.sourcegitcommit: 87efc325493b1cae546e4cc4b89d9a5e3df94d31
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/29/2019
-ms.locfileid: "73033320"
+ms.locfileid: "73052877"
 ---
 # <a name="cloud-authentication-staged-rollout-public-preview"></a>Облачная аутентификация: промежуточное развертывание (общедоступная Предварительная версия)
 
@@ -80,6 +80,8 @@ ms.locfileid: "73033320"
 ## <a name="get-started-with-staged-rollout"></a>Приступая к работе с промежуточным развертыванием
 
 Если вы хотите протестировать вход с использованием синхронизации хэшей паролей (PHS) с помощью промежуточного развертывания, выполните приведенную ниже предварительную работу, чтобы включить синхронизацию хэша паролей в промежуточном виде.
+
+Дополнительные сведения об используемых командлетах PowerShell см. в разделе [AzureAD 2,0 Preview](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0-preview#staged_rollout)
 
 ## <a name="pre-work-for-password-hash-sync"></a>Предварительная работа для синхронизации хэша паролей
 
@@ -239,3 +241,6 @@ ms.locfileid: "73033320"
 -   **Вопрос. можно ли использовать PowerShell для выполнения промежуточного развертывания?**
 
 -   Ответ. Да, ознакомьтесь с документацией по использованию PowerShell для выполнения промежуточного развертывания.
+
+## <a name="next-steps"></a>Следующие шаги
+- [Предварительная версия AzureAD 2,0](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0-preview#staged_rollout )

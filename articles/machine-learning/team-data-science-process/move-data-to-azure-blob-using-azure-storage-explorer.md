@@ -1,6 +1,6 @@
 ---
 title: Перемещение данных хранилища больших двоичных объектов с помощью обозревателя службы хранилища Azure — командный процесс обработки и анализа данных
-description: Перемещение данных в хранилище больших двоичных объектов Azure и из него с помощью обозревателя хранилищ Azure
+description: Узнайте, как использовать Обозреватель службы хранилища Azure для отправки и скачивания данных из хранилища BLOB-объектов Azure.
 services: machine-learning
 author: marktab
 manager: cgronlun
@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 11/04/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 8ec4289c641b3f140950575ac2f8016f894f2c9c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 880b81c07aeed7359dfe35e1361a20ecb11e27dd
+ms.sourcegitcommit: 87efc325493b1cae546e4cc4b89d9a5e3df94d31
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61430821"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73053953"
 ---
 # <a name="move-data-to-and-from-azure-blob-storage-using-azure-storage-explorer"></a>Перемещение данных в хранилище BLOB-объектов Azure и из него с помощью Azure Storage Explorer
 Azure Storage Explorer — это бесплатный инструмент от корпорации Майкрософт, позволяющий визуально работать с данными из службы хранилища Azure на платформе Windows, MacOS и Linux. В этом разделе описывается, как использовать этот инструмент для передачи и скачивания данных из хранилища BLOB-объектов Azure. Этот инструмент можно скачать с сайта [Microsoft Azure Storage Explorer](https://storageexplorer.com/).

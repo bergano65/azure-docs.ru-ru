@@ -1,6 +1,6 @@
 ---
 title: Жизненный цикл процесса обработки и анализа данных группы
-description: Порядок выполнения проектов по обработке и анализу данных
+description: Процесс обработки и анализа данных группы (TDSP) выполняется в рамках рекомендуемого жизненного цикла, позволяя структурировать проекты по обработке и анализу данных.
 services: machine-learning
 author: marktab
 manager: cgronlun
@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 11/04/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 40d1af6e6258b5026853532f7963a76d4fc389db
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 00efe89314d4a1a5c3302e820b8609adf194aa59
+ms.sourcegitcommit: 87efc325493b1cae546e4cc4b89d9a5e3df94d31
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60837900"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73053238"
 ---
 # <a name="the-team-data-science-process-lifecycle"></a>Жизненный цикл процесса обработки и анализа данных группы
 
@@ -43,9 +43,9 @@ ms.locfileid: "60837900"
 
 Для каждого этапа предоставляется следующая информация.
 
-   * **Цели** — определенные задачи.
-   * **Способы** — структура конкретных задач и рекомендации по их выполнению.
-   * **Артефакты** — конечные результаты и поддержка их реализации.
+   * **Цели** — определенные задачи.
+   * **Способы** — структура конкретных задач и рекомендации по их выполнению.
+   * **Артефакты** — конечные результаты и поддержка их реализации.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

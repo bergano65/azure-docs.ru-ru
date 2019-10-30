@@ -1,7 +1,7 @@
 ---
 title: Высокая производительность, перекрестное определение платформы с помощью ONNX
 titleSuffix: Azure Machine Learning
-description: Дополнительные сведения о ONNX и среде выполнения ONNX для ускорения моделей
+description: Узнайте, как использовать открытый обмен нейронными сетями (ONNX) для оптимизации вывода модели машинного обучения.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,14 +11,14 @@ ms.author: prasantp
 author: prasanthpul
 ms.date: 08/15/2019
 ms.custom: seodec18
-ms.openlocfilehash: 4f6e9e6b44e4a8fcc52f6d8ae19af60d64972b3a
-ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
+ms.openlocfilehash: dc4a5984f42e87aa42c6873bb1ee63d66744e633
+ms.sourcegitcommit: 87efc325493b1cae546e4cc4b89d9a5e3df94d31
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71035406"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73053582"
 ---
-# <a name="onnx-and-azure-machine-learning-create-and-accelerate-ml-models"></a>ONNX и Машинное обучение Azure: Создание и ускорение моделей машинного обучения
+# <a name="onnx-and-azure-machine-learning-create-and-accelerate-ml-models"></a>ONNX и Машинное обучение Azure: создание и ускорение моделей машинного обучения
 
 Узнайте, как использовать [открытый обмен нейронными сетями](https://onnx.ai) (ONNX) для оптимизации вывода модели машинного обучения. Вывод или оценка модели — это этап, в котором развернутая модель используется для прогнозирования, чаще всего в рабочих данных. 
 
@@ -30,7 +30,7 @@ ms.locfileid: "71035406"
 
 Среда выполнения ONNX используется в высокомасштабируемых службах Майкрософт, таких как Bing, Office и Cognitive Services. Выигрыш в производительности зависит от ряда факторов, но эти службы Майкрософт показали __среднее увеличение производительности ЦП на 2 раза__. Среда выполнения ONNX также используется как часть Windows ML на сотнях миллионов устройств. Среду выполнения можно использовать с Машинное обучение Azure. С помощью среды выполнения ONNX вы можете воспользоваться обширными оптимизациями рабочего уровня, тестированием и текущими улучшениями.
 
-[![Схема потока ONNX, показывающая обучение, конвертеры и развертывание](media/concept-onnx/onnx.png)](./media/concept-onnx/onnx.png#lightbox)
+[![ная схема ONNX, показывающая обучение, конвертеры и развертывание](media/concept-onnx/onnx.png)](./media/concept-onnx/onnx.png#lightbox)
 
 ## <a name="get-onnx-models"></a>Получение моделей ONNX
 
@@ -84,7 +84,7 @@ results = session.run([], {"input1": indata1, "input2": indata2})
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-for-examples.md)]
 
-## <a name="more-info"></a>Дополнительная информация
+## <a name="more-info"></a>Подробнее
 
 Узнайте больше об ONNX или поддержите проект:
 + [Веб-сайт проекта ONNX](https://onnx.ai)

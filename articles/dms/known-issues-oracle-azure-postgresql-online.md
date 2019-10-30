@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.custom: mvc
 ms.topic: article
 ms.date: 10/03/2019
-ms.openlocfilehash: bc37c7cb11b973f89695b5631ec9569ff6b94608
-ms.sourcegitcommit: 4f3f502447ca8ea9b932b8b7402ce557f21ebe5a
+ms.openlocfilehash: cc7e510d9a6db93edc211799eda8df79116236a7
+ms.sourcegitcommit: 87efc325493b1cae546e4cc4b89d9a5e3df94d31
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71801792"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73053654"
 ---
 # <a name="known-issuesmigration-limitations-with-online-migrations-from-oracle-to-azure-db-for-postgresql-single-server"></a>Известные проблемы и ограничения миграции при оперативной миграции из Oracle в базу данных Azure для PostgreSQL — один сервер
 
@@ -43,11 +43,11 @@ Azure Database Migration Service поддерживает миграцию в б
 - ROWID
 - ЗНАЧ
 - UROWID
-- АНИДАТА
+- анидата
 - SDO_GEOMETRY
 - Вложенные таблицы
 - Определяемые пользователем типы данных
-- Примечания
+- Заметки
 - Виртуальные столбцы
 - Материализованные представления, основанные на столбце ROWID
 
@@ -63,7 +63,7 @@ Azure Database Migration Service поддерживает миграцию в б
 
 ## <a name="known-issues-and-limitations"></a>Известные проблемы и ограничения
 
-- Клиенты должны использовать СИСДБ для подключения к Oracle.
+- Клиенты должны использовать SYSDBA для подключения к Oracle.
 - Изменения данных, внесенные в результате операций секционирования и подраздела (Добавление, удаление, Обмен и УСЕЧЕНИЕ), не будут перенесены и могут вызвать следующие ошибки:
   - Для операций добавления операции обновления и удаления для добавленных данных могут возвращать предупреждение "0 затронутых строк".
   - При операциях удаления и УСЕЧЕНИЯ новые операции вставки могут привести к ошибкам "повторений".

@@ -6,12 +6,12 @@ ms.author: dacoulte
 ms.date: 02/01/2019
 ms.topic: conceptual
 ms.service: azure-policy
-ms.openlocfilehash: ff50619d7b3d5bc803e8ee8d9e4cbf4389a4191f
-ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
+ms.openlocfilehash: 47258f27f44b6a21c5da72e4631591e695024400
+ms.sourcegitcommit: 87efc325493b1cae546e4cc4b89d9a5e3df94d31
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71978085"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73053281"
 ---
 # <a name="get-compliance-data-of-azure-resources"></a>Получение данных о соответствии ресурсов Azure
 
@@ -49,20 +49,20 @@ ms.locfileid: "71978085"
 
 Оценочное сканирование для подписки или группы ресурсов можно запустить с помощью вызова REST API. Эта проверка является асинхронным процессом. Это означает, что запускающая процесс конечная точка REST не обязана ждать его завершения. Вместо этого она предоставляет URI для получения состояния выполняемой оценки.
 
-В каждом универсальном коде ресурса (URI) REST API есть переменные, которые необходимо заменить собственными значениями:
+В каждом универсальном коде ресурса (URI) REST API есть переменные, которые необходимо заменить собственными значениями:
 
 - `{YourRG}` — замените это значение именем своей группы ресурсов.
-- `{subscriptionId}` — замените это значение идентификатором своей подписки.
+- `{subscriptionId}` — замените это значение идентификатором своей подписки
 
 Сканирование поддерживает оценку ресурсов в подписке или группе ресурсов. Запустите сканирование для области через команду **POST** REST API, используя следующие структуры универсального кода ресурса (URI):
 
-- Подписка
+- Subscription
 
   ```http
   POST https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.PolicyInsights/policyStates/latest/triggerEvaluation?api-version=2018-07-01-preview
   ```
 
-- Группа ресурсов
+- группа ресурсов.
 
   ```http
   POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{YourRG}/providers/Microsoft.PolicyInsights/policyStates/latest/triggerEvaluation?api-version=2018-07-01-preview
@@ -87,12 +87,12 @@ https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.
 В назначении ресурс **не соответствует требованиям**, если он не соответствует правилам политики или инициативы.
 В следующей таблице показано, как действуют разные политики в сочетании с оценкой условий для определения итогового состояния соответствия.
 
-| Состояние ресурса | Эффект | Оценка политики | Состояние соответствия |
+| Состояние ресурса | Результат | Оценка политики | Состояние соответствия |
 | --- | --- | --- | --- |
-| Exists | Deny, Audit, Append\*, DeployIfNotExist\*, AuditIfNotExist\* | True | Не соответствует |
-| Exists | Deny, Audit, Append\*, DeployIfNotExist\*, AuditIfNotExist\* | Ложь | Соответствует |
-| Оператор new | Audit, AuditIfNotExist\* | True | Не соответствует |
-| Оператор new | Audit, AuditIfNotExist\* | Ложь | Соответствует |
+| Exists | Deny, Audit, Append\*, DeployIfNotExist\*, AuditIfNotExist\* | Да | Не соответствует |
+| Exists | Deny, Audit, Append\*, DeployIfNotExist\*, AuditIfNotExist\* | Нет | Соответствие нормативам |
+| Новинка | Audit, AuditIfNotExist\* | Да | Не соответствует |
+| Новинка | Audit, AuditIfNotExist\* | Нет | Соответствие нормативам |
 
 \*Для эффектов Append, DeployIfNotExist и AuditIfNotExist требуется, чтобы оператор IF имел значение TRUE.
 Эффекты также требуют, чтобы условие существования FALSE было несоответствующим. Когда установлено значение TRUE, условие IF запускает оценку условия существования для связанных ресурсов.
@@ -107,9 +107,9 @@ https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.
 
 Помимо состояний **Соответствует** и **Не соответствует**, к политикам и ресурсам применяются три других состояния:
 
-- **Конфликтует**. Существуют двое или более политик с конфликтующими правилами. Например, две политики, добавив один и тот же тег с разными значениями.
-- **Не запущен**. Цикл оценки не запущен для политики или ресурса.
-- **Не зарегистрирован**. Поставщик ресурсов Политики Azure не зарегистрирован или выполнившая вход учетная запись не имеет разрешения на чтение данных о соответствии.
+- **Конфликт**: существует две или более политики с конфликтующими правилами. Например, две политики, добавив один и тот же тег с разными значениями.
+- **Не запущено**: цикл оценки для политики или ресурса не запущен.
+- **Не зарегистрировано**: поставщик ресурсов политики Azure не зарегистрирован, или учетная запись не имеет разрешения на чтение данных соответствия.
 
 Политика Azure использует поля **тип** и **имя** в определении, чтобы определить, является ли ресурс соответствующим. Если ресурс совпадает, он считается применимым и будет иметь состояние **Соответствует** или **Не соответствует**. Если **Тип** или **Имя** является единственным свойством в определении, приемлемыми и подлежащими оценке считаются все ресурсы.
 
@@ -118,7 +118,7 @@ _Общее количество ресурсов_ определяется ка
 
 ![Пример соответствия политики на странице соответствия требованиям](../media/getting-compliance-data/simple-compliance.png)
 
-## <a name="portal"></a>Портал
+## <a name="portal"></a>Microsoft Azure
 
 На портале Azure можно ознакомиться с процессом визуализации и оценки состояния соответствия в вашей среде. На странице **Политика** параметр **Обзор** предоставляет сведения о соответствии для доступных областей в рамках соответствия для политик и инициатив. В дополнение к состоянию соответствия и числу на каждое назначение, в нем содержится диаграмма, отображающая соответствие за последние семь дней. На странице **Соответствие** содержится большая часть этой информации (за исключением диаграммы), а также предоставляются дополнительные возможности фильтрации и сортировки.
 
@@ -145,32 +145,10 @@ _Общее количество ресурсов_ определяется ка
 
 ## <a name="command-line"></a>Командная строка
 
-Те же сведения, которые доступны на портале, можно получить с помощью REST API (включая [ARMClient](https://github.com/projectkudu/ARMClient)) или Azure PowerShell. Полные сведения о REST API см. в справочнике по [политикам Azure](/rest/api/policy-insights/) . На страницах справки по REST API есть зеленая кнопка "Попробовать" для каждой операции, которую можно опробовать непосредственно в браузере.
+Те же сведения, которые доступны на портале, можно получить с помощью REST API (включая [ARMClient](https://github.com/projectkudu/ARMClient)), Azure PowerShell и Azure CLI (Предварительная версия).
+Полные сведения о REST API см. в справочнике по [политикам Azure](/rest/api/policy-insights/) . На страницах справки по REST API есть зеленая кнопка "Попробовать" для каждой операции, которую можно опробовать непосредственно в браузере.
 
-Для использования следующих примеров в Azure PowerShell создайте маркер проверки подлинности с помощью приведенного примера кода. Затем замените $restUri требуемой строкой из примеров, чтобы получить объект JSON для последующего анализа.
-
-```azurepowershell-interactive
-# Login first with Connect-AzAccount if not using Cloud Shell
-
-$azContext = Get-AzContext
-$azProfile = [Microsoft.Azure.Commands.Common.Authentication.Abstractions.AzureRmProfileProvider]::Instance.Profile
-$profileClient = New-Object -TypeName Microsoft.Azure.Commands.ResourceManager.Common.RMProfileClient -ArgumentList ($azProfile)
-$token = $profileClient.AcquireAccessToken($azContext.Subscription.TenantId)
-$authHeader = @{
-    'Content-Type'='application/json'
-    'Authorization'='Bearer ' + $token.AccessToken
-}
-
-# Define the REST API to communicate with
-# Use double quotes for $restUri as some endpoints take strings passed in single quotes
-$restUri = "https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.PolicyInsights/policyStates/latest/summarize?api-version=2018-04-04"
-
-# Invoke the REST API
-$response = Invoke-RestMethod -Uri $restUri -Method POST -Headers $authHeader
-
-# View the response object (as JSON)
-$response
-```
+Используйте ARMClient или аналогичное средство для управления проверкой подлинности в Azure для REST API примеров.
 
 ### <a name="summarize-results"></a>Суммирование результатов
 
@@ -262,7 +240,7 @@ https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.
 }
 ```
 
-### <a name="view-events"></a>Просмотр событий
+### <a name="view-events"></a>Просмотреть события
 
 После создания или обновления ресурса создается результат оценки политики. Такие результаты называются _событиями политики_. Чтобы просмотреть последние события политики, связанные с подпиской, используйте следующий URI.
 
@@ -312,7 +290,7 @@ Connect-AzAccount
 - `Start-AzPolicyRemediation`
 - `Stop-AzPolicyRemediation`
 
-Пример: Получение сводки состояния для приоритетной назначенной политики с наибольшим числом несоответствующих ресурсов.
+Пример. Получение сводки состояния для приоритетной назначенной политики с наибольшим числом несоответствующих ресурсов.
 
 ```azurepowershell-interactive
 PS> Get-AzPolicyStateSummary -Top 1
@@ -323,7 +301,7 @@ PolicyAssignments     : {/subscriptions/{subscriptionId}/resourcegroups/RG-Tags/
                         oft.authorization/policyassignments/37ce239ae4304622914f0c77}
 ```
 
-Пример: Получение записи состояния для последнего оцененного ресурса (по умолчанию — по меткам времени в порядке убывания).
+Пример. Получение записи состояния для последнего оцененного ресурса (по умолчанию — по меткам времени в порядке убывания).
 
 ```azurepowershell-interactive
 PS> Get-AzPolicyState -Top 1
@@ -349,7 +327,7 @@ PolicyDefinitionAction     : deny
 PolicyDefinitionCategory   : tbd
 ```
 
-Пример: Получение сведений для всех несоответствующих ресурсов виртуальной сети.
+Пример. Получение сведений для всех несоответствующих ресурсов виртуальной сети.
 
 ```azurepowershell-interactive
 PS> Get-AzPolicyState -Filter "ResourceType eq '/Microsoft.Network/virtualNetworks'"
@@ -375,7 +353,7 @@ PolicyDefinitionAction     : deny
 PolicyDefinitionCategory   : tbd
 ```
 
-Пример: Получение событий, связанных с несоответствующими ресурсами виртуальной сети и произошедших после указанной даты.
+Пример. Получение событий, связанных с несоответствующими ресурсами виртуальной сети и произошедших после указанной даты.
 
 ```azurepowershell-interactive
 PS> Get-AzPolicyEvent -Filter "ResourceType eq '/Microsoft.Network/virtualNetworks'" -From '2018-05-19'
@@ -417,7 +395,7 @@ Trent Baker
 
 ![Соответствие политики Azure с помощью журналов Azure Monitor](../media/getting-compliance-data/compliance-loganalytics.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Просмотрите примеры в [примерах политики Azure](../samples/index.md).
 - Изучите статью о [структуре определения Политики Azure](../concepts/definition-structure.md).

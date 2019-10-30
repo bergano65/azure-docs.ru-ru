@@ -1,6 +1,6 @@
 ---
 title: Перемещение данных в хранилище BLOB-объектов Azure и из него — процесс обработки и анализа данных группы
-description: Перемещение данных в хранилище BLOB-объектов Azure и из него
+description: Перемещение данных в хранилище BLOB-объектов Azure и из него с помощью Обозреватель службы хранилища Azure, AzCopy, Python и SSIS.
 services: machine-learning
 author: marktab
 manager: cgronlun
@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 11/04/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 7b45f9950ef63bc29d23d78d20909f223cb30350
-ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
+ms.openlocfilehash: d885a7fad6e958507e7d9df34bd2b1fb222c6f86
+ms.sourcegitcommit: 87efc325493b1cae546e4cc4b89d9a5e3df94d31
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69998163"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73053660"
 ---
 # <a name="move-data-to-and-from-azure-blob-storage"></a>Перемещение данных в хранилище BLOB-объектов Azure и из него
 
@@ -49,7 +49,7 @@ ms.locfileid: "69998163"
 
 Дополнительные сведения см. в статье [Создание прогнозных конвейеров с помощью действий Машинного обучения Azure](../../data-factory/transform-data-using-machine-learning.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Для выполнения инструкций из этой статьи у вас должна быть подписка Azure, учетная запись хранения и соответствующий ключ к хранилищу данных для этой учетной записи. Чтобы отправлять и скачивать данные, необходимо знать имя учетной записи хранения Azure и ее ключ.
 
 * Сведения о настройке подписки Azure см. на странице [Создайте бесплатную учетную запись Azure уже сегодня](https://azure.microsoft.com/pricing/free-trial/).
