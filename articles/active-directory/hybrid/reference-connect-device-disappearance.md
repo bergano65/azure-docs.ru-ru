@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 09/25/2019
 ms.subservice: hybrid
 ms.author: billmath
-ms.openlocfilehash: b0ef3dd2f39802d07c4ae04ad1eca23e40db502a
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.openlocfilehash: bc159452c81a673ca4a7ed46aa7eff19fd9209eb
+ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71345503"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73176023"
 ---
 # <a name="understanding-azure-ad-connect-14xxx-and-device-disappearance"></a>Основные сведения об Azure AD Connect 1.4. XX. x и о выявление устройства
 При использовании версии 1.4. XX. x Azure AD Connect некоторые клиенты могут увидеть некоторые или все их устройства с Windows, которые исчезают из Azure AD. Это не является причиной проблемы, так как эти удостоверения устройств не используются Azure AD во время авторизации условного доступа. Это изменение не приведет к удалению устройств Windows, которые были правильно зарегистрированы в Azure AD для гибридного присоединение к Azure AD.
@@ -33,7 +33,7 @@ ms.locfileid: "71345503"
 ## <a name="down-level-windows-devices"></a>Устройства Windows нижнего уровня
 Azure AD Connect никогда не должны синхронизировать [устройства Windows нижнего уровня](../devices/hybrid-azuread-join-plan.md#windows-down-level-devices). Все устройства в Azure AD, которые ранее были синхронизированы неправильно, теперь будут удалены из Azure AD. Если Azure AD Connect пытается удалить [устройства Windows нижнего уровня](../devices/hybrid-azuread-join-plan.md#windows-down-level-devices), это значит, что устройство не создано в [Microsoft Workplace Join для MSI-компьютеров, отличных от Windows 10](https://www.microsoft.com/download/details.aspx?id=53554) , и не может использоваться какой-либо другой функцией Azure AD.
 
-Некоторым клиентам может потребоваться перейти [к следующим инструкциям: Спланируйте реализацию](../devices/hybrid-azuread-join-plan.md) гибридного Azure Active Directory JOIN, чтобы правильно зарегистрировать устройства Windows и убедиться, что такие устройства могут полностью участвовать в условном доступе на основе устройств. 
+Некоторым клиентам может потребоваться перейти к следующему [плану: планирование реализации гибридного Azure Active Directory Join](../devices/hybrid-azuread-join-plan.md) , чтобы правильно зарегистрировать устройства Windows и убедиться, что такие устройства могут полностью участвовать в условном доступе на основе устройств. 
 
 ## <a name="how-can-i-verify-which-devices-are-deleted-with-this-update"></a>Как проверить, какие устройства удаляются с помощью этого обновления?
 

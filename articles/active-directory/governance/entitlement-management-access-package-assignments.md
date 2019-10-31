@@ -1,6 +1,6 @@
 ---
-title: Просмотр, Добавление и удаление назначений для пакета Access в управлении назначением Azure AD (Предварительная версия) — Azure Active Directory
-description: Узнайте, как просматривать, добавлять и удалять назначения для пакета Access в Azure Active Directory управления назначением (Предварительная версия).
+title: Просмотр, Добавление и удаление назначений для пакета Access в управлении назначением Azure AD. Azure Active Directory
+description: Сведения о просмотре, добавлении и удалении назначений для пакета Access в Azure Active Directory управлении обслуживанием.
 services: active-directory
 documentationCenter: ''
 author: msaburnley
@@ -16,19 +16,14 @@ ms.date: 10/15/2019
 ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a20ff526ba00f5b6521198122972071360bb58d6
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 3f06da43e758c24da65664b34dd83f876a00e3a0
+ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72934495"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73174912"
 ---
-# <a name="view-add-and-remove-assignments-for-an-access-package-in-azure-ad-entitlement-management-preview"></a>Просмотр, Добавление и удаление назначений для пакета Access в управлении назначением Azure AD (Предварительная версия)
-
-> [!IMPORTANT]
-> Управление правами Azure Active Directory (Azure AD) сейчас предоставляется в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
-> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+# <a name="view-add-and-remove-assignments-for-an-access-package-in-azure-ad-entitlement-management"></a>Просмотр, Добавление и удаление назначений для пакета Access в управлении назначением Azure AD
 
 В разделе Управление назначением Azure AD можно увидеть, кто назначен для пакетов доступа, их политику и состояние. Если у пакета доступа есть соответствующая политика, можно также напрямую назначить пользователя пакету доступа. В этой статье описывается просмотр, Добавление и удаление назначений для пакетов доступа.
 

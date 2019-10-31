@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b1d463bc889385f8f157ebb9892acc7a4a8b2a2e
-ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
+ms.openlocfilehash: 661afc08c76c6cde61b02a29a55b4a8bec932e21
+ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68278564"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73175797"
 ---
 # <a name="troubleshooting-conditional-access-using-the-what-if-tool"></a>Устранение неполадок условного доступа с помощью средства What If
 
@@ -26,6 +26,9 @@ ms.locfileid: "68278564"
 
 ![Средство What If условного доступа в состоянии по умолчанию](./media/troubleshoot-conditional-access-what-if/conditional-access-what-if-tool.png)
 
+> [!NOTE]
+> В настоящее время средство What If не оценивает политики в режиме «только отчет».
+
 ## <a name="gathering-information"></a>Сбор сведений
 
 Для начала работы средства What If требуется только **пользователь** . 
@@ -34,7 +37,7 @@ ms.locfileid: "68278564"
 
 * Облачные приложения или действия
 * IP-адрес 
-* Country
+* Страна
 * Платформа устройства
 * Клиентские приложения (Предварительная версия)
 * Состояние устройства (Предварительная версия) 
@@ -70,9 +73,9 @@ ms.locfileid: "68278564"
 
 Этот тест можно расширить, чтобы включить другие точки данных для ограничения области.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Что такое условный доступ?](overview.md)
 * [Что такое Защита идентификации Azure Active Directory?](../identity-protection/overview-v2.md)
 * [Что такое удостоверение устройства?](../devices/overview.md)
-* [Принцип работы. Многофакторной идентификации Azure](../authentication/concept-mfa-howitworks.md).
+* [Как это работает: служба Многофакторной идентификации Azure](../authentication/concept-mfa-howitworks.md)

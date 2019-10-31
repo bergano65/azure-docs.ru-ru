@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 10/09/2019
 ms.author: victorh
-ms.openlocfilehash: 72549a2df3490344987567d1e62c65f76f151097
-ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
+ms.openlocfilehash: 7b9cbd4e84f60b42e8eb6cb250a9b25f398fd4a0
+ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72693268"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73176448"
 ---
 # <a name="back-end-health-and-diagnostic-logs-for-application-gateway"></a>Журналы работоспособности и диагностики серверной части для шлюза приложений
 
@@ -216,7 +216,7 @@ az network application-gateway show-backend-health --resource-group AdatumAppGat
 |timeTaken| Время (в миллисекундах), необходимое для обработки запроса и отправки ответа. Вычисляется как промежуток времени от момента, когда шлюз приложений получает первый байт HTTP-запроса, до завершения отправки ответа. Важно отметить, что в поле Time-Taken обычно указывается время передачи пакетов запросов и ответов по сети. |
 |sslEnabled| Определяет, используется ли SSL для обмена данными с внутренними пулами. Допустимые значения: on и off.|
 |сслЦифер| Набор шифров, используемый для связи SSL (если включен протокол SSL).|
-|сслпротокол| Используемый протокол SSL (если протокол SSL включен).|
+|сслпротокол| Используемый протокол SSL/TLS (если протокол SSL включен).|
 |серверраутед| Внутренний сервер, на который шлюз приложений направляет запрос.|
 |serverStatus| Код состояния HTTP внутреннего сервера.|
 |серверреспонселатенци| Задержка ответа от внутреннего сервера.|

@@ -11,14 +11,14 @@ ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 01/09/2017
+ms.date: 11/04/2019
 ms.author: apimpm
-ms.openlocfilehash: efb668971bc4a8c5a0968836aab71107aa6b88d5
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: d635950c8b34986cd5824660166017317948cbd8
+ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70072651"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73176909"
 ---
 # <a name="application-templates-in-azure-api-management"></a>Шаблоны приложений в службе управления API Azure
 Служба управления API Azure позволяет настраивать содержимое страниц портала разработчика с помощью набора шаблонов. С помощью синтаксиса [DotLiquid](http://dotliquidmarkup.org/), выбранного редактора, например [DotLiquid для разработчиков](https://github.com/dotliquid/dotliquid/wiki/DotLiquid-for-Designers), и указанного набора локализованных [строковых ресурсов](api-management-template-resources.md#strings), [ресурсов глифов](api-management-template-resources.md#glyphs), а также [элементов управления на странице](api-management-page-controls.md) можно гибко настраивать содержимое страниц по своему усмотрению с использованием этих шаблонов.  
@@ -32,12 +32,14 @@ ms.locfileid: "70072651"
 > [!NOTE]
 >  Примеры шаблонов по умолчанию включены в следующую документацию, но могут в любой момент измениться, так как ведется постоянная работа по их улучшению. Актуальные шаблоны по умолчанию можно просмотреть на портале разработчика, перейдя к требуемому отдельному шаблону. Дополнительные сведения о работе с шаблонами см. в статье [Настройка портала разработчика в службе управления API Azure с помощью шаблонов](https://azure.microsoft.com/documentation/articles/api-management-developer-portal-templates/).  
 
+[!INCLUDE [api-management-portal-legacy.md](../../includes/api-management-portal-legacy.md)]
+
 [!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
   
 ##  <a name="ProductList"></a> Список приложений  
  Шаблон **списка приложений** позволяет настроить текст страницы со списком приложений на портале разработчика.  
   
- ![Шаблоны портала разработчиков для страницы со списком приложений](./media/api-management-application-templates/APIM-Application-List-Page-Developer-Portal-Templates.png "APIM шаблонов портала разработчиков для страницы со списком приложений")  
+ ![Шаблоны портала разработчика страницы списка приложений](./media/api-management-application-templates/APIM-Application-List-Page-Developer-Portal-Templates.png "Шаблоны портала разработчика для страницы списка приложений APIM")  
   
 ### <a name="default-template"></a>Шаблон по умолчанию  
   
@@ -71,18 +73,18 @@ ms.locfileid: "70072651"
 </div>  
 ```  
   
-### <a name="controls"></a>Элементы управления  
+### <a name="controls"></a>Управление  
  В шаблоне `Product list` можно использовать следующие [элементы управления страницы](api-management-page-controls.md).  
   
 -   [paging-control](api-management-page-controls.md#paging-control)  
   
 ### <a name="data-model"></a>Модель данных  
   
-|Свойство|type|Описание|  
+|Свойство|Тип|Описание|  
 |--------------|----------|-----------------|  
 |`Paging`|Сущность [разбиения по страницам](api-management-template-data-model-reference.md#Paging).|Сведения о разбиении по страницам для коллекции приложений.|  
-|`Applications`|Коллекция сущностей [Application](api-management-template-data-model-reference.md#Application) (Приложение).|Приложения, которые отображаются для текущего пользователя.|  
-|`CategoryName`|строка|Категория приложения.|  
+|`Applications`|Коллекция сущностей [приложения](api-management-template-data-model-reference.md#Application).|Приложения, которые отображаются для текущего пользователя.|  
+|`CategoryName`|string|Категория приложения.|  
   
 ### <a name="sample-template-data"></a>Пример данных шаблона  
   
@@ -138,7 +140,7 @@ ms.locfileid: "70072651"
 ##  <a name="Application"></a> Приложение  
  Шаблон **приложения** позволяет настроить текст страницы приложения на портале разработчика.  
   
- ![Шаблоны портала разработчиков для страницы приложения](./media/api-management-application-templates/APIM-Application-Page-Developer-Portal-Templates.png "APIM шаблонов портала разработчиков для страницы приложения")  
+ ![Шаблоны портала разработчика страницы приложения](./media/api-management-application-templates/APIM-Application-Page-Developer-Portal-Templates.png "Шаблоны портала разработчика страницы приложения APIM")  
   
 ### <a name="default-template"></a>Шаблон по умолчанию  
   
@@ -178,7 +180,7 @@ ms.locfileid: "70072651"
   
 ```  
   
-### <a name="controls"></a>Элементы управления  
+### <a name="controls"></a>Управление  
  В шаблоне `Application` нельзя использовать [элементы управления страницы](api-management-page-controls.md).  
   
 ### <a name="data-model"></a>Модель данных  
@@ -221,5 +223,5 @@ ms.locfileid: "70072651"
 }  
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о работе с шаблонами см. в статье [Настройка портала разработчика в службе управления API Azure с помощью шаблонов](api-management-developer-portal-templates.md).

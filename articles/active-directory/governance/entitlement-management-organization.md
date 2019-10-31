@@ -1,5 +1,5 @@
 ---
-title: Добавление подключенной Организации в управление назначением Azure AD (Предварительная версия) — Azure Active Directory
+title: Добавление подключенной Организации в управление назначением Azure AD — Azure Active Directory
 description: Узнайте, как разрешить пользователям за пределами Организации запрашивать пакеты доступа, чтобы вы могли сотрудничать над проектами.
 services: active-directory
 documentationCenter: ''
@@ -16,14 +16,14 @@ ms.date: 10/24/2019
 ms.author: ajburnle
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 23d45db1f62b370a2692ed932572e16c247b8903
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 9a8e5dc43170af8f33ad266edfa02ac5b41ca67a
+ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72952489"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73174140"
 ---
-# <a name="add-a-connected-organization-in-azure-ad-entitlement-management-preview"></a>Добавление подключенной Организации в управление назначением Azure AD (Предварительная версия)
+# <a name="add-a-connected-organization-in-azure-ad-entitlement-management"></a>Добавление подключенной Организации в управление назначением Azure AD
 
 Управление назначением Azure AD позволяет сотрудничать с людьми за пределами Организации. Если вы часто работаете с пользователями во внешнем каталоге или домене Azure AD, вы можете добавить их в качестве подключенной Организации. В этой статье описывается, как добавить подключенную организацию, чтобы разрешить пользователям за пределами Организации запрашивать ресурсы в каталоге.
 
@@ -39,13 +39,11 @@ ms.locfileid: "72952489"
 
 Как пользователи из каталога или домена Azure AD будут проходить проверку подлинности, зависит от типа аутентификации. Существуют следующие типы проверки подлинности для подключенных организаций.
 
-| Authentication type (Тип проверки подлинности) | Status |
-| --- | --- |
-| Azure AD | Поддерживается |
-| [Прямая Федерация](../b2b/direct-federation.md) | Preview (Предварительный просмотр) |
-| [Одноразовый пароль](../b2b/one-time-passcode.md) (домен) | Preview (Предварительный просмотр) |
+- Azure AD
+- [Прямая Федерация](../b2b/direct-federation.md)
+- [Одноразовый пароль](../b2b/one-time-passcode.md) (домен)
 
-## <a name="add-a-connected-organization"></a>Добавление подключенной Организации
+## <a name="add-a-connected-organization"></a>Добавление подключенной организации
 
 Выполните следующие действия, чтобы добавить внешний каталог или домен Azure AD в качестве подключенной Организации.
 

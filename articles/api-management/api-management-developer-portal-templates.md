@@ -11,14 +11,14 @@ ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 01/09/2017
+ms.date: 11/04/2019
 ms.author: apimpm
-ms.openlocfilehash: a8b250c45716146c505a803046b18bf5d05cf116
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 9657414c56296ee710f17663bf0bbdd3a4d67ac8
+ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70073770"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73176814"
 ---
 # <a name="how-to-customize-the-azure-api-management-developer-portal-using-templates"></a>Настройка портала разработчика в службе управления API Azure с помощью шаблонов
 
@@ -26,15 +26,17 @@ ms.locfileid: "70073770"
 
 * [Изменение содержимого статических страниц и элементов макета страницы.][modify-content-layout]
 * [Обновление стилей, используемых для элементов страницы на портале разработчика][customize-styles]
-* [Изменение шаблонов, используемых для страниц][portal-templates] , создаваемых порталом (описывается в этом разделе)
+* [Изменение шаблонов, используемых для страниц, создаваемых порталом][portal-templates] (см. описание в этом пошаговом окне)
 
 Шаблоны используются для настройки содержимого страниц портала разработчика, создаваемых системой (например, документы API, продукты, аутентификация пользователей и т. д.). С помощью синтаксиса [DotLiquid](http://dotliquidmarkup.org/) и указанного набора локализованных строковых ресурсов, значков и элементов управления на странице можно гибко настраивать содержимое страниц по своему усмотрению.
+
+[!INCLUDE [api-management-portal-legacy.md](../../includes/api-management-portal-legacy.md)]
 
 [!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
 
 ## <a name="developer-portal-templates-overview"></a>Обзор шаблонов портала разработчика
 
-Чтобы изменить шаблоны, войдите на **портал разработчика** в качестве администратора. Чтобы открыть его, войдите на портал Azure и щелкните на панели инструментов **Портал разработчика** для вашего экземпляра службы управления API.
+Чтобы изменить шаблоны, войдите на **портал разработчика** в качестве администратора. Чтобы начать сначала, откройте портал Azure и щелкните **портал разработчика** на панели инструментов экземпляра службы управления API.
 
 Чтобы открыть шаблоны портала разработчиков, щелкните значок настройки слева, чтобы открылось меню настройки, а затем **Шаблоны**.
 
@@ -161,7 +163,7 @@ ms.locfileid: "70073770"
 
 Нажмите кнопку **Да** для подтверждения.
 
-![Подтверждение][api-management-revert-template-confirm]
+![Подтвердить][api-management-revert-template-confirm]
 
 Ранее опубликованная версия шаблона станет активной на портале разработчика после завершения операции восстановления.
 
@@ -174,7 +176,7 @@ ms.locfileid: "70073770"
 
 Нажмите кнопку **Да** для подтверждения.
 
-![Подтверждение][api-management-reset-template-confirm]
+![Подтвердить][api-management-reset-template-confirm]
 
 Чтобы восстановить все шаблоны до версии по умолчанию, нажмите кнопку **Восстановить шаблоны по умолчанию** в списке шаблонов.
 
@@ -182,7 +184,7 @@ ms.locfileid: "70073770"
 
 Затем необходимо опубликовать восстановленные шаблоны вместе или по отдельности, выполнив действия, описанные в разделе [Публикация шаблона](#to-publish-a-template).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Справочную информацию о шаблонах портала разработчика, строковых ресурсах, значках и элементах управления страницы см. в разделе [Azure API Management Templates](api-management-developer-portal-templates-reference.md) (Шаблоны в службе управления API).
 
 [modify-content-layout]: api-management-modify-content-layout.md

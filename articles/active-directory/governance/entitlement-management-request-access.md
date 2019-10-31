@@ -1,6 +1,6 @@
 ---
-title: Запрос доступа к пакету Access в управлении назначением Azure AD (Предварительная версия) — Azure Active Directory
-description: Узнайте, как использовать портал My Access для запроса доступа к пакету Access в Azure Active Directory управления назначением (Предварительная версия).
+title: Запрос доступа к пакету Access в управлении назначением Azure AD — Azure Active Directory
+description: Узнайте, как использовать портал "мой доступ" для запроса доступа к пакету Access в Azure Active Directory управлении назначением.
 services: active-directory
 documentationCenter: ''
 author: msaburnley
@@ -16,19 +16,14 @@ ms.date: 10/26/2019
 ms.author: ajburnle
 ms.reviewer: mamkumar
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e57a216efee39df0ad22712b281073a68600e0df
-ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
+ms.openlocfilehash: ddc0a3788075701fb4633895e7b22fff2c15f60b
+ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72990740"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73173697"
 ---
-# <a name="request-access-to-an-access-package-in-azure-ad-entitlement-management-preview"></a>Запрос доступа к пакету Access в управлении назначением Azure AD (Предварительная версия)
-
-> [!IMPORTANT]
-> Управление правами Azure Active Directory (Azure AD) сейчас предоставляется в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
-> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+# <a name="request-access-to-an-access-package-in-azure-ad-entitlement-management"></a>Запрос доступа к пакету Access в управлении назначением Azure AD
 
 С помощью управления назначением Azure AD пакет доступа обеспечивает однократную настройку ресурсов и политик, которые автоматически управляют доступом в течение всего времени существования пакета Access. 
 

@@ -1,6 +1,6 @@
 ---
-title: Изменение параметров жизненного цикла пакета Access в управлении назначениями Azure AD (Предварительная версия) — Azure Active Directory
-description: Узнайте, как изменить параметры жизненного цикла пакета Access в Azure Active Directory управления назначением (Предварительная версия).
+title: Изменение параметров жизненного цикла для пакета Access в управлении назначениями Azure AD — Azure Active Directory
+description: Узнайте, как изменить параметры жизненного цикла пакета Access в Azure Active Directory управлении обслуживанием.
 services: active-directory
 documentationCenter: ''
 author: msaburnley
@@ -16,19 +16,14 @@ ms.date: 10/15/2019
 ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 46d63a12443edf04db3570fa43fbd8f20619122e
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: 959d85f496a4a573a969bf736aba137d5b86154a
+ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72392349"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73174735"
 ---
-# <a name="change-lifecycle-settings-for-an-access-package-in-azure-ad-entitlement-management-preview"></a>Изменение параметров жизненного цикла пакета Access в управлении назначениями Azure AD (Предварительная версия)
-
-> [!IMPORTANT]
-> Управление правами Azure Active Directory (Azure AD) сейчас предоставляется в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
-> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+# <a name="change-lifecycle-settings-for-an-access-package-in-azure-ad-entitlement-management"></a>Изменение параметров жизненного цикла пакета Access в управлении назначениями Azure AD
 
 В качестве диспетчера пакетов доступа можно изменить параметры жизненного цикла пакета доступа в любое время, изменив существующую политику. Если изменить дату истечения срока действия политики, то дата истечения срока действия запросов, которые уже находятся в состоянии ожидания утверждения или утверждения, не изменится.
 

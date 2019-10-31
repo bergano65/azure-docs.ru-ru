@@ -1,6 +1,6 @@
 ---
-title: Изменение ролей ресурсов для пакета Access в управлении назначениями Azure AD (Предварительная версия) — Azure Active Directory
-description: Узнайте, как изменить роли ресурсов для существующего пакета Access в Azure Active Directory управления назначением (Предварительная версия).
+title: Изменение ролей ресурсов для пакета Access в управлении назначениями Azure AD. Azure Active Directory
+description: Узнайте, как изменить роли ресурсов для существующего пакета Access в Azure Active Directory управлении обслуживанием.
 services: active-directory
 documentationCenter: ''
 author: msaburnley
@@ -16,19 +16,14 @@ ms.date: 10/15/2019
 ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1b719546ec598f2e99061597e99a3d4e875b12cf
-ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
+ms.openlocfilehash: 102bbfbd1c02c93830f5c7fce89fe95d7fde54c5
+ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72429805"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73174644"
 ---
-# <a name="change-resource-roles-for-an-access-package-in-azure-ad-entitlement-management-preview"></a>Изменение ролей ресурсов для пакета Access в управлении назначениями Azure AD (Предварительная версия)
-
-> [!IMPORTANT]
-> Управление правами Azure Active Directory (Azure AD) сейчас предоставляется в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
-> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+# <a name="change-resource-roles-for-an-access-package-in-azure-ad-entitlement-management"></a>Изменение ролей ресурсов для пакета Access в управлении назначениями Azure AD
 
 Диспетчер пакетов Access позволяет изменять ресурсы в пакете Access в любое время, не беспокоясь о подготовке доступа пользователя к новым ресурсам или удалении доступа из предыдущих ресурсов. В этой статье описывается, как изменить роли ресурса для существующего пакета Access.
 

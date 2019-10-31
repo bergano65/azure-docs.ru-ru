@@ -1,6 +1,6 @@
 ---
-title: Ссылка на общий доступ для запроса пакета Access в управлении назначением Azure AD (Предварительная версия) — Azure Active Directory
-description: Узнайте, как поделиться ссылкой для запроса пакета Access в Azure Active Directory управления назначением (Предварительная версия).
+title: Ссылка на общий доступ для запроса пакета Access в управлении назначением Azure AD — Azure Active Directory
+description: Узнайте, как поделиться ссылкой для запроса пакета Access в Azure Active Directory управлении обслуживанием.
 services: active-directory
 documentationCenter: ''
 author: msaburnley
@@ -16,19 +16,14 @@ ms.date: 10/15/2019
 ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 91b98df1f93991d4781283bc38b02dc20d11268d
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: 94d32bf26def6832f51b4e09c697bca885162dc2
+ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72392336"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73174418"
 ---
-# <a name="share-link-to-request-an-access-package-in-azure-ad-entitlement-management-preview"></a>Ссылка на общий доступ для запроса пакета Access в управлении назначением Azure AD (Предварительная версия)
-
-> [!IMPORTANT]
-> Управление правами Azure Active Directory (Azure AD) сейчас предоставляется в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
-> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+# <a name="share-link-to-request-an-access-package-in-azure-ad-entitlement-management"></a>Ссылка на общий доступ для запроса пакета Access в управлении назначением Azure AD
 
 Большинство пользователей в каталоге могут войти на портал My Access и автоматически просмотреть список пакетов Access, которые они могут запросить. Однако для пользователей внешних бизнес-партнеров, которые еще не находятся в каталоге, необходимо отправить им ссылку, которую можно использовать для запроса пакета Access. 
 

@@ -11,14 +11,14 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: spunukol
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 78ddda8ff67cfdfebcf19f53c307c689884baf4d
-ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
+ms.openlocfilehash: a2e92ca85c485f8c93fc9202b9084ec37d7506e1
+ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2019
-ms.locfileid: "68942901"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73175055"
 ---
-# <a name="how-to-manage-stale-devices-in-azure-ad"></a>Как Управление устаревшими устройствами в Azure AD
+# <a name="how-to-manage-stale-devices-in-azure-ad"></a>Руководство. управление устаревшими устройствами в Azure AD
 
 Чтобы правильно завершить жизненный цикл ставшего ненужным зарегистрированного устройства, нужно отменить его регистрацию. Но в некоторых случаях такие устройства остаются в среде как устаревшие, например если они украдены, потеряны, сломаны или на них переустановлена ОС. ИТ-администратору будет полезно научиться удалять такие устаревшие устройства, чтобы не тратить время не на них, а на другие актуальные ресурсы.
 
@@ -69,8 +69,8 @@ ms.locfileid: "68942901"
 
 Чтобы обновить сведения об устройствах в AAD, нужно использовать учетную запись с одной из следующих ролей:
 
-- Глобальный администратор
-- Администратор облачных устройств
+- глобального администратора;
+- Администратор облачного устройства
 - Администратор службы Intune
 
 Выберите для политики очистки учетные записи, которым назначены необходимые роли. 
@@ -130,7 +130,7 @@ ms.locfileid: "68942901"
 Типичная процедура состоит из следующих шагов:
 
 1. подключение к Azure Active Directory с помощью командлета [Connect-MsolService](https://docs.microsoft.com/powershell/module/msonline/connect-msolservice?view=azureadps-1.0);
-1. получение списка устройств;
+1. Получение списка устройств
 1. отключение устройства с помощью командлета [Disable-MsolDevice](https://docs.microsoft.com/powershell/module/msonline/disable-msoldevice?view=azureadps-1.0); 
 1. Ожидание периода времени перед удалением, в зависимости от количества указанных вами дней.
 1. удаление устройства с помощью командлета [Remove-MsolDevice](https://docs.microsoft.com/powershell/module/msonline/remove-msoldevice?view=azureadps-1.0).
@@ -180,6 +180,6 @@ Get-MsolDevice -all -LogonTimeBefore $dt | select-object -Property Enabled, Devi
 - **Устройства, присоединенные к AAD** — пользователь не может использовать устройство для входа. 
 - **Мобильные устройства** — пользователь не получит доступа к ресурсам AAD, например к Office 365. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы получить общие сведения о том, как управлять устройствами на портале Azure, см. раздел [Управление устройствами с помощью портала Azure (предварительная версия)](device-management-azure-portal.md)

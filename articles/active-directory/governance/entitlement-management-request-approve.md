@@ -1,6 +1,6 @@
 ---
-title: Утверждение или отклонение запросов на доступ в управлении назначениями Azure AD (Предварительная версия) — Azure Active Directory
-description: Узнайте, как с помощью портала "мой доступ" утверждать или отклонять запросы к пакету Access в Azure Active Directory управления назначением (Предварительная версия).
+title: Утверждение или отклонение запросов на доступ в управлении назначениями Azure AD — Azure Active Directory
+description: Узнайте, как с помощью портала "мой доступ" утверждать или отклонять запросы к пакету Access в Azure Active Directory управлении назначением.
 services: active-directory
 documentationCenter: ''
 author: msaburnley
@@ -16,19 +16,14 @@ ms.date: 10/27/2019
 ms.author: ajburnle
 ms.reviewer: mamkumar
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: da3e1b6439b033742af62d548775cfb628e955b7
-ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
-ms.translationtype: MT
+ms.openlocfilehash: 3bf254f06c14afa7ee32f27d6632ab33665cf31c
+ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72990707"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73173462"
 ---
-# <a name="approve-or-deny-access-requests-in-azure-ad-entitlement-management-preview"></a>Утверждение или отклонение запросов на доступ в управлении назначениями Azure AD (Предварительная версия)
-
-> [!IMPORTANT]
-> Управление правами Azure Active Directory (Azure AD) сейчас предоставляется в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
-> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+# <a name="approve-or-deny-access-requests-in-azure-ad-entitlement-management"></a>Утверждение или отклонение запросов на доступ в управлении назначениями Azure AD
 
 С помощью управления назначением Azure AD можно настроить политики для обязательного утверждения пакетов доступа и выбрать одного или нескольких утверждающих. В этой статье описывается, как назначенные утверждающие лица могут утверждать или отклонять запросы на доступ к пакетам.
 

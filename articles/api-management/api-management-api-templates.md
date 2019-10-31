@@ -11,19 +11,19 @@ ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 01/09/2017
+ms.date: 11/04/2019
 ms.author: apimpm
-ms.openlocfilehash: 9d75dff413e7b6e61d38b95e08bf9c891b583014
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: eee95a2b6acde3ad3b7d94cf5cdd0f74f9f09fd9
+ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70073823"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73176870"
 ---
 # <a name="api-templates-in-azure-api-management"></a>Шаблоны API в службе управления API Azure
 
-Служба управления API Azure позволяет настраивать содержимое страниц портала разработчика с помощью набора шаблонов. С помощью этих шаблонов вы можете гибко настраивать содержимое страниц, используя синтаксис [DotLiquid](http://dotliquidmarkup.org/), любой удобный текстовый редактор, например [DotLiquid для разработчиков](https://github.com/dotliquid/dotliquid/wiki/DotLiquid-for-Designers), и предоставленный набор локализованных [строковых ресурсов](api-management-template-resources.md#strings), [ресурсов глифов](api-management-template-resources.md#glyphs), а также [элементов управления страницы](api-management-page-controls.md).  
-  
+Служба управления API Azure позволяет настраивать содержимое страниц портала разработчика с помощью набора шаблонов. С помощью синтаксиса [DotLiquid](http://dotliquidmarkup.org/), выбранного редактора, например [DotLiquid для разработчиков](https://github.com/dotliquid/dotliquid/wiki/DotLiquid-for-Designers), и указанного набора локализованных [строковых ресурсов](api-management-template-resources.md#strings), [ресурсов глифов](api-management-template-resources.md#glyphs), а также [элементов управления на странице](api-management-page-controls.md) можно гибко настраивать содержимое страниц по своему усмотрению с использованием этих шаблонов.  
+
 С помощью шаблонов в этом разделе вы сможете настроить содержимое страниц API на портале разработчика.  
   
 -   [Список API](#APIList)  
@@ -39,14 +39,16 @@ ms.locfileid: "70073823"
     -   [Ruby](#Ruby)  
 
 > [!NOTE]
->  Примеры стандартных шаблонов включены в следующую документацию, но могут в любой момент измениться, так как ведется постоянная работа по их улучшению. Актуальные шаблоны по умолчанию можно просмотреть на портале разработчика, перейдя к требуемому отдельному шаблону. Дополнительные сведения о работе с шаблонами см. в статье [Настройка портала разработчика в службе управления API Azure с помощью шаблонов](https://azure.microsoft.com/documentation/articles/api-management-developer-portal-templates/).  
+>  Примеры шаблонов по умолчанию включены в следующую документацию, но могут в любой момент измениться, так как ведется постоянная работа по их улучшению. Актуальные шаблоны по умолчанию можно просмотреть на портале разработчика, перейдя к требуемому отдельному шаблону. Дополнительные сведения о работе с шаблонами см. в статье [Настройка портала разработчика в службе управления API Azure с помощью шаблонов](https://azure.microsoft.com/documentation/articles/api-management-developer-portal-templates/).  
+
+[!INCLUDE [api-management-portal-legacy.md](../../includes/api-management-portal-legacy.md)]
 
 [!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
   
 ## <a name="APIList"></a>Список API  
  Шаблон **списка API** позволяет настроить текст страницы со списком API на портале разработчика.  
   
- ![Список API на портале разработчика](./media/api-management-api-templates/APIM-Developer-Portal-Templates-API-List.png "Список API на портале разработчика APIM")  
+ ![Список API портала разработчика](./media/api-management-api-templates/APIM-Developer-Portal-Templates-API-List.png "Список API шаблонов портала разработчика APIM")  
   
 ### <a name="default-template"></a>Шаблон по умолчанию  
   
@@ -78,7 +80,7 @@ ms.locfileid: "70073823"
 </div>  
 ```  
   
-### <a name="controls"></a>Элементы управления  
+### <a name="controls"></a>Управление  
  В шаблоне `API list` можно использовать следующие [элементы управления страницы](api-management-page-controls.md).  
   
 -   [paging-control](api-management-page-controls.md#paging-control)  
@@ -87,7 +89,7 @@ ms.locfileid: "70073823"
   
 ### <a name="data-model"></a>Модель данных  
   
-|Свойство|type|Описание|  
+|Свойство|Тип|Описание|  
 |--------------|----------|-----------------|  
 |`apis`|Коллекция сущностей [API summary](api-management-template-data-model-reference.md#APISummary) (Сводные данные API).|API, доступные для текущего пользователя.|  
   
@@ -114,7 +116,7 @@ ms.locfileid: "70073823"
 ## <a name="Product"></a> Операция  
  Шаблон **операции** позволяет настроить текст страницы операции на портале разработчика.  
   
- ![Страница операции на портале разработчика](./media/api-management-api-templates/APIM-Developer-Portal-templates-Operation-page.png "Страница операции в шаблонах портала разработчика APIM")  
+ ![Страница операций портала разработчика](./media/api-management-api-templates/APIM-Developer-Portal-templates-Operation-page.png "Страница "операция" шаблонов портала разработчика APIM")  
   
 ### <a name="default-template"></a>Шаблон по умолчанию  
   
@@ -337,19 +339,19 @@ ms.locfileid: "70073823"
 </div>  
 ```  
   
-### <a name="controls"></a>Элементы управления  
+### <a name="controls"></a>Управление  
  В шаблоне `Operation` нельзя использовать [элементы управления страницы](api-management-page-controls.md).  
   
 ### <a name="data-model"></a>Модель данных  
   
-|Свойство|type|Описание|  
+|Свойство|Тип|Описание|  
 |--------------|----------|-----------------|  
-|`apiId`|строка|Идентификатор текущего API.|  
-|`apiName`|строка|Имя API.|  
-|`apiDescription`|строка|Описание API.|  
+|`apiId`|string|Идентификатор текущего API.|  
+|`apiName`|string|Имя API.|  
+|`apiDescription`|string|Описание API.|  
 |`api`|Сущность [API summary](api-management-template-data-model-reference.md#APISummary) (Сводные данные API).|Текущий API.|  
 |`operation`|[Операция](api-management-template-data-model-reference.md#Operation)|Операция, отображаемая в настоящий момент.|  
-|`sampleUrl`|строка|URL-адрес текущей операции.|  
+|`sampleUrl`|string|URL-адрес текущей операции.|  
 |`operationMenu`|[Меню операций](api-management-template-data-model-reference.md#Menu)|Меню операций для API.|  
 |`consoleUrl`|URI|Универсальный код ресурса для кнопки **Попробуйте**.|  
 |`samples`|Коллекция сущностей [Code sample](api-management-template-data-model-reference.md#Sample) (Пример кода).|Примеры кода для текущей операции.|  
@@ -644,7 +646,7 @@ ms.locfileid: "70073823"
 ## <a name="CodeSamples"></a> Примеры кода  
  Следующие шаблоны позволяют настроить текст отдельных примеров кода на странице операции.  
   
- ![Примеры кода в шаблонах портала разработчика](./media/api-management-api-templates/APIM-Developer-Portal-Templates-Code-samples.png "Примеры кода в шаблонах портала разработчика APIM")  
+ ![Примеры кода для шаблонов портала разработчика](./media/api-management-api-templates/APIM-Developer-Portal-Templates-Code-samples.png "Примеры кода для шаблонов портала разработчика APIM")  
   
 -   [Curl](#Curl)  
   
@@ -680,7 +682,7 @@ curl -v -X {{method}} "{{scheme}}://{{host}}{{path}}{{query | escape }}"
   
 ```  
   
-#### <a name="controls"></a>Элементы управления  
+#### <a name="controls"></a>Управление  
  В шаблонах примеров кода нельзя использовать [элементы управления страницы](api-management-page-controls.md).  
   
 #### <a name="data-model"></a>Модель данных  
@@ -859,7 +861,7 @@ namespace CSHttpClientSample
 }     
 ```  
   
-#### <a name="controls"></a>Элементы управления  
+#### <a name="controls"></a>Управление  
  В шаблонах примеров кода нельзя использовать [элементы управления страницы](api-management-page-controls.md).  
   
 #### <a name="data-model"></a>Модель данных  
@@ -955,7 +957,7 @@ public class JavaSample
   
 ```  
   
-#### <a name="controls"></a>Элементы управления  
+#### <a name="controls"></a>Управление  
  В шаблонах примеров кода нельзя использовать [элементы управления страницы](api-management-page-controls.md).  
   
 #### <a name="data-model"></a>Модель данных  
@@ -1044,7 +1046,7 @@ public class JavaSample
   
 ```  
   
-#### <a name="controls"></a>Элементы управления  
+#### <a name="controls"></a>Управление  
  В шаблонах примеров кода нельзя использовать [элементы управления страницы](api-management-page-controls.md).  
   
 #### <a name="data-model"></a>Модель данных  
@@ -1156,7 +1158,7 @@ int main(int argc, const char * argv[])
   
 ```  
   
-#### <a name="controls"></a>Элементы управления  
+#### <a name="controls"></a>Управление  
  В шаблонах примеров кода нельзя использовать [элементы управления страницы](api-management-page-controls.md).  
   
 #### <a name="data-model"></a>Модель данных  
@@ -1246,7 +1248,7 @@ catch (HttpException $ex)
 ?>  
 ```  
   
-#### <a name="controls"></a>Элементы управления  
+#### <a name="controls"></a>Управление  
  В шаблонах примеров кода нельзя использовать [элементы управления страницы](api-management-page-controls.md).  
   
 #### <a name="data-model"></a>Модель данных  
@@ -1364,7 +1366,7 @@ except Exception as e:
 ####################################  
 ```
   
-#### <a name="controls"></a>Элементы управления  
+#### <a name="controls"></a>Управление  
  В шаблонах примеров кода нельзя использовать [элементы управления страницы](api-management-page-controls.md).  
   
 #### <a name="data-model"></a>Модель данных  
@@ -1435,7 +1437,7 @@ puts response.body
   
 ```  
   
-#### <a name="controls"></a>Элементы управления  
+#### <a name="controls"></a>Управление  
  В шаблонах примеров кода нельзя использовать [элементы управления страницы](api-management-page-controls.md).  
   
 #### <a name="data-model"></a>Модель данных  
@@ -1470,5 +1472,5 @@ puts response.body
 }  
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о работе с шаблонами см. в статье [Настройка портала разработчика в службе управления API Azure с помощью шаблонов](api-management-developer-portal-templates.md).

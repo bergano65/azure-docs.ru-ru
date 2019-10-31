@@ -6,12 +6,12 @@ ms.author: dacoulte
 ms.date: 06/24/2019
 ms.topic: conceptual
 ms.service: azure-policy
-ms.openlocfilehash: 56bc8934db86bb03446a6d2637bd54daaf2b5fb9
-ms.sourcegitcommit: 1c2659ab26619658799442a6e7604f3c66307a89
+ms.openlocfilehash: 6a3d1fb347819015887ffc4fd8089bbc1f3a70de
+ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72254744"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73176317"
 ---
 # <a name="understand-azure-policy-for-azure-kubernetes-service"></a>Общие сведения о политике Azure для службы Kubernetes Azure
 
@@ -21,7 +21,7 @@ ms.locfileid: "72254744"
 > [!NOTE]
 > Политика Azure для AKS ограничена предварительной версией и поддерживает только встроенные определения политик.
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Краткое описание
 
 Чтобы включить и использовать политику Azure для AKS с кластером AKS, выполните следующие действия.
 
@@ -34,7 +34,7 @@ ms.locfileid: "72254744"
 
 Прежде чем устанавливать надстройку политики Azure или включить какие-либо функции службы, ваша подписка должна включить поставщик ресурсов **Microsoft. ContainerService** и поставщик ресурсов **Microsoft. полициинсигхтс** , а затем утвердить его. Присоединяйтесь к предварительной версии. Чтобы присоединиться к предварительной версии, выполните следующие действия в портал Azure или с помощью Azure CLI.
 
-- Портал Azure:
+- На портале Azure.
 
   1. Зарегистрируйте поставщики ресурсов **Microsoft. ContainerService** и **Microsoft. полициинсигхтс** . Инструкции см. в разделе [поставщики и типы ресурсов](../../../azure-resource-manager/resource-manager-supported-services.md#azure-portal).
 
@@ -92,7 +92,7 @@ _Надстройка политики Azure_ для Kubernetes подключа
 
 ### <a name="installing-the-add-on"></a>Установка надстройки
 
-#### <a name="prerequisites"></a>Предварительные требования
+#### <a name="prerequisites"></a>Технические условия
 
 Перед установкой надстройки в кластере AKS необходимо установить расширение предварительной версии. Этот шаг выполняется с Azure CLI:
 
@@ -126,7 +126,7 @@ _Надстройка политики Azure_ для Kubernetes подключа
 
 После завершения предварительных требований установите надстройку политики Azure в кластере AKS, которым вы хотите управлять.
 
-- Портал Azure
+- портала Azure
 
   1. Запустите службу AKS в портал Azure, щелкнув **все службы**, а затем выполнив поиск и выбрав **Kubernetes Services**.
 
@@ -143,7 +143,7 @@ _Надстройка политики Azure_ для Kubernetes подключа
      > [!NOTE]
      > Если кнопка **включить надстройка** неактивна, подписка еще не добавлена в предварительную версию. Необходимые шаги см. [в разделе согласие на предварительную версию](#opt-in-for-preview) .
 
-- Инфраструктура CLI Azure
+- Azure CLI
 
   ```azurecli-interactive
   # Log in first with az login if you're not using Cloud Shell
@@ -164,7 +164,7 @@ _Надстройка политики Azure_ для Kubernetes подключа
 
 Языковая структура политики Azure для управления AKS соответствует существующим политикам. Действие _енфорцерегополици_ используется для управления кластерами AKS и принимает свойства _сведений_ , относящиеся к работе с непрозра и привратником. Дополнительные сведения и примеры см. в разделе [енфорцерегополици](effects.md#enforceregopolicy) Effect.
 
-Как часть свойства _Details. Policy_ в определении политики, политика Azure передает универсальный код ресурса (URI) политики Рего в надстройку. Рего — это язык, который поддержка НЕПРОЗРА и привратника для проверки или изменения запроса к кластеру Kubernetes. Благодаря поддержке существующего стандарта для управления Kubernetes, политика Azure позволяет повторно использовать существующие правила и связывать их с политикой Azure для единого создания отчетов о соответствии с облаком. Дополнительные сведения см. в разделе [что такое Рего?](https://www.openpolicyagent.org/docs/how-do-i-write-policies.html#what-is-rego).
+Как часть свойства _Details. Policy_ в определении политики, политика Azure передает универсальный код ресурса (URI) политики Рего в надстройку. Рего — это язык, который поддержка НЕПРОЗРА и привратника для проверки или изменения запроса к кластеру Kubernetes. Благодаря поддержке существующего стандарта для управления Kubernetes, политика Azure позволяет повторно использовать существующие правила и связывать их с политикой Azure для единого создания отчетов о соответствии с облаком. Дополнительные сведения см. в разделе [что такое Рего?](https://www.openpolicyagent.org/docs/latest/policy-language/#what-is-rego).
 
 ## <a name="built-in-policies"></a>Встроенные политики
 
@@ -206,7 +206,7 @@ _Надстройка политики Azure_ для Kubernetes подключа
 
 Чтобы удалить надстройку политики Azure из кластера AKS, используйте либо портал Azure, либо Azure CLI.
 
-- Портал Azure
+- портала Azure
 
   1. Запустите службу AKS в портал Azure, щелкнув **все службы**, а затем выполнив поиск и выбрав **Kubernetes Services**.
 
@@ -220,7 +220,7 @@ _Надстройка политики Azure_ для Kubernetes подключа
 
      ![Отключите политику Azure для надстройки AKS](../media/rego-for-aks/disable-policy-add-on.png)
 
-- Инфраструктура CLI Azure
+- Azure CLI
 
   ```azurecli-interactive
   # Log in first with az login if you're not using Cloud Shell
@@ -228,7 +228,7 @@ _Надстройка политики Azure_ для Kubernetes подключа
   az aks disable-addons --addons azure-policy --name MyAKSCluster --resource-group MyResourceGroup
   ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Просмотрите примеры в [примерах политики Azure](../samples/index.md).
 - См. дополнительные сведения о [структуре определения Политики Azure](definition-structure.md).

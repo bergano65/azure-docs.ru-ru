@@ -1,6 +1,6 @@
 ---
-title: Создание каталога ресурсов и управление им с помощью управления назначением Azure AD (Предварительная версия) — Azure Active Directory
-description: Узнайте, как создать новый контейнер ресурсов и получить доступ к пакетам в Azure Active Directory управления назначением (Предварительная версия).
+title: Создание каталога ресурсов и управление им с помощью управления назначением Azure AD — Azure Active Directory
+description: Узнайте, как создать новый контейнер ресурсов и получать доступ к пакетам в Azure Active Directory управлении назначением.
 services: active-directory
 documentationCenter: ''
 author: msaburnley
@@ -16,19 +16,14 @@ ms.date: 10/07/2019
 ms.author: ajburnle
 ms.reviewer: hanki
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 85479abfd19110703d5ce9f59f545830e84feadb
-ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
+ms.openlocfilehash: b66e3dee83ccf4a857fda9d5804848108c0cc251
+ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72429579"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73174429"
 ---
-# <a name="create-and-manage-a-catalog-of-resources-in-azure-ad-entitlement-management-preview"></a>Создание каталога ресурсов и управление им в управлении назначением Azure AD (Предварительная версия)
-
-> [!IMPORTANT]
-> Управление правами Azure Active Directory (Azure AD) сейчас предоставляется в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
-> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+# <a name="create-and-manage-a-catalog-of-resources-in-azure-ad-entitlement-management"></a>Создание каталога ресурсов и управление им в управлении назначением Azure AD
 
 ## <a name="create-a-catalog"></a>Создание каталога
 

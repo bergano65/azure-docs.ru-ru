@@ -16,12 +16,12 @@ ms.date: 09/15/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fddd95564e3683aaee067f0442573c41e93376dd
-ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
+ms.openlocfilehash: 8d0d88f72cca45280bd76ac7bb9d7a6e0a1d37fb
+ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71264379"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73175447"
 ---
 # <a name="daemon-app-that-calls-web-apis---app-registration"></a>Приложение управляющей программы, вызывающее веб-API — регистрация приложений
 
@@ -36,7 +36,7 @@ ms.locfileid: "71264379"
 
 ## <a name="authentication---no-reply-uri-needed"></a>Проверка подлинности-URI ответа не требуется
 
-Если конфиденциальное клиентское приложение использует **только** поток учетных данных клиента, то URL-адрес ответа не требуется регистрировать. Он не нужен ни для настройки, ни для создания приложения. Поток учетных данных клиента не использует его.
+Если конфиденциальное клиентское приложение использует **только** поток учетных данных клиента, URI ответа не требуется регистрировать. Он не нужен ни для настройки, ни для создания приложения. Поток учетных данных клиента не использует его.
 
 ## <a name="api-permissions---app-permissions-and-admin-consent"></a>Разрешения API — разрешения приложения и согласие администратора
 
@@ -45,7 +45,7 @@ ms.locfileid: "71264379"
 ![Разрешения приложения и согласие администратора](media/scenario-daemon-app/app-permissions-and-admin-consent.png)
 
 > [!NOTE]
-> Веб-API, который требуется вызвать, должен определять **разрешения приложения (роли приложения)** , а не делегированные разрешения. Дополнительные сведения о том, как предоставить такой API, см [. в разделе защищенный веб-API: Регистрация приложения — при вызове веб-API с помощью управляющего приложения](https://docs.microsoft.com/en-us/azure/active-directory/develop/scenario-protected-web-api-app-registration#if-your-web-api-is-called-by-a-daemon-app)
+> Веб-API, который требуется вызвать, должен определять **разрешения приложения (роли приложения)** , а не делегированные разрешения. Дополнительные сведения о том, как предоставить такой API, см [. в разделе защищенный веб-API: регистрация приложения — при вызове веб-API с помощью управляющего приложения.](scenario-protected-web-api-app-registration.md#if-your-web-api-is-called-by-a-daemon-app)
 
 Для приложений управляющей программы требуется предварительное согласие администратора клиента, вызывающего веб-API. Это согласие предоставляется на той же странице **разрешений API** , которую администратор клиента выбирает **предоставить согласие администратора для *нашей Организации***  .
 
@@ -53,7 +53,7 @@ ms.locfileid: "71264379"
 
 [!INCLUDE [Pre-requisites](../../../includes/active-directory-develop-scenarios-registration-client-secrets.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Приложение управляющей программы — конфигурация кода приложения](./scenario-daemon-app-configuration.md)

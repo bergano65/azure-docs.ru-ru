@@ -8,12 +8,12 @@ ms.date: 09/26/2019
 ms.topic: conceptual
 ms.service: iot-central
 manager: corywink
-ms.openlocfilehash: efa44df378e88b870654111295c10bec06539adb
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: b6a437af33e3e85b8dc07de223b6e1fd7ce6cb03
+ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72950526"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73176247"
 ---
 # <a name="export-your-data-to-azure-blob-storage"></a>Экспорт данных в хранилище BLOB-объектов Azure
 
@@ -132,7 +132,7 @@ ms.locfileid: "72950526"
 При первом включении экспорта непрерывных данных экспортируется один моментальный снимок со всеми устройствами. Каждое устройство включает в себя:
 - идентификатор (`id`) устройства в IoT Central;
 - имя (`name`) устройства;
-- идентификатор устройства (`deviceId`) из [Службы подготовки устройств](https://aka.ms/iotcentraldocsdps);
+- идентификатор устройства (`deviceId`) из [Службы подготовки устройств](/azure/iot-central/core/howto-connect-nodejs);
 - сведения о шаблоне устройства;
 - Значения свойств
 - значения параметров.

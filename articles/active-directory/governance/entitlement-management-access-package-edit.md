@@ -1,6 +1,6 @@
 ---
-title: Скрытие или удаление пакета Access в управлении назначениями Azure AD (Предварительная версия) — Azure Active Directory
-description: Сведения о том, как скрыть или удалить пакет Access в Azure Active Directory управления назначением (Предварительная версия).
+title: Скрытие или удаление пакета Access в управлении назначениями Azure AD — Azure Active Directory
+description: Сведения о том, как скрыть или удалить пакет Access в Azure Active Directory управления назначением.
 services: active-directory
 documentationCenter: ''
 author: msaburnley
@@ -16,19 +16,14 @@ ms.date: 10/15/2019
 ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ab6f3a86d8e88ee2d7465fd32bde7b7555f1f326
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: 4391cd20f3919e8def28fa3c1d5007f91b2d9f0b
+ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72389168"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73174749"
 ---
-# <a name="hide-or-delete-an-access-package-in-azure-ad-entitlement-management-preview"></a>Скрытие или удаление пакета Access в управлении назначениями Azure AD (Предварительная версия)
-
-> [!IMPORTANT]
-> Управление правами Azure Active Directory (Azure AD) сейчас предоставляется в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
-> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+# <a name="hide-or-delete-an-access-package-in-azure-ad-entitlement-management"></a>Скрытие или удаление пакета Access в управлении назначениями Azure AD
 
 Пакеты доступа по умолчанию обнаруживаются. Это означает, что если политика разрешает пользователю запрашивать пакет доступа, он автоматически увидит пакет Access, указанный на портале моего доступа. Однако можно изменить скрытый параметр таким образом, чтобы пакет Access не **перекрывались** на портале "мой доступ" пользователя.
 

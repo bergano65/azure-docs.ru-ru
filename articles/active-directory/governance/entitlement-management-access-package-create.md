@@ -1,6 +1,6 @@
 ---
-title: Создание нового пакета Access в управлении назначением Azure AD (Предварительная версия) — Azure Active Directory
-description: Узнайте, как создать новый пакет доступа к ресурсам, к которым вы хотите предоставить общий доступ, в Azure Active Directory управление назначением (Предварительная версия).
+title: Создание нового пакета Access в управлении назначением Azure AD — Azure Active Directory
+description: Узнайте, как создать новый пакет доступа к ресурсам, который вы хотите использовать в Azure Active Directory управлении назначением.
 services: active-directory
 documentationCenter: ''
 author: msaburnley
@@ -16,19 +16,14 @@ ms.date: 10/15/2019
 ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 70273a45bb60fca57292275ea0bb564e17a6f4e9
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: b8a2752302e5f6c3428139a0faa30ce347fc21f2
+ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72934620"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73174926"
 ---
-# <a name="create-a-new-access-package-in-azure-ad-entitlement-management-preview"></a>Создание нового пакета Access в управлении назначением Azure AD (Предварительная версия)
-
-> [!IMPORTANT]
-> Управление правами Azure Active Directory (Azure AD) сейчас предоставляется в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
-> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+# <a name="create-a-new-access-package-in-azure-ad-entitlement-management"></a>Создание нового пакета Access в управлении назначением Azure AD
 
 Пакет Access позволяет выполнять однократную настройку ресурсов и политик, которые автоматически управляют доступом в течение всего времени существования пакета Access. В этой статье описывается, как создать новый пакет Access.
 

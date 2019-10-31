@@ -12,22 +12,22 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 09/15/2019
+ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a7a67e98d87850e2fc90df3ce7ba15e5e60da517
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.openlocfilehash: 8af0bb023136ba07057e4078d5abfcb4a3194a56
+ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72596752"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73175382"
 ---
 # <a name="daemon-app-that-calls-web-apis---call-a-web-api-from-the-app"></a>Управляющее приложение, вызывающее веб-API — вызов веб-API из приложения
 
 Управляющее приложение может вызывать веб-API из приложения управляющей программы .NET или вызывать несколько предварительно утвержденных веб-API.
 
-## <a name="calling-a-web-api-from-a-net-daemon-application"></a>Вызов веб-API из приложения управляющей программы .NET
+## <a name="calling-a-web-api-daemon-application"></a>Вызов приложения управляющей программы веб-API
 
 Вот как можно использовать маркер для вызова API.
 
@@ -38,7 +38,7 @@ ms.locfileid: "72596752"
 # <a name="pythontabpython"></a>[Python](#tab/python)
 
 ```Python
-endpoint = "url to the API" 
+endpoint = "url to the API"
 http_headers = {'Authorization': 'Bearer ' + result['access_token'],
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'}

@@ -1,6 +1,6 @@
 ---
-title: Веб-приложения, что вызовы веб-API, (вызов веб-API) — платформе Microsoft identity
-description: Узнайте, как создать веб-приложение, которое вызывает веб-API (вызов веб-API)
+title: Веб-приложение, вызывающее веб-API (вызов веб-API) — платформа Microsoft Identity
+description: Узнайте, как создать веб-приложение, вызывающее веб-API (вызов веб-API).
 services: active-directory
 documentationcenter: dev-center-name
 author: jmprieur
@@ -11,24 +11,24 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 05/07/2019
+ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3624f4e859081e53ee27b6f8415eb3f9b5a2a5fa
-ms.sourcegitcommit: 1572b615c8f863be4986c23ea2ff7642b02bc605
+ms.openlocfilehash: d971ec3c7cd82d6e028d0f96c8f52b897cedc351
+ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67785461"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73175300"
 ---
-# <a name="web-app-that-calls-web-apis---call-a-web-api"></a>Веб-приложение, которое вызывает веб-API - вызов веб-API
+# <a name="web-app-that-calls-web-apis---call-a-web-api"></a>Веб-приложение, вызывающее веб-API — вызов веб-API
 
 Теперь, когда у вас есть маркер, можно вызвать защищенный веб-API.
 
-## <a name="aspnet-core"></a>ASP.NET Core
+# <a name="aspnet-coretabaspnetcore"></a>[ASP.NET Core](#tab/aspnetcore)
 
-Ниже приведен упрощенный код действия `HomeController`. Этот код получает токен для вызова Microsoft Graph. Этот код времени была добавлена, показывающий, как для вызова Microsoft Graph, как REST API. URL-адрес для graph API предоставляется в `appsettings.json` файлов и чтение в переменной с именем `webOptions`:
+Ниже приведен упрощенный код действия `HomeController`. Этот код получает маркер для вызова Microsoft Graph. Этот код времени был добавлен, показывая, как вызывать Microsoft Graph как REST API. URL-адрес для API Graph предоставляется в файле `appsettings.json` и считывается в переменной с именем `webOptions`:
 
 ```JSon
 {
@@ -83,11 +83,54 @@ public async Task<IActionResult> Profile()
 ```
 
 > [!NOTE]
-> Для вызова веб-API, можно использовать тот же принцип.
+> Вы можете использовать тот же принцип для вызова любого веб-API.
 >
-> Наиболее Azure web API предоставляют пакет SDK, который упрощает вызов этого метода. Это также происходит из Microsoft Graph. Вы узнаете, в следующей статье где можно найти руководства, иллюстрирующие эти аспекты.
+> Большинство веб-API Azure предоставляют пакет SDK, который упрощает его вызов. Это также относится к Microsoft Graph. В следующей статье вы узнаете, как найти учебник, иллюстрирующий эти аспекты.
 
-## <a name="next-steps"></a>Следующие шаги
+# <a name="javatabjava"></a>[Java](#tab/java)
+
+```Java
+private String getUserInfoFromGraph(String accessToken) throws Exception {
+    // Microsoft Graph user endpoint
+    URL url = new URL("https://graph.microsoft.com/v1.0/me");
+
+    HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
+    // Set the appropriate header fields in the request header.
+    conn.setRequestProperty("Authorization", "Bearer " + accessToken);
+    conn.setRequestProperty("Accept", "application/json");
+
+    String response = HttpClientHelper.getResponseStringFromConn(conn);
+
+    int responseCode = conn.getResponseCode();
+    if(responseCode != HttpURLConnection.HTTP_OK) {
+        throw new IOException(response);
+    }
+
+    JSONObject responseObject = HttpClientHelper.processResponse(responseCode, response);
+    return responseObject.toString();
+}
+
+```
+
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+```Python
+@app.route("/graphcall")
+def graphcall():
+    token = _get_token_from_cache(app_config.SCOPE)
+    if not token:
+        return redirect(url_for("login"))
+    graph_data = requests.get(  # Use token to call downstream service
+        app_config.ENDPOINT,
+        headers={'Authorization': 'Bearer ' + token['access_token']},
+        ).json()
+    return render_template('display.html', result=graph_data)
+```
+
+---
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Переместить в рабочую среду](scenario-web-app-call-api-production.md)

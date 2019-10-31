@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/30/2019
 ms.author: spelluru
-ms.openlocfilehash: 147d3dba2e2dc271d5b7422d7ba2b28c04f583af
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.openlocfilehash: 9502a81149df11ffa378bf8ffc2c377f4bb22d7f
+ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72330639"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73177117"
 ---
 # <a name="set-up-a-lab-to-teach-shell-scripting-on-linux"></a>Настройка лаборатории для создания сценариев оболочки в Linux
 В этой статье показано, как настроить лабораторию, чтобы обучить сценарии оболочки в Linux. Скрипты — это полезная часть системного администрирования, которая позволяет администраторам избежать повторяющихся задач. В этом примере сценария класс охватывает традиционные bash-скрипты и расширенные скрипты. Расширенные скрипты — это скрипты, сочетающие bash-команды и Ruby. Этот подход позволяет Ruby передавать данные и bash-команды для взаимодействия с оболочкой. 
@@ -32,19 +32,19 @@ ms.locfileid: "72330639"
 
 | Параметр учетной записи лаборатории | Указания |
 | ----------- | ------------ |  
-| Образы Marketplace | Включите образ [Ubuntu Server 18,04 LTS](https://azuremarketplace.microsoft.com/marketplace/apps/Canonical.UbuntuServer1804LTS) для использования в учетной записи лаборатории. Дополнительные сведения см. [в разделе Указание образов Marketplace, доступных авторам лабораторий](tutorial-setup-lab-account.md#specify-marketplace-images-available-to-lab-creators) . | 
+| Образы Marketplace | Включите образ [Ubuntu Server 18,04 LTS](https://azuremarketplace.microsoft.com/marketplace/apps/canonical.0001-com-ubuntu-server-bionic) для использования в учетной записи лаборатории. Дополнительные сведения см. [в разделе Указание образов Marketplace, доступных авторам лабораторий](tutorial-setup-lab-account.md#specify-marketplace-images-available-to-lab-creators) . | 
 
 Следуйте указаниям [этого учебника](tutorial-setup-classroom-lab.md) , чтобы создать лабораторию и применить следующие параметры.
 
 | Параметры лаборатории | Значение или инструкции | 
 | ------------ | ------------------ |
 | Размер виртуальной машины (ВМ) | Мелкая  |
-| Образ виртуальной машины | [Ubuntu Server 18,04 LTS](https://azuremarketplace.microsoft.com/marketplace/apps/Canonical.UbuntuServer1804LTS) |
+| Образ виртуальной машины | [Ubuntu Server 18,04 LTS](https://azuremarketplace.microsoft.com/marketplace/apps/canonical.0001-com-ubuntu-server-bionic) |
 | Включить подключение к удаленному рабочему столу | Параметр. <p>Включение этого параметра позволит преподавателям и учащимся подключаться к своим виртуальным машинам с помощью удаленного рабочего стола (RDP). Дополнительные сведения см. в статье [Включение удаленного рабочего стола для виртуальных машин Linux в лаборатории в службах лаборатории Azure](how-to-enable-remote-desktop-linux.md#connect-to-the-template-vm). </p>|
 
 
 ## <a name="install-desktop-and-xrdp"></a>Установка Desktop и xrdp
-На образе [Ubuntu Server 18,04 LTS](https://azuremarketplace.microsoft.com/marketplace/apps/Canonical.UbuntuServer1804LTS) по умолчанию не установлен сервер удаленного рабочего стола. Следуйте инструкциям в статье [Установка и настройка удаленный рабочий стол для подключения к виртуальной машине Linux в Azure](../../virtual-machines/linux/use-remote-desktop.md) , чтобы установить пакеты, необходимые на компьютере шаблона для подключения через протокол удаленного рабочего стола.
+На образе [Ubuntu Server 18,04 LTS](https://azuremarketplace.microsoft.com/marketplace/apps/canonical.0001-com-ubuntu-server-bionic) по умолчанию не установлен сервер удаленного рабочего стола. Следуйте инструкциям в статье [Установка и настройка удаленный рабочий стол для подключения к виртуальной машине Linux в Azure](../../virtual-machines/linux/use-remote-desktop.md) , чтобы установить пакеты, необходимые на компьютере шаблона для подключения через протокол удаленного рабочего стола.
 
 ## <a name="install-ruby"></a>Установка Ruby
 Ruby — это динамический язык с открытым исходным кодом, который можно сочетать с скриптами bash. В этом разделе показано, как использовать `apt-get` для установки последней версии [Ruby](https://www.ruby-lang.org/).

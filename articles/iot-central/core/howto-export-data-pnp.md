@@ -8,12 +8,12 @@ ms.date: 10/15/2019
 ms.topic: conceptual
 ms.service: iot-central
 manager: peterpr
-ms.openlocfilehash: bc78f11d4f61c46e2ad4f7143fe8b3af6762b0b4
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 118d2b42bc14a943aa3fa60b34aa1c151d5dea4c
+ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72950422"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73176303"
 ---
 # <a name="export-your-azure-iot-central-datapreview-features"></a>Экспорт данных IoT Central Azure (Предварительная версия компонентов)
 
@@ -195,7 +195,7 @@ ms.locfileid: "72950422"
 
 - идентификатор (`@id`) устройства в IoT Central;
 - имя (`name`) устройства;
-- идентификатор устройства (`deviceId`) из [Службы подготовки устройств](https://aka.ms/iotcentraldocsdps);
+- идентификатор устройства (`deviceId`) из [Службы подготовки устройств](/azure/iot-central/core/howto-connect-nodejs);
 - сведения о шаблоне устройства;
 - Значения свойств
 

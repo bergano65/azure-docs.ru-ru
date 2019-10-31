@@ -1,6 +1,6 @@
 ---
-title: Распространенные сценарии в управлении назначениями Azure AD (Предварительная версия) — Azure Active Directory
-description: Ознакомьтесь с общими действиями, которые следует выполнить для распространенных сценариев в Azure Active Directory управления назначением (Предварительная версия).
+title: Распространенные сценарии в управлении назначениями Azure AD — Azure Active Directory
+description: Ознакомьтесь с общими действиями, которые следует выполнить для распространенных сценариев в Azure Active Directory управлении обслуживанием.
 services: active-directory
 documentationCenter: ''
 author: msaburnley
@@ -12,116 +12,146 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.subservice: compliance
-ms.date: 04/23/2019
+ms.date: 10/28/2019
 ms.author: ajburnle
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 81382ebecdff6c7b146386b3ae2b0768a7c834bf
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: 24d2dc82d0e81c9ac374d96387677774dc916b8c
+ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72389067"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73173499"
 ---
-# <a name="common-scenarios-in-azure-ad-entitlement-management-preview"></a>Распространенные сценарии в управлении назначениями Azure AD (Предварительная версия)
+# <a name="common-scenarios-in-azure-ad-entitlement-management"></a>Распространенные сценарии в управлении назначениями Azure AD
 
-> [!IMPORTANT]
-> Управление правами Azure Active Directory (Azure AD) сейчас предоставляется в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
-> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+Существует несколько способов настройки управления назначениями для Организации. Тем не менее, если вы только начинаете работу, полезно понимать распространенные сценарии для администраторов, владельцев каталогов, доступа к менеджерам пакетов, утверждающим и запрашивающим лицам.
 
-Существует несколько способов настройки управления назначениями для Организации. Однако если вы только начинаете работу, полезно понимать распространенные сценарии для администраторов, утверждающих и запрашивающих.
+## <a name="delegate"></a>Получить
 
-## <a name="administrators"></a>Администраторы
+### <a name="administrator-delegate-management-of-resources"></a>Администратор: Делегирование управления ресурсами
 
-### <a name="im-new-to-entitlement-management-and-i-want-help-with-getting-started"></a>Я не являюсь новым руководством по управлению назначением и хочу получить помощь по началу работы
+1. [Просмотр видео: делегирование из ИТ в менеджер отдела](https://www.microsoft.com/videoplayer/embed/RE3Lq00)
+1. [Делегирование пользователей в роль создателя каталога](entitlement-management-delegate-catalog.md)
 
-> [!div class="mx-tableFixed"]
-> | Действия | Пример |
-> | --- | --- |
-> | [Следуйте указаниям в руководстве по созданию пакета первого доступа](entitlement-management-access-package-first.md) | [значок портала ![Azure](./media/entitlement-management-scenarios/azure-portal.png)](./media/entitlement-management-scenarios/azure-portal-expanded.png#lightbox) |
+### <a name="catalog-creator-delegate-management-of-resources"></a>Создатель каталога: Делегирование управления ресурсами
 
-### <a name="i-want-to-allow-users-in-my-directory-to-request-access-to-groups-applications-or-sharepoint-sites"></a>Я хочу разрешить пользователям в моем каталоге запрашивать доступ к группам, приложениям или сайтам SharePoint
+- [Создать новый каталог](entitlement-management-catalog-create.md#create-a-catalog)
 
-> [!div class="mx-tableFixed"]
-> | Действия | Пример |
-> | --- | --- |
-> | **1.** [Создание нового пакета Access в каталоге](entitlement-management-access-package-create.md#start-new-access-package) | ![Создание пакета для доступа](./media/entitlement-management-scenarios/access-package.png) |
-> | **2.** [Добавление ролей ресурсов в пакет Access](entitlement-management-access-package-resources.md#add-resource-roles)<ul><li>Группы</li><li>приложениям</li><li>Сайты SharePoint</li></ul> | ![Добавление ролей ресурсов](./media/entitlement-management-scenarios/resource-roles.png) |
-> | **3.** [Добавление политики](entitlement-management-access-package-request-policy.md#for-users-in-your-directory)<ul><li>Для пользователей в вашем каталоге</li><li>Требуется утверждение</li><li>Параметры жизненного цикла</li></ul> | ![добавление политики;](./media/entitlement-management-scenarios/policy.png) |
+### <a name="catalog-owner-delegate-management-of-resources"></a>Владелец каталога: Делегирование управления ресурсами
 
-### <a name="i-want-to-allow-users-from-my-business-partners-directory-including-users-not-yet-in-my-directory-to-request-access-to-groups-applications-or-sharepoint-sites"></a>Я хочу разрешить пользователям из каталога бизнес-партнеров (включая пользователей, которых еще нет в моем каталоге) запрашивать доступ к группам, приложениям или сайтам SharePoint
+1. [Добавление совладельцев в каталог](entitlement-management-catalog-create.md#add-additional-catalog-owners)
+1. [Добавление ресурсов в каталог](entitlement-management-catalog-create.md#add-resources-to-a-catalog)
 
-> [!div class="mx-tableFixed"]
-> | Действия | Пример |
-> | --- | --- |
-> | **1.** [Создание нового пакета Access в каталоге](entitlement-management-access-package-create.md#start-new-access-package) | ![Создание пакета для доступа](./media/entitlement-management-scenarios/access-package.png) |
-> | **2.** [Добавление ролей ресурсов в пакет Access](entitlement-management-access-package-resources.md#add-resource-roles) | ![Добавление ролей ресурсов](./media/entitlement-management-scenarios/resource-roles.png) |
-> | **3.** [Добавление политики для внешних пользователей](entitlement-management-access-package-request-policy.md#for-users-not-in-your-directory)<ul><li>Для пользователей, не наличныхся в вашем каталоге</li><li>Требуется утверждение</li><li>Параметры жизненного цикла</li></ul> | ![Добавление политики для внешних пользователей](./media/entitlement-management-scenarios/policy-external.png) |
-> | **4.** [отправьте ссылку, чтобы запросить пакет Access для вашего бизнес-партнера](entitlement-management-access-package-settings.md)<ul><li>Бизнес-партнер может поделиться связью с пользователями</li></ul> |  |
+### <a name="catalog-owner-delegate-management-of-access-packages"></a>Владелец каталога: Делегирование управления пакетами доступа
 
-### <a name="i-want-to-change-the-groups-applications-or-sharepoint-sites-in-an-access-package"></a>Я хочу изменить группы, приложения или сайты SharePoint в пакете Access
+1. [Просмотр видео: делегирование владельца каталога для доступа к диспетчеру пакетов](https://www.microsoft.com/videoplayer/embed/RE3Lq08)
+1. [Делегирование пользователям доступа к роли диспетчера пакетов](entitlement-management-delegate-managers.md)
 
-> [!div class="mx-tableFixed"]
-> | Действия | Пример |
-> | --- | --- |
-> | **1.** Открытие пакета Access | ![Добавление ролей ресурсов](./media/entitlement-management-scenarios/resource-roles.png) |
-> | **2.** [Добавление или удаление ролей ресурсов](entitlement-management-access-package-resources.md#add-resource-roles) | ![Добавление ролей ресурсов](./media/entitlement-management-scenarios/resource-roles-add.png) |
+## <a name="govern-access-for-users-in-your-organization"></a>Управление доступом для пользователей в Организации
 
-### <a name="i-want-to-view-who-has-an-assignment-to-groups-applications-or-sharepoint-sites"></a>Я хочу просмотреть, кому назначены группы, приложения или сайты SharePoint
+### <a name="access-package-manager-allow-employees-in-your-organization-to-request-access-to-resources"></a>Доступ к диспетчеру пакетов: разрешить сотрудникам в вашей организации запрашивать доступ к ресурсам
 
-> [!div class="mx-tableFixed"]
-> | Действия | Пример |
-> | --- | --- |
-> | **1.** Открытие пакета Access | ![Добавление ролей ресурсов](./media/entitlement-management-scenarios/resource-roles.png) |
-> | **2.** [Просмотр назначений](entitlement-management-access-package-assignments.md#view-who-has-an-assignment)<ul><li>Просмотр пользователей, имеющих доступ к пакету Access</li><li>Просмотр истечения срока действия доступа пользователя</li></ul> |  |
+1. [Создать новый пакет Access](entitlement-management-access-package-create.md#start-new-access-package)
+1. [Добавление групп, команд, приложений или сайтов SharePoint для доступа к пакету](entitlement-management-access-package-create.md#resource-roles)
+1. [Добавьте политику запросов, чтобы разрешить пользователям в вашем каталоге запрашивать доступ.](entitlement-management-access-package-create.md#for-users-in-your-directory)
+1. [Укажите параметры срока действия](entitlement-management-access-package-create.md#lifecycle)
 
-### <a name="i-want-to-view-groups-applications-or-sharepoint-sites-a-user-has-access-to"></a>Я хочу просмотреть группы, приложения или сайты SharePoint, к которым у пользователя есть доступ
+### <a name="requestor-request-access-to-resources"></a>Запрашивающая стороны: запрос доступа к ресурсам
 
-> [!div class="mx-tableFixed"]
-> | Действия | Пример |
-> | --- | --- |
-> | [Просмотр отчета о назначениях пользователей](entitlement-management-reports.md)<ul><li>Просмотр, когда они запрошены и кто утвердил</li></ul> |  |
+1. [Войдите на портал доступа](entitlement-management-request-access.md#sign-in-to-the-my-access-portal)
+1. Найти пакет Access
+1. [Запрос доступа](entitlement-management-request-access.md#request-an-access-package)
 
-## <a name="approvers"></a>Утверждающие
+### <a name="approver-approve-requests-to-resources"></a>Утверждающий: утвердить запросы к ресурсам
 
-### <a name="i-want-to-approve-requests-to-access-groups-applications-or-sharepoint-sites"></a>Я хочу утверждать запросы на доступ к группам, приложениям или сайтам SharePoint
+1. [Открыть запрос на портале доступа](entitlement-management-request-approve.md#open-request)
+1. [Утверждение или отклонение запроса на доступ](entitlement-management-request-approve.md#approve-or-deny-request)
 
-> [!div class="mx-tableFixed"]
-> | Действия | Пример |
-> | --- | --- |
-> | **1.** [Открытие запроса на портале доступа](entitlement-management-request-approve.md#open-request) | [значок портала доступа к @no__t 1My](./media/entitlement-management-scenarios/my-access-portal.png)](./media/entitlement-management-scenarios/my-access-portal-expanded.png#lightbox) |
-> | **2.** [Утверждение запроса на доступ](entitlement-management-request-approve.md#approve-or-deny-request) | ![Утвердить доступ](./media/entitlement-management-scenarios/approve-access.png) |
+### <a name="requestor-view-the-resources-you-already-have-access-to"></a>Запрашивающая стороны: Просмотр ресурсов, к которым у вас уже есть доступ
 
-## <a name="requestors"></a>Запрашивающие стороны
+1. [Войдите на портал доступа](entitlement-management-request-access.md#sign-in-to-the-my-access-portal)
+1. Просмотр пакетов активного доступа
 
-### <a name="i-want-to-view-the-groups-applications-or-sharepoint-sites-available-to-me-and-request-access"></a>Я хочу просмотреть доступные мне группы, приложения или сайты SharePoint и запросить доступ
+## <a name="govern-access-for-users-outside-your-organization"></a>Управление доступом пользователей за пределами Организации
 
-> [!div class="mx-tableFixed"]
-> | Действия | Пример |
-> | --- | --- |
-> | **1.** [Войдите на портал доступа](entitlement-management-request-access.md#sign-in-to-the-my-access-portal) | [значок портала доступа к @no__t 1My](./media/entitlement-management-scenarios/my-access-portal.png)](./media/entitlement-management-scenarios/my-access-portal-expanded.png#lightbox) |
-> | **2.** поиск пакета Access |  |
-> | **3.** [запрос доступа](entitlement-management-request-access.md#request-an-access-package) | ![Запрос доступа](./media/entitlement-management-scenarios/request-access.png) |
+### <a name="administrator-collaborate-with-an-external-partner-organization"></a>Администратор: совместная работа с внешней партнерской организацией
 
-### <a name="im-an-external-user-and-i-want-to-request-access-to-groups-applications-or-sharepoint-sites-with-a-direct-link"></a>Я являюсь внешним пользователем и хочу запросить доступ к группам, приложениям или сайтам SharePoint с помощью прямой ссылки
+1. [Узнайте, как работает доступ для внешних пользователей](entitlement-management-external-users.md#how-access-works-for-external-users)
+1. [Проверка параметров внешних пользователей](entitlement-management-external-users.md#settings-for-external-users)
+1. [Добавление подключения к внешней организации](entitlement-management-organization.md)
 
-> [!div class="mx-tableFixed"]
-> | Действия | Пример |
-> | --- | --- |
-> | **1.** [найдите полученную ссылку на пакет Access](entitlement-management-access-package-settings.md) . |  |
-> | **2.** [Войдите на портал доступа](entitlement-management-request-access.md#sign-in-to-the-my-access-portal) | [значок портала доступа к @no__t 1My](./media/entitlement-management-scenarios/my-access-portal.png)](./media/entitlement-management-scenarios/my-access-portal-expanded.png#lightbox) |
-> | **3.** [запрос доступа](entitlement-management-request-access.md#request-an-access-package) | ![Запрос доступа внешних пользователей](./media/entitlement-management-scenarios/request-access-external.png) |
+### <a name="access-package-manager-collaborate-with-an-external-partner-organization"></a>Доступ к диспетчеру пакетов. Совместная работа с внешней организацией партнера
 
-### <a name="i-want-to-view-the-groups-applications-or-sharepoint-sites-i-already-have-access-to"></a>Я хочу просмотреть группы, приложения или сайты SharePoint, к которым у меня уже есть доступ
+1. [Создать новый пакет Access](entitlement-management-access-package-create.md#start-new-access-package)
+1. [Добавление групп, команд, приложений или сайтов SharePoint для доступа к пакету](entitlement-management-access-package-resources.md#add-resource-roles)
+1. [Добавьте политику запросов, чтобы разрешить пользователям, которые не находятся в вашем каталоге, запрашивать доступ.](entitlement-management-access-package-request-policy.md#for-users-not-in-your-directory)
+1. [Укажите параметры срока действия](entitlement-management-access-package-create.md#lifecycle)
+1. [Копирование ссылки для запроса пакета Access](entitlement-management-access-package-settings.md)
+1. Отправьте ссылку на партнера по связи с внешним партнером, чтобы поделиться ими с пользователями
 
-> [!div class="mx-tableFixed"]
-> | Действия | Пример |
-> | --- | --- |
-> | **1.** [Войдите на портал доступа](entitlement-management-request-access.md#sign-in-to-the-my-access-portal) | [значок портала доступа к @no__t 1My](./media/entitlement-management-scenarios/my-access-portal.png)](./media/entitlement-management-scenarios/my-access-portal-expanded.png#lightbox) |
-> | **2.** просмотр пакетов активного доступа |  |
+### <a name="requestor-request-access-to-resources-as-an-external-user"></a>Запрашивающий объект. запрос доступа к ресурсам как внешним пользователям
+
+1. Найдите ссылку на пакет Access, полученный от вашего контакта
+1. [Войдите на портал доступа](entitlement-management-request-access.md#sign-in-to-the-my-access-portal)
+1. [Запрос доступа](entitlement-management-request-access.md#request-an-access-package)
+
+### <a name="approver-approve-requests-to-resources"></a>Утверждающий: утвердить запросы к ресурсам
+
+1. [Открыть запрос на портале доступа](entitlement-management-request-approve.md#open-request)
+1. [Утверждение или отклонение запроса на доступ](entitlement-management-request-approve.md#approve-or-deny-request)
+
+### <a name="requestor-view-the-resources-your-already-have-access-to"></a>Запрашивающая стороны: Просмотр ресурсов, к которым у вас уже есть доступ
+
+1. [Войдите на портал доступа](entitlement-management-request-access.md#sign-in-to-the-my-access-portal)
+1. Просмотр пакетов активного доступа
+
+## <a name="day-to-day-management"></a>Повседневное управление
+
+### <a name="access-package-manager-update-the-resources-for-a-project"></a>Доступ к диспетчеру пакетов: обновление ресурсов для проекта
+
+1. [Просмотр видео: Управление повседневными задачами. изменения](https://www.microsoft.com/videoplayer/embed/RE3LD4Z)
+1. Открытие пакета Access
+1. [Добавление или удаление групп, команд, приложений или сайтов SharePoint](entitlement-management-access-package-resources.md#add-resource-roles)
+
+### <a name="access-package-manager-update-the-duration-for-a-project"></a>Доступ к диспетчеру пакетов: обновление длительности проекта
+
+1. [Просмотр видео: Управление повседневными задачами. изменения](https://www.microsoft.com/videoplayer/embed/RE3LD4Z)
+1. Открытие пакета Access
+1. [Открытие параметров жизненного цикла](entitlement-management-access-package-lifecycle-policy.md#open-lifecycle-settings)
+1. [Обновление параметров срока действия](entitlement-management-access-package-lifecycle-policy.md#lifecycle)
+
+### <a name="access-package-manager-update-how-access-is-approved-for-a-project"></a>Доступ к диспетчеру пакетов: обновление порядка утверждения доступа для проекта
+
+1. [Просмотр видео: Управление повседневными задачами. изменения](https://www.microsoft.com/videoplayer/embed/RE3LD4Z)
+1. [Открытие существующей политики параметров запросов и утверждений](entitlement-management-access-package-request-policy.md#open-an-existing-policy-of-request-and-approval-settings)
+1. [Обновление параметров утверждения](entitlement-management-access-package-request-policy.md#approval)
+
+### <a name="access-package-manager-update-the-people-for-a-project"></a>Доступ к диспетчеру пакетов: Обновление пользователей для проекта
+
+1. [Просмотр видео: Управление повседневными задачами. изменения](https://www.microsoft.com/videoplayer/embed/RE3LD4Z)
+1. [Удаление пользователей, которым больше не нужен доступ](entitlement-management-access-package-assignments.md)
+1. [Открытие существующей политики параметров запросов и утверждений](entitlement-management-access-package-request-policy.md#open-an-existing-policy-of-request-and-approval-settings)
+1. [Добавление пользователей, которым требуется доступ](entitlement-management-access-package-request-policy.md#for-users-in-your-directory)
+
+### <a name="access-package-manager-directly-assign-specific-users-to-an-access-package"></a>Доступ к диспетчеру пакетов: непосредственно назначить конкретных пользователей для пакета Access
+
+1. [Если пользователям требуются другие параметры жизненного цикла, добавьте новую политику в пакет Access.](entitlement-management-access-package-request-policy.md#add-a-new-policy-of-request-and-approval-settings)
+1. [Прямое назначение конкретных пользователей пакету доступа](entitlement-management-access-package-assignments.md#directly-assign-a-user)
+
+## <a name="assignments-and-reports"></a>Назначения и отчеты
+
+### <a name="administrator-view-who-has-assignments-to-an-access-package"></a>Администратор: Просмотр пользователей, имеющих назначения для пакета Access
+
+1. Открытие пакета Access
+1. [Просмотр назначений](entitlement-management-access-package-assignments.md#view-who-has-an-assignment)
+
+### <a name="administrator-view-resources-assigned-to-users"></a>Администратор: Просмотр ресурсов, назначенных пользователям
+
+1. [Просмотр пакетов доступа для пользователя](entitlement-management-reports.md#view-access-packages-for-a-user)
+1. [Просмотр назначений ресурсов для пользователя](entitlement-management-reports.md#view-resource-assignments-for-a-user)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Руководство. Создание пакета первого доступа](entitlement-management-access-package-first.md)
 - [Делегирование и роли](entitlement-management-delegate.md)
+- [Обработка запросов и уведомления по электронной почте](entitlement-management-process.md)

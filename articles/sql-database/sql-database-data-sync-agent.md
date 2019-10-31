@@ -11,21 +11,21 @@ author: allenwux
 ms.author: xiwu
 ms.reviewer: carlrab
 ms.date: 12/20/2018
-ms.openlocfilehash: de7858be4ac4e392b4fb92cacf55882378ba9813
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 13a59a9b536a25897d7c545b6fb466c1192cb545
+ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68568975"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73177711"
 ---
 # <a name="data-sync-agent-for-azure-sql-data-sync"></a>Агент синхронизации данных для синхронизации данных SQL Azure
 
-Синхронизируйте данные с локальными базами данных SQL Server с помощью установки и настройки Агента синхронизации данных для синхронизации данных SQL Azure. Дополнительные сведения о синхронизации данных SQL см. в статье [Синхронизация данных в нескольких облачных и локальных базах данных с помощью синхронизации данных SQL](sql-database-sync-data.md).
+Синхронизируйте данные с локальными SQL Server базами данных, установив и настроив агент синхронизации данных для синхронизация данных SQL Azure. Дополнительные сведения о синхронизация данных SQL см. [в статье Синхронизация данных в нескольких облачных и локальных базах данных с помощью синхронизация данных SQL](sql-database-sync-data.md).
 
 > [!IMPORTANT]
 > Служба "Синхронизация данных SQL Azure" пока **не** поддерживает Управляемый экземпляры Базы данных SQL Azure.
 
-## <a name="download-and-install"></a>Скачать и установить
+## <a name="download-and-install"></a>Загрузка и установка
 
 Загрузить Агент синхронизации данных можно на странице [SQL Azure Data Sync Agent](https://www.microsoft.com/download/details.aspx?id=27693) (Агент синхронизации данных SQL Azure).
 
@@ -37,7 +37,7 @@ ms.locfileid: "68568975"
 
 - Если указать `LocalSystem` в качестве параметра **SERVICEACCOUNT**, используйте проверку подлинности SQL Server при настройке агента для подключения к локальному экземпляру SQL Server.
 
-- Если указать учетную запись пользователя домена или учетную запись локального пользователя в качестве параметра **SERVICEACCOUNT**, необходимо также указать пароль в аргументе **SERVICEPASSWORD**. Например, `SERVICEACCOUNT="<domain>\<user>"  SERVICEPASSWORD="<password>"`.
+- Если указать учетную запись пользователя домена или учетную запись локального пользователя в качестве параметра **SERVICEACCOUNT**, необходимо также указать пароль в аргументе **SERVICEPASSWORD**. Пример: `SERVICEACCOUNT="<domain>\<user>"  SERVICEPASSWORD="<password>"`.
 
 ```cmd
 msiexec /i "SQLDataSyncAgent-2.0-x86-ENU.msi" TARGETDIR="C:\Program Files (x86)\Microsoft SQL Data Sync 2.0" SERVICEACCOUNT="LocalSystem" /qn
@@ -115,7 +115,7 @@ msiexec /i "SQLDataSyncAgent-2.0-x86-ENU.msi" TARGETDIR="C:\Program Files (x86)\
 - **Способы устранения**. Попробуйте применить следующие два способа:
 
     -   Используйте services.msc для повторного ввода учетных данных агента клиента.
-    -   Удалите этот агент клиента и установите его заново. Скачайте и установите последний агент клиента из [центра загрузки](https://go.microsoft.com/fwlink/?linkid=221479).
+    -   Удалите этот агент клиента и установите его заново. Скачайте и установите последний агент клиента из [центра загрузки](https://www.microsoft.com/download/details.aspx?id=27693).
 
 ### <a name="agent-list"></a> В списке агента отсутствует моя база данных
 
@@ -138,7 +138,7 @@ msiexec /i "SQLDataSyncAgent-2.0-x86-ENU.msi" TARGETDIR="C:\Program Files (x86)\
 
 ### <a name="agent-start"></a> Агент клиента не запускается (ошибка 1069)
 
-Вы обнаружили, что агент не работает на компьютере, на котором размещен сервер SQL Server. При попытке запустить агент вручную отображается диалоговое окно с сообщением об ошибке: "Ошибка 1069. Служба не запущена из-за ошибки входа в систему".
+Вы обнаружили, что агент не работает на компьютере, на котором размещен сервер SQL Server. При попытке запустить агент вручную отображается диалоговое окно с сообщением об ошибке: "Ошибка 1069. Служба не запущена из-за ошибки входа в систему".
 
 ![Диалоговое окно ошибки с синхронизацией данных 1069](media/sql-database-troubleshoot-data-sync/sync-error-1069.png)
 
@@ -147,10 +147,10 @@ msiexec /i "SQLDataSyncAgent-2.0-x86-ENU.msi" TARGETDIR="C:\Program Files (x86)\
 - **Способы устранения**. Обновите пароль агента до текущего пароля сервера.
 
   1. Найдите службу агента клиента синхронизации данных SQL.  
-    1\. Щелкните **Запуск**.  
-    2\. В поле поиска введите **services.msc**.  
-    В. В результатах поиска щелкните **Службы**.  
-    Г. В окне **Службы** прокрутите список до записи **Агент синхронизации данных SQL**.  
+    а) Щелкните **Запуск**.  
+    б) В поле поиска введите **services.msc**.  
+    в) В результатах поиска щелкните **Службы**.  
+    г) В окне **Службы** прокрутите список до записи **Агент синхронизации данных SQL**.  
   1. Щелкните правой кнопкой мыши **Агент синхронизации данных SQL**, а затем выберите **Остановить**.
   1. Щелкните правой кнопкой мыши **Агент синхронизации данных SQL**, а затем выберите **Свойства**.
   1. В окне **Свойства агента синхронизации данных SQL** щелкните вкладку **Вход**.
@@ -213,8 +213,8 @@ msiexec /i "SQLDataSyncAgent-2.0-x86-ENU.msi" TARGETDIR="C:\Program Files (x86)\
 
   1. Выйдите из приложения.  
   1. Откройте панель "Службы компонентов".  
-    1\. В поле поиска на панели задач введите **services.msc**.  
-    2\. В результатах поиска дважды щелкните **Службы**.  
+    а) В поле поиска на панели задач введите **services.msc**.  
+    б) В результатах поиска дважды щелкните **Службы**.  
   1. Остановите работу службы **синхронизации данных SQL**.
   1. Перезапустите службу **синхронизации данных SQL**.  
   1. Повторно откройте приложение.
@@ -298,7 +298,7 @@ SqlDataSyncAgentCommand.exe -action unregisterdatabase -servername [on-premisesd
 SqlDataSyncAgentCommand.exe -action "unregisterdatabase" -serverName localhost -databaseName testdb
 ```
 
-### <a name="update-credentials"></a>Обновить учетные данные
+### <a name="update-credentials"></a>Обновление учетных данных
 
 #### <a name="usage"></a>Использование
 
@@ -314,13 +314,13 @@ SqlDataSyncAgentCommand.exe -action "updatecredential" -serverName localhost -da
 SqlDataSyncAgentCommand.exe -action "updatecredential" -serverName localhost -databaseName testdb -authentication windows -encryption true
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Синхронизации данных SQL см. в следующих статьях:
 
--   Обзор: [Синхронизация данных в нескольких облачных и локальных базах данных с помощью функции синхронизации данных SQL Azure](sql-database-sync-data.md).
+-   Обзор: [Синхронизация данных в нескольких облачных и локальных базах данных с помощью синхронизации данных SQL](sql-database-sync-data.md).
 -   Настройка синхронизации данных
-    - На портале: [Руководство по настройке синхронизации данных SQL между базой данных SQL Azure и локальной базой данных SQL Server](sql-database-get-started-sql-data-sync.md)
+    - На портале: [Руководство по настройке синхронизации данных SQL между базой данных SQL Azure и локальной базой данных SQL Server](sql-database-get-started-sql-data-sync.md).
     - С помощью PowerShell
         -  [Использование PowerShell для синхронизации данных между несколькими базами данных SQL Azure](scripts/sql-database-sync-data-between-sql-databases.md)
         -  [Использование PowerShell для синхронизации данных между базой данных SQL Azure и локальной базой данных SQL Server](scripts/sql-database-sync-data-between-azure-onprem.md)

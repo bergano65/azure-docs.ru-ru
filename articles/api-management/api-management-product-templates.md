@@ -11,18 +11,18 @@ ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 01/09/2017
+ms.date: 11/04/2019
 ms.author: apimpm
-ms.openlocfilehash: 637d4e7bc75537d99538048700673192534613dc
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 393563427e936e07315cd44b78cb793d4292b352
+ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70073384"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73176566"
 ---
 # <a name="product-templates-in-azure-api-management"></a>Шаблоны продуктов в службе управления API Azure
 
-Служба управления API Azure позволяет настраивать содержимое страниц портала разработчика с помощью набора шаблонов. С помощью этих шаблонов вы можете гибко настраивать содержимое страниц, используя синтаксис [DotLiquid](http://dotliquidmarkup.org/), любой удобный текстовый редактор, например [DotLiquid для разработчиков](https://github.com/dotliquid/dotliquid/wiki/DotLiquid-for-Designers), и предоставленный набор локализованных [строковых ресурсов](api-management-template-resources.md#strings), [ресурсов глифов](api-management-template-resources.md#glyphs), а также [элементов управления страницы](api-management-page-controls.md).  
+Служба управления API Azure позволяет настраивать содержимое страниц портала разработчика с помощью набора шаблонов. С помощью синтаксиса [DotLiquid](http://dotliquidmarkup.org/), выбранного редактора, например [DotLiquid для разработчиков](https://github.com/dotliquid/dotliquid/wiki/DotLiquid-for-Designers), и указанного набора локализованных [строковых ресурсов](api-management-template-resources.md#strings), [ресурсов глифов](api-management-template-resources.md#glyphs), а также [элементов управления на странице](api-management-page-controls.md) можно гибко настраивать содержимое страниц по своему усмотрению с использованием этих шаблонов.  
   
  С помощью шаблонов в этом разделе вы сможете настроить содержимое страниц продуктов на портале разработчика.  
   
@@ -32,6 +32,8 @@ ms.locfileid: "70073384"
   
 > [!NOTE]
 >  Примеры шаблонов по умолчанию включены в следующую документацию, но могут в любой момент измениться, так как ведется постоянная работа по их улучшению. Актуальные шаблоны по умолчанию можно просмотреть на портале разработчика, перейдя к требуемому отдельному шаблону. Дополнительные сведения о работе с шаблонами см. в статье [Настройка портала разработчика в службе управления API Azure с помощью шаблонов](https://azure.microsoft.com/documentation/articles/api-management-developer-portal-templates/).  
+
+[!INCLUDE [api-management-portal-legacy.md](../../includes/api-management-portal-legacy.md)]
 
 [!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
   
@@ -68,7 +70,7 @@ ms.locfileid: "70073384"
 </div>  
 ```  
   
-### <a name="controls"></a>Элементы управления  
+### <a name="controls"></a>Управление  
  В шаблоне `Product list` можно использовать следующие [элементы управления страницы](api-management-page-controls.md).  
   
 -   [paging-control](api-management-page-controls.md#paging-control)  
@@ -77,9 +79,9 @@ ms.locfileid: "70073384"
   
 ### <a name="data-model"></a>Модель данных  
   
-|Свойство|type|Описание|  
+|Свойство|Тип|Описание|  
 |--------------|----------|-----------------|  
-|Разбиение по страницам|Сущность [разбиения по страницам](api-management-template-data-model-reference.md#Paging).|Сведения о разбиении по страницам для коллекции продуктов.|  
+|Постраничный просмотр|Сущность [разбиения по страницам](api-management-template-data-model-reference.md#Paging).|Сведения о разбиении по страницам для коллекции продуктов.|  
 |Фильтрация|Сущность [фильтрации](api-management-template-data-model-reference.md#Filtering).|Сведения о фильтрации для страницы со списком продуктов.|  
 |Продукты|Коллекция сущностей [Продукт](api-management-template-data-model-reference.md#Product).|Все продукты, которые доступны для текущего пользователя.|  
   
@@ -124,7 +126,7 @@ ms.locfileid: "70073384"
 ##  <a name="Product"></a> Продукт  
  Шаблон **продукта** позволяет настроить текст страницы со информацией о продукте на портале разработчика.  
   
- ![Страница продукта на портале разработчика](./media/api-management-product-templates/APIM_ProductPage.png "APIM_ProductPage")  
+ ![Страница продукта портала разработчика](./media/api-management-product-templates/APIM_ProductPage.png "APIM_ProductPage")  
   
 ### <a name="default-template"></a>Шаблон по умолчанию  
   
@@ -195,26 +197,26 @@ ms.locfileid: "70073384"
 {% endif %}  
 ```  
   
-### <a name="controls"></a>Элементы управления  
+### <a name="controls"></a>Управление  
  В шаблоне `Product list` можно использовать следующие [элементы управления страницы](api-management-page-controls.md).  
   
 -   [subscribe-button](api-management-page-controls.md#subscribe-button)  
   
 ### <a name="data-model"></a>Модель данных  
   
-|Свойство|type|Описание|  
+|Свойство|Тип|Описание|  
 |--------------|----------|-----------------|  
 |Продукт|[Продукт](api-management-template-data-model-reference.md#Product)|Выбранный продукт.|  
-|IsDeveloperSubscribed|boolean|Указывает, подписан ли текущий пользователь на этот продукт.|  
-|SubscriptionState|номер|Состояние подписки. Возможны следующие состояния.<br /><br /> —-    `0 - suspended`: подписка заблокирована, и подписчик не может вызвать ни один API продукта.<br />— -   `1 - active`: подписка активна.<br />— -   `2 - expired`: срок действия подписки истек, и она была деактивирована.<br />— -   `3 - submitted`: запрос разработчика на подписку выполнен, но еще не был утвержден или отклонен.<br />—-    `4 - rejected`: администратор отклонил запрос на подписку.<br />-   `5 - cancelled`: подписка отменена разработчиком или администратором.|  
+|IsDeveloperSubscribed|Логическое|Указывает, подписан ли текущий пользователь на этот продукт.|  
+|SubscriptionState|number|Состояние подписки. Возможны следующие состояния.<br /><br /> —-    `0 - suspended`: подписка заблокирована, и подписчик не может вызвать ни один API продукта.<br />— -   `1 - active`: подписка активна.<br />— -   `2 - expired`: срок действия подписки истек, и она была деактивирована.<br />— -   `3 - submitted`: запрос разработчика на подписку выполнен, но еще не был утвержден или отклонен.<br />—-    `4 - rejected`: администратор отклонил запрос на подписку.<br />— `5 - cancelled`: подписка была отменена разработчиком или администратором.|  
 |Ограничения|array|Это свойство является устаревшим и не должно использоваться.|  
-|DelegatedSubscriptionEnabled|boolean|Указывает, включено ли [делегирование](https://azure.microsoft.com/documentation/articles/api-management-howto-setup-delegation/) для этой подписки.|  
-|DelegatedSubscriptionUrl|строка|Если делегирование включено, содержит URL-адрес делегированной подписки.|  
-|IsAgreed|boolean|Указывает, принял ли текущий пользователь условия использования продукта, если они определены.|  
+|DelegatedSubscriptionEnabled|Логическое|Указывает, включено ли [делегирование](https://azure.microsoft.com/documentation/articles/api-management-howto-setup-delegation/) для этой подписки.|  
+|DelegatedSubscriptionUrl|string|Если делегирование включено, содержит URL-адрес делегированной подписки.|  
+|IsAgreed|Логическое|Указывает, принял ли текущий пользователь условия использования продукта, если они определены.|  
 |Подписки|Коллекция сущностей [Сводка по подписке](api-management-template-data-model-reference.md#SubscriptionSummary).|Подписки на продукт.|  
-|Apis|Коллекция сущностей [API](api-management-template-data-model-reference.md#API).|API-интерфейсы, существующие для этого продукта.|  
-|CannotAddBecauseSubscriptionNumberLimitReached|boolean|Определяет, имеет ли текущий пользователь право подписаться на этот продукт в контексте лимита подписки.|  
-|CannotAddBecauseMultipleSubscriptionsNotAllowed|boolean|Определяет, имеет ли текущий пользователь право подписаться на этот продукт в контексте допустимости нескольких подписок.|  
+|Apis|коллекция сущностей [API](api-management-template-data-model-reference.md#API)|API-интерфейсы, существующие для этого продукта.|  
+|CannotAddBecauseSubscriptionNumberLimitReached|Логическое|Определяет, имеет ли текущий пользователь право подписаться на этот продукт в контексте лимита подписки.|  
+|CannotAddBecauseMultipleSubscriptionsNotAllowed|Логическое|Определяет, имеет ли текущий пользователь право подписаться на этот продукт в контексте допустимости нескольких подписок.|  
   
 ### <a name="sample-template-data"></a>Пример данных шаблона  
   
@@ -260,5 +262,5 @@ ms.locfileid: "70073384"
 }  
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о работе с шаблонами см. в статье [Настройка портала разработчика в службе управления API Azure с помощью шаблонов](api-management-developer-portal-templates.md).

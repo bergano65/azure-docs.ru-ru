@@ -1,6 +1,6 @@
 ---
-title: Изменение параметров запросов и утверждений для пакета Access в управлении назначениями Azure AD (Предварительная версия) — Azure Active Directory
-description: Узнайте, как изменить параметры запросов и утверждений для пакета Access в Azure Active Directory управления назначением (Предварительная версия).
+title: Изменение параметров запросов и утверждений для пакета Access в управлении назначениями Azure AD. Azure Active Directory
+description: Узнайте, как изменить параметры запросов и утверждений для пакета Access в Azure Active Directory управлении обслуживанием.
 services: active-directory
 documentationCenter: ''
 author: msaburnley
@@ -16,19 +16,14 @@ ms.date: 10/15/2019
 ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5b060a17d9e7f795b6aad7df0e3e6349bbbd81b3
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: 649a4a50766d26f73584dae4481652c8007b2e9e
+ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72392505"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73174680"
 ---
-# <a name="change-request-and-approval-settings-for-an-access-package-in-azure-ad-entitlement-management-preview"></a>Изменение параметров запросов и утверждений для пакета Access в управлении назначениями Azure AD (Предварительная версия)
-
-> [!IMPORTANT]
-> Управление правами Azure Active Directory (Azure AD) сейчас предоставляется в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
-> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+# <a name="change-request-and-approval-settings-for-an-access-package-in-azure-ad-entitlement-management"></a>Изменение параметров запросов и утверждений для пакета Access в управлении назначениями Azure AD
 
 Диспетчер пакетов Access позволяет изменять пользователей, которые могут запрашивать пакет доступа в любое время, редактируя политику или добавляя новую политику. Можно также изменить параметры утверждения.
 

@@ -10,14 +10,14 @@ ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 11/20/2017
+ms.date: 11/04/2019
 ms.author: apimpm
-ms.openlocfilehash: b720d64f5b0a5f66375083b7854658aa754db150
-ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
+ms.openlocfilehash: ff608cac9786ebc0d3908ce4d88fb501e621be6c
+ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70072291"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73176602"
 ---
 # <a name="azure-api-management-page-controls"></a>Элементы управления страницей в службе управления API Azure
 Служба управления API Azure предоставляет следующие элементы управления страницей для использования в шаблонах портала разработчика.  
@@ -28,9 +28,11 @@ ms.locfileid: "70072291"
 <app-actions params="{ appId: '{{app.id}}' }"></app-actions>  
 ```  
   
- Значения для этих параметров передаются в составе модели данных для шаблона. В большинстве случаев достаточно просто скопировать представленный пример для элемента управления, и он сразу будет правильно работать. Дополнительные сведения о значениях параметров вы найдете в разделе модели данных для каждого шаблона, в котором можно использовать соответствующий элемент управления.  
-  
- Дополнительные сведения о работе с шаблонами см. в статье [Настройка портала разработчика в службе управления API Azure с помощью шаблонов](https://azure.microsoft.com/documentation/articles/api-management-developer-portal-templates/).  
+Значения для этих параметров передаются в составе модели данных для шаблона. В большинстве случаев достаточно просто скопировать представленный пример для элемента управления, и он сразу будет правильно работать. Дополнительные сведения о значениях параметров вы найдете в разделе модели данных для каждого шаблона, в котором можно использовать соответствующий элемент управления.  
+
+Дополнительные сведения о работе с шаблонами см. в статье [Настройка портала разработчика в службе управления API Azure с помощью шаблонов](https://azure.microsoft.com/documentation/articles/api-management-developer-portal-templates/).  
+
+[!INCLUDE [api-management-portal-legacy.md](../../includes/api-management-portal-legacy.md)]
 
 [!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
   
@@ -204,7 +206,7 @@ ms.locfileid: "70072291"
   
 |Параметр|Описание|  
 |---------------|-----------------|  
-|subscriptionId|Идентификатор подписки, которую следует отменить.|  
+|subscriptionId|Идентификатор подписки, которую нужно отменить.|  
 |cancelUrl|URL-адрес для отмены подписки.|  
   
 ### <a name="developer-portal-templates"></a>Шаблоны портала разработчика  

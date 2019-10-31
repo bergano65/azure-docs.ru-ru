@@ -1,5 +1,5 @@
 ---
-title: Делегирование и роли в управлении назначениями Azure AD (Предварительная версия) — Azure Active Directory
+title: Делегирование и роли в управлении назначениями Azure AD — Azure Active Directory
 description: Узнайте, как делегировать управление доступом от ИТ-администраторов руководителям отделов и руководителям проектов, чтобы они могли управлять доступом.
 services: active-directory
 documentationCenter: ''
@@ -16,19 +16,14 @@ ms.date: 10/07/2019
 ms.author: ajburnle
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fd9eb97b88be3ed68398cf7844b03e6a1fc9cd1b
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 6d68728c4ca4f9fe511faedcf2ca177b7160f112
+ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72934442"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73174257"
 ---
-# <a name="delegation-and-roles-in-azure-ad-entitlement-management-preview"></a>Делегирование и роли в управлении назначениями Azure AD (Предварительная версия)
-
-> [!IMPORTANT]
-> Управление правами Azure Active Directory (Azure AD) сейчас предоставляется в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
-> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+# <a name="delegation-and-roles-in-azure-ad-entitlement-management"></a>Делегирование и роли в управлении назначениями Azure AD
 
 По умолчанию глобальные администраторы и администраторы пользователей могут создавать и администрировать все аспекты управления назначением Azure AD. Однако пользователи этих ролей могут не учитывать все случаи, когда требуются пакеты доступа. Обычно это пользователи в соответствующих отделах, командах или проектах, которые осведомлены о совместной работе с, использовании ресурсов и времени. Вместо того чтобы предоставлять неограниченные разрешения для пользователей, не являющихся администраторами, можно предоставить пользователям минимальные разрешения, необходимые для выполнения их работы, и избежать создания конфликтующих или нежелательных прав доступа.
 
@@ -113,8 +108,9 @@ ms.locfileid: "72934442"
 | [Напрямую назначить пользователя пакету Access](entitlement-management-access-package-assignments.md#directly-assign-a-user) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |
 | [Просмотр пользователей, которым назначен доступ к пакету Access](entitlement-management-access-package-assignments.md#view-who-has-an-assignment) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |
 | [Просмотр запросов пакета доступа](entitlement-management-access-package-requests.md#view-requests) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |
-| [Просмотр ошибок доставки запроса](entitlement-management-access-package-requests.md#view-a-requests-delivery-errors) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |
-| [Отмена ожидающего запроса](entitlement-management-access-package-requests.md#cancel-a-pending-request) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |
+| [Просмотр ошибок доставки запроса](entitlement-management-troubleshoot.md#view-a-requests-delivery-errors) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |
+| [Повторная обработка запроса](entitlement-management-troubleshoot.md#reprocess-a-request) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |
+| [Отмена ожидающего запроса](entitlement-management-troubleshoot.md#cancel-a-pending-request) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |
 | [Скрыть пакет Access](entitlement-management-access-package-edit.md#change-the-hidden-setting) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |
 | [Удаление пакета Access](entitlement-management-access-package-edit.md#delete-an-access-package) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |
 

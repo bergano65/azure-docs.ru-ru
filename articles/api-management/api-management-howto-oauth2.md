@@ -10,18 +10,21 @@ ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 08/10/2018
+ms.date: 11/04/2019
 ms.author: apimpm
-ms.openlocfilehash: e6b5c8c2f734a12fe246a82ce1aa1dc53893ab64
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 99a49aa4627dc23d5f7531ac961d63e3e75ccff9
+ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70072377"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73176630"
 ---
 # <a name="how-to-authorize-developer-accounts-using-oauth-20-in-azure-api-management"></a>Авторизация учетных записей разработчиков с помощью протокола OAuth 2.0 в службе управления Azure API
 
 Многие интерфейсы API поддерживают протокол [OAuth 2.0](https://oauth.net/2/) , позволяющий защитить API, а также и предоставлять доступ только действительным пользователям и только к ресурсам, на которые эти пользователи имеют право. Чтобы использовать интерактивную  консоль разработчика управления API Azure с такими API, служба позволяет настроить экземпляр службы для работы с API с поддержкой OAuth 2.0.
+
+> [!IMPORTANT]
+> Авторизация OAuth 2,0 пока недоступна в интерактивной консоли нового портала разработчика.
 
 ## <a name="prerequisites"> </a>Предварительные требования
 
@@ -54,7 +57,7 @@ ms.locfileid: "70072377"
 
     Установите нужные флажки в разделе **Типы предоставления авторизации**. **Authorization code** (Код авторизации).
 
-    Введите URL-адрес в поле **Authorization endpoint URL**. Для Azure Active Directory этот URL-адрес будет похож на следующий URL-адрес, `<tenant_id>` где заменяется идентификатором вашего клиента Azure AD.
+    Введите URL-адрес в поле **Authorization endpoint URL**. Для Azure Active Directory этот URL-адрес будет похож на следующий URL-адрес, где `<tenant_id>` заменяется ИДЕНТИФИКАТОРом вашего клиента Azure AD.
 
     `https://login.microsoftonline.com/<tenant_id>/oauth2/authorize`
 
@@ -92,11 +95,11 @@ ms.locfileid: "70072377"
 
     ![Параметры OAuth 2.0](./media/api-management-howto-oauth2/oauth-07.png)
 
-## <a name="step3"> </a>Тестирование авторизации пользователей по протоколу OAuth 2.0 на портале разработчика
+## <a name="step3"> </a>Устаревший портал разработчика. Тестирование авторизации пользователя OAuth 2,0
 
-Настроив сервер авторизации OAuth 2.0 и его использование интерфейсом API, вы можете протестировать сервер, перейдя на портал разработчика и вызвав интерфейс API.  Щелкните **Портал разработчика** в верхнем меню страницы **Обзор** экземпляра службы управления API Azure.
+[!INCLUDE [api-management-portal-legacy.md](../../includes/api-management-portal-legacy.md)]
 
-![Портал разработчика][api-management-developer-portal-menu]
+Настроив сервер авторизации OAuth 2.0 и его использование интерфейсом API, вы можете протестировать сервер, перейдя на портал разработчика и вызвав интерфейс API. Щелкните **портал разработчика (прежние версии)** в верхнем меню на странице **обзора** экземпляра службы управления API Azure.
 
 Щелкните **APIs** в меню вверху и выберите **Echo API**.
 
@@ -114,7 +117,7 @@ ms.locfileid: "70072377"
 > [!NOTE]
 > Если всплывающие окна отключены, то в браузере появится запрос на их включение. Включив всплывающие окна, еще раз выберите пункт **Authorization code** , чтобы открыть форму входа.
 
-![Войти][api-management-oauth2-signin]
+![Вход][api-management-oauth2-signin]
 
 После входа поле **Request headers** (Заголовки запроса) заполняется заголовком `Authorization : Bearer`, используемым для авторизации запроса.
 
@@ -122,13 +125,12 @@ ms.locfileid: "70072377"
 
 Теперь вы можете настроить остальные параметры и отправить запрос.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Для получения дополнительных сведений об использовании OAuth 2.0 и службы управления API см. следующий видеоролик и эту [статью](api-management-howto-protect-backend-with-aad.md).
 
 [api-management-oauth2-signin]: ./media/api-management-howto-oauth2/api-management-oauth2-signin.png
 [api-management-request-header-token]: ./media/api-management-howto-oauth2/api-management-request-header-token.png
-[api-management-developer-portal-menu]: ./media/api-management-howto-oauth2/api-management-developer-portal-menu.png
 [api-management-open-console]: ./media/api-management-howto-oauth2/api-management-open-console.png
 [api-management-apis-echo-api]: ./media/api-management-howto-oauth2/api-management-apis-echo-api.png
 

@@ -13,12 +13,12 @@ ms.workload: iaas-sql-server
 ms.date: 10/21/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 90c9d9be6f5a255a4ddd4f7fae7cf410e5b1f80d
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
-ms.translationtype: MT
+ms.openlocfilehash: b9d4b99447e7c814d737def54dce03c4acc0e5ca
+ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72934952"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73172964"
 ---
 # <a name="bulk-register-sql-virtual-machines-in-azure-with-the-sql-vm-resource-provider"></a>Полное регистрация виртуальных машин SQL в Azure с помощью поставщика ресурсов виртуальной машины SQL
 
@@ -226,11 +226,11 @@ Please find the detailed report in  file RegisterSqlVMScriptReport1571314821.txt
 
 ## <a name="full-script"></a>Полный сценарий
 
-Скопируйте полный скрипт и сохраните его как `RegisterSqLVMs.psm1`.
+Полный сценарий на сайте GitHub см. в статье [Пакетная регистрация виртуальных машин SQL с помощью команды AZ PowerShell](https://github.com/Azure/azure-docs-powershell-samples/blob/master/sql-virtual-machine/register-sql-vms/RegisterSqlVMs.psm1). 
+
 
 [!code-powershell-interactive[main](../../../../powershell_scripts/sql-virtual-machine/register-sql-vms/RegisterSqlVMs.psm1 "Bulk register SQL Server virtual machines")]
 
-Полный сценарий на сайте GitHub см. в статье [Пакетная регистрация виртуальных машин SQL с помощью команды AZ PowerShell](https://github.com/Azure/azure-docs-powershell-samples/blob/master/sql-virtual-machine/register-sql-vms/RegisterSqlVMs.psm1). 
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

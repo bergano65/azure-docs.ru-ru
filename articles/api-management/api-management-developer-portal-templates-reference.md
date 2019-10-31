@@ -11,20 +11,22 @@ ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 11/19/2017
+ms.date: 11/04/2019
 ms.author: apimpm
-ms.openlocfilehash: eb06c1c5db20f3216c5c8e81580e445f9c0ba804
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 9bbb7ef46fbde881c8968128870d24a03b046c23
+ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70072598"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73176786"
 ---
 # <a name="developer-portal-templates"></a>Шаблоны портала разработчика
 
-Служба управления API Azure позволяет настраивать содержимое страниц портала разработчика с помощью набора шаблонов. С помощью этих шаблонов вы можете гибко настраивать содержимое страниц, используя синтаксис [DotLiquid](http://dotliquidmarkup.org/), любой удобный текстовый редактор, например [DotLiquid для разработчиков](https://github.com/dotliquid/dotliquid/wiki/DotLiquid-for-Designers), и предоставленный набор локализованных [строковых ресурсов](api-management-template-resources.md#strings), [ресурсов глифов](api-management-template-resources.md#glyphs), а также [элементов управления страницы](api-management-page-controls.md).  
+Служба управления API Azure позволяет настраивать содержимое страниц портала разработчика с помощью набора шаблонов. С помощью синтаксиса [DotLiquid](http://dotliquidmarkup.org/), выбранного редактора, например [DotLiquid для разработчиков](https://github.com/dotliquid/dotliquid/wiki/DotLiquid-for-Designers), и указанного набора локализованных [строковых ресурсов](api-management-template-resources.md#strings), [ресурсов глифов](api-management-template-resources.md#glyphs), а также [элементов управления на странице](api-management-page-controls.md) можно гибко настраивать содержимое страниц по своему усмотрению с использованием этих шаблонов.  
   
 Дополнительные сведения о работе с шаблонами см. в статье [Настройка портала разработчика в службе управления API Azure с помощью шаблонов](api-management-developer-portal-templates.md).  
+
+[!INCLUDE [api-management-portal-legacy.md](../../includes/api-management-portal-legacy.md)]
 
 [!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
 
@@ -45,14 +47,14 @@ ms.locfileid: "70072598"
 -   [Продукты](api-management-product-templates.md)  
     -   [Список продуктов](api-management-product-templates.md#ProductList)  
     -   [Продукт](api-management-product-templates.md#Product)  
--   [Приложения](api-management-application-templates.md)  
+-   [Приложения](api-management-application-templates.md).  
     -   [Список приложений](api-management-application-templates.md#ProductList)  
     -   [Приложения](api-management-application-templates.md#Application)  
 -   [Проблемы](api-management-issue-templates.md)  
     -   [Список проблем](api-management-issue-templates.md#IssueList)  
 -   [Профиль пользователя](api-management-user-profile-templates.md)  
     -   [Профиль](api-management-user-profile-templates.md#Profile)  
-    -   [Подписки](api-management-user-profile-templates.md#Subscriptions).  
+    -   [Подписки](api-management-user-profile-templates.md#Subscriptions)  
     -   [Приложения](api-management-user-profile-templates.md#Applications).  
     -   [Обновить сведения об учетной записи](api-management-user-profile-templates.md#UpdateAccountInfo)  
 -   [Страницы](api-management-page-templates.md)  
@@ -60,9 +62,9 @@ ms.locfileid: "70072598"
     -   [Регистрация](api-management-page-templates.md#SignUp)  
     -   [Страница не найдена](api-management-page-templates.md#PageNotFound)
 
-## <a name="next-steps"></a>Следующие шаги  
+## <a name="next-steps"></a>Дальнейшие действия  
 
 + [Справочник по шаблонам](api-management-developer-portal-templates-reference.md)  
 + [Справочник по моделям данных](api-management-template-data-model-reference.md)  
 + [Элементы управления страницы](api-management-page-controls.md)  
-+ [Ресурсы шаблонов](api-management-template-resources.md)
++ [Ресурсы для шаблонов](api-management-template-resources.md)

@@ -11,16 +11,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 09/17/2019
+ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f558ecf583c96f36b8bbee19c7c9cbb2ee57aa31
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.openlocfilehash: f52fc70b54c27362575bef00c39a93d13e77cc2e
+ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72596726"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73175346"
 ---
 # <a name="web-app-that-signs-in-users---code-configuration"></a>Веб-приложение, которое входит в систему пользователей — конфигурация кода
 
@@ -34,7 +34,7 @@ ms.locfileid: "72596726"
 | платформа | Библиотека | Описание |
 |----------|---------|-------------|
 | ![.NET](media/sample-v2-code/logo_net.png) | [Расширения модели удостоверений для .NET](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/wiki) | Службы Microsoft Identity Extensions для .NET предлагают набор библиотек DLL, работающих как в .NET Framework, так и в .NET Core, непосредственно с помощью ASP.NET и ASP.NET Core. Из веб-приложения ASP.NET/ASP.NET Core можно управлять проверкой маркера с помощью класса **TokenValidationParameters** (в частности, в некоторых сценариях ISV). |
-| ![Java:](media/sample-v2-code/small_logo_java.png) | [msal4j](https://github.com/AzureAD/microsoft-authentication-library-for-java/wiki) | MSAL для Java — в настоящее время общедоступная Предварительная версия |
+| ![Java:](media/sample-v2-code/small_logo_java.png) | [MSAL Java](https://github.com/AzureAD/microsoft-authentication-library-for-java/wiki) | MSAL для Java — в настоящее время общедоступная Предварительная версия |
 | ![Python](media/sample-v2-code/small_logo_python.png) | [MSAL Python](https://github.com/AzureAD/microsoft-authentication-library-for-python/wiki) | MSAL для Python — сейчас в общедоступной предварительной версии |
 
 Выберите вкладку, соответствующую интересующей вас платформе:
@@ -53,7 +53,7 @@ ms.locfileid: "72596726"
 
 # <a name="javatabjava"></a>[Java](#tab/java)
 
-Фрагменты кода в этой статье и следующие извлекаются из примера веб [-приложения Java, вызывающего](https://github.com/Azure-Samples/ms-identity-java-webapp) веб-приложение Microsoft Graph msal4j.
+Фрагменты кода в этой статье и следующие извлекаются из [веб-приложения Java](https://github.com/Azure-Samples/ms-identity-java-webapp) , в котором вызывается веб-приложение Microsoft Graph MSAL Java — пример
 
 Для получения полной информации о реализации можно использовать этот пример.
 
@@ -137,7 +137,7 @@ ms.locfileid: "72596726"
 ```
 
 В портал Azure идентификаторы URI ответа, которые необходимо зарегистрировать на странице **проверки подлинности** для вашего приложения, должны соответствовать этим URL-адресам. Таким образом, для двух файлов конфигурации, указанных выше, они будут `https://localhost:44321/signin-oidc`, так как applicationUrl `http://localhost:3110`, но `sslPort` указана (44321), а `CallbackPath` — `/signin-oidc`, как определено в `appsettings.json`.
-  
+
 Таким же образом универсальный код ресурса (URI) выхода будет иметь значение `https://localhost:44321/signout-callback-oidc`.
 
 # <a name="aspnettabaspnet"></a>[ASP.NET](#tab/aspnet)
@@ -175,10 +175,10 @@ aad.clientId=Enter_the_Application_Id_here
 aad.authority=https://login.microsoftonline.com/Enter_the_Tenant_Info_Here/
 aad.secretKey=Enter_the_Client_Secret_Here
 aad.redirectUriSignin=http://localhost:8080/msal4jsample/secure/aad
-aad.redirectUriGraphUsers=http://localhost:8080/msal4jsample/graph/users
+aad.redirectUriGraph=http://localhost:8080/msal4jsample/graph/me
 ```
 
-В портал Azure URI-коды ответа, которые необходимо зарегистрировать на странице **проверки подлинности** для приложения, должны соответствовать редиректурис, определенному приложением, `http://localhost:8080/msal4jsample/secure/aad` и `http://localhost:8080/msal4jsample/graph/users`
+В портал Azure URI-коды ответа, которые необходимо зарегистрировать на странице **проверки подлинности** для приложения, должны соответствовать редиректурис, определенному приложением, `http://localhost:8080/msal4jsample/secure/aad` и `http://localhost:8080/msal4jsample/graph/me`
 
 # <a name="pythontabpython"></a>[Python](#tab/python)
 
@@ -194,7 +194,8 @@ SESSION_TYPE = "filesystem"  # So token cache will be stored in server-side sess
 ```
 
 > [!NOTE]
-> В этом кратком руководстве предлагается сохранить секрет клиента в файле конфигурации для простоты. В рабочем приложении необходимо использовать другие способы хранения секрета, например KeyVault, или переменную среды, как описано в документации по Flask: https://flask.palletsprojects.com/en/1.1.x/config/#configuring-from-environment-variables
+> В этом кратком руководстве предлагается сохранить секрет клиента в файле конфигурации для простоты.
+> В рабочем приложении необходимо использовать другие способы хранения секрета, например KeyVault, или переменную среды, как описано в документации по Flask: https://flask.palletsprojects.com/en/1.1.x/config/#configuring-from-environment-variables
 >
 > ```python
 > CLIENT_SECRET = os.getenv("CLIENT_SECRET")
@@ -215,7 +216,7 @@ SESSION_TYPE = "filesystem"  # So token cache will be stored in server-side sess
   > [!NOTE]
   > При запуске проекта с веб-проектом ASP.NET Core по умолчанию в Visual Studio или с помощью `dotnet new mvc` метод `AddAzureAD` доступен по умолчанию, так как связанные пакеты автоматически загружаются.
   > Однако если вы создаете проект с нуля и пытаетесь использовать приведенный ниже код, мы рекомендуем добавить пакет NuGet **Microsoft. AspNetCore. Authentication. AzureAD. UI** в проект, чтобы сделать доступным метод `AddAzureAD`.
-  
+
 Следующий код доступен в [запуске. CS # l33-l34](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/faa94fd49c2da46b22d6694c4f5c5895795af26d/1-WebApp-OIDC/1-1-MyOrg/Startup.cs#L33-L34)
 
 ```CSharp
@@ -229,7 +230,7 @@ public class Startup
     ...
       // Sign-in users with the Microsoft identity platform
       services.AddMicrosoftIdentityPlatformAuthentication(Configuration);
-  
+
       services.AddMvc(options =>
       {
           var policy = new AuthorizationPolicyBuilder()
@@ -241,13 +242,13 @@ public class Startup
     }
 ```
 
-@No__t_0 является методом расширения, определенным в [Microsoft. Identity. Web/вебаппсервицеколлектионекстенсионс. CS # L23](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/faa94fd49c2da46b22d6694c4f5c5895795af26d/Microsoft.Identity.Web/WebAppServiceCollectionExtensions.cs#L23). Им
+`AddMicrosoftIdentityPlatformAuthentication` является методом расширения, определенным в [Microsoft. Identity. Web/вебаппсервицеколлектионекстенсионс. CS # L23](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/faa94fd49c2da46b22d6694c4f5c5895795af26d/Microsoft.Identity.Web/WebAppServiceCollectionExtensions.cs#L23). Им
 
 - Добавляет службу проверки подлинности
 - Настройка параметров для чтения файла конфигурации
 - Настраивает параметры подключения OpenID Connect, чтобы используемая учетная запись была конечной точкой платформы Microsoft Identity (прежнее название — Azure AD 2.0).
 - издатель маркера проверен
-- утверждения, соответствующие имени, сопоставляются с утверждением "preferred_username" в маркере идентификации. 
+- утверждения, соответствующие имени, сопоставляются с утверждением "preferred_username" в маркере идентификации.
 
 Помимо конфигурации, при вызове `AddMicrosoftIdentityPlatformAuthentication` можно указать:
 
@@ -347,7 +348,7 @@ public static IServiceCollection AddMicrosoftIdentityPlatformAuthentication(
 
 - проверяет, прошел ли пользователь проверку подлинности (метод `isAuthenticated()`)
 - Если пользователь не прошел проверку подлинности, он вычислит URL-адреса авторизации Azure AD и перенаправит браузер на этот URI.
-- Когда получен ответ, содержащий поток кода проверки подлинности, он позволяет msal4j получение маркера.
+- Когда получен ответ, содержащий код проверки подлинности, он получает маркер с помощью MSAL Java.
 - когда он наконец получает маркер из конечной точки маркера (в URI перенаправления), пользователь вошел в систему.
 
 Дополнительные сведения см. в описании метода `doFilter()` в [аусфилтер. Java.](https://github.com/Azure-Samples/ms-identity-java-webapp/blob/master/src/main/java/com/microsoft/azure/msalwebsample/AuthFilter.java)

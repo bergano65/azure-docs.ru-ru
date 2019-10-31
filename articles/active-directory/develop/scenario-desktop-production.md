@@ -13,16 +13,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 04/18/2019
+ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6a353b4577f8cfa9ba279ad2793e1a7ab8b27e55
-ms.sourcegitcommit: 263a69b70949099457620037c988dc590d7c7854
+ms.openlocfilehash: 5331f01c5dc6acf01f567dbe4c332853bf7aa47e
+ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71268338"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73175552"
 ---
 # <a name="desktop-app-that-calls-web-apis---move-to-production"></a>Классическое приложение, вызывающее веб-API — переход в рабочую среду
 
@@ -37,14 +37,14 @@ ms.locfileid: "71268338"
 > [!NOTE]
 > Получение согласия для нескольких ресурсов работает для платформы Microsoft Identity, но не для Azure Active Directory (Azure AD) B2C. Azure AD B2C поддерживает только разрешение администратора, а не согласие пользователя.
 
-Конечная точка платформы Microsoft Identity Platform (v 2.0) не позволяет получить маркер для нескольких ресурсов одновременно. `scopes` Поэтому параметр может содержать только области для одного ресурса. Вы можете убедиться, что пользователь заранее предоставил несколько ресурсов с помощью `extraScopesToConsent` параметра.
+Конечная точка платформы Microsoft Identity Platform (v 2.0) не позволяет получить маркер для нескольких ресурсов одновременно. Таким образом, параметр `scopes` может содержать только области для одного ресурса. Вы можете убедиться, что пользователь заранее предоставил несколько ресурсов с помощью параметра `extraScopesToConsent`.
 
 Например, если у вас есть два ресурса, каждая из которых имеет две области:
 
-- `https://mytenant.onmicrosoft.com/customerapi`— с 2 областями `customer.read` и`customer.write`
-- `https://mytenant.onmicrosoft.com/vendorapi`— с 2 областями `vendor.read` и`vendor.write`
+- `https://mytenant.onmicrosoft.com/customerapi` с 2 областями `customer.read` и `customer.write`
+- `https://mytenant.onmicrosoft.com/vendorapi` с 2 областями `vendor.read` и `vendor.write`
 
-Следует использовать `.WithAdditionalPromptToConsent` модификатор, который `extraScopesToConsent` имеет параметр.
+Следует использовать модификатор `.WithAdditionalPromptToConsent` с параметром `extraScopesToConsent`.
 
 Например:
 
@@ -76,24 +76,24 @@ Objective-C.
 ```objc
 NSArray *scopesForCustomerApi = @[@"https://mytenant.onmicrosoft.com/customerapi/customer.read",
                                 @"https://mytenant.onmicrosoft.com/customerapi/customer.write"];
-    
+
 NSArray *scopesForVendorApi = @[@"https://mytenant.onmicrosoft.com/vendorapi/vendor.read",
                               @"https://mytenant.onmicrosoft.com/vendorapi/vendor.write"]
-    
+
 MSALInteractiveTokenParameters *interactiveParams = [[MSALInteractiveTokenParameters alloc] initWithScopes:scopesForCustomerApi webviewParameters:[MSALWebviewParameters new]];
 interactiveParams.extraScopesToConsent = scopesForVendorApi;
 [application acquireTokenWithParameters:interactiveParams completionBlock:^(MSALResult *result, NSError *error) { /* handle result */ }];
 ```
 
-SWIFT
+Swift:
 
 ```swift
 let scopesForCustomerApi = ["https://mytenant.onmicrosoft.com/customerapi/customer.read",
                             "https://mytenant.onmicrosoft.com/customerapi/customer.write"]
-        
+
 let scopesForVendorApi = ["https://mytenant.onmicrosoft.com/vendorapi/vendor.read",
                           "https://mytenant.onmicrosoft.com/vendorapi/vendor.write"]
-        
+
 let interactiveParameters = MSALInteractiveTokenParameters(scopes: scopesForCustomerApi, webviewParameters: MSALWebviewParameters())
 interactiveParameters.extraScopesToConsent = scopesForVendorApi
 application.acquireToken(with: interactiveParameters, completionBlock: { (result, error) in /* handle result */ })
@@ -111,6 +111,6 @@ AcquireTokenSilent(scopesForVendorApi, accounts.FirstOrDefault()).ExecuteAsync()
 
 Для пользователей личных учетных записей Майкрософт необходимо повторно запросить согласие для каждого собственного клиента (настольного или мобильного приложения), чтобы авторизовать. Идентификация собственного клиента по своей природе небезопасна (что противоречит конфиденциальному клиентскому приложению, которое обменивается данными с платформой идентификации Майкрософт для подтверждения своей личности). Платформа Microsoft Identity решила снизить этот уровень безопасности для потребительских услуг, запрашивая согласие пользователя, каждый раз при авторизации приложения.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [Move to production common steps](../../../includes/active-directory-develop-scenarios-production.md)]

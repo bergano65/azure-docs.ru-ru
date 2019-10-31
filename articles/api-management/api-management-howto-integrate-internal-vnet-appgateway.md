@@ -11,14 +11,14 @@ ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 06/26/2018
+ms.date: 11/04/2019
 ms.author: sasolank
-ms.openlocfilehash: b994f75327cb78cd422d75682ee68ea7840a87e8
-ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
+ms.openlocfilehash: d1ab7089ba76890488aa73d03e0fd9fc8efbe4d5
+ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70193957"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73176745"
 ---
 # <a name="integrate-api-management-in-an-internal-vnet-with-application-gateway"></a>Интеграция службы управления API во внутреннюю сеть со шлюзом приложений
 
@@ -34,7 +34,7 @@ ms.locfileid: "70193957"
 
 [!INCLUDE [premium-dev.md](../../includes/api-management-availability-premium-dev.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -60,13 +60,13 @@ ms.locfileid: "70193957"
 
 ## <a name="what-is-required-to-create-an-integration-between-api-management-and-application-gateway"></a>Что нужно для того, чтобы интегрировать управление API со шлюзом приложений?
 
-* **Внутренний пул серверов**. Это внутренний виртуальный IP-адрес службы "Управление API".
-* **Параметры пула внутренних серверов**. Каждый пул имеет такие параметры, как порт, протокол и соответствие на основе файлов cookie. Эти параметры применяются ко всем серверам в этом пуле.
-* **Интерфейсный порт**. Общедоступный порт, открытый в шлюзе приложений. Трафик, поступающий на этот порт, перенаправляется на один из тыловых серверов.
+* **Пул тыловых серверов**. Это внутренний виртуальный IP-адрес службы управления API.
+* **Параметры внутреннего пула серверов**. Каждый пул имеет такие параметры, как порт, протокол и сходство на основе файлов cookie. Эти параметры применяются ко всем серверам в этом пуле.
+* **Внешний порт**. Общедоступный порт, открытый в шлюзе приложений. Трафик, поступающий на этот порт, перенаправляется на один из тыловых серверов.
 * **Прослушиватель**. У прослушивателя есть интерфейсный порт, протокол (Http или Https — с учетом регистра) и имя SSL-сертификата (в случае настройки разгрузки SSL).
-* **Правило**. Это правило связывает прослушиватель с пулом внутренних серверов.
-* **Пользовательская проверка работоспособности**. Шлюз приложений по умолчанию использует проверки на основе IP-адреса, чтобы найти активные серверы в пуле BackendAddressPool. Служба управления API отвечает только на те запросы, которые имеют правильный заголовок узла, поэтому стандартные проверки завершаются ошибкой. Вам следует определить пользовательскую проверку работоспособности, чтобы шлюз приложений мог определять работоспособность службы и передавать в нее запросы.
-* **Сертификаты личного домена**. Чтобы осуществлять доступ из Интернета в службу "Управление API", создайте сопоставление CNAME, связывающее имя узла с DNS-именем интерфейса Шлюза приложений. Это позволит службе управления API распознавать допустимость заголовка hostname и сертификата, который передан в шлюз приложений и пересылается в управление API. В этом примере мы будем использовать два сертификата — для внутренней службы и портала разработчика.  
+* **Правило**. Это правило связывает прослушиватель с пулом тыловых серверов.
+* **Пользовательские проверки работоспособности**. Шлюз приложений по умолчанию использует проверки на основе IP-адреса, чтобы найти активные серверы в пуле BackendAddressPool. Служба управления API отвечает только на те запросы, которые имеют правильный заголовок узла, поэтому стандартные проверки завершаются ошибкой. Вам следует определить пользовательскую проверку работоспособности, чтобы шлюз приложений мог определять работоспособность службы и передавать в нее запросы.
+* **Сертификат для личного домена**. Чтобы осуществлять доступ из Интернета в службу управления API, создайте сопоставление CNAME, связывающее имя узла с DNS-именем внешнего интерфейса Шлюза приложений. Это позволит службе управления API распознавать допустимость заголовка hostname и сертификата, который передан в шлюз приложений и пересылается в управление API. В этом примере мы будем использовать два сертификата — для внутренней службы и портала разработчика.  
 
 ## <a name="overview-steps"> </a> Действия по интеграции управления API со шлюзом приложений
 
@@ -86,7 +86,7 @@ ms.locfileid: "70193957"
 > Если вы используете Azure AD или стороннюю аутентификацию, включите [сходство сеансов на основе файлов cookie](https://docs.microsoft.com/azure/application-gateway/overview#session-affinity) в Шлюзе приложений.
 
 > [!WARNING]
-> Чтобы предотвратить нарушение загрузки спецификации OpenAPI на портале разработчика WAF шлюза приложений, необходимо отключить правило `942200 - "Detects MySQL comment-/space-obfuscated injections and backtick termination"`брандмауэра.
+> Чтобы предотвратить нарушение загрузки спецификации OpenAPI на портале разработчика WAF шлюза приложений, необходимо отключить правило брандмауэра `942200 - "Detects MySQL comment-/space-obfuscated injections and backtick termination"`.
 
 ## <a name="create-a-resource-group-for-resource-manager"></a>Создание группы ресурсов для диспетчера ресурсов.
 
@@ -123,7 +123,7 @@ New-AzResourceGroup -Name $resGroupName -Location $location
 
 ## <a name="create-a-virtual-network-and-a-subnet-for-the-application-gateway"></a>Создание виртуальной сети и подсети для шлюза приложений
 
-В следующем примере показано создание виртуальной сети с помощью Resource Manager.
+В следующем примере показано, как создать виртуальную сеть с помощью диспетчер ресурсов.
 
 ### <a name="step-1"></a>Шаг 1
 
@@ -149,7 +149,7 @@ $apimsubnet = New-AzVirtualNetworkSubnetConfig -Name "apim02" -AddressPrefix "10
 $vnet = New-AzVirtualNetwork -Name "appgwvnet" -ResourceGroupName $resGroupName -Location $location -AddressPrefix "10.0.0.0/16" -Subnet $appgatewaysubnet,$apimsubnet
 ```
 
-### <a name="step-4"></a>Шаг 4
+### <a name="step-4"></a>Шаг 4.
 
 Назначьте переменную для подсети, которая будет использоваться далее.
 
@@ -208,12 +208,15 @@ $certPortalPwd = ConvertTo-SecureString -String $portalCertPfxPassword -AsPlainT
 
 ```powershell
 $proxyHostnameConfig = New-AzApiManagementCustomHostnameConfiguration -Hostname $gatewayHostname -HostnameType Proxy -PfxPath $gatewayCertPfxPath -PfxPassword $certPwd
-$portalHostnameConfig = New-AzApiManagementCustomHostnameConfiguration -Hostname $portalHostname -HostnameType Portal -PfxPath $portalCertPfxPath -PfxPassword $certPortalPwd
+$portalHostnameConfig = New-AzApiManagementCustomHostnameConfiguration -Hostname $portalHostname -HostnameType DeveloperPortal -PfxPath $portalCertPfxPath -PfxPassword $certPortalPwd
 
 $apimService.ProxyCustomHostnameConfiguration = $proxyHostnameConfig
 $apimService.PortalCustomHostnameConfiguration = $portalHostnameConfig
 Set-AzApiManagement -InputObject $apimService
 ```
+
+> [!NOTE]
+> Чтобы настроить подключение к устаревшему порталу разработчика, необходимо заменить `-HostnameType DeveloperPortal` `-HostnameType Portal`.
 
 ## <a name="create-a-public-ip-address-for-the-front-end-configuration"></a>Создание общедоступного IP-адреса для конфигурации интерфейсной части
 
@@ -253,7 +256,7 @@ $fp01 = New-AzApplicationGatewayFrontendPort -Name "port01"  -Port 443
 $fipconfig01 = New-AzApplicationGatewayFrontendIPConfig -Name "frontend1" -PublicIPAddress $publicip
 ```
 
-### <a name="step-4"></a>Шаг 4
+### <a name="step-4"></a>Шаг 4.
 
 Настройте в Шлюзе приложений сертификаты для повторного шифрования и расшифровки проходящего трафика.
 

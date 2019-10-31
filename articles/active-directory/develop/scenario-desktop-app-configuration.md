@@ -11,16 +11,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 05/07/2019
+ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0926e6800dbcd81d2e542e27afe3afb1240cff22
-ms.sourcegitcommit: 263a69b70949099457620037c988dc590d7c7854
+ms.openlocfilehash: 6baf7d21748b5b524745f26302e70612dab29a8d
+ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71268419"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73175436"
 ---
 # <a name="desktop-app-that-calls-web-apis---code-configuration"></a>Классическое приложение, вызывающее веб-API — конфигурация кода
 
@@ -28,13 +28,22 @@ ms.locfileid: "71268419"
 
 ## <a name="msal-libraries"></a>Библиотеки MSAL
 
-Единственной библиотекой MSAL, поддерживающей классические приложения на нескольких платформах, сегодня является MSAL.NET.
+Библиотеки Майкрософт, поддерживающие классические приложения:
 
-MSAL для iOS и macOS поддерживает классические приложения, работающие только на macOS. 
+  Библиотека MSAL | Описание
+  ------------ | ----------
+  ![MSAL.NET](media/sample-v2-code/logo_NET.png) <br/> MSAL.NET  | Поддерживает создание классических приложений на нескольких платформах — Linux, Windows и MacOS
+  ![Python](media/sample-v2-code/logo_python.png) <br/> MSAL Python | Поддерживает создание классических приложений на нескольких платформах. Выполняется разработка — в общедоступной предварительной версии
+  ![Java:](media/sample-v2-code/logo_java.png) <br/> MSAL Java | Поддерживает создание классических приложений на нескольких платформах. Выполняется разработка — в общедоступной предварительной версии
+  ![MSAL iOS](media/sample-v2-code/logo_iOS.png) <br/> MSAL iOS | Поддерживает классические приложения, работающие только на macOS
 
-## <a name="public-client-application-with-msalnet"></a>Общедоступное клиентское приложение с MSAL.NET
+## <a name="public-client-application"></a>Общедоступное клиентское приложение
 
-С точки зрения кода, классические приложения являются общедоступными клиентскими приложениями, поэтому вы будете создавать MSAL.NET `IPublicClientApplication`и управлять ими. При использовании интерактивной проверки подлинности все еще будет немного отличаться.
+С точки зрения кода, классические приложения являются общедоступными клиентскими приложениями. Конфигурация будет немного отличаться в зависимости от того, используется ли Интерактивная проверка подлинности.
+
+# <a name="nettabdotnet"></a>[.NET](#tab/dotnet)
+
+Вам потребуется создать MSAL.NET `IPublicClientApplication`и управлять ими.
 
 ![ипубликклиентаппликатион](media/scenarios/public-client-application.png)
 
@@ -47,7 +56,7 @@ IPublicClientApplication app = PublicClientApplicationBuilder.Create(clientId)
     .Build();
 ```
 
-Если вы планируете использовать интерактивную проверку подлинности или поток кода устройства, как показано выше, необходимо `.WithRedirectUri` использовать модификатор:
+Если вы планируете использовать интерактивную проверку подлинности или поток кода устройства, как показано выше, вы хотите использовать модификатор `.WithRedirectUri`:
 
 ```CSharp
 IPublicClientApplication app;
@@ -98,16 +107,16 @@ app = PublicClientApplicationBuilder.Create(clientId)
         .Build();
 ```
 
-### <a name="learn-more"></a>Подробнее...
+### <a name="learn-more"></a>Дополнительные сведения
 
 Дополнительные сведения о настройке классического приложения MSAL.NET:
 
 - Список всех модификаторов, доступных в `PublicClientApplicationBuilder`, см. в справочной документации [публикклиентаппликатионбуилдер](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.publicclientapplicationbuilder#methods)
-- Описание всех параметров, предоставляемых в `PublicClientApplicationOptions` разделе см. [публикклиентаппликатионоптионс](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.publicclientapplicationoptions), в справочной документации.
+- Описание всех параметров, предоставляемых в `PublicClientApplicationOptions` см. в справочной документации по [публикклиентаппликатионоптионс](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.publicclientapplicationoptions).
 
-## <a name="complete-example-with-configuration-options"></a>Полный пример с параметрами конфигурации
+### <a name="complete-example-with-configuration-options"></a>Полный пример с параметрами конфигурации
 
-Представьте себе консольное приложение .NET Core, которое имеет `appsettings.json` следующий файл конфигурации:
+Представьте себе консольное приложение .NET Core, которое имеет следующий `appsettings.json` файл конфигурации:
 
 ```JSon
 {
@@ -175,9 +184,32 @@ var app = PublicClientApplicationBuilder.CreateWithApplicationOptions(config.Pub
            .Build();
 ```
 
-перед вызовом `.Build()` метода можно переопределить конфигурацию с помощью `.WithXXX` вызовов методов, как показано выше.
+перед вызовом метода `.Build()` можно переопределить конфигурацию с помощью вызовов методов `.WithXXX`, как показано выше.
 
-## <a name="public-client-application-with-msal-for-ios-and-macos"></a>Общедоступное клиентское приложение с MSAL для iOS и macOS
+# <a name="javatabjava"></a>[Java](#tab/java)
+
+Ниже приведен класс, используемый в примерах разработки Java MSAL для настройки примеров: [TestData](https://github.com/AzureAD/microsoft-authentication-library-for-java/blob/dev/src/samples/public-client/TestData.java).
+
+```Java
+PublicClientApplication app = PublicClientApplication.builder(TestData.PUBLIC_CLIENT_ID)
+        .authority(TestData.AUTHORITY_COMMON)
+        .build();
+```
+
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+```Python
+config = json.load(open(sys.argv[1]))
+
+app = msal.PublicClientApplication(
+    config["client_id"], authority=config["authority"],
+    # token_cache=...  # Default cache is in memory only.
+                       # You can learn how to use SerializableTokenCache from
+                       # https://msal-python.rtfd.io/en/latest/#msal.SerializableTokenCache
+    )
+```
+
+# <a name="macostabmacos"></a>[MacOS](#tab/macOS)
 
 Следующий код создает экземпляр общедоступного клиентского приложения, пользователей для входа в Microsoft Azure общедоступное облако с рабочей или учебной учетной записью или персональным учетная запись Майкрософт.
 
@@ -187,12 +219,12 @@ Objective-C.
 
 ```objc
 NSError *msalError = nil;
-    
+
 MSALPublicClientApplicationConfig *config = [[MSALPublicClientApplicationConfig alloc] initWithClientId:@"<your-client-id-here>"];    
 MSALPublicClientApplication *application = [[MSALPublicClientApplication alloc] initWithConfiguration:config error:&msalError];
 ```
 
-SWIFT
+Swift:
 ```swift
 let config = MSALPublicClientApplicationConfig(clientId: "<your-client-id-here>")
 if let application = try? MSALPublicClientApplication(configuration: config){ /* Use application */}
@@ -210,27 +242,28 @@ MSALAADAuthority *aadAuthority =
                                                    audienceType:MSALAzureADMultipleOrgsAudience
                                                       rawTenant:nil
                                                           error:nil];
-                                                          
+
 MSALPublicClientApplicationConfig *config =
                 [[MSALPublicClientApplicationConfig alloc] initWithClientId:@"<your-client-id-here>"
                                                                 redirectUri:@"<your-redirect-uri-here>"
                                                                   authority:aadAuthority];
-                                                                  
+
 NSError *applicationError = nil;
 MSALPublicClientApplication *application =
                 [[MSALPublicClientApplication alloc] initWithConfiguration:config error:&applicationError];
 ```
 
-SWIFT
+Swift:
 
 ```swift
 let authority = try? MSALAADAuthority(cloudInstance: .usGovernmentCloudInstance, audienceType: .azureADMultipleOrgsAudience, rawTenant: nil)
-        
+
 let config = MSALPublicClientApplicationConfig(clientId: "<your-client-id-here>", redirectUri: "<your-redirect-uri-here>", authority: authority)
 if let application = try? MSALPublicClientApplication(configuration: config) { /* Use application */}
 ```
+---
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Получение маркера для классического приложения](scenario-desktop-acquire-token.md)
