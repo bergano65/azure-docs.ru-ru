@@ -1,5 +1,5 @@
 ---
-title: Создание параметра диагностики в Azure с помощью шаблона диспетчер ресурсов | Документация Майкрософт
+title: Создание параметра диагностики в Azure с помощью шаблона диспетчер ресурсов
 description: Создайте параметры диагностики с помощью шаблона диспетчер ресурсов, чтобы пересылать журналы платформы Azure в журналы Azure Monitor, службу хранилища Azure или концентраторы событий Azure.
 author: bwren
 services: azure-monitor
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 07/31/2019
 ms.author: bwren
 ms.subservice: ''
-ms.openlocfilehash: 303682a9d7b3c3fe8ba6c8dd6fe2a44741bcafce
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.openlocfilehash: 0cb4cee732b1784de489d97769294c455cfd5efd
+ms.sourcegitcommit: fa5ce8924930f56bcac17f6c2a359c1a5b9660c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72597288"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73200492"
 ---
 # <a name="create-diagnostic-setting-in-azure-using-a-resource-manager-template"></a>Создание параметра диагностики в Azure с помощью шаблона диспетчер ресурсов
 [Журналы платформы](platform-logs-overview.md) в Azure предоставляют подробные сведения о диагностике и аудите для ресурсов Azure и платформы Azure, от которых они зависят. В этой статье приводятся сведения об использовании [шаблона Azure Resource Manager](../../azure-resource-manager/resource-group-authoring-templates.md) для настройки параметров диагностики для получения журналов платформы в разные места назначения. Это позволяет автоматически начать сбор журналов платформы при создании ресурса.

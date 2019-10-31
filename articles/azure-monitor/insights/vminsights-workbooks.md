@@ -1,5 +1,5 @@
 ---
-title: Создание интерактивных отчетов с помощью Azure Monitor книг | Документация Майкрософт
+title: Создание интерактивных отчетов Azure Monitor для виртуальных машин с книгами | Документация Майкрософт
 description: Упростите создание сложных отчетов с помощью предопределенных и настраиваемых параметризованных книг для Azure Monitor для виртуальных машин.
 ms.service: azure-monitor
 ms.subservice: ''
@@ -7,14 +7,14 @@ ms.topic: conceptual
 author: mgoedtel
 ms.author: magoedte
 ms.date: 10/15/2019
-ms.openlocfilehash: 47e2e5d80241ac093d136b45c853d94a9dd43cbe
-ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
+ms.openlocfilehash: dff5027f2ff9ff244f0fa04177a04e446e98465b
+ms.sourcegitcommit: fa5ce8924930f56bcac17f6c2a359c1a5b9660c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72553732"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73200547"
 ---
-# <a name="create-interactive-reports-with-azure-monitor-workbooks"></a>Создание интерактивных отчетов с книгами Azure Monitor
+# <a name="create-interactive-reports-azure-monitor-for-vms-with-workbooks"></a>Создание интерактивных отчетов Azure Monitor для виртуальных машин с книгами
 
 Книги объединяют текст, [заносить в журнал запросы](../log-query/query-language.md), метрики и параметры в расширенные Интерактивные отчеты. Их могут редактировать другие участники команды с доступом к тому же ресурсу Azure.
 
@@ -105,7 +105,7 @@ Azure Monitor для виртуальных машин включает неск
 
 ### <a name="advanced-analytic-query-settings"></a>Расширенные параметры запросов аналитики
 
-Каждый раздел имеет свои собственные дополнительные параметры, доступные через параметры ![Workbooks раздел Редактирование элементов управления ](media/vminsights-workbooks/006-settings.png) значок, расположенный справа от кнопки **Добавить параметры** .
+Каждый раздел имеет свои собственные дополнительные параметры, доступные в разделе Параметры ![книги Правка элементы управления](media/vminsights-workbooks/006-settings.png) значок, расположенный справа от кнопки **Добавить параметры** .
 
 ![Azure Monitor для виртуальных машин рабочих книг раздел "Редактирование элементов управления"](media/vminsights-workbooks/007-settings-expanded.png)
 

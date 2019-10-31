@@ -47,6 +47,17 @@
           href: ./samples/cis-azure-1.1.0/index.md
         - name: Сопоставление рекомендаций
           href: ./samples/cis-azure-1.1.0/control-mapping.md
+    - name: FedRAMP — средний уровень
+      items:
+        - name: Обзор
+          displayName: 'standards, fedramp, moderate'
+          href: ./samples/fedramp-m/index.md
+        - name: Сопоставление элементов управления
+          displayName: 'standards, fedramp, moderate'
+          href: ./samples/fedramp-m/control-mapping.md
+        - name: Инструкции по развертыванию
+          displayName: 'standards, fedramp, moderate'
+          href: ./samples/fedramp-m/deploy.md
     - name: IRS 1075
       items:
         - name: Обзор

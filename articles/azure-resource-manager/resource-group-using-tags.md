@@ -4,16 +4,16 @@ description: Здесь описано, как применить теги, чт
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: conceptual
-ms.date: 07/17/2019
+ms.date: 10/30/2019
 ms.author: tomfitz
-ms.openlocfilehash: 9bcbfe1bdb501cac6ff31156db5382d1174eb8ad
-ms.sourcegitcommit: b03516d245c90bca8ffac59eb1db522a098fb5e4
+ms.openlocfilehash: e7763889ecf69231b7a4daf31e6899b33f3e2b36
+ms.sourcegitcommit: fa5ce8924930f56bcac17f6c2a359c1a5b9660c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71146840"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73199150"
 ---
-# <a name="use-tags-to-organize-your-azure-resources"></a>Использование тегов для организации ресурсов в Azure
+# <a name="use-tags-to-organize-your-azure-resources"></a>Организация ресурсов Azure с помощью тегов
 
 [!INCLUDE [resource-manager-governance-tags](../../includes/resource-manager-governance-tags.md)]
 
@@ -151,7 +151,7 @@ if ($null -ne $group.Tags) {
 Set-AzResourceGroup -Tag @{} -Name examplegroup
 ```
 
-## <a name="azure-cli"></a>Azure CLI
+## <a name="azure-cli"></a>Azure CLI
 
 Чтобы просмотреть существующие теги для *группы ресурсов*, используйте этот командлет:
 
@@ -174,7 +174,7 @@ az group show -n examplegroup --query tags
 az resource show -n examplevnet -g examplegroup --resource-type "Microsoft.Network/virtualNetworks" --query tags
 ```
 
-При циклическом переборе коллекции ресурсов может потребоваться отобразить ресурс с помощью идентификатора ресурса. Полный пример показан далее в этой статье. Чтобы просмотреть существующие теги для *ресурса с указанным идентификатором ресурса*, используйте следующую команду:
+При циклическом переборе коллекции ресурсов может потребоваться отобразить ресурс с помощью идентификатора ресурса. Полный пример показан далее в этой статье. Чтобы просмотреть существующие теги для *ресурса с указанным идентификатором ресурса*, используйте:
 
 ```azurecli
 az resource show --id <resource-id> --query tags
@@ -250,7 +250,7 @@ done
 
 ## <a name="templates"></a>Шаблоны
 
-Чтобы пометить ресурс во время развертывания, добавьте `tags` элемент в развертываемый ресурс. и укажите имя и значение тега.
+Чтобы пометить ресурс во время развертывания, добавьте элемент `tags` в развертываемый ресурс. и укажите имя и значение тега.
 
 ### <a name="apply-a-literal-value-to-the-tag-name"></a>Применение литерального значения к имени тега
 
@@ -361,7 +361,7 @@ done
 
 ### <a name="apply-tags-from-resource-group"></a>Применение тегов из группы ресурсов
 
-Чтобы применить теги из группы ресурсов к ресурсу, используйте функцию [resourceGroup](resource-group-template-functions-resource.md#resourcegroup) . При получении значения тега используйте `tags.[tag-name]` синтаксис вместо `tags.tag-name` синтаксиса, так как некоторые символы не анализируются правильно в точечной нотации.
+Чтобы применить теги из группы ресурсов к ресурсу, используйте функцию [resourceGroup](resource-group-template-functions-resource.md#resourcegroup) . При получении значения тега используйте синтаксис `tags.[tag-name]` вместо синтаксиса `tags.tag-name`, так как некоторые символы не анализируются должным образом в нотации с точкой.
 
 ```json
 {
@@ -393,11 +393,11 @@ done
 }
 ```
 
-## <a name="portal"></a>Портал
+## <a name="portal"></a>Microsoft Azure
 
 [!INCLUDE [resource-manager-tag-resource](../../includes/resource-manager-tag-resources.md)]
 
-## <a name="rest-api"></a>REST API
+## <a name="rest-api"></a>REST API
 
 Портал Azure и PowerShell используют [интерфейс REST API диспетчера ресурсов Resource Manager](https://docs.microsoft.com/rest/api/resources/). Если вам нужно интегрировать теги в другую среду, их можно получить с помощью метода **GET** по идентификатору ресурса и обновить набор тегов с помощью вызова метода **PATCH**.
 
@@ -409,7 +409,7 @@ done
 
 Подробнее об операциях REST API см. в [справочнике по REST API для выставления счетов Azure](/rest/api/billing/).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Не все типы ресурсов поддерживают теги. Сведения о возможности применения тегов к типу ресурса см. в статье о [поддержке тегов ресурсами Azure](tag-support.md).
 * Общие сведения об использовании портала см. в статье [Управление ресурсами Azure через портал](manage-resource-groups-portal.md).  

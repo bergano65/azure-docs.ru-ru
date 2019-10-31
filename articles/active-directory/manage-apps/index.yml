@@ -12,12 +12,12 @@ metadata:
   author: msmimart
   ms.author: mimart
   manager: celested
-  ms.openlocfilehash: 0d7081a35a143abf1ae068ce7344e0e50e240eaa
-  ms.sourcegitcommit: b4665f444dcafccd74415fb6cc3d3b65746a1a31
+  ms.openlocfilehash: db10b91f0e407be048cc2a646c2eef905ac81c54
+  ms.sourcegitcommit: fa5ce8924930f56bcac17f6c2a359c1a5b9660c9
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 10/11/2019
-  ms.locfileid: "72264132"
+  ms.lasthandoff: 10/31/2019
+  ms.locfileid: "73199749"
 landingContent:
 - title: Сведения об управлении приложениями
   linkLists:
@@ -25,6 +25,8 @@ landingContent:
     links:
     - text: Что такое управление приложениями?
       url: what-is-application-management.md
+    - text: Руководства по приложениям SaaS
+      url: /azure/active-directory/saas-apps/
 - title: Управление облачными приложениями и единый вход
   linkLists:
   - linkListType: concept

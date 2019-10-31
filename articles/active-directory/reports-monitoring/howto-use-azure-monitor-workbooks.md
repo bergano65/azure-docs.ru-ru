@@ -11,15 +11,15 @@ ms.topic: conceptual
 ms.tgt_pltfrm: ''
 ms.workload: identity
 ms.subservice: report-monitor
-ms.date: 10/29/2019
+ms.date: 10/30/2019
 ms.author: chadam
 ms.reviewer: dhanyahk
-ms.openlocfilehash: a073a476043fc6570a42cc142e01f2c6f98c7741
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
-ms.translationtype: HT
+ms.openlocfilehash: b88648ce68a7359a842ec975d8633d6200b1a507
+ms.sourcegitcommit: fa5ce8924930f56bcac17f6c2a359c1a5b9660c9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73175932"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73200140"
 ---
 # <a name="how-to-use-azure-monitor-workbooks-for-azure-active-directory-reports"></a>Использование книг Azure Monitor для Azure Active Directory отчетов
 
@@ -64,19 +64,18 @@ ms.locfileid: "73175932"
 
 - [Доступ](https://docs.microsoft.com/azure/azure-monitor/platform/manage-access#manage-access-using-workspace-permissions) к рабочей области log Analytics
 - Следующие роли в Azure Active Directory (при доступе к Log Analytics через портал Azure Active Directory)
-    - администратор безопасности;
+    - Администратор безопасности
     - Читатель сведений о безопасности
     - Средство чтения отчетов
-    - глобальный администратор.
+    - Глобальный администратор.
 
 ## <a name="roles"></a>Роли
 Вы должны быть в одной из следующих ролей, а также иметь [доступ к базовой](https://docs.microsoft.com/azure/azure-monitor/platform/manage-access#manage-access-using-azure-permissions) рабочей области log Analytics для управления книгами:
--   глобальный администратор.
--   администратор безопасности;
+-   Глобальный администратор.
+-   Администратор безопасности
 -   Читатель сведений о безопасности
 -   Средство чтения отчетов
--   Администратор приложения
-
+-   администратор приложений;
 
 ## <a name="workbook-access"></a>Доступ к книге 
 
@@ -84,16 +83,11 @@ ms.locfileid: "73175932"
 
 1. Войдите на [портале Azure](https://portal.azure.com).
 
-2. В области навигации слева выберите **Azure Active Directory**.
+1. Перейдите к **Azure Active Directory** > **мониторинг** > **книги**. 
 
-3. В разделе **мониторинг** выберите пункт **книги**. 
+1. Выберите отчет или шаблон или нажмите кнопку **Открыть**на панели инструментов. 
 
-    ![Выбор аналитических сведений](./media/howto-use-azure-monitor-workbooks/41.png)
-
-4. Выберите отчет или шаблон или нажмите кнопку **Открыть**на панели инструментов. 
-
-    ![Выберите Открыть.](./media/howto-use-azure-monitor-workbooks/42.png)
-
+![Поиск книг Azure Monitor в Azure AD](./media/howto-use-azure-monitor-workbooks/azure-monitor-workbooks-in-azure-ad.png)
 
 ## <a name="sign-in-analysis"></a>Анализ входов
 

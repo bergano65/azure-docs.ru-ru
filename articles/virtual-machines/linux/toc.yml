@@ -379,7 +379,11 @@
         - name: Высокий уровень доступности
           href: manage-availability.md
         - name: Создание группы размещения близкого взаимодействия
-          href: proximity-placement-groups.md
+          items:
+            - name: CLI
+              href: proximity-placement-groups.md
+            - name: Портал
+              href: ../windows/proximity-placement-groups-portal.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json
         - name: Создание виртуальной машины в зоне доступности
           href: create-cli-availability-zone.md
     - name: Использование средств автоматизации

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: corywink
-ms.openlocfilehash: 14789549218d46dc0eb147bc659fce7adba0a9bd
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 17dd4862a02a736237257c50802135fb62883d77
+ms.sourcegitcommit: fa5ce8924930f56bcac17f6c2a359c1a5b9660c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72953243"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73200614"
 ---
 # <a name="manage-users-and-roles-in-your-iot-central-application-preview-features"></a>Управление пользователями и ролями в приложении IoT Central (Предварительная версия компонентов)
 
@@ -40,6 +40,9 @@ ms.locfileid: "72953243"
 
     > [!div class="mx-imgBorder"]
     >![добавить пользователя и выбрать роль](media/howto-manage-users-roles-pnp/add-user-pnp.png)
+
+    > [!NOTE]
+    > Пользователь, который находится в пользовательской роли, предоставляющей им разрешение на добавление других пользователей, может добавлять пользователей только к роли с тем же или меньшим числом разрешений, чем их собственная роль.
 
 ### <a name="edit-the-roles-that-are-assigned-to-users"></a>Изменение ролей, назначенных пользователям
 
@@ -195,6 +198,9 @@ ms.locfileid: "72953243"
 | Добавить | Показать <br/> Другие зависимости: Просмотр пользовательских ролей |
 | Удаление | Показать <br/> Другие зависимости: Просмотр пользовательских ролей |
 | Полный доступ | Просмотр, добавление, удаление <br/> Другие зависимости: Просмотр пользовательских ролей |
+
+> [!NOTE]
+> Пользователь, который находится в пользовательской роли, предоставляющей им разрешение на добавление других пользователей, может добавлять пользователей только к роли с тем же или меньшим числом разрешений, чем их собственная роль.
 
 #### <a name="customizing-the-app"></a>Настройка приложения
 

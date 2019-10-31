@@ -5,7 +5,7 @@
   items:
     - name: Общие сведения об Identity Governance
       href: identity-governance-overview.md
-    - name: Общие сведения об управлении правами (предварительная версия)
+    - name: Общие сведения об управлении правами
       href: entitlement-management-overview.md
     - name: Что такое проверки доступа
       href: access-reviews-overview.md

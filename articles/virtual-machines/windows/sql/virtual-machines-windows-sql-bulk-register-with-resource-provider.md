@@ -13,12 +13,12 @@ ms.workload: iaas-sql-server
 ms.date: 10/21/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: b9d4b99447e7c814d737def54dce03c4acc0e5ca
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
-ms.translationtype: HT
+ms.openlocfilehash: 80a1ac3ebe5f49d6a63f47e08e0b16114d75e91f
+ms.sourcegitcommit: fa5ce8924930f56bcac17f6c2a359c1a5b9660c9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73172964"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73199218"
 ---
 # <a name="bulk-register-sql-virtual-machines-in-azure-with-the-sql-vm-resource-provider"></a>Полное регистрация виртуальных машин SQL в Azure с помощью поставщика ресурсов виртуальной машины SQL
 
@@ -37,6 +37,7 @@ ms.locfileid: "73172964"
 - [Подписка Azure](https://azure.microsoft.com/free/) , [зарегистрированная в поставщике ресурсов](virtual-machines-windows-sql-register-with-resource-provider.md#register-subscription-with-rp) и содержащая незарегистрированные SQL Server виртуальные машины. 
 - Учетные данные клиента, используемые для регистрации виртуальных машин, существуют в любой из следующих ролей RBAC: **участник виртуальной машины**, **участник**или **владелец**. 
 - Последняя версия [AZ PowerShell](/powershell/azure/new-azureps-module-az). 
+- Последняя версия [AZ. Склвиртуалмачине] (https://www.powershellgallery.com/packages/Az.SqlVirtualMachine/0.1.0.
 
 ## <a name="getting-started"></a>Начало работы
 
@@ -228,6 +229,7 @@ Please find the detailed report in  file RegisterSqlVMScriptReport1571314821.txt
 
 Полный сценарий на сайте GitHub см. в статье [Пакетная регистрация виртуальных машин SQL с помощью команды AZ PowerShell](https://github.com/Azure/azure-docs-powershell-samples/blob/master/sql-virtual-machine/register-sql-vms/RegisterSqlVMs.psm1). 
 
+Скопируйте полный скрипт и сохраните его как `RegisterSqLVMs.psm1`.
 
 [!code-powershell-interactive[main](../../../../powershell_scripts/sql-virtual-machine/register-sql-vms/RegisterSqlVMs.psm1 "Bulk register SQL Server virtual machines")]
 

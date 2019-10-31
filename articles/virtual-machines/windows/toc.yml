@@ -447,7 +447,11 @@
         - name: Высокий уровень доступности
           href: manage-availability.md
         - name: Создание группы размещения близкого взаимодействия
-          href: proximity-placement-groups.md
+          items:
+            - name: Портал
+              href: proximity-placement-groups-portal.md
+            - name: PowerShell
+              href: proximity-placement-groups.md
         - name: Вертикальное масштабирование
           items:
             - name: PowerShell

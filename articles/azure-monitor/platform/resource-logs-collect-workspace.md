@@ -1,5 +1,5 @@
 ---
-title: Получение журналов ресурсов Azure в Log Analytics рабочей области в Azure Monitor
+title: Получение журналов ресурсов Azure в Log Analytics рабочей области
 description: Узнайте, как выполнять потоковую передачу журналов ресурсов Azure в рабочую область Log Analytics в Azure Monitor.
 author: bwren
 services: azure-monitor
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 09/20/2019
 ms.author: bwren
 ms.subservice: logs
-ms.openlocfilehash: 2f5dba7c36ec04263f6d227d82b9fc50b82890a3
-ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
+ms.openlocfilehash: 92de47041791c8b6c540844adb62391268b81c34
+ms.sourcegitcommit: fa5ce8924930f56bcac17f6c2a359c1a5b9660c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71262444"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73200504"
 ---
 # <a name="collect-azure-resource-logs-in-log-analytics-workspace-in-azure-monitor"></a>Получение журналов ресурсов Azure в Log Analytics рабочей области в Azure Monitor
 [Журналы ресурсов](resource-logs-overview.md) в Azure предоставляют широкие и часто встречающиеся данные о внутренней работе ресурса Azure. В этой статье описывается сбор журналов ресурсов в рабочей области Log Analytics, которая позволяет анализировать их с другими данными мониторинга, собранными в журналах Azure Monitor, используя мощные запросы журналов, а также использовать другие функции Azure Monitor, такие как оповещения и визуализации. 
@@ -26,7 +26,7 @@ ms.locfileid: "71262444"
 * **Оповещения** — получение упреждающего уведомления о критических условиях и закономерностях, определенных в журналах ресурсов с помощью [оповещений журнала в Azure Monitor](alerts-log.md).
 * **Визуализации** — закрепление результатов запроса журнала на панели мониторинга Azure или включение их в книгу как часть интерактивного отчета.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Если у вас ее еще нет, [Создайте новую рабочую область](../learn/quick-create-workspace.md) . Рабочая область не обязательно должна находиться в той же подписке, что и журнал, отправляющий журналы, если пользователь, настроив параметр, имеет соответствующий доступ RBAC к обеим подпискам.
 
 ## <a name="create-a-diagnostic-setting"></a>Создание параметра диагностики
@@ -51,7 +51,7 @@ ms.locfileid: "71262444"
 
 Таблица AzureDiagnostics будет выглядеть следующим образом:  
 
-| ResourceProvider    | Category     | Объект  | Б  | К  | D  | E  | 6\) Е  | Г  | H  | I  |
+| ResourceProvider    | Категория     | A  | b  | C  | D  | E  | F  | G  | Серия H  | I  |
 | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- |
 | Microsoft. Service1 | AuditLogs    | x1 | Y1 | Z1 |    |    |    |    |    |    |
 | Microsoft. Service1 | ErrorLogs    |    |    |    | Q1 | W1 | E1 |    |    |    |
@@ -68,7 +68,7 @@ ms.locfileid: "71262444"
  
 - Таблица *Service1AuditLogs* выглядит следующим образом:
 
-    | Поставщик ресурсов | Category | Объект | Б | К |
+    | Поставщик ресурсов | Категория | A | b | C |
     | -- | -- | -- | -- | -- |
     | Service1 | AuditLogs | x1 | Y1 | Z1 |
     | Service1 | AuditLogs | x5 | y5 | z5 |
@@ -76,7 +76,7 @@ ms.locfileid: "71262444"
 
 - Таблица *Service1ErrorLogs* выглядит следующим образом:  
 
-    | Поставщик ресурсов | Category | D | E | 6\) Е |
+    | Поставщик ресурсов | Категория | D | E | F |
     | -- | -- | -- | -- | -- | 
     | Service1 | ErrorLogs |  Q1 | W1 | E1 |
     | Service1 | ErrorLogs |  Q2 | W2 | E2 |
@@ -84,7 +84,7 @@ ms.locfileid: "71262444"
 
 - Таблица *Service2AuditLogs* выглядит следующим образом:  
 
-    | Поставщик ресурсов | Category | Г | H | I |
+    | Поставщик ресурсов | Категория | G | Серия H | I |
     | -- | -- | -- | -- | -- |
     | S2 | AuditLogs | J1 | K1 | L1|
     | S2 | AuditLogs | J3 | k3 | Индекс|
@@ -118,7 +118,7 @@ ms.locfileid: "71262444"
 Необходимо как можно скорее перенести журналы, чтобы использовать режим, зависящий от ресурса. Если вы не можете сделать это немедленно, следует изолировать журналы фабрики данных Azure в своей рабочей области, чтобы снизить вероятность того, что эти журналы будут влиять на другие типы журналов, собираемые в ваших рабочих областях.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о журналах ресурсов Azure см. в статье [Обзор журналов ресурсов Azure](resource-logs-overview.md).
 * Сведения о создании параметра диагностики для сбора журналов ресурсов в Log Analytics рабочей области см. в статье [Создание параметров диагностики для сбора журналов и метрик в Azure](diagnostic-settings.md).
