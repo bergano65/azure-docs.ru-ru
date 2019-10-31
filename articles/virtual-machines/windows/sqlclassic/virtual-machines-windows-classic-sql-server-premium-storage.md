@@ -15,25 +15,25 @@ ms.workload: iaas-sql-server
 ms.date: 06/01/2017
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: ebcfa9da8fc8760fa4c13cec1a8921c4ecef5691
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: f40b479b66f2fa9a60e084fc0e29f40cef052e99
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70101936"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73162524"
 ---
-# <a name="use-azure-premium-storage-with-sql-server-on-virtual-machines"></a>Использование хранилища Azure Premium Storage с SQL Server на виртуальных машинах
+# <a name="use-azure-premium-storage-with-sql-server-on-virtual-machines"></a>Использование хранилища Azure класса Premium с SQL Server на виртуальных машинах
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Краткое описание
 
 [SSD Azure (цен. категория "Премиум")](../disks-types.md) — это хранилище нового поколения, обеспечивающее малую задержку и высокую пропускную способность ввода-вывода. Данное хранилище лучше справляется с интенсивными нагрузками ввода-вывода, как, например, SQL Server на [виртуальных машинах](https://azure.microsoft.com/services/virtual-machines/)IaaS.
 
 > [!IMPORTANT]
-> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель развертывания с помощью Resource Manager и классическая модель](../../../azure-resource-manager/resource-manager-deployment-model.md). В этой статье рассматривается использование классической модели развертывания. Для большинства новых развертываний Майкрософт рекомендует использовать модель диспетчера ресурсов.
+> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель Resource Manager и классическая модель](../../../azure-resource-manager/resource-manager-deployment-model.md). В этой статье рассматривается использование классической модели развертывания. Для большинства новых развертываний Майкрософт рекомендует использовать модель диспетчера ресурсов.
 
 Данная статья содержит информацию о планировании и осуществлении миграции виртуальной машины под управлением SQL Server для использования хранилища Premium Storage. Она включает описание этапов работы с инфраструктурой Azure (сеть, хранилище) и гостевой виртуальной машиной Windows. В примере из [приложения](#appendix-migrating-a-multisite-always-on-cluster-to-premium-storage) приведена комплексная схема миграции, описывающая перенос более крупных виртуальных машин, что позволит воспользоваться преимуществами улучшенного локального хранилища SSD с помощью PowerShell.
 
-Важно понимать весь процесс использования хранилища Azure Premium Storage с сервером SQL Server на виртуальных машинах IAAS. Сюда входят следующие возможности.
+Важно понимать весь процесс использования хранилища Azure Premium Storage с сервером SQL Server на виртуальных машинах IAAS. А именно:
 
 * Определение необходимых условий для использования хранилища Premium Storage.
 * Примеры развертывания сервера SQL Server на IaaS в хранилище Premium Storage для нового развертывания.
@@ -53,7 +53,7 @@ ms.locfileid: "70101936"
 
 Для использования хранилища класса Premium необходимо будет использовать виртуальные машины серии DS. Если ранее вы не использовали в своей облачной службе машин серии DS, необходимо удалить существующую виртуальную машину, сохранить подключенные диски, а затем создать новую облачную службу, прежде чем создавать повторно виртуальную машину с ролью DS\* . Дополнительные сведения о размерах виртуальных машин см. в статье [Размеры виртуальных машин и облачных служб для Azure](../sizes.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 
-### <a name="cloud-services"></a>Облачные службы
+### <a name="cloud-services"></a>Облачные сервисы
 
 Виртуальные машины DS* можно использовать с хранилищем Premium Storage, только если они были созданы в новой облачной службе. При использовании SQL Server Always On в Azure прослушиватель Always On ссылается на IP-адрес внутренней или внешней подсистемы балансировки нагрузки Azure, связанный с облачной службой. Данная статья содержит информацию о том, как осуществлять миграцию с сохранением доступности в этом сценарии.
 
@@ -191,7 +191,7 @@ Set-AzureSubscription -SubscriptionName $mysubscription
 Select-AzureSubscription -SubscriptionName $mysubscription -Current  
 ```
 
-#### <a name="step-1-create-a-premium-storage-account"></a>Шаг 1. Создание учетной записи хранилища Premium
+#### <a name="step-1-create-a-premium-storage-account"></a>Шаг 1. Создайте учетную запись хранения Premium
 
 ```powershell
 #Create Premium Storage account, note Type
@@ -199,24 +199,24 @@ $newxiostorageaccountname = "danspremsams"
 New-AzureStorageAccount -StorageAccountName $newxiostorageaccountname -Location $location -Type "Premium_LRS"  
 ```
 
-#### <a name="step-2-create-a-new-cloud-service"></a>Шаг 2. Создание новой облачной службы
+#### <a name="step-2-create-a-new-cloud-service"></a>Шаг 2. Создайте новую облачную службу
 
 ```powershell
 $destcloudsvc = "danNewSvcAms"
 New-AzureService $destcloudsvc -Location $location
 ```
 
-#### <a name="step-3-reserve-a-cloud-service-vip-optional"></a>Шаг 3. Резервация VIP облачной службы (необязательно)
+#### <a name="step-3-reserve-a-cloud-service-vip-optional"></a>Шаг 3. Зарезервируйте VIP облачной службы (необязательно)
 
 ```powershell
 #check exisitng reserved VIP
 Get-AzureReservedIP
 
-$reservedVIPName = “sqlcloudVIP”
+$reservedVIPName = "sqlcloudVIP"
 New-AzureReservedIP –ReservedIPName $reservedVIPName –Label $reservedVIPName –Location $location
 ```
 
-#### <a name="step-4-create-a-vm-container"></a>Шаг 4. Создание контейнера виртуальной машины
+#### <a name="step-4-create-a-vm-container"></a>Шаг 4. Создайте контейнер виртуальных машин
 
 ```powershell
 #Generate storage keys for later
@@ -230,7 +230,7 @@ $containerName = 'vhds'
 New-AzureStorageContainer -Name $containerName -Context $xioContext
 ```
 
-#### <a name="step-5-placing-os-vhd-on-standard-or-premium-storage"></a>Шаг 5. Размещение виртуального жесткого диска операционной системы в хранилище Standard или Premium
+#### <a name="step-5-placing-os-vhd-on-standard-or-premium-storage"></a>Шаг 5. Разместите виртуальный жесткий диск операционной системы в хранилище Standard или Premium
 
 ```powershell
 #NOTE: Set up subscription and default storage account which is used to place the OS VHD in
@@ -244,7 +244,7 @@ $standardstorageaccountname = "danstdams"
 Set-AzureSubscription -SubscriptionName $mysubscription -CurrentStorageAccount  $standardstorageaccountname
 ```
 
-#### <a name="step-6-create-vm"></a>Шаг 6. Создать VM
+#### <a name="step-6-create-vm"></a>Шаг 6. Создайте виртуальную машину
 
 ```powershell
 #Get list of available SQL Server Images from the Azure Image Gallery.
@@ -293,7 +293,7 @@ Get-AzureVM -ServiceName $destcloudsvc -Name $vmName |Get-AzureOSDisk
 
 В этом сценарии показана ситуация, где у вас есть существующие настраиваемые образы, хранящиеся в учетной записи хранения Standard. Как уже упоминалось, для помещения виртуального жесткого диска ОС в хранилище класса Premium необходимо скопировать образ, имеющийся в учетной записи хранилища класса Standard, и передать его в хранилище класса Premium. Только после этого его можно будет использовать. Если образ хранится локально, вы также можете использовать этот метод для его копирования непосредственно в учетную запись хранения Premium.
 
-#### <a name="step-1-create-storage-account"></a>Шаг 1. Создание учетной записи хранения
+#### <a name="step-1-create-storage-account"></a>Шаг 1. Создайте учетную запись хранения
 
 ```powershell
 $mysubscription = "DansSubscription"
@@ -314,7 +314,7 @@ $destcloudsvc = "danNewSvcAms"
 New-AzureService $destcloudsvc -Location $location
 ```
 
-#### <a name="step-3-use-existing-image"></a>Шаг 3. Использование существующего образа
+#### <a name="step-3-use-existing-image"></a>Шаг 3. Используйте существующий образ
 
 Вы можете использовать существующий образ. Вы также можете [взять образ имеющегося компьютера](../classic/capture-image-classic.md?toc=%2fazure%2fvirtual-machines%2fwindows%2fclassic%2ftoc.json). Обратите внимание, что виртуальная машина, образ которой вы создаете, не обязательно должна быть серии DS*. Далее показано, как скопировать созданный образ в учетную запись хранилища уровня "Премиум" с помощью командлета PowerShell **Start-AzureStorageBlobCopy**.
 
@@ -330,7 +330,7 @@ $origContext = New-AzureStorageContext  –StorageAccountName $origstorageaccoun
 $destContext = New-AzureStorageContext  –StorageAccountName $newxiostorageaccountname -StorageAccountKey $xiostorage.Primary  
 ```
 
-#### <a name="step-4-copy-blob-between-storage-accounts"></a>Шаг 4. Копирование BLOB-объекта между учетными записями хранения
+#### <a name="step-4-copy-blob-between-storage-accounts"></a>Шаг 4. Скопируйте BLOB-объект между учетными записями хранения
 
 ```powershell
 #Get Image VHD
@@ -343,13 +343,13 @@ $blob = Start-AzureStorageBlobCopy -SrcBlob $myImageVHD -SrcContainer $container
 -Context $origContext -DestContext $destContext  
 ```
 
-#### <a name="step-5-regularly-check-copy-status"></a>Шаг 5. Регулярная проверка состояния копирования
+#### <a name="step-5-regularly-check-copy-status"></a>Шаг 5. Регулярно проверяйте состояние копирования:
 
 ```powershell
 $blob | Get-AzureStorageBlobCopyState
 ```
 
-#### <a name="step-6-add-image-disk-to-azure-disk-repository-in-subscription"></a>Шаг 6. Добавление диска образа в подписку на репозитории диска Azure
+#### <a name="step-6-add-image-disk-to-azure-disk-repository-in-subscription"></a>Шаг 6. Добавьте диск образа на репозиторий диска Azure в пункте "Подписка"
 
 ```powershell
 $imageMediaLocation = $destContext.BlobEndPoint+"/"+$myImageVHD
@@ -361,7 +361,7 @@ Add-AzureVMImage -ImageName $newimageName -MediaLocation $imageMediaLocation
 > [!NOTE]
 > Вы можете обнаружить, что даже если состояние указывает на успешный результат, ошибка аренды диска может сохраняться. В этом случае подождите около 10 минут.
 
-#### <a name="step-7--build-the-vm"></a>Шаг 7.  Сборка виртуальной машины
+#### <a name="step-7--build-the-vm"></a>Шаг 7. Создание виртуальной машины
 
 Здесь вы создаете виртуальную машину из образа и присоединяете два виртуальных жестких диска хранилища Premium Storage:
 
@@ -384,7 +384,7 @@ $availabilitySet = "cloudmigAVAMS3"
 
 #Machine User Credentials
 $userName = "myadmin"
-$pass = "theM)stC0mplexP@ssw0rd!”
+$pass = "theM)stC0mplexP@ssw0rd!"
 
 
 #Create VM Config
@@ -438,7 +438,7 @@ $vmConfigsl2 | New-AzureVM –ServiceName $destcloudsvc -VNetName $vnet
 1. **Добавление дополнительных реплик в существующий кластер AlwaysOn.**
 2. **Миграция в новый кластер AlwaysOn.**
 
-#### <a name="1-add-more-secondary-replicas-to-an-existing-always-on-cluster"></a>1. Добавление дополнительных реплик в существующий кластер AlwaysOn
+#### <a name="1-add-more-secondary-replicas-to-an-existing-always-on-cluster"></a>1. Добавление вторичных реплик в существующий кластер Always On
 
 Первый способ — добавить несколько дополнительных реплик в группу доступности AlwaysOn. Их необходимо добавить в новую облачную службу, а затем обновить прослушиватель новым IP-адресом подсистемы балансировки нагрузки.
 
@@ -492,7 +492,7 @@ $vmConfigsl2 | New-AzureVM –ServiceName $destcloudsvc -VNetName $vnet
 * При настройке вторичных реплик передача данных SQL может занять много времени.
 * В случае параллельной работы новых машин это может повлечь дополнительные расходы при миграции.
 
-#### <a name="2-migrate-to-a-new-always-on-cluster"></a>2. Миграция в новый кластер AlwaysOn
+#### <a name="2-migrate-to-a-new-always-on-cluster"></a>2. Миграция в новый кластер Always On
 
 Другая стратегия — создание нового кластера AlwaysOn с совершенно новыми узлами в новой облачной службе, с последующим перенаправлением клиентов для его использования.
 
@@ -520,10 +520,10 @@ $vmConfigsl2 | New-AzureVM –ServiceName $destcloudsvc -VNetName $vnet
 
 Существуют две стратегии миграции развернутых служб AlwaysOn для минимального времени простоя:
 
-1. **Использование существующей вторичной реплики. Один узел**
-2. **Использование существующей вторичной реплики (реплик). Несколько узлов**
+1. **Использование существующей вторичной реплики: один узел**
+2. **Использование существующей вторичной реплики (реплик): несколько узлов**
 
-#### <a name="1-utilize-an-existing-secondary-single-site"></a>1. Использование существующей вторичной реплики. Один узел
+#### <a name="1-utilize-an-existing-secondary-single-site"></a>1. Использование существующего вторичного сайта: один сайт
 
 Одна стратегия для минимального временем простоя предполагает получение вторичной реплики существующего облака и удаление его из текущей облачной службы. Затем следует скопировать виртуальные жесткие диски на новую учетную запись хранения Premium и создать виртуальную машину в новой облачной службе. После этого необходимо обновить прослушиватель в кластеризации и отработку отказов.
 
@@ -570,7 +570,7 @@ $vmConfigsl2 | New-AzureVM –ServiceName $destcloudsvc -VNetName $vnet
 * Если используется шаг 5ii, добавьте SQL1 как возможного владельца для добавляемого ресурса IP-адреса.
 * Проверьте отработку отказа.
 
-#### <a name="2-utilize-existing-secondary-replicas-multi-site"></a>2. Использование существующей вторичной реплики (реплик). Несколько сайтов
+#### <a name="2-utilize-existing-secondary-replicas-multi-site"></a>2. использование существующих вторичных реплик: несколько сайтов
 
 При наличии узлов в более чем одном центре обработки данных Azure или гибридной среды можно использовать конфигурацию AlwaysOn в этой среде, чтобы свести к минимуму время простоя.
 
@@ -635,7 +635,7 @@ $vmConfigsl2 | New-AzureVM –ServiceName $destcloudsvc -VNetName $vnet
 
 ![Приложение2][12]
 
-### <a name="pre-steps-connect-to-subscription"></a>Предварительные шаги. Подключение к подписке
+### <a name="pre-steps-connect-to-subscription"></a>Предварительные действия: подключитесь к подписке
 
 ```powershell
 Add-AzureAccount
@@ -644,7 +644,7 @@ Add-AzureAccount
 Get-AzureSubscription
 ```
 
-#### <a name="step-1-create-new-storage-account-and-cloud-service"></a>Шаг 1. Создание новой учетной записи хранения и облачной службы
+#### <a name="step-1-create-new-storage-account-and-cloud-service"></a>Шаг 1. Создайте новую учетную запись хранения и облачную службу
 
 ```powershell
 $mysubscription = "DansSubscription"
@@ -681,7 +681,7 @@ $destcloudsvc = "danNewSvcAms"
 New-AzureService $destcloudsvc -Location $location
 ```
 
-#### <a name="step-2-increase-the-permitted-failures-on-resources-optional"></a>Шаг 2. Увеличение разрешенных сбоев для ресурсов \<необязательно >
+#### <a name="step-2-increase-the-permitted-failures-on-resources-optional"></a>Шаг 2. увеличение разрешенных сбоев для ресурсов \<необязательно >
 
 На некоторых ресурсах, принадлежащих группе доступности Always On, существуют ограничения на количество сбоев, которые могут возникнуть в течение определенного периода, когда служба кластеров пытается перезапустить группу ресурсов. Рекомендуется увеличить это значение на время выполнения процедуры, потому как если вы не будете выполнять или вызывать переход на другой ресурс вручную посредством отключения машин, вы можете приблизиться к заданному ограничению.
 
@@ -691,11 +691,11 @@ New-AzureService $destcloudsvc -Location $location
 
 Установите значение максимальных отказов на 6.
 
-#### <a name="step-3-addition-ip-address-resource-for-cluster-group-optional"></a>Шаг 3. Добавление ресурса IP-адреса для группы \<кластера необязательно >
+#### <a name="step-3-addition-ip-address-resource-for-cluster-group-optional"></a>Шаг 3. Добавление ресурса IP-адреса для группы кластера \<необязательно >
 
 Если у вас есть только один IP-адрес для группы кластера и он настраивается на подсеть облака, следите за тем, чтобы случайно не перевести в автономный режим все узлы кластера в облаке в данной сети — в таком случае ресурс IP-адреса кластера и сетевое имя кластера не могут перейти в оперативный режим. В этом случае данное действие предотвращает обновления для других ресурсов кластера.
 
-#### <a name="step-4-dns-configuration"></a>Шаг 4. Настройка DNS
+#### <a name="step-4-dns-configuration"></a>Шаг 4. Настройка DNS
 
 Плавность перехода зависит от того, как используется и обновляется DNS.
 При установке Always On создается группа ресурсов кластера Windows. Если открыть диспетчер отказоустойчивости кластеров, вы увидите, что он включает по меньшей мере три ресурса. Данный документ касается следующих двух ресурсов.
@@ -753,7 +753,7 @@ Get-ClusterResource $ListenerName| Set-ClusterParameter -Name "HostRecordTTL" 12
 
 Дополнительные сведения о предыдущих параметрах см. в разделе [Ключевое слово и связанные функции MultiSubnetFailover](https://msdn.microsoft.com/library/hh213080.aspx#MultiSubnetFailover). Ознакомьтесь также со статьей [Поддержка SqlClient для высокого уровня доступности и аварийного восстановления](https://msdn.microsoft.com/library/hh205662\(v=vs.110\).aspx).
 
-#### <a name="step-5-cluster-quorum-settings"></a>Шаг 5. Параметры кворума кластера
+#### <a name="step-5-cluster-quorum-settings"></a>Шаг 5. Параметры кворума кластера
 
 Так как вы собираетесь выбрать отключение как минимум одного SQL Server за один раз, вам следует изменить параметры кворума кластера. При использовании файлового ресурса-свидетеля (FSW) с двумя узлами необходимо задать кворум, чтобы разрешить большинство узлов, а также использовать динамическое голосование, позволяя одному узлу продолжать работать.
 
@@ -763,7 +763,7 @@ Set-ClusterQuorum -NodeMajority
 
 Дополнительные сведения о настройке кворума кластера и управлении им см. в статье [Configure and Manage the Quorum in a Windows Server 2012 Failover Cluster](https://technet.microsoft.com/library/jj612870.aspx) (Настройка кворума и управление им в отказоустойчивом кластере Windows Server 2012).
 
-#### <a name="step-6-extract-existing-endpoints-and-acls"></a>Шаг 6. Извлечение существующих конечных точек и списков управления доступом
+#### <a name="step-6-extract-existing-endpoints-and-acls"></a>Шаг 6. Извлеките существующие конечные точки и списки управления доступом
 
 ```powershell
 #GET Endpoint info
@@ -774,13 +774,13 @@ Get-AzureVM -ServiceName $destcloudsvc -Name $vmNameToMigrate | Get-AzureAclConf
 
 Сохраните этот текст в файл.
 
-#### <a name="step-7-change-failover-partners-and-replication-modes"></a>Шаг 7. Изменение партнеров перехода на другой ресурс и режимов репликации
+#### <a name="step-7-change-failover-partners-and-replication-modes"></a>Шаг 7. Измените партнеров перехода на другой ресурс и режимы репликации
 
 При наличии более двух серверов SQL следует изменить переход на другой ресурс для другой вторичной репликации в другом центре обработки данных или на локальный ресурс на "Синхронный" и указать его как автоматический партнер отработки отказа (AFP). Это позволит вам сохранить высокий уровень доступности в процессе внесения изменений. Это можно сделать через TSQL или изменить при помощи SSMS:
 
 ![Приложение6][16]
 
-#### <a name="step-8-remove-secondary-vm-from-cloud-service"></a>Шаг 8. Удаление дополнительной виртуальной машины из облачной службы
+#### <a name="step-8-remove-secondary-vm-from-cloud-service"></a>Шаг 8. Удалите дополнительную виртуальную машину из облачной службы
 
 Вам следует планировать миграцию вторичного узла облака в первую очередь. Если он на данный момент является основным, вам следует инициировать переход на другой ресурс вручную.
 
@@ -799,7 +799,7 @@ Get-AzureVM -ServiceName $sourceSvc -Name $vmNameToMigrate | stop-AzureVM
 ##Building Existing Data Disk Configuration
 $file = "C:\Azure Storage Testing\mydiskconfig_$vmNameToMigrate.csv"
 $datadisks = @(Get-AzureVM -ServiceName $sourceSvc -Name $vmNameToMigrate | Get-AzureDataDisk )
-Add-Content $file “lun, vhdname, hostcaching, disklabel, diskName”
+Add-Content $file "lun, vhdname, hostcaching, disklabel, diskName"
 foreach ($disk in $datadisks)
 {
     $vhdname = $disk.MediaLink.AbsolutePath -creplace  "/vhds/"
@@ -833,7 +833,7 @@ Get-AzureVM -ServiceName $sourceSvc -Name  $vmNameToMigrate
 Remove-AzureVM -ServiceName $sourceSvc -Name $vmNameToMigrate
 ```
 
-#### <a name="step-9-change-disk-caching-settings-in-csv-file-and-save"></a>Шаг 9. Изменение параметров кэширования диска в CSV-файле и сохранение
+#### <a name="step-9-change-disk-caching-settings-in-csv-file-and-save"></a>Шаг 9. Измените параметры кэширования диска в файле CSV и сохраните
 
 Для томов данных следует установить параметр "Только для чтения".
 
@@ -841,7 +841,7 @@ Remove-AzureVM -ServiceName $sourceSvc -Name $vmNameToMigrate
 
 ![Приложение7][17]
 
-#### <a name="step-10-copy-vhds"></a>Шаг 10. Копирование виртуальных жестких дисков
+#### <a name="step-10-copy-vhds"></a>Шаг 10. Скопируйте виртуальные жесткие диски
 
 ```powershell
 #Ensure you have created the container for these:
@@ -897,7 +897,7 @@ ForEach ($disk in $diskobjects)
 Get-AzureStorageBlobCopyState -Blob "blobname.vhd" -Container $containerName -Context $xioContext
 ```
 
-#### <a name="step-11-register-os-disk"></a>Шаг 11. Регистрация диска ОС
+#### <a name="step-11-register-os-disk"></a>Шаг 11. Зарегистрируйте диск ОС
 
 ```powershell
 #Change storage account
@@ -914,7 +914,7 @@ $xioDiskName = $osdiskforbuild + "xio"
 Add-AzureDisk -DiskName $xioDiskName -MediaLocation  "https://$newxiostorageaccountname.blob.core.windows.net/vhds/$osvhd"  -Label "BootDisk" -OS "Windows"
 ```
 
-#### <a name="step-12-import-secondary-into-new-cloud-service"></a>Шаг 12. Импорт вторичной реплики в новой облачной службе
+#### <a name="step-12-import-secondary-into-new-cloud-service"></a>Шаг 12. Импортируйте вторичную реплику в новую облачную службу
 
 В приведенном ниже коде также используется дополнительная опция: здесь вы можете импортировать машину и использовать запоминаемые виртуальные IP-адреса.
 
@@ -952,7 +952,7 @@ ForEach ( $attachdatadisk in $datadiskimport)
 $vmConfig  | New-AzureVM –ServiceName $destcloudsvc –Location $location -VNetName $vnet ## Optional (-ReservedIPName $reservedVIPName)
 ```
 
-#### <a name="step-13-create-ilb-on-new-cloud-svc-add-load-balanced-endpoints-and-acls"></a>Шаг 13. Создание внутреннего балансировщика нагрузки в новой облачной службе, добавление конечных точек с балансировкой нагрузки и списков управления доступом
+#### <a name="step-13-create-ilb-on-new-cloud-svc-add-load-balanced-endpoints-and-acls"></a>Шаг 13. Создайте ILB в новой облачной службе, добавьте конечные точки с балансировкой нагрузки и списки управления доступом
 
 ```powershell
 #Check for existing ILB
@@ -977,7 +977,7 @@ Get-AzureVM –ServiceName $destcloudsvc –Name $vmNameToMigrate  | Add-AzureEn
 ####WAIT FOR FULL AlwaysOn RESYNCRONISATION!!!!!!!!!#####
 ```
 
-#### <a name="step-14-update-always-on"></a>Шаг 14. Обновление Always On
+#### <a name="step-14-update-always-on"></a>Шаг 14. Обновите AlwaysOn
 
 ```powershell
 #Code to be executed on a Cluster Node
@@ -1006,15 +1006,15 @@ Get-ClusterGroup $AGName | Get-ClusterResource -Name "IP Address $newCloudServic
 
 ![Приложение10][20]
 
-#### <a name="step-15-dns-update-check"></a>Шаг 15. Проверка обновлений DNS
+#### <a name="step-15-dns-update-check"></a>Шаг 15. Проверка обновлений DNS
 
 Теперь необходимо проверить DNS-серверы в клиентских сетях SQL Server, чтобы убедиться, что кластеризация добавила запись о дополнительном узле для дополнительного IP-адреса. Если эти DNS-серверы не были обновлены, можно воспользоваться принудительной передачей зоны DNS, чтобы клиенты в своих подсетях могли использовать оба IP-адреса AlwaysOn. В таком случае вам не нужно будет ждать автоматической репликации DNS.
 
-#### <a name="step-16-reconfigure-always-on"></a>Шаг 16. Перенастройка Always On
+#### <a name="step-16-reconfigure-always-on"></a>Шаг 16. Перенастройте AlwaysOn
 
 На этом этапе вы ожидаете полной повторной синхронизации вторичного узла, относительно которого был проведен перенос, с локальным узлом и переключения в режим синхронной репликации, а также назначения его AFP.  
 
-#### <a name="step-17-migrate-second-node"></a>Шаг 17. Миграция второго узла
+#### <a name="step-17-migrate-second-node"></a>Шаг 17. Перенесите второй узел
 
 ```powershell
 $vmNameToMigrate="dansqlams1"
@@ -1032,7 +1032,7 @@ Get-AzureVM -ServiceName $sourceSvc -Name $vmNameToMigrate | stop-AzureVM
 #Building Existing Data Disk Configuration
 $file = "C:\Azure Storage Testing\mydiskconfig_$vmNameToMigrate.csv"
 $datadisks = @(Get-AzureVM -ServiceName $sourceSvc -Name $vmNameToMigrate | Get-AzureDataDisk )
-Add-Content $file “lun, vhdname, hostcaching, disklabel, diskName”
+Add-Content $file "lun, vhdname, hostcaching, disklabel, diskName"
 foreach ($disk in $datadisks)
 {
     $vhdname = $disk.MediaLink.AbsolutePath -creplace  "/vhds/"
@@ -1066,7 +1066,7 @@ Get-AzureVM -ServiceName $sourceSvc -Name  $vmNameToMigrate
 Remove-AzureVM -ServiceName $sourceSvc -Name $vmNameToMigrate
 ```
 
-#### <a name="step-18-change-disk-caching-settings-in-csv-file-and-save"></a>Шаг 18. Изменение параметров кэширования диска в CSV-файле и сохранение
+#### <a name="step-18-change-disk-caching-settings-in-csv-file-and-save"></a>Шаг 18. Измените параметры кэширования диска в файле CSV и сохраните
 
 Для параметров кэша томов данных следует установить значение "Только для чтения".
 
@@ -1074,7 +1074,7 @@ Remove-AzureVM -ServiceName $sourceSvc -Name $vmNameToMigrate
 
 ![Приложение11][21]
 
-#### <a name="step-19-create-new-independent-storage-account-for-secondary-node"></a>Шаг 19. Создание новой независимой учетной записи хранения для дополнительного узла
+#### <a name="step-19-create-new-independent-storage-account-for-secondary-node"></a>Шаг 19. Создайте новую независимую учетную запись хранения для дополнительного узла
 
 ```powershell
 $newxiostorageaccountnamenode2 = "danspremsams2"
@@ -1094,7 +1094,7 @@ Set-AzureSubscription -SubscriptionName $mysubscription -CurrentStorageAccount $
 Select-AzureSubscription -SubscriptionName $mysubscription -Current
 ```
 
-#### <a name="step-20-copy-vhds"></a>Шаг 20. Копирование виртуальных жестких дисков
+#### <a name="step-20-copy-vhds"></a>Шаг 20. Скопируйте виртуальные жесткие диски
 
 ```powershell
 #Ensure you have created the container for these:
@@ -1155,7 +1155,7 @@ ForEach ($disk in $diskobjects)
 Get-AzureStorageBlobCopyState -Blob "danRegSvcAms-dansqlams1-2014-07-03.vhd" -Container $containerName -Context $xioContextnode2
 ```
 
-#### <a name="step-21-register-os-disk"></a>Шаг 21. Регистрация диска ОС
+#### <a name="step-21-register-os-disk"></a>Шаг 21. Зарегистрируйте диск ОС
 
 ```powershell
 #change storage account to the new XIO storage account
@@ -1202,7 +1202,7 @@ ForEach ( $attachdatadisk in $datadiskimport)
 $vmConfig  | New-AzureVM –ServiceName $destcloudsvc –Location $location -VNetName $vnet -Verbose
 ```
 
-#### <a name="step-22-add-load-balanced-endpoints-and-acls"></a>Шаг 22. Добавление конечных точек с балансировкой нагрузки и списков управления доступом
+#### <a name="step-22-add-load-balanced-endpoints-and-acls"></a>Шаг 22. Добавьте конечные точки с балансировкой нагрузки и списки управления доступом
 
 ```powershell
 #Endpoints
@@ -1220,13 +1220,13 @@ Get-AzureVM –ServiceName $destcloudsvc –Name $vmNameToMigrate  | Add-AzureEn
 #https://msdn.microsoft.com/library/azure/dn495192.aspx
 ```
 
-#### <a name="step-23-test-failover"></a>Шаг 23. Тестовая отработка отказа
+#### <a name="step-23-test-failover"></a>Шаг 23. Проверьте отработку отказа
 
 Дождитесь, пока перенесенный узел синхронизируется с локальным узлом Always On. Переведите его в режим синхронной репликации и подождите, пока он синхронизируется. Затем отработка отказа с локального компьютера на первый перенесенный узел, который является AFP. После успешного выполнения этого действия измените последний перенесенный узел на AFP.
 
 Вам будет необходимо проверить переходы между всеми узлами и выполнить тесты на несоответствия для обеспечения правильной и своевременной работы переходов на другой ресурс.
 
-#### <a name="step-24-put-back-cluster-quorum-settings--dns-ttl--failover-pntrs--sync-settings"></a>Шаг 24. Возвращение исходных параметров кворума кластера, срока жизни DNS, параметров отработки отказа и параметров синхронизации
+#### <a name="step-24-put-back-cluster-quorum-settings--dns-ttl--failover-pntrs--sync-settings"></a>Шаг 24. Верните исходные параметры кворума кластера, DNS TTL, параметры перехода на другой ресурс и параметры синхронизации
 
 ##### <a name="adding-ip-address-resource-on-same-subnet"></a>Добавление ресурса IP-адреса в одной подсети
 

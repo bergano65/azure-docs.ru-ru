@@ -1,5 +1,5 @@
 ---
-title: Самопроверки клиента для предварительной проверки виртуальной машины | Azure Marketplace
+title: Клиент самотестирования для предварительной проверки виртуальной машины | Azure Marketplace
 description: Как создать клиент самопроверки для предварительной проверки образа виртуальной машины для Microsoft Azure Marketplace.
 services: Azure, Marketplace, Cloud Partner Portal, Virtual Machine
 author: dan-wesley
@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: conceptual
 ms.date: 01/23/2018
 ms.author: pabutler
-ms.openlocfilehash: 117249feea04381b34f8fc1d95f77c2c1a567dba
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 46923ecd33a054a36aa6900a415d0b563e5afff0
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64938722"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73163260"
 ---
 # <a name="create-a-self-test-client-to-pre-validate-an-azure-virtual-machine-image"></a>Создание клиента самопроверки для предварительной проверки образа виртуальной машины Azure
 
@@ -46,8 +46,8 @@ API самопроверки содержит одну конечную точк
 ```
 Uri:             https://isvapp.azurewebsites.net/selftest-vm
 Method:          Post
-Request Header:  Content-Type: “application/json”
-Authorization:   “Bearer xxxx-xxxx-xxxx-xxxxx”
+Request Header:  Content-Type: "application/json"
+Authorization:   "Bearer xxxx-xxxx-xxxx-xxxxx"
 Request body:    The Request body parameters should use the following JSON format:
                  {
                    "DNSName":"XXXX.westus.cloudapp.azure.com",
@@ -87,7 +87,7 @@ Request body:    The Request body parameters should use the following JSON forma
 В следующем примере кода показан вызов API из PowerShell.
 
 ```powershell
-$accesstoken = “Get token for your Client AAD App”
+$accesstoken = "Get token for your Client AAD App"
 $headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
 $headers.Add("Authorization", "Bearer $accesstoken")
 $Body = @{
@@ -201,7 +201,7 @@ For ($i=0; $i -lt $testresult.Tests.Length; $i++)
 
 ```
 CURL POST -H "Content-Type:application/json"
--H "Authorization: Bearer XXXXXX-Token-XXXXXXXX”
+-H "Authorization: Bearer XXXXXX-Token-XXXXXXXX"
 https://isvapp.azurewebsites.net/selftest-vm
 -d '{ "DNSName":"XXXX.westus.cloudapp.azure.com", "User":"XXX", "Password":"XXXX@123456", "OS":"Linux", "PortNo":"22", "CompanyName":"ABCD"}'
 ```
@@ -247,7 +247,7 @@ https://isvapp.azurewebsites.net/selftest-vm
 
    - **Имя** — введите понятное имя для приложения. Например, SelfTestClient.
    - **Тип приложения** — выберите вариант **Web App/API** (Веб-приложение или API).
-   - **URL-адрес входа** — тип «https:\//isvapp.azurewebsites.net/selftest-vm»
+   - **URL-адрес входа** — введите "https:\//isvapp.azurewebsites.NET/SelfTest-VM"
 
 4. Нажмите кнопку **Создать**.
 5. В разделе **Регистрация приложений** или **Зарегистрированное приложение** скопируйте значение параметра **Идентификатор приложения**.
@@ -350,7 +350,7 @@ Response:
 
 ### <a name="to-create-and-get-a-token-using-c35"></a>Создание и получение маркера с помощью C#
 
-Чтобы запросить Auth0 маркеры для каких-либо авторизованных приложений, выполните операцию POST с помощью https:\//soamtenant.auth0.com/oauth/token конечной точки с полезными данными в следующем формате:
+Чтобы запросить Auth0 для маркеров для любого из ваших полномочных приложений, выполните операцию POST для конечной точки HTTPS:\//soamtenant.auth0.com/oauth/token с полезной нагрузкой в следующем формате:
 
 ```csharp
 string clientId = "Your Application Id";
@@ -373,7 +373,7 @@ var token = JObject.Parse(content)["access_token"];
 
 ### <a name="to-create-and-get-a-token-using-powershell"></a>Создание и получение маркера с помощью PowerShell
 
-Чтобы запросить Auth0 маркеры для каких-либо авторизованных приложений, выполните операцию POST с помощью https:\//soamtenant.auth0.com/oauth/token конечной точки с полезными данными в следующем формате:
+Чтобы запросить Auth0 для маркеров для любого из ваших полномочных приложений, выполните операцию POST для конечной точки HTTPS:\//soamtenant.auth0.com/oauth/token с полезной нагрузкой в следующем формате:
 
 ```powershell
 $clientId = "Application Id of AD Client APP";

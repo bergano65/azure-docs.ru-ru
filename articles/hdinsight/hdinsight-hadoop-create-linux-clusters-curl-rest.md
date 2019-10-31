@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/02/2018
 ms.author: hrasheed
-ms.openlocfilehash: d771d91feaba942b88a0ddb68f0d997fad4a981e
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 963dc71097a1ac53df77f3ab9c804b53597adeb5
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67059415"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73151998"
 ---
 # <a name="create-apache-hadoop-clusters-using-the-azure-rest-api"></a>Создание кластеров Apache Hadoop с помощью REST API Azure
 
@@ -28,7 +28,7 @@ Azure REST API позволяет управлять службами, разм�
 
 ## <a name="create-a-template"></a>Создание шаблона
 
-Шаблоны Azure Resource Manager — это документы JSON, описывающие **группу ресурсов** и все входящие в нее ресурсы (например, HDInsight). Такой подход позволяет определять ресурсы, требуемые для работы с HDInsight, в один шаблон.
+Azure Resource Manager шаблоны — это документы JSON, описывающие **группу ресурсов** и все ресурсы в ней (например, HDInsight). Этот подход на основе шаблонов позволяет определить ресурсы, необходимые для HDInsight, в одном шаблоне.
 
 Ниже приведен документ JSON, в котором объединены файлы параметров и шаблона, доступного по адресу [https://github.com/Azure/azure-quickstart-templates/tree/master/101-hdinsight-linux-ssh-password](https://github.com/Azure/azure-quickstart-templates/tree/master/101-hdinsight-linux-ssh-password). В результате создается кластер под управлением Linux с паролем для защиты учетной записи пользователя SSH.
 
@@ -145,7 +145,7 @@ Azure REST API позволяет управлять службами, разм�
                                "name": "headnode",
                                "targetInstanceCount": "2",
                                "hardwareProfile": {
-                                   "vmSize": "Standard_D3"
+                                   "vmSize": "{}" 
                                },
                                "osProfile": {
                                    "linuxOperatingSystemProfile": {
@@ -158,7 +158,7 @@ Azure REST API позволяет управлять службами, разм�
                                "name": "workernode",
                                "targetInstanceCount": "[parameters('clusterWorkerNodeCount')]",
                                "hardwareProfile": {
-                                   "vmSize": "Standard_D3"
+                                   "vmSize": "{}"
                                },
                                "osProfile": {
                                    "linuxOperatingSystemProfile": {
@@ -212,7 +212,7 @@ Azure REST API позволяет управлять службами, разм�
 >
 > Дополнительные сведения о размерах узлов и их стоимости см. на странице с [ценами на HDInsight](https://azure.microsoft.com/pricing/details/hdinsight/).
 
-## <a name="sign-in-to-your-azure-subscription"></a>Войдите в свою подписку Azure.
+## <a name="sign-in-to-your-azure-subscription"></a>Войдите в подписку Azure.
 
 Выполните действия, описанные в статье [Приступая к работе с Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-az-cli2), и подключитесь к подписке, используя команду `az login`.
 

@@ -9,12 +9,12 @@ services: iot-edge
 ms.topic: conceptual
 ms.date: 07/09/2019
 ms.author: gregman
-ms.openlocfilehash: 0e5bec7d3e1ecd63541a319cd5a9151560ef4139
-ms.sourcegitcommit: c4700ac4ddbb0ecc2f10a6119a4631b13c6f946a
+ms.openlocfilehash: fec39a9e788debcd9c3ac707a0431e268d87ed35
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2019
-ms.locfileid: "72964649"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73146194"
 ---
 # <a name="run-azure-iot-edge-on-ubuntu-virtual-machines"></a>Запуск Azure IoT Edge на виртуальных машинах Ubuntu
 
@@ -36,7 +36,7 @@ ms.locfileid: "72964649"
     1.  Скопируйте строку подключения устройства с устройства IoT Edge, созданного в центре Интернета вещей (если вы не знакомы с этим процессом, вы можете воспользоваться [строкой подключения в портал Azure](how-to-register-device.md#retrieve-the-connection-string-in-the-azure-portal) процедуре.)
     1.  Выберите недавно созданный ресурс виртуальной машины на портале Azure и щелкните **Выполнить команду**.
     1.  Выберите параметр **RunShellScript**.
-    1.  Выполните следующий сценарий в окне командной строки, указав свою строку подключения к устройству: `/etc/iotedge/configedge.sh “{device_connection_string}”`.
+    1.  Выполните следующий сценарий в окне командной строки, указав свою строку подключения к устройству: `/etc/iotedge/configedge.sh "{device_connection_string}"`.
     1.  Выберите **Выполнить**.
     1.  Подождите несколько секунд и на экране отобразится сообщение об успешном выполнении, указывающее об успешной настройке строки подключения.
 

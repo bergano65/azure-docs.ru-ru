@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: 677ff7ffab22eebdace67151d703ba83c2146602
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.openlocfilehash: 49abd9e5ecee8637d830604028463650071c0198
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "70998612"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73163159"
 ---
 # <a name="understand-the-azure-iot-edge-runtime-and-its-architecture"></a>Общие сведения о среде выполнения Azure IoT Edge и ее архитектуре
 
@@ -62,16 +62,16 @@ IoT Edge среда выполнения — это набор программ,
    ```csharp
    ModuleClient client = await ModuleClient.CreateFromEnvironmentAsync(transportSettings); 
    await client.OpenAsync(); 
-   await client.SendEventAsync(“output1”, message); 
+   await client.SendEventAsync("output1", message); 
    ```
 
 Для получения сообщений зарегистрируйте обратный вызов, который обрабатывает сообщения, приходящие в определенный вход. Следующий псевдокод регистрирует функцию Мессажепроцессор, которая будет использоваться для обработки всех сообщений, полученных в **INPUT1**:
 
    ```csharp
-   await client.SetInputMessageHandlerAsync(“input1”, messageProcessor, userContext);
+   await client.SetInputMessageHandlerAsync("input1", messageProcessor, userContext);
    ```
 
-Дополнительные сведения о классе ModuleClient и его методах обмена данными см. в справочнике по API для предпочитаемого языка пакета SDK: [C#](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.moduleclient?view=azure-dotnet), [C](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/iothub-module-client-h), [Python](https://docs.microsoft.com/python/api/azure-iot-device/azure.iot.device.iothubmoduleclient?view=azure-python), [Java](https://docs.microsoft.com/java/api/com.microsoft.azure.sdk.iot.device.moduleclient?view=azure-java-stable)или [node. js](https://docs.microsoft.com/javascript/api/azure-iot-device/moduleclient?view=azure-node-latest).
+Дополнительные сведения о классе модулеклиент и его методах связи см. в справочнике по API для вашего предпочтительного языка [C#](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.moduleclient?view=azure-dotnet)SDK:, [C](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/iothub-module-client-h), [Python](https://docs.microsoft.com/python/api/azure-iot-device/azure.iot.device.iothubmoduleclient?view=azure-python), [Java](https://docs.microsoft.com/java/api/com.microsoft.azure.sdk.iot.device.moduleclient?view=azure-java-stable)или [node. js](https://docs.microsoft.com/javascript/api/azure-iot-device/moduleclient?view=azure-node-latest).
 
 Разработчик решений отвечает за указание правил, определяющих, как центр IoT Edge передает сообщения между модулями. Правила маршрутизации определяются в облаке и помещаются в центр IoT Edge в его двойник устройства. Тот же синтаксис для маршрутов Центра Интернета вещей используется при определении маршрутов между модулями в Azure IoT Edge. Дополнительные сведения см. в статьях о [развертывании модулей и установке маршрутов в IOT Edge](module-composition.md).   
 
@@ -87,17 +87,17 @@ IoT Edge среда выполнения — это набор программ,
 
 * **settings.image**. Образ контейнера, который агент IoT Edge использует для запуска модуля. Агент IoT Edge должен быть настроен с учетными данными для реестра контейнеров, если образ защищен паролем. Учетные данные для реестра контейнеров можно настроить удаленно с помощью манифеста развертывания или на самом устройстве IoT Edge, обновив файл `config.yaml` в папке программы IoT Edge.
 * **Settings. креатеоптионс** — строка, которая передается непосредственно в управляющую программу-контейнер значок Кита при запуске контейнера модуля. Добавление параметров в это свойство позволяет выполнять дополнительные настройки, такие как пересылка портов или подключение томов, в контейнер модуля.  
-* **status**. Состояние, в котором агент IoT Edge помещает модуль. Обычно для этого параметра задано значение *работает* , так как большинство пользователей хотят, чтобы агент IOT Edge сразу же запустить все модули на устройстве. Однако можно указать начальное состояние модуля, который должен быть остановлен, и дождаться нужного времени, чтобы сообщить агенту IoT Edge о запуске модуля. Агент IoT Edge сообщает состояние каждого модуля обратно в облако в сообщаемых свойствах. Различие между требуемым свойством и сообщаемым свойством является индикатором некорректно работающего устройства. Ниже перечислены поддерживаемые состояния:
-   * Идет скачивание
-   * Работает
-   * Неработоспособно
-   * Неудача
-   * Остановлено
-* **restartPolicy**. То, как агент IoT Edge перезапускает модуль. Ниже перечислены возможные значения.
-   * `never`— Агент IoT Edge никогда не перезапускает модуль.
-   * `on-failure`— Если модуль завершается сбоем, агент IoT Edge перезапускает его. Если модуль завершается без сбоев, агент IoT Edge не перезапускает его.
-   * `on-unhealthy`— Если модуль завершается сбоем или считается неработоспособным, агент IoT Edge перезапускает его.
-   * `always`— Если модуль завершается сбоем, считается неработоспособным или завершает работу каким-либо образом, агент IoT Edge перезапускает его. 
+* **status**. Состояние, в котором агент IoT Edge помещает модуль. Обычно для этого параметра задано значение *работает* , так как большинство пользователей хотят, чтобы агент IOT Edge сразу же запустить все модули на устройстве. Однако можно указать начальное состояние модуля, который должен быть остановлен, и дождаться нужного времени, чтобы сообщить агенту IoT Edge о запуске модуля. Агент IoT Edge сообщает о состоянии каждого модуля обратно в облако в сообщаемых свойствах. Различие между требуемым свойством и сообщаемым свойством является индикатором некорректно работающего устройства. Ниже перечислены поддерживаемые состояния:
+   * Downloading;
+   * Выполнение
+   * Unhealthy;
+   * Failed
+   * Остановлена
+* **restartPolicy**. То, как агент IoT Edge перезапускает модуль. Возможные значения:
+   * `never` — агент IoT Edge никогда не перезапускает модуль.
+   * `on-failure` — если модуль завершается сбоем, агент IoT Edge перезапускает его. Если модуль завершается без сбоев, агент IoT Edge не перезапускает его.
+   * `on-unhealthy` — если модуль завершается сбоем или считается неработоспособным, агент IoT Edge перезапускает его.
+   * `always` — если модуль завершается сбоем, считается неработоспособным или завершает работу каким-либо образом, агент IoT Edge перезапускает его. 
 
 Агент IoT Edge отправляет ответ среды выполнения в центр Интернета вещей. Ниже перечислены возможные ответы:
   * 200 – OK
@@ -115,6 +115,6 @@ IoT Edge среда выполнения — это набор программ,
 
 Дополнительные сведения о Azure IoT Edgeной платформе безопасности см. в статье [Диспетчер безопасности IOT Edge](iot-edge-security-manager.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Общие сведения о модулях IoT Edge Azure](iot-edge-modules.md)

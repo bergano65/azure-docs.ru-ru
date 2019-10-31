@@ -17,12 +17,12 @@ ms.workload: infrastructure
 ms.date: 03/13/2018
 ms.author: kumud
 ms.custom: ''
-ms.openlocfilehash: f5c90b7d79b31c321b00869c90b0261c0b4730d3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 63584eedb0e51ddbca0d644bc17db3facd9225b5
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66727757"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73164025"
 ---
 # <a name="connect-virtual-networks-with-virtual-network-peering-using-powershell"></a>Установка пирингового подключения между виртуальными сетями с помощью PowerShell
 
@@ -49,7 +49,7 @@ ms.locfileid: "66727757"
 New-AzResourceGroup -ResourceGroupName myResourceGroup -Location EastUS
 ```
 
-Создайте виртуальную сеть с помощью командлета [New-AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork). В следующем примере создается виртуальная сеть с именем *myVirtualNetwork1* и префиксом адреса *10.0.0.0/16*.
+Создайте виртуальную сеть с помощью командлета [New-AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork). В следующем примере создается виртуальная сеть с именем *myVirtualNetwork1* и префиксом адреса *10.0.0.0/16*:
 
 ```azurepowershell-interactive
 $virtualNetwork1 = New-AzVirtualNetwork `
@@ -59,7 +59,7 @@ $virtualNetwork1 = New-AzVirtualNetwork `
   -AddressPrefix 10.0.0.0/16
 ```
 
-Создайте конфигурацию подсети с [New AzVirtualNetworkSubnetConfig](/powershell/module/az.network/new-azvirtualnetworksubnetconfig). В следующем примере создается конфигурация подсети с префиксом адреса 10.0.0.0/24:
+Создайте конфигурацию подсети с помощью [New-азвиртуалнетворксубнетконфиг](/powershell/module/az.network/new-azvirtualnetworksubnetconfig). В следующем примере создается конфигурация подсети с префиксом адреса 10.0.0.0/24:
 
 ```azurepowershell-interactive
 $subnetConfig = Add-AzVirtualNetworkSubnetConfig `
@@ -68,7 +68,7 @@ $subnetConfig = Add-AzVirtualNetworkSubnetConfig `
   -VirtualNetwork $virtualNetwork1
 ```
 
-Запишите конфигурацию подсети в виртуальную сеть с [AzVirtualNetwork набора](/powershell/module/az.network/Set-azVirtualNetwork), который создает подсеть:
+Запишите конфигурацию подсети в виртуальную сеть с помощью [Set-азвиртуалнетворк](/powershell/module/az.network/Set-azVirtualNetwork), которая создает подсеть.
 
 ```azurepowershell-interactive
 $virtualNetwork1 | Set-AzVirtualNetwork
@@ -96,7 +96,7 @@ $virtualNetwork2 | Set-AzVirtualNetwork
 
 ## <a name="peer-virtual-networks"></a>Установка пиринговой связи между виртуальными сетями
 
-Создание пиринга с [AzVirtualNetworkPeering добавить](/powershell/module/az.network/add-azvirtualnetworkpeering). В следующем примере создается пиринговая связь между сетями *myVirtualNetwork1* и *myVirtualNetwork2*.
+Создайте пиринг с помощью [Add-азвиртуалнетворкпиринг](/powershell/module/az.network/add-azvirtualnetworkpeering). В следующем примере создается пиринговая связь между сетями *myVirtualNetwork1* и *myVirtualNetwork2*.
 
 ```azurepowershell-interactive
 Add-AzVirtualNetworkPeering `
@@ -114,7 +114,7 @@ Add-AzVirtualNetworkPeering `
   -RemoteVirtualNetworkId $virtualNetwork1.Id
 ```
 
-В выходных данных, возвращенных после выполнения предыдущей команды, для **состояния пиринга** будет отображаться значение *Подключено*. Одновременно с этим Azure установит значение *Подключено* и для первого пиринга *myVirtualNetwork1-myVirtualNetwork2*. Убедитесь, что состояние пиринга для *myVirtualNetwork1-myVirtualNetwork2* установилось *подключено* с [Get-AzVirtualNetworkPeering](/powershell/module/az.network/get-azvirtualnetworkpeering).
+В выходных данных, возвращенных после выполнения предыдущей команды, для **состояния пиринга** будет отображаться значение *Подключено*. Кроме того, в Azure состояние пиринга *myVirtualNetwork1-myVirtualNetwork2* изменяется на *Подключено*. Убедитесь, что состояние пиринга для пиринга *myVirtualNetwork1-myVirtualNetwork2* изменилось на " *подключено* " с помощью [Get-азвиртуалнетворкпиринг](/powershell/module/az.network/get-azvirtualnetworkpeering).
 
 ```azurepowershell-interactive
 Get-AzVirtualNetworkPeering `
@@ -179,7 +179,7 @@ mstsc /v:<publicIpAddress>
 На виртуальной машине *myVm1* с помощью PowerShell разрешите протокол ICMP в брандмауэре Windows, чтобы на следующем шаге нормально работала проверка связи с виртуальной машины *myVm2*:
 
 ```powershell
-New-NetFirewallRule –DisplayName “Allow ICMPv4-In” –Protocol ICMPv4
+New-NetFirewallRule –DisplayName "Allow ICMPv4-In" –Protocol ICMPv4
 ```
 
 Хотя проверка связи используется в этой статье для взаимодействия между виртуальными машинами, мы не рекомендуем разрешать протокол ICMP в брандмауэре Windows в рабочей среде.
@@ -200,7 +200,7 @@ ping 10.0.0.4
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Когда не нужно использовать [Remove-AzResourcegroup](/powershell/module/az.resources/remove-azresourcegroup) для удаления группы ресурсов и все содержащиеся в ней ресурсы.
+При необходимости удалите группу ресурсов и все содержащиеся в ней ресурсы с помощью команды [Remove-азресаурцеграуп](/powershell/module/az.resources/remove-azresourcegroup) .
 
 ```azurepowershell-interactive
 Remove-AzResourceGroup -Name myResourceGroup -Force

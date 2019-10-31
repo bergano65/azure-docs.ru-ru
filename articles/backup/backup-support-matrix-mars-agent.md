@@ -7,12 +7,12 @@ ms.date: 08/30/2019
 ms.topic: conceptual
 ms.author: dacurwin
 manager: carmonm
-ms.openlocfilehash: 6f7bb1cfdb36bcaa8545fba8767b20d974c8e073
-ms.sourcegitcommit: b1c94635078a53eb558d0eb276a5faca1020f835
+ms.openlocfilehash: 57e8eab6413efa25eb03c48a968ca2b671b8c8d6
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2019
-ms.locfileid: "72968385"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73162119"
 ---
 # <a name="support-matrix-for-backup-with-the-microsoft-azure-recovery-services-mars-agent"></a>Матрица поддержки для резервного копирования с помощью агента Служб восстановления Microsoft Azure (MARS)
 
@@ -25,6 +25,9 @@ Azure Backup использует агент MARS для резервного к
 - Запускайте на локальных компьютерах под управлением Windows, чтобы они могли выполнять резервное копирование непосредственно в хранилище служб восстановления резервных копий в Azure.
 - Запустите на виртуальных машинах Windows, чтобы они могли выполнять резервное копирование непосредственно в хранилище.
 - Выполните команду на сервере Microsoft Azure Backup Server (MABS) или System Center Data Protection Manager (DPM). В этом сценарии компьютеры и рабочие нагрузки архивируются в MABS или на сервер DPM. Затем агент MARS создает резервную копию этого сервера в хранилище в Azure.
+
+> [!NOTE]
+>Azure Backup не поддерживает автоматическую корректировку часов для летнего времени (DST). Измените политику, чтобы убедиться в том, что переход на летнее время учитывается во избежание расхождений между реальным временем и временем запланированного резервного копирования.
 
 Параметры резервного копирования зависят от того, где установлен агент. Дополнительные сведения см. [в разделе архитектура Azure Backup с помощью агента Mars](backup-architecture.md#architecture-direct-backup-of-on-premises-windows-server-machines-or-azure-vm-files-or-folders). Сведения об архитектуре резервного копирования MABS и DPM см. [в статье резервное копирование в DPM или MABS](backup-architecture.md#architecture-back-up-to-dpmmabs). См. также [требования](backup-support-matrix-mabs-dpm.md) к архитектуре резервного копирования.
 

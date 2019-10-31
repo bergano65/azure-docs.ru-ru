@@ -5,26 +5,26 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 08/16/2019
+ms.date: 10/23/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dd2259dc715fb54122b721ce40a715c6987947d2
-ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
+ms.openlocfilehash: ad44cc83d65206ec1f199e57685b0dcc3cbb07a5
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72170112"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73151167"
 ---
-# <a name="conditional-access-require-mfa-for-azure-management"></a>Условный доступ: Запрос на MFA для управления Azure
+# <a name="conditional-access-require-mfa-for-azure-management"></a>Условный доступ: требовать MFA для управления Azure
 
 Организации используют различные службы Azure и управляют ими на основе Azure Resource Managerных средств, таких как:
 
-* Портал Azure
+* портала Azure
 * Azure PowerShell
-* Инфраструктура CLI Azure
+* Azure CLI
 
 Эти средства могут предоставлять высокопривилегированный доступ к ресурсам, которые могут изменять конфигурации на уровне подписки, параметры службы и выставление счетов за подписку. Для защиты этих привилегированных ресурсов Корпорация Майкрософт рекомендует требовать многофакторную проверку подлинности для любого пользователя, обращающегося к этим ресурсам.
 
@@ -54,7 +54,7 @@ ms.locfileid: "72170112"
 1. Подтвердите параметры и установите для **параметра включить политику** значение **вкл**.
 1. Выберите **создать** , чтобы создать, чтобы включить политику.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Общие политики условного доступа](concept-conditional-access-policy-common.md)
 

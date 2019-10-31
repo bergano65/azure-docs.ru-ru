@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.service: cost-management
 manager: micflan
 ms.custom: ''
-ms.openlocfilehash: 53c171df47dde58b264b354eea5ff1ccca9f5256
-ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
+ms.openlocfilehash: ee4b2196240ceff1351b7ea310d9660ed613d075
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72374727"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73152080"
 ---
 # <a name="migrate-from-enterprise-agreement-to-microsoft-customer-agreement-apis"></a>Переход с Соглашение Enterprise на API-интерфейсы пользовательского соглашения Майкрософт
 
@@ -192,7 +192,7 @@ API сведений об использовании, как и для всех 
 | Значение MeterId | meterId | Точные строковые значения различаются. |
 | MeterName | meterName | Точные строковые значения могут отличаться. |
 | MeterRegion | meterRegion | Точные строковые значения могут отличаться. |
-| meterSubCategory | meterSubCategory | Точные строковые значения могут отличаться. |
+| MeterSubCategory | meterSubCategory | Точные строковые значения могут отличаться. |
 | Месяц | Нет | Анализирует дату начала месяца. |
 | Название предложения | Нет | Используйте publisherName и Продуктордернаме. |
 | OfferId | Нет | &nbsp;  |
@@ -352,15 +352,15 @@ OData-EntityId: {operationId}
 ```
 HTTP Status 200
 
-                                    {
-                            “id”: “providers/Microsoft.Consumption/operationresults/{operationId}”,
-                            “name”: {operationId},
-                           “type”: “Microsoft.Consumption/operationResults”,
-                           “properties” : {
-                                  “downloadUrl”: {urltoblob},
-                                  “vaildTill”: “Date”
+{
+  "id": "providers/Microsoft.Consumption/operationresults/{operationId}",
+  "name": {operationId},
+  "type": “Microsoft.Consumption/operationResults",
+  "properties" : {
+    "downloadUrl": {urltoblob},
+    "validTill": "Date"
+  }
 }
-                     }
 ```
 
 Клиент также может выполнить вызов GET для `Azure-AsyncOperation`. Конечная точка возвращает состояние операции.

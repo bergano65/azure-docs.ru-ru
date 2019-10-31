@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 9/25/2018
 ms.author: aanandr
 ms.custom: ''
-ms.openlocfilehash: ff6fd45e0a68a3e93e4c62eb31a566a6dffa2344
-ms.sourcegitcommit: 5604661655840c428045eb837fb8704dca811da0
+ms.openlocfilehash: 5a6da7e65a9a3e962a2df37b062792fbb990d04d
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68494949"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73159692"
 ---
 # <a name="azure-kubernetes-network-policies-overview"></a>Обзор политик сети Azure Kubernetes
 
@@ -51,7 +51,7 @@ ms.locfileid: "68494949"
   "properties": {
     "orchestratorProfile": {
       "orchestratorType": "Kubernetes",
-      “kubernetesConfig”: {
+      "kubernetesConfig": {
          "networkPolicy": "azure"
        }
     },
@@ -99,7 +99,7 @@ ms.locfileid: "68494949"
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о [Службе Azure Kubernetes](../aks/intro-kubernetes.md).
 -  Дополнительные сведения о [работе с контейнерами в сети](container-networking-overview.md).
 - [Развертывание подключаемого модуля](deploy-container-networking.md) для кластеров Kubernetes и контейнеров Docker.

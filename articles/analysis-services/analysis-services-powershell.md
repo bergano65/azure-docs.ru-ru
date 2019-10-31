@@ -4,15 +4,15 @@ description: Описывается управление службами Azure 
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: reference
-ms.date: 07/01/2019
+ms.date: 10/28/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: bfe1bfc2828347e34fa92564c26d005998e14ece
-ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
+ms.openlocfilehash: 329ea51895c45c8cdf50a323328fac3c580ffc16
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2019
-ms.locfileid: "72294731"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73146220"
 ---
 # <a name="manage-azure-analysis-services-with-powershell"></a>Управление службами Azure Analysis Services с помощью PowerShell
 
@@ -39,7 +39,7 @@ Azure Analysis Services операции с базой данных исполь
 
 Модуль SqlServer предоставляет командлеты для конкретных задач управления базой данных, а также командлет общего назначения Invoke-ASCmd, который принимает запрос TMSL или сценарий. Для служб Azure Analysis Services поддерживаются следующие командлеты из модуля SqlServer.
 
-Установка модуля — [SqlServer](https://www.powershellgallery.com/packages/SqlServer)   
+Установка модуля —  [SQLServer](https://www.powershellgallery.com/packages/SqlServer)  
 Документация — [Справочник по SQLServer](/powershell/module/sqlserver)
 
 ### <a name="supported-cmdlets"></a>Поддерживаемые командлеты

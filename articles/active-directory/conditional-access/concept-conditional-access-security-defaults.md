@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 10/15/2019
+ms.date: 10/23/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 502fb8b49770b4933c44aa1eb447abb746943c0d
-ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
+ms.openlocfilehash: bde1741d12cc7ef181fb60bc7eecbec1fed8cbd0
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72554827"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73151221"
 ---
 # <a name="what-are-security-defaults"></a>Что такое параметры безопасности по умолчанию?
 
@@ -32,7 +32,7 @@ ms.locfileid: "72554827"
 
 ## <a name="unified-multi-factor-authentication-registration"></a>Регистрация единой многофакторной проверки подлинности
 
-Все пользователи в клиенте должны зарегистрироваться для многофакторной проверки подлинности (MFA) в форме службы Azure Multi-Factor Authentication. У пользователей есть 14 дней для регистрации многофакторной проверки подлинности с помощью Microsoft Authenticator приложения. По истечении 14 дней пользователь не сможет войти в систему, пока не завершится регистрация многофакторной проверки подлинности.
+Все пользователи в клиенте должны зарегистрироваться для использования многофакторной идентификации (MFA) в форме службы многофакторной идентификации Azure. У пользователей есть 14 дней для регистрации многофакторной проверки подлинности с помощью Microsoft Authenticator приложения. По истечении 14 дней пользователь не сможет войти в систему, пока не завершится регистрация многофакторной проверки подлинности.
 
 Мы понимаем, что некоторые пользователи могут выйти из офиса или не войти в течение 14 дней сразу после включения параметров безопасности по умолчанию. Чтобы каждый пользователь получил достаточно времени для регистрации многофакторной идентификации, 14-дневный период уникален для каждого пользователя. 14-дневный период пользователя начинается после первого успешного интерактивного входа после включения параметров безопасности по умолчанию.
 
@@ -113,6 +113,7 @@ ms.locfileid: "72554827"
 - [Требовать MFA для администраторов](howto-conditional-access-policy-admin-mfa.md)
 - [Требовать MFA для управления Azure](howto-conditional-access-policy-azure-management.md)
 - [Блокировать устаревшую проверку подлинности](howto-conditional-access-policy-block-legacy.md)
+- [Требовать MFA для всех пользователей](howto-conditional-access-policy-all-users-mfa.md)
 
 ## <a name="enabling-security-defaults"></a>Включение параметров безопасности по умолчанию
 

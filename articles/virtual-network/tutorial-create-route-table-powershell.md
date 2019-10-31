@@ -17,12 +17,12 @@ ms.workload: infrastructure
 ms.date: 03/13/2018
 ms.author: kumud
 ms.custom: ''
-ms.openlocfilehash: cd13b3a7a3bc4d5a80e44d146e08c14e81ffdb60
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 986371e479f7718fff2e1699401987cb0ca8f623
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66730073"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73163993"
 ---
 # <a name="route-network-traffic-with-a-route-table-using-powershell"></a>Маршрутизация сетевого трафика с помощью таблицы маршрутов при использовании PowerShell
 
@@ -46,13 +46,13 @@ ms.locfileid: "66730073"
 
 ## <a name="create-a-route-table"></a>Создание таблицы маршрутов
 
-Перед созданием таблицы маршрутов, создайте группу ресурсов с помощью [New AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). В следующем примере создается группа ресурсов с именем *myResourceGroup* для всех ресурсов, создаваемых в этой статье.
+Прежде чем можно будет создать таблицу маршрутов, создайте группу ресурсов с помощью [New-азресаурцеграуп](/powershell/module/az.resources/new-azresourcegroup). В следующем примере создается группа ресурсов с именем *myResourceGroup* для всех ресурсов, создаваемых в этой статье.
 
 ```azurepowershell-interactive
 New-AzResourceGroup -ResourceGroupName myResourceGroup -Location EastUS
 ```
 
-Создайте таблицу маршрутов с [New AzRouteTable](/powershell/module/az.network/new-azroutetable). В следующем примере создается таблица маршрутов с именем *myRouteTablePublic*.
+Создайте таблицу маршрутов с помощью [New-азраутетабле](/powershell/module/az.network/new-azroutetable). В следующем примере создается таблица маршрутов с именем *myRouteTablePublic*.
 
 ```azurepowershell-interactive
 $routeTablePublic = New-AzRouteTable `
@@ -63,7 +63,7 @@ $routeTablePublic = New-AzRouteTable `
 
 ## <a name="create-a-route"></a>Создание маршрута
 
-Создайте маршрут путем извлечения объекта таблицы маршрутов с [Get-AzRouteTable](/powershell/module/az.network/get-azroutetable), создайте маршрут с [добавить AzRouteConfig](/powershell/module/az.network/add-azrouteconfig), затем запишите конфигурацию маршрута в таблицу маршрутов с [ SET-AzRouteTable](/powershell/module/az.network/set-azroutetable).
+Создайте маршрут, извлекая объект таблицы маршрутов с помощью [Get-азраутетабле](/powershell/module/az.network/get-azroutetable), создав маршрут с помощью [Add-азраутеконфиг](/powershell/module/az.network/add-azrouteconfig), а затем запишите конфигурацию маршрута в таблицу маршрутов с помощью [Set-азраутетабле](/powershell/module/az.network/set-azroutetable).
 
 ```azurepowershell-interactive
 Get-AzRouteTable `
@@ -79,7 +79,7 @@ Get-AzRouteTable `
 
 ## <a name="associate-a-route-table-to-a-subnet"></a>Связывание таблицы маршрутов с подсетью
 
-Чтобы связать таблицу маршрутов с подсетью, необходимо создать виртуальную сеть и подсеть. Создайте виртуальную сеть с помощью командлета [New-AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork). В следующем примере создается виртуальная сеть с именем *myVirtualNetwork* и префиксом адреса *10.0.0.0/16*.
+Чтобы можно было связать таблицу маршрутов с подсетью, необходимо создать виртуальную сеть и подсеть. Создайте виртуальную сеть с помощью командлета [New-AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork). В следующем примере создается виртуальная сеть с именем *myVirtualNetwork* и префиксом адреса *10.0.0.0/16*.
 
 ```azurepowershell-interactive
 $virtualNetwork = New-AzVirtualNetwork `
@@ -89,7 +89,7 @@ $virtualNetwork = New-AzVirtualNetwork `
   -AddressPrefix 10.0.0.0/16
 ```
 
-Создайте три подсети путем создания трех конфигураций подсети с [New AzVirtualNetworkSubnetConfig](/powershell/module/az.network/new-azvirtualnetworksubnetconfig). В следующем примере создается три конфигурации подсети: для *общей* (Public), *частной* (Private)подсети и подсети *DMZ*.
+Создайте три подсети, создав три конфигурации подсети с помощью [New-азвиртуалнетворксубнетконфиг](/powershell/module/az.network/new-azvirtualnetworksubnetconfig). В следующем примере создается три конфигурации подсети: для *общей* (Public), *частной* (Private)подсети и подсети *DMZ*.
 
 ```azurepowershell-interactive
 $subnetConfigPublic = Add-AzVirtualNetworkSubnetConfig `
@@ -108,13 +108,13 @@ $subnetConfigDmz = Add-AzVirtualNetworkSubnetConfig `
   -VirtualNetwork $virtualNetwork
 ```
 
-Запишите конфигурацию подсети в виртуальную сеть с [AzVirtualNetwork набора](/powershell/module/az.network/Set-azVirtualNetwork), который создает подсети в виртуальной сети:
+Запишите конфигурации подсети в виртуальную сеть с помощью [Set-азвиртуалнетворк](/powershell/module/az.network/Set-azVirtualNetwork), который создает подсети в виртуальной сети.
 
 ```azurepowershell-interactive
 $virtualNetwork | Set-AzVirtualNetwork
 ```
 
-Связать *myRouteTablePublic* таблицу маршрутов, чтобы *открытый* подсети с [AzVirtualNetworkSubnetConfig набора](/powershell/module/az.network/set-azvirtualnetworksubnetconfig) и затем запишите конфигурацию подсети для Виртуальная сеть с [AzVirtualNetwork набора](/powershell/module/az.network/set-azvirtualnetwork).
+Свяжите таблицу маршрутов *myRouteTablePublic* с *общедоступной* подсетью с помощью [Set-азвиртуалнетворксубнетконфиг](/powershell/module/az.network/set-azvirtualnetworksubnetconfig) , а затем запишите конфигурацию подсети в виртуальную сеть с помощью [Set-азвиртуалнетворк](/powershell/module/az.network/set-azvirtualnetwork).
 
 ```azurepowershell-interactive
 Set-AzVirtualNetworkSubnetConfig `
@@ -127,13 +127,13 @@ Set-AzVirtualNetwork
 
 ## <a name="create-an-nva"></a>Создание виртуального сетевого модуля
 
-Виртуальный сетевой модуль представляет собой виртуальную машину, которая выполняет сетевые функции, такие как маршрутизация, защита брандмауэром или оптимизация доступа в глобальную сеть.
+Виртуальный сетевой модуль представляет собой виртуальную машину, которая выполняет сетевые функции, такие как маршрутизация, защита брандмауэром или оптимизация доступа к глобальной сети.
 
 Перед созданием виртуальной машины создайте сетевой интерфейс.
 
 ### <a name="create-a-network-interface"></a>Создание сетевого интерфейса
 
-Перед созданием сетевого интерфейса, нужно извлечь виртуальный сетевой идентификатор с [Get-AzVirtualNetwork](/powershell/module/az.network/get-azvirtualnetwork), затем идентификатор подсети с [Get-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/get-azvirtualnetworksubnetconfig). Создайте сетевой интерфейс с [New AzNetworkInterface](/powershell/module/az.network/new-aznetworkinterface) в *DMZ* подсети с IP-пересылкой:
+Перед созданием сетевого интерфейса необходимо получить идентификатор виртуальной сети с помощью [Get-азвиртуалнетворк](/powershell/module/az.network/get-azvirtualnetwork), а затем идентификатор подсети с помощью [Get-азвиртуалнетворксубнетконфиг](/powershell/module/az.network/get-azvirtualnetworksubnetconfig). Создайте сетевой интерфейс с помощью [New-азнетворкинтерфаце](/powershell/module/az.network/new-aznetworkinterface) в подсети *DMZ* с включенной IP-пересылкой:
 
 ```azurepowershell-interactive
 # Retrieve the virtual network object into a variable.
@@ -155,9 +155,9 @@ $nic = New-AzNetworkInterface `
   -EnableIPForwarding
 ```
 
-### <a name="create-a-vm"></a>Создание виртуальной машины
+### <a name="create-a-vm"></a>Создание ВМ
 
-Чтобы создать виртуальную Машину и подключить имеющийся сетевой интерфейс к нему, необходимо сначала создать конфигурацию виртуальной Машины с [New AzVMConfig](/powershell/module/az.compute/new-azvmconfig). Конфигурация включает в себя сетевой интерфейс, созданный на предыдущем шаге. Когда появится запрос на ввод имени пользователя и пароля, выберите те, которые будут использоваться для входа в виртуальную машину.
+Чтобы создать виртуальную машину и подключить к ней существующий сетевой интерфейс, сначала необходимо создать конфигурацию виртуальной машины с помощью [New-азвмконфиг](/powershell/module/az.compute/new-azvmconfig). Конфигурация включает в себя сетевой интерфейс, созданный на предыдущем шаге. Когда появится запрос на ввод имени пользователя и пароля, выберите те, которые будут использоваться для входа в виртуальную машину.
 
 ```azurepowershell-interactive
 # Create a credential object.
@@ -178,7 +178,7 @@ $vmConfig = New-AzVMConfig `
   Add-AzVMNetworkInterface -Id $nic.Id
 ```
 
-Создайте виртуальную Машину с помощью конфигурации виртуальной Машины с [командлета New-AzVM](/powershell/module/az.compute/new-azvm). В следующем примере создается виртуальная машина с именем *myVmNva*.
+Создайте виртуальную машину с помощью конфигурации виртуальной машины с помощью команды [New-AzVM](/powershell/module/az.compute/new-azvm). В следующем примере создается виртуальная машина с именем *myVmNva*.
 
 ```azurepowershell-interactive
 $vmNva = New-AzVM `
@@ -188,13 +188,13 @@ $vmNva = New-AzVM `
   -AsJob
 ```
 
-Чтобы можно было перейти к следующему шагу, параметр `-AsJob` позволяет создать виртуальную машину в фоновом режиме.
+Параметр `-AsJob` позволяет создать виртуальную машину в фоновом режиме, чтобы можно было перейти к следующему шагу.
 
 ## <a name="create-virtual-machines"></a>Создание виртуальных машин
 
 Создайте две виртуальные машины в виртуальной сети, чтобы в дальнейшем можно было проверить, что трафик из подсети *Public* направляется в подсеть *Private* через сетевой виртуальный модуль.
 
-Создайте виртуальную Машину в *открытый* подсети с [командлета New-AzVM](/powershell/module/az.compute/new-azvm). В следующем примере создается виртуальная машина с именем *myVmPublic* в подсети *Public* в виртуальной сети *myVirtualNetwork*.
+Создайте виртуальную машину в подсети *Public* с помощью [New-AzVM](/powershell/module/az.compute/new-azvm). В следующем примере создается виртуальная машина с именем *myVmPublic* в подсети *Public* в виртуальной сети *myVirtualNetwork*.
 
 ```azurepowershell-interactive
 New-AzVm `
@@ -223,7 +223,7 @@ New-AzVm `
 
 ## <a name="route-traffic-through-an-nva"></a>Перенаправление трафика через виртуальный сетевой модуль
 
-Используйте [Get-AzPublicIpAddress](/powershell/module/az.network/get-azpublicipaddress) для возврата общедоступный IP-адрес *myVmPrivate* виртуальной Машины. Приведенный ниже пример возвращает общедоступный IP-адрес виртуальной машины *myVmPrivate*:
+Используйте [Get-азпублиЦипаддресс](/powershell/module/az.network/get-azpublicipaddress) , чтобы получить общедоступный IP-адрес виртуальной машины *myVmPrivate* . Приведенный ниже пример возвращает общедоступный IP-адрес виртуальной машины *myVmPrivate*:
 
 ```azurepowershell-interactive
 Get-AzPublicIpAddress `
@@ -240,9 +240,9 @@ mstsc /v:<publicIpAddress>
 
 Откройте загруженный RDP-файл. При появлении запроса выберите **Подключиться**.
 
-Введите имя пользователя и пароль, которые вы указали при создании виртуальной машины (возможно, для этого придется выбрать **Дополнительные варианты** и **Использовать другую учетную запись**). Затем нажмите кнопку **ОК**. При входе в систему может появиться предупреждение о сертификате. Чтобы продолжить процесс подключения, выберите **Да**.
+Введите имя пользователя и пароль, которые вы указали при создании виртуальной машины (возможно, для этого придется выбрать **Дополнительные варианты** и **Использовать другую учетную запись**). Теперь нажмите кнопку **ОК**. При входе в систему может появиться предупреждение о сертификате. Чтобы продолжить процесс подключения, выберите **Да**.
 
-На более позднем этапе `tracert.exe` команда используется для тестирования маршрутизации. Tracert использует протокол ICMP, который запрещен в брандмауэре Windows. Разрешите протокол ICMP в брандмауэре Windows, выполнив в интерфейсе PowerShell на виртуальной машине *myVmPrivate* следующую команду:
+На следующем шаге для проверки маршрутизации используется команда `tracert.exe`. Tracert использует протокол ICMP, который запрещен в брандмауэре Windows. Разрешите протокол ICMP в брандмауэре Windows с помощью следующей команды PowerShell в виртуальной машине *myVmPrivate*:
 
 ```powershell
 New-NetFirewallRule -DisplayName "Allow ICMPv4-In" -Protocol ICMPv4
@@ -258,7 +258,7 @@ New-NetFirewallRule -DisplayName "Allow ICMPv4-In" -Protocol ICMPv4
 mstsc /v:myvmnva
 ```
 
-Чтобы включить IP-пересылку в операционной системе, введите следующую команду PowerShell на виртуальной машине *myVmNva*:
+Чтобы включить IP-пересылку в операционной системе, введите следующую команду PowerShell в виртуальной машине *myVmNva*:
 
 ```powershell
 Set-ItemProperty -Path HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters -Name IpEnableRouter -Value 1
@@ -275,7 +275,7 @@ mstsc /v:myVmPublic
 Разрешите протокол ICMP в брандмауэре Windows с помощью следующей команды PowerShell на виртуальной машине *myVmPublic*:
 
 ```powershell
-New-NetFirewallRule –DisplayName “Allow ICMPv4-In” –Protocol ICMPv4
+New-NetFirewallRule –DisplayName "Allow ICMPv4-In" –Protocol ICMPv4
 ```
 
 Протестируйте маршрутизацию сетевого трафика к виртуальной машине *myVmPrivate* от виртуальной машины *myVmPublic*, выполнив следующую команду PowerShell на виртуальной машине *myVmPublic*:
@@ -296,7 +296,7 @@ over a maximum of 30 hops:
 Trace complete.
 ```
 
-Можно заметить, что первым прыжком указан частный IP-адрес виртуального сетевого модуля (10.0.2.4). Второй прыжок — 10.0.1.4. Это частный IP-адрес виртуальной машины *myVmPrivate*. Из-за маршрута, добавленного в таблицу маршрутов *myRouteTablePublic* и связанного с подсетью *Public*, трафик в Azure был маршрутизирован через NVA, а не напрямую в подсеть *Private*.
+Можно заметить, что первым прыжком указан частный IP-адрес виртуального сетевого модуля (10.0.2.4). Второй прыжок — 10.0.1.4. Это частный IP-адрес виртуальной машины *myVmPrivate*. Маршрут, добавленный в таблицу маршрутов *myRouteTablePublic* и связанный с подсетью *Public*, заставил Azure маршрутизировать трафик через NVA, а не напрямую в подсеть *Private*.
 
 Закройте сеанс удаленного рабочего стола с виртуальной машиной *myVmPublic*, сохраняя подключение к виртуальной машине *myVmPrivate*.
 
@@ -323,7 +323,7 @@ Trace complete.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Когда не нужно использовать [Remove-AzResourcegroup](/powershell/module/az.resources/remove-azresourcegroup) для удаления группы ресурсов и все содержащиеся в ней ресурсы.
+При необходимости удалите группу ресурсов и все содержащиеся в ней ресурсы с помощью команды [Remove-азресаурцеграуп](/powershell/module/az.resources/remove-azresourcegroup) .
 
 ```azurepowershell-interactive
 Remove-AzResourceGroup -Name myResourceGroup -Force

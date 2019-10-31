@@ -1,5 +1,5 @@
 ---
-title: Управление маркерами (Библиотека проверки подлинности Майкрософт)
+title: Получение и кэширование маркеров с помощью MSAL
 titleSuffix: Microsoft identity platform
 description: Сведения о получении и кэшировании токенов с помощью библиотеки аутентификации Майкрософт (MSAL).
 services: active-directory
@@ -13,19 +13,20 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 04/24/2019
+ms.date: 10/30/2019
 ms.author: twhitney
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aaa6a939fce3eae8b1367c2d01e947e813fa5437
-ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
+ms.openlocfilehash: 0d47fa92de8365ed3a5e0349b78899ff7fde1375
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72803296"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73150645"
 ---
-# <a name="acquiring-and-caching-tokens-using-msal"></a>Получение и кэширование токенов с помощью MSAL
+# <a name="acquire-and-cache-tokens-using-the-microsoft-authentication-library-msal"></a>Получение и кэширование маркеров с помощью библиотеки проверки подлинности Майкрософт (MSAL)
+
 [Маркеры доступа](access-tokens.md) позволяют клиентам безопасно вызывать веб-API, защищенные платформой Azure. Получить токен с использованием библиотеки аутентификации Майкрософт (MSAL) можно многими способами. Для некоторых способов пользователю требуется выполнить действия в веб-браузере, а для других участие пользователя не требуется. Как правило, способ получения токена зависит от того, является ли клиентское приложение общедоступным (классическим или мобильным приложением) или конфиденциальным (веб-приложением, веб-API или управляющей программой, например службой Windows).
 
 MSAL кэширует токен после его получения.  Сначала код приложения предпринимает попытку получить токен автоматически (из кэша), прежде чем использовать для этого другие средства.

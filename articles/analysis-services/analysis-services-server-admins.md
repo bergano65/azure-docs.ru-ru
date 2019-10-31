@@ -4,21 +4,21 @@ description: Узнайте, как управлять администрато�
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 07/29/2019
+ms.date: 10/29/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: fbb7d339c5c3c12990a49d6ebd53760e101f4eb7
-ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
+ms.openlocfilehash: f597bc9e34a606a6e40a57e5fc7af791d972c68e
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2019
-ms.locfileid: "72301090"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73146279"
 ---
 # <a name="manage-server-administrators"></a>Управление администраторами серверов
 
 Администраторами сервера должны быть допустимые пользователи или группы безопасности в Azure Active Directory (Azure AD) для клиента, в котором размещен сервер. Для управления администраторами сервера можно использовать элемент **Администраторы служб Analysis Services** для сервера на портале Azure или свойств сервера в SSMS, PowerShell или REST API. 
 
-Для **групп безопасности** необходимо включить [поддержку почты](https://docs.microsoft.com/exchange/recipients-in-exchange-online/manage-mail-enabled-security-groups), если свойство `MailEnabled` имеет значение `True`. При указании группы по адресу электронной почты используйте `obj:groupid@tenantid`.
+Для **групп безопасности** необходимо [включить поддержку почты](https://docs.microsoft.com/exchange/recipients-in-exchange-online/manage-mail-enabled-security-groups) , если для свойства `MailEnabled` задано значение `True`. При указании группы по адресу электронной почты используйте `obj:groupid@tenantid`.
 
 ## <a name="to-add-server-administrators-by-using-azure-portal"></a>Добавление администраторов на портале Azure
 
@@ -43,14 +43,14 @@ ms.locfileid: "72301090"
 Используйте командлет [New-азаналисиссервицессервер](https://docs.microsoft.com/powershell/module/az.analysisservices/new-azanalysisservicesserver) , чтобы указать параметр администратора при создании нового сервера. <br>
 Используйте командлет [Set-азаналисиссервицессервер](https://docs.microsoft.com/powershell/module/az.analysisservices/set-azanalysisservicesserver) , чтобы изменить параметр администратора для существующего сервера.
 
-## <a name="rest-api"></a>REST API
+## <a name="rest-api"></a>REST API
 
 Используйте команду [Create](https://docs.microsoft.com/rest/api/analysisservices/servers/create) для указания свойства asAdministrator при создании нового сервера. <br>
 Используйте команду [Update](https://docs.microsoft.com/rest/api/analysisservices/servers/update) для указания свойства asAdministrator при изменении существующего сервера. <br>
 
 
 
-## <a name="next-steps"></a>Следующие шаги 
+## <a name="next-steps"></a>Дальнейшие действия 
 
 [Аутентификация и пользовательские разрешения](analysis-services-manage-users.md)  
 [Управление ролями и пользователями базы данных](analysis-services-database-users.md)  

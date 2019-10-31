@@ -10,12 +10,12 @@ ms.subservice: video-indexer
 ms.topic: article
 ms.date: 07/29/2019
 ms.author: juliako
-ms.openlocfilehash: fc0b447630b5e1ac360b1d84869cea02186672fc
-ms.sourcegitcommit: 6eecb9a71f8d69851bc962e2751971fccf29557f
+ms.openlocfilehash: 74518fb891c5ecb25e818b9642d31e3daaf828de
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "71036624"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73162611"
 ---
 # <a name="embed-video-indexer-widgets-in-your-applications"></a>Внедрение графических мини-приложений индексатора видео в приложения
 
@@ -253,7 +253,7 @@ ms.locfileid: "71036624"
 
 По умолчанию проигрыватель индексаторов видео автоматически создает скрытые субтитры, основанные на транскрипции видео. Запись извлекается из видео с использованием исходного языка, выбранного при загрузке видео.
 
-Если вы хотите внедрить с другим языком, можно добавить `&captions=< Language | ”all” | “false” >` URL-адресу внедрения проигрывателя. Если нужно, чтобы субтитры во всех заголовках всех языков были доступными, используйте значение `all`. Чтобы субтитры отображались по умолчанию, передайте `&showCaptions=true`.
+Если вы хотите внедрить с другим языком, можно добавить `&captions=< Language | "all" | "false" >` URL-адресу внедрения проигрывателя. Если нужно, чтобы субтитры во всех заголовках всех языков были доступными, используйте значение `all`. Чтобы субтитры отображались по умолчанию, передайте `&showCaptions=true`.
 
 URL-адрес внедрения будет выглядеть так: 
 

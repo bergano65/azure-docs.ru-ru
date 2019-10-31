@@ -5,20 +5,20 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 08/16/2019
+ms.date: 10/23/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1963d0ad741099fcb6602beb58f62b0eabf01aa0
-ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
+ms.openlocfilehash: 37db9b9679e904aed33de404e91c9f461d3388d7
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72170061"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73150864"
 ---
-# <a name="conditional-access-require-compliant-devices"></a>Условный доступ: Требовать соответствующие устройства
+# <a name="conditional-access-require-compliant-devices"></a>Условный доступ: требовать соответствующие требованиям устройства
 
 Организации, развернутые Microsoft Intune, могут использовать информацию, возвращенную с устройств, для обнаружения устройств, соответствующих требованиям, таким как:
 
@@ -44,12 +44,12 @@ ms.locfileid: "72170061"
 1. В разделе **облачные приложения или действия** > **включить**выберите **все облачные приложения**.
    1. Если необходимо исключить из политики определенные приложения, их можно выбрать на вкладке **исключение** в разделе **выберите Исключенные облачные приложения** и нажмите **кнопку Выбрать**.
    1. Нажмите кнопку **Готово**.
-1. В разделе **элементы управления доступом** > **предоставление**выберите **требовать, чтобы устройство было помечено как соответствующее**.
+1. В разделе **элементы управления доступом** > **предоставить**выберите **требовать, чтобы устройство было помечено как соответствующее**.
    1. Щелкните **Выбрать**.
 1. Подтвердите параметры и установите для **параметра включить политику** значение **вкл**.
 1. Выберите **создать** , чтобы создать, чтобы включить политику.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Общие политики условного доступа](concept-conditional-access-policy-common.md)
 

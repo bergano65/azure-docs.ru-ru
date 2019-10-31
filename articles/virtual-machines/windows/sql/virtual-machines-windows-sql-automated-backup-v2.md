@@ -14,12 +14,12 @@ ms.workload: iaas-sql-server
 ms.date: 05/03/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 066c154c0ba3e62ac4f441e268c657dd5e991220
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 452dfcc04d9fc9048493222ad2a82a5bcc8b78f4
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70102121"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73162867"
 ---
 # <a name="automated-backup-v2-for-azure-virtual-machines-resource-manager"></a>Автоматическая архивация версии 2 для виртуальных машин Azure (Resource Manager)
 
@@ -31,18 +31,18 @@ ms.locfileid: "70102121"
 
 [!INCLUDE [learn-about-deployment-models](../../../../includes/learn-about-deployment-models-rm-include.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Для использования автоматической архивации версии 2 необходимо выполнить следующие предварительные требования.
 
 **Операционная система**
 
-- Windows Server 2012 R2
-- Windows Server 2016
+- Windows Server 2012 R2
+- Windows Server 2016
 
 **Версия/выпуск SQL Server**
 
-- SQL Server 2016: Developer, Standard или Enterprise.
-- SQL Server 2017: Developer, Standard или Enterprise.
+- SQL Server 2016: Developer, Standard или Enterprise.
+- SQL Server 2017: Developer, Standard или Enterprise.
 
 > [!IMPORTANT]
 > Автоматическая архивация версии 2 работает с SQL Server 2016 или выше. Если используется SQL Server 2014, то для архивации баз данных можно применять автоматическую архивацию версии 1. Дополнительную информацию см. в статье [Автоматическая архивация для виртуальных машин SQL Server 2014 в Azure](virtual-machines-windows-sql-automated-backup.md).
@@ -74,7 +74,7 @@ ms.locfileid: "70102121"
 | Параметр | Диапазон (по умолчанию) | Описание |
 | --- | --- | --- |
 | **System Database Backups** (Архивация системных баз данных) | Включено/отключено (отключено) | При включении этой функции также выполняется резервное копирование системных баз данных: Master, MSDB и Model. Если требуется создавать резервные копии журналов для баз данных MSDB и Model, убедитесь, что они функционируют в режиме полного восстановления. Резервные копии журналов для базы данных Master не создаются. Кроме того, не создаются и резервные копии базы данных TempDB. |
-| **Расписание архивации** | Ручная или автоматическая (автоматическая) | По умолчанию расписание резервного копирования определяется автоматически в зависимости от размера журнала. Ручное расписание архивации позволяет пользователю указать временное окно для создания резервных копий. В этом случае резервные копии будут создаваться только с указанной частотой во время указанного временного окна в заданный день. |
+| **Расписание архивации** | Ручное или автоматическое (автоматическое) | По умолчанию расписание резервного копирования определяется автоматически в зависимости от размера журнала. Ручное расписание архивации позволяет пользователю указать временное окно для создания резервных копий. В этом случае резервные копии будут создаваться только с указанной частотой во время указанного временного окна в заданный день. |
 | **Full backup frequency** (Частота полной архивации) | Ежедневно или еженедельно | Частота создания полных резервных копий. В обоих случаях полное резервное копирование начинается во время следующего запланированного временного интервала. Если выбрана еженедельная архивация, то она может охватывать несколько дней, пока не будут успешно созданы резервные копии всех баз данных. |
 | **Full backup start time** (Время начала полной архивации) | 00:00–23:00 (01:00) | Время начала полной архивации в заданный день. |
 | **Full backup time window** (Временное окно полной архивации) | 1–23 ч (1 ч) | Длительность временного окна для полной архивации в заданный день. |
@@ -88,10 +88,10 @@ ms.locfileid: "70102121"
 
 В понедельник вы включили автоматическую архивацию версии 2 со следующими параметрами:
 
-- Расписание резервного копирования: **Вручную**
-- Частота полной архивации: **Еженедельно**;
-- "Full backup start time" (Время начала создания полной резервной копии): **01:00**;
-- Full backup time window (Временное окно создания полной резервной копии): **1 час**.
+- "Расписание архивации": **Ручное**;
+- "Full backup frequency" (Частота полной архивации): **Еженедельная**;
+- "Full backup start time" (Время начала полной архивации): **01:00**;
+- "Full backup time window" (Временное окно полной архивации): **1 ч**.
 
 Это означает, что следующее доступное окно архивации длительностью в 1 час наступит во вторник в 01:00. В это время служба автоматического резервного копирования начнет по очереди выполнять резервное копирование баз данных. В этом сценарии базы данных достаточно велики, чтобы эта служба успела создать резервные копии нескольких первых баз данных. Однако по прошествии 1 часа все базы данных будут заархивированы.
 
@@ -106,10 +106,10 @@ ms.locfileid: "70102121"
 
 В понедельник вы включили автоматическую архивацию версии 2 со следующими параметрами:
 
-- Расписание резервного копирования: Вручную
-- Частота полной архивации: Ежедневно
-- "Full backup start time" (Время начала создания полной резервной копии): 22:00;
-- Full backup time window (Временное окно создания полной резервной копии): 6 часов.
+- "Расписание архивации": "Ручное";
+- "Full backup frequency" (Частота полной архивации): "Ежедневная";
+- "Full backup start time" (Время начала полной архивации): "22:00";
+- "Full backup time window" (Временное окно полной архивации): "6 ч".
 
 Это означает, что следующее доступное окно архивации длительностью в 6 часов наступит в понедельник в 22:00. В это время служба автоматического резервного копирования начнет по очереди выполнять резервное копирование баз данных.
 
@@ -137,7 +137,7 @@ ms.locfileid: "70102121"
 
 [!INCLUDE [windows-virtual-machines-sql-use-new-management-blade](../../../../includes/windows-virtual-machines-sql-new-resource.md)]
 
-Для существующих SQL Server виртуальных машин перейдите к ресурсу [виртуальных машин SQL](virtual-machines-windows-sql-manage-portal.md#access-the-sql-virtual-machines-resource) , а затем выберите **резервные копии** , чтобы настроить автоматическое резервное копирование.
+Для существующих SQL Server виртуальных машин перейдите к [ресурсу виртуальных машин SQL](virtual-machines-windows-sql-manage-portal.md#access-the-sql-virtual-machines-resource) , а затем выберите **резервные копии** , чтобы настроить автоматическое резервное копирование.
 
 ![Автоматизированная архивация SQL для существующих виртуальных машин](./media/virtual-machines-windows-sql-automated-backup-v2/sql-server-configuration.png)
 
@@ -170,7 +170,7 @@ $resourcegroupname = "resourcegroupname"
 Если расширение не установлено или его не удалось подготовить, то для его установки можно выполнить приведенную ниже команду. Кроме имени и группы ресурсов виртуальной машины, необходимо указать регион ( **$region**), в котором она расположена.
 
 ```powershell
-$region = “EASTUS2”
+$region = "EASTUS2"
 Set-AzVMSqlServerExtension -VMName $vmname `
     -ResourceGroupName $resourcegroupname -Name "SQLIaasExtension" `
     -Version "1.2" -Location $region 
@@ -211,7 +211,7 @@ LogBackupFrequency          : 60
 Сначала выберите или создайте учетную запись хранения для файлов резервных копий. Приведенный ниже сценарий выбирает учетную запись хранения или создает ее, если она не существует.
 
 ```powershell
-$storage_accountname = “yourstorageaccount”
+$storage_accountname = "yourstorageaccount"
 $storage_resourcegroupname = $resourcegroupname
 
 $storage = Get-AzStorageAccount -ResourceGroupName $resourcegroupname `
@@ -276,8 +276,8 @@ Set-AzVMSqlServerExtension -AutoBackupSettings $autobackupconfig `
 ```powershell
 $vmname = "yourvmname"
 $resourcegroupname = "vmresourcegroupname"
-$region = “Azure region name such as EASTUS2”
-$storage_accountname = “storageaccountname”
+$region = "Azure region name such as EASTUS2"
+$storage_accountname = "storageaccountname"
 $storage_resourcegroupname = $resourcegroupname
 $retentionperiod = 10
 $backupscheduletype = "Manual"
@@ -315,7 +315,7 @@ Set-AzVMSqlServerExtension -AutoBackupSettings $autobackupconfig `
     -VMName $vmname -ResourceGroupName $resourcegroupname
 ```
 
-## <a name="monitoring"></a>Отслеживание
+## <a name="monitoring"></a>Мониторинг
 
 Для отслеживания автоматического резервного копирования в SQL Server 2016 или 2017 имеются две основные возможности. Так как автоматическое резервное копирование использует функцию управляемого резервного копирования SQL Server, к обоим этим методам применяются одинаковые способы мониторинга.
 
@@ -329,10 +329,10 @@ Set-AzVMSqlServerExtension -AutoBackupSettings $autobackupconfig `
 1. [Настройте почту агента SQL Server для использования компонента Database Mail](https://docs.microsoft.com/sql/relational-databases/database-mail/configure-sql-server-agent-mail-to-use-database-mail).
 1. Убедитесь, что SMTP-порт открыт в локальном брандмауэре виртуальных машин и группе безопасности сети виртуальной машины.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Служба автоматической архивации версии 2 позволяет настроить управляемую архивацию на виртуальных машинах Azure. В связи с этим важно изучить [документацию по управляемой архивации](https://msdn.microsoft.com/library/dn449496.aspx) и понять, как она работает.
 
-Дополнительные указания по резервному копированию и восстановлению для SQL Server на виртуальных машинах Azure можно найти в [Резервное копирование и восстановление SQL Server на виртуальных машинах Azure](virtual-machines-windows-sql-backup-recovery.md).
+Дополнительные указания по резервному копированию и восстановлению для SQL Server на виртуальных машинах Azure можно найти в следующей статье: [Резервное копирование и восстановление SQL Server в виртуальных машинах Azure](virtual-machines-windows-sql-backup-recovery.md).
 
 Сведения о других доступных задачах автоматизации см. в разделе [Расширение агента IaaS для SQL Server](virtual-machines-windows-sql-server-agent-extension.md).
 

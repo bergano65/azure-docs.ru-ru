@@ -8,12 +8,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/06/2018
-ms.openlocfilehash: aed716b01fe748be40ee22e3eba5742983c2a523
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: dfbe7e607395006f9bd7da0be0d5673353e2801f
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67620928"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73162592"
 ---
 # <a name="introduction-to-stream-analytics-geospatial-functions"></a>Сведения о геопространственных функциях Azure Stream Analytics
 
@@ -23,11 +23,11 @@ ms.locfileid: "67620928"
 
 * Совместное использование в поездке
 * Управление автотранспортным парком
-* Отслеживание данных ресурсов
+* Отслеживание ресурсов
 * Установка геозон
 * Отслеживание телефона на сотовых веб-сайтах
 
-Язык запросов Stream Analytics содержит семь встроенных геопространственных функций: **CreateLineString**, **CreatePoint**, **CreatePolygon**, **ST_DISTANCE**, **ST_OVERLAPS**, **ST_ Пересекается с** и **ST_WITHIN**.
+Язык запросов Stream Analytics содержит семь встроенных геопространственных функций: **CreateLineString**, **CreatePoint**, **CreatePolygon**, **ST_DISTANCE**, **ST_OVERLAPS**, **ST_INTERSECTS** и **ST_WITHIN**.
 
 ## <a name="createlinestring"></a>CreateLineString
 
@@ -50,9 +50,9 @@ FROM input
   
 ### <a name="output-example"></a>Пример выходных данных  
 
- {"type" : "LineString", "coordinates" : [ [-10.2, 3.0], [10.0, 10.0], [10.5, 10.5] ]}
+ {"type": "LineString", "coordinates": [ [-10,2; 3,0], [10,0; 10,0], [10,5; 10,5] ]}
 
- {"type" : "LineString", "coordinates" : [ [20.2321, -87.33], [10.0, 10.0], [10.5, 10.5] ]}
+ {"type": "LineString", "coordinates": [ [20,2321; -87,33], [10,0; 10,0], [10,5; 10,5] ]}
 
 Дополнительные сведения см. по ссылке [CreateLineString](https://docs.microsoft.com/stream-analytics-query/createlinestring).
 
@@ -77,9 +77,9 @@ FROM input
   
 ### <a name="output-example"></a>Пример выходных данных
   
- {"type" : "Point", "coordinates" : [-10.2, 3.0]}  
+ {"type": "Point", "coordinates": [-10,2; 3,0]}  
   
- {"type" : "Point", "coordinates" : [20.2321, -87.33]}  
+ {"type": "Point", "coordinates": [20,2321; -87,33]}  
 
 Дополнительные сведения см. по ссылке [CreatePoint](https://docs.microsoft.com/stream-analytics-query/createpoint).
 
@@ -104,14 +104,14 @@ FROM input
   
 ### <a name="output-example"></a>Пример выходных данных  
 
- {"type" : "Polygon", "coordinates" : [[ [-10.2, 3.0], [10.0, 10.0], [10.5, 10.5], [-10.2, 3.0] ]]}
+ {"type": "Polygon", "coordinates": [[ [-10,2; 3,0], [10,0; 10,0], [10,5; 10,5], [-10,2; 3,0] ]]}
  
- {"type" : "Polygon", "coordinates" : [[ [20.2321, -87.33], [10.0, 10.0], [10.5, 10.5], [20.2321, -87.33] ]]}
+ {"type": "Polygon", "coordinates": [[ [20,2321; -87,33], [10,0; 10,0], [10,5; 10,5], [20,2321; -87,33] ]]}
 
 Дополнительные сведения см. по ссылке [CreatePolygon](https://docs.microsoft.com/stream-analytics-query/createpolygon).
 
 
-## <a name="stdistance"></a>ST_DISTANCE
+## <a name="st_distance"></a>ST_DISTANCE
 Функция `ST_DISTANCE` возвращает расстояние между двумя точками в метрах. 
 
 В следующем запросе используется `ST_DISTANCE` для создания события о заправке, которая находится меньше 10 км от автомобиля.
@@ -124,7 +124,7 @@ JOIN Station s ON ST_DISTANCE(c.Location, s.Location) < 10 * 1000
 
 Дополнительные сведения см. по ссылке [ST_DISTANCE](https://docs.microsoft.com/stream-analytics-query/st-distance).
 
-## <a name="stoverlaps"></a>ST_OVERLAPS
+## <a name="st_overlaps"></a>ST_OVERLAPS
 Функция `ST_OVERLAPS` сравнивает два многоугольника. Если многоугольники перекрываются, функция возвращает значение 1. Если многоугольники не перекрываются, функция возвращает значение 0. 
 
 В следующем запросе используется `ST_OVERLAPS` для создания события, когда здание находится в пределах возможной зоны затопления.
@@ -145,7 +145,7 @@ JOIN Storm s ON ST_OVERLAPS(c.Location, s.Course)
 
 Дополнительные сведения см. по ссылке [ST_OVERLAPS](https://docs.microsoft.com/stream-analytics-query/st-overlaps).
 
-## <a name="stintersects"></a>ST_INTERSECTS
+## <a name="st_intersects"></a>ST_INTERSECTS
 Функция `ST_INTERSECTS` сравнивает два LineString. Если LineString пересекаются, функция возвращает 1. Если LineString не пересекаются, функция возвращает 0.
 
 Следующий пример запроса использует `ST_INTERSECTS`, чтобы определить, пересекает ли асфальтированная дорога грунтовую.
@@ -160,8 +160,8 @@ FROM input
   
 |datacenterArea|stormArea|  
 |--------------------|---------------|  
-|{"type": "LineString", "coordinates": [ [-10,0; 0,0], [0,0; 0,0], [10,0; 0,0] ]}|{"type": "LineString", "coordinates": [ [0,0; 10,0], [0,0; 0,0], [0,0; -10,0] ]}|  
-|{"type": "LineString", "coordinates": [ [-10,0; 0,0], [0,0; 0,0], [10,0; 0,0] ]}|{"type":"LineString", "coordinates": [ [-10,0; 10,0], [0,0; 10,0], [10,0; 10,0] ]}|  
+|{"Type": "LineString", "координаты": [[-10,0, 0,0], [0,0, 0,0], [10,0, 0,0]]}|{"Type": "LineString", "координаты": [[0,0, 10,0], [0,0, 0,0], [0,0,-10,0]]}|  
+|{"Type": "LineString", "координаты": [[-10,0, 0,0], [0,0, 0,0], [10,0, 0,0]]}|{"Type": "LineString", "координаты": [[-10,0, 10,0], [0,0, 10,0], [10,0, 10,0]]}|  
   
 ### <a name="output-example"></a>Пример выходных данных  
 
@@ -171,7 +171,7 @@ FROM input
 
 Дополнительные сведения см. по ссылке [ST_INTERSECTS](https://docs.microsoft.com/stream-analytics-query/st-intersects).
 
-## <a name="stwithin"></a>ST_WITHIN
+## <a name="st_within"></a>ST_WITHIN
 Функция `ST_WITHIN` определяет есть ли точки или многоугольник внутри многоугольника. Если многоугольник содержит точки или многоугольник, функция возвращает значение 1. Функция возвращает значение 0, если точки или многоугольник не находятся в пределах объявленного многоугольника.
 
 В следующем примере используется запрос `ST_WITHIN`, чтобы определить, находится ли точка назначения доставки внутри данного складского многоугольника.
@@ -186,8 +186,8 @@ FROM input
   
 |deliveryDestination|Хранилище данных|  
 |-------------------------|---------------|  
-|{"type": "Point", "coordinates": [76,6; 10,1]}|{"type": "Polygon", "coordinates": [ [0,0; 0,0], [10,0; 0,0], [10,0; 10,0], [0,0; 10,0], [0,0; 0,0] ]}|  
-|{"type": "Point", "coordinates": [15,0; 15,0]}|{"type": "Polygon", "coordinates": [ [10,0; 10,0], [20,0; 10,0], [20,0; 20,0], [10,0; 20,0], [10,0; 10,0] ]}|  
+|{"Type": "Point", "координаты": [76,6, 10,1]}|{"Type": "Polygon", "координаты": [[0,0, 0,0], [10,0, 0,0], [10,0, 10,0], [0,0, 10,0], [0,0, 0,0]]}|  
+|{"Type": "Point", "координаты": [15,0, 15,0]}|{"Type": "Polygon", "координаты": [[10,0, 10,0], [20,0, 10,0], [20,0, 20,0], [10,0, 20,0], [10,0, 10,0]]}|  
   
 ### <a name="output-example"></a>Пример выходных данных  
 
@@ -197,7 +197,7 @@ FROM input
 
 Дополнительные сведения см. по ссылке [ST_WITHIN](https://docs.microsoft.com/stream-analytics-query/st-within).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Введение в Azure Stream Analytics](stream-analytics-introduction.md)
 * [Приступая к работе с Azure Stream Analytics](stream-analytics-real-time-fraud-detection.md)

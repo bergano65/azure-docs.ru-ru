@@ -5,20 +5,20 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 08/16/2019
+ms.date: 10/23/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f54ad6de21f05c76ca021e172a041563e3d688a8
-ms.sourcegitcommit: 5ded08785546f4a687c2f76b2b871bbe802e7dae
+ms.openlocfilehash: 771e4e0ecbda4baf1f38aacd1f39397875bbd0dc
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69576567"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73150761"
 ---
-# <a name="conditional-access-require-trusted-location-for-mfa-registration"></a>Условный доступ: Требовать надежное расположение для регистрации MFA
+# <a name="conditional-access-require-trusted-location-for-mfa-registration"></a>Условный доступ: требовать надежное расположение для регистрации MFA
 
 Теперь, когда и как пользователи регистрируются в службе многофакторной идентификации Azure и самостоятельного сброса пароля, вы можете использовать действия пользователя в политике условного доступа. Эта предварительная версия функции доступна для организаций, которые включили [объединенную предварительную версию регистрации](../authentication/concept-registration-mfa-sspr-combined.md). Эта функция может быть включена в организациях, где пользователи должны зарегистрироваться для использования многофакторной идентификации Azure и SSPR из центрального расположения, такого как надежное сетевое расположение во время адаптации персонала. Дополнительные сведения о создании надежных расположений в условном доступе см. в статье [что такое условие расположения в Azure Active Directory условном доступе?](../conditional-access/location-condition.md#named-locations)
 
@@ -35,19 +35,19 @@ ms.locfileid: "69576567"
    > Пользователи должны быть включены для [просмотра Объединенных регистраций](../authentication/howto-registration-mfa-sspr-combined.md).
 
 1. В разделе **облачные приложения или действия**выберите **действия пользователя**, установите флажок **зарегистрировать сведения о безопасности (Предварительная версия)** .
-1. В области**расположения** **условий** > .
+1. В области **условия** > **расположения**.
    1. Настройте **Да**.
    1. Включите **любое расположение**.
    1. Исключите **все надежные расположения**.
    1. В колонке расположения щелкните **Готово** .
    1. Щелкните **Готово** в колонке условия.
-1. В разделе **элементы управления** > доступом**Предоставьте**.
+1. В разделе **элементы управления доступом** > **предоставить**.
    1. Щелкните **блокировать доступ**.
    1. Затем щелкните **Выбрать**.
 1. Установите для **параметра включить политику** значение **вкл**.
 1. Затем щелкните **Создать**.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Общие политики условного доступа](concept-conditional-access-policy-common.md)
 

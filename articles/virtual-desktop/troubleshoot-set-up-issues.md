@@ -7,18 +7,18 @@ ms.service: virtual-desktop
 ms.topic: troubleshooting
 ms.date: 07/10/2019
 ms.author: helohr
-ms.openlocfilehash: 811fdd0b177e3a255ca91145e39005de1d2328ad
-ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
+ms.openlocfilehash: e2d2da5e2c8c0236a4f42bc69a521891616df0d4
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71676455"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73163288"
 ---
 # <a name="tenant-and-host-pool-creation"></a>Создание пула узлов и клиента
 
 В этой статье рассматриваются проблемы во время первоначальной настройки клиента виртуальных рабочих столов Windows и соответствующей инфраструктуры пула узлов сеансов.
 
-## <a name="provide-feedback"></a>Оставить отзыв
+## <a name="provide-feedback"></a>Отправить отзыв
 
 Посетите [техническое сообщество Виртуального рабочего стола Windows](https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop), чтобы обсудить службу "Виртуальный рабочий стол Windows" с группой разработчиков и активными членами сообщества.
 
@@ -32,7 +32,7 @@ ms.locfileid: "71676455"
 
 В этом разделе рассматриваются потенциальные проблемы при создании клиента виртуальных рабочих столов Windows.
 
-### <a name="error-the-user-isnt-authorized-to-query-the-management-service"></a>Ошибка: Пользователь не имеет разрешения на запрос к службе управления
+### <a name="error-the-user-isnt-authorized-to-query-the-management-service"></a>Ошибка: пользователь не имеет разрешения на запрос к службе управления
 
 ![Снимок экрана окна PowerShell, в котором пользователь не имеет права выполнять запросы к службе управления.](media/UserNotAuthorizedNewTenant.png)
 
@@ -51,9 +51,9 @@ ms.locfileid: "71676455"
        + FullyQualifiedErrorId : UnauthorizedAccess,Microsoft.RDInfra.RDPowershell.Tenant.NewRdsTenant
 ```
 
-**Причина.** Пользователю, выполнившего вход, не назначена роль Тенанткреатор в своих Azure Active Directory.
+**Причина:** Пользователю, выполнившего вход, не назначена роль Тенанткреатор в своих Azure Active Directory.
 
-**Исправно** Следуйте инструкциям в статье [назначение роли приложения тенанткреатор пользователю в клиенте Azure Active Directory](https://docs.microsoft.com/azure/virtual-desktop/tenant-setup-azure-active-directory#assign-the-tenantcreator-application-role). После выполнения инструкций Вы получите пользователя, назначенного роли Тенанткреатор.
+**Исправление:** Следуйте инструкциям в статье [назначение роли приложения тенанткреатор пользователю в клиенте Azure Active Directory](https://docs.microsoft.com/azure/virtual-desktop/tenant-setup-azure-active-directory#assign-the-tenantcreator-application-role). После выполнения инструкций Вы получите пользователя, назначенного роли Тенанткреатор.
 
 ![Снимок экрана с назначенной ролью Тенанткреатор.](media/TenantCreatorRoleAssigned.png)
 
@@ -65,15 +65,15 @@ ms.locfileid: "71676455"
 
 Шаблон виртуального рабочего стола Windows — предоставление шаблона пула узлов доступен в Azure Marketplace.
 
-### <a name="error-when-using-the-link-from-github-the-message-create-a-free-account-appears"></a>Ошибка: При использовании ссылки из GitHub появляется сообщение "создание бесплатной учетной записи"
+### <a name="error-when-using-the-link-from-github-the-message-create-a-free-account-appears"></a>Ошибка. при использовании ссылки из GitHub появляется сообщение "создание бесплатной учетной записи"
 
 ![Снимок экрана для создания бесплатной учетной записи.](media/be615904ace9832754f0669de28abd94.png)
 
-**Причина 1**. В учетной записи, используемой для входа в Azure, нет активных подписок, или используемая учетная запись не имеет разрешений на просмотр подписок.
+**Причина 1:** В учетной записи, используемой для входа в Azure, нет активных подписок, или используемая учетная запись не имеет разрешений на просмотр подписок.
 
 **Исправление 1:** Войдите в систему, используя учетную запись с правами участника (как минимум) на подписку, в которой будут развернуты виртуальные машины узла сеансов.
 
-**Причина 2.** Используемая подписка является частью клиента поставщика служб (CSP) Microsoft Cloud.
+**Причина 2:** Используемая подписка является частью клиента поставщика служб (CSP) Microsoft Cloud.
 
 **Исправление 2:** Перейдите в каталог GitHub для **создания и инициализации нового пула узлов виртуальных рабочих столов Windows** и выполните следующие инструкции:
 
@@ -94,10 +94,10 @@ ms.locfileid: "71676455"
 
 1. Просмотрите ошибки в развертывании, используя [Просмотр операций развертывания с Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-deployment-operations).
 2. Если в развертывании нет ошибок, просмотрите ошибки в журнале действий, используя [Просмотр журналов действий для аудита действий с ресурсами](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-audit).
-3. После определения ошибки используйте сообщение об ошибке и ресурсы в статье Устранение [распространенных ошибок развертывания Azure с Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-common-deployment-errors) для решения проблемы.
+3. После определения ошибки используйте сообщение об ошибке и ресурсы в статье [Устранение распространенных ошибок развертывания Azure с Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-common-deployment-errors) для решения проблемы.
 4. Удалите все ресурсы, созданные во время предыдущего развертывания, и повторите попытку развертывания шаблона.
 
-### <a name="error-your-deployment-failedhostnamejoindomain"></a>Ошибка: Не удалось выполнить развертывание...\<. имя узла >/жоиндомаин
+### <a name="error-your-deployment-failedhostnamejoindomain"></a>Ошибка: сбой развертывания....\<имя узла >/жоиндомаин
 
 ![Снимок экрана сбоя развертывания.](media/e72df4d5c05d390620e07f0d7328d50f.png)
 
@@ -111,36 +111,36 @@ ms.locfileid: "71676455"
  extension 'joindomain'. Error message: \\\"Exception(s) occurred while joining Domain 'diamondsg.onmicrosoft.com'\\\".\"\r\n }\r\n ]\r\n }\r\n}"}]}
 ```
 
-**Причина 1**. Указаны неправильные учетные данные для присоединения виртуальных машин к домену.
+**Причина 1:** Указаны неправильные учетные данные для присоединения виртуальных машин к домену.
 
 **Исправление 1:** См. ошибку "неверные учетные данные" для виртуальных машин не присоединены к домену в [конфигурации виртуальной машины узла сеансов](troubleshoot-vm-configuration.md).
 
-**Причина 2.** Доменное имя не разрешается.
+**Причина 2:** Доменное имя не разрешается.
 
 **Исправление 2:** См. ошибку "доменное имя не удается разрешить" для виртуальных машин не присоединены к домену в [конфигурации виртуальной машины узла сеансов](troubleshoot-vm-configuration.md).
 
 
-### <a name="error-your-deployment-failedunauthorized"></a>Ошибка: Сбой развертывания. ..\Унаусоризед
+### <a name="error-your-deployment-failedunauthorized"></a>Ошибка: сбой развертывания. ..\Унаусоризед
 
 ```Error
 {"code":"DeploymentFailed","message":"At least one resource deployment operation failed. Please list deployment operations for details. Please see https://aka.ms/arm-debug for usage details.","details":[{"code":"Unauthorized","message":"{\r\n \"Code\": \"Unauthorized\",\r\n \"Message\": \"The scale operation is not allowed for this subscription in this region. Try selecting different region or scale option.\",\r\n \"Target\": null,\r\n \"Details\": [\r\n {\r\n \"Message\": \"The scale operation is not allowed for this subscription in this region. Try selecting different region or scale option.\"\r\n },\r\n {\r\n \"Code\": \"Unauthorized\"\r\n },\r\n {\r\n \"ErrorEntity\": {\r\n \"ExtendedCode\": \"52020\",\r\n \"MessageTemplate\": \"The scale operation is not allowed for this subscription in this region. Try selecting different region or scale option.\",\r\n \"Parameters\": [\r\n \"default\"\r\n ],\r\n \"Code\": \"Unauthorized\",\r\n \"Message\": \"The scale operation is not allowed for this subscription in this region. Try selecting different region or scale option.\"\r\n }\r\n }\r\n ],\r\n \"Innererror\": null\r\n}"}]}
 ```
 
-**Причина.** Используемая Подписка — это тип, который не может получить доступ к необходимым функциям в регионе, в котором клиент пытается выполнить развертывание. Например, подписки MSDN, Free или образовательных учреждений могут показывать эту ошибку.
+**Причина:** Используемая Подписка — это тип, который не может получить доступ к необходимым функциям в регионе, в котором клиент пытается выполнить развертывание. Например, подписки MSDN, Free или образовательных учреждений могут показывать эту ошибку.
 
-**Исправно** Измените тип подписки или регион на другой, который может получить доступ к необходимым функциям.
+**Исправление:** Измените тип подписки или регион на другой, который может получить доступ к необходимым функциям.
 
-### <a name="error-vmextensionprovisioningerror"></a>Ошибка: VMExtensionProvisioningError
+### <a name="error-vmextensionprovisioningerror"></a>Ошибка: Вмекстенсионпровисионинжеррор
 
 ![Снимок экрана развертывания: не удалось выполнить состояние подготовки терминала.](media/7aaf15615309c18a984673be73ac969a.png)
 
-**Причина 1**. Временная ошибка в среде виртуальных рабочих столов Windows.
+**Причина 1:** Временная ошибка в среде виртуальных рабочих столов Windows.
 
-**Причина 2.** Временная ошибка с подключением.
+**Причина 2:** Временная ошибка с подключением.
 
-**Исправно** Подтвердите работоспособность среды виртуальных рабочих столов Windows, выполнив вход с помощью PowerShell. Завершите регистрацию виртуальной машины вручную в окне [Создание пула узлов с помощью PowerShell](https://docs.microsoft.com/azure/virtual-desktop/create-host-pools-powershell).
+**Исправление:** Подтвердите работоспособность среды виртуальных рабочих столов Windows, выполнив вход с помощью PowerShell. Завершите регистрацию виртуальной машины вручную в окне [Создание пула узлов с помощью PowerShell](https://docs.microsoft.com/azure/virtual-desktop/create-host-pools-powershell).
 
-### <a name="error-the-admin-username-specified-isnt-allowed"></a>Ошибка: Указанное имя администратора не разрешено
+### <a name="error-the-admin-username-specified-isnt-allowed"></a>Ошибка: указанное имя администратора не разрешено
 
 ![Снимок экрана развертывания, в котором указанное административное сообщение не разрешено.](media/f2b3d3700e9517463ef88fa41875bac9.png)
 
@@ -155,11 +155,11 @@ ms.locfileid: "71676455"
  /resourceGroups/demoHostDesktop/providers/Microsoft.Compute/virtualMachines/demo", "resourceType": "Microsoft.Compute/virtualMachines", "resourceName": "demo" } }}
 ```
 
-**Причина.** Предоставленный пароль содержит запрещенные подстроки (администратор, администратор, корень).
+**Причина:** Предоставленный пароль содержит запрещенные подстроки (администратор, администратор, корень).
 
-**Исправно** Обновите имя пользователя или используйте других пользователей.
+**Исправление:** Обновите имя пользователя или используйте других пользователей.
 
-### <a name="error-vm-has-reported-a-failure-when-processing-extension"></a>Ошибка: Виртуальная машина сообщила об ошибке при обработке расширения
+### <a name="error-vm-has-reported-a-failure-when-processing-extension"></a>Ошибка: виртуальная машина сообщила об ошибке при обработке расширения
 
 ![Снимок экрана: операция с ресурсом завершена с состоянием подготовки терминала в развертывании.](media/49c4a1836a55d91cd65125cf227f411f.png)
 
@@ -181,9 +181,9 @@ ms.locfileid: "71676455"
  "resourceType": "Microsoft.Compute/virtualMachines/extensions", "resourceName": "desktop-1/dscextension" } }}
 ```
 
-**Причина.** Модулю PowerShell DSC не удалось получить доступ к администратору на виртуальной машине.
+**Причина:** Модулю PowerShell DSC не удалось получить доступ к администратору на виртуальной машине.
 
-**Исправно** Убедитесь, что имя пользователя и пароль имеют административный доступ к виртуальной машине, и снова запустите шаблон Azure Resource Manager.
+**Исправление:** Убедитесь, что имя пользователя и пароль имеют административный доступ к виртуальной машине, и снова запустите шаблон Azure Resource Manager.
 
 ### <a name="error-deploymentfailed--powershell-dsc-configuration-firstsessionhost-completed-with-errors"></a>Ошибка: DeploymentFailed — конфигурация PowerShell DSC "Фирстсессионхост" завершена с ошибками
 
@@ -213,11 +213,11 @@ ms.locfileid: "71676455"
 
 ```
 
-**Причина.** Модулю PowerShell DSC не удалось получить доступ к администратору на виртуальной машине.
+**Причина:** Модулю PowerShell DSC не удалось получить доступ к администратору на виртуальной машине.
 
-**Исправно** Убедитесь, что указанные имя пользователя и пароль имеют административный доступ к виртуальной машине, и снова запустите шаблон Azure Resource Manager.
+**Исправление:** Убедитесь, что указанные имя пользователя и пароль имеют административный доступ к виртуальной машине, и снова запустите шаблон Azure Resource Manager.
 
-### <a name="error-deploymentfailed--invalidresourcereference"></a>Ошибка: DeploymentFailed — Инвалидресаурцереференце
+### <a name="error-deploymentfailed--invalidresourcereference"></a>Ошибка: DeploymentFailed – Инвалидресаурцереференце
 
 Пример необработанной ошибки:
 
@@ -240,11 +240,11 @@ the referenced resource exists, and that both resources are in the same
 region.\\\",\\r\\n\\\"details\\\": []\\r\\n }\\r\\n}\"\r\n }\r\n ]\r\n }\r\n ]\r\n }\r\n}"}]}
 ```
 
-**Причина.** Часть имени группы ресурсов используется для определенных ресурсов, создаваемых шаблоном. Из-за имени, соответствующего существующим ресурсам, шаблон может выбрать существующий ресурс из другой группы.
+**Причина:** Часть имени группы ресурсов используется для определенных ресурсов, создаваемых шаблоном. Из-за имени, соответствующего существующим ресурсам, шаблон может выбрать существующий ресурс из другой группы.
 
-**Исправно** При запуске шаблона Azure Resource Manager для развертывания виртуальных машин узла сеансов сделайте первые два символа уникальными для имени группы ресурсов подписки.
+**Исправление:** При запуске шаблона Azure Resource Manager для развертывания виртуальных машин узла сеансов сделайте первые два символа уникальными для имени группы ресурсов подписки.
 
-### <a name="error-deploymentfailed--invalidresourcereference"></a>Ошибка: DeploymentFailed — Инвалидресаурцереференце
+### <a name="error-deploymentfailed--invalidresourcereference"></a>Ошибка: DeploymentFailed – Инвалидресаурцереференце
 
 Пример необработанной ошибки:
 
@@ -267,11 +267,11 @@ resources are in the same region.\\\",\\r\\n \\\"details\\\": []\\r\\n }\\r\\n}\
 }\r\n ]\r\n }\r\n ]\r\n }\r\n\
 ```
 
-**Причина.** Эта ошибка вызвана тем, что сетевая карта, созданная с помощью шаблона Azure Resource Manager, имеет то же имя, что и другая сетевая карта, уже подключенная к ВИРТУАЛЬНОЙ
+**Причина:** Эта ошибка вызвана тем, что сетевая карта, созданная с помощью шаблона Azure Resource Manager, имеет то же имя, что и другая сетевая карта, уже подключенная к ВИРТУАЛЬНОЙ
 
-**Исправно** Используйте другой префикс узла.
+**Исправление:** Используйте другой префикс узла.
 
-### <a name="error-deploymentfailed--error-downloading"></a>Ошибка: DeploymentFailed — ошибка загрузки
+### <a name="error-deploymentfailed--error-downloading"></a>Ошибка: DeploymentFailed — ошибка при скачивании
 
 Пример необработанной ошибки:
 
@@ -286,11 +286,11 @@ be found in the logs located under
 the VM.\\\"
 ```
 
-**Причина.** Эта ошибка возникает из-за статического маршрута, правила брандмауэра или NSG блокировки загрузки ZIP-файла, привязанного к шаблону Azure Resource Manager.
+**Причина:** Эта ошибка возникает из-за статического маршрута, правила брандмауэра или NSG блокировки загрузки ZIP-файла, привязанного к шаблону Azure Resource Manager.
 
-**Исправно** Удалите заблокированный статический маршрут, правило брандмауэра или NSG. При необходимости откройте JSON-файл шаблона Azure Resource Manager в текстовом редакторе, перейдите по ссылке к ZIP-файлу и скачайте ресурс в разрешенное расположение.
+**Исправление:** Удалите заблокированный статический маршрут, правило брандмауэра или NSG. При необходимости откройте JSON-файл шаблона Azure Resource Manager в текстовом редакторе, перейдите по ссылке к ZIP-файлу и скачайте ресурс в разрешенное расположение.
 
-### <a name="error-the-user-isnt-authorized-to-query-the-management-service"></a>Ошибка: Пользователь не имеет разрешения на запрос к службе управления
+### <a name="error-the-user-isnt-authorized-to-query-the-management-service"></a>Ошибка: пользователь не имеет разрешения на запрос к службе управления
 
 Пример необработанной ошибки:
 
@@ -305,16 +305,16 @@ Following are the first few: PowerShell DSC resource MSFT_ScriptResource failed 
 The SendConfigurationApply function did not succeed.\"." }, "name": "2c3272ec-d25b-47e5-8d70-a7493e9dc473" } } }}
 ```
 
-**Причина.** Указанный администратор клиента виртуальных рабочих столов Windows не имеет допустимого назначения роли.
+**Причина:** Указанный администратор клиента виртуальных рабочих столов Windows не имеет допустимого назначения роли.
 
-**Исправно** Пользователь, создавший клиента виртуальных рабочих столов Windows, должен войти в Windows Virtual Desktop PowerShell и назначить предпринятому пользователю назначение роли. Если вы используете параметры шаблона Azure Resource Manager GitHub, выполните следующие инструкции с помощью команд PowerShell:
+**Исправление:** Пользователь, создавший клиента виртуальных рабочих столов Windows, должен войти в Windows Virtual Desktop PowerShell и назначить предпринятому пользователю назначение роли. Если вы используете параметры шаблона Azure Resource Manager GitHub, выполните следующие инструкции с помощью команд PowerShell:
 
 ```PowerShell
-Add-RdsAccount -DeploymentUrl “https://rdbroker.wvd.microsoft.com”
-New-RdsRoleAssignment -TenantName <Windows Virtual Desktop tenant name> -RoleDefinitionName “RDS Contributor” -SignInName <UPN>
+Add-RdsAccount -DeploymentUrl "https://rdbroker.wvd.microsoft.com"
+New-RdsRoleAssignment -TenantName <Windows Virtual Desktop tenant name> -RoleDefinitionName "RDS Contributor" -SignInName <UPN>
 ```
 
-### <a name="error-user-requires-azure-multi-factor-authentication-mfa"></a>Ошибка: Пользователю требуется многофакторная идентификация Azure (MFA)
+### <a name="error-user-requires-azure-multi-factor-authentication-mfa"></a>Ошибка: пользователю требуется многофакторная идентификация Azure (MFA)
 
 ![Снимок экрана развертывания не удалось выполнить из-за отсутствия многофакторной проверки подлинности (MFA)](media/MFARequiredError.png)
 
@@ -324,31 +324,31 @@ New-RdsRoleAssignment -TenantName <Windows Virtual Desktop tenant name> -RoleDef
 "message": "{\r\n  \"status\": \"Failed\",\r\n  \"error\": {\r\n    \"code\": \"ResourceDeploymentFailure\",\r\n    \"message\": \"The resource operation completed with terminal provisioning state 'Failed'.\",\r\n    \"details\": [\r\n      {\r\n        \"code\": \"VMExtensionProvisioningError\",\r\n        \"message\": \"VM has reported a failure when processing extension 'dscextension'. Error message: \\\"DSC Configuration 'FirstSessionHost' completed with error(s). Following are the first few: PowerShell DSC resource MSFT_ScriptResource  failed to execute Set-TargetResource functionality with error message: One or more errors occurred.  The SendConfigurationApply function did not succeed.\\\".\"\r\n      }\r\n    ]\r\n  }\r\n}"
 ```
 
-**Причина.** Для входа указанному администратору клиента виртуальных рабочих столов Windows требуется служба многофакторной идентификации Azure (MFA).
+**Причина:** Для входа указанному администратору клиента виртуальных рабочих столов Windows требуется служба многофакторной идентификации Azure (MFA).
 
-**Исправно** Создайте субъект-службу и назначьте ему роль для вашего клиента виртуальных рабочих столов Windows, выполнив действия, [описанные в учебнике. Создавайте субъекты-службы и назначения ролей](https://docs.microsoft.com/azure/virtual-desktop/create-service-principal-role-powershell)с помощью PowerShell. Убедившись, что вы можете войти в виртуальный рабочий стол Windows с помощью субъекта-службы, перезапустите предложение Azure Marketplace или шаблон Azure Resource Manager GitHub в зависимости от того, какой метод вы используете. Следуйте приведенным ниже инструкциям, чтобы ввести правильные параметры для метода.
+**Исправление:** Создайте субъект-службу и назначьте ему роль для вашего клиента виртуальных рабочих столов Windows, выполнив действия, описанные в разделе [учебник. создание субъектов-служб и назначение ролей с помощью PowerShell](https://docs.microsoft.com/azure/virtual-desktop/create-service-principal-role-powershell). Убедившись, что вы можете войти в виртуальный рабочий стол Windows с помощью субъекта-службы, перезапустите предложение Azure Marketplace или шаблон Azure Resource Manager GitHub в зависимости от того, какой метод вы используете. Следуйте приведенным ниже инструкциям, чтобы ввести правильные параметры для метода.
 
 Если вы используете предложение Azure Marketplace, укажите значения следующих параметров для правильной проверки подлинности в виртуальном рабочем столе Windows:
 
-- Владелец RDS клиента виртуальных рабочих столов Windows: Субъект-служба
-- Идентификатор приложения: Идентификация нового созданного субъекта-службы
-- Пароль/подтверждение пароля: Секрет пароля, созданный для субъекта-службы
-- Идентификатор клиента Azure AD: Идентификатор клиента Azure AD созданного субъекта-службы.
+- Владелец RDS для клиента виртуальных рабочих столов Windows: субъект-служба
+- Идентификатор приложения: идентификатор нового созданного субъекта-службы.
+- Пароль/подтверждение пароля. секрет пароля, созданный для субъекта-службы.
+- Идентификатор клиента Azure AD: идентификатор клиента Azure AD созданного субъекта-службы.
 
 Если вы используете шаблон Azure Resource Manager GitHub, укажите значения следующих параметров для правильной проверки подлинности в виртуальном рабочем столе Windows:
 
-- Имя участника-пользователя (UPN) или идентификатор приложения администратора клиента: Идентификация нового созданного субъекта-службы
-- Пароль администратора клиента: Секрет пароля, созданный для субъекта-службы
+- Имя участника-пользователя (UPN) или идентификатор приложения администратора клиента. идентификатор приложения для нового созданного субъекта-службы
+- Пароль администратора клиента: секрет пароля, созданный для субъекта-службы.
 - ИссервицепринЦипал: **true**
-- Aadtenantid и Идентификатор клиента Azure AD созданного субъекта-службы.
+- Aadtenantid и: идентификатор клиента Azure AD созданного субъекта-службы.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Общие сведения об устранении неполадок с виртуальным рабочим столом Windows и сведениями о эскалации см. в разделе [Обзор устранения неполадок, обратная связь и поддержка](troubleshoot-set-up-overview.md).
 - Сведения об устранении неполадок при настройке виртуальной машины в виртуальном рабочем столе Windows см. в разделе [Конфигурация виртуальной машины узла сеанса](troubleshoot-vm-configuration.md).
 - Сведения об устранении неполадок клиентских подключений Windows к виртуальным рабочим столам см. в разделе [Удаленный рабочий стол клиентские подключения](troubleshoot-client-connection.md).
 - Сведения об устранении неполадок при использовании PowerShell с виртуальным рабочим столом Windows см. в статье [Windows Virtual Desktop PowerShell](troubleshoot-powershell.md).
 - Дополнительные сведения о службе см. в разделе [Среда виртуальных рабочих столов Windows](https://docs.microsoft.com/azure/virtual-desktop/environment-setup).
-- Сведения об устранении неполадок см. в статье [Tutorial: Устранение неполадок при](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-tutorial-troubleshoot)развертывании шаблонов диспетчер ресурсов.
+- Руководство по устранению неполадок см. в разделе [учебник. Устранение неполадок диспетчер ресурсов развертываний шаблонов](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-tutorial-troubleshoot).
 - Сведения о действиях аудита см. в статье [Операции аудита с помощью Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-audit).
 - Дополнительные сведения об определении ошибок во время развертывания см. в статье [Просмотр операций развертывания с помощью портала Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-deployment-operations).

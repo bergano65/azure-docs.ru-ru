@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 02/13/2019
 ms.author: lizross
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f1c375b64d93662ec50923078549c4f2153fba0a
-ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
+ms.openlocfilehash: 74ca733c02fe4bbabce410824151fedbf8d2e71e
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68382809"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73160988"
 ---
 # <a name="set-up-security-info-preview-to-use-security-questions"></a>Настройка использования контрольных вопросов в сведениях для защиты (предварительная версия)
 
@@ -75,7 +75,7 @@ ms.locfileid: "68382809"
 
 2. Выберите **Да** в окне подтверждения, чтобы удалить **контрольные вопросы**. При удалении контрольных вопросов этот метод удаляется из сведений для защиты и не отображается на странице **Сведения для защиты**.
 
-## <a name="additional-security-info-methods"></a>Дополнительные методы проверки сведений для защиты
+## <a name="additional-security-info-methods"></a>Дополнительные методы в сведениях для защиты
 
 Чтобы подтвердить вашу личность, ваша организация может связаться с вами различными способами, в зависимости от того, что именно вы пытаетесь выполнить. Эти способы могут быть следующими:
 
@@ -92,8 +92,8 @@ ms.locfileid: "68382809"
     >[!Note]
     >Если некоторые из этих параметров отсутствуют, скорее всего, ваша организация не разрешает данные методы. Если это так, вам нужно выбрать доступный метод или обратиться за помощью к администратору.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Если вы забыли свой пароль, сбросьте его на [портале сброса пароля](https://passwordreset.microsoftonline.com/) или выполните действия, описанные в статье о [сбросе пароля рабочей или учебной учетной записи](user-help-reset-password.md).
+- Если вы забыли свой пароль, сбросьте его на [портале сброса пароля](https://passwordreset.microsoftonline.com/) или выполните действия, описанные в статье о [сбросе пароля рабочей или учебной учетной записи](active-directory-passwords-update-your-own-password.md).
 
 - Советы по устранению неполадок и справку по проблемам со входом в систему см. в статье [Не удается войти в учетную запись Майкрософт](https://support.microsoft.com/help/12429/microsoft-account-sign-in-cant).

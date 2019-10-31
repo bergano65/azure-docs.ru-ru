@@ -7,16 +7,16 @@ author: vhorne
 ms.service: application-gateway
 ms.date: 6/18/2019
 ms.author: victorh
-ms.openlocfilehash: 8cf82ce9ed4a9dc701c016f15224d6adfa299736
-ms.sourcegitcommit: b4665f444dcafccd74415fb6cc3d3b65746a1a31
+ms.openlocfilehash: 95303ba51fd4133fc6e05be16d6448c8699c3a43
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72263591"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73162078"
 ---
 # <a name="create-and-use-web-application-firewall-v2-custom-rules"></a>Создание и использование настраиваемых правил брандмауэра веб-приложения V2
 
-Брандмауэр веб-приложения шлюза приложений Azure (WAF) версии 2 обеспечивает защиту для веб-приложений. Эта защита обеспечивается с помощью набора правил "открытый проект безопасности веб-приложений (OWASP)". В некоторых случаях может потребоваться создать собственные настраиваемые правила для удовлетворения конкретных потребностей. Дополнительные сведения о настраиваемых правилах WAF см. в разделе [Overview. Пользовательские правила брандмауэра веб-приложения @ no__t-0.
+Брандмауэр веб-приложения шлюза приложений Azure (WAF) версии 2 обеспечивает защиту для веб-приложений. Эта защита обеспечивается с помощью набора правил "открытый проект безопасности веб-приложений (OWASP)". В некоторых случаях может потребоваться создать собственные настраиваемые правила для удовлетворения конкретных потребностей. Дополнительные сведения о настраиваемых правилах WAF см. в разделе [Обзор: пользовательские правила брандмауэра веб-приложения](custom-waf-rules-overview.md).
 
 В этой статье приведены некоторые примеры настраиваемых правил, которые можно создать и использовать с WAF версии 2. Сведения о развертывании WAF с настраиваемым правилом с помощью Azure PowerShell см. в разделе [Настройка настраиваемых правил брандмауэра веб-приложения с помощью Azure PowerShell](configure-waf-custom-rules.md).
 
@@ -369,7 +369,7 @@ $rule1 = New-AzApplicationGatewayFirewallCustomRule `
       {
         "name": "myrule4",
         "ruleType": "MatchRule",
-        “priority”: 100
+        "priority": 100,
         "action": "block",
         "matchConditions": [
           {
@@ -495,7 +495,7 @@ $rule3 = New-AzApplicationGatewayFirewallCustomRule `
   }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После создания настраиваемых правил можно узнать, как просматривать журналы WAF. Дополнительные сведения см. в разделе [Журналы диагностики](application-gateway-diagnostics.md#diagnostic-logging).
 

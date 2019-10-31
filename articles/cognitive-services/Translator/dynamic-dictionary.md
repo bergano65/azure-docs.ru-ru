@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: conceptual
 ms.date: 06/04/2019
 ms.author: swmachan
-ms.openlocfilehash: f586702350b38c6d546767f64a8e2f6115b59817
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: c268616c015c1c8735b2bdddc057f235d02cdc2a
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68595287"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73161742"
 ---
 # <a name="how-to-use-a-dynamic-dictionary"></a>Использование динамического словаря
 
@@ -23,18 +23,18 @@ ms.locfileid: "68595287"
 
 **Синтаксис**
 
-<mstrans:dictionary translation="перевод фразы">фраза</mstrans:dictionary>
+< мстранс: словарный перевод = "перевод фразы" > фраза </мстранс: dictionary >
 
 **Необходимость**
 
-* Языки `From` и`To` должны быть разными. 
-* `From` Параметр необходимо включить в запрос перевода API вместо использования функции автоматического обнаружения. 
+* Языки `From` и `To` должны быть разными. 
+* Необходимо включить параметр `From` в запрос перевода API, а не использовать функцию автоматического обнаружения. 
 
 **Пример: en-de:**
 
-Исходные входные данные: The word <mstrans:dictionary translation=\"wordomatic\">word or phrase</mstrans:dictionary> is a dictionary entry.
+Источник входных данных: Слово <mstrans: dictionary translation = \"wordomatic\"> слово или фраза </mstrans: dictionary> — это словарная запись.
 
-Целевые выходные данные: Das Wort "wordomatic" ist ein Wörterbucheintrag.
+Целевые выходные данные: ein ist Das Wort "wordomatic" Wörterbucheintrag.
 
 Эта возможность работает одинаково как в режиме HTML, так и без него.
 

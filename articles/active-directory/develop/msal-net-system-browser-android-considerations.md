@@ -1,7 +1,7 @@
 ---
-title: Замечания по Xamarin Android (Библиотека проверки подлинности Microsoft для .NET)
+title: Рекомендации для браузера системы Xamarin Android (Библиотека проверки подлинности Майкрософт для .NET)
 titleSuffix: Microsoft identity platform
-description: Ознакомьтесь с конкретными соображениями при использовании Xamarin Android с библиотекой проверки подлинности Майкрософт для .NET (MSAL.NET).
+description: Ознакомьтесь с конкретными соображениями при использовании системных браузеров Xamarin Android при использовании библиотеки проверки подлинности Microsoft для .NET (MSAL.NET).
 services: active-directory
 documentationcenter: dev-center-name
 author: TylerMSFT
@@ -13,19 +13,20 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 04/24/2019
+ms.date: 10/30/2019
 ms.author: twhitney
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8f5caad4b136c9ef2686cc4befc70e6720e27855
-ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
+ms.openlocfilehash: f83283cc02c60eb452d0e414c0b21843b48f343b
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72802750"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73150356"
 ---
-# <a name="xamarin-android-specific-considerations-with-msalnet"></a>Вопросы, связанные с Xamarin Android, с MSAL.NET
+#  <a name="xamarin-android-system-browser-considerations-with-msalnet"></a>Рекомендации по браузеру системы Xamarin Android с MSAL.NET
+
 В этой статье рассматриваются конкретные рекомендации при использовании системного браузера в Xamarin Android с помощью библиотеки проверки подлинности Microsoft для .NET (MSAL.NET).
 
 Начиная с MSAL.NET 2.4.0-Preview, MSAL.NET поддерживает браузеры, отличные от Chrome и больше не требует установки Chrome на устройстве Android для проверки подлинности.

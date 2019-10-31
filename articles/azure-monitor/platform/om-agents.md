@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: MGoedtel
 ms.author: magoedte
 ms.date: 08/13/2019
-ms.openlocfilehash: c5ac8cfe2971d1163c00383b4604a9a5b49558b0
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 79fcbb6f972eb022ce4d0e47a608e6f0d053a9ad
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72932161"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73162242"
 ---
 # <a name="connect-operations-manager-to-azure-monitor"></a>Подключение Operations Manager к Azure Monitor
 
@@ -227,7 +227,7 @@ ms.locfileid: "72932161"
     >
 
 1. В командной оболочки введите `Get-SCOMManagementPack -name "*Advisor*" | Remove-SCOMManagementPack -ErrorAction SilentlyContinue`
-1. Затем введите `Get-SCOMManagementPack -name “*IntelligencePack*” | Remove-SCOMManagementPack -ErrorAction SilentlyContinue`
+1. Затем введите `Get-SCOMManagementPack -name "*IntelligencePack*" | Remove-SCOMManagementPack -ErrorAction SilentlyContinue`
 1. Чтобы удалить оставшиеся пакеты управления, зависимые от других пакетов управления System Center Advisor, используйте сценарий *RecursiveRemove.ps1*, который вы ранее скачали из центра сценариев TechNet.  
 
     > [!NOTE]
@@ -253,8 +253,8 @@ ms.locfileid: "72932161"
 Чтобы удалить два соединителя — Microsoft.SystemCenter.Advisor.DataConnector и Advisor Connector, сохраните приведенный ниже скрипт PowerShell на свой компьютер и выполните его, как показано в следующих примерах.
 
 ```
-    .\OM2012_DeleteConnectors.ps1 “Advisor Connector” <ManagementServerName>
-    .\OM2012_DeleteConnectors.ps1 “Microsoft.SystemCenter.Advisor.DataConnector” <ManagementServerName>
+    .\OM2012_DeleteConnectors.ps1 "Advisor Connector" <ManagementServerName>
+    .\OM2012_DeleteConnectors.ps1 "Microsoft.SystemCenter.Advisor.DataConnector" <ManagementServerName>
 ```
 
 > [!NOTE]

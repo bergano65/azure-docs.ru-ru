@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 05/11/2018
 ms.author: slivkins
 ROBOTS: NOINDEX
-ms.openlocfilehash: 4f263e3b57103174f0084ab3d25430d8c47359fd
-ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
+ms.openlocfilehash: 569a1c83562a995f15e12013c864ef4c0447d963
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68707297"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73161690"
 ---
 # <a name="api"></a>API
 
@@ -106,7 +106,7 @@ callback({
 - `title` из `<meta property="og:title" content="..." />`, `<meta property="twitter:title" content="..." />` или `<title>...</title>`
 - `description` из `<meta property="og:description" ... />`, `<meta property="twitter:description" content="..." />` или `<meta property="description" content="..." />`
 - `image` из `<meta property="og:image" content="..." />`
-- `ds_id` из `<meta name=”microsoft:ds_id” content="..." />`
+- `ds_id` из `<meta name="microsoft:ds_id" content="..." />`
 
 HTTP-ответ:
 

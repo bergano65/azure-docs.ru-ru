@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 05/02/2017
 ms.author: mikeray
-ms.openlocfilehash: f74f9ba55f3593ed31994b83bb9bda1501445e0a
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 9949c389ad0511c3ed5923e0451bc96e7063621f
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70100673"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73159747"
 ---
 # <a name="configure-an-always-on-availability-group-on-azure-virtual-machines-in-different-regions"></a>Настройка группы доступности AlwaysOn на виртуальных машинах Azure в разных регионах
 
@@ -130,7 +130,7 @@ ms.locfileid: "70100673"
    ```powershell
    $ClusterNetworkName = "<MyClusterNetworkName>" # The cluster name for the network in the new region (Use Get-ClusterNetwork on Windows Server 2012 of higher to find the name).
    $IPResourceName = "<IPResourceName>" # The cluster name for the new IP Address resource.
-   $ILBIP = “<n.n.n.n>” # The IP Address of the Internal Load Balancer (ILB) in the new region. This is the static IP address for the load balancer you configured in the Azure portal.
+   $ILBIP = "<n.n.n.n>" # The IP Address of the Internal Load Balancer (ILB) in the new region. This is the static IP address for the load balancer you configured in the Azure portal.
    [int]$ProbePort = <nnnnn> # The probe port you set on the ILB.
 
    Import-Module FailoverClusters
@@ -144,7 +144,7 @@ ms.locfileid: "70100673"
 
 Желательно изменить строки подключения клиента, чтобы задать `MultiSubnetFailover=Yes`. Ознакомьтесь с разделом [Соединение с помощью MultiSubnetFailover](https://msdn.microsoft.com/library/gg471494#Anchor_0).
 
-Если вам не удается изменить строки подключения, можно настроить кэширование разрешения имен. См. статью [об ошибке времени ожидания, и вы не можете подключиться к прослушивателю группы доступности AlwaysOn SQL Server 2012 в среде с несколькими](https://support.microsoft.com/help/2792139/time-out-error-and-you-cannot-connect-to-a-sql-server-2012-alwayson-av)подсетями.
+Если вам не удается изменить строки подключения, можно настроить кэширование разрешения имен. См. статью [об ошибке времени ожидания, и вы не можете подключиться к прослушивателю группы доступности AlwaysOn SQL Server 2012 в среде с несколькими подсетями](https://support.microsoft.com/help/2792139/time-out-error-and-you-cannot-connect-to-a-sql-server-2012-alwayson-av).
 
 ## <a name="fail-over-to-remote-region"></a>Отработка отказа в удаленный регион
 
@@ -157,23 +157,23 @@ ms.locfileid: "70100673"
 1. Нажмите кнопку ОК.
 1. В **обозревателе объектов** щелкните правой кнопкой мыши группу доступности и выберите **Show Dashboard** (Показать панель мониторинга).
 1. На панели мониторинга убедитесь, что реплика на сайте аварийного восстановления синхронизирована.
-1. В **обозревателе объектов** щелкните правой кнопкой мыши группу доступности и выберите **Отработка отказа…** . В SQL Server Management Studio откроется мастер для отработки отказа SQL Server.  
+1. В **обозревателе объектов**щелкните правой кнопкой мыши группу доступности и выберите пункт **отработка отказа...** . SQL Server управления Studios открывает мастер для отработки отказа SQL Server.  
 1. Щелкните **Далее** и выберите экземпляр SQL Server на сайте аварийного восстановления. Нажмите **Далее** еще раз.
 1. Подключитесь к экземпляру SQL Server на сайте аварийного восстановления и нажмите кнопку **Далее**.
 1. Проверьте параметры на странице **Сводка**, а затем нажмите кнопку **Готово**.
 
 После проверки подключения верните первичную реплику в основной центр обработки данных и восстановите обычные рабочие параметры режима доступности. В таблице ниже приведены обычные рабочие параметры для архитектуры, описанной в этом документе.
 
-| Местоположение | Экземпляр сервера | Role | Режим доступности | Режим отработки отказа
+| Location | Экземпляр сервера | Роль | Режим доступности | Режим отработки отказа
 | ----- | ----- | ----- | ----- | -----
-| Основной центр обработки данных | SQL-1 | Первичная | Синхронный | Автоматически
-| Основной центр обработки данных | SQL-2 | Дополнительный | Синхронный | Автоматически
-| Дополнительный или удаленный центр обработки данных | SQL-3 | Дополнительный | Асинхронно | Руководство
+| Основной центр обработки данных | SQL-1 | Первичная | Синхронный | Автоматический
+| Основной центр обработки данных | SQL-2 | Вторичная | Синхронный | Автоматический
+| Дополнительный или удаленный центр обработки данных | SQL-3 | Вторичная | Асинхронный | Manual
 
 
 ### <a name="more-information-about-planned-and-forced-manual-failover"></a>Дополнительные сведения о плановой и принудительной отработке отказа вручную
 
-Дополнительные сведения см. в следующих разделах:
+Дополнительные сведения см. в следующих статьях:
 
 - [Выполнение запланированного перехода на другой ресурс вручную для группы доступности (SQL Server)](https://msdn.microsoft.com/library/hh231018.aspx)
 - [Выполнение принудительного перехода на другой ресурс вручную для группы доступности (SQL Server)](https://msdn.microsoft.com/library/ff877957.aspx)

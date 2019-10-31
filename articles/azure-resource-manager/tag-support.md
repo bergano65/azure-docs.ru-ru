@@ -6,12 +6,12 @@ ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 10/27/2019
 ms.author: tomfitz
-ms.openlocfilehash: eaf4ba303caa405a170322828add944487908365
-ms.sourcegitcommit: b1c94635078a53eb558d0eb276a5faca1020f835
+ms.openlocfilehash: 6b64eb955476a8ab5307b7d508484c290fd7660a
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2019
-ms.locfileid: "72968580"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73162173"
 ---
 # <a name="tag-support-for-azure-resources"></a>Поддержка тегов для ресурсов Azure
 В этой статье приводятся сведения о поддержке типом ресурса функции [тегов](resource-group-using-tags.md). Столбец с подписью **поддерживает теги** . указывает, имеет ли тип ресурса свойство для тега. Столбец с меткой **тег в отчете о затратах** указывает, передает ли этот тип ресурса тег в отчет о затратах.
@@ -1445,7 +1445,6 @@ ms.locfileid: "72968580"
 > | publicIPPrefixes | ДА | ДА |
 > | routeFilters | ДА | ДА |
 > | routeTables | ДА | ДА |
-> | секурегатевайс | ДА | ДА |
 > | serviceEndpointPolicies | ДА | ДА |
 > | trafficManagerGeographicHierarchies | Нет | Нет |
 > | trafficmanagerprofiles | ДА | ДА |
