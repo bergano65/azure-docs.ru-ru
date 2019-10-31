@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 10/10/2019
 ms.author: spelluru
 ms.custom: include file
-ms.openlocfilehash: fab9a8a8c28f2f75e7e5af69b70229c1de74c684
-ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
+ms.openlocfilehash: 8656bbb070e2b05a06ea22dd1634a40182b440cb
+ms.sourcegitcommit: b45ee7acf4f26ef2c09300ff2dba2eaa90e09bc7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72992292"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73098672"
 ---
 ## <a name="deploy-event-grid-iot-edge-module"></a>Развертывание модуля IoT Edge сетки событий
 
@@ -24,7 +24,7 @@ ms.locfileid: "72992292"
 
 >[!IMPORTANT]
 > В этом руководстве модуль "Сетка событий" будет развернут с выключенной проверкой подлинности клиента и разрешать HTTP-подписчики. Для рабочих нагрузок рекомендуется включить проверку подлинности клиента только по протоколам HTTPS и подписчикам. Дополнительные сведения о безопасной настройке модуля сетки событий см. в разделе [безопасность и проверка подлинности](../articles/event-grid/edge/security-authentication.md).
-
+ 
 ### <a name="select-your-iot-edge-device"></a>Выберите устройство IoT Edge
 
 1. Войдите на [портал Azure](https://portal.azure.com)
@@ -67,6 +67,10 @@ ms.locfileid: "72992292"
 
  1. Нажмите кнопку **Сохранить**
  1. Нажмите кнопку " **Далее** ", чтобы перейти к разделу "маршруты"
+
+    > [!NOTE]
+    > Если вы используете виртуальную машину Azure в качестве пограничной устройства, добавьте правило для входящих портов, разрешающее входящий трафик через порт 4438. Инструкции по добавлению правила см. в статье [как открыть порты для виртуальной машины](../articles/virtual-machines/windows/nsg-quickstart-portal.md).
+
 
 ### <a name="setup-routes"></a>Настройка маршрутов
 

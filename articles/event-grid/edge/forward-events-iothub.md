@@ -5,16 +5,16 @@ author: VidyaKukke
 manager: rajarv
 ms.author: vkukke
 ms.reviewer: spelluru
-ms.date: 10/06/2019
+ms.date: 10/29/2019
 ms.topic: article
 ms.service: event-grid
 services: event-grid
-ms.openlocfilehash: 772fccc96f757c6165238e4041ce98c17c647880
-ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
+ms.openlocfilehash: 073205b5bdc3f6de80bd7e347469c3f06aeb515b
+ms.sourcegitcommit: b45ee7acf4f26ef2c09300ff2dba2eaa90e09bc7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72992305"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73098676"
 ---
 # <a name="tutorial-forward-events-to-iothub"></a>Учебник. Пересылка событий в IoTHub
 
@@ -160,7 +160,9 @@ ms.locfileid: "72992305"
 
 ## <a name="setup-iot-hub-route"></a>Настройка маршрута центра Интернета вещей
 
-Ознакомьтесь с руководством по [маршрутизации](../../iot-hub/tutorial-routing.md) центра Интернета вещей, чтобы настроить маршрут из центра Интернета вещей, чтобы можно было просматривать события, пересылаемые из модуля службы "Сетка событий".
+Ознакомьтесь с [руководством по маршрутизации центра Интернета вещей](../../iot-hub/tutorial-routing.md) , чтобы настроить маршрут из центра Интернета вещей, чтобы можно было просматривать события, пересылаемые из модуля службы "Сетка событий". Используйте `true` для запроса, чтобы упростить учебник.  
+
+
 
 ## <a name="publish-an-event"></a>Публикация события
 
@@ -205,6 +207,7 @@ ms.locfileid: "72992305"
 
 В этом руководстве вы создали раздел "Сетка событий", подписку на концентратор ребра и опубликованные события. Теперь, когда вы знакомы с основными шагами для пересылки в центр ребра, ознакомьтесь со следующими статьями:
 
+* Сведения об устранении неполадок с использованием службы "Сетка событий Azure" на IoT Edge см. в разделе [руководство по устранению неполадок](troubleshoot.md).
 * Использование фильтров маршрутов [концентратора ребра](../../iot-edge/module-composition.md) для событий секционирования
 * Настройка сохраняемости модуля службы "Сетка событий" в [Linux](persist-state-linux.md) или [Windows](persist-state-windows.md)
 * Следуйте инструкциям [по](configure-client-auth.md) настройке проверки подлинности клиента

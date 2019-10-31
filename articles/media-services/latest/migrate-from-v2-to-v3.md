@@ -15,12 +15,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: media
 ms.date: 05/01/2019
 ms.author: juliako
-ms.openlocfilehash: 901542e2a69d2c7880825d76c1d69d3795713ed2
-ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
+ms.openlocfilehash: 003cc54a07455118969a2dd497e9b963c03f68f2
+ms.sourcegitcommit: b45ee7acf4f26ef2c09300ff2dba2eaa90e09bc7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70231172"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73099492"
 ---
 # <a name="migration-guidance-for-moving-from-media-services-v2-to-v3"></a>Руководство по миграции из версии 2 в версию 3 Служб мультимедиа
 
@@ -52,7 +52,7 @@ ms.locfileid: "70231172"
 * Предварительная версия событий потоковой трансляции поддерживает [динамическую упаковку](dynamic-packaging-overview.md) и динамическое шифрование. Это включает защиту содержимого в предварительной версии, а также упаковки DASH и HLS.
 * Выходные данные потоковой трансляции проще в использовании, чем старая сущность Program в версии 2 API-интерфейсов. 
 * Улучшенная поддержка RTMP (повышенная стабильность и поддержка исходного кодировщика).
-* Безопасный прием RTMPS.<br/>При создании события потоковой трансляции вы получаете 4 URL-адреса приема. 4 URL-адреса для приема практически идентичны, они имеют тот же токен потоковой передачи (AppId) с отличной частью номера порта. Два из этих URL-адресов являются первичным и резервным для RTMPS.   
+* Безопасный прием RTMPS.<br/>При создании события потоковой трансляции вы получаете 4 URL-адреса приема. 4 URL-адреса приема практически идентичны, они имеют тот же токен потоковой передачи (AppId) с отличной частью номера порта. Два из URL-адресов являются первичными и резервными для RTMPS.   
 * Вы контролируете доступ к своим сущностям с помощью управления доступом на основе ролей. 
 
 ## <a name="changes-from-v2"></a>Отличия от версии 2
@@ -72,8 +72,9 @@ ms.locfileid: "70231172"
     * Указатель потоковой передачи заменяет Locator.
     * Событие потоковой трансляции заменяет Channel.<br/>Выставление счетов за события потоковой трансляции основано на метриках динамического канала. Для получения дополнительных сведений ознакомьтесь с [выставлением счетов](live-event-states-billing.md) и [ценами](https://azure.microsoft.com/pricing/details/media-services/).
     * Выходные данные потоковой трансляции заменяют Program.
-* Выходные данные потоковой трансляции запускаются при создании и останавливаются при удалении. Программы работали иначе в API версии 2, они должны были запускаться после создания.
-*  Чтобы получить сведения о задании, необходимо знать имя преобразования, под которым было создано задание. 
+* Выходные данные прямой трансляции запускаются при создании и останавливаются при удалении. Программы работали иначе в API версии 2, они должны были запускаться после создания.
+* Чтобы получить сведения о задании, необходимо знать имя преобразования, под которым было создано задание. 
+* В версии 2 [входные](../previous/media-services-input-metadata-schema.md) и [выходные](../previous/media-services-output-metadata-schema.md) XML-файлы метаданных создаются в результате задания кодирования. В версии 3 формат метаданных изменился с XML на JSON. 
 
 > [!NOTE]
 > Ознакомьтесь с соглашениями об именовании, которые применяются к [ресурсам служб мультимедиа v3](media-services-apis-overview.md#naming-conventions). Также проверьте [имена больших двоичных объектов](assets-concept.md#naming-blobs).
@@ -104,7 +105,7 @@ API версии 3 содержит следующие недочеты функ
 |---|---|---|
 |Создайте ресурс и отправьте файл. |[Пример .NET версии 2](https://github.com/Azure-Samples/media-services-dotnet-dynamic-encryption-with-aes/blob/master/DynamicEncryptionWithAES/DynamicEncryptionWithAES/Program.cs#L113)|[Пример .NET версии 3](https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials/blob/master/AMSV3Tutorials/UploadEncodeAndStreamFiles/Program.cs#L169)|
 |Отправка задания|[Пример .NET версии 2](https://github.com/Azure-Samples/media-services-dotnet-dynamic-encryption-with-aes/blob/master/DynamicEncryptionWithAES/DynamicEncryptionWithAES/Program.cs#L146)|[Пример .NET версии 3](https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials/blob/master/AMSV3Tutorials/UploadEncodeAndStreamFiles/Program.cs#L298)<br/><br/>Показано, как сначала создать преобразование, а затем отправить задание.|
-|Опубликуйте ресурс с шифрованием AES. |1. Создайте ContentKeyAuthorizationPolicyOption.<br/>2. Создайте ContentKeyAuthorizationPolicy.<br/>3. Создайте AssetDeliveryPolicy.<br/>4. Создайте ресурс и передайте содержимое или отправьте задание и используйте выходной ресурс.<br/>5. Свяжите AssetDeliveryPolicy с ресурсом.<br/>6. Создайте ContentKey.<br/>7. Присоедините ContentKey к Asset.<br/>8. Создайте AccessPolicy.<br/>9. Создайте Locator.<br/><br/>[Пример .NET версии 2](https://github.com/Azure-Samples/media-services-dotnet-dynamic-encryption-with-aes/blob/master/DynamicEncryptionWithAES/DynamicEncryptionWithAES/Program.cs#L64)|1. Создайте политику ключа содержимого.<br/>2. Создайте ресурс.<br/>3. Передайте содержимое или используйте ресурс как JobOutput.<br/>4. Создайте указатель потоковой передачи.<br/><br/>[Пример .NET версии 3](https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials/blob/master/AMSV3Tutorials/EncryptWithAES/Program.cs#L105)|
+|Опубликуйте ресурс с шифрованием AES. |1. Создание Контенткэйаусоризатионполициоптион<br/>2. Создание ContentKeyAuthorizationPolicy<br/>3. Создание AssetDeliveryPolicy<br/>4. Создание ресурса и отправка содержимого или отправка задания и использование выходного ресурса<br/>5. Связывание AssetDeliveryPolicy с ресурсом<br/>6. Создание ContentKey<br/>7. Подключение ContentKey к активу<br/>8. Создание AccessPolicy<br/>9. Создание локатора<br/><br/>[Пример .NET версии 2](https://github.com/Azure-Samples/media-services-dotnet-dynamic-encryption-with-aes/blob/master/DynamicEncryptionWithAES/DynamicEncryptionWithAES/Program.cs#L64)|1. Создание политики ключа содержимого<br/>2. Создание ресурса<br/>3. Отправка содержимого или использование ресурса в качестве Жобаутпут<br/>4. Создание указателя потоковой передачи<br/><br/>[Пример .NET версии 3](https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials/blob/master/AMSV3Tutorials/EncryptWithAES/Program.cs#L105)|
 |Получение сведений о заданиях и управление заданиями |[Управление заданиями с помощью версии 2](../previous/media-services-dotnet-manage-entities.md#get-a-job-reference) |[Управление заданиями с помощью v3](https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials/blob/master/AMSV3Tutorials/UploadEncodeAndStreamFiles/Program.cs#L546)|
 
 ## <a name="known-issues"></a>Известные проблемы
@@ -123,7 +124,7 @@ API версии 3 содержит следующие недочеты функ
 
 Прочитайте статью [сообщества Служб мультимедиа Azure](media-services-community.md), чтобы узнать, как задавать вопросы, оставлять отзывы и получать новости о Службах мультимедиа.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы узнать, как легко начать кодирование и потоковую передачу видеофайлов, ознакомьтесь со сведениями о [файлах потоковой передачи](stream-files-dotnet-quickstart.md). 
 

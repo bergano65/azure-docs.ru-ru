@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: 948712b684d1cd1b072862b7253d745f89b0cc56
-ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
+ms.openlocfilehash: b4795eeb24d1d0ac373a700a6b60b8facec0e37d
+ms.sourcegitcommit: f7f70c9bd6c2253860e346245d6e2d8a85e8a91b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72244997"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73064003"
 ---
 # <a name="azure-disk-encryption-scenarios-on-windows-vms"></a>Сценарии шифрования дисков Azure на виртуальных машинах Windows
 
@@ -26,15 +26,12 @@ ms.locfileid: "72244997"
 - [Требования к групповая политика](disk-encryption-overview.md#group-policy-requirements)
 - [Требования к хранилищу ключей шифрования](disk-encryption-overview.md#encryption-key-storage-requirements)
 
-
-
 >[!IMPORTANT]
 > - Если вы ранее использовали шифрование дисков Azure с Azure AD для шифрования виртуальной машины, необходимо продолжить использовать этот параметр для шифрования виртуальной машины. Дополнительные сведения см. [в статье шифрование дисков Azure с помощью Azure AD (предыдущий выпуск)](disk-encryption-overview-aad.md) . 
 >
 > - Перед шифрованием дисков следует создать [моментальный снимок](snapshot-copy-managed-disk.md) и (или) выполнить резервное копирование. Резервные копии обеспечивают возможность восстановления в случае любого непредвиденного сбоя во время шифрования. Для виртуальных машин с управляемыми дисками необходимо создать резервную копию до начала шифрования. После создания резервной копии можно использовать [командлет Set-азвмдискенкриптионекстенсион](/powershell/module/az.compute/set-azvmdiskencryptionextension) для шифрования управляемых дисков, указав параметр-skipVmBackup. Дополнительные сведения о резервном копировании и восстановлении зашифрованных виртуальных машин см. в статье [резервное копирование и восстановление зашифрованной виртуальной машины Azure](../../backup/backup-azure-vms-encryption.md). 
 >
 > - Шифрование или отключение шифрования может привести к перезагрузке виртуальной машины.
-
 
 ## <a name="install-tools-and-connect-to-azure"></a>Установка средств и подключение к Azure
 
@@ -49,7 +46,7 @@ ms.locfileid: "72244997"
 ### <a name="enable-encryption-on-existing-or-running-vms-with-azure-powershell"></a>Включение шифрования на существующих или выполняющихся виртуальных машинах с Azure PowerShell 
 Используйте командлет [Set-азвмдискенкриптионекстенсион](/powershell/module/az.compute/set-azvmdiskencryptionextension) , чтобы включить шифрование на работающей виртуальной машине IaaS в Azure. 
 
--  **Шифрование работающей виртуальной машины:** Приведенный ниже скрипт инициализирует переменные и запускает командлет Set-Азвмдискенкриптионекстенсион. Группа ресурсов, виртуальная машина и хранилище ключей должны быть уже созданы в качестве необходимых компонентов. Замените значения Микэйваултресаурцеграуп, Мивиртуалмачинересаурцеграуп, Мисекуревм и Мисекуреваулт значениями.
+-  **Зашифровать работающую виртуальную машину:** Приведенный ниже скрипт инициализирует переменные и запускает командлет Set-Азвмдискенкриптионекстенсион. Группа ресурсов, виртуальная машина и хранилище ключей должны быть уже созданы в качестве необходимых компонентов. Замените значения Микэйваултресаурцеграуп, Мивиртуалмачинересаурцеграуп, Мисекуревм и Мисекуреваулт значениями.
 
      ```azurepowershell
       $KVRGname = 'MyKeyVaultResourceGroup';
@@ -82,12 +79,12 @@ ms.locfileid: "72244997"
    >[!NOTE]
    > Синтаксис значения параметра disk-encryption-keyvault — это полная строка идентификатора: /subscriptions/[ИД или GUID подписки]/resourceGroups/[имя группы ресурсов]/providers/Microsoft.KeyVault/vaults/[имя хранилища ключей].</br> Синтаксис значения параметра key-encryption-key —это полный универсальный код ресурса (URI) для ключа шифрования ключей: https://[имя хранилища ключей].vault.azure.net/keys/[имя KEK]/[ИД KEK]. 
 
-- **Проверка того, что диски зашифрованы:** Чтобы проверить состояние шифрования виртуальной машины IaaS, используйте командлет [Get-азвмдискенкриптионстатус](/powershell/module/az.compute/get-azvmdiskencryptionstatus) . 
+- **Убедитесь, что диски зашифрованы:** Чтобы проверить состояние шифрования виртуальной машины IaaS, используйте командлет [Get-азвмдискенкриптионстатус](/powershell/module/az.compute/get-azvmdiskencryptionstatus) . 
      ```azurepowershell-interactive
      Get-AzVmDiskEncryptionStatus -ResourceGroupName 'MyVirtualMachineResourceGroup' -VMName 'MySecureVM'
      ```
     
-- **Отключение шифрования дисков:** Чтобы отключить шифрование, используйте командлет [Disable-азвмдискенкриптион](/powershell/module/az.compute/disable-azvmdiskencryption) . Отключение шифрования диска данных на виртуальной машине Windows, если шифрование дисков операционной системы и данных не работает должным образом. В этом случае отключите шифрование на всех дисках.
+- **Отключить шифрование дисков:** Чтобы отключить шифрование, используйте командлет [Disable-азвмдискенкриптион](/powershell/module/az.compute/disable-azvmdiskencryption) . Отключение шифрования диска данных на виртуальной машине Windows, если шифрование дисков операционной системы и данных не работает должным образом. В этом случае отключите шифрование на всех дисках.
 
      ```azurepowershell-interactive
      Disable-AzVMDiskEncryption -ResourceGroupName 'MyVirtualMachineResourceGroup' -VMName 'MySecureVM'
@@ -111,13 +108,13 @@ ms.locfileid: "72244997"
      >[!NOTE]
      > Синтаксис значения параметра disk-encryption-keyvault — это полная строка идентификатора: /subscriptions/[ИД или GUID подписки]/resourceGroups/[имя группы ресурсов]/providers/Microsoft.KeyVault/vaults/[имя хранилища ключей]. </br> Синтаксис значения параметра key-encryption-key —это полный универсальный код ресурса (URI) для ключа шифрования ключей: https://[имя хранилища ключей].vault.azure.net/keys/[имя KEK]/[ИД KEK]. 
 
-- **Проверка того, что диски зашифрованы:** Чтобы проверить состояние шифрования виртуальной машины IaaS, используйте команду [AZ VM Encryption демонстрация](/cli/azure/vm/encryption#az-vm-encryption-show) . 
+- **Убедитесь, что диски зашифрованы:** Чтобы проверить состояние шифрования виртуальной машины IaaS, используйте команду [AZ VM Encryption демонстрация](/cli/azure/vm/encryption#az-vm-encryption-show) . 
 
      ```azurecli-interactive
      az vm encryption show --name "MySecureVM" --resource-group "MyVirtualMachineResourceGroup"
      ```
 
-- **Отключение шифрования:** чтобы отключить шифрование, используйте команду [az vm encryption disable](/cli/azure/vm/encryption#az-vm-encryption-disable). Отключение шифрования диска данных на виртуальной машине Windows, если шифрование дисков операционной системы и данных не работает должным образом. В этом случае отключите шифрование на всех дисках.
+- **Отключение шифрования.** Чтобы отключить шифрование, используйте команду [az vm encryption disable](/cli/azure/vm/encryption#az-vm-encryption-disable). Отключение шифрования диска данных на виртуальной машине Windows, если шифрование дисков операционной системы и данных не работает должным образом. В этом случае отключите шифрование на всех дисках.
 
      ```azurecli-interactive
      az vm encryption disable --name "MySecureVM" --resource-group "MyVirtualMachineResourceGroup" --volume-type [ALL, DATA, OS]
@@ -139,7 +136,7 @@ ms.locfileid: "72244997"
 | vmName | Имя виртуальной машины для выполнения операции шифрования. |
 | keyVaultName | Имя хранилища ключей, в которое будет передан ключ BitLocker. Его можно получить с помощью командлета `(Get-AzKeyVault -ResourceGroupName <MyKeyVaultResourceGroupName>). Vaultname` или команды Azure CLI `az keyvault list --resource-group "MyKeyVaultResourceGroup"`.|
 | keyVaultResourceGroup | Имя группы ресурсов, содержащей хранилище ключей.|
-|  keyEncryptionKeyURL | URL-адрес ключа шифрования ключа в формате https://@no__t -0keyvault-name&gt;.vault.azure.net/Кэй/&lt;key-Name @ no__t-3. Если вы не хотите использовать KEK, оставьте это поле пустым. |
+|  keyEncryptionKeyURL | URL-адрес ключа шифрования ключа в формате https://&lt;keyvault-Name&gt;. vault.azure.net/key/&lt;KEY-name&gt;. Если вы не хотите использовать KEK, оставьте это поле пустым. |
 | volumeType | Тип тома, для которого будет выполняться шифрование. Допустимые значения: _OS_, _Data_ и _All_. 
 | forceUpdateTag | Передает уникальное значение, такое как GUID, каждый раз, когда операция должна выполняться принудительно. |
 | resizeOSDisk | Если размер раздела ОС будет изменен и займет весь виртуальный жесткий диск ОС до разделения системного тома. |
@@ -170,7 +167,7 @@ New-AzVM -VM $VirtualMachine -ResourceGroupName "MyVirtualMachineResourceGroup"
   
  
 
--  **Шифрование работающей виртуальной машины:** Приведенный ниже скрипт инициализирует переменные и запускает командлет Set-Азвмдискенкриптионекстенсион. Группа ресурсов, виртуальная машина и хранилище ключей должны быть уже созданы в качестве необходимых компонентов. Замените значения Микэйваултресаурцеграуп, Мивиртуалмачинересаурцеграуп, Мисекуревм и Мисекуреваулт значениями. В этом примере в качестве значения параметра VolumeType используется значение "All", что включает тома операционной системы и тома данных. Если требуется шифрование только томов операционной системы, используйте "OS" в качестве значения параметра VolumeType. 
+-  **Зашифровать работающую виртуальную машину:** Приведенный ниже скрипт инициализирует переменные и запускает командлет Set-Азвмдискенкриптионекстенсион. Группа ресурсов, виртуальная машина и хранилище ключей должны быть уже созданы в качестве необходимых компонентов. Замените значения Микэйваултресаурцеграуп, Мивиртуалмачинересаурцеграуп, Мисекуревм и Мисекуреваулт значениями. В этом примере в качестве значения параметра VolumeType используется значение "All", что включает тома операционной системы и тома данных. Если требуется шифрование только томов операционной системы, используйте "OS" в качестве значения параметра VolumeType. 
 
      ```azurepowershell
       $KVRGname = 'MyKeyVaultResourceGroup';
@@ -184,7 +181,7 @@ New-AzVM -VM $VirtualMachine -ResourceGroupName "MyVirtualMachineResourceGroup"
 
       Set-AzVMDiskEncryptionExtension -ResourceGroupName $VMRGname -VMName $vmName -DiskEncryptionKeyVaultUrl $diskEncryptionKeyVaultUrl -DiskEncryptionKeyVaultId $KeyVaultResourceId -VolumeType "All" –SequenceVersion $sequenceVersion;
     ```
-- **Шифрование работающей виртуальной машины с использованием KEK:** В этом примере в качестве значения параметра VolumeType используется значение "All", что включает тома операционной системы и тома данных. Если требуется шифрование только томов операционной системы, используйте "OS" в качестве значения параметра VolumeType.
+- **Шифрование работающей виртуальной машины с использованием KEK.** В этом примере в качестве значения параметра VolumeType используется значение "All", что включает тома операционной системы и тома данных. Если требуется шифрование только томов операционной системы, используйте "OS" в качестве значения параметра VolumeType.
 
      ```azurepowershell
      $KVRGname = 'MyKeyVaultResourceGroup';
@@ -224,12 +221,12 @@ New-AzVM -VM $VirtualMachine -ResourceGroupName "MyVirtualMachineResourceGroup"
 ## <a name="disable-encryption"></a>Отключение шифрования
 Вы можете отключить шифрование с помощью Azure PowerShell, Azure CLI или шаблона Resource Manager. Отключение шифрования диска данных на виртуальной машине Windows, если шифрование дисков операционной системы и данных не работает должным образом. В этом случае отключите шифрование на всех дисках.
 
-- **Отключение шифрования дисков с помощью Azure PowerShell:** Чтобы отключить шифрование, используйте командлет [Disable-азвмдискенкриптион](/powershell/module/az.compute/disable-azvmdiskencryption) . 
+- **Отключите шифрование дисков с помощью Azure PowerShell:** Чтобы отключить шифрование, используйте командлет [Disable-азвмдискенкриптион](/powershell/module/az.compute/disable-azvmdiskencryption) . 
      ```azurepowershell-interactive
      Disable-AzVMDiskEncryption -ResourceGroupName 'MyVirtualMachineResourceGroup' -VMName 'MySecureVM' -VolumeType "all"
      ```
 
-- **Отключение шифрования дисков с помощью Azure CLI:** чтобы отключить шифрование, используйте команду [az vm encryption disable](/cli/azure/vm/encryption#az-vm-encryption-disable). 
+- **Отключение шифрования с помощью Azure CLI.** Для отключения шифрования используйте команду [az vm encryption disable](/cli/azure/vm/encryption#az-vm-encryption-disable). 
      ```azurecli-interactive
      az vm encryption disable --name "MySecureVM" --resource-group "MyVirtualMachineResourceGroup" --volume-type "all"
      ```
@@ -237,14 +234,15 @@ New-AzVM -VM $VirtualMachine -ResourceGroupName "MyVirtualMachineResourceGroup"
 
     1. Нажмите кнопку **Deploy to Azure** (Развернуть в Azure) на странице шаблона [отключения шифрования дисков на виртуальной машине под управлением Windows](https://github.com/Azure/azure-quickstart-templates/tree/master/201-decrypt-running-windows-vm-without-aad).
     2. Выберите подписку, группу ресурсов, расположение, тип тома, виртуальную машину, условия использования и соглашение.
-    3.  Нажмите кнопку **покупка**, чтобы отключить шифрование дисков на работающей виртуальной машине Windows. 
+    3.  Нажмите кнопку **Покупка**, чтобы отключить шифрование дисков на работающей виртуальной Машине Windows. 
 
 ## <a name="unsupported-scenarios"></a>Неподдерживаемые сценарии
 
 Шифрование дисков Azure не работает в следующих сценариях, функциях и технологиях:
 
 - Шифрование ВИРТУАЛЬНЫХ машин базового уровня или виртуальных машин, созданных с помощью классического метода создания виртуальной машины.
-- Шифрование виртуальных машин Windows, настроенных на основе программных RAID-систем.
+- Шифрование виртуальных машин, настроенных на основе программных RAID-систем.
+- Шифрование виртуальных машин, настроенных с помощью Локальные дисковые пространства (S2D), или версий Windows Server до 2016, настроенных с помощью дисковых пространств Windows.
 - Интеграция с локальной системой управления ключами.
 - служба файлов Azure (общая файловая система);
 - сетевая файловая система (NFS);
@@ -253,7 +251,7 @@ New-AzVM -VM $VirtualMachine -ResourceGroupName "MyVirtualMachineResourceGroup"
 - Временные диски ОС.
 - Шифрование общих и распределенных файловых систем, таких как (но не ограничиваясь ими), DFS, GFS, ДРДБ и Цеффс.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие сведения о шифровании дисков Azure](disk-encryption-overview.md)
 - [Примеры сценариев шифрования дисков Azure](disk-encryption-sample-scripts.md)

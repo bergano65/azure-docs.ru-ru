@@ -8,14 +8,14 @@ ms.workload: big-data
 ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
-ms.date: 09/04/2019
+ms.date: 10/29/2019
 ms.custom: seodec18
-ms.openlocfilehash: a77cdcf332d450b2d3d9219ebfbaed2f799e7e6d
-ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
+ms.openlocfilehash: 81c2c2af78f5f066e1b27e14fa774df04d7c5868
+ms.sourcegitcommit: f7f70c9bd6c2253860e346245d6e2d8a85e8a91b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72991174"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73063984"
 ---
 # <a name="data-modeling-in-azure-time-series-insights-preview"></a>Моделирование данных в предварительной версии службы "Аналитика временных рядов"
 
@@ -29,7 +29,7 @@ ms.locfileid: "72991174"
 
 1. Перейдите на панель выбора моделей временных рядов и выберите в меню пункт **типы** . Сверните панель, чтобы сосредоточиться на типах моделей временных рядов.
 
-    [область "типы"![](media/v2-update-how-to-tsm/portal-one.png)](media/v2-update-how-to-tsm/portal-one.png#lightbox)
+    [область "типы" ![](media/v2-update-how-to-tsm/portal-one.png)](media/v2-update-how-to-tsm/portal-one.png#lightbox)
 
 1. Щелкните **+ Добавить**.
 1. Введите все сведения, относящиеся к типам, и нажмите кнопку **создать**. Это действие создает типы в среде.
@@ -64,15 +64,15 @@ ms.locfileid: "72991174"
 
 1. Перейдите на панель выбора моделей временных рядов и выберите в меню пункт **иерархии** . Сверните панель, чтобы сосредоточиться на иерархиях модели временных рядов.
 
-    [область "иерархии!["](media/v2-update-how-to-tsm/portal-six.png)](media/v2-update-how-to-tsm/portal-six.png#lightbox)
+    [область "иерархии !["](media/v2-update-how-to-tsm/portal-six.png)](media/v2-update-how-to-tsm/portal-six.png#lightbox)
 
 1. Щелкните **+ Добавить**.
 
-    [Кнопка "Добавить"![](media/v2-update-how-to-tsm/portal-seven.png)](media/v2-update-how-to-tsm/portal-seven.png#lightbox)
+    [Кнопка "Добавить" ![](media/v2-update-how-to-tsm/portal-seven.png)](media/v2-update-how-to-tsm/portal-seven.png#lightbox)
 
 1. Выберите **+ Добавить уровень** в правой области.
 
-    [Кнопка "Добавить уровень"![](media/v2-update-how-to-tsm/portal-eight.png)](media/v2-update-how-to-tsm/portal-eight.png#lightbox)
+    [Кнопка "Добавить уровень" ![](media/v2-update-how-to-tsm/portal-eight.png)](media/v2-update-how-to-tsm/portal-eight.png#lightbox)
 
 1. Введите сведения об иерархии и выберите **Создать**.
 
@@ -106,7 +106,7 @@ ms.locfileid: "72991174"
 
 1. Перейдите на панель выбора моделей временных рядов и выберите в меню пункт **экземпляры** . Сверните панель, чтобы сосредоточиться на экземплярах модели временных рядов.
 
-    [область "экземпляры"![](media/v2-update-how-to-tsm/portal-thirteen.png)](media/v2-update-how-to-tsm/portal-thirteen.png#lightbox)
+    [область "экземпляры" ![](media/v2-update-how-to-tsm/portal-thirteen.png)](media/v2-update-how-to-tsm/portal-thirteen.png#lightbox)
 
 1. Выберите **Добавить**.
 

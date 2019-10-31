@@ -29,7 +29,7 @@
     - name: Регистрация для сброса пароля
       href: active-directory-passwords-reset-register.md
     - name: Сброс пароля
-      href: user-help-reset-password.md
+      href: active-directory-passwords-update-your-own-password.md
 - name: Справка по приложению Microsoft Authenticator
   items:
     - name: Обзор

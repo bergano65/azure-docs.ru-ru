@@ -16,12 +16,12 @@ ms.date: 05/08/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b2db8d5881b5847adca4fffb72c0a678e1ec550c
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.openlocfilehash: 3a1906b8ac281620381176a2a11dff3841069f69
+ms.sourcegitcommit: f7f70c9bd6c2253860e346245d6e2d8a85e8a91b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72596328"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73062676"
 ---
 # <a name="prerequisites-for-azure-ad-connect"></a>Необходимые условия для Azure AD Connect
 В этой статье описаны необходимые условия и требования к оборудованию для Azure AD Connect.
@@ -221,7 +221,7 @@ ms.locfileid: "72596328"
 | 300 000–600 000 |1,6 ГГц |32 ГБ |450 ГБ |
 | Более 600 000 |1,6 ГГц |32 ГБ |500 ГБ |
 
-Для компьютеров, где выполняются AD FS или серверы веб-приложений, предъявляются следующие минимальные требования:
+Ниже приведены минимальные требования к компьютерам, на которых выполняются AD FS или прокси-серверы.
 
 * процессор: двухъядерный с тактовой частотой 1,6 ГГц или выше;
 * память: 2 ГБ или более;

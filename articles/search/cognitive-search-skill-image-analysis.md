@@ -1,28 +1,29 @@
 ---
-title: Когнитивный навык анализа изображений
-titleSuffix: Azure Cognitive Search
-description: Извлеките семантический текст с помощью анализа изображений, используя свой анализ изображений в конвейере обогащения искусственного интеллекта в Azure Когнитивный поиск.
+title: 'Навык когнитивного поиска: анализ изображений (служба "Поиск Azure")'
+description: Извлечение семантического текста посредством анализа изображений с помощью когнитивного навыка ImageAnalysis в конвейере обогащения в службе "Поиск Azure".
+services: search
 manager: nitinme
 author: luiscabrer
-ms.author: luisca
-ms.service: cognitive-search
+ms.service: search
+ms.workload: search
 ms.topic: conceptual
-ms.date: 11/04/2019
-ms.openlocfilehash: 04114d00f3905675a1794a3875e650661febc832
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.date: 08/28/2019
+ms.author: luisca
+ms.openlocfilehash: e2c8f0519ffcbdbc2445d1fed2725b6f6b948cd1
+ms.sourcegitcommit: f7f70c9bd6c2253860e346245d6e2d8a85e8a91b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72791990"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73064070"
 ---
-# <a name="image-analysis-cognitive-skill"></a>Когнитивный навык анализа изображений
+#   <a name="image-analysis-cognitive-skill"></a>Когнитивный навык анализа изображений
 
 Навык **анализа изображений** извлекает полноценный набор визуальных компонентов на основе содержимого изображения. Например, можно создать заголовок из изображения, сформировать теги, а также определить знаменитостей и ориентиры. Этот навык использует модели машинного обучения, предоставляемые [API компьютерного зрения](https://docs.microsoft.com/azure/cognitive-services/computer-vision/home) в Cognitive Services. 
 
 > [!NOTE]
-> Небольшие тома (20 транзакций) можно бесплатно исполнить в Azure Когнитивный поиск, но для больших рабочих нагрузок требуется [присоединить оплачиваемый Cognitive Services ресурс](cognitive-search-attach-cognitive-services.md). Расходы начисляются при вызове API в Cognitive Services, а также для извлечения изображений в рамках этапа взлома документов в Azure Когнитивный поиск. За извлечение текста из документов плата не взимается.
+> Небольшие тома (20 транзакций) можно бесплатно исполнить в службе поиска Azure, но для больших рабочих нагрузок требуется [присоединить оплачиваемый Cognitive Services ресурс](cognitive-search-attach-cognitive-services.md). Плата взимается при вызове API в Cognitive Services и извлечении изображений при открытии документов в службе "Поиск Azure". За извлечение текста из документов плата не взимается.
 >
-> Плата за выполнение встроенных навыков взимается в рамках существующей [модели оплаты Cognitive Services по мере использования](https://azure.microsoft.com/pricing/details/cognitive-services/). Цены на извлечение изображений описаны на [странице цен на когнитивный Поиск Azure](https://go.microsoft.com/fwlink/?linkid=2042400).
+> Плата за выполнение встроенных навыков взимается в рамках существующей [модели оплаты Cognitive Services по мере использования](https://azure.microsoft.com/pricing/details/cognitive-services/). Плата за извлечение изображений указана на [странице с ценами на Поиск Azure](https://go.microsoft.com/fwlink/?linkid=2042400).
 
 
 ## <a name="odatatype"></a>@odata.type  
@@ -321,8 +322,8 @@ Microsoft.Skills.Vision.ImageAnalysisSkill
 ```json
     "outputFieldMappings": [
         {
-            "sourceFieldName": /document/normalized_images/*/categories/details/landmarks/*",
-            "targetFieldName": "landmarks"
+            "sourceFieldName": "/document/normalized_images/*/categories/detail/celebrities/*",
+            "targetFieldName": "celebrities"
         }
 ```
 ##  <a name="sample-input"></a>Пример ввода
@@ -520,6 +521,6 @@ Microsoft.Skills.Vision.ImageAnalysisSkill
 
 ## <a name="see-also"></a>Дополнительные материалы
 
-+ [Встроенные навыки](cognitive-search-predefined-skills.md)
++ [Стандартные навыки](cognitive-search-predefined-skills.md)
 + [How to define a skillset](cognitive-search-defining-skillset.md) (Определение набора навыков)
 + [Создание индексатора (REST)](https://docs.microsoft.com/rest/api/searchservice/create-indexer)

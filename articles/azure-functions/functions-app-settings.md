@@ -9,12 +9,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/22/2018
 ms.author: glenga
-ms.openlocfilehash: 4426b83ee62f4a894f72e197cbe541b8b669695d
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 896179a393b870390991a8e9942f6e7287ec5c90
+ms.sourcegitcommit: f7f70c9bd6c2253860e346245d6e2d8a85e8a91b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70086811"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73063304"
 ---
 # <a name="app-settings-reference-for-azure-functions"></a>Справочник по параметрам приложений для Функций Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "70086811"
 
 ## <a name="azure_functions_environment"></a>AZURE_FUNCTIONS_ENVIRONMENT
 
-В версии 2. x среды выполнения функций настраивает поведение приложения на основе среды выполнения. Это значение [считывается во время инициализации](https://github.com/Azure/azure-functions-host/blob/dev/src/WebJobs.Script.WebHost/Program.cs#L43). Можно задать `AZURE_FUNCTIONS_ENVIRONMENT` любое значение, но поддерживаются [три значения](/dotnet/api/microsoft.aspnetcore.hosting.environmentname) : [Разработка](/dotnet/api/microsoft.aspnetcore.hosting.environmentname.development), [Промежуточная](/dotnet/api/microsoft.aspnetcore.hosting.environmentname.staging)и [Рабочая среда](/dotnet/api/microsoft.aspnetcore.hosting.environmentname.production). Если `AZURE_FUNCTIONS_ENVIRONMENT` параметр не задан, по умолчанию `Development` используется значение в локальной среде `Production` и в Azure. Этот параметр следует использовать вместо `ASPNETCORE_ENVIRONMENT` установки среды выполнения. 
+В версии 2. x среды выполнения функций настраивает поведение приложения на основе среды выполнения. Это значение [считывается во время инициализации](https://github.com/Azure/azure-functions-host/blob/dev/src/WebJobs.Script.WebHost/Program.cs#L43). Можно задать `AZURE_FUNCTIONS_ENVIRONMENT` любое значение, но поддерживаются [три значения](/dotnet/api/microsoft.aspnetcore.hosting.environmentname) : Разработка, [промежуточное](/dotnet/api/microsoft.aspnetcore.hosting.environmentname.staging) [развертывание](/dotnet/api/microsoft.aspnetcore.hosting.environmentname.development)и [Рабочая среда](/dotnet/api/microsoft.aspnetcore.hosting.environmentname.production). Если параметр `AZURE_FUNCTIONS_ENVIRONMENT` не задан, по умолчанию используется `Development` в локальной среде и `Production` в Azure. Этот параметр следует использовать вместо `ASPNETCORE_ENVIRONMENT` для задания среды выполнения. 
 
 ## <a name="azurewebjobsdashboard"></a>AzureWebJobsDashboard
 
@@ -115,18 +115,18 @@ ms.locfileid: "70086811"
 |---|------------|
 |FUNCTIONS\_EXTENSION\_VERSION|~2|
 
-## <a name="functions_worker_process_count"></a>ЧИСЛО\_РАБОЧИХ\_ПРОЦЕССОВФУНКЦИЙ\_
+## <a name="functions_worker_process_count"></a>ФУНКЦИИ\_число\_рабочих процессов\_
 
-Указывает максимальное количество рабочих процессов на языке и значение `1`по умолчанию. Максимально допустимое значение — `10`. Вызовы функций равномерно распределяются между рабочими процессами языка. Рабочие процессы языка порождаются каждые 10 секунд, пока не будет достигнут Счетчик\_,\_заданный счетчиком рабочих процессов\_функций. Использование нескольких языковых рабочих процессов отличается от [масштабирования](functions-scale.md). Рекомендуется использовать этот параметр, если в рабочей нагрузке есть сочетание вызовов, привязанных к ЦП, и операций ввода-вывода, связанных с вводом-выводом. Этот параметр применяется ко всем non-.NET языкам.
+Указывает максимальное количество рабочих процессов на языке и значение по умолчанию `1`. Максимально допустимое значение — `10`. Вызовы функций равномерно распределяются между рабочими процессами языка. Рабочие процессы языка порождаются каждые 10 секунд до тех пор, пока количество функций не будет установлено функцией\_рабочего\_процесса\_число. Использование нескольких языковых рабочих процессов отличается от [масштабирования](functions-scale.md). Рекомендуется использовать этот параметр, если в рабочей нагрузке есть сочетание вызовов, привязанных к ЦП, и операций ввода-вывода, связанных с вводом-выводом. Этот параметр применяется ко всем non-.NET языкам.
 
 |Ключ|Образец значения|
 |---|------------|
-|ЧИСЛО\_РАБОЧИХ\_ПРОЦЕССОВФУНКЦИЙ\_|2|
+|ФУНКЦИИ\_число\_рабочих процессов\_|2|
 
 
 ## <a name="functions_worker_runtime"></a>FUNCTIONS\_WORKER\_RUNTIME
 
-Среда выполнения языка рабочей роли для загрузки в приложении-функции.  Она будет соответствовать языку, используемому в приложении (например, "dotnet"). Функции на нескольких языках потребуется опубликовать в нескольких приложениях с соответствующим значением среды выполнения рабочей роли.  Допустимые значения `dotnet` :C#(F#/) `node` , ( `powershell` JavaScript/TypeScript) `java` , (Java), (PowerShell) и `python` (Python).
+Среда выполнения языка рабочей роли для загрузки в приложении-функции.  Она будет соответствовать языку, используемому в приложении (например, "dotnet"). Функции на нескольких языках потребуется опубликовать в нескольких приложениях с соответствующим значением среды выполнения рабочей роли.  Допустимые значения: `dotnet`C#(F#/), `node` (JavaScript/TypeScript), `java` (Java), `powershell` (PowerShell) и `python` (Python).
 
 |Ключ|Образец значения|
 |---|------------|
@@ -161,11 +161,12 @@ ms.locfileid: "70086811"
 
 ## <a name="website_node_default_version"></a>WEBSITE\_NODE\_DEFAULT_VERSION
 
-Значение по умолчанию — "8.11.1".
+_Только Windows._  
+Задает версию Node. js, используемую при запуске приложения функции в Windows. Чтобы среда выполнения использовала последнюю доступную версию целевой основной версии, следует использовать символ тильды (~). Например, если задано значение `~10`, используется последняя версия Node. js 10. Если для основной версии используется тильда, не нужно вручную обновлять дополнительный номер версии. 
 
 |Ключ|Образец значения|
 |---|------------|
-|WEBSITE\_NODE\_DEFAULT_VERSION|8.11.1|
+|WEBSITE\_NODE\_DEFAULT_VERSION|~ 10|
 
 ## <a name="website_run_from_package"></a>WEBSITE\_RUN\_FROM\_PACKAGE
 
@@ -181,7 +182,7 @@ ms.locfileid: "70086811"
 
 По умолчанию прокси-серверы Функций будут использовать команду для отправки вызовов API из них самих непосредственно в функции в одном приложении-функции, а не создавать новый HTTP-запрос. Этот параметр позволяет отключить такую реакцию на событие.
 
-|Ключ|Значение|Описание|
+|Ключ|Value|Описание|
 |-|-|-|
 |AZURE_FUNCTION_PROXY_DISABLE_LOCAL_CALL|true|Вызовы с URL-адресом внутреннего сервера, который указывает на функцию в локальном приложении-функции, больше не будут отправляться непосредственно в функцию, а вместо этого будут направляться во внешний интерфейс HTTP для приложения-функции|
 |AZURE_FUNCTION_PROXY_DISABLE_LOCAL_CALL|false|Это значение по умолчанию. Вызовы с URL-адреса внутреннего сервера, указывающего на функцию в локальном приложении-функции, будут перенаправляться непосредственно к этой Функции|
@@ -191,10 +192,10 @@ ms.locfileid: "70086811"
 
 Этот параметр контролирует, декодируется ли сочетание знаков %2F как косая черта в параметрах маршрута, если оно вставлено в URL-адрес внутреннего сервера. 
 
-|Ключ|Значение|Описание|
+|Ключ|Value|Описание|
 |-|-|-|
 |AZURE_FUNCTION_PROXY_BACKEND_URL_DECODE_SLASHES|true|Параметры маршрута с закодированными косыми чертами будут его декодировать. `example.com/api%2ftest` станет `example.com/api/test`|
-|AZURE_FUNCTION_PROXY_BACKEND_URL_DECODE_SLASHES|false|Это поведение установлено по умолчанию. Все параметры маршрута будут передаваться без изменений|
+|AZURE_FUNCTION_PROXY_BACKEND_URL_DECODE_SLASHES|false|Это поведение по умолчанию. Все параметры маршрута будут передаваться без изменений|
 
 ### <a name="example"></a>Пример
 
@@ -213,13 +214,13 @@ ms.locfileid: "70086811"
     }
 }
 ```
-|Декодирование URL-адреса|Ввод|Вывод|
+|Декодирование URL-адреса|Входные данные|Выходные данные|
 |-|-|-|
 |true|myfunction.com/test%2fapi|example.com/test/api
 |false|myfunction.com/test%2fapi|example.com/test%2fapi|
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Узнайте, как обновлять параметры приложения](functions-how-to-use-azure-function-app-settings.md#settings)
 

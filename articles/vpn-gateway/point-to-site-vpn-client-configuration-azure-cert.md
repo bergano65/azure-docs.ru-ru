@@ -1,5 +1,5 @@
 ---
-title: Создание и установка файлов конфигурации VPN-клиента для подключений "точка — сеть" для аутентификации Azure на основе сертификата — Azure
+title: 'Создание и установка файлов конфигурации VPN-клиента P2S для аутентификации на сертификате Azure: Azure'
 description: Создание и установка файлов конфигурации VPN-клиента Windows, Linux, Linux (strongSwan) и Mac OS X для использования аутентификации на основе сертификата для подключения "точка — сеть".
 services: vpn-gateway
 author: cherylmc
@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: article
 ms.date: 09/12/2019
 ms.author: cherylmc
-ms.openlocfilehash: 095c7c4bf2a0fb08c0a7fe7e0a8118e76732c9c7
-ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
+ms.openlocfilehash: fb6c484e234b4641a521bd876acdfeb4df562260
+ms.sourcegitcommit: f7f70c9bd6c2253860e346245d6e2d8a85e8a91b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70961591"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73063114"
 ---
 # <a name="create-and-install-vpn-client-configuration-files-for-native-azure-certificate-authentication-p2s-configurations"></a>Создание и установка файлов конфигурации VPN-клиента для настройки подключений типа "точка — сеть" с использованием собственной аутентификации Azure на основе сертификата
 
@@ -103,13 +103,13 @@ ms.locfileid: "70961591"
    ![Параметры аутентификации](./media/point-to-site-vpn-client-configuration-azure-cert/authsettings.png)
 6. Щелкните **Select…** (Выбрать), чтобы выбрать сертификат клиента, который будет использоваться для аутентификации. Это сертификат, установленный на шаге 2.
 
-   ![сертификат](./media/point-to-site-vpn-client-configuration-azure-cert/certificate.png)
+   ![на основе сертификата.](./media/point-to-site-vpn-client-configuration-azure-cert/certificate.png)
 7. В окне **Choose An Identity** (Выбор удостоверения) отобразится список доступных сертификатов. Выберите нужный сертификат, а затем щелкните **Continue** (Продолжить).
 
-   ![identity](./media/point-to-site-vpn-client-configuration-azure-cert/identity.png)
+   ![удостоверение](./media/point-to-site-vpn-client-configuration-azure-cert/identity.png)
 8. В поле **Local ID** (Локальный идентификатор) укажите имя сертификата (из шага 6). В нашем примере это ikev2Client.com. Щелкните **Apply** (Применить), чтобы сохранить изменения.
 
-   ![применить](./media/point-to-site-vpn-client-configuration-azure-cert/applyconnect.png)
+   ![apply](./media/point-to-site-vpn-client-configuration-azure-cert/applyconnect.png)
 9. В диалоговом окне **Network** (Сеть) щелкните **Apply** (Применить), чтобы сохранить все изменения. Затем щелкните **Connect** (Подключиться), чтобы установить подключение типа "точка — сеть" к виртуальной сети Azure.
 
 ## <a name="linuxgui"></a>Linux (графический пользовательский интерфейс strongSwan)
@@ -174,17 +174,17 @@ ms.locfileid: "70961591"
   
    ```
    conn azure
-   keyexchange=ikev2
-   type=tunnel
-   leftfirewall=yes
-   left=%any
-   leftauth=eap-tls
-   leftid=%client # use the DNS alternative name prefixed with the %
-   right= Enter the VPN Server value here# Azure VPN gateway address
-   rightid=% # Enter the VPN Server value here# Azure VPN gateway FQDN with %
-   rightsubnet=0.0.0.0/0
-   leftsourceip=%config
-   auto=add
+         keyexchange=ikev2
+         type=tunnel
+         leftfirewall=yes
+         left=%any
+         leftauth=eap-tls
+         leftid=%client # use the DNS alternative name prefixed with the %
+         right= Enter the VPN Server value here# Azure VPN gateway address
+         rightid=% # Enter the VPN Server value here# Azure VPN gateway FQDN with %
+         rightsubnet=0.0.0.0/0
+         leftsourceip=%config
+         auto=add
    ```
 6. Добавьте следующий код в файл */etc/ipsec.secrets*.
 
@@ -199,7 +199,7 @@ ms.locfileid: "70961591"
    # ipsec up azure
    ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вернитесь к статье, чтобы [завершить настройку подключения типа "точка — сеть"](vpn-gateway-howto-point-to-site-rm-ps.md).
 

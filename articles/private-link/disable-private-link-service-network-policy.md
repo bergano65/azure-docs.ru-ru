@@ -7,16 +7,16 @@ ms.service: private-link
 ms.topic: article
 ms.date: 09/16/2019
 ms.author: kumud
-ms.openlocfilehash: b2003b9c7520cfa3e82576fd3430063c20d452ff
-ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
+ms.openlocfilehash: 53df209d080cf91be9c558b43edaa618c0748fc5
+ms.sourcegitcommit: b45ee7acf4f26ef2c09300ff2dba2eaa90e09bc7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71104565"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73101535"
 ---
 # <a name="disable-network-policies-for-private-link-service-source-ip"></a>Отключить политики сети для исходного IP-адреса службы частной связи
 
-Чтобы выбрать исходный IP-адрес для службы частной связи, в подсети требуется явный параметр `privateLinkServiceNetworkPolicies` отключения. Этот параметр применим только к конкретному частному IP-адресу, выбранному в качестве исходного IP-адреса службы частной связи. Для других ресурсов в подсети управление доступом осуществляется на основе определения правил безопасности группы безопасности сети (NSG). 
+Чтобы выбрать исходный IP-адрес для службы частной связи, в подсети необходимо указать явный параметр отключения `privateLinkServiceNetworkPolicies`. Этот параметр применим только к конкретному частному IP-адресу, выбранному в качестве исходного IP-адреса службы частной связи. Для других ресурсов в подсети управление доступом осуществляется на основе определения правил безопасности группы безопасности сети (NSG). 
  
 При использовании любого клиента Azure (PowerShell, CLI или шаблонов) для изменения этого свойства требуется дополнительный шаг. Вы можете отключить политику с помощью Cloud Shell из портал Azure или локальной установки Azure PowerShell, Azure CLI или использовать шаблоны Azure Resource Manager.  
  
@@ -30,9 +30,7 @@ $virtualNetwork= Get-AzVirtualNetwork `
   -Name "myVirtualNetwork" ` 
   -ResourceGroupName "myResourceGroup"  
    
-($virtualNetwork ` 
-  | Select -ExpandProperty subnets ` 
-  | Where-Object  {$_.Name -eq 'default'} ).privateLinkServiceNetworkPolicies = "Disabled" 
+($virtualNetwork | Select -ExpandProperty subnets | Where-Object  {$_.Name -eq 'default'} ).privateLinkServiceNetworkPolicies = "Disabled"  
  
 $virtualNetwork | Set-AzVirtualNetwork 
 ```
@@ -72,6 +70,6 @@ az network vnet subnet update \
 } 
  
 ```
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о [частной конечной точке Azure](private-endpoint-overview.md)
  

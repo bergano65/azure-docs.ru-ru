@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/16/2018
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: cc0539462fad0a73d5fc7eb75d2078e513df4e5d
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 12976e2b2dd37b640efe1823fc8d2ca7048ebcdb
+ms.sourcegitcommit: b45ee7acf4f26ef2c09300ff2dba2eaa90e09bc7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72926536"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73097365"
 ---
 # <a name="troubleshoot-azure-files-problems-in-linux"></a>Устранение неполадок службы файлов Azure в Linux
 
@@ -126,7 +126,7 @@ ms.locfileid: "72926536"
 
 ### <a name="solution"></a>Решение
 
-Функция шифрования протокола SMB 3.0 для Linux появилась в ядре версии 4.11. Эта функция позволяет подключать файловый ресурс Azure из локальной среды или другого региона Azure. Эта функция входит в дистрибутивы Linux, перечисленные в разделе о [минимальных рекомендуемых версиях с соответствующими возможностями подключения (SMB версии 2.1 и SMB версии 3.0)](storage-how-to-use-files-linux.md#minimum-recommended-versions-with-corresponding-mount-capabilities-smb-version-21-vs-smb-version-30). В других дистрибутивах нужно использовать ядро 4.11 или более поздней версии.
+Функция шифрования протокола SMB 3.0 для Linux появилась в ядре версии 4.11. Эта функция позволяет подключать файловый ресурс Azure из локальной среды или другого региона Azure. Некоторые дистрибутивы Linux могут относить изменения из ядра 4,11 в более старые версии ядра Linux, которые они поддерживают. Чтобы определить, поддерживает ли ваша версия Linux протокол SMB 3,0 с шифрованием, обратитесь к разделу [Использование службы файлов Azure с Linux](storage-how-to-use-files-linux.md). 
 
 Если используемый SMB-клиент Linux не поддерживает шифрование, подключите службу файлов Azure с помощью SMB 2.1 с виртуальной машины Linux в Azure, которая расположена в том же центре обработки данных, что и общий файловый ресурс. Убедитесь, что параметр [Требуется безопасное перемещение]( https://docs.microsoft.com/azure/storage/common/storage-require-secure-transfer) отключен в учетной записи хранения. 
 
@@ -281,7 +281,7 @@ sudo mount -t cifs //<storage-account-name>.file.core.windows.net/<share-name> <
 - [CIFS: устранение возможного повреждения содержимого памяти во время повторного подключения](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=53e0e11efe9289535b060a51d4cf37c25e0d0f2b)
 - [CIFS: устранение возможной двойной блокировки мьютекса во время повторного подключения — для ядра v4.9 и более поздних версий](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=96a988ffeb90dba33a71c3826086fe67c897a183)
 
-Тем не менее эти изменения могут быть перенесены еще не во все дистрибутивы Linux. Это и другие исправления проблем с повторным подключением можно найти в списке [минимальных рекомендуемых версии с соответствующими возможностями подключения (SMB версий 2.1 и 3.0)](storage-how-to-use-files-linux.md#minimum-recommended-versions-with-corresponding-mount-capabilities-smb-version-21-vs-smb-version-30) в руководстве по [использованию Файлов Azure в Linux](storage-how-to-use-files-linux.md). Это исправление можно получить, выполнив обновление до одной из этих рекомендуемых версий ядра.
+Тем не менее эти изменения могут быть перенесены еще не во все дистрибутивы Linux. Если вы используете популярную дистрибутив Linux, вы можете проверить [использование файлов Azure с Linux](storage-how-to-use-files-linux.md) , чтобы узнать, какая версия дистрибутива имеет необходимые изменения ядра.
 
 ### <a name="workaround"></a>Возможное решение
 

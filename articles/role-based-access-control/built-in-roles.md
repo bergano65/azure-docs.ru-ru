@@ -11,16 +11,16 @@ ms.devlang: ''
 ms.topic: reference
 ms.tgt_pltfrm: ''
 ms.workload: identity
-ms.date: 10/22/2019
+ms.date: 10/28/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro
-ms.openlocfilehash: 31e19034f6a2c6f5ab52cbc34d8b3f6e0a1051bc
-ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
+ms.openlocfilehash: dff222788480eea882614ad29478df1dce359199
+ms.sourcegitcommit: b45ee7acf4f26ef2c09300ff2dba2eaa90e09bc7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72803585"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73101295"
 ---
 # <a name="built-in-roles-for-azure-resources"></a>Встроенные роли для ресурсов Azure
 
@@ -114,6 +114,7 @@ ms.locfileid: "72803585"
 | [Читатель Управляемых приложений](#managed-applications-reader) | Позволяет считывать ресурсы в управляемом приложении и запрашивать доступ JIT. |
 | [Участник управляемого удостоверения](#managed-identity-contributor) | Создание, чтение, обновление и удаление пользовательских удостоверений. |
 | [Оператор управляемого удостоверения](#managed-identity-operator) | Чтение и назначение пользовательских удостоверений. |
+| [Удаление роли назначения регистрации управляемых служб](#managed-services-registration-assignment-delete-role) | Роль удаления назначения регистрации управляемых служб позволяет управлять пользователями клиента для удаления назначения регистрации, назначенного их клиенту. |
 | [Участник группы управления](#management-group-contributor) | Роль участника группы управления |
 | [Читатель группы управления](#management-group-reader) | Роль читателя группы управления |
 | [Monitoring Contributor](#monitoring-contributor) (Участник мониторинга) | Может читать все данные мониторинга и изменять параметры мониторинга. Ознакомьтесь также со статьей [Приступая к работе с ролями, разрешениями и системой безопасности с помощью Azure Monitor](../azure-monitor/platform/roles-permissions-security.md#built-in-monitoring-roles). |
@@ -1963,6 +1964,23 @@ ms.locfileid: "72803585"
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+## <a name="managed-services-registration-assignment-delete-role"></a>Удаление роли назначения регистрации управляемых служб
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Роль удаления назначения регистрации управляемых служб позволяет управлять пользователями клиента для удаления назначения регистрации, назначенного их клиенту. |
+> | **Id** | 91c1777a-f3dc-4fae-b103-61d183457e46 |
+> | **Действия** |  |
+> | Microsoft. ManagedServices/Регистратионассигнментс/Read | Возвращает список назначений регистрации управляемых служб. |
+> | Microsoft. ManagedServices/Регистратионассигнментс/Delete | Удаляет назначение регистрации управляемых служб. |
+> | Microsoft. ManagedServices/Оператионстатусес/Read | Считывает состояние операции ресурса. |
 > | **NotActions** |  |
 > | *Нет* |  |
 > | **Действия с данными** |  |

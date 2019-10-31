@@ -68,7 +68,7 @@
       items:
         - name: Табличное моделирование
           href: 'https://docs.microsoft.com/analysis-services/tabular-models/tabular-models-ssas'
-        - name: Развертывание из Visual Studio (SSDT)
+        - name: Развертывание из Visual Studio
           href: analysis-services-deploy.md
         - name: "Обновление с помощью REST\_API"
           href: analysis-services-async-refresh.md

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 9/27/2018
 ms.author: harelbr
 ms.subservice: alerts
-ms.openlocfilehash: f341a3599607e527556f90626dd866418910f61e
-ms.sourcegitcommit: 87efc325493b1cae546e4cc4b89d9a5e3df94d31
+ms.openlocfilehash: 3bc17830a4852aa3af1a22f53e54c86ee002150d
+ms.sourcegitcommit: b45ee7acf4f26ef2c09300ff2dba2eaa90e09bc7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73052322"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73099754"
 ---
 # <a name="create-a-metric-alert-with-a-resource-manager-template"></a>Создание оповещения о метриках с помощью шаблона Resource Manager
 
@@ -27,8 +27,9 @@ ms.locfileid: "73052322"
 Основные этапы:
 
 1. Используйте один из приведенных ниже шаблонов в виде JSON-файла, описывающего создание оповещения.
-2. Отредактируйте и используйте соответствующий файл параметров в качестве JSON, чтобы настроить оповещение.
-3. Разверните шаблон с помощью [любого метода развертывания](../../azure-resource-manager/resource-group-template-deploy.md).
+2. Измените и используйте соответствующий файл параметров как JSON, чтобы настроить оповещение.
+3. Сведения о параметре `metricName` см. в разделе Доступные метрики в [Azure Monitor поддерживаемых метриках](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-supported).
+4. Разверните шаблон с помощью [любого метода развертывания](../../azure-resource-manager/resource-group-template-deploy.md).
 
 ## <a name="template-for-a-simple-static-threshold-metric-alert"></a>Шаблон для простого оповещения о метрике со статическим пороговым значением
 
