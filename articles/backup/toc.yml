@@ -232,6 +232,8 @@
           href: backup-azure-restore-windows-server.md
         - name: Восстановление состояния системы Windows Server
           href: backup-azure-restore-system-state.md
+        - name: Управление резервным копированием файлов и папок Windows Server
+          href: backup-azure-manage-mars.md
     - name: Хранилище Служб восстановления
       items:
         - name: Обзор хранилищ Служб восстановления

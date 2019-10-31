@@ -43,6 +43,8 @@
       items:
         - name: Принципы работы MFA
           href: concept-mfa-howitworks.md
+        - name: Включение MFA
+          href: concept-mfa-get-started.md
         - name: Лицензирование пользователей
           href: concept-mfa-licensing.md
         - name: Управление поставщиком аутентификации
@@ -135,6 +137,10 @@
           href: howto-authentication-passwordless-deployment.md
         - name: Ключи безопасности без пароля
           href: howto-authentication-passwordless-security-key.md
+        - name: Вход без пароля в Windows 10
+          href: howto-authentication-passwordless-security-key-windows.md
+        - name: Вход без пароля в локальной среде
+          href: howto-authentication-passwordless-security-key-on-premises.md
         - name: Вход без пароля с помощью телефона
           href: howto-authentication-passwordless-phone.md
         - name: Windows Hello для бизнеса

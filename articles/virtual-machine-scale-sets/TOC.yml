@@ -125,6 +125,8 @@
     - name: Обслуживание и обновления
       href: ../virtual-machines/windows/maintenance-and-updates.md
       maintainContext: true
+    - name: Режимы оркестрации
+      href: orchestration-modes.md
     - name: Хранилище дисков
       items:
         - name: Управляемые диски

@@ -8,12 +8,12 @@ ms.topic: include
 ms.author: estfan
 ms.custom: include file
 ms.date: 05/15/2018
-ms.openlocfilehash: aa1001661d8fe03855e1a28b882f674bee3606b2
-ms.sourcegitcommit: 9dec0358e5da3ceb0d0e9e234615456c850550f6
+ms.openlocfilehash: d60d7727e0674298fa6da7e7330221318da23efd
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2019
-ms.locfileid: "72311996"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73161620"
 ---
 * Если вы используете Базу данных SQL Azure, следуйте инструкциям в разделе [Подключение к базе данных](#connect-azure-sql-db).
 
@@ -59,7 +59,7 @@ ms.locfileid: "72311996"
    * `User ID=<your-user-name>`
    * `Password=<your-password>`
 
-   ![Создание подключения SQL Server](./media/connectors-create-api-sqlazure/sql-server-create-connection.png)
+   ![Создание подключения к SQL Server](./media/connectors-create-api-sqlazure/sql-server-create-connection.png)
 
 1. Если в SQL Server используется проверка подлинности Windows или обычная, выберите **тип проверки подлинности**.
 

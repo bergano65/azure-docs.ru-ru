@@ -50,6 +50,8 @@
           href: howto-conditional-access-policy-admin-mfa.md
         - name: Запрос на MFA для управления Azure
           href: howto-conditional-access-policy-azure-management.md
+        - name: Обязательная многофакторная проверка подлинности для всех пользователей
+          href: howto-conditional-access-policy-all-users-mfa.md
         - name: Блокировка устаревших методов проверки подлинности
           href: howto-conditional-access-policy-block-legacy.md
         - name: Условный доступ на основе рисков

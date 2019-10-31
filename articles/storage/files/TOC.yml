@@ -27,6 +27,8 @@
       href: storage-files-planning.md
     - name: Планирование развертывания службы синхронизации файлов Azure
       href: storage-sync-files-planning.md
+    - name: Рекомендации по работе с сетями для обеспечения прямого доступа
+      href: storage-files-networking-overview.md
     - name: Общие сведения о распределении по уровням в облаке
       href: storage-sync-cloud-tiering.md
     - name: Получение сведений об учетных записях хранения
@@ -101,6 +103,8 @@
           href: storage-sync-files-deployment-guide.md
         - name: Настройка параметров брандмауэра и прокси-сервера службы "Синхронизация файлов"
           href: storage-sync-files-firewall-and-proxy.md
+        - name: Использование SQL Server FCI с общими папками уровня "Премиум"
+          href: ../../virtual-machines/windows/sql/virtual-machines-windows-portal-sql-create-failover-cluster-premium-file-share.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
     - name: Подключение
       items:
         - name: Использование Файлов Azure в Windows
@@ -109,6 +113,14 @@
           href: storage-how-to-use-files-linux.md
         - name: Использование Файлов Azure в macOS
           href: storage-how-to-use-files-mac.md
+    - name: Сеть
+      items:
+        - name: Настройка VPN-подключения "сеть — сеть"
+          href: storage-files-configure-s2s-vpn.md
+        - name: "Настройка VPN-подключения типа \"точка\_—\_сеть\" в Windows"
+          href: storage-files-configure-p2s-vpn-windows.md
+        - name: "Настройка VPN-подключения типа \"точка\_—\_сеть\" в Linux"
+          href: storage-files-configure-p2s-vpn-linux.md
     - name: Управление
       items:
         - name: Регистрация сервера в службе "Синхронизация файлов Azure"
@@ -169,6 +181,8 @@
           href: storage-troubleshooting-files-performance.md
         - name: Устранение неполадок службы "Синхронизация файлов Azure"
           href: storage-sync-files-troubleshoot.md
+        - name: Устранение неполадок при удалении Файлов Azure
+          href: storage-troubleshoot-cannot-delete-files-azure-file-share.md
 - name: Справочные материалы
   items:
     - name: Azure PowerShell

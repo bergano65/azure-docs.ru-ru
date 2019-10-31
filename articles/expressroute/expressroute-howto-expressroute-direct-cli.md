@@ -1,6 +1,6 @@
 ---
 title: Настройка Azure ExpressRoute Direct в Azure CLI | Документация Майкрософт
-description: Эта статья поможет вам настроить ExpressRoute Direct с помощью Azure CLI
+description: Эта статья поможет вам настроить функцию ExpressRoute Direct с помощью Azure CLI
 services: expressroute
 author: cherylmc
 ms.service: expressroute
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 05/20/2019
 ms.author: cherylmc
 ms.custom: seodec18
-ms.openlocfilehash: ebfe3db43de87e67ad05ed8cb9f5812b5ded04e0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a879344fddd6d12ae8a50e109dcaf4a4bb2c1b68
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65965905"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73161554"
 ---
 # <a name="configure-expressroute-direct-by-using-the-azure-cli"></a>Настройка ExpressRoute Direct с помощью Azure CLI
 
@@ -272,7 +272,7 @@ ms.locfileid: "65965905"
    }
    ```
 
-   Чтобы выключить порты, используйте эту же процедуру с параметром `AdminState = “Disabled”`.
+   Чтобы выключить порты, используйте эту же процедуру с параметром `AdminState = "Disabled"`.
 
 ## <a name="circuit"></a>Создание канала
 
@@ -280,9 +280,9 @@ ms.locfileid: "65965905"
 
 Вы можете добавить дополнительную пропускную способность в ExpressRoute Direct только для тех сценариев, которые описаны в этой статье. Поддерживаются варианты пропускной способности 40 Гбит/с и 100 Гбит/с.
 
-**SkuTier** может быть локальной "," стандартный "или" уровня "премиум".
+**Скутиер** может быть локальным, стандартным или Premium.
 
-**SkuFamily** должно быть MeteredData только как неограниченное на ExpressRoute Direct не поддерживается.
+**Скуфамили** должен быть MeteredData только как неограниченный. в ExpressRoute Direct не поддерживается.
 Создайте канал в ресурсе ExpressRoute Direct:
 
   ```azurecli

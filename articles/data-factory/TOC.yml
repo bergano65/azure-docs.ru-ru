@@ -82,7 +82,7 @@
               href: tutorial-incremental-copy-partitioned-file-name-copy-data-tool.md
     - name: Преобразование данных с помощью функции сопоставления потоков данных
       href: tutorial-data-flow.md
-    - name: Преобразование данных в облаке
+    - name: Внешние преобразования
       items:
         - name: HDInsight Spark
           items:
@@ -94,7 +94,7 @@
           items:
             - name: Пользовательский интерфейс
               href: transform-data-using-databricks-notebook.md
-    - name: Преобразование данных в виртуальной сети
+    - name: Преобразование Hive в виртуальной сети
       items:
         - name: Пользовательский интерфейс
           href: tutorial-transform-data-hive-virtual-network-portal.md
@@ -622,6 +622,8 @@
       items:
         - name: Обработка текстовых файлов с фиксированной шириной
           href: how-to-fixed-width.md
+        - name: Обработка строк ошибок
+          href: how-to-data-flow-error-rows.md
     - name: Перенос рабочих нагрузок SSIS из локальных систем
       items:
         - name: Обзор переноса рабочих нагрузок SSIS

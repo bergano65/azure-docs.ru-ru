@@ -68,7 +68,7 @@
               href: entitlement-management-access-package-request-policy.md
             - name: Изменение параметров жизненного цикла
               href: entitlement-management-access-package-lifecycle-policy.md
-            - name: Просмотр заданий и управление ими
+            - name: Просмотр запросов
               href: entitlement-management-access-package-requests.md
             - name: 'Просмотр, добавление и удаление назначений'
               href: entitlement-management-access-package-assignments.md

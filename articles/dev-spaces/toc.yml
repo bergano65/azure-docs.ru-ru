@@ -81,6 +81,8 @@
           href: how-to/upgrade-tools.md
         - name: Использование CI/CD в Azure Dev Spaces
           href: how-to/setup-cicd.md
+        - name: Использование действий GitHub с Azure Dev Spaces (предварительная версия)
+          href: how-to/github-actions.md
         - name: Использование подключаемого модуля Azure Dev Spaces для Jenkins
           href: ../jenkins/tutorial-jenkins-dev-spaces.md
         - name: Непрерывность бизнес-процессов и аварийное восстановление в Azure Dev Spaces
@@ -89,6 +91,8 @@
           href: how-to/run-dev-spaces-windows-containers.md
         - name: Использование traefik для пользовательского входящего трафика и HTTPS
           href: how-to/ingress-https-traefik.md
+        - name: Использование Azure Dev Spaces Connect (предварительная версия)
+          href: how-to/connect.md
     - name: Устранение неполадок
       href: troubleshooting.md
     - name: Часто задаваемые вопросы

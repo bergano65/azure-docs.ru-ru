@@ -49,6 +49,8 @@
       href: manage-stale-devices.md
     - name: Включение службы Enterprise State Roaming
       href: enterprise-state-roaming-enable.md
+    - name: Использование виртуальных машин Windows Azure и Azure AD
+      href: howto-vm-sign-in-azure-ad-windows.md
     - name: Инфраструктура виртуальных рабочих столов
       href: howto-device-identity-virtual-desktop-infrastructure.md
     - name: 'Развертывание рабочих станций, управляемых Azure'

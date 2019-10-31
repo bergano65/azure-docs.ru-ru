@@ -68,6 +68,8 @@
       href: environment-setup.md
     - name: Рекомендации по пропускной способности для удаленных сеансов
       href: bandwidth-recommendations.md
+    - name: Определение задержки подключения пользователей
+      href: connection-latency.md
     - name: Делегированный доступ в Виртуальном рабочем столе Windows
       href: delegated-access-virtual-desktop.md
     - name: Методы балансировки нагрузки пула узлов

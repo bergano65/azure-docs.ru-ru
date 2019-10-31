@@ -38,6 +38,8 @@
       href: spring-cloud-quotas.md
     - name: Основные сведения о метриках в Azure Spring Cloud
       href: spring-cloud-concept-metrics.md
+    - name: Планирование аварийного восстановления
+      href: disaster-recovery.md
 - name: Руководства
   items:
     - name: 'Как запустить, приостановить или удалить приложение Azure Spring Cloud'
