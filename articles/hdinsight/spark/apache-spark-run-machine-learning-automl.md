@@ -1,5 +1,5 @@
 ---
-title: Запуск Машинное обучение Azure рабочих нагрузок на Apache Spark в Azure HDInsight
+title: Запуск Машинное обучение Azure рабочих нагрузок на Apache Spark в HDInsight
 description: Узнайте, как выполнять рабочие нагрузки Машинного обучения Azure с помощью автоматического машинного обучения в Apache Spark в Azure HDInsight.
 author: hrasheed-msft
 ms.author: hrasheed
@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 01/14/2019
-ms.openlocfilehash: 599fa62d253eda7992d7d7db4f5178d3ce428a9c
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: 14cb4f02bc18bda24f022f1ccf41a06776a5136b
+ms.sourcegitcommit: 3486e2d4eb02d06475f26fbdc321e8f5090a7fac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70814038"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73241483"
 ---
 # <a name="run-azure-machine-learning-workloads-with-automated-machine-learning-on-apache-spark-in-hdinsight"></a>Запуск Машинное обучение Azure рабочих нагрузок с помощью автоматического машинного обучения на Apache Spark в HDInsight
 
@@ -21,7 +21,7 @@ ms.locfileid: "70814038"
 
 ## <a name="install-azure-machine-learning-on-an-hdinsight-cluster"></a>Установка Машинного обучения Azure в кластере HDInsight
 
-Общие руководства по автоматическому машинному обучению см. в разделе [учебник. Создание регрессионной модели с помощью автоматического машинного обучения](../../machine-learning/service/tutorial-auto-train-models.md).
+Общие руководства по автоматическому машинному обучению см. [в разделе Учебник. Использование автоматизированного машинного обучения для создания модели регрессии](../../machine-learning/service/tutorial-auto-train-models.md).
 Все новые кластеры HDInsight-Spark предварительно устанавливаются с помощью пакета SDK AzureML-Аутомл. Вы можете приступить к работе с Аутомл в HDInsight с помощью этого [примера записной книжки Jupyter](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/azure-hdi). Этот пример Jupyter Notebook показывает, как использовать классификатор автоматического машинного обучения для решения простой проблемы классификации.
 
 > [!Note]
@@ -71,10 +71,10 @@ dataflow_with_token = dprep.read_csv(
 
 ## <a name="experiment-submission"></a>Отправка эксперимента
 
-В [конфигурации автоматического машинного обучения](https://docs.microsoft.com/python/api/azureml-train-automl/azureml.train.automl.automlconfig)свойство `spark_context` должно быть установлено для запуска пакета в распределенном режиме. Свойство `concurrent_iterations`, которое является максимальным числом параллельно выполняемых итераций, должно быть меньше количества ядер исполнителя для приложения Spark.
+В [автоматической конфигурации машинного обучения](https://docs.microsoft.com/python/api/azureml-train-automl/azureml.train.automl.automlconfig)свойству `spark_context` должно быть присвоено значение, чтобы пакет был запущен в распределенном режиме. Свойство `concurrent_iterations`, которое является максимальным числом параллельно выполняемых итераций, должно быть меньше количества ядер исполнителя для приложения Spark.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о мотивации автоматизированного машинного обучения см. в разделе [модели выпуска с помощью автоматизированного машинного обучения Майкрософт.](https://azure.microsoft.com/blog/release-models-at-pace-using-microsoft-s-automl/)
-* Дополнительные сведения об использовании автоматизированных возможностей ML в машинном [обучении Azure см. в статье новые возможности автоматического машинного обучения в службе машинное обучение Azure](https://azure.microsoft.com/blog/new-automated-machine-learning-capabilities-in-azure-machine-learning-service/) .
+* Дополнительные сведения об использовании автоматизированных возможностей ML в машинном [обучении Azure см. в разделе новые возможности автоматического машинного обучения в машинное обучение Azure](https://azure.microsoft.com/blog/new-automated-machine-learning-capabilities-in-azure-machine-learning-service/)
 * [Проект AutoML от Microsoft Research](https://www.microsoft.com/research/project/automl/)

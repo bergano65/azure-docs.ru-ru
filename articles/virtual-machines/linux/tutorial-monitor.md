@@ -16,10 +16,10 @@ ms.date: 09/30/2019
 ms.author: magoedte
 ms.custom: mvc
 ms.openlocfilehash: 9c6458eea2b1352e7d13ea6691eac4498182ecd3
-ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
+ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2019
+ms.lasthandoff: 10/28/2019
 ms.locfileid: "71679402"
 ---
 # <a name="tutorial-monitor-a-linux-virtual-machine-in-azure"></a>Руководство по мониторингу виртуальных машин Linux в Azure
@@ -123,7 +123,7 @@ az vm boot-diagnostics get-boot-log --resource-group myResourceGroupMonitor --na
 
     ![Просмотр метрик узла.](./media/tutorial-monitoring/monitor-host-metrics.png)
 
-## <a name="enable-advanced-monitoring"></a>Включить расширенный мониторинг
+## <a name="enable-advanced-monitoring"></a>Включение расширенного мониторинга
 
 Чтобы включить мониторинг виртуальной машины Azure с помощью решения "Azure Monitor для виртуальных машин", выполните следующие действия:
 
@@ -140,7 +140,7 @@ az vm boot-diagnostics get-boot-log --resource-group myResourceGroupMonitor --na
     В списке предварительно выбрана рабочая область по умолчанию и место развертывания виртуальной машины в подписке. 
 
     >[!NOTE]
-    >Чтобы создать новую рабочую область Log Analytics для хранения данных мониторинга с виртуальной машины, см. руководство по созданию рабочей области Log Analytics. Ваша рабочая область Log Analytics должна находиться в одном из [поддерживаемых регионов](../../azure-monitor/insights/vminsights-enable-overview.md#log-analytics).
+    >Чтобы создать новую рабочую область Log Analytics для хранения данных мониторинга с виртуальной машины, см. руководство по [созданию рабочей области Log Analytics](../../azure-monitor/learn/quick-create-workspace.md). Ваша рабочая область Log Analytics должна находиться в одном из [поддерживаемых регионов](../../azure-monitor/insights/vminsights-enable-overview.md#log-analytics).
 
 После включения мониторинга может потребоваться подождать несколько минут, прежде чем можно будет просмотреть метрики производительности виртуальной машины.
 

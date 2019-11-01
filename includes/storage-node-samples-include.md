@@ -4,22 +4,22 @@ ms.service: storage
 ms.topic: include
 ms.date: 09/26/2019
 ms.author: tamram
-ms.openlocfilehash: f6067c377fc98dd93b157b318fb1492982aa7a1b
-ms.sourcegitcommit: 15e3bfbde9d0d7ad00b5d186867ec933c60cebe6
+ms.openlocfilehash: c36877b25058124fc6da87206c1b7045bd0e5f78
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71845073"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72902278"
 ---
 ## <a name="javascriptnodejs-sample-code-repositories"></a>Репозитории с примерами кода JavaScript/Node.js
 
 Ниже приведен список всех репозиториев с примерами кода для клиентской библиотеки JavaScript службы хранилища Azure.
 
-* [Начало работы со службой BLOB-объектов Azure в Node.js](https://azure.microsoft.com/resources/samples/storage-blob-node-getting-started/)
-* [Начало работы со службой файлов Azure в Node.js](https://azure.microsoft.com/resources/samples/storage-file-node-getting-started/)
-* [Начало работы со службой очередей Azure в Node.js](https://azure.microsoft.com/resources/samples/storage-queue-node-getting-started/)
-* [Начало работы со службой таблиц Azure в Node.js](https://azure.microsoft.com/resources/samples/storage-table-node-getting-started/)
-* [Создание бессерверного веб-приложения в Azure](https://azure.microsoft.com/resources/samples/functions-first-serverless-web-application/)
+* [Начало работы со службой BLOB-объектов Azure в Node.js](https://github.com/Azure-Samples/storage-blob-node-getting-started)
+* [Начало работы со службой файлов Azure в Node.js](https://github.com/Azure-Samples/storage-file-node-getting-started)
+* [Начало работы со службой очередей Azure в Node.js](https://github.com/Azure-Samples/storage-queue-node-getting-started)
+* [Начало работы со службой таблиц Azure в Node.js](https://github.com/Azure-Samples/storage-table-node-getting-started)
+* [Создание бессерверного веб-приложения в Azure](https://github.com/Azure-Samples/functions-first-serverless-web-application)
 * [Средство отправки BLOB-объектов](https://github.com/Azure/azure-storage-node/tree/master/examples/blobuploader)
 * [Отправка и загрузка BLOB-объектов](https://github.com/Azure/azure-storage-node/blob/master/examples/samples/blobuploaddownloadsample.js)
 * [Метка продолжения](https://github.com/Azure/azure-storage-node/blob/master/examples/samples/continuationsample.js)

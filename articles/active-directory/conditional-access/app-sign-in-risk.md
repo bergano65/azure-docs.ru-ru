@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 928900c526ec0e77f84c621f630ac5894cdb2d23
-ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+ms.openlocfilehash: 619f1ea3bae001d25eb520f43da33ca94a3160c8
+ms.sourcegitcommit: 7efb2a638153c22c93a5053c3c6db8b15d072949
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70125659"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72880334"
 ---
 # <a name="quickstart-block-access-when-a-session-risk-is-detected-with-azure-active-directory-conditional-access"></a>Краткое руководство. Блокировка доступа в случае обнаружения угроз сеанса с помощью условного доступа Azure Active Directory  
 
@@ -33,7 +33,7 @@ ms.locfileid: "70125659"
 Для выполнения сценария в этом руководстве вам понадобится следующее.
 
 - **Доступ к Azure AD Premium P2**. Хотя в Azure AD Premium P1 доступна функция условного доступа, все же вам необходим выпуск P2, так как для сценария, описанного в этом учебнике, требуется защита идентификации.
-- **Защита идентификации**. Сценарий в этом руководстве требует включенной функции защиты идентификации. Если вы не знаете, как включить защиту идентификации Azure, см. раздел [Включение защиты идентификации Azure Active Directory](../identity-protection/enable.md).
+- **Защита идентификации**. Сценарий в этом руководстве требует включенной функции защиты идентификации. Если вы не знаете, как включить защиту идентификации Azure, см. раздел [Включение защиты идентификации Azure Active Directory](../identity-protection/overview-identity-protection.md).
 - **Обозреватель Tor**. [Обозреватель Tor](https://www.torproject.org/projects/torbrowser.html.en) предназначен для сохранения конфиденциальности в Интернете. Служба защиты идентификации воспринимает вход в систему с помощью обозревателя Tor как входы с анонимных IP-адресов, которые имеют средний уровень риска. Дополнительные сведения см. в статье об [обнаружении рисков Azure Active Directory](../reports-monitoring/concept-risk-events.md).  
 - **Тестовая учетная запись Alain Charon**. Сведения о создании тестовой учетной записи см. в разделе о [Add new users to Azure Active Directory](../fundamentals/add-users-azure-active-directory.md#add-a-new-user) (Добавление новых пользователей в Azure Active Directory).
 

@@ -8,6 +8,7 @@ manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 62b42e15-c282-492d-823a-a7c1c539f2cc
 ms.service: active-directory
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +16,12 @@ ms.topic: tutorial
 ms.date: 02/12/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 78d259c0354a1519fa57633a68a1dcfa5a183890
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: fa689e6138f8d965e59f7cfa7a85e0835301086c
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67105695"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73158699"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-cezanne-hr-software"></a>Руководство по Интеграция Azure Active Directory с Cezanne HR Software
 
@@ -255,15 +256,15 @@ ms.locfileid: "67105695"
 
 5. Перейдите на вкладку **Единый вход** и нажмите кнопку **Добавить** в области **Идентификаторы SAML 2.0)** .
 
-    ![Пользователь](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_008.png "Пользователь")
+    ![User](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_008.png "Пользователь")
 
 6. Выберите значение в списке **Поставщик удостоверений** и в текстовом поле **Идентификатор пользователя** введите адрес электронной почты учетной записи Britta Simon.
 
-    ![Пользователь](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_009.png "Пользователь")
+    ![User](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_009.png "Пользователь")
 
 7. Нажмите кнопку **Сохранить** .
 
-    ![Пользователь](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_010.png "Пользователь")
+    ![User](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_010.png "Пользователь")
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 
@@ -277,4 +278,4 @@ ms.locfileid: "67105695"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

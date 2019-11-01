@@ -8,18 +8,18 @@ ms.topic: include
 ms.date: 03/05/2019
 ms.author: robinsh
 ms.custom: include file
-ms.openlocfilehash: b640a3cb9382ad72bb48e06c6a7074c96409e2e4
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 3a5747912a18b8406cabd03c9823e3f6fe6898a6
+ms.sourcegitcommit: ec2b75b1fc667c4e893686dbd8e119e7c757333a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185908"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72808817"
 ---
 <!-- description of message routing used in the Azure CLI, PowerShell, and RM routing articles.-->
 
 Вы собираетесь направлять сообщения на разные ресурсы на основе свойств, прикрепленных к сообщению имитируемым устройством. Сообщения, которые не являются настраиваемыми, отправляются к конечной точке по умолчанию (сообщения и события). В следующем руководстве описано, как отправлять сообщения в Центр Интернета вещей и маршрутизировать их в разные места назначения.
 
-|value |Результат|
+|Значение |Результат|
 |------|------|
 |level="storage" |Запись в хранилище Azure.|
 |level="critical" |Запись в очередь служебной шины. Приложение логики извлекает сообщение из очереди и использует Office 365 для отправки сообщения по электронной почте.|

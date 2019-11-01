@@ -1,5 +1,5 @@
 ---
-title: Создание высокодоступных заданий потоковой передачи Spark в YARN в Azure HDInsight
+title: Задания потоковой передачи Spark высокой доступности в YARN — Azure HDInsight
 description: Как настроить потоковую передачу Apache Spark для сценария высокой доступности в Azure HDInsight
 ms.service: hdinsight
 author: hrasheed-msft
@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 01/26/2018
-ms.openlocfilehash: e4414a64b2ee34ec16fde56dd750f2faa26b2e09
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.openlocfilehash: 3e48f220035c56d34d6ca5a7347e9a4ee100e1f1
+ms.sourcegitcommit: 3486e2d4eb02d06475f26fbdc321e8f5090a7fac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "71002982"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73241244"
 ---
 # <a name="create-high-availability-apache-spark-streaming-jobs-with-yarn"></a>Создание в YARN заданий потоковой передачи Apache Spark с высоким уровнем доступности
 
@@ -117,10 +117,10 @@ ms.locfileid: "71002982"
     // to be able to recover on restart, store all offsets in an external database
     ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Общие сведения о потоковой передаче Apache Spark](apache-spark-streaming-overview.md)
 * [Создание заданий потоковой передачи Apache Spark со строго однократной обработкой событий](apache-spark-streaming-exactly-once.md)
 * [Long-running Apache Spark Streaming Jobs on YARN](https://mkuthan.github.io/blog/2016/09/30/spark-streaming-on-yarn/) (Долго выполняющиеся задания потоковой передачи Apache Spark в YARN) 
-* [Structured Streaming: Fault Tolerant Semantics](https://spark.apache.org/docs/2.1.0/structured-streaming-programming-guide.html#fault-tolerance-semantics) (Структурированная потоковая передача: отказоустойчивая семантика)
-* [Discretized Streams: A Fault-Tolerant Model for Scalable Stream Processing](https://www2.eecs.berkeley.edu/Pubs/TechRpts/2012/EECS-2012-259.pdf) (Дискретизированные потоки: отказоустойчивая модель для обработки масштабируемого потока)
+* [Structured Streaming: Fault Tolerant Semantics](https://spark.apache.org/docs/2.1.0/structured-streaming-programming-guide.html#fault-tolerance-semantics) (Структурированная потоковая передача: отказоустойчивая семантика)
+* [Discretized Streams: A Fault-Tolerant Model for Scalable Stream Processing](https://www2.eecs.berkeley.edu/Pubs/TechRpts/2012/EECS-2012-259.pdf) (Дискретизированные потоки: отказоустойчивая модель для обработки масштабируемого потока)

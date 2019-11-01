@@ -1,5 +1,5 @@
 ---
-title: 'Действие скрипта: установка пакетов Python с Jupyter в Azure HDInsight'
+title: Действие скрипта для пакетов Python с Jupyter в Azure HDInsight
 description: Пошаговые инструкции по использованию действия скрипта для настройки записных книжек Jupyter с кластерами Spark HDInsight для использования внешних пакетов Python.
 author: hrasheed-msft
 ms.author: hrasheed
@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 04/22/2019
-ms.openlocfilehash: ce5dc7e17020e1e4564ebe1f531645f7329718dc
-ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.openlocfilehash: f80486758152c002762bbddd6ae97a2ce9468ccf
+ms.sourcegitcommit: 3486e2d4eb02d06475f26fbdc321e8f5090a7fac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70900692"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73241517"
 ---
 # <a name="script-action-to-install-external-python-packages-for-jupyter-notebooks-in-apache-spark-on-hdinsight"></a>Действие скрипта для установки внешних пакетов Python для записных книжек Jupyter в Apache Spark в HDInsight
 
@@ -29,7 +29,7 @@ ms.locfileid: "70900692"
 
 В этой статье описано, как установить в кластере пакет [TensorFlow](https://www.tensorflow.org/) с помощью действия скрипта и использовать, например, с помощью записной книжки Jupyter.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Необходимо следующее:
 
 * Подписка Azure. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
@@ -50,7 +50,7 @@ ms.locfileid: "70900692"
 > [!IMPORTANT]   
 > Компоненты, поставляемые с кластером HDInsight, полностью поддерживаются. Служба поддержки Майкрософт помогает выявлять и устранять проблемы, связанные с этими компонентами.
 >
-> Настраиваемые компоненты получают ограниченную коммерчески оправданную поддержку, способствующую дальнейшей диагностике проблемы. Служба поддержки Майкрософт может устранить проблему ИЛИ вас могут попросить обратиться к специалистам по технологиям с открытым исходным кодом, используя доступные каналы связи. Вы можете использовать сайты сообществ, например: [форум MSDN по HDInsight](https://social.msdn.microsoft.com/Forums/azure/home?forum=hdinsight), [https://stackoverflow.com](https://stackoverflow.com). Кроме того, для проектов Apache есть соответствующие сайты ([https://apache.org](https://apache.org)), например [Hadoop](https://hadoop.apache.org/).
+> Настраиваемые компоненты получают ограниченную коммерчески оправданную поддержку, способствующую дальнейшей диагностике проблемы. Служба поддержки Майкрософт может устранить проблему ИЛИ вас могут попросить обратиться к специалистам по технологиям с открытым исходным кодом, используя доступные каналы связи. Можно использовать ряд сайтов сообществ, например [форум MSDN по HDInsight](https://social.msdn.microsoft.com/Forums/azure/home?forum=hdinsight) или [https://stackoverflow.com](https://stackoverflow.com). Кроме того, в проектах Apache есть сайты проектов на [https://apache.org](https://apache.org), например [Hadoop](https://hadoop.apache.org/).
 
 
 ## <a name="use-external-packages-with-jupyter-notebooks"></a>Использование внешних пакетов с записными книжками Jupyter
@@ -64,14 +64,14 @@ ms.locfileid: "70900692"
 4. Введите следующие значения в окне **Отправка действия скрипта** :  
 
 
-    |Параметр | Значение |
+    |Параметр | Value |
     |---|---|
     |Тип скрипта | Выберите **— Настраиваемый** из раскрывающегося списка.|
-    |Название |Введите `tensorflow` в текстовое поле.|
+    |Name |Введите `tensorflow` в текстовое поле.|
     |URI bash-скрипта |Введите `https://hdiconfigactions.blob.core.windows.net/linuxtensorflow/tensorflowinstall.sh` в текстовое поле. |
     |Типы узлов | Установите флажки **головной**и **Рабочий** . |
 
-    `tensorflowinstall.sh`содержит следующие команды:
+    `tensorflowinstall.sh` содержит следующие команды:
 
     ```bash
     #!/usr/bin/env bash
@@ -84,7 +84,7 @@ ms.locfileid: "70900692"
 
 7. Откройте записную книжку PySpark Jupyter.  Пошаговые инструкции см. в статье [Создание записной книжки Jupyter в Spark HDInsight](./apache-spark-jupyter-notebook-kernels.md#create-a-jupyter-notebook-on-spark-hdinsight) .
 
-    ![Создание записной книжки Jupyter](./media/apache-spark-python-package-installation/hdinsight-spark-create-notebook.png "Создание записной книжки Jupyter")
+    ![Создание записной книжки Jupyter](./media/apache-spark-python-package-installation/hdinsight-spark-create-notebook.png "Создание новой записной книжки Jupyter")
 
 8. Теперь будет выполнена команда `import tensorflow` и запущен пример hello world. Введите приведенный ниже код.
 
@@ -103,13 +103,13 @@ ms.locfileid: "70900692"
 > В кластере имеются два установленных компонента Python. Spark будет использовать компонент Python Anaconda, расположенный в `/usr/bin/anaconda/bin`, и среду Python 2.7 по умолчанию. Чтобы использовать Python 3.x и установить пакеты в ядре PySpark3, укажите путь к исполняемому файлу `conda` для этой среды и параметр `-n`, чтобы задать среду. Например, команда `/usr/bin/anaconda/envs/py35/bin/conda install -c conda-forge ggplot -n py35` устанавливает пакет `ggplot` в среде Python 3.5 с использованием канала `conda-forge`.
 
 ## <a name="seealso"></a>Дополнительные материалы
-* [Apache Spark в Azure HDInsight](apache-spark-overview.md)
+* [Обзор: Apache Spark в Azure HDInsight](apache-spark-overview.md)
 
 ### <a name="scenarios"></a>Сценарии
-* [Руководство. Анализ данных Apache Spark с использованием Power BI в HDInsight](apache-spark-use-bi-tools.md)
-* [Использование Apache Spark MLlib для Создание приложения машинного обучения Apache Spark в HDInsight](apache-spark-ipython-notebook-machine-learning.md)
-* [Использование Apache Spark MLlib для создания приложения машинного обучения и анализа набора данных](apache-spark-machine-learning-mllib-ipython.md)
-* [Анализ журналов веб-сайтов с помощью Apache Spark в HDInsight](apache-spark-custom-library-website-log-analysis.md)
+* [Использование Apache Spark со средствами бизнес-аналитики. Выполнение интерактивного анализа данных с использованием Spark в HDInsight с помощью средств бизнес-аналитики](apache-spark-use-bi-tools.md)
+* [Apache Spark и Машинное обучение. Анализ температуры в здании на основе данных системы кондиционирования с помощью Spark в HDInsight](apache-spark-ipython-notebook-machine-learning.md)
+* [Apache Spark и Машинное обучение. Прогнозирование результатов проверки пищевых продуктов с помощью Spark в HDInsight](apache-spark-machine-learning-mllib-ipython.md)
+* [Анализ журнала веб-сайта с помощью Spark в HDInsight](apache-spark-custom-library-website-log-analysis.md)
 
 ### <a name="create-and-run-applications"></a>Создание и запуск приложений
 * [Создание автономного приложения с использованием Scala](apache-spark-create-standalone-application.md)
@@ -118,7 +118,7 @@ ms.locfileid: "70900692"
 ### <a name="tools-and-extensions"></a>Средства и расширения
 * [Использование внешних пакетов с записными книжками Jupyter в кластерах Apache Spark в HDInsight](apache-spark-jupyter-notebook-use-external-packages.md)
 * [Использование подключаемого модуля средств HDInsight для IntelliJ IDEA для создания и отправки приложений Spark Scala](apache-spark-intellij-tool-plugin.md)
-* [Удаленная отладка приложений Apache Spark с помощью подключаемого модуля средств HDInsight для IntelliJ IDEA](apache-spark-intellij-tool-plugin-debug-jobs-remotely.md)
+* [Удаленная отладка приложений Apache Spark в HDInsight через VPN с помощью Azure Toolkit for IntelliJ](apache-spark-intellij-tool-plugin-debug-jobs-remotely.md)
 * [Использование записных книжек Zeppelin с кластером Apache Spark в Azure HDInsight](apache-spark-zeppelin-notebook.md)
 * [Ядра для записной книжки Jupyter в кластерах Apache Spark в Azure HDInsight](apache-spark-jupyter-notebook-kernels.md)
 * [Установка записной книжки Jupyter на компьютере и ее подключение к кластеру Apache Spark в Azure HDInsight (предварительная версия)](apache-spark-jupyter-notebook-install-locally.md)

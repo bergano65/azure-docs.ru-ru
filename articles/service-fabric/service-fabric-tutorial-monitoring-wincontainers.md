@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 07/22/2019
 ms.author: dekapur
 ms.custom: mvc
-ms.openlocfilehash: 856e2859c778c9f23bc093c2283571a1440ef701
-ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
+ms.openlocfilehash: b98917e6f3c0ff6570251751a9958b202908ee3e
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68598782"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72933909"
 ---
 # <a name="tutorial-monitor-windows-containers-on-service-fabric-using-azure-monitor-logs"></a>Руководство по Мониторинг контейнеров Windows в Service Fabric с помощью журналов Azure Monitor
 
@@ -186,7 +186,7 @@ ms.locfileid: "68598782"
     },
     ```
 
-[Здесь](https://github.com/ChackDan/Service-Fabric/blob/master/ARM%20Templates/Tutorial/azuredeploy.json) доступен пример шаблона (из в первой части данного руководства) со всеми этими изменениями, который можно использовать для справки, если потребуется. Описанные изменения позволяют добавить рабочую область Log Analytics в группу ресурсов. Рабочая область продолжит собирать события платформы Service Fabric из таблиц хранилища, настроенных для агента [Диагностики Azure для Windows](service-fabric-diagnostics-event-aggregation-wad.md). Агент Log Analytics (Microsoft Monitoring Agent) также был добавлен на каждый узел кластера как расширение виртуальной машины. Это означает, что при масштабировании кластера агент автоматически настраивается на каждом компьютере и привязывается к той же рабочей области.
+[Здесь](https://github.com/Azure-Samples/service-fabric-cluster-templates/blob/d2ffa318581fc23ac7f1b0ab2b52db1a0d7b4ba7/5-VM-Windows-OMS-UnSecure/sfclusteroms.json) доступен пример шаблона (из в первой части данного руководства) со всеми этими изменениями, который можно использовать для справки, если потребуется. Описанные изменения позволяют добавить рабочую область Log Analytics в группу ресурсов. Рабочая область продолжит собирать события платформы Service Fabric из таблиц хранилища, настроенных для агента [Диагностики Azure для Windows](service-fabric-diagnostics-event-aggregation-wad.md). Агент Log Analytics (Microsoft Monitoring Agent) также был добавлен на каждый узел кластера как расширение виртуальной машины. Это означает, что при масштабировании кластера агент автоматически настраивается на каждом компьютере и привязывается к той же рабочей области.
 
 Разверните шаблон с новыми изменениями, чтобы обновить текущий кластер. После этого ресурсы Log Analytics должны отобразиться в вашей группе ресурсов. Когда кластер будет готов к работе, разверните в нем свое контейнерное приложение. На следующем шаге мы настроим мониторинг контейнеров.
 
@@ -242,7 +242,7 @@ ms.locfileid: "68598782"
 
 Теперь, когда вы настроили мониторинг для контейнерного приложения, попробуйте выполнить следующее.
 
-* Настройте журналы Azure Monitor для кластера Linux, выполнив действия, аналогичные приведенным выше. Используйте в качестве образца [этот шаблон](https://github.com/ChackDan/Service-Fabric/tree/master/ARM%20Templates/SF%20OMS%20Samples/Linux), чтобы внести изменения в шаблон Resource Manager.
+* Настройте журналы Azure Monitor для кластера Linux, выполнив действия, аналогичные приведенным выше. Используйте в качестве образца [этот шаблон](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/5-VM-Ubuntu-1-NodeType-Secure-OMS), чтобы внести изменения в шаблон Resource Manager.
 * В журналах Azure Monitor настройте [автоматические оповещения](../log-analytics/log-analytics-alerts.md), которые помогут выполнять обнаружение и диагностику.
 * Просмотрите список [рекомендуемых счетчиков производительности](service-fabric-diagnostics-event-generation-perf.md) Service Fabric, которые можно настроить для кластеров.
 * Ознакомьтесь с функциями [поиска по журналам и запросов к журналам](../log-analytics/log-analytics-log-searches.md), которые являются частью журналов Azure Monitor.

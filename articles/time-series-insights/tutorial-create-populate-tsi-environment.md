@@ -2,19 +2,19 @@
 title: Руководство по Создание среды Azure Time Series Insights | Документация Майкрософт
 description: Узнайте, как создать среду Аналитики временных рядов и заполнить ее данными из имитированных устройств.
 services: time-series-insights
-author: ashannon7
+author: deepakpalled
+ms.author: dpalled
+manager: cshankar
 ms.service: time-series-insights
 ms.topic: tutorial
 ms.date: 10/16/2019
-ms.author: dpalled
-manager: cshankar
 ms.custom: seodec18
-ms.openlocfilehash: 518847db727c9d8c527d272f9122ef9850ca9135
-ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
+ms.openlocfilehash: 9ca60b876272df15d306ac7fba2dc61875db6d06
+ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72552997"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72989648"
 ---
 # <a name="tutorial-create-an-azure-time-series-insights-environment"></a>Руководство по Создание среды службы "Аналитика временных рядов Azure"
 

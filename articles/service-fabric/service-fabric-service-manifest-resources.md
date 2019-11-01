@@ -14,15 +14,15 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 2/23/2018
 ms.author: atsenthi
-ms.openlocfilehash: a795e01d37504dad360dc094b6b2aea2955b6a4a
-ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
+ms.openlocfilehash: bb3fd77df60be68408fceea683ee4b8b74d77427
+ms.sourcegitcommit: 3486e2d4eb02d06475f26fbdc321e8f5090a7fac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72170451"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73242909"
 ---
-# <a name="specify-resources-in-a-service-manifest"></a>Указание ресурсов в манифесте службы
-## <a name="overview"></a>Обзор
+# <a name="specify-resources-in-a-service-manifest"></a>Указание ресурсов в манифесте служб
+## <a name="overview"></a>Краткое описание
 Манифест служб позволяет объявлять и изменять ресурсы, используемые в службе, не меняя скомпилированный код. Azure Service Fabric поддерживает настройку ресурсов конечных точек для службы. Доступ к ресурсам, указанным в манифесте служб, можно контролировать в манифесте приложения с помощью элемента SecurityGroup. Объявление ресурсов позволяет изменять их при развертывании, т. е. службе не нужно внедрять новый механизм настройки. Определение схемы для файла ServiceManifest.xml устанавливается с пакетом SDK и средствами для Service Fabric в расположении *C:\Program Files\Microsoft SDKs\Service Fabric\schemas\ServiceFabricServiceModel.xsd*.
 
 ## <a name="endpoints"></a>Конечные точки
@@ -30,6 +30,8 @@ ms.locfileid: "72170451"
 
 > [!WARNING] 
 > При проектировании статические порты не должны пересекаться с диапазоном портов приложений, указанным в ClusterManifest. Если указан статический порт, назначьте его за пределами диапазона портов приложения, в противном случае это приведет к конфликтам портов. При использовании выпуска 6.5 CU2 мы выпустим **предупреждение о работоспособности** , когда обнаружите такой конфликт, но разрешите, что развертывание продолжит синхронизироваться с поставленным поведением 6,5. Однако мы можем не допустить развертывания приложения из следующих основных выпусков.
+>
+> В выпуске 7,0 мы выпустим **предупреждение о работоспособности** при обнаружении использования диапазона портов приложения сверх хостингконфиг:: аппликатионпортексхаустсрешолдперцентаже (по умолчанию 80%).
 >
 
 ```xml
@@ -196,7 +198,7 @@ Service Fabric автоматически создает список управ
   </Parameters>
 ```
 
-При развертывании приложения эти значения можно передать в качестве объекта ApplicationParameters.  Пример:
+При развертывании приложения эти значения можно передать в качестве объекта ApplicationParameters.  Пример.
 
 ```powershell
 PS C:\> New-ServiceFabricApplication -ApplicationName fabric:/myapp -ApplicationTypeName "AppType" -ApplicationTypeVersion "1.0.0" -ApplicationParameter @{Port='1001'; Protocol='https'; Type='Input'; Port1='2001'; Protocol='http'}
@@ -204,7 +206,7 @@ PS C:\> New-ServiceFabricApplication -ApplicationName fabric:/myapp -Application
 
 Примечание. Если не заданы значения для ApplicationParameters, берется значение по умолчанию, предоставленное в ServiceManifest для соответствующего параметра EndPointName.
 
-Пример:
+Пример.
 
 Допустим, в ServiceManifest заданы следующие значения:
 
@@ -218,4 +220,4 @@ PS C:\> New-ServiceFabricApplication -ApplicationName fabric:/myapp -Application
 
 Если в ApplicationParameters параметры Port1 и Protocol1 имеют значение или же оно не задано, порт по-прежнему определяет платформа Service Fabric, а в качестве протокола используется TCP.
 
-Предположим, что вы задали неверное значение. Например, для порта задано строковое значение Foo вместо целого числа.  При выполнении команды New-ServiceFabricApplication произойдет ошибка: The override parameter with name 'ServiceEndpoint1' attribute 'Port1' in section 'ResourceOverrides' is invalid (Недопустимый параметр переопределения ServiceEndpoint1 атрибута Port1 в разделе ResourceOverrides). The value specified is 'Foo' and required is 'int' (Недопустимый параметр переопределения ServiceEndpoint1 атрибута Port1 в разделе ResourceOverrides. Указано значение Foo, а требуется целое число).
+Предположим, что вы задали неверное значение. Как и для порта, вы указали строковое значение "foo" вместо int.  Команда New-ServiceFabricApplication завершится ошибкой: параметр переопределения с именем "ServiceEndpoint1" и атрибутом "Port1" в разделе "ResourceOverrides" являются недопустимыми. The value specified is 'Foo' and required is 'int' (Недопустимый параметр переопределения ServiceEndpoint1 атрибута Port1 в разделе ResourceOverrides. Указано значение Foo, а требуется целое число).

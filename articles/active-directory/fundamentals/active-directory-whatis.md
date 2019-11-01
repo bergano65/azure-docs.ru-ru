@@ -10,12 +10,12 @@ ms.date: 07/31/2019
 ms.author: ajburnle
 ms.custom: it-pro, seodec18, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a52b9ee26aac20d95356db6a280c5feb40023fed
-ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
+ms.openlocfilehash: 8e0e028be6b4a507ba97f9126c791ee77c764c70
+ms.sourcegitcommit: 7efb2a638153c22c93a5053c3c6db8b15d072949
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2019
-ms.locfileid: "68942791"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72880494"
 ---
 # <a name="what-is-azure-active-directory"></a>Что такое Azure Active Directory
 
@@ -52,7 +52,7 @@ Azure AD могут использовать:
 
 - **Azure Active Directory Premium P1.** В дополнение к возможностям в рамках предложения уровня "Бесплатный", P1 обеспечивает пользователям гибридный доступ к локальным и облачным ресурсам. Он также поддерживает расширенные функции администрирования, такие как динамические группы, самостоятельное управление группами, Microsoft Identity Manager (средство для управления локальными удостоверениями и управления доступом) и возможности обратной записи в облаке, которые позволяют самостоятельно сбрасывать пароль для локальных пользователей.
 
-- **Azure Active Directory Premium P2.** В дополнение к возможностям в рамках предложений уровня "Бесплатный" и P1, P2 также обеспечивает [Защиту идентификации Azure Active Directory](../identity-protection/enable.md), которая предоставляет условный доступ к приложениям и критически важным данным компании на основе рисков, и [привилегированное управление идентификацией](../privileged-identity-management/pim-getting-started.md), позволяющее выявлять, ограничивать и отслеживать администраторов и их доступ к ресурсам, а также предоставить JIT-доступ, когда это необходимо.
+- **Azure Active Directory Premium P2.** В дополнение к возможностям в рамках предложений уровня "Бесплатный" и P1, P2 также обеспечивает [Защиту идентификации Azure Active Directory](../identity-protection/overview-identity-protection.md), которая предоставляет условный доступ к приложениям и критически важным данным компании на основе рисков, и [привилегированное управление идентификацией](../privileged-identity-management/pim-getting-started.md), позволяющее выявлять, ограничивать и отслеживать администраторов и их доступ к ресурсам, а также предоставить JIT-доступ, когда это необходимо.
 
 - **Лицензии на использование функций с оплатой по мере использования.** Вы также можете получить лицензии на дополнительные функции, такие как Azure Active Directory B2C. B2C помогает предоставлять решения для управления идентификацией и доступом для клиентских приложений. Дополнительные сведения см. в статье [об Azure Active Directory B2C](../../active-directory-b2c/index.yml).
 
