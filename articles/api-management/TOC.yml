@@ -32,7 +32,7 @@
     - name: 8. Добавление нескольких версий
       href: api-management-get-started-publish-versions.md
     - name: 9. Настройка портала разработчика
-      href: api-management-customize-styles.md
+      href: api-management-howto-developer-portal-customize.md
 - name: Примеры
   items:
     - name: Политики
@@ -123,13 +123,9 @@
           href: api-management-howto-manage-protocols-ciphers.md
     - name: Настройка процесса разработки
       items:
-        - name: Доступ к новому порталу разработчика и его настройка
+        - name: Знакомство с порталом разработчика
           href: api-management-howto-developer-portal.md
-        - name: Изменение содержимого и макета страницы
-          href: api-management-modify-content-layout.md
-        - name: Настройка системных страниц с помощью шаблонов
-          href: api-management-developer-portal-templates.md
-        - name: Аутентификация с помощью Azure AD
+        - name: "Аутентификация с помощью Azure\_AD"
           href: api-management-howto-aad.md
         - name: Аутентификация с помощью Azure AD B2C
           href: api-management-howto-aad-b2c.md
@@ -139,6 +135,34 @@
           href: api-management-howto-configure-notifications.md
         - name: Обеспечение поддержки консольного приложения OAuth
           href: api-management-howto-oauth2.md
+        - name: "Классический портал\_— настройка портала"
+          href: api-management-customize-styles.md
+        - name: "Классический портал\_— изменение страниц и макетов"
+          href: api-management-modify-content-layout.md
+        - name: "Классический портал\_— настройка с помощью шаблонов"
+          href: api-management-developer-portal-templates.md
+    - name: Шаблоны классического портала
+      items:
+        - name: Справочник по моделям данных
+          href: api-management-template-data-model-reference.md
+        - name: Элементы управления страницы
+          href: api-management-page-controls.md
+        - name: Шаблоны
+          href: api-management-developer-portal-templates-reference.md
+        - name: Программные интерфейсы
+          href: api-management-api-templates.md
+        - name: Продукты
+          href: api-management-product-templates.md
+        - name: Приложения
+          href: api-management-application-templates.md
+        - name: Проблемы
+          href: api-management-issue-templates.md
+        - name: Профиль пользователя
+          href: api-management-user-profile-templates.md
+        - name: Страницы
+          href: api-management-page-templates.md
+        - name: Ресурсы шаблона
+          href: api-management-template-resources.md
     - name: Определение политик
       items:
         - name: Настройка или изменение политик
@@ -167,28 +191,6 @@
           href: api-management-cross-domain-policies.md
         - name: Политики преобразования
           href: api-management-transformation-policies.md
-    - name: Справочник по шаблонам
-      items:
-        - name: Шаблоны
-          href: api-management-developer-portal-templates-reference.md
-        - name: Программные интерфейсы
-          href: api-management-api-templates.md
-        - name: Продукты
-          href: api-management-product-templates.md
-        - name: Приложения
-          href: api-management-application-templates.md
-        - name: Проблемы
-          href: api-management-issue-templates.md
-        - name: Профиль пользователя
-          href: api-management-user-profile-templates.md
-        - name: Страницы
-          href: api-management-page-templates.md
-        - name: Ресурсы шаблона
-          href: api-management-template-resources.md
-    - name: Справочник по моделям данных
-      href: api-management-template-data-model-reference.md
-    - name: Элементы управления страницы
-      href: api-management-page-controls.md
     - name: Управление в производственной среде
       items:
         - name: Управление группами

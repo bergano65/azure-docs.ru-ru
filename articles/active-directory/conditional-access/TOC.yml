@@ -31,6 +31,8 @@
       href: location-condition.md
     - name: Управление
       href: controls.md
+    - name: Режим "Только отчет"
+      href: concept-conditional-access-report-only.md
     - name: Зависимости служб
       href: service-dependencies.md
     - name: Средство "Что если"
@@ -76,6 +78,8 @@
       href: untrusted-networks.md
     - name: Обязательное применение условий использования
       href: terms-of-use.md
+    - name: Настройка режима "Только отчет"
+      href: howto-conditional-access-report-only.md
     - name: Элементы управления сохраняемости браузера и частотой входов
       href: howto-conditional-access-session-lifetime.md
     - name: Перенос классических политик

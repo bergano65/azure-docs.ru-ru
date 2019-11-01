@@ -1,17 +1,17 @@
 ---
 title: Пример схемы Canada Federal PBMM — общие сведения
-description: Обзор примера схемы Canada Federal PBMM. Этот пример схемы помогает клиентам оценить определенные средства управления ISO 27001.
+description: Обзор примера схемы Canada Federal PBMM. Этот пример схемы помогает клиентам оценить определенные средства управления Canada Federal PBMM.
 author: DCtheGeek
 ms.author: dacoulte
 ms.date: 09/04/2019
 ms.topic: sample
 ms.service: blueprints
-ms.openlocfilehash: e4f4e289b8d8648c583d9803b02b9533e52367e6
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 32573e4a2a046af069a6b51edd0636beabb9d9f6
+ms.sourcegitcommit: fa5ce8924930f56bcac17f6c2a359c1a5b9660c9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73163890"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73200433"
 ---
 # <a name="overview-of-the-canada-federal-pbmm-blueprint-sample"></a>Обзор примера схемы Canada Federal PBMM
 

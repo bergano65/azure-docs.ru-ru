@@ -131,10 +131,14 @@
           items:
             - name: Настройка согласия пользователя
               href: configure-user-consent.md
+            - name: Настройка рабочего процесса согласия администратора (предварительная версия)
+              href: configure-admin-consent-workflow.md
             - name: Способы назначения пользователей и групп для приложения
               href: methods-for-assigning-users-and-groups.md
             - name: Назначение приложения пользователю
               href: assign-user-or-group-access-portal.md
+            - name: Создание рабочих областей в Моих приложениях (предварительная версия)
+              href: access-panel-workspaces.md
             - name: Использование самостоятельного доступа к приложениям
               href: access-panel-manage-self-service-access.md
             - name: Способы удаления доступа пользователя к приложению
@@ -155,6 +159,8 @@
               href: migration-resources.md
             - name: Миграция приложения ADFS в Azure
               href: migrate-adfs-apps-to-azure.md
+            - name: "Использование отчета о действиях приложения AD\_FS (предварительная версия)"
+              href: migrate-adfs-application-activity.md
         - name: Устранение неполадок
           items:
             - name: Устранение неполадок при добавлении приложений

@@ -116,3 +116,13 @@
       href: my-apps-portal-end-user-access-reviews.md
     - name: Устранение неполадок
       href: my-apps-portal-end-user-troubleshoot.md
+- name: Справка по предварительной версии раздела "Мои приложения" на портале
+  items:
+    - name: Обзор
+      href: my-applications-portal-overview.md
+    - name: Доступ к порталу "Мои приложения" и его использование
+      href: my-applications-portal-access.md
+    - name: Доступ к рабочим областям и их использование
+      href: my-applications-portal-workspaces.md
+    - name: Изменение или отмена разрешений приложения
+      href: my-applications-portal-permissions-saved-accounts.md
