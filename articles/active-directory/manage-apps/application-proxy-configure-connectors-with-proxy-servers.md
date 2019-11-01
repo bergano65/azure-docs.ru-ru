@@ -12,12 +12,12 @@ ms.date: 05/21/2019
 ms.author: mimart
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1e4b073a63b5b6bec565aed67bcaec7ed014261b
-ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
+ms.openlocfilehash: d305f3354e7b1af6d43f31f0dd5fe9f54ef3e66f
+ms.sourcegitcommit: 3486e2d4eb02d06475f26fbdc321e8f5090a7fac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67807868"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73242281"
 ---
 # <a name="work-with-existing-on-premises-proxy-servers"></a>Работа с имеющимися локальными прокси-серверами
 
@@ -110,13 +110,13 @@ ms.locfileid: "67807868"
 
 Разрешите доступ к следующим URL-адресам.
 
-| URL | Как он используется |
+| URL-адрес | Как он используется |
 | --- | --- |
 | \*.msappproxy.net;<br>\*.servicebus.windows.net. | Связь между соединителем и облачной службой прокси приложения |
 | mscrl.microsoft.com:80<br>crl.microsoft.com:80<br>ocsp.msocsp.com:80<br>www.microsoft.com:80 | Azure использует эти URL-адреса для проверки сертификатов |
-| login.windows.net<br>login.microsoftonline.com | Соединитель использует эти URL-адреса во время регистрации. |
+| login.windows.net<br>secure.aadcdn.microsoftonline-p.com<br>*. microsoftonline.com<br>* . microsoftonline-p.com<br>*. msauth.net<br>* . msauthimages.NET<br>*. msecnd.net<br>* . msftauth.NET<br>*. msftauthimages.net<br>* . phonefactor.NET<br>enterpriseregistration.windows.net<br>management.azure.com<br>policykeyservice.dc.ad.msft.net | Соединитель использует эти URL-адреса во время регистрации. |
 
-Если брандмауэр или прокси-сервера можно настроить списки разрешений DNS, можно разрешить подключения к \*. msappproxy.net и \*. servicebus.windows.net. Если нет, необходимо разрешить доступ к [диапазонам IP-адресов центра обработки данных Azure](https://www.microsoft.com/download/details.aspx?id=41653). Список диапазонов IP-адресов обновляется еженедельно.
+Если брандмауэр или прокси-сервер позволяет настраивать списки разрешений DNS, можно разрешить подключения к \*. msappproxy.net и \*. servicebus.windows.net. Если нет, необходимо разрешить доступ к [диапазонам IP-адресов центра обработки данных Azure](https://www.microsoft.com/download/details.aspx?id=41653). Список диапазонов IP-адресов обновляется еженедельно.
 
 Невозможно разрешить подключения по полному доменному имени. Вместо этого укажите диапазоны IP-адресов. Используйте следующие параметры:
 
@@ -161,7 +161,7 @@ ms.locfileid: "67807868"
 1. Запустите службу соединителя прокси приложения Azure AD.
 1. Остановите запись сетевых данных.
 
-   ![Снимке экрана показаны кнопки захвата Stop сети](./media/application-proxy-configure-connectors-with-proxy-servers/stop-trace.png)
+   ![На снимке экрана показана кнопка "закончить запись сети"](./media/application-proxy-configure-connectors-with-proxy-servers/stop-trace.png)
 
 ### <a name="check-if-the-connector-traffic-bypasses-outbound-proxies"></a>Проверка, обходит ли трафик соединителя исходящие прокси
 
@@ -183,7 +183,7 @@ ms.locfileid: "67807868"
 
 Если отобразятся другие коды ответов, например 407 или 502, это означает, что прокси-сервер требует проверки подлинности или не разрешает передачу трафика по другой причине. На этом этапе следует обратиться в службу поддержки прокси-сервера.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Сведения о соединителях прокси приложения Azure AD](application-proxy-connectors.md)
 * При возникновении проблем с подключением соединителя задайте вопрос на [форуме Azure Active Directory](https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=WindowsAzureAD&forum=WindowsAzureAD) или отправьте запрос в службу технической поддержки.

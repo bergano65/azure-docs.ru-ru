@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 0c397ca630dffb7671f84919c1e86cbcef645572
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: 8264030593a1e44b2a50d9f95dce925136eb4d26
+ms.sourcegitcommit: c4700ac4ddbb0ecc2f10a6119a4631b13c6f946a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69873612"
+ms.lasthandoff: 10/27/2019
+ms.locfileid: "72965986"
 ---
 # <a name="quickstart-deploy-your-first-iot-edge-module-to-a-virtual-windows-device"></a>Краткое руководство. Развертывание модуля IoT Edge на виртуальном устройстве с Windows
 
@@ -137,7 +137,7 @@ ms.locfileid: "69873612"
 
 Загрузите и установите среду выполнения IoT Edge с помощью PowerShell. Настройте свое устройство, используя строку подключения к устройству, которую вы извлекли из Центра Интернета вещей.
 
-1. Если вы этого еще не сделали, выполните действия, описанные в статье [Register a new Azure IoT Edge device from the Azure portal](how-to-register-device-portal.md) (Регистрация нового устройства Azure IoT Edge на портале Azure), чтобы зарегистрировать устройство и получить для него строку подключения. 
+1. Если вы этого еще не сделали, выполните действия, описанные в статье [Register a new Azure IoT Edge device from the Azure portal](how-to-register-device.md) (Регистрация нового устройства Azure IoT Edge на портале Azure), чтобы зарегистрировать устройство и получить для него строку подключения.
 
 2. Откройте сеанс PowerShell от имени администратора.
 

@@ -1,5 +1,5 @@
 ---
-title: Использование Apache Spark для анализа данных в Azure Data Lake Storage 1-го поколения
+title: Анализ Azure Data Lake Storage 1-го поколения с помощью Apache Spark HDInsight
 description: Выполнение заданий Apache Spark для анализа данных, хранящихся в Azure Data Lake Storage 1-го поколения
 ms.service: hdinsight
 author: hrasheed-msft
@@ -8,22 +8,22 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/13/2019
-ms.openlocfilehash: b8e830cb187b375e17b3dc33c582126adfa32f3e
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.openlocfilehash: 7c60fdfd4d8e579c24da3c43501e4437806becc6
+ms.sourcegitcommit: 3486e2d4eb02d06475f26fbdc321e8f5090a7fac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "71002487"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73241718"
 ---
 # <a name="use-hdinsight-spark-cluster-to-analyze-data-in-data-lake-storage-gen1"></a>Использование кластера HDInsight Spark для анализа данных в Data Lake Storage 1-го поколения
 
 В этой статье вы используете [Jupyter Notebook](https://jupyter.org/) , доступных в кластерах HDInsight Spark для выполнения задания, считывающего данные из учетной записи Data Lake Storage.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Учетная запись Azure Data Lake Storage 1-го поколения. Следуйте инструкциям из статьи [Начало работы с Azure Data Lake Storage Gen1 с помощью портала Azure](../../data-lake-store/data-lake-store-get-started-portal.md).
 
-* Кластер Azure HDInsight Spark с Data Lake Storage 1-го поколения в качестве хранилища. Следуйте указаниям, приведенным здесь — [Краткое руководство. по настройке кластеров в HDInsight](../../storage/data-lake-storage/quickstart-create-connect-hdi-cluster.md).
+* Кластер Azure HDInsight Spark с Data Lake Storage 1-го поколения в качестве хранилища. Следуйте инструкциям из статьи [Краткое руководство по установке кластеров в HDInsight](../../storage/data-lake-storage/quickstart-create-connect-hdi-cluster.md).
 
 ## <a name="prepare-the-data"></a>Подготовка данных
 
@@ -67,7 +67,7 @@ ms.locfileid: "71002487"
 
 3. Создайте новую записную книжку. Щелкните **Создать**, а затем выберите **PySpark**.
 
-    ![Создание записной книжки Jupyter](./media/apache-spark-use-with-data-lake-store/hdinsight-create-jupyter-notebook.png "Создание записной книжки Jupyter")
+    ![Создание записной книжки Jupyter](./media/apache-spark-use-with-data-lake-store/hdinsight-create-jupyter-notebook.png "Создание новой записной книжки Jupyter")
 
 4. Так как записная книжка была создана с помощью ядра PySpark, задавать контексты явно необязательно. Контексты Spark и Hive будут созданы автоматически при выполнении первой ячейки кода. Можно начать с импорта различных типов, необходимых для этого сценария. Для этого вставьте следующий фрагмент кода в ячейку и нажмите сочетание клавиш **SHIFT+ВВОД**.
 
@@ -115,11 +115,11 @@ ms.locfileid: "71002487"
 
 7. После успешного выполнения задания по умолчанию будет показаны следующие табличные данные.
 
-      ![Вывод результатов запроса в виде таблицы](./media/apache-spark-use-with-data-lake-store/jupyter-tabular-output.png "Вывод результатов запроса в виде таблицы")
+      ![Выходные данные таблицы результатов запроса](./media/apache-spark-use-with-data-lake-store/jupyter-tabular-output.png "Табличные выходные данные для результата запроса")
 
      Результаты также можно просмотреть и в других визуализациях. Например, диаграмма областей для тех же выходных данных будет выглядеть следующим образом.
 
-     ![Диаграмма с областями, показывающая результат запроса](./media/apache-spark-use-with-data-lake-store/jupyter-area-output1.png "Диаграмма с областями, показывающая результат запроса")
+     ![Диаграмма с областями результата запроса](./media/apache-spark-use-with-data-lake-store/jupyter-area-output1.png "Диаграмма областей для результата запроса")
 
 8. Завершив работу с приложением, следует закрыть записную книжку, чтобы освободить ресурсы. Для этого в записной книжке в меню **Файл** выберите пункт **Close and Halt** (Закрыть и остановить). Это завершит работу записной книжки и закроет ее.
 

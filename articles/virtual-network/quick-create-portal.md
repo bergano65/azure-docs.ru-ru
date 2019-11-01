@@ -14,12 +14,12 @@ ms.tgt_pltfrm: virtual-network
 ms.workload: infrastructure
 ms.date: 07/08/2019
 ms.author: kumud
-ms.openlocfilehash: bbc40ae358a6ac7f58e01de997728db21c7eb3bc
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
+ms.openlocfilehash: f95174efbffedd09946f5910a39285e7bec062c1
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67839709"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73161499"
 ---
 # <a name="quickstart-create-a-virtual-network-using-the-azure-portal"></a>Краткое руководство. Создание виртуальной сети с помощью портала Azure
 
@@ -43,7 +43,7 @@ ms.locfileid: "67839709"
     | ИМЯ | Введите *myVirtualNetwork*. |
     | Пространство адресов | Введите *10.1.0.0/16*. |
     | Subscription | Выберите свою подписку.|
-    | Resource group | Выберите **Создать**, а затем введите *myResourceGroup* и нажмите кнопку **ОК**. |
+    | группа ресурсов. | Выберите **Создать**, а затем введите *myResourceGroup* и нажмите кнопку **ОК**. |
     | Location | Выберите **Восточная часть США**.|
     | Имя подсети | Введите *myVirtualSubnet*. |
     | Диапазон адреса подсети | Введите *10.1.0.0/24*. |
@@ -64,7 +64,7 @@ ms.locfileid: "67839709"
     | ------- | ----- |
     | **Сведения о проекте** | |
     | Subscription | Выберите свою подписку. |
-    | Resource group | Выберите **myResourceGroup**. Вы создали ее в предыдущем разделе. |
+    | группа ресурсов. | Выберите **myResourceGroup**. Вы создали ее в предыдущем разделе. |
     | **Подробности об экземпляре** |  |
     | Имя виртуальной машины | Введите *myVm1*. |
     | Регион | Выберите **Восточная часть США**. |
@@ -179,7 +179,7 @@ ms.locfileid: "67839709"
 1. Чтобы разрешить виртуальной машине *myVm2* проверять связь с *myVm1* на дальнейшем этапе, введите следующую команду:
 
     ```powershell
-    New-NetFirewallRule –DisplayName “Allow ICMPv4-In” –Protocol ICMPv4
+    New-NetFirewallRule –DisplayName "Allow ICMPv4-In" –Protocol ICMPv4
     ```
 
     Эта команда разрешает входящий трафик ICMP через брандмауэр Windows:

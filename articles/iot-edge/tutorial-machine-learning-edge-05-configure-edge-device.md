@@ -8,12 +8,12 @@ ms.date: 06/13/2019
 ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: a2096004a7b389f627c528a8dfb4768ac001f390
-ms.sourcegitcommit: 1289f956f897786090166982a8b66f708c9deea1
+ms.openlocfilehash: b9f9fe78db2d8bcf50a076fdfc3eba7b1f347201
+ms.sourcegitcommit: c4700ac4ddbb0ecc2f10a6119a4631b13c6f946a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67155628"
+ms.lasthandoff: 10/27/2019
+ms.locfileid: "72965391"
 ---
 # <a name="tutorial-configure-an-iot-edge-device"></a>Руководство по Настройка устройства IoT Edge
 
@@ -97,7 +97,7 @@ ms.locfileid: "67155628"
 
 Чтобы подключить устройство Azure IoT Edge к Центру Интернета вещей, сначала следует создать в этом концентраторе удостоверение устройства. Мы извлечем строку подключения из удостоверения устройства в облаке и с ее помощью настроим среду выполнения на устройстве IoT Edge. Когда устройство будет настроено и подключено к концентратору, мы сможем развертывать модули и отправлять сообщения. Мы также можем изменить конфигурацию физического устройства IoT Edge, изменив конфигурацию соответствующего удостоверения устройства в Центре Интернета вещей.
 
-В этом руководстве описано, как создать новое удостоверение устройства с помощью Visual Studio Code. Эти действия также можно выполнить с помощью [портала Azure](how-to-register-device-portal.md) или [Azure CLI](how-to-register-device-cli.md).
+В этом руководстве описано, как создать новое удостоверение устройства с помощью Visual Studio Code. Эти действия также можно выполнить с помощью [портала Azure](how-to-register-device.md#register-in-the-azure-portal) или [Azure CLI](how-to-register-device.md#register-with-the-azure-cli).
 
 1. Откройте Visual Studio Code на компьютере для разработки.
 

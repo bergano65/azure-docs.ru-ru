@@ -1,21 +1,19 @@
 ---
 title: Краткое руководство по мониторингу веб-сайтов с помощью Azure Monitor Application Insights | Документация Майкрософт
 description: Инструкции по быстрой настройке мониторинга веб-сайта на стороне клиента или браузера с помощью Azure Monitor Application Insights
-services: application-insights
-keywords: ''
+ms.service: azure-monitor
+ms.subservice: application-insights
+ms.topic: quickstart
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 07/15/2019
-ms.service: application-insights
 ms.custom: mvc
-ms.topic: quickstart
-manager: carmonm
-ms.openlocfilehash: f423e96055c23ae1521466f0e697d7ad2254f8c0
-ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
+ms.openlocfilehash: eecc3d739cb5500abdbd04a9aaca1ddcf86e352b
+ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68813903"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72899269"
 ---
 # <a name="start-monitoring-your-website"></a>Запуск мониторинга веб-сайта
 

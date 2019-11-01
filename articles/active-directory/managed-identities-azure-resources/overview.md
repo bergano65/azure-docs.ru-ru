@@ -15,12 +15,12 @@ ms.custom: mvc
 ms.date: 09/26/2019
 ms.author: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 596da9cfe0e914183bd3b2603ffa1047f1d9352b
-ms.sourcegitcommit: 0486aba120c284157dfebbdaf6e23e038c8a5a15
+ms.openlocfilehash: f5a9f83a8f6e8d5e83f30d30da2b1c4c0f722dc3
+ms.sourcegitcommit: f7f70c9bd6c2253860e346245d6e2d8a85e8a91b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71310012"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73063057"
 ---
 # <a name="what-is-managed-identities-for-azure-resources"></a>Что такое управляемые удостоверения для ресурсов Azure?
 
@@ -122,23 +122,25 @@ ms.locfileid: "71310012"
 
 См. дополнительные сведения об использовании управляемого удостоверения для виртуальной машины Linux:
 
+* [Доступ к Реестру контейнеров Azure](../../container-registry/container-registry-authentication-managed-identity.md)
 * [Доступ к Azure Data Lake Storage](tutorial-linux-vm-access-datalake.md)
 * [Получение доступа к Azure Resource Manager с помощью управляемого удостоверения службы виртуальной машины Linux](tutorial-linux-vm-access-arm.md)
 * [Доступ к службе хранилища Azure с помощью управляемого удостоверения виртуальной машины Linux](tutorial-linux-vm-access-storage.md)
 * [Руководство по использованию управляемого удостоверения службы виртуальной машины Linux для доступа к службе хранилища Azure с учетными данными SAS](tutorial-linux-vm-access-storage-sas.md)
 * [Доступ к Azure Key Vault с помощью управляемого удостоверения службы виртуальной машины Linux](tutorial-linux-vm-access-nonaad.md)
-* [Доступ к Реестру контейнеров Azure](../../container-registry/container-registry-authentication-managed-identity.md)
 
 См. дополнительные сведения об использовании управляемого удостоверения для других служб Azure:
 
 * [Служба приложений Azure](/azure/app-service/overview-managed-identity)
-* [Функции Azure](/azure/app-service/overview-managed-identity)
-* [Azure Logic Apps](/azure/logic-apps/create-managed-service-identity)
-* [служебной шине Azure](../../service-bus-messaging/service-bus-managed-service-identity.md)
-* [Центры событий Azure](../../event-hubs/event-hubs-managed-service-identity.md)
 * [Управление API Azure](../../api-management/api-management-howto-use-managed-service-identity.md)
 * [Экземпляры контейнеров Azure](../../container-instances/container-instances-managed-identity.md);
 * [Задачи Реестра контейнеров Azure](../../container-registry/container-registry-tasks-authentication-managed-identity.md)
+* [Центры событий Azure](../../event-hubs/event-hubs-managed-service-identity.md)
+* [Функции Azure](/azure/app-service/overview-managed-identity)
+* [Служба Azure Kubernetes (AKS)](/azure/aks/use-managed-identity)
+* [Azure Logic Apps](/azure/logic-apps/create-managed-service-identity)
+* [служебной шине Azure](../../service-bus-messaging/service-bus-managed-service-identity.md)
+
 
 ## Службы Azure, в которых поддерживается данная функция.<a name="which-azure-services-support-managed-identity"></a>
 

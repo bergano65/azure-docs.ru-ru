@@ -9,12 +9,12 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: overview
 ms.date: 06/12/2019
 ms.author: hrasheed
-ms.openlocfilehash: 0540d8a83a8dc1da9bc763bce0b30463889cfe90
-ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
+ms.openlocfilehash: 71ccdb7ac6666cde1841599cdaf95b67bc54e6a5
+ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70915039"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72800021"
 ---
 # <a name="what-is-apache-storm-on-azure-hdinsight"></a>Основные сведения об Apache Storm в Azure HDInsight
 
@@ -40,7 +40,7 @@ ms.locfileid: "70915039"
 
 * **Создание конвейеров потоковой передачи с помощью нескольких служб Azure**. Storm в HDInsight интегрируется с другими службами Azure, такими как Центры событий, база данных SQL, служба хранилища Azure и Azure Data Lake Storage.
 
-    Пример приложения, которое интегрируется со службами Azure, см. в руководстве по [обработке событий из Центров событий Azure с помощью Apache Storm в HDInsight](https://azure.microsoft.com/resources/samples/hdinsight-java-storm-eventhub/).
+    Пример приложения, которое интегрируется со службами Azure, см. в руководстве по [обработке событий из Центров событий Azure с помощью Apache Storm в HDInsight](https://github.com/Azure-Samples/hdinsight-java-storm-eventhub).
 
 Список компаний, использующих Apache Storm в качестве решения для анализа данных в реальном времени, см. на [этой странице](https://storm.apache.org/documentation/Powered-By.html).
 
@@ -92,7 +92,7 @@ Storm работает с топологиями, а не заданиями [Ap
 
 * __Центры событий__. Примеры использования Центров событий с кластером Storm
 
-    * [Обработка событий из Центров событий Azure с помощью Apache Storm в HDInsight (Java)](https://azure.microsoft.com/resources/samples/hdinsight-java-storm-eventhub/)
+    * [Обработка событий из Центров событий Azure с помощью Apache Storm в HDInsight (Java)](https://github.com/Azure-Samples/hdinsight-java-storm-eventhub)
 
     * [Обработка событий из Центров событий Azure с помощью Apache Storm в HDInsight (C#)](apache-storm-develop-csharp-event-hub-topology.md)
 

@@ -9,12 +9,12 @@ ms.service: key-vault
 ms.topic: tutorial
 ms.date: 09/27/2019
 ms.author: mbaldwin
-ms.openlocfilehash: b472d36f17853549f2bfc773bdcb65faf0421b3f
-ms.sourcegitcommit: a19f4b35a0123256e76f2789cd5083921ac73daf
+ms.openlocfilehash: 9e51249bdcfa3cf506700cd3032b1ca39b773d82
+ms.sourcegitcommit: b45ee7acf4f26ef2c09300ff2dba2eaa90e09bc7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71718988"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73102367"
 ---
 # <a name="provide-key-vault-authentication-with-an-access-control-policy"></a>Обеспечение проверки подлинности Azure Key Vault с помощью политики управления доступом
 
@@ -83,7 +83,7 @@ New-AzADServicePrincipal -DisplayName mySP
 Чтобы узнать идентификатор objectId группы Azure AD в интерфейсе командной строки Azure, введите команду [az ad group list](/cli/azure/ad/group?view=azure-cli-latest#az-ad-group-list). Из-за большого количества групп, которые могут быть в организации, необходимо также предоставить строку поиска для параметра `--display-name`.
 
 ```azurecli-interactive
-az ad group list --displayname <search-string>
+az ad group list --display-name <search-string>
 ```
 ObjectId будет возвращен в формате JSON:
 
