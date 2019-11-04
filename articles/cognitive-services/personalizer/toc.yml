@@ -65,7 +65,7 @@
   items:
     - name: Создание и настройка Персонализатора
       href: how-to-settings.md
-      displayName: 'azure, portal, settings, evaluation, offline, policy, export, model'
+      displayName: 'azure, portal, settings, evaluation, offline, policy, export, model, configure'
     - name: Анализ
       items:
         - name: Автономная оценка

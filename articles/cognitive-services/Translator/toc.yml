@@ -46,6 +46,12 @@
           href: prevent-translation.md
         - name: Использование функции динамического словаря
           href: dynamic-dictionary.md
+        - name: Использование контейнеров
+          items:
+            - name: Установка и запуск контейнеров
+              href: how-to-install-containers.md
+            - name: Настройка контейнеров
+              href: translator-text-container-config.md
         - name: Перевод за брандмауэрами
           href: firewalls.md
     - name: Примеры
