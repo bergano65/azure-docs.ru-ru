@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: 5b9011e2a95dc1bdb86311111123db3c994f3aee
-ms.sourcegitcommit: 38251963cf3b8c9373929e071b50fd9049942b37
+ms.openlocfilehash: 044a63274f7f24831b1f791982f36898199616a6
+ms.sourcegitcommit: 87efc325493b1cae546e4cc4b89d9a5e3df94d31
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/29/2019
-ms.locfileid: "73044937"
+ms.locfileid: "73052513"
 ---
 # <a name="azure-hdinsight-frequently-asked-questions"></a>Azure HDInsight: часто задаваемые вопросы
 
@@ -387,3 +387,7 @@ http://<headnodehost>:8080/api/v1/clusters/<ClusterName>/services/YARN/component
 ### <a name="is-there-a-way-to-dynamically-terminate-the-head-node-of-the-cluster-when-the-cluster-is-idle-for-a-specific-period"></a>Существует ли способ динамического прерывания головного узла кластера, когда кластер бездействует в течение определенного периода?
 
 Это невозможно сделать с кластерами HDInsight. В этих сценариях можно использовать фабрику данных Azure.
+
+### <a name="what-compliance-offerings-does-hdinsight-offer"></a>Какие предложения соответствия предлагает HDInsight?
+
+Сведения о соответствии требованиям см. в [центре управления безопасностью Майкрософт](https://www.microsoft.com/trust-center) и в [обзоре соответствия Microsoft Azure](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942).

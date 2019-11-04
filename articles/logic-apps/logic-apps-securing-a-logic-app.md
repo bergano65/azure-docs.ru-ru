@@ -9,12 +9,12 @@ ms.author: estfan
 ms.reviewer: klam, LADocs
 ms.topic: conceptual
 ms.date: 10/11/2019
-ms.openlocfilehash: f9b23e00c954e8babb1fe920bca1aa2ea5f9298e
-ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
-ms.translationtype: MT
+ms.openlocfilehash: b219eb50254ecd347f731d332c3236be028834ba
+ms.sourcegitcommit: 38251963cf3b8c9373929e071b50fd9049942b37
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72799475"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73045034"
 ---
 # <a name="secure-access-and-data-in-azure-logic-apps"></a>Безопасный доступ и данные в Azure Logic Apps
 
@@ -266,11 +266,11 @@ POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group
 
 1. Откройте приложение логики в конструкторе приложений логики на [портале Azure](https://portal.azure.com).
 
-   ![Открыть пример приложения логики](./media/logic-apps-securing-a-logic-app/sample-logic-app.png)
+   ![Открытие приложения логики в конструкторе приложений логики](./media/logic-apps-securing-a-logic-app/open-sample-logic-app-in-designer.png)
 
 1. На триггере или действии, для которого требуется защитить данные, нажмите кнопку с многоточием ( **...** ), а затем выберите **Параметры**.
 
-   ![Откройте "Параметры".](./media/logic-apps-securing-a-logic-app/open-settings.png)
+   ![Открыть параметры триггера или действия](./media/logic-apps-securing-a-logic-app/open-action-trigger-settings.png)
 
 1. Включите либо **безопасные входы**, либо **безопасные выходы**, либо и то, и другое. По завершении нажмите кнопку **Готово**.
 
@@ -278,11 +278,11 @@ POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group
 
    Действие или триггер теперь отображает значок блокировки в заголовке окна.
 
-   ![Значок блокировки в заголовке окна](./media/logic-apps-securing-a-logic-app/title-bar-lock-icon.png)
+   ![Строка заголовка действия или триггера отображается значок блокировки](./media/logic-apps-securing-a-logic-app/lock-icon-action-trigger-title-bar.png)
 
    Маркеры, которые представляют защищенные выходные данные из предыдущих действий, также отображают значки блокировки. Например, при выборе такого вывода из списка динамического содержимого для использования в действии этот маркер отображает значок блокировки.
 
-   ![Выбор выходных данных](./media/logic-apps-securing-a-logic-app/select-secured-token.png)
+   ![Выберите токен для защищенного вывода](./media/logic-apps-securing-a-logic-app/select-secured-token.png)
 
 1. После запуска приложения логики можно просмотреть журнал этого запуска.
 
@@ -292,7 +292,7 @@ POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group
 
       Если выбрана защита как входных, так и выходных данных, эти значения теперь будут скрыты.
 
-      ![Скрытые данные в журнале выполнения](./media/logic-apps-securing-a-logic-app/hidden-data-run-history.png)
+      ![Скрытые входы и выходы в журнале выполнения](./media/logic-apps-securing-a-logic-app/hidden-data-run-history.png)
 
 <a name="secure-data-code-view"></a>
 
@@ -349,7 +349,7 @@ POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group
 
   Если вы вручную включаете **безопасные входные данные** в триггере или действии, Logic Apps защищает эти входные данные в журнале выполнения. Если подчиненное действие явно использует видимые выходные данные из этого триггера или действия в качестве входных данных, Logic Apps скрывает входные данные этого подчиненного действия в журнале выполнения, но *не включает* в это действие **защищенные входные данные** и не скрывает выходные.
 
-  ![Защищенные входные и нисходящие последствия для большинства действий](./media/logic-apps-securing-a-logic-app/secure-inputs-flow.png)
+  ![Защищенные входные и нисходящие последствия для большинства действий](./media/logic-apps-securing-a-logic-app/secure-inputs-impact-on-downstream.png)
 
   Если действия "создать", "анализ JSON" и "ответ" явно используют видимые выходные данные триггера или действия, которые имеют защищенные входные данные, Logic Apps скрывают эти входные и выходные данные действий, но *не включает* **безопасные входные данные** этого действия. задав. Если подчиненное действие явно использует скрытые выходные данные из действий создания, анализа JSON или ответа в качестве входных данных, Logic Apps *не скрывает входные и выходные данные этого*последовательного действия.
 

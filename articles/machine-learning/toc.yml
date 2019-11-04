@@ -1,4 +1,4 @@
-- name: Служба "Машинное обучение Azure"
+- name: Машинное обучение Azure
   href: service/overview-what-is-azure-ml.md
 - name: Студия машинного обучения Azure
   href: studio/index.yml
