@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: tutorial
-ms.date: 09/05/2019
+ms.date: 10/14/2019
 ms.author: diberry
-ms.openlocfilehash: f81066ed21702dfe94ad7897adc3b82ed5a49f4d
-ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
+ms.openlocfilehash: 04f30818e3c871d74d94bfd92bd3f73e4e6637a0
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70387524"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73499415"
 ---
 # <a name="tutorial-fix-unsure-predictions-by-reviewing-endpoint-utterances"></a>Руководство по Исправление неточных прогнозов с помощью проверки высказываний конечной точки
 Из этого руководства вы узнаете, как повысить точность прогнозирования приложения, проверяя или корректируя высказывания, полученные через неизвестную для LUIS конечную точку HTTP интеллектуальной службы распознавания речи. Некоторые высказывания необходимо проверять на наличие намерений, а другие — на наличие сущностей. Высказывания конечных точек необходимо проверять в рамках планового обслуживания LUIS. 
@@ -28,6 +28,8 @@ ms.locfileid: "70387524"
 * должен периодически проверяться. 
 
 Проверив фрагменты речи конечной точки, вы подтверждаете или исправляете прогнозируемое намерение фрагмента речи. Кроме того, вы отмечаете настраиваемые сущности, которые не вошли в прогноз или были неверно спрогнозированы. 
+
+[!INCLUDE [Waiting for LUIS portal refresh](./includes/wait-v3-upgrade.md)]
 
 **В этом руководстве рассмотрено, как выполнять следующие задачи.**
 

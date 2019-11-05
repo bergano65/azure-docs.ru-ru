@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 07/05/2019
 ms.author: erhopf
-ms.openlocfilehash: a2e43b72bda65c5f1e7515888ac33b0ac806e64c
-ms.sourcegitcommit: 4f3f502447ca8ea9b932b8b7402ce557f21ebe5a
+ms.openlocfilehash: a66835d605b9005b8f94eb79a3c266f735f0a3b6
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71803245"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73467214"
 ---
 # <a name="quickstart-convert-text-to-speech-using-python"></a>Краткое руководство. Преобразование текста в речь с использованием Python
 
@@ -173,6 +173,6 @@ python tts.py
 ## <a name="see-also"></a>См. также
 
 * [Справочник по API преобразования текста в речь](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis)
-* [Quickstart: Synthesize speech with the Speech SDK for Python](quickstart-text-to-speech-python.md) (Краткое руководство. Синтез речи с помощью пакета SDK службы "Речь" для Python)
+* [Quickstart: Synthesize speech with the Speech SDK for Python](quickstarts/speech-to-text-from-microphone.md) (Краткое руководство. Синтез речи с помощью пакета SDK службы "Речь" для Python)
 * [Создание настраиваемого голоса](how-to-customize-voice-font.md)
 * [Запись примеров голоса для создания пользовательских голосовых моделей](record-custom-voice-samples.md)

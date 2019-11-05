@@ -9,12 +9,12 @@ ms.author: estfan
 ms.reviewer: klam, LADocs
 ms.topic: tutorial
 ms.date: 10/11/2019
-ms.openlocfilehash: ed48a4e5bab807695000fe6cdbecf1c1b7b01e9b
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.openlocfilehash: 5d852378812d8e69480ceb2c5dcea95f1d5f3770
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72325747"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73488613"
 ---
 # <a name="tutorial-monitor-virtual-machine-changes-by-using-azure-event-grid-and-logic-apps"></a>Руководство по отслеживанию изменений виртуальной машины с помощью Azure Logic Apps и службы "Сетка событий Azure"
 
@@ -101,7 +101,7 @@ ms.locfileid: "72325747"
    | Свойство | Обязательно | Value | ОПИСАНИЕ |
    | -------- | -------- | ----- | ----------- |
    | **подписка** | Yes | <*event-publisher-Azure-subscription-name*> | Выберите имя для подписки Azure, связанной с *издателем событий*. Для работы с этим руководством выберите для виртуальной машины имя подписки Azure. |
-   | **Тип ресурса** | Yes | <*event-publisher-Azure-resource-type*> | Выберите тип ресурса Azure для издателя событий. Дополнительные сведения о типах ресурсов Azure см. в статье [Поставщики и типы ресурсов Azure](../azure-resource-manager/resource-manager-supported-services.md). Для работы с этим учебником выберите значение `Microsoft.Resources.ResourceGroups`, чтобы отслеживать группы ресурсов Azure. Если необходимо отслеживать только виртуальные машины, читайте далее.  |
+   | **Тип ресурса** | Yes | <*event-publisher-Azure-resource-type*> | Выберите тип ресурса Azure для издателя событий. Дополнительные сведения о типах ресурсов Azure см. в статье [Поставщики и типы ресурсов Azure](../azure-resource-manager/resource-manager-supported-services.md). Для работы с этим учебником выберите значение `Microsoft.Resources.ResourceGroups`, чтобы отслеживать группы ресурсов Azure. |
    | **Имя ресурса** |  Yes | <*event-publisher-Azure-resource-name*> | Выберите имя ресурса Azure для издателя событий. Этот список зависит от выбранного типа ресурса. Для работы с этим учебником выберите имя группы ресурсов Azure, содержащей виртуальную машину. |
    | **Элемент типа события** |  Нет | <*event-types*> | Выберите один или несколько определенных типов событий для фильтрации и отправки в сетку событий. Например, при желании вы можете добавить эти типы событий, чтобы определить удаление и изменение ресурсов: <p><p>- `Microsoft.Resources.ResourceActionSuccess` <br>- `Microsoft.Resources.ResourceDeleteSuccess` <br>- `Microsoft.Resources.ResourceWriteSuccess` <p>Дополнительные сведения см. в следующих статьях: <p><p>- [Azure Event Grid event schema for resource groups](../event-grid/event-schema-resource-groups.md) (Схема событий Сетки событий Azure для групп ресурсов) <br>- [Understand event filtering for Event Grid subscriptions](../event-grid/event-filtering.md) (Сведения о фильтрации событий для подписок Сетки событий) <br>- [Filter events for Event Grid](../event-grid/how-to-filter-events.md) (Фильтрация событий для Сетки событий) |
    | Чтобы добавить необязательные свойства, щелкните **Добавить новый параметр**, а затем выберите необходимые свойства. | Нет | {просмотрите описания} | * **Фильтр префиксов**. В целях этого руководства оставьте это свойство пустым. Фильтр по умолчанию соответствует всем значениям. Тем не менее можно указать строку префикса в качестве фильтра, например путь и параметр для определенного ресурса. <p>* **Фильтр префиксов**. В целях этого руководства оставьте это свойство пустым. Фильтр по умолчанию соответствует всем значениям. Тем не менее можно указать строку суффикса в качестве фильтра, например расширение имени файла, если вас интересуют только определенные типы файлов. <p>* **Имя подписки**. Для этого учебника вы можете указать уникальное имя подписки на события. |

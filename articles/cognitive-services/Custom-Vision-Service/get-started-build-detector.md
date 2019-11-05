@@ -10,12 +10,12 @@ ms.subservice: custom-vision
 ms.topic: quickstart
 ms.date: 07/12/2019
 ms.author: anroth
-ms.openlocfilehash: 40f30ddece9881f565f45f4ef6c9d0e2ad85fe95
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 0ca849e75f01573bbb356105b281f03d267836e6
+ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68561134"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "73520457"
 ---
 # <a name="quickstart-how-to-build-an-object-detector-with-custom-vision"></a>Краткое руководство. Построение средств обнаружения объектов с помощью Пользовательского визуального распознавания
 
@@ -29,7 +29,7 @@ ms.locfileid: "68561134"
 
 ## <a name="create-custom-vision-resources-in-the-azure-portal"></a>Создание ресурсов Пользовательского визуального распознавания на портале Azure
 
-Чтобы использовать службу "Пользовательское визуальное распознавание", нужно создать ресурсы обучения и прогнозирования этой службы на портале Azure. Укажите требуемые сведения в диалоговом окне на странице [создания Пользовательского визуального распознавания](https://portal.azure.com/?microsoft_azure_marketplace_ItemHideKey=microsoft_azure_cognitiveservices_customvision#create/Microsoft.CognitiveServicesCustomVision), чтобы создать ресурс для обучения и прогнозирования. 
+[!INCLUDE [create-resources](includes/create-resources.md)]
 
 ## <a name="create-a-new-project"></a>Создание нового проекта
 

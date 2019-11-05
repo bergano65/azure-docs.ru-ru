@@ -9,19 +9,20 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: tutorial
-ms.date: 09/05/2019
+ms.date: 10/14/2019
 ms.author: diberry
-ms.openlocfilehash: 7b95dcf6a93c9abdeab9520f0a0fd80eb17dccff
-ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
+ms.openlocfilehash: 13a1589a6cc6ed48f159f361ff69a5a3ba8f0f80
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70387638"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73499451"
 ---
 # <a name="tutorial-extract-contextually-related-patterns-using-roles"></a>Руководство по Извлечение контекстуально связанных шаблонов с использованием ролей
 
 В этом руководстве используйте шаблон для извлечения данных из хорошо отформатированного высказывания шаблона. Шаблон речевого фрагмента использует [простую сущность](luis-concept-entity-types.md#simple-entity) и [роли](luis-concept-roles.md) для извлечения связанных данных, таких как исходное и конечное расположения.  При использовании шаблонов для намерения требуется меньшее количество примеров высказываний.
 
+[!INCLUDE [Waiting for LUIS portal refresh](./includes/wait-v3-upgrade.md)]
 
 **В этом руководстве рассмотрено, как выполнять следующие задачи.**
 
