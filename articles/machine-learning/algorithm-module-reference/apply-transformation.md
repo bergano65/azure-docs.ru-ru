@@ -1,24 +1,24 @@
 ---
 title: 'Применение преобразования: ссылка на модуль'
-titleSuffix: Azure Machine Learning service
-description: Узнайте, как использовать модуль "применить преобразование" в Машинное обучение Azure Service для изменения входного набора данных на основе ранее вычисленного преобразования.
+titleSuffix: Azure Machine Learning
+description: Узнайте, как использовать модуль "применить преобразование" в Машинное обучение Azure для изменения входного набора данных на основе ранее вычисленного преобразования.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: reference
 author: xiaoharper
 ms.author: zhanxia
-ms.date: 05/02/2019
-ms.openlocfilehash: adb2477fe2b7eea0dd0a98c7240843d90411d832
-ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
+ms.date: 10/22/2019
+ms.openlocfilehash: 19385870d184654d902cd40b45d4be3646c87b46
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72693880"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73493897"
 ---
 # <a name="apply-transformation-module"></a>Модуль применения преобразования
 
-В этой статье описывается модуль визуального интерфейса (Предварительная версия) для службы Машинное обучение Azure.
+В этой статье описывается модуль в Машинное обучение Azure Designer (Предварительная версия).
 
 Этот модуль используется для изменения входного набора данных на основе ранее вычисленного преобразования.  
   
@@ -46,4 +46,4 @@ ms.locfileid: "72693880"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-См. [набор модулей, доступных](module-reference.md) машинное обучение Azure службе. 
+См. [набор модулей, доступных](module-reference.md) для машинное обучение Azure. 

@@ -1,24 +1,24 @@
 ---
 title: 'Изменение метаданных: ссылка на модуль'
-titleSuffix: Azure Machine Learning service
-description: Узнайте, как использовать модуль редактирования метаданных в службе Машинное обучение Azure для изменения метаданных, связанных со столбцами в наборе данных.
+titleSuffix: Azure Machine Learning
+description: Узнайте, как использовать модуль редактирования метаданных в Машинное обучение Azure для изменения метаданных, связанных со столбцами в наборе данных.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: reference
 author: xiaoharper
 ms.author: zhanxia
-ms.date: 05/02/2019
-ms.openlocfilehash: b6e28577fefe4892d719e211e16edafed1504e87
-ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
+ms.date: 10/22/2019
+ms.openlocfilehash: 2c8224edbe95c8185e390c2ce48cbb4263f97586
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72693831"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73497951"
 ---
 # <a name="edit-metadata-module"></a>Изменить модуль метаданных
 
-В этой статье описывается модуль визуального интерфейса (Предварительная версия) для службы Машинное обучение Azure.
+В этой статье описывается модуль, который входит в Машинное обучение Azure Designer (Предварительная версия).
 
 Используйте модуль изменение данных для изменения метаданных, связанных со столбцами в наборе данных. Значение и тип данных набора данных изменятся после использования модуля редактирования метаданных.
 
@@ -98,4 +98,4 @@ ms.locfileid: "72693831"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-См. [набор модулей, доступных](module-reference.md) для службы машинное обучение Azure.
+См. [набор модулей, доступных](module-reference.md) для машинное обучение Azure.

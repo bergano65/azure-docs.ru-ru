@@ -8,19 +8,20 @@ ms.topic: include
 author: sgilley
 ms.author: sgilley
 ms.date: 05/06/2019
-ms.openlocfilehash: 695153438ba33d9803f7f938aa15b6552d28da40
-ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
+ms.openlocfilehash: 18e855a5f87e700481b69c39c4fe03a69437895e
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72692807"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73490060"
 ---
-1. [Создайте рабочую область службы машинное обучение Azure](../articles/machine-learning/service/how-to-manage-workspace.md) , если она отсутствует.
+1. [Создайте рабочую область Машинного обучения Azure](../articles/machine-learning/service/how-to-manage-workspace.md), если у вас ее нет.
 
-1. Откройте рабочую область на [портале Azure](https://portal.azure.com/).  Если вы не знаете, как найти рабочую область на портале, см. раздел [как найти рабочую область](../articles/machine-learning/service/how-to-manage-workspace.md#view).  
+1. Войдите в [ml.Azure.com](https://ml.azure.com) и выберите рабочую область, с которой вы хотите работать.
 
-1. В своей рабочей области выберите **Графический интерфейс**.  
- 
-    ![Запуск графического интерфейса](./media/aml-ui-prereq/launch-ui.png)
+1. Выберите **конструктор**.
 
-    Вы также можете получить доступ к визуальному интерфейсу с [целевой страницы рабочей области (Предварительная версия)](https://ml.azure.com).
+    ![Запуск конструктора](./media/aml-ui-prereq/launch-designer.png)
+
+
+

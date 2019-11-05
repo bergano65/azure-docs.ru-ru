@@ -6,33 +6,28 @@ author: IEvangelist
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 7/5/2019
+ms.date: 10/07/2019
 ms.author: dapine
-ms.openlocfilehash: cbf11c13bfb5c90739ea67fab92df08796a88e50
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 2cb2cfbdfbac5d496f109d85977b41a050766ab0
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67717280"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73499107"
 ---
-## <a name="create-an-computer-vision-resource"></a>Создание компьютерного ресурса
+## <a name="create-an-computer-vision-resource"></a>Создание ресурса Компьютерное зрение
 
 1. Войдите на [портал Azure](https://portal.azure.com).
-1. Нажмите кнопку [создать **компьютерного** ](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesComputerVision) ресурсов
+1. Щелкните [создать **компьютерное зрение** ](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesComputerVision) ресурс.
 1. Введите все необходимые параметры:
 
-    |Параметр|Значение|
+    |Настройка|Значение|
     |--|--|
-    |Имя|Желаемое имя (2-64 символов)|
-    |Подписка|Выберите соответствующую подписку|
-    |Местоположение|Выберите любое расположение рядом и доступность|
-    |Ценовая категория|`F0` -Минимальный ценовой категории|
-    |Группа ресурсов|Выберите группу доступных ресурсов|
+    |Имя|Требуемое имя (2-64 символов)|
+    |Подписка|Выберите подходящую подписку|
+    |Расположение|Выберите все расположенные поблизости и доступные расположения|
+    |Уровень ценообразования|`F0` — минимальная ценовая категория|
+    |Группа ресурсов|Выберите доступную группу ресурсов|
 
-1. Нажмите кнопку **создать** и ожидания ресурсов должен быть создан. После его создания, перейдите на страницу ресурсов
-1. Сбор настроен `endpoint` и ключ API:
-
-    |Вкладка ресурсов на портале|Параметр|Значение|
-    |--|--|--|
-    |**Обзор**|Конечная точка|Копирование конечной точки. Выглядит `https://computer-vision.cognitiveservices.azure.com/`|
-    |**Ключи**|Ключ API|Скопируйте 1 из двух ключей. Это строка 32 буквенно-цифровых символов без пробелов и дефисов, `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`.|
+1. Щелкните **создать** и дождитесь создания ресурса. После создания перейдите на страницу ресурсов.
+1. Сбор настроенных `{ENDPOINT_URI}` и `{API_KEY}`см. в разделе [сбор необходимых параметров](../computer-vision-how-to-install-containers.md#gathering-required-parameters) для получения дополнительных сведений.

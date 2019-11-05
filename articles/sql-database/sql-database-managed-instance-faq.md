@@ -11,12 +11,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein, carlrab
 ms.date: 07/16/2019
-ms.openlocfilehash: 7ae3eb74b0d0c3f0bd6124362608e14555179697
-ms.sourcegitcommit: d4c9821b31f5a12ab4cc60036fde00e7d8dc4421
+ms.openlocfilehash: 7e341cf8a4ff2a18e44e36d73ad5dbc642582802
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71710150"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73496279"
 ---
 # <a name="sql-database-managed-instance-frequently-asked-questions-faq"></a>Часто задаваемые вопросы об управляемом экземпляре базы данных SQL
 
@@ -58,7 +58,7 @@ ms.locfileid: "71710150"
 
 Репликацию транзакций можно использовать, если все таблицы в базе данных имеют первичные ключи.
 
-Собственные `COPY_ONLY` резервные копии, созданные из управляемого экземпляра, не могут быть восстановлены в SQL Server, так как для управляемого экземпляра используется более высокая версия базы данных, чем SQL Server.
+Резервные копии машинного `COPY_ONLY`, созданные из управляемого экземпляра, не могут быть восстановлены в SQL Server, так как для управляемого экземпляра выше по сравнению с SQL Server.
 
 ## <a name="how-can-i-migrate-my-instance-database-to-a-single-azure-sql-database"></a>Как перенести базу данных экземпляра в отдельную базу данных SQL Azure?
 
@@ -124,7 +124,7 @@ ms.locfileid: "71710150"
 - Экземпляр доступа с учетной записью администратора с низким уровнем привилегий.
 - Настройка доступа к JiT-Jumpbox для учетной записи sysadmin.
 - Включите [аудит SQL](https://docs.microsoft.com/sql/relational-databases/security/auditing/sql-server-audit-database-engine)и интегрируйте его с механизмами предупреждений.
-- Включите [обнаружение угроз](https://docs.microsoft.com/azure/sql-database/sql-database-threat-detection) в пакете расширенной [защиты данных (ADS)](https://docs.microsoft.com/azure/sql-database/sql-database-advanced-data-security) .
+- Включите [обнаружение угроз](https://docs.microsoft.com/azure/sql-database/sql-database-threat-detection) в пакете [расширенной защиты данных (ADS)](https://docs.microsoft.com/azure/sql-database/sql-database-advanced-data-security) .
 
 
 ## <a name="where-can-i-find-use-cases-and-resulting-cost-savings-with-managed-instance"></a>Где можно найти варианты использования и сократить расходы с помощью управляемого экземпляра?
@@ -132,10 +132,10 @@ ms.locfileid: "71710150"
 Примеры использования управляемого экземпляра:
 
 - [коматсу](https://customers.microsoft.com/story/komatsu-australia-manufacturing-azure)
-- [КМД](https://customers.microsoft.com/en-ca/story/kmd-professional-services-azure-sql-database)
+- [кмд](https://customers.microsoft.com/en-ca/story/kmd-professional-services-azure-sql-database)
 - [повердетаилс](https://customers.microsoft.com/story/powerdetails-partner-professional-services-azure-sql-database-managed-instance)
-- [Аллскриптс](https://customers.microsoft.com/story/allscripts-partner-professional-services-azure)  
-Чтобы получить более полное представление о преимуществах, затратах и рисках, связанных с развертыванием управляемого экземпляра базы данных SQL Azure, также можно изучить Forrester: [Общее экономическое воздействие MI](https://azure.microsoft.com/resources/forrester-tei-sql-database-managed-instance).
+- [Аллскриптс](https://customers.microsoft.com/story/allscripts-partner-professional-services-azure)   
+Чтобы получить более полное представление о преимуществах, затратах и рисках, связанных с развертыванием управляемого экземпляра базы данных SQL Azure, также можно изучить Forrester: [Общее экономическое воздействие на MI](https://azure.microsoft.com/resources/forrester-tei-sql-database-managed-instance).
 
 
 ## <a name="can-i-do-dns-refresh"></a>Можно ли выполнить обновление DNS? 
@@ -179,7 +179,7 @@ ms.locfileid: "71710150"
 Да, вам не нужно расшифровывать базу данных, чтобы ее можно было восстановить в управляемом экземпляре. Необходимо предоставить сертификат или ключ, используемый в качестве предохранителя ключа шифрования в исходной системе для управляемого экземпляра, чтобы иметь возможность считывать данные из зашифрованного файла резервной копии. Это можно осуществить двумя путями:
 
 - *Передача предохранителя сертификата в управляемый экземпляр*. Это можно сделать только с помощью PowerShell. [Пример скрипта](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-migrate-tde-certificate) описывает весь процесс.
-- *Передача асимметричного предохранителя ключа в Azure Key Vault (AKV) и управляемый экземпляр Point*. Этот подход похож на вариант использования TDE с собственным ключом (BYOK), который также использует интеграцию AKV для хранения ключа шифрования. Если вы не хотите использовать ключ в качестве предохранителя ключа шифрования и просто хотите сделать ключ доступным для управляемого экземпляра для восстановления зашифрованных баз данных, следуйте инструкциям по [настройке BYOK TDE](https://docs.microsoft.com/azure/sql-database/transparent-data-encryption-azure-sql#manage-transparent-data-encryption-in-the-azure-portal)и не устанавливайте флажок, чтобы *сделать выбранный ключ средство защиты TDE по умолчанию*.
+- *Передача асимметричного предохранителя ключа в Azure Key Vault (AKV) и управляемый экземпляр Point*. Этот подход похож на вариант использования TDE с собственным ключом (BYOK), который также использует интеграцию AKV для хранения ключа шифрования. Если вы не хотите использовать ключ в качестве предохранителя ключа шифрования и просто хотите сделать ключ доступным для управляемого экземпляра для восстановления зашифрованных баз данных, следуйте инструкциям по [настройке BYOK TDE](https://docs.microsoft.com/azure/sql-database/transparent-data-encryption-azure-sql#manage-transparent-data-encryption)и не устанавливайте флажок, чтобы *сделать выбранный ключ средство защиты TDE по умолчанию*.
 
 После того как средство защиты шифрования доступно для управляемого экземпляра, можно продолжить стандартную процедуру восстановления базы данных.
 

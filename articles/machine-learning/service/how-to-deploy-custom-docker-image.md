@@ -10,14 +10,15 @@ ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
 ms.date: 08/22/2019
-ms.openlocfilehash: 47387108de09c9b24471c4afc06a25fa0cbeca00
-ms.sourcegitcommit: 87efc325493b1cae546e4cc4b89d9a5e3df94d31
+ms.openlocfilehash: 3f822e0089772f06245d80c1323cf1f5dfe10361
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73053392"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73496936"
 ---
 # <a name="deploy-a-model-using-a-custom-docker-base-image"></a>Развертывание модели с помощью пользовательского базового образа DOCKER
+[!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
 Узнайте, как использовать пользовательский базовый образ DOCKER при развертывании обученных моделей с помощью Машинное обучение Azure.
 
@@ -180,10 +181,10 @@ ms.locfileid: "73053392"
 
 Корпорация Майкрософт предоставляет несколько образов DOCKER в общедоступном репозитории, который можно использовать с действиями, описанными в этом разделе.
 
-| Образ — | Описание |
+| Образ — | Description (Описание) |
 | ----- | ----- |
 | `mcr.microsoft.com/azureml/o16n-sample-user-base/ubuntu-miniconda` | Базовый образ для Машинное обучение Azure |
-| `mcr.microsoft.com/azureml/onnxruntime:latest` | Содержит среду выполнения ONNX для ЦП инферекнинг |
+| `mcr.microsoft.com/azureml/onnxruntime:latest` | Содержит среду выполнения ONNX для загрузки ЦП |
 | `mcr.microsoft.com/azureml/onnxruntime:latest-cuda` | Содержит среду выполнения ONNX и CUDA для GPU |
 | `mcr.microsoft.com/azureml/onnxruntime:latest-tensorrt` | Содержит среду выполнения ONNX и Тенсоррт для GPU |
 | `mcr.microsoft.com/azureml/onnxruntime:latest-openvino-vadm ` | Содержит среду выполнения ONNX и Опенвино для<sup> </sup> архитектуры Intel концепция Accelerator на основе мовидиус<sup>TM</sup> мириадкс впус |

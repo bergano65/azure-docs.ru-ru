@@ -11,14 +11,15 @@ author: jpe316
 ms.reviewer: larryfr
 ms.date: 09/13/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: a5674658fa237e44c7caea45c8f6d587a471b981
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
-ms.translationtype: MT
+ms.openlocfilehash: 856f00b17a5ee994f8864c5d46ce4d796d68d367
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72595634"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73497007"
 ---
 # <a name="deploy-models-with-azure-machine-learning"></a>Развертывание моделей с помощью Машинное обучение Azure
+[!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
 Узнайте, как развернуть модель машинного обучения в качестве веб-службы в облаке Azure или на Azure IoT Edge устройствах.
 
@@ -207,7 +208,7 @@ AZUREML_MODEL_DIR — это переменная среды, созданная
 
 В следующей таблице описывается значение AZUREML_MODEL_DIR в зависимости от числа развернутых моделей:
 
-| Развертывание. | Значение переменной среды |
+| Развертывание | Значение переменной среды |
 | ----- | ----- |
 | Одна модель | Путь к папке, содержащей модель. |
 | Несколько моделей | Путь к папке, содержащей все модели. Модели расположены по имени и версии в этой папке (`$MODEL_NAME/$VERSION`) |
@@ -375,7 +376,7 @@ def run(data):
 Дополнительные примеры см. в следующих скриптах:
 
 * [PyTorch](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training-with-deep-learning/train-hyperparameter-tune-deploy-with-pytorch)
-* [TensorFlow](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/training-with-deep-learning/train-hyperparameter-tune-deploy-with-tensorflow)
+* [TensorFlow](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/training-with-deep-learning/train-hyperparameter-tune-deploy-with-tensorflow);
 * [Keras](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/training-with-deep-learning/train-hyperparameter-tune-deploy-with-keras);
 * [ONNX](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/onnx/)
 
@@ -529,8 +530,8 @@ az ml model deploy -n myservice -m mymodel:1 --ic inferenceconfig.json
 
 | Целевой объект вычисления | Пример конфигурации развертывания |
 | ----- | ----- |
-| Местного уровня | `deployment_config = LocalWebservice.deploy_configuration(port=8890)` |
-| Служба "Экземпляры контейнеров Azure" | `deployment_config = AciWebservice.deploy_configuration(cpu_cores = 1, memory_gb = 1)` |
+| Local | `deployment_config = LocalWebservice.deploy_configuration(port=8890)` |
+| Экземпляры контейнеров Azure | `deployment_config = AciWebservice.deploy_configuration(cpu_cores = 1, memory_gb = 1)` |
 | Служба Azure Kubernetes | `deployment_config = AksWebservice.deploy_configuration(cpu_cores = 1, memory_gb = 1)` |
 
 Классы для локальных объектов, экземпляров контейнеров Azure и веб-служб AKS можно импортировать из `azureml.core.webservice`:
@@ -607,9 +608,9 @@ az ml model deploy -m mymodel:1 --ic inferenceconfig.json --dc deploymentconfig.
 
 Дополнительные сведения см. в документации по [AZ ml для развертывания модели](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/model?view=azure-cli-latest#ext-azure-cli-ml-az-ml-model-deploy) .
 
-### <a id="notebookvm"></a>Веб-служба виртуальной машины записных книжек (разработка и тестирование)
+### <a id="notebookvm"></a>Веб-служба вычислительных экземпляров (разработка и тестирование)
 
-См. раздел [развертывание модели на виртуальных машинах записных книжек](how-to-deploy-local-container-notebook-vm.md).
+См. раздел [развертывание модели для машинное обучение Azure вычислительного экземпляра](how-to-deploy-local-container-notebook-vm.md).
 
 ### <a id="aci"></a>Экземпляры контейнеров Azure (разработка и тестирование)
 
@@ -825,7 +826,7 @@ print(response.json())
 
 1. Используйте подключения к службам, чтобы настроить подключение субъекта-службы к рабочей области Машинное обучение Azure, чтобы получить доступ к артефактам. Последовательно выберите пункты Параметры проекта, **подключения к службе**и **Azure Resource Manager**:
 
-    [![Select Azure Resource Manager](media/how-to-deploy-and-where/view-service-connection.png)](media/how-to-deploy-and-where/view-service-connection-expanded.png)
+    [![выберите Azure Resource Manager](media/how-to-deploy-and-where/view-service-connection.png)](media/how-to-deploy-and-where/view-service-connection-expanded.png)
 
 1. В списке **область уровня области** выберите **азуремлворкспаце**и введите остальные значения:
 
@@ -833,11 +834,11 @@ print(response.json())
 
 1. Чтобы непрерывно развернуть модель машинного обучения с помощью Azure Pipelines, в разделе конвейеры выберите **выпуск**. Добавьте новый артефакт, а затем выберите артефакт **модели AzureML** и созданное ранее подключение службы. Выберите модель и версию для активации развертывания:
 
-    [Модель ![Select AzureML](media/how-to-deploy-and-where/enable-modeltrigger-artifact.png)](media/how-to-deploy-and-where/enable-modeltrigger-artifact-expanded.png)
+    [![выбрать модель AzureML](media/how-to-deploy-and-where/enable-modeltrigger-artifact.png)](media/how-to-deploy-and-where/enable-modeltrigger-artifact-expanded.png)
 
 1. Включите триггер модели для артефакта модели. При включении триггера каждый раз, когда указанная версия (то есть самая последняя версия) в этой модели регистрируется в рабочей области, инициируется конвейер выпуска Azure DevOps.
 
-    [![Enable триггера модели](media/how-to-deploy-and-where/set-modeltrigger.png)](media/how-to-deploy-and-where/set-modeltrigger-expanded.png)
+    [![включения триггера модели](media/how-to-deploy-and-where/set-modeltrigger.png)](media/how-to-deploy-and-where/set-modeltrigger-expanded.png)
 
 Дополнительные примеры проектов и примеры см. в этих примерах репозиториев в GitHub:
 
@@ -884,7 +885,7 @@ package = Model.package(ws, [model], inference_config)
 package.wait_for_creation(show_output=True)
 ```
 
-После создания пакета можно использовать `package.pull()` для извлечения образа в локальную среду DOCKER. Выходные данные этой команды будут отображать имя изображения. Пример. 
+После создания пакета можно использовать `package.pull()` для извлечения образа в локальную среду DOCKER. Выходные данные этой команды будут отображать имя изображения. Например: 
 
 `Status: Downloaded newer image for myworkspacef78fd10.azurecr.io/package:20190822181338`. 
 
@@ -921,7 +922,7 @@ print("Password:", acr.password)
 
 Этот код скачивает файлы, необходимые для сборки образа, в каталог `imagefiles`. Dockerfile, включаемые в сохраненные файлы, ссылаются на базовый образ, хранящийся в реестре контейнеров Azure. При создании образа в локальной установке DOCKER необходимо использовать адрес, имя пользователя и пароль для проверки подлинности в реестре. Выполните следующие действия, чтобы создать образ с помощью локальной установки docker:
 
-1. Чтобы проверить подлинность DOCKER с помощью реестра контейнеров Azure, из оболочки или сеанса командной строки используйте следующую команду. Замените `<address>`, `<username>` и `<password>` значениями, полученными с помощью `package.get_container_registry()`.
+1. Чтобы проверить подлинность DOCKER с помощью реестра контейнеров Azure, из оболочки или сеанса командной строки используйте следующую команду. Замените `<address>`, `<username>`и `<password>` значениями, полученными с помощью `package.get_container_registry()`.
 
     ```bash
     docker login <address> -u <username> -p <password>
@@ -996,6 +997,70 @@ docker kill mycontainer
 Чтобы удалить зарегистрированную модель, используйте `model.delete()`.
 
 Дополнительные сведения см. в документации по [WebService. Delete ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice(class)?view=azure-ml-py#delete--) и [model. Delete ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#delete--).
+
+## <a name="preview-no-code-model-deployment"></a>Образца Развертывание модели без кода
+Развертывание модели без кода сейчас находится на этапе предварительной версии и поддерживает следующие платформы машинного обучения:
+
+### <a name="tensorflow-savedmodel-format"></a>Формат Саведмодел Tensorflow
+```
+from azureml.core import Model
+
+model = Model.register(workspace=ws,
+                       model_name='flowers',                        # Name of the registered model in your workspace.
+                       model_path='./flowers_model',                # Local Tensorflow SavedModel folder to upload and register as a model.
+                       model_framework=Model.Framework.TENSORFLOW,  # Framework used to create the model.
+                       model_framework_version='1.14.0',            # Version of Tensorflow used to create the model.
+                       description='Flowers model')
+
+service_name = 'tensorflow-flower-service'
+service = Model.deploy(ws, service_name, [model])
+```
+
+### <a name="onnx-models"></a>Модели ONNX
+Регистрация и развертывание модели ONNX поддерживаются для любого графа вывода ONNX. Этапы предварительной обработки и выполнения процессов в настоящее время не поддерживаются.
+
+Ниже приведен пример регистрации и развертывания модели MNIST ONNX.
+```
+from azureml.core import Model
+
+model = Model.register(workspace=ws,
+                       model_name='mnist-sample',                  # Name of the registered model in your workspace.
+                       model_path='mnist-model.onnx',              # Local ONNX model to upload and register as a model.
+                       model_framework=Model.Framework.ONNX ,      # Framework used to create the model.
+                       model_framework_version='1.3',              # Version of ONNX used to create the model.
+                       description='Onnx MNIST model')
+
+service_name = 'onnx-mnist-service'
+service = Model.deploy(ws, service_name, [model])
+```
+### <a name="scikit-learn-models"></a>Scikit — изучение моделей
+Не поддерживается развертывание модели кода для всех встроенных типов моделей scikit-учиться.
+
+Ниже приведен пример регистрации и развертывания модели sklearn без дополнительного кода.
+```
+from azureml.core import Model
+from azureml.core.resource_configuration import ResourceConfiguration
+
+model = Model.register(workspace=ws,
+                       model_name='my-sklearn-model',                # Name of the registered model in your workspace.
+                       model_path='./sklearn_regression_model.pkl',  # Local file to upload and register as a model.
+                       model_framework=Model.Framework.SCIKITLEARN,  # Framework used to create the model.
+                       model_framework_version='0.19.1',             # Version of scikit-learn used to create the model.
+                       resource_configuration=ResourceConfiguration(cpu=1, memory_in_gb=0.5),
+                       description='Ridge regression model to predict diabetes progression.',
+                       tags={'area': 'diabetes', 'type': 'regression'})
+                       
+service_name = 'my-sklearn-service'
+service = Model.deploy(ws, service_name, [model])
+```
+
+Примечание. Эти зависимости включены в готовый контейнер вывода sklearn:
+```
+    - azureml-defaults
+    - inference-schema[numpy-support]
+    - scikit-learn
+    - numpy
+```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Развертывание модели с помощью пользовательского образа DOCKER](how-to-deploy-custom-docker-image.md)

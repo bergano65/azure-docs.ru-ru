@@ -1,6 +1,6 @@
 ---
-title: Работа со Службами машинного обучения Azure в Записных книжках Azure
-description: Обзор примеров записных книжек для Служб машинного обучения Azure, которые можно использовать с Записными книжками Azure.
+title: Использование Машинное обучение Azure в записных книжках Azure
+description: Обзор примеров записных книжек для Машинное обучение Azure, которые можно использовать с записными книжками Azure.
 services: app-service
 documentationcenter: ''
 author: kraigb
@@ -12,23 +12,23 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 12/04/2018
 ms.author: kraigb
-ms.openlocfilehash: f591758fa6e51c420a090aa62d5160320fe15fe8
-ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
+ms.openlocfilehash: 6eac5d77404c85d5481ded7e58b0cd9fab0de083
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2019
-ms.locfileid: "71973033"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73496643"
 ---
-# <a name="use-azure-machine-learning-service-in-a-notebook"></a>Работа со Службами машинного обучения Azure в записной книжке
+# <a name="use-azure-machine-learning-in-a-notebook"></a>Использование Машинное обучение Azure в записной книжке
 
-Служба "Записные книжки Azure" предварительно настроена со средой, необходимой для работы со [Службой машинного обучения Azure](/azure/machine-learning/service/). Можно легко клонировать пример проекта в свою учетную запись Записных книжек для изучения различных сценариев Машинного обучения.
+В записных книжках Azure предварительно настроена необходимая среда для работы с [машинное обучение Azure](/azure/machine-learning/service/). Можно легко клонировать пример проекта в свою учетную запись Записных книжек для изучения различных сценариев Машинного обучения.
 
 ## <a name="clone-the-sample-into-your-account"></a>Клонирование примера в свою учетную запись
 
 1. Войдите в [Записные книжки Azure](https://notebooks.azure.com/).
 1. Выберите **Мои проекты** , чтобы открыть панель мониторинга проектов.
 1. Щелкните элемент **Отправить** репозиторий GitHub (кнопка со стрелкой вверх), чтобы открыть всплывающее окно **Отправка репозитория GitHub** .
-1. Во всплывающем окне введите `Azure/MachineLearningNotebooks` в поле **GitHub repository** (Репозиторий GitHub), укажите имя проекта в поле **Имя проекта**, например "Служба машинного обучения Azure", и идентификатор в поле **Идентификатор проекта**, снимите флажок **Общедоступный**, а затем выберите **Импорт**.
+1. В всплывающем окне введите `Azure/MachineLearningNotebooks` в **репозитории GitHub**, укажите имя проекта в **имени проекта** , например "машинное обучение Azure", укажите идентификатор в поле **идентификатор проекта**, снимите флажок **общедоступный** , если требуется, а затем выберите **Импорт**.
 
     ![Импорт примера записной книжки Машинного обучения Azure в учетную запись службы "Записные книжки"](media/azureml-import-project.png)
 
@@ -42,13 +42,13 @@ ms.locfileid: "71973033"
 
 1. После завершения настройки выберите **01. Приступая к работе** , чтобы открыть папку, содержащую тринадцать различные примеры записных книжек, каждая из которых является ясной.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Документация Служб машинного обучения Azure содержит множество других ресурсов, которые помогут вам при работе со Службой машинного обучения в записных книжках:
+Документация по Машинное обучение Azure содержит различные другие ресурсы, которые помогут вам работать с Машинное обучение в записных книжках.
 
-- [Краткое руководство по началу работы со службой "Машинное обучение Azure" с использованием пакета SDK для Python](https://docs.microsoft.com/azure/machine-learning/service/quickstart-create-workspace-with-python).
-- [Руководство (1) по обучению модели классификации изображений с помощью Службы машинного обучения Azure](https://docs.microsoft.com/azure/machine-learning/service/tutorial-train-models-with-aml).
-- [Руководство (2). Развертывание модели классификации изображений в Экземпляре контейнера Azure](https://docs.microsoft.com/azure/machine-learning/service/tutorial-deploy-models-with-aml).
-- [Руководство. Создание регрессионной модели с помощью автоматического машинного обучения](https://docs.microsoft.com/azure/machine-learning/service/tutorial-auto-train-models).
+- [Краткое руководство. Использование Python для начала работы с Машинное обучение Azure](https://docs.microsoft.com/azure/machine-learning/service/quickstart-create-workspace-with-python)
+- [Учебник #1: обучение модели классификации изображений с помощью Машинное обучение Azure](https://docs.microsoft.com/azure/machine-learning/service/tutorial-train-models-with-aml)
+- [Руководство #2. Развертывание модели классификации изображений в экземпляре контейнера Azure (ACI)](https://docs.microsoft.com/azure/machine-learning/service/tutorial-deploy-models-with-aml)
+- [Учебник. Обучение модели классификации с помощью автоматизированного машинного обучения в Машинное обучение Azure](https://docs.microsoft.com/azure/machine-learning/service/tutorial-auto-train-models)
 
 Ознакомьтесь также с документацией по [пакету SDK Python для Машинного обучения Azure](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py).

@@ -1,7 +1,7 @@
 ---
 title: 'Создание модели Python: Справочник по модулям'
-titleSuffix: Azure Machine Learning service
-description: Узнайте, как использовать модель создания модели Python в Машинное обучение Azure Service для создания пользовательского модуля моделирования или обработки данных.
+titleSuffix: Azure Machine Learning
+description: Узнайте, как использовать модель создания модели Python в Машинное обучение Azure для создания пользовательского модуля моделирования или обработки данных.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -9,18 +9,18 @@ ms.topic: reference
 author: xiaoharper
 ms.author: zhanxia
 ms.date: 05/06/2019
-ms.openlocfilehash: 2a035644dc0d3d533aa052217c89968a5692230b
-ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
+ms.openlocfilehash: 33e15055958ac99f2aa9eb160f9e5cf3c5b0cd41
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72693894"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73493801"
 ---
 # <a name="create-python-model"></a>Создание модели Python
 
 В этой статье описывается использование модуля **создания модели Python** для создания обученной модели из скрипта Python. 
 
-Модель можно создать на основе любого из сведений, включенного в пакет Python в среде Машинное обучение Azure. 
+Модель можно создать на основе любого из сведений, включенного в пакет Python в среде Машинное обучение Azure конструктора. 
 
 После создания модели можно использовать [обучение модели](train-model.md) для обучения модели на наборе данных, как и любые другие знания в машинное обучение Azure. Обученную модель можно передать в [модель оценки](score-model.md) , чтобы использовать модель для создания прогнозов. Затем обученную модель можно сохранить, а рабочий процесс оценки можно опубликовать как веб-службу.
 

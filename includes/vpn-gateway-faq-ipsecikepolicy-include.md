@@ -5,18 +5,18 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: include
-ms.date: 12/14/2018
+ms.date: 11/04/2019
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 36b3fcfa90b5b1de9c9d3262da1f3e519cc99c19
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 57e8905fd9722d5b8a8b0ab76dbcea5b91c6d30a
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185110"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73495839"
 ---
 ### <a name="is-custom-ipsecike-policy-supported-on-all-azure-vpn-gateway-skus"></a>Поддерживается ли политика IPsec/IKE во всех номерах SKU VPN-шлюзов Azure?
-Политика IPsec/IKE поддерживается в VPN-шлюзах Azure класса **VpnGw1, VpnGw2, VpnGw3, Standard** и **HighPerformance**. SKU уровня **Базовый** **не** поддерживается.
+Пользовательская политика IPsec/IKE поддерживается во **всех SKU Azure, за исключением номера SKU "базовый"** .
 
 ### <a name="how-many-policies-can-i-specify-on-a-connection"></a>Сколько политик можно указать для подключения?
 Можно указать только ***одну*** комбинацию политик для каждого подключения.
@@ -74,7 +74,7 @@ ms.locfileid: "67185110"
 | ---                       | ---                      | ---          | ---            |
 | 1                         | DHGroup1                 | PFS1         | MODP (768 бит)   |
 | 2                         | DHGroup2                 | PFS2         | MODP (1024 бит)  |
-| 14                        | DHGroup14<br>DHGroup2048 | PFS2048      | MODP (2048 бит)  |
+| 14.                        | DHGroup14<br>DHGroup2048 | PFS2048      | MODP (2048 бит)  |
 | 19                        | ECP256                   | ECP256       | ECP (256 бит)    |
 | 20                        | ECP384                   | ECP384       | ECP (384 бит)    |
 | 24                        | DHGroup24                | PFS24        | MODP (2048 бит)  |

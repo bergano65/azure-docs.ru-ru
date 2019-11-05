@@ -8,12 +8,12 @@ ms.author: brjohnst
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: a4daaac6abababcedb5d6dd7eb2122ef29846ef4
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
-ms.translationtype: MT
+ms.openlocfilehash: dff6473fd01fc2d41c5bb100eefd583afe4175b0
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72792535"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73496483"
 ---
 # <a name="azure-cognitive-search-service-rest-api-version-2019-05-06-preview"></a>API-интерфейс службы Когнитивный поиск Azure для других версий — Предварительная версия 2019-05-06
 
@@ -24,6 +24,8 @@ ms.locfileid: "72792535"
 
 
 ## <a name="new-in-2019-05-06-preview"></a>Новое в 2019-05-06-Preview
+
+[* * Добавочное индексирование](cognitive-search-incremental-indexing-conceptual.md) — это новый режим для индексирования, который добавляет состояние и кэширование, позволяя повторно использовать существующие выходные данные при отсутствии изменений в определениях данных, индексаторов и набора навыков. Эта функция относится только к дополнениям с помощью функционального набора навыков.
 
 [**Хранилище знаний**](knowledge-store-concept-intro.md) — это новое назначение конвейера обогащения на основе искусственного интеллекта. В дополнение к индексу теперь можно сохранять заполненные структуры данных, созданные во время индексирования в службе хранилища Azure. Вы управляете физическими структурами данных с помощью элементов в наборе навыков, включая способ формирования данных, будь то данные, хранящиеся в хранилище таблиц или хранилище BLOB-объектов, и существует ли несколько представлений.
 

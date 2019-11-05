@@ -11,121 +11,94 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 09/27/2019
 ms.author: diberry
-ms.openlocfilehash: e55c0453c117c51e5a8e4986631516d3e61ed10b
-ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
+ms.openlocfilehash: 51d1bd515651824545d486207ad4a74476aa7092
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71677598"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73491272"
 ---
 # <a name="keyphrase-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность keyPhrase для приложения LUIS
 Сущность Кэйфрасе извлекает из utterance различные ключевые фразы. Вам не нужно добавлять в приложение пример фразы продолжительностью, содержащий Кэйфрасе. Сущность Кэйфрасе поддерживается во [многих культурах](luis-language-support.md#languages-supported) как часть функций [анализа текста](../text-analytics/overview.md) . 
 
 ## <a name="resolution-for-prebuilt-keyphrase-entity"></a>Разрешение для предварительно созданной сущности keyPhrase
 
-#### <a name="v2-prediction-endpoint-responsetabv2"></a>[Ответ конечной точки прогнозирования v2](#tab/V2)
+Для запроса возвращаются следующие объекты сущности:
 
-В следующем примере показано разрешение для сущности **builtin.keyPhrase**.
+`where is the educational requirements form for the development and engineering group`
 
-```json
-{
-  "query": "where is the educational requirements form for the development and engineering group",
-  "topScoringIntent": {
-    "intent": "GetJobInformation",
-    "score": 0.182757929
-  },
-  "entities": [
-    {
-      "entity": "development",
-      "type": "builtin.keyPhrase",
-      "startIndex": 51,
-      "endIndex": 61
-    },
-    {
-      "entity": "educational requirements",
-      "type": "builtin.keyPhrase",
-      "startIndex": 13,
-      "endIndex": 36
-    }
-  ]
-}
-```
-#### <a name="v3-prediction-endpoint-responsetabv3"></a>[V3 прогнозирование ответа конечной точки](#tab/V3)
+#### <a name="v3-responsetabv3"></a>[V3 ответ](#tab/V3)
 
 Следующий код JSON относится к параметру `verbose`, для которого задано значение `false`:
 
 ```json
-{
-    "query": "where is the educational requirements form for the development and engineering group",
-    "prediction": {
-        "normalizedQuery": "where is the educational requirements form for the development and engineering group",
-        "topIntent": "GetJobInformation",
-        "intents": {
-            "GetJobInformation": {
-                "score": 0.157861546
-            }
-        },
-        "entities": {
-            "keyPhrase": [
-                "educational requirements",
-                "development"
-            ]
-        }
-    }
+"entities": {
+    "keyPhrase": [
+        "educational requirements",
+        "development"
+    ]
 }
 ```
-
+#### <a name="v3-verbose-responsetabv3-verbose"></a>[V3 подробный ответ](#tab/V3-verbose)
 Следующий код JSON относится к параметру `verbose`, для которого задано значение `true`:
 
 ```json
-{
-    "query": "where is the educational requirements form for the development and engineering group",
-    "prediction": {
-        "normalizedQuery": "where is the educational requirements form for the development and engineering group",
-        "topIntent": "GetJobInformation",
-        "intents": {
-            "GetJobInformation": {
-                "score": 0.157861546
-            }
-        },
-        "entities": {
-            "keyPhrase": [
-                "educational requirements",
-                "development"
-            ],
-            "$instance": {
-                "keyPhrase": [
-                    {
-                        "type": "builtin.keyPhrase",
-                        "text": "educational requirements",
-                        "startIndex": 13,
-                        "length": 24,
-                        "modelTypeId": 2,
-                        "modelType": "Prebuilt Entity Extractor",
-                        "recognitionSources": [
-                            "model"
-                        ]
-                    },
-                    {
-                        "type": "builtin.keyPhrase",
-                        "text": "development",
-                        "startIndex": 51,
-                        "length": 11,
-                        "modelTypeId": 2,
-                        "modelType": "Prebuilt Entity Extractor",
-                        "recognitionSources": [
-                            "model"
-                        ]
-                    }
+"entities": {
+    "keyPhrase": [
+        "educational requirements",
+        "development"
+    ],
+    "$instance": {
+        "keyPhrase": [
+            {
+                "type": "builtin.keyPhrase",
+                "text": "educational requirements",
+                "startIndex": 13,
+                "length": 24,
+                "modelTypeId": 2,
+                "modelType": "Prebuilt Entity Extractor",
+                "recognitionSources": [
+                    "model"
+                ]
+            },
+            {
+                "type": "builtin.keyPhrase",
+                "text": "development",
+                "startIndex": 51,
+                "length": 11,
+                "modelTypeId": 2,
+                "modelType": "Prebuilt Entity Extractor",
+                "recognitionSources": [
+                    "model"
                 ]
             }
-        }
+        ]
     }
 }
 ```
+#### <a name="v2-responsetabv2"></a>[Ответ v2](#tab/V2)
+
+В следующем примере показано разрешение для сущности **builtin.keyPhrase**.
+
+```json
+"entities": [
+    {
+        "entity": "development",
+        "type": "builtin.keyPhrase",
+        "startIndex": 51,
+        "endIndex": 61
+    },
+    {
+        "entity": "educational requirements",
+        "type": "builtin.keyPhrase",
+        "startIndex": 13,
+        "endIndex": 36
+    }
+]
+```
 * * * 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о [конечной точке прогнозирования v3](luis-migration-api-v3.md).
 

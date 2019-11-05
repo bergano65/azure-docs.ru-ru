@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 11/13/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: d8eed4f2425cdbfec7d3addad11ddaba57e5370e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 46d0e8aa1fa934f778e950f0187a853ba46772d1
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64704486"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73495047"
 ---
 # <a name="how-to-identify-scenarios-and-plan-for-advanced-analytics-data-processing"></a>Как определить сценарии и план для расширенной аналитической обработки данных
 
@@ -30,8 +30,6 @@ ms.locfileid: "64704486"
 * характеристики данных;
 * качество набора данных;
 * предпочитаемые средства и языки.
-
-[!INCLUDE [machine-learning-free-trial](../../../includes/machine-learning-free-trial.md)]
 
 ## <a name="logistic-questions-data-locations-and-movement"></a>Вопросы, касающиеся логистики: расположения данных и их перемещение
 
@@ -56,7 +54,7 @@ ms.locfileid: "64704486"
 
 В каком расположении должны храниться данные для обработки или моделирования? 
 
-* Хранилище BLOB-объектов Azure
+* Хранилище больших двоичных объектов Azure
 * базы данных SQL Azure;
 * SQL Server на виртуальной машине Azure
 * HDInsight (Hadoop в Azure) или таблицы Hive;
@@ -68,7 +66,7 @@ ms.locfileid: "64704486"
 Процедуры и ресурсы, необходимые для приема и загрузки данных в различные среды хранения и обработки, описаны в следующих статьях:
 
 * [Загрузка данных в среды хранения для аналитики](ingest-data.md)
-* [Импорт обучающих данных в Студию машинного обучения Azure из разных источников данных](../studio/import-data.md)
+* [Импорт обучающих данных в Машинное обучение Azure Studio (классическая модель) из различных источников данных](../studio/import-data.md)
 
 ### <a name="does-the-data-need-to-be-moved-on-a-regular-schedule-or-modified-during-migration"></a>Требуется ли перемещать данные регулярно или менять их во время переноса?
 
@@ -81,7 +79,7 @@ ms.locfileid: "64704486"
 
 ### <a name="how-much-of-the-data-is-to-be-moved-to-azure"></a>Сколько данных требуется переместить в Azure?
 
-Размер исключительно больших наборов данных может превысить объем хранилища некоторых сред. Примеры приведены в обсуждении ограничений размера для Студии машинного обучения в следующем разделе. В таких случаях при проведении анализа можно использовать выборку данных. Чтобы узнать о том, как уменьшить выборку данных из набора данных в различных средах Azure, ознакомьтесь с [выборкой данных в процессе обработки и анализа данных группы](sample-data.md).
+Размер исключительно больших наборов данных может превысить объем хранилища некоторых сред. Пример см. в статье обсуждение ограничений размера для Машинное обучение Studio (классическая модель) в следующем разделе. В таких случаях при проведении анализа можно использовать выборку данных. Чтобы узнать о том, как уменьшить выборку данных из набора данных в различных средах Azure, ознакомьтесь с [выборкой данных в процессе обработки и анализа данных группы](sample-data.md).
 
 ## <a name="data-characteristics-questions-type-format-and-size"></a>Вопросы, касающиеся характеристик данных: тип, формат и размер
 
@@ -104,11 +102,11 @@ ms.locfileid: "64704486"
 
 ### <a name="how-large-is-your-data"></a>Каков размер данных?
 
-* Малый: меньше 2 ГБ
-* Средний: больше 2 ГБ, но меньше 10 ГБ
-* Большой: больше 10 ГБ
+* Небольшой: менее 2 ГБ.
+* Средний: более 2 ГБ, но менее 10 ГБ.
+* Большой: более 10 ГБ.
 
-Для примера возьмем среду Студии машинного обучения Azure:
+Возьмем среду Машинное обучение Azure Studio (классическая модель), например:
 
 * Список форматов и типов данных, поддерживаемых Студией машинного обучения Azure, см. в разделе [Поддерживаемые форматы и типы данных](../studio/import-data.md#supported-data-formats-and-data-types).
 * Дополнительные сведения об ограничениях других служб Azure, используемых в процессе аналитики, см. в статье [Подписка Azure, границы, квоты и ограничения службы](../../azure-subscription-service-limits.md).
@@ -151,7 +149,7 @@ ms.locfileid: "64704486"
 * [Студия машинного обучения Azure](../studio/what-is-ml-studio.md)
 * [Revolution Analytics](https://www.microsoft.com/sql-server/machinelearningserver)
 * [RStudio](https://www.rstudio.com)
-* [Средства Python для Visual Studio](https://aka.ms/ptvsdocs)
+* [Средствах Python для Visual Studio](https://aka.ms/ptvsdocs)
 * [Anaconda](https://www.continuum.io/why-anaconda)
 * [Записные книжки Jupyter](https://jupyter.org/)
 * [Microsoft Power BI](https://powerbi.microsoft.com)

@@ -9,12 +9,12 @@ author: denzilribeiro
 ms.author: denzilr
 ms.reviewer: sstein
 ms.date: 10/18/2019
-ms.openlocfilehash: 92a1fda85e5ee49f12a13123e8a296492fd9eb4b
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.openlocfilehash: fa8b02cf5ee6f24bcc77aae057f41842da721981
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72598167"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73521135"
 ---
 # <a name="sql-hyperscale-performance-troubleshooting-diagnostics"></a>Диагностика по устранению неполадок производительности в SQL
 
@@ -29,7 +29,7 @@ ms.locfileid: "72598167"
 
 Следующие типы ожидания (в [sys. DM _os_wait_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-os-wait-stats-transact-sql/)) описывают причины, по которым скорость ведения журнала может регулироваться в основной реплике вычислений:
 
-|Тип ожидания    |Описание                         |
+|Тип ожидания    |Description (Описание)                         |
 |-------------          |------------------------------------|
 |RBIO_RG_STORAGE        | Происходит, когда скорость создания журнала основного узла базы данных в масштабе подкачки регулируется из-за отложенного потребления журнала на серверах страниц.         |
 |RBIO_RG_DESTAGE        | Происходит при регулировании частоты создания журнала для масштабируемого узла базы данных, обусловленной задержкой использования журнала в долгосрочном хранилище журналов.         |
@@ -58,7 +58,7 @@ ms.locfileid: "72598167"
     - scan_stopped
     - query_store_begin_persist_runtime_stat
     - запрос — store_execution_runtime_info
-- Актуалпажесерверреадс/Актуалпажесерверреадахеадс добавляются в XML плана запроса для реальных планов. Пример.
+- Актуалпажесерверреадс/Актуалпажесерверреадахеадс добавляются в XML плана запроса для реальных планов. Например:
 
 `<RunTimeCountersPerThread Thread="8" ActualRows="90466461" ActualRowsRead="90466461" Batches="0" ActualEndOfScans="1" ActualExecutions="1" ActualExecutionMode="Row" ActualElapsedms="133645" ActualCPUms="85105" ActualScans="1" ActualLogicalReads="6032256" ActualPhysicalReads="0" ActualPageServerReads="0" ActualReadAheads="6027814" ActualPageServerReadAheads="5687297" ActualLobLogicalReads="0" ActualLobPhysicalReads="0" ActualLobPageServerReads="0" ActualLobReadAheads="0" ActualLobPageServerReadAheads="0" />`
 
@@ -99,9 +99,9 @@ ms.locfileid: "72598167"
 - На основном вычислении запись журнала учитывается в file_id 2 из sys. DM _io_virtual_file_stats. Запись в журнал в основном вычислений — это запись в основную зону журнала.
 - Записи журнала не зафиксированы на вторичной реплике при фиксации. В процессе масштабирования журнал применяется службой xlog к удаленным репликам. Поскольку записи журнала в действительности не происходят во вторичных репликах, любые учетные данные ввода-вывода журнала на вторичных репликах предназначены только для отслеживания.
 
-## <a name="additional-resources"></a>дополнительные ресурсы.
+## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- Ограничения ресурсов Виртуальное ядро для отдельной базы данных с горизонтальным масштабированием см. в разделе [Виртуальное ядро Service Tier Limits](sql-database-vcore-resource-limits-single-databases.md#hyperscale-service-tier-for-provisioned-compute)
+- Ограничения ресурсов Виртуальное ядро для отдельной базы данных с горизонтальным масштабированием см. в разделе [Виртуальное ядро Service Tier Limits](sql-database-vcore-resource-limits-single-databases.md#hyperscale---provisioned-compute---gen5)
 - Сведения о настройке производительности базы данных SQL Azure см. [в статье производительность запросов в базе данных SQL Azure](sql-database-performance-guidance.md) .
 - Сведения о настройке производительности с помощью хранилища запросов см. в разделе [мониторинг производительности с помощью хранилища запросов](/sql/relational-databases/performance/monitoring-performance-by-using-the-query-store/) .
 - Сведения о скриптах мониторинга динамического административного представления см. в статье [мониторинг производительности базы данных SQL Azure с помощью динамических административных представлений](sql-database-monitoring-with-dmvs.md) .

@@ -13,12 +13,12 @@ ms.workload: iaas-sql-server
 ms.date: 10/21/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 80a1ac3ebe5f49d6a63f47e08e0b16114d75e91f
-ms.sourcegitcommit: fa5ce8924930f56bcac17f6c2a359c1a5b9660c9
+ms.openlocfilehash: 97541484501a3ecdd1bd5998314c1ee9e7a4e3a5
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73199218"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73489066"
 ---
 # <a name="bulk-register-sql-virtual-machines-in-azure-with-the-sql-vm-resource-provider"></a>Полное регистрация виртуальных машин SQL в Azure с помощью поставщика ресурсов виртуальной машины SQL
 
@@ -37,9 +37,9 @@ ms.locfileid: "73199218"
 - [Подписка Azure](https://azure.microsoft.com/free/) , [зарегистрированная в поставщике ресурсов](virtual-machines-windows-sql-register-with-resource-provider.md#register-subscription-with-rp) и содержащая незарегистрированные SQL Server виртуальные машины. 
 - Учетные данные клиента, используемые для регистрации виртуальных машин, существуют в любой из следующих ролей RBAC: **участник виртуальной машины**, **участник**или **владелец**. 
 - Последняя версия [AZ PowerShell](/powershell/azure/new-azureps-module-az). 
-- Последняя версия [AZ. Склвиртуалмачине] (https://www.powershellgallery.com/packages/Az.SqlVirtualMachine/0.1.0.
+- Последняя версия [AZ. склвиртуалмачине](https://www.powershellgallery.com/packages/Az.SqlVirtualMachine/0.1.0).
 
-## <a name="getting-started"></a>Начало работы
+## <a name="getting-started"></a>Приступая к работе
 
 Прежде чем продолжать, необходимо создать локальную копию скрипта, импортировать ее в качестве модуля PowerShell и подключиться к Azure. 
 

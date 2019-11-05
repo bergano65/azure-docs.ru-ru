@@ -1,7 +1,7 @@
 ---
 title: 'Кластеризация по K-средних: Справочник по модулям'
-titleSuffix: Azure Machine Learning service
-description: Узнайте, как использовать модуль кластеризации K-средних в службе Машинное обучение Azure для обучения моделей кластеризации.
+titleSuffix: Azure Machine Learning
+description: Узнайте, как использовать модуль кластеризации K-средних в Машинное обучение Azure для обучения моделей кластеризации.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -9,16 +9,16 @@ ms.topic: reference
 author: xiaoharper
 ms.author: zhanxia
 ms.date: 05/06/2019
-ms.openlocfilehash: bb39a57f565a542e5106b7ba14e58bc39041f53d
-ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
+ms.openlocfilehash: 4634519f55582a3184472d28acfd98fa849be86a
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72693117"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73497769"
 ---
 # <a name="module-k-means-clustering"></a>Модуль: Кластеризация методом K-средних
 
-В этой статье описывается, как использовать модуль *кластеризации k-средних* в машинное обучение Azure Studio для создания обученной модели кластеризации с k-средних. 
+В этой статье описывается, как использовать модуль *кластеризации k-средних* в конструкторе машинное обучение Azure (Предварительная версия) для создания обученной модели кластеризации с k-средних. 
  
 K-средние — это один из самых простых и *наиболее известных* неконтролируемых алгоритмов обучения. Алгоритм можно использовать для различных задач машинного обучения, таких как: 
 

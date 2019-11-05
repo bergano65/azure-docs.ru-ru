@@ -9,18 +9,18 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 10/04/2019
-ms.openlocfilehash: aa3e3b63bdfda7aa6d875055dee4c69b9840db25
-ms.sourcegitcommit: fa5ce8924930f56bcac17f6c2a359c1a5b9660c9
+ms.openlocfilehash: e07939bd5f0264df637fda439d96be213a8d28d1
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "72167353"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73499207"
 ---
 # <a name="what-is-apache-hive-and-hiveql-on-azure-hdinsight"></a>Обзор Apache Hive и HiveQL в Azure HDInsight
 
 [Apache Hive](https://hive.apache.org/) — это система хранилища данных для Apache Hadoop. Hive позволяет обобщать, запрашивать и анализировать данные. Запросы Hive создаются на языке запросов HiveQL, который похож на SQL.
 
-Hive позволяет создавать структуру для преимущественно неструктурированных данных. После определения структуры вы можете использовать HiveQL для запроса этих данных без знания Java или MapReduce.
+Hive позволяет выполнять проектную структуру по большей части структурированных данных. После определения структуры вы можете использовать HiveQL для запроса этих данных без знания Java или MapReduce.
 
 HDInsight предоставляет несколько типов кластера, которые подходят для конкретных рабочих нагрузок. Для запросов Hive наиболее часто используются следующие типы кластеров:
 
@@ -42,7 +42,7 @@ HDInsight предоставляет несколько типов класте�
 | [Средства HDInsight для Visual Studio](../hadoop/apache-hadoop-use-hive-visual-studio.md) |✔ |✔ |Windows |
 | [Представление Hive](../hadoop/apache-hadoop-use-hive-ambari-view.md) |✔ |✔ |Для приложений на основе браузера |
 | [клиент Beeline](../hadoop/apache-hadoop-use-hive-beeline.md) |✔ |✔ |Linux, Unix, Mac OS X или Windows |
-| [REST API](../hadoop/apache-hadoop-use-hive-curl.md) |&nbsp; |✔ |Linux, Unix, Mac OS X или Windows |
+| [ИНТЕРФЕЙС REST API](../hadoop/apache-hadoop-use-hive-curl.md) |&nbsp; |✔ |Linux, Unix, Mac OS X или Windows |
 | [Windows PowerShell](../hadoop/apache-hadoop-use-hive-powershell.md) |&nbsp; |✔ |Windows |
 
 ## <a name="hiveql-language-reference"></a>Справочник по языку HiveQL
