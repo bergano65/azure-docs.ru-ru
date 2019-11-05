@@ -1,5 +1,5 @@
 ---
-title: Применение пользовательских пакетов Maven с записной книжкой Jupyter в кластерах Spark в Azure HDInsight
+title: Использование пользовательских пакетов Maven с Jupyter в Spark — Azure HDInsight
 description: Пошаговые инструкции по настройке записных книжек Jupyter, доступных с кластерами HDInsight Spark для использования пользовательских пакетов Maven.
 author: hrasheed-msft
 ms.author: hrasheed
@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 01/09/2018
-ms.openlocfilehash: cd88c85c927c635269d814c20b15f574212e1a6d
-ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
+ms.openlocfilehash: 0cdd962e5d027b5576a0556ca5decb976af45ff1
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71337690"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73494549"
 ---
 # <a name="use-external-packages-with-jupyter-notebooks-in-apache-spark-clusters-on-hdinsight"></a>Использование внешних пакетов с записными книжками Jupyter в кластерах Apache Spark в HDInsight
 
@@ -27,7 +27,7 @@ ms.locfileid: "71337690"
 
 В этой статье вы узнаете, как использовать пакет [spark-csv](https://search.maven.org/#artifactdetails%7Ccom.databricks%7Cspark-csv_2.10%7C1.4.0%7Cjar) с записной книжкой Jupyter.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Необходимо следующее:
 
@@ -46,31 +46,31 @@ ms.locfileid: "71337690"
 
 1. Создайте новую записную книжку. Щелкните **Создать**, а затем выберите **Spark**.
    
-    ![Создание записной книжки Spark Jupyter](./media/apache-spark-jupyter-notebook-use-external-packages/hdinsight-spark-create-notebook.png "Создание новой записной книжки Jupyter")
+    ![Создание новой записной книжки Spark Jupyter](./media/apache-spark-jupyter-notebook-use-external-packages/hdinsight-spark-create-notebook.png "Создание новой записной книжки Jupyter")
 
 1. Будет создана и открыта записная книжка с именем Untitled.pynb. Щелкните имя записной книжки в верхней части страницы сверху и введите понятное имя.
    
-    ![Указание имени для записной книжки](./media/apache-spark-jupyter-notebook-use-external-packages/hdinsight-spark-name-notebook.png "Указание имени для записной книжки")
+    ![Укажите имя записной книжки](./media/apache-spark-jupyter-notebook-use-external-packages/hdinsight-spark-name-notebook.png "Указание имени для записной книжки")
 
 1. Используйте волшебную команду `%%configure` , чтобы настроить записную книжку для использования внешнего пакета. В записных книжках, которые используют внешние пакеты, следует вызывать волшебную команду `%%configure` в первой ячейке кода. Она настраивает ядро для использования пакета до начала сеанса.
 
     >[!IMPORTANT]  
     >Если вы забыли настроить ядро в первой ячейке, можно использовать `%%configure` с параметром `-f`, но при этом сеанс будет перезапущен и все изменения будут утеряны.
 
-    | Версия HDInsight | Command |
+    | Версия HDInsight | Команда |
     |-------------------|---------|
     |Для HDInsight 3.3 и HDInsight 3.4 | `%%configure` <br>`{ "packages":["com.databricks:spark-csv_2.10:1.4.0"] }`|
     | Для HDInsight 3.5 и HDInsight 3.6 | `%%configure`<br>`{ "conf": {"spark.jars.packages": "com.databricks:spark-csv_2.10:1.4.0" }}`|
 
 1. Приведенный выше фрагмент ожидает получить координаты Maven для внешнего пакета в центральном репозитории Maven. В этом фрагменте кода `com.databricks:spark-csv_2.10:1.4.0` — координата пакета **spark-csv** в Maven. Вот как сформировать координаты для пакета.
    
-    1\. Найдите пакет в репозитории Maven. В этой статье мы используем [Spark-CSV](https://search.maven.org/#artifactdetails%7Ccom.databricks%7Cspark-csv_2.10%7C1.4.0%7Cjar).
+    а. Найдите пакет в репозитории Maven. В этой статье мы используем [Spark-CSV](https://search.maven.org/#artifactdetails%7Ccom.databricks%7Cspark-csv_2.10%7C1.4.0%7Cjar).
    
-    2\. В репозитории найдите значения для параметров **GroupId**, **ArtifactId** и **Version**. Убедитесь, что полученные значения соответствуют кластеру. В этом случае мы используем Scala 2.10 и пакет Spark 1.4.0, но может потребоваться выбрать другие версии, соответствующие версиям Scala или Spark в вашем кластере. Выяснить версию Scala в кластере можно, выполнив `scala.util.Properties.versionString` для ядра Jupyter Spark или при отправке Spark. Выяснить версию Spark в кластере можно, выполнив `sc.version` для элементов Jupyter Notebook.
+    b. В репозитории найдите значения для параметров **GroupId**, **ArtifactId** и **Version**. Убедитесь, что полученные значения соответствуют кластеру. В этом случае мы используем Scala 2.10 и пакет Spark 1.4.0, но может потребоваться выбрать другие версии, соответствующие версиям Scala или Spark в вашем кластере. Выяснить версию Scala в кластере можно, выполнив `scala.util.Properties.versionString` для ядра Jupyter Spark или при отправке Spark. Выяснить версию Spark в кластере можно, выполнив `sc.version` для элементов Jupyter Notebook.
    
-    ![Использование внешних пакетов с записными книжками Jupyter](./media/apache-spark-jupyter-notebook-use-external-packages/use-external-packages-with-jupyter.png "Использование внешних пакетов с записными книжками Jupyter")
+    ![Использование внешних пакетов с записной книжкой Jupyter](./media/apache-spark-jupyter-notebook-use-external-packages/use-external-packages-with-jupyter.png "Использование внешних пакетов с записной книжкой Jupyter")
    
-    В. Объедините три значения, разделив их двоеточием ( **:** ).
+    c. Объедините три значения, разделив их двоеточием ( **:** ).
    
         com.databricks:spark-csv_2.10:1.4.0
 
@@ -96,14 +96,14 @@ ms.locfileid: "71337690"
 
 ## <a name="seealso"></a>Дополнительные материалы
 
-* [Apache Spark в Azure HDInsight](apache-spark-overview.md)
+* [Обзор: Apache Spark в Azure HDInsight](apache-spark-overview.md)
 
 ### <a name="scenarios"></a>Сценарии
 
-* [Руководство. Анализ данных Apache Spark с использованием Power BI в HDInsight](apache-spark-use-bi-tools.md)
-* [Использование Apache Spark MLlib для Создание приложения машинного обучения Apache Spark в HDInsight](apache-spark-ipython-notebook-machine-learning.md)
-* [Использование Apache Spark MLlib для создания приложения машинного обучения и анализа набора данных](apache-spark-machine-learning-mllib-ipython.md)
-* [Анализ журналов веб-сайтов с помощью Apache Spark в HDInsight](apache-spark-custom-library-website-log-analysis.md)
+* [Использование Apache Spark со средствами бизнес-аналитики. Выполнение интерактивного анализа данных с использованием Spark в HDInsight с помощью средств бизнес-аналитики](apache-spark-use-bi-tools.md)
+* [Apache Spark и Машинное обучение. Анализ температуры в здании на основе данных системы кондиционирования с помощью Spark в HDInsight](apache-spark-ipython-notebook-machine-learning.md)
+* [Apache Spark и Машинное обучение. Прогнозирование результатов проверки пищевых продуктов с помощью Spark в HDInsight](apache-spark-machine-learning-mllib-ipython.md)
+* [Анализ журнала веб-сайта с использованием Apache Spark в HDInsight](apache-spark-custom-library-website-log-analysis.md)
 
 ### <a name="create-and-run-applications"></a>Создание и запуск приложений
 
@@ -114,9 +114,9 @@ ms.locfileid: "71337690"
 
 * [Использование внешних пакетов Python с элементами Jupyter Notebook в кластерах Apache Spark в HDInsight на платформе Linux](apache-spark-python-package-installation.md)
 * [Использование подключаемого модуля средств HDInsight для IntelliJ IDEA для создания и отправки приложений Spark Scala](apache-spark-intellij-tool-plugin.md)
-* [Удаленная отладка приложений Apache Spark с помощью подключаемого модуля средств HDInsight для IntelliJ IDEA](apache-spark-intellij-tool-plugin-debug-jobs-remotely.md)
+* [Удаленная отладка приложений Apache Spark в HDInsight через VPN с помощью Azure Toolkit for IntelliJ](apache-spark-intellij-tool-plugin-debug-jobs-remotely.md)
 * [Использование записных книжек Zeppelin с кластером Apache Spark в Azure HDInsight](apache-spark-zeppelin-notebook.md)
-* [Ядра для записной книжки Jupyter в кластерах Apache Spark в Azure HDInsight](apache-spark-jupyter-notebook-kernels.md)
+* [Ядра для записной книжки Jupyter в кластерах Spark в Azure HDInsight](apache-spark-jupyter-notebook-kernels.md)
 * [Установка записной книжки Jupyter на компьютере и ее подключение к кластеру Apache Spark в Azure HDInsight (предварительная версия)](apache-spark-jupyter-notebook-install-locally.md)
 
 ### <a name="manage-resources"></a>Управление ресурсами

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 01/11/2019
 ms.author: kraigb
-ms.openlocfilehash: 8e4c817437c22d15e60cf48d5976c30433e83d75
-ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
+ms.openlocfilehash: 715db36921427dc0ac5dcdad24c2c026b1ea1326
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2019
-ms.locfileid: "71970025"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73496700"
 ---
 # <a name="discover-and-use-sample-notebooks"></a>Обнаружение и использование примеров записных книжек
 
@@ -30,7 +30,7 @@ ms.locfileid: "71970025"
 
 ## <a name="great-sample-notebooks"></a>Отличные примеры записных книжек
 
-- [Начальный набор записных книжек Azure](https://notebooks.azure.com/#sample-redirect) поможет вам познакомиться с Python, R и F#, а также включает записные книжки, демонстрирующие доступ к данным, службы "Машинное обучение Azure", несколько упражнений по обработке и анализу данных.
+- В [набор записных книжек Azure Starter Set](https://notebooks.azure.com/#sample-redirect) входят общие сведения о F#Python, R и, а также записные книжки, демонстрирующие доступ к данным, машинное обучение Azure и несколько упражнений по обработке и анализу данных.
 - [Введение в записные книжки Jupyter](https://nbviewer.jupyter.org/github/jupyter/notebook/blob/master/docs/source/examples/Notebook/Notebook%20Basics.ipynb) (jupyter.org)
 - [Введение в обработку и анализ данных](https://github.com/jakevdp/PythonDataScienceHandbook/tree/master/notebooks) от Джейка Вандерпласа (Jake Vanderplas).
 - [Коллекция интересных записных книжек](https://github.com/ipython/ipython/wiki/A-gallery-of-interesting-IPython-Notebooks) (проект Jupyter на сайте GitHub)
@@ -38,9 +38,9 @@ ms.locfileid: "71970025"
 - Вводный курс по физике от [кафедры физики Имперского колледжа Лондона](https://notebooks.azure.com/cvanbreu/libraries)
 - [Примеры для начала работы со службой "Машинное обучение Azure"](https://notebooks.azure.com/azureml/projects/azureml-getting-started)
 
-## <a name="next-steps"></a>Следующие шаги  
+## <a name="next-steps"></a>Дальнейшие действия  
 
-- [Практическое руководство. Настройка проектов и управление ими](configure-manage-azure-notebooks-projects.md)
-- [Практическое руководство. Работа с файлами данных](work-with-project-data-files.md)
-- [Практическое руководство. Доступ к ресурсам данных](access-data-resources-jupyter-notebooks.md)
-- [Практическое руководство. Использование служб "Машинное обучение Azure"](use-machine-learning-services-jupyter-notebooks.md)
+- [Как настраивать проекты и управлять ими](configure-manage-azure-notebooks-projects.md)
+- [Практические руководства. Работа с файлами данных](work-with-project-data-files.md)
+- [Руководство. доступ к ресурсам данных](access-data-resources-jupyter-notebooks.md)
+- [Как использовать Машинное обучение Azure](use-machine-learning-services-jupyter-notebooks.md)
