@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 06/26/2019
 ms.author: brendm
 ms.custom: seodec18
-ms.openlocfilehash: 26f9bac42ef98f1063194340a5aa20aef6fe316e
-ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
+ms.openlocfilehash: fa3cd84978119a5858e63712b4d22c2ea89ea528
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2019
-ms.locfileid: "71972939"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73470902"
 ---
 # <a name="configure-a-linux-java-app-for-azure-app-service"></a>Настройка приложения Java для Linux для службы приложений Azure
 
@@ -59,7 +59,7 @@ ms.locfileid: "71972939"
 
 ### <a name="troubleshooting-tools"></a>Средства устранения неполадок
 
-Встроенные образы Java основаны на операционной системе [Alpine Linux](https://alpine-linux.readthedocs.io/en/latest/getting_started.html) . Используйте диспетчер пакетов `apk` для установки любых средств или команд устранения неполадок.
+Встроенные образы Java основаны на операционной системе [Alpine Linux](https://alpine-linux.readthedocs.io/en/latest/getting_started.html) . Используйте диспетчер пакетов `apk`, чтобы установить любые средства или команды для устранения неполадок.
 
 ### <a name="flight-recorder"></a>Черный ящик
 
@@ -82,7 +82,7 @@ Picked up JAVA_TOOL_OPTIONS: -Djava.net.preferIPv4Stack=true
 jcmd 116 JFR.start name=MyRecording settings=profile duration=30s filename="/home/jfr_example.jfr"
 ```
 
-В течение 30-секундного интервала можно проверить запись, запустив `jcmd 116 JFR.check`. Будут показаны все записи для данного процесса Java.
+В течение 30-секундного интервала можно проверить запись, выполнив `jcmd 116 JFR.check`. Будут показаны все записи для данного процесса Java.
 
 #### <a name="continuous-recording"></a>Непрерывная запись
 
@@ -110,7 +110,7 @@ jcmd <pid> JFR.dump name=continuous_recording filename="/home/recording1.jfr"
 
 - [Настройка параметров приложения](../configure-common.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#configure-app-settings)
 - [Настройка личного домена](../app-service-web-tutorial-custom-domain.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json)
-- [Включение SSL](../app-service-web-tutorial-custom-ssl.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json)
+- [Настройка SSL-привязок](../configure-ssl-bindings.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json)
 - [Добавление CDN](../../cdn/cdn-add-to-web-app.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json)
 - [Настройка сайта KUDU](https://github.com/projectkudu/kudu/wiki/Configurable-settings#linux-on-app-service-settings)
 
@@ -211,7 +211,7 @@ for (Object key : map.keySet()) {
     }
 ```
 
-Чтобы подписать пользователей, используйте путь `/.auth/ext/logout`. Чтобы выполнить другие действия, см. документацию по [использованию проверки подлинности и авторизации службы приложений](https://docs.microsoft.com/azure/app-service/app-service-authentication-how-to). Существует также официальная документация по [интерфейсу Tomcat хттпсервлетрекуест](https://tomcat.apache.org/tomcat-5.5-doc/servletapi/javax/servlet/http/HttpServletRequest.html) и его методам. В зависимости от конфигурации службы приложений также сохраняются следующие методы сервлета:
+Чтобы подписать пользователей, используйте `/.auth/ext/logout` путь. Чтобы выполнить другие действия, см. документацию по [использованию проверки подлинности и авторизации службы приложений](https://docs.microsoft.com/azure/app-service/app-service-authentication-how-to). Существует также официальная документация по [интерфейсу Tomcat хттпсервлетрекуест](https://tomcat.apache.org/tomcat-5.5-doc/servletapi/javax/servlet/http/HttpServletRequest.html) и его методам. В зависимости от конфигурации службы приложений также сохраняются следующие методы сервлета:
 
 ```java
 public boolean isSecure()
@@ -229,7 +229,7 @@ public int getServerPort()
 
 ### <a name="configure-tlsssl"></a>Настройка TLS/SSL
 
-Следуйте инструкциям в разделе [Руководство. Привязывание существующего настраиваемого SSL-сертификата к веб-приложениям Azure](../app-service-web-tutorial-custom-ssl.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json), чтобы передать существующий SSL-сертификат и привязать его к доменному имени приложения. По умолчанию приложение по-прежнему будет разрешать HTTP-подключения. Выполните соответствующие инструкции в этом руководстве, чтобы принудительно включить SSL и TLS.
+Следуйте инструкциям в разделе [Защита настраиваемого DNS-имени с помощью привязки SSL в службе приложений Azure](../configure-ssl-bindings.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json) для отправки существующего SSL-сертификата и привязки его к доменному имени приложения. По умолчанию приложение по-прежнему будет разрешать HTTP-подключения. Выполните соответствующие инструкции в этом руководстве, чтобы принудительно включить SSL и TLS.
 
 ### <a name="use-keyvault-references"></a>Использование ссылок KeyVault
 
@@ -275,7 +275,7 @@ public int getServerPort()
 
 По умолчанию служба приложений ждет, что приложение JAR будет называться *app. jar*. Если оно имеет это имя, оно будет запущено автоматически. Для пользователей Maven можно задать имя JAR, включив `<finalName>app</finalName>` в раздел `<build>` файла *POM. XML*. [Вы можете сделать то же самое в Gradle](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.bundling.Jar.html#org.gradle.api.tasks.bundling.Jar:archiveFileName) , задав свойство `archiveFileName`.
 
-Если вы хотите использовать другое имя для JAR-файла, необходимо также указать [команду запуска](app-service-linux-faq.md#built-in-images) , которая ВЫПОЛНЯЕТ файл JAR. Например, `java -jar my-jar-app.jar`. Можно задать значение для команды запуска на портале, в разделе Конфигурация > Общие параметры или с параметром приложения с именем `STARTUP_COMMAND`.
+Если вы хотите использовать другое имя для JAR-файла, необходимо также указать [команду запуска](app-service-linux-faq.md#built-in-images) , которая ВЫПОЛНЯЕТ файл JAR. Пример: `java -jar my-jar-app.jar`. Можно задать значение для команды запуска на портале, в разделе Конфигурация > Общие параметры или с параметром приложения с именем `STARTUP_COMMAND`.
 
 ### <a name="server-port"></a>Порт сервера
 
@@ -298,7 +298,7 @@ public int getServerPort()
 |------------|-----------------------------------------------|------------------------------------------------------------------------------------------|
 | PostgreSQL | `org.postgresql.Driver`                        | [Загрузить](https://jdbc.postgresql.org/download.html)                                    |
 | MySQL      | `com.mysql.jdbc.Driver`                        | [Скачать](https://dev.mysql.com/downloads/connector/j/) (выберите "Platform Independent" (Независимо от платформы)) |
-| SQL Server | `com.microsoft.sqlserver.jdbc.SQLServerDriver` | [Загрузить](https://docs.microsoft.com/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-2017#available-downloads-of-jdbc-driver-for-sql-server)                                                           |
+| SQL Server | `com.microsoft.sqlserver.jdbc.SQLServerDriver` | [Загрузить](https://docs.microsoft.com/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-2017#available-downloads-of-jdbc-driver-for-sql-server)                                                           |
 
 Чтобы настроить Tomcat для использования Java Database Connectivity (JDBC) или API сохраняемости Java (JPA), сначала настройте переменную среды `CATALINA_OPTS`, которая считывается в Tomcat при запуске. Задайте эти значения с помощью параметра приложения в [подключаемом модуле Maven для службы приложений](https://github.com/Microsoft/azure-maven-plugins/blob/develop/azure-webapp-maven-plugin/README.md):
 
@@ -311,7 +311,7 @@ public int getServerPort()
 </appSettings>
 ```
 
-Или задайте переменные среды на странице настройки**параметров приложения** **@no__t-** 1 в портал Azure.
+Или задайте переменные среды на странице Параметры **конфигурации** > **приложения** в портал Azure.
 
 Затем определите, должен ли источник данных быть доступным для одного приложения или для всех приложений, работающих в сервлете Tomcat.
 
@@ -352,7 +352,7 @@ public int getServerPort()
     cp -a /usr/local/tomcat/conf /home/tomcat/conf
     ```
 
-2. Добавьте элемент context в *файл Server. XML* в элементе `<Server>`.
+2. Добавьте элемент context в *файл Server. XML* внутри элемента `<Server>`.
 
     ```xml
     <Server>
@@ -384,7 +384,7 @@ public int getServerPort()
 
 Наконец, поместите драйвер JAR в путь к классам Tomcat и перезапустите службу приложений.
 
-1. Убедитесь, что файлы драйвера JDBC доступны для Tomcat класслоадер, поместив их в каталог */Хоме/томкат/либ* . (Если этот каталог отсутствует, создайте его.) Чтобы передать эти файлы в экземпляр службы приложений, выполните следующие действия.
+1. Убедитесь, что файлы драйвера JDBC доступны для Tomcat класслоадер, поместив их в каталог */Хоме/томкат/либ* . (Создайте этот каталог, если он еще не существует.) Чтобы передать эти файлы в экземпляр службы приложений, выполните следующие действия.
 
     1. В [Cloud Shell](https://shell.azure.com)установите расширение webapp:
 
@@ -471,7 +471,7 @@ public int getServerPort()
 - [Дескриптор модуля XML](https://jboss-modules.github.io/jboss-modules/manual/#descriptors). Этот XML-файл определяет имя, атрибуты и зависимости вашего модуля. Этот [пример файла module.xml](https://access.redhat.com/documentation/en-us/jboss_enterprise_application_platform/6/html/administration_and_configuration_guide/example_postgresql_xa_datasource) определяет модуль Postgres, зависимость JDBC (файл с расширением .jar) и другие требуемые зависимости модуля.
 - Все необходимые зависимости для вашего модуля (файлы с расширением .jar).
 - Скрипт с командами интерфейса командной строки JBoss CLI для настройки нового модуля. Этот файл будет содержать команды для выполнения в интерфейсе командной строки JBoss, благодаря которым сервер сможет использовать зависимости. См. [документацию по командам для добавления модулей, источников данных и поставщиков службы обмена сообщениями ](https://access.redhat.com/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/management_cli_guide/#how_to_cli).
-- Скрипт запуска Bash для вызова интерфейса командной строки JBoss и выполнения скрипта из предыдущего шага. Этот файл будет выполняться при перезапуске экземпляра Службы приложений или подготовке новых экземпляров в ходе горизонтального масштабирования. Этот скрипт запуска позволяет реализовать и другие конфигурации для приложения, так как команды JBoss передаются в интерфейс командной строки JBoss. Как минимум, этот файл можно использовать как отдельную команду для передачи соответствующего скрипта JBoss в интерфейс командной строки JBoss:
+- Скрипт запуска Bash для вызова интерфейса командной строки JBoss и выполнения скрипта из предыдущего шага. Этот файл будет выполняться при перезапуске экземпляра службы приложений или при подготовке новых экземпляров во время горизонтального масштабирования. Этот сценарий запуска позволяет выполнять любые другие настройки приложения, так как команды JBoss передаются в интерфейс командной строки JBoss. Как минимум, этот файл можно использовать как отдельную команду для передачи соответствующего скрипта JBoss в интерфейс командной строки JBoss:
 
 ```bash
 /opt/jboss/wildfly/bin/jboss-cli.sh -c --file=/path/to/your/jboss_commands.cli
@@ -480,7 +480,7 @@ public int getServerPort()
 После получения файлов и содержимого для модуля выполните следующие действия, чтобы добавить модуль на сервер приложений Вилдфли.
 
 1. Используйте FTP для передачи файлов в расположение в экземпляре службы приложений в каталоге */Home* , например */Хоме/Сите/деплойментс/тулс*. Дополнительные сведения см. в статье [развертывание приложения в службе приложений Azure с помощью FTP/S](../deploy-ftp.md).
-2. На странице **настройка** > **Общие параметры** портал Azure задайте для поля **сценарий запуска** расположение скрипта запуска оболочки, например */Хоме/Сите/деплойментс/тулс/стартуп.ш*.
+2. На странице **настройка** > **Общие параметры** портал Azure задайте в поле **сценарий запуска** расположение сценария оболочки запуска, например */Хоме/Сите/деплойментс/тулс/стартуп.ш*.
 3. Перезапустите экземпляр службы приложений, нажав кнопку **перезапустить** в разделе **Обзор** портала или с помощью Azure CLI.
 
 ### <a name="configure-data-sources"></a>Настройка источников данных
@@ -489,13 +489,13 @@ public int getServerPort()
 
 В этом разделе предполагается, что у вас уже есть приложение, экземпляр службы приложений и экземпляр службы базы данных Azure. Приведенные ниже инструкции относятся к имени службы приложений, ее группе ресурсов и сведениям о подключении к базе данных. Эти сведения можно найти на портал Azure.
 
-Если вы предпочитаете весь процесс с самого начала с помощью примера приложения, см. раздел [Tutorial: Создайте веб-приложение Java EE и postgres в Azure @ no__t-0.
+Если вы предпочитаете весь процесс с начала работы с примером приложения, см. раздел [учебник. Создание веб-приложения Java EE и postgres в Azure](tutorial-java-enterprise-postgresql-app.md).
 
 Следующие шаги описывают требования к подключению существующей службы приложений и базы данных.
 
 1. Скачайте драйвер JDBC для [PostgreSQL](https://jdbc.postgresql.org/download.html), [MySQL](https://dev.mysql.com/downloads/connector/j/)или [SQL Server](https://docs.microsoft.com/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server). Распакуйте скачанный архив, чтобы получить JAR-файл драйвера.
 
-2. Создайте файл с именем, например *Module. XML* , и добавьте следующую разметку. Замените заполнитель `<module name>` (включая угловые скобки) `org.postgres` для PostgreSQL, `com.mysql` для MySQL или `com.microsoft` для SQL Server. Замените `<JDBC .jar file path>` именем файла JAR, созданного на предыдущем шаге, включая полный путь к расположению, в которое будет размещен файл в экземпляре службы приложений. Это может быть любое расположение в каталоге */Home* .
+2. Создайте файл с именем, например *Module. XML* , и добавьте следующую разметку. Замените заполнитель `<module name>` (включая угловые скобки) `org.postgres` для PostgreSQL, `com.mysql` для MySQL или `com.microsoft` для SQL Server. Замените `<JDBC .jar file path>` именем JAR-файла из предыдущего шага, включая полный путь к расположению, в которое будет размещен файл в экземпляре службы приложений. Это может быть любое расположение в каталоге */Home* .
 
     ```xml
     <?xml version="1.0" ?>
@@ -510,7 +510,7 @@ public int getServerPort()
     </module>
     ```
 
-3. Создайте файл с именем, например *датасаурце-коммандс. CLI* , и добавьте следующий код. Замените `<JDBC .jar file path>` значением, использованным на предыдущем шаге. Замените `<module file path>` на имя файла и путь службы приложений из предыдущего шага, например */Хоме/модуле.ксмл*.
+3. Создайте файл с именем, например *датасаурце-коммандс. CLI* , и добавьте следующий код. Замените `<JDBC .jar file path>` значением, использованным на предыдущем шаге. Замените `<module file path>` именем файла и путем службы приложений из предыдущего шага, например */Хоме/модуле.ксмл*.
 
     **PostgreSQL**
 
@@ -559,7 +559,7 @@ public int getServerPort()
 
 5. Используйте протокол FTP для передачи JAR-файла JDBC, файла XML модуля, скрипта CLI JBoss и скрипта запуска для экземпляра службы приложений. Вставьте эти файлы в расположение, указанное на предыдущих шагах, например */Home*. Дополнительные сведения о FTP см. в статье [развертывание приложения в службе приложений Azure с помощью FTP/S](https://docs.microsoft.com/azure/app-service/deploy-ftp).
 
-6. Используйте Azure CLI, чтобы добавить параметры в службу приложений, которые содержат сведения о подключении к базе данных. Замените `<resource group>` и `<webapp name>` значениями, используемыми службой приложений. Замените `<database server name>`, `<database name>`, `<admin name>` и `<admin password>` сведениями о подключении к базе данных. Вы можете получить сведения о службе приложений и базе данных из портал Azure.
+6. Используйте Azure CLI, чтобы добавить параметры в службу приложений, которые содержат сведения о подключении к базе данных. Замените `<resource group>` и `<webapp name>` значениями, используемыми службой приложений. Замените `<database server name>`, `<database name>`, `<admin name>`и `<admin password>` сведениями о подключении к базе данных. Вы можете получить сведения о службе приложений и базе данных из портал Azure.
 
     **PostgreSQL**
 
@@ -664,7 +664,7 @@ public int getServerPort()
     | RESOURCEGROUP_NAME       | Имя группы ресурсов, содержащей экземпляр службы приложений.       |
     | WEBAPP_NAME              | Имя экземпляра службы приложений.                                     |
     | WEBAPP_PLAN_NAME         | Имя плана службы приложений                                          |
-    | Регион                   | Имя региона, в котором размещено приложение.                           |
+    | РЕГИОН                   | Имя региона, в котором размещено приложение.                           |
     | REDIS_CACHE_NAME         | Имя кэша Azure для экземпляра Redis.                           |
     | REDIS_PORT               | Порт SSL, прослушиваемый кэшем Redis.                             |
     | REDIS_PASSWORD           | Первичный ключ доступа для экземпляра.                                  |
@@ -712,7 +712,7 @@ public int getServerPort()
 
 8. Обновите конфигурацию `azure-webapp-maven-plugin` в файле *POM. XML* вашего приложения, чтобы они ссылались на сведения об учетной записи Redis. В этом файле используются ранее настроенные переменные среды для сохранения данных учетной записи из исходных файлов.
 
-    При необходимости измените `1.7.0` на текущую версию [подключаемого модуля Maven для Службы приложений Azure](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme).
+    При необходимости измените `1.7.0` до текущей версии [подключаемого модуля Maven для службы приложений Azure](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme).
 
     ```xml
     <plugin>
@@ -786,7 +786,7 @@ public int getServerPort()
 
 Каждый квартал в поддерживаемые пакеты JDK автоматически вносятся исправления. Это происходит в январе, апреле, июле и октябре.
 
-### <a name="security-updates"></a>Обновления для системы безопасности
+### <a name="security-updates"></a>обновления для системы безопасности;
 
 Исправления для устранения серьезных уязвимостей в системе безопасности будут выпускаться по мере выпуска компанией Azul Systems. "Серьезными" считаются уязвимости с базовым индексом не меньше 9.0 в [NIST Common Vulnerability Scoring System версии 2](https://nvd.nist.gov/cvss.cfm).
 
@@ -794,7 +794,7 @@ public int getServerPort()
 
 Если планируется прекращение использования какой-либо поддерживаемой среды выполнения Java, то разработчики для Azure, использующие эту среду выполнения, получат соответствующее уведомление по крайней мере за шесть месяцев до прекращения использования.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Посетите центр [Azure для разработчиков Java](/java/azure/), чтобы найти краткие руководства Azure, руководства и справочную документацию по Java.
 

@@ -1,6 +1,6 @@
 ---
-title: Загрузка данных Contoso Retail в хранилище данных SQL Azure | Документация Майкрософт
-description: Загрузите две таблицы из данных Contoso Retail в хранилище данных SQL Azure с помощью команд T-SQL и PolyBase.
+title: Загрузка данных Contoso Retail в хранилище данных аналитики SQL | Документация Майкрософт
+description: Используйте команды Polybase и T-SQL для загрузки двух таблиц из данных Contoso Retail в Аналитика SQL Azure.
 services: sql-data-warehouse
 author: kevinvngo
 manager: craigg
@@ -10,16 +10,16 @@ ms.subservice: load-data
 ms.date: 04/17/2018
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: b96b65b7dd38900fccb8d5d3a9133f37ee93949f
-ms.sourcegitcommit: 8e1fb03a9c3ad0fc3fd4d6c111598aa74e0b9bd4
+ms.openlocfilehash: 76d9be9159a609e4f7c019afca5da2ab903ffe0c
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "67595517"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73520959"
 ---
-# <a name="load-contoso-retail-data-to-azure-sql-data-warehouse"></a>Загрузка данных Contoso Retail в хранилище данных SQL Azure
+# <a name="load-contoso-retail-data-to-a-sql-analytics-data-warehouse"></a>Загрузка данных Contoso Retail в хранилище данных аналитики SQL
 
-В этом руководстве вы узнаете, как использовать команды Polybase и T-SQL для загрузки двух таблиц из розничных данных Contoso в хранилище данных SQL Azure. 
+В этом руководстве вы узнаете, как использовать команды Polybase и T-SQL для загрузки двух таблиц из розничных данных Contoso в хранилище данных аналитики SQL. 
 
 Изучив данный учебник, вы научитесь:
 
@@ -28,10 +28,10 @@ ms.locfileid: "67595517"
 3. выполнять оптимизацию после завершения загрузки.
 
 ## <a name="before-you-begin"></a>Перед началом работы
-Для работы с этим руководством вам потребуется учетная запись Azure, у которой уже есть хранилище данных SQL. Если у вас нет подготовленного хранилища данных, см. статью [Создание хранилища данных SQL и настройка правила брандмауэра уровня сервера][Create a SQL Data Warehouse].
+Для работы с этим руководством вам потребуется учетная запись Azure, у которой уже есть хранилище данных аналитики SQ. Если у вас нет подготовленного хранилища данных, см. раздел [создание хранилища данных SQL и задание правила брандмауэра на уровне сервера] [создание хранилища данных SQL].
 
 ## <a name="1-configure-the-data-source"></a>1. Настройка источника данных
-PolyBase использует внешние объекты T-SQL для определения расположения и атрибутов внешних данных. Определения внешних объектов хранятся в хранилище данных SQL. Данные хранятся извне.
+PolyBase использует внешние объекты T-SQL для определения расположения и атрибутов внешних данных. Определения внешних объектов хранятся в хранилище данных аналитики SQL. Данные хранятся извне.
 
 ### <a name="11-create-a-credential"></a>1.1. Создание учетных данных
 **Пропустите этот шаг** , если вы загружаете общедоступные данные Contoso. Вам не нужен безопасный доступ к общедоступным данным, так как он уже доступен всем.
@@ -114,8 +114,8 @@ CREATE SCHEMA [asb]
 GO
 ```
 
-### <a name="32-create-the-external-tables"></a>3.2. Создайте внешние таблицы.
-Выполните следующий скрипт, чтобы создать внешние таблицы DimProduct и FactOnlineSales. Здесь вы можете определить имена столбцов и типы данных и привязать их к расположению и формату файлов хранилища BLOB-объектов Azure. Определение хранится в хранилище данных SQL, а данные по-прежнему размещаются в хранилище BLOB-объектов Azure.
+### <a name="32-create-the-external-tables"></a>3.2. Создание внешних таблиц
+Выполните следующий скрипт, чтобы создать внешние таблицы DimProduct и FactOnlineSales. Здесь вы можете определить имена столбцов и типы данных и привязать их к расположению и формату файлов хранилища BLOB-объектов Azure. Определение хранится в хранилище данных аналитики SQL, а данные по-прежнему находятся в Azure Storage Blob.
 
 Параметр **LOCATION** представляет папку в корневой папке в хранилище BLOB-объектов Azure. Все таблицы находятся в разных папках.
 
@@ -264,7 +264,7 @@ ORDER BY
 ```
 
 ## <a name="5-optimize-columnstore-compression"></a>5. Оптимизация сжатия columnstore
-По умолчанию в хранилище данных SQL таблицы хранятся в виде кластеризованных индексов columnstore. После завершения загрузки для некоторых строк данных может не выполняться сжатие в индекс columnstore.  Это может произойти по разным причинам. Чтобы узнать больше, ознакомьтесь с [управлением индексами columnstore][manage columnstore indexes].
+По умолчанию хранилище данных аналитики SQL хранит таблицу как кластеризованный индекс columnstore. После завершения загрузки для некоторых строк данных может не выполняться сжатие в индекс columnstore.  Это может произойти по разным причинам. Чтобы узнать больше, ознакомьтесь с [управлением индексами columnstore][manage columnstore indexes].
 
 Чтобы оптимизировать производительность запросов и сжатие columnstore после загрузки, перестройте таблицу, чтобы настроить принудительное сжатие всех строк таблиц индексом columnstore. 
 
@@ -328,7 +328,7 @@ CREATE STATISTICS [stat_cso_FactOnlineSales_StoreKey] ON [cso].[FactOnlineSales]
 ```
 
 ## <a name="achievement-unlocked"></a>Победа!
-Общедоступные данные успешно загружены в хранилище данных SQL Azure. Отличная работа!
+Общедоступные данные успешно загружены в хранилище данных аналитики SQL. Отличная работа!
 
 Теперь можно начать выполнять запросы к таблицам для просмотра данных. Выполните следующий запрос, чтобы узнать общий объем продаж по торговым маркам:
 
@@ -340,17 +340,17 @@ JOIN    [cso].[DimProduct]      AS p ON f.[ProductKey] = p.[ProductKey]
 GROUP BY p.[BrandName]
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Чтобы загрузить полный набор данных, выполните пример [Загрузить полное хранилище данных Contoso Retail](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/contoso-data-warehouse/readme.md) из репозитория Microsoft SQL Server Samples.
 
-Дополнительные советы по разработке см. в статье [Проектные решения и методики программирования для хранилища данных SQL][SQL Data Warehouse development overview].
+Дополнительные советы по разработке см. в разделе [Общие сведения о разработке хранилища данных SQL] [Общие сведения о разработке хранилища данных SQL].
 
 <!--Image references-->
 
 <!--Article references-->
-[Create a SQL Data Warehouse]: sql-data-warehouse-get-started-provision.md
-[Load data into SQL Data Warehouse]: sql-data-warehouse-overview-load.md
-[SQL Data Warehouse development overview]: sql-data-warehouse-overview-develop.md
+[Create a SQL Analytics data warehouse]: sql-data-warehouse-get-started-provision.md
+[Load data into SQL Analytics data warehouse]: sql-data-warehouse-overview-load.md
+[SQL Analytics data warehouse development overview]: sql-data-warehouse-overview-develop.md
 [manage columnstore indexes]: sql-data-warehouse-tables-index.md
 [Statistics]: sql-data-warehouse-tables-statistics.md
 [CTAS]: sql-data-warehouse-develop-ctas.md

@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 06/13/2018
 ms.author: nobun
 ms.custom: mvc
-ms.openlocfilehash: 66f76a8a706f60df786786cbd1ce00b7eafd8d7e
-ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
+ms.openlocfilehash: 84e0af89e2b3247bc922ab84286a79a0934323a8
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71097884"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73472997"
 ---
 # <a name="migrate-from-azure-container-service-acs-to-azure-kubernetes-service-aks"></a>Миграция из службы контейнеров Azure (ACS) в службу Kubernetes Azure (AKS)
 
@@ -26,9 +26,9 @@ ms.locfileid: "71097884"
 
 * Узлы AKS используют [управляемые диски](../virtual-machines/windows/managed-disks-overview.md).
     * Неуправляемые диски должны быть преобразованы, прежде чем их можно будет присоединить к узлам AKS.
-    * Пользовательские `StorageClass` объекты для дисков Azure необходимо изменить с `unmanaged` на `managed`.
-    * Все `PersistentVolumes` должны использовать `kind: Managed`.
-* AKS поддерживает [несколько пулов узлов](https://docs.microsoft.com/azure/aks/use-multiple-node-pools) (в настоящее время находится на этапе предварительной версии).
+    * Пользовательские объекты `StorageClass` для дисков Azure необходимо изменить с `unmanaged` на `managed`.
+    * Любой `PersistentVolumes` должен использовать `kind: Managed`.
+* AKS поддерживает [несколько пулов узлов](https://docs.microsoft.com/azure/aks/use-multiple-node-pools).
 * Узлы, основанные на Windows Server, сейчас доступны в [предварительной версии в AKS](https://azure.microsoft.com/blog/kubernetes-on-azure/).
 * AKS поддерживает ограниченный набор [регионов](https://docs.microsoft.com/azure/aks/quotas-skus-regions).
 * AKS — это управляемая служба с размещенной панелью управления Kubernetes. Если вы ранее изменили конфигурацию главных серверов ACS, вам может потребоваться внести изменения в приложения.
@@ -47,7 +47,7 @@ ms.locfileid: "71097884"
 
 Пример:
 
-| Название | Count | Размер виртуальной машины | Операционная система |
+| Имя | Количество | Размер виртуальной машины | операционная система |
 | --- | --- | --- | --- |
 | agentpool0 | 3 | Standard_D8_v2 | Linux |
 | agentpool1 | 1 | Standard_D2_v2 | Windows |
@@ -56,9 +56,9 @@ ms.locfileid: "71097884"
 
 Дополнительные сведения см. в статье [Подписка Azure и ограничения службы](https://docs.microsoft.com/azure/azure-subscription-service-limits). Чтобы проверить текущие квоты, в портал Azure перейдите в [колонку подписки](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade), выберите свою подписку и щелкните **использование + квоты**.
 
-### <a name="networking"></a>Сети
+### <a name="networking"></a>Сеть
 
-Миграция сложных приложений обычно выполняется в течение некоторого времени, а не одномоментно. Это означает, что старым и новым средам может потребоваться взаимодействие по сети. Приложения, для которых `ClusterIP` ранее использовались службы для взаимодействия, могут быть предоставлены как тип `LoadBalancer` и должны быть защищены соответствующим образом.
+Миграция сложных приложений обычно выполняется в течение некоторого времени, а не одномоментно. Это означает, что старым и новым средам может потребоваться взаимодействие по сети. Приложения, которые ранее использовали `ClusterIP` служб для взаимодействия, могут быть предоставлены как тип `LoadBalancer` и должны быть защищены соответствующим образом.
 
 Чтобы завершить миграцию, необходимо указать клиентам новые службы, работающие на AKS. Мы рекомендуем перенаправить трафик, обновив DNS, чтобы указать Load Balancer, расположенную перед кластером AKS.
 
@@ -112,11 +112,11 @@ ms.locfileid: "71097884"
 4. Проверить.
 5. Укажите трафик к кластеру AKS.
 
-Если вы хотите начать с пустой общей папки и создать копию исходных данных, можно использовать [`az storage file copy`](https://docs.microsoft.com/cli/azure/storage/file/copy?view=azure-cli-latest) команды для переноса данных.
+Если вы хотите начать с пустой общей папки и создать копию исходных данных, можно использовать команды [`az storage file copy`](https://docs.microsoft.com/cli/azure/storage/file/copy?view=azure-cli-latest) для переноса данных.
 
 ### <a name="deployment-strategy"></a>Стратегия развертывания
 
-Мы рекомендуем использовать существующий конвейер CI/CD для развертывания известной конфигурации в AKS. Клонировать существующие задачи развертывания и убедиться, что `kubeconfig` они указывают на новый кластер AKS.
+Мы рекомендуем использовать существующий конвейер CI/CD для развертывания известной конфигурации в AKS. Клонировать существующие задачи развертывания и убедиться, что `kubeconfig` указывает на новый кластер AKS.
 
 Если это невозможно, экспортируйте определения ресурсов из ACS, а затем примените их к AKS. Для экспорта объектов можно использовать `kubectl`.
 
@@ -126,7 +126,7 @@ kubectl get deployment -o=yaml --export > deployments.yaml
 
 В зависимости от потребностей развертывания может помочь несколько средств с открытым кодом.
 
-* [Велеро](https://github.com/heptio/ark) (Для этого средства требуется Kubernetes 1,7.)
+* [Велеро](https://github.com/heptio/ark) (для этого средства требуется Kubernetes 1,7.)
 * [Расширение CLI Azure KUBE](https://github.com/yaron2/azure-kube-cli)
 * [Сдвиг](https://github.com/mhausenblas/reshifter)
 
@@ -137,9 +137,9 @@ kubectl get deployment -o=yaml --export > deployments.yaml
    > [!NOTE]
    > Найдите примеры Azure Resource Manager шаблонов для AKS в репозитории [Azure/AKS](https://github.com/Azure/AKS/tree/master/examples/vnet) на сайте GitHub.
 
-2. Внесите необходимые изменения в определения YAML. Например, замените `apps/v1beta1` `apps/v1` на for `Deployments`.
+2. Внесите необходимые изменения в определения YAML. Например, замените `apps/v1beta1` `apps/v1` для `Deployments`.
 
-3. [Миграция томов](#migrating-persistent-volumes) (необязательно) из кластера ACS в кластер AKS.
+3. [Перенос томов](#migrating-persistent-volumes) (необязательно) из кластера ACS в кластер AKS.
 
 4. Используйте систему CI/CD для развертывания приложений в AKS. Или используйте kubectl для применения определений YAML.
 

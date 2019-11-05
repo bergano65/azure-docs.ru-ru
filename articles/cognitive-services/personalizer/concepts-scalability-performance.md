@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: personalizer
 ms.topic: conceptual
-ms.date: 06/07/2019
+ms.date: 10/24/2019
 ms.author: diberry
-ms.openlocfilehash: d116f6bd389b1404ea723c965111cd05880e6c30
-ms.sourcegitcommit: e3b0fb00b27e6d2696acf0b73c6ba05b74efcd85
+ms.openlocfilehash: 5ac9a870cb05328f040febd0f8161a97f0982e09
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68662823"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73490779"
 ---
 # <a name="scalability-and-performance"></a>Масштабируемость и производительность
 
@@ -24,28 +24,15 @@ ms.locfileid: "68662823"
 * Сохранение низкой задержки при выполнении вызовов API ранжирования.
 * Уверенность, что пропускная способность обучения адаптируется к входным данным событий.
 
-Персонализация может очень быстро возвращать оценку, при этом большая часть продолжительности вызова выделяется для обмена данными через REST API. Azure выполнит автомасштабирование способности быстро отвечать на запросы.
+Персонализация может быстро возвращать рейтинг, в то время как большая часть срока вызова предназначена для связи через REST API. Azure выполнит автомасштабирование способности быстро отвечать на запросы.
 
 ##  <a name="low-latency-scenarios"></a>Сценарии с низкой задержкой
 
-Некоторым приложениям требуется низкая задержка при возврате оценки. Это необходимо:
+Некоторым приложениям требуется низкая задержка при возврате оценки. Требуются низкие задержки:
 
 * Чтобы избавить пользователя от длительного ожидания перед отображением ранжированного содержимого.
 * Чтобы помочь серверу с максимальным трафиком избежать прерываний дефицитного времени вычислений и сетевых подключений.
 
-<!--
-
-If your web site is scaled on your infrastructure, you can avoid making HTTP calls by hosting the Personalizer API in your own servers running a Docker container.
-
-This change would be transparent to your application, other than using an endpoint URL referring to the running docker instances as opposed to an online service in the cloud.
-
-
-
-### Extreme Low Latency Scenarios
-
-If you require latencies under a millisecond, and have already tested using Personalizer via containers, please contact our support team so we can assess your scenario and provide guidance suited to your needs.
-
--->
 
 ## <a name="scalability-and-training-throughput"></a>Масштабируемость и пропускная способность обучения
 
@@ -62,6 +49,6 @@ If you require latencies under a millisecond, and have already tested using Pers
 
 Если вы достигните этих ограничений, обратитесь в службу поддержки для получения совета по архитектуре.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Personalizer settings](how-to-settings.md) (Параметры Персонализатора)

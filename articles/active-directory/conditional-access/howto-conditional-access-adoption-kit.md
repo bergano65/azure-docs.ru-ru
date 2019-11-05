@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: martinco
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c34f59c3e9f679adf8ae410f648cb7de6dba6447
-ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
+ms.openlocfilehash: daaced0aae595e839f2b2476562fc5caffb63640
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72430051"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73473924"
 ---
 #  <a name="adopting-azure-ad-conditional-access"></a>Внедрение условного доступа Azure AD
 
@@ -104,7 +104,7 @@ Azure AD усовершенствуется на постоянной основ
 * O'Reilly [. Реализация решений Azure — второй выпуск.](https://www.oreilly.com/library/view/implementing-azure-solutions/9781789343045/b7ead3db-eb1c-4ace-897e-86ee25ea86be.xhtml)
    * «Приготовьтесь к работе со службами Azure и Узнайте, как их реализовать в Организации. Условный доступ Azure AD рассматривается в главе [развертывание и синхронизация Azure Active Directory](https://learning.oreilly.com/library/view/implementing-azure-solutions/9781789343045/02ca8bba-08cf-4691-a7d0-1b96e286e7ea.xhtml)".
 
-* Wiley- [хозяева Microsoft Azure служб инфраструктуры](https://www.wiley.com/Mastering+Microsoft+Azure+Infrastructure+Services-p-9781119003298)
+* Wiley- [Microsoft Azure служб инфраструктуры для архитекторов: проектирование облачных решений](https://www.wiley.com/Microsoft+Azure+Infrastructure+Services+for+Architects%3A+Designing+Cloud+Solutions-p-9781119596547)
    * "Вот все, что необходимо для понимания, вычисления, развертывания и обслуживания сред, использующих Microsoft Azure".
 
 ## <a name="white-papers"></a>Технические документы

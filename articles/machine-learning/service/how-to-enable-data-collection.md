@@ -6,19 +6,20 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
-ms.reviewer: jmartens
-ms.author: marthalc
-author: marthalc
+ms.reviewer: laobri
+ms.author: copeters
+author: lostmygithubaccount
 ms.date: 10/15/2019
 ms.custom: seodec18
-ms.openlocfilehash: 25017e6ea0be5d4320832298cdadbec7ec5a05cc
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
-ms.translationtype: MT
+ms.openlocfilehash: 845d271c60762177ea88912f2100f3b47aedde46
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72929368"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73489996"
 ---
 # <a name="collect-data-for-models-in-production"></a>Сбор данных для моделей в рабочей среде
+[!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
 >[!IMPORTANT]
 > В ближайшее время этот пакет SDK будет снят с учета. Этот пакет SDK по-прежнему подходит для разработчиков, отслеживающих смещение данных в моделях, но большинство разработчиков должны использовать упрощенный [мониторинг данных с Application Insights](https://docs.microsoft.com/azure/machine-learning/service/how-to-enable-app-insights). 
@@ -56,7 +57,7 @@ ms.locfileid: "72929368"
 
 ## <a name="prerequisites"></a>Технические условия
 
-- Если у вас еще нет подписки Azure, создайте бесплатную учетную запись, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) уже сегодня.
+- Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию машинное обучение Azure](https://aka.ms/AMLFree) уже сегодня.
 
 - Должны быть установлены рабочая область машинного обучения Azure, локальный каталог со сценариями и пакет SDK машинного обучения Azure для Python. Дополнительные сведения о получении этих необходимых компонентов см. в документе [Настройка среды разработки](how-to-configure-environment.md).
 
@@ -115,7 +116,7 @@ ms.locfileid: "72929368"
 
 Если в **файле среды** и **файле оценки** уже указана служба с установленными зависимостями, вы можете включить сбор данных следующим образом:
 
-1. Перейдите в [портал Azure](https://portal.azure.com).
+1. Перейдите в [машинное обучение Azure Studio](https://ml.azure.com).
 
 1. Перейдите в рабочую область.
 
@@ -133,10 +134,10 @@ ms.locfileid: "72929368"
 
 
 ## <a name="disable-data-collection"></a>Отключение сбора данных
-Вы можете остановить сбор данных в любое время. Отключение сбора данных с помощью кода Python или портала Azure.
+Вы можете остановить сбор данных в любое время. Чтобы отключить сбор данных, используйте код Python или Машинное обучение Azure Studio.
 
-+ Вариант 1 — отключение сбора данных на портале Azure: 
-  1. Войдите на [портал Azure](https://portal.azure.com).
++ Вариант 1. Отключение в Машинное обучение Azure Studio: 
+  1. Войдите в [машинное обучение Azure Studio](https://ml.azure.com).
 
   1. Перейдите в рабочую область.
 
@@ -150,7 +151,7 @@ ms.locfileid: "72929368"
 
   1. Чтобы применить изменение, нажмите кнопку **Обновить**.
 
-  Вы также можете получить доступ к этим параметрам на [целевой странице рабочей области (Предварительная версия)](https://ml.azure.com).
+  Вы также можете получить доступ к этим параметрам в рабочей области в [машинное обучение Azure Studio](https://ml.azure.com).
 
 + Вариант 2 — отключение сбора данных с помощью Python:
 
@@ -160,10 +161,10 @@ ms.locfileid: "72929368"
   ```
 
 ## <a name="validate-your-data-and-analyze-it"></a>Проверка и анализ данных
-Для анализа данных, собранных в большом двоичном объекте Azure, можно выбрать любой предпочитаемый инструмент. 
+Для анализа данных, собранных в большом двоичном объекте Azure, можно выбрать любой предпочитаемый инструмент.
 
 Чтобы быстро получить доступ к данным большого двоичного объекта:
-1. Войдите на [портал Azure](https://portal.azure.com).
+1. Войдите в [машинное обучение Azure Studio](https://ml.azure.com).
 
 1. Перейдите в рабочую область.
 1. Выберите **Хранилище**.
@@ -226,7 +227,7 @@ ms.locfileid: "72929368"
 
     [![Таблица базы данных](media/how-to-enable-data-collection/dbtable.PNG)](./media/how-to-enable-data-collection/dbtable.PNG#lightbox)
 
-1. Обновите расположение данных. Вот пример:
+1. Обновите расположение данных. Пример:
 
     ```
     file_location = "wasbs://mycontainer@storageaccountname.blob.core.windows.net/modeldata/1a2b3c4d-5e6f-7g8h-9i10-j11k12l13m14/myresourcegrp/myWorkspace/aks-w-collv9/best_model/10/inputs/2018/*/*/data.csv" 

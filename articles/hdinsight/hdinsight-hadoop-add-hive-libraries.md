@@ -1,5 +1,5 @@
 ---
-title: Добавление библиотек Apache Hive во время создания кластера HDInsight в Azure
+title: Apache Hive библиотек во время создания кластера Azure HDInsight
 description: Узнайте, как добавлять библиотеки Apache Hive (JAR-файлы) в кластер HDInsight во время создания кластера.
 author: hrasheed-msft
 ms.reviewer: jasonh
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 02/27/2018
 ms.author: hrasheed
 ms.custom: H1Hack27Feb2017,hdinsightactive
-ms.openlocfilehash: c3ef5362c4d97b8d805212f9cf813c7bc9c8c18c
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 51a93aaec4abdb2dd9d8fad042c079a48d4ea7a3
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67059445"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73494831"
 ---
 # <a name="add-custom-apache-hive-libraries-when-creating-your-hdinsight-cluster"></a>Добавление пользовательских библиотек Apache Hive при создании кластера HDInsight
 
@@ -47,7 +47,7 @@ ms.locfileid: "67059445"
 
 * Учетная запись хранилища, содержащая библиотеку JAR-файлов, **должна** быть связана с кластером HDInsight во время создания. Это должна быть учетная запись хранения по умолчанию или учетная запись, добавленная с помощью колонки __Необязательная настройка__.
 
-* Путь WASB к контейнеру необходимо указать в виде параметра для действия сценария. Например, если JAR-файлы хранятся в контейнере с именем **libs** на учетную запись хранения с именем **mystorage**, нужно указать параметр **wasb://libs\@ mystorage.BLOB.Core.Windows.NET/** .
+* Путь WASB к контейнеру необходимо указать в виде параметра для действия сценария. Например, если JAR хранятся в контейнере **с именем библиотеки в** учетной записи хранения с именем **MyStorage**, то параметр будет **wasb://libs\@MyStorage.BLOB.Core.Windows.NET/** .
 
   > [!NOTE]  
   > В этом документе предполагается, что вы уже создали учетную запись хранения и контейнер BLOB-объектов, а также отправили в него файлы.
@@ -61,21 +61,21 @@ ms.locfileid: "67059445"
 >
 > Для создания кластера с помощью этого сценария также можно использовать Azure PowerShell или пакет SDK HDInsight для .NET. Дополнительные сведения об использовании этих методов см. в статье [Настройка кластеров HDInsight под управлением Linux с помощью действия сценария](hdinsight-hadoop-customize-cluster-linux.md).
 
-1. Начните подготовку кластера с помощью действий, описанных в статье [Создание кластеров Hadoop под управлением Linux в HDInsight](hdinsight-hadoop-provision-linux-clusters.md), но не завершайте ее.
+1. Начните подготовку кластера с помощью действий, описанных в статье [Подготовка кластеров HDInsight под управлением Linux](hdinsight-hadoop-provision-linux-clusters.md), но не завершайте ее.
 
 2. В разделе **Необязательная настройка** выберите **Действия сценария** и введите следующие сведения.
 
-   * **Имя:** введите понятное имя для действия сценария.
+   * **ИМЯ**: введите понятное имя для действия сценария.
 
    * **URI СКРИПТА**: https://hdiconfigactions.blob.core.windows.net/linuxsetupcustomhivelibsv01/setup-customhivelibs-v01.sh.
 
-   * **Головной узел.** установите этот флажок.
+   * **Головной** — установите флажок.
 
-   * **Рабочая роль.** Установите этот флажок.
+   * **Рабочая роль** — установите флажок;
 
-   * **ZOOKEEPER:** Оставьте это поле пустым.
+   * **Zookeeper** — оставьте это поле пустым;
 
-   * **Параметры:** введите адрес WASB к контейнеру и учетной записи хранения, содержащий JAR-файлы Например **wasb://libs\@mystorage.blob.core.windows.net/** .
+   * **Параметры** — введите адрес WASB к контейнеру и учетной записи хранения, содержащий JAR-файлы Например, **wasb://libs\@MyStorage.BLOB.Core.Windows.NET/** .
 
 3. В нижней части раздела **Действия скрипта** нажмите кнопку **Выбрать**, чтобы сохранить конфигурацию.
 

@@ -12,12 +12,12 @@ ms.subservice: development
 ms.date: 10/17/2019
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: 81c709e7705e16484438ab684a6b1591e5e624ba
-ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
+ms.openlocfilehash: 0ca59080b4056ba74e2f05038e07d647f12de765
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72553514"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73485045"
 ---
 # <a name="getting-started-with-visual-studio-2019-for-sql-data-warehouse"></a>Начало работы с Visual Studio 2019 для хранилища данных SQL
 Visual Studio **2019** SQL Server Data Tools (SSDT) — это единый инструмент, позволяющий выполнять следующие действия:
@@ -26,7 +26,7 @@ Visual Studio **2019** SQL Server Data Tools (SSDT) — это единый ин
 - Используйте обозреватель объектов, чтобы визуально исследовать все объекты в модели данных, включая таблицы, представления, хранимые процедуры и т. д.
 - Создание скриптов языка описания данных (DDL) T-SQL для объектов
 - Разработка хранилища данных с использованием подхода на основе состояния с проектами баз данных SSDT
-- Интеграция проекта базы данных с системами управления версиями, такими как Git, с помощью Azure DevOps репозиториев
+- Интегрируйте проект базы данных с системами управления версиями, такими как Git, с Azure Repos
 - Настройка конвейеров непрерывной интеграции и развертывания с помощью серверов автоматизации, таких как Azure DevOps
 
 > [!NOTE]

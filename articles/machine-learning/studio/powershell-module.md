@@ -1,7 +1,7 @@
 ---
-title: Модули PowerShell для Студии машинного обучения
-titleSuffix: Azure Machine Learning Studio
-description: Использование PowerShell для создания рабочих областей, экспериментов, веб-служб и другого, а также управления этими компонентами в Студии машинного обучения Microsoft Azure.
+title: Модули PowerShell для Машинное обучение Studio (классическая модель)
+titleSuffix: Azure Machine Learning Studio (classic)
+description: Используйте PowerShell для создания и управления рабочими областями, экспериментами, веб-службами и т. д. Машинное обучение Azure Studio (классическая модель).
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
@@ -9,61 +9,61 @@ ms.topic: conceptual
 author: xiaoharper
 ms.author: amlstudiodocs
 ms.date: 04/25/2019
-ms.openlocfilehash: bee42f8a9582908963c0eef95a2fd04742cd425e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: dae20a86c7a16e1d989b529a3f2dd4e32253a354
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65205663"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73496804"
 ---
-# <a name="powershell-modules-for-azure-machine-learning-studio"></a>Модули PowerShell для Студии машинного обучения Microsoft Azure
+# <a name="powershell-modules-for-azure-machine-learning-studio-classic"></a>Модули PowerShell для Машинное обучение Azure Studio (классическая модель)
 
-С помощью модулей PowerShell вы можете программным способом управлять ресурсами Студии, например, рабочими областями, наборами данных и веб-службами.
+С помощью модулей PowerShell можно программно управлять ресурсами и активами студии (классическими), такими как рабочие области, наборы данных и веб-службы.
 
-Вы можете взаимодействовать с ресурсами Студии с помощью трех модулей Powershell:
+Вы можете взаимодействовать с классической версией ресурсов Studio с помощью трех модулей PowerShell:
 
 * [Azure PowerShell Az](#az-rm) 2018 года выпуска содержит все функции AzureRM, а также различные имена командлетов.
-* [AzureRM](#az-rm) в выпуске 2016, заменены PowerShell Az
+* [AzureRM](#az-rm) , выпущенная в 2016, заменена PowerShell AZ
 * [Классический PowerShell для Машинного обучения Azure](#classic) 2016 года выпуска.
 
-Несмотря на то, что эти модули PowerShell имеют некоторые сходства, каждый предназначен для определенных сценариев. В этой статье описаны различия между модулями PowerShell, а также предложена помощь в выборе подходящих вам модулей.  
+Хотя эти модули PowerShell имеют некоторые сходства, каждый из них предназначен для определенных сценариев. В этой статье описаны различия между модулями PowerShell, а также предложена помощь в выборе подходящих вам модулей.  
 
 Проверьте [таблицу поддержки](#support-table) указанную ниже, чтобы увидеть, какие ресурсы поддерживаются каждым из модулей. 
 
 ## <a name="az-rm"></a> Azure PowerShell Az и AzureRM
 
-Az теперь является предполагаемым модулем PowerShell для взаимодействия с Azure и включает все прежние функции AzureRM. AzureRM продолжит получать исправления ошибки, но не будет получать новые командлеты или функции.  AZ и AzureRM управляют решениями развернутых служб с помощью модуля **Azure Resource Manager**. Эти ресурсы включают рабочие области студии и «New» веб-службы студии. 
+Az теперь является предполагаемым модулем PowerShell для взаимодействия с Azure и включает все прежние функции AzureRM. AzureRM продолжит получать исправления ошибки, но не будет получать новые командлеты или функции.  AZ и AzureRM управляют решениями развернутых служб с помощью модуля **Azure Resource Manager**. К этим ресурсам относятся рабочие области Studio (классические) и Studio (классическая модель) "новые веб-службы". 
 
-PowerShell — Классическая модель может устанавливаться параллельно с Az или AzureRM, чтобы охватить оба этих типа ресурсов «new» и «классический». Тем не менее не рекомендуется устанавливать Az и AzureRM одновременно. Чтобы выбрать между Az и AzureRM, Microsoft рекомендует Az для всех последующих развернутых служб.  Дополнительные сведения о Az и AzureRM и перехода в [введение в Azure PowerShell Az](https://docs.microsoft.com/powershell/azure/new-azureps-module-az).
+Классическую программу PowerShell можно установить вместе с az или AzureRM, чтобы охватить как "новые", так и "классические" типы ресурсов. Тем не менее не рекомендуется устанавливать Az и AzureRM одновременно. Чтобы выбрать между Az и AzureRM, Microsoft рекомендует Az для всех последующих развернутых служб.  Дополнительные сведения о AZ и AzureRM и пути перехода см. в статье [Введение в Azure PowerShell AZ](https://docs.microsoft.com/powershell/azure/new-azureps-module-az).
 
 Чтобы начать работу с использованием команды Az, выполните действия, описанные в статье [Установка модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps).
 
 ## <a name="classic"></a> Классический PowerShell
 
-[Классическая модель PowerShell](https://aka.ms/amlps) Студии позволяет управлять развернутыми ресурсами, используя **классическую модель развертывания**. Эти ресурсы включают активы пользователей Studio, «классических» веб-служб и конечных точек службы «классических».
+[Классический модуль PowerShell](https://aka.ms/amlps) для Studio (классическая модель) позволяет управлять ресурсами, развернутыми с помощью **классической модели развертывания**. В число этих ресурсов входят пользовательские активы (классические) Studio, "классические" веб-службы и "классические" конечные точки веб-служб.
 
-Тем не менее Корпорация Майкрософт рекомендует использовать модель развертывания Resource Manager для всех будущих ресурсов для упрощения развертывания и управления ресурсами. Дополнительные сведения о моделях развертывания см. в статье [Azure Resource Manager и классическое развертывание: сведения о моделях развертывания и состоянии ресурсов](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-deployment-model).
+Однако корпорация Майкрософт рекомендует использовать модель развертывания диспетчер ресурсов для всех будущих ресурсов, чтобы упростить развертывание и управление ресурсами. Дополнительные сведения о моделях развертывания см. в статье [Azure Resource Manager и классическое развертывание: сведения о моделях развертывания и состоянии ресурсов](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-deployment-model).
 
 Чтобы начать работу с модулем PowerShell для машинного обучения, скачайте [пакет выпуска](https://github.com/hning86/azuremlps/releases) из GitHub и следуйте приведенным [здесь](https://github.com/hning86/azuremlps/blob/master/README.md) инструкциям по установке. В инструкциях показано, как разблокировать скачанную и распакованную библиотеку DLL, а затем импортировать ее в среду PowerShell.
 
-PowerShell — Классическая модель может устанавливаться параллельно с Az или AzureRM, чтобы охватить оба этих типа ресурсов «new» и «классический».
+Классическую программу PowerShell можно установить вместе с az или AzureRM, чтобы охватить как "новые", так и "классические" типы ресурсов.
 
 ## <a name="support-table"></a> Таблица поддержки PowerShell
 
 
 | | **Az** |  **PowerShell — классическая модель** |
 | --- | --- | --- |
-| Создавать и удалять рабочие области | [Шаблоны Resource Manager](https://docs.microsoft.com/azure/machine-learning/studio/deploy-with-resource-manager-template) |  |
-| Управление рабочей планов | [New-AzMlCommitmentPlan](https://docs.microsoft.com/powershell/module/az.machinelearning/new-azmlcommitmentplan) | |
+| Создание и удаление рабочих областей | [Шаблоны Resource Manager](https://docs.microsoft.com/azure/machine-learning/studio/deploy-with-resource-manager-template) |  |
+| Управление планами обязательств рабочей области | [New-AzMlCommitmentPlan](https://docs.microsoft.com/powershell/module/az.machinelearning/new-azmlcommitmentplan) | |
 | Управление пользователями рабочей области |  | [Add-AmlWorkspaceUsers](https://github.com/hning86/azuremlps#add-amlworkspaceusers)|
-| Управление веб-службами | [New-AzMlWebService](https://docs.microsoft.com/powershell/module/az.machinelearning/new-azmlwebservice) <br>(«new» веб-службы)|| [New-AmlWebService](https://github.com/hning86/azuremlps#manage-classic-web-service) <br>(«классический» веб-службы) |
-| Управление конечными точками службы web и ключи |  [Get-AzMlWebServiceKey](https://docs.microsoft.com/powershell/module/az.machinelearning/get-azmlwebservicekey)|  [Add-AmlWebServiceEndpoint](https://github.com/hning86/azuremlps#manage-classic-web-servcie-endpoint)|
-| Управление наборами данных или обученной модели пользователя| | [Get-AmlDataset](https://github.com/hning86/azuremlps#manage-user-assets-dataset-trained-model-transform) |
-| Управление пользователем экспериментов |  | [Start-AmlExperiment](https://github.com/hning86/azuremlps#manage-experiment) |
+| Управление веб-службами | [New-AzMlWebService](https://docs.microsoft.com/powershell/module/az.machinelearning/new-azmlwebservice) <br>("новые" веб-службы)|| [New-AmlWebService](https://github.com/hning86/azuremlps#manage-classic-web-service) <br>("классические" веб-службы) |
+| Управление конечными точками или ключами веб-службы |  [Get-Азмлвебсервицекэй](https://docs.microsoft.com/powershell/module/az.machinelearning/get-azmlwebservicekey)|  [Add-AmlWebServiceEndpoint](https://github.com/hning86/azuremlps#manage-classic-web-servcie-endpoint)|
+| Управление пользовательскими наборами данных и обученными моделями| | [Get-AmlDataset](https://github.com/hning86/azuremlps#manage-user-assets-dataset-trained-model-transform) |
+| Управление экспериментами пользователей |  | [Start-AmlExperiment](https://github.com/hning86/azuremlps#manage-experiment) |
 | Управление настраиваемыми модулями | | [New-AmlCustomModule](https://github.com/hning86/azuremlps#manage-custom-module) |
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-См. в полной документации этих модуль PowerShell:
+Ознакомьтесь с полной документацией по этому модулю PowerShell:
 * [PowerShell — классическая модель](https://aka.ms/amlps)
 * [Azure PowerShell Az](https://docs.microsoft.com/powershell/module/az.machinelearning/#machine_learning)

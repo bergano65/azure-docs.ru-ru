@@ -1,24 +1,24 @@
 ---
 title: 'Добавление столбцов: ссылка на модуль'
-titleSuffix: Azure Machine Learning service
-description: Узнайте, как использовать модуль Add Columns in Машинное обучение Azure Service для сцепления двух наборов данных.
+titleSuffix: Azure Machine Learning
+description: Узнайте, как использовать модуль Добавление столбцов в Машинное обучение Azure для сцепления двух наборов данных.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: reference
 author: xiaoharper
 ms.author: zhanxia
-ms.date: 05/02/2019
-ms.openlocfilehash: cbb1249b529fde1368bfaff0c6c251c93fa6c309
-ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
+ms.date: 10/22/2019
+ms.openlocfilehash: 55981279cb1902424d1a0f77af097dc379d7222f
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72693857"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73493971"
 ---
 # <a name="add-columns-module"></a>Модуль добавления столбцов
 
-В этой статье описывается модуль визуального интерфейса (Предварительная версия) для службы Машинное обучение Azure.
+В этой статье описывается модуль в Машинное обучение Azure Designer (Предварительная версия).
 
 Используйте этот модуль для сцепления двух наборов данных. Все столбцы из двух наборов данных, указанных в качестве входных, объединяются для создания одного набора данных. Если необходимо объединить более двух наборов данных, используйте несколько экземпляров **добавления столбцов**.
 
@@ -46,4 +46,4 @@ ms.locfileid: "72693857"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-См. [набор модулей, доступных](module-reference.md) машинное обучение Azure службе. 
+См. [набор модулей, доступных](module-reference.md) для машинное обучение Azure. 

@@ -1,24 +1,24 @@
 ---
 title: 'Дерево решений, увеличивающееся двумя классами: ссылка на модуль'
-titleSuffix: Azure Machine Learning service
-description: Узнайте, как использовать модуль высококлассного дерева решений с двумя классами в службе Машинное обучение Azure для создания модели машинного обучения на основе алгоритма повышенного дерева принятия решений.
+titleSuffix: Azure Machine Learning
+description: Узнайте, как использовать модуль высококлассного дерева решений с двумя классами в Машинное обучение Azure для создания модели машинного обучения на основе алгоритма повышенного дерева принятия решений.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: reference
 author: xiaoharper
 ms.author: zhanxia
-ms.date: 05/02/2019
-ms.openlocfilehash: 5795dc994872ac5da37a1226524dddd35aa35126
-ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
+ms.date: 10/22/2019
+ms.openlocfilehash: 7590cab00670c92e8a5b90006778542ec44bf83f
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72692638"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73490171"
 ---
 # <a name="two-class-boosted-decision-tree-module"></a>Модуль высококлассного дерева принятия решений с двумя классами
 
-В этой статье описывается модуль визуального интерфейса (Предварительная версия) для службы Машинное обучение Azure.
+В этой статье описывается модуль в Машинное обучение Azure Designer (Предварительная версия).
 
 Этот модуль используется для создания модели машинного обучения на основе алгоритма повышенного дерева принятия решений. 
 
@@ -75,4 +75,4 @@ ms.locfileid: "72692638"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-См. [набор модулей, доступных](module-reference.md) машинное обучение Azure службе. 
+См. [набор модулей, доступных](module-reference.md) для машинное обучение Azure. 

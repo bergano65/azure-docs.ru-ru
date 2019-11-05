@@ -7,16 +7,15 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.reviewer: jmartens
-author: nacharya1
-ms.author: nilesha
-ms.date: 06/20/2019
-ms.custom: seodec18
-ms.openlocfilehash: 999f554bf4a2b9ddda83ee6398950cefb11d32aa
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+author: cartacioS
+ms.author: sacartac
+ms.date: 11/04/2019
+ms.openlocfilehash: 5c8ce6a588fd630f69d8ffc682b611baba3afdd4
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72929335"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73497565"
 ---
 # <a name="what-is-automated-machine-learning"></a>Что такое автоматическое машинное обучение?
 
@@ -39,7 +38,7 @@ ms.locfileid: "72929335"
 
 В следующей таблице перечислены распространенные сценарии автоматического использования ML. 
 
-классификация;| Регрессия | Прогнозирование временных рядов
+классификация;| регрессия; | Прогнозирование временных рядов
 ---|---|---
 [Обнаружение мошенничества](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/classification-credit-card-fraud/auto-ml-classification-credit-card-fraud.ipynb)|[Прогноз производительности ЦП](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/regression-hardware-performance/auto-ml-regression-hardware-performance.ipynb) |[Прогнозирование спроса](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/forecasting-energy-demand/auto-ml-forecasting-energy-demand.ipynb)|
 [Прогноз маркетинга](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/classification-bank-marketing/auto-ml-classification-bank-marketing.ipynb)|[Прогноз устойчивости материалов](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/regression-concrete-strength/auto-ml-regression-concrete-strength.ipynb)|[Прогнозирование продаж](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/forecasting-orange-juice-sales/auto-ml-forecasting-orange-juice-sales.ipynb)
@@ -54,7 +53,9 @@ ms.locfileid: "72929335"
 
 1. **Настройте целевой объект вычислений для обучения модели**, например для [локального компьютера, машинное обучение Azureных вычислений, удаленных виртуальных машин или Azure Databricks](how-to-set-up-training-targets.md).  Сведения об автоматическом обучении [удаленного ресурса](how-to-auto-train-remote.md).
 
-1. **Настройте параметры автоматического машинного обучения** , определяющие количество итераций по различным моделям, параметры настройки параметров, расширенную предварительную обработку и добавление признаков, а также метрики, которые следует рассмотреть при определении лучшей модели.  Параметры автоматического обучения можно настроить в [портал Azure](how-to-create-portal-experiments.md), [на целевой странице рабочей области (Предварительная версия)](https://ml.azure.com)или [с помощью пакета SDK](how-to-configure-auto-train.md). 
+1. **Настройте параметры автоматического машинного обучения** , определяющие количество итераций по различным моделям, параметры настройки параметров, расширенную предварительную обработку и добавление признаков, а также метрики, которые следует рассмотреть при определении лучшей модели.  Параметры автоматического обучения можно настроить в [машинное обучение Azure Studio](https://ml.azure.com)или [с помощью пакета SDK](how-to-configure-auto-train.md). 
+
+    [!INCLUDE [aml-applies-to-enterprise-sku](../../../includes/aml-applies-to-enterprise-sku-inline.md)]
 
 1. **Отправьте обучающий запуск.**
 
@@ -62,7 +63,7 @@ ms.locfileid: "72929335"
 
 Во время обучения Машинное обучение Azure создает ряд параллельных конвейеров, которые пытаются использовать различные алгоритмы и параметры. Он будет останавливаться после того, как он достигнет критерия выхода, определенного в эксперименте.
 
-Можно также проверить записанные в журнал сведения о запуске, которые [содержат метрики](how-to-understand-automated-ml.md) , собранные во время выполнения. В ходе обучающего запуска создается сериализованный объект Python (`.pkl` файл), содержащий модель и предварительную обработку данных.
+Можно также проверить записанные в журнал сведения о запуске, которые [содержат метрики](how-to-understand-automated-ml.md) , собранные во время выполнения. В ходе обучающего запуска создается сериализованный объект Python (файл `.pkl`), содержащий модель и предварительную обработку данных.
 
 Хотя создание модели автоматизировано, вы также можете [узнать, насколько важные или соответствующие функции относятся](how-to-configure-auto-train.md#explain) к созданным моделям.
 
@@ -81,7 +82,7 @@ ms.locfileid: "72929335"
 
 В каждом автоматическом эксперименте машинного обучения данные автоматически масштабируются или нормализованы, что способствует эффективному выполнению алгоритмов.  Во время обучения модели для каждой модели будет применен один из следующих методов масштабирования или нормализации.
 
-|Масштабирование&nbsp;&&nbsp;нормализация| Описание |
+|Масштабирование&nbsp;&&nbsp;нормализация| Description (Описание) |
 | ------------- | ------------- |
 | [стандардскалевраппер](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html)  | Стандартизация функций путем удаления среднего и масштабирования в дисперсию единиц  |
 | [минмаксскалар](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html)  | Преобразует функции путем масштабирования каждой функции по минимальному и максимальному столбцам.  |
@@ -94,6 +95,8 @@ ms.locfileid: "72929335"
 ### <a name="advanced-preprocessing-optional-featurization"></a>Расширенная Предварительная обработка: необязательный Добавление признаков
 
 Также доступны дополнительные расширенные предварительные действия и добавление признаков, такие как отсутствующие значения добавления отсутствующих, Encoding и Transforms. [Узнайте больше о том, что входит в добавление признаков](how-to-create-portal-experiments.md#preprocess). Включить этот параметр с помощью:
+
++ Машинное обучение Azure Studio: выбор параметра **View Добавление признаков Settings (просмотреть параметры** ) в разделе **Run Configuration (выполнение конфигурации** ) [с этими шагами](how-to-create-portal-experiments.md).
 
 + Пакет SDK для Python: указание `"feauturization": auto' / 'off' / FeaturizationConfig` для [класса`AutoMLConfig`](https://docs.microsoft.com/python/api/azureml-train-automl/azureml.train.automl.automlconfig?view=azure-ml-py).
 
@@ -139,7 +142,7 @@ ms.locfileid: "72929335"
 
 Кроме того, автоматические запуски ML автоматически создают следующие диаграммы, которые помогут понять правильность классификаций модели и определить модели, потенциально влияющие на несбалансированные данные.
 
-Диаграмма| Описание
+Диаграмма| Description (Описание)
 ---|---
 [Матрица путаницы](how-to-understand-automated-ml.md#confusion-matrix)| Оценивает правильно классифицированные метки относительно фактических меток данных. 
 [Точность и отзыв](how-to-understand-automated-ml.md#precision-recall-chart)| Оценивает отношение правильных меток относительно соотношения найденных экземпляров меток данных 
@@ -161,7 +164,7 @@ ms.locfileid: "72929335"
 
 Автоматизированный язык ML также доступен в других решениях Майкрософт, таких как:
 
-|Интеграции|Описание|
+|Интеграции|Description (Описание)|
 |------------|-----------|
 |[ML.NET](https://docs.microsoft.com/dotnet/machine-learning/automl-overview)|Автоматическое выделение и обучение моделей в приложениях .NET с использованием Visual Studio и Visual Studio Code с помощью ML.NET автоматизированного ML (Предварительная версия).|
 |[HDInsight](../../hdinsight/spark/apache-spark-run-machine-learning-automl.md)|Параллельное развертывание автоматизированных заданий обучения ML в Spark в кластерах HDInsight.|
@@ -175,7 +178,7 @@ ms.locfileid: "72929335"
 + Следуйте указаниям [руководства: автоматическое обучение модели регрессии с помощью автоматизированных машинное обучение Azure](tutorial-auto-train-models.md)
 
 + Настройте параметры для автоматического обучения.
-  + В портал Azure интерфейсе или на целевой странице рабочей области (Предварительная версия) [выполните следующие действия](how-to-create-portal-experiments.md).
+  + В Машинное обучение Azure Studio [выполните следующие действия](how-to-create-portal-experiments.md).
   + С помощью пакета SDK для Python [выполните следующие действия](how-to-configure-auto-train.md).
 
 + Узнайте, как выполнить автообучение с помощью данных временных рядов, [выполнив следующие действия](how-to-auto-train-forecast.md).

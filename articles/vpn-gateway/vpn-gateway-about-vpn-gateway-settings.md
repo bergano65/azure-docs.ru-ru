@@ -5,14 +5,14 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: conceptual
-ms.date: 10/03/2019
+ms.date: 11/04/2019
 ms.author: cherylmc
-ms.openlocfilehash: fa08ea44722b2def684c269c3f9a0a30a4890a12
-ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
+ms.openlocfilehash: 64a162b9d2f83b4bc703f5912116fd302fcb601c
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2019
-ms.locfileid: "71970903"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73495740"
 ---
 # <a name="about-vpn-gateway-configuration-settings"></a>Сведения о параметрах конфигурации VPN-шлюза
 
@@ -55,7 +55,7 @@ New-AzVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg `
 
 ### <a name="configure-a-gateway-sku"></a>Настройка номера SKU для шлюза
 
-#### <a name="azure-portal"></a>портала Azure
+#### <a name="azure-portal"></a>Портал Azure
 
 Если для создания шлюза виртуальной сети Resource Manager используется портал Azure, выбрать SKU шлюза можно в раскрывающемся списке. Представленные параметры соответствуют выбранным типу шлюза и типу VPN.
 
@@ -69,7 +69,7 @@ New-AzVirtualNetworkGateway -Name VNet1GW -ResourceGroupName TestRG1 `
 -GatewayType Vpn -VpnType RouteBased
 ```
 
-#### <a name="azure-cli"></a>Инфраструктура CLI Azure
+#### <a name="azure-cli"></a>Azure CLI
 
 ```azurecli
 az network vnet-gateway create --name VNet1GW --public-ip-address VNet1GWPIP --resource-group TestRG1 --vnet VNet1 --gateway-type Vpn --vpn-type RouteBased --sku VpnGw1 --no-wait
@@ -79,9 +79,9 @@ az network vnet-gateway create --name VNet1GW --public-ip-address VNet1GWPIP --r
 
 Если у вас есть VPN-шлюз и вы хотите использовать другой номер SKU шлюза, можно либо изменить размер SKU шлюза, или перейти на другой номер SKU. При переходе на другой номер SKU шлюза существующий шлюз полностью удаляется и создается новый. Создание шлюза может занять до 45 минут. В сравнении, при изменении размера SKU шлюза немало простоев, поскольку нет необходимости удалять и перестраивать шлюз. Если у вас есть возможность изменить размер SKU шлюза, а не перейти на другой номер SKU, выберите именно этот вариант. Но для изменения размера есть определенные правила:
 
-1. Размер SKU можно изменять, выбирая между следующими вариантами: VpnGw1, VpnGw2 и VpnGw3.
+1. За исключением номера SKU уровня "базовый" можно изменить размер SKU VPN-шлюза на другой SKU VPN-шлюза в том же выколении (Generation1 или Generation2). Например, можно изменить размер VpnGw1 Generation1 до VpnGw2 Generation1, но не VpnGw2 Generation2.
 2. Для номеров SKU предыдущих версий можно изменять размер, выбирая между следующими вариантами: Basic, Standard и HighPerformance.
-3. Но вы **не можете** изменить размер номеров SKU с Basic, Standard и HighPerformance на VpnGw1, VpnGw2 или VpnGw3, доступные в новой версии. Вместо этого нужно [изменить](#change) номера SKU на новые.
+3. **Нельзя** изменить размер из номеров SKU Basic/Standard/HighPerformance на VpnGw SKU. Вместо этого нужно [изменить](#change) номера SKU на новые.
 
 #### <a name="resizegwsku"></a>Изменение размера шлюза
 
@@ -169,12 +169,12 @@ New-AzLocalNetworkGateway -Name LocalSite -ResourceGroupName testrg `
 
 Дополнительные технические материалы и специальные требования к синтаксису, действующие при использовании интерфейсов REST API, командлетов PowerShell или Azure CLI для настройки конфигураций VPN-шлюзов, доступны на приведенных ниже страницах.
 
-| **Классический** | **Resource Manager** |
+| **Классический** | **Диспетчер ресурсов** |
 | --- | --- |
 | [PowerShell](/powershell/module/az.network/#networking) |[PowerShell](/powershell/module/az.network#vpn) |
-| [ИНТЕРФЕЙС REST API](https://msdn.microsoft.com/library/jj154113) |[REST API](/rest/api/network/virtualnetworkgateways) |
+| [ИНТЕРФЕЙС REST API](https://msdn.microsoft.com/library/jj154113) |[ИНТЕРФЕЙС REST API](/rest/api/network/virtualnetworkgateways) |
 | Не поддерживается | [Интерфейс командной строки Azure](/cli/azure/network/vnet-gateway)|
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о доступных конфигурациях подключений см. в статье [Основные сведения о VPN-шлюзах Azure](vpn-gateway-about-vpngateways.md).

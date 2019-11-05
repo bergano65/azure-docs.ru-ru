@@ -1,29 +1,28 @@
 ---
-title: 'Навык когнитивного поиска: анализ изображений (служба "Поиск Azure")'
-description: Извлечение семантического текста посредством анализа изображений с помощью когнитивного навыка ImageAnalysis в конвейере обогащения в службе "Поиск Azure".
-services: search
+title: Когнитивный навык анализа изображений
+titleSuffix: Azure Cognitive Search
+description: Извлеките семантический текст с помощью анализа изображений, используя свой анализ изображений в конвейере обогащения искусственного интеллекта в Azure Когнитивный поиск.
 manager: nitinme
 author: luiscabrer
-ms.service: search
-ms.workload: search
-ms.topic: conceptual
-ms.date: 08/28/2019
 ms.author: luisca
-ms.openlocfilehash: e2c8f0519ffcbdbc2445d1fed2725b6f6b948cd1
-ms.sourcegitcommit: f7f70c9bd6c2253860e346245d6e2d8a85e8a91b
+ms.service: cognitive-search
+ms.topic: conceptual
+ms.date: 11/04/2019
+ms.openlocfilehash: 4819f34e16efebcdab734270988382e086c44e36
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73064070"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73479720"
 ---
-#   <a name="image-analysis-cognitive-skill"></a>Когнитивный навык анализа изображений
+# <a name="image-analysis-cognitive-skill"></a>Когнитивный навык анализа изображений
 
 Навык **анализа изображений** извлекает полноценный набор визуальных компонентов на основе содержимого изображения. Например, можно создать заголовок из изображения, сформировать теги, а также определить знаменитостей и ориентиры. Этот навык использует модели машинного обучения, предоставляемые [API компьютерного зрения](https://docs.microsoft.com/azure/cognitive-services/computer-vision/home) в Cognitive Services. 
 
 > [!NOTE]
-> Небольшие тома (20 транзакций) можно бесплатно исполнить в службе поиска Azure, но для больших рабочих нагрузок требуется [присоединить оплачиваемый Cognitive Services ресурс](cognitive-search-attach-cognitive-services.md). Плата взимается при вызове API в Cognitive Services и извлечении изображений при открытии документов в службе "Поиск Azure". За извлечение текста из документов плата не взимается.
+> Небольшие тома (20 транзакций) можно бесплатно исполнить в Azure Когнитивный поиск, но для больших рабочих нагрузок требуется [присоединить оплачиваемый Cognitive Services ресурс](cognitive-search-attach-cognitive-services.md). Расходы начисляются при вызове API в Cognitive Services, а также для извлечения изображений в рамках этапа взлома документов в Azure Когнитивный поиск. За извлечение текста из документов плата не взимается.
 >
-> Плата за выполнение встроенных навыков взимается в рамках существующей [модели оплаты Cognitive Services по мере использования](https://azure.microsoft.com/pricing/details/cognitive-services/). Плата за извлечение изображений указана на [странице с ценами на Поиск Azure](https://go.microsoft.com/fwlink/?linkid=2042400).
+> Плата за выполнение встроенных навыков взимается в рамках существующей [модели оплаты Cognitive Services по мере использования](https://azure.microsoft.com/pricing/details/cognitive-services/). Цены на извлечение изображений описаны на [странице цен на когнитивный Поиск Azure](https://go.microsoft.com/fwlink/?linkid=2042400).
 
 
 ## <a name="odatatype"></a>@odata.type  
@@ -33,7 +32,7 @@ Microsoft.Skills.Vision.ImageAnalysisSkill
 
 Параметры зависят от регистра.
 
-| Имя параметра     | Описание |
+| Имя параметра     | Description (Описание) |
 |--------------------|-------------|
 | defaultLanguageCode   |  Строка, указывающая язык для возврата данных. Служба возвращает результаты распознавания на указанном языке. Если этот параметр не задан, используется значение по умолчанию "en". <br/><br/>Поддерживаемые языки: <br/>*en* — английский (по умолчанию) <br/> *zh* — китайский (упрощенное письмо)|
 |visualFeatures |   Массив строк, указывающих возвращаемые типы визуальных компонентов. Допустимые типы визуальных компонентов:  <ul><li> *категории* — классификация содержимого изображения в соответствии с классификацией, определенной в документации по Cognitive Services [компьютерное зрение](https://docs.microsoft.com/azure/cognitive-services/computer-vision/category-taxonomy). </li><li> *tags* — помечает изображение подробным списком слов, связанных с содержимым изображения.</li><li>*Описание* — описание содержимого образа с помощью полного предложения на английском языке.</li><li>*грани* — определяет наличие лиц. При их наличии задает координаты, возраст и пол.</li><li>    *imageType* — определяет, является ли изображение картинкой или графиком.</li><li>  *Цвет* — определяет цвет диакритических знаков, главный цвет и то, является ли изображение черным & белом.</li><li>для *взрослых* — определяет, является ли изображение порнографической (см. Нагота или половое действие). Кроме того, обнаруживаются материалы непристойного содержания.</li></ul> Имена визуальных компонентов зависят от регистра.|
@@ -41,9 +40,9 @@ Microsoft.Skills.Vision.ImageAnalysisSkill
 
 ## <a name="skill-inputs"></a>Входные данные навыков
 
-| Ввод имени      | Описание                                          |
+| Ввод имени      | Description (Описание)                                          |
 |---------------|------------------------------------------------------|
-| image         | Сложный тип. Сейчас работает только с полем /document/normalized_images, созданным индексатором большого двоичного объекта Azure, если для ```imageAction``` установлено значение, отличное от ```none```. Дополнительные сведения см. в [этом примере](#sample-output).|
+| изображение         | Сложный тип. Сейчас работает только с полем /document/normalized_images, созданным индексатором большого двоичного объекта Azure, если для ```imageAction``` установлено значение, отличное от ```none```. Дополнительные сведения см. в [этом примере](#sample-output).|
 
 
 
@@ -493,7 +492,7 @@ Microsoft.Skills.Vision.ImageAnalysisSkill
 ## <a name="error-cases"></a>Варианты ошибок
 При указанных ниже ошибках никакие элементы не извлекаются.
 
-| Код ошибки | Описание |
+| Код ошибки | Description (Описание) |
 |------------|-------------|
 | NotSupportedLanguage | Указанный язык не поддерживается. |
 | InvalidImageUrl | URL-адрес изображения имеет неправильный формат или недоступен.|
@@ -521,6 +520,6 @@ Microsoft.Skills.Vision.ImageAnalysisSkill
 
 ## <a name="see-also"></a>Дополнительные материалы
 
-+ [Стандартные навыки](cognitive-search-predefined-skills.md)
-+ [How to define a skillset](cognitive-search-defining-skillset.md) (Определение набора навыков)
++ [Встроенные навыки](cognitive-search-predefined-skills.md)
++ [Определение набора навыков](cognitive-search-defining-skillset.md)
 + [Создание индексатора (REST)](https://docs.microsoft.com/rest/api/searchservice/create-indexer)

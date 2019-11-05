@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: mgoedtel
 ms.author: magoedte
 ms.date: 09/12/2019
-ms.openlocfilehash: 0ca73d75751259eccd9e952c2d704a09fc081396
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 5d68c343fee5807c430ce42777b988a48b9227f8
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73162268"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73478601"
 ---
 # <a name="enable-monitoring-of-azure-kubernetes-service-aks-cluster-already-deployed"></a>Включение мониторинга уже развернутого кластера Azure Kubernetes Service (AKS)
 
@@ -25,9 +25,9 @@ ms.locfileid: "73162268"
 * [Из Azure Monitor](#enable-from-azure-monitor-in-the-portal) или [непосредственно из кластера AKS](#enable-directly-from-aks-cluster-in-the-portal) в портал Azure 
 * С [предоставленным шаблоном Azure Resource Manager](#enable-using-an-azure-resource-manager-template) с помощью командлета Azure PowerShell `New-AzResourceGroupDeployment` или с Azure CLI. 
 
-## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
+## <a name="sign-in-to-the-azure-portal"></a>Выполните вход на портал Azure.
 
-Войдите на [портале Azure](https://portal.azure.com). 
+Войдите на [портал Azure](https://portal.azure.com). 
 
 ## <a name="enable-using-azure-cli"></a>Включение мониторинга с помощью Azure CLI
 
@@ -160,7 +160,7 @@ provisioningState       : Succeeded
 * группу ресурсов, в которой развернут кластер;
 
 >[!NOTE]
->Развертывание шаблона должно проходить в той же группе ресурсов, что и кластер.
+>Развертывание шаблона должно проходить в той же группе ресурсов, что и у кластера.
 >
 
 Перед включением мониторинга с помощью Azure PowerShell или CLI необходимо создать рабочую область Log Analytics. Для создания рабочей области можно использовать [Azure Resource Manager](../../azure-monitor/platform/template-workspace-configuration.md), [PowerShell](../scripts/powershell-sample-create-workspace.md?toc=%2fpowershell%2fmodule%2ftoc.json) или [портал Azure](../../azure-monitor/learn/quick-create-workspace.md).
@@ -371,4 +371,6 @@ az aks show -g <resourceGroupofAKSCluster> -n <nameofAksCluster>
 
 * Если при попытке подключить решение у вас возникли проблемы, ознакомьтесь с [руководством по устранению неполадок](container-insights-troubleshoot.md).
 
-* Если включен мониторинг для сбора метрик работоспособности узлов и контейнеров pod кластера AKS, эти метрики доступны на портале Azure. Сведения об использовании Azure Monitor для контейнеров см. в руководстве по [просмотру данных работоспособности службы Azure Kubernetes](container-insights-analyze.md).
+* С включенным наблюдением для получения сведений о работоспособности и использовании ресурсов кластером AKS и рабочими нагрузками, которые выполняются на них, Узнайте, [как использовать](container-insights-analyze.md) Azure Monitor для контейнеров.
+
+

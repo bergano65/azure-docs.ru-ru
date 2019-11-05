@@ -14,12 +14,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: article
 ms.date: 10/30/2018
 ms.author: genli
-ms.openlocfilehash: 68d0f693d0cc7d8db8e6f697ff8907400a7aca50
-ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
+ms.openlocfilehash: 111ee6cda46677b3b0fc39f5a84268e6ac192da9
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71121325"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73470527"
 ---
 # <a name="configuration-and-management-faqs-for-web-apps-in-azure"></a>Часто задаваемые вопросы о настройке и управлении для функции "Веб-приложения" в Azure
 
@@ -43,12 +43,12 @@ ms.locfileid: "71121325"
 
 ## <a name="how-do-i-upload-and-configure-an-existing-ssl-certificate-for-my-web-app"></a>Как загрузить и настроить существующий сертификат SSL для веб-приложения?
 
-Сведения об этом см. в разделе [Привязка SSL-сертификата](app-service-web-tutorial-custom-ssl.md#upload).
+Сведения о том, как отправить и настроить существующий пользовательский SSL-сертификат, см. в статье [Добавление SSL-сертификата в приложение службы приложений](configure-ssl-certificate.md).
 
 
 ## <a name="how-do-i-purchase-and-configure-a-new-ssl-certificate-in-azure-for-my-web-app"></a>Как приобрести и настроить новый сертификат SSL в Azure для веб-приложения?
 
-Сведения об этом см. в статье [Приобретение и настройка сертификата SSL для службы приложений Azure](web-sites-purchase-ssl-web-site.md).
+Сведения об этом см. в статье [Приобретение и настройка сертификата SSL для службы приложений Azure](configure-ssl-certificate.md).
 
 
 ## <a name="how-do-i-move-application-insights-resources"></a>Как перемещать ресурсы Application Insights?
@@ -71,7 +71,7 @@ ms.locfileid: "71121325"
     * Значение = *требуемый часовой пояс*
 3. Щелкните **Сохранить**.
 
-Для служб приложений, работающих в Windows, см. столбец **TimeZone** в статье [по умолчанию часовых поясов](https://docs.microsoft.com/windows-hardware/manufacture/desktop/default-time-zones) для принятых значений. Для служб приложений, работающих в Linux, задайте [имя базы данных](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) в качестве значения часового пояса. Ниже приведен пример имени базы данных с помощью параметра «имя БД»: America/Адак.
+Для служб приложений, работающих в Windows, см. столбец **TimeZone** в статье [по умолчанию часовых поясов](https://docs.microsoft.com/windows-hardware/manufacture/desktop/default-time-zones) для принятых значений. Для служб приложений, работающих в Linux, задайте [имя базы данных](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) в качестве значения часового пояса. Ниже приведен пример имени базы данных с именем: America/Адак.
 
 ## <a name="why-do-my-continuous-webjobs-sometimes-fail"></a>Почему при выполнении непрерывных веб-заданий иногда происходят сбои?
 
@@ -139,7 +139,7 @@ ms.locfileid: "71121325"
 6. Нажмите кнопку **Переключить выходные данные**.
 7. Выберите ссылку загрузки.
 
-## <a name="im-trying-to-use-hybrid-connections-with-sql-server-why-do-i-see-the-message-systemoverflowexception-arithmetic-operation-resulted-in-an-overflow"></a>Я пытаюсь использовать гибридные подключения к SQL Server. Почему отображается сообщение "System.OverflowException: переполнение при выполнении арифметической операции"?
+## <a name="im-trying-to-use-hybrid-connections-with-sql-server-why-do-i-see-the-message-systemoverflowexception-arithmetic-operation-resulted-in-an-overflow"></a>Я пытаюсь использовать гибридные подключения к SQL Server. Почему отображается сообщение "System.OverflowException: переполнение в результате арифметической операции"?
 
 При использовании гибридных подключений для доступа к SQL Server обновление Microsoft .NET от 10 мая 2016 г. может привести к сбою подключения. Может появиться это сообщение:
 
@@ -153,7 +153,7 @@ Exception: System.Data.Entity.Core.EntityException: The underlying provider fail
 
 ## <a name="how-do-i-add-a-url-rewrite-rule"></a>Разделы справки добавить правило переопределения URL-адресов?
 
-Чтобы добавить правило переопределения URL-адресов, создайте файл Web. config с соответствующими записями конфигурации в папке **wwwroot** . Дополнительные сведения см [. в статье службы приложений Azure: Основные сведения о перезаписи](https://blogs.msdn.microsoft.com/madhurabharadwaj/2018/06/01/azure-app-services-understanding-url-re-write/)URL-адресов.
+Чтобы добавить правило переопределения URL-адресов, создайте файл Web. config с соответствующими записями конфигурации в папке **wwwroot** . Дополнительные сведения см. в статье [о службе приложений Azure: Общие сведения о перезаписи URL-адресов](https://blogs.msdn.microsoft.com/madhurabharadwaj/2018/06/01/azure-app-services-understanding-url-re-write/).
 
 ## <a name="how-do-i-control-inbound-traffic-to-app-service"></a>Как контролировать входящий трафик в службе приложений?
 
@@ -197,7 +197,7 @@ Exception: System.Data.Entity.Core.EntityException: The underlying provider fail
 
 ## <a name="why-do-i-get-an-error-when-i-try-to-connect-an-app-service-web-app-to-a-virtual-network-that-is-connected-to-expressroute"></a>Почему при попытке подключить веб-приложение службы приложений к виртуальной сети с ExpressRoute отображается сообщение об ошибке?
 
-При попытке подключить веб-приложение Azure к виртуальной сети с Azure ExpressRoute происходит сбой. Отображается сообщение "Шлюз не является VPN-шлюзом".
+При попытке подключить веб-приложение Azure к виртуальной сети с Azure ExpressRoute происходит сбой. Появляется сообщение "Шлюз не является VPN-шлюзом".
 
 В настоящее время нельзя установить VPN-подключения типа "точка — сеть" к виртуальной сети, подключенной к ExpressRoute. VPN типа "точка — сеть" и ExpressRoute не могут действовать в одной и той же виртуальной сети. Дополнительные сведения см. в разделе о [квотах и ограничениях для ExpressRoute и VPN-подключений типа "сеть — сеть"](../expressroute/expressroute-howto-coexist-classic.md#limits-and-limitations).
 

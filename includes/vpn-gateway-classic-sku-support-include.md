@@ -5,19 +5,18 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: include
-ms.date: 03/21/2018
+ms.date: 11/04/2019
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 979a09da805abfd6558fac90e6adedb66de438f1
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: d4050fd5bfd33e50404c7007aecf5d1b868e2083
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185171"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73495751"
 ---
 > [!NOTE]
-> Новые номера SKU шлюза VPN (VpnGw1, VpnGw2 и VpnGw3) поддерживают только модель развертывания с помощью диспетчера ресурсов. В классических виртуальных сетях следует и дальше использовать старые номера SKU (прежних версий).
+> Номера SKU VpnGw (VpnGw1, VpnGw1AZ, VpnGw2, VpnGw2AZ, VpnGw3, VpnGw3AZ, VpnGw4, VpnGw4AZ, VpnGw5 и VpnGw5AZ) поддерживаются только для модели развертывания диспетчер ресурсов. В классических виртуальных сетях следует и дальше использовать старые номера SKU (прежних версий).
 >  * Сведения о работе со старыми номерами SKU шлюза ("Базовый", "Стандартный" и HighPerformance) см. в статье [Работа со SKU шлюза виртуальной сети (старые версии SKU)](../articles/vpn-gateway/vpn-gateway-about-skus-legacy.md).
 >  * Номера SKU для шлюзов ExpressRoute см. в статье статью [Сведения о шлюзах виртуальных сетей ExpressRoute](../articles/expressroute/expressroute-about-virtual-network-gateways.md).
->
 >

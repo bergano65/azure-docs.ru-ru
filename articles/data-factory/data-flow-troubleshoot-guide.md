@@ -7,12 +7,12 @@ ms.service: data-factory
 ms.topic: troubleshooting
 ms.date: 10/08/2019
 ms.author: makromer
-ms.openlocfilehash: 5cf4773ac781ae51a60ef7d987c3dc324c125d95
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: 53c38af2208be6bb7cdb794ad0403456613f2df6
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72387731"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73486183"
 ---
 # <a name="troubleshoot-azure-data-factory-data-flows"></a>Устранение неполадок в потоках данных фабрики данных Azure
 
@@ -68,6 +68,14 @@ ms.locfileid: "72387731"
 
 - **Решение**. Измените имя таблицы, которую вы пытаетесь создать.
 
+### <a name="error-message-df-sys-01-commicrosoftsqlserverjdbcsqlserverexception-string-or-binary-data-would-be-truncated"></a>Сообщение об ошибке: DF-SYS-01: com. Microsoft. SqlServer. JDBC. SQLServerException: строковые или двоичные данные будут обрезаны. 
+
+- **Симптомы**. при записи данных в приемник SQL происходит сбой потока данных при выполнении конвейера с возможной ошибкой усечения.
+
+- **Причина**: поле из потока данных сопоставляется со столбцом в базе данных SQL недостаточно для хранения значения, в результате чего драйвер SQL выдает эту ошибку.
+
+- **Решение**. можно уменьшить длину данных для строковых столбцов с помощью ```left()``` в производном столбце или реализовать [шаблон "строка ошибки".](how-to-data-flow-error-rows.md)
+
 ## <a name="general-troubleshooting-guidance"></a>Общие рекомендации по устранению неполадок
 
 1. Проверьте состояние подключений к набору данных. В каждом преобразовании источника и приемника посетите связанную службу для каждого набора данных, который вы используете, и проверьте соединения.
@@ -78,7 +86,7 @@ ms.locfileid: "72387731"
 
 Для получения дополнительных сведений об устранении неполадок воспользуйтесь следующими ресурсами:
 
-*  [Блог фабрики данных](https://azure.microsoft.com/blog/tag/azure-data-factory/)
+*  [Блог, посвященный службе "Фабрика данных"](https://azure.microsoft.com/blog/tag/azure-data-factory/)
 *  [Запросы функций фабрики данных](https://feedback.azure.com/forums/270578-data-factory)
 *  [Видеоролики по Azure](https://azure.microsoft.com/resources/videos/index/?sort=newest&services=data-factory)
 *  [Форум MSDN](https://social.msdn.microsoft.com/Forums/home?sort=relevancedesc&brandIgnore=True&searchTerm=data+factory)

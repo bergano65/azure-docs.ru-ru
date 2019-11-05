@@ -1,7 +1,7 @@
 ---
-title: Развертывание моделей на виртуальных машинах записных книжек
+title: Развертывание моделей в экземплярах вычислений
 titleSuffix: Azure Machine Learning
-description: Узнайте, как развернуть модели Машинное обучение Azure в качестве веб-службы с помощью виртуальных машин записной книжки.
+description: Узнайте, как развертывать модели Машинное обучение Azure в качестве веб-службы с помощью экземпляров вычислений.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -9,47 +9,59 @@ ms.topic: conceptual
 ms.author: mnark
 author: MrudulaN
 ms.reviewer: larryfr
-ms.date: 08/08/2019
-ms.openlocfilehash: 046f998038c47a48a8528bf36d87ac836395eec2
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
-ms.translationtype: MT
+ms.date: 10/25/2019
+ms.openlocfilehash: bb187826250b3edc9ac3d9e36a243d75819a45b3
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "71002830"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73496883"
 ---
-# <a name="deploy-a-model-to-notebook-vms"></a>Развертывание модели на виртуальных машинах записных книжек
+# <a name="deploy-a-model-to-azure-machine-learning-compute-instances"></a>Развертывание модели для Машинное обучение Azureных экземпляров вычислений
 
-Узнайте, как использовать Машинное обучение Azure для развертывания модели в качестве веб-службы на виртуальной машине записной книжки. Используйте виртуальные машины записной книжки, если выполняется одно из следующих условий.
+[!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
+
+> [!NOTE]
+> Экземпляры вычислений доступны только для рабочих областей с регионом северо- **Центральная часть США** или **Южная часть Соединенного Королевства**.
+>Если Рабочая область находится в другом регионе, можно продолжить создание и использование [виртуальной машины записной книжки](concept-compute-instance.md#notebookvm) .  Вы можете развернуть модель для вычислительного экземпляра или виртуальной машины записной книжки, выполнив действия, описанные в этой статье.
+
+Узнайте, как использовать Машинное обучение Azure для развертывания модели в качестве веб-службы на Машинное обучение Azure вычислительного экземпляра. Используйте COMPUTE Instances, если выполняется одно из следующих условий.
 
 - вам важно быстро выполнять развертывание и проверку модели.
 - вы тестируете модель, которая находится в стадии разработки.
 
 > [!TIP]
-> Развертывание модели из Jupyter Notebook на виртуальной машине записной книжки в веб-службу на той же виртуальной машине является _локальным развертыванием_. В этом случае локальным компьютером является виртуальная машина записной книжки. Дополнительные сведения о развертываниях см. в разделе [Развертывание моделей с помощью машинное обучение Azure](how-to-deploy-and-where.md).
+> Развертывание модели из Jupyter Notebook на вычислительном экземпляре в веб-службу на той же виртуальной машине является _локальным развертыванием_. В этом случае "локальный" компьютер является вычислительным экземпляром. Дополнительные сведения о развертываниях см. в разделе [Развертывание моделей с помощью машинное обучение Azure](how-to-deploy-and-where.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
-- Рабочая область Машинное обучение Azure с виртуальной машиной записной книжки. Дополнительные сведения см. в статье [Настройка среды и рабочей области](tutorial-1st-experiment-sdk-setup.md).
+- Рабочая область Машинное обучение Azure с выполняющимся вычислительным экземпляром. Дополнительные сведения см. в статье [Настройка среды и рабочей области](tutorial-1st-experiment-sdk-setup.md).
 
-## <a name="deploy-to-the-notebook-vms"></a>Развертывание на виртуальных машинах записной книжки
+## <a name="deploy-to-the-compute-instances"></a>Развертывание в экземплярах вычислений
 
-Пример записной книжки, демонстрирующий локальные развертывания, включен на виртуальную машину записной книжки. Чтобы загрузить записную книжку и развернуть ее в качестве веб-службы на виртуальной машине, выполните следующие действия.
+Пример записной книжки, демонстрирующий локальные развертывания, включается в вычислительный экземпляр. Чтобы загрузить записную книжку и развернуть ее в качестве веб-службы на виртуальной машине, выполните следующие действия.
 
-1. В [портал Azure](https://portal.azure.com)выберите виртуальные машины машинное обучение Azure записных книжек.
+1. В [машинное обучение Azure Studio](https://ml.azure.com)выберите машинное обучение Azureные экземпляры вычислений.
 
-1. Откройте подкаталог, а затем откройте `how-to-use-azureml/deploy-to-local/register-model-deploy-local.ipynb`. `samples-*` После открытия запустите записную книжку.
+1. Откройте `samples-*` подкаталог, а затем откройте `how-to-use-azureml/deploy-to-local/register-model-deploy-local.ipynb`. После открытия запустите записную книжку.
 
     ![Снимок экрана: выполняемая локальная служба в записной книжке](media/how-to-deploy-local-container-notebookvm/deploy-local-service.png)
 
-1. В записной книжке отображается URL-адрес и порт, на котором запущена служба. Например, `https://localhost:6789`. Можно также выполнить ячейку, содержащую `print('Local service port: {}'.format(local_service.port))` порт, чтобы отобразить его.
+1. В записной книжке отображается URL-адрес и порт, на котором запущена служба. Пример: `https://localhost:6789`. Можно также выполнить ячейку, содержащую `print('Local service port: {}'.format(local_service.port))`, чтобы отобразить порт.
 
     ![Снимок экрана с портом локальной службы](media/how-to-deploy-local-container-notebookvm/deploy-local-service-port.png)
 
-1. Чтобы протестировать службу с виртуальной машины записной книжки, используйте `https://localhost:<local_service.port>` URL-адрес. Чтобы проверить удаленный клиент, получите общедоступный URL-адрес службы, работающей на виртуальной машине записной книжки общедоступный URL-адрес можно определить, используя следующую формулу. `https://<notebookvm_name>-<local_service_port>.<azure_region_of_notebook>.notebooks.azureml.net/score`. Например, `https://mynotebookvm-6789.eastus2.notebooks.azureml.net/score`.
+1. Чтобы протестировать службу из вычислительного экземпляра, используйте URL-адрес `https://localhost:<local_service.port>`. Для проверки с удаленного клиента получите общедоступный URL-адрес службы, выполняющейся на вычислительном экземпляре. Можно определить общедоступный URL-адрес, используя следующую формулу. 
+    * Виртуальная машина записной книжки: `https://<vm_name>-<local_service_port>.<azure_region_of_workspace>.notebooks.azureml.net/score`. 
+    * Вычислительный экземпляр: `https://<vm_name>-<local_service_port>.<azure_region_of_workspace>.instances.azureml.net/score`. 
+    
+    Например, 
+    * Виртуальная машина записной книжки: `https://vm-name-6789.northcentralus.notebooks.azureml.net/score` 
+    * Вычислительный экземпляр: `https://vm-name-6789.northcentralus.instances.azureml.net/score`
 
 ## <a name="test-the-service"></a>Тестирование службы
 
-Чтобы отправить демонстрационные данные в работающую службу, используйте следующий код. Замените значение `service_url` на URL-адрес из предыдущего шага:
+Чтобы отправить демонстрационные данные в работающую службу, используйте следующий код. Замените значение `service_url` URL-адресом из предыдущего шага:
 
 ```python
 import requests
@@ -61,12 +73,13 @@ test_sample = json.dumps({'data': [
 test_sample = bytes(test_sample,encoding = 'utf8')
 access_token = "your bearer token"
 headers = {'Content-Type':'application/json', 'Authorization': 'Bearer ' + access_token}
-service_url = "https://mynotebookvm-6789.eastus2.notebooks.azureml.net/score"
+service_url = "https://vm-name-6789.northcentralus.notebooks.azureml.net/score"
+# for a compute instance, the url would be https://vm-name-6789.northcentralus.instances.azureml.net/score
 resp = requests.post(service_url, test_sample, headers=headers)
 print("prediction:", resp.text)
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Развертывание модели с помощью пользовательского образа DOCKER](how-to-deploy-custom-docker-image.md)
 * [Устранение неполадок развертывания](how-to-troubleshoot-deployment.md)

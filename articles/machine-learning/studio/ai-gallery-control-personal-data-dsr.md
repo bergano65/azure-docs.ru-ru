@@ -1,6 +1,6 @@
 ---
 title: Управление данными из Коллекции решений ИИ Azure
-titleSuffix: Azure Machine Learning Studio
+titleSuffix: Azure Machine Learning Studio (classic)
 description: Можно экспортировать и удалять хранящиеся в продукте пользовательские данные из коллекции решений ИИ Azure, используя интерфейс или API каталога коллекции решений ИИ. В этой статье показано, как это сделать.
 services: machine-learning
 ms.service: machine-learning
@@ -11,12 +11,12 @@ ms.author: amlstudiodocs
 ms.custom: seodec18
 ms.date: 05/25/2018
 ms.reviewer: jmartens, mldocs
-ms.openlocfilehash: 44ff2a5b723c086604acf39e9f975deb53759ae1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f0b0bd4b01056769d38179597e477ecb164fa9ab
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60752051"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73493535"
 ---
 # <a name="view-and-delete-in-product-user-data-from-azure-ai-gallery"></a>Просмотр и удаление хранящихся в продукте пользовательских данных из коллекции решений ИИ Azure
 
@@ -59,7 +59,7 @@ ms.locfileid: "60752051"
 2.  Щелкните изображение профиля в правом верхнем углу, а затем имя учетной записи, чтобы загрузить страницу профиля.
 3.  Откройте панель средств для разработчиков браузера, нажав клавишу F12, выберите вкладку Network и обновите страницу. 
 4. Отфильтруйте запросы по строке *catalog*, введя ее в текстовом поле фильтра.
-5.  В запросах к URL-адресу `https://catalog.cortanaanalytics.com/entities` найдите запрос GET и выберите вкладку *Headers*. Прокрутите вниз к разделу *Request Headers*.
+5.  В поле запросы к URL-адресу `https://catalog.cortanaanalytics.com/entities`найдите запрос GET и выберите вкладку *заголовки* . Прокрутите вниз до раздела *заголовки запроса* .
 6.  Под заголовком `DataLabAccessToken` находится буквенно-цифровой маркер. Чтобы защитить свои данные, не передайте никому этот маркер.
 
 ### <a name="view-user-information"></a>Просмотр пользовательских сведений
@@ -84,7 +84,7 @@ API каталога сохраняет сведения об опубликов
 
     https://catalog.cortanaanalytics.com/entities?$filter=author/id eq '[AuthorId]'
 
-Пример:
+Например:
 
     https://catalog.cortanaanalytics.com/entities?$filter=author/id eq '99F1F5C6260295F1078187FA179FBE08B618CB62129976F09C6AF0923B02A5BA'
 

@@ -11,12 +11,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein
 ms.date: 02/07/2019
-ms.openlocfilehash: 1c6bb557c11cf32449b440b0007e1cef929a026f
-ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
+ms.openlocfilehash: b4c0f88a1a21b0734c1652d19f74dc662d0a7ce1
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70259411"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73496223"
 ---
 # <a name="general-purpose-service-tier---azure-sql-database"></a>База данных SQL Azure на уровне служб общего назначения
 
@@ -25,9 +25,9 @@ ms.locfileid: "70259411"
 
 База данных SQL Azure основана на архитектуре ядра СУБД SQL Server, которая соответствует облачной среде, чтобы даже в случае сбоя инфраструктуры обеспечить доступность на уровне 99,99 %. Существует три уровня служб, которые используются в Базе данных SQL Azure, каждый из которых имеет разные архитектурные модели. Ниже указаны эти уровни служб.
 
-- Общее назначение
+- Общего назначения
 - Критически важный для бизнеса
-- Гипермасштабирование
+- Уровень "Гипермасштабирование"
 
 Модель архитектуры для уровня служб общего назначения основана на разделении вычислений и хранилища. Эта модель архитектуры зависит от высокого уровня доступности и надежности хранилища BLOB-объектов Azure, которое прозрачно реплицирует файлы базы данных и предотвращает потерю данных, если происходит сбой базовой инфраструктуры.
 
@@ -46,9 +46,9 @@ ms.locfileid: "70259411"
 
 Уровень служб общего назначения является уровнем служб по умолчанию в Базе данных SQL Azure и предназначен для большей части универсальных рабочих нагрузок. Если вам требуется полностью управляемое ядро СУБД с соглашением об уровне обслуживания 99,99% с задержкой хранилища от 5 до 10 мс, которые соответствуют SQL Azure IaaS в большинстве случаев, общего назначения уровень является вариантом.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Найдите характеристики ресурсов (количество ядер, операций ввода-вывода, памяти) общего назначения или уровня Standard в [управляемый экземпляр](sql-database-managed-instance-resource-limits.md#service-tier-characteristics), отдельной базе данных в [модели Виртуальное ядро](sql-database-vcore-resource-limits-single-databases.md#general-purpose-service-tier-for-provisioned-compute) или [модели DTU](sql-database-dtu-resource-limits-single-databases.md#single-database-storage-sizes-and-compute-sizes)или эластичном пуле в модели [Виртуальное ядро](sql-database-vcore-resource-limits-elastic-pools.md#general-purpose-service-tier-storage-sizes-and-compute-sizes) и [DTU](sql-database-dtu-resource-limits-elastic-pools.md#standard-elastic-pool-limits).
+- Найдите характеристики ресурсов (количество ядер, операций ввода-вывода, памяти) общего назначения или уровня Standard в [управляемый экземпляр](sql-database-managed-instance-resource-limits.md#service-tier-characteristics), отдельной базе данных в [модели Виртуальное ядро](sql-database-vcore-resource-limits-single-databases.md#general-purpose---provisioned-compute---gen4) или [модели DTU](sql-database-dtu-resource-limits-single-databases.md#single-database-storage-sizes-and-compute-sizes)или эластичном пуле в модели [Виртуальное ядро](sql-database-vcore-resource-limits-elastic-pools.md#general-purpose---provisioned-compute---gen4) и [DTU](sql-database-dtu-resource-limits-elastic-pools.md#standard-elastic-pool-limits).
 - Дополнительные сведения об уровнях [Критически важный для бизнеса](sql-database-service-tier-business-critical.md) и [Гипермасштабирование](sql-database-service-tier-hyperscale.md).
-- Дополнительные сведения о [Service Fabric](../service-fabric/service-fabric-overview.md).
+- См. дополнительные сведения о [Service Fabric](../service-fabric/service-fabric-overview.md).
 - Дополнительные сведения об обеспечении высокой доступности и аварийного восстановления см. в руководстве по [обеспечении непрерывности бизнес-процессов](sql-database-business-continuity.md).

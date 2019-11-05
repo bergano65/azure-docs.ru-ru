@@ -9,21 +9,22 @@ manager: cgronlund
 ms.custom: include file
 ms.topic: include
 ms.date: 05/30/2019
-ms.openlocfilehash: 1b62d4b2ac1bb69e2270c3202d29eb595df7aac4
-ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
-ms.translationtype: MT
+ms.openlocfilehash: aa1120db5451583153928bd2cbc383a46781a267
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67806026"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73489585"
 ---
-**Вычислить целевые объекты можно повторно использовать из одного задания обучения к следующему**. Например, после присоединения удаленной виртуальной машины к рабочей области ее можно повторно использовать для нескольких заданий.
+**Целевые объекты вычислений можно повторно использовать из одного учебного задания к другому**. Например, после присоединения удаленной виртуальной машины к рабочей области ее можно повторно использовать для нескольких заданий.
 
-|Обучение &nbsp;целевых объектов| Поддержка GPU |[Автоматические машинного Обучения](../articles/machine-learning/service/concept-automated-ml.md) | [Конвейеры машинного Обучения](../articles/machine-learning/service/concept-ml-pipelines.md) | [Графический интерфейс](../articles/machine-learning/service/ui-concept-visual-interface.md)
+|Цели обучения &nbsp;| Поддержка GPU |[Автоматический ML](../articles/machine-learning/service/concept-automated-ml.md) | [Конвейеры машинного обучения](../articles/machine-learning/service/concept-ml-pipelines.md) | [Конструктор Машинное обучение Azure](../articles/machine-learning/service/concept-designer.md)
 |----|:----:|:----:|:----:|:----:|
-|[Локальный компьютер](../articles/machine-learning/service/how-to-set-up-training-targets.md#local)| Возможно | Да | &nbsp; | &nbsp; |
-|[Вычислительная среда Машинного обучения Azure](../articles/machine-learning/service/how-to-set-up-training-targets.md#amlcompute)| Да | Да & <br/>гиперпараметров&nbsp;помощник по настройке | Да | Да |
+|[Локальный компьютер](../articles/machine-learning/service/how-to-set-up-training-targets.md#local)| Ну | Да | &nbsp; | &nbsp; |
+|[Машинное обучение Azure вычислительный экземпляр](../articles/machine-learning/service/concept-compute-instance.md)| Да | | Да |  |
+|[Кластер Машинное обучение Azure COMPUTE](../articles/machine-learning/service/how-to-set-up-training-targets.md#amlcompute)| Да | Да & <br/>Настройка&nbsp;параметров | Да | Да |
 |[Удаленная виртуальная машина](../articles/machine-learning/service/how-to-set-up-training-targets.md#vm) |Да | Да & <br/>Настройка гиперпараметров | Да | &nbsp; |
-|[Azure&nbsp;Databricks](../articles/machine-learning/service/how-to-create-your-first-pipeline.md#databricks)| &nbsp; | Да | Да | &nbsp; |
+|[Azure&nbsp;ные кирпичи](../articles/machine-learning/service/how-to-create-your-first-pipeline.md#databricks)| &nbsp; | Да | Да | &nbsp; |
 |[Аналитика озера данных Azure](../articles/machine-learning/service/how-to-create-your-first-pipeline.md#adla)| &nbsp; | &nbsp; | Да | &nbsp; |
 |[Azure HDInsight](../articles/machine-learning/service/how-to-set-up-training-targets.md#hdinsight)| &nbsp; | &nbsp; | Да | &nbsp; |
 |[Пакетная служба Azure](../articles/machine-learning/service/how-to-set-up-training-targets.md#azbatch)| &nbsp; | &nbsp; | Да | &nbsp; |

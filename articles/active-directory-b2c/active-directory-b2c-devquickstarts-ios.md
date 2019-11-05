@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 11/30/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 96221ffc8249f722268ea5778bee4b4389ded26e
-ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
+ms.openlocfilehash: 0fb5341c2e7ee55391cb38251b0ea66b55b93301
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71326598"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73469157"
 ---
 # <a name="azure-ad-b2c-sign-in-using-an-ios-application"></a>Azure AD B2C. Вход с помощью приложения iOS
 
@@ -37,7 +37,9 @@ ms.locfileid: "71326598"
 
 [!INCLUDE [active-directory-b2c-appreg-native](../../includes/active-directory-b2c-appreg-native.md)]
 
-Запишите **идентификатор приложения** для использования на более позднем этапе. Затем выберите приложение в списке и запишите **пользовательский URI перенаправления**, который также будет использоваться на более позднем шаге. Например, `com.onmicrosoft.contosob2c.exampleapp://oauth/redirect`.
+Запишите **идентификатор приложения (клиента)** для использования на более позднем этапе.
+
+Кроме того, запишите пользовательский URI перенаправления для использования на следующем шаге. Пример: `com.onmicrosoft.contosob2c.exampleapp://oauth/redirect`.
 
 ## <a name="create-your-user-flows"></a>Создание потоков пользователей
 В Azure AD B2C любое взаимодействие с пользователем определяется [потоком пользователя](active-directory-b2c-reference-policies.md). Это приложение предусматривает одну процедуру идентификации, сочетающую в себе вход и регистрацию. При создании потока пользователя обязательно сделайте следующее:
@@ -46,7 +48,7 @@ ms.locfileid: "71326598"
 * В разделе **Application claims** (Утверждения приложения) выберите утверждения **Отображаемое имя** и **ИД объекта пользователя**. Можно также выбрать другие утверждения.
 * Скопируйте **имя** каждого потока пользователя после его создания. При сохранении потока пользователя к его имени добавляется префикс `b2c_1_`.  Имя потока пользователя понадобится вам позже.
 
-После создания потоков пользователей можно приступать к сборке приложения.
+Создав потоки пользователей, можно приступать к сборке приложения.
 
 ## <a name="download-the-sample-code"></a>Скачивание примера кода
 Мы разместили рабочий пример, использующий AppAuth с Azure AD B2C, [на сайте GitHub](https://github.com/Azure-Samples/active-directory-ios-native-appauth-b2c). Вы можете скачать код и запустить его. Чтобы использовать собственный клиент Azure AD B2C, следуйте инструкциям в файле [README.md](https://github.com/Azure-Samples/active-directory-ios-native-appauth-b2c/blob/master/README.md).
@@ -89,8 +91,8 @@ OIDServiceConfiguration *configuration =
 
 После настройки или извлечения конфигурации службы авторизации можно сформировать запрос авторизации. Для создания запроса вам потребуются следующие сведения:
 
-* Идентификатор клиента (идентификатор приложения), записанный ранее. Например, `00000000-0000-0000-0000-000000000000`.
-* Пользовательский URI перенаправления, записанный ранее. Например, `com.onmicrosoft.contosob2c.exampleapp://oauth/redirect`.
+* Идентификатор клиента (идентификатор приложения), записанный ранее. Пример: `00000000-0000-0000-0000-000000000000`.
+* Пользовательский URI перенаправления, записанный ранее. Пример: `com.onmicrosoft.contosob2c.exampleapp://oauth/redirect`.
 
 Оба элемента нужно сохранить при [регистрации приложения](#create-an-application).
 

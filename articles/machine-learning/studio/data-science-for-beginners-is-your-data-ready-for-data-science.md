@@ -1,6 +1,6 @@
 ---
 title: Оценка данных
-titleSuffix: Azure Machine Learning Studio
+titleSuffix: Azure Machine Learning Studio (classic)
 description: Четыре критерия, которым должны соответствовать ваши данные, чтобы быть готовыми для обработки и анализа данных. Это видео содержит конкретные примеры общей оценки данных.
 services: machine-learning
 ms.service: machine-learning
@@ -10,12 +10,12 @@ author: sdgilley
 ms.author: sgilley
 ms.custom: seodec18
 ms.date: 03/22/2019
-ms.openlocfilehash: 1d9475b49b3ef8a2e672e1ce505a7d94d19cb14f
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: 0903bbd5e0000e26472660271bd2fc8970279061
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67875328"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73493143"
 ---
 # <a name="is-your-data-ready-for-data-science"></a>Готовы ли ваши данные к обработке и анализу?
 ## <a name="video-2-data-science-for-beginners-series"></a>Видео 2. Обработка и анализ данных для начинающих
@@ -31,13 +31,13 @@ ms.locfileid: "67875328"
 ## <a name="other-videos-in-this-series"></a>Другие видео из этого цикла
 *Обработка и анализ данных для начинающих* — это пять коротких видеороликов с основными сведениями об обработке и анализе данных.
 
-* Видео 1. [5 вопросов, на которые дают ответ обработка и анализ данных](data-science-for-beginners-the-5-questions-data-science-answers.md) *(5 мин 14 с)*
+* Видео 1. [5 вопросов, на которые дают ответ обработка и анализ данных](data-science-for-beginners-the-5-questions-data-science-answers.md) *(5 мин 14 с)*
 * Видео 2. Готовы ли ваши данные к обработке и анализу?
-* Видео 3. [Задайте вопрос, на который можно ответить с помощью данных](data-science-for-beginners-ask-a-question-you-can-answer-with-data.md) *(4 мин 17 с)*
-* Видео 4. [Прогнозирование ответа с помощью простой модели](data-science-for-beginners-predict-an-answer-with-a-simple-model.md) *(7 мин 42 с)*
-* Видео 5. [Копирование работы других пользователей для обработки и анализа данных](data-science-for-beginners-copy-other-peoples-work-to-do-data-science.md) *(3 мин 18 с)*
+* Видео 3. [Задайте вопрос, на который можно ответить с помощью данных](data-science-for-beginners-ask-a-question-you-can-answer-with-data.md) *(4 мин 17 с)*
+* Видео 4. [Прогнозирование ответа с помощью простой модели](data-science-for-beginners-predict-an-answer-with-a-simple-model.md) *(7 мин 42 с)*
+* Видео 5. [Копирование работы других пользователей для обработки и анализа данных](data-science-for-beginners-copy-other-peoples-work-to-do-data-science.md) *(3 мин 18 с)*
 
-## <a name="transcript-is-your-data-ready-for-data-science"></a>Расшифровка. Готовы ли ваши данные к обработке и анализу?
+## <a name="transcript-is-your-data-ready-for-data-science"></a>Расшифровка видео "Готовы ли ваши данные к обработке и анализу?"
 Добро пожаловать! Это второе видео из цикла *Обработка и анализ данных для начинающих*, и оно называется "Готовы ли ваши данные к обработке и анализу?".  
 
 Чтобы функция обработки и анализа данных могла отвечать на заданные вопросы, необходимо предоставить ей высококачественное "сырье", с которым она будет работать. Это похоже на процесс приготовления пиццы: чем качественней ингредиенты, тем лучше конечный продукт. 
@@ -100,8 +100,8 @@ ms.locfileid: "67875328"
 
 Если данные являются соответствующими, подключенными, точными и их объем достаточен, то они удовлетворяют всем критериям для качественного выполнения обработки и анализа данных.
 
-Ознакомьтесь с другими четырьмя видео из цикла *Обработка и анализ данных для начинающих*, посвященного Студии машинного обучения Azure.
+Обязательно ознакомьтесь с четырьмя видеороликами по обработке и анализу *данных для начинающих* пользователей из студия машинного обучения Microsoft Azure (классическая модель).
 
-## <a name="next-steps"></a>Следующие шаги
-* [Выполните первый эксперимент по обработке и анализу данных с использованием Студии машинного обучения Microsoft Azure.](create-experiment.md)
+## <a name="next-steps"></a>Дальнейшие действия
+* [Попробуйте первый эксперимент по обработке и анализу данных с помощью Машинное обучение Studio (классическая модель)](create-experiment.md)
 * [Ознакомьтесь с введением в машинное обучение в Microsoft Azure.](/azure/machine-learning/preview/overview-what-is-azure-ml)

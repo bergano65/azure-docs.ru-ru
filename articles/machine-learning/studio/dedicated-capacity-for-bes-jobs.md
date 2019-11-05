@@ -1,23 +1,23 @@
 ---
-title: Azure заданий пакетной службы
-titleSuffix: Azure Machine Learning Studio
-description: Обзор пакетных служб Azure для задания студии машинного обучения. Обработка в пуле пакетной службы связана с возможностью создавать пулы, куда можно отправлять соответствующие задания.
+title: Задания пакетной службы Azure
+titleSuffix: Azure Machine Learning Studio (classic)
+description: Общие сведения о пакетных службах Azure для заданий Машинное обучение Studio (классические). Обработка в пуле пакетной службы связана с возможностью создавать пулы, куда можно отправлять соответствующие задания.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
 ms.topic: conceptual
 author: xiaoharper
 ms.author: amlstudiodocs
-ms.custom: seodec18, previous-title='Dedicated capacity for batch execution service jobs - Azure Machine Learning Studio | Microsoft Docs'
+ms.custom: seodec18, previous-title='Dedicated capacity for batch execution service jobs - Azure Machine Learning Studio (classic) | Microsoft Docs'
 ms.date: 04/19/2017
-ms.openlocfilehash: 24efa3caba3918a38c09b1c921c600b117dedbc1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1de7ad10a54c34595f69a543843097cee1377067
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60751166"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73493036"
 ---
-# <a name="azure-batch-service-for-azure-machine-learning-studio-jobs"></a>Использование пакетной службы Azure для обработки заданий Студии машинного обучения Azure
+# <a name="azure-batch-service-for-azure-machine-learning-studio-classic-jobs"></a>Пакетная служба Azure для заданий Машинное обучение Azure Studio (классическая модель)
 
 Обработка в пуле пакетной службы машинного обучения предоставляет пользователям управление масштабированием службы выполнения пакетов машинного обучения Azure. Классическая пакетная обработка для машинного обучения выполняется в мультитенантной среде. Это связано с определенными ограничениями числа одновременно отправляемых заданий, которые при этом помещаются в очередь по принципу FIFO. Эта неопределенность, в свою очередь, означает, что время запуска задания предсказать невозможно.
 

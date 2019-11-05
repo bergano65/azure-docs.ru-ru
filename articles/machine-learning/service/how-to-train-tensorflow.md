@@ -10,14 +10,15 @@ ms.author: maxluk
 author: maxluk
 ms.date: 08/20/2019
 ms.custom: seodec18
-ms.openlocfilehash: 11b16f91d600c20b48fbdc5887a4a0a4b538e916
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
-ms.translationtype: MT
+ms.openlocfilehash: a1ab8f881aaee9e29519e99a5cd2a0e6fdbc9846
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72330655"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73489410"
 ---
 # <a name="build-a-tensorflow-deep-learning-model-at-scale-with-azure-machine-learning"></a>Создание модели глубокого обучения TensorFlow в масштабе с помощью Машинное обучение Azure
+[!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
 В этой статье показано, как выполнять сценарии обучения [TensorFlow](https://www.tensorflow.org/overview) в масштабе с помощью класса средства [оценки TensorFlow](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.tensorflow?view=azure-ml-py) для машинное обучение Azure. В этом примере производится обучение и регистрация модели TensorFlow для классификации рукописных цифр с помощью глубокой нейронной сети (DNN).
 
@@ -29,7 +30,7 @@ ms.locfileid: "72330655"
 
 Запустите этот код в любой из этих сред:
 
- - Машинное обучение Azure виртуальной машины записной книжки — Загрузка или установка не требуется
+ - Машинное обучение Azure вычислительных экземпляров — Загрузка или установка не требуется
 
      - Выполните инструкции из [учебника Настройка среды и рабочей области](tutorial-1st-experiment-sdk-setup.md) , чтобы создать выделенный сервер записной книжки, предварительно загруженный с помощью пакета SDK и примера репозитория.
     - В папке примеры глубокого обучения на сервере записной книжки найдите готовую и развернутую записную книжку, перейдя в этот каталог: **практические советы по использованию azureml > ML-frameworks > tensorflow > развертывания > Train-i Parameter-Настройка-Deploy-with-tensorflow** папка. 
@@ -86,7 +87,7 @@ exp = Experiment(workspace=ws, name='tf-mnist')
 
 ### <a name="create-a-file-dataset"></a>Создание файлового набора данных
 
-Объект `FileDataset` ссылается на один или несколько файлов в хранилище данных рабочей области или общедоступных URL-адресов. Это могут быть файлы любого формата, и с помощью этого класса вы сможете скачивать их или подключать к вычислительной среде. Создавая `FileDataset`, вы одновременно создаете ссылку на расположение источника данных. Любые преобразования, примененные к такому набору данных, будут сохранены и в исходном наборе данных. Данные хранятся только в исходном расположении, а значит не потребуется лишних расходов на хранение. Дополнительные сведения см. в соответствующем [практическом руководстве](https://docs.microsoft.com/azure/machine-learning/service/how-to-create-register-datasets) по пакету `Dataset`.
+Объект `FileDataset` ссылается на один или несколько файлов в хранилище данных рабочей области или в общедоступных URL-адресах. Файлы могут иметь любой формат, и класс предоставляет возможность загрузки или подключения файлов к вычислению. Создавая `FileDataset`, вы создаете ссылку на расположение источника данных. Если к набору данных применены какие либо преобразования, они также будут сохранены в наборе данных. Данные остаются в существующем расположении, поэтому дополнительные затраты на хранение не взимается. Дополнительные сведения см. в [пошаговом](https://docs.microsoft.com/azure/machine-learning/service/how-to-create-register-datasets) руководствах по пакету `Dataset`.
 
 ```python
 from azureml.core.dataset import Dataset
@@ -138,9 +139,9 @@ except ComputeTargetException:
 
 Средство [оценки TensorFlow](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.tensorflow?view=azure-ml-py) предоставляет простой способ запуска задания обучения TensorFlow на целевом объекте вычислений.
 
-Оценщик TensorFlow реализуется через универсальный класс [`estimator`](https://docs.microsoft.com//python/api/azureml-train-core/azureml.train.estimator.estimator?view=azure-ml-py) , который можно использовать для поддержки любой платформы. Дополнительные сведения о учебных моделях с помощью универсального средства оценки см. в статье [обучение моделей с машинное обучение Azure помощью средства оценки](how-to-train-ml-models.md) .
+Оценщик TensorFlow реализуется с помощью универсального класса [`estimator`](https://docs.microsoft.com//python/api/azureml-train-core/azureml.train.estimator.estimator?view=azure-ml-py) , который можно использовать для поддержки любой платформы. Дополнительные сведения о учебных моделях с помощью универсального средства оценки см. в статье [обучение моделей с машинное обучение Azure помощью средства оценки](how-to-train-ml-models.md) .
 
-Если для выполнения сценария обучения требуются дополнительные пакеты PIP или conda, можно установить пакеты в полученном образе DOCKER, передав их имена с помощью аргументов `pip_packages` и `conda_packages`.
+Если для выполнения сценария обучения требуются дополнительные пакеты PIP или conda, можно установить пакеты в полученном образе DOCKER, передав их имена с помощью `pip_packages` и `conda_packages` аргументов.
 
 ```python
 script_params = {
@@ -185,7 +186,7 @@ run.wait_for_completion(show_output=True)
 model = run.register_model(model_name='tf-dnn-mnist', model_path='outputs/model')
 ```
 
-Вы также можете скачать локальную копию модели с помощью объекта Run. В скрипте обучения `mnist-tf.py` объект хранителя сохраняет модель в локальную папку (локальную для целевого объекта вычислений). Для скачивания копии можно использовать объект Run.
+Вы также можете скачать локальную копию модели с помощью объекта Run. В `mnist-tf.py`скрипте обучения объект TensorFlow хранителя сохраняет модель в локальной папке (локальную для целевого объекта вычислений). Для скачивания копии можно использовать объект Run.
 
 ```Python
 # Create a model folder in the current directory
@@ -200,7 +201,7 @@ for f in run.get_file_names():
 
 ## <a name="distributed-training"></a>Распределенное обучение
 
-Оценщик [`TensorFlow`](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.tensorflow?view=azure-ml-py) также поддерживает распределенное обучение между кластерами ЦП и GPU. Вы можете легко выполнять распределенные задания TensorFlow, а Машинное обучение Azure будет управлять согласованием.
+[`TensorFlow`](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.tensorflow?view=azure-ml-py) оценщик также поддерживает распределенное обучение между кластерами ЦП и GPU. Вы можете легко выполнять распределенные задания TensorFlow, а Машинное обучение Azure будет управлять согласованием.
 
 Служба машинного обучения Azure поддерживает два метода распределенного обучения в TensorFlow.
 
@@ -272,9 +273,9 @@ TF_CONFIG='{
 }'
 ```
 
-Для @no__t API высокого уровня TensorFlow [-1](https://www.tensorflow.org/api_docs/python/tf/estimator) TensorFlow анализирует переменную `TF_CONFIG` и создает спецификацию кластера.
+Для [`tf.estimator`](https://www.tensorflow.org/api_docs/python/tf/estimator) API высокого уровня TensorFlow TensorFlow анализирует переменную `TF_CONFIG` и создает спецификацию кластера.
 
-Для обучения API-интерфейсы нижнего уровня TensorFlow Проанализируйте переменную @no__t – 0 и создайте `tf.train.ClusterSpec` в коде обучения.
+Для обучения API-интерфейсы нижнего уровня TensorFlow Проанализируйте переменную `TF_CONFIG` и создайте `tf.train.ClusterSpec` в коде обучения.
 
 ```Python
 import os, json

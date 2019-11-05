@@ -10,12 +10,12 @@ ms.subservice: load-data
 ms.date: 07/28/2019
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: c90deefba75cd8bbeda126c9da8a05e1069831d4
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: c248a2e3e6724388fa6402a70ac3bcb51f0f9ef3
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68597468"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73492254"
 ---
 # <a name="designing-a-polybase-data-loading-strategy-for-azure-sql-data-warehouse"></a>Проектирование стратегии загрузки данных PolyBase для Хранилища данных SQL Azure
 
@@ -53,30 +53,30 @@ PolyBase загружает данные из текстовых файлов с
 
 | **Тип данных Parquet** |                      **Тип данных SQL**                       |
 | :-------------------: | :----------------------------------------------------------: |
-|        tinyint        |                           tinyint                            |
+|        tinyint;        |                           tinyint;                            |
 |       smallint        |                           smallint                           |
 |          int          |                             int                              |
 |        bigint         |                            bigint                            |
-|        Логический        |                             bit                              |
-|        double         |                            float                             |
-|         float         |                             real                             |
+|        Логическое        |                             bit                              |
+|        double         |                            float;                             |
+|         float;         |                             real;                             |
 |        double         |                            money                             |
 |        double         |                          smallmoney                          |
-|        строка         |                            nchar                             |
+|        строка         |                            nchar;                             |
 |        строка         |                           nvarchar                           |
-|        строка         |                             char                             |
-|        строка         |                           varchar                            |
-|        binary         |                            binary                            |
-|        binary         |                          varbinary                           |
-|       timestamp       |                             date                             |
-|       timestamp       |                        smalldatetime                         |
-|       timestamp       |                          datetime2                           |
-|       timestamp       |                           datetime                           |
-|       timestamp       |                             time                             |
-|       date            |                             date                             |
-|        decimal        |                            decimal                           |
+|        строка         |                             char;                             |
+|        строка         |                           varchar.                            |
+|        binary;         |                            binary;                            |
+|        binary;         |                          varbinary;                           |
+|       Timestamp       |                             дата                             |
+|       Timestamp       |                        smalldatetime;                         |
+|       Timestamp       |                          datetime2                           |
+|       Timestamp       |                           datetime;                           |
+|       Timestamp       |                             time                             |
+|       дата            |                             дата                             |
+|        Decimal        |                            Decimal                           |
 
-## <a name="2-land-the-data-into-azure-blob-storage-or-azure-data-lake-store"></a>2. Помещение данных в хранилище BLOB-объектов Azure или Azure Data Lake Storage
+## <a name="2-land-the-data-into-azure-blob-storage-or-azure-data-lake-store"></a>2. Наземный данные в хранилище BLOB-объектов Azure или Azure Data Lake Store
 
 Чтобы поместить данные в службу хранилища Azure, их можно переместить в [хранилище BLOB-объектов Azure](../storage/blobs/storage-blobs-introduction.md) или [Azure Data Lake Store](../data-lake-store/data-lake-store-overview.md). В любом расположении данные должны храниться в текстовых файлах. PolyBase может загрузить их из любого расположения.
 
@@ -87,7 +87,7 @@ PolyBase загружает данные из текстовых файлов с
 - [Фабрика данных Azure (ADF)](../data-factory/introduction.md) включает шлюз, который можно установить на локальном сервере. Затем можно создать конвейер для перемещения данных из локального сервера в службу хранилища Azure. Использование фабрики данных с хранилищем данных SQL описывается в разделе [Загрузка данных в службу "Хранилище данных SQL Azure" с помощью службы "Фабрика данных Azure"](/azure/data-factory/load-azure-sql-data-warehouse).
 
 
-## <a name="3-prepare-the-data-for-loading"></a>3. Подготовка данных для загрузки
+## <a name="3-prepare-the-data-for-loading"></a>3. Подготовка данных к загрузке
 
 Может потребоваться подготовка и очистка данных в учетной записи хранения перед их загрузкой в хранилище данных SQL. Подготовить данные можно, пока они хранятся в источнике, при экспорте данных в текстовые файлы или после того, как данные окажутся в службе хранилища Azure.  Лучше всего как можно раньше начать работу с данными.  
 
@@ -112,7 +112,7 @@ PolyBase загружает данные из текстовых файлов с
 - Отделите поля в текстовом файле символом завершения.  Обязательно используйте уникальный символ или последовательность символов. Используйте указанный символ завершения для [создания формата внешнего файла](/sql/t-sql/statements/create-external-file-format-transact-sql).
 
 
-## <a name="4-load-the-data-into-sql-data-warehouse-staging-tables-using-polybase"></a>4. Загрузка данных в промежуточные таблицы Хранилища данных SQL с помощью PolyBase
+## <a name="4-load-the-data-into-sql-data-warehouse-staging-tables-using-polybase"></a>4. Загрузка данных в промежуточные таблицы хранилища данных SQL с помощью Polybase
 
 Этот метод рекомендуется для загрузки данных в промежуточную таблицу. Промежуточные таблицы позволяют обрабатывать ошибки без оказания влияния на рабочие таблицы. Промежуточная таблица также предоставляет возможность использовать архитектуру MPP в Хранилище данных SQL для преобразования данных перед вставкой в рабочие таблицы.
 
@@ -123,7 +123,7 @@ PolyBase загружает данные из текстовых файлов с
 - [PolyBase с использованием T-SQL](load-data-from-azure-blob-storage-using-polybase.md) хорошо работает, когда данные хранятся в хранилище BLOB-объектов Azure или Azure Data Lake Store. Этот вариант предоставляет наибольший контроль над процессом загрузки, но также требует определения объектов внешних данных. Другие методы определяют эти объекты в фоновом режиме, когда вы сопоставляете исходные таблицы с целевыми.  Для оркестрации загрузок T-SQL можно использовать фабрику данных Azure, службы SSIS или функции Azure. 
 - [PolyBase со службами SSIS](/sql/integration-services/load-data-to-sql-data-warehouse) является оптимальным выбором, когда исходные данные хранятся в SQL Server — локально или в облаке. Службы SSIS определяют сопоставления исходной и целевой таблиц, а также управляют загрузкой. При наличии пакетов служб SSIS можно изменить пакеты для работы с новым назначением хранилища данных. 
 - [PolyBase с фабрикой данных Azure (ADF)](sql-data-warehouse-load-with-data-factory.md) представляет собой другое средство оркестрации.  Оно определяет конвейер и планирует расписания заданий. 
-- [Polybase с помощью Azure](../azure-databricks/databricks-extract-load-sql-data-warehouse.md) Data кирпичей передает данные из таблицы хранилища данных SQL в блок данных DataTable и (или) записывает данные из таблицы данных в таблицу с использованием polybase.
+- [Polybase с Azure Databricks](../azure-databricks/databricks-extract-load-sql-data-warehouse.md) передает данные из таблицы хранилища данных SQL в таблицу данных и (или) записывает данные из таблицы DataTables из модуля данные в таблице хранилища SQL Server с помощью polybase.
 
 ### <a name="non-polybase-loading-options"></a>Варианты загрузки, отличные от PolyBase
 
@@ -137,7 +137,7 @@ PolyBase загружает данные из текстовых файлов с
 
 ## <a name="6-insert-the-data-into-production-tables"></a>6. Вставка данных в рабочие таблицы
 
-С помощью инструкции INSERT INTO... SELECT данные перемещаются из промежуточной таблицы в постоянную. 
+Вставка в... Инструкция SELECT перемещает данные из промежуточной таблицы в постоянную таблицу. 
 
 При разработке процесса ETL попробуйте запустить его для небольшого тестового примера. Попробуйте извлечь 1000 строк из таблицы в файл, переместить его в Azure, а затем загрузить в промежуточную таблицу. 
 
@@ -147,7 +147,7 @@ PolyBase загружает данные из текстовых файлов с
 Многие из наших партнеров предлагают решения для загрузки. Дополнительные сведения см. в статье [Партнеры по бизнес-аналитике хранилища данных SQL](sql-data-warehouse-partner-business-intelligence.md). 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Инструкции по загрузке см. [здесь](guidance-for-loading-data.md).
 

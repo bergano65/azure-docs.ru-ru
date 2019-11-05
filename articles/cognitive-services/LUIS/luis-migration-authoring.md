@@ -9,18 +9,20 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 10/04/2019
+ms.date: 10/25/2019
 ms.author: diberry
-ms.openlocfilehash: 19852fe3a6925ada3dea141a1472683ee264f6d5
-ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
+ms.openlocfilehash: 86a7575c173b4515eaf0f690bcd00c6fb70ee581
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2019
-ms.locfileid: "71973298"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73492720"
 ---
 # <a name="migrate-to-an-azure-resource-authoring-key"></a>Миграция в ключ создания ресурсов Azure
 
 Language Understanding (LUIS) создание аутентификации изменено с учетной записи электронной почты на ресурс Azure. 
+
+[!INCLUDE [Waiting for LUIS portal refresh](./includes/wait-v3-upgrade.md)]
 
 ## <a name="why-migrate"></a>Для чего нужна миграция
 
@@ -65,7 +67,7 @@ Language Understanding (LUIS) создание аутентификации из
 * **При необходимости**сохраните список коллаборатор'с для каждого приложения. Этот список электронной почты предоставляется в рамках процесса миграции.
 * **Необходимо иметь** [подписку Azure](https://azure.microsoft.com/free/). В рамках процесса подписки требуются сведения о выставлении счетов. Однако вы можете использовать ценовую категорию Free (`F0`) при использовании LUIS. 
 
-**Разработка приложения Luis предоставляется бесплатно**, что определяется уровнем `F0`. Дополнительные сведения [о ценовых](luis-boundaries.md#key-limits)категориях.
+**Разработка приложения Luis предоставляется бесплатно**, обозначается `F0` уровнем. Дополнительные сведения [о ценовых](luis-boundaries.md#key-limits)категориях.
 
 Если у вас нет подписки Azure, [Зарегистрируйтесь](https://azure.microsoft.com/free/). 
 
@@ -81,7 +83,7 @@ Language Understanding (LUIS) создание аутентификации из
 
 Вы можете добавить участников в ресурс разработки из _портал Azure_на странице **управления доступом (IAM)** для этого ресурса. Дополнительные сведения см. в разделе [Добавление доступа к участнику](luis-migration-authoring-steps.md#after-the-migration-process-add-contributors-to-your-authoring-resource) .
 
-|Портал|Цель|
+|Microsoft Azure|Назначение|
 |--|--|
 |[Таблицы Azure](https://azure.microsoft.com/free/)|* Создайте ресурсы для прогнозирования и создания ресурсов.<br>* Назначение участников.|
 |[LUIS](https://www.luis.ai)|* Переход на новые ресурсы для разработки.<br>* Назначение и отмена назначения ресурсов для прогнозирования и разработки приложений на странице **ресурсов Azure "Управление" >** .| 
@@ -104,6 +106,6 @@ Language Understanding (LUIS) создание аутентификации из
 
 Ключи разработки LUIS видны только на портале LUIS после завершения процесса миграции. При создании ключей создания, например с помощью интерфейса командной строки LUIS, пользователю по-прежнему потребуется завершить процесс миграции. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Перенос приложения в ресурс разработки](luis-migration-authoring-steps.md)

@@ -1,24 +1,24 @@
 ---
 title: 'Логистическая регрессия двух классов: Справочник по модулям'
-titleSuffix: Azure Machine Learning service
-description: Узнайте, как использовать модуль логистической регрессии с двумя классами в Машинное обучение Azure службе для создания модели логистической регрессии, которая может использоваться для прогнозирования двух (и только двух) результатов.
+titleSuffix: Azure Machine Learning
+description: Узнайте, как использовать модуль логистической регрессии с двумя классами в Машинное обучение Azure для создания модели логистической регрессии, которая может использоваться для прогнозирования двух (и только двух) результатов.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: reference
 author: xiaoharper
 ms.author: zhanxia
-ms.date: 05/02/2019
-ms.openlocfilehash: 7020bf529fa635d74959a9dac071aa6e2b134c5b
-ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
+ms.date: 10/22/2019
+ms.openlocfilehash: f64352906da5d6e3a314b3af68e37f4dc5bb80bd
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72692624"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73485942"
 ---
 # <a name="two-class-logistic-regression-module"></a>Модуль логистической регрессии с двумя классами
 
-В этой статье описывается модуль визуального интерфейса (Предварительная версия) для службы Машинное обучение Azure.
+В этой статье описывается модуль в Машинное обучение Azure Designer (Предварительная версия).
 
 Этот модуль используется для создания модели логистической регрессии, которая может использоваться для прогнозирования двух (и только двух) результатов. 
 
@@ -87,4 +87,4 @@ ms.locfileid: "72692624"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-См. [набор модулей, доступных](module-reference.md) машинное обучение Azure службе. 
+См. [набор модулей, доступных](module-reference.md) для машинное обучение Azure. 

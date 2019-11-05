@@ -10,14 +10,15 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 09/27/2019
-ms.openlocfilehash: 4d4d83e12d284ce760b8a7e87fd42e6c8ebb4850
-ms.sourcegitcommit: be344deef6b37661e2c496f75a6cf14f805d7381
+ms.openlocfilehash: f733e29fc5fbce764fef9a713747d6793d2ebd43
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72001209"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73489315"
 ---
 # <a name="create-and-manage-reusable-environments-for-training-and-deployment-with-azure-machine-learning"></a>Создавайте повторно используемые среды для обучения и развертывания с помощью Машинное обучение Azure и управляйте ими.
+[!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
 В этой статье вы узнаете, как создавать [среды](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py) машинное обучение Azure и управлять ими, чтобы вы могли отслеживанию и воспроизведение зависимостей программного обеспечения проектов по мере их развития.
 
@@ -50,7 +51,7 @@ ms.locfileid: "72001209"
 
 Среды, управляемые системой, используются, когда требуется [Conda](https://conda.io/docs/) управлять средой Python и зависимостями скриптов. По умолчанию служба использует этот тип окружения из-за его полезности в удаленных целевых объектах вычислений, которые не настраиваются вручную.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * [Установленный](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py)пакет SDK для машинное обучение Azure для Python.
 * [Рабочая область машинное обучение Azure](how-to-manage-workspace.md).
@@ -160,7 +161,7 @@ run.wait_for_completion(show_output=True)
 
 Если пакет доступен в репозитории пакетов Conda, рекомендуется использовать Conda с пошаговой установкой. Причина заключается в том, что пакеты Conda обычно поставляются с предварительно созданными двоичными файлами, которые делают установку более надежной.
 
-В следующем примере в среду добавляется `scikit-learn`, конкретная версия 0.21.3 и `pillow` пакет, `myenv` с методами [`add_conda_package()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.conda_dependencies.condadependencies?view=azure-ml-py#add-conda-package-conda-package-) и [`add_pip_package()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.conda_dependencies.condadependencies?view=azure-ml-py#add-pip-package-pip-package-) соответственно.
+В следующем примере в среду добавляется `scikit-learn`, а именно версия 0.21.3 и пакет `pillow`, `myenv` с методами [`add_conda_package()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.conda_dependencies.condadependencies?view=azure-ml-py#add-conda-package-conda-package-) и [`add_pip_package()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.conda_dependencies.condadependencies?view=azure-ml-py#add-pip-package-pip-package-) соответственно.
 
 ```python
 from azureml.core import Environment
@@ -178,7 +179,7 @@ myenv.python.conda_dependencies=conda_dep
 
 ### <a name="private-wheel-files"></a>Файлы частных колес
 
-Вы можете использовать частные файлы колесика PIP, предварительно отгружая их в хранилище рабочей области с помощью статического метода [`add_private_pip_wheel()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py#add-private-pip-wheel-workspace--file-path--exist-ok-false-) , записывая URL-адрес хранилища и передавая URL-адрес методу `add_pip_package()`.
+Вы можете использовать файлы с помощью частных колесика PIP, предварительно отгружая их в хранилище рабочей области с помощью статического метода [`add_private_pip_wheel()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py#add-private-pip-wheel-workspace--file-path--exist-ok-false-) , записывая URL-адрес хранилища и передавая URL-адрес методу `add_pip_package()`.
 
 ```python
 # During environment creation the service replaces the URL by secure SAS URL, so your wheel file is kept private and secure
@@ -216,7 +217,7 @@ myenv.register(workspace=ws)
 #### <a name="get-environment-by-name"></a>Получить окружение по имени
 
 Кроме того, можно получить конкретную среду по имени и версии.
-В следующем коде метод [Get ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment(class)?view=azure-ml-py#get-workspace--name--version-none-) используется для получения версии `1` среды, `myenv` в рабочей области `ws`.
+В следующем коде метод [Get ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment(class)?view=azure-ml-py#get-workspace--name--version-none-) используется для получения версии `1` среды `myenv` в рабочей области `ws`.
 
 ```python
 restored_environment = Environment.get(workspace=ws,name="myenv",version="1")
@@ -258,9 +259,9 @@ build.wait_for_completion(show_output=True)
 myenv.docker.enabled = True
 ```
 
-После сборки образ DOCKER появится в реестре контейнеров Azure, который связан с рабочей областью по умолчанию.  Имя репозитория имеет форму *azureml/azureml_ @ no__t-1uuid @ no__t-2*. Уникальный идентификатор (*UUID*) соответствует хэшу, вычисленному из конфигурации среды. Это позволяет службе определить, существует ли уже образ, соответствующий данной среде, для повторного использования.
+После сборки образ DOCKER появится в реестре контейнеров Azure, который связан с рабочей областью по умолчанию.  Имя репозитория имеет форму *azureml/azureml_\<uuid\>* . Уникальный идентификатор (*UUID*) соответствует хэшу, вычисленному из конфигурации среды. Это позволяет службе определить, существует ли уже образ, соответствующий данной среде, для повторного использования.
 
-Кроме того, служба автоматически использует один из [базовых образов](https://github.com/Azure/AzureML-Containers)на основе Ubuntu Linux и устанавливает указанные пакеты Python. Базовый образ содержит версии ЦП и GPU. Служба Машинное обучение Azure автоматически определяет используемую версию.
+Кроме того, служба автоматически использует один из [базовых образов](https://github.com/Azure/AzureML-Containers)на основе Ubuntu Linux и устанавливает указанные пакеты Python. Базовый образ содержит версии ЦП и GPU. Машинное обучение Azure автоматически определяет, какую версию следует использовать.
 
 ```python
 # Specify custom Docker base image and registry, if you don't want to use the defaults
@@ -362,8 +363,8 @@ service = Model.deploy(
 
 В этом [примере Записная книжка](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/training/using-environments) расширяет концепции и методы, продемонстрированные в этой статье.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Учебник. по обучению модели классификации изображений с помощью Службы машинного обучения Azure](tutorial-train-models-with-aml.md). В нем используется управляемый целевой объект вычислений для обучения модели.
+* [Учебник. Обучение модели](tutorial-train-models-with-aml.md) использует управляемый целевой объект вычислений для обучения модели.
 * После обучения модели узнайте о [способах и расположениях развертывания моделей](how-to-deploy-and-where.md).
 * Просмотрите ссылку на пакет SDK для [класса среды](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment(class)?view=azure-ml-py) .

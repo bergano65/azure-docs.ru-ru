@@ -7,24 +7,24 @@ ms.service: private-link
 ms.topic: conceptual
 ms.date: 09/16/2019
 ms.author: kumud
-ms.openlocfilehash: a3c25553e7abbe39c00407e8000880dc99056bcd
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.openlocfilehash: ccc3da6f2dd49775ff4d4486fcd2af9f08a396d6
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73172979"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73475915"
 ---
 # <a name="what-is-azure-private-endpoint"></a>Что такое частная конечная точка Azure?
 
-Частная конечная точка Azure — это сетевой интерфейс, который обеспечивает безопасное и надежное подключение к службе с помощью частной связи Azure. Частная конечная точка использует частный IP-адрес из виртуальной сети, фактически передавая ее в виртуальную сеть. Служба может быть службой Azure, такой как служба хранилища Azure, SQL и т. д., или собственной [службой частной связи](private-link-service-overview.md).
+Частная конечная точка Azure — это сетевой интерфейс, который обеспечивает безопасное и надежное подключение к службе с помощью частной связи Azure. Частная конечная точка использует частный IP-адрес из виртуальной сети, фактически передавая ее в виртуальную сеть. Служба может быть службой Azure, такой как служба хранилища Azure, Azure Cosmos DB, SQL и т. д., или собственной [службы частной связи](private-link-service-overview.md).
   
 ## <a name="private-endpoint-properties"></a>Свойства частной конечной точки 
  Частная конечная точка содержит следующие свойства: 
 
 
-|Свойство  |Описание |
+|Свойство  |Description (Описание) |
 |---------|---------|
-|Name    |    Уникальное имя в группе ресурсов.      |
+|Имя    |    Уникальное имя в группе ресурсов.      |
 |Подсеть    |  Подсеть для развертывания и выделения частных IP-адресов из виртуальной сети. Требования к подсети см. в разделе ограничения этой статьи.         |
 |Ресурс частной ссылки    |   Ресурс частной связи для подключения с помощью идентификатора ресурса или псевдонима из списка доступных типов. Для всего трафика, отправляемого в этот ресурс, будет создан уникальный идентификатор сети.       |
 |Целевой подресурс   |      Подресурс для подключения. Каждый тип ресурса частной связи имеет различные параметры для выбора в зависимости от предпочтений.    |
@@ -54,10 +54,10 @@ ms.locfileid: "73172979"
 |---------|---------|---------|
 |**Служба частной связи** (собственная служба)   |  Microsoft. Network/Привателинксервицес       | empty |
 |**база данных SQL Azure;** | Microsoft.Sql/servers    |  SQL Server (sqlServer)        |
-|**Хранилище данных SQL Azure** | Microsoft.Sql/servers    |  SQL Server (sqlServer)        |
-|**Служба хранилища Azure**  | Microsoft.Storage/storageAccounts    |  Большой двоичный объект (BLOB-объект, blob_secondary)<BR> Таблица (таблица, table_secondary)<BR> Очередь (очередь, queue_secondary)<BR> Файл (файл, file_secondary)<BR> Web (Web, web_secondary)        |
+|**Хранилище данных Azure SQL** | Microsoft.Sql/servers    |  SQL Server (sqlServer)        |
+|**Хранилище Azure**  | Microsoft.Storage/storageAccounts    |  Большой двоичный объект (BLOB-объект, blob_secondary)<BR> Таблица (таблица, table_secondary)<BR> Очередь (очередь, queue_secondary)<BR> Файл (файл, file_secondary)<BR> Web (Web, web_secondary)        |
 |**Хранилище Azure Data Lake Storage 2-го поколения**  | Microsoft.Storage/storageAccounts    |  Большой двоичный объект (BLOB-объект, blob_secondary)       |
- 
+|**Azure Cosmos DB** | Microsoft. Азурекосмосдб/databaseAccounts | SQL, MongoDB, Cassandra, Gremlin, Table|
  
 ## <a name="network-security-of-private-endpoints"></a>Сетевая безопасность частных конечных точек 
 При использовании частных конечных точек для служб Azure трафик защищен с помощью определенного ресурса частной ссылки. Платформа выполняет контроль доступа для проверки сетевых подключений, достигнутых только указанным ресурсом частной ссылки. Для доступа к дополнительным ресурсам в одной службе Azure требуются дополнительные частные конечные точки. 
@@ -107,9 +107,12 @@ ms.locfileid: "73172979"
 |Учетная запись хранения (Microsoft. Storage/storageAccounts)   |    Файл (файл, file_secondary)      |    privatelink.file.core.windows.net      |
 |Учетная запись хранения (Microsoft. Storage/storageAccounts)     |  Web (Web, web_secondary)        |    privatelink.web.core.windows.net      |
 |Data Lake файловой системы Gen2 (Microsoft. Storage/storageAccounts)  |  Data Lake файловой системы Gen2 (DFS, dfs_secondary)        |     privatelink.dfs.core.windows.net     |
-||||
+|Azure Cosmos DB (Microsoft. Азурекосмосдб/databaseAccounts)|SQL |privatelink.documents.azure.com|
+|Azure Cosmos DB (Microsoft. Азурекосмосдб/databaseAccounts)|MongoDB |privatelink.mongo.cosmos.azure.com|
+|Azure Cosmos DB (Microsoft. Азурекосмосдб/databaseAccounts)|Cassandra|privatelink.cassandra.cosmos.azure.com|
+|Azure Cosmos DB (Microsoft. Азурекосмосдб/databaseAccounts)|Gremlin |privatelink.gremlin.cosmos.azure.com|
+|Azure Cosmos DB (Microsoft. Азурекосмосдб/databaseAccounts)|Таблица|privatelink.table.cosmos.azure.com|
  
-
 Azure создаст каноническое имя DNS-записи (CNAME) на общедоступном DNS-сервере, чтобы перенаправить разрешение в предлагаемые доменные имена. Вы сможете переопределить разрешение с помощью частного IP-адреса закрытых конечных точек. 
  
 Приложениям не нужно изменять URL-адрес подключения. При попытке разрешить использование общедоступной службы DNS DNS-сервер теперь будет разрешаться в частные конечные точки. Этот процесс не влияет на ваши приложения. 
@@ -119,7 +122,7 @@ Azure создаст каноническое имя DNS-записи (CNAME) н
 В следующей таблице содержится список известных ограничений при использовании частных конечных точек. 
 
 
-|Ограничение |Описание |Устранение  |
+|Ограничение |Description (Описание) |Устранение  |
 |---------|---------|---------|
 |Правила группы безопасности сети (NSG) и определяемые пользователем маршруты не применяются к частной конечной точке    |NSG не поддерживается в частных конечных точках. В то время как подсети, содержащие закрытую конечную точку, могут связываться с NSG, правила не будут действовать для трафика, обрабатываемого частной конечной точкой. Для развертывания частных конечных точек в подсети необходимо [Отключить принудительное применение политик сети](disable-private-endpoint-network-policy.md) . NSG по-прежнему применяется к другим рабочим нагрузкам, размещенным в той же подсети. Маршруты в любой подсети клиента будут использовать префикс/32, изменение поведения маршрутизации по умолчанию требует аналогичного UDR  | Управление трафиком с помощью правил NSG для исходящего трафика на исходных клиентах. Развертывание отдельных маршрутов с префиксом/32 для переопределения маршрутов частных конечных точек        |
 |  Одноранговая виртуальная сеть с частными конечными точками не поддерживается   |   При подключении к частным конечным точкам в одноранговой виртуальной сети без какой-либо другой рабочей нагрузки не поддерживается.       | Развертывание одной виртуальной машины в одноранговой виртуальной сети для обеспечения возможности подключения |
@@ -127,8 +130,9 @@ Azure создаст каноническое имя DNS-записи (CNAME) н
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- [Create a Private Endpoint using Azure portal ](create-private-endpoint-portal.md) (Создание частной конечной точки для сервера базы данных SQL с помощью портала)
-- [Создание частной конечной точки для сервера базы данных SQL с помощью портала PowerShell ](create-private-endpoint-powershell.md)
-- [Создание частной конечной точки для сервера базы данных SQL с помощью портала CLI ](create-private-endpoint-cli.md)
-- [Создание частной конечной точки для учетной записи хранения, используя портал ](create-private-endpoint-storage-portal.md)
-- [Create your own Private Link service using Azure PowerShel](create-private-link-service-powershell.md) (Создание собственного Приватного канала с помощью Azure PowerShell)
+- [Создание частной конечной точки для сервера базы данных SQL с помощью портала](create-private-endpoint-portal.md)
+- [Создание частной конечной точки для сервера базы данных SQL с помощью PowerShell](create-private-endpoint-powershell.md)
+- [Создание частной конечной точки для сервера базы данных SQL с помощью интерфейса командной строки](create-private-endpoint-cli.md)
+- [Создание частной конечной точки для учетной записи хранения с помощью портала](create-private-endpoint-storage-portal.md)
+- [Создание частной конечной точки для учетной записи Azure Cosmos с помощью портала](../cosmos-db/how-to-configure-private-endpoints.md)
+- [Создание собственной службы частной связи с помощью Azure PowerShell](create-private-link-service-powershell.md)

@@ -7,12 +7,12 @@ ms.subservice: blobs
 ms.topic: conceptual
 ms.author: normesta
 ms.date: 05/28/2019
-ms.openlocfilehash: 5664bf1eaee85d2492601ef00968d9b17d857abb
-ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
+ms.openlocfilehash: d5b8121c7888903f3e4552a21a6ddc175ecc5176
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69900481"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73489088"
 ---
 # <a name="host-a-static-website-in-azure-storage"></a>Размещение статического веб-сайта в службе хранилища Azure
 
@@ -22,9 +22,9 @@ ms.locfileid: "69900481"
 
 <a id="portal" />
 
-## <a name="use-the-azure-portal"></a>Использование портала Azure
+## <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
 
-Пошаговое руководство см. в разделе [учебник. по размещению статического веб-сайта в хранилище BLOB-объектов](https://docs.microsoft.com/azure/storage/blobs/storage-blob-static-website-host).
+Пошаговое руководство см. в разделе [учебник. размещение статического веб-сайта в хранилище BLOB-объектов](https://docs.microsoft.com/azure/storage/blobs/storage-blob-static-website-host).
 
 После включения статического размещения веб-сайтов можно просмотреть страницы веб-сайта в браузере с помощью общедоступного URL-адреса сайта.
 
@@ -38,9 +38,9 @@ ms.locfileid: "69900481"
 
 <a id="cli" />
 
-## <a name="use-the-azure-cli"></a>Использование Azure CLI
+## <a name="azure-clitabazure-cli"></a>[Интерфейс командной строки Azure](#tab/azure-cli)
 
-Включить размещение статических веб-сайтов можно с помощью [интерфейса командной строки Azure (CLI)](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest).
+Включить размещение статического веб-сайта можно с помощью [интерфейс командной строки Azure (CLI)](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest).
 
 1. Сначала откройте [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview?view=azure-cli-latest)или, если вы [установили](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) Azure CLI локально, Откройте консольное приложение командной консоли, например Windows PowerShell.
 
@@ -50,7 +50,7 @@ ms.locfileid: "69900481"
    az account set --subscription <subscription-id>
    ```
 
-   Замените значение `<subscription-id>` заполнителя идентификатором подписки.
+   Замените значение заполнителя `<subscription-id>` ИДЕНТИФИКАТОРом подписки.
 
 3. Включить размещение статических веб-сайтов.
 
@@ -60,14 +60,14 @@ ms.locfileid: "69900481"
 
    * Замените значение заполнителя `<storage-account-name>` именем вашей учетной записи хранения.
 
-   * `<error-document-name>` Замените заполнитель именем документа ошибки, который будет отображаться пользователям, когда браузер запрашивает страницу несуществующего сайта.
+   * Замените заполнитель `<error-document-name>` именем документа об ошибке, который будет отображаться пользователям при запросе веб-браузером страницы, которая не существует.
 
-   * `<index-document-name>` Замените заполнитель именем документа индекса. Этот документ обычно имеет формат index. HTML.
+   * Замените заполнитель `<index-document-name>` именем документа индекса. Этот документ обычно имеет формат index. HTML.
 
 4. Передайте объекты в контейнер *$web* из исходного каталога.
 
    > [!NOTE]
-   > Если вы используете Azure Cloud Shell, обязательно добавьте `\` escape-символ при ссылке `$web` на `\$web`контейнер (например,). Если вы используете локальную установку Azure CLI, вам не придется использовать escape-символ.
+   > Если вы используете Azure Cloud Shell, обязательно добавьте escape-символ `\` при ссылке на контейнер `$web` (например: `\$web`). Если вы используете локальную установку Azure CLI, вам не придется использовать escape-символ.
 
    В этом примере предполагается, что вы используете команды из сеанса Azure Cloud Shell.
 
@@ -77,10 +77,10 @@ ms.locfileid: "69900481"
 
    * Замените значение заполнителя `<storage-account-name>` именем вашей учетной записи хранения.
 
-   * `<source-path>` Замените заполнитель путем к расположению файлов, которые требуется передать.
+   * Замените заполнитель `<source-path>` путем к расположению файлов, которые требуется передать.
 
    > [!NOTE]
-   > Если вы используете установку расположения Azure CLI, можно использовать путь к любому расположению на локальном компьютере ( `C:\myFolder`например,.
+   > Если вы используете установку расположения Azure CLI, можно использовать путь к любому расположению на локальном компьютере (например, `C:\myFolder`.
    >
    > Если вы используете Azure Cloud Shell, необходимо сослаться на общую папку, видимую для Cloud Shell. Это может быть общая папка в облачной общей папке или существующая общая папка, которую вы подключаете из Cloud Shell. Сведения о том, как это сделать, см. [в разделе Сохранение файлов в Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/persisting-shell-storage).
 
@@ -98,11 +98,11 @@ az storage account show -n <storage-account-name> -g <resource-group-name> --que
 
 * Замените значение заполнителя `<storage-account-name>` именем вашей учетной записи хранения.
 
-* Замените значение `<resource-group-name>` заполнителя именем группы ресурсов.
+* Замените значение заполнителя `<resource-group-name>` именем группы ресурсов.
 
 <a id="powershell" />
 
-## <a name="use-powershell"></a>Использование PowerShell
+## <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
 
 Включить размещение статических веб-сайтов можно с помощью модуля Azure PowerShell.
 
@@ -129,7 +129,7 @@ az storage account show -n <storage-account-name> -g <resource-group-name> --que
    Set-AzContext $context
    ```
 
-   Замените значение `<subscription-id>` заполнителя идентификатором подписки.
+   Замените значение заполнителя `<subscription-id>` ИДЕНТИФИКАТОРом подписки.
 
 5. Получите контекст учетной записи хранения, определяющий учетную запись хранения, которую вы хотите использовать.
 
@@ -138,7 +138,7 @@ az storage account show -n <storage-account-name> -g <resource-group-name> --que
    $ctx = $storageAccount.Context
    ```
 
-   * Замените значение `<resource-group-name>` заполнителя именем группы ресурсов.
+   * Замените значение заполнителя `<resource-group-name>` именем группы ресурсов.
 
    * Замените значение заполнителя `<storage-account-name>` именем вашей учетной записи хранения.
 
@@ -148,9 +148,9 @@ az storage account show -n <storage-account-name> -g <resource-group-name> --que
    Enable-AzStorageStaticWebsite -Context $ctx -IndexDocument <index-document-name> -ErrorDocument404Path <error-document-name>
    ```
 
-   * `<error-document-name>` Замените заполнитель именем документа ошибки, который будет отображаться пользователям, когда браузер запрашивает страницу несуществующего сайта.
+   * Замените заполнитель `<error-document-name>` именем документа об ошибке, который будет отображаться пользователям при запросе веб-браузером страницы, которая не существует.
 
-   * `<index-document-name>` Замените заполнитель именем документа индекса. Этот документ обычно имеет формат index. HTML.
+   * Замените заполнитель `<index-document-name>` именем документа индекса. Этот документ обычно имеет формат index. HTML.
 
 7. Передайте объекты в контейнер *$web* из исходного каталога.
 
@@ -162,9 +162,9 @@ az storage account show -n <storage-account-name> -g <resource-group-name> --que
     -Context $ctx
      ```
 
-   * Замените значение `C:\temp\index.html`заполнителя полным путем к файлу, который требуется передать (например,). `<path-to-file>`
+   * Замените значение заполнителя `<path-to-file>` полным путем к файлу, который требуется передать (например, `C:\temp\index.html`).
 
-   * Замените значение `index.html`заполнителя именем, которое нужно присвоить результирующему большому двоичному объекту (например:). `<blob-name>`
+   * Замените значение заполнителя `<blob-name>` именем, которое нужно присвоить результирующему большому двоичному объекту (например: `index.html`).
 
 <a id="powershell-find-url" />
 
@@ -179,17 +179,19 @@ az storage account show -n <storage-account-name> -g <resource-group-name> --que
 Write-Output $storageAccount.PrimaryEndpoints.Web
 ```
 
-* Замените значение `<resource-group-name>` заполнителя именем группы ресурсов.
+* Замените значение заполнителя `<resource-group-name>` именем группы ресурсов.
 
 * Замените значение заполнителя `<storage-account-name>` именем вашей учетной записи хранения.
 
 <a id="metrics" />
 
+---
+
 ## <a name="enable-metrics-on-static-website-pages"></a>Включить метрики на статических страницах веб-сайта
 
 После включения метрик в панели мониторинга метрик отображается статистика трафика по файлам в контейнере **$Web** .
 
-1. Щелкните **Параметры** > **мониторинг**метрики. > 
+1. Щелкните **параметры** > **мониторинг** **метрик** > .
 
    Данные метрик создаются с помощью подключения к API для различных метрик. На портале отображаются только элементы API, используемые в течение заданного промежутка времени, чтобы сосредоточиться только на тех элементах, которые возвращают данные. Чтобы убедиться, что вы можете выбрать необходимый элемент API, сначала нужно развернуть временной интервал.
 
@@ -217,12 +219,12 @@ Write-Output $storageAccount.PrimaryEndpoints.Web
 
    ![Поле GetWebContent метрики для статических веб-сайтов службы хранилища Azure](./media/storage-blob-static-website/storage-blob-static-website-metrics-getwebcontent.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Размещение статических веб-сайтов в службе хранилища Azure](storage-blob-static-website.md)
 * [Использование Azure CDN для доступа к BLOB-объектам с пользовательскими доменами по протоколу HTTPS](storage-https-custom-domain-cdn.md)
 * [Настройка имени личного домена для конечной точки хранилища BLOB-объектов](storage-custom-domain-name.md)
 * [Функции Azure](/azure/azure-functions/functions-overview)
-* [Служба приложений Azure](/azure/app-service/overview)
+* [службе приложений Azure](/azure/app-service/overview)
 * [Создание первого бессерверного веб-приложения](https://docs.microsoft.com/azure/functions/tutorial-static-website-serverless-api-with-database)
-* [Учебник. по размещению домена в Azure DNS](../../dns/dns-delegate-domain-azure-dns.md)
+* [Руководство. Размещение домена в Azure DNS](../../dns/dns-delegate-domain-azure-dns.md)

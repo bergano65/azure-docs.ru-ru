@@ -10,14 +10,15 @@ ms.subservice: core
 ms.topic: conceptual
 ms.reviewer: trbye
 ms.date: 07/12/2019
-ms.openlocfilehash: 80508a31db8d86569c52df98697ceb62520059d2
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.openlocfilehash: a47ce44a325720fb1b6df919a0a324a4d3319d86
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "71002757"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73489891"
 ---
 # <a name="enable-logging-in-azure-machine-learning"></a>Включение ведения журнала в Машинное обучение Azure
+[!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
 Пакет SDK Python для Машинного обучения Azure позволяет настроить ведение журнала, используя стандартный пакет ведения журнала для Python или собственные функции пакета SDK. Можно вести журналы как локально, так и в рабочей области на портале. Журналы предоставляют разработчикам сведения о состоянии приложения в реальном времени и могут помочь в диагностике ошибок или предупреждений. Из этой статьи вы узнаете:
 
@@ -58,7 +59,7 @@ run = experiment.submit(config=run_config_object, show_output=True)
 run.wait_for_completion(show_output=True)
 ```
 
-Кроме того, пакет SDK поддерживает стандартный пакет ведения журнала Python для некоторых сценариев обучения. В следующем примере для объекта `AutoMLConfig` включается уровень ведения журнала `INFO`.
+Кроме того, пакет SDK поддерживает стандартный пакет ведения журнала Python для некоторых сценариев обучения. В следующем примере для объекта `INFO` включается уровень ведения журнала `AutoMLConfig`.
 
 ```python
 from azureml.train.automl import AutoMLConfig
@@ -117,7 +118,7 @@ logs = service.get_logs()
 service.update(enable_app_insights=True)
 ```
 
-В [этом руководстве](how-to-enable-app-insights.md) вы найдете дополнительные сведения о работе с Application Insights на портале Azure.
+Дополнительные сведения о работе с Application Insights в Машинное обучение Azure Studio см. [в этой статье](how-to-enable-app-insights.md) .
 
 ## <a name="python-native-logging-settings"></a>Параметры собственного ведения журнала Python
 

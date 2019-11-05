@@ -9,15 +9,16 @@ ms.topic: conceptual
 ms.author: vaidyas
 author: csteegz
 ms.reviewer: larryfr
-ms.date: 07/24/2019
-ms.openlocfilehash: d0e0c5601a6cddf936604df6d5b48b8bf48e7c8d
-ms.sourcegitcommit: a7a9d7f366adab2cfca13c8d9cbcf5b40d57e63a
+ms.date: 10/25/2019
+ms.openlocfilehash: 2e088557bf61141d3ea3cbeb25d53f711a71fd97
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71162448"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73496862"
 ---
 # <a name="deploy-a-deep-learning-model-for-inference-with-gpu"></a>Развертывание модели глубокого обучения для вывода с помощью GPU
+[!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
 В этой статье объясняется, как использовать Машинное обучение Azure для развертывания модели с поддержкой GPU в качестве веб-службы. Сведения в этой статье основаны на развертывании модели в службе Azure Kubernetes Service (AKS). Кластер AKS предоставляет ресурс GPU, который используется моделью для вывода.
 
@@ -32,7 +33,7 @@ ms.locfileid: "71162448"
 > [!NOTE]
 > Сведения в этой статье основаны на сведениях в статье [развертывание в службе Azure Kubernetes Service](how-to-deploy-azure-kubernetes-service.md) . Когда эта статья обычно охватывает развертывание в AKS, в этой статье рассматривается развертывание GPU.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Рабочая область машинного обучения Azure. Дополнительные сведения см. в статье [создание машинное обучение Azure рабочей области](how-to-manage-workspace.md).
 
@@ -136,7 +137,7 @@ def run(raw_data):
 
 ## <a name="define-the-conda-environment"></a>Определение среды conda
 
-Файл среды conda определяет зависимости для службы. Он включает зависимости, необходимые как для модели, так и для скрипта записи. Следующая YAML определяет среду для модели Tensorflow. Он указывает `tensorflow-gpu`, что будет использовать GPU, используемый в этом развертывании:
+Файл среды conda определяет зависимости для службы. Он включает зависимости, необходимые как для модели, так и для скрипта записи. Следующая YAML определяет среду для модели Tensorflow. Он указывает `tensorflow-gpu`, который будет использовать GPU, используемый в этом развертывании:
 
 ```yaml
 name: project_environment
@@ -209,7 +210,7 @@ print(aks_service.state)
 ```
 
 > [!NOTE]
-> Если объект `InferenceConfig` имеет `enable_gpu=True`значение, `deployment_target` параметр должен ссылаться на кластер, который предоставляет GPU. В противном случае развертывание завершится ошибкой.
+> Если `InferenceConfig` объект имеет `enable_gpu=True`, то параметр `deployment_target` должен ссылаться на кластер, предоставляющий графический процессор. В противном случае развертывание завершится ошибкой.
 
 Дополнительные сведения см. в справочной документации по [модели](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py).
 
@@ -270,7 +271,7 @@ print("prediction:", resp.text)
 
 Дополнительные сведения о создании клиентского приложения см. в разделе [Создание клиента для использования развернутой веб-службы](how-to-consume-web-service.md).
 
-## <a name="clean-up-the-resources"></a>очищать ресурсы.
+## <a name="clean-up-the-resources"></a>Очистка ресурсов
 
 Если вы создали кластер AKS специально для этого примера, удалите ресурсы после завершения работы.
 
@@ -282,7 +283,7 @@ aks_service.delete()
 aks_target.delete()
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Развертывание модели на FPGA](../service/how-to-deploy-fpga-web-service.md)
 * [Развертывание модели с помощью ONNX](../service/concept-onnx.md#deploy-onnx-models-in-azure)

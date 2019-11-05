@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 03/12/2019
+ms.date: 11/05/2019
 ms.author: panosper
 ms.custom: seodec18
-ms.openlocfilehash: c0414277b4851891911908ba4f42e92abedc86e4
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 469dab093ed7a62171d232695af3258cc874b5f3
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68553199"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73481302"
 ---
 # <a name="speech-service-supported-regions"></a>Поддерживаемые регионы для службы "Речь"
 
@@ -24,7 +24,7 @@ ms.locfileid: "68553199"
 
 Вам нужно использовать конечную точку, которая соответствует региону для вашей подписки.
 
-## <a name="speech-sdk"></a>Пакет SDK для службы "Речь"
+## <a name="speech-sdk"></a>Пакет SDK для распознавания речи
 
 В [пакете SDK для службы "Речь"](speech-sdk.md) регионы указанны в виде строки (например, в качестве параметра `SpeechConfig.FromSubscription` в пакете SDK службы "Речь" для C#).
 
@@ -32,21 +32,21 @@ ms.locfileid: "68553199"
 
 Речевой пакет SDK доступен в этих регионах для **распознавания речи**, преобразования **текста в речь**и **перевода**:
 
-  Район | Параметр пакета SDK для службы "Речь" | Портал настройки распознавания речи
+  Регион | Параметр пакета SDK для службы "Речь" | Портал настройки распознавания речи
  ------|-------|--------
- Западная часть США | `westus` | https://westus.cris.ai
- Западная часть США 2 | `westus2` | https://westus2.cris.ai
- East US | `eastus` | https://eastus.cris.ai
+ Запад США | `westus` | https://westus.cris.ai
+ Западный регион США 2 | `westus2` | https://westus2.cris.ai
+ Восток США | `eastus` | https://eastus.cris.ai
  Восточная часть США 2 | `eastus2` | https://eastus2.cris.ai
- Центральная часть США | `centralus` | https://centralus.cris.ai
+ Центральный регион США | `centralus` | https://centralus.cris.ai
  Центрально-северная часть США | `northcentralus` | https://northcentralus.cris.ai
  Центрально-южная часть США | `southcentralus` | https://southcentralus.cris.ai
  Центральная Индия | `centralindia` | https://centralindia.cris.ai
  Восточная Азия | `eastasia` | https://eastasia.cris.ai
  Юго-Восточная Азия | `southeastasia` | https://southeastasia.cris.ai
- Восточная Япония | `japaneast` | https://japaneast.cris.ai
+ Восточная часть Японии | `japaneast` | https://japaneast.cris.ai
  Центральная Корея | `koreacentral` | https://koreacentral.cris.ai
- Восточная Австралия | `australiaeast` | https://australiaeast.cris.ai
+ Восточная часть Австралии | `australiaeast` | https://australiaeast.cris.ai
  Центральная Канада | `canadacentral` | https://canadacentral.cris.ai
  Северная Европа | `northeurope` | https://northeurope.cris.ai
  Западная Европа | `westeurope` | https://westeurope.cris.ai
@@ -57,38 +57,38 @@ ms.locfileid: "68553199"
 
 Регионы, доступные для **распознавания намерений** через пакет средств разработки службы "Речь", перечислены ниже:
 
- Глобальный регион | Район | Параметр пакета SDK для службы "Речь"
+ Глобальный регион | Регион | Параметр пакета SDK для службы "Речь"
  ------|-------|--------
  Азия | Восточная Азия | `eastasia`
  Азия | Юго-Восточная Азия | `southeastasia`
- Австралия | Восточная Австралия | `australiaeast`
+ Австралия | Восточная часть Австралии | `australiaeast`
  Европа | Северная Европа | `northeurope`
  Европа | Западная Европа | `westeurope`
- Северная Америка | East US | `eastus`
+ Северная Америка | Восток США | `eastus`
  Северная Америка | Восточная часть США 2 | `eastus2`
  Северная Америка | Центрально-южная часть США | `southcentralus`
- Северная Америка | Центрально-западная часть США | `westcentralus`
- Северная Америка | Западная часть США | `westus`
- Северная Америка | Западная часть США 2 | `westus2`
- Южная Америка | Южная Бразилия | `brazilsouth`
+ Северная Америка | Западно-центральная часть США | `westcentralus`
+ Северная Америка | Запад США | `westus`
+ Северная Америка | Западный регион США 2 | `westus2`
+ Северная Америка | Южная Бразилия | `brazilsouth`
 
 Это подмножество поддерживаемых регионов для публикации [службы распознавания речи (LUIS)](/azure/cognitive-services/luis/luis-reference-regions).
 
-### <a name="voice-first-virtual-assistants"></a>Виртуальные помощники по обработке голоса
+### <a name="voice-assistants"></a>Речевые помощники
 
-[Пакет SDK для распознавания речи](speech-sdk.md) поддерживает возможности **виртуального помощника** по голосовым функциям в следующих регионах:
+[Пакет SDK для распознавания речи](speech-sdk.md) поддерживает возможности **голосового помощника** в следующих регионах:
 
-Район | Параметр пакета SDK для службы "Речь"
+Регион | Параметр пакета SDK для службы "Речь"
 -------|---------------------
-Западная часть США | `westus`
-Западная часть США 2 | `westus2`
-East US | `eastus`
+Запад США | `westus`
+Западный регион США 2 | `westus2`
+Восток США | `eastus`
 Восточная часть США 2 | `eastus2`
 Западная Европа | `westeurope`
 Северная Европа | `northeurope`
 Юго-Восточная Азия | `southeastasia`
 
-## <a name="rest-apis"></a>REST API
+## <a name="rest-apis"></a>Интерфейсы API REST
 
 Служба "Речь" также предоставляет конечные точки REST для запросов распознавания речи в текст и преобразования текста в речь.
 

@@ -6,12 +6,12 @@ ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 10/07/2019
 ms.author: tomfitz
-ms.openlocfilehash: e8bcaf1e55b042f8dfd8bba2e2113894a67e8b13
-ms.sourcegitcommit: f9e81b39693206b824e40d7657d0466246aadd6e
+ms.openlocfilehash: 3bbd52615962c2cd187fb16282a373688175cf59
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72035624"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73476693"
 ---
 # <a name="resource-providers-for-azure-services"></a>Поставщики ресурсов для служб Azure
 
@@ -45,7 +45,7 @@ ms.locfileid: "72035624"
 | Microsoft.Cache | [Кэш Azure для Redis](/azure/azure-cache-for-redis/) |
 | Microsoft.Capacity | core |
 | Microsoft.Cdn | [Сеть доставки содержимого](../cdn/index.yml) |
-| Microsoft.CertificateRegistration | [Сертификаты службы приложений](../app-service/web-sites-purchase-ssl-web-site.md) |
+| Microsoft.CertificateRegistration | [Сертификаты службы приложений](../app-service/configure-ssl-certificate.md#import-an-app-service-certificate) |
 | Microsoft. Чанжеаналисис | [Azure Monitor](../azure-monitor/index.yml) |
 | Microsoft.ClassicCompute | Виртуальная машина классической модели развертывания |
 | Microsoft.ClassicInfrastructureMigrate | Миграция классической модели развертывания |
@@ -79,7 +79,7 @@ ms.locfileid: "72035624"
 | Microsoft.DBforPostgreSQL | [База данных Azure для PostgreSQL](/azure/postgresql/) |
 | Microsoft. Десктопвиртуализатион | [Виртуальный рабочий стол Windows](/azure/virtual-desktop/) |
 | Microsoft.DeploymentManager | [диспетчер развертывания Azure](deployment-manager-overview.md) |
-| Microsoft.Devices | [Центр Интернета вещей](/azure/iot-hub/)<br />[Служба подготовки устройств к добавлению в Центр Интернета вещей](/azure/iot-dps/) |
+| Microsoft.Devices | [Центр Интернета вещей](/azure/iot-hub/)<br />[Служба подготовки устройств для Центра Интернета вещей](/azure/iot-dps/) |
 | Microsoft. DevOps | [Azure DevOps](/azure/devops/) |
 | Microsoft.DevSpaces | [Azure Dev Spaces](/azure/dev-spaces/) |
 | Microsoft.DevTestLab | [Службы лаборатории Azure](../lab-services/index.yml) |
@@ -125,7 +125,7 @@ ms.locfileid: "72035624"
 | Microsoft.Migrate | [Служба "миграция Azure"](../migrate/migrate-overview.md) |
 | Microsoft. Микседреалити | [Пространственные привязки Azure.](/azure/spatial-anchors/) |
 | Microsoft.NetApp | [Azure NetApp Files](../azure-netapp-files/index.yml) |
-| Microsoft.Network. | [Виртуальная сеть](../virtual-network/index.yml)<br />[Load Balancer](../load-balancer/index.yml)<br />[Шлюз приложений](../application-gateway/index.yml)<br />[Azure DNS](../dns/index.yml)<br />[ExpressRoute](../expressroute/index.yml)<br />[VPN-шлюз](../vpn-gateway/index.yml)<br />[Диспетчер трафика](../traffic-manager/index.yml)<br />[Наблюдатель за сетями](../network-watcher/index.yml)<br />[Брандмауэр Azure](../firewall/index.yml)<br />[Azure Front Door Service](../frontdoor/index.yml)<br />[Azure бастиона](/azure/bastion/) |
+| Microsoft.Network. | [Виртуальная сеть](../virtual-network/index.yml)<br />[Балансировщик нагрузки](../load-balancer/index.yml)<br />[Шлюз приложений](../application-gateway/index.yml)<br />[Azure DNS](../dns/index.yml)<br />[ExpressRoute](../expressroute/index.yml)<br />[VPN-шлюз](../vpn-gateway/index.yml)<br />[Диспетчер трафика](../traffic-manager/index.yml)<br />[Наблюдатель за сетями](../network-watcher/index.yml)<br />[Брандмауэр Azure](../firewall/index.yml)<br />[Azure Front Door Service](../frontdoor/index.yml)<br />[Azure бастиона](/azure/bastion/) |
 | Microsoft.NotificationHubs | [Центры уведомлений](../notification-hubs/index.yml) |
 | Microsoft.OffAzure | [Служба "миграция Azure"](../migrate/migrate-overview.md) |
 | Microsoft.OperationalInsights | [Azure Monitor](../azure-monitor/index.yml) |
@@ -168,6 +168,6 @@ ms.locfileid: "72035624"
 | Microsoft.WindowsIoT | [Основные службы IoT Windows 10](https://docs.microsoft.com/windows-hardware/manufacture/iot/iotcoreservicesoverview) |
 | Microsoft.WorkloadMonitor | [Azure Monitor](../azure-monitor/index.yml) |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о поставщиках ресурсов см. в статье [поставщики и типы ресурсов Azure](resource-manager-supported-services.md) .
