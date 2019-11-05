@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 07/29/2019
+ms.date: 10/25/2019
 ms.author: diberry
-ms.openlocfilehash: 80e1052cb7acbdcec2dcb94f1667cae3c554d18e
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 54c9d79c62052daeee76de5dffb1099dc7d75180
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68932924"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73467721"
 ---
 # <a name="create-entities-without-utterances"></a>Создание сущностей без высказываний
 
@@ -25,6 +25,8 @@ ms.locfileid: "68932924"
 Добавлять, изменять или удалять сущности в приложении LUIS можно с помощью **Списка сущностей** на странице **Сущности**. LUIS предоставляет два основных типа сущностей: [предварительно созданные сущности](luis-reference-prebuilt-entities.md) и [пользовательские сущности](luis-concept-entity-types.md#types-of-entities).
 
 После создания сущности, предназначенной для компьютера, необходимо пометить эту сущность во всех примерах utterance всех целей.
+
+[!INCLUDE [Waiting for LUIS portal refresh](./includes/wait-v3-upgrade.md)]
 
 <a name="add-prebuilt-entity"></a>
 
@@ -64,7 +66,7 @@ ms.locfileid: "68932924"
 
 1. Во всплывающем диалоговом окне введите `Human resources form name` в поле **Имя сущности**, выберите **Регулярное выражение** в списке **Тип сущности**, введите регулярное выражение `hrf-[0-9]{6}`, а затем выберите **Готово**. 
 
-    Это регулярное выражение соответствует литеральным символам `hrf-`, а затем 6 цифрам для представления номера формы для формы отдела кадров.
+    Это регулярное выражение соответствует литеральным символам `hrf-`, затем 6 цифр для представления номера формы для формы отдела кадров.
 
 <a name="add-composite-entities"></a>
 
@@ -114,7 +116,7 @@ ms.locfileid: "68932924"
 
 Роль — это именованный подтип, основанный на контексте. Он доступен во всех сущностях, включая предварительно созданные и не являющиеся машинами сущности. 
 
-Синтаксис роли заключается **`{Entityname:Rolename}`** в том, где за именем сущности следует двоеточие, а затем имя роли. Например, `Move {personName} from {Location:Origin} to {Location:Destination}`.
+Синтаксис для роли **`{Entityname:Rolename}`** , где за именем сущности следует двоеточие, а затем имя роли. Пример: `Move {personName} from {Location:Origin} to {Location:Destination}`.
 
 1. В разделе **Сборка** на левой панели выберите **Сущности**.
 
@@ -187,7 +189,7 @@ ms.locfileid: "68932924"
 
 После добавления, изменения и удаления сущностей выполните [обучение](luis-how-to-train.md) и [публикацию](luis-how-to-publish-app.md) приложения, чтобы применить изменения к запросам конечной точки. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о предварительно созданных сущностях см. в проекте [Распознаватели текста](https://github.com/Microsoft/Recognizers-Text). 
 

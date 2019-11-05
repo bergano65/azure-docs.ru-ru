@@ -7,20 +7,20 @@ ms.service: container-service
 ms.topic: article
 ms.date: 05/31/2019
 ms.author: iainfou
-ms.openlocfilehash: 9cc06df5d2a66ede18af52c13201c731c12e2049
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: 719f45aeeb5c7aa7e9b5e597ed461808c9d2b005
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67614507"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73472595"
 ---
 # <a name="scale-the-node-count-in-an-azure-kubernetes-service-aks-cluster"></a>Масштабирование числа узлов в кластере Службы Azure Kubernetes (AKS)
 
-Если ресурсы требуют изменений приложений, вы можете вручную масштабировать кластер AKS, чтобы запустить другое число узлов. При уменьшении масштаба узлы будут тщательно [блокируются и останавливаются][kubernetes-drain] для минимизации простоя работающих приложений. При увеличении масштаба, AKS ожидает узлы будут отмечены `Ready` кластер Kubernetes, прежде чем модулей запланировано на их.
+Если ресурсы требуют изменений приложений, вы можете вручную масштабировать кластер AKS, чтобы запустить другое число узлов. При уменьшении масштаба узлы тщательно [блокируются и][kubernetes-drain] останавливаются, чтобы минимизировать перерывы в работе приложений. При увеличении масштаба AKS ожидает, пока узлы не помечаются `Ready` кластером Kubernetes до планирования модулей массовой загрузки.
 
 ## <a name="scale-the-cluster-nodes"></a>Масштабирование узлов кластера
 
-Во-первых, получите *имя* пула узла с помощью [az aks show][az-aks-show] команды. В следующем примере возвращается имя группы узлов для кластера с именем *myAKSCluster* в *myResourceGroup* группы ресурсов:
+Сначала получите *имя* пула узлов с помощью команды [AZ AKS показывать][az-aks-show] . В следующем примере показано получение имени пула узлов для кластера с именем *myAKSCluster* в группе ресурсов *myResourceGroup* :
 
 ```azurecli-interactive
 az aks show --resource-group myResourceGroup --name myAKSCluster --query agentPoolProfiles
@@ -44,7 +44,7 @@ $ az aks show --resource-group myResourceGroup --name myAKSCluster --query agent
 ]
 ```
 
-Используйте [az aks масштабирования][az-aks-scale] команду, чтобы масштабировать узлы кластера. В следующем примере кластер *myAKSCluster* масштабируется до одного узла. Укажите собственное значение *--nodepool-name* из предыдущей команды, например *nodepool1*.
+Используйте команду [AZ AKS Scale][az-aks-scale] для масштабирования узлов кластера. В следующем примере кластер *myAKSCluster* масштабируется до одного узла. Укажите собственное значение *--nodepool-name* из предыдущей команды, например *nodepool1*.
 
 ```azurecli-interactive
 az aks scale --resource-group myResourceGroup --name myAKSCluster --node-count 1 --nodepool-name <your node pool name>
@@ -72,9 +72,9 @@ az aks scale --resource-group myResourceGroup --name myAKSCluster --node-count 1
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-В этой статье вы вручную масштабировать кластер AKS, чтобы увеличить или уменьшить количество узлов. Можно также использовать [кластера автомасштабирования][cluster-autoscaler] (сейчас в предварительной версии в AKS) автоматически масштабировать кластер.
+В этой статье вы вручную масштабируете кластер AKS, чтобы увеличить или уменьшить количество узлов. Вы также можете использовать [Автомасштабирование кластера][cluster-autoscaler] для автоматического масштабирования кластера.
 
 <!-- LINKS - external -->
 [kubernetes-drain]: https://kubernetes.io/docs/tasks/administer-cluster/safely-drain-node/

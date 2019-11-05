@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 10/21/2019
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 5f11173c7b7f7396a8cf5cda4b9c8975cd7bb38e
-ms.sourcegitcommit: d37991ce965b3ee3c4c7f685871f8bae5b56adfa
+ms.openlocfilehash: 172003b13807720df2431a3610947b36d8303fed
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72679812"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73470362"
 ---
 # <a name="migrate-an-active-dns-name-to-azure-app-service"></a>Перенос активного DNS-имени в службу приложений Azure
 
@@ -119,10 +119,10 @@ ms.locfileid: "72679812"
 
 В примере с корневым доменом `contoso.com` повторно сопоставьте запись A или запись CNAME, как показано в примерах в следующей таблице: 
 
-| Пример полного доменного имени | Тип записи | Хост | Value |
+| Пример полного доменного имени | Тип записи | Узел | Значение |
 | - | - | - | - |
 | contoso.com (корневой домен) | A | `@` | IP-адрес из раздела [Копирование IP-адреса приложения](#info). |
-| www \.contoso. com (подпрограмма) | CNAME | `www` | _&lt;имя_приложения>.azurewebsites.net_ |
+| веб-\.contoso.com (подсистема) | CNAME | `www` | _&lt;имя_приложения>.azurewebsites.net_ |
 | \*.contoso.com (с подстановочным знаком) | CNAME | _\*_ | _&lt;имя_приложения>.azurewebsites.net_ |
 
 Сохраните параметры.
@@ -140,4 +140,4 @@ ms.locfileid: "72679812"
 Узнайте о том, как привязать настраиваемый SSL-сертификат к службе приложений.
 
 > [!div class="nextstepaction"]
-> [Привязывание существующего настраиваемого SSL-сертификата к Службе приложений Azure](app-service-web-tutorial-custom-ssl.md)
+> [Привязка SSL-сертификата к службе приложений Azure](configure-ssl-bindings.md)

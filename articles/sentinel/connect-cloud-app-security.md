@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/23/2019
+ms.date: 10/23/2019
 ms.author: rkarlin
-ms.openlocfilehash: 6e71028855344d083dedf3493682e1e27685de48
-ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
+ms.openlocfilehash: 95e38cee8f6995e09dbbb2194cd5a9d0ebc301c1
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71240121"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73498666"
 ---
 # <a name="connect-data-from-microsoft-cloud-app-security"></a>Подключение данных из Microsoft Cloud App Security 
 
@@ -27,21 +27,25 @@ ms.locfileid: "71240121"
 
 Вы можете выполнять потоковую передачу журналов из [Cloud App Security](https://docs.microsoft.com/cloud-app-security/what-is-cloud-app-security) в метку Azure одним щелчком мыши. Это подключение позволяет передавать оповещения из Cloud App Security в метку Azure. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - Пользователь с разрешениями глобального администратора или администратора безопасности
+- Чтобы выполнить потоковую передачу журналов Cloud Discovery в Azure Sentinel, [включите метку Azure в качестве SIEM в Microsoft Cloud App Security](aka.ms. https://aka.ms/AzureSentinelMCAS).
 
+> [!IMPORTANT]
+> Прием журналов Cloud Discovery в настоящее время находится в общедоступной предварительной версии.
+> Эта функция предоставляется без соглашения об уровне обслуживания и не рекомендуется для рабочих нагрузок.
+> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+ 
 ## <a name="connect-to-cloud-app-security"></a>Подключение к Cloud App Security
 
 Если у вас уже есть Cloud App Security, убедитесь, что он [включен в сети](https://docs.microsoft.com/cloud-app-security/getting-started-with-cloud-app-security).
 Если Cloud App Security развернут и принимает данные, данные предупреждений можно легко передать в Azure Sentinel.
 
 
-1. В поле Sentinel Azure выберите **соединители данных** , а затем щелкните плитку **Cloud App Security** .
+1. В поле Sentinel Azure выберите **соединители данных**, щелкните плитку **Cloud App Security** и выберите **открыть страницу соединителя**.
 
-1. Выберите, какие журналы вы хотите передавать в Azure Sentinel. Вы можете выбрать **оповещения**. 
-
-1. Вы можете выбрать, будут ли оповещения автоматически создавать инциденты в Azure Sentinel с Microsoft Cloud App Security автоматически. В разделе **Создание инцидентов** выберите **включить** , чтобы включить правило аналитики по умолчанию, которое автоматически создает инциденты на основе предупреждений, созданных в подключенной службе безопасности. Затем можно изменить это правило в разделе **аналитика** , а затем — **активные правила**.
+1. Выберите журналы для потоковой передачи в Azure Sentinel. Вы можете выбрать **оповещения** и **Cloud Discovery журналы** (Предварительная версия). 
 
 1. Щелкните **Подключить**.
 
@@ -50,7 +54,7 @@ ms.locfileid: "71240121"
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В этом документе вы узнали, как подключить Microsoft Cloud App Security к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [получить представление о данных и потенциальных угрозах](quickstart-get-visibility.md).
-- Приступая [к обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).
+- Приступая [к обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats.md).

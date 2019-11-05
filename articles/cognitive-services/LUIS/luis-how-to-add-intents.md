@@ -8,21 +8,23 @@ manager: nitinme
 ms.custom: seodec18
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 07/29/2019
+ms.date: 10/25/2019
 ms.author: diberry
 ms.service: cognitive-services
-ms.openlocfilehash: eb90a902b8f7fe8b37b81c2825cbdfc25ef5dc0d
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 1f2f001489552203f0157dd24356341eb3184c81
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68932889"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73467543"
 ---
 # <a name="add-intents-to-determine-user-intention-of-utterances"></a>Добавление намерений для определения намерения пользователя для фраз
 
 Добавьте [намерения](luis-concept-intent.md) в приложение LUIS для определения групп вопросов или команд, которые имеют одинаковые намерения. 
 
 Для управления намерениями в верхней панели навигации выберите раздел **Построение**, а затем в левой панели выберите **Намерения**. 
+
+[!INCLUDE [Waiting for LUIS portal refresh](./includes/wait-v3-upgrade.md)]
 
 ## <a name="add-intent"></a>Добавление намерения
 
@@ -48,7 +50,7 @@ ms.locfileid: "68932889"
 
 Пример, utterance в намерении, может иметь ошибку прогнозирования намерений между намерениями, в которых в настоящее время находится utterance, и цель прогнозирования, определенная во время обучения. 
 
-Чтобы найти ошибки прогнозирования utterance и исправить их, используйте параметры **оценки** неверного и неясного параметров в сочетании с параметром **View** в **подробном представлении**. 
+Чтобы найти ошибки прогнозирования utterance и исправить их, используйте параметры **оценки** неверного и неясного **параметров в сочетании с параметром** **View** в **подробном представлении**. 
 
 ![Чтобы найти ошибки прогнозирования utterance и исправить их, используйте параметр фильтра.](./media/luis-how-to-add-intents/find-intent-prediction-errors.png)
 
@@ -105,6 +107,6 @@ ms.locfileid: "68932889"
 
 После добавления, изменения или удаления намерений выполните [обучение](luis-how-to-train.md) и [публикацию](luis-how-to-publish-app.md) приложения, чтобы применить изменения к запросам конечной точки. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о добавлении [примеров высказываний](luis-how-to-add-example-utterances.md) с сущностями. 

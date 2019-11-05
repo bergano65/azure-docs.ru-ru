@@ -1,9 +1,8 @@
 ---
-title: Коды ошибок REST API для Студии машинного обучения Azure | Документация Майкрософт
+title: Коды ошибок REST API — Машинное обучение Azure Studio (классическая модель) | Документация Майкрософт
 description: Эти коды ошибок могут быть возвращены операцией с веб-службой машинного обучения Azure.
 keywords: ''
 services: machine-learning
-documentationcenter: ''
 author: xiaoharper
 ms.custom: seodec18
 ms.author: amlstudiodocs
@@ -11,21 +10,18 @@ editor: cgronlun
 ms.assetid: 0923074b-3728-439d-a1b8-8a7245e39be4
 ms.service: machine-learning
 ms.subservice: studio
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: reference
 ms.date: 11/16/2016
-ms.openlocfilehash: 8e91d0cd68997dee9bb00cceeaa6b697f6644ee5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 15e73740f5d932d0fa4cfb9a56c9fe7b155555cc
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60736570"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73468159"
 ---
-# <a name="azure-machine-learning-studio-rest-api-error-codes"></a>Коды ошибок REST API для Студии машинного обучения Azure
+# <a name="azure-machine-learning-studio-classic-rest-api-error-codes"></a>Коды ошибок Машинное обучение Azure Studio (классическая модель) REST API
  
-Приведенные ниже коды ошибок могут быть возвращены операцией с веб-службой Студии машинного обучения Azure.
+Следующие коды ошибок могут возвращаться операцией в веб-службе Машинное обучение Azure Studio (классической).
  
 ## <a name="badargument-http-status-code-400"></a>BadArgument (код состояния HTTP: 400)
  
@@ -69,7 +65,7 @@ ms.locfileid: "60736570"
 | MissingWebServicePackage | Не указан пакет веб-службы. Укажите допустимый пакет веб-службы и повторите попытку. |
 | MissingWorkspaceId | Не указан идентификатор рабочей области. Укажите допустимый идентификатор рабочей области и повторите попытку. |
 | ModelConfigurationInvalid | Недопустимая конфигурации модели в пакете модели. Убедитесь, конфигурация модели содержит определение конечных точек вывода, конечную точку ошибок STD и конечную точку вывода STD, затем повторите попытку. |
-| ModelPackageIdInvalid | Недопустимый идентификатор пакета модели. Проверьте, правильно ли указан идентификатор пакета модели, и повторите попытку. |
+| ModelPackageIdInvalid | Недопустимый идентификатор пакета модели. Проверьте правильность идентификатора пакета модели и повторите попытку. |
 | RequestBodyInvalid | Не указан текст запроса, или при десериализации текста запроса произошла ошибка. |
 | RequestIsEmpty | Запрос не указан. Укажите допустимый запрос и повторите попытку. |
 | UnexpectedParameter | Указан непредвиденный параметр. Проверьте, что имена всех параметров указаны правильно и что передаются только ожидаемые параметры, после чего повторите попытку. |

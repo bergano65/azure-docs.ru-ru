@@ -1,24 +1,23 @@
 ---
-title: Пользовательский навык когнитивного поиска — служба "Поиск Azure"
-description: Расширьте возможности наборов навыков когнитивного поиска путем вызова веб-API
-services: search
+title: Пользовательский навык веб-API в конвейере обогащения
+titleSuffix: Azure Cognitive Search
+description: Расширьте возможности Azure Когнитивный поиск навыков, вызывая веб-API. Используйте пользовательский навык веб-API для интеграции пользовательского кода.
 manager: nitinme
 author: luiscabrer
-ms.service: search
-ms.workload: search
-ms.topic: conceptual
-ms.date: 05/02/2019
 ms.author: luisca
-ms.openlocfilehash: fda4f96c2c73c5a2d39435a509afcf654ed77b70
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.service: cognitive-search
+ms.topic: conceptual
+ms.date: 11/04/2019
+ms.openlocfilehash: 24b0d0caa9deb43bc198b3c09836ac94777cf154
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72901317"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73466736"
 ---
-# <a name="custom-web-api-skill"></a>Пользовательский навык веб-API
+# <a name="custom-web-api-skill-in-an-azure-cognitive-search-enrichment-pipeline"></a>Пользовательский навык веб-API в конвейере Когнитивный поиск обогащения Azure
 
-**Пользовательский навык веб-API** позволяет расширять функции поиска, вызывая конечную точку веб-API, предоставляющую настраиваемые операции. Аналогично встроенным навыкам **пользовательский навык веб-API** имеет входные и выходные данные. В зависимости от входных данных веб-API получает полезные данные JSON при выполнении индексатора и выводит полезные данные JSON в качестве ответа, а также код состояния успеха. В ответе должны содержаться выходные данные, указанные в вашем пользовательском навыке. Любой другой ответ считается ошибкой, и никакие обогащения не выполняются.
+**Пользовательский навык веб-API** позволяет расширить возможности искусственного интеллекта, вызывая конечную точку веб-API, предоставляющую настраиваемые операции. Аналогично встроенным навыкам **пользовательский навык веб-API** имеет входные и выходные данные. В зависимости от входных данных веб-API получает полезные данные JSON при выполнении индексатора и выводит полезные данные JSON в качестве ответа, а также код состояния успеха. В ответе должны содержаться выходные данные, указанные в вашем пользовательском навыке. Любой другой ответ считается ошибкой, и никакие обогащения не выполняются.
 
 Структура полезных данных JSON описана далее в этом документе.
 
@@ -35,7 +34,7 @@ Microsoft.Skills.Custom.WebApiSkill
 
 Параметры зависят от регистра.
 
-| Имя параметра     | Описание |
+| Имя параметра     | Description (Описание) |
 |--------------------|-------------|
 | uri | Универсальный код ресурса (URI) веб-API, в который будут отправляться полезные данные _JSON_ . Допускается только схема URI **HTTPS**. |
 | httpMethod | Метод, используемый при отправке полезных данных. Допустимые методы: `PUT` или `POST`. |
@@ -58,7 +57,7 @@ Microsoft.Skills.Custom.WebApiSkill
 ```json
   {
         "@odata.type": "#Microsoft.Skills.Custom.WebApiSkill",
-        "description": "A custom skill that can count the number of words or characters or lines in text",
+        "description": "A custom skill that can identify positions of different phrases in the source text",
         "uri": "https://contoso.count-things.com",
         "batchSize": 4,
         "context": "/document",
@@ -72,14 +71,13 @@ Microsoft.Skills.Custom.WebApiSkill
             "source": "/document/languageCode"
           },
           {
-            "name": "countOf",
-            "source": "/document/propertyToCount"
+            "name": "phraseList",
+            "source": "/document/keyphrases"
           }
         ],
         "outputs": [
           {
-            "name": "count",
-            "targetName": "countOfThings"
+            "name": "hitPositions"
           }
         ]
       }
@@ -103,7 +101,7 @@ Microsoft.Skills.Custom.WebApiSkill
            {
              "text": "Este es un contrato en Inglés",
              "language": "es",
-             "countOf": "words"
+             "phraseList": ["Este", "Inglés"]
            }
       },
       {
@@ -112,16 +110,16 @@ Microsoft.Skills.Custom.WebApiSkill
            {
              "text": "Hello world",
              "language": "en",
-             "countOf": "characters"
+             "phraseList": ["Hi"]
            }
       },
       {
         "recordId": "2",
         "data":
            {
-             "text": "Hello world \r\n Hi World",
+             "text": "Hello world, Hi world",
              "language": "en",
-             "countOf": "lines"
+             "phraseList": ["world"]
            }
       },
       {
@@ -130,7 +128,7 @@ Microsoft.Skills.Custom.WebApiSkill
            {
              "text": "Test",
              "language": "es",
-             "countOf": null
+             "phraseList": []
            }
       }
     ]
@@ -159,7 +157,7 @@ Microsoft.Skills.Custom.WebApiSkill
             },
             "errors": [
               {
-                "message" : "Cannot understand what needs to be counted"
+                "message" : "'phraseList' should not be null or empty"
               }
             ],
             "warnings": null
@@ -167,7 +165,7 @@ Microsoft.Skills.Custom.WebApiSkill
         {
             "recordId": "2",
             "data": {
-                "count": 2
+                "hitPositions": [6, 16]
             },
             "errors": null,
             "warnings": null
@@ -175,7 +173,7 @@ Microsoft.Skills.Custom.WebApiSkill
         {
             "recordId": "0",
             "data": {
-                "count": 6
+                "hitPositions": [0, 23]
             },
             "errors": null,
             "warnings": null
@@ -183,10 +181,12 @@ Microsoft.Skills.Custom.WebApiSkill
         {
             "recordId": "1",
             "data": {
-                "count": 11
+                "hitPositions": []
             },
             "errors": null,
-            "warnings": null
+            "warnings": {
+                "message": "No occurrences of 'Hi' were found in the input text"
+            }
         },
     ]
 }
@@ -203,7 +203,6 @@ Microsoft.Skills.Custom.WebApiSkill
 
 ## <a name="see-also"></a>Дополнительные материалы
 
-+ [Power Skills: репозиторий пользовательских навыков](https://aka.ms/powerskills)
-+ [How to define a skillset](cognitive-search-defining-skillset.md) (Определение набора навыков)
-+ [Добавление пользовательского навыка в конвейер когнитивного поиска](cognitive-search-custom-skill-interface.md)
-+ [Пример. Создание пользовательского навыка для поиска со возначением](cognitive-search-create-custom-skill-example.md)
++ [Определение набора навыков](cognitive-search-defining-skillset.md)
++ [Добавление пользовательского навыка в конвейер обогащения искусственного интеллекта](cognitive-search-custom-skill-interface.md)
++ [Пример. Создание настраиваемого навыка для обогащения искусственного интеллекта ("воexample.md"-"создать-пользовательский-навык-")

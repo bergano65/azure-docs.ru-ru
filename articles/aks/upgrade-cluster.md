@@ -7,18 +7,18 @@ ms.service: container-service
 ms.topic: article
 ms.date: 05/31/2019
 ms.author: mlearned
-ms.openlocfilehash: 9404888eadf94eaf86a6e8584b49595e10b34c69
-ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
+ms.openlocfilehash: 36bd05940644b62bc3e58b642bfe6c00238383fa
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71264182"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73472478"
 ---
 # <a name="upgrade-an-azure-kubernetes-service-aks-cluster"></a>Обновление кластера службы Azure Kubernetes (AKS)
 
 Частое обновление Kubernetes до последней версии является частью жизненного цикла кластера AKS. Очень важно применять последние выпуски безопасности Kubernetes или обновлять последние функции. В этой статье показано, как обновить главные компоненты или один пул узлов по умолчанию в кластере AKS.
 
-Для кластеров AKS, использующих несколько пулов узлов или узлов Windows Server (в настоящее время в предварительной версии в AKS), см. статью [Обновление пула узлов в AKS][nodepool-upgrade].
+Для кластеров AKS, использующих несколько пулов узлов или узлов Windows Server (в настоящее время находится в предварительной версии в AKS), см. статью [Обновление пула узлов в AKS][nodepool-upgrade].
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
@@ -38,7 +38,7 @@ az aks get-upgrades --resource-group myResourceGroup --name myAKSCluster --outpu
 > [!NOTE]
 > После обновления кластера AKS промежуточные версии Kubernetes невозможно пропустить. Например, Допускается обновление с параметром *1.12. x* -> *1.13. x* или *1.13. x* -> *1.14. x* , однако *1.12. x* -> *1.14. x* — нет.
 >
-> Чтобы выполнить обновление, начиная с *1.12. x* -> *1.14. x*, сначала выполните обновление с *1.12. x* -> *1.13. x*, а затем выполните обновление с *1.13. x* -> *1.14. x*.
+> Для обновления с *1.12. x* -> *1.14. x*сначала выполните обновление с *1.12. x* -> *1.13. x*, а затем выполните обновление с *1.13. x* -> *1.14. x*.
 
 В следующем примере выходных данных показано, что кластер можно обновить до версии *1.13.9* и *1.13.10*:
 
@@ -81,7 +81,7 @@ Name          Location    ResourceGroup    KubernetesVersion    ProvisioningStat
 myAKSCluster  eastus      myResourceGroup  1.13.10               Succeeded            myaksclust-myresourcegroup-19da35-90efab95.hcp.eastus.azmk8s.io
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье было показано, как выполнить обновление существующего кластера AKS. Дополнительные сведения о развертывании AKS и управлении ею см. в следующей статье.
 

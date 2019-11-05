@@ -5,16 +5,16 @@ services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: conceptual
-ms.date: 09/24/2019
+ms.date: 10/31/2019
 ms.author: helohr
-ms.openlocfilehash: 561dad566d7f1caaf609c8013fa075062e4471ea
-ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
-ms.translationtype: MT
+ms.openlocfilehash: 1d7f08dbaa9b91cd2dbac28daf5c17ea85d09985
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71676745"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73482219"
 ---
-# <a name="connect-with-the-windows-desktop-client"></a>Подключение к клиенту Windows Desktop
+# <a name="connect-with-the-windows-desktop-client"></a>Подключение к классическому клиенту Windows
 
 > Область применения: Windows 7 и Windows 10
 
@@ -25,11 +25,11 @@ ms.locfileid: "71676745"
 
 ## <a name="install-the-windows-desktop-client"></a>Установка настольного клиента Windows
 
-Сейчас вы можете скачать клиенты:
+Выберите клиент, который соответствует вашей версии Windows:
 
 - [Windows 64-разрядная](https://go.microsoft.com/fwlink/?linkid=2068602)
-
-Мы будем обновлять этот список, так как клиент станет доступным для других версий Windows.
+- [Предварительная версия Windows 32-bit](https://go.microsoft.com/fwlink/?linkid=2098960)
+- [Предварительная версия Windows ARM64](https://go.microsoft.com/fwlink/?linkid=2098961)
 
 Можно установить клиент для текущего пользователя, который не требует прав администратора, или администратор может установить и настроить клиент, чтобы все пользователи устройства могли получить к нему доступ.
 
@@ -55,6 +55,6 @@ ms.locfileid: "71676745"
 
 После подписки на веб-канал содержимое веб-канала автоматически обновляется на регулярной основе. Ресурсы можно добавлять, изменять или удалять в зависимости от изменений, внесенных администратором.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об использовании настольного клиента Windows см. в статье Начало [работы с настольным клиентом Windows](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/clients/windowsdesktop).

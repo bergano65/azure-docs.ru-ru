@@ -1,7 +1,7 @@
 ---
 title: Повторное обучение и развертывание веб-службы
-titleSuffix: Azure Machine Learning Studio
-description: Сведения о переобучении модели машинного обучения и настройке этой модели для веб-службы с помощью Студии машинного обучения Azure.
+titleSuffix: Azure Machine Learning Studio (classic)
+description: Узнайте, как обновить веб-службу для использования недавно обученной модели машинного обучения в Машинное обучение Azure Studio (классическая модель).
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
@@ -10,18 +10,18 @@ author: xiaoharper
 ms.author: amlstudiodocs
 ms.custom: seodec18
 ms.date: 02/14/2019
-ms.openlocfilehash: a3f441a0dd7f7b9f402390e853bd1c28f282f653
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 55b054ffe55430ea106c72cdd91fdfba3a457cf5
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66245093"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73482997"
 ---
 # <a name="retrain-and-deploy-a-machine-learning-model"></a>Повторное обучение и развертывание модели машинного обучения
 
-Повторное обучение — один из способов поддерживать точность моделей машинного обучения и учитывать самые актуальные доступные данные. В этой статье описаны процессы повторного обучения и развертывания модели машинного обучения в качестве новой веб-службы с помощью Studio. Если вас интересует повторное обучение для классической веб-службы, [изучите это практическое руководство.](retrain-classic-web-service.md)
+Повторное обучение — один из способов поддерживать точность моделей машинного обучения и учитывать самые актуальные доступные данные. В этой статье показано, как переучить и развернуть модель машинного обучения в качестве новой веб-службы в Studio (классической). Если вас интересует повторное обучение для классической веб-службы, [изучите это практическое руководство.](retrain-classic-web-service.md)
 
-Для работы с этой статьей требуется развернутая прогнозная веб-служба. Если у вас еще нет прогнозной веб-службы, [изучите эти сведения о развертывании веб-службы Studio.](publish-a-machine-learning-web-service.md)
+Для работы с этой статьей требуется развернутая прогнозная веб-служба. Если у вас еще нет прогнозной веб-службы, [Узнайте, как развернуть веб-службу Studio (классическая).](publish-a-machine-learning-web-service.md)
 
 Для повторного обучения и развертывания новой веб-службы машинного обучения вам потребуется выполнить следующие задачи:
 
@@ -59,7 +59,7 @@ ms.locfileid: "66245093"
 
 Следуйте приведенным ниже инструкциям, чтобы вызвать API переобучения:
 
-1. Создайте в Visual Studio консольное приложение C#. Выберите **Создать** > **Проект** > **Visual C#**  > **Классический рабочий стол Windows** > **Консольное приложение (.NET Framework)** .
+1. Создайте консольное приложение C# в Visual Studio (**Создать** > **Проект** > **Visual C#**  > **Классический рабочий стол Windows** > **Консольное приложение (.NET Framework**).
 1. Войдите на портал веб-служб Машинного обучения.
 1. Щелкните веб-службу, с которой работаете.
 1. Щелкните **Consume**(Использование).
@@ -89,7 +89,7 @@ ms.locfileid: "66245093"
 1. Выберите в списке учетную запись хранения, которая будет использоваться для хранения переобученной модели.
 1. В левой области навигации щелкните **Ключи доступа**.
 1. Скопируйте и сохраните **первичный ключ доступа**.
-1. В левой области навигации, щелкните **большие двоичные объекты**.
+1. В левом столбце навигации щелкните **Blobs (большие двоичные объекты**).
 1. Выберите существующий контейнер или создайте другой, а затем сохраните его имя.
 
 Найдите объявления *StorageAccountName*, *StorageAccountKey* и *StorageContainerName*, а затем обновите их, используя значения с портала.
@@ -132,15 +132,15 @@ ms.locfileid: "66245093"
 
 ### <a name="sign-in-to-azure-resource-manager"></a>Вход в Azure Resource Manager
 
-Во-первых, войдите учетную запись Azure в среде PowerShell с помощью [Connect AzAccount](/powershell/module/az.accounts/connect-azaccount) командлета.
+Во-первых, войдите в свою учетную запись Azure из среды PowerShell с помощью командлета [Connect-азаккаунт](/powershell/module/az.accounts/connect-azaccount) .
 
 ### <a name="get-the-web-service-definition-object"></a>Получение объекта определения веб-службы
 
-Затем получите объект определения веб-службы путем вызова [Get AzMlWebService](https://docs.microsoft.com/powershell/module/az.machinelearning/get-azmlwebservice) командлета.
+Затем получите объект определения веб-службы, вызвав командлет [Get-азмлвебсервице](https://docs.microsoft.com/powershell/module/az.machinelearning/get-azmlwebservice) .
 
     $wsd = Get-AzMlWebService -Name 'RetrainSamplePre.2016.8.17.0.3.51.237' -ResourceGroupName 'Default-MachineLearning-SouthCentralUS'
 
-Чтобы определить имя группы ресурсов существующей веб-службы, выполните командлет Get-AzMlWebService без параметров для отображения веб-служб в вашей подписке. Найдите необходимую веб-службу и посмотрите ее идентификатор. Имя группы ресурсов — это четвертый элемент в идентификаторе, который следует сразу за элементом *resourceGroups* . В следующем примере имя группы ресурсов — Default-MachineLearning-SouthCentralUS.
+Чтобы определить имя группы ресурсов существующей веб-службы, выполните командлет Get-Азмлвебсервице без параметров, чтобы отобразить веб-службы в подписке. Найдите необходимую веб-службу и посмотрите ее идентификатор. Имя группы ресурсов — это четвертый элемент в идентификаторе, который следует сразу за элементом *resourceGroups* . В следующем примере имя группы ресурсов — Default-MachineLearning-SouthCentralUS.
 
     Properties : Microsoft.Azure.Management.MachineLearning.WebServices.Models.WebServicePropertiesForGraph
     Id : /subscriptions/<subscription ID>/resourceGroups/Default-MachineLearning-SouthCentralUS/providers/Microsoft.MachineLearning/webServices/RetrainSamplePre.2016.8.17.0.3.51.237
@@ -155,7 +155,7 @@ ms.locfileid: "66245093"
 
 ### <a name="export-the-web-service-definition-object-as-json"></a>Экспорт объекта определения веб-службы в формате JSON
 
-Чтобы изменить определение обученной модели для использования обученной модели, необходимо сначала использовать [AzMlWebService экспорта](https://docs.microsoft.com/powershell/module/az.machinelearning/export-azmlwebservice) и экспортировать его в файл формата JSON.
+Чтобы изменить определение обученной модели для использования новой обученной модели, сначала необходимо использовать командлет [Export-азмлвебсервице](https://docs.microsoft.com/powershell/module/az.machinelearning/export-azmlwebservice) , чтобы экспортировать его в файл формата JSON.
 
     Export-AzMlWebService -WebService $wsd -OutputFile "C:\temp\mlservice_export.json"
 
@@ -178,13 +178,13 @@ ms.locfileid: "66245093"
 
 ### <a name="import-the-json-into-a-web-service-definition-object"></a>Импорт JSON-файла в объект определения веб-службы
 
-Используйте [AzMlWebService импорта](https://docs.microsoft.com/powershell/module/az.machinelearning/import-azmlwebservice) для преобразования измененного JSON-файла обратно в объект определения веб-службы, который можно использовать для обновления прогнозного эксперимента.
+Используйте командлет [Import-азмлвебсервице](https://docs.microsoft.com/powershell/module/az.machinelearning/import-azmlwebservice) , чтобы преобразовать измененный файл JSON обратно в объект определения веб-службы, который можно использовать для обновления эксперимента прогнозного.
 
     $wsd = Import-AzMlWebService -InputFile "C:\temp\mlservice_export.json"
 
 ### <a name="update-the-web-service"></a>Обновление веб-службы
 
-Наконец, используйте [AzMlWebService обновления](https://docs.microsoft.com/powershell/module/az.machinelearning/update-azmlwebservice) командлет для обновления прогнозного эксперимента.
+Наконец, используйте командлет [Update-азмлвебсервице](https://docs.microsoft.com/powershell/module/az.machinelearning/update-azmlwebservice) для обновления прогнозного эксперимента.
 
     Update-AzMlWebService -Name 'RetrainSamplePre.2016.8.17.0.3.51.237' -ResourceGroupName 'Default-MachineLearning-SouthCentralUS'
 

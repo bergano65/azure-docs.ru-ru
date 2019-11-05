@@ -9,24 +9,26 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 07/29/2019
+ms.date: 10/25/2019
 ms.author: diberry
-ms.openlocfilehash: 982dbf3555648c6a7c82da90a62740a584473c1e
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: aa1cbd08bdf8d92653a8f30ae67ecd813e563999
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68932836"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73467512"
 ---
 # <a name="use-versions-to-edit-and-test-without-impacting-staging-or-production-apps"></a>Использование версий для изменения и проверки без влияния на промежуточные или рабочие приложения
 
 Версии позволяют создавать и публиковать различные модели. Прежде чем вносить изменения в активную модель рекомендуется клонировать ее текущую в [другую](luis-concept-version.md) версию приложения. 
 
+[!INCLUDE [Waiting for LUIS portal refresh](./includes/wait-v3-upgrade.md)]
+
 Для работы с версиями откройте приложение, выбрав его имя на странице **Мои приложения**, на верхней панели выберите **Управление**, а затем нажмите **Версии** левой панели навигации. 
 
 Список версий показывает, какие версии публикуются, где они публикуются, и какая версия активна в данный момент. 
 
-[![Раздел "Управление", страница "Версии"](./media/luis-how-to-manage-versions/versions-import.png "раздел \"Управление\", страница \"Версии\"")](./media/luis-how-to-manage-versions/versions-import.png#lightbox)
+[![Раздел "Управление", страница "версии"](./media/luis-how-to-manage-versions/versions-import.png "раздел "Управление", страница "Версии"")](./media/luis-how-to-manage-versions/versions-import.png#lightbox)
 
 ## <a name="clone-a-version"></a>Клонирование версии
 
@@ -45,7 +47,7 @@ ms.locfileid: "68932836"
 
 Выберите версию из списка, а затем на панели инструментов нажмите **Активировать**. 
 
-[![Раздел "Управление", страница "Версии", действие "Создать версию"](./media/luis-how-to-manage-versions/versions-other.png "Раздел \"Управление\", страница \"Версии\", действие \"Создать версию\"")](./media/luis-how-to-manage-versions/versions-other.png#lightbox)
+[![Управление разделами, страницами версий, создание действия версии](./media/luis-how-to-manage-versions/versions-other.png "Управление разделами, страницами версий, создание действия версии")](./media/luis-how-to-manage-versions/versions-other.png#lightbox)
 
 ## <a name="import-version"></a>Импорт версии
 
@@ -59,13 +61,13 @@ ms.locfileid: "68932836"
 
 ### <a name="import-errors"></a>Ошибки импорта
 
-* Ошибки лексемы: Если при импорте возникает **ошибка анализатора** , вы пытаетесь импортировать версию, использующую другой [токен](luis-language-support.md#custom-tokenizer-versions), отличный от используемого приложением в данный момент. Чтобы устранить эту проблему, см. раздел [Миграция между версиями](luis-language-support.md#migrating-between-tokenizer-versions)маркеров.
+* Ошибки маркеров: Если при импорте возникает **Ошибка** с помощью токена, вы пытаетесь импортировать версию, использующую [другой токен, отличный от](luis-language-support.md#custom-tokenizer-versions) используемого приложением в данный момент. Чтобы устранить эту проблему, см. раздел [Миграция между версиями](luis-language-support.md#migrating-between-tokenizer-versions)маркеров.
 
 <a name = "export-version"></a>
 
 ## <a name="other-actions"></a>Другие действия
 
-* Чтобы **удалить** версию выберите ее из списка, а затем на панели инструментов нажмите **Удалить**. Выберите **ОК**. 
+* Чтобы **удалить** версию выберите ее из списка, а затем на панели инструментов нажмите **Удалить**. Нажмите кнопку **ОК**. 
 * Чтобы **переименовать** версию выберите ее из списка, а затем на панели инструментов нажмите **Переименовать**. Введите новое имя и выберите **Готово**. 
 * Чтобы **экспортировать** версию выберите ее из списка, а затем на панели инструментов нажмите **Экспортировать приложение**. Выберите JSON для экспорта для резервного копирования, выберите **Экспорт для контейнера** , чтобы [использовать это приложение в контейнере Luis](luis-container-howto.md).  
 

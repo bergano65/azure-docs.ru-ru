@@ -10,12 +10,12 @@ ms.service: billing
 ms.topic: article
 ms.date: 05/30/2019
 ms.author: byvinyal
-ms.openlocfilehash: ccddd13ddd8c10daba84f959b1cc1f8a4a80deb1
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.openlocfilehash: 71e4b62ddcb3f144b49b99e6ba95a47971d3f4bb
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71345550"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73476930"
 ---
 # <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Подписка Azure, границы, квоты и ограничения службы
 В этом документе указаны некоторые из наиболее распространенных ограничений Microsoft Azure, которые иногда называются квотами. Этот документ на текущий момент охватывает не все службы Azure. Со временем список будет развернут и обновлен, чтобы охватить больше служб.
@@ -47,7 +47,7 @@ ms.locfileid: "71345550"
 * [Шлюз приложений](#application-gateway-limits)
 * [Служба автоматизации](#automation-limits)
 * [Кэш Azure для Redis](#azure-cache-for-redis-limits)
-* [Oблачныe службы Azure2](#azure-cloud-services-limits)
+* [Oблачныe службы Azure2}
 * [Azure Cognitive Services](#azure-cognitive-services-limits)
 * [Azure Cosmos DB](#azure-cosmos-db-limits)
 * [База данных Azure для MySQL](#azure-database-for-mysql)
@@ -56,13 +56,13 @@ ms.locfileid: "71345550"
 * [Брандмауэр Azure](#azure-firewall-limits)
 * [Функции Azure](#functions-limits)
 * [Служба Azure Kubernetes (AKS)](#azure-kubernetes-service-limits)
-* [Служба "Машинное обучение Azure"](#azure-machine-learning-service-limits)
+* [Машинное обучение Azure](#azure-machine-learning-limits)
 * [Azure Maps](#azure-maps-limits)
 * [Azure Monitor](#azure-monitor-limits)
 * [Политика Azure](#azure-policy-limits)
 * [Поиск Azure;](#azure-search-limits)
 * [Служба Azure SignalR](#azure-signalr-service-limits)
-* [Azure Backup](#backup-limits)
+* [Архивация](#backup-limits)
 * [Пакетная служба](#batch-limits)
 * [Службы BizTalk](#biztalk-services-limits)
 * [Экземпляры контейнеров](#container-instances-limits)
@@ -77,18 +77,19 @@ ms.locfileid: "71345550"
 * [Служба "Передняя дверь"](#azure-front-door-service-limits)
 * [Диспетчер удостоверений](#identity-manager-limits)
 * [Центр Интернета вещей](#iot-hub-limits)
-* [Служба подготовки устройств к добавлению в Центр Интернета вещей](#iot-hub-device-provisioning-service-limits)
+* [Служба подготовки устройств для Центра Интернета вещей](#iot-hub-device-provisioning-service-limits)
 * [хранилище ключей;](#key-vault-limits)
 * [Службы мультимедиа](#media-services-limits)
 * [Мобильные службы](#mobile-services-limits)
 * [Многофакторная идентификация](#multi-factor-authentication-limits)
 * [Сеть](#networking-limits)
   * [Шлюз приложений](#application-gateway-limits)
+  * [Azure бастиона](#azure-bastion-limits)
   * [Azure DNS](#azure-dns-limits)
   * [Azure Front Door Service](#azure-front-door-service-limits)
   * [Брандмауэр Azure](#azure-firewall-limits)
   * [ExpressRoute](#expressroute-limits)
-  * [Load Balancer](#load-balancer)
+  * [Балансировщик нагрузки](#load-balancer)
   * [Наблюдатель за сетями](#network-watcher-limits)
   * [Общедоступный IP-адрес](#publicip-address)
   * [Частная ссылка](#private-link-limits)
@@ -96,7 +97,7 @@ ms.locfileid: "71345550"
   * [Виртуальная сеть](#networking-limits)
   * [Виртуальная глобальная сеть](#virtual-wan-limits)
 * [Центры уведомлений](#notification-hubs-limits)
-* [группа ресурсов](#resource-group-limits)
+* [Группа ресурсов](#resource-group-limits)
 * [Контроль доступа на основе ролей](#role-based-access-control-limits)
 * [Планировщик](#scheduler-limits)
 * [Служебная шина](#service-bus-limits)
@@ -105,8 +106,8 @@ ms.locfileid: "71345550"
 * [Хранилище данных SQL](#sql-data-warehouse-limits)
 * [Хранилище](#storage-limits)
 * [StorSimple System](#storsimple-system-limits)
-* [Анализ потока](#stream-analytics-limits)
-* [подписка](#subscription-limits)
+* [Stream Analytics](#stream-analytics-limits)
+* [Подписка](#subscription-limits)
 * [Виртуальные машины](#virtual-machines-limits)
 * [Масштабируемые наборы виртуальных машин](#virtual-machine-scale-sets-limits)
 
@@ -154,7 +155,7 @@ ms.locfileid: "71345550"
 ### <a name="azure-kubernetes-service-limits"></a>Ограничения службы Kubernetes Azure
 [!INCLUDE [container-service-limits](../includes/container-service-limits.md)]
 
-### <a name="azure-machine-learning-service-limits"></a>Ограничения службы Машинное обучение Azure
+### <a name="azure-machine-learning-limits"></a>Ограничения Машинное обучение Azure
 Последние значения квоты на Машинное обучение Azure вычислений можно найти на [странице квота машинное обучение Azure](../articles/machine-learning/service/how-to-manage-quotas.md) .
 
 ### <a name="networking-limits"></a>Ограничения сети
@@ -179,6 +180,9 @@ ms.locfileid: "71345550"
 
 #### <a name="traffic-manager-limits"></a>Ограничения диспетчера трафика
 [!INCLUDE [traffic-manager-limits](../includes/traffic-manager-limits.md)]
+
+#### <a name="azure-bastion-limits"></a>Ограничения Azure бастиона
+[!INCLUDE [Azure Bastion limits](../includes/bastion-limits.md)]
 
 #### <a name="azure-dns-limits"></a>Ограничения Azure DNS
 [!INCLUDE [dns-limits](../includes/dns-limits.md)]
@@ -294,7 +298,7 @@ ms.locfileid: "71345550"
 
 ### <a name="azure-monitor-limits"></a>Ограничения Azure Monitor
 
-#### <a name="alerts"></a>Предупреждения
+#### <a name="alerts"></a>Оповещения
 
 [!INCLUDE [monitoring-limits](../includes/azure-monitor-limits-alerts.md)]
 
@@ -398,7 +402,7 @@ ms.locfileid: "71345550"
 ### <a name="sql-data-warehouse-limits"></a>Ограничения хранилища данных SQL
 Ограничения для хранилища данных SQL см. в статье [ограничения ресурсов хранилища данных](sql-data-warehouse/sql-data-warehouse-service-capacity-limits.md)SQL.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>Дополнительные материалы
 - [Общие сведения об ограничениях и росте Azure](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/)
 - [Размеры виртуальных машин и облачных служб для Azure](virtual-machines/linux/sizes.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 - [Размеры для облачных служб Azure](cloud-services/cloud-services-sizes-specs.md)

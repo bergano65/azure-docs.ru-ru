@@ -10,18 +10,18 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 06/24/2019
 ms.author: erhopf
-ms.openlocfilehash: d12b952d298b41c8d06f0fcac141a45749de9051
-ms.sourcegitcommit: 4f3f502447ca8ea9b932b8b7402ce557f21ebe5a
+ms.openlocfilehash: d3d4777d54e3ef6b20ab0ac0f0890da958411297
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71799955"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73468676"
 ---
 # <a name="what-is-text-to-speech"></a>Что такое преобразование текста в речь?
 
 Преобразование текста в речь из служб распознавания речи Azure — это служба, которая позволяет приложениям, средствам или устройствам преобразовывать текст в естественные человеческие речевые функции. Выберите один из стандартных и нейронных голосов или создайте собственный пользовательский голос, уникальный для продукта или торговой марки. более 75 языков и национальных стандартов доступны на более чем 45 языках, а на 4 языках и национальных стандартах доступно 5 голосов нейронов. Полный список см. в разделе [Поддерживаемые языки](language-support.md#text-to-speech).
 
-Технология преобразования текста в речь позволяет авторам содержимого взаимодействовать с пользователями различными способами. Преобразование текста в речь может улучшить специальные возможности, предоставляя пользователям возможность взаимодействовать с воспроизвести содержимого. Независимо от того, есть ли у пользователя возможность визуального нарушения, неограниченного обучения или сведений о переходах во время движения, преобразование текста в речь может улучшить существующий интерфейс. Преобразование текста в речь также является ценной надстройкой для голосовых программы-роботы и виртуальных помощников.
+Технология преобразования текста в речь позволяет авторам содержимого взаимодействовать с пользователями различными способами. Преобразование текста в речь может улучшить специальные возможности, предоставляя пользователям возможность взаимодействовать с воспроизвести содержимого. Независимо от того, есть ли у пользователя возможность визуального нарушения, неограниченного обучения или сведений о переходах во время движения, преобразование текста в речь может улучшить существующий интерфейс. Преобразование текста в речь также является ценной надстройкой для голосовых программы-роботы и голосовых помощников.
 
 
 Используя язык разметки речи (SSML), язык разметки на основе XML, разработчики, использующие преобразование текста в речь, могут указать способ преобразования текста ввода в синтезированный голос. С помощью SSML можно настроить тон, произношение, скорость речи, громкость и многое другое. Дополнительные сведения см. в разделе [SSML](#speech-synthesis-markup-language-ssml).
@@ -30,17 +30,17 @@ ms.locfileid: "71799955"
 
 Стандартные голоса создаются с помощью статистических методик синтеза или слияния. Эти голоса очень понятны и имеют естественную отчитаемость. Вы можете легко включить поддержку приложений на более чем 45 языках с широким спектром голосовых параметров. Эти голоса обеспечивают высокую точность произношения, включая поддержку сокращений, расширение акронимов, интерпретации даты и времени, телефонные телефоны и многое другое. Используйте стандартный Voice для улучшения специальных возможностей приложений и служб, разрешая пользователям взаимодействовать с вашим содержимым воспроизвести.
 
-### <a name="neural-voices"></a>Синтезирование голоса с помощью нейронных сетей
+### <a name="neural-voices"></a>Нейронные голосовые модели
 
 Нейронные голоса используют глубокие нейронные сети для преодоления ограничений традиционных систем преобразования текста в речь в соответствии с шаблонами нагрузки и интонатион на речевом языке, а также для синтезирования блоков речи в компьютерных голосах. Стандартный текст в речь разбивает Prosody на отдельные шаги лингвистического анализа и акустического прогноза, которые управляются независимыми моделями, что может привести к муффлед синтезу голоса. Наша функция нейронов одновременно Prosody прогнозирование и синтез речи, что приводит к более гибкому и естественному голосовому звучанию.
 
-Нейронные голосовые модели могут сделать взаимодействие с чат-ботами и виртуальными помощниками более естественным и приятным. Они позволяют преобразовывать цифровой текст из электронных книг в аудиокниги, а также помогают совершенствовать автомобильные системы навигации. Благодаря человеческим prosodyам и четким артикулатион слов, нейронные голоса значительно снижают прослушивание выносливости при взаимодействии с системами ии.
+Нейронные голоса можно использовать для более естественного и привлекательного взаимодействия с чатботс и голосовыми помощниками, преобразования цифровых текстов, таких как электронные книги, в аудиобукс и улучшения систем навигации в автомобиле. Благодаря человеческим prosodyам и четким артикулатион слов, нейронные голоса значительно снижают прослушивание выносливости при взаимодействии с системами ии.
 
 Нейронные голоса поддерживают различные стили, например нейтральные и чирфул. Например, голос Жесса (EN-US) может говорить чирфулли, который оптимизирован для теплого, счастливого диалога. Вы можете настроить вывод голоса, например тон, тон и скорость, с помощью [языка разметки речи](speech-synthesis-markup.md). Полный список доступных голосов см. в разделе [Поддерживаемые языки](language-support.md#text-to-speech).
 
 Дополнительные сведения о преимуществах нейронных голосов см. в [статье Новая служба преобразования текста в речь от Майкрософт, которая помогает компьютерам выступать в качестве пользователей](https://azure.microsoft.com/blog/microsoft-s-new-neural-text-to-speech-service-helps-machines-speak-like-people/).
 
-### <a name="custom-voices"></a>Настраиваемое синтезирование голоса
+### <a name="custom-voices"></a>Пользовательские голосовые модели
 
 Настройка голоса позволяет создавать распознаваемые, односторонние голоса для вашей торговой марки. Чтобы создать пользовательский шрифт, выполните запись в Studio и отправьте связанные скрипты в качестве обучающих данных. Затем служба создает модель уникального голоса, настроенную для записи. Вы можете использовать этот пользовательский голосовый шрифт для синтезирования речи. Дополнительные сведения см. в разделе [пользовательские голоса](how-to-customize-voice-font.md).
 
@@ -77,7 +77,7 @@ ms.locfileid: "71799955"
 | Создание тестов голосовых шрифтов и управление ими. | Нет | Да\* |
 | Управление подписками. | Нет | Да\* |
 
-\* *These Services доступны с помощью конечной точки cris.ai. См. [Справочник по Swagger](https://westus.cris.ai/swagger/ui/index). Эти API пользовательского речевого обучения и управления реализуют регулирование, ограничивающее запросы до 25 секунд, в то время как сам API синтеза речи реализует регулирование, позволяющее 200 запросов в секунду в качестве самого высокого. Когда происходит регулирование, вы будете уведомлены через заголовки сообщений.*
+\* *эти службы доступны с помощью конечной точки Cris.AI. См. [Справочник по Swagger](https://westus.cris.ai/swagger/ui/index). Эти API пользовательского речевого обучения и управления реализуют регулирование, ограничивающее запросы до 25 секунд, в то время как сам API синтеза речи реализует регулирование, позволяющее 200 запросов в секунду в качестве самого высокого. Когда происходит регулирование, вы будете уведомлены через заголовки сообщений.*
 
 ## <a name="get-started-with-text-to-speech"></a>Начало работы с текстом в речь
 
@@ -87,25 +87,25 @@ ms.locfileid: "71799955"
 
 | Краткое руководство (пакет SDK) | Платформа | Справочник по API |
 |------------|----------|---------------|
-| [C#, .NET Core](quickstart-text-to-speech-dotnetcore.md) | Windows | [Обзор](https://aka.ms/csspeech/csharpref) |
-| [C#, .NET Framework](quickstart-text-to-speech-dotnet-windows.md) | Windows | [Обзор](https://aka.ms/csspeech/csharpref) |
-| [C#, UWP](quickstart-text-to-speech-csharp-uwp.md) | Windows | [Обзор](https://aka.ms/csspeech/csharpref) |
-| [C#, Unity](quickstart-text-to-speech-csharp-unity.md) | Windows, Android | [Обзор](https://aka.ms/csspeech/csharpref) |
-| [C++](quickstart-text-to-speech-cpp-windows.md) | Windows | [Обзор](https://aka.ms/csspeech/cppref) |
-| [C++](quickstart-text-to-speech-cpp-linux.md) | Linux | [Обзор](https://aka.ms/csspeech/cppref) |
-| [Java](quickstart-text-to-speech-java-jre.md) | Windows, Linux, macOS | [Обзор](https://aka.ms/csspeech/javaref) |
-| [Java](quickstart-text-to-speech-java-android.md) | Android | [Обзор](https://aka.ms/csspeech/javaref) |
-| [Objective-C](quickstart-text-to-speech-objectivec-macos.md) | macOS | [Обзор](https://aka.ms/csspeech/objectivecref) |
-| [Objective-C](quickstart-text-to-speech-objectivec-ios.md) | iOS | [Обзор](https://aka.ms/csspeech/objectivecref) |
-| [Swift](quickstart-text-to-speech-swift-macos.md) | macOS | [Обзор](https://aka.ms/csspeech/objectivecref) |
-| [Swift](quickstart-text-to-speech-swift-ios.md) | iOS | [Обзор](https://aka.ms/csspeech/objectivecref) |
-| [Python](quickstart-text-to-speech-python.md) | Window, Linux, macOS | [Обзор](https://aka.ms/csspeech/pythonref) |
+| [C#, .NET Core](~/articles/cognitive-services/Speech-Service/quickstarts/text-to-speech.md?pivots=programming-language-csharp&tabs=dotnetcore) | Windows | [Обзор](https://aka.ms/csspeech/csharpref) |
+| [C#.NET Framework](~/articles/cognitive-services/Speech-Service/quickstarts/text-to-speech.md?pivots=programming-language-csharp&tabs=dotnet) | Windows | [Обзор](https://aka.ms/csspeech/csharpref) |
+| [C#, UWP](~/articles/cognitive-services/Speech-Service/quickstarts/text-to-speech.md?pivots=programming-language-csharp&tabs=uwp) | Windows | [Обзор](https://aka.ms/csspeech/csharpref) |
+| [C#, Unity](~/articles/cognitive-services/Speech-Service/quickstarts/text-to-speech.md?pivots=programming-language-csharp&tabs=unity) | Windows, Android | [Обзор](https://aka.ms/csspeech/csharpref) |
+| [C++](~/articles/cognitive-services/Speech-Service/quickstarts/text-to-speech.md?pivots=programming-language-cpp&tabs=windows) | Windows | [Обзор](https://aka.ms/csspeech/cppref) |
+| [C++](~/articles/cognitive-services/Speech-Service/quickstarts/text-to-speech.md?pivots=programming-language-cpp&tabs=linux) | Linux | [Обзор](https://aka.ms/csspeech/cppref) |
+| [Java](~/articles/cognitive-services/Speech-Service/quickstarts/text-to-speech.md?pivots=programming-language-java&tabs=jre) | Windows, Linux, macOS | [Обзор](https://aka.ms/csspeech/javaref) |
+| [Java](~/articles/cognitive-services/Speech-Service/quickstarts/text-to-speech.md?pivots=programming-language-java&tabs=android) | Android | [Обзор](https://aka.ms/csspeech/javaref) |
+| [Objective-C](~/articles/cognitive-services/speech-service/quickstarts/text-to-speech-langs/objectivec-macos.md) | macOS | [Обзор](https://aka.ms/csspeech/objectivecref) |
+| [Objective-C](~/articles/cognitive-services/speech-service/quickstarts/text-to-speech-langs/objectivec-ios.md) | iOS | [Обзор](https://aka.ms/csspeech/objectivecref) |
+| [Swift](~/articles/cognitive-services/speech-service/quickstarts/text-to-speech-langs/swift-macos.md) | macOS | [Обзор](https://aka.ms/csspeech/objectivecref) |
+| [Swift](~/articles/cognitive-services/speech-service/quickstarts/text-to-speech-langs/swift-ios.md) | iOS | [Обзор](https://aka.ms/csspeech/objectivecref) |
+| [Python](~/articles/cognitive-services/Speech-Service/quickstarts/text-to-speech.md?pivots=programming-language-python) | Window, Linux, macOS | [Обзор](https://aka.ms/csspeech/pythonref) |
 
 ### <a name="rest-quickstarts"></a>Краткие руководства по работе с ОСТАЛЬными
 
 | Краткое руководство (остальное) | Платформа | Справочник по API |
 |------------|----------|---------------|
-| [C#, .NET Core](quickstart-dotnet-text-to-speech.md) | Windows, macOS, Linux | [Обзор](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis) |
+| [C#, .NET Core](~/articles/cognitive-services/Speech-Service/quickstarts/text-to-speech.md?pivots=programming-language-csharp) | Windows, macOS, Linux | [Обзор](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis) |
 | [Node.js](quickstart-nodejs-text-to-speech.md) | Window, macOS, Linux | [Обзор](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis) |
 | [Python](quickstart-python-text-to-speech.md) | Window, macOS, Linux | [Обзор](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis) |
 
@@ -120,11 +120,11 @@ ms.locfileid: "71799955"
 
 * [пакет SDK для службы "Речь"](speech-sdk-reference.md);
 * [Пакет SDK для речевых устройств](speech-devices-sdk.md)
-* [REST API: Преобразование речи в текст](rest-speech-to-text.md)
-* [REST API: Преобразование текста в речь](rest-text-to-speech.md)
-* [REST API: Пакетное транскрибирование и настройка](https://westus.cris.ai/swagger/ui/index)
+* [REST API: преобразование речи в текст](rest-speech-to-text.md)
+* [REST API: преобразование текста в речь](rest-text-to-speech.md)
+* [REST API: транскрипция и настройка пакета](https://westus.cris.ai/swagger/ui/index)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Получение бесплатной подписки на службу "Речь"](get-started.md).
 * [Создание настраиваемого голоса](how-to-customize-voice-font.md)

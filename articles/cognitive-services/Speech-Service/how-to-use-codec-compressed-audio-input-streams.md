@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 09/20/2019
 ms.author: amishu
-ms.openlocfilehash: 8f2896a6289ecaf4046d705da106636258cdadc5
-ms.sourcegitcommit: 4f3f502447ca8ea9b932b8b7402ce557f21ebe5a
+ms.openlocfilehash: 668964c597b8d748220cbeec68e0ba68300cb406
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71802244"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73464347"
 ---
 # <a name="using-codec-compressed-audio-input-with-the-speech-sdk"></a>Использование сжатых звуковых данных кодеков с помощью пакета SDK для распознавания речи
 
@@ -33,7 +33,7 @@ ms.locfileid: "71802244"
 - АЛАВ в контейнере WAV
 - МУЛАВ в контейнере WAV
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Обработка сжатого аудио-сигнала реализуется с помощью [гстреамер](https://gstreamer.freedesktop.org). Для причины лицензирования двоичные файлы Гстреамер не компилируются и не связываются с голосовыми пакетами SDK. Поэтому для использования сжатого звукового звука разработчику приложения необходимо установить следующие данные: 18,04, 16,04 и Debian 9.
 
@@ -64,7 +64,7 @@ var result = await recognizer.RecognizeOnceAsync();
 var text = result.GetText();
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/)
-- [Распознавание речи в C#](quickstart-csharp-dotnet-windows.md)
+- [Получение пробной подписки на службу "Речь"](https://azure.microsoft.com/try/cognitive-services/)
+* [Узнайте, как распознать речь в Java](~/articles/cognitive-services/Speech-Service/quickstarts/speech-to-text-from-microphone.md?pivots=programming-language-java)

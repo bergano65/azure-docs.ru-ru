@@ -9,15 +9,15 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 06/11/2019
 ms.custom: seodec18
-ms.openlocfilehash: ab510f7ee2f95a2c3373c0514c31554598451b27
-ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
+ms.openlocfilehash: b078c92d02c55080cb84c386b7bbdabf3e1f85bf
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70173328"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73467894"
 ---
-# <a name="perform-sentiment-analysis-with-azure-stream-analytics-and-azure-machine-learning-studio-preview"></a>Выполнение анализа тональности с помощью Azure Stream Analytics и Машинное обучение Azure Studio (Предварительная версия)
-В этой статье описывается, как быстро настроить простое Azure Stream Analytics задание, которое интегрирует Машинное обучение Azure Studio. Вы используете модель машинного обучения для анализа тональности из коллекции Cortana Intelligence для анализа потока текстовых данных, а также определения оценки тональности в реальном времени. С помощью Cortana Intelligence Suite вы сможете выполнить эту задачу, не вникая в особенности создания модели анализа тональности.
+# <a name="perform-sentiment-analysis-with-azure-stream-analytics-and-azure-machine-learning-studio-classic-preview"></a>Выполнение анализа тональности с помощью Azure Stream Analytics и Машинное обучение Azure Studio (классическая модель) (Предварительная версия)
+В этой статье описывается, как быстро настроить простое Azure Stream Analytics задание, которое интегрирует Машинное обучение Azure Studio (классическая модель). Вы используете модель машинного обучения для анализа тональности из коллекции Cortana Intelligence для анализа потока текстовых данных, а также определения оценки тональности в реальном времени. С помощью Cortana Intelligence Suite вы сможете выполнить эту задачу, не вникая в особенности создания модели анализа тональности.
 
 Вы сможете применить сведения, полученные в рамках этой статьи, в следующих сценариях:
 
@@ -36,7 +36,7 @@ ms.locfileid: "70173328"
 
 ![Обзор интеграции машинного обучения в Stream Analytics](./media/stream-analytics-machine-learning-integration-tutorial/stream-analytics-machine-learning-integration-tutorial-figure-1.png)  
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Чтобы начать, у вас должны быть следующие компоненты:
 
 * Активная подписка Azure.
@@ -45,7 +45,7 @@ ms.locfileid: "70173328"
 В общих чертах, чтобы выполнить задачи, описанные в этой статье, сделайте следующее.
 
 1. Создайте учетную запись хранения Azure и контейнер хранилища BLOB-объектов, а затем передайте в контейнер входной файл в формате CSV.
-3. Добавьте модель тональности Analytics из Cortana Intelligence Gallery в рабочую область Машинное обучение Azure Studio и разверните эту модель в качестве веб-службы в рабочей области Машинное обучение.
+3. Добавьте модель тональности Analytics из Cortana Intelligence Gallery в рабочую область Машинное обучение Azure Studio (классическая модель) и разверните ее как веб-службу в рабочей области Машинное обучение.
 5. Создайте задание Stream Analytics, вызывающее эту веб-службу как функцию, для определения тональности входного текста.
 6. Запустите задание Stream Analytics и просмотрите выходные данные.
 
@@ -145,7 +145,7 @@ ms.locfileid: "70173328"
 
    ![Указание параметров входных данных нового задания Stream Analytics](./media/stream-analytics-machine-learning-integration-tutorial/stream-analytics-create-sa-input-new-portal.png)
 
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
 ### <a name="configure-the-job-output"></a>Настройка выходных данных для задания
 Задание передает результаты в то же хранилище BLOB-объектов, в котором получает входные данные. 
@@ -165,7 +165,7 @@ ms.locfileid: "70173328"
 
    ![Указание параметров выходных данных нового задания Stream Analytics](./media/stream-analytics-machine-learning-integration-tutorial/create-stream-analytics-output.png) 
 
-4. Нажмите кнопку **Сохранить**.   
+4. Щелкните **Сохранить**.   
 
 
 ### <a name="add-the-machine-learning-function"></a>Добавление функции машинного обучения 
@@ -183,11 +183,11 @@ ms.locfileid: "70173328"
    |---------|---------|
    | **Псевдоним функции** | Используйте имя `sentiment` и выберите **Provide Azure Machine Learning function settings manually** (Указать параметры функции Машинного обучения Azure вручную). После этого введите URL-адрес и ключ.      |
    | **URL-адрес**| Вставьте URL-адрес веб-службы.|
-   |**Key** | Вставьте ключ API. |
+   |**Ключ** | Вставьте ключ API. |
   
    ![Параметры добавления функции службы "Машинное обучение" в задание Stream Analytics](./media/stream-analytics-machine-learning-integration-tutorial/add-machine-learning-function.png)  
     
-4. Нажмите кнопку **Сохранить**.
+4. Щелкните **Сохранить**.
 
 ### <a name="create-a-query-to-transform-the-data"></a>Создание запроса для преобразования данных
 
@@ -249,7 +249,7 @@ Stream Analytics использует декларативный запрос н
 * **События функций** отображает количество событий в запросе. По умолчанию каждый запрос к веб-службе машинного обучения может содержать до 1000 событий.  
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Введение в Azure Stream Analytics](stream-analytics-introduction.md)
 * [Справочник по языку запросов Azure Stream Analytics](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference)

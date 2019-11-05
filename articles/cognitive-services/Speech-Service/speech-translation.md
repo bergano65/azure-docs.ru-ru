@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: erhopf
-ms.openlocfilehash: cfcefd0b18831163324519b61dbea305f90f44bc
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 17ad32cba18915bf7f83163cd876686d42323750
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68552653"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73468759"
 ---
 # <a name="what-is-speech-translation"></a>Что такое трансляция речи?
 
@@ -39,13 +39,13 @@ ms.locfileid: "68552653"
 
 Мы предлагаем краткие руководства, предназначенные для выполнения кода менее чем через 10 минут. В этой таблице содержится список кратких руководств по языку для перевода речи.
 
-| Быстрый старт | Платформа | Справочник по API |
+| Быстрый запуск | Платформа | Справочник по API |
 |------------|----------|---------------|
-| [C#, .NET Core](quickstart-translate-speech-dotnetcore-windows.md) | Windows | [Обзор](https://aka.ms/csspeech/csharpref) |
-| [C#, .NET Framework](quickstart-translate-speech-dotnetframework-windows.md) | Windows | [Обзор](https://aka.ms/csspeech/csharpref) |
-| [C#, UWP](quickstart-translate-speech-uwp.md) | Windows | [Обзор](https://aka.ms/csspeech/csharpref) |
-| [C++](quickstart-translate-speech-cpp-windows.md) | Windows | [Обзор](https://aka.ms/csspeech/cppref)|
-| [Java](quickstart-translate-speech-java-jre.md) | Windows, Linux, macOS | [Обзор](https://aka.ms/csspeech/javaref) |
+| [C#, .NET Core](~/articles/cognitive-services/Speech-Service/quickstarts/translate-speech-to-text.md?pivots=programming-language-csharp&tabs=dotnetcore) | Windows | [Обзор](https://aka.ms/csspeech/csharpref) |
+| [C#.NET Framework](~/articles/cognitive-services/Speech-Service/quickstarts/translate-speech-to-text.md?pivots=programming-language-csharp&tabs=dotnet) | Windows | [Обзор](https://aka.ms/csspeech/csharpref) |
+| [C#, UWP](~/articles/cognitive-services/Speech-Service/quickstarts/translate-speech-to-text.md?pivots=programming-language-csharp&tabs=uwp) | Windows | [Обзор](https://aka.ms/csspeech/csharpref) |
+| [C++](~/articles/cognitive-services/Speech-Service/quickstarts/translate-speech-to-text.md?pivots=programming-language-cpp&tabs=windows) | Windows | [Обзор](https://aka.ms/csspeech/cppref)|
+| [Java](~/articles/cognitive-services/Speech-Service/quickstarts/translate-speech-to-text.md?pivots=programming-language-java&tabs=jre) | Windows, Linux, macOS | [Обзор](https://aka.ms/csspeech/javaref) |
 
 ## <a name="sample-code"></a>Пример кода
 
@@ -63,11 +63,11 @@ ms.locfileid: "68552653"
 
 * [пакет SDK для службы "Речь"](speech-sdk-reference.md);
 * [Пакет SDK для речевых устройств](speech-devices-sdk.md)
-* [REST API: Преобразование речи в текст](rest-speech-to-text.md)
-* [REST API: Преобразование текста в речь](rest-text-to-speech.md)
-* [REST API: Пакетное транскрибирование и настройка](https://westus.cris.ai/swagger/ui/index)
+* [REST API: преобразование речи в текст](rest-speech-to-text.md)
+* [REST API: преобразование текста в речь](rest-text-to-speech.md)
+* [REST API: транскрипция и настройка пакета](https://westus.cris.ai/swagger/ui/index)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Получите ключ подписки для Служб речи бесплатно](get-started.md)
 * [Получение пакета SDK для распознавания речи](speech-sdk.md)

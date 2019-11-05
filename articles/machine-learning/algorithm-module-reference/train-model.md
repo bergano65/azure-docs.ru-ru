@@ -1,24 +1,24 @@
 ---
 title: 'Обучение модели: Справочник по модулям'
-titleSuffix: Azure Machine Learning service
-description: Узнайте, как использовать модуль " **обучение модели** " в службе машинное обучение Azure Service для обучения модели классификации или регрессии.
+titleSuffix: Azure Machine Learning
+description: Узнайте, как использовать модуль **обучение модели** в машинное обучение Azure для обучения модели классификации или регрессии.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: reference
 author: xiaoharper
 ms.author: zhanxia
-ms.date: 05/02/2019
-ms.openlocfilehash: f9717c39388c85ced889744722899b78a5df8453
-ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
+ms.date: 10/22/2019
+ms.openlocfilehash: 28cc2e1f8782f1ffd37e3a20fcc68264b481e42e
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72693691"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73490381"
 ---
 # <a name="train-model-module"></a>Модуль "Обучение модели"
 
-В этой статье описывается модуль визуального интерфейса (Предварительная версия) для службы Машинное обучение Azure.
+В этой статье описывается модуль в Машинное обучение Azure Designer (Предварительная версия).
 
 Используйте этот модуль для обучения модели классификации или регрессии. Обучение выполняется после определения модели и установки ее параметров и требует наличия данных с тегами. Можно также использовать **обучение модели** для переобучения существующей модели новыми данными. 
 
@@ -77,4 +77,4 @@ ms.locfileid: "72693691"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-См. [набор модулей, доступных](module-reference.md) машинное обучение Azure службе. 
+См. [набор модулей, доступных](module-reference.md) для машинное обучение Azure. 

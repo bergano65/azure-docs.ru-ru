@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 08/31/2019
 ms.author: victorh
 ms.custom: fasttrack-edit
-ms.openlocfilehash: d0cb5becd8375c393031892efb0b6c54786eeb8f
-ms.sourcegitcommit: 3486e2d4eb02d06475f26fbdc321e8f5090a7fac
+ms.openlocfilehash: 63c3f2080a74142f3f9a68852092cbc527c4483b
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73242220"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73470068"
 ---
 # <a name="frequently-asked-questions-about-application-gateway"></a>Часто задаваемые вопросы о шлюзе приложений
 
@@ -107,7 +107,7 @@ ms.locfileid: "73242220"
 
 Нет. Шлюз приложений не поддерживает такие протоколы электронной почты, как SMTP, IMAP и POP3. 
 
-## <a name="performance"></a>Ориентированное на производительность
+## <a name="performance"></a>Производительность
 
 ### <a name="how-does-application-gateway-support-high-availability-and-scalability"></a>Каким образом Шлюз приложений поддерживает высокий уровень доступности и масштабируемость?
 
@@ -135,7 +135,7 @@ SKU шлюза приложений версии 1 поддерживает сц
 
 Да. Azure распределяет экземпляры между доменами обновления и сбоя, чтобы гарантировать, что экземпляры не будут завершаться сбоем одновременно. Шлюз приложений поддерживает масштабирование путем добавления нескольких экземпляров одного шлюза для распределения нагрузки.
 
-## <a name="configuration"></a>Настройка
+## <a name="configuration"></a>Конфигурация
 
 ### <a name="is-application-gateway-always-deployed-in-a-virtual-network"></a>Всегда ли Шлюз приложений развертывается в виртуальной сети?
 
@@ -327,6 +327,19 @@ SKU шлюза приложений версии 1 поддерживает сц
 ### <a name="is-there-guidance-available-to-migrate-from-the-v1-sku-to-the-v2-sku"></a>Доступны ли рекомендации для перехода с SKU версии v1 на SKU v2?
 
 Да. Дополнительные сведения см. в разделе [Перенос шлюза приложений Azure и брандмауэра веб-приложения с версии v1 на v2](migrate-v1-v2.md).
+
+## <a name="configuration---ingress-controller-for-aks"></a>Конфигурация — входной контроллер для AKS
+
+### <a name="what-is-an-ingress-controller"></a>Что такое входной контроллер?
+
+Kubernetes позволяет создавать ресурсы `deployment` и `service` для внутреннего представления группы модулей Pod в кластере. Чтобы обеспечить доступ к той же службе извне, определяется ресурс [`Ingress`](https://kubernetes.io/docs/concepts/services-networking/ingress/) , который обеспечивает балансировку нагрузки, завершение SSL и виртуальное размещение на основе имени.
+Для удовлетворения этого `Ingress`ного ресурса требуется входной контроллер, который прослушивает любые изменения в ресурсах `Ingress` и настраивает политики подсистемы балансировки нагрузки.
+
+Контроллер входящего трафика шлюза приложений позволяет использовать [шлюз приложений Azure](https://azure.microsoft.com/services/application-gateway/) в качестве входящего трафика для [службы Azure Kubernetes](https://azure.microsoft.com/services/kubernetes-service/) , также известной как кластер AKS.
+
+### <a name="can-a-single-ingress-controller-instance-manage-multiple-application-gateways"></a>Может ли один экземпляр входящего контроллера управлять несколькими шлюзами приложений?
+
+В настоящее время один экземпляр входящего контроллера может быть связан только с одним шлюзом приложений.
 
 ## <a name="diagnostics-and-logging"></a>Диагностика и ведение журнала
 

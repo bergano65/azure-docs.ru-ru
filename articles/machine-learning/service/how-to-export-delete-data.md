@@ -1,24 +1,25 @@
 ---
 title: Экспорт или удаление данных рабочей области
 titleSuffix: Azure Machine Learning
-description: Узнайте, как экспортировать или удалить данные рабочей области с помощью портала Azure, интерфейса командной строки, пакета SDK и аутентифицированных интерфейсов REST API.
+description: Узнайте, как экспортировать или удалить рабочую область с помощью Машинное обучение Azure Studio, интерфейса командной строки, пакета SDK и прошедших проверку подлинности интерфейсов API RESTFUL.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.reviewer: jmartens
-author: ph-com
-ms.author: pahusban
+author: lobrien
+ms.author: laobri
 ms.date: 05/02/2019
 ms.custom: seodec18
-ms.openlocfilehash: 18e2ab18dac214e73eaf6ad7dfcb9dbbab0b5cf5
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.openlocfilehash: d653d1cd719ac59bf6c98bee588c41858052bc61
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "71002845"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73489842"
 ---
 # <a name="export-or-delete-your-machine-learning-service-workspace-data"></a>Экспорт или удаление данных рабочей области Службы машинного обучения 
+[!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
 Используя Машинное обучение Azure, вы можете экспортировать или удалять данные рабочей области с помощью аутентифицированных REST API. В этой статье описано, каким образом это можно сделать.
 
@@ -27,7 +28,7 @@ ms.locfileid: "71002845"
 [!INCLUDE [GDPR-related guidance](../../../includes/gdpr-intro-sentence.md)]
 
 ## <a name="control-your-workspace-data"></a>Управление данными рабочей области
-Данные в продукте, хранящиеся Машинное обучение Azure, доступны для экспорта и удаления с помощью портал Azure, интерфейса командной строки, пакета SDK и API-интерфейсов RESTFUL, прошедших проверку подлинности. Доступ к данным телеметрии может осуществляться через портал конфиденциальности Azure. 
+Данные в продукте, хранящиеся в Машинное обучение Azure, доступны для экспорта и удаления с помощью Машинное обучение Azure Studio, CLI, пакета SDK и API-интерфейсов RESTFUL, прошедших проверку подлинности. Доступ к данным телеметрии может осуществляться через портал конфиденциальности Azure. 
 
 В машинном обучении Azure персональные данные состоят из информации пользователя, которая находится в документах журнала выполнения, и записей телеметрии о взаимодействии некоторых пользователей со службой.
 
@@ -232,28 +233,27 @@ ms.locfileid: "71002845"
 
     https://{location}.aether.ms/api/v1.0/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspaceName}/DataSources/{id}
 
-## <a name="delete-visual-interface-assets"></a>Удаление ресурсов визуального интерфейса
+## <a name="delete-assets-in-the-designer"></a>Удаление ресурсов в конструкторе
 
-В визуальном интерфейсе, в котором вы создали эксперимент, удалите отдельные ресурсы:
+В конструкторе, где вы создали свой эксперимент, удалите отдельные ресурсы:
 
-1. Слева выберите тип ресурса, который требуется удалить.
+1. Переход к конструктору
 
     ![Удаление ресурсов](media/how-to-export-delete-data.md/delete-experiment.png)
 
-1. В списке выберите отдельные ресурсы для удаления.
+1. В списке выберите отдельный черновик конвейера для удаления.
 
 1. В нижней части щелкните **Удалить**.
 
-## <a name="export-visual-interface-data"></a>Экспорт данных визуального интерфейса
+## <a name="unregister-data-in-the-designer"></a>Отмена регистрации данных в конструкторе
 
-В визуальном интерфейсе, где был создан эксперимент, экспортируйте добавленные данные:
+В конструкторе, где вы создали эксперимент, экспортируйте добавленные данные:
 
-1. В левой части выберите **данные**.
+1. Слева выберите **наборы данных**.
 
-1. В верхней части страницы выберите **Мои наборы** данных или **примеры** , чтобы указать данные, которые необходимо экспортировать.
 
-    ![Загрузка данных](media/how-to-export-delete-data.md/download-data.png)
 
-1. В списке выберите отдельные наборы данных для экспорта.
+    ![Загрузка данных](media/how-to-export-delete-data.md/unregister-dataset.png)
 
-1. В нижней части экрана выберите **скачать**.
+1. В списке выберите отдельный набор данных и нажмите кнопку Отменить регистрацию.
+

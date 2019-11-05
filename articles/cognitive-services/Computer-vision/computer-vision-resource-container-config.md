@@ -8,19 +8,19 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: conceptual
-ms.date: 09/18/2019
+ms.date: 11/04/2019
 ms.author: dapine
 ms.custom: seodec18
-ms.openlocfilehash: aba846ade9e2b5e19304df87ea3e29713aacf4ba
-ms.sourcegitcommit: 2ed6e731ffc614f1691f1578ed26a67de46ed9c2
+ms.openlocfilehash: 1df8199abbbc195db873ab3da515cb1dd5fe9761
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71129963"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73484083"
 ---
 # <a name="configure-computer-vision-docker-containers"></a>Настройка Компьютерное зрение контейнеров DOCKER
 
-Вы настраиваете среду выполнения контейнера компьютерное зрение с помощью `docker run` аргументов команды. Контейнер поддерживает несколько обязательных и несколько необязательных параметров. Доступны несколько [примеров](#example-docker-run-commands) этой команды. Для конкретного контейнера настраиваются входные параметры выставления счетов. 
+Вы настраиваете среду выполнения контейнера Компьютерное зрение, используя аргументы команды `docker run`. Контейнер поддерживает несколько обязательных и несколько необязательных параметров. Доступны несколько [примеров](#example-docker-run-commands) этой команды. Для конкретного контейнера настраиваются входные параметры выставления счетов. 
 
 ## <a name="configuration-settings"></a>Параметры конфигурации
 
@@ -29,13 +29,13 @@ ms.locfileid: "71129963"
 > [!IMPORTANT]
 > Параметры [`ApiKey`](#apikey-configuration-setting), [`Billing`](#billing-configuration-setting) и [`Eula`](#eula-setting) используются совместно, и для всех трех параметров необходимо указать допустимые значения. В противном случае контейнер не запустится. Дополнительные сведения об использовании этих параметров конфигурации для создания экземпляра контейнера см. в разделе [Выставление счетов](computer-vision-how-to-install-containers.md).
 
-## <a name="apikey-configuration-setting"></a>Параметр конфигурации ApiKey
+## <a name="apikey-configuration-setting"></a>Настройка конфигурации ApiKey
 
-Параметр указывает ключ ресурса Azure `Cognitive Services` , используемый для трассировки сведений о выставлении счетов для контейнера. `ApiKey` Необходимо указать значение для параметра apiKey, а значение должно быть допустимым ключом для ресурса _Cognitive Services_ , указанного для [`Billing`](#billing-configuration-setting) параметра конфигурации.
+Параметр `ApiKey` указывает ключ ресурса `Cognitive Services` Azure, используемый для трассировки сведений о выставлении счетов для контейнера. Необходимо указать значение для параметра ApiKey, а значение должно быть допустимым ключом для ресурса _Cognitive Services_ , указанного для параметра конфигурации [`Billing`](#billing-configuration-setting) .
 
 Этот параметр можно найти в следующем месте.
 
-* Портал Azure: **Cognitive Services** Управление ресурсами в разделе **ключи**
+* Портал Azure: управление ресурсами **Cognitive Services** в разделе **ключи**
 
 ## <a name="applicationinsights-setting"></a>Параметр ApplicationInsights.
 
@@ -43,17 +43,17 @@ ms.locfileid: "71129963"
 
 ## <a name="billing-configuration-setting"></a>Параметр конфигурации выставления счетов
 
-Параметр указывает URI конечной точки ресурса Cognitive Services в Azure, который используется для отслеживания сведений о выставлении счетов для контейнера. `Billing` Необходимо указать значение для этого параметра конфигурации, а значение должно быть допустимым URI конечной точки для ресурса _Cognitive Services_ в Azure. Отчеты об использовании контейнера примерно каждые 10—15 минут.
+Параметр `Billing` указывает универсальный код ресурса (URI) конечной точки ресурса _Cognitive Services_ в Azure, который используется для отслеживания сведений о выставлении счетов для контейнера. Необходимо указать значение для этого параметра конфигурации, а значение должно быть допустимым URI конечной точки для ресурса _Cognitive Services_ в Azure. Отчеты об использовании контейнера примерно каждые 10—15 минут.
 
 Этот параметр можно найти в следующем месте.
 
-* Портал Azure: **Cognitive Services** Общие сведения, помеченные`Endpoint`
+* Портал Azure: **Cognitive Services** обзор с метками `Endpoint`
 
-Не забудьте добавить `vision/v1.0` маршрут к универсальному коду ресурса (URI) конечной точки, как показано в следующей таблице. 
+Не забудьте добавить `vision/v1.0`ную маршрутизацию в универсальный код ресурса (URI) конечной точки, как показано в следующей таблице. 
 
-|Обязательное значение| Название | Тип данных | Описание |
+|Обязательно| Имя | Тип данных | Description (Описание) |
 |--|------|-----------|-------------|
-|Да| `Billing` | Строковое | URI конечной точки выставления счетов<br><br>Пример:<br>`Billing=https://westcentralus.api.cognitive.microsoft.com/vision/v1.0` |
+|Да| `Billing` | string | URI конечной точки выставления счетов<br><br>Пример:<br>`Billing=https://westcentralus.api.cognitive.microsoft.com/vision/v1.0` |
 
 ## <a name="eula-setting"></a>Параметр Eula
 
@@ -79,40 +79,38 @@ ms.locfileid: "71129963"
 
 Точный синтаксис расположения подключения к узлу зависит от операционной системы узла. Кроме того, расположение подключения на [главном компьютере](computer-vision-how-to-install-containers.md#the-host-computer) может оказаться недоступным из-за конфликта между разрешениями для учетной записи службы Docker и расположением подключения к узлу. 
 
-|Необязательный| Название | Тип данных | Описание |
+|Необязательно| Имя | Тип данных | Description (Описание) |
 |-------|------|-----------|-------------|
-|Не разрешено| `Input` | Строковое | Контейнеры API компьютерного зрения не используют этот элемент.|
-|Необязательный| `Output` | Строковое | Цель выходного подключения. По умолчанию используется значение `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример:<br>`--mount type=bind,src=c:\output,target=/output`|
+|Не разрешено| `Input` | string | Контейнеры API компьютерного зрения не используют этот элемент.|
+|Необязательно| `Output` | string | Цель выходного подключения. По умолчанию используется значение `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример:<br>`--mount type=bind,src=c:\output,target=/output`|
 
 ## <a name="example-docker-run-commands"></a>Примеры команд docker run
 
 В следующих примерах параметры конфигурации иллюстрируют процесс написания и использования команд `docker run`.  После запуска контейнер продолжает работу, пока вы его не [остановите](computer-vision-how-to-install-containers.md#stop-the-container).
 
-* **Символ продолжения строки**. В командах Docker в следующих разделах используется обратная косая черта (`\`) как символ продолжения строки. Замените или удалите ее в соответствии с требованиями вашей операционной системы. 
-* **Порядок аргументов**. Не изменяйте порядок аргументов, если вы не являетесь уверенным пользователем контейнеров Docker.
+* **Символ продолжения строки**. в командах DOCKER в следующих разделах используется обратная косая черта, `\`, как символ продолжения строки. Замените или удалите ее в соответствии с требованиями вашей операционной системы. 
+* **Порядок аргументов**. не изменяйте порядок аргументов, если вы не знакомы с контейнерами DOCKER.
 
 Замените строку {_имя_аргумента_} собственными значениями.
 
-| Местозаполнитель | Значение | Формат или пример |
+| Placeholder | Значение | Формат или пример |
 |-------------|-------|---|
-| **{API_KEY}** | Ключ `Computer Vision` конечной точки ресурса на странице ключей Azure `Computer Vision` . | `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx` |
-| **{ENDPOINT_URI}** | Значение конечной точки выставления счетов доступно на странице `Computer Vision` обзора Azure.| См. раздел [сбор обязательных параметров](computer-vision-how-to-install-containers.md#gathering-required-parameters) для явных примеров. |
+| **{API_KEY}** | Ключ конечной точки `Computer Vision` ресурса на странице ключей `Computer Vision` Azure. | `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx` |
+| **{ENDPOINT_URI}** | Значение конечной точки выставления счетов доступно на странице обзора `Computer Vision` Azure.| См. раздел [сбор обязательных параметров](computer-vision-how-to-install-containers.md#gathering-required-parameters) для явных примеров. |
 
 [!INCLUDE [subdomains-note](../../../includes/cognitive-services-custom-subdomains-note.md)]
 
 > [!IMPORTANT]
-> Для запуска контейнера необходимо указать параметры `Eula`, `Billing` и `ApiKey`. В противном случае контейнер не запустится.  Дополнительные сведения см. в [разделе о выставлении счетов](computer-vision-how-to-install-containers.md#billing).
-> Значение apiKey является **ключом** на странице ключей ресурсов Azure `Cognitive Services` .
+> Для выполнения контейнера необходимо указать параметры `Eula`, `Billing` и `ApiKey`. В противном случае контейнер не запустится.  Дополнительные сведения см. в [разделе о выставлении счетов](computer-vision-how-to-install-containers.md#billing).
+> Значение ApiKey является **ключом** на странице ключей ресурсов Azure `Cognitive Services`.
 
 ## <a name="container-docker-examples"></a>Примеры DOCKER Container
-
-#### <a name="readtabread"></a>[чтение](#tab/read)
 
 Следующие примеры DOCKER предназначены для контейнера Read.
 
 ### <a name="basic-example"></a>Простой пример
 
-  ```
+  ```docker
   docker run --rm -it -p 5000:5000 --memory 16g --cpus 8 \
   containerpreview.azurecr.io/microsoft/cognitive-services-read \
   Eula=accept \
@@ -122,7 +120,7 @@ ms.locfileid: "71129963"
 
 ### <a name="logging-example"></a>Пример ведения журнала 
 
-  ```
+  ```docker
   docker run --rm -it -p 5000:5000 --memory 16g --cpus 8 \
   containerpreview.azurecr.io/microsoft/cognitive-services-read \
   Eula=accept \
@@ -131,33 +129,6 @@ ms.locfileid: "71129963"
   Logging:Console:LogLevel:Default=Information
   ```
 
-#### <a name="recognize-texttabrecognize-text"></a>[Распознавание текста](#tab/recognize-text)
-
-Следующие примеры DOCKER предназначены для контейнера Распознавание текста.
-
-### <a name="basic-example"></a>Простой пример
-
-  ```
-  docker run --rm -it -p 5000:5000 --memory 16g --cpus 8 \
-  containerpreview.azurecr.io/microsoft/cognitive-services-recognize-text \
-  Eula=accept \
-  Billing={ENDPOINT_URI} \
-  ApiKey={API_KEY} 
-  ```
-
-### <a name="logging-example"></a>Пример ведения журнала
-
-  ```
-  docker run --rm -it -p 5000:5000 --memory 16g --cpus 8 \
-  containerpreview.azurecr.io/microsoft/cognitive-services-recognize-text \
-  Eula=accept \
-  Billing={ENDPOINT_URI} \
-  ApiKey={API_KEY} \
-  Logging:Console:LogLevel:Default=Information
-  ```
-
-***
-
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте [, как устанавливать и запускать контейнеры](computer-vision-how-to-install-containers.md).

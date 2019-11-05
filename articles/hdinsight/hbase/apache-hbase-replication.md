@@ -1,5 +1,5 @@
 ---
-title: Настройка репликации кластера HBase в виртуальных сетях Azure — Azure HDInsight
+title: Репликация кластера HBase в виртуальных сетях — Azure HDInsight
 description: Сведения о том, как настроить репликацию HBase с одной версии HDInsight на другую для балансировки нагрузки, обеспечения высокого уровня доступности, переноса или обновления без простоя и аварийного восстановления.
 author: hrasheed-msft
 ms.author: hrasheed
@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 09/15/2018
-ms.openlocfilehash: 34b9993482d1036570805af7caba29361b231426
-ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
+ms.openlocfilehash: 18c7a06e656cbd5c16151381a76ec7725eb2785e
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71077186"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73468412"
 ---
 # <a name="set-up-apache-hbase-cluster-replication-in-azure-virtual-networks"></a>Настройка репликации кластера Apache HBase в виртуальных сетях Azure
 
@@ -38,7 +38,7 @@ ms.locfileid: "71077186"
 
 Кластеры можно реплицировать с помощью скриптов [действий сценария](../hdinsight-hadoop-customize-cluster-linux.md), которые можно найти на [GitHub](https://github.com/Azure/hbase-utils/tree/master/replication).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Прежде чем приступать к этой статье, необходимо иметь подписку Azure. См. страницу о [получении бесплатной пробной версии Azure](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 
 ## <a name="set-up-the-environments"></a>Настройка сред
@@ -68,7 +68,7 @@ ms.locfileid: "71077186"
 
 | Свойство | Значение |
 |----------|-------|
-| Местоположение | Западная часть США |
+| Расположение | Запад США |
 | Имя виртуальной сети | &lt;префикс_имени_кластера>-vnet1 |
 | Address space prefix | 10.1.0.0/16 |
 | Имя подсети | subnet 1 |
@@ -78,14 +78,14 @@ ms.locfileid: "71077186"
 | Имя шлюза. | vnet1gw |
 | Тип шлюза | Vpn |
 | Тип VPN шлюза. | RouteBased |
-| Gateway SKU | Стандартная |
+| Gateway SKU | базовая; |
 | Gateway IP | vnet1gwip |
 
 **VNet 2**
 
 | Свойство | Значение |
 |----------|-------|
-| Местоположение | East US |
+| Расположение | Восток США |
 | Имя виртуальной сети | &lt;префикс_имени_кластера>-vnet2 |
 | Address space prefix | 10.2.0.0/16 |
 | Имя подсети | subnet 1 |
@@ -95,7 +95,7 @@ ms.locfileid: "71077186"
 | Имя шлюза. | vnet2gw |
 | Тип шлюза | Vpn |
 | Тип VPN шлюза. | RouteBased |
-| Gateway SKU | Стандартная |
+| Gateway SKU | базовая; |
 | Gateway IP | vnet1gwip |
 
 ## <a name="setup-dns"></a>Настройка службы доменных имен (DNS)
@@ -260,12 +260,12 @@ sudo service bind9 status
 В каждой виртуальной сети создайте кластер [Apache HBase](https://hbase.apache.org/) со следующей конфигурацией:
 
 - **Имя группы ресурсов.** Используйте те же имена групп ресурсов, как при создании виртуальных сетей.
-- **Тип кластера.** Hbase
-- **Версия.** HBase 1.1.2 (HDI 3.6)
-- **Расположение.** Используйте расположение, в котором находится виртуальная сеть.  По умолчанию для виртуальной сети 1 указано расположение *западная часть США*, а для виртуальной сети 2 — *восточная часть США*.
-- **Хранилище** Создайте учетную запись хранения для кластера.
-- **Виртуальная сеть** (из дополнительных параметров на портале). Выберите vnet1, созданную при выполнении предыдущей процедуры.
-- **Подсеть.** Имя по умолчанию, используемое в шаблоне, — **subnet1**.
+- **Тип кластера.** HBase.
+- **Версия.** HBase 1.1.2 (HDI 3.6).
+- **Расположение.** Используйте то же расположение, что и у виртуальной сети.  По умолчанию для виртуальной сети 1 указано расположение *западная часть США*, а для виртуальной сети 2 — *восточная часть США*.
+- **Хранилище.** Создайте учетную запись хранения для кластера.
+- **Виртуальная сеть** (из дополнительных параметров на портале). Выберите виртуальную сеть 1, созданную в предыдущей процедуре.
+- **Подсеть.** Имя по умолчанию, используемое в шаблоне, — **subnet1**.
 
 Чтобы убедиться, что среда правильно настроена, проверьте связь FQDN головного узла между двумя кластерами.
 
@@ -273,7 +273,7 @@ sudo service bind9 status
 
 При репликации кластера необходимо указать реплицируемые таблицы. В этом разделе вы загрузите данные в исходный кластер. В следующем разделе вы включите репликацию между двумя кластерами.
 
-Чтобы создать таблицу **Contacts** и вставить в нее некоторые данные, следуйте инструкциям, приведенным в статье [ Начало работы с примером Apache HBase в HDInsight](apache-hbase-tutorial-get-started-linux.md).
+Чтобы создать таблицу **Contacts** и вставить в нее некоторые данные, следуйте инструкциям по [началу работы с примером Apache HBase в HDInsight](apache-hbase-tutorial-get-started-linux.md).
 
 ## <a name="enable-replication"></a>Включение репликации
 
@@ -281,16 +281,16 @@ sudo service bind9 status
 
 **Включение репликации HBase на портале Azure**
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 2. Откройте исходный кластер HBase.
 3. В меню кластера выберите **Действия скрипта**.
 4. В верхней части страницы выберите **Отправить новое**.
 5. Выберите или введите следующие сведения.
 
-   1. **Имя.** Укажите **Включение репликации**.
-   2. **URI bash-скрипта.** Укажите **https://raw.githubusercontent.com/Azure/hbase-utils/master/replication/hdi_enable_replication.sh** .
-   3. **Головной узел.** Выберите этот тип узла. Отмените выбор других типов узлов.
-   4. **Параметры.** Параметры в следующем примере позволяют включить репликацию для всех имеющихся таблиц, а затем копировать все данные из исходного кластера в целевой.
+   1. **Имя:** введите **Включение репликации**.
+   2. **URI bash-скрипта.** Введите **https://raw.githubusercontent.com/Azure/hbase-utils/master/replication/hdi_enable_replication.sh** .
+   3. **Головной узел**. Выберите этот тип узла. Отмените выбор других типов узлов.
+   4. **Параметры**: Параметры в следующем примере позволяют включить репликацию для всех существующих таблиц, а затем копировать все данные из исходного кластера в целевой.
 
           -m hn1 -s <source hbase cluster name> -d <destination hbase cluster name> -sp <source cluster Ambari password> -dp <destination cluster Ambari password> -copydata
     
@@ -301,7 +301,7 @@ sudo service bind9 status
 
 Ниже приведены обязательные аргументы.
 
-|Название|Описание|
+|Имя|Description (Описание)|
 |----|-----------|
 |-s, --src-cluster | Указывает DNS-имя исходного кластера HBase. например -s hbsrccluster, --src-cluster=hbsrccluster. |
 |-d, --dst-cluster | Указывает DNS-имя кластера назначения (реплики) HBase. например -s dsthbcluster, --src-cluster=dsthbcluster. |
@@ -310,7 +310,7 @@ sudo service bind9 status
 
 Необязательные аргументы для этой команды.
 
-|Название|Описание|
+|Имя|Description (Описание)|
 |----|-----------|
 |-su, --src-ambari-user | Указывает имя пользователя-администратора для Ambari в исходном кластере HBase. Значение по умолчанию — **admin**. |
 |-du, --dst-ambari-user | Указывает имя пользователя-администратора для Ambari в целевом кластере HBase. Значение по умолчанию — **admin**. |
@@ -386,7 +386,7 @@ sudo service bind9 status
 - **Отключение репликации для всех таблиц:**
 
         -m hn1 -s <source hbase cluster name> -sp Mypassword\!789 -all
-  или диспетчер конфигурации служб
+  или
 
         --src-cluster=<source hbase cluster name> --dst-cluster=<destination hbase cluster name> --src-ambari-user=<source cluster Ambari user name> --src-ambari-password=<source cluster Ambari password>
 
@@ -394,7 +394,7 @@ sudo service bind9 status
 
         -m hn1 -s <source hbase cluster name> -sp <source cluster Ambari password> -t "table1;table2;table3"
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы узнали, как настроить репликацию Apache HBase в виртуальной сети или между двумя виртуальными сетями. Дополнительные сведения об HDInsight и Apache HBase см.в следующих статьях:
 

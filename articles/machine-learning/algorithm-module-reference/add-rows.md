@@ -1,24 +1,24 @@
 ---
 title: 'Добавить строки: ссылка на модуль'
-titleSuffix: Azure Machine Learning service
-description: Узнайте, как использовать модуль добавления строк в службе Машинное обучение Azure для сцепления двух наборов данных.
+titleSuffix: Azure Machine Learning
+description: Узнайте, как использовать модуль добавления строк в Машинное обучение Azure для сцепления двух наборов данных.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: reference
 author: xiaoharper
 ms.author: zhanxia
-ms.date: 05/02/2019
-ms.openlocfilehash: c8d8b6a873ee17d1658b0cb47de830848b215b89
-ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
+ms.date: 10/22/2019
+ms.openlocfilehash: a16dc0bfc3fae8852c46435f6407c56149e1b14e
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72693249"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73493958"
 ---
 # <a name="add-rows-module"></a>Добавить модуль "строки"
 
-В этой статье описывается модуль визуального интерфейса (Предварительная версия) для службы Машинное обучение Azure.
+В этой статье описывается модуль в Машинное обучение Azure Designer (Предварительная версия).
 
 Используйте этот модуль для сцепления двух наборов данных. При объединении строки второго набора данных добавляются в конец первого набора данных.  
   
@@ -42,4 +42,4 @@ ms.locfileid: "72693249"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-См. [набор модулей, доступных](module-reference.md) машинное обучение Azure службе. 
+См. [набор модулей, доступных](module-reference.md) для машинное обучение Azure. 

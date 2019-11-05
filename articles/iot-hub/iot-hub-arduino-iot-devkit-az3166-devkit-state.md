@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 04/04/2018
 ms.author: liydu
-ms.openlocfilehash: e955d21132dda6caa137ad3b5de9d00ccf7ed1b4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: deb1ea8c7b41ad48bddebfbed1b15c667ee0071a
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61369854"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73483949"
 ---
 # <a name="mxchip-iot-devkit"></a>MXChip IoT DevKit
 
@@ -55,11 +55,11 @@ ms.locfileid: "61369854"
 
 6. На экране появится нечто похожее на *Приложение-функция. Название приложения-функции — xxx*. Запишите название приложения-функции, используемое далее.
 
-7. Дождитесь окончания развертывания шаблона Azure Resource Manager, о чем свидетельствует появившееся сообщение *Resource Manager template deployment: Done* (Развертывание шаблона Resource Manager: выполнено).
+7. Дождитесь окончания развертывания шаблона Azure Resource Manager, о чем свидетельствует появившееся сообщение *Resource Manager template deployment: Done* (Развертывание шаблона диспетчера ресурсов: выполнено).
 
 ## <a name="deploy-function-app"></a>Развертывание приложения-функции
 
-1. Щелкните раскрывающееся меню **Задачи** в Visual Studio Code и выберите **Запустить задачу...**  - **cloud-deploy**.
+1. Щелкните раскрывающееся меню **Задачи** в Visual Studio Code и выберите **Запустить задачу...** ,  - cloud-deploy **.
 
 2. Дождитесь, пока завершится передача кода приложения-функции (появится сообщение *function app deploys: Done* (Развертывание приложения-функции: выполнено)).
 
@@ -77,7 +77,7 @@ ms.locfileid: "61369854"
 
 После подключения MXChip IoT DevKit к компьютеру сделайте следующее:
 
-1. Щелкните раскрывающееся меню **Задачи** в Visual Studio Code и выберите **Run Build Task...** (Запустить задачу сборки...). После этого эскиз Arduino скомпилируется и будет передан в DevKit.
+1. Щелкните раскрывающееся меню **задачи** в Visual Studio Code и выберите **выполнить задачу сборки...** Эскиз Arduino компилируется и отправляется в DevKit.
 
 2. Если эскиз успешно передан, на экран выводится сообщение *Build & Upload Sketch: success* (Сборка и передача эскиза: успешно).
 
@@ -106,7 +106,7 @@ ms.locfileid: "61369854"
 ![Пример процедуры тестирования](media/iot-hub-arduino-iot-devkit-az3166-devkit-state/devkit-state.gif)
 
 > [!NOTE]
-> Вы можете просмотреть необработанные данные двойника устройства на портале Azure. Центр Интернета вещей —\> устройства Интернета вещей —\> *\<ваше устройство\>*  -\> Двойник устройства.
+> Вы можете просмотреть необработанные данные двойника устройства на портале Azure: "Центр Интернета вещей" —\> "Устройства Интернета вещей" —\> *\<ваше_устройство\>*  -\> "Двойник устройства".
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
@@ -116,5 +116,5 @@ ms.locfileid: "61369854"
 
 Ниже приведены предлагаемые дальнейшие действия:
 
-* [Общие сведения об акселераторе решений для удаленного мониторинга Интернета вещей Azure](https://docs.microsoft.com/azure/iot-suite/)
-* [Connect an MXChip IoT DevKit device to your Azure IoT Central application](https://docs.microsoft.com/microsoft-iot-central/howto-connect-devkit) (Подключение устройства MXChip IoT DevKit к приложению Azure IoT Central)
+* [Общие сведения об акселераторе решения Azure IoT для удаленного мониторинга](https://docs.microsoft.com/azure/iot-suite/)
+* [Connect an MXChip IoT DevKit device to your Azure IoT Central application](/azure/iot-central/core/howto-connect-devkit) (Подключение устройства MXChip IoT DevKit к приложению Azure IoT Central)

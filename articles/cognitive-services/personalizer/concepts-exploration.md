@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: personalizer
 ms.topic: conceptual
-ms.date: 05/13/2019
+ms.date: 10/23/2019
 ms.author: diberry
-ms.openlocfilehash: cfecea6a64301d86aa657420dc300c26d4ed6f1e
-ms.sourcegitcommit: e3b0fb00b27e6d2696acf0b73c6ba05b74efcd85
+ms.openlocfilehash: 0b69c1fb070431ad61858322dce461f6496c35d7
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68663401"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73490819"
 ---
 # <a name="exploration-and-exploitation"></a>Анализ и расшифровка
 
@@ -25,22 +25,15 @@ ms.locfileid: "68663401"
 * с помощью функции расшифровки сопоставляет наиболее вероятное поведение пользователя на основе текущей модели машинного обучения;
 * использует функцию анализа, которая не сопоставляет действие с наибольшей вероятностью в ранге.
 
-<!--
-Returning the most probable action is called *exploit* behavior. Returning a different action is called *exploration*.
--->
 Сейчас Персонализатор выполняет анализ с помощью *жадного алгоритма Epsilon*. 
 
 ## <a name="choosing-an-exploration-setting"></a>Выбор параметра анализа
 
-Настроить процент анализируемого трафика можно на странице **параметров** Персонализатора на портале Azure. Этот параметр определяет процент анализируемых вызовов ранжирования. 
+Вы настраиваете процент трафика, который будет использоваться для исследования на странице **настройки** портал Azure для персонализации. Этот параметр определяет процент анализируемых вызовов ранжирования. 
 
 Персонализатор определяет, что нужно делать в каждом вызове ранжирования с этой вероятностью: анализировать или расшифровывать. Это отличается от поведения некоторых платформ A/B-тестирования, блокирующих воздействие на определенные идентификаторы пользователей.
 
 ## <a name="best-practices-for-choosing-an-exploration-setting"></a>Рекомендации по выбору параметра анализа
-
-<!--
-@edjez - you say what not to do, but make no recommendations of what **to** do. 
--->
 
 Параметр анализа позволяет определить долю исследуемых взаимодействий пользователей, что улучшает саму модель. 
 
@@ -50,6 +43,6 @@ Returning the most probable action is called *exploit* behavior. Returning a dif
 
 Очень важно не изменять поведение приложения на основе действия Персонализатора (анализ или расшифровка). Это может привести к смещению обучения, что в конечном счете снижает потенциальную производительность.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Обучение с подкреплением](concepts-reinforcement-learning.md) 

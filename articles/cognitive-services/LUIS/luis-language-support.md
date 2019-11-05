@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 09/04/2019
+ms.date: 10/16/2019
 ms.author: diberry
-ms.openlocfilehash: bd1e665114fff4d5b7b0b2dca267207bdeebab56
-ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
+ms.openlocfilehash: 383cade6e8bb5f66aa240564912056ec345a1ee6
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71949549"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73500188"
 ---
 # <a name="language-and-region-support-for-luis"></a>Поддержка языков и регионов в LUIS
 
@@ -30,12 +30,12 @@ ms.locfileid: "71949549"
 
 Служба LUIS распознает фрагменты речи на следующих языках:
 
-| Язык |Языковые стандарты  |  Предварительно созданная предметная область | Предварительно созданная сущность | Рекомендации по списку фраз | **[Анализ текста](https://docs.microsoft.com/azure/cognitive-services/text-analytics/text-analytics-supported-languages)<br>(Тональность и<br>ключевые слова)|
+| язык |Языковой стандарт  |  Предварительно созданная предметная область | Предварительно созданная сущность | Рекомендации по списку фраз | **[Анализ текста](https://docs.microsoft.com/azure/cognitive-services/text-analytics/text-analytics-supported-languages)<br>(Тональность и<br>ключевые слова)|
 |--|--|:--:|:--:|:--:|:--:|
 | Английский (США) |`en-US` | ✔ | ✔  |✔|✔|
 | *[Китайский](#chinese-support-notes) |`zh-CN` | ✔ | ✔ |✔|-|
-| Голландский |`nl-NL` |✔|  -   |-|✔|
-| французский (Франция) |`fr-FR` |✔| ✔ |✔ |✔|
+| Нидерландский |`nl-NL` |✔|  -   |-|✔|
+| Французский (Франция) |`fr-FR` |✔| ✔ |✔ |✔|
 | французский (Канада) |`fr-CA` |-|   -   |-|✔|
 | Немецкий |`de-DE` |✔| ✔ |✔ |✔|
 | Хинди | `hi-IN`|-|-|-|-|
@@ -43,19 +43,13 @@ ms.locfileid: "71949549"
 | *[Японский](#japanese-support-notes) |`ja-JP` |✔| ✔ |✔|Только ключевая фраза|
 | Корейский |`ko-KR` |✔|   -   |-|Только ключевая фраза|
 | Португальский (Бразилия) |`pt-BR` |✔| ✔ |✔ |не все вложенные языки и региональные параметры|
-| испанский (Испания) |`es-ES` |✔| ✔ |✔|✔|
+| Испанский (Испания) |`es-ES` |✔| ✔ |✔|✔|
 | Испанский (Мексика)|`es-MX` |-|  -   |✔|✔|
 | Турецкий | `tr-TR` |✔|-|-|Только тональность|
 
-
 Языковая поддержка зависит от [готовых сущностей](luis-reference-prebuilt-entities.md) и [готовых предметных областей](luis-reference-prebuilt-domains.md).
 
-### <a name="chinese-support-notes"></a>\* Примечания о поддержке китайского языка
-
- - В языке и региональных параметрах `zh-cn` служба LUIS ожидает упрощенную кодировку китайского языка вместо традиционной кодировки.
- - Имена намерений, сущностей, свойств и регулярных выражений можно указывать китайскими или латинскими символами.
- - Сведения о том, какие предварительно созданные домены поддерживаются в `zh-cn` культуре, см. в справочнике по [предварительно созданным доменам](luis-reference-prebuilt-domains.md).
-<!--- When writing regular expressions in Chinese, do not insert whitespace between Chinese characters.-->
+[!INCLUDE [Chinese language support notes](includes/chinese-language-support-notes.md)]
 
 ### <a name="japanese-support-notes"></a>\* Примечания о поддержке японского языка
 
@@ -63,8 +57,7 @@ ms.locfileid: "71949549"
      - でございます не равно です.
      - です не равно だ.
 
-### <a name="text-analytics-support-notes"></a>** Примечания о поддержке анализа текста
-Текстовая аналитика включает в себя предварительно созданную сущность keyPhrase и анализ тональности. Вложенные языки и региональные параметры поддерживаются только для португальского языка: `pt-PT` и `pt-BR`. Все другие языки и региональные параметры поддерживаются на уровне основного языка. Дополнительные сведения о [поддерживаемых языках](https://docs.microsoft.com/azure/cognitive-services/text-analytics/text-analytics-supported-languages) анализа текста.
+[!INCLUDE [Text Analytics support notes](includes/text-analytics-support-notes.md)]
 
 ### <a name="speech-api-supported-languages"></a>Поддерживаемые языки API речи
 Сведения о языках режима диктовки службы речи см. в разделе [Поддерживаемые языки](https://docs.microsoft.com/azure/cognitive-services/Speech/api-reference-rest/supportedlanguages##interactive-and-dictation-mode) для службы "Речь".
@@ -83,10 +76,10 @@ ms.locfileid: "71949549"
 ## <a name="tokenization"></a>Разметка
 В целях машинного обучения LUIS разбивает фрагменты речи на [маркеры](luis-glossary.md#token), в зависимости от языка и региональных параметров.
 
-|Язык|  каждый пробел и специальный символ | уровень символа|составные слова|[возвращаемая размеченная сущность](luis-concept-data-extraction.md#tokenized-entity-returned)
+|язык|  каждый пробел и специальный символ | уровень символа|составные слова|[возвращаемая размеченная сущность](luis-concept-data-extraction.md#tokenized-entity-returned)
 |--|:--:|:--:|:--:|:--:|
 |Китайский||✔||✔|
-|Голландский|||✔|✔|
+|Нидерландский|||✔|✔|
 |Английский (en-us)|✔ ||||
 |Французский (fr-FR)|✔||||
 |Французский (fr-CA)|✔||||
@@ -103,10 +96,10 @@ ms.locfileid: "71949549"
 
 Следующие языки и региональные параметры имеют пользовательские версии маркеров:
 
-|Язык и региональные параметры|Version|Цель|
+|Язык и региональные параметры|Version (версия)|Назначение|
 |--|--|--|
-|Немецкий<br>`de-de`|1.0.0|Разделяет слова, разделив их с помощью токена на основе машинного обучения, который пытается разбить составные слова на отдельные компоненты.<br>Если пользователь вводит `Ich fahre einen krankenwagen` в качестве utterance, он включается `Ich fahre einen kranken wagen`. Разрешение маркировки `kranken` и `wagen` независимо от разных сущностей.|
-|Немецкий<br>`de-de`|1.0.2|Разделяет слова, разбивая их на пробелы.<br> Если пользователь вводит `Ich fahre einen krankenwagen` в качестве utterance, он остается единственным маркером. Таким образом, `krankenwagen` помечается как одна сущность. |
+|Немецкий<br>`de-de`|1.0.0|Разделяет слова, разделив их с помощью токена на основе машинного обучения, который пытается разбить составные слова на отдельные компоненты.<br>Если пользователь вводит `Ich fahre einen krankenwagen` как utterance, он включается `Ich fahre einen kranken wagen`. Разрешение маркировки `kranken` и `wagen` независимо от разных сущностей.|
+|Немецкий<br>`de-de`|1.0.2|Разделяет слова, разбивая их на пробелы.<br> Если пользователь вводит `Ich fahre einen krankenwagen` как utterance, он остается единственным маркером. Таким образом `krankenwagen` помечается как единая сущность. |
 
 ### <a name="migrating-between-tokenizer-versions"></a>Миграция между версиями маркеров
 <!--

@@ -6,17 +6,21 @@ ms.subservice: ''
 ms.topic: conceptual
 author: mgoedtel
 ms.author: magoedte
-ms.date: 08/14/2019
-ms.openlocfilehash: bda64dd555f1970b70878d827f6be1dab3f1e2d5
-ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
+ms.date: 10/15/2019
+ms.openlocfilehash: d3779a2d48db82bfccdc0f047119a36ef56c3bdf
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72555429"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73477413"
 ---
 # <a name="azure-monitor-for-containers-frequently-asked-questions"></a>Azure Monitor для контейнеров: вопросы и ответы
 
 В этом списке корпорация Майкрософт собрала часто задаваемые вопросы с ответами об Azure Monitor для контейнеров. Если у вас есть другие вопросы об этом решении, вы можете задать их на [форуме для обсуждений](https://feedback.azure.com/forums/34192--general-feedback). Если вопрос задается часто, мы добавим его в эту статью, чтобы его можно было найти быстро и легко.
+
+## <a name="can-i-view-metrics-collected-in-grafana"></a>Можно ли просматривать метрики, собранные в Grafana?
+
+Azure Monitor для контейнеров поддерживает просмотр метрик, хранящихся в рабочей области Log Analytics, на панелях мониторинга Grafana. Мы предоставили шаблон, который можно скачать из [репозитория панели мониторинга](https://grafana.com/grafana/dashboards?dataSource=grafana-azure-monitor-datasource&category=docker) Grafana, чтобы получить сведения о том, как запросить дополнительные данные из наблюдаемых кластеров для визуализации в пользовательском Grafana панелей мониторинга. 
 
 ## <a name="can-i-monitor-my-aks-engine-cluster-with-azure-monitor-for-containers"></a>Можно ли отслеживать кластер AKS Engine с Azure Monitor для контейнеров?
 
@@ -72,20 +76,15 @@ LogEntry : ({“Hello": "This example has multiple lines:","Docker/Moby": "will 
 
 ## <a name="how-do-i-resolve-azure-ad-errors-when-i-enable-live-logs"></a>Разделы справки устранить ошибки Azure AD при включении Live Logs? 
 
-Может появиться следующее сообщение об ошибке: **URL-адрес ответа, указанный в запросе, не совпадает с URL-адреса ответа, настроенного для приложения: "< приложение с идентификатором \>"** . Решение для решения этой проблемы можно найти в статье [Просмотр журналов контейнеров в реальном времени с помощью Azure Monitor для контейнеров](container-insights-live-logs.md#configure-aks-with-azure-active-directory). 
+Может появиться следующее сообщение об ошибке: **URL-адрес ответа, указанный в запросе, не совпадает с URL-адреса ответа, настроенного для приложения: "< приложение с идентификатором\>"** . Решение для решения этой проблемы можно найти в статье [как просматривать данные контейнера в режиме реального времени с помощью Azure Monitor для контейнеров](container-insights-livedata-setup.md#configure-ad-integrated-authentication). 
 
 ## <a name="why-cant-i-upgrade-cluster-after-onboarding"></a>Почему не удается обновить кластер после адаптации?
 
 Если после включения Azure Monitor для контейнеров в кластере AKS вы удалите Log Analytics рабочую область, в которую кластер отправит свои данные, при попытке обновления кластера произойдет сбой. Чтобы обойти это, необходимо отключить мониторинг, а затем снова включить его, указав другую действительную рабочую область в подписке. При повторном выполнении обновления кластера его необходимо обработать и завершить успешно.  
 
 ## <a name="which-ports-and-domains-do-i-need-to-openwhitelist-for-the-agent"></a>Какие порты и домены нужно открыть или список разрешений для агента?
-- *. ods.opinsights.azure.com 443
-- *. oms.opinsights.azure.com 443
-- *. blob.core.windows.net 443
-- dc.services.visualstudio.com 443
-- *. microsoftonline.com 443
-- *. monitoring.azure.com 443
-- login.microsoftonline.com 443
+
+Сведения о конфигурации прокси-сервера и брандмауэра, необходимые для контейнерного агента с помощью Azure, государственных организаций США и облаков Azure для Китая, см. в разделе [требования к сетевому брандмауэру](container-insights-onboard.md#network-firewall-requirements) .
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

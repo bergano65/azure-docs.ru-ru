@@ -1,22 +1,22 @@
 ---
-title: Устранение неполадок в предварительной версии Azure Data Share
-description: Узнайте, как устранять неполадки с приглашениями и ошибками при создании или получении общих папок данных с помощью предварительной версии Azure Data Share.
+title: Устранение неполадок в Azure Data Share
+description: Узнайте, как устранять неполадки с приглашениями и ошибками при создании или получении общих ресурсов данных с помощью общего ресурса данных Azure.
 services: data-share
 author: joannapea
 ms.author: joanpo
 ms.service: data-share
 ms.topic: troubleshooting
 ms.date: 07/10/2019
-ms.openlocfilehash: 592a2d464aed8c39dfd11734beccbd0399d75fd9
-ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
+ms.openlocfilehash: 6ad612d56b25da9e092070198e321e7fca8ad96b
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72169228"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73490568"
 ---
-# <a name="troubleshoot-common-issues-in-azure-data-share-preview"></a>Устранение распространенных неполадок в предварительной версии Azure Data Share
+# <a name="troubleshoot-common-issues-in-azure-data-share"></a>Устранение распространенных неполадок в общей папке данных Azure 
 
-В этой статье показано, как устранять распространенные неполадки в предварительной версии Azure Data Share. 
+В этой статье показано, как устранять распространенные проблемы, связанные с общей папкой данных Azure. 
 
 ## <a name="azure-data-share-invitations"></a>Приглашения Azure Data Share 
 
@@ -41,7 +41,7 @@ ms.locfileid: "72169228"
 
 ## <a name="error-when-creating-or-receiving-a-new-data-share"></a>Ошибка во время создания или получения новой Data Share
 
-"Ошибка: Операция вернула недопустимый код состояния 'BadRequest'"
+"Ошибка: операция вернула недопустимый код состояния" BadRequest ""
 
 "Ошибка: AuthorizationFailed"
 
@@ -56,7 +56,21 @@ ms.locfileid: "72169228"
 1. Щелкните **Добавить**.
 1. Добавьте себя в качестве владельца.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="troubleshooting-sql-based-sharing"></a>Устранение неполадок совместного использования на основе SQL
+
+"Ошибка: наборы данных x не были добавлены, поскольку отсутствуют необходимые разрешения для общего доступа".
+
+Если эта ошибка возникает при добавлении набора данных из источника на основе SQL, это может быть вызвано тем, что вы не создали пользователя для Azure Data Share MSI на SQL Server.  Чтобы устранить эту проблему, выполните следующий скрипт:
+
+```sql
+    create user <share_acct_name> from external provider;     
+    exec sp_addrolemember db_owner, <share_acct_name>; 
+```      
+Обратите внимание, что *< share_acc_name >* — это имя учетной записи общего ресурса данных. Если вы еще не создали учетную запись общего ресурса данных, вы можете вернуться к этому предварительному компоненту позже.         
+
+Убедитесь, что выполнены все предварительные требования, перечисленные в руководстве по [совместному использованию данных](share-your-data.md) .
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы узнать, как приступить к обмену данными, перейдите к [этому](share-your-data.md) руководству.
 

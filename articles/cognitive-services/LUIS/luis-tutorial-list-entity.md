@@ -10,15 +10,17 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 09/05/2019
 ms.author: diberry
-ms.openlocfilehash: a722ce39a679fa13e1fe849c46b44f786ea5ee42
-ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
+ms.openlocfilehash: f3c99856eaffc454754618a1eac34630b985a77e
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70390269"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73499475"
 ---
 # <a name="use-a-list-entity-to-increase-entity-detection"></a>Использование сущности списка, чтобы увеличить обнаружение сущностей 
 В этой статье показано, как использовать [сущность списка](luis-concept-entity-types.md) для увеличения обнаружения сущностей. Сущности списков не обязательно должны быть помечены как они точно соответствуют терминам.  
+
+[!INCLUDE [Waiting for LUIS portal refresh](./includes/wait-v3-upgrade.md)]
 
 В этой статье раскрываются следующие темы:
 
@@ -27,7 +29,7 @@ ms.locfileid: "70390269"
 > * Добавлять нормализованные значения и синонимы
 > * Проверять идентификацию улучшенной сущности
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 > [!div class="checklist"]
 > * [Node.js](https://nodejs.org) последней версии
@@ -46,7 +48,7 @@ ms.locfileid: "70390269"
 
 В идеале следующие высказывания должны быть устранены для предварительно подготовленной сущности **HomeAutomation.Device**:
 
-|#|высказывание|определенная сущность|приложения|
+|#|фраза|определенная сущность|приложения|
 |--|--|--|--|
 |1|включить кондиционер|HomeAutomation.Device — "кондиционер"|0.8748562|
 |2|подать тепло|HomeAutomation.Device — "нагреватель"|0.784990132|
@@ -74,7 +76,7 @@ ms.locfileid: "70390269"
 
 Если LUIS необходимо часто определять новую альтернативу, то [список фраз](luis-concept-feature.md#how-to-use-phrase-lists) будет лучшим решением.
 
-## <a name="create-a-list-entity"></a>Создание сущности списка
+## <a name="create-a-list-entity"></a>Создавать сущности списка
 Создайте файл Node.js и скопируйте туда следующий код. Измените значения ключа авторинга, идентификатор приложения, идентификатор версии и региона.
 
    [!code-javascript[Create DevicesList List Entity](~/samples-luis/documentation-samples/tutorial-list-entity/add-entity-list.js "Create DevicesList List Entity")]
@@ -212,12 +214,12 @@ node train.js
 
 Попробуйте два других высказывания, чтобы увидеть, что они также возвращаются в качестве терморегулятора. 
 
-|#|высказывание|сущность|type|value|
+|#|фраза|сущность|type|значение|
 |--|--|--|--|--|
 |1|включить кондиционер| кондиционер | DevicesList | Терморегулятор|
 |2|подать тепло|тепло| DevicesList |Терморегулятор|
 |3|охладить|охладитель|DevicesList|Терморегулятор|
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Можно создать другую сущность списка для расширения расположения устройств в комнатах, этажах или зданиях. 

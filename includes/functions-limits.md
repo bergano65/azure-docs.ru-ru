@@ -4,16 +4,16 @@ ms.service: billing
 ms.topic: include
 ms.date: 05/09/2019
 ms.author: glenga
-ms.openlocfilehash: d00af77a2d502cb534a4ab4a0db9231e5e8748b7
-ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
+ms.openlocfilehash: ad87964216db72cfef447a18d4cd05b8a976491b
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "69636450"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73476917"
 ---
-| Resource | [План потребления](../articles/azure-functions/functions-scale.md#consumption-plan) | [План Premium](../articles/azure-functions/functions-scale.md#premium-plan) | [План службы приложений](../articles/azure-functions/functions-scale.md#app-service-plan) <sup>1</sup> |
+| Ресурс | [План потребления](../articles/azure-functions/functions-scale.md#consumption-plan) | [План Premium](../articles/azure-functions/functions-scale.md#premium-plan) | [План службы приложений](../articles/azure-functions/functions-scale.md#app-service-plan)<sup>1</sup> |
 | --- | --- | --- | --- |
-| Горизонтальное масштабирование | Управляемые событиями | Управляемые событиями | [Ручная или автомасштабирование](../articles/app-service/manage-scale-up.md) | 
+| Масштабирование | Управляемые событиями | Управляемые событиями | [Ручная или автомасштабирование](../articles/app-service/manage-scale-up.md) | 
 | Максимальное число экземпляров | 200 | 20 | 10-20 |
 |[Длительность ожидания](../articles/azure-functions/functions-scale.md#timeout) по умолчанию (мин.) |5 | 30 |30<sup>2</sup> |
 |Максимальная [Длительность истечения времени ожидания](../articles/azure-functions/functions-scale.md#timeout) (мин.) |10 | unbounded | без привязки<sup>3</sup> |
@@ -25,9 +25,9 @@ ms.locfileid: "69636450"
 | Максимальный объем памяти (ГБ на экземпляр) | 1.5 | 3,5-14 | 1,75-14 |
 | Приложения функций на план |100 |100 |без привязки<sup>5</sup> |
 | [Планы службы приложений](../articles/app-service/overview-hosting-plans.md) | 100. США за [регион](https://azure.microsoft.com/global-infrastructure/regions/) |100 шт. на одну группу ресурсов |100 шт. на одну группу ресурсов |
-| Хранилище<sup>6</sup> |1 ГБ |250 ГБ |50-1000 ГБ |
+| Хранилище<sup>6</sup> |1 GB |250 ГБ |50-1000 ГБ |
 | Количество личных доменов на одно приложение</a> |500<sup>7</sup> |500 |500 |
-| личных доменов [Поддержка SSL](../articles/app-service/app-service-web-tutorial-custom-ssl.md) |включена неограниченное подключение SNI SSL | неограниченные протоколы SNI SSL и 1 SSL на основе IP подключений |неограниченные протоколы SNI SSL и 1 SSL на основе IP подключений | 
+| личных доменов [Поддержка SSL](../articles/app-service/configure-ssl-bindings.md) |включена неограниченное подключение SNI SSL | неограниченные протоколы SNI SSL и 1 SSL на основе IP подключений |неограниченные протоколы SNI SSL и 1 SSL на основе IP подключений | 
 
 <sup>1</sup> для определенных ограничений для различных параметров плана службы приложений см. раздел [ограничения плана службы приложений](../articles/azure-subscription-service-limits.md#app-service-limits).  
 <sup>2</sup> по умолчанию время ожидания для выполнения функций 1. x в плане службы приложений не ограничено.  

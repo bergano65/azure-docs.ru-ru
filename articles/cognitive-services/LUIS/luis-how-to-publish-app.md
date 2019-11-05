@@ -9,18 +9,20 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 09/02/2019
+ms.date: 10/25/2019
 ms.author: diberry
-ms.openlocfilehash: f92776072038c5684e9334d2dda1690ebb7bcaa8
-ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
+ms.openlocfilehash: 0d3a413249cb9058e4098f2836131494670a1727
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70257817"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73491320"
 ---
 # <a name="publish-your-active-trained-app-to-a-staging-or-production-endpoint"></a>Публикация активного обученного приложения в промежуточной или рабочей конечной точке
 
 После завершения создания и проверки рабочего приложения LUIS, сделайте его доступным для приложения клиента путем его публикации в конечной точке. 
+
+[!INCLUDE [Waiting for LUIS portal refresh](./includes/wait-v3-upgrade.md)]
 
 <a name="publish-your-trained-app-to-an-http-endpoint"></a>
 
@@ -54,7 +56,7 @@ ms.locfileid: "70257817"
 
 После выбора слота настройте параметры публикации для:
 
-* Анализ тональности
+* Анализ мнений
 * Исправление орфографии
 * Подготовка речи 
 
@@ -68,7 +70,7 @@ ms.locfileid: "70257817"
 
 Если требуется узнать URL-адрес конечной точки, выберите ссылку. Можно также перейти к URL-адресам конечной точки, выбрав **Управление** в верхнем меню, а затем щелкнув **ресурсы Azure** в меню слева. 
 
-## <a name="sentiment-analysis"></a>Анализ тональности
+## <a name="sentiment-analysis"></a>Анализ мнений
 
 <a name="enable-sentiment-analysis"></a>
 
@@ -88,7 +90,7 @@ ms.locfileid: "70257817"
 
 Речь подготовка — это процесс использования отправки модели LUIS в речевые службы до преобразования текста в речь. Это позволяет службе распознавания речи точнее обеспечивать преобразование речи для модели. Это позволяет осуществлять голосовые и LUISные запросы и ответы в одном вызове путем выполнения одного вызова речи и получения ответа LUIS. Она обеспечивает меньше задержек в целом.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Чтобы узнать, как добавить ключи подписки Azure в LUIS и настроить ключ проверки орфографии Bing, а также как включить все намерения в результаты, см. статью [Управление ключами конечной точки в LUIS](./luis-how-to-azure-subscription.md).
 * Инструкции по тестированию приложения с помощью консоли тестирования см. в статье [Test your LUIS app](luis-interactive-test.md) (Протестируйте свое приложение LUIS).

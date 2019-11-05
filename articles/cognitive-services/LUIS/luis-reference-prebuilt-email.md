@@ -11,111 +11,79 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 09/27/2019
 ms.author: diberry
-ms.openlocfilehash: 4a1bc9ae7ccf48b9dc8b47b57ea43b9259786d01
-ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
+ms.openlocfilehash: 6f262752a50b58eae8ffbea81b8e7fc4d8c65b98
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71677684"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73464986"
 ---
 # <a name="email-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность email для приложения LUIS
 При извлечении сущности email из фразы извлекается полный адрес электронной почты. Так как эта сущность уже обучена, добавлять в назначения приложения примеры фраз, содержащие адреса электронной почты, не нужно. Сущность email поддерживается только в `en-us` язычных и региональных параметрах. 
 
 ## <a name="resolution-for-prebuilt-email"></a>Разрешение для предварительно созданной сущности email
 
-#### <a name="v2-prediction-endpoint-responsetabv2"></a>[Ответ конечной точки прогнозирования v2](#tab/V2)
+Для запроса возвращаются следующие объекты сущности:
 
-В следующем примере показано разрешение сущности **builtin.email**.
+`please send the information to patti@contoso.com`
 
-```json
-{
-  "query": "please send the information to patti@contoso.com",
-  "topScoringIntent": {
-    "intent": "None",
-    "score": 0.811592042
-  },
-  "intents": [
-    {
-      "intent": "None",
-      "score": 0.811592042
-    }
-  ],
-  "entities": [
-    {
-      "entity": "patti@contoso.com",
-      "type": "builtin.email",
-      "startIndex": 31,
-      "endIndex": 55,
-      "resolution": {
-        "value": "patti@contoso.com"
-      }
-    }
-  ]
-}
-```
-
-#### <a name="v3-prediction-endpoint-responsetabv3"></a>[V3 прогнозирование ответа конечной точки](#tab/V3)
+#### <a name="v3-responsetabv3"></a>[V3 ответ](#tab/V3)
 
 Следующий код JSON относится к параметру `verbose`, для которого задано значение `false`:
 
 ```json
-{
-    "query": "please send the information to patti@contoso.com",
-    "prediction": {
-        "normalizedQuery": "please send the information to patti@contoso.com",
-        "topIntent": "None",
-        "intents": {
-            "None": {
-                "score": 0.5023781
-            }
-        },
-        "entities": {
-            "email": [
-                "patti@contoso.com"
-            ]
-        }
-    }
+"entities": {
+    "email": [
+        "patti@contoso.com"
+    ]
 }
 ```
-
+#### <a name="v3-verbose-responsetabv3-verbose"></a>[V3 подробный ответ](#tab/V3-verbose)
 
 Следующий код JSON относится к параметру `verbose`, для которого задано значение `true`:
 
 ```json
-{
-    "query": "please send the information to patti@contoso.com",
-    "prediction": {
-        "normalizedQuery": "please send the information to patti@contoso.com",
-        "topIntent": "None",
-        "intents": {
-            "None": {
-                "score": 0.5023781
-            }
-        },
-        "entities": {
-            "email": [
-                "patti@contoso.com"
-            ],
-            "$instance": {
-                "email": [
-                    {
-                        "type": "builtin.email",
-                        "text": "patti@contoso.com",
-                        "startIndex": 31,
-                        "length": 25,
-                        "modelTypeId": 2,
-                        "modelType": "Prebuilt Entity Extractor"
-                    }
+"entities": {
+    "email": [
+        "patti@contoso.com"
+    ],
+    "$instance": {
+        "email": [
+            {
+                "type": "builtin.email",
+                "text": "patti@contoso.com",
+                "startIndex": 31,
+                "length": 17,
+                "modelTypeId": 2,
+                "modelType": "Prebuilt Entity Extractor",
+                "recognitionSources": [
+                    "model"
                 ]
             }
-        }
+        ]
     }
 }
 ```
+#### <a name="v2-responsetabv2"></a>[Ответ v2](#tab/V2)
 
+В следующем примере показано разрешение сущности **builtin.email**.
+
+```json
+"entities": [
+    {
+        "entity": "patti@contoso.com",
+        "type": "builtin.email",
+        "startIndex": 31,
+        "endIndex": 55,
+        "resolution": {
+        "value": "patti@contoso.com"
+        }
+    }
+]
+```
 * * * 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о [конечной точке прогнозирования v3](luis-migration-api-v3.md).
 

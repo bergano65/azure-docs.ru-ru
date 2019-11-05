@@ -8,12 +8,12 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: a9ab828daa009f7204abb1c64291d937a1f0dba2
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: 1f134ac360b6c5bd04c0e141da52b6dad950e208
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72784935"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73466817"
 ---
 # <a name="example-create-a-custom-skill-using-the-bing-entity-search-api"></a>Пример. Создание пользовательского навыка с помощью API Bing для поиска сущностей
 
@@ -313,7 +313,7 @@ namespace SampleSkills
 
 Обязательно введите собственное значение *ключа* в `key`ную константу на основе ключа, полученного при регистрации в API Bing для поиска сущностей.
 
-Этот пример включает в себя весь необходимый код в одном файле для удобства. Можно найти немного более структурированную версию того же навыка, а также другие примеры пользовательских навыков в [репозитории Power Skills](https://aka.ms/entity-search-power-skill).
+Этот пример включает в себя весь необходимый код в одном файле для удобства. В [репозитории Power Skills](https://github.com/Azure-Samples/azure-search-power-skills/tree/master/Text/BingEntitySearch)можно найти немного более структурированную версию этого же навыка.
 
 Конечно, вы можете переименовать файл с `Function1.cs` на `BingEntitySearch.cs`.
 
@@ -476,10 +476,10 @@ POST https://[your-entity-search-app-name].azurewebsites.net/api/EntitySearch?co
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Поздравляем! Вы создали первый пользовательский обогащенный элемент. Теперь вы можете использовать ту же схему для добавления пользовательских функций. 
+Поздравляем! Вы создали свой первый пользовательский навык. Теперь вы можете использовать ту же схему для добавления пользовательских функций. Чтобы получить дополнительные сведения, перейдите по следующим ссылкам.
 
-+ [Power Skills: репозиторий пользовательских навыков](https://aka.ms/powerskills)
-+ [Добавление пользовательского навыка в конвейер когнитивного поиска](cognitive-search-custom-skill-interface.md)
-+ [How to define a skillset](cognitive-search-defining-skillset.md) (Определение набора навыков)
-+ [Create Skillset](https://docs.microsoft.com/rest/api/searchservice/create-skillset) (Создание набора навыков)
++ [Power Skills: репозиторий пользовательских навыков](https://github.com/Azure-Samples/azure-search-power-skills)
++ [Добавление пользовательского навыка в конвейер обогащения искусственного интеллекта](cognitive-search-custom-skill-interface.md)
++ [Определение набора навыков](cognitive-search-defining-skillset.md)
++ [Создание набора навыков (REST)](https://docs.microsoft.com/rest/api/searchservice/create-skillset)
 + [Сопоставление обогащенных полей](cognitive-search-output-field-mapping.md)

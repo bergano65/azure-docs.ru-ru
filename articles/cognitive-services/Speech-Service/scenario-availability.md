@@ -8,14 +8,14 @@ manager: xdh
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 05/07/2019
+ms.date: 11/05/2019
 ms.author: cbasoglu
-ms.openlocfilehash: af5bb7126af65a755cb1d58788d39cb8bdcbbb3b
-ms.sourcegitcommit: 7868d1c40f6feb1abcafbffcddca952438a3472d
+ms.openlocfilehash: 6ec31df7cef8391728eae7845f64f55bb1c6466a
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71959027"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73491348"
 ---
 # <a name="scenario-availability"></a>Доступность сценариев
 
@@ -28,16 +28,16 @@ ms.locfileid: "71959027"
   - C#/Виндовс & UWP & Unity
   - Java (JRE и Android)
   - Python
-  - Код SWIFT
+  - Swift
   - Objective-C
   - REST API TTS можно использовать в любой другой ситуации.
-- **Пробуждение слова (ключевое слово корректировщик/КВС)**
+- **Заданное ключевое слово (КВС)**
   - C++/Виндовс & Linux
   - C#/Виндовс & Linux
   - Python и Windows & Linux
   - Java и Windows & Linux & Android (пакет SDK для речевых устройств)
-  - Функция Wake Word (ключевое слово корректировщик/КВС) может работать с любым типом микрофона, официальная поддержка КВС, однако, в настоящее время ограничена только массивами микрофонов, находящихся на оборудовании Azure Kinect DK или в пакете SDK для речевых устройств.
-- **Первый виртуальный помощник**
+  - Функция поиска ключевых слов (КВС) может работать с любым типом микрофона, официальная поддержка КВС, однако, в настоящее время ограничена только массивами микрофонов, находящихся на оборудовании Azure Kinect DK или в пакете SDK для речевых устройств.
+- **Речевые помощники**
   - C++/Виндовс & Linux & macOS
   - C#/виндовс
   - Java/Windows & Linux & macOS & Android (пакет SDK для речевых устройств)

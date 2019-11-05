@@ -9,17 +9,19 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 09/03/2019
+ms.date: 10/25/2019
 ms.author: diberry
-ms.openlocfilehash: 5939886f68a877c4cfad752fe93c4f0eca8f80cf
-ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
+ms.openlocfilehash: 227efcdbcb7d8e776dd77b38c5d1dedd54d71b6b
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70258508"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73500321"
 ---
 # <a name="create-a-new-luis-app-in-the-luis-portal"></a>Создание приложения LUIS на портале LUIS
 Создать приложение LUIS можно двумя способами: на портале [LUIS](https://www.luis.ai) или с помощью [API-интерфейсов](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c2f) разработки LUIS.
+
+[!INCLUDE [Waiting for LUIS portal refresh](./includes/wait-v3-upgrade.md)]
 
 ## <a name="using-the-luis-portal"></a>Использование портала LUIS
 
@@ -45,7 +47,7 @@ ms.locfileid: "70258508"
 
 ## <a name="create-new-app-in-luis"></a>Создание приложения в LUIS
 
-1. На странице **Мои приложения** выберите **Create new app** (Создать приложение).
+1. На странице **Мои приложения** выберите **+ создать**.
 
     ![Список приложений LUIS](./media/luis-create-new-app/apps-list.png)
 
@@ -90,6 +92,6 @@ ms.locfileid: "70258508"
 1. В меню выберите пункт **Удалить**.
 1. В диалоговом окне подтверждения выберите **ОК**.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Первая задача в приложении — [добавление намерений](luis-how-to-add-intents.md).

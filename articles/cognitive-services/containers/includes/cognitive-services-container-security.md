@@ -7,18 +7,18 @@ author: IEvangelist
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 09/24/2019
+ms.date: 09/30/2019
 ms.author: dapine
-ms.openlocfilehash: 7322d356d972635b81bc1bdd4b329bd3d5ac02df
-ms.sourcegitcommit: 15e3bfbde9d0d7ad00b5d186867ec933c60cebe6
+ms.openlocfilehash: 35f5cffdc644370082e229c88d67db33e853c446
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71842567"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73499188"
 ---
 ## <a name="azure-cognitive-services-container-security"></a>Безопасность контейнера Cognitive Services Azure
 
-Безопасность должна быть основной задачей при разработке приложений. Важность безопасности является метрикой успеха. При проектировании программного решения, включающего Cognitive Services контейнеры, крайне важно понимать ограничения и возможности, доступные вам. Дополнительные сведения см. в статье [Безопасность Azure][az-security].
+Безопасность должна быть основной задачей при разработке приложений. Важность безопасности является метрикой успеха. При проектировании программного решения, включающего Cognitive Services контейнеры, крайне важно понимать ограничения и возможности, доступные вам. Дополнительные сведения о сетевой безопасности см. в статье [Настройка виртуальных сетей Azure Cognitive Services][az-security].
 
 > [!IMPORTANT]
 > По умолчанию в API контейнера Cognitive Services *нет безопасности* . Это связано с тем, что чаще всего контейнер будет работать как часть Pod, которая защищена извне сетевым мостом. Однако можно включить проверку подлинности, которая работает аналогично проверке подлинности, используемой при доступе к [облачной Cognitive Services][request-authentication].
@@ -44,11 +44,11 @@ ms.locfileid: "71842567"
 
 #### <a name="disable-deep-packet-inspection"></a>Отключение глубокой проверки пакетов
 
-> [Глубокая проверка пакетов](https://en.wikipedia.org/wiki/Deep_packet_inspection) (DPI) — это тип обработки данных, который подробно анализирует данные, передаваемые по компьютерной сети, и обычно выполняет действия путем блокировки, повторной маршрутизации или регистрации в журнале.
+> [Глубокая проверка пакетов](https://en.wikipedia.org/wiki/Deep_packet_inspection) (DPI) — это тип обработки данных, который подробно анализирует данные, передаваемые по компьютерной сети, и обычно выполняет действия путем блокировки, повторной маршрутизации или ведения журнала.
 
 Отключите DPI на защищенных каналах, которые контейнеры Cognitive Services создают на серверах Майкрософт. В противном случае контейнер будет некорректно работать.
 
 [istio]: https://istio.io/
 [nginx]: https://www.nginx.com
 [request-authentication]: ../../authentication.md
-[az-security]: ../../../security/fundamentals/overview.md
+[az-security]: ../../cognitive-services-virtual-networks.md

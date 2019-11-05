@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: erhopf
 ms.custom: seodec18, seo-javascript-october2019
-ms.openlocfilehash: eb4478a435fbfc899055a60e13b318be771652f7
-ms.sourcegitcommit: f29fec8ec945921cc3a89a6e7086127cc1bc1759
+ms.openlocfilehash: 46ada91060aa095b7c041ff75abb6256f3d05853
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72527589"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73464695"
 ---
 # <a name="try-speech-services-for-free"></a>Бесплатная пробная подписка на службу "Речь"
 
@@ -26,7 +26,7 @@ ms.locfileid: "72527589"
 
 И, наконец, Службы речи включают бесплатную категорию для небольших объемов данных, подходящую для разработки приложений. Вы можете продолжать пользоваться бесплатной подпиской даже после истечения срока действия кредита на службу.
 
-## <a name="free-trial"></a>Бесплатное пробное использование
+## <a name="free-trial"></a>Бесплатная пробная версия
 
 30-дневная бесплатная версия дает доступ к ценовой категории "Стандартный" в течение ограниченного времени.
 
@@ -123,5 +123,5 @@ ms.locfileid: "72527589"
 Выполните одно из 10-минутных руководств или ознакомьтесь с примерами пакета SDK.
 
 > [!div class="nextstepaction"]
-> [Краткое руководство. Распознавание речи в приложении C# для .NET Framework в Windows с помощью пакета SDK для службы "Речь"](quickstart-csharp-dotnet-windows.md)
+> [Краткое руководство. Распознавание речи в приложении C# для .NET Framework в Windows с помощью пакета SDK для службы "Речь"](~/articles/cognitive-services/Speech-Service/quickstarts/speech-to-text-from-microphone.md?pivots=programming-language-csharp&tabs=dotnet)
 > [Примеры пакета SDK для распознавания речи](speech-sdk.md#get-the-samples)

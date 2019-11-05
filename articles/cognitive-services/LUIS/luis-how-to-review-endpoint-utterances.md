@@ -9,27 +9,28 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 09/05/2019
+ms.date: 10/25/2019
 ms.author: diberry
-ms.openlocfilehash: c617e4aa62ce2ff468545bef0b2ebe2c4d0e4f03
-ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
+ms.openlocfilehash: d5652857f2f35e392d3f512001044fd06bc0a0c9
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70382359"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73499069"
 ---
 # <a name="how-to-review-endpoint-utterances-in-luis-portal-for-active-learning"></a>Как проверить конечную точку фразы продолжительностью на портале LUIS для работы с Active Learning
 
 [Активное обучение](luis-concept-review-endpoint-utterances.md) записывает запросы конечной точки и выбирает конечную точку пользователя фразы продолжительностью, из-за чего это не известно. Вы просматриваете эти фразы продолжительностью, чтобы выбрать намерение и отметить сущности для этих фразы продолжительностью для чтения. Примите эти изменения в примере фразы продолжительностью, а затем Обучите и опубликуйте. Затем LUIS определяет фразы продолжительностью более точно.
 
+[!INCLUDE [Waiting for LUIS portal refresh](./includes/wait-v3-upgrade.md)]
 
 ## <a name="enable-active-learning"></a>Включить активное обучение
 
-Чтобы включить Active Learning, зайдите в журнал пользовательские запросы. Это достигается путем установки [запроса конечной точки](luis-get-started-create-app.md#query-the-v2-api-prediction-endpoint) с `log=true` параметром QueryString и значением.
+Чтобы включить Active Learning, зайдите в журнал пользовательские запросы. Это достигается путем установки [запроса конечной точки](luis-get-started-create-app.md#query-the-v2-api-prediction-endpoint) с параметром строки `log=true` и значением.
 
 ## <a name="disable-active-learning"></a>Отключить активное обучение
 
-Чтобы отключить активное обучение, не заносить в журнал пользовательские запросы. Это достигается путем установки [запроса конечной точки](luis-get-started-create-app.md#query-the-v2-api-prediction-endpoint) с `log=false` параметром QueryString и значением.
+Чтобы отключить активное обучение, не заносить в журнал пользовательские запросы. Это достигается путем установки [запроса конечной точки](luis-get-started-create-app.md#query-the-v2-api-prediction-endpoint) с параметром строки `log=false` и значением.
 
 ## <a name="filter-utterances"></a>Фильтрация фрагментов речи
 
@@ -91,6 +92,6 @@ ms.locfileid: "70382359"
 ![Удаление нескольких](./media/label-suggested-utterances/delete-several.png)
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы убедиться в повышении производительности после установки меток для предлагаемых фрагментов речи, можно перейти к консоли тестирования, выбрав **Тестирование** на верхней панели. Инструкции по тестированию приложения с помощью консоли тестирования см. в разделе [Обучение и тестирование приложения](luis-interactive-test.md).

@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 07/23/2019
 ms.author: jhakulin
 ms.custom: seodec18
-ms.openlocfilehash: 8192a2d731104fe898ca128a1d989783698567da
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 166ae00085f07ef24d746b60947a31e7680a0f00
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68559160"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73491003"
 ---
 # <a name="ship-an-application"></a>Доставка приложения
 
@@ -39,16 +39,16 @@ ms.locfileid: "68559160"
 
 Необходимые файлы пакета SDK для службы "Речь" можно развернуть в том же каталоге, что и приложение. Таким образом, приложение сможет получать прямой доступ к библиотекам. Убедитесь, что выбрана правильная версия (Win32/x64), соответствующая приложению.
 
-| Название | Функция
+| Имя | Функция
 |:-----|:----|
 | `Microsoft.CognitiveServices.Speech.core.dll` | Основной пакет SDK, необходимый для развертывания управляемого и машинного кода
 | `Microsoft.CognitiveServices.Speech.csharp.dll` | Требуется для развертывания управляемого кода
 
 >[!NOTE]
-> Начиная с выпуска 1.3.0 файл `Microsoft.CognitiveServices.Speech.csharp.bindings.dll` (отгружен в предыдущих выпусках) больше не требуется. Теперь функциональность интегрирована в пакет SDK для Core.
+> Начиная с выпуска 1.3.0 файл `Microsoft.CognitiveServices.Speech.csharp.bindings.dll` (поставляется в предыдущих выпусках) больше не требуется. Теперь функциональность интегрирована в пакет SDK для Core.
 
 >[!NOTE]
-> Для проекта Windows Forms приложения (.NET Framework) C# убедитесь, что библиотеки включены в параметры развертывания проекта. Это можно проверить в разделе `Properties -> Publish Section`. `Application Files` Нажмите кнопку и найдите соответствующие библиотеки в списке Прокрутка вниз. Убедитесь, что для `Included`параметра задано значение. Visual Studio будет включать файл при публикации или развертывании проекта.
+> Для проекта Windows Forms приложения (.NET Framework) C# убедитесь, что библиотеки включены в параметры развертывания проекта. Это можно проверить в разделе `Properties -> Publish Section`. Нажмите кнопку `Application Files` и найдите соответствующие библиотеки в списке Прокрутка вниз. Убедитесь, что для параметра установлено значение `Included`. Visual Studio будет включать файл при публикации или развертывании проекта.
 
 ## <a name="linux"></a>Linux
 
@@ -74,7 +74,7 @@ sudo apt-get update
 sudo apt-get install libssl1.0.2 libasound2
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/)
-* [Распознавание речи в C#](quickstart-csharp-dotnet-windows.md)
+* [Получение пробной подписки на службу "Речь"](https://azure.microsoft.com/try/cognitive-services/)
+* [Распознавание речи в C#](~/articles/cognitive-services/Speech-Service/quickstarts/speech-to-text-from-microphone.md?pivots=programming-language-csharp&tabs=dotnet)

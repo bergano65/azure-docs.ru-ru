@@ -1,5 +1,5 @@
 ---
-title: Использование нескольких кластеров HDInsight с одной учетной записью Azure Data Lake Storage
+title: Несколько кластеров HDInsight & одной учетной записи Azure Data Lake Storage
 description: Узнайте, как использовать несколько кластеров HDInsight с одной учетной записью Azure Data Lake Storage
 keywords: хранилище HDInsight, HDFS, структурированные данные, неструктурированные данные, Data Lake Store
 author: hrasheed-msft
@@ -9,17 +9,17 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/21/2018
 ms.author: hrasheed
-ms.openlocfilehash: 776d8f31a5353604ff1c887bdfa214d07b2bfb48
-ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
+ms.openlocfilehash: ba0c26d87f2161af514c9430eae5c9949ef92b15
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70733185"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73498191"
 ---
 # <a name="use-multiple-hdinsight-clusters-with-an-azure-data-lake-storage-account"></a>Использование нескольких кластеров HDInsight с учетной записью Azure Data Lake Storage
 
 Начиная с версии HDInsight 3.5, можно создавать кластеры HDInsight с учетными записями Azure Data Lake Storage в качестве файловой системы по умолчанию.
-Data Lake Storage поддерживает неограниченное пространство для хранения данных, поэтому оно идеально подходит не только для хранения больших объемов данных, но и для размещения нескольких кластеров HDInsight, которые совместно используют одну и ту же учетную запись Data Lake Storage. Сведения о том, как создать кластер HDInsight с Data Lake Storage в качестве хранилища, см. в статье [Краткое руководство по настройке кластеров в HDInsight](../storage/data-lake-storage/quickstart-create-connect-hdi-cluster.md).
+Data Lake Storage поддерживает неограниченное пространство для хранения данных, поэтому оно идеально подходит не только для хранения больших объемов данных, но и для размещения нескольких кластеров HDInsight, которые совместно используют одну и ту же учетную запись Data Lake Storage. Инструкции по созданию кластера HDInsight с Data Lake Storage в качестве хранилища см. в разделе [Краткое руководство по настройке кластеров в hdinsight](../storage/data-lake-storage/quickstart-create-connect-hdi-cluster.md).
 
 Эта статья содержит рекомендации для администратора Data Lake Storage по настройке единственной и общей учетной записи Data Lake Storage, которая может использоваться в нескольких **активных** кластерах HDInsight. Эти рекомендации относятся к размещению нескольких защищенных и незащищенных кластеров Apache Hadoop в общей учетной записи Data Lake Storage.
 
@@ -90,7 +90,7 @@ Data Lake Storage поддерживает неограниченное про
 #### <a name="workaround"></a>Возможное решение
 Установите права на чтение и выполнение для **остальных пользователей** по всей иерархии папок, например для папок **/** , **/clusters** и **/clusters/finance**, как показано в таблице выше.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>Дополнительные материалы
 
-* [Краткое руководство по по настройке кластеров в HDInsight](../storage/data-lake-storage/quickstart-create-connect-hdi-cluster.md)
+* [Краткое руководство по установке кластеров в HDInsight](../storage/data-lake-storage/quickstart-create-connect-hdi-cluster.md)
 * [Использование Azure Data Lake Storage Gen2 с кластерами Azure HDInsight](hdinsight-hadoop-use-data-lake-storage-gen2.md)

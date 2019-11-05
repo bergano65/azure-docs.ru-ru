@@ -8,12 +8,12 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: f86c34dcc1276b8677e3e60514661a6d0b974005
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: e0b54ca89511063e1a76753793846deaf8e8b9b4
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72787547"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73466792"
 ---
 # <a name="how-to-add-a-custom-skill-to-an-azure-cognitive-search-enrichment-pipeline"></a>Как добавить пользовательский навык в конвейер Когнитивный поиск обогащения Azure
 
@@ -154,8 +154,10 @@ ms.locfileid: "72787547"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-+ [Power Skills: репозиторий пользовательских навыков](https://aka.ms/powerskills)
-+ [Пример. Создание пользовательского навыка для поиска со возначением](cognitive-search-create-custom-skill-example.md)
-+ [How to define a skillset](cognitive-search-defining-skillset.md) (Определение набора навыков)
-+ [Create Skillset](https://docs.microsoft.com/rest/api/searchservice/create-skillset) (Создание набора навыков)
+В этой статье были рассмотрены требования к интерфейсу, необходимые для интеграции пользовательского навыка в набор навыков. Перейдите по следующим ссылкам, чтобы получить дополнительные сведения о настраиваемых навыках и композиции навыков.
+
++ [Power Skills: репозиторий пользовательских навыков](https://github.com/Azure-Samples/azure-search-power-skills)
++ [Пример. Создание пользовательского навыка для обогащения искусственного интеллекта](cognitive-search-create-custom-skill-example.md)
++ [Определение набора навыков](cognitive-search-defining-skillset.md)
++ [Создание набора навыков (REST)](https://docs.microsoft.com/rest/api/searchservice/create-skillset)
 + [Сопоставление обогащенных полей](cognitive-search-output-field-mapping.md)

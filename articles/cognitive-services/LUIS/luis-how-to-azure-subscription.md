@@ -9,18 +9,20 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 10/23/2019
+ms.date: 10/25/2019
 ms.author: diberry
-ms.openlocfilehash: acda549ffc03679de43b4e5956e65ccada766c15
-ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
+ms.openlocfilehash: 957b12ad00f53a5aed7ff2a1ecd4afd21e58eb93
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72819949"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73467457"
 ---
 # <a name="using-authoring-and-runtime-resource-keys"></a>Использование ключей ресурсов для разработки и среды выполнения
 
 Разработка и ресурсы среды выполнения обеспечивают проверку подлинности для приложения LUIS и конечной точки прогнозирования.
+
+[!INCLUDE [Waiting for LUIS portal refresh](./includes/wait-v3-upgrade.md)]
 
 <a name="create-luis-service"></a>
 <a name="create-language-understanding-endpoint-key-in-the-azure-portal"></a>
@@ -58,11 +60,11 @@ ms.locfileid: "72819949"
 
     ![Создание ресурса для понимания языка](./media/luis-how-to-azure-subscription/create-resource-in-azure.png)
 
-    |Name|Цель|
+    |Имя|Назначение|
     |--|--|
     |Имя ресурса| Выбранное пользователем имя, используемое в качестве части URL-адреса для запросов конечной точки создания и прогнозирования.|
     |Имя подписки| Подписка, для которой будет выставлен счет за ресурс.|
-    |группа ресурсов.| Имя настраиваемой группы ресурсов, которую вы выбираете или создаете. Группы ресурсов позволяют группировать ресурсы Azure для доступа и управления в одном регионе.|
+    |Группа ресурсов| Имя настраиваемой группы ресурсов, которую вы выбираете или создаете. Группы ресурсов позволяют группировать ресурсы Azure для доступа и управления в одном регионе.|
     |Место разработки|Регион, связанный с вашей моделью.|
     |Ценовая категория создания|Ценовая категория определяет максимальное количество транзакций в секунду и месяц.|
     |Расположение среды выполнения|Регион, связанный с опубликованной средой выполнения конечной точки прогнозирования.|
@@ -134,7 +136,7 @@ ms.locfileid: "72819949"
 
     Этот API POST принимает указанные ниже параметры.
 
-    |Заголовок|Value|
+    |Заголовок|Значение|
     |--|--|
     |`Authorization`|Значение заголовка `Authorization` — `Bearer {token}`. Обратите внимание, что перед значением маркера должны находиться слово `Bearer` и пробел.| 
     |`Ocp-Apim-Subscription-Key`|Ваш ключ разработки.|
@@ -145,13 +147,13 @@ ms.locfileid: "72819949"
 
     Этот API POST принимает указанные ниже параметры.
 
-    |Тип|Параметр|Value|
+    |Тип|Настройка|Значение|
     |--|--|--|
     |Заголовок|`Authorization`|Значение заголовка `Authorization` — `Bearer {token}`. Обратите внимание, что перед значением маркера должны находиться слово `Bearer` и пробел.|
     |Заголовок|`Ocp-Apim-Subscription-Key`|Ваш ключ разработки.|
     |Заголовок|`Content-type`|`application/json`|
     |Строка запроса|`appid`|Идентификатор приложения LUIS. 
-    |текст||{"AzureSubscriptionId":"ddda2925-af7f-4b05-9ba1-2155c5fe8a8e",<br>"ResourceGroup": "resourcegroup-2",<br>"AccountName": "luis-uswest-S0-2"}|
+    |Текст||{"AzureSubscriptionId":"ddda2925-af7f-4b05-9ba1-2155c5fe8a8e",<br>"ResourceGroup": "resourcegroup-2",<br>"AccountName": "luis-uswest-S0-2"}|
 
     При успешном выполнении этого API возвращается состояние "201 - created". 
 

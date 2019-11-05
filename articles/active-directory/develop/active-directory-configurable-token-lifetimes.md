@@ -19,12 +19,12 @@ ms.author: ryanwi
 ms.custom: aaddev, annaba, identityplatformtop40
 ms.reviewer: hirsin
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 73869773597d372affbf02e6a256642c8c1ce8f4
-ms.sourcegitcommit: ec2b75b1fc667c4e893686dbd8e119e7c757333a
+ms.openlocfilehash: 23cdf7887d6d0812a9e991580e2095b603a4b4df
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72809307"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73473947"
 ---
 # <a name="configurable-token-lifetimes-in-azure-active-directory-preview"></a>Настройка времени существования маркеров в Azure Active Directory (предварительная версия)
 
@@ -72,6 +72,9 @@ ms.locfileid: "72809307"
 
 Общедоступные клиенты не могут обеспечить безопасное хранение клиентского пароля (секрета). Например, приложение iOS или Android не может замаскировать секрет от владельца ресурса, и поэтому считается общедоступным клиентом. Для ресурсов можно определить политики, которые запрещают маркерам обновления из общедоступных клиентских приложений, которые старше указанного периода, получать новую пару маркеров доступа и обновления. (Для этого используйте свойство максимальное неактивное время маркера обновления (`MaxInactiveTime`).) Можно также использовать политики, чтобы задать период, после которого маркеры обновления больше не принимаются. (Для этого используйте свойство максимальный возраст маркера обновления.) Вы можете настроить время существования маркера обновления, чтобы управлять временем и частотой, с которой пользователь должен повторно вводить учетные данные, а не выполнять автоматическую проверку подлинности при использовании общедоступного клиентского приложения.
 
+> [!NOTE]
+> Свойство максимального возраста — это период времени, в течение которого можно использовать один маркер. 
+
 ### <a name="id-tokens"></a>Маркеры идентификации
 Маркеры идентификации передаются веб-сайтам и собственным клиентам. Они содержат сведения о профиле пользователя. Маркер идентификации привязан одновременно и к пользователю, и клиентскому приложению. Маркеры идентификации считаются действительными до истечения срока действия. Как правило, в веб-приложениях длительность пользовательского сеанса согласовывается со временем жизни маркера идентификации, выданного этому пользователю. Изменяя время жизни маркера идентификации, вы можете управлять частотой завершения пользовательского сеанса в веб-приложении, а также частотой, с которой пользователю нужно выполнять проверку подлинности в Azure AD (в автоматическом или интерактивном режиме).
 
@@ -90,8 +93,8 @@ ms.locfileid: "72809307"
 ### <a name="configurable-token-lifetime-properties"></a>Свойства для настройки времени жизни маркера
 | Свойство | Строка свойства политики | Область применения | значение по умолчанию | Минимальная | Максимальная |
 | --- | --- | --- | --- | --- | --- |
-| Время жизни маркера доступа |Акцесстокенлифетиме<sup>2</sup> |Маркеры доступа, маркеры безопасности, маркеры SAML2 |1 ч |10 минут |1 дн. |
-| Максимальное время неактивности для маркеров обновления |MaxInactiveTime |Маркеры обновления |90 дней |10 минут |90 дней |
+| Время жизни маркера доступа |Акцесстокенлифетиме<sup>2</sup> |Маркеры доступа, маркеры безопасности, маркеры SAML2 |1 час |10 минут |1 день |
+| Максимальное время неактивности для маркеров обновления |MaxInactiveTime |Маркеры обновления |90 дней |10 минут |90 дней |
 | Максимальный возраст однофакторного маркера обновления |MaxAgeSingleFactor |Маркеры обновления (для всех пользователей) |Пока не будет отозван |10 минут |Пока не будет отозван<sup>1</sup> |
 | Максимальный возраст многофакторного маркера обновления |MaxAgeMultiFactor |Маркеры обновления (для всех пользователей) |Пока не будет отозван |10 минут |Пока не будет отозван<sup>1</sup> |
 | Максимальный возраст однофакторного маркера сеанса |MaxAgeSessionSingleFactor |Маркеры сеанса (постоянные и временные) |Пока не будет отозван |10 минут |Пока не будет отозван<sup>1</sup> |
@@ -104,7 +107,7 @@ ms.locfileid: "72809307"
 | Свойство | Область применения | значение по умолчанию |
 | --- | --- | --- |
 | Обновление максимального возраста маркеров (выданные для федеративных пользователей с недостаточной информацией об отзыве <sup>1</sup>) |Маркеры обновления (выданные для федеративных пользователей с недостаточной информацией об отзыве <sup>1</sup>) |12 часов |
-| Максимальное время неактивности для маркера обновления (выданного для конфиденциальных клиентов) |Маркеры обновления (выданные для конфиденциальных клиентов) |90 дней |
+| Максимальное время неактивности для маркера обновления (выданного для конфиденциальных клиентов) |Маркеры обновления (выданные для конфиденциальных клиентов) |90 дней |
 | Максимальный возраст маркеров обновления (выданных для конфиденциальных клиентов) |Маркеры обновления (выданные для конфиденциальных клиентов) |Пока не будет отозван |
 
 * <sup>1</sup> Федеративные пользователи с недостаточной информацией об отзыве включают любых пользователей, не имеющих синхронизированного атрибута LastPasswordChangeTimestamp. Этим пользователям предоставляется короткий максимальный возраст, так как служба AAD не может проверить, когда отменять маркеры, привязанные к старым учетным данным (например, пароль, который был изменен), и должна проверять его чаще, чтобы гарантировать, что пользователь и связанные с ним маркеры все еще находятся в хорошем состоянии. Для улучшения взаимодействия с пользователем администраторам клиента необходимо убедиться, что они синхронизировали атрибут LastPasswordChangeTimestamp (это можно задать в объекте пользователя, используя PowerShell или AADSync).
@@ -392,7 +395,7 @@ ms.locfileid: "72809307"
 New-AzureADPolicy -Definition <Array of Rules> -DisplayName <Name of Policy> -IsOrganizationDefault <boolean> -Type <Policy Type>
 ```
 
-| Параметры | Описание | Пример |
+| Параметры | Description (Описание) | Пример |
 | --- | --- | --- |
 | <code>&#8209;Definition</code> |Переведенный в строку массив JSON, который содержит все правила политики. | `-Definition @('{"TokenLifetimePolicy":{"Version":1,"MaxInactiveTime":"20:00:00"}}')` |
 | <code>&#8209;DisplayName</code> |Строка c именем политики. |`-DisplayName "MyTokenPolicy"` |
@@ -409,7 +412,7 @@ New-AzureADPolicy -Definition <Array of Rules> -DisplayName <Name of Policy> -Is
 Get-AzureADPolicy
 ```
 
-| Параметры | Описание | Пример |
+| Параметры | Description (Описание) | Пример |
 | --- | --- | --- |
 | <code>&#8209;Id</code> (необязательный параметр) |**ObjectID (идентификатор)** нужной политики. |`-Id <ObjectId of Policy>` |
 
@@ -422,7 +425,7 @@ Get-AzureADPolicy
 Get-AzureADPolicyAppliedObject -Id <ObjectId of Policy>
 ```
 
-| Параметры | Описание | Пример |
+| Параметры | Description (Описание) | Пример |
 | --- | --- | --- |
 | <code>&#8209;Id</code> |**ObjectID (идентификатор)** нужной политики. |`-Id <ObjectId of Policy>` |
 
@@ -435,7 +438,7 @@ Get-AzureADPolicyAppliedObject -Id <ObjectId of Policy>
 Set-AzureADPolicy -Id <ObjectId of Policy> -DisplayName <string>
 ```
 
-| Параметры | Описание | Пример |
+| Параметры | Description (Описание) | Пример |
 | --- | --- | --- |
 | <code>&#8209;Id</code> |**ObjectID (идентификатор)** нужной политики. |`-Id <ObjectId of Policy>` |
 | <code>&#8209;DisplayName</code> |Строка c именем политики. |`-DisplayName "MyTokenPolicy"` |
@@ -453,7 +456,7 @@ Set-AzureADPolicy -Id <ObjectId of Policy> -DisplayName <string>
  Remove-AzureADPolicy -Id <ObjectId of Policy>
 ```
 
-| Параметры | Описание | Пример |
+| Параметры | Description (Описание) | Пример |
 | --- | --- | --- |
 | <code>&#8209;Id</code> |**ObjectID (идентификатор)** нужной политики. | `-Id <ObjectId of Policy>` |
 
@@ -469,7 +472,7 @@ Set-AzureADPolicy -Id <ObjectId of Policy> -DisplayName <string>
 Add-AzureADApplicationPolicy -Id <ObjectId of Application> -RefObjectId <ObjectId of Policy>
 ```
 
-| Параметры | Описание | Пример |
+| Параметры | Description (Описание) | Пример |
 | --- | --- | --- |
 | <code>&#8209;Id</code> |**ObjectID (идентификатор)** приложения. | `-Id <ObjectId of Application>` |
 | <code>&#8209;RefObjectId</code> |**Идентификатор объекта** для политики. | `-RefObjectId <ObjectId of Policy>` |
@@ -483,7 +486,7 @@ Add-AzureADApplicationPolicy -Id <ObjectId of Application> -RefObjectId <ObjectI
 Get-AzureADApplicationPolicy -Id <ObjectId of Application>
 ```
 
-| Параметры | Описание | Пример |
+| Параметры | Description (Описание) | Пример |
 | --- | --- | --- |
 | <code>&#8209;Id</code> |**ObjectID (идентификатор)** приложения. | `-Id <ObjectId of Application>` |
 
@@ -496,7 +499,7 @@ Get-AzureADApplicationPolicy -Id <ObjectId of Application>
 Remove-AzureADApplicationPolicy -Id <ObjectId of Application> -PolicyId <ObjectId of Policy>
 ```
 
-| Параметры | Описание | Пример |
+| Параметры | Description (Описание) | Пример |
 | --- | --- | --- |
 | <code>&#8209;Id</code> |**ObjectID (идентификатор)** приложения. | `-Id <ObjectId of Application>` |
 | <code>&#8209;PolicyId</code> |**Идентификатор объекта** для политики. | `-PolicyId <ObjectId of Policy>` |
@@ -513,7 +516,7 @@ Remove-AzureADApplicationPolicy -Id <ObjectId of Application> -PolicyId <ObjectI
 Add-AzureADServicePrincipalPolicy -Id <ObjectId of ServicePrincipal> -RefObjectId <ObjectId of Policy>
 ```
 
-| Параметры | Описание | Пример |
+| Параметры | Description (Описание) | Пример |
 | --- | --- | --- |
 | <code>&#8209;Id</code> |**ObjectID (идентификатор)** приложения. | `-Id <ObjectId of Application>` |
 | <code>&#8209;RefObjectId</code> |**Идентификатор объекта** для политики. | `-RefObjectId <ObjectId of Policy>` |
@@ -527,7 +530,7 @@ Add-AzureADServicePrincipalPolicy -Id <ObjectId of ServicePrincipal> -RefObjectI
 Get-AzureADServicePrincipalPolicy -Id <ObjectId of ServicePrincipal>
 ```
 
-| Параметры | Описание | Пример |
+| Параметры | Description (Описание) | Пример |
 | --- | --- | --- |
 | <code>&#8209;Id</code> |**ObjectID (идентификатор)** приложения. | `-Id <ObjectId of Application>` |
 
@@ -540,7 +543,7 @@ Get-AzureADServicePrincipalPolicy -Id <ObjectId of ServicePrincipal>
 Remove-AzureADServicePrincipalPolicy -Id <ObjectId of ServicePrincipal>  -PolicyId <ObjectId of Policy>
 ```
 
-| Параметры | Описание | Пример |
+| Параметры | Description (Описание) | Пример |
 | --- | --- | --- |
 | <code>&#8209;Id</code> |**ObjectID (идентификатор)** приложения. | `-Id <ObjectId of Application>` |
 | <code>&#8209;PolicyId</code> |**Идентификатор объекта** для политики. | `-PolicyId <ObjectId of Policy>` |

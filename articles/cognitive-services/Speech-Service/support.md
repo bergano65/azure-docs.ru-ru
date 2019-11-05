@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 07/23/2019
+ms.date: 11/05/2019
 ms.author: jhakulin
-ms.openlocfilehash: 26d66868ab4c003dbd962e0c94009bc38bb36345
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: f8793975d920e24924fca7c2ae366f70972e6ab7
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68558836"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73468617"
 ---
 # <a name="support-and-help-options"></a>Возможности получения поддержки и справки
 
@@ -31,11 +31,11 @@ ms.locfileid: "68558836"
 
 ## <a name="stay-informed"></a>Следите за новостями
 
-Новости о Cognitive Services собраны в [блоге по Cognitive Services](https://azure.microsoft.com/blog/topics/cognitive-services/). Последние сведения о речевых службах см. в [блоге](https://azure.microsoft.com/blog/tag/speech-service/)по голосовым службам.
+Новости о Cognitive Services собраны в [блоге по Cognitive Services](https://azure.microsoft.com/blog/topics/cognitive-services/). Последние сведения о речевых службах см. в [блоге по голосовым службам](https://azure.microsoft.com/blog/tag/speech-service/).
 
 ## <a name="release-notes"></a>Заметки о выпуске
 
-[Заметки о](https://aka.ms/csspeech/whatsnew) выпуске обновляются, как только будет доступен новый выпуск. Заметки содержат сведения о новых возможностях, улучшениях и исправлениях ошибок.
+[Заметки о выпуске](https://aka.ms/csspeech/whatsnew) обновляются, как только будет доступен новый выпуск. Заметки содержат сведения о новых возможностях, улучшениях и исправлениях ошибок.
 
 ## <a name="search"></a>Поиск
 
@@ -64,14 +64,14 @@ Stack Overflow — это идеальное место для вопросов
 
 Если вы не нашли решение своей проблемы с помощью функции поиска, отправьте вопрос на сайт Stack Overflow. При формулировании вопроса используйте один из следующих тегов:
 
-|Компонент или область  |Tags  |
+|Компонент или область  |Теги  |
 |---------|---------|
 |Распознавание речи |[[microsoft-cognitive+speech-to-text]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+speech-to-text)|
 |Синтез речи |[[microsoft-cognitive+text-to-speech]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+text-to-speech)|
 |Перевод речи |[[microsoft-cognitive+translation]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+translation)|
 |Намерения говорящего |[[microsoft-cognitive+luis]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+luis)|
 |Общий пакет SDK для службы "Речь" |[[microsoft-cognitive+microsoft-speech-api]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+microsoft-speech-api)|
-| Первые виртуальные помощники (Предварительная версия) | [[Microsoft-программа + Virtual-Assistant + botframework]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+virtual-assistant+botframework) |
+|Речевые помощники | [[Microsoft-программа + Virtual-Assistant + botframework]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+virtual-assistant+botframework) |
 
 > [!TIP]
 > Указанные ниже публикации на Stack Overflow содержат советы о том, как формулировать вопросы и добавлять исходный код. Следуйте этим рекомендациям, чтобы повысить вероятность того, что участники сообщества быстро отреагируют на ваш вопрос:  

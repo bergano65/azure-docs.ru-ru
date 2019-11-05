@@ -1,5 +1,5 @@
 ---
-title: Использование средств Data Lake для Visual Studio с песочницей Hortonworks в Azure HDInsight
+title: Средства Data Lake для Visual Studio & Hortonworks — Azure HDInsight
 description: Узнайте, как использовать средства Azure Data Lake для Visual Studio с песочницей Hortonworks, работающей в локальной виртуальной машине. С помощью этих средств можно создавать и выполнять задания Hive и Pig в песочнице и просматривать выходные данные и журнал задания.
 author: hrasheed-msft
 ms.author: hrasheed
@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/07/2018
-ms.openlocfilehash: 1edab776ec93f057ebf7e37ac887747f86a27db9
-ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
+ms.openlocfilehash: e128aaf6e1726b7a1341fefc6df3cdafd3beb880
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71098777"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73500153"
 ---
 # <a name="use-the-azure-data-lake-tools-for-visual-studio-with-the-hortonworks-sandbox"></a>Использование средств Azure Data Lake для Visual Studio с песочницей Hortonworks
 
@@ -21,7 +21,7 @@ Azure Data Lake включает в себя средства для работ�
 
 Использование песочницы Hortonworks позволяет работать с Hadoop локально в среде разработки. Если вам необходимо развернуть решение в нужном масштабе после его разработки, можно перейти к кластеру HDInsight.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Песочница Hortonworks, работающая в виртуальной машине в среде разработки. Приведенные в этом документе сведения протестированы с использованием песочницы, работающей в Oracle VirtualBox. Сведения о настройке песочницы см. в статье [Начало работы с песочницей Hadoop, эмулятором на виртуальной машине](hadoop/apache-hadoop-emulator-get-started.md) .
 
@@ -197,7 +197,7 @@ Hive предоставляет язык запросов по типу SQL (Hiv
 
 ![Снимок экрана: форма для создания таблицы](./media/hdinsight-hadoop-emulator-visual-studio/create-table-form-box.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Learning the ropes of the Hortonworks Sandbox](https://hortonworks.com/hadoop-tutorial/learning-the-ropes-of-the-hortonworks-sandbox/)
 * [Hadoop tutorial - Getting started with HDP](https://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/) (Руководство по началу работы с Hadoop)

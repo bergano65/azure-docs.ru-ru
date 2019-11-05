@@ -11,101 +11,77 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 05/07/2019
 ms.author: diberry
-ms.openlocfilehash: b5f4855c03c1c003df8f58b135cb809f1757e58f
-ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
+ms.openlocfilehash: 9777c62d97c70d4f6a0d0a4d912dea3fa8decd23
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71677486"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73499553"
 ---
 # <a name="personname-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность PersonName для приложения LUIS
 Предварительно созданная сущность PersonName определяет имена людей. Так как эта сущность уже обучена, добавлять в намерения приложения примеры высказываний, содержащие сущности PersonName, не нужно. Сущность personName поддерживается для английского и китайского [языков и региональных параметров](luis-reference-prebuilt-entities.md).
 
 ## <a name="resolution-for-personname-entity"></a>Разрешение для сущности personName
 
-#### <a name="v2-prediction-endpoint-responsetabv2"></a>[Ответ конечной точки прогнозирования v2](#tab/V2)
+Для запроса возвращаются следующие объекты сущности:
 
-В следующем примере показано разрешение сущности **builtin.PersonName**.
+`Is Jill Jones in Cairo?`
 
-```json
-{
-  "query": "Is Jill Jones in Cairo?",
-  "topScoringIntent": {
-    "intent": "WhereIsEmployee",
-    "score": 0.762141049
-  },
-  "entities": [
-    {
-      "entity": "Jill Jones",
-      "type": "builtin.personName",
-      "startIndex": 3,
-      "endIndex": 12
-    }
-  ]
-}
-```
-#### <a name="v3-prediction-endpoint-responsetabv3"></a>[V3 прогнозирование ответа конечной точки](#tab/V3)
+
+#### <a name="v3-responsetabv3"></a>[V3 ответ](#tab/V3)
 
 
 Следующий код JSON относится к параметру `verbose`, для которого задано значение `false`:
 
 ```json
-{
-    "query": "Is Jill Jones in Cairo?",
-    "prediction": {
-        "normalizedQuery": "is jill jones in cairo?",
-        "topIntent": "None",
-        "intents": {
-            "None": {
-                "score": 0.6544678
-            }
-        },
-        "entities": {
-            "personName": [
-                "Jill Jones"
-            ]
-        }
-    }
+"entities": {
+    "personName": [
+        "Jill Jones"
+    ]
 }
 ```
-
+#### <a name="v3-verbose-responsetabv3-verbose"></a>[V3 подробный ответ](#tab/V3-verbose)
 Следующий код JSON относится к параметру `verbose`, для которого задано значение `true`:
 
 ```json
-{
-    "query": "Is Jill Jones in Cairo?",
-    "prediction": {
-        "normalizedQuery": "is jill jones in cairo?",
-        "topIntent": "None",
-        "intents": {
-            "None": {
-                "score": 0.6544678
-            }
-        },
-        "entities": {
-            "personName": [
-                "Jill Jones"
-            ],
-            "$instance": {
-                "personName": [
-                    {
-                        "type": "builtin.personName",
-                        "text": "Jill Jones",
-                        "startIndex": 3,
-                        "length": 10,
-                        "modelTypeId": 2,
-                        "modelType": "Prebuilt Entity Extractor"
-                    }
+"entities": {
+    "personName": [
+        "Jill Jones"
+    ],
+    "$instance": {
+        "personName": [
+            {
+                "type": "builtin.personName",
+                "text": "Jill Jones",
+                "startIndex": 3,
+                "length": 10,
+                "modelTypeId": 2,
+                "modelType": "Prebuilt Entity Extractor",
+                "recognitionSources": [
+                    "model"
                 ]
             }
-        }
+        ],
     }
 }
 ```
+#### <a name="v2-responsetabv2"></a>[Ответ v2](#tab/V2)
 
+В следующем примере показано разрешение сущности **builtin.PersonName**.
+
+```json
+"entities": [
+{
+    "entity": "Jill Jones",
+    "type": "builtin.personName",
+    "startIndex": 3,
+    "endIndex": 12
+}
+]
+```
 * * * 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о [конечной точке прогнозирования v3](luis-migration-api-v3.md).
 

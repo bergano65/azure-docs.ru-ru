@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 2/28/2018
 ms.author: oanapl
-ms.openlocfilehash: 1721f10f8950577080a89ba58a3eb4dd3a25c188
-ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
+ms.openlocfilehash: c4a312654fb54660a229c334071d33a5d6bc172f
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68249186"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73496375"
 ---
 # <a name="view-service-fabric-health-reports"></a>Просмотр отчетов о работоспособности Service Fabric
 В платформе Azure Service Fabric используется [модель работоспособности](service-fabric-health-introduction.md) с сущностями работоспособности, на основе которых компоненты системы и модули наблюдения создают отчеты о состоянии отслеживаемых локальных условий. [Хранилище данных о работоспособности](service-fabric-health-introduction.md#health-store) содержит все данные о работоспособности, с помощью которых можно определить состояние работоспособности сущностей.
@@ -32,7 +32,7 @@ ms.locfileid: "68249186"
 * запросы работоспособности (с помощью PowerShell, API или REST);
 * общие запросы, возвращающие перечень сущностей, среди свойств которых есть работоспособность (с помощью PowerShell, API или REST).
 
-Для демонстрации этих параметров мы будем использовать локальный кластер с пятью узлами и [приложение fabric:/WordCount](https://aka.ms/servicefabric-wordcountapp). Приложение **fabric:/WordCount** содержит две службы по умолчанию, службу с отслеживанием состояния типа `WordCountServiceType` и службу без отслеживания состояния типа `WordCountWebServiceType`. Мной был изменен файл `ApplicationManifest.xml`, чтобы потребовать семь целевых реплик для службы с отслеживанием состояния и одной секции. Так как в кластере только пять узлов, компоненты системы выдадут предупреждение о секции службы, ведь она не соответствует целевому количеству.
+Для демонстрации этих параметров мы будем использовать локальный кластер с пятью узлами и [приложение fabric:/WordCount](https://github.com/Azure-Samples/service-fabric-wordcount/raw/master/WordCountV1.sfpkg). Приложение **fabric:/WordCount** содержит две службы по умолчанию, службу с отслеживанием состояния типа `WordCountServiceType` и службу без отслеживания состояния типа `WordCountWebServiceType`. Мной был изменен файл `ApplicationManifest.xml`, чтобы потребовать семь целевых реплик для службы с отслеживанием состояния и одной секции. Так как в кластере только пять узлов, компоненты системы выдадут предупреждение о секции службы, ведь она не соответствует целевому количеству.
 
 ```xml
 <Service Name="WordCountService">
@@ -1030,30 +1030,30 @@ ApplicationHealthStateChunks :
 
 Ниже приведены запросы, возвращающие сведения о состоянии работоспособности ( **HealthState** ) для сущностей:
 
-* Список узлов: возвращает список узлов в кластере (с разбивкой на страницы).
-  * API: [FabricClient.QueryClient.GetNodeListAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.queryclient.getnodelistasync)
-  * PowerShell: Get-ServiceFabricNode
-* Список приложений: возвращает список приложений в кластере (с разбивкой на страницы).
-  * API: [FabricClient.QueryClient.GetApplicationListAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.queryclient.getapplicationlistasync)
-  * PowerShell: Get-ServiceFabricApplication
-* Список служб: возвращает список служб в приложении (с разбивкой на страницы).
-  * API: [FabricClient.QueryClient.GetServiceListAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.queryclient.getservicelistasync)
-  * PowerShell: Get-ServiceFabricService
-* Список секций: возвращает список секций в службе (с разбивкой на страницы).
-  * API: [FabricClient.QueryClient.GetPartitionListAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.queryclient.getpartitionlistasync)
-  * PowerShell: Get-ServiceFabricPartition
-* Список реплик: возвращает список реплик в разделе (с разбивкой на страницы).
-  * API: [FabricClient.QueryClient.GetReplicaListAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.queryclient.getreplicalistasync)
-  * PowerShell: Get-ServiceFabricReplica
-* Список развернутых приложений: возвращает список развернутых приложений на узле.
-  * API: [FabricClient.QueryClient.GetDeployedApplicationListAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.queryclient.getdeployedapplicationlistasync)
-  * PowerShell: Get-ServiceFabricDeployedApplication
-* Список развернутых пакетов служб: возвращает список пакетов служб в развернутом приложении.
-  * API: [FabricClient.QueryClient.GetDeployedServicePackageListAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.queryclient.getdeployedservicepackagelistasync)
-  * PowerShell: Get-ServiceFabricDeployedApplication
+* Список узлов — возвращает список узлов в кластере (с разбивкой на страницы).
+  * API — [FabricClient.QueryClient.GetNodeListAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.queryclient.getnodelistasync)
+  * PowerShell: Get-ServiceFabricNode.
+* Список приложений — возвращает список приложений в кластере (с разбивкой на страницы).
+  * API — [FabricClient.QueryClient.GetApplicationListAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.queryclient.getapplicationlistasync)
+  * PowerShell: Get-ServiceFabricApplication.
+* Список служб — возвращает список служб в приложении (с разбивкой на страницы).
+  * API — [FabricClient.QueryClient.GetServiceListAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.queryclient.getservicelistasync)
+  * PowerShell: Get-ServiceFabricService.
+* Список разделов — возвращает список разделов в службе (с разбивкой на страницы).
+  * API — [FabricClient.QueryClient.GetPartitionListAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.queryclient.getpartitionlistasync)
+  * PowerShell: Get-ServiceFabricPartition.
+* Список реплик — возвращает список реплик в разделе (с разбивкой на страницы).
+  * API — [FabricClient.QueryClient.GetReplicaListAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.queryclient.getreplicalistasync)
+  * PowerShell: Get-ServiceFabricReplica.
+* Список развернутых приложений — возвращает список развернутых приложений на узле.
+  * API — [FabricClient.QueryClient.GetDeployedApplicationListAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.queryclient.getdeployedapplicationlistasync)
+  * PowerShell: Get-ServiceFabricDeployedApplication.
+* Список развернутых пакетов служб — возвращает список пакетов служб в развернутом приложении.
+  * API — [FabricClient.QueryClient.GetDeployedServicePackageListAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.queryclient.getdeployedservicepackagelistasync)
+  * PowerShell: Get-ServiceFabricDeployedApplication.
 
 > [!NOTE]
-> Некоторые запросы возвращают результаты с разбивкой на страницы. Возврат этих запросов представляет собой список, производный от [пажедлист\<T >](https://docs.microsoft.com/dotnet/api/system.fabric.query.pagedlist-1). Если результаты не соответствуют сообщению, возвращается только страница и устанавливается маркер ContinuationToken, который отслеживает остановку перечисления. Чтобы получить следующие результаты, необходимо продолжить вызов того же запроса, передавая маркер продолжения из предыдущего запроса.
+> Некоторые запросы возвращают результаты с разбивкой на страницы. Возврат этих запросов представляет собой список, производный от [пажедлист\<t >](https://docs.microsoft.com/dotnet/api/system.fabric.query.pagedlist-1). Если результаты не соответствуют сообщению, возвращается только страница и устанавливается маркер ContinuationToken, который отслеживает остановку перечисления. Чтобы получить следующие результаты, необходимо продолжить вызов того же запроса, передавая маркер продолжения из предыдущего запроса.
 
 ### <a name="examples"></a>Примеры
 Следующий код возвращает неработоспособные приложения в кластере.
@@ -1236,7 +1236,7 @@ HealthEvents          :
 >
 >
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [Устранение неполадок с помощью отчетов о работоспособности системы](service-fabric-understand-and-troubleshoot-with-system-health-reports.md)
 
 [Добавление настраиваемых отчетов о работоспособности Service Fabric](service-fabric-report-health.md)

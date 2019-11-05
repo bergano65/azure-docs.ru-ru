@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
-ms.openlocfilehash: eb5e2c2e2eeb0f29eb74b3727ecf14d70d2381f6
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.openlocfilehash: 1311328dde6fc70202ce3c6271b33f79d52102cc
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73176650"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73472216"
 ---
 # <a name="azure-api-management-developer-portal-overview"></a>Обзор портала разработчика управления API Azure
 
@@ -25,7 +25,10 @@ ms.locfileid: "73176650"
 
 В этой статье описываются различия между самостоятельным размещением и управляемыми версиями портала разработчика в управлении API. Здесь также объясняется его архитектура и приводятся ответы на часто задаваемые вопросы.
 
-> [!IMPORTANT]
+> [!WARNING]
+> В настоящее время выполняется развертывание нового портала разработчика в службах управления API.
+> Если служба была только что создана или является службой уровня разработчика, у вас уже должна быть последняя версия. В противном случае могут возникнуть проблемы (например, с помощью функции публикации). Развертывание функций будет завершено в понедельник 11 ноября 2019.
+>
 > [Узнайте, как выполнить миграцию из предварительной версии в общедоступную версию](#preview-to-ga) портала разработчика.
 
 ![Портал разработчика API Management](media/api-management-howto-developer-portal/cover.png)
@@ -112,7 +115,7 @@ API описан в [разделе вики репозитория GitHub][2]. 
 
 Нет.
 
-### <a name="im-getting-a-cors-error-when-using-the-interactive-console-what-should-i-do"></a>При использовании интерактивной консоли я получаю ошибку CORS. Что мне делать?
+### <a name="im-getting-a-cors-error-when-using-the-interactive-console-what-should-i-do"></a>При использовании интерактивной консоли я получаю ошибку CORS. Что делать?
 
 Интерактивная консоль выполняет клиентский запрос API из браузера. Проблему CORS можно устранить, добавив [политику CORS](https://docs.microsoft.com/azure/api-management/api-management-cross-domain-policies#CORS) в API-интерфейсы. Можно указать все параметры вручную (например, источник как https://contoso.com) или использовать подстановочный знак `*`.
 

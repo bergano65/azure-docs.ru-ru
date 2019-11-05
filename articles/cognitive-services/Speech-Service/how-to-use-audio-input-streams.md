@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: fmegen
-ms.openlocfilehash: 06b69da7f7435ce8a1e32150b7abe161ebdf527c
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: e00feed416eb3e06b703a2ef4fe040f0c815716e
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67606499"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73464302"
 ---
 # <a name="about-the-speech-sdk-audio-input-stream-api"></a>Об API входного аудиопотока в пакете SDK для службы "Речь"
 
@@ -59,7 +59,7 @@ API **входного аудиопотока** в пакете SDK для сл�
    };
   ```
 
-- Создайте конфигурацию звука, основанную на формате звука и входном аудиопотоке. Передайте конфигурацию для обычной речи и конфигурацию ввода звука при создании распознавателя. Пример:
+- Создайте конфигурацию звука, основанную на формате звука и входном аудиопотоке. Передайте конфигурацию для обычной речи и конфигурацию ввода звука при создании распознавателя. Например:
 
   ```
   var audioConfig = AudioConfig.FromStreamInput(new ContosoAudioStream(config), audioFormat);
@@ -75,5 +75,5 @@ API **входного аудиопотока** в пакете SDK для сл�
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/)
-* [Распознавание речи в C#](quickstart-csharp-dotnet-windows.md)
+* [Получение пробной подписки на службу "Речь"](https://azure.microsoft.com/try/cognitive-services/)
+* [Распознавание речи в C#](~/articles/cognitive-services/Speech-Service/quickstarts/speech-to-text-from-microphone.md?pivots=programming-language-csharp&tabs=dotnet)

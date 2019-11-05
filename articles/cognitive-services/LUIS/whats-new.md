@@ -9,20 +9,39 @@ services: cognitive-services
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 09/09/2019
+ms.date: 11/04/2019
 ms.author: diberry
-ms.openlocfilehash: 3a32499a85b1cd782c808166c516be7ad9c78913
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: 0788df1c05d70c01d4de7f7a6ba62a476252f75a
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70813282"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73498923"
 ---
 # <a name="whats-new-in-language-understanding"></a>Новые возможности Language Understanding
 
-Узнайте о новых возможностях службы. Эти элементы могут выпустить заметки, видео, записи в блоге и другие типы информации. Закладка этой страницы для обновления со службой.  
+Узнайте о новых возможностях службы. К этим элементам относятся заметки о выпуске, видео, записи в блоге и другие типы информации. Закладка этой страницы для обновления со службой.  
 
 ## <a name="release-notes"></a>Заметки о выпуске 
+
+### <a name="november-4-2019---ignite"></a>4 ноября 2019-Ignite
+
+* Улучшенная производительность разработчиков
+    * Общая доступность нашей [конечной точки прогнозирования версии 3](luis-migration-api-v3.md). 
+    * Возможность импорта и экспорта приложений с помощью формата Lu ([лудовн](https://github.com/microsoft/botbuilder-tools/tree/master/packages/Ludown)). Это создает условия способ эффективного процесса CI/CD. 
+* Расширение языка
+    * [Арабский и хинди](luis-language-support.md) в общедоступной предварительной версии.
+* Создание моделей
+    * Предварительно [созданные домены](luis-reference-prebuilt-domains.md) теперь общедоступны (GA)
+    * Японские предварительно [подготовленные сущности](luis-reference-prebuilt-entities.md#japanese-entity-support) — возраст, валюта, число, процент не поддерживаются в версии 3.
+    * Предустановленный итальянский набор [сущностей](luis-reference-prebuilt-entities.md#italian-entity-support) (Age), валюта, размер, число, разрешение в процентах изменено с v2.
+* Улучшите взаимодействие с пользователем на [портале Preview.Luis.AI](https://preview.luis.ai) , чтобы обеспечить создание и отладку сложных моделей.
+* Дополнительные возможности языкового понимания — [Создание сложных языковых моделей](luis-concept-entity-types.md) с меньшими усилиями. 
+* Определение функций машинного обучения на уровне модели и включение моделей для использования в качестве сигналов для другой модели, например использование сущностей в качестве функций для целей и других сущностей.
+* Новые, развернутые [ограничения](luis-boundaries.md) — более высокие значения для списков фраз и итоговых фраз, Новая модель — ограничения функций
+* Извлекайте информацию из текста в формате структуры глубокой иерархии, делая диалоговые приложения более мощными.
+
+    ![образ сущности, полученный от компьютера](./media/whats-new/deep-entity-extraction-example.png)
 
 ### <a name="september-3-2019"></a>3 сентября 2019 г.
 
@@ -61,7 +80,7 @@ ms.locfileid: "70813282"
 
 [Bot Framework](https://blog.botframework.com/)
 
-## <a name="videos"></a>Видео
+## <a name="videos"></a>Видеоролики
 
 ### <a name="2019-build-videos"></a>видео о сборке 2019
 

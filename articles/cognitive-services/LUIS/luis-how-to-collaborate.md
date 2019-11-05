@@ -9,18 +9,20 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 09/03/2019
+ms.date: 10/25/2019
 ms.author: diberry
-ms.openlocfilehash: 004da6c84e6226c4de3114d32cde826cd167e1ab
-ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
+ms.openlocfilehash: 15c7c6664b0c17d02f1f4e9120c9509fda21e0f4
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70844839"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73467535"
 ---
 # <a name="add-contributors-to-your-app"></a>Добавление участников в приложение
 
 Владелец приложения может добавлять участников в приложения. Они могут изменять модель, обучать и публиковать приложение. 
+
+[!INCLUDE [Waiting for LUIS portal refresh](./includes/wait-v3-upgrade.md)]
 
 [!INCLUDE [Manage collaborators and contributors based on migrated or not-migrated apps](./includes/manage-contributor-collaborator-migration.md)]
 
@@ -55,7 +57,7 @@ ms.locfileid: "70844839"
 
 1. На панели инструментов следует выбрать **Add Collaborator** (Добавить участника совместной работы).
 
-    [![Добавление участника совместной работы](./media/luis-how-to-collaborate/add-collaborator.png "Добавить участника совместной работы")](./media/luis-how-to-collaborate/add-collaborator.png#lightbox)
+    [![Добавить участника совместной работы](./media/luis-how-to-collaborate/add-collaborator.png "Добавление участника совместной работы")](./media/luis-how-to-collaborate/add-collaborator.png#lightbox)
 
 1. Чтобы войти на портал LUIS необходимо выбрать адрес электронной почты, используемый участником совместной работы.
 
@@ -96,7 +98,7 @@ ms.locfileid: "70844839"
 Узнайте больше о пользователях и согласии Azure Active Directory. 
 * [Ограничьте набор пользователей](../../active-directory/develop/howto-restrict-your-app-to-a-set-of-users.md) приложения.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте [, как использовать версии](luis-how-to-manage-versions.md) для управления жизненным циклом приложения.
 * Изучите основные понятия, в том числе [ресурсы для разработки](luis-concept-keys.md#authoring-key) и [участников](luis-concept-keys.md#contributions-from-other-authors) этого ресурса.

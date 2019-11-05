@@ -13,60 +13,92 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/23/2019
+ms.date: 10/13/2019
 ms.author: rkarlin
-ms.openlocfilehash: 20079fd0c95da3e3aec9518f194ea39561a5e662
-ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
+ms.openlocfilehash: 7a44d63b834a7b6b580909005a440637bf730918
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71240698"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73475787"
 ---
-# <a name="connect-your-fortinet-appliance"></a>Подключение устройства Fortinet
+# <a name="connect-fortinet-to-azure-sentinel"></a>Подключение Fortinet к Azure Sentinel
 
 
 
-Вы можете подключить метку Azure к любому устройству Fortinet, сохранив файлы журнала в формате общего события syslog (CEF). Благодаря интеграции с Sentinel Azure можно легко выполнять анализ и запросы к данным файла журнала из Fortinet. Дополнительные сведения о том, как Azure Sentinel принимает данные CEF, см. в разделе [Connect CEF Appliances](connect-common-event-format.md).
+В этой статье объясняется, как подключить устройство Fortinet к Azure Sentinel. Соединитель данных Fortinet позволяет легко подключать журналы Fortinet с помощью Azure Sentinel, просматривать панели мониторинга, создавать пользовательские оповещения и улучшать исследование. Использование Fortinet в Azure Sentinel предоставит вам более подробные сведения об использовании Интернета в вашей организации и улучшит возможности ее работы. 
 
-> [!NOTE]
-> Данные хранятся в географическом расположении рабочей области, в которой выполняется метка Azure.
 
-## <a name="step-1-connect-your-fortinet-appliance-by-using-an-agent"></a>Шаг 1. Подключение устройства Fortinet с помощью агента
+## <a name="how-it-works"></a>Принцип работы
 
-Чтобы подключить устройство Fortinet к Azure Sentinel, разверните Агент на выделенной виртуальной машине или на локальном компьютере, чтобы обеспечить взаимодействие между устройством и Sentinel. 
+Необходимо развернуть агент на выделенном компьютере Linux (виртуальную машину или локально) для поддержки обмена данными между Fortinet и Sentinel. На следующей схеме описывается настройка в событии виртуальной машины Linux в Azure.
 
-Вы также можете развернуть агент вручную на существующей ВИРТУАЛЬНОЙ машине Azure, на виртуальной машине в другом облаке или на локальном компьютере.
+ ![CEF в Azure](./media/connect-cef/cef-syslog-azure.png)
 
-> [!NOTE]
-> Обязательно настройте безопасность компьютера в соответствии с политикой безопасности вашей организации. Например, можно настроить сеть для согласования с политикой безопасности корпоративной сети и изменить порты и протоколы в управляющей программе в соответствии с вашими требованиями. 
+Кроме того, эта установка будет существовать, если вы используете виртуальную машину в другом облаке или на локальном компьютере. 
 
-Чтобы просмотреть схему сети обоих вариантов, см. раздел [Подключение к источникам данных](connect-data-sources.md#agent-options).
+ ![CEF в локальной среде](./media/connect-cef/cef-syslog-onprem.png)
 
-### <a name="deploy-the-agent"></a>Развертывание агента
 
-1. На портале Sentinel Azure щелкните **Data Connectors (соединители данных** ), выберите **Fortinet** , а затем **откройте страницу соединителя**. 
+## <a name="security-considerations"></a>Вопросы безопасности
 
-1. В разделе **Загрузка и установка агента системного журнала**выберите тип компьютера (Azure или локально). 
-1. На открывшемся экране **виртуальные машины** выберите компьютер, который вы хотите использовать, и нажмите кнопку **подключить**.
-1. Если выбрана **Загрузка и установка агента для виртуальных машин Linux в Azure**, выберите компьютер и нажмите кнопку **подключить**. Если выбрана **Загрузка и установка агента для виртуальных машин Linux, отличных от Azure**, на экране **Direct Agent** выполните сценарий в разделе **скачать и подключить агент для Linux**.
-1. На экране соединителя в разделе **Настройка и пересылка системного журнала**укажите, является ли управляющая программа syslog **rsyslog. d** или **syslog-ng**. 
-1. Скопируйте эти команды и запустите их на устройстве:
-   - Если вы выбрали rsyslog. d:
-            
-     1. Сообщите управляющей программе системного журнала о необходимости прослушивания local_4а устройства и отправки сообщений Syslog агенту Sentinel Azure с помощью порта 25226. Используйте следующую команду:`sudo bash -c "printf 'local4.debug  @127.0.0.1:25226\n\n:msg, contains, \"Fortinet\"  @127.0.0.1:25226' > /etc/rsyslog.d/security-config-omsagent.conf"`
-     1. Скачайте и установите [файл конфигурации security_events](https://aka.ms/asi-syslog-config-file-linux) , который настраивает агент syslog для прослушивания порта 25226. Используйте эту команду: `sudo wget -O /etc/opt/microsoft/omsagent/{0}/conf/omsagent.d/security_events.conf "https://aka.ms/syslog-config-file-linux"` где {0} следует заменить GUID рабочей области.
-     1. Перезапустите управляющую программу системного журнала с помощью следующей команды:`sudo service rsyslog restart`
-            
-   - Если вы выбрали syslog-ng:
+Обязательно настройте безопасность компьютера в соответствии с политикой безопасности вашей организации. Например, можно настроить сеть для согласования с политикой безопасности корпоративной сети и изменить порты и протоколы в управляющей программе в соответствии с вашими требованиями. Для улучшения конфигурации безопасности компьютера можно использовать следующие инструкции:  [безопасная виртуальная машина в Azure](../virtual-machines/linux/security-policy.md), рекомендации [по сетевой безопасности](../security/fundamentals/network-best-practices.md).
 
-      1. Сообщите управляющей программе системного журнала о необходимости прослушивания local_4а устройства и отправки сообщений Syslog агенту Sentinel Azure с помощью порта 25226. Используйте следующую команду:`sudo bash -c "printf 'filter f_local4_oms { facility(local4); };\n  destination security_oms { tcp(\"127.0.0.1\" port(25226)); };\n  log { source(src); filter(f_local4_oms); destination(security_oms); };\n\nfilter f_msg_oms { match(\"Fortinet\" value(\"MESSAGE\")); };\n  destination security_msg_oms { tcp(\"127.0.0.1\" port(25226)); };\n  log { source(src); filter(f_msg_oms); destination(security_msg_oms); };' > /etc/syslog-ng/security-config-omsagent.conf"`
-      1. Скачайте и установите [файл конфигурации security_events](https://aka.ms/asi-syslog-config-file-linux) , который настраивает агент syslog для прослушивания порта 25226. Используйте эту команду: `sudo wget -O /etc/opt/microsoft/omsagent/{0}/conf/omsagent.d/security_events.conf "https://aka.ms/syslog-config-file-linux"` где {0} следует заменить GUID рабочей области.
-      1. Перезапустите управляющую программу системного журнала с помощью следующей команды:`sudo service syslog-ng restart`
-1. Перезапустите агент системного журнала с помощью следующей команды:`sudo /opt/microsoft/omsagent/bin/service_control restart [{workspace GUID}]`
-1. Убедитесь, что в журнале агента нет ошибок, выполнив следующую команду:`tail /var/opt/microsoft/omsagent/log/omsagent.log`
+Чтобы использовать TLS-связь между решением безопасности и компьютером syslog, необходимо настроить управляющую программу syslog (rsyslog или syslog-ng) для взаимодействия в TLS: [шифрование трафика syslog с помощью TLS — rsyslog](https://www.rsyslog.com/doc/v8-stable/tutorials/tls_cert_summary.html), [Шифрование сообщений журнала с помощью TLS — syslog-ng](https://support.oneidentity.com/technical-documents/syslog-ng-open-source-edition/3.22/administration-guide/60#TOPIC-1209298).
 
  
-## <a name="step-2-forward-fortinet-logs-to-the-syslog-agent"></a>Шаг 2. Пересылка журналов Fortinet в агент системного журнала
+## <a name="prerequisites"></a>Технические условия
+Убедитесь, что компьютер Linux, используемый в качестве прокси-сервера, работает под управлением одной из следующих операционных систем:
+
+- 64-разрядная
+  - CentOS 6 и 7
+  - Amazon Linux 2017.09
+  - Oracle Linux 6 и 7
+  - Red Hat Enterprise Linux Server 6 и 7
+  - Debian GNU/Linux 8 и 9
+  - Ubuntu Linux 14.04 LTS, 16.04 LTS и 18.04 LTS
+  - SUSE Linux Enterprise Server 12
+- 32-битная
+   - CentOS 6
+   - Oracle Linux 6
+   - Red Hat Enterprise Linux Server 6
+   - Debian GNU/Linux 8 и 9
+   - Ubuntu Linux 14.04 LTS и 16.04 LTS
+ 
+ - Версии управляющей программы
+   - Syslog-ng: 2,1-3.22.1
+   - Rsyslog: V8
+  
+ - Поддерживаемые документы RFC системного журнала
+   - Syslog RFC 3164
+   - Syslog RFC 5424
+ 
+Убедитесь, что компьютер соответствует следующим требованиям: 
+- Разрешения
+    - Необходимо иметь повышенные разрешения (sudo) на компьютере. 
+- Требования к программному обеспечению
+    - Убедитесь, что на вашем компьютере установлен Python.
+## <a name="step-1-deploy-the-agent"></a>Шаг 1. Развертывание агента
+
+На этом шаге необходимо выбрать компьютер Linux, который будет использоваться в качестве прокси-сервера между Sentinel Azure и решением безопасности. Вам потребуется запустить сценарий на прокси-компьютере, который:
+- Устанавливает агент Log Analytics и настраивает его по мере необходимости для прослушивания сообщений Syslog через порт 514 через TCP и отправляет сообщения CEF в рабочую область "Sentinel" Azure.
+- Настраивает управляющую программу syslog для пересылки CEF сообщений агенту Log Analytics с помощью порта 25226.
+- Устанавливает агент системного журнала для получения данных и их безопасного отправку в Log Analytics, где они анализируются и расширяются.
+ 
+ 
+1. На портале Sentinel Azure щелкните **Data Connectors (соединители данных** ), выберите **Fortinet** , а затем **откройте страницу соединителя**. 
+
+1. В разделе **Установка и настройка агента syslog**выберите тип компьютера: Azure, другое облако или локально. 
+   > [!NOTE]
+   > Так как скрипт на следующем шаге устанавливает агент Log Analytics и подключает компьютер к рабочей области Sentinel Azure, убедитесь, что этот компьютер не подключен к какой-либо другой рабочей области.
+1. Необходимо иметь повышенные разрешения (sudo) на компьютере. Убедитесь, что на компьютере установлен Python, выполнив следующую команду: `python –version`
+
+1. Выполните следующий сценарий на прокси-компьютере.
+   `sudo wget https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/DataConnectors/CEF/cef_installer.py&&sudo python cef_installer.py [WorkspaceID] [Workspace Primary Key]`
+1. Во время выполнения скрипта убедитесь, что не получены сообщения об ошибках и предупреждения.
+
+ 
+## <a name="step-2-forward-fortinet-logs-to-the-syslog-agent"></a>Шаг 2. Пересылка журналов Fortinet в агент системного журнала
 
 Настройте Fortinet для пересылки сообщений системного журнала в формате CEF в рабочую область Azure с помощью агента системного журнала.
 
@@ -74,7 +106,6 @@ ms.locfileid: "71240698"
 
         config log syslogd setting
         set format cef
-        set facility <facility_name>
         set port 514
         set reliable disable
         set server <ip_address_of_Receiver>
@@ -82,67 +113,28 @@ ms.locfileid: "71240698"
         end
 
     - Замените **IP-адрес** сервера IP-адресом агента.
-    - Задайте **facility_name** для использования устройства, настроенного в агенте. По умолчанию агент присваивает этому параметру значение local4.
     - Задайте для **порта системного журнала** значение **514** или порт, установленный на агенте.
     - Чтобы включить формат CEF в ранних версиях Фортиос, может потребоваться выполнить команду Set **CSV Disabled**.
  
    > [!NOTE] 
    > Для получения дополнительных сведений перейдите в [библиотеку документов Fortinet](https://aka.ms/asi-syslog-fortinet-fortinetdocumentlibrary). Выберите свою **версию и воспользуйтесь** **справочной ссылкой и сообщением журнала**.
 
- Чтобы использовать соответствующую схему в Azure Monitor Log Analytics для событий Fortinet, выполните поиск по `CommonSecurityLog`запросу.
+ Чтобы использовать соответствующую схему в Azure Monitor Log Analytics для событий Fortinet, выполните поиск по запросу `CommonSecurityLog`.
 
 
-## <a name="step-3-validate-connectivity"></a>Шаг 3. Проверка подключения
+## <a name="step-3-validate-connectivity"></a>Шаг 3. Проверка подключения
 
-После того, как журналы начнут отображаться в Log Analytics, может пройти до 20 минут. 
+1. Откройте Log Analytics, чтобы убедиться, что журналы получены с помощью схемы CommonSecurityLog.<br> Если журналы начнут появляться в Log Analytics, это может занять до 20 минут. 
 
-1. Убедитесь, что вы используете правильное средство. Это устройство должно быть одинаковым в устройстве и в Azure Sentinel. Вы можете проверить, какой файл ссуды вы используете в Azure Sentinel, и изменить его в `security-config-omsagent.conf`файле. 
+1. Перед запуском скрипта рекомендуется отправить сообщения из решения безопасности, чтобы убедиться, что они перенаправлены на настроенный вами прокси-сервер syslog. 
+1. Необходимо иметь повышенные разрешения (sudo) на компьютере. Убедитесь, что на компьютере установлен Python, выполнив следующую команду: `python –version`
+1. Выполните следующий сценарий, чтобы проверить подключение между агентом, Sentinel Azure и решением по обеспечению безопасности. Он проверяет правильность настройки перенаправления управляющей программы, прослушивает правильные порты и не блокирует обмен данными между управляющей программой и агентом Log Analytics. Сценарий также отправляет фиктивные сообщения "Тесткоммоневентформат" для проверки сквозного подключения. <br>
+ `sudo wget https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/DataConnectors/CEF/cef_troubleshoot.py&&sudo python cef_troubleshoot.py [WorkspaceID]`
 
-2. Убедитесь, что журналы поступают на правильный порт в агенте системного журнала. Выполните следующую команду на компьютере агента системного журнала: `tcpdump -A -ni any  port 514 -vv`. Эта команда отображает журналы, которые потоковая передача с устройства на компьютер syslog. Убедитесь, что журналы получены с исходного устройства на правильном порте и на правильном устройстве.
 
-3. Убедитесь, что отправляемые журналы соответствуют [RFC 3164](https://tools.ietf.org/html/rfc3164).
 
-4. На компьютере, на котором выполняется агент syslog, убедитесь, что порты 514 и 25226 открыты и прослушиваются с помощью `netstat -a -n:`команды. Дополнительные сведения об использовании этой команды см. в разделе [netstat (8) — Справочная страница Linux](https://linux.die.net/man/8/netstat). Если он прослушивается правильно, вы увидите:
 
-   ![Порты Sentinel Azure](./media/connect-cef/ports.png) 
-
-5. Убедитесь, что управляющая программа настроена на прослушивание порта 514, на котором вы отправляете журналы.
-    - Для rsyslog:<br>Убедитесь, что файл `/etc/rsyslog.conf` содержит следующую конфигурацию:
-
-           # provides UDP syslog reception
-           module(load="imudp")
-           input(type="imudp" port="514")
-        
-           # provides TCP syslog reception
-           module(load="imtcp")
-           input(type="imtcp" port="514")
-
-      Дополнительные сведения см. в [разделе имудп: Входной модуль](https://www.rsyslog.com/doc/v8-stable/configuration/modules/imudp.html#imudp-udp-syslog-input-module) UDP syslog и [имткп: Входной модуль](https://www.rsyslog.com/doc/v8-stable/configuration/modules/imtcp.html#imtcp-tcp-syslog-input-module)системного журнала TCP.
-
-   - Для syslog-ng:<br>Убедитесь, что файл `/etc/syslog-ng/syslog-ng.conf` содержит следующую конфигурацию:
-
-           # source s_network {
-            network( transport(UDP) port(514));
-             };
-     Дополнительные сведения см. в [разделе имудп: Входной модуль](https://rsyslog.readthedocs.io/en/latest/configuration/modules/imudp.html) и [syslog-ng с открытым исходным кодом 3,16 — администрирование](https://www.syslog-ng.com/technical-documents/doc/syslog-ng-open-source-edition/3.16/administration-guide/19#TOPIC-956455).
-
-1. Убедитесь в наличии связи между управляющей программой syslog и агентом. Выполните следующую команду на компьютере агента системного журнала: `tcpdump -A -ni any  port 25226 -vv`. Эта команда отображает журналы, которые потоковая передача с устройства на компьютер syslog. Убедитесь, что журналы также получаются на агенте.
-
-6. Если обе команды предоставили успешные результаты, проверьте Log Analytics поступающие журналы. Все события, переданные из этих устройств в поток, отображаются в необработанном виде в log Analytics в разделе `CommonSecurityLog` тип.
-
-7. Чтобы проверить наличие ошибок или отсутствие поступающих журналов, найдите `tail /var/opt/microsoft/omsagent/<workspace id>/log/omsagent.log`. Если это говорит о том, что обнаружены ошибки несоответствия `/etc/opt/microsoft/omsagent/{0}/conf/omsagent.d/security_events.conf "https://aka.ms/syslog-config-file-linux"` формата журнала, перейдите к `security_events.conf`файлу и проверьте его. Убедитесь, что журналы соответствуют формату регулярного выражения, который вы видите в этом файле.
-
-8. Убедитесь, что размер сообщения системного журнала по умолчанию ограничен 2048 байтами (2 КБ). Если журналы имеют слишком большую длину, обновите security_events. conf с помощью следующей команды:`message_length_limit 4096`
-
-10. Если журналы Fortinet не получены агентом, выполните эту команду в зависимости от типа управляющей программы syslog, которую вы используете, чтобы настроить средство и настроить журналы для поиска слова Fortinet в журналах:
-       - rsyslog. d:`sudo bash -c "printf 'local4.debug  @127.0.0.1:25226\n\n:msg, contains, \"Fortinet\"  @127.0.0.1:25226' > /etc/rsyslog.d/security-config-omsagent.conf"`
-
-     Перезапустите управляющую программу системного журнала с помощью следующей команды:`sudo service rsyslog restart`
-       - syslog-ng:`sudo bash -c "printf 'filter f_local4_oms { facility(local4); };\n  destination security_oms { tcp(\"127.0.0.1\" port(25226)); };\n  log { source(src); filter(f_local4_oms); destination(security_oms); };\n\nfilter f_msg_oms { match(\"Fortinet\" value(\"MESSAGE\")); };\n  destination security_msg_oms { tcp(\"127.0.0.1\" port(25226)); };\n  log { source(src); filter(f_msg_oms); destination(security_msg_oms); };' > /etc/syslog-ng/security-config-omsagent.conf"`
-      
-     Перезапустите управляющую программу системного журнала с помощью следующей команды:`sudo service syslog-ng restart`
-
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Из этой статьи вы узнали, как подключить устройства Fortinet к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [получить представление о данных и потенциальных угрозах](quickstart-get-visibility.md).
 - Приступая [к обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).

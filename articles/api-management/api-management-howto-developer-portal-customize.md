@@ -12,18 +12,18 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
-ms.openlocfilehash: 2fc22a8f2a9e1e9410f2e6a9738c50a296a6287f
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.openlocfilehash: 62fb5552d86a802c3ba0213d99be2f91f21025e2
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73180723"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73472133"
 ---
 # <a name="access-and-customize-developer-portal"></a>Доступ и Настройка портала разработчика
 
 Портал разработчика — это автоматически создаваемый, полностью настраиваемый веб-сайт с документацией по API. Именно здесь пользователи API могут обнаружить ваши API, узнать, как их использовать и запросить доступ.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+Из этого руководства вы узнаете, как выполнять такие задачи:
 
 > [!div class="checklist"]
 > * Доступ к управляемой версии портала разработчика
@@ -36,9 +36,13 @@ ms.locfileid: "73180723"
 
 ![Портал разработчика управления API — режим администратора](media/api-management-howto-developer-portal-customize/cover.png)
 
+> [!WARNING]
+> На портале разработчика в настоящее время выполняется развертывание в службах управления API.
+> Если служба была только что создана или является службой уровня разработчика, у вас уже должна быть последняя версия. В противном случае могут возникнуть проблемы (например, с помощью функции публикации). Развертывание функций будет завершено в понедельник 11 ноября 2019. 
+
 ## <a name="prerequisites"></a>Технические условия
 
-- Выполните задачи из краткого руководства по [созданию экземпляра службы управления API Azure](get-started-create-service-instance.md)
+- Выполните задачи в кратком руководстве по [созданию экземпляра службы управления API Azure](get-started-create-service-instance.md).
 - Импортируйте и опубликуйте экземпляр службы управления API Azure. Дополнительные сведения см. в разделе [Импорт и публикация](import-and-publish.md) .
 
 [!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
