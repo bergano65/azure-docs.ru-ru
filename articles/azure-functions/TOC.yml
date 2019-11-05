@@ -253,8 +253,8 @@
           href: functions-monitor-log-analytics.md
     - name: Безопасность
       items:
-        - name: Приобретение SSL-сертификата
-          href: ../app-service/web-sites-purchase-ssl-web-site.md?toc=%2fazure%2fazure-functions%2ftoc.json
+        - name: Добавление SSL-сертификата
+          href: ../app-service/configure-ssl-certificate.md?toc=%2fazure%2fazure-functions%2ftoc.json
         - name: Аутентификация пользователей
           items:
             - name: "Аутентификация с помощью Azure\_AD"

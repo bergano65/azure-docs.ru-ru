@@ -61,6 +61,8 @@
       href: api-management-error-handling-policies.md
     - name: Ограничения на импорт для API
       href: api-management-api-import-restrictions.md
+    - name: Общие сведения о независимом шлюзе
+      href: self-hosted-gateway-overview.md
 - name: Руководства
   items:
     - name: Определение интерфейсов API
@@ -93,6 +95,16 @@
           href: api-management-howto-autoscale.md
         - name: Настройка личного домена
           href: configure-custom-domain.md
+        - name: Развертывание в несколько регионов Azure
+          href: api-management-howto-deploy-multi-region.md
+        - name: Предоставление независимого шлюза
+          href: api-management-howto-provision-self-hosted-gateway.md
+        - name: Развертывание независимого шлюза в Kubernetes
+          href: api-management-howto-deploy-self-hosted-gateway-to-k8s.md
+        - name: Развертывание независимого шлюза в Docker
+          href: api-management-howto-deploy-self-hosted-gateway-to-docker.md
+        - name: Настройка личного домена для независимого шлюза
+          href: api-management-howto-configure-custom-domain-gateway.md
     - name: Кэш
       items:
         - name: Добавление кэширования для повышения производительности
@@ -195,8 +207,6 @@
       items:
         - name: Управление группами
           href: api-management-howto-create-groups.md
-        - name: Развертывание в несколько регионов Azure
-          href: api-management-howto-deploy-multi-region.md
         - name: Получение IP-адресов
           href: api-management-howto-ip-addresses.md
         - name: Регистрация событий в Центрах событий Azure

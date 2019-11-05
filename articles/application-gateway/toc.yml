@@ -77,6 +77,8 @@
           href: application-gateway-waf-configuration.md
         - name: Настраиваемые правила
           href: custom-waf-rules-overview.md
+    - name: Входящий трафик для AKS
+      href: ingress-controller-overview.md
     - name: Мониторинг работоспособности
       items:
         - name: Проверка работоспособности
@@ -153,6 +155,28 @@
           href: create-custom-waf-rules.md
         - name: Настройка WAF с использованием настраиваемых правил
           href: configure-waf-custom-rules.md
+    - name: Входящий трафик для AKS
+      items:
+        - name: Настройка с существующим Шлюзом приложений
+          href: ingress-controller-install-existing.md
+        - name: Настройка с новым Шлюзом приложений
+          href: ingress-controller-install-new.md
+        - name: Включение сходства файлов cookie
+          href: ingress-controller-cookie-affinity.md
+        - name: Включение поддержки нескольких пространств имен
+          href: ingress-controller-multiple-namespace-support.md
+        - name: Использование частного IP-адреса для внутренней маршрутизации
+          href: ingress-controller-private-ip.md
+        - name: Добавление проб работоспособности в модули pod AKS
+          href: ingress-controller-add-health-probes.md
+        - name: Предоставление службы AKS по протоколу HTTP/HTTPS с помощью Шлюза приложений
+          href: ingress-controller-expose-service-over-http-https.md
+        - name: Обновление контроллера входящего трафика с помощью Helm
+          href: ingress-controller-update-ingress-controller.md
+        - name: Использование LetsEncrypt.org со Шлюзом приложений
+          href: ingress-controller-letsencrypt-certificate-application-gateway.md
+        - name: Предоставление WebSocket Шлюзу приложений
+          href: ingress-controller-expose-websocket-server.md
     - name: Маршрутизация на основе URL-адреса
       items:
         - name: Azure PowerShell
@@ -223,6 +247,8 @@
           href: application-gateway-troubleshooting-502.md
         - name: Брандмауэр веб-приложения (WAF)
           href: web-application-firewall-troubleshoot.md
+        - name: Входящий трафик для AKS
+          href: ingress-controller-troubleshoot.md
         - name: Работоспособность ресурса
           href: resource-health-overview.md
         - name: Использование Log Analytics
@@ -235,7 +261,9 @@
   items:
     - name: Правила CRS
       href: application-gateway-crs-rulegroups-rules.md
-    - name: Azure CLI
+    - name: Входящий трафик для заметок AKS
+      href: ingress-controller-annotations.md
+    - name: Инфраструктура CLI Azure
       href: /cli/azure/network/application-gateway
     - name: Azure PowerShell
       href: /powershell/azure/overview

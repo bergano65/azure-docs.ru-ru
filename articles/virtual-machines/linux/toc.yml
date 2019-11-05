@@ -137,6 +137,8 @@
           href: disk-encryption.md
         - name: Проектирование для обеспечения высокой производительности
           href: premium-storage-performance.md
+        - name: Всплеск активности диска
+          href: disk-bursting.md
         - name: Целевые показатели масштабируемости для дисков
           href: disk-scalability-targets.md
         - name: Резервное копирование и аварийное восстановление дисков

@@ -92,6 +92,8 @@
               href: concepts-data-access-and-security-vnet.md
             - name: Архитектура подключения
               href: concepts-connectivity-architecture.md
+            - name: "Аутентификация Azure\_AD"
+              href: concepts-aad-authentication.md
         - name: Непрерывность бизнес-процессов
           items:
             - name: Общие сведения о непрерывности бизнес-процессов
@@ -153,8 +155,14 @@
               href: concepts-hyperscale-firewall-rules.md
             - name: Настройка SSL
               href: concepts-hyperscale-ssl-connection-security.md
+        - name: Мониторинг и настройка
+          items:
+            - name: Мониторинг и настройка
+              href: concepts-hyperscale-monitoring.md
         - name: Расширения PostgreSQL
           href: concepts-hyperscale-extensions.md
+        - name: Высокий уровень доступности
+          href: concepts-hyperscale-high-availability.md
         - name: Ресурсы
           items:
             - name: Варианты настройки
@@ -163,8 +171,12 @@
   items:
     - name: Отдельный сервер
       items:
-        - name: Создание пользователей
-          href: howto-create-users.md
+        - name: Аутентификация
+          items:
+            - name: Создание пользователей
+              href: howto-create-users.md
+            - name: Настройка интеграции Azure AD
+              href: howto-configure-sign-in-aad-authentication.md
         - name: Оптимизация
           items:
             - name: Операции массовой вставки
@@ -245,12 +257,20 @@
               href: howto-read-replicas-cli.md
     - name: Гипермасштабирование (Citus)
       items:
+        - name: Создание пользователей
+          href: howto-hyperscale-create-users.md
         - name: Масштабирование
           href: howto-hyperscale-scaling.md
         - name: Управление брандмауэром
           items:
             - name: Портал Azure
               href: howto-hyperscale-manage-firewall-using-portal.md
+        - name: Высокий уровень доступности
+          href: howto-hyperscale-high-availability.md
+        - name: Мониторинг
+          items:
+            - name: Создание оповещений на основе метрик
+              href: howto-hyperscale-alert-on-metric.md
         - name: Устранение неполадок
           items:
             - name: Устранение ошибок подключения

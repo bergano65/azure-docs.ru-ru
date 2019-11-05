@@ -1,0 +1,37 @@
+### YamlMime:Landing
+title: Azure Arc
+summary: В Azure Arc добавлена поддержка возможностей Azure Resource Manager для серверов Linux и Windows, а также возможность использовать кластеры Kubernetes в любой инфраструктуре в локальной среде, в нескольких облаках и на пограничных устройствах. Кроме того, Azure Arc позволяет клиентам запускать службы данных Azure в любом расположении. При этом предоставляются преимущества облачных инноваций, включая постоянно поддерживаемые в актуальном состоянии средства работы с данными, развертывание за считаные секунды (а не часы) и динамическую масштабируемость в любой инфраструктуре. Сейчас предоставляется общедоступная предварительная версия Azure Arc для серверов.
+metadata:
+  title: Azure Arc для серверов
+  description: Узнайте, как управлять локальными компьютерами в Azure
+  author: bobbytreed
+  manager: carmonm
+  ms.service: azure-arc
+  ms.topic: landing-page
+  ms.date: 11/04/2019
+  ms.author: robreed
+  ms.openlocfilehash: 2ff0b9a194faf4d5a6b9e5181c52dc135208bdee
+  ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 11/04/2019
+  ms.locfileid: "73508556"
+landingContent:
+- title: Общие сведения об Azure Arc
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Дополнительные сведения об Azure Arc
+      url: https://aka.ms/Azure-Arc-Info
+- title: Подключение компьютеров к Azure с помощью Azure Arc для серверов
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что собой представляет Azure Arc для серверов?
+      url: ./servers/overview.md
+  - linkListType: quickstart
+    links:
+    - text: Подключение компьютеров к Azure с помощью Azure Arc для серверов — портал
+      url: ./servers/quickstart-onboard-portal.md
+    - text: Подключение компьютеров к Azure с помощью Azure Arc для серверов — PowerShell
+      url: ./servers/quickstart-onboard-portal.md

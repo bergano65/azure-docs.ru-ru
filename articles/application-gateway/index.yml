@@ -10,12 +10,12 @@ metadata:
   author: vhorne
   ms.author: victorh
   ms.date: 09/18/2019
-  ms.openlocfilehash: ff940f474c6d5d6fd96a03c45be18de39f065b97
-  ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
+  ms.openlocfilehash: c0524eb96c40ea8e01dc3142b70d6d986d94ced4
+  ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 09/17/2019
-  ms.locfileid: "71076029"
+  ms.lasthandoff: 11/04/2019
+  ms.locfileid: "73469867"
 landingContent:
 - title: Информация о Шлюзе приложений
   linkLists:
@@ -55,6 +55,16 @@ landingContent:
     links:
     - text: Создание шлюза приложений, который улучшает доступ к веб-приложениям
       url: tutorial-autoscale-ps.md
+- title: Контроллер входящего трафика для AKS
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Что такое контроллер входящего трафика для AKS
+      url: ingress-controller-overview.md
+  - linkListType: tutorial
+    links:
+    - text: Создание контроллера входящего трафика для AKS
+      url: ingress-controller-install-new.md
 - title: Устранение неполадок со шлюзом приложений
   linkLists:
   - linkListType: overview

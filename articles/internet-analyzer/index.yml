@@ -1,0 +1,47 @@
+### YamlMime:Landing
+title: Документация по Анализатору Интернета Azure (предварительная версия)
+summary: Анализатор Интернета — это платформа измерения на стороне клиента. Она позволяет проверять, как сетевые изменения инфраструктуры влияют на производительность клиентов. Что бы вы ни делали — переносили данные с локальных ресурсов в Azure или оценивали новую службу Azure, — Анализатор Интернета позволяет получать информацию на основе данных пользователей и подробной аналитики Майкрософт, чтобы составить более четкое представление о сетевой архитектуре и оптимизировать ее еще до переноса.
+metadata:
+  title: Документация по Анализатору Интернета Azure (предварительная версия)
+  description: Анализатор Интернета — это платформа измерения на стороне клиента. Она позволяет проверять, как сетевые изменения инфраструктуры влияют на производительность клиентов. Что бы вы ни делали — переносили данные с локальных ресурсов в Azure или оценивали новую службу Azure, — Анализатор Интернета позволяет получать информацию на основе данных пользователей и подробной аналитики Майкрософт, чтобы составить более четкое представление о сетевой архитектуре и оптимизировать ее еще до переноса.
+  services: internet-analyzer
+  ms.service: internet-analyzer
+  ms.topic: landing-page
+  author: megan-beatty
+  ms.author: mebeatty
+  ms.date: 10/16/2019
+  ms.openlocfilehash: 27ad858137901f7cb803b380115f6b55967caef7
+  ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 11/04/2019
+  ms.locfileid: "73508845"
+landingContent:
+- title: Сведения об Анализаторе Интернета
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что собой представляет Анализатор Интернета Azure?
+      url: internet-analyzer-overview.md
+- title: Начало работы
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Создание Анализатора Интернета с помощью портала
+      url: internet-analyzer-create-test-portal.md
+    - text: Создание Анализатора Интернета с помощью CLI
+      url: internet-analyzer-cli.md
+  - linkListType: how-to-guide
+    links:
+    - text: Внедрение клиента Анализатора Интернета
+      url: internet-analyzer-embed-client.md
+    - text: Настройка пользовательской конечной точки
+      url: internet-analyzer-custom-endpoint.md
+- title: Ресурсы
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Вопросы и ответы об Анализаторе Интернета
+      url: internet-analyzer-faq.md
+    - text: Интерпретация системы показателей
+      url: internet-analyzer-scorecard.md

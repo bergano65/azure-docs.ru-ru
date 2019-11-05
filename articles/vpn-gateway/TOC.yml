@@ -124,6 +124,8 @@
               href: point-to-site-how-to-vpn-client-install-azure-cert.md
             - name: Создание и установка файлов конфигурации VPN-клиента
               href: point-to-site-vpn-client-configuration-azure-cert.md
+            - name: О скачиваемом файле профиля VPN-клиента
+              href: about-vpn-profile-download.md
         - name: Проверка подлинности RADIUS
           items:
             - name: "Настройка VPN-подключений \"точка\_— сеть\""
@@ -138,6 +140,14 @@
               href: vpn-gateway-howto-openvpn.md
             - name: Настройка клиентов OpenVPN
               href: vpn-gateway-howto-openvpn-clients.md
+            - name: "OpenVPN\_— проверка подлинности Azure Active Directory"
+              items:
+                - name: Настройка клиента AAD
+                  href: openvpn-azure-ad-tenant.md
+                - name: "Настройка VPN-клиента в Azure\_AD"
+                  href: openvpn-azure-ad-client.md
+        - name: Переход на общедоступный сертификат шлюза от ЦС для P2S
+          href: vpn-gateway-point-to-site-gateway-public-ca.md
         - name: Настройка туннеля Always On VPN для устройства
           href: vpn-gateway-howto-always-on-device-tunnel.md
         - name: Настройка туннеля Always On VPN для пользователя
@@ -188,6 +198,10 @@
           href: vpn-gateway-howto-setup-alerts-virtual-network-gateway-metric.md
         - name: Настройка оповещений на основе журнала диагностики
           href: vpn-gateway-howto-setup-alerts-virtual-network-gateway-log.md
+    - name: Настройка захвата пакетов
+      href: packet-capture.md
+    - name: Настройка пользовательских селекторов трафика
+      href: custom-traffic-selectors.md
     - name: Устранение неполадок
       href: vpn-gateway-troubleshoot.md
       items:
@@ -203,7 +217,9 @@
               href: vpn-gateway-troubleshoot-vpn-point-to-site-connection-problems.md
             - name: Проблемы с подключением "точка — сеть" для VPN-клиента Mac OS X
               href: vpn-gateway-troubleshoot-point-to-site-osx-ikev2.md
-        - name: Проблемы с подключением "сеть-сеть"
+            - name: "Подключения \"точка\_— сеть\"\_— проверка подлинности Azure AD"
+              href: troubleshoot-ad-vpn-client.md
+        - name: Проблемы с подключением "сеть — сеть
           items:
             - name: "Подключения \"сеть\_— сеть\""
               href: vpn-gateway-troubleshoot-site-to-site-cannot-connect.md

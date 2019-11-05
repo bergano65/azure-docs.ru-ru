@@ -1,9 +1,9 @@
 ### YamlMime:Landing
-title: Хранилище данных SQL Azure
-summary: Узнайте, как использовать Хранилище данных SQL Azure, которое объединяет в себе технологии реляционных баз данных SQL и массовой параллельной обработки (MPP). В руководствах и другой документации показано, как проектировать, загружать, администрировать и анализировать данные с использованием хранилища данных.
+title: 'Azure Synapse Analytics (прежнее название: Хранилище данных SQL Azure)'
+summary: Azure Synapse — это служба аналитики без ограничений, которая объединяет корпоративные хранилища данных и аналитику больших данных. Служба позволяет вам запрашивать данные на своих условиях, используя бессерверные ресурсы по запросу или подготовленные ресурсы в любом масштабе.
 metadata:
-  title: Хранилище данных SQL Azure
-  description: description
+  title: Azure Synapse Analytics
+  description: Azure Synapse — это служба аналитики без ограничений, которая объединяет корпоративные хранилища данных и аналитику больших данных. Служба позволяет вам запрашивать данные на своих условиях, используя бессерверные ресурсы по запросу или подготовленные ресурсы в любом масштабе.
   services: sql-data-warehouse
   ms.service: sql-data-warehouse
   ms.subservice: design
@@ -12,38 +12,38 @@ metadata:
   author: julieMSFT
   ms.author: jrasnick
   ms.date: 10/03/2019
-  ms.openlocfilehash: ffb90d5d15b83570511c3f70b39f9f83f000ab35
-  ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
+  ms.openlocfilehash: 2ad2e5b4d17c4642b42efd51de2b91308f49a101
+  ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 10/10/2019
-  ms.locfileid: "72245853"
+  ms.lasthandoff: 11/04/2019
+  ms.locfileid: "73492221"
 landingContent:
-- title: Сведения о хранилище данных SQL Azure
+- title: About Azure Synapse Analytics
   linkLists:
   - linkListType: overview
     links:
-    - text: Общие сведения о Хранилище данных SQL
+    - text: Что такое Azure Synapse?
       url: sql-data-warehouse-overview-what-is.md
   - linkListType: architecture
     links:
-    - text: Хранилище данных SQL. Архитектура MPP
+    - text: Архитектура Azure Synapse
       url: massively-parallel-processing-mpp-architecture.md
-    - text: Советы и рекомендации по использованию хранилища данных
+    - text: Советы и рекомендации
       url: cheat-sheet.md
 - title: Начало работы
   linkLists:
   - linkListType: deploy
     links:
-    - text: Создание хранилища данных SQL
+    - text: Создание пула SQL (хранилища данных)
       url: create-data-warehouse-portal.md
 - title: Загрузка данных
   linkLists:
   - linkListType: concept
     links:
-    - text: Разработка стратегии загрузки данных PolyBase
+    - text: Разработка стратегии загрузки данных
       url: design-elt-data-loading.md
-    - text: Рекомендации по загрузке данных
+    - text: Рекомендации
       url: guidance-for-loading-data.md
   - linkListType: how-to-guide
     links:
@@ -57,7 +57,7 @@ landingContent:
   linkLists:
   - linkListType: overview
     links:
-    - text: Рекомендации по использованию Хранилища данных SQL
+    - text: Рекомендации
       url: sql-data-warehouse-best-practices.md
     - text: Настройка упорядоченного кластеризованного индекса columnstore
       url: performance-tuning-ordered-cci.md
@@ -67,11 +67,11 @@ landingContent:
     links:
     - text: Анализ рабочей нагрузки
       url: analyze-your-workload.md
-- title: Мониторинг Хранилища данных SQL и управление им
+- title: Управление и мониторинг
   linkLists:
   - linkListType: overview
     links:
-    - text: Сведения об мониторинге хранилища данных SQL и управлении им
+    - text: Сведения об мониторинге хранилища данных и управлении им
       url: sql-data-warehouse-overview-manageability-monitoring.md
   - linkListType: how-to-guide
     links:
@@ -79,11 +79,11 @@ landingContent:
       url: sql-data-warehouse-manage-monitor.md
     - text: Администрирование и мониторинг уровня важности рабочей нагрузки
       url: sql-data-warehouse-how-to-manage-and-monitor-workload-importance.md
-- title: Защита хранилища данных SQL
+- title: Защита хранилища данных
   linkLists:
   - linkListType: overview
     links:
-    - text: Общие сведения о защите Хранилища данных SQL
+    - text: Общие сведения о защите хранилища данных
       url: sql-data-warehouse-overview-manage-security.md
   - linkListType: how-to-guide
     links:
@@ -93,5 +93,5 @@ landingContent:
   linkLists:
   - linkListType: video
     links:
-    - text: Просмотрите последние видеоматериалы по Хранилищу данных SQL Azure
+    - text: Просмотрите последние видеоматериалы по Хранилищу данных
       url: sql-data-warehouse-videos.md

@@ -33,7 +33,7 @@
       href: search-get-started-python.md
 - name: Учебники
   items:
-    - name: Создание первого приложения
+    - name: 'Создание первого приложения на C#'
       items:
         - name: "1.\_Страница базового поиска"
           href: tutorial-csharp-create-first-app.md
@@ -215,8 +215,6 @@
           href: search-howto-schedule-indexers.md
         - name: Сопоставление полей
           href: search-indexer-field-mappings.md
-        - name: Добавочное индексирование
-          href: search-howto-incremental-index.md
         - name: Подключение к Управляемому экземпляру SQL
           href: search-howto-connecting-azure-sql-mi-to-azure-search-using-indexers.md
         - name: Подключение к виртуальным машинам SQL Server
@@ -239,14 +237,14 @@
               href: cognitive-search-output-field-mapping.md
             - name: Извлечение информации из изображений и ее обработка
               href: cognitive-search-concept-image-scenarios.md
+            - name: Настройка добавочного индексирования
+              href: search-howto-incremental-index.md
         - name: Пользовательские навыки
           items:
             - name: Интеграция пользовательских навыков
               href: cognitive-search-custom-skill-interface.md
             - name: "Пример\_— Функции Azure"
               href: cognitive-search-create-custom-skill-example.md
-            - name: "Примеры\_— навыки Power"
-              href: 'https://aka.ms/powerskills'
             - name: "Пример\_— контейнеры"
               href: 'https://go.microsoft.com/fwlink/?linkid=2089500'
         - name: Советы по устранению неполадок
@@ -378,6 +376,8 @@
           href: cognitive-search-skill-shaper.md
         - name: Условная логика
           href: cognitive-search-skill-conditional.md
+        - name: Извлечение документа
+          href: cognitive-search-skill-document-extraction.md
     - name: Пользовательские навыки
       items:
         - name: Пользовательские веб-API

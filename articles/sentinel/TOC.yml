@@ -76,12 +76,26 @@
               href: connect-fortinet.md
             - name: Подключение F5
               href: connect-f5.md
+            - name: "Подключение F5\_BIG-IP"
+              href: connect-f5-big-ip.md
             - name: Подключение Syslog
               href: connect-syslog.md
             - name: Подключение Symantec ICDX
               href: connect-symantec.md
             - name: Подключение Cisco
               href: connect-cisco.md
+            - name: Подключение Barracuda CloudGen Firewall
+              href: connect-barracuda-cloudgen-firewall.md
+            - name: Подключение Citrix Analytics (модуль безопасности)
+              href: connect-citrix-analytics.md
+            - name: Подключение ExtraHop Reveal(x)
+              href: connect-extrahop.md
+            - name: One Identity Safeguard
+              href: connect-one-identity.md
+            - name: Trend Micro Deep Security
+              href: connect-trend-micro.md
+            - name: Подключение Zscaler
+              href: connect-zscaler.md
         - name: Подключение анализа угроз
           href: connect-threat-intelligence.md
         - name: Подключение виртуальных машин Azure Stack
@@ -97,6 +111,8 @@
           href: notebooks.md
         - name: Поиск с помощью закладок
           href: bookmarks.md
+        - name: Поиск с помощью потоковой передачи
+          href: livestream.md
     - name: Удаление Azure Sentinel
       href: offboard.md
 - name: Ресурсы

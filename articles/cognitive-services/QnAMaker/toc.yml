@@ -147,6 +147,10 @@
       href: limits.md
     - name: Устранение неполадок
       href: troubleshooting.md
+    - name: Форматы файлов
+      items:
+        - name: Пакетное тестирование TSV
+          href: reference-tsv-format-batch-testing.md
     - name: Справочник по REST API
       items:
         - name: Разработка API-интерфейсов

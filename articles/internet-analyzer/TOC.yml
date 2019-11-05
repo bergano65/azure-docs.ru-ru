@@ -1,0 +1,34 @@
+- name: Документация по Анализатору Интернета (предварительная версия)
+  href: index.yml
+- name: Обзор
+  items:
+    - name: Сведения об Анализаторе Интернета
+      href: internet-analyzer-overview.md
+- name: Учебник
+  items:
+    - name: Создание теста Анализатора Интернета с помощью портала
+      href: internet-analyzer-create-test-portal.md
+    - name: Создание теста Анализатора Интернета с помощью CLI
+      herf: internet-analyzer-cli.md
+- name: Руководства
+  items:
+    - name: Внедрение клиента
+      href: internet-analyzer-embed-client.md
+    - name: Настройка пользовательской конечной точки
+      href: internet-analyzer-custom-endpoint.md
+    - name: Интерпретация системы показателей
+      href: internet-analyzer-scorecard.md
+- name: Ресурсы
+  items:
+    - name: Вопросы и ответы об Анализаторе Интернета
+      href: internet-analyzer-faq.md
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/?category=networking'
+    - name: Блог
+      href: 'https://azure.microsoft.com/blog/topics/networking'
+    - name: Форум
+      href: 'https://social.msdn.microsoft.com/Forums/azure/home?forum=WAVirtualMachinesVirtualNetwork'
+    - name: Соглашение об уровне обслуживания для предварительной версии
+      href: 'https://azure.microsoft.com/support/legal/preview-supplemental-terms'
+    - name: Соглашение об уровне обслуживания
+      href: 'https://azure.microsoft.com/support/legal/sla'

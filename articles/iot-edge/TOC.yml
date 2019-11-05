@@ -45,7 +45,7 @@
           href: tutorial-deploy-function.md
         - name: Определение средних значений с помощью Azure Stream Analytics
           href: tutorial-deploy-stream-analytics.md
-        - name: Оценка данных с помощью Службы машинного обучения Azure
+        - name: Оценка данных с помощью Машинного обучения Azure
           href: tutorial-deploy-machine-learning.md
         - name: Классификация изображений с помощью Пользовательского визуального распознавания
           href: tutorial-deploy-custom-vision.md

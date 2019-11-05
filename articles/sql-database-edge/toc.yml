@@ -1,0 +1,27 @@
+- name: Документация по Базе данных SQL для пограничных вычислений
+  href: index.yml
+- name: Обзор
+  items:
+    - name: Что собой представляет База данных SQL для пограничных вычислений?
+      href: overview.md
+- name: Краткие руководства
+  expanded: true
+  items:
+    - name: Развертывание Базы данных SQL для пограничных вычислений
+      href: deploy-portal.md
+    - name: Развертывание ONNX в Базе данных SQL для пограничных вычислений
+      href: deploy-onnx.md
+- name: Учебники
+  items:
+    - name: Синхронизация данных с помощью Фабрики данных Azure
+      href: tutorial-sync-data-factory.md
+    - name: Синхронизация данных с помощью Синхронизации данных SQL
+      href: tutorial-sync-data-sync.md
+- name: Практическое руководство
+  items:
+    - name: Пакеты приложения уровня данных и задания Stream Analytics
+      href: stream-analytics.md
+- name: Основные понятия
+  items:
+    - name: Использование Машинного обучения и ИИ с ONNX
+      href: onnx-overview.md

@@ -1,6 +1,6 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: Документация по службе приложений на платформе Linux
+title: Документация по Службе приложений на платформе Linux
 metadata:
   document_id: 2239df92-8506-4ee4-b5b0-9ab512c487b2
   title: Документация по веб-приложениям Azure для контейнеров. Руководства и справочники по API
@@ -15,7 +15,7 @@ metadata:
   ms.date: 09/05/2017
   ms.author: cfowler
 sections:
-  - title: 5-минутные руководства по началу работы
+  - title: Пятиминутные руководства по началу работы
     items:
       - type: list
         style: icon48
@@ -63,7 +63,7 @@ sections:
             href: ../deploy-ftp.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
           - image:
               src: ../media/index/git-icon.svg
-            text: локальный репозиторий Git;
+            text: Локальный репозиторий Git
             href: ../deploy-local-git.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
           - image:
               src: 'https://docs.microsoft.com/azure/media/index/logo_vs-team-services.svg'
@@ -75,7 +75,7 @@ sections:
             href: ../deploy-continuous-deployment.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
           - image:
               src: ../media/index/bitbucket.svg
-            text: Bitbucket;
+            text: Bitbucket
             href: ../deploy-continuous-deployment.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
           - image:
               src: ../media/index/dropbox.svg
@@ -85,27 +85,27 @@ sections:
               src: ../media/index/onedrive.svg
             text: Синхронизация OneDrive
             href: ../deploy-content-sync.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-  - title: Пошаговые руководства
+  - title: Пошаговые инструкции
     items:
       - type: paragraph
-        text: 'Сведения о развертывании, администрировании и мониторинге защищенных веб-приложений в службе приложений на платформе Linux'
+        text: 'Сведения о развертывании, администрировании и мониторинге защищенных веб-приложений в Службе приложений на платформе Linux'
       - type: list
         style: ordered
         items:
           - html: 'Создание приложения с помощью <a href="/azure/app-service/containers/tutorial-dotnetcore-sqldb-app">.NET Core с Базой данных SQL Azure</a>, <a href="/azure/app-service/containers/tutorial-java-enterprise-postgresql-app">Java Enterpise с PostgreSQL</a> или <a href="/azure/app-service/containers/tutorial-nodejs-mongodb-app">Node.js с MongoDB</a>'
-          - html: <a href="/azure/app-service/app-service-web-tutorial-custom-domain">Сопоставление имени личного домена DNS с веб-приложением Azure</a>
-          - html: <a href="/azure/app-service/app-service-web-tutorial-custom-SSL">Bind an existing custom SSL certificate to Azure Web Apps</a> (Привязка существующего SSL-сертификата к приложению)
+          - html: <a href="/azure/app-service/app-service-web-tutorial-custom-domain">Сопоставление имени личного домена с приложением</a>
+          - html: <a href="/azure/app-service/configure-ssl-bindings">Защита пользовательского доменного имени с помощью привязки SSL в Службе приложений Azure</a>
           - html: <a href="/azure/cdn/cdn-add-to-web-app">Добавление CDN в приложение</a>
   - title: Примеры
     items:
       - type: paragraph
-        text: Поиск скриптов для выполнения типовых задач.
+        text: Найдите скрипты для выполнения типовых задач.
       - type: list
         style: unordered
         className: spaced noBullet
         items:
           - html: <a href="/powershell/azureps-cmdlets-docs">Azure PowerShell</a>
-          - html: <a href="/cli/azure/appservice">Интерфейс командной строки Azure</a>
+          - html: <a href="/cli/azure/appservice">Azure CLI</a>
   - title: Справочные материалы
     items:
       - type: list
@@ -113,8 +113,8 @@ sections:
         className: cardsD
         items:
           - title: Командная строка
-            html: <p><a href="/powershell/azureps-cmdlets-docs">Azure PowerShell</a></p><p><a href="/cli/azure/appservice">Интерфейс командной строки Azure</a></p>
-          - title: Languages
+            html: <p><a href="/powershell/azureps-cmdlets-docs">Azure PowerShell</a></p><p><a href="/cli/azure/appservice">Azure CLI</a></p>
+          - title: Языки
             html: <p><a href="/dotnet/api">.NET</a></p><p><a href="/java/api/">Java</a></p>
           - title: REST
-            html: <p><a href="/rest/api/appservice">справочник по API REST</a></p>
+            html: <p><a href="/rest/api/appservice">Справочник по REST API</a></p>

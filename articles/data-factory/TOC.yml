@@ -80,8 +80,12 @@
           items:
             - name: Средство копирования данных
               href: tutorial-incremental-copy-partitioned-file-name-copy-data-tool.md
-    - name: Преобразование данных с помощью функции сопоставления потоков данных
-      href: tutorial-data-flow.md
+    - name: Преобразование и подготовка данных с помощью потоков данных
+      items:
+        - name: Преобразование данных с помощью сопоставления потоков данных
+          href: tutorial-data-flow.md
+        - name: Подготовка данных с помощью первичной обработки потоков данных
+          href: wrangling-data-flow-tutorial.md
     - name: Внешние преобразования
       items:
         - name: HDInsight Spark
@@ -143,28 +147,36 @@
       href: concepts-pipeline-execution-triggers.md
     - name: Среда выполнения интеграции
       href: concepts-integration-runtime.md
-    - name: Сопоставление потоков данных
+    - name: Потоки данных
       items:
-        - name: Общие сведения о сопоставлении потоков данных
-          href: concepts-data-flow-overview.md
-        - name: Режим отладки
-          href: concepts-data-flow-debug-mode.md
-        - name: Обработка JSON
-          href: concepts-data-flow-json.md
-        - name: Смещение схемы
-          href: concepts-data-flow-schema-drift.md
-        - name: Шаблоны столбцов
-          href: concepts-data-flow-column-pattern.md
-        - name: Мониторинг потоков данных
-          href: concepts-data-flow-monitoring.md
-        - name: Производительность потока данных
-          href: concepts-data-flow-performance.md
-        - name: Перенос узлов
-          href: concepts-data-flow-move-nodes.md
-        - name: Построитель выражений
-          href: concepts-data-flow-expression-builder.md
-        - name: Язык выражений
-          href: data-flow-expression-functions.md
+        - name: Преобразование данных с помощью сопоставления потоков данных
+          items:
+            - name: Общие сведения о сопоставлении потоков данных
+              href: concepts-data-flow-overview.md
+            - name: Режим отладки
+              href: concepts-data-flow-debug-mode.md
+            - name: Обработка JSON
+              href: concepts-data-flow-json.md
+            - name: Смещение схемы
+              href: concepts-data-flow-schema-drift.md
+            - name: Шаблоны столбцов
+              href: concepts-data-flow-column-pattern.md
+            - name: Мониторинг потоков данных
+              href: concepts-data-flow-monitoring.md
+            - name: Производительность потока данных
+              href: concepts-data-flow-performance.md
+            - name: Перенос узлов
+              href: concepts-data-flow-move-nodes.md
+            - name: Построитель выражений
+              href: concepts-data-flow-expression-builder.md
+            - name: Язык выражений
+              href: data-flow-expression-functions.md
+        - name: Подготовка данных с помощью первичной обработки потоков данных
+          items:
+            - name: Общие сведения о первичной обработке потоков данных
+              href: wrangling-data-flow-overview.md
+            - name: Поддерживаемые функции
+              href: wrangling-data-flow-functions.md
     - name: Роли и разрешения
       href: concepts-roles-permissions.md
     - name: Основные сведения о ценах

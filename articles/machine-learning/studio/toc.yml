@@ -1,14 +1,14 @@
-- name: Документация по Студии машинного обучения
+- name: Документация по Студии машинного обучения (классическая версия)
   href: index.yml
 - name: Обзор
   expanded: true
   items:
-    - name: Студия машинного обучения
+    - name: Студия машинного обучения (классическая версия)
       displayName: overview
       href: what-is-ml-studio.md
-    - name: Сравнение наших продуктов Машинного обучения
+    - name: Сравнить наши продукты Машинного обучения
       href: /azure/architecture/data-guide/technology-choices/data-science-and-machine-learning?context=azure/machine-learning/studio/context/ml-context
-- name: Руководства
+- name: Учебники
   items:
     - name: Создание первого эксперимента
       displayName: quickstart
@@ -44,7 +44,7 @@
     - name: Управление моделями
       displayName: 'deploy, consume, web service'
       href: deploy-consume-web-service-guide.md
-- name: Практические руководства
+- name: Руководства
   items:
     - name: Управление рабочей областью
       items:
@@ -106,8 +106,6 @@
       items:
         - name: Выбор алгоритмов
           href: algorithm-choice.md
-        - name: Памятка по алгоритмам
-          href: algorithm-cheat-sheet.md
         - name: Примеры алгоритмов
           displayName: 'infographic, studio basics'
           href: basics-infographic-with-algorithm-examples.md
@@ -153,11 +151,11 @@
           href: azure-ml-customer-churn-scenario.md
         - name: Анализ мнений
           href: text-analytics-module-tutorial.md
-        - name: Перенос аналитики из Excel в Студию
+        - name: Перенос аналитики из Excel в Студию машинного обучения (классическая версия)
           href: linear-regression-in-azure.md
     - name: Удаление и экспортирование данных клиента
       items:
-        - name: Данные в Студии
+        - name: Данные Студии машинного обучения (классическая версия)
           displayName: export
           href: export-delete-personal-data-dsr.md
         - name: Данные в Коллекции решений

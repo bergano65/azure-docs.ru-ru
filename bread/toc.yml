@@ -115,6 +115,9 @@
         - name: Служба "Блокчейн"
           tocHref: /azure/blockchain/service/
           topicHref: /azure/blockchain/service/index
+        - name: Служба блокчейн-токенов Azure
+          tocHref: /azure/blockchain/tokens/
+          topicHref: /azure/blockchain/tokens/index
         - name: Blockchain Workbench
           tocHref: /azure/blockchain/workbench/
           topicHref: /azure/blockchain/workbench/
@@ -451,6 +454,9 @@
     - name: Брандмауэр
       tocHref: /azure/firewall/
       topicHref: /azure/firewall/
+    - name: Диспетчер брандмауэра
+      tocHref: /azure/firewall-manager
+      topicHref: /azure/firewall-manager
     - name: Front Door Service
       tocHref: /azure/frontdoor/
       topicHref: /azure/frontdoor/
@@ -539,10 +545,10 @@
             - name: Справочник по алгоритмам и модулям
               tocHref: /azure/machine-learning/algorithm-module-reference
               topicHref: /azure/machine-learning/algorithm-module-reference/module-reference
-        - name: Студия
+        - name: Студия (классическая)
           tocHref: /azure/machine-learning/studio
           topicHref: /azure/machine-learning/studio/
-        - name: Процесс обработки и анализа данных группы
+        - name: Командный процесс обработки и анализа данных
           tocHref: /azure/machine-learning/team-data-science-process
           topicHref: /azure/machine-learning/team-data-science-process/overview
         - name: Виртуальная машина для обработки и анализа данных
@@ -671,12 +677,15 @@
     - name: Site Recovery
       tocHref: /azure/site-recovery/
       topicHref: /azure/site-recovery/
-    - name: Хранилище данных SQL
+    - name: Synapse Analytics
       tocHref: /azure/sql-data-warehouse/
       topicHref: /azure/sql-data-warehouse/
     - name: База данных SQL
       tocHref: /azure/sql-database/
       topicHref: /azure/sql-database/
+    - name: База данных SQL для пограничных вычислений
+      tocHref: /azure/sql-database-edge/
+      topicHref: /azure/sql-database-edge/
     - name: SQL Server Stretch Database
       tocHref: /azure/sql-server-stretch-database/
       topicHref: /azure/sql-server-stretch-database/
@@ -751,9 +760,15 @@
     - name: Виртуальная сеть
       tocHref: /azure/virtual-network/
       topicHref: /azure/virtual-network/
+    - name: Служба пиринга
+      tocHref: /azure/peering-service/
+      topicHref: /azure/peering-service/
     - name: VPN-шлюз
       tocHref: /azure/vpn-gateway/
       topicHref: /azure/vpn-gateway/
+    - name: Брандмауэр веб-приложения
+      tocHref: /azure/web-application-firewall/
+      topicHref: /azure/web-application-firewall/
     - name: Виртуальный рабочий стол Windows
       tocHref: /azure/virtual-desktop/
       topicHref: /azure/virtual-desktop/

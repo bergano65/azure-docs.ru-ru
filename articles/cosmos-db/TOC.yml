@@ -12,7 +12,9 @@
       items:
         - name: Портал Azure
           href: create-cosmosdb-resources-portal.md
-        - name: Приложение .NET
+        - name: "Приложение .NET\_— пакет SDK версии\_4"
+          href: create-sql-api-dotnet-v4.md
+        - name: "Приложение .NET\_— пакет SDK версии\_3"
           href: create-sql-api-dotnet.md
         - name: Приложение Java
           href: create-sql-api-java.md
@@ -47,8 +49,11 @@
             - name: Xamarin
               href: mobile-apps-with-xamarin.md
     - name: "2.\_Перенос данных"
-      displayName: import
-      href: import-data.md
+      items:
+        - name: Использование средства переноса данных
+          href: import-data.md
+        - name: Поддержка массового импорта в .NET
+          href: tutorial-sql-api-dotnet-bulk-import.md
     - name: "3.\_Запрос данных"
       href: tutorial-query-sql-api.md
     - name: "4.\_Создание записной книжки"
@@ -122,6 +127,8 @@
         - name: Обеспечение необходимой пропускной способности для контейнеров и баз данных
           displayName: 'request units, RUs, RU, limits, database throughput, shared throughput, container throughput'
           href: set-throughput.md
+        - name: "Подготовка к пропускной способности\_— режим \"Автопилот\""
+          href: provision-throughput-autopilot.md
     - name: Справочник по SQL-запросам
       items:
         - name: Начало работы
@@ -953,6 +960,11 @@
           href: how-to-configure-firewall.md
         - name: Настройка доступа из виртуальных сетей
           href: how-to-configure-vnet-service-endpoint.md
+        - name: Настройка доступа из частных конечных точек
+          href: how-to-configure-private-endpoints.md
+        - name: "Частное подключение к учетной записи Cosmos\_DB"
+          href: /azure/private-link/create-private-endpoint-cosmosdb-portal
+          maintainContext: true
         - name: Настройка предоставления общего доступа к ресурсам (CORS)
           href: how-to-configure-cross-origin-resource-sharing.md
         - name: Защита ключей Azure Cosmos с помощью Key Vault

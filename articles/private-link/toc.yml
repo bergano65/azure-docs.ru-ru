@@ -30,6 +30,8 @@
   items:
     - name: Частное подключение к учетной записи хранения
       href: create-private-endpoint-storage-portal.md
+    - name: Частное подключение к учетной записи Cosmos DB
+      href: create-private-endpoint-cosmosdb-portal.md
     - name: Отключение сетевых политик для частной конечной точки
       href: disable-private-endpoint-network-policy.md
     - name: Отключение сетевых политик для службы "Приватный канал"

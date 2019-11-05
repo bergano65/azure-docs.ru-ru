@@ -20,29 +20,34 @@
           items:
             - name: Обзор
               href: sql-database-purchase-models.md
-            - name: Модель приобретения на основе виртуальных ядер
-              href: sql-database-service-tiers-vcore.md
+            - name: Модель с виртуальными ядрами
               items:
-                - name: Уровень бессерверных вычислений
+                - name: Общие сведения о модели виртуального ядра
+                  href: sql-database-service-tiers-vcore.md
+                - name: Бессерверные приложения
                   href: sql-database-serverless.md
-                - name: Предварительная оплата резервной мощности
+                - name: Преимущество гибридного использования Azure
+                  href: sql-database-azure-hybrid-benefit.md
+                - name: Зарезервированная емкость
                   href: sql-database-reserved-capacity.md
-            - name: Выбор уровня служб на основе DTU
+            - name: Общие сведения о модели DTU
               href: sql-database-service-tiers-dtu.md
+            - name: Переход с DTU на виртуальное ядро
+              href: sql-database-dtu-to-vcore.md
         - name: Вычисления и хранение
           items:
             - name: Обзор
               href: sql-database-service-tiers-general-purpose-business-critical.md
               displayName: provisioned compute tier
-            - name: Уровни служб "Общего назначения" и "Стандартный"
+            - name: '"Общего назначения" (цен. категория "Стандартный")'
               href: sql-database-service-tier-general-purpose.md
-            - name: Уровни служб "Критически важный для бизнеса" и "Премиум"
+            - name: '"Критически важный для бизнеса" (цен. категория "Премиум")'
               href: sql-database-service-tier-business-critical.md
-            - name: Уровень служб "Гипермасштабирование"
+            - name: Уровень "Гипермасштабирование"
               href: sql-database-service-tier-hyperscale.md
             - name: Часто задаваемые вопросы о гипермасштабировании
               href: sql-database-service-tier-hyperscale-faq.md
-            - name: Миграция с уровня служб "Премиум RS"
+            - name: "Переход с уровня \"Премиум\_RS\""
               href: sql-database-service-tiers-prs.md
 - name: Краткие руководства
   expanded: true
@@ -501,17 +506,17 @@
       items:
         - name: Ресурсы отдельной базы данных
           items:
-            - name: Ограничения ресурсов на основе виртуальных ядер
+            - name: Ограничения ресурсов для виртуальных ядер
               href: sql-database-vcore-resource-limits-single-databases.md
-            - name: Ограничения ресурсов на основе DTU
+            - name: Ограничения ресурсов для DTU
               href: sql-database-dtu-resource-limits-single-databases.md
             - name: Масштабирование ресурсов
               href: sql-database-single-database-scale.md
         - name: Ресурсы эластичного пула
           items:
-            - name: Ограничения ресурсов на основе виртуальных ядер
+            - name: Ограничения ресурсов для виртуальных ядер
               href: sql-database-vcore-resource-limits-elastic-pools.md
-            - name: Ограничения ресурсов на основе DTU
+            - name: Ограничения ресурсов для DTU
               href: sql-database-dtu-resource-limits-elastic-pools.md
             - name: Масштабирование ресурсов
               href: sql-database-elastic-pool-scale.md

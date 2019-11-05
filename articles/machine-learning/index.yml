@@ -11,13 +11,13 @@ metadata:
   ms.collection: collection
   author: j-martens
   ms.author: jmartens
-  ms.date: 09/03/2019
-  ms.openlocfilehash: 589e97442412d30d844111cd9a3e332d70d705b6
-  ms.sourcegitcommit: 2ed6e731ffc614f1691f1578ed26a67de46ed9c2
+  ms.date: 10/29/2019
+  ms.openlocfilehash: 400ebc88faad1ba5d55aa81dd737c8913b131340
+  ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 09/19/2019
-  ms.locfileid: "71130367"
+  ms.lasthandoff: 11/04/2019
+  ms.locfileid: "73497544"
 landingContent:
 - title: Начало работы с Azure ML
   linkLists:
@@ -25,9 +25,11 @@ landingContent:
     links:
     - text: Эксперименты в записных книжках Python
       url: service/tutorial-1st-experiment-sdk-setup.md
-    - text: Эксперименты с использованием функции перетаскивания
-      url: service/ui-tutorial-automobile-price-train-score.md
-    - text: Автоматизация первого эксперимента
+    - text: Эксперимент в RStudio
+      url: service/tutorial-1st-r-experiment.md
+    - text: Эксперименты с использованием конструктора перетаскивания
+      url: service/tutorial-designer-automobile-price-train-score.md
+    - text: Автоматизация первого эксперимента ML
       url: service/tutorial-first-experiment-automated-ml.md
   - linkListType: overview
     links:
@@ -51,8 +53,6 @@ landingContent:
       url: service/tutorial-train-models-with-aml.md
     - text: Прогнозирование платы за такси с использованием автоматизированного решения ML
       url: service/tutorial-auto-train-models.md
-    - text: Пакетная оценка с помощью конвейеров
-      url: service/tutorial-pipeline-batch-scoring-classification.md
   - linkListType: how-to-guide
     links:
     - text: Обучение с помощью Scikit-learn
@@ -63,22 +63,28 @@ landingContent:
       url: service/how-to-train-pytorch.md
     - text: Обучение с помощью Keras
       url: service/how-to-train-keras.md
-- title: Эксперимент. Графический интерфейс
+- title: Использование конвейеров ML
   linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое конвейеры ML?
+      url: service/concept-ml-pipelines.md
+    - text: Конструктор перетаскивания
+      url: service/concept-designer.md
   - linkListType: tutorial
     links:
-    - text: Использование автоматизированного Машинного обучения для прогнозирования подписок
-      url: service/tutorial-first-experiment-automated-ml.md
-    - text: Использование линейной регрессии для прогнозирования цен
-      url: service/ui-tutorial-automobile-price-train-score.md
+    - text: Линейная регрессия для прогнозирования цен (конструктор)
+      url: service/tutorial-designer-automobile-price-train-score.md
+    - text: Создание конвейеров ML (пакет SDK для Python)
+      url: service/tutorial-pipeline-batch-scoring-classification.md
   - linkListType: how-to-guide
     links:
-    - text: Прогнозирование кредитного риска
-      url: service/how-to-ui-sample-classification-predict-credit-risk-cost-sensitive.md
-    - text: Прогнозирование задержек
-      url: service/how-to-ui-sample-classification-predict-flight-delay.md
-    - text: Прогнозирование оттока
-      url: service/how-to-ui-sample-classification-predict-churn.md
+    - text: Планирование конвейеров ML (пакет SDK для Python)
+      url: service/how-to-schedule-pipelines.md
+    - text: Прогнозирование задержек (конструктор)
+      url: service/how-to-designer-sample-classification-flight-delay.md
+    - text: Прогнозирование оттока клиентов (конструктор)
+      url: service/how-to-designer-sample-classification-churn.md
 - title: Развертывание моделей и управление ими
   linkLists:
   - linkListType: how-to-guide
@@ -95,9 +101,11 @@ landingContent:
   linkLists:
   - linkListType: reference
     links:
-    - text: Пакет SDK Azure ML для Python
+    - text: Пакет SDK для Python
       url: https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py
-    - text: Azure ML CLI
+    - text: Пакет SDK для R
+      url: https://azure.github.io/azureml-sdk-for-r/reference/index.html
+    - text: Интерфейс командной строки для Машинного обучения
       url: https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml?view=azure-cli-latest
-    - text: Алгоритмы и модули графического интерфейса
+    - text: Алгоритмы конструктора и модули
       url: algorithm-module-reference/module-reference.md

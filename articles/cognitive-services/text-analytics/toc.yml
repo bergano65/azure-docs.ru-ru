@@ -104,6 +104,8 @@
       href: text-analytics-resource-faq.md
     - name: Поддержка языков и региональных параметров
       href: language-support.md
+    - name: Типы именованных сущностей
+      href: named-entity-types.md
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/cognitive-services/text-analytics/'
     - name: Доступность по регионам

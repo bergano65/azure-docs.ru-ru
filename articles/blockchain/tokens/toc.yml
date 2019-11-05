@@ -1,0 +1,32 @@
+- name: Служба блокчейн-токенов Azure (предварительная версия)
+  href: index.yml
+- name: Обзор
+  items:
+    - name: Сведения о Службе блокчейн-токенов Azure
+      href: overview.md
+- name: Основные понятия
+  items:
+    - name: Управление учетными записями
+      href: account-management.md
+    - name: Шаблоны
+      href: templates.md
+    - name: Сочетаемость
+      href: composability.md
+- name: Ресурсы
+  items:
+    - name: Блог
+      href: 'https://azure.microsoft.com/blog/topics/blockchain/'
+    - name: Расширение Visual Studio Code службы "Блокчейн Azure"
+      href: 'https://github.com/Microsoft/vscode-azure-blockchain-ethereum/wiki'
+    - name: Примеры кода
+      href: 'https://github.com/Azure-Samples/blockchain'
+    - name: Сообщество
+      href: 'https://techcommunity.microsoft.com/t5/Blockchain/bd-p/AzureBlockchain'
+    - name: Форум
+      href: 'https://aka.ms/workbenchforum'
+    - name: Отзыв о продукте
+      href: 'https://feedback.azure.com/forums/586780-blockchain'
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/blockchain-tokens'
+    - name: Stack Overflow
+      href: 'https://stackoverflow.com/questions/tagged/AzureBlockchainService'

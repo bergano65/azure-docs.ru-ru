@@ -1,10 +1,10 @@
-- name: Документация по Хранилищу данных SQL
+- name: Документация по Azure Synapse Analytics
   href: index.yml
 - name: Обзор
   items:
-    - name: Общие сведения о Хранилище данных SQL
+    - name: Что такое Azure Synapse Analytics?
       href: sql-data-warehouse-overview-what-is.md
-    - name: Архитектура Хранилища данных SQL Azure
+    - name: Архитектура Azure Synapse Analytics
       href: massively-parallel-processing-mpp-architecture.md
     - name: Единицы использования хранилища данных
       href: what-is-a-data-warehouse-unit-dwu-cdwu.md
@@ -257,20 +257,22 @@
           href: sql-data-warehouse-encryption-tde-tsql.md
     - name: Загрузка данных
       items:
-        - name: Данные о такси Нью-Йорка
-          href: load-data-from-azure-blob-storage-using-polybase.md
-        - name: Общедоступные данные Contoso
-          href: sql-data-warehouse-load-from-azure-blob-storage-with-polybase.md
-        - name: Azure Data Lake Storage
+        - name: Загрузка из хранилища Azure Data Lake Storage (ADLS)
           href: sql-data-warehouse-load-from-azure-data-lake-store.md
-        - name: Azure Databricks
+        - name: Использование Azure Databricks (ADB)
           href: /azure/azure-databricks/databricks-extract-load-sql-data-warehouse?toc=/azure/sql-data-warehouse/toc.json&bc=/azure/sql-data-warehouse/breadcrumb/toc.json
-        - name: Фабрика данных
+        - name: Использование Фабрики данных (ADF)
           href: /azure/data-factory/load-azure-sql-data-warehouse?toc=/azure/sql-data-warehouse/toc.json&bc=/azure/sql-data-warehouse/breadcrumb/toc.json
-        - name: Integration Services
+        - name: Использование SQL Server Integration Services (SSIS)
           href: /sql/integration-services/load-data-to-sql-data-warehouse
-        - name: Загрузка WideWorldImporters
-          href: load-data-wideworldimportersdw.md
+        - name: Примеры
+          items:
+            - name: Такси в Нью-Йорке
+              href: load-data-from-azure-blob-storage-using-polybase.md
+            - name: Contoso
+              href: sql-data-warehouse-load-from-azure-blob-storage-with-polybase.md
+            - name: Wide World Importers
+              href: load-data-wideworldimportersdw.md
     - name: Разработка
       items:
         - name: Обзор
@@ -351,9 +353,9 @@
       items:
         - name: Полный справочник
           href: /sql/t-sql/language-reference?toc=/azure/sql-data-warehouse/toc.json&bc=/azure/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest
-        - name: Элементы языка для хранилища данных SQL
+        - name: Элементы языка TSQL в Azure Synapse Analytics
           href: sql-data-warehouse-reference-tsql-language-elements.md
-        - name: Инструкции для хранилища данных SQL
+        - name: Инструкции TSQL в Azure Synapse Analytics
           href: sql-data-warehouse-reference-tsql-statements.md
     - name: Системные представления
       href: sql-data-warehouse-reference-tsql-system-views.md

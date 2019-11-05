@@ -781,20 +781,32 @@
                   href: insights/container-insights-enable-new-cluster.md
                 - name: Включение для существующего кластера
                   href: insights/container-insights-enable-existing-clusters.md
+                - name: Включение для гибридного кластера
+                  href: insights/container-insights-hybrid-setup.md
                 - name: Сопоставления регионов
                   href: insights/container-insights-region-mapping.md
             - name: Анализ
               href: insights/container-insights-analyze.md
             - name: Отключение мониторинга
               href: insights/container-insights-optout.md
-            - name: Просмотр динамических журналов
-              href: insights/container-insights-live-logs.md
+            - name: Просмотр динамических данных
+              items:
+                - name: Общие сведения о динамических данных (предварительная версия)
+                  href: insights/container-insights-livedata-overview.md
+                - name: Настройка
+                  href: insights/container-insights-livedata-setup.md
+                - name: Просмотр метрик кластера
+                  href: insights/container-insights-livedata-metrics.md
+                - name: Просмотр развертываний
+                  href: insights/container-insights-livedata-deployments.md
             - name: Анализ данных с помощью запросов к журналу
               href: insights/container-insights-log-search.md
             - name: Оповещение
               href: insights/container-insights-alerts.md
             - name: Управление агентами
               href: insights/container-insights-manage-agent.md
+            - name: Настройка очистки метрик Prometheus
+              href: insights/container-insights-prometheus-integration.md
             - name: Настройка параметров сбора агента
               href: insights/container-insights-agent-config.md
             - name: Обновление для включения метрик

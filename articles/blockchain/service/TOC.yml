@@ -49,6 +49,14 @@
       href: manage-consortium-powershell.md
     - name: Использование Logic Apps
       href: ethereum-logic-app.md
+- name: Диспетчер данных блокчейна
+  items:
+    - name: Общие сведения о Диспетчере данных
+      href: data-manager.md
+    - name: Настройка Диспетчера данных на портале
+      href: data-manager-portal.md
+    - name: Настройка Диспетчера данных с помощью CLI
+      href: data-manager-cli.md
 - name: Ресурсы
   items:
     - name: REST API службы "Блокчейн"

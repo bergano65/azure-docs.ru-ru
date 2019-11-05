@@ -6,6 +6,9 @@
     - name: Что такое служба "Машинное обучение Microsoft Azure"?
       displayName: 'AML, services, overview, introduction'
       href: overview-what-is-azure-ml.md
+    - name: Сравнение Машинного обучения Azure и Студии
+      displayName: 'AML, Studio, designer'
+      href: ../compare-azure-ml-to-studio-classic.md
     - name: Архитектура и термины
       displayName: 'architecture, concepts, definitions, glossary'
       href: concept-azure-machine-learning-architecture.md
@@ -32,15 +35,22 @@
               displayName: 'automl, automated, auto ml,'
               href: tutorial-auto-train-models.md
         - name: Конвейеры в Машинном обучении (дополнительно)
-          href: tutorial-pipeline-batch-scoring-classification.md
-    - name: Графический интерфейс
+          items:
+            - name: Пакетная оценка модели классификации
+              displayName: pipelines
+              href: tutorial-pipeline-batch-scoring-classification.md
+    - name: Пакет SDK для R
+      items:
+        - name: Создание первого эксперимента ML (R)
+          href: tutorial-1st-r-experiment.md
+    - name: Конструктор
       items:
         - name: 1. Обучение регрессионной модели
           displayName: studio
-          href: ui-tutorial-automobile-price-train-score.md
+          href: tutorial-designer-automobile-price-train-score.md
         - name: 2. Развертывание регрессионной модели
           displayName: studio
-          href: ui-tutorial-automobile-price-deploy.md
+          href: tutorial-designer-automobile-price-deploy.md
     - name: Автоматизированное машинное обучение (интерфейс)
       displayName: 'automl, automated, auto ml, portal, ui'
       href: tutorial-first-experiment-automated-ml.md
@@ -57,42 +67,51 @@
   items:
     - name: Рабочая область
       href: concept-workspace.md
-    - name: Целевой объект вычисления
-      displayName: 'resource, dsvm, AKS, kubernetes, amlcompute, Data Science Virtual Machine, local, cluster, ACI, container instance, ADB, Databricks, data lake, lake, HDI, HDInsight'
-      href: concept-compute-target.md
     - name: Обучение модели
       displayName: 'run config, estimator, machine learning pipeline, ml pipeline, train model'
       href: concept-train-machine-learning-model.md
-    - name: Графический интерфейс
-      displayName: studio
-      href: ui-concept-visual-interface.md
-    - name: Автоматическое машинное обучение
-      displayName: 'automl, auto ml'
-      href: concept-automated-ml.md
     - name: Служба управления моделями (MLOps)
       displayName: 'deploy, deployment, publish, production, operationalize, operationalization'
       href: concept-model-management-and-deployment.md
+    - name: Интерпретируемость
+      displayName: explainability
+      href: how-to-machine-learning-interpretability.md
+    - name: 'Конструктор: ML без кода'
+      displayName: studio
+      href: concept-designer.md
+    - name: Памятка по алгоритмам
+      href: /azure/machine-learning/algorithm-cheat-sheet?context=azure/machine-learning/service/context/ml-context
+    - name: Автоматическое машинное обучение
+      displayName: 'automl, auto ml'
+      href: concept-automated-ml.md
+    - name: Вычислительная операция
+      displayName: 'resource, dsvm, Data Science Virtual Machine'
+      href: concept-compute-instance.md
+    - name: Целевой объект вычисления
+      displayName: 'resource, dsvm, AKS, kubernetes, amlcompute, Data Science Virtual Machine, local, cluster, ACI, container instance, ADB, Databricks, data lake, lake, HDI, HDInsight'
+      href: concept-compute-target.md
     - name: Конвейеры Машинного обучения
       href: concept-ml-pipelines.md
-    - name: Интерпретируемость модели
-      displayName: explainability
-      href: machine-learning-interpretability-explainability.md
     - name: ONNX
       href: concept-onnx.md
-    - name: Безопасность
+    - name: Готовность к работе и безопасность в масштабах предприятия
       items:
-        - name: Общие сведения об обеспечении безопасности на уровне предприятия
-          displayName: authorization authentication encryption aad azure active directory
-          href: concept-enterprise-security.md
-        - name: Управление пользователями и ролями
-          href: how-to-assign-roles.md
-        - name: Использование виртуальных сетей
-          displayName: vnet
-          href: how-to-enable-virtual-network.md
-        - name: Защита веб-служб с помощью SSL
-          href: how-to-secure-web-service.md
-        - name: Повторное создание ключей доступа к хранилищу
-          href: how-to-change-storage-access-key.md
+        - name: Корпоративная безопасность
+          items:
+            - name: Общие сведения об обеспечении безопасности на уровне предприятия
+              displayName: authorization authentication encryption aad azure active directory
+              href: concept-enterprise-security.md
+            - name: Управление пользователями и ролями
+              href: how-to-assign-roles.md
+            - name: Использование виртуальных сетей
+              displayName: vnet
+              href: how-to-enable-virtual-network.md
+            - name: Защита веб-служб с помощью SSL
+              href: how-to-secure-web-service.md
+            - name: Повторное создание ключей доступа к хранилищу
+              href: how-to-change-storage-access-key.md
+        - name: Мониторинг Машинного обучения Azure
+          href: monitor-azure-machine-learning.md
     - name: Глубокое обучение
       displayName: 'deep learning vs machine learning, deep learning, vs, versus'
       href: concept-deep-learning-vs-machine-learning.md
@@ -138,32 +157,38 @@
         - name: Обучение с наборами данных
           displayName: 'data, dataset'
           href: how-to-train-with-datasets.md
+        - name: Обнаружение смещения в наборах данных
+          displayName: 'data, dataset'
+          href: how-to-monitor-datasets.md
         - name: Управление версиями и отслеживание наборов данных
           displayName: 'data, data set'
           href: how-to-version-track-datasets.md
     - name: Обучение моделей
       items:
-        - name: Использование визуального интерфейса
-          displayName: sample visual interface experiments
+        - name: Использование конструктора
+          displayName: sample designer experiments
           items:
             - name: Прогнозирование цены
               displayName: 'regression, studio'
-              href: how-to-ui-sample-regression-predict-automobile-price-basic.md
+              href: how-to-designer-sample-regression-automobile-price-basic.md
             - name: Прогнозирование цены (расширенное)
               displayName: 'regression, studio'
-              href: how-to-ui-sample-regression-predict-automobile-price-compare-algorithms.md
-            - name: Прогнозирование кредитного риска
+              href: how-to-designer-sample-regression-automobile-price-compare-algorithms.md
+            - name: Прогнозирование дохода
               displayName: 'classification, studio'
-              href: how-to-ui-sample-classification-predict-credit-risk-basic.md
+              href: how-to-designer-sample-classification-predict-income.md
             - name: Прогнозирование кредитного риска (расширенное)
               displayName: 'classification, studio'
-              href: how-to-ui-sample-classification-predict-credit-risk-cost-sensitive.md
+              href: how-to-designer-sample-classification-credit-risk-cost-sensitive.md
             - name: Прогнозирование оттока
               displayName: 'classification, studio'
-              href: how-to-ui-sample-classification-predict-churn.md
+              href: how-to-designer-sample-classification-churn.md
             - name: Прогнозирование задержки рейсов
               displayName: 'classification, studio'
-              href: how-to-ui-sample-classification-predict-flight-delay.md
+              href: how-to-designer-sample-classification-flight-delay.md
+            - name: Классификация тестов
+              displayName: 'classification, studio'
+              href: how-to-designer-sample-text-classification.md
         - name: Использование средств оценки для машинного обучения
           items:
             - name: Создание средств оценки при обучении модели
@@ -187,6 +212,15 @@
           href: how-to-train-pytorch.md
         - name: Chainer
           href: how-to-train-chainer.md
+    - name: Интерпретация моделей
+      displayName: interpretability
+      items:
+        - name: Интерпретация локальных и удаленных моделей
+          displayName: 'SDK, interpret'
+          href: how-to-machine-learning-interpretability-aml.md
+        - name: Интерпретация моделей автоматизированного ML
+          displayName: 'SDK, interpret, automl'
+          href: how-to-machine-learning-interpretability-automl.md
     - name: Автоматизация машинного обучения
       displayName: 'automl, auto ml'
       items:
@@ -236,7 +270,7 @@
         - name: Служба приложений Azure
           displayName: web app
           href: how-to-deploy-app-service.md
-        - name: Виртуальные машины записных книжек
+        - name: Вычислительные операции
           href: how-to-deploy-local-container-notebook-vm.md
         - name: Использование пользовательского образа Docker
           href: how-to-deploy-custom-docker-image.md
@@ -253,6 +287,9 @@
         - name: Составление пакетных прогнозов
           displayName: score scoring asynchronous consume pipeline
           href: how-to-run-batch-predictions.md
+        - name: Пакетное прогнозирование с помощью конструктора
+          displayName: score scoring asynchronous consume pipeline
+          href: how-to-run-batch-predictions-ui.md
     - name: Мониторинг моделей
       items:
         - name: Сбор и оценка данных модели
@@ -262,18 +299,18 @@
           href: how-to-monitor-data-drift.md
         - name: Мониторинг с помощью Application Insights
           href: how-to-enable-app-insights.md
-    - name: Создание рабочих процессов для многоразового использования
+    - name: Создание и использование конвейеров ML
       displayName: pipelines
       items:
-        - name: Создание конвейеров машинного обучения в Python
+        - name: Создание конвейеров ML (Python)
           href: how-to-create-your-first-pipeline.md
-        - name: Отладка конвейеров машинного обучения и устранение неполадок
+        - name: Планирование конвейера (Python)
+          href: how-to-schedule-pipelines.md
+        - name: Отладка конвейеров и устранение возникающих с ними неполадок
           href: how-to-debug-pipelines.md
         - name: Azure Pipelines для CI/CD
           displayName: 'continuous, integration, delivery'
           href: /azure/devops/pipelines/targets/azure-machine-learning?context=azure/machine-learning/service/context/ml-context
-        - name: Планирование конвейеров ML в Python
-          href: how-to-schedule-pipelines.md
     - name: Управление квотами ресурсов
       displayName: limits
       href: how-to-manage-quotas.md
@@ -282,15 +319,20 @@
       href: how-to-export-delete-data.md
 - name: Справочные материалы
   items:
-    - name: Пакет SDK для Машинного обучения
+    - name: Пакет SDK для ML (Python)
       displayName: 'api, core, package, python, class'
       href: 'https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py'
+    - name: Пакет SDK для ML (R)
+      displayName: 'api, core, package, R, class'
+      href: 'https://azure.github.io/azureml-sdk-for-r/reference/index.html'
     - name: Интерфейс командной строки для Машинного обучения
       displayName: 'extension, command line, command-line, az, ci/cd, automate, automated'
       href: reference-azure-machine-learning-cli.md
+    - name: Справочник по мониторингу данных
+      href: monitor-resource-reference.md
     - name: Справочник по конвейеру машинного обучения YAML
       href: reference-pipeline-yaml.md
-    - name: Модули графического интерфейса
+    - name: Модули конструктора
       displayName: 'module, reference, algorithm, studio'
       items:
         - name: Справочные темы модуля
@@ -299,18 +341,14 @@
           items:
             - name: Преобразование в CSV-файл
               href: ../algorithm-module-reference/convert-to-csv.md
+            - name: Преобразование в набор данных
+              href: ../algorithm-module-reference/convert-to-dataset.md
         - name: Входные и выходные данные
           items:
             - name: Импорт данных
               items:
                 - name: Импорт данных
                   href: ../algorithm-module-reference/import-data.md
-                - name: Импорт с URL-адреса в Интернете с использованием HTTP
-                  href: ../algorithm-module-reference/import-from-web-url-via-http.md
-                - name: Импорт из модуля хранилища BLOB-объектов Azure
-                  href: ../algorithm-module-reference/import-from-azure-blob-storage.md
-                - name: Импорт из Базы данных SQL Azure
-                  href: ../algorithm-module-reference/import-from-azure-sql-database.md
             - name: Экспорт данных
               href: ../algorithm-module-reference/export-data.md
             - name: Ввод данных вручную
@@ -319,12 +357,18 @@
           items:
             - name: Выбор столбцов в наборе данных
               href: ../algorithm-module-reference/select-columns-in-dataset.md
+            - name: Преобразование "Выбор столбцов"
+              href: ../algorithm-module-reference/select-columns-transform.md
             - name: Правка метаданных
               href: ../algorithm-module-reference/edit-metadata.md
             - name: Очистка недостающих данных
               href: ../algorithm-module-reference/clean-missing-data.md
             - name: Хэширование признаков
               href: ../algorithm-module-reference/feature-hashing.md
+            - name: Значение функции перестановки
+              href: ../algorithm-module-reference/permutation-feature-importance.md
+            - name: Выбор признаков с помощью фильтра
+              href: ../algorithm-module-reference/filter-based-feature-selection.md
             - name: Извлечение N-грамм из текста
               href: ../algorithm-module-reference/extract-n-gram-features-from-text.md
             - name: Добавление столбцов
@@ -341,6 +385,8 @@
               href: ../algorithm-module-reference/split-data.md
             - name: Нормализация данных
               href: ../algorithm-module-reference/normalize-data.md
+            - name: SMOTE
+              href: ../algorithm-module-reference/smote.md
             - name: Секционирование и выборка
               href: ../algorithm-module-reference/partition-and-sample.md
             - name: Обрезка значений
@@ -351,14 +397,24 @@
           items:
             - name: Оценка модели
               href: ../algorithm-module-reference/score-model.md
+            - name: Оценка рекомендателя SVD
+              href: ../algorithm-module-reference/score-svd-recommender.md
             - name: Назначение данных в кластеры
               href: ../algorithm-module-reference/assign-data-to-clusters.md
             - name: Обучение модели
               href: ../algorithm-module-reference/train-model.md
             - name: Обучение модели кластеризации
               href: ../algorithm-module-reference/train-clustering-model.md
+            - name: Обучение рекомендателя SVD
+              href: ../algorithm-module-reference/train-svd-recommender.md
+            - name: Настройка гиперпараметров модели
+              href: ../algorithm-module-reference/tune-model-hyperparameters.md
+            - name: Перекрестная проверка модели
+              href: ../algorithm-module-reference/cross-validate-model.md
             - name: Анализ модели
               href: ../algorithm-module-reference/evaluate-model.md
+            - name: Оценка рекомендателя
+              href: ../algorithm-module-reference/evaluate-recommender.md
             - name: Применение преобразования
               href: ../algorithm-module-reference/apply-transformation.md
             - name: Линейная регрессия
@@ -381,6 +437,8 @@
               href: ../algorithm-module-reference/multiclass-decision-forest.md
             - name: Мультиклассовое увеличивающееся дерево принятия решений
               href: ../algorithm-module-reference/multiclass-boosted-decision-tree.md
+            - name: "Многоклассовый классификатор \"один\_— все\""
+              href: ../algorithm-module-reference/one-vs-all-multiclass.md
             - name: Двухклассовое усредненное восприятие
               href: ../algorithm-module-reference/two-class-averaged-perceptron.md
             - name: Двухклассовый лес принятия решений

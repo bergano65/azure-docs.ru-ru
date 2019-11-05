@@ -36,18 +36,8 @@
         - name: Получение сведений о намерении
           href: luis-get-started-get-intent-from-rest.md
         - name: Изменение модели
-          items:
-            - name: 'C#'
-              href: luis-get-started-cs-add-utterance.md
-            - name: Go
-              href: luis-get-started-go-add-utterance.md
-            - name: Java
-              href: luis-get-started-java-add-utterance.md
-            - name: Node.js
-              href: luis-get-started-node-add-utterance.md
-            - name: Python
-              href: luis-get-started-python-add-utterance.md
-- name: Руководства
+          href: get-started-get-model-rest-apis.md
+- name: Учебники
   items:
     - name: Создание приложения
       items:
@@ -103,49 +93,47 @@
               href: luis-tutorial-bot-nodejs-appinsights.md
 - name: Основные понятия
   items:
-    - name: Рекомендации
-      href: luis-concept-best-practices.md
-      displayName: 'phrase list, pattern, intent, utterance, version, do, don''t, example utterances, iteration, cycle, correct, right'
-    - name: Использование LUIS и QnA Maker
-      href: choose-natural-language-processing-service.md
-      displayName: 'nlp, qna maker'
+    - name: Жизненный цикл разработки
+      href: luis-concept-app-iteration.md
     - name: Планирование приложения
       displayName: 'simple, composite, prebuilt, list, regex, regular expression'
       href: luis-how-plan-your-app.md
-    - name: Ключи разработки и среды выполнения
-      displayName: 'shared, transfer, ownership, author, access, import'
-      href: luis-concept-keys.md
-    - name: Разработка модели приложения
+    - name: Модели приложений
       items:
-        - name: Цикл разработки
-          href: luis-concept-app-iteration.md
-        - name: Управление версиями
-          href: luis-concept-version.md
-          displayName: import
-    - name: Модель разработки
-      items:
+        - name: Типы
+          href: luis-concept-model.md
         - name: Намерения
           href: luis-concept-intent.md
+        - name: Высказывания
+          href: luis-concept-utterance.md
         - name: Сущности
           displayName: 'prebuilt, custom, regular expression, regex, simple, list, pattern.any, composite, machine-learn, exact, mixed, roles'
           href: luis-concept-entity-types.md
-        - name: Роли сущности
-          href: luis-concept-roles.md
-        - name: Высказывания
-          href: luis-concept-utterance.md
         - name: Предварительно созданные модели
           href: luis-concept-prebuilt-model.md
-    - name: Повышение производительности приложения
-      items:
-        - name: Оценка прогнозирования
-          href: luis-concept-prediction-score.md
-        - name: Просмотр речевых фрагментов конечной точки
-          href: luis-concept-review-endpoint-utterances.md
-        - name: Списки фраз
-          href: luis-concept-feature.md
         - name: Шаблоны
           href: luis-concept-patterns.md
           displayName: roles
+        - name: Функции
+          href: luis-concept-feature.md
+    - name: Оценка прогнозирования
+      href: luis-concept-prediction-score.md
+    - name: Рекомендации
+      href: luis-concept-best-practices.md
+      displayName: 'phrase list, pattern, intent, utterance, version, do, don''t, example utterances, iteration, cycle, correct, right'
+    - name: Повышение производительности приложения
+      items:
+        - name: Просмотр речевых фрагментов конечной точки
+          href: luis-concept-review-endpoint-utterances.md
+    - name: Тест
+      items:
+        - name: Интерактивное тестирование
+          href: luis-concept-test.md
+        - name: Пакетное тестирование
+          href: luis-concept-batch-test.md
+    - name: Ключи разработки и среды выполнения
+      displayName: 'shared, transfer, ownership, author, access, import'
+      href: luis-concept-keys.md
     - name: Управление данными
       items:
         - name: Изменение данных
@@ -157,12 +145,9 @@
           displayName: roles
         - name: Хранилище данных
           href: luis-concept-data-storage.md
-    - name: Тест
-      items:
-        - name: Интерактивное тестирование
-          href: luis-concept-test.md
-        - name: Пакетное тестирование
-          href: luis-concept-batch-test.md
+    - name: Использование LUIS и QnA Maker
+      href: choose-natural-language-processing-service.md
+      displayName: 'nlp, qna maker'
     - name: Enterprise
       items:
         - name: Стратегии разработки
@@ -183,13 +168,7 @@
           href: luis-how-to-add-entities.md
           displayName: 'roles, import'
         - name: Использование предварительно созданных моделей
-          items:
-            - name: Использование доменов
-              href: luis-prebuilt-domains.md
-            - name: Использование намерений
-              href: luis-prebuilt-intent.md
-            - name: Использование сущностей
-              href: luis-prebuilt-entities.md
+          href: howto-add-prebuilt-models.md
         - name: С использованием REST API
           items:
             - name: Создание приложения программным способом с помощью Node.js
@@ -218,6 +197,7 @@
           href: luis-how-to-model-intent-pattern.md
     - name: Обучение
       href: luis-how-to-train.md
+      displayName: 'negative sampling, nondeterministic, non-deterministic, UseAllTrainingData'
     - name: Тест
       items:
         - name: Интерактивное тестирование
@@ -246,13 +226,17 @@
           diplayName: 'import, export, container'
         - name: Использование диспетчера трафика
           href: luis-traffic-manager.md
-    - name: Миграция API
+    - name: Использование API
       items:
-        - name: "Миграция в REST API версии\_2"
-          href: luis-migration-api-v1-to-v2.md
-        - name: "Миграция в REST API версии\_3"
+        - name: Для разработчиков
+          href: developer-reference-resource.md
+        - name: Разработка API-интерфейсов
+          href: luis-migration-api-authoring.md
+        - name: "Переход на API версии\_3"
           href: luis-migration-api-v3.md
           displayName: 'json, response, verbose, dynamic, dynamic list object, brackets, array, role, show-all-intents,prebuilt domain, domain, external entities, "$instance",TimezoneOffset, datetimeReference, overridePredictions, override'
+        - name: Миграция в API версии 2
+          href: luis-migration-api-v1-to-v2.md
     - name: Использование контейнеров
       items:
         - name: Установка и запуск контейнеров
@@ -262,6 +246,9 @@
           href: luis-container-configuration.md
         - name: Использование экземпляров контейнеров
           href: deploy-luis-on-container-instances.md
+        - name: Ограничения контейнеров
+          href: luis-container-limitations.md
+          displayName: 'phrase list recommendations, multi-language, translator, locale, language, English, Chinese, French, German, Italian, Korean, Portuguese, Spanish, Turkish, Keigo, subculture, dictation, speech, Bing Spell Check, foreign words, Hybrid languages, Tokenization, space, special character, compound words, tokens'
 - name: Справочные материалы
   items:
     - name: Конфиденциальность пользователей
@@ -325,6 +312,8 @@
           href: reference-entity-regular-expression.md
         - name: Простая сущность
           href: reference-entity-simple.md
+    - name: Мнение
+      href: luis-reference-prebuilt-sentiment.md
     - name: Ресурсы для разработчиков
       href: developer-reference-resource.md
       displayName: 'SDK, API, quickstart, REST, cli, powershell, azure, rm, resource manager, samples, package, module, tool, dispatch, bot'
@@ -332,11 +321,17 @@
       href: 'https://go.microsoft.com/fwlink/?linkid=2092156'
     - name: Azure RM PowerShell
       href: 'https://go.microsoft.com/fwlink/?linkid=2092157'
-    - name: "Интерфейсы REST\_API"
+    - name: Интерфейсы REST API
       items:
-        - name: "Разработка REST API версии\_2"
+        - name: "Интерфейсы REST API для разработки версии\_3 (предварительная версия)"
+          href: 'https://aka.ms/luis-apim-v3-authoring'
+        - name: "Интерфейсы REST API для прогнозирования версии\_3"
+          href: 'https://aka.ms/luis-apim-v3-prediction'
+        - name: "Интерфейсы REST API для разработки версии\_2"
           href: 'https://go.microsoft.com/fwlink/?linkid=2092087'
-        - name: "Конечная точка REST API версии\_2"
+        - name: "Интерфейсы REST API для прогнозирования версии\_2"
+          href: 'https://go.microsoft.com/fwlink/?linkid=2092356'
+        - name: "REST API конечной точки версии\_3"
           href: 'https://go.microsoft.com/fwlink/?linkid=2092356'
         - name: Коды HTTP
           displayName: '400, 401, 403, 409, 410, 414, 429'
@@ -413,7 +408,7 @@
       href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
     - name: Поддержка языков и региональных параметров
       href: luis-language-support.md
-      displayName: 'phrase list recommendations, multi-language, translator, locale, language, English, Chinese, Dutch, French, Germain, Italian, Japanese, Korean, Portuguese, Spanish, Turkish, Keigo, informal Japanese, subculture, dictation, speech, Bing Spell Check, foreign words, Hybrid languages, Tokenization, space, special character, compound words, tokens'
+      displayName: 'phrase list recommendations, multi-language, translator, locale, language, English, Chinese, Dutch, French, German, Italian, Japanese, Korean, Portuguese, Spanish, Turkish, Keigo, informal Japanese, subculture, dictation, speech, Bing Spell Check, foreign words, Hybrid languages, Tokenization, space, special character, compound words, tokens'
     - name: Стратегия развития Azure
       href: 'https://go.microsoft.com/fwlink/?linkid=2092089'
     - name: Глоссарий

@@ -47,8 +47,8 @@
       href: app-service-web-tutorial-rest-api.md
     - name: Сопоставление личного домена
       href: app-service-web-tutorial-custom-domain.md
-    - name: Привязка SSL-сертификата
-      href: app-service-web-tutorial-custom-ssl.md
+    - name: Защита домена с помощью SSL
+      href: configure-ssl-bindings.md
     - name: Добавление CDN
       href: ../cdn/cdn-add-to-web-app.md?toc=%2fazure%2fcdn%2ftoc.json
     - name: Аутентификация пользователей
@@ -143,8 +143,8 @@
           href: manage-custom-dns-migrate-domain.md
     - name: Безопасность приложения
       items:
-        - name: Приобретение SSL-сертификата
-          href: web-sites-purchase-ssl-web-site.md
+        - name: Добавление SSL-сертификата
+          href: configure-ssl-certificate.md
         - name: Аутентификация пользователей
           items:
             - name: "Аутентификация с помощью Azure\_AD"
@@ -163,10 +163,10 @@
           href: app-service-ip-restrictions.md
         - name: Использование управляемого удостоверения
           href: overview-managed-identity.md
-        - name: Добавление ссылки на секреты из Key Vault
+        - name: Добавление ссылок на секреты из Key Vault
           href: app-service-key-vault-references.md
-        - name: Использование SSL-сертификата в коде приложения
-          href: app-service-web-ssl-cert-load.md
+        - name: Использование SSL-сертификата в коде
+          href: configure-ssl-certificate-in-code.md
         - name: Настройка взаимной проверки подлинности TLS
           href: app-service-web-configure-tls-mutual-auth.md
     - name: Масштабирование приложения

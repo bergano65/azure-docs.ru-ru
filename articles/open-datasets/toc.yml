@@ -9,7 +9,13 @@
 - name: Учебник
   items:
     - name: Регрессия с помощью автоматического машинного обучения
-      href: tutorial-opendatasets-automl.md
+      href: /azure/machine-learning/service/tutorial-auto-train-models?toc=/azure/open-datasets/toc.json&bc=/azure/open-datasets/breadcrumb/toc.json
+    - name: Улучшение модели классификации изображений
+      href: /azure/machine-learning/service/tutorial-train-models-with-aml?toc=/azure/open-datasets/toc.json&bc=/azure/open-datasets/breadcrumb/toc.json
+- name: Руководства
+  items:
+    - name: Наборы данных в Машинном обучении Azure
+      href: ../machine-learning/service/how-to-create-register-datasets.md?toc=/azure/open-datasets/toc.json&bc=/azure/open-datasets/breadcrumb/toc.json
 - name: Примеры
   displayName: 'example, examples, Jupyter, azure notebooks, python, notebook, GitHub'
   href: samples.md

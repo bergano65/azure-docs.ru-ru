@@ -105,7 +105,7 @@ sections:
         items:
           - html: Создание приложения с помощью <a href="/azure/app-service/app-service-web-tutorial-dotnet-sqldatabase">.NET с базой данных SQL Azure</a> или <a href="/azure/app-service/app-service-web-tutorial-nodejs-mongodb-app">Node.js с MongoDB</a>
           - html: <a href="/azure/app-service/app-service-web-tutorial-custom-domain">Сопоставление имени личного домена с приложением</a>
-          - html: <a href="/azure/app-service/app-service-web-tutorial-custom-SSL">Привязка существующего SSL-сертификата к приложению</a>
+          - html: <a href="/azure/app-service/configure-ssl-certificate">Защита пользовательского доменного имени с помощью привязки SSL в Службе приложений Azure</a>
           - html: <a href="/azure/app-service/app-service-web-tutorial-content-delivery-network">Добавление CDN в приложение</a>
   - title: Развитие навыков с помощью Microsoft Learn
     items:

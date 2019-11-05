@@ -1,229 +1,267 @@
 # displayName: additional text for filtering down the ToC in meaningful way.
 - name: Документация по службе "Речь"
-  href: index.yml
+  href: index.md
 - name: Обзор
-  expanded: true
+  expanded: false
   items:
-    - name: Общие сведения о службе "Речь"
+    - name: Что собой представляет служба "Речь"
       href: overview.md
+- name: Преобразование речи в текст
+  expanded: false
+  items:
+    - name: Обзор
+      items:
+        - name: Что такое преобразование речи в текст?
+          href: speech-to-text.md
+    - name: Краткие руководства
+      items:
+        - name: Распознавание речи из звукового файла
+          href: quickstarts/speech-to-text-from-file.md
+        - name: Распознавание речи при вводе с микрофона
+          href: quickstarts/speech-to-text-from-microphone.md
+        - name: 'Распознавание речи из файлов, находящихся в хранилище BLOB-объектов'
+          href: quickstarts/from-blob.md
+    - name: Руководства
+      items:
+        - name: Изменение исходного языка при распознавании речи
+          href: how-to-specify-source-language.md
+        - name: Повышение точности с помощью пользовательского распознавания речи
+          href: how-to-custom-speech.md
+        - name: Повышение точности с помощью списков фраз
+          href: how-to-phrase-lists.md
+        - name: Повышение точности с помощью моделей клиентов
+          href: tutorial-tenant-model.md
+        - name: Выбор устройства для ввода с микрофона
+          href: how-to-select-audio-input-devices.md
+        - name: Использование автоматического определения исходного языка
+          href: how-to-automatic-language-detection.md
+        - name: Использование форматов сжатых входных звуковых данных
+          href: how-to-use-codec-compressed-audio-input-streams.md
+        - name: Использование распознавания речи с контейнерами Docker
+          href: speech-container-howto.md
+    - name: Справочные материалы
+      items:
+        - name: API для работы с пакетом SDK службы "Речь"
+          items:
+            - name: C++
+              href: 'https://aka.ms/csspeech/cppref'
+            - name: 'C#'
+              href: 'https://aka.ms/csspeech/csharpref'
+            - name: Java
+              href: 'https://aka.ms/csspeech/javaref'
+            - name: JavaScript
+              href: 'https://aka.ms/csspeech/javascriptref'
+            - name: Objective-C
+              href: 'https://aka.ms/csspeech/objectivecref'
+            - name: Python
+              href: 'https://aka.ms/csspeech/pythonref'
+            - name: Заметки о выпуске
+              href: releasenotes.md
+        - name: Интерфейсы REST API
+          items:
+            - name: REST API преобразования речи в текст;
+              href: rest-speech-to-text.md
+            - name: Интерфейсы REST API для пакетного транскрибирования
+              href: batch-transcription.md
+- name: Преобразование текста в речь
+  exanded: false
+  items:
+    - name: Обзор
+      items:
+        - name: Что такое преобразование текста в речь?
+          href: text-to-speech.md
+    - name: Краткие руководства
+      items:
+        - name: Синтезирование речи в звуковой файл
+          href: quickstarts/text-to-speech-audio-file.md
+        - name: Синтезирование речи в виде речи докладчика
+          href: quickstarts/text-to-speech.md
+        - name: Асинхронное синтезирование для больших звуковых файлов
+          href: quickstarts/text-to-speech/async-synthesis-long-form-audio.md
+    - name: Руководства
+      items:
+        - name: Улучшение выходных данных с помощью SSML
+          href: speech-synthesis-markup.md
+        - name: Улучшение выходных данных с помощью пользовательских голосов
+          href: how-to-custom-voice.md
+        - name: Синтезирование речи с помощью API длинных аудиоматериалов
+          href: long-audio-api.md
+        - name: Использование синтеза речи с контейнерами Docker
+          href: speech-container-howto.md
+    - name: Справочные материалы
+      items:
+        - name: Пакет SDK для службы "Речь"
+          items:
+            - name: C++
+              href: 'https://aka.ms/csspeech/cppref'
+            - name: 'C#'
+              href: 'https://aka.ms/csspeech/csharpref'
+            - name: Java
+              href: 'https://aka.ms/csspeech/javaref'
+            - name: JavaScript
+              href: 'https://aka.ms/csspeech/javascriptref'
+            - name: Objective-C
+              href: 'https://aka.ms/csspeech/objectivecref'
+            - name: Python
+              href: 'https://aka.ms/csspeech/pythonref'
+            - name: Заметки о выпуске
+              href: releasenotes.md
+        - name: Интерфейсы REST API
+          items:
+            - name: REST API преобразования текста в речь.
+              href: rest-text-to-speech.md
+- name: Распознавание намерений
+  exanded: false
+  items:
+    - name: Краткие руководства
+      items:
+        - name: 'Распознавание речи, намерений и сущностей'
+          href: quickstarts/intent-recognition.md
+    - name: Руководства
+      items:
+        - name: 'Распознавание намерений в речи с помощью LUIS (C#)'
+          href: how-to-recognize-intents-from-speech-csharp.md
+    - name: Справочные материалы
+      items:
+        - name: Пакет SDK для службы "Речь"
+          items:
+            - name: C++
+              href: 'https://aka.ms/csspeech/cppref'
+            - name: 'C#'
+              href: 'https://aka.ms/csspeech/csharpref'
+            - name: Java
+              href: 'https://aka.ms/csspeech/javaref'
+            - name: JavaScript
+              href: 'https://aka.ms/csspeech/javascriptref'
+            - name: Objective-C
+              href: 'https://aka.ms/csspeech/objectivecref'
+            - name: Python
+              href: 'https://aka.ms/csspeech/pythonref'
+            - name: Заметки о выпуске
+              href: releasenotes.md
+        - name: Служба LUIS
+          items:
+            - name: Ресурсы для разработчиков LUIS
+              href: 'https://docs.microsoft.com/azure/cognitive-services/luis/developer-reference-resource'
+- name: Перевод речи
+  exanded: false
+  items:
+    - name: Обзор
+      items:
+        - name: Что такое перевод речи?
+          href: speech-translation.md
+    - name: Краткие руководства
+      items:
+        - name: Перевод речи в текст
+          href: quickstarts/translate-speech-to-text.md
+        - name: Перевод речи на несколько целевых языков
+          href: quickstarts/translate-speech-to-text-multiple-languages.md
+        - name: Перевод речи в речь
+          href: quickstarts/translate-speech-to-speech.md
+    - name: Учебники
+      items:
+        - name: "Создание приложения Flask для перевода и синтеза текста\_— REST"
+          href: ../translator/tutorial-build-flask-app-translation-synthesis.md?toc=%2fazure%2fcognitive-services%2fspeech-service%2ftoc.json&bc=%2fazure%2fcognitive-services%2fspeech-service%2fbreadcrumb%2ftoc.json
+    - name: Справочные материалы
+      items:
+        - name: Пакет SDK для службы "Речь"
+          items:
+            - name: C++
+              href: 'https://aka.ms/csspeech/cppref'
+            - name: 'C#'
+              href: 'https://aka.ms/csspeech/csharpref'
+            - name: Java
+              href: 'https://aka.ms/csspeech/javaref'
+            - name: JavaScript
+              href: 'https://aka.ms/csspeech/javascriptref'
+            - name: Objective-C
+              href: 'https://aka.ms/csspeech/objectivecref'
+            - name: Python
+              href: 'https://aka.ms/csspeech/pythonref'
+            - name: Заметки о выпуске
+              href: releasenotes.md
+- name: Транскрибирование бесед
+  expanded: false
+  items:
+    - name: Обзор
+      items:
+        - name: Что такое транскрибирование бесед?
+          href: conversation-transcription-service.md
+    - name: Руководства
+      items:
+        - name: Транскрибирование бесед в реальном времени
+          href: how-to-use-conversation-transcription-service.md
+        - name: Асинхронное транскрибирование бесед
+          href: how-to-async-conversation-transcription.md
+    - name: Справочные материалы
+      items:
+        - name: Пакет SDK для службы "Речь"
+          items:
+            - name: C++
+              href: 'https://aka.ms/csspeech/cppref'
+            - name: 'C#'
+              href: 'https://aka.ms/csspeech/csharpref'
+            - name: Java
+              href: 'https://aka.ms/csspeech/javaref'
+            - name: JavaScript
+              href: 'https://aka.ms/csspeech/javascriptref'
+            - name: Objective-C
+              href: 'https://aka.ms/csspeech/objectivecref'
+            - name: Python
+              href: 'https://aka.ms/csspeech/pythonref'
+            - name: Заметки о выпуске
+              href: releasenotes.md
+        - name: Интерфейсы REST API
+          items:
+            - name: Интерфейсы REST API для транскрибирования бесед
+              href: 'https://signature.centralus.cts.speech.microsoft.com/UI/index.html'
+- name: Голосовые помощники
+  expanded: false
+  items:
+    - name: Обзор
+      items:
+        - name: Что такое голосовой помощник?
+          href: voice-assistants.md
+    - name: Создание помощника
+      items:
+        - name: Пользовательские команды (предварительная версия)
+          href: custom-commands.md
+        - name: Канал Direct Line Speech
+          href: direct-line-speech.md
+    - name: Краткие руководства
+      items:
+        - name: 'C# (UWP)'
+          href: quickstart-voice-assistant-csharp-uwp.md
+        - name: 'Java (Windows, macOS, Linux)'
+          href: quickstart-voice-assistant-java-jre.md
+        - name: Java (Android)
+          href: quickstart-voice-assistant-java-android.md
+        - name: Создание пользовательской команды (предварительная версия)
+          href: quickstart-custom-speech-commands-create-new.md
+        - name: Создание пользовательской команды с параметрами (предварительная версия)
+          href: quickstart-custom-speech-commands-create-parameters.md
+        - name: Использование пользовательских команд с пакетом SDK службы "Речь" (предварительная версия)
+          href: quickstart-custom-speech-commands-speech-sdk.md
+    - name: Руководства
+      items:
+        - name: Выполнение пользовательских команд с пакетом SDK службы "Речь" (предварительная версия)
+          href: how-to-custom-speech-commands-fulfill-sdk.md
+        - name: Добавление проверки параметров в пользовательские команды
+          href: how-to-custom-speech-commands-validations.md
+    - name: Учебники
+      items:
+        - name: Включение голосовых команд в боте с помощью пакета SDK службы "Речь"
+          href: tutorial-voice-enable-your-bot-speech-sdk.md
+    - name: Справочные материалы
+      items:
+        - name: 'Голосовые помощники: часто задаваемые вопросы'
+          href: faq-voice-assistants.md
+- name: Настройка
+  exanded: false
+  items:
     - name: Преобразование речи в текст
-      href: speech-to-text.md
-      displayName: 'recognize speech, speech recognition, speech-to-text, stt'
-    - name: Преобразование текста в речь
-      href: text-to-speech.md
-      displayName: 'synthesize speech, speech synthesis, text-to-speech, tts'
-    - name: Перевод речи
-      href: speech-translation.md
-      displayName: 'translate speech, speech translation, translator, s2s, speech to speech'
-    - name: Виртуальные помощники по обработке голоса (предварительная версия)
-      href: voice-first-virtual-assistants.md
-      displayName: 'virtual assistants, speech-enabled bots, conversational agents'
-- name: Краткие руководства
-  items:
-    - name: Пакет SDK для службы "Речь"
       items:
-        - name: Преобразование речи в текст
-          items:
-            - name: 'C# (.NET Framework для Windows)'
-              href: quickstart-csharp-dotnet-windows.md
-              displayName: 'recognize speech, speech recognition, speech-to-text, stt'
-            - name: 'C# (.NET Core для Windows)'
-              href: quickstart-csharp-dotnetcore-windows.md
-              displayName: 'recognize speech, speech recognition, speech-to-text, stt'
-            - name: 'C# (UWP)'
-              href: quickstart-csharp-uwp.md
-              displayName: 'recognize speech, speech recognition, speech-to-text, stt, universal windows platform'
-            - name: 'C# (Xamarin)'
-              href: quickstart-csharp-xamarin.md
-              displayName: 'recognize speech, speech recognition, speech-to-text, stt, universal windows platform, android, ios, xamarin, cross-platform'
-            - name: 'C# (Unity)'
-              href: quickstart-csharp-unity.md
-              displayName: 'recognize speech, speech recognition, speech-to-text, stt, unity 3d, windows, android, universal windows platform, uwp'
-            - name: C++ (Windows)
-              href: quickstart-cpp-windows.md
-              displayName: 'recognize speech, speech recognition, speech-to-text, stt'
-            - name: C++ (Linux)
-              href: quickstart-cpp-linux.md
-              displayName: 'recognize speech, speech recognition, speech-to-text, stt'
-            - name: C++ (macOS)
-              href: quickstart-cpp-macos.md
-              displayName: 'recognize speech, speech recognition, speech-to-text, stt'
-            - name: Java (Android)
-              href: quickstart-java-android.md
-              displayName: 'recognize speech, speech recognition, speech-to-text, stt'
-            - name: 'Java (Windows, macOS, Linux)'
-              href: quickstart-java-jre.md
-              displayName: 'recognize speech, speech recognition, speech-to-text, stt, jre, jvm'
-            - name: JavaScript (для браузера)
-              href: quickstart-js-browser.md
-            - name: JavaScript (Node.js)
-              href: quickstart-js-node.md
-              displayName: 'recognize speech, speech recognition, speech-to-text, stt'
-            - name: Objective-C (iOS)
-              href: quickstart-objectivec-ios.md
-              displayName: 'recognize speech, speech recognition, speech-to-text, stt, xcode'
-            - name: Objective-C (macOS)
-              href: quickstart-objective-c-macos.md
-              displayName: 'recognize speech, speech recognition, speech-to-text, stt, xcode'
-            - name: Swift (iOS)
-              href: quickstart-swift-ios.md
-              displayName: 'recognize speech, speech recognition, speech-to-text, stt, xcode'
-            - name: Swift (macOS)
-              href: quickstart-swift-macos.md
-              displayName: 'recognize speech, speech recognition, speech-to-text, stt, xcode'
-            - name: Python
-              href: quickstart-python.md
-              displayName: 'recognize speech, speech recognition, speech-to-text, stt'
-        - name: Преобразование текста
-          items:
-            - name: 'C# (.NET Core для Windows)'
-              href: quickstart-translate-speech-dotnetcore-windows.md
-              displayName: 'translate speech, speech translation, translator, s2s, speech to speech'
-            - name: 'C# (.NET Framework для Windows)'
-              href: quickstart-translate-speech-dotnetframework-windows.md
-              displayName: 'translate speech, speech translation, translator, s2s, speech to speech'
-            - name: 'C# (UWP)'
-              href: quickstart-translate-speech-uwp.md
-              displayName: 'translate speech, speech translation, translator, s2s, speech to speech, universal windows platform'
-            - name: C++ (Windows)
-              href: quickstart-translate-speech-cpp-windows.md
-              displayName: 'translate speech, speech translation, translator, s2s, speech to speech'
-            - name: 'Java (Windows, macOS, Linux)'
-              href: quickstart-translate-speech-java-jre.md
-              displayName: 'translate speech, speech translation, translator, s2s, speech to speech'
-        - name: Преобразование текста в речь
-          items:
-            - name: 'C# (.NET Framework для Windows)'
-              href: quickstart-text-to-speech-dotnet-windows.md
-              displayName: 'synthesize speech, speech synthesis, text-to-speech, tts'
-            - name: 'C# (.NET Core для Windows)'
-              href: quickstart-text-to-speech-dotnetcore.md
-              displayName: 'synthesize speech, speech synthesis, text-to-speech, tts'
-            - name: 'C# (UWP)'
-              href: quickstart-text-to-speech-csharp-uwp.md
-              displayName: 'synthesize speech, speech synthesis, text-to-speech, tts, universal windows platform'
-            - name: 'C# (Unity)'
-              href: quickstart-text-to-speech-csharp-unity.md
-              displayName: 'synthesize speech, speech synthesis, text-to-speech, tts, unity 3d, windows, android, universal windows platform, uwp'
-            - name: C++ (Windows)
-              href: quickstart-text-to-speech-cpp-windows.md
-              displayName: 'synthesize speech, speech synthesis, text-to-speech, tts'
-            - name: C++ (Linux)
-              href: quickstart-text-to-speech-cpp-linux.md
-              displayName: 'synthesize speech, speech synthesis, text-to-speech, tts'
-            - name: Java (Android)
-              href: quickstart-text-to-speech-java-android.md
-              displayName: 'synthesize speech, speech synthesis, text-to-speech, tts'
-            - name: 'Java (Windows, Linux, macOS)'
-              href: quickstart-text-to-speech-java-jre.md
-              displayName: 'synthesize speech, speech synthesis, text-to-speech, tts, jre, jvm'
-            - name: Objective-C (iOS)
-              href: quickstart-text-to-speech-objectivec-ios.md
-              displayName: 'synthesize speech, speech synthesis, text-to-speech, tts, xcode'
-            - name: Objective-C (macOS)
-              href: quickstart-text-to-speech-objectivec-macos.md
-              displayName: 'synthesize speech, speech synthesis, text-to-speech, tts, xcode'
-            - name: Swift (iOS)
-              href: quickstart-text-to-speech-swift-ios.md
-              displayName: 'synthesize speech, speech synthesis, text-to-speech, tts, xcode'
-            - name: Swift (macOS)
-              href: quickstart-text-to-speech-swift-macos.md
-              displayName: 'synthesize speech, speech synthesis, text-to-speech, tts, xcode'
-            - name: Python
-              href: quickstart-text-to-speech-python.md
-              displayName: 'synthesize speech, speech synthesis, text-to-speech, tts'
-        - name: Виртуальные помощники по обработке голоса (предварительная версия)
-          items:
-            - name: 'C# (UWP)'
-              href: quickstart-virtual-assistant-csharp-uwp.md
-              displayName: 'virtual assistant, speech-enabled bot, conversational agent, universal windows platform'
-            - name: 'Java (Windows, macOS, Linux)'
-              href: quickstart-virtual-assistant-java-jre.md
-              displayName: 'virtual assistant, speech-enabled bot, conversational agent'
-            - name: Java (Android)
-              href: quickstart-virtual-assistant-java-android.md
-              displayName: 'virtual assistant, speech-enabled bot, conversational agent'
-    - name: Интерфейсы REST API
-      items:
-        - name: Список поддерживаемых голосов по регионам
-          items:
-            - name: Node.js
-              href: quickstart-nodejs-get-text-to-speech-voices.md
-              displayName: 'voices, synthesize speech, speech synthesis, text-to-speech, tts, rest'
-            - name: Python
-              href: quickstart-python-get-text-to-speech-voices.md
-              displayName: 'voices, synthesize speech, speech synthesis, text-to-speech, tts, rest'
-        - name: Преобразование текста в речь
-          items:
-            - name: 'C# (.NET Core)'
-              href: quickstart-dotnet-text-to-speech.md
-              displayName: 'synthesize speech, speech synthesis, text-to-speech, tts, rest'
-            - name: Node.js
-              href: quickstart-nodejs-text-to-speech.md
-              displayName: 'synthesize speech, speech synthesis, text-to-speech, tts, rest'
-            - name: Python
-              href: quickstart-python-text-to-speech.md
-              displayName: 'synthesize speech, speech synthesis, text-to-speech, tts, rest'
-    - name: 'Пакет SDK для устройств, подключаемых к службе "Речь"'
-      items:
-        - name: Android
-          href: speech-devices-sdk-android-quickstart.md
-          displayName: 'roobo, speech devices sdk'
-        - name: Linux
-          href: speech-devices-sdk-linux-quickstart.md
-          displayName: 'Azure Kinect DK, speech devices sdk'
-        - name: Windows
-          href: speech-devices-sdk-windows-quickstart.md
-          displayName: 'Azure Kinect DK, speech devices sdk'
-- name: Учебники
-  items:
-    - name: 'Распознавание намерений в речи с помощью LUIS (C#)'
-      href: how-to-recognize-intents-from-speech-csharp.md
-      displayName: 'recognize intent, intent recognition, language understanding service, luis'
-    - name: 'Включение голосовых команд в боте с помощью пакета SDK службы "Речь" для C#'
-      href: tutorial-voice-enable-your-bot-speech-sdk.md
-      displayName: 'voice assistant, voice enable a bot, bot speech SDK'
-    - name: "Создание приложения Flask для перевода и синтеза текста\_— REST"
-      href: ../translator/tutorial-build-flask-app-translation-synthesis.md?toc=%2fazure%2fcognitive-services%2fspeech-service%2ftoc.json&bc=%2fazure%2fcognitive-services%2fspeech-service%2fbreadcrumb%2ftoc.json
-- name: Основные понятия
-  items:
-    - name: Транскрибирование бесед
-      href: conversation-transcription-service.md
-    - name: Транскрибирование вызовов в центр обработки
-      href: call-center-transcription.md
-- name: Инструкции
-  items:
-    - name: Регистрация для использования службы "Речь"
-      href: get-started.md
-    - name: Транскрибирование с помощью Пакетной службы (REST)
-      href: batch-transcription.md
-      displayName: 'recognize speech, speech recognition, speech-to-text, stt'
-    - name: Использование входных аудиопотоков (пакет SDK)
-      href: how-to-use-audio-input-streams.md
-    - name: 'Использование входных аудиопотоков, сжатых с помощью кодека (пакет SDK)'
-      href: how-to-use-codec-compressed-audio-input-streams.md
-      displayName: 'mp3, opus, ogg, flac, alaw, mulaw'
-    - name: 'Использование входных аудиопотоков, сжатых с помощью кодека (пакет SDK), в Android'
-      href: how-to-use-codec-compressed-audio-input-streams-android.md
-      displayName: 'mp3, opus, ogg, flac, alaw, mulaw'
-    - name: 'Использование входных аудиопотоков, сжатых с помощью кодека (пакет SDK), в iOS'
-      href: how-to-use-codec-compressed-audio-input-streams-ios.md
-      displayName: 'mp3, opus, ogg, flac, alaw, mulaw'
-    - name: Выбор входного аудиоустройства (пакет SDK)
-      href: how-to-select-audio-input-devices.md
-      displayName: 'audio, microphone, input, device'
-    - name: Включение ведения журналов (пакет SDK)
-      href: how-to-use-logging.md
-      displayName: 'debug, log, logging'
-    - name: Улучшение распознавания с помощью списков фраз
-      href: how-to-phrase-lists.md
-      displayname: 'phrase lists, phrase, list, recognition accuracy'
-    - name: Транскрибирование диалогов (пакет SDK)
-      href: how-to-use-conversation-transcription-service.md
-      displayName: 'conversation, transcription, speech recognition'
-    - name: Настройка
-      items:
-        - name: Преобразование речи в текст
+        - name: Портал пользовательской службы распознавания речи
           items:
             - name: Начало работы с пользовательской службой распознавания речи
               href: how-to-custom-speech.md
@@ -239,7 +277,27 @@
               href: how-to-custom-speech-deploy-model.md
             - name: Руководство по созданию транскрипций с подписями человека
               href: how-to-custom-speech-human-labeled-transcriptions.md
-        - name: Преобразование текста в речь
+        - name: Модели клиентов
+          items:
+            - name: 'Создание, публикация и использование модели'
+              href: tutorial-tenant-model.md
+    - name: Преобразование текста в речь
+      items:
+        - name: Ответственное развертывание
+          items:
+            - name: Фильтрация Пользовательского голоса
+              href: concepts-gating-overview.md
+            - name: Развертывание технологии для синтеза
+              href: concepts-guidelines-responsible-deployment-synthetic.md
+            - name: Примечание о прозрачности для Пользовательского голоса
+              href: 'https://aka.ms/neural-tts-transparency-note'
+            - name: Рекомендации по проектированию для раскрытия информации
+              href: concepts-disclosure-guidelines.md
+            - name: Конструктивные шаблоны для раскрытия информации
+              href: concepts-disclosure-patterns.md
+            - name: Правила поведения
+              href: 'https://aka.ms/custom-neural-code-of-conduct'
+        - name: Портал Пользовательского голоса
           items:
             - name: Начало работы с настраиваемыми голосовыми моделями
               href: how-to-custom-voice.md
@@ -249,142 +307,113 @@
               href: how-to-custom-voice-create-voice.md
             - name: Запись образцов голосов
               href: record-custom-voice-samples.md
-            - name: Настройка преобразования текста в речь
-              href: how-to-voice-tuning.md
-        - name: Создание пользовательского слова для активации (выявление ключевых слов)
-          href: speech-devices-sdk-create-kws.md
-          displayName: 'roobo, speech devices sdk, wake word, keyword spotting, kws'
-    - name: Миграция
-      items:
-        - name: Из Распознавания речи Bing
-          href: how-to-migrate-from-bing-speech.md
-        - name: Из пользовательской службы распознавания речи
-          href: how-to-migrate-from-custom-speech-service.md
-        - name: Из API "Перевод речи"
-          href: how-to-migrate-from-translator-speech-api.md
-    - name: Использование контейнеров
-      items:
-        - name: Установка и запуск контейнеров
-          displayName: 'docker, container, package, packaged app, swagger, open api, openapi, train, publish, az, acr, cli, tps, core, curl, try it now, import, pull, on-premises'
-          href: speech-container-howto.md
-        - name: Настройка контейнеров
-          href: speech-container-configuration.md
-          displayName: 'docker, container, billing, apikey, pull, logging, on-premises'
-        - name: Использование с Kubernetes и Helm
-          displayName: 'kubectl, docker, helm, kubernetes, K8s, tiller, container, image, on-prem, on-premises'
-          href: speech-container-howto-on-premises.md
-        - name: Использование экземпляров контейнеров
-          href: deploy-speech-on-container-instances.md
-          displayName: 'container instances, speech container, containers, images'
-- name: Примеры
+        - name: Создание звукового содержимого
+          items:
+            - name: Практическое руководство. Создание звукового содержимого
+              href: how-to-audio-content-creation.md
+    - name: Выявление пользовательских ключевых слов
+      href: speech-devices-sdk-create-kws.md
+- name: Служба "Речь"
+  expanded: false
   items:
-    - name: Пакет SDK для службы "Речь"
-      href: 'https://github.com/Azure-Samples/cognitive-services-speech-sdk'
-    - name: 'Пакет SDK для устройств, подключаемых к службе "Речь"'
-      href: 'https://github.com/Azure-Samples/Cognitive-Services-Speech-Devices-SDK'
-    - name: Преобразование текста в речь (REST)
-      href: 'https://github.com/Azure-Samples/Cognitive-Speech-TTS'
-    - name: Транскрибирование с помощью Пакетной службы (REST)
-      href: 'https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/samples/batch'
-- name: Справочные материалы
-  items:
-    - name: Пакет SDK для службы "Речь"
+    - name: Руководства
       items:
-        - name: Обзор
+        - name: Бесплатная пробная версия службы "Речь"
+          href: get-started.md
+        - name: Создание ресурса службы "Речь"
+          href: 'get-started.md#create-a-speech-resource-in-azure'
+        - name: Контейнеры
+          exanded: false
+          items:
+            - name: Установка и запуск контейнеров
+              href: speech-container-howto.md
+            - name: Настройка контейнеров
+              href: speech-container-configuration.md
+            - name: Kubernetes и Helm
+              href: speech-container-howto-on-premises.md
+            - name: Экземпляры контейнеров Azure
+              href: deploy-speech-on-container-instances.md
+    - name: Примеры
+      items:
+        - name: Примеры REST для преобразования текста в речь
+          href: 'https://github.com/Azure-Samples/Cognitive-Speech-TTS'
+        - name: Примеры REST для пакетного транскрибирования
+          href: 'https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/samples/batch'
+    - name: Справочные материалы
+      items:
+        - name: Интерфейсы REST API
+          items:
+            - name: REST API для пакетного транскрибирования и настройки
+              href: 'https://westus.cris.ai/swagger/ui/index'
+            - name: REST API для транскрибирования бесед
+              href: 'https://signature.centralus.cts.speech.microsoft.com/UI/index.html'
+            - name: REST API преобразования речи в текст;
+              href: rest-speech-to-text.md
+            - name: REST API преобразования текста в речь.
+              href: rest-text-to-speech.md
+            - name: REST API для веб-перехватчиков
+              href: webhooks.md
+        - name: Документация по Swagger
+          href: swagger-documentation.md
+- name: Пакет SDK для службы "Речь"
+  expanded: false
+  items:
+    - name: Обзор
+      items:
+        - name: Сведения о пакете SDK службы "Речь"
           href: speech-sdk.md
-          displayName: 'C#, C++, Java, .NET, .NET Core, UWP, Android, Linux, Windows'
         - name: Доступность сценариев
           href: scenario-availability.md
-        - name: Доставка приложения
-          href: ship-application.md
-        - name: Заметки о выпуске
-          href: releasenotes.md
+    - name: Краткие руководства
+      items:
+        - name: 'Настройка пакета SDK службы "Речь" с помощью C#'
+          href: quickstarts/setup-platform.md?pivots=programming-language-csharp
+        - name: Настройка пакета SDK службы "Речь" с помощью C++
+          href: quickstarts/setup-platform.md?pivots=programming-language-cpp
+        - name: Настройка пакета SDK службы "Речь" с помощью Java
+          href: quickstarts/setup-platform.md?pivots=programming-language-java
+        - name: Настройка пакета SDK службы "Речь" с помощью Python
+          href: quickstarts/setup-platform.md?pivots=programming-language-python
+        - name: Настройка пакета SDK службы "Речь" с помощью других платформ
+          href: quickstarts/setup-platform.md?pivots=programming-language-more
+    - name: Руководства
+      items:
+        - name: Включение ведения журналов
+          href: how-to-use-logging.md
+    - name: Примеры
+      items:
+        - name: Примеры пакета SDK службы "Речь" (GitHub)
+          href: 'https://github.com/Azure-Samples/cognitive-services-speech-sdk'
+        - name: Примеры пакета SDK для речевых устройств (GitHub)
+          href: 'https://github.com/Azure-Samples/Cognitive-Services-Speech-Devices-SDK'
+    - name: Справочные материалы
+      items:
         - name: C++
           href: 'https://aka.ms/csspeech/cppref'
         - name: 'C#'
           href: 'https://aka.ms/csspeech/csharpref'
-        - name: 'Java, Android'
+        - name: Java
           href: 'https://aka.ms/csspeech/javaref'
-        - name: JavaScript/Node.js
+        - name: JavaScript
           href: 'https://aka.ms/csspeech/javascriptref'
         - name: Objective-C
           href: 'https://aka.ms/csspeech/objectivecref'
         - name: Python
           href: 'https://aka.ms/csspeech/pythonref'
-    - name: 'Пакет SDK для устройств, подключаемых к службе "Речь"'
-      items:
-        - name: 'Получение пакета SDK для устройств, подключаемых к службе "Речь"'
-          href: get-speech-devices-sdk.md
-        - name: Заметки о выпуске
-          href: devices-sdk-release-notes.md
-        - name: "Сведения о Roobo версии\_1"
-          href: speech-devices-sdk-roobo-v1.md
-        - name: Спецификация микрофона
-          href: speech-devices-sdk-microphone.md
-    - name: "Интерфейсы REST\_API"
-      items:
-        - name: Преобразование речи в текст
-          href: rest-speech-to-text.md
-          displayName: 'recognize speech, speech recognition, speech-to-text, stt, rest'
-        - name: Преобразование текста в речь
-          href: rest-text-to-speech.md
-          displayName: 'synthesize speech, speech synthesis, text-to-speech, tts, rest'
-        - name: Пакетное транскрибирование и настройка
-          href: 'https://westus.cris.ai/swagger/ui/index'
-          displayName: 'batch transcription, transcription, custom models, customization, model management, rest'
-        - name: Транскрибирование бесед
-          href: 'https://signature.centralus.cts.speech.microsoft.com/UI/index.html'
-          displayName: 'Conversation transcription, signature generation'
-        - name: Веб-перехватчики
-          href: webhooks.md
-    - name: Документация по Swagger
-      href: swagger-documentation.md
-    - name: Язык разметки синтеза речи (SSML)
-      href: speech-synthesis-markup.md
-    - name: PowerShell
-      href: 'https://aka.ms/azure-powershell-cognitiveservices'
-    - name: Azure CLI
-      href: 'https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest#az_cognitiveservices_list'
-    - name: Поддержка языков
-      href: language-support.md
-    - name: Регионы
-      href: regions.md
-- name: Ресурсы
+        - name: Заметки о выпуске пакета SDK для службы "Речь"
+          href: releasenotes.md
+- name: Миграция
+  exanded: false
   items:
-    - name: Вопросы и ответы
-      items:
-        - name: Преобразование речи в текст
-          href: faq-stt.md
-          displayName: 'recognize speech, speech recognition, speech-to-text, stt'
-        - name: Преобразование текста в речь
-          href: faq-text-to-speech.md
-          displayName: 'synthesize speech, speech synthesis, text-to-speech, tts'
-        - name: Перевод речи
-          href: 'https://www.microsoft.com/translator/faq.aspx'
-          displayName: 'translate speech, speech translation, translator, s2s, speech to speech'
-        - name: Виртуальные помощники по обработке голоса (предварительная версия)
-          href: faq-voice-first-virtual-assistants.md
-    - name: Лицензии на пакет SDK для службы "Речь"
-      items:
-        - name: Лицензия
-          href: 'https://aka.ms/csspeech/license201809'
-        - name: Уведомления сторонних производителей
-          href: 'https://aka.ms/csspeech/toctpn'
-    - name: 'Пакет SDK для устройств, подключаемых к службе "Речь"'
-      items:
-        - name: Сведения
-          href: speech-devices-sdk.md
-          displayName: 'roobo, speech devices sdk'
-        - name: Лицензия
-          href: 'https://aka.ms/sdsdk-license'
-          displayName: 'roobo, speech devices sdk'
-        - name: Уведомления сторонних производителей
-          href: 'https://aka.ms/sdsdk-toctpn'
-          displayName: 'roobo, speech devices sdk'
-    - name: Устранение неполадок с пакетом SDK для службы "Речь"
-      href: troubleshooting.md
-    - name: 'Устранение неполадок пакета SDK для устройств, подключаемых к службе "Речь"'
-      href: speech-devices-sdk-troubleshooting.md
+    - name: Из Распознавания речи Bing
+      href: how-to-migrate-from-bing-speech.md
+    - name: Из пользовательской службы распознавания речи
+      href: how-to-migrate-from-custom-speech-service.md
+    - name: Из API "Перевод речи"
+      href: how-to-migrate-from-translator-speech-api.md
+- name: Ресурсы
+  exanded: false
+  items:
     - name: Поддержка
       href: support.md
     - name: Цены и ограничения

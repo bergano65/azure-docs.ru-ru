@@ -37,6 +37,14 @@
       href: security-center-using-recommendations.md
     - name: Управление в нескольких клиентах
       href: security-center-cross-tenant-management.md
+    - name: Безопасность контейнера
+      items:
+        - name: Общие сведения о безопасности контейнеров
+          href: container-security.md
+        - name: Интеграция с Реестром контейнеров Azure
+          href: azure-container-registry-integration.md
+        - name: Интеграция со Службой Azure Kubernetes
+          href: azure-kubernetes-service-integration.md
     - name: Инциденты и оповещения об обнаружении угроз
       items:
         - name: Общие сведения об оповещениях системы безопасности
@@ -51,7 +59,7 @@
           href: security-center-alerts-compute.md
         - name: Обнаружение угроз для служб обработки данных
           href: security-center-alerts-data-services.md
-        - name: Обнаружение угроз для уровня служб Azure
+        - name: Обнаружение угроз для уровней служб Azure
           href: security-center-alerts-service-layer.md
         - name: Интеграция с системами и средствами безопасности Azure
           href: security-center-alerts-integration.md
@@ -67,33 +75,47 @@
       href: security-center-secure-score.md
     - name: Переход к расширенным функциям безопасности
       href: security-center-onboarding.md
-    - name: Защита сервера с помощью ATP в Microsoft Defender
+    - name: Защита серверов с помощью ATP в Microsoft Defender
       href: security-center-wdatp.md
-    - name: Расширенная защита данных для SQL на виртуальных машинах Azure (общедоступная предварительная версия)
+    - name: Использование расширенной защиты данных для SQL на виртуальных машинах Azure
       href: security-center-iaas-advanced-data.md
     - name: Использование Службы приложений для защиты приложений
       href: security-center-app-services.md
     - name: Использование политик безопасности
-      href: tutorial-security-policy.md
+      items:
+        - name: Обзор политик безопасности
+          href: tutorial-security-policy.md
+        - name: Использование встроенных политик безопасности
+          href: security-center-policy-definitions.md
+        - name: Создание пользовательских политик безопасности
+          href: custom-security-policies.md
+        - name: "Управление политиками с помощью REST\_API Политики Azure"
+          href: configure-security-policy-azure-policy.md
+    - name: Добавление динамических пакетов соответствия
+      href: update-regulatory-compliance-packages.md
     - name: Настройка политики защиты информации
       href: security-center-info-protection-policy.md
     - name: Управление решениями по обеспечению безопасности
       href: security-center-partner-integration.md
     - name: Автоматизация подключения с помощью PowerShell
       href: security-center-powershell-onboarding.md
-    - name: Параметры центра безопасности
-      href: security-center-policies-overview.md
+    - name: Интеграция с Windows Admin Center
+      href: windows-admin-center-integration.md
     - name: Сравнение базовых показателей с помощью мониторинга целостности файлов
       href: security-center-file-integrity-monitoring-baselines.md
-    - name: Сбор данных
+    - name: Автоматизация ответов на оповещения и рекомендации
+      href: workflow-automation.md
+    - name: Экспорт оповещений и рекомендаций
+      href: continuous-export.md
+    - name: Настройка сбора данных
       href: security-center-enable-data-collection.md
-    - name: Встроенные политики безопасности
-      href: security-center-policy-definitions.md
-    - name: Уведомления по электронной почте
+    - name: Настройка расширенной защиты от угроз для Azure Key Vault
+      href: advanced-threat-protection-key-vault.md
+    - name: Настройка уведомлений по электронной почте
       href: security-center-provide-security-contact-details.md
     - name: Цены
       href: security-center-pricing.md
-    - name: Видимость на уровне клиента
+    - name: Визуальный контроль на уровне клиента
       href: security-center-management-groups.md
     - name: Реализация рекомендаций по вопросам безопасности
       items:
@@ -160,7 +182,7 @@
     - name: Управление данными пользователей
       href: security-center-privacy.md
     - name: Документация по Центру безопасности Azure для Интернета вещей
-      href: 'https://docs.microsoft.com/en-us/azure/asc-for-iot/'
+      href: 'https://docs.microsoft.com/azure/asc-for-iot/'
     - name: Часто задаваемые вопросы
       href: security-center-faq.md
     - name: Документация по системе безопасности Azure

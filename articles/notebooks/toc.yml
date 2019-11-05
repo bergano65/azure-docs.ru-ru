@@ -30,7 +30,7 @@
       href: azure-notebooks-user-account.md
     - name: Профили
       href: azure-notebooks-user-profile.md
-- name: Практические руководства
+- name: Инструкции
   items:
     - name: Создание и клонирование проектов
       href: create-clone-jupyter-notebooks.md
@@ -46,5 +46,5 @@
       href: access-data-resources-jupyter-notebooks.md
     - name: Использование Виртуальных машин для обработки и анализа данных
       href: use-data-science-virtual-machine.md
-    - name: Работа со Службами машинного обучения Azure
+    - name: Использование Машинного обучения Azure
       href: use-machine-learning-services-jupyter-notebooks.md
