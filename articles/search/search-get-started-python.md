@@ -86,7 +86,7 @@ ms.locfileid: "72792263"
 
 1. Выполните каждый шаг. Если индексы существуют, в ответе будет содержаться список имен индексов. На следующем снимке экрана служба уже содержит индексы azureblob-index и realestate-bs-sample.
 
-   ![Скрипт Python в записной книжке Jupyter с HTTP-запросами к службе "Когнитивный поиск Azure"](media/search-get-started-python/connect-azure-search.png "Скрипт Python в записной книжке Jupyter с HTTP-запросами к службе "Когнитивный поиск Azure"")
+   ![Скрипт Python в записной книжке Jupyter с HTTP-запросами к службе Когнитивный поиск Azure](media/search-get-started-python/connect-azure-search.png "Скрипт Python в записной книжке Jupyter с HTTP-запросами к службе Когнитивный поиск Azure")
 
    Пустая коллекция индексов возвращает следующий ответ: `{'@odata.context': 'https://mydemo.search.windows.net/$metadata#indexes(name)', 'value': []}`
 
