@@ -1,5 +1,5 @@
 ---
-title: Миграция локальных Apache Hadoop кластеров в Azure HDInsight — миграция данных
+title: 'Перенос данных: локальная Apache Hadoop в Azure HDInsight'
 description: Ознакомьтесь с рекомендациями по использованию архитектуры в рамках миграции локальных кластеров Hadoop в Azure HDInsight.
 author: hrasheed-msft
 ms.reviewer: ashishth
@@ -8,16 +8,16 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 04/08/2019
 ms.author: hrasheed
-ms.openlocfilehash: 567edca422237c71f0d69c862a17fbc0d2a72795
-ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
+ms.openlocfilehash: 30f7ae2eeb928e3f8dc71baed20d9c9b2129d1f9
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70735917"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73494985"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight---data-migration-best-practices"></a>Миграция локальных кластеров Apache Hadoop в HDInsight Azure — рекомендации по использованию миграции данных
 
-В этой статье представлены рекомендации по миграции данных в Azure HDInsight. Это часть цикла, где приведены лучшие методики, применимые при перемещении локальных систем Apache Hadoop в Azure HDInsight.
+В этой статье представлены рекомендации по миграции данных в Azure HDInsight. В этом цикле статей приведены рекомендации, применимые при перемещении локальных систем Apache Hadoop в Azure HDInsight.
 
 ## <a name="migrate-on-premises-data-to-azure"></a>Перенос локальных данных в Azure
 
@@ -35,13 +35,13 @@ ms.locfileid: "70735917"
 |**Количество данных**|**Сеть Bandwidth**||||
 |---|---|---|---|---|
 || **45 Мбит/с (T3)**|**100 Мбит/с**|**1 Гбит/с**|**10 Гбит/с**|
-|1 TБ|2 дня|1 день| 2 часа|14 минут|
-|10 ТБ|22 дня|10 дней|1 день|2 часа|
-|35 ТБ|76 дней|34 дня|3 дн.|8 ч.|
+|1 TБ|2 дня|1 день| 2 ч|14 минут|
+|10 ТБ|22 дня|10 дней|1 день|2 ч|
+|35 ТБ|76 дней|34 дня|3 дня|8 часов|
 |80 ТБ|173 дня|78 дней|8 дней|19 часов|
 |100 ТБ|216 дней|97 дней|10 дней|1 день|
-|200 ТБ|1 год|194 дня|19 дней|2 дня|
-|500 TБ|3 года|1 год|49 дней|5 дней|
+|200 ТБ|Год|194 дня|19 дней|2 дня|
+|500 TБ|3 года|Год|49 дней|5 дней|
 |1 ПБ|6 год|3 года|97 дней|10 дней|
 |2 ПБ|12 год|5 год|194 дня|19 дней|
 
@@ -112,7 +112,7 @@ hadoop distcp -Dmapreduce.fileoutputcommitter.algorithm.version=2 -numListstatus
 - Преобразование локальных путей на основе HDFS в WASB/ADLS с помощью таких средств, как XSLT.
 - Импортируйте политики Range, запущенные на HDInsight
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Прочитайте следующую статью в этом цикле:
 

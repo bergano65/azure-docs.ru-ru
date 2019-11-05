@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 09/20/2019
 ms.author: amishu
-ms.openlocfilehash: df5eb123a2fd47a3eceea8153786442bf56a2718
-ms.sourcegitcommit: 4f3f502447ca8ea9b932b8b7402ce557f21ebe5a
+ms.openlocfilehash: 2e741e8a8df2cebff167a381cef41351ead4c6cf
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71803836"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73464371"
 ---
 # <a name="using-codec-compressed-audio-input-with-the-speech-sdk-on-android"></a>Использование сжатых звуковых данных кодеков с пакетом SDK для распознавания речи в Android
 
@@ -43,7 +43,7 @@ ms.locfileid: "71803836"
 GSTREAMER_PLUGINS := coreelements app audioconvert mpg123 audioresample audioparsers ogg opusparse opus wavparse alaw mulaw flac
 ```
 
-Ниже приведен пример файла `Android.mk` и `Application.mk`. Чтобы создать общий объект гстреамер, выполните следующие действия: `libgstreamer_android.so`.
+Ниже приведен пример `Android.mk` и `Application.mk` файла. Выполните следующие действия, чтобы создать общий объект гстреамер: `libgstreamer_android.so`.
 
 ```make
 # Android.mk
@@ -97,7 +97,7 @@ APP_PLATFORM = android-21
 APP_BUILD_SCRIPT = Android.mk
 ```
 
-Вы можете создать `libgstreamer_android.so` с помощью следующей команды в Ubuntu 16,04 или 18,04. Следующие командные строки были протестированы только для [Гстреамер Android версии 1.14.4](https://gstreamer.freedesktop.org/data/pkg/android/1.14.4/gstreamer-1.0-android-universal-1.14.4.tar.bz2) с [Android NDK b16b.](https://dl.google.com/android/repository/android-ndk-r16b-linux-x86_64.zip)
+`libgstreamer_android.so` можно создать с помощью следующей команды в Ubuntu 16,04 или 18,04. Следующие командные строки были протестированы только для [Гстреамер Android версии 1.14.4](https://gstreamer.freedesktop.org/data/pkg/android/1.14.4/gstreamer-1.0-android-universal-1.14.4.tar.bz2) с [Android NDK b16b.](https://dl.google.com/android/repository/android-ndk-r16b-linux-x86_64.zip)
 
 ```sh
 # assuming wget and unzip already installed on the system
@@ -157,7 +157,7 @@ SpeechRecognitionResult result = recognizer.recognizeOnceAsync().get()
 String text = result.getText();
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/)
-- [Распознавание речи в C#](quickstart-csharp-dotnet-windows.md)
+- [Получение пробной подписки на службу "Речь"](https://azure.microsoft.com/try/cognitive-services/)
+* [Узнайте, как распознать речь в Java](~/articles/cognitive-services/Speech-Service/quickstarts/speech-to-text-from-microphone.md?pivots=programming-language-java)

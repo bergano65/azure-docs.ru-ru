@@ -1,5 +1,5 @@
 ---
-title: Встроенное извлечение данных, естественный язык, обработка изображений
+title: Встроенные навыки для извлечения данных, естественного языка, обработки изображений во время индексирования.
 titleSuffix: Azure Cognitive Search
 description: Извлечение данных, естественный язык, работа с обработкой изображений Добавление семантики и структуры в необработанное содержимое в конвейере Azure Когнитивный поиск.
 manager: nitinme
@@ -8,12 +8,12 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 435635018dc25ed2af0aec3d542c0388af8ab885
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: 2f03752c5fda366fc16b681d71ba68486527a30f
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72792101"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73466798"
 ---
 # <a name="built-in-cognitive-skills-for-content-enrichment-azure-cognitive-search"></a>Встроенные навыки для обогащения содержимого (Azure Когнитивный поиск)
 
@@ -29,7 +29,7 @@ ms.locfileid: "72792101"
 
 Некоторые навыки позволяют гибко регулировать свои входные и выходные данные. Как правило, большинство навыков основано на предварительно обученных моделях, поэтому вы не можете обучить модель, используя собственные обучающие данные. Приведенная ниже таблица перечисляет и описывает навыки, предоставляемые корпорацией Майкрософт. 
 
-| Навык | Описание |
+| Навык | Description (Описание) |
 |-------|-------------|
 | [Microsoft.Skills.Text.KeyPhraseSkill](cognitive-search-skill-keyphrases.md) | Этот навык использует предварительно обученную модель для выявления важных фраз в зависимости от расположения терминов, лингвистических правил, близости к другим терминам и того, насколько необычным является термин в исходных данных. |
 | [Microsoft.Skills.Text.LanguageDetectionSkill](cognitive-search-skill-language-detection.md)  | Этот навык использует предварительно обученную модель, чтобы определить используемый язык (один идентификатор языка на документ). Если в одних сегментах текста используется несколько языков, выводится код основного используемого языка.|
@@ -41,6 +41,7 @@ ms.locfileid: "72792101"
 | [Microsoft.Skills.Vision.ImageAnalysisSkill](cognitive-search-skill-image-analysis.md) | Этот навык использует алгоритм обнаружения изображений, чтобы определить содержимое изображения и создать текстовое описание. |
 | [Microsoft.Skills.Vision.OcrSkill](cognitive-search-skill-ocr.md) | Оптическое распознавание символов. |
 | [Microsoft. Skills. util. Кондитионалскилл](cognitive-search-skill-conditional.md) | Позволяет фильтровать, назначать значения по умолчанию и объединять данные на основе условия.|
+| [Microsoft. Skills. util. Документекстрактионскилл](cognitive-search-skill-document-extraction.md) | Извлекает содержимое из файла в конвейере обогащения. |
 | [Microsoft.Skills.Util.ShaperSkill](cognitive-search-skill-shaper.md) | Сопоставляет выходные данные со сложным типом (составной тип данных, который может использоваться для полного имени, многострочного адреса или сочетания фамилии и личного идентификатора). |
 | [Microsoft.Skills.Custom.WebApiSkill](cognitive-search-custom-skill-web-api.md) | Обеспечивает расширяемость конвейера обогащения искусственного интеллекта, делая вызов HTTP в пользовательский веб-API |
 
@@ -49,6 +50,6 @@ ms.locfileid: "72792101"
 
 ## <a name="see-also"></a>Дополнительные материалы
 
-+ [How to define a skillset](cognitive-search-defining-skillset.md) (Определение набора навыков)
++ [Определение набора навыков](cognitive-search-defining-skillset.md)
 + [Определение интерфейса пользовательских навыков](cognitive-search-custom-skill-interface.md)
 + [Учебник. обогащенное индексирование с помощью искусственного интеллекта](cognitive-search-tutorial-blob.md)

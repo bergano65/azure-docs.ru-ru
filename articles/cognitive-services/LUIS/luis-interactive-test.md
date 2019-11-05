@@ -11,20 +11,21 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 07/29/2019
 ms.author: diberry
-ms.openlocfilehash: 5736667acfa510d89e549afd4d0f5c61a833dd1c
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: ebc86d1cf91cf79ab83b0f49d9898a91d8be8a75
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68932731"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73500282"
 ---
-<a name="train-your-app"></a>
-
 # <a name="test-your-luis-app-in-the-luis-portal"></a>Тестирование приложения LUIS на портале LUIS
 
-[Тестирование](luis-concept-test.md) приложения является итеративным процессом. После обучения приложения LUIS протестируйте его с примерами высказываний на предмет правильного распознавания намерений и сущностей. Если распознавание выполняется неправильно, внесите изменения в приложение, обучите его и протестируйте еще раз. 
+[Тестирование](luis-concept-test.md) приложения является итеративным процессом. После обучения приложения LUIS протестируйте его с примерами высказываний на предмет правильного распознавания намерений и сущностей. Если распознавание выполняется неправильно, внесите изменения в приложение, а затем обучите его и протестируйте еще раз. 
+
+[!INCLUDE [Waiting for LUIS portal refresh](./includes/wait-v3-upgrade.md)]
 
 <!-- anchors for H2 name changes -->
+<a name="train-your-app"></a>
 <a name="test-your-app"></a>
 <a name="access-the-test-page"></a>
 <a name="luis-interactive-testing"></a>
@@ -65,7 +66,7 @@ ms.locfileid: "68932731"
 
 ## <a name="view-sentiment-results"></a>Просмотр результатов тональности
 
-Если на странице **[Publish](luis-how-to-publish-app.md#enable-sentiment-analysis)** (Публикация) настроен **анализ тональности**, результаты теста содержат тональность, найденную в высказывании. 
+Если на страницеPublish **[ (Публикация) настроен ](luis-how-to-publish-app.md#enable-sentiment-analysis)анализ тональности**, результаты теста содержат тональность, найденную в высказывании. 
 
 ![Изображение панели тестирования с анализом тональности](./media/luis-how-to-interactive-test/sentiment.png)
 
@@ -128,9 +129,9 @@ ms.locfileid: "68932731"
 ## <a name="batch-testing"></a>Пакетное тестирование
 Ознакомьтесь с [принципами](luis-concept-batch-test.md) пакетного тестирования и узнайте, [как](luis-how-to-batch-test.md) протестировать пакет высказываний.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если тестирование показывает, что приложение LUIS не распознает правильные намерения и сущности, вы можете повысить точность приложения LUIS путем пометки дополнительных высказываний или добавления функций. 
 
-* [Label suggested utterances with LUIS](luis-how-to-review-endpoint-utterances.md) (Пометка предлагаемых высказываний в LUIS) 
+* я[Label suggested utterances with LUIS](luis-how-to-review-endpoint-utterances.md) (Пометка предлагаемых высказываний в LUIS) 
 * [Use features to improve your LUIS app's performance](luis-how-to-add-features.md) (Использование функций для повышения производительности приложения LUIS) 

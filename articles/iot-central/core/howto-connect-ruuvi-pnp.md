@@ -10,12 +10,12 @@ ms.custom:
 ms.author: avneets
 author: avneet723
 ms.date: 10/19/2019
-ms.openlocfilehash: 0a93bedb697a0d5a514fddab55c79b969b2bd77b
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: f1d152c921d38931f8c67396fc5769cfd2dfcf58
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72954231"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73468234"
 ---
 # <a name="connect-a-ruuvitag-sensor-to-your-azure-iot-central-application"></a>Подключение датчика Руувитаг к приложению IoT Central Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "72954231"
 
 * Датчик Руувитаг. Дополнительные сведения см. по адресу [руувитаг](https://ruuvi.com/). 
 * Устройство Ригадо Cascade 500 или другой шлюз BLE. Дополнительные сведения см. по адресу [ригадо](https://www.rigado.com/).
-* Приложение IoT Central Azure, созданное из одного из шаблонов предварительной версии приложения. Дополнительные сведения см. в разделе [Создание нового приложения](https://docs.microsoft.com/azure/iot-central/quick-deploy-iot-central-pnp?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json).
+* Приложение IoT Central Azure, созданное из одного из шаблонов предварительной версии приложения. Дополнительные сведения см. в разделе [Создание нового приложения](https://docs.microsoft.com/azure/iot-central/core/quick-deploy-iot-central-pnp?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json).
 
 ## <a name="add-a-ruuvitag-device-template"></a>Добавление шаблона устройства Руувитаг
 
