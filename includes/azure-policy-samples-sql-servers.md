@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 09/18/2018
 ms.author: dacoulte
 ms.custom: include file
-ms.openlocfilehash: c8453a2ec00a2fca107f85a23a8af1e6313a70b6
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: dabadf3a4175947f09ba20b0e644f1d2b485ee38
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185448"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73591323"
 ---
 ### <a name="sql-servers"></a>Серверы SQL Server
 
@@ -23,4 +23,3 @@ ms.locfileid: "67185448"
 | [Аудит параметра обнаружения угроз на уровне сервера](../articles/governance/policy/samples/audit-sql-server-threat-detection-setting.md) | Проверяет, имеют ли политики оповещения системы безопасности для базы данных SQL указанное состояние. Задайте значение, указывающее состояние обнаружения угроз (включено или отключено).  |
 | [Проверка параметров аудита SQL Server](../articles/governance/policy/samples/sql-server-audit.md) | Проверяет SQL Server в зависимости от включения параметров аудита. |
 | [Аудит параметра аудита уровня SQL Server](../articles/governance/policy/samples/audit-sql-server-audit-setting.md) | Проверяет, соответствуют ли параметры аудита SQL Server указанному значению. Задайте значение, указывающее, должны ли быть включены параметры аудита. |
-| [Требование наличия SQL Server версии 12.0](../articles/governance/policy/samples/require-sql-12.md) | Требует серверы SQL Server версии 12.0.  |

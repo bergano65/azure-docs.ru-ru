@@ -9,14 +9,14 @@ ms.service: databox
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: hub-page
-ms.date: 09/24/2018
+ms.date: 10/28/2019
 ms.author: alkohli
-ms.openlocfilehash: c0c5ea8dc069d24d01313bb68c0afb7c7aac1a33
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: e2a3d17dda5f0d7a1cecc13583981d3659775283
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61456628"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73583207"
 ---
 <div id="main" class="v2">
 <h1>Azure Data Box</h1>
@@ -94,24 +94,6 @@ ms.locfileid: "61456628"
                         </div>
                         <div class="cardText">
                             <p><b>Шлюз Data Box</b> — виртуальное устройство с хранилищем. Используйте это устройство для отправки данных в Azure по сети.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-    </li>
-    <li>
-        <a href="/azure/databox-online/data-box-edge-overview">
-            <div class="cardSize">
-                <div class="cardPadding">
-                    <div class="card">
-                        <div class="cardImageOuter">
-                            <div class="cardImage"> 
-                                <img src="media/Edge_Icon_w_gear.svg" alt="" />
-                            </div>
-                        </div>
-                        <div class="cardText">
-                            <p><b>Data Box Edge</b> — физическое устройство с хранилищем и вычислительными ресурсами. Используйте это устройство, если планируете анализировать, преобразовывать или фильтровать данные, перемещаемые в Azure.</p>
                         </div>
                     </div>
                 </div>

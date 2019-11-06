@@ -44,9 +44,14 @@
     - name: Тест производительности CIS для платформ Microsoft Azure
       items:
         - name: Обзор
+          displayName: 'standards, cis'
           href: ./samples/cis-azure-1.1.0/index.md
         - name: Сопоставление рекомендаций
+          displayName: 'standards, cis'
           href: ./samples/cis-azure-1.1.0/control-mapping.md
+        - name: Инструкции по развертыванию
+          displayName: 'standards, cis'
+          href: ./samples/cis-azure-1.1.0/deploy.md
     - name: FedRAMP — средний уровень
       items:
         - name: Обзор

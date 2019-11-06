@@ -42,7 +42,7 @@
     - name: Создание приложения
       items:
         - name: Определение намерений пользователя
-          href: luis-quickstart-intents-only.md
+          href: tutorial-intents-only.md
         - name: Определение общих данных пользователей с помощью предварительно созданных моделей
           href: luis-tutorial-prebuilt-intents-entities.md
         - name: Определение тональности высказываний пользователя
@@ -116,6 +116,7 @@
           displayName: roles
         - name: Функции
           href: luis-concept-feature.md
+          displayName: 'descriptor, phrase list'
     - name: Оценка прогнозирования
       href: luis-concept-prediction-score.md
     - name: Рекомендации

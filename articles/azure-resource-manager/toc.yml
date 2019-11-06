@@ -101,9 +101,9 @@
           href: deployment-manager-health-check.md
     - name: Развертывание с помощью Azure Resource Manager и классическая модель развертывания
       href: resource-manager-deployment-model.md
-    - name: Общие атрибуты безопасности Azure
-      href: azure-resource-manager-security-attributes.md
-- name: Руководства
+    - name: Встроенные средства управления безопасностью
+      href: azure-resource-manager-security-controls.md
+- name: Практическое руководство
   items:
     - name: Создание шаблонов
       items:
@@ -249,6 +249,8 @@
           href: resource-manager-common-deployment-errors.md
         - name: AccountNameInvalid
           href: resource-manager-storage-account-name-errors.md
+        - name: DeploymentQuotaExceeded
+          href: deployment-quota-exceeded.md
         - name: InvalidTemplate
           href: resource-manager-invalid-template-errors.md
         - name: Проблемы с развертыванием в Linux
