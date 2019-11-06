@@ -1,18 +1,18 @@
 ---
-title: Анализ и обработка документов JSON с помощью Apache Hive в Azure HDInsight
+title: Анализ & процесса JSON с помощью Apache Hive Azure HDInsight
 description: Узнайте, как использовать документы JSON и анализировать их с помощью Apache Hive в Azure HDInsight.
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
-ms.date: 06/03/2019
-ms.openlocfilehash: 629a7c98a7b46b470470445cc56a6f53d9e4f4b4
-ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
+ms.date: 10/29/2019
+ms.openlocfilehash: 1c519533625835677ddae0a274c9ce9f10edc6dd
+ms.sourcegitcommit: b45ee7acf4f26ef2c09300ff2dba2eaa90e09bc7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71077216"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73098001"
 ---
 # <a name="process-and-analyze-json-documents-by-using-apache-hive-in-azure-hdinsight"></a>Обработка и анализ документов JSON с использованием Apache Hive в Azure HDInsight
 
@@ -60,6 +60,7 @@ ms.locfileid: "71077216"
 В этой статье используется консоль Apache Hive. Инструкции по открытию консоли Hive см. [в статье Использование представления Hive Apache Ambari с Apache Hadoop в HDInsight](apache-hadoop-use-hive-ambari-view.md).
 
 ## <a name="flatten-json-documents"></a>Документы JSON, преобразованные в плоскую структуру
+
 Методы, перечисленные в следующем разделе требуют, чтобы документ JSON содержал одну строку. Поэтому необходимо преобразовать документ JSON в строку. Если документ JSON уже преобразован, можно пропустить этот шаг и сразу перейти к следующему разделу, посвященному анализу данных JSON. Чтобы преобразовать документ JSON в плоскую структуру, выполните следующий сценарий:
 
 ```sql
@@ -81,7 +82,7 @@ SELECT CONCAT_WS(' ',COLLECT_LIST(textcol)) AS singlelineJSON
 SELECT * FROM StudentsOneLine
 ```
 
-Необработанный JSON-файл находится `wasb://processjson@hditutorialdata.blob.core.windows.net/`в папке. Таблица Hive **StudentsRaw** указывает на необработанный документ JSON, который не имеет плоскую структуру.
+Необработанный JSON-файл находится по адресу `wasb://processjson@hditutorialdata.blob.core.windows.net/`. Таблица Hive **studentsraw указывает** указывает на необработанный документ JSON, который не является плоским.
 
 Таблица Hive **StudentsOneLine** сохраняет данные в файловой системе по умолчанию HDInsight в каталоге **/json/students/** .
 
@@ -94,14 +95,16 @@ SELECT * FROM StudentsOneLine
 ![Обработка документа JSON с помощью HDInsight](./media/using-json-in-hive/hdinsight-flatten-json.png)
 
 ## <a name="analyze-json-documents-in-hive"></a>Анализ документов JSON в Hive
+
 Hive предоставляет три различных механизма для выполнения запросов к документам JSON (вы также можете написать собственный):
 
 * использование определяемой пользователем функции GET_JSON_OBJECT;
 * использование определяемой пользователем функции JSON_TUPLE;
 * использование пользовательского сериализатора/десериализатора (SerDe);
-* написание собственной определяемой пользователем функции с использованием Python или других языков. Дополнительные сведения о том, как выполнить собственный код Python с помощью Hive, см. в разделе [UDF Python with Apache Hive and Apache Pig] [hdinsight-Python].
+* написание собственной определяемой пользователем функции с использованием Python или других языков. Дополнительные сведения о том, как выполнить собственный код Python с помощью Hive, см. в разделе [UDF Python with Apache Hive and Apache Pig](./python-udf-hdinsight.md).
 
 ### <a name="use-the-get_json_object-udf"></a>Использование определяемой пользователем функции GET_JSON_OBJECT
+
 В Hive есть встроенная определяемая пользователем функция под названием [ET_JSON_OBJECT](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF#LanguageManualUDF-get_json_object), которая может выполнять запросы JSON во время выполнения. Этот метод принимает два аргумента — имя таблицы, которая содержит плоский документ JSON, и поле JSON, которое требуется проанализировать. Рассмотрим на примере, как работает эта пользовательская функция.
 
 Следующий запрос возвращает имя и фамилию каждого студента:
@@ -122,9 +125,10 @@ FROM StudentsOneLine;
 * Так как каждое поле в запросе требует повторного синтаксического анализа запроса, это влияет на производительность.
 * **GET\_JSON_OBJECT()** возвращает строковое представление массива. Для преобразования этого массива в массив Hive необходимо использовать регулярные выражения для замены квадратных скобок "[" и "]", а затем также выполнить разбиение для получения массива.
 
-Именно поэтому в вики Hive рекомендуется использовать JSON_TUPLE.  
+Именно поэтому вики-узел Hive рекомендует использовать **json_tuple**.  
 
 ### <a name="use-the-json_tuple-udf"></a>Использование определяемой пользователем функции JSON_TUPLE
+
 Еще одна определяемая пользователем функция в Hive называется [json_tuple](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF#LanguageManualUDF-json_tuple), и она дает лучшие результаты по сравнению с [get_ json _object](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF#LanguageManualUDF-get_json_object). Этот метод принимает набор ключей и строку JSON, а затем возвращает кортеж из значений, используя одну функцию. Следующий запрос возвращает идентификатор студента и его оценку из документа JSON.
 
 ```sql
@@ -138,13 +142,15 @@ LATERAL VIEW JSON_TUPLE(jt.json_body, 'StudentId', 'Grade') q1
 
 ![Apache Hive результатов запроса JSON](./media/using-json-in-hive/hdinsight-json-tuple.png)
 
-Определяемая пользователем функция JSON_TUPLE использует синтаксис [lateral view](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+LateralView) Hive, который позволяет JSON\_TUPLE создать виртуальную таблицу, применяя определяемую пользователем функцию к каждой строке исходной таблицы. Из-за многократного использования **LATERAL VIEW** синтаксис сложных документов JSON становится слишком громоздким. Кроме того, **JSON_TUPLE** не может обрабатывать вложенные документы JSON.
+Определяемая пользователем функция JSON_TUPLE использует синтаксис [lateral view](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+LateralView) Hive, который позволяет JSON\_TUPLE создать виртуальную таблицу, применяя определяемую пользователем функцию к каждой строке исходной таблицы. Из-за многократного использования **LATERAL VIEW** синтаксис сложных документов JSON становится слишком громоздким. Более того, **JSON_TUPLE** не может работать с вложенными JSON.
 
 ### <a name="use-a-custom-serde"></a>Использование пользовательского SerDe
+
 SerDe отлично подходит для синтаксического анализа вложенных документов JSON. Он позволяет определить схему JSON, а затем использовать ее для синтаксического анализа документов. См. инструкции по [использованию пользовательского формата SerDe JSON с Microsoft Azure HDInsight](https://web.archive.org/web/20190217104719/https://blogs.msdn.microsoft.com/bigdatasupport/2014/06/18/how-to-use-a-custom-json-serde-with-microsoft-azure-hdinsight/).
 
 ## <a name="summary"></a>Сводка
-Напоследок следует заметить, что тип оператора JSON в Hive, который нужно выбрать, зависит от ситуации. Если вам требуется найти всего одно поле в простом документе JSON, можно применять определяемую пользователем функцию Hive GET_JSON_OBJECT. Если нужно выполнить поиск по нескольким ключам, можно использовать json_tuple. При наличии вложенного документа следует использовать SerDe JSON.
+
+Напоследок следует заметить, что тип оператора JSON в Hive, который нужно выбрать, зависит от ситуации. Если у вас есть простой документ JSON и имеется только одно поле для поиска, можно выбрать использование **GET_JSON_OBJECT**UDF. При наличии нескольких ключей для поиска можно использовать **json_tuple**. Если у вас есть вложенный документ, следует использовать **JSON SerDe**.
 
 ## <a name="next-steps"></a>Следующие шаги
 
