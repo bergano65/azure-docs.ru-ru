@@ -131,22 +131,8 @@
       items:
         - name: Azure PowerShell
           href: tutorial-restrict-web-traffic-powershell.md
-        - name: Azure CLI
-          href: tutorial-restrict-web-traffic-cli.md
-    - name: Настройка набора правил WAF
-      items:
-        - name: Портал Azure
-          href: application-gateway-customize-waf-rules-portal.md
-        - name: Azure PowerShell
-          href: application-gateway-customize-waf-rules-powershell.md
         - name: Инфраструктура CLI Azure
-          href: application-gateway-customize-waf-rules-cli.md
-    - name: Настраиваемые правила WAF
-      items:
-        - name: Примеры настраиваемых правил
-          href: create-custom-waf-rules.md
-        - name: Настройка WAF с использованием настраиваемых правил
-          href: configure-waf-custom-rules.md
+          href: tutorial-restrict-web-traffic-cli.md
     - name: Входящий трафик для AKS
       items:
         - name: Настройка с существующим Шлюзом приложений

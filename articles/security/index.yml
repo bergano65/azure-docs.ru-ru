@@ -14,12 +14,12 @@ metadata:
   ms.author: terrylan
   manager: rkarlin
   ms.date: 08/29/2019
-  ms.openlocfilehash: 6ae54a18ebb5358c7fde1a854238984ea7ec2c57
-  ms.sourcegitcommit: 87efc325493b1cae546e4cc4b89d9a5e3df94d31
+  ms.openlocfilehash: c3f75decc72cbc314309b8cfb0bd81d9c0be2774
+  ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 10/29/2019
-  ms.locfileid: "73053703"
+  ms.lasthandoff: 11/06/2019
+  ms.locfileid: "73686312"
 highlightedContent:
   items:
   - title: Введение в систему безопасности Azure
@@ -175,9 +175,6 @@ conceptualContent:
     - url: ./fundamentals/management-monitoring-overview.md
       itemType: overview
       text: Общие сведения об управлении и мониторинге
-    - url: ./fundamentals/azure-log-integration-overview.md
-      itemType: overview
-      text: Общие сведения о службе "Интеграция журналов данных Azure"
     footerLink:
       url: https://docs.microsoft.com/search/?search=security+audit+log&scope=azure&category=Documentation
       text: Поиск дополнительных данных
@@ -230,9 +227,6 @@ conceptualContent:
       text: Контрольный список по безопасности
   - title: Система управления и соответствие требованиям
     links:
-    - url: ./blueprints/au-protected-iaaswa-overview.md
-      itemType: tutorial
-      text: Решения для обеспечения соответствия
     - url: ../governance/policy/overview.md
       itemType: overview
       text: Служба "Политика Azure".

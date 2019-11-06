@@ -469,9 +469,6 @@
           href: change-feed-functions.md
     - name: Глобально распределенная аналитика и ИИ
       items:
-        - name: Введение
-          displayName: 'Apache Spark, spark'
-          href: spark-api-introduction.md
         - name: Варианты использования средств аналитики
           href: analytics-usecases.md
         - name: "Analytics\_— архитектуры решений"
