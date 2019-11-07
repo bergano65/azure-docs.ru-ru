@@ -9,27 +9,27 @@ ms.author: estfan
 ms.reviewer: arthii, LADocs
 ms.topic: article
 ms.date: 10/18/2019
-ms.openlocfilehash: 6467937e2aca08e234cb136c5f610503627921fb
-ms.sourcegitcommit: 38251963cf3b8c9373929e071b50fd9049942b37
+ms.openlocfilehash: d515982dc2937b660de75ee723cebe39b33bec7d
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73042210"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73580868"
 ---
 # <a name="install-on-premises-data-gateway-for-azure-logic-apps"></a>Установка локального шлюза данных для Azure Logic Apps
 
-Прежде чем можно будет [подключиться к локальным источникам данных из Azure Logic Apps](../logic-apps/logic-apps-gateway-connection.md), скачайте и установите локальный [шлюз данных](https://aka.ms/on-premises-data-gateway-installer) на локальном компьютере. Шлюз работает как мост, обеспечивающий быструю пересылку данных и шифрование между источниками данных в локальной среде и приложениями логики. Вы можете использовать ту же установку шлюза с другими облачными службами, такими как Power BI, Microsoft Flow, PowerApps и Azure Analysis Services. Сведения об использовании шлюза с этими службами см. в следующих статьях:
+Прежде чем можно будет [подключиться к локальным источникам данных из Azure Logic Apps](../logic-apps/logic-apps-gateway-connection.md), скачайте и установите локальный [шлюз данных](https://aka.ms/on-premises-data-gateway-installer) на локальном компьютере. Шлюз работает как мост, обеспечивающий быструю пересылку данных и шифрование между источниками данных в локальной среде и приложениями логики. Вы можете использовать одну и ту же установку шлюза с другими облачными службами, такими как Power BI, Автоматизация питания, Power Apps и Azure Analysis Services. Сведения об использовании шлюза с этими службами см. в следующих статьях:
 
 * [Локальный шлюз данных](https://powerbi.microsoft.com/documentation/powerbi-gateway-onprem/)
-* [Управление локальным шлюзом данных в PowerApps](https://powerapps.microsoft.com/tutorials/gateway-management/)
-* [Управление локальным шлюзом данных в Microsoft Flow](https://flow.microsoft.com/documentation/gateway-manage/)
+* [Локальный шлюз данных Microsoft Power Apps](https://powerapps.microsoft.com/tutorials/gateway-management/)
+* [Power Автоматизируйте локальный шлюз данных](https://flow.microsoft.com/documentation/gateway-manage/)
 * [Локальный шлюз данных](../analysis-services/analysis-services-gateway.md)
 
 В этой статье показано, как скачать, установить и настроить локальный шлюз данных, чтобы получить доступ к локальным источникам данных из Azure Logic Apps. Дополнительные сведения о [работе шлюза данных см](#gateway-cloud-service) . Далее в этом разделе. Дополнительные сведения о шлюзе см. [в статье что такое локальный шлюз](https://docs.microsoft.com/data-integration/gateway/service-gateway-onprem)?
 
 <a name="requirements"></a>
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Учетная запись и подписка Azure. Если у вас нет учетной записи Azure с подпиской, зарегистрируйтесь, чтобы [получить бесплатную учетную запись Azure](https://azure.microsoft.com/free/).
 
@@ -105,7 +105,7 @@ ms.locfileid: "73042210"
 
    Установка шлюза может ссылаться только на одну учетную запись Azure.
 
-1. Выберите **зарегистрировать новый шлюз на этом компьютере**  > **Далее**. Этот шаг регистрирует установку шлюза в [облачной службе шлюза](#gateway-cloud-service).
+1. Выберите **зарегистрировать новый шлюз на этом компьютере** > **Далее**. Этот шаг регистрирует установку шлюза в [облачной службе шлюза](#gateway-cloud-service).
 
    ![Регистрация шлюза на локальном компьютере](./media/logic-apps-gateway-install/register-gateway-local-computer.png)
 
@@ -140,7 +140,7 @@ ms.locfileid: "73042210"
 
       ![Выберите другой регион для службы шлюза](./media/logic-apps-gateway-install/select-region-gateway-install.png)
 
-1. Проверьте сведения в окончательном окне подтверждения. В этом примере используется та же учетная запись для Logic Apps, Power BI, PowerApps и Microsoft Flow, поэтому шлюз доступен для всех этих служб. Когда будете готовы, нажмите кнопку **Закрыть**.
+1. Проверьте сведения в окончательном окне подтверждения. В этом примере используется та же учетная запись для Logic Apps, Power BI, Power Apps и Power автоматизируя, поэтому шлюз доступен для всех этих служб. Когда будете готовы, нажмите кнопку **Закрыть**.
 
    ![Подтверждение сведений о шлюзе данных](./media/logic-apps-gateway-install/finished-gateway-default-location.png)
 
@@ -179,7 +179,7 @@ ms.locfileid: "73042210"
 
 1. После открытия установщика Войдите в систему, используя ту же учетную запись Azure, которая использовалась для установки шлюза.
 
-1. Выберите **миграция, восстановление или перенаправление существующего шлюза**  > **Далее**, например:
+1. Выберите **миграция, восстановление или перенаправление существующего шлюза** > **Далее**, например:
 
    ![Выберите "Перенос, восстановление или перехват имеющегося шлюза"](./media/logic-apps-gateway-install/migrate-recover-take-over-gateway.png)
 

@@ -10,12 +10,12 @@ ms.reviewer: jmartens
 ms.author: copeters
 author: cody-dkdc
 ms.date: 11/04/2019
-ms.openlocfilehash: 536f3ab506dcbe2b8997f2c1870f25244b6c070f
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
-ms.translationtype: HT
+ms.openlocfilehash: eddfddc994482bcb6e60604703e7f306fee9c32b
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/04/2019
-ms.locfileid: "73489686"
+ms.locfileid: "73574320"
 ---
 # <a name="detect-data-drift-preview-on-models-deployed-to-azure-kubernetes-service-aks"></a>Обнаружение смещения данных (Предварительная версия) в моделях, развернутых в службе Kubernetes Azure (AKS)
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-enterprise-sku.md)]
@@ -37,13 +37,13 @@ ms.locfileid: "73489686"
 + Отправка оповещений о смещении данных по электронной почте.
 
 > [!Note]
-> Эта служба находится в (Предварительная версия) и ограничена параметрами конфигурации. Дополнительные сведения и обновления см. в [документации по API](https://docs.microsoft.com/python/api/azureml-contrib-datadrift/?view=azure-ml-py) и [заметках о выпуске](azure-machine-learning-release-notes.md) . 
+> Эта служба находится в (Предварительная версия) и ограничена параметрами конфигурации. Дополнительные сведения и обновления см. в [документации по API](https://docs.microsoft.com/python/api/azureml-contrib-datadrift/?view=azure-ml-py) и [заметках о выпуске](azure-machine-learning-release-notes.md). 
 
 ### <a name="how-data-drift-is-monitored-in-azure-machine-learning"></a>Как отслеживается смещение данных в Машинное обучение Azure
 
 С помощью Машинное обучение Azure отклонения данных отслеживаются с помощью наборов данных или развертываний. Для отслеживания смещения данных можно указать базовый набор данных — обычно это набор обучающих данных для модели. Второй набор данных — обычно входные данные модели, собранные из развертывания, тестируются на основе базового набора данных. Оба набора данных являются профилированием и входными данными для службы отслеживания смещения данных. Модель машинного обучения обучена для обнаружения различий между двумя наборами данных. Производительность модели преобразуется в коэффициент смещения, который измеряет величину смещения между двумя наборами данных. Используя [интерпретируемость модели](how-to-machine-learning-interpretability.md), вычисляются функции, влияющие на коэффициент смещения. В профиле набора данных сохранится статистическая информация о каждом компоненте. 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Подписка Azure. Если у вас ее нет, создайте бесплатную учетную запись, прежде чем начинать работу. Опробуйте [бесплатную или платную версию машинное обучение Azure](https://aka.ms/AMLFree) уже сегодня.
 
@@ -161,14 +161,13 @@ datadrift.disable_schedule()
 
 Конфигурация средства обнаружения смещения данных доступна в разделе **модели** на вкладке **сведения** в рабочей области в [машинное обучение Azure Studio](https://ml.azure.com).
 
-![Смещение данных в Машинное обучение Azure Studio](media/how-to-monitor-data-drift/drift-config.png)
+[Смещение данных ![Машинное обучение Azure Studio](media/how-to-monitor-data-drift/drift-config.png)](media/how-to-monitor-data-drift/drift-config-expanded.png)
 
 ## <a name="view-results-in-your-azure-machine-learning-studio"></a>Просмотр результатов в Машинное обучение Azure Studio
 
 Чтобы просмотреть результаты в рабочей области в [машинное обучение Azure Studio](https://ml.azure.com), перейдите на страницу модель. На вкладке сведения модели отображается конфигурация смещения данных. Вкладка « **смещение данных** » теперь доступна для визуализации метрик смещения данных. 
 
 [Смещение данных ![Машинное обучение Azure Studio](media/how-to-monitor-data-drift/drift-ui.png)](media/how-to-monitor-data-drift/drift-ui-expanded.png)
-
 
 ## <a name="receiving-drift-alerts"></a>Получение оповещений о смещении
 

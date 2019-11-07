@@ -1,18 +1,18 @@
 ---
 title: Примеры кода, проектов и баз данных для служб Azure Analysis Services | Документация Майкрософт
-description: Примеры кода, проектов и баз данных для служб Azure Analysis Services.
+description: В этой статье описываются ресурсы, посвященные примерам кода, проекта и базы данных для Azure Analysis Services.
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 10/29/2019
+ms.date: 10/30/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 17ce7de58afcf9ef2090371b897ff1bbbef824e3
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 743061c1e32d9ca86e90733dbfd66575d2085dbc
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73146297"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73572310"
 ---
 # <a name="azure-analysis-services-samples"></a>Примеры для служб Azure Analysis Services
 

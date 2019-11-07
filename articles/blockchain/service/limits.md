@@ -2,33 +2,33 @@
 title: Ограничения Azure Блокчейн
 description: Общие сведения о службе и функциональных ограничениях в службе Блокчейн Azure
 services: azure-blockchain
-keywords: блокчейн;
+keywords: ''
 author: PatAltimore
 ms.author: patricka
 ms.date: 05/02/2019
-ms.topic: article
+ms.topic: conceptual
 ms.service: azure-blockchain
 ms.reviewer: janders
 manager: femila
-ms.openlocfilehash: aeed84f19da3843d043eafef9d7444661901c53e
-ms.sourcegitcommit: aaa82f3797d548c324f375b5aad5d54cb03c7288
+ms.openlocfilehash: 20c26db9453220270d17801b74d904384c74cb36
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70147146"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73577223"
 ---
 # <a name="limits-in-azure-blockchain-service"></a>Ограничения в службе Блокчейн Azure
 
 Служба Блокчейн Azure имеет ограниченные функциональные ограничения, такие как количество узлов, которые может иметь член, ограничения консорциума и объемы хранилища.
 
-## <a name="pricing-tier"></a>Ценовая категория
+## <a name="pricing-tier"></a>Ценовой уровень
 
 Максимальные ограничения на транзакции и узлы проверки зависят от того, подготавливают ли вы службу Блокчейн Azure на ценовых категориях уровня "базовый" или "Стандартный".
 
-| Ценовая категория | Максимальное число узлов транзакций | Максимальное количество проверяющих узлов |
+| Ценовой уровень | Максимальное число узлов транзакций | Максимальное количество проверяющих узлов |
 |:---|:---:|:---:|
-| Стандартная | 10 | 1 |
-| Стандарт | 10 | 2 |
+| базовая; | 10 | 1 |
+| Standard | 10 | 2 |
 
 Изменение ценовой категории "базовый" и "Стандартный" после создания элемента не поддерживается.
 
@@ -62,6 +62,6 @@ ms.locfileid: "70147146"
 
     Дополнительные сведения об исправлениях, обновлениях и версиях главной книги, доступных в службе Azure Блокчейн, см. в разделе [Установка исправлений, обновлений и версий](ledger-versions.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Установка исправлений, обновления и версии](ledger-versions.md)

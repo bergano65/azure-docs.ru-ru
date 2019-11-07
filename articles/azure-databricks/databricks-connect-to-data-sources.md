@@ -9,51 +9,51 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 03/21/2018
 ms.author: mamccrea
-ms.openlocfilehash: 9b44db3e8ffc02d211f7f97404f0cdd8d319fe03
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.openlocfilehash: f40edec088172bf7460d99b611e6be80f818ff9c
+ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72597489"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73601887"
 ---
 # <a name="connect-to-data-sources-from-azure-databricks"></a>Подключение к источникам данных из Azure Databricks
 
 Эта статья содержит ссылки на все источники данных, которые можно подключать к Azure Databricks. Статьи по этим ссылкам содержат примеры, которые позволяют извлечь в кластер Azure Databricks данные из источников данных Azure (таких как хранилище больших двоичных объектов Azure, Центры событий Azure, и т. д.) и запустить задания аналитики для этих данных. 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Вам потребуется рабочая область Azure Databricks и кластер Spark. Выполните инструкции из статьи [Начало работы с Azure Databricks](quickstart-create-databricks-workspace-portal.md).
 
 ## <a name="data-sources-for-azure-databricks"></a>Источники данных для Azure Databricks
 
-В следующем списке перечислены источники данных в Azure, которые можно использовать с Azure Databricks. Полный список поддерживаемых в Azure Databricks источников данных можно найти в статье [Spark Data Sources](https://docs.azuredatabricks.net/spark/latest/data-sources/index.html) (Источники данных Spark).
+В следующем списке перечислены источники данных в Azure, которые можно использовать с Azure Databricks. Полный список поддерживаемых в Azure Databricks источников данных можно найти в статье [Spark Data Sources](/azure/databricks/data/data-sources/index.html) (Источники данных Spark).
 
-- [База данных SQL Azure](https://docs.azuredatabricks.net/spark/latest/data-sources/sql-databases.html)
+- [База данных SQL Azure](/azure/databricks/data/data-sources/sql-databases.html)
 
     Это ссылка на API DataFrame для подключения к базам данных SQL с помощью JDBC и сведения об управлении параллелизмом при операциях чтения через интерфейс JDBC. Эта статья содержит подробные примеры использования API Scala, а также краткие примеры для Python и Spark SQL (в конце).
-- [Хранилище озера данных Azure](https://docs.azuredatabricks.net/spark/latest/data-sources/azure/azure-datalake-gen2.html)
+- [Хранилище озера данных Azure](/azure/databricks/data/data-sources/azure/azure-datalake-gen2.html)
 
     Эта ссылка содержит примеры использования субъекта-службы Azure Active Directory для проверки подлинности с помощью Azure Data Lake Storage. В нем также приводятся инструкции по доступу к данным в Azure Data Lake Storage из Azure Databricks.
 
-- [Хранилище BLOB-объектов Azure](https://docs.azuredatabricks.net/spark/latest/data-sources/azure/azure-storage.html)
+- [Хранилище BLOB-объектов Azure](/azure/databricks/data/data-sources/azure/azure-storage.html)
 
     Здесь представлены примеры прямого доступа к хранилищу BLOB-объектов из Azure Databricks с использованием ключа доступа или SAS для заданного контейнера. Также статья содержит информацию о доступе к хранилищу BLOB-объектов из Azure Databricks с помощью RDD API.
 
-- [Azure Cosmos DB](https://docs.azuredatabricks.net/spark/latest/data-sources/azure/cosmosdb-connector.html)
+- [Azure Cosmos DB](/azure/databricks/data/data-sources/azure/cosmosdb-connector.html)
 
     Здесь представлены инструкции по использованию [соединителя Azure Cosmos DB Spark](https://github.com/Azure/azure-cosmosdb-spark) из Databricks Azure для доступа к данным в Azure Cosmos DB.
 
-- [Центры событий Azure](https://docs.azuredatabricks.net/spark/latest/data-sources/azure/eventhubs-connector.html)
+- [Центры событий Azure](/azure/databricks/data/data-sources/azure/eventhubs-connector.html)
 
     Здесь представлены инструкции по использованию [соединителя Spark для Центров событий Azure](https://github.com/Azure/azure-event-hubs-spark) из Databricks Azure для доступа к данным в Центрах событий Azure.
 
-- [Хранилище данных SQL Azure](https://docs.azuredatabricks.net/spark/latest/data-sources/azure/sql-data-warehouse.html)
+- [Хранилище данных Azure SQL](/azure/databricks/data/data-sources/azure/sql-data-warehouse.html)
 
     Здесь представлены инструкции о том, как использовать соединитель хранилища данных SQL Azure для подключения из Azure Databricks.
     
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об источниках, которые Azure Databricks поддерживает для импорта данных, см. в [этой статье](https://docs.azuredatabricks.net/spark/latest/data-sources/index.html#).
+Дополнительные сведения об источниках, которые Azure Databricks поддерживает для импорта данных, см. в [этой статье](/azure/databricks/data/data-sources/index.html#).
 
 

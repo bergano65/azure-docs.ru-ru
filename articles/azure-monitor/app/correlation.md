@@ -8,12 +8,12 @@ author: lgayhardt
 ms.author: lagayhar
 ms.date: 06/07/2019
 ms.reviewer: sergkanz
-ms.openlocfilehash: 4f1b8b116cf2a8411a90946dd5801dd1e541323c
-ms.sourcegitcommit: f7f70c9bd6c2253860e346245d6e2d8a85e8a91b
+ms.openlocfilehash: bcdc6633980ec3684217c8c19b4799befe2af3a3
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73063953"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73576855"
 ---
 # <a name="telemetry-correlation-in-application-insights"></a>Корреляция данных телеметрии в Application Insights
 
@@ -244,14 +244,14 @@ if __name__ == '__main__':
     app.run(host='localhost', port=8080, threaded=True)
 ```
 
-При этом запускается пример `flask` приложения на локальном компьютере, который прослушивает `8080` порта. Чтобы сопоставить контекст трассировки, мы отправим запрос к конечной точке. В этом примере можно использовать команду `curl`.
+При этом запускается пример `flask` приложения на локальном компьютере, который прослушивает `8080`порта. Чтобы сопоставить контекст трассировки, мы отправим запрос к конечной точке. В этом примере можно использовать команду `curl`.
 ```
 curl --header "traceparent: 00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01" localhost:8080
 ```
-При просмотре [формата заголовка контекста трассировки](https://www.w3.org/TR/trace-context/#trace-context-http-headers-format)мы получаем следующие сведения: `version`: `00` 
- `trace-id`: `4bf92f3577b34da6a3ce929d0e0e4736` 
- `parent-id/span-id`: `00f067aa0ba902b7` 
- 0: 1
+При просмотре [формата заголовка контекста трассировки](https://www.w3.org/TR/trace-context/#trace-context-http-headers-format)мы получаем следующие сведения: `version`: `00`
+`trace-id`: `4bf92f3577b34da6a3ce929d0e0e4736`
+`parent-id/span-id`: `00f067aa0ba902b7`
+`trace-flags`: `01`
 
 Если взглянуть на запись запроса, отправленную в Azure Monitor, можно увидеть поля, заполненные данными заголовка трассировки. Эти данные можно найти в разделе журналы (аналитика) в Azure Monitor Application Insights ресурс.
 
@@ -263,7 +263,7 @@ curl --header "traceparent: 00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7
 
 ### <a name="logs-correlation"></a>Регистрация корреляции
 
-Опенценсус Python позволяет выполнять корреляцию журналов путем дополнения записей журнала с ИДЕНТИФИКАТОРом трассировки, ИДЕНТИФИКАТОРом диапазона и флагом выборки. Для этого необходимо установить [интеграцию с ведением журнала](https://pypi.org/project/opencensus-ext-logging/)опенценсус. Следующие атрибуты будут добавлены в `LogRecord`s Python: `traceId`, `spanId` и `traceSampled`. Обратите внимание, что это вступает в силу только для средств ведения журнала, созданных после интеграции.
+Опенценсус Python позволяет выполнять корреляцию журналов путем дополнения записей журнала с ИДЕНТИФИКАТОРом трассировки, ИДЕНТИФИКАТОРом диапазона и флагом выборки. Для этого необходимо установить [интеграцию с ведением журнала](https://pypi.org/project/opencensus-ext-logging/)опенценсус. В Python `LogRecord`s будут добавлены следующие атрибуты: `traceId`, `spanId` и `traceSampled`. Обратите внимание, что это вступает в силу только для средств ведения журнала, созданных после интеграции.
 Ниже приведен пример приложения, которое демонстрирует это.
 
 ```python
@@ -334,25 +334,22 @@ ASP.NET Core 2.0 поддерживает извлечение заголовк
 
 В некоторых случаях может потребоваться настроить способ отображения названий компонентов в [схеме приложений](../../azure-monitor/app/app-map.md). Чтобы сделать это, можно вручную задать `cloud_RoleName` одним из следующих способов.
 
+- Начиная с Application Insights пакета SDK 2.5.0 для Java можно указать имя облачной роли, добавив `<RoleName>` в файл `ApplicationInsights.xml`, например
+
+  ```XML
+  <?xml version="1.0" encoding="utf-8"?>
+  <ApplicationInsights xmlns="http://schemas.microsoft.com/ApplicationInsights/2013/Settings" schemaVersion="2014-05-30">
+     <InstrumentationKey>** Your instrumentation key **</InstrumentationKey>
+     <RoleName>** Your role name **</RoleName>
+     ...
+  </ApplicationInsights>
+  ```
+
 - Если вы используете Spring Boot с начальным набором Application Insights Spring Boot, все, что необходимо изменить, — задать пользовательское имя приложения в файле application.properties.
 
   `spring.application.name=<name-of-app>`
 
   Начальное приложение Spring Boot автоматически назначает для `cloudRoleName` значение, указанное для свойства `spring.application.name`.
-
-- Если вы используете `WebRequestTrackingFilter`, `WebAppNameContextInitializer` автоматически задаст имя приложения. Добавьте следующее в файл конфигурации (ApplicationInsights.xml):
-
-  ```XML
-  <ContextInitializers>
-    <Add type="com.microsoft.applicationinsights.web.extensibility.initializers.WebAppNameContextInitializer" />
-  </ContextInitializers>
-  ```
-
-- Если вы используете класс контекста облака:
-
-  ```Java
-  telemetryClient.getContext().getCloud().setRole("My Component Name");
-  ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
@@ -361,5 +358,5 @@ ASP.NET Core 2.0 поддерживает извлечение заголовк
 - Узнайте об [установке свойства cloud_RoleName](../../azure-monitor/app/app-map.md#set-cloud-role-name) для других пакетов SDK.
 - Подключите все компоненты своей микрослужбы с помощью Application Insights. Ознакомьтесь со сведениями о [поддерживаемых платформах](../../azure-monitor/app/platforms.md).
 - В [этой статье](../../azure-monitor/app/data-model.md) представлена модель данных для Application Insights.
-- Узнайте, как [расширять и фильтровать данные телеметрии](../../azure-monitor/app/api-filtering-sampling.md).
+- Вы можете узнать, как [расширять и фильтровать данные телеметрии](../../azure-monitor/app/api-filtering-sampling.md).
 - Просмотрите [справочник по конфигурации в Application Insights](configuration-with-applicationinsights-config.md).

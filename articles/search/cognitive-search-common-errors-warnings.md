@@ -8,12 +8,12 @@ ms.author: abmotley
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 540e72a4472fce626822f0b22bfac11a23aea205
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
-ms.translationtype: HT
+ms.openlocfilehash: 6ed04c875140f3ecd14eff31829e931efbe84ea2
+ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73466770"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73606650"
 ---
 # <a name="common-errors-and-warnings-of-the-ai-enrichment-pipeline-in-azure-cognitive-search"></a>Распространенные ошибки и предупреждения конвейера обогащения искусственного интеллекта в Azure Когнитивный поиск
 
@@ -224,7 +224,12 @@ ms.locfileid: "73466770"
 
 Это поведение можно переопределить, включив инкрементный ход выполнения и отменив это предупреждение с помощью свойства конфигурации `assumeOrderByHighWatermarkColumn`.
 
-[Дополнительные сведения о Cosmos DB инкрементном выполнении и пользовательских запросах.](https://go.microsoft.com/fwlink/?linkid=2099593)
+Дополнительные сведения см. в разделе [инкрементный прогресс и пользовательские запросы](search-howto-index-cosmosdb.md#IncrementalProgress).
+
+### <a name="truncated-extracted-text-to-x-characters"></a>Усеченный извлеченный текст с символами X
+Индексаторы ограничивают объем текста, который можно извлечь из одного документа. Это ограничение зависит от ценовой категории: 32 000 символов для уровня Free, 64 000 для Basic и 4 000 000 для уровней Standard, Standard S2 и Standard уровня S3. Текст, который был усечен, не будет индексироваться. Чтобы избежать этого предупреждения, попробуйте разбить документы с большим объемом текста на несколько небольших документов. 
+
+Дополнительные сведения см. в разделе [ограничения индексатора](search-limits-quotas-capacity.md#indexer-limits).
 
 ### <a name="could-not-map-output-field-x-to-search-index"></a>Не удалось соотнести выходное поле "X" с индексом поиска
 Сопоставления полей вывода, которые ссылаются на несуществующие или нулевые данные, выдают предупреждения для каждого документа и получают пустое поле индекса. Чтобы решить эту проблему, дважды проверьте исходные пути сопоставления полей вывода для возможных опечаток или задайте значение по умолчанию с помощью [условного навыка](cognitive-search-skill-conditional.md#sample-skill-definition-2-set-a-default-value-for-a-value-that-doesnt-exist).
