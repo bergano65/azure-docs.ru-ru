@@ -1,5 +1,5 @@
 ---
-title: Действие переключения в фабрике данных Azure | Документация Майкрософт
+title: Действие переключения в фабрике данных Azure
 description: Действие Switch позволяет управлять потоком обработки на основе условия.
 services: data-factory
 author: djpmsft
@@ -9,12 +9,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 10/08/2019
-ms.openlocfilehash: 3f60965ad54fb94e7f69b69c161b482f0b953c5a
-ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
+ms.openlocfilehash: 582e0c6b9f6a51f97e8d4990634ceac61c6d9f23
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2019
-ms.locfileid: "72293952"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73679407"
 ---
 # <a name="switch-activity-in-azure-data-factory"></a>Действие переключения в фабрике данных Azure
 
@@ -65,10 +65,10 @@ ms.locfileid: "72293952"
 
 ## <a name="type-properties"></a>Свойства типа
 
-Свойство | Описание | Допустимые значения | Обязательно для заполнения
+Свойство | Description (Описание) | Допустимые значения | Обязательно
 -------- | ----------- | -------------- | --------
-name | Имя действия переключения. | Строка, | Да
-type | Необходимо задать *параметр** | Строка, | Да
+name | Имя действия переключения. | string | Да
+type | Необходимо задать *параметр** | string | Да
 expression | Выражение, результатом вычисления которого должно быть строковое значение | Выражение с типом результата строка | Да
 cases | Набор вариантов, содержащих значение и набор действий, выполняемых, когда значение соответствует вычислению выражения. Необходимо указать хотя бы один вариант. Максимальное ограничение составляет 25 вариантов. | Массив объектов Case | Да
 дефаултактивитиес | Набор действий, выполняемых, если оценка выражения не удовлетворена. | Массив действий | Да
@@ -289,7 +289,7 @@ cases | Набор вариантов, содержащих значение и 
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-В этих командах предполагается, что файлы JSON сохранены в папке: C:\ADF. 
+В этих командах предполагается, что файлы JSON сохранены в папке: К:\АДФ. 
 
 ```powershell
 Connect-AzAccount
@@ -330,11 +330,11 @@ Write-Host "\nActivity 'Error' section:" -foregroundcolor "Yellow"
 $result.Error -join "`r`n"
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с другими действиями потока управления, которые поддерживаются фабрикой данных: 
 
-- [Действие условия If](control-flow-if-condition-activity.md)
+- [действие условия If](control-flow-if-condition-activity.md);
 - [Действие выполнения конвейера](control-flow-execute-pipeline-activity.md)
 - [Действие ForEach](control-flow-for-each-activity.md)
 - [Действие получения метаданных](control-flow-get-metadata-activity.md)

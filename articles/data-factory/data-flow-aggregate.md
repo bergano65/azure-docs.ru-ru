@@ -1,5 +1,5 @@
 ---
-title: Преобразование "Статистическая обработка" в потоке данных сопоставления фабрики данных Azure | Документация Майкрософт
+title: Преобразование "Статистическая обработка" в потоке данных сопоставления фабрики данных Azure
 description: Узнайте, как агрегировать данные в фабрике данных Azure с помощью преобразования «Статистическая обработка потока данных сопоставления».
 author: kromerm
 ms.author: makromer
@@ -7,12 +7,12 @@ ms.reviewer: daperlov
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 10/15/2019
-ms.openlocfilehash: add548a184440c408b8b74e131f2249b4f616ddc
-ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
+ms.openlocfilehash: 3f21367c36ae31aa2115c109933a581bef464baf
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72514824"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73676911"
 ---
 # <a name="aggregate-transformation-in-mapping-data-flow"></a>Преобразование "Статистическая обработка" в потоке данных сопоставления 
 
@@ -68,7 +68,7 @@ ms.locfileid: "72514824"
 
 ### <a name="example"></a>Пример
 
-Следующий пример принимает входящий поток `MoviesYear` и группирует строки по столбцу `year`. Преобразование создает статистический столбец `avgrating`, результатом которого является среднее значение столбца `Rating`. Это преобразование «Статистическая обработка» называется `AvgComedyRatingsByYear`.
+Следующий пример принимает входящий поток `MoviesYear` и группирует строки по столбцам `year`. Преобразование создает статистический столбец `avgrating`, результатом которого является среднее `Rating`столбца. Это преобразование «Статистическая обработка» называется `AvgComedyRatingsByYear`.
 
 В интерфейсе фабрики данных это преобразование выглядит как на изображении ниже:
 
