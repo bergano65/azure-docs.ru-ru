@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.reviewer: jmartens
 author: lobrien
 ms.author: laobri
-ms.date: 05/02/2019
+ms.date: 11/04/2019
 ms.custom: seodec18
-ms.openlocfilehash: d653d1cd719ac59bf6c98bee588c41858052bc61
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 34ff3f9704b9c84a7daddcfd14fb9cd3e990f794
+ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73489842"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73716511"
 ---
 # <a name="export-or-delete-your-machine-learning-service-workspace-data"></a>Экспорт или удаление данных рабочей области Службы машинного обучения 
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -243,17 +243,16 @@ ms.locfileid: "73489842"
 
 1. В списке выберите отдельный черновик конвейера для удаления.
 
-1. В нижней части щелкните **Удалить**.
+1. Нажмите кнопку **Удалить**.
 
-## <a name="unregister-data-in-the-designer"></a>Отмена регистрации данных в конструкторе
+### <a name="delete-datasets-in-the-designer"></a>Удаление наборов данных в конструкторе
+
+Чтобы удалить наборы данных в конструкторе, используйте портал Azure или Обозреватель службы хранилища для перехода к подключенным учетным записям хранения и удаления наборов данных там. При отмене регистрации наборов данных в конструкторе удаляется только точка ссылки в хранилище. 
+
+## <a name="export-data-in-the-designer"></a>Экспорт данных в конструкторе
 
 В конструкторе, где вы создали эксперимент, экспортируйте добавленные данные:
 
 1. Слева выберите **наборы данных**.
 
-
-
     ![Загрузка данных](media/how-to-export-delete-data.md/unregister-dataset.png)
-
-1. В списке выберите отдельный набор данных и нажмите кнопку Отменить регистрацию.
-

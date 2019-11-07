@@ -1,7 +1,7 @@
 ---
 title: Поддержка языков — QnA Maker
 titleSuffix: Azure Cognitive Services
-description: Язык базы знаний влияет на способность службы QnA Maker автоматически извлекать вопросы и ответы из источников, а также на релевантность результатов, предоставляемых службой QnA Maker в ответ на запросы пользователей. Список языков и региональных параметров, а также естественных языков, поддерживаемых QnA Maker для базы знаний. Не следует смешивать языки в одной базе знаний.
+description: Список языков и региональных параметров, а также естественных языков, поддерживаемых QnA Maker для базы знаний. Не следует смешивать языки в одной базе знаний.
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: qna-maker
 ms.topic: reference
 ms.date: 09/24/2019
 ms.author: diberry
-ms.openlocfilehash: f4f7fffdde7d103271fa667bbab11c09ebc54825
-ms.sourcegitcommit: e0a1a9e4a5c92d57deb168580e8aa1306bd94723
+ms.openlocfilehash: 96440bf0e9c26e6f222f3bc94c8fabb0bc8f488d
+ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72285864"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73720986"
 ---
 # <a name="language-support-for-a-qna-maker-resource-and-knowledge-bases"></a>Поддержка языков для QnA Maker ресурсов и баз знаний
 
@@ -29,7 +29,7 @@ ms.locfileid: "72285864"
 
 В следующем списке содержатся языки, поддерживаемые для ресурса QnA Maker. 
 
-|Язык|
+|язык|
 |--|
 |Арабский|
 |Армянский|
@@ -37,7 +37,7 @@ ms.locfileid: "72285864"
 |Баскский|
 |Болгарский|
 |Каталанский|
-|Китайский, упрощенное письмо|
+|Китайский (упрощенное письмо)|
 |Китайский, традиционное письмо|
 |Хорватский|
 |Чешский|
@@ -85,7 +85,7 @@ ms.locfileid: "72285864"
 |Урду|
 |Вьетнамский|
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Выбор языка](../how-to/language-knowledge-base.md)

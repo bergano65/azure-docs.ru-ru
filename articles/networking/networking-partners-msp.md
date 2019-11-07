@@ -5,74 +5,56 @@ services: networking
 author: skishen525
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 07/22/2019
+ms.date: 11/05/2019
 ms.author: sukishen
-ms.openlocfilehash: 680d4c90078131b44e39e3f2b3d526ca53b34a95
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
-ms.translationtype: HT
+ms.openlocfilehash: 089d54a2aae288511a283dfb28b03efa34c33b53
+ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73496754"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73715443"
 ---
 # <a name="about-azure-networking-msp-partners"></a>Сведения о партнерах по сети MSP Azure
 
-Партнерская программа поставщика управляемых услуг сети Azure (MSP) позволяет сетевым службам, MSP, Telco и Systems Integrators (SIs), предоставлять облачные и гибридные сетевые службы в центре по портфелю сетевых продуктов Azure и Обслуживание.
+[Партнерская программа поставщика управляемых услуг сети Azure (MSP)](https://azure.microsoft.com/blog/enhancing-the-customer-experience-with-the-azure-networking-msp-partner-program/) позволяет сетевым службам, MSP, Telco и Systems Integrators (SIs), предоставлять облачные и гибридные сетевые службы в центре по портфелю сетевых продуктов Azure. и службы.
 
 Azure Networking MSP — это специализированный набор поставщиков управляемых служб, которые предназначены для сетевых потребностей и задач в облаке в облаке и гибридных сетях. К управляемым сетевым службам относятся одна или несколько следующих служб: сетевая архитектура, планирование, развертывание, эксплуатация, Обслуживание и оптимизация.
 
 ![РАСШИРЕНИЕМ][0]
 
-Клиенты могут покупать в Azure Marketplace предложения служб, управляемых MSP, или напрямую из MSP. MSP может развертывать сетевые ресурсы Azure и управлять ими в подписках и группах ресурсов клиентов с помощью Azure Лигхсаусе.
+Клиенты могут покупать в Azure Marketplace предложения служб, управляемых MSP, или напрямую из MSP. MSP может развертывать сетевые ресурсы Azure и управлять ими в подписках и группах ресурсов клиентов с помощью [Azure лигхсаусе](https://azure.microsoft.com/services/azure-lighthouse/).
 
 ## <a name="msp"></a>Партнеры по сети Azure для сетей MSP
 
 Используйте ссылки в этом разделе для получения дополнительных сведений об управляемых облачных сетевых службах, предоставляемых партнерами MSP в сети Azure. Если партнер по облачным сетевым службам не указан в разделе ниже, обратитесь к нам с поставщиком. Он может обратиться к нам, отправив сообщение по адресу ManagedVirtualWAN@microsoft.com. 
 
-[Группа ANS UK](https://www.ans.co.uk/)
-
-[Aryaka сети](https://www.aryaka.com/azure-msp-vwan-managed-service-provider-launch-partner-aryaka/)
-
-[BT](https://www.globalservices.bt.com/en/aboutus/news-press/bt-named-one-of-the-first-global-managed-service-providers-for-a-new-microsoft-azure-networking-virtual-wan-services/)
-
-[Colt](https://www.colt.net/why-colt/strategic-alliances/microsoft-partnership/msp/)
-
-[Данные измерения](https://www.dimensiondata.com/)
-
-[Equinix](https://www.equinix.com/)
-
-[InterCloud](https://intercloud.com/partners/microsoft-azure/)
-
-[IIJ](https://www.iij.ad.jp/biz/cloudex/)
-
-Interxion (https://www.interxion.com/products/interconnection/cloud-connect/support-your-cloud-strategy/
-
-[иксреач](https://www.ixreach.com/)
-
-[KINX](https://www.kinx.net/service/cloud/?lang=en)
-
-[Жидкостный телекоммуникации](https://www.liquidtelecom.com/products-and-services/microsoft-azure.html)
-
-[Телекоммуникации маккуарие](https://macquariecloudservices.com/azure-managed-services/)
-
-[Megaport](https://www.megaport.com/services/microsoft-expressroute/)
-
-[омниклаудс](https://omniclouds.com/services/)
-
-[Облачные службы oncore]( https://www.oncore.cloud/services/ue-for-expressroute/)
-
-[орикском]( https://www.orixcom.com/cloud-solutions/)
-
-[Sejong Telecom](https://www.sejongtelecom.net/en/pages/service/cloud_ms)
-
-[Tata связь](https://www.tatacommunications.com/about/our-alliances/microsoft-alliance/)
-
-[тктс](https://www.tatacommunications-ts.com/index.php)
-
-[Tech Махиндра](https://networkservices.techmahindra.com/pages/default.aspx)
-
-[вандис](https://www.vandis.com/microsoft-azure-practice/)
-
-[Бдительным ИТ](https://vigilant.it/manage-cloud-service/)
+| **РАСШИРЕНИЕМ** | **Службы преобразования облачной сети** | **Управляемый ExpressRoute** | **Управляемая Виртуальная глобальная сеть** | **Управляемый брандмауэр** |**Вычисление границ управляемой сети** |
+| ---| ---| ---| ---| ---| ---|
+|[амдокс](https://www.amdocs.com/)|||||Да|
+|[Группа ANS UK](https://www.ans.co.uk/)|Да|Да||||
+|[Aryaka сети](https://www.aryaka.com/azure-msp-vwan-managed-service-provider-launch-partner-aryaka/)|Да |Да |Да | | |
+|[BT](https://www.globalservices.bt.com/en/solutions/products/cloud-connect-azure)|Да|Да|Да|||
+|[Colt](https://www.colt.net/why-colt/strategic-alliances/microsoft-partnership/msp/)|Да|||||
+|[Данные измерения](https://www.dimensiondata.com/)|Да|||||
+|[Equinix](https://www.equinix.com/)|Да|Да||||
+|[IIJ](https://www.iij.ad.jp/biz/cloudex/)|Да|Да||||
+|[Infosys](https://www.infosys.com/services/microsoft-cloud-business/pages/index.aspx)|Да||||Да|
+|[InterCloud](https://intercloud.com/partners/microsoft-azure/)|Да|Да||||
+|[Interxion](https://www.interxion.com/products/interconnection/cloud-connect/support-your-cloud-strategy/)|Да|Да||||
+|[IX Reach](https://www.ixreach.com/services/sdn-cloud-connect/)|Да|Да||||
+|[KINX](https://www.kinx.net/service/cloud/?lang=en)|Да|||||
+|[Жидкостный телекоммуникации](https://liquidcloud.africa/azure-networking)|Да|Да||||
+|[Телекоммуникации маккуарие](https://macquariecloudservices.com/azure-managed-services/)|Да|Да|Да|||
+|[Megaport](https://www.megaport.com/services/microsoft-expressroute/)|Да|Да||||
+|[омниклаудс](https://omniclouds.com/services/)|Да|Да||||
+|[Облачные службы oncore]( https://www.oncore.cloud/services/ue-for-expressroute/)|Да|Да||||
+|[орикском]( https://www.orixcom.com/cloud-solutions/)|Да|Да||||
+|[Sejong Telecom](https://www.sejongtelecom.net/en/pages/service/cloud_ms)|Да|Да||||
+|[Tata связь](https://www.tatacommunications.com/about/our-alliances/microsoft-alliance/)|Да|Да||||
+|[тктс](https://www.tatacommunications-ts.com/index.php)|Да|Да|Да|||
+|[Tech Махиндра](https://networkservices.techmahindra.com/pages/default.aspx)|Да||||Да|
+|[вандис](https://www.vandis.com/microsoft-azure-practice/)|Да|Да|Да|||
+|[Бдительным ИТ](https://vigilant.it/manage-cloud-service/)|Да|Да||||
 
 ## <a name="expressroute"></a>Партнеры ExpressRoute
 

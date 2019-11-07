@@ -8,12 +8,12 @@ ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 10/16/2019
 ms.author: raynew
-ms.openlocfilehash: 18032250bc5c321d638ad46204738f49f1a0c744
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 90b1250009e6efdb2f8cb9351fe270c8324cc77a
+ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73480133"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73715480"
 ---
 # <a name="azure-migrate-support-matrix"></a>Матрица поддержки службы "миграция Azure"
 
@@ -34,20 +34,30 @@ ms.locfileid: "73480133"
 **Развертывание** | **Дополнительные сведения** 
 --- | --- 
 **Обнаружение для конкретного приложения** | Вы можете обнаружить приложения, роли и функции, работающие на виртуальных машинах VMware. В настоящее время эта функция ограничена только обнаружением. Оценка в настоящее время находится на уровне компьютера. Мы еще не предлагаем оценку приложения, роли или функции. 
-**Оценка в локальной среде** | Оцените локальные рабочие нагрузки и данные, работающие на виртуальных машинах VMware и виртуальных машинах Hyper-V. Оцените использование Azure Migrate Server для оценки и Помощник по миграции данных (Майкрософт) (DMA), а также средств сторонних производителей, включающих Cloudamize, службу технической сертификации и Turbonomic Server.
-**Локальная миграция в Azure** | Перенос рабочих нагрузок и данных, работающих на физических серверах, виртуальных машинах VMware, виртуальных машинах Hyper-V, физических серверах и облачных виртуальных машинах в Azure. Выполните миграцию с помощью средства Azure Migrate Server для оценки и Azure Database Migration Service (DMS), а также с помощью сторонних средств, включающих карбоните и Коренттеч.
+**Оценка в локальной среде** | Оцените локальные рабочие нагрузки и данные, работающие на виртуальных машинах VMware, виртуальных машинах Hyper-V и физических серверах. Оцените использование Azure Migrate Server для оценки и Помощник по миграции данных (Майкрософт) (DMA), а также других средств и предложений ISV.
+**Локальная миграция в Azure** | Перенос рабочих нагрузок и данных, работающих на физических серверах, виртуальных машинах VMware, виртуальных машинах Hyper-V, физических серверах и облачных виртуальных машинах в Azure. Миграция с помощью Azure Migrate Server Оценка и Azure Database Migration Service (DMS), а также других средств и предложений ISV.
 
-Ниже приведены сводные сведения о поддержке конкретных инструментов.
 
-**Средство** | **Оценка и миграция** | **Дополнительные сведения**
+## <a name="supported-tools"></a>Поддерживаемые средства
+
+Сведения о поддержке конкретных инструментов приведены в таблице.
+
+**Средство** | **Систему** | **Миграция** 
 --- | --- | ---
-Оценка сервера службы "Миграция Azure" | Оценка | Испытайте оценку сервера для [Hyper-V](tutorial-prepare-hyper-v.md) и [VMware](tutorial-prepare-vmware.md).
-Cloudamize | Оценка | [Дополнительные сведения](https://www.cloudamize.com/platform#tab-0)
-CorentTech | Оценка | [Дополнительные сведения](https://www.corenttech.com/)
-Turbonomic | Оценка | [Дополнительные сведения](https://turbonomic.com/solutions/technologies/azure-cloud/)
-Миграция сервера службы "Миграция Azure" | Миграция | Попробуйте выполнить миграцию сервера для [Hyper-V](tutorial-migrate-hyper-v.md) и [VMware](tutorial-migrate-vmware.md).
-Carbonite | Миграция | [Дополнительные сведения](https://www.carbonite.com/data-protection-resources/resource/Datasheet/carbonite-migrate-for-microsoft-azure)
-CorentTech | Миграция | [Дополнительные сведения](https://www.corenttech.com/)
+Оценка сервера службы "Миграция Azure" | Оцените [виртуальные машины VMware](tutorial-prepare-vmware.md), [виртуальные машины Hyper-V](tutorial-prepare-hyper-v.md)и [физические серверы](tutorial-prepare-physical.md). |  Недоступно (НД)
+Миграция сервера службы "Миграция Azure" | Нет данных | Перенос [виртуальных машин VMware](tutorial-migrate-vmware.md), [виртуальных машин Hyper-V](tutorial-migrate-hyper-v.md)и [физических серверов](tutorial-migrate-physical-virtual-machines.md).
+[Carbonite](https://www.carbonite.com/data-protection-resources/resource/Datasheet/carbonite-migrate-for-microsoft-azure) | Нет данных | Перенесите виртуальные машины VMware, виртуальные машины Hyper-V, физические серверы, рабочие нагрузки из общедоступных облаков. 
+[Cloudamize](https://www.cloudamize.com/platform#tab-0);| Оцените виртуальные машины VMware, виртуальные машины Hyper-V, физические серверы, рабочие нагрузки общедоступных облаков. | Нет данных
+[Corent Technology](https://go.microsoft.com/fwlink/?linkid=2084928) | Оцените и перенесите виртуальные машины VMware, виртуальные машины Hyper-V, физические серверы, рабочие нагрузки общедоступных облаков. |  Перенесите виртуальные машины VMware, виртуальные машины Hyper-V, физические серверы, рабочие нагрузки из общедоступных облаков.
+[Устройство 42](https://go.microsoft.com/fwlink/?linkid=2097158) | Оцените виртуальные машины VMware, виртуальные машины Hyper-V, физические серверы, рабочие нагрузки общедоступных облаков.| Нет данных
+[DMA](https://docs.microsoft.com/sql/dma/dma-overview?view=sql-server-2017) | Оценка локальных SQL Server баз данных. | Нет данных
+[DMS](https://docs.microsoft.com/azure/dms/dms-overview) | Миграция SQL Server, Oracle, MySQL, PostgreSQL, MongoDB. | Нет данных
+[лакесиде](https://go.microsoft.com/fwlink/?linkid=2104908) | Оценка инфраструктуры виртуальных рабочих столов (VDI) | Нет данных
+[Movere](https://go.microsoft.com/fwlink/?linkid=2109528) | Оценка виртуальных машин VMWare, виртуальных машин Hyper-V, виртуальных машин Xen, физических компьютеров, рабочих станций (включая VDI), рабочих нагрузок в общедоступном облаке | Нет данных
+[раккваре](https://go.microsoft.com/fwlink/?linkid=2102735) | Нет данных | Перенос виртуальных машин VMWare, виртуальных машин Hyper-V, виртуальных машин Xen, виртуальных машин KVM, физических компьютеров, рабочих нагрузок в общедоступном облаке 
+[Turbonomic](https://go.microsoft.com/fwlink/?linkid=2094295)  | Оцените виртуальные машины VMware, виртуальные машины Hyper-V, физические серверы, рабочие нагрузки общедоступных облаков. | Нет данных
+[UnifyCloud](https://go.microsoft.com/fwlink/?linkid=2097195) | Оцените виртуальные машины VMware, виртуальные машины Hyper-V, физические серверы, рабочие нагрузки общедоступных облачных служб и базы данных SQL Server. | Нет данных
+[Webapp Помощник по миграции](https://appmigration.microsoft.com/) | Оценка веб-приложений | Перенос веб-приложений.
 
 
 ## <a name="azure-migrate-projects"></a>Проекты службы "миграция Azure"

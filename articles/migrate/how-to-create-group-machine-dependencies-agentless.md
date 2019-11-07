@@ -6,14 +6,17 @@ ms.service: azure-migrate
 ms.topic: article
 ms.date: 10/23/2019
 ms.author: hamusa
-ms.openlocfilehash: d646187627d74810a846d7126562e2e796c5c9f7
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: e9f9e812d5463f0a503b100780f9b988e43f748d
+ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73512812"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73720265"
 ---
 # <a name="set-up-agentless-dependency-visualization-for-assessment"></a>Настройка визуализации зависимостей без агента для оценки
+
+> [!NOTE]
+> Если вы еще не видите эту функцию на портале службы "миграция Azure", подождите. Он будет отображаться на следующей неделе.
 
 В этой статье описывается, как настроить сопоставление зависимостей без агента в службе "миграция Azure": Оценка сервера. В настоящее время эта возможность доступна в предварительной версии для компьютеров VMware, обнаруженных с помощью устройства миграции Azure. 
 

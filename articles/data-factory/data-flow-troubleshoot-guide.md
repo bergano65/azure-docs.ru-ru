@@ -1,5 +1,5 @@
 ---
-title: Устранение неполадок с потоками данных фабрики данных Azure | Документация Майкрософт
+title: Устранение неполадок в потоках данных фабрики данных Azure
 description: Узнайте, как устранять неполадки потока данных в фабрике данных Azure.
 services: data-factory
 author: kromerm
@@ -7,12 +7,12 @@ ms.service: data-factory
 ms.topic: troubleshooting
 ms.date: 10/08/2019
 ms.author: makromer
-ms.openlocfilehash: 53c38af2208be6bb7cdb794ad0403456613f2df6
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 1b2309ec71cb3d43f4e5a39b80db593ab201c614
+ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73486183"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73721343"
 ---
 # <a name="troubleshoot-azure-data-factory-data-flows"></a>Устранение неполадок в потоках данных фабрики данных Azure
 
@@ -75,6 +75,15 @@ ms.locfileid: "73486183"
 - **Причина**: поле из потока данных сопоставляется со столбцом в базе данных SQL недостаточно для хранения значения, в результате чего драйвер SQL выдает эту ошибку.
 
 - **Решение**. можно уменьшить длину данных для строковых столбцов с помощью ```left()``` в производном столбце или реализовать [шаблон "строка ошибки".](how-to-data-flow-error-rows.md)
+
+### <a name="error-message-since-spark-23-the-queries-from-raw-jsoncsv-files-are-disallowed-when-the-referenced-columns-only-include-the-internal-corrupt-record-column"></a>Сообщение об ошибке: поскольку Spark 2,3, запросы из необработанных файлов JSON/CSV запрещены, если ссылочные столбцы содержат только внутренний поврежденный столбец записи. 
+
+- **Симптомы**: ошибка чтения из источника JSON
+
+- **Причина**. при чтении из источника JSON с одним документом во многих вложенных строках в ADF-файле с помощью Spark не удается определить, где начинается новый документ и заканчивается предыдущий документ.
+
+- **Решение**. в преобразовании «источник», использующем набор данных JSON, разверните узел «Параметры JSON» и включите «один документ».
+
 
 ## <a name="general-troubleshooting-guidance"></a>Общие рекомендации по устранению неполадок
 

@@ -5,17 +5,17 @@ services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 10/22/2019
+ms.date: 11/04/2019
 ms.topic: conceptual
 ms.service: cost-management
 manager: aparnag
 ms.custom: secdec18
-ms.openlocfilehash: 6d59964013a2631430ecd7e46d1ce0f6be60a05f
-ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
+ms.openlocfilehash: 611b3e608d9b0de9423c861ec70e9fc2e7ad67d5
+ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72802030"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73720750"
 ---
 # <a name="get-started-with-azure-cost-management-for-partners"></a>Приступая к работе со службой "Управление затратами Azure" для партнеров
 
@@ -37,7 +37,7 @@ ms.locfileid: "72802030"
 
 Все функциональные возможности, доступные в службе "Управление затратами Azure", также доступны с помощью интерфейсов API. Используйте API для автоматизации задач управления затратами.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Служба управления затратами Azure требует доступа на чтение к учетной записи выставления счетов или к подписке. Доступ может предоставляться на любом уровне выше ресурсов, от учетной записи выставления счетов или группы управления до отдельных групп ресурсов, в которых вы управляете приложениями. Дополнительные сведения о включении и назначении доступа к службе "Управление затратами Azure" для счета выставления счетов см. в разделе [назначение ролей и разрешений пользователей](/partner-center/permissions-overview). Роли **глобального администратора** и **агента администратора** могут управлять затратами на выставление счетов.
 
@@ -84,11 +84,11 @@ ms.locfileid: "72802030"
 
 - Конкретный отфильтрованный счет
 - Клиент
-- Subscription
-- группа ресурсов.
+- Подписка
+- Группа ресурсов
 - Ресурс
 - Служба Azure
-- Метрика
+- средство измерения.
 - ResellerMPNID
 
 ### <a name="customer-scope"></a>Область клиента
@@ -139,7 +139,7 @@ ms.locfileid: "72802030"
 ![Выберите клиента подписки Azure](./media/get-started-partners/subscriptions-select-customer.png)
 
 Щелкните **анализ затрат** и начните просмотр затрат.
-Анализ затрат, бюджеты и оповещения теперь доступны для областей подписки и группы ресурсов RBAC при затратах на основе ставок с оплатой по мере использования.
+Анализ затрат, бюджеты и оповещения доступны для областей подписки и группы ресурсов RBAC при затратах на основе ставок с оплатой по мере использования.
 
 ![Просмотр анализа затрат как клиента ](./media/get-started-partners/customer-tenant-view-cost-analysis.png)
 
@@ -147,22 +147,23 @@ ms.locfileid: "72802030"
 
 ## <a name="analyze-costs-in-cost-analysis"></a>Анализ затрат в анализе затрат
 
-Партнеры могут исследовать и анализировать затраты в анализе затрат по клиентам для конкретного клиента или для счета. Функции Filter и Group By позволяют анализировать затраты по нескольким полям, в том числе:
+Партнеры могут исследовать и анализировать затраты в анализе затрат по клиентам для конкретного клиента или для счета.
 
-| **Поле** | **Описание** |
+Следующие поля находятся в файлах сведений об использовании и API-интерфейсах управления затратами. Для анализа затрат по нескольким полям можно использовать функции Filter и Group By в анализе затрат. Полный список полей см. в разделе [поля данных управления затратами](understand-cost-mgt-data.md#cost-management-data-fields).
+
+| Имя поля | Description (Описание) |
 | --- | --- |
-| партнертенантид | Идентификатор клиента Azure Active Directory партнера |
-| PartnerName | Имя клиента Azure Active Directory партнера |
-| кустомертенантид | Идентификатор клиента Azure Active Directory подписки клиента. |
-| CustomerName | Имя клиента Azure Active Directory, содержащего подписку клиента |
-| ResellerMPNID | MPNID для торгового посредника, связанного с подпиской |
-| Идентификатор подписки | Уникальный идентификатор, созданный корпорацией Майкрософт для подписки Azure |
-| subscriptionName | Имя подписки Azure |
-| биллингпрофилеид | Идентификатор профиля выставления счетов. Она группирует затраты между счетами в одной валюте выставления счетов среди клиентов.
-| инвоицеид | Идентификатор счета в счете, где отображается конкретная транзакция |
-| resourceGroup | Имя группы ресурсов Azure. Используется для управления жизненным циклом ресурсов. |
-| партнереарнедкредитрате | Скидка, применяемая при наличии тарифного кредита (PEC), основанного на доступе партнерского администратора. |
-| партнереарнедкредитапплиед | Указывает, был ли применен получившийся кредит партнера. |
+| кустомертенантид | Идентификатор клиента Azure Active Directory подписки клиента&#39;. |
+| CustomerName | Имя клиента Azure Active Directory для подписки клиента&#39;. |
+| кустомертенантдомаиннаме | Доменное имя клиента Azure Active Directory клиентской&#39;подписки. |
+| партнертенантид | Идентификатор клиента Azure Active Directory партнера&#39;. |
+| PartnerName | Имя клиента Azure Active Directory партнера. |
+| ResellerMPNID | MPNID для торгового посредника, связанного с подпиской. |
+| костинусд | Приблизительная расширенные затратыная или смешенная стоимость до уплаты налога в долл. США. |
+| пайгкостинбиллингкурренци | Показывает затраты, если цены указаны в розничных ценах. Показывает цены оплаты по мере использования в валюте выставления счетов. Доступно только в областях RBAC. |
+| пайгкостинусд | Показывает затраты, если цены указаны в розничных ценах. Показывает цены с оплатой по мере использования в USD. Доступно только в областях RBAC. |
+| партнереарнедкредитрате | Процент скидки, применяемой, если имеется Партнерский кредит (PEC), основанный на доступе партнерского администратора. |
+| партнереарнедкредитапплиед | Указывает, применен ли получившийся кредит от партнера. |
 
 В представлении « [анализ затрат](quick-acm-cost-analysis.md) » можно также [сохранять представления](quick-acm-cost-analysis.md#saving-and-sharing-customized-views) и экспортировать данные в [CSV-и PNG-файлы](quick-acm-cost-analysis.md#automation-and-offline-analysis).
 
@@ -203,36 +204,67 @@ ms.locfileid: "72802030"
 #### <a name="to-get-a-list-of-billing-accounts"></a>Получение списка счетов выставления счетов
 
 ```
-armclient get "providers/Microsoft.billing/billingAccounts?api-version=2019-10-01-preview"
+GET https://management.azure.com/providers/Microsoft.Billing/billingAccounts?api-version=2019-10-01-preview
 ```
 
 #### <a name="to-get-a-list-of-customers"></a>Получение списка клиентов
 
 ```
-armclient get "providers/Microsoft.billing/billingAccounts/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX:XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXXXXXXX_2019-05-31/customers?api-version=2019-10-01-preview"
+GET https://management.azure.com/providers/Microsoft.Billing/billingAccounts/{billingAccountName}/customers?api-version=2019-10-01-preview
 ```
+
 #### <a name="to-get-a-list-of-subscriptions"></a>Получение списка подписок
 
 ```
-armclient get "/providers/Microsoft.Billing/billingAccounts/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX:XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXXXXXXX_2019-05-31/customers/YYYYYYYY-YYYY-YYYY-YYYY-YYYYYYYYYYYY/billingSubscriptions?api-version=2019-10-01-preview"
+GET https://management.azure.com/providers/Microsoft.Billing/billingAccounts/{billingAccountName}/billingSubscriptions?api-version=2019-10-01-preview
 ```
+
+#### <a name="to-get-a-list-of-invoices-for-a-period-of-time"></a>Получение списка счетов за определенный период времени
+
+```
+GET https://management.azure.com/providers/Microsoft.Billing/billingAccounts/{billingAccountName}/invoices?api-version=2019-10-01-preview&periodStartDate={periodStartDate}&periodEndDate={periodEndDate}
+```
+
+Вызов API возвращает массив счетов, которые имеют элементы, аналогичные следующему коду JSON.
+
+```
+    {
+      "id": "/providers/Microsoft.Billing/billingAccounts/{billingAccountID}/billingProfiles/{BillingProfileID}/invoices/{InvoiceID}",
+      "name": "{InvoiceID}",
+      "properties": {
+        "amountDue": {
+          "currency": "USD",
+          "value": x.xx
+        },
+        ...
+    }
+```
+
+Используйте предыдущее возвращенное значение поля идентификатора и замените его в следующем примере в качестве области для запроса сведений об использовании.
+
+```
+GET https://management.azure.com/{id}/providers/Microsoft.Consumption/UsageDetails?api-version=2019-10-01
+```
+
+В этом примере возвращаются записи об использовании, связанные с конкретным счетом.
+
 
 #### <a name="to-get-the-policy-for-customers-to-view-costs"></a>Получение политики для клиентов для просмотра затрат
 
 ```
-armclient get "providers/Microsoft.Billing/billingAccounts/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX:XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXXXXXXX_2019-05-31/customers/YYYYYYYY-YYYY-YYYY-YYYY-YYYYYYYYYYYY/policies/default?api-version=2019-10-01-preview"
+GET https://management.azure.com/providers/Microsoft.Billing/billingAccounts/{billingAccountName}/customers/{customerID}/policies/default?api-version=2019-10-01-preview
 ```
 
 #### <a name="to-set-the-policy-for-customers-to-view-costs"></a>Настройка политики для клиентов для просмотра затрат
 
 ```
-armclient put "providers/Microsoft.Billing/billingAccounts/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX:XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXXXXXXX_2019-05-31/customers/YYYYYYYY-YYYY-YYYY-YYYY-YYYYYYYYYYYY/policies/default?api-version=2019-10-01-preview" @policy.json
+PUT https://management.azure.com/providers/Microsoft.Billing/billingAccounts/{billingAccountName}/customers/{customerID}/policies/default?api-version=2019-10-01-preview
 ```
 
 #### <a name="to-get-azure-service-usage-for-a-billing-account"></a>Получение сведений об использовании службы Azure для учетной записи выставления счетов
 
 ```
-armclient GET /providers/Microsoft.Billing/BillingAccounts/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX:XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXXXXXXX_2019-05-31/providers/Microsoft.Consumption/usageDetails?api-version=2019-10-01
+GET https://management.azure.com/providers/Microsoft.Billing/BillingAccounts/{billingAccountName}/providers/Microsoft.Consumption/usageDetails?api-version=2019-10-01
 ```
 
 #### <a name="to-download-a-customers-azure-service-usage"></a>Загрузка службы Azure, используемой клиентом
@@ -240,7 +272,7 @@ armclient GET /providers/Microsoft.Billing/BillingAccounts/XXXXXXXX-XXXX-XXXX-XX
 Следующий вызов get является асинхронной операцией.
 
 ```
-armclient get providers/Microsoft.Billing/billingAccounts/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX:XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXXXXXXX_2019-05-31/customers/YYYYYYYY-YYYY-YYYY-YYYY-YYYYYYYYYYYY/providers/Microsoft.Consumption/usageDetails/download?api-version=2019-10-01 -verbose
+GET https://management.azure.com/Microsoft.Billing/billingAccounts/{billingAccountName}/customers/{customerID}/providers/Microsoft.Consumption/usageDetails/download?api-version=2019-10-01 -verbose
 ```
 
 Вызовите `Location` URI, возвращенный в ответе, чтобы проверить состояние операции. По *завершении*состояния свойство `downloadUrl` содержит ссылку, которую можно использовать для загрузки созданного отчета.
@@ -251,50 +283,40 @@ armclient get providers/Microsoft.Billing/billingAccounts/XXXXXXXX-XXXX-XXXX-XXX
 Сначала используйте следующую запись.
 
 ```
-armclient post "/providers/Microsoft.Billing/BillingAccounts/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX:XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXXXXXXX_2019-05-31/billingProfiles/YYYY-YYYY-YYY-YYYY-YYY/pricesheet/default/download?api-version=2019-10-01-preview&format=csv" -verbose
+POST https://management.azure.com/providers/Microsoft.Billing/BillingAccounts/{billingAccountName}/billingProfiles/{billingProfileID}/pricesheet/default/download?api-version=2019-10-01-preview&format=csv" -verbose
 ```
 
-Затем вызовите значение свойства асинхронной операции. Пример.
+Затем вызовите значение свойства асинхронной операции. Например:
 
 ```
-armclient get "providers/Microsoft.Billing/billingAccounts/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX:XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXXXXXXX_2019-05-31/billingProfiles/YYYY-YYYY-YYY-YYYY-YYY/pricesheetDownloadOperations/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX?sessiontoken=0:11186&api-version=2019-10-01-preview"
+GET https://management.azure.com/providers/Microsoft.Billing/billingAccounts/{billingAccountName}/billingProfiles/{billingProfileID}/pricesheetDownloadOperations/{operation}?sessiontoken=0:11186&api-version=2019-10-01-preview
 ```
 Предыдущий вызов get возвращает ссылку для скачивания, содержащую прайс лист.
 
-#### <a name="to-get-customer-costs-for-the-last-two-months-sorted-by-month"></a>Для получения затрат на клиента за последние два месяца, отсортированные по месяцам
+
+#### <a name="to-get-aggregated-costs"></a>Получение совокупных затрат
 
 ```
-armclient post providers/microsoft.billing/billingAccounts/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX:XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXXXXXXX_2019-05-31//providers/microsoft.costmanagement/query?api-version=2019-10-01 @CCMQueryCustomer.json
-```
-
-#### <a name="to-get-azure-subscription-costs-for-the-last-two-months-sorted-by-month"></a>Получение затрат на подписку Azure за последние два месяца, отсортированные по месяцам
-
-```
-armclient post providers/microsoft.billing/billingAccounts/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX:XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXXXXXXX_2019-05-31//providers/microsoft.costmanagement/query?api-version=2019-10-01 @CCMQuerySubscription.json
-```
-
-#### <a name="to-get-daily-costs-for-the-current-month"></a>Для получения ежедневных затрат за текущий месяц
-
-```
-armclient post providers/microsoft.billing/billingAccounts/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX:XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXXXXXXX_2019-05-31//providers/microsoft.costmanagement/query?api-version=2019-10-01 @CCMQueryDaily.json
+POST https://management.azure.com/providers/microsoft.billing/billingAccounts/{billingAccountName}/providers/microsoft.costmanagement/query?api-version=2019-10-01
 ```
 
 #### <a name="create-a-budget-for-a-partner"></a>Создание бюджета для партнера
 
 ```
-armclient put providers/Microsoft.Billing/billingAccounts/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX:XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXXXXXXX_2019-05-31/providers/Microsoft.CostManagement/budgets/partnerworkshopbudget?api-version=2019-10-01 @budgetCreate.json
+PUT https://management.azure.com/providers/Microsoft.Billing/billingAccounts/{billingAccountName}/providers/Microsoft.CostManagement/budgets/partnerworkshopbudget?api-version=2019-10-01
 ```
-
 
 #### <a name="create-a-budget-for-a-customer"></a>Создание бюджета для клиента
 
 ```
-armclient put providers/Microsoft.Billing/billingAccounts/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX:XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXXXXXXX_2019-05-31/customers/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/providers/Microsoft.Consumption/budgets/test-partner-demo?api-version=2019-10-01 @budgetCreate.json
+PUT https://management.azure.com/providers/Microsoft.Billing/billingAccounts/{billingAccountName}/customers/{customerID}/providers/Microsoft.Consumption/budgets/{budgetName}?api-version=2019-10-01
 ```
+
 #### <a name="delete-a-budget"></a>Удаление бюджета
 
 ```
-armclient delete providers/Microsoft.Billing/billingAccounts/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX:XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXXXXXXX_2019-05-31/providers/Microsoft.CostManagement/budgets/partnerworkshopbudget?api-version=2019-10-01
+PUT
+https://management.azure.com/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/providers/Microsoft.CostManagement/budgets/{budgetName}?api-version=2019-10-01
 ```
 
 

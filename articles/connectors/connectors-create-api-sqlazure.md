@@ -10,13 +10,13 @@ ms.reviewer: klam; LADocs
 manager: carmonm
 ms.topic: conceptual
 tags: connectors
-ms.date: 10/14/2019
-ms.openlocfilehash: 880ae4b661d247889815fc5b9ad08a759fe0aa5b
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.date: 11/06/2019
+ms.openlocfilehash: ed30ba305ec990256625052cb92f1b7524c826e2
+ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73161638"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73720956"
 ---
 # <a name="automate-workflows-for-sql-server-or-azure-sql-database-by-using-azure-logic-apps"></a>Автоматизация рабочих процессов для SQL Server или базы данных SQL Azure с помощью Azure Logic Apps
 
@@ -26,7 +26,7 @@ ms.locfileid: "73161638"
 
 Если вы не работали с приложениями логики, см. руководства по [Azure Logic Apps](../logic-apps/logic-apps-overview.md) и [созданию первого приложения логики](../logic-apps/quickstart-create-first-logic-app-workflow.md). Технические сведения, ограничения и известные проблемы, связанные с соединителем, см. на [странице справочника по соединителю SQL Server](https://docs.microsoft.com/connectors/sql/).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас нет ее, вы можете [зарегистрироваться для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
@@ -45,6 +45,9 @@ ms.locfileid: "73161638"
     `Server=tcp:{your-server-name}.database.windows.net,1433;Initial Catalog={your-database-name};Persist Security Info=False;User ID={your-user-name};Password={your-password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;`
 
 * Прежде чем можно будет подключить приложения логики к локальным системам, например SQL Server, необходимо [настроить локальный шлюз данных](../logic-apps/logic-apps-gateway-install.md). Шлюз можно выбрать при создании SQL-подключения для приложения логики.
+
+  > [!IMPORTANT]
+  > Чтобы использовать проверку подлинности Windows с этим соединителем, необходимо использовать локальный шлюз данных. Этот соединитель не поддерживает проверку подлинности Windows для приложения логики в [среде службы интеграции (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md).
 
 * Приложения логики с возможностью доступа к базе данных SQL. Чтобы запустить приложение логики с помощью триггера SQL, требуется [пустое приложение логики](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 

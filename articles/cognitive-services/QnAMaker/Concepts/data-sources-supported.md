@@ -1,7 +1,7 @@
 ---
 title: Поддерживаемые источники данных — QnA Maker
 titleSuffix: Azure Cognitive Services
-description: QnA Maker автоматически извлекает пары "вопрос — ответ" из слабоструктурированного содержимого, такого как страницы вопросов и ответов, руководства по продукции, рекомендации, документы поддержки и политики, которые хранятся в виде веб-страниц, PDF-файлов или файлов документации MS Word. Также содержимое можно добавлять в базу знаний из структурированных файлов с содержимым вопросов и ответов (QnA).
+description: QnA Maker автоматически извлекает пары вопросов и ответов, которые хранятся как веб-страницы, PDF-файлы или файлы Doc MS Word или структурированные файлы содержимого QnA.
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 09/25/2019
 ms.author: diberry
-ms.openlocfilehash: 39746032fd012de8e0868c3bc7f810cd8e780b68
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.openlocfilehash: a1fcc1bec5db3ad64dc045cf5e1a449fce808132
+ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73176376"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73721207"
 ---
 # <a name="data-sources-for-qna-maker-content"></a>Источники данных для содержимого QnA Maker
 
@@ -190,7 +190,7 @@ Answer2
 
 Ниже приведен список форматов Markdown, которые можно использовать в QnA Maker. 
 
-|Цель|Формат|Пример Markdown|Отрисовка<br>как отображается в чате чата|
+|Назначение|Формат|Пример Markdown|Отрисовка<br>как отображается в чате чата|
 |--|--|--|--|
 Новая строка из двух предложений.|`\n\n`|`How can I create a bot with \n\n QnA Maker?`|![форматировать новую строку между двумя предложениями](../media/qnamaker-concepts-datasources/format-newline.png)|
 |Заголовки от H1 до H6, количество `#` указывает, какой заголовок. 1 `#` является H1.|`\n# text \n## text \n### text \n####text \n#####text` |`## Creating a bot \n ...text.... \n### Important news\n ...text... \n### Related Information\n ....text...`<br><br>`\n# my h1 \n## my h2\n### my h3 \n#### my h4 \n##### my h5`|![формат с заголовками Markdown](../media/qnamaker-concepts-datasources/format-headers.png)<br>![формат с заголовками Markdown от H1 до H5](../media/qnamaker-concepts-datasources/format-h1-h5.png)|
@@ -213,8 +213,8 @@ Answer2
 
 | Сохранить HTML  | Представление в запросе API  | Представление в КБ |
 |-----------|---------|-------------------------|
-| ДА | \&lt; br\&gt; | &gt; &lt;br |
-| ДА | \&lt; H3\&gt; Header\&lt;/H3\&gt; | &lt;заголовок&gt;H3&lt;/H3&gt; |
+| Да | \&lt; br\&gt; | &gt; &lt;br |
+| Да | \&lt; H3\&gt; Header\&lt;/H3\&gt; | &lt;заголовок&gt;H3&lt;/H3&gt; |
 
 Кроме того, CR LF (\r\n) преобразуется в значение \n в КИЛОБАЙТах. LF (\n) сохраняется как есть. Если вы хотите экранировать любую escape-последовательность, например \t или \n, можно использовать обратную косую черту, например: "\\\\r\\\\n" и "\\\\t"
 

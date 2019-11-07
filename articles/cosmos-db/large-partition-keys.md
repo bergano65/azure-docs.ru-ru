@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 09/28/2019
 ms.author: mjbrown
-ms.openlocfilehash: be639a67f70ab40f8d7dcc0f3793cbbd4a2ec4a3
-ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
+ms.openlocfilehash: e2ea934140322a13f07a90f4246bacd3f9dbe6c9
+ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72436815"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73721093"
 ---
 # <a name="create-containers-with-large-partition-key"></a>Создание контейнеров с большим ключом секции
 
@@ -68,10 +68,11 @@ database,
 
 |Тип пакета SDK  | Минимальная версия   |
 |---------|---------|
-|.NET     |    1,18     |
+|.Net     |    1,18     |
 |Синхронизация Java     |   2.4.0      |
 |Java Async   |  2.5.0        |
-| REST API | версия выше `2017-05-03` с помощью заголовка запроса `x-ms-version`.|
+| REST API | версия выше `2017-05-03` с помощью заголовка запроса `x-ms-version`.|
+| Шаблон Resource Manager | версии 2 с помощью свойства `"version":2` в объекте `partitionKey`. |
 
 В настоящее время нельзя использовать контейнеры с большим ключом секции в в Power BI и Azure Logic Apps. В этих приложениях можно использовать контейнеры без большого ключа секции.
 

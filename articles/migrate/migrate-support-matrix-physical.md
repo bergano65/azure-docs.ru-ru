@@ -7,16 +7,19 @@ ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 10/23/2019
 ms.author: raynew
-ms.openlocfilehash: 56e49ab60733c9c0a813ca6e46712bcd8052a2ef
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 902e89305aa24e8cbb6d2dd84d6a61c710d11637
+ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73518155"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73715368"
 ---
 # <a name="support-matrix-for-physical-server-assessment-and-migration"></a>Матрица поддержки для оценки физических серверов и миграции
 
 [Службу "миграция Azure](migrate-overview.md) " можно использовать для оценки и миграции компьютеров в облако Microsoft Azure. В этой статье перечислены параметры поддержки и ограничения для оценки и миграции локальных физических серверов.
+
+> [!NOTE]
+> Если упомянутые здесь компоненты еще не отображаются на портале службы "миграция Azure", зависает. Они будут отображаться на следующей неделе.
 
 
 ## <a name="physical-server-scenarios"></a>Сценарии физического сервера

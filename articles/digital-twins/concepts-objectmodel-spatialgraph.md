@@ -7,13 +7,13 @@ manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 09/17/2019
-ms.openlocfilehash: 1186fec8d50d7e986d1c613cd96f741c34ca181a
-ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
+ms.date: 11/05/2019
+ms.openlocfilehash: 65e9e6235fd974a7731fa5e86322793f1b680ad9
+ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72372621"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73721315"
 ---
 # <a name="understand-digital-twins-object-models-and-spatial-intelligence-graph"></a>Основные сведения об объектных моделях и пространственном интеллектуальном графе в Digital Twins
 
@@ -23,7 +23,7 @@ Azure Digital Twins — это служба Интернета вещей Azure,
 
 После создания объектных моделей и онтологий Digital Twins можно переходить к заполнению _пространственного графа_. Пространственные графы — это виртуальные представления множества взаимосвязей между пространствами, устройствами и людьми, имеющими отношение к решению Интернета вещей. На приведенной ниже схеме показан пример пространственного графа, который использует онтологию умного здания.
 
-[Построение пространственного графа @no__t 1Digital двойников](media/concepts/digital-twins-spatial-graph-building.png)](media/concepts/digital-twins-spatial-graph-building.png#lightbox)
+[Построение пространственного графа ![Digital двойников](media/concepts/digital-twins-spatial-graph-building.png)](media/concepts/digital-twins-spatial-graph-building.png#lightbox)
 
 Пространственный граф объединяет пространства, устройства, датчики и пользователей. Связи между ними воспроизводят зависимости из реального мира. В этом примере представлен объект 43 с четырьмя этажами, на каждом из которых есть много разных областей. Пользователи связаны со своими рабочими станциями и имеют доступ к частям графа. Администратор имеет право вносить изменения в пространственный граф, а посетитель может только просматривать определенные сведения о здании.
 
@@ -78,14 +78,14 @@ Azure Digital Twins — это служба Интернета вещей Azure,
 https://YOUR_INSTANCE_NAME.YOUR_LOCATION.azuresmartspaces.net/management/swagger
 ```
 
-| Name | Заменить на |
+| Имя | Заменить на |
 | --- | --- |
 | YOUR_INSTANCE_NAME | Имя экземпляра Digital Twins |
-| YOUR_LOCATION | Регион сервера, в котором размещен ваш экземпляр. |
+| YOUR_LOCATION | Регион сервера, в котором размещен ваш экземпляр |
 
  На этом изображении представлен полный формат URL-адреса.
 
-[API управления порталом ![Digital двойников](media/concepts/digital-twins-spatial-graph-management-api-url.png)](media/concepts/digital-twins-spatial-graph-management-api-url.png#lightbox)
+[API управления ![портала Digital двойников](media/concepts/digital-twins-spatial-graph-management-api-url.png)](media/concepts/digital-twins-spatial-graph-management-api-url.png#lightbox)
 
 Дополнительные сведения об использовании пространственных интеллектуальных графов см. в кратком обзоре интерфейсов API управления Azure Digital Twins.
 

@@ -1,7 +1,7 @@
 ---
-title: Индексирование больших двоичных объектов CSV с помощью индексатора BLOB-объектов Когнитивный поиск Azure
+title: Индексирование больших двоичных объектов CSV с помощью режима синтаксического анализа delimitedText (Предварительная версия)
 titleSuffix: Azure Cognitive Search
-description: Сканирование больших двоичных объектов CSV в хранилище BLOB-объектов Azure для полнотекстового поиска с помощью индекса Azure Когнитивный поиск. Индексаторы автоматизируют прием данных из выбранных источников, таких как хранилище BLOB-объектов Azure.
+description: Извлеките и импортируйте CSV-файл из хранилища BLOB-объектов Azure с помощью режима разбора delimitedText, в настоящее время в общедоступной предварительной версии
 manager: nitinme
 author: mgottein
 ms.author: magottei
@@ -9,18 +9,17 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 18d0eb704deba80bf83b5cae0a598f47181700f7
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: 4edeb8d535504c305319aad35637bb1b09f65984
+ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72793780"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73719249"
 ---
-# <a name="how-to-index-csv-blobs-using-a-blob-indexer-in-azure-cognitive-search"></a>Как индексировать большие двоичные объекты CSV с помощью индексатора BLOB-объектов в Azure Когнитивный поиск 
+# <a name="how-to-index-csv-blobs-using-delimitedtext-parsing-mode-and-blob-indexers-in-azure-cognitive-search"></a>Как индексировать большие двоичные объекты CSV с помощью режима синтаксического анализа delimitedText и индексаторов BLOB-объектов в Azure Когнитивный поиск 
 
-> [!Note]
-> режим синтаксического анализа delimitedText находится в режиме предварительной версии и не предназначен для использования в рабочей среде. Эта функция предоставляется в [версии REST API 2019-05-06-Preview](search-api-preview.md). Поддержка пакета SDK для .NET пока не реализована.
->
+> [!IMPORTANT] 
+> Режим анализа delimitedText в настоящее время находится в общедоступной предварительной версии. Функции предварительной версии предоставляются без соглашения об уровне обслуживания и не рекомендуются для рабочих нагрузок. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Эта функция предоставляется в [версии REST API 2019-05-06-Preview](search-api-preview.md). В настоящее время нет поддержки портала или пакета SDK для .NET.
 
 По умолчанию [индексатор BLOB-объектов когнитивный Поиск Azure](search-howto-indexing-azure-blob-storage.md) анализирует текстовые большие двоичные объекты с разделителями как единый фрагмент текста. Однако в больших двоичных объектах, содержащих CSV-данные, часто возникает необходимость обрабатывать каждую строку объекта как отдельный документ. Например, учитывая следующий разделительный текст, вы можете проанализировать его в двух документах, каждый из которых содержит поля "id", "datePublished" и "tags": 
 
@@ -28,7 +27,7 @@ ms.locfileid: "72793780"
     1, 2016-01-12, "azure-search,azure,cloud" 
     2, 2016-07-07, "cloud,mobile" 
 
-В этой статье вы узнаете, как проанализировать большие двоичные объекты CSV с помощью Когнитивный поиск большого двоичного объекта Azure индексерби, установив режим разбора `delimitedText`. 
+В этой статье вы узнаете, как анализировать большие двоичные объекты CSV с помощью индексатора BLOB-объектов Azure Когнитивный поиск, установив режим разбора `delimitedText`. 
 
 > [!NOTE]
 > Следуйте рекомендациям по настройке индексатора в [индексировании "один ко многим](search-howto-index-one-to-many-blobs.md) ", чтобы вывести несколько документов поиска из одного большого двоичного объекта Azure.
@@ -47,7 +46,7 @@ ms.locfileid: "72793780"
 
     "parameters" : { "configuration" : { "parsingMode" : "delimitedText", "delimitedTextHeaders" : "id,datePublished,tags" } } 
 
-Можно настроить символ разделителя с помощью параметра конфигурации `delimitedTextDelimiter`. Пример.
+Можно настроить символ разделителя с помощью параметра конфигурации `delimitedTextDelimiter`. Например:
 
     "parameters" : { "configuration" : { "parsingMode" : "delimitedText", "delimitedTextDelimiter" : "|" } }
 

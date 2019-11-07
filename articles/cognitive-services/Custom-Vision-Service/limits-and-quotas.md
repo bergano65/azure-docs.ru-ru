@@ -1,7 +1,7 @@
 ---
 title: Ограничения и квоты. Пользовательская служба визуального распознавания
 titleSuffix: Azure Cognitive Services
-description: Дополнительные сведения об ограничениях и квотах в пользовательской службе визуального распознавания.
+description: В этой статье описываются различные типы лицензионных ключей, а также ограничения и квоты для Пользовательская служба визуального распознавания.
 services: cognitive-services
 author: anrothMSFT
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: custom-vision
 ms.topic: conceptual
 ms.date: 03/25/2019
 ms.author: anroth
-ms.openlocfilehash: 878e2b03e21c18ef4ee845251e91642037c6c5ff
-ms.sourcegitcommit: 8e1fb03a9c3ad0fc3fd4d6c111598aa74e0b9bd4
+ms.openlocfilehash: e4fc3555d7d880dcbd4f76d8f507300e98c237db
+ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70114643"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73718361"
 ---
 # <a name="limits-and-quotas"></a>Ограничения и квоты
 
@@ -39,7 +39,7 @@ ms.locfileid: "70114643"
 |[Другие вызовы API](https://go.microsoft.com/fwlink/?linkid=865446) (число транзакций в секунду)|10|10|
 |Принятые типы изображений|JPG, PNG, BMP, GIF|JPG, PNG, BMP, GIF|
 |Минимальная высота или ширина изображения в пикселях|256 (см. Примечание)|256 (см. Примечание)|
-|Максимальная высота или ширина изображения в пикселях|неограниченно|неограниченно|
+|Максимальная высота или ширина изображения в пикселях|без ограничений|без ограничений|
 |Максимальный размер изображения (при передаче учебного изображения) |6 МБ|6 МБ|
 |Максимальный размер изображения (для прогнозирования)|4 МБ|4 МБ|
 |Образ обучения для обнаружения объектов (максимальное число регионов на объект)|200|200|

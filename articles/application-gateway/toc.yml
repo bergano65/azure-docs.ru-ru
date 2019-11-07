@@ -17,8 +17,6 @@
       href: quick-create-cli.md
 - name: Учебники
   items:
-    - name: Включение брандмауэра веб-приложения Azure
-      href: application-gateway-web-application-firewall-portal.md
     - name: Защита с помощью SSL
       href: create-ssl-portal.md
     - name: Размещение нескольких сайтов
@@ -127,12 +125,6 @@
           items:
             - name: Настройка политики SSL
               href: application-gateway-configure-ssl-policy-powershell.md
-    - name: Настройка брандмауэра веб-приложения
-      items:
-        - name: Azure PowerShell
-          href: tutorial-restrict-web-traffic-powershell.md
-        - name: Инфраструктура CLI Azure
-          href: tutorial-restrict-web-traffic-cli.md
     - name: Входящий трафик для AKS
       items:
         - name: Настройка с существующим Шлюзом приложений
