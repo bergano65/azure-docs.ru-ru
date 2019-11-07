@@ -1,5 +1,5 @@
 ---
-title: Пример использования технологий обработки в оперативной памяти в Базе данных SQL Azure | Документация Майкрософт
+title: Пример в памяти для базы данных SQL Azure
 description: Пример использования технологий обработки в оперативной памяти в Базе данных SQL Azure с OLTP и индексами columnstore.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: ''
 ms.date: 12/18/2018
-ms.openlocfilehash: e3e819fc90e8900219ebc7809adb293369084a72
-ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
+ms.openlocfilehash: 8526236afdb0a312879cb3c1635a7fd85985278f
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71828212"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73689823"
 ---
 # <a name="in-memory-sample"></a>Пример использования технологий обработки в оперативной памяти
 
@@ -34,7 +34,7 @@ ms.locfileid: "71828212"
 
 &nbsp;
 
-## <a name="1-install-the-in-memory-oltp-sample"></a>1. Установка образца In-Memory OLTP
+## <a name="1-install-the-in-memory-oltp-sample"></a>1. Установка образца выполняющейся в памяти OLTP
 
 На [портале Azure](https://portal.azure.com/) вы можете быстро и просто создать пример базы данных AdventureWorksLT. Также в этом разделе объясняется, как можно расширить базу данных AdventureWorksLT с использованием объектов выполняющейся в памяти OLTP, чтобы реализовать повышение производительности.
 
@@ -51,7 +51,7 @@ ms.locfileid: "71828212"
 
 3. Скопируйте в буфер обмена [скрипт Transact-SQL для In-Memory OLTP](https://raw.githubusercontent.com/microsoft/sql-server-samples/master/samples/features/in-memory-database/in-memory-oltp/t-sql-scripts/sql_in-memory_oltp_sample.sql) . Скрипт T-SQL создаст необходимые объекты обработки в оперативной памяти в образце базы данных AdventureWorksLT, созданной на этапе 1.
 
-4. Вставьте сценарий T-SQL в SSMS, а затем выполните его. `MEMORY_OPTIMIZED = ON`Инструкции CREATE TABLE являются ключевыми. Пример:
+4. Вставьте сценарий T-SQL в SSMS, а затем выполните его. `MEMORY_OPTIMIZED = ON`Инструкции CREATE TABLE являются ключевыми. Например:
 
 
 ```sql
@@ -78,7 +78,7 @@ SELECT DatabasePropertyEx(DB_Name(), 'IsXTPSupported');
 
 #### <a name="about-the-created-memory-optimized-items"></a>Сведения о созданных элементах, оптимизированных для памяти
 
-**Таблицы**. Пример содержит следующие оптимизированные для памяти таблицы.
+**Таблицы**— пример содержит следующие оптимизированные для памяти таблицы:
 
 - SalesLT.Product_inmem
 - SalesLT.SalesOrderHeader_inmem
@@ -100,7 +100,7 @@ SELECT is_memory_optimized, name, type_desc, durability_desc
 ```
 
 
-**Скомпилированная в собственном коде хранимая процедура**. Процедуру SalesLT.usp_InsertSalesOrder_inmem можно проверить с помощью запроса представления каталога.
+**Скомпилированная в собственном коде хранимая процедура**: процедуру SalesLT.usp_InsertSalesOrder_inmem можно проверить с помощью запроса представления каталога.
 
 
 ```sql
@@ -262,7 +262,7 @@ ostress.exe -n100 -r50 -S<servername>.database.windows.net -U<login> -P<password
 
 &nbsp;
 
-## <a name="2-install-the-in-memory-analytics-sample"></a>2. Установка образца In-Memory Analytics
+## <a name="2-install-the-in-memory-analytics-sample"></a>2. Установка образца аналитики в памяти
 
 
 В этом разделе вы сравните результаты ввода-вывода и статистические данные при использовании индекса columnstore и традиционного индекса сбалансированного дерева.
@@ -380,9 +380,9 @@ GO
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Краткое руководство 1. Технологии выполнения OLTP в памяти для повышения производительности службы Transact-SQL](https://msdn.microsoft.com/library/mt694156.aspx)
+- [Краткое руководство 1. технологии выполняющейся в памяти OLTP для повышения производительности T-SQL](https://msdn.microsoft.com/library/mt694156.aspx)
 
 - [Повышение производительности приложений в базе данных SQL с помощью выполняющейся в памяти OLTP](sql-database-in-memory-oltp-migration.md)
 
@@ -411,7 +411,7 @@ GO
 
 - [Повышение производительности приложений в базе данных SQL с помощью выполняющейся в памяти OLTP](sql-database-in-memory-oltp-migration.md)
 
-#### <a name="tools"></a>Сервис
+#### <a name="tools"></a>Средства
 
 - [портал Azure](https://portal.azure.com/)
 

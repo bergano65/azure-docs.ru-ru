@@ -8,12 +8,12 @@ ms.service: azure-databricks
 ms.workload: big-data
 ms.topic: conceptual
 ms.date: 03/13/2019
-ms.openlocfilehash: 06ab1783a6e0f4884ab46d3f00a26c47f28d02b0
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.openlocfilehash: 410b945f1a9a8d659f55668e272e2d9d08482bde
+ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72596896"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73601764"
 ---
 # <a name="regional-disaster-recovery-for-azure-databricks-clusters"></a>Региональное аварийное восстановление кластеров Azure Databricks
 
@@ -47,7 +47,7 @@ ms.locfileid: "72596896"
 
    В этой статье представлен ряд примеров кода, в которых для выполнения большинства автоматизированных задач используется интерфейс командной строки, так как эту оболочку удобнее использовать, чем REST API Azure Databricks.
 
-   Прежде чем выполнять какие-либо действия по миграции, установите databricks-cli на настольном компьютере или виртуальной машине, которые планируется использовать для работы. Дополнительные сведения см. в разделе [Установка интерфейса командной строки Databricks](https://docs.azuredatabricks.net/user-guide/dev-tools/databricks-cli.html).
+   Прежде чем выполнять какие-либо действия по миграции, установите databricks-cli на настольном компьютере или виртуальной машине, которые планируется использовать для работы. Дополнительные сведения см. в разделе [Установка интерфейса командной строки Databricks](/azure/databricks/dev-tools/databricks-cli).
 
    ```bash
    pip install databricks-cli
@@ -286,7 +286,7 @@ ms.locfileid: "72596896"
 
 8. **Миграция хранилища BLOB-объектов Azure и Azure Data Lake Storage подключений**
 
-   Вручную Подключите все точки подключения [хранилища BLOB-объектов Azure](https://docs.azuredatabricks.net/spark/latest/data-sources/azure/azure-storage.html) и [Azure Data Lake Storage (Gen 2)](https://docs.azuredatabricks.net/spark/latest/data-sources/azure/azure-datalake-gen2.html) с помощью решения на основе записной книжки. Ресурсы хранилища были бы подключены в основной рабочей области, и это следует повторить в дополнительной рабочей области. Внешних API для подключений не существует.
+   Вручную Подключите все точки подключения [хранилища BLOB-объектов Azure](/azure/databricks/data/data-sources/azure/azure-storage.html) и [Azure Data Lake Storage (Gen 2)](/azure/databricks/data/data-sources/azure/azure-datalake-gen2.html) с помощью решения на основе записной книжки. Ресурсы хранилища были бы подключены в основной рабочей области, и это следует повторить в дополнительной рабочей области. Внешних API для подключений не существует.
 
 9. **Перенос скриптов инициализации кластеров**
 
@@ -302,7 +302,7 @@ ms.locfileid: "72596896"
 
 10. **Повторная настройка и применение управления доступом вручную**
 
-    Если имеющаяся основная рабочая область настроена на использование уровня (SKU) "Премиум", то наверняка используется [функция управления доступом](https://docs.azuredatabricks.net/administration-guide/admin-settings/index.html#manage-access-control).
+    Если имеющаяся основная рабочая область настроена на использование уровня (SKU) "Премиум", то наверняка используется [функция управления доступом](/azure/databricks/administration-guide/access-control/index).
 
     Если функция управления доступом не используется, вручную примените управление доступом к ресурсам (записным книжкам, кластерам, заданиям, таблицам).
 
@@ -312,4 +312,4 @@ ms.locfileid: "72596896"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения см. в [документации по Azure Databricks](https://docs.azuredatabricks.net/user-guide/index.html).
+Дополнительные сведения см. в [документации по Azure Databricks](index.yml).

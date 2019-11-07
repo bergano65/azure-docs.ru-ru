@@ -1,5 +1,5 @@
 ---
-title: Задания эластичной базы данных SQL Azure (Предварительная версия) | Документация Майкрософт
+title: Задания эластичной базы данных SQL Azure (Предварительная версия)
 description: Настройте задания обработки эластичных баз данных (Предварительная версия) для выполнения скриптов Transact-SQL (T-SQL) в наборе из одной или нескольких баз данных SQL Azure.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: srinia
 ms.author: srinia
 ms.reviewer: sstein
 ms.date: 12/18/2018
-ms.openlocfilehash: 3a0aa6e28ea4c40d5cad5ba99edec344c7979acf
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 2afe7d5c9667002c97d354cd1e94f292c6302558
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68935078"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73685298"
 ---
 # <a name="create-configure-and-manage-elastic-jobs"></a>Создание, настройка и управление заданиями обработки эластичных баз данных
 
@@ -39,7 +39,7 @@ ms.locfileid: "68935078"
 6. Запустите задание с помощью [PowerShell](elastic-jobs-powershell.md#run-the-job) или [T-SQL](elastic-jobs-tsql.md#begin-ad-hoc-execution-of-a-job).
 7. Отслеживайте состояние выполнения задания на портале с использованием [PowerShell](elastic-jobs-powershell.md#monitor-status-of-job-executions) или [T-SQL](elastic-jobs-tsql.md#monitor-job-execution-status).
 
-   ![Портал](media/elastic-jobs-overview/elastic-job-executions-overview.png)
+   ![Microsoft Azure](media/elastic-jobs-overview/elastic-job-executions-overview.png)
 
 ## <a name="credentials-for-running-jobs"></a>Учетные данные для выполнения заданий
 
@@ -75,7 +75,7 @@ ms.locfileid: "68935078"
 
 Чтобы ресурсы не перегружались при работе с базами данных в эластичном пуле SQL, задания можно настроить для ограничения количества баз данных, в которых может одновременно работать задание.
 
-Задайте количество одновременных баз данных, на которых выполняется задание, задав `sp_add_jobstep` `@max_parallelism` параметр хранимой процедуры в T-SQL или `Add-AzSqlElasticJobStep -MaxParallelism` в PowerShell.
+Задайте количество одновременных баз данных, на которых выполняется задание, задав параметр `@max_parallelism` хранимой процедуры `sp_add_jobstep` в T-SQL или `Add-AzSqlElasticJobStep -MaxParallelism` в PowerShell.
 
 ## <a name="best-practices-for-creating-jobs"></a>Рекомендации по созданию заданий
 
@@ -95,7 +95,7 @@ IF NOT EXIST (some_object)
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Создание заданий обработки эластичных баз данных и управление ими с помощью PowerShell](elastic-jobs-powershell.md)
 - [Use Transact-SQL (T-SQL) to create and manage Elastic Database Jobs](elastic-jobs-tsql.md) (Создание заданий обработки эластичных БД и управление ими с использованием Transact-SQL (T-SQL))

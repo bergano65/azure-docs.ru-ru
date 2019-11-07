@@ -8,27 +8,25 @@ author: reyang
 ms.author: reyang
 ms.date: 10/11/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: 0d848027d6c754df371b4d87cf01c5b2fdbc8c02
-ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
+ms.openlocfilehash: 7fb436ef8d915898bc8f36dd10766e71f63e4a59
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72820733"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73575571"
 ---
 # <a name="set-up-azure-monitor-for-your-python-application-preview"></a>Настройка Azure Monitor для приложения Python (Предварительная версия)
 
 Azure Monitor поддерживает распределенную трассировку, сбор метрик и ведение журнала приложений Python с помощью интеграции с [опенценсус](https://opencensus.io). В этой статье описывается процесс настройки Опенценсус для Python и отправки данных мониторинга в Azure Monitor.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 - Установка Python. В этой статье используется [Python 3.7.0](https://www.python.org/downloads/), хотя более ранние версии, скорее всего, будут работать с незначительными изменениями.
 
+## <a name="sign-in-to-the-azure-portal"></a>Выполните вход на портал Azure.
 
-
-## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
-
-Войдите на [портале Azure](https://portal.azure.com/).
+Войдите на [портал Azure](https://portal.azure.com/).
 
 ## <a name="create-an-application-insights-resource-in-azure-monitor"></a>Создание Application Insights ресурса в Azure Monitor
 
@@ -40,11 +38,11 @@ Azure Monitor поддерживает распределенную трасси
 
 1. Появится окно конфигурации. Используйте следующую таблицу для заполнения полей ввода.
 
-   | Параметр        | Value           | Описание  |
+   | Настройка        | Значение           | Description (Описание)  |
    | ------------- |:-------------|:-----|
-   | **Имя**      | Глобальное уникальное значение | Имя, идентифицирующее отслеживаемое приложение |
+   | **имя**      | Глобальное уникальное значение | Имя, идентифицирующее отслеживаемое приложение |
    | **Группа ресурсов**     | myResourceGroup      | Имя новой группы ресурсов для размещения данных Application Insights |
-   | **Расположение** | Восточная часть США | Расположение рядом с вами или рядом с размещением приложения |
+   | **Расположение** | Восток США | Расположение рядом с вами или рядом с размещением приложения |
 
 1. Нажмите кнопку **Создать**.
 
@@ -55,6 +53,8 @@ Azure Monitor поддерживает распределенную трасси
 ```console
 python -m pip install opencensus-ext-azure
 ```
+
+Полный список пакетов и интеграции см. в разделе [пакеты опенценсус](https://docs.microsoft.com/azure/azure-monitor/app/nuget#common-packages-for-python-using-opencensus).
 
 > [!NOTE]
 > В команде `python -m pip install opencensus-ext-azure` предполагается, что для установки Python задана `PATH`ая переменная среды. Если вы не настроили эту переменную, необходимо указать полный путь к каталогу, в котором находится исполняемый файл Python. Результатом является команда, подобная следующей: `C:\Users\Administrator\AppData\Local\Programs\Python\Python37-32\python.exe -m pip install opencensus-ext-azure`.
@@ -127,6 +127,10 @@ python -m pip install opencensus-ext-azure
     ```
 
 4. Теперь при запуске скрипта Python вам по-прежнему будет предложено ввести значения, но только значение будет напечатано в оболочке. Созданный `SpanData` будет отправлен на Azure Monitor. Выпущенные данные span можно найти в `dependencies`.
+
+5. Сведения о выборке в Опенценсус см. [в подборке в опенценсус](https://docs.microsoft.com/azure/azure-monitor/app/sampling#configuring-fixed-rate-sampling-in-opencensus-python).
+
+6. Дополнительные сведения о корреляции телеметрии в данных трассировки см. в описании [корреляции телеметрии](https://docs.microsoft.com/azure/azure-monitor/app/correlation#telemetry-correlation-in-opencensus-python)опенценсус.
 
 ### <a name="metrics"></a>Метрики
 
@@ -292,6 +296,8 @@ python -m pip install opencensus-ext-azure
 
 4. Программа экспорта отправляет данные журнала в Azure Monitor. Данные можно найти в разделе `traces`.
 
+5. Дополнительные сведения о том, как расширить журналы с помощью данных контекста трассировки, см. в разделе [Интеграция журналов](https://docs.microsoft.com/azure/azure-monitor/app/correlation#logs-correlation)опенценсус Python.
+
 ## <a name="start-monitoring-in-the-azure-portal"></a>Запуск мониторинга на портале Azure
 
 1. Теперь можно снова открыть панель **обзор** Application Insights в портал Azure, чтобы просмотреть сведения о работающем в данный момент приложении. Выберите **Live Metrics Stream**.
@@ -325,8 +331,8 @@ python -m pip install opencensus-ext-azure
 В списке **активно**:
 
 - Для телеметрии, отправленной с помощью программы экспорта трассировки Azure Monitor, входящие запросы отображаются в разделе `requests`. Исходящие или внутрипроцессный запросы отображаются в разделе `dependencies`.
-- Для данных телеметрии, отправляемых с помощью программы экспорта метрик Azure Monitor, в разделе `customMetrics` отображаются метрики отправки.
-- Для телеметрии, отправленной с помощью программы экспорта журналов Azure Monitor, в разделе `traces` отображаются журналы. Исключения отображаются в разделе `exceptions`.
+- Для данных телеметрии, отправляемых с помощью программы экспорта метрик Azure Monitor, в разделе `customMetrics`отображаются метрики отправки.
+- Для телеметрии, отправленной с помощью программы экспорта журналов Azure Monitor, в разделе `traces`отображаются журналы. Исключения отображаются в разделе `exceptions`.
 
 Более подробные сведения об использовании запросов и журналов см. [в разделе журналы в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/data-platform-logs).
 

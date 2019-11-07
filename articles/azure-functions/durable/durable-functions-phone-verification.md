@@ -9,18 +9,20 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 4d8955517450ce3b4efdf30e2790e4be678dfc7b
-ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
+ms.openlocfilehash: 0c1c92dde2d698fb2c92fb3680ab05393a25573d
+ms.sourcegitcommit: b2fb32ae73b12cf2d180e6e4ffffa13a31aa4c6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70735192"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73614740"
 ---
 # <a name="human-interaction-in-durable-functions---phone-verification-sample"></a>Участие пользователя в устойчивых функциях. Пример проверки номера телефона
 
 В этом примере показано, как создать оркестрацию [устойчивых функций](durable-functions-overview.md), которая включает в себя участие пользователя. Каждый раз, когда человек участвует в автоматизированном процессе, процесс должен отправлять уведомления пользователю и получать ответы асинхронно. Он также должен допускать возможность, что пользователь недоступен. (Именно в этой части время ожидания становится важным.)
 
-В этом примере реализуется система проверки номера телефона на основе SMS. Эти типы потоков часто используются при проверке номера телефона клиента или для многофакторной проверки подлинности. Это очень эффективный пример, так как полная реализация выполняется с помощью нескольких небольших функций. Внешнее хранилище данных, например база данных, не требуется.
+В этом примере реализуется система проверки номера телефона на основе SMS. Эти типы потоков часто используются при проверке номера телефона клиента или для многофакторной проверки подлинности. Это мощный пример, поскольку вся реализация выполняется с помощью нескольких небольших функций. Внешнее хранилище данных, например база данных, не требуется.
+
+[!INCLUDE [v1-note](../../../includes/functions-durable-v1-tutorial-note.md)]
 
 [!INCLUDE [durable-functions-prerequisites](../../../includes/durable-functions-prerequisites.md)]
 
@@ -28,7 +30,7 @@ ms.locfileid: "70735192"
 
 Проверка номера телефона используется для подтверждения того, что пользователи вашего приложения не рассылают нежелательную почту и являются теми, за кого себя выдают. Многофакторная проверка подлинности часто применяется для защиты учетных записей пользователей от злоумышленников. Проблема реализации собственной проверки номера телефона состоит в том, что требуется взаимодействие с пользователем с **отслеживанием состояния**. Пользователю обычно предоставляется определенный код (например, 4-значное число), на который он должен отреагировать **в течение приемлемого промежутка времени**.
 
-Обычно в решении "Функции Azure" не отслеживается состояние (как и в других облачных конечных точках на других платформах), поэтому эти типы взаимодействия требуют явного управления состоянием во внешней базе данных или другом постоянном хранилище. Кроме того, взаимодействие должно быть разбито на несколько функций, которые можно согласовать вместе. Например, необходима хотя бы одна функция для выбора кода, его сохранения и отправки на телефон пользователя. Кроме того, вам также требуется другая функция, чтобы получить ответ от пользователя и каким-то образом обратно сопоставить его с исходным вызовом функции, чтобы выполнить проверку кода. Время ожидания также является важным аспектом обеспечения безопасности. Ситуация может очень быстро усложниться.
+Обычно в решении "Функции Azure" не отслеживается состояние (как и в других облачных конечных точках на других платформах), поэтому эти типы взаимодействия требуют явного управления состоянием во внешней базе данных или другом постоянном хранилище. Кроме того, взаимодействие должно быть разбито на несколько функций, которые можно согласовать вместе. Например, необходима хотя бы одна функция для выбора кода, его сохранения и отправки на телефон пользователя. Кроме того, вам также требуется другая функция, чтобы получить ответ от пользователя и каким-то образом обратно сопоставить его с исходным вызовом функции, чтобы выполнить проверку кода. Время ожидания также является важным аспектом обеспечения безопасности. Это может оказаться довольно сложным.
 
 Сложность этого сценария значительно снижается, когда вы используете устойчивые функции. Как будет показано в этом примере, с помощью функции оркестратора можно без проблем управлять взаимодействием с отслеживанием состояния без использования любых внешних хранилищ данных. Так как функции оркестратора *устойчивые*, эти интерактивные потоки также очень надежные.
 
@@ -43,7 +45,7 @@ ms.locfileid: "70735192"
 * **E4_SmsPhoneVerification**
 * **E4_SendSmsChallenge**
 
-В следующих разделах рассматривается конфигурация и код, которые используются для написания скриптов на языках C# и JavaScript. Код для разработки с помощью Visual Studio представлен в конце этой статьи.
+В следующих разделах описывается конфигурация и код, используемые для C# написания сценариев и JavaScript. Код для разработки с помощью Visual Studio представлен в конце этой статьи.
 
 ## <a name="the-sms-verification-orchestration-visual-studio-code-and-azure-portal-sample-code"></a>Оркестрация проверки с помощью SMS (пример кода Visual Studio Code и портала Azure)
 
@@ -57,7 +59,7 @@ ms.locfileid: "70735192"
 
 [!code-csharp[Main](~/samples-durable-functions/samples/csx/E4_SmsPhoneVerification/run.csx)]
 
-### <a name="javascript-functions-2x-only"></a>JavaScript (только для решения "Функции" версии 2.x)
+### <a name="javascript-functions-20-only"></a>JavaScript (только функции 2,0)
 
 [!code-javascript[Main](~/samples-durable-functions/samples/javascript/E4_SmsPhoneVerification/index.js)]
 
@@ -71,7 +73,7 @@ ms.locfileid: "70735192"
 Пользователи получают SMS-сообщение с 4-значным кодом. У них есть 90 секунд, чтобы отправить этот код обратно в экземпляр функции оркестратора для завершения проверки. Если пользователи отправляют неверный код, у них есть еще три попытки (в пределах тех же 90 секунд).
 
 > [!NOTE]
-> Сперва это может показаться неочевидным, но эта функция оркестратора полностью детерминированная. Это связано с тем, что свойства `CurrentUtcDateTime` (.NET) и `currentUtcDateTime` (JavaScript) используются для подсчета времени истечения срока, настроенного для таймера. Эти свойства возвращают то же значение при каждом воспроизведении в коде оркестратора. Важно, чтобы в результате каждого повторяющегося вызова `Task.WhenAny` (.NET) или `context.df.Task.any` (JavaScript) был получен один и тот же `winner`.
+> Сперва это может показаться неочевидным, но эта функция оркестратора полностью детерминированная. Он детерминирован, поскольку свойства `CurrentUtcDateTime` (.NET) и `currentUtcDateTime` (JavaScript) используются для вычисления времени истечения таймера, и эти свойства возвращают одно и то же значение при каждом воспроизведении в этом месте в коде Orchestrator. Такое поведение важно для того, чтобы одно и то же `winner` результаты каждого повторяющегося вызова `Task.WhenAny` (.NET) или `context.df.Task.any` (JavaScript).
 
 > [!WARNING]
 > Если таймеры вам больше не нужны, как показано в примере выше, когда принимается ответ на запрос, [отключите их](durable-functions-timers.md).
@@ -88,7 +90,7 @@ ms.locfileid: "70735192"
 
 [!code-csharp[Main](~/samples-durable-functions/samples/csx/E4_SendSmsChallenge/run.csx)]
 
-### <a name="javascript-functions-2x-only"></a>JavaScript (только для решения "Функции" версии 2.x)
+### <a name="javascript-functions-20-only"></a>JavaScript (только функции 2,0)
 
 [!code-javascript[Main](~/samples-durable-functions/samples/javascript/E4_SendSmsChallenge/index.js)]
 
@@ -110,17 +112,17 @@ Content-Type: application/json
 HTTP/1.1 202 Accepted
 Content-Length: 695
 Content-Type: application/json; charset=utf-8
-Location: http://{host}/admin/extensions/DurableTaskExtension/instances/741c65651d4c40cea29acdd5bb47baf1?taskHub=DurableFunctionsHub&connection=Storage&code={systemKey}
+Location: http://{host}/runtime/webhooks/durabletask/instances/741c65651d4c40cea29acdd5bb47baf1?taskHub=DurableFunctionsHub&connection=Storage&code={systemKey}
 
-{"id":"741c65651d4c40cea29acdd5bb47baf1","statusQueryGetUri":"http://{host}/admin/extensions/DurableTaskExtension/instances/741c65651d4c40cea29acdd5bb47baf1?taskHub=DurableFunctionsHub&connection=Storage&code={systemKey}","sendEventPostUri":"http://{host}/admin/extensions/DurableTaskExtension/instances/741c65651d4c40cea29acdd5bb47baf1/raiseEvent/{eventName}?taskHub=DurableFunctionsHub&connection=Storage&code={systemKey}","terminatePostUri":"http://{host}/admin/extensions/DurableTaskExtension/instances/741c65651d4c40cea29acdd5bb47baf1/terminate?reason={text}&taskHub=DurableFunctionsHub&connection=Storage&code={systemKey}"}
+{"id":"741c65651d4c40cea29acdd5bb47baf1","statusQueryGetUri":"http://{host}/runtime/webhooks/durabletask/instances/741c65651d4c40cea29acdd5bb47baf1?taskHub=DurableFunctionsHub&connection=Storage&code={systemKey}","sendEventPostUri":"http://{host}/runtime/webhooks/durabletask/instances/741c65651d4c40cea29acdd5bb47baf1/raiseEvent/{eventName}?taskHub=DurableFunctionsHub&connection=Storage&code={systemKey}","terminatePostUri":"http://{host}/runtime/webhooks/durabletask/instances/741c65651d4c40cea29acdd5bb47baf1/terminate?reason={text}&taskHub=DurableFunctionsHub&connection=Storage&code={systemKey}"}
 ```
 
-Функция оркестратора получает указанный номер телефона и немедленно отправляет на него SMS-сообщение со случайно сгенерированным 4-значным кодом проверки, например *2168*. Функция ожидает ответ в течение 90 секунд.
+Функция оркестратора получает указанный номер телефона и немедленно отправляет на него SMS-сообщение со случайно сгенерированным 4-значным кодом проверки, например &mdash;2168 *. Функция ожидает ответ в течение 90 секунд.
 
 Чтобы отправить код, вы можете использовать [`RaiseEventAsync` (.NET) или `raiseEvent` (JavaScript)](durable-functions-instance-management.md) внутри другой функции или вызвать веб-перехватчик HTTP POST **sendEventUrl**, указанный в ответе 202 выше, заменив `{eventName}` именем события `SmsChallengeResponse`:
 
 ```
-POST http://{host}/admin/extensions/DurableTaskExtension/instances/741c65651d4c40cea29acdd5bb47baf1/raiseEvent/SmsChallengeResponse?taskHub=DurableFunctionsHub&connection=Storage&code={systemKey}
+POST http://{host}/runtime/webhooks/durabletask/instances/741c65651d4c40cea29acdd5bb47baf1/raiseEvent/SmsChallengeResponse?taskHub=DurableFunctionsHub&connection=Storage&code={systemKey}
 Content-Length: 4
 Content-Type: application/json
 
@@ -130,7 +132,7 @@ Content-Type: application/json
 Если вы отправите это до истечения времени ожидания, оркестрация будет завершена, а для поля `output` будет задано значение `true`, указывающее, что проверка прошла успешно.
 
 ```
-GET http://{host}/admin/extensions/DurableTaskExtension/instances/741c65651d4c40cea29acdd5bb47baf1?taskHub=DurableFunctionsHub&connection=Storage&code={systemKey}
+GET http://{host}/runtime/webhooks/durabletask/instances/741c65651d4c40cea29acdd5bb47baf1?taskHub=DurableFunctionsHub&connection=Storage&code={systemKey}
 ```
 
 ```
@@ -160,9 +162,9 @@ Content-Length: 145
 
 [!code-csharp[Main](~/samples-durable-functions/samples/precompiled/PhoneVerification.cs)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-В этом примере показаны некоторые расширенные возможности устойчивых функций, в частности `WaitForExternalEvent` и `CreateTimer`. Вы узнали, как их можно использовать совместно с `Task.WaitAny`, чтобы реализовать надежную систему времени ожидания, которая часто полезна для взаимодействия с реальными людьми. Дополнительные сведения об использовании устойчивых функций см. в серии статей, где подробно рассматриваются определенные темы.
+В этом примере демонстрируются некоторые расширенные возможности Устойчивые функции, особенно `WaitForExternalEvent` и `CreateTimer` API. Вы узнали, как их можно использовать совместно с `Task.WaitAny`, чтобы реализовать надежную систему времени ожидания, которая часто полезна для взаимодействия с реальными людьми. Дополнительные сведения об использовании устойчивых функций см. в серии статей, где подробно рассматриваются определенные темы.
 
 > [!div class="nextstepaction"]
 > [Перейти к первой статье из серии](durable-functions-bindings.md)

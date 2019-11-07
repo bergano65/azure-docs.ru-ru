@@ -1,18 +1,18 @@
 ---
-title: Добавление субъекта-службы к роли администратора сервера Azure Analysis Services | Документация Майкрософт
-description: Узнайте, как добавить субъект-службу для автоматизации к роли администратора сервера
+title: Добавление субъекта-службы в Azure Analysis Services роль администратора | Документация Майкрософт
+description: Узнайте, как добавить субъект-службу автоматизации к роли администратора Azure Analysis Services Server.
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
 ms.date: 10/29/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: c141bcea030f5afcc3cb33adba32f4a96c335eec
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 0a3a86283c8ec9876fbec049a2a1a110eb1a80f3
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73147396"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73573616"
 ---
 # <a name="add-a-service-principal-to-the-server-administrator-role"></a>Добавление субъекта-службы к роли администратора сервера 
 
@@ -21,7 +21,7 @@ ms.locfileid: "73147396"
 ## <a name="before-you-begin"></a>Перед началом работы
 Прежде чем приступить к этой задаче, нужно зарегистрировать субъект-службу в Azure Active Directory.
 
-[Создание субъекта-службы с помощью портала Azure](../active-directory/develop/howto-create-service-principal-portal.md)   
+[Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](../active-directory/develop/howto-create-service-principal-portal.md)   
 [Создание субъекта-службы с помощью PowerShell](../active-directory/develop/howto-authenticate-service-principal-powershell.md)
 
 ## <a name="required-permissions"></a>Необходимые разрешения

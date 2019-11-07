@@ -1,55 +1,58 @@
 ---
-title: Как запустить, приостановить или удалить приложение Azure Spring Cloud | Документация Майкрософт
-description: Как запустить, приостановить или удалить приложение Azure Spring Cloud
-services: spring-cloud
-author: v-vasuke
-manager: jeconnoc
-editor: ''
+title: Как запускать, прекращать и удалять облачное приложение Azure весны | Документация Майкрософт
+description: Как запускать, прекращать и удалять облачное приложение Azure весны
+author: jpconnock
 ms.service: spring-cloud
-ms.topic: quickstart
-ms.date: 10/07/2019
-ms.author: v-vasuke
-ms.openlocfilehash: f7f76644d13c20704d2c3bd908176ac452df2a20
-ms.sourcegitcommit: d773b5743cb54b8cbcfa5c5e4d21d5b45a58b081
-ms.translationtype: HT
+ms.topic: conceptual
+ms.date: 10/31/2019
+ms.author: jeconnoc
+ms.openlocfilehash: 9f537ab425428728137e04713e434d8dc09e065a
+ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72038443"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73607722"
 ---
-# <a name="how-to-start-stop-and-delete-your-azure-spring-cloud-application"></a>Как запустить, приостановить или удалить приложение Azure Spring Cloud
+# <a name="how-to-start-stop-and-delete-your-azure-spring-cloud-application"></a>Как запускать, прекращать и удалять облачное приложение Azure весны
 
-В этом руководстве объясняется, как изменить состояние приложения в Azure Spring Cloud с помощью портала Azure или интерфейса командной строки.
+В этом руководство объясняется, как изменить состояние приложения в Azure "Весна Cloud" с помощью портал Azure или CLI.
 
 ## <a name="using-the-azure-portal"></a>Использование портала Azure
 
-После развертывания приложения, его можно **Start** (Запустить), **Stop** (Остановить) и **Delete** (Удалить) с помощью портала Azure.
+После развертывания приложения его можно **запускать**, **прекращать**и **удалять** с помощью портал Azure.
 
-1. Перейдите к экземпляру своей службы Azure Spring Cloud на портале Azure.
-1. Выберите вкладку **Панель мониторинга приложений**.
+1. Перейдите к экземпляру облачной службы Azure весны в портал Azure.
+1. Перейдите на вкладку **панель мониторинга приложения** .
 1. Выберите приложение, состояние которого необходимо изменить.
-2. На странице **Overview** для этого приложения найдите кнопки **Start/Stop** (Запустить/остановить), **Restart** (Перезапустить) и **Delete** (Удалить) в приложении.
+2. На странице **Обзор** для этого приложения найдите кнопки для запуска, **завершения**, **перезапуска**и **удаления** приложения.
 
 ## <a name="using-the-azure-cli"></a>Использование Azure CLI
 
 > [!NOTE]
-> В интерфейсе командной строки Azure можно использовать необязательные параметры и настроить значения по умолчанию. Дополнительные сведения см. в нашей [справочной документации](spring-cloud-cli-reference.md).
+> Можно использовать необязательные параметры и настроить значения по умолчанию с помощью Azure CLI. Дополнительные сведения см. в [справочной документации](spring-cloud-cli-reference.md).  
+
+Установите расширение "Весна Cloud" для Azure CLI:
+
+```azurecli
+az extension add --name spring-cloud
+```
 
 * Чтобы запустить приложение, выполните следующие действия.
-    ```Azure CLI
+    ```azurecli
     az spring-cloud app start -n <application name> -g <resource group> -s <Azure Spring Cloud name>
     ```
 
-* Чтобы остановить приложение, выполните следующие действия.
-    ```Azure CLI
+* Чтобы прерывать работу приложения:
+    ```azurecli
     az spring-cloud app stop -n <application name> -g <resource group> -s <Azure Spring Cloud name>
     ```
 
 * Чтобы перезапустить приложение, выполните следующие действия.
-    ```Azure CLI
+    ```azurecli
     az spring-cloud app restart -n <application name> -g <resource group> -s <Azure Spring Cloud name>
     ```
 
 * Чтобы удалить приложение, выполните следующие действия.
-    ```Azure CLI
+    ```azurecli
     az spring-cloud app delete -n <application name> -g <resource group> -s <Azure Spring Cloud name>
     ```

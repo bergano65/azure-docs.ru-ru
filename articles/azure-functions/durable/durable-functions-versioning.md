@@ -7,14 +7,14 @@ manager: jeconnoc
 keywords: ''
 ms.service: azure-functions
 ms.topic: conceptual
-ms.date: 10/22/2019
+ms.date: 11/03/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 0bac6f9105d505bdfc1492b6966c2352771e73b0
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: 4b4e82acbd3037c70b87731c0661605041090435
+ms.sourcegitcommit: b2fb32ae73b12cf2d180e6e4ffffa13a31aa4c6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72791292"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73614507"
 ---
 # <a name="versioning-in-durable-functions-azure-functions"></a>Управление версиями в устойчивых функциях (Функции Azure)
 
@@ -32,7 +32,7 @@ ms.locfileid: "72791292"
 
 ```csharp
 [FunctionName("FooBar")]
-public static Task Run([OrchestrationTrigger] DurableOrchestrationContext context)
+public static Task Run([OrchestrationTrigger] IDurableOrchestrationContext context)
 {
     bool result = await context.CallActivityAsync<bool>("Foo");
     await context.CallActivityAsync("Bar", result);
@@ -43,16 +43,19 @@ public static Task Run([OrchestrationTrigger] DurableOrchestrationContext contex
 
 ```csharp
 [FunctionName("FooBar")]
-public static Task Run([OrchestrationTrigger] DurableOrchestrationContext context)
+public static Task Run([OrchestrationTrigger] IDurableOrchestrationContext context)
 {
     int result = await context.CallActivityAsync<int>("Foo");
     await context.CallActivityAsync("Bar", result);
 }
 ```
 
-Это изменение никак не сказывается на всех новых экземплярах функции оркестратора, но нарушает работу активных экземпляров. Например, рассмотрим случай, когда экземпляр оркестрации вызывает **Foo**, ему сначала возвращается логическое значение, а затем контрольные точки. Если на этой точке развернуто изменение сигнатуры, экземпляр с контрольной точкой завершится ошибкой сразу после возобновления работы и воспроизведения вызова `context.CallActivityAsync<int>("Foo")`. Это происходит, так как результатом в таблице журнала является `bool`, а новый код пытается десериализировать его в `int`.
+> [!NOTE]
+> В предыдущих C# примерах целевой устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать `DurableOrchestrationContext` вместо `IDurableOrchestrationContext`. Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
 
-Это лишь один из примеров того, как изменения сигнатуры могут нарушить работу имеющихся экземпляров. Как правило, изменение способа вызова функции для оркестратора может привести к проблемам.
+Это изменение никак не сказывается на всех новых экземплярах функции оркестратора, но нарушает работу активных экземпляров. Например, рассмотрим случай, когда экземпляр оркестрации вызывает функцию с именем `Foo`, возвращает логическое значение, а затем создает контрольные точки. Если на этой точке развернуто изменение сигнатуры, экземпляр с контрольной точкой завершится ошибкой сразу после возобновления работы и воспроизведения вызова `context.CallActivityAsync<int>("Foo")`. Этот сбой происходит из-за того, что результат в таблице журнала `bool`, но новый код пытается десериализовать его в `int`.
+
+Этот пример является одним из множества различных способов, с помощью которых изменение сигнатуры может привести к нарушению работы существующих экземпляров. Как правило, изменение способа вызова функции для оркестратора может привести к проблемам.
 
 ### <a name="changing-orchestrator-logic"></a>Изменение логики оркестратора
 
@@ -62,7 +65,7 @@ public static Task Run([OrchestrationTrigger] DurableOrchestrationContext contex
 
 ```csharp
 [FunctionName("FooBar")]
-public static Task Run([OrchestrationTrigger] DurableOrchestrationContext context)
+public static Task Run([OrchestrationTrigger] IDurableOrchestrationContext context)
 {
     bool result = await context.CallActivityAsync<bool>("Foo");
     await context.CallActivityAsync("Bar", result);
@@ -73,7 +76,7 @@ public static Task Run([OrchestrationTrigger] DurableOrchestrationContext contex
 
 ```csharp
 [FunctionName("FooBar")]
-public static Task Run([OrchestrationTrigger] DurableOrchestrationContext context)
+public static Task Run([OrchestrationTrigger] IDurableOrchestrationContext context)
 {
     bool result = await context.CallActivityAsync<bool>("Foo");
     if (result)
@@ -85,25 +88,28 @@ public static Task Run([OrchestrationTrigger] DurableOrchestrationContext contex
 }
 ```
 
-Это изменение добавит новый вызов функции в **SendNotification** между **Foo** и **Bar**. Изменения сигнатуры отсутствуют. Проблема возникает, когда имеющийся экземпляр возобновляет работу после вызова **Bar**. Во время воспроизведения, если при исходном вызове **Foo** возвращается значение `true`, то воспроизведение функции оркестратора приводит к вызову **SendNotification**, который находится вне его журнала выполнений. В результате платформа устойчивых задач завершается сбоем с `NonDeterministicOrchestrationException` из-за выполнения вызова **SendNotification** вместо **Bar**. Проблема такого же типа может возникнуть при добавлении любых вызовов "устойчивых" API-интерфейсов, включая `CreateTimer`, `WaitForExternalEvent`и т. д.
+> [!NOTE]
+> В предыдущих C# примерах целевой устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать `DurableOrchestrationContext` вместо `IDurableOrchestrationContext`. Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
+
+Это изменение добавит новый вызов функции в **SendNotification** между **Foo** и **Bar**. Изменения сигнатуры отсутствуют. Проблема возникает, когда имеющийся экземпляр возобновляет работу после вызова **Bar**. Во время воспроизведения, если исходный вызов **foo** вернул `true`, то в ходе воспроизведения Orchestrator будет вызываться **SendNotification**, который не находится в журнале выполнения. В результате платформа устойчивых задач завершается сбоем с `NonDeterministicOrchestrationException` из-за выполнения вызова **SendNotification** вместо **Bar**. Проблема такого же типа может возникнуть при добавлении любых вызовов "устойчивых" API-интерфейсов, включая `CreateTimer`, `WaitForExternalEvent`и т. д.
 
 ## <a name="mitigation-strategies"></a>Стратегии устранения рисков
 
 Ниже приведены некоторые стратегии для устранения проблем с управлением версиями:
 
-* Ничего не предпринимать
-* Остановка всех активных экземпляров
+* ничего не предпринимать;
+* остановить все активные экземпляры;
 * Выполнение параллельного развертывания
 
-### <a name="do-nothing"></a>Ничего не предпринимать
+### <a name="do-nothing"></a>ничего не предпринимать;
 
 Самая простая реакция на критическое изменение — позволить активным экземплярам оркестрации завершиться сбоем. Новые экземпляры успешно выполняют измененный код.
 
-Является ли это проблемой, зависит от важности активных экземпляров. Эта проблема не критична, если вы активно выполняете разработку и активные экземпляры не имеют значения. Тем не менее необходимо обрабатывать исключения и ошибки в конвейере диагностики. Если вы хотите этого избежать, необходимо рассмотреть другие варианты управления версиями.
+Неисправность такого рода зависит от важности ваших экземпляров в полете. Эта проблема не критична, если вы активно выполняете разработку и активные экземпляры не имеют значения. Однако вам придется работать с исключениями и ошибками в конвейере диагностики. Если вы хотите этого избежать, необходимо рассмотреть другие варианты управления версиями.
 
-### <a name="stop-all-in-flight-instances"></a>Остановка всех активных экземпляров
+### <a name="stop-all-in-flight-instances"></a>остановить все активные экземпляры;
 
-Другим вариантом является остановка всех активных экземпляров. Это можно сделать путем очистки содержимого внутренних очередей **управления** и **рабочих элементов**. Экземпляры не удаляются, но они не будут отображаться в телеметрии вместе с сообщениями о сбое. Это идеально подходит для быстрой разработки прототипов.
+Другим вариантом является остановка всех активных экземпляров. Остановка всех экземпляров может быть выполнена путем очистки содержимого внутренних очередей **управления —** очереди и **рабочего элемента** . Экземпляры будут постоянно зависнуть там, где они находятся, но они не будут перегружать журналы с сообщениями об ошибках. Этот подход идеально подходит для быстрой разработки прототипов.
 
 > [!WARNING]
 > Со временем сведения об этих очередях могут изменяться, поэтому не рекомендуется использовать этот метод для рабочих нагрузок.
@@ -114,7 +120,7 @@ public static Task Run([OrchestrationTrigger] DurableOrchestrationContext contex
 
 * Развертывайте все обновления как полностью новые функции, не выкрывая существующие функции. Это может быть непросто, так как методы новых версий функций должны быть обновлены и следовать тем же рекомендациям.
 * Развертывание всех обновлений в качестве нового приложения-функции с помощью другой учетной записи хранения.
-* Разверните новую копию приложения-функции с той же учетной записью хранения, но с обновленным именем `taskHub`. Рекомендуем использовать этот метод.
+* Разверните новую копию приложения-функции с той же учетной записью хранения, но с обновленным именем `taskHub`. Рекомендуется использовать параллельные развертывания.
 
 ### <a name="how-to-change-task-hub-name"></a>Как изменить имя центра задач
 
@@ -130,7 +136,7 @@ public static Task Run([OrchestrationTrigger] DurableOrchestrationContext contex
 }
 ```
 
-#### <a name="functions-2x"></a>Функции 2.x
+#### <a name="functions-20"></a>Функции 2,0
 
 ```json
 {

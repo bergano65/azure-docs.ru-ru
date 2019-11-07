@@ -1,20 +1,20 @@
 ---
 title: Архивация и восстановление базы данных Azure Analysis Services | Документы Майкрософт
-description: Описывает, как выполнять архивацию и восстановление базы данных Analysis Services Azure.
+description: В этой статье описывается, как выполнять резервное копирование и восстановление метаданных модели и данных из базы данных Azure Analysis Services.
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 07/29/2019
+ms.date: 10/30/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: fde545f3764f5910d00da5a8ce7f0e8c1772c7ea
-ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
+ms.openlocfilehash: 3f63ecf560a14248fed6dea53c30a27acdf9a938
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2019
-ms.locfileid: "72295413"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73573449"
 ---
-# <a name="backup-and-restore"></a>Резервное копирование и восстановление
+# <a name="backup-and-restore"></a>Архивация и восстановление
 
 Архивация баз данных табличной модели в Azure Analysis Services во многом аналогична процедуре для локальных служб Analysis Services. Основное различие заключается в расположении для хранения архивных файлов. Архивные файлы следует сохранять в контейнер в [учетной записи хранения Azure](../storage/common/storage-create-storage-account.md). Можно использовать уже имеющиеся учетную запись хранения и контейнер либо создать их при настройке параметров хранилища для сервера.
 
@@ -37,7 +37,7 @@ ms.locfileid: "72295413"
 
 2.  Щелкните **Включено**, а затем — **Параметры хранилища**.
 
-    ![Включение](./media/analysis-services-backup/aas-backup-enable.png)
+    ![Включить](./media/analysis-services-backup/aas-backup-enable.png)
 
 3. Выберите имеющуюся учетную запись хранения или создайте новую.
 
@@ -49,7 +49,7 @@ ms.locfileid: "72295413"
 
     ![Сохранение параметров архивации](./media/analysis-services-backup/aas-backup-save.png)
 
-## <a name="backup"></a>Azure Backup
+## <a name="backup"></a>Архивация
 
 ### <a name="to-backup-by-using-ssms"></a>Архивация с помощью SSMS
 

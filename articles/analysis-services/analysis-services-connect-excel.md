@@ -1,18 +1,18 @@
 ---
 title: Подключение к Azure Analysis Services с помощью Excel | Документы Майкрософт
-description: Сведения о подключении к серверу Azure Analysis Services с помощью Excel.
+description: Сведения о подключении к серверу Azure Analysis Services с помощью Excel. После подключения пользователи могут создавать сводные таблицы для просмотра данных.
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 07/29/2019
+ms.date: 10/30/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 1ba6864d0bab460b270f6f27acced57d7943a17a
-ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
+ms.openlocfilehash: bb76accfef94327386d0ff58d003782a9fe3b0d2
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2019
-ms.locfileid: "72295334"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73573151"
 ---
 # <a name="connect-with-excel"></a>Подключение с помощью Excel
 
@@ -40,7 +40,7 @@ ms.locfileid: "72295334"
     ![Подключение из Excel: выбор модели](./media/analysis-services-connect-excel/aas-connect-excel-select.png)
 
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>Дополнительные материалы
 
 [Клиентские библиотеки](analysis-services-data-providers.md)   
 [Управление службами Analysis Services](analysis-services-manage.md)     

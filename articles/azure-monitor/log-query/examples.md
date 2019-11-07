@@ -7,19 +7,19 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/01/2019
-ms.openlocfilehash: a5a19910d101f3f30afcafa049056c78cd976f75
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 8850aef8b5d45f236385551a1455e6fe7b540340
+ms.sourcegitcommit: b2fb32ae73b12cf2d180e6e4ffffa13a31aa4c6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72933062"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73614441"
 ---
 # <a name="azure-monitor-log-query-examples"></a>Примеры запроса журнала Azure Monitor
 Эта статья содержит несколько примеров [запросов](log-query-overview.md), составленных на основе [языка запросов Kusto](/azure/kusto/query/) для получения разных типов данных журнала из Azure Monitor. Для консолидации и анализа данных используются разные методы, и на основе этих примеров вы сможете определить, какие стратегии лучше всего подойдут под ваши конкретные требования.  
 
 Дополнительные сведения о ключевых словах, используемых в этих примерах, можно получить в [справочнике по языку Kusto](https://docs.microsoft.com/azure/kusto/query/). Изучите [эту статью](get-started-queries.md) по созданию запросов, если вы еще не работали с Azure Monitor.
 
-## <a name="events"></a>Мероприятия
+## <a name="events"></a>События
 
 ### <a name="search-application-level-events-described-as-cryptographic"></a>Поиск событий шифрования на уровне приложения
 Этот пример выполняет поиск записей в таблице **Events** (События), у которых **EventLog** имеет значение _Application_ (Приложение), а **RenderedDescription** содержит значение _cryptographic_ (шифрование). В поиск включаются записи за последние 24 часа.
@@ -164,7 +164,7 @@ NetworkMonitoring
 | distinct Computer
 ```
 
-## <a name="performance"></a>Ориентированное на производительность
+## <a name="performance"></a>Производительность
 
 ### <a name="join-computer-perf-records-to-correlate-memory-and-cpu"></a>Объединение записей производительности компьютеров для сопоставления данных о памяти и ЦП
 Этот пример сопоставляет записи **perf** для определенного компьютера и создает две временные диаграммы: по средней загрузке ЦП и максимальному объему памяти.
@@ -175,7 +175,6 @@ let EndTime = now()-4d;
 Perf
 | where CounterName == "% Processor Time"  
 | where TimeGenerated > StartTime and TimeGenerated < EndTime
-and TimeGenerated < EndTime
 | project TimeGenerated, Computer, cpu=CounterValue 
 | join kind= inner (
    Perf

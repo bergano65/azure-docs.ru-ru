@@ -7,27 +7,17 @@ ms.author: jzim
 manager: jeconnoc
 ms.service: container-service
 ms.topic: article
-ms.date: 05/08/2019
-ms.openlocfilehash: 8f7349310f72c8cccc7b1906239ece3038dd7861
-ms.sourcegitcommit: 961468fa0cfe650dc1bec87e032e648486f67651
+ms.date: 11/04/2019
+ms.openlocfilehash: d8707e2edccf144cbe58a530bcfe2c176e656915
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72249215"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73582403"
 ---
 # <a name="azure-red-hat-openshift-faq"></a>Вопросы и ответы об Azure Red Hat OpenShift
 
 В этой статье рассматриваются часто задаваемые вопросы о Microsoft Azure Red Hat OpenShift.
-
-## <a name="how-do-i-get-started"></a>Как начать работу?
-
-Прежде чем можно будет использовать Azure Red Hat OpenShift, необходимо приобрести не менее 4 зарезервированных узлов приложений Azure Red Hat OpenShift.
-
-Если вы являетесь клиентом Azure,[приобретите зарезервированные экземпляры Azure Red Hat OpenShift](https://aka.ms/openshift/buy) с помощью портал Azure. После приобретения подписка будет активирована в течение 24 часов, после чего вы сможете подготавливать кластеры.
-
-Если вы не являетесь клиентом Azure, [обратитесь в службу "продажи](https://aka.ms/openshift/contact-sales) " и заполните форму "продажи" в нижней части страницы, чтобы начать процесс.
-
-Дополнительные сведения см. на [странице цен на Azure Red Hat OpenShift](https://aka.ms/openshift/pricing) .
 
 ## <a name="which-azure-regions-are-supported"></a>Какие регионы Azure поддерживаются?
 
@@ -71,7 +61,7 @@ ms.locfileid: "72249215"
 
 ## <a name="can-i-restrict-a-cluster-to-only-certain-azure-ad-users"></a>Можно ли ограничить кластер только определенными пользователями Azure AD?
 
-Да. Вы можете ограничить, какие пользователи Azure AD могут входить в кластер, настроив приложение Azure AD. Дополнительные сведения см. в разделе [How: Ограничить приложение набором пользователей @ no__t-0
+Да. Вы можете ограничить, какие пользователи Azure AD могут входить в кластер, настроив приложение Azure AD. Дополнительные сведения см. в разделе [как ограничить приложение набором пользователей.](https://docs.microsoft.com/azure/active-directory/develop/howto-restrict-your-app-to-a-set-of-users)
 
 ## <a name="can-a-cluster-have-compute-nodes-across-multiple-azure-regions"></a>Может ли кластер вычислять узлы в нескольких регионах Azure?
 
@@ -191,7 +181,7 @@ SDN является openshift-OVS-нетворкполици и не может
 
 ## <a name="can-we-choose-any-persistent-storage-solution-like-ocs"></a>Можно ли выбрать любое решение постоянного хранения, например OCS? 
 
-Для выбора доступны два класса хранения: Диск Azure и файл Azure.
+Для выбора доступны два класса хранения: диск Azure и файл Azure.
 
 ## <a name="how-is-a-cluster-updated-including-majors-and-minors-due-to-vulnerabilities"></a>Как обновляется кластер (включая основные и вспомогательные сведения из-за уязвимостей)?
 

@@ -9,19 +9,18 @@ manager: cgronlund
 ms.custom: include file
 ms.topic: include
 ms.date: 05/30/2019
-ms.openlocfilehash: aa1120db5451583153928bd2cbc383a46781a267
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
-ms.translationtype: HT
+ms.openlocfilehash: 2591ab6984ebe4f864540ab290881a6e47f0be71
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/04/2019
-ms.locfileid: "73489585"
+ms.locfileid: "73580597"
 ---
 **Целевые объекты вычислений можно повторно использовать из одного учебного задания к другому**. Например, после присоединения удаленной виртуальной машины к рабочей области ее можно повторно использовать для нескольких заданий.
 
 |Цели обучения &nbsp;| Поддержка GPU |[Автоматический ML](../articles/machine-learning/service/concept-automated-ml.md) | [Конвейеры машинного обучения](../articles/machine-learning/service/concept-ml-pipelines.md) | [Конструктор Машинное обучение Azure](../articles/machine-learning/service/concept-designer.md)
 |----|:----:|:----:|:----:|:----:|
 |[Локальный компьютер](../articles/machine-learning/service/how-to-set-up-training-targets.md#local)| Ну | Да | &nbsp; | &nbsp; |
-|[Машинное обучение Azure вычислительный экземпляр](../articles/machine-learning/service/concept-compute-instance.md)| Да | | Да |  |
 |[Кластер Машинное обучение Azure COMPUTE](../articles/machine-learning/service/how-to-set-up-training-targets.md#amlcompute)| Да | Да & <br/>Настройка&nbsp;параметров | Да | Да |
 |[Удаленная виртуальная машина](../articles/machine-learning/service/how-to-set-up-training-targets.md#vm) |Да | Да & <br/>Настройка гиперпараметров | Да | &nbsp; |
 |[Azure&nbsp;ные кирпичи](../articles/machine-learning/service/how-to-create-your-first-pipeline.md#databricks)| &nbsp; | Да | Да | &nbsp; |

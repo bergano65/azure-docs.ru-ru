@@ -6,14 +6,14 @@ manager: nitinme
 description: Две таблицы, представляющие реестры контейнеров, репозитории и имена образов для всех предложений службы.
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 10/09/2019
+ms.date: 11/04/2019
 ms.author: dapine
-ms.openlocfilehash: c1593cb3dad7ee1370a66747fa3fe47e93c19957
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
-ms.translationtype: HT
+ms.openlocfilehash: c2e1707c6d757b2bf568f413ce2ab9f7a28ab6e4
+ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73499154"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73604446"
 ---
 ### <a name="container-repositories-and-images"></a>Репозитории и образы контейнеров
 
@@ -40,5 +40,9 @@ ms.locfileid: "73499154"
 | [Компьютерное зрение](../../Computer-vision/computer-vision-how-to-install-containers.md) | чтение | `containerpreview.azurecr.io/microsoft/cognitive-services-read` |
 | [Распознавание лиц](../../face/face-how-to-install-containers.md) | Распознавание лиц | `containerpreview.azurecr.io/microsoft/cognitive-services-face` |
 | [Распознаватель форм](https://go.microsoft.com/fwlink/?linkid=2083826&clcid=0x409) | Распознаватель документов | `containerpreview.azurecr.io/microsoft/cognitive-services-form-recognizer` |
-< < < < < < < HEAD | [API речевой службы](../../speech-service/speech-container-howto.md?tab=stt) | Преобразование речи в текст | `containerpreview.azurecr.io/microsoft/cognitive-services-speech-to-text` | | [API речевой службы](../../speech-service/speech-container-howto.md?tab=cstt) | Пользовательское распознавание речи в текст | `containerpreview.azurecr.io/microsoft/cognitive-services-custom-speech-to-text` | | [API речевой службы](../../speech-service/speech-container-howto.md?tab=tts) | Преобразование текста в речь | `containerpreview.azurecr.io/microsoft/cognitive-services-text-to-speech` | | [API речевой службы](../../speech-service/speech-container-howto.md?tab=ctts) | Пользовательский текст в речь | `containerpreview.azurecr.io/microsoft/cognitive-services-custom-text-to-speech` | ======= | [API речевой службы](../../speech-service/speech-container-howto.md) | Преобразование речи в текст | `containerpreview.azurecr.io/microsoft/cognitive-services-speech-to-text` | | [API речевой службы](../../speech-service/speech-container-howto.md) | Преобразование текста в речь | `containerpreview.azurecr.io/microsoft/cognitive-services-text-to-speech` | | [Перевод текстов](../../translator/how-to-install-containers.md) | Перевод текстов | `containerpreview.azurecr.io/microsoft/cognitive-services-translator-text` |
->>>>>>> ReFS, remotes, MicrosoftDocs/Master
+| [API службы "Речь"](../../speech-service/speech-container-howto.md?tab=stt) | Преобразование речи в текст | `containerpreview.azurecr.io/microsoft/cognitive-services-speech-to-text` |
+| [API службы "Речь"](../../speech-service/speech-container-howto.md?tab=cstt) | Пользовательское распознавание речи к тексту | `containerpreview.azurecr.io/microsoft/cognitive-services-custom-speech-to-text` |
+| [API службы "Речь"](../../speech-service/speech-container-howto.md?tab=tts) | Преобразование текста в речь | `containerpreview.azurecr.io/microsoft/cognitive-services-text-to-speech` |
+| [API службы "Речь"](../../speech-service/speech-container-howto.md?tab=ctts) | Пользовательский текст в речь | `containerpreview.azurecr.io/microsoft/cognitive-services-custom-text-to-speech` |
+| [Перевод текстов](../../translator/how-to-install-containers.md) | Перевод текста | `containerpreview.azurecr.io/microsoft/cognitive-services-translator-text` |
+

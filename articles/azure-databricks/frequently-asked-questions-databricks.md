@@ -9,32 +9,32 @@ ms.service: azure-databricks
 ms.workload: big-data
 ms.topic: conceptual
 ms.date: 10/25/2018
-ms.openlocfilehash: 8707aa55c1126af6a7fb2812d4c7314f031209d0
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.openlocfilehash: 0436a0898f27d3059069ce2df1fdfb143a98f325
+ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72597474"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73601807"
 ---
 # <a name="frequently-asked-questions-about-azure-databricks"></a>Часто задаваемые вопросы об Azure Databricks
 
 В этой статье перечислены самые популярные вопросы, которые могут возникнуть в связи с Azure Databricks. Также здесь указаны некоторые распространенные проблемы, которые могут возникать при использовании Databricks. Дополнительные сведения см. в статье [Что такое Azure Databricks?](what-is-azure-databricks.md) 
 
 ## <a name="can-i-use-azure-key-vault-to-store-keyssecrets-to-be-used-in-azure-databricks"></a>Можно ли использовать Azure Key Vault для хранения ключей (секретов), используемых в Azure Databricks?
-Да. Azure Key Vault можно использовать для хранения ключей (секретов), используемых в Azure Databricks. Дополнительные сведения см. в документации по [Create an Azure Key Vault-backed secret scope](https://docs.azuredatabricks.net/user-guide/secrets/secret-scopes.html#akv-ss) (Создании секретной области в Azure Key Vault).
+Да. Azure Key Vault можно использовать для хранения ключей (секретов), используемых в Azure Databricks. Дополнительные сведения см. в документации по [Create an Azure Key Vault-backed secret scope](/azure/databricks/security/secrets/secret-scopes) (Создании секретной области в Azure Key Vault).
 
 
 ## <a name="can-i-use-azure-virtual-networks-with-databricks"></a>Можно ли использовать виртуальные сети Azure в Azure Databricks?
-Да. Виртуальные сети Azure можно использовать в Azure Databricks. Дополнительные сведения см. в статье [Deploying Azure Databricks in your Azure Virtual Network (Preview)](https://docs.azuredatabricks.net/administration-guide/cloud-configurations/azure/vnet-inject.html) (Развертывание Azure Databricks в виртуальной сети Azure (предварительная версия)).
+Да. Виртуальные сети Azure можно использовать в Azure Databricks. Дополнительные сведения см. в статье [Deploying Azure Databricks in your Azure Virtual Network (Preview)](/azure/databricks/administration-guide/cloud-configurations/azure/vnet-inject) (Развертывание Azure Databricks в виртуальной сети Azure (предварительная версия)).
 
 ## <a name="how-do-i-access-azure-data-lake-storage-from-a-notebook"></a>Разделы справки получить доступ к Azure Data Lake Storage из записной книжки? 
 
-Выполните следующие действия:
+Выполните следующие действия.
 1. Подготовьте субъект-службу в Azure Active Directory (Azure AD) и запишите его ключ.
 1. Назначьте необходимые разрешения субъекту-службе в Data Lake Storage.
 1. Чтобы получить доступ к файлу в Data Lake Storage, используйте учетные данные субъекта-службы в записной книжке.
 
-Дополнительные сведения см. в разделе [использование Azure Data Lake Storage с Azure Databricks](https://docs.azuredatabricks.net/spark/latest/data-sources/azure/azure-datalake.html).
+Дополнительные сведения см. в разделе [использование Azure Data Lake Storage с Azure Databricks](/azure/databricks/data/data-sources/azure/azure-datalake.html).
 
 ## <a name="fix-common-problems"></a>Устранение распространенных проблем
 
@@ -44,7 +44,7 @@ ms.locfileid: "72597474"
 
 #### <a name="error-message"></a>Сообщение об ошибке
 
-Эта подписка не зарегистрирована для использования пространства имен Microsoft.Databricks. Чтобы узнать больше о регистрации подписок, перейдите на страницу https://aka.ms/rps-not-found . (Код: MissingSubscriptionRegistration)
+Эта подписка не зарегистрирована для использования пространства имен Microsoft.Databricks. "See https://aka.ms/rps-not-found for how to register subscriptions" (Чтобы узнать больше о регистрации подписок, перейдите на страницу https://aka.ms/rps-not-found). (Код: MissingSubscriptionRegistration)
 
 #### <a name="solution"></a>Решение
 
@@ -67,22 +67,22 @@ ms.locfileid: "72597474"
 
 * Эта ошибка также может возникнуть, если доменное имя из используемого адреса электронной почты назначено многим каталогам в Azure Active Directory. Чтобы обойти эту проблему, создайте нового пользователя в каталоге, который содержит подписку с рабочей областью Databricks.
 
-    а) На портале Azure перейдите к Azure AD. Выберите **Пользователи и группы**, а затем —  > **Добавить пользователя**.
+    а. На портале Azure перейдите к Azure AD. Выберите **Пользователи и группы**, а затем —  > **Добавить пользователя**.
 
-    б) Добавьте пользователя с адресом электронной почты в формате `@<tenant_name>.onmicrosoft.com` вместо `@<your_domain>`. Этот параметр можно найти в списке **Пользовательские домены** в разделе Azure AD на портале Azure.
+    b. Добавьте пользователя с адресом электронной почты в формате `@<tenant_name>.onmicrosoft.com` вместо `@<your_domain>`. Этот параметр можно найти в списке **Пользовательские домены** в разделе Azure AD на портале Azure.
     
-    в) Назначьте новому пользователю роль **участника** для ресурса рабочей области Databricks.
+    c. Назначьте новому пользователю роль **участника** для ресурса рабочей области Databricks.
     
     г) Войдите на портал Azure с учетными данными нового пользователя и найдите нужную рабочую область Databricks.
     
-    д) Запустите рабочую область Databricks от имени этого пользователя.
+    д. Запустите рабочую область Databricks от имени этого пользователя.
 
 
 ### <a name="issue-your-account-email-has-not-been-registered-in-databricks"></a>Проблема. Ваша учетная запись {адрес электронной почты} не зарегистрирована в Databricks 
 
 #### <a name="solution"></a>Решение
 
-Если вы не создавали эту рабочую область, вас нужно добавить в качестве пользователя. Для этого обратитесь к создателю рабочей области. Попросите добавить вас с помощью консоли администрирования Azure Databricks. Эта процедура описана в статье [Adding and managing users](https://docs.azuredatabricks.net/administration-guide/admin-settings/users.html) (Добавление пользователей и управление ими). Если вы получаете такое сообщение, когда сами создавали эту рабочую область, попробуйте еще раз выполнить действие **Инициализация рабочей области** на портале Azure.
+Если вы не создавали эту рабочую область, вас нужно добавить в качестве пользователя. Для этого обратитесь к создателю рабочей области. Попросите добавить вас с помощью консоли администрирования Azure Databricks. Эта процедура описана в статье [Adding and managing users](/azure/databricks/administration-guide/users-groups/users) (Добавление пользователей и управление ими). Если вы получаете такое сообщение, когда сами создавали эту рабочую область, попробуйте еще раз выполнить действие **Инициализация рабочей области** на портале Azure.
 
 ### <a name="issue-cloud-provider-launch-failure-while-setting-up-the-cluster-publicipcountlimitreached"></a>Проблема. Сбой запуска поставщика облачных служб при настройке кластера (PublicIPCountLimitReached)
 
@@ -111,7 +111,7 @@ ms.locfileid: "72597474"
 
 ### <a name="issue-azure-databricks-needs-permissions-to-access-resources-in-your-organization-that-only-an-admin-can-grant"></a>Проблема. Azure Databricks требуются разрешения на доступ к ресурсам в вашей организации, которые может предоставить только администратор
 
-#### <a name="background"></a>Фоновый
+#### <a name="background"></a>Общие сведения
 
 Azure Databricks интегрируется с Azure Active Directory. Можно задать разрешения в Azure Databricks (например, для записных книжек или кластеров), указав пользователей из Azure AD. Чтобы в Azure Databricks можно было вывести список имен пользователей из Azure AD, требуется разрешение на чтение этих данных и согласие на их предоставление. Если оно недоступно, возникнет ошибка.
 

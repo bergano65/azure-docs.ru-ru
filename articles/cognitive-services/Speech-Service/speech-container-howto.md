@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: dapine
-ms.openlocfilehash: 647edcab5ec2925016e8a099ae43b6133037f8de
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
-ms.translationtype: HT
+ms.openlocfilehash: efb2fd8fd6b77a27130b834c2b192c1e88eec97c
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/04/2019
-ms.locfileid: "73491132"
+ms.locfileid: "73578384"
 ---
 # <a name="install-and-run-speech-service-containers"></a>Установка и запуск контейнеров речевых служб
 
@@ -35,7 +35,7 @@ ms.locfileid: "73491132"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед использованием речевых контейнеров выполните следующие предварительные требования.
 
@@ -167,19 +167,7 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-speech-to-t
 2.0.0-amd64-en-us-preview
 ```
 
-В следующей таблице перечислены поддерживаемые языковые стандарты для преобразования **речи в текст** в 2.0.0 версии контейнера.
-
-| Языковой стандарт | Теги |
-|--|--|
-| Китайский | `zh-CN` |
-| Английский | `en-US`<br>`en-GB`<br>`en-AU`<br>`en-IN` |
-| Французский | `fr-CA`<br>`fr-FR` |
-| Немецкий | `de-DE` |
-| Итальянский | `it-IT` |
-| Японский | `ja-JP` |
-| Корейский | `ko-KR` |
-| Португальский | `pt-BR` |
-| Испанский | `es-ES`<br>`es-MX` |
+Для всех поддерживаемых языковых стандартов в версии 2.0.0 контейнера, посвященной **распознаванию речи** , можно просмотреть столбец **поддержки контейнеров** в таблице [поддержки языков преобразования речи в текст](language-support.md#speech-to-text) .
 
 # <a name="custom-speech-to-texttabcstt"></a>[Пользовательское распознавание речи к тексту](#tab/cstt)
 
@@ -221,24 +209,7 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-text-to-spe
 1.3.0-amd64-en-us-jessarus-preview
 ```
 
-В следующей таблице перечислены поддерживаемые языковые стандарты для преобразования **текста в речь** в 1.3.0 версии контейнера.
-
-| Языковой стандарт | Теги | Поддерживаемые голоса |
-|--|--|--|
-| Китайский | `zh-CN` | хуихуирус<br>кангканг — Apollo<br>яойао — Apollo |
-| Английский | `en-AU` | касерине<br>хайлэйрус |
-| Английский | `en-GB` | Георгия-Apollo<br>хазелрус<br>Ирина-Apollo |
-| Английский | `en-IN` | Хира — Apollo<br>прийарус<br>Рави — Apollo<br> |
-| Английский | `en-US` | жессарус<br>бенжаминрус<br>jessa24krus<br>зирарус<br>guy24krus |
-| Французский | `fr-CA` | Кэролайн<br>хармониерус |
-| Французский | `fr-FR` | хортенсерус<br>Юлия — Apollo<br>Пол-Apollo |
-| Немецкий | `de-DE` | хедда<br>хеддарус<br>Стефан — Apollo |
-| Итальянский | `it-IT` | Косимо — Apollo<br>луЦиарус |
-| Японский | `ja-JP` | айуми — Apollo<br>харукарус<br>Ичиро — Apollo |
-| Корейский | `ko-KR` | хеамирус |
-| Португальский | `pt-BR` | Даниэль — Apollo<br>хелоисарус |
-| Испанский | `es-ES` | еленарус<br>Мария-Apollo<br>Пабло — Apollo<br> |
-| Испанский | `es-MX` | хилдарус<br>Павел — Apollo |
+Для всех поддерживаемых языковых стандартов и соответствующих голосов в 1.3.0 версии контейнера преобразования **текста в речь** см. столбец **Поддержка контейнеров** в таблице [поддержки по стандартным голосовым языкам](language-support.md#standard-voices) .
 
 > [!IMPORTANT]
 > При создании стандартного HTTP-запроса POST *для преобразования текста в речь* для сообщения [SSML (язык разметки речи)](speech-synthesis-markup.md) требуется элемент `voice` с атрибутом `name`. Значение представляет собой соответствующий языковой стандарт контейнера и голоса, также называемый ["коротким именем"](language-support.md#standard-voices). Например, тег `latest` будет иметь имя голоса `en-US-JessaRUS`.

@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 11/04/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 00710183828892c81d3ea887e4394237288eb6bb
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 156f2e95913dffd88de0b4669b13a5af5fc9605c
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60303542"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73684681"
 ---
 # <a name="deployment-stage-of-the-team-data-science-process-lifecycle"></a>Этап развертывания в жизненном цикле командного процесса обработки и анализа данных
 
@@ -50,7 +50,7 @@ ms.locfileid: "60303542"
    * бизнес-приложения; 
    * серверные приложения. 
 
-Примеры ввода в эксплуатацию веб-службы машинного обучения Azure см. в статье [Развертывание веб-службы машинного обучения Azure](../studio/publish-a-machine-learning-web-service.md). Мы рекомендуем встроить в производственную модель и развернутый конвейер средства телеметрии и мониторинга. Это позволит получать отчеты о состоянии системы и устранять неполадки.  
+Примеры ввода в эксплуатацию веб-службы машинного обучения Azure см. в статье [Развертывание веб-службы машинного обучения Azure](../studio/deploy-a-machine-learning-web-service.md). Мы рекомендуем встроить в производственную модель и развернутый конвейер средства телеметрии и мониторинга. Это позволит получать отчеты о состоянии системы и устранять неполадки.  
 
 ## <a name="artifacts"></a>Артефакты
 

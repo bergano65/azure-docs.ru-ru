@@ -1,5 +1,5 @@
 ---
-title: Создание пула узлов виртуальных рабочих столов Windows с помощью шаблона Azure Resource Manager — Azure
+title: Пул узлов виртуальных рабочих столов Windows Azure Resource Manager — Azure
 description: Создание пула узлов в виртуальном рабочем столе Windows с помощью шаблона Azure Resource Manager.
 services: virtual-desktop
 author: Heidilohr
@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 08/29/2019
 ms.author: helohr
-ms.openlocfilehash: b96ecad93c481a762b81a7888940850ed3a73e5f
-ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
+ms.openlocfilehash: 23d032a2496e975c7e6ceafb61691c2cb1216218
+ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71679612"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73605751"
 ---
 # <a name="create-a-host-pool-with-an-azure-resource-manager-template"></a>Создание пула узлов с помощью шаблона Azure Resource Manager
 
@@ -42,7 +42,7 @@ ms.locfileid: "71679612"
 
 1. Прокрутите страницу вниз и щелкните правой кнопкой мыши **Развертывание в Azure**, а затем выберите **Copy Link Location** (Скопировать ссылку).
 2. Откройте текстовый редактор, например Блокнот, и вставьте в него ссылку.
-3. Сразу после "https://portal.azure.com/" и перед хэш-подписыванием (#) введите символ @, за которым следует имя домена клиента. Ниже приведен пример формата, который следует использовать: https://portal.azure.com/@Contoso.onmicrosoft.com#create/.
+3. Сразу после "https://portal.azure.com/" и перед хэш-объектом (#) введите символ @, а затем доменное имя клиента. Ниже приведен пример формата, который следует использовать: https://portal.azure.com/@Contoso.onmicrosoft.com#create/.
 4. Войдите на портал Azure как пользователь с правами администратора или участника подписки поставщика облачных решений.
 5. Вставьте скопированную в текстовый редактор ссылку в адресную строку.
 

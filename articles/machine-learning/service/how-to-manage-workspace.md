@@ -10,12 +10,12 @@ ms.author: sgilley
 author: sdgilley
 ms.date: 11/04/2019
 ms.custom: seodec18
-ms.openlocfilehash: 1985c596b9f4b9b78b0055bfe1eab9888c30e201
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 9e3915a2f55680fc2e24ac63d5e7170ada026c2e
+ms.sourcegitcommit: b2fb32ae73b12cf2d180e6e4ffffa13a31aa4c6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73489750"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73615186"
 ---
 # <a name="create-and-manage-azure-machine-learning-workspaces-in-the-azure-portal"></a>Создание рабочих областей Машинное обучение Azure и управление ими в портал Azure
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -30,13 +30,13 @@ ms.locfileid: "73489750"
 
 1. На портале Azure вверху слева щелкните **+ Создать ресурс**.
 
-      ![Создать новый ресурс](../../../includes/media/aml-create-in-portal/portal-create-resource.png)
+      ![Создать новый ресурс](../../../includes/media/aml-create-in-portal/create-workspace.gif)
 
-1. С помощью строки поиска найдите ресурс **Рабочая область Службы машинного обучения**.
+1. Используйте панель поиска для поиска **машинное обучение**.
 
-1. Выберите ресурс **Рабочая область Службы машинного обучения**.
+1. Выберите **машинное обучение**.
 
-1. В области **Рабочая область Службы машинного обучения** выберите **Создать**.
+1. В области **машинное обучение** выберите **создать** , чтобы начать.
 
 1. Укажите следующие сведения для настройки новой рабочей области:
 
@@ -89,18 +89,15 @@ ms.locfileid: "73489750"
 
 ## <a name="view"></a>Найти рабочую область
 
-1. В верхнем левом углу окна портала выберите **Все службы**.
+1. В верхнем поле поиска введите **машинное обучение**.  
 
-1. В поле фильтра **все службы** введите **машинное обучение**.  
+1. Выберите **машинное обучение**.
 
-1. Выберите **машинное обучение Azure**.
-
-   ![Поиск Машинное обучение Azure рабочей области](media/how-to-manage-workspace/all-services.png)
+   ![Поиск Машинное обучение Azure рабочей области](media/how-to-manage-workspace/find-workspaces.png)
 
 1. Просмотрите список найденных рабочих областей. Можно выполнять фильтрацию на основе подписки, групп ресурсов и расположений.  
 
 1. Выберите рабочую область, чтобы отобразить ее свойства.
-   ![свойства рабочей области](media/how-to-manage-workspace/allservices_view_workspace_full.PNG)
 
 ## <a name="delete-a-workspace"></a>Удаление рабочей области
 

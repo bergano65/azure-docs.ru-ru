@@ -1,20 +1,21 @@
 ---
-title: Расширенная защита от угроз для Базы данных SQL Azure | Документация Майкрософт
+title: Настройка расширенной защиты от угроз для базы данных SQL Azure
 description: Расширенная защита от угроз обнаруживает аномальные действия базы данных, указывающие потенциальные угрозы безопасности для базы данных в одной базе данных или эластичном пуле.
 services: sql-database
 ms.service: sql-database
 ms.subservice: security
+ms.custom: seo-dt-2019
 ms.topic: conceptual
 author: rmatchoro
 ms.author: ronmat
 ms.reviewer: vanto, carlrab
 ms.date: 08/05/2019
-ms.openlocfilehash: 755a3b391cb7b4909169b034cc8d89892ec2ed05
-ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
+ms.openlocfilehash: 8a6d40f37dec3488009a702d52d6437cd345717b
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68816542"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73686941"
 ---
 # <a name="azure-sql-database-advanced-threat-protection-for-single-or-pooled-databases"></a>Расширенная защита от угроз базы данных SQL Azure для отдельных баз данных или в составе пула
 
@@ -42,7 +43,7 @@ ms.locfileid: "68816542"
 
 Пример сценария см. в статье [Настройка аудита и расширенная защита от угроз с помощью PowerShell](scripts/sql-database-auditing-and-threat-detection-powershell.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [Advanced Threat protection](sql-database-threat-detection-overview.md).
 - Дополнительные сведения о [Advanced Threat Protection в управляемом экземпляре](sql-database-managed-instance-threat-detection.md).  

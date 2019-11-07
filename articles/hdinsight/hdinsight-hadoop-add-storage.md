@@ -2,33 +2,33 @@
 title: Добавление дополнительных учетных записей хранения Azure в HDInsight
 description: Сведения о добавлении дополнительных учетных записей хранения Azure в существующий кластер HDInsight.
 author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
-ms.date: 04/08/2019
-ms.author: hrasheed
-ms.openlocfilehash: 8a844465f7ba2222acd7efaf100c7b682c15adb2
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.date: 10/31/2019
+ms.openlocfilehash: e29041942157e720cce3414f7b6e6904667c1894
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67433514"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73665477"
 ---
 # <a name="add-additional-storage-accounts-to-hdinsight"></a>Добавление дополнительных учетных записей хранения в HDInsight
 
-Узнайте, как добавить дополнительное хранилище Azure с помощью действий сценария *учетные записи* для HDInsight. Действия, описанные в этом документе добавить хранилище *учетной записи* в существующий кластер HDInsight под управлением Linux. Эта статья относится к хранилищу *учетные записи* (не по умолчанию учетной записи хранения кластера) и не дополнительного хранилища, такие как [Gen1 хранилища Озера данных Azure](hdinsight-hadoop-use-data-lake-store.md) и [Gen2 хранилища Озера данных Azure ](hdinsight-hadoop-use-data-lake-storage-gen2.md).
+Узнайте, как использовать действия сценария для добавления дополнительных *учетных записей* хранения Azure в HDInsight. Действия, описанные в этом документе, позволяют добавить *учетную запись* хранения в существующий кластер HDInsight под управлением Linux. Эта статья относится к *учетным записям* хранения (а не к учетной записи хранения кластера по умолчанию), а также к дополнительным хранилищам, таким как [Azure Data Lake Storage 1-го поколения](hdinsight-hadoop-use-data-lake-store.md) и [Azure Data Lake Storage 2-го поколения](hdinsight-hadoop-use-data-lake-storage-gen2.md).
 
 > [!IMPORTANT]  
-> В этом документе описано, как добавить дополнительное хранилище в кластер после его создания. Сведения о добавлении учетных записей хранения во время создания кластера см. в статье о [настройке кластеров HDInsight с использованием Apache Hadoop, Apache Spark, Apache Kafka и других платформ](hdinsight-hadoop-provision-linux-clusters.md).
+> Сведения в этом документе посвящены добавлению дополнительных учетных записей хранения в кластер после его создания. Сведения о добавлении учетных записей хранения во время создания кластера см. в статье о [настройке кластеров HDInsight с использованием Apache Hadoop, Apache Spark, Apache Kafka и других платформ](hdinsight-hadoop-provision-linux-clusters.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Кластер Hadoop в HDInsight. Ознакомьтесь со статьей [Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](./hadoop/apache-hadoop-linux-tutorial-get-started.md).
-* Имя учетной записи хранения и ключ. См. в разделе [Управление параметрами учетной записи хранения на портале Azure](../storage/common/storage-account-manage.md).
-* [Имя кластера правильно верблюжьим](hdinsight-hadoop-manage-ambari-rest-api.md#identify-correctly-cased-cluster-name).
-* Если с помощью PowerShell, вам потребуется модуль AZ.  См. в разделе [Общие сведения об Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview).
-* Если вы еще не установили Azure CLI, см. в разделе [интерфейса командной строки Azure (CLI)](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest).
-* Если используется bash или командной строки windows, вам также потребуется **jq**, обработчик командной строки JSON.  Дополнительные сведения см. на странице [https://stedolan.github.io/jq/](https://stedolan.github.io/jq/). Bash на Ubuntu в Windows 10 см. в разделе [подсистемы Windows для руководство по установке Linux для Windows 10](https://docs.microsoft.com/windows/wsl/install-win10).
+* Имя и ключ учетной записи хранения. См. раздел [Управление параметрами учетной записи хранения в портал Azure](../storage/common/storage-account-manage.md).
+* [Правильное имя кластера с учетом регистра](hdinsight-hadoop-manage-ambari-rest-api.md#identify-correctly-cased-cluster-name).
+* При использовании PowerShell вам потребуется модуль AZ.  См. [обзор Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview).
+* Если вы еще не установили Azure CLI, см. раздел [интерфейс командной строки Azure (CLI)](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest).
+* Если вы используете bash или командную строку Windows, вам также потребуется **JQ**, обработчик JSON командной строки.  Дополнительные сведения см. на странице [https://stedolan.github.io/jq/](https://stedolan.github.io/jq/). Для bash в системе Ubuntu в Windows 10 см. раздел [подсистема Windows для установки Linux для Windows 10](https://docs.microsoft.com/windows/wsl/install-win10).
 
 ## <a name="how-it-works"></a>Принцип работы
 
@@ -36,9 +36,9 @@ ms.locfileid: "67433514"
 
 * __Имя учетной записи хранения Azure__: имя учетной записи хранения, добавляемой в кластер HDInsight. После выполнения сценария HDInsight сможет считывать и записывать данные, хранящиеся в этой учетной записи хранения.
 
-* __Ключ учетной записи хранения Azure__: ключ, который позволяет получить доступ к учетной записи хранения.
+* __Ключ учетной записи хранения Azure__: ключ, который предоставляет доступ к учетной записи хранения.
 
-* __-p__ (необязательно): если этот параметр указан, ключ не шифруется и хранится в файле core-site.xml как обычный текст.
+* __-p__ (необязательно). Если параметр указан, ключ не шифруется и хранится в файле Core-site. XML в виде обычного текста.
 
 При обработке скрипт выполняет следующие действия.
 
@@ -59,15 +59,15 @@ ms.locfileid: "67433514"
 
 __Расположение скрипта__: [https://hdiconfigactions.blob.core.windows.net/linuxaddstorageaccountv01/add-storage-account-v01.sh](https://hdiconfigactions.blob.core.windows.net/linuxaddstorageaccountv01/add-storage-account-v01.sh)
 
-__Требования__  Скрипт должен применяться к __головным узлам__. Вам не нужно отмечать этот скрипт как __сохраняемый__, так как он непосредственно обновляет конфигурацию Ambari для кластера.
+__Требования__. сценарий должен быть применен к __головным узлам__. Вам не нужно помечать этот скрипт как __сохраняемый__, так как он непосредственно обновляет конфигурацию Ambari для кластера.
 
 ## <a name="to-use-the-script"></a>Использование скрипта
 
-Этот скрипт можно использовать Azure PowerShell, интерфейса командной строки Azure или портала Azure.
+Этот скрипт можно использовать из Azure PowerShell, Azure CLI или портал Azure.
 
 ### <a name="powershell"></a>PowerShell
 
-С помощью [отправить AzHDInsightScriptAction](https://docs.microsoft.com/powershell/module/az.hdinsight/submit-azhdinsightscriptaction). Замените `CLUSTERNAME`, `ACCOUNTNAME`, и `ACCOUNTKEY` с соответствующими значениями.
+С помощью команды [Submit-аздинсигхтскриптактион](https://docs.microsoft.com/powershell/module/az.hdinsight/submit-azhdinsightscriptaction). Замените `CLUSTERNAME`, `ACCOUNTNAME`и `ACCOUNTKEY` соответствующими значениями.
 
 ```powershell
 # Update these parameters
@@ -86,9 +86,9 @@ Submit-AzHDInsightScriptAction `
     -Parameters $parameters
 ```
 
-### <a name="azure-cli"></a>Инфраструктура CLI Azure
+### <a name="azure-cli"></a>Azure CLI
 
-С помощью [выполнить действие сценария в hdinsight az](https://docs.microsoft.com/cli/azure/hdinsight/script-action?view=azure-cli-latest#az-hdinsight-script-action-execute).  Замените `CLUSTERNAME`, `RESOURCEGROUP`, `ACCOUNTNAME`, и `ACCOUNTKEY` с соответствующими значениями.
+С помощью команды [AZ hdinsight Script — действие Execute](https://docs.microsoft.com/cli/azure/hdinsight/script-action?view=azure-cli-latest#az-hdinsight-script-action-execute).  Замените `CLUSTERNAME`, `RESOURCEGROUP`, `ACCOUNTNAME`и `ACCOUNTKEY` соответствующими значениями.
 
 ```cli
 az hdinsight script-action execute ^
@@ -102,88 +102,83 @@ az hdinsight script-action execute ^
 
 ### <a name="azure-portal"></a>Портал Azure
 
-См. в разделе [применение действия сценария в работающем кластере](hdinsight-hadoop-customize-cluster-linux.md#apply-a-script-action-to-a-running-cluster).
+См. раздел [применение действия сценария в работающем кластере](hdinsight-hadoop-customize-cluster-linux.md#apply-a-script-action-to-a-running-cluster).
 
 ## <a name="known-issues"></a>Известные проблемы
 
 ### <a name="storage-firewall"></a>Брандмауэр хранилища
 
-Если выбран для защиты вашей учетной записи хранения с **брандмауэры и виртуальные сети** ограничения на **выбранные сети**, не забудьте включить исключения **Разрешить надежные Microsoft службы...**  HDInsight можно получить доступ к вашей учетной записи хранения.
+Если вы решили защитить учетную запись хранения с ограничениями **брандмауэра и виртуальной сети** в **выбранных сетях**, обязательно включите исключение **Разрешить доверенные службы Майкрософт...** , чтобы HDInsight могла получить доступ к хранилищу. учетной записи.
 
 ### <a name="storage-accounts-not-displayed-in-azure-portal-or-tools"></a>Учетные записи хранения не отображаются на портале Azure или в Azure Tools
 
-При просмотре кластера HDInsight на портале Azure (для этого нужно щелкнуть __Учетные записи хранения__ в разделе __Свойства__) не отображаются учетные записи хранения, добавленные с помощью действия сценария. Azure PowerShell и Azure CLI также не отображают дополнительные учетные записи хранения.
+При просмотре кластера HDInsight в портал Azure при выборе элемента " __учетные записи хранения__ " в разделе " __свойства__ " не отображаются учетные записи хранения, добавленные с помощью этого действия скрипта. Azure PowerShell и Azure CLI не отображают дополнительную учетную запись хранения.
 
-Информация о хранилище не отображается, так как сценарий изменяет только конфигурацию core-site.xml для кластера. Эта информация не используется при получении сведений о кластере с помощью интерфейсов API управления Azure.
+Информация о хранилище не отображается, так как сценарий изменяет только конфигурацию core-site.xml для кластера. Эта информация не используется при получении сведений о кластере с помощью API-интерфейсов управления Azure.
 
 Чтобы просмотреть сведения об учетной записи хранения, добавленной в кластер с помощью этого сценария, используйте REST API Ambari. Чтобы получить эти сведения для кластера, выполните следующие команды:
 
 ### <a name="powershell"></a>PowerShell
 
-Замените `CLUSTERNAME` именем правильно верблюжьим кластера. Прежде всего определите версию конфигурации службы используется, введя следующую команду:
-
-```powershell
-# getting service_config_version
-$clusterName = "CLUSTERNAME"
-
-$resp = Invoke-WebRequest -Uri "https://$clusterName.azurehdinsight.net/api/v1/clusters/$clusterName`?fields=Clusters/desired_service_config_versions/HDFS" `
-    -Credential $creds -UseBasicParsing
-$respObj = ConvertFrom-Json $resp.Content
-$respObj.Clusters.desired_service_config_versions.HDFS.service_config_version
-```
-
-Замените `ACCOUNTNAME` реальными именами. Затем замените `4` с фактическим config версия обновления и введите команду. При запросе введите пароль для входа кластера.
+Замените `CLUSTERNAME` именем кластера, соответствующим регистру. Замените `ACCOUNTNAME` фактическими именами. При появлении запроса введите пароль для входа в кластер.
 
 ```powershell
 # Update values
+$clusterName = "CLUSTERNAME"
 $accountName = "ACCOUNTNAME"
-$version = 4
 
 $creds = Get-Credential -UserName "admin" -Message "Enter the cluster login credentials"
-$resp = Invoke-WebRequest -Uri "https://$clusterName.azurehdinsight.net/api/v1/clusters/$clusterName/configurations/service_config_versions?service_name=HDFS&service_config_version=$version" `
+
+# getting service_config_version
+$resp = Invoke-WebRequest -Uri "https://$clusterName.azurehdinsight.net/api/v1/clusters/$clusterName`?fields=Clusters/desired_service_config_versions/HDFS" `
+    -Credential $creds -UseBasicParsing
+$respObj = ConvertFrom-Json $resp.Content
+
+$configVersion=$respObj.Clusters.desired_service_config_versions.HDFS.service_config_version
+
+$resp = Invoke-WebRequest -Uri "https://$clusterName.azurehdinsight.net/api/v1/clusters/$clusterName/configurations/service_config_versions?service_name=HDFS&service_config_version=$configVersion" `
     -Credential $creds
 $respObj = ConvertFrom-Json $resp.Content
 $respObj.items.configurations.properties."fs.azure.account.key.$accountName.blob.core.windows.net"
 ```
 
 ### <a name="bash"></a>bash
-Замените `myCluster` именем правильно верблюжьим кластера.
+
+Замените `CLUSTERNAME` именем кластера, соответствующим регистру. Замените `PASSWORD` паролем администратора кластера. Замените `STORAGEACCOUNT` фактическим именем учетной записи хранения.
 
 ```bash
-export CLUSTERNAME='myCluster'
+export clusterName="CLUSTERNAME"
+export password='PASSWORD'
+export storageAccount="STORAGEACCOUNT"
 
-curl --silent -u admin -G "https://$CLUSTERNAME.azurehdinsight.net/api/v1/clusters/$CLUSTERNAME?fields=Clusters/desired_service_config_versions/HDFS" \
-| jq ".Clusters.desired_service_config_versions.HDFS[].service_config_version" 
-```
+export ACCOUNTNAME='"'fs.azure.account.key.$storageAccount.blob.core.windows.net'"'
 
-Замените `myAccount` на имя учетной записи хранения. Затем замените `4` с фактическим config версия обновления и введите команду:
+export configVersion=$(curl --silent -u admin:$password -G "https://$clusterName.azurehdinsight.net/api/v1/clusters/$clusterName?fields=Clusters/desired_service_config_versions/HDFS" \
+| jq ".Clusters.desired_service_config_versions.HDFS[].service_config_version")
 
-```bash
-export ACCOUNTNAME='"fs.azure.account.key.myAccount.blob.core.windows.net"'
-export VERSION='4'
-
-curl --silent -u admin -G "https://$CLUSTERNAME.azurehdinsight.net/api/v1/clusters/$CLUSTERNAME/configurations/service_config_versions?service_name=HDFS&service_config_version=$VERSION" \
+curl --silent -u admin:$password -G "https://$clusterName.azurehdinsight.net/api/v1/clusters/$clusterName/configurations/service_config_versions?service_name=HDFS&service_config_version=$configVersion" \
 | jq ".items[].configurations[].properties[$ACCOUNTNAME] | select(. != null)"
 ```
 
 ### <a name="cmd"></a>cmd.
 
-Замените `CLUSTERNAME` именем правильно верблюжьим кластера в обоих сценариях. Прежде всего определите версию конфигурации службы используется, введя следующую команду:
+Замените `CLUSTERNAME` правильным именем кластера с учетом регистра в обоих скриптах. Сначала укажите используемую версию конфигурации службы, введя следующую команду:
 
 ```cmd
 curl --silent -u admin -G "https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME?fields=Clusters/desired_service_config_versions/HDFS" | ^
-jq-win64 ".Clusters.desired_service_config_versions.HDFS[].service_config_version" 
+jq-win64 ".Clusters.desired_service_config_versions.HDFS[].service_config_version"
 ```
 
-Замените `ACCOUNTNAME` на имя учетной записи хранения. Затем замените `4` с фактическим config версия обновления и введите команду:
+Замените `ACCOUNTNAME` фактическим именем учетной записи хранения. Затем замените `4` на фактическую версию конфигурации службы и введите команду:
 
 ```cmd
 curl --silent -u admin -G "https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME/configurations/service_config_versions?service_name=HDFS&service_config_version=4" | ^
 jq-win64 ".items[].configurations[].properties["""fs.azure.account.key.ACCOUNTNAME.blob.core.windows.net"""] | select(. != null)"
 ```
+
 ---
 
- Выходные данные этой команды выглядят так:
+Выходные данные этой команды выглядят так:
 
     "MIIB+gYJKoZIhvcNAQcDoIIB6zCCAecCAQAxggFaMIIBVgIBADA+MCoxKDAmBgNVBAMTH2RiZW5jcnlwdGlvbi5henVyZWhkaW5zaWdodC5uZXQCEA6GDZMW1oiESKFHFOOEgjcwDQYJKoZIhvcNAQEBBQAEggEATIuO8MJ45KEQAYBQld7WaRkJOWqaCLwFub9zNpscrquA2f3o0emy9Vr6vu5cD3GTt7PmaAF0pvssbKVMf/Z8yRpHmeezSco2y7e9Qd7xJKRLYtRHm80fsjiBHSW9CYkQwxHaOqdR7DBhZyhnj+DHhODsIO2FGM8MxWk4fgBRVO6CZ5eTmZ6KVR8wYbFLi8YZXb7GkUEeSn2PsjrKGiQjtpXw1RAyanCagr5vlg8CicZg1HuhCHWf/RYFWM3EBbVz+uFZPR3BqTgbvBhWYXRJaISwssvxotppe0ikevnEgaBYrflB2P+PVrwPTZ7f36HQcn4ifY1WRJQ4qRaUxdYEfzCBgwYJKoZIhvcNAQcBMBQGCCqGSIb3DQMHBAhRdscgRV3wmYBg3j/T1aEnO3wLWCRpgZa16MWqmfQPuansKHjLwbZjTpeirqUAQpZVyXdK/w4gKlK+t1heNsNo1Wwqu+Y47bSAX1k9Ud7+Ed2oETDI7724IJ213YeGxvu4Ngcf2eHW+FRK"
 
@@ -193,12 +188,12 @@ jq-win64 ".items[].configurations[].properties["""fs.azure.account.key.ACCOUNTNA
 
 Если вы измените ключ для учетной записи хранения, HDInsight больше не сможет обращаться к этой учетной записи. HDInsight использует кэшированную копию ключа в core-site.xml для кластера. Эту копию нужно обновить в соответствии с новым ключом.
 
-При повторном запуске действия сценария ключ __не__ обновляется, так как сценарий проверяет наличие записи для учетной записи хранения. Если запись уже существует, он не вносит какие-либо изменения.
+При повторном запуске действия сценария ключ __не__ обновляется, так как сценарий проверяет наличие записи для учетной записи хранения. Если запись уже существует, изменения не вносятся.
 
 Чтобы решить эту проблему, необходимо удалить существующую запись для учетной записи хранения. Чтобы удалить имеющуюся запись, выполните указанные ниже действия.
 
 > [!IMPORTANT]  
-> Смена ключа хранилища для учетной записи основного хранилища, подключенные к кластеру, не поддерживается.
+> Смена ключа хранилища для основной учетной записи хранения, подключенной к кластеру, не поддерживается.
 
 1. Откройте в браузере веб-интерфейс Ambari для кластера HDInsight. Значение URI — `https://CLUSTERNAME.azurehdinsight.net`. Замените `CLUSTERNAME` именем кластера.
 
@@ -213,7 +208,7 @@ jq-win64 ".items[].configurations[].properties["""fs.azure.account.key.ACCOUNTNA
         fs.azure.account.keyprovider.mystorage.blob.core.windows.net
         fs.azure.account.key.mystorage.blob.core.windows.net
 
-4. Определив ключи для учетной записи хранения, используйте красный значок с минусом (-) справа от записи, чтобы удалить ее. Нажмите кнопку __Сохранить__, чтобы сохранить изменения.
+4. Определив ключи для учетной записи хранения, которую необходимо удалить, используйте красный значок "-" справа от записи, чтобы удалить его. Нажмите кнопку __Сохранить__, чтобы сохранить изменения.
 
 5. Сохранив изменения, используйте действие скрипта, чтобы добавить учетную запись хранения и новое значение ключа кластера.
 
@@ -227,4 +222,4 @@ jq-win64 ".items[].configurations[].properties["""fs.azure.account.key.ACCOUNTNA
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Вы узнали, как добавлять дополнительные учетные записи хранения Azure в существующий кластер HDInsight. Дополнительные сведения о действиях скриптов см. в статье [Настройка кластеров HDInsight под управлением Linux с помощью действия сценария](hdinsight-hadoop-customize-cluster-linux.md).
+Вы узнали, как добавлять дополнительные учетные записи хранения в существующий кластер HDInsight. Дополнительные сведения о действиях скриптов см. в статье [Настройка кластеров HDInsight под управлением Linux с помощью действия сценария](hdinsight-hadoop-customize-cluster-linux.md).

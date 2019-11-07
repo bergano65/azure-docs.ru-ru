@@ -4,14 +4,14 @@ description: Используйте шаблоны Azure Resource Manager для
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 10/28/2019
+ms.date: 10/31/2019
 ms.author: mjbrown
-ms.openlocfilehash: 7861196daf3b04430200096a0d42bdcc6e6d5cf9
-ms.sourcegitcommit: 87efc325493b1cae546e4cc4b89d9a5e3df94d31
+ms.openlocfilehash: ecdfe89e899e0d416784ae32a0d66b335c09e2b6
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73053222"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73582804"
 ---
 # <a name="azure-resource-manager-templates-for-azure-cosmos-db"></a>Шаблоны Azure Resource Manager для Azure Cosmos DB
 
@@ -21,10 +21,8 @@ ms.locfileid: "73053222"
 
 |**Шаблон**|**Описание**|
 |---|---|
-|[Создание учетной записи Azure Cosmos, базы данных, контейнера](manage-sql-with-resource-manager.md#create-resource) | Этот шаблон создает учетную запись SQL (ядро) API в двух регионах с поддержкой нескольких хозяев. Учетная запись Azure Cosmos будет содержать два контейнера, которые совместно используют пропускную способность на уровне базы данных. |
+|[Создание учетной записи Azure Cosmos, базы данных, контейнера](manage-sql-with-resource-manager.md#create-resource) | Этот шаблон создает учетную запись SQL (Core) API в двух регионах с двумя контейнерами с пропускной способностью общей базы данных и контейнером с выделенной пропускной способностью. Пропускную способность можно обновить, повторно отправив шаблон с обновленным значением свойства пропускной способности. |
 |[Создание учетной записи Azure Cosmos, базы данных и контейнера с помощью хранимой процедуры, триггера и определяемой пользователем функции](manage-sql-with-resource-manager.md#create-sproc) | Этот шаблон создает учетную запись SQL (Core) API в двух регионах с хранимой процедурой, триггером и определяемой пользователем функцией для контейнера. |
-|[Обновление пропускной способности (единиц запросов/с) для базы данных](manage-sql-with-resource-manager.md#database-ru-update) | Этот шаблон обновляет пропускную способность для базы данных в учетной записи SQL (ядро) API. |
-|[Обновление пропускной способности (единиц запросов/с) для контейнера](manage-sql-with-resource-manager.md#container-ru-update) | Этот шаблон обновляет пропускную способность для контейнера в учетной записи SQL (ядро) API. |
 
 ## <a name="mongodb-api"></a>API MongoDB
 
@@ -50,7 +48,7 @@ ms.locfileid: "73053222"
 |[Обновление пропускной способности (единиц запросов/с) для базы данных](manage-gremlin-with-resource-manager.md#database-ru-update) | Этот шаблон обновляет пропускную способность для базы данных в учетной записи API Gremlin. |
 |[Обновление пропускной способности (единиц запросов в секунду) для графика](manage-gremlin-with-resource-manager.md#graph-ru-update) | Этот шаблон обновляет пропускную способность графа в учетной записи API Gremlin. |
 
-## <a name="table-api"></a>API таблиц
+## <a name="table-api"></a>API таблицы
 
 |**Шаблон**|**Описание**|
 |---| ---|

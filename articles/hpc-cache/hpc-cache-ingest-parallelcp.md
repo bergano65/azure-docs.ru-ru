@@ -1,19 +1,19 @@
 ---
-title: Скрипт получения данных для предварительной версии кэша Azure HPC — Параллельное копирование
+title: Скрипт приема данных кэша Azure HPC для параллельного копирования
 description: Как использовать скрипт параллельного копирования для перемещения данных в целевое хранилище BLOB-объектов в кэше HPC Azure
 author: ekpgh
 ms.service: hpc-cache
 ms.topic: conceptual
-ms.date: 08/30/2019
+ms.date: 10/30/2019
 ms.author: rohogue
-ms.openlocfilehash: 4899f946cb358693c969def3fa740af64675d934
-ms.sourcegitcommit: 1c2659ab26619658799442a6e7604f3c66307a89
+ms.openlocfilehash: 0bb74dcd683145fbae22cf0b6d2827ad9e16de0e
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72254506"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73582692"
 ---
-# <a name="azure-hpc-cache-preview-data-ingest---parallel-copy-script-method"></a>Метод создания скрипта копирования данных кэша HPC Azure (Предварительная версия)
+# <a name="azure-hpc-cache-data-ingest---parallel-copy-script-method"></a>Метод создания скрипта копирования данных кэша HPC Azure
 
 В этой статье приводятся инструкции по созданию сценария ``parallelcp`` и его использованию для перемещения данных в контейнер хранилища BLOB-объектов для использования с кэшем HPC Azure.
 

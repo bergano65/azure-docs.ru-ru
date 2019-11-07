@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 10/09/2019
 ms.author: mahender
 ms.custom: seodec18
-ms.openlocfilehash: 49bf7984efe74edd2a19909509e0c6b9564fc2e9
-ms.sourcegitcommit: f272ba8ecdbc126d22a596863d49e55bc7b22d37
+ms.openlocfilehash: e42fa7f48b5e6475604570a95f2ffc034b43b8f7
+ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72274416"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73604621"
 ---
 # <a name="use-key-vault-references-for-app-service-and-azure-functions"></a>Использование Key Vault ссылок для службы приложений и функций Azure
 
@@ -46,18 +46,20 @@ ms.locfileid: "72274416"
 Ссылка на Key Vault имеет вид `@Microsoft.KeyVault({referenceString})`, где `{referenceString}` заменяется одним из следующих значений.
 
 > [!div class="mx-tdBreakAll"]
-> | Строка ссылки                                                            | Описание                                                                                                                                                                                 |
+> | Строка ссылки                                                            | Description (Описание)                                                                                                                                                                                 |
 > |-----------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 > | SecretUri=_secretUri_                                                       | Здесь **SecretUri** является полным URI плоскости данных секрета в Key Vault, включая версию, например: https://myvault.vault.azure.net/secrets/mysecret/ec96f02080254f109c51a1f14cdb1931.  |
 > | VaultName=_vaultName_;SecretName=_secretName_;SecretVersion=_secretVersion_ | Здесь **VaultName** — имя ресурса Key Vault. **SecretName** — имя целевого секрета. **SecretVersion** — используемая версия секрета. |
 
-> [!NOTE] 
-> В настоящее время требуются версии. При смене секретов вам придется обновлять версию в конфигурации приложения.
-
-Вот пример допустимой полной ссылки:
+Например, полная ссылка на версию будет выглядеть следующим образом:
 
 ```
 @Microsoft.KeyVault(SecretUri=https://myvault.vault.azure.net/secrets/mysecret/ec96f02080254f109c51a1f14cdb1931)
+```
+Полная ссылка без версии будет выглядеть следующим образом:
+
+```
+@Microsoft.KeyVault(SecretUri=https://<MYKEYVAULT>.vault.azure.net/secrets/eShopStorageAccountCS/)
 ```
 
 Еще один вариант:
@@ -69,7 +71,7 @@ ms.locfileid: "72274416"
 
 ## <a name="source-application-settings-from-key-vault"></a>Получение параметров приложения из Key Vault
 
-Ссылки на Key Vault можно использовать в качестве значений для [параметров приложения](configure-common.md#configure-app-settings), что позволяет хранить секреты в Key Vault, а не в конфигурации сайта. Параметры приложения надежно шифруются при хранении, но возможности для управления секретами для них будут обеспечены только в Key Vault.
+Key Vault ссылки могут использоваться в качестве значений [параметров приложения](configure-common.md#configure-app-settings), что позволяет хранить секреты в Key Vault вместо конфигурации сайта. Параметры приложения безопасно шифруются при хранении, но если требуются возможности управления секретами, они должны переключиться в Key Vault.
 
 Чтобы использовать ссылку на Key Vault в качестве параметра приложения, укажите эту ссылку в значении этого параметра. Приложения смогут использовать секрет через ключ параметра, как обычно. Изменения кода не требуются.
 

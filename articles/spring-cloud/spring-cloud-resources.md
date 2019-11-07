@@ -1,32 +1,29 @@
 ---
-title: Ресурсы для Azure Spring Cloud | Документация Майкрософт
-description: Список ресурсов для Azure Spring Cloud
-services: spring-cloud
-author: v-vasuke
-manager: jeconnoc
-editor: ''
+title: Ресурсы для Azure Веснного облака | Документация Майкрософт
+description: Список ресурсов для Azure весны в облаке
+author: jpconnock
 ms.service: spring-cloud
-ms.topic: quickstart
-ms.date: 10/7/2019
-ms.author: v-vasuke
-ms.openlocfilehash: 9cefc7a456d2d9e404770272b8a3b9ac7b8f64f0
-ms.sourcegitcommit: d773b5743cb54b8cbcfa5c5e4d21d5b45a58b081
-ms.translationtype: HT
+ms.topic: reference
+ms.date: 11/1/2019
+ms.author: jeconnoc
+ms.openlocfilehash: 0d3eb2bc526633f139c09620ae4bc1b53c6e31ad
+ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72038393"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73607138"
 ---
 # <a name="resources"></a>Ресурсы
 
-Ниже приведен список ресурсов, которые могут быть полезны для разработчиков Azure Spring Cloud.
+Ниже приведен список ресурсов, которые могут быть полезны для разработчиков Azure весны в облаке.
 
-| ИМЯ                  | Ссылка                 |
+| Имя                  | Ссылка                 |
 | :------------------- | -------------------: |
 | Стратегия развития Azure | https://azure.microsoft.com/updates/ |
 | Часто задаваемые вопросы| [Ссылка на документ](spring-cloud-faq.md)|
 | Руководство по устранению неполадок| [Ссылка на документ](spring-cloud-troubleshoot.md) |
 | Форум MSDN| https://social.msdn.microsoft.com/Forums/home |
-| Веб-сайт Java Spring Cloud|https://spring.io/ |
-| Spring Framework|https://cloud.spring.io/spring-cloud-azure/ |
+| Веб-сайт с пружинным облаком Java| https://spring.io/ |
+| Пружинная платформа| https://cloud.spring.io/spring-cloud-azure/ |
 | Spring в Azure| https://docs.microsoft.com/azure/java/spring-framework/?view=azure-java-stable |
-| Архитектура микрослужб Spring Cloud от Pivotal|https://docs.pivotal.io/spring-cloud-services/1-5/common/index.html |
+| Архитектура микрослужб с пружинным облаком по сводному| https://docs.pivotal.io/spring-cloud-services/1-5/common/index.html |

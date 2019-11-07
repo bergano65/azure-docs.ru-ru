@@ -5,31 +5,27 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: conceptual
-ms.date: 10/14/2019
+ms.date: 11/1/2019
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4b26679542753d5fb429c33e4220c23a3937c5cb
-ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
+ms.openlocfilehash: 68acf32660fe36ddd4c2982b818ce21adde7ddab
+ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72430446"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73603593"
 ---
-# <a name="add-google-as-an-identity-provider-for-b2b-guest-users-preview"></a>Добавление Google в качестве поставщика удостоверений для гостевых пользователей B2B (Предварительная версия)
+# <a name="add-google-as-an-identity-provider-for-b2b-guest-users"></a>Добавление Google в качестве поставщика удостоверений для гостевых пользователей B2B
 
-|     |
-| --- |
-| Google Federation — это общедоступная Предварительная версия функции Azure Active Directory. См. подробные сведения о [дополнительных условиях использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).|
-|     |
+Настроив Федерацию с помощью Google, можно разрешить приглашенным пользователям входить в ваши общие приложения и ресурсы с помощью собственных учетных записей Gmail, не создавая учетные записи Майкрософт (MSAs). 
 
-Настроив Федерацию с помощью Google, можно разрешить приглашенным пользователям входить в ваши общие приложения и ресурсы с помощью собственных учетных записей Gmail, не создавая учетные записи Майкрософт (MSAs) или учетные записи Azure AD. Google Federation предназначен специально для пользователей Gmail. Чтобы создать федерацию с доменами G Suite, используйте [функцию Direct Federation](direct-federation.md) .
 > [!NOTE]
-> Гостевым пользователям Google необходимо войти по ссылке, содержащей контекст клиента (например, `https://myapps.microsoft.com/?tenantid=<tenant id>`, или `https://portal.azure.com/<tenant id>`, или в случае проверенного домена по умолчанию — `https://myapps.microsoft.com/<verified domain>.onmicrosoft.com`). Прямые ссылки на приложения и ресурсы также работают, если они содержат контекст клиента. В настоящее время пользователи не могут войти в систему, используя конечные точки, которые не имеют контекста клиента. Например, использование `https://myapps.microsoft.com`, `https://portal.azure.com` или общей конечной точки команды приведет к ошибке.
- 
+> Google Federation предназначен специально для пользователей Gmail. Чтобы создать федерацию с доменами G Suite, используйте [функцию Direct Federation](direct-federation.md).
+
 ## <a name="what-is-the-experience-for-the-google-user"></a>Как эта возможность выглядит для пользователя Google?
 Когда вы отправляете приглашение пользователю Google Gmail, гостевой пользователь должен получить доступ к вашим общим приложениям или ресурсам, используя ссылку, которая содержит контекст клиента. Способ взаимодействия с пользователем зависит от того, выполнил ли он вход в Google:
   - Если гостевой пользователь не выполнил вход в Google, ему предлагается выполнить его.
@@ -38,6 +34,19 @@ ms.locfileid: "72430446"
 Если гостевой пользователь видит ошибку, связанную со слишком длинным заголовком, можно попытаться очистить файлы cookie или открыть окно в анонимном режиме и повторить попытку входа.
 
 ![Снимок экрана, показывающий страницу входа Google](media/google-federation/google-sign-in.png)
+
+## <a name="limitations"></a>Ограничения
+
+Группы полностью поддерживают гостевых пользователей Google на всех устройствах. Пользователи Google могут входить в команды из общей конечной точки, например `https://teams.microsoft.com`.
+
+Общие конечные точки других приложений могут не поддерживать пользователей Google. Пользователи Google Guest должны войти, используя ссылку, содержащую сведения о клиенте. Ниже приведены примеры.
+  * `https://myapps.microsoft.com/?tenantid=<your tenant id>`
+  * `https://portal.azure.com/<your tenant id>`
+  * `https://myapps.microsoft.com/<your verified domain>.onmicrosoft.com`
+
+   Если гостевые пользователи Google пытаются использовать такую ссылку, как `https://myapps.microsoft.com` или `https://portal.azure.com`, они получат ошибку.
+
+Вы также можете предоставить гостевым пользователям Google прямую ссылку на приложение или ресурс, если эта ссылка включает сведения о клиенте, например `https://myapps.microsoft.com/signin/Twitter/<application ID?tenantId=<your tenant ID>`. 
 
 ## <a name="step-1-configure-a-google-developer-project"></a>Шаг 1. Настройка проекта разработчика Google
 Сначала создайте новый проект в консоли разработчиков Google, чтобы получить идентификатор и секрет клиента, которые впоследствии можно добавить в Azure AD. 

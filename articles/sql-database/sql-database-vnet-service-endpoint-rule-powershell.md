@@ -1,5 +1,5 @@
 ---
-title: PowerShell для конечных точек и правил виртуальной сети для отдельных баз данных и баз данных в пуле в SQL Azure | Документация Майкрософт
+title: 'PowerShell для конечных точек и правил виртуальной сети для отдельных баз данных и пулов в SQL Azure '
 description: Сценарии PowerShell для создания конечных точек службы виртуальной сети для базы данных SQL Azure и хранилища данных SQL и управления ими.
 services: sql-database
 ms.service: sql-database
@@ -11,14 +11,14 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: genemi, vanto
 ms.date: 03/12/2019
-ms.openlocfilehash: 326eec68ed3ca1d42552b89fe4519d24c62cf12a
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: 0f3c44d705cb3d8b6ff2d855686394d9e9f1575e
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68841368"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73686851"
 ---
-# <a name="powershell--create-a-virtual-service-endpoint-and-vnet-rule-for-sql"></a>PowerShell:  создание конечной точки виртуальной службы и правила виртуальной сети для SQL
+# <a name="powershell--create-a-virtual-service-endpoint-and-vnet-rule-for-sql"></a>PowerShell: создание конечной точки службы и правила виртуальной сети для SQL
 
 *Правила виртуальной сети* — это одна из функций безопасности брандмауэра, которая контролирует то, обеспечивает ли сервер отдельной базы данных и эластичного пула в [Базе данных SQL](sql-database-technical-overview.md) Azure или базы данных в [Хранилище данных SQL](../sql-data-warehouse/sql-data-warehouse-overview-what-is.md) обмен данными с определенными подсетями в виртуальных сетях.
 
@@ -30,7 +30,7 @@ ms.locfileid: "68841368"
 1. Создает *конечную точку службы виртуальной сети* Microsoft Azure в подсети.
 2. Добавляет конечную точку в брандмауэр сервера Базы данных SQL Azure, чтобы создать *правило виртуальной сети*.
 
-Причины для создания правила приведены в статье [Конечные точки виртуальной службы для базы данных SQL Azure][sql-db-vnet-service-endpoint-rule-overview-735r].
+Сведения о причинах создания правила см. в следующих разделах: [конечные точки виртуальной службы для базы данных SQL Azure][sql-db-vnet-service-endpoint-rule-overview-735r].
 
 > [!TIP]
 > Если все, что вам требуется, это оценить или добавить *имя типа* конечной точки службы виртуальной сети для базы данных SQL в подсеть, то вы можете сразу перейти к более [прямолинейному сценарию PowerShell](#a-verify-subnet-is-endpoint-ps-100).
@@ -47,9 +47,9 @@ ms.locfileid: "68841368"
 
 1. [New-азвиртуалнетворксубнетконфиг](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetworksubnetconfig): создает объект подсети.
 2. [New-азвиртуалнетворк](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetwork): создает виртуальную сеть, предоставляя ей подсеть.
-3. [Set-азвиртуалнетворксубнетконфиг](https://docs.microsoft.com/powershell/module/az.network/Set-azVirtualNetworkSubnetConfig): присваивает конечную точку виртуальной службы подсети.
+3. [Set-азвиртуалнетворксубнетконфиг](https://docs.microsoft.com/powershell/module/az.network/Set-azVirtualNetworkSubnetConfig): назначает конечную точку виртуальной службы вашей подсети.
 4. [Set-азвиртуалнетворк](https://docs.microsoft.com/powershell/module/az.network/Set-azVirtualNetwork): сохраняет обновления, внесенные в виртуальную сеть.
-5. [New-азсклсервервиртуалнетворкруле](https://docs.microsoft.com/powershell/module/az.sql/new-azsqlservervirtualnetworkrule): после указания того, что подсеть является конечной точкой, этот командлет добавляет подсеть в виде правила виртуальной сети в список управления доступом сервера Базы данных SQL Azure.
+5. [New-азсклсервервиртуалнетворкруле](https://docs.microsoft.com/powershell/module/az.sql/new-azsqlservervirtualnetworkrule). После того как подсеть является конечной, добавляет подсеть в качестве правила виртуальной сети в список управления доступом сервера базы данных SQL Azure.
    - В версии 5.1.1 модуля Azure RM PowerShell и последующих версиях командлет предоставляет параметр **-IgnoreMissingVnetServiceEndpoint**.
 
 ## <a name="prerequisites-for-running-powershell"></a>Предварительные требования для запуска PowerShell
@@ -66,7 +66,7 @@ ms.locfileid: "68841368"
 
 <a name="a-script-10" />
 
-### <a name="script-1-variables"></a>Сценарий 1. Переменные
+### <a name="script-1-variables"></a>Сценарий 1: переменные
 
 Первый сценарий PowerShell присваивает переменным значения. Последующие сценарии зависят от этих переменных.
 
@@ -115,12 +115,12 @@ Write-Host 'Completed script 1, the "Variables".';
 
 <a name="a-script-20" />
 
-### <a name="script-2-prerequisites"></a>Сценарий 2. Предварительные требования
+### <a name="script-2-prerequisites"></a>Сценарий 2: предварительные требования
 
 Этот сценарий подготавливает среду к следующему сценарию, который выполняет действие с конечной точкой. Этот сценарий создает перечисленные ниже элементы, но только если они еще не существует. Сценарий 2 можно пропустить, если вы уверены, что эти элементы уже существуют:
 
 - Группа ресурсов Azure
-- сервер Базы данных SQL Azure;
+- сервер Базы данных SQL Azure.
 
 ### <a name="powershell-script-2-source-code"></a>Исходный код сценария 2 PowerShell
 
@@ -206,7 +206,7 @@ Write-Host 'Completed script 2, the "Prerequisites".';
 
 <a name="a-script-30" />
 
-## <a name="script-3-create-an-endpoint-and-a-rule"></a>Сценарий 3. Создание конечной точки и правила
+## <a name="script-3-create-an-endpoint-and-a-rule"></a>Сценарий 3: создание конечной точки и правила
 
 Этот сценарий создает виртуальную сеть с подсетью. Затем он присваивает тип конечной точки **Microsoft.Sql** подсети. Наконец, этот сценарий добавляет подсеть в список управления доступом (ACL) вашего сервера Базы данных SQL, тем самым создавая правило.
 
@@ -292,11 +292,11 @@ Write-Host 'Completed script 3, the "Virtual-Network-Rule".';
 
 <a name="a-script-40" />
 
-## <a name="script-4-clean-up"></a>Сценарий 4. Очистка
+## <a name="script-4-clean-up"></a>Сценарий 4: очистка
 
 Этот сценарий удаляет ресурсы, созданные предыдущим сценарии в целях демонстрации. Однако этот сценарий запрашивает подтверждение, прежде чем удалить следующие элементы:
 
-- сервер Базы данных SQL Azure;
+- сервер Базы данных SQL Azure.
 - группа ресурсов Azure.
 
 Сценарий 4 можно запустить в любой момент после завершения сценария 1.

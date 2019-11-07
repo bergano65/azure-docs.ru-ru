@@ -4,14 +4,14 @@ description: Сведения об управлении учетными зап�
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 09/28/2019
+ms.date: 10/31/2019
 ms.author: mjbrown
-ms.openlocfilehash: f67487f6da5c9be028703d7890e16ffab0c858c6
-ms.sourcegitcommit: 80da36d4df7991628fd5a3df4b3aa92d55cc5ade
+ms.openlocfilehash: 049be390403fe984ed4f8f38a4cdc86e24060e49
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71812530"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73582620"
 ---
 # <a name="manage-an-azure-cosmos-account"></a>Управление учетной записью Azure Cosmos
 
@@ -33,13 +33,13 @@ ms.locfileid: "71812530"
 
 ### <a id="create-database-account-via-arm-template"></a>Шаблон Azure Resource Manager
 
-Этот шаблон Azure Resource Manager позволяет создать учетную запись Azure Cosmos для любого поддерживаемого API, настроенную для двух регионов и позволяющую выбрать уровень согласованности, автоматический переход на другой ресурс и несколько источников. Чтобы развернуть этот шаблон, нажмите кнопку "Deploy to Azure" (Развернуть в Azure) на странице файла сведений в разделе о [создании учетной записи Azure Cosmos](https://github.com/Azure/azure-quickstart-templates/tree/master/101-cosmosdb-create-multi-region-account).
+Этот шаблон Azure Resource Manager создаст учетную запись Azure Cosmos для API SQL, настроенную с двумя регионами и параметрами для выбора уровня согласованности, автоматической отработки отказа и нескольких хозяев. Чтобы развернуть этот шаблон, нажмите кнопку "Deploy to Azure" (Развернуть в Azure) на странице файла сведений в разделе о [создании учетной записи Azure Cosmos](https://github.com/Azure/azure-quickstart-templates/tree/master/101-cosmosdb-sql).
 
 ## <a name="addremove-regions-from-your-database-account"></a>Добавление и удаление регионов из учетной записи базы данных
 
 ### <a id="add-remove-regions-via-portal"></a>Портал Azure
 
-1. Войдите на [портал Azure](https://portal.azure.com). 
+1. Войдите на [портал Azure](https://portal.azure.com).
 
 1. Перейдите к учетной записи Azure Cosmos и откройте меню **Глобальная репликация данных**.
 
@@ -113,7 +113,7 @@ ms.locfileid: "71812530"
             "type": "Microsoft.DocumentDb/databaseAccounts",
             "kind": "GlobalDocumentDB",
             "name": "[parameters('name')]",
-            "apiVersion": "2015-04-08",
+            "apiVersion": "2019-08-01",
             "location": "[parameters('location')]",
             "tags": {},
             "properties": {
@@ -123,11 +123,13 @@ ms.locfileid: "71812530"
                 [
                     {
                         "locationName": "[parameters('primaryRegion')]",
-                        "failoverPriority": 0
+                        "failoverPriority": 0,
+                        "isZoneRedundant": false
                     },
                     {
                         "locationName": "[parameters('secondaryRegion')]",
-                        "failoverPriority": 1
+                        "failoverPriority": 1,
+                        "isZoneRedundant": false
                     }
                 ],
                 "enableMultipleWriteLocations": true
@@ -226,7 +228,7 @@ ms.locfileid: "71812530"
 
 См. раздел [Активация перехода на другой ресурс вручную с помощью PowerShell](manage-with-powershell.md#trigger-manual-failover) .
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения и примеры по управлению учетной записью Azure Cosmos, а также базами данных и контейнерами см. в следующих статьях:
 

@@ -7,14 +7,14 @@ manager: jeconnoc
 keywords: ''
 ms.service: azure-functions
 ms.topic: conceptual
-ms.date: 09/04/2019
+ms.date: 11/02/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 1b056ce8afe86fcd6629aff23ac95acae02ed9ba
-ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
+ms.openlocfilehash: d7e77907e2d394d2a4c1679ec50af8d4f72fa6f1
+ms.sourcegitcommit: b2fb32ae73b12cf2d180e6e4ffffa13a31aa4c6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2019
-ms.locfileid: "72299877"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73615057"
 ---
 # <a name="bindings-for-durable-functions-azure-functions"></a>Привязки для устойчивых функций (Функции Azure)
 
@@ -24,7 +24,7 @@ ms.locfileid: "72299877"
 
 Триггер оркестрации позволяет создавать [устойчивые функции Orchestrator](durable-functions-types-features-overview.md#orchestrator-functions). Этот триггер поддерживает запуск новых экземпляров функции оркестратора и возобновление существующих экземпляров функции оркестратора, которые "ожидают" задачу.
 
-При использовании средств Visual Studio для Функций Azure триггер оркестрации настраивается с помощью атрибута .NET [OrchestrationTriggerAttribute](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.OrchestrationTriggerAttribute.html).
+При использовании средств Visual Studio для Функций Azure триггер оркестрации настраивается с помощью атрибута .NET [OrchestrationTriggerAttribute](https://docs.microsoft.com/dotnet/api/Microsoft.Azure.WebJobs.Extensions.DurableTask.OrchestrationTriggerAttribute?view=azure-dotnet).
 
 При написании функции оркестратора на языках сценариев (например,на JavaScript или C#) триггер оркестрации определяется следующим объектом JSON в массиве `bindings` файла *function.json*:
 
@@ -37,7 +37,7 @@ ms.locfileid: "72299877"
 }
 ```
 
-* `orchestration` является именем оркестрации. Это значение, которое клиенты должны использовать, когда требуется запускать новые экземпляры этой функции оркестрации. Это необязательное свойство. Если не указан, используется имя функции.
+* `orchestration` — это имя оркестрации, которое клиенты должны использовать, когда им нужно запустить новые экземпляры этой функции Orchestrator. Это необязательное свойство. Если не указан, используется имя функции.
 
 Внутри эта привязка триггера опрашивает серии очередей в учетной записи хранения по умолчанию приложения-функции. Эти очереди представляют собой сведения о внутренней реализации расширения, поэтому они не настраиваются явно в свойствах привязки.
 
@@ -60,7 +60,7 @@ ms.locfileid: "72299877"
 
 Привязка триггера оркестрации поддерживает входные и выходные данные. Ниже приведены некоторые сведения об обработке входных и выходных данных.
 
-* **Входные данные**. Функции оркестрации .NET поддерживают только [DurableOrchestrationContext](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html) в качестве типа параметра. Входные данные десериализации непосредственно в сигнатуре функции не поддерживаются. В коде необходимо использовать метод [GetInput\<T>](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html#Microsoft_Azure_WebJobs_DurableOrchestrationContext_GetInput__1)(.NET) или `getInput` (JavaScript) для извлечения входных данных функции оркестратора. Эти входные данные должны быть типа, который сериализуется в JSON.
+* **входные данные** . функции оркестрации .NET поддерживают только `DurableOrchestrationContext` в качестве типа параметра. Входные данные десериализации непосредственно в сигнатуре функции не поддерживаются. Код должен использовать метод `GetInput<T>` (.NET) или `getInput` (JavaScript) для выборки входных данных функции Orchestrator. Эти входные данные должны быть типа, который сериализуется в JSON.
 * **Выходные данные**. Триггеры оркестрации поддерживают выходные значения, а также входные данные. Возвращаемое значение функции используется для назначения выходного значения и должно быть типа, который сериализуется в JSON. Если функция .NET возвращает `Task` или `void`, значение `null` будет сохранено как выходное.
 
 ### <a name="trigger-sample"></a>Пример триггера
@@ -71,14 +71,16 @@ ms.locfileid: "72299877"
 
 ```csharp
 [FunctionName("HelloWorld")]
-public static string Run([OrchestrationTrigger] DurableOrchestrationContext context)
+public static string Run([OrchestrationTrigger] IDurableOrchestrationContext context)
 {
     string name = context.GetInput<string>();
     return $"Hello {name}!";
 }
 ```
+> [!NOTE]
+> Предыдущий код предназначен для Устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать `DurableOrchestrationContext` вместо `IDurableOrchestrationContext`. Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
 
-#### <a name="javascript-functions-2x-only"></a>JavaScript (только для решения "Функции" версии 2.x)
+#### <a name="javascript-functions-20-only"></a>JavaScript (только функции 2,0)
 
 ```javascript
 const df = require("durable-functions");
@@ -90,7 +92,7 @@ module.exports = df.orchestrator(function*(context) {
 ```
 
 > [!NOTE]
-> Объект `context` в JavaScript не представляет DurableOrchestrationContext, а [контекст функции в целом](../functions-reference-node.md#context-object). Получить доступ к методам оркестрации можно через свойство `df` объекта `context`.
+> Объект `context` в JavaScript не представляет DurableOrchestrationContext, а [контекст функции в целом](../functions-reference-node.md#context-object). Получить доступ к методам оркестрации можно через свойство `context` объекта `df`.
 
 > [!NOTE]
 > Для оркестраторов JavaScript нужно использовать `return`. Библиотека `durable-functions` отвечает за вызов метода `context.done`.
@@ -102,7 +104,7 @@ module.exports = df.orchestrator(function*(context) {
 ```csharp
 [FunctionName("HelloWorld")]
 public static async Task<string> Run(
-    [OrchestrationTrigger] DurableOrchestrationContext context)
+    [OrchestrationTrigger] IDurableOrchestrationContext context)
 {
     string name = context.GetInput<string>();
     string result = await context.CallActivityAsync<string>("SayHello", name);
@@ -110,7 +112,10 @@ public static async Task<string> Run(
 }
 ```
 
-#### <a name="javascript-functions-2x-only"></a>JavaScript (только для решения "Функции" версии 2.x)
+> [!NOTE]
+> Предыдущий код предназначен для Устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать `DurableOrchestrationContext` вместо `IDurableOrchestrationContext`. Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
+
+#### <a name="javascript-functions-20-only"></a>JavaScript (только функции 2,0)
 
 ```javascript
 const df = require("durable-functions");
@@ -126,7 +131,7 @@ module.exports = df.orchestrator(function*(context) {
 
 Триггер действия позволяет создавать функции, которые вызываются функциями Orchestrator, называемыми [функциями действий](durable-functions-types-features-overview.md#activity-functions).
 
-Если вы используете Visual Studio, триггер действия настраивается с помощью атрибута .NET [ActvityTriggerAttribute](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.ActivityTriggerAttribute.html).
+Если вы используете Visual Studio, триггер действия настраивается с помощью атрибута `ActivityTriggerAttribute` .NET.
 
 Если вы используете VS Code или портал Azure для разработки приложений, триггер действия определяется следующим объектом JSON в массиве `bindings` файла *function.json*:
 
@@ -159,7 +164,7 @@ module.exports = df.orchestrator(function*(context) {
 
 Привязка триггера действий поддерживает входные и выходные данные, как и триггер оркестрации. Ниже приведены некоторые сведения об обработке входных и выходных данных.
 
-* **Входные данные**. Функции действий .NET изначально используют [DurableActivityContext](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableActivityContext.html) как тип параметра. Кроме того, функция действия может быть объявлена с любым типом параметра, который сериализуется в JSON. При использовании `DurableActivityContext` можно вызвать [GetInput\<T>](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableActivityContext.html#Microsoft_Azure_WebJobs_DurableActivityContext_GetInput__1) для извлечения и десериализации входных данных функции действия.
+* **входные данные** . функции действий .NET изначально используют `DurableActivityContext` в качестве типа параметра. Кроме того, функция действия может быть объявлена с любым типом параметра, который сериализуется в JSON. При использовании `DurableActivityContext`можно вызвать `GetInput<T>`, чтобы получить и десериализовать входные данные функции действия.
 * **Выходные данные.** Функции действий поддерживают выходные значения, а также входные данные. Возвращаемое значение функции используется для назначения выходного значения и должно быть типа, который сериализуется в JSON. Если функция .NET возвращает `Task` или `void`, значение `null` будет сохранено как выходное.
 * **Метаданные**. Функции действий .NET можно привязать к параметру `string instanceId`, чтобы получить идентификатор экземпляра родительской оркестрации.
 
@@ -171,14 +176,17 @@ module.exports = df.orchestrator(function*(context) {
 
 ```csharp
 [FunctionName("SayHello")]
-public static string SayHello([ActivityTrigger] DurableActivityContext helloContext)
+public static string SayHello([ActivityTrigger] IDurableActivityContext helloContext)
 {
     string name = helloContext.GetInput<string>();
     return $"Hello {name}!";
 }
 ```
 
-Типом параметра по умолчанию для привязки `ActivityTriggerAttribute` .NET является `DurableActivityContext`. Но триггеры действий .NET также поддерживают привязку непосредственно к JSON-сериализуемым типам (включая примитивные типы), поэтому эту же функцию можно упростить следующим образом:
+> [!NOTE]
+> Предыдущий код предназначен для Устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать `DurableActivityContext` вместо `IDurableActivityContext`. Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
+
+Типом параметра по умолчанию для привязки `ActivityTriggerAttribute` .NET является `IDurableActivityContext`. Но триггеры действий .NET также поддерживают привязку непосредственно к JSON-сериализуемым типам (включая примитивные типы), поэтому эту же функцию можно упростить следующим образом:
 
 ```csharp
 [FunctionName("SayHello")]
@@ -188,7 +196,7 @@ public static string SayHello([ActivityTrigger] string name)
 }
 ```
 
-#### <a name="javascript-functions-2x-only"></a>JavaScript (только для решения "Функции" версии 2.x)
+#### <a name="javascript-functions-20-only"></a>JavaScript (только функции 2,0)
 
 ```javascript
 module.exports = async function(context) {
@@ -244,9 +252,9 @@ module.exports = async function (context) {
 * Отправляйте им события во время их работы.
 * Очистите журнал экземпляра.
 
-Если вы используете Visual Studio, можно выполнить привязку к клиенту оркестрации с помощью атрибута [орчестратионклиентаттрибуте](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.OrchestrationClientAttribute.html) .net для устойчивые функции 1,0. Начиная с предварительной версии Устойчивые функции 2,0 можно выполнить привязку к клиенту оркестрации с помощью атрибута .NET `DurableClientAttribute`.
+Если вы используете Visual Studio, можно выполнить привязку к клиенту оркестрации с помощью атрибута `OrchestrationClientAttribute` .NET для Устойчивые функции 1,0. Начиная с Устойчивые функции 2,0 можно выполнить привязку к клиенту оркестрации с помощью атрибута `DurableClientAttribute` .NET.
 
-Если вы используете языки сценариев (например, файлы *CSX* или *JS* ) для разработки, триггер ОРКЕСТРАЦИИ определяется следующим объектом JSON в массиве `bindings` файла *Function. JSON*:
+Если вы используете языки сценариев (например, файлы *CSX* или *JS* ) для разработки, триггер ОРКЕСТРАЦИИ определяется следующим объектом JSON в `bindings` массиве файла *Function. JSON*:
 
 ```json
 {
@@ -266,19 +274,19 @@ module.exports = async function (context) {
 
 ### <a name="client-usage"></a>Использование клиента
 
-В функциях .NET вы обычно выполняете привязку к `DurableOrchestrationClient`, что обеспечивает полный доступ ко всем клиентским API, поддерживаемым устойчивыми функциями. Начиная с Устойчивые функции 2,0, вместо этого вы привязываетесь к интерфейсу `IDurableOrchestrationClient`. В JavaScript те же интерфейсы API предоставляются объектом, возвращенным из `getClient`. API-интерфейсы в клиентском объекте включают в себя:
+В функциях .NET обычно выполняется привязка к `IDurableOrchestrationClient`, которая предоставляет полный доступ ко всем API клиентов оркестрации, поддерживаемым Устойчивые функции. В более старых выпусках Устойчивые функции 2. x вместо этого привязывается к классу `DurableOrchestrationClient`. В JavaScript те же интерфейсы API предоставляются объектом, возвращенным из `getClient`. API-интерфейсы в клиентском объекте включают в себя:
 
-* [StartNewAsync](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClient.html#Microsoft_Azure_WebJobs_DurableOrchestrationClient_StartNewAsync_)
-* [GetStatusAsync](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClient.html#Microsoft_Azure_WebJobs_DurableOrchestrationClient_GetStatusAsync_)
-* [TerminateAsync](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClient.html#Microsoft_Azure_WebJobs_DurableOrchestrationClient_TerminateAsync_)
-* [RaiseEventAsync](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClient.html#Microsoft_Azure_WebJobs_DurableOrchestrationClient_RaiseEventAsync_)
-* [PurgeInstanceHistoryAsync](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClient.html#Microsoft_Azure_WebJobs_DurableOrchestrationClient_PurgeInstanceHistoryAsync_)
-* [креатечеккстатусреспонсе](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClient.html#Microsoft_Azure_WebJobs_DurableOrchestrationClient_CreateCheckStatusResponse_)
-* [креатехттпманажементпайлоад](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClient.html#Microsoft_Azure_WebJobs_DurableOrchestrationClient_CreateHttpManagementPayload_)
+* `StartNewAsync`
+* `GetStatusAsync`
+* `TerminateAsync`
+* `RaiseEventAsync`
+* `PurgeInstanceHistoryAsync`
+* `CreateCheckStatusResponse`
+* `CreateHttpManagementPayload`
 
-Кроме того, функции .NET могут выполнить привязку к `IAsyncCollector<T>`, где `T` — [StartOrchestrationArgs](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.StartOrchestrationArgs.html) или `JObject`.
+Кроме того, функции .NET могут быть привязаны к `IAsyncCollector<T>`, где `T` `StartOrchestrationArgs` или `JObject`.
 
-Дополнительные сведения об этих операциях см. в документации по API [DurableOrchestrationClient](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClient.html) .
+Дополнительные сведения об этих операциях см. в документации по API `IDurableOrchestrationClient`.
 
 ### <a name="client-sample-visual-studio-development"></a>Пример клиента (разработка в Visual Studio)
 
@@ -288,12 +296,15 @@ module.exports = async function (context) {
 [FunctionName("QueueStart")]
 public static Task Run(
     [QueueTrigger("durable-function-trigger")] string input,
-    [OrchestrationClient] DurableOrchestrationClient starter)
+    [DurableClient] IDurableOrchestrationClient starter)
 {
     // Orchestration input comes from the queue message content.
     return starter.StartNewAsync("HelloWorld", input);
 }
 ```
+
+> [!NOTE]
+> Предыдущий C# код предназначен для устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать атрибут `OrchestrationClient` вместо атрибута `DurableClient`, а вместо `IDurableOrchestrationClient`необходимо использовать тип параметра `DurableOrchestrationClient`. Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
 
 ### <a name="client-sample-not-visual-studio"></a>Пример клиента (не Visual Studio)
 
@@ -310,27 +321,35 @@ public static Task Run(
     },
     {
       "name": "starter",
-      "type": "orchestrationClient",
+      "type": "durableClient",
       "direction": "in"
     }
   ]
 }
 ```
 
+> [!NOTE]
+> Предыдущий формат JSON предназначен для Устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать `orchestrationClient` вместо `durableClient` в качестве типа триггера. Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
+
 Ниже приведены примеры конкретно для языка, которые запускают новые экземпляры функции оркестратора.
 
-#### <a name="c-sample"></a>Пример на языке C#
+#### <a name="c-script-sample"></a>C#Пример скрипта
 
-В следующем примере показано, как использовать привязку клиента устойчивой оркестрации для запуска нового экземпляра функции из функции скрипта C #:
+В следующем примере показано, как использовать привязку клиента долговременного оркестрации для запуска нового экземпляра функции из C# функции, активируемой с помощью очереди:
 
 ```csharp
 #r "Microsoft.Azure.WebJobs.Extensions.DurableTask"
 
-public static Task<string> Run(string input, DurableOrchestrationClient starter)
+using Microsoft.Azure.WebJobs.Extensions.DurableTask;
+
+public static Task Run(string input, IDurableOrchestrationClient starter)
 {
     return starter.StartNewAsync("HelloWorld", input);
 }
 ```
+
+> [!NOTE]
+> Предыдущий код предназначен для Устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать тип параметра `DurableOrchestrationClient`, а не `IDurableOrchestrationClient`. Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
 
 #### <a name="javascript-sample"></a>Пример на языке JavaScript
 
@@ -354,7 +373,7 @@ module.exports = async function (context) {
 При использовании средств Visual Studio для функций Azure триггер сущности настраивается с помощью атрибута .NET `EntityTriggerAttribute`.
 
 > [!NOTE]
-> Триггеры сущностей доступны в Устойчивые функции 2,0 и более поздних версий. Триггеры сущностей пока недоступны для JavaScript.
+> Триггеры сущностей доступны начиная с Устойчивые функции 2. x.
 
 Внутри эта привязка триггера опрашивает серии очередей в учетной записи хранения по умолчанию приложения-функции. Эти очереди представляют собой сведения о внутренней реализации расширения, поэтому они не настраиваются явно в свойствах привязки.
 
@@ -362,7 +381,7 @@ module.exports = async function (context) {
 
 Ниже приведены некоторые замечания о триггере сущности.
 
-* **С одним потоком**: Для обработки операций с определенной сущностью используется один поток Dispatcher. Если несколько сообщений отправляются в одну сущность одновременно, операции будут обрабатываться один за раз.
+* С **одним потоком**: один поток Dispatcher используется для обработки операций с определенной сущностью. Если несколько сообщений отправляются в одну сущность одновременно, операции будут обрабатываться один за раз.
 * **Обработка подозрительных сообщений** — в триггерах сущностей нет поддержки подозрительных сообщений.
 * **Видимость сообщений** — сообщения триггера сущности удаляются из очереди и остаются невидимыми в течение настраиваемого периода времени. Видимость этих сообщений обновляется автоматически, пока приложение-функция выполняется и работоспособно.
 * **Возвращаемые значения** — функции сущностей не поддерживают возвращаемые значения. Существуют определенные API, которые можно использовать для сохранения состояния или передачи значений обратно в оркестрации.
@@ -378,18 +397,18 @@ module.exports = async function (context) {
 * **EntityId**: идентификатор выполняющейся в данный момент сущности.
 * **Имя_операции**: имя текущей операции.
 * **Хасстате**: существует ли сущность, то есть имеет какое-то состояние. 
-* **State @ no__t-1TState > ()** : Возвращает текущее состояние сущности. Если он еще не существует, он создается и инициализируется в `default<TState>`. Параметр `TState` должен быть примитивным или сериализуемым типом JSON. 
-* **State @ no__t-1TState > (инитфунктион)** : Возвращает текущее состояние сущности. Если он еще не существует, он создается путем вызова указанного параметра `initfunction`. Параметр `TState` должен быть примитивным или сериализуемым типом JSON. 
+* **State\<TState > ()** : Возвращает текущее состояние сущности. Если он еще не существует, он создается и инициализируется в `default<TState>`. Параметр `TState` должен быть примитивным или сериализуемым типом JSON. 
+* **State\<TState > (инитфунктион)** : Возвращает текущее состояние сущности. Если он еще не существует, он создается путем вызова указанного параметра `initfunction`. Параметр `TState` должен быть примитивным или сериализуемым типом JSON. 
 * **Setstate (ARG)** : создает или обновляет состояние сущности. Параметр `arg` должен быть сериализуемым объектом или примитивом JSON.
 * **Делетестате ()** : удаляет состояние сущности. 
-* **Ввод @ no__t-1TInput > ()** : получает входные данные для текущей операции. Параметр типа `TInput` должен быть примитивным или сериализуемым типом JSON.
+* Ввод **\<тинпут > ()** : получает входные данные для текущей операции. Параметр типа `TInput` должен быть примитивным или сериализуемым типом JSON.
 * **Return (ARG)** : Возвращает значение для оркестрации, вызвавшего операцию. Параметр `arg` должен быть объектом-примитивом или сериализуемым в формат JSON.
 * **Сигналентити (EntityId, Operation, input)** : отправляет одностороннее сообщение в сущность. Параметр `operation` должен быть строкой, отличной от NULL, а параметр `input` должен быть объектом-примитивом или сериализуемым в формат JSON.
 * **Креатеневорчестратион (орчестраторфунктионнаме, input)** : запускает новое согласование. Параметр `input` должен быть объектом-примитивом или сериализуемым в формат JSON.
 
-Доступ к объекту `IDurableEntityContext`, переданному в функцию сущности, можно получить с @no__t помощью свойства Async-1 асинхронного. Этот подход удобен при использовании модели программирования на основе классов.
+Доступ к `IDurableEntityContext` объекту, переданному в функцию сущности, можно получить с помощью свойства `Entity.Current` Async-Local. Этот подход удобен при использовании модели программирования на основе классов.
 
-### <a name="trigger-sample-function-based-syntax"></a>Пример триггера (синтаксис на основе функций)
+### <a name="trigger-sample-c-function-based-syntax"></a>Пример триггераC# (синтаксис на основе функций)
 
 Следующий код является примером простой сущности *счетчика* , реализованной в виде устойчивой функции. Эта функция определяет три операции: `add`, `reset` и `get`, каждый из которых работает с целочисленным состоянием.
 
@@ -414,9 +433,9 @@ public static void Counter([EntityTrigger] IDurableEntityContext ctx)
 
 Дополнительные сведения о синтаксисе на основе функций и способах его использования см. в разделе [синтаксис на основе функций](durable-functions-dotnet-entities.md#function-based-syntax).
 
-### <a name="trigger-sample-class-based-syntax"></a>Пример триггера (синтаксис на основе класса)
+### <a name="trigger-sample-c-class-based-syntax"></a>Пример триггераC# (синтаксис на основе класса)
 
-Следующий пример представляет собой эквивалентную реализацию сущности `Counter` с помощью классов и методов.
+Следующий пример является эквивалентной реализацией сущности `Counter` с помощью классов и методов.
 
 ```csharp
 [JsonObject(MemberSerialization.OptIn)]
@@ -442,9 +461,51 @@ public class Counter
 Дополнительные сведения о синтаксисе на основе класса и его использовании см. в разделе [Определение классов сущностей](durable-functions-dotnet-entities.md#defining-entity-classes).
 
 > [!NOTE]
-> Метод точки входа функции `[FunctionName]` с атрибутом *должен* быть объявлен `static` при использовании классов сущностей. Нестатические методы точек входа могут привести к инициализации нескольких объектов и возможно других неопределенных поведений.
+> Метод точки входа функции с атрибутом `[FunctionName]` *должен* быть объявлен `static` при использовании классов сущностей. Нестатические методы точек входа могут привести к инициализации нескольких объектов и потенциально других неопределенных поведений.
 
 Классы сущностей имеют специальные механизмы для взаимодействия с привязками и внедрением зависимостей .NET. Дополнительные сведения см. в разделе [Конструирование сущностей](durable-functions-dotnet-entities.md#entity-construction).
+
+### <a name="trigger-sample-javascript"></a>Пример триггера (JavaScript)
+
+Следующий код является примером простой сущности *счетчика* , реализованной в виде устойчивой функции, написанной на JavaScript. Эта функция определяет три операции: `add`, `reset` и `get`, каждый из которых работает с целочисленным состоянием.
+
+**Function. JSON**
+```json
+{
+  "bindings": [
+    {
+      "name": "context",
+      "type": "entityTrigger",
+      "direction": "in"
+    }
+  ],
+  "disabled": false
+}
+```
+
+**index.js**
+```javascript
+const df = require("durable-functions");
+
+module.exports = df.entity(function(context) {
+    const currentValue = context.df.getState(() => 0);
+    switch (context.df.operationName) {
+        case "add":
+            const amount = context.df.getInput();
+            context.df.setState(currentValue + amount);
+            break;
+        case "reset":
+            context.df.setState(0);
+            break;
+        case "get":
+            context.df.return(currentValue);
+            break;
+    }
+});
+```
+
+> [!NOTE]
+> Устойчивые сущности доступны в JavaScript начиная с версии **1.3.0** пакета NPM `durable-functions`.
 
 ## <a name="entity-client"></a>Клиент сущности
 
@@ -453,9 +514,9 @@ public class Counter
 Если вы используете Visual Studio, можно выполнить привязку к клиенту сущности с помощью атрибута .NET `DurableClientAttribute`.
 
 > [!NOTE]
-> @No__t-0 можно также использовать для привязки к [клиенту оркестрации](#orchestration-client).
+> `[DurableClientAttribute]` также можно использовать для привязки к [клиенту оркестрации](#orchestration-client).
 
-Если вы используете языки сценариев (например, файлы *. CSX* или *. js* ) для разработки, триггер СУЩНОСТИ определяется следующим объектом JSON в `bindings` массиве файла *Function. JSON*:
+Если вы используете языки сценариев (например, файлы *CSX* или *JS* ) для разработки, триггер СУЩНОСТИ определяется следующим объектом JSON в `bindings` массиве файла *Function. JSON*:
 
 ```json
 {
@@ -475,9 +536,9 @@ public class Counter
 
 ### <a name="entity-client-usage"></a>Использование клиента сущности
 
-В функциях .NET обычно выполняется привязка к `IDurableEntityClient`, которая предоставляет полный доступ ко всем клиентским API, поддерживаемым устойчивыми сущностями. Также можно выполнить привязку к интерфейсу `IDurableClient`, который обеспечивает доступ к API-интерфейсам клиента для сущностей и оркестрации. API-интерфейсы в клиентском объекте включают в себя:
+В функциях .NET обычно выполняется привязка к `IDurableEntityClient`, которая предоставляет полный доступ ко всем клиентским API, поддерживаемым устойчивыми сущностями. Также можно выполнить привязку к интерфейсу `IDurableOrchestrationClient`, который обеспечивает доступ к API-интерфейсам клиента для сущностей и оркестрации. API-интерфейсы в клиентском объекте включают в себя:
 
-* **Реадентитистатеасинк @ no__t-1T >** : считывает состояние сущности. Он возвращает ответ, указывающий, существует ли целевая сущность, и, если да, то что ее состояние —.
+* **Реадентитистатеасинк\<t >** : считывает состояние сущности. Он возвращает ответ, указывающий, существует ли целевая сущность, и, если да, то что ее состояние —.
 * **Сигналентитясинк**: отправляет одностороннее сообщение в сущность и ожидает его постановки в очередь.
 
 Нет необходимости создавать целевую сущность перед отправкой сигнала. состояние сущности можно создать в функции сущности, которая обрабатывает сигнал.
@@ -485,7 +546,7 @@ public class Counter
 > [!NOTE]
 > Важно понимать, что "сигналы", отправленные клиентом, просто помещаются в очередь, чтобы обрабатываться асинхронно позже. В частности, `SignalEntityAsync` обычно возвращает, прежде чем сущность запустит операцию, и вернуть возвращаемое значение или наблюдать за исключениями невозможно. Если требуются более надежные гарантии (например, для рабочих процессов), следует использовать *функции Orchestrator* , которые могут ожидать завершения операций сущностей и могут обрабатывать возвращаемые значения и наблюдать за исключениями.
 
-### <a name="example-client-signals-entity-directly"></a>Пример: Клиент сообщает о сущности напрямую
+### <a name="example-client-signals-entity-directly---c"></a>Пример. Клиент сообщает сущности напрямую —C#
 
 Ниже приведен пример функции, активируемой в очереди, которая вызывает сущность "Counter".
 
@@ -502,7 +563,7 @@ public static Task Run(
 }
 ```
 
-### <a name="example-client-signals-entity-via-interface"></a>Пример: клиент сигнализирует о сущности через интерфейс
+### <a name="example-client-signals-entity-via-interface---c"></a>Пример: клиент сигнализирует о сущности через интерфейс —C#
 
 По возможности рекомендуется [обращаться к сущностям через интерфейсы](durable-functions-dotnet-entities.md#accessing-entities-through-interfaces) , так как она обеспечивает дополнительную проверку типов. Например, предположим, что упомянутая ранее сущность `Counter` реализовала интерфейс `ICounter`, определенный следующим образом:
 
@@ -539,14 +600,52 @@ public static async Task AddValueClient(
 > [!NOTE]
 > API `SignalEntityAsync` представляют односторонние операции. Если интерфейсы сущности возвращают `Task<T>`, значение параметра `T` всегда будет равно null или `default`.
 
-В частности, не имеет смысла подать сигнал операции `Get`, так как значение не возвращается. Вместо этого клиенты могут использовать либо `ReadStateAsync` для прямого доступа к состоянию счетчика, либо запустить функцию Orchestrator, которая вызывает операцию `Get`. 
+В частности, не имеет смысла подать сигнал операции `Get`, так как значение не возвращается. Вместо этого клиенты могут использовать либо `ReadStateAsync` для прямого доступа к состоянию счетчика, либо запустить функцию Orchestrator, которая вызывает операцию `Get`.
+
+### <a name="example-client-signals-entity---javascript"></a>Пример: Клиент сообщает сущность — JavaScript
+
+Ниже приведен пример функции, активируемой в очереди, которая сигнализирует сущности "Counter" в JavaScript.
+
+**Function. JSON**
+```json
+{
+    "bindings": [
+      {
+        "name": "input",
+        "type": "queueTrigger",
+        "queueName": "durable-entity-trigger",
+        "direction": "in",
+      },
+      {
+        "name": "starter",
+        "type": "durableClient",
+        "direction": "in"
+      }
+    ],
+    "disabled": false
+  }
+```
+
+**index.js**
+```javascript
+const df = require("durable-functions");
+
+module.exports = async function (context) {
+    const client = df.getClient(context);
+    const entityId = new df.EntityId("Counter", "myCounter");
+    await context.df.signalEntity(entityId, "add", 1);
+};
+```
+
+> [!NOTE]
+> Устойчивые сущности доступны в JavaScript начиная с версии **1.3.0** пакета NPM `durable-functions`.
 
 <a name="host-json"></a>
 ## <a name="hostjson-settings"></a>Параметры файла host.json
 
 [!INCLUDE [durabletask](../../../includes/functions-host-json-durabletask.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Встроенная Справочник по HTTP API для управления экземплярами](durable-functions-http-api.md)

@@ -1,19 +1,19 @@
 ---
-title: Использование кэша Azure HPC (Предварительная версия) и Azure NetApp Files
+title: Использование кэша Azure HPC и Azure NetApp Files
 description: Использование кэша HPC для Azure для улучшения доступа к данным, хранящимся в Azure NetApp Files
 author: ekpgh
 ms.service: hpc-cache
 ms.topic: conceptual
-ms.date: 10/24/2019
+ms.date: 10/30/2019
 ms.author: rohogue
-ms.openlocfilehash: 35d7a11c4f39f15c6b2f904df77b88b85c2208e5
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: c6259dabd5ee9c53d37a3396f36832720a103c23
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72954946"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73582171"
 ---
-# <a name="use-azure-hpc-cache-preview-with-azure-netapp-files"></a>Использование кэша HPC Azure (Предварительная версия) с Azure NetApp Files
+# <a name="use-azure-hpc-cache-with-azure-netapp-files"></a>Использование кэша HPC для Azure с Azure NetApp Files
 
 Вы можете использовать [Azure NetApp Files](https://azure.microsoft.com/services/netapp/) в качестве целевого объекта хранилища для кэша HPC Azure. В этой статье объясняется, как две службы могут работать вместе, и приводятся советы по их настройке.
 
@@ -21,7 +21,7 @@ Azure NetApp Files сочетает свою операционную систе
 
 Добавление компонента кэша HPC Azure может повысить уровень доступа к файлам за счет представления нескольких Azure NetApp Files томов в одном объединенном пространстве имен. Он может обеспечить пограничные кэширование для томов, расположенных в другом регионе службы. Кроме того, она может повысить производительность по запросу для томов, созданных на уровнях служб низкого уровня, чтобы сэкономить затраты.
 
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
 
 Чтобы использовать Azure NetApp Filesную систему в качестве серверного хранилища с кэшем HPC Azure, выполните эту процедуру.
 

@@ -1,6 +1,6 @@
 ---
-title: Географическое аварийное восстановление функций Azure | Документация Майкрософт
-description: Как использовать географические регионы для отработки отказа и использования аварийного восстановления в функциях Azure.
+title: Географическое аварийное восстановление и высокая доступность функций Azure | Документация Майкрософт
+description: Как использовать географические регионы для обеспечения избыточности и отработки отказа в функциях Azure.
 services: functions
 documentationcenter: na
 author: wesmc7777
@@ -11,12 +11,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 08/29/2019
 ms.author: jehollan
-ms.openlocfilehash: 87f8b2fac3a123f2b92f77a70535f952b25557e0
-ms.sourcegitcommit: 0486aba120c284157dfebbdaf6e23e038c8a5a15
+ms.openlocfilehash: 1d75d58a6df622ffb1b277f75ceedc2c2a66369d
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71310273"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73576258"
 ---
 # <a name="azure-functions-geo-disaster-recovery"></a>Географическое аварийное восстановление функций Azure
 
@@ -59,7 +59,7 @@ ms.locfileid: "71310273"
 
 Дополнительные сведения и рекомендации по отработке отказа с помощью [служебной шины](../service-bus-messaging/service-bus-geo-dr.md) и [концентраторов событий](../event-hubs/event-hubs-geo-dr.md)см. в этой статье.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Создание передней дверцы Azure](../frontdoor/quickstart-create-front-door.md)
 * [Рекомендации по отработке отказа концентраторов событий](../event-hubs/event-hubs-geo-dr.md#considerations)

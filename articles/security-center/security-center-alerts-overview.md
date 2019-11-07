@@ -8,20 +8,20 @@ manager: rkarlin
 ms.assetid: 1b71e8ad-3bd8-4475-b735-79ca9963b823
 ms.service: security-center
 ms.topic: conceptual
-ms.date: 10/16/2019
+ms.date: 11/04/2019
 ms.author: memildin
-ms.openlocfilehash: 69b81417e541bd6853e02065e8cee08e3e04b4a2
-ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
+ms.openlocfilehash: bd538d436d1c900a370f522bccf724eaf87210b4
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72433894"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73582610"
 ---
 # <a name="security-alerts-in-azure-security-center"></a>Оповещения безопасности в Центре безопасности Azure
 
 В центре безопасности Azure существует множество оповещений для различных типов ресурсов. Центр безопасности создает оповещения для ресурсов, развернутых в Azure, а также для ресурсов, развернутых в локальных и гибридных облачных средах.
 
-Расширенное обнаружение угроз доступно в ценовой категории "Стандартный" центра безопасности Azure. Бесплатная пробная версия доступна. Сведения о том, как перейти на другую ценовую категорию, см. в статье [Настройка политик безопасности в центре безопасности Azure](security-center-pricing.md). Дополнительные сведения о ценообразовании см. на странице [центра безопасности](https://azure.microsoft.com/pricing/details/security-center/).
+Расширенное обнаружение угроз доступно в ценовой категории "Стандартный" центра безопасности Azure. Доступна бесплатная пробная версия. Сведения о том, как перейти на другую ценовую категорию, см. в статье [Настройка политик безопасности в центре безопасности Azure](security-center-pricing.md). Дополнительные сведения о ценообразовании см. на странице [центра безопасности](https://azure.microsoft.com/pricing/details/security-center/).
 
 ## Реагирование на сегодняшние <a name="respond-threats"></a> угрозы
 
@@ -115,7 +115,7 @@ ms.locfileid: "72433894"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этой статье вы узнали о различных типах оповещений, доступных в центре безопасности. Дополнительные сведения см. здесь:
+В этой статье вы узнали о различных типах оповещений, доступных в центре безопасности. Дополнительные сведения можно найти в разделе
 
 * [Руководство по планированию использования центра безопасности Azure и работе в нем](https://docs.microsoft.com/azure/security-center/security-center-planning-and-operations-guide)
 * [Центр безопасности Azure: часто задаваемые вопросы](https://docs.microsoft.com/azure/security-center/security-center-faq)

@@ -3,20 +3,20 @@ title: Выберите тип диска для виртуальных маши
 description: Узнайте о доступных типах дисков Azure для виртуальных машин Windows, включая Ultra, Premium, Standard SSD и стандартные жесткие диски.
 author: roygara
 ms.author: rogarana
-ms.date: 08/15/2019
+ms.date: 11/04/2019
 ms.topic: conceptual
 ms.service: virtual-machines-windows
 ms.subservice: disks
-ms.openlocfilehash: 634ff02b216403788c1ded9223909e2cce230207
-ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
+ms.openlocfilehash: 5f06af41f2ad75d704836944e9d8d8d180aed730
+ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69512673"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73606582"
 ---
 [!INCLUDE [virtual-machines-disk-types](../../../includes/virtual-machines-managed-disks-types-overview.md)]
 
-Если вы хотите начать работу с Ultra Disks, см. нашу статью по теме: [Использование Ultra дисков Azure](disks-enable-ultra-ssd.md).
+Если вы хотите начать работу с Ultra Disks, см. нашу статью по теме: [Использование Azure Ultra Disks](disks-enable-ultra-ssd.md).
 
 [!INCLUDE [virtual-machines-managed-disks-types-ga](../../../includes/virtual-machines-managed-disks-types-ga.md)]
 

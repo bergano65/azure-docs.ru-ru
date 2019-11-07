@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 03/14/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=garyericson, previous-ms.author=garye
-ms.openlocfilehash: b41241d3f0223e7c96dce4a9e98262b403cb0660
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 7c7011991deb632110264233ea0e7aeabe793fbb
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73495072"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73670473"
 ---
 # <a name="cheat-sheet-for-an-automated-data-pipeline-for-azure-machine-learning-predictions"></a>Памятка по работе с автоматическим конвейером данных для создания прогнозов машинного обучения Azure
 **Памятка по работе с автоматическим конвейером данных машинного обучения Microsoft Azure** поможет вам разобраться в технологии, которую вы можете использовать для передачи данных в веб-службу машинного обучения и их последующей оценки с помощью модели прогнозной аналитики.
@@ -36,6 +36,6 @@ ms.locfileid: "73495072"
 
 ## <a name="more-help-with-machine-learning-studio"></a>Дополнительная справка по Студии машинного обучения
 * Обзор машинного обучения Microsoft Azure вы можете найти в разделе [Введение в машинное обучение в Microsoft Azure](../studio/what-is-machine-learning.md).
-* Инструкции по развертыванию веб-службы оценки см. в статье [Развертывание веб-службы машинного обучения Azure](../studio/publish-a-machine-learning-web-service.md).
+* Инструкции по развертыванию веб-службы оценки см. в статье [Развертывание веб-службы машинного обучения Azure](../studio/deploy-a-machine-learning-web-service.md).
 * Обсуждение работы с веб-службой оценки см. в статье [Как использовать веб-службу машинного обучения Azure](../studio/consume-web-services.md).
 
