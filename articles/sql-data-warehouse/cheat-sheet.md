@@ -1,24 +1,25 @@
 ---
-title: Памятка для хранилища данных SQL Azure | Документация Майкрософт
-description: Найдите ссылки и рекомендации по быстрому созданию решений хранилища данных SQL Azure.
+title: Памятка по Azure Synapse Analytics (ранее — Хранилище данных SQL) | Документация Майкрософт
+description: Найдите ссылки и рекомендации по быстрому созданию решений Azure Synapse Analytics (ранее — хранилище данных SQL).
 services: sql-data-warehouse
 author: mlee3gsd
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: overview
 ms.subservice: design
-ms.date: 08/23/2019
+ms.date: 11/04/2019
 ms.author: martinle
 ms.reviewer: igorstan
-ms.openlocfilehash: 1bbb0148e6f4be2afc777960afcda9c727328206
-ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
+ms.openlocfilehash: be5e8952ddfc6cb831b87f880bc281d6ceb2ba3d
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70195066"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73492269"
 ---
-# <a name="cheat-sheet-for-azure-sql-data-warehouse"></a>Памятка для хранилища данных SQL Azure
-В этой памятке предоставляются полезные советы и рекомендации по созданию решений хранилища данных SQL Azure. Прежде чем приступить к работе, подробно ознакомьтесь с каждым из шагов в записи блога [Azure SQL Data Warehouse Workload Patterns and Anti-Patterns](https://blogs.msdn.microsoft.com/sqlcat/20../../azure-sql-data-warehouse-workload-patterns-and-anti-patterns) (Шаблоны и антишаблоны рабочих нагрузок хранилища данных SQL Azure), где объясняется, что такое хранилище данных SQL и чем оно не является.
+# <a name="cheat-sheet-for-azure-synapse-analytics-formerly-sql-dw"></a>Памятка по Azure Synapse Analytics (ранее — Хранилище данных SQL)
+
+В этой памятке предоставляются полезные советы и рекомендации по созданию решений на основе Azure Synapse. 
 
 На рисунке ниже показан процесс проектирования хранилища данных.
 
@@ -35,7 +36,7 @@ ms.locfileid: "70195066"
 
 ## <a name="data-migration"></a>Перенос данных
 
-Сначала загрузите данные в [Azure Data Lake Storage](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-store) или в хранилище BLOB-объектов Azure. Далее с помощью PolyBase загрузите данные в хранилище данных SQL в промежуточной таблице. Используйте следующую конфигурацию:
+Сначала загрузите данные в [Azure Data Lake Storage](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-store) или в хранилище BLOB-объектов Azure. Далее с помощью PolyBase загрузите данные в промежуточных таблицах. Используйте следующую конфигурацию:
 
 | Проектирование | Рекомендации |
 |:--- |:--- |
@@ -98,28 +99,28 @@ ms.locfileid: "70195066"
 
 Если данные будут загружаться поэтапно, то сначала необходимо убедиться, что для загрузки данных выделены большие классы ресурсов.  Это особенно важно при загрузке данных в таблицы с кластеризованными индексами columnstore.  Дополнительные сведения см. в разделе о [классах ресурсов](https://docs.microsoft.com/azure/sql-data-warehouse/resource-classes-for-workload-management).  
 
-Для автоматизации конвейеров извлечения, загрузки и преобразования в хранилище данных SQL рекомендуем использовать PolyBase и ADF V2.
+Для автоматизации конвейеров извлечения, загрузки и преобразования в хранилище данных рекомендуем использовать PolyBase и ADF V2.
 
 Для большого пакета обновлений устаревших данных попробуйте использовать [CTAS](https://docs.microsoft.com/azure/sql-data-warehouse/sql-data-warehouse-develop-ctas), чтобы записать в таблицу данные, которые необходимо сохранить, вместо использования операций INSERT, UPDATE и DELETE.
 
 ## <a name="maintain-statistics"></a>Обеспечение статистики
- Пока автоматическая статистика не станет общедоступной, для хранилища данных SQL необходимо вести статистику вручную. Важно также обновлять статистику, так как данные могут быть *существенно* изменены. Это поможет оптимизировать ваши планы запросов. Если ведение статистики занимает слишком много времени, нужно выбирать отдельные столбцы, для которых необходимо создавать статистику. 
+ Пока автоматическая статистика не станет общедоступной, необходимо вести статистику вручную. Важно также обновлять статистику, так как данные могут быть *существенно* изменены. Это поможет оптимизировать ваши планы запросов. Если ведение статистики занимает слишком много времени, нужно выбирать отдельные столбцы, для которых необходимо создавать статистику. 
 
 Кроме того, вы можете определить частоту обновлений. Например, можно ежедневно обновлять столбцы дат, в которые добавляются новые значения. Статистику рекомендуется вести в столбцах, которые являются частью объединения, используются в предложении WHERE или GROUP BY.
 
 Подробнее о [статистике].
 
 ## <a name="resource-class"></a>Класс ресурсов
-Чтобы выделить память для выполнения запросов, в хранилище данных SQL используются группы ресурсов. Если для повышения скорости запроса или загрузки вам требуется больше памяти, необходимо выделить более высокие классы ресурсов. С другой стороны, использование больших классов ресурсов влияет на параллелизм. Обратите на это внимание, прежде чем перемещать всех своих пользователей в большой класс ресурсов.
+Чтобы выделить память для выполнения запросов, используются группы ресурсов. Если для повышения скорости запроса или загрузки вам требуется больше памяти, необходимо выделить более высокие классы ресурсов. С другой стороны, использование больших классов ресурсов влияет на параллелизм. Обратите на это внимание, прежде чем перемещать всех своих пользователей в большой класс ресурсов.
 
 Если вы заметили, что запросы занимают слишком много времени, убедитесь, что пользователи не работают в больших классах ресурсов. Большие классы потребляют значительно количество слотов выдачи. Они могут создать дополнительные запросы в очереди.
 
-Наконец, при использовании хранилища данных SQL уровня Gen2 каждый класс ресурсов получает в 2,5 раза больше памяти, чем на уровне Gen1.
+Наконец, при использовании [пула SQL](sql-data-warehouse-overview-what-is.md#sql-analytics-and-sql-pool-in-azure-synapse) уровня Gen2 каждый класс ресурсов получает в 2,5 раза больше памяти, чем на уровне Gen1.
 
 Подробнее о работе с [классами ресурсов и параллелизмом].
 
 ## <a name="lower-your-cost"></a>Сокращение расходов
-Основная функция хранилища данных SQL — возможность [управлять вычислительными ресурсами](sql-data-warehouse-manage-compute-overview.md). Вы можете приостанавливать работу хранилища данных, когда оно не используется. Счет выставляется только за используемые вычислительные ресурсы. Вы можете масштабировать ресурсы в соответствии со своими требованиями к производительности. Приостановить выполнение можно на [портале Azure](pause-and-resume-compute-portal.md) или при помощи [PowerShell](pause-and-resume-compute-powershell.md). Для масштабирования используйте [портал Azure](quickstart-scale-compute-portal.md), [Powershell](quickstart-scale-compute-powershell.md), [T-SQL](quickstart-scale-compute-tsql.md), или [REST API](sql-data-warehouse-manage-compute-rest-api.md#scale-compute).
+Одна из основных функций Azure Synapse — возможность [управлять вычислительными ресурсами](sql-data-warehouse-manage-compute-overview.md). Вы можете приостанавливать работу пула SQL, когда он не используется. Счет выставляется только за используемые вычислительные ресурсы. Вы можете масштабировать ресурсы в соответствии со своими требованиями к производительности. Приостановить выполнение можно на [портале Azure](pause-and-resume-compute-portal.md) или при помощи [PowerShell](pause-and-resume-compute-powershell.md). Для масштабирования используйте [портал Azure](quickstart-scale-compute-portal.md), [Powershell](quickstart-scale-compute-powershell.md), [T-SQL](quickstart-scale-compute-tsql.md), или [REST API](sql-data-warehouse-manage-compute-rest-api.md#scale-compute).
 
 Выполняйте автоматическое масштабирование с помощью службы "Функции Azure" в любое время.
 
@@ -131,9 +132,9 @@ ms.locfileid: "70195066"
 
 Рекомендуем рассматривать базу данных SQL и Azure Analysis Services в звездообразной архитектуре. Это решение может обеспечить изоляцию рабочей нагрузки между различными группами пользователей наряду с использованием некоторых расширенных функций безопасности базы данных SQL и Azure Analysis Services. Это также поможет обеспечить неограниченный параллелизм для ваших пользователей.
 
-Подробнее о [типичных архитектурах, использующих возможности хранилища данных SQL](https://blogs.msdn.microsoft.com/sqlcat/20../../common-isv-application-patterns-using-azure-sql-data-warehouse/).
+Подробнее о [типичных архитектурах, использующих возможности Azure Synapse](https://blogs.msdn.microsoft.com/sqlcat/20../../common-isv-application-patterns-using-azure-sql-data-warehouse/).
 
-Разверните периферийные зоны в базах данных SQL из хранилища данных SQL одним щелчком.
+Разверните периферийные зоны в базах данных SQL из пула SQL одним щелчком.
 
 <a href="https://ms.portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMicrosoft%2Fsql-data-warehouse-samples%2Fmaster%2Farm-templates%2FsqlDwSpokeDbTemplate%2Fazuredeploy.json" target="_blank">
 <img src="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png"/>
