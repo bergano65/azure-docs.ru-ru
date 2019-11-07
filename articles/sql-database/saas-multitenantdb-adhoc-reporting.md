@@ -1,5 +1,5 @@
 ---
-title: Выполнение запросов автоматизированной системы отчетности к нескольких базам данных SQL Azure | Документация Майкрософт
+title: Выполнение запросов автоматизированной нерегламентированной отчетности в нескольких базах данных SQL Azure
 description: Выполнение запросов автоматизированной системы отчетности к нескольким базам данных SQL на примере мультитенантного приложения.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: AyoOlubeko
 ms.author: craigg
 ms.reviewer: sstein
 ms.date: 10/30/2018
-ms.openlocfilehash: 0a6b45db3c8b4071b591ca2b5fc604b986598c0c
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 3d345e222dac98a63400dd2661ce92674f2534f6
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68570366"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73692085"
 ---
 # <a name="run-ad-hoc-analytics-queries-across-multiple-azure-sql-databases"></a>Выполнение запросов автоматизированной системы отчетности к нескольким базам данных SQL Azure
 
@@ -141,7 +141,7 @@ ms.locfileid: "68570366"
    ![запрос](media/saas-multitenantdb-adhoc-reporting/query3-plan.png)
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как выполнять такие задачи:
 

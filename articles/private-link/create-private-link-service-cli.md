@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: article
 ms.date: 09/16/2019
 ms.author: kumud
-ms.openlocfilehash: c67d2cd4e90b2fa61a4d95e89a68c888a6e1fe3f
-ms.sourcegitcommit: a6718e2b0251b50f1228b1e13a42bb65e7bf7ee2
+ms.openlocfilehash: 57ab18c8dfffb6994983179f434491b97589ebda
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71273638"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73693233"
 ---
 # <a name="create-a-private-link-service-using-azure-cli"></a>Создание службы частной связи с помощью Azure CLI
 В этой статье показано, как создать службу частной связи в Azure с помощью Azure CLI.
@@ -20,8 +20,8 @@ ms.locfileid: "71273638"
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 Если вы решили установить и использовать Azure CLI локально, в этом кратком руководстве вам потребуется использовать последнюю версию Azure CLI. Выполните команду `az --version`, чтобы узнать установленную версию. Сведения об установке или обновлении Azure CLI см. в [этой статье](/cli/azure/install-azure-cli).
-## <a name="create-a-private-link-service"></a>Создание службы "Приватный канал"
-### <a name="create-a-resource-group"></a>Создать группу ресурсов
+## <a name="create-a-private-link-service"></a>Создание службы частной связи
+### <a name="create-a-resource-group"></a>Создание группы ресурсов
 
 Перед созданием виртуальной сети необходимо создать группу ресурсов, которая будет содержать эту виртуальную сеть. Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group). В этом примере создается группа ресурсов с именем *myResourceGroup* в расположении *westcentralus* :
 
@@ -62,7 +62,7 @@ az network lb create --resource-group myResourceGroup --name myILB --sku standar
 
 ### <a name="create-a-load-balancer-rule"></a>Создание правила балансировщика нагрузки
 
-Правило подсистемы балансировки нагрузки определяет интерфейсную конфигурацию IP-адресов для входящего трафика и внутренний пул IP-адресов для приема трафика, а также порты источника и назначения. С помощью команды [az network lb rule create](https://docs.microsoft.com/cli/azure/network/lb/rule?view=azure-cli-latest) создайте правило LB с именем *myHTTPRule* для ожидания передачи данных на порту 80, используемого внешним пулом *myFrontEnd*, и отправки трафика с балансировкой нагрузки внутреннему пулу адресов *myBackEndPool*, который также использует порт 80. 
+Правило подсистемы балансировки нагрузки определяет интерфейсную конфигурацию IP-адресов для входящего трафика и внутренний пул IP-адресов для приема трафика, а также порты источника и назначения. С помощью команды *az network lb rule create* создайте правило LB с именем [myHTTPRule](https://docs.microsoft.com/cli/azure/network/lb/rule?view=azure-cli-latest) для ожидания передачи данных на порту 80, используемого внешним пулом *myFrontEnd*, и отправки трафика с балансировкой нагрузки внутреннему пулу адресов *myBackEndPool*, который также использует порт 80. 
 
 ```azurecli-interactive
   az network lb rule create \
@@ -88,7 +88,7 @@ az network lb create --resource-group myResourceGroup --name myILB --sku standar
 az network vnet subnet update --resource-group myResourceGroup --vnet-name myVirtualNetwork --name mySubnet --disable-private-link-service-network-policies true 
 ```
  
-## <a name="create-a-private-link-service"></a>Создание службы "Приватный канал"  
+## <a name="create-a-private-link-service"></a>Создание службы частной связи  
  
 Создайте службу частной связи с помощью многосерверной IP-конфигурации Load Balancer (цен. категория "Стандартный") с помощью команды [AZ Network Private-Link-Service Create](/cli/azure/network/private-link-service#az-network-private-link-service-create). В этом примере создается служба частной связи с именем *миплс* , использующая Load Balancer (цен. Категория "Стандартный") с именем *myLoadBalancer* в группе ресурсов с именем *myResourceGroup*. 
  
@@ -151,7 +151,7 @@ az network private-endpoint create \
 --connection-name myPEConnectingPLS \
 --location westcentralus 
 ```
-Вы можете получить *частный-Connection-Resource-id* с помощью `az network private-link-service show` службы Private Link. Идентификатор будет выглядеть следующим образом:   
+Вы можете получить *частный-Connection-Resource-id* с `az network private-link-service show` в службе частной связи. Идентификатор будет выглядеть следующим образом:   
 /Субскриптионс/субид/ресаурцеграупс/*resourcegroupname*/провидерс/Микрософт.Нетворк/привателинксервицес/**privatelinkservicename** 
  
 ## <a name="show-private-link-service-connections"></a>Показывать подключения службы частной связи 
@@ -160,6 +160,6 @@ az network private-endpoint create \
 ```azurecli-interactive 
 az network private-link-service show --resource-group myResourceGroup --name myPLS 
 ```
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о [службе частной связи Azure](private-link-service-overview.md)
  

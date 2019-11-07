@@ -6,12 +6,12 @@ ms.author: dacoulte
 ms.date: 10/18/2019
 ms.topic: conceptual
 ms.service: resource-graph
-ms.openlocfilehash: b92975e3fe73fb1c882bdfc4338fd8e169728e8b
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: 58eb5abc9a8857b81ada65c96eb7deaaa5cc5aeb
+ms.sourcegitcommit: 6c2c97445f5d44c5b5974a5beb51a8733b0c2be7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72387636"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73622666"
 ---
 # <a name="explore-your-azure-resources-with-resource-graph"></a>Изучение ресурсов Azure с помощью графика ресурсов
 
@@ -308,10 +308,10 @@ az graph query -q="Resources | where type =~ 'Microsoft.Network/publicIPAddresse
 Search-AzGraph -Query "Resources | where type =~ 'Microsoft.Network/publicIPAddresses' | where id in ('$($ips.publicIp -join "','")') | project ip = tostring(properties['ipAddress']) | where isnotempty(ip) | distinct ip"
 ```
 
-Чтобы узнать, как выполнить эти действия в одном запросе с помощью оператора `join`, ознакомьтесь со статьей [список виртуальных машин со своим сетевым интерфейсом и примером общедоступного IP-адреса](../samples/advanced.md#join-vmpip) .
+Чтобы узнать, как выполнить эти действия в одном запросе с помощью оператора `join`, см. [список виртуальных машин с их сетевым интерфейсом и примером общедоступного IP-адреса](../samples/advanced.md#join-vmpip) .
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Узнайте больше о [языке запросов](query-language.md).
-- См. описание используемого языка в разделе [Запросы для начинающих](../samples/starter.md)
-- См. описание расширенных вариантов использования в разделе [Расширенные запросы](../samples/advanced.md)
+- Дополнительные сведения о [языке запросов](query-language.md).
+- См. язык, используемый в [начальных запросах](../samples/starter.md).
+- См. Дополнительные сведения о расширенном использовании в [расширенных запросах](../samples/advanced.md).

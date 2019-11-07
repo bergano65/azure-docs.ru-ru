@@ -1,5 +1,5 @@
 ---
-title: Копирование базы данных SQL Azure | Документация Майкрософт
+title: Копирование базы данных SQL Azure
 description: Создание транзакционно согласованной копии существующей базы данных SQL Azure на том же или на другом сервере.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sashan
 ms.reviewer: carlrab
 ms.date: 09/04/2019
-ms.openlocfilehash: de56e66046bb61ac31c1842ae6ce7a9c6720760d
-ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
+ms.openlocfilehash: d49896d8088ae1352cb2785d061cde6c8647cb89
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70934201"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73690799"
 ---
 # <a name="copy-a-transactionally-consistent-copy-of-an-azure-sql-database"></a>Копирование транзакционно согласованной копии базы данных Azure SQL
 
@@ -86,16 +86,16 @@ New-AzSqlDatabaseCopy -ResourceGroupName "myResourceGroup" `
    
 Для управления копированием базы данных с помощью портал Azure также необходимы следующие разрешения.
 
-&nbsp;&nbsp; Microsoft.Resources/Subscriptions/&nbsp; Resources/Read   
-&nbsp;&nbsp; Microsoft.Resources/Subscriptions/&nbsp; Resources/Write   
-&nbsp;&nbsp; Microsoft.Resources&nbsp; /deployments/Read   
-&nbsp;&nbsp; Microsoft.Resources&nbsp; /deployments/Write   
-&nbsp;&nbsp; Microsoft.Resources/deployments&nbsp; /оператионстатусес/Read    
+&nbsp; &nbsp; &nbsp; Microsoft. Resources/Subscriptions/Resources/Read   
+&nbsp; &nbsp; &nbsp; Microsoft. Resources/Subscriptions/Resources/Write   
+&nbsp; &nbsp; &nbsp; Microsoft. Resources/deployments/Read   
+&nbsp; &nbsp; &nbsp; Microsoft. Resources/deployments/Write   
+&nbsp; &nbsp; &nbsp; Microsoft. Resources/deployments/оператионстатусес/Read    
 
 Если вы хотите просмотреть операции в развертываниях в группе ресурсов на портале, операции с несколькими поставщиками ресурсов, включая операции SQL, понадобятся вам следующие дополнительные роли RBAC: 
 
-&nbsp;&nbsp; Microsoft.Resources/Subscriptions/resourcegroups/deployments&nbsp; /Operations/Read   
-&nbsp;&nbsp; Microsoft.Resources/Subscriptions/resourcegroups/deployments&nbsp; /оператионстатусес/Read
+&nbsp; &nbsp; &nbsp; Microsoft. Resources/Subscriptions/resourcegroups/deployments/Operations/Read   
+&nbsp; &nbsp; &nbsp; Microsoft. Resources/Subscriptions/resourcegroups/deployments/оператионстатусес/Read
 
 
 
@@ -157,7 +157,7 @@ New-AzSqlDatabaseCopy -ResourceGroupName "myResourceGroup" `
 
 Дополнительные сведения об управлении пользователями и именами для входа при копировании базы данных на другой сервер Базы данных SQL см. в статье [Настройка безопасности базы данных SQL Azure и управление ею для геовосстановления или отработки отказа](sql-database-geo-replication-security-config.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения об именах для входа см. в статьях [Предоставление доступа к базе данных и управление им](sql-database-manage-logins.md) и [Настройка безопасности базы данных SQL Azure и управление ею для геовосстановления или отработки отказа](sql-database-geo-replication-security-config.md).
 * Сведения об экспорте базы данных см. в статье [Экспорт базы данных SQL Azure или SQL Server в BACPAC-файл](sql-database-export.md).

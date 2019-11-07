@@ -1,5 +1,5 @@
 ---
-title: Использование транзакций в хранилище данных Azure SQL | Документация Майкрософт
+title: Использование транзакций
 description: Советы по реализации транзакций Transact-SQL в хранилище данных SQL Azure для разработки решений.
 services: sql-data-warehouse
 author: XiaoyuMSFT
@@ -10,17 +10,18 @@ ms.subservice: development
 ms.date: 03/22/2019
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: 7f00f8a25d0abf3af6d76b372b44145546a79879
-ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
+ms.custom: seo-lt-2019
+ms.openlocfilehash: 09fc0f7cee38f799322a1914848a5176e9a223a1
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68479608"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73692772"
 ---
 # <a name="using-transactions-in-sql-data-warehouse"></a>Использование транзакций в хранилище данных Azure SQL
 Советы по реализации транзакций Transact-SQL в хранилище данных SQL Azure для разработки решений.
 
-## <a name="what-to-expect"></a>Чего следует ожидать
+## <a name="what-to-expect"></a>Основные принципы
 Как и следовало ожидать, хранилище данных SQL поддерживает транзакции как часть своей рабочей нагрузки. Однако, чтобы производительность хранилища данных SQL оставалась на уровне, по сравнению с SQL Server некоторые возможности ограничены. Эта статья посвящена отличиям этого продукта от аналогичных систем. 
 
 ## <a name="transaction-isolation-levels"></a>Уровни изоляции транзакций
@@ -175,7 +176,7 @@ SELECT @xact_state AS TransactionState;
 
 Изменилось всего лишь то, что операция ROLLBACK с транзакцией должна произойти до чтения информации об ошибке в блоке CATCH.
 
-## <a name="errorline-function"></a>Функция Error_Line()
+## <a name="error_line-function"></a>Функция Error_Line()
 Также следует отметить, что хранилище данных SQL не реализует и не поддерживает функцию ERROR_LINE(). Если она используется в коде, ее необходимо удалить, чтобы обеспечить совместимость с хранилищем данных SQL. Вместо этого используйте в коде метки запросов, чтобы реализовать эквивалентную функциональность. Дополнительные сведения см. в статье [Использование меток для инструментирования запросов в хранилище данных SQL](sql-data-warehouse-develop-label.md).
 
 ## <a name="using-throw-and-raiserror"></a>Использование THROW и RAISERROR
@@ -197,6 +198,6 @@ THROW — это более современная реализация вызо
 * не допускаются помеченные транзакции;
 * не поддерживаются операторы DDL, такие как CREATE TABLE, внутри определенной пользователем транзакции.
 
-## <a name="next-steps"></a>Следующие шаги
-Узнайте больше об оптимизации транзакций, ознакомившись с [рекомендациями по транзакциям](sql-data-warehouse-develop-best-practices-transactions.md). Ознакомьтесь с дополнительными [рекомендациями по использованию хранилища данных SQL Azure](sql-data-warehouse-best-practices.md).
+## <a name="next-steps"></a>Дальнейшие действия
+Узнайте больше об оптимизации транзакций, ознакомившись со статьей [Оптимизация транзакций для хранилища данных SQL](sql-data-warehouse-develop-best-practices-transactions.md). Ознакомьтесь с дополнительными [рекомендациями по использованию хранилища данных SQL Azure](sql-data-warehouse-best-practices.md).
 

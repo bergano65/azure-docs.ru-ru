@@ -1,5 +1,5 @@
 ---
-title: Определяемые пользователем точки восстановления | Документация Майкрософт
+title: Определенные пользователем точки восстановления
 description: Как создать точку восстановления хранилище данных SQL Azure.
 services: sql-data-warehouse
 author: anumjs
@@ -10,12 +10,13 @@ ms.subservice: manage
 ms.date: 07/03/2019
 ms.author: anjangsh
 ms.reviewer: igorstan
-ms.openlocfilehash: 9dcb8b2e9c1b75aac3c195f89777ac9c6eb030d7
-ms.sourcegitcommit: 5ded08785546f4a687c2f76b2b871bbe802e7dae
+ms.custom: seo-lt-2019
+ms.openlocfilehash: 61ceb2f1271d085321215aff1c6d138feb95d743
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69575266"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73692514"
 ---
 # <a name="user-defined-restore-points"></a>Определенные пользователем точки восстановления
 
@@ -71,7 +72,7 @@ Get-AzSqlDatabaseRestorePoints -ResourceGroupName $ResourceGroupName -ServerName
 
     ![Имя точки восстановления](./media/sql-data-warehouse-restore-points/creating-restore-point-11.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Восстановление существующего хранилища данных][Restore an existing data warehouse]
 - [Восстановление удаленного хранилища данных][Restore a deleted data warehouse]

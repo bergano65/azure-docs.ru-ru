@@ -1,5 +1,5 @@
 ---
-title: Непрерывность облачных бизнес-процессов — восстановление базы данных — база данных SQL | Документация Майкрософт
+title: Непрерывность облачных бизнес-процессов — восстановление базы данных — база данных SQL
 description: Узнайте, как базы данных SQL Azure поддерживают непрерывное выполнение облачных бизнес-процессов и восстановление баз данных, а также помогают обеспечить выполнение важных облачных приложений.
 keywords: непрерывность бизнес-процессов, непрерывность облачных бизнес-процессов, аварийное восстановление базы данных, восстановление базы данных
 services: sql-database
@@ -12,12 +12,12 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab
 ms.date: 06/25/2019
-ms.openlocfilehash: 69ff1a5681fbb0b434d7114b069610ed34d9e843
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: c4e82b0311e010eb8a4b8f37f3ff817d9a5400ad
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73492202"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73691044"
 ---
 # <a name="overview-of-business-continuity-with-azure-sql-database"></a>Обзор обеспечения непрерывности бизнес-процессов с помощью Базы данных SQL Azure
 
@@ -59,7 +59,7 @@ ms.locfileid: "73492202"
 
 ## <a name="compare-geo-replication-with-failover-groups"></a>Сравнение георепликации с группами отработки отказа
 
-[Группы автоматической отработки отказа](sql-database-auto-failover-group.md#auto-failover-group-terminology-and-capabilities) упрощают развертывание и использование [георепликации](sql-database-active-geo-replication.md) и добавляют дополнительные возможности, как описано в следующей таблице.
+[Группы автоматической](sql-database-auto-failover-group.md#auto-failover-group-terminology-and-capabilities) отработки отказа упрощают развертывание и использование [георепликации](sql-database-active-geo-replication.md) и добавляют дополнительные возможности, как описано в следующей таблице.
 
 |                                              | Георепликация | Группы отработки отказа  |
 |:---------------------------------------------| :-------------- | :----------------|

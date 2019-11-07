@@ -1,5 +1,5 @@
 ---
-title: Работа с временными ошибками — База данных SQL Azure | Документация Майкрософт
+title: Работа с временными ошибками в базе данных SQL Azure
 description: Узнайте, как устранять, диагностировать и предотвращать ошибки подключения SQL или временные ошибки в базе данных SQL Azure.
 keywords: подключение sql,строка подключения,проблемы с подключением, временная ошибка,ошибка подключения
 services: sql-database
@@ -13,12 +13,12 @@ manager: dcscontentpm
 ms.author: ninarn
 ms.reviewer: carlrab
 ms.date: 06/14/2019
-ms.openlocfilehash: aba404842658aaa946a14a3cde03853c2fb3062d
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: 0191506cab9a54ad3978bfa7387c9ba1112ae815
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72792576"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73690823"
 ---
 # <a name="working-with-sql-database-connection-issues-and-transient-errors"></a>Работа с проблемами подключения Базы данных SQL и временными ошибками
 
@@ -48,7 +48,7 @@ ms.locfileid: "72792576"
 
 <a id="j-retry-logic-transient-faults" name="j-retry-logic-transient-faults"></a>
 
-## <a name="retry-logic-for-transient-errors"></a>Повтор логики для временных ошибок
+## <a name="retry-logic-for-transient-errors"></a>Логика повторных попыток для временных ошибок
 
 Клиентские программы, в которых иногда происходят временные ошибки, являются более надежными, если используют логику повторных попыток. Если программа взаимодействует с базой данных SQL через стороннее программное обеспечение промежуточного слоя, спросите поставщика, содержит ли это стороннее ПО логику повторных попыток на случай временных ошибок.
 
@@ -102,7 +102,7 @@ ms.locfileid: "72792576"
 - После выявления ошибки удаляет 11001 из списка.
 - Выводит сообщение с просьбой подключить компьютер к сети.
 - Программа приостанавливает дальнейшее выполнение с помощью метода **Console.ReadLine** или диалогового окна с кнопкой "ОК". Клавишу ВВОД пользователю нужно нажимать после подключения компьютера к сети.
-- Попытаться подключиться еще раз. В этот раз попытка должна завершиться успехом.
+- Попытайтесь подключиться еще раз. В этот раз попытка должна завершиться успехом
 
 #### <a name="test-by-misspelling-the-database-name-when-connecting"></a>Выполните проверку, сделав опечатку в имени базы данных при подключении.
 
@@ -119,7 +119,7 @@ ms.locfileid: "72792576"
 - Добавить элемент WRONG_ к имени пользователя.
 - После выявления ошибки удалить 18456 из списка.
 - Удалить WRONG_ из имени пользователя.
-- Попытаться подключиться еще раз. В этот раз попытка должна завершиться успехом.
+- Попытайтесь подключиться еще раз. В этот раз попытка должна завершиться успехом
 
 <a id="net-sqlconnection-parameters-for-connection-retry" name="net-sqlconnection-parameters-for-connection-retry"></a>
 
@@ -215,7 +215,7 @@ ms.locfileid: "72792576"
 
 <a id="e-diagnostics-test-utilities-connect" name="e-diagnostics-test-utilities-connect"></a>
 
-## <a name="diagnostics"></a>Диагностика:
+## <a name="diagnostics"></a>Диагностика
 
 <a id="d-test-whether-utilities-can-connect" name="d-test-whether-utilities-can-connect"></a>
 
@@ -275,7 +275,7 @@ TCP port 1433 (ms-sql-s service): LISTENING
 
 Ниже приведены некоторые Transact-SQL-инструкции SELECT, которые запрашивают в журналах сведения об ошибках и прочую информацию.
 
-| Запрос у журнала | Описание |
+| Запрос у журнала | Description (Описание) |
 |:--- |:--- |
 | `SELECT e.*`<br/>`FROM sys.event_log AS e`<br/>`WHERE e.database_name = 'myDbName'`<br/>`AND e.event_category = 'connectivity'`<br/>`AND 2 >= DateDiff`<br/>&nbsp;&nbsp;`(hour, e.end_time, GetUtcDate())`<br/>`ORDER BY e.event_category,`<br/>&nbsp;&nbsp;`e.event_type, e.end_time;` |В представлении [sys.event_log](https://msdn.microsoft.com/library/dn270018.aspx) приводятся сведения об отдельных событиях, включая те, которые могут привести к временным ошибкам или проблемам с подключением.<br/><br/>В идеале значения **start_time** или **end_time** можно сопоставить с временем возникновения ошибок в клиентской программе.<br/><br/>Для выполнения этого запроса необходимо подключиться к базе данных *master*. |
 | `SELECT c.*`<br/>`FROM sys.database_connection_stats AS c`<br/>`WHERE c.database_name = 'myDbName'`<br/>`AND 24 >= DateDiff`<br/>&nbsp;&nbsp;`(hour, c.end_time, GetUtcDate())`<br/>`ORDER BY c.end_time;` |Представление [sys.database_connection_stats](https://msdn.microsoft.com/library/dn269986.aspx) отображает суммарное количество событий каждого типа, что также бывает полезно при дополнительной диагностике.<br/><br/>Для выполнения этого запроса необходимо подключиться к базе данных *master*. |

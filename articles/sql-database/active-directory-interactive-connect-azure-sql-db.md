@@ -1,5 +1,5 @@
 ---
-title: Подключение ActiveDirectoryInteractive к SQL | Документация Майкрософт
+title: Активедиректоринтерактиве подключается к SQL
 description: Пример кода C# с пояснениями для подключения к службе "База данных SQL Azure" с использованием режима SqlAuthenticationMethod.ActiveDirectoryInteractive.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: GithubMirek
 ms.author: MirekS
 ms.reviewer: GeneMi, vanto
 ms.date: 10/11/2019
-ms.openlocfilehash: c55fa6d58109345a0c600bd0c1c76c5a229c03bc
-ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
+ms.openlocfilehash: 5e7d58e5e0fc79e407e77ae9d73314a1d5d22666
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72554438"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73692303"
 ---
 # <a name="connect-to-azure-sql-database-with-azure-multi-factor-authentication"></a>Подключение к базе данных SQL Azure с помощью многофакторной идентификации Azure
 
@@ -45,7 +45,7 @@ ms.locfileid: "72554438"
 > [!TIP]
 > Вы можете выполнять поиск .NET Framework API на [странице средства браузера .NET API](https://docs.microsoft.com/dotnet/api/).
 >
-> Можно также выполнить поиск непосредственно с [необязательным параметром? Term = &lt;search значение &gt;](https://docs.microsoft.com/dotnet/api/?term=SqlAuthenticationMethod).
+> Кроме того, можно выполнить поиск непосредственно с [необязательным? Term =&lt;поискового значения&gt; параметра](https://docs.microsoft.com/dotnet/api/?term=SqlAuthenticationMethod).
 
 ## <a name="configure-your-c-application-in-the-azure-portal"></a>Настройка приложения C# на портале Azure
 
@@ -59,7 +59,7 @@ ms.locfileid: "72554438"
 
 Чтобы зарегистрировать приложение и задать для него необходимые разрешения:
 
-1. В портал Azure выберите **Azure Active Directory**  > **Регистрация приложений**  > **Новая регистрация**.
+1. В портал Azure выберите **Azure Active Directory** > **Регистрация приложений** > **Новая регистрация**.
 
     ![Регистрация приложения](media/active-directory-interactive-connect-azure-sql-db/image1.png)
 
@@ -67,7 +67,7 @@ ms.locfileid: "72554438"
 
     ![Отображение идентификатора приложения](media/active-directory-interactive-connect-azure-sql-db/image2.png)
 
-2. Выберите **разрешения API**  > **Добавить разрешение**.
+2. Выберите **разрешения API** > **Добавить разрешение**.
 
     ![Параметры разрешений для зарегистрированного приложения](media/active-directory-interactive-connect-azure-sql-db/sshot-registered-app-settings-required-permissions-add-api-access-c32.png)
 
@@ -75,7 +75,7 @@ ms.locfileid: "72554438"
 
     ![Добавление доступа через API для службы "База данных SQL Azure"](media/active-directory-interactive-connect-azure-sql-db/sshot-registered-app-settings-required-permissions-add-api-access-Azure-sql-db-d11.png)
 
-4. Выберите **делегированные разрешения**  > **user_impersonation**  > **Добавить разрешения**.
+4. Выберите **делегированные разрешения** > **user_impersonation** > **Добавить разрешения**.
 
     ![Делегирование разрешений API для службы "База данных SQL Azure"](media/active-directory-interactive-connect-azure-sql-db/sshot-add-api-access-azure-sql-db-delegated-permissions-checkbox-e14.png)
 
@@ -83,7 +83,7 @@ ms.locfileid: "72554438"
 
 Чтобы C# программа была запущена, администратору Azure SQL Server необходимо назначить администратора Azure AD для сервера базы данных SQL. 
 
-На странице **SQL Server** выберите **Active Directory администратор**  > **задать администратора**.
+На странице **SQL Server** выберите **Active Directory администратор** > **задать администратора**.
 
 Дополнительные сведения об администраторах и пользователях Azure AD для базы данных SQL Azure см. на снимках экрана в разделе [Настройка проверки подлинности Azure Active Directory и управление ею с помощью базы данных SQL](sql-database-aad-authentication-configure.md#provision-an-azure-active-directory-administrator-for-your-azure-sql-database-server).
 
@@ -97,7 +97,7 @@ ms.locfileid: "72554438"
 
 ## <a name="new-authentication-enum-value"></a>Новое значение перечисления проверки подлинности
 
-В примере C# используется пространство имен [`System.Data.SqlClient`](https://docs.microsoft.com/dotnet/api/system.data.sqlclient). Особым интересом для многофакторной проверки подлинности является `SqlAuthenticationMethod` перечисления, имеющий следующие значения:
+В примере C# используется пространство имен [`System.Data.SqlClient`](https://docs.microsoft.com/dotnet/api/system.data.sqlclient). Особым интересом для многофакторной проверки подлинности является `SqlAuthenticationMethod`перечисления, имеющий следующие значения:
 
 - `SqlAuthenticationMethod.ActiveDirectoryInteractive`
 
@@ -118,10 +118,10 @@ ms.locfileid: "72554438"
 | Имя статического поля | Пример значения | Расположение на портале Azure |
 | :---------------- | :------------ | :-------------------- |
 | Az_SQLDB_svrName | "my-sqldb-svr.database.windows.net" | **Серверы SQL Server** > **Фильтровать по имени** |
-| AzureAD_UserID | "Аусер \@abc. onmicrosoft.com" | **Azure Active Directory** > **Пользователь** > **Новый гостевой пользователь** |
+| AzureAD_UserID | "Аусер\@abc.onmicrosoft.com" | **Azure Active Directory** > **Пользователь** > **Новый гостевой пользователь** |
 | Initial_DatabaseName | "myDatabase" | **Серверы SQL Server** > **Базы данных SQL** |
 | ClientApplicationID | "a94f9c62-97fe-4d19-b06d-111111111111" | **Azure Active Directory** > **Регистрация приложений** > **Поиск по имени** > **Идентификатор приложения** |
-| RedirectUri | new Uri("https://mywebserver.com/") | **Azure Active Directory**  > **Регистрация приложений**  > **Поиск по имени**  >  *[ваша-App-Registration]*  > **Параметры**  > **редиректурис**<br /><br />В этой статье любое допустимое значение подходит для RedirectUri, так как оно не используется здесь. |
+| RedirectUri | new Uri("https://mywebserver.com/") | **Azure Active Directory** > **Регистрация приложений** > **Поиск по имени** >  *[ваша-App-Registration]*  > **Параметры** > **редиректурис**<br /><br />В этой статье любое допустимое значение подходит для RedirectUri, так как оно не используется здесь. |
 | &nbsp; | &nbsp; | &nbsp; |
 
 ## <a name="verify-with-sql-server-management-studio"></a>Проверка с помощью SQL Server Management Studio
@@ -139,7 +139,7 @@ ms.locfileid: "72554438"
 Дополнительные сведения см. в статье [Настройка многофакторной идентификации для SSMS и Azure AD](sql-database-ssms-mfa-authentication-configure.md).
 
 > [!NOTE]
-> Если вы являетесь гостевым пользователем в базе данных, необходимо также указать доменное имя Azure AD для базы данных: выберите **параметры**  > **доменное имя AD или идентификатор клиента**. Чтобы найти имя домена на портале Azure, выберите **Azure Active Directory** > **Имена личных доменов**. В программе C# можно не предоставлять доменное имя.
+> Если вы являетесь гостевым пользователем в базе данных, необходимо также указать доменное имя Azure AD для базы данных: выберите **параметры** > **доменное имя AD или идентификатор клиента**. Чтобы найти имя домена на портале Azure, выберите **Azure Active Directory** > **Имена личных доменов**. В программе C# можно не предоставлять доменное имя.
 
 ## <a name="c-code-example"></a>Пример кода C#
 

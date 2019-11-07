@@ -1,5 +1,5 @@
 ---
-title: Использование свойства IDENTITY для создания суррогатных ключей в хранилище данных SQL Azure | Документация Майкрософт
+title: Использование удостоверения для создания суррогатных ключей
 description: Рекомендации и примеры использования свойства IDENTITY для создания суррогатных ключей для таблиц в хранилище данных SQL Azure.
 services: sql-data-warehouse
 author: XiaoyuMSFT
@@ -10,12 +10,13 @@ ms.subservice: development
 ms.date: 04/30/2019
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: 4c65bf7cc8edfa246508bb22001aed40c34414f3
-ms.sourcegitcommit: f5cc71cbb9969c681a991aa4a39f1120571a6c2e
+ms.custom: seo-lt-2019
+ms.openlocfilehash: 0ee15b975b5513077b26cceeb80ea3fb8c02456b
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68515589"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73692468"
 ---
 # <a name="using-identity-to-create-surrogate-keys-in-azure-sql-data-warehouse"></a>Использование свойства IDENTITY для создания суррогатных ключей в хранилище данных SQL Azure
 
@@ -238,7 +239,7 @@ AND     tb.name = 'T1'
 ;
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие сведения о таблицах](/azure/sql-data-warehouse/sql-data-warehouse-tables-overview)
 - [УДОСТОВЕРЕНие CREATE TABLE (Transact-SQL) (свойство)](/sql/t-sql/statements/create-table-transact-sql-identity-property?view=azure-sqldw-latest)

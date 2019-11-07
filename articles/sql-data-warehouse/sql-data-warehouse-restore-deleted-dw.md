@@ -1,5 +1,5 @@
 ---
-title: Восстановление удаленного хранилища данных SQL Azure | Документация Майкрософт
+title: Восстановление хранилища данных после удаления
 description: Руководство по восстановлению удаленного хранилища данных SQL Azure.
 services: sql-data-warehouse
 author: anumjs
@@ -10,12 +10,13 @@ ms.subservice: manage
 ms.date: 08/29/2018
 ms.author: anjangsh
 ms.reviewer: igorstan
-ms.openlocfilehash: 376a50a79858aee34aa71d172ca5836646a6651d
-ms.sourcegitcommit: 198c3a585dd2d6f6809a1a25b9a732c0ad4a704f
+ms.custom: seo-lt-2019
+ms.openlocfilehash: cb09b4808bd6d59d2f70e85d204ab8451d501cee
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68426633"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73692613"
 ---
 # <a name="restore-a-deleted-azure-sql-data-warehouse"></a>Восстановление удаленного хранилища данных SQL Azure
 
@@ -70,7 +71,7 @@ $RestoredDatabase.status
 
 ## <a name="restore-a-deleted-database-using-the-azure-portal"></a>Восстановление удаленной базы данных на портале Azure
 
-1. Войдите на [портале Azure][Azure portal].
+1. Войдите на [портал Azure][Azure portal].
 2. Перейдите к серверу SQL Server, на котором размещено удаленное хранилище данных.
 3. Выберите значок **Удаленные базы данных** в содержании.
 
@@ -84,7 +85,7 @@ $RestoredDatabase.status
 
     ![Указание нового имени базы данных](./media/sql-data-warehouse-restore-deleted-dw/restoring-deleted-21.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Восстановление существующего хранилища данных][Restore an existing data warehouse]
 - [Восстановление из хранилища геоархивных данных][Restore from a geo-backup data warehouse]
 

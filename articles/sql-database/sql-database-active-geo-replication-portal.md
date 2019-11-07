@@ -1,5 +1,5 @@
 ---
-title: 'Портал Azure: георепликация Базы данных SQL | Документация Майкрософт'
+title: 'Портал Azure: Георепликация базы данных SQL '
 description: Настройка георепликации для отдельных баз данных или баз данных в пуле в Базе данных SQL Azure с помощью портала Azure и запуск отработки отказа
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab
 ms.date: 02/13/2019
-ms.openlocfilehash: 049122b97a26e63188142dd5494927c2ae71d852
-ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
+ms.openlocfilehash: 2a9d627cb2b51d0d7d0b07052f18a8dbe1dc2f19
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71103230"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73691332"
 ---
 # <a name="configure-active-geo-replication-for-azure-sql-database-in-the-azure-portal-and-initiate-failover"></a>Настройка активной георепликации для Базы данных SQL Azure с помощью портала Azure и запуск отработки отказа
 
@@ -28,7 +28,7 @@ ms.locfileid: "71103230"
 
 Для настройки активной георепликации с помощью портала Azure необходим приведенный ниже ресурс.
 
-* База данных SQL Azure. База данных-источник, которую необходимо реплицировать в другом географическом регионе.
+* База данных SQL Azure — база данных-источник, которую необходимо реплицировать в другом географическом регионе.
 
 > [!Note]
 > При использовании портала Azure можно создать только базу данных-получатель в той же подписке, где и основная база данных. Если для базы данных-получателя требуется другая подписка, используйте [Create Database REST API](https://docs.microsoft.com/rest/api/sql/databases/createorupdate) (Базы данных: создание или обновление) или [ALTER DATABASE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql) (Изменение базы данных (Transact-SQL)).
@@ -91,7 +91,7 @@ ms.locfileid: "71103230"
     ![Удаление базы данных-получателя](./media/sql-database-geo-replication-portal/remove-secondary.png)
 5. Откроется окно подтверждения. Нажмите кнопку **Да**, чтобы удалить базу данных из партнерства георепликации (и сделать ее доступной для чтения и записи и не используемой в репликации).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения об активной георепликации см. в статье [Обзор. Группы отработки отказа и активная георепликация](sql-database-active-geo-replication.md).
 * Сведения о группах автоматической отработки отказа см. в [этой статье](sql-database-auto-failover-group.md).

@@ -1,6 +1,6 @@
 ---
 title: Выбор алгоритмов
-titleSuffix: Azure Machine Learning Studio (classic)
+titleSuffix: ML Studio (classic) Azure
 description: Как выбрать алгоритмы Машинное обучение Azure Studio (классические) для защищенного и неконтролируемого обучения в процессе кластеризации, классификации или регрессии.
 services: machine-learning
 ms.service: machine-learning
@@ -10,12 +10,12 @@ author: xiaoharper
 ms.author: amlstudiodocs
 ms.custom: previous-ms.author=pakalra, previous-author=pakalra
 ms.date: 03/04/2019
-ms.openlocfilehash: 02e72286e824de49be4fbfddcdc5d0e68625f5ca
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: e8d296f8752e06e6e47c349be9c900b9d0489ec5
+ms.sourcegitcommit: 6c2c97445f5d44c5b5974a5beb51a8733b0c2be7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73493525"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73619764"
 ---
 # <a name="how-to-choose-algorithms-for-azure-machine-learning-studio-classic"></a>Выбор алгоритмов для Машинное обучение Azure Studio (классическая модель)
 
@@ -236,7 +236,7 @@ ms.locfileid: "73493525"
 Эта платформа пренебрегает приведенной здесь классификацией, так как может решать как классификационные, так и регрессионные задачи и даже обучаться на основе частично неразмеченных данных. Ее можно настроить для использования любого алгоритма обучения, любой функции потери и любого алгоритма оптимизации. Эта система изначально разрабатывалась как эффективная, параллельная и очень быстрая. Она обрабатывает огромные наборы функций с минимальными усилиями.
 Запущенная и управляемая Джоном Лэнгфордом из Microsoft Research, Vowpal Wabbit — это "формула один" среди других алгоритмов. С помощью Vowpal Wabbit можно решить не все задачи, но если система подходит для вашей задачи, возможно, стоит потратить время на изучение интерфейса системы. Система также доступна в виде [автономного открытого исходного кода](https://github.com/JohnLangford/vowpal_wabbit) на нескольких языках.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Скачайте наглядную [инфографику по основам машинного обучения и ознакомьтесь с популярными алгоритмами](basics-infographic-with-algorithm-examples.md), которые используются для ответа на распространенные вопросы о машинном обучении.
 

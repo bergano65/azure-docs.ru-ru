@@ -1,5 +1,5 @@
 ---
-title: 'Резервные копии базы данных SQL Azure: автоматически создаваемые и геоизбыточные | Документация Майкрософт'
+title: Автоматическое геоизбыточное резервное копирование базы данных SQL Azure
 description: База данных SQL автоматически создает локальную резервную копию базы данных каждые пять минут и использует геоизбыточное хранилище Azure с доступом на чтение для обеспечения геоизбыточности.
 services: sql-database
 ms.service: sql-database
@@ -12,12 +12,12 @@ ms.author: sashan
 ms.reviewer: mathoma, carlrab, danil
 manager: craigg
 ms.date: 09/26/2019
-ms.openlocfilehash: a43783110f625dd5faef13c83228a2659155ead0
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 5dd2cb8d266fcb2a17c50a2213509b968894737e
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73492229"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73691174"
 ---
 # <a name="automated-backups"></a>Автоматическое резервное копирование
 

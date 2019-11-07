@@ -1,5 +1,5 @@
 ---
-title: Элементы языка T-SQL, поддерживаемые в хранилище данных SQL Azure | Документация Майкрософт
+title: Элементы языка T-SQL
 description: Ссылки на документацию по инструкциям T-SQL, поддерживаемым в хранилище данных SQL Azure.
 services: sql-data-warehouse
 author: XiaoyuMSFT
@@ -10,12 +10,13 @@ ms.subservice: query
 ms.date: 06/13/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: 5d623ebbb5434338e2d7263ca63dd545230a612d
-ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
+ms.custom: seo-lt-2019
+ms.openlocfilehash: 02f463e12547ba64a05e04988d9c192bba4f6a27
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68479417"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73692526"
 ---
 # <a name="t-sql-language-elements-supported-in-azure-sql-data-warehouse"></a>Элементы языка T-SQL, поддерживаемые в хранилище данных SQL Azure
 Ссылки на документацию по элементам языка T-SQL, поддерживаемым в хранилище данных SQL Azure.
@@ -27,9 +28,9 @@ ms.locfileid: "68479417"
 * [параметры сортировки](https://msdn.microsoft.com/library/ff848763.aspx)
 * [комментарии](https://msdn.microsoft.com/library/ms181627.aspx)
 * [константы](https://msdn.microsoft.com/library/ms179899.aspx)
-* [типы данных](https://msdn.microsoft.com/library/ms187752.aspx)
+* [Типы данных](https://msdn.microsoft.com/library/ms187752.aspx)
 * [EXECUTE](https://msdn.microsoft.com/library/ms188332.aspx)
-* [выражения](https://msdn.microsoft.com/library/ms190286.aspx)
+* [выражений](https://msdn.microsoft.com/library/ms190286.aspx)
 * [KILL](https://msdn.microsoft.com/library/ms173730.aspx)
 * [Временное решение свойства IDENTITY](https://msdn.microsoft.com/library/ms186775.aspx)
 * [PRINT](https://msdn.microsoft.com/library/ms176047.aspx)
@@ -81,7 +82,7 @@ ms.locfileid: "68479417"
 * [|= (битовый OR EQUALS)](https://msdn.microsoft.com/library/cc627409.aspx)
 * [&= (битовый AND EQUALS)](https://msdn.microsoft.com/library/cc627427.aspx)
 
-## <a name="functions"></a>Функции
+## <a name="functions"></a>Функции Azure
 * [@@DATEFIRST](https://msdn.microsoft.com/library/ms187766.aspx)
 * [@@ERROR](https://msdn.microsoft.com/library/ms188790.aspx)
 * [@@LANGUAGE](https://msdn.microsoft.com/library/ms177557.aspx)
@@ -276,6 +277,6 @@ ms.locfileid: "68479417"
 * [SET TRANSACTION ISOLATION LEVEL](https://msdn.microsoft.com/library/ms173763.aspx)
 * [SET XACT_ABORT](https://msdn.microsoft.com/library/ms188792.aspx)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные справочные сведения см. в разделах [Инструкции T-SQL, поддерживаемые в хранилище данных SQL Azure](sql-data-warehouse-reference-tsql-statements.md) и [System views supported in Azure SQL Data Warehouse](sql-data-warehouse-reference-tsql-system-views.md) (Системные представления в хранилище данных SQL Azure).
 

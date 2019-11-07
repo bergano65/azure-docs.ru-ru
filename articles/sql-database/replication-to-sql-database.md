@@ -1,5 +1,5 @@
 ---
-title: Репликация в Базу данных SQL Azure | Документация Майкрософт
+title: Репликация в базу данных SQL Azure
 description: Сведения об использовании репликации SQL Server с отдельными базами данных и базами данных в эластичных пулах службы "База данных SQL Azure".
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: allenwux
 ms.author: xiwu
 ms.reviewer: mathoma
 ms.date: 01/25/2019
-ms.openlocfilehash: eab8f4809742b69e92cb835801493722d28afe49
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: ae564a98b77b1ac564fa9aae152b27c491187d0c
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68570473"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73692224"
 ---
 # <a name="replication-to-sql-database-single-and-pooled-databases"></a>Репликация в отдельную базу данных и в базы данных в пуле службы "База данных SQL Azure"
 
@@ -51,7 +51,7 @@ ms.locfileid: "68570473"
 - Одна публикация на сервере SQL Server может поддерживать подписчиков и Базы данных SQL Azure, и SQL Server (локально и SQL Server на виртуальной машине Azure).  
 - Управление репликацией, ее мониторинг и устранение неполадок должны выполняться на локальном SQL Server.  
 - В Базе данных SQL Azure поддерживаются только принудительные подписки.  
-- В **sp_addsubscription** для Базы данных SQL поддерживается только `@subscriber_type = 0`.  
+- В `@subscriber_type = 0`sp_addsubscription**для Базы данных SQL поддерживается только**.  
 - База данных SQL Azure не поддерживает двунаправленную, немедленную, обновляемую или одноранговую репликацию.
 
 ## <a name="replication-architecture"></a>Архитектура репликации  
@@ -94,7 +94,7 @@ ms.locfileid: "68570473"
 - копирование hierarchyid в типы данных MAX;  
 - копирование пространственных типов в типы данных MAX;  
 - копирование расширенных свойств;  
-- копирование разрешений.  
+- копирование разрешений;  
 
 ### <a name="limitations-to-be-determined"></a>Ограничения, которые должны быть подтверждены
 

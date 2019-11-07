@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 09/13/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: f254ebe599e64f4c48a839d9defd57e0899138a5
-ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
+ms.openlocfilehash: 5e4645d0fbdcd8cd44bb5972cdc28ab7eaa2a681
+ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72755775"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73642622"
 ---
 # <a name="set-up-sign-in-for-multi-tenant-azure-active-directory-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка входа для мультитенантного Azure Active Directory с помощью пользовательских политик в Azure Active Directory B2C
 
@@ -23,7 +23,7 @@ ms.locfileid: "72755775"
 
 В этой статье описывается настройка входа для пользователей с помощью мультитенантной конечной точки Azure Active Directory (Azure AD) с использованием [пользовательских политик](active-directory-b2c-overview-custom.md) в Azure Active Directory B2C. Это позволяет пользователям из нескольких клиентов Azure AD входить в систему, используя Azure AD B2C, без необходимости настройки поставщика удостоверений для каждого клиента. Однако гостевые пользователи любого из этих тенантов **не смогут** войти в систему. Для этого необходимо [отдельно настроить каждый клиент](active-directory-b2c-setup-aad-custom.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](active-directory-b2c-get-started-custom.md).
 
@@ -31,7 +31,7 @@ ms.locfileid: "72755775"
 
 Чтобы включить вход для пользователей из определенной организации Azure AD, вам необходимо зарегистрировать приложение в клиенте организации Azure AD.
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 1. Убедитесь, что вы используете каталог, содержащий клиент Azure AD Организации (например, contoso.com). Выберите **Фильтр каталог и подписка** в верхнем меню, а затем выберите каталог, содержащий ваш клиент.
 1. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Регистрация приложений**.
 1. Выберите **Новая регистрация**.
@@ -71,7 +71,7 @@ ms.locfileid: "72755775"
 
 1. Откройте файл *TrustFrameworkExtensions.xml*.
 1. Найдите элемент **ClaimsProviders**. Если он не существует, добавьте его в корневой элемент.
-1. Добавьте новый элемент **ClaimsProvider** следующим образом.
+1. Добавьте новый элемент **ClaimsProvider** следующим образом:
 
     ```XML
     <ClaimsProvider>
@@ -133,7 +133,7 @@ ms.locfileid: "72755775"
 
 Вам необходимо обновить список допустимых издателей маркеров и предоставить доступ только определенному списку пользователей клиента Azure AD, которые могут выполнить вход в систему.
 
-Чтобы получить эти значения, просмотрите метаданные обнаружения OpenID Connect Connect для каждого клиента Azure AD, из которого будут входить пользователи. Формат URL-адреса метаданных аналогичен `https://login.microsoftonline.com/your-tenant/v2.0/.well-known/openid-configuration`, где `your-tenant` — это имя клиента Azure AD. Пример.
+Чтобы получить эти значения, просмотрите метаданные обнаружения OpenID Connect Connect для каждого клиента Azure AD, из которого будут входить пользователи. Формат URL-адреса метаданных аналогичен `https://login.microsoftonline.com/your-tenant/v2.0/.well-known/openid-configuration`, где `your-tenant` — это имя клиента Azure AD. Например:
 
 `https://login.microsoftonline.com/fabrikam.onmicrosoft.com/v2.0/.well-known/openid-configuration`
 
@@ -146,7 +146,7 @@ ms.locfileid: "72755775"
 
 Теперь вы настроили политику так, чтобы Azure AD B2C знала, как взаимодействовать с каталогами Azure AD. Попробуйте отправить файл расширения политики, чтобы убедиться, что все в порядке.
 
-1. На странице **Пользовательские политики** в клиенте Azure AD B2C выберите **Отправить политику**.
+1. На странице **Настраиваемые политики** в клиенте Azure AD B2C выберите **Отправить политику**.
 2. Включите функцию **Перезаписать политику, если она уже существует**, а затем найдите и выберите файл *TrustFrameworkExtensions.xml*.
 3. Щелкните **Отправить**.
 
@@ -165,7 +165,7 @@ ms.locfileid: "72755775"
 Элемент **ClaimsProviderSelection** является аналогом кнопки поставщика удостоверений на экранах регистрации и входа. Если вы добавите для учетной записи Azure AD элемент **ClaimsProviderSelection**, при переходе пользователя на страницу отобразится новая кнопка.
 
 1. Найдите элемент **орчестратионстеп** , который включает `Order="1"` в пути взаимодействия пользователя, созданного в *TrustFrameworkExtensions. XML*.
-1. Добавьте следующий элемент в тэг **ClaimsProviderSelects**. Установите для параметра **TargetClaimsExchangeId** соответствующее значение, например `AzureADExchange`:
+1. Добавьте следующий элемент для параметра **ClaimsProviderSelects**. Установите для параметра **TargetClaimsExchangeId** соответствующее значение, например `AzureADExchange`:
 
     ```XML
     <ClaimsProviderSelection TargetClaimsExchangeId="AzureADExchange" />
@@ -175,7 +175,7 @@ ms.locfileid: "72755775"
 
 Теперь, когда у вас есть кнопка, вам необходимо связать ее с действием. В этом случае действие — это возможность взаимодействия Azure AD B2C с Azure AD для получения токена. Свяжите кнопку с действием, связав технический профиль для поставщика утверждений Azure AD.
 
-1. Найдите элемент **OrchestrationStep**, содержащий `Order="2"` в пути пользователя.
+1. Найдите элемент **OrchestrationStep**, содержащий `Order="2"` в пути взаимодействия пользователя.
 2. Добавьте следующий элемент **ClaimsExchange**, убедившись, что для **Id** можно использовать то же значение, которое было использовано для **TargetClaimsExchangeId**:
 
     ```XML

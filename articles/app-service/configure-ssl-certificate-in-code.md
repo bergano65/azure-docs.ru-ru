@@ -1,5 +1,5 @@
 ---
-title: Использование SSL-сертификата в коде приложения — служба приложений Azure | Документация Майкрософт
+title: Использование SSL-сертификата в коде — служба приложений Azure | Документация Майкрософт
 description: Узнайте, как подключаться к удаленным ресурсам с помощью необходимых им сертификатов клиента.
 services: app-service
 documentationcenter: ''
@@ -10,26 +10,26 @@ ms.service: app-service
 ms.workload: web
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 10/16/2019
+ms.date: 11/04/2019
 ms.author: cephalin
 ms.reviewer: yutlin
 ms.custom: seodec18
-ms.openlocfilehash: 1f042f72f82d2198472fe81670c697c0c4b28321
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
-ms.translationtype: HT
+ms.openlocfilehash: 93dfe784d45cd9cd93d22c5e8c3275c563f7f88b
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/04/2019
-ms.locfileid: "73513696"
+ms.locfileid: "73572077"
 ---
-# <a name="use-an-ssl-certificate-in-your-application-code-in-azure-app-service"></a>Использование SSL-сертификата в коде приложения службы приложений Azure
+# <a name="use-an-ssl-certificate-in-your-code-in-azure-app-service"></a>Использование SSL-сертификата в коде в службе приложений Azure
 
-Код приложения службы приложений может действовать как клиент и обращаться к внешней службе, для которой требуется проверка подлинности на сертификат. В этом пошаговом руководство показано, как использовать общедоступные или частные сертификаты в коде приложения.
+В коде приложения можно получить доступ к [общедоступным или частным сертификатам, добавляемым в службу приложений](configure-ssl-certificate.md). Код приложения может действовать как клиент и обращаться к внешней службе, для которой требуется проверка подлинности сертификата, или же может потребоваться выполнить криптографические задачи. В этом пошаговом руководство показано, как использовать общедоступные или частные сертификаты в коде приложения.
 
-Этот подход к использованию сертификатов в коде использует функциональность SSL в службе приложений, которая требует, чтобы ваше приложение было на уровне **Basic** или выше. Кроме того, можно [включить файл сертификата в репозиторий приложения](#load-certificate-from-file), но не рекомендуется использовать его для частных сертификатов.
+Этот подход к использованию сертификатов в коде использует функциональность SSL в службе приложений, которая требует, чтобы ваше приложение было на уровне **Basic** или выше. Если приложение находится на уровне **Free** или **Shared** , можно [включить файл сертификата в репозиторий приложения](#load-certificate-from-file).
 
 Доверив управление SSL-сертификатами службе приложений, вы сможете разделить сертификаты и код приложения, защитив таким образом конфиденциальные данные.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Ознакомьтесь со следующими статьями:
 
@@ -46,9 +46,9 @@ ms.locfileid: "73513696"
 
 ![Копирование отпечатка сертификата](./media/configure-ssl-certificate/create-free-cert-finished.png)
 
-## <a name="load-the-certificate"></a>Загрузка сертификата
+## <a name="make-the-certificate-accessible"></a>Предоставление доступа к сертификату
 
-Чтобы использовать сертификат в коде приложения, добавьте его отпечаток в параметр приложения `WEBSITE_LOAD_CERTIFICATES`, выполнив следующую команду в <a target="_blank" href="https://shell.azure.com" >Cloud Shell</a>:
+Чтобы получить доступ к сертификату в коде приложения, добавьте его отпечаток в параметр приложения `WEBSITE_LOAD_CERTIFICATES`, выполнив следующую команду в <a target="_blank" href="https://shell.azure.com" >Cloud Shell</a>:
 
 ```azurecli-interactive
 az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings WEBSITE_LOAD_CERTIFICATES=<comma-separated-certificate-thumbprints>
@@ -56,15 +56,14 @@ az webapp config appsettings set --name <app-name> --resource-group <resource-gr
 
 Чтобы сделать все сертификаты доступными, установите значение `*`.
 
-> [!NOTE]
-> Этот параметр помещает указанные сертификаты в [Текущее хранилище усер\ми](/windows-hardware/drivers/install/local-machine-and-current-user-certificate-stores) для большинства ценовых категорий, но на **изолированном** уровне (т. е. приложение выполняется в [Среда службы приложений](environment/intro.md)) помещает сертификаты в [локальный мачине\ми](/windows-hardware/drivers/install/local-machine-and-current-user-certificate-stores) сообщений.
->
+## <a name="load-certificate-in-windows-apps"></a>Загрузка сертификата в приложениях Windows
 
-Настроенные сертификаты теперь готовы к использованию в коде.
+Параметр приложения `WEBSITE_LOAD_CERTIFICATES` делает указанные сертификаты доступными для приложения Windows, размещенного в хранилище сертификатов Windows, а расположение зависит от [ценовой](overview-hosting-plans.md)категории:
 
-## <a name="load-the-certificate-in-code"></a>Загрузка сертификата в коде
+- **Изолированный** уровень в [локальной мачине\ми](/windows-hardware/drivers/install/local-machine-and-current-user-certificate-stores). 
+- Все остальные уровни — в [текущем усер\ми](/windows-hardware/drivers/install/local-machine-and-current-user-certificate-stores).
 
-Когда сертификат будет доступен, к нему можно обращаться в коде C# через отпечаток сертификата. Следующий код загружает сертификат с отпечатком `E661583E8FABEF4C0BEF694CBC41C28FB81CD870`.
+В C# коде вы получите доступ к сертификату по отпечатку сертификата. Следующий код загружает сертификат с отпечатком `E661583E8FABEF4C0BEF694CBC41C28FB81CD870`.
 
 ```csharp
 using System;
@@ -89,30 +88,74 @@ certStore.Close();
 ...
 ```
 
-<a name="file"></a>
-## <a name="load-certificate-from-file"></a>Загрузить сертификат из файла
+В коде Java вы получите доступ к сертификату из хранилища Windows-MY, используя поле общего имени субъекта (см. раздел [сертификат открытого ключа](https://en.wikipedia.org/wiki/Public_key_certificate)). В следующем коде показано, как загрузить сертификат закрытого ключа:
 
-Если необходимо загрузить файл сертификата из каталога приложения, лучше передать его с помощью [FTPS](deploy-ftp.md) , а не [Git](deploy-local-git.md), например. Конфиденциальные данные следует учитывать как закрытый сертификат из системы управления версиями.
+```java
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMapping;
+import java.security.KeyStore;
+import java.security.cert.Certificate;
+import java.security.PrivateKey;
 
-Несмотря на то, что файл загружается непосредственно в код .NET, Библиотека по-прежнему проверяет, загружен ли текущий профиль пользователя. Чтобы загрузить профиль текущего пользователя, задайте параметр приложения `WEBSITE_LOAD_USER_PROFILE` с помощью следующей команды в <a target="_blank" href="https://shell.azure.com" >Cloud Shell</a>.
+...
+KeyStore ks = KeyStore.getInstance("Windows-MY");
+ks.load(null, null); 
+Certificate cert = ks.getCertificate("<subject-cn>");
+PrivateKey privKey = (PrivateKey) ks.getKey("<subject-cn>", ("<password>").toCharArray());
 
-```azurecli-interactive
-az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings WEBSITE_LOAD_USER_PROFILE=1
+// Use the certificate and key
+...
 ```
 
-После установки этого параметра в следующем C# примере загружается сертификат с именем `mycert.pfx` из каталога `certs` репозитория приложения.
+Дополнительные сведения о языках, которые не поддерживают или предлагают недостаточную поддержку хранилища сертификатов Windows, см. [в разделе Загрузка сертификата из файла](#load-certificate-from-file).
+
+## <a name="load-certificate-in-linux-apps"></a>Загрузка сертификата в приложениях Linux
+
+`WEBSITE_LOAD_CERTIFICATES` параметры приложения предоставляет доступ к указанным сертификатам для размещенных в Linux приложений (включая пользовательские приложения-контейнеры) в виде файлов. Файлы находятся в следующих каталогах:
+
+- Частные сертификаты — `/var/ssl/private` (`.p12` файлы)
+- Общедоступные сертификаты — `/var/ssl/certs` (файлы `.der`)
+
+Имена файлов сертификатов — это отпечатки сертификата. В следующем C# примере кода показано, как загрузить открытый сертификат в приложение Linux.
 
 ```csharp
 using System;
 using System.Security.Cryptography.X509Certificates;
 
 ...
-// Replace the parameter with "~/<relative-path-to-cert-file>".
-string certPath = Server.MapPath("~/certs/mycert.pfx");
+var bytes = System.IO.File.ReadAllBytes("/var/ssl/certs/<thumbprint>.der");
+var cert = new X509Certificate2(bytes);
 
-X509Certificate2 cert = GetCertificate(certPath, signatureBlob.Thumbprint);
-...
+// Use the loaded certificate
 ```
+
+Чтобы узнать, как загрузить SSL-сертификат из файла в Node. js, PHP, Python, Java или Ruby, см. документацию по соответствующему языку или Web Platform.
+
+## <a name="load-certificate-from-file"></a>Загрузить сертификат из файла
+
+Если вам нужно загрузить файл сертификата, который вы перегрузили вручную, лучше передать сертификат с помощью [FTPS](deploy-ftp.md) вместо [Git](deploy-local-git.md), например. Конфиденциальные данные следует учитывать как закрытый сертификат из системы управления версиями.
+
+> [!NOTE]
+> ASP.NET и ASP.NET Core в Windows должны получить доступ к хранилищу сертификатов, даже если вы загрузили сертификат из файла. Чтобы загрузить файл сертификата в приложение Windows .NET, загрузите профиль текущего пользователя с помощью следующей команды в <a target="_blank" href="https://shell.azure.com" >Cloud Shell</a>:
+>
+> ```azurecli-interactive
+> az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings WEBSITE_LOAD_USER_PROFILE=1
+> ```
+
+В следующем C# примере общедоступный сертификат загружается из относительного пути в приложении:
+
+```csharp
+using System;
+using System.Security.Cryptography.X509Certificates;
+
+...
+var bytes = System.IO.File.ReadAllBytes("~/<relative-path-to-cert-file>");
+var cert = new X509Certificate2(bytes);
+
+// Use the loaded certificate
+```
+
+Чтобы узнать, как загрузить SSL-сертификат из файла в Node. js, PHP, Python, Java или Ruby, см. документацию по соответствующему языку или Web Platform.
 
 ## <a name="more-resources"></a>Дополнительные ресурсы
 

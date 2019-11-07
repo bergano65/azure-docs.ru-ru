@@ -1,5 +1,5 @@
 ---
-title: Использование хранимых процедур в хранилище данных SQL | Документация Майкрософт
+title: Использование хранимых процедур
 description: Советы по реализации хранимых процедур в хранилище данных SQL Azure для разработки решений.
 services: sql-data-warehouse
 author: XiaoyuMSFT
@@ -10,17 +10,18 @@ ms.subservice: development
 ms.date: 04/02/2019
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: 2c12a679ed5f0a1574deb34df8c0151e737d2d01
-ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
+ms.custom: seo-lt-2019
+ms.openlocfilehash: e6e1144043cbbbc8124785351e1e56a776b84527
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68479588"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73692811"
 ---
 # <a name="using-stored-procedures-in-sql-data-warehouse"></a>Использование хранимых процедур в хранилище данных SQL
 Советы по реализации хранимых процедур в хранилище данных SQL Azure для разработки решений.
 
-## <a name="what-to-expect"></a>Чего следует ожидать
+## <a name="what-to-expect"></a>Основные принципы
 
 Хранилище данных SQL Azure поддерживает многие функции T-SQL, которые используются в SQL Server. Что более важно, в нем есть специальные функции горизонтального масштабирования, с помощью которых можно максимально увеличить производительность решения.
 
@@ -71,7 +72,7 @@ EXEC prc_nesting
 ## <a name="limitations"></a>Ограничения
 Существуют некоторые аспекты хранимых процедур Transact-SQL, которые не реализованы в хранилище данных SQL.
 
-Подробные сведения.
+К ним относятся:
 
 * временные хранимые процедуры;
 * нумерованные хранимые процедуры;
@@ -85,6 +86,6 @@ EXEC prc_nesting
 * контекст выполнения;
 * инструкция Return.
 
-## <a name="next-steps"></a>Следующие шаги
-Дополнительные советы по разработке приведены в [обзоре разработки](sql-data-warehouse-overview-develop.md).
+## <a name="next-steps"></a>Дальнейшие действия
+Дополнительные советы по разработке см. в статье [Проектные решения и методики программирования для хранилища данных SQL](sql-data-warehouse-overview-develop.md).
 

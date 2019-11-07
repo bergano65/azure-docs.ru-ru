@@ -1,5 +1,5 @@
 ---
-title: Практическое руководство по уведомлениям по электронной почте об автоматической настройке для службы "База данных SQL Azure" | Документация Майкрософт
+title: Руководство по электронной почте об автоматической настройке уведомлений. база данных SQL Azure
 description: Сведения о включении уведомлений по электронной почте об автоматической настройке службы "База данных SQL Azure".
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: danimir
 ms.author: danil
 ms.reviewer: jrasnik, carlrab
 ms.date: 06/03/2019
-ms.openlocfilehash: df9390c00c34fce82de8cc17efb5cc3bce2e4e3d
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: e1478ab6abc9705a67f2d47bc076d3c2fe54ccd4
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68569438"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73691145"
 ---
 # <a name="email-notifications-for-automatic-tuning"></a>Уведомления по электронной почте об автоматической настройке
 
@@ -248,7 +248,7 @@ Write-Output $table
 
 Можно дополнительно настроить решение для создания уведомлений по электронной почте на основании определенного события настройки, отправляемых нескольким получателям, для нескольких подписок или баз данных. Это может зависеть от ваших конкретных сценариев.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте больше о том, как автоматическая настройка может помочь повысить производительность базы данных, ознакомившись с разделом [Автоматическая настройка в Базе данных SQL Azure](sql-database-automatic-tuning.md).
 - Дополнительные сведения о том, как включить автоматическую настройку в базе данных SQL Azure, чтобы управлять рабочей нагрузкой, см. в статье [Включение автоматической настройки](sql-database-automatic-tuning-enable.md).

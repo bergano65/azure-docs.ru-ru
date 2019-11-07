@@ -7,18 +7,18 @@ ms.reviewer: oflipman
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 09/26/2019
-ms.openlocfilehash: 34f5daaf074e011176610caed883cef9d1dbb2ea
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 49c55b580abdaea6c876a0fac4e7dd4e73d496af
+ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73152038"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73643829"
 ---
 # <a name="create-an-azure-data-explorer-cluster-and-database-by-using-an-azure-resource-manager-template"></a>Создание кластера и базы данных Azure обозреватель данных с помощью шаблона Azure Resource Manager
 
 > [!div class="op_single_selector"]
-> * [Microsoft Azure](create-cluster-database-portal.md)
-> * [CLI](create-cluster-database-cli.md)
+> * [Портал](create-cluster-database-portal.md)
+> * [ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](create-cluster-database-cli.md)
 > * [PowerShell](create-cluster-database-powershell.md)
 > * [C#](create-cluster-database-csharp.md)
 > * [Python](create-cluster-database-python.md)
@@ -104,11 +104,11 @@ ms.locfileid: "73152038"
 
 1. Чтобы создать кластер и базу данных, используйте следующую кнопку для запуска развертывания. Чтобы закончить выполнение инструкций из этой статьи, щелкните правой кнопкой мыши и выберите ссылку **Открыть в новом окне**.
 
-    [![Развертывание в Azure](media/create-cluster-database-resource-manager/deploybutton.png)](https://github.com/Azure/azure-quickstart-templates/blob/master/101-kusto-cluster-database/azuredeploy.json)
+    [![Развертывание в Azure](media/create-cluster-database-resource-manager/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-kusto-cluster-database%2Fazuredeploy.json)
 
     Кнопка **Развернуть в Azure** выполняет переход на портал Azure для заполнения формы развертывания.
 
-    ![Развернуть в Azure](media/create-cluster-database-resource-manager/deploy-2-azure.png)
+    ![Развертывание в Azure](media/create-cluster-database-resource-manager/deploy-2-azure.png)
 
     Шаблон можно [изменить и развернуть в портал Azure](/azure/azure-resource-manager/resource-manager-quickstart-create-templates-use-the-portal#edit-and-deploy-the-template) с помощью формы.
 

@@ -1,7 +1,7 @@
 ---
 title: Пользовательские поддомены
 titleSuffix: Azure Cognitive Services
-description: Azure Cognitive Services использовать пользовательские имена поддоменов для каждого ресурса, созданного с помощью портал Azure, Azure Cloud Shell или Azure CLI. В отличие от региональных конечных точек, которые были распространены для всех клиентов в определенном регионе Azure, имена пользовательских поддоменов уникальны для ресурса. Имена пользовательских поддоменов необходимы, чтобы включить такие функции, как Azure Active Directory (Azure AD) для проверки подлинности.
+description: Имена пользовательских поддоменов для каждого ресурса службы "Поиск и Настройка" создаются с помощью портал Azure, Azure Cloud Shell или Azure CLI.
 services: cognitive-services
 author: erhopf
 manager: nitinme
@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 07/24/2019
 ms.author: erhopf
-ms.openlocfilehash: 7153735052f96bef65bf3daaccde4eab3e61b0f9
-ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
+ms.openlocfilehash: 108e5ebfa34db711af4ff33cbf4fbba897b8947d
+ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68473054"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73647695"
 ---
 # <a name="custom-subdomain-names-for-cognitive-services"></a>Имена пользовательских поддоменов для Cognitive Services
 
@@ -51,7 +51,7 @@ Cognitive Services ресурсов, созданных до 1 июля, 2019 б
 
 ## <a name="what-are-the-requirements-for-a-custom-subdomain-name"></a>Каковы требования к имени пользовательского поддомена?
 
-Имя пользовательского поддомена является уникальным для ресурса. Имя может содержать только буквенно-цифровые символы `-` и символ. оно должно содержать от 2 до 64 символов и не может заканчиваться `-`символом.
+Имя пользовательского поддомена является уникальным для ресурса. Имя может содержать только буквенно-цифровые символы и `-` символ. Длина должна составлять от 2 до 64 символов и заканчиваться `-`.
 
 ## <a name="can-i-change-a-custom-domain-name"></a>Можно ли изменить имя пользовательского домена?
 
@@ -68,35 +68,35 @@ Cognitive Services ресурсов, созданных до 1 июля, 2019 б
 > [!NOTE]
 > API перевода текстов и API-интерфейсы поиска Bing используют глобальные конечные точки.
 
-| Тип конечной точки | Район | Конечная точка |
+| Тип конечной точки | Регион | Конечная точка |
 |---------------|--------|----------|
-| Открытый | Глобальный (Перевод текстов & Bing) | `https://api.cognitive.microsoft.com` |
-| | Восточная Австралия | `https://australiaeast.api.cognitive.microsoft.com` |
+| Общедоступные | Глобальный (Перевод текстов & Bing) | `https://api.cognitive.microsoft.com` |
+| | Восточная часть Австралии | `https://australiaeast.api.cognitive.microsoft.com` |
 | | Южная Бразилия | `https://brazilsouth.api.cognitive.microsoft.com` |
 | | Центральная Канада | `https://canadacentral.api.cognitive.microsoft.com` |
-| | Центральная часть США | `https://centralus.api.cognitive.microsoft.com` |
+| | Центральный регион США | `https://centralus.api.cognitive.microsoft.com` |
 | | Восточная Азия | `https://eastasia.api.cognitive.microsoft.com` |
-| | East US | `https://eastus.api.cognitive.microsoft.com` |
-| | Восточная часть США 2 | `https://eastus2.api.cognitive.microsoft.com` |
+| | Восток США | `https://eastus.api.cognitive.microsoft.com` |
+| | Восток США 2 | `https://eastus2.api.cognitive.microsoft.com` |
 | | Центральная Франция | `https://francecentral.api.cognitive.microsoft.com` |
 | | Центральная Индия | `https://centralindia.api.cognitive.microsoft.com` |
-| | Восточная Япония | `https://japaneast.api.cognitive.microsoft.com` |
+| | Восточная часть Японии | `https://japaneast.api.cognitive.microsoft.com` |
 | | Центральная Корея | `https://koreacentral.api.cognitive.microsoft.com` |
 | | Центрально-северная часть США | `https://northcentralus.api.cognitive.microsoft.com` |
 | | Северная Европа | `https://northeurope.api.cognitive.microsoft.com` |
-| | северная часть ЮАР | `https://southafricanorth.api.cognitive.microsoft.com` |
+| | Северная часть ЮАР | `https://southafricanorth.api.cognitive.microsoft.com` |
 | | Центрально-южная часть США | `https://southcentralus.api.cognitive.microsoft.com` |
 | | Юго-Восточная Азия | `https://southeastasia.api.cognitive.microsoft.com` |
-| | Южная часть Соединенного Королевства | `https://uksouth.api.cognitive.microsoft.com` |
-| | Центрально-западная часть США | `https://westcentralus.api.cognitive.microsoft.com` |
+| | Южная часть Великобритании | `https://uksouth.api.cognitive.microsoft.com` |
+| | Западно-центральная часть США | `https://westcentralus.api.cognitive.microsoft.com` |
 | | Западная Европа | `https://westeurope.api.cognitive.microsoft.com` |
-| | Западная часть США | `https://westus.api.cognitive.microsoft.com` |
-| | Западная часть США 2 | `https://westus2.api.cognitive.microsoft.com` |
-| US Gov | US Gov (Вирджиния) | `https://virginia.api.cognitive.microsoft.us` |
+| | Запад США | `https://westus.api.cognitive.microsoft.com` |
+| | Западный регион США 2 | `https://westus2.api.cognitive.microsoft.com` |
+| Штат в США (для обслуживания государственных организаций США) | Правительство штата Вирджиния | `https://virginia.api.cognitive.microsoft.us` |
 | Китай | Восточный Китай 2 | `https://chinaeast2.api.cognitive.azure.cn` |
-| | Северный Китай | `https://chinanorth.api.cognitive.azure.cn` |
+| | Север Китая | `https://chinanorth.api.cognitive.azure.cn` |
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>Дополнительные материалы
 
 * [Что такое Cognitive Services?](Welcome.md)
-* [Authentication](authentication.md)
+* [Проверка подлинности](authentication.md)

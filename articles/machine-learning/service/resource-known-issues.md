@@ -10,12 +10,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 7c52adfb919586fc590ef60215592a5b5c1c1cb3
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
-ms.translationtype: HT
+ms.openlocfilehash: 3fd97e33c88e7767e1d9b230792aea675a744f27
+ms.sourcegitcommit: 6c2c97445f5d44c5b5974a5beb51a8733b0c2be7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73476072"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73619781"
 ---
 # <a name="known-issues-and-troubleshooting-azure-machine-learning"></a>Известные проблемы и устранение неполадок Машинное обучение Azure
 
@@ -88,9 +88,19 @@ conda create -n <env-name> python=3.7.3
 
 ## <a name="datasets-and-data-preparation"></a>Подготовка к работе с наборами данных и данными
 
+Это известные проблемы для Машинное обучение Azure наборов данных.
+
 ### <a name="fail-to-read-parquet-file-from-http-or-adls-gen-2"></a>Не удалось считать файл Parquet из HTTP или ADLS Gen 2
 
-Существует известная проблема в пакете SDK для 1.1.25 версии AzureML, которая вызывает сбой при создании набора данных путем считывания файлов Parquet из HTTP или ADLS Gen 2. Чтобы устранить эту проблему, обновите версию до версии, превышающей 1.1.26, или понизить до версии ниже 1.1.24.
+Существует известная проблема в пакете SDK для 1.1.25 версии AzureML, которая вызывает сбой при создании набора данных путем считывания файлов Parquet из HTTP или ADLS Gen 2. Он завершится ошибкой с `Cannot seek once reading started.`. Чтобы устранить эту проблему, обновите `azureml-dataprep` до версии выше 1.1.26 или перейдите на более раннюю версию ниже 1.1.24.
+
+```python
+pip install --upgrade azureml-dataprep
+```
+
+### <a name="typeerror-mount-got-an-unexpected-keyword-argument-invocation_id"></a>Типиррор: для Mount () получен непредвиденный аргумент ключевого слова "invocation_id"
+
+Эта ошибка возникает при наличии несовместимой версии между `azureml-core` и `azureml-dataprep`. Если вы видите эту ошибку, обновите пакет `azureml-dataprep` до более новой версии (больше или равной 1.1.29).
 
 ```python
 pip install --upgrade azureml-dataprep
@@ -146,15 +156,8 @@ displayHTML("<a href={} target='_blank'>Azure Portal: {}</a>".format(local_run.g
 Если при чтении данных в кластере Azure Databricks отображается ошибка `FailToSendFeather`, см. следующие решения.
 
 * Обновите пакет `azureml-sdk[automl]` до последней версии.
-* Добавьте `azure-dataprep` версии 1.1.8 или более поздней.
+* Добавьте `azureml-dataprep` версии 1.1.8 или более поздней.
 * Добавьте `pyarrow` версии 0,11 или более поздней.
-
-
-## <a name="datasets"></a>Наборы данных
-
-Это известные проблемы для Машинное обучение Azure наборов данных.
-
-+ **Не удалось считать файлы Parquet на Azure Data Lake Storage 2-го поколения** Чтение файлов Parquet из хранилищ данных Azure Data Lake Storage 2-го поколения не работает, если `azureml-dataprep==1.1.25` установлен. Он завершится ошибкой с `Cannot seek once reading started.`. Если вы видите эту ошибку, можно либо установить `azureml-dataprep<=1.1.24`, либо установить `azureml-dataprep>=1.1.26`.
 
 ## <a name="azure-portal"></a>Портал Azure
 
@@ -262,3 +265,23 @@ kubectl get secret/azuremlfessl -o yaml
 
 ### <a name="horovod-is-shutdown"></a>Хоровод завершает работу
 В большинстве случаев это исключение означает, что в одном из процессов, вызвавших завершение хоровод, возникло базовое исключение. Каждый рейтинг в задании MPI получает собственный выделенный файл журнала в МАШИНном обучении Azure. Эти журналы имеют имя `70_driver_logs`. В случае распределенного обучения имена журналов добавляются в суффиксы `_rank`, что упрощает различение журналов. Чтобы найти точную ошибку, которая привела к хоровод завершению работы, просмотрите все файлы журнала и найдите `Traceback` в конце файлов driver_log. Один из этих файлов предоставит фактическое базовое исключение. 
+
+## <a name="labeling-projects-issues"></a>Создание меток для проблем проектов
+
+Известные проблемы с добавлением меток к проектам.
+
+### <a name="only-datasets-created-on-blob-datastores-can-be-used"></a>Можно использовать только наборы данных, созданные в хранилищах BLOB-объектов.
+
+Это известное ограничение текущего выпуска. 
+
+### <a name="after-creation-the-project-shows-initializing-for-a-long-time"></a>После создания проект показывает "инициализацию" в течение длительного времени
+
+Обновите страницу вручную. Инициализация должна продолжаться примерно 20 точек на секунду. Отсутствие автообновления является известной проблемой. 
+
+### <a name="bounding-box-cannot-be-drawn-all-the-way-to-right-edge-of-image"></a>Ограничивающий прямоугольник не может быть нарисован до правого края изображения 
+
+Попробуйте изменить размер окна браузера. Мы изучаем, как определить причину этого поведения. 
+
+### <a name="when-reviewing-images-newly-labeled-images-are-not-shown"></a>При просмотре изображений недавно помеченные изображения не отображаются
+
+Чтобы загрузить все помеченные изображения, нажмите **первую** кнопку. **Первая** кнопка вернет вас к началу списка, но загрузит все помеченные данные.

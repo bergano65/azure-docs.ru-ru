@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 10/18/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: b8ce4565a2df3ad5f144508010265c1029a6856d
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 411710280a631d341adeb55bc4b587a613ee3c4c
+ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73468867"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73643620"
 ---
 # <a name="get-started-with-custom-policies-in-azure-active-directory-b2c"></a>Начало работы с настраиваемыми политиками в Azure Active Directory B2C
 
@@ -23,7 +23,7 @@ ms.locfileid: "73468867"
 
 [Пользовательские политики](active-directory-b2c-overview-custom.md) — это файлы конфигурации, определяющие поведение клиента Azure Active Directory B2C (Azure AD B2C). В рамках этой статьи вы создадите настраиваемую политику, которая будет поддерживать регистрацию и вход с помощью локальной учетной записи с использованием адреса электронной почты и пароля. Вы также можете подготовить среду для добавления поставщиков удостоверений.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - [Создайте Azure AD B2C клиент](tutorial-create-tenant.md) , связанный с подпиской Azure, если у вас его еще нет.
 - [Зарегистрируйте приложение](tutorial-register-applications.md) в созданном клиенте, чтобы он мог взаимодействовать с Azure AD B2C.
@@ -73,7 +73,7 @@ Azure AD B2C требуется зарегистрировать два прил
 
 ### <a name="register-the-identityexperienceframework-application"></a>Регистрация приложения IdentityExperienceFramework
 
-Чтобы зарегистрировать приложение в Azure AD B2C клиенте, можно использовать текущие **приложения** или новый единый интерфейс **Регистрация приложений (Предварительная версия)** . Дополнительные [сведения о предварительной версии](https://aka.ms/b2cappregintro).
+Чтобы зарегистрировать приложение в Azure AD B2C клиенте, можно использовать текущие **приложения** или новый единый интерфейс **Регистрация приложений (Предварительная версия)** . [См. дополнительные сведения о новом интерфейсе](https://aka.ms/b2cappregintro).
 
 #### <a name="applicationstabapplications"></a>[Приложения](#tab/applications/)
 

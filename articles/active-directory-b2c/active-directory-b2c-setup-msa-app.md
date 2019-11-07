@@ -10,28 +10,28 @@ ms.topic: conceptual
 ms.date: 08/08/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 134ca92671a41eb53201101a3622215466a60c09
-ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
+ms.openlocfilehash: a921d6110fd0294012e2e59542ba2c82d63ffcde
+ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71065095"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73642079"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-microsoft-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью Microsoft через Azure Active Directory B2C
 
 ## <a name="create-a-microsoft-account-application"></a>Создание приложения для учетной записи Майкрософт
 
-Чтобы использовать учетная запись Майкрософт в качестве [поставщика удостоверений](active-directory-b2c-reference-oidc.md) в Azure Active Directory B2C (Azure AD B2C), необходимо создать приложение в клиенте Azure AD. Клиент Azure AD отличается от клиента Azure AD B2C. Если у вас еще нет учетная запись Майкрософт, его можно получить по адресу [https://www.live.com/](https://www.live.com/).
+Чтобы использовать учетная запись Майкрософт в качестве [поставщика удостоверений](active-directory-b2c-reference-oidc.md) в Azure Active Directory B2C (Azure AD B2C), необходимо создать приложение в клиенте Azure AD. Клиент Azure AD отличается от клиента Azure AD B2C. Если у вас еще нет учетная запись Майкрософт, его можно получить на [https://www.live.com/](https://www.live.com/).
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 1. Убедитесь, что вы используете каталог, содержащий клиент Azure AD, выбрав фильтр " **каталог и подписка** " в верхнем меню и выбрав Каталог, содержащий ваш клиент Azure AD.
 1. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Регистрация приложений**.
 1. Выберите **Новая регистрация**.
 1. Введите значение **Name** (Имя) для приложения. Например, *MSAapp1*.
 1. В разделе **Поддерживаемые типы учетных записей**выберите **учетные записи в любом организационном каталоге и личных учетных записях Майкрософт (например, Skype, Xbox, Outlook.com)** . Этот параметр предназначен для широкого набора удостоверений Майкрософт.
 
-   Дополнительные сведения о различных вариантах выбора типа учетной записи [см. в разделе Краткое руководство. Регистрация приложения на платформе](../active-directory/develop/quickstart-register-app.md)Microsoft Identity.
-1. В разделе **URI перенаправления (необязательно)** выберите **веб** и введите `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/authresp` в текстовом поле. Замените `your-tenant-name` на имя клиента Azure AD B2C.
+   Дополнительные сведения о различных типах учетных записей см. в разделе [Краткое руководство. Регистрация приложения на платформе Microsoft Identity](../active-directory/develop/quickstart-register-app.md).
+1. В разделе **URI перенаправления (необязательно)** выберите **Web** и введите `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/authresp` в текстовом поле. Замените `your-tenant-name` именем своего клиента Azure AD B2C.
 1. Выбор **регистра**
 1. Запишите **идентификатор приложения (клиента)** , показанный на странице Обзор приложения. Это необходимо при настройке поставщика удостоверений в следующем разделе.
 1. Выбор **сертификатов & секреты**

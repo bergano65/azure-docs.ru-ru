@@ -1,7 +1,7 @@
 ---
-title: 'Пример конструктора #7: классификация проверок книги'
+title: Анализ&#58; классификации книги в конструкторе
 titleSuffix: Azure Machine Learning
-description: Узнайте, как создать модель машинного обучения для классификации книг по различным категориям.
+description: Создание модели машинного обучения классификация проверок книг в различные категории.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,12 +10,12 @@ author: xiaoharper
 ms.author: zhanxia
 ms.reviewer: peterlu
 ms.date: 11/04/2019
-ms.openlocfilehash: 6f9a2327953177f29ba7a1f5948d24c7df428c09
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 949ddc847a6011d460f2a3685008d12e64868767
+ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73515451"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73647123"
 ---
 # <a name="sample-7---text-classification-predict-company-category"></a>Пример 7. Классификация текста: прогнозирование категории компании 
 

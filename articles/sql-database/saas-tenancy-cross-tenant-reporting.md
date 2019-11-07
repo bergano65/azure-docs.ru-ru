@@ -1,5 +1,5 @@
 ---
-title: Выполнение запросов системы отчетности к нескольким базам данных SQL Azure | Документация Майкрософт
+title: Выполнение запросов отчетов в нескольких базах данных SQL Azure
 description: Сведения о формировании отчетов по всем клиентам с использованием распределенных запросов.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewers: billgib,ayolubek
 ms.date: 01/25/2019
-ms.openlocfilehash: fa8dbbbb09fbdc14049e168afe6eb4810ccc8254
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: f9af2af7893bd908988ee45476ce14a56f9768a9
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68570245"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73691886"
 ---
 # <a name="cross-tenant-reporting-using-distributed-queries"></a>Отчеты по всем клиентам с использованием распределенных запросов
 
@@ -50,7 +50,7 @@ ms.locfileid: "68570245"
 
 Благодаря распределению запросов между базами данных клиента эластичный запрос позволяет мгновенно получить представление о текущих производственных данных. Эластичный запрос извлекает данные из потенциального множества баз данных, задержка при выполнении запроса может быть выше, чем для аналогичных запросов, отправленных к отдельной мультитенантной базе данных. Чтобы сократить объем данных, возвращаемых в головную базу данных, следует применить проектирование запросов. Как правило, эластичный запрос лучше всего подходит для получения небольших объемов данных в реальном времени, в отличие от часто используемых или сложных аналитических запросов или отчетов. Если запросы не выполняются надлежащим образом, изучите [план выполнения](https://docs.microsoft.com/sql/relational-databases/performance/display-an-actual-execution-plan), чтобы узнать, какая часть запроса перемещается в удаленную базу данных и сколько данных возвращается. Запросы, требующие сложной агрегации или аналитической обработки, могут обслуживаться лучше, если данные клиента будут извлечены в базу данных или хранилище данных, оптимизированное для аналитических запросов. Эта схема описана в [руководстве по аналитическим запросам с использованием клиентов](saas-tenancy-tenant-analytics.md). 
 
-## <a name="get-the-wingtip-tickets-saas-database-per-tenant-application-scripts"></a>Получение скриптов для SaaS-приложения Wingtip Tickets c однотенантной БД
+## <a name="get-the-wingtip-tickets-saas-database-per-tenant-application-scripts"></a>Получение скриптов для приложения SaaS Wingtip Tickets с отдельной базой данных для каждого клиента
 
 Сценарии для приложения SaaS Wingtip Tickets c мультитенантной базой данных и исходный код этого приложения вы найдете в репозитории GitHub [WingtipTicketsSaaS-DbPerTenant](https://github.com/Microsoft/WingtipTicketsSaaS-DbPerTenant). Инструкции по скачиванию и разблокированию сценариев приложения SaaS Wingtip Tickets см. в статье [Общие рекомендации по работе с примерами приложений SaaS Wingtip Tickets](saas-tenancy-wingtip-app-guidance-tips.md).
 
@@ -92,7 +92,7 @@ ms.locfileid: "68570245"
 
 1. В **обозревателе объектов** разверните узел **contosoconcerthall** > **Представления**:
 
-   ![просмотры](media/saas-tenancy-cross-tenant-reporting/views.png)
+   ![узел "Представления"](media/saas-tenancy-cross-tenant-reporting/views.png)
 
 2. Щелкните **dbo.Venues** правой кнопкой мыши.
 3. Выберите **Создать скрипт для представления** > **Используя CREATE** > **В новом окне редактора запросов**.
@@ -105,7 +105,7 @@ ms.locfileid: "68570245"
 
 1. В *интегрированной среде сценариев PowerShell* откройте сценарий \\Learning Modules\\Operational Analytics\\Adhoc Reporting\\*Demo-AdhocReporting.ps1*. 
 
-1. Установите **$DemoScenario = 2**, _разверните базу данных_автоматизированной нерегламентированной отчетности.
+1. Установите **$DemoScenario = 2**, _разверните базу данных автоматизированной нерегламентированной отчетности_.
 
 1. Нажмите клавишу **F5**, чтобы выполнить скрипт и создать базу данных *adhocreporting*.
 
@@ -175,7 +175,7 @@ ms.locfileid: "68570245"
    ![запрос](media/saas-tenancy-cross-tenant-reporting/query3-plan.png)
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как выполнять такие задачи:
 

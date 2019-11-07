@@ -1,5 +1,5 @@
 ---
-title: Использование меток для инструментирования запросов в хранилище данных SQL | Документация Майкрософт
+title: Использование меток для инструментирования запросов
 description: Рекомендации по использованию меток для инструментирования запросов в хранилище данных SQL Azure для разработки решений.
 services: sql-data-warehouse
 author: XiaoyuMSFT
@@ -10,12 +10,13 @@ ms.subservice: query
 ms.date: 04/17/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: ee991fdfcd93ea064d1205d61d07adf377cce667
-ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
+ms.custom: seo-lt-2019
+ms.openlocfilehash: 4ca0b3564418aafe774158057bc3efd541f71f66
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68480040"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73692836"
 ---
 # <a name="using-labels-to-instrument-queries-in-azure-sql-data-warehouse"></a>Использование меток для инструментирования запросов в хранилище данных SQL Azure
 Рекомендации по использованию меток для инструментирования запросов в хранилище данных SQL Azure для разработки решений.
@@ -49,7 +50,7 @@ WHERE   r.[label] = 'My Query Label'
 > 
 > 
 
-## <a name="next-steps"></a>Следующие шаги
-Дополнительные советы по разработке приведены в [обзоре разработки](sql-data-warehouse-overview-develop.md).
+## <a name="next-steps"></a>Дальнейшие действия
+Дополнительные советы по разработке см. в статье [Проектные решения и методики программирования для хранилища данных SQL](sql-data-warehouse-overview-develop.md).
 
 

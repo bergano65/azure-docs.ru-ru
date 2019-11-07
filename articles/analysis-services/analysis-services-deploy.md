@@ -1,24 +1,24 @@
 ---
-title: Развертывание в Azure Analysis Services с помощью Visual Studio | Документация Майкрософт
+title: Развертывание модели для Azure Analysis Services с помощью Visual Studio | Документация Майкрософт
 description: Узнайте, как развернуть табличную модель на сервере Azure Analysis Services с помощью Visual Studio.
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 10/29/2019
+ms.date: 10/30/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 60681739854515078a521a4ff795e52aa7d74183
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 71b3b7815d2a4b0b4de3afdca9db93156f505445
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73146954"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73572882"
 ---
 # <a name="deploy-a-model-from-visual-studio"></a>Развертывание модели из Visual Studio
 
 После создания сервера в подписке Azure все готово к развертыванию на нем базы данных табличной модели. Visual Studio можно использовать с Analysis Services проектами для создания и развертывания проекта табличной модели, над которым вы работаете. 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для начала работы необходимы перечисленные ниже компоненты и данные.
 
@@ -53,7 +53,7 @@ ms.locfileid: "73146954"
 Это все.
 
 
-## <a name="troubleshooting"></a>Устранение неисправностей
+## <a name="troubleshooting"></a>Устранение неполадок
 
 Если при развертывании метаданных происходит сбой развертывания, скорее всего, Visual Studio не удалось подключиться к серверу. Убедитесь, что можно подключиться к серверу с помощью среды SSMS. Убедитесь, что правильно указано свойство сервера развертывания для проекта.
 

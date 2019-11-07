@@ -1,5 +1,5 @@
 ---
-title: Аутентификация Azure Active Directory для SQL Azure | Документация Майкрософт
+title: Проверка подлинности Azure Active Directory — SQL Azure
 description: Узнайте, как использовать Azure Active Directory для аутентификации с помощью базы данных SQL, управляемого экземпляра и хранилища данных SQL.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto, carlrab
 ms.date: 02/20/2019
-ms.openlocfilehash: 848cfc96a7da4e69ff77d16a42226a983153ac63
-ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
+ms.openlocfilehash: 4516f75d80345312a6ca3b6dac3e5156d7e239e8
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69897001"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73691365"
 ---
 # <a name="use-azure-active-directory-authentication-for-authentication-with-sql"></a>Использование аутентификации Azure Active Directory для аутентификации с помощью SQL
 
@@ -44,7 +44,7 @@ ms.locfileid: "69897001"
 Для настройки и использования проверки подлинности Azure Active Directory выполните следующие действия.
 
 1. Создайте и заполните каталог Azure AD.
-2. Дополнительно Свяжите или измените каталог Active Directory, который сейчас связан с вашей подпиской Azure.
+2. Свяжите или измените каталог Active Directory, который сейчас связан с вашей подпиской Azure (этот шаг можно пропустить).
 3. Создайте учетную запись администратора Azure Active Directory для сервера Базы данных SQL Azure, управляемого экземпляра или [хранилища данных SQL Azure](https://azure.microsoft.com/services/sql-data-warehouse/).
 4. Настройте клиентские компьютеры.
 5. Создайте учетные записи пользователей автономной базы данных в базе данных, сопоставленной с удостоверениями Azure AD.
@@ -79,8 +79,8 @@ ms.locfileid: "69897001"
 
 - На сервере Azure SQL Server или в хранилище данных SQL можно выполнить подготовку для следующих членов Azure AD.
 
-  - Собственные члены. Члены, созданные в Azure AD в управляемом домене или в домене клиента. Дополнительные сведения см. в статье [Добавление имени личного домена в Azure Active Directory](../active-directory/active-directory-domains-add-azure-portal.md).
-  - Члены федеративного домена. Члены, созданные в Azure AD с федеративным доменом. Дополнительные сведения см. в статье [Microsoft Azure now supports federation with Windows Server Active Directory](https://azure.microsoft.com/blog/20../../windows-azure-now-supports-federation-with-windows-server-active-directory/) (Microsoft Azure теперь поддерживает федерацию с Windows Server Active Directory).
+  - Собственные члены — члены, созданные в Azure AD в управляемом домене или в домене клиента. Дополнительные сведения см. в статье [Добавление имени личного домена в Azure Active Directory](../active-directory/active-directory-domains-add-azure-portal.md).
+  - Федеративные члены домена — члены, созданные в Azure AD с федеративным доменом. Дополнительные сведения см. в статье [Microsoft Azure now supports federation with Windows Server Active Directory](https://azure.microsoft.com/blog/20../../windows-azure-now-supports-federation-with-windows-server-active-directory/) (Microsoft Azure теперь поддерживает федерацию с Windows Server Active Directory).
   - Импортированные члены из других каталогов Azure AD, являющиеся собственными или федеративными членами домена.
   - Группы Active Directory, созданные как группы безопасности.
 
@@ -104,7 +104,7 @@ ms.locfileid: "69897001"
 - Параметр субъектов сервера (имена для входа) Azure AD, сопоставленный с группой Azure AD в качестве владельца базы данных, не поддерживается в [Управляемых экземплярах](sql-database-managed-instance.md).
     - Кроме этого, при добавлении группы как части роли сервера `dbcreator` пользователи этой группы могут подключаться к Управляемому экземпляру и создавать базы данных, но не могут получить доступ к базе данных. Это происходит, так как новый владелец базы данных является системным администратором, а не пользователем Azure AD. Эта проблема не проявляется при добавлении роли сервера `dbcreator` для отдельного пользователя.
 - Субъекты сервера (имена для входа) Azure AD поддерживают выполнение заданий и управление агентом SQL Server.
-- Операции резервного копирования и восстановления базы данных могут быть выполнены с помощью субъектов сервера (имен для входа) Azure AD.
+- Операции резервного копирования и восстановления базы данных могут быть выполнены с помощью субъектов сервера (имен для входа) Azure AD.
 - Поддерживается аудит всех инструкций, связанных с субъектами сервера (именами для входа) Azure AD и событиями проверки подлинности.
 - Поддерживается выделенное административное соединение для субъектов сервера (имен для входа) Azure AD, которые являются участниками роли сервера системного администратора.
     - Поддерживается с помощью служебной программы SQLCMD и SQL Server Management Studio.
@@ -143,7 +143,7 @@ ms.locfileid: "69897001"
 - База данных SQL поддерживает проверку подлинности Azure AD на портале Azure. Для этого используются колонки **Импорт базы данных** и **Экспорт базы данных**. Импорт и экспорт с использованием проверки подлинности Azure AD также можно выполнить с помощью команды PowerShell.   
 - Аутентификация Azure AD для базы данных SQL, управляемого экземпляра и хранилища данных SQL поддерживается с помощью интерфейса командной строки. Сведения о настройке и управлении Azure AD см. в статьях [Настройка аутентификации Azure Active Directory и управление ею с использованием базы данных SQL или хранилища данных SQL](sql-database-aad-authentication-configure.md) и [SQL Server - az sql server](https://docs.microsoft.com/cli/azure/sql/server).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о создании и заполнении каталога Azure AD, а также настройке Azure AD с помощью Базы данных SQL Azure, управляемого экземпляра или хранилища данных SQL см. в статье [Настройка аутентификации Azure Active Directory и управление ею с использованием Базы данных SQL или хранилища данных SQL](sql-database-aad-authentication-configure.md).
 - Дополнительные сведения об использовании субъектов сервера (имен для входа) Azure AD с Управляемыми экземплярами см. в статье [Руководство. Обеспечение безопасности управляемого экземпляра в Базе данных SQL Azure с помощью субъектов сервера (имен для входа) Azure AD](sql-database-managed-instance-aad-security-tutorial.md)

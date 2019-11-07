@@ -1,5 +1,5 @@
 ---
-title: Получение значений для аутентификации приложения для подключения к базе данных SQL Azure | Документация Майкрософт
+title: Получение значений для проверки подлинности приложения в базе данных SQL Azure
 description: Создание субъекта-службы для получения доступа к базе данных SQL из кода.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 03/12/2019
-ms.openlocfilehash: d7c8c6788a8699c5b57c39731c148454ad8dcfcf
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 6a8f5263e2f79f130814aa520712f679430440fd
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68569320"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73691017"
 ---
 # <a name="get-the-required-values-for-authenticating-an-application-to-access-sql-database-from-code"></a>Получение необходимых значений для проверки подлинности приложения при предоставлении доступа к базе данных SQL из кода
 
@@ -71,7 +71,7 @@ ms.locfileid: "68569320"
 
 
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>Дополнительные материалы
 * [Создание базы данных SQL с помощью C#](sql-database-get-started-csharp.md)
 * [Подключение к базе данных SQL с использованием проверки подлинности Azure Active Directory](sql-database-aad-authentication.md)
 

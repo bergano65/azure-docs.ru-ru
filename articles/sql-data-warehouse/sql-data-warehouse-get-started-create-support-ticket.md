@@ -1,5 +1,5 @@
 ---
-title: Создание запроса в службу поддержки для хранилища данных SQL Azure | Документация Майкрософт
+title: Как создать запрос в службу поддержки
 description: Порядок создания запроса в службу поддержки для хранилища данных SQL Azure
 services: sql-data-warehouse
 author: kevinvngo
@@ -10,12 +10,13 @@ ms.subservice: manage
 ms.date: 04/17/2018
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: b3ffc9794967f44708d8330d4dc5d5de11b794d6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.custom: seo-lt-2019
+ms.openlocfilehash: 12a977e26f458fa8ee8a58c44985d9d1ae47d5c3
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61474561"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73692723"
 ---
 # <a name="how-to-create-a-support-ticket-for-sql-data-warehouse"></a>Создание запроса в службу поддержки для хранилища данных SQL
 Если у вас возникли проблемы с хранилищем данных SQL, создайте запрос в службу поддержки, чтобы получить помощь от нашей службы поддержки разработчиков.
@@ -30,10 +31,10 @@ ms.locfileid: "61474561"
    Выберите свой [план поддержки Azure][Azure support plan].
    
    * Поддержка по **вопросам, связанным с выставлением счетов, квотами и управлением подпиской**, доступна на всех уровнях.
-   * Поддержка по **замене или ремонту** обеспечивается на уровнях [Разработка][Developer], [Стандартный][Standard], [Professional Direct][Professional Direct] и [Premier][Premier]. Проблемы характера «замена или ремонт» — это возникающие при использовании Azure проблемы, относительно которых имеются обоснованные предположения, что их причиной стала корпорация Майкрософт.
-   * Услуги **обучения** и **консультирования разработчиков** доступны на уровнях поддержки [Professional Direct][Professional Direct] и [Premier][Premier]. 
+   * Поддержка **устранения неисправностей** предоставляется в рамках поддержки [разработчиков][Developer], [Standard][Standard], [Professional Direct][Professional Direct]или [Premier][Premier] . Проблемы характера «замена или ремонт» — это возникающие при использовании Azure проблемы, относительно которых имеются обоснованные предположения, что их причиной стала корпорация Майкрософт.
+   * Службы обучения и **консультационные услуги** для **разработчиков** доступны на уровнях поддержки [Professional Direct][Professional Direct] и [Premier][Premier] . 
      
-     При наличии плана поддержки Premier можно также создавать отчеты по проблемам с хранилищем данных SQL на [портале Microsoft Premier][Microsoft Premier online portal].  Дополнительные сведения о доступной поддержке, включая области действия, время ответа, цены и т. д., см. на странице [планов поддержки Azure][Azure support plan].  Часто задаваемые вопросы о поддержке Azure см. на [этой странице][Azure support FAQs].  
+     Если у вас есть план поддержки Premier, вы также можете сообщить о проблемах, связанных с хранилищем данных SQL, на [портале Microsoft Premier Online][Microsoft Premier online portal].  Дополнительные сведения о различных планах поддержки, включая область, время отклика, цены и т. д., см. в статье [планы поддержки Azure][Azure support plan] .  Часто задаваемые вопросы о поддержке Azure см. в статье [часто задаваемые][Azure support FAQs]вопросы о поддержке Azure.  
         
      ![Колонка "Основные сведения"](./media/sql-data-warehouse-get-started-create-support-ticket/Create_ticket_1.PNG)
      ![колонка1 "Основные сведения"](./media/sql-data-warehouse-get-started-create-support-ticket/Create_ticket_2.PNG)
@@ -41,7 +42,7 @@ ms.locfileid: "61474561"
     ![Problem_blade](./media/sql-data-warehouse-get-started-create-support-ticket/Create_ticket_3.PNG)
    
    > [!NOTE]
-   > По умолчанию для каждого экземпляра SQL Server (например, myserver.database.windows.net) предусмотрена следующая **квота на DTU**: 45 000. Эта квота является просто ограничением для безопасности. Вы можете увеличить квоту, отправив запрос в службу поддержки и указав *Квота* в качестве типа запроса. Чтобы вычислить потребности в DTU, умножьте 7,5 на общее необходимое количество [DWU][DWU]. Например, вы хотите разместить две базы данных DW6000 на одном сервере SQL Server. Следует запросить квоту DTU 90 000.  Текущее потребление DTU можно просмотреть в колонке SQL Server на портале. В рамках квоты DTU учитываются как приостановленные, так и активные базы данных. 
+   > По умолчанию для каждого экземпляра SQL Server (например, myserver.database.windows.net) предусмотрена следующая **квота на DTU**: 45 000. Эта квота является просто ограничением для безопасности. Вы можете увеличить квоту, отправив запрос в службу поддержки и указав *Квота* в качестве типа запроса. Чтобы вычислить потребности в DTU, умножьте 7,5 на общее [DWU][DWU] . Например, вы хотите разместить две базы данных DW6000 на одном сервере SQL Server. Следует запросить квоту DTU 90 000.  Текущее потребление DTU можно просмотреть в колонке SQL Server на портале. В рамках квоты DTU учитываются как приостановленные, так и активные базы данных. 
    > 
    > 
    
@@ -56,8 +57,8 @@ ms.locfileid: "61474561"
 
 ![Проверка состояния](./media/sql-data-warehouse-get-started-create-support-ticket/Monitor_ticket.PNG)
 
-## <a name="other-resources"></a>Другие ресурсы
-Кроме того, вы можете присоединиться к сообществу пользователей хранилища данных SQL на странице [Stack Overflow][Stack Overflow] или обратиться на [форум MSDN, посвященный хранилищу данных SQL Azure][Azure SQL Data Warehouse MSDN forum].
+## <a name="other-resources"></a>Другие ресурсы:
+Кроме того, вы можете подключиться к сообществу хранилища данных SQL на [Stack overflow][Stack Overflow] или на [форуме MSDN по хранилищу данных SQL Azure][Azure SQL Data Warehouse MSDN forum].
 
 <!--Image references--> 
 

@@ -1,5 +1,5 @@
 ---
-title: Настройка репликации в базе данных управляемого экземпляра базы данных SQL Azure | Документация Майкрософт
+title: 'Настройка репликации в базе данных Управляемого экземпляра Базы данных SQL Azure '
 description: Дополнительные сведения о настройке репликации транзакций в базе данных Управляемого экземпляра Базы данных SQL Azure.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: allenwux
 ms.author: xiwu
 ms.reviewer: mathoma
 ms.date: 02/07/2019
-ms.openlocfilehash: b940be1d1b68e4e2a41e3f8353cb54fdb51bb886
-ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
+ms.openlocfilehash: 21275ce7716ffc394c1e7445c3f6836f09b44c87
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71338737"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73692164"
 ---
 # <a name="configure-replication-in-an-azure-sql-database-managed-instance-database"></a>Настройка репликации в базе данных Управляемого экземпляра Базы данных SQL Azure
 
@@ -41,14 +41,14 @@ ms.locfileid: "71338737"
 - Управляемый издателем экземпляр находится в той же виртуальной сети, что и распространитель и подписчик, либо между виртуальными сетями всех трех сущностей установлен [пиринг](../virtual-network/tutorial-connect-virtual-networks-powershell.md) виртуальных сетей. 
 - При подключении используется аутентификация SQL между участниками репликации.
 - Общий ресурс учетной записи хранения Azure для рабочей папки репликации.
-- Порт 445 (исходящий трафик TCP) открыт в правилах безопасности NSG для доступа управляемых экземпляров к файловому ресурсу Azure.  Если возникла ошибка "не удалось подключиться к службе хранилища Azure \<storage имя учетной записи > с ошибкой ОС 53", необходимо добавить правило исходящего трафика в NSG соответствующей подсети Управляемый экземпляр SQL.
+- Порт 445 (исходящий трафик TCP) открыт в правилах безопасности NSG для доступа управляемых экземпляров к файловому ресурсу Azure.  Если возникла ошибка "не удалось подключиться к службе хранилища Azure \<имя учетной записи хранения > с ошибкой ОС 53", необходимо добавить правило исходящего трафика в NSG соответствующей подсети Управляемый экземпляр SQL.
 
 
  > [!NOTE]
  > Отдельные базы данных и базы данных в пуле в Базе данных SQL Azure могут быть только подписчиками. 
 
 
-## <a name="features"></a>Компоненты
+## <a name="features"></a>Функции
 
 Поддерживает:
 
@@ -78,9 +78,9 @@ ms.locfileid: "71338737"
 
 [Создайте учетную запись хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-create-storage-account#create-a-storage-account) для рабочего каталога, а затем создайте общую [папку](../storage/files/storage-how-to-create-file-share.md) в учетной записи хранения. 
 
-Скопируйте путь к общей папке в формате: `\\storage-account-name.file.core.windows.net\file-share-name`.
+Скопируйте путь к общей папке в формате: `\\storage-account-name.file.core.windows.net\file-share-name`
 
-Скопируйте ключи доступа к хранилищу в формате: `DefaultEndpointsProtocol=https;AccountName=<Storage-Account-Name>;AccountKey=****;EndpointSuffix=core.windows.net`.
+Скопируйте ключи доступа к хранилищу в формате: `DefaultEndpointsProtocol=https;AccountName=<Storage-Account-Name>;AccountKey=****;EndpointSuffix=core.windows.net`
 
  Дополнительные сведения см. в разделе [Просмотр и копирование ключей доступа к хранилищу](../storage/common/storage-account-manage.md#access-keys). 
 
@@ -154,7 +154,7 @@ GO
 
 ## <a name="7---configure-publisher-to-use-distributor"></a>7\. Настройка издателя для использования распространителя 
 
-На управляемом экземпляре издателя `sql-mi-pub` Измените выполнение запроса на режим [sqlcmd](/sql/ssms/scripting/edit-sqlcmd-scripts-with-query-editor) и выполните следующий код, чтобы зарегистрировать новый распространитель в издателе. 
+На `sql-mi-pub`управляемом экземпляре издателя измените выполнение запроса на режим [sqlcmd](/sql/ssms/scripting/edit-sqlcmd-scripts-with-query-editor) и выполните следующий код, чтобы зарегистрировать новый распространитель на издателе. 
 
 ```sql
 :setvar username loginUsedToAccessSourceManagedInstance

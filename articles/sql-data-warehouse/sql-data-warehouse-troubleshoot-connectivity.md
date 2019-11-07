@@ -1,6 +1,6 @@
 ---
-title: Устранение неполадок хранилища данных SQL Azure | Документация Майкрософт
-description: Диагностика и устранение неполадок хранилища данных SQL Azure.
+title: Устранение неполадок подключения
+description: Устранение неполадок подключения в хранилище данных SQL Azure.
 services: sql-data-warehouse
 author: anumjs
 manager: craigg
@@ -10,12 +10,13 @@ ms.subservice: supportability
 ms.date: 03/27/2019
 ms.author: anjangsh
 ms.reviewer: igorstan
-ms.openlocfilehash: ebdeaf21253e89a9a14e3a56ca7be0f6e8adceb0
-ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
+ms.custom: seo-lt-2019
+ms.openlocfilehash: d1139032176b3b44c58471b87cabd10ffeaa3d20
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70859232"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73692421"
 ---
 # <a name="troubleshooting-connectivity-issues"></a>Устранение неполадок с подключением
 
@@ -41,7 +42,7 @@ ms.locfileid: "70859232"
 
 Если работоспособность ресурса показывает, что хранилище данных приостановлено или масштабируется, следуйте указаниям по возобновлению хранилища данных.
 
-![Приостановка работы службы](./media/sql-data-warehouse-troubleshoot-connectivity/resource-health-pausing.png) дополнительные сведения о работоспособность ресурсов можно найти здесь.
+![служба приостановлена](./media/sql-data-warehouse-troubleshoot-connectivity/resource-health-pausing.png) дополнительные сведения об Работоспособность ресурсов можно найти здесь.
 
 ## <a name="check-for-paused-or-scaling-operation"></a>Проверка на паузу или операцию масштабирования
 
@@ -57,7 +58,7 @@ ms.locfileid: "70859232"
 
 ## <a name="check-your-firewall-settings"></a>Проверьте параметры брандмауэра.
 
-Хранилище данных SQL обменивается данными через порт 1433.   Если вы пытаетесь подключиться из корпоративной сети, то сетевой брандмауэр может запретить исходящий трафик через порт 1433. В этом случае вы не сможете подключиться к серверу базы данных SQL Azure, пока ваш ИТ-отдел не откроет порт 1433. Дополнительные сведения о конфигурациях брандмауэра можно найти [здесь](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure#create-and-manage-ip-firewall-rules).
+Хранилище данных SQL обменивается данными через порт 1433.   Если вы пытаетесь подключиться из корпоративной сети, исходящий трафик через порт 1433 может быть запрещен брандмауэром вашей сети. В этом случае вы не сможете подключиться к серверу базы данных SQL Azure, пока ваш ИТ-отдел не откроет порт 1433. Дополнительные сведения о конфигурациях брандмауэра можно найти [здесь](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure#create-and-manage-ip-firewall-rules).
 
 ## <a name="check-your-vnetservice-endpoint-settings"></a>Проверка параметров конечной точки виртуальной сети или службы
 

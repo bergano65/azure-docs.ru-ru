@@ -1,5 +1,5 @@
 ---
-title: Определение типов данных. Хранилище данных SQL Azure | Документация Майкрософт
+title: Определение типов данных
 description: Рекомендации по определению типов данных таблицы в хранилище данных SQL Azure.
 services: sql-data-warehouse
 author: XiaoyuMSFT
@@ -10,12 +10,13 @@ ms.subservice: development
 ms.date: 04/17/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: 61bb977271186699b0a72389e1538573f978c56b
-ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
+ms.custom: seo-lt-2019
+ms.openlocfilehash: a1d88d8fabd5ff32cc1ca5cca4e2a57a86c8dcb3
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68479374"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73692482"
 ---
 # <a name="table-data-types-in-azure-sql-data-warehouse"></a>Типы данных таблицы в хранилище данных SQL Azure
 Рекомендации по определению типов данных таблицы в хранилище данных SQL Azure. 
@@ -54,7 +55,7 @@ WHERE y.[name] IN ('geography','geometry','hierarchyid','image','text','ntext','
 | --- | --- |
 | [geometry](/sql/t-sql/spatial-geometry/spatial-types-geometry-transact-sql) |[varbinary](/sql/t-sql/data-types/binary-and-varbinary-transact-sql) |
 | [geography](/sql/t-sql/spatial-geography/spatial-types-geography) |[varbinary](/sql/t-sql/data-types/binary-and-varbinary-transact-sql) |
-| [hierarchyid](/sql/t-sql/data-types/hierarchyid-data-type-method-reference) |[nvarchar](/sql/t-sql/data-types/nchar-and-nvarchar-transact-sql)(4000) |
+| [hierarchyid](/sql/t-sql/data-types/hierarchyid-data-type-method-reference) |[NVARCHAR](/sql/t-sql/data-types/nchar-and-nvarchar-transact-sql)(4000) |
 | [image](/sql/t-sql/data-types/ntext-text-and-image-transact-sql) |[varbinary](/sql/t-sql/data-types/binary-and-varbinary-transact-sql) |
 | [text](/sql/t-sql/data-types/ntext-text-and-image-transact-sql) |[varchar](/sql/t-sql/data-types/char-and-varchar-transact-sql) |
 | [ntext](/sql/t-sql/data-types/ntext-text-and-image-transact-sql) |[nvarchar](/sql/t-sql/data-types/nchar-and-nvarchar-transact-sql) |
@@ -66,5 +67,5 @@ WHERE y.[name] IN ('geography','geometry','hierarchyid','image','text','ntext','
 | Значения по умолчанию | Значения по умолчанию поддерживают только литералы и константы. |
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о разработке таблиц см. в статье [Общие сведения о проектировании таблиц в хранилище данных SQL Azure](sql-data-warehouse-tables-overview.md).

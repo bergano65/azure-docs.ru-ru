@@ -1,18 +1,18 @@
 ---
 title: Источники данных, поддерживаемые в службах Azure Analysis Services | Документы Майкрософт
-description: Описание источников данных, поддерживаемых для моделей данных в службах Azure Analysis Services.
+description: Описывает источники данных и соединители, поддерживаемые для табличных 1200 и более поздних моделей данных в Azure Analysis Services.
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
 ms.date: 10/16/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: cc47ff50aa7bb6dce58ed83f75f69fb600ad040b
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 5539d290ea182e24a50a103a762f011202ebf33a
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73146939"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73572955"
 ---
 # <a name="data-sources-supported-in-azure-analysis-services"></a>Источники данных, поддерживаемые в службах Azure Analysis Services
 
@@ -22,14 +22,14 @@ ms.locfileid: "73146939"
 
 |Источник данных  |В памяти  |DirectQuery  |
 |---------|---------|---------|
-|База данных SQL Azure<sup>[2](#azsqlmanaged)</sup>     |   ДА      |    ДА      |
-|Хранилище данных SQL Azure     |   ДА      |   ДА       |
-|Хранилище BLOB-объектов Azure<sup>[1](#tab1400a)</sup>     |   ДА       |    Нет      |
-|Табличное хранилище Azure<sup>[1](#tab1400a)</sup>    |   ДА       |    Нет      |
-|Azure Cosmos DB<sup>[1](#tab1400a)</sup>     |  ДА        |  Нет        |
-|Azure Data Lake Store (1-го поколения)<sup>[1](#tab1400a)</sup>, <sup>[4](#gen2)</sup>      |   ДА       |    Нет      |
-|Azure HDInsight (HDFS)<sup>[1](#tab1400a)</sup>     |     ДА     |   Нет       |
-|Azure HDInsight Spark<sup>[1](#tab1400a)</sup>, <sup>[3](#databricks)</sup>     |   ДА       |   Нет       |
+|База данных SQL Azure<sup>[2](#azsqlmanaged)</sup>     |   Да      |    Да      |
+|Хранилище данных SQL Azure     |   Да      |   Да       |
+|Хранилище BLOB-объектов Azure<sup>[1](#tab1400a)</sup>     |   Да       |    Нет      |
+|Табличное хранилище Azure<sup>[1](#tab1400a)</sup>    |   Да       |    Нет      |
+|Azure Cosmos DB<sup>[1](#tab1400a)</sup>     |  Да        |  Нет        |
+|Azure Data Lake Store (1-го поколения)<sup>[1](#tab1400a)</sup>, <sup>[4](#gen2)</sup>      |   Да       |    Нет      |
+|Azure HDInsight (HDFS)<sup>[1](#tab1400a)</sup>     |     Да     |   Нет       |
+|Azure HDInsight Spark<sup>[1](#tab1400a)</sup>, <sup>[3](#databricks)</sup>     |   Да       |   Нет       |
 ||||
 
 <a name="tab1400a">1</a> Только табличная модель 1400 и более поздние.   
@@ -61,7 +61,7 @@ ms.locfileid: "73146939"
 |---------|
 |База данных Access     |  
 |Active Directory<sup>[1](#tab1400b)</sup>     |  
-|Службы Analysis Services     |  
+|службы Analysis Services     |  
 |Система платформы аналитики     |  
 |CSV-файл  |
 |Dynamics CRM<sup>[1](#tab1400b)</sup>     |  

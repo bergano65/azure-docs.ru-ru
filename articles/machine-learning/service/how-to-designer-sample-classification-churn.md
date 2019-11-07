@@ -1,5 +1,5 @@
 ---
-title: 'Пример конструктора #5: классификация для прогнозирования обновлений + стремления + Up — продажи'
+title: 'Конструктор: классификация, прогнозирование обновлений'
 titleSuffix: Azure Machine Learning
 description: В этом образце конвейера конструктора (Предварительная версия) показана обработка двоичных классификаторов обновлений, типичная задача для управления отношениями с клиентами (CRM).
 services: machine-learning
@@ -10,12 +10,12 @@ author: xiaoharper
 ms.author: zhanxia
 ms.reviewer: sgilley
 ms.date: 11/04/2019
-ms.openlocfilehash: 52fcebb201fbdeebd7b75d9735fd81c3a647c337
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: a09060e16b877df4412b785edbb60930cb4122bc
+ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73516244"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73647172"
 ---
 # <a name="sample-5---classification-predict-churn"></a>Пример 5. Классификация: обработка прогнозов
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-enterprise-sku.md)]
@@ -30,7 +30,7 @@ ms.locfileid: "73516244"
 
 ![Граф конвейера](./media/how-to-ui-sample-classification-predict-churn/pipeline-graph.png)
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [aml-ui-prereq](../../../includes/aml-ui-prereq.md)]
 

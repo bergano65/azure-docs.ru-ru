@@ -1,21 +1,22 @@
 ---
-title: Аутентификация в хранилище данных SQL Azure | Документация Майкрософт
+title: Аутентификация
 description: Узнайте, как пройти аутентификацию в хранилище данных SQL Azure с помощью аутентификации Azure Active Directory (AAD) или SQL Server.
 services: sql-data-warehouse
-author: KavithaJonnakuti
+author: julieMSFT
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: security
 ms.date: 04/02/2019
-ms.author: kavithaj
+ms.author: jrasnick
 ms.reviewer: igorstan
-ms.openlocfilehash: a3bed9df5b62ce7f2f3df7046357dc4f2458575c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.custom: seo-lt-2019
+ms.openlocfilehash: fda29e432fbd952261893f3c32a4df7b9990ae66
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61475037"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73692931"
 ---
 # <a name="authenticate-to-azure-sql-data-warehouse"></a>Аутентификация в хранилище данных SQL Azure
 Узнайте, как пройти аутентификацию в хранилище данных SQL Azure с помощью аутентификации Azure Active Directory (AAD) или SQL Server.
@@ -39,12 +40,12 @@ ms.locfileid: "61475037"
 * Выделите пользовательскую базу данных перед созданием сеанса в SSDT.
 
 > [!NOTE]
-> Использование инструкции Transact-SQL **USE MyDatabase;** для изменения базы данных, к которой осуществляется подключение, не поддерживается. Инструкции по подключению к хранилищу данных SQL с помощью Visual Studio и SSDT см. в [этой статье][Query with Visual Studio].
+> Использование инструкции Transact-SQL **USE MyDatabase;** для изменения базы данных, к которой осуществляется подключение, не поддерживается. Инструкции по подключению к хранилищу данных SQL с помощью SSDT см. в статье [Запросы к хранилищу данных SQL Azure (Visual Studio)][Query with Visual Studio].
 > 
 > 
 
 ## <a name="azure-active-directory-aad-authentication"></a>Аутентификация Azure Active Directory (AAD)
-Проверка подлинности [Azure Active Directory][What is Azure Active Directory] — это механизм подключения к хранилищу данных SQL Microsoft Azure с помощью удостоверений в Azure Active Directory (Azure AD). С помощью аутентификации Azure Active Directory можно централизованно управлять удостоверениями пользователей базы данных и другими службами Майкрософт. Централизованное управление удостоверениями позволяет использовать единое расположение для управления пользователями хранилища данных SQL и упрощает управление разрешениями. 
+[Azure Active Directoryная][What is Azure Active Directory] проверка подлинности — это механизм подключения к хранилище данных SQL Microsoft Azure с помощью удостоверений в Azure Active Directory (Azure AD). С помощью аутентификации Azure Active Directory можно централизованно управлять удостоверениями пользователей базы данных и другими службами Майкрософт. Централизованное управление удостоверениями позволяет использовать единое расположение для управления пользователями хранилища данных SQL и упрощает управление разрешениями. 
 
 ### <a name="benefits"></a>Преимущества
 Преимущества Azure Active Directory:
@@ -56,7 +57,7 @@ ms.locfileid: "61475037"
 * возможность исключить хранение паролей с помощью встроенной проверки подлинности Windows и других видов аутентификации, поддерживаемых Azure Active Directory;
 * для проверки подлинности удостоверений на уровне базы данных используются данные пользователей автономной базы данных;
 * поддержка аутентификации на основе маркеров для приложений, подключающихся к хранилищу данных SQL;
-* Поддерживает многофакторную проверку подлинности посредством универсальной аутентификации Active Directory для различных средств, в том числе [SQL Server Management Studio](../sql-database/sql-database-ssms-mfa-authentication.md) и [SQL Server Data Tools](https://docs.microsoft.com/sql/ssdt/azure-active-directory?toc=/azure/sql-data-warehouse/toc.json).
+* Поддерживает многофакторную проверку подлинности с помощью Active Directory универсальной аутентификации для различных средств, включая [SQL Server Management Studio](../sql-database/sql-database-ssms-mfa-authentication.md) и [SQL Server Data Tools](https://docs.microsoft.com/sql/ssdt/azure-active-directory?toc=/azure/sql-data-warehouse/toc.json).
 
 > [!NOTE]
 > Azure Active Directory является сравнительно новым компонентом и имеет некоторые ограничения. Чтобы убедиться, что Azure Active Directory подходит для вашей среды, ознакомьтесь с разделом [Функции и ограничения Azure AD][Azure AD features and limitations], в частности с его подразделом "Дополнительные замечания".
@@ -67,7 +68,7 @@ ms.locfileid: "61475037"
 Следуйте приведенным ниже инструкциям, чтобы настроить аутентификацию Azure Active Directory.
 
 1. Создание и заполнение каталога Azure Active Directory
-2. Необязательно: Свяжите или измените каталог Active Directory, который сейчас связан с вашей подпиской Azure.
+2. Связывание каталога Active Directory с подпиской Azure или изменение каталога, который сейчас связан с этой подпиской (этот шаг можно пропустить)
 3. Создание администратора Azure Active Directory для хранилища данных SQL Azure
 4. Настройка клиентских компьютеров
 5. Создание пользователей автономной базы данных в базе данных, сопоставленной с удостоверениями Azure AD
@@ -80,7 +81,7 @@ ms.locfileid: "61475037"
 * Создайте пользовательские роли базы данных и назначьте их пользователям. Затем предоставьте ролям управляемые разрешения. Дополнительные сведения см. в разделе [Приступая к работе с разрешениями Database Engine](https://msdn.microsoft.com/library/mt667986.aspx).
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Чтобы приступить к отправке запросов к хранилищу данных с помощью Visual Studio и других приложений, см. статью [Подключение к хранилищу данных SQL с помощью Visual Studio и SSDT][Query with Visual Studio].
+Чтобы приступить к отправке запросов к хранилищу данных с помощью Visual Studio и других приложений, ознакомьтесь с разделом [Запросы к хранилищу данных SQL Azure (Visual Studio)][Query with Visual Studio].
 
 <!-- Article references -->
 [Secure a database in SQL Data Warehouse]: ./sql-data-warehouse-overview-manage-security.md

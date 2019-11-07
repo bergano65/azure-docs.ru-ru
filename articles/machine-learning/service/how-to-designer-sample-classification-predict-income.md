@@ -1,5 +1,5 @@
 ---
-title: 'Пример конструктора #3: классификация для прогнозирования кредитного риска'
+title: 'Конструктор: классификация, прогноз дохода'
 titleSuffix: Azure Machine Learning
 description: Узнайте, как создать классификатор машинного обучения, не написав ни одной строки кода с помощью конструктора (Предварительная версия).
 services: machine-learning
@@ -10,12 +10,12 @@ author: xiaoharper
 ms.author: zhanxia
 ms.reviewer: peterlu
 ms.date: 11/04/2019
-ms.openlocfilehash: 2709c2e0da154a8530175144070ad560c8921b85
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 383cbc11955598505730a4613c50536afac75f95
+ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73515542"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73647966"
 ---
 # <a name="sample-3---classification-with-feature-selection-income-prediction"></a>Пример 3. Классификация с выбором компонентов: прогноз дохода
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-enterprise-sku.md)]
@@ -28,7 +28,7 @@ ms.locfileid: "73515542"
 
 ![Граф конвейера](media/how-to-ui-sample-classification-predict-income/overall-graph.png)
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [aml-ui-prereq](../../../includes/aml-ui-prereq.md)]
 

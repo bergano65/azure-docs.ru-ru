@@ -1,5 +1,5 @@
 ---
-title: Проектирование таблиц — хранилище данных SQL Azure | Документация Майкрософт
+title: Проектирование таблиц
 description: Общие сведения о проектировании таблиц в хранилище данных SQL Azure.
 services: sql-data-warehouse
 author: XiaoyuMSFT
@@ -10,12 +10,13 @@ ms.subservice: development
 ms.date: 03/15/2019
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: 55da4e3dc9c7f1c1f86a649a654ce41ef59ad839
-ms.sourcegitcommit: 0486aba120c284157dfebbdaf6e23e038c8a5a15
+ms.custom: seo-lt-2019
+ms.openlocfilehash: 9220d3adb31005551b6358034207f1071065b1a7
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71310103"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73692380"
 ---
 # <a name="designing-tables-in-azure-sql-data-warehouse"></a>Проектирование таблиц в хранилище данных SQL Azure
 
@@ -40,9 +41,9 @@ CREATE SCHEMA wwi;
 
 Чтобы показать организацию таблиц в хранилище данных SQL, можно использовать в качестве префиксов имен таблиц значения fact, dim и int. В следующей таблице показаны некоторые имена схем и таблиц для WideWorldImportersDW.  
 
-| Таблица WideWorldImportersDW  | Тип таблицы | Хранилище данных SQL |
+| Таблица WideWorldImportersDW  | Тип таблицы | Хранилище данных SQL. |
 |:-----|:-----|:------|:-----|
-| Город | Измерение | wwi.DimCity |
+| City | Измерение | wwi.DimCity |
 | Порядок | Факты | wwi.FactOrder |
 
 
@@ -92,7 +93,7 @@ CREATE TABLE MyTable (col1 int, col2 int );
 |:---------------|:--------------------|
 | Факты           | Используйте хэш-распределение с кластеризованным индексом columnstore. Производительность улучшается, когда две хэш-таблицы объединены по одному столбцу распределения. |
 | Измерение      | Используйте репликацию для небольших таблиц. Если таблицы слишком велики для хранения на каждом вычислительном узле, используйте хэш-распределение. |
-| Промежуточное хранение        | Используйте циклический перебор для промежуточных таблиц. Загрузка с помощью инструкции CTAS выполняется быстро. Когда данные помещается в промежуточную таблицу, используйте инструкцию INSERT... Выберите, чтобы переместить данные в рабочие таблицы. |
+| Промежуточная        | Используйте циклический перебор для промежуточных таблиц. Загрузка с помощью инструкции CTAS выполняется быстро. Когда данные помещается в промежуточную таблицу, используйте инструкцию INSERT... Выберите, чтобы переместить данные в рабочие таблицы. |
 
 ## <a name="table-partitions"></a>Разделы таблицы
 Секционированная таблица хранит данные и выполняет операции со строками таблицы в соответствии с диапазонами данных. Например, таблицу можно разделить по дню, месяцу или году. Вы можете улучшить производительность запросов путем исключения секций, что ограничивает проверку запросов к данным в секции. Вы также можете управлять данными путем переключения разделов. Так как данные в хранилище данных SQL уже распределены, слишком большое количество разделов может замедлить производительность запросов. Дополнительные сведения см. в статье [Секционирование таблиц в хранилище данных SQL](sql-data-warehouse-tables-partition.md).  При переключении секций в секции таблицы, которые не являются пустыми, рекомендуется использовать параметр TRUNCATE_TARGET в инструкции [ALTER TABLE](https://docs.microsoft.com/sql/t-sql/statements/alter-table-transact-sql) , если существующие данные должны быть усечены. Приведенный ниже код переключается в преобразованных ежедневных данных в SalesFact перезаписи существующих данных. 
@@ -115,11 +116,11 @@ ALTER TABLE SalesFact_DailyFinalLoad SWITCH PARTITION 256 TO SalesFact PARTITION
 ## <a name="commands-for-creating-tables"></a>Команды для создания таблиц
 Вы можете создать пустую таблицу. Вы также можете создать и заполнить таблицу результатами инструкции Select. Ниже приведены команды T-SQL для создания таблицы.
 
-| Инструкция T-SQL | Описание |
+| Инструкция T-SQL | Description (Описание) |
 |:----------------|:------------|
 | [CREATE TABLE](/sql/t-sql/statements/create-table-azure-sql-data-warehouse) | Создает пустую таблицу, определив все столбцы и параметры таблицы. |
 | [CREATE EXTERNAL TABLE](/sql/t-sql/statements/create-external-table-transact-sql) | Создает внешнюю таблицу. Определение таблицы хранится в хранилище данных SQL. Данные таблицы хранятся в хранилище BLOB-объектов Azure или в Azure Data Lake Store. |
-| [CREATE TABLE AS SELECT](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse) | Задает новую таблицу с результатами инструкции Select. Столбцы и типы данных таблицы основаны на результатах инструкции Select. Чтобы импортировать данные, эта инструкция может выбрать данные из внешней таблицы. |
+| [Инструкция CREATE TABLE AS SELECT](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse) | Задает новую таблицу с результатами инструкции Select. Столбцы и типы данных таблицы основаны на результатах инструкции Select. Чтобы импортировать данные, эта инструкция может выбрать данные из внешней таблицы. |
 | [CREATE EXTERNAL TABLE AS SELECT](/sql/t-sql/statements/create-external-table-as-select-transact-sql) | Создает новую внешнюю таблицу, экспортируя результаты инструкции Select во внешнее расположение.  Расположением является либо хранилище BLOB-объектов Azure, либо Azure Data Lake Store. |
 
 ## <a name="aligning-source-data-with-the-data-warehouse"></a>Согласование исходных данных с хранилищем данных
@@ -138,7 +139,7 @@ ALTER TABLE SalesFact_DailyFinalLoad SWITCH PARTITION 256 TO SalesFact PARTITION
 - [Разреженные столбцы](/sql/relational-databases/tables/use-sparse-columns)
 - Суррогатные ключи (реализация посредством [удостоверения](sql-data-warehouse-tables-identity.md));
 - [синонимы;](/sql/t-sql/statements/create-synonym-transact-sql)
-- [Триггеры](/sql/t-sql/statements/create-trigger-transact-sql)
+- [триггеры;](/sql/t-sql/statements/create-trigger-transact-sql)
 - [Уникальные индексы](/sql/t-sql/statements/create-index-transact-sql)
 - [Пользовательские типы](/sql/relational-databases/native-client/features/using-user-defined-types)
 
@@ -341,5 +342,5 @@ ORDER BY    distribution_id
 ;
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 После создания таблицы для хранилища данных загрузите данные в таблицу.  Инструкции см. в статье о [загрузке данных в хранилище данных SQL](load-data-wideworldimportersdw.md).

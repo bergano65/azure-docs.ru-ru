@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: dapine
-ms.openlocfilehash: 36e0742101203764a731dd2007d239593a500bfa
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 1ae3caa2d1f90bbbae1070d95d676eb206a361a0
+ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73507927"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73647346"
 ---
 # <a name="configure-azure-cognitive-services-virtual-networks"></a>Настройка виртуальных сетей Azure Cognitive Services
 
@@ -24,7 +24,7 @@ Azure Cognitive Services предоставляет многоуровневую
 
 > [!IMPORTANT]
 > Включение правил брандмауэра для учетной записи Cognitive Services блокирует входящие запросы данных по умолчанию. Чтобы разрешить запросы по, необходимо выполнить одно из следующих условий.
-> * Запрос должен исходить из службы, работающей в виртуальной сети Azure (VNet), в списке разрешенных подсетей целевой Cognitive Services учетной записи.
+> * Запрос должен исходить из службы, работающей в виртуальной сети Azure (VNet), в списке разрешенных подсетей целевой Cognitive Services учетной записи. Конечная точка в запросах, отправленных из виртуальной сети, должна быть задана в качестве [пользовательского поддомена](cognitive-services-custom-subdomains.md) учетной записи Cognitive Services.
 > * Запрос должен быть получен из разрешенного списка IP-адресов.
 >
 > Запросы от других служб Azure, в том числе портала Azure, служб метрики и ведения журналов, блокируются.

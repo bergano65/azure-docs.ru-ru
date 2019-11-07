@@ -1,5 +1,5 @@
 ---
-title: 'SaaS Wingtip: пример мультитенантного приложения Базы данных SQL Azure | Документация Майкрософт'
+title: Пример приложения для клиентов базы данных SQL Azure — SaaS Wingtip
 description: Изучите пример мультитенантного приложения SaaS Wingtip, использующего Базу данных SQL Azure
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 09/24/2018
-ms.openlocfilehash: 16f4bb946af4720a327a8755c6bf9187f3b71ba6
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 1a4931a24802290e0e7e207f32528a1192fd880f
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68570344"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73692056"
 ---
 # <a name="introduction-to-a-multitenant-saas-app-that-uses-the-database-per-tenant-pattern-with-sql-database"></a>Общие сведения о мультитенантном приложении SaaS на основе Базы данных SQL, в котором используется отдельная база данных для каждого клиента
 
@@ -39,7 +39,7 @@ ms.locfileid: "68570344"
 Развернув приложение, изучите перечисленные ниже руководства, которые основываются на базовом развертывании. В этих руководствах рассматриваются распространенные шаблоны SaaS, использующие встроенные функции Базы данных SQL, хранилища данных SQL и других служб Azure. Руководства содержат скрипты PowerShell с подробными описаниями. Эти описания позволят быстрее разобраться в шаблонах управления SaaS и применить их в приложениях.
 
 
-| Учебник | Описание |
+| Учебник | Description (Описание) |
 |:--|:--|
 | [Общие рекомендации по работе с примерами приложений SaaS Wingtip Tickets](saas-tenancy-wingtip-app-guidance-tips.md) | Скачайте и выполните скрипты PowerShell для подготовки частей приложения. |
 |[Развертывание и изучение мультитенантного приложения SaaS, использующего базу данных SQL Azure](saas-dbpertenant-get-started-deploy.md)|  Разверните в подписке Azure мультитенантное приложение SaaS и изучите его возможности. |
@@ -52,7 +52,7 @@ ms.locfileid: "68570344"
 |[Межклиентская аналитика с помощью извлеченных данных](saas-tenancy-tenant-analytics.md) | Извлечение данных клиента в базу данных аналитики или хранилище данных для автономных аналитических запросов. |
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие рекомендации по работе с примерами приложений SaaS Wingtip Tickets](saas-tenancy-wingtip-app-guidance-tips.md)
 - [Развертывание и изучение мультитенантного приложения SaaS, использующего базу данных SQL Azure](saas-dbpertenant-get-started-deploy.md)

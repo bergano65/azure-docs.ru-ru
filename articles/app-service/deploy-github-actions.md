@@ -3,64 +3,62 @@ title: Развертывание кода из конвейера CI/CD с по
 description: Узнайте, как использовать действия GitHub для развертывания кода в службе приложений.
 services: app-service
 documentationcenter: ''
-author: jasonfreeberg
-writer: ''
-manager: ''
-editor: ''
-ms.assetid: ''
+author: cephalin
+manager: gwallace
 ms.service: app-service
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/22/2019
+ms.date: 10/25/2019
 ms.author: jafreebe
-ms.openlocfilehash: b7ec1ae1d04fb1dbe16fd9f4a2640b2b3d9584c2
-ms.sourcegitcommit: ec2b75b1fc667c4e893686dbd8e119e7c757333a
+ms.reviewer: ushan
+ms.openlocfilehash: 9842057a590b08f2207a1ea166e0ce0d457e4381
+ms.sourcegitcommit: 6c2c97445f5d44c5b5974a5beb51a8733b0c2be7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72809777"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73620515"
 ---
-# <a name="github-actions-for-deploying-to-app-service"></a>Действия GitHub для развертывания в службе приложений
+# <a name="deploy-to-app-service-using-github-actions"></a>Развертывание в службе приложений с помощью действий GitHub
 
-[Действия GitHub](https://help.github.com/en/articles/about-github-actions) дают возможность создавать автоматизированный рабочий процесс жизненного цикла разработки программного обеспечения. Действия службы приложений Azure для GitHub позволяют автоматизировать рабочий процесс для развертывания [веб-приложений Azure](https://azure.microsoft.com/services/app-service/web/) с помощью действий GitHub.
+[Действия GitHub](https://help.github.com/en/articles/about-github-actions) дают возможность создавать автоматизированный рабочий процесс жизненного цикла разработки программного обеспечения. Действия службы приложений Azure для GitHub позволяют автоматизировать рабочий процесс для развертывания в [службе приложений Azure](overview.md) с помощью действий GitHub.
 
 > [!IMPORTANT]
 > Действия GitHub в настоящее время находятся в бета-версии. Сначала необходимо [зарегистрироваться, чтобы присоединиться к предварительной версии](https://github.com/features/actions) с помощью учетной записи GitHub.
 > 
 
-Рабочий процесс определяется файлом YAML (yml) в `/.github/workflows/` пути в репозитории. Это определение содержит различные шаги и параметры, составляющие рабочий процесс.
+Рабочий процесс определяется файлом YAML (yml) в пути `/.github/workflows/` в репозитории. Это определение содержит различные шаги и параметры, составляющие рабочий процесс.
 
-Для рабочего процесса веб-приложения Azure файл содержит три раздела:
+Для рабочего процесса службы приложений Azure файл содержит три раздела:
 
-|Section  |Задачи  |
+|Раздел  |Задачи  |
 |---------|---------|
-|**Authentication** (Аутентификация) | 1. Определение субъекта-службы <br /> 2. Создание секрета GitHub |
+|**Проверка подлинности** | 1. Определение субъекта-службы <br /> 2. Создание секрета GitHub |
 |**Сборка** | 1. Настройка среды <br /> 2. Создание веб-приложения |
 |**Развертывание** | 1. Развертывание веб-приложения |
 
 ## <a name="create-a-service-principal"></a>Создание субъекта-службы
 
-Вы можете создать [субъект-службу](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals#service-principal-object) с помощью команды [AZ AD SP Create/for-RBAC](https://docs.microsoft.com/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac) в [Azure CLI](https://docs.microsoft.com/cli/azure/). Эту команду можно выполнить с помощью [Azure Cloud Shell](https://shell.azure.com/) в портал Azure или нажав кнопку **попробовать** .
+Вы можете создать [субъект-службу](../active-directory/develop/app-objects-and-service-principals.md#service-principal-object) с помощью команды [AZ AD SP Create/for-RBAC](https://docs.microsoft.com/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac) в [Azure CLI](https://docs.microsoft.com/cli/azure/). Эту команду можно выполнить с помощью [Azure Cloud Shell](https://shell.azure.com/) в портал Azure или нажав кнопку **попробовать** .
 
 ```azurecli-interactive
-az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptions/<SUBSCRIPTION_ID>/resourceGroups/<RESOURCE_GROUP>/providers/Microsoft.Web/sites/<APP_NAME> --sdk-auth
+az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptions/<subscription-id>/resourceGroups/<group-name>/providers/Microsoft.Web/sites/<app-name> --sdk-auth
 ```
 
-В этом примере Замените заполнители в ресурсе ИДЕНТИФИКАТОРом подписки, группой ресурсов и именем веб-приложения. Выходные данные — это учетные данные назначения роли, которые обеспечивают доступ к веб-приложению. Скопируйте этот объект JSON, который можно использовать для проверки подлинности из GitHub.
+В этом примере Замените заполнители в ресурсе ИДЕНТИФИКАТОРом подписки, именем группы ресурсов и именем приложения. Выходные данные — это учетные данные назначения роли, которые предоставляют доступ к приложению службы приложений. Скопируйте этот объект JSON, который можно использовать для проверки подлинности из GitHub.
 
 > [!NOTE]
 > Не нужно создавать субъект-службу, если вы решили использовать профиль публикации для проверки подлинности.
 
 > [!IMPORTANT]
-> Всегда рекомендуется предоставлять минимальный доступ. Именно поэтому область в предыдущем примере ограничена конкретным веб-приложением, а не всей группой ресурсов.
+> Всегда рекомендуется предоставлять минимальный доступ. Именно поэтому область в предыдущем примере ограничена конкретным приложением службы приложений, а не всей группой ресурсов.
 
 ## <a name="configure-the-github-secret"></a>Настройка секрета GitHub
 
 Можно также использовать учетные данные уровня приложения, например опубликовать профиль для развертывания. Выполните действия по настройке секрета.
 
-1. Скачайте профиль публикации для веб-приложения с портала с помощью команды **получить профиль публикации** .
+1. Скачайте профиль публикации для приложения службы приложений с портала с помощью команды **получить профиль публикации** .
 
 2. В [GitHub](https://github.com/)найдите репозиторий, выберите **параметры > секреты > Добавить новый секрет**
 
@@ -76,11 +74,11 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
             creds: ${{ secrets.azureWebAppPublishProfile }}
     ```
 
-5. Вы увидите секретный код, как показано ниже.
+5. Вы видите секретный код, как показано ниже.
 
     ![секретные коды](media/app-service-github-actions/app-service-secrets.png)
 
-## <a name="setup-the-environment"></a>Настройка среды
+## <a name="set-up-the-environment"></a>Настройка среды
 
 Настройку среды можно выполнить с помощью одного из действий программы установки.
 
@@ -132,7 +130,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
 
 ## <a name="build-the-web-app"></a>Создание веб-приложения
 
-Это зависит от языка и языков, поддерживаемых веб-приложениями Azure. Этот раздел должен быть стандартным этапом сборки каждого языка.
+Это зависит от языка и языков, поддерживаемых службой приложений Azure. Этот раздел должен быть стандартным этапом сборки каждого языка.
 
 В следующих примерах показана часть рабочего процесса, который создает веб-приложение на различных поддерживаемых языках.
 
@@ -189,20 +187,20 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 ```
-## <a name="deploy-the-web-app"></a>Развертывание веб-приложения
+## <a name="deploy-to-app-service"></a>Развертывание в службу приложений
 
-Чтобы развернуть код в веб-приложении, необходимо использовать действие `Azure/appservice-actions/webapp@master`. Это действие имеет 4 параметра:
+Чтобы развернуть код в приложении службы приложений, используйте действие `azure/webapps-deploy@v1 `. Это действие имеет четыре параметра:
 
 | **Параметр**  | **Пояснение**  |
 |---------|---------|
-| **имя приложения** | Необходимости Имя веб-приложения Azure | 
+| **имя приложения** | Необходимости Имя приложения службы приложений | 
 | **Публикация-профиль** | Используемых Публикация содержимого файла профиля с веб-развертывание секретами |
 | **package** | Используемых Путь к пакету или папке. *. zip, *. war, *. jar или папка для развертывания |
 | **имя слота** | Используемых Введите существующий слот, отличный от рабочего слота |
 
 ### <a name="deploy-using-publish-profile"></a>Развертывание с помощью профиля публикации
 
-Ниже приведен пример рабочего процесса для создания и развертывания веб-приложения Node. js в Azure с помощью профиля публикации.
+Ниже приведен пример рабочего процесса для сборки и развертывания приложения Node. js в Azure с помощью профиля публикации.
 
 ```yaml
 # File: .github/workflows/workflow.yml
@@ -236,7 +234,7 @@ jobs:
 
 ### <a name="deploy-using-azure-service-principal"></a>Развертывание с помощью субъекта-службы Azure
 
-Ниже приведен пример рабочего процесса для создания и развертывания веб-приложения Node. js в Azure с помощью субъекта службы Azure.
+Ниже приведен пример рабочего процесса для создания и развертывания приложения Node. js в Azure с помощью субъекта-службы Azure.
 
 ```yaml
 on: [push]
@@ -281,7 +279,9 @@ jobs:
 
 Наш набор действий, сгруппированных в различные репозитории в GitHub, можно найти в каждом из них, содержащих документацию и примеры, которые помогут вам использовать GitHub для непрерывной интеграции и развертывания приложений в Azure.
 
-- [Вход в Azure](https://github.com/Azure/actions)
+- [Рабочий процесс действий для развертывания в Azure](https://github.com/Azure/actions-workflow-samples)
+
+- [Вход в Azure](https://github.com/Azure/login)
 
 - [Azure WebApp](https://github.com/Azure/webapps-deploy)
 

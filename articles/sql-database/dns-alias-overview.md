@@ -1,5 +1,5 @@
 ---
-title: Псевдоним DNS для Базы данных SQL Azure | Документация Майкрософт
+title: Псевдоним DNS для Базы данных SQL Azure
 description: Приложения могут подключаться к псевдониму для имени сервера Базы данных SQL Azure. Кроме того, в любое время можно изменить базу данных SQL, на которую указывает псевдоним, чтобы упростить тестирование и т. д.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: genemi, jrasnick, vanto
 ms.date: 06/26/2019
-ms.openlocfilehash: 5d37b41fa7b51871f9ce1b21c62de1f9ab7f3b82
-ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
+ms.openlocfilehash: c3681e882fea3e8e36472c8e540db0255cd654bb
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71058562"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73692287"
 ---
 # <a name="dns-alias-for-azure-sql-database"></a>Псевдоним DNS для Базы данных SQL Azure
 
@@ -55,7 +55,7 @@ ms.locfileid: "71058562"
 
 Следующие свойства применимы к каждому псевдониму DNS для сервера Базы данных SQL:
 
-- *Уникальное имя.* Каждое создаваемое имя псевдонима уникально для всех серверов Базы данных SQL Azure так же, как имена серверов.
+- *Уникальное имя.* Каждое создаваемое имя псевдонима уникально для всех серверов Базы данных SQL Azure так же, как имена серверов.
 - *Необходим сервер.* Псевдоним DNS обязательно должен ссылаться на имеющийся сервер. В противном случае создать псевдоним невозможно. Обновленный псевдоним должен всегда ссылаться только на один имеющийся сервер.
   - При удалении сервера Базы данных SQL система Azure удаляет все псевдонимы DNS, ссылающиеся на него.
 - *Отсутствие привязки к какому-либо региону.* Псевдонимы DNS не привязаны к региону. Любые псевдонимы DNS можно изменить таким образом, чтобы они ссылались на сервер Базы данных SQL Azure, который находится в любом географическом регионе.
@@ -92,19 +92,19 @@ ms.locfileid: "71058562"
 
 В примере кода используются следующие командлеты:
 
-- [New-азсклсерверднсалиас](https://docs.microsoft.com/powershell/module/az.Sql/New-azSqlServerDnsAlias): Создает псевдоним DNS в системе службы "База данных SQL Azure". Псевдоним ссылается на сервер 1 Базы данных SQL Azure.
-- [Get-азсклсерверднсалиас](https://docs.microsoft.com/powershell/module/az.Sql/Get-azSqlServerDnsAlias): Получает и выводит все псевдонимы DNS, назначенные серверу 1 базы данных SQL.
-- [Set-азсклсерверднсалиас](https://docs.microsoft.com/powershell/module/az.Sql/Set-azSqlServerDnsAlias): Изменяет имя сервера базы данных SQL, на который ссылается псевдоним, с "Сервер 1" на "Сервер 2".
-- [Remove-азсклсерверднсалиас](https://docs.microsoft.com/powershell/module/az.Sql/Remove-azSqlServerDnsAlias): С помощью имени псевдонима удаляет псевдоним DNS с сервера 2 базы данных SQL.
+- [New-азсклсерверднсалиас](https://docs.microsoft.com/powershell/module/az.Sql/New-azSqlServerDnsAlias): создает новый псевдоним DNS в системе службы базы данных SQL Azure. Псевдоним ссылается на сервер 1 Базы данных SQL Azure.
+- [Get-азсклсерверднсалиас](https://docs.microsoft.com/powershell/module/az.Sql/Get-azSqlServerDnsAlias): получение и перечисление всех псевдонимов DNS, назначенных серверу базы данных SQL Server 1.
+- [Set-азсклсерверднсалиас](https://docs.microsoft.com/powershell/module/az.Sql/Set-azSqlServerDnsAlias): изменяет имя сервера, на который ссылается псевдоним, с сервера 1 на сервер базы данных SQL Server 2.
+- [Remove-азсклсерверднсалиас](https://docs.microsoft.com/powershell/module/az.Sql/Remove-azSqlServerDnsAlias). Удалите DNS-псевдоним с сервера базы данных SQL Server 2, используя имя псевдонима.
 
 ## <a name="limitations-during-preview"></a>Ограничения для предварительной версии
 
 Сейчас для псевдонима DNS существуют следующие ограничения:
 
-- *Задержка до 2 минут.* Для обновления или удаления псевдонима DNS требуется до 2 минут.
+- *Задержка до 2 минут.* Для обновления или удаления псевдонима DNS требуется до 2 минут.
   - Независимо от задержки (даже небольшой), псевдоним немедленно прекращает ссылаться на клиентские подключения к устаревшему серверу.
-- *Поиск DNS.* Это единственный надежный способ проверить, на какой сервер ссылается псевдоним [DNS](https://docs.microsoft.com/windows-server/administration/windows-commands/nslookup).
-- _Аудит таблиц не поддерживается:_ Невозможно использовать псевдоним DNS на сервере Базы данных SQL Azure, в которой включен *аудит таблиц*.
+- *Поиск DNS.* [Поиск DNS](https://docs.microsoft.com/windows-server/administration/windows-commands/nslookup) — это единственный надежный способ проверить, на какой сервер ссылается псевдоним DNS.
+- _Аудит таблиц не поддерживается:_ Нельзя использовать псевдоним DNS на сервере базы данных SQL Azure с включенным *аудитом таблиц* для базы данных.
   - Аудит таблиц не рекомендуется.
   - Рекомендуем использовать [аудит больших двоичных объектов](sql-database-auditing.md).
 
@@ -112,6 +112,6 @@ ms.locfileid: "71058562"
 
 - Сведения об аварийном восстановлении см. в статье [Обзор обеспечения непрерывности бизнес-процессов с помощью Базы данных SQL Azure](sql-database-business-continuity.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Управление псевдонимом DNS для Базы данных SQL Azure с помощью PowerShell](dns-alias-powershell.md)

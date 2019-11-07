@@ -1,5 +1,5 @@
 ---
-title: Предоставление доступа к службам "База данных SQL Azure" и "Хранилище данных SQL" | Документация Майкрософт
+title: Предоставление доступа к базе данных SQL Azure и хранилищу данных SQL
 description: Предоставление доступа к службам "База данных SQL Azure" и "Хранилище данных SQL".
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: VanMSFT
 ms.author: vanto
 ms.reviewer: carlrab
 ms.date: 05/08/2019
-ms.openlocfilehash: 1292dbf43b5246fe3da95ead4d5d9113b4bc84f9
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: c115cd7e4d531bfdc7ddbacd4f6eff2a892ea3c3
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68569031"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73690753"
 ---
 # <a name="azure-sql-database-and-sql-data-warehouse-access-control"></a>Управление доступом к службам "База данных SQL Azure" и "Хранилище данных SQL"
 
@@ -33,7 +33,7 @@ ms.locfileid: "68569031"
 
 В рамках процесса подключения все подключения от виртуальных машин Azure будут перенаправлены на другой IP-адрес и порт, уникальный для каждой рабочей роли. Номер порта находится в диапазоне от 11000 до 11999. Дополнительные сведения о TCP-портах см. в статье [Порты для ADO.NET 4.5, отличные от порта 1433](sql-database-develop-direct-route-ports-adonet-v12.md).
 
-## <a name="authentication"></a>Проверка подлинности
+## <a name="authentication"></a>Аутентификация
 
 База данных SQL поддерживает два типа аутентификации:
 
@@ -50,7 +50,7 @@ ms.locfileid: "68569031"
 
 Но рекомендуется, чтобы приложение использовало отдельную учетную запись для проверки подлинности. Это позволит ограничить разрешения, предоставляемые приложению, и снизить риски вредоносных действий в случае, если оно уязвимо для атак путем внедрения кода SQL. В этом случае мы рекомендуем создать [пользователя автономной базы данных](https://docs.microsoft.com/sql/relational-databases/security/contained-database-users-making-your-database-portable), что позволяет приложению выполнять проверку подлинности непосредственно в базе данных. 
 
-## <a name="authorization"></a>Authorization
+## <a name="authorization"></a>Авторизация
 
 Авторизация подразумевает набор действий, которые пользователь может выполнять в базе данных SQL Azure. Такой набор действий определяется принадлежностью к [ролям](https://docs.microsoft.com/sql/relational-databases/security/authentication-access/database-level-roles) базы данных учетной записи пользователя и [разрешениями на уровне объектов](https://docs.microsoft.com/sql/relational-databases/security/permissions-database-engine). Обычно пользователям рекомендуется предоставлять наименьшие необходимые привилегии. Учетной записи администратора сервера, которая используется для подключения, присвоена роль db_owner, обладатель которой может выполнять любые действия в базе данных. Сохраните эту учетную запись для развертывания обновлений схемы и выполнения других действий по управлению. Для подключения к базе данных из приложения с использованием наименьших привилегий, необходимых приложению, используйте учетную запись "ApplicationUser" с более ограниченными разрешениями. Дополнительные сведения см. в статье [Проверка подлинности и авторизация в базе данных SQL: предоставление доступа](sql-database-manage-logins.md).
 
@@ -63,7 +63,7 @@ ms.locfileid: "68569031"
 - [Маскирование данных](sql-database-dynamic-data-masking-get-started.md) позволяет снизить уязвимость конфиденциальных данных.
 - [хранимые процедуры](https://docs.microsoft.com/sql/relational-databases/stored-procedures/stored-procedures-database-engine) .
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Обзор функций защиты в базе данных SQL см. в [этой статье](sql-database-security-overview.md).
 - Общие сведения о правилах брандмауэра см. в [этой статье](sql-database-firewall-configure.md).

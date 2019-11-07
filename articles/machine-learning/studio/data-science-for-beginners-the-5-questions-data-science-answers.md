@@ -1,6 +1,6 @@
 ---
 title: Обработка и анализ данных для начинающих
-titleSuffix: Azure Machine Learning Studio (classic)
+titleSuffix: ML Studio (classic) Azure
 description: Обработка и анализ данных для начинающих объясняет основные понятия в пяти коротких видеороликах. Первое видео содержит ответы на 5 вопросов об обработке и анализе данных. Из машинного обучения Azure.
 services: machine-learning
 ms.service: machine-learning
@@ -10,12 +10,12 @@ author: sdgilley
 ms.author: sgilley
 ms.custom: seodec18
 ms.date: 03/22/2019
-ms.openlocfilehash: 1163d2faab48893fae992240feb0c56ef99324fe
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: b2a91f3df3bab6a2ba10090719d0e614b9d652a3
+ms.sourcegitcommit: 6c2c97445f5d44c5b5974a5beb51a8733b0c2be7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73493107"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73621760"
 ---
 # <a name="data-science-for-beginners-video-1-the-5-questions-data-science-answers"></a>Обработка и анализ данных для начинающих (видео 1): 5 вопросов, на которые дают ответ обработка и анализ данных
 Ознакомьтесь с кратким введением *Обработка и анализ данных для начинающих*, которое состоит из пяти коротких видео с участием ведущих специалистов по обработке и анализу данных. Эти простые видео будут полезны как тем, кто только интересуется обработкой и анализом данных, так и тем, кто работает со специалистами в этой области.

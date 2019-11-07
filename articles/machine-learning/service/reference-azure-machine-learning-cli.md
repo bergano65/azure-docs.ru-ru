@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.reviewer: jmartens
 ms.author: jordane
 author: jpe316
-ms.date: 10/22/2019
+ms.date: 11/05/2019
 ms.custom: seodec18
-ms.openlocfilehash: dcbe535bb92f7755980929956093b0f0121ef41b
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 20ff7d2cb6c185f574494871a986e1bce63536ba
+ms.sourcegitcommit: 6c2c97445f5d44c5b5974a5beb51a8733b0c2be7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73476446"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73619956"
 ---
 # <a name="use-the-cli-extension-for-azure-machine-learning"></a>Использование расширения CLI для Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -31,7 +31,7 @@ CLI для Машинного обучения Azure является расши
 
 Интерфейс командной строки не является заменой пакета SDK для Машинного обучения Azure. Это дополнительный инструмент, оптимизированный для обработки строго параметризованных задач, которые прекрасно подходят для автоматизации.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Для использования интерфейса командной строки необходима подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию машинное обучение Azure](https://aka.ms/AMLFree) уже сегодня.
 
@@ -92,6 +92,9 @@ az extension remove -n azure-cli-ml
     ```azurecli-interactive
     az ml workspace create -w myworkspace -g myresourcegroup
     ```
+
+    > [!TIP]
+    > Эта команда создает рабочую область Basic Edition. Чтобы создать корпоративную рабочую область, используйте параметр `--sku enterprise` с командой `az ml workspace create`. Дополнительные сведения о Машинное обучение Azure выпусках см. в разделе [что такое машинное обучение Azure](overview-what-is-azure-ml.md#sku).
 
     Дополнительные сведения см. в разделе о [создании рабочей области AZ ML](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/workspace?view=azure-cli-latest#ext-azure-cli-ml-az-ml-workspace-create).
 

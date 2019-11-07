@@ -1,5 +1,5 @@
 ---
-title: База данных SQL Azure и обнаружение данных хранилища данных SQL & Классификация | Документация Майкрософт
+title: Классификация & базы данных SQL Azure и хранилища данных SQL
 description: Классификация & базы данных и обнаружения данных SQL Azure
 services: sql-database
 ms.service: sql-database
@@ -11,16 +11,16 @@ author: barmichal
 ms.author: mibar
 ms.reviewer: vanto
 ms.date: 08/22/2019
-ms.openlocfilehash: b85793223e23aa3d668d6f86494da3ee78c43e91
-ms.sourcegitcommit: a819209a7c293078ff5377dee266fa76fd20902c
+ms.openlocfilehash: 9bcb8ce69a65892109702f0f0a409310945b6781
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71009992"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73690767"
 ---
 # <a name="azure-sql-database-and-sql-data-warehouse-data-discovery--classification"></a>Классификация & базы данных SQL Azure и хранилища данных SQL
 
-Классификация & обнаружения данных предоставляет расширенные возможности, встроенные в базу данных SQL Azure, для **обнаружения**, классификации & и пометки**защиты** конфиденциальных данных в базах данных.
+&ная классификация обнаружения данных предоставляет расширенные возможности, встроенные в базу данных SQL Azure для **обнаружения**, **классификации**и **маркировки** & **защиты** конфиденциальных данных в базах данных.
 
 Обнаружение и классификация наиболее конфиденциальных данных (деловых или финансовых, медицинских, персональных данных и т. д.) может играть ключевую роль в концепции защиты информации вашей организации. Она может использоваться в качестве инфраструктуры для следующего:
 
@@ -144,8 +144,8 @@ ms.locfileid: "71009992"
 
 - [CREATE или Update](https://docs.microsoft.com/rest/api/sql/sensitivitylabels/createorupdate) — создает или обновляет метку чувствительности данного столбца.
 - [Delete](https://docs.microsoft.com/rest/api/sql/sensitivitylabels/delete). Удаление метки конфиденциальности данного столбца.
-- [Disable рекомендация](https://docs.microsoft.com/en-us/rest/api/sql/sensitivitylabels/disablerecommendation) — отключает рекомендации по конфиденциальности для данного столбца
-- [Включить рекомендацию](https://docs.microsoft.com/en-us/rest/api/sql/sensitivitylabels/enablerecommendation) — включает рекомендации по конфиденциальности для данного столбца (рекомендации включены по умолчанию для всех столбцов).
+- [Disable рекомендация](https://docs.microsoft.com/rest/api/sql/sensitivitylabels/disablerecommendation) — отключает рекомендации по конфиденциальности для данного столбца
+- [Включить рекомендацию](https://docs.microsoft.com/rest/api/sql/sensitivitylabels/enablerecommendation) — включает рекомендации по конфиденциальности для данного столбца (рекомендации включены по умолчанию для всех столбцов).
 - [Get](https://docs.microsoft.com/rest/api/sql/sensitivitylabels/get). Получение метки конфиденциальности данного столбца.
 - [List Current By Database](https://docs.microsoft.com/rest/api/sql/sensitivitylabels/listcurrentbydatabase). Получение списка текущих меток конфиденциальности для конкретной базы данных.
 
@@ -171,9 +171,9 @@ ms.locfileid: "71009992"
 
 ## <a name="permissions"></a>Разрешения
 
-Следующие встроенные роли могут считывать `Owner`классификацию данных базы данных SQL Azure:, `Reader`, `Contributor` `SQL Security Manager` и `User Access Administrator`.
+Следующие встроенные роли могут считывать классификацию данных базы данных SQL Azure: `Owner`, `Reader`, `Contributor`, `SQL Security Manager` и `User Access Administrator`.
 
-Следующие встроенные роли могут изменять классификацию данных базы данных SQL Azure: `Owner`, `Contributor`, `SQL Security Manager`.
+Следующие встроенные роли могут изменять классификацию данных базы данных SQL Azure: `Owner`, `Contributor``SQL Security Manager`.
 
 Дополнительные сведения о [RBAC для ресурсов Azure](https://docs.microsoft.com/azure/role-based-access-control/overview)
 

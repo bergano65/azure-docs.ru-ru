@@ -1,5 +1,5 @@
 ---
-title: Мониторинг рабочей нагрузки — портал Azure | Документация Майкрософт
+title: Мониторинг рабочей нагрузки — портал Azure
 description: Мониторинг хранилища данных SQL Azure с помощью портал Azure
 services: sql-data-warehouse
 author: kevinvngo
@@ -10,12 +10,12 @@ ms.subservice: manage
 ms.date: 03/22/2019
 ms.author: kevin
 ms.reviewer: jrasnick
-ms.openlocfilehash: 176762e0d1c007f924d779a1b77dd52c7ed56e01
-ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
+ms.openlocfilehash: 73d837c34dd5a480cae08a41c89939414899052a
+ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69981486"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73645634"
 ---
 # <a name="monitor-workload---azure-portal"></a>Мониторинг рабочей нагрузки — портал Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "69981486"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+- Подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
 - Хранилище данных SQL Azure. Мы будем собирать журналы для хранилища данных SQL. Если у вас нет подготовленного хранилища данных SQL, см. инструкции в разделе [Создание хранилища данных SQL](https://docs.microsoft.com/azure/sql-data-warehouse/sql-data-warehouse-get-started-tutorial).
 
 ## <a name="create-a-log-analytics-workspace"></a>Создание рабочей области Log Analytics
@@ -97,6 +97,6 @@ AzureDiagnostics
 | where Type_s == "UserConcurrencyResourceType"
 | summarize totalQueuedQueries = dcount(RequestId_s)
 ```
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, после настройки и настройки журналов Azure Monitor, [Настройте панели мониторинга Azure](https://docs.microsoft.com/azure/azure-portal/azure-portal-dashboards) для совместного использования в команде.

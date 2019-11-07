@@ -1,20 +1,18 @@
 ---
-title: 'Изменение канала ExpressRoute с помощью PowerShell: Azure классической версии | Документация Майкрософт'
+title: 'Изменение канала ExpressRoute с помощью PowerShell: классическая модель Azure | Документация Майкрософт'
 description: В этой статье описывается, как выполнить проверку состояния, обновление, удаление или отмену подготовки канала классической модели развертывания ExpressRoute.
 services: expressroute
-author: ganesr
+author: cherylmc
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 12/06/2018
-ms.author: ganesr
-ms.reviewer: cherylmc
-ms.custom: seodec18
-ms.openlocfilehash: 7468338e7bc39128564e71831abe61bb1714ff72
-ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
+ms.date: 11/05/2019
+ms.author: cherylmc
+ms.openlocfilehash: 9f1c05b85fac6dd0168d9c2b2944326800e90493
+ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67849245"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73643670"
 ---
 # <a name="modify-an-expressroute-circuit-using-powershell-classic"></a>Изменение канала ExpressRoute с помощью PowerShell (классическая модель)
 
@@ -22,7 +20,7 @@ ms.locfileid: "67849245"
 > * [портал Azure](expressroute-howto-circuit-portal-resource-manager.md)
 > * [PowerShell](expressroute-howto-circuit-arm.md)
 > * [Интерфейс командной строки Azure](howto-circuit-cli.md)
-> * [Шаблон Azure Resource Manager](expressroute-howto-circuit-resource-manager-template.md)
+> * [Шаблон диспетчера ресурсов Azure](expressroute-howto-circuit-resource-manager-template.md)
 > * [Видео — портал Azure](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-create-an-expressroute-circuit)
 > * [PowerShell (классическая модель)](expressroute-howto-circuit-classic.md)
 >
@@ -35,39 +33,18 @@ ms.locfileid: "67849245"
 
 [!INCLUDE [vpn-gateway-classic-rm](../../includes/vpn-gateway-classic-rm-include.md)]
 
-
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
-
 ## <a name="before-you-begin"></a>Перед началом работы
 
-Установите последние версии модулей PowerShell управления службами Azure (SM) и модуля ExpressRoute.  При использовании следующего примера обратите внимание, что номер версии (в нашем случае — 5.1.1) будет меняться по мере выпуска новых версий командлетов.
+Установите последние версии модулей PowerShell управления службами Azure (SM) и модуля ExpressRoute. Среду Azure CloudShell нельзя использовать для запуска модулей SM.
 
-```powershell
-Import-Module 'C:\Program Files\WindowsPowerShell\Modules\Azure\5.1.1\Azure\Azure.psd1'
-Import-Module 'C:\Program Files\WindowsPowerShell\Modules\Azure\5.1.1\ExpressRoute\ExpressRoute.psd1'
-```
-
-Пошаговые инструкции настройки компьютера для использования модулей Azure PowerShell см. в статье [Общие сведения об Azure PowerShell](/powershell/azure/overview).
-
-Войдите в свою учетную запись Azure с помощью следующего примера.
-
-1. Откройте консоль PowerShell с повышенными правами и подключитесь к своей учетной записи. Для подключения используйте следующий пример кода:
+1. Используйте инструкции из статьи [Установка модуля управления службами](/powershell/azure/servicemanagement/install-azure-ps) для установки модуля управления службами Azure. Если модуль az или RM уже установлен, обязательно используйте параметр-AllowClobber.
+2. Импортируйте установленные модули. При использовании следующего примера измените путь в соответствии с расположением установленных модулей PowerShell.
 
    ```powershell
-   Connect-AzAccount
+   Import-Module 'C:\Program Files\WindowsPowerShell\Modules\Azure\5.3.0\Azure.psd1'
+   Import-Module 'C:\Program Files\WindowsPowerShell\Modules\Azure\5.3.0\ExpressRoute\ExpressRoute.psd1'
    ```
-2. Просмотрите подписки учетной записи.
-
-   ```powershell
-   Get-AzSubscription
-   ```
-3. При наличии нескольких подписок выберите подписку, которую вы хотите использовать.
-
-   ```powershell
-   Select-AzSubscription -SubscriptionName "Replace_with_your_subscription_name"
-   ```
-
-4. Затем воспользуйтесь следующим командлетом, чтобы добавить подписку Azure в PowerShell для классической модели развертывания.
+3. Чтобы войти в учетную запись Azure, откройте консоль PowerShell с повышенными правами и подключитесь к вашей учетной записи. Используйте следующий пример, чтобы подключиться с помощью модуля управления службами:
 
    ```powershell
    Add-AzureAccount

@@ -1,5 +1,5 @@
 ---
-title: Развертывание SaaS-приложения с сегментированной мультитенантной БД, использующего Базу данных SQL Azure | Документация Майкрософт
+title: 'Развертывание приложения SaaS с сегментированной многоклиентской базой данных, использующего базу данных SQL Azure '
 description: Разверните и изучите SaaS-приложение Wingtip Tickets с сегментированной мультитенантной БД, которое демонстрирует шаблоны SaaS с помощью базы данных SQL Azure.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: MightyPen
 ms.author: genemi
 ms.reviewer: billgib, stein
 ms.date: 10/16/2018
-ms.openlocfilehash: 2ddb1fe40507da5caa218f73284a1095035df951
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: aa61c9af2e8fbfbe1caeaffb6231afe5b8be6f3c
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68570374"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73692046"
 ---
 # <a name="deploy-and-explore-a-sharded-multi-tenant-application"></a>Развертывание и изучение сегментированного мультитенантного приложения
 
@@ -57,12 +57,12 @@ ms.locfileid: "68570374"
 ### <a name="plan-the-names"></a>Планирование имен
 
 В инструкциях в этом разделе необходимо указать значение *user*, которое используется для обеспечения глобальной уникальности имен ресурсов, и значение *resource group* для всех ресурсов, созданных при развертывании приложения. Для пользователя с именем *Энн Финли* мы указали следующие сведения.
-- *Пользователь:* **AF1** *(Их инициалы и цифра.   Используйте другое значение (например, af2) при развертывании приложения во второй раз.)*
-- *Группа ресурсов:* **wingtip-mt-af1** *(wingtip-mt указывает, что это сегментированное мультитенантное приложение. Добавление имени пользователя af1 позволяет сопоставить имя группы ресурсов с именами ресурсов, содержащихся в ней.)*
+- *Пользователь:* **AF1**  *(их инициалы и цифра). Используйте другое значение (например, AF2) при развертывании приложения во второй раз.)*
+- *Группа ресурсов:* **Wingtip-MT-AF1** *(Wingtip-MT указывает, что это Сегментированное многоклиентское приложение. при добавлении имени пользователя AF1 сопоставляет имя группы ресурсов с именами ресурсов, которые она содержит.)*
 
 Теперь выберите ваши имена и запишите их. 
 
-### <a name="steps"></a>Шаги
+### <a name="steps"></a>Действия
 
 1. Нажмите синюю кнопку **Deploy to Azure** (Развертывание в Azure).
    - Откроется портал Azure с шаблоном развертывания SaaS-приложения Wingtip Tickets.
@@ -109,7 +109,7 @@ ms.locfileid: "68570374"
 
 Перед запуском каких-либо скриптов настройте значения *группы ресурсов* и *пользователя* в файле **UserConfig.psm1**. Задайте для этих переменных те же значения, которые были указаны во время развертывания.
 
-1. В *интегрированной среде сценариев PowerShell* откройте файл \\Learning Modules\\*UserConfig.psm1*.
+1. В \\интегрированной среде сценариев PowerShell\\ откройте файл *Learning Modules* *UserConfig.psm1*.
 2. В полях *ResourceGroupName* и *Name* введите специфические для развертывания значения (только в строках 10 и 11).
 3. Сохраните изменения.
 
@@ -124,7 +124,7 @@ ms.locfileid: "68570374"
 На центральной веб-странице **концентратора событий** содержится список клиентов в определенном развертывании со ссылками. Выполните следующие действия, чтобы воспользоваться преимуществами веб-страницы **концентратора событий** и отдельного веб-приложения.
 
 1. Откройте **концентратор событий** в браузере:
-   - http://events.wingtip-mt.&lt ;user&gt;.trafficmanager.net &nbsp; *(Замените &lt; user&gt; именем пользователя для своего развертывания.)*
+   - http://events.wingtip-mt.&lt;user&gt;.trafficmanager.net &nbsp; *(Замените &lt;user&gt; именем пользователя для своего развертывания.)*
 
      ![Концентратор событий](media/saas-multitenantdb-get-started-deploy/events-hub.png)
 
@@ -132,11 +132,11 @@ ms.locfileid: "68570374"
 
    ![События](./media/saas-multitenantdb-get-started-deploy/fabrikam.png)
 
-### <a name="azure-traffic-manager"></a>Диспетчер трафика Azure
+### <a name="azure-traffic-manager"></a>Azure Traffic Manager
 
 Чтобы управлять распределением входящих запросов, приложение Wingtip использует [диспетчер трафика Azure](../traffic-manager/traffic-manager-overview.md). В URL-адресе страницы событий для каждого клиента содержится его имя. Каждый URL-адрес также включает в себя значение конкретного пользователя. Каждый URL-адрес соответствует показанному формату, используя следующие шаги.
 
-- http://events.wingtip-mt.&lt ;user&gt;.trafficmanager.net/*fabrikamjazzclub*
+- http://events.wingtip-mt.&lt;user&gt;.trafficmanager.net/*fabrikamjazzclub*
 
 1. Приложения событий выполняют синтаксический анализ имени клиента в URL-адресе. В предыдущем примере URL-адреса имя клиента — *fabrikamjazzclub*.
 2. Затем приложение применяет к имени клиента алгоритм хэш, чтобы создать ключ для доступа к каталогу при помощи [управления размещением сегментов](sql-database-elastic-scale-shard-map-management.md).
@@ -169,7 +169,7 @@ ms.locfileid: "68570374"
 
 Первоначальное развертывание включает в себя три примера клиентов в базе данных *Tenants1*. Давайте создадим другой клиент, чтобы увидеть, как это влияет на развернутое приложение. На этом шаге вы сможете быстро создать клиент, нажав одну клавишу.
 
-1. В *интегрированной среде сценариев PowerShell* откройте файл ...\\Learning Modules\\Provision and Catalog\\*Demo-ProvisionTenants.ps1*.
+1. В \\интегрированной среде сценариев PowerShell\\ откройте файл ...\\Learning Modules*Provision and Catalog* *Demo-ProvisionTenants.ps1*.
 2. Нажмите клавишу **F5** (а не **F8**) для запуска сценария (оставьте значения по умолчанию).
 
    > [!NOTE]
@@ -209,7 +209,7 @@ ms.locfileid: "68570374"
 
 1. На [портале Azure](https://portal.azure.com) перейдите к списку групп ресурсов. Откройте группу ресурсов, которая была создана при развертывании приложения.
 
-   ![Группа ресурсов](./media/saas-multitenantdb-get-started-deploy/resource-group.png)
+   ![resource group](./media/saas-multitenantdb-get-started-deploy/resource-group.png)
 
 2. Щелкните сервер **catalog-mt&lt;пользователь&gt;** . На сервере каталога содержится две базы данных с именем *tenantcatalog* и *basetenantdb*. База данных *basetenantdb* — это пустой шаблон базы данных. Он копируется для создания клиентской базы данных, используемой для нескольких клиентов или только для одного.
 
@@ -252,7 +252,7 @@ ms.locfileid: "68570374"
   - [Управление несколькими базами данных SQL Azure и их масштабирование с помощью эластичных пулов](sql-database-elastic-pool.md)
   - [Развертывание с помощью Базы данных SQL Azure](sql-database-elastic-scale-introduction.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали следующее:
 
@@ -288,5 +288,5 @@ A [series of related tutorials] is available that build upon this initial deploy
 [image-deploy-to-azure-blue-48d]: https://aka.ms/deploywtp-mtapp "Button for Deploy to Azure."
 -->
 
-[image-deploy-to-azure-blue-48d]: media/saas-multitenantdb-get-started-deploy/deploy.png "Кнопка для развертывания в Azure."
+[image-deploy-to-azure-blue-48d]: media/saas-multitenantdb-get-started-deploy/deploy.png "Кнопка для развертывания в Azure".
 

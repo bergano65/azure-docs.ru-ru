@@ -11,18 +11,20 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 11/03/2019
 ms.author: diberry
-ms.openlocfilehash: 08f78e4945b612a92d372c832490c380d3749811
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 0cab6eb38459a632f1e7bd1a21e6a7251d33f683
+ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73487507"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73647416"
 ---
 # <a name="machine-learned-features"></a>Функции, полученные от компьютера 
 
 В машинном обучении *функция* — это отличительная черта или атрибут данных, с которыми система обнаруживает & изучения. В Language Understanding (LUIS) функция описывает и объясняет, что важно для целей и сущностей.
 
-## <a name="features-in-language-understanding"></a>Функции в Language Understanding
+На [портале предварительной версии Luis](https://preview.luis.ai)функции являются _дескрипторами_ , так как они используются для _описания_ намерения или сущности.  
+
+## <a name="features-_descriptors_-in-language-understanding"></a>Функции (_дескрипторы_) в Language Understanding
 
 Функции, также известные как дескрипторы, описывают подсказки, помогающие Language Understanding определить пример фразы продолжительностью. Доступны следующие функции: 
 
