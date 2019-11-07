@@ -8,18 +8,18 @@ manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.topic: article
-ms.date: 10/14/2019
+ms.date: 11/04/2019
 ms.author: dapine
-ms.openlocfilehash: 926c2c0bbe4fdd24a6a8271b2e01ababcacf77d5
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
-ms.translationtype: HT
+ms.openlocfilehash: 958acd042acba2a8c6c38ad1e6bac614db509da8
+ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73499176"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73604455"
 ---
 # <a name="container-support-in-azure-cognitive-services"></a>Поддержка контейнеров в Azure Cognitive Services
 
-Благодаря поддержке контейнеров в Azure Cognitive Services разработчики могут использовать те же интеллектуальные интерфейсы API, которые доступны в Azure, но с традиционной для [контейнеров Docker](https://www.docker.com/what-container) гибкостью в выборе расположения для развертывания и размещения служб. В настоящее время поддержка контейнеров доступна в предварительной версии для подмножества Cognitive Services Azure, включая части:
+Благодаря поддержке контейнеров в Azure Cognitive Services разработчики могут использовать те же интеллектуальные интерфейсы API, которые доступны в Azure, но с традиционной для [контейнеров Docker](https://www.docker.com/what-container) гибкостью в выборе расположения для развертывания и размещения служб. В настоящее время поддержка контейнеров доступна для подмножества Cognitive Services Azure, включая части:
 
 > [!div class="checklist"]
 > * [Детектор аномалий][ad-containers]
@@ -90,7 +90,7 @@ Cognitive Services ресурсы доступны на [Microsoft Azure](https:
 
 [!INCLUDE [Container repositories and images](containers/includes/cognitive-services-container-images.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем использовать контейнеры Azure Cognitive Services, необходимо выполнить указанные ниже предварительные требования.
 
@@ -132,13 +132,9 @@ Docker нужно настроить таким образом, чтобы ко�
 [fr-containers]: form-recognizer/form-recognizer-container-howto.md
 [lu-containers]: luis/luis-container-howto.md
 [sp-containers]: speech-service/speech-container-howto.md
-<<<<<<< HEAD
 [sp-containers-stt]: speech-service/speech-container-howto.md?tabs=stt
 [sp-containers-cstt]: speech-service/speech-container-howto.md?tabs=cstt
 [sp-containers-tts]: speech-service/speech-container-howto.md?tabs=tts
 [sp-containers-ctts]: speech-service/speech-container-howto.md?tabs=ctts
 [ta-containers]: text-analytics/how-tos/text-analytics-how-to-install-containers.md
-=======
-[ta-containers]: text-analytics/how-tos/text-analytics-how-to-install-containers.md
 [tt-containers]: translator/how-to-install-containers.md
->>>>>>> ReFS, remotes, MicrosoftDocs/Master

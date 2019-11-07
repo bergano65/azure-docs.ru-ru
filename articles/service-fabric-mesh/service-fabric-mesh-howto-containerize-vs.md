@@ -1,6 +1,6 @@
 ---
 title: Контейнеризация существующего приложения .NET для сетки Service Fabric | Документация Майкрософт
-description: Добавление поддержки сетки в существующее приложение .NET
+description: Добавление Service Fabric поддержки оркестрации контейнера сети в проекты ASP.NET и консоли, использующие полную версию .NET Framework.
 services: service-fabric-mesh
 keywords: контейнеризация сетки service fabric
 author: dkkapur
@@ -9,12 +9,12 @@ ms.date: 11/08/2018
 ms.topic: conceptual
 ms.service: service-fabric-mesh
 manager: chakdan
-ms.openlocfilehash: cb4e327e1c8c0a653cb94233f568b4847494c439
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 070d07316c0ff06a45e76936e75cb5345548e78f
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60419464"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73686282"
 ---
 # <a name="containerize-an-existing-net-app-for-service-fabric-mesh"></a>Контейнеризация существующего приложения .NET для сетки Service Fabric
 
@@ -25,7 +25,7 @@ ms.locfileid: "60419464"
 > [!NOTE]
 > Проекты .NET **Core** сейчас не поддерживаются.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Если у вас еще нет Azure подписки до начала работы, можно [создать бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
@@ -71,4 +71,4 @@ git clone https://github.com/MikkelHegn/ContainersSFLab.git
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Сведения о том, как опубликовать приложение в Сетке Service Fabric, см. в статье [Руководство. Развертывание приложения Сетки Service Fabric](service-fabric-mesh-tutorial-deploy-service-fabric-mesh-app.md).
+Узнайте, как опубликовать приложение в сетку Service Fabric: [Tutorial — Deploy a Service Fabric Mesh application](service-fabric-mesh-tutorial-deploy-service-fabric-mesh-app.md) (Руководство по развертыванию приложения сетки Service Fabric)

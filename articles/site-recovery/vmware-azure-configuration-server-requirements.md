@@ -1,5 +1,5 @@
 ---
-title: Требования к серверу конфигурации для аварийного восстановления VMware в Azure с помощью Azure Site Recovery | Документация Майкрософт
+title: Аварийное восстановление VMware — требования к серверу конфигурации в Azure Site Recovery
 description: В этой статье описываются требования и поддержка при развертывании сервера конфигурации для аварийного восстановления VMware в Azure с помощью Azure Site Recovery.
 author: rayne-wiselman
 manager: carmonm
@@ -8,19 +8,19 @@ services: site-recovery
 ms.topic: article
 ms.date: 09/09/2019
 ms.author: raynew
-ms.openlocfilehash: d83b99ea540d6232f4c0786d3a743f97332e1c9f
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: 0b0942b517c8dc83c048bd1203a58d9861515dfb
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72792318"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73663049"
 ---
 # <a name="configuration-server-requirements-for-vmware-disaster-recovery-to-azure"></a>Требования к серверу конфигурации для аварийного восстановления VMware в Azure
 
 При использовании [Azure Site Recovery](site-recovery-overview.md) для аварийного восстановления виртуальных машин VMware и физических серверов в Azure развертывается локальный сервер конфигурации.
 
 - Сервер конфигурации используется для управления обменом данными между локальной средой VMware и Azure. Он также управляет репликацией данных.
-- [Подробнее](vmware-azure-architecture.md) о компонентах и процессах сервера конфигурации.
+- См. дополнительные сведения о [компонентах и процессах сервера конфигурации](vmware-azure-architecture.md).
 
 ## <a name="configuration-server-deployment"></a>Развертывание сервера конфигурации
 

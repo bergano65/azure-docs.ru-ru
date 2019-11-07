@@ -1,41 +1,42 @@
 ---
 title: Подключение к API Azure Cosmos DB для MongoDB с помощью Studio 3T
-titleSuffix: Azure Cosmos DB
-description: Сведения о подключении к Cosmos DB с помощью Studio 3T и API Azure Cosmos DB для MongoDB
+description: Узнайте, как подключиться к API Azure Cosmos DB для MongoDB с помощью 3T Studio.
 ms.service: cosmos-db
 ms.subservice: cosmosdb-mongo
 ms.topic: conceptual
-ms.date: 12/26/2018
+ms.date: 11/01/2019
 author: sivethe
 ms.author: sivethe
 ms.custom: seodec18
-ms.openlocfilehash: 46cac6720bbef133d6b3f7a269cf97a81cddd0c5
-ms.sourcegitcommit: 388c8f24434cc96c990f3819d2f38f46ee72c4d8
+ms.openlocfilehash: c9be9893d28439fdcff9f33f0303a816bd94c7b8
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70062115"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73584425"
 ---
-# <a name="connect-to-cosmos-account-using-studio-3t"></a>Подключение к учетной записи Cosmos с помощью Studio 3T
+# <a name="connect-to-an-azure-cosmos-account-using-studio-3t"></a>Подключение к учетной записи Azure Cosmos с помощью 3T Studio
 
-Чтобы подключиться к учетной записи Cosmos с помощью API Azure Cosmos DB для MongoDB, выполните следующие действия.
+Чтобы подключиться к API Azure Cosmos DB для MongoDB с помощью 3T Studio, необходимо выполнить следующие действия.
 
-* Загрузка и установка [Studio 3T](https://studio3t.com/)
-* Получите сведений о [строке подключения](connect-mongodb-account.md) Cosmos DB.
+* Скачайте и установите [Studio 3T](https://studio3t.com/).
+* Сведения о [строке подключения](connect-mongodb-account.md) учетной записи Azure Cosmos.
 
 > [!NOTE]
-> В настоящее время совместная работа 3T v 1.2 и Lower поддерживаются API Cosmos DB для MongoDB. 
+> В настоящее время совместная работа 3T v 1.2 и более ранние версии поддерживаются API Cosmos DB для MongoDB.
 
 ## <a name="create-the-connection-in-studio-3t"></a>Создание подключения в Studio 3T
-Чтобы добавить в диспетчер подключений Studio 3T учетную запись Cosmos, сделайте следующее:
 
-1. Получите сведения о подключении для учетной записи Cosmos, настроенной с помощью API Azure Cosmos DB для MongoDB, следуя инструкциям из статьи [Подключение приложения MongoDB к Azure Cosmos DB](connect-mongodb-account.md).
+Чтобы добавить учетную запись Azure Cosmos в Диспетчер соединений Studio 3T, выполните следующие действия.
+
+1. Получите сведения о подключении для учетной записи API Azure Cosmos DB для MongoDB, следуя инструкциям в статье [Подключение приложения MongoDB к Azure Cosmos DB](connect-mongodb-account.md) .
 
     ![Снимок экрана со страницей строки подключения](./media/mongodb-mongochef/ConnectionStringBlade.png)
+
 2. Щелкните **Connect** (Подключиться), чтобы открыть диспетчер подключений, и нажмите кнопку **New Connection** (Новое подключение).
 
     ![Снимок экрана диспетчера соединений 3T Studio](./media/mongodb-mongochef/ConnectionManager.png)
-3. В окне **New Connection** (Новое подключение) на вкладке **Server** (Сервер) укажите узел (полное доменное имя) учетной записи Azure Cosmos DB и порт.
+3. В окне **новое подключение** на вкладке **сервер** введите узел (FQDN) учетной записи Azure Cosmos и порта.
 
     ![Снимок экрана: вкладка "сервер диспетчера подключений Studio 3T"](./media/mongodb-mongochef/ConnectionManagerServerTab.png)
 4. В окне **New Connection** (Новое подключение) на вкладке **Authentication** (Аутентификация) выберите режим аутентификации **Basic (MONGODB-CR or SCARM-SHA-1)** (Базовая (MONGODB CR или SCARM-SHA-1)), а также введите имя пользователя и пароль.  Подтвердите базу данных по умолчанию для проверки подлинности (admin) или укажите другое значение.
@@ -112,7 +113,7 @@ ms.locfileid: "70062115"
 
     ![Снимок экрана результатов запроса Mongo Chef](./media/mongodb-mongochef/QueryDocument1.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Узнайте, как [использовать Robo 3T](mongodb-robomongo.md) с API Azure Cosmos DB для MongoDB.
+- Узнайте, как [использовать Robo 3T](mongodb-robomongo.md) с API Azure Cosmos DB для MongoDB.
 - Ознакомьтесь с [примерами](mongodb-samples.md) MongoDB с API Azure Cosmos DB для MongoDB.

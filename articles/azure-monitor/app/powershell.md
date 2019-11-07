@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 10/17/2019
-ms.openlocfilehash: 938511069500c551eb526b6c7238546b85d59dce
-ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
+ms.openlocfilehash: 5ae043c356559b2e675f05af3eb7eb61973eb170
+ms.sourcegitcommit: 6c2c97445f5d44c5b5974a5beb51a8733b0c2be7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72818932"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73621935"
 ---
 #  <a name="manage-application-insights-resources-using-powershell"></a>Управление ресурсами Application Insights с помощью PowerShell
 
@@ -235,7 +235,7 @@ Get-AzApplicationInsights -ResourceGroupName Fabrikam -Name FabrikamProd | Forma
 
 ## <a name="set-the-data-retention"></a>Задание срока хранения данных 
 
-Чтобы получить текущий срок хранения данных для Application Insights ресурса, можно использовать средство OSS [ARMClient](https://github.com/projectkudu/ARMClient).  (Дополнительные сведения о ARMClient из статей по [Дэвид эббо](http://blog.davidebbo.com/2015/01/azure-resource-manager-client.html) и [Даниэль бовбес](https://blog.bowbyes.co.nz/2016/11/02/using-armclient-to-directly-access-azure-arm-rest-apis-and-list-arm-policy-details/).)  Ниже приведен пример использования `ARMClient` для получения текущего хранения:
+Чтобы получить текущий срок хранения данных для Application Insights ресурса, можно использовать средство OSS [ARMClient](https://github.com/projectkudu/ARMClient).  (Дополнительные сведения о ARMClient из статей по [Дэвид эббо](http://blog.davidebbo.com/2015/01/azure-resource-manager-client.html) и [Даниэль бовбес](https://blog.bowbyes.co.nz/2016/11/02/using-armclient-to-directly-access-azure-arm-rest-apis-and-list-arm-policy-details/).)  Ниже приведен пример использования `ARMClient`для получения текущего хранения:
 
 ```PS
 armclient GET /subscriptions/00000000-0000-0000-0000-00000000000/resourceGroups/MyResourceGroupName/providers/microsoft.insights/components/MyResourceName?api-version=2018-05-01-preview
@@ -250,10 +250,10 @@ armclient PUT /subscriptions/00000000-0000-0000-0000-00000000000/resourceGroups/
 Чтобы задать срок хранения данных 365 дней с помощью приведенного выше шаблона, выполните:
 
 ```PS
-        New-AzResourceGroupDeployment -ResourceGroupName "<resource group>" `
-               -TemplateFile .\template1.json `
-               -retentionInDays 365 `
-               -appName myApp
+New-AzResourceGroupDeployment -ResourceGroupName "<resource group>" `
+       -TemplateFile .\template1.json `
+       -retentionInDays 365 `
+       -appName myApp
 ```
 
 Для изменения срока хранения можно также использовать следующий скрипт. Скопируйте этот скрипт, чтобы сохранить его как `Set-ApplicationInsightsRetention.ps1`.

@@ -11,22 +11,22 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/20/2019
+ms.date: 11/05/2019
 ms.author: spelluru
-ms.openlocfilehash: 411037dd97350d877aff4e2d094c3408f168f9fd
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.openlocfilehash: 91c5c1480669829bad7f8d89ce360bb806d6c997
+ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69648577"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73646857"
 ---
-# <a name="classroom-labs-in-azure-lab-services---frequently-asked-questions-faq"></a>Учебные лаборатории в службах лаборатории Azure — часто задаваемые вопросы
+# <a name="classroom-labs-in-azure-lab-services--frequently-asked-questions-faq"></a>Учебные лаборатории в службах лаборатории Azure — часто задаваемые вопросы
 Получите ответы на некоторые наиболее распространенные вопросы о занятиях лаборатории в службах лаборатории Azure. 
 
 ## <a name="quotas"></a>Квоты
 
 ### <a name="is-the-quota-per-user-or-per-week-or-per-entire-duration-of-the-lab"></a>Квота на пользователя или за неделю или за всю длительность лаборатории? 
-Квота, заданная для лаборатории, предназначена для каждого учащегося в течение всей лаборатории. И запланированное [время выполнения виртуальных машин](how-to-create-schedules.md) не учитывает квоту, выделенную пользователю. Квота рассчитывается на время, которое выходит за пределы расписания и которое учащийся тратит на виртуальные машины.  Дополнительные сведения о квотах см. в разделе [Задание квот для пользователей](how-to-configure-student-usage.md#set-quotas-for-users).
+Квота, заданная для лаборатории, предназначена для каждого учащегося в течение всей лаборатории. И [запланированное время выполнения виртуальных машин](how-to-create-schedules.md) не учитывает квоту, выделенную пользователю. Квота рассчитывается на время, которое выходит за пределы расписания и которое учащийся тратит на виртуальные машины.  Дополнительные сведения о квотах см. в разделе [Задание квот для пользователей](how-to-configure-student-usage.md#set-quotas-for-users).
 
 ## <a name="schedules"></a>Расписания
 
@@ -40,17 +40,24 @@ ms.locfileid: "69648577"
 
 Например, если имеется блок/19 – 10.0.0.0/19, этот диапазон адресов соответствует 8192 IP-адресам и 16 лабораториям (8192/512 = 16 Labs). В этом случае создание лаборатории завершается сбоем при создании лаборатории 17.
 
+### <a name="what-port-ranges-should-i-open-on-my-organizations-firewall-setting-to-connect-to-lab-virtual-machines-via-rdpssh"></a>Какие диапазоны портов следует открыть в настройках брандмауэра моей организации для подключения к виртуальным машинам лаборатории через RDP или SSH?
+
+Порты: 49152 – 65535. Учебные лаборатории располагаются за подсистемой балансировки нагрузки, поэтому все виртуальные машины в лаборатории имеют один IP-адрес, а каждая виртуальная машина в лаборатории имеет уникальный порт. Номера портов и общедоступные IP-адреса могут меняться при каждой повторной публикации лаборатории.
+
+### <a name="what-public-ip-address-range-should-i-open-on-my-organizations-firewall-settings-to-connect-to-lab-virtual-machines-via-rdpssh"></a>Какой диапазон общедоступных IP-адресов следует открыть в настройках брандмауэра моей организации для подключения к виртуальным машинам лаборатории через RDP или SSH?
+См. раздел [диапазоны IP-адресов и теги служб Azure — общедоступное облако](https://www.microsoft.com/download/details.aspx?id=56519), которое предоставляет диапазон общедоступного IP-адреса для центров обработки данных в Azure. Вы можете открыть IP-адреса для регионов, в которых находятся учетные записи лаборатории.
+
 ## <a name="blog-post"></a>Запись блога
 Подпишитесь на [блог служб лаборатории Azure](https://azure.microsoft.com/blog/tag/azure-lab-services/).
 
 ## <a name="update-notifications"></a>Уведомления об обновлениях
 Подпишитесь на [обновления служб лаборатории](https://azure.microsoft.com/updates/?product=lab-services) , чтобы следить за новыми функциями служб лаборатории.
 
-## <a name="general"></a>Общее
+## <a name="general"></a>Общие сведения
 ### <a name="what-if-my-question-isnt-answered-here"></a>Мне не удалось найти ответ на свой вопрос. Что делать?
 Если ваш вопрос не указан здесь, сообщите нам о том, что мы можем помочь вам найти ответ.
 
 - Опубликуйте вопрос в конце этой статьи 
-- Чтобы достичь более широкой аудитории, опубликуйте вопрос на форуме по [службам Azure labs Stack overflow](https://stackoverflow.com/questions/tagged/azure-lab-services). 
-- Для запросов функций отправьте свои запросы и идеи в [службы лаборатории Azure](https://feedback.azure.com/forums/320373-lab-services?category_id=352774).
+- Чтобы достичь более широкой аудитории, опубликуйте вопрос в [службах лаборатории Azure — Stack overflow форуме](https://stackoverflow.com/questions/tagged/azure-lab-services). 
+- Для запросов к функциям отправьте свои запросы и идеи в [службы лаборатории Azure — пользовательская речь](https://feedback.azure.com/forums/320373-lab-services?category_id=352774).
 

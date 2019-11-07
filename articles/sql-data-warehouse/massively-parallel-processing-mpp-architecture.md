@@ -1,5 +1,5 @@
 ---
-title: Архитектура Azure синапсе Analytics (ранее — хранилище данных SQL) | Документация Майкрософт
+title: Архитектура Azure синапсе Analytics (ранее — хранилище данных SQL)
 description: Узнайте, как Azure синапсе Analytics (ранее — хранилище данных SQL) сочетает в себе массовую параллельную обработку (MPP) с хранилищем Azure для достижения высокой производительности и масштабируемости.
 services: sql-data-warehouse
 author: mlee3gsd
@@ -10,12 +10,12 @@ ms.subservice: design
 ms.date: 11/04/2019
 ms.author: martinle
 ms.reviewer: igorstan
-ms.openlocfilehash: b463b0806d39ba20ae714c8785e5c0d227ce481b
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: ea9629c63fcab97ba8ba83cd88592c37ae41818a
+ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73466400"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73646392"
 ---
 # <a name="azure-synapse-analytics-formerly-sql-dw-architecture"></a>Архитектура Azure синапсе Analytics (ранее — хранилище данных SQL) 
 

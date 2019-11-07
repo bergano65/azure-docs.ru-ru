@@ -11,12 +11,12 @@ author: jpe316
 ms.reviewer: larryfr
 ms.date: 09/13/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: 856f00b17a5ee994f8864c5d46ce4d796d68d367
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
-ms.translationtype: HT
+ms.openlocfilehash: df2f22f91cbed17035485d25369965d3284dbaf7
+ms.sourcegitcommit: 6c2c97445f5d44c5b5974a5beb51a8733b0c2be7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73497007"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73622393"
 ---
 # <a name="deploy-models-with-azure-machine-learning"></a>Развертывание моделей с помощью Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -32,7 +32,7 @@ ms.locfileid: "73497007"
 
 Дополнительные сведения об основных понятиях, связанных с рабочим процессом развертывания, см. в разделе [Управление моделями, их развертывание и мониторинг с помощью машинное обучение Azure](concept-model-management-and-deployment.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Рабочая область машинного обучения Azure. Дополнительные сведения см. в статье [создание машинное обучение Azure рабочей области](how-to-manage-workspace.md).
 
@@ -254,7 +254,7 @@ model_path = Model.get_model_path('sklearn_mnist')
 * `pyspark`
 * Стандартный объект Python
 
-Чтобы использовать формирование схемы, включите пакет `inference-schema` в файл среды Conda.
+Чтобы использовать формирование схемы, включите пакет `inference-schema` в файл среды Conda. Дополнительные сведения об этом пакете см. в разделе [https://github.com/Azure/InferenceSchema](https://github.com/Azure/InferenceSchema).
 
 ##### <a name="example-dependencies-file"></a>Пример файла зависимостей
 
@@ -608,9 +608,9 @@ az ml model deploy -m mymodel:1 --ic inferenceconfig.json --dc deploymentconfig.
 
 Дополнительные сведения см. в документации по [AZ ml для развертывания модели](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/model?view=azure-cli-latest#ext-azure-cli-ml-az-ml-model-deploy) .
 
-### <a id="notebookvm"></a>Веб-служба вычислительных экземпляров (разработка и тестирование)
+### <a id="notebookvm"></a>Веб-служба виртуальной машины записных книжек (разработка и тестирование)
 
-См. раздел [развертывание модели для машинное обучение Azure вычислительного экземпляра](how-to-deploy-local-container-notebook-vm.md).
+См. статью [развертывание модели для машинное обучение Azure виртуальной машины записной книжки](how-to-deploy-local-container-notebook-vm.md).
 
 ### <a id="aci"></a>Экземпляры контейнеров Azure (разработка и тестирование)
 
@@ -999,10 +999,12 @@ docker kill mycontainer
 Дополнительные сведения см. в документации по [WebService. Delete ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice(class)?view=azure-ml-py#delete--) и [model. Delete ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#delete--).
 
 ## <a name="preview-no-code-model-deployment"></a>Образца Развертывание модели без кода
+
 Развертывание модели без кода сейчас находится на этапе предварительной версии и поддерживает следующие платформы машинного обучения:
 
 ### <a name="tensorflow-savedmodel-format"></a>Формат Саведмодел Tensorflow
-```
+
+```python
 from azureml.core import Model
 
 model = Model.register(workspace=ws,
@@ -1017,10 +1019,12 @@ service = Model.deploy(ws, service_name, [model])
 ```
 
 ### <a name="onnx-models"></a>Модели ONNX
+
 Регистрация и развертывание модели ONNX поддерживаются для любого графа вывода ONNX. Этапы предварительной обработки и выполнения процессов в настоящее время не поддерживаются.
 
 Ниже приведен пример регистрации и развертывания модели MNIST ONNX.
-```
+
+```python
 from azureml.core import Model
 
 model = Model.register(workspace=ws,
@@ -1033,11 +1037,14 @@ model = Model.register(workspace=ws,
 service_name = 'onnx-mnist-service'
 service = Model.deploy(ws, service_name, [model])
 ```
+
 ### <a name="scikit-learn-models"></a>Scikit — изучение моделей
+
 Не поддерживается развертывание модели кода для всех встроенных типов моделей scikit-учиться.
 
 Ниже приведен пример регистрации и развертывания модели sklearn без дополнительного кода.
-```
+
+```python
 from azureml.core import Model
 from azureml.core.resource_configuration import ResourceConfiguration
 
@@ -1055,7 +1062,8 @@ service = Model.deploy(ws, service_name, [model])
 ```
 
 Примечание. Эти зависимости включены в готовый контейнер вывода sklearn:
-```
+
+```yaml
     - azureml-defaults
     - inference-schema[numpy-support]
     - scikit-learn
@@ -1063,6 +1071,7 @@ service = Model.deploy(ws, service_name, [model])
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
+
 * [Развертывание модели с помощью пользовательского образа DOCKER](how-to-deploy-custom-docker-image.md)
 * [Устранение неполадок развертывания](how-to-troubleshoot-deployment.md)
 * [Защита веб-служб Машинного обучения Azure с помощью SSL](how-to-secure-web-service.md)

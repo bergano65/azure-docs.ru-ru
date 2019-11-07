@@ -1,5 +1,5 @@
 ---
-title: Создание общей локальной среды выполнения интеграции в Фабрике данных Azure с помощью PowerShell | Документация Майкрософт
+title: Создание общей локальной среды выполнения интеграции в фабрике данных Azure
 description: Узнайте, как создать общую локальную среду выполнения интеграции в Фабрике данных Azure, обеспечивающую нескольким фабрикам данных доступ к среде выполнения интеграции.
 services: data-factory
 documentationcenter: ''
@@ -11,24 +11,47 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 10/31/2018
 ms.author: abnarain
-ms.openlocfilehash: f038510c20e70c9d6b9dc8e396d9a15beb7270ca
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: fcda60863f78dd338bbfc64c1679561262c554a9
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66155149"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73677057"
 ---
-# <a name="create-a-shared-self-hosted-integration-runtime-in-azure-data-factory-with-powershell"></a>Создание общей локальной среды выполнения интеграции в Фабрике данных Azure с помощью PowerShell
+# <a name="create-a-shared-self-hosted-integration-runtime-in-azure-data-factory"></a>Создание общей локальной среды выполнения интеграции в фабрике данных Azure
 
-В этом пошаговом руководстве показано, как создать общую локальную среду выполнения интеграции в Фабрике данных Azure с помощью Azure PowerShell. Общую локальную среду выполнения интеграции затем можно использовать в другой фабрике данных. При работе с этим руководством вы выполните следующие задачи: 
+В этом руководство показано, как создать общую локальную среду выполнения интеграции в фабрике данных Azure. Общую локальную среду выполнения интеграции затем можно использовать в другой фабрике данных.
 
-1. Создали фабрику данных. 
+## <a name="create-a-shared-self-hosted-ir-using-azure-data-factory-ui"></a>Создание общей локальной среды IR с помощью пользовательского интерфейса фабрики данных Azure
+
+Чтобы создать общий собственный IR-объект с помощью пользовательского интерфейса фабрики данных Azure, можно выполнить следующие действия.
+
+1. В локальной среде выполнения интеграции для совместного использования предоставьте разрешения фабрике данных, в которой нужно создать связанную среду IR.
+      
+    ![Кнопка предоставления разрешений на вкладке "Общий доступ"](media/create-self-hosted-integration-runtime/grant-permissions-IR-sharing.png)
+      
+    ![Выбранные элементы для назначения разрешений](media/create-self-hosted-integration-runtime/3_rbac_permissions.png)     
+    
+2. Запишите идентификатор ресурса локальной среды IR, к которой нужно предоставить общий доступ.
+      
+   ![Расположение идентификатора ресурса](media/create-self-hosted-integration-runtime/4_ResourceID_self-hostedIR.png)
+    
+3. В фабрике данных, которой были предоставлены разрешения, создайте новую локальную среду IR (связанную) и введите идентификатор ресурса.
+      
+   ![Кнопка создания связанной локальной среды выполнения интеграции](media/create-self-hosted-integration-runtime/6_create-linkedIR_2.png)
+      
+    ![Поля для имени и идентификатора ресурса](media/create-self-hosted-integration-runtime/6_create-linkedIR_3.png)
+
+## <a name="create-a-shared-self-hosted-ir-using-azure-powershell"></a>Создание общей локальной среды IR с помощью Azure PowerShell
+
+Чтобы создать общедоступную локальную среду IR с помощью Azure PowerShell, можно выполнить следующие действия. 
+1. Создание фабрики данных. 
 1. Создайте локальную среду выполнения интеграции.
 1. Предоставьте общий доступ к локальной среде выполнения интеграции другим фабриками данных.
 1. Создайте связанную среду выполнения интеграции.
 1. Отмените общий доступ.
 
-## <a name="prerequisites"></a>Технические условия 
+### <a name="prerequisites"></a>Предварительные требования 
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -39,7 +62,7 @@ ms.locfileid: "66155149"
 > [!NOTE]  
 > Чтобы получить список регионов Azure, в которых сейчас доступна Фабрика данных, выберите интересующие вас регионы на странице [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=data-factory).
 
-## <a name="create-a-data-factory"></a>Создание фабрики данных
+### <a name="create-a-data-factory"></a>Создать фабрику данных
 
 1. Откройте интегрированную среду сценариев (ISE) Windows PowerShell.
 
@@ -76,7 +99,7 @@ ms.locfileid: "66155149"
     > [!NOTE]  
     > Этот шаг не является обязательным. Если у вас уже есть фабрика данных, пропустите этот шаг. 
 
-    Создание [группы ресурсов Azure](../azure-resource-manager/resource-group-overview.md) с помощью [New AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup) команды. Группа ресурсов — это логический контейнер, в котором ресурсы Azure развертываются и администрируются как группа. В следующем примере создается группа ресурсов с именем `myResourceGroup` в расположении WestEurope. 
+    Создайте [группу ресурсов Azure](../azure-resource-manager/resource-group-overview.md) с помощью команды [New-азресаурцеграуп](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup) . Группа ресурсов — это логический контейнер, в котором ресурсы Azure развертываются и администрируются как группа. В следующем примере создается группа ресурсов с именем `myResourceGroup` в расположении WestEurope. 
 
     ```powershell
     New-AzResourceGroup -Location $DataFactoryLocation -Name $ResourceGroupName
@@ -90,7 +113,7 @@ ms.locfileid: "66155149"
                              -Name $SharedDataFactoryName
     ```
 
-## <a name="create-a-self-hosted-integration-runtime"></a>Создание локальной среды выполнения интеграции
+### <a name="create-a-self-hosted-integration-runtime"></a>Создание локальной среды выполнения интеграции
 
 > [!NOTE]  
 > Этот шаг не является обязательным. Если у вас уже есть локальная среда выполнения интеграции, которую вы хотите использовать совместно с другими фабриками данных, пропустите этот шаг.
@@ -106,7 +129,7 @@ $SharedIR = Set-AzDataFactoryV2IntegrationRuntime `
     -Description $SharedIntegrationRuntimeDescription
 ```
 
-### <a name="get-the-integration-runtime-authentication-key-and-register-a-node"></a>Получение ключа проверки подлинности для среды выполнения интеграции и регистрация узла
+#### <a name="get-the-integration-runtime-authentication-key-and-register-a-node"></a>Получение ключа проверки подлинности для среды выполнения интеграции и регистрация узла
 
 Выполните следующую команду, чтобы получить ключ проверки подлинности для локальной среды выполнения интеграции.
 
@@ -119,7 +142,7 @@ Get-AzDataFactoryV2IntegrationRuntimeKey `
 
 Ответ содержит ключ для локальной среды выполнения интеграции. Используйте этот ключ при регистрации узла среды выполнения интеграции.
 
-### <a name="install-and-register-the-self-hosted-integration-runtime"></a>Установка и регистрация локальной среды выполнения интеграции
+#### <a name="install-and-register-the-self-hosted-integration-runtime"></a>Установка и регистрация локальной среды выполнения интеграции
 
 1. Скачайте установщик локальной среды выполнения интеграции из [Integration Runtime Фабрики данных Azure](https://aka.ms/dmg).
 
@@ -127,9 +150,9 @@ Get-AzDataFactoryV2IntegrationRuntimeKey `
 
 3. Зарегистрируйте новую локальную среду выполнения интеграции с помощью ключа проверки подлинности, полученного на предыдущем этапе.
 
-## <a name="share-the-self-hosted-integration-runtime-with-another-data-factory"></a>Предоставление общего доступа к локальной среде выполнения интеграции другой фабрике данных
+### <a name="share-the-self-hosted-integration-runtime-with-another-data-factory"></a>Предоставление общего доступа к локальной среде выполнения интеграции другой фабрике данных
 
-### <a name="create-another-data-factory"></a>Создание другой фабрикой данных
+#### <a name="create-another-data-factory"></a>Создание другой фабрикой данных
 
 > [!NOTE]  
 > Этот шаг не является обязательным. Если у вас уже есть фабрика данных, которой вы хотите предоставить общий доступ, пропустите этот шаг.
@@ -139,7 +162,7 @@ $factory = Set-AzDataFactoryV2 -ResourceGroupName $ResourceGroupName `
     -Location $DataFactoryLocation `
     -Name $LinkedDataFactoryName
 ```
-### <a name="grant-permission"></a>Предоставление разрешения
+#### <a name="grant-permission"></a>Предоставление разрешения
 
 Предоставьте разрешение фабрике данных, которой требуется доступ к созданной и зарегистрированной локальной среде выполнения интеграции.
 
@@ -153,7 +176,7 @@ New-AzRoleAssignment `
     -Scope $SharedIR.Id
 ```
 
-## <a name="create-a-linked-self-hosted-integration-runtime"></a>Создание связанной локальной среды выполнения интеграции
+### <a name="create-a-linked-self-hosted-integration-runtime"></a>Создание связанной локальной среды выполнения интеграции
 
 Выполните следующую команду, чтобы создать связанную локальную среду выполнения интеграции.
 
@@ -169,7 +192,7 @@ Set-AzDataFactoryV2IntegrationRuntime `
 
 Теперь можно использовать эту связанную среду выполнения интеграции в любой связанной службе. Связанная среда выполнения интеграции использует общую среду выполнения интеграции для выполнения действий.
 
-## <a name="revoke-integration-runtime-sharing-from-a-data-factory"></a>Отмена для фабрики данных общего доступа к среде выполнения интеграции
+### <a name="revoke-integration-runtime-sharing-from-a-data-factory"></a>Отмена для фабрики данных общего доступа к среде выполнения интеграции
 
 Выполните следующую команду, чтобы отменить для фабрики данных доступ к общей среде выполнения интеграции:
 
@@ -191,7 +214,7 @@ Remove-AzDataFactoryV2IntegrationRuntime `
     -LinkedDataFactoryName $LinkedDataFactoryName
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+### <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь с [основными понятиями среды выполнения интеграции в Фабрике данных Azure](https://docs.microsoft.com/azure/data-factory/concepts-integration-runtime).
 

@@ -8,26 +8,26 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 10/26/2019
+ms.date: 11/04/2019
 ms.author: erhopf
-ms.openlocfilehash: 52e9fd986973c15d30790b981a5c2ccd1e6974d6
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
-ms.translationtype: HT
+ms.openlocfilehash: 2c1e6ef84a472ccec5116b12e18ad80c92b68960
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73507696"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73681883"
 ---
 # <a name="quickstart-asynchronous-synthesis-for-long-form-audio-in-python-preview"></a>Краткое руководство. асинхронное синтез для звука в длинном формате в Python (Предварительная версия)
 
 В этом кратком руководстве вы используете длинный аудио API для асинхронного преобразования текста в речь и получения звуковых выходных данных из URI, предоставленного службой. Этот REST API идеально подходит для поставщиков содержимого, которым необходимо преобразовать текстовые файлы длиннее 10 000 символов или 50 абзацев в синтезированный речевой перевод. Дополнительные сведения см. в разделе [Long Audio API](../../long-audio-api.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим кратким руководством вам понадобится:
 
 * Python 2.7. x или 3. x.
 * [Visual Studio](https://visualstudio.microsoft.com/downloads/), [Visual Studio Code](https://code.visualstudio.com/download)или ваш любимый текстовый редактор.
-* Подписка Azure и ключ подписки на службу речи. [Создайте учетную запись](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account).
+* Подписка Azure и ключ подписки на службу речи. [Создайте учетную запись Azure](https://docs.microsoft.com/azure/cognitive-services/speech-service/get-started#new-azure-account) и [Создайте речевой ресурс](https://docs.microsoft.com/azure/cognitive-services/speech-service/get-started#create-a-speech-resource-in-azure) для получения ключа. При создании ресурса речи убедитесь, что для ценовой категории задано значение **S0**, а для параметра расположение — [поддерживаемый регион](../../regions.md#standard-and-neural-voices).
 
 ## <a name="create-a-project-and-import-required-modules"></a>Создание проекта и импорт обязательных модулей
 
@@ -47,7 +47,7 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 ```
 
 > [!NOTE]
-> Если вы ранее не использовали эти модули, вам потребуется установить их перед запуском программы. Чтобы установить эти пакеты, выполните команду: `pip install requests`.
+> Если вы ранее не использовали эти модули, вам потребуется установить их перед запуском программы. Чтобы установить эти пакеты, выполните команду: `pip install requests urllib3`.
 
 Эти модули используются для анализа аргументов, создают HTTP-запрос и вызывают длинные аудио REST API текста в речь.
 

@@ -1,5 +1,5 @@
 ---
-title: Azure Site Recovery устранение неполадок с сетевым подключением Azure к Azure и ошибками | Документация Майкрософт
+title: Устранение неполадок подключения к аварийному восстановлению Azure в Azure с помощью Azure Site Recovery
 description: Устранение ошибок и проблем при репликации виртуальных машин Azure для аварийного восстановления
 services: site-recovery
 author: asgang
@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 08/05/2019
 ms.author: asgang
-ms.openlocfilehash: 8e1350a22554bab257e8c99954c2beaa357de2ff
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 4995a4086c471a06fe859febfd2d1af7fbb22a76
+ms.sourcegitcommit: 6c2c97445f5d44c5b5974a5beb51a8733b0c2be7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68934526"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73622452"
 ---
 # <a name="troubleshoot-azure-to-azure-vm-network-connectivity-issues"></a>Устранение неполадок с сетевым подключением Azure к виртуальной машине Azure
 
@@ -21,7 +21,7 @@ ms.locfileid: "68934526"
 
 Чтобы реплика Site Recovery заработала, от виртуальной машины требуется исходящее подключение для конкретного URL-адреса или IP-диапазонов. Если виртуальная машина находится за брандмауэром или использует правила группы безопасности сети (NSG) для управления исходящими подключениями, могут возникнуть следующие проблемы.
 
-**URL-адрес** | **Сведения**  
+**URL-адрес** | **Дополнительные сведения**  
 --- | ---
 *.blob.core.windows.net | Это необходимо, чтобы данные можно было записать в учетную запись хранения кэша в исходном регионе из виртуальной машины. Если вы знакомы со всеми учетными записями хранения кэша для виртуальных машин, вы можете разрешить-перечислить определенные URL-адреса учетных записей хранения (например, cache1.blob.core.windows.net и cache2.blob.core.windows.net) вместо *. blob.core.windows.net
 login.microsoftonline.com | Требуется для авторизации и проверки подлинности URL-адресов службы Site Recovery.
@@ -30,7 +30,7 @@ login.microsoftonline.com | Требуется для авторизации и 
 
 ## <a name="outbound-connectivity-for-site-recovery-urls-or-ip-ranges-error-code-151037-or-151072"></a>Исходящие подключения для URL-адресов Site Recovery или IP-диапазонов (код ошибки 151037 или 151072)
 
-## <a name="issue-1-failed-to-register-azure-virtual-machine-with-site-recovery-151195-br"></a>Проблема 1. Не удалось зарегистрировать виртуальную машину Azure в Site Recovery (151195) </br>
+## <a name="issue-1-failed-to-register-azure-virtual-machine-with-site-recovery-151195-br"></a>Ошибка 1. не удалось зарегистрировать виртуальную машину Azure с Site Recovery (151195) </br>
 - **Возможная причина** </br>
   - Не удается установить подключение к Site Recovery конечным точкам из-за сбоя разрешения DNS.
   - Это чаще наблюдается во время повторной защиты, когда вы выполнили отработку отказа виртуальной машины, но DNS-сервер недоступен из региона аварийного восстановления.
@@ -73,9 +73,9 @@ login.microsoftonline.com | Требуется для авторизации и 
 
 3. Создайте правила исходящих подключений HTTPS (443) для IP-адресов Site Recovery, соответствующих целевому расположению:
 
-   **Location** | **IP-адрес Site Recovery** |  **IP-адрес мониторинга Site Recovery**
+   **Расположение** | **IP-адрес Site Recovery** |  **IP-адрес мониторинга Site Recovery**
     --- | --- | ---
-   Центральная часть США | 40.69.144.231 | 52.165.34.144
+   Центральный регион США | 40.69.144.231 | 52.165.34.144
 
 ### <a name="nsg-rules---central-us"></a>Правила NSG. Центральная часть США
 
@@ -87,10 +87,10 @@ login.microsoftonline.com | Требуется для авторизации и 
 
 3. Создайте правила исходящих подключений HTTPS (443) для IP-адресов Site Recovery, соответствующих исходному расположению:
 
-   **Location** | **IP-адрес Site Recovery** |  **IP-адрес мониторинга Site Recovery**
+   **Расположение** | **IP-адрес Site Recovery** |  **IP-адрес мониторинга Site Recovery**
     --- | --- | ---
-   Центральная часть США | 13.82.88.226 | 104.45.147.24
-## <a name="issue-3-site-recovery-configuration-failed-151197"></a>Проблема 3. Сбой при выполнении настройки Site Recovery (151197)
+   Центральный регион США | 13.82.88.226 | 104.45.147.24
+## <a name="issue-3-site-recovery-configuration-failed-151197"></a>Проблема 3. Сбой при выполнении настройки Site Recovery (151197)
 - **Возможная причина** </br>
   - Не удается подключиться к конечным точкам службы Azure Site Recovery.
 
@@ -98,7 +98,7 @@ login.microsoftonline.com | Требуется для авторизации и 
   - Обеспечение доступа Azure Site Recovery к [диапазонам IP-адресов Site Recovery](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-about-networking#outbound-connectivity-for-ip-address-ranges) зависит от региона. Обеспечьте доступ к нужным диапазонам IP-адресов с виртуальной машины.
 
 
-## <a name="issue-4-a2a-replication-failed-when-the-network-traffic-goes-through-on-premises-proxy-server-151072"></a>Проблема 4. Не удалось выполнить репликацию A2A, если сетевой трафик проходит через локальный прокси-сервер (151072)
+## <a name="issue-4-a2a-replication-failed-when-the-network-traffic-goes-through-on-premises-proxy-server-151072"></a>Причина 4. не удалось выполнить репликацию A2A, если сетевой трафик проходит через локальный прокси-сервер (151072)
 - **Возможная причина** </br>
   - Недопустимые параметры настраиваемого прокси-сервера, Azure Site Recovery агент службы мобильности не обнаружил параметры прокси-сервера в IE автоматически
 
@@ -112,11 +112,11 @@ login.microsoftonline.com | Требуется для авторизации и 
                 *[proxy]*</br>
                 *Address=http://1.2.3.4*</br>
                 *Port=567*</br>
-  4. Azure Site Recovery агент службы Mobility Service поддерживает только ***прокси-серверы без проверки***подлинности.
+  4. Azure Site Recovery агент службы Mobility Service поддерживает только ***прокси-серверы без проверки подлинности***.
 
 ### <a name="fix-the-problem"></a>Устранение проблемы
 Чтобы разрешить [необходимые URL-адреса](azure-to-azure-about-networking.md#outbound-connectivity-for-urls) или [диапазоны IP-](azure-to-azure-about-networking.md#outbound-connectivity-for-ip-address-ranges)адресов, выполните действия, описанные в [документе Руководство](site-recovery-azure-to-azure-networking-guidance.md)по работе с сетями.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [Репликация виртуальных машин Azure](site-recovery-replicate-azure-to-azure.md)

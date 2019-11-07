@@ -1,35 +1,37 @@
 ---
 title: Прием сквозного большого двоичного объекта в Azure обозреватель данных с помощью Python
-description: Из этой статьи вы узнаете, как использовать принимающие большие двоичные объекты в Azure обозреватель данных с помощью Python в качестве конечного примера.
+description: В этой статье вы узнаете, как получать большие двоичные объекты в Azure обозреватель данных с помощью комплексного примера, использующего Python.
 author: lucygoldbergmicrosoft
 ms.author: lugoldbe
 ms.reviewer: orspodek
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 10/23/2019
-ms.openlocfilehash: 2cb3e73abf8a97e481a4260ee6abe79115521d18
-ms.sourcegitcommit: ec2b75b1fc667c4e893686dbd8e119e7c757333a
+ms.openlocfilehash: 1c78336880d685090ae21c725becc90d689c1817
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72809617"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73581806"
 ---
-# <a name="end-to-end-blob-ingestion-into-azure-data-explorer-using-python"></a>Прием сквозного большого двоичного объекта в Azure обозреватель данных с помощью Python
+# <a name="end-to-end-blob-ingestion-into-azure-data-explorer-through-python"></a>Прием сквозного большого двоичного объекта в Azure обозреватель данных с помощью Python
 
 > [!div class="op_single_selector"]
 > * [C#](end-to-end-csharp.md)
 > * [Python](end-to-end-python.md)
 >
 
-Azure Data Explorer — это быстрая и масштабируемая служба для изучения данных журналов и телеметрии. В этой статье приводится полный пример получения данных из хранилища BLOB-объектов в Azure обозреватель данных. Вы узнаете, как программным способом создать группу ресурсов, учетную запись хранения и контейнер, концентратор событий и кластер Azure обозреватель данных и базу данных. Вы также узнаете, как программным образом настроить обозреватель данных Azure для приема данных из новой учетной записи хранения.
+Azure Data Explorer — это быстрая и масштабируемая служба для изучения данных журналов и телеметрии. В этой статье приводится полный пример приема данных из хранилища BLOB-объектов Azure в обозреватель данных Azure. 
 
-## <a name="prerequisites"></a>Технические условия
+Вы узнаете, как программным способом создать группу ресурсов, учетную запись хранения и контейнер, концентратор событий и кластер Azure обозреватель данных и базу данных. Вы также узнаете, как программно настроить обозреватель данных Azure для приема данных из новой учетной записи хранения.
+
+## <a name="prerequisites"></a>Предварительные требования
 
 Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) Azure, прежде чем начинать работу.
 
-## <a name="install-python-package"></a>Установка пакета Python
+## <a name="install-the-python-package"></a>Установка пакета Python
 
-Чтобы установить пакет Python для Azure Data Explorer (Kusto), откройте окно командной строки с Python в пути. Выполните следующую команду:
+Чтобы установить пакет Python для Azure Data Explorer (Kusto), откройте окно командной строки с Python в пути. Выполните следующие команды:
 
 ```
 pip install azure-common
@@ -44,7 +46,9 @@ pip install azure-storage-blob
 
 ## <a name="code-example"></a>Примеры кода 
 
-В следующем примере кода вы получите пошаговый процесс, в результате которого данные поступают в Azure обозреватель данных. Сначала создайте группу ресурсов и ресурсы Azure, такие как учетная запись хранения и контейнер, концентратор событий и кластер Azure обозреватель данных и база данных. Затем вы создадите подписку на службу "Сетка событий" и сопоставление таблиц и столбцов в базе данных Azure обозреватель данных. Наконец, создайте подключение к данным, чтобы настроить обозреватель данных Azure для приема данных из новой учетной записи хранения.
+В следующем примере кода вы получите пошаговый процесс, который приводит к приему данных в Azure обозреватель данных. 
+
+Сначала создайте группу ресурсов. Вы также создадите ресурсы Azure, такие как учетная запись хранения и контейнер, концентратор событий и кластер Azure обозреватель данных и база данных. Затем вы создадите подписку службы "Сетка событий Azure" вместе с сопоставлением таблиц и столбцов в базе данных Azure обозреватель данных. Наконец, создайте подключение к данным, чтобы настроить обозреватель данных Azure для приема данных из новой учетной записи хранения.
 
 ```python
 from azure.common.credentials import ServicePrincipalCredentials
@@ -61,12 +65,12 @@ from azure.mgmt.kusto.models import EventGridDataConnection
 tenant_id = "xxxxxxxx-xxxxx-xxxx-xxxx-xxxxxxxxx"
 #Application ID
 client_id = "xxxxxxxx-xxxxx-xxxx-xxxx-xxxxxxxxx"
-#Client Secret
+#Client secret
 client_secret = "xxxxxxxxxxxxxx"
 subscription_id = "xxxxxxxx-xxxxx-xxxx-xxxx-xxxxxxxxx"
 location = "West Europe"
 location_small_case = "westeurope"
-#path to the Azure Resource Manager template json from the previous section
+#Path to the Azure Resource Manager template JSON from the previous section
 azure_resource_template_path = "xxxxxxxxx/template.json";
 
 deployment_name = 'e2eexample'
@@ -118,7 +122,7 @@ deployment_properties = {
     'parameters': parameters
 }
 
-#Returns an instance of LROPoller, see https://docs.microsoft.com/python/api/msrest/msrest.polling.lropoller?view=azure-python
+#Returns an instance of LROPoller; see https://docs.microsoft.com/python/api/msrest/msrest.polling.lropoller?view=azure-python
 poller = resource_client.deployments.create_or_update(
     resource_group_name,
     deployment_name,
@@ -161,7 +165,7 @@ kusto_client.execute_mgmt(database_name, create_column_mapping_command)
 print('Step 5: Add an Event Grid data connection. Azure Data Explorer will automatically ingest the data when new blobs are created.')
 kusto_management_client = KustoManagementClient(credentials, subscription_id)
 data_connections = kusto_management_client.data_connections
-#Returns an instance of LROPoller, see https://docs.microsoft.com/python/api/msrest/msrest.polling.lropoller?view=azure-python
+#Returns an instance of LROPoller; see https://docs.microsoft.com/python/api/msrest/msrest.polling.lropoller?view=azure-python
 poller = data_connections.create_or_update(resource_group_name=resource_group_name, cluster_name=kusto_cluster_name, database_name=kusto_database_name, data_connection_name=kusto_data_connection_name,
                                            parameters=EventGridDataConnection(storage_account_resource_id=storage_resource_id,
                                                                               event_hub_resource_id=event_hub_resource_id, consumer_group="$Default", location=location, table_name=kusto_table_name, mapping_rule_name=kusto_column_mapping_name, data_format="csv"))
@@ -169,14 +173,14 @@ poller.wait()
 ```
 |**Параметр** | **Описание поля**|
 |---|---|---|
-| tenant_id | Идентификатор клиента. Также известен как идентификатор каталога.|
+| tenant_id | Идентификатор клиента. Он также называется ИДЕНТИФИКАТОРом каталога.|
 | subscription_id | Идентификатор подписки, используемый для создания ресурсов.|
 | client_id | Идентификатор клиента приложения, которое может получать доступ к ресурсам в клиенте.|
 | client_secret | Секрет клиента приложения, которое может получить доступ к ресурсам в клиенте. |
 
 ## <a name="test-the-code-example"></a>Тестирование примера кода
 
-1. Передача файла в учетную запись хранения
+1. Отправьте файл в учетную запись хранения.
 
     ```python
     account_key = "xxxxxxxxxxxxxx"
@@ -190,7 +194,7 @@ poller.wait()
     |---|---|---|
     | account_key | Ключ доступа программно созданной учетной записи хранения.|
 
-2. Выполнение тестового запроса в Azure обозреватель данных
+2. Выполните тестовый запрос в обозреватель данных Azure.
 
     ```python
     kusto_uri = "https://{}.{}.kusto.windows.net".format(kusto_cluster_name, location_small_case)
@@ -206,14 +210,14 @@ poller.wait()
 Чтобы удалить группу ресурсов и очистить ресурсы, используйте следующую команду:
 
 ```python
-#Returns an instance of LROPoller, see https://docs.microsoft.com/python/api/msrest/msrest.polling.lropoller?view=azure-python
+#Returns an instance of LROPoller; see https://docs.microsoft.com/python/api/msrest/msrest.polling.lropoller?view=azure-python
 poller = resource_client.resource_groups.delete(resource_group_name=resource_group_name)
 poller.wait()
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-*  [Создайте кластер и базу данных Azure обозреватель данных](create-cluster-database-python.md) , чтобы узнать о других способах создания кластера и базы данных.
-* Дополнительные сведения о методах приема данных см. в [этой статье](ingest-data-overview.md).
-* [Краткое руководство. запрос данных в Azure обозреватель данных](web-query-data.md) Веб-интерфейс.
+*  Дополнительные сведения о других способах создания кластера и базы данных см. в статье [Создание кластера и базы данных Azure обозреватель данных](create-cluster-database-python.md).
+* Дополнительные сведения о методах приема см. в статье прием [данных в Azure обозреватель данных](ingest-data-overview.md).
+* Дополнительные сведения о веб-приложении см. в разделе [Краткое руководство. запрос данных в пользовательском веб-интерфейсе Azure обозреватель данных](web-query-data.md).
 * [Написание запросов](write-queries.md) с помощью языка запросов Kusto.

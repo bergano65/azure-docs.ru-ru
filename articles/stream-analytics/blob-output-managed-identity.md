@@ -6,12 +6,12 @@ ms.author: sacedarb
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 07/12/2019
-ms.openlocfilehash: 4215dc85da6d507b08f23cf248044ea807fe5319
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 1854a99cac3ead386f38c1c7fe27a56b672f365c
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72935134"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73664302"
 ---
 # <a name="use-managed-identity-to-authenticate-your-azure-stream-analytics-job-to-azure-blob-storage-output-preview"></a>Использование управляемого удостоверения для проверки подлинности задания Azure Stream Analytics в выходных данных хранилища BLOB-объектов Azure (Предварительная версия)
 
@@ -23,7 +23,7 @@ ms.locfileid: "72935134"
 
 1. Создайте новое Stream Analytics задание или откройте существующее задание в портал Azure. В строке меню, расположенной в левой части экрана, выберите **управляемое удостоверение** , расположенное в разделе **Настройка**. Убедитесь, что выбран параметр "использовать управляемое системой удостоверение", а затем нажмите кнопку **сохранить** в нижней части экрана.
 
-   ![Настройка управляемого удостоверения Stream Analytics](./media/stream-analytics-managed-identities-blob-output-preview/stream-analytics-enable-managed-identity.png)
+   ![Настройка управляемого удостоверения Stream Analytics](./media/common/stream-analytics-enable-managed-identity.png)
 
 2. В окне Выходные свойства приемника выходных данных хранилища BLOB-объектов Azure выберите раскрывающийся список режим проверки подлинности и щелкните **управляемое удостоверение**. Дополнительные сведения о других выходных свойствах см. в разделе сведения о [выходных данных из Azure Stream Analytics](./stream-analytics-define-outputs.md). Закончив, нажмите кнопку **Сохранить**.
 

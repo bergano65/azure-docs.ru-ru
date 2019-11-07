@@ -11,12 +11,12 @@ author: MayMSFT
 ms.reviewer: nibaccam
 ms.date: 11/04/2019
 ms.custom: seodec18
-ms.openlocfilehash: eac10c8c680caf834bbe4be18ca22a5af936c7a0
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
-ms.translationtype: HT
+ms.openlocfilehash: 08094469da87a6aae31acac599f8422487c10d28
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/04/2019
-ms.locfileid: "73497406"
+ms.locfileid: "73580732"
 ---
 # <a name="access-data-in-azure-storage-services"></a>Доступ к данным в службах хранилища Azure
 [!INCLUDE [aml-applies-to-basic-enterprise-sku](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -30,7 +30,7 @@ ms.locfileid: "73497406"
 * [Доступ к данным во время обучения](#train)
 * [Перемещение данных в Azure](#move)
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию машинное обучение Azure](https://aka.ms/AMLFree) уже сегодня.
 
@@ -163,7 +163,7 @@ datastore.upload(src_dir='your source directory',
                  show_progress=True)
 ```
 
-Параметр `target_path` указывает расположение в общей папке (или контейнере больших двоичных объектов) для передачи. По умолчанию используется значение `None`: в этом случае данные отправляются в корневой каталог. При `overwrite=True` перезапись существующих данных на `target_path`.
+Параметр `target_path` указывает расположение в общей папке (или контейнере больших двоичных объектов) для передачи. По умолчанию используется значение `None`: в этом случае данные отправляются в корневой каталог. В противном случае, если `overwrite=True` любые существующие данные в `target_path` перезаписываются.
 
 Или отправьте список отдельных файлов в хранилище данных с помощью метода `upload_files()`.
 

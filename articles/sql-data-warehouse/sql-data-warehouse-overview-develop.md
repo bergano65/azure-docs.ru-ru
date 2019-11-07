@@ -1,5 +1,5 @@
 ---
-title: Ресурсы для разработки хранилища данных в Azure | Документация Майкрософт
+title: Ресурсы для разработки хранилища данных в Azure
 description: Основные понятия разработки, проектные решения, рекомендации и методики программирования для хранилища данных SQL.
 services: sql-data-warehouse
 author: XiaoyuMSFT
@@ -10,12 +10,12 @@ ms.subservice: development
 ms.date: 08/29/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: a78d78618a4cd9bf8d2aaebbd0c0da13697549bc
-ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
+ms.openlocfilehash: a6cb7937bdd5dea9eb1a48b2b350db9077431fe0
+ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68479470"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73645617"
 ---
 # <a name="design-decisions-and-coding-techniques-for-sql-data-warehouse"></a>Проектные решения и методики программирования для хранилища данных SQL
 Ознакомьтесь со статьями о разработке, чтобы лучше понять основные проектные решения, рекомендации и методики программирования для хранилища данных SQL.
@@ -45,7 +45,7 @@ ms.locfileid: "68479470"
 * [группировка по параметрам;][group by options]
 * [присваивание значения переменной.][variable assignment]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные справочные сведения см. в статье [Темы, связанные с языком Transact-SQL](sql-data-warehouse-reference-tsql-statements.md).
 
 <!--Image references-->

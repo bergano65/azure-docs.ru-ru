@@ -4,12 +4,12 @@ ms.service: billing
 ms.topic: include
 ms.date: 11/09/2018
 ms.author: jroth
-ms.openlocfilehash: e427a7b80b28f1cc70a02890152f9f2247a8bcd2
-ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
+ms.openlocfilehash: 4bd890adcaa4982c52366faed0f2975729290360
+ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "68360290"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73612157"
 ---
 В следующей таблице перечислены ограничения, которые применяются к ресурсам Службы подготовки устройств к добавлению в Центр Интернета вещей.
 
@@ -20,7 +20,7 @@ ms.locfileid: "68360290"
 | Максимальное количество действий регистрации | 1 000 000 |
 | Максимальное количество групп регистрации | 100 |
 | Максимальное количество центров сертификации | 25 |
-| Максимальное число связанных центров Интернета вещей | 10 |
+| Максимальное число связанных центров Интернета вещей | 50 |
 | Максимальный размер сообщения | 96 КБ|
 
 

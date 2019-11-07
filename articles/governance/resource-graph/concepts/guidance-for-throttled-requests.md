@@ -6,12 +6,12 @@ ms.author: dacoulte
 ms.date: 10/18/2019
 ms.topic: conceptual
 ms.service: resource-graph
-ms.openlocfilehash: 1bbfd2a64de0b42da19d0a978874d564f1755c59
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: 2dea1c160b07ac08075dad3a1ca1f6fc753e3481
+ms.sourcegitcommit: 6c2c97445f5d44c5b5974a5beb51a8733b0c2be7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72387628"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73622651"
 ---
 # <a name="guidance-for-throttled-requests-in-azure-resource-graph"></a>Руководство по регулируемым запросам в графе ресурсов Azure
 
@@ -30,10 +30,10 @@ ms.locfileid: "72387628"
 
 В каждом ответе на запрос граф ресурсов Azure добавляет два заголовка регулирования:
 
-- `x-ms-user-quota-remaining` (int): оставшаяся квота ресурса для пользователя. Это значение соответствует количеству запросов.
+- `x-ms-user-quota-remaining` (int): оставшиеся квоты ресурсов для пользователя. Это значение соответствует количеству запросов.
 - `x-ms-user-quota-resets-after` (чч: мм: СС): период времени до сброса потребления квоты пользователем.
 
-Чтобы продемонстрировать работу заголовков, рассмотрим ответ на запрос с заголовком и значениями `x-ms-user-quota-remaining: 10` и `x-ms-user-quota-resets-after: 00:00:03`.
+Чтобы проиллюстрировать работу заголовков, рассмотрим ответ на запрос с заголовком и значениями `x-ms-user-quota-remaining: 10` и `x-ms-user-quota-resets-after: 00:00:03`.
 
 - В течение следующих 3 секунд можно отправить не более 10 запросов без регулирования.
 - В течение 3 секунд значения `x-ms-user-quota-remaining` и `x-ms-user-quota-resets-after` будут сброшены в `15` и `00:00:05` соответственно.
@@ -184,7 +184,7 @@ async Task ExecuteQueries(IEnumerable<string> queries)
 }
 ```
 
-## <a name="pagination"></a>Разбивка на страницы
+## <a name="pagination"></a>Разбиение на страницы
 
 Так как граф ресурсов Azure возвращает не более 1000 записей в одном ответе на запрос, может потребоваться выполнить [разбиение](./work-with-data.md#paging-results) запросов на страницы, чтобы получить полный набор данных, который вы ищете. Однако некоторые клиенты графа ресурсов Azure выполняют разбиение на страницы иначе, чем другие.
 
@@ -240,4 +240,4 @@ async Task ExecuteQueries(IEnumerable<string> queries)
 
 - См. язык, используемый в [начальных запросах](../samples/starter.md).
 - См. Дополнительные сведения о расширенном использовании в [расширенных запросах](../samples/advanced.md).
-- Узнайте, как [исследовать ресурсы](explore-resources.md).
+- Узнайте больше о том, как [исследовать ресурсы](explore-resources.md).

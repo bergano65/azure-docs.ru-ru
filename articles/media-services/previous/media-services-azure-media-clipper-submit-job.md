@@ -3,24 +3,24 @@ title: Отправка заданий обрезки из Azure Media Clipper |
 description: Действия для отправки заданий обрезки из Azure Media Clipper
 services: media-services
 keywords: clip;subclip;encoding;media
-author: dbgeorge
-manager: jasonsue
-ms.author: dwgeo
+author: Juliako
+manager: femila
+ms.author: juliako
 ms.date: 03/14/2019
 ms.topic: article
 ms.service: media-services
-ms.openlocfilehash: f0dc6879ccbb22dbebd57de98e4610cd593318db
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 04d0d2bb8939c8036ec6817c58f9ac2fbb3acd72
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61242860"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73684977"
 ---
 # <a name="submit-clipping-jobs-from-azure-media-clipper"></a>Отправка заданий обрезки из Azure Media Clipper 
 
 Чтобы обрабатывать отправку заданий обрезки, для Azure Media Clipper требуется реализация метода **submitSubclipCallback**. Эта функция служит для реализации отправки методом HTTP POST выходных данных Clipper в веб-службу. Эта веб-служба является местом, куда можно отправить задание кодирования. Выходные данные Clipper представляют собой либо предустановку кодирования Media Encoder Standard для преобразованных для просмотра заданий, либо полезные данные REST API для динамических вызовов фильтров манифестов. Такая модель сквозной передачи необходима, так как данные учетной записи служб мультимедиа не защищены в браузере клиента.
 
-На следующей схеме последовательностей показан рабочий процесс между клиентским браузером, веб-службой и Службами мультимедиа Azure: ![Схема последовательностей Azure Media Clipper](media/media-services-azure-media-clipper-submit-job/media-services-azure-media-clipper-sequence-diagram.PNG)
+На следующей схеме последовательностей показан рабочий процесс между клиентским браузером, веб-службой и службами мультимедиа Azure: ![Схема последовательностей Azure Media Clipper](media/media-services-azure-media-clipper-submit-job/media-services-azure-media-clipper-sequence-diagram.PNG)
 
 На предыдущей схеме показано четыре сущности: браузер пользователя, ваша веб-служба, конечная точка CDN, на которой размещены ресурсы Clipper, и службы мультимедиа Azure. Когда конечный пользователь переходит на веб-страницу, страница получает ресурсы JavaScript Clipper и CSS из конечной точки размещения в CDN. Пользователь настраивает в браузере задание обрезки или вызов для создания фильтра динамического манифеста. Когда пользователь отправляет задание или вызов для создания фильтра, браузер помещает полезные данные задания в веб-службу, которую необходимо развернуть. Затем эта веб-служба отправляет задание обрезки или вызов для создания фильтра в службы мультимедиа Azure, используя учетные данные учетной записи служб мультимедиа.
 

@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: librown, aakapo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b5758b1fbb9d311219e3dc4dd483691f6c9d80c1
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.openlocfilehash: 9b57fe9241a6a29e6f5ce12b7a1412455df4a001
+ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73172164"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73603477"
 ---
 # <a name="enable-passwordless-security-key-sign-in-to-windows-10-devices-preview"></a>Включение входа с помощью ключа безопасности без пароля на устройствах Windows 10 (Предварительная версия)
 
@@ -29,19 +29,13 @@ ms.locfileid: "73172164"
 
 ## <a name="requirements"></a>Требования
 
-| тип устройства; | присоединение к Azure AD; | присоединение к Azure AD (гибридные устройства). |
-| --- | --- | --- |
-| [Многофакторная идентификация Azure](howto-mfa-getstarted.md) | X | X |
-| [Общая Предварительная версия регистрации сведений о безопасности](concept-registration-mfa-sspr-combined.md) | X | X |
-| Совместимые [ключи безопасности FIDO2](concept-authentication-passwordless.md#fido2-security-keys) | X | X |
-| Для WebAuthN требуется Windows 10 версии 1809 или более поздней. | X | X |
-| Для [устройств, присоединенных к Azure AD](../devices/concept-azure-ad-join.md) , требуется Windows 10 версии 1809 или более поздней. | X |   |
-| Для [гибридных устройств, присоединенных к Azure AD](../devices/concept-azure-ad-join-hybrid.md) , требуется Windows 10 Insider Build 18945 или более поздней версии |   | X |
-| Полностью исправленные контроллеры домена Windows Server 2016/2019. |   | X |
-| Обновление до последней версии [Azure AD Connect](../hybrid/how-to-connect-install-roadmap.md#install-azure-ad-connect) |   | X |
-| [Microsoft Intune](https://docs.microsoft.com/intune/fundamentals/what-is-intune) (необязательно) | X | X |
-| Пакет подготовки (необязательно) | X | X |
-| Групповая политика (необязательно) |   | X |
+- [Многофакторная идентификация Azure](howto-mfa-getstarted.md)
+- [Общая Предварительная версия регистрации сведений о безопасности](concept-registration-mfa-sspr-combined.md)
+- Совместимые [ключи безопасности FIDO2](concept-authentication-passwordless.md#fido2-security-keys)
+- Для WebAuthN требуется Windows 10 версии 1809 или более поздней.
+- Для [устройств, присоединенных к Azure AD](../devices/concept-azure-ad-join.md) , требуется Windows 10 версии 1809 или более поздней.
+- [Microsoft Intune](https://docs.microsoft.com/intune/fundamentals/what-is-intune) (необязательно)
+- Пакет подготовки (необязательно)
 
 ### <a name="unsupported-scenarios"></a>Неподдерживаемые сценарии
 
@@ -56,8 +50,6 @@ ms.locfileid: "73172164"
 
 Устройства, присоединенные к Azure AD, для которых выполняется пилотное развертывание, должны работать под управлением Windows 10 версии 1809 или более поздней. В Windows 10 версии 1903 или более поздней.
 
-Гибридные устройства, присоединенные к Azure AD, для которых вы будете выполнять пилотное развертывание, должны работать под Windows 10 Insider Build 18945 или более поздней версии.
-
 ## <a name="enable-security-keys-for-windows-sign-in"></a>Включение ключей безопасности для входа в Windows
 
 Организации могут использовать один или несколько из следующих методов, чтобы включить использование ключей безопасности для входа в Windows в соответствии с требованиями Организации.
@@ -65,16 +57,10 @@ ms.locfileid: "73172164"
 - [Включение с помощью Intune](#enable-with-intune)
    - [Целевое развертывание Intune](#targeted-intune-deployment)
 - [Включить с помощью пакета подготовки](#enable-with-a-provisioning-package)
-- [Включить с групповая политика (только гибридные устройства, присоединенные к Azure AD)](#enable-with-group-policy)
-
-> [!IMPORTANT]
-> Организации с **гибридными устройствами, присоединенными к Azure AD** , **также** должны выполнить действия, описанные в статье [Включение проверки подлинности FIDO2 в локальные ресурсы](howto-authentication-passwordless-security-key-on-premises.md) перед тем, как будет работать проверка подлинности Windows 10 FIDO2 с ключом безопасности.
->
-> Организации с **устройствами, присоединенными к Azure AD** , должны сделать это, прежде чем их устройства смогут проходить проверку подлинности в локальных ресурсах с помощью ключей безопасности FIDO2.
 
 ### <a name="enable-with-intune"></a>Включение с помощью Intune
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 1. Перейдите к **Microsoft Intune** > **регистрации устройств** > **регистрации Windows** > **Свойства** **Windows Hello для бизнеса** > .
 1. В разделе **Параметры** установите для параметра **Вход использовать ключи безопасности** значение **включено**.
 
@@ -84,7 +70,7 @@ ms.locfileid: "73172164"
 
 Чтобы включить поставщик учетных данных для конкретных групп устройств, используйте следующие пользовательские параметры через Intune.
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 1. Перейдите в **Microsoft Intune** > **Конфигурация устройства** > **Профили** > **создать профиль**.
 1. Настройте новый профиль со следующими параметрами.
    1. Имя: ключи безопасности для входа в Windows
@@ -124,18 +110,7 @@ ms.locfileid: "73172164"
 > [!NOTE]
 > Устройства под управлением Windows 10 версии 1809 также должны включать режим общего компьютера (Енаблешаредпкмоде). Сведения о включении этой функции можно найти в статье [Настройка общего или ГОСТЕВОГО компьютера с Windows 10](https://docs.microsoft.com/windows/configuration/set-up-shared-or-guest-pc).
 
-### <a name="enable-with-group-policy"></a>Включить с помощью групповая политика
-
-Для **гибридных устройств, присоединенных к Azure AD** , организации могут настроить следующий параметр Групповая политика, чтобы включить вход с помощью ключа безопасности Fido.
-
-Этот параметр можно найти в разделе **Конфигурация компьютера** > **Административные шаблоны** > **системное** > **Вход** > **включить вход ключа безопасности**.
-
-- **Включение этой** политики позволит пользователям входить с помощью ключей безопасности.
-- Если задать для этой политики значение " **отключено** " или " **не настроено** ", пользователи не смогут войти в систему с помощью ключей безопасности.
-
-Для этого параметра групповая политика требуется обновленная версия шаблона групповая политика `credentialprovider.admx`. Этот новый шаблон доступен в следующей версии Windows Server и Windows 10 20H1. Этот параметр можно управлять с помощью устройства, работающего под управлением одной из этих новых версий Windows, или централизованно, следуя указаниям в разделе "поддержка", [а также о создании центрального хранилища для групповая политика административные шаблоны в Windows и управлении им](https://support.microsoft.com/help/3087759/how-to-create-and-manage-the-central-store-for-group-policy-administra).
-
-## <a name="sign-in-with-fido2-security-key"></a>Вход с помощью ключа безопасности FIDO2
+## <a name="sign-in-to-windows-with-a-fido2-security-key"></a>Вход в Windows с помощью ключа безопасности FIDO2
 
 В приведенном ниже примере пользователь Bala Сандху уже предоставил свой ключ безопасности FIDO2, выполнив действия, описанные в предыдущей статье, и [Включите вход с помощью ключа безопасности без пароля](howto-authentication-passwordless-security-key.md#user-registration-and-management-of-fido2-security-keys). Bala может выбрать поставщик учетных данных ключа безопасности на экране блокировки Windows 10 и вставить ключ безопасности для входа в Windows.
 
@@ -157,9 +132,29 @@ ms.locfileid: "73172164"
    1. Подкатегория: FIDO
 1. Чтобы записать журналы, используйте параметр: **повторно создать мою проблему**
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 
-[Разрешение доступа к локальным ресурсам для Azure AD и гибридных устройств, присоединенных к Azure AD](howto-authentication-passwordless-security-key-on-premises.md)
+### <a name="does-this-work-in-my-on-premises-environment"></a>Работает ли это в локальной среде?
+
+Эта функция не работает в чистой локальной среде домен Active Directory служб (AD DS).
+
+### <a name="my-organization-requires-two-factor-authentication-to-access-resources-what-can-i-do-to-support-this-requirement"></a>Моей организации требуется двухфакторная проверка подлинности для доступа к ресурсам, что можно сделать для поддержки этого требования?
+
+Ключи безопасности бывают разными конструктивными факторами. Обратитесь к изготовителю устройства, чтобы обсудить, как можно включить устройства с помощью ПИН-кода или биометрической метрики в качестве второго фактора.
+
+### <a name="can-admins-set-up-security-keys"></a>Могут ли администраторы настраивать ключи безопасности?
+
+Мы работаем над этой возможностью в общедоступной версии этой функции.
+
+### <a name="where-can-i-go-to-find-compliant-security-keys"></a>Где можно найти соответствующие ключи безопасности?
+
+[Ключи безопасности FIDO2](concept-authentication-passwordless.md#fido2-security-keys)
+
+### <a name="what-do-i-do-if-i-lose-my-security-key"></a>Что делать, если я потеряли ключ безопасности?
+
+Вы можете удалить ключи из портал Azure, перейдя на страницу сведений о безопасности и удалив ключ безопасности.
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Дополнительные сведения о регистрации устройств](../devices/overview.md)
 

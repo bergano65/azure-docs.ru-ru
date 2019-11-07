@@ -1,5 +1,5 @@
 ---
-title: Мониторинг производительности Базы данных SQL Azure с помощью динамических административных представлений | Документация Майкрософт
+title: Мониторинг производительности базы данных SQL Azure с помощью динамических административных представлений
 description: Узнайте, как выявлять и диагностировать распространенные проблемы производительности с помощью динамических представлений управления для мониторинга Базы данных SQL Microsoft Azure.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: juliemsft
 ms.author: jrasnick
 ms.reviewer: carlrab
 ms.date: 12/19/2018
-ms.openlocfilehash: a630ceb1748f38dc169a4ebabcbb4e021de4273c
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: c7eed3fc8e9d0328a3e793e1ff4b3652ab86e2bc
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68881559"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73687751"
 ---
 # <a name="monitoring-performance-azure-sql-database-using-dynamic-management-views"></a>Мониторинг производительности Базы данных SQL Azure с помощью динамических административных представлений
 
@@ -130,8 +130,8 @@ ORDER BY end_time DESC;
 
 Если достигнут лимит операций ввода-вывода, у вас есть два варианта:
 
-- Вариант 1: повышение объема вычислительных ресурсов или уровня служб.
-- Вариант 2. определение и настройка запросов, потребляющих наибольшее количество операций ввода-вывода.
+- Вариант 1: повышение объема вычислительных ресурсов или уровня служб.
+- Вариант 2: определение и настройка запросов, потребляющих наибольший объем операций ввода-вывода.
 
 #### <a name="view-buffer-related-io-using-the-query-store"></a>Просмотр операций ввода-вывода, связанных с буфером, с помощью хранилища запросов
 
@@ -237,7 +237,7 @@ GO
 
 ## <a name="identify-tempdb-performance-issues"></a>Поиск проблем производительности `tempdb`
 
-При определении проблем с производительностью операций ввода-вывода главные типы ожидания, связанные с проблемами `tempdb`, — `PAGELATCH_*` (не `PAGEIOLATCH_*`). Однако ожидания `PAGELATCH_*` не всегда означают состязание `tempdb`.  Этот тип ожидания может также указывать на состязание за страницы данных объекта пользователя из-за одновременных запросов к одной странице данных. `tempdb` Для дальнейшей проверки конфликтов используйте [sys. DM _exec_requests](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql) , чтобы убедиться, что значение wait_resource начинается `2:x:y` с, где 2 — `tempdb` это идентификатор базы данных, `x` — идентификатор файла, а `y` — идентификатор страницы.  
+При определении проблем с производительностью операций ввода-вывода главные типы ожидания, связанные с проблемами `tempdb`, — `PAGELATCH_*` (не `PAGEIOLATCH_*`). Однако ожидания `PAGELATCH_*` не всегда означают состязание `tempdb`.  Этот тип ожидания может также указывать на состязание за страницы данных объекта пользователя из-за одновременных запросов к одной странице данных. Чтобы уточнить `tempdb` состязание, используйте [sys. DM _exec_requests](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql) , чтобы убедиться, что значение wait_resource начинается с `2:x:y` где 2 `tempdb` — это идентификатор базы данных, `x` — это идентификатор файла, а `y` — идентификатор страницы.  
 
 Для состязаний за tempdb рекомендуется сократить или повторно написать код приложения, который зависит от `tempdb`.  Распространенные области использования `tempdb`:
 
@@ -732,6 +732,6 @@ ORDER BY start_time DESC
     ORDER BY highest_cpu_queries.total_worker_time DESC;
     ```
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>Дополнительные материалы
 
 [Введение в базы данных SQL](sql-database-technical-overview.md)

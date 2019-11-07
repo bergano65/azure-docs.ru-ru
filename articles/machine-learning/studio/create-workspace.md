@@ -1,6 +1,6 @@
 ---
-title: Создание рабочей области Машинное обучение Studio (классическая модель)
-titleSuffix: Azure Machine Learning Studio (classic)
+title: Создание рабочей области
+titleSuffix: ML Studio (classic) Azure
 description: Чтобы использовать Машинное обучение Azure Studio (классическая модель), необходимо иметь рабочую область Машинное обучение Studio (классическая). Такая рабочая область содержит инструменты, необходимые для создания, публикации экспериментов и управления ими.
 services: machine-learning
 ms.service: machine-learning
@@ -10,12 +10,12 @@ author: xiaoharper
 ms.author: amlstudiodocs
 ms.custom: seodec18
 ms.date: 12/07/2017
-ms.openlocfilehash: 6302ded4ab951d0490b128989a45c41c013db7ea
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: c5aa5a0ea4a74c2047e600fa3c46e226d12f69c0
+ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73493197"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73647096"
 ---
 # <a name="create-and-share-an-azure-machine-learning-studio-classic-workspace"></a>Создание и совместное использование рабочей области Машинное обучение Azure Studio (классическая модель)
 

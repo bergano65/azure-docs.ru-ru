@@ -1,5 +1,5 @@
 ---
-title: Приступая к работе с межбазовыми запросами (вертикальное секционирование) | Документация Майкрософт
+title: Начало работы с межбазовыми запросами (вертикальное секционирование)
 description: Узнайте, как использовать запрос к эластичной базе данных в вертикально секционированных базах данных.
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 01/25/2019
-ms.openlocfilehash: a6a87f90586dc4392dc1304a83349bc386590ee4
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: b6d9ba0c57850c61626d7b6d99fcb1fffc2d3c25
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68568591"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73690404"
 ---
 # <a name="get-started-with-cross-database-queries-vertical-partitioning-preview"></a>Приступая к работе с межбазовыми запросами (вертикальное секционирование) (предварительная версия)
 
@@ -26,7 +26,7 @@ ms.locfileid: "68568591"
 
 Дополнительные сведения о функции запросов к эластичной базе данных см. в [этой статье](sql-database-elastic-query-overview.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Требуется разрешение ALTER ANY EXTERNAL DATA SOURCE. Это разрешение включено в разрешение ALTER DATABASE. Для обращения к базовому источнику данных необходимы разрешения ALTER ANY EXTERNAL DATA SOURCE.
 
@@ -110,7 +110,7 @@ ms.locfileid: "68568591"
 
 Сведения о ценах см. на [странице с ценами на Базу данных SQL](https://azure.microsoft.com/pricing/details/sql-database).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Общие сведения об эластичных запросах см. в разделе [Обзор эластичных запросов к базе данных SQL Azure (предварительная версия)](sql-database-elastic-query-overview.md).
 * Описание синтаксиса и примеры запросов вертикально секционированных данных см. в разделе [Запрос к нескольким облачным базам данных с разными схемами (предварительная версия)](sql-database-elastic-query-vertical-partitioning.md).

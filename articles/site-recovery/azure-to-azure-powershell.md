@@ -1,5 +1,5 @@
 ---
-title: Azure Site Recovery. Настройка и тестирование аварийного восстановления для виртуальных машин Azure с помощью Azure PowerShell | Документация Майкрософт
+title: Аварийное восстановление для виртуальных машин Azure с помощью Azure PowerShell и Azure Site Recovery
 description: Сведения о настройке аварийного восстановления в Azure Site Recovery для виртуальных машин Azure с помощью Azure PowerShell.
 services: site-recovery
 author: sujayt
@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 3/29/2019
 ms.author: sutalasi
-ms.openlocfilehash: fe74080387f76b858f60c5285a98c9b67f051449
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: aa91725daf36113334849dd15dd01b6ce6ed4389
+ms.sourcegitcommit: 6c2c97445f5d44c5b5974a5beb51a8733b0c2be7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67671887"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73621093"
 ---
 # <a name="set-up-disaster-recovery-for-azure-virtual-machines-using-azure-powershell"></a>Настройка аварийного восстановления для виртуальных машин Azure с помощью Azure PowerShell
 
@@ -39,21 +39,21 @@ ms.locfileid: "67671887"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы:
 - Вам должны быть понятны [архитектура и компоненты сценария](azure-to-azure-architecture.md).
 - [Ознакомьтесь](azure-to-azure-support-matrix.md) с требованиями поддержки для всех компонентов.
-- У вас есть Azure PowerShell `Az` модуля. Если вам необходимо установить или обновить Azure PowerShell, ознакомьтесь с этим [руководством по установке и настройке Azure PowerShell](/powershell/azure/install-az-ps).
+- У вас есть модуль Azure PowerShell `Az`. Если вам необходимо установить или обновить Azure PowerShell, ознакомьтесь с этим [руководством по установке и настройке Azure PowerShell](/powershell/azure/install-az-ps).
 
 ## <a name="log-in-to-your-microsoft-azure-subscription"></a>Вход в подписку Microsoft Azure
 
-Войдите в свою подписку Azure, используя командлет Connect-AzAccount
+Войдите в подписку Azure с помощью командлета Connect-Азаккаунт.
 
 ```azurepowershell
 Connect-AzAccount
 ```
-Выберите подписку Azure. Используйте командлет Get-AzSubscription, чтобы получить список подписок Azure, которые у вас есть доступ к. Выберите подписку Azure для работы с помощью командлета Select-AzSubscription.
+Выберите подписку Azure. Используйте командлет Get-Азсубскриптион, чтобы получить список подписок Azure, к которым у вас есть доступ. Выберите подписку Azure для работы с помощью командлета Select-Азсубскриптион.
 
 ```azurepowershell
 Select-AzSubscription -SubscriptionId "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
@@ -154,7 +154,7 @@ a2aDemoRecoveryVault a2ademorecoveryrg Microsoft.RecoveryServices Vaults
 Remove-Item -Path $Vaultsettingsfile.FilePath
 ```
 
-Для выполнения миграции Azure в Azure можно задать контекст хранилища для созданного хранилища: 
+Для миграции из Azure в Azure можно задать контекст хранилища для вновь созданного хранилища: 
 
 ```azurepowershell
 
@@ -594,9 +594,9 @@ Tasks            : {Prerequisite check, Commit}
 Errors           : {}
 ```
 
-## <a name="reprotect-and-failback-to-source-region"></a>Повторно включить защиту и восстановление размещения в исходном регионе
+## <a name="reprotect-and-failback-to-source-region"></a>Повторное включение защиты и восстановление размещения в исходном регионе
 
-После отработки отказа когда вы будете готовы перейти обратно в исходный регион начала обратной репликации для репликации защищенный элемент, с помощью командлета Update-AzRecoveryServicesAsrProtectionDirection.
+После отработки отказа, когда вы будете готовы вернуться к исходному региону, запустите обратную репликацию для защищенного элемента репликации с помощью командлета Update-Азрековерисервицесасрпротектиондиректион.
 
 ```azurepowershell
 #Create Cache storage account for replication logs in the primary region
@@ -609,15 +609,15 @@ Update-AzRecoveryServicesAsrProtectionDirection -ReplicationProtectedItem $Repli
 -ProtectionContainerMapping $RecoveryProtContainer -LogStorageAccountId $WestUSCacheStorageAccount.Id -RecoveryResourceGroupID $sourceVMResourcegroup.Id
 ```
 
-После завершения повторного включения защиты вы можете запустить отработку отказа в обратном направлении (Западная часть США, восточная часть США) и восстановление размещения в исходном регионе.
+После завершения повторной защиты можно инициировать отработку отказа в обратном направлении (Западная часть США в Восточная часть США) и восстановление размещения в исходном регионе.
 
 ## <a name="disable-replication"></a>Отключение репликации
 
-Вы можете отключить с помощью командлета Remove-ASRReplicationProtectedItem.
+Вы можете отключить репликацию с помощью командлета Remove-ASRReplicationProtectedItem.
 
 ```azurepowershell
 Remove-ASRReplicationProtectedItem -ReplicationProtectedItem $ReplicatedItem
 ```
 
-## <a name="next-steps"></a>Следующие шаги
-Представление [Справочник по PowerShell для Azure Site Recovery](https://docs.microsoft.com/powershell/module/az.RecoveryServices) чтобы узнать, как выполнять другие задачи, такие как создание планов восстановления и тестирование отработки отказа по планам восстановления с помощью PowerShell.
+## <a name="next-steps"></a>Дальнейшие действия
+Просмотрите [Справочник по Azure Site Recovery PowerShell](https://docs.microsoft.com/powershell/module/az.RecoveryServices) , чтобы узнать, как можно выполнять другие задачи, такие как создание планов восстановления и тестирование отработки отказа планов восстановления с помощью PowerShell.

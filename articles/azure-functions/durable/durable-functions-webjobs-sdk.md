@@ -9,12 +9,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 04/25/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 930a0c6e854823189bc3bf561bd42027e56f5600
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 06f2019dbaff390e88c73d1aae7a635a34a64721
+ms.sourcegitcommit: b2fb32ae73b12cf2d180e6e4ffffa13a31aa4c6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70086929"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73614614"
 ---
 # <a name="how-to-run-durable-functions-as-webjobs"></a>Запуск Устойчивые функции как веб-заданий
 
@@ -22,9 +22,9 @@ ms.locfileid: "70086929"
 
 Расширения [Функций Azure](../functions-overview.md) и [устойчивых функций](durable-functions-overview.md) созданы на основе [пакета SDK для веб-заданий](../../app-service/webjobs-sdk-how-to.md). Узел задания в пакете SDK веб-заданий — это среда выполнения в функциях Azure. Если вам нужно управлять поведением способами, невозможными в функциях Azure, вы можете разрабатывать и запускать Устойчивые функции с помощью пакета SDK для веб-заданий самостоятельно.
 
-В версии 3. x пакета SDK веб-заданий узел является реализацией `IHost`, а в версии 2. x `JobHost` используется объект.
+В версии 3. x пакета SDK веб-заданий узел является реализацией `IHost`, а в версии 2. x используется объект `JobHost`.
 
-Образец устойчивые функции цепочек доступен в пакете SDK для веб-заданий версии 2. x: Скачайте или клонировать [репозиторий устойчивые функции](https://github.com/azure/azure-functions-durable-extension/)и перейдите к папке *Samples\\вебжобссдк\\chaining* .
+Образец Устойчивые функции цепочки доступен в пакете SDK для веб-заданий версии 2. x: Скачайте или клонировать [репозиторий устойчивые функции](https://github.com/azure/azure-functions-durable-extension/)и перейдите к *примерам\\вебжобссдк\\* .
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -52,9 +52,9 @@ ms.locfileid: "70086929"
 
 Чтобы запустить Устойчивые функции как веб-задания, необходимо сначала создать консольное приложение. Проект пакета SDK для веб-заданий — это просто проект консольного приложения с установленными соответствующими пакетами NuGet.
 
-В диалоговом окне **Новый проект** Visual Studio выберите > классическое консольное**приложение Windows (.NET Framework)** . В файле проекта `TargetFrameworkVersion` должна иметь значение `v4.6.1`.
+В диалоговом окне **Новый проект** Visual Studio выберите **классический рабочий стол Windows** > **консольное приложение (.NET Framework)** . В файле проекта `TargetFrameworkVersion` должна иметь значение `v4.6.1`.
 
-В Visual Studio также есть шаблон проекта веб-задания, который можно использовать, выбрав **Cloud** > **веб-задание Azure (.NET Framework)** . Этот шаблон устанавливает множество пакетов, некоторые из которых могут не потребоваться.
+Visual Studio также имеет шаблон проекта веб-задания, который можно использовать, выбрав **Cloud** > **веб-задание Azure (.NET Framework)** . Этот шаблон устанавливает множество пакетов, некоторые из которых могут не потребоваться.
 
 ## <a name="install-nuget-packages"></a>Установка пакетов Nuget
 
@@ -63,7 +63,7 @@ ms.locfileid: "70086929"
 ```powershell
 Install-Package Microsoft.Azure.WebJobs.Extensions -version 2.2.0
 Install-Package Microsoft.Extensions.Logging -version 2.0.1
-Install-Package Microsoft.Azure.WebJobs.Extensions.DurableTask -version 1.4.0
+Install-Package Microsoft.Azure.WebJobs.Extensions.DurableTask -version 1.8.3
 ```
 
 Вам также понадобятся регистраторы. Следующие команды устанавливают поставщик Application Insights Azure и `ConfigurationManager`. `ConfigurationManager` позволяет получить ключ инструментирования Application Insights из параметров приложения.
@@ -124,14 +124,14 @@ static void Main(string[] args)
 }
 ```
 
-## <a name="functions"></a>Функции
+## <a name="functions"></a>Функции Azure
 
 Устойчивые функции в контексте веб-заданий несколько отличается от Устойчивые функции в контексте функций Azure. Важно помнить о различиях при написании кода.
 
 Пакет SDK для веб-заданий не поддерживает следующие возможности Функций Azure:
 
 * [Атрибут FunctionName](#functionname-attribute)
-* [триггером HTTP](#http-trigger)
+* [Триггер HTTP](#http-trigger)
 * [API управления HTTP устойчивых функций](#http-management-api)
 
 ### <a name="functionname-attribute"></a>Атрибут FunctionName
@@ -162,7 +162,7 @@ public static async Task CronJob(
 * `RaiseEventAsync`
 * `TerminateAsync`
 
-Функция клиента оркестрации в образце проекта запускает функцию Orchestrator, а затем переходит в цикл, который вызывается `GetStatusAsync` каждые 2 секунды:
+Функция клиента оркестрации в образце проекта запускает функцию Orchestrator, а затем переходит в цикл, который вызывает `GetStatusAsync` каждые 2 секунды:
 
 ```cs
 string instanceId = await client.StartNewAsync(nameof(HelloSequence), input: null);
@@ -197,9 +197,9 @@ while (true)
 
 1. Если вы хотите просмотреть журналы в Application Insights при локальном запуске проекта:
 
-    1\. Создайте ресурс Application Insights и используйте для него **Общий** тип приложения.
+    а. Создайте ресурс Application Insights и используйте для него **Общий** тип приложения.
 
-    2\. Сохраните ключ инструментирования в файл *App.config*.
+    b. Сохраните ключ инструментирования в файл *App.config*.
 
 1. Запустите проект.
 
@@ -207,7 +207,7 @@ while (true)
 
 1. Создайте веб-приложение и учетную запись хранения.
 
-1. В веб-приложении сохраните строку подключения к хранилищу в параметре приложения с `AzureWebJobsStorage`именем.
+1. В веб-приложении сохраните строку подключения к хранилищу в параметре приложения с именем `AzureWebJobsStorage`.
 
 1. Создайте ресурс Application Insights и используйте для него **Общий** тип приложения.
 
@@ -221,7 +221,7 @@ while (true)
 
 Основным изменением является использование .NET Core вместо .NET Framework. Чтобы создать проект пакета SDK 3. x для веб-заданий, инструкции одинаковы, за исключением следующих.
 
-1. Создайте консольное приложение .NET Core. В диалоговом окне **Новый проект** Visual Studio выберите Консольное приложение **.NET Core** >  **(.NET Core)** . Файл проекта указывает, что `TargetFramework` является `netcoreapp2.x`.
+1. Создайте консольное приложение .NET Core. В диалоговом окне Visual Studio **New Project (новый проект** ) выберите **.NET Core** > **консольное приложение (.NET Core)** . Файл проекта указывает, что `TargetFramework` является `netcoreapp2.x`.
 
 1. Выберите версию пакета SDK для веб-заданий версии 3. x следующих пакетов:
 
@@ -238,7 +238,7 @@ while (true)
         }
     ```
 
-1. Измените код `Main` метода, чтобы сделать это. Ниже приведен пример:
+1. Чтобы сделать это, измените код метода `Main`. Ниже приведен пример:
 
    ```cs
    static void Main(string[] args)
@@ -274,6 +274,6 @@ while (true)
    }
    ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о пакете SDK для веб-заданий см. в статье [Использование пакета SDK WebJobs для фоновой обработки управления событиями](../../app-service/webjobs-sdk-how-to.md).

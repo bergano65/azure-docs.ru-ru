@@ -1,5 +1,5 @@
 ---
-title: Высокая производительность, перекрестное определение платформы с помощью ONNX
+title: 'ONNX: определение высокой производительности, кросс-платформенного вывода'
 titleSuffix: Azure Machine Learning
 description: Узнайте, как использовать открытый обмен нейронными сетями (ONNX) для оптимизации вывода модели машинного обучения.
 services: machine-learning
@@ -11,12 +11,12 @@ ms.author: prasantp
 author: prasanthpul
 ms.date: 08/15/2019
 ms.custom: seodec18
-ms.openlocfilehash: dc4a5984f42e87aa42c6873bb1ee63d66744e633
-ms.sourcegitcommit: 87efc325493b1cae546e4cc4b89d9a5e3df94d31
+ms.openlocfilehash: c94d36065b27b0afcaeb214b8a86e5e2a09df14b
+ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73053582"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73648019"
 ---
 # <a name="onnx-and-azure-machine-learning-create-and-accelerate-ml-models"></a>ONNX и Машинное обучение Azure: создание и ускорение моделей машинного обучения
 

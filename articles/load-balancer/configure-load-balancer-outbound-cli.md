@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/01/2019
 ms.author: allensu
-ms.openlocfilehash: 837df78ea76451c7dc5e16efde0e90b780b6ee50
-ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
+ms.openlocfilehash: 503c8f71b7e26cfe6803a6df1d3fec9ef55cd5c3
+ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68275711"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73571134"
 ---
 # <a name="configure-load-balancing-and-outbound-rules-in-standard-load-balancer-using-azure-cli"></a>Настройка правил балансировки нагрузки и правил для исходящего трафика в Load Balancer (цен. категория "Стандартный") с использованием Azure CLI
 
@@ -49,7 +49,7 @@ ms.locfileid: "68275711"
     --resource-group myresourcegroupoutbound \
     --name myvnetoutbound \
     --address-prefix 192.168.0.0/16 \
-    --subnet-name mysubnetoutbound
+    --subnet-name mysubnetoutbound \
     --subnet-prefix 192.168.0.0/24
 ```
 
@@ -179,7 +179,7 @@ az network lb outbound-rule create \
   az group delete --name myresourcegroupoutbound
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Изучая эту статью, вы создали Load Balancer (цен. категория "Стандартный"), настроили правила балансировки нагрузки для входящего трафика, а также настроили проверку работоспособности для виртуальных машин в серверном пуле. Чтобы узнать больше об Azure Load Balancer, ознакомьтесь с другими руководствами по этой службе.
 
 > [!div class="nextstepaction"]

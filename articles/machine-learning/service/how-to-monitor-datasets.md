@@ -1,7 +1,7 @@
 ---
 title: Анализ и отслеживание смещения данных в наборах (Предварительная версия)
 titleSuffix: Azure Machine Learning
-description: Создание Машинное обучение Azure наборов данных мониторы (Предварительная версия), отслеживание смещения данных в наборах и оповещений о настройке.
+description: Создание Машинное обучение Azure наборов данных. мониторы (Предварительная версия), отслеживание смещения данных в наборах и Настройка оповещений.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,12 +10,12 @@ ms.reviewer: nibaccam
 ms.author: copeters
 author: lostmygithubaccount
 ms.date: 11/04/2019
-ms.openlocfilehash: 88da346b3367ffd20d1a28d1d8cc45364e4f862f
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
-ms.translationtype: HT
+ms.openlocfilehash: 6fa7ee6663aae24451af195de4a8225c7a6b351e
+ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73515295"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73647147"
 ---
 # <a name="detect-data-drift-preview-on-datasets"></a>Обнаружение смещения данных (Предварительная версия) в наборах
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -31,7 +31,10 @@ ms.locfileid: "73515295"
 
 Метрики и аналитика доступны в ресурсе [Azure Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview) , связанном с рабочей областью службы машинное обучение Azure.
 
-## <a name="prerequisites"></a>Технические условия
+> [!Important]
+> Обратите внимание, что отслеживание смещения данных с помощью пакета SDK доступно во всех выпусках, в то время как при наблюдении за данными в студии в Интернете используется только выпуск Enterprise Edition.
+
+## <a name="prerequisites"></a>Предварительные требования
 
 Для создания мониторов набора данных и работы с ними требуются:
 * Подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию машинное обучение Azure](https://aka.ms/AMLFree) уже сегодня.
@@ -54,7 +57,7 @@ ms.locfileid: "73515295"
 
 ### <a name="dataset-monitors"></a>Мониторы набора данных 
 
-Вы можете создать монитор набора данных для обнаружения и оповещения о смещении данных в новых данных в наборе данных, анализа исторических данных для смещения и профилирования новых данных с течением времени. Алгоритм смещения данных предоставляет общую меру изменения данных и указывает, какие функции отвечают за дальнейшее исследование. Мониторы наборов данных создают ряд других метрик путем профилирования новых данных в наборе данных TimeSeries. Пользовательское оповещение можно настроить для всех метрик, созданных монитором, с помощью [Azure Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview). Мониторы наборов данных можно использовать для быстрого перехвата проблем с данными и сокращения времени отладки проблемы путем выявления вероятных причин.  
+Вы можете создать монитор набора данных для обнаружения и оповещения о смещении данных в новых данных в наборе данных, анализа исторических данных для смещения и профилирования новых данных с течением времени. Алгоритм смещения данных предоставляет общую меру изменения данных и указывает, какие функции отвечают за дальнейшее исследование. Мониторы наборов данных создают ряд других метрик путем профилирования новых данных в наборе данных `timeseries`. Пользовательское оповещение можно настроить во всех метриках, создаваемых монитором, с помощью [Azure Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview). Мониторы наборов данных можно использовать для быстрого перехвата проблем с данными и сокращения времени отладки проблемы путем выявления вероятных причин.  
 
 Концептуально существует три основных сценария настройки мониторов набора данных в Машинное обучение Azure.
 
@@ -64,15 +67,15 @@ ms.locfileid: "73515295"
 Наблюдение за набором данных временных рядов для смещения за предыдущий период времени. | Этот сценарий является более общим и может использоваться для мониторинга наборов данных, участвующих в создании вышестоящего или переходящего в процессе создания модели.  Целевой набор данных должен иметь столбец timestamp, а базовый набор данных может быть любым табличным набором данных, в котором есть функции, общие с целевым набором данных.
 Выполнение анализа прошлых данных. | Это можно использовать для понимания исторических данных и информирования решений о параметрах мониторов набора данных.
 
-## <a name="how-dataset-monitors-work-in-azure-machine-learning"></a>Как работают мониторы наборов данных в Машинное обучение Azure
+## <a name="how-dataset-can-monitor-data"></a>Как набор данных может отслеживать данные
 
 С помощью Машинное обучение Azure с помощью наборов данных отслеживается смещение. Для отслеживания смещения данных можно указать базовый набор данных — обычно это набор обучающих данных для модели. Целевой набор данных (обычно входные данные модели) сравнивается со временем для базового набора данных. Это означает, что в целевом наборе данных должен быть указан столбец timestamp.
 
-### <a name="setting-the-timeseries-trait-in-the-target-dataset"></a>Установка признака `timeseries` в целевом наборе данных
+### <a name="set-the-timeseries-trait-in-the-target-dataset"></a>Установка признака `timeseries` в целевом наборе данных
 
 Для целевого набора данных необходимо установить для него признаком `timeseries`, указав столбец отметок времени из столбца в данных или виртуального столбца, производного от шаблона пути к файлам. Это можно сделать с помощью пакета SDK для Python или Машинное обучение Azure Studio. Для добавления `timeseries` к набору данных необходимо указать столбец, представляющий "тонкую" отметку времени. Если данные разделены на структуру папок со сведениями о времени, например "{гггг/мм/дд}", можно создать виртуальный столбец с помощью параметра шаблона пути и задать его как отметку времени "грубое зерно", чтобы повысить важность функциональности временных рядов. 
 
-#### <a name="python-sdk"></a>Пакет Python SDK
+#### <a name="python-sdk"></a>Пакет SDK для Python
 
 Метод [`Dataset`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py#with-timestamp-columns-fine-grain-timestamp--coarse-grain-timestamp-none--validate-false-) класса " [`with_timestamp_columns()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py#with-timestamp-columns-fine-grain-timestamp--coarse-grain-timestamp-none--validate-false-) определяет столбец временной метки для набора данных. 
 
@@ -81,21 +84,27 @@ from azureml.core import Workspace, Dataset, Datastore
 
 # get workspace object
 ws = Workspace.from_config()
+
 # get datastore object 
 dstore = Datastore.get(ws, 'your datastore name')
+
 # specify datastore paths
 dstore_paths = [(dstore, 'weather/*/*/*/*/data.parquet')]
+
 # specify partition format
 partition_format = 'weather/{state}/{date:yyyy/MM/dd}/data.parquet'
+
 # create the Tabular dataset with 'state' and 'date' as virtual columns 
 dset = Dataset.Tabular.from_parquet_files(path=dstore_paths, partition_format=partition_format)
+
 # assign the timestamp attribute to a real or virtual column in the dataset
 dset = dset.with_timestamp_columns('date')
+
 # register the dataset as the target dataset
 dset = dset.register(ws, 'target')
 ```
 
-Полный пример использования `timeseries`ных признаков наборов данных см. в [примере записной книжки](http://aka.ms/azureml-tsd-notebook) или в [документации по пакету SDK для наборов данных](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py#with-timestamp-columns-fine-grain-timestamp--coarse-grain-timestamp-none--validate-false-).
+Полный пример использования `timeseries`ных признаков наборов данных см. в [примере записной книжки](https://aka.ms/azureml-tsd-notebook) или в [документации по пакету SDK для наборов данных](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py#with-timestamp-columns-fine-grain-timestamp--coarse-grain-timestamp-none--validate-false-).
 
 #### <a name="azure-machine-learning-studio"></a>Студия машинного обучения Azure.
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-enterprise-sku-inline.md)]
@@ -124,7 +133,7 @@ dset = dset.register(ws, 'target')
 | ------- | ----------- | ---- | ------- | 
 | Имя | Имя монитора набора данных. | | Нет |
 | Базовый набор данных | Табличный набор данных, который будет использоваться в качестве базового для сравнения целевого набора данных с течением времени. | Базовый набор данных должен иметь функции, общие с целевым набором данных. Как правило, базовая папка должна иметь набор данных для обучения модели или срез целевого набора данных. | Нет |
-| Целевой набор данных | Табличный набор данных с заданным столбцом отметок времени, который будет проанализирован для смещения данных | Целевой набор данных должен иметь функции, общие с базовым набором данных, и должен быть набором данных TimeSeries, к которому добавляются новые данные. Исторические данные в целевом наборе данных можно анализировать, а также отслеживать новые данные. | Нет | 
+| Целевой набор данных | Табличный набор данных с заданным столбцом отметок времени, который будет проанализирован для смещения данных | Целевой набор данных должен иметь функции, общие с базовым набором данных, и должен быть `timeseries` набором данных, к которому добавляются новые данные. Исторические данные в целевом наборе данных можно анализировать, а также отслеживать новые данные. | Нет | 
 | Frequency | Это частота, которая будет использоваться для планирования задания конвейера и анализа исторических данных при выполнении обратной передачи. Параметры включают ежедневное, еженедельное или ежемесячное. | Настройте этот параметр, чтобы включить сравнимый размер данных в базовый план. | Нет | 
 | Функции | Список функций, которые будут анализироваться за смещение данных с течением времени | Задайте функции вывода модели для измерения смещения концепции. Не включайте функции, которые естественным образом отменяют время (месяц, год, индекс и т. д.). После настройки списка функций можно выполнить обратную засыпку и существующий монитор рассмещения данных. | Да | 
 | Целевой объект вычисления | Целевой объект Машинное обучение Azure вычислений для запуска заданий монитора набора данных. | | Да | 
@@ -170,7 +179,7 @@ dset = dset.register(ws, 'target')
 
 ### <a name="from-python-sdk"></a>Из пакета SDK для Python
 
-Подробные сведения см. в [справочной документации по пакету SDK для Python о смещении данных](http://aka.ms/datadriftapi) . 
+Подробные сведения см. в [справочной документации по пакету SDK для Python о смещении данных](https://aka.ms/datadriftapi) . 
 
 Ниже приведен пример создания монитора набора данных с помощью пакета SDK для Python.
 
@@ -181,29 +190,39 @@ from datetime import datetime
 
 # get the workspace object
 ws = Workspace.from_config()
+
 # get the target dataset
 dset = Dataset.get_by_name(ws, 'target')
+
 # set the baseline dataset
 baseline = target.time_before(datetime(2019, 2, 1))
+
 # set up feature list
 features = ['latitude', 'longitude', 'elevation', 'windAngle', 'windSpeed', 'temperature', 'snowDepth', 'stationName', 'countryOrRegion']
-# setup data drift detector
+
+# set up data drift detector
 monitor = DataDriftDetector.create_from_datasets(ws, 'drift-monitor', baseline, target, 
                                                       compute_target='cpu-cluster', 
                                                       frequency='Week', 
                                                       feature_list=None, 
                                                       drift_threshold=.6, 
                                                       latency=24)
+
 # get data drift detector by name
 monitor = DataDriftDetector.get_by_name(ws, 'drift-monitor')
+
 # update data drift detector
 monitor = monitor.update(feature_list=features)
+
 # run a backfill for January through May
 backfill1 = monitor.backfill(datetime(2019, 1, 1), datetime(2019, 5, 1))
+
 # run a backfill for May through today
 backfill1 = monitor.backfill(datetime(2019, 5, 1), datetime.today())
+
 # disable the pipeline schedule for the data drift detector
 monitor = monitor.disable_schedule()
+
 # enable the pipeline schedule for the data drift detector
 monitor = monitor.enable_schedule()
 ```
@@ -264,6 +283,30 @@ monitor = monitor.enable_schedule()
 
 ![Подробные сведения о характеристиках](media/how-to-monitor-datasets/feature-details2.png)
 
+## <a name="metrics-alerts-and-events"></a>Метрики, оповещения и события
+
+Вы можете запросить метрики в ресурсе [Azure Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview) , связанном с рабочей областью машинного обучения. Который предоставляет доступ ко всем функциям Application Insights, включая настройку для настраиваемых правил оповещений и групп действий, чтобы активировать такие действия, как, электронная почта, SMS, Push/Voice или функция Azure. Дополнительные сведения см. в полной Application Insights документации. 
+
+Чтобы приступить к работе, перейдите к портал Azure и выберите страницу **обзора** вашей рабочей области.  Связанный Application Insights ресурс находится в крайнем правом углу:
+
+[Обзор портал Azure ![](media/how-to-monitor-datasets/ap-overview.png)](media/how-to-monitor-datasets/ap-overview-expanded.png)
+
+Выберите журналы (аналитика) в разделе Мониторинг на левой панели:
+
+![Обзор Application Insights](media/how-to-monitor-datasets/ai-overview.png)
+
+Метрики монитора набора данных хранятся в виде `customMetrics`. После настройки монитора набора данных для просмотра можно написать и выполнить простой запрос:
+
+[запрос ![log Analytics](media/how-to-monitor-datasets/simple-query.png)](media/how-to-monitor-datasets/simple-query-expanded.png)
+
+Определив метрики, чтобы настроить правила оповещений, создайте новое правило генерации оповещений:
+
+![Новое правило генерации оповещений](media/how-to-monitor-datasets/alert-rule.png)
+
+Можно использовать существующую группу действий или создать новую, чтобы определить действие, выполняемое при выполнении условий набора.
+
+![Новая группа действий](media/how-to-monitor-datasets/action-group.png)
+
 ## <a name="troubleshooting"></a>Устранение неполадок
 
 Ограничения и известные проблемы:
@@ -271,8 +314,9 @@ monitor = monitor.enable_schedule()
 * Интервал времени заданий на обратную засыпку ограничен 31 интервалами для параметра частоты монитора. 
 * Ограничение функций 200, если не указан список функций (все используемые компоненты).
 * Размер вычислений должен быть достаточно большим, чтобы обрабатывать данные. 
+* Убедитесь, что набор данных содержит данные в пределах начальной и конечной даты для данного монитора.
 
-Столбцы или функции в наборе данных классифицируются по категориям или числу в зависимости от условий, приведенных в таблице ниже. Если функция не соответствует этим условиям (например, столбец строкового типа с > 100 уникальными значениями), функция удаляется из алгоритма смещения данных, но по-прежнему пройдет профилирование. 
+Столбцы или функции в наборе данных классифицируются по категориям или числу в зависимости от условий, приведенных в следующей таблице. Если функция не соответствует этим условиям (например, столбец строкового типа с > 100 уникальными значениями), функция удаляется из алгоритма смещения данных, но по-прежнему пройдет профилирование. 
 
 | Тип компонента | Тип данных | Условие | Ограничения | 
 | ------------ | --------- | --------- | ----------- |
@@ -282,4 +326,5 @@ monitor = monitor.enable_schedule()
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Перейдите в [машинное обучение Azure Studio](https://ml.azure.com) или в [записную книжку Python](https://aka.ms/datadrift-notebook) , чтобы настроить монитор набора данных.
-* Узнайте, как настроить смещение данных в [моделях, развернутых в службе Azure Kubernetes](how-to-monitor-data-drift.md).
+* См. раздел Настройка смещения данных для [моделей, развернутых в службе Azure Kubernetes](how-to-monitor-data-drift.md).
+* Настройка мониторов смещения набора данных с помощью [сетки событий](how-to-use-event-grid.md). 

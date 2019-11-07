@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 10/15/2019
-ms.openlocfilehash: 31d7299b0c14b35aad7a29c875630d8a7fa4827e
-ms.sourcegitcommit: fa5ce8924930f56bcac17f6c2a359c1a5b9660c9
+ms.openlocfilehash: d8d5ecd64ba689dc9cce342513702d8359038162
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73200584"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73682258"
 ---
 # <a name="capacity-planning-for-hdinsight-clusters"></a>Планирование загрузки кластеров HDInsight
 
@@ -31,13 +31,13 @@ ms.locfileid: "73200584"
 
 Регион Azure определяет место физической подготовки кластера. Чтобы свести к минимуму задержки при чтении и записи, кластер должен быть расположен близко к вашим данным.
 
-Служба HDInsight доступна во многих регионах Azure. Чтобы найти ближайший регион, см. раздел [доступность продуктов по регионам](https://azure.microsoft.com/en-us/global-infrastructure/services/?products=hdinsight/).
+Служба HDInsight доступна во многих регионах Azure. Чтобы найти ближайший регион, см. раздел [доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=hdinsight).
 
 ## <a name="choose-storage-location-and-size"></a>Выбор расположения и размера хранилища
 
 ### <a name="location-of-default-storage"></a>Расположение хранилища по умолчанию
 
-Хранилище по умолчанию (учетная запись хранения Azure или Azure Data Lake Storage) должно находиться том же расположении, что и кластер. Служба хранилища Azure доступна во всех расположениях. Data Lake Storage 1-го поколения доступен в некоторых регионах — см. сведения о текущей [доступности Data Lake Storage](https://azure.microsoft.com/en-us/global-infrastructure/services/?products=storage).
+Хранилище по умолчанию (учетная запись хранения Azure или Azure Data Lake Storage) должно находиться том же расположении, что и кластер. Служба хранилища Azure доступна во всех расположениях. Data Lake Storage 1-го поколения доступен в некоторых регионах — см. сведения о текущей [доступности Data Lake Storage](https://azure.microsoft.com/global-infrastructure/services/?products=storage).
 
 ### <a name="location-of-existing-data"></a>Расположение существующих данных
 
@@ -94,7 +94,7 @@ ms.locfileid: "73200584"
 
 После определения размера виртуальных машин, масштаба и типа целевого кластера проверьте текущие квоты емкости своей подписки. После достижения квоты вы не сможете развертывать новые кластеры или масштабировать существующие кластеры, добавляя дополнительные рабочие узлы. Единственное ограничение квоты является квотой на число ядер ЦП, которая существует на уровне региона для каждой подписки. Например, ваша подписка может иметь 30 основных ограничений в восточной части США. При необходимости подайте запрос на увеличение квоты, сделав следующее.
 
-1. Войдите на [портале Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 1. Выберите **Справка и поддержка** в нижней левой части страницы.
 1. Выберите **Новый запрос в службу поддержки**.
 1. В разделе **Новый запрос на поддержку** во вкладке **Основы** выберите следующие параметры:

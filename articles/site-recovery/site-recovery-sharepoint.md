@@ -1,5 +1,5 @@
 ---
-title: Настройка аварийного восстановления для многоуровневого приложения SharePoint с помощью Azure Site Recovery | Документация Майкрософт
+title: Аварийное восстановление для многоуровневого приложения SharePoint с помощью Azure Site Recovery
 description: В этой статье рассматривается настройка аварийного восстановления для многоуровневого приложения SharePoint с использованием возможностей Azure Site Recovery.
 author: sujayt
 manager: rochakm
@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 6/27/2019
 ms.author: sutalasi
-ms.openlocfilehash: e9b688d54049c21da3276a20e27dcc9ad3d4ceca
-ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
+ms.openlocfilehash: cc72cb4134e6492478805421e448df26a8dc4554
+ms.sourcegitcommit: 6c2c97445f5d44c5b5974a5beb51a8733b0c2be7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70231473"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73622407"
 ---
 # <a name="set-up-disaster-recovery-for-a-multi-tier-sharepoint-application-for-disaster-recovery-using-azure-site-recovery"></a>Настройка аварийного восстановления с помощью Azure Site Recovery для многоуровневого приложения SharePoint | Документация Майкрософт
 
@@ -65,7 +65,7 @@ Site Recovery не зависит от приложения и должна ра
 **Hyper-V** | Да | Да
 **VMware** | Да | Да
 **Физический сервер** | Да | Да
-**Таблицы Azure** | Н/Д | Да
+**Таблицы Azure** | Нет данных | Да
 
 
 ### <a name="things-to-keep-in-mind"></a>Важные аспекты
@@ -102,7 +102,7 @@ Site Recovery не зависит от приложения и должна ра
 Для сайтов, работающих с Интернетом, [создайте профиль диспетчера трафика типа "Приоритет"](../traffic-manager/traffic-manager-create-profile.md) в подписке Azure. Затем настройте профиль DNS и диспетчера трафика следующим образом.
 
 
-| **Where** | **Source** | **Цель**|
+| **Where** | **Источник** | **Цель**|
 | --- | --- | --- |
 | Общедоступное имя DNS | Общедоступное имя DNS для сайтов SharePoint <br/><br/> Например: sharepoint.contoso.com | Диспетчер трафика <br/><br/> contososharepoint.trafficmanager.net |
 | Локальное имя DNS | sharepointonprem.contoso.com | Общедоступный IP-адрес в локальной ферме |
@@ -189,7 +189,7 @@ Site Recovery не зависит от приложения и должна ра
 
 Инструкции по выполнению тестовой отработки отказа для AD и DNS см. в документе [Рекомендации по тестированию отработки отказа для AD и DNS](site-recovery-active-directory.md#test-failover-considerations).
 
-Рекомендации по выполнению тестовой отработки отказа для групп доступности SQL AlwaysOn см. в статье [выполнение приложения Dr с Azure Site Recovery и выполнение тестовой](site-recovery-sql.md#disaster-recovery-of-an-application) отработки отказа.
+Рекомендации по выполнению тестовой отработки отказа для групп доступности SQL AlwaysOn см. в статье [выполнение приложения Dr с Azure Site Recovery и выполнение тестовой отработки отказа](site-recovery-sql.md#disaster-recovery-of-an-application) .
 
 ## <a name="doing-a-failover"></a>Отработка отказа
 При выполнении отработки отказа используйте [это руководство](site-recovery-failover.md).
@@ -199,5 +199,5 @@ Site Recovery не зависит от приложения и должна ра
 3.  Щелкните "Отработка отказа".
 4.  Выберите точку восстановления, чтобы запустить отработку отказа.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Вы можете больше узнать о [репликации других приложений](site-recovery-workload.md) с помощью Site Recovery.

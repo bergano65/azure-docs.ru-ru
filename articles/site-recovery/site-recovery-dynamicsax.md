@@ -1,5 +1,5 @@
 ---
-title: Настройка аварийного восстановления для многоуровневого развертывания Dynamics AX с помощью Azure Site Recovery | Документация Майкрософт
+title: Аварийное восстановление для многоуровневых развертываний Dynamics AX с Azure Site Recovery | Документация Майкрософт
 description: В этой статье описано, как настроить аварийное восстановление для Dynamics AX с помощью Azure Site Recovery
 author: asgang
 manager: rochakm
@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 11/27/2018
 ms.author: asgang
-ms.openlocfilehash: b97bf56c23dfa96acf7cb5af5ac28b4270de117d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5b8aaff3a3418177f92c3b54fb3bb3e99f93810e
+ms.sourcegitcommit: 6c2c97445f5d44c5b5974a5beb51a8733b0c2be7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61281483"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73620751"
 ---
 # <a name="set-up-disaster-recovery-for-a-multitier-dynamics-ax-application"></a>Настройка аварийного восстановления для многоуровневого приложения Dynamics AX   
 
@@ -27,7 +27,7 @@ ms.locfileid: "61281483"
 
 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для реализации аварийного восстановления для приложения Dynamics AX с помощью Site Recovery необходимо выполнить следующие предварительные требования:
 
@@ -53,7 +53,7 @@ ms.locfileid: "61281483"
 ### <a name="protect-your-dynamics-ax-application"></a>Защита приложения Dynamics AX
 Чтобы можно было включить полные репликацию и восстановление приложения, должен быть защищен каждый компонент Dynamics AX.
 
-### <a name="1-set-up-active-directory-and-dns-replication"></a>1. Настройка репликации Active Directory и DNS
+### <a name="1-set-up-active-directory-and-dns-replication"></a>1. Настройка Active Directory и репликации DNS
 
 Служба Active Directory должна быть развернута на сайте аварийного восстановления для нормального функционирования приложения Dynamics AX. В зависимости от сложности локальной среды клиента мы рекомендуем два варианта защиты.
 
@@ -70,7 +70,7 @@ ms.locfileid: "61281483"
 ### <a name="2-set-up-sql-server-replication"></a>2. Настройка репликации SQL Server
 Технические рекомендации по решению для защиты на уровне SQL см. в статье [Защита SQL Server с помощью аварийного восстановления SQL Server и Azure Site Recovery](site-recovery-sql.md).
 
-### <a name="3-enable-protection-for-the-dynamics-ax-client-and-application-object-server-vms"></a>3. Включение защиты для клиента Dynamics AX и виртуальных машин Application Object Server
+### <a name="3-enable-protection-for-the-dynamics-ax-client-and-application-object-server-vms"></a>3. Включение защиты для виртуальных машин клиента Dynamics AX и сервера прикладных объектов
 Установите соответствующие конфигурации Site Recovery в зависимости от того, развертываются ли виртуальные машины на узле [Hyper-V](site-recovery-hyper-v-site-to-azure.md) или [VMware](site-recovery-vmware-to-azure.md).
 
 > [!TIP]
@@ -95,7 +95,7 @@ ms.locfileid: "61281483"
     ![Параметры сети](./media/site-recovery-dynamics-ax/vmpropertiesaos1.png)
 
 
-### <a name="5-create-a-recovery-plan"></a>5. Создайте план восстановления
+### <a name="5-create-a-recovery-plan"></a>5. Создание плана восстановления
 
 Вы можете создать план восстановления в Site Recovery, чтобы автоматизировать процесс отработки отказа. Добавьте в план восстановления уровень приложений и веб-уровень. Распределите их по разным группам, чтобы внешний уровень интерфейса завершал работу до уровня приложений.
 
@@ -118,12 +118,12 @@ ms.locfileid: "61281483"
 Вы можете настроить план восстановления для приложения Dynamics AX, добавив шаги, как описано ниже. На снимке выше показан полный план восстановления после добавления всех шагов.
 
 
-* **Действия по отработке отказа для SQL Server.** Сведения о конкретных шагах восстановления для SQL Server см. в статье [Настройка аварийного восстановления для SQL Server](site-recovery-sql.md).
+* **Действия по отработке отказа для SQL Server.** Сведения о конкретных шагах восстановления для SQL Server см. в статье [Защита SQL Server с помощью аварийного восстановления SQL Server и Azure Site Recovery](site-recovery-sql.md).
 
 * **Группа отработки отказа 1.** Отработка отказа для виртуальных машин Application Object Server.
 Убедитесь, что выбранная точка восстановления максимально близка к точке во времени базы данных, но не предшествует ей.
 
-* **Скрипт.** Добавление подсистемы балансировки нагрузки (только E-A).
+* **Сценарий.** Добавление подсистемы балансировки нагрузки (только E-A).
 Добавьте сценарий (с помощью службы автоматизации Azure) после группы виртуальных машин Application Object Server, чтобы добавить в нее подсистему балансировки нагрузки. Для этого можно использовать сценарий. Дополнительные сведения см. в разделе [Cloud migration and disaster recovery of load balanced multi-tier applications](https://azure.microsoft.com/blog/cloud-migration-and-disaster-recovery-of-load-balanced-multi-tier-applications-using-azure-site-recovery/) (Миграция в облако и аварийное восстановление многоуровневых приложений с балансировкой нагрузки).
 
 * **Группа отработки отказа 2.** Отработка отказа для виртуальных машин клиента Dynamics AX. Выполните отработку отказа виртуальных машин веб-уровня в рамках плана восстановления.

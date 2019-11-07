@@ -1,5 +1,5 @@
 ---
-title: 'Пример конструктора #4: классификация для прогнозирования кредитного риска (с учетом стоимости)'
+title: 'Конструктор: прогнозируемый кредитный риск (с учетом стоимости)'
 titleSuffix: Azure Machine Learning
 description: В этой статье показано, как создать сложный конвейер машинного обучения с помощью конструктора (Предварительная версия). Вы узнаете, как реализовать пользовательские скрипты Python и сравнить несколько моделей, чтобы выбрать наилучший вариант.
 services: machine-learning
@@ -10,12 +10,12 @@ author: xiaoharper
 ms.author: zhanxia
 ms.reviewer: peterlu
 ms.date: 11/04/2019
-ms.openlocfilehash: 92f8acf56d79cd641222fc897bd2c9dba4ed0940
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 7af0ee31c7d7e5dae4a38db7f6c74ff3e5f964bb
+ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73515555"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73647984"
 ---
 # <a name="sample-4---classification-with-custom-python-script-predict-credit-risk"></a>Пример 4. Классификация с помощью пользовательского скрипта Python: прогнозируемый кредитный риск
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-enterprise-sku.md)]
@@ -28,7 +28,7 @@ ms.locfileid: "73515555"
 
 [![граф конвейера](media/how-to-ui-sample-classification-predict-credit-risk-cost-sensitive/graph.png)](media/how-to-ui-sample-classification-predict-credit-risk-cost-sensitive/graph.png#lightbox)
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [aml-ui-prereq](../../../includes/aml-ui-prereq.md)]
 

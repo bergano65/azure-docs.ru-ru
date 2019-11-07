@@ -1,5 +1,5 @@
 ---
-title: Хранение учетных данных в Azure Key Vault | Документация Майкрософт
+title: Хранение учетных данных в Azure Key Vault
 description: Узнайте, как хранить учетные данные для хранилищ данных, используемых в Azure Key Vault, которые фабрика данных Azure может автоматически извлекать в среду выполнения.
 services: data-factory
 author: linda33wj
@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 03/13/2019
 ms.author: jingwang
-ms.openlocfilehash: 3f46c54edff2bc765e75742848f83d30e7aa7c09
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.openlocfilehash: 1e2458fa125ee4d223ef46001534fb7ae72b805e
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "71003403"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73684009"
 ---
 # <a name="store-credential-in-azure-key-vault"></a>Хранение учетных данных в Azure Key Vault
 
@@ -28,7 +28,7 @@ ms.locfileid: "71003403"
 
 Эта функция основана на управляемом удостоверении фабрики данных. Узнайте, как это работает из [управляемого удостоверения для фабрики данных](data-factory-service-identity.md) и убедитесь, что фабрика данных имеет связанную с ней.
 
-## <a name="steps"></a>Шаги
+## <a name="steps"></a>Действия
 
 Чтобы указать учетные данные, хранимые в Azure Key Vault, необходимо:
 
@@ -41,10 +41,10 @@ ms.locfileid: "71003403"
 
 Для связанной службы Azure Key Vault поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description (Описание) | Обязательно |
 |:--- |:--- |:--- |
-| type | Свойству type необходимо задать значение **AzureKeyVault**. | Да |
-| baseUrl | Укажите URL-адрес Azure Key Vault. | Да |
+| type | Для свойства type необходимо задать значение **AzureKeyVault**. | Да |
+| BaseUrl | Укажите URL-адрес Azure Key Vault. | Да |
 
 **С помощью пользовательского интерфейса для создания:**
 
@@ -74,7 +74,7 @@ ms.locfileid: "71003403"
 
 Следующие свойства поддерживаются при настройке поля в связанной службе, указывающей секрет хранилища ключей:
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description (Описание) | Обязательно |
 |:--- |:--- |:--- |
 | type | Для свойства type поля необходимо задать значение **AzureKeyVaultSecret**. | Да |
 | secretName | Имя секрета в Azure Key Vault. | Да |
@@ -115,5 +115,5 @@ ms.locfileid: "71003403"
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

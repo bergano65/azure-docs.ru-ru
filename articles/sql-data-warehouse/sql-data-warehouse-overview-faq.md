@@ -1,5 +1,5 @@
 ---
-title: Azure синапсе Analytics (ранее SQL DW) часто задаваемые вопросы | Документация Майкрософт
+title: Azure синапсе Analytics (ранее SQL DW) часто задаваемые вопросы
 description: В этой статье перечислены часто задаваемые вопросы об Azure синапсе Analytics (ранее — хранилище данных SQL) от клиентов и разработчиков.
 services: sql-data-warehouse
 author: mlee3gsd
@@ -10,12 +10,12 @@ ms.subservice: design
 ms.date: 11/04/2019
 ms.author: martinle
 ms.reviewer: igorstan
-ms.openlocfilehash: 4db84ed69979713d613679e94d50cdb73475e2be
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
-ms.translationtype: HT
+ms.openlocfilehash: f7b4f926bb9611d87c67276f754a6b596850b59d
+ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73520851"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73645591"
 ---
 # <a name="azure-synapse-analytics-formerly-sql-dw-frequently-asked-questions"></a>Azure синапсе Analytics (ранее SQL DW) часто задаваемые вопросы
 
@@ -47,7 +47,7 @@ ms.locfileid: "73520851"
 
 В. Можно ли подключиться Power BI?
 
-О. Да! Хотя Power BI поддерживает прямой запрос с помощью Azure синапсе, он не предназначен для большого числа пользователей или данных в режиме реального времени. Для использования в рабочей среде Power BI рекомендуется использовать Power BI поверх Azure Analysis Services или службы Analysis Service IaaS. 
+О. Да! Хотя Power BI поддерживает прямой запрос с помощью Azure синапсе, он не предназначен для большого числа пользователей или данных в режиме реального времени. Чтобы оптимизировать производительность Power BI, рассмотрите возможность использования Power BI на основе Azure Analysis Services или служб Analysis Service IaaS.
 
 В. Что такое ограничения емкости SQL Analytics?
 

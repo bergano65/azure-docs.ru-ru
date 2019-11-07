@@ -1,35 +1,38 @@
 ---
-title: Общие сведения об учетных записях пользователей в Azure Active Directory B2C | Документация Майкрософт
-description: Сведения об учетных записях пользователей в Azure Active Directory B2C.
+title: Общие сведения об учетных записях пользователей в Azure Active Directory B2C
+description: Сведения о типах учетных записей пользователей, которые можно использовать в Azure Active Directory B2C.
 services: active-directory-b2c
 author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 11/30/2018
+ms.date: 11/05/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 0ef4bca3a2b08271b3623a346df6613b5ad16995
-ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
+ms.openlocfilehash: a627b0eebc3aa4a19b0670f899d3032d8df58da4
+ms.sourcegitcommit: 6c2c97445f5d44c5b5974a5beb51a8733b0c2be7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71063144"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73620459"
 ---
 # <a name="overview-of-user-accounts-in-azure-active-directory-b2c"></a>Общие сведения об учетных записях пользователей в Azure Active Directory B2C
 
-В Azure Active Directory B2C (Azure AD B2C) можно использовать разные типы учетных записей. Azure Active Directory, Azure Active Directory B2B и Azure Active Directory B2C поддерживают одинаковые типы учетных записей пользователей.
+В Azure Active Directory B2C (Azure AD B2C) можно создать несколько типов учетных записей. Azure Active Directory, Active Directory B2B и Active Directory B2C общий ресурс в типах учетных записей пользователей, которые могут использоваться.
 
 Доступны следующие типы учетных записей:
 
 - **Рабочая учетная запись**. Рабочая учетная запись может получать доступ к ресурсам в клиенте и в роли администратора может управлять клиентами.
 - **Гостевая учетная запись**. Гостевая учетная запись может быть только учетной записью корпорации Майкрософт или пользователя Azure Active Directory, которая может использоваться для доступа к приложениям или для управления клиентами.
-- **Учетная запись клиента**. Эта учетная запись создается при регистрации пользователя в приложении Azure AD B2C или с помощью API Graph Azure AD и применяется пользователями приложений, зарегистрированных в Azure AD B2C.
+- **Учетная запись потребителя** . учетная запись потребителя используется пользователями приложений, зарегистрированных с Azure AD B2C. Учетные записи потребителей могут создаваться:
+  - Пользователь, который проходит через пользовательский поток регистрации в приложении Azure AD B2C
+  - Использование Azure AD API Graph
+  - Использование портала Azure
 
 ## <a name="work-account"></a>Рабочая учетная запись
 
-Рабочая учетная запись создается одинаково для всех клиентов, основываясь на Azure AD. Чтобы создать рабочую учетную запись, используйте сведения из статьи [Практическое руководство. Добавление или удаление пользователей в Azure Active Directory](../active-directory/fundamentals/add-users-azure-active-directory.md). Рабочая учетная запись создается путем выбора параметра **Новый пользователь** на портале Azure.
+Рабочая учетная запись создается одинаково для всех клиентов, основываясь на Azure AD. Чтобы создать рабочую учетную запись, можно использовать сведения из статьи [Краткое руководство по добавлению новых пользователей в Azure Active Directory](../active-directory/fundamentals/add-users-azure-active-directory.md). Рабочая учетная запись создается путем выбора параметра **Новый пользователь** на портале Azure.
 
 При добавлении новой рабочей учетной записи необходимо учитывать следующие параметры конфигурации:
 
@@ -73,7 +76,7 @@ ms.locfileid: "71063144"
 
 ## <a name="consumer-user"></a>Потребитель
 
-Потребитель может входить в приложение, защищенное Azure AD B2C, однако не имеет доступа к таким ресурсам Azure, как портал Azure.  Потребитель может использовать локальную учетную запись или федеративную учетную запись, такую как Facebook или Twitter. Учетная запись клиента создается с помощью потока пользователя [регистрации или входа в систему](../active-directory-b2c/active-directory-b2c-reference-policies.md).
+Потребитель может входить в приложение, защищенное Azure AD B2C, однако не имеет доступа к таким ресурсам Azure, как портал Azure. Потребитель может использовать локальную учетную запись или федеративную учетную запись, такую как Facebook или Twitter. Учетная запись потребителя создается с помощью [пользовательского потока регистрации или входа](../active-directory-b2c/active-directory-b2c-reference-policies.md), с помощью API Graph Azure AD или с помощью портал Azure.
 
 Укажите данные, получаемые при создании учетной записи потребителя, с использованием настраиваемых атрибутов пользователя. Дополнительные сведения см. в статье [Определение настраиваемых атрибутов в Azure Active Directory B2C](../active-directory-b2c/active-directory-b2c-reference-custom-attr.md).
 

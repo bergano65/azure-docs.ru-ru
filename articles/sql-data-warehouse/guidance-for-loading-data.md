@@ -1,5 +1,5 @@
 ---
-title: Рекомендации по загрузке данных в хранилище данных SQL Azure | Документация Майкрософт
+title: Рекомендации по загрузке данных
 description: 'Рекомендации и оптимизация производительности загрузки данных в хранилище данных SQL Azure:'
 services: sql-data-warehouse
 author: kevinvngo
@@ -10,13 +10,13 @@ ms.subservice: load-data
 ms.date: 08/08/2019
 ms.author: kevin
 ms.reviewer: igorstan
-ms.custom: seoapril2019
-ms.openlocfilehash: a1433139695eb59fa3fd721852fae3181b8f892b
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.custom: seo-lt-2019
+ms.openlocfilehash: 01bb53488bf63f32d2bae804e4844400a7fd2d31
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68882482"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73686096"
 ---
 # <a name="best-practices-for-loading-data-into-azure-sql-data-warehouse"></a>Рекомендации по загрузке данных в хранилище данных SQL Azure
 
@@ -125,7 +125,7 @@ create statistics [YearMeasured] on [Customer_Speed] ([YearMeasured]);
 
 Для каждой учетной записи хранения с измененным ключом выполните [ALTER DATABASE SCOPED CREDENTIAL](/sql/t-sql/statements/alter-database-scoped-credential-transact-sql).
 
-Пример
+Пример:
 
 Исходный ключ создан
 
@@ -141,7 +141,7 @@ ALTER DATABASE SCOPED CREDENTIAL my_credential WITH IDENTITY = 'my_identity', SE
 
 Вносить изменения в базовые внешние источники данных больше не нужно.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о PolyBase и проектировании процесса извлечения, загрузки и преобразования (ELT) см. в статье о [проектировании ELT для хранилища данных SQL](design-elt-data-loading.md).
 - Руководство по загрузке см. в статье [Загрузка данных из хранилища BLOB-объектов Azure в хранилище данных SQL Azure с помощью PolyBase](load-data-from-azure-blob-storage-using-polybase.md).

@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 09/09/2019
 ms.author: raynew
-ms.openlocfilehash: ff35c5e23c5d8a448d62a3eeb8d15ba8d5a531e4
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: 081e1db4df0d77fa600e132a5585172d44f1196a
+ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70814532"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73663028"
 ---
 # <a name="set-up-disaster-recovery-for-azure-vms-after-migration-to-azure"></a>Настройка аварийного восстановления виртуальных машин Azure после миграции в Azure 
 
@@ -29,8 +29,8 @@ ms.locfileid: "70814532"
 
 На каждой виртуальной машине Azure должен быть установлен [Агент виртуальной машины Azure](../virtual-machines/extensions/agent-windows.md) . Для репликации виртуальных машин Azure Site Recovery устанавливает расширение на агент.
 
-- Если на компьютере работает служба Site Recovery Mobility Service версии 9.7.0.0 или более поздней, агент виртуальной машины Azure автоматически устанавливается службой Mobility Service на виртуальных машинах Windows. В более ранних версиях службы Mobility Service необходимо установить агент автоматически.
-- Для виртуальных машин Linux необходимо установить агент виртуальной машины Azure вручную. Агент виртуальной машины Azure необходимо установить только в том случае, если служба Mobility Service, установленная на перенесенном компьютере, имеет версию v 9.6 или более раннюю.
+- Если на компьютере работает служба Site Recovery Mobility Service версии 9.7.0.0 или более поздней, агент виртуальной машины Azure автоматически устанавливается службой Mobility Service на виртуальных машинах Windows. В более ранних версиях службы Mobility Service необходимо установить агент вручную.
+- Для виртуальных машин Linux необходимо установить агент виртуальной машины Azure вручную. Агент виртуальной машины Azure необходимо устанавливать вручную, только если служба Mobility Service, установленная на перенесенном компьютере, имеет версию 9.6 или более раннюю.
 
 
 ### <a name="install-the-agent-on-windows-vms"></a>Установка агента на виртуальных машинах Windows
@@ -81,7 +81,7 @@ ms.locfileid: "70814532"
         ```
 2. Перед настройкой репликации перезапустите виртуальную машину.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Ознакомьтесь с разрешениями по устранению неполадок](site-recovery-extension-troubleshoot.md) для расширения Site Recovery в АГЕНТЕ виртуальной машины Azure.
 Ознакомьтесь с [кратким руководством по репликации](azure-to-azure-quickstart.md) виртуальных машин Azure в дополнительный регион.

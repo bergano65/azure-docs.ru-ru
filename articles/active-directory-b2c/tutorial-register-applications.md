@@ -10,12 +10,12 @@ ms.topic: article
 ms.date: 10/16/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 00b7d1cfea4a36b8ba5b78aea344288e11da67cf
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 3a5d5099c91736276aca56c8b94b846b53a190c1
+ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73474731"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73642416"
 ---
 # <a name="tutorial-register-an-application-in-azure-active-directory-b2c"></a>Руководство. Регистрация приложения в Azure Active Directory B2C
 
@@ -29,13 +29,13 @@ ms.locfileid: "73474731"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Если вы еще не создали собственный [клиент Azure AD B2C](tutorial-create-tenant.md), создайте его сейчас. Вы можете использовать имеющийся клиент Azure Active Directory B2C.
 
 ## <a name="register-a-web-application"></a>Регистрация веб-приложения
 
-Чтобы зарегистрировать приложение в Azure AD B2C клиенте, можно использовать текущие **приложения** или новый единый интерфейс **Регистрация приложений (Предварительная версия)** . Дополнительные [сведения о предварительной версии](https://aka.ms/b2cappregintro).
+Чтобы зарегистрировать приложение в Azure AD B2C клиенте, можно использовать текущие **приложения** или новый единый интерфейс **Регистрация приложений (Предварительная версия)** . [См. дополнительные сведения о новом интерфейсе](https://aka.ms/b2cappregintro).
 
 #### <a name="applicationstabapplications"></a>[Приложения](#tab/applications/)
 
